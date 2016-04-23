@@ -340,6 +340,10 @@ var/global/datum/controller/gameticker/ticker
 		if(!mode.explosion_in_progress && game_finished && (mode_finished || post_game))
 			current_state = GAME_STATE_FINISHED
 
+			if(update_waiting)
+				force_update_server()
+			if(buildchangechecked)
+				forcechangebuild(nextbuild)
 			spawn
 				declare_completion()
 

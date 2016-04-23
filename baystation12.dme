@@ -127,6 +127,8 @@
 #include "code\controllers\emergency_shuttle_controller.dm"
 #include "code\controllers\hooks-defs.dm"
 #include "code\controllers\hooks.dm"
+#include "code\controllers\infinity_build_change.dm"
+#include "code\controllers\infinity_update_tools.dm"
 #include "code\controllers\master_controller.dm"
 #include "code\controllers\shuttle_controller.dm"
 #include "code\controllers\subsystems.dm"

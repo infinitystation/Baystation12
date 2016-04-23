@@ -1,0 +1,34 @@
+Формат:
+#build [имя билда] 
+	dmbfile [имя] (имя *.dmb файла без расширения *.dmb)
+	friendlyname [имя] (имя, показываемое игрокам)
+	folder [имя] (имя папки, в котором находится билд)	
+endbuild
+
+build tgstation
+	dmbfile tgstation
+	friendlyname /tg/station
+	folder infinity
+	update infinity-tg
+endbuild
+
+build tgstationtest
+	dmbfile tgstation
+	friendlyname /tg/station Test
+	folder infinity-tg
+	update infinity-tg
+endbuild
+
+build baystation12
+	dmbfile baystation12
+	friendlyname Baystation12
+	folder infinity-bay
+	update infinity-baystation
+endbuild
+
+build baystation12test
+	dmbfile baystation12
+	friendlyname Baystation12 Test
+	folder infinity-baystation
+	update infinity-baystation
+endbuild

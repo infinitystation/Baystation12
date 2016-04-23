@@ -671,6 +671,11 @@
 
 	if(.)
 		if(statpanel("Status") && ticker && ticker.current_state != GAME_STATE_PREGAME)
+			if(currentbuild)
+				stat("Build: [currentbuild.friendlyname]")
+			if (nextbuild && istype(nextbuild))
+				stat("Next Build: [nextbuild.friendlyname]")
+			stat("Server Time: [time2text(world.realtime, "YYYY-MM-DD hh:mm")]")
 			stat("Station Time", worldtime2text())
 			stat("Round Duration", round_duration_as_text())
 
