@@ -18,6 +18,8 @@
 	var/sqltext = dbcon.Quote(t);
 	return copytext(sqltext, 2, lentext(sqltext));//Quote() adds quotes around input, we already do that
 
+/proc/format_table_name(table as text)
+	return sqlfdbktableprefix + table
 /*
  * Text sanitization
  */
@@ -362,7 +364,7 @@ proc/TextPreview(var/string,var/len=40)
 	for(var/i in symbols)
 		t = replacetext(t, i, "")
 	return t
-
+var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z")
 /proc/extA2U(t)
 	//¨, ¸
 	t = replacetextEx(t, "\\xa8", "\\u0401")

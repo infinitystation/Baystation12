@@ -113,6 +113,7 @@ var/sqlport    = "3306"
 var/sqldb      = "tgstation"
 var/sqllogin   = "root"
 var/sqlpass    = ""
+var/sqlfdbktableprefix = "erro_"
 
 // Feedback gathering sql connection
 var/sqlfdbkdb    = "test"

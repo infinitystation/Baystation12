@@ -55,3 +55,6 @@ var/round_start_time = 0
 	last_round_duration = "[hours]:[mins]"
 	next_duration_update = world.time + 1 MINUTES
 	return last_round_duration
+
+/proc/SQLtime()
+	return time2text(world.realtime, "YYYY-MM-DD hh:mm:ss")
