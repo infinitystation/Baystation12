@@ -388,19 +388,7 @@ var/world_topic_spam_protect_time = world.timeofday
 				1. notes = ckey of person the notes lookup is for
 				2. validationkey = the key the bot has, it should match the gameservers commspassword in it's configuration.
 		*/
-		var/input[] = params2list(T)
-		if(input["key"] != config.comms_password)
-			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
-
-				spawn(50)
-					world_topic_spam_protect_time = world.time
-					return "Bad Key (Throttled)"
-
-			world_topic_spam_protect_time = world.time
-			world_topic_spam_protect_ip = addr
-			return "Bad Key"
-
-		return show_player_info_irc(ckey(input["notes"]))
+		return //but we don't have irc
 
 	else if(copytext(T,1,4) == "age")
 		var/input[] = params2list(T)

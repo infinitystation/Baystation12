@@ -85,7 +85,7 @@
 				banreason = "[banreason] (CUSTOM CID)"
 		else
 			message_admins("Ban process: A mob matching [playermob.ckey] was found at location [playermob.x], [playermob.y], [playermob.z]. Custom ip and computer id fields replaced with the ip and computer id from the located mob")
-		notes_add(banckey,banreason,usr)
+		add_note(banckey, banreason, null, usr.ckey, 0)
 
 		DB_ban_record(bantype, playermob, banduration, banreason, banjob, null, banckey, banip, bancid )
 
@@ -686,7 +686,7 @@
 							msg = job
 						else
 							msg += ", [job]"
-					notes_add(M.ckey, "Banned  from [msg] - [reason]", usr)
+					add_note(M.ckey, "Banned  from [msg] - [reason]", null, usr.ckey, 0)
 					message_admins("\blue [key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes", 1)
 					M << "\red<BIG><B>You have been jobbanned by [usr.client.ckey] from: [msg].</B></BIG>"
 					M << "\red <B>The reason is: [reason]</B>"
@@ -707,7 +707,7 @@
 							jobban_fullban(M, job, "[reason]; By [usr.ckey] on [time2text(world.realtime)]")
 							if(!msg)	msg = job
 							else		msg += ", [job]"
-						notes_add(M.ckey, "Banned  from [msg] - [reason]", usr)
+						add_note(M.ckey, "Banned  from [msg] - [reason]", null, usr.ckey, 0)
 						message_admins("\blue [key_name_admin(usr)] banned [key_name_admin(M)] from [msg]", 1)
 						M << "\red<BIG><B>You have been jobbanned by [usr.client.ckey] from: [msg].</B></BIG>"
 						M << "\red <B>The reason is: [reason]</B>"
@@ -805,7 +805,7 @@
 					return
 				AddBan(M.ckey, M.computer_id, reason, usr.ckey, 1, mins)
 				ban_unban_log_save("[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
-				notes_add(M.ckey,"[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.",usr)
+				add_note(M.ckey,"[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
 				M << "\red<BIG><B>You have been banned by [usr.client.ckey].\nReason: [reason].</B></BIG>"
 				M << "\red This is a temporary ban, it will be removed in [mins] minutes."
 				feedback_inc("ban_tmp",1)
@@ -838,7 +838,7 @@
 				else
 					M << "\red No ban appeals URL has been set."
 				ban_unban_log_save("[usr.client.ckey] has permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.")
-				notes_add(M.ckey,"[usr.client.ckey] has permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.",usr)
+				add_note(M.ckey,"[usr.client.ckey] has permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.", null, usr.ckey, 0)
 				log_admin("[usr.client.ckey] has banned [M.ckey].\nReason: [reason]\nThis is a permanent ban.")
 				message_admins("\blue[usr.client.ckey] has banned [M.ckey].\nReason: [reason]\nThis is a permanent ban.")
 				feedback_inc("ban_perma",1)
@@ -882,7 +882,7 @@
 					if("No")
 						DB_ban_record(BANTYPE_SOFTBAN, M, mins, reason, bancid = M.computer_id)
 				ban_unban_log_save("[usr.client.ckey] has soft banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
-				notes_add(M.ckey,"[usr.client.ckey] has soft banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.",usr)
+				add_note(M.ckey,"[usr.client.ckey] has soft banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
 				M << "\red<BIG><B>You have been soft banned by [usr.client.ckey].\nReason: [reason].</B></BIG>"
 				M << "\red This is a soft temporary ban, it will be removed in [mins] minutes."
 				feedback_inc("ban_tmp",1)
@@ -915,7 +915,7 @@
 				else
 					M << "\red No ban appeals URL has been set."
 				ban_unban_log_save("[usr.client.ckey] has soft permabanned [M.ckey]. - Reason: [reason] - This is a soft permanent ban.")
-				notes_add(M.ckey,"[usr.client.ckey] has soft permabanned [M.ckey]. - Reason: [reason] - This is a soft permanent ban.",usr)
+				add_note(M.ckey,"[usr.client.ckey] has soft permabanned [M.ckey]. - Reason: [reason] - This is a soft permanent ban.", null, usr.ckey, 0)
 				log_admin("[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis is a soft permanent ban.")
 				message_admins("\blue[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis is a soft permanent ban.")
 				feedback_inc("ban_perma",1)
@@ -1952,36 +1952,49 @@
 
 			show_player_panel(M)
 
-	// player info stuff
+	//Player Notes
+	else if(href_list["addnote"])
+		var/target_ckey = href_list["addnote"]
+		add_note(target_ckey)
 
-	if(href_list["add_player_info"])
-		var/key = href_list["add_player_info"]
-		var/add = sanitize(input("Add Player Info") as null|text)
-		if(!add) return
+	else if(href_list["addnoteempty"])
+		add_note()
 
-		notes_add(key,add,usr)
-		show_player_info(key)
+	else if(href_list["removenote"])
+		var/note_id = href_list["removenote"]
+		remove_note(note_id)
 
-	if(href_list["remove_player_info"])
-		var/key = href_list["remove_player_info"]
-		var/index = text2num(href_list["remove_index"])
+	else if(href_list["editnote"])
+		var/note_id = href_list["editnote"]
+		edit_note(note_id)
 
-		notes_del(key, index)
-		show_player_info(key)
+	else if(href_list["shownote"])
+		var/target = href_list["shownote"]
+		show_note(index = target)
 
-	if(href_list["notes"])
-		var/ckey = href_list["ckey"]
-		if(!ckey)
-			var/mob/M = locate(href_list["mob"])
-			if(ismob(M))
-				ckey = M.ckey
+	else if(href_list["nonalpha"])
+		var/target = href_list["nonalpha"]
+		target = text2num(target)
+		show_note(index = target)
 
-		switch(href_list["notes"])
-			if("show")
-				show_player_info(ckey)
-			if("list")
-				PlayerNotesPage(text2num(href_list["index"]))
-		return
+	else if(href_list["shownoteckey"])
+		var/target_ckey = href_list["shownoteckey"]
+		show_note(target_ckey)
+
+	else if(href_list["notessearch"])
+		var/target = href_list["notessearch"]
+		show_note(index = target)
+
+	else if(href_list["noteedits"])
+		var/note_id = sanitizeSQL("[href_list["noteedits"]]")
+		var/DBQuery/query_noteedits = dbcon.NewQuery("SELECT edits FROM erro_notes WHERE id = '[note_id]'")
+		if(!query_noteedits.Execute())
+			var/err = query_noteedits.ErrorMsg()
+			log_game("SQL ERROR obtaining edits from notes table. Error : \[[err]\]\n")
+			return
+		if(query_noteedits.NextRow())
+			var/edit_log = query_noteedits.item[1]
+			usr << browse(edit_log,"window=noteedits")
 
 mob/living/proc/can_centcom_reply()
 	return 0
