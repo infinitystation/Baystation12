@@ -37,6 +37,9 @@
 	if(!searching || (src.brainmob && src.brainmob.key))
 		return
 
+	if(user.client && user.client.banprisoned)
+		return
+
 	var/datum/ghosttrap/G = get_ghost_trap("positronic brain")
 	if(!G.assess_candidate(user))
 		return
