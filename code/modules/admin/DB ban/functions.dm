@@ -26,6 +26,12 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		if(BANTYPE_JOB_TEMP)
 			bantype_str = "JOB_TEMPBAN"
 			bantype_pass = 1
+		if(BANTYPE_SOFTPERMA)
+			bantype_str = "SOFT_PERMABAN"
+			bantype_pass = 1
+		if(BANTYPE_SOFTBAN)
+			bantype_str = "SOFT_TEMPBAN"
+			bantype_pass = 1
 	if( !bantype_pass ) return
 	if( !istext(reason) ) return
 	if( !isnum(duration) ) return
@@ -109,6 +115,12 @@ datum/admins/proc/DB_ban_unban(var/ckey, var/bantype, var/job = "")
 				bantype_pass = 1
 			if(BANTYPE_ANY_FULLBAN)
 				bantype_str = "ANY"
+				bantype_pass = 1
+			if(BANTYPE_SOFTPERMA)
+				bantype_str = "SOFT_PERMABAN"
+				bantype_pass = 1
+			if(BANTYPE_SOFTBAN)
+				bantype_str = "SOFT_TEMPBAN"
 				bantype_pass = 1
 		if( !bantype_pass ) return
 
@@ -291,6 +303,8 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 	output += "<option value='[BANTYPE_TEMP]'>TEMPBAN</option>"
 	output += "<option value='[BANTYPE_JOB_PERMA]'>JOB PERMABAN</option>"
 	output += "<option value='[BANTYPE_JOB_TEMP]'>JOB TEMPBAN</option>"
+	output += "<option value='[BANTYPE_SOFTPERMA]'>SOFT PERMABAN</option>"
+	output += "<option value='[BANTYPE_SOFTBAN]'>SOFT TEMPBAN</option>"
 	output += "</select></td>"
 	output += "<td width='50%' align='right'><b>Ckey:</b> <input type='text' name='dbbanaddckey'></td></tr>"
 	output += "<tr><td width='50%' align='right'><b>IP:</b> <input type='text' name='dbbanaddip'></td>"
@@ -329,6 +343,8 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 	output += "<option value='[BANTYPE_TEMP]'>TEMPBAN</option>"
 	output += "<option value='[BANTYPE_JOB_PERMA]'>JOB PERMABAN</option>"
 	output += "<option value='[BANTYPE_JOB_TEMP]'>JOB TEMPBAN</option>"
+	output += "<option value='[BANTYPE_SOFTPERMA]'>SOFT PERMABAN</option>"
+	output += "<option value='[BANTYPE_SOFTBAN]'>SOFT TEMPBAN</option>"
 	output += "</select></td></tr></table>"
 	output += "<br><input type='submit' value='search'><br>"
 	output += "<input type='checkbox' value='[match]' name='dbmatch' [match? "checked=\"1\"" : null]> Match(min. 3 characters to search by key or ip, and 7 to search by cid)<br>"
@@ -396,6 +412,10 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 						bantypesearch += "'JOB_PERMABAN' "
 					if(BANTYPE_JOB_TEMP)
 						bantypesearch += "'JOB_TEMPBAN' "
+					if(BANTYPE_SOFTPERMA)
+						bantypesearch += "'SOFT_PERMABAN'"
+					if(BANTYPE_SOFTBAN)
+						bantypesearch += "'SOFT_TEMPBAN'"
 					else
 						bantypesearch += "'PERMABAN' "
 
@@ -443,6 +463,10 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 						typedesc = "<b>JOBBAN</b><br><font size='2'>([job])</font>"
 					if("JOB_TEMPBAN")
 						typedesc = "<b>TEMP JOBBAN</b><br><font size='2'>([job])<br>([duration] minutes<br>Expires [expiration]</font>"
+					if("SOFT_PERMABAN")
+						typedesc = "<font color='red'><b>SOFT PERMABAN</b></font>"
+					if("SOFT_TEMPBAN")
+						typedesc = "<b>SOFT TEMPBAN</b><br><font size='2'>([duration] minutes) [(unbanned || auto) ? "" : "(<a href=\"byond://?src=\ref[src];dbbanedit=duration;dbbanid=[banid]\">Edit</a>)"]<br>Expires [expiration]</font>"
 
 				output += "<tr bgcolor='[dcolor]'>"
 				output += "<td align='center'>[typedesc]</td>"
