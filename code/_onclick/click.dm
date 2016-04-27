@@ -343,6 +343,7 @@
 	layer = 0
 	mouse_opacity = 2
 	screen_loc = "1,1"
+	plane = -99
 
 /obj/screen/click_catcher/Click(location, control, params)
 	var/list/modifiers = params2list(params)

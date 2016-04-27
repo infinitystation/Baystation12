@@ -140,6 +140,7 @@ var/obj/screen/robot_inventory
 	mymob.blind.name = " "
 	mymob.blind.screen_loc = "1,1"
 	mymob.blind.layer = 0
+	mymob.blind.plane = -99
 
 	mymob.flash = new /obj/screen()
 	mymob.flash.icon = 'icons/mob/screen1_robot.dmi'

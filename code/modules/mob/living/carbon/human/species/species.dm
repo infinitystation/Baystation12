@@ -361,6 +361,7 @@
 
 	if(H.blind)
 		H.blind.layer = (H.eye_blind ? 18 : 0)
+		H.blind.plane = (H.eye_blind ? 0 : -99)
 
 	if(!H.client)//no client, no screen to update
 		return 1
