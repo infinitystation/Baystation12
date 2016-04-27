@@ -73,6 +73,9 @@
 	if(!player || !isghost(player.mob))
 		return
 
+	if(player.banprisoned)
+		return
+
 	announce_ghost_joinleave(player, 0, "They have taken control over a maintenance drone.")
 	visible_message("\The [src] churns and grinds as it lurches into motion, disgorging a shiny new drone after a few moments.")
 	flick("h_lathe_leave",src)

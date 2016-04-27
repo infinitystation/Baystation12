@@ -38,7 +38,11 @@
 	sight |= SEE_TURFS
 	player_list |= src
 
-	new_player_panel()
+	if(!client.banprisoned)
+		new_player_panel()
+	else
+		new_player_panel_prisoner()
+
 	spawn(40)
 		if(client)
 			handle_privacy_poll()

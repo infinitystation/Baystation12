@@ -20,8 +20,10 @@
 
 /mob/new_player/verb/new_player_panel()
 	set src = usr
-	new_player_panel_proc()
-
+	if(!client.banprisoned)
+		new_player_panel_proc()
+	else
+		new_player_panel_prisoner()
 
 /mob/new_player/proc/new_player_panel_proc()
 	var/output = "<div align='center'><B>New Player Options</B>"
@@ -91,6 +93,8 @@
 		return 1
 
 	if(href_list["ready"])
+		if(client.banprisoned)
+			return
 		if(!ticker || ticker.current_state <= GAME_STATE_PREGAME) // Make sure we don't ready up after the round has started
 			ready = text2num(href_list["ready"])
 		else
@@ -98,9 +102,14 @@
 
 	if(href_list["refresh"])
 		src << browse(null, "window=playersetup") //closes the player setup window
-		new_player_panel_proc()
+		if(!client.banprisoned)
+			new_player_panel_proc()
+		else
+			new_player_panel_prisoner()
 
 	if(href_list["observe"])
+		if(client.banprisoned)
+			return
 
 		if(alert(src,"Are you sure you wish to observe? You will have to wait 30 minutes before being able to respawn!","Player Setup","Yes","No") == "Yes")
 			if(!client)	return 1
@@ -135,7 +144,12 @@
 
 			return 1
 
+	if(href_list["spawn_prisoner"])
+		Spawn_Prisoner()
+
 	if(href_list["late_join"])
+		if(client.banprisoned)
+			return
 
 		if(!ticker || ticker.current_state != GAME_STATE_PLAYING)
 			usr << "\red The round is either not ready, or has already finished..."
@@ -154,9 +168,13 @@
 		LateChoices()
 
 	if(href_list["manifest"])
+		if(client.banprisoned)
+			return
 		ViewManifest()
 
 	if(href_list["SelectedJob"])
+		if(client.banprisoned)
+			return
 
 		if(!config.enter_allowed)
 			usr << "<span class='notice'>There is an administrative lock on entering the game!</span>"
@@ -178,6 +196,8 @@
 		return
 
 	if(href_list["privacy_poll"])
+		if(client.banprisoned)
+			return
 		establish_db_connection()
 		if(!dbcon.IsConnected())
 			return
@@ -219,7 +239,10 @@
 		if(client)
 			client.prefs.process_link(src, href_list)
 	else if(!href_list["late_join"])
-		new_player_panel()
+		if(client.banprisoned)
+			new_player_panel_prisoner()
+		else
+			new_player_panel()
 
 	if(href_list["showpoll"])
 
@@ -304,6 +327,8 @@
 	if(!IsJobAvailable(rank))
 		src << alert("[rank] is not available. Please try another.")
 		return 0
+	if(client && client.banprisoned)
+		return
 
 	var/turf/T = job_master.LateSpawn(client, rank, 1)
 	var/airstatus = IsSpawnSafe(T)
