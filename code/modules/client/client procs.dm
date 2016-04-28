@@ -320,6 +320,6 @@ client/proc/MayRespawn()
 
 client/verb/character_setup()
 	set name = "Character Setup"
-	set category = "Preferences"
+	set category = "OOC"
 	if(prefs)
 		prefs.ShowChoices(usr)
