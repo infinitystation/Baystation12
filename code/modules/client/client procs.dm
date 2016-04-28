@@ -125,9 +125,6 @@
 	if(holder)
 		admins += src
 		holder.owner = src
-	if(holder)
-		admins += src
-		holder.owner = src
 		var/sql_ckey = sanitizeSQL(src.ckey)
 		spawn for()
 			var/DBQuery/query_o_s_ins = dbcon.NewQuery("INSERT INTO online_score(ckey,year,month,day,sum) VALUES ('[sql_ckey]', YEAR(NOW()), MONTH(NOW()), DAYOFMONTH(NOW()), 0);")
