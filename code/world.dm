@@ -519,6 +519,8 @@ var/world_topic_spam_protect_time = world.timeofday
 
 	if (config && config.server_name)
 		s += "<b>[config.server_name]</b> &#8212; "
+	else
+		s += "<b>[world.name]</b> &#8212; "
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
@@ -529,6 +531,9 @@ var/world_topic_spam_protect_time = world.timeofday
 	s += ")"
 
 	var/list/features = list()
+
+	if(currentbuild)
+		features += "[currentbuild.friendlyname]"
 
 	if(ticker)
 		if(master_mode)
