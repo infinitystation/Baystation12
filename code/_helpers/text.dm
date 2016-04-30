@@ -440,4 +440,11 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	t = replacetextEx(t, "&#1103;", "\\u044f")
 	return t
 
+/proc/generateRandomString(var/length)
+	var/text = ""
+	for(var/a in 1 to length)
+		var/letter = rand(33,126)
+		text += ascii2text(letter)
+	return text
+
 #define gender2text(gender) capitalize(gender)

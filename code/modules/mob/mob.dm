@@ -140,7 +140,16 @@
 	return 0
 
 /mob/proc/movement_delay()
-	return 0
+	. = 0
+	if(pulling)
+		if(istype(pulling, /obj))
+			var/obj/O = pulling
+			. += O.w_class / 2
+		else if(istype(pulling, /mob))
+			var/mob/M = pulling
+			. += M.mob_size / 5
+		else
+			. += 1
 
 /mob/proc/Life()
 //	if(organStructure)
@@ -681,14 +690,13 @@
 
 	if(.)
 		if(statpanel("Status") && ticker && ticker.current_state != GAME_STATE_PREGAME)
+			stat("Station Time", stationtime2text())
+			stat("Round Duration", roundduration2text())
 			if(currentbuild)
 				stat("Build:", currentbuild.friendlyname)
 			if (nextbuild && istype(nextbuild))
 				stat("Next Build:", nextbuild.friendlyname)
 			stat("Server Time", time2text(world.realtime, "YYYY-MM-DD hh:mm"))
-			stat("Station Time", worldtime2text())
-			stat("Round Duration", round_duration_as_text())
-
 		if(client.holder)
 			if(statpanel("Status"))
 				stat("Location:", "([x], [y], [z]) [loc]")
