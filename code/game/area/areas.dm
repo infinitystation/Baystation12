@@ -23,6 +23,8 @@
 	else
 		luminosity = 1
 
+	name = replacetextEx(name, "\improper", "")
+
 	..()
 
 /area/proc/initialize()

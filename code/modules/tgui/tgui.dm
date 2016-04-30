@@ -60,7 +60,9 @@
 	set_interface(interface)
 
 	if(title)
-		src.title = sanitize(title)
+		src.title = replacetext(title, "\improper", "")
+		src.title = replacetext(src.title, "\proper", "")
+		src.title = sanitize(src.title)
 	if(width)
 		src.width = width
 	if(height)
@@ -250,9 +252,9 @@
 	// Generate the JSON.
 	var/json = json_encode(json_data)
 	// Strip #255/improper.
-	json = extA2U(json)
 	json = replacetext(json, "\proper", "")
 	json = replacetext(json, "\improper", "")
+	json = extA2U(json)
 	return json
 
  /**
