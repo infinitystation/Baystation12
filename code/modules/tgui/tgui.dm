@@ -245,7 +245,7 @@
 	if(!isnull(data))
 		json_data["data"] = data
 
-	data = replacetext(data, "ÿ", "")
+	json_data["data"] = replacetext(data, "ÿ", "")
 
 	// Generate the JSON.
 	var/json = json_encode(json_data)
