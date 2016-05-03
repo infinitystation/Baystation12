@@ -86,6 +86,8 @@ nanoui is used to open and update nano browser uis
 	add_template("main", ntemplate_filename)
 
 	if (ntitle)
+		title = replacetext(title, "\improper", "")
+		title = replacetext(title, "\proper", "")
 		title = sanitize(ntitle)
 	if (nwidth)
 		width = nwidth
@@ -353,6 +355,8 @@ nanoui is used to open and update nano browser uis
 
 	var/list/send_data = get_send_data(initial_data)
 	var/initial_data_json = replacetext(replacetext(extA2U(json_encode(send_data)), "&#34;", "&amp;#34;"), "'", "&#39;")
+	initial_data_json = replacetext(initial_data_json, "\improper", "")
+	initial_data_json = replacetext(initial_data_json, "\proper", "")
 
 	var/url_parameters_json = json_encode(list("src" = "\ref[src]"))
 
