@@ -65,7 +65,7 @@ proc/admin_notice(var/message, var/rights)
 		<A href='?src=\ref[src];softban=\ref[M]'>Soft Ban</A> |
 		<A href='?src=\ref[src];newban=\ref[M]'>Ban</A> |
 		<A href='?src=\ref[src];jobban2=\ref[M]'>Jobban</A> |
-		<A href='?src=\ref[src];notes=show;mob=\ref[M]'>Notes</A>
+		<A href='?src=\ref[src];shownoteckey=[M.ckey]'>Notes</A>
 	"}
 
 	if(M.client)

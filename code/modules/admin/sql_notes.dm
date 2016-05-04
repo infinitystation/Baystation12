@@ -1,4 +1,4 @@
-/proc/notes_add(target_ckey, notetext, timestamp, adminckey, logged = 1, server)
+/proc/add_note(target_ckey, notetext, timestamp, adminckey, logged = 1, server)
 	if(!dbcon.IsConnected())
 		usr << "<span class='danger'>Failed to establish database connection.</span>"
 		return
@@ -7,7 +7,7 @@
 		if(!new_ckey)
 			return
 		new_ckey = sanitizeSQL(new_ckey)
-		var/DBQuery/query_find_ckey = dbcon.NewQuery("SELECT ckey FROM [format_table_name("player")] WHERE ckey = '[new_ckey]'")
+		var/DBQuery/query_find_ckey = dbcon.NewQuery("SELECT ckey FROM erro_notes WHERE ckey = '[new_ckey]'")
 		if(!query_find_ckey.Execute())
 			var/err = query_find_ckey.ErrorMsg()
 			log_game("SQL ERROR obtaining ckey from player table. Error : \[[err]\]\n")
@@ -34,7 +34,7 @@
 		if (config && config.server_name)
 			server = config.server_name
 	server = sanitizeSQL(server)
-	var/DBQuery/query_noteadd = dbcon.NewQuery("INSERT INTO [format_table_name("notes")] (ckey, timestamp, notetext, adminckey, server) VALUES ('[target_sql_ckey]', '[timestamp]', '[notetext]', '[admin_sql_ckey]', '[server]')")
+	var/DBQuery/query_noteadd = dbcon.NewQuery("INSERT INTO erro_notes (ckey, timestamp, notetext, adminckey, server) VALUES ('[target_sql_ckey]', '[timestamp]', '[notetext]', '[admin_sql_ckey]', '[server]')")
 	if(!query_noteadd.Execute())
 		var/err = query_noteadd.ErrorMsg()
 		log_game("SQL ERROR adding new note to table. Error : \[[err]\]\n")
@@ -45,7 +45,7 @@
 		message_admins("[key_name_admin(usr)] has added a note to [target_ckey]:<br>[notetext]")
 		show_note(target_ckey)
 
-/proc/notes_del(note_id)
+/proc/remove_note(note_id)
 	var/ckey
 	var/notetext
 	var/adminckey
@@ -55,7 +55,7 @@
 	if(!note_id)
 		return
 	note_id = text2num(note_id)
-	var/DBQuery/query_find_note_del = dbcon.NewQuery("SELECT ckey, notetext, adminckey FROM [format_table_name("notes")] WHERE id = [note_id]")
+	var/DBQuery/query_find_note_del = dbcon.NewQuery("SELECT ckey, notetext, adminckey FROM erro_notes WHERE id = [note_id]")
 	if(!query_find_note_del.Execute())
 		var/err = query_find_note_del.ErrorMsg()
 		log_game("SQL ERROR obtaining ckey, notetext, adminckey from notes table. Error : \[[err]\]\n")
@@ -64,7 +64,7 @@
 		ckey = query_find_note_del.item[1]
 		notetext = query_find_note_del.item[2]
 		adminckey = query_find_note_del.item[3]
-	var/DBQuery/query_del_note = dbcon.NewQuery("DELETE FROM [format_table_name("notes")] WHERE id = [note_id]")
+	var/DBQuery/query_del_note = dbcon.NewQuery("DELETE FROM erro_notes WHERE id = [note_id]")
 	if(!query_del_note.Execute())
 		var/err = query_del_note.ErrorMsg()
 		log_game("SQL ERROR removing note from table. Error : \[[err]\]\n")
@@ -83,7 +83,7 @@
 	note_id = text2num(note_id)
 	var/target_ckey
 	var/sql_ckey = sanitizeSQL(usr.ckey)
-	var/DBQuery/query_find_note_edit = dbcon.NewQuery("SELECT ckey, notetext, adminckey FROM [format_table_name("notes")] WHERE id = [note_id]")
+	var/DBQuery/query_find_note_edit = dbcon.NewQuery("SELECT ckey, notetext, adminckey FROM erro_notes WHERE id = [note_id]")
 	if(!query_find_note_edit.Execute())
 		var/err = query_find_note_edit.ErrorMsg()
 		log_game("SQL ERROR obtaining notetext from notes table. Error : \[[err]\]\n")
@@ -99,7 +99,7 @@
 		new_note = sanitizeSQL(new_note)
 		var/edit_text = "Edited by [sql_ckey] on [SQLtime()] from<br>[old_note]<br>to<br>[new_note]<hr>"
 		edit_text = sanitizeSQL(edit_text)
-		var/DBQuery/query_update_note = dbcon.NewQuery("UPDATE [format_table_name("notes")] SET notetext = '[new_note]', last_editor = '[sql_ckey]', edits = CONCAT(IFNULL(edits,''),'[edit_text]') WHERE id = [note_id]")
+		var/DBQuery/query_update_note = dbcon.NewQuery("UPDATE erro_notes SET notetext = '[new_note]', last_editor = '[sql_ckey]', edits = CONCAT(IFNULL(edits,''),'[edit_text]') WHERE id = [note_id]")
 		if(!query_update_note.Execute())
 			var/err = query_update_note.ErrorMsg()
 			log_game("SQL ERROR editing note. Error : \[[err]\]\n")
@@ -124,7 +124,7 @@
 		output = navbar
 	if(target_ckey)
 		var/target_sql_ckey = sanitizeSQL(target_ckey)
-		var/DBQuery/query_get_notes = dbcon.NewQuery("SELECT id, timestamp, notetext, adminckey, last_editor, server FROM [format_table_name("notes")] WHERE ckey = '[target_sql_ckey]' ORDER BY timestamp")
+		var/DBQuery/query_get_notes = dbcon.NewQuery("SELECT id, timestamp, notetext, adminckey, last_editor, server FROM erro_notes WHERE ckey = '[target_sql_ckey]' ORDER BY timestamp")
 		if(!query_get_notes.Execute())
 			var/err = query_get_notes.ErrorMsg()
 			log_game("SQL ERROR obtaining ckey, notetext, adminckey, last_editor, server from notes table. Error : \[[err]\]\n")
@@ -160,7 +160,7 @@
 				search = "^\[^\[:alpha:\]\]"
 			else
 				search = "^[index]"
-		var/DBQuery/query_list_notes = dbcon.NewQuery("SELECT DISTINCT ckey FROM [format_table_name("notes")] WHERE ckey REGEXP '[search]' ORDER BY ckey")
+		var/DBQuery/query_list_notes = dbcon.NewQuery("SELECT DISTINCT ckey FROM erro_notes WHERE ckey REGEXP '[search]' ORDER BY ckey")
 		if(!query_list_notes.Execute())
 			var/err = query_list_notes.ErrorMsg()
 			log_game("SQL ERROR obtaining ckey from notes table. Error : \[[err]\]\n")
@@ -172,63 +172,3 @@
 		output += "<center><a href='?_src_=holder;addnoteempty=1'>\[Add Note\]</a></center>"
 		output += ruler
 	usr << browse(output, "window=show_notes;size=900x500")
-
-#define NOTESFILE "data/player_notes.sav"
-//if the AUTOCONVERT_NOTES is turned on, anytime a player connects this will be run to try and add all their notes to the databas
-/proc/convert_notes_sql(ckey)
-	var/savefile/notesfile = new(NOTESFILE)
-	if(!notesfile)
-		log_game("Error: Cannot access [NOTESFILE]")
-		return
-	notesfile.cd = "/[ckey]"
-	while(!notesfile.eof)
-		var/notetext
-		notesfile >> notetext
-		var/server
-		if(config && config.server_name)
-			server = config.server_name
-		var/regex/note = new("^(\\d{2}-\\w{3}-\\d{4}) \\| (.+) ~(\\w+)$", "i")
-		note.Find(notetext)
-		var/timestamp = note.group[1]
-		notetext = note.group[2]
-		var/adminckey = note.group[3]
-		var/DBQuery/query_convert_time = dbcon.NewQuery("SELECT ADDTIME(STR_TO_DATE('[timestamp]','%d-%b-%Y'), '0')")
-		if(!query_convert_time.Execute())
-			var/err = query_convert_time.ErrorMsg()
-			log_game("SQL ERROR converting timestamp. Error : \[[err]\]\n")
-			return
-		if(query_convert_time.NextRow())
-			timestamp = query_convert_time.item[1]
-		if(ckey && notetext && timestamp && adminckey && server)
-			notes_add(ckey, notetext, timestamp, adminckey, 0, server)
-	notesfile.cd = "/"
-	notesfile.dir.Remove(ckey)
-
-/*alternatively this proc can be run once to pass through every note and attempt to convert it before deleting the file, if done then AUTOCONVERT_NOTES should be turned off
-this proc can take several minutes to execute fully if converting and cause DD to hang if converting a lot of notes; it's not advised to do so while a server is live
-/proc/mass_convert_notes()
-	world << "Beginning mass note conversion"
-	var/savefile/notesfile = new(NOTESFILE)
-	if(!notesfile)
-		log_game("Error: Cannot access [NOTESFILE]")
-		return
-	notesfile.cd = "/"
-	for(var/ckey in notesfile.dir)
-		convert_notes_sql(ckey)
-	world << "Deleting NOTESFILE"
-	fdel(NOTESFILE)
-	world << "Finished mass note conversion, remember to turn off AUTOCONVERT_NOTES"*/
-/proc/show_player_info_irc(var/key as text)
-	var/dat = "          Info on [key]\n"
-	var/savefile/info = new("data/player_saves/[copytext(key, 1, 2)]/[key]/info.sav")
-	var/list/infos
-	info >> infos
-	if(!infos)
-		dat = "No information found on the given key."
-	else
-		for(var/datum/player_info/I in infos)
-			dat += "[I.content]\nby [I.author] ([I.rank]) on [I.timestamp]\n\n"
-
-	return list2params(list(dat))
-
-#undef NOTESFILE

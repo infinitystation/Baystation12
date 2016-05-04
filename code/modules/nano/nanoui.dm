@@ -86,6 +86,8 @@ nanoui is used to open and update nano browser uis
 	add_template("main", ntemplate_filename)
 
 	if (ntitle)
+		title = replacetext(title, "\improper", "")
+		title = replacetext(title, "\proper", "")
 		title = sanitize(ntitle)
 	if (nwidth)
 		width = nwidth
@@ -185,7 +187,9 @@ nanoui is used to open and update nano browser uis
 			"autoUpdateLayout" = auto_update_layout,
 			"autoUpdateContent" = auto_update_content,
 			"showMap" = show_map,
+			"mapName" = using_map.path,
 			"mapZLevel" = map_z_level,
+			"mapZLevels" = using_map.map_levels,
 			"user" = list("name" = user.name)
 		)
 	return config_data
@@ -350,7 +354,9 @@ nanoui is used to open and update nano browser uis
 		template_data_json = json_encode(templates)
 
 	var/list/send_data = get_send_data(initial_data)
-	var/initial_data_json = replacetext(replacetext(json_encode(send_data), "&#34;", "&amp;#34;"), "'", "&#39;")
+	var/initial_data_json = replacetext(replacetext(extA2U(json_encode(send_data)), "&#34;", "&amp;#34;"), "'", "&#39;")
+	initial_data_json = replacetext(initial_data_json, "\improper", "")
+	initial_data_json = replacetext(initial_data_json, "\proper", "")
 
 	var/url_parameters_json = json_encode(list("src" = "\ref[src]"))
 
@@ -466,7 +472,7 @@ nanoui is used to open and update nano browser uis
 	var/list/send_data = get_send_data(data)
 
 	//user << list2json(data) // used for debugging
-	user << output(list2params(list(json_encode(send_data))),"[window_id].browser:receiveUpdateData")
+	user << output(list2params(list(extA2U(json_encode(send_data)))),"[window_id].browser:receiveUpdateData")
 
  /**
   * This Topic() proc is called whenever a user clicks on a link within a Nano UI
@@ -487,8 +493,12 @@ nanoui is used to open and update nano browser uis
 		map_update = 1
 
 	if(href_list["mapZLevel"])
-		set_map_z_level(text2num(href_list["mapZLevel"]))
-		map_update = 1
+		var/map_z = text2num(href_list["mapZLevel"])
+		if(map_z in using_map.map_levels)
+			set_map_z_level(map_z)
+			map_update = 1
+		else
+			return
 
 	if ((src_object && src_object.Topic(href, href_list, state)) || map_update)
 		nanomanager.update_uis(src_object) // update all UIs attached to src_object
