@@ -1,7 +1,7 @@
 /datum/event/portalstorm
 
 	Announce()
-		command_alert("Subspace disruption detected around the vessel", "Anomaly Alert")
+		command_alert("Subspace disruption detected around the vessel", "Тревога: АномалиЯ.")
 		LongTerm()
 
 		var/list/turfs = list(	)

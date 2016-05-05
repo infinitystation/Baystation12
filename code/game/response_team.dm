@@ -114,11 +114,11 @@ proc/trigger_armed_response_team(var/force = 0)
 
 	// there's only a certain chance a team will be sent
 	if(!prob(send_team_chance))
-		command_announcement.Announce("It would appear that an emergency response team was requested for [station_name()]. Unfortunately, we were unable to send one at this time.", "[boss_name]")
+		command_announcement.Announce("Казалось бы, что Команда Экстренного РеагированиЯ была предложена для станции [station_name()]. К сожалению, нет возможности отправить вам один из отрядов.", "[boss_name]")
 		can_call_ert = 0 // Only one call per round, ladies.
 		return
 
-	command_announcement.Announce("It would appear that an emergency response team was requested for [station_name()]. We will prepare and send one as soon as possible.", "[boss_name]")
+	command_announcement.Announce("Казалось бы, что Команда Экстренного РеагированиЯ была предложена для станции [station_name()]. Мы подготовим один из отрядов и отправим его как можно скорее.", "[boss_name]")
 
 	can_call_ert = 0 // Only one call per round, gentleman.
 	send_emergency_team = 1
