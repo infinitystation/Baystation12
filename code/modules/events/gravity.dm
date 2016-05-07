@@ -5,7 +5,7 @@
 	endWhen = rand(15, 60)
 
 /datum/event/gravity/announce()
-	command_announcement.Announce("Feedback surge detected in mass-distributions systems. Artificial gravity has been disabled whilst the system reinitializes. Further failures may result in a gravitational collapse and formation of blackholes.", "Gravity Failure")
+	command_announcement.Announce("ќбратная св€зь зафиксирована в системе массового распределения. »сскуственная гравитация была отключена, но система пытается реинициализировать еЄ обратно. ƒальнейшие ошибки в системе, могут привести к гравитационному сбою и формирированию чЄрных дыр.", "“ревога: ќтказ гравитации")
 
 /datum/event/gravity/start()
 	gravity_is_on = 0
@@ -21,4 +21,4 @@
 			if(A.z in using_map.station_levels)
 				A.gravitychange(gravity_is_on, A)
 
-		command_announcement.Announce("Gravity generators are again functioning within normal parameters. Sorry for any inconvenience.", "Gravity Restored")
+		command_announcement.Announce("√равитационные генераторы снова функционируют в стабильном состо€нии. ћы приносим свои извинения за причинЄнные неудобства.", "√равитация восстановлена")

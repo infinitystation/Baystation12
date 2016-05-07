@@ -1,7 +1,7 @@
 
 /proc/power_failure(var/announce = 1, var/severity = 2, var/list/affected_z_levels)
 	if(announce)
-		command_announcement.Announce("ќбнаружена аномальная активность электроэнергии на станции [station_name()]. ¬ качестве меры предосторожности, станция переходит в режим энергосбережения.", "“ревога: —истема питани€.", new_sound = 'sound/AI/poweroff.ogg')
+		command_announcement.Announce("ќбнаружена аномальная активность электроэнергии на станции [station_name()]. ¬ качестве меры предосторожности, станция переходит в режим энергосбережения.", "“ревога: —истема питания.", new_sound = 'sound/AI/poweroff.ogg')
 
 	for(var/obj/machinery/power/smes/buildable/S in machines)
 		S.energy_fail(rand(15 * severity,30 * severity))
@@ -32,7 +32,7 @@
 /proc/power_restore_quick(var/announce = 1)
 
 	if(announce)
-		command_announcement.Announce("¬се —ћ≈—ы на станции [station_name()] были перезар€жены. ћы приносим свои извинения за доставленные неудобства.", "—истемы питания в норме", new_sound = 'sound/AI/poweron.ogg')
+		command_announcement.Announce("¬се —ћ≈—ы на станции [station_name()] были перезаряжены. ћы приносим свои извинения за доставленные неудобства.", "—истемы питания в норме", new_sound = 'sound/AI/poweron.ogg')
 	for(var/obj/machinery/power/smes/S in machines)
 		S.failure_timer = 0
 		S.charge = S.capacity

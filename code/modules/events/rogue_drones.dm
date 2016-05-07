@@ -44,6 +44,6 @@
 		num_recovered++
 
 	if(num_recovered > drones_list.len * 0.75)
-		command_announcement.Announce("Icarus drone control reports the malfunctioning wing has been recovered safely.", "Rogue drone alert")
+		command_announcement.Announce("Система контроля дронами сообщает, что безопасное восстановление сбойного крыла произошло успешно.", "Тревога: Чужеродный дрон")
 	else
-		command_announcement.Announce("Icarus drone control registers disappointment at the loss of the drones, but the survivors have been recovered.", "Rogue drone alert")
+		command_announcement.Announce("Система контроля дронами регистрирует печальную потерю дронов, но оставшиеся дроны были восстановлены.", "Тревога: Чужеродный дрон")
