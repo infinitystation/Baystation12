@@ -5,4 +5,4 @@
 	power_failure(0, severity, using_map.contact_levels)
 
 /datum/event/grid_check/announce()
-	command_announcement.Announce("Abnormal activity detected in [station_name()]'s powernet. As a precautionary measure, the station's power will be shut off for an indeterminate duration.", "Automated Grid Check", new_sound = 'sound/AI/poweroff.ogg')
+	command_announcement.Announce("Обнаружена аномальная активность электроэнергии на станции [station_name()]. В качестве меры предосторожности, мощность станции будет отключена на неопределённый срок.", "АвтоматическаЯ проверка сети", new_sound = 'sound/AI/poweroff.ogg')

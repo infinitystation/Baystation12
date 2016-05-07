@@ -29,34 +29,34 @@
 	switch(location)
 		if(LOC_KITCHEN)
 			spawn_area_type = /area/crew_quarters/kitchen
-			locstring = "the kitchen"
+			locstring = "кухне"
 		if(LOC_ATMOS)
 			spawn_area_type = /area/engineering/atmos
-			locstring = "atmospherics"
+			locstring = "атмосферной"
 		if(LOC_INCIN)
 			spawn_area_type = /area/maintenance/incinerator
-			locstring = "the incinerator"
+			locstring = "мусоро-сжигателе"
 		if(LOC_CHAPEL)
 			spawn_area_type = /area/chapel/main
-			locstring = "the chapel"
+			locstring = "церкви"
 		if(LOC_LIBRARY)
 			spawn_area_type = /area/library
-			locstring = "the library"
+			locstring = "библиотеке"
 		if(LOC_HYDRO)
 			spawn_area_type = /area/hydroponics
-			locstring = "hydroponics"
+			locstring = "ботанике"
 		if(LOC_VAULT)
 			spawn_area_type = /area/security/nuke_storage
-			locstring = "the vault"
+			locstring = "хранилище"
 		if(LOC_CONSTR)
 			spawn_area_type = /area/construction
-			locstring = "the construction area"
+			locstring = "площаде для застройки"
 		if(LOC_TECH)
 			spawn_area_type = /area/storage/tech
-			locstring = "technical storage"
+			locstring = "техническом хранилище"
 		if(LOC_TACTICAL)
 			spawn_area_type = /area/security/tactical
-			locstring = "tactical equipment storage"
+			locstring = "оружейном хранилище"
 
 	for(var/areapath in typesof(spawn_area_type))
 		var/area/A = locate(areapath)
@@ -71,15 +71,15 @@
 		if(VERM_MICE)
 			spawn_types = list(/mob/living/simple_animal/mouse/gray, /mob/living/simple_animal/mouse/brown, /mob/living/simple_animal/mouse/white)
 			max_number = 12
-			vermstring = "mice"
+			vermstring = "мышей"
 		if(VERM_LIZARDS)
 			spawn_types = list(/mob/living/simple_animal/lizard)
 			max_number = 6
-			vermstring = "lizards"
+			vermstring = "ящериц"
 		if(VERM_SPIDERS)
 			spawn_types = list(/obj/effect/spider/spiderling)
 			max_number = 3
-			vermstring = "spiders"
+			vermstring = "пауков"
 
 	spawn(0)
 		var/num = rand(2,max_number)
@@ -97,7 +97,7 @@
 
 
 /datum/event/infestation/announce()
-	command_announcement.Announce("Bioscans indicate that [vermstring] have been breeding in [locstring]. Clear them out, before this starts to affect productivity.", "Vermin infestation")
+	command_announcement.Announce("Биосканеры зафиксировали размножение [vermstring] в [locstring]. Избавьтесь от них, пока это не сказалось на работоспособности станции.", "Паразитическое оповещение")
 
 #undef LOC_KITCHEN
 #undef LOC_ATMOS

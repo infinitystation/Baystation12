@@ -38,7 +38,7 @@ var/global/universe_has_ended = 0
 /datum/universal_state/supermatter_cascade/OnEnter()
 	set background = 1
 	garbage_collector.garbage_collect = 0
-	world << "<span class='sinister' style='font-size:22pt'>You are blinded by a brilliant flash of energy.</span>"
+	world << "<span class='sinister' style='font-size:22pt'>Вы ослеплены блестящей вспышкой энергии.</span>"
 
 	world << sound('sound/effects/cascade.ogg')
 
@@ -46,7 +46,7 @@ var/global/universe_has_ended = 0
 		flick("e_flash", M.flash)
 
 	if(emergency_shuttle.can_recall())
-		priority_announcement.Announce("The emergency shuttle has returned due to bluespace distortion.")
+		priority_announcement.Announce("Аварийный шаттл был отозван из-за Blue-Space искажения.")
 		emergency_shuttle.recall()
 
 	AreaSet()
@@ -62,17 +62,17 @@ var/global/universe_has_ended = 0
 	new /obj/singularity/narsie/large/exit(pick(endgame_exits))
 	spawn(rand(30,60) SECONDS)
 		var/txt = {"
-There's been a galaxy-wide electromagnetic pulse.  All of our systems are heavily damaged and many personnel are dead or dying. We are seeing increasing indications of the universe itself beginning to unravel.
+По всей галактике произошёл электромагнитный импульс. Все системы сильно повреждены, и большая часть персонала умерла, или ещё умирает. Мы видим, что увеличение показаний самой вселенной, сама начинает расппутываться.
 
-[station_name()], you are the only facility nearby a bluespace rift, which is near your research outpost. You are hereby directed to enter the rift using all means necessary, quite possibly as the last of your species alive.
+[station_name()], вы единственный объект, рядом с Blue-Space разломом, который находится рядом с аванпостом исследований. Это ваше текущее направление. Используйте всё, что поможет вам достич своей цели. Возможно, вы будете последним видом своего рода.
 
-You have five minutes before the universe collapses. Good l\[\[###!!!-
+У вас есть пять минут до того, когда вселенная разрушится. Удачи ва\[\[###!!!-
 
-AUTOMATED ALERT: Link to [command_name()] lost.
+АВТОМАТИЧЕСКАЯ ТРЕВОГА: Соеденение с [command_name()] оборвано.
 
-The access requirements on the Asteroid Shuttles' consoles have now been revoked.
+Все ограничения доступа к консолям шаттлов на астероид были убраны.
 "}
-		priority_announcement.Announce(txt,"SUPERMATTER CASCADE DETECTED")
+		priority_announcement.Announce(txt,"ОБНАРУЖЕН КАСКАД СУПЕРМАТЕРИИ")
 
 		for(var/obj/machinery/computer/shuttle_control/C in machines)
 			if(istype(C, /obj/machinery/computer/shuttle_control/research) || istype(C, /obj/machinery/computer/shuttle_control/mining))

@@ -16,11 +16,11 @@
 		/area/server = NO_SCRUBBER
 	)
 
-	shuttle_docked_message = "The scheduled Crew Transfer Shuttle to %Dock_name% has docked with the station. It will depart in approximately %ETD%"
-	shuttle_leaving_dock = "The Crew Transfer Shuttle has left the station. Estimate %ETA% until the shuttle docks at %dock_name%."
-	shuttle_called_message = "A crew transfer to %Dock_name% has been scheduled. The shuttle has been called. It will arrive in approximately %ETA%"
-	shuttle_recall_message = "The scheduled crew transfer has been cancelled."
-	emergency_shuttle_docked_message = "The Emergency Shuttle has docked with the station. You have approximately %ETD% to board the Emergency Shuttle."
-	emergency_shuttle_leaving_dock = "The Emergency Shuttle has left the station. Estimate %ETA% minutes until the shuttle docks at %dock_name%."
-	emergency_shuttle_called_message = "An emergency evacuation shuttle has been called. It will arrive in approximately %ETA%"
-	emergency_shuttle_recall_message = "The emergency shuttle has been recalled."
+	shuttle_docked_message = "Запланированный шаттл по перевозке экипажа на %Dock_name% пристыковался к станции. Вылет шаттла будет приблизительно через %ETD%."
+	shuttle_leaving_dock = "Запланированный шаттл по перевозке экипажа покинул станцию. Расчётное время до прибытия шаттла к %dock_name% через %ETA%."
+	shuttle_called_message = "Был запланирован шаттл по перевозке экипажа в %Dock_name%. Шаттл был вызван. Примерное время прибытия - %ETA%."
+	shuttle_recall_message = "Запланированный шаттл по перевозке экипажа был отменён."
+	emergency_shuttle_docked_message = "Эвакуационный шаттл пристыковался к станции. У вас есть %ETD% до отлёта шаттла."
+	emergency_shuttle_leaving_dock = "Эвакуационный шаттл покинул станцию. Расчётное время до прибытия шаттла к %dock_name% через %ETA%."
+	emergency_shuttle_called_message = "Эвакуационный шаттл был запрошен. Примерное время прибытия через %ETA%."
+	emergency_shuttle_recall_message = "Эвакуационный шаттл был отозван."
