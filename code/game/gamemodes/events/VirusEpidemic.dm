@@ -13,11 +13,11 @@
 				if(prob(100))	// no lethal diseases outside virus mode!
 					infect_mob_random_lesser(H)
 					if(prob(20))//don't want people to know that the virus alert = greater virus
-						command_alert("ВозможнаЯ вспышка вируса [rand(1,6)] уровнЯ обнаружена на станции [station_name()]. Весь персонал должен сдержать угрозу.", "Тревога: Вирус.")
+						command_alert("Возможная вспышка вируса [rand(1,6)] уровня обнаружена на станции [station_name()]. Весь персонал должен сдержать угрозу.", "Тревога: Вирус.")
 				else
 					infect_mob_random_greater(H)
 					if(prob(80))
-						command_alert("ВозможнаЯ вспышка вируса [rand(2,9)] уровнЯ обнаружена на станции [station_name()]. Весь персонал должен сдержать угрозу.", "Тревога: Вирус.")
+						command_alert("Возможная вспышка вируса [rand(2,9)] уровня обнаружена на станции [station_name()]. Весь персонал должен сдержать угрозу.", "Тревога: Вирус.")
 				break
 			//overall virus alert happens 26% of the time, might need to be higher
 		else
@@ -73,7 +73,7 @@
 					H.viruses += D
 					break
 			spawn(rand(3000, 6000)) //Delayed announcements to keep the crew on their toes.
-				command_alert("Потверждена вспышка 7 уровнЯ на станции [station_name()]. Весь персонал должен сдержать угрозу.", "Тревога: БиологическаЯ угроза.")
+				command_alert("Потверждена вспышка 7 уровня на станции [station_name()]. Весь персонал должен сдержать угрозу.", "Тревога: БиологическаЯ угроза.")
 				world << sound('sound/AI/outbreak7.ogg')
 	Tick()
 		ActiveFor = Lifetime //killme

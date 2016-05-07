@@ -42,7 +42,7 @@
 				spawn_meteors()
 
 		if(2)
-			command_alert("На станции были зафиксированы гравитационные аномалии. ДополнительнаЯ информациЯ отсутствует.", "Тревога: АномалиЯ")
+			command_alert("На станции были зафиксированы гравитационные аномалии. Дополнительная информация отсутствует.", "Тревога: АномалиЯ")
 			for(var/mob/M in player_list)
 				if(!istype(M,/mob/new_player))
 					M << sound('sound/AI/granomalies.ogg')
@@ -52,7 +52,7 @@
 				qdel(bh)
 		/*
 		if(3) //Leaving the code in so someone can try and delag it, but this event can no longer occur randomly, per SoS's request. --NEO
-			command_alert("На станции были зафискированы пространственно-временные аномалии. ДополнительнаЯ информациЯ отсутствует.", "Тревога: АномалиЯ")
+			command_alert("На станции были зафискированы пространственно-временные аномалии. Дополнительная информация отсутствует.", "Тревога: АномалиЯ")
 			world << sound('sound/AI/spanomalies.ogg')
 			var/list/turfs = new
 			var/turf/picked
@@ -117,7 +117,7 @@ var/hadevent    = 0
 
 
 /proc/alien_infestation(var/spawncount = 1) // -- TLE
-	//command_alert("Неидентифицированные формы жизни были обнаружены на [station_name()]. Проверьте все внешние доступы, а так же вентилЯции.", "Тревога: Зафиксирована новая форма жизни на борту станции")
+	//command_alert("Неидентифицированные формы жизни были обнаружены на [station_name()]. Проверьте все внешние доступы, а так же вентиляции.", "Тревога: Зафиксирована новаЯ форма жизни на борту станции")
 	//world << sound('sound/AI/aliens.ogg')
 	var/list/vents = list()
 	for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in machines)
@@ -141,7 +141,7 @@ var/hadevent    = 0
 		spawncount--
 
 	spawn(rand(5000, 6000)) //Delayed announcements to keep the crew on their toes.
-		command_announcement.Announce("Неидентифицированные формы жизни были обнаружены на станции [station_name()]. Проверьте все внешние доступы, а так же вентилЯции.", "Тревога: Зафиксирована новаЯ форма жизни на борту станции", new_sound = 'sound/AI/aliens.ogg')
+		command_announcement.Announce("Неидентифицированные формы жизни были обнаружены на станции [station_name()]. Проверьте все внешние доступы, а так же вентиляции.", "Тревога: Зафиксирована новаЯ форма жизни на борту станции", new_sound = 'sound/AI/aliens.ogg')
 
 /proc/high_radiation_event()
 
@@ -170,7 +170,7 @@ var/hadevent    = 0
 					randmutg(H)
 					domutcheck(H,null,MUTCHK_FORCED)
 	sleep(100)
-	command_announcement.Announce("Замечен высокий уровень радиации рЯдом со станцией. Пожалуйста, обратитесь к врачам если вы чувствуйте себЯ плохо.", "Тревога: АномалиЯ", new_sound = 'sound/AI/radiation.ogg')
+	command_announcement.Announce("Замечен высокий уровень радиации рядом со станцией. Пожалуйста, обратитесь к врачам если вы чувствуйте себя плохо.", "Тревога: АномалиЯ", new_sound = 'sound/AI/radiation.ogg')
 
 
 
@@ -209,7 +209,7 @@ var/hadevent    = 0
 				temp_timer.releasetime = 1
 
 		sleep(150)
-		command_announcement.Announce("Gr3y.T1d3 вирус был обнаружен на станции [station_name()]. РекомендуетсЯ вмешательство ИИ.", "Тревога: Компьютерный вирус")
+		command_announcement.Announce("Gr3y.T1d3 вирус был обнаружен на станции [station_name()]. Рекомендуется вмешательство ИИ.", "Тревога: Компьютерный вирус")
 	else
 		world.log << "ERROR: Could not initate grey-tide. Unable find prison or brig area."
 
@@ -219,7 +219,7 @@ var/hadevent    = 0
 			new /mob/living/simple_animal/hostile/carp(C.loc)
 	//sleep(100)
 	spawn(rand(300, 600)) //Delayed announcements to keep the crew on their toes.
-		command_announcement.Announce("Неизвестные биологические существа были обнаружены рядом со станции [station_name()], пожалуйста ожидайте.", "Тревога: Зафиксирована новая форма жизни на борту станции", new_sound = 'sound/AI/commandreport.ogg')
+		command_announcement.Announce("Неизвестные биологические существа были обнаружены рядом со станции [station_name()], пожалуйста ожидайте.", "Тревога: Зафиксирована новаЯ форма жизни на борту станции", new_sound = 'sound/AI/commandreport.ogg')
 
 /proc/lightsout(isEvent = 0, lightsoutAmount = 1,lightsoutRange = 25) //leave lightsoutAmount as 0 to break ALL lights
 	if(isEvent)

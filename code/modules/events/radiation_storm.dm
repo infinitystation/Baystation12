@@ -9,14 +9,14 @@
 	var/postStartTicks 		= 0
 
 /datum/event/radiation_storm/announce()
-	command_announcement.Announce("Замечен радиационный шторм по курсу станции. Ограничение доступа в технические тоннелли будет снят. Пожалуйста, пройдите в ближайшие технические туннели.", "Тревога: Радиационный шторм", new_sound = 'sound/AI/radiation.ogg')
+	command_announcement.Announce("Замечен радиационный шторм по курсу станции. Ограничение доступа в технические тоннели будет снят. Пожалуйста, пройдите в ближайшие технические тоннели.", "Тревога: Радиационный шторм", new_sound = 'sound/AI/radiation.ogg')
 
 /datum/event/radiation_storm/start()
 	make_maint_all_access()
 
 /datum/event/radiation_storm/tick()
 	if(activeFor == enterBelt)
-		command_announcement.Announce("СтанциЯ вошла в радиационный шторм. Пожалуйста, оставайтесь в технических тоннелях до окончания шторма.", "Тревога: Радиационный шторм")
+		command_announcement.Announce("Станция вошла в радиационный шторм. Пожалуйста, оставайтесь в технических тоннелях до окончания шторма.", "Тревога: Радиационный шторм")
 		radiate()
 
 	if(activeFor >= enterBelt && activeFor <= leaveBelt)

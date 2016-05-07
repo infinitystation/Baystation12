@@ -7,7 +7,7 @@
 
 		if(pick_turfs.len)
 			//All ready. Announce that bad juju is afoot.
-			command_announcement.Announce("На станции были зафискированы пространственно-временные аномалии. ДополнительнаЯ информациЯ отсутствует.", "Тревога: АномалиЯ.", new_sound = 'sound/AI/spanomalies.ogg')
+			command_announcement.Announce("На станции были зафискированы пространственно-временные аномалии. Дополнительная информация отсутствует.", "Тревога: АномалиЯ.", new_sound = 'sound/AI/spanomalies.ogg')
 
 			//prob(20) can be approximated to 1 wormhole every 5 turfs!
 			//admittedly less random but totally worth it >_<

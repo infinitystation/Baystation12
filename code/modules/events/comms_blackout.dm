@@ -2,7 +2,7 @@
 /proc/communications_blackout(var/silent = 1)
 
 	if(!silent)
-		command_announcement.Announce("ќбнаружена аномалия ионо-сферы. ¬ременный разрыв телекоммуникационных связей неизбежен. ѕожалуйста свяжитесь с ваши-BZZT", new_sound = 'sound/misc/interference.ogg')
+		command_announcement.Announce("ќбнаружена аномали€ ионо-сферы. ¬ременный разрыв телекоммуникационных св€зей неизбежен. ѕожалуйста св€житесь с ваши-BZZT", new_sound = 'sound/misc/interference.ogg')
 	else // AIs will always know if there's a comm blackout, rogue AIs could then lie about comm blackouts in the future while they shutdown comms
 		for(var/mob/living/silicon/ai/A in player_list)
 			A << "<br>"

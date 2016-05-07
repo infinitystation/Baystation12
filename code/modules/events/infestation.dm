@@ -50,7 +50,7 @@
 			locstring = "хранилище"
 		if(LOC_CONSTR)
 			spawn_area_type = /area/construction
-			locstring = "площаде для застройки"
+			locstring = "площаде дл€ застройки"
 		if(LOC_TECH)
 			spawn_area_type = /area/storage/tech
 			locstring = "техническом хранилище"
