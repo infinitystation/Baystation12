@@ -58,7 +58,7 @@
 		usr << "<span class='danger'>You have deadchat muted.</span>"
 		return
 
-	say_dead_direct("[pick("דמגמנטע","דמגמנטע","דמגמנטע","דמגמנטע","דמגמנטע")], <span class='message'>\"[message]\"</span>", src)
+	say_dead_direct("[pick("דמגמנטע","ץםûקוע","םמוע","דמגמנטע","דמגמנטע")], <span class='message'>\"[message]\"</span>", src)
 
 /mob/proc/say_understands(var/mob/other,var/datum/language/speaking = null)
 
