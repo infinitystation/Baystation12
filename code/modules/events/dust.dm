@@ -3,13 +3,13 @@
 	endWhen		= 30
 
 /datum/event/dust/announce()
-	command_announcement.Announce("The station is now passing through a belt of space dust.", "Dust Alert")
+	command_announcement.Announce("Станция входит в зону космической пыли.", "Тревога: КосмическаЯ пыль")
 
 /datum/event/dust/start()
 	dust_swarm(get_severity())
 
 /datum/event/dust/end()
-	command_announcement.Announce("The station has now passed through the belt of space dust.", "Dust Notice")
+	command_announcement.Announce("Станция вышла из зоны космической пыли.", "Уведомление: КосмическаЯ пыль")
 
 /datum/event/dust/proc/get_severity()
 	switch(severity)

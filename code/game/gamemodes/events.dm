@@ -30,7 +30,7 @@
 		eventNumbersToPickFrom += 3
 	switch(pick(eventNumbersToPickFrom))
 		if(1)
-			command_alert("Meteors have been detected on collision course with the station.", "Meteor Alert")
+			command_alert("Метеоры были обнаружены по курсу станции, приготовьтесь к столкновению.", "Тревога: Метеоритный поЯс")
 			for(var/mob/M in player_list)
 				if(!istype(M,/mob/new_player))
 					M << sound('sound/AI/meteors.ogg')
@@ -42,7 +42,7 @@
 				spawn_meteors()
 
 		if(2)
-			command_alert("Gravitational anomalies detected on the station. There is no additional data.", "Anomaly Alert")
+			command_alert("На станции были зафиксированы гравитационные аномалии. Дополнительная информация отсутствует.", "Тревога: АномалиЯ")
 			for(var/mob/M in player_list)
 				if(!istype(M,/mob/new_player))
 					M << sound('sound/AI/granomalies.ogg')
@@ -52,7 +52,7 @@
 				qdel(bh)
 		/*
 		if(3) //Leaving the code in so someone can try and delag it, but this event can no longer occur randomly, per SoS's request. --NEO
-			command_alert("Space-time anomalies detected on the station. There is no additional data.", "Anomaly Alert")
+			command_alert("На станции были зафискированы пространственно-временные аномалии. Дополнительная информация отсутствует.", "Тревога: АномалиЯ")
 			world << sound('sound/AI/spanomalies.ogg')
 			var/list/turfs = new
 			var/turf/picked
@@ -117,7 +117,7 @@ var/hadevent    = 0
 
 
 /proc/alien_infestation(var/spawncount = 1) // -- TLE
-	//command_alert("Unidentified lifesigns detected coming aboard [station_name()]. Secure any exterior access, including ducting and ventilation.", "Lifesign Alert")
+	//command_alert("Неидентифицированные формы жизни были обнаружены на [station_name()]. Проверьте все внешние доступы, а так же вентиляции.", "Тревога: Зафиксирована новаЯ форма жизни на борту станции")
 	//world << sound('sound/AI/aliens.ogg')
 	var/list/vents = list()
 	for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in machines)
@@ -141,7 +141,7 @@ var/hadevent    = 0
 		spawncount--
 
 	spawn(rand(5000, 6000)) //Delayed announcements to keep the crew on their toes.
-		command_announcement.Announce("Unidentified lifesigns detected coming aboard [station_name()]. Secure any exterior access, including ducting and ventilation.", "Lifesign Alert", new_sound = 'sound/AI/aliens.ogg')
+		command_announcement.Announce("Неидентифицированные формы жизни были обнаружены на станции [station_name()]. Проверьте все внешние доступы, а так же вентиляции.", "Тревога: Зафиксирована новаЯ форма жизни на борту станции", new_sound = 'sound/AI/aliens.ogg')
 
 /proc/high_radiation_event()
 
@@ -170,7 +170,7 @@ var/hadevent    = 0
 					randmutg(H)
 					domutcheck(H,null,MUTCHK_FORCED)
 	sleep(100)
-	command_announcement.Announce("High levels of radiation detected near the station. Please report to the Med-bay if you feel strange.", "Anomaly Alert", new_sound = 'sound/AI/radiation.ogg')
+	command_announcement.Announce("Замечен высокий уровень радиации рядом со станцией. Пожалуйста, обратитесь к врачам если вы чувствуйте себя плохо.", "Тревога: АномалиЯ", new_sound = 'sound/AI/radiation.ogg')
 
 
 
@@ -209,7 +209,7 @@ var/hadevent    = 0
 				temp_timer.releasetime = 1
 
 		sleep(150)
-		command_announcement.Announce("Gr3y.T1d3 virus detected in [station_name()] imprisonment subroutines. Recommend station AI involvement.", "Security Alert")
+		command_announcement.Announce("Gr3y.T1d3 вирус был обнаружен на станции [station_name()]. Рекомендуется вмешательство ИИ.", "Тревога: Компьютерный вирус")
 	else
 		world.log << "ERROR: Could not initate grey-tide. Unable find prison or brig area."
 
@@ -219,11 +219,11 @@ var/hadevent    = 0
 			new /mob/living/simple_animal/hostile/carp(C.loc)
 	//sleep(100)
 	spawn(rand(300, 600)) //Delayed announcements to keep the crew on their toes.
-		command_announcement.Announce("Unknown biological entities have been detected near [station_name()], please stand-by.", "Lifesign Alert", new_sound = 'sound/AI/commandreport.ogg')
+		command_announcement.Announce("Неизвестные биологические существа были обнаружены рядом со станции [station_name()], пожалуйста ожидайте.", "Тревога: Зафиксирована новаЯ форма жизни на борту станции", new_sound = 'sound/AI/commandreport.ogg')
 
 /proc/lightsout(isEvent = 0, lightsoutAmount = 1,lightsoutRange = 25) //leave lightsoutAmount as 0 to break ALL lights
 	if(isEvent)
-		command_announcement.Announce("An Electrical storm has been detected in your area, please repair potential electronic overloads.","Electrical Storm Alert")
+		command_announcement.Announce("Электрический шторм был зафиксирован в вашем регионе, пожалуйста проверьте и восстановите своё оборудование.","Тревога: Электрический шторм")
 
 	if(lightsoutAmount)
 		var/list/epicentreList = list()
