@@ -30,8 +30,8 @@
 		)
 
 	var/global/list/possible_say_verbs = list(
-		"Robotic" = list("states","declares","queries"),
-		"Natural" = list("says","yells","asks"),
+		"Robotic" = list("констатирует","оглашает","запрашивает"),
+		"Natural" = list("говорит","вопит","спрашивает"),
 		"Beep" = list("beeps","beeps loudly","boops"),
 		"Chirp" = list("chirps","chirrups","cheeps"),
 		"Feline" = list("purrs","yowls","meows")

@@ -71,7 +71,7 @@
 /datum/language/human
 	name = LANGUAGE_SOL_COMMON
 	desc = "A bastardized hybrid of informal English and elements of Mandarin Chinese; the common language of the Sol system."
-	speech_verb = "says"
+	speech_verb = "говорит"
 	whisper_verb = "whispers"
 	colour = "solcom"
 	key = "1"
@@ -82,7 +82,7 @@
 /datum/language/human/get_spoken_verb(var/msg_end)
 	switch(msg_end)
 		if("!")
-			return pick("exclaims","shouts","yells") //TODO: make the basic proc handle lists of verbs.
+			return pick("восклицает","кричит","вопит") //TODO: make the basic proc handle lists of verbs.
 		if("?")
 			return ask_verb
 	return speech_verb

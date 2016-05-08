@@ -22,8 +22,8 @@
 /datum/language/common
 	name = "Galactic Common"
 	desc = "The common galactic tongue."
-	speech_verb = "says"
-	whisper_verb = "whispers"
+	speech_verb = "говорит"
+	whisper_verb = "шепчет"
 	key = "0"
 	flags = RESTRICTED
 	syllables = list("blah","blah","blah","bleh","meh","neh","nah","wah")
@@ -32,7 +32,7 @@
 /datum/language/common/get_spoken_verb(var/msg_end)
 	switch(msg_end)
 		if("!")
-			return pick("exclaims","shouts","yells") //TODO: make the basic proc handle lists of verbs.
+			return pick("восклицает","кричит","вопит") //TODO: make the basic proc handle lists of verbs.
 		if("?")
 			return ask_verb
 	return speech_verb

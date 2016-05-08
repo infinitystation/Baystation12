@@ -72,10 +72,10 @@
 	var/gibbed_anim = "gibbed-h"
 	var/dusted_anim = "dust-h"
 	var/death_sound
-	var/death_message = "seizes up and falls limp, their eyes dead and lifeless..."
-	var/knockout_message = "has been knocked unconscious!"
-	var/halloss_message = "slumps to the ground, too weak to continue fighting."
-	var/halloss_message_self = "You're in too much pain to keep going..."
+	var/death_message = "молчаливо застыл и упал замертво. Его глаза мертвые и безжизненные..."
+	var/knockout_message = "был оглушён и свален на землю!"
+	var/halloss_message = "падает на землю, он слишком слаб, чтобы продолжать борьбу."
+	var/halloss_message_self = "Тебе слишком больно, чтобы продолжать..."
 
 	// Environment tolerance/life processes vars.
 	var/reagent_tag                                   //Used for metabolizing reagents.
@@ -101,14 +101,14 @@
 	var/heat_discomfort_level = 315                   // Aesthetic messages about feeling warm.
 	var/cold_discomfort_level = 285                   // Aesthetic messages about feeling chilly.
 	var/list/heat_discomfort_strings = list(
-		"You feel sweat drip down your neck.",
-		"You feel uncomfortably warm.",
-		"Your skin prickles in the heat."
+		"Вы чувствуйте, как капли пота падают и сползают на шею.",
+		"Вы чувствуйте дискомфорт, наверно, тут слишком тепло.",
+		"Вы ощущайте покалывание при такой теплоте."
 		)
 	var/list/cold_discomfort_strings = list(
-		"You feel chilly.",
-		"You shiver suddenly.",
-		"Your chilly flesh stands out in goosebumps."
+		"Вы чувствуете, что ваша кожа холоднее чем обычно.",
+		"Неожиданно, вы стали дрожать.",
+		"Ваше холоденькое тело покрылось мурашками."
 		)
 
 	// HUD data vars.

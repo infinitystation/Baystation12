@@ -30,7 +30,7 @@
 	icon_living = "evilcrab"
 	icon_dead = "evilcrab_dead"
 
-	speak_emote = list("chitters","clicks")
+	speak_emote = list("chitters","щёлкает")
 
 
 	health = 200
@@ -53,7 +53,7 @@
 	icon_dead = "shark_dead"
 	pixel_x = -16
 
-	speak_emote = list("gnashes")
+	speak_emote = list("скрежещет")
 
 	health = 100
 	maxHealth = 100
@@ -74,7 +74,7 @@
 	icon_state = "horror"
 	icon_living = "horror"
 
-	speak_emote = list("moans", "groans")
+	speak_emote = list("стонет", "говорит")
 
 	response_help = "thinks better of touching"
 
@@ -142,7 +142,7 @@
 	icon_dead = "mouse_gray_dead"
 	icon_rest = "mouse_gray_sleep"
 
-	speak_emote = list("squeeks")
+	speak_emote = list("пищит")
 	holder_type = /obj/item/weapon/holder/mouse
 	pass_flags = PASSTABLE
 	mob_size = MOB_MINISCULE
@@ -172,7 +172,7 @@
 	icon_rest = "cat3_rest"
 
 
-	speak_emote = list("meows", "purrs")
+	speak_emote = list("meows", "мурлычит")
 	holder_type = /obj/item/weapon/holder/cat
 	mob_size = MOB_SMALL
 
