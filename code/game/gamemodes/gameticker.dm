@@ -47,7 +47,8 @@ var/global/datum/controller/gameticker/ticker
 	'sound/music/space_asshole.ogg',\
 	'sound/music/THUNDERDOME.ogg',\
 	'sound/music/title2.ogg',\
-	'sound/music/space_oddity.ogg') //Ground Control to Major Tom, this song is cool, what's going on?
+	'sound/music/royksopp_i_dust_dont_understand_you.ogg',\
+	'sound/music/space_oddity.ogg')//Ground Control to Major Tom, this song is cool, what's going on?
 	do
 		if(!gamemode_voted)
 			pregame_timeleft = 180
