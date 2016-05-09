@@ -72,9 +72,9 @@
 	var/gibbed_anim = "gibbed-h"
 	var/dusted_anim = "dust-h"
 	var/death_sound
-	var/death_message = "молчаливо застыл и упал замертво. Его глаза мертвые и безжизненные..."
+	var/death_message = "молчаливо застыл и побледнел. Его глаза мертвые и безжизненные..."
 	var/knockout_message = "был оглушён и свален на землю!"
-	var/halloss_message = "падает на землю, он слишком слаб, чтобы продолжать борьбу."
+	var/halloss_message = "падает на землю, он слишком слаб, чтобы продолжать борьбу"
 	var/halloss_message_self = "Тебе слишком больно, чтобы продолжать..."
 
 	// Environment tolerance/life processes vars.
@@ -101,14 +101,14 @@
 	var/heat_discomfort_level = 315                   // Aesthetic messages about feeling warm.
 	var/cold_discomfort_level = 285                   // Aesthetic messages about feeling chilly.
 	var/list/heat_discomfort_strings = list(
-		"Вы чувствуйте, как капли пота падают и сползают на шею.",
+		"Вы чувствуйте, как капли пота падают и сползают вам на шею.",
 		"Вы чувствуйте дискомфорт, наверно, тут слишком тепло.",
-		"Вы ощущайте покалывание при такой теплоте."
+		"Вы ощущайте покалывание при такой тепературе."
 		)
 	var/list/cold_discomfort_strings = list(
 		"Вы чувствуете, что ваша кожа холоднее чем обычно.",
 		"Неожиданно, вы стали дрожать.",
-		"Ваше холоденькое тело покрылось мурашками."
+		"Ваше тело покрылось мурашками."
 		)
 
 	// HUD data vars.

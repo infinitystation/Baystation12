@@ -185,7 +185,7 @@
 					if(1)
 						emote("twitch")
 					if(2 to 3)
-						say("[prob(50) ? ";" : ""][pick("SHIT", "PISS", "FUCK", "CUNT", "COCKSUCKER", "MOTHERFUCKER", "TITS")]")
+						say("[prob(50) ? ";" : ""][pick("депэлн", "лнвю", "уси", "охгдю", "янясмнй", "лсдюй", "яхяэйх")]")
 				make_jittery(100)
 				return
 	if (disabilities & NERVOUS)

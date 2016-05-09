@@ -86,4 +86,4 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 	for(var/obj/effect/immovablerod/imm in world)
 		return
 	sleep(50)
-	command_announcement.Announce("Что сейчас произошло?!", "ОбщаЯ тревога.")
+	command_announcement.Announce("Что сейчас произошло?!", "Общественная тревога.")
