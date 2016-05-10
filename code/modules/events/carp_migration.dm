@@ -13,7 +13,7 @@
 	if(severity == EVENT_LEVEL_MAJOR)
 		announcement = "Массивнаое движение неизвестных биологических существ было обнаружено рядом со станцией [station_name()], пожалуйста оставайтесь на связи."
 	else
-		announcement = "Неизвестный биологический [spawned_carp.len == 1 ? "entity has" : "entities have"] был замечен рядом со станцией [station_name()], пожалуйста оставайтесь на связи."
+		announcement = "[spawned_carp.len == 1 ? "Неизвестный биологический объект был замечен" : "Неизвестные биологические объекты были замечены"] рядом со станцией [station_name()], пожалуйста оставайтесь на связи."
 	command_announcement.Announce(announcement, "Тревога: Зафиксирована новаЯ форма жизни вне борта станции")
 
 /datum/event/carp_migration/start()
