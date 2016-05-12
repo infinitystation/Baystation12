@@ -76,3 +76,8 @@ var/round_start_time = 0
 
 /proc/SQLtime()
 	return time2text(world.realtime, "YYYY-MM-DD hh:mm:ss")
+
+//Can be useful for things dependent on process timing
+/proc/process_schedule_interval(var/process_name)
+	var/datum/controller/process/process = processScheduler.getProcess(process_name)
+	return process.schedule_interval

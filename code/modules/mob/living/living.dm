@@ -44,6 +44,11 @@ default behaviour is:
 			return 1
 		return 0
 
+/mob/living/canface()
+	if(stat)
+		return 0
+	return ..()
+
 /mob/living/Bump(atom/movable/AM, yes)
 	spawn(0)
 		if ((!( yes ) || now_pushing) || !loc)
@@ -355,7 +360,7 @@ default behaviour is:
 	return 0
 
 
-/mob/living/proc/can_inject()
+/mob/living/proc/can_inject(var/mob/user, var/target_zone)
 	return 1
 
 /mob/living/proc/get_organ_target()
