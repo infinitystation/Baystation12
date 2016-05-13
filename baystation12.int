@@ -1,11 +1,11 @@
 // BEGIN_INTERNALS
 /*
 LAST_COMPILE_TIME: 1461762749
-DIR: code code\_helpers code\_onclick\hud code\ATMOSPHERICS\components code\ATMOSPHERICS\components\omni_devices code\ATMOSPHERICS\components\trinary_devices code\ATMOSPHERICS\components\unary code\controllers\ProcessScheduler code\controllers\ProcessScheduler\core code\datums\helper_datums code\game code\game\dna code\game\gamemodes code\game\gamemodes\cult code\game\gamemodes\endgame code\game\gamemodes\endgame\supermatter_cascade code\game\machinery code\game\machinery\atmoalter code\game\machinery\computer code\game\machinery\doors code\game\mecha code\game\mecha\equipment code\game\mecha\equipment\weapons code\game\objects code\game\objects\effects code\game\objects\items code\game\objects\items\devices code\game\objects\items\devices\PDA code\game\objects\items\weapons code\game\objects\items\weapons\tanks code\game\objects\structures code\game\objects\structures\crates_lockers code\game\objects\structures\crates_lockers\closets code\game\objects\structures\crates_lockers\closets\secure code\game\objects\structures\stool_bed_chair_nest code\game\turfs code\game\turfs\flooring code\modules code\modules\admin code\modules\admin\verbs code\modules\clothing code\modules\clothing\masks code\modules\clothing\suits code\modules\flufftext code\modules\mob code\modules\mob\living code\modules\mob\living\carbon code\modules\mob\living\carbon\alien code\modules\mob\living\carbon\alien\diona code\modules\mob\living\carbon\brain code\modules\mob\living\carbon\human code\modules\mob\living\carbon\metroid code\modules\mob\living\silicon code\modules\mob\living\silicon\ai code\modules\mob\living\silicon\pai code\modules\mob\living\silicon\robot code\modules\mob\living\simple_animal code\modules\mob\living\simple_animal\borer code\modules\mob\observer code\modules\mob\observer\ghost code\modules\tgui 
+DIR: code code\_helpers code\_onclick\hud code\ATMOSPHERICS\components code\ATMOSPHERICS\components\omni_devices code\ATMOSPHERICS\components\trinary_devices code\ATMOSPHERICS\components\unary code\controllers\ProcessScheduler code\modules code\modules\mob code\modules\mob\observer code\modules\mob\observer\ghost code\modules\security levels maps maps\exodus 
 AUTO_FILE_DIR: OFF
 MAP_ICON_TYPE: 0
 LAST_COMPILE_VERSION: 510.1339
-WINDOW: code\_helpers\text.dm
-FILE: code\_helpers\text.dm
+WINDOW: code\_helpers\text.dm;code\modules\security levels\security levels.dm;code\modules\mob\observer\ghost\ghost.dm
+FILE: code\modules\mob\observer\ghost\ghost.dm
 */
 // END_INTERNALS
