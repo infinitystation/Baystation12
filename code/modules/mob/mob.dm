@@ -144,10 +144,10 @@
 	if(pulling)
 		if(istype(pulling, /obj))
 			var/obj/O = pulling
-			. += O.w_class / 2
+			. += O.w_class / 5
 		else if(istype(pulling, /mob))
 			var/mob/M = pulling
-			. += M.mob_size / 5
+			. += M.mob_size / MOB_MEDIUM
 		else
 			. += 1
 
@@ -228,7 +228,7 @@
 	set category = "IC"
 
 	if((is_blind(src) || usr.stat) && !isobserver(src))
-		src << "<span class='notice'>Something is there but you can't see it.</span>"
+		src << "<span class='notice'>Похоже, тут что-то есть, но вы не можете этого увидеть.</span>"
 		return 1
 
 	face_atom(A)
@@ -388,22 +388,22 @@
 	set category = "OOC"
 
 	if (!( config.abandon_allowed ))
-		usr << "<span class='notice'>Respawn is disabled.</span>"
+		usr << "<span class='notice'>Респаун выключен.</span>"
 		return
 	if ((stat != DEAD || !( ticker )))
-		usr << "<span class='notice'><B>You must be dead to use this!</B></span>"
+		usr << "<span class='notice'><B>Вы должны быть мертвы чтобы использовать эту возможность!</B></span>"
 		return
 	if (ticker.mode && ticker.mode.deny_respawn)
-		usr << "<span class='notice'>Respawn is disabled for this roundtype.</span>"
+		usr << "<span class='notice'>Респаун отключён для этого раунда.</span>"
 		return
 	else if(!MayRespawn(1, config.respawn_delay))
 		return
 
-	usr << "You can respawn now, enjoy your new life!"
+	usr << "Вам было выдано разрешение на респаун, наслаждайтесь новой жизнью!"
 
 	log_game("[usr.name]/[usr.key] used abandon mob.")
 
-	usr << "<span class='notice'><B>Make sure to play a different character, and please roleplay correctly!</B></span>"
+	usr << "<span class='notice'><B>Убедитесь в том, что вы будете играть другим персонажем, и пожалуйста, отыгрывайте правильно!</B></span>"
 
 	if(!client)
 		log_game("[usr.key] AM failed due to disconnect.")
@@ -725,9 +725,8 @@
 // facing verbs
 /mob/proc/canface()
 	if(!canmove)						return 0
-	if(stat)							return 0
 	if(anchored)						return 0
-	if(transforming)						return 0
+	if(transforming)					return 0
 	return 1
 
 // Not sure what to call this. Used to check if humans are wearing an AI-controlled exosuit and hence don't need to fall over yet.

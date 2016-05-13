@@ -2,10 +2,6 @@
 /mob/living/carbon/human/whisper(message as text)
 	var/alt_name = ""
 
-	if(say_disabled)	//This is here to try to identify lag problems
-		usr << "\red Speech is currently admin-disabled."
-		return
-
 	message = sanitize(message)
 	log_whisper("[src.name]/[src.key] : [message]")
 
@@ -35,7 +31,7 @@
 
 
 //This is used by both the whisper verb and human/say() to handle whispering
-/mob/living/carbon/human/proc/whisper_say(var/message, var/datum/language/speaking = null, var/alt_name="", var/verb="whispers")
+/mob/living/carbon/human/proc/whisper_say(var/message, var/datum/language/speaking = null, var/alt_name="", var/verb="шепчет")
 
 	if (istype(src.wear_mask, /obj/item/clothing/mask/muzzle))
 		src << "<span class='danger'>You're muzzled and cannot speak!</span>"

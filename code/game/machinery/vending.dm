@@ -484,7 +484,7 @@
 		coin.forceMove(src.loc)
 		if(!usr.get_active_hand())
 			usr.put_in_hands(coin)
-		usr << "<span class='notice'>You remove \the [coin] from the \[src]</span>"
+		usr << "<span class='notice'>You remove \the [coin] from \the [src]</span>"
 		coin = null
 		categories &= ~CAT_COIN
 
@@ -562,6 +562,11 @@
 		flick(src.icon_vend,src)
 	spawn(src.vend_delay)
 		R.get_product(get_turf(src))
+		if(prob(1))
+			sleep(3)
+			if(R.get_product(get_turf(src)))
+				src.visible_message("<span class='notice'>\The [src] clunks as it vends an additional item.</span>")
+
 		src.status_message = ""
 		src.status_error = 0
 		src.vend_ready = 1

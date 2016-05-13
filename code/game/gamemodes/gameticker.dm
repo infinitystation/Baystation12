@@ -47,7 +47,8 @@ var/global/datum/controller/gameticker/ticker
 	'sound/music/space_asshole.ogg',\
 	'sound/music/THUNDERDOME.ogg',\
 	'sound/music/title2.ogg',\
-	'sound/music/space_oddity.ogg') //Ground Control to Major Tom, this song is cool, what's going on?
+	'sound/music/royksopp_i_dust_dont_understand_you.ogg',\
+	'sound/music/space_oddity.ogg')//Ground Control to Major Tom, this song is cool, what's going on?
 	do
 		if(!gamemode_voted)
 			pregame_timeleft = 180
@@ -158,7 +159,7 @@ var/global/datum/controller/gameticker/ticker
 			//Deleting Startpoints but we need the ai point to AI-ize people later
 			if (S.name != "AI")
 				qdel(S)
-		world << "<FONT color='blue'><B>Enjoy the game!</B></FONT>"
+		world << "<FONT color='blue'><B>Наслаждайтесь игрой!</B></FONT>"
 		world << sound('sound/AI/welcome.ogg') // Skie
 		//Holiday Round-start stuff	~Carn
 		Holiday_Game_Start()
@@ -321,7 +322,7 @@ var/global/datum/controller/gameticker/ticker
 		if(captainless)
 			for(var/mob/M in player_list)
 				if(!istype(M,/mob/new_player))
-					M << "Captainship not forced on anyone."
+					M << "Текущий капитан отсутствует."
 
 
 	proc/process()
@@ -392,36 +393,36 @@ var/global/datum/controller/gameticker/ticker
 			//call a transfer shuttle vote
 			spawn(50)
 				if(!round_end_announced) // Spam Prevention. Now it should announce only once.
-					world << "<span class='danger'>The round has ended!</span>"
+					world << "<span class='danger'>Раунд был окончен!</span>"
 					round_end_announced = 1
 				vote.autotransfer()
 
 		return 1
 
 /datum/controller/gameticker/proc/declare_completion()
-	world << "<br><br><br><H1>A round of [mode.name] has ended!</H1>"
+	world << "<br><br><br><H1>Раунд [mode.name] был окончен!</H1>"
 	for(var/mob/Player in player_list)
 		if(Player.mind && !isnewplayer(Player))
 			if(Player.stat != DEAD)
 				var/turf/playerTurf = get_turf(Player)
 				if(emergency_shuttle.departed && emergency_shuttle.evac)
 					if(isNotAdminLevel(playerTurf.z))
-						Player << "<font color='blue'><b>You managed to survive, but were marooned on [station_name()] as [Player.real_name]...</b></font>"
+						Player << "<font color='blue'><b>You managed to survive, but were marooned on [station_name()] в роли [Player.real_name]...</b></font>"
 					else
-						Player << "<font color='green'><b>You managed to survive the events on [station_name()] as [Player.real_name].</b></font>"
+						Player << "<font color='green'><b>Вам удалось пережить эту смену на [station_name()] в роли [Player.real_name].</b></font>"
 				else if(isAdminLevel(playerTurf.z))
-					Player << "<font color='green'><b>You successfully underwent crew transfer after events on [station_name()] as [Player.real_name].</b></font>"
+					Player << "<font color='green'><b>Вы успешно прошли транспортировку экипажа в этой смене на [station_name()] в роли [Player.real_name].</b></font>"
 				else if(issilicon(Player))
-					Player << "<font color='green'><b>You remain operational after the events on [station_name()] as [Player.real_name].</b></font>"
+					Player << "<font color='green'><b>You remain operational after the events on [station_name()] в роли [Player.real_name].</b></font>"
 				else
-					Player << "<font color='blue'><b>You missed the crew transfer after the events on [station_name()] as [Player.real_name].</b></font>"
+					Player << "<font color='blue'><b>Вы пропустили транспортировку экипажа в этой смене на [station_name()] в роли [Player.real_name].</b></font>"
 			else
 				if(isghost(Player))
 					var/mob/observer/ghost/O = Player
 					if(!O.started_as_observer)
-						Player << "<font color='red'><b>You did not survive the events on [station_name()]...</b></font>"
+						Player << "<font color='red'><b>Вы не пережили эту смену [station_name()]...</b></font>"
 				else
-					Player << "<font color='red'><b>You did not survive the events on [station_name()]...</b></font>"
+					Player << "<font color='red'><b>Вы не пережили эту смену [station_name()]...</b></font>"
 	world << "<br>"
 
 	for (var/mob/living/silicon/ai/aiPlayer in mob_list)
@@ -483,21 +484,23 @@ var/global/datum/controller/gameticker/ticker
 
 /datum/controller/gameticker/proc/attempt_late_antag_spawn(var/list/antag_choices)
 	var/datum/antagonist/antag = antag_choices[1]
-	while(antag_choices.len)
+	while(antag_choices.len && antag)
 		var/needs_ghost = antag.flags & (ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB)
-		antag.update_current_antag_max()
-		antag.build_candidate_list(needs_ghost)
 		if (needs_ghost)
 			looking_for_antags = 1
 			antag_pool.Cut()
-			world << "<b>A ghost is needed to spawn \a [antag.role_text].</b>\nGhosts may enter the antag pool by using the toggle-add-antag-candidacy verb. You have 30 seconds to enter the pool."
+			world << "<b>A ghost is needed to spawn \a [antag.role_text].</b>\nGhosts may enter the antag pool by making sure their [antag.role_text] preference is set to high, then using the toggle-add-antag-candidacy verb. You have 30 seconds to enter the pool."
 			sleep(300)
 			looking_for_antags = 0
+			antag.update_current_antag_max()
+			antag.build_candidate_list(needs_ghost)
 			for(var/datum/mind/candidate in antag.candidates)
 				if(!(candidate in antag_pool))
 					antag.candidates -= candidate
 					log_debug("[candidate.key] was not in the antag pool and could not be selected.")
 		else
+			antag.update_current_antag_max()
+			antag.build_candidate_list(needs_ghost)
 			for(var/datum/mind/candidate in antag.candidates)
 				if(isghost(candidate.current))
 					antag.candidates -= candidate
@@ -507,9 +510,13 @@ var/global/datum/controller/gameticker/ticker
 			antag.finalize_spawn()
 			return 1
 		else
-			world << "Failed to find enough [antag.role_text_plural]."
+			if(antag.initial_spawn_req > 1)
+				world << "Failed to find enough [antag.role_text_plural]."
+			else
+				world << "Failed to find a [antag.role_text]."
 			antag_choices -= antag
 			if(length(antag_choices))
 				antag = antag_choices[1]
-				world << "Attempting to spawn [antag.role_text_plural]."
+				if(antag)
+					world << "Attempting to spawn [antag.role_text_plural]."
 	return 0

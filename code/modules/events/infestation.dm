@@ -35,7 +35,7 @@
 			locstring = "атмосферной"
 		if(LOC_INCIN)
 			spawn_area_type = /area/maintenance/incinerator
-			locstring = "мусоро-сжигателе"
+			locstring = "мусоросжигателе"
 		if(LOC_CHAPEL)
 			spawn_area_type = /area/chapel/main
 			locstring = "церкви"
@@ -50,7 +50,7 @@
 			locstring = "хранилище"
 		if(LOC_CONSTR)
 			spawn_area_type = /area/construction
-			locstring = "площаде для застройки"
+			locstring = "площадке для застройки"
 		if(LOC_TECH)
 			spawn_area_type = /area/storage/tech
 			locstring = "техническом хранилище"
