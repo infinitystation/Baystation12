@@ -621,7 +621,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set desc = "Allows you to turn (in)visible (almost) at will."
 	if(client && client.banprisoned)
 		return
-	var/toggled_invisible
 	if(invisibility && !(args.len && args[1]) && world.time < next_visibility_toggle)
 		src << "You must gather strength before you can turn visible again..."
 		return
