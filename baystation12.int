@@ -5,7 +5,7 @@ DIR: code code\_helpers code\_onclick\hud code\ATMOSPHERICS\components code\ATMO
 AUTO_FILE_DIR: OFF
 MAP_ICON_TYPE: 0
 LAST_COMPILE_VERSION: 510.1339
-WINDOW: code\_helpers\text.dm;code\modules\security levels\security levels.dm;code\modules\mob\observer\ghost\ghost.dm
-FILE: code\modules\mob\observer\ghost\ghost.dm
+WINDOW: code\_helpers\text.dm;code\modules\security levels\security levels.dm;code\modules\mob\observer\ghost\ghost.dm;code\names.dm
+FILE: code\names.dm
 */
 // END_INTERNALS

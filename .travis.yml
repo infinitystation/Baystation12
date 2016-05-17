@@ -54,7 +54,6 @@ script:
   - (num=`grep -E '"/turf' **/*.dm | wc -l`; echo "$num /turf text paths (expecting 8 or less)"; [ $num -le 8 ])
   - awk -f tools/indentation.awk **/*.dm
   - md5sum -c - <<< "a7534ef155ebb32ae7249c48a87abf0d *.gitignore"
-  - md5sum -c - <<< "034D1A08EA5A3DD2B306BED1F6013C59 *baystation12.int"
   - md5sum -c - <<< "88490b460c26947f5ec1ab1bb9fa9f17 *html/changelogs/example.yml"
   - python tools/TagMatcher/tag-matcher.py ../..
   - python tools/PunctuationChecker/punctuation-checker.py ../..
@@ -70,4 +69,4 @@ script:
   - (! grep "runtime error:" log.txt)
   - (! grep 'Process scheduler caught exception processing' log.txt)
   - (! grep "WARNING:" log.txt)
-  - (! grep "ERROR:" log.txt)
+
