@@ -211,8 +211,8 @@
 				user.drop_from_inventory(ai)
 				ai.forceMove(src)
 				ai_card = ai
-				ai_mob << "<span class='notice'>You have been transferred to \the [holder]'s [src.name].</span>"
-				user << "<span class='notice'>You load \the [ai_mob] into \the [holder]'s [src.name].</span>"
+				ai_mob << "<font color='blue'>You have been transferred to \the [holder]'s [src].</font>"
+				user << "<font color='blue'>You load [ai_mob] into \the [holder]'s [src].</font>"
 
 			integrated_ai = ai_mob
 
@@ -449,9 +449,8 @@
 		drain_complete(H)
 		return
 
-	// Attempts to drain up to 12.5*cell-capacity kW, determines this value from remaining cell capacity to ensure we don't drain too much.
-	// 1Ws/(12.5*CELLRATE) = 40s to charge
-	var/to_drain = max(min(12.5*holder.cell.maxcharge, ((holder.cell.maxcharge - holder.cell.charge) / CELLRATE)), 200000)
+	// Attempts to drain up to 40kW, determines this value from remaining cell capacity to ensure we don't drain too much..
+	var/to_drain = min(40000, ((holder.cell.maxcharge - holder.cell.charge) / CELLRATE))
 	var/target_drained = interfaced_with.drain_power(0,0,to_drain)
 	if(target_drained <= 0)
 		H << "<span class = 'danger'>Your power sink flashes a red light; there is no power left in [interfaced_with].</span>"
@@ -461,14 +460,14 @@
 	holder.cell.give(target_drained * CELLRATE)
 	total_power_drained += target_drained
 
-	return
+	return 1
 
 /obj/item/rig_module/power_sink/proc/drain_complete(var/mob/living/M)
 
 	if(!interfaced_with)
-		if(M) M << "<font color='blue'><b>Total power drained:</b> [round(total_power_drained*CELLRATE)] cell units.</font>"
+		if(M) M << "<font color='blue'><b>Total power drained:</b> [round(total_power_drained/1000)]kJ.</font>"
 	else
-		if(M) M << "<font color='blue'><b>Total power drained from [interfaced_with]:</b> [round(total_power_drained*CELLRATE)] cell units.</font>"
+		if(M) M << "<font color='blue'><b>Total power drained from [interfaced_with]:</b> [round(total_power_drained/1000)]kJ.</font>"
 		interfaced_with.drain_power(0,1,0) // Damage the victim.
 
 	drain_loc = null

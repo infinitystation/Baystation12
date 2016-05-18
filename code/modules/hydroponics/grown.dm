@@ -4,7 +4,6 @@
 	name = "fruit"
 	icon = 'icons/obj/hydroponics_products.dmi'
 	icon_state = "blank"
-	randpixel = 5
 	desc = "Nutritious! Probably."
 	slot_flags = SLOT_HOLSTER
 
@@ -17,6 +16,8 @@
 	..()
 	if(!dried_type)
 		dried_type = type
+	src.pixel_x = rand(-5.0, 5)
+	src.pixel_y = rand(-5.0, 5)
 
 	// Fill the object up with the appropriate reagents.
 	if(planttype)

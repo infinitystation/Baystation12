@@ -177,6 +177,7 @@
 				emote("cough")
 				return
 	if (disabilities & TOURETTES)
+		speech_problem_flag = 1
 		if ((prob(10) && paralysis <= 1))
 			Stun(10)
 			spawn( 0 )
@@ -188,6 +189,7 @@
 				make_jittery(100)
 				return
 	if (disabilities & NERVOUS)
+		speech_problem_flag = 1
 		if (prob(10))
 			stuttering = max(10, stuttering)
 
@@ -229,6 +231,7 @@
 		if(!gene.block)
 			continue
 		if(gene.is_active(src))
+			speech_problem_flag = 1
 			gene.OnMobLife(src)
 
 	radiation = Clamp(radiation,0,100)
@@ -326,13 +329,9 @@
 	if(status_flags & GODMODE)
 		return
 
-	var/obj/item/organ/lungs/L = internal_organs_by_name["lungs"]
-	if(!L && species.has_organ["lungs"])
+	//check if we actually need to process breath
+	if(!breath || (breath.total_moles == 0))
 		failed_last_breath = 1
-	else
-		failed_last_breath = L.handle_breath(breath) //if breath is null or vacuum, the lungs will handle it for us
-
-	if(failed_last_breath)
 		if(prob(20))
 			emote("gasp")
 		if(health > config.health_threshold_crit)
@@ -342,6 +341,11 @@
 
 		oxygen_alert = max(oxygen_alert, 1)
 		return 0
+	var/obj/item/organ/lungs/L = internal_organs_by_name["lungs"]
+	if(L && L.handle_breath(breath))
+		failed_last_breath = 0
+	else
+		failed_last_breath = 1
 	return 1
 
 /mob/living/carbon/human/handle_environment(datum/gas_mixture/environment)
@@ -690,6 +694,7 @@
 			adjustHalLoss(-3)
 
 			if(sleeping)
+				speech_problem_flag = 1
 				handle_dreams()
 				if (mind)
 					//Are they SSD? If so we'll keep them asleep but work off some of that sleep var in case of stoxin or similar.
@@ -981,9 +986,7 @@
 /mob/living/carbon/human/handle_shock()
 	..()
 	if(status_flags & GODMODE)	return 0	//godmode
-	if(species && species.flags & NO_PAIN) 
-		shock_stage = 0
-		return
+	if(species && species.flags & NO_PAIN) return
 
 	if(health < config.health_threshold_softcrit)// health 0 makes you immediately collapse
 		shock_stage = max(shock_stage, 61)
@@ -1170,11 +1173,28 @@
 			hud_list[SPECIALROLE_HUD] = holder
 	hud_updateflag = 0
 
+/mob/living/carbon/human/handle_silent()
+	if(..())
+		speech_problem_flag = 1
+	return silent
+
+/mob/living/carbon/human/handle_slurring()
+	if(..())
+		speech_problem_flag = 1
+	return slurring
+
 /mob/living/carbon/human/handle_stunned()
-	if(species.flags & NO_PAIN) //This should be it's own flag, not NO_PAIN
+	if(species.flags & NO_PAIN)
 		stunned = 0
 		return 0
-	return ..()
+	if(..())
+		speech_problem_flag = 1
+	return stunned
+
+/mob/living/carbon/human/handle_stuttering()
+	if(..())
+		speech_problem_flag = 1
+	return stuttering
 
 /mob/living/carbon/human/handle_fire()
 	if(..())

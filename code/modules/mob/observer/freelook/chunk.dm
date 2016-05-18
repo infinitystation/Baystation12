@@ -86,18 +86,14 @@
 			continue
 		add_source(A)
 
+// The visualnet checks if a source already exists or not, as appropriate, before calling add/remove_source on the chunk
 /datum/chunk/proc/add_source(var/atom/source)
-	if(source in sources)
-		return FALSE
 	sources += source
 	visibility_changed()
-	return TRUE
 
 /datum/chunk/proc/remove_source(var/atom/source)
-	if(sources.Remove(source))
-		visibility_changed()
-		return TRUE
-	return FALSE
+	sources -= source
+	visibility_changed()
 
 // The visual net is responsible for adding/removing eyes.
 /datum/chunk/proc/add_eye(mob/observer/eye/eye)

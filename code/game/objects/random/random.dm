@@ -24,11 +24,7 @@
 // creates the random item
 /obj/random/proc/spawn_item()
 	var/build_path = item_to_spawn()
-	
-	var/atom/A = new build_path(src.loc)
-	if(pixel_x || pixel_y)
-		A.pixel_x = pixel_x
-		A.pixel_y = pixel_y
+	return (new build_path(src.loc))
 
 
 /obj/random/single

@@ -47,3 +47,6 @@
 
 /mob/living/carbon/alien/show_inv(mob/user as mob)
 	return //Consider adding cuffs and hats to this, for the sake of fun.
+
+/mob/living/carbon/alien/cannot_use_vents()
+	return

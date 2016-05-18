@@ -10,7 +10,6 @@
 	w_class = 3
 	origin_tech = "materials=1"
 	matter = list(DEFAULT_WALL_MATERIAL = 18750)
-	can_buckle = 0 //disallow manual un/buckling
 	var/deployed = 0
 
 /obj/item/weapon/beartrap/proc/can_use(mob/user)
@@ -88,9 +87,11 @@
 
 	//trap the victim in place
 	set_dir(L.dir)
+	can_buckle = 1
 	buckle_mob(L)
 	L << "<span class='danger'>The steel jaws of \the [src] bite into you, trapping you in place!</span>"
 	deployed = 0
+	can_buckle = initial(can_buckle)
 
 /obj/item/weapon/beartrap/Crossed(AM as mob|obj)
 	if(deployed && isliving(AM))

@@ -87,30 +87,27 @@ proc/get_radio_key_from_channel(var/channel)
 /mob/living/proc/is_muzzled()
 	return 0
 
-//Takes a list of the form list(message, verb, whispering) and modifies it as needed
-//Returns 1 if a speech problem was applied, 0 otherwise
-/mob/living/proc/handle_speech_problems(var/list/message_data)
-	var/message = message_data[1]
-	var/verb = message_data[2]
-
-	. = 0
+/mob/living/proc/handle_speech_problems(var/message, var/verb)
+	var/list/returns[3]
+	var/speech_problem_flag = 0
 
 	if((HULK in mutations) && health >= 25 && length(message))
 		message = "[uppertext(message)]!!!"
 		verb = pick("yells","roars","hollers")
-		message_data[3] = 0
-		. = 1
+		speech_problem_flag = 1
 	if(slurring)
 		message = slur(message)
 		verb = pick("slobbers","slurs")
-		. = 1
+		speech_problem_flag = 1
 	if(stuttering)
 		message = stutter(message)
 		verb = pick("stammers","stutters")
-		. = 1
+		speech_problem_flag = 1
 
-	message_data[1] = message
-	message_data[2] = verb
+	returns[1] = message
+	returns[2] = verb
+	returns[3] = speech_problem_flag
+	return returns
 
 /mob/living/proc/handle_message_mode(message_mode, message, verb, speaking, used_radios, alt_name)
 	if(message_mode == "intercom")
@@ -182,13 +179,12 @@ proc/get_radio_key_from_channel(var/channel)
 
 	message = trim_left(message)
 
-	message = handle_autohiss(message, speaking)
-
 	if(!(speaking && (speaking.flags & NO_STUTTER)))
-		var/list/message_data = list(message, verb, 0)
-		if(handle_speech_problems(message_data))
-			message = message_data[1]
-			verb = message_data[2]
+		message = handle_autohiss(message, speaking)
+
+		var/list/handle_s = handle_speech_problems(message, verb)
+		message = handle_s[1]
+		verb = handle_s[2]
 
 	if(!message || message == "")
 		return 0

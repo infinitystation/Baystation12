@@ -42,5 +42,3 @@ client/verb/showrevinfo()
 			src << revdata.revision
 	else
 		src << "Revision unknown"
-
-	src << "Game ID: <b>[game_id]</b>"

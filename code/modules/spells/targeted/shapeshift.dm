@@ -25,8 +25,6 @@
 		if(M.stat == DEAD)
 			user << "[name] can only transform living targets."
 			continue
-		if(M.buckled)
-			M.buckled.unbuckle_mob()
 		var/new_mob = pick(possible_transformations)
 
 		var/mob/living/trans = new new_mob(get_turf(M))

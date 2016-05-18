@@ -3,7 +3,6 @@
 	desc = "Should anything ever go wrong..."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "red_phone"
-	randpixel = 0
 	flags = CONDUCT
 	force = 3.0
 	throwforce = 2.0
@@ -151,7 +150,6 @@
 /obj/item/weapon/disk
 	name = "disk"
 	icon = 'icons/obj/items.dmi'
-	randpixel = 5
 
 /*
 /obj/item/weapon/game_kit
@@ -406,9 +404,13 @@
 	desc = "What?"
 	gender = PLURAL
 	icon = 'icons/obj/stock_parts.dmi'
-	randpixel = 5
 	w_class = 2.0
 	var/rating = 1
+
+/obj/item/weapon/stock_parts/New()
+	src.pixel_x = rand(-5.0, 5)
+	src.pixel_y = rand(-5.0, 5)
+	..()
 
 //Rank 1
 
