@@ -1,11 +1,11 @@
 // BEGIN_INTERNALS
 /*
 LAST_COMPILE_TIME: 1461762749
-DIR: code code\_helpers code\_onclick\hud code\ATMOSPHERICS\components code\ATMOSPHERICS\components\omni_devices code\ATMOSPHERICS\components\trinary_devices code\ATMOSPHERICS\components\unary code\controllers\ProcessScheduler code\modules code\modules\mob code\modules\mob\observer code\modules\mob\observer\ghost code\modules\security levels 
+DIR: code code\_helpers code\_onclick\hud code\ATMOSPHERICS\components code\ATMOSPHERICS\components\omni_devices code\ATMOSPHERICS\components\trinary_devices code\ATMOSPHERICS\components\unary code\controllers\ProcessScheduler code\modules\mob code\modules\mob\observer code\modules\mob\observer\ghost code\modules\security levels maps maps\DestExodus maps\exodus 
 AUTO_FILE_DIR: OFF
 MAP_ICON_TYPE: 0
 LAST_COMPILE_VERSION: 510.1339
-WINDOW: code\_helpers\text.dm;code\modules\security levels\security levels.dm;code\modules\mob\observer\ghost\ghost.dm;code\names.dm
-FILE: code\names.dm
+WINDOW: code\_helpers\text.dm;code\modules\security levels\security levels.dm;code\modules\mob\observer\ghost\ghost.dm;code\names.dm;maps\DestExodus\exodus.dm;maps\DestExodus\exodus_define.dm
+FILE: maps\DestExodus\exodus_define.dm
 */
 // END_INTERNALS
