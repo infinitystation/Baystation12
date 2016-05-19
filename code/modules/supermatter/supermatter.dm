@@ -128,7 +128,7 @@
 
 /obj/machinery/power/supermatter/proc/announce_warning()
 	var/integrity = get_integrity()
-	var/alert_msg = " Integrity at [integrity]%"
+	var/alert_msg = " Целость кристалла [integrity] процентов"
 
 	if(damage > emergency_point)
 		alert_msg = emergency_alert + alert_msg
@@ -144,13 +144,13 @@
 	else
 		alert_msg = null
 	if(alert_msg)
-		radio.autosay(alert_msg, "Supermatter Monitor", "Engineering")
+		radio.autosay(alert_msg, "Мониторинг Суперматерии", "Инженерная")
 		//Public alerts
 		if((damage > emergency_point) && !public_alert)
-			radio.autosay("WARNING: SUPERMATTER CRYSTAL DELAMINATION IMMINENT!", "Supermatter Monitor")
+			radio.autosay("ВНИАНИЕ: ДЕЛАМИНАЦИЯ КРИСТАЛЛА СУПЕРМАТЕРИИ НЕИЗБЕЖНА!", "Мониторинг Суперматерии")
 			public_alert = 1
 		else if(safe_warned && public_alert)
-			radio.autosay(alert_msg, "Supermatter Monitor")
+			radio.autosay(alert_msg, "Мониторинг Суперматерии")
 			public_alert = 0
 
 

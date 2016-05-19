@@ -31,7 +31,7 @@
 				continue //skip monkeys and leavers
 			if (istype(M, /mob/new_player))
 				continue
-			if(findtext(message," snores.")) //Because we have so many sleeping people.
+			if(findtext(message," храпит.")) //Because we have so many sleeping people.
 				break
 			if(M.stat == DEAD && M.is_preference_enabled(/datum/client_preference/ghost_sight) && !(M in viewers(src,null)))
 				M.show_message(message, m_type)
