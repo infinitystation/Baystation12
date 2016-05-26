@@ -28,7 +28,7 @@ datum/controller/vote
 			// No more change mode votes after the game has started.
 			// 3 is GAME_STATE_PLAYING, but that #define is undefined for some reason
 			if(mode == "gamemode" && ticker.current_state >= 2)
-				world << "<b>Voting aborted due to game start.</b>"
+				world << "<b>Голосование прервано из-за старта игры.</b>"
 				src.reset()
 				return
 
@@ -50,20 +50,20 @@ datum/controller/vote
 				voting.Cut()
 
 	proc/autotransfer()
-		initiate_vote("crew_transfer","the server", 1)
+		initiate_vote("crew_transfer","Сервер", 1)
 		log_debug("The server has called a crew transfer vote")
 
 	proc/autogamemode()
-		initiate_vote("gamemode","the server", 1)
+		initiate_vote("gamemode","Сервер", 1)
 		log_debug("The server has called a gamemode vote")
 
 	proc/automap()
-		initiate_vote("map","the server", 1)
+		initiate_vote("map","Сервер", 1)
 		log_debug("The server has called a map vote")
 
 	proc/autoaddantag()
 		auto_add_antag = 1
-		initiate_vote("add_antagonist","the server", 1)
+		initiate_vote("add_antagonist","Сервер", 1)
 		log_debug("The server has called an add antag vote.")
 
 	proc/reset()
@@ -171,16 +171,16 @@ datum/controller/vote
 					i++
 
 			if(mode != "gamemode" || (firstChoice == "Extended" || ticker.hide_mode == 0)) // Announce unhidden gamemodes or other results, but not other gamemodes
-				text += "<b>Vote Result: [firstChoice]</b>"
+				text += "<b>Результаты опроса: [firstChoice]</b>"
 				if(secondChoice)
-					text += "\nSecond place: [secondChoice]"
+					text += "\nВторое место: [secondChoice]"
 				if(thirdChoice)
-					text += ", third place: [thirdChoice]"
+					text += ", третье место: [thirdChoice]"
 			else
 				text += "<b>The vote has ended.</b>" // What will be shown if it is a gamemode vote that was hidden
 
 		else
-			text += "<b>Vote Result: Inconclusive - No Votes!</b>"
+			text += "<b>Результаты опроса: Неубедительный - Нет голосов!</b>"
 			if(mode == "add_antagonist")
 				antag_add_finished = 1
 		log_vote(text)
@@ -246,7 +246,7 @@ datum/controller/vote
 		if(mode == "gamemode") //fire this even if the vote fails.
 			if(!round_progressing)
 				round_progressing = 1
-				world << "<font color='red'><b>The round will start soon.</b></font>"
+				world << "<font color='red'><b>Отсчёт до старта раунда был восстановлен.</b></font>"
 
 		if(restart)
 			world << "World restarting due to vote..."
@@ -352,17 +352,17 @@ datum/controller/vote
 			mode = vote_type
 			initiator = initiator_key
 			started_time = world.time
-			var/text = "[capitalize(mode)] vote started by [initiator]."
+			var/text = "[initiator] начал(а) голосование категории [capitalize(mode)]."
 			if(mode == "custom")
 				text += "\n[question]"
 
 			log_vote(text)
-			world << "<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=\ref[src]'>here</a> to place your votes.\nYou have [config.vote_period/10] seconds to vote.</font>"
+			world << "<font color='purple'><b>[text]</b>\nВведите <b>vote</b> или нажмите <a href='?src=\ref[src]'>суда</a> чтобы оставить свой голос.\nУ вас есть [config.vote_period/10] секунд на голосование.</font>"
 			if(vote_type in list("crew transfer", "gamemode", "map", "custom"))
 				world << sound('sound/ambience/alarm4.ogg', repeat = 0, wait = 0, volume = 50, channel = 3)
 			if(mode == "gamemode" && round_progressing)
 				round_progressing = 0
-				world << "<font color='red'><b>Round start has been delayed.</b></font>"
+				world << "<font color='red'><b>Начало раунда было отложено на неопределённый срок.</b></font>"
 
 			time_remaining = round(config.vote_period/10)
 			return 1

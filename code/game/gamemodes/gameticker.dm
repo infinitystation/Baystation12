@@ -69,8 +69,8 @@ var/global/datum/controller/gameticker/ticker
 			else
 				master_mode = "extended"
 				world << "<b>Forcing the game mode to extended...</b>"
-		world << "<B><FONT color='blue'>Welcome to the pre-game lobby!</FONT></B>"
-		world << "Please, setup your character and select ready. Game will start in [pregame_timeleft] seconds"
+		world << "<B><FONT color='blue'>Добро пожаловать в пре-игровое лобби!</FONT></B>"
+		world << "Пожалуйста, настройте своего персонажа. Игра стартует через [pregame_timeleft] секунд"
 		while(current_state == GAME_STATE_PREGAME)
 			for(var/i=0, i<10, i++)
 				sleep(1)
