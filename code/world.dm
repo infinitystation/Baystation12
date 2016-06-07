@@ -1,34 +1,4 @@
 
-/*
-	The initialization of the game happens roughly like this:
-
-	1. All global variables are initialized (including the global_init instance).
-	2. The map is initialized, and map objects are created.
-	3. world/New() runs, creating the process scheduler (and the old master controller) and spawning their setup.
-	4. processScheduler/setup() runs, creating all the processes. game_controller/setup() runs, calling initialize() on all movable atoms in the world.
-	5. The gameticker is created.
-
-*/
-var/global/datum/global_init/init = new ()
-
-/*
-	Pre-map initialization stuff should go here.
-*/
-/datum/global_init/New()
-	generate_gameid()
-
-	makeDatumRefLists()
-	populateGlobalLists()
-	load_configuration()
-
-	initialize_chemical_reagents()
-	initialize_chemical_reactions()
-
-	qdel(src) //we're done
-
-/datum/global_init/Destroy()
-	return 1
-
 /var/game_id = null
 /proc/generate_gameid()
 	if(game_id != null)
@@ -166,7 +136,7 @@ var/world_topic_spam_protect_time = world.timeofday
 		var/input[] = params2list(T)
 		var/list/s = list()
 		s["version"] = game_version
-		s["mode"] = master_mode
+		s["mode"] = PUBLIC_GAME_MODE
 		s["respawn"] = config.abandon_allowed
 		s["enter"] = config.enter_allowed
 		s["vote"] = config.allow_vote_mode
@@ -278,6 +248,10 @@ var/world_topic_spam_protect_time = world.timeofday
 			if(M.mind)
 				strings += M.mind.assigned_role
 				strings += M.mind.special_role
+			if(ishuman(M))
+				var/mob/living/carbon/human/H = M
+				if(H.species)
+					strings += H.species.name
 			for(var/text in strings)
 				if(ckey(text) in ckeysearch)
 					match[M] += 10 // an exact match is far better than a partial one
@@ -319,8 +293,14 @@ var/world_topic_spam_protect_time = world.timeofday
 							clone = L.getCloneLoss(),
 							brain = L.getBrainLoss()
 						))
+				if(ishuman(M))
+					var/mob/living/carbon/human/H = M
+					info["species"] = H.species.name
+				else
+					info["species"] = "non-human"
 			else
 				info["damage"] = "non-living"
+				info["species"] = "non-human"
 			info["gender"] = M.gender
 			return list2params(info)
 		else

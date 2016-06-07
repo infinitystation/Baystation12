@@ -1,7 +1,7 @@
 var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-")
 
 /datum/preferences
-	var/dress_mob = TRUE
+	var/equip_preview_mob = EQUIP_PREVIEW_ALL
 
 /datum/category_item/player_setup_item/general/body
 	name = "Body"
@@ -28,6 +28,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	S["disabilities"]		>> pref.disabilities
 	S["organ_data"]			>> pref.organ_data
 	S["rlimb_data"]			>> pref.rlimb_data
+	pref.preview_icon = null
 
 /datum/category_item/player_setup_item/general/body/save_character(var/savefile/S)
 	S["species"]			<< pref.species
@@ -76,10 +77,9 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	if(!pref.rlimb_data) pref.rlimb_data = list()
 
 /datum/category_item/player_setup_item/general/body/content(var/mob/user)
-	pref.update_preview_icon()
-	if(pref.preview_icon_front && pref.preview_icon_side)
-		user << browse_rsc(pref.preview_icon_front, "previewicon.png")
-		user << browse_rsc(pref.preview_icon_side, "previewicon2.png")
+	if(!pref.preview_icon)
+		pref.update_preview_icon()
+	user << browse_rsc(pref.preview_icon, "previewicon.png")
 
 	var/mob_species = all_species[pref.species]
 	. += "<table><tr style='vertical-align:top'><td><b>Body</b> "
@@ -158,7 +158,10 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	else
 		. += "<br><br>"
 
-	. += "</td><td><b>Preview</b><br><img src=previewicon.png height=64 width=64><img src=previewicon2.png height=64 width=64><br><a href='?src=\ref[src];toggle_clothing=1'>Toggle Clothing</a>"
+	. += "</td><td><b>Preview</b><br>"
+	. += "<div class='statusDisplay'><center><img src=previewicon.png width=[pref.preview_icon.Width()] height=[pref.preview_icon.Height()]></center></div>"
+	. += "<br><a href='?src=\ref[src];toggle_preview_value=[EQUIP_PREVIEW_LOADOUT]'>[pref.equip_preview_mob & EQUIP_PREVIEW_LOADOUT ? "Hide loadout" : "Show loadout"]</a>"
+	. += "<br><a href='?src=\ref[src];toggle_preview_value=[EQUIP_PREVIEW_JOB]'>[pref.equip_preview_mob & EQUIP_PREVIEW_JOB ? "Hide job gear" : "Show job gear"]</a>"
 	. += "</td></tr></table>"
 
 	. += "<b>Hair</b><br>"
@@ -186,8 +189,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	var/datum/species/mob_species = all_species[pref.species]
 
 	if(href_list["random"])
-		pref.randomize_appearance_for()
-		return TOPIC_REFRESH
+		pref.randomize_appearance_and_body_for()
+		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["blood_type"])
 		var/new_b_type = input(user, "Choose your character's blood-type:", "Character Preference") as null|anything in valid_bloodtypes
@@ -260,7 +263,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			pref.s_tone = 0
 			pref.age = max(min(pref.age, mob_species.max_age), mob_species.min_age)
 
-			return TOPIC_REFRESH
+			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["hair_color"])
 		if(!has_flag(mob_species, HAS_HAIR_COLOR))
@@ -270,7 +273,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			pref.r_hair = hex2num(copytext(new_hair, 2, 4))
 			pref.g_hair = hex2num(copytext(new_hair, 4, 6))
 			pref.b_hair = hex2num(copytext(new_hair, 6, 8))
-			return TOPIC_REFRESH
+			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["hair_style"])
 		var/list/valid_hairstyles = list()
@@ -284,7 +287,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		var/new_h_style = input(user, "Choose your character's hair style:", "Character Preference", pref.h_style)  as null|anything in valid_hairstyles
 		if(new_h_style && CanUseTopic(user))
 			pref.h_style = new_h_style
-			return TOPIC_REFRESH
+			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["facial_color"])
 		if(!has_flag(mob_species, HAS_HAIR_COLOR))
@@ -294,7 +297,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			pref.r_facial = hex2num(copytext(new_facial, 2, 4))
 			pref.g_facial = hex2num(copytext(new_facial, 4, 6))
 			pref.b_facial = hex2num(copytext(new_facial, 6, 8))
-			return TOPIC_REFRESH
+			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["eye_color"])
 		if(!has_flag(mob_species, HAS_EYE_COLOR))
@@ -304,7 +307,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			pref.r_eyes = hex2num(copytext(new_eyes, 2, 4))
 			pref.g_eyes = hex2num(copytext(new_eyes, 4, 6))
 			pref.b_eyes = hex2num(copytext(new_eyes, 6, 8))
-			return TOPIC_REFRESH
+			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["skin_tone"])
 		if(!has_flag(mob_species, HAS_SKIN_TONE))
@@ -312,7 +315,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		var/new_s_tone = input(user, "Choose your character's skin-tone:\n(Light 1 - 220 Dark)", "Character Preference", (-pref.s_tone) + 35)  as num|null
 		if(new_s_tone && has_flag(mob_species, HAS_SKIN_TONE) && CanUseTopic(user))
 			pref.s_tone = 35 - max(min( round(new_s_tone), 220),1)
-			return TOPIC_REFRESH
+			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["skin_color"])
 		if(!has_flag(mob_species, HAS_SKIN_COLOR))
@@ -322,7 +325,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			pref.r_skin = hex2num(copytext(new_skin, 2, 4))
 			pref.g_skin = hex2num(copytext(new_skin, 4, 6))
 			pref.b_skin = hex2num(copytext(new_skin, 6, 8))
-			return TOPIC_REFRESH
+			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["facial_style"])
 		var/list/valid_facialhairstyles = list()
@@ -340,7 +343,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		var/new_f_style = input(user, "Choose your character's facial-hair style:", "Character Preference", pref.f_style)  as null|anything in valid_facialhairstyles
 		if(new_f_style && has_flag(mob_species, HAS_HAIR_COLOR) && CanUseTopic(user))
 			pref.f_style = new_f_style
-			return TOPIC_REFRESH
+			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["limbs"])
 		var/limb_name = input(user, "Which limb do you want to change?") as null|anything in list("Left Leg","Right Leg","Left Arm","Right Arm","Left Foot","Right Foot","Left Hand","Right Hand")
@@ -412,7 +415,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 					pref.organ_data[second_limb] = "cyborg"
 				if(third_limb && pref.organ_data[third_limb] == "amputated")
 					pref.organ_data[third_limb] = null
-		return TOPIC_REFRESH
+		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["organs"])
 		var/organ_name = input(user, "Which internal function do you want to change?") as null|anything in list("Heart", "Eyes")
@@ -440,11 +443,11 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	else if(href_list["disabilities"])
 		var/disability_flag = text2num(href_list["disabilities"])
 		pref.disabilities ^= disability_flag
-		return TOPIC_REFRESH
+		return TOPIC_REFRESH_UPDATE_PREVIEW
 
-	else if(href_list["toggle_clothing"])
-		pref.dress_mob = !pref.dress_mob
-		return TOPIC_REFRESH
+	else if(href_list["toggle_preview_value"])
+		pref.equip_preview_mob ^= text2num(href_list["toggle_preview_value"])
+		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	return ..()
 
@@ -495,7 +498,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	if(config.usealienwhitelist) //If we're using the whitelist, make sure to check it!
 		if(!(current_species.spawn_flags & CAN_JOIN))
 			restricted = 2
-		else if((current_species.spawn_flags & IS_WHITELISTED) && !is_alien_whitelisted(preference_mob(),current_species))
+		else if(!is_alien_whitelisted(preference_mob(), current_species))
 			restricted = 1
 
 	if(restricted)

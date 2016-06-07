@@ -358,8 +358,7 @@ datum/controller/vote
 
 			log_vote(text)
 			world << "<font color='purple'><b>[text]</b>\nВведите <b>vote</b> или нажмите <a href='?src=\ref[src]'>суда</a> чтобы оставить свой голос.\nУ вас есть [config.vote_period/10] секунд на голосование.</font>"
-			if(vote_type in list("crew transfer", "gamemode", "map", "custom"))
-				world << sound('sound/ambience/alarm4.ogg', repeat = 0, wait = 0, volume = 50, channel = 3)
+			world << sound('sound/ambience/alarm4.ogg', repeat = 0, wait = 0, volume = 50, channel = 3)
 			if(mode == "gamemode" && round_progressing)
 				round_progressing = 0
 				world << "<font color='red'><b>Начало раунда было отложено на неопределённый срок.</b></font>"

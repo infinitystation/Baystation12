@@ -65,6 +65,7 @@ var/list/name_to_material
 /material
 	var/name	                          // Unique name for use in indexing the list.
 	var/display_name                      // Prettier name for display.
+	var/adjective_name
 	var/use_name
 	var/flags = 0                         // Various status modifiers.
 	var/sheet_singular_name = "sheet"
@@ -152,6 +153,8 @@ var/list/name_to_material
 		display_name = name
 	if(!use_name)
 		use_name = display_name
+	if(!adjective_name)
+		adjective_name = display_name
 	if(!shard_icon)
 		shard_icon = shard_type
 
@@ -472,7 +475,7 @@ var/list/name_to_material
 	tableslam_noise = 'sound/effects/Glasshit.ogg'
 	hardness = 40
 	weight = 30
-	stack_origin_tech = "materials=2"
+	stack_origin_tech = list(TECH_MATERIAL = 2)
 	composite_material = list(DEFAULT_WALL_MATERIAL = 1875,"glass" = 3750)
 	window_options = list("One Direction" = 1, "Full Window" = 4, "Windoor" = 5)
 	created_window = /obj/structure/window/reinforced
@@ -576,6 +579,7 @@ var/list/name_to_material
 
 /material/wood
 	name = "wood"
+	adjective_name = "wooden"
 	stack_type = /obj/item/stack/material/wood
 	icon_colour = "#824B28"
 	integrity = 50

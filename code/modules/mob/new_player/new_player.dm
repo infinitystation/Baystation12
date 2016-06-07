@@ -69,11 +69,7 @@
 	. = ..()
 
 	if(statpanel("Lobby") && ticker)
-		if(ticker.hide_mode)
-			stat("Game Mode:", "Secret")
-		else
-			if(ticker.hide_mode == 0)
-				stat("Game Mode:", "[master_mode]") // Old setting for showing the game mode
+		stat("Game Mode:", PUBLIC_GAME_MODE)
 
 		if(ticker.current_state == GAME_STATE_PREGAME)
 			stat("Time To Start:", "[ticker.pregame_timeleft][round_progressing ? "" : " (DELAYED)"]")
@@ -129,9 +125,14 @@
 			observer.timeofdeath = world.time // Set the time of death so that the respawn timer works correctly.
 
 			announce_ghost_joinleave(src)
-			client.prefs.update_preview_icon()
-			observer.icon = client.prefs.preview_icon
+
+			var/mob/living/carbon/human/dummy/mannequin = new()
+			client.prefs.dress_preview_mob(mannequin)
+			observer.appearance = mannequin
 			observer.alpha = 127
+			observer.layer = initial(observer.layer)
+			observer.invisibility = initial(observer.invisibility)
+			qdel(mannequin)
 
 			if(client.prefs.be_random_name)
 				client.prefs.real_name = random_name(client.prefs.gender)
@@ -152,20 +153,9 @@
 			return
 
 		if(!ticker || ticker.current_state != GAME_STATE_PLAYING)
-			usr << "\red The round is either not ready, or has already finished..."
+			usr << "<span class='warning'>The round is either not ready, or has already finished...</span>"
 			return
-
-		if(!check_rights(R_ADMIN, 0))
-			var/datum/species/S = all_species[client.prefs.species]
-			if((S.spawn_flags & IS_WHITELISTED) && !is_alien_whitelisted(src, client.prefs.species) && config.usealienwhitelist)
-				src << alert("You are currently not whitelisted to play [client.prefs.species].")
-				return 0
-
-			if(!(S.spawn_flags & CAN_JOIN))
-				src << alert("Your current species, [client.prefs.species], is not available for play on the station.")
-				return 0
-
-		LateChoices()
+		LateChoices() //show the latejoin job selection menu
 
 	if(href_list["manifest"])
 		if(client.banprisoned)
@@ -184,12 +174,7 @@
 			return
 
 		var/datum/species/S = all_species[client.prefs.species]
-		if((S.spawn_flags & IS_WHITELISTED) && !is_alien_whitelisted(src, client.prefs.species) && config.usealienwhitelist)
-			src << alert("You are currently not whitelisted to play [client.prefs.species].")
-			return 0
-
-		if(!(S.spawn_flags & CAN_JOIN))
-			src << alert("Your current species, [client.prefs.species], is not available for play on the station.")
+		if(!check_species_allowed(S))
 			return 0
 
 		AttemptLateSpawn(href_list["SelectedJob"],client.prefs.spawnpoint)
@@ -347,12 +332,12 @@
 			src << alert("[rank] is not available. Please try another.")
 			return 0
 
-	spawning = 1
-	close_spawn_windows()
-
 	job_master.AssignRole(src, rank, 1)
 
 	var/mob/living/character = create_character()	//creates the human and transfers vars and mind
+	if(!character)
+		return 0
+
 	character = job_master.EquipRank(character, rank, 1)					//equips the human
 	UpdateFactionList(character)
 	equip_custom_items(character)
@@ -442,16 +427,15 @@
 
 	var/mob/living/carbon/human/new_character
 
-	var/use_species_name
 	var/datum/species/chosen_species
 	if(client.prefs.species)
 		chosen_species = all_species[client.prefs.species]
-		use_species_name = chosen_species.get_station_variant() //Only used by pariahs atm.
 
-	if(chosen_species && use_species_name)
-		// Have to recheck admin due to no usr at roundstart. Latejoins are fine though.
-		if(is_species_whitelisted(chosen_species) || has_admin_rights())
-			new_character = new(loc, use_species_name)
+	if(chosen_species)
+		if(!check_species_allowed(chosen_species))
+			spawning = 0 //abort
+			return null
+		new_character = new(loc, chosen_species.name)
 
 	if(!new_character)
 		new_character = new(loc)
@@ -461,14 +445,14 @@
 	for(var/lang in client.prefs.alternate_languages)
 		var/datum/language/chosen_language = all_languages[lang]
 		if(chosen_language)
-			if(!config.usealienwhitelist || !(chosen_language.flags & WHITELISTED) || is_alien_whitelisted(src, lang) || has_admin_rights() \
-				|| (new_character.species && (chosen_language.name in new_character.species.secondary_langs)))
+			var/is_species_lang = (chosen_language.name in new_character.species.secondary_langs)
+			if(is_species_lang || ((!(chosen_language.flags & RESTRICTED) || has_admin_rights()) && is_alien_whitelisted(src, chosen_language)))
 				new_character.add_language(lang)
 
 	if(ticker.random_players)
 		new_character.gender = pick(MALE, FEMALE)
 		client.prefs.real_name = random_name(new_character.gender)
-		client.prefs.randomize_appearance_for(new_character)
+		client.prefs.randomize_appearance_and_body_for(new_character)
 	else
 		client.prefs.copy_to(new_character)
 
@@ -515,22 +499,26 @@
 /mob/new_player/proc/has_admin_rights()
 	return check_rights(R_ADMIN, 0, src)
 
-/mob/new_player/proc/is_species_whitelisted(datum/species/S)
-	if(!S) return 1
-	return is_alien_whitelisted(src, S.name) || !config.usealienwhitelist || !(S.spawn_flags & IS_WHITELISTED)
+/mob/new_player/proc/check_species_allowed(datum/species/S, var/show_alert=1)
+	if(!(S.spawn_flags & CAN_JOIN) && !has_admin_rights())
+		if(show_alert)
+			src << alert("Your current species, [client.prefs.species], is not available for play on the station.")
+		return 0
+	if(!is_alien_whitelisted(src, S))
+		if(show_alert)
+			src << alert("You are currently not whitelisted to play [client.prefs.species].")
+		return 0
+	return 1
 
 /mob/new_player/get_species()
 	var/datum/species/chosen_species
 	if(client.prefs.species)
 		chosen_species = all_species[client.prefs.species]
 
-	if(!chosen_species)
+	if(!chosen_species || !check_species_allowed(chosen_species, 0))
 		return "Human"
 
-	if(is_species_whitelisted(chosen_species) || has_admin_rights())
-		return chosen_species.name
-
-	return "Human"
+	return chosen_species.name
 
 /mob/new_player/get_gender()
 	if(!client || !client.prefs) ..()

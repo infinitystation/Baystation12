@@ -34,7 +34,7 @@
 		else if(antag.role_type in pref.be_special_role)
 			. += "<b>High</b> / <a href='?src=\ref[src];del_special=[antag.role_type]'>Low</a> / <a href='?src=\ref[src];add_never=[antag.role_type]'>Never</a></br>"
 		else if(antag.role_type in pref.never_be_special_role)
-			. += "<a href='?src=\ref[src];add_special=[antag.role_type]'>High</a> / <a href='?src=\ref[src];del_special=[antag.role_type]'>Low</a> / <b>Never</b></br>"
+			. += "<a href='?src=\ref[src];add_special=[antag.role_type]'>High</a> <a href='?src=\ref[src];del_special=[antag.role_type]'>Low</a> <span class='linkOn'>Never</span></br>"
 		else
 			. += "<a href='?src=\ref[src];add_special=[antag.role_type]'>High</a> / <b>Low</b> / <a href='?src=\ref[src];add_never=[antag.role_type]'>Never</a></br>"
 		. += "</td></tr>"
