@@ -198,4 +198,5 @@
 		var/list/returns[2]
 		returns[1] = sound(pick(species.speech_sounds))
 		returns[2] = 50
+		return returns
 	return ..()
