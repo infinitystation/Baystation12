@@ -45,9 +45,8 @@ var/list/clown_sound = list('sound/effects/clownstep1.ogg','sound/effects/clowns
 var/list/swing_hit_sound = list('sound/weapons/genhit1.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg')
 var/list/hiss_sound = list('sound/voice/hiss1.ogg','sound/voice/hiss2.ogg','sound/voice/hiss3.ogg','sound/voice/hiss4.ogg')
 var/list/page_sound = list('sound/effects/pageturn1.ogg', 'sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg')
-//var/list/gun_sound = list('sound/weapons/Gunshot.ogg', 'sound/weapons/Gunshot2.ogg','sound/weapons/Gunshot3.ogg','sound/weapons/Gunshot4.ogg')
 
-/proc/playsound(var/atom/source, soundin, vol as num, vary, extrarange as num, falloff, var/is_global)
+/proc/playsound(var/atom/source, soundin, vol as num, vary, extrarange as num, falloff, var/is_global, var/frequency)
 
 	soundin = get_sfx(soundin) // same sound for everyone
 
@@ -55,7 +54,7 @@ var/list/page_sound = list('sound/effects/pageturn1.ogg', 'sound/effects/pagetur
 		error("[source] is an area and is trying to make the sound: [soundin]")
 		return
 
-	var/frequency = get_rand_frequency() // Same frequency for everybody
+	frequency = isnull(frequency) ? get_rand_frequency() : frequency // Same frequency for everybody
 	var/turf/turf_source = get_turf(source)
 
  	// Looping through the player list has the added bonus of working for mobs inside containers
@@ -75,18 +74,19 @@ var/const/FALLOFF_SOUNDS = 0.5
 
 /mob/proc/playsound_local(var/turf/turf_source, soundin, vol as num, vary, frequency, falloff, is_global)
 	if(!src.client || ear_deaf > 0)	return
-	soundin = get_sfx(soundin)
-
-	var/sound/S = sound(soundin)
-	S.wait = 0 //No queue
-	S.channel = 0 //Any channel
-	S.volume = vol
-	S.environment = -1
-	if (vary)
-		if(frequency)
-			S.frequency = frequency
-		else
-			S.frequency = get_rand_frequency()
+	var/sound/S = soundin
+	if(!istype(S))
+		soundin = get_sfx(soundin)
+		S = sound(soundin)
+		S.wait = 0 //No queue
+		S.channel = 0 //Any channel
+		S.volume = vol
+		S.environment = -1
+		if (vary)
+			if(frequency)
+				S.frequency = frequency
+			else
+				S.frequency = get_rand_frequency()
 
 	//sound volume falloff with pressure
 	var/pressure_factor = 1.0
@@ -156,9 +156,8 @@ var/const/FALLOFF_SOUNDS = 0.5
 	src << S
 
 /client/proc/playtitlemusic()
-	if(!ticker || !ticker.login_music)	return
 	if(is_preference_enabled(/datum/client_preference/play_lobby_music))
-		src << sound(ticker.login_music, repeat = 1, wait = 0, volume = 85, channel = 1) // MAD JAMS
+		using_map.lobby_music.play_to(src)
 
 /proc/get_rand_frequency()
 	return rand(32000, 55000) //Frequency stuff only works with 45kbps oggs.

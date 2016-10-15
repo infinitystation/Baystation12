@@ -5,7 +5,7 @@
 	density = 1
 	w_class = 3
 
-	layer = 3.2//Just above doors
+	layer = SIDE_WINDOW_LAYER
 	anchored = 1.0
 	flags = ON_BORDER
 	var/maxhealth = 14.0
@@ -91,11 +91,11 @@
 		index = 0
 		while(index < 2)
 			new shardtype(loc) //todo pooling?
-			if(reinf) PoolOrNew(/obj/item/stack/rods, loc)
+			if(reinf) new /obj/item/stack/rods(loc)
 			index++
 	else
 		new shardtype(loc) //todo pooling?
-		if(reinf) PoolOrNew(/obj/item/stack/rods, loc)
+		if(reinf) new /obj/item/stack/rods(loc)
 	qdel(src)
 	return
 
@@ -268,7 +268,7 @@
 	var/state = G.state
 	qdel(G)	//gotta delete it here because if window breaks, it won't get deleted
 
-	var/def_zone = ran_zone("head", 20)
+	var/def_zone = ran_zone(BP_HEAD, 20)
 	var/blocked = M.run_armor_check(def_zone, "melee")
 	switch (state)
 		if(1)
@@ -399,7 +399,9 @@
 	//A little cludge here, since I don't know how it will work with slim windows. Most likely VERY wrong.
 	//this way it will only update full-tile ones
 	overlays.Cut()
+	layer = FULL_WINDOW_LAYER
 	if(!is_fulltile())
+		layer = SIDE_WINDOW_LAYER
 		icon_state = "[basestate]"
 		return
 	var/list/dirs = list()
@@ -456,6 +458,9 @@
 	damage_per_fire_tick = 1.0 // This should last for 80 fire ticks if the window is not damaged at all. The idea is that borosilicate windows have something like ablative layer that protects them for a while.
 	maxhealth = 80.0
 
+/obj/structure/window/phoronreinforced/full
+	dir = 5
+	icon_state = "phoronwindow0"
 
 /obj/structure/window/reinforced
 	name = "reinforced window"
@@ -475,6 +480,10 @@
 	//player-constructed windows
 	if (constructed)
 		state = 0
+		
+/obj/structure/window/initialize()
+	..()
+	layer = is_full_window() ? FULL_WINDOW_LAYER : SIDE_WINDOW_LAYER
 
 /obj/structure/window/reinforced/full
     dir = 5
@@ -509,6 +518,10 @@
 	name = "electrochromic window"
 	desc = "Adjusts its tint with voltage. Might take a few good hits to shatter it."
 	var/id
+
+/obj/structure/window/reinforced/polarized/full
+	dir = 5
+	icon_state = "fwindow"
 
 /obj/structure/window/reinforced/polarized/proc/toggle()
 	if(opacity)

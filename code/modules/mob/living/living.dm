@@ -1,3 +1,10 @@
+/mob/living/New()
+	..()
+	if(stat == DEAD)
+		add_to_dead_mob_list()
+	else
+		add_to_living_mob_list()
+
 //mob verbs are faster than object verbs. See mob/verb/examine.
 /mob/living/verb/pulled(atom/movable/AM as mob|obj in oview(1))
 	set name = "Pull"
@@ -237,14 +244,14 @@ default behaviour is:
 
 /mob/living/proc/adjustBruteLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
-	bruteloss = min(max(bruteloss + amount, 0),(maxHealth*2))
+	bruteloss = min(max(bruteloss + amount, 0),(maxHealth - config.health_threshold_dead))
 
 /mob/living/proc/getOxyLoss()
 	return oxyloss
 
 /mob/living/proc/adjustOxyLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
-	oxyloss = min(max(oxyloss + amount, 0),(maxHealth*2))
+	oxyloss = min(max(oxyloss + amount, 0),(maxHealth - config.health_threshold_dead))
 
 /mob/living/proc/setOxyLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
@@ -255,7 +262,7 @@ default behaviour is:
 
 /mob/living/proc/adjustToxLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
-	toxloss = min(max(toxloss + amount, 0),(maxHealth*2))
+	toxloss = min(max(toxloss + amount, 0),(maxHealth - config.health_threshold_dead))
 
 /mob/living/proc/setToxLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
@@ -266,14 +273,14 @@ default behaviour is:
 
 /mob/living/proc/adjustFireLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
-	fireloss = min(max(fireloss + amount, 0),(maxHealth*2))
+	fireloss = min(max(fireloss + amount, 0),(maxHealth - config.health_threshold_dead))
 
 /mob/living/proc/getCloneLoss()
 	return cloneloss
 
 /mob/living/proc/adjustCloneLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
-	cloneloss = min(max(cloneloss + amount, 0),(maxHealth*2))
+	cloneloss = min(max(cloneloss + amount, 0),(maxHealth - config.health_threshold_dead))
 
 /mob/living/proc/setCloneLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
@@ -284,7 +291,7 @@ default behaviour is:
 
 /mob/living/proc/adjustBrainLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
-	brainloss = min(max(brainloss + amount, 0),(maxHealth*2))
+	brainloss = min(max(brainloss + amount, 0),(maxHealth - config.health_threshold_dead))
 
 /mob/living/proc/setBrainLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
@@ -295,7 +302,7 @@ default behaviour is:
 
 /mob/living/proc/adjustHalLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
-	halloss = min(max(halloss + amount, 0),(maxHealth*2))
+	halloss = min(max(halloss + amount, 0),(maxHealth - config.health_threshold_dead))
 
 /mob/living/proc/setHalLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
@@ -359,15 +366,14 @@ default behaviour is:
 			return 1
 	return 0
 
-
 /mob/living/proc/can_inject(var/mob/user, var/target_zone)
 	return 1
 
 /mob/living/proc/get_organ_target()
 	var/mob/shooter = src
 	var/t = shooter:zone_sel.selecting
-	if ((t in list( "eyes", "mouth" )))
-		t = "head"
+	if ((t in list( BP_EYES, BP_MOUTH )))
+		t = BP_HEAD
 	var/obj/item/organ/external/def_zone = ran_zone(t)
 	return def_zone
 
@@ -400,8 +406,6 @@ default behaviour is:
 
 /mob/living/proc/restore_all_organs()
 	return
-
-
 
 /mob/living/proc/revive()
 	rejuvenate()
@@ -455,8 +459,7 @@ default behaviour is:
 
 	// remove the character from the list of the dead
 	if(stat == DEAD)
-		dead_mob_list -= src
-		living_mob_list += src
+		switch_from_dead_to_living_mob_list()
 		tod = null
 		timeofdeath = 0
 
@@ -471,7 +474,7 @@ default behaviour is:
 	BITSET(hud_updateflag, LIFE_HUD)
 
 	failed_last_breath = 0 //So mobs that died of oxyloss don't revive and have perpetual out of breath.
-
+	reload_fullscreen()
 	return
 
 /mob/living/proc/UpdateDamageIcon()
@@ -636,16 +639,22 @@ default behaviour is:
 			if(istype(A,/mob/living/simple_animal/borer) || istype(A,/obj/item/weapon/holder))
 				return
 		M.status_flags &= ~PASSEMOTES
-
 	else if(istype(H.loc,/obj/item/clothing/accessory/holster))
 		var/obj/item/clothing/accessory/holster/holster = H.loc
 		if(holster.holstered == H)
 			holster.clear_holster()
 		src << "<span class='warning'>You extricate yourself from \the [holster].</span>"
 		H.forceMove(get_turf(H))
-	else if(istype(H.loc,/obj/item))
+	else if(istype(H.loc,/obj))
+		if(istype(H.loc, /obj/machinery/cooker))
+			var/obj/machinery/cooker/C = H.loc
+			C.cooking_obj = null
+			C.check_cooking_obj()
 		src << "<span class='warning'>You struggle free of \the [H.loc].</span>"
 		H.forceMove(get_turf(H))
+
+	if(loc != H)
+		qdel(H)
 
 /mob/living/proc/escape_buckle()
 	if(buckled)
@@ -653,26 +662,9 @@ default behaviour is:
 
 /mob/living/proc/resist_grab()
 	var/resisting = 0
-	for(var/obj/O in requests)
-		requests.Remove(O)
-		qdel(O)
-		resisting++
 	for(var/obj/item/weapon/grab/G in grabbed_by)
 		resisting++
-		switch(G.state)
-			if(GRAB_PASSIVE)
-				qdel(G)
-			if(GRAB_AGGRESSIVE)
-				//Not standing up makes it much harder to break, so it is easier to cuff someone who is down without forcing them into unconsciousness.
-				//Otherwise, it's the same chance of breaking the grab as disarm.
-				if(incapacitated(INCAPACITATION_KNOCKDOWN)? prob(15) : prob(60))
-					visible_message("<span class='warning'>[src] has broken free of [G.assailant]'s grip!</span>")
-					qdel(G)
-			if(GRAB_NECK)
-				//If the you move when grabbing someone then it's easier for them to break free. Same if the affected mob is immune to stun.
-				if (((world.time - G.assailant.l_move_time < 30 || !stunned) && prob(15)) || prob(3))
-					visible_message("<span class='warning'>[src] has broken free of [G.assailant]'s headlock!</span>")
-					qdel(G)
+		G.handle_resist()
 	if(resisting)
 		visible_message("<span class='danger'>[src] resists!</span>")
 
@@ -683,116 +675,19 @@ default behaviour is:
 	resting = !resting
 	src << "<span class='notice'>You are now [resting ? "resting" : "getting up"]</span>"
 
-/mob/living/proc/is_allowed_vent_crawl_item(var/obj/item/carried_item)
-	return get_inventory_slot(carried_item) == 0
-
-/mob/living/simple_animal/spiderbot/is_allowed_vent_crawl_item(var/obj/item/carried_item)
-	if(carried_item == held_item)
-		return 0
-	return ..()
-
-/mob/living/proc/handle_ventcrawl(var/obj/machinery/atmospherics/unary/vent_pump/vent_found = null, var/ignore_items = 0) // -- TLE -- Merged by Carn
-	if(stat)
-		src << "You must be conscious to do this!"
-		return
-	if(lying)
-		src << "You can't vent crawl while you're stunned!"
-		return
-
-	var/special_fail_msg = cannot_use_vents()
-	if(special_fail_msg)
-		src << "<span class='warning'>[special_fail_msg]</span>"
-		return
-
-	if(vent_found) // one was passed in, probably from vent/AltClick()
-		if(vent_found.welded)
-			src << "That vent is welded shut."
-			return
-		if(!vent_found.Adjacent(src))
-			return // don't even acknowledge that
-	else
-		for(var/obj/machinery/atmospherics/unary/vent_pump/v in range(1,src))
-			if(!v.welded)
-				if(v.Adjacent(src))
-					vent_found = v
-	if(!vent_found)
-		src << "You'll need a non-welded vent to crawl into!"
-		return
-
-	if(!vent_found.network || !vent_found.network.normal_members.len)
-		src << "This vent is not connected to anything."
-		return
-
-	var/list/vents = list()
-	for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in vent_found.network.normal_members)
-		if(temp_vent.welded)
-			continue
-		if(temp_vent in loc)
-			continue
-		var/turf/T = get_turf(temp_vent)
-
-		if(!T || T.z != loc.z)
-			continue
-
-		var/i = 1
-		var/index = "[T.loc.name]\[[i]\]"
-		while(index in vents)
-			i++
-			index = "[T.loc.name]\[[i]\]"
-		vents[index] = temp_vent
-	if(!vents.len)
-		src << "\red There are no available vents to travel to, they could be welded."
-		return
-
-	var/obj/selection = input("Select a destination.", "Duct System") as null|anything in sortAssoc(vents)
-	if(!selection)	return
-
-	if(!vent_found.Adjacent(src))
-		src << "Never mind, you left."
-		return
-
-	if(!ignore_items)
-		for(var/obj/item/carried_item in contents)//If the monkey got on objects.
-			if(is_allowed_vent_crawl_item(carried_item))
-				continue
-			src << "<span class='warning'>You can't be carrying items or have items equipped when vent crawling!</span>"
-			return
-
-	if(isslime(src))
-		var/mob/living/carbon/slime/S = src
-		if(S.Victim)
-			src << "\red You'll have to let [S.Victim] go or finish eating \him first."
-			return
-
-	var/obj/machinery/atmospherics/unary/vent_pump/target_vent = vents[selection]
-	if(!target_vent)
-		return
-
-	for(var/mob/O in viewers(src, null))
-		O.show_message(text("<B>[src] scrambles into the ventillation ducts!</B>"), 1)
-	loc = target_vent
-
-	var/travel_time = round(get_dist(loc, target_vent.loc) / 2)
-
-	spawn(travel_time)
-
-		if(!target_vent)	return
-		for(var/mob/O in hearers(target_vent,null))
-			O.show_message("You hear something squeezing through the ventilation ducts.",2)
-
-		sleep(travel_time)
-
-		if(!target_vent)	return
-		if(target_vent.welded)			//the vent can be welded while alien scrolled through the list or travelled.
-			target_vent = vent_found 	//travel back. No additional time required.
-			src << "\red The vent you were heading to appears to be welded."
-		loc = target_vent.loc
-		var/area/new_area = get_area(loc)
-		if(new_area)
-			new_area.Entered(src)
+//called when the mob receives a bright flash
+/mob/living/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
+	if(override_blindness_check || !(disabilities & BLIND))
+		overlay_fullscreen("flash", type)
+		spawn(25)
+			if(src)
+				clear_fullscreen("flash", 25)
+		return 1
 
 /mob/living/proc/cannot_use_vents()
-	return "You can't fit into that vent."
+	if(mob_size > MOB_SMALL)
+		return "You can't fit into that vent."
+	return null
 
 /mob/living/proc/has_brain()
 	return 1
@@ -808,36 +703,16 @@ default behaviour is:
 		return
 	. = ..()
 
-/mob/living/touch_map_edge()
-
-	//check for nuke disks
-	if(client && stat != DEAD) //if they are clientless and dead don't bother, the parent will treat them as any other container
-		if(ticker && istype(ticker.mode, /datum/game_mode/nuclear)) //only really care if the game mode is nuclear
-			var/datum/game_mode/nuclear/G = ticker.mode
-			if(G.check_mob(src))
-				if(x <= TRANSITIONEDGE)
-					inertia_dir = 4
-				else if(x >= world.maxx -TRANSITIONEDGE)
-					inertia_dir = 8
-				else if(y <= TRANSITIONEDGE)
-					inertia_dir = 1
-				else if(y >= world.maxy -TRANSITIONEDGE)
-					inertia_dir = 2
-				src << "<span class='warning'>Something you are carrying is preventing you from leaving.</span>"
-				return
-
-	..()
-
 //damage/heal the mob ears and adjust the deaf amount
 /mob/living/adjustEarDamage(var/damage, var/deaf)
 	ear_damage = max(0, ear_damage + damage)
 	ear_deaf = max(0, ear_deaf + deaf)
 
 //pass a negative argument to skip one of the variable
-/mob/living/setEarDamage(var/damage, var/deaf)
-	if(damage >= 0)
+/mob/living/setEarDamage(var/damage = null, var/deaf = null)
+	if(!isnull(damage))
 		ear_damage = damage
-	if(deaf >= 0)
+	if(!isnull(deaf))
 		ear_deaf = deaf
 
 /mob/proc/can_be_possessed_by(var/mob/observer/ghost/possessor)
@@ -882,3 +757,4 @@ default behaviour is:
 	src << "<b>You are now \the [src]!</b>"
 	src << "<span class='notice'>Remember to stay in character for a mob of this type!</span>"
 	return 1
+

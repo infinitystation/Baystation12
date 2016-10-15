@@ -5,7 +5,7 @@
 	desc = "A vending machine with microfabricator capable of dispensing various NT-branded computers."
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "robotics"
-	layer = 2.9
+	layer = BELOW_OBJ_LAYER
 	anchored = 1
 	density = 1
 
@@ -221,15 +221,17 @@
 
 	var/list/data[0]
 	data["state"] = state
-	data["devtype"] = devtype
-	data["hw_battery"] = dev_battery
-	data["hw_disk"] = dev_disk
-	data["hw_netcard"] = dev_netcard
-	data["hw_tesla"] = dev_tesla
-	data["hw_nanoprint"] = dev_nanoprint
-	data["hw_card"] = dev_card
-	data["hw_cpu"] = dev_cpu
-	data["totalprice"] = "[total_price]$"
+	if(state == 1)
+		data["devtype"] = devtype
+		data["hw_battery"] = dev_battery
+		data["hw_disk"] = dev_disk
+		data["hw_netcard"] = dev_netcard
+		data["hw_tesla"] = dev_tesla
+		data["hw_nanoprint"] = dev_nanoprint
+		data["hw_card"] = dev_card
+		data["hw_cpu"] = dev_cpu
+	if(state == 1 || state == 2)
+		data["totalprice"] = total_price
 
 	ui = nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -240,16 +242,18 @@
 
 
 obj/machinery/lapvend/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	var/obj/item/weapon/card/id/I = W.GetID()
+	var/obj/item/weapon/card/id/I = W.GetIdCard()
 	// Awaiting payment state
 	if(state == 2)
 		if(process_payment(I,W))
 			fabricate_and_recalc_price(1)
 			if((devtype == 1) && fabricated_laptop)
+				fabricated_laptop.cpu.battery_module.charge_to_full()
 				fabricated_laptop.forceMove(src.loc)
 				fabricated_laptop.close_laptop()
 				fabricated_laptop = null
 			else if((devtype == 2) && fabricated_tablet)
+				fabricated_tablet.battery_module.charge_to_full()
 				fabricated_tablet.forceMove(src.loc)
 				fabricated_tablet = null
 			ping("Enjoy your new product!")

@@ -7,9 +7,9 @@
 
 /obj/item/weapon/tape_roll/attack(var/mob/living/carbon/human/H, var/mob/user)
 	if(istype(H))
-		if(user.zone_sel.selecting == "eyes")
+		if(user.zone_sel.selecting == BP_EYES)
 
-			if(!H.organs_by_name["head"])
+			if(!H.organs_by_name[BP_HEAD])
 				user << "<span class='warning'>\The [H] doesn't have a head.</span>"
 				return
 			if(!H.has_eyes())
@@ -23,18 +23,18 @@
 				return
 			user.visible_message("<span class='danger'>\The [user] begins taping over \the [H]'s eyes!</span>")
 
-			if(!do_after(user, 30, process=0))
+			if(!do_mob(user, H, 30))
 				return
 
 			// Repeat failure checks.
-			if(!H || !src || !H.organs_by_name["head"] || !H.has_eyes() || H.glasses || (H.head && (H.head.body_parts_covered & FACE)))
+			if(!H || !src || !H.organs_by_name[BP_HEAD] || !H.has_eyes() || H.glasses || (H.head && (H.head.body_parts_covered & FACE)))
 				return
 
 			user.visible_message("<span class='danger'>\The [user] has taped up \the [H]'s eyes!</span>")
 			H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/blindfold/tape(H), slot_glasses)
 
-		else if(user.zone_sel.selecting == "mouth" || user.zone_sel.selecting == "head")
-			if(!H.organs_by_name["head"])
+		else if(user.zone_sel.selecting == BP_MOUTH || user.zone_sel.selecting == BP_HEAD)
+			if(!H.organs_by_name[BP_HEAD])
 				user << "<span class='warning'>\The [H] doesn't have a head.</span>"
 				return
 			if(!H.check_has_mouth())
@@ -48,17 +48,17 @@
 				return
 			user.visible_message("<span class='danger'>\The [user] begins taping up \the [H]'s mouth!</span>")
 
-			if(!do_after(user, 30, process=0))
+			if(!do_mob(user, H, 30))
 				return
 
 			// Repeat failure checks.
-			if(!H || !src || !H.organs_by_name["head"] || !H.check_has_mouth() || H.wear_mask || (H.head && (H.head.body_parts_covered & FACE)))
+			if(!H || !src || !H.organs_by_name[BP_HEAD] || !H.check_has_mouth() || H.wear_mask || (H.head && (H.head.body_parts_covered & FACE)))
 				return
 
 			user.visible_message("<span class='danger'>\The [user] has taped up \the [H]'s mouth!</span>")
 			H.equip_to_slot_or_del(new /obj/item/clothing/mask/muzzle/tape(H), slot_wear_mask)
 
-		else if(user.zone_sel.selecting == "r_hand" || user.zone_sel.selecting == "l_hand")
+		else if(user.zone_sel.selecting == BP_R_HAND || user.zone_sel.selecting == BP_L_HAND)
 			var/obj/item/weapon/handcuffs/cable/tape/T = new(user)
 			if(!T.place_handcuffs(H, user))
 				user.unEquip(T)
@@ -81,7 +81,7 @@
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "tape"
 	w_class = 1
-	layer = 4
+	layer = ABOVE_OBJ_LAYER
 	anchored = 1 //it's sticky, no you cant move it
 
 	var/obj/item/weapon/stuck = null

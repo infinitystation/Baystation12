@@ -267,6 +267,12 @@
 
 	return removed
 
+//Returns the amount of gas that has the given flag, in moles
+/datum/gas_mixture/proc/get_by_flag(flag)
+	. = 0
+	for(var/g in gas)
+		if(gas_data.flags[g] & flag)
+			. += gas[g]
 
 //Copies gas and temperature from another gas_mixture.
 /datum/gas_mixture/proc/copy_from(const/datum/gas_mixture/sample)
@@ -289,6 +295,9 @@
 		(gas[g] > (1 + MINIMUM_AIR_RATIO_TO_SUSPEND) * sample.gas[g])))
 			return 0
 		marked[g] = 1
+
+	if(abs(return_pressure() - sample.return_pressure()) > MINIMUM_PRESSURE_DIFFERENCE_TO_SUSPEND)
+		return 0
 
 	for(var/g in sample.gas)
 		if(!marked[g])

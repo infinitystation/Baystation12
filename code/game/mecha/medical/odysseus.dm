@@ -9,7 +9,6 @@
 	wreckage = /obj/effect/decal/mecha_wreckage/odysseus
 	internal_damage_threshold = 35
 	deflect_chance = 15
-	step_energy_drain = 6
 	var/obj/item/clothing/glasses/hud/health/mech/hud
 
 	New()
@@ -91,15 +90,15 @@
 					break
 
 			holder = patient.hud_list[HEALTH_HUD]
-			if(patient.stat == 2)
+			if(patient.stat == DEAD)
 				holder.icon_state = "hudhealth-100"
 				C.images += holder
 			else
-				holder.icon_state = "hud[RoundHealth((patient.health-config.health_threshold_crit)/(patient.maxHealth-config.health_threshold_crit)*100)]"
+				holder.icon_state = RoundHealth((patient.health-config.health_threshold_crit)/(patient.maxHealth-config.health_threshold_crit)*100)
 				C.images += holder
 
 			holder = patient.hud_list[STATUS_HUD]
-			if(patient.stat == 2)
+			if(patient.stat == DEAD)
 				holder.icon_state = "huddead"
 			else if(patient.status_flags & XENO_HOST)
 				holder.icon_state = "hudxeno"

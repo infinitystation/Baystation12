@@ -1,4 +1,4 @@
-//This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:33
+#define SAVE_RESET -1
 
 var/list/preferences_datums = list()
 
@@ -57,23 +57,16 @@ datum/preferences
 	var/faction = "None"                //Antag faction/general associated faction.
 	var/religion = "None"               //Religious association.
 
+	var/char_branch						//branch system
+	var/char_rank						//rank system
 		//Mob preview
 	var/icon/preview_icon = null
-	var/icon/preview_icon_front = null
-	var/icon/preview_icon_side = null
 
-		//Jobs, uses bitflags
-	var/job_civilian_high = 0
-	var/job_civilian_med = 0
-	var/job_civilian_low = 0
 
-	var/job_medsci_high = 0
-	var/job_medsci_med = 0
-	var/job_medsci_low = 0
-
-	var/job_engsec_high = 0
-	var/job_engsec_med = 0
-	var/job_engsec_low = 0
+	//Since there can only be 1 high job.
+	var/job_high = null
+	var/list/job_medium = list() //List of all things selected for medium weight
+	var/list/job_low    = list() //List of all the things selected for low weight
 
 	//Keeps track of preferrence for not getting any wanted jobs
 	var/alternate_option = 0
@@ -111,12 +104,13 @@ datum/preferences
 	var/savefile/loaded_preferences
 	var/savefile/loaded_character
 	var/datum/category_collection/player_setup_collection/player_setup
+	var/datum/browser/panel
 
 /datum/preferences/New(client/C)
 	player_setup = new(src)
 	gender = pick(MALE, FEMALE)
 	real_name = random_name(gender,species)
-	b_type = pick(4;"O-", 36;"O+", 3;"A-", 28;"A+", 1;"B-", 20;"B+", 1;"AB-", 5;"AB+")
+	b_type = RANDOM_BLOOD_TYPE
 
 	gear = list()
 
@@ -200,6 +194,7 @@ datum/preferences
 		dat += "Slot - "
 		dat += "<a href='?src=\ref[src];load=1'>Load slot</a> - "
 		dat += "<a href='?src=\ref[src];save=1'>Save slot</a> - "
+		dat += "<a href='?src=\ref[src];resetslot=1'>Reset slot</a> - "
 		dat += "<a href='?src=\ref[src];reload=1'>Reload slot</a>"
 
 	else
@@ -211,12 +206,14 @@ datum/preferences
 	dat += player_setup.content(user)
 
 	dat += "</html></body>"
-	user << browse(dat, "window=preferences;size=635x736")
+	var/datum/browser/popup = new(user, "Character Setup","Character Setup", 800, 800, src)
+	popup.set_content(dat)
+	popup.open()
 
 /datum/preferences/proc/process_link(mob/user, list/href_list)
-	if(!user)	return
 
-	if(!istype(user, /mob/new_player))	return
+	if(!user)	return
+	if(isliving(user)) return
 
 	if(href_list["preference"] == "open_whitelist_forum")
 		if(config.forumurl)
@@ -237,22 +234,28 @@ datum/preferences
 	else if(href_list["reload"])
 		load_preferences()
 		load_character()
+		sanitize_preferences()
 	else if(href_list["load"])
 		if(!IsGuestKey(usr.key))
 			open_load_dialog(usr)
 			return 1
 	else if(href_list["changeslot"])
 		load_character(text2num(href_list["changeslot"]))
+		sanitize_preferences()
 		close_load_dialog(usr)
+	else if(href_list["resetslot"])
+		load_character(SAVE_RESET)
+		sanitize_preferences()
 	else
 		return 0
 
 	ShowChoices(usr)
 	return 1
 
-/datum/preferences/proc/copy_to(mob/living/carbon/human/character, safety = 0)
+/datum/preferences/proc/copy_to(mob/living/carbon/human/character, is_preview_copy = FALSE)
 	// Sanitizing rather than saving as someone might still be editing when copy_to occurs.
 	player_setup.sanitize_setup()
+	character.set_species(species)
 	if(be_random_name)
 		real_name = random_name(gender,species)
 
@@ -264,10 +267,106 @@ datum/preferences
 		else if(firstspace == name_length)
 			real_name += "[pick(last_names)]"
 
-	character.real_name = real_name
-	character.name = character.real_name
-	if(character.dna)
-		character.dna.real_name = character.real_name
+	character.fully_replace_character_name(real_name)
+
+	character.gender = gender
+	character.age = age
+	character.b_type = b_type
+
+	character.r_eyes = r_eyes
+	character.g_eyes = g_eyes
+	character.b_eyes = b_eyes
+
+	character.h_style = h_style
+	character.r_hair = r_hair
+	character.g_hair = g_hair
+	character.b_hair = b_hair
+
+	character.f_style = f_style
+	character.r_facial = r_facial
+	character.g_facial = g_facial
+	character.b_facial = b_facial
+
+	character.r_skin = r_skin
+	character.g_skin = g_skin
+	character.b_skin = b_skin
+
+	character.s_tone = s_tone
+
+	character.h_style = h_style
+	character.f_style = f_style
+
+	// Replace any missing limbs.
+	for(var/name in BP_ALL_LIMBS)
+		var/obj/item/organ/external/O = character.organs_by_name[name]
+		if(!O && organ_data[name] != "amputated")
+			var/list/organ_data = character.species.has_limbs[name]
+			if(!islist(organ_data)) continue
+			var/limb_path = organ_data["path"]
+			O = new limb_path(character)
+
+	// Destroy/cyborgize organs and limbs. The order is important for preserving low-level choices for robolimb sprites being overridden.
+	for(var/name in BP_BY_DEPTH)
+		var/status = organ_data[name]
+		var/obj/item/organ/external/O = character.organs_by_name[name]
+		if(!O)
+			continue
+		O.status = 0
+		O.robotic = 0
+		O.model = null
+		if(status == "amputated")
+			character.organs_by_name[O.organ_tag] = null
+			character.organs -= O
+			if(O.children) // This might need to become recursive.
+				for(var/obj/item/organ/external/child in O.children)
+					character.organs_by_name[child.organ_tag] = null
+					character.organs -= child
+		else if(status == "cyborg")
+			if(rlimb_data[name])
+				O.robotize(rlimb_data[name])
+			else
+				O.robotize()
+		else //normal organ
+			O.force_icon = null
+			O.name = initial(O.name)
+			O.desc = initial(O.desc)
+
+	if(!is_preview_copy)
+		for(var/name in list(BP_HEART,BP_EYES,BP_BRAIN))
+			var/status = organ_data[name]
+			if(!status)
+				continue
+			var/obj/item/organ/I = character.internal_organs_by_name[name]
+			if(I)
+				if(status == "assisted")
+					I.mechassist()
+				else if(status == "mechanical")
+					I.robotize()
+
+	character.all_underwear.Cut()
+	character.all_underwear_metadata.Cut()
+	for(var/underwear_category_name in all_underwear)
+		var/datum/category_group/underwear/underwear_category = global_underwear.categories_by_name[underwear_category_name]
+		if(underwear_category)
+			var/underwear_item_name = all_underwear[underwear_category_name]
+			character.all_underwear[underwear_category_name] = underwear_category.items_by_name[underwear_item_name]
+			if(all_underwear_metadata[underwear_category_name])
+				character.all_underwear_metadata[underwear_category_name] = all_underwear_metadata[underwear_category_name]
+		else
+			all_underwear -= underwear_category_name
+	if(backbag > 4 || backbag < 1)
+		backbag = 1 //Same as above
+	character.backbag = backbag
+
+	character.force_update_limbs()
+	character.update_mutations(0)
+	character.update_body(0)
+	character.update_underwear(0)
+	character.update_hair(0)
+	character.update_icons()
+
+	if(is_preview_copy)
+		return
 
 	character.flavor_texts["general"] = flavor_texts["general"]
 	character.flavor_texts["head"] = flavor_texts["head"]
@@ -284,31 +383,6 @@ datum/preferences
 	character.gen_record = gen_record
 	character.exploit_record = exploit_record
 
-	character.gender = gender
-	character.age = age
-	character.b_type = b_type
-
-	character.r_eyes = r_eyes
-	character.g_eyes = g_eyes
-	character.b_eyes = b_eyes
-
-	character.r_hair = r_hair
-	character.g_hair = g_hair
-	character.b_hair = b_hair
-
-	character.r_facial = r_facial
-	character.g_facial = g_facial
-	character.b_facial = b_facial
-
-	character.r_skin = r_skin
-	character.g_skin = g_skin
-	character.b_skin = b_skin
-
-	character.s_tone = s_tone
-
-	character.h_style = h_style
-	character.f_style = f_style
-
 	character.home_system = home_system
 	character.citizenship = citizenship
 	character.personal_faction = faction
@@ -317,60 +391,9 @@ datum/preferences
 	character.skills = skills
 	character.used_skillpoints = used_skillpoints
 
-	// Destroy/cyborgize organs
-
-	for(var/name in organ_data)
-
-		var/status = organ_data[name]
-		var/obj/item/organ/external/O = character.organs_by_name[name]
-		if(O)
-			O.status = 0
-			if(status == "amputated")
-				character.organs_by_name[O.limb_name] = null
-				character.organs -= O
-				if(O.children) // This might need to become recursive.
-					for(var/obj/item/organ/external/child in O.children)
-						character.organs_by_name[child.limb_name] = null
-						character.organs -= child
-
-			else if(status == "cyborg")
-				if(rlimb_data[name])
-					O.robotize(rlimb_data[name])
-				else
-					O.robotize()
-		else
-			var/obj/item/organ/I = character.internal_organs_by_name[name]
-			if(I)
-				if(status == "assisted")
-					I.mechassist()
-				else if(status == "mechanical")
-					I.robotize()
-
-	character.all_underwear.Cut()
-	character.all_underwear_metadata.Cut()
-
-	for(var/underwear_category_name in all_underwear)
-		var/datum/category_group/underwear/underwear_category = global_underwear.categories_by_name[underwear_category_name]
-		if(underwear_category)
-			var/underwear_item_name = all_underwear[underwear_category_name]
-			character.all_underwear[underwear_category_name] = underwear_category.items_by_name[underwear_item_name]
-			if(all_underwear_metadata[underwear_category_name])
-				character.all_underwear_metadata[underwear_category_name] = all_underwear_metadata[underwear_category_name]
-		else
-			all_underwear -= underwear_category_name
-
-	if(backbag > 4 || backbag < 1)
-		backbag = 1 //Same as above
-	character.backbag = backbag
-
-	//Debugging report to track down a bug, which randomly assigned the plural gender to people.
-	if(character.gender in list(PLURAL, NEUTER))
-		if(isliving(src)) //Ghosts get neuter by default
-			message_admins("[character] ([character.ckey]) has spawned with their gender as plural or neuter. Please notify coders.")
-			character.gender = MALE
-
 /datum/preferences/proc/open_load_dialog(mob/user)
-	var/dat = "<body>"
+	var/dat  = list()
+	dat += "<body>"
 	dat += "<tt><center>"
 
 	var/savefile/S = new /savefile(path)
@@ -387,7 +410,10 @@ datum/preferences
 
 	dat += "<hr>"
 	dat += "</center></tt>"
-	user << browse(dat, "window=saves;size=300x390")
+	panel = new(user, "Character Slots", "Character Slots", 300, 390, src)
+	panel.set_content(jointext(dat,null))
+	panel.open()
 
 /datum/preferences/proc/close_load_dialog(mob/user)
 	user << browse(null, "window=saves")
+	panel.close()

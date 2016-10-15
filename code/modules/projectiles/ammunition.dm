@@ -3,6 +3,7 @@
 	desc = "A bullet casing."
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "s-casing"
+	randpixel = 10
 	flags = CONDUCT
 	slot_flags = SLOT_BELT | SLOT_EARS
 	throwforce = 1
@@ -12,21 +13,38 @@
 	var/caliber = ""					//Which kind of guns it can be loaded into
 	var/projectile_type					//The bullet type to create when New() is called
 	var/obj/item/projectile/BB = null	//The loaded bullet - make it so that the projectiles are created only when needed?
-	var/spent_icon = null
+	var/spent_icon = "s-casing-spent"
 
 /obj/item/ammo_casing/New()
 	..()
 	if(ispath(projectile_type))
 		BB = new projectile_type(src)
-	pixel_x = rand(-10, 10)
-	pixel_y = rand(-10, 10)
 
 //removes the projectile from the ammo casing
 /obj/item/ammo_casing/proc/expend()
 	. = BB
 	BB = null
-	set_dir(pick(cardinal)) //spin spent casings
+	set_dir(pick(alldirs)) //spin spent casings
+
+	// Aurora forensics port, gunpowder residue.
+	if(leaves_residue)
+		leave_residue()
+
 	update_icon()
+
+/obj/item/ammo_casing/proc/leave_residue()
+	var/mob/living/carbon/human/H
+	if(ishuman(loc))
+		H = loc //in a human, somehow
+	else if(loc && ishuman(loc.loc))
+		H = loc.loc //more likely, we're in a gun being held by a human
+
+	if(H)
+		if(H.gloves && (H.l_hand == loc || H.r_hand == loc))
+			var/obj/item/clothing/G = H.gloves
+			G.gunshot_residue = caliber
+		else
+			H.gunshot_residue = caliber
 
 /obj/item/ammo_casing/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/weapon/screwdriver))
@@ -44,6 +62,7 @@
 		else
 			user << "\blue You inscribe \"[label_text]\" into \the [initial(BB.name)]."
 			BB.name = "[initial(BB.name)] (\"[label_text]\")"
+	else ..()
 
 /obj/item/ammo_casing/update_icon()
 	if(spent_icon && !BB)
@@ -87,6 +106,9 @@
 	var/list/icon_keys = list()		//keys
 	var/list/ammo_states = list()	//values
 
+/obj/item/ammo_magazine/box
+	w_class = 3
+
 /obj/item/ammo_magazine/New()
 	..()
 	if(multiple_sprites)
@@ -110,9 +132,10 @@
 			user << "<span class='warning'>[src] is full!</span>"
 			return
 		user.remove_from_mob(C)
-		C.loc = src
+		C.forceMove(src)
 		stored_ammo.Insert(1, C) //add to the head of the list
 		update_icon()
+	else ..()
 
 /obj/item/ammo_magazine/attack_self(mob/user)
 	if(!stored_ammo.len)
@@ -120,8 +143,8 @@
 		return
 	user << "<span class='notice'>You empty [src].</span>"
 	for(var/obj/item/ammo_casing/C in stored_ammo)
-		C.loc = user.loc
-		C.set_dir(pick(cardinal))
+		C.forceMove(user.loc)
+		C.set_dir(pick(alldirs))
 	stored_ammo.Cut()
 	update_icon()
 

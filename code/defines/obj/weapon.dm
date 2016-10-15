@@ -3,6 +3,7 @@
 	desc = "Should anything ever go wrong..."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "red_phone"
+	randpixel = 0
 	flags = CONDUCT
 	force = 3.0
 	throwforce = 2.0
@@ -67,6 +68,10 @@
 	desc = "An untrustworthy bar of soap. Smells of fear."
 	icon_state = "soapsyndie"
 
+/obj/item/weapon/soap/gold
+	desc = "One true soap to rule them all."
+	icon_state = "soapgold"
+
 /obj/item/weapon/bikehorn
 	name = "bike horn"
 	desc = "A horn off of a bicycle."
@@ -115,25 +120,28 @@
 
 /obj/item/weapon/cane/concealed/attack_self(var/mob/user)
 	if(concealed_blade)
-		user.visible_message("<span class='warning'>[user] has unsheathed \a [concealed_blade] from \his [src]!</span>", "You unsheathe \the [concealed_blade] from \the [src].")
+		user.visible_message("<span class='warning'>[user] has unsheathed \a [concealed_blade] from [src]!</span>", "You unsheathe \the [concealed_blade] from [src].")
 		// Calling drop/put in hands to properly call item drop/pickup procs
 		playsound(user.loc, 'sound/weapons/flipblade.ogg', 50, 1)
 		user.drop_from_inventory(src)
 		user.put_in_hands(concealed_blade)
 		user.put_in_hands(src)
-		user.update_inv_l_hand(0)
-		user.update_inv_r_hand()
 		concealed_blade = null
+		update_icon()
+		user.update_inv_l_hand()
+		user.update_inv_r_hand()
 	else
 		..()
 
 /obj/item/weapon/cane/concealed/attackby(var/obj/item/weapon/material/butterfly/W, var/mob/user)
 	if(!src.concealed_blade && istype(W))
-		user.visible_message("<span class='warning'>[user] has sheathed \a [W] into \his [src]!</span>", "You sheathe \the [W] into \the [src].")
+		user.visible_message("<span class='warning'>[user] has sheathed \a [W] into [src]!</span>", "You sheathe \the [W] into [src].")
 		user.drop_from_inventory(W)
 		W.loc = src
 		src.concealed_blade = W
 		update_icon()
+		user.update_inv_l_hand()
+		user.update_inv_r_hand()
 	else
 		..()
 
@@ -141,7 +149,7 @@
 	if(concealed_blade)
 		name = initial(name)
 		icon_state = initial(icon_state)
-		item_state = initial(icon_state)
+		item_state = initial(item_state)
 	else
 		name = "cane shaft"
 		icon_state = "nullrod"
@@ -150,6 +158,7 @@
 /obj/item/weapon/disk
 	name = "disk"
 	icon = 'icons/obj/items.dmi'
+	randpixel = 5
 
 /*
 /obj/item/weapon/game_kit
@@ -161,18 +170,8 @@
 	var/data = ""
 	var/base_url = "http://svn.slurm.us/public/spacestation13/misc/game_kit"
 	item_state = "sheet-metal"
-	w_class = 5.0
+	w_class = 6
 */
-
-/obj/item/weapon/gift
-	name = "gift"
-	desc = "A wrapped item."
-	icon = 'icons/obj/items.dmi'
-	icon_state = "gift3"
-	var/size = 3.0
-	var/obj/item/gift = null
-	item_state = "gift"
-	w_class = 4.0
 
 /obj/item/weapon/legcuffs
 	name = "legcuffs"
@@ -395,7 +394,6 @@
 	allow_quick_gather = 1
 	allow_quick_empty = 1
 	collection_mode = 1
-	display_contents_with_number = 1
 	max_w_class = 3
 	max_storage_space = 100
 
@@ -404,13 +402,9 @@
 	desc = "What?"
 	gender = PLURAL
 	icon = 'icons/obj/stock_parts.dmi'
+	randpixel = 5
 	w_class = 2.0
 	var/rating = 1
-
-/obj/item/weapon/stock_parts/New()
-	src.pixel_x = rand(-5.0, 5)
-	src.pixel_y = rand(-5.0, 5)
-	..()
 
 //Rank 1
 

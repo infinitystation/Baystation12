@@ -10,7 +10,7 @@
 	return (istype(T, /turf/simulated/wall) || istype(T, /turf/unsimulated/wall) || istype(T, /turf/simulated/shuttle/wall))
 
 /proc/isfloor(turf/T)
-	return (istype(T, /turf/simulated/floor) || istype(T, /turf/unsimulated/floor) || istype(T, /turf/simulated/shuttle/floor))
+	return (istype(T, /turf/simulated/floor) || istype(T, /turf/unsimulated/floor))
 
 /proc/turf_clear(turf/T)
 	for(var/atom/A in T)
@@ -33,6 +33,43 @@
 		available_turfs = start_turfs
 	return pick(available_turfs)
 
+/proc/get_random_turf_in_range(var/atom/origin, var/outer_range, var/inner_range)
+	origin = get_turf(origin)
+	if(!origin)
+		return
+	var/list/turfs = list()
+	for(var/turf/T in orange(origin, outer_range))
+		if(!(T.z in using_map.sealed_levels)) // Picking a turf outside the map edge isn't recommended
+			if(T.x >= world.maxx-TRANSITIONEDGE || T.x <= TRANSITIONEDGE)	continue
+			if(T.y >= world.maxy-TRANSITIONEDGE || T.y <= TRANSITIONEDGE)	continue
+		if(!inner_range || get_dist(origin, T) >= inner_range)
+			turfs += T
+	if(turfs.len)
+		return pick(turfs)
+
+/proc/screen_loc2turf(text, turf/origin)
+	if(!origin)
+		return null
+	var/tZ = splittext(text, ",")
+	var/tX = splittext(tZ[1], "-")
+	var/tY = text2num(tX[2])
+	tX = splittext(tZ[2], "-")
+	tX = text2num(tX[2])
+	tZ = origin.z
+	tX = max(1, min(origin.x + 7 - tX, world.maxx))
+	tY = max(1, min(origin.y + 7 - tY, world.maxy))
+	return locate(tX, tY, tZ)
+
+/*
+	Predicate helpers
+*/
+
+/proc/is_holy_turf(var/turf/T)
+	return T && T.holy
+
+/proc/is_not_holy_turf(var/turf/T)
+	return !is_holy_turf(T)
+
 /proc/turf_contains_dense_objects(var/turf/T)
 	return T.contains_dense_objects()
 
@@ -42,13 +79,20 @@
 /proc/is_station_turf(var/turf/T)
 	return T && isStationLevel(T.z)
 
-/proc/get_random_turf_in_range(var/atom/origin, var/outer_range, var/inner_range)
-	origin = get_turf(origin)
-	if(!origin)
-		return
-	var/list/turfs = list()
-	for(var/turf/T in orange(origin, outer_range))
-		if(get_dist(origin, T) >= inner_range)
-			turfs += T
-	if(turfs.len)
-		return pick(turfs)
+/proc/IsTurfAtmosUnsafe(var/turf/T)
+	if(istype(T, /turf/space)) // Space tiles
+		return "Spawn location is open to space."
+	var/datum/gas_mixture/air = T.return_air()
+	if(!air)
+		return "Spawn location lacks atmosphere."
+	return get_atmosphere_issues(air, 1)
+
+/proc/IsTurfAtmosSafe(var/turf/T)
+	return !IsTurfAtmosUnsafe(T)
+
+/proc/is_below_sound_pressure(var/turf/T)
+	var/datum/gas_mixture/environment = T ? T.return_air() : null
+	var/pressure =  environment ? environment.return_pressure() : 0
+	if(pressure < SOUND_MINIMUM_PRESSURE)
+		return TRUE
+	return FALSE

@@ -1,5 +1,9 @@
+#define PUBLIC_GAME_MODE (ticker ? (ticker.hide_mode == 0 ? master_mode : "Secret") : "Unknown")
+
 #define Clamp(x, y, z) 	(x <= y ? y : (x >= z ? z : x))
 #define CLAMP01(x) 		(Clamp(x, 0, 1))
+
+#define get_turf(A) get_step(A,0)
 
 #define isAI(A) istype(A, /mob/living/silicon/ai)
 
@@ -13,11 +17,19 @@
 
 #define iscarbon(A) istype(A, /mob/living/carbon)
 
+#define iscolorablegloves(A) (istype(A, /obj/item/clothing/gloves/color)||istype(A, /obj/item/clothing/gloves/insulated)||istype(A, /obj/item/clothing/gloves/thick))
+
+#define isclient(A) istype(A, /client)
+
 #define iscorgi(A) istype(A, /mob/living/simple_animal/corgi)
+
+#define is_drone(A) istype(A, /mob/living/silicon/robot/drone)
 
 #define isEye(A) istype(A, /mob/observer/eye)
 
 #define ishuman(A) istype(A, /mob/living/carbon/human)
+
+#define isitem(A) istype(A, /obj/item)
 
 #define islist(A) istype(A, /list)
 
@@ -37,6 +49,8 @@
 
 #define isorgan(A) istype(A, /obj/item/organ/external)
 
+#define isspace(A) istype(A, /area/space)
+
 #define ispAI(A) istype(A, /mob/living/silicon/pai)
 
 #define isrobot(A) istype(A, /mob/living/silicon/robot)
@@ -45,7 +59,11 @@
 
 #define isslime(A) istype(A, /mob/living/carbon/slime)
 
+#define isweakref(A) istype(A, /weakref)
+
 #define attack_animation(A) if(istype(A)) A.do_attack_animation(src)
+
+#define isairlock(A) istype(A, /obj/machinery/door/airlock)
 
 #define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
 
@@ -57,3 +75,8 @@
 
 #define map_image_file_name(z_level) "[using_map.path]-[z_level].png"
 
+#define RANDOM_BLOOD_TYPE pick(4;"O-", 36;"O+", 3;"A-", 28;"A+", 1;"B-", 20;"B+", 1;"AB-", 5;"AB+")
+
+#define any2ref(x) "\ref[x]"
+
+#define CanInteract(user, state) (CanUseTopic(user, state) == STATUS_INTERACTIVE)

@@ -28,6 +28,16 @@
 	display_name = "armband, science"
 	path = /obj/item/clothing/accessory/armband/science
 
+/datum/gear/accessory/wallet
+	display_name = "wallet"
+	path = /obj/item/weapon/storage/wallet
+	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/accessory/wallet_poly
+	display_name = "wallet, polychromic"
+	path = /obj/item/weapon/storage/wallet/poly
+	cost = 2
+
 /datum/gear/accessory/holster
 	display_name = "holster, armpit"
 	path = /obj/item/clothing/accessory/holster/armpit
@@ -72,3 +82,15 @@
 	display_name = "webbing, simple"
 	path = /obj/item/clothing/accessory/storage/webbing
 	cost = 2
+
+/datum/gear/accessory/hawaii
+	display_name = "hawaii shirt"
+	path = /obj/item/clothing/accessory/toggleable/hawaii
+
+/datum/gear/accessory/hawaii/New()
+	..()
+	var/list/shirts = list()
+	shirts["blue hawaii shirt"] = /obj/item/clothing/accessory/toggleable/hawaii
+	shirts["red hawaii shirt"] = /obj/item/clothing/accessory/toggleable/hawaii/red
+	shirts["random colored hawaii shirt"] = /obj/item/clothing/accessory/toggleable/hawaii/random
+	gear_tweaks += new/datum/gear_tweak/path(shirts)

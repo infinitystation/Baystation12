@@ -83,13 +83,13 @@ var/list/slot_equipment_priority = list( \
 	// Try put it in their backpack
 	if(istype(src.back,/obj/item/weapon/storage))
 		var/obj/item/weapon/storage/backpack = src.back
-		if(backpack.can_be_inserted(newitem, 1))
+		if(backpack.can_be_inserted(newitem, null, 1))
 			newitem.forceMove(src.back)
 			return backpack
 
 	// Try to place it in any item that can store stuff, on the mob.
 	for(var/obj/item/weapon/storage/S in src.contents)
-		if(S.can_be_inserted(newitem, 1))
+		if(S.can_be_inserted(newitem, null, 1))
 			newitem.forceMove(S)
 			return S
 
@@ -132,23 +132,15 @@ var/list/slot_equipment_priority = list( \
 /mob/proc/put_in_hands(var/obj/item/W)
 	if(!W)
 		return 0
-	W.forceMove(get_turf(src))
-	W.layer = initial(W.layer)
-	W.dropped(src)
+	drop_from_inventory(W)
 	return 0
 
 // Removes an item from inventory and places it in the target atom.
 // If canremove or other conditions need to be checked then use unEquip instead.
-/mob/proc/drop_from_inventory(var/obj/item/W, var/atom/Target = null)
+/mob/proc/drop_from_inventory(var/obj/item/W, var/atom/target = null)
 	if(W)
-		if(!Target)
-			Target = loc
-
-		remove_from_mob(W)
+		remove_from_mob(W, target)
 		if(!(W && W.loc)) return 1 // self destroying objects (tk, grabs)
-
-		if(W.loc != Target)
-			W.forceMove(Target, MOVED_DROP)
 		update_icons()
 		return 1
 	return 0
@@ -170,7 +162,9 @@ var/list/slot_equipment_priority = list( \
 	Removes the object from any slots the mob might have, calling the appropriate icon update proc.
 	Does nothing else.
 
-	DO NOT CALL THIS PROC DIRECTLY. It is meant to be called only by other inventory procs.
+	>>>> *** DO NOT CALL THIS PROC DIRECTLY *** <<<<
+
+	It is meant to be called only by other inventory procs.
 	It's probably okay to use it if you are transferring the item between slots on the same mob,
 	but chances are you're safer calling remove_from_mob() or drop_from_inventory() anyways.
 
@@ -201,7 +195,9 @@ var/list/slot_equipment_priority = list( \
 	if(!I) //If there's nothing to drop, the drop is automatically successful.
 		return 1
 	var/slot = get_inventory_slot(I)
-	return slot && I.mob_can_unequip(src, slot)
+	if(!slot)
+		return 1 //already unequipped, so success
+	return I.mob_can_unequip(src, slot)
 
 /mob/proc/get_inventory_slot(obj/item/I)
 	var/slot = 0
@@ -212,22 +208,27 @@ var/list/slot_equipment_priority = list( \
 	return slot
 
 //This differs from remove_from_mob() in that it checks if the item can be unequipped first.
-/mob/proc/unEquip(obj/item/I, force = 0) //Force overrides NODROP for things like wizarditis and admin undress.
+/mob/proc/unEquip(obj/item/I, force = 0, var/atom/target = null) //Force overrides NODROP for things like wizarditis and admin undress.
 	if(!(force || canUnEquip(I)))
 		return
-	drop_from_inventory(I)
+	drop_from_inventory(I, target)
 	return 1
 
 //Attemps to remove an object on a mob.
-/mob/proc/remove_from_mob(var/obj/O)
+/mob/proc/remove_from_mob(var/obj/O, var/atom/target)
+	if(!O) // Nothing to remove, so we succeed.
+		return 1
 	src.u_equip(O)
 	if (src.client)
 		src.client.screen -= O
-	O.layer = initial(O.layer)
+	O.reset_plane_and_layer()
 	O.screen_loc = null
 	if(istype(O, /obj/item))
 		var/obj/item/I = O
-		I.forceMove(src.loc, MOVED_DROP)
+		if(target)
+			I.forceMove(target)
+		else
+			I.dropInto(loc)
 		I.dropped(src)
 	return 1
 
@@ -241,6 +242,16 @@ var/list/slot_equipment_priority = list( \
 		if(slot_wear_mask) return wear_mask
 	return null
 
-//Outdated but still in use apparently. This should at least be a human proc.
-/mob/proc/get_equipped_items()
-	return list()
+/mob/proc/get_equipped_items(var/include_carried = 0)
+	. = list()
+	if(slot_back) . += back
+	if(slot_wear_mask) . += wear_mask
+
+	if(include_carried)
+		if(slot_l_hand) . += l_hand
+		if(slot_r_hand) . += r_hand
+
+/mob/proc/delete_inventory(var/include_carried = FALSE)
+	for(var/entry in get_equipped_items(include_carried))
+		drop_from_inventory(entry)
+		qdel(entry)

@@ -343,14 +343,15 @@
 			break
 		if(istype(e, /obj/item/organ/external/chest) && occ["lung_ruptured"])
 			lung_ruptured = "Lung ruptured:"
-		if(e.status & ORGAN_SPLINTED)
+		if(e.splinted)
 			splint = "Splinted:"
 		if(e.status & ORGAN_BLEEDING)
 			bled = "Bleeding:"
 		if(e.status & ORGAN_BROKEN)
 			AN = "[e.broken_description]:"
-		if(e.status & ORGAN_ROBOT)
-			robot = "Prosthetic:"
+		switch(e.robotic)
+			if(ORGAN_ROBOT) robot = "Prosthetic:"
+			if(ORGAN_ASSISTED) robot = "Augmented:"
 		if(e.open)
 			open = "Open:"
 
@@ -392,9 +393,9 @@
 	for(var/obj/item/organ/i in occ["internal_organs"])
 
 		var/mech = ""
-		if(i.robotic == 1)
+		if(i.robotic == ORGAN_ASSISTED)
 			mech = "Assisted:"
-		if(i.robotic == 2)
+		else if(i.robotic == ORGAN_ROBOT)
 			mech = "Mechanical:"
 
 		var/infection = "None"

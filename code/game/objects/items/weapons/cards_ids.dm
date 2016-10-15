@@ -15,7 +15,8 @@
 	name = "card"
 	desc = "Does card things."
 	icon = 'icons/obj/card.dmi'
-	w_class = 1.0
+	w_class = 1
+	slot_flags = SLOT_EARS
 	var/associated_account_number = 0
 
 	var/list/files = list(  )
@@ -45,7 +46,6 @@
 	name = "\proper the coordinates to clown planet"
 	icon_state = "data"
 	item_state = "card-id"
-	layer = 3
 	level = 2
 	desc = "This card contains coordinates to the fabled Clown Planet. Handle with care."
 	function = "teleporter"
@@ -117,6 +117,17 @@ var/const/NO_EMAG_ACT = -50
 	var/rank = null			//actual job
 	var/dorm = 0			// determines if this ID has claimed a dorm already
 
+	var/job_access_type     // Job type to acquire access rights from, if any
+
+/obj/item/weapon/card/id/New()
+	..()
+	if(job_access_type)
+		var/datum/job/j = job_master.GetJobByType(job_access_type)
+		if(j)
+			rank = j.title
+			assignment = rank
+			access |= j.get_access()
+
 /obj/item/weapon/card/id/examine(mob/user)
 	set src in oview(1)
 	if(in_range(usr, src))
@@ -139,7 +150,10 @@ var/const/NO_EMAG_ACT = -50
 	return
 
 /obj/item/weapon/card/id/proc/update_name()
-	name = "[src.registered_name]'s ID Card ([src.assignment])"
+	if(assignment)
+		name = "[registered_name]'s ID Card ([assignment])"
+	else
+		name = "[registered_name]'s ID Card"
 
 /obj/item/weapon/card/id/proc/set_id_photo(var/mob/M)
 	front = getFlatIcon(M, SOUTH, always_use_defdir = 1)
@@ -185,7 +199,7 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/GetAccess()
 	return access
 
-/obj/item/weapon/card/id/GetID()
+/obj/item/weapon/card/id/GetIdCard()
 	return src
 
 /obj/item/weapon/card/id/verb/read()
@@ -204,12 +218,14 @@ var/const/NO_EMAG_ACT = -50
 	desc = "A silver card which shows honour and dedication."
 	icon_state = "silver"
 	item_state = "silver_id"
+	job_access_type = /datum/job/hop
 
 /obj/item/weapon/card/id/gold
 	name = "identification card"
 	desc = "A golden card which shows power and might."
 	icon_state = "gold"
 	item_state = "gold_id"
+	job_access_type = /datum/job/captain
 
 /obj/item/weapon/card/id/syndicate_command
 	name = "syndicate ID card"
@@ -246,9 +262,13 @@ var/const/NO_EMAG_ACT = -50
 	icon_state = "centcom"
 	registered_name = "Central Command"
 	assignment = "General"
-	New()
-		access = get_all_centcom_access()
-		..()
+/obj/item/weapon/card/id/centcom/New()
+	access = get_all_centcom_access()
+	..()
+
+/obj/item/weapon/card/id/centcom/station/New()
+	..()
+	access |= get_all_station_access()
 
 /obj/item/weapon/card/id/centcom/ERT
 	name = "\improper Emergency Response Team ID"
@@ -268,3 +288,133 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/all_access/New()
 	access = get_access_ids()
 	..()
+
+// Department-flavor IDs
+/obj/item/weapon/card/id/medical
+	name = "identification card"
+	desc = "A card issued to station medical staff."
+	icon_state = "med"
+	job_access_type = /datum/job/doctor
+
+/obj/item/weapon/card/id/medical/chemist
+	job_access_type = /datum/job/chemist
+
+/obj/item/weapon/card/id/medical/geneticist
+	job_access_type = /datum/job/geneticist
+
+/obj/item/weapon/card/id/medical/psychiatrist
+	job_access_type = /datum/job/psychiatrist
+
+/obj/item/weapon/card/id/medical/paramedic
+	job_access_type = /datum/job/Paramedic
+
+/obj/item/weapon/card/id/medical/head
+	name = "identification card"
+	desc = "A card which represents care and compassion."
+	icon_state = "medGold"
+	job_access_type = /datum/job/cmo
+
+/obj/item/weapon/card/id/security
+	name = "identification card"
+	desc = "A card issued to station security staff."
+	icon_state = "sec"
+	job_access_type = /datum/job/officer
+
+/obj/item/weapon/card/id/security/warden
+	job_access_type = /datum/job/warden
+
+/obj/item/weapon/card/id/security/detective
+	job_access_type = /datum/job/detective
+
+/obj/item/weapon/card/id/security/head
+	name = "identification card"
+	desc = "A card which represents honor and protection."
+	icon_state = "secGold"
+	job_access_type = /datum/job/hos
+
+/obj/item/weapon/card/id/engineering
+	name = "identification card"
+	desc = "A card issued to station engineering staff."
+	icon_state = "eng"
+	job_access_type = /datum/job/engineer
+
+/obj/item/weapon/card/id/engineering/atmos
+	job_access_type = /datum/job/atmos
+
+/obj/item/weapon/card/id/engineering/head
+	name = "identification card"
+	desc = "A card which represents creativity and ingenuity."
+	icon_state = "engGold"
+	job_access_type = /datum/job/chief_engineer
+
+/obj/item/weapon/card/id/science
+	name = "identification card"
+	desc = "A card issued to station science staff."
+	icon_state = "sci"
+	job_access_type = /datum/job/scientist
+
+/obj/item/weapon/card/id/science/xenobiologist
+	job_access_type = /datum/job/xenobiologist
+
+/obj/item/weapon/card/id/science/roboticist
+	job_access_type = /datum/job/roboticist
+
+/obj/item/weapon/card/id/science/head
+	name = "identification card"
+	desc = "A card which represents knowledge and reasoning."
+	icon_state = "sciGold"
+	job_access_type = /datum/job/rd
+
+/obj/item/weapon/card/id/cargo
+	name = "identification card"
+	desc = "A card issued to station cargo staff."
+	icon_state = "cargo"
+	job_access_type = /datum/job/cargo_tech
+
+/obj/item/weapon/card/id/cargo/mining
+	job_access_type = /datum/job/mining
+
+/obj/item/weapon/card/id/cargo/head
+	name = "identification card"
+	desc = "A card which represents service and planning."
+	icon_state = "cargoGold"
+	job_access_type = /datum/job/qm
+
+/obj/item/weapon/card/id/civilian
+	name = "identification card"
+	desc = "A card issued to station civilian staff."
+	icon_state = "civ"
+	job_access_type = /datum/job/assistant
+
+/obj/item/weapon/card/id/civilian/bartender
+	job_access_type = /datum/job/bartender
+
+/obj/item/weapon/card/id/civilian/chef
+	job_access_type = /datum/job/chef
+
+/obj/item/weapon/card/id/civilian/botanist
+	job_access_type = /datum/job/hydro
+
+/obj/item/weapon/card/id/civilian/janitor
+	job_access_type = /datum/job/janitor
+
+/obj/item/weapon/card/id/civilian/librarian
+	job_access_type = /datum/job/librarian
+
+/obj/item/weapon/card/id/civilian/internal_affairs_agent
+	job_access_type = /datum/job/lawyer
+
+/obj/item/weapon/card/id/civilian/chaplain
+	job_access_type = /datum/job/chaplain
+
+/obj/item/weapon/card/id/civilian/head //This is not the HoP. There's no position that uses this right now.
+	name = "identification card"
+	desc = "A card which represents common sense and responsibility."
+	icon_state = "civGold"
+
+/obj/item/weapon/card/id/merchant
+	name = "identification card"
+	desc = "A card issued to Merchants, indicating their right to sell and buy goods."
+	icon_state = "trader"
+	access = list(access_merchant)
+

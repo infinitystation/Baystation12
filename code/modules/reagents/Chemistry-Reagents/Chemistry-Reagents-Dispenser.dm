@@ -105,8 +105,7 @@
 	var/targ_temp = 310
 	var/halluci = 0
 
-	glass_icon_state = "glass_clear"
-	glass_name = "glass of ethanol"
+	glass_name = "ethanol"
 	glass_desc = "A well-known alcohol with a variety of applications."
 
 /datum/reagent/ethanol/touch_mob(var/mob/living/L, var/amount)
@@ -114,12 +113,10 @@
 		L.adjust_fire_stacks(amount / 15)
 
 /datum/reagent/ethanol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	if(issmall(M)) removed *= 2
 	M.adjustToxLoss(removed * 2 * toxicity)
 	return
 
 /datum/reagent/ethanol/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
-	if(issmall(M)) removed *= 2
 	M.nutrition += nutriment_factor * removed
 	var/strength_mod = 1
 	if(alien == IS_SKRELL)
@@ -263,7 +260,6 @@
 	color = "#C7C7C7"
 
 /datum/reagent/radium/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	if(issmall(M)) removed *= 2
 	M.apply_effect(10 * removed, IRRADIATE, blocked = 0) // Radium may increase your chances to cure a disease
 	if(M.virus2.len)
 		for(var/ID in M.virus2)
@@ -273,7 +269,7 @@
 				if(prob(50))
 					M.apply_effect(50, IRRADIATE, blocked = 0) // curing it that way may kill you instead
 					var/absorbed = 0
-					var/obj/item/organ/diona/nutrients/rad_organ = locate() in M.internal_organs
+					var/obj/item/organ/internal/diona/nutrients/rad_organ = locate() in M.internal_organs
 					if(rad_organ && !rad_organ.is_broken())
 						absorbed = 1
 					if(!absorbed)
@@ -300,7 +296,6 @@
 	var/meltdose = 10 // How much is needed to melt
 
 /datum/reagent/acid/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	if(issmall(M)) removed *= 2
 	M.take_organ_damage(0, removed * power * 2)
 
 /datum/reagent/acid/affect_touch(var/mob/living/carbon/M, var/alien, var/removed) // This is the most interesting
@@ -346,22 +341,21 @@
 		if(removed <= 0)
 			return
 
-	if(volume < meltdose) // Not enough to melt anything
-		M.take_organ_damage(0, removed * power * 0.2) //burn damage, since it causes chemical burns. Acid doesn't make bones shatter, like brute trauma would.
+	if(M.unacidable)
 		return
-	if(!M.unacidable && removed > 0)
-		if(istype(M, /mob/living/carbon/human) && volume >= meltdose)
+
+	if(volume < meltdose) // Not enough to melt anything
+		M.take_organ_damage(0, removed * power * 0.1) //burn damage, since it causes chemical burns. Acid doesn't make bones shatter, like brute trauma would.
+	else
+		M.take_organ_damage(0, removed * power * 0.2)
+		if(removed && ishuman(M) && prob(100 * removed / meltdose)) // Applies disfigurement
 			var/mob/living/carbon/human/H = M
-			var/obj/item/organ/external/affecting = H.get_organ("head")
-			if(affecting)
-				if(affecting.take_damage(0, removed * power * 0.1))
-					H.UpdateDamageIcon()
-				if(prob(100 * removed / meltdose)) // Applies disfigurement
-					if (!(H.species && (H.species.flags & NO_PAIN)))
-						H.emote("scream")
-					H.status_flags |= DISFIGURED
-		else
-			M.take_organ_damage(0, removed * power * 0.1) // Balance. The damage is instant, so it's weaker. 10 units -> 5 damage, double for pacid. 120 units beaker could deal 60, but a) it's burn, which is not as dangerous, b) it's a one-use weapon, c) missing with it will splash it over the ground and d) clothes give some protection, so not everything will hit
+			var/screamed
+			for(var/obj/item/organ/external/affecting in H.organs)
+				if(!screamed && affecting.can_feel_pain())
+					screamed = 1
+					H.emote("scream")
+				affecting.disfigured = 1
 
 /datum/reagent/acid/touch_obj(var/obj/O)
 	if(O.unacidable)
@@ -407,12 +401,27 @@
 	taste_mult = 1.8
 	reagent_state = SOLID
 	color = "#FFFFFF"
-	glass_icon_state = "iceglass"
-	glass_name = "glass of sugar"
+
+	glass_name = "sugar"
 	glass_desc = "The organic compound commonly known as table sugar and sometimes called saccharose. This white, odorless, crystalline powder has a pleasing, sweet taste."
+	glass_icon = DRINK_ICON_NOISY
 
 /datum/reagent/sugar/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.nutrition += removed * 3
+
+	if(alien == IS_UNATHI)
+		if(dose < 2)
+			if(dose == metabolism * 2 || prob(5))
+				M.emote("yawn")
+		else if(dose < 5)
+			M.eye_blurry = max(M.eye_blurry, 10)
+		else if(dose < 20)
+			if(prob(50))
+				M.Weaken(2)
+			M.drowsyness = max(M.drowsyness, 20)
+		else
+			M.sleeping = max(M.sleeping, 20)
+			M.drowsyness = max(M.drowsyness, 60)
 
 /datum/reagent/sulfur
 	name = "Sulfur"

@@ -14,6 +14,7 @@ var/datum/antagonist/raider/raiders
 	hard_cap_round = 10
 	initial_spawn_req = 4
 	initial_spawn_target = 6
+	min_player_age = 14
 
 	id_type = /obj/item/weapon/card/id/syndicate
 
@@ -67,6 +68,7 @@ var/datum/antagonist/raider/raiders
 		/obj/item/weapon/gun/energy/laser,
 		/obj/item/weapon/gun/energy/retro,
 		/obj/item/weapon/gun/energy/xray,
+		/obj/item/weapon/gun/energy/xray/pistol,
 		/obj/item/weapon/gun/energy/mindflayer,
 		/obj/item/weapon/gun/energy/toxgun,
 		/obj/item/weapon/gun/energy/stunrevolver,
@@ -74,7 +76,7 @@ var/datum/antagonist/raider/raiders
 		/obj/item/weapon/gun/energy/taser,
 		/obj/item/weapon/gun/energy/crossbow/largecrossbow,
 		/obj/item/weapon/gun/launcher/crossbow,
-		/obj/item/weapon/gun/launcher/grenade,
+		/obj/item/weapon/gun/launcher/grenade/loaded,
 		/obj/item/weapon/gun/launcher/pneumatic,
 		/obj/item/weapon/gun/projectile/automatic/mini_uzi,
 		/obj/item/weapon/gun/projectile/automatic/c20r,
@@ -283,17 +285,6 @@ var/datum/antagonist/raider/raiders
 				new bullet_thrower.ammo_type(ammobox)
 			player.put_in_any_hand_if_possible(ammobox)
 		return
-	if(istype(gun, /obj/item/weapon/gun/launcher/grenade))
-		var/list/grenades = list(
-			/obj/item/weapon/grenade/empgrenade,
-			/obj/item/weapon/grenade/smokebomb,
-			/obj/item/weapon/grenade/flashbang
-			)
-		var/obj/item/weapon/storage/box/ammobox = new(get_turf(player.loc))
-		for(var/i in 1 to 7)
-			var/grenade_type = pick(grenades)
-			new grenade_type(ammobox)
-		player.put_in_any_hand_if_possible(ammobox)
 
 /datum/antagonist/raider/proc/equip_vox(var/mob/living/carbon/human/player)
 
@@ -301,7 +292,7 @@ var/datum/antagonist/raider/raiders
 
 	player.equip_to_slot_or_del(new uniform_type(player), slot_w_uniform)
 	player.equip_to_slot_or_del(new /obj/item/clothing/shoes/magboots/vox(player), slot_shoes) // REPLACE THESE WITH CODED VOX ALTERNATIVES.
-	player.equip_to_slot_or_del(new /obj/item/clothing/gloves/yellow/vox(player), slot_gloves) // AS ABOVE.
+	player.equip_to_slot_or_del(new /obj/item/clothing/gloves/vox(player), slot_gloves) // AS ABOVE.
 	player.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/swat/vox(player), slot_wear_mask)
 	player.equip_to_slot_or_del(new /obj/item/weapon/tank/nitrogen(player), slot_back)
 	player.equip_to_slot_or_del(new /obj/item/device/flashlight(player), slot_r_store)

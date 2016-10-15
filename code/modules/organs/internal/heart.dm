@@ -1,23 +1,32 @@
-/obj/item/organ/heart
+/obj/item/organ/internal/heart
 	name = "heart"
 	icon_state = "heart-on"
 	organ_tag = "heart"
-	parent_organ = "chest"
+	parent_organ = BP_CHEST
 	dead_icon = "heart-off"
 	var/pulse = PULSE_NORM
 	var/heartbeat = 0
 	var/beat_sound = 'sound/effects/singlebeat.ogg'
 	var/efficiency = 1
 
-/obj/item/organ/heart/process()
+/obj/item/organ/internal/heart/die()
+	if(dead_icon)
+		icon_state = dead_icon
+	..()
+
+/obj/item/organ/internal/heart/robotize()
+	. = ..()
+	icon_state = "heart-prosthetic"
+
+/obj/item/organ/internal/heart/process()
 	if(owner)
 		handle_pulse()
 		if(pulse)	handle_heartbeat()
 		handle_blood()
 	..()
 
-/obj/item/organ/heart/proc/handle_pulse()
-	if(owner.stat == DEAD || status & ORGAN_ROBOT)
+/obj/item/organ/internal/heart/proc/handle_pulse()
+	if(owner.stat == DEAD || robotic >= ORGAN_ROBOT)
 		pulse = PULSE_NONE	//that's it, you're dead (or your metal heart is), nothing can influence your pulse
 		return
 	if(owner.life_tick % 5 == 0)//update pulse every 5 life ticks (~1 tick/sec, depending on server load)
@@ -26,13 +35,14 @@
 		if(round(owner.vessel.get_reagent_amount("blood")) <= BLOOD_VOLUME_BAD)	//how much blood do we have
 			pulse  = PULSE_THREADY	//not enough :(
 
-		if(owner.status_flags & FAKEDEATH || owner.chem_effects[CE_NOPULSE])
+		else if(owner.status_flags & FAKEDEATH || owner.chem_effects[CE_NOPULSE])
 			pulse = PULSE_NONE		//pretend that we're dead. unlike actual death, can be inflienced by meds
+			pulse = Clamp(pulse + owner.chem_effects[CE_PULSE], PULSE_NONE, PULSE_2FAST)
+		else
+			pulse = Clamp(pulse + owner.chem_effects[CE_PULSE], PULSE_SLOW, PULSE_2FAST)
 
-		pulse = Clamp(pulse + owner.chem_effects[CE_PULSE], PULSE_SLOW, PULSE_2FAST)
-
-/obj/item/organ/heart/proc/handle_heartbeat()
-	if(pulse >= PULSE_2FAST || owner.shock_stage >= 10 || istype(get_turf(owner), /turf/space))
+/obj/item/organ/internal/heart/proc/handle_heartbeat()
+	if(pulse >= PULSE_2FAST || owner.shock_stage >= 10 || is_below_sound_pressure(get_turf(owner)))
 		//PULSE_THREADY - maximum value for pulse, currently it 5.
 		//High pulse value corresponds to a fast rate of heartbeat.
 		//Divided by 2, otherwise it is too slow.
@@ -44,10 +54,10 @@
 		else
 			heartbeat++
 
-/obj/item/organ/heart/proc/handle_blood()
+/obj/item/organ/internal/heart/proc/handle_blood()
 	if(!owner)
 		return
-	if(owner.stat == DEAD && owner.bodytemperature >= 170)	//Dead or cryosleep people do not pump the blood.
+	if(owner.stat == DEAD || owner.bodytemperature < 170)	//Dead or cryosleep people do not pump the blood.
 		return
 
 	var/blood_volume_raw = owner.vessel.get_reagent_amount("blood")
@@ -84,7 +94,8 @@
 			if(prob(15))
 				owner << "<span class='warning'>You feel extremely [pick("dizzy","woosey","faint")]</span>"
 		else if(blood_volume < BLOOD_VOLUME_SURVIVE)
-			owner.death()
+			owner.setOxyLoss(max(owner.getOxyLoss(), owner.maxHealth))
+			owner.adjustOxyLoss(10)
 
 	//Blood regeneration if there is some space
 	if(blood_volume_raw < species.blood_volume)
@@ -99,28 +110,3 @@
 			owner.nutrition -= 10
 		else if(owner.nutrition >= 200)
 			owner.nutrition -= 3
-
-/obj/item/organ/lungs
-	name = "lungs"
-	icon_state = "lungs"
-	gender = PLURAL
-	organ_tag = "lungs"
-	parent_organ = "chest"
-
-/obj/item/organ/lungs/process()
-	..()
-
-	if(!owner)
-		return
-
-	if (germ_level > INFECTION_LEVEL_ONE)
-		if(prob(5))
-			owner.emote("cough")		//respitory tract infection
-
-	if(is_bruised())
-		if(prob(2))
-			spawn owner.emote("me", 1, "coughs up blood!")
-			owner.drip(10)
-		if(prob(4))
-			spawn owner.emote("me", 1, "gasps for air!")
-			owner.losebreath += 15

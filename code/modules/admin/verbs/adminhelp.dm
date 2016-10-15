@@ -9,8 +9,6 @@
 
 	adminhelped = 1 //Determines if they get the message to reply by clicking the name.
 
-	if(src.handle_spam_prevention(msg,MUTE_ADMINHELP))
-		return
 
 	//clean the input msg
 	if(!msg)
@@ -108,6 +106,7 @@
 		send2adminirc("Request for Help from [key_name(src)]: [html_decode(original_msg)] - !![admin_number_afk ? "All admins AFK ([admin_number_afk])" : "No admins online"]!!")
 	else
 		send2adminirc("Request for Help from [key_name(src)]: [html_decode(original_msg)]")
+	admin_pm_repository.store_pm(src, null, original_msg)
 	feedback_add_details("admin_verb","AH") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 

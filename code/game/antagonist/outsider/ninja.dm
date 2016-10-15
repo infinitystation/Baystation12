@@ -13,6 +13,7 @@ var/datum/antagonist/ninja/ninjas
 	initial_spawn_target = 1
 	hard_cap = 1
 	hard_cap_round = 3
+	min_player_age = 18
 
 	id_type = /obj/item/weapon/card/id/syndicate
 
@@ -121,6 +122,16 @@ var/datum/antagonist/ninja/ninjas
 		var/obj/item/weapon/rig/rig = player.back
 		if(rig.air_supply)
 			player.internal = rig.air_supply
+
+	var/obj/item/device/pda/ninja/U = new(get_turf(player))
+	var/pda_pass = "[rand(100,999)] [pick("Alpha","Bravo","Delta","Omega")]"
+	var/obj/item/device/uplink/T = new(U, player.mind)
+	U.hidden_uplink = T
+	U.lock_code = pda_pass
+	player << "A portable information relay has been installed in your [U]. Simply enter the code \"[pda_pass]\" into the ringtone select to unlock its hidden features."
+	player.mind.store_memory("<B>Uplink Passcode:</B> [pda_pass].")
+	U.hidden_uplink.uses = 0
+	player.put_in_hands(U)
 
 	spawn(10)
 		if(player.internal)

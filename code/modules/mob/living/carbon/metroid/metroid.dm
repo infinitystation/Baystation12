@@ -6,7 +6,6 @@
 	var/is_adult = 0
 	speak_emote = list("chirps")
 
-	layer = 5
 	maxHealth = 150
 	health = 150
 	gender = NEUTER
@@ -381,8 +380,3 @@
 			powerlevel = 10
 			adjustToxLoss(-10)
 	nutrition = max(nutrition, get_max_nutrition())
-
-/mob/living/carbon/slime/cannot_use_vents()
-	if(Victim)
-		return "You cannot ventcrawl while feeding."
-	..()

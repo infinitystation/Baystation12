@@ -109,7 +109,7 @@
 			return
 		var/obj/item/weapon/tank/T = W
 		user.drop_item()
-		T.loc = src
+		T.forceMove(src)
 		src.holding = T
 		update_icon()
 		return
@@ -141,7 +141,8 @@
 
 	return
 
-
+/obj/machinery/portable_atmospherics/return_air()
+	return air_contents
 
 /obj/machinery/portable_atmospherics/powered
 	var/power_rating

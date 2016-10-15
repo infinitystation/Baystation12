@@ -32,6 +32,36 @@
 	path = /obj/item/weapon/reagent_containers/glass/bucket
 	category = "General"
 
+/datum/autolathe/recipe/drinkingglass
+	name = "drinking glass"
+	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/square
+	category = "General"
+	New()
+		..()
+		var/obj/O = path
+		name = initial(O.name) // generic recipes yay
+
+/datum/autolathe/recipe/drinkingglass/rocks
+	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/rocks
+
+/datum/autolathe/recipe/drinkingglass/shake
+	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/shake
+
+/datum/autolathe/recipe/drinkingglass/cocktail
+	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/cocktail
+
+/datum/autolathe/recipe/drinkingglass/shot
+	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/shot
+
+/datum/autolathe/recipe/drinkingglass/pint
+	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/pint
+
+/datum/autolathe/recipe/drinkingglass/mug
+	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/mug
+
+/datum/autolathe/recipe/drinkingglass/wine
+	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/wine
+
 /datum/autolathe/recipe/flashlight
 	name = "flashlight"
 	path = /obj/item/device/flashlight
@@ -107,6 +137,11 @@
 	path = /obj/item/device/radio/off
 	category = "General"
 
+/datum/autolathe/recipe/suit_cooler
+	name = "suit cooling unit"
+	path = /obj/item/device/suit_cooling_unit
+	category = "General"
+
 /datum/autolathe/recipe/weldermask
 	name = "welding mask"
 	path = /obj/item/clothing/head/welding
@@ -143,7 +178,12 @@
 
 /datum/autolathe/recipe/taperecorder
 	name = "tape recorder"
-	path = /obj/item/device/taperecorder
+	path = /obj/item/device/taperecorder/empty
+	category = "General"
+
+/datum/autolathe/recipe/tape
+	name = "tape"
+	path = /obj/item/device/tape
 	category = "General"
 
 /datum/autolathe/recipe/airlockmodule
@@ -418,3 +458,8 @@
 	path = /obj/item/weapon/handcuffs
 	hidden = 1
 	category = "General"
+
+/datum/autolathe/recipe/cell_device
+	name = "device cell"
+	path = /obj/item/weapon/cell/device/standard
+	category = "Devices and Components"

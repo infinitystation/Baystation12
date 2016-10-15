@@ -4,12 +4,12 @@
 	icon_state = "ionrifle"
 	item_state = "ionrifle"
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 4)
-	w_class = 4
+	w_class = 5
 	force = 10
 	flags =  CONDUCT
 	slot_flags = SLOT_BACK
 	requires_two_hands = 4
-	charge_cost = 300
+	charge_cost = 30
 	max_shots = 10
 	projectile_type = /obj/item/projectile/ion
 
@@ -19,9 +19,11 @@
 /obj/item/weapon/gun/energy/ionrifle/update_icon()
 	..()
 	if(power_supply.charge < charge_cost)
-		item_state = "ionrifle-empty"
+		item_state_slots[slot_l_hand_str] = "ionrifle-empty"
+		item_state_slots[slot_r_hand_str] = "ionrifle-empty"
 	else
-		item_state = initial(item_state)
+		item_state_slots[slot_l_hand_str] = initial(item_state)
+		item_state_slots[slot_r_hand_str] = initial(item_state)
 
 /obj/item/weapon/gun/energy/decloner
 	name = "biological demolecularisor"
@@ -37,7 +39,7 @@
 	desc = "A tool that discharges controlled radiation which induces mutation in plant cells."
 	icon_state = "floramut100"
 	item_state = "floramut"
-	charge_cost = 100
+	charge_cost = 10
 	max_shots = 10
 	projectile_type = /obj/item/projectile/energy/floramut
 	origin_tech = list(TECH_MATERIAL = 2, TECH_BIO = 3, TECH_POWER = 3)
@@ -63,7 +65,7 @@
 	icon_state = "riotgun"
 	item_state = "c20r"
 	slot_flags = SLOT_BELT|SLOT_BACK
-	w_class = 4
+	w_class = 5
 	projectile_type = /obj/item/projectile/meteor
 	cell_type = /obj/item/weapon/cell/potato
 	self_recharge = 1
@@ -106,7 +108,7 @@
 	fire_sound = 'sound/weapons/emitter.ogg'
 	flags =  CONDUCT
 	slot_flags = SLOT_BACK
-	w_class = 4.0
+	w_class = 5
 	max_shots = 5
 	projectile_type = /obj/item/projectile/change
 	origin_tech = null

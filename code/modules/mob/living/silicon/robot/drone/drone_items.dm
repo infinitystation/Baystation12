@@ -51,6 +51,15 @@
 		/obj/item/weapon/newspaper
 		)
 
+/obj/item/weapon/gripper/chemistry
+	name = "chemistry gripper"
+	desc = "A simple grasping tool for chemical work."
+
+	can_hold = list(
+		/obj/item/weapon/reagent_containers/glass,
+		/obj/item/weapon/storage/pill_bottle
+		)
+
 /obj/item/weapon/gripper/research //A general usage gripper, used for toxins/robotics/xenobio/etc
 	name = "scientific gripper"
 	icon_state = "gripper-sci"
@@ -62,14 +71,14 @@
 		/obj/item/device/mmi,
 		/obj/item/robot_parts,
 		/obj/item/borg/upgrade,
-		/obj/item/device/flash, //to build borgs,
-		/obj/item/organ/brain, //to insert into MMIs,
-		/obj/item/stack/cable_coil, //again, for borg building,
+		/obj/item/device/flash,
+		/obj/item/organ/internal/brain,
+		/obj/item/stack/cable_coil,
 		/obj/item/weapon/circuitboard,
 		/obj/item/slime_extract,
 		/obj/item/weapon/reagent_containers/glass,
-		/obj/item/weapon/reagent_containers/food/snacks/monkeycube
-
+		/obj/item/weapon/reagent_containers/food/snacks/monkeycube,
+		/obj/item/mecha_parts
 		)
 
 /obj/item/weapon/gripper/service //Used to handle food, drinks, and seeds.
@@ -81,7 +90,8 @@
 		/obj/item/weapon/reagent_containers/glass,
 		/obj/item/weapon/reagent_containers/food,
 		/obj/item/seeds,
-		/obj/item/weapon/grown
+		/obj/item/weapon/grown,
+		/obj/item/weapon/glass_extra
 		)
 
 /obj/item/weapon/gripper/no_use //Used when you want to hold and put items in other things, but not able to 'use' the item
@@ -133,10 +143,7 @@
 	// Don't fall through and smack people with gripper, instead just no-op
 	return 0
 
-/obj/item/weapon/gripper/afterattack(var/atom/target, var/mob/living/user, proximity, params)
-
-	if(!proximity)
-		return // This will prevent them using guns at range but adminbuse can add them directly to modules, so eh.
+/obj/item/weapon/gripper/resolve_attackby(var/atom/target, var/mob/living/user, params)
 
 	//There's some weirdness with items being lost inside the arm. Trying to fix all cases. ~Z
 	if(!wrapped)
@@ -146,16 +153,16 @@
 
 	if(wrapped) //Already have an item.
 		//Temporary put wrapped into user so target's attackby() checks pass.
-		wrapped.loc = user
+		wrapped.loc = user //should we use forceMove() here? It is a virtual move after all, that is intended to be reset
 
 		//The force of the wrapped obj gets set to zero during the attack() and afterattack().
 		var/force_holder = wrapped.force
 		wrapped.force = 0.0
 
 		//Pass the attack on to the target. This might delete/relocate wrapped.
-		var/resolved = target.attackby(wrapped,user)
+		var/resolved = wrapped.resolve_attackby(target,user,params)
 		if(!resolved && wrapped && target)
-			wrapped.afterattack(target,user,1)
+			wrapped.afterattack(target,user,1,params)
 
 		wrapped.force = force_holder
 

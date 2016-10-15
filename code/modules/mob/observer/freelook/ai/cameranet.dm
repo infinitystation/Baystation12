@@ -10,14 +10,12 @@ var/datum/visualnet/camera/cameranet_
 
 /datum/visualnet/camera
 	// The cameras on the map, no matter if they work or not.
-	var/list/cameras = list()
+	var/list/cameras
 	chunk_type = /datum/chunk/camera
+	valid_source_types = list(/obj/machinery/camera, /mob/living/silicon/ai)
 
 /datum/visualnet/camera/New()
-	for(var/obj/machinery/camera/c in machines)
-		add_source(c, FALSE)
-	for(var/mob/living/silicon/ai/AI in mob_list)
-		add_source(AI, FALSE)
+	cameras = list()
 	..()
 
 /datum/visualnet/camera/Destroy()
@@ -27,19 +25,19 @@ var/datum/visualnet/camera/cameranet_
 /datum/visualnet/camera/add_source(obj/machinery/camera/c)
 	if(istype(c))
 		if(c in cameras)
-			return
-		var/list/open_networks = c.network - restricted_camera_networks
-		if(!open_networks.len)
-			return
-		dd_insertObjectList(cameras, c)
-		..(c, c.can_use())
+			return FALSE
+		. = ..(c, c.can_use())
+		if(.)
+			dd_insertObjectList(cameras, c)
 	else if(isAI(c))
 		var/mob/living/silicon/AI = c
-		..(AI, AI.stat != DEAD)
+		return ..(AI, AI.stat != DEAD)
 
 // Add a camera to a chunk.
 
 /datum/visualnet/camera/remove_source(obj/machinery/camera/c)
-	if(!cameras.Remove(c))
-		return
-	..(c, c.can_use())
+	if(istype(c) && cameras.Remove(c))
+		. = ..(c, c.can_use())
+	if(isAI(c))
+		var/mob/living/silicon/AI = c
+		return ..(AI, AI.stat != DEAD)

@@ -19,7 +19,6 @@
 	var/blood_mask = 'icons/mob/human_races/masks/blood_human.dmi'
 
 	var/prone_icon                                       // If set, draws this from icobase when mob is prone.
-	var/eyes = "eyes_s"                                  // Icon for eyes.
 	var/has_floating_eyes                                // Eyes will overlay over darkness (glow)
 	var/blood_color = "#A10808"                          // Red.
 	var/flesh_color = "#FFC896"                          // Pink.
@@ -62,12 +61,11 @@
 	var/toxins_mod =    1                    // Toxloss modifier
 	var/radiation_mod = 1                    // Radiation modifier
 	var/flash_mod =     1                    // Stun from blindness modifier.
+	var/metabolism_mod = 1					 // Reagent metabolism modifier
 	var/vision_flags = SEE_SELF              // Same flags as glasses.
 
 	// Death vars.
 	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
-	var/gibber_type = /obj/effect/gibspawner/human
-	var/single_gib_type = /obj/effect/decal/cleanable/blood/gibs
 	var/remains_type = /obj/item/remains/xeno
 	var/gibbed_anim = "gibbed-h"
 	var/dusted_anim = "dust-h"
@@ -77,6 +75,7 @@
 	var/halloss_message = "падает на землю, он слишком слаб, чтобы продолжать борьбу"
 	var/halloss_message_self = "“ебе слишком больно, чтобы продолжать..."
 
+	var/spawns_with_stack = 0
 	// Environment tolerance/life processes vars.
 	var/reagent_tag                                   //Used for metabolizing reagents.
 	var/breath_pressure = 16                          // Minimum partial pressure safe for breathing, kPa
@@ -95,7 +94,7 @@
 	var/warning_low_pressure = WARNING_LOW_PRESSURE   // Low pressure warning.
 	var/hazard_low_pressure = HAZARD_LOW_PRESSURE     // Dangerously low pressure.
 	var/light_dam                                     // If set, mob will be damaged in light over this value and heal in light below its negative.
-	var/body_temperature = 310.15	                  // Non-IS_SYNTHETIC species will try to stabilize at this temperature.
+	var/body_temperature = 310.15	                  // Species will try to stabilize at this temperature.
 	                                                  // (also affects temperature processing)
 
 	var/heat_discomfort_level = 315                   // Aesthetic messages about feeling warm.
@@ -114,6 +113,7 @@
 	// HUD data vars.
 	var/datum/hud_data/hud
 	var/hud_type
+	var/health_hud_intensity = 1
 
 	// Body/form vars.
 	var/list/inherent_verbs 	  // Species-specific verbs.
@@ -127,32 +127,33 @@
 	var/primitive_form            // Lesser form, if any (ie. monkey for humans)
 	var/greater_form              // Greater form, if any, ie. human for monkeys.
 	var/holder_type
-	var/gluttonous                // Can eat some mobs. Values can be GLUT_TINY, GLUT_SMALLER, GLUT_ANYTHING.
+	var/gluttonous                // Can eat some mobs. Values can be GLUT_TINY, GLUT_SMALLER, GLUT_ANYTHING, GLUT_ITEM_TINY, GLUT_ITEM_NORMAL, GLUT_ITEM_ANYTHING, GLUT_PROJECTILE_VOMIT
+	var/stomach_capacity = 5      // How much stuff they can stick in their stomach
 	var/rarity_value = 1          // Relative rarity/collector value for this species.
 	                              // Determines the organs that the species spawns with and
 	var/list/has_organ = list(    // which required-organ checks are conducted.
-		"heart" =    /obj/item/organ/heart,
-		"lungs" =    /obj/item/organ/lungs,
-		"liver" =    /obj/item/organ/liver,
-		"kidneys" =  /obj/item/organ/kidneys,
-		"brain" =    /obj/item/organ/brain,
-		"appendix" = /obj/item/organ/appendix,
-		"eyes" =     /obj/item/organ/eyes
+		BP_HEART =    /obj/item/organ/internal/heart,
+		BP_LUNGS =    /obj/item/organ/internal/lungs,
+		BP_LIVER =    /obj/item/organ/internal/liver,
+		BP_KIDNEYS =  /obj/item/organ/internal/kidneys,
+		BP_BRAIN =    /obj/item/organ/internal/brain,
+		BP_APPENDIX = /obj/item/organ/internal/appendix,
+		BP_EYES =     /obj/item/organ/internal/eyes
 		)
 	var/vision_organ              // If set, this organ is required for vision. Defaults to "eyes" if the species has them.
 
 	var/list/has_limbs = list(
-		"chest" =  list("path" = /obj/item/organ/external/chest),
-		"groin" =  list("path" = /obj/item/organ/external/groin),
-		"head" =   list("path" = /obj/item/organ/external/head),
-		"l_arm" =  list("path" = /obj/item/organ/external/arm),
-		"r_arm" =  list("path" = /obj/item/organ/external/arm/right),
-		"l_leg" =  list("path" = /obj/item/organ/external/leg),
-		"r_leg" =  list("path" = /obj/item/organ/external/leg/right),
-		"l_hand" = list("path" = /obj/item/organ/external/hand),
-		"r_hand" = list("path" = /obj/item/organ/external/hand/right),
-		"l_foot" = list("path" = /obj/item/organ/external/foot),
-		"r_foot" = list("path" = /obj/item/organ/external/foot/right)
+		BP_CHEST =  list("path" = /obj/item/organ/external/chest),
+		BP_GROIN =  list("path" = /obj/item/organ/external/groin),
+		BP_HEAD =   list("path" = /obj/item/organ/external/head),
+		BP_L_ARM =  list("path" = /obj/item/organ/external/arm),
+		BP_R_ARM =  list("path" = /obj/item/organ/external/arm/right),
+		BP_L_LEG =  list("path" = /obj/item/organ/external/leg),
+		BP_R_LEG =  list("path" = /obj/item/organ/external/leg/right),
+		BP_L_HAND = list("path" = /obj/item/organ/external/hand),
+		BP_R_HAND = list("path" = /obj/item/organ/external/hand/right),
+		BP_L_FOOT = list("path" = /obj/item/organ/external/foot),
+		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right)
 		)
 
 	var/list/genders = list(MALE, FEMALE)
@@ -163,6 +164,7 @@
 	var/swap_flags = ~HEAVY	// What can we swap place with?
 
 	var/pass_flags = 0
+	var/breathing_sound = 'sound/voice/monkey.ogg'
 
 /datum/species/proc/get_eyes(var/mob/living/carbon/human/H)
 	return
@@ -174,18 +176,39 @@
 		hud = new()
 
 	//If the species has eyes, they are the default vision organ
-	if(!vision_organ && has_organ["eyes"])
-		vision_organ = "eyes"
+	if(!vision_organ && has_organ[BP_EYES])
+		vision_organ = BP_EYES
 
 	unarmed_attacks = list()
 	for(var/u_type in unarmed_types)
 		unarmed_attacks += new u_type()
 
-/datum/species/proc/get_station_variant()
-	return name
-
 /datum/species/proc/get_bodytype()
 	return name
+
+/datum/species/proc/get_knockout_message(var/mob/living/carbon/human/H)
+	return ((H && H.isSynthetic()) ? "encounters a hardware fault and suddenly reboots!" : knockout_message)
+
+/datum/species/proc/get_death_message(var/mob/living/carbon/human/H)
+	return ((H && H.isSynthetic()) ? "gives one shrill beep before falling lifeless." : death_message)
+
+/datum/species/proc/get_ssd(var/mob/living/carbon/human/H)
+	return ((H && H.isSynthetic()) ? "flashing a 'system offline' glyph on their monitor" : show_ssd)
+
+/datum/species/proc/get_blood_colour(var/mob/living/carbon/human/H)
+	return ((H && H.isSynthetic()) ? SYNTH_BLOOD_COLOUR : blood_color)
+
+/datum/species/proc/get_virus_immune(var/mob/living/carbon/human/H)
+	return ((H && H.isSynthetic()) ? 1 : virus_immune)
+
+/datum/species/proc/get_flesh_colour(var/mob/living/carbon/human/H)
+	return ((H && H.isSynthetic()) ? SYNTH_FLESH_COLOUR : flesh_color)
+
+/datum/species/proc/get_halloss_message(var/mob/living/carbon/human/H)
+	return ((H && H.isSynthetic()) ? "encounters a hardware fault and suddenly reboots." : halloss_message)
+
+/datum/species/proc/get_halloss_message_self(var/mob/living/carbon/human/H)
+	return ((H && H.isSynthetic()) ? "ERROR: Unrecoverable machine check exception.<BR>System halted, rebooting..." : halloss_message_self)
 
 /datum/species/proc/get_environment_discomfort(var/mob/living/carbon/human/H, var/msg_type)
 
@@ -235,6 +258,7 @@
 
 /datum/species/proc/create_organs(var/mob/living/carbon/human/H) //Handles creation of mob organs.
 
+	H.mob_size = mob_size
 	for(var/obj/item/organ/organ in H.contents)
 		if((organ in H.organs) || (organ in H.internal_organs))
 			qdel(organ)
@@ -262,6 +286,17 @@
 			warning("[O.type] has a default organ tag \"[O.organ_tag]\" that differs from the species' organ tag \"[organ_tag]\". Updating organ_tag to match.")
 			O.organ_tag = organ_tag
 		H.internal_organs_by_name[organ_tag] = O
+
+	for(var/name in H.organs_by_name)
+		H.organs |= H.organs_by_name[name]
+
+	for(var/name in H.internal_organs_by_name)
+		H.internal_organs |= H.internal_organs_by_name[name]
+
+	for(var/obj/item/organ/O in (H.organs|H.internal_organs))
+		O.owner = H
+
+	H.sync_organ_dna()
 
 /datum/species/proc/hug(var/mob/living/carbon/human/H,var/mob/living/target)
 
@@ -293,7 +328,6 @@
 	H.mob_swap_flags = swap_flags
 	H.mob_push_flags = push_flags
 	H.pass_flags = pass_flags
-	H.mob_size = mob_size
 
 /datum/species/proc/handle_death(var/mob/living/carbon/human/H) //Handles any species-specific death events (such as dionaea nymph spawns).
 	return
@@ -348,7 +382,7 @@
 		return 1
 
 	if(!H.druggy)
-		H.see_in_dark = (H.sight == SEE_TURFS|SEE_MOBS|SEE_OBJS) ? 8 : min(darksight + H.equipment_darkness_modifier, 8)
+		H.see_in_dark = (H.sight == (SEE_TURFS|SEE_MOBS|SEE_OBJS)) ? 8 : min(darksight + H.equipment_darkness_modifier, 8)
 		if(H.seer)
 			var/obj/effect/rune/R = locate() in H.loc
 			if(R && R.word1 == cultwords["see"] && R.word2 == cultwords["hell"] && R.word3 == cultwords["join"])
@@ -359,22 +393,27 @@
 	if(H.equipment_tint_total >= TINT_BLIND)
 		H.eye_blind = max(H.eye_blind, 1)
 
-	if(H.blind)
-		H.blind.layer = (H.eye_blind ? 18 : 0)
-		H.blind.plane = (H.eye_blind ? 0 : -99)
-
 	if(!H.client)//no client, no screen to update
 		return 1
 
+	H.set_fullscreen(H.eye_blind && !H.equipment_prescription, "blind", /obj/screen/fullscreen/blind)
+
 	if(config.welder_vision)
-		if(short_sighted || (H.equipment_tint_total >= TINT_HEAVY))
-			H.client.screen += global_hud.darkMask
-		else if((!H.equipment_prescription && (H.disabilities & NEARSIGHTED)) || H.equipment_tint_total == TINT_MODERATE)
-			H.client.screen += global_hud.vimpaired
-	if(H.eye_blurry)	H.client.screen += global_hud.blurry
-	if(H.druggy)		H.client.screen += global_hud.druggy
+		H.set_fullscreen(H.equipment_tint_total, "welder", /obj/screen/fullscreen/impaired, H.equipment_tint_total)
+	var/how_nearsighted = get_how_nearsighted(H)
+	H.set_fullscreen(how_nearsighted, "nearsighted", /obj/screen/fullscreen/oxy, how_nearsighted)
+	H.set_fullscreen(H.eye_blurry, "blurry", /obj/screen/fullscreen/blurry)
+	H.set_fullscreen(H.druggy, "high", /obj/screen/fullscreen/high)
 
 	for(var/overlay in H.equipment_overlays)
 		H.client.screen |= overlay
 
 	return 1
+
+/datum/species/proc/get_how_nearsighted(var/mob/living/carbon/human/H)
+	. = short_sighted
+	if(H.disabilities & NEARSIGHTED)
+		. += 7
+	if(H.equipment_prescription)
+		. -= H.equipment_prescription
+	return Clamp(., 0, 7)

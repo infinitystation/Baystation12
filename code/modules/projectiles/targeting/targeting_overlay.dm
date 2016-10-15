@@ -6,7 +6,8 @@
 	anchored = 1
 	density = 0
 	opacity = 0
-	layer = FLY_LAYER
+	plane = ABOVE_HUMAN_PLANE
+	layer = ABOVE_HUMAN_LAYER
 	simulated = 0
 	mouse_opacity = 0
 
@@ -16,14 +17,13 @@
 	var/locked =    0          // Have we locked on?
 	var/lock_time = 0          // When -will- we lock on?
 	var/active =    0          // Is our owner intending to take hostages?
-	var/target_permissions = 0 // Permission bitflags.
+	var/target_permissions = TARGET_CAN_RADIO // Permission bitflags.
 
 /obj/aiming_overlay/New(var/newowner)
 	..()
 	owner = newowner
 	loc = null
 	verbs.Cut()
-	toggle_permission(TARGET_CAN_RADIO)
 
 /obj/aiming_overlay/proc/toggle_permission(var/perm)
 
@@ -118,7 +118,7 @@ obj/aiming_overlay/proc/update_aiming_deferred()
 		owner << "<span class='warning'>You have lost sight of your target!</span>"
 	else if(owner.incapacitated() || owner.lying || owner.restrained())
 		owner << "<span class='warning'>You must be conscious and standing to keep track of your target!</span>"
-	else if(aiming_at.alpha == 0 || (aiming_at.invisibility > owner.see_invisible))
+	else if(aiming_at.is_invisible_to(owner))
 		owner << "<span class='warning'>Your target has become invisible!</span>"
 	else if(!(aiming_at in view(owner)))
 		owner << "<span class='warning'>Your target is too far away to track!</span>"

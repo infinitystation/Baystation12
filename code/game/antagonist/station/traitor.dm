@@ -75,20 +75,27 @@ var/datum/antagonist/traitor/traitors
 /datum/antagonist/traitor/equip(var/mob/living/carbon/human/traitor_mob)
 	if(istype(traitor_mob, /mob/living/silicon)) // this needs to be here because ..() returns false if the mob isn't human
 		add_law_zero(traitor_mob)
+		give_intel(traitor_mob)
+		if(istype(traitor_mob, /mob/living/silicon/robot))
+			var/mob/living/silicon/robot/R = traitor_mob
+			R.SetLockdown(0)
 		return 1
 
 	if(!..())
 		return 0
 
 	spawn_uplink(traitor_mob)
-	// Tell them about people they might want to contact.
+	give_intel(traitor_mob)
+
+/datum/antagonist/traitor/proc/give_intel(mob/living/traitor_mob)
+	give_collaborators(traitor_mob)
+	give_codewords(traitor_mob)
+
+/datum/antagonist/traitor/proc/give_collaborators(mob/living/traitor_mob)
 	var/mob/living/carbon/human/M = get_nt_opposed()
 	if(M && M != traitor_mob)
 		traitor_mob << "We have received credible reports that [M.real_name] might be willing to help our cause. If you need assistance, consider contacting them."
 		traitor_mob.mind.store_memory("<b>Potential Collaborator</b>: [M.real_name]")
-
-	//Begin code phrase.
-	give_codewords(traitor_mob)
 
 /datum/antagonist/traitor/proc/give_codewords(mob/living/traitor_mob)
 	traitor_mob << "<u><b>Your employers provided you with the following information on how to identify possible allies:</b></u>"
@@ -146,7 +153,7 @@ var/datum/antagonist/traitor/traitors
 			if ((freq % 2) == 0)
 				freq += 1
 		freq = freqlist[rand(1, freqlist.len)]
-		var/obj/item/device/uplink/hidden/T = new(R, traitor_mob.mind)
+		var/obj/item/device/uplink/T = new(R, traitor_mob.mind)
 		target_radio.hidden_uplink = T
 		target_radio.traitor_frequency = freq
 		traitor_mob << "A portable object teleportation relay has been installed in your [R.name] [loc]. Simply dial the frequency [format_frequency(freq)] to unlock its hidden features."
@@ -155,7 +162,7 @@ var/datum/antagonist/traitor/traitors
 	else if (istype(R, /obj/item/device/pda))
 		// generate a passcode if the uplink is hidden in a PDA
 		var/pda_pass = "[rand(100,999)] [pick("Alpha","Bravo","Delta","Omega")]"
-		var/obj/item/device/uplink/hidden/T = new(R, traitor_mob.mind)
+		var/obj/item/device/uplink/T = new(R, traitor_mob.mind)
 		R.hidden_uplink = T
 		var/obj/item/device/pda/P = R
 		P.lock_code = pda_pass

@@ -20,7 +20,7 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "rag"
 	amount_per_transfer_from_this = 5
-	possible_transfer_amounts = list(5)
+	possible_transfer_amounts = "5"
 	volume = 10
 	can_be_placed_into = null
 	flags = OPENCONTAINER | NOBLUDGEON
@@ -111,7 +111,7 @@
 			user.do_attack_animation(src)
 			M.IgniteMob()
 		else if(reagents.total_volume)
-			if(user.zone_sel.selecting == "mouth")
+			if(user.zone_sel.selecting == BP_MOUTH)
 				user.do_attack_animation(src)
 				user.visible_message(
 					"<span class='danger'>\The [user] smothers [target] with [src]!</span>",

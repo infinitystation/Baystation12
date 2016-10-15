@@ -1,6 +1,7 @@
 /obj/structure/sign/double/barsign
 	icon = 'icons/obj/barsigns.dmi'
 	icon_state = "empty"
+	appearance_flags = 0
 	anchored = 1
 	var/cult = 0
 
@@ -32,7 +33,7 @@
 	if(cult)
 		return ..()
 
-	var/obj/item/weapon/card/id/card = I.GetID()
+	var/obj/item/weapon/card/id/card = I.GetIdCard()
 	if(istype(card))
 		if(access_bar in card.GetAccess())
 			var/sign_type = input(user, "What would you like to change the barsign to?") as null|anything in get_valid_states(0)

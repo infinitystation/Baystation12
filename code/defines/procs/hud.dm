@@ -2,6 +2,9 @@
 Use the regular_hud_updates() proc before process_med_hud(mob) or process_sec_hud(mob) so
 the HUD updates properly! */
 
+// hud overlay image type, used for clearing client.images precisely
+/image/hud_overlay
+
 //Medical HUD outputs. Called by the Life() proc of the mob using it, usually.
 proc/process_med_hud(var/mob/M, var/local_scanner, var/mob/Alt)
 	if(!can_process_hud(M))
@@ -9,7 +12,8 @@ proc/process_med_hud(var/mob/M, var/local_scanner, var/mob/Alt)
 
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, med_hud_users)
 	for(var/mob/living/carbon/human/patient in P.Mob.in_view(P.Turf))
-		if(P.Mob.see_invisible < patient.invisibility)
+
+		if(patient.is_invisible_to(P.Mob))
 			continue
 
 		if(local_scanner)
@@ -28,7 +32,8 @@ proc/process_sec_hud(var/mob/M, var/advanced_mode, var/mob/Alt)
 		return
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, sec_hud_users)
 	for(var/mob/living/carbon/human/perp in P.Mob.in_view(P.Turf))
-		if(P.Mob.see_invisible < perp.invisibility)
+
+		if(perp.is_invisible_to(P.Mob))
 			continue
 
 		P.Client.images += perp.hud_list[ID_HUD]
@@ -63,9 +68,8 @@ proc/can_process_hud(var/mob/M)
 //Deletes the current HUD images so they can be refreshed with new ones.
 mob/proc/handle_hud_glasses() //Used in the life.dm of mobs that can use HUDs.
 	if(client)
-		for(var/image/hud in client.images)
-			if(copytext(hud.icon_state,1,4) == "hud")
-				client.images -= hud
+		for(var/image/hud_overlay/hud in client.images)
+			client.images -= hud
 	med_hud_users -= src
 	sec_hud_users -= src
 

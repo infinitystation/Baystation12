@@ -19,12 +19,6 @@ var/list/nuke_disks = list()
 	var/syndies_didnt_escape = 0 //Used for tracking if the syndies got the shuttle off of the z-level
 	antag_tags = list(MODE_MERCENARY)
 
-//delete all nuke disks not on a station zlevel
-/datum/game_mode/nuclear/proc/check_nuke_disks()
-	for(var/obj/item/weapon/disk/nuclear/N in nuke_disks)
-		var/turf/T = get_turf(N)
-		if(isNotStationLevel(T.z)) qdel(N)
-
 //checks if L has a nuke disk on their person
 /datum/game_mode/nuclear/proc/check_mob(mob/living/L)
 	for(var/obj/item/weapon/disk/nuclear/N in nuke_disks)
@@ -40,10 +34,10 @@ var/list/nuke_disks = list()
 	var/disk_rescued = 1
 	for(var/obj/item/weapon/disk/nuclear/D in world)
 		var/disk_area = get_area(D)
-		if(!is_type_in_list(disk_area, centcom_areas))
+		if(!is_type_in_list(disk_area, using_map.post_round_safe_areas))
 			disk_rescued = 0
 			break
-	var/crew_evacuated = (emergency_shuttle.returned())
+	var/crew_evacuated = (evacuation_controller.has_evacuated())
 
 	if(!disk_rescued &&  station_was_nuked && !syndies_didnt_escape)
 		feedback_set_details("round_end_result","win - syndicate nuke")

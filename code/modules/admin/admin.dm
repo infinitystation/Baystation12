@@ -9,21 +9,21 @@ var/global/floorIsLava = 0
 	log_adminwarn(msg)
 	for(var/client/C in admins)
 		if(R_ADMIN & C.holder.rights)
-			C << msg
+			to_chat(C, msg)
 
 /proc/msg_admin_attack(var/text) //Toggleable Attack Messages
 	log_attack(text)
 	var/rendered = "<span class=\"log_message\"><span class=\"prefix\">ATTACK:</span> <span class=\"message\">[text]</span></span>"
 	for(var/client/C in admins)
-		if(R_ADMIN & C.holder.rights)
+		if(check_rights(R_INVESTIGATE, 0, C))
 			if(C.is_preference_enabled(/datum/client_preference/admin/show_attack_logs))
 				var/msg = rendered
-				C << msg
+				to_chat(C, msg)
 
-proc/admin_notice(var/message, var/rights)
+/proc/admin_notice(var/message, var/rights)
 	for(var/mob/M in mob_list)
 		if(check_rights(rights, 0, M))
-			M << message
+			to_chat(M, message)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////Panels
 
@@ -59,7 +59,8 @@ proc/admin_notice(var/message, var/rights)
 		<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a> -
 		<a href='?src=\ref[src];subtlemessage=\ref[M]'>SM</a> -
 		[admin_jump_link(M, src)]\] <br>
-		<b>Mob type</b> = [M.type]<br><br>
+		<b>Mob type:</b> [M.type]<br>
+		<b>Inactivity time:</b> [M.client ? "[M.client.inactivity/600] minutes" : "Logged out"]<br/><br/>
 		<A href='?src=\ref[src];boot2=\ref[M]'>Kick</A> |
 		<A href='?_src_=holder;warn=[M.ckey]'>Warn</A> |
 		<A href='?src=\ref[src];softban=\ref[M]'>Soft Ban</A> |
@@ -601,25 +602,34 @@ proc/admin_notice(var/message, var/rights)
 	usr << browse(dat, "window=admin2;size=210x280")
 	return
 
-/datum/admins/proc/Secrets()
+/datum/admins/proc/Secrets(var/datum/admin_secret_category/active_category = null)
 	if(!check_rights(0))	return
 
+	// Print the header with category selection buttons.
 	var/dat = "<B>The first rule of adminbuse is: you don't talk about the adminbuse.</B><HR>"
 	for(var/datum/admin_secret_category/category in admin_secrets.categories)
 		if(!category.can_view(usr))
 			continue
-		dat += "<B>[category.name]</B><br>"
-		if(category.desc)
-			dat += "<I>[category.desc]</I><BR>"
-		for(var/datum/admin_secret_item/item in category.items)
+		if(active_category == category)
+			dat += "<span class='linkOn'>[category.name]</span>"
+		else
+			dat += "<A href='?src=\ref[src];admin_secrets_panel=\ref[category]'>[category.name]</A> "
+	dat += "<HR>"
+
+	// If a category is selected, print its description and then options
+	if(istype(active_category) && active_category.can_view(usr))
+		if(active_category.desc)
+			dat += "<I>[active_category.desc]</I><BR>"
+		for(var/datum/admin_secret_item/item in active_category.items)
 			if(!item.can_view(usr))
 				continue
 			dat += "<A href='?src=\ref[src];admin_secrets=\ref[item]'>[item.name()]</A><BR>"
 		dat += "<BR>"
-	usr << browse(dat, "window=secrets")
+
+	var/datum/browser/popup = new(usr, "secrets", "Secrets", 550, 500)
+	popup.set_content(dat)
+	popup.open()
 	return
-
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////admins2.dm merge
 //i.e. buttons/verbs
@@ -635,10 +645,10 @@ proc/admin_notice(var/message, var/rights)
 	if(confirm == "Cancel")
 		return
 	if(confirm == "Yes")
-		world << "<span class='danger'>Restarting world!</span> <span class='notice'>Initiated by [usr.client.holder.fakekey ? "Admin" : usr.key]!</span>"
+		world << "<span class='danger'>Restarting world!</span> <span class='notice'>Initiated by [usr.key]!</span>"
 		log_admin("[key_name(usr)] initiated a reboot.")
 
-		feedback_set_details("end_error","admin reboot - by [usr.key] [usr.client.holder.fakekey ? "(stealth)" : ""]")
+		feedback_set_details("end_error","admin reboot - by [usr.key]")
 		feedback_add_details("admin_verb","R") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 		if(blackbox)
@@ -654,12 +664,11 @@ proc/admin_notice(var/message, var/rights)
 	set desc="Announce your desires to the world"
 	if(!check_rights(0))	return
 
-	var/message = input("Global message to send:", "Admin Announce", null, null)  as message//todo: sanitize for all?
+	var/message = input("Global message to send:", "Admin Announce", null, null) as message
+	message = sanitize(message, 500, extra = 0)
 	if(message)
-		if(!check_rights(R_SERVER,0))
-			message = sanitize(message, 500, extra = 0)
 		message = replacetext(message, "\n", "<br>") // required since we're putting it in a <p> tag
-		world << "<span class=notice><b>[usr.client.holder.fakekey ? "Administrator" : usr.key] Announces:</b><p style='text-indent: 50px'>[message]</p></span>"
+		world << "<span class=notice><b>[usr.key] Announces:</b><p style='text-indent: 50px'>[message]</p></span>"
 		log_admin("Announce: [key_name(usr)] : [message]")
 	feedback_add_details("admin_verb","A") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -758,14 +767,14 @@ proc/admin_notice(var/message, var/rights)
 	if(!ticker)
 		alert("Unable to start the game as it is not set up.")
 		return
-	if(ticker.current_state == GAME_STATE_PREGAME)
-		ticker.current_state = GAME_STATE_SETTING_UP
+	if(ticker.current_state == GAME_STATE_PREGAME && !(initialization_stage & INITIALIZATION_NOW))
 		log_admin("[usr.key] has started the game.")
 		message_admins("<font color='blue'>[usr.key] has started the game.</font>")
 		feedback_add_details("admin_verb","SN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		initialization_stage |= INITIALIZATION_NOW
 		return 1
 	else
-		usr << "<font color='red'>Error: Start Now: Game has already started.</font>"
+		usr << "<span class='warning'>Error: Start Now: Game has already started.</span>"
 		return 0
 
 /datum/admins/proc/toggleenter()
@@ -897,10 +906,10 @@ proc/admin_notice(var/message, var/rights)
 	if(!usr.client.holder)	return
 	if( alert("Reboot server?",,"Yes","No") == "No")
 		return
-	world << "\red <b>Rebooting world!</b> \blue Initiated by [usr.client.holder.fakekey ? "Admin" : usr.key]!"
+	world << "<span class='danger'>Rebooting world!</span> <span class='notice'>Initiated by [usr.key]!</span>"
 	log_admin("[key_name(usr)] initiated an immediate reboot.")
 
-	feedback_set_details("end_error","immediate admin reboot - by [usr.key] [usr.client.holder.fakekey ? "(stealth)" : ""]")
+	feedback_set_details("end_error","immediate admin reboot - by [usr.key]")
 	feedback_add_details("admin_verb","IR") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 	if(blackbox)
@@ -1368,3 +1377,94 @@ proc/admin_notice(var/message, var/rights)
 			H.paralysis = 0
 			msg = "has unparalyzed [key_name(H)]."
 		log_and_message_admins(msg)
+
+
+/datum/admins/proc/sendFax()
+	set category = "Special Verbs"
+	set name = "Send Fax"
+	set desc = "Sends a fax to this machine"
+	var/department = input("Choose a fax", "Fax") as null|anything in alldepartments
+	for(var/obj/machinery/photocopier/faxmachine/sendto in allfaxes)
+		if(sendto.department == department)
+
+			if (!istype(src,/datum/admins))
+				src = usr.client.holder
+			if (!istype(src,/datum/admins))
+				usr << "Error: you are not an admin!"
+				return
+
+			var/replyorigin = input(src.owner, "Please specify who the fax is coming from", "Origin") as text|null
+
+			var/obj/item/weapon/paper/admin/P = new /obj/item/weapon/paper/admin( null ) //hopefully the null loc won't cause trouble for us
+			faxreply = P
+
+			P.admindatum = src
+			P.origin = replyorigin
+			P.destination = sendto
+
+			P.adminbrowse()
+
+
+datum/admins/var/obj/item/weapon/paper/admin/faxreply // var to hold fax replies in
+
+/datum/admins/proc/faxCallback(var/obj/item/weapon/paper/admin/P, var/obj/machinery/photocopier/faxmachine/destination)
+	var/customname = input(src.owner, "Pick a title for the report", "Title") as text|null
+
+	P.name = "[P.origin] - [customname]"
+	P.desc = "This is a paper titled '" + P.name + "'."
+
+	var/shouldStamp = 1
+	if(!P.sender) // admin initiated
+		switch(alert("Would you like the fax stamped?",, "Yes", "No"))
+			if("No")
+				shouldStamp = 0
+
+	if(shouldStamp)
+		P.stamps += "<hr><i>This paper has been stamped by the [P.origin] Quantum Relay.</i>"
+
+		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
+		var/{x; y;}
+		x = rand(-2, 0)
+		y = rand(-1, 2)
+		P.offset_x += x
+		P.offset_y += y
+		stampoverlay.pixel_x = x
+		stampoverlay.pixel_y = y
+
+		if(!P.ico)
+			P.ico = new
+		P.ico += "paper_stamp-cent"
+		stampoverlay.icon_state = "paper_stamp-cent"
+
+		if(!P.stamped)
+			P.stamped = new
+		P.stamped += /obj/item/weapon/stamp/centcomm
+		P.overlays += stampoverlay
+
+	var/obj/item/rcvdcopy
+	rcvdcopy = destination.copy(P)
+	rcvdcopy.loc = null //hopefully this shouldn't cause trouble
+	adminfaxes += rcvdcopy
+
+
+
+	if(destination.recievefax(P))
+		src.owner << "<span class='notice'>Message reply to transmitted successfully.</span>"
+		if(P.sender) // sent as a reply
+			log_admin("[key_name(src.owner)] replied to a fax message from [key_name(P.sender)]")
+			for(var/client/C in admins)
+				if((R_ADMIN | R_MOD) & C.holder.rights)
+					C << "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] replied to a fax message from [key_name_admin(P.sender)] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>"
+		else
+			log_admin("[key_name(src.owner)] has sent a fax message to [destination.department]")
+			for(var/client/C in admins)
+				if((R_ADMIN | R_MOD) & C.holder.rights)
+					C << "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] has sent a fax message to [destination.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>"
+
+	else
+		src.owner << "<span class='warning'>Message reply failed.</span>"
+
+	spawn(100)
+		qdel(P)
+		faxreply = null
+	return

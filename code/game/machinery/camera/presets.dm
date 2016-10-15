@@ -1,30 +1,6 @@
-// PRESETS
-var/global/list/station_networks = list(
-										NETWORK_CIVILIAN_EAST,
-										NETWORK_CIVILIAN_WEST,
-										NETWORK_COMMAND,
-										NETWORK_ENGINE,
-										NETWORK_ENGINEERING,
-										NETWORK_ENGINEERING_OUTPOST,
-										NETWORK_EXODUS,
-										NETWORK_FIRST_DECK,
-										NETWORK_MEDICAL,
-										NETWORK_MINE,
-										NETWORK_RESEARCH,
-										NETWORK_RESEARCH_OUTPOST,
-										NETWORK_ROBOTS,
-										NETWORK_PRISON,
-										NETWORK_SECOND_DECK,
-										NETWORK_SECURITY,
-										NETWORK_THIRD_DECK
-										)
-var/global/list/engineering_networks = list(
-										NETWORK_ENGINE,
-										NETWORK_ENGINEERING,
-										NETWORK_ENGINEERING_OUTPOST,
-										"Atmosphere Alarms",
-										"Fire Alarms",
-										"Power Alarms")
+/obj/machinery/camera/network/calypso
+	network = list(NETWORK_CALYPSO)
+
 /obj/machinery/camera/network/crescent
 	network = list(NETWORK_CRESCENT)
 
@@ -48,15 +24,27 @@ var/global/list/engineering_networks = list(
 
 /obj/machinery/camera/network/ert
 	network = list(NETWORK_ERT)
+	
+/obj/machinery/camera/network/mercenary
+	network = list(NETWORK_MERCENARY)
 
 /obj/machinery/camera/network/exodus
 	network = list(NETWORK_EXODUS)
 
+/obj/machinery/camera/network/expedition
+	network = list(NETWORK_EXPEDITION)
+
 /obj/machinery/camera/network/first_deck
 	network = list(NETWORK_FIRST_DECK)
 
+/obj/machinery/camera/network/fourth_deck
+	network = list(NETWORK_FOURTH_DECK)
+
 /obj/machinery/camera/network/mining
 	network = list(NETWORK_MINE)
+
+/obj/machinery/camera/network/pod
+	network = list(NETWORK_POD)
 
 /obj/machinery/camera/network/prison
 	network = list(NETWORK_PRISON)
@@ -75,6 +63,9 @@ var/global/list/engineering_networks = list(
 
 /obj/machinery/camera/network/security
 	network = list(NETWORK_SECURITY)
+
+/obj/machinery/camera/network/supply
+	network = list(NETWORK_SUPPLY)
 
 /obj/machinery/camera/network/telecom
 	network = list(NETWORK_TELECOM)
@@ -105,6 +96,9 @@ var/global/list/engineering_networks = list(
 /obj/machinery/camera/xray/research
 	network = list(NETWORK_RESEARCH)
 
+/obj/machinery/camera/xray/command
+	network = list(NETWORK_COMMAND)
+
 /obj/machinery/camera/xray/New()
 	..()
 	upgradeXRay()
@@ -120,6 +114,9 @@ var/global/list/engineering_networks = list(
 
 /obj/machinery/camera/motion/security
 	network = list(NETWORK_SECURITY)
+
+/obj/machinery/camera/motion/command
+	network = list(NETWORK_COMMAND)
 
 // ALL UPGRADES
 

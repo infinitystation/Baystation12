@@ -6,7 +6,6 @@ obj/machinery/atmospherics/pipe/simple/heat_exchanging
 	color = "#404040"
 	level = 2
 	connect_types = CONNECT_TYPE_HE
-	layer = 2.41
 	var/initialize_directions_he
 	var/surface = 2	//surface area in m^2
 	var/icon_temperature = T20C //stop small changes in temperature causing an icon refresh
@@ -14,6 +13,7 @@ obj/machinery/atmospherics/pipe/simple/heat_exchanging
 	minimum_temperature_difference = 20
 	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
 
+	can_buckle = 1
 	buckle_lying = 1
 
 	// BubbleWrap
@@ -81,7 +81,7 @@ obj/machinery/atmospherics/pipe/simple/heat_exchanging
 					heat_limit = H.species.heat_level_3
 
 				if(pipe_air.temperature > heat_limit + 1)
-					buckled_mob.apply_damage(4 * log(pipe_air.temperature - heat_limit), BURN, "chest", used_weapon = "Excessive Heat")
+					buckled_mob.apply_damage(4 * log(pipe_air.temperature - heat_limit), BURN, BP_CHEST, used_weapon = "Excessive Heat")
 
 			//fancy radiation glowing
 			if(pipe_air.temperature && (icon_temperature > 500 || pipe_air.temperature > 500)) //start glowing at 500K

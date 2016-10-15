@@ -1,6 +1,10 @@
 /turf
 	icon = 'icons/turf/floors.dmi'
 	level = 1
+
+	plane = TURF_PLANE
+	layer = BASE_TURF_LAYER
+
 	var/holy = 0
 
 	// Initial air contents (in moles)
@@ -49,8 +53,8 @@
 /turf/ex_act(severity)
 	return 0
 
-/turf/proc/is_intact()
-	return 0
+/turf/proc/is_solid_structure()
+	return 1
 
 /turf/attack_hand(mob/user)
 	if(!(user.canmove) || user.restrained() || !(user.pulling))
@@ -59,6 +63,8 @@
 		return 0
 	if(user.pulling.loc != user.loc && get_dist(user, user.pulling) > 1)
 		return 0
+
+	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 	if(ismob(user.pulling))
 		var/mob/M = user.pulling
 		var/atom/movable/t = M.pulling
@@ -124,7 +130,7 @@ var/const/enterloopsanity = 100
 		var/mob/M = A
 		if(!M.check_solid_ground())
 			inertial_drift(M)
-			//we'll end up checking solid ground again but we still need to check the other things. 
+			//we'll end up checking solid ground again but we still need to check the other things.
 			//Ususally most people aren't in space anyways so hopefully this is acceptable.
 			M.update_floating()
 		else

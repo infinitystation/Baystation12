@@ -3,11 +3,12 @@
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "paper_bin1"
 	item_state = "sheet-metal"
+	randpixel = 0
 	throwforce = 1
 	w_class = 3
 	throw_speed = 3
 	throw_range = 7
-	layer = OBJ_LAYER - 0.1
+	layer = BELOW_OBJ_LAYER
 	var/amount = 30					//How much paper is in the bin.
 	var/list/papers = new/list()	//List of papers put in the bin for reference.
 
@@ -17,10 +18,10 @@
 		if(!istype(usr, /mob/living/carbon/slime) && !istype(usr, /mob/living/simple_animal))
 			if( !usr.get_active_hand() )		//if active hand is empty
 				var/mob/living/carbon/human/H = user
-				var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
+				var/obj/item/organ/external/temp = H.organs_by_name[BP_R_HAND]
 
 				if (H.hand)
-					temp = H.organs_by_name["l_hand"]
+					temp = H.organs_by_name[BP_L_HAND]
 				if(temp && !temp.is_usable())
 					user << "<span class='notice'>You try to move your [temp.name], but cannot!</span>"
 					return
@@ -33,9 +34,9 @@
 /obj/item/weapon/paper_bin/attack_hand(mob/user as mob)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
+		var/obj/item/organ/external/temp = H.organs_by_name[BP_R_HAND]
 		if (H.hand)
-			temp = H.organs_by_name["l_hand"]
+			temp = H.organs_by_name[BP_L_HAND]
 		if(temp && !temp.is_usable())
 			user << "<span class='notice'>You try to move your [temp.name], but cannot!</span>"
 			return

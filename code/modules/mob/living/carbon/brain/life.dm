@@ -71,14 +71,10 @@
 
 /mob/living/carbon/brain/handle_chemicals_in_body()
 	chem_effects.Cut()
-	analgesic = 0
 
 	if(touching) touching.metabolize()
 	if(ingested) ingested.metabolize()
 	if(bloodstr) bloodstr.metabolize()
-
-	if(CE_PAINKILLER in chem_effects)
-		analgesic = chem_effects[CE_PAINKILLER]
 
 	confused = max(0, confused - 1)
 	// decrement dizziness counter, clamped to 0
@@ -205,27 +201,15 @@
 			sight &= ~SEE_OBJS
 			see_in_dark = 2
 			see_invisible = SEE_INVISIBLE_LIVING
-	if (client)
-		client.screen.Remove(global_hud.blurry,global_hud.druggy,global_hud.vimpaired)
 
-	if ((blind && stat != 2))
-		if ((blinded))
-			blind.layer = 18
-			blind.plane = 0
+	if(stat != DEAD)
+		if(blinded)
+			overlay_fullscreen("blind", /obj/screen/fullscreen/blind)
 		else
-			blind.layer = 0
-			blind.plane = -99
-
-			if (disabilities & NEARSIGHTED)
-				client.screen += global_hud.vimpaired
-
-			if (eye_blurry)
-				client.screen += global_hud.blurry
-
-			if (druggy)
-				client.screen += global_hud.druggy
-
-	if (stat != 2)
+			clear_fullscreen("blind")
+			set_fullscreen(disabilities & NEARSIGHTED, "impaired", /obj/screen/fullscreen/impaired, 1)
+			set_fullscreen(eye_blurry, "blurry", /obj/screen/fullscreen/blurry)
+			set_fullscreen(druggy, "high", /obj/screen/fullscreen/high)
 		if (machine)
 			if (!( machine.check_eye(src) ))
 				reset_view(null)
@@ -242,16 +226,3 @@
 		else
 			if(client && !client.adminobs)
 				reset_view(null)
-
-/*/mob/living/carbon/brain/emp_act(severity)
-	if(!(container && istype(container, /obj/item/device/mmi)))
-		return
-	else
-		switch(severity)
-			if(1)
-				emp_damage += rand(20,30)
-			if(2)
-				emp_damage += rand(10,20)
-			if(3)
-				emp_damage += rand(0,10)
-	..()*/

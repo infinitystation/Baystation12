@@ -35,19 +35,38 @@
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks))
 		var/obj/item/weapon/reagent_containers/food/snacks/S = O
 		user.drop_item(O)
-		for(var/datum/reagent/nutriment/N in S.reagentlist())
-			biomass = max(biomass + min(1,round(N.volume*deconstruct_eff)), biomass_max)
+		for(var/datum/reagent/nutriment/N in S.reagents.reagent_list)
+			biomass = Clamp(biomass + round(N.volume*deconstruct_eff),1,biomass_max)
 		qdel(O)
-	else if(istype(O, /obj/item/weapon/storage/bag/plants))
+	else if(istype(O, /obj/item/weapon/storage/plants))
 		if(!O.contents || !O.contents.len)
 			return
 		user << "You empty \the [O] into \the [src]"
 		for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in O.contents)
 			var/obj/item/weapon/storage/S = O
 			S.remove_from_storage(G, null)
-			for(var/datum/reagent/nutriment/N in G.reagentlist())
-				biomass = max(biomass + min(1,round(N.volume*deconstruct_eff)), biomass_max)
+			for(var/datum/reagent/nutriment/N in G.reagents.reagent_list)
+				biomass = Clamp(biomass + round(N.volume*deconstruct_eff),1,biomass_max)
 			qdel(G)
+
+	if (istype(O, /obj/item/weapon/wrench))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 100, 1)
+		if(anchored)
+			user.visible_message("\The [user] begins unsecuring \the [src] from the floor.", "You start unsecuring \the [src] from the floor.")
+		else
+			user.visible_message("\The [user] begins securing \the [src] to the floor.", "You start securing \the [src] to the floor.")
+
+		if(do_after(user, 20, src))
+			if(!src) return
+			user << "<span class='notice'>You [anchored? "un" : ""]secured \the [src]!</span>"
+			anchored = !anchored
+		return
+	else if(default_deconstruction_screwdriver(user, O))
+		return
+	else if(default_deconstruction_crowbar(user, O))
+		return
+	else if(default_part_replacement(user, O))
+		return
 	else
 		..()
 
@@ -60,7 +79,7 @@
 		src.icon_state = "[initial(icon_state)]-off"
 
 /obj/machinery/food_replicator/hear_talk(mob/M as mob, text, verb, datum/language/speaking)
-	if(speaking.machine_understands)
+	if(!speaking || speaking.machine_understands)
 		spawn(20)
 			var/true_text = lowertext(html_decode(text))
 			for(var/menu_item in menu)
@@ -145,3 +164,8 @@
 				queued_dishes -= queued_dishes[1]
 				start_making = 1
 	..()
+
+/obj/machinery/food_replicator/examine(mob/user)
+	..(user)
+	if(panel_open)
+		user << "The maintenance hatch is open."

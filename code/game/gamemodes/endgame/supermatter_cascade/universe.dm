@@ -43,11 +43,10 @@ var/global/universe_has_ended = 0
 	world << sound('sound/effects/cascade.ogg')
 
 	for(var/mob/M in player_list)
-		flick("e_flash", M.flash)
+		M.flash_eyes()
 
-	if(emergency_shuttle.can_recall())
+	if(evacuation_controller.cancel_evacuation())
 		priority_announcement.Announce("Аварийный шаттл был отозван из-за Blue-Space искажения.")
-		emergency_shuttle.recall()
 
 	AreaSet()
 	MiscSet()
@@ -122,6 +121,6 @@ var/global/universe_has_ended = 0
 			continue
 		if(M.current.stat!=2)
 			M.current.Weaken(10)
-			flick("e_flash", M.current.flash)
+			M.current.flash_eyes()
 
 		clear_antag_roles(M)

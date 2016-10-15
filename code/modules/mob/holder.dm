@@ -26,9 +26,11 @@ var/list/holder_mob_icon_cache = list()
 	processing_objects.Add(src)
 
 /obj/item/weapon/holder/Destroy()
+	for(var/atom/movable/AM in src)
+		AM.forceMove(get_turf(src))
 	last_holder = null
 	processing_objects.Remove(src)
-	..()
+	return ..()
 
 /obj/item/weapon/holder/process()
 	update_state()
@@ -46,7 +48,7 @@ var/list/holder_mob_icon_cache = list()
 	if(istype(loc,/turf) || !(contents.len))
 		for(var/mob/M in contents)
 			var/atom/movable/mob_container = M
-			mob_container.forceMove(loc, MOVED_DROP)
+			mob_container.dropInto(loc)
 			M.reset_view()
 		qdel(src)
 	else if(last_holder != loc)
@@ -55,7 +57,12 @@ var/list/holder_mob_icon_cache = list()
 
 	last_holder = loc
 
-/obj/item/weapon/holder/GetID()
+/obj/item/weapon/holder/onDropInto(var/atom/movable/AM)
+	if(ismob(loc))   // Bypass our holding mob and drop directly to its loc
+		return loc.loc
+	return ..()
+
+/obj/item/weapon/holder/GetIdCard()
 	for(var/mob/M in contents)
 		var/obj/item/I = M.GetIdCard()
 		if(I)
@@ -63,18 +70,18 @@ var/list/holder_mob_icon_cache = list()
 	return null
 
 /obj/item/weapon/holder/GetAccess()
-	var/obj/item/I = GetID()
+	var/obj/item/I = GetIdCard()
 	return I ? I.GetAccess() : ..()
 
 /obj/item/weapon/holder/attack_self()
 	for(var/mob/M in contents)
 		M.show_inv(usr)
-		
+
 /obj/item/weapon/holder/attack(mob/target, mob/user)
 	// Devour on click on self with holder
 	if(target == user && istype(user,/mob/living/carbon))
 		var/mob/living/carbon/M = user
-		
+
 		for(var/mob/victim in src.contents)
 			M.devour(victim)
 
@@ -96,13 +103,7 @@ var/list/holder_mob_icon_cache = list()
 	last_holder = H
 	register_all_movement(H, M)
 
-	if(istype(H))
-		if(H.l_hand == src)
-			H.update_inv_l_hand()
-		else if(H.r_hand == src)
-			H.update_inv_r_hand()
-		else
-			H.regenerate_icons()
+	update_held_icon()
 
 //Mob specific holders.
 /obj/item/weapon/holder/diona
@@ -129,6 +130,11 @@ var/list/holder_mob_icon_cache = list()
 
 	if(!holder_type || buckled || pinned.len)
 		return
+
+	if(self_grab)
+		if(src.incapacitated()) return
+	else
+		if(grabber.incapacitated()) return
 
 	var/obj/item/weapon/holder/H = new holder_type(get_turf(src))
 

@@ -2,10 +2,12 @@
 var/list/admin_verbs_default = list(
 	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags,
 	/client/proc/player_panel,
+	/client/proc/secrets,
 	/client/proc/deadmin_self,			//destroys our own admin datum so we can play as a regular player,
 	/client/proc/hide_verbs,			//hides all our adminverbs,
 	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
+	/client/proc/debug_global_variables,//as above but for global variables,
 //	/client/proc/check_antagonists,		//shows all antags,
 	/client/proc/cmd_mentor_check_new_players
 //	/client/proc/deadchat				//toggles deadchat on/off,
@@ -52,10 +54,9 @@ var/list/admin_verbs_admin = list(
 	/client/proc/manage_silicon_laws,	// Allows viewing and editing silicon laws. ,
 	/client/proc/check_antagonists,
 	/client/proc/admin_memo,			//admin memo system. show/delete/write. +SERVER needed to delete admin memos of others,
-	/client/proc/dsay,					//talk in deadchat using our ckey/fakekey,
+	/client/proc/dsay,					//talk in deadchat using our ckey
 //	/client/proc/toggle_hear_deadcast,	//toggles whether we hear deadchat,
 	/client/proc/investigate_show,		//various admintools for investigation. Such as a singulo grief-log,
-	/client/proc/secrets,
 	/datum/admins/proc/toggleooc,		//toggles ooc on/off for everyone,
 	/datum/admins/proc/togglelooc,		//toggles looc on/off for everyone,
 	/datum/admins/proc/toggleoocdead,	//toggles ooc on/off for everyone who is dead,
@@ -89,7 +90,11 @@ var/list/admin_verbs_admin = list(
 	/client/proc/view_chemical_reaction_logs,
 	/client/proc/makePAI,
 	/datum/admins/proc/paralyze_mob,
-	/client/proc/fixatmos
+	/client/proc/fixatmos,
+	/client/proc/list_traders,
+	/client/proc/add_trader,
+	/client/proc/remove_trader,
+	/datum/admins/proc/sendFax
 )
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
@@ -100,9 +105,10 @@ var/list/admin_verbs_sounds = list(
 	/client/proc/play_sound,
 	/client/proc/play_server_sound
 	)
+
 var/list/admin_verbs_fun = list(
 	/client/proc/object_talk,
-	/client/proc/cmd_admin_dress,
+	/datum/admins/proc/cmd_admin_dress,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/drop_bomb,
 	/client/proc/everyone_random,
@@ -117,7 +123,9 @@ var/list/admin_verbs_fun = list(
 	/client/proc/editappear,
 	/client/proc/roll_dices,
 	/datum/admins/proc/call_supply_drop,
-	/datum/admins/proc/call_drop_pod
+	/datum/admins/proc/call_drop_pod,
+	/client/proc/create_dungeon,
+	/datum/admins/proc/ai_hologram_set
 	)
 
 var/list/admin_verbs_spawn = list(
@@ -131,7 +139,7 @@ var/list/admin_verbs_spawn = list(
 	/client/proc/spawn_chemdisp_cartridge
 	)
 var/list/admin_verbs_server = list(
-	/datum/admins/proc/capture_map,
+	/datum/admins/proc/capture_map_part,
 	/client/proc/Set_Holiday,
 	/client/proc/ToRban,
 	/datum/admins/proc/startnow,
@@ -192,7 +200,9 @@ var/list/admin_verbs_debug = list(
 	/client/proc/dsay,
 	/datum/admins/proc/run_unit_test,
 	/turf/proc/view_chunk,
-	/turf/proc/update_chunk
+	/turf/proc/update_chunk,
+	/datum/admins/proc/capture_map,
+	/datum/admins/proc/view_runtimes
 	)
 
 var/list/admin_verbs_paranoid_debug = list(
@@ -237,7 +247,7 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/play_sound,
 	/client/proc/play_server_sound,
 	/client/proc/object_talk,
-	/client/proc/cmd_admin_dress,
+	/datum/admins/proc/cmd_admin_dress,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/drop_bomb,
 	/client/proc/cinematic,
@@ -287,6 +297,7 @@ var/list/admin_verbs_mod = list(
 	/client/proc/cmd_admin_pm_context,	// right-click adminPM interface,
 	/client/proc/cmd_admin_pm_panel,	// admin-pm list,
 	/client/proc/debug_variables,		// allows us to -see- the variables of any instance in the game.,
+	/client/proc/debug_global_variables,// as above but for global variables,
 	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,			// allows us to ghost/reenter body at will,
 	/client/proc/cmd_mod_say,
@@ -299,7 +310,9 @@ var/list/admin_verbs_mod = list(
 	/client/proc/jobbans,
 	/client/proc/cmd_admin_subtle_message, // send an message to somebody as a 'voice in their head',
 	/client/proc/aooc,
-	/datum/admins/proc/paralyze_mob
+	/datum/admins/proc/paralyze_mob,
+	/datum/admins/proc/sendFax
+
 )
 
 var/list/admin_verbs_mentor = list(
@@ -511,26 +524,6 @@ var/list/admin_verbs_mentor = list(
 	feedback_add_details("admin_verb","OC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
-/client/proc/stealth()
-	set category = "Admin"
-	set name = "Stealth Mode"
-	if(holder)
-		if(holder.fakekey)
-			holder.fakekey = null
-			if(istype(src.mob, /mob/new_player))
-				mob.name = key
-		else
-			var/new_key = ckeyEx(input("Enter your desired display name.", "Fake Key", key) as text|null)
-			if(!new_key)	return
-			if(length(new_key) >= 26)
-				new_key = copytext(new_key, 1, 26)
-			holder.fakekey = new_key
-			if(istype(mob, /mob/new_player))
-				mob.name = new_key
-		log_admin("[key_name(usr)] has turned stealth mode [holder.fakekey ? "ON" : "OFF"]")
-		message_admins("[key_name_admin(usr)] has turned stealth mode [holder.fakekey ? "ON" : "OFF"]", 1)
-	feedback_add_details("admin_verb","SM") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
 #define MAX_WARNS 3
 #define AUTOBANTIME 10
 
@@ -731,7 +724,7 @@ var/list/admin_verbs_mentor = list(
 	var/new_name = sanitizeSafe(input(src, "Enter new name. Leave blank or as is to cancel.", "[S.real_name] - Enter new silicon name", S.real_name))
 	if(new_name && new_name != S.real_name)
 		log_and_message_admins("has renamed the silicon '[S.real_name]' to '[new_name]'")
-		S.SetName(new_name)
+		S.fully_replace_character_name(new_name)
 	feedback_add_details("admin_verb","RAI") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/manage_silicon_laws()
@@ -796,8 +789,8 @@ var/list/admin_verbs_mentor = list(
 		return
 
 	if(alert("Switch from code [get_security_level()] to code [sec_level]?","Change security level?","Yes","No") == "Yes")
+		log_and_message_admins("changed the security level from code [get_security_level()] to code [sec_level].")
 		set_security_level(sec_level)
-		log_admin("[key_name(usr)] changed the security level to code [sec_level].")
 
 
 //---- bs12 verbs ----
@@ -865,12 +858,15 @@ var/list/admin_verbs_mentor = list(
 	if(new_fstyle)
 		M.f_style = new_fstyle
 
-	var/new_gender = alert(usr, "Please select gender.", "Character Generation", "Male", "Female")
+	var/new_gender = alert(usr, "Please select gender.", "Character Generation", "Male", "Female", "Neuter")
 	if (new_gender)
 		if(new_gender == "Male")
 			M.gender = MALE
-		else
+		else if (new_gender == "Female")
 			M.gender = FEMALE
+		else
+			M.gender = NEUTER
+
 	M.update_hair()
 	M.update_body()
 	M.check_dna(M)

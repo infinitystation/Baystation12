@@ -30,7 +30,7 @@
 		command_announcement.Announce("Радиационный шторм миновал. Пожалуйста, обратитесь в медицинский отсек при замечании необычных симптомов. Доступ в технические тоннели вскоре будет восстановлен.", "Тревога: Радиационный шторм")
 
 /datum/event/radiation_storm/proc/radiate()
-	for(var/mob/living/carbon/C in living_mob_list)
+	for(var/mob/living/carbon/C in living_mob_list_)
 		var/area/A = get_area(C)
 		if(!A)
 			continue

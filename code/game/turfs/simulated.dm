@@ -16,6 +16,12 @@
 
 	var/datum/scheduled_task/unwet_task
 
+/turf/simulated/post_change()
+	..()
+	var/turf/T = GetAbove(src)
+	if(istype(T,/turf/space))
+		T.ChangeTurf(/turf/simulated/open)
+
 // This is not great.
 /turf/simulated/proc/wet_floor(var/wet_val = 1)
 	if(wet_val < wet)
@@ -88,10 +94,6 @@
 		var/mob/living/M = A
 		if(M.lying)
 			return ..()
-
-		// Ugly hack :( Should never have multiple plants in the same tile.
-		var/obj/effect/plant/plant = locate() in contents
-		if(plant) plant.trodden_on(M)
 
 		// Dirt overlays.
 		update_dirt()

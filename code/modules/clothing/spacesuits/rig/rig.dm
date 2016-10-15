@@ -14,7 +14,8 @@
 	slot_flags = SLOT_BACK
 	req_one_access = list()
 	req_access = list()
-	w_class = 4
+	w_class = 5
+	center_of_mass = null
 
 	// These values are passed on to all component pieces.
 	armor = list(melee = 40, bullet = 5, laser = 20,energy = 5, bomb = 35, bio = 100, rad = 20)
@@ -75,8 +76,8 @@
 	var/offline = 1                                           // Should we be applying suit maluses?
 	var/online_slowdown = 0                                   // If the suit is deployed and powered, it sets slowdown to this.
 	var/offline_slowdown = 3                                  // If the suit is deployed and unpowered, it sets slowdown to this.
-	var/vision_restriction
-	var/offline_vision_restriction = 1                        // 0 - none, 1 - welder vision, 2 - blind. Maybe move this to helmets.
+	var/vision_restriction = TINT_NONE
+	var/offline_vision_restriction = TINT_HEAVY               // tint value given to helmet
 	var/airtight = 1 //If set, will adjust AIRTIGHT and STOPPRESSUREDAMAGE flags on components. Otherwise it should leave them untouched.
 
 	var/emp_protection = 0
@@ -95,8 +96,12 @@
 			usr << "\icon[piece] \The [piece] [piece.gender == PLURAL ? "are" : "is"] deployed."
 
 	if(src.loc == usr)
+		usr << "The access panel is [locked? "locked" : "unlocked"]."
 		usr << "The maintenance panel is [open ? "open" : "closed"]."
 		usr << "Hardsuit systems are [offline ? "<font color='red'>offline</font>" : "<font color='green'>online</font>"]."
+
+		if(open)
+			usr << "It's equipped with [english_list(installed_modules)]."
 
 /obj/item/weapon/rig/New()
 	..()
@@ -137,7 +142,6 @@
 		chest = new chest_type(src)
 		if(allowed)
 			chest.allowed = allowed
-		set_slowdown(offline_slowdown)
 		verbs |= /obj/item/weapon/rig/proc/toggle_chest
 
 	for(var/obj/item/piece in list(gloves,helmet,boots,chest))
@@ -155,7 +159,7 @@
 		piece.unacidable = unacidable
 		if(islist(armor)) piece.armor = armor.Copy()
 
-	set_slowdown(online_slowdown)
+	set_slowdown_and_vision(!offline)
 	update_icon(1)
 
 /obj/item/weapon/rig/Destroy()
@@ -171,8 +175,19 @@
 	spark_system = null
 	return ..()
 
-/obj/item/weapon/rig/proc/set_slowdown(var/new_slowdown)
-	chest.slowdown_per_slot[slot_wear_suit] = new_slowdown
+/obj/item/weapon/rig/get_mob_overlay(mob/user_mob, slot)
+	var/image/ret = ..()
+	if(icon_override)
+		ret.icon = icon_override
+	else if(slot == slot_back_str)
+		ret.icon = mob_icon
+	return ret
+
+/obj/item/weapon/rig/proc/set_slowdown_and_vision(var/active)
+	if(chest)
+		chest.slowdown_per_slot[slot_wear_suit] = (active? online_slowdown : offline_slowdown)
+	if(helmet)
+		helmet.tint = (active? vision_restriction : offline_vision_restriction)
 
 /obj/item/weapon/rig/proc/suit_is_deployed()
 	if(!istype(wearer) || src.loc != wearer || wearer.back != src)
@@ -188,8 +203,9 @@
 	return 1
 
 /obj/item/weapon/rig/proc/reset()
-	offline = 2
 	canremove = 1
+	if(istype(chest))
+		chest.check_limb_support(wearer)
 	for(var/obj/item/piece in list(helmet,boots,gloves,chest))
 		if(!piece) continue
 		piece.icon_state = "[initial(icon_state)]"
@@ -206,7 +222,7 @@
 		initiator << "<span class='danger'>Cannot toggle suit: The suit is currently not being worn by anyone.</span>"
 		return 0
 
-	if(!check_power_cost(wearer))
+	if(!check_power_cost(wearer, 1))
 		return 0
 
 	deploy(wearer,instant)
@@ -337,49 +353,52 @@
 				M.drop_from_inventory(piece)
 			piece.forceMove(src)
 
-	if(!istype(wearer) || loc != wearer || wearer.back != src || canremove || !cell || cell.charge <= 0)
-		if(!cell || cell.charge <= 0)
+	var/changed = update_offline()
+	if(changed)
+		if(offline)
+			//notify the wearer
+			if(!canremove)
+				if (offline_slowdown < 3)
+					wearer << "<span class='danger'>Your suit beeps stridently, and suddenly goes dead.</span>"
+				else
+					wearer << "<span class='danger'>Your suit beeps stridently, and suddenly you're wearing a leaden mass of metal and plastic composites instead of a powered suit.</span>"
+			if(offline_vision_restriction >= TINT_MODERATE)
+				wearer << "<span class='danger'>The suit optics flicker and die, leaving you with restricted vision.</span>"
+			else if(offline_vision_restriction >= TINT_BLIND)
+				wearer << "<span class='danger'>The suit optics drop out completely, drowning you in darkness.</span>"
+
 			if(electrified > 0)
 				electrified = 0
-			if(!offline)
-				if(istype(wearer))
-					if(!canremove)
-						if (offline_slowdown < 3)
-							wearer << "<span class='danger'>Your suit beeps stridently, and suddenly goes dead.</span>"
-						else
-							wearer << "<span class='danger'>Your suit beeps stridently, and suddenly you're wearing a leaden mass of metal and plastic composites instead of a powered suit.</span>"
-					if(offline_vision_restriction == 1)
-						wearer << "<span class='danger'>The suit optics flicker and die, leaving you with restricted vision.</span>"
-					else if(offline_vision_restriction == 2)
-						wearer << "<span class='danger'>The suit optics drop out completely, drowning you in darkness.</span>"
-		if(!offline)
-			offline = 1
-	else
-		if(offline)
-			offline = 0
-			if(istype(wearer) && !wearer.wearing_rig)
-				wearer.wearing_rig = src
-			set_slowdown(online_slowdown)
-
-	if(offline)
-		if(offline == 1)
 			for(var/obj/item/rig_module/module in installed_modules)
 				module.deactivate()
-			offline = 2
-			set_slowdown(offline_slowdown)
-		return
+		else
+			if(istype(wearer) && !wearer.wearing_rig)
+				wearer.wearing_rig = src
 
-	if(cell && cell.charge > 0 && electrified > 0)
-		electrified--
+		set_slowdown_and_vision(!offline)
+		if(istype(chest))
+			chest.check_limb_support(wearer)
 
-	if(malfunction_delay > 0)
-		malfunction_delay--
-	else if(malfunctioning)
-		malfunctioning--
-		malfunction()
+	if(!offline)
+		if(cell && cell.charge > 0 && electrified > 0)
+			electrified--
 
-	for(var/obj/item/rig_module/module in installed_modules)
-		cell.use(module.process()*10)
+		if(malfunction_delay > 0)
+			malfunction_delay--
+		else if(malfunctioning)
+			malfunctioning--
+			malfunction()
+
+		for(var/obj/item/rig_module/module in installed_modules)
+			cell.use(module.process() * CELLRATE)
+
+//offline should not change outside this proc
+/obj/item/weapon/rig/proc/update_offline()
+	var/go_offline = (!istype(wearer) || loc != wearer || wearer.back != src || canremove || sealing || !cell || cell.charge <= 0)
+	if(offline != go_offline)
+		offline = go_offline
+		return 1
+	return 0
 
 /obj/item/weapon/rig/proc/check_power_cost(var/mob/living/user, var/cost, var/use_unconcious, var/obj/item/rig_module/mod, var/user_is_ai)
 
@@ -400,7 +419,7 @@
 		fail_msg = "<span class='warning'>You are in no fit state to do that.</span>"
 	else if(!cell)
 		fail_msg = "<span class='warning'>There is no cell installed in the suit.</span>"
-	else if(cost && cell.charge < cost * 10) //TODO: Cellrate?
+	else if(cost && !cell.check_charge(cost * CELLRATE))
 		fail_msg = "<span class='warning'>Not enough stored power.</span>"
 
 	if(fail_msg)
@@ -413,7 +432,7 @@
 			if(module.active && module.disruptable)
 				module.deactivate()
 
-	cell.use(cost*10)
+	cell.use(cost * CELLRATE)
 	return 1
 
 /obj/item/weapon/rig/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/nano_state = inventory_state)
@@ -648,8 +667,6 @@
 						wearer << "<font color='blue'><b>Your [use_obj.name] [use_obj.gender == PLURAL ? "retract" : "retracts"] swiftly.</b></font>"
 						use_obj.canremove = 1
 						holder.drop_from_inventory(use_obj)
-						use_obj.forceMove(get_turf(src))
-						use_obj.dropped(wearer)
 						use_obj.canremove = 0
 						use_obj.forceMove(src)
 
@@ -912,8 +929,8 @@
 			return wearer.pulledby.relaymove(wearer, direction)
 		else if(istype(wearer.buckled, /obj/structure/bed/chair/wheelchair))
 			if(ishuman(wearer.buckled))
-				var/obj/item/organ/external/l_hand = wearer.get_organ("l_hand")
-				var/obj/item/organ/external/r_hand = wearer.get_organ("r_hand")
+				var/obj/item/organ/external/l_hand = wearer.get_organ(BP_L_HAND)
+				var/obj/item/organ/external/r_hand = wearer.get_organ(BP_R_HAND)
 				if((!l_hand || (l_hand.status & ORGAN_DESTROYED)) && (!r_hand || (r_hand.status & ORGAN_DESTROYED)))
 					return // No hands to drive your chair? Tough luck!
 			wearer_move_delay += 2
@@ -932,7 +949,7 @@
 	return src
 
 /mob/living/carbon/human/get_rig()
-	return back
+	return wearing_rig
 
 #undef ONLY_DEPLOY
 #undef ONLY_RETRACT

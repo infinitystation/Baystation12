@@ -109,14 +109,17 @@ var/global/list/rad_collectors = list()
 			eject()
 	return ..()
 
+/obj/machinery/power/rad_collector/return_air()
+	if(P)
+		return P.return_air()
 
 /obj/machinery/power/rad_collector/proc/eject()
 	locked = 0
 	var/obj/item/weapon/tank/phoron/Z = src.P
 	if (!Z)
 		return
-	Z.loc = get_turf(src)
-	Z.layer = initial(Z.layer)
+	Z.forceMove(get_turf(src))
+	Z.reset_plane_and_layer()
 	src.P = null
 	if(active)
 		toggle_power()

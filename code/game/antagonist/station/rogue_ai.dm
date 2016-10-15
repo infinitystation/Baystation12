@@ -15,6 +15,7 @@ var/datum/antagonist/rogue_ai/malf
 	initial_spawn_req = 1
 	initial_spawn_target = 1
 	antaghud_indicator = "hudmalai"
+	min_player_age = 18
 
 /datum/antagonist/rogue_ai/New()
 	..()
@@ -100,6 +101,6 @@ var/datum/antagonist/rogue_ai/malf
 	// Choose a name, if any.
 	var/newname = sanitize(input(player, "You are a [role_text]. Would you like to change your name to something else?", "Name change") as null|text, MAX_NAME_LEN)
 	if (newname)
-		player.SetName(newname)
+		player.fully_replace_character_name(newname)
 	if(player.mind) player.mind.name = player.name
 

@@ -9,7 +9,6 @@
 
 /area/New()
 	icon_state = ""
-	layer = 10
 	uid = ++global_uid
 	all_areas += src
 
@@ -151,7 +150,7 @@
 	return
 
 /area/proc/updateicon()
-	if ((fire || eject || party) && (!requires_power||power_environ) && !istype(src, /area/space))//If it doesn't require power, can still activate this proc.
+	if ((fire || eject || party) && (!requires_power||power_environ))//If it doesn't require power, can still activate this proc.
 		if(fire && !eject && !party)
 			icon_state = "blue"
 		/*else if(atmosalm && !fire && !eject && !party)
@@ -165,7 +164,6 @@
 	else
 	//	new lighting behaviour with obj lights
 		icon_state = null
-
 
 /*
 #define EQUIP 1
@@ -223,6 +221,16 @@
 		if(ENVIRON)
 			used_environ += amount
 
+/area/proc/set_lightswitch(var/new_switch)
+	if(lightswitch != new_switch)
+		lightswitch = new_switch
+		updateicon()
+		power_change()
+
+/area/proc/set_emergency_lighting(var/enable)
+	for(var/obj/machinery/light/M in src)
+		M.set_emergency_lighting(enable)
+
 
 var/list/mob/living/forced_ambiance_list = new
 
@@ -248,31 +256,45 @@ var/list/mob/living/forced_ambiance_list = new
 	// Ambience goes down here -- make sure to list each area seperately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch
 	if(!(L && L.is_preference_enabled(/datum/client_preference/play_ambiance)))	return
 
+
 	// If we previously were in an area with force-played ambiance, stop it.
 	if(L in forced_ambiance_list)
 		L << sound(null, channel = 1)
 		forced_ambiance_list -= L
 
-	if(!L.client.ambience_playing)
-		L.client.ambience_playing = 1
-		L << sound('sound/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 35, channel = 2)
+	var/turf/T = get_turf(L)
+	var/hum = 0
+	if(!L.ear_deaf)
+		for(var/obj/machinery/atmospherics/unary/vent_pump/vent in src)
+			if(vent.can_pump())
+				hum = 1
+				break
+
+	if(hum)
+		if(!L.client.ambience_playing)
+			L.client.ambience_playing = 1
+			L.playsound_local(T,sound('sound/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 25, channel = 2))
+	else
+		if(L.client.ambience_playing)
+			L.client.ambience_playing = 0
+			L << sound(null, channel = 2)
 
 	if(forced_ambience)
 		if(forced_ambience.len)
 			forced_ambiance_list |= L
-			L << sound(pick(forced_ambience), repeat = 1, wait = 0, volume = 25, channel = 1)
+			L.playsound_local(T,sound(pick(forced_ambience), repeat = 1, wait = 0, volume = 25, channel = 1))
 		else
 			L << sound(null, channel = 1)
 	else if(src.ambience.len && prob(35))
 		if((world.time >= L.client.played + 600))
 			var/sound = pick(ambience)
-			L << sound(sound, repeat = 0, wait = 0, volume = 25, channel = 1)
+			L.playsound_local(T, sound(sound, repeat = 0, wait = 0, volume = 25, channel = 1))
 			L.client.played = world.time
 
-/area/proc/gravitychange(var/gravitystate = 0, var/area/A)
-	A.has_gravity = gravitystate
+/area/proc/gravitychange(var/gravitystate = 0)
+	has_gravity = gravitystate
 
-	for(var/mob/M in A)
+	for(var/mob/M in src)
 		if(has_gravity)
 			thunk(M)
 		M.update_floating()
@@ -317,3 +339,22 @@ var/list/mob/living/forced_ambiance_list = new
 	if(A && A.has_gravity())
 		return 1
 	return 0
+
+//Can shuttle go here without doing weird stuff?
+/area/proc/free()
+	for(var/atom/A in src)
+		if(A.density)
+			return 0
+	return 1
+
+/area/proc/get_dimensions()
+	var/list/res = list("x"=1,"y"=1)
+	var/list/min = list("x"=world.maxx,"y"=world.maxy)
+	for(var/turf/T in src)
+		res["x"] = max(T.x, res["x"])
+		res["y"] = max(T.y, res["y"])
+		min["x"] = min(T.x, min["x"])
+		min["y"] = min(T.y, min["y"])
+	res["x"] = res["x"] - min["x"] + 1
+	res["y"] = res["y"] - min["y"] + 1
+	return res

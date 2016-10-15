@@ -25,12 +25,14 @@
 			if(SEC_LEVEL_GREEN)
 				security_announcement_down.Announce("[config.alert_desc_green]", "Внимание! Уровень безопасности понижен до зелёного")
 				security_level = SEC_LEVEL_GREEN
+				post_status("alert", "greenalert")
 			if(SEC_LEVEL_BLUE)
 				if(security_level < SEC_LEVEL_BLUE)
 					security_announcement_up.Announce("[config.alert_desc_blue_upto]", "Внимание! Уровень безопасности повышен до синего")
 				else
 					security_announcement_down.Announce("[config.alert_desc_blue_downto]", "Внимание! Уровень безопасности понижен до синего")
 				security_level = SEC_LEVEL_BLUE
+				post_status("alert", "bluealert")
 			if(SEC_LEVEL_RED)
 				if(security_level < SEC_LEVEL_RED)
 					security_announcement_up.Announce("[config.alert_desc_red_upto]", "Внимание! Красный код!")
@@ -41,6 +43,7 @@
 			if(SEC_LEVEL_DELTA)
 				security_announcement_up.Announce("[config.alert_desc_delta]", "Внимание! Достигнут уровень безопасности Дельта!", new_sound = 'sound/effects/siren.ogg')
 				security_level = SEC_LEVEL_DELTA
+				post_status("alert", "deltaalert")
 
 		var/newlevel = get_security_level()
 		for(var/obj/machinery/firealarm/FA in machines)

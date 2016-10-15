@@ -92,10 +92,11 @@
 
 	// checks whether the wound has been appropriately treated
 	proc/is_treated()
-		if(damage_type == BRUISE || damage_type == CUT)
-			return bandaged
-		else if(damage_type == BURN)
-			return salved
+		switch(damage_type)
+			if(BRUISE, CUT, PIERCE)
+				return bandaged
+			if(BURN)
+				return salved
 
 	// Checks whether other other can be merged into src.
 	proc/can_merge(var/datum/wound/other)
@@ -299,7 +300,7 @@ datum/wound/cut/massive
 
 /** PUNCTURES **/
 /datum/wound/puncture
-	bleed_threshold = 5
+	bleed_threshold = 10
 	damage_type = PIERCE
 
 /datum/wound/puncture/can_worsen(damage_type, damage)

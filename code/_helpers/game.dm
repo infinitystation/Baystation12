@@ -76,6 +76,9 @@
 /proc/isNotAdminLevel(var/level)
 	return !isAdminLevel(level)
 
+/proc/isContactLevel(var/level)
+	return level in using_map.contact_levels
+
 /proc/circlerange(center=usr,radius=3)
 
 	var/turf/centerturf = get_turf(center)
@@ -244,6 +247,33 @@
 				if(speaker_coverage[ear] || (isghost(M) && M.is_preference_enabled(/datum/client_preference/ghost_radio)))
 					. |= M		// Since we're already looping through mobs, why bother using |= ? This only slows things down.
 	return .
+
+/proc/get_mobs_and_objs_in_view_fast(var/turf/T, var/range, var/list/mobs, var/list/objs, var/checkghosts = null)
+
+	var/list/hear = dview(range,T,INVISIBILITY_MAXIMUM)
+	var/list/hearturfs = list()
+
+	for(var/atom/movable/AM in hear)
+		if(ismob(AM))
+			mobs += AM
+			hearturfs += get_turf(AM)
+		else if(isobj(AM))
+			objs += AM
+			hearturfs += get_turf(AM)
+
+	for(var/mob/M in player_list)
+		if(checkghosts && M.stat == DEAD && M.is_preference_enabled(checkghosts))
+			mobs |= M
+		else if(get_turf(M) in hearturfs)
+			mobs |= M
+
+	for(var/obj/O in listening_objects)
+		if(get_turf(O) in hearturfs)
+			objs |= O
+
+
+
+
 
 #define SIGN(X) ((X<0)?-1:1)
 

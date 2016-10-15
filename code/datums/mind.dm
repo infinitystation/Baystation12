@@ -401,7 +401,7 @@
 				memory = null//Remove any memory they may have had.
 			if("crystals")
 				if (usr.client.holder.rights & R_FUN)
-					var/obj/item/device/uplink/hidden/suplink = find_syndicate_uplink()
+					var/obj/item/device/uplink/suplink = find_syndicate_uplink()
 					var/crystals
 					if (suplink)
 						crystals = suplink.uses
@@ -409,6 +409,7 @@
 					if (!isnull(crystals))
 						if (suplink)
 							suplink.uses = crystals
+							log_and_message_admins("set the telecrystals for [key] to [crystals]")
 
 	else if (href_list["obj_announce"])
 		var/obj_count = 1
@@ -426,7 +427,7 @@
 	return null
 
 /datum/mind/proc/take_uplink()
-	var/obj/item/device/uplink/hidden/H = find_syndicate_uplink()
+	var/obj/item/device/uplink/H = find_syndicate_uplink()
 	if(H)
 		qdel(H)
 

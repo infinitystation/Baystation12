@@ -114,7 +114,7 @@
 	item_state = "space_suit_syndicate"
 	desc = "A plastic replica of the syndicate space suit, you'll look just like a real murderous syndicate agent in this! This is a toy, it is not made for use in space!"
 	w_class = 3
-	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank/emergency_oxygen,/obj/item/toy)
+	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank/emergency,/obj/item/toy)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|HANDS|LEGS|FEET
 
@@ -182,12 +182,20 @@
  */
 
 /obj/item/clothing/suit/straight_jacket
-	name = "straight jacket"
+	name = "straitjacket"
 	desc = "A suit that completely restrains the wearer."
 	icon_state = "straight_jacket"
 	item_state = "straight_jacket"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
+
+/obj/item/clothing/suit/straight_jacket/equipped(var/mob/user, var/slot)
+	if(slot == slot_wear_suit)
+		if(iscarbon(user))
+			var/mob/living/carbon/C = user
+			C.drop_from_inventory(C.handcuffed)
+		user.drop_l_hand()
+		user.drop_r_hand()
 
 /obj/item/clothing/suit/ianshirt
 	name = "worn shirt"
@@ -397,3 +405,11 @@
 	item_state = "black_hoodie"
 	icon_open = "black_hoodie_open"
 	icon_closed = "black_hoodie"
+
+/obj/item/clothing/suit/storage/mbill
+	name = "shipping jacket"
+	desc = "A green jacket bearing the logo of Major Bill's Shipping."
+	icon_state = "mbill"
+	item_state = "mbill"
+
+

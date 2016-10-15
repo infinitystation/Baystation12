@@ -34,7 +34,7 @@ FLOOR SAFES
 	for(var/obj/item/I in loc)
 		if(space >= maxspace)
 			return
-		if(I.w_class + space <= maxspace)
+		if(I.w_class + space <= maxspace) //todo replace with internal storage or something
 			space += I.w_class
 			I.loc = src
 
@@ -169,7 +169,7 @@ obj/structure/safe/ex_act(severity)
 	icon_state = "floorsafe"
 	density = 0
 	level = 1	//underfloor
-	layer = 2.5
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/safe/floor/initialize()
 	..()

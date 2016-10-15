@@ -3,7 +3,7 @@
 	desc = "A bulky pump-action grenade launcher. Holds up to 6 grenades in a revolving magazine."
 	icon_state = "riotgun"
 	item_state = "riotgun"
-	w_class = 4
+	w_class = 5
 	force = 10
 
 	fire_sound = 'sound/weapons/empty.ogg'
@@ -15,6 +15,13 @@
 	var/obj/item/weapon/grenade/chambered
 	var/list/grenades = new/list()
 	var/max_grenades = 5 //holds this + one in the chamber
+	var/whitelisted_grenades = list(
+		/obj/item/weapon/grenade/frag/shell)
+
+	var/blacklisted_grenades = list(
+		/obj/item/weapon/grenade/flashbang/clusterbang,
+		/obj/item/weapon/grenade/frag)
+
 	matter = list(DEFAULT_WALL_MATERIAL = 2000)
 
 //revolves the magazine, allowing players to choose between multiple grenade types
@@ -43,14 +50,13 @@
 			user << "\A [chambered] is chambered."
 
 /obj/item/weapon/gun/launcher/grenade/proc/load(obj/item/weapon/grenade/G, mob/user)
-	if(!G.loadable)
-		user << "<span class='warning'>\The [G] doesn't seem to fit in \the [src]!</span>"
+	if(!can_load_grenade_type(G, user))
 		return
 
 	if(grenades.len >= max_grenades)
 		user << "<span class='warning'>\The [src] is full.</span>"
 		return
-	G.forceMove(src)
+	user.drop_from_inventory(G, src)
 	grenades.Insert(1, G) //add to the head of the list, so that it is loaded on the next pump
 	user.visible_message("\The [user] inserts \a [G] into \the [src].", "<span class='notice'>You insert \a [G] into \the [src].</span>")
 
@@ -90,6 +96,12 @@
 	chambered = null
 	..()
 
+/obj/item/weapon/gun/launcher/grenade/proc/can_load_grenade_type(obj/item/weapon/grenade/G, mob/user)
+	if(is_type_in_list(G, blacklisted_grenades) && ! is_type_in_list(G, whitelisted_grenades))
+		user << "<span class='warning'>\The [G] doesn't seem to fit in \the [src]!</span>"
+		return FALSE
+	return TRUE
+
 // For uplink purchase, comes loaded with a random assortment of grenades
 /obj/item/weapon/gun/launcher/grenade/loaded/New()
 	..()
@@ -103,8 +115,10 @@
 		/obj/item/weapon/grenade/frag/shell = 1,
 		)
 
+	var/grenade_type = pickweight(grenade_types)
+	chambered = new grenade_type(src)
 	for(var/i in 1 to max_grenades)
-		var/grenade_type = pickweight(grenade_types)
+		grenade_type = pickweight(grenade_types)
 		grenades += new grenade_type(src)
 
 //Underslung grenade launcher to be used with the Z8
@@ -120,15 +134,13 @@
 
 //load and unload directly into chambered
 /obj/item/weapon/gun/launcher/grenade/underslung/load(obj/item/weapon/grenade/G, mob/user)
-	if(!G.loadable)
-		user << "<span class='warning'>[G] doesn't seem to fit in the [src]!</span>"
+	if(!can_load_grenade_type(G, user))
 		return
 
 	if(chambered)
 		user << "<span class='warning'>\The [src] is already loaded.</span>"
 		return
-	user.remove_from_mob(G)
-	G.forceMove(src)
+	user.drop_from_inventory(G, src)
 	chambered = G
 	user.visible_message("\The [user] load \a [G] into \the [src].", "<span class='notice'>You load \a [G] into \the [src].</span>")
 

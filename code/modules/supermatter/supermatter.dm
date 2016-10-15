@@ -39,6 +39,8 @@
 	anchored = 0
 	light_range = 4
 
+	layer = ABOVE_OBJ_LAYER
+
 	var/gasefficency = 0.25
 
 	var/base_icon_state = "darkmatter"
@@ -86,13 +88,13 @@
 
 	var/debug = 0
 
-/obj/machinery/power/supermatter/New()
-	. = ..()
+/obj/machinery/power/supermatter/initialize()
+	..()
 	radio = new /obj/item/device/radio{channels=list("Engineering")}(src)
-
 
 /obj/machinery/power/supermatter/Destroy()
 	qdel(radio)
+	radio = null
 	. = ..()
 
 /obj/machinery/power/supermatter/proc/explode()
@@ -100,7 +102,7 @@
 	anchored = 1
 	grav_pulling = 1
 	exploded = 1
-	for(var/mob/living/mob in living_mob_list)
+	for(var/mob/living/mob in living_mob_list_)
 		var/turf/T = get_turf(mob)
 		if(T && (loc.z == T.z))
 			if(istype(mob, /mob/living/carbon/human))
@@ -191,7 +193,7 @@
 	else
 		shift_light(4,initial(light_color))
 	if(grav_pulling)
-		supermatter_pull()
+		supermatter_pull(src)
 
 	//Ok, get the air from the turf
 	var/datum/gas_mixture/removed = null
@@ -212,10 +214,11 @@
 	else
 		damage_archived = damage
 
-		damage = max( damage + min( ( (removed.temperature - CRITICAL_TEMPERATURE) / 150 ), damage_inc_limit ) , 0 )
+		damage = max(0, damage + between(-DAMAGE_RATE_LIMIT, (removed.temperature - CRITICAL_TEMPERATURE) / 150, damage_inc_limit))
+
 		//Ok, 100% oxygen atmosphere = best reaction
 		//Maxes out at 100% oxygen pressure
-		oxygen = max(min((removed.gas["oxygen"] - (removed.gas["nitrogen"] * NITROGEN_RETARDATION_FACTOR)) / removed.total_moles, 1), 0)
+		oxygen = Clamp((removed.get_by_flag(XGM_GAS_OXIDIZER) - (removed.gas["nitrogen"] * NITROGEN_RETARDATION_FACTOR)) / removed.total_moles, 0, 1)
 
 		//calculate power gain for oxygen reaction
 		var/temp_factor
@@ -370,7 +373,7 @@
 
 	power += 200
 
-		//Some poor sod got eaten, go ahead and irradiate people nearby.
+	//Some poor sod got eaten, go ahead and irradiate people nearby.
 	for(var/mob/living/l in range(10))
 		if(l in view())
 			l.show_message("<span class=\"warning\">As \the [src] slowly stops resonating, you find your skin covered in new radiation burns.</span>", 1,\
@@ -380,16 +383,9 @@
 		var/rads = 500 * sqrt( 1 / (get_dist(l, src) + 1) )
 		l.apply_effect(rads, IRRADIATE, blocked = l.getarmor(null, "rad"))
 
-
-/obj/machinery/power/supermatter/proc/supermatter_pull()
-	for(var/atom/A in range(255, src))
-		A.singularity_pull(src, STAGE_FIVE)
-		if(istype(A, /mob/living/carbon/human))
-			var/mob/living/carbon/human/H = A
-			if(!H.lying)
-				H << "<span class='danger'>A strong gravitational force slams you to the ground!</span>"
-				H.Weaken(20)
-
+/proc/supermatter_pull(var/atom/target, var/pull_range = 255, var/pull_power = STAGE_FIVE)
+	for(var/atom/A in range(pull_range, target))
+		A.singularity_pull(target, pull_power)
 
 /obj/machinery/power/supermatter/GotoAirflowDest(n) //Supermatter not pushed around by airflow
 	return

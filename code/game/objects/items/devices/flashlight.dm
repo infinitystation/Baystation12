@@ -38,7 +38,7 @@
 
 /obj/item/device/flashlight/attack(mob/living/M as mob, mob/living/user as mob)
 	add_fingerprint(user)
-	if(on && user.zone_sel.selecting == "eyes")
+	if(on && user.zone_sel.selecting == BP_EYES)
 
 		if((CLUMSY in user.mutations) && prob(50))	//too dumb to use flashlight properly
 			return ..()	//just hit them in the head
@@ -51,7 +51,7 @@
 					return
 
 			var/obj/item/organ/vision
-			if(!H.species.vision_organ)
+			if(!H.species.vision_organ || !H.should_have_organ(H.species.vision_organ))
 				user << "<span class='warning'>You can't find anything on [H] to direct [src] into!</span>"
 				return
 
@@ -67,7 +67,7 @@
 			inspect_vision(vision, user)
 
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //can be used offensively
-			flick("flash", M.flash)
+			M.flash_eyes()
 	else
 		return ..()
 
@@ -77,7 +77,7 @@
 	if(H == user)	//can't look into your own eyes buster
 		return
 
-	if(!(vision.robotic == 2 || (vision.status & ORGAN_ROBOT))) //why the hell are there two ways of specifying this?
+	if(vision.robotic < ORGAN_ROBOT )
 
 		if(vision.owner.stat == DEAD || H.blinded)	//mob is dead or fully blind
 			user << "<span class='warning'>\The [H]'s pupils do not react to the light!</span>"
@@ -140,7 +140,7 @@
 	desc = "A classic green-shaded desk lamp."
 	icon_state = "lampgreen"
 	item_state = "lampgreen"
-	brightness_on = 5
+	brightness_on = 4
 	light_color = "#FFC58F"
 
 /obj/item/device/flashlight/lamp/verb/toggle_light()
@@ -156,7 +156,7 @@
 /obj/item/device/flashlight/flare
 	name = "flare"
 	desc = "A red standard-issue flare. There are instructions on the side reading 'pull cord, make light'."
-	w_class = 2.0
+	w_class = 1
 	brightness_on = 8 // Pretty bright.
 	light_power = 3
 	light_color = "#e58775"

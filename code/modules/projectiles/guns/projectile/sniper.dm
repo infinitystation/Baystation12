@@ -2,8 +2,8 @@
 	name = "anti-materiel rifle"
 	desc = "A portable anti-armour rifle fitted with a scope, the HI PTR-7 Rifle was originally designed to used against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease. Fires armor piercing 14.5mm shells."
 	icon_state = "heavysniper"
-	item_state = "l6closednomag" //placeholder
-	w_class = 4
+	item_state = "heavysniper" //sort of placeholder
+	w_class = 5
 	force = 10
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 2, TECH_ILLEGAL = 8)
@@ -14,11 +14,13 @@
 	max_shells = 1
 	ammo_type = /obj/item/ammo_casing/a145
 	requires_two_hands = 6
-	accuracy = -3
+	accuracy = -2
 	scoped_accuracy = 5 //increased accuracy over the LWAP because only one shot
 	var/bolt_open = 0
+	wielded_item_state = "heavysniper-wielded" //sort of placeholder
 
 /obj/item/weapon/gun/projectile/heavysniper/update_icon()
+	..()
 	if(bolt_open)
 		icon_state = "heavysniper-open"
 	else
@@ -62,5 +64,5 @@
 	set name = "Use Scope"
 	set popup_menu = 1
 
-	toggle_scope(2.0)
+	toggle_scope(usr, 2.0)
 

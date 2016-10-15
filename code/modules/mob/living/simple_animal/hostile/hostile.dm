@@ -20,7 +20,8 @@
 	var/enroute = 0
 
 /mob/living/simple_animal/hostile/proc/FindTarget()
-
+	if(!faction) //No faction, no reason to attack anybody.
+		return null
 	var/atom/T = null
 	stop_automated_movement = 0
 	for(var/atom/A in ListTargets(10))
@@ -156,6 +157,27 @@
 					DestroySurroundings()
 				AttackTarget()
 
+
+/mob/living/simple_animal/hostile/attackby(var/obj/item/O, var/mob/user)
+	var/oldhealth = health
+	. = ..()
+	if(health < oldhealth && !incapacitated(INCAPACITATION_KNOCKOUT))
+		target_mob = user
+		MoveToTarget()
+
+/mob/living/simple_animal/hostile/attack_hand(mob/living/carbon/human/M)
+	. = ..()
+	if(M.a_intent == I_HURT && !incapacitated(INCAPACITATION_KNOCKOUT))
+		target_mob = M
+		MoveToTarget()
+
+/mob/living/simple_animal/hostile/bullet_act(var/obj/item/projectile/Proj)
+	var/oldhealth = health
+	. = ..()
+	if(!target_mob && health < oldhealth && !incapacitated(INCAPACITATION_KNOCKOUT))
+		target_mob = Proj.firer
+		MoveToTarget()
+
 /mob/living/simple_animal/hostile/proc/OpenFire(target_mob)
 	var/target = target_mob
 	visible_message("\red <b>[src]</b> fires at [target]!", 1)
@@ -203,37 +225,3 @@
 			var/obj/structure/obstacle = locate(/obj/structure, get_step(src, dir))
 			if(istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/closet) || istype(obstacle, /obj/structure/table) || istype(obstacle, /obj/structure/grille))
 				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
-
-
-/mob/living/simple_animal/hostile/proc/check_horde()
-	return 0
-	if(emergency_shuttle.shuttle.location)
-		if(!enroute && !target_mob)	//The shuttle docked, all monsters rush for the escape hallway
-			if(!shuttletarget && escape_list.len) //Make sure we didn't already assign it a target, and that there are targets to pick
-				shuttletarget = pick(escape_list) //Pick a shuttle target
-			enroute = 1
-			stop_automated_movement = 1
-			spawn()
-				if(!src.stat)
-					horde()
-
-		if(get_dist(src, shuttletarget) <= 2)		//The monster reached the escape hallway
-			enroute = 0
-			stop_automated_movement = 0
-
-/mob/living/simple_animal/hostile/proc/horde()
-	var/turf/T = get_step_to(src, shuttletarget)
-	for(var/atom/A in T)
-		if(istype(A,/obj/machinery/door/))
-			var/obj/machinery/door/D = A
-			D.open(1)
-		else if(istype(A,/obj/structure/cult/pylon))
-			A.attack_generic(src, rand(melee_damage_lower, melee_damage_upper))
-		else if(istype(A, /obj/structure/window) || istype(A, /obj/structure/closet) || istype(A, /obj/structure/table) || istype(A, /obj/structure/grille))
-			A.attack_generic(src, rand(melee_damage_lower, melee_damage_upper))
-	Move(T)
-	FindTarget()
-	if(!target_mob || enroute)
-		spawn(10)
-			if(!src.stat)
-				horde()

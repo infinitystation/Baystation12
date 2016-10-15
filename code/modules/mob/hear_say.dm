@@ -59,11 +59,11 @@
 		if(is_preference_enabled(/datum/client_preference/ghost_ears) && (speaker in view(src)))
 			message = "<b>[message]</b>"
 
-	if(sdisabilities & DEAF || ear_deaf)
+	if(is_deaf())
 		if(!language || !(language.flags & INNATE)) // INNATE is the flag for audible-emote-language, so we don't want to show an "x talks but you cannot hear them" message if it's set
 			if(speaker == src)
 				src << "<span class='warning'>You cannot hear yourself speak!</span>"
-			else
+			else if(!is_blind())
 				src << "<span class='name'>[speaker_name]</span>[alt_name] talks but you cannot hear \him."
 	else
 		if(language)
@@ -81,7 +81,7 @@
 	var/time = say_timestamp()
 	src << "[time] [message]"
 
-/mob/proc/hear_radio(var/message, var/verb="говорит", var/datum/language/language=null, var/part_a, var/part_b, var/mob/speaker = null, var/hard_to_hear = 0, var/vname ="")
+/mob/proc/hear_radio(var/message, var/verb="говорит", var/datum/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0, var/vname ="")
 
 	if(!client)
 		return
@@ -112,7 +112,10 @@
 					message = stars(message)
 
 		if(hard_to_hear)
-			message = stars(message)
+			if(hard_to_hear <= 5)
+				message = stars(message)
+			else // Used for compression
+				message = RadioChat(null, message, 80, 1+(hard_to_hear/10))
 
 	var/speaker_name = speaker.name
 
@@ -191,33 +194,33 @@
 		if(prob(20))
 			src << "<span class='warning'>You feel your headset vibrate but can hear nothing from it!</span>"
 	else
-		on_hear_radio(part_a, speaker_name, track, part_b, formatted)
+		on_hear_radio(part_a, speaker_name, track, part_b, part_c, formatted)
 
 /proc/say_timestamp()
 	return "<span class='say_quote'>\[[stationtime2text()]\]</span>"
 
-/mob/proc/on_hear_radio(part_a, speaker_name, track, part_b, formatted)
-	src << "[part_a][speaker_name][part_b][formatted]"
+/mob/proc/on_hear_radio(part_a, speaker_name, track, part_b, part_c, formatted)
+	src << "[part_a][speaker_name][part_b][formatted][part_c]"
 
-/mob/observer/ghost/on_hear_radio(part_a, speaker_name, track, part_b, formatted)
-	src << "[part_a][track][part_b][formatted]"
+/mob/observer/ghost/on_hear_radio(part_a, speaker_name, track, part_b, part_c, formatted)
+	src << "[part_a][track][part_b][formatted][part_c]"
 
-/mob/living/silicon/on_hear_radio(part_a, speaker_name, track, part_b, formatted)
+/mob/living/silicon/on_hear_radio(part_a, speaker_name, track, part_b, part_c, formatted)
 	var/time = say_timestamp()
-	src << "[time][part_a][speaker_name][part_b][formatted]"
+	src << "[time][part_a][speaker_name][part_b][formatted][part_c]"
 
-/mob/living/silicon/ai/on_hear_radio(part_a, speaker_name, track, part_b, formatted)
+/mob/living/silicon/ai/on_hear_radio(part_a, speaker_name, track, part_b, part_c, formatted)
 	var/time = say_timestamp()
-	src << "[time][part_a][track][part_b][formatted]"
+	src << "[time][part_a][track][part_b][formatted][part_c]"
 
 /mob/proc/hear_signlang(var/message, var/verb = "gestures", var/datum/language/language, var/mob/speaker = null)
 	if(!client)
 		return
 
 	if(say_understands(speaker, language))
-		message = "<B>[src]</B> [verb], \"[message]\""
+		message = "<B>[speaker]</B> [verb], \"[message]\""
 	else
-		message = "<B>[src]</B> [verb]."
+		message = "<B>[speaker]</B> [verb]."
 
 	if(src.status_flags & PASSEMOTES)
 		for(var/obj/item/weapon/holder/H in src.contents)

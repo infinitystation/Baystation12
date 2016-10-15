@@ -26,6 +26,7 @@
 	w_class = 2.0
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
 	matter = list(DEFAULT_WALL_MATERIAL = 150)
+	center_of_mass = "x=17;y=16"
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
 
 
@@ -45,6 +46,7 @@
 	throw_speed = 3
 	throw_range = 5
 	matter = list(DEFAULT_WALL_MATERIAL = 75)
+	center_of_mass = "x=16;y=7"
 	attack_verb = list("stabbed")
 	lock_picking_level = 5
 
@@ -79,7 +81,7 @@
 /obj/item/weapon/screwdriver/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	if(!istype(M) || user.a_intent == "help")
 		return ..()
-	if(user.zone_sel.selecting != "eyes" && user.zone_sel.selecting != "head")
+	if(user.zone_sel.selecting != BP_EYES && user.zone_sel.selecting != BP_HEAD)
 		return ..()
 	if((CLUMSY in user.mutations) && prob(50))
 		M = user
@@ -101,6 +103,7 @@
 	w_class = 2.0
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
 	matter = list(DEFAULT_WALL_MATERIAL = 80)
+	center_of_mass = "x=18;y=10"
 	attack_verb = list("pinched", "nipped")
 	sharp = 1
 	edge = 1
@@ -133,6 +136,7 @@
 	icon_state = "welder"
 	flags = CONDUCT
 	slot_flags = SLOT_BELT
+	center_of_mass = "x=14;y=15"
 
 	//Amount of OUCH when it's thrown
 	force = 3.0
@@ -196,7 +200,7 @@
 		else
 			user.remove_from_mob(src)
 		src.master = F
-		src.layer = initial(src.layer)
+		src.reset_plane_and_layer()
 		user.remove_from_mob(src)
 		if (user.client)
 			user.client.screen -= src
@@ -210,22 +214,8 @@
 
 /obj/item/weapon/weldingtool/process()
 	if(welding)
-		if(prob(5))
-			remove_fuel(1)
-
-		if(get_fuel() < 1)
+		if(!remove_fuel(0.05))
 			setWelding(0)
-
-	//I'm not sure what this does. I assume it has to do with starting fires...
-	//...but it doesnt check to see if the welder is on or not.
-	var/turf/location = src.loc
-	if(istype(location, /mob/))
-		var/mob/M = location
-		if(M.l_hand == src || M.r_hand == src)
-			location = get_turf(M)
-	if (istype(location, /turf))
-		location.hotspot_expose(700, 5)
-
 
 /obj/item/weapon/weldingtool/afterattack(obj/O as obj, mob/user as mob, proximity)
 	if(!proximity) return
@@ -233,13 +223,6 @@
 		O.reagents.trans_to_obj(src, max_fuel)
 		user << "<span class='notice'>Welder refueled</span>"
 		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
-		return
-	else if (istype(O, /obj/structure/reagent_dispensers/fueltank) && get_dist(src,O) <= 1 && src.welding)
-		message_admins("[key_name_admin(user)] triggered a fueltank explosion with a welding tool.")
-		log_game("[key_name(user)] triggered a fueltank explosion with a welding tool.")
-		user << "<span class='danger'>You begin welding on the fueltank and with a moment of lucidity you realize, this might not have been the smartest thing you've ever done.</span>"
-		var/obj/structure/reagent_dispensers/fueltank/tank = O
-		tank.explode()
 		return
 	if (src.welding)
 		remove_fuel(1)
@@ -266,7 +249,7 @@
 	if(!welding)
 		return 0
 	if(get_fuel() >= amount)
-		reagents.remove_reagent("fuel", amount)
+		burn_fuel(amount)
 		if(M)
 			eyecheck(M)
 		return 1
@@ -274,6 +257,26 @@
 		if(M)
 			M << "<span class='notice'>You need more welding fuel to complete this task.</span>"
 		return 0
+
+/obj/item/weapon/weldingtool/proc/burn_fuel(var/amount)
+	var/mob/living/in_mob = null
+
+	//consider ourselves in a mob if we are in the mob's contents and not in their hands
+	if(isliving(src.loc))
+		var/mob/living/L = src.loc
+		if(!(L.l_hand == src || L.r_hand == src))
+			in_mob = L
+
+	if(in_mob)
+		amount = max(amount, 2)
+		reagents.trans_id_to(in_mob, "fuel", amount)
+		in_mob.IgniteMob()
+
+	else
+		reagents.remove_reagent("fuel", amount)
+		var/turf/location = get_turf(src.loc)
+		if(location)
+			location.hotspot_expose(700, 5)
 
 //Returns whether or not the welding tool is currently on.
 /obj/item/weapon/weldingtool/proc/isOn()
@@ -307,7 +310,6 @@
 				T.visible_message("<span class='danger'>\The [src] turns on.</span>")
 			src.force = 15
 			src.damtype = "fire"
-			src.slot_flags |= SLOT_DENYPOCKET //could also make it just set you on fire, but lets disable putting lit welders in pockets for now
 			welding = 1
 			update_icon()
 			processing_objects |= src
@@ -324,7 +326,6 @@
 			T.visible_message("<span class='warning'>\The [src] turns off.</span>")
 		src.force = 3
 		src.damtype = "brute"
-		src.slot_flags = initial(src.slot_flags)
 		src.welding = 0
 		update_icon()
 
@@ -334,7 +335,7 @@
 	if(!iscarbon(user))	return 1
 	if(istype(user, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
-		var/obj/item/organ/eyes/E = H.internal_organs_by_name["eyes"]
+		var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[BP_EYES]
 		if(!E)
 			return
 		var/safety = H.eyecheck()
@@ -414,6 +415,7 @@
 	w_class = 2.0
 	origin_tech = list(TECH_ENGINEERING = 1)
 	matter = list(DEFAULT_WALL_MATERIAL = 50)
+	center_of_mass = "x=16;y=20"
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
 
 /obj/item/weapon/crowbar/red
@@ -421,26 +423,21 @@
 	icon_state = "red_crowbar"
 	item_state = "crowbar_red"
 
-/obj/item/weapon/weldingtool/afterattack(var/mob/M, var/mob/user)
+/obj/item/weapon/weldingtool/attack(mob/living/M, mob/living/user, target_zone)
 
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/external/S = H.organs_by_name[user.zone_sel.selecting]
+		var/obj/item/organ/external/S = H.organs_by_name[target_zone]
 
-		if (!S) return
-		if(!(S.status & ORGAN_ROBOT) || user.a_intent != I_HELP)
+		if(!S || !(S.robotic >= ORGAN_ROBOT) || user.a_intent != I_HELP)
 			return ..()
 
-		if(S.brute_dam)
-			if(S.brute_dam < ROBOLIMB_SELF_REPAIR_CAP)
-				S.heal_damage(15,0,0,1)
-				user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-				user.visible_message("<span class='notice'>\The [user] patches some dents on \the [M]'s [S.name] with \the [src].</span>")
-			else if(S.open != 2)
-				user << "<span class='danger'>The damage is far too severe to patch over externally.</span>"
+		if(!welding)
+			user << "<span class='warning'>You'll need to turn [src] on to patch the damage on [M]'s [S.name]!</span>"
 			return 1
-		else if(S.open != 2)
-			user << "<span class='notice'>Nothing to fix!</span>"
+
+		if(S.robo_repair(15, BRUTE, "some dents", src, user))
+			remove_fuel(1, user)
 
 	else
 		return ..()

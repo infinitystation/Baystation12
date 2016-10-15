@@ -102,6 +102,18 @@
 	display_name = "hair flower pin, red"
 	path = /obj/item/clothing/head/hairflower
 
+/datum/gear/head/hairflower/yellow
+	display_name = "hair flower pin, yellow"
+	path = /obj/item/clothing/head/hairflower/yellow
+
+/datum/gear/head/hairflower/pink
+	display_name = "hair flower pin, pink"
+	path = /obj/item/clothing/head/hairflower/pink
+
+/datum/gear/head/hairflower/blue
+	display_name = "hair flower pin, blue"
+	path = /obj/item/clothing/head/hairflower/blue
+
 /datum/gear/head/hardhat
 	display_name = "hardhat, yellow"
 	path = /obj/item/clothing/head/hardhat
@@ -127,6 +139,10 @@
 	display_name = "hat, bowler"
 	path = /obj/item/clothing/head/bowler
 
+/datum/gear/head/cowboy_hat
+	display_name = "hat, cowboy"
+	path = /obj/item/clothing/head/cowboy_hat
+
 /datum/gear/head/fez
 	display_name = "hat, fez"
 	path = /obj/item/clothing/head/fez
@@ -151,23 +167,14 @@
 /datum/gear/head/hijab
 	display_name = "hijab"
 	path = /obj/item/clothing/head/hijab
-
-/datum/gear/head/hijab/New()
-	..()
-	gear_tweaks = list(gear_tweak_free_color_choice)
+	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/head/kippa
 	display_name = "kippa"
 	path = /obj/item/clothing/head/kippa
-
-/datum/gear/head/kippa/New()
-	..()
-	gear_tweaks = list(gear_tweak_free_color_choice)
+	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/head/turban
 	display_name = "turban"
 	path = /obj/item/clothing/head/turban
-
-/datum/gear/head/turban/New()
-	..()
-	gear_tweaks = list(gear_tweak_free_color_choice)
+	flags = GEAR_HAS_COLOR_SELECTION

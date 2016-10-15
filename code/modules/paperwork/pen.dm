@@ -61,11 +61,9 @@
 /obj/item/weapon/pen/attack(mob/M as mob, mob/user as mob)
 	if(!ismob(M))
 		return
-	user << "<span class='warning'>You stab [M] with the pen.</span>"
-//	M << "\red You feel a tiny prick!" //That's a whole lot of meta!
-	M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been stabbed with [name]  by [user.name] ([user.ckey])</font>")
-	user.attack_log += text("\[[time_stamp()]\] <font color='red'>Used the [name] to stab [M.name] ([M.ckey])</font>")
-	msg_admin_attack("[user.name] ([user.ckey]) Used the [name] to stab [M.name] ([M.ckey]) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[user.x];Y=[user.y];Z=[user.z]'>JMP</a>)")
+	to_chat(user, "<span class='warning'>You stab [M] with the pen.</span>")
+	admin_attack_log(user, M, "Stabbed using \a [src]", "Was stabbed with \a [src]", "used \a [src] to stab")
+
 	return
 
 /*
@@ -111,7 +109,7 @@
  * Parapens
  */
 /obj/item/weapon/pen/reagent/paralysis
-	origin_tech = "materials=2;syndicate=5"
+	origin_tech = list(TECH_MATERIAL = 2, TECH_ILLEGAL = 5)
 
 /obj/item/weapon/pen/reagent/paralysis/New()
 	..()

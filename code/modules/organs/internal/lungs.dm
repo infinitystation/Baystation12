@@ -1,9 +1,9 @@
-/obj/item/organ/lungs
+/obj/item/organ/internal/lungs
 	name = "lungs"
 	icon_state = "lungs"
 	gender = PLURAL
 	organ_tag = "lungs"
-	parent_organ = "chest"
+	parent_organ = BP_CHEST
 
 	var/breath_type
 	var/poison_type
@@ -15,15 +15,30 @@
 	var/safe_toxins_max = 0.2
 	var/SA_para_min = 1
 	var/SA_sleep_min = 5
+	var/breathing = 0
 
-/obj/item/organ/lungs/set_dna(var/datum/dna/new_dna)
+/obj/item/organ/internal/lungs/robotize()
+	. = ..()
+	icon_state = "lungs-prosthetic"
+
+/obj/item/organ/internal/lungs/set_dna(var/datum/dna/new_dna)
 	..()
+	sync_breath_types()
+
+/obj/item/organ/internal/lungs/replaced()
+	..()
+	sync_breath_types()
+
+/**
+ *  Set these lungs' breath types based on the lungs' species
+ */
+/obj/item/organ/internal/lungs/proc/sync_breath_types()
 	min_breath_pressure = species.breath_pressure
 	breath_type = species.breath_type ? species.breath_type : "oxygen"
 	poison_type = species.poison_type ? species.poison_type : "phoron"
-	exhale_type = species.exhale_type ? species.exhale_type : 0
+	exhale_type = species.exhale_type ? species.exhale_type : "carbon_dioxide"
 
-/obj/item/organ/lungs/process()
+/obj/item/organ/internal/lungs/process()
 	..()
 
 	if(!owner)
@@ -41,17 +56,28 @@
 			spawn owner.emote("me", 1, "gasps for air!")
 			owner.losebreath += 15
 
+/obj/item/organ/internal/lungs/proc/rupture()
+	var/obj/item/organ/external/parent = owner.get_organ(parent_organ)
+	if(istype(parent))
+		owner.custom_pain("You feel a stabbing pain in your [parent.name]!", 50)
+	bruise()
 
-/obj/item/organ/lungs/proc/handle_breath(datum/gas_mixture/breath)
+/obj/item/organ/internal/lungs/proc/handle_breath(datum/gas_mixture/breath)
 	if(!owner)
-		return 0
+		return 1
 	if(!breath)
-		return 0
+		return 1
+
+	var/breath_pressure = breath.total_moles*R_IDEAL_GAS_EQUATION*breath.temperature/BREATH_VOLUME
 	//exposure to extreme pressures can rupture lungs
-	if(breath.total_moles < BREATH_MOLES / 5 || breath.total_moles > BREATH_MOLES * 5)
-		if(is_bruised() && prob(5))
-			owner.custom_pain("You feel a stabbing pain in your chest!", 1)
-			bruise()
+	if(breath_pressure < species.hazard_low_pressure || breath_pressure > species.hazard_high_pressure)
+		var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
+		var/env_pressure = environment.return_pressure()
+		if(env_pressure < species.hazard_low_pressure || env_pressure > species.hazard_high_pressure)
+			if(!is_bruised() && prob(5)) //only rupture if NOT already ruptured
+				rupture()
+	if(breath.total_moles == 0)
+		return 1
 
 	var/safe_pressure_min = min_breath_pressure // Minimum safe partial pressure of breathable gas in kPa
 	// Lung damage increases the minimum safe pressure.
@@ -60,7 +86,6 @@
 	else if(is_bruised())
 		safe_pressure_min *= 1.25
 
-	var/breath_pressure = (breath.total_moles*R_IDEAL_GAS_EQUATION*breath.temperature)/BREATH_VOLUME
 
 	var/failed_inhale = 0
 	var/failed_exhale = 0
@@ -145,13 +170,19 @@
 	var/failed_breath = failed_inhale || failed_exhale
 	if (!failed_breath)
 		owner.adjustOxyLoss(-5)
+		if(robotic < ORGAN_ROBOT && species.breathing_sound && is_below_sound_pressure(get_turf(owner)))
+			if(breathing || owner.shock_stage >= 10)
+				owner << sound(species.breathing_sound,0,0,0,5)
+				breathing = 0
+			else
+				breathing = 1
 
 	handle_temperature_effects(breath)
 
 	breath.update_values()
-	return !failed_breath
+	return failed_breath
 
-/obj/item/organ/lungs/proc/handle_temperature_effects(datum/gas_mixture/breath)
+/obj/item/organ/internal/lungs/proc/handle_temperature_effects(datum/gas_mixture/breath)
 	// Hot air hurts :(
 	if((breath.temperature < species.cold_level_1 || breath.temperature > species.heat_level_1) && !(COLD_RESISTANCE in owner.mutations))
 		var/damage = 0
@@ -167,7 +198,7 @@
 				else
 					damage = COLD_GAS_DAMAGE_LEVEL_1
 
-			owner.apply_damage(damage, BURN, "head", used_weapon = "Excessive Cold")
+			owner.apply_damage(damage, BURN, BP_HEAD, used_weapon = "Excessive Cold")
 			owner.fire_alert = 1
 		else if(breath.temperature >= species.heat_level_1)
 			if(prob(20))
@@ -181,7 +212,7 @@
 				else
 					damage = HEAT_GAS_DAMAGE_LEVEL_3
 
-			owner.apply_damage(damage, BURN, "head", used_weapon = "Excessive Heat")
+			owner.apply_damage(damage, BURN, BP_HEAD, used_weapon = "Excessive Heat")
 			owner.fire_alert = 2
 
 		//breathing in hot/cold air also heats/cools you a bit

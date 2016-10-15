@@ -23,7 +23,7 @@
 	projectiletype = /obj/item/projectile/beam/drone
 	projectilesound = 'sound/weapons/laser3.ogg'
 	destroy_surroundings = 0
-	var/datum/effect/effect/system/ion_trail_follow/ion_trail
+	var/datum/effect/effect/system/trail/ion_trail
 
 	//the drone randomly switches between these states because it's malfunctioning
 	var/hostile_drone = 0
@@ -54,7 +54,7 @@
 	if(prob(5))
 		projectiletype = /obj/item/projectile/beam/pulse/drone
 		projectilesound = 'sound/weapons/pulse2.ogg'
-	ion_trail = new
+	ion_trail = new /datum/effect/effect/system/trail/ion()
 	ion_trail.set_up(src)
 	ion_trail.start()
 
@@ -183,16 +183,16 @@
 			step_to(O, get_turf(pick(view(7, src))))
 
 		//rods
-		O = PoolOrNew(/obj/item/stack/rods, src.loc)
+		O = new /obj/item/stack/rods(loc)
 		step_to(O, get_turf(pick(view(7, src))))
 		if(prob(75))
-			O = PoolOrNew(/obj/item/stack/rods, src.loc)
+			O = new /obj/item/stack/rods(loc)
 			step_to(O, get_turf(pick(view(7, src))))
 		if(prob(50))
-			O = PoolOrNew(/obj/item/stack/rods, src.loc)
+			O = new /obj/item/stack/rods(loc)
 			step_to(O, get_turf(pick(view(7, src))))
 		if(prob(25))
-			O = PoolOrNew(/obj/item/stack/rods, src.loc)
+			O = new /obj/item/stack/rods(loc)
 			step_to(O, get_turf(pick(view(7, src))))
 
 		//plasteel

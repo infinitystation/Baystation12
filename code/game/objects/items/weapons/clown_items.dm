@@ -34,6 +34,9 @@
 	//So this is a workaround. This also makes more sense from an IC standpoint. ~Carn
 	if(user.client && (target in user.client.screen))
 		user << "<span class='notice'>You need to take that [target.name] off before cleaning it.</span>"
+	else if(istype(target,/obj/effect/decal/cleanable/blood))
+		user << "<span class='notice'>You scrub \the [target.name] out.</span>"
+		target.clean_blood() //Blood is a cleanable decal, therefore needs to be accounted for before all cleanable decals.
 	else if(istype(target,/obj/effect/decal/cleanable))
 		user << "<span class='notice'>You scrub \the [target.name] out.</span>"
 		qdel(target)
@@ -46,12 +49,12 @@
 		wet()
 	else
 		user << "<span class='notice'>You clean \the [target.name].</span>"
-		target.clean_blood()
+		target.clean_blood() //Clean bloodied atoms. Blood decals themselves need to be handled above.
 	return
 
 //attack_as_weapon
 /obj/item/weapon/soap/attack(mob/living/target, mob/living/user, var/target_zone)
-	if(target && user && ishuman(target) && ishuman(user) && !target.stat && !user.stat && user.zone_sel &&user.zone_sel.selecting == "mouth" )
+	if(target && user && ishuman(target) && ishuman(user) && !target.stat && !user.stat && user.zone_sel &&user.zone_sel.selecting == BP_MOUTH)
 		user.visible_message("<span class='danger'>\The [user] washes \the [target]'s mouth out with soap!</span>")
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN) //prevent spam
 		return

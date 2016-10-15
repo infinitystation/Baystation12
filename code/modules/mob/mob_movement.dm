@@ -174,7 +174,7 @@
 		if(mob.control_object.density)
 			step(mob.control_object,direct)
 			if(!mob.control_object)	return
-			mob.control_object.dir = direct
+			mob.control_object.set_dir(direct)
 		else
 			mob.control_object.forceMove(get_step(mob.control_object,direct))
 	return
@@ -218,7 +218,7 @@
 			if(mob.client.view != world.view) // If mob moves while zoomed in with device, unzoom them.
 				for(var/obj/item/item in mob.contents)
 					if(item.zoom)
-						item.zoom()
+						item.zoom(mob)
 						break
 				/*
 				if(locate(/obj/item/weapon/gun/energy/sniperrifle, mob.contents))		// If mob moves while zoomed in with sniper rifle, unzoom them.
@@ -308,8 +308,8 @@
 			else if(istype(mob.buckled, /obj/structure/bed/chair/wheelchair))
 				if(ishuman(mob))
 					var/mob/living/carbon/human/driver = mob
-					var/obj/item/organ/external/l_hand = driver.get_organ("l_hand")
-					var/obj/item/organ/external/r_hand = driver.get_organ("r_hand")
+					var/obj/item/organ/external/l_hand = driver.get_organ(BP_L_HAND)
+					var/obj/item/organ/external/r_hand = driver.get_organ(BP_R_HAND)
 					if((!l_hand || l_hand.is_stump()) && (!r_hand || r_hand.is_stump()))
 						return // No hands to drive your chair? Tough luck!
 				//drunk wheelchair driving
@@ -357,7 +357,7 @@
 							M.animate_movement = 2
 							return
 
-		else 
+		else
 			if(mob.confused)
 				switch(mob.m_intent)
 					if("run")
@@ -391,68 +391,15 @@
 ///Called by client/Move()
 ///Allows mobs to run though walls
 /client/proc/Process_Incorpmove(direct)
-	var/turf/mobloc = get_turf(mob)
+	var/turf/T = get_step(mob, direct)
+	if(mob.check_is_holy_turf(T))
+		to_chat(mob, "<span class='warning'>You cannot enter holy grounds while you are in this plane of existence!</span>")
+		return
 
-	switch(mob.incorporeal_move)
-		if(1)
-			var/turf/T = get_step(mob, direct)
-			if(mob.check_holy(T))
-				mob << "<span class='warning'>You cannot get past holy grounds while you are in this plane of existence!</span>"
-				return
-			else
-				mob.forceMove(get_step(mob, direct))
-				mob.dir = direct
-		if(2)
-			if(prob(50))
-				var/locx
-				var/locy
-				switch(direct)
-					if(NORTH)
-						locx = mobloc.x
-						locy = (mobloc.y+2)
-						if(locy>world.maxy)
-							return
-					if(SOUTH)
-						locx = mobloc.x
-						locy = (mobloc.y-2)
-						if(locy<1)
-							return
-					if(EAST)
-						locy = mobloc.y
-						locx = (mobloc.x+2)
-						if(locx>world.maxx)
-							return
-					if(WEST)
-						locy = mobloc.y
-						locx = (mobloc.x-2)
-						if(locx<1)
-							return
-					else
-						return
-				mob.forceMove(locate(locx,locy,mobloc.z))
-				spawn(0)
-					var/limit = 2//For only two trailing shadows.
-					for(var/turf/T in getline(mobloc, mob.loc))
-						spawn(0)
-							anim(T,mob,'icons/mob/mob.dmi',,"shadow",,mob.dir)
-						limit--
-						if(limit<=0)	break
-			else
-				spawn(0)
-					anim(mobloc,mob,'icons/mob/mob.dmi',,"shadow",,mob.dir)
-				mob.forceMove(get_step(mob, direct))
-			mob.dir = direct
-	// Crossed is always a bit iffy
-	for(var/obj/S in mob.loc)
-		if(istype(S,/obj/effect/step_trigger) || istype(S,/obj/effect/beam))
-			S.Crossed(mob)
+	if(T)
+		mob.forceMove(T)
+	mob.set_dir(direct)
 
-	var/area/A = get_area_master(mob)
-	if(A)
-		A.Entered(mob)
-	if(isturf(mob.loc))
-		var/turf/T = mob.loc
-		T.Entered(mob)
 	mob.Post_Incorpmove()
 	return 1
 
@@ -460,7 +407,7 @@
 	return
 
 // Checks whether this mob is allowed to move in space
-// Return 1 for movement, 0 for none, 
+// Return 1 for movement, 0 for none,
 // -1 to allow movement but with a chance of slipping
 /mob/proc/Allow_Spacemove(var/check_drift = 0)
 	if(!Check_Dense_Object()) //Nothing to push off of so end here

@@ -47,7 +47,8 @@ mob/living/carbon/proc/handle_hallucinations()
 						if(!H.r_store) slots_free += ui_storage2
 					if(slots_free.len)
 						halitem.screen_loc = pick(slots_free)
-						halitem.layer = 50
+						halitem.plane = FULLSCREEN_PLANE
+						halitem.layer = HALLUCINATION_LAYER
 						switch(rand(1,6))
 							if(1) //revolver
 								halitem.icon = 'icons/obj/gun.dmi'
@@ -124,9 +125,10 @@ mob/living/carbon/proc/handle_hallucinations()
 					if(8) src << 'sound/machines/windowdoor.ogg'
 					if(9)
 						//To make it more realistic, I added two gunshots (enough to kill)
-						src << 'sound/weapons/Gunshot.ogg'
+						var/gunshot = pick('sound/weapons/gunshot/gunshot_strong.ogg', 'sound/weapons/gunshot/gunshot2.ogg', 'sound/weapons/gunshot/shotgun.ogg', 'sound/weapons/gunshot/gunshot.ogg')
+						src << gunshot
 						spawn(rand(10,30))
-							src << 'sound/weapons/Gunshot.ogg'
+							src << gunshot
 					if(10) src << 'sound/weapons/smash.ogg'
 					if(11)
 						//Same as above, but with tasers.
@@ -342,9 +344,9 @@ var/list/non_fakeattack_weapons = list(/obj/item/weapon/gun/projectile, /obj/ite
 	/obj/item/weapon/storage/toolbox/syndicate, /obj/item/weapon/aiModule,\
 	/obj/item/device/radio/headset/syndicate,	/obj/item/weapon/plastique,\
 	/obj/item/device/powersink, /obj/item/weapon/storage/box/syndie_kit,\
-	/obj/item/toy/syndicateballoon, /obj/item/weapon/gun/energy/captain,\
+	/obj/item/toy/balloon, /obj/item/weapon/gun/energy/captain,\
 	/obj/item/weapon/hand_tele, /obj/item/weapon/rcd, /obj/item/weapon/tank/jetpack,\
-	/obj/item/clothing/under/rank/captain, /obj/item/device/aicard,\
+	/obj/item/clothing/under/rank/captain, /obj/item/weapon/aicard,\
 	/obj/item/clothing/shoes/magboots, /obj/item/blueprints, /obj/item/weapon/disk/nuclear,\
 	/obj/item/clothing/suit/space/void, /obj/item/weapon/tank)
 
@@ -353,7 +355,7 @@ var/list/non_fakeattack_weapons = list(/obj/item/weapon/gun/projectile, /obj/ite
 	var/mob/living/carbon/human/clone = null
 	var/clone_weapon = null
 
-	for(var/mob/living/carbon/human/H in living_mob_list)
+	for(var/mob/living/carbon/human/H in living_mob_list_)
 		if(H.stat || H.lying) continue
 //		possible_clones += H
 		clone = H

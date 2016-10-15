@@ -1,5 +1,5 @@
 /mob/living/carbon/human/proc/update_eyes()
-	var/obj/item/organ/eyes/eyes = internal_organs_by_name["eyes"]
+	var/obj/item/organ/internal/eyes/eyes = internal_organs_by_name[species.vision_organ ? species.vision_organ : BP_EYES]
 	if(eyes)
 		eyes.update_colour()
 		regenerate_icons()
@@ -9,14 +9,24 @@
 /mob/living/carbon/human/var/list/organs_by_name = list() // map organ names to organs
 /mob/living/carbon/human/var/list/internal_organs_by_name = list() // so internal organs have less ickiness too
 
+/mob/living/carbon/human/proc/get_bodypart_name(var/zone)
+	var/obj/item/organ/external/E = get_organ(zone)
+	if(E) . = E.name
+
+/mob/living/carbon/human/proc/recheck_bad_external_organs()
+	var/damage_this_tick = getToxLoss()
+	for(var/obj/item/organ/external/O in organs)
+		damage_this_tick += O.burn_dam + O.brute_dam
+
+	if(damage_this_tick > last_dam)
+		. = TRUE
+	last_dam = damage_this_tick
+
 // Takes care of organ related updates, such as broken and missing limbs
 /mob/living/carbon/human/proc/handle_organs()
 
-	var/force_process = 0
-	var/damage_this_tick = getBruteLoss() + getFireLoss() + getToxLoss()
-	if(damage_this_tick > last_dam)
-		force_process = 1
-	last_dam = damage_this_tick
+	var/force_process = recheck_bad_external_organs()
+
 	if(force_process)
 		bad_external_organs.Cut()
 		for(var/obj/item/organ/external/Ex in organs)
@@ -45,7 +55,7 @@
 			//Moving around with fractured ribs won't do you any good
 				if (E.is_broken() && E.internal_organs && E.internal_organs.len && prob(15))
 					var/obj/item/organ/I = pick(E.internal_organs)
-					custom_pain("You feel broken bones moving in your [E.name]!", 1)
+					custom_pain("You feel broken bones moving in your [E.name]!", 50)
 					I.take_damage(rand(3,5))
 
 				//Moving makes open wounds get infected much faster
@@ -57,7 +67,7 @@
 /mob/living/carbon/human/proc/handle_stance()
 	// Don't need to process any of this if they aren't standing anyways
 	// unless their stance is damaged, and we want to check if they should stay down
-	if (!stance_damage && (lying || resting) && (life_tick % 4) == 0)
+	if (!stance_damage && (lying || resting) && (life_tick % 4) != 0)
 		return
 
 	stance_damage = 0
@@ -66,9 +76,10 @@
 	if (istype(buckled, /obj/structure/bed))
 		return
 
-	for(var/limb_tag in list("l_leg","r_leg","l_foot","r_foot"))
+	var/limb_pain
+	for(var/limb_tag in list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT))
 		var/obj/item/organ/external/E = organs_by_name[limb_tag]
-		if(!E || (E.status & (ORGAN_MUTATED|ORGAN_DEAD)) || E.is_stump()) //should just be !E.is_usable() here but dislocation screws that up.
+		if(!E || !E.is_usable())
 			stance_damage += 2 // let it fail even if just foot&leg
 		else if (E.is_malfunctioning())
 			//malfunctioning only happens intermittently so treat it as a missing limb when it procs
@@ -81,10 +92,12 @@
 				spark_system.start()
 				spawn(10)
 					qdel(spark_system)
-		else if (E.is_broken() || !E.is_usable())
+		else if (E.is_broken())
 			stance_damage += 1
 		else if (E.is_dislocated())
 			stance_damage += 0.5
+
+		if(E) limb_pain = E.can_feel_pain()
 
 	// Canes and crutches help you stand (if the latter is ever added)
 	// One cane mitigates a broken leg+foot, or a missing foot.
@@ -97,7 +110,7 @@
 	// standing is poor
 	if(stance_damage >= 4 || (stance_damage >= 2 && prob(5)))
 		if(!(lying || resting))
-			if(species && !(species.flags & NO_PAIN))
+			if(limb_pain)
 				emote("scream")
 			custom_emote(1, "collapses!")
 		Weaken(5) //can't emote while weakened, apparently.
@@ -108,7 +121,7 @@
 
 	// You should not be able to pick anything up, but stranger things have happened.
 	if(l_hand)
-		for(var/limb_tag in list("l_hand","l_arm"))
+		for(var/limb_tag in list(BP_L_HAND, BP_L_ARM))
 			var/obj/item/organ/external/E = get_organ(limb_tag)
 			if(!E)
 				visible_message("<span class='danger'>Lacking a functioning left hand, \the [src] drops \the [l_hand].</span>")
@@ -116,7 +129,7 @@
 				break
 
 	if(r_hand)
-		for(var/limb_tag in list("r_hand","r_arm"))
+		for(var/limb_tag in list(BP_R_HAND, BP_R_ARM))
 			var/obj/item/organ/external/E = get_organ(limb_tag)
 			if(!E)
 				visible_message("<span class='danger'>Lacking a functioning right hand, \the [src] drops \the [r_hand].</span>")
@@ -128,10 +141,10 @@
 		return
 
 	for (var/obj/item/organ/external/E in organs)
-		if(!E || !E.can_grasp || (E.status & ORGAN_SPLINTED))
+		if(!E || !E.can_grasp)
 			continue
 
-		if(E.is_broken() || E.is_dislocated())
+		if((E.is_broken() || E.is_dislocated()) && !E.splinted)
 			switch(E.body_part)
 				if(HAND_LEFT, ARM_LEFT)
 					if(!l_hand)
@@ -148,7 +161,7 @@
 				var/obj/item/organ/external/hand = pick(E.children)
 				grasp_name = hand.name
 
-			emote("me", 1, "[(species.flags & NO_PAIN) ? "" : emote_scream] drops what they were holding in their [grasp_name]!")
+			emote("me", 1, "[!E.can_feel_pain() ? "" : emote_scream] drops what they were holding in their [grasp_name]!")
 
 		else if(E.is_malfunctioning())
 			switch(E.body_part)

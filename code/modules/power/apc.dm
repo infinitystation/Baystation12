@@ -1,3 +1,4 @@
+#define CRITICAL_APC_EMP_PROTECTION 10 // EMP effect duration is divided by this number if the APC has "critical" flag
 //update_state
 #define UPDATE_CELL_IN 1
 #define UPDATE_OPENED1 2
@@ -27,13 +28,21 @@
 
 #define APC_UPDATE_ICON_COOLDOWN 100 // 10 seconds
 
+
 // the Area Power Controller (APC), formerly Power Distribution Unit (PDU)
 // one per area, needs wire conection to power network through a terminal
 
 // controls power to devices in that area
 // may be opened to change power cell
 // three different channels (lighting/equipment/environ) - may each be set to on, off, or auto
+#define POWERCHAN_OFF      0
+#define POWERCHAN_OFF_AUTO 1
+#define POWERCHAN_ON       2
+#define POWERCHAN_ON_AUTO  3
 
+//thresholds for channels going off automatically. ENVIRON channel stays on as long as possible, and doesn't have a threshold
+#define AUTO_THRESHOLD_LIGHTING  50
+#define AUTO_THRESHOLD_EQUIPMENT 25
 
 //NOTE: STUFF STOLEN FROM AIRLOCK.DM thx
 
@@ -51,7 +60,6 @@
 	environ = 0
 	locked = 0
 	coverlocked = 0
-	start_charge = 100
 
 /obj/machinery/power/apc/super
 	cell_type = /obj/item/weapon/cell/super
@@ -74,13 +82,12 @@
 	var/areastring = null
 	var/obj/item/weapon/cell/cell
 	var/chargelevel = 0.0005  // Cap for how fast APC cells charge, as a percentage-per-tick (0.01 means cellcharge is capped to 1% per second)
-	var/start_charge = 90				// initial cell charge %
 	var/cell_type = /obj/item/weapon/cell/apc
 	var/opened = 0 //0=closed, 1=opened, 2=cover removed
 	var/shorted = 0
-	var/lighting = 3
-	var/equipment = 3
-	var/environ = 3
+	var/lighting = POWERCHAN_ON_AUTO
+	var/equipment = POWERCHAN_ON_AUTO
+	var/environ = POWERCHAN_ON_AUTO
 	var/operating = 1
 	var/charging = 0
 	var/chargemode = 1
@@ -136,20 +143,25 @@
 	if(drain_check)
 		return 1
 
-	if(!cell)
-		return 0
+	// Prevents APCs from being stuck on 0% cell charge while reporting "Fully Charged" status.
+	charging = 0
 
-	if(surge && !emagged)
-		flick("apc-spark", src)
-		emagged = 1
-		locked = 0
-		update_icon()
-		return 0
+	// If the APC's interface is locked, limit the charge rate to 25%.
+	if(locked)
+		amount /= 4
 
+	var/drained_energy = 0
+
+	// First try to drain the power directly from attached power grid.
 	if(terminal && terminal.powernet)
 		terminal.powernet.trigger_warning()
+		drained_energy += terminal.powernet.draw_power(amount)
 
-	return cell.drain_power(drain_check, surge, amount)
+	// If the power grid provided enough power, we're good. If not, take the rest from the power cell.
+	if((drained_energy < amount) && cell)
+		drained_energy += cell.use((amount - drained_energy) * CELLRATE)
+
+	return drained_energy
 
 /obj/machinery/power/apc/New(turf/loc, var/ndir, var/building=0)
 	wires = new(src)
@@ -205,7 +217,7 @@
 	return ..()
 
 /obj/machinery/power/apc/proc/energy_fail(var/duration)
-	failure_timer = max(failure_timer, duration)
+	failure_timer = max(failure_timer, round(duration))
 
 /obj/machinery/power/apc/proc/make_terminal()
 	// create a terminal object at the same position as original turf loc
@@ -219,7 +231,6 @@
 	// is starting with a power cell installed, create it and set its charge level
 	if(cell_type)
 		src.cell = new cell_type(src)
-		cell.charge = start_charge * cell.maxcharge / 100.0 		// (convert percentage to actual value)
 
 	var/area/A = src.loc.loc
 
@@ -341,7 +352,9 @@
 				overlays += status_overlays_environ[environ+1]
 
 	if(update & 3)
-		if(update_state & UPDATE_BLUESCREEN)
+		if(update_state & (UPDATE_OPENED1|UPDATE_OPENED2|UPDATE_BROKE))
+			set_light(0)
+		else if(update_state & UPDATE_BLUESCREEN)
 			set_light(l_range = 2, l_power = 0.5, l_color = "#0000FF")
 		else if(!(stat & (BROKEN|MAINT)) && update_state & UPDATE_ALLGOOD)
 			var/color
@@ -481,8 +494,8 @@
 		if (stat & MAINT)
 			user << "<span class='warning'>There is no connector for your power cell.</span>"
 			return
-		if(W.w_class != 3)
-			user << "\The [W] is too [W.w_class < 3? "small" : "large"] to fit here."
+		if(W.w_class != NORMAL_ITEM)
+			user << "\The [W] is too [W.w_class < NORMAL_ITEM? "small" : "large"] to fit here."
 			return
 
 		user.drop_item()
@@ -589,6 +602,7 @@
 		if(do_after(user, 10, src))
 			if(has_electronics==0)
 				has_electronics = 1
+				reboot() //completely new electronics
 				user << "<span class='notice'>You place the power control board inside the frame.</span>"
 				qdel(W)
 	else if (istype(W, /obj/item/weapon/module/power_control) && opened && has_electronics==0 && ((stat & BROKEN)))
@@ -818,18 +832,20 @@
 
 /obj/machinery/power/apc/proc/update()
 	if(operating && !shorted && !failure_timer)
-		area.power_light = (lighting > 1)
-		area.power_equip = (equipment > 1)
-		area.power_environ = (environ > 1)
-//		if (area.name == "AI Chamber")
-//			spawn(10)
-//				world << " [area.name] [area.power_equip]"
+
+		//prevent unnecessary updates to emergency lighting
+		var/new_power_light = (lighting >= POWERCHAN_ON)
+		if(area.power_light != new_power_light)
+			area.power_light = new_power_light
+			area.set_emergency_lighting(lighting == POWERCHAN_OFF_AUTO) //if lights go auto-off, emergency lights go on
+
+		area.power_equip = (equipment >= POWERCHAN_ON)
+		area.power_environ = (environ >= POWERCHAN_ON)
 	else
 		area.power_light = 0
 		area.power_equip = 0
 		area.power_environ = 0
-//		if (area.name == "AI Chamber")
-//			world << "[area.power_equip]"
+
 	area.power_change()
 
 /obj/machinery/power/apc/proc/isWireCut(var/wireIndex)
@@ -941,23 +957,6 @@
 	operating = !operating
 	src.update()
 	update_icon()
-
-/obj/machinery/power/apc/proc/ion_act()
-	if(prob(3))
-		src.locked = 1
-		if (src.cell.charge > 0)
-			src.cell.charge = 0
-			cell.corrupt()
-			update_icon()
-			var/datum/effect/effect/system/smoke_spread/smoke = new /datum/effect/effect/system/smoke_spread()
-			smoke.set_up(3, 0, src.loc)
-			smoke.attach(src)
-			smoke.start()
-			var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
-			s.set_up(3, 1, src)
-			s.start()
-			visible_message("<span class='danger'>The [src.name] suddenly lets out a blast of smoke and some sparks!</span>", \
-							"<span class='danger'>You hear sizzling electronics.</span>")
 
 
 /obj/machinery/power/apc/surplus()
@@ -1113,21 +1112,21 @@
 	else if(longtermpower > -10)
 		longtermpower -= 2
 
-	if((cell.percent() > 30) || longtermpower > 0)              // Put most likely at the top so we don't check it last, effeciency 101
+	if((cell.percent() > AUTO_THRESHOLD_LIGHTING) || longtermpower > 0)              // Put most likely at the top so we don't check it last, effeciency 101
 		if(autoflag != 3)
 			equipment = autoset(equipment, 1)
 			lighting = autoset(lighting, 1)
 			environ = autoset(environ, 1)
 			autoflag = 3
 			power_alarm.clearAlarm(loc, src)
-	else if((cell.percent() <= 30) && (cell.percent() > 15) && longtermpower < 0)                       // <30%, turn off equipment
+	else if((cell.percent() <= AUTO_THRESHOLD_LIGHTING) && (cell.percent() > AUTO_THRESHOLD_EQUIPMENT) && longtermpower < 0)                       // <50%, turn off lighting
 		if(autoflag != 2)
-			equipment = autoset(equipment, 2)
-			lighting = autoset(lighting, 1)
+			equipment = autoset(equipment, 1)
+			lighting = autoset(lighting, 2)
 			environ = autoset(environ, 1)
 			power_alarm.triggerAlarm(loc, src)
 			autoflag = 2
-	else if(cell.percent() <= 15)        // <15%, turn off lighting & equipment
+	else if(cell.percent() <= AUTO_THRESHOLD_EQUIPMENT)        // <25%, turn off lighting & equipment
 		if((autoflag > 1 && longtermpower < 0) || (autoflag > 1 && longtermpower >= 0))
 			equipment = autoset(equipment, 2)
 			lighting = autoset(lighting, 2)
@@ -1144,39 +1143,45 @@
 
 // val 0=off, 1=off(auto) 2=on 3=on(auto)
 // on 0=off, 1=on, 2=autooff
+// defines a state machine, returns the new state
+obj/machinery/power/apc/proc/autoset(var/cur_state, var/on)
+	switch(cur_state)
+		if(POWERCHAN_OFF); //autoset will never turn on a channel set to off
+		if(POWERCHAN_OFF_AUTO)
+			if(on == 1)
+				return POWERCHAN_ON_AUTO
+		if(POWERCHAN_ON)
+			if(on == 0)
+				return POWERCHAN_OFF
+		if(POWERCHAN_ON_AUTO)
+			if(on == 0 || on == 2)
+				return POWERCHAN_OFF_AUTO
 
-obj/machinery/power/apc/proc/autoset(var/val, var/on)
-	if(on==0)
-		if(val==2)			// if on, return off
-			return 0
-		else if(val==3)		// if auto-on, return auto-off
-			return 1
-
-	else if(on==1)
-		if(val==1)			// if auto-off, return auto-on
-			return 3
-
-	else if(on==2)
-		if(val==3)			// if auto-on, return auto-off
-			return 1
-
-	return val
+	return cur_state //leave unchanged
 
 
 // damage and destruction acts
 /obj/machinery/power/apc/emp_act(severity)
 	// Fail for 8-12 minutes (divided by severity)
 	// Division by 2 is required, because machinery ticks are every two seconds. Without it we would fail for 16-24 minutes.
-	energy_fail(round(rand(240, 360) / severity))
-	if(cell)
-		cell.emp_act(severity+1)
+	if(is_critical)
+		// Critical APCs are considered EMP shielded and will be offline only for about half minute. Prevents AIs being one-shot disabled by EMP strike.
+		// Critical APCs are also more resilient to cell corruption/power drain.
+		energy_fail(rand(240, 360) / severity / CRITICAL_APC_EMP_PROTECTION)
+		if(cell)
+			cell.emp_act(severity+2)
+	else
+		// Regular APCs fail for normal time.
+		energy_fail(rand(240, 360) / severity)
+		if(cell)
+			cell.emp_act(severity+1)
+
 	update_icon()
 	..()
 
 /obj/machinery/power/apc/ex_act(severity)
 	switch(severity)
 		if(1.0)
-			//set_broken() //now qdel() do what we need
 			if (cell)
 				cell.ex_act(1.0) // more lags woohoo
 			qdel(src)
@@ -1201,6 +1206,7 @@ obj/machinery/power/apc/proc/autoset(var/val, var/on)
 /obj/machinery/power/apc/proc/set_broken()
 	// Aesthetically much better!
 	src.visible_message("<span class='notice'>[src]'s screen flickers with warnings briefly!</span>")
+	power_alarm.triggerAlarm(loc, src)
 	spawn(rand(2,5))
 		src.visible_message("<span class='notice'>[src]'s screen suddenly explodes in rain of sparks and small debris!</span>")
 		stat |= BROKEN
@@ -1208,8 +1214,27 @@ obj/machinery/power/apc/proc/autoset(var/val, var/on)
 		update_icon()
 		update()
 
-// overload the lights in this APC area
+/obj/machinery/power/apc/proc/reboot()
+	//reset various counters so that process() will start fresh
+	charging = initial(charging)
+	chargecount = initial(chargecount)
+	autoflag = initial(autoflag)
+	longtermpower = initial(longtermpower)
+	failure_timer = initial(failure_timer)
 
+	//start with main breaker off, chargemode in the default state and all channels on auto upon reboot
+	operating = 0
+	chargemode = initial(chargemode)
+	power_alarm.clearAlarm(loc, src)
+
+	lighting = POWERCHAN_ON_AUTO
+	equipment = POWERCHAN_ON_AUTO
+	environ = POWERCHAN_ON_AUTO
+
+	update_icon()
+	update()
+
+// overload the lights in this APC area
 /obj/machinery/power/apc/proc/overload_lighting(var/chance = 100)
 	if(/* !get_connection() || */ !operating || shorted)
 		return

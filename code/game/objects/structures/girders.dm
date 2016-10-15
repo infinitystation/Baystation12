@@ -2,8 +2,9 @@
 	icon_state = "girder"
 	anchored = 1
 	density = 1
-	layer = 2
-	w_class = 5
+	plane = OBJ_PLANE
+	layer = BELOW_OBJ_LAYER
+	w_class = 8
 	var/state = 0
 	var/health = 200
 	var/cover = 50 //how much cover the girder provides against projectiles.
@@ -65,7 +66,7 @@
 		else if(!anchored)
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 100, 1)
 			user << "<span class='notice'>Now securing the girder...</span>"
-			if(get_turf(user, 40))
+			if(do_after(user, 40,src))
 				user << "<span class='notice'>You secured the girder!</span>"
 				reset_girder()
 
@@ -186,7 +187,7 @@
 	return 1
 
 /obj/structure/girder/proc/reinforce_girder()
-	cover = reinf_material.hardness
+	cover = 75
 	health = 500
 	state = 2
 	icon_state = "reinforced"

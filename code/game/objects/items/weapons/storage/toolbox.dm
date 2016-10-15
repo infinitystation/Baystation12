@@ -11,7 +11,7 @@
 	throw_range = 7
 	w_class = 4
 	max_w_class = 3
-	max_storage_space = DEFAULT_BACKPACK_STORAGE //enough to hold all starting contents
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE //enough to hold all starting contents
 	origin_tech = list(TECH_COMBAT = 1)
 	attack_verb = list("robusted")
 
@@ -58,7 +58,7 @@
 	new /obj/item/stack/cable_coil/random(src,30)
 	new /obj/item/stack/cable_coil/random(src,30)
 	if(prob(5))
-		new /obj/item/clothing/gloves/yellow(src)
+		new /obj/item/clothing/gloves/insulated(src)
 	else
 		new /obj/item/stack/cable_coil/random(src,30)
 
@@ -71,7 +71,7 @@
 
 /obj/item/weapon/storage/toolbox/syndicate/New()
 	..()
-	new /obj/item/clothing/gloves/yellow(src)
+	new /obj/item/clothing/gloves/insulated(src)
 	new /obj/item/weapon/screwdriver(src)
 	new /obj/item/weapon/wrench(src)
 	new /obj/item/weapon/weldingtool(src)

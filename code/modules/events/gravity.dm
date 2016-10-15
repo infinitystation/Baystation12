@@ -11,7 +11,7 @@
 	gravity_is_on = 0
 	for(var/area/A in world)
 		if(A.z in using_map.station_levels)
-			A.gravitychange(gravity_is_on, A)
+			A.gravitychange(gravity_is_on)
 
 /datum/event/gravity/end()
 	if(!gravity_is_on)
@@ -19,6 +19,6 @@
 
 		for(var/area/A in world)
 			if(A.z in using_map.station_levels)
-				A.gravitychange(gravity_is_on, A)
+				A.gravitychange(gravity_is_on)
 
 		command_announcement.Announce("Гравитационные генераторы снова функционируют в стабильном состоянии. Мы приносим свои извинения за причинённые неудобства.", "ГравитациЯ восстановлена")

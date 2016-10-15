@@ -21,6 +21,7 @@ var/datum/uplink/uplink = new()
 		for(var/datum/uplink_category/category in categories)
 			if(item.category == category.type)
 				category.items += item
+				item.category = category
 
 	for(var/datum/uplink_category/category in categories)
 		category.items = dd_sortedObjectList(category.items)
@@ -49,16 +50,13 @@ var/datum/uplink/uplink = new()
 	if(!can_buy(U))
 		return
 
-	if(U.CanUseTopic(user, inventory_state) != STATUS_INTERACTIVE)
-		return
-
 	var/cost = cost(U.uses, U)
 
 	var/goods = get_goods(U, get_turf(user), user, extra_args)
 	if(!goods)
 		return
 
-	purchase_log(U)
+	purchase_log(U, user, cost)
 	U.uses -= cost
 	U.used_TC += cost
 	return goods
@@ -90,12 +88,12 @@ var/datum/uplink/uplink = new()
 
 /datum/uplink_item/proc/cost(var/telecrystals, obj/item/device/uplink/U)
 	. = item_cost
-
 	if(U && U.uplink_owner)
 		for(var/antag_role in antag_costs)
 			var/datum/antagonist/antag = all_antag_types[antag_role]
 			if(antag.is_antagonist(U.uplink_owner))
-				. = min(antag_costs[antag_role], . )
+				. = min(antag_costs[antag_role], .)
+	return max(1, U ?  U.get_item_cost(src, .) : .)
 
 /datum/uplink_item/proc/description()
 	return desc
@@ -107,10 +105,11 @@ var/datum/uplink/uplink = new()
 /datum/uplink_item/proc/log_icon()
 	return
 
-/datum/uplink_item/proc/purchase_log(obj/item/device/uplink/U)
+/datum/uplink_item/proc/purchase_log(obj/item/device/uplink/U, var/mob/user, var/cost)
 	feedback_add_details("traitor_uplink_items_bought", "[src]")
 	log_and_message_admins("used \the [U.loc] to buy \a [src]")
-	U.purchase_log[src] = U.purchase_log[src] + 1
+	if(user)
+		uplink_purchase_repository.add_entry(user.mind, src, cost)
 
 datum/uplink_item/dd_SortValue()
 	return cost(INFINITY, null)
@@ -149,27 +148,14 @@ datum/uplink_item/dd_SortValue()
 	var/obj/I = path
 	return "\icon[I]"
 
-/********************************
-*                           	*
-*	Abstract Uplink Entries		*
-*                           	*
-********************************/
-/datum/uplink_item/abstract
-	var/static/image/default_abstract_uplink_icon
-
-/datum/uplink_item/abstract/log_icon()
-	if(!default_abstract_uplink_icon)
-		default_abstract_uplink_icon = image('icons/obj/pda.dmi', "pda-syn")
-
-	return "\icon[default_abstract_uplink_icon]"
-
 /****************
 * Support procs *
 ****************/
 /proc/get_random_uplink_items(var/obj/item/device/uplink/U, var/remaining_TC, var/loc)
 	var/list/bought_items = list()
 	while(remaining_TC)
-		var/datum/uplink_item/I = default_uplink_selection.get_random_item(remaining_TC, U, bought_items)
+		var/datum/uplink_random_selection/uplink_selection = get_uplink_random_selection_by_type(/datum/uplink_random_selection/default)
+		var/datum/uplink_item/I = uplink_selection.get_random_item(remaining_TC, U, bought_items)
 		if(!I)
 			break
 		bought_items += I

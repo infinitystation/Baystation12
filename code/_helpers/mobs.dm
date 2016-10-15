@@ -32,10 +32,13 @@ proc/random_hair_style(gender, species = "Human")
 	var/list/valid_hairstyles = list()
 	for(var/hairstyle in hair_styles_list)
 		var/datum/sprite_accessory/S = hair_styles_list[hairstyle]
-		if(gender == MALE && S.gender == FEMALE)
-			continue
-		if(gender == FEMALE && S.gender == MALE)
-			continue
+
+		if(gender != NEUTER && gender != PLURAL)
+			if(gender == MALE && S.gender == FEMALE)
+				continue
+			if(gender == FEMALE && S.gender == MALE)
+				continue
+
 		if( !(species in S.species_allowed))
 			continue
 		valid_hairstyles[hairstyle] = hair_styles_list[hairstyle]
@@ -51,10 +54,13 @@ proc/random_facial_hair_style(gender, species = "Human")
 	var/list/valid_facialhairstyles = list()
 	for(var/facialhairstyle in facial_hair_styles_list)
 		var/datum/sprite_accessory/S = facial_hair_styles_list[facialhairstyle]
-		if(gender == MALE && S.gender == FEMALE)
-			continue
-		if(gender == FEMALE && S.gender == MALE)
-			continue
+
+		if(gender != NEUTER && gender != PLURAL)
+			if(gender == MALE && S.gender == FEMALE)
+				continue
+			if(gender == FEMALE && S.gender == MALE)
+				continue
+
 		if( !(species in S.species_allowed))
 			continue
 
@@ -121,45 +127,12 @@ proc/age2agedescription(age)
 		if(70 to INFINITY)	return "elderly"
 		else				return "unknown"
 
-proc/RoundHealth(health)
-	switch(health)
-		if(100 to INFINITY)
-			return "health100"
-		if(70 to 100)
-			return "health80"
-		if(50 to 70)
-			return "health60"
-		if(30 to 50)
-			return "health40"
-		if(18 to 30)
-			return "health25"
-		if(5 to 18)
-			return "health10"
-		if(1 to 5)
-			return "health1"
-		if(-99 to 0)
-			return "health0"
-		else
-			return "health-100"
-	return "0"
-
-/*
-Proc for attack log creation, because really why not
-1 argument is the actor
-2 argument is the target of action
-3 is the description of action(like punched, throwed, or any other verb)
-4 should it make adminlog note or not
-5 is the tool with which the action was made(usually item)					5 and 6 are very similar(5 have "by " before it, that it) and are separated just to keep things in a bit more in order
-6 is additional information, anything that needs to be added
-*/
-
-/proc/add_logs(mob/user, mob/target, what_done, var/admin=1, var/object=null, var/addition=null)
-	if(user && ismob(user))
-		user.attack_log += text("\[[time_stamp()]\] <font color='red'>Has [what_done] [target ? "[target.name][(ismob(target) && target.ckey) ? "([target.ckey])" : ""]" : "NON-EXISTANT SUBJECT"][object ? " with [object]" : " "][addition]</font>")
-	if(target && ismob(target))
-		target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been [what_done] by [user ? "[user.name][(ismob(user) && user.ckey) ? "([user.ckey])" : ""]" : "NON-EXISTANT SUBJECT"][object ? " with [object]" : " "][addition]</font>")
-	if(admin)
-		log_attack("<font color='red'>[user ? "[user.name][(ismob(user) && user.ckey) ? "([user.ckey])" : ""]" : "NON-EXISTANT SUBJECT"] [what_done] [target ? "[target.name][(ismob(target) && target.ckey)? "([target.ckey])" : ""]" : "NON-EXISTANT SUBJECT"][object ? " with [object]" : " "][addition]</font>")
+/proc/RoundHealth(health)
+	var/list/icon_states = icon_states('icons/mob/hud_med.dmi')
+	for(var/icon_state in icon_states)
+		if(health >= text2num(icon_state))
+			return icon_state
+	return icon_states[icon_states.len] // If we had no match, return the last element
 
 //checks whether this item is a module of the robot it is located in.
 /proc/is_robot_module(var/obj/item/thing)
@@ -171,11 +144,11 @@ Proc for attack log creation, because really why not
 /proc/get_exposed_defense_zone(var/atom/movable/target)
 	var/obj/item/weapon/grab/G = locate() in target
 	if(G && G.state >= GRAB_NECK) //works because mobs are currently not allowed to upgrade to NECK if they are grabbing two people.
-		return pick("head", "l_hand", "r_hand", "l_foot", "r_foot", "l_arm", "r_arm", "l_leg", "r_leg")
+		return pick(BP_HEAD, BP_L_HAND, BP_R_HAND, BP_L_FOOT, BP_R_FOOT, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 	else
-		return pick("chest", "groin")
+		return pick(BP_CHEST, BP_GROIN)
 
-/proc/do_mob(mob/user , mob/target, time = 30, uninterruptible = 0, progress = 1)
+/proc/do_mob(mob/user , mob/target, time = 30, target_zone = 0, uninterruptible = 0, progress = 1)
 	if(!user || !target)
 		return 0
 	var/user_loc = user.loc
@@ -208,6 +181,10 @@ Proc for attack log creation, because really why not
 			break
 
 		if(user.get_active_hand() != holding)
+			. = 0
+			break
+
+		if(target_zone && user.zone_sel.selecting != target_zone)
 			. = 0
 			break
 
@@ -259,3 +236,39 @@ Proc for attack log creation, because really why not
 		if(!M.is_physically_disabled())
 			mobs += M
 	return mobs
+
+// Returns true if M was not already in the dead mob list
+/mob/proc/switch_from_living_to_dead_mob_list()
+	remove_from_living_mob_list()
+	. = add_to_dead_mob_list()
+
+// Returns true if M was not already in the living mob list
+/mob/proc/switch_from_dead_to_living_mob_list()
+	remove_from_dead_mob_list()
+	. = add_to_living_mob_list()
+
+// Returns true if the mob was in neither the dead or living list
+/mob/proc/add_to_living_mob_list()
+	return FALSE
+/mob/living/add_to_living_mob_list()
+	if((src in living_mob_list_) || (src in dead_mob_list_))
+		return FALSE
+	living_mob_list_ += src
+	return TRUE
+
+// Returns true if the mob was removed from the living list
+/mob/proc/remove_from_living_mob_list()
+	return living_mob_list_.Remove(src)
+
+// Returns true if the mob was in neither the dead or living list
+/mob/proc/add_to_dead_mob_list()
+	return FALSE
+/mob/living/add_to_dead_mob_list()
+	if((src in living_mob_list_) || (src in dead_mob_list_))
+		return FALSE
+	dead_mob_list_ += src
+	return TRUE
+
+// Returns true if the mob was removed form the dead list
+/mob/proc/remove_from_dead_mob_list()
+	return dead_mob_list_.Remove(src)

@@ -12,9 +12,9 @@
 
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
-		var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
+		var/obj/item/organ/external/temp = H.organs_by_name[BP_R_HAND]
 		if(H.hand)
-			temp = H.organs_by_name["l_hand"]
+			temp = H.organs_by_name[BP_L_HAND]
 		if(!temp || !temp.is_usable())
 			H << "\red You can't use your hand."
 			return
@@ -88,7 +88,7 @@
 				src << "<span class='notice'>You feel a breath of fresh air enter your lungs. It feels good.</span>"
 				H << "<span class='warning'>Repeat at least every 7 seconds.</span>"
 
-			else
+			else if(!(M == src && apply_pressure(M, M.zone_sel.selecting)))
 				help_shake_act(M)
 			return 1
 
@@ -180,7 +180,7 @@
 				*/
 				if(prob(80))
 					hit_zone = ran_zone(hit_zone)
-				if(prob(15) && hit_zone != "chest") // Missed!
+				if(prob(15) && hit_zone != BP_CHEST) // Missed!
 					if(!src.lying)
 						attack_message = "[H] attempted to strike [src], but missed!"
 					else
@@ -204,9 +204,7 @@
 				H.visible_message("<span class='danger'>[attack_message]</span>")
 
 			playsound(loc, ((miss_type) ? (miss_type == 1 ? attack.miss_sound : 'sound/weapons/thudswoosh.ogg') : attack.attack_sound), 25, 1, -1)
-			H.attack_log += text("\[[time_stamp()]\] <font color='red'>[miss_type ? (miss_type == 1 ? "Missed" : "Blocked") : "[pick(attack.attack_verb)]"] [src.name] ([src.ckey])</font>")
-			src.attack_log += text("\[[time_stamp()]\] <font color='orange'>[miss_type ? (miss_type == 1 ? "Was missed by" : "Has blocked") : "Has Been [pick(attack.attack_verb)]"] by [H.name] ([H.ckey])</font>")
-			msg_admin_attack("[key_name(H)] [miss_type ? (miss_type == 1 ? "has missed" : "was blocked by") : "has [pick(attack.attack_verb)]"] [key_name(src)]")
+			admin_attack_log(H, src, "[miss_type ? (miss_type == 1 ? "Has missed" : "Was blocked by") : "Has [pick(attack.attack_verb)]"] their victim.", "[miss_type ? (miss_type == 1 ? "Missed" : "Blocked") : "[pick(attack.attack_verb)]"] their attacker", "[miss_type ? (miss_type == 1 ? "has missed" : "was blocked by") : "has [pick(attack.attack_verb)]"]")
 
 			if(miss_type)
 				return 0
@@ -228,10 +226,7 @@
 			apply_damage(real_damage, (attack.deal_halloss ? HALLOSS : BRUTE), hit_zone, armour, sharp=attack.sharp, edge=attack.edge)
 
 		if(I_DISARM)
-			M.attack_log += text("\[[time_stamp()]\] <font color='red'>Disarmed [src.name] ([src.ckey])</font>")
-			src.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been disarmed by [M.name] ([M.ckey])</font>")
-
-			msg_admin_attack("[key_name(M)] disarmed [src.name] ([src.ckey])")
+			admin_attack_log(M, src, "Disarmed their victim.", "Was disarmed.", "disarmed")
 			M.do_attack_animation(src)
 
 			if(w_uniform)
@@ -287,9 +282,7 @@
 
 	if(!damage || !istype(user))
 		return
-
-	user.attack_log += text("\[[time_stamp()]\] <font color='red'>attacked [src.name] ([src.ckey])</font>")
-	src.attack_log += text("\[[time_stamp()]\] <font color='orange'>was attacked by [user.name] ([user.ckey])</font>")
+	admin_attack_log(user, src, "Attacked their victim", "Was attacked", "has [attack_message]")
 	src.visible_message("<span class='danger'>[user] has [attack_message] [src]!</span>")
 	user.do_attack_animation(src)
 
@@ -316,7 +309,7 @@
 	if(!target_zone)
 		return 0
 	var/obj/item/organ/external/organ = get_organ(check_zone(target_zone))
-	if(!organ || organ.is_dislocated() || organ.dislocated == -1)
+	if(!organ || organ.dislocated > 0 || organ.dislocated == -1) //don't use is_dislocated() here, that checks parent
 		return 0
 
 	user.visible_message("<span class='warning'>[user] begins to dislocate [src]'s [organ.joint]!</span>")
@@ -349,3 +342,39 @@
 		spawn(1)
 			qdel(rgrab)
 	return success
+
+/*
+	We want to ensure that a mob may only apply pressure to one organ of one mob at any given time. Currently this is done mostly implicitly through
+	the behaviour of do_after() and the fact that applying pressure to someone else requires a grab:
+
+	If you are applying pressure to yourself and attempt to grab someone else, you'll change what you are holding in your active hand which will stop do_mob()
+	If you are applying pressure to another and attempt to apply pressure to yourself, you'll have to switch to an empty hand which will also stop do_mob()
+	Changing targeted zones should also stop do_mob(), preventing you from applying pressure to more than one body part at once.
+*/
+/mob/living/carbon/human/proc/apply_pressure(mob/living/user, var/target_zone)
+	var/obj/item/organ/external/organ = get_organ(target_zone)
+	if(!organ || !(organ.status & ORGAN_BLEEDING) || (organ.robotic >= ORGAN_ROBOT))
+		return 0
+
+	if(organ.applied_pressure)
+		user << "<span class='warning'>[ismob(organ.applied_pressure)? "Someone" : "\A [organ.applied_pressure]"] is already applying pressure to [user == src? "your [organ.name]" : "[src]'s [organ.name]"].</span>"
+		return 0
+
+	if(user == src)
+		user.visible_message("\The [user] starts applying pressure to \his [organ.name]!", "You start applying pressure to your [organ.name]!")
+	else
+		user.visible_message("\The [user] starts applying pressure to [src]'s [organ.name]!", "You start applying pressure to [src]'s [organ.name]!")
+	spawn(0)
+		organ.applied_pressure = user
+
+		//apply pressure as long as they stay still and keep grabbing
+		do_mob(user, src, INFINITY, target_zone, progress = 0)
+
+		organ.applied_pressure = null
+
+		if(user == src)
+			user.visible_message("\The [user] stops applying pressure to \his [organ.name]!", "You stop applying pressure to your [organ.name]!")
+		else
+			user.visible_message("\The [user] stops applying pressure to [src]'s [organ.name]!", "You stop applying pressure to [src]'s [organ.name]!")
+
+	return 1

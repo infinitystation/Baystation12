@@ -53,7 +53,7 @@
 	var/parrot_state = PARROT_WANDER //Hunt for a perch when created
 	var/parrot_sleep_max = 25 //The time the parrot sits while perched before looking around. Mosly a way to avoid the parrot's AI in life() being run every single tick.
 	var/parrot_sleep_dur = 25 //Same as above, this is the var that physically counts down
-	var/parrot_dam_zone = list("chest", "head", "l_arm", "l_leg", "r_arm", "r_leg") //For humans, select a bodypart to attack
+	var/parrot_dam_zone = list(BP_CHEST, BP_HEAD, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG) //For humans, select a bodypart to attack
 
 	var/parrot_speed = 5 //"Delay in world ticks between movement." according to byond. Yeah, that's BS but it does directly affect movement. Higher number = slower.
 	var/parrot_been_shot = 0 //Parrots get a speed bonus after being shot. This will deincrement every Life() and at 0 the parrot will return to regular speed.
@@ -512,12 +512,12 @@
 
 		if(istype(AM, /obj/item))
 			var/obj/item/I = AM
-			if(I.w_class < 2)
+			if(I.w_class < SMALL_ITEM)
 				return I
 
 		if(iscarbon(AM))
 			var/mob/living/carbon/C = AM
-			if((C.l_hand && C.l_hand.w_class <= 2) || (C.r_hand && C.r_hand.w_class <= 2))
+			if((C.l_hand && C.l_hand.w_class <= SMALL_ITEM) || (C.r_hand && C.r_hand.w_class <= SMALL_ITEM))
 				return C
 	return null
 
@@ -541,12 +541,12 @@
 
 		if(istype(AM, /obj/item))
 			var/obj/item/I = AM
-			if(I.w_class <= 2)
+			if(I.w_class <= SMALL_ITEM)
 				return I
 
 		if(iscarbon(AM))
 			var/mob/living/carbon/C = AM
-			if(C.l_hand && C.l_hand.w_class <= 2 || C.r_hand && C.r_hand.w_class <= 2)
+			if(C.l_hand && C.l_hand.w_class <= SMALL_ITEM || C.r_hand && C.r_hand.w_class <= SMALL_ITEM)
 				return C
 	return null
 
@@ -568,7 +568,7 @@
 
 	for(var/obj/item/I in view(1,src))
 		//Make sure we're not already holding it and it's small enough
-		if(I.loc != src && I.w_class <= 2)
+		if(I.loc != src && I.w_class <= SMALL_ITEM)
 
 			//If we have a perch and the item is sitting on it, continue
 			if(!client && parrot_perch && I.loc == parrot_perch.loc)
@@ -597,10 +597,10 @@
 	var/obj/item/stolen_item = null
 
 	for(var/mob/living/carbon/C in view(1,src))
-		if(C.l_hand && C.l_hand.w_class <= 2)
+		if(C.l_hand && C.l_hand.w_class <= SMALL_ITEM)
 			stolen_item = C.l_hand
 
-		if(C.r_hand && C.r_hand.w_class <= 2)
+		if(C.r_hand && C.r_hand.w_class <= SMALL_ITEM)
 			stolen_item = C.r_hand
 
 		if(stolen_item)
@@ -724,7 +724,7 @@
 
 
 
-/mob/living/simple_animal/parrot/hear_radio(var/message, var/verb="говорит", var/datum/language/language=null, var/part_a, var/part_b, var/mob/speaker = null, var/hard_to_hear = 0)
+/mob/living/simple_animal/parrot/hear_radio(var/message, var/verb="говорит", var/datum/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0)
 	if(prob(50))
 		parrot_hear("[pick(available_channels)] [message]")
 	..(message,verb,language,part_a,part_b,speaker,hard_to_hear)

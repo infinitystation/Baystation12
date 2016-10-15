@@ -1,3 +1,6 @@
+// Global var to track modular computers
+var/list/global_modular_computers = list()
+
 // Modular Computer - device that runs various programs and operates with hardware
 // DO NOT SPAWN THIS TYPE. Use /laptop/ or /console/ instead.
 /obj/machinery/modular_computer/
@@ -64,16 +67,26 @@
 
 // Eject ID card from computer, if it has ID slot with card inside.
 /obj/machinery/modular_computer/verb/eject_usb()
-	set name = "Eject Portable Device"
+	set name = "Eject Portable Storage"
 	set category = "Object"
 	set src in view(1)
 
 	if(cpu)
 		cpu.eject_usb()
 
+// Eject AI Card
+/obj/machinery/modular_computer/verb/eject_ai()
+	set name = "Eject AI Storage"
+	set category = "Object"
+	set src in view(1)
+
+	if(cpu)
+		cpu.eject_ai()
+
 /obj/machinery/modular_computer/New()
 	..()
 	cpu = new(src)
+	global_modular_computers.Add(src)
 
 /obj/machinery/modular_computer/Destroy()
 	if(cpu)
@@ -188,5 +201,8 @@
 	if(cpu)
 		cpu.bullet_act(Proj)
 
-
+/obj/machinery/modular_computer/check_eye(var/mob/user)
+	if(cpu)
+		return cpu.check_eye(user)
+	return -1
 

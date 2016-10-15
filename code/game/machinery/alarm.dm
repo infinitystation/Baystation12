@@ -42,6 +42,9 @@
 	active_power_usage = 1000 //For heating/cooling rooms. 1000 joules equates to about 1 degree every 2 seconds for a single tile of air.
 	power_channel = ENVIRON
 	req_one_access = list(access_atmospherics, access_engine_equip)
+
+	layer = ABOVE_WINDOW_LAYER
+
 	var/alarm_id = null
 	var/breach_detection = 1 // Whether to use automatic breach detection or not
 	var/frequency = 1439
@@ -91,13 +94,8 @@
 /obj/machinery/alarm/server/New()
 	..()
 	req_access = list(access_rd, access_atmospherics, access_engine_equip)
-	TLV["oxygen"] =			list(-1.0, -1.0,-1.0,-1.0) // Partial pressure, kpa
-	TLV["carbon dioxide"] = list(-1.0, -1.0,   5,  10) // Partial pressure, kpa
-	TLV["phoron"] =			list(-1.0, -1.0, 0.2, 0.5) // Partial pressure, kpa
-	TLV["other"] =			list(-1.0, -1.0, 0.5, 1.0) // Partial pressure, kpa
-	TLV["pressure"] =		list(0,ONE_ATMOSPHERE*0.10,ONE_ATMOSPHERE*1.40,ONE_ATMOSPHERE*1.60) /* kpa */
-	TLV["temperature"] =	list(20, 40, 140, 160) // K
-	target_temperature = 90
+	TLV["temperature"] =	list(T0C-26, T0C, T0C+30, T0C+40) // K
+	target_temperature = T0C+10
 
 /obj/machinery/alarm/Destroy()
 	unregister_radio(src, frequency)
@@ -105,24 +103,21 @@
 	wires = null
 	return ..()
 
-/obj/machinery/alarm/New(var/loc, var/dir, var/building = 0)
-	..()
+/obj/machinery/alarm/New(var/loc, var/dir, atom/frame)
+	..(loc)
 
-	if(building)
-		if(loc)
-			src.loc = loc
+	if(dir)
+		src.set_dir(dir)
 
-		if(dir)
-			src.set_dir(dir)
-
+	if(istype(frame))
 		buildstage = 0
 		wiresexposed = 1
 		pixel_x = (dir & 3)? 0 : (dir == 4 ? -24 : 24)
 		pixel_y = (dir & 3)? (dir ==1 ? -24 : 24) : 0
 		update_icon()
-		return
-
-	first_run()
+		frame.transfer_fingerprints_to(src)
+	else
+		first_run()
 
 /obj/machinery/alarm/proc/first_run()
 	alarm_area = get_area(src)
@@ -1100,20 +1095,18 @@ FIRE ALARM
 
 
 
-/obj/machinery/firealarm/New(loc, dir, building)
-	..()
-
-	if(loc)
-		src.loc = loc
+/obj/machinery/firealarm/New(loc, dir, atom/frame)
+	..(loc)
 
 	if(dir)
 		src.set_dir(dir)
 
-	if(building)
+	if(istype(frame))
 		buildstage = 0
 		wiresexposed = 1
 		pixel_x = (dir & 3)? 0 : (dir == 4 ? -24 : 24)
 		pixel_y = (dir & 3)? (dir ==1 ? -24 : 24) : 0
+		frame.transfer_fingerprints_to(src)
 
 /obj/machinery/firealarm/proc/set_security_level(var/newlevel)
 	if(seclevel != newlevel)

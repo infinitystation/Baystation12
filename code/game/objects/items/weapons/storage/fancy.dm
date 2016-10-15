@@ -13,10 +13,21 @@
 /obj/item/weapon/storage/fancy
 	item_state = "syringe_kit" //placeholder, many of these don't have inhands
 	var/obj/item/key_type //path of the key item that this "fancy" container is meant to store
+	var/opened = 0 //if an item has been removed from this container
+
+/obj/item/weapon/storage/fancy/remove_from_storage()
+	. = ..()
+	if(!opened && .)
+		opened = 1
+		update_icon()
+
 
 /obj/item/weapon/storage/fancy/update_icon()
-	var/key_count = count_by_type(contents, key_type)
-	src.icon_state = "[initial(icon_state)][key_count]"
+	if(!opened)
+		src.icon_state = initial(icon_state)
+	else
+		var/key_count = count_by_type(contents, key_type)
+		src.icon_state = "[initial(icon_state)][key_count]"
 
 /obj/item/weapon/storage/fancy/examine(mob/user)
 	if(!..(user, 1))
@@ -59,6 +70,7 @@
 	desc = "A pack of red candles."
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "candlebox"
+	opened = 1 //no closed state
 	throwforce = 2
 	w_class = 2
 	max_w_class = 1
@@ -101,8 +113,8 @@
 //CIG PACK//
 ////////////
 /obj/item/weapon/storage/fancy/cigarettes
-	name = "cigarette packet"
-	desc = "The most popular brand of Space Cigarettes, sponsors of the Space Olympics."
+	name = "pack of Trans-Stellar Duty-frees"
+	desc = "A ubiquitous brand of cigarettes, found in the facilities of every major spacefaring corporation in the universe. As mild and flavorless as it gets."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "cigpacket"
 	item_state = "cigpacket"
@@ -112,6 +124,7 @@
 	startswith = 6
 	throwforce = 2
 	slot_flags = SLOT_BELT
+	var/brand = "\improper Trans-Stellar Duty-free"
 
 	key_type = /obj/item/clothing/mask/smokable/cigarette
 	startswith = list(/obj/item/clothing/mask/smokable/cigarette = 6)
@@ -119,8 +132,12 @@
 /obj/item/weapon/storage/fancy/cigarettes/New()
 	..()
 	flags |= NOREACT
-	create_reagents(15 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
+	create_reagents(5 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 	flags |= OPENCONTAINER
+	if(brand)
+		for(var/obj/item/clothing/mask/smokable/cigarette/C in src)
+			C.brand = brand
+			C.desc += " This one is \a [brand]."
 
 /obj/item/weapon/storage/fancy/cigarettes/remove_from_storage(obj/item/W as obj, atom/new_location)
 	// Don't try to transfer reagents to lighters
@@ -133,7 +150,7 @@
 	if(!istype(M, /mob))
 		return
 
-	if(M == user && user.zone_sel.selecting == "mouth")
+	if(M == user && user.zone_sel.selecting == BP_MOUTH && contents.len > 0 && !user.wear_mask)
 		// Find ourselves a cig. Note that we could be full of lighters.
 		var/obj/item/clothing/mask/smokable/cigarette/cig = null
 		for(var/obj/item/clothing/mask/smokable/cigarette/C in contents)
@@ -154,26 +171,67 @@
 		remove_from_storage(cig, null)
 		user.equip_to_slot(cig, slot_wear_mask)
 
-		reagents.maximum_volume = 15 * contents.len
+		reagents.maximum_volume = 5 * contents.len
 		user << "<span class='notice'>You take a cigarette out of the pack.</span>"
 		update_icon()
 	else
 		..()
 
 /obj/item/weapon/storage/fancy/cigarettes/dromedaryco
-	name = "\improper DromedaryCo packet"
-	desc = "A packet of six imported DromedaryCo cancer sticks. A label on the packaging reads, \"Wouldn't a slow death make a change?\"."
+	name = "pack of Dromedary Co. cigarettes"
+	desc = "A packet of six imported Dromedary Company cancer sticks. A label on the packaging reads, \"Wouldn't a slow death make a change?\"."
 	icon_state = "Dpacket"
+	brand = "\improper Dromedary Co. cigarette"
 
 /obj/item/weapon/storage/fancy/cigarettes/killthroat
-	name = "\improper AcmeCo packet"
-	desc = "A packet of six AcmeCo cigarettes. For those who somehow want to obtain the record for the most amount of cancerous tumors."
+	name = "pack of Acme Co. cigarettes"
+	desc = "A packet of six Acme Company cigarettes. For those who somehow want to obtain the record for the most amount of cancerous tumors."
 	icon_state = "Bpacket"
-	//item_state = "Bpacket" //Doesn't have an inhand state, but neither does dromedary, so, ya know.. So don't set one, use the default.
+	brand = "\improper Acme Co. cigarette"
 
 /obj/item/weapon/storage/fancy/cigarettes/killthroat/New()
 	..()
-	fill_cigarre_package(src,list("fuel" = 15))
+	fill_cigarre_package(src,list("fuel" = 4))
+
+// New exciting ways to kill your lungs! - Earthcrusher //
+
+/obj/item/weapon/storage/fancy/cigarettes/luckystars
+	name = "pack of Lucky Stars"
+	desc = "A mellow blend made from synthetic, pod-grown tobacco. The commercial jingle is guaranteed to get stuck in your head."
+	icon_state = "LSpacket"
+	item_state = "Dpacket" //I actually don't mind cig packs not showing up in the hand. whotf doesn't just keep them in their pockets/coats //
+	brand = "\improper Lucky Star"
+
+/obj/item/weapon/storage/fancy/cigarettes/jerichos
+	name = "pack of Jerichos"
+	desc = "Typically seen dangling from the lips of Martian soldiers and border world hustlers. Tastes like hickory smoke, feels like warm liquid death down your lungs."
+	icon_state = "Jpacket"
+	item_state = "Dpacket"
+	brand = "\improper Jericho"
+
+/obj/item/weapon/storage/fancy/cigarettes/menthols
+	name = "pack of Temperamento Menthols"
+	desc = "With a sharp and natural organic menthol flavor, these Temperamentos are a favorite of NDV crews. Hardly anyone knows they make 'em in non-menthol!"
+	icon_state = "TMpacket"
+	item_state = "Dpacket"
+	brand = "\improper Temperamento Menthol"
+
+	key_type = /obj/item/clothing/mask/smokable/cigarette/menthol
+	startswith = list(/obj/item/clothing/mask/smokable/cigarette/menthol = 6)
+
+/obj/item/weapon/storage/fancy/cigarettes/carcinomas
+	name = "pack of Carcinoma Angels"
+	desc = "This unknown brand was slated for the chopping block, until they were publicly endorsed by an old Earthling gonzo journalist. The rest is history. They sell a variety for cats, too. Yes, actual cats."
+	icon_state = "CApacket"
+	item_state = "Dpacket"
+	brand = "\improper Carcinoma Angel"
+
+/obj/item/weapon/storage/fancy/cigarettes/professionals
+	name = "pack of Professional 120s"
+	desc = "Let's face it - if you're smoking these, you're either trying to look upper-class or you're 80 years old. That's the only excuse. They taste disgusting, too."
+	icon_state = "P100packet"
+	item_state = "Dpacket"
+	brand = "\improper Professional 120"
 
 /obj/item/weapon/storage/fancy/cigar
 	name = "cigar case"
@@ -194,13 +252,13 @@
 /obj/item/weapon/storage/fancy/cigar/New()
 	..()
 	flags |= NOREACT
-	create_reagents(15 * storage_slots)
+	create_reagents(10 * storage_slots)
 
 /obj/item/weapon/storage/fancy/cigar/remove_from_storage(obj/item/W as obj, atom/new_location)
-		var/obj/item/clothing/mask/smokable/cigarette/cigar/C = W
-		if(!istype(C)) return
-		reagents.trans_to_obj(C, (reagents.total_volume/contents.len))
-		..()
+	var/obj/item/clothing/mask/smokable/cigarette/cigar/C = W
+	if(!istype(C)) return
+	reagents.trans_to_obj(C, (reagents.total_volume/contents.len))
+	..()
 
 /*
  * Vial Box

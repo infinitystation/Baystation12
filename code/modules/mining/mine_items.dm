@@ -19,14 +19,14 @@
 		new /obj/item/weapon/storage/backpack/satchel_eng(src)
 	new /obj/item/device/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/under/rank/miner(src)
-	new /obj/item/clothing/gloves/black(src)
+	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/shoes/black(src)
 	new /obj/item/device/analyzer(src)
-	new /obj/item/weapon/storage/bag/ore(src)
+	new /obj/item/weapon/storage/ore(src)
 	new /obj/item/device/flashlight/lantern(src)
 	new /obj/item/weapon/shovel(src)
 	new /obj/item/weapon/pickaxe(src)
-	new /obj/item/clothing/glasses/material(src)
+	new /obj/item/clothing/glasses/meson(src)
 
 /******************************Lantern*******************************/
 
@@ -48,7 +48,7 @@
 	throwforce = 4.0
 	icon_state = "pickaxe"
 	item_state = "jackhammer"
-	w_class = 4.0
+	w_class = 5
 	matter = list(DEFAULT_WALL_MATERIAL = 3750)
 	var/digspeed = 40 //moving the delay to an item var so R&D can make improved picks. --NEO
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
@@ -57,7 +57,7 @@
 	var/drill_verb = "drilling"
 	sharp = 1
 
-	var/excavation_amount = 100
+	var/excavation_amount = 200
 
 /obj/item/weapon/pickaxe/hammer
 	name = "sledgehammer"
@@ -151,7 +151,7 @@
 	force = 8.0
 	throwforce = 4.0
 	item_state = "shovel"
-	w_class = 3.0
+	w_class = 5
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
 	matter = list(DEFAULT_WALL_MATERIAL = 50)
 	attack_verb = list("bashed", "bludgeoned", "thrashed", "whacked")
@@ -227,13 +227,12 @@
 
 /obj/item/stack/flag/attack_self(mob/user as mob)
 
-	var/obj/item/stack/flag/F = locate() in get_turf(src)
-
 	var/turf/T = get_turf(src)
 	if(!T || !istype(T,/turf/simulated/floor/asteroid))
 		user << "The flag won't stand up in this terrain."
 		return
 
+	var/obj/item/stack/flag/F = locate() in T
 	if(F && F.upright)
 		user << "There is already a flag here."
 		return
@@ -241,8 +240,8 @@
 	var/obj/item/stack/flag/newflag = new src.type(T)
 	newflag.amount = 1
 	newflag.upright = 1
-	anchored = 1
+	newflag.anchored = 1
 	newflag.name = newflag.singular_name
 	newflag.icon_state = "[newflag.base_state]_open"
-	newflag.visible_message("<b>[user]</b> plants [newflag] firmly in the ground.")
+	newflag.visible_message("\The [user] plants \the [newflag] firmly in the ground.")
 	src.use(1)

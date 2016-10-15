@@ -55,7 +55,7 @@
 			M.apply_damage(22 / move_delay, BRUTE, def_zone, M.run_armor_check(def_zone, "melee"))	// and do damage according to how fast the train is going
 			if(istype(load, /mob/living/carbon/human))
 				var/mob/living/D = load
-				D << "\red You hit [M]!"
+				D << "<span class='warning'>You hit [M]!</span>"
 				msg_admin_attack("[D.name] ([D.ckey]) hit [M.name] ([M.ckey]) with [src]. (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)")
 
 
@@ -73,6 +73,9 @@
 // Interaction procs
 //-------------------------------------------
 /obj/vehicle/train/relaymove(mob/user, direction)
+	if(user.incapacitated())
+		return 0
+
 	var/turf/T = get_step_to(src, get_step(src, direction))
 	if(!T)
 		user << "You can't find a clear area to step onto."
@@ -86,7 +89,7 @@
 
 	unload(user, direction)
 
-	user << "\blue You climb down from [src]."
+	user << "<span class='notice'>You climb down from [src].</span>"
 
 	return 1
 
@@ -97,7 +100,7 @@
 		latch(C, user)
 	else
 		if(!load(C))
-			user << "\red You were unable to load [C] on [src]."
+			user << "<span class='warning'>You were unable to load [C] on [src].</span>"
 
 /obj/vehicle/train/attack_hand(mob/user as mob)
 	if(user.stat || user.restrained() || !Adjacent(user))
@@ -115,7 +118,7 @@
 /obj/vehicle/train/verb/unlatch_v()
 	set name = "Unlatch"
 	set desc = "Unhitches this train from the one in front of it."
-	set category = "Vehicle"
+	set category = "Object"
 	set src in view(1)
 
 	if(!istype(usr, /mob/living/carbon/human))
@@ -125,7 +128,6 @@
 		return
 
 	unattach(usr)
-
 
 //-------------------------------------------
 // Latching/unlatching procs

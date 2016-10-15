@@ -16,15 +16,6 @@
 			if("No")
 				return
 
-/obj/effect/mark
-		var/mark = ""
-		icon = 'icons/misc/mark.dmi'
-		icon_state = "blank"
-		anchored = 1
-		layer = 99
-		mouse_opacity = 0
-		unacidable = 1//Just to be sure.
-
 /obj/effect/beam
 	name = "beam"
 	density = 0
@@ -32,7 +23,8 @@
 	var/def_zone
 	flags = PROXMOVE
 	pass_flags = PASSTABLE
-
+	plane = EFFECTS_ABOVE_LIGHTING_PLANE
+	layer = BEAM_PROJECTILE_LAYER
 
 /obj/effect/begin
 	name = "begin"
@@ -58,7 +50,8 @@
 We can't just insert in HTML into the nanoUI so we need the raw data to play with.
 Instead of creating this list over and over when someone leaves their PDA open to the page
 we'll only update it when it changes.  The PDA_Manifest global list is zeroed out upon any change
-using /datum/datacore/proc/manifest_inject( ), or manifest_insert( )
+using /datum/datacore/proc/manifest_inject( ), or manifest_insert( ). Synth despawns and 
+name updates also zero the list; although they are not in data_core, synths are on manifest.
 */
 
 var/global/list/PDA_Manifest = list()
@@ -126,12 +119,20 @@ var/global/list/PDA_Manifest = list()
 			if(depthead && civ.len != 1)
 				civ.Swap(1,civ.len)
 
-		if(real_rank in nonhuman_positions)
-			bot[++bot.len] = list("name" = name, "rank" = rank, "active" = isactive)
-			department = 1
-
 		if(!department && !(name in heads))
 			misc[++misc.len] = list("name" = name, "rank" = rank, "active" = isactive)
+
+
+	// Silicons do not have records. See also /datum/datacore/proc/get_manifest 
+	for(var/mob/living/silicon/ai/ai in mob_list)
+		bot[++bot.len] = list("name" = ai.name, "rank" = "Artificial Intelligence", "active" = null)
+
+	for(var/mob/living/silicon/robot/robot in mob_list)
+		// No combat/syndicate cyborgs, no drones.
+		if(robot.module && robot.module.hide_on_manifest)
+			continue
+
+		bot[++bot.len] = list("name" = robot.name, "rank" = "[robot.modtype] [robot.braintype]", "active" = null)
 
 
 	PDA_Manifest = list(\
@@ -195,7 +196,7 @@ var/global/list/PDA_Manifest = list()
 	item_state = "beachball"
 	density = 0
 	anchored = 0
-	w_class = 4
+	w_class = 5
 	force = 0.0
 	throwforce = 0.0
 	throw_speed = 1

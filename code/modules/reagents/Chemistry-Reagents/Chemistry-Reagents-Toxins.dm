@@ -8,12 +8,11 @@
 	taste_mult = 1.2
 	reagent_state = LIQUID
 	color = "#CF3600"
-	metabolism = REM * 0.05 // 0.01 by default. They last a while and slowly kill you.
+	metabolism = REM * 0.25 // 0.05 by default. They last a while and slowly kill you.
 	var/strength = 4 // How much damage it deals per unit
 
 /datum/reagent/toxin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(strength && alien != IS_DIONA)
-		if(issmall(M)) removed *= 2 // Small bodymass, more effect from lower volume.
 		M.adjustToxLoss(strength * removed)
 
 /datum/reagent/toxin/plasticide
@@ -228,9 +227,14 @@
 /datum/reagent/lexorin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
 		return
-	M.take_organ_damage(3 * removed, 0)
-	if(M.losebreath < 15)
-		M.losebreath++
+	if(alien == IS_SKRELL)
+		M.take_organ_damage(2.4 * removed, 0)
+		if(M.losebreath < 22.5)
+			M.losebreath++
+	else
+		M.take_organ_damage(3 * removed, 0)
+		if(M.losebreath < 15)
+			M.losebreath++
 
 /datum/reagent/mutagen
 	name = "Unstable mutagen"
@@ -250,9 +254,14 @@
 		affect_blood(M, alien, removed)
 
 /datum/reagent/mutagen/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+
+	if(M.isSynthetic())
+		return
+
 	var/mob/living/carbon/human/H = M
 	if(istype(H) && (H.species.flags & NO_SCAN))
 		return
+
 	if(M.dna)
 		if(prob(removed * 0.1)) // Approx. one mutation per 10 injected/20 ingested/30 touching units
 			randmuti(M)
@@ -295,17 +304,17 @@
 /datum/reagent/soporific/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
 		return
-
-	var/effective_dose = dose
-	if(issmall(M))
-		effective_dose *= 2
-
-	if(effective_dose < 1)
-		if(effective_dose == metabolism * 2 || prob(5))
+		
+	var/threshold = 1	
+	if(alien == IS_SKRELL)
+		threshold = 1.2
+		
+	if(dose < 1 * threshold)
+		if(dose == metabolism * 2 || prob(5))
 			M.emote("yawn")
-	else if(effective_dose < 1.5)
+	else if(dose < 1.5 * threshold)
 		M.eye_blurry = max(M.eye_blurry, 10)
-	else if(effective_dose < 5)
+	else if(dose < 5 * threshold)
 		if(prob(50))
 			M.Weaken(2)
 		M.drowsyness = max(M.drowsyness, 20)
@@ -328,20 +337,20 @@
 	if(alien == IS_DIONA)
 		return
 
-	var/effective_dose = dose
-	if(issmall(M))
-		effective_dose *= 2
+	var/threshold = 1
+	if(alien == IS_SKRELL)
+		threshold = 1.2
 
-	if(effective_dose == metabolism)
+	if(dose == metabolism * threshold)
 		M.confused += 2
 		M.drowsyness += 2
-	else if(effective_dose < 2)
+	else if(dose < 2 * threshold)
 		M.Weaken(30)
 		M.eye_blurry = max(M.eye_blurry, 10)
 	else
 		M.sleeping = max(M.sleeping, 30)
 
-	if(effective_dose > 1)
+	if(dose > 1 * threshold)
 		M.adjustToxLoss(removed)
 
 /datum/reagent/chloralhydrate/beer2 //disguised as normal beer for use by emagged brobots
@@ -350,13 +359,10 @@
 	description = "An alcoholic beverage made from malted grains, hops, yeast, and water. The fermentation appears to be incomplete." //If the players manage to analyze this, they deserve to know something is wrong.
 	taste_description = "shitty piss water"
 	reagent_state = LIQUID
-	color = "#664300"
+	color = "#FFD300"
 
-	glass_icon_state = "beerglass"
-	glass_name = "glass of beer"
+	glass_name = "beer"
 	glass_desc = "A freezing pint of beer"
-	glass_center_of_mass = list("x"=16, "y"=8)
-
 /* Drugs */
 
 /datum/reagent/space_drugs
@@ -373,7 +379,12 @@
 /datum/reagent/space_drugs/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
 		return
-	M.druggy = max(M.druggy, 15)
+		
+	var/drug_strength = 15
+	if(alien == IS_SKRELL)
+		drug_strength = drug_strength * 0.8
+		
+	M.druggy = max(M.druggy, drug_strength)
 	if(prob(10) && isturf(M.loc) && !istype(M.loc, /turf/space) && M.canmove && !M.restrained())
 		step(M, pick(cardinal))
 	if(prob(7))
@@ -410,8 +421,11 @@
 /datum/reagent/cryptobiolin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
 		return
-	M.make_dizzy(4)
-	M.confused = max(M.confused, 20)
+	var/drug_strength = 4
+	if(alien == IS_SKRELL)
+		drug_strength = drug_strength * 0.8
+	M.make_dizzy(drug_strength)
+	M.confused = max(M.confused, drug_strength * 5)
 
 /datum/reagent/impedrezene
 	name = "Impedrezene"
@@ -446,7 +460,10 @@
 /datum/reagent/mindbreaker/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
 		return
-	M.hallucination = max(M.hallucination, 100)
+	if(alien == IS_SKRELL)
+		M.hallucination = max(M.hallucination, (100 * 0.8))
+	else
+		M.hallucination = max(M.hallucination, 100)
 
 /datum/reagent/psilocybin
 	name = "Psilocybin"
@@ -460,16 +477,19 @@
 /datum/reagent/psilocybin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
 		return
+		
+	var/threshold = 1
+	if(alien == IS_SKRELL)
+		threshold = 1.2
+		
 	M.druggy = max(M.druggy, 30)
 
-	var/effective_dose = dose
-	if(issmall(M)) effective_dose *= 2
-	if(effective_dose < 1)
+	if(dose < 1 * threshold)
 		M.apply_effect(3, STUTTER)
 		M.make_dizzy(5)
 		if(prob(5))
 			M.emote(pick("twitch", "giggle"))
-	else if(effective_dose < 2)
+	else if(dose < 2 * threshold)
 		M.apply_effect(3, STUTTER)
 		M.make_jittery(5)
 		M.make_dizzy(5)
@@ -483,18 +503,6 @@
 		M.druggy = max(M.druggy, 40)
 		if(prob(15))
 			M.emote(pick("twitch", "giggle"))
-
-/datum/reagent/nicotine
-	name = "Nicotine"
-	id = "nicotine"
-	description = "A highly addictive stimulant extracted from the tobacco plant."
-	taste_description = "bitterness"
-	reagent_state = LIQUID
-	color = "#181818"
-
-/datum/reagent/nicotine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	..()
-	M.add_chemical_effect(CE_PULSE, 1)
 
 /* Transformations */
 
@@ -534,9 +542,7 @@
 		if(istype(W, /obj/item/weapon/implant)) //TODO: Carn. give implants a dropped() or something
 			qdel(W)
 			continue
-		W.layer = initial(W.layer)
-		W.loc = M.loc
-		W.dropped(M)
+		M.drop_from_inventory(W)
 	var/mob/living/carbon/slime/new_mob = new /mob/living/carbon/slime(M.loc)
 	new_mob.a_intent = "hurt"
 	new_mob.universal_speak = 1

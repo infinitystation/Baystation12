@@ -87,7 +87,7 @@
 		var/f = 1
 		for(var/k in all_species)
 			var/datum/species/S = all_species[k]
-			if(S.virus_immune)
+			if(S.get_virus_immune())
 				continue
 			if(!f) H += " | "
 			else f = 0
@@ -172,7 +172,7 @@
 					antigens = list()
 			if("infectee")
 				var/list/candidates = list()
-				for(var/mob/living/carbon/G in living_mob_list)
+				for(var/mob/living/carbon/G in living_mob_list_)
 					if(G.stat != DEAD && G.species)
 						if(G.species.get_bodytype() in species)
 							candidates["[G.name][G.client ? "" : " (no client)"]"] = G

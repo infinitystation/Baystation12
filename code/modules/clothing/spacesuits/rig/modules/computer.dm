@@ -81,14 +81,14 @@
 	else
 		target_ai = locate(/mob/living/silicon/ai) in input_device.contents
 
-	var/obj/item/device/aicard/card = ai_card
+	var/obj/item/weapon/aicard/card = ai_card
 
 	// Downloading from/loading to a terminal.
-	if(istype(input_device,/obj/machinery/computer/aifixer) || istype(input_device,/mob/living/silicon/ai) || istype(input_device,/obj/structure/AIcore/deactivated))
+	if(istype(input_device,/mob/living/silicon/ai) || istype(input_device,/obj/structure/AIcore/deactivated))
 
 		// If we're stealing an AI, make sure we have a card for it.
 		if(!card)
-			card = new /obj/item/device/aicard(src)
+			card = new /obj/item/weapon/aicard(src)
 
 		// Terminal interaction only works with an intellicarded AI.
 		if(!istype(card))
@@ -106,7 +106,7 @@
 		update_verb_holder()
 		return 1
 
-	if(istype(input_device,/obj/item/device/aicard))
+	if(istype(input_device,/obj/item/weapon/aicard))
 		// We are carding the AI in our suit.
 		if(integrated_ai)
 			integrated_ai.attackby(input_device,user)
@@ -144,7 +144,7 @@
 
 	if(!target)
 		if(ai_card)
-			if(istype(ai_card,/obj/item/device/aicard))
+			if(istype(ai_card,/obj/item/weapon/aicard))
 				ai_card.ui_interact(H, state = deep_inventory_state)
 			else
 				eject_ai(H)
@@ -163,7 +163,7 @@
 /obj/item/rig_module/ai_container/proc/eject_ai(var/mob/user)
 
 	if(ai_card)
-		if(istype(ai_card, /obj/item/device/aicard))
+		if(istype(ai_card, /obj/item/weapon/aicard))
 			if(integrated_ai && !integrated_ai.stat)
 				if(user)
 					user << "<span class='danger'>You cannot eject your currently stored AI. Purge it manually.</span>"
@@ -193,13 +193,13 @@
 
 		if(ai_mob.key && ai_mob.client)
 
-			if(istype(ai, /obj/item/device/aicard))
+			if(istype(ai, /obj/item/weapon/aicard))
 
 				if(!ai_card)
-					ai_card = new /obj/item/device/aicard(src)
+					ai_card = new /obj/item/weapon/aicard(src)
 
-				var/obj/item/device/aicard/source_card = ai
-				var/obj/item/device/aicard/target_card = ai_card
+				var/obj/item/weapon/aicard/source_card = ai
+				var/obj/item/weapon/aicard/target_card = ai_card
 				if(istype(source_card) && istype(target_card))
 					if(target_card.grab_ai(ai_mob, user))
 						source_card.clear()
@@ -211,8 +211,8 @@
 				user.drop_from_inventory(ai)
 				ai.forceMove(src)
 				ai_card = ai
-				ai_mob << "<font color='blue'>You have been transferred to \the [holder]'s [src].</font>"
-				user << "<font color='blue'>You load [ai_mob] into \the [holder]'s [src].</font>"
+				ai_mob << "<span class='notice'>You have been transferred to \the [holder]'s [src.name].</span>"
+				user << "<span class='notice'>You load \the [ai_mob] into \the [holder]'s [src.name].</span>"
 
 			integrated_ai = ai_mob
 
@@ -324,6 +324,7 @@
 	icon_state = "ewar"
 	toggleable = 1
 	usable = 0
+	active_power_cost = 100
 
 	activate_string = "Enable Countermeasures"
 	deactivate_string = "Disable Countermeasures"
@@ -366,6 +367,7 @@
 	var/atom/interfaced_with // Currently draining power from this device.
 	var/total_power_drained = 0
 	var/drain_loc
+	var/max_draining_rate = 120 KILOWATTS // The same as unupgraded cyborg recharger.
 
 /obj/item/rig_module/power_sink/deactivate()
 
@@ -449,9 +451,7 @@
 		drain_complete(H)
 		return
 
-	// Attempts to drain up to 40kW, determines this value from remaining cell capacity to ensure we don't drain too much..
-	var/to_drain = min(40000, ((holder.cell.maxcharge - holder.cell.charge) / CELLRATE))
-	var/target_drained = interfaced_with.drain_power(0,0,to_drain)
+	var/target_drained = interfaced_with.drain_power(0,0,max_draining_rate)
 	if(target_drained <= 0)
 		H << "<span class = 'danger'>Your power sink flashes a red light; there is no power left in [interfaced_with].</span>"
 		drain_complete(H)
@@ -460,14 +460,14 @@
 	holder.cell.give(target_drained * CELLRATE)
 	total_power_drained += target_drained
 
-	return 1
+	return
 
 /obj/item/rig_module/power_sink/proc/drain_complete(var/mob/living/M)
 
 	if(!interfaced_with)
-		if(M) M << "<font color='blue'><b>Total power drained:</b> [round(total_power_drained/1000)]kJ.</font>"
+		if(M) M << "<font color='blue'><b>Total power drained:</b> [round(total_power_drained*CELLRATE)] Wh.</font>"
 	else
-		if(M) M << "<font color='blue'><b>Total power drained from [interfaced_with]:</b> [round(total_power_drained/1000)]kJ.</font>"
+		if(M) M << "<font color='blue'><b>Total power drained from [interfaced_with]:</b> [round(total_power_drained*CELLRATE)] Wh.</font>"
 		interfaced_with.drain_power(0,1,0) // Damage the victim.
 
 	drain_loc = null

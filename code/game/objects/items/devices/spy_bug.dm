@@ -4,7 +4,8 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "eshield0"
 	item_state = "nothing"
-	layer = TURF_LAYER+0.2
+	plane = OBJ_PLANE
+	layer = BELOW_TABLE_LAYER
 
 	flags = CONDUCT
 	force = 5.0
@@ -23,6 +24,11 @@
 	..()
 	radio = new(src)
 	camera = new(src)
+	listening_objects += src
+
+/obj/item/device/spy_bug/Destroy()
+	listening_objects -= src
+	return ..()
 
 /obj/item/device/spy_bug/examine(mob/user)
 	. = ..(user, 0)
@@ -62,6 +68,11 @@
 
 /obj/item/device/spy_monitor/New()
 	radio = new(src)
+	listening_objects += src
+
+/obj/item/device/spy_monitor/Destroy()
+	listening_objects -= src
+	return ..()
 
 /obj/item/device/spy_monitor/examine(mob/user)
 	. = ..(user, 1)

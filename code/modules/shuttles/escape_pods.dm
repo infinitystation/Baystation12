@@ -1,16 +1,30 @@
+var/list/escape_pods = list()
+var/list/escape_pods_by_name = list()
+
 /datum/shuttle/ferry/escape_pod
 	var/datum/computer/file/embedded_program/docking/simple/escape_pod/arming_controller
+	category = /datum/shuttle/ferry/escape_pod
+	move_time = 100
+
+/datum/shuttle/ferry/escape_pod/New()
+	if(name in escape_pods_by_name)
+		CRASH("An escape pod with the name '[name]' has already been defined.")
+	move_time = evacuation_controller.evac_transit_delay + rand(-30, 60)
+	escape_pods_by_name[name] = src
+	escape_pods += src
+	move_time = round(evacuation_controller.evac_transit_delay/10)
+	..()
 
 /datum/shuttle/ferry/escape_pod/init_docking_controllers()
 	..()
 	arming_controller = locate(dock_target_station)
 	if(!istype(arming_controller))
-		world << "<span class='danger'>warning: escape pod with station dock tag [dock_target_station] could not find it's dock target!</span>"
-	
+		warning("Escape pod with station dock tag [dock_target_station] could not find it's dock target!")
+
 	if(docking_controller)
 		var/obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod/controller_master = docking_controller.master
 		if(!istype(controller_master))
-			world << "<span class='danger'>warning: escape pod with docking tag [docking_controller_tag] could not find it's controller master!</span>"
+			warning("Escape pod with docking tag [docking_controller_tag] could not find it's controller master!")
 		else
 			controller_master.pod = src
 
@@ -29,7 +43,7 @@
 /datum/shuttle/ferry/escape_pod/can_cancel()
 	return 0
 
-	
+
 //This controller goes on the escape pod itself
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod
 	name = "escape pod controller"
@@ -43,7 +57,7 @@
 		"override_enabled" = docking_program.override_enabled,
 		"door_state" = 	docking_program.memory["door_status"]["state"],
 		"door_lock" = 	docking_program.memory["door_status"]["lock"],
-		"can_force" = pod.can_force() || (emergency_shuttle.departed && pod.can_launch()),	//allow players to manually launch ahead of time if the shuttle leaves
+		"can_force" = pod.can_force() || (evacuation_controller.has_evacuated() && pod.can_launch()),	//allow players to manually launch ahead of time if the shuttle leaves
 		"is_armed" = pod.arming_controller.armed,
 	)
 
@@ -58,13 +72,13 @@
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod/Topic(href, href_list)
 	if(..())
 		return 1
-	
+
 	if("manual_arm")
 		pod.arming_controller.arm()
 	if("force_launch")
 		if (pod.can_force())
 			pod.force_launch(src)
-		else if (emergency_shuttle.departed && pod.can_launch())	//allow players to manually launch ahead of time if the shuttle leaves
+		else if (evacuation_controller.has_evacuated() && pod.can_launch())	//allow players to manually launch ahead of time if the shuttle leaves
 			pod.launch(src)
 
 	return 0
@@ -87,7 +101,7 @@
 	if (istype(docking_program, /datum/computer/file/embedded_program/docking/simple/escape_pod))
 		var/datum/computer/file/embedded_program/docking/simple/escape_pod/P = docking_program
 		armed = P.armed
-	
+
 	data = list(
 		"docking_status" = docking_program.get_docking_status(),
 		"override_enabled" = docking_program.override_enabled,

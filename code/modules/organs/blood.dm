@@ -19,7 +19,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 	vessel = new/datum/reagents(species.blood_volume)
 	vessel.my_atom = src
 
-	if(species && species.flags & NO_BLOOD) //We want the var for safety but we can do without the actual blood.
+	if(!should_have_organ(BP_HEART)) //We want the var for safety but we can do without the actual blood.
 		return
 
 	vessel.add_reagent("blood",species.blood_volume)
@@ -30,7 +30,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 /mob/living/carbon/human/proc/fixblood()
 	for(var/datum/reagent/blood/B in vessel.reagent_list)
 		if(B.id == "blood")
-			B.data = list(	"donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= species.blood_color,"blood_type"=dna.b_type,	\
+			B.data = list(	"donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= species.get_blood_colour(src),"blood_type"=dna.b_type,	\
 							"resistances"=null,"trace_chem"=null, "virus2" = null, "antibodies" = list())
 			B.color = B.data["blood_colour"]
 
@@ -39,36 +39,47 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 	if(in_stasis)
 		return
 
-	if(!species.has_organ["heart"])
+	if(!should_have_organ(BP_HEART))
 		return
 
-	var/obj/item/organ/heart/H = internal_organs_by_name["heart"]
-	if(!H)	//not having a heart is bad for health
-		setOxyLoss(max(getOxyLoss(),60))
+	var/obj/item/organ/internal/heart/heart = internal_organs_by_name["heart"]
+	if(!heart)	//not having a heart is bad for health
+		setOxyLoss(max(getOxyLoss(), maxHealth))
 		adjustOxyLoss(10)
 
 	//Bleeding out
 	var/blood_max = 0
 	for(var/obj/item/organ/external/temp in organs)
-		if(!(temp.status & ORGAN_BLEEDING) || (temp.status & ORGAN_ROBOT))
+		if(!(temp.status & ORGAN_BLEEDING) || (temp.robotic >= ORGAN_ROBOT))
 			continue
-		for(var/datum/wound/W in temp.wounds) if(W.bleeding())
-			blood_max += W.damage / 40
+		for(var/datum/wound/W in temp.wounds)
+			if(W.bleeding())
+				if(temp.applied_pressure)
+					if(ishuman(temp.applied_pressure))
+						var/mob/living/carbon/human/H = temp.applied_pressure
+						H.bloody_hands(src, 0)
+					//somehow you can apply pressure to every wound on the organ at the same time
+					//you're basically forced to do nothing at all, so let's make it pretty effective
+					var/min_eff_damage = max(0, W.damage - 10) / 6 //still want a little bit to drip out, for effect
+					blood_max += max(min_eff_damage, W.damage - 30) / 40
+				else
+					blood_max += W.damage / 40
+
 		if (temp.open)
 			blood_max += 2  //Yer stomach is cut open
 	drip(blood_max)
 
 //Makes a blood drop, leaking amt units of blood from the mob
-/mob/living/carbon/human/proc/drip(var/amt as num)
+/mob/living/carbon/human/proc/drip(var/amt)
+	if(remove_blood(amt))
+		blood_splatter(src,src)
 
-	if(species && species.flags & NO_BLOOD) //TODO: Make drips come from the reagents instead.
-		return
-
+/mob/living/carbon/human/proc/remove_blood(var/amt)
+	if(!should_have_organ(BP_HEART)) //TODO: Make drips come from the reagents instead.
+		return 0
 	if(!amt)
-		return
-
-	vessel.remove_reagent("blood",amt)
-	blood_splatter(src,src)
+		return 0
+	return vessel.remove_reagent("blood", amt * (src.mob_size/MOB_MEDIUM))
 
 /****************************************************
 				BLOOD TRANSFERS
@@ -94,7 +105,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 	// Putting this here due to return shenanigans.
 	if(istype(src,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = src
-		B.data["blood_colour"] = H.species.blood_color
+		B.data["blood_colour"] = H.species.get_blood_colour(H)
 		B.color = B.data["blood_colour"]
 
 	var/list/temp_chem = list()
@@ -107,7 +118,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 //For humans, blood does not appear from blue, it comes from vessels.
 /mob/living/carbon/human/take_blood(obj/item/weapon/reagent_containers/container, var/amount)
 
-	if(species && species.flags & NO_BLOOD)
+	if(!should_have_organ(BP_HEART))
 		return null
 
 	if(vessel.get_reagent_amount("blood") < amount)
@@ -135,7 +146,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 40
 //Transfers blood from reagents to vessel, respecting blood types compatability.
 /mob/living/carbon/human/inject_blood(var/datum/reagent/blood/injected, var/amount)
 
-	if(species.flags & NO_BLOOD)
+	if(!should_have_organ(BP_HEART))
 		reagents.add_reagent("blood", amount, injected.data)
 		reagents.update_total()
 		return

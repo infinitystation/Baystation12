@@ -4,13 +4,14 @@
 	singular_name = "metal rod"
 	icon_state = "rods"
 	flags = CONDUCT
-	w_class = 3.0
+	w_class = 4
 	force = 9.0
 	throwforce = 15.0
 	throw_speed = 5
 	throw_range = 20
 	matter = list(DEFAULT_WALL_MATERIAL = 1875)
-	max_amount = 60
+	max_amount = 100
+	center_of_mass = null
 	attack_verb = list("hit", "bludgeoned", "whacked")
 	lock_picking_level = 3
 
@@ -23,8 +24,11 @@
 	charge_costs = list(500)
 	stacktype = /obj/item/stack/rods
 
-/obj/item/stack/rods/attackby(obj/item/W as obj, mob/user as mob)
+/obj/item/stack/rods/New()
 	..()
+	update_icon()
+
+/obj/item/stack/rods/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/weldingtool))
 		var/obj/item/weapon/weldingtool/WT = W
 
@@ -44,6 +48,17 @@
 			if (!R && replace)
 				user.put_in_hands(new_item)
 		return
+
+	if (istype(W, /obj/item/weapon/tape_roll))
+		var/obj/item/stack/medical/splint/ghetto/new_splint = new(user.loc)
+		new_splint.dropInto(loc)
+		new_splint.add_fingerprint(user)
+
+		user.visible_message("<span class='notice'>\The [user] constructs \a [new_splint] out of a [singular_name].</span>", \
+				"<span class='notice'>You use make \a [new_splint] out of a [singular_name].</span>")
+		src.use(1)
+		return
+
 	..()
 
 
@@ -78,3 +93,19 @@
 		F.add_fingerprint(usr)
 		use(2)
 	return
+
+/obj/item/stack/rods/update_icon()
+	if(amount == 1)
+		icon = 'icons/obj/weapons.dmi'
+		icon_state = "metal-rod"
+	else
+		icon = initial(icon)
+		icon_state = initial(icon_state)
+
+/obj/item/stack/rods/use()
+	. = ..()
+	update_icon()
+
+/obj/item/stack/rods/add()
+	. = ..()
+	update_icon()

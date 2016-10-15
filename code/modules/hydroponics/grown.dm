@@ -4,6 +4,7 @@
 	name = "fruit"
 	icon = 'icons/obj/hydroponics_products.dmi'
 	icon_state = "blank"
+	randpixel = 5
 	desc = "Nutritious! Probably."
 	slot_flags = SLOT_HOLSTER
 
@@ -16,8 +17,6 @@
 	..()
 	if(!dried_type)
 		dried_type = type
-	src.pixel_x = rand(-5.0, 5)
-	src.pixel_y = rand(-5.0, 5)
 
 	// Fill the object up with the appropriate reagents.
 	if(planttype)
@@ -322,8 +321,9 @@
 		if(!reagents || reagents.total_volume <= 0)
 			return
 		reagents.remove_any(rand(1,3)) //Todo, make it actually remove the reagents the seed uses.
-		seed.do_thorns(H,src)
-		seed.do_sting(H,src,pick("r_hand","l_hand"))
+		var/affected = pick(BP_R_HAND,BP_L_HAND)
+		seed.do_thorns(H,src,affected)
+		seed.do_sting(H,src,affected)
 
 // Predefined types for placing on the map.
 

@@ -14,9 +14,12 @@
 	item_state = copy.item_state
 	body_parts_covered = copy.body_parts_covered
 
-	item_icons = copy.item_icons.Copy()
-	item_state_slots = copy.item_state_slots.Copy()
-	sprite_sheets = copy.sprite_sheets.Copy()
+	if(copy.item_icons)
+		item_icons = copy.item_icons.Copy()
+	if(copy.item_state_slots)
+		item_state_slots = copy.item_state_slots.Copy()
+	if(copy.sprite_sheets)
+		sprite_sheets = copy.sprite_sheets.Copy()
 	//copying sprite_sheets_obj should be unnecessary as chameleon items are not refittable.
 
 	return copy //for inheritance
@@ -261,7 +264,7 @@
 
 /obj/item/clothing/mask/chameleon
 	name = "gas mask"
-	icon_state = "gas_alt"
+	icon_state = "fullgas"
 	item_state = "gas_alt"
 	desc = "It looks like a plain gask mask, but on closer inspection, it seems to have a small dial inside."
 	origin_tech = list(TECH_ILLEGAL = 3)
@@ -336,7 +339,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 8)
 	matter = list()
 
-	fire_sound = 'sound/weapons/Gunshot.ogg'
+	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
 	projectile_type = /obj/item/projectile/chameleon
 	charge_meter = 0
 	charge_cost = 20 //uses next to no power, since it's just holograms

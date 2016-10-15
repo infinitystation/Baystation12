@@ -1,4 +1,6 @@
 /mob/living/carbon/human
+	plane = HUMAN_PLANE
+
 	//Hair colour and style
 	var/r_hair = 0
 	var/g_hair = 0
@@ -66,9 +68,6 @@
 
 	var/voice = ""	//Instead of new say code calling GetVoice() over and over and over, we're just going to ask this variable, which gets updated in Life()
 
-	var/speech_problem_flag = 0
-
-	var/miming = null //Toggle for the mime's abilities.
 	var/special_voice = "" // For changing our voice. Used by a symptom.
 
 	var/last_dam = -1	//Used for determining if we need to process all organs or just some or even none.
@@ -81,7 +80,9 @@
 
 	var/list/flavor_texts = list()
 	var/gunshot_residue
-	var/pulling_punches // Are you trying not to hurt your opponent?
+	var/pulling_punches    // Are you trying not to hurt your opponent?
+	var/full_prosthetic    // We are a robutt.
+	var/robolimb_count = 0 // Number of robot limbs.
 
 	mob_bump_flag = HUMAN
 	mob_push_flags = ~HEAVY
@@ -101,3 +102,4 @@
 	var/exploit_record = ""
 
 	var/stance_damage = 0 //Whether this mob's ability to stand has been affected
+	var/cloaked // If set, mob will only render its inhands, no other icons will be shown.

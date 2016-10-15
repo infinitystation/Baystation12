@@ -6,7 +6,7 @@
 	icon_state = "conveyor0"
 	name = "conveyor belt"
 	desc = "A conveyor belt."
-	layer = 2			// so they appear under stuff
+	layer = BELOW_OBJ_LAYER	// so they appear under stuff
 	anchored = 1
 	var/operating = 0	// 1 if running forward, -1 if backwards, 0 if off
 	var/operable = 1	// true if can operate (no broken segments in this belt run)
@@ -269,7 +269,7 @@
 	icon_state = "conveyor0"
 	name = "conveyor belt assembly"
 	desc = "A conveyor belt assembly."
-	w_class = 4
+	w_class = 5
 	var/id = "" //inherited by the belt
 
 /obj/item/conveyor_construct/attackby(obj/item/I, mob/user, params)
@@ -300,7 +300,7 @@
 	desc = "A conveyor control switch assembly."
 	icon = 'icons/obj/recycling.dmi'
 	icon_state = "switch-off"
-	w_class = 4
+	w_class = 5
 	var/id = "" //inherited by the switch
 
 /obj/item/conveyor_switch_construct/New()

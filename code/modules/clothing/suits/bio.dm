@@ -18,11 +18,11 @@
 	desc = "A suit that protects against biological contamination."
 	icon_state = "bio"
 	item_state = "bio_suit"
-	w_class = 4//bulky item
+	w_class = 5//bulky item
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
-	allowed = list(/obj/item/weapon/tank/emergency_oxygen,/obj/item/weapon/pen,/obj/item/device/flashlight/pen)
+	allowed = list(/obj/item/weapon/tank/emergency,/obj/item/weapon/pen,/obj/item/device/flashlight/pen,/obj/item/device/healthanalyzer,/obj/item/device/ano_scanner,/obj/item/clothing/head/bio_hood,/obj/item/clothing/mask/gas)
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 100, rad = 20)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
 	siemens_coefficient = 0.9
@@ -39,7 +39,7 @@
 /obj/item/clothing/suit/bio_suit/general
 	icon_state = "bio_general"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
+	flags_inv = HIDEJUMPSUIT|HIDETAIL
 
 //Virology biosuit, green stripe
 /obj/item/clothing/head/bio_hood/virology
@@ -48,7 +48,7 @@
 /obj/item/clothing/suit/bio_suit/virology
 	icon_state = "bio_virology"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
+	flags_inv = HIDEJUMPSUIT|HIDETAIL
 
 //Security biosuit, grey with red stripe across the chest
 /obj/item/clothing/head/bio_hood/security
@@ -57,7 +57,7 @@
 /obj/item/clothing/suit/bio_suit/security
 	icon_state = "bio_security"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
+	flags_inv = HIDEJUMPSUIT|HIDETAIL
 
 //Janitor's biosuit, grey with purple arms
 /obj/item/clothing/head/bio_hood/janitor
@@ -66,7 +66,7 @@
 /obj/item/clothing/suit/bio_suit/janitor
 	icon_state = "bio_janitor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
+	flags_inv = HIDEJUMPSUIT|HIDETAIL
 
 
 //Scientist's biosuit, white with a pink-ish hue
@@ -76,13 +76,13 @@
 /obj/item/clothing/suit/bio_suit/scientist
 	icon_state = "bio_scientist"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
+	flags_inv = HIDEJUMPSUIT|HIDETAIL
 
 //CMO's biosuit, blue stripe
 /obj/item/clothing/suit/bio_suit/cmo
 	icon_state = "bio_cmo"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
+	flags_inv = HIDEJUMPSUIT|HIDETAIL
 
 /obj/item/clothing/head/bio_hood/cmo
 	icon_state = "bio_cmo"

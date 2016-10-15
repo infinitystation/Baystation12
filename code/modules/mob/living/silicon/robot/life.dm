@@ -58,7 +58,7 @@
 		src.has_power = 1
 	else
 		if (src.has_power)
-			src << "\red You are now running on emergency backup power."
+			src << "<span class='warning'>You are now running on emergency backup power.</span>"
 		src.has_power = 0
 		if(lights_on) // Light is on but there is no power!
 			lights_on = 0
@@ -246,28 +246,18 @@
 //	if (src.oxygen) src.oxygen.icon_state = "oxy[src.oxygen_alert ? 1 : 0]"
 //	if (src.fire) src.fire.icon_state = "fire[src.fire_alert ? 1 : 0]"
 
-	client.screen.Remove(global_hud.blurry,global_hud.druggy,global_hud.vimpaired)
-
-	if ((src.blind && src.stat != 2))
-		if(src.blinded)
-			src.blind.layer = 18
-			blind.plane = 0
+	if(stat != DEAD)
+		if(blinded)
+			overlay_fullscreen("blind", /obj/screen/fullscreen/blind)
 		else
-			src.blind.layer = 0
-			blind.plane = -99
-			if (src.disabilities & NEARSIGHTED)
-				src.client.screen += global_hud.vimpaired
+			clear_fullscreen("blind")
+			set_fullscreen(disabilities & NEARSIGHTED, "impaired", /obj/screen/fullscreen/impaired, 1)
+			set_fullscreen(eye_blurry, "blurry", /obj/screen/fullscreen/blurry)
+			set_fullscreen(druggy, "high", /obj/screen/fullscreen/high)
 
-			if (src.eye_blurry)
-				src.client.screen += global_hud.blurry
-
-			if (src.druggy)
-				src.client.screen += global_hud.druggy
-
-	if (src.stat != 2)
-		if (src.machine)
-			if (src.machine.check_eye(src) < 0)
-				src.reset_view(null)
+		if (machine)
+			if (machine.check_eye(src) < 0)
+				reset_view(null)
 		else
 			if(client && !client.adminobs)
 				reset_view(null)
@@ -276,7 +266,7 @@
 
 /mob/living/silicon/robot/handle_vision()
 	..()
-	
+
 	if (src.stat == 2 || (XRAY in mutations) || (src.sight_mode & BORGXRAY))
 		src.sight |= SEE_TURFS
 		src.sight |= SEE_MOBS
@@ -306,7 +296,7 @@
 		src.see_in_dark = 8 			 // see_in_dark means you can FAINTLY see in the dark, humans have a range of 3 or so, tajaran have it at 8
 		src.see_invisible = SEE_INVISIBLE_LIVING // This is normal vision (25), setting it lower for normal vision means you don't "see" things like darkness since darkness
 							 // has a "invisible" value of 15
-	
+
 
 /mob/living/silicon/robot/proc/update_items()
 	if (src.client)

@@ -4,7 +4,7 @@
 	icon = 'icons/obj/closet.dmi'
 	icon_state = "closed"
 	density = 1
-	w_class = 5
+	w_class = 7
 	var/icon_closed = "closed"
 	var/icon_opened = "open"
 	var/opened = 0
@@ -21,8 +21,13 @@
 	var/store_items = 1
 	var/store_mobs = 1
 
+	var/list/will_contain
+
 /obj/structure/closet/initialize()
 	..()
+	if(will_contain)
+		create_objects_in_loc(src, will_contain)
+
 	if(!opened)		// if closed, any item at the crate's loc is put in the contents
 		var/obj/item/I
 		for(I in src.loc)
@@ -32,9 +37,9 @@
 /obj/structure/closet/examine(mob/user)
 	if(..(user, 1) && !opened)
 		var/content_size = 0
-		for(var/obj/item/I in src.contents)
-			if(!I.anchored)
-				content_size += content_size(I)
+		for(var/atom/movable/AM in src.contents)
+			if(!AM.anchored)
+				content_size += content_size(AM)
 		if(!content_size)
 			user << "It is empty."
 		else if(storage_capacity > content_size*4)
@@ -154,7 +159,7 @@
 		return M.mob_size
 	if(istype(AM, /obj/item))
 		var/obj/item/I = AM
-		return Ceiling(I.w_class / 2)
+		return (I.w_class / 2)
 	return 0
 
 /obj/structure/closet/proc/toggle(mob/user as mob)
@@ -192,11 +197,16 @@
 
 /obj/structure/closet/bullet_act(var/obj/item/projectile/Proj)
 	var/proj_damage = Proj.get_structure_damage()
-	if(!proj_damage)
-		return
+	if(proj_damage)
+		..()
+		damage(proj_damage)
 
-	..()
-	damage(proj_damage)
+	if(Proj.penetrating)
+		var/distance = get_dist(Proj.starting, get_turf(loc))
+		for(var/mob/living/L in contents)
+			Proj.attack_mob(L, distance)
+			if(!(--Proj.penetrating))
+				break
 
 	return
 
@@ -237,6 +247,9 @@
 		usr.drop_item()
 		if(W)
 			W.forceMove(src.loc)
+			W.pixel_x = 0
+			W.pixel_y = 0
+			W.pixel_z = 0
 	else if(istype(W, /obj/item/weapon/packageWrap))
 		return
 	else if(istype(W, /obj/item/weapon/weldingtool))
@@ -388,3 +401,6 @@
 	var/shake_dir = pick(-1, 1)
 	animate(src, transform=turn(matrix(), 8*shake_dir), pixel_x=init_px + 2*shake_dir, time=1)
 	animate(transform=null, pixel_x=init_px, time=6, easing=ELASTIC_EASING)
+
+/obj/structure/closet/onDropInto(var/atom/movable/AM)
+	return

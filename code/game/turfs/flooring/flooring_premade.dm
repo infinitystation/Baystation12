@@ -1,3 +1,10 @@
+// simulated/floor is currently plating by default, but there really should be an explicit plating type.
+/turf/simulated/floor/plating
+	name = "plating"
+	icon = 'icons/turf/flooring/plating.dmi'
+	icon_state = "plating"
+	plane = PLATING_PLANE
+
 /turf/simulated/floor/carpet
 	name = "carpet"
 	icon = 'icons/turf/flooring/carpet.dmi'
@@ -102,7 +109,7 @@
 
 /turf/simulated/floor/tiled/steel
 	name = "steel floor"
-	icon_state = "steel_dirty"
+	icon_state = "steel"
 	initial_flooring = /decl/flooring/tiling/steel
 
 /turf/simulated/floor/tiled/steel/airless

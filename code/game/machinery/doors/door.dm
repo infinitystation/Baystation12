@@ -9,9 +9,9 @@
 	anchored = 1
 	opacity = 1
 	density = 1
-	layer = DOOR_OPEN_LAYER
-	var/open_layer = DOOR_OPEN_LAYER
-	var/closed_layer = DOOR_CLOSED_LAYER
+	layer = CLOSED_DOOR_LAYER
+	var/open_layer = OPEN_DOOR_LAYER
+	var/closed_layer = CLOSED_DOOR_LAYER
 
 	var/visible = 1
 	var/p_open = 0
@@ -65,6 +65,7 @@
 			bound_height = width * world.icon_size
 
 	health = maxhealth
+	update_icon()
 
 	update_nearby_tiles(need_rebuild=1)
 	return
@@ -166,7 +167,7 @@
 			switch (Proj.damage_type)
 				if(BRUTE)
 					new /obj/item/stack/material/steel(src.loc, 2)
-					PoolOrNew(/obj/item/stack/rods, list(src.loc, 3))
+					new /obj/item/stack/rods(src.loc, 3)
 				if(BURN)
 					new /obj/effect/decal/cleanable/ash(src.loc) // Turn it to ashes!
 			qdel(src)

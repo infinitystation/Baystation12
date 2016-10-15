@@ -49,7 +49,7 @@
 #define MODE_MALFUNCTION "malf"
 #define MODE_TRAITOR "traitor"
 
-#define DEFAULT_TELECRYSTAL_AMOUNT 25
+#define DEFAULT_TELECRYSTAL_AMOUNT 100
 
 /////////////////
 ////WIZARD //////
@@ -88,3 +88,7 @@
 #define Sp_RECHARGE	"recharge"
 #define Sp_CHARGES	"charges"
 #define Sp_HOLDVAR	"holdervar"
+
+#define INITIALIZATION_NOW 1
+#define INITIALIZATION_COMPLETE 2
+#define INITIALIZATION_NOW_AND_COMPLETE (INITIALIZATION_NOW|INITIALIZATION_COMPLETE)

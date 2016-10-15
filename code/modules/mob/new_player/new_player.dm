@@ -5,6 +5,7 @@
 	var/spawning = 0//Referenced when you want to delete the new_player later on in the code.
 	var/totalPlayers = 0		 //Player counts for the Lobby tab
 	var/totalPlayersReady = 0
+	var/datum/browser/panel
 	universal_speak = 1
 
 	invisibility = 101
@@ -17,6 +18,7 @@
 
 /mob/new_player/New()
 	mob_list += src
+	verbs += /mob/proc/toggle_antag_pool
 
 /mob/new_player/verb/new_player_panel()
 	set src = usr
@@ -26,15 +28,15 @@
 		new_player_panel_prisoner()
 
 /mob/new_player/proc/new_player_panel_proc()
-	var/output = "<div align='center'><B>New Player Options</B>"
+	var/output = "<div align='center'>"
 	output +="<hr>"
 	output += "<p><a href='byond://?src=\ref[src];show_preferences=1'>Setup Character</A></p>"
 
 	if(!ticker || ticker.current_state <= GAME_STATE_PREGAME)
 		if(ready)
-			output += "<p>\[ <b>Ready</b> | <a href='byond://?src=\ref[src];ready=0'>Not Ready</a> \]</p>"
+			output += "<p>\[ <span class='linkOn'><b>Ready</b></span> | <a href='byond://?src=\ref[src];ready=0'>Not Ready</a> \]</p>"
 		else
-			output += "<p>\[ <a href='byond://?src=\ref[src];ready=1'>Ready</a> | <b>Not Ready</b> \]</p>"
+			output += "<p>\[ <a href='byond://?src=\ref[src];ready=1'>Ready</a> | <span class='linkOn'><b>Not Ready</b></span> \]</p>"
 
 	else
 		output += "<a href='byond://?src=\ref[src];manifest=1'>View the Crew Manifest</A><br><br>"
@@ -62,18 +64,22 @@
 
 	output += "</div>"
 
-	src << browse(output,"window=playersetup;size=210x280;can_close=0")
+	panel = new(src, "Welcome","Welcome", 210, 280, src)
+	panel.set_window_options("can_close=0")
+	panel.set_content(output)
+	panel.open()
 	return
 
 /mob/new_player/Stat()
 	. = ..()
 
 	if(statpanel("Lobby") && ticker)
-		if(ticker.hide_mode)
-			stat("Game Mode:", "Secret")
+		if(check_rights(R_INVESTIGATE, 0, src))
+			stat("Game Mode:", "[ticker.mode || master_mode][ticker.hide_mode ? " (Secret)" : ""]")
 		else
-			if(ticker.hide_mode == 0)
-				stat("Game Mode:", "[master_mode]") // Old setting for showing the game mode
+			stat("Game Mode:", PUBLIC_GAME_MODE)
+		var/extra_antags = list2params(additional_antag_types)
+		stat("Added Antagonists:", extra_antags ? extra_antags : "None")
 
 		if(ticker.current_state == GAME_STATE_PREGAME)
 			stat("Time To Start:", "[ticker.pregame_timeleft][round_progressing ? "" : " (DELAYED)"]")
@@ -101,7 +107,7 @@
 			ready = 0
 
 	if(href_list["refresh"])
-		src << browse(null, "window=playersetup") //closes the player setup window
+		panel.close()
 		if(!client.banprisoned)
 			new_player_panel_proc()
 		else
@@ -109,6 +115,9 @@
 
 	if(href_list["observe"])
 		if(client.banprisoned)
+			return
+		if(!(initialization_stage&INITIALIZATION_COMPLETE))
+			to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
 			return
 
 		if(!config.respawn_delay || alert(src,"Are you sure you wish to observe? You will have to wait [config.respawn_delay] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
@@ -123,15 +132,17 @@
 			var/obj/O = locate("landmark*Observer-Start")
 			if(istype(O))
 				src << "<span class='notice'>Now teleporting.</span>"
-				observer.loc = O.loc
+				observer.forceMove(O.loc)
 			else
 				src << "<span class='danger'>Could not locate an observer spawn point. Use the Teleport verb to jump to the station map.</span>"
 			observer.timeofdeath = world.time // Set the time of death so that the respawn timer works correctly.
 
 			announce_ghost_joinleave(src)
-			client.prefs.update_preview_icon()
-			observer.icon = client.prefs.preview_icon
-			observer.alpha = 127
+
+			var/mob/living/carbon/human/dummy/mannequin = new()
+			client.prefs.dress_preview_mob(mannequin)
+			observer.set_appearance(mannequin)
+			qdel(mannequin)
 
 			if(client.prefs.be_random_name)
 				client.prefs.real_name = random_name(client.prefs.gender)
@@ -152,20 +163,9 @@
 			return
 
 		if(!ticker || ticker.current_state != GAME_STATE_PLAYING)
-			usr << "\red The round is either not ready, or has already finished..."
+			usr << "<span class='warning'>The round is either not ready, or has already finished...</span>"
 			return
-
-		if(!check_rights(R_ADMIN, 0))
-			var/datum/species/S = all_species[client.prefs.species]
-			if((S.spawn_flags & IS_WHITELISTED) && !is_alien_whitelisted(src, client.prefs.species) && config.usealienwhitelist)
-				src << alert("You are currently not whitelisted to play [client.prefs.species].")
-				return 0
-
-			if(!(S.spawn_flags & CAN_JOIN))
-				src << alert("Your current species, [client.prefs.species], is not available for play on the station.")
-				return 0
-
-		LateChoices()
+		LateChoices() //show the latejoin job selection menu
 
 	if(href_list["manifest"])
 		if(client.banprisoned)
@@ -184,12 +184,7 @@
 			return
 
 		var/datum/species/S = all_species[client.prefs.species]
-		if((S.spawn_flags & IS_WHITELISTED) && !is_alien_whitelisted(src, client.prefs.species) && config.usealienwhitelist)
-			src << alert("You are currently not whitelisted to play [client.prefs.species].")
-			return 0
-
-		if(!(S.spawn_flags & CAN_JOIN))
-			src << alert("Your current species, [client.prefs.species], is not available for play on the station.")
+		if(!check_species_allowed(S))
 			return 0
 
 		AttemptLateSpawn(href_list["SelectedJob"],client.prefs.spawnpoint)
@@ -307,14 +302,6 @@
 	if(!job.player_old_enough(src.client))	return 0
 	return 1
 
-/mob/new_player/proc/IsSpawnSafe(var/turf/T)
-	if(istype(T, /turf/space)) // Space tiles
-		return "Spawn location is open to space."
-	var/datum/gas_mixture/air = T.return_air()
-	if(!air)
-		return "Spawn location lacks atmosphere."
-	return is_safe_atmosphere(air, 1)
-
 /mob/new_player/proc/AttemptLateSpawn(rank,var/spawning_at)
 	if(src != usr)
 		return 0
@@ -330,8 +317,10 @@
 	if(client && client.banprisoned)
 		return
 
-	var/turf/T = job_master.LateSpawn(client, rank, 1)
-	var/airstatus = IsSpawnSafe(T)
+
+	var/datum/spawnpoint/spawnpoint = job_master.get_spawnpoint_for(client, rank)
+	var/turf/spawn_turf = pick(spawnpoint.turfs)
+	var/airstatus = IsTurfAtmosUnsafe(spawn_turf)
 	if(airstatus)
 		var/reply = alert(usr, "Warning. Your selected spawn location seems to have unfavorable atmospheric conditions. \
 		You may die shortly after spawning. It is possible to select different spawn point via character preferences. \
@@ -347,12 +336,12 @@
 			src << alert("[rank] is not available. Please try another.")
 			return 0
 
-	spawning = 1
-	close_spawn_windows()
-
 	job_master.AssignRole(src, rank, 1)
 
 	var/mob/living/character = create_character()	//creates the human and transfers vars and mind
+	if(!character)
+		return 0
+
 	character = job_master.EquipRank(character, rank, 1)					//equips the human
 	UpdateFactionList(character)
 	equip_custom_items(character)
@@ -375,8 +364,8 @@
 		qdel(src)
 		return
 
-	//Find our spawning point.
-	var/join_message = job_master.LateSpawn(character.client, rank)
+	// Move them to the spawnpoint turf
+	character.forceMove(spawn_turf)
 
 	character.lastarea = get_area(loc)
 	// Moving wheelchair if they have one
@@ -385,16 +374,16 @@
 		character.buckled.set_dir(character.dir)
 
 	ticker.mode.handle_latejoin(character)
+	if(job_master.ShouldCreateRecords(rank))
+		if(character.mind.assigned_role != "Cyborg")
+			data_core.manifest_inject(character)
+			ticker.minds += character.mind//Cyborgs and AIs handle this in the transform proc.	//TODO!!!!! ~Carn
 
-	if(character.mind.assigned_role != "Cyborg")
-		data_core.manifest_inject(character)
-		ticker.minds += character.mind//Cyborgs and AIs handle this in the transform proc.	//TODO!!!!! ~Carn
+			//Grab some data from the character prefs for use in random news procs.
 
-		//Grab some data from the character prefs for use in random news procs.
-
-		AnnounceArrival(character, rank, join_message)
-	else
-		AnnounceCyborg(character, rank, join_message)
+			AnnounceArrival(character, rank, spawnpoint.msg)
+		else
+			AnnounceCyborg(character, rank, spawnpoint.msg)
 
 	qdel(src)
 
@@ -412,14 +401,13 @@
 	dat += "<b>Welcome, [name].<br></b>"
 	dat += "Round Duration: [roundduration2text()]<br>"
 
-	if(emergency_shuttle) //In case Nanotrasen decides reposess CentComm's shuttles.
-		if(emergency_shuttle.going_to_centcom()) //Shuttle is going to centcomm, not recalled
-			dat += "<font color='red'><b>The station has been evacuated.</b></font><br>"
-		if(emergency_shuttle.online())
-			if (emergency_shuttle.evac)	// Emergency shuttle is past the point of no recall
-				dat += "<font color='red'>The station is currently undergoing evacuation procedures.</font><br>"
-			else						// Crew transfer initiated
-				dat += "<font color='red'>The station is currently undergoing crew transfer procedures.</font><br>"
+	if(evacuation_controller.has_evacuated())
+		dat += "<font color='red'><b>The station has been evacuated.</b></font><br>"
+	else if(evacuation_controller.is_evacuating())
+		if(evacuation_controller.emergency_evacuation) // Emergency shuttle is past the point of no recall
+			dat += "<font color='red'>The station is currently undergoing evacuation procedures.</font><br>"
+		else                                           // Crew transfer initiated
+			dat += "<font color='red'>The station is currently undergoing crew transfer procedures.</font><br>"
 
 	dat += "Choose from the following open/valid positions:<br>"
 	for(var/datum/job/job in job_master.occupations)
@@ -442,16 +430,15 @@
 
 	var/mob/living/carbon/human/new_character
 
-	var/use_species_name
 	var/datum/species/chosen_species
 	if(client.prefs.species)
 		chosen_species = all_species[client.prefs.species]
-		use_species_name = chosen_species.get_station_variant() //Only used by pariahs atm.
 
-	if(chosen_species && use_species_name)
-		// Have to recheck admin due to no usr at roundstart. Latejoins are fine though.
-		if(is_species_whitelisted(chosen_species) || has_admin_rights())
-			new_character = new(loc, use_species_name)
+	if(chosen_species)
+		if(!check_species_allowed(chosen_species))
+			spawning = 0 //abort
+			return null
+		new_character = new(loc, chosen_species.name)
 
 	if(!new_character)
 		new_character = new(loc)
@@ -461,14 +448,14 @@
 	for(var/lang in client.prefs.alternate_languages)
 		var/datum/language/chosen_language = all_languages[lang]
 		if(chosen_language)
-			if(!config.usealienwhitelist || !(chosen_language.flags & WHITELISTED) || is_alien_whitelisted(src, lang) || has_admin_rights() \
-				|| (new_character.species && (chosen_language.name in new_character.species.secondary_langs)))
+			var/is_species_lang = (chosen_language.name in new_character.species.secondary_langs)
+			if(is_species_lang || ((!(chosen_language.flags & RESTRICTED) || has_admin_rights()) && is_alien_whitelisted(src, chosen_language)))
 				new_character.add_language(lang)
 
 	if(ticker.random_players)
 		new_character.gender = pick(MALE, FEMALE)
 		client.prefs.real_name = random_name(new_character.gender)
-		client.prefs.randomize_appearance_for(new_character)
+		client.prefs.randomize_appearance_and_body_for(new_character)
 	else
 		client.prefs.copy_to(new_character)
 
@@ -488,49 +475,55 @@
 		new_character.dna.SetSEState(GLASSESBLOCK,1,0)
 		new_character.disabilities |= NEARSIGHTED
 
-	// And uncomment this, too.
-	//new_character.dna.UpdateSE()
+	// Give them their cortical stack if we're using them.
+	if(config && config.use_cortical_stacks && client && client.prefs.has_cortical_stack /*&& new_character.should_have_organ(BP_BRAIN)*/)
+		new_character.create_stack()
 
 	// Do the initial caching of the player's body icons.
 	new_character.force_update_limbs()
 	new_character.update_eyes()
 	new_character.regenerate_icons()
 	new_character.key = key		//Manually transfer the key to log them in
-
 	return new_character
 
 /mob/new_player/proc/ViewManifest()
-	var/dat = "<html><body>"
-	dat += "<h4>Show Crew Manifest</h4>"
+	var/dat = "<div align='center'>"
 	dat += data_core.get_manifest(OOC = 1)
-	src << browse(dat, "window=manifest;size=370x420;can_close=1")
+	//src << browse(dat, "window=manifest;size=370x420;can_close=1")
+	var/datum/browser/popup = new(src, "Crew Manifest", "Crew Manifest", 370, 420, src)
+	popup.set_content(dat)
+	popup.open()
 
 /mob/new_player/Move()
 	return 0
 
 /mob/new_player/proc/close_spawn_windows()
 	src << browse(null, "window=latechoices") //closes late choices window
-	src << browse(null, "window=playersetup") //closes the player setup window
+	panel.close()
 
 /mob/new_player/proc/has_admin_rights()
 	return check_rights(R_ADMIN, 0, src)
 
-/mob/new_player/proc/is_species_whitelisted(datum/species/S)
-	if(!S) return 1
-	return is_alien_whitelisted(src, S.name) || !config.usealienwhitelist || !(S.spawn_flags & IS_WHITELISTED)
+/mob/new_player/proc/check_species_allowed(datum/species/S, var/show_alert=1)
+	if(!(S.spawn_flags & CAN_JOIN) && !has_admin_rights())
+		if(show_alert)
+			src << alert("Your current species, [client.prefs.species], is not available for play on the station.")
+		return 0
+	if(!is_alien_whitelisted(src, S))
+		if(show_alert)
+			src << alert("You are currently not whitelisted to play [client.prefs.species].")
+		return 0
+	return 1
 
 /mob/new_player/get_species()
 	var/datum/species/chosen_species
 	if(client.prefs.species)
 		chosen_species = all_species[client.prefs.species]
 
-	if(!chosen_species)
+	if(!chosen_species || !check_species_allowed(chosen_species, 0))
 		return "Human"
 
-	if(is_species_whitelisted(chosen_species) || has_admin_rights())
-		return chosen_species.name
-
-	return "Human"
+	return chosen_species.name
 
 /mob/new_player/get_gender()
 	if(!client || !client.prefs) ..()
@@ -542,8 +535,14 @@
 /mob/new_player/hear_say(var/message, var/verb = "говорит", var/datum/language/language = null, var/alt_name = "",var/italics = 0, var/mob/speaker = null)
 	return
 
-/mob/new_player/hear_radio(var/message, var/verb="говорит", var/datum/language/language=null, var/part_a, var/part_b, var/mob/speaker = null, var/hard_to_hear = 0)
+/mob/new_player/hear_radio(var/message, var/verb="говорит", var/datum/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0)
+	return
+
+/mob/new_player/show_message(msg, type, alt, alt_type)
 	return
 
 mob/new_player/MayRespawn()
 	return 1
+
+/mob/new_player/touch_map_edge()
+	return

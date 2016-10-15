@@ -6,7 +6,8 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal
 	name = "floor decal"
 	icon = 'icons/turf/flooring/decals.dmi'
-	layer = TURF_LAYER + 0.01
+	plane = ABOVE_TURF_PLANE
+	layer = DECAL_LAYER
 	var/supplied_dir
 
 /obj/effect/floor_decal/New(var/newloc, var/newdir, var/newcolour)
@@ -18,10 +19,13 @@ var/list/floor_decals = list()
 	if(supplied_dir) set_dir(supplied_dir)
 	var/turf/T = get_turf(src)
 	if(istype(T, /turf/simulated/floor) || istype(T, /turf/unsimulated/floor))
-		var/cache_key = "[alpha]-[color]-[dir]-[icon_state]-[layer]"
+		var/cache_key = "[alpha]-[color]-[dir]-[icon_state]-[plane]-[layer]"
 		if(!floor_decals[cache_key])
 			var/image/I = image(icon = src.icon, icon_state = src.icon_state, dir = src.dir)
-			I.layer = T.layer
+			if(plane == PLATING_PLANE)
+				I.plating_decal_layerise()
+			else
+				I.turf_decal_layerise()
 			I.color = src.color
 			I.alpha = src.alpha
 			floor_decals[cache_key] = I
@@ -44,6 +48,7 @@ var/list/floor_decals = list()
 
 /obj/effect/floor_decal/corner
 	icon_state = "corner_white"
+	alpha = 229
 
 /obj/effect/floor_decal/corner/black
 	name = "black corner"
@@ -246,6 +251,7 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/industrial/hatch
 	name = "hatched marking"
 	icon_state = "delivery"
+	alpha = 229
 
 /obj/effect/floor_decal/industrial/hatch/yellow
 	color = "#CFCF55"
@@ -253,6 +259,7 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/industrial/outline
 	name = "white outline"
 	icon_state = "outline"
+	alpha = 229
 
 /obj/effect/floor_decal/industrial/outline/blue
 	name = "blue outline"
@@ -269,6 +276,7 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/industrial/loading
 	name = "loading area"
 	icon_state = "loadingarea"
+	alpha = 229
 
 /obj/effect/floor_decal/plaque
 	name = "plaque"
@@ -401,4 +409,8 @@ var/list/floor_decals = list()
 
 /obj/effect/floor_decal/solarpanel
 	icon_state = "solarpanel"
+
+/obj/effect/floor_decal/snow
+	icon = 'icons/turf/overlays.dmi'
+	icon_state = "snowfloor"
 

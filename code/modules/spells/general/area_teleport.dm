@@ -23,23 +23,20 @@
 	return
 
 /spell/area_teleport/choose_targets()
-	var/A = null
-
+	var/area/thearea
 	if(!randomise_selection)
-		A = input("Area to teleport to", "Teleport", A) in teleportlocs
+		thearea = input("Area to teleport to", "Teleport") as null|anything in teleportlocs
+		if(!thearea) return
 	else
-		A = pick(teleportlocs)
-
-	var/area/thearea = teleportlocs[A]
-
-	return list(thearea)
+		thearea = pick(teleportlocs)
+	return(teleportlocs[thearea])
 
 /spell/area_teleport/cast(area/thearea, mob/user)
 	if(!istype(thearea))
 		if(istype(thearea, /list))
 			thearea = thearea[1]
 	var/list/L = list()
-	for(var/turf/T in get_area_turfs(thearea.type))
+	for(var/turf/T in get_area_turfs(thearea))
 		if(!T.density)
 			var/clear = 1
 			for(var/obj/O in T)

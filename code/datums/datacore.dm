@@ -2,6 +2,11 @@
 	data_core = new /datum/datacore()
 	return 1
 
+/datum/data/record
+	var/name = "record"
+	var/size = 5
+	var/list/fields = list()
+
 /datum/datacore
 	var/name = "datacore"
 	var/medical[] = list()
@@ -25,11 +30,11 @@
 	var/dat = {"
 	<head><style>
 		.manifest {border-collapse:collapse;}
-		.manifest td, th {border:1px solid [monochrome?"black":"#DEF; background-color:white; color:black"]; padding:.25em}
-		.manifest th {height: 2em; [monochrome?"border-top-width: 3px":"background-color: #48C; color:white"]}
-		.manifest tr.head th { [monochrome?"border-top-width: 1px":"background-color: #488;"] }
+		.manifest td, th {border:1px solid [monochrome?"black":"[OOC?"black; background-color:#272727; color:white":"#DEF; background-color:white; color:black"]"]; padding:.25em}
+		.manifest th {height: 2em; [monochrome?"border-top-width: 3px":"background-color: [OOC?"#40628A":"#48C"]; color:white"]}
+		.manifest tr.head th { [monochrome?"border-top-width: 1px":"background-color: [OOC?"#013D3B;":"#488;"]"] }
 		.manifest td:first-child {text-align:right}
-		.manifest tr.alt td {[monochrome?"border-top-width: 2px":"background-color: #DEF"]}
+		.manifest tr.alt td {[monochrome?"border-top-width: 2px":"background-color: [OOC?"#373737; color:white":"#DEF"]"]}
 	</style></head>
 	<table class="manifest" width='350px'>
 	<tr class='head'><th>Name</th><th>Rank</th><th>Activity</th></tr>
@@ -173,7 +178,7 @@
 		foundrecord.fields["real_rank"] = real_title
 
 /datum/datacore/proc/manifest_inject(var/mob/living/carbon/human/H)
-	if(H.mind && !player_is_antag(H.mind, only_offstation_roles = 1))
+	if(H.mind && !player_is_antag(H.mind, only_offstation_roles = 1) && job_master.ShouldCreateRecords(H.mind.assigned_role))
 		var/assignment = GetAssignment(H)
 
 		var/id = generate_record_id()
@@ -271,7 +276,10 @@
 		if(!H.species || H.species.flags & HAS_SKIN_COLOR)
 			preview_icon.Blend(rgb(H.r_skin, H.g_skin, H.b_skin), ICON_ADD)
 
-	var/icon/eyes_s = new/icon("icon" = 'icons/mob/human_face.dmi', "icon_state" = H.species ? H.species.eyes : "eyes_s")
+	var/use_eye_icon = "eyes_s"
+	var/obj/item/organ/external/head/temp_head = H.get_organ(BP_HEAD)
+	if(temp_head) use_eye_icon = temp_head.eye_icon
+	var/icon/eyes_s = new/icon("icon" = 'icons/mob/human_face.dmi', "icon_state" = use_eye_icon)
 
 	if (H.species.flags & HAS_EYE_COLOR)
 		eyes_s.Blend(rgb(H.r_eyes, H.g_eyes, H.b_eyes), ICON_ADD)

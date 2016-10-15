@@ -3,6 +3,8 @@
 	desc = "An arcane weapon wielded by the followers of Nar-Sie."
 	icon_state = "cultblade"
 	item_state = "cultblade"
+	edge = 1
+	sharp = 1
 	w_class = 4
 	force = 30
 	throwforce = 10
@@ -16,7 +18,7 @@
 	if(iscultist(user))
 		return ..()
 
-	var/zone = (user.hand ? "l_arm":"r_arm")
+	var/zone = (user.hand ? BP_L_ARM : BP_R_ARM)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/obj/item/organ/external/affecting = H.get_organ(zone)
@@ -105,10 +107,8 @@
 /obj/item/clothing/suit/space/cult
 	name = "cult armour"
 	icon_state = "cult_armour"
-	item_state = "cult_armour"
 	desc = "A bulky suit of armour, bristling with spikes. It looks space proof."
-	w_class = 3
-	allowed = list(/obj/item/weapon/book/tome,/obj/item/weapon/melee/cultblade,/obj/item/weapon/tank/emergency_oxygen,/obj/item/device/suit_cooling_unit)
+	allowed = list(/obj/item/weapon/book/tome,/obj/item/weapon/melee/cultblade,/obj/item/weapon/tank/emergency,/obj/item/device/suit_cooling_unit)
 	armor = list(melee = 60, bullet = 50, laser = 30,energy = 15, bomb = 30, bio = 30, rad = 30)
 	siemens_coefficient = 0
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|HANDS

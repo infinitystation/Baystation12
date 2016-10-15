@@ -37,49 +37,6 @@
 #define  STATUS_HUD_OOC 9 // STATUS_HUD without virus DB check for someone being ill.
 #define 	  LIFE_HUD 10 // STATUS_HUD that only reports dead or alive
 
-//some colors
-#define COLOR_WHITE            "#ffffff"
-#define COLOR_SILVER           "#c0c0c0"
-#define COLOR_GRAY             "#808080"
-#define COLOR_BLACK            "#000000"
-#define COLOR_RED              "#ff0000"
-#define COLOR_RED_LIGHT        "#ff3333"
-#define COLOR_MAROON           "#800000"
-#define COLOR_YELLOW           "#ffff00"
-#define COLOR_OLIVE            "#808000"
-#define COLOR_LIME             "#00ff00"
-#define COLOR_GREEN            "#008000"
-#define COLOR_CYAN             "#00ffff"
-#define COLOR_TEAL             "#008080"
-#define COLOR_BLUE             "#0000ff"
-#define COLOR_BLUE_LIGHT       "#33ccff"
-#define COLOR_NAVY             "#000080"
-#define COLOR_PINK             "#ff00ff"
-#define COLOR_PURPLE           "#800080"
-#define COLOR_ORANGE           "#ff9900"
-#define COLOR_LUMINOL          "#66ffff"
-#define COLOR_BEIGE            "#ceb689"
-#define COLOR_BLUE_GRAY        "#6a97b0"
-#define COLOR_BROWN            "#b19664"
-#define COLOR_DARK_BROWN       "#917448"
-#define COLOR_DARK_ORANGE      "#b95a00"
-#define COLOR_GREEN_GRAY       "#8daf6a"
-#define COLOR_RED_GRAY         "#aa5f61"
-#define COLOR_PALE_BLUE_GRAY   "#8bbbd5"
-#define COLOR_PALE_GREEN_GRAY  "#aed18b"
-#define COLOR_PALE_RED_GRAY    "#cc9090"
-#define COLOR_PALE_PURPLE_GRAY "#bda2ba"
-#define COLOR_PURPLE_GRAY      "#a2819e"
-#define COLOR_SUN              "#ec8b2f"
-
-//	Shuttles.
-
-// These define the time taken for the shuttle to get to the space station, and the time before it leaves again.
-#define SHUTTLE_PREPTIME                300 // 5 minutes = 300 seconds - after this time, the shuttle departs centcom and cannot be recalled.
-#define SHUTTLE_LEAVETIME               180 // 3 minutes = 180 seconds - the duration for which the shuttle will wait at the station after arriving.
-#define SHUTTLE_TRANSIT_DURATION        300 // 5 minutes = 300 seconds - how long it takes for the shuttle to get to the station.
-#define SHUTTLE_TRANSIT_DURATION_RETURN 120 // 2 minutes = 120 seconds - for some reason it takes less time to come back, go figure.
-
 // Shuttle moving status.
 #define SHUTTLE_IDLE      0
 #define SHUTTLE_WARMUP    1
@@ -111,15 +68,6 @@
 
 //Area flags, possibly more to come
 #define RAD_SHIELDED 1 //shielded from radiation, clearly
-
-// Custom layer definitions, supplementing the default TURF_LAYER, MOB_LAYER, etc.
-#define DOOR_OPEN_LAYER 2.7		//Under all objects if opened. 2.7 due to tables being at 2.6
-#define DOOR_CLOSED_LAYER 3.1	//Above most items if closed
-#define LIGHTING_LAYER 11
-#define HUD_LAYER 20			//Above lighting, but below obfuscation. For in-game HUD effects (whereas SCREEN_LAYER is for abstract/OOC things like inventory slots)
-#define OBFUSCATION_LAYER 21	//Where images covering the view for eyes are put
-#define SCREEN_LAYER 22			//Mob HUD/effects layer
-#define CINEMA_LAYER 23			//Cinematic, fullscreen effects
 
 // Convoluted setup so defines can be supplied by Bay12 main server compile script.
 // Should still work fine for people jamming the icons into their repo.
@@ -165,6 +113,7 @@
 #define NTNETSPEED_LOWSIGNAL 0.1	// GQ/s transfer speed when the device is wirelessly connected and on Low signal
 #define NTNETSPEED_HIGHSIGNAL 0.5	// GQ/s transfer speed when the device is wirelessly connected and on High signal
 #define NTNETSPEED_ETHERNET 1		// GQ/s transfer speed when the device is using wired connection
+#define NTNETSPEED_DOS_AMPLIFICATION 5	// Multiplier for Denial of Service program. Resulting load on NTNet relay is this multiplied by NTNETSPEED of the device
 
 // Program bitflags
 #define PROGRAM_ALL 7
@@ -198,3 +147,30 @@
 #define CONFIG_OBJECTIVE_NONE 2
 #define CONFIG_OBJECTIVE_VERB 1
 #define CONFIG_OBJECTIVE_ALL  0
+
+// How many times an AI tries to connect to APC before switching to low power mode.
+#define AI_POWER_RESTORE_MAX_ATTEMPTS 3
+
+// AI power restoration routine steps.
+#define AI_RESTOREPOWER_FAILED -1
+#define AI_RESTOREPOWER_IDLE 0
+#define AI_RESTOREPOWER_STARTING 1
+#define AI_RESTOREPOWER_DIAGNOSTICS 2
+#define AI_RESTOREPOWER_CONNECTING 3
+#define AI_RESTOREPOWER_CONNECTED 4
+#define AI_RESTOREPOWER_COMPLETED 5
+
+
+// Values represented as Oxyloss. Can be tweaked, but make sure to use integers only.
+#define AI_POWERUSAGE_LOWPOWER 1
+#define AI_POWERUSAGE_RESTORATION 2
+#define AI_POWERUSAGE_NORMAL 5
+#define AI_POWERUSAGE_RECHARGING 7
+
+// Above values get multiplied by this when converting AI oxyloss -> watts.
+// For now, one oxyloss point equals 10kJ of energy, so normal AI uses 5 oxyloss per tick (50kW or 70kW if charging)
+#define AI_POWERUSAGE_OXYLOSS_TO_WATTS_MULTIPLIER 10000
+
+//Grid for Item Placement
+#define CELLS 8								//Amount of cells per row/column in grid
+#define CELLSIZE (world.icon_size/CELLS)	//Size of a cell in pixels

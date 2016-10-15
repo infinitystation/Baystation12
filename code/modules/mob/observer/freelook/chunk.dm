@@ -22,7 +22,8 @@
 /datum/obfuscation/proc/get_obfuscation(var/turf/T)
 	var/image/obfuscation = obfuscation_images[T]
 	if(!obfuscation)
-		obfuscation = image(icon, T, icon_state, OBFUSCATION_LAYER)
+		obfuscation = image(icon, T, icon_state)
+		obfuscation.plane = OBSCURITY_PLANE
 		if(!obfuscation_underlay)
 			// Creating a new icon of a fairly common icon state, adding some random color to prevent address searching, and hoping being static kills memory locality
 			var/turf/floor = /turf/simulated/floor/tiled
@@ -86,14 +87,18 @@
 			continue
 		add_source(A)
 
-// The visualnet checks if a source already exists or not, as appropriate, before calling add/remove_source on the chunk
 /datum/chunk/proc/add_source(var/atom/source)
+	if(source in sources)
+		return FALSE
 	sources += source
 	visibility_changed()
+	return TRUE
 
 /datum/chunk/proc/remove_source(var/atom/source)
-	sources -= source
-	visibility_changed()
+	if(sources.Remove(source))
+		visibility_changed()
+		return TRUE
+	return FALSE
 
 // The visual net is responsible for adding/removing eyes.
 /datum/chunk/proc/add_eye(mob/observer/eye/eye)

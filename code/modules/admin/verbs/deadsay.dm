@@ -15,8 +15,6 @@
 		src << "<span class='warning'>You have deadchat muted.</span>"
 		return
 
-	if (src.handle_spam_prevention(msg,MUTE_DEADCHAT))
-		return
 
 	var/stafftype = uppertext(holder.rank)
 
@@ -26,6 +24,6 @@
 	if (!msg)
 		return
 
-	say_dead_direct("<span class='name'>[stafftype]([src.holder.fakekey ? src.holder.fakekey : src.key])</span> says, <span class='message'>\"[msg]\"</span>")
+	say_dead_direct("<span class='name'>[stafftype]([src.key])</span> says, <span class='message'>\"[msg]\"</span>")
 
 	feedback_add_details("admin_verb","D") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

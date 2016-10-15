@@ -25,7 +25,7 @@ meteor_act
 			return 100
 
 	//Shrapnel
-	if(P.can_embed())
+	if(!(species.flags & NO_EMBED) && P.can_embed())
 		var/armor = getarmor_organ(organ, "bullet")
 		if(prob(20 + max(P.damage - armor, -10)))
 			var/obj/item/weapon/material/shard/shrapnel/SP = new()
@@ -34,7 +34,11 @@ meteor_act
 			SP.loc = organ
 			organ.embed(SP)
 
-	return (..(P , def_zone))
+	var/blocked = ..(P , def_zone)
+
+	projectile_hit_bloody(P, P.damage*blocked_mult(blocked), def_zone)
+
+	return blocked
 
 /mob/living/carbon/human/stun_effect_act(var/stun_amount, var/agony_amount, var/def_zone)
 	var/obj/item/organ/external/affected = get_organ(check_zone(def_zone))
@@ -43,11 +47,11 @@ meteor_act
 	agony_amount *= siemens_coeff
 
 	switch (def_zone)
-		if("head")
+		if(BP_HEAD)
 			agony_amount *= 1.50
-		if("l_hand", "r_hand")
+		if(BP_L_HAND, BP_R_HAND)
 			var/c_hand
-			if (def_zone == "l_hand")
+			if (def_zone == BP_L_HAND)
 				c_hand = l_hand
 			else
 				c_hand = r_hand
@@ -56,11 +60,11 @@ meteor_act
 				msg_admin_attack("[src.name] ([src.ckey]) was disarmed by a stun effect")
 
 				drop_from_inventory(c_hand)
-				if (affected.status & ORGAN_ROBOT)
+				if (affected.robotic >= ORGAN_ROBOT)
 					emote("me", 1, "drops what they were holding, their [affected.name] malfunctioning!")
 				else
 					var/emote_scream = pick("screams in pain and ", "lets out a sharp cry and ", "cries out and ")
-					emote("me", 1, "[(species && species.flags & NO_PAIN) ? "" : emote_scream ]drops what they were holding in their [affected.name]!")
+					emote("me", 1, "[affected.can_feel_pain() ? "" : emote_scream]drops what they were holding in their [affected.name]!")
 
 	..(stun_amount, agony_amount, def_zone)
 
@@ -109,7 +113,7 @@ meteor_act
 		if(gear && istype(gear ,/obj/item/clothing))
 			var/obj/item/clothing/C = gear
 			if(istype(C) && C.body_parts_covered & def_zone.body_part)
-				protection = add_armor(protection, C.armor[type]) 
+				protection = add_armor(protection, C.armor[type])
 	return protection
 
 /mob/living/carbon/human/proc/check_head_coverage()
@@ -180,11 +184,13 @@ meteor_act
 
 	// Handle striking to cripple.
 	if(user.a_intent == I_DISARM)
-		effective_force /= 2 //half the effective force
+		effective_force *= 0.66 //reduced effective force...
 		if(!..(I, user, effective_force, blocked, hit_zone))
 			return 0
 
-		attack_joint(affecting, I, blocked) //but can dislocate joints
+		//set the dislocate mult less than the effective force mult so that
+		//dislocating limbs on disarm is a bit easier than breaking limbs on harm
+		attack_joint(affecting, I, effective_force, 0.5, blocked) //...but can dislocate joints
 	else if(!..())
 		return 0
 
@@ -209,7 +215,7 @@ meteor_act
 	return 1
 
 /mob/living/carbon/human/proc/attack_bloody(obj/item/W, mob/living/attacker, var/effective_force, var/hit_zone)
-	if(W.damtype != BRUTE) 
+	if(W.damtype != BRUTE)
 		return
 
 	//make non-sharp low-force weapons less likely to be bloodied
@@ -231,7 +237,7 @@ meteor_act
 				H.bloody_hands(src)
 
 		switch(hit_zone)
-			if("head")
+			if(BP_HEAD)
 				if(wear_mask)
 					wear_mask.add_blood(src)
 					update_inv_wear_mask(0)
@@ -241,15 +247,42 @@ meteor_act
 				if(glasses && prob(33))
 					glasses.add_blood(src)
 					update_inv_glasses(0)
-			if("chest")
+			if(BP_CHEST)
 				bloody_body(src)
 
-/mob/living/carbon/human/proc/attack_joint(var/obj/item/organ/external/organ, var/obj/item/W, var/blocked)
+/mob/living/carbon/human/proc/projectile_hit_bloody(obj/item/projectile/P, var/effective_force, var/hit_zone)
+	if(P.damage_type != BRUTE || P.nodamage)
+		return
+	if(!(P.sharp || prob(effective_force*4)))
+		return
+	if(prob(effective_force))
+		var/turf/location = loc
+		if(istype(location, /turf/simulated))
+			location.add_blood(src)
+
+		switch(hit_zone)
+			if(BP_HEAD)
+				if(wear_mask)
+					wear_mask.add_blood(src)
+					update_inv_wear_mask(0)
+				if(head)
+					head.add_blood(src)
+					update_inv_head(0)
+				if(glasses && prob(33))
+					glasses.add_blood(src)
+					update_inv_glasses(0)
+			if(BP_CHEST)
+				bloody_body(src)
+
+/mob/living/carbon/human/proc/attack_joint(var/obj/item/organ/external/organ, var/obj/item/W, var/effective_force, var/dislocate_mult, var/blocked)
 	if(!organ || (organ.dislocated == 2) || (organ.dislocated == -1) || blocked >= 100)
 		return 0
 	if(W.damtype != BRUTE)
 		return 0
-	if(prob(W.force * blocked_mult(blocked)))
+
+	//want the dislocation chance to be such that the limb is expected to dislocate after dealing a fraction of the damage needed to break the limb
+	var/dislocate_chance = effective_force/(dislocate_mult * organ.min_broken_damage * config.organ_health_multiplier)*100
+	if(prob(dislocate_chance * blocked_mult(blocked)))
 		visible_message("<span class='danger'>[src]'s [organ.joint] [pick("gives way","caves in","crumbles","collapses")]!</span>")
 		organ.dislocate(1)
 		return 1
@@ -257,7 +290,7 @@ meteor_act
 
 /mob/living/carbon/human/emag_act(var/remaining_charges, mob/user, var/emag_source)
 	var/obj/item/organ/external/affecting = get_organ(user.zone_sel.selecting)
-	if(!affecting || !(affecting.status & ORGAN_ROBOT))
+	if(!affecting || !(affecting.robotic >= ORGAN_ROBOT))
 		user << "<span class='warning'>That limb isn't robotic.</span>"
 		return -1
 	if(affecting.sabotaged)
@@ -288,7 +321,7 @@ meteor_act
 			var/mob/living/L = O.thrower
 			zone = check_zone(L.zone_sel.selecting)
 		else
-			zone = ran_zone("chest",75)	//Hits a random part of the body, geared towards the chest
+			zone = ran_zone(BP_CHEST,75)	//Hits a random part of the body, geared towards the chest
 
 		//check if we hit
 		var/miss_chance = 15
@@ -322,10 +355,7 @@ meteor_act
 			var/mob/M = O.thrower
 			var/client/assailant = M.client
 			if(assailant)
-				src.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been hit with a [O], thrown by [M.name] ([assailant.ckey])</font>")
-				M.attack_log += text("\[[time_stamp()]\] <font color='red'>Hit [src.name] ([src.ckey]) with a thrown [O]</font>")
-				if(!istype(src,/mob/living/simple_animal/mouse))
-					msg_admin_attack("[src.name] ([src.ckey]) was hit by a [O], thrown by [M.name] ([assailant.ckey]) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)")
+				admin_attack_log(M, src, "Threw \an [O] at their victim.", "Had \an [O] thrown at them", "threw \an [O] at")
 
 		//thrown weapon embedded object code.
 		if(dtype == BRUTE && istype(O,/obj/item))

@@ -4,11 +4,12 @@
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "paper"
 	item_state = "paper"
+	randpixel = 8
 	throwforce = 0
 	w_class = 2
 	throw_range = 2
 	throw_speed = 1
-	layer = 4
+	layer = ABOVE_OBJ_LAYER
 	attack_verb = list("bapped")
 	var/page = 1    // current page
 	var/list/pages = list()  // Ordered list of pages as they are to be displayed. Can be different order than src.contents.
@@ -142,7 +143,8 @@
 	return
 
 /obj/item/weapon/paper_bundle/Topic(href, href_list)
-	..()
+	if(..())
+		return 1
 	if((src in usr.contents) || (istype(src.loc, /obj/item/weapon/folder) && (src.loc in usr.contents)))
 		usr.set_machine(src)
 		var/obj/item/weapon/in_hand = usr.get_active_hand()
@@ -177,11 +179,11 @@
 				page = pages.len
 
 			update_icon()
-	else
-		usr << "<span class='notice'>You need to hold it in hands!</span>"
-	if (istype(src.loc, /mob) ||istype(src.loc.loc, /mob))
+
 		src.attack_self(usr)
 		updateUsrDialog()
+	else
+		usr << "<span class='notice'>You need to hold it in hands!</span>"
 
 /obj/item/weapon/paper_bundle/verb/rename()
 	set name = "Rename bundle"
@@ -202,8 +204,8 @@
 
 	usr << "<span class='notice'>You loosen the bundle.</span>"
 	for(var/obj/O in src)
-		O.loc = usr.loc
-		O.layer = initial(O.layer)
+		O.dropInto(usr.loc)
+		O.reset_plane_and_layer()
 		O.add_fingerprint(usr)
 	usr.drop_from_inventory(src)
 	qdel(src)

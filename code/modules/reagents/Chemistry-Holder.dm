@@ -185,10 +185,10 @@
 				my_atom.on_reagent_change()
 			return 0
 
-/datum/reagents/proc/has_reagent(var/id, var/amount = 0)
+/datum/reagents/proc/has_reagent(var/id, var/amount = null)
 	for(var/datum/reagent/current in reagent_list)
 		if(current.id == id)
-			if(current.volume >= amount)
+			if((isnull(amount) && current.volume > 0) || current.volume >= amount)
 				return 1
 			else
 				return 0
@@ -379,7 +379,7 @@
 			return trans_to_holder(R, amount, multiplier, copy)
 		if(type == CHEM_INGEST)
 			var/datum/reagents/R = C.ingested
-			return C.ingest(src,R, amount, multiplier, copy)
+			return C.ingest(src,R, amount, multiplier, copy) //perhaps this is a bit of a hack, but currently there's no common proc for eating reagents
 		if(type == CHEM_TOUCH)
 			var/datum/reagents/R = C.touching
 			return trans_to_holder(R, amount, multiplier, copy)

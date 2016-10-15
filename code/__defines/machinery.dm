@@ -1,11 +1,15 @@
 var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called manually after an event.
 
-#define CELLRATE 0.002 // Multiplier for watts per tick <> cell storage (e.g., 0.02 means if there is a load of 1000 watts, 20 units will be taken from a cell per second)
-                       // It's a conversion constant. power_used*CELLRATE = charge_provided, or charge_used/CELLRATE = power_provided
-#define SMESRATE 0.05  // Same for SMESes. A different number for some reason.
+#define KILOWATTS *1000
+#define MEGAWATTS *1000000
+#define GIGAWATTS *1000000000
+
+#define MACHINERY_TICKRATE 2		// Tick rate for machinery in seconds. As it affects CELLRATE calculation it is kept as define here
+
+#define CELLRATE (1 / ( 3600 / MACHINERY_TICKRATE )) // Multiplier for charge units. Converts cell charge units(watthours) to joules. Takes into consideration that our machinery ticks once per two seconds.
 
 // Doors!
-#define DOOR_CRUSH_DAMAGE 80
+#define DOOR_CRUSH_DAMAGE 40
 #define ALIEN_SELECT_AFK_BUFFER  1    // How many minutes that a person can be AFK before not being allowed to be an alien.
 
 // Channel numbers for power.
@@ -28,6 +32,7 @@ var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called
 #define AI_CAMERA_LUMINOSITY 6
 
 // Camera networks
+#define NETWORK_CALYPSO "Calypso"
 #define NETWORK_CRESCENT "Crescent"
 #define NETWORK_CIVILIAN_EAST "Civilian East"
 #define NETWORK_CIVILIAN_WEST "Civilian West"
@@ -37,19 +42,26 @@ var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called
 #define NETWORK_ENGINEERING_OUTPOST "Engineering Outpost"
 #define NETWORK_ERT "ZeEmergencyResponseTeam"
 #define NETWORK_EXODUS "Exodus"
+#define NETWORK_EXPEDITION "Expedition"
 #define NETWORK_FIRST_DECK "First Deck"
+#define NETWORK_FOURTH_DECK "Fourth Deck"
 #define NETWORK_MEDICAL "Medical"
 #define NETWORK_MERCENARY "MercurialNet"
 #define NETWORK_MINE "MINE"
 #define NETWORK_RESEARCH "Research"
 #define NETWORK_RESEARCH_OUTPOST "Research Outpost"
 #define NETWORK_ROBOTS "Robots"
+#define NETWORK_POD "General Utility Pod"
 #define NETWORK_PRISON "Prison"
 #define NETWORK_SECOND_DECK "Second Deck"
 #define NETWORK_SECURITY "Security"
+#define NETWORK_SUPPLY "Supply"
 #define NETWORK_TELECOM "Tcomsat"
 #define NETWORK_THIRD_DECK "Third Deck"
 #define NETWORK_THUNDER "Thunderdome"
+#define NETWORK_ALARM_ATMOS "Atmosphere Alarms"
+#define NETWORK_ALARM_POWER "Power Alarms"
+#define NETWORK_ALARM_FIRE "Fire Alarms"
 
 // Those networks can only be accessed by pre-existing terminals. AIs and new terminals can't use them.
 var/list/restricted_camera_networks = list(NETWORK_ERT,NETWORK_MERCENARY,"Secret")

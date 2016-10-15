@@ -2,10 +2,12 @@
 /obj/item/stack/material
 	force = 5.0
 	throwforce = 5
-	w_class = 3.0
+	w_class = 4
 	throw_speed = 3
 	throw_range = 3
-	max_amount = 50
+	max_amount = 60
+	center_of_mass = null
+	randpixel = 3
 
 	var/default_type = DEFAULT_WALL_MATERIAL
 	var/material/material
@@ -14,8 +16,6 @@
 
 /obj/item/stack/material/New(atom/newloc, var/amount=null)
 	..(newloc, amount)
-	pixel_x = rand(0,4)-4
-	pixel_y = rand(0,4)-4
 
 	if(!default_type)
 		default_type = DEFAULT_WALL_MATERIAL
@@ -34,6 +34,8 @@
 
 	if(material.conductive)
 		flags |= CONDUCT
+	else
+		flags &= (~CONDUCT)
 
 	matter = material.get_matter()
 	update_strings()
@@ -118,6 +120,9 @@
 	icon_state = "sheet-plastic"
 	default_type = "plastic"
 
+/obj/item/stack/material/plastic/fifty
+	amount = 50
+
 /obj/item/stack/material/gold
 	name = "gold"
 	icon_state = "sheet-gold"
@@ -158,16 +163,25 @@
 	icon_state = "sheet-metal"
 	default_type = DEFAULT_WALL_MATERIAL
 
+/obj/item/stack/material/steel/fifty
+	amount = 50
+
 /obj/item/stack/material/plasteel
 	name = "plasteel"
 	icon_state = "sheet-plasteel"
 	item_state = "sheet-metal"
 	default_type = "plasteel"
 
+/obj/item/stack/material/plasteel/fifty
+	amount = 50
+
 /obj/item/stack/material/wood
 	name = "wooden plank"
 	icon_state = "sheet-wood"
 	default_type = "wood"
+
+/obj/item/stack/material/wood/fifty
+	amount = 50
 
 /obj/item/stack/material/cloth
 	name = "cloth"
@@ -179,6 +193,9 @@
 	icon_state = "sheet-card"
 	default_type = "cardboard"
 
+/obj/item/stack/material/cardboard/fifty
+	amount = 50
+
 /obj/item/stack/material/leather
 	name = "leather"
 	desc = "The by-product of mob grinding."
@@ -189,6 +206,9 @@
 	name = "glass"
 	icon_state = "sheet-glass"
 	default_type = "glass"
+
+/obj/item/stack/material/glass/fifty
+	amount = 50
 
 /obj/item/stack/material/glass/reinforced
 	name = "reinforced glass"

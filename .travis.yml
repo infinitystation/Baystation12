@@ -3,9 +3,9 @@ sudo: false
 
 env:
   global:
-    BYOND_MAJOR="509"
-    BYOND_MINOR="1318"
-    MACRO_COUNT=983
+    BYOND_MAJOR="510"
+    BYOND_MINOR="1346"
+    MACRO_COUNT=639
     NODE_VERSION="4"
 
 # ALL MAPS MUST BE PRESENT HERE
@@ -14,6 +14,7 @@ env:
     - MAP_PATH=example
     - MAP_PATH=exodus
     - MAP_PATH=torch
+    - MAP_PATH=overmap_example
 
 cache:
   directories:
@@ -29,12 +30,12 @@ addons:
 
 install:
   - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $NODE_VERSION
-  - npm install -g gulp-cli
+  - npm install --no-spin -g gulp-cli
   - pip install --user PyYaml -q
   - pip install --user beautifulsoup4 -q
 
 before_script:
-  - cd tgui && npm install && cd ..
+  - cd tgui && npm install --no-spin && cd ..
   - chmod +x ./install-byond.sh
   - ./install-byond.sh
 
@@ -45,9 +46,9 @@ script:
   - (! find nano/templates/ -type f -exec md5sum {} + | sort | uniq -D -w 32 | grep nano)
   - (! grep -En "<\s*span\s+class\s*=\s*('[^'>]+|[^'>]+')\s*>" **/*.dm)
   - (num=`grep -E '\\\\(red|blue|green|black|b|i[^mc])' **/*.dm | wc -l`; echo "$num escapes (expecting ${MACRO_COUNT} or less)"; [ $num -le ${MACRO_COUNT} ])
-  - (num=`grep -E '\WDel\(' **/*.dm | wc -l`; echo "$num Del()s (expecting 4 or less)"; [ $num -le 4 ])
+  - (num=`grep -E '\WDel\(' **/*.dm | wc -l`; echo "$num Del()s (expecting 5 or less)"; [ $num -le 5 ])
   - (num=`grep -E '"/atom' **/*.dm | wc -l`; echo "$num /atom text paths (expecting 2 or less)"; [ $num -le 2 ])
-  - (num=`grep -E '"/area' **/*.dm | wc -l`; echo "$num /area text paths (expecting 3 or less)"; [ $num -le 3 ])
+  - (num=`grep -E '"/area' **/*.dm | wc -l`; echo "$num /area text paths (expecting 2 or less)"; [ $num -le 2 ])
   - (num=`grep -E '"/datum' **/*.dm | wc -l`; echo "$num /datum text paths (expecting 2 or less)"; [ $num -le 2 ])
   - (num=`grep -E '"/mob' **/*.dm | wc -l`; echo "$num /mob text paths (expecting 2 or less)"; [ $num -le 2 ])
   - (num=`grep -E '"/obj' **/*.dm | wc -l`; echo "$num /obj text paths (expecting 13 or less)"; [ $num -le 13 ])
@@ -55,15 +56,16 @@ script:
   - awk -f tools/indentation.awk **/*.dm
   - md5sum -c - <<< "a7534ef155ebb32ae7249c48a87abf0d *.gitignore"
   - md5sum -c - <<< "88490b460c26947f5ec1ab1bb9fa9f17 *html/changelogs/example.yml"
-  - python tools/TagMatcher/tag-matcher.py ../..
-  - python tools/PunctuationChecker/punctuation-checker.py ../..
+  - python tools/TagMatcher/tag-matcher.py .
+  - python tools/PunctuationChecker/punctuation-checker.py .
   - python tools/GenerateChangelog/ss13_genchangelog.py html/changelog.html html/changelogs
   - cd tgui && gulp
   - cd ..
   - source $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}/byond/bin/byondsetup
+  - python tools/GenerateGlobalVarAccess/gen_globals.py baystation12.dme code/_helpers/global_access.dm
   - cp config/example/* config/
   - scripts/dm.sh -DUNIT_TEST -M$MAP_PATH baystation12.dme
-  - grep "0 warnings" build_log.txt
+  - grep ", 0 warnings" build_log.txt
   - DreamDaemon baystation12.dmb -invisible -trusted -core 2>&1 | tee log.txt
   - grep "All Unit Tests Passed" log.txt
   - (! grep "runtime error:" log.txt)

@@ -50,7 +50,15 @@
 	Destroy()
 		if(part)
 			part.implants.Remove(src)
-		..()
+		return ..()
+	
+/**
+ *  Let the implant know it's no longer implanted
+ */ 
+/obj/item/weapon/implant/proc/removed()
+	imp_in = null
+	implanted = 0
+	
 
 /obj/item/weapon/implant/tracking
 	name = "tracking implant"
@@ -162,6 +170,7 @@ Implant Specifics:<BR>"}
 		if (malfunction == MALFUNCTION_PERMANENT)
 			return
 
+
 		var/need_gib = null
 		if(istype(imp_in, /mob/))
 			var/mob/T = imp_in
@@ -251,6 +260,15 @@ Implant Specifics:<BR>"}
 						part.droplimb(0,DROPLIMB_BLUNT)
 				explosion(get_turf(imp_in), -1, -1, 2, 3)
 				qdel(src)
+
+/obj/item/weapon/implant/explosive/New()
+	..()
+	listening_objects += src
+
+/obj/item/weapon/implant/explosive/Destroy()
+	listening_objects -= src
+	return ..()
+
 
 /obj/item/weapon/implant/chem
 	name = "chemical implant"
@@ -414,26 +432,25 @@ the implant may become unstable and either pre-maturely inject the subject or si
 	activate(var/cause)
 		var/mob/M = imp_in
 		var/area/t = get_area(M)
+		var/death_message = "[mobname] has died-zzzzt in-in-in..."
 		switch (cause)
 			if("death")
-				var/obj/item/device/radio/headset/a = new /obj/item/device/radio/headset(null)
-				if(istype(t, /area/syndicate_station) || istype(t, /area/syndicate_mothership) || istype(t, /area/shuttle/syndicate_elite) )
-					//give the syndies a bit of stealth
-					a.autosay("[mobname] has died in Space!", "[mobname]'s Death Alarm")
+				if(!t.requires_power) // We assume areas that don't use power are some sort of special zones
+					var/area/default = world.area
+					death_message = "[mobname] has died in [initial(default.name)]"
 				else
-					a.autosay("[mobname] has died in [t.name]!", "[mobname]'s Death Alarm")
-				qdel(a)
+					death_message = "[mobname] has died in [t.name]!"
 				processing_objects.Remove(src)
 			if ("emp")
-				var/obj/item/device/radio/headset/a = new /obj/item/device/radio/headset(null)
-				var/name = prob(50) ? t.name : pick(teleportlocs)
-				a.autosay("[mobname] has died in [name]!", "[mobname]'s Death Alarm")
-				qdel(a)
+				var/name = prob(50) ? t : pick(teleportlocs)
+				death_message = "[mobname] has died in [name]!"
 			else
-				var/obj/item/device/radio/headset/a = new /obj/item/device/radio/headset(null)
-				a.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm")
-				qdel(a)
 				processing_objects.Remove(src)
+
+		var/obj/item/device/radio/headset/a = new /obj/item/device/radio/headset/heads/captain(null)
+		for(var/channel in list("Security", "Medical", "Command"))
+			a.autosay(death_message, "[mobname]'s Death Alarm", channel)
+		qdel(a)
 
 	emp_act(severity)			//for some reason alarms stop going off in case they are emp'd, even without this
 		if (malfunction)		//so I'm just going to add a meltdown chance here
@@ -455,6 +472,10 @@ the implant may become unstable and either pre-maturely inject the subject or si
 		mobname = source.real_name
 		processing_objects.Add(src)
 		return 1
+		
+/obj/item/weapon/implant/death_alarm/removed()
+	..()
+	processing_objects.Remove(src)
 
 /obj/item/weapon/implant/compressed
 	name = "compressed matter implant"

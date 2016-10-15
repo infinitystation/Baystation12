@@ -17,35 +17,40 @@
 //checks if projectile 'P' from turf 'from' can hit whatever is behind the table. Returns 1 if it can, 0 if bullet stops.
 /obj/structure/table/proc/check_cover(obj/item/projectile/P, turf/from)
 	var/turf/cover
-	if(flipped==1)
+	if(flipped)
 		cover = get_turf(src)
-	else if(flipped==0)
+	else
 		cover = get_step(loc, get_dir(from, loc))
 	if(!cover)
 		return 1
 	if (get_dist(P.starting, loc) <= 1) //Tables won't help you if people are THIS close
 		return 1
-	if (get_turf(P.original) == cover)
-		var/chance = 20
-		if (ismob(P.original))
-			var/mob/M = P.original
-			if (M.lying)
-				chance += 20				//Lying down lets you catch less bullets
-		if(flipped==1)
-			if(get_dir(loc, from) == dir)	//Flipped tables catch mroe bullets
-				chance += 20
-			else
-				return 1					//But only from one side
-		if(prob(chance))
-			health -= P.damage/2
-			if (health > 0)
-				visible_message("<span class='warning'>[P] hits \the [src]!</span>")
-				return 0
-			else
-				visible_message("<span class='warning'>[src] breaks down!</span>")
-				break_to_parts()
-				return 1
+
+	var/chance = 20
+	if(ismob(P.original) && get_turf(P.original) == cover)
+		var/mob/M = P.original
+		if (M.lying)
+			chance += 20				//Lying down lets you catch less bullets
+	if(flipped)
+		if(get_dir(loc, from) == dir)	//Flipped tables catch mroe bullets
+			chance += 30
+		else
+			return 1					//But only from one side
+
+	if(prob(chance))
+		return 0 //blocked
 	return 1
+
+/obj/structure/table/bullet_act(obj/item/projectile/P)
+	if(!(P.damage_type == BRUTE || P.damage_type == BURN))
+		return 0
+
+	if(take_damage(P.damage/2))
+		//prevent tables with 1 health left from stopping bullets outright
+		return PROJECTILE_CONTINUE //the projectile destroyed the table, so it gets to keep going
+
+	visible_message("<span class='warning'>\The [P] hits [src]!</span>")
+	return 0
 
 /obj/structure/table/CheckExit(atom/movable/O as mob|obj, target as turf)
 	if(istype(O) && O.checkpass(PASSTABLE))
@@ -82,12 +87,14 @@
 			if(occupied)
 				user << "<span class='danger'>There's \a [occupied] in the way.</span>"
 				return
-			if (G.state >= GRAB_AGGRESSIVE)
+			if (G.state < GRAB_AGGRESSIVE)
+				user << "<span class='danger'>You need a better grip to do that!</span>"
+			else
 				if(user.a_intent == I_HURT)
-					var/blocked = M.run_armor_check("head", "melee")
+					var/blocked = M.run_armor_check(BP_HEAD, "melee")
 					if (prob(30 * blocked_mult(blocked)))
 						M.Weaken(5)
-					M.apply_damage(8, BRUTE, "head", blocked)
+					M.apply_damage(8, BRUTE, BP_HEAD, blocked)
 					visible_message("<span class='danger'>[G.assailant] slams [G.affecting]'s face against \the [src]!</span>")
 					if(material)
 						playsound(loc, material.tableslam_noise, 50, 1)
@@ -96,19 +103,15 @@
 					var/list/L = take_damage(rand(1,5))
 					// Shards. Extra damage, plus potentially the fact YOU LITERALLY HAVE A PIECE OF GLASS/METAL/WHATEVER IN YOUR FACE
 					for(var/obj/item/weapon/material/shard/S in L)
-						if(prob(50))
-							M.visible_message("<span class='danger'>\The [S] slices [M]'s face messily!</span>",
-							                   "<span class='danger'>\The [S] slices your face messily!</span>")
-							M.apply_damage(10, BRUTE, "head", blocked)
-							M.standard_weapon_hit_effects(S, G.assailant, 10, blocked, "head")
+						if(S.sharp && prob(50))
+							M.visible_message("<span class='danger'>\The [S] slices into [M]'s face!</span>",
+							                  "<span class='danger'>\The [S] slices into your face!</span>")
+							M.standard_weapon_hit_effects(S, G.assailant, S.force*2, blocked, BP_HEAD) //standard weapon hit effects include damage and embedding
 				else
-					user << "<span class='danger'>You need a better grip to do that!</span>"
-					return
-			else
-				G.affecting.loc = src.loc
-				G.affecting.Weaken(5)
-				visible_message("<span class='danger'>[G.assailant] puts [G.affecting] on \the [src].</span>")
-			qdel(W)
+					G.affecting.forceMove(src.loc)
+					G.affecting.Weaken(rand(2,5))
+					visible_message("<span class='danger'>[G.assailant] puts [G.affecting] on \the [src].</span>")
+				qdel(W)
 			return
 
 	// Handle dismantling or placing things on the table from here on.
@@ -134,24 +137,61 @@
 
 	// Placing stuff on tables
 	if(user.drop_from_inventory(W, src.loc))
-		var/list/click_data = params2list(click_params)
-		//Center the icon where the user clicked.
-		if(!click_data || !click_data["icon-x"] || !click_data["icon-y"])
-			return
+		auto_align(W, click_params)
 
-		//Food is special, apparently
-		var/center_x = 16
-		var/center_y = 16
-		if(istype(W, /obj/item/weapon/reagent_containers/food))
-			var/obj/item/weapon/reagent_containers/food/F = W
-			if(F.center_of_mass.len)
-				center_x = F.center_of_mass["x"]
-				center_y = F.center_of_mass["y"]
-
-		//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
-		W.pixel_x = Clamp(text2num(click_data["icon-x"]) - center_x, -(world.icon_size/2), world.icon_size/2)
-		W.pixel_y = Clamp(text2num(click_data["icon-y"]) - center_y, -(world.icon_size/2), world.icon_size/2)
 	return
+
+/*
+Automatic alignment of items to an invisible grid, defined by CELLS and CELLSIZE, defined in code/__defines/misc.dm.
+Since the grid will be shifted to own a cell that is perfectly centered on the turf, we end up with two 'cell halves'
+on edges of each row/column.
+Each item defines a center_of_mass, which is the pixel of a sprite where its projected center of mass toward a turf
+surface can be assumed. For a piece of paper, this will be in its center. For a bottle, it will be (near) the bottom
+of the sprite.
+auto_align() will then place the sprite so the defined center_of_mass is at the bottom left corner of the grid cell
+closest to where the cursor has clicked on.
+Note: This proc can be overwritten to allow for different types of auto-alignment.
+*/
+/obj/item/var/center_of_mass = "x=16;y=16" //can be null for no exact placement behaviour
+/obj/structure/table/proc/auto_align(obj/item/W, click_params)
+	if (!W.center_of_mass) // Clothing, material stacks, generally items with large sprites where exact placement would be unhandy.
+		W.pixel_x = rand(-W.randpixel, W.randpixel)
+		W.pixel_y = rand(-W.randpixel, W.randpixel)
+		W.pixel_z = 0
+		return
+
+	if (!click_params)
+		return
+
+	var/list/click_data = params2list(click_params)
+	if (!click_data["icon-x"] || !click_data["icon-y"])
+		return
+
+	// Calculation to apply new pixelshift.
+	var/mouse_x = text2num(click_data["icon-x"])-1 // Ranging from 0 to 31
+	var/mouse_y = text2num(click_data["icon-y"])-1
+
+	var/cell_x = Clamp(round(mouse_x/CELLSIZE), 0, CELLS-1) // Ranging from 0 to CELLS-1
+	var/cell_y = Clamp(round(mouse_y/CELLSIZE), 0, CELLS-1)
+
+	var/list/center = cached_key_number_decode(W.center_of_mass)
+
+	W.pixel_x = (CELLSIZE * (cell_x + 0.5)) - center["x"]
+	W.pixel_y = (CELLSIZE * (cell_y + 0.5)) - center["y"]
+	W.pixel_z = 0
+
+/obj/structure/table/rack/auto_align(obj/item/W, click_params)
+	if(W && !W.center_of_mass)
+		..(W)
+
+	var/i = -1
+	for (var/obj/item/I in get_turf(src))
+		if (I.anchored || !I.center_of_mass)
+			continue
+		i++
+		I.pixel_x = max(3-i*3, -3) + 1 // There's a sprite layering bug for 0/0 pixelshift, so we avoid it.
+		I.pixel_y = max(4-i*4, -4) + 1
+		I.pixel_z = 0
 
 /obj/structure/table/attack_tk() // no telehulk sorry
 	return

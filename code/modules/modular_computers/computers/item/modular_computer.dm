@@ -44,6 +44,7 @@
 	var/obj/item/weapon/computer_hardware/card_slot/card_slot						// ID Card slot component of this computer. Mostly for HoP modification console that needs ID slot for modification.
 	var/obj/item/weapon/computer_hardware/nano_printer/nano_printer					// Nano Printer component of this computer, for your everyday paperwork needs.
 	var/obj/item/weapon/computer_hardware/hard_drive/portable/portable_drive		// Portable data storage
+	var/obj/item/weapon/computer_hardware/ai_slot/ai_slot							// AI slot, an intellicard housing that allows modifications of AIs.
 
 	var/list/idle_threads = list()							// Idle programs on background. They still receive process calls but can't be interacted with.
 
@@ -66,7 +67,7 @@
 
 // Eject ID card from computer, if it has ID slot with card inside.
 /obj/item/modular_computer/verb/eject_usb()
-	set name = "Eject Portable Device"
+	set name = "Eject Portable Storage"
 	set category = "Object"
 	set src in view(1)
 
@@ -79,6 +80,21 @@
 		return
 
 	proc_eject_usb(usr)
+
+/obj/item/modular_computer/verb/eject_ai()
+	set name = "Eject Portable Storage"
+	set category = "Object"
+	set src in view(1)
+
+	if(usr.incapacitated() || !istype(usr, /mob/living))
+		usr << "<span class='warning'>You can't do that.</span>"
+		return
+
+	if(!Adjacent(usr))
+		usr << "<span class='warning'>You can't reach it.</span>"
+		return
+
+	proc_eject_ai(usr)
 
 /obj/item/modular_computer/proc/proc_eject_id(mob/user)
 	if(!user)
@@ -103,6 +119,7 @@
 	update_uis()
 	user << "You remove the card from \the [src]"
 
+
 /obj/item/modular_computer/proc/proc_eject_usb(mob/user)
 	if(!user)
 		user = usr
@@ -112,6 +129,19 @@
 		return
 
 	uninstall_component(user, portable_drive)
+	update_uis()
+
+/obj/item/modular_computer/proc/proc_eject_ai(mob/user)
+	if(!user)
+		user = usr
+
+	if(!ai_slot || !ai_slot.stored_card)
+		user << "There is no intellicard connected to \the [src]."
+		return
+
+	ai_slot.stored_card.forceMove(get_turf(src))
+	ai_slot.stored_card = null
+	ai_slot.update_power_usage()
 	update_uis()
 
 /obj/item/modular_computer/attack_ghost(var/mob/observer/ghost/user)
@@ -148,6 +178,7 @@
 	processing_objects.Remove(src)
 	for(var/obj/item/weapon/computer_hardware/CH in src.get_all_components())
 		uninstall_component(null, CH)
+		qdel(CH)
 	return ..()
 
 /obj/item/modular_computer/update_icon()
@@ -198,6 +229,8 @@
 		var/list/program = list()
 		program["name"] = P.filename
 		program["desc"] = P.filedesc
+		if(P in idle_threads)
+			program["running"] = 1
 		programs.Add(list(program))
 
 	data["programs"] = programs
@@ -395,10 +428,6 @@
 		if(!active_program || !processor_unit)
 			return
 
-		if(idle_threads.len >= processor_unit.max_idle_programs)
-			user << "<span class='notice'>\The [src] displays a \"Maximal CPU load reached. Unable to minimize another program.\" error</span>"
-			return
-
 		idle_threads.Add(active_program)
 		active_program.program_state = PROGRAM_STATE_BACKGROUND // Should close any existing UIs
 		nanomanager.close_uis(active_program.NM ? active_program.NM : active_program)
@@ -406,6 +435,20 @@
 		update_icon()
 		if(user && istype(user))
 			ui_interact(user) // Re-open the UI on this computer. It should show the main screen now.
+
+	if( href_list["PC_killprogram"] )
+		var/prog = href_list["PC_killprogram"]
+		var/datum/computer_file/program/P = null
+		var/mob/user = usr
+		if(hard_drive)
+			P = hard_drive.find_file_by_name(prog)
+
+		if(!istype(P) || P.program_state == PROGRAM_STATE_KILLED)
+			return
+
+		P.kill_program(1)
+		update_uis()
+		user << "<span class='notice'>Program [P.filename].[P.filetype] with PID [rand(100,999)] has been killed.</span>"
 
 	if( href_list["PC_runprogram"] )
 		var/prog = href_list["PC_runprogram"]
@@ -431,9 +474,14 @@
 			update_icon()
 			return
 
+		if(idle_threads.len >= processor_unit.max_idle_programs+1)
+			user << "<span class='notice'>\The [src] displays a \"Maximal CPU load reached. Unable to run another program.\" error</span>"
+			return
+
 		if(P.requires_ntnet && !get_ntnet_status(P.requires_ntnet_feature)) // The program requires NTNet connection, but we are not connected to NTNet.
 			user << "<span class='danger'>\The [src]'s screen shows \"NETWORK ERROR - Unable to connect to NTNet. Please retry. If problem persists contact your system administrator.\" warning.</span>"
 			return
+
 		if(P.run_program(user))
 			active_program = P
 			update_icon()
@@ -491,6 +539,10 @@
 		if(!nano_printer)
 			return
 		nano_printer.attackby(W, user)
+	if(istype(W, /obj/item/weapon/aicard))
+		if(!ai_slot)
+			return
+		ai_slot.attackby(W, user)
 	if(istype(W, /obj/item/weapon/computer_hardware))
 		var/obj/item/weapon/computer_hardware/C = W
 		if(C.hardware_size <= max_hardware_size)
@@ -600,6 +652,12 @@
 			return
 		found = 1
 		processor_unit = H
+	else if(istype(H, /obj/item/weapon/computer_hardware/ai_slot))
+		if(ai_slot)
+			user << "This computer's intellicard slot is already occupied by \the [ai_slot]."
+			return
+		found = 1
+		ai_slot = H
 	if(found)
 		user << "You install \the [H] into \the [src]"
 		H.holder2 = src
@@ -631,6 +689,9 @@
 		processor_unit = null
 		found = 1
 		critical = 1
+	if(ai_slot == H)
+		ai_slot = null
+		found = 1
 	if(found)
 		if(user)
 			user << "You remove \the [H] from \the [src]."
@@ -659,6 +720,8 @@
 		return battery_module
 	if(processor_unit && (processor_unit.name == name))
 		return processor_unit
+	if(ai_slot && (ai_slot.name == name))
+		return ai_slot
 	return null
 
 // Returns list of all components
@@ -678,6 +741,8 @@
 		all_components.Add(battery_module)
 	if(processor_unit)
 		all_components.Add(processor_unit)
+	if(ai_slot)
+		all_components.Add(ai_slot)
 	return all_components
 
 /obj/item/modular_computer/proc/update_uis()
@@ -759,3 +824,10 @@
 			take_damage(Proj.damage, Proj.damage / 3, 0)
 		if(BURN)
 			take_damage(Proj.damage, Proj.damage / 1.5)
+
+// Used by camera monitor program
+/obj/item/modular_computer/check_eye(var/mob/user)
+	if(active_program)
+		return active_program.check_eye(user)
+	else
+		return ..()

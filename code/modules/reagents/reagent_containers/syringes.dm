@@ -53,6 +53,14 @@
 	attackby(obj/item/I as obj, mob/user as mob)
 		return
 
+	do_surgery(mob/living/carbon/M, mob/living/user)
+		if(user.a_intent == I_HURT)
+			return 0
+		if(user.a_intent != I_HELP) //in case it is ever used as a surgery tool
+			return ..()
+		afterattack(M, user, 1)
+		return 1
+
 	afterattack(obj/target, mob/user, proximity)
 		if(!proximity || !target.reagents)
 			return
@@ -229,14 +237,11 @@
 
 			if (target != user && H.getarmor(target_zone, "melee") > 5 && prob(50))
 				for(var/mob/O in viewers(world.view, user))
-					O.show_message(text("\red <B>[user] tries to stab [target] in \the [hit_area] with [src.name], but the attack is deflected by armor!</B>"), 1)
+					O.show_message(text("<span class='danger'>[user] tries to stab [target] in \the [hit_area] with [src.name], but the attack is deflected by armor!</span>"), 1)
 				user.remove_from_mob(src)
 				qdel(src)
 
-				user.attack_log += "\[[time_stamp()]\]<font color='red'> Attacked [target.name] ([target.ckey]) with \the [src] (INTENT: HARM).</font>"
-				target.attack_log += "\[[time_stamp()]\]<font color='orange'> Attacked by [user.name] ([user.ckey]) with [src.name] (INTENT: HARM).</font>"
-				msg_admin_attack("[key_name_admin(user)] attacked [key_name_admin(target)] with [src.name] (INTENT: HARM) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[user.x];Y=[user.y];Z=[user.z]'>JMP</a>)")
-
+				admin_attack_log(user, target, "Attacked using \a [src]", "Was attacked with \a [src]", "used \a [src] to attack")
 				return
 
 			user.visible_message("<span class='danger'>[user] stabs [target] in \the [hit_area] with [src.name]!</span>")
@@ -270,7 +275,7 @@
 		var/datum/reagent/B
 		if(istype(T, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = T
-			if(H.species && H.species.flags & NO_BLOOD)
+			if(!H.should_have_organ(BP_HEART))
 				H.reagents.trans_to_obj(src, amount)
 			else
 				B = T.take_blood(src, amount)
@@ -347,3 +352,12 @@
 		reagents.add_reagent("chloralhydrate", 60)
 		mode = SYRINGE_INJECT
 		update_icon()
+
+/obj/item/weapon/reagent_containers/syringe/steroid
+	name = "Syringe (anabolic steroids)"
+	desc = "Contains drugs for muscle growth."
+	New()
+		..()
+		reagents.add_reagent("adrenaline",5)
+		reagents.add_reagent("hyperzine",10)
+

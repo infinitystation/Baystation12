@@ -58,6 +58,10 @@
 			color = material.icon_colour
 		if(material.products_need_process())
 			processing_objects |= src
+		if(material.conductive)
+			flags |= CONDUCT
+		else
+			flags &= (~CONDUCT)
 		update_force()
 
 /obj/item/weapon/material/Destroy()
@@ -67,10 +71,11 @@
 /obj/item/weapon/material/apply_hit_effect()
 	. = ..()
 	if(!unbreakable)
-		if(material.is_brittle())
-			health = 0
-		else if(!prob(material.hardness))
-			health--
+		if(!prob(material.hardness))
+			if(material.is_brittle())
+				health = 0
+			else
+				health--
 		check_health()
 
 /obj/item/weapon/material/proc/check_health(var/consumed)

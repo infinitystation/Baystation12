@@ -17,7 +17,6 @@ var/obj/screen/robot_inventory
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "radio"
 	using.screen_loc = ui_movi
-	using.layer = SCREEN_LAYER
 	src.adding += using
 
 //Module select
@@ -28,7 +27,6 @@ var/obj/screen/robot_inventory
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "inv1"
 	using.screen_loc = ui_inv1
-	using.layer = SCREEN_LAYER
 	src.adding += using
 	mymob:inv1 = using
 
@@ -38,7 +36,6 @@ var/obj/screen/robot_inventory
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "inv2"
 	using.screen_loc = ui_inv2
-	using.layer = SCREEN_LAYER
 	src.adding += using
 	mymob:inv2 = using
 
@@ -48,7 +45,6 @@ var/obj/screen/robot_inventory
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "inv3"
 	using.screen_loc = ui_inv3
-	using.layer = SCREEN_LAYER
 	src.adding += using
 	mymob:inv3 = using
 
@@ -61,7 +57,6 @@ var/obj/screen/robot_inventory
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = mymob.a_intent
 	using.screen_loc = ui_acti
-	using.layer = SCREEN_LAYER
 	src.adding += using
 	action_intent = using
 
@@ -92,7 +87,6 @@ var/obj/screen/robot_inventory
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "panel"
 	using.screen_loc = ui_borg_panel
-	using.layer = SCREEN_LAYER
 	src.adding += using
 
 //Store
@@ -134,21 +128,6 @@ var/obj/screen/robot_inventory
 	mymob.pullin.name = "pull"
 	mymob.pullin.screen_loc = ui_borg_pull
 
-	mymob.blind = new /obj/screen()
-	mymob.blind.icon = 'icons/mob/screen1_full.dmi'
-	mymob.blind.icon_state = "blackimageoverlay"
-	mymob.blind.name = " "
-	mymob.blind.screen_loc = "1,1"
-	mymob.blind.layer = 0
-	mymob.blind.plane = -99
-
-	mymob.flash = new /obj/screen()
-	mymob.flash.icon = 'icons/mob/screen1_robot.dmi'
-	mymob.flash.icon_state = "blank"
-	mymob.flash.name = "flash"
-	mymob.flash.screen_loc = ui_entire_screen
-	mymob.flash.layer = 17
-
 	mymob.zone_sel = new /obj/screen/zone_sel()
 	mymob.zone_sel.icon = 'icons/mob/screen1_robot.dmi'
 	mymob.zone_sel.overlays.Cut()
@@ -161,11 +140,8 @@ var/obj/screen/robot_inventory
 	mymob.radio_use_icon = new /obj/screen/gun/radio(null)
 
 	mymob.client.screen = list()
-
-	mymob.client.screen += list( mymob.throw_icon, mymob.zone_sel, mymob.oxygen, mymob.fire, mymob.hands, mymob.healths, mymob:cells, mymob.pullin, mymob.blind, mymob.flash, robot_inventory, mymob.gun_setting_icon)
+	mymob.client.screen += list(mymob.throw_icon, mymob.zone_sel, mymob.oxygen, mymob.fire, mymob.hands, mymob.healths, mymob:cells, mymob.pullin, robot_inventory, mymob.gun_setting_icon)
 	mymob.client.screen += src.adding + src.other
-	common_hud()
-
 
 /datum/hud/proc/toggle_show_robot_modules()
 	if(!isrobot(mymob))
@@ -220,10 +196,10 @@ var/obj/screen/robot_inventory
 				//Module is not currently active
 				r.client.screen += A
 				if(x < 0)
-					A.screen_loc = "CENTER[x]:16,SOUTH+[y]:7"
+					A.screen_loc = "CENTER[x]:[WORLD_ICON_SIZE/2],SOUTH+[y]:7"
 				else
-					A.screen_loc = "CENTER+[x]:16,SOUTH+[y]:7"
-				A.layer = SCREEN_LAYER
+					A.screen_loc = "CENTER+[x]:[WORLD_ICON_SIZE/2],SOUTH+[y]:7"
+				A.hud_layerise()
 
 				x++
 				if(x == 4)

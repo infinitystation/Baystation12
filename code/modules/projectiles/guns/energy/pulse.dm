@@ -7,8 +7,9 @@
 	force = 10
 	projectile_type = /obj/item/projectile/beam
 	sel_mode = 2
-	max_shots = 10
-	
+	max_shots = 30
+	w_class = 5
+
 	firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, fire_delay=null, charge_cost=null),
 		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam, fire_delay=null, charge_cost=null),
@@ -25,7 +26,7 @@
 	cell_type = /obj/item/weapon/cell/super
 	fire_delay = 25
 	projectile_type=/obj/item/projectile/beam/pulse
-	charge_cost=400
+	charge_cost=40
 
 /obj/item/weapon/gun/energy/pulse_rifle/destroyer/attack_self(mob/living/user as mob)
 	user << "<span class='warning'>[src.name] has three settings, and they are all DESTROY.</span>"
@@ -36,4 +37,6 @@
 	desc = "It's not the size of the gun, it's the size of the hole it puts through people."
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	icon_state = "m1911-p"
-	max_shots = 5
+	item_state = "pulse"
+	max_shots = 8
+	w_class = 3

@@ -2,13 +2,15 @@
 			   ORGAN DEFINES
 ****************************************************/
 
+//Make sure that w_class is set as if the parent mob was medium sized! This is because w_class is adjusted automatically for mob_size in New()
+
 /obj/item/organ/external/chest
 	name = "upper body"
-	limb_name = "chest"
+	organ_tag = BP_CHEST
 	icon_name = "torso"
 	max_damage = 100
 	min_broken_damage = 35
-	w_class = 5
+	w_class = 5 //Used for dismembering thresholds, in addition to storage. Humans are w_class 6, so it makes sense that chest is w_class 5.
 	body_part = UPPER_TORSO
 	vital = 1
 	amputation_point = "spine"
@@ -21,34 +23,34 @@
 
 /obj/item/organ/external/groin
 	name = "lower body"
-	limb_name = "groin"
+	organ_tag = BP_GROIN
 	icon_name = "groin"
 	max_damage = 100
 	min_broken_damage = 35
 	w_class = 4
 	body_part = LOWER_TORSO
 	vital = 1
-	parent_organ = "chest"
+	parent_organ = BP_CHEST
 	amputation_point = "lumbar"
 	joint = "hip"
 	dislocated = -1
 	gendered_icon = 1
 
 /obj/item/organ/external/arm
-	limb_name = "l_arm"
+	organ_tag = BP_L_ARM
 	name = "left arm"
 	icon_name = "l_arm"
 	max_damage = 50
 	min_broken_damage = 30
 	w_class = 3
 	body_part = ARM_LEFT
-	parent_organ = "chest"
+	parent_organ = BP_CHEST
 	joint = "left elbow"
 	amputation_point = "left shoulder"
 	can_grasp = 1
 
 /obj/item/organ/external/arm/right
-	limb_name = "r_arm"
+	organ_tag = BP_R_ARM
 	name = "right arm"
 	icon_name = "r_arm"
 	body_part = ARM_RIGHT
@@ -56,7 +58,7 @@
 	amputation_point = "right shoulder"
 
 /obj/item/organ/external/leg
-	limb_name = "l_leg"
+	organ_tag = BP_L_LEG
 	name = "left leg"
 	icon_name = "l_leg"
 	max_damage = 50
@@ -64,13 +66,13 @@
 	w_class = 3
 	body_part = LEG_LEFT
 	icon_position = LEFT
-	parent_organ = "groin"
+	parent_organ = BP_GROIN
 	joint = "left knee"
 	amputation_point = "left hip"
 	can_stand = 1
 
 /obj/item/organ/external/leg/right
-	limb_name = "r_leg"
+	organ_tag = BP_R_LEG
 	name = "right leg"
 	icon_name = "r_leg"
 	body_part = LEG_RIGHT
@@ -79,7 +81,7 @@
 	amputation_point = "right hip"
 
 /obj/item/organ/external/foot
-	limb_name = "l_foot"
+	organ_tag = BP_L_FOOT
 	name = "left foot"
 	icon_name = "l_foot"
 	max_damage = 30
@@ -87,75 +89,87 @@
 	w_class = 2
 	body_part = FOOT_LEFT
 	icon_position = LEFT
-	parent_organ = "l_leg"
+	parent_organ = BP_L_LEG
 	joint = "left ankle"
 	amputation_point = "left ankle"
 	can_stand = 1
 
 /obj/item/organ/external/foot/removed()
-	if(owner) owner.u_equip(owner.shoes)
+	if(owner) owner.drop_from_inventory(owner.shoes)
 	..()
 
 /obj/item/organ/external/foot/right
-	limb_name = "r_foot"
+	organ_tag = BP_R_FOOT
 	name = "right foot"
 	icon_name = "r_foot"
 	body_part = FOOT_RIGHT
 	icon_position = RIGHT
-	parent_organ = "r_leg"
+	parent_organ = BP_R_LEG
 	joint = "right ankle"
 	amputation_point = "right ankle"
 
 /obj/item/organ/external/hand
-	limb_name = "l_hand"
+	organ_tag = BP_L_HAND
 	name = "left hand"
 	icon_name = "l_hand"
 	max_damage = 30
 	min_broken_damage = 15
 	w_class = 2
 	body_part = HAND_LEFT
-	parent_organ = "l_arm"
+	parent_organ = BP_L_ARM
 	joint = "left wrist"
 	amputation_point = "left wrist"
 	can_grasp = 1
 
 /obj/item/organ/external/hand/removed()
-	owner.u_equip(owner.gloves)
+	owner.drop_from_inventory(owner.gloves)
 	..()
 
 /obj/item/organ/external/hand/right
-	limb_name = "r_hand"
+	organ_tag = BP_R_HAND
 	name = "right hand"
 	icon_name = "r_hand"
 	body_part = HAND_RIGHT
-	parent_organ = "r_arm"
+	parent_organ = BP_R_ARM
 	joint = "right wrist"
 	amputation_point = "right wrist"
 
 /obj/item/organ/external/head
-	limb_name = "head"
+	organ_tag = BP_HEAD
 	icon_name = "head"
 	name = "head"
+	slot_flags = SLOT_BELT
 	max_damage = 75
 	min_broken_damage = 35
 	w_class = 3
 	body_part = HEAD
 	vital = 1
-	parent_organ = "chest"
+	parent_organ = BP_CHEST
 	joint = "jaw"
 	amputation_point = "neck"
 	gendered_icon = 1
 	encased = "skull"
 	var/can_intake_reagents = 1
+	var/eye_icon = "eyes_s"
+	var/has_lips
+
+/obj/item/organ/external/head/robotize(var/company, var/skip_prosthetics, var/keep_organs)
+	if(company)
+		var/datum/robolimb/R = all_robolimbs[company]
+		if(R)
+			can_intake_reagents = R.can_eat
+			eye_icon = R.use_eye_icon
+	. = ..(company, skip_prosthetics, 1)
+	has_lips = null
 
 /obj/item/organ/external/head/removed()
 	if(owner)
 		name = "[owner.real_name]'s head"
-		owner.u_equip(owner.glasses)
-		owner.u_equip(owner.head)
-		owner.u_equip(owner.l_ear)
-		owner.u_equip(owner.r_ear)
-		owner.u_equip(owner.wear_mask)
+		owner.drop_from_inventory(owner.glasses)
+		owner.drop_from_inventory(owner.head)
+		owner.drop_from_inventory(owner.l_ear)
+		owner.drop_from_inventory(owner.r_ear)
+		owner.drop_from_inventory(owner.wear_mask)
 		spawn(1)
 			owner.update_hair()
 	..()
@@ -168,3 +182,6 @@
 				disfigure("brute")
 		if (burn_dam > 40)
 			disfigure("burn")
+
+/obj/item/organ/external/head/no_eyes
+	eye_icon = "blank_eyes"

@@ -8,6 +8,10 @@
 		return
 	if(!loc)
 		return
+
+	if(machine && !CanMouseDrop(machine, src))
+		machine = null
+
 	var/datum/gas_mixture/environment = loc.return_air()
 
 	if(stat != DEAD)
@@ -20,11 +24,14 @@
 		//Chemicals in the body
 		handle_chemicals_in_body()
 
-		//Blood
+		//Blood - do this after chemicals so that dexplus doesn't keep people awake with no heart
 		handle_blood()
 
 		//Random events (vomiting etc)
 		handle_random_events()
+
+		//stuff in the stomach
+		handle_stomach()
 
 		. = 1
 
@@ -34,9 +41,6 @@
 
 	//Check if we're on fire
 	handle_fire()
-
-	//stuff in the stomach
-	handle_stomach()
 
 	update_pulling()
 
@@ -144,6 +148,10 @@
 	return paralysis
 
 /mob/living/proc/handle_disabilities()
+	handle_impaired_vision()
+	handle_impaired_hearing()
+
+/mob/living/proc/handle_impaired_vision()
 	//Eyes
 	if(sdisabilities & BLIND || stat)	//blindness from disability or unconsciousness doesn't get better on its own
 		eye_blind = max(eye_blind, 1)
@@ -152,13 +160,15 @@
 	else if(eye_blurry)			//blurry eyes heal slowly
 		eye_blurry = max(eye_blurry-1, 0)
 
+/mob/living/proc/handle_impaired_hearing()
 	//Ears
-	if(sdisabilities & DEAF)		//disabled-deaf, doesn't get better on its own
-		setEarDamage(-1, max(ear_deaf, 1))
-	else
-		// deafness heals slowly over time, unless ear_damage is over 100
-		if(ear_damage < 100)
-			adjustEarDamage(-0.05,-1)
+	if(sdisabilities & DEAF)	//disabled-deaf, doesn't get better on its own
+		setEarDamage(null, max(ear_deaf, 1))
+	else if(ear_damage < 25)
+		adjustEarDamage(-0.05, -1)	// having ear damage impairs the recovery of ear_deaf
+	else if(ear_damage < 100)
+		adjustEarDamage(-0.05, 0)	// deafness recovers slowly over time, unless ear_damage is over 100. TODO meds that heal ear_damage
+
 
 //this handles hud updates. Calls update_vision() and handle_hud_icons()
 /mob/living/proc/handle_regular_hud_updates()
@@ -170,25 +180,19 @@
 	return 1
 
 /mob/living/proc/handle_vision()
-	client.screen.Remove(global_hud.blurry, global_hud.druggy, global_hud.vimpaired, global_hud.darkMask, global_hud.nvg, global_hud.thermal, global_hud.meson, global_hud.science)
 	update_sight()
 
 	if(stat == DEAD)
 		return
 
-	if(blind)
-		if(eye_blind)
-			blind.layer = 18
-			blind.plane = 0
-		else
-			blind.layer = 0
-			blind.plane = -99
-			if (disabilities & NEARSIGHTED)
-				client.screen += global_hud.vimpaired
-			if (eye_blurry)
-				client.screen += global_hud.blurry
-			if (druggy)
-				client.screen += global_hud.druggy
+	if(eye_blind)
+		overlay_fullscreen("blind", /obj/screen/fullscreen/blind)
+	else
+		clear_fullscreen("blind")
+		set_fullscreen(disabilities & NEARSIGHTED, "impaired", /obj/screen/fullscreen/impaired, 1)
+		set_fullscreen(eye_blurry, "blurry", /obj/screen/fullscreen/blurry)
+		set_fullscreen(druggy, "high", /obj/screen/fullscreen/high)
+
 	if(machine)
 		var/viewflags = machine.check_eye(src)
 		if(viewflags < 0)

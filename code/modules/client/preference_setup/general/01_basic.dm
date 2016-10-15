@@ -23,6 +23,7 @@ datum/preferences
 
 /datum/category_item/player_setup_item/general/basic/sanitize_character()
 	var/datum/species/S = all_species[pref.species ? pref.species : "Human"]
+	if(!S) S = all_species["Human"]
 	pref.age                = sanitize_integer(pref.age, S.min_age, S.max_age, initial(pref.age))
 	pref.gender             = sanitize_inlist(pref.gender, S.genders, pick(S.genders))
 	pref.real_name          = sanitize_name(pref.real_name, pref.species)
@@ -32,16 +33,18 @@ datum/preferences
 	pref.be_random_name     = sanitize_integer(pref.be_random_name, 0, 1, initial(pref.be_random_name))
 
 /datum/category_item/player_setup_item/general/basic/content()
-	. = "<b>Name:</b> "
+	. = list()
+	. += "<b>Name:</b> "
 	. += "<a href='?src=\ref[src];rename=1'><b>[pref.real_name]</b></a><br>"
-	. += "(<a href='?src=\ref[src];random_name=1'>Random Name</A>) "
-	. += "(<a href='?src=\ref[src];always_random_name=1'>Always Random Name: [pref.be_random_name ? "Yes" : "No"]</a>)"
+	. += "<a href='?src=\ref[src];random_name=1'>Randomize Name</A><br>"
+	. += "<a href='?src=\ref[src];always_random_name=1'>Always Random Name: [pref.be_random_name ? "Yes" : "No"]</a>"
 	. += "<br>"
 	. += "<b>Gender:</b> <a href='?src=\ref[src];gender=1'><b>[gender2text(pref.gender)]</b></a><br>"
 	. += "<b>Age:</b> <a href='?src=\ref[src];age=1'>[pref.age]</a><br>"
 	. += "<b>Spawn Point</b>: <a href='?src=\ref[src];spawnpoint=1'>[pref.spawnpoint]</a><br>"
 	if(config.allow_Metadata)
 		. += "<b>OOC Notes:</b> <a href='?src=\ref[src];metadata=1'> Edit </a><br>"
+	. = jointext(.,null)
 
 /datum/category_item/player_setup_item/general/basic/OnTopic(var/href,var/list/href_list, var/mob/user)
 	var/datum/species/S = all_species[pref.species]
@@ -68,7 +71,7 @@ datum/preferences
 		var/new_gender = input(user, "Choose your character's gender:", "Character Preference", pref.gender) as null|anything in S.genders
 		if(new_gender && CanUseTopic(user))
 			pref.gender = new_gender
-		return TOPIC_REFRESH
+		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["age"])
 		var/new_age = input(user, "Choose your character's age:\n([S.min_age]-[S.max_age])", "Character Preference", pref.age) as num|null
@@ -82,13 +85,15 @@ datum/preferences
 			spawnkeys += spawntype
 		var/choice = input(user, "Where would you like to spawn when late-joining?") as null|anything in spawnkeys
 		if(!choice || !spawntypes[choice] || !CanUseTopic(user))	return TOPIC_NOACTION
+		if(!(choice in using_map.allowed_spawns)) //Don't force their hand, just let them know
+			user << "Your chosen spawnpoint ([choice]) is unavailable for the current map. Leaving this setting on the current selection will force you to spawn at one of the allowed spawns."
 		pref.spawnpoint = choice
 		return TOPIC_REFRESH
 
 	else if(href_list["metadata"])
 		var/new_metadata = sanitize(input(user, "Enter any information you'd like others to see, such as Roleplay-preferences:", "Game Preference" , pref.metadata)) as message|null
 		if(new_metadata && CanUseTopic(user))
-			pref.metadata = sanitize(new_metadata)
+			pref.metadata = new_metadata
 			return TOPIC_REFRESH
 
 	return ..()

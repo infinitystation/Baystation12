@@ -27,6 +27,13 @@
 	max_storage_space = DEFAULT_BOX_STORAGE
 	var/foldable = /obj/item/stack/material/cardboard	// BubbleWrap - if set, can be folded (when empty) into a sheet of cardboard
 
+/obj/item/weapon/storage/box/large
+	name = "large box"
+	icon_state = "largebox"
+	w_class = 4
+	max_w_class = 3
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+
 // BubbleWrap - A box can be folded up to make card
 /obj/item/weapon/storage/box/attack_self(mob/user as mob)
 	if(..()) return
@@ -48,7 +55,11 @@
 		return
 	// Now make the cardboard
 	user << "<span class='notice'>You fold [src] flat.</span>"
-	new src.foldable(get_turf(src))
+	if(ispath(foldable, /obj/item/stack))
+		var/stack_amt = max(2**(w_class - 3), 1)
+		new src.foldable(get_turf(src), stack_amt)
+	else
+		new src.foldable(get_turf(src))
 	qdel(src)
 
 /obj/item/weapon/storage/box/make_exact_fit()
@@ -57,15 +68,15 @@
 
 /obj/item/weapon/storage/box/survival/
 	startswith = list(/obj/item/clothing/mask/breath = 1,
-					/obj/item/weapon/tank/emergency_oxygen = 1)
+					/obj/item/weapon/tank/emergency/oxygen = 1)
 
 /obj/item/weapon/storage/box/vox/
 	startswith = list(/obj/item/clothing/mask/breath = 1,
-					/obj/item/weapon/tank/emergency_nitrogen = 1)
+					/obj/item/weapon/tank/emergency/nitrogen = 1)
 
 /obj/item/weapon/storage/box/engineer/
 	startswith = list(/obj/item/clothing/mask/breath = 1,
-					/obj/item/weapon/tank/emergency_oxygen/engi = 1)
+					/obj/item/weapon/tank/emergency/oxygen/engi = 1)
 
 /obj/item/weapon/storage/box/gloves
 	name = "box of latex gloves"
@@ -186,6 +197,12 @@
 	icon_state = "flashbang"
 	startswith = list(/obj/item/weapon/grenade/anti_photon = 5)
 
+/obj/item/weapon/storage/box/supermatters
+	name = "box of supermatter grenades"
+	desc = "A box containing 5 highly experimental supermatter grenades."
+	icon_state = "radbox"
+	startswith = list(/obj/item/weapon/grenade/supermatter = 5)
+    
 /obj/item/weapon/storage/box/trackimp
 	name = "boxed tracking implant kit"
 	desc = "Box full of scum-bag tracking utensils."
@@ -210,11 +227,6 @@
 	desc = "This box contains nerd glasses."
 	icon_state = "glasses"
 	startswith = list(/obj/item/clothing/glasses/regular = 7)
-
-/obj/item/weapon/storage/box/drinkingglasses
-	name = "box of drinking glasses"
-	desc = "It has a picture of drinking glasses on it."
-	startswith = list(/obj/item/weapon/reagent_containers/food/drinks/drinkingglass = 6)
 
 /obj/item/weapon/storage/box/cdeathalarm_kit
 	name = "death alarm kit"
@@ -367,7 +379,7 @@
 	item_state = "medicalpack"
 	foldable = null
 	max_w_class = 3
-	w_class = 4
+	w_class = 5
 	can_hold = list(/obj/item/organ, /obj/item/weapon/reagent_containers/food, /obj/item/weapon/reagent_containers/glass)
 	max_storage_space = DEFAULT_BACKPACK_STORAGE
 	use_to_pickup = 1 // for picking up broken bulbs, not that most people will try
@@ -376,8 +388,30 @@
 	name = "checkers box"
 	desc = "This box holds a nifty portion of checkers. Foam-shaped on the inside so that only checkers may fit."
 	icon_state = "checkers"
-	foldable = null //specially shaped boxes generally should not be foldable.
 	max_storage_space = 24
+	foldable = null
 	can_hold = list(/obj/item/weapon/reagent_containers/food/snacks/checker)
 	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/checker = 12,
 					/obj/item/weapon/reagent_containers/food/snacks/checker/red = 12)
+
+/obj/item/weapon/storage/box/checkers/chess
+	name = "black chess box"
+	desc = "This box holds all the pieces needed for the black side of the chess board."
+	icon_state = "chess_b"
+	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/checker/pawn = 8,
+				/obj/item/weapon/reagent_containers/food/snacks/checker/knight = 2,
+				/obj/item/weapon/reagent_containers/food/snacks/checker/bishop = 2,
+				/obj/item/weapon/reagent_containers/food/snacks/checker/rook = 2,
+				/obj/item/weapon/reagent_containers/food/snacks/checker/queen = 1,
+				/obj/item/weapon/reagent_containers/food/snacks/checker/king = 1)
+
+/obj/item/weapon/storage/box/checkers/chess/red
+	name = "red chess box"
+	desc = "This box holds all the pieces needed for the red side of the chess board."
+	icon_state = "chess_r"
+	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/checker/pawn/red = 8,
+				/obj/item/weapon/reagent_containers/food/snacks/checker/knight/red = 2,
+				/obj/item/weapon/reagent_containers/food/snacks/checker/bishop/red = 2,
+				/obj/item/weapon/reagent_containers/food/snacks/checker/rook/red = 2,
+				/obj/item/weapon/reagent_containers/food/snacks/checker/queen/red = 1,
+				/obj/item/weapon/reagent_containers/food/snacks/checker/king/red = 1)

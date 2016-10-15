@@ -1,18 +1,22 @@
+#define STEALTH_OFF 0
+#define STEALTH_MANUAL 1
+#define STEALTH_AUTO 2
+
 var/list/admin_datums = list()
 
 /datum/admins
-	var/rank			= "Temporary Admin"
-	var/client/owner	= null
-	var/rights = 0
-	var/fakekey			= null
+	var/rank         = "Temporary Admin"
+	var/client/owner = null
+	var/rights       = 0
+	var/stealthy_    = STEALTH_OFF
 
-	var/datum/weakref/marked_datum_weak
+	var/weakref/marked_datum_weak
 
 	var/admincaster_screen = 0	//See newscaster.dm under machinery for a full description
 	var/datum/feed_message/admincaster_feed_message = new /datum/feed_message   //These two will act as holders.
 	var/datum/feed_channel/admincaster_feed_channel = new /datum/feed_channel
 	var/admincaster_signature	//What you'll sign the newsfeeds as
-	
+
 /datum/admins/proc/marked_datum()
 	if(marked_datum_weak)
 		return marked_datum_weak.resolve()
@@ -61,22 +65,26 @@ proc/admin_proc()
 
 NOTE: It checks usr by default. Supply the "user" argument if you wish to check for a specific mob.
 */
-/proc/check_rights(rights_required, show_msg=1, var/mob/user = usr)
-	if(user && user.client)
-		if(rights_required)
-			if(user.client.holder)
-				if(rights_required & user.client.holder.rights)
-					return 1
-				else
-					if(show_msg)
-						user << "<font color='red'>Error: You do not have sufficient rights to do that. You require one of the following flags:[rights2text(rights_required," ")].</font>"
+/proc/check_rights(rights_required, show_msg=1, var/client/C = usr)
+	if(ismob(C))
+		var/mob/M = C
+		C = M.client
+	if(!C)
+		return FALSE
+	if(!C.holder)
+		if(show_msg)
+			to_chat(C, "<span class='warning'>Error: You are not an admin.</span>")
+		return FALSE
+
+	if(rights_required)
+		if(rights_required & C.holder.rights)
+			return TRUE
 		else
-			if(user.client.holder)
-				return 1
-			else
-				if(show_msg)
-					user << "<font color='red'>Error: You are not an admin.</font>"
-	return 0
+			if(show_msg)
+				to_chat(C, "<span class='warning'>Error: You do not have sufficient rights to do that. You require one of the following flags:[rights2text(rights_required," ")].</span>")
+			return FALSE
+	else
+		return TRUE
 
 //probably a bit iffy - will hopefully figure out a better solution
 /proc/check_if_greater_rights_than(client/other)
@@ -87,13 +95,54 @@ NOTE: It checks usr by default. Supply the "user" argument if you wish to check 
 			if(usr.client.holder.rights != other.holder.rights)
 				if( (usr.client.holder.rights & other.holder.rights) == other.holder.rights )
 					return 1	//we have all the rights they have and more
-		usr << "<font color='red'>Error: Cannot proceed. They have more or equal rights to us.</font>"
+		to_chat(usr, "<font color='red'>Error: Cannot proceed. They have more or equal rights to us.</font>")
 	return 0
-
-
 
 /client/proc/deadmin()
 	if(holder)
 		holder.disassociate()
 		//qdel(holder)
 	return 1
+
+/client/Stat()
+	. = ..()
+	var/stealth_status = is_stealthed()
+	if(usr && stealth_status && statpanel("Status"))
+		stat("Stealth", "Engaged [holder.stealthy_ == STEALTH_AUTO ? "(Auto)" : "(Manual)"]")
+
+/client/proc/is_stealthed()
+	if(!holder)
+		return FALSE
+
+	// If someone has been AFK since round-start or longer, stealth them
+	// BYOND keeps track of inactivity between rounds as long as it's not a full stop/start.
+	if(holder.stealthy_ == STEALTH_OFF && inactivity >= world.time)
+		holder.stealthy_ = STEALTH_AUTO
+	else if(holder.stealthy_ == STEALTH_AUTO && inactivity < world.time)
+		// And if someone has been set to auto-stealth and returns, unstealth them
+		holder.stealthy_ = STEALTH_OFF
+	return holder.stealthy_
+
+/mob/proc/is_stealthed()
+	return client && client.is_stealthed()
+
+/client/proc/stealth()
+	set category = "Admin"
+	set name = "Stealth Mode"
+
+	if(!holder)
+		to_chat(src, "<span class='warning'>Error: You are not an admin.</span>")
+		return
+
+	holder.stealthy_ = holder.stealthy_ == STEALTH_OFF ? STEALTH_MANUAL : STEALTH_OFF
+	if(holder.stealthy_)
+		to_chat(src, "<span class='notice'>You are now stealthed.</span>")
+	else
+		to_chat(src, "<span class='notice'>You are no longer stealthed.</span>")
+
+	log_and_message_admins("has turned stealth mode [holder.stealthy_ ? "ON" : "OFF"]")
+	feedback_add_details("admin_verb","SM") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+#undef STEALTH_OFF
+#undef STEALTH_MANUAL
+#undef STEALTH_AUTO

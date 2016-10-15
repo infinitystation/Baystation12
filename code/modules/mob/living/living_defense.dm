@@ -30,12 +30,12 @@
 		return 100
 
 	//this makes it so that X armour blocks X% damage, when including the chance of hard block.
-	//I double checked and this formula will also ensure that a higher effective_armor 
+	//I double checked and this formula will also ensure that a higher effective_armor
 	//will always result in higher (non-fullblock) damage absorption too, which is also a nice property
 	//In particular, blocked will increase from 0 to 50 as effective_armor increases from 0 to 0.999 (if it is 1 then we never get here because ofc)
 	//and the average damage absorption = (blocked/100)*(1-fullblock) + 1.0*(fullblock) = effective_armor
 	var/blocked = (effective_armor - fullblock)/(1 - fullblock)*100
-	
+
 	if(blocked > 20)
 		//Should we show this every single time?
 		if(soften_text)
@@ -45,7 +45,7 @@
 
 	return round(blocked, 1)
 
-//Adds two armor values together. 
+//Adds two armor values together.
 //If armor_a and armor_b are between 0-100 the result will always also be between 0-100.
 /proc/add_armor(var/armor_a, var/armor_b)
 	if(armor_a >= 100 || armor_b >= 100)
@@ -63,19 +63,16 @@
 /mob/living/bullet_act(var/obj/item/projectile/P, var/def_zone)
 
 	//Being hit while using a deadman switch
-	if(istype(get_active_hand(),/obj/item/device/assembly/signaler))
-		var/obj/item/device/assembly/signaler/signaler = get_active_hand()
-		if(signaler.deadman && prob(80))
-			log_and_message_admins("has triggered a signaler deadman's switch")
-			src.visible_message("\red [src] triggers their deadman's switch!")
-			signaler.signal()
+	var/obj/item/device/assembly/signaler/signaler = get_active_hand()
+	if(istype(signaler) && signaler.deadman)
+		log_and_message_admins("has triggered a signaler deadman's switch")
+		src.visible_message("<span class='warning'>[src] triggers their deadman's switch!</span>")
+		signaler.signal()
 
 	//Stun Beams
 	if(P.taser_effect)
 		stun_effect_act(0, P.agony, def_zone, P)
-		src <<"\red You have been hit by [P]!"
-		qdel(P)
-		return
+		//src <<"<span class='warning'>You have been hit by [P]!</span>"
 
 	//Armor
 	var/absorb = run_armor_check(def_zone, P.check_armour, P.armor_penetration)
@@ -177,10 +174,7 @@
 			var/mob/M = O.thrower
 			var/client/assailant = M.client
 			if(assailant)
-				src.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been hit with a [O], thrown by [M.name] ([assailant.ckey])</font>")
-				M.attack_log += text("\[[time_stamp()]\] <font color='red'>Hit [src.name] ([src.ckey]) with a thrown [O]</font>")
-				if(!istype(src,/mob/living/simple_animal/mouse))
-					msg_admin_attack("[src.name] ([src.ckey]) was hit by a [O], thrown by [M.name] ([assailant.ckey]) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)")
+				admin_attack_log(M, src, "Threw \an [O] at the victim.", "Had \an [O] thrown at them.", "threw \an [O] at")
 
 		// Begin BS12 momentum-transfer code.
 		var/mass = 1.5
@@ -240,8 +234,8 @@
 		return
 
 	adjustBruteLoss(damage)
-	user.attack_log += text("\[[time_stamp()]\] <font color='red'>attacked [src.name] ([src.ckey])</font>")
-	src.attack_log += text("\[[time_stamp()]\] <font color='orange'>was attacked by [user.name] ([user.ckey])</font>")
+	admin_attack_log(user, src, "Attacked", "Was attacked", "attacked")
+
 	src.visible_message("<span class='danger'>[user] has [attack_message] [src]!</span>")
 	user.do_attack_animation(src)
 	spawn(1) updatehealth()
@@ -264,7 +258,7 @@
 	return
 
 /mob/living/proc/adjust_fire_stacks(add_fire_stacks) //Adjusting the amount of fire_stacks we have on person
-    fire_stacks = Clamp(fire_stacks + add_fire_stacks, FIRE_MIN_STACKS, FIRE_MAX_STACKS)
+	fire_stacks = Clamp(fire_stacks + add_fire_stacks, FIRE_MIN_STACKS, FIRE_MAX_STACKS)
 
 /mob/living/proc/handle_fire()
 	if(fire_stacks < 0)
@@ -276,16 +270,22 @@
 		ExtinguishMob() //Fire's been put out.
 		return 1
 
+	if(HUSK in mutations)
+		fire_stacks = max(0, fire_stacks - 0.1) //I guess the fire runs out of fuel eventually
+
 	var/datum/gas_mixture/G = loc.return_air() // Check if we're standing in an oxygenless environment
-	if(G.gas["oxygen"] < 1)
+	if(G.get_by_flag(XGM_GAS_OXIDIZER) < 1)
 		ExtinguishMob() //If there's no oxygen in the tile we're on, put out the fire
 		return 1
 
 	var/turf/location = get_turf(src)
 	location.hotspot_expose(fire_burn_temperature(), 50, 1)
 
-/mob/living/fire_act()
-	adjust_fire_stacks(2)
+/mob/living/fire_act(datum/gas_mixture/air, temperature, volume)
+	//once our fire_burn_temperature has reached the temperature of the fire that's giving fire_stacks, stop adding them.
+	//allow fire_stacks to go up to 4 for fires cooler than 700 K, since are being immersed in flame after all.
+	if(fire_stacks <= 4 || fire_burn_temperature() < temperature)
+		adjust_fire_stacks(2)
 	IgniteMob()
 
 /mob/living/proc/get_cold_protection()

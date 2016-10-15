@@ -34,9 +34,19 @@ var/list/possible_cable_coil_colours
 	icon_state = "0-1"
 	var/d1 = 0
 	var/d2 = 1
-	layer = 2.44 //Just below unary stuff, which is at 2.45 and above pipes, which are at 2.4
+
+	plane = ABOVE_TURF_PLANE
+	layer = EXPOSED_WIRE_LAYER
+
 	color = COLOR_RED
 	var/obj/machinery/power/breakerbox/breaker_box
+
+/obj/structure/cable/hide(var/do_hide)
+	if(do_hide && level == 1)
+		plane = ABOVE_PLATING_PLANE
+		layer = WIRE_LAYER
+	else
+		reset_plane_and_layer()
 
 /obj/structure/cable/drain_power(var/drain_check, var/surge, var/amount = 0)
 
@@ -91,6 +101,18 @@ var/list/possible_cable_coil_colours
 	cable_list -= src							//remove it from global cable list
 	..()										// then go ahead and delete the cable
 
+
+// Ghost examining the cable -> tells him the power
+/obj/structure/cable/attack_ghost(mob/user)
+	if(user.client && user.client.inquisitive_ghost)
+		user.examinate(src)
+		// following code taken from attackby (multitool)
+		if(powernet && (powernet.avail > 0))
+			user << "<span class='warning'>[powernet.avail]W in power network.</span>"
+		else
+			user << "<span class='warning'>The cable is not powered.</span>"
+	return
+
 ///////////////////////////////////
 // General procedures
 ///////////////////////////////////
@@ -121,6 +143,7 @@ var/list/possible_cable_coil_colours
 //   - Cable coil : merge cables
 //   - Multitool : get the power currently passing through the cable
 //
+
 /obj/structure/cable/attackby(obj/item/W, mob/user)
 
 	var/turf/T = src.loc
@@ -453,6 +476,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	name = "cable coil"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "coil"
+	randpixel = 2
 	amount = MAXCOIL
 	max_amount = MAXCOIL
 	color = COLOR_RED
@@ -481,8 +505,6 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	src.amount = length
 	if (param_color) // It should be red by default, so only recolor it if parameter was specified.
 		color = param_color
-	pixel_x = rand(-2,2)
-	pixel_y = rand(-2,2)
 	update_icon()
 	update_wclass()
 
@@ -491,29 +513,21 @@ obj/structure/cable/proc/cableColor(var/colorC)
 ///////////////////////////////////
 
 //you can use wires to heal robotics
-/obj/item/stack/cable_coil/afterattack(var/mob/M, var/mob/user)
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
+/obj/item/stack/cable_coil/attack(var/atom/A, var/mob/living/user, var/def_zone)
+	if(ishuman(A) && user.a_intent == I_HELP)
+		var/mob/living/carbon/human/H = A
 		var/obj/item/organ/external/S = H.organs_by_name[user.zone_sel.selecting]
 
 		if (!S) return
-		if(!(S.status & ORGAN_ROBOT) || user.a_intent != I_HELP)
+		if(S.robotic < ORGAN_ROBOT || user.a_intent != I_HELP)
 			return ..()
 
-		if(S.burn_dam)
-			if(S.burn_dam < ROBOLIMB_SELF_REPAIR_CAP)
-				S.heal_damage(0,15,0,1)
-				user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-				user.visible_message("<span class='danger'>\The [user] patches some damaged wiring on \the [M]'s [S.name] with \the [src].</span>")
-			else if(S.open != 2)
-				user << "<span class='danger'>The damage is far too severe to patch over externally.</span>"
-			return 1
-		else if(S.open != 2)
-			user << "<span class='notice'>Nothing to fix!</span>"
-
-	else
-		return ..()
+		var/use_amt = min(src.amount, ceil(S.burn_dam/3), 5)
+		if(can_use(use_amt))
+			if(S.robo_repair(3*use_amt, BURN, "some damaged wiring", src, user))
+				src.use(use_amt)
+		return
+	return ..()
 
 
 /obj/item/stack/cable_coil/update_icon()
@@ -837,8 +851,6 @@ obj/structure/cable/proc/cableColor(var/colorC)
 /obj/item/stack/cable_coil/cut/New(loc)
 	..()
 	src.amount = rand(1,2)
-	pixel_x = rand(-2,2)
-	pixel_y = rand(-2,2)
 	update_icon()
 	update_wclass()
 

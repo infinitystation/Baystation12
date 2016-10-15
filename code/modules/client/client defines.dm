@@ -6,8 +6,6 @@
 	var/datum/admins/deadmin_holder = null
 	var/buildmode		= 0
 
-	var/last_message	= "" //Contains the last message sent by this client - used to protect against copy-paste spamming.
-	var/last_message_count = 0 //contins a number of how many times a message identical to last_message was sent.
 
 		/////////
 		//OTHER//
@@ -35,7 +33,7 @@
 	var/received_irc_pm = -99999
 	var/irc_admin			//IRC admin that spoke with them last.
 	var/mute_irc = 0
-
+	var/warned_about_multikeying = 0	// Prevents people from being spammed about multikeying every time their mob changes.
 
 		////////////////////////////////////
 		//things that require the database//
@@ -46,4 +44,4 @@
 
 	preload_rsc = 0 // This is 0 so we can set it to an URL once the player logs in and have them download the resources from a different server.
 	var/global/obj/screen/click_catcher/void
-	
+

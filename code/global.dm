@@ -1,5 +1,5 @@
 //#define TESTING
-#if DM_VERSION < 506
+#if DM_VERSION < 509
 #warn This compiler is out of date. You may experience issues with projectile animations.
 #endif
 
@@ -13,6 +13,9 @@ var/global/list/active_diseases          = list()
 var/global/list/med_hud_users            = list() // List of all entities using a medical HUD.
 var/global/list/sec_hud_users            = list() // List of all entities using a security HUD.
 var/global/list/hud_icon_reference       = list()
+var/global/list/traders                  = list() //List of all nearby traders
+
+var/global/list/listening_objects         = list() // List of objects that need to be able to hear, used to avoid recursive searching through contents.
 
 
 var/global/list/global_mutations  = list() // List of hidden mutation things.
@@ -65,7 +68,6 @@ var/list/latejoin_cyborg  = list()
 var/list/ban_prison = list()
 
 var/list/prisonwarp         = list() // Prisoners go to these
-var/list/holdingfacility    = list() // Captured people go here
 var/list/xeno_spawn         = list() // Aliens spawn at at these.
 var/list/tdome1             = list()
 var/list/tdome2             = list()
@@ -95,9 +97,6 @@ var/list/adminlog  = list()
 var/list/powernets = list()
 
 var/Debug2 = 0
-var/datum/debug/debugobj
-
-var/datum/moduletypes/mods = new()
 
 var/gravity_is_on = 1
 

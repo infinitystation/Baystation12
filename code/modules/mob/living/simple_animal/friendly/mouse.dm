@@ -22,7 +22,6 @@
 	response_harm   = "stamps on"
 	density = 0
 	var/body_color //brown, gray and white, leave blank for random
-	layer = MOB_LAYER
 	min_oxy = 16 //Require atleast 16kPA oxygen
 	minbodytemp = 223		//Below -50 Degrees Celcius
 	maxbodytemp = 323	//Above 50 Degrees Celcius
@@ -32,7 +31,7 @@
 	mob_size = MOB_MINISCULE
 	possession_candidate = 1
 
-	can_pull_size = 1
+	can_pull_size = TINY_ITEM
 	can_pull_mobs = MOB_PULL_NONE
 
 /mob/living/simple_animal/mouse/Life()
@@ -102,10 +101,6 @@
 			M << 'sound/effects/mousesqueek.ogg'
 	..()
 
-/mob/living/simple_animal/mouse/death()
-	layer = MOB_LAYER
-	..()
-
 /*
  * Mouse types
  */
@@ -132,6 +127,3 @@
 	// Change my name back, don't want to be named Tom (666)
 	name = initial(name)
 	real_name = name
-
-/mob/living/simple_animal/mouse/cannot_use_vents()
-	return

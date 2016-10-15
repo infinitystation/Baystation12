@@ -11,7 +11,7 @@
 	var/ask_verb = "спрашивает"             // Used when sentence ends in a ?
 	var/exclaim_verb = "восклицает"     // Used when sentence ends in a !
 	var/whisper_verb = "шепчет"     // Optional. When not specified speech_verb + quietly/softly is used instead.
-	var/signlang_verb = list("signs") // list of emotes that might be displayed if this language has NONVERBAL or SIGNLANG flags
+	var/signlang_verb = list("signs", "gestures") // list of emotes that might be displayed if this language has NONVERBAL or SIGNLANG flags
 	var/colour = "body"               // CSS style to use for strings in this language.
 	var/key = "x"                     // Character used to speak in language eg. :o for Unathi.
 	var/flags = 0                     // Various language flags.
@@ -132,6 +132,9 @@
 			return ask_verb
 	return speech_verb
 
+/datum/language/proc/can_speak_special(var/mob/speaker)
+	return 1
+
 // Language handling.
 /mob/proc/add_language(var/language)
 
@@ -156,7 +159,7 @@
 
 // Can we speak this language, as opposed to just understanding it?
 /mob/proc/can_speak(datum/language/speaking)
-	return (universal_speak || (speaking && speaking.flags & INNATE) || speaking in src.languages)
+	return (speaking.can_speak_special(src) && (universal_speak || (speaking && speaking.flags & INNATE) || speaking in src.languages))
 
 /mob/proc/get_language_prefix()
 	if(client && client.prefs.language_prefixes && client.prefs.language_prefixes.len)

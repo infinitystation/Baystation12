@@ -7,7 +7,8 @@
 /obj/vehicle
 	name = "vehicle"
 	icon = 'icons/obj/vehicles.dmi'
-	layer = MOB_LAYER + 0.1 //so it sits above objects including mobs
+	plane = ABOVE_HUMAN_PLANE
+	layer = ABOVE_HUMAN_LAYER
 	density = 1
 	anchored = 1
 	animate_movement=1
@@ -16,7 +17,7 @@
 	can_buckle = 1
 	buckle_movable = 1
 	buckle_lying = 0
-
+	
 	var/attack_log = null
 	var/on = 0
 	var/health = 0	//do not forget to set health for your vehicle!
@@ -31,13 +32,12 @@
 	var/move_delay = 1	//set this to limit the speed of the vehicle
 
 	var/obj/item/weapon/cell/cell
-	var/charge_use = 5	//set this to adjust the amount of power the vehicle uses per move
+	var/charge_use = 200 //W
 
 	var/atom/movable/load		//all vehicles can take a load, since they should all be a least drivable
 	var/load_item_visible = 1	//set if the loaded item should be overlayed on the vehicle sprite
 	var/load_offset_x = 0		//pixel_x offset for item overlay
 	var/load_offset_y = 0		//pixel_y offset for item overlay
-	var/mob_offset_y = 0		//pixel_y offset for mob overlay
 
 //-------------------------------------------
 // Standard procs
@@ -49,7 +49,7 @@
 /obj/vehicle/Move()
 	if(world.time > l_move_time + move_delay)
 		var/old_loc = get_turf(src)
-		if(on && powered && cell.charge < charge_use)
+		if(on && powered && cell.charge < (charge_use * CELLRATE))
 			turn_off()
 
 		var/init_anc = anchored
@@ -62,7 +62,7 @@
 		anchored = init_anc
 
 		if(on && powered)
-			cell.use(charge_use)
+			cell.use(charge_use * CELLRATE)
 
 		//Dummy loads do not have to be moved as they are just an overlay
 		//See load_object() proc in cargo_trains.dm for an example
@@ -139,7 +139,7 @@
 /obj/vehicle/emp_act(severity)
 	var/was_on = on
 	stat |= EMPED
-	var/obj/effect/overlay/pulse2 = PoolOrNew(/obj/effect/overlay, src.loc)
+	var/obj/effect/overlay/pulse2 = new /obj/effect/overlay(loc)
 	pulse2.icon = 'icons/effects/effects.dmi'
 	pulse2.icon_state = "empdisable"
 	pulse2.name = "emp sparks"
@@ -158,9 +158,10 @@
 /obj/vehicle/attack_ai(mob/user as mob)
 	return
 
-// For downstream compatibility (in particular Paradise)
-/obj/vehicle/proc/handle_rotation()
-	return
+/obj/vehicle/unbuckle_mob(mob/user)
+	. = ..(user)
+	if(load == .)
+		unload(.)
 
 //-------------------------------------------
 // Vehicle procs
@@ -168,7 +169,7 @@
 /obj/vehicle/proc/turn_on()
 	if(stat)
 		return 0
-	if(powered && cell.charge < charge_use)
+	if(powered && cell.charge < (charge_use * CELLRATE))
 		return 0
 	on = 1
 	set_light(initial(light_range))
@@ -192,8 +193,8 @@
 	src.visible_message("<span class='danger'>\The [src] blows apart!</span>")
 	var/turf/Tsec = get_turf(src)
 
-	PoolOrNew(/obj/item/stack/rods, Tsec)
-	PoolOrNew(/obj/item/stack/rods, Tsec)
+	new /obj/item/stack/rods(Tsec)
+	new /obj/item/stack/rods(Tsec)
 	new /obj/item/stack/cable_coil/cut(Tsec)
 
 	if(cell)
@@ -225,7 +226,7 @@
 		turn_off()
 		return
 
-	if(cell.charge < charge_use)
+	if(cell.charge < (charge_use * CELLRATE))
 		turn_off()
 		return
 
@@ -275,8 +276,8 @@
 
 	// if a create/closet, close before loading
 	var/obj/structure/closet/crate = C
-	if(istype(crate))
-		crate.close()
+	if(istype(crate) && crate.opened && !crate.close())
+		return 0
 
 	C.forceMove(loc)
 	C.set_dir(dir)
@@ -285,15 +286,14 @@
 	load = C
 
 	if(load_item_visible)
-		C.pixel_x += load_offset_x
-		if(ismob(C))
-			C.pixel_y += mob_offset_y
-		else
-			C.pixel_y += load_offset_y
-		C.layer = layer + 0.1		//so it sits above the vehicle
+		C.plane = plane
+		C.layer = VEHICLE_LOAD_LAYER		//so it sits above the vehicle
 
 	if(ismob(C))
 		buckle_mob(C)
+	else if(load_item_visible)
+		C.pixel_x += load_offset_x
+		C.pixel_y += load_offset_y
 
 	return 1
 
@@ -331,9 +331,14 @@
 	load.forceMove(dest)
 	load.set_dir(get_dir(loc, dest))
 	load.anchored = 0		//we can only load non-anchored items, so it makes sense to set this to false
-	load.pixel_x = initial(load.pixel_x)
-	load.pixel_y = initial(load.pixel_y)
-	load.layer = initial(load.layer)
+	if(ismob(load)) //atoms should probably have their own procs to define how their pixel shifts and layer can be manipulated, someday
+		var/mob/M = load
+		M.pixel_x = M.default_pixel_x
+		M.pixel_y = M.default_pixel_y
+	else
+		load.pixel_x = initial(load.pixel_x)
+		load.pixel_y = initial(load.pixel_y)
+	load.reset_plane_and_layer()
 
 	if(ismob(load))
 		unbuckle_mob(load)
@@ -354,7 +359,7 @@
 		return
 	visible_message("<span class='danger'>\The [user] [attack_message] the \the [src]!</span>")
 	if(istype(user))
-		user.attack_log += text("\[[time_stamp()]\] <font color='red'>attacked \the [src.name]</font>")
+		admin_attacker_log(user, "attacked \the [src]")
 		user.do_attack_animation(src)
 	src.health -= damage
 	if(prob(10))
