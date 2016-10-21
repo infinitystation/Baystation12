@@ -18,6 +18,8 @@
 	var/item_state = null // Used to specify the item state for the on-mob overlays.
 
 	var/auto_init = 1
+	
+	glide_size = 6
 
 /atom/movable/New()
 	..()
