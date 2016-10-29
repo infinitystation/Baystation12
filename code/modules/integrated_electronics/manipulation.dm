@@ -1,4 +1,3 @@
-
 /obj/item/integrated_circuit/manipulation/smoke
 	name = "smoke generator"
 	desc = "Unlike most electronics, creating smoke is completely intentional."
@@ -127,9 +126,9 @@
 	create_reagents(60)
 
 /obj/item/integrated_circuit/manipulation/reagent_storage/on_reagent_change()
-	var/datum/integrated_io/A = outputs[1]
-	A.data = reagents.total_volume
-	A.push_data()
+	var/datum/integrated_io/output/O = outputs[1]
+	O.data = reagents.total_volume
+	O.push_data()
 
 /obj/item/integrated_circuit/manipulation/reagent_storage/cryo
 	name = "cryo reagent storage"
@@ -188,6 +187,13 @@
 	outputs = list()
 	activators = list("prime grenade")
 	var/obj/item/weapon/grenade/attached_grenade
+	var/pre_attached_grenade_type
+
+/obj/item/integrated_circuit/manipulation/grenade/New()
+	..()
+	if(pre_attached_grenade_type)
+		var/grenade = new pre_attached_grenade_type(src)
+		attach_grenade(grenade)
 
 /obj/item/integrated_circuit/manipulation/grenade/Destroy()
 	if(attached_grenade && !attached_grenade.active)
@@ -237,6 +243,9 @@
 	size = initial(size)
 	desc = initial(desc)
 
+/obj/item/integrated_circuit/manipulation/grenade/frag
+	pre_attached_grenade_type = /obj/item/weapon/grenade/frag
+
 /obj/item/integrated_circuit/manipulation/bluespace_rift
 	name = "bluespace rift generator"
 	desc = "This powerful circuit can open rifts to another realspace location through bluespace."
@@ -245,7 +254,6 @@
 					Rift direction is a cardinal value determening in which direction the rift will be opened, relative the local north. \
 					A direction value of 0 will open the rift on top of the assembly, and any other non-cardinal values will open the rift in the assembly's current facing."
 	icon_state = "bluespace"
-	flags = OPENCONTAINER
 	complexity = 25
 	size = 3
 	cooldown_per_use = 10 SECONDS
