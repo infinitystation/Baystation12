@@ -74,7 +74,7 @@
 					break
 			spawn(rand(3000, 6000)) //Delayed announcements to keep the crew on their toes.
 				command_alert("Потверждена вспышка 7 уровня на станции [station_name()]. Весь персонал должен сдержать угрозу.", "Тревога: БиологическаЯ угроза.")
-				world << sound('sound/AI/outbreak7.ogg')
+				sound_to(world, sound('sound/AI/outbreak7.ogg'))
 	Tick()
 		ActiveFor = Lifetime //killme
 

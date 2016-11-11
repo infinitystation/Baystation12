@@ -9,7 +9,7 @@ datum/event/viral_outbreak/setup()
 
 datum/event/viral_outbreak/announce()
 	command_alert("Потверждена вспышка биологической угрозы на борту станции [station_name()]. Весь персонал должен сдержать угрозу.", "Тревога: БиологическаЯ угроза")
-	world << sound('sound/AI/outbreak7.ogg')
+	sound_to(world, sound('sound/AI/outbreak7.ogg'))
 
 datum/event/viral_outbreak/start()
 	var/list/candidates = list()	//list of candidate keys

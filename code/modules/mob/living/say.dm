@@ -34,18 +34,18 @@ var/list/department_radio_keys = list(
 
 	  //kinda localization -- rastaf0
 	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
-	  ":к" = "right ear",	".к" = "right ear",
-	  ":д" = "left ear",	".д" = "left ear",
-	  ":ш" = "intercom",	".ш" = "intercom",
-	  ":р" = "department",	".р" = "department",
-	  ":с" = "Command",		".с" = "Command",
-	  ":т" = "Science",		".т" = "Science",
-	  ":ь" = "Medical",		".ь" = "Medical",
-	  ":у" = "Engineering",	".у" = "Engineering",
-	  ":ы" = "Security",	".ы" = "Security",
-	  ":ц" = "whisper",		".ц" = "whisper",
-	  ":е" = "Mercenary",	".е" = "Mercenary",
-	  ":й" = "Supply",		".й" = "Supply",
+	  ":ГЄ" = "right ear",	".ГЄ" = "right ear",
+	  ":Г¤" = "left ear",	".Г¤" = "left ear",
+	  ":Гё" = "intercom",	".Гё" = "intercom",
+	  ":Г°" = "department",	".Г°" = "department",
+	  ":Г±" = "Command",		".Г±" = "Command",
+	  ":ГІ" = "Science",		".ГІ" = "Science",
+	  ":Гј" = "Medical",		".Гј" = "Medical",
+	  ":Гі" = "Engineering",	".Гі" = "Engineering",
+	  ":Г»" = "Security",	".Г»" = "Security",
+	  ":Г¶" = "whisper",		".Г¶" = "whisper",
+	  ":ГҐ" = "Mercenary",	".ГҐ" = "Mercenary",
+	  ":Г©" = "Supply",		".Г©" = "Supply",
 )
 
 
@@ -135,7 +135,7 @@ proc/get_radio_key_from_channel(var/channel)
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="говорит", var/alt_name="")
 	if(client)
 		if(client.prefs.muted & MUTE_IC)
-			src << "\red You cannot speak in IC (Muted)."
+			to_chat(src, "<span class='warning'>You cannot speak in IC (Muted).</span>")
 			return
 
 	if(stat)
@@ -177,7 +177,7 @@ proc/get_radio_key_from_channel(var/channel)
 	verb = say_quote(message, speaking)
 
 	if(is_muzzled())
-		src << "<span class='danger'>You're muzzled and cannot speak!</span>"
+		to_chat(src, "<span class='danger'>You're muzzled and cannot speak!</span>")
 		return
 
 	message = trim_left(message)
@@ -251,7 +251,7 @@ proc/get_radio_key_from_channel(var/channel)
 	spawn(30) qdel(speech_bubble)
 
 	for(var/mob/M in listening)
-		M << speech_bubble
+		to_chat(M, speech_bubble)
 		M.hear_say(message, verb, speaking, alt_name, italics, src, speech_sound, sound_vol)
 
 	for(var/obj/O in listening_obj)
