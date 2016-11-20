@@ -1,5 +1,10 @@
-<h1>Welcome to Space Station 13!</h1>
+<h1>Добро пожаловать на Infinity</h1>
+Используется стандартный билд BayStation12 с небольшими модификациями.
 
--<i>This server is running <a href="http://baystation12.net/">Baystation 12's</a> modification of the <a href="http://ss13.eu/">/tg/station13</a> SS13 code.</i>
-<br><br>
-<strong>Bugtracker:</strong> <a href="http://baystation12.net/forums/threads/issue-tracker-report-template.110/">for posting of bugs and issues.</a>
+Форум сервера:		http://infinity.smforum.ru
+Правила сервера:		http://infinity.smforum.ru/index.php?topic=79.0
+Вики BayStation12:		https://wiki.baystation12.net/
+Логи сервера: 		http://gg.gg/Infinity_LOGS
+Код сервера:			https://github.com/infinitystation
+
+Респавн отключён для тех, кто уже в игре. Цените жизнь своего персонажа и ваших коллег. Погибнув, вы сможете играть лишь в следующем раунде.

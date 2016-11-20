@@ -1,5 +1,5 @@
 
-/datum/map/exodus
+/datum/map/exodus_infinity
 
 	holodeck_programs = list(
 		"emptycourt"       = new/datum/holodeck_program(/area/holodeck/source_emptycourt, list('sound/music/THUNDERDOME.ogg')),

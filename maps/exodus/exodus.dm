@@ -23,7 +23,7 @@
 	#include "../../code/modules/lobby_music/dilbert.dm"
 	#include "../../code/modules/lobby_music/space_oddity.dm"
 
-	#define USING_MAP_DATUM /datum/map/exodus
+	#define USING_MAP_DATUM /datum/map/exodus_infinity
 
 #elif !defined(MAP_OVERRIDE)
 

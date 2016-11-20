@@ -1,21 +1,21 @@
 #if !defined(USING_MAP_DATUM)
 
-	#include "exodus_areas.dm"
-	#include "exodus_holodecks.dm"
-	#include "exodus_shuttles.dm"
+	#include "exodus_areas_inf.dm"
+	#include "exodus_holodecks_inf.dm"
+	#include "exodus_shuttles_inf.dm"
 
-	#include "exodus_unit_testing.dm"
-	#include "exodus_zas_tests.dm"
+	#include "exodus_unit_testing_inf.dm"
+	#include "exodus_zas_tests_inf.dm"
 
 	#include "../shared/exodus_torch_areas.dm"
 	#include "../shared/exodus_torch_zas_tests.dm"
 
-	#include "exodus-1.dmm"
-	#include "exodus-2.dmm"
-	#include "exodus-3.dmm"
-	#include "exodus-4.dmm"
-	#include "exodus-5.dmm"
-	#include "exodus-6.dmm"
+	#include "exodus-1_inf.dmm"
+	#include "exodus-2_inf.dmm"
+	#include "exodus-3_inf.dmm"
+	#include "exodus-4_inf.dmm"
+	#include "exodus-5_inf.dmm"
+	#include "exodus-6_inf.dmm"
 
 	#include "../../code/modules/lobby_music/absconditus.dm"
 	#include "../../code/modules/lobby_music/clouds_of_fire.dm"
@@ -23,7 +23,7 @@
 	#include "../../code/modules/lobby_music/dilbert.dm"
 	#include "../../code/modules/lobby_music/space_oddity.dm"
 
-	#define USING_MAP_DATUM /datum/map/exodus
+	#define USING_MAP_DATUM /datum/map/exodus_infinity
 
 #elif !defined(MAP_OVERRIDE)
 

@@ -2,12 +2,12 @@
 # SERVERNAME spacestation13
 
 ## Alert levels
-ALERT_GREEN All threats to the station have passed. Security may not have weapons visible, privacy laws are once again fully enforced.
-ALERT_BLUE_UPTO The station has received reliable information about possible hostile activity on the station. Security staff may have weapons visible, random searches are permitted.
-ALERT_BLUE_DOWNTO The immediate threat has passed. Security may no longer have weapons drawn at all times, but may continue to have them visible. Random searches are still allowed.
-ALERT_RED_UPTO There is an immediate serious threat to the station. Security may have weapons unholstered at all times. Random searches are allowed and advised.
-ALERT_RED_DOWNTO The self-destruct mechanism has been deactivated, there is still however an immediate serious threat to the station. Security may have weapons unholstered at all times, random searches are allowed and advised.
-ALERT_DELTA The station's self-destruct mechanism has been engaged. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill.
+ALERT_GREEN Все прямые и косвенные угрозы в станции нейтрализованы. Служба Безопасности не может носить оружие и снаряжение на виду. Законы о конфиденциальности и неприкосновеннсти частной жизни вновь работать в полную силу.
+ALERT_BLUE_UPTO Внимание! Станция получила достоверную информацию о возможной враждебной деятельности на борту. Служба Безопасности может носить оружие и снаряжение на виду. Проведением гражданских судов можно принебречь. Случайные обыски допускаются.
+ALERT_BLUE_DOWNTO Внимание. Прямая угроза миновала. Служба Безопасности больше не может быть в состоянии постоянной боевой готовности, однако разрешается видимое ношение оружия и снаряжения. Восстановлена работа судов. Случайные поиски по-прежнему разрешены. 
+ALERT_RED_UPTO Внимание! Существует прямая угроза работе станции. Служба Безопасности может перейти в состояние постоянной боевой готовности. Работникам запрещается покидать свои отделы без уважительной причины. Судебные разбирательства приостановлены. Случайные обыски разрешены и рекомендованы.
+ALERT_RED_DOWNTO ALERT_RED_DOWNTO Внимание! Механизм самоуничтожения станции остановлен, однако всё ещё существует прямая угроза работе станции. Служба Безопасности должна оставаться в состоянии постоянной боевой готовности. Случайные обыски разрешены и рекомендованы.
+ALERT_DELTA  Внимание! Механизм самоуничтожения станции запущен! Весь экипаж должен подчиняться приказам руководства станции. Невыполнение приказов приведет к смертной казни на месте без суда и следствия. Это не учебная тревога. 
 
 ## Add a # infront of this if you want to use the SQL based admin system, the legacy system uses admins.txt. You need to set up your database to use the SQL based system.
 #ADMIN_LEGACY_SYSTEM
@@ -192,23 +192,23 @@ GUEST_BAN
 # USEWHITELIST
 
 ## set a server location for world reboot. Don't include the byond://, just give the address and port.
-#SERVER server.net:port
+#SERVER 88.198.175.74:4738
 
 ## set a server URL for the IRC bot to use; like SERVER, don't include the byond://
 ## Unlike SERVER, this one shouldn't break auto-reconnect
 #SERVERURL server.net:port
 
 ## forum address
-# FORUMURL http://example.com
+FORUMURL http://infinity.smforum.ru/
 
 ## Wiki address
-# WIKIURL http://example.com
+ WIKIURL https://wiki.baystation12.net/
 
 ## GitHub address
-# GITHUBURL https://github.com/example-user/example-repository
+GITHUBURL https://github.com/infinitystation/Baystation12
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-# BANAPPEALS http://example.com
+BANAPPEALS http://infinity.smforum.ru/index.php?board=3.0
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard
