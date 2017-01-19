@@ -542,6 +542,13 @@
 	required_reagents = list("mindbreaker" = 1, "acetone" = 1, "inaprovaline" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/hair_remover
+	name = "Hair Remover"
+	id = "hair_remover"
+	result = "hair_remover"
+	required_reagents = list("radium" = 1, "potassium" = 1, "hclacid" = 1)
+	result_amount = 3
+
 /* Solidification */
 
 /datum/chemical_reaction/phoronsolidification
@@ -1902,7 +1909,7 @@
 	name = "Allies Cocktail"
 	id = "alliescocktail"
 	result = "alliescocktail"
-	required_reagents = list("classicmartini" = 1, "vodka" = 1)
+	required_reagents = list("martini" = 1, "vodka" = 1)
 	result_amount = 2
 
 /datum/chemical_reaction/demonsblood
@@ -1958,7 +1965,7 @@
 	name = "Mead"
 	id = "mead"
 	result = "mead"
-	required_reagents = list("sugar" = 1, "water" = 1)
+	required_reagents = list("honey" = 1, "water" = 1)
 	catalysts = list("enzyme" = 5)
 	result_amount = 2
 
@@ -2144,6 +2151,14 @@
 	required_reagents = list("space_up" = 1, "bluecuracao" = 1, "melonliquor" = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/rum
+	name = "Rum"
+	id = "rum"
+	result = "rum"
+	required_reagents = list("sugar" = 1, "water" = 1)
+	catalysts = list("enzyme" = 5)
+	result_amount = 2
+
 /datum/chemical_reaction/luminol
 	name = "Luminol"
 	id = "luminol"
@@ -2155,7 +2170,7 @@
 	name = "Oxyphoron"
 	id = "oxyphoron"
 	result = "oxyphoron"
-	required_reagents = list("oxygen" = 1, "phoron" = 1)
+	required_reagents = list("water" = 1, "phoron" = 1)
 	result_amount = 2
 
 /datum/chemical_reaction/deuterium

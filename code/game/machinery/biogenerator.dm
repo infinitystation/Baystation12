@@ -108,15 +108,22 @@
 					dat += "<A href='?src=\ref[src];action=create;item=milk;cost=20'>10 milk</A> <FONT COLOR=blue>([round(20/build_eff)])</FONT><BR>"
 					dat += "<A href='?src=\ref[src];action=create;item=meat;cost=50'>Slab of meat</A> <FONT COLOR=blue>([round(50/build_eff)])</FONT><BR>"
 					dat += "Nutrient<BR>"
-					dat += "<A href='?src=\ref[src];action=create;item=ez;cost=10'>E-Z-Nutrient</A> <FONT COLOR=blue>([round(10/build_eff)])</FONT> | <A href='?src=\ref[src];action=create;item=ez5;cost=50'>x5</A><BR>"
-					dat += "<A href='?src=\ref[src];action=create;item=l4z;cost=20'>Left 4 Zed</A> <FONT COLOR=blue>([round(20/build_eff)])</FONT> | <A href='?src=\ref[src];action=create;item=l4z5;cost=100'>x5</A><BR>"
-					dat += "<A href='?src=\ref[src];action=create;item=rh;cost=25'>Robust Harvest</A> <FONT COLOR=blue>([round(25/build_eff)])</FONT> | <A href='?src=\ref[src];action=create;item=rh5;cost=125'>x5</A><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=ez;cost=60'>E-Z-Nutrient</A> <FONT COLOR=blue>([round(10/build_eff)])</FONT> | <A href='?src=\ref[src];action=create;item=ez5;cost=300'>x5</A><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=l4z;cost=120'>Left 4 Zed</A> <FONT COLOR=blue>([round(20/build_eff)])</FONT> | <A href='?src=\ref[src];action=create;item=l4z5;cost=600'>x5</A><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=rh;cost=150'>Robust Harvest</A> <FONT COLOR=blue>([round(25/build_eff)])</FONT> | <A href='?src=\ref[src];action=create;item=rh5;cost=750'>x5</A><BR>"
 					dat += "Leather<BR>"
 					dat += "<A href='?src=\ref[src];action=create;item=wallet;cost=100'>Wallet</A> <FONT COLOR=blue>([round(100/build_eff)])</FONT><BR>"
 					dat += "<A href='?src=\ref[src];action=create;item=gloves;cost=250'>Botanical gloves</A> <FONT COLOR=blue>([round(250/build_eff)])</FONT><BR>"
 					dat += "<A href='?src=\ref[src];action=create;item=tbelt;cost=300'>Utility belt</A> <FONT COLOR=blue>([round(300/build_eff)])</FONT><BR>"
 					dat += "<A href='?src=\ref[src];action=create;item=satchel;cost=400'>Leather Satchel</A> <FONT COLOR=blue>([round(400/build_eff)])</FONT><BR>"
 					dat += "<A href='?src=\ref[src];action=create;item=cashbag;cost=400'>Cash Bag</A> <FONT COLOR=blue>([round(400/build_eff)])</FONT><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=workboots;cost=400'>Workboots</A> <FONT COLOR=blue>([round(400/build_eff)])</FONT><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=leathershoes;cost=400'>Leather Shoes</A> <FONT COLOR=blue>([round(400/build_eff)])</FONT><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=dressshoes;cost=400'>Dress Shoes</A> <FONT COLOR=blue>([round(400/build_eff)])</FONT><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=leathercoat;cost=500'>Leather Coat</A> <FONT COLOR=blue>([round(500/build_eff)])</FONT><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=leatherjacket;cost=500'>Leather Jacket</A> <FONT COLOR=blue>([round(500/build_eff)])</FONT><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=bomberjacket;cost=500'>Bomber Jacket</A> <FONT COLOR=blue>([round(500/build_eff)])</FONT><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=wintercoat;cost=500'>Winter Coat</A> <FONT COLOR=blue>([round(500/build_eff)])</FONT><BR>"
 					//dat += "Other<BR>"
 					//dat += "<A href='?src=\ref[src];action=create;item=monkey;cost=500'>Monkey</A> <FONT COLOR=blue>(500)</FONT><BR>"
 				else
@@ -181,29 +188,29 @@
 		if("meat")
 			new/obj/item/weapon/reagent_containers/food/snacks/meat(loc)
 		if("ez")
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/ez(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/eznutrient(loc)
 		if("l4z")
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/l4z(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/left4zed(loc)
 		if("rh")
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/rh(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/robustharvest(loc)
 		if("ez5") //It's not an elegant method, but it's safe and easy. -Cheridan
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/ez(loc)
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/ez(loc)
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/ez(loc)
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/ez(loc)
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/ez(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/eznutrient(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/eznutrient(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/eznutrient(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/eznutrient(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/eznutrient(loc)
 		if("l4z5")
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/l4z(loc)
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/l4z(loc)
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/l4z(loc)
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/l4z(loc)
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/l4z(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/left4zed(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/left4zed(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/left4zed(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/left4zed(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/left4zed(loc)
 		if("rh5")
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/rh(loc)
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/rh(loc)
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/rh(loc)
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/rh(loc)
-			new/obj/item/weapon/reagent_containers/glass/fertilizer/rh(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/robustharvest(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/robustharvest(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/robustharvest(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/robustharvest(loc)
+			new/obj/item/weapon/reagent_containers/glass/bottle/robustharvest(loc)
 		if("wallet")
 			new/obj/item/weapon/storage/wallet/leather(loc)
 		if("gloves")
@@ -216,6 +223,20 @@
 			new/obj/item/weapon/storage/bag/cash(loc)
 		if("monkey")
 			new/mob/living/carbon/human/monkey(loc)
+		if("workboots")
+			new/obj/item/clothing/shoes/workboots(loc)
+		if("leathershoes")
+			new/obj/item/clothing/shoes/leather(loc)
+		if("dressshoes")
+			new/obj/item/clothing/shoes/dress(loc)
+		if("leathercoat")
+			new/obj/item/clothing/suit/leathercoat(loc)
+		if("leatherjacket")
+			new/obj/item/clothing/suit/storage/toggle/brown_jacket(loc)
+		if("bomberjacket")
+			new/obj/item/clothing/suit/storage/toggle/bomber(loc)
+		if("wintercoat")
+			new/obj/item/clothing/suit/storage/hooded/wintercoat(loc)
 	processing = 0
 	menustat = "complete"
 	update_icon()

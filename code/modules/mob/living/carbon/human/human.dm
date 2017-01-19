@@ -183,7 +183,7 @@
 
 
 /mob/living/carbon/human/show_inv(mob/user as mob)
-	if(user.incapacitated()  || !user.Adjacent(src))
+	if(user.incapacitated()  || !user.Adjacent(src) || !user.IsAdvancedToolUser())
 		return
 
 	var/obj/item/clothing/under/suit = null
@@ -219,9 +219,6 @@
 		dat += "<BR><A href='?src=\ref[src];item=sensors'>Set sensors</A>"
 	if(handcuffed)
 		dat += "<BR><A href='?src=\ref[src];item=[slot_handcuffed]'>Handcuffed</A>"
-	if(legcuffed)
-		dat += "<BR><A href='?src=\ref[src];item=[slot_legcuffed]'>Legcuffed</A>"
-
 	if(suit && suit.accessories.len)
 		dat += "<BR><A href='?src=\ref[src];item=tie'>Remove accessory</A>"
 	dat += "<BR><A href='?src=\ref[src];item=splints'>Remove splints</A>"
@@ -235,9 +232,9 @@
 // called when something steps onto a human
 // this handles mulebots and vehicles
 /mob/living/carbon/human/Crossed(var/atom/movable/AM)
-	if(istype(AM, /obj/machinery/bot/mulebot))
-		var/obj/machinery/bot/mulebot/MB = AM
-		MB.RunOver(src)
+	if(istype(AM, /mob/living/bot/mulebot))
+		var/mob/living/bot/mulebot/MB = AM
+		MB.runOver(src)
 
 	if(istype(AM, /obj/vehicle))
 		var/obj/vehicle/V = AM
@@ -330,7 +327,15 @@
 //Removed the horrible safety parameter. It was only being used by ninja code anyways.
 //Now checks siemens_coefficient of the affected area by default
 /mob/living/carbon/human/electrocute_act(var/shock_damage, var/obj/source, var/base_siemens_coeff = 1.0, var/def_zone = null)
+
 	if(status_flags & GODMODE)	return 0	//godmode
+
+	if(species.siemens_coefficient == -1)
+		if(stored_shock_by_ref["\ref[src]"])
+			stored_shock_by_ref["\ref[src]"] += shock_damage
+		else
+			stored_shock_by_ref["\ref[src]"] = shock_damage
+		return
 
 	if (!def_zone)
 		def_zone = pick(BP_L_HAND, BP_R_HAND)
@@ -606,11 +611,13 @@
 
 	if (href_list["lookitem"])
 		var/obj/item/I = locate(href_list["lookitem"])
-		src.examinate(I)
+		if(I)
+			src.examinate(I)
 
 	if (href_list["lookmob"])
 		var/mob/M = locate(href_list["lookmob"])
-		src.examinate(M)
+		if(M)
+			src.examinate(M)
 
 	if (href_list["flavor_change"])
 		switch(href_list["flavor_change"])
@@ -634,8 +641,10 @@
 /mob/living/carbon/human/eyecheck()
 	if(internal_organs_by_name[BP_EYES]) // Eyes are fucked, not a 'weak point'.
 		var/obj/item/organ/I = internal_organs_by_name[BP_EYES]
-		if(I.status & ORGAN_CUT_AWAY)
+		if(!I.is_usable())
 			return FLASH_PROTECTION_MAJOR
+	else // They can't be flashed if they don't have eyes.
+		return FLASH_PROTECTION_MAJOR
 	return flash_protection
 
 //Used by various things that knock people out by applying blunt trauma to the head.
@@ -705,7 +714,7 @@
 	return 1
 
 /mob/living/carbon/human/proc/vomit()
-	if(!check_has_mouth())
+	if(!check_has_mouth() || isSynthetic())
 		return
 	if(stat == DEAD)
 		return
@@ -886,10 +895,13 @@
 		remoteview_target = null
 		reset_view(0)
 
-/mob/living/carbon/human/proc/get_visible_gender()
+/atom/proc/get_visible_gender()
+	return gender
+
+/mob/living/carbon/human/get_visible_gender()
 	if(wear_suit && wear_suit.flags_inv & HIDEJUMPSUIT && ((head && head.flags_inv & HIDEMASK) || wear_mask))
 		return NEUTER
-	return gender
+	return ..()
 
 /mob/living/carbon/human/proc/increase_germ_level(n)
 	if(gloves)
@@ -1030,7 +1042,7 @@
 			"<span class='warning'>A spike of pain jolts your [organ.name] as you bump [O] inside.</span>", \
 			"<span class='warning'>Your movement jostles [O] in your [organ.name] painfully.</span>", \
 			"<span class='warning'>Your movement jostles [O] in your [organ.name] painfully.</span>")
-		custom_pain(msg,40)
+		custom_pain(msg,40,affecting = organ)
 
 	organ.take_damage(rand(1,3), 0, 0)
 	if(!(organ.robotic >= ORGAN_ROBOT) && (should_have_organ(BP_HEART))) //There is no blood in protheses.
@@ -1095,6 +1107,7 @@
 		holder_type = null
 
 	species = all_species[new_species]
+	species.handle_pre_spawn(src)
 
 	if(species.language)
 		add_language(species.language)
@@ -1147,10 +1160,14 @@
 	if(config && config.use_cortical_stacks && client && client.prefs.has_cortical_stack)
 		create_stack()
 	full_prosthetic = null
-	if(species)
-		return 1
-	else
-		return 0
+
+	//recheck species-restricted clothing
+	for(var/slot in slot_first to slot_last)
+		var/obj/item/clothing/C = get_equipped_item(slot)
+		if(istype(C) && !C.mob_can_equip(src, slot, 1))
+			unEquip(C)
+
+	return 1
 
 /mob/living/carbon/human/proc/bloody_doodle()
 	set category = "IC"
@@ -1293,7 +1310,7 @@
 /mob/living/carbon/human/has_eyes()
 	if(internal_organs_by_name[BP_EYES])
 		var/obj/item/organ/internal/eyes = internal_organs_by_name[BP_EYES]
-		if(eyes && istype(eyes) && !(eyes.status & ORGAN_CUT_AWAY))
+		if(eyes && eyes.is_usable())
 			return 1
 	return 0
 

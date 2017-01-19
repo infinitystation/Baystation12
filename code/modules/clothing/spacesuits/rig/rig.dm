@@ -518,8 +518,8 @@
 		var/species_icon = 'icons/mob/rig_back.dmi'
 		// Since setting mob_icon will override the species checks in
 		// update_inv_wear_suit(), handle species checks here.
-		if(wearer && sprite_sheets && sprite_sheets[wearer.species.get_bodytype()])
-			species_icon =  sprite_sheets[wearer.species.get_bodytype()]
+		if(wearer && sprite_sheets && sprite_sheets[wearer.species.get_bodytype(wearer)])
+			species_icon =  sprite_sheets[wearer.species.get_bodytype(wearer)]
 		mob_icon = image("icon" = species_icon, "icon_state" = "[icon_state]")
 
 	if(installed_modules.len)
@@ -931,7 +931,7 @@
 			if(ishuman(wearer.buckled))
 				var/obj/item/organ/external/l_hand = wearer.get_organ(BP_L_HAND)
 				var/obj/item/organ/external/r_hand = wearer.get_organ(BP_R_HAND)
-				if((!l_hand || (l_hand.status & ORGAN_DESTROYED)) && (!r_hand || (r_hand.status & ORGAN_DESTROYED)))
+				if((!l_hand || !l_hand.is_usable()) && (!r_hand || !r_hand.is_usable()))
 					return // No hands to drive your chair? Tough luck!
 			wearer_move_delay += 2
 			return wearer.buckled.relaymove(wearer,direction)

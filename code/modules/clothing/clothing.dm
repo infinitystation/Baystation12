@@ -46,7 +46,7 @@
 			src.attach_accessory(null, tie)
 
 //BS12: Species-restricted clothing check.
-/obj/item/clothing/mob_can_equip(M as mob, slot)
+/obj/item/clothing/mob_can_equip(M as mob, slot, disable_warning = 0)
 
 	//if we can't equip the item anyway, don't bother with species_restricted (cuts down on spam)
 	if (!..())
@@ -62,13 +62,13 @@
 
 		if(H.species)
 			if(exclusive)
-				if(!(H.species.get_bodytype() in species_restricted))
+				if(!(H.species.get_bodytype(H) in species_restricted))
 					wearable = 1
 			else
-				if(H.species.get_bodytype() in species_restricted)
+				if(H.species.get_bodytype(H) in species_restricted)
 					wearable = 1
 
-			if(!wearable && !(slot in list(slot_l_store, slot_r_store, slot_s_store)))
+			if(!disable_warning && !wearable && !(slot in list(slot_l_store, slot_r_store, slot_s_store)))
 				to_chat(H, "<span class='danger'>Your species cannot wear [src].</span>")
 				return 0
 	return 1
@@ -288,7 +288,7 @@ BLIND     // can't see anything
 	var/bodytype = "Default"
 	if(ishuman(user_mob))
 		var/mob/living/carbon/human/user_human = user_mob
-		bodytype = user_human.species.get_bodytype()
+		bodytype = user_human.species.get_bodytype(user_human)
 	var/cache_key = "[light_overlay]_[bodytype]"
 	if(on && light_overlay_cache[cache_key] && slot == slot_head_str)
 		ret.overlays |= light_overlay_cache[cache_key]
@@ -365,11 +365,11 @@ BLIND     // can't see anything
 		overlays |= light_overlay_cache["[light_overlay]_icon"]
 
 		// Generate and cache the on-mob icon, which is used in update_inv_head().
-		var/cache_key = "[light_overlay][H ? "_[H.species.get_bodytype()]" : ""]"
+		var/cache_key = "[light_overlay][H ? "_[H.species.get_bodytype(H)]" : ""]"
 		if(!light_overlay_cache[cache_key])
 			var/use_icon = 'icons/mob/light_overlays.dmi'
-			if(H && sprite_sheets && sprite_sheets[H.species.get_bodytype()])
-				use_icon = sprite_sheets[H.species.get_bodytype()]
+			if(H && sprite_sheets && sprite_sheets[H.species.get_bodytype(H)])
+				use_icon = sprite_sheets[H.species.get_bodytype(H)]
 			light_overlay_cache[cache_key] = image("icon" = use_icon, "icon_state" = "[light_overlay]")
 
 	if(H)
@@ -385,7 +385,6 @@ BLIND     // can't see anything
 /obj/item/clothing/mask
 	name = "mask"
 	icon = 'icons/obj/clothing/masks.dmi'
-	body_parts_covered = HEAD
 	slot_flags = SLOT_MASK
 	body_parts_covered = FACE|EYES
 	sprite_sheets = list(
@@ -396,7 +395,18 @@ BLIND     // can't see anything
 	var/voicechange = 0
 	var/list/say_messages
 	var/list/say_verbs
+	var/down_gas_transfer_coefficient = 0
+	var/down_body_parts_covered = 0
+	var/down_icon_state = 0
+	var/down_item_flags = 0
+	var/pull_mask = 0
+	var/hanging = 0
 	blood_overlay_type = "maskblood"
+
+/obj/item/clothing/mask/New()
+	if(pull_mask)
+		action_button_name = "Adjust Mask"
+	..()
 
 /obj/item/clothing/mask/update_clothing_icon()
 	if (ismob(src.loc))
@@ -413,6 +423,41 @@ BLIND     // can't see anything
 
 /obj/item/clothing/mask/proc/filter_air(datum/gas_mixture/air)
 	return
+
+/obj/item/clothing/mask/proc/adjust_mask(var/mob/user)
+	if(!user.incapacitated())
+		if(!pull_mask)
+			to_chat(usr, "<span class ='notice'>You cannot pull down your [src].</span>")
+			return
+		else
+			src.hanging = !src.hanging
+			if (src.hanging)
+				gas_transfer_coefficient = down_gas_transfer_coefficient
+				body_parts_covered = down_body_parts_covered
+				icon_state = down_icon_state
+				item_flags = down_item_flags
+				to_chat(usr, "You pull the [src] below your chin.")
+			else
+				gas_transfer_coefficient = initial(gas_transfer_coefficient)
+				body_parts_covered = initial(body_parts_covered)
+				icon_state = initial(icon_state)
+				item_flags = initial(item_flags)
+				to_chat(usr, "You pull the [src] up to cover your face.")
+			update_clothing_icon()
+			user.update_action_buttons()
+
+/obj/item/clothing/mask/attack_self(mob/user)
+	if(pull_mask)
+		adjust_mask(user)
+
+/obj/item/clothing/mask/verb/toggle()
+	set category = "Object"
+	set name = "Adjust mask"
+	set src in usr
+	if(!istype(usr, /mob/living)) return
+	if(usr.stat) return
+
+	adjust_mask(usr)
 
 ///////////////////////////////////////////////////////////////////////
 //Shoes
@@ -466,6 +511,11 @@ BLIND     // can't see anything
 	update_icon()
 	return
 
+/obj/item/clothing/shoes/attack_hand(var/mob/living/M)
+	if(can_hold_knife && holding && src.loc == M)
+		draw_knife()
+		return
+	..()
 
 /obj/item/clothing/shoes/attackby(var/obj/item/I, var/mob/user)
 	if(can_hold_knife && is_type_in_list(I, list(/obj/item/weapon/material/shard, /obj/item/weapon/material/butterfly, /obj/item/weapon/material/kitchen/utensil, /obj/item/weapon/material/hatchet/tacknife)))
@@ -606,8 +656,8 @@ BLIND     // can't see anything
 	var/icon/under_icon
 	if(icon_override)
 		under_icon = icon_override
-	else if(H && sprite_sheets && sprite_sheets[H.species.get_bodytype()])
-		under_icon = sprite_sheets[H.species.get_bodytype()]
+	else if(H && sprite_sheets && sprite_sheets[H.species.get_bodytype(H)])
+		under_icon = sprite_sheets[H.species.get_bodytype(H)]
 	else if(item_icons && item_icons[slot_w_uniform_str])
 		under_icon = item_icons[slot_w_uniform_str]
 	else

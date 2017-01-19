@@ -27,7 +27,7 @@
 
 
 /datum/event/brand_intelligence/tick()
-	if(!vendingMachines.len || !originMachine || originMachine.shut_up)	//if every machine is infected, or if the original vending machine is missing or has it's voice switch flipped
+	if(!vendingMachines.len || !originMachine || originMachine.shut_up || !originMachine.shoot_inventory)	//if every machine is infected, or if the original vending machine is missing or has it's voice switch flipped or fixed
 		end()
 		kill()
 		return
@@ -40,14 +40,14 @@
 			infectedMachine.shut_up = 0
 			infectedMachine.shoot_inventory = 1
 
-			if(IsMultiple(activeFor, 12))
-				originMachine.speak(pick("Попробуйте наш новый агрессивный маркетинг!", \
-										 "Вы обязаны купить товар, что-бы накормить свою жизненную одержимость!", \
-										 "Потребите!", \
-										 "Ваши деньги могут купить счастье!", \
-										 "Включение прямого маркетинга!", \
-										 "Рекламирование - легализованная ложь! Но не позволяйте этому сбивать вас с наших отличных сделок!", \
-										 "Не хочешь ли ты что нибудь купить? Окей, ну, я тоже не собирался покупать твою маму."))
+	if(IsMultiple(activeFor, 12))
+		originMachine.speak(pick("Попробуйте наш новый агрессивный маркетинг!", \
+								"Вы обязаны купить товар, что-бы накормить свою жизненную одержимость!", \
+								"Потребите!", \
+								"Ваши деньги могут купить счастье!", \
+								"Включение прямого маркетинга!", \
+								"Рекламирование - легализованная ложь! Но не позволяйте этому сбивать вас с наших отличных сделок!", \
+								"Не хочешь ли ты что нибудь купить? Окей, ну, я тоже не собирался покупать твою маму."))
 
 /datum/event/brand_intelligence/end()
 	for(var/obj/machinery/vending/infectedMachine in infectedVendingMachines)

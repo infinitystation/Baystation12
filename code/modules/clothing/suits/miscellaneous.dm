@@ -91,15 +91,6 @@
 	flags_inv = HIDEJUMPSUIT
 
 
-/obj/item/clothing/suit/wcoat
-	name = "waistcoat"
-	desc = "For some classy, murderous fun."
-	icon_state = "vest"
-	item_state = "wcoat"
-	blood_overlay_type = "armor"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO
-
-
 /obj/item/clothing/suit/apron/overalls
 	name = "coveralls"
 	desc = "A set of denim overalls."
@@ -319,31 +310,31 @@
 	icon_state = "swim_red"
 	siemens_coefficient = 1
 
-/obj/item/clothing/suit/poncho
+/obj/item/clothing/suit/poncho/colored
 	name = "poncho"
 	desc = "A simple, comfortable poncho."
 	icon_state = "classicponcho"
 	item_state = "classicponcho"
 
-/obj/item/clothing/suit/poncho/green
+/obj/item/clothing/suit/poncho/colored/green
 	name = "green poncho"
 	desc = "A simple, comfortable cloak without sleeves. This one is green."
 	icon_state = "greenponcho"
 	item_state = "greenponcho"
 
-/obj/item/clothing/suit/poncho/red
+/obj/item/clothing/suit/poncho/colored/red
 	name = "red poncho"
 	desc = "A simple, comfortable cloak without sleeves. This one is red."
 	icon_state = "redponcho"
 	item_state = "redponcho"
 
-/obj/item/clothing/suit/poncho/purple
+/obj/item/clothing/suit/poncho/colored/purple
 	name = "purple poncho"
 	desc = "A simple, comfortable cloak without sleeves. This one is purple."
 	icon_state = "purpleponcho"
 	item_state = "purpleponcho"
 
-/obj/item/clothing/suit/poncho/blue
+/obj/item/clothing/suit/poncho/colored/blue
 	name = "blue poncho"
 	desc = "A simple, comfortable cloak without sleeves. This one is blue."
 	icon_state = "blueponcho"
@@ -389,22 +380,47 @@
 	icon_closed = "brown_jacket_nt"
 
 /obj/item/clothing/suit/storage/toggle/hoodie
-	name = "grey hoodie"
-	desc = "A warm, grey sweatshirt."
-	icon_state = "grey_hoodie"
-	item_state = "grey_hoodie"
-	icon_open = "grey_hoodie_open"
-	icon_closed = "grey_hoodie"
+	name = "hoodie"
+	desc = "A warm sweatshirt."
+	icon_state = "hoodie"
+	item_state = "hoodie"
+	icon_open = "hoodie_open"
+	icon_closed = "hoodie"
 	min_cold_protection_temperature = T0C - 20
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/toggle/hoodie/cti
+	name = "\improper CTI hoodie"
+	desc = "A warm, black sweatshirt.  It bears the letters CTI on the back, a lettering to the prestigious university in Tau Ceti, Ceti Technical Institute.  There is a blue supernova embroidered on the front, the emblem of CTI."
+	icon_state = "cti_hoodie"
+	icon_open = "cti_hoodie_open"
+	icon_closed = "cti_hoodie"
+
+/obj/item/clothing/suit/storage/toggle/hoodie/mu
+	name = "\improper Mariner University hoodie"
+	desc = "A warm, gray sweatshirt.  It bears the letters MU on the front, a lettering to the well-known public college, Mariner University."
+	icon_state = "mu_hoodie"
+	icon_open = "mu_hoodie_open"
+	icon_closed = "mu_hoodie"
+
+/obj/item/clothing/suit/storage/toggle/hoodie/nt
+	name = "NanoTrasen hoodie"
+	desc = "A warm, blue sweatshirt.  It proudly bears the silver NanoTrasen insignia lettering on the back.  The edges are trimmed with silver."
+	icon_state = "nt_hoodie"
+	icon_open = "nt_hoodie_open"
+	icon_closed = "nt_hoodie"
+
+/obj/item/clothing/suit/storage/toggle/hoodie/smw
+	name = "Space Mountain Wind hoodie"
+	desc = "A warm, black sweatshirt.  It has the logo for the popular softdrink Space Mountain Wind on both the front and the back."
+	icon_state = "smw_hoodie"
+	icon_open = "smw_hoodie_open"
+	icon_closed = "smw_hoodie"
 
 /obj/item/clothing/suit/storage/toggle/hoodie/black
 	name = "black hoodie"
 	desc = "A warm, black sweatshirt."
-	icon_state = "black_hoodie"
-	item_state = "black_hoodie"
-	icon_open = "black_hoodie_open"
-	icon_closed = "black_hoodie"
+	color = COLOR_DARK_GRAY
 
 /obj/item/clothing/suit/storage/mbill
 	name = "shipping jacket"
@@ -412,4 +428,66 @@
 	icon_state = "mbill"
 	item_state = "mbill"
 
+/obj/item/clothing/suit/poncho/roles/security
+	name = "security poncho"
+	desc = "A simple, comfortable cloak without sleeves. This one is black and red, standard NanoTrasen Security colors."
+	icon_state = "secponcho"
+	item_state = "secponcho"
 
+/obj/item/clothing/suit/poncho/roles/medical
+	name = "medical poncho"
+	desc = "A simple, comfortable cloak without sleeves. This one is white with green and blue tint, standard Medical colors."
+	icon_state = "medponcho"
+	item_state = "medponcho"
+
+/obj/item/clothing/suit/poncho/roles/engineering
+	name = "engineering poncho"
+	desc = "A simple, comfortable cloak without sleeves. This one is yellow and orange, standard Engineering colors."
+	icon_state = "engiponcho"
+	item_state = "engiponcho"
+
+/obj/item/clothing/suit/poncho/roles/science
+	name = "science poncho"
+	desc = "A simple, comfortable cloak without sleeves. This one is white with purple trim, standard NanoTrasen Science colors."
+	icon_state = "sciponcho"
+	item_state = "sciponcho"
+
+/obj/item/clothing/suit/poncho/roles/cargo
+	name = "cargo poncho"
+	desc = "A simple, comfortable cloak without sleeves. This one is tan and grey, the colors of Cargo."
+	icon_state = "cargoponcho"
+	item_state = "cargoponcho"
+
+/*
+ * Track Jackets
+ */
+/obj/item/clothing/suit/storage/toggle/track
+	name = "track jacket"
+	desc = "a track jacket, for the athletic."
+	icon_state = "trackjacket"
+	icon_open = "trackjacket_open"
+	icon_closed = "trackjacket"
+
+/obj/item/clothing/suit/storage/toggle/track/blue
+	name = "blue track jacket"
+	icon_state = "trackjacketblue"
+	icon_open = "trackjacketblue_open"
+	icon_closed = "trackjacketblue"
+
+/obj/item/clothing/suit/storage/toggle/track/green
+	name = "green track jacket"
+	icon_state = "trackjacketgreen"
+	icon_open = "trackjacketgreen_open"
+	icon_closed = "trackjacketgreen"
+
+/obj/item/clothing/suit/storage/toggle/track/red
+	name = "red track jacket"
+	icon_state = "trackjacketred"
+	icon_open = "trackjacketred_open"
+	icon_closed = "trackjacketred"
+
+/obj/item/clothing/suit/storage/toggle/track/white
+	name = "white track jacket"
+	icon_state = "trackjacketwhite"
+	icon_open = "trackjacketwhite_open"
+	icon_closed = "trackjacketwhite"

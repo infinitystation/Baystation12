@@ -33,6 +33,7 @@
 		/area/ninja_dojo = NO_SCRUBBER |NO_VENT | NO_APC,
 		/area/outpost/abandoned = NO_SCRUBBER,
 		/area/rescue_base = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/turbolift = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/shuttle = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/shuttle/merchant = NO_SCRUBBER|NO_APC,
 		/area/shuttle/merchant/away = NO_SCRUBBER|NO_VENT|NO_APC,
@@ -64,17 +65,20 @@
 		/area/space,
 		/area/mine/explored,
 		/area/mine/unexplored,
-		/area/centcom/control,
-		/area/constructionsite,
-		/area/constructionsite/maintenance,
-		/area/solar/constructionsite
+		/area/centcom/control
+	)
+
+	area_coherency_test_subarea_count = list(
+			/area/constructionsite = 7,
+			/area/constructionsite/maintenance = 14,
+			/area/solar/constructionsite = 3,
 	)
 
 	area_usage_test_exempted_areas = list(
 		/area/overmap,
 		/area/shuttle/escape/centcom,
 		/area/shuttle/escape,
-		/area/shuttle/turbolift,
+		/area/turbolift,
 		/area/security/prison,
 		/area/shuttle/syndicate_elite/station,
 		/area/shuttle/escape/centcom,

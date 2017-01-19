@@ -170,9 +170,9 @@
 	new /obj/item/clothing/under/rank/atmospheric_technician(src)
 	new /obj/item/clothing/under/rank/atmospheric_technician(src)
 	new /obj/item/clothing/under/rank/atmospheric_technician(src)
-	new /obj/item/clothing/shoes/black(src)
-	new /obj/item/clothing/shoes/black(src)
-	new /obj/item/clothing/shoes/black(src)
+	new /obj/item/clothing/shoes/workboots(src)
+	new /obj/item/clothing/shoes/workboots(src)
+	new /obj/item/clothing/shoes/workboots(src)
 	new /obj/item/clothing/head/hardhat/red(src)
 	new /obj/item/clothing/head/hardhat/red(src)
 	new /obj/item/clothing/head/hardhat/red(src)
@@ -193,9 +193,9 @@
 	new /obj/item/clothing/under/rank/engineer(src)
 	new /obj/item/clothing/under/rank/engineer(src)
 	new /obj/item/clothing/under/rank/engineer(src)
-	new /obj/item/clothing/shoes/orange(src)
-	new /obj/item/clothing/shoes/orange(src)
-	new /obj/item/clothing/shoes/orange(src)
+	new /obj/item/clothing/shoes/workboots(src)
+	new /obj/item/clothing/shoes/workboots(src)
+	new /obj/item/clothing/shoes/workboots(src)
 	new /obj/item/clothing/head/hardhat(src)
 	new /obj/item/clothing/head/hardhat(src)
 	new /obj/item/clothing/head/hardhat(src)
@@ -351,37 +351,6 @@
 	new /obj/item/clothing/suit/storage/toggle/labcoat(src)
 	new /obj/item/clothing/mask/surgical(src)
 	new /obj/item/clothing/mask/surgical(src)
-	return
-
-/obj/structure/closet/wardrobe/medic_torch
-	name = "medical wardrobe"
-	icon_state = "white"
-	icon_closed = "white"
-
-/obj/structure/closet/wardrobe/medic_torch/New()
-	..()
-	new /obj/item/clothing/under/sterile(src)
-	new /obj/item/clothing/under/sterile(src)
-	new /obj/item/clothing/under/rank/medical/blue(src)
-	new /obj/item/clothing/under/rank/medical/green(src)
-	new /obj/item/clothing/under/rank/medical/purple(src)
-	new /obj/item/clothing/under/rank/medical/black(src)
-	new /obj/item/clothing/under/rank/medical/navyblue(src)
-	new /obj/item/clothing/head/surgery/navyblue(src)
-	new /obj/item/clothing/head/surgery/purple(src)
-	new /obj/item/clothing/head/surgery/blue(src)
-	new /obj/item/clothing/head/surgery/green(src)
-	new /obj/item/clothing/head/surgery/black(src)
-	new /obj/item/clothing/suit/surgicalapron(src)
-	new /obj/item/clothing/suit/surgicalapron(src)
-	new /obj/item/clothing/shoes/white(src)
-	new /obj/item/clothing/shoes/white(src)
-	new /obj/item/clothing/suit/storage/toggle/labcoat(src)
-	new /obj/item/clothing/suit/storage/toggle/labcoat(src)
-	new /obj/item/clothing/mask/surgical(src)
-	new /obj/item/clothing/mask/surgical(src)
-	return
-
 
 /obj/structure/closet/wardrobe/grey
 	name = "grey wardrobe"

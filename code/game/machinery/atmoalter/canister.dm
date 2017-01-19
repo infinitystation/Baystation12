@@ -47,6 +47,7 @@
 
 /obj/machinery/portable_atmospherics/canister/oxygen/prechilled
 	name = "\improper Canister: \[O2 (Cryo)\]"
+	start_pressure = 20 * ONE_ATMOSPHERE
 
 /obj/machinery/portable_atmospherics/canister/phoron
 	name = "\improper Canister \[Phoron\]"
@@ -178,7 +179,7 @@ update_flag
 
 		src.destroyed = 1
 		playsound(src.loc, 'sound/effects/spray.ogg', 10, 1, -3)
-		src.density = 0
+		src.set_density(0)
 		update_icon()
 
 		if (src.holding)

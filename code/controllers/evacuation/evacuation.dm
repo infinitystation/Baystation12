@@ -20,6 +20,9 @@ var/datum/evacuation_controller/evacuation_controller
 	var/evac_launch_delay =  3 MINUTES
 	var/evac_transit_delay = 2 MINUTES
 
+	var/emergency_prep_additional_delay = 0 MINUTES
+	var/transfer_prep_additional_delay = 0 MINUTES
+
 	var/evac_cooldown_time
 	var/evac_called_at
 	var/evac_no_return
@@ -28,6 +31,8 @@ var/datum/evacuation_controller/evacuation_controller
 	var/evac_arrival_time
 
 	var/list/evacuation_predicates = list()
+
+	var/list/evacuation_options = list()
 
 	var/datum/announcement/priority/evac_waiting =  new(0)
 	var/datum/announcement/priority/evac_called =   new(0)
@@ -56,9 +61,15 @@ var/datum/evacuation_controller/evacuation_controller
 
 	emergency_evacuation = _emergency_evac
 
+	var/evac_prep_delay_multiplier = 1
+	if(ticker && ticker.mode)
+		evac_prep_delay_multiplier = ticker.mode.shuttle_delay
+
+	var/additional_delay = (emergency_evacuation ? emergency_prep_additional_delay : transfer_prep_additional_delay)
+
 	evac_called_at =    world.time
-	evac_no_return =    evac_called_at +    round(evac_prep_delay/2)
-	evac_ready_time =   evac_called_at +    evac_prep_delay
+	evac_no_return =    evac_called_at +    round(evac_prep_delay/2) + additional_delay
+	evac_ready_time =   evac_called_at +    (evac_prep_delay*evac_prep_delay_multiplier) + additional_delay
 	evac_launch_time =  evac_ready_time +   evac_launch_delay
 	evac_arrival_time = evac_launch_time +  evac_transit_delay
 
@@ -75,7 +86,7 @@ var/datum/evacuation_controller/evacuation_controller
 			evac_called.Announce(replacetext(using_map.emergency_shuttle_called_message, "%ETA%", "[round(get_eta()/60)] minute\s."))
 	else
 		if(!skip_announce)
-			priority_announcement.Announce(replacetext(replacetext(using_map.shuttle_called_message, "%dock_name%", "[dock_name]"),  "%ETA%", "[round(get_eta()/60)] minute\s"))
+			priority_announcement.Announce(replacetext(replacetext(using_map.shuttle_called_message, "%dock_name%", "[using_map.dock_name]"),  "%ETA%", "[round(get_eta()/60)] minute\s"))
 
 	return 1
 
@@ -112,7 +123,7 @@ var/datum/evacuation_controller/evacuation_controller
 	if (emergency_evacuation)
 		evac_waiting.Announce(replacetext(using_map.emergency_shuttle_docked_message, "%ETD%", "[estimated_time] minute\s"))
 	else
-		priority_announcement.Announce(replacetext(replacetext(using_map.shuttle_docked_message, "%dock_name%", "[dock_name]"),  "%ETD%", "[estimated_time] minute\s"))
+		priority_announcement.Announce(replacetext(replacetext(using_map.shuttle_docked_message, "%dock_name%", "[using_map.dock_name]"),  "%ETD%", "[estimated_time] minute\s"))
 	if(config.announce_shuttle_dock_to_irc)
 		send2mainirc("The shuttle has docked with the station. It will depart in approximately [estimated_time] minute\s.")
 
@@ -124,9 +135,9 @@ var/datum/evacuation_controller/evacuation_controller
 	state = EVAC_IN_TRANSIT
 
 	if (emergency_evacuation)
-		priority_announcement.Announce(replacetext(replacetext(using_map.emergency_shuttle_leaving_dock, "%dock_name%", "[dock_name]"),  "%ETA%", "[round(get_eta()/60,1)] minute\s"))
+		priority_announcement.Announce(replacetext(replacetext(using_map.emergency_shuttle_leaving_dock, "%dock_name%", "[using_map.dock_name]"),  "%ETA%", "[round(get_eta()/60,1)] minute\s"))
 	else
-		priority_announcement.Announce(replacetext(replacetext(using_map.shuttle_leaving_dock, "%dock_name%", "[dock_name]"),  "%ETA%", "[round(get_eta()/60,1)] minute\s"))
+		priority_announcement.Announce(replacetext(replacetext(using_map.shuttle_leaving_dock, "%dock_name%", "[using_map.dock_name]"),  "%ETA%", "[round(get_eta()/60,1)] minute\s"))
 
 	return 1
 
@@ -151,4 +162,15 @@ var/datum/evacuation_controller/evacuation_controller
 	else if(state == EVAC_COOLDOWN)
 		if(world.time >= evac_cooldown_time)
 			state = EVAC_IDLE
+
+/datum/evacuation_controller/proc/available_evac_options()
+	return list()
+
+/datum/evacuation_controller/proc/handle_evac_option(var/option_target, var/mob/user)
+	var/datum/evacuation_option/selected = evacuation_options[option_target]
+	if (!isnull(selected) && istype(selected))
+		selected.execute(user)
+
+/datum/evacuation_controller/proc/get_evac_option(var/option_target)
+	return null
 

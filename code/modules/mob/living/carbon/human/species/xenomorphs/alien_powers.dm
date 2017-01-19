@@ -30,7 +30,7 @@
 		if(!I)
 			to_chat(src, "<span class='danger'>Your [needs_organ] has been removed!</span>")
 			return
-		else if((I.status & ORGAN_CUT_AWAY) || I.is_broken())
+		else if(!I.is_usable())
 			to_chat(src, "<span class='danger'>Your [needs_organ] is too damaged to function!</span>")
 			return
 
@@ -213,7 +213,7 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 		to_chat(src, "<span class='warning'>This mindless flesh adds nothing to the hive.</span>")
 		return
 
-	if(M.species.get_bodytype() == "Xenomorph" || !isnull(M.internal_organs_by_name["hive node"]))
+	if(M.species.get_bodytype(M) == "Xenomorph" || !isnull(M.internal_organs_by_name["hive node"]))
 		to_chat(src, "<span class='warning'>They are already part of the hive.</span>")
 		return
 
@@ -231,7 +231,7 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 		to_chat(src, "<span class='warning'>They are too far away.</span>")
 		return
 
-	if(M.species.get_bodytype() == "Xenomorph" || !isnull(M.internal_organs_by_name["hive node"]) || !affecting || (affecting.robotic >= ORGAN_ROBOT))
+	if(M.species.get_bodytype(M) == "Xenomorph" || !isnull(M.internal_organs_by_name["hive node"]) || !affecting || (affecting.robotic >= ORGAN_ROBOT))
 		return
 
 	if(!check_alien_ability(500,1,"egg sac"))

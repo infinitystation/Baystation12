@@ -1,28 +1,57 @@
+#define ZONE_BLOCKED 2
+#define AIR_BLOCKED 1
 //Interactions
 /turf/simulated/wall/proc/toggle_open(var/mob/user)
 
 	if(can_open == WALL_OPENING)
 		return
 
+	calc_rad_resistance()
+
 	if(density)
 		can_open = WALL_OPENING
 		//flick("[material.icon_base]fwall_opening", src)
 		sleep(15)
-		density = 0
-		opacity = 0
+		set_density(0)
+		set_opacity(0)
+		blocks_air = ZONE_BLOCKED
 		update_icon()
+		update_air()
 		set_light(0)
 	else
 		can_open = WALL_OPENING
 		//flick("[material.icon_base]fwall_closing", src)
-		density = 1
-		opacity = 1
+		set_density(1)
+		set_opacity(1)
+		blocks_air = AIR_BLOCKED
 		update_icon()
+		update_air()
 		sleep(15)
 		set_light(1)
 
 	can_open = WALL_CAN_OPEN
 	update_icon()
+
+#undef ZONE_BLOCKED
+#undef AIR_BLOCKED
+
+/turf/simulated/wall/proc/update_air()
+	if(!air_master)
+		return
+
+	for(var/turf/simulated/turf in loc)
+		update_thermal(turf)
+		air_master.mark_for_update(turf)
+
+
+/turf/simulated/wall/proc/update_thermal(var/turf/simulated/source)
+	if(istype(source))
+		if(density && opacity)
+			source.thermal_conductivity = WALL_HEAT_TRANSFER_COEFFICIENT
+		else
+			source.thermal_conductivity = initial(source.thermal_conductivity)
+
+
 
 /turf/simulated/wall/proc/fail_smash(var/mob/user)
 	to_chat(user, "<span class='danger'>You smash against the wall!</span>")

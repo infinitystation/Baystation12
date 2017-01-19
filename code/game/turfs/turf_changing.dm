@@ -24,7 +24,7 @@
 	if(N == /turf/space)
 		var/turf/below = GetBelow(src)
 		if(istype(below) && !istype(below,/turf/space))
-			N = /turf/simulated/open
+			N = below.density ? /turf/simulated/floor/airless : /turf/simulated/open
 
 	var/obj/fire/old_fire = fire
 	var/old_opacity = opacity
@@ -69,6 +69,8 @@
 	. = W
 
 	lighting_overlay = old_lighting_overlay
+	if(lighting_overlay)
+		lighting_overlay.update_overlay()
 	affecting_lights = old_affecting_lights
 	if((old_opacity != opacity) || (dynamic_lighting != old_dynamic_lighting) || force_lighting_update)
 		reconsider_lights()

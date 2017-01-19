@@ -16,6 +16,33 @@
 		color = data["blood_colour"]
 	return
 
+/datum/reagent/blood/proc/sync_to(var/mob/living/carbon/C)
+	data["donor"] = C
+	if (!data["virus2"])
+		data["virus2"] = list()
+	data["virus2"] |= virus_copylist(C.virus2)
+	data["antibodies"] = C.antibodies
+	data["blood_DNA"] = C.dna.unique_enzymes
+	data["blood_type"] = C.dna.b_type
+	data["species"] = C.species.name
+	var/list/temp_chem = list()
+	for(var/datum/reagent/R in C.reagents.reagent_list)
+		temp_chem += R.id
+		temp_chem[R.id] = R.volume
+	data["trace_chem"] = list2params(temp_chem)
+	data["blood_colour"] = C.species.get_blood_colour(C)
+	color = data["blood_colour"]
+
+/datum/reagent/blood/mix_data(var/newdata, var/newamount)
+	if(!islist(newdata))
+		return
+	if(!data["virus2"])
+		data["virus2"] = list()
+	data["virus2"] |= newdata["virus2"]
+	if(!data["antibodies"])
+		data["antibodies"] = list()
+	data["antibodies"] |= newdata["antibodies"]
+
 /datum/reagent/blood/get_data() // Just in case you have a reagent that handles data differently.
 	var/t = data.Copy()
 	if(t["virus2"])
@@ -92,6 +119,16 @@
 	glass_name = "water"
 	glass_desc = "The father of all refreshments."
 
+/datum/reagent/water/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	if(!istype(M, /mob/living/carbon/slime) && alien != IS_SLIME)
+		return
+	M.adjustToxLoss(2 * removed)
+
+/datum/reagent/water/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+	if(!istype(M, /mob/living/carbon/slime) && alien != IS_SLIME)
+		return
+	M.adjustToxLoss(2 * removed)
+
 /datum/reagent/water/touch_turf(var/turf/simulated/T)
 	if(!istype(T))
 		return
@@ -134,15 +171,18 @@
 			remove_self(amount)
 
 /datum/reagent/water/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
-	if(istype(M, /mob/living/carbon/slime))
-		var/mob/living/carbon/slime/S = M
-		S.adjustToxLoss(5 * removed) // Babies have 150 health, adults have 200; So, 30 units and 40
-		if(!S.client)
-			if(S.Target) // Like cats
-				S.Target = null
-				++S.Discipline
-		if(dose == removed)
-			S.visible_message("<span class='warning'>[S]'s flesh sizzles where the water touches it!</span>", "<span class='danger'>Your flesh burns in the water!</span>")
+	if(!istype(M, /mob/living/carbon/slime) && alien != IS_SLIME)
+		return
+	var/mob/living/carbon/slime/S = M
+	S.adjustToxLoss(10 * removed) // Babies have 150 health, adults have 200; So, 15 units and 20
+	if(!S.client)
+		if(S.Target) // Like cats
+			S.Target = null
+		if(S.Victim)
+			S.Feedstop()
+	if(dose == removed)
+		S.visible_message("<span class='warning'>[S]'s flesh sizzles where the water touches it!</span>", "<span class='danger'>Your flesh burns in the water!</span>")
+		S.disoriented = max(S.disoriented, 2)
 
 /datum/reagent/fuel
 	name = "Welding fuel"

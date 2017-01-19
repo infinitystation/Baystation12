@@ -46,16 +46,21 @@
 			species_name += "Cyborg "
 		species_name += "[species.name]"
 		msg += ", <b><font color='[species.get_flesh_colour(src)]'> \a [species_name]!</font></b>"
+	var/extra_species_text = species.get_additional_examine_text(src)
+	if(extra_species_text)
+		msg += "[extra_species_text]<br>"
+
 	msg += "<br>"
 
 	//uniform
 	if(w_uniform && !skipjumpsuit)
 		//Ties
-		var/tie_msg
+		var/list/ties = list()
 		if(istype(w_uniform,/obj/item/clothing/under))
 			var/obj/item/clothing/under/U = w_uniform
-			if(U.accessories.len)
-				tie_msg += ". Attached to it is [lowertext(english_list(U.accessories))]"
+			for(var/accessory in U.accessories)
+				ties += "\icon[accessory] \a [accessory]"
+		var/tie_msg = ties.len? ". Attached to it is [english_list(ties)]" : ""
 
 		if(w_uniform.blood_DNA)
 			msg += "<span class='warning'>[T.He] [T.is] wearing \icon[w_uniform] [w_uniform.gender==PLURAL?"some":"a"] [(w_uniform.blood_color != SYNTH_BLOOD_COLOUR) ? "blood" : "oil"]-stained [w_uniform.name][tie_msg]!</span>\n"
@@ -196,21 +201,23 @@
 	if(mSmallsize in mutations)
 		msg += "[T.He] [T.is] small halfling!\n"
 
-	var/distance = get_dist(usr,src)
-	if(isghost(usr) || usr.stat == DEAD) // ghosts can see anything
+	var/distance = 0
+	if(isghost(user) || user.stat == DEAD) // ghosts can see anything
 		distance = 1
+	else
+		distance = get_dist(user,src)
 	if (src.stat)
 		msg += "<span class='warning'>[T.He] [T.is]n't responding to anything around [T.him] and seems to be asleep.</span>\n"
 		if((stat == DEAD || src.losebreath) && distance <= 3)
 			msg += "<span class='warning'>[T.He] [T.does] not appear to be breathing.</span>\n"
-		if(istype(usr, /mob/living/carbon/human) && !usr.stat && Adjacent(usr))
-			usr.visible_message("<b>[usr]</b> checks [src]'s pulse.", "You check [src]'s pulse.")
-		spawn(15)
-			if(distance <= 1 && usr.stat != 1)
-				if(pulse() == PULSE_NONE)
-					to_chat(usr, "<span class='deadsay'>[T.He] [T.has] no pulse[src.client ? "" : " and [T.his] soul has departed"]...</span>")
-				else
-					to_chat(usr, "<span class='deadsay'>[T.He] [T.has] a pulse!</span>")
+		if(ishuman(user) && !user.incapacitated() && Adjacent(user))
+			spawn(0)
+				user.visible_message("<b>\The [user]</b> checks \the [src]'s pulse.", "You check \the [src]'s pulse.")
+				if(do_after(user, 15, src))
+					if(pulse() == PULSE_NONE)
+						to_chat(user, "<span class='deadsay'>[T.He] [T.has] no pulse[src.client ? "" : " and [T.his] soul has departed"]...</span>")
+					else
+						to_chat(user, "<span class='deadsay'>[T.He] [T.has] a pulse!</span>")
 
 	if(fire_stacks)
 		msg += "[T.He] [T.is] covered in some liquid.\n"
@@ -222,7 +229,7 @@
 	if(nutrition < 100)
 		msg += "[T.He] [T.is] severely malnourished.\n"
 	else if(nutrition >= 500)
-		/*if(usr.nutrition < 100)
+		/*if(user.nutrition < 100)
 			msg += "[T.He] [T.is] plump and delicious looking - Like a fat little piggy. A tasty piggy.\n"
 		else*/
 		msg += "[T.He] [T.is] quite chubby.\n"
@@ -273,8 +280,9 @@
 			else
 				if(!is_synth && E.robotic >= ORGAN_ROBOT && (E.parent && E.parent.robotic < ORGAN_ROBOT))
 					wound_flavor_text["[E.name]"] = "[T.He] [T.has] a [E.name].\n"
-				if(E.wounds.len || E.open)
-					wound_flavor_text["[E.name]"] += "[T.He] [T.has] [E.get_wounds_desc()] on [T.his] [E.name].<br>"
+				var/wounddesc = E.get_wounds_desc()
+				if(wounddesc != "nothing")
+					wound_flavor_text["[E.name]"] += "[T.He] [T.has] [wounddesc] on [T.his] [E.name].<br>"
 
 		if(!hidden || distance <=1)
 			if(E.dislocated > 0)
@@ -293,7 +301,7 @@
 	if(digitalcamo)
 		msg += "[T.He] [T.is] repulsively uncanny!\n"
 
-	if(hasHUD(usr,"security"))
+	if(hasHUD(user,"security"))
 		var/perpname = "wot"
 		var/criminal = "None"
 
@@ -316,7 +324,7 @@
 			msg += "<span class = 'deptradio'>Criminal status:</span> <a href='?src=\ref[src];criminal=1'>\[[criminal]\]</a>\n"
 			msg += "<span class = 'deptradio'>Security records:</span> <a href='?src=\ref[src];secrecord=`'>\[View\]</a>  <a href='?src=\ref[src];secrecordadd=`'>\[Add comment\]</a>\n"
 
-	if(hasHUD(usr,"medical"))
+	if(hasHUD(user,"medical"))
 		var/perpname = "wot"
 		var/medical = "None"
 
@@ -373,3 +381,52 @@
 				return 0
 	else
 		return 0
+
+/mob/living/carbon/human/verb/pose()
+	set name = "Set Pose"
+	set desc = "Sets a description which will be shown when someone examines you."
+	set category = "IC"
+
+	pose =  sanitize(input(usr, "This is [src]. [get_visible_gender() == MALE ? "He" : get_visible_gender() == FEMALE ? "She" : "They"] [get_visible_gender() == NEUTER ? "are" : "is"]...", "Pose", null)  as text)
+
+/mob/living/carbon/human/verb/set_flavor()
+	set name = "Set Flavour Text"
+	set desc = "Sets an extended description of your character's features."
+	set category = "IC"
+
+	var/list/HTML = list()
+	HTML += "<body>"
+	HTML += "<tt><center>"
+	HTML += "<b>Update Flavour Text</b> <hr />"
+	HTML += "<br></center>"
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=general'>General:</a> "
+	HTML += TextPreview(flavor_texts["general"])
+	HTML += "<br>"
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=head'>Head:</a> "
+	HTML += TextPreview(flavor_texts["head"])
+	HTML += "<br>"
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=face'>Face:</a> "
+	HTML += TextPreview(flavor_texts["face"])
+	HTML += "<br>"
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=eyes'>Eyes:</a> "
+	HTML += TextPreview(flavor_texts["eyes"])
+	HTML += "<br>"
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=torso'>Body:</a> "
+	HTML += TextPreview(flavor_texts["torso"])
+	HTML += "<br>"
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=arms'>Arms:</a> "
+	HTML += TextPreview(flavor_texts["arms"])
+	HTML += "<br>"
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=hands'>Hands:</a> "
+	HTML += TextPreview(flavor_texts["hands"])
+	HTML += "<br>"
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=legs'>Legs:</a> "
+	HTML += TextPreview(flavor_texts["legs"])
+	HTML += "<br>"
+	HTML += "<a href='byond://?src=\ref[src];flavor_change=feet'>Feet:</a> "
+	HTML += TextPreview(flavor_texts["feet"])
+	HTML += "<br>"
+	HTML += "<hr />"
+	HTML +="<a href='?src=\ref[src];flavor_change=done'>\[Done\]</a>"
+	HTML += "<tt>"
+	src << browse(jointext(HTML,null), "window=flavor_changes;size=430x300")

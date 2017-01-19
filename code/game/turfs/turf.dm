@@ -42,6 +42,9 @@
 	else
 		luminosity = 1
 
+/turf/proc/initialize()
+	return
+
 /turf/proc/update_icon()
 	return
 
@@ -74,6 +77,13 @@
 	else
 		step(user.pulling, get_dir(user.pulling.loc, src))
 	return 1
+
+turf/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/weapon/storage))
+		var/obj/item/weapon/storage/S = W
+		if(S.use_to_pickup && S.collection_mode)
+			S.gather_all(src, user)
+	return ..()
 
 /turf/Enter(atom/movable/mover as mob|obj, atom/forget as mob|obj|turf|area)
 
@@ -128,6 +138,11 @@ var/const/enterloopsanity = 100
 
 	if(ismob(A))
 		var/mob/M = A
+		var/mob/living/L = A
+		if(istype(L))
+			if(!(L in radiation_repository.irradiated_mobs))
+				if(src in radiation_repository.irradiated_turfs)
+					radiation_repository.irradiated_mobs.Add(L)
 		if(!M.check_solid_ground())
 			inertial_drift(M)
 			//we'll end up checking solid ground again but we still need to check the other things.

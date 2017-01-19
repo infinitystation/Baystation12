@@ -40,11 +40,6 @@
 
 /datum/nano_module/program/comm/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = default_state)
 
-	var/datum/evacuation_controller/pods/shuttle/evac_control = evacuation_controller
-	if(!istype(evac_control))
-		to_chat(user, "<span class='danger'>This console should not in use on this map. Please report this to a developer.</span>")
-		return
-
 	var/list/data = host.initial_data()
 
 	if(program)
@@ -66,7 +61,7 @@
 	data["state"] = current_status
 	data["isAI"] = issilicon(usr)
 	data["authenticated"] = is_autenthicated(user)
-	data["boss_short"] = boss_short
+	data["boss_short"] = using_map.boss_short
 	data["current_security_level"] = security_level
 	data["current_security_level_title"] = num2seclevel(security_level)
 
@@ -81,14 +76,16 @@
 	if(current_viewing_message)
 		data["message_current"] = current_viewing_message
 
-	if(evac_control.shuttle.location)
-		data["have_shuttle"] = 1
-		if(evac_control.is_idle())
-			data["have_shuttle_called"] = 0
-		else
-			data["have_shuttle_called"] = 1
-	else
-		data["have_shuttle"] = 0
+	var/list/processed_evac_options = list()
+	if(!isnull(evacuation_controller))
+		for (var/datum/evacuation_option/EO in evacuation_controller.available_evac_options())
+			var/list/option = list()
+			option["option_text"] = EO.option_text
+			option["option_target"] = EO.option_target
+			option["needs_syscontrol"] = EO.needs_syscontrol
+			option["silicon_allowed"] = EO.silicon_allowed
+			processed_evac_options[++processed_evac_options.len] = option
+	data["evac_options"] = processed_evac_options
 
 	ui = nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -164,27 +161,28 @@
 					if(!is_relay_online())//Contact Centcom has a check, Syndie doesn't to allow for Traitor funs.
 						to_chat(usr, "<span class='warning'>No Emergency Bluespace Relay detected. Unable to transmit message.</span>")
 						return 1
-					var/input = sanitize(input("Please choose a message to transmit to [boss_short] via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination.  Transmission does not guarantee a response. There is a 30 second delay before you may send another message, be clear, full and concise.", "To abort, send an empty message.", "") as null|text)
+					var/input = sanitize(input("Please choose a message to transmit to [using_map.boss_short] via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination.  Transmission does not guarantee a response. There is a 30 second delay before you may send another message, be clear, full and concise.", "To abort, send an empty message.", "") as null|text)
 					if(!input || !can_still_topic())
 						return 1
 					Centcomm_announce(input, usr)
 					to_chat(usr, "<span class='notice'>Message transmitted.</span>")
-					log_say("[key_name(usr)] has made an IA [boss_short] announcement: [input]")
+					log_say("[key_name(usr)] has made an IA [using_map.boss_short] announcement: [input]")
 					centcomm_message_cooldown = 1
 					spawn(300) //30 second cooldown
 						centcomm_message_cooldown = 0
-		if("shuttle")
+		if("evac")
 			. = 1
-			if(is_autenthicated(user) && ntn_cont)
-				if(href_list["target"] == "call")
-					var/confirm = alert("Are you sure you want to call the shuttle?", name, "No", "Yes")
-					if(confirm == "Yes" && can_still_topic())
-						call_shuttle_proc(usr)
-
-				if(href_list["target"] == "cancel" && !issilicon(usr))
-					var/confirm = alert("Are you sure you want to cancel the shuttle?", name, "No", "Yes")
-					if(confirm == "Yes" && can_still_topic())
-						cancel_call_proc(usr)
+			if(is_autenthicated(user))
+				var/datum/evacuation_option/selected_evac_option = evacuation_controller.evacuation_options[href_list["target"]]
+				if (isnull(selected_evac_option) || !istype(selected_evac_option))
+					return
+				if (!selected_evac_option.silicon_allowed && issilicon(user))
+					return
+				if (selected_evac_option.needs_syscontrol && !ntn_cont)
+					return
+				var/confirm = alert("Are you sure you want to [selected_evac_option.option_desc]?", name, "No", "Yes")
+				if (confirm == "Yes" && can_still_topic())
+					evacuation_controller.handle_evac_option(selected_evac_option.option_target, user)
 		if("setstatus")
 			. = 1
 			if(is_autenthicated(user) && ntn_cont)
@@ -349,7 +347,7 @@ var/last_message_id = 0
 		return
 
 	if(deathsquad.deployed)
-		to_chat(user, "[boss_short] will not allow an evacuation to take place. Consider all contracts terminated.")
+		to_chat(user, "[using_map.boss_short] will not allow an evacuation to take place. Consider all contracts terminated.")
 		return
 
 	if(evacuation_controller.deny)
@@ -363,7 +361,7 @@ var/last_message_id = 0
 		to_chat(user, "An evacuation is already underway.")
 		return
 
-	if(ticker.mode.name == "blob" || ticker.mode.name == "epidemic")
+	if(ticker.mode.name == "blob")
 		to_chat(user, "Under directive 7-10, [station_name()] is quarantined until further notice.")
 		return
 
@@ -378,7 +376,7 @@ var/last_message_id = 0
 	if(!force)
 
 		if(evacuation_controller.deny)
-			to_chat(user, "[boss_short] does not currently have a shuttle available in your sector. Please try again later.")
+			to_chat(user, "[using_map.boss_short] does not currently have a shuttle available in your sector. Please try again later.")
 			return
 
 		if(world.time < 54000) // 30 minute grace period to let the game get going

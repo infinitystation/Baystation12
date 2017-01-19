@@ -7,8 +7,8 @@
 	#include "exodus_unit_testing_inf.dm"
 	#include "exodus_zas_tests_inf.dm"
 
-	#include "../shared/exodus_torch_areas.dm"
-	#include "../shared/exodus_torch_zas_tests.dm"
+	#include "../shared/exodus_torch/areas.dm"
+	#include "../shared/exodus_torch/zas_tests.dm"
 
 	#include "exodus-1_inf.dmm"
 	#include "exodus-2_inf.dmm"

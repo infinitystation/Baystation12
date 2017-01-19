@@ -16,7 +16,7 @@
 		verbs -= /mob/living/carbon/alien/verb/evolve
 		return
 
-	if(handcuffed || legcuffed)
+	if(handcuffed)
 		to_chat(src, "<span class='warning'>You cannot evolve when you are cuffed.</span>")
 		return
 
@@ -34,8 +34,17 @@
 	show_evolution_blurb()
 	// TODO: drop a moulted skin. Ew.
 
+	transfer_languages(src, adult)
+
 	if(mind)
 		mind.transfer_to(adult)
+		if (can_namepick_as_adult)
+			var/newname = sanitize(input(adult, "You have become an adult. Choose a name for yourself.", "Adult Name") as null|text, MAX_NAME_LEN)
+
+			if(!newname)
+				adult.fully_replace_character_name("[src.adult_name] ([instance_num])")
+			else
+				adult.fully_replace_character_name(newname)
 	else
 		adult.key = src.key
 

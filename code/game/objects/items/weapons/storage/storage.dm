@@ -131,6 +131,14 @@
 				to_chat(user, "<span class='notice'>\The [src] has no more space specifically for \the [W].</span>")
 			return 0
 
+	// Don't allow insertion of unsafed compressed matter implants
+	// Since they are sucking something up now, their afterattack will delete the storage
+	if(istype(W, /obj/item/weapon/implanter/compressed))
+		var/obj/item/weapon/implanter/compressed/impr = W
+		if(!impr.safe)
+			stop_messages = 1
+			return 0
+
 	if(cant_hold.len && is_type_in_list(W, cant_hold))
 		if(!stop_messages)
 			to_chat(user, "<span class='notice'>\The [src] cannot hold \the [W].</span>")
@@ -262,6 +270,27 @@
 		storage_ui.on_hand_attack(user)
 	src.add_fingerprint(user)
 	return
+
+/obj/item/weapon/storage/proc/gather_all(turf/T as turf, mob/user as mob)
+	var/list/rejections = list()
+	var/success = 0
+	var/failure = 0
+
+	for(var/obj/item/I in T)
+		if(I.type in rejections) // To limit bag spamming: any given type only complains once
+			continue
+		if(!can_be_inserted(I, user))	// Note can_be_inserted still makes noise when the answer is no
+			rejections += I.type	// therefore full bags are still a little spammy
+			failure = 1
+			continue
+		success = 1
+		handle_item_insertion(I, 1)	//The 1 stops the "You put the [src] into [S]" insertion message from being displayed.
+	if(success && !failure)
+		to_chat(user, "<span class='notice'>You put everything in [src].</span>")
+	else if(success)
+		to_chat(user, "<span class='notice'>You put some things in [src].</span>")
+	else
+		to_chat(user, "<span class='notice'>You fail to pick anything up with \the [src].</span>")
 
 /obj/item/weapon/storage/verb/toggle_gathering_mode()
 	set name = "Switch Gathering Method"

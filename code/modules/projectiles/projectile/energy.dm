@@ -61,7 +61,7 @@
 	nodamage = 1
 	taser_effect = 1
 	agony = 40
-	damage_type = HALLOSS
+	damage_type = PAIN
 	//Damage will be handled on the MOB side, to prevent window shattering.
 
 /obj/item/projectile/energy/electrode/stunshot
@@ -71,10 +71,10 @@
 	damage_type = BURN
 
 /obj/item/projectile/energy/declone
-	name = "declone"
+	name = "decloner beam"
 	icon_state = "declone"
 	fire_sound = 'sound/weapons/pulse3.ogg'
-	nodamage = 1
+	damage = 30
 	damage_type = CLONE
 	irradiate = 40
 
@@ -117,3 +117,50 @@
 	damage = 20
 	damage_type = TOX
 	irradiate = 20
+
+/obj/item/projectile/energy/plasmastun
+	name = "plasma pulse"
+	icon_state = "plasma_stun"
+	fire_sound = 'sound/weapons/blaster.ogg'
+	armor_penetration = 10
+	kill_count = 4
+	damage = 5
+	agony = 70
+	damage_type = BURN
+	vacuum_traversal = 0
+
+/obj/item/projectile/energy/plasmastun/proc/bang(var/mob/living/carbon/M)
+
+	to_chat(M, "<span class='danger'>You hear a loud roar.</span>")
+	var/ear_safety = 0
+	var/mob/living/carbon/human/H = M
+	if(iscarbon(M))
+		if(ishuman(M))
+			if(istype(H.l_ear, /obj/item/clothing/ears/earmuffs) || istype(H.r_ear, /obj/item/clothing/ears/earmuffs))
+				ear_safety += 2
+			if(HULK in M.mutations)
+				ear_safety += 1
+			if(istype(H.head, /obj/item/clothing/head/helmet))
+				ear_safety += 1
+	if(ear_safety == 1)
+		M.Weaken(2)
+	else if (ear_safety > 1)
+		M.Weaken(1)
+	else if (!ear_safety)
+		M.Stun(10)
+		M.Weaken(3)
+		M.ear_damage += rand(1, 10)
+		M.ear_deaf = max(M.ear_deaf,15)
+	if (M.ear_damage >= 15)
+		to_chat(M, "<span class='danger'>Your ears start to ring badly!</span>")
+		if (prob(M.ear_damage - 5))
+			to_chat(M, "<span class='danger'>You can't hear anything!</span>")
+			M.sdisabilities |= DEAF
+	else
+		if (M.ear_damage >= 5)
+			to_chat(M, "<span class='danger'>Your ears start to ring!</span>")
+	M.update_icons()
+
+/obj/item/projectile/energy/plasmastun/on_hit(var/atom/target)
+	bang(target)
+	. = ..()

@@ -1,6 +1,6 @@
 #define PUBLIC_GAME_MODE (ticker ? (ticker.hide_mode == 0 ? master_mode : "Secret") : "Unknown")
 
-#define Clamp(x, y, z) 	(x <= y ? y : (x >= z ? z : x))
+#define Clamp(value, low, high) 	(value <= low ? low : (value >= high ? high : value))
 #define CLAMP01(x) 		(Clamp(x, 0, 1))
 
 #define get_turf(A) get_step(A,0)
@@ -12,6 +12,8 @@
 #define isanimal(A) istype(A, /mob/living/simple_animal)
 
 #define isairlock(A) istype(A, /obj/machinery/door/airlock)
+
+#define isatom(A) istype(A, /atom)
 
 #define isbrain(A) istype(A, /mob/living/carbon/brain)
 
@@ -59,6 +61,8 @@
 
 #define isslime(A) istype(A, /mob/living/carbon/slime)
 
+#define isvirtualmob(A) istype(A, /mob/observer/virtual)
+
 #define isweakref(A) istype(A, /weakref)
 
 #define attack_animation(A) if(istype(A)) A.do_attack_animation(src)
@@ -69,10 +73,12 @@
 
 #define random_id(key,min_id,max_id) uniqueness_repository.Generate(/datum/uniqueness_generator/id_random, key, min_id, max_id)
 
-#define to_chat(target, message) target << message
-#define to_world(message) world << message
-
-#define sound_to(target, sound) target << sound
+#define to_chat(target, message)                            target << message
+#define to_world(message)                                   world << message
+#define sound_to(target, sound)                             target << sound
+#define to_file(file_entry, file_content)                   file_entry << file_content
+#define show_browser(target, browser_content, browser_name) target << browse(browser_content, browser_name)
+#define send_rsc(target, rsc_content, rsc_name)             target << browse_rsc(rsc_content, rsc_name)
 
 #define MAP_IMAGE_PATH "nano/images/[using_map.path]/"
 
@@ -85,3 +91,5 @@
 #define CanInteract(user, state) (CanUseTopic(user, state) == STATUS_INTERACTIVE)
 
 #define qdel_null(x) if(x) { qdel(x) ; x = null }
+
+#define ARGS_DEBUG log_debug("[__FILE__] - [__LINE__]") ; for(var/arg in args) { log_debug("\t[log_info_line(arg)]") }

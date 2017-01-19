@@ -74,8 +74,8 @@
 		if(health > 0)
 			icon_state = icon_living
 			switch_from_dead_to_living_mob_list()
-			stat = CONSCIOUS
-			density = 1
+			set_stat(CONSCIOUS)
+			set_density(1)
 		return 0
 
 
@@ -181,10 +181,6 @@
 /mob/living/simple_animal/gib()
 	..(icon_gib,1)
 
-/mob/living/simple_animal/emote(var/act, var/type, var/desc)
-	if(act)
-		..(act, type, desc)
-
 /mob/living/simple_animal/proc/visible_emote(var/act_desc)
 	custom_emote(1, act_desc)
 
@@ -273,7 +269,7 @@
 		return 2
 
 	var/damage = O.force
-	if (O.damtype == HALLOSS)
+	if (O.damtype == PAIN)
 		damage = 0
 	if(supernatural && istype(O,/obj/item/weapon/nullrod))
 		damage *= 2
@@ -348,10 +344,6 @@
 	if (istype(target_mob,/obj/mecha))
 		var/obj/mecha/M = target_mob
 		if (M.occupant)
-			return (0)
-	if (istype(target_mob,/obj/machinery/bot))
-		var/obj/machinery/bot/B = target_mob
-		if(B.health > 0)
 			return (0)
 	return 1
 

@@ -41,7 +41,7 @@
 	suit_type = "industrial hardsuit"
 	desc = "A heavy, powerful rig used by construction crews and mining corporations."
 	icon_state = "engineering_rig"
-	armor = list(melee = 60, bullet = 50, laser = 30,energy = 15, bomb = 30, bio = 100, rad = 50)
+	armor = list(melee = 60, bullet = 50, laser = 50,energy = 15, bomb = 30, bio = 100, rad = 50)
 	online_slowdown = 3
 	offline_slowdown = 10
 	vision_restriction = TINT_HEAVY
@@ -60,16 +60,17 @@
 
 /obj/item/clothing/head/helmet/space/rig/industrial
 	camera = /obj/machinery/camera/network/mining
-	species_restricted = list("Human")
+	species_restricted = list("Human","Skrell","Tajara","Unathi")
 
 /obj/item/clothing/suit/space/rig/industrial
-	species_restricted = list("Human","Skrell")
+	species_restricted = list("Human","Skrell","Tajara","Unathi")
 
 /obj/item/clothing/shoes/magboots/rig/industrial
-	species_restricted = list("Human","Skrell")
+	species_restricted = list("Human","Skrell","Tajara","Unathi")
 
 /obj/item/clothing/gloves/rig/industrial
-	species_restricted = list("Human","Skrell")
+	species_restricted = list("Human","Skrell","Tajara","Unathi")
+	siemens_coefficient = 0
 
 /obj/item/weapon/rig/industrial/equipped
 
@@ -82,7 +83,7 @@
 		)
 
 /obj/item/weapon/rig/eva
-	name = "EVA suit control module"
+	name = "EVA hardsuit control module"
 	suit_type = "EVA hardsuit"
 	desc = "A light rig for repairs and maintenance to the outside of habitats and vessels."
 	icon_state = "eva_rig"
@@ -96,7 +97,7 @@
 	boot_type = /obj/item/clothing/shoes/magboots/rig/eva
 	glove_type = /obj/item/clothing/gloves/rig/eva
 
-	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/storage/toolbox,/obj/item/weapon/storage/briefcase/inflatable,/obj/item/device/t_scanner,/obj/item/weapon/rcd)
+	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/storage/toolbox,/obj/item/weapon/storage/briefcase/inflatable,/obj/item/weapon/inflatable_dispenser,/obj/item/device/t_scanner,/obj/item/weapon/rcd)
 
 	req_access = list()
 	req_one_access = list()
@@ -114,6 +115,7 @@
 
 /obj/item/clothing/gloves/rig/eva
 	species_restricted = list("Human","Skrell")
+	siemens_coefficient = 0
 
 /obj/item/weapon/rig/eva/equipped
 
@@ -124,12 +126,11 @@
 		/obj/item/rig_module/vision/meson
 		)
 
-//Chief Engineer's rig. This is sort of a halfway point between the old hardsuits (voidsuits) and the rig class.
 /obj/item/weapon/rig/ce
 
-	name = "advanced voidsuit control module"
-	suit_type = "advanced voidsuit"
-	desc = "An advanced voidsuit that protects against hazardous, low pressure environments. Shines with a high polish."
+	name = "advanced engineering hardsuit control module"
+	suit_type = "engineering hardsuit"
+	desc = "An advanced hardsuit that protects against hazardous, low pressure environments. Shines with a high polish. Appears compatible with the physiology of most species."
 	icon_state = "ce_rig"
 	armor = list(melee = 40, bullet = 10, laser = 30,energy = 25, bomb = 40, bio = 100, rad = 100)
 	online_slowdown = 0
@@ -138,12 +139,10 @@
 
 	sprite_sheets = list("Resomi" = 'icons/mob/species/resomi/back.dmi')
 
-	chest_type = /obj/item/clothing/suit/space/rig/ce
 	helm_type = /obj/item/clothing/head/helmet/space/rig/ce
-	boot_type = null
-	glove_type = null
+	glove_type = /obj/item/clothing/gloves/rig/ce
 
-	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/storage/ore,/obj/item/device/t_scanner,/obj/item/weapon/pickaxe, /obj/item/weapon/rcd)
+	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/storage/ore,/obj/item/weapon/storage/toolbox,/obj/item/weapon/storage/briefcase/inflatable,/obj/item/weapon/inflatable_dispenser,/obj/item/device/t_scanner,/obj/item/weapon/pickaxe,/obj/item/weapon/rcd)
 
 	req_access = list()
 	req_one_access = list()
@@ -163,15 +162,14 @@
 /obj/item/clothing/head/helmet/space/rig/ce
 	camera = /obj/machinery/camera/network/engineering
 
-/obj/item/clothing/suit/space/rig/ce
-	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+/obj/item/clothing/gloves/rig/ce
+	siemens_coefficient = 0
 
 /obj/item/weapon/rig/hazmat
 
 	name = "AMI control module"
 	suit_type = "hazmat hardsuit"
-	desc = "An Anomalous Material Interaction hardsuit that protects against the strangest energies the universe can throw at it."
+	desc = "An Anomalous Material Interaction hardsuit, a prototype NanoTrasen design, protects the wearer against the strangest energies the universe can throw at it."
 	icon_state = "science_rig"
 	armor = list(melee = 45, bullet = 5, laser = 45, energy = 80, bomb = 60, bio = 100, rad = 100)
 	online_slowdown = 1
@@ -190,16 +188,16 @@
 /obj/item/clothing/head/helmet/space/rig/hazmat
 	light_overlay = "helmet_light_dual"
 	camera = /obj/machinery/camera/network/research
-	species_restricted = list("Human")
+	species_restricted = list("Human","Skrell","Tajara","Unathi")
 
 /obj/item/clothing/suit/space/rig/hazmat
-	species_restricted = list("Human","Skrell")
+	species_restricted = list("Human","Skrell","Tajara","Unathi")
 
 /obj/item/clothing/shoes/magboots/rig/hazmat
-	species_restricted = list("Human","Skrell")
+	species_restricted = list("Human","Skrell","Tajara","Unathi")
 
 /obj/item/clothing/gloves/rig/hazmat
-	species_restricted = list("Human","Skrell")
+	species_restricted = list("Human","Skrell","Tajara","Unathi")
 
 /obj/item/weapon/rig/hazmat/equipped
 
@@ -217,7 +215,7 @@
 	suit_type = "rescue hardsuit"
 	desc = "A durable suit designed for medical rescue in high risk areas."
 	icon_state = "medical_rig"
-	armor = list(melee = 30, bullet = 15, laser = 20, energy = 60, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 30, bullet = 15, laser = 25, energy = 60, bomb = 30, bio = 100, rad = 100)
 	online_slowdown = 1
 	offline_vision_restriction = TINT_HEAVY
 
@@ -258,9 +256,9 @@
 /obj/item/weapon/rig/hazard
 	name = "hazard hardsuit control module"
 	suit_type = "hazard hardsuit"
-	desc = "A Security hardsuit designed for prolonged EVA in dangerous environments."
+	desc = "A NanoTrasen security hardsuit designed for prolonged EVA in dangerous environments."
 	icon_state = "hazard_rig"
-	armor = list(melee = 60, bullet = 40, laser = 30, energy = 15, bomb = 60, bio = 100, rad = 30)
+	armor = list(melee = 60, bullet = 40, laser = 40, energy = 15, bomb = 60, bio = 100, rad = 30)
 	online_slowdown = 1
 	offline_slowdown = 3
 	offline_vision_restriction = TINT_BLIND
@@ -278,16 +276,16 @@
 /obj/item/clothing/head/helmet/space/rig/hazard
 	light_overlay = "helmet_light_dual"
 	camera = /obj/machinery/camera/network/security
-	species_restricted = list("Human")
+	species_restricted = list("Human","Skrell","Tajara","Unathi") //still needs Resomi sprites
 
 /obj/item/clothing/suit/space/rig/hazard
-	species_restricted = list("Human","Skrell")
+	species_restricted = list("Human","Skrell","Tajara","Unathi")
 
 /obj/item/clothing/shoes/magboots/rig/hazard
-	species_restricted = list("Human","Skrell")
+	species_restricted = list("Human","Skrell","Tajara","Unathi")
 
 /obj/item/clothing/gloves/rig/hazard
-	species_restricted = list("Human","Skrell")
+	species_restricted = list("Human","Skrell","Tajara","Unathi")
 
 /obj/item/weapon/rig/hazard/equipped
 

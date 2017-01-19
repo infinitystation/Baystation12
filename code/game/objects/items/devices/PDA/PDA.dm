@@ -417,8 +417,6 @@ var/global/list/obj/item/device/pda/PDAs = list()
 					cartdata["radio"] = 1
 				if(istype(cartridge.radio, /obj/item/radio/integrated/signal))
 					cartdata["radio"] = 2
-				if(istype(cartridge.radio, /obj/item/radio/integrated/mule))
-					cartdata["radio"] = 3
 
 		if(mode == 2)
 			cartdata["charges"] = cartridge.charges ? cartridge.charges : 0
@@ -903,16 +901,16 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		empulse(P.loc, 3, 6, 1)
 		message += "Your [P] emits a wave of electromagnetic energy!"
 	if(i>=25 && i<=40) //Smoke
-		var/datum/effect/effect/system/smoke_spread/chem/S = new /datum/effect/effect/system/smoke_spread/chem
+		var/datum/effect/effect/system/smoke_spread/S = new /datum/effect/effect/system/smoke_spread
 		S.attach(P.loc)
-		S.set_up(P, 10, 0, P.loc)
+		S.set_up(10, 0, P.loc)
 		playsound(P.loc, 'sound/effects/smoke.ogg', 50, 1, -3)
 		S.start()
 		message += "Large clouds of smoke billow forth from your [P]!"
 	if(i>=40 && i<=45) //Bad smoke
 		var/datum/effect/effect/system/smoke_spread/bad/B = new /datum/effect/effect/system/smoke_spread/bad
 		B.attach(P.loc)
-		B.set_up(P, 10, 0, P.loc)
+		B.set_up(10, 0, P.loc)
 		playsound(P.loc, 'sound/effects/smoke.ogg', 50, 1, -3)
 		B.start()
 		message += "Large clouds of noxious smoke billow forth from your [P]!"
@@ -1225,7 +1223,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 					O.show_message("<span class='warning'>\The [user] has analyzed [C]'s vitals!</span>", 1)
 
 				user.show_message("<span class='notice'>Analyzing Results for [C]:</span>")
-				user.show_message("<span class='notice'>    Overall Status: [C.stat > 1 ? "dead" : "[C.health - C.halloss]% healthy"]</span>", 1)
+				user.show_message("<span class='notice'>    Overall Status: [C.stat > 1 ? "dead" : "[C.health - C.getHalLoss()]% healthy"]</span>", 1)
 				user.show_message(text("<span class='notice'>    Damage Specifics:</span> <span class='[]'>[]</span>-<span class='[]'>[]</span>-<span class='[]'>[]</span>-<span class='[]'>[]</span>",
 						(C.getOxyLoss() > 50) ? "warning" : "", C.getOxyLoss(),
 						(C.getToxLoss() > 50) ? "warning" : "", C.getToxLoss(),
@@ -1234,8 +1232,8 @@ var/global/list/obj/item/device/pda/PDAs = list()
 						), 1)
 				user.show_message("<span class='notice'>    Key: Suffocation/Toxin/Burns/Brute</span>", 1)
 				user.show_message("<span class='notice'>    Body Temperature: [C.bodytemperature-T0C]&deg;C ([C.bodytemperature*1.8-459.67]&deg;F)</span>", 1)
-				if(C.tod && (C.stat == DEAD || (C.status_flags & FAKEDEATH)))
-					user.show_message("<span class='notice'>    Time of Death: [C.tod]</span>")
+				if(C.stat == DEAD || (C.status_flags & FAKEDEATH))
+					user.show_message("<span class='notice'>    Time of Death: [time2text(worldtime2stationtime(C.timeofdeath))]</span>")
 				if(istype(C, /mob/living/carbon/human))
 					var/mob/living/carbon/human/H = C
 					var/list/damaged = H.get_damaged_organs(1,1)

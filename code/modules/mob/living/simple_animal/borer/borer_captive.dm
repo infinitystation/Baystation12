@@ -29,9 +29,6 @@
 			else if(M.stat == DEAD && M.is_preference_enabled(/datum/client_preference/ghost_ears))
 				to_chat(M, "The captive mind of [src] whispers, \"[message]\"")
 
-/mob/living/captive_brain/emote(var/message)
-	return
-
 /mob/living/captive_brain/process_resist()
 	//Resisting control by an alien mind.
 	if(istype(src.loc,/mob/living/simple_animal/borer))
@@ -41,7 +38,7 @@
 		to_chat(H, "<span class='danger'>You begin doggedly resisting the parasite's control (this will take approximately sixty seconds).</span>")
 		to_chat(B.host, "<span class='danger'>You feel the captive mind of [src] begin to resist your control.</span>")
 
-		spawn(rand(200,250)+B.host.brainloss)
+		spawn(rand(200,250)+B.host.getBrainLoss())
 			if(!B || !B.controlling) return
 
 			B.host.adjustBrainLoss(rand(0.1,0.5))

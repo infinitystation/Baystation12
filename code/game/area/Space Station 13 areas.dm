@@ -130,7 +130,7 @@ area/space/atmosalert()
 /area/maintenance
 	flags = RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
-	turf_initializer = new /datum/turf_initializer/maintenance()
+	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/rnd/xenobiology
 	name = "\improper Xenobiology Lab"
@@ -241,7 +241,7 @@ area/space/atmosalert()
 	for(var/mob/living/carbon/human/H in src)
 		if(H.client)
 			mysound.status = SOUND_UPDATE
-			to_chat(H, mysound)
+			to_chat(H, mysound)
 			if(S)
 				spawn(sound_delay)
 					sound_to(H, S)
