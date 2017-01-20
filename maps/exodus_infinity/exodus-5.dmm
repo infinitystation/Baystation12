@@ -1,5 +1,5 @@
 "aa" = (/turf/unsimulated/mineral,/area/mine/unexplored)
-"ab" = (/turf/unsimulated/mask,/area/mine/unexplored)
+"ab" = (/turf/simulated/mineral/random,/area/mine/unexplored)
 "ac" = (/turf/simulated/floor/asteroid,/area/mine/explored)
 "ad" = (/turf/simulated/floor/airless{icon_state = "asteroidplating"},/area/mine/explored)
 "ae" = (/obj/structure/ore_box,/turf/simulated/floor/airless{icon_state = "asteroidplating"},/area/mine/explored)
@@ -53,7 +53,7 @@
 "ba" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled,/area/outpost/research/hallway)
 "bb" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 1},/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,/turf/simulated/floor/tiled,/area/outpost/research/hallway)
 "bc" = (/obj/machinery/door/firedoor/border_only,/obj/machinery/door/airlock{id_tag = "rdorm2"; name = "Dorm 2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled,/area/outpost/research/hallway)
-"bd" = (/turf/unsimulated/mask,/area/mine/explored)
+"bd" = (/turf/simulated/mineral/random,/area/mine/explored)
 "be" = (/obj/structure/reagent_dispensers/coolanttank,/obj/effect/floor_decal/corner/lime{dir = 6},/turf/simulated/floor/tiled/white,/area/outpost/research/analysis)
 "bf" = (/obj/structure/table/standard,/obj/item/weapon/storage/box/glasses/square{pixel_x = 1; pixel_y = 4},/turf/simulated/floor/wood,/area/outpost/research/kitchen)
 "bg" = (/obj/item/weapon/reagent_containers/glass/bucket,/obj/structure/table/standard,/turf/simulated/floor/tiled/white,/area/outpost/research/analysis)
@@ -136,7 +136,7 @@
 "cF" = (/obj/machinery/chem_master,/obj/effect/floor_decal/corner/blue{dir = 10},/turf/simulated/floor/tiled/white,/area/outpost/research/chemistry)
 "cG" = (/obj/item/weapon/reagent_containers/glass/bottle/toxin,/obj/item/weapon/reagent_containers/glass/beaker/sulphuric{name = "beaker 'sulphuric acid'"},/obj/machinery/camera/network/research_outpost{c_tag = "Research Outpost Sample Preparation"; dir = 1},/obj/structure/table/glass,/obj/effect/floor_decal/corner/blue{dir = 10},/obj/item/device/radio/intercom{dir = 1; pixel_y = -22},/turf/simulated/floor/tiled/white,/area/outpost/research/chemistry)
 "cH" = (/obj/item/weapon/reagent_containers/glass/beaker/large,/obj/item/weapon/reagent_containers/dropper{pixel_y = -4},/obj/structure/table/glass,/obj/effect/floor_decal/corner/blue{dir = 10},/turf/simulated/floor/tiled/white,/area/outpost/research/chemistry)
-"cI" = (/turf/unsimulated/mask,/area/shuttle/alien/mine)
+"cI" = (/turf/simulated/mineral/random,/area/shuttle/alien/mine)
 "cJ" = (/obj/effect/floor_decal/corner/blue{dir = 10},/turf/simulated/floor/tiled/white,/area/outpost/research/chemistry)
 "cK" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/blue{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/corner/blue{dir = 10},/turf/simulated/floor/tiled/white,/area/outpost/research/chemistry)
 "cL" = (/obj/structure/bed/chair{dir = 8},/obj/structure/extinguisher_cabinet{pixel_x = 25; pixel_y = 0},/obj/effect/floor_decal/corner/grey/diagonal,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/turf/simulated/floor/tiled/white,/area/outpost/research/kitchen)
@@ -162,7 +162,7 @@
 "df" = (/obj/structure/sign/warning/docking_area,/turf/simulated/wall/r_wall,/area/outpost/research/hallway)
 "dg" = (/obj/structure/table/standard,/obj/item/weapon/storage/box/donkpockets,/turf/simulated/floor/wood,/area/outpost/research/kitchen)
 "dh" = (/obj/structure/disposalpipe/trunk{dir = 4},/obj/machinery/disposal,/obj/structure/sign/warning/deathsposal{pixel_x = 32},/turf/simulated/floor/wood,/area/outpost/research/kitchen)
-"di" = (/obj/item/weapon/material/shard{icon_state = "medium"},/turf/unsimulated/mask,/area/mine/unexplored)
+"di" = (/obj/item/weapon/material/shard{icon_state = "medium"},/turf/simulated/mineral/random,/area/mine/unexplored)
 "dj" = (/obj/machinery/door/firedoor/border_only,/obj/machinery/door/airlock/research{name = "Spectrometry Lab"; req_access = list(65)},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/cable/blue{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white,/area/outpost/research/analysis)
 "dk" = (/obj/machinery/door/firedoor/border_only,/obj/machinery/door/airlock/research{name = "Sample Preparation"; req_access = list(65)},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/blue{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white,/area/outpost/research/chemistry)
 "dl" = (/turf/simulated/shuttle/wall{icon_state = "pwall"; dir = 1},/area/shuttle/alien/mine)
@@ -230,7 +230,7 @@
 "ev" = (/obj/structure/table/standard,/obj/item/weapon/stamp,/obj/item/weapon/paper_bin{pixel_x = -2; pixel_y = 5},/obj/item/weapon/pen,/obj/item/weapon/pen/red,/turf/simulated/floor/tiled/white,/area/outpost/research/hallway)
 "ew" = (/obj/machinery/light{dir = 4},/obj/structure/table/standard,/obj/item/device/camera,/obj/item/device/camera_film,/obj/item/device/taperecorder,/turf/simulated/floor/tiled/white,/area/outpost/research/hallway)
 "ex" = (/obj/effect/wingrille_spawn/reinforced,/obj/structure/disposalpipe/segment,/obj/machinery/door/firedoor/border_only,/turf/simulated/floor/plating,/area/outpost/research/disposal)
-"ey" = (/obj/item/stack/rods,/turf/unsimulated/mask,/area/mine/unexplored)
+"ey" = (/obj/item/stack/rods,/turf/simulated/mineral/random,/area/mine/unexplored)
 "ez" = (/obj/structure/table/standard,/obj/item/weapon/folder,/obj/item/weapon/pen/red,/turf/simulated/floor/tiled/white,/area/outpost/research/hallway)
 "eA" = (/obj/structure/table/standard,/obj/item/device/flashlight/lamp,/turf/simulated/floor/tiled/white,/area/outpost/research/hallway)
 "eB" = (/obj/structure/grille,/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced,/turf/simulated/floor/airless,/area/outpost/abandoned)
@@ -279,11 +279,11 @@
 "fs" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8},/turf/simulated/floor/tiled/white,/area/outpost/research/hallway)
 "ft" = (/obj/machinery/firealarm{dir = 8; pixel_x = -24},/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 8},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/cable/blue{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/corner/grey{dir = 8},/turf/simulated/floor/tiled/white,/area/outpost/research/hallway)
 "fu" = (/obj/structure/disposalpipe/segment,/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/turf/simulated/floor/tiled,/area/outpost/research/hallway)
-"fv" = (/obj/item/weapon/material/shard,/turf/unsimulated/mask,/area/mine/unexplored)
+"fv" = (/obj/item/weapon/material/shard,/turf/simulated/mineral/random,/area/mine/unexplored)
 "fw" = (/obj/effect/wingrille_spawn/reinforced,/obj/machinery/door/firedoor/border_only,/turf/simulated/floor/plating,/area/outpost/research/anomaly_analysis)
-"fx" = (/obj/item/weapon/material/shard{icon_state = "small"},/turf/unsimulated/mask,/area/outpost/abandoned)
+"fx" = (/obj/item/weapon/material/shard{icon_state = "small"},/turf/simulated/mineral/random,/area/outpost/abandoned)
 "fy" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/closet/wardrobe/science_white,/turf/simulated/floor/tiled,/area/outpost/research/hallway)
-"fz" = (/turf/unsimulated/mask,/area/outpost/abandoned)
+"fz" = (/turf/simulated/mineral/random,/area/outpost/abandoned)
 "fA" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 4},/turf/simulated/floor/tiled,/area/outpost/research/hallway)
 "fB" = (/obj/machinery/light{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/washing_machine,/obj/effect/floor_decal/corner/white/diagonal,/turf/simulated/floor/tiled,/area/outpost/research/hallway)
 "fC" = (/obj/structure/table/rack,/obj/item/clothing/suit/bio_suit/anomaly,/obj/item/clothing/head/bio_hood/anomaly,/obj/item/clothing/mask/breath,/obj/item/clothing/glasses/science,/obj/item/clothing/gloves/latex,/obj/machinery/alarm{dir = 8; pixel_x = 25; pixel_y = 0},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/effect/floor_decal/industrial/hatch/yellow,/turf/simulated/floor/tiled,/area/outpost/research/hallway)
@@ -961,7 +961,7 @@
 "sy" = (/obj/machinery/atmospherics/unary/vent_pump/on,/obj/structure/cable/blue{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled,/area/outpost/engineering/hallway)
 "sz" = (/obj/structure/sign/warning/high_voltage,/turf/simulated/wall,/area/outpost/engineering/hallway)
 "sA" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/cable/blue{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/tiled,/area/outpost/engineering/hallway)
-"sB" = (/obj/structure/disposalpipe/segment,/turf/unsimulated/mask,/area/mine/unexplored)
+"sB" = (/obj/structure/disposalpipe/segment,/turf/simulated/mineral/random,/area/mine/unexplored)
 "sC" = (/obj/machinery/light{dir = 1},/obj/structure/cable/blue{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled,/area/outpost/engineering/hallway)
 "sD" = (/obj/structure/cable/blue{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/alarm{frequency = 1439; pixel_y = 22},/turf/simulated/floor/tiled,/area/outpost/engineering/hallway)
 "sE" = (/obj/machinery/door/firedoor/border_only,/obj/structure/cable/blue{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled,/area/outpost/engineering/hallway)
@@ -1300,7 +1300,7 @@
 "yZ" = (/obj/effect/floor_decal/corner/brown/diagonal,/turf/simulated/floor/tiled,/area/outpost/mining_west)
 "za" = (/obj/item/device/radio/intercom{dir = 1; pixel_y = -22},/turf/simulated/floor/tiled,/area/outpost/mining_west)
 "zb" = (/obj/machinery/power/apc{dir = 2; name = "south bump"; pixel_y = -24},/obj/structure/cable,/obj/machinery/camera/network/mining{c_tag = "Mining Outpost West"; dir = 1},/obj/effect/floor_decal/corner/brown/diagonal,/turf/simulated/floor/tiled,/area/outpost/mining_west)
-"zc" = (/obj/structure/sign/warning/airlock{pixel_x = 32;},/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 8; frequency = 1379; id_tag = "mining_west_pump"},/obj/effect/floor_decal/industrial/warning{dir = 6},/turf/simulated/floor,/area/outpost/mining_main/west_hall)
+"zc" = (/obj/structure/sign/warning/airlock{pixel_x = 32},/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 8; frequency = 1379; id_tag = "mining_west_pump"},/obj/effect/floor_decal/industrial/warning{dir = 6},/turf/simulated/floor,/area/outpost/mining_main/west_hall)
 "zd" = (/obj/machinery/mineral/unloading_machine,/turf/simulated/floor/tiled,/area/outpost/mining_west)
 "ze" = (/obj/machinery/mineral/input,/obj/machinery/conveyor{backwards = 2; dir = 2; forwards = 1; id = "mining_west"},/turf/simulated/floor/tiled,/area/outpost/mining_west)
 "zf" = (/obj/structure/disposalpipe/trunk{dir = 4},/obj/machinery/disposal/deliveryChute{dir = 8},/turf/simulated/floor,/area/outpost/mining_west)
@@ -1488,7 +1488,7 @@
 "Eg" = (/obj/machinery/embedded_controller/radio/airlock/docking_port{frequency = 1380; id_tag = "mining_outpost_airlock"; pixel_x = 0; pixel_y = 30; req_one_access = list(13,48); tag_airpump = "mining_outpost_pump"; tag_chamber_sensor = "mining_outpost_sensor"; tag_exterior_door = "mining_outpost_outer"; tag_interior_door = "mining_outpost_inner"},/obj/machinery/airlock_sensor{frequency = 1380; id_tag = "mining_outpost_sensor"; pixel_x = 0; pixel_y = -25},/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 4; frequency = 1380; id_tag = "mining_outpost_pump"},/turf/simulated/floor,/area/outpost/mining_main/east_hall)
 "Ey" = (/obj/machinery/mineral/processing_unit_console,/turf/simulated/wall/r_wall,/area/outpost/mining_main/refinery)
 "EO" = (/obj/machinery/mineral/stacking_unit_console,/turf/simulated/wall/r_wall,/area/outpost/mining_main/refinery)
-"Fj" = (/obj/machinery/light_construct/small,/turf/unsimulated/mask,/area/mine/explored)
+"Fj" = (/obj/machinery/light_construct/small,/turf/simulated/mineral/random,/area/mine/explored)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -1563,7 +1563,7 @@ aaaaabababababababababababababababababababababababababababababababababababababab
 aaaaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababdmcydmcycyiBcycycycydmcycydmnhcycyiCdmahababababababababababababababababababababababababababababbdadadadadmsadadadadacacacacacacacacacacacacacacacadkokoggggkokoggmtggkomvkolGmxmwfOmymAmzgbhFknjpmpkTmLmBmGmDmImHgbgegegeabababbdbdadadadadadbdbdabababababababababababababababababababbdadadadadacbdababababababababababababababababababababababababababababababababababaaaa
 aaaaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababdmcydmcycycycycycycydmcydmdmigcycyiCmOahababababababababababababababababababababababababababababbdmQmPadmSmQmTadadadadacacacacacacacacacacacacacacadadadmUmWmWkonHnJnIkogHkoadmZmYfOnanbnbnSncmNmMnSninAnznZnovuvrnZabababababbdbdadadadadadadbdababababababababababababababababababababbdadadadadacbdababababababababababababababababababababababababababababababababababaaaa
 aaaaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababdmcydmdmdmdmdmdmdmdmdmcydmfncycycyiCnrahababababababababababababababababababababababababababababbdmQadadadmQmTadadadadadadadacacacacacacacacacacacacadadadadadkonsnuntkonvadadadadfOnwnynxnSnBnDnCnSnEnGnFnZnKnQnPnZababababbdbdadadadadadadbdbdababababababababababababababababababababbdmRnLadadacbdababababababababababababababababababababababababababababababababababaaaa
-aaaaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababdmcycycycycycycycycycycydmigcyidcyiidmahababababababababababababababababababababababababababababbdadadadadnNnMadadadadadadadacacacacacacacacacacacacadadadadadkoirpKggkonvadadadadodnOnbnbnSnRnUnTnSnVnXnWnZnYonomnZabababbdbdadadadadadbdbdbdababababababababababababababababababababababbdadadadacbdababababababababababababababababababababababababababababababababababaaaa
+aaaaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababdmcycycycycycycycycycycydmigcyidcyiidmahababababababababababababababababababababababababababababbdadadadadnNnMadadadadadadadacacacacacacacacacacacacadadadadadkoirpKggkonvadadadadmbnOnbnbnSnRnUnTnSnVnXnWnZnYonomnZabababbdbdadadadadadbdbdbdababababababababababababababababababababababbdadadadacbdababababababababababababababababababababababababababababababababababaaaa
 aaaaababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababdmdmdmdmdmdmdmdmdmdmdmdmdmdmmKoboadmdmahababababababababababababababababababababababababababababbdadadadadadadadadadadadadadacacacacacacacacacacacacadadadadadohocofoeoTogoioioioiiZojoloknSoooqopnSorotosnZouvqvenZababbdbdadadadadadbdbdababababababababababababababababababababababababbdacadadadacbdabababababababababababababababababababababababababababababababababaaaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababahahahdmcycycydmahahababababababababababababababababababababababababababababbdmQmPadadadadadadadadacacacacacacacacacacbdbdbdbdbdadadadadadadadadadadovadadadadfOfOfOfOnSnSnSnSnSpnpnpnnZnZnZnZnZabbdbdadadadadadbdbdabababababababababababababababababababababababababbdacadadadacbdabababababababababababababababababababababababababababababababababaaaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababahahahdmcydacydmahabababababababababababababababababababababababababababababbdmQadadadadadadadadacacacacacacacacacacacbdbdbdababababbdbdbdbdbdbdbdadovadacbdbdbdababababababababababababababababbdbdadadadadadbdbdababababababababababababababababababababababababababbdacadadadjamRbdbdbdbdbdbdbdabababababababababababababababababababababababababababaa
@@ -1747,4 +1747,3 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababababaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
-

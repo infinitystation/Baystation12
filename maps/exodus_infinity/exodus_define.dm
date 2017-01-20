@@ -4,7 +4,7 @@
 	full_name = "NSS Exodus"
 	path = "exodus"
 
-	lobby_icon = 'maps/exodus/exodus_lobby.dmi'
+	lobby_icon = 'maps/exodus_infinity/exodus_lobby.dmi'
 
 	station_levels = list(1)
 	admin_levels = list(2)
