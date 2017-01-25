@@ -1,6 +1,6 @@
 #define WORLD_ICON_SIZE 32
 
-/var/server_name = "Baystation 12"
+/var/server_name = "Infinity - RU"
 
 /var/game_id = null
 /hook/global_init/proc/generate_gameid()
