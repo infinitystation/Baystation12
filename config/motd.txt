@@ -1,10 +1,11 @@
 <h1>Добро пожаловать на Infinity</h1>
 Используется стандартный билд BayStation12 с небольшими модификациями.
 
-Форум сервера:		http://infinity.smforum.ru
-Правила сервера:		http://infinity.smforum.ru/index.php?topic=79.0
-Вики BayStation12:		https://wiki.baystation12.net/
-Логи сервера: 		http://gg.gg/Infinity_LOGS
-Код сервера:			https://github.com/infinitystation
+Форум сервера:		https://infinity.so
+Правила сервера:		https://wiki.infinity.so/index.php?title=Правила_Сервера
+Вики BayStation12:		https://wiki.baystation12.net/ 
+Логи сервера: 		http://gg.gg/Infinity_LOGS 
+Код сервера:			https://github.com/infinitystation 
 
+Обязательно прочтите правила сервера. Они отличаются от правил игры на других серверах.
 Респавн отключён для тех, кто уже в игре. Цените жизнь своего персонажа и ваших коллег. Погибнув, вы сможете играть лишь в следующем раунде.

@@ -199,16 +199,16 @@ GUEST_BAN
 #SERVERURL server.net:port
 
 ## forum address
-FORUMURL http://infinity.smforum.ru/
+FORUMURL https://infinity.so
 
 ## Wiki address
- WIKIURL https://wiki.baystation12.net/
+WIKIURL https://wiki.baystation12.net/
 
 ## GitHub address
 GITHUBURL https://github.com/infinitystation/Baystation12
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-BANAPPEALS http://infinity.smforum.ru/index.php?board=3.0
+BANAPPEALS https://infinity.so/index.php?/forum/5-суд/
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard
@@ -381,7 +381,7 @@ GENERATE_ASTEROID
 
 ## A ; separated list of lobby screens to randomly pick from. The listed screens must exist as icon states in '/icons/misc/title.dmi'.
 ## Defaults to 'title' if left unset.
-# LOBBY_SCREENS title
+LOBBY_SCREENS title
 
 ## Uncomment this line to announce shuttle dock announcements to the main IRC channel, if MAIN_IRC has also been setup.
 # ANNOUNCE_SHUTTLE_DOCK_TO_IRC
