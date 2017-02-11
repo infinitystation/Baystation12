@@ -33,8 +33,13 @@
 		to_chat(usr, "<span class='warning'>You bump against \the [destination].</span>")
 		return 0
 
+	var/area/area = get_area(src)
+	if(direction == UP && area.has_gravity)
+		to_chat(usr, "<span class='warning'>Gravity stops you from moving upward.</span>")
+		return 0
+
 	for(var/atom/A in destination)
-		if(!A.CanPass(src, start))
+		if(!A.CanPass(src, start, 1.5, 0))
 			to_chat(usr, "<span class='warning'>\The [A] blocks you.</span>")
 			return 0
 	Move(destination)

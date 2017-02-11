@@ -19,7 +19,7 @@
 
 	var/auto_init = 1
 
-	glide_size = 8
+	glide_size = 7
 
 /atom/movable/New()
 	..()
@@ -257,6 +257,9 @@
 
 /atom/movable/proc/touch_map_edge()
 	if(!z || (z in using_map.sealed_levels))
+		return
+
+	if(!universe.OnTouchMapEdge(src))
 		return
 
 	if(using_map.use_overmap)

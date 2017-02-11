@@ -126,7 +126,7 @@
 		if(wires.IsIndexCut(BORG_WIRE_CAMERA))
 			camera.status = 0
 
-	..()
+	..() // Laws, among other things, are initialized in parent New()
 	init()
 	initialize_components()
 	//if(!unfinished)
@@ -302,6 +302,8 @@
 
 	real_name = changed_name
 	name = real_name
+	if(mind)
+		mind.name = changed_name
 
 	// if we've changed our name, we also need to update the display name for our PDA
 	setup_PDA()

@@ -35,7 +35,7 @@
 
 // Aurora forensics port.
 /obj/item/clothing/clean_blood()
-	..()
+	. = ..()
 	gunshot_residue = null
 
 /obj/item/clothing/New()
@@ -176,6 +176,7 @@ BLIND     // can't see anything
 	var/vision_flags = 0
 	var/darkness_view = 0//Base human is 2
 	var/see_invisible = -1
+	var/light_protection = 0
 	sprite_sheets = list(
 		"Vox" = 'icons/mob/species/vox/eyes.dmi',
 		"Resomi" = 'icons/mob/species/resomi/eyes.dmi',
@@ -701,7 +702,7 @@ BLIND     // can't see anything
 
 
 /obj/item/clothing/under/examine(mob/user)
-	..(user)
+	. = ..(user)
 	switch(src.sensor_mode)
 		if(0)
 			to_chat(user, "Its sensors appear to be disabled.")

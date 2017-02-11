@@ -46,7 +46,7 @@ var/list/ventcrawl_machinery = list(
 		return !get_inventory_slot(carried_item)
 
 /mob/living/carbon/is_allowed_vent_crawl_item(var/obj/item/carried_item)
-	if(carried_item in internal_organs)
+	if((carried_item in internal_organs) || (carried_item in stomach_contents))
 		return 1
 	return ..()
 
@@ -58,7 +58,7 @@ var/list/ventcrawl_machinery = list(
 /mob/living/simple_animal/spiderbot/is_allowed_vent_crawl_item(var/obj/item/carried_item)
 	if(carried_item in list(held_item, radio, connected_ai, cell, camera, mmi))
 		return 1
-	return 0
+	return ..()
 
 /mob/living/proc/ventcrawl_carry()
 	for(var/atom/A in contents)
@@ -160,7 +160,9 @@ var/list/ventcrawl_machinery = list(
 	for(var/datum/pipeline/pipeline in network.line_members)
 		for(var/obj/machinery/atmospherics/A in (pipeline.members || pipeline.edges))
 			if(!A.pipe_image)
-				A.pipe_image = image(A, A.loc, layer = 20, dir = A.dir)
+				A.pipe_image = image(A, A.loc, dir = A.dir)
+			A.pipe_image.layer = ABOVE_LIGHTING_LAYER
+			A.pipe_image.plane = LIGHTING_PLANE
 			pipes_shown += A.pipe_image
 			client.images += A.pipe_image
 

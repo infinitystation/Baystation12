@@ -11,10 +11,10 @@
 /datum/event/carp_migration/announce()
 	var/announcement = ""
 	if(severity == EVENT_LEVEL_MAJOR)
-		announcement = "Массивнаое движение неизвестных биологических существ было обнаружено рядом со станцией [station_name()], пожалуйста оставайтесь на связи."
+		announcement = "Massive migration of unknown biological entities has been detected near the [station_name()], please stand-by."
 	else
-		announcement = "[spawned_carp.len == 1 ? "Неизвестный биологический объект был замечен" : "Неизвестные биологические объекты были замечены"] рядом со станцией [station_name()], пожалуйста оставайтесь на связи."
-	command_announcement.Announce(announcement, "Тревога: Зафиксирована новаЯ форма жизни вне борта станции")
+		announcement = "Unknown biological [spawned_carp.len == 1 ? "entity has" : "entities have"] been detected near the [station_name()], please stand-by."
+	command_announcement.Announce(announcement, "[station_name()] Sensor Array")
 
 /datum/event/carp_migration/start()
 	if(severity == EVENT_LEVEL_MAJOR)
