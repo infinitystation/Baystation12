@@ -3,6 +3,12 @@
 	if(name != GetVoice())
 		alt_name = "(as [get_id_name("Unknown")])"
 
+	if(message)
+		if(gender == FEMALE)
+			playsound(loc, 'sound/voice/clearing-throat-f.ogg', 25, 1, 1)
+		else
+			playsound(loc, 'sound/voice/clearing-throat-m.ogg', 35, 1, 1)
+
 	message = sanitize(message)
 	..(message, alt_name = alt_name)
 
