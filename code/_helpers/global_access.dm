@@ -639,8 +639,6 @@
 			return global.global_map;
 		if("global_message_listener")
 			return global.global_message_listener;
-		if("global_modular_computers")
-			return global.global_modular_computers;
 		if("global_mutations")
 			return global.global_mutations;
 		if("global_underwear")
@@ -2108,8 +2106,6 @@
 			global.global_map=newval;
 		if("global_message_listener")
 			global.global_message_listener=newval;
-		if("global_modular_computers")
-			global.global_modular_computers=newval;
 		if("global_mutations")
 			global.global_mutations=newval;
 		if("global_underwear")
