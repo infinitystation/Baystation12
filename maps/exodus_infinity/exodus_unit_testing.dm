@@ -1,4 +1,4 @@
-/datum/map/exodus_infinity
+/datum/map/exodus
 	// Unit test exemptions
 	apc_test_exempt_areas = list(
 		/area/AIsattele = NO_SCRUBBER|NO_VENT|NO_APC,
@@ -61,7 +61,7 @@
 			/area/maintenance/exterior)
 
 	area_coherency_test_subarea_count = list(
-			/area/engineering/atmos = 6,
+			/area/engineering/atmos = 4,
 			/area/constructionsite = 7,
 			/area/constructionsite/maintenance = 14,
 			/area/solar/constructionsite = 3,

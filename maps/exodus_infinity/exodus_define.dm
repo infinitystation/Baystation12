@@ -1,7 +1,7 @@
 
-/datum/map/exodus_infinity
-	name = "Infinity Exodus"
-	full_name = "NSS Infinity Exodus"
+/datum/map/exodus
+	name = "Exodus"
+	full_name = "NSS Exodus"
 	path = "exodus_infinity"
 
 	lobby_icon = 'maps/exodus_infinity/exodus_lobby.dmi'
@@ -13,16 +13,17 @@
 	contact_levels = list(1,2,4,6)
 	player_levels = list(1,2,4,5,6,7)
 	sealed_levels = list(6)
+	empty_levels = list(6)
 	accessible_z_levels = list("1" = 5, "2" = 5, "4" = 10, "5" = 15, "7" = 60)
 	base_turf_by_z = list("6" = /turf/simulated/floor/asteroid) // Moonbase
 
-	station_name  = "NSS Infinity Exodus"
-	station_short = "Infinity Exodus"
+	station_name  = "NSS Exodus"
+	station_short = "Exodus"
 	dock_name     = "NAS Crescent"
-	boss_name     = "Центральное командование"
-	boss_short    = "ЦК"
-	company_name  = "Нанотрэйзен"
-	company_short = "НТ"
+	boss_name     = "Central Command"
+	boss_short    = "Centcomm"
+	company_name  = "NanoTrasen"
+	company_short = "NT"
 
 	shuttle_docked_message = "The scheduled Crew Transfer Shuttle to %Dock_name% has docked with the station. It will depart in approximately %ETD%"
 	shuttle_leaving_dock = "The Crew Transfer Shuttle has left the station. Estimate %ETA% until the shuttle docks at %dock_name%."
@@ -33,32 +34,9 @@
 	emergency_shuttle_called_message = "An emergency evacuation shuttle has been called. It will arrive in approximately %ETA%"
 	emergency_shuttle_recall_message = "The emergency shuttle has been recalled."
 
-	station_networks = list(
-							NETWORK_CIVILIAN_EAST,
-							NETWORK_CIVILIAN_WEST,
-							NETWORK_COMMAND,
-							NETWORK_ENGINE,
-							NETWORK_ENGINEERING,
-							NETWORK_ENGINEERING_OUTPOST,
-							NETWORK_EXODUS,
-							NETWORK_MAINTENANCE,
-							NETWORK_MEDICAL,
-							NETWORK_MINE,
-							NETWORK_RESEARCH,
-							NETWORK_RESEARCH_OUTPOST,
-							NETWORK_ROBOTS,
-							NETWORK_PRISON,
-							NETWORK_SECURITY,
-							NETWORK_ALARM_ATMOS,
-							NETWORK_ALARM_FIRE,
-							NETWORK_ALARM_POWER,
-							NETWORK_THUNDER,
-							NETWORK_TELECOM
-							)
+	evac_controller_type = /datum/evacuation_controller/shuttle
 
-	evac_controller_type = /datum/evacuation_controller/pods/shuttle
-
-/datum/map/exodus_infinity/perform_map_generation()
+/datum/map/exodus/perform_map_generation()
 	new /datum/random_map/automata/cave_system(null, 1, 1, 6, 255, 255) // Create the mining Z-level.
 	new /datum/random_map/noise/ore(null, 1, 1, 6, 64, 64)         // Create the mining ore distribution map.
 	return 1

@@ -4,6 +4,7 @@
 	#include "exodus_effects.dm"
 	#include "exodus_elevator.dm"
 	#include "exodus_holodecks.dm"
+	#include "exodus_presets.dm"
 	#include "exodus_shuttles.dm"
 
 	#include "exodus_unit_testing.dm"
@@ -17,31 +18,26 @@
 	#include "loadout/loadout_uniform.dm"
 	#include "loadout/loadout_xeno.dm"
 
-	#include "../shared/exodus_torch/areas.dm"
-	#include "../shared/exodus_torch/zas_tests.dm"
-	#include "../shared/exodus_torch/loadout/loadout_gloves.dm"
-	#include "../shared/exodus_torch/loadout/loadout_head.dm"
-	#include "../shared/exodus_torch/loadout/loadout_shoes.dm"
-	#include "../shared/exodus_torch/loadout/loadout_suit.dm"
-	#include "../shared/exodus_torch/loadout/loadout_accessories.dm"
+	#include "../shared/exodus_torch/_include.dm"
 
-	#include "exodus-0.dmm"
 	#include "exodus-1.dmm"
 	#include "exodus-2.dmm"
 	#include "exodus-3.dmm"
 	#include "exodus-4.dmm"
 	#include "exodus-5.dmm"
 	#include "exodus-6.dmm"
+	#include "exodus-7.dmm"
 
-	#include "music/astronaut_rain.dm"
-	#include "music/beastie_boys_intergalactic.dm"
-	#include "music/skyline_look_forward.dm"
-	#include "music/udo_cut_me_out.dm"
+	#include "../../code/modules/lobby_music/absconditus.dm"
+	#include "../../code/modules/lobby_music/clouds_of_fire.dm"
+	#include "../../code/modules/lobby_music/endless_space.dm"
+	#include "../../code/modules/lobby_music/dilbert.dm"
+	#include "../../code/modules/lobby_music/space_oddity.dm"
 
-	#define USING_MAP_DATUM /datum/map/exodus_infinity
+	#define USING_MAP_DATUM /datum/map/exodus
 
 #elif !defined(MAP_OVERRIDE)
 
-	#warn A map has already been included, ignoring Infinity Exodus
+	#warn A map has already been included, ignoring Exodus
 
 #endif
