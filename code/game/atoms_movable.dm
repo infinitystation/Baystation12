@@ -19,7 +19,7 @@
 
 	var/auto_init = 1
 
-	glide_size = 7
+	glide_size = 7.5
 
 /atom/movable/New()
 	..()
