@@ -19,8 +19,6 @@
 
 	var/auto_init = 1
 
-	glide_size = 6
-
 /atom/movable/New()
 	..()
 	if(auto_init && (initialization_stage & INITIALIZATION_HAS_BEGUN))
