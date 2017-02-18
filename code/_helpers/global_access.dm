@@ -207,8 +207,6 @@
 			return global.all_antag_spawnpoints;
 		if("all_antag_types")
 			return global.all_antag_types;
-		if("all_areas")
-			return global.all_areas;
 		if("all_languages")
 			return global.all_languages;
 		if("all_maps")
@@ -1465,7 +1463,7 @@
 			return global.z_state;
 		if("zone_blocked")
 			return global.zone_blocked;
-		
+
 /proc/writeglobal(which, newval)
 	switch(which)
 		if("ALL_ANTIGENS")
@@ -1674,8 +1672,6 @@
 			global.all_antag_spawnpoints=newval;
 		if("all_antag_types")
 			global.all_antag_types=newval;
-		if("all_areas")
-			global.all_areas=newval;
 		if("all_languages")
 			global.all_languages=newval;
 		if("all_maps")
@@ -2932,7 +2928,7 @@
 			global.z_state=newval;
 		if("zone_blocked")
 			global.zone_blocked=newval;
-		
+
 /var/list/_all_globals=list(
 	"ALL_ANTIGENS",
 	"ANTAG_FREQS",
@@ -3037,7 +3033,6 @@
 	"allConsoles",
 	"all_antag_spawnpoints",
 	"all_antag_types",
-	"all_areas",
 	"all_languages",
 	"all_maps",
 	"all_money_accounts",
