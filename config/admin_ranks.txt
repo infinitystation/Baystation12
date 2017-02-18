@@ -31,13 +31,13 @@ Admin Observer
 Moderator		+MOD
 Mentor                  +MENTOR
 
-Admin Candidate	+ADMIN
+Admin Candidate		+ADMIN
 Trial Admin		+@ +SPAWN +REJUV +VAREDIT +BAN
 Badmin			+@ +POSSESS +BUILDMODE +SERVER +FUN
 Game Admin		+@ +STEALTH +SOUNDS +DEBUG +PERMISSIONS
 Game Master		+EVERYTHING
 Head Admin		+EVERYTHING
-Retired Admin	+ADMIN +STEALTH
+Retired Admin		+ADMIN +STEALTH
 
 Host			+EVERYTHING
 
