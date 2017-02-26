@@ -28,33 +28,30 @@
 # +EVERYTHING (or +HOST or +ALL) = Simply gives you everything without having to type every flag
 
 Admin Observer
-Moderator		+MOD
-Mentor			+MENTOR
+Moderator	+MOD
+Mentor		+MENTOR
 
-Admin Candidate		+ADMIN
-Trial Admin		+@ +SPAWN +REJUV +VAREDIT +BAN
-Badmin			+@ +POSSESS +BUILDMODE +SERVER +FUN
-Game Admin		+@ +STEALTH +SOUNDS +DEBUG
+Admin Candidate	+ADMIN
+Trial Admin	+@ +SPAWN +REJUV +VAREDIT +BAN
+Badmin		+@ +POSSESS +BUILDMODE +SERVER +FUN
+Game Admin	+@ +STEALTH +SOUNDS +DEBUG
 
-Game Master		+EVERYTHING
+Game Master	+EVERYTHING
 
-Retired Admin		+ADMIN +STEALTH
+Retired Admin	+ADMIN +STEALTH
 
-Junior Developer	+FUN +SERVER +DEBUG +VAREDIT +SPAWN +MENTOR
-Junior Dev Mod		+@ +MOD
+JuniorDeveloper +FUN +SERVER +DEBUG +VAREDIT +SPAWN +MENTOR
 
-Developer		+FUN +SERVER +DEBUG +VAREDIT +SPAWN +MENTOR +REJUV +POSSESS +BUILDMODE +MENTOR +SOUND
-Dev Mod			+@ +MOD
+Developer	+FUN +SERVER +DEBUG +VAREDIT +SPAWN +MENTOR +REJUV +POSSESS +BUILDMODE +MENTOR +SOUND
 
-Senior Devepoper	+FUN +SERVER +DEBUG +VAREDIT +SPAWN +MENTOR +REJUV +POSSESS +BUILDMODE +MENTOR +SOUND +RIGHTS +STEALTH
-Senior Dev Mod		+@ +MOD
+SeniorDevepoper	+FUN +SERVER +DEBUG +VAREDIT +SPAWN +MENTOR +REJUV +POSSESS +BUILDMODE +MENTOR +SOUND +RIGHTS +STEALTH
 
-Wiki Mentor		+MENTOR
-Head Wiki		+@ +RIGHTS
+Wiki Mentor	+MENTOR
+Head Wiki	+@ +RIGHTS
 
-Host			+EVERYTHING
-Head Admin		+@
-Project Lead		+@
+Host		+EVERYTHING
+Head Admin	+@
+Project Lead	+@
 
 
 
