@@ -17,6 +17,8 @@
 	var/mob/pulledby = null
 	var/item_state = null // Used to specify the item state for the on-mob overlays.
 
+	glide_size = 7
+
 	var/auto_init = 1
 
 /atom/movable/New()

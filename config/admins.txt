@@ -1,11 +1,22 @@
-bear1ake - Host
-terror4000rus - Game Master
-samorey - Game Master
-hellpony - Game Master
-xxxrockxxx - Game Master
-sladkoeshka - Game Master
-temblrex - Game Master
-thehero13 - Game Master
-alexmorgan - Game Master
+bear1ake - Project Lead
 
-quardbreak - Game Master
+samorey - Game Master
+thehero13 - Game Master
+alexmorgan - Game Master 
+
+terror4000rus - Game Admin
+
+aieroivor - Badmin
+mrtrololo - Badmin
+sladkoeshka - Badmin
+temblrex - Badmin
+
+thedeadangel - Trial Admin
+neincat - Trial Admin
+kirill1243 - Trial Admin
+
+balalayka - Admin Candidate
+hellpony - Admin Candidate
+romeo517 - Admin Candidate
+
+quardbreak - Junior Developer

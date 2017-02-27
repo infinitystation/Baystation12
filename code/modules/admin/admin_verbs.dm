@@ -2,12 +2,12 @@
 var/list/admin_verbs_default = list(
 	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags,
 	/client/proc/player_panel,
-	/client/proc/secrets,
+//	/client/proc/secrets,
 	/client/proc/deadmin_self,			//destroys our own admin datum so we can play as a regular player,
 	/client/proc/hide_verbs,			//hides all our adminverbs,
 	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
-	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
-	/client/proc/debug_global_variables,//as above but for global variables,
+//	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
+//	/client/proc/debug_global_variables,//as above but for global variables,
 //	/client/proc/check_antagonists,		//shows all antags,
 	/client/proc/cmd_mentor_check_new_players
 //	/client/proc/deadchat				//toggles deadchat on/off,
@@ -93,8 +93,11 @@ var/list/admin_verbs_admin = list(
 	/client/proc/list_traders,
 	/client/proc/add_trader,
 	/client/proc/remove_trader,
-	/datum/admins/proc/sendFax
-)
+	/datum/admins/proc/sendFax,
+	/client/proc/secrets,
+	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
+	/client/proc/debug_global_variables
+	)
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
 	/client/proc/jobbans
@@ -201,7 +204,10 @@ var/list/admin_verbs_debug = list(
 	/turf/proc/view_chunk,
 	/turf/proc/update_chunk,
 	/datum/admins/proc/capture_map,
-	/datum/admins/proc/view_runtimes
+	/datum/admins/proc/view_runtimes,
+	/client/proc/secrets,
+	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
+	/client/proc/debug_global_variables
 	)
 
 var/list/admin_verbs_paranoid_debug = list(
@@ -547,7 +553,7 @@ var/list/admin_verbs_mentor = list(
 		if(C)
 			message_admins("[key_name_admin(src)] has warned [key_name_admin(C)] resulting in a [AUTOBANTIME] minute ban.")
 			to_chat(C, "<font color='red'><BIG><B>You have been autobanned due to a warning by [ckey].</B></BIG><br>This is a temporary ban, it will be removed in [AUTOBANTIME] minutes.</font>")
-			del(C)
+			qdel(C)
 		else
 			message_admins("[key_name_admin(src)] has warned [warned_ckey] resulting in a [AUTOBANTIME] minute ban.")
 		AddBan(warned_ckey, D.last_id, "Autobanning due to too many formal warnings", ckey, 1, AUTOBANTIME)
@@ -637,8 +643,15 @@ var/list/admin_verbs_mentor = list(
 /client/proc/togglebuildmodeself()
 	set name = "Toggle Build Mode Self"
 	set category = "Special Verbs"
-	if(src.mob)
-		togglebuildmode(src.mob)
+
+	if(!check_rights(R_ADMIN))
+		return
+
+	var/datum/click_handler/handler = mob.GetClickHandler()
+	if(handler.type == /datum/click_handler/build_mode)
+		usr.PopClickHandler()
+	else
+		usr.PushClickHandler(/datum/click_handler/build_mode)
 	feedback_add_details("admin_verb","TBMS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/object_talk(var/msg as text) // -- TLE

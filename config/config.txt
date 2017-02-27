@@ -30,7 +30,7 @@ JOBS_HAVE_MINIMAL_ACCESS
 #USE_AGE_RESTRICTION_FOR_ANTAGS
 
 ## Unhash this to use recursive explosions, keep it hashed to use circle explosions. Recursive explosions react to walls, airlocks and blast doors, making them look a lot cooler than the boring old circular explosions. They require more CPU and are (as of january 2013) experimental
-#USE_RECURSIVE_EXPLOSIONS
+USE_RECURSIVE_EXPLOSIONS
 
 ## log OOC channel
 LOG_OOC
@@ -103,13 +103,13 @@ MOD_JOB_TEMPBAN_MAX 1440
 ## 
 ## default probablity is 1, increase to make that mode more likely to be picked
 ## set to 0 to disable that mode
-PROBABILITY EXTENDED 1
+PROBABILITY EXTENDED 4
 PROBABILITY MALFUNCTION 1
 PROBABILITY MERCENARY 1
-PROBABILITY WIZARD 1
-PROBABILITY CHANGELING 1
-PROBABILITY CULT 1
-PROBABILITY EXTEND-A-TRAITORMONGOUS 6
+PROBABILITY WIZARD 2
+PROBABILITY CHANGELING 3
+PROBABILITY CULT 2
+PROBABILITY EXTEND-A-TRAITORMONGOUS 3
 
 ## Hash out to disable random events during the round.
 ALLOW_RANDOM_EVENTS
@@ -127,7 +127,7 @@ TRAITOR_SCALING
 #ALLOW_EXTRA_ANTAGS
 
 ## If security is prohibited from being most antagonists
-#PROTECT_ROLES_FROM_ANTAGONIST
+PROTECT_ROLES_FROM_ANTAGONIST
 
 ## Comment this out to stop admins being able to choose their personal ooccolor
 ALLOW_ADMIN_OOCCOLOR
@@ -136,10 +136,10 @@ ALLOW_ADMIN_OOCCOLOR
 # ALLOW_METADATA
 
 ## allow players to initiate a restart vote
-ALLOW_VOTE_RESTART
+#ALLOW_VOTE_RESTART
 
 ## allow players to initate a mode-change start
-ALLOW_VOTE_MODE
+#ALLOW_VOTE_MODE
 
 ## min delay (deciseconds) between voting sessions (default 10 minutes)
 VOTE_DELAY 6000
@@ -163,7 +163,7 @@ VOTE_AUTOGAMEMODE_TIMELEFT 100
 DEFAULT_NO_VOTE
 
 ## Allow ghosts to see antagonist through AntagHUD
-ALLOW_ANTAG_HUD
+#ALLOW_ANTAG_HUD
 
 ## If ghosts use antagHUD they are no longer allowed to join the round.
 ANTAG_HUD_RESTRICTED
@@ -254,7 +254,7 @@ GATEWAY_DELAY 18000
 ## Uncomment to restrict non-admins from using humanoid alien races
 USEALIENWHITELIST
 ## Uncomment to use the alien whitelist system with SQL instead. (requires the above uncommented aswell)
-#USEALIENWHITELIST_SQL
+USEALIENWHITELIST_SQL
 
 ## Comment this to unrestrict the number of alien players allowed in the round. The number represents the number of alien players for every human player.
 #ALIEN_PLAYER_RATIO 0.2
@@ -288,7 +288,7 @@ USEALIENWHITELIST
 #USE_LIB_NUDGE
 
 ## Uncommen to allow ghosts to write in blood during Cult rounds.
-ALLOW_CULT_GHOSTWRITER
+#ALLOW_CULT_GHOSTWRITER
 
 ## Sets the minimum number of cultists needed for ghosts to write in blood.
 REQ_CULT_GHOSTWRITER 6
@@ -352,7 +352,7 @@ EVENT_CUSTOM_START_MAJOR 80;100
 #RESPAWN_DELAY 30
 
 ## Strength of ambient star light. Set to 0 or less to turn off. A value of 1 is unlikely to have a noticeable effect in most lighting systems.
-STARLIGHT 0
+STARLIGHT 1
 
 ## Defines which races are allowed to join as ERT, in singular form. If unset, defaults to only human. Casing matters, separate using ;
 ## Example races include: Human, Tajara, Skrell, Unathi
