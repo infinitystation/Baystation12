@@ -48,9 +48,12 @@
 
 	//get message text, limit it's length.and clean/escape html
 	if(!msg)
+		message_admins("[key_name_admin(src)] has started replying to [key_name(C, 0, 1)]'s admin help.", 1)
 		msg = input(src,"Message:", "Private message to [key_name(C, 0, holder ? 1 : 0)]") as text|null
 
-		if(!msg)	return
+		if(!msg)
+			message_admins("[key_name_admin(src)] has cancelled their reply to [key_name(C, 0, 1)]'s admin help.", 1)
+			return
 		if(!C)
 			if(holder)	to_chat(src, "<span class='warning'>Error: Private-Message: Client not found.</span>")
 			else		to_chat(src, "<span class='warning'>Error: Private-Message: Client not found. They may have lost connection, so try using an adminhelp!</span>")

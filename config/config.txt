@@ -66,7 +66,7 @@ LOG_PDA
 # LOG_WORLD_OUTPUT
 
 ## log all Topic() calls (for use by coders in tracking down Topic issues)
-# LOG_HREFS
+LOG_HREFS
 
 ## log world.log and runtime errors to a file
 # LOG_RUNTIME

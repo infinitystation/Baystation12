@@ -63,7 +63,7 @@ var/datum/server_build/currentbuild
 				config.buildlist[current_build.name] = current_build
 				currentbuild = null
 			else
-				diary << "Unknown command in builds config: '[command]'"
+				to_chat(diary, "Unknown command in builds config: '[command]'")
 
 /hook/startup/proc/loadBuilds()
 	loadbuildname()
@@ -112,7 +112,7 @@ var/datum/server_build/currentbuild
 
 	message_admins("[key_name_admin(usr)] помен&#255;л билд на [nextbuild.name]([nextbuild.friendlyname])")
 	log_admin("[key_name(usr)] помен&#255;л билд на [nextbuild.name]([nextbuild.friendlyname])")
-	world << "<span class='boldannounce'>Билд изменен на [nextbuild.friendlyname] дл&#255; следующего раунда!</span>"
+	to_chat(world, "<span class='boldannounce'>Билд изменен на [nextbuild.friendlyname] дл&#255; следующего раунда!</span>")
 
 /proc/forcechangebuild(datum/server_build/B)
 	if(!istype(B))
@@ -122,7 +122,7 @@ var/datum/server_build/currentbuild
 	if(ticker.update_waiting)
 		return
 
-	world << "<span class='adminooc'><FONT size=5>ВНИМАНИЕ! БИЛД МЕНЯЕТСЯ НА [B.friendlyname]! СЕРВЕР НЕ БУДЕТ РАБОТАТЬ НЕСКОЛЬКО МИНУТ!</FONT><br>Смена билда в конце раунда инициировано администратором [ticker.buildchanger_ckey]</span>."
+	to_chat(world, "<span class='adminooc'><FONT size=5>ВНИМАНИЕ! БИЛД МЕНЯЕТСЯ НА [B.friendlyname]! СЕРВЕР НЕ БУДЕТ РАБОТАТЬ НЕСКОЛЬКО МИНУТ!</FONT><br>Смена билда в конце раунда инициировано администратором [ticker.buildchanger_ckey]</span>.")
 	playsound_global('sound/effects/alarm.ogg', repeat=0, channel=1, volume=100)
 	sleep(100)
 
