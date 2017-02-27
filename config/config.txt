@@ -239,7 +239,7 @@ SOCKET_TALK 0
 #TOR_BAN
 
 ## Comment this out to disable automuting
-#AUTOMUTE_ON
+AUTOMUTE_ON
 
 ## How long the delay is before the Away Mission gate opens. Default is half an hour.
 GATEWAY_DELAY 18000
@@ -328,7 +328,7 @@ EVENT_CUSTOM_START_MAJOR 80;100
 #ALIEN_EGGS_ALLOWED
 
 ## Uncomment to allow xenos to spawn.
-#NINJAS_ALLOWED
+NINJAS_ALLOWED
 
 ## Uncomment to disable the restrictive weldervision overlay.
 #DISABLE_WELDER_VISION
