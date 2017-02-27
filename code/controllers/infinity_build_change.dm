@@ -63,7 +63,7 @@ var/datum/server_build/currentbuild
 				config.buildlist[current_build.name] = current_build
 				currentbuild = null
 			else
-				to_chat(diary, "Unknown command in builds config: '[command]'")
+				diary << "Unknown command in builds config: '[command]'"
 
 /hook/startup/proc/loadBuilds()
 	loadbuildname()
