@@ -206,6 +206,16 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/corner/grey/three_quarters
 	icon_state = "corner_white_three_quarters"
 
+/obj/effect/floor_decal/corner/grey_alt
+	name = "grey corner"
+	color = "#B0AEAE"
+
+/obj/effect/floor_decal/corner/grey_alt/diagonal
+	icon_state = "corner_white_diagonal"
+
+/obj/effect/floor_decal/corner/grey_alt/three_quarters
+	icon_state = "corner_white_three_quarters"
+
 /obj/effect/floor_decal/spline/plain
 	name = "spline - plain"
 	icon_state = "spline_plain"
