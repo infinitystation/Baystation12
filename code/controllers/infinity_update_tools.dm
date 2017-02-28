@@ -8,7 +8,7 @@
 	if (!usr.client.holder)
 		return
 	if(currentbuild.folder == currentbuild.update)
-		usr << "Ошибка. Переключите билд на основной"
+		to_chat(usr, "Ошибка. Переключите билд на основной")
 		return
 	var/confirm = alert("End the round and update server?", "End Round", "Yes", "Cancel")
 	if(confirm == "Cancel")
@@ -24,7 +24,7 @@
 	if (!usr.client.holder)
 		return
 	if(currentbuild.folder == currentbuild.update)
-		usr << "Ошибка. Переключите билд на основной"
+		to_chat(usr, "Ошибка. Переключите билд на основной")
 		return
 	var/confirm = alert("Инициировать обновление в конце раунда?", "End Round", "Yes", "Cancel")
 	if(confirm == "Cancel")
@@ -32,7 +32,7 @@
 	if(confirm == "Yes")
 		message_admins("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
 		log_game("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
-		world << "<span class='adminooc'>Администратор [usr.key] инициировал(а) обновление сервера в конце текущего раунда.</span>"
+		to_chat(world, "<span class='adminooc'>Администратор [usr.key] инициировал(а) обновление сервера в конце текущего раунда.</span>")
 		ticker.updater_ckey = usr.key
 		ticker.update_waiting = 1
 
@@ -47,4 +47,4 @@
 
 /proc/playsound_global(file, repeat=0, wait, channel, volume)
 	for(var/V in clients)
-		V << sound(file, repeat, wait, channel, volume)
+		to_chat(V, sound(file, repeat, wait, channel, volume))
