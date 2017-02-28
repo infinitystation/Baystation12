@@ -18,7 +18,7 @@
 	var/printdelay = 100 // 10 second delay between prints
 
 	var/lastorder = 0
-	var/orderdelay = 100 // 5 second delay between orders.
+	var/orderdelay = 50 // 5 second delay between orders.
 
 
 	var/list/supplylist
