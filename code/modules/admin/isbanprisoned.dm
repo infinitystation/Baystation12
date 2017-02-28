@@ -4,7 +4,7 @@
 /client/proc/prisoner_init()
 	if(!IsBanPrisoned(key, address, computer_id))
 		return
-	prefs.muted = MUTE_OOC | MUTE_ADMINHELP | MUTE_DEADCHAT
+	prefs.muted = MUTE_OOC | MUTE_ADMINHELP | MUTE_DEADCHAT | MUTE_PRAY
 	banprisoned = 1
 
 /client/proc/IsBanPrisoned(key, address, computer_id)

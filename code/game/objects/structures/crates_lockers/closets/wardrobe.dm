@@ -269,6 +269,8 @@
 	new /obj/item/clothing/under/rank/roboticist(src)
 	new /obj/item/clothing/suit/storage/toggle/labcoat(src)
 	new /obj/item/clothing/suit/storage/toggle/labcoat(src)
+	new /obj/item/clothing/suit/sc_labcoat(src)
+	new /obj/item/clothing/suit/sc_labcoat(src)
 	new /obj/item/clothing/shoes/black(src)
 	new /obj/item/clothing/shoes/black(src)
 	new /obj/item/clothing/gloves/thick(src)
