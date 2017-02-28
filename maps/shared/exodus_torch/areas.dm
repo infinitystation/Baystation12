@@ -373,6 +373,10 @@
 	name = "Solitary Confinement"
 	icon_state = "brig"
 
+/area/prison/banprison
+	name = "Ban Prison"
+	icon_state = "brig"
+
 /area/security/armoury
 	name = "\improper Security - Armory"
 	icon_state = "Warden"

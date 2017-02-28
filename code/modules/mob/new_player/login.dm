@@ -40,7 +40,6 @@
 	else
 		new_player_panel_prisoner()
 
-	spawn(40)
-		if(client)
-			handle_privacy_poll()
-			client.playtitlemusic()
+	if(client)
+		//handle_privacy_poll()
+		client.playtitlemusic()
