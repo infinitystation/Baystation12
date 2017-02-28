@@ -205,7 +205,7 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 	else
 		message_admins(sender, "[uppertext(destination)] FAX", rcvdcopy, "UNKNOWN")
 
-	sendcooldown = 1800
+	sendcooldown = 600
 	sleep(50)
 	visible_message("[src] beeps, \"Message transmitted successfully.\"")
 

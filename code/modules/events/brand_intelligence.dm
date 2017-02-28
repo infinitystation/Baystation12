@@ -41,13 +41,13 @@
 			infectedMachine.shoot_inventory = 1
 
 	if(IsMultiple(activeFor, 12))
-		originMachine.speak(pick("Попробуйте наш новый агрессивный маркетинг!", \
-								"Вы обязаны купить товар, что-бы накормить свою жизненную одержимость!", \
-								"Потребите!", \
-								"Ваши деньги могут купить счастье!", \
-								"Включение прямого маркетинга!", \
-								"Рекламирование - легализованная ложь! Но не позволяйте этому сбивать вас с наших отличных сделок!", \
-								"Не хочешь ли ты что нибудь купить? Окей, ну, я тоже не собирался покупать твою маму."))
+		originMachine.speak(pick("Try our aggressive new marketing strategies!", \
+								"You should buy products to feed your lifestyle obsession!", \
+								"Consume!", \
+								"Your money can buy happiness!", \
+								"Engage direct marketing!", \
+								"Advertising is legalized lying! But don't let that put you off our great deals!", \
+								"You don't want to buy anything? Yeah, well I didn't want to buy your mom either."))
 
 /datum/event/brand_intelligence/end()
 	for(var/obj/machinery/vending/infectedMachine in infectedVendingMachines)
