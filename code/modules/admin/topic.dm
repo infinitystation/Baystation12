@@ -194,19 +194,19 @@
 		var/task = href_list["whitelist"]
 		if(!task)
 			return
-		var/role = href_list["role"]
+		var/species = href_list["species"]
 
 		switch(task)
 			if("add_user")
 				whitelist_add_user()
-			if("add_role")
-				whitelist_add_role(target_ckey)
-			if("showroles")
+			if("add_species")
+				whitelist_add_species(target_ckey)
+			if("showspecies")
 				whitelist_view(target_ckey)
 			if("edit_ban")
-				whitelist_edit(target_ckey, role, ban_edit = TRUE)
+				whitelist_edit(target_ckey, species, ban_edit = TRUE)
 			if("edit_reason")
-				whitelist_edit(target_ckey, role)
+				whitelist_edit(target_ckey, species)
 
 	else if(href_list["call_shuttle"])
 

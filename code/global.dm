@@ -136,7 +136,7 @@ var/DBConnection/dbcon_old = new() // /tg/station database (Old database) -- see
 // Xeno/role whitelist database
 var/whitelist_sqlite_path = "data/whitelist.db"
 var/database/whitelist_db
-var/list/role_whitelist
+var/list/species_whitelist
 var/list/whitelisted_roles = list("unathi", "tajaran", "skrell", "diona", "machine") //must be in lowercase
 
 // Reference list for disposal sort junctions. Filled up by sorting junction's New()
