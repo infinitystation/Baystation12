@@ -103,7 +103,7 @@ MOD_JOB_TEMPBAN_MAX 1440
 ## 
 ## default probablity is 1, increase to make that mode more likely to be picked
 ## set to 0 to disable that mode
-PROBABILITY EXTENDED 4
+PROBABILITY EXTENDED 3
 PROBABILITY MALFUNCTION 1
 PROBABILITY MERCENARY 1
 PROBABILITY WIZARD 2

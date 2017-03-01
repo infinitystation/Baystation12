@@ -24,7 +24,7 @@ var/global/datum/controller/gameticker/ticker
 	var/list/availablefactions = list()	  // list of factions with openings
 
 	var/pregame_timeleft = 0
-	var/gamemode_voted = 0
+	var/gamemode_voted = 1
 
 	var/delay_end = 0	//if set to nonzero, the round will not restart on it's own
 
