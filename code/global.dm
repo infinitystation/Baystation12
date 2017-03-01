@@ -133,6 +133,12 @@ var/custom_event_msg = null
 var/DBConnection/dbcon     = new() // Feedback    database (New database)
 var/DBConnection/dbcon_old = new() // /tg/station database (Old database) -- see the files in the SQL folder for information on what goes where.
 
+// Xeno/role whitelist database
+var/whitelist_sqlite_path = "data/whitelist.db"
+var/database/whitelist_db
+var/list/role_whitelist
+var/list/whitelisted_roles = list("unathi", "tajaran", "skrell", "diona", "machine") //must be in lowercase
+
 // Reference list for disposal sort junctions. Filled up by sorting junction's New()
 /var/list/tagger_locations = list()
 

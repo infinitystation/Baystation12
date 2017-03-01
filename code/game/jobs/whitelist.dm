@@ -53,7 +53,7 @@ var/list/whitelist = list()
 	var/datum/species/S = all_species[species_name]
 	return is_alien_whitelisted(M, S)
 
-//todo: admin aliens
+/*todo: admin aliens [See watchlist.dm in modules/admin ~Quardbreak]
 /proc/is_alien_whitelisted(mob/M, var/species)
 	if(!M || !species)
 		return 0
@@ -75,7 +75,7 @@ var/list/whitelist = list()
 		return whitelist_lookup(S.get_bodytype(S), M.ckey)
 
 	return 0
-
+*/
 /proc/whitelist_lookup(var/item, var/ckey)
 	if(!alien_whitelist)
 		return 0
