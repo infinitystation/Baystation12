@@ -26,6 +26,7 @@
 /obj/structure/door_assembly/door_assembly_sec
 	base_icon_state = "sec"
 	base_name = "Security Airlock"
+	icon = 'icons/blue_brig/airlocks/door_assembly.dmi'
 	glass_type = "/glass_security"
 	airlock_type = "/security"
 

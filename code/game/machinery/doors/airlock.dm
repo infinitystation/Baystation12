@@ -78,7 +78,7 @@
 
 /obj/machinery/door/airlock/security
 	name = "Airlock"
-	icon = 'icons/obj/doors/Doorsec.dmi'
+	icon = 'icons/blue_brig/airlocks/Doorsec.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_sec
 
 /obj/machinery/door/airlock/engineering
@@ -201,7 +201,7 @@
 
 /obj/machinery/door/airlock/glass_security
 	name = "Maintenance Hatch"
-	icon = 'icons/obj/doors/Doorsecglass.dmi'
+	icon = 'icons/blue_brig/airlocks/Doorsecglass.dmi'
 	hitsound = 'sound/effects/Glasshit.ogg'
 	maxhealth = 300
 	explosion_resistance = 5
