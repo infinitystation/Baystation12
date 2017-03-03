@@ -149,7 +149,7 @@ for reference:
 /obj/machinery/deployable/barrier
 	name = "deployable barrier"
 	desc = "A deployable barrier. Swipe your ID card to lock/unlock it."
-	icon = 'icons/obj/objects.dmi'
+	icon = 'icons/blue_brig/obj/secbarrier.dmi'
 	anchored = 0.0
 	density = 1
 	icon_state = "barrier0"
