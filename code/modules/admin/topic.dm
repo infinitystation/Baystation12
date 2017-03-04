@@ -186,7 +186,7 @@
 
 		edit_admin_permissions()
 
-	else if(href_list["whitelist"])
+/*	else if(href_list["whitelist"])
 		if(!check_rights(R_ADMIN))
 			return
 
@@ -206,7 +206,7 @@
 			if("edit_ban")
 				whitelist_edit(target_ckey, species, ban_edit = TRUE)
 			if("edit_reason")
-				whitelist_edit(target_ckey, species)
+				whitelist_edit(target_ckey, species) */
 
 	else if(href_list["call_shuttle"])
 

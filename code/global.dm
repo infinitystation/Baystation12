@@ -34,7 +34,7 @@ var/changelog_hash      = ""
 var/game_year           = (text2num(time2text(world.realtime, "YYYY")) + 544)
 
 var/round_progressing = 1
-var/master_mode       = "secret" // "secret"
+var/master_mode       = "extended" // "secret"
 var/secondary_mode    = "extended"
 var/tertiary_mode     = "extended"
 var/secret_force_mode = "secret"   // if this is anything but "secret", the secret rotation will forceably choose this mode.

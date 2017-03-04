@@ -89,6 +89,7 @@
 /obj/structure/closet/secure_closet/hos
 	name = "head of security's locker"
 	req_access = list(access_hos)
+	icon = 'icons/blue_brig/obj/closetsec.dmi'
 	icon_state = "hossecure1"
 	icon_closed = "hossecure"
 	icon_locked = "hossecure1"
@@ -131,6 +132,7 @@
 /obj/structure/closet/secure_closet/warden
 	name = "warden's locker"
 	req_access = list(access_armory)
+	icon = 'icons/blue_brig/obj/closetsec.dmi'
 	icon_state = "wardensecure1"
 	icon_closed = "wardensecure"
 	icon_locked = "wardensecure1"
@@ -173,6 +175,7 @@
 /obj/structure/closet/secure_closet/security
 	name = "security officer's locker"
 	req_access = list(access_brig)
+	icon = 'icons/blue_brig/obj/closetsec.dmi'
 	icon_state = "sec1"
 	icon_closed = "sec"
 	icon_locked = "sec1"
