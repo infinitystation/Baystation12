@@ -1,12 +1,12 @@
 /decl/turf_initializer/maintenance
-	var/clutter_probability = 2
+	var/clutter_probability = 3
 	var/oil_probability = 2
 	var/vermin_probability = 0
-	var/web_probability = 25
+	var/web_probability = 1
 
 /decl/turf_initializer/maintenance/heavy
 	clutter_probability = 5
-	web_probability = 50
+	web_probability = 2
 	vermin_probability = 0.5
 
 /decl/turf_initializer/maintenance/space
