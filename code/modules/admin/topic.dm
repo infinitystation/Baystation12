@@ -186,28 +186,6 @@
 
 		edit_admin_permissions()
 
-/*	else if(href_list["whitelist"])
-		if(!check_rights(R_ADMIN))
-			return
-
-		var/target_ckey = ckey(href_list["ckey"])
-		var/task = href_list["whitelist"]
-		if(!task)
-			return
-		var/species = href_list["species"]
-
-		switch(task)
-			if("add_user")
-				whitelist_add_user()
-			if("add_species")
-				whitelist_add_species(target_ckey)
-			if("showspecies")
-				whitelist_view(target_ckey)
-			if("edit_ban")
-				whitelist_edit(target_ckey, species, ban_edit = TRUE)
-			if("edit_reason")
-				whitelist_edit(target_ckey, species) */
-
 	else if(href_list["call_shuttle"])
 
 		if(!check_rights(R_ADMIN))	return
