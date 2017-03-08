@@ -12,9 +12,9 @@
 /obj/item/clothing/suit/sc_labcoat
 	name = "robotic bathrobe"
 	desc = "A suit that protects against minor chemical spills."
-	icon = 'icons/obj/clothing/infinity_obj_clothing/suits.dmi'
+	icon = 'icons/obj/clothing/infinity/suits.dmi'
 	item_state = null
-	icon_override = 'icons/mob/infinity_mob_clothing/suits.dmi'
+	icon_override = 'icons/mob/infinity/suits.dmi'
 	icon_state = "sc_labcoat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	allowed = list(/obj/item/device/analyzer,/obj/item/stack/medical,/obj/item/weapon/dnainjector,/obj/item/weapon/reagent_containers/dropper,/obj/item/weapon/reagent_containers/syringe,/obj/item/weapon/reagent_containers/hypospray,/obj/item/device/healthanalyzer,/obj/item/device/flashlight/pen,/obj/item/weapon/reagent_containers/glass/bottle,/obj/item/weapon/reagent_containers/glass/beaker,/obj/item/weapon/reagent_containers/pill,/obj/item/weapon/storage/pill_bottle,/obj/item/weapon/paper)

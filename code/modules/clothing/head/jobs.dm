@@ -93,7 +93,7 @@
 	icon_state = "beret_corporate_red"
 
 /obj/item/clothing/head/beret/sec/navy/officer
-	name = "corporate security officer beret"
+	name = "navy security officer beret"
 	desc = "A navy blue beret with an officer's rank emblem. For officers that are more inclined towards style than safety."
 	icon_state = "beret_corporate_navy_officer"
 
