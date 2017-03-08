@@ -86,4 +86,4 @@
 Вы попали сюда по причине, которая была описана выше при входе в игру.
 	"}
 	character << sanitize_a0(text)
-	message_admins("<span class='notice'>[key_name_admin(character.key)](<A HREF='?_src_=holder;adminmoreinfo=\ref[character]'>?</A>)(<A HREF='?_src_=holder;adminplayerobservefollow=\ref[character]'>FLW</A>) в игре как заключенный.</span>")
+	message_admins("<span class='notice'>[key_name_admin(character)](<A HREF='?_src_=holder;adminmoreinfo=\ref[character]'>?</A>)(<A HREF='?_src_=holder;adminplayerobservefollow=\ref[character]'>FLW</A>) в игре как заключенный.</span>")

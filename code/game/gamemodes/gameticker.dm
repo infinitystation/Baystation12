@@ -159,7 +159,7 @@ var/global/datum/controller/gameticker/ticker
 			//Deleting Startpoints but we need the ai point to AI-ize people later
 			if (S.name != "AI")
 				qdel(S)
-		to_world("<FONT color='blue'><B>Наслаждайтесь игрой!</B></FONT>")
+		to_world("<FONT color='blue'><B>Enjoy the game!</B></FONT>")
 		sound_to(world, sound('sound/AI/welcome.ogg'))// Skie
 
 		//Holiday Round-start stuff	~Carn
@@ -322,7 +322,7 @@ var/global/datum/controller/gameticker/ticker
 		if(captainless)
 			for(var/mob/M in player_list)
 				if(!istype(M,/mob/new_player))
-					to_chat(M, M << "Текущий капитан отсутствует.")
+					to_chat(M, "Captainship not forced on anyone.")
 
 
 	proc/process()
@@ -397,7 +397,7 @@ var/global/datum/controller/gameticker/ticker
 			//call a transfer shuttle vote
 			spawn(50)
 				if(!round_end_announced) // Spam Prevention. Now it should announce only once.
-					to_world("<span class='danger'>Раунд был окончен!</span>")
+					to_world("<span class='danger'>The round has ended!</span>")
 
 					round_end_announced = 1
 				vote.autotransfer()
@@ -405,7 +405,7 @@ var/global/datum/controller/gameticker/ticker
 		return 1
 
 /datum/controller/gameticker/proc/declare_completion()
-	to_world("<br><br><br><H1>Раунд [mode.name] был окончен!</H1>")
+	to_world("<br><br><br><H1>A round of [mode.name] has ended!</H1>")
 
 	for(var/mob/Player in player_list)
 		if(Player.mind && !isnewplayer(Player))
@@ -415,20 +415,20 @@ var/global/datum/controller/gameticker/ticker
 					if(isNotAdminLevel(playerTurf.z))
 						to_chat(Player, "<font color='blue'><b>You managed to survive, but were marooned on [station_name()] as [Player.real_name]...</b></font>")
 					else
-						to_chat(Player, "<font color='green'><b>Вам удалось пережить эту смену на [station_name()] в роли [Player.real_name].</b></font>")
+						to_chat(Player, "<font color='green'><b>You managed to survive the events on [station_name()] as [Player.real_name].</b></font>")
 				else if(isAdminLevel(playerTurf.z))
-					to_chat(Player, "<font color='green'><b>Вы успешно прошли транспортировку экипажа в этой смене на [station_name()] в роли [Player.real_name].</b></font>")
+					to_chat(Player, "<font color='green'><b>You successfully underwent crew transfer after events on [station_name()] as [Player.real_name].</b></font>")
 				else if(issilicon(Player))
 					to_chat(Player, "<font color='green'><b>You remain operational after the events on [station_name()] as [Player.real_name].</b></font>")
 				else
-					to_chat(Player, "<font color='blue'><b>Вы пропустили транспортировку экипажа в этой смене на [station_name()] в роли [Player.real_name].</b></font>")
+					to_chat(Player, "<font color='blue'><b>You got through just another workday on [station_name()] as [Player.real_name].</b></font>")
 			else
 				if(isghost(Player))
 					var/mob/observer/ghost/O = Player
 					if(!O.started_as_observer)
-						to_chat(Player,"<font color='red'><b>Вы не пережили эту смену [station_name()]...</b></font>")
+						to_chat(Player, "<font color='red'><b>You did not survive the events on [station_name()]...</b></font>")
 				else
-					to_chat(Player, "<font color='red'><b>Вы не пережили эту смену [station_name()]...</b></font>")
+					to_chat(Player, "<font color='red'><b>You did not survive the events on [station_name()]...</b></font>")
 	to_world("<br>")
 
 
