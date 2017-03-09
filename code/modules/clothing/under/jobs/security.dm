@@ -36,7 +36,7 @@
 /obj/item/clothing/under/rank/security/blue
 	icon = 'icons/blue_brig/obj/clothing/uniform.dmi'
 	icon_state = "security"
-	item_state = "r_suit"
+	item_state = null
 	worn_state = "security"
 	icon_override = 'icons/blue_brig/mob/uniform.dmi'
 	item_icons = list(
@@ -71,7 +71,7 @@
 /obj/item/clothing/under/rank/security/corp/alt
 	icon_override = 'icons/blue_brig/mob/uniform.dmi'
 	icon = 'icons/blue_brig/obj/clothing/uniform.dmi'
-	item_state = "r_suit"
+	item_state = null
 	item_icons = list(
 		icon_l_hand = 'icons/blue_brig/mob/clothing-lefthand.dmi',
 		icon_r_hand = 'icons/blue_brig/mob/clothing-righthand.dmi',
@@ -85,7 +85,7 @@
 /obj/item/clothing/under/rank/warden/corp/alt
 	icon_override = 'icons/blue_brig/mob/uniform.dmi'
 	icon = 'icons/blue_brig/obj/clothing/uniform.dmi'
-	item_state = "r_suit"
+	item_state = null
 	item_icons = list(
 		icon_l_hand = 'icons/blue_brig/mob/clothing-lefthand.dmi',
 		icon_r_hand = 'icons/blue_brig/mob/clothing-righthand.dmi',
@@ -177,7 +177,7 @@
 /obj/item/clothing/under/rank/head_of_security/corp/alt
 	icon_override = 'icons/blue_brig/mob/uniform.dmi'
 	icon = 'icons/blue_brig/obj/clothing/uniform.dmi'
-	item_state = "r_suit"
+	item_state = null
 	item_icons = list(
 		icon_l_hand = 'icons/blue_brig/mob/clothing-lefthand.dmi',
 		icon_r_hand = 'icons/blue_brig/mob/clothing-righthand.dmi',
