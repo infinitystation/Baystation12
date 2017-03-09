@@ -59,7 +59,6 @@
 "bg" = (/obj/machinery/camera/network/telecom{c_tag = "Telecoms West Wing North"},/turf/space,/area/turret_protected/tcomsat/port)
 "bh" = (/obj/machinery/door/airlock/glass{name = "Living Module"},/turf/simulated/floor/shuttle/white,/area/derelict/ship)
 "bi" = (/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/tiled,/area/derelict/ship)
-"bj" = (/obj/structure/table/standard,/obj/item/weapon/paper_bin,/obj/item/weapon/pen/blue{pixel_x = -3; pixel_y = 2},/obj/machinery/alarm{pixel_y = 22},/turf/simulated/floor/tiled,/area/tcommsat/computer)
 "bk" = (/obj/machinery/light_switch{pixel_x = 27},/obj/machinery/light{dir = 4},/turf/simulated/floor/tiled,/area/derelict/ship)
 "bl" = (/obj/structure/bed/chair,/turf/simulated/floor/tiled,/area/derelict/ship)
 "bm" = (/obj/structure/table/rack,/obj/item/weapon/tank/emergency/oxygen,/obj/item/weapon/tank/emergency/oxygen,/obj/item/weapon/tank/emergency/oxygen,/obj/item/weapon/tank/emergency/oxygen,/turf/simulated/floor/tiled,/area/derelict/ship)
@@ -89,7 +88,6 @@
 "bK" = (/obj/item/device/radio/intercom{dir = 4; pixel_x = -22},/obj/machinery/atmospherics/pipe/manifold/visible/blue{tag = "icon-map (WEST)"; icon_state = "map"; dir = 8},/turf/simulated/floor/tiled,/area/tcommsat/computer)
 "bL" = (/obj/machinery/atmospherics/portables_connector{dir = 8},/turf/simulated/floor/tiled,/area/tcommsat/computer)
 "bM" = (/obj/machinery/atmospherics/binary/pump{dir = 8},/turf/simulated/floor/tiled,/area/tcommsat/computer)
-"bN" = (/obj/structure/bed/chair/office/dark{dir = 1},/turf/simulated/floor/tiled,/area/tcommsat/computer)
 "bO" = (/obj/item/trash/cheesie,/turf/space,/area/space)
 "bP" = (/obj/machinery/light{dir = 8},/obj/machinery/atmospherics/pipe/simple/visible/blue,/turf/simulated/floor/tiled,/area/tcommsat/computer)
 "bQ" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/machinery/porta_turret/stationary,/turf/simulated/floor/airless,/area/turret_protected/tcomsat/port)
@@ -144,7 +142,6 @@
 "cN" = (/obj/machinery/door/airlock/hatch{name = "Telecoms Control Room"; req_access = list(61)},/turf/simulated/floor/tiled,/area/tcommsat/chamber)
 "cO" = (/obj/structure/window/reinforced{dir = 1},/obj/structure/window/reinforced{dir = 4},/turf/space,/area/turret_protected/tcomsat/port)
 "cP" = (/obj/machinery/porta_turret/stationary,/obj/effect/floor_decal/industrial/hatch/yellow,/turf/simulated/floor/airless,/area/turret_protected/tcomsat/port)
-"cQ" = (/obj/structure/table/standard,/obj/item/weapon/folder/yellow,/obj/item/weapon/folder/yellow,/obj/machinery/light{dir = 1},/obj/machinery/camera/network/telecom{c_tag = "Telecoms Main Computer Room"},/turf/simulated/floor/tiled,/area/tcommsat/computer)
 "cR" = (/obj/effect/floor_decal/corner/beige{dir = 9},/turf/simulated/floor/tiled,/area/tcommsat/computer)
 "cS" = (/obj/structure/window/reinforced{dir = 4},/obj/structure/lattice,/turf/space,/area/turret_protected/tcomsat/port)
 "cT" = (/obj/structure/table/standard,/obj/item/device/flashlight/lamp,/obj/effect/floor_decal/corner/beige/three_quarters{tag = "icon-corner_white_three_quarters (NORTH)"; icon_state = "corner_white_three_quarters"; dir = 1},/turf/simulated/floor/tiled,/area/tcommsat/computer)
@@ -687,3 +684,4 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
+

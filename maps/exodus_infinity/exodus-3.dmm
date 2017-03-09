@@ -422,7 +422,6 @@
 "kv" = (/obj/structure/table/holotable,/obj/item/clothing/head/helmet/thunderdome,/obj/item/clothing/suit/armor/tdome/green,/obj/item/clothing/under/color/green,/obj/item/weapon/holo/esword/green,/obj/effect/floor_decal/corner/green{dir = 10},/turf/simulated/floor/holofloor/tiled,/area/holodeck/source_thunderdomecourt)
 "kw" = (/obj/structure/table/holotable,/obj/machinery/readybutton{pixel_y = 0},/obj/effect/floor_decal/corner/green/three_quarters{dir = 4},/turf/simulated/floor/holofloor/tiled,/area/holodeck/source_thunderdomecourt)
 "kx" = (/obj/structure/bed/chair,/turf/unsimulated/floor{icon_state = "vault"; dir = 5},/area/shuttle/transport1/centcom)
-"ky" = (/turf/unsimulated/floor{icon = 'icons/turf/shuttle.dmi'; icon_state = "floor4"},/area/centcom/evac)
 "kz" = (/obj/machinery/computer/secure_data,/obj/effect/floor_decal/corner/red/full,/turf/simulated/floor/tiled/dark,/area/centcom/evac)
 "kA" = (/obj/structure/table/holotable,/obj/item/clothing/gloves/boxing/hologlove{icon_state = "boxinggreen"; item_state = "boxinggreen"},/turf/simulated/floor/holofloor/tiled/dark,/area/holodeck/source_boxingcourt)
 "kB" = (/obj/structure/shuttle/engine/propulsion,/turf/space,/area/syndicate_mothership/ninja)
@@ -771,7 +770,6 @@
 "rg" = (/obj/machinery/light{dir = 4},/obj/effect/floor_decal/corner/red/full,/turf/unsimulated/floor{dir = 2; icon_state = "dark"},/area/syndicate_station/start)
 "rh" = (/obj/structure/table/reinforced,/obj/item/weapon/storage/box/donkpockets{pixel_x = 3; pixel_y = 3},/obj/effect/floor_decal/corner/black/diagonal,/turf/simulated/floor/tiled/dark,/area/shuttle/administration/centcom)
 "ri" = (/obj/machinery/vending/cigarette{name = "hacked cigarette machine"; prices = list(); products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)},/turf/unsimulated/floor{tag = "icon-cult"; name = "plating"; icon_state = "cult"},/area/syndicate_mothership)
-"rj" = (/turf/simulated/floor/shuttle/white,/area/syndicate_station/start)
 "rk" = (/obj/item/clothing/gloves/insulated,/obj/item/device/assembly/signaler{pixel_y = 2},/obj/item/clothing/glasses/night,/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/structure/table/steel,/obj/effect/floor_decal/corner/red{dir = 5},/turf/unsimulated/floor{dir = 2; icon_state = "dark"},/area/syndicate_station/start)
 "rl" = (/obj/machinery/vending/snack{name = "hacked Getmore Chocolate Corp"; prices = list()},/turf/unsimulated/floor{tag = "icon-cult"; name = "plating"; icon_state = "cult"},/area/syndicate_mothership)
 "rm" = (/obj/effect/wingrille_spawn/reinforced/crescent,/turf/simulated/floor/plating,/area/shuttle/administration/centcom)
@@ -1252,7 +1250,6 @@
 "At" = (/turf/simulated/shuttle/wall{icon_state = "swall"; dir = 5},/area/shuttle/escape/centcom)
 "Au" = (/obj/structure/shuttle/engine/heater{icon_state = "heater"; dir = 4},/obj/structure/window/reinforced/crescent{dir = 8},/obj/structure/window/reinforced/crescent{dir = 1},/turf/simulated/floor/airless,/area/shuttle/transport1/centcom)
 "Av" = (/obj/structure/bed/chair{dir = 1},/obj/effect/floor_decal/corner/blue{tag = "icon-corner_white (NORTH)"; icon_state = "corner_white"; dir = 1},/turf/unsimulated/floor{icon_state = "steel"},/area/shuttle/escape/centcom)
-"Aw" = (/obj/effect/floor_decal/corner/red{dir = 6},/turf/unsimulated/floor{icon_state = "steel"},/area/centcom/holding)
 "Ax" = (/obj/machinery/door/window/northleft{base_state = "right"; dir = 8; icon_state = "right"; name = "Arrivals Processing"; req_access = list(101)},/obj/effect/floor_decal/corner/blue{dir = 9},/turf/unsimulated/floor{icon_state = "steel"},/area/centcom/holding)
 "Ay" = (/obj/machinery/computer/prisoner{name = "Implant Management"},/turf/simulated/floor/shuttle/red,/area/shuttle/specops/centcom)
 "Az" = (/obj/structure/bed/chair{dir = 1},/turf/simulated/floor/shuttle/red,/area/shuttle/specops/centcom)
@@ -2727,3 +2724,4 @@ aMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaM
 aMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMfLaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbmumuaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMfLaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaM
 aMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMfLaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbVbmumuaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMfLaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaMaM
 "}
+
