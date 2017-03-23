@@ -10,13 +10,13 @@
 	#include "exodus_unit_testing.dm"
 	#include "exodus_zas_tests.dm"
 
-	#include "loadout/loadout_accessories.dm"
-	#include "loadout/loadout_eyes.dm"
-	#include "loadout/loadout_head.dm"
-	#include "loadout/loadout_shoes.dm"
-	#include "loadout/loadout_suit.dm"
-	#include "loadout/loadout_uniform.dm"
-	#include "loadout/loadout_xeno.dm"
+	#include "../exodus/loadout/loadout_accessories.dm"
+	#include "../exodus/loadout/loadout_eyes.dm"
+	#include "../exodus/loadout/loadout_head.dm"
+	#include "../exodus/loadout/loadout_shoes.dm"
+	#include "../exodus/loadout/loadout_suit.dm"
+	#include "../exodus/loadout/loadout_uniform.dm"
+	#include "../exodus/loadout/loadout_xeno.dm"
 
 	#include "../shared/exodus_torch/_include.dm"
 
