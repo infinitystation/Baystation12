@@ -1616,42 +1616,34 @@
 		if(!obj_dir || !(obj_dir in list(1,2,4,8,5,6,9,10)))
 			obj_dir = 2
 		var/obj_name = sanitize(href_list["object_name"])
+
+		var/atom/target //Where the object will be spawned
 		var/where = href_list["object_where"]
 		if (!( where in list("onfloor","inhand","inmarked") ))
 			where = "onfloor"
 
-		if( where == "inhand" )
-			to_chat(usr, "Support for inhand not available yet. Will spawn on floor.")
-			where = "onfloor"
+		switch(where)
+			if("inhand")
+				if (!iscarbon(usr) && !isrobot(usr))
+					usr << "Can only spawn in hand when you're a carbon mob or cyborg."
+					where = "onfloor"
+				target = usr
 
-		if ( where == "inhand" )	//Can only give when human or monkey
-			if ( !( ishuman(usr) || issmall(usr) ) )
-				to_chat(usr, "Can only spawn in hand when you're a human or a monkey.")
-				where = "onfloor"
-			else if ( usr.get_active_hand() )
-				to_chat(usr, "Your active hand is full. Spawning on floor.")
-				where = "onfloor"
-
-		if ( where == "inmarked" )
-			var/marked_datum = marked_datum()
-			if ( !marked_datum )
-				to_chat(usr, "You don't have any object marked. Abandoning spawn.")
-				return
-			else
-				if ( !istype(marked_datum,/atom) )
-					to_chat(usr, "The object you have marked cannot be used as a target. Target must be of type /atom. Abandoning spawn.")
-					return
-
-		var/atom/target //Where the object will be spawned
-		switch ( where )
-			if ( "onfloor" )
-				switch (href_list["offset_type"])
+			if("onfloor")
+				switch(href_list["offset_type"])
 					if ("absolute")
 						target = locate(0 + X,0 + Y,0 + Z)
 					if ("relative")
 						target = locate(loc.x + X,loc.y + Y,loc.z + Z)
-			if ( "inmarked" )
-				target = marked_datum()
+			if("inmarked")
+				if(!marked_datum())
+					usr << "You don't have any object marked. Abandoning spawn."
+					return
+				else if(!istype(marked_datum(),/atom))
+					usr << "The object you have marked cannot be used as a target. Target must be of type /atom. Abandoning spawn."
+					return
+				else
+					target = marked_datum()
 
 		if(target)
 			for (var/path in paths)
@@ -1659,9 +1651,8 @@
 					if(path in typesof(/turf))
 						var/turf/O = target
 						var/turf/N = O.ChangeTurf(path)
-						if(N)
-							if(obj_name)
-								N.name = obj_name
+						if(N && obj_name)
+							N.name = obj_name
 					else
 						var/atom/O = new path(target)
 						if(O)
@@ -1671,6 +1662,17 @@
 								if(istype(O,/mob))
 									var/mob/M = O
 									M.real_name = obj_name
+							if(where == "inhand" && isliving(usr) && istype(O, /obj/item))
+								var/mob/living/L = usr
+								var/obj/item/I = O
+								L.put_in_hands(I)
+								if(isrobot(L))
+									var/mob/living/silicon/robot/R = L
+									if(R.module)
+										R.module.modules += I
+										I.loc = R.module
+										R.module.rebuild()
+										R.activate_module(I)
 
 		log_and_message_admins("created [number] [english_list(paths)]")
 		return
