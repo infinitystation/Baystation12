@@ -377,6 +377,7 @@
 /area/prison/banprison
 	name = "Ban Prison"
 	icon_state = "brig"
+	requires_power = 0
 
 /area/security/armoury
 	name = "\improper Security - Armory"
