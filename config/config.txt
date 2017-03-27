@@ -129,6 +129,9 @@ TRAITOR_SCALING
 ## If security is prohibited from being most antagonists
 PROTECT_ROLES_FROM_ANTAGONIST
 
+## If cortical stacks are to be used instead of standard cloning.
+USE_CORTICAL_STACKS
+
 ## Comment this out to stop admins being able to choose their personal ooccolor
 ALLOW_ADMIN_OOCCOLOR
 
@@ -296,9 +299,6 @@ REQ_CULT_GHOSTWRITER 6
 ## Sets the number of available character slots
 CHARACTER_SLOTS 10
 
-## Uncomment to use overmap system for zlevel travel
-USE_OVERMAP
-
 ## Expected round length in minutes
 EXPECTED_ROUND_LENGTH 180
 
@@ -339,6 +339,9 @@ NINJAS_ALLOWED
 ## Uncomment to disable the OOC channel by default.
 #DISABLE_OOC
 
+## Uncomment to disable the AOOC channel by default.
+#DISABLE_AOOC
+
 ## Uncomment to disable the dead OOC channel by default.
 #DISABLE_DEAD_OOC
 
@@ -375,10 +378,6 @@ GENERATE_ASTEROID
 
 ## Default language prefix keys, separated with spaces. Only single character keys are supported. If unset, defaults to , # and - 
 # DEFAULT_LANGUAGE_PREFIXES , # -
-
-## A ; separated list of lobby screens to randomly pick from. The listed screens must exist as icon states in '/icons/misc/title.dmi'.
-## Defaults to 'title' if left unset.
-LOBBY_SCREENS title
 
 ## Uncomment this line to announce shuttle dock announcements to the main IRC channel, if MAIN_IRC has also been setup.
 # ANNOUNCE_SHUTTLE_DOCK_TO_IRC
