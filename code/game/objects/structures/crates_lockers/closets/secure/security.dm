@@ -231,7 +231,6 @@
 
 	New()
 		..()
-		new /obj/item/clothing/accessory/armband/science(src)
 		new /obj/item/device/encryptionkey/headset_sci(src)
 		return
 
