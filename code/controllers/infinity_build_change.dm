@@ -123,7 +123,7 @@ var/datum/server_build/currentbuild
 		return
 
 	to_chat(world, "<span class='adminooc'><FONT size=5>ВНИМАНИЕ! БИЛД МЕНЯЕТСЯ НА [B.friendlyname]! СЕРВЕР НЕ БУДЕТ РАБОТАТЬ НЕСКОЛЬКО МИНУТ!</FONT><br>Смена билда в конце раунда инициировано администратором [ticker.buildchanger_ckey]</span>.")
-	playsound_global('sound/effects/alarm.ogg', repeat=0, channel=1, volume=100)
+	sound_to(world, sound('sound/effects/alarm.ogg', repeat = 0, wait = 0, volume = 100, channel = 1))
 	sleep(100)
 
 	log_game("Changing build to [B.name]([B.friendlyname])")

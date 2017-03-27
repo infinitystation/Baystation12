@@ -38,13 +38,9 @@
 
 /proc/force_update_server()
 	if(currentbuild.folder == currentbuild.update)
-		world << "Ошибка обновлени&#255;. Переключитесь из тестового билда на основной."
+		to_chat(world, "Ошибка обновлени&#255;. Переключитесь из тестового билда на основной.")
 		return
-	world << "<span class='adminooc'><FONT size=5>ВНИМАНИЕ! СЕРВЕР ОБНОВЛЯЕТСЯ ЧЕРЕЗ 10 СЕКУНД! СЕРВЕР НЕ БУДЕТ РАБОТАТЬ НЕСКОЛЬКО МИНУТ!</FONT><br>Обновление в конце раунда инициировано администратором [ticker.updater_ckey]</span>."
-	playsound_global('sound/effects/alarm.ogg', repeat=0, channel=1, volume=100)
+	to_chat(world, "<span class='adminooc'><FONT size=5>ВНИМАНИЕ! СЕРВЕР ОБНОВЛЯЕТСЯ ЧЕРЕЗ 10 СЕКУНД! СЕРВЕР НЕ БУДЕТ РАБОТАТЬ НЕСКОЛЬКО МИНУТ!</FONT><br>Обновление в конце раунда инициировано администратором [ticker.updater_ckey]</span>.")
+	sound_to(world, sound('sound/effects/alarm.ogg', repeat = 0, wait = 0, volume = 100, channel = 1))
 	sleep(100)
 	shell("sh ../update.sh [currentbuild.dmb_file] [currentbuild.folder] [world.port] [currentbuild.update]")
-
-/proc/playsound_global(file, repeat=0, wait, channel, volume)
-	for(var/V in clients)
-		to_chat(V, sound(file, repeat, wait, channel, volume))
