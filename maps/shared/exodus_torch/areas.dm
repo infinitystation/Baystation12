@@ -373,11 +373,10 @@
 /area/prison/solitary
 	name = "Solitary Confinement"
 	icon_state = "brig"
-
-/area/prison/banprison
-	name = "Ban Prison"
-	icon_state = "brig"
 	requires_power = 0
+
+/area/prison/solitary/banprison
+	name = "Ban Prison"
 
 /area/security/armoury
 	name = "\improper Security - Armory"

@@ -24,7 +24,7 @@
 			var/ckeytext = ckey(key)
 
 			if(!establish_db_connection())
-				world.log << "Ban database connection failure. Player [ckeytext] not checked (ban prison)"
+				to_world_log("Ban database connection failure. Player [ckeytext] not checked (ban prison)")
 				diary << "Ban database connection failure. Player [ckeytext] not checked (ban prison)"
 				return
 
@@ -66,15 +66,13 @@
 		output += "<p>ЗЭК В ЗАКОНЕ</p>"
 		output += "<p><a href='byond://?src=\ref[src];spawn_prisoner=1'>Join as Prisoner</A></p>"
 
-	output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
-
 	src << browse(output,"window=playersetup;size=210x280;can_close=0")
 	return
 
 /mob/new_player/proc/Spawn_Prisoner()
 	var/mob/living/carbon/human/character = create_character()	//creates the human and transfers vars and mind
 
-	character.loc = pick(ban_prison)
+	character.loc = pick(prisonwarp)
 
 	setup_and_greet_prisoner(character)
 	qdel(src)
@@ -85,5 +83,5 @@
 	text = {"Здравствуйте, вы являетесь заключенным в тюрьме строгого режима.
 Вы попали сюда по причине, которая была описана выше при входе в игру.
 	"}
-	character << sanitize_a0(text)
+	to_chat(character, sanitize_a0(text))
 	message_admins("<span class='notice'>[key_name_admin(character)](<A HREF='?_src_=holder;adminmoreinfo=\ref[character]'>?</A>)(<A HREF='?_src_=holder;adminplayerobservefollow=\ref[character]'>FLW</A>) в игре как заключенный.</span>")
