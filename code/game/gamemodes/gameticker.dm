@@ -344,14 +344,12 @@ var/global/datum/controller/gameticker/ticker
 
 		if(!mode.explosion_in_progress && game_finished && (mode_finished || post_game))
 			current_state = GAME_STATE_FINISHED
+			declare_completion()
 
 			if(update_waiting)
 				force_update_server()
 			if(buildchangechecked)
 				forcechangebuild(nextbuild)
-			spawn
-				declare_completion()
-
 
 			spawn(50)
 				if(config.allow_map_switching && config.auto_map_vote && all_maps.len > 1)
