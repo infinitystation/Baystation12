@@ -1120,28 +1120,28 @@ CIRCUITS BELOW
 	build_path = /obj/item/weapon/circuitboard/scan_consolenew
 	sort_string = "FAGAA"
 
-/*
+//Make cloning usable again! ~Quardbreak
 /datum/design/circuit/clonecontrol
 	name = "cloning control console"
 	id = "clonecontrol"
-	req_tech = list(TECH_DATA = 3, TECH_BIO = 3)
+	req_tech = list(TECH_DATA = 4, TECH_BIO = 5)
 	build_path = /obj/item/weapon/circuitboard/cloning
 	sort_string = "FAGAC"
 
 /datum/design/circuit/clonepod
 	name = "clone pod"
 	id = "clonepod"
-	req_tech = list(TECH_DATA = 3, TECH_BIO = 3)
+	req_tech = list(TECH_DATA = 4, TECH_BIO = 5)
 	build_path = /obj/item/weapon/circuitboard/clonepod
 	sort_string = "FAGAE"
 
 /datum/design/circuit/clonescanner
 	name = "cloning scanner"
 	id = "clonescanner"
-	req_tech = list(TECH_DATA = 3, TECH_BIO = 3)
+	req_tech = list(TECH_DATA = 4, TECH_BIO = 5)
 	build_path = /obj/item/weapon/circuitboard/clonescanner
 	sort_string = "FAGAG"
-*/
+//Make cloning usable again! ~Quardbreak
 
 /datum/design/circuit/resleever
 	name = "neural lace resleever"
