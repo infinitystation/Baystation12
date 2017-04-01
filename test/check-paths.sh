@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-ANGLE_BRACKET_COUNT=756
+ANGLE_BRACKET_COUNT=761
 
 shopt -s globstar
 num=`grep -E '\\\\(red|blue|green|black|b|i[^mc])' **/*.dm | wc -l`; echo "$num escapes (expecting 0)"; [ $num -eq 0 ] || exit 1
