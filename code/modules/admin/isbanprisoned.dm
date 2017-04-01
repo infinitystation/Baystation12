@@ -28,19 +28,17 @@
 				diary << "Ban database connection failure. Player [ckeytext] not checked (ban prison)"
 				return
 
-			var/DBQuery/query = dbcon.NewQuery("SELECT ckey, ip, computerid, a_ckey, reason, expiration_time, duration, bantime FROM erro_ban WHERE (ckey = '[ckeytext]' [ipquery] [cidquery]) AND (bantype = 'SOFT_PERMABAN'  OR (bantype = 'SOFT_TEMPBAN' AND expiration_time > Now())) AND isnull(unbanned)")
+			var/DBQuery/query = dbcon.NewQuery("SELECT ckey, a_ckey, reason, expiration_time, duration, bantime, bantype FROM [format_table_name("ban")] WHERE (ckey = '[ckeytext]' [ipquery] [cidquery]) AND (bantype = 'PERMABAN' OR bantype = 'ADMIN_PERMABAN' OR ((bantype = 'TEMPBAN' OR bantype = 'ADMIN_TEMPBAN') AND expiration_time > Now())) AND isnull(unbanned)")
 
 			query.Execute()
 
 			while(query.NextRow())
 				var/pckey = query.item[1]
-				//var/pip = query.item[2]
-				//var/pcid = query.item[3]
-				var/ackey = query.item[4]
-				var/reason = query.item[5]
-				var/expiration = query.item[6]
-				var/duration = query.item[7]
-				var/bantime = query.item[8]
+				var/ackey = query.item[2]
+				var/reason = query.item[3]
+				var/expiration = query.item[4]
+				var/duration = query.item[5]
+				var/bantime = query.item[6]
 				var/expires
 
 				if(text2num(duration) > 0)
