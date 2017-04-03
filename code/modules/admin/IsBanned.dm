@@ -52,20 +52,18 @@ world/IsBanned(key,address,computer_id)
 			failedcid = 0
 			cidquery = " OR computerid = '[computer_id]' "
 
-		var/DBQuery/query = dbcon.NewQuery("SELECT ckey, ip, computerid, a_ckey, reason, expiration_time, duration, bantime, bantype FROM erro_ban WHERE (ckey = '[ckeytext]' [ipquery] [cidquery]) AND (bantype = 'PERMABAN'  OR (bantype = 'TEMPBAN' AND expiration_time > Now())) AND isnull(unbanned)")
+		var/DBQuery/query = dbcon.NewQuery("SELECT ckey, a_ckey, reason, expiration_time, duration, bantime, bantype FROM erro_ban WHERE (ckey = '[ckeytext]' [ipquery] [cidquery]) AND (bantype = 'PERMABAN'  OR (bantype = 'TEMPBAN' AND expiration_time > Now())) AND isnull(unbanned)")
 
 		query.Execute()
 
 		while(query.NextRow())
 			var/pckey = query.item[1]
-			//var/pip = query.item[2]
-			//var/pcid = query.item[3]
-			var/ackey = query.item[4]
-			var/reason = query.item[5]
-			var/expiration = query.item[6]
-			var/duration = query.item[7]
-			var/bantime = query.item[8]
-			var/bantype = query.item[9]
+			var/ackey = query.item[2]
+			var/reason = query.item[3]
+			var/expiration = query.item[4]
+			var/duration = query.item[5]
+			var/bantime = query.item[6]
+			var/bantype = query.item[7]
 
 			var/expires = ""
 			if(text2num(duration) > 0)
