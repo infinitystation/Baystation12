@@ -16,6 +16,15 @@
 	var/obj/master = null    //A reference to the object in the slot. Grabs or items, generally.
 	var/globalscreen = FALSE //Global screens are not qdeled when the holding mob is destroyed.
 
+/obj/screen/ai_button
+	var/mob/living/silicon/ai/ai_verb // Assign /mob/living/silicon/ai/verb/etc. to this var
+
+/obj/screen/ai_button/Click()
+	var/mob/living/silicon/ai/R = usr
+	if(!istype(R, /mob/living/silicon/ai)) return 1
+	if (!(ai_verb in R.verbs)) return 1
+	call(R, ai_verb)()
+
 /obj/screen/Destroy()
 	master = null
 	return ..()
@@ -381,11 +390,6 @@
 		if("module3")
 			if(istype(usr, /mob/living/silicon/robot))
 				usr:toggle_module(3)
-		if("camera_track")
-			if(istype(usr, /mob/living/silicon/ai))
-				var/mob/living/silicon/ai/R = usr
-				R:ai_camera_track()
-
 		else
 			return 0
 	return 1

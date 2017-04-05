@@ -17,16 +17,18 @@
 /datum/hud/proc/ai_hud(ui_style = 'icons/mob/screen_ai.dmi') //~KareTa
 
 	src.adding = list()
+	var/obj/screen/ai_button/using
 
-	var/obj/screen/using
 	//Camera Track
-	using = new /obj/screen()
-	using.name = "camera_track"
+	using = new /obj/screen/ai_button()
+	using.name = "Track With Camera"
 	using.icon = ui_style
 	using.icon_state = "track"
 	using.screen_loc = ui_cam_track
+	using.ai_verb = /mob/living/silicon/ai/proc/ai_camera_track
 	src.adding += using
 
+	//
 
 	mymob.client.screen = list()
 	mymob.client.screen += src.adding
