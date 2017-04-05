@@ -14,8 +14,22 @@
 /mob/living/silicon/ai/instantiate_hud(var/datum/hud/HUD)
 	HUD.ai_hud()
 
-/datum/hud/proc/ai_hud()
-	return
+/datum/hud/proc/ai_hud(ui_style = 'icons/mob/screen_ai.dmi') //~KareTa
+
+	src.adding = list()
+
+	var/obj/screen/using
+	//Camera Track
+	using = new /obj/screen()
+	using.name = "camera_track"
+	using.icon = ui_style
+	using.icon_state = "track"
+	using.screen_loc = ui_cam_track
+	src.adding += using
+
+
+	mymob.client.screen = list()
+	mymob.client.screen += src.adding
 
 /mob/living/carbon/slime/instantiate_hud(var/datum/hud/HUD)
 	HUD.slime_hud()

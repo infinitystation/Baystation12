@@ -381,6 +381,11 @@
 		if("module3")
 			if(istype(usr, /mob/living/silicon/robot))
 				usr:toggle_module(3)
+		if("camera_track")
+			if(istype(usr, /mob/living/silicon/ai))
+				var/mob/living/silicon/ai/R = usr
+				R:ai_camera_track()
+
 		else
 			return 0
 	return 1
