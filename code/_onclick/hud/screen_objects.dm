@@ -17,17 +17,22 @@
 	var/globalscreen = FALSE //Global screens are not qdeled when the holding mob is destroyed.
 
 /obj/screen/ai_button
-	var/mob/living/silicon/ai/ai_verb = null
+	var/mob/living/silicon/ai/ai_verb
+	var/input_procs = list()
 
 /obj/screen/ai_button/Click()
 	var/mob/living/silicon/ai/R = usr
 	if(!istype(R, /mob/living/silicon/ai)) return 1
 	if (!(ai_verb in R.verbs)) return 1
-	get_verb(ai_verbs_default, src.ai_verb)
 
-/obj/screen/ai_button/proc/get_verb(var/list/L, var/V)
-	for (var/i = 0, i < L.len + 1, ++ i)
-		if(L[i] == V) return L[i]
+	var/input_args = list()
+	for(var/input_proc in input_procs)
+		if(input_procs[input_proc]) // Does the called proc belong to the AI, or not?
+			input_args += call(R, input_proc)()
+		else
+			input_args += call(input_proc)()
+
+	call(R, ai_verb)(arglist(input_args))
 	return 1
 
 /obj/screen/Destroy()

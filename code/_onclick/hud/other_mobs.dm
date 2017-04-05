@@ -26,6 +26,7 @@
 	using.icon_state = "track"
 	using.screen_loc = ui_cam_track
 	using.ai_verb = /mob/living/silicon/ai/proc/ai_camera_track
+	using.input_procs = list(/mob/living/silicon/ai/proc/trackable_mobs = TRUE)
 	src.adding += using
 
 	//
