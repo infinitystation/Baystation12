@@ -5,7 +5,6 @@
 /obj/structure/closet/secure_closet/security_torch
 	name = "master at arms' locker"
 	req_access = list(access_brig)
-	icon = 'icons/blue_brig/obj/closetsec.dmi' //We should replace red closet to blue ~Quardbreak.
 	icon_state = "sec1"
 	icon_closed = "sec"
 	icon_locked = "sec1"
@@ -79,7 +78,6 @@
 /obj/structure/closet/secure_closet/brigofficer
 	name = "brig officer's locker"
 	req_access = list(access_armory)
-	icon = 'icons/blue_brig/obj/closetsec.dmi' //We should replace red closet to blue ~Quardbreak.
 	icon_state = "wardensecure1"
 	icon_closed = "wardensecure"
 	icon_locked = "wardensecure1"
@@ -118,7 +116,6 @@
 /obj/structure/closet/secure_closet/forensics
 	name = "forensics technician's locker"
 	req_access = list(access_forensics_lockers)
-	icon = 'icons/blue_brig/obj/closetsec.dmi' //We should replace red closet to blue ~Quardbreak.
 	icon_state = "sec1"
 	icon_closed = "sec"
 	icon_locked = "sec1"
