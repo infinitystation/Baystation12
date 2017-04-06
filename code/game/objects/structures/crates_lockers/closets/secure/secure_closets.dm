@@ -153,3 +153,14 @@
 	broken = 1
 	locked = 0
 	..()
+
+/obj/structure/closet/secure_closet/AltClick()
+	..()
+	if(!CanUseTopic(usr))
+		to_chat(usr, "<span class='warning'>You can't do that right now!</span>")
+		return
+	if(opened)
+		to_chat(usr, "<span class='warning'>You need close [src] door before you can lock it!</span>")
+		return
+	else
+		togglelock(usr)
