@@ -154,13 +154,16 @@
 	locked = 0
 	..()
 
-/obj/structure/closet/secure_closet/AltClick()
+/obj/structure/closet/secure_closet/AltClick(mob/user as mob)
 	..()
-	if(!CanUseTopic(usr))
-		to_chat(usr, "<span class='warning'>You can't do that right now!</span>")
-		return
-	if(opened)
-		to_chat(usr, "<span class='warning'>You need to close [src] door before you can lock it!</span>")
-		return
-	else
-		togglelock(usr)
+	if(ismob(user))
+		if(istype(user, /mob/living/silicon/ai))
+			return
+		else
+			if(!CanUseTopic(user))
+				to_chat(user, "<span class='warning'>You can't do that right now!</span>")
+				return
+			if(opened)
+				to_chat(user, "<span class='warning'>You need to close [src] door before you can lock it!</span>")
+				return
+			togglelock(user)
