@@ -90,6 +90,10 @@ var/datum/server_build/currentbuild
 	if(!holder)
 		return
 
+	if(ticker.update_waiting)
+		to_chat(usr, "¬ы не можете сменить текущий билд так как активированна команда обновлени€ сервера.")
+		return
+
 	var/list/buildchoices = list()
 	for(var/build in config.buildlist)
 		var/datum/server_build/B = config.buildlist[build]
@@ -102,7 +106,7 @@ var/datum/server_build/currentbuild
 
 	var/chosenbuild = input("Choose a build to change to", "Change Build")  as null|anything in buildchoices
 
-	if (!chosenbuild)
+	if(!chosenbuild)
 		return
 
 	ticker.buildchangechecked = 1
