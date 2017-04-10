@@ -26,10 +26,11 @@
 	using.icon_state = "track"
 	using.screen_loc = ui_cam_track
 	using.ai_verb = /mob/living/silicon/ai/proc/ai_camera_track
-	using.input_procs = list(/mob/living/silicon/ai/proc/trackable_mobs = TRUE)
+	using.input_procs = list(/mob/living/silicon/ai/proc/trackable_mobs = (AI_BUTTON_PROC_BELONGS_TO_CALLER|AI_BUTTON_INPUT_REQUIRES_SELECTION))
 	src.adding += using
 
-	//
+	//Camera List
+
 
 	mymob.client.screen = list()
 	mymob.client.screen += src.adding
