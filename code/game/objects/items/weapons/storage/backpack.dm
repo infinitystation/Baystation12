@@ -99,8 +99,6 @@
 /obj/item/weapon/storage/backpack/security
 	name = "security backpack"
 	desc = "It's a very robust backpack."
-	icon_override = 'icons/blue_brig/mob/back.dmi'
-	icon = 'icons/blue_brig/obj/storage.dmi'
 	icon_state = "securitypack"
 	item_state_slots = null
 
@@ -189,8 +187,6 @@
 /obj/item/weapon/storage/backpack/dufflebag/sec
 	name = "security dufflebag"
 	desc = "A large dufflebag for holding extra security supplies and ammunition."
-	icon_override = 'icons/blue_brig/mob/back.dmi'
-	icon = 'icons/blue_brig/obj/storage.dmi'
 	icon_state = "duffle_sec"
 
 /obj/item/weapon/storage/backpack/dufflebag/eng
@@ -258,8 +254,6 @@
 /obj/item/weapon/storage/backpack/satchel_sec
 	name = "security satchel"
 	desc = "A robust satchel for security related needs."
-	icon_override = 'icons/blue_brig/mob/back.dmi'
-	icon = 'icons/blue_brig/obj/storage.dmi'
 	icon_state = "satchel-sec"
 	item_state_slots = list(
 		slot_l_hand_str = "securitypack",
