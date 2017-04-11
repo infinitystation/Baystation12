@@ -1973,6 +1973,7 @@
 				show_player_panel(M)
 			if("No")
 				return
+
 	if(href_list["removestaffwarn"])
 		var/mob/M = locate(href_list["removestaffwarn"])
 		if(!ismob(M)) return
@@ -1988,6 +1989,9 @@
 				show_player_panel(M)
 			if("No")
 				return
+
+	if(href_list["stickyban"])
+		stickyban(href_list["stickyban"],href_list)
 
 
 mob/living/proc/can_centcom_reply()
