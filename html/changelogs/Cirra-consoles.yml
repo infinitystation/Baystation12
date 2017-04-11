@@ -22,7 +22,7 @@
 #################################
 
 # Your name.  
-author: Chaoko99
+author: Cirra
 
 # Optional: Remove this file after generating master changelog.  Useful for PR changelogs that won't get used again.
 delete-after: True
@@ -33,4 +33,5 @@ delete-after: True
 # Also, all entries are changed into a single [] after a master changelog generation. Just remove the brackets when you add new entries.
 # Please surround your changes in  double quotes ("), as certain characters otherwise screws up compiling. The quotes will not show up in the changelog.
 changes: 
-  - spellcheck: "Added punctuation to wizard spells, and adjusted some of the shouts to something a human being could actually say consistantly."
+  - tweak: "Overmap-related consoles can now properly be repaired."
+  - tweak: "Overmap event groups are now slightly more common, and slightly larger in size."

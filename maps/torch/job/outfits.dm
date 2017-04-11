@@ -162,7 +162,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/torch/passenger/research/cl
 	name = OUTFIT_JOB_NAME("NanoTrasen Liaison")
 	l_ear = /obj/item/device/radio/headset/heads/torchntcommand
-	uniform = /obj/item/clothing/under/rank/internalaffairs/plain/nt
+	uniform = /obj/item/clothing/under/suit_jacket/nt
 	suit = /obj/item/clothing/suit/storage/toggle/internalaffairs/plain
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/torch/passenger/research/liaison
@@ -593,9 +593,9 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/utility/expeditionary/pilot
 	shoes = /obj/item/clothing/shoes/dutyboots
 	head = /obj/item/clothing/head/soft/sol/expedition
-	id_type = /obj/item/weapon/card/id/torch/crew/service/solgov_pilot
+	id_type = /obj/item/weapon/card/id/torch/crew/solgov_pilot
 	pda_type = /obj/item/device/pda
-	l_ear = /obj/item/device/radio/headset/headset_com
+	l_ear = /obj/item/device/radio/headset/pilot
 
 /decl/hierarchy/outfit/job/torch/crew/service/solgov_pilot/fleet
 	name = OUTFIT_JOB_NAME("Pilot - Fleet")

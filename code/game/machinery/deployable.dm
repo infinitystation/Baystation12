@@ -64,6 +64,7 @@ for reference:
 	var/health = 100
 	var/maxhealth = 100
 	var/material/material
+	flags = OBJ_CLIMBABLE
 
 /obj/structure/barricade/New(var/newloc, var/material_name)
 	..(newloc)
@@ -149,7 +150,7 @@ for reference:
 /obj/machinery/deployable/barrier
 	name = "deployable barrier"
 	desc = "A deployable barrier. Swipe your ID card to lock/unlock it."
-	icon = 'icons/blue_brig/obj/secbarrier.dmi'
+	icon = 'icons/obj/objects.dmi'
 	anchored = 0.0
 	density = 1
 	icon_state = "barrier0"
