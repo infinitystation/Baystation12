@@ -39,3 +39,9 @@
 # kit_icon: salvage
 # }
 ##
+
+{
+ckey: parasoul
+character_name: Krieg Jaeger
+item_path: /obj/item/clothing/accessory/necklace/talisman
+}
