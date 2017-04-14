@@ -169,7 +169,7 @@ datum/admins/proc/DB_ban_unban(var/ckey, var/bantype, var/job = "")
 	else
 		bantype_sql = "bantype = '[bantype_str]'"
 
-	var/sql = "SELECT id FROM [format_table_name("ban")] WHERE ckey = '[ckey]' AND [bantype_sql] AND (unbanned is null OR unbanned = false)"
+	var/sql = "SELECT id FROM erro_ban WHERE ckey = '[ckey]' AND [bantype_sql] AND (unbanned is null OR unbanned = false)"
 	if(job)
 		sql += " AND job = '[job]'"
 
