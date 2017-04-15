@@ -13,11 +13,7 @@
 
 /client/verb/self_notes()
 	set name = "View Admin Remarks"
-	set category = "TEST"
+	set category = null
 	set desc = "View the notes that admins have written about you"
-
-	if(!holder)
-		to_chat(usr, "no test for you")
-		return
 
 	show_note(null, usr.ckey, null, 1)
