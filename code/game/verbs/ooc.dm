@@ -16,5 +16,8 @@
 	set category = "TEST"
 	set desc = "View the notes that admins have written about you"
 
-	if(!holder)	return
+	if(!holder)
+		to_chat(usr, "no test for you")
+		return
+
 	show_note(null, usr.ckey, null, 1)
