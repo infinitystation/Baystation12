@@ -10,10 +10,3 @@
 	set category = "OOC"
 
 	sanitize_and_communicate(/decl/communication_channel/ooc/looc, src, message)
-
-/client/verb/self_notes()
-	set name = "View Admin Remarks"
-	set category = null
-	set desc = "View the notes that admins have written about you"
-
-	show_note(null, usr.ckey, null, 1)
