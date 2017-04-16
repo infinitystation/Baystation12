@@ -19,7 +19,7 @@
 	set name = "Хихикать"
 	set category = "Emotions"
 	if(emoteCooldownCheck() == 1)
-		emote("giggles")
+		emote("giggle")
 
 /mob/living/verb/scream()
 	set name = "Душераздирающе кричать"
@@ -188,3 +188,9 @@
 	set category = "Emotions"
 	if(emoteCooldownCheck() == 1)
 		emote("yawn")
+
+/mob/living/verb/salute()
+	set name = ".Сделать воинское приветствие"
+	set category = "Emotions"
+	if(emoteCooldownCheck() == 1)
+		emote("salute")

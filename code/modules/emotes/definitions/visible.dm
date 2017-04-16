@@ -1,6 +1,6 @@
 /decl/emote/visible
 	key ="tail"
-	emote_message_3p = "USER waves USER_THEIR tail."
+	emote_message_3p = "USER машет USER_THEIR хвостом."
 	message_type = VISIBLE_MESSAGE
 
 /decl/emote/visible/scratch
@@ -37,24 +37,24 @@
 
 /decl/emote/visible/shake
 	key ="shake"
-	emote_message_3p = "USER shakes USER_THEIR head."
+	emote_message_3p = "USER тр€сет USER_THEIR головой."
 
 /decl/emote/visible/jump
 	key ="jump"
-	emote_message_3p = "USER jumps!"
+	emote_message_3p = "USER прыгает!"
 
 /decl/emote/visible/hiss
 	key ="hiss_"
-	emote_message_3p = "USER hisses softly."
+	emote_message_3p = "USER м€гко шипит."
 
 /decl/emote/visible/shiver
 	key ="shiver"
-	emote_message_3p = "USER shivers."
+	emote_message_3p = "USER дрожит."
 	conscious = 0
 
 /decl/emote/visible/collapse
 	key ="collapse"
-	emote_message_3p = "USER collapses!"
+	emote_message_3p = "USER падает!"
 
 /decl/emote/visible/collapse/do_extra(var/mob/user)
 	if(istype(user))
@@ -79,8 +79,8 @@
 
 /decl/emote/visible/bow
 	key = "bow"
-	emote_message_3p_target = "USER bows to TARGET."
-	emote_message_3p = "USER bows."
+	emote_message_3p_target = "USER покланилс€ TARGET."
+	emote_message_3p = "USER покланилс€."
 
 /decl/emote/visible/salute
 	key = "salute"
@@ -90,16 +90,16 @@
 /decl/emote/visible/flap
 	key = "flap"
 	check_restraints = TRUE
-	emote_message_3p = "USER flaps USER_THEIR wings."
+	emote_message_3p = "USER машет USER_THEIR крыль€ми."
 
 /decl/emote/visible/aflap
 	key = "aflap"
 	check_restraints = TRUE
-	emote_message_3p = "USER flaps USER_THEIR wings ANGRILY!"
+	emote_message_3p = "USER агрессивно машет USER_THEIR крыль€ми ANGRILY!"
 
 /decl/emote/visible/eyebrow
 	key = "eyebrow"
-	emote_message_3p = "USER raises an eyebrow."
+	emote_message_3p = "USER приподнимает брови."
 
 /decl/emote/visible/twitch
 	key = "twitch"
@@ -113,7 +113,7 @@
 
 /decl/emote/visible/faint
 	key = "faint"
-	emote_message_3p = "USER faints."
+	emote_message_3p = "USER падает в обморок."
 
 /decl/emote/visible/faint/do_extra(var/mob/user)
 	if(istype(user) && user.sleeping <= 0)
@@ -121,7 +121,7 @@
 
 /decl/emote/visible/frown
 	key = "frown"
-	emote_message_3p = "USER frowns."
+	emote_message_3p = "USER хмуритс€."
 
 /decl/emote/visible/blush
 	key = "blush"
@@ -160,7 +160,7 @@
 
 /decl/emote/visible/grin
 	key = "grin"
-	emote_message_3p = "USER grins."
+	emote_message_3p = "USER усмехнулс€."
 
 /decl/emote/visible/shrug
 	key = "shrug"
