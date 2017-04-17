@@ -45,3 +45,11 @@ ckey: parasoul
 character_name: Krieg Jaeger
 item_path: /obj/item/clothing/accessory/necklace/talisman
 }
+{
+ckey: kosteg
+character_name: Journey
+item_path: /obj/item/clothing/head/beret
+item_name: honorary SCG beret
+item_desc: A beret which is awarded to someone, who did their best to serve SolGov. This one has golden badge with name "Journey" written on it.
+item_icon: beret_journey
+}
