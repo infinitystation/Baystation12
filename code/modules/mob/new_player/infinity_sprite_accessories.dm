@@ -40,7 +40,7 @@
 	gender = MALE
 
 /datum/sprite_accessory/hair/infinity/undercut
-	name = "Undercut"
+	name = "Undercut Female"
 	icon_state = "undercut"
 	gender = FEMALE
 
