@@ -1,7 +1,9 @@
 //Infinity Station hair sprites, some made by Nymary and Surman, some taked from Tau-Ceti
 
 /datum/sprite_accessory/hair/infinity
+	name = "Angel hair"
 	icon = 'icons/mob/infinity_mob_clothing/hairs.dmi'
+	icon_state = "angel"
 
 /datum/sprite_accessory/hair/infinity/shortcover
 	name = "Shortcover"
@@ -57,7 +59,3 @@
 /datum/sprite_accessory/hair/infinity/long_hair_3
 	name = "Long hair 3"
 	icon_state = "waterfall"
-
-/datum/sprite_accessory/hair/infinity/angel_hair
-	name = "Angel hair"
-	icon_state = "angel"
