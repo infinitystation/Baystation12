@@ -1177,6 +1177,7 @@
 #include "code\modules\clothing\head\misc_special.dm"
 #include "code\modules\clothing\head\soft_caps.dm"
 #include "code\modules\clothing\head\solgov.dm"
+#include "code\modules\clothing\infinity_clothing\accessory.dm"
 #include "code\modules\clothing\infinity_clothing\ears.dm"
 #include "code\modules\clothing\infinity_clothing\glasses.dm"
 #include "code\modules\clothing\infinity_clothing\gloves.dm"
