@@ -36,10 +36,16 @@
 	using.icon_state = "announcement"
 	using.screen_loc = ui_announce
 	using.ai_verb = /mob/living/silicon/ai/proc/ai_announcement
-	// using.input_procs = list(/mob/living/silicon/ai/proc/get_camera_list = (AI_BUTTON_PROC_BELONGS_TO_CALLER|AI_BUTTON_INPUT_REQUIRES_SELECTION))
 	src.adding += using
 
-	//
+	//State Laws
+	using = new /obj/screen/ai_button()
+	using.name = "State Laws"
+	using.icon = ui_style
+	using.icon_state = "state_laws"
+	using.screen_loc = ui_state_laws
+	using.ai_verb = /mob/living/silicon/ai/proc/ai_checklaws
+	src.adding += using
 
 	mymob.client.screen = list()
 	mymob.client.screen += src.adding
