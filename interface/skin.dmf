@@ -2194,7 +2194,7 @@ window "rpane"
 		font-size = 0
 		font-style = ""
 		text-color = #000000
-		background-color = none
+		background-color = #c60505
 		is-visible = true
 		is-disabled = false
 		is-transparent = false
