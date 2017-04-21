@@ -79,13 +79,13 @@
 
 /decl/emote/visible/bow
 	key = "bow"
-	emote_message_3p_target = "USER покланился TARGET."
-	emote_message_3p = "USER покланился."
+	emote_message_3p_target = "USER поклонился TARGET."
+	emote_message_3p = "USER поклонился."
 
 /decl/emote/visible/salute
 	key = "salute"
-	emote_message_3p_target = "USER сделал воинское приветствие TARGET."
-	emote_message_3p = "USER сделал воинское приветствие."
+	emote_message_3p_target = "USER делает воинское приветствие TARGET."
+	emote_message_3p = "USER делает воинское приветствие."
 
 /decl/emote/visible/flap
 	key = "flap"
@@ -160,7 +160,7 @@
 
 /decl/emote/visible/grin
 	key = "grin"
-	emote_message_3p = "USER усмехнулся."
+	emote_message_3p = "USER усмехается."
 
 /decl/emote/visible/shrug
 	key = "shrug"
