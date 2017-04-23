@@ -18,7 +18,7 @@
 
 /decl/emote/audible/gasp
 	key ="gasp"
-	emote_message_3p = "USER задыхаетс€."
+	emote_message_3p = "USER задыхается."
 	conscious = 0
 
 /decl/emote/audible/scretch
@@ -66,7 +66,7 @@
 
 /decl/emote/audible/sneeze
 	key = "sneeze"
-	emote_message_3p = "USER чихает."
+	emote_message_3p = "USER чихает!"
 
 /decl/emote/audible/sniff
 	key = "sniff"
@@ -95,7 +95,7 @@
 
 /decl/emote/audible/cough
 	key = "cough"
-	emote_message_3p = "USER кашл€ет!"
+	emote_message_3p = "USER кашляет!"
 	conscious = 0
 
 /decl/emote/audible/cry
@@ -108,11 +108,11 @@
 
 /decl/emote/audible/laugh
 	key = "laugh"
-	emote_message_3p = "USER смеетс€."
+	emote_message_3p = "USER смеется."
 
 /decl/emote/audible/mumble
 	key = "mumble"
-	emote_message_3p = "USER бормочет!"
+	emote_message_3p = "USER бормочет."
 
 /decl/emote/audible/grumble
 	key = "grumble"
@@ -120,7 +120,7 @@
 
 /decl/emote/audible/groan
 	key = "groan"
-	emote_message_3p = "USER т€жело вздыхает!"
+	emote_message_3p = "USER тяжело вздыхает."
 	conscious = 0
 
 /decl/emote/audible/moan
