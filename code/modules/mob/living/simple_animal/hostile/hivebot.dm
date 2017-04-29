@@ -1,18 +1,19 @@
 /obj/item/projectile/hivebotbullet
-	damage = 10
+	damage = 15
 	damage_type = BRUTE
 
 /mob/living/simple_animal/hostile/hivebot
-	name = "Hivebot"
-	desc = "A small robot"
+	name = "hivebot"
+	desc = "A small robot."
 	icon = 'icons/mob/hivebot.dmi'
-	icon_state = "basic"
-	icon_living = "basic"
-	icon_dead = "basic"
-	health = 15
-	maxHealth = 15
-	melee_damage_lower = 2
-	melee_damage_upper = 3
+	icon_state = "bot"
+	icon_living = "bot"
+	icon_dead = "bot"
+	gender = NEUTER
+	health = 25
+	maxHealth = 25
+	melee_damage_lower = 5
+	melee_damage_upper = 7
 	attacktext = "clawed"
 	projectilesound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
 	projectiletype = /obj/item/projectile/hivebotbullet
@@ -31,17 +32,34 @@
 /mob/living/simple_animal/hostile/hivebot/range
 	name = "Hivebot"
 	desc = "A smallish robot, this one is armed!"
+	icon_state = "smallbot"
+	icon_living = "smallbot"
+	icon_dead = "smallbot"
+	melee_damage_lower = 3
+	melee_damage_upper = 5
 	ranged = 1
 
 /mob/living/simple_animal/hostile/hivebot/rapid
+	icon_state = "smallbot"
+	icon_living = "smallbot"
+	icon_dead = "smallbot"
+	melee_damage_lower = 3
+	melee_damage_upper = 5
 	ranged = 1
 	rapid = 1
 
 /mob/living/simple_animal/hostile/hivebot/strong
 	name = "Strong Hivebot"
 	desc = "A robot, this one is armed and looks tough!"
-	health = 80
+	icon_state = "bigbot"
+	icon_living = "bigbot"
+	icon_dead = "bigbot"
+	health = 150
+	maxHealth = 150
+	melee_damage_lower = 20
+	melee_damage_upper = 25
 	ranged = 1
+	rapid = 1
 
 
 /mob/living/simple_animal/hostile/hivebot/death()
