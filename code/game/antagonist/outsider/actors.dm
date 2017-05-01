@@ -46,6 +46,9 @@ var/datum/antagonist/actor/actor
 	if(!MayRespawn(1))
 		return
 
+		to_chat(usr, "Seems you have job-banned from actors. Well, bad news.")
+		return
+
 	var/choice = alert("Are you sure you'd like to join as an actor?", "Confirmation","Yes", "No")
 	if(choice != "Yes")
 		return
