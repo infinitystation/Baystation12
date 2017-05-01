@@ -46,6 +46,7 @@ var/datum/antagonist/actor/actor
 	if(!MayRespawn(1))
 		return
 
+	if(jobban_isbanned(usr, MODE_ACTOR))
 		to_chat(usr, "Seems you have job-banned from actors. Well, bad news.")
 		return
 
