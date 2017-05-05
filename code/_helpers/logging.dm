@@ -86,6 +86,10 @@
 	if (config.log_adminwarn)
 		game_log("ADMINWARN", text)
 
+/proc/log_permissions(text)
+	if (config.log_permissions)
+		game_log("PERMISSIONS", text)
+
 /proc/log_pda(text)
 	if (config.log_pda)
 		game_log("PDA", text)

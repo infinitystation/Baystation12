@@ -74,6 +74,9 @@ LOG_HREFS
 ## log admin warning messages
 ##LOG_ADMINWARN  ## Also duplicates a bunch of other messages.
 
+## log ingame changes of permissions from db
+LOG_PERMISSIONS
+
 ## sql switching
 SQL_ENABLED
 

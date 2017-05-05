@@ -18,6 +18,7 @@ var/list/gamemode_cache = list()
 	var/log_attack = 0					// log attack messages
 	var/log_adminchat = 0				// log admin chat messages
 	var/log_adminwarn = 0				// log warnings admins get about bomb construction and such
+	var/log_permissions = 0				// log permissions changes
 	var/log_pda = 0						// log pda messages
 	var/log_hrefs = 0					// logs all links clicked in-game. Could be used for debugging and tracking down exploits
 	var/log_runtime = 0					// logs world.log to a file
@@ -328,6 +329,9 @@ var/list/gamemode_cache = list()
 
 				if ("log_adminwarn")
 					config.log_adminwarn = 1
+
+				if ("log_permissions")
+					config.log_permissions = 1
 
 				if ("log_pda")
 					config.log_pda = 1
