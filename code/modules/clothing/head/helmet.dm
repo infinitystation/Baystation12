@@ -174,3 +174,9 @@
 	name = "asset protection medical helmet"
 	desc = "An in-atmosphere helmet worn by many corporate and private asset protection forces. Has red and white highlights."
 	icon_state = "erthelmet_med"
+
+//Daft-Punk helm
+/obj/item/clothing/head/helmet/daft_punk
+	name = "Daft Punk helm"
+	desc = "This fancy helm gives you the ability to see through clothes! Well, at least that's what rumors say.."
+	icon_state = "daft_helmet"

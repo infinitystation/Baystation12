@@ -43,3 +43,14 @@
 	name = "Merchant - Vox"
 	shoes = /obj/item/clothing/shoes/jackboots/unathi
 	uniform = /obj/item/clothing/under/vox/vox_robes
+
+/decl/hierarchy/outfit/daft_punk
+	name = "Daft Punk"
+	shoes = /obj/item/clothing/shoes/laceup
+	uniform = /obj/item/clothing/under/suit_jacket/charcoal
+	suit = /obj/item/clothing/suit/storage/toggle/internalaffairs
+	head = /obj/item/clothing/head/helmet/daft_punk
+	gloves = /obj/item/clothing/gloves/daft_punk
+	id_slot = slot_wear_id
+	id_type = /obj/item/weapon/card/id/centcom/station
+	id_pda_assignment = "DJ"
