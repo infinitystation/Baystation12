@@ -213,6 +213,7 @@
 #include "code\datums\observation\~cleanup.dm"
 #include "code\datums\outfits\_defines.dm"
 #include "code\datums\outfits\horror_killers.dm"
+#include "code\datums\outfits\infinity.dm"
 #include "code\datums\outfits\misc.dm"
 #include "code\datums\outfits\nanotrasen.dm"
 #include "code\datums\outfits\outfit.dm"
