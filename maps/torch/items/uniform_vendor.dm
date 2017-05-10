@@ -20,10 +20,29 @@
 	var/list/selected_outfit = list()
 	var/static/decl/hierarchy/mil_uniform/mil_uniforms
 
+//
+// TODO - UPDATE_ICON!! ~dtb
+//
+
+/*/obj/machinery/uniform_vendor/update_icon()
+	if(stat & NOPOWER) //stat - one of "broken" bitflags - emp, broken, unpowered, and POWER flag anyway
+		if(icon_state != "robotics-off")
+			icon_state = "robotics-off"
+	else
+		if(icon_state == "robotics")*/
+
+
 /obj/machinery/uniform_vendor/attack_hand(mob/user)
 	if(..())
 		return
+
 	user.set_machine(src)
+	add_fingerprint(usr)
+
+	if(!powered()) //modules/power/power.dm
+		to_chat(user, "Seems to be unpowered.")//not sure if we need it here, bot who cares ?
+		return
+
 	var/dat = list()
 	dat += "User ID: <a href='byond://?src=\ref[src];ID=1'>[ID ? "[ID.registered_name], [ID.military_rank], [ID.military_branch]" : "--------"]</a>"
 	dat += "<hr>"
@@ -55,14 +74,14 @@
 		return 1
 	if(href_list["ID"])
 		var/mob/M = usr
-		if(ID)
+		if(ID) //ID already in machinery
 			if(!issilicon(usr))
 				M.put_in_hands(ID)
 			else
 				ID.dropInto(loc)
 			ID = null
 			selected_outfit.Cut()
-		else
+		else //or machinery is empty
 			var/obj/item/weapon/card/id/I = M.get_active_hand()
 			if(I)
 				ID = I
@@ -86,6 +105,10 @@
 
 /obj/machinery/uniform_vendor/attackby(obj/item/weapon/W as obj, mob/user as mob)
 
+	if(!powered())
+		to_chat(user, "Seems to be unpowered!")
+		return
+
 	if(istype(W, /obj/item/weapon/clothingbag))
 		to_chat(user, "<span class='notice'>You put [W] into \the [src] recycling slot.</span>")
 		qdel(W)
@@ -94,10 +117,13 @@
 	if(!istype(W, /obj/item/weapon/card/id))
 		to_chat(user, "<span class='notice'>You must use your ID card!</span>")
 		return
+
 	if(!ID)
 		to_chat(user, "<span class='notice'>You slide \the [W] into \the [src]!</span>")
 		ID = W
 		user.drop_from_inventory(W,src)
+
+	updateUsrDialog()
 
 /*	Outfit structures
 	branch
