@@ -180,7 +180,7 @@
 "dx" = (/obj/structure/table/standard,/obj/item/weapon/paper_bin,/obj/item/weapon/pen,/obj/effect/floor_decal/corner/red{dir = 5},/turf/simulated/floor/tiled/dark/airless,/area/complex_lana/enter)
 "dy" = (/obj/item/modular_computer/console/preset/security,/obj/effect/floor_decal/corner/red/three_quarters{tag = "icon-corner_white_three_quarters (NORTH)"; icon_state = "corner_white_three_quarters"; dir = 1},/turf/simulated/floor/tiled/dark/airless,/area/complex_lana/enter)
 "dz" = (/obj/structure/sign/warning/lethal_turrets,/turf/simulated/wall,/area/space)
-"dA" = (/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_x = 0; pixel_y = 24},/obj/structure/reagent_dispensers/fueltank,/obj/effect/floor_decal/industrial/warning{dir = 1},/obj/structure/sign/warning/nosmoking_1{step_x = -32},/turf/simulated/floor/plating,/area/complex_lana/lobby)
+"dA" = (/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_x = 0; pixel_y = 24},/obj/structure/reagent_dispensers/fueltank,/obj/effect/floor_decal/industrial/warning{dir = 1},/obj/structure/sign/warning/nosmoking_1{pixel_x = -32},/turf/simulated/floor/plating,/area/complex_lana/lobby)
 "dB" = (/obj/effect/floor_decal/corner/grey_alt{tag = "icon-corner_white (NORTH)"; icon_state = "corner_white"; dir = 1},/turf/simulated/floor/tiled,/area/complex_lana/lobby)
 "dC" = (/obj/machinery/vending/snack,/obj/effect/floor_decal/corner/grey_alt,/turf/simulated/floor/tiled,/area/complex_lana/lobby)
 "dD" = (/obj/structure/table/standard,/obj/item/clothing/head/soft,/obj/structure/extinguisher_cabinet{pixel_x = -26},/obj/effect/floor_decal/corner/yellow{dir = 9},/turf/simulated/floor/tiled,/area/complex_lana/enter)
