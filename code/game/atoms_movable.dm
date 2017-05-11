@@ -2,6 +2,8 @@
 	plane = OBJ_PLANE
 
 	appearance_flags = TILE_BOUND
+	glide_size = 8
+
 	var/last_move = null
 	var/anchored = 0
 	// var/elevation = 2    - not used anywhere
@@ -19,7 +21,7 @@
 
 	var/auto_init = 1
 
-	glide_size = 4
+	glide_size = 8
 
 /atom/movable/New()
 	..()
