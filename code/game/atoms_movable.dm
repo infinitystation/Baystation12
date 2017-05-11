@@ -2,6 +2,8 @@
 	plane = OBJ_PLANE
 
 	appearance_flags = TILE_BOUND
+	glide_size = 7
+
 	var/last_move = null
 	var/anchored = 0
 	// var/elevation = 2    - not used anywhere
@@ -19,27 +21,16 @@
 
 	var/auto_init = 1
 
-	glide_size = 4
-
 /atom/movable/New()
 	..()
 	if(auto_init && (initialization_stage & INITIALIZATION_HAS_BEGUN))
 		initialize()
 
-/atom/movable/Del()
-	if(isnull(gcDestroyed) && loc)
-		testing("GC: -- [type] was deleted via del() rather than qdel() --")
-		crash_with("GC: -- [type] was deleted via del() rather than qdel() --") // stick a stack trace in the runtime logs
-//	else if(isnull(gcDestroyed))
-//		testing("GC: [type] was deleted via GC without qdel()") //Not really a huge issue but from now on, please qdel()
-//	else
-//		testing("GC: [type] was deleted via GC with qdel()")
-	..()
-
 /atom/movable/Destroy()
 	. = ..()
 	for(var/atom/movable/AM in src)
 		qdel(AM)
+
 	forceMove(null)
 	if (pulledby)
 		if (pulledby.pulling == src)
@@ -50,7 +41,7 @@
 	if(rad_power)
 		radiation_repository.sources.Add(src)
 
-	if(!isnull(gcDestroyed))
+	if(QDELETED(src))
 		crash_with("GC: -- [type] had initialize() called after qdel() --")
 
 /atom/movable/Bump(var/atom/A, yes)

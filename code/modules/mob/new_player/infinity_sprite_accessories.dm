@@ -18,7 +18,7 @@
 	icon_state = "hairpais"
 
 /datum/sprite_accessory/hair/infinity/new_ponytail
-	name = "Ponytail 6"
+	name = "Ponytail 7"
 	icon_state = "ponytail"
 
 /datum/sprite_accessory/hair/infinity/shortflip

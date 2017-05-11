@@ -63,6 +63,12 @@
 	desc = "A .45 flash shell casing."
 	projectile_type = /obj/item/projectile/energy/flash
 
+/obj/item/ammo_casing/c45/spent
+	desc = "A .45 bullet casing."
+	caliber = ".45"
+	projectile_type = null
+	icon_state = "s-casing-spent"
+
 /obj/item/ammo_casing/a10mm
 	desc = "A 10mm bullet casing."
 	caliber = "10mm"

@@ -146,6 +146,7 @@
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
 	prisoner_init()
+	apply_fps(prefs.clientfps)
 
 	. = ..()	//calls mob.Login()
 	prefs.sanitize_preferences()
@@ -197,6 +198,9 @@
 	clients -= src
 	return ..()
 
+/client/Destroy()
+	..()
+	return QDEL_HINT_HARDDEL_NOW
 
 // here because it's similar to below
 
@@ -309,6 +313,7 @@
 	getFiles(
 		'html/search.js',
 		'html/panels.css',
+		'html/spacemag.css',
 		'html/images/loading.gif',
 		'html/images/ntlogo.png',
 		'html/images/bluentlogo.png',
@@ -335,3 +340,7 @@ client/verb/character_setup()
 	set category = "OOC"
 	if(prefs)
 		prefs.ShowChoices(usr)
+
+/client/proc/apply_fps(var/client_fps)
+	if(world.byond_version >= 511 && byond_version >= 511 && client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
+		vars["fps"] = prefs.clientfps

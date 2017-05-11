@@ -47,8 +47,8 @@ var/list/gamemode_cache = list()
 	var/continous_rounds = 0			// Gamemodes which end instantly will instead keep on going until the round ends by escape shuttle or nuke.
 	var/allow_Metadata = 0				// Metadata is supported.
 	var/popup_admin_pm = 0				//adminPMs to non-admins show in a pop-up 'reply' window when set to 1.
-	var/Ticklag = 0.9
-	var/Tickcomp = 0
+	var/fps = 20
+	var/tick_limit_mc_init = TICK_LIMIT_MC_INIT_DEFAULT	//SSinitialization throttling
 	var/socket_talk	= 0					// use socket_talk to communicate with other processes
 	var/list/resource_urls = null
 	var/antag_hud_allowed = 0			// Ghosts can turn on Antagovision to see a HUD of who is the bad guys this round.
@@ -223,6 +223,8 @@ var/list/gamemode_cache = list()
 	var/radiation_resistance_multiplier = 6.5
 	var/radiation_lower_limit = 0.35 //If the radiation level for a turf would be below this, ignore it.
 
+	var/autostealth = 0 // Staff get automatic stealth after this many minutes
+
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
 	for (var/T in L)
@@ -344,6 +346,10 @@ var/list/gamemode_cache = list()
 
 				if ("log_runtime")
 					config.log_runtime = 1
+					var/newlog = file("data/logs/runtimes/runtime-[time2text(world.realtime, "YYYY-MM-DD")].log")
+					if(runtime_diary != newlog)
+						to_world_log("Now logging runtimes to data/logs/runtimes/runtime-[time2text(world.realtime, "YYYY-MM-DD")].log")
+						runtime_diary = newlog
 
 				if ("generate_asteroid")
 					config.generate_map = 1
@@ -573,7 +579,15 @@ var/list/gamemode_cache = list()
 					irc_bot_export = 1
 
 				if("ticklag")
-					Ticklag = text2num(value)
+					var/ticklag = text2num(value)
+					if(ticklag > 0)
+						fps = 10 / ticklag
+
+				if("fps")
+					fps = text2num(value)
+
+				if("tick_limit_mc_init")
+					tick_limit_mc_init = text2num(value)
 
 				if("allow_antag_hud")
 					config.antag_hud_allowed = 1
@@ -582,9 +596,6 @@ var/list/gamemode_cache = list()
 
 				if("socket_talk")
 					socket_talk = text2num(value)
-
-				if("tickcomp")
-					Tickcomp = 1
 
 				if("humans_need_surnames")
 					humans_need_surnames = 1
@@ -723,6 +734,9 @@ var/list/gamemode_cache = list()
 				if("wait_for_sigusr1")
 					config.wait_for_sigusr1_reboot = 1
 
+				if("autostealth")
+					config.autostealth = text2num(value)
+
 				else
 					log_misc("Unknown setting in configuration: '[name]'")
 
@@ -787,6 +801,10 @@ var/list/gamemode_cache = list()
 
 				else
 					log_misc("Unknown setting in configuration: '[name]'")
+
+	fps = round(fps)
+	if(fps <= 0)
+		fps = initial(fps)
 
 /datum/configuration/proc/loadsql(filename)  // -- TLE
 	var/list/Lines = file2list(filename)
