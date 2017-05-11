@@ -26,3 +26,20 @@
 	id_slot = slot_wear_id
 	id_type = /obj/item/weapon/card/id/centcom/station
 	id_pda_assignment = "DJ"
+
+/decl/hierarchy/outfit/marshal
+	name = "SCG Marshal"
+	shoes = /obj/item/clothing/shoes/dutyboots
+	uniform = /obj/item/clothing/under/utility/fleet
+	suit = /obj/item/clothing/suit/storage/toggle/marshal_jacket
+	head = /obj/item/clothing/head/beret/sol/fleet
+	l_ear = /obj/item/device/radio/headset/ert
+	belt = /obj/item/weapon/gun/energy/gun
+
+	r_pocket = /obj/item/clothing/accessory/badge/marshal
+
+	id_slot = slot_wear_id
+	id_type = /obj/item/weapon/card/id/centcom/ERT
+	id_desc = "An ID of SCG police marshals."
+	id_pda_assignment = "SCG Marshal"
+
