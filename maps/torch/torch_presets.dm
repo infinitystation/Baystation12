@@ -91,6 +91,9 @@ var/const/NETWORK_THIRD_DECK  = "Third Deck"
 /obj/machinery/camera/network/third_deck
 	network = list(NETWORK_THIRD_DECK)
 
+/obj/machinery/camera/network/lana //Event lana's complex camera net
+	network = list(NETWORK_THIRD_DECK)
+
 //
 // T-Coms
 //
