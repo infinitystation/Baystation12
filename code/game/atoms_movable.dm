@@ -2,7 +2,7 @@
 	plane = OBJ_PLANE
 
 	appearance_flags = TILE_BOUND
-	glide_size = 8
+	glide_size = 7
 
 	var/last_move = null
 	var/anchored = 0
@@ -20,8 +20,6 @@
 	var/item_state = null // Used to specify the item state for the on-mob overlays.
 
 	var/auto_init = 1
-
-	glide_size = 8
 
 /atom/movable/New()
 	..()
