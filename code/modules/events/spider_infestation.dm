@@ -11,8 +11,7 @@
 	sent_spiders_to_station = 0
 
 /datum/event/spider_infestation/announce()
-	command_announcement.Announce("Неидентифицированные формы жизни были обнаружены на станции [station_name()]. Проверьте все внешние доступы, а так же вентиляции.", "Тревога: Зафиксирована новая форма жизни на борту станции", new_sound = 'sound/AI/aliens.ogg')
-
+	using_map.unidentified_lifesigns_announcement()
 
 /datum/event/spider_infestation/start()
 	var/list/vents = list()

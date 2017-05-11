@@ -197,6 +197,9 @@
 	clients -= src
 	return ..()
 
+/client/Destroy()
+	..()
+	return QDEL_HINT_HARDDEL_NOW
 
 // here because it's similar to below
 
@@ -309,6 +312,7 @@
 	getFiles(
 		'html/search.js',
 		'html/panels.css',
+		'html/spacemag.css',
 		'html/images/loading.gif',
 		'html/images/ntlogo.png',
 		'html/images/bluentlogo.png',
