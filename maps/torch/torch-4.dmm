@@ -570,7 +570,7 @@
 "kX" = (/obj/machinery/door/airlock{name = "Stall"},/turf/simulated/floor/tiled/freezer,/area/crew_quarters/head/aux)
 "kY" = (/obj/machinery/door/airlock{name = "Showers"},/turf/simulated/floor/tiled/freezer,/area/crew_quarters/head/aux)
 "kZ" = (/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/alarm{dir = 4; icon_state = "alarm0"; pixel_x = -22; pixel_y = 0},/turf/simulated/floor/plating,/area/shield/firstdeck)
-"la" = (/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/camera/network/engineering{c_tag = "Shield Generator - Third Deck"},/turf/simulated/floor/plating,/area/shield/firstdeck)
+"la" = (/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/camera/network/engineering{c_tag = "Shield Generator - First Deck"},/turf/simulated/floor/plating,/area/shield/firstdeck)
 "lb" = (/obj/machinery/door/airlock/engineering{name = "Bridge Deck Shield Generator"; req_access = list(11)},/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating,/area/shield/firstdeck)
 "lc" = (/obj/structure/cable/green{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/plating,/area/maintenance/firstdeck/forestarboard)
 "ld" = (/obj/machinery/light/small{dir = 1},/turf/simulated/floor/plating,/area/maintenance/firstdeck/forestarboard)
