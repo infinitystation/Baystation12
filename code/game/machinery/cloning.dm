@@ -3,35 +3,6 @@
 
 //Potential replacement for genetics revives or something I dunno (?)
 
-//Find a dead mob with a brain and client.
-/proc/find_dead_player(var/find_key, var/include_observers = 0)
-	if(isnull(find_key))
-		return
-
-	var/mob/selected = null
-
-	if(include_observers)
-		for(var/mob/M in player_list)
-			if((M.stat != DEAD) || (!M.client))
-				continue
-			if(M.ckey == find_key)
-				selected = M
-				break
-	else
-		for(var/mob/living/M in player_list)
-			//Dead people only thanks!
-			if((M.stat != DEAD) || (!M.client))
-				continue
-			//They need a brain!
-			if(istype(M, /mob/living/carbon/human))
-				var/mob/living/carbon/human/H = M
-				if(H.should_have_organ(BP_BRAIN) && !H.has_brain())
-					continue
-			if(M.ckey == find_key)
-				selected = M
-				break
-	return selected
-
 #define CLONE_BIOMASS 150
 
 /obj/machinery/clonepod

@@ -1113,6 +1113,7 @@ CIRCUITS BELOW
 	id = "operating"
 	build_path = /obj/item/weapon/circuitboard/operating
 	sort_string = "FACAA"
+//Make cloning usable again! ~DTB
 
 /datum/design/circuit/scan_console
 	name = "DNA machine"
@@ -1141,6 +1142,7 @@ CIRCUITS BELOW
 	req_tech = list(TECH_DATA = 4, TECH_BIO = 5)
 	build_path = /obj/item/weapon/circuitboard/clonescanner
 	sort_string = "FAGAG"
+
 //Make cloning usable again! ~Quardbreak
 
 /datum/design/circuit/resleever
