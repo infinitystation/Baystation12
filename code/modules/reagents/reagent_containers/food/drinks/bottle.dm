@@ -113,7 +113,7 @@
 	if(rag)
 		var/underlay_image = image(icon='icons/obj/drinks.dmi', icon_state=rag.on_fire? "[rag_underlay]_lit" : rag_underlay)
 		underlays += underlay_image
-		copy_light(rag)
+		set_light(rag.light_range, rag.light_power, rag.light_color)
 	else
 		set_light(0)
 
@@ -370,6 +370,40 @@
 		..()
 		reagents.add_reagent("pwine", 100)
 
+/obj/item/weapon/reagent_containers/food/drinks/bottle/champagne //Bottle
+	name = "Champagne bottle"
+	desc = "A champagne bottle."
+	icon = 'icons/infinity_custom_items_obj.dmi' //redefine - true or not ? dunno
+	icon_state = "champagnebottle"
+	volume = 100
+	center_of_mass = "x=12;y=5"
+
+	flags = 0 // starts closed
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/champagne/New() //it's all here writen wrong with short proc name's, not as contributing guide says, so it's done as it's had to be
+	..()
+	reagents.add_reagent("champagne", 100)
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/champagne/attack_self(mob/user as mob)
+	if(!is_open_container())
+		open(user)
+	..()
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/champagne/open(mob/user)
+	if(do_after(user, 10, src))
+		playsound(loc,'sound/effects/open.ogg', 100, 1)
+		var/chance = rand(0,10)
+		if (chance<2)
+			playsound(loc,'sound/effects/psh.ogg', 100)
+			user.visible_message("<span class='notice'>\The [user] unsuccessfully opens \the [src]</span>")
+			new /obj/effect/decal/cleanable/champagne(usr.loc)
+		else
+			user.visible_message("<span class='notice'>\The [user] professional opens \the [src]</span>")
+		flags |= OPENCONTAINER
+/*
+опх дюкэмеиьел днкаюбкемхх мюохрйнб ме асдэре лмни - окчире мю йнмрпхаэчрхмц х охьхре йнлюоюйрмн х ашярпн
+онкмше хлемю опнйнб дкъ янгдюмхъ асршкн асукю ме мсфмш.
+*/
 //////////////////////////JUICES AND STUFF ///////////////////////
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/orangejuice

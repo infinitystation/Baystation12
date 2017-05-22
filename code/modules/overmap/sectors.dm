@@ -1,6 +1,8 @@
 //===================================================================================
 //Overmap object representing zlevel(s)
 //===================================================================================
+var/list/points_of_interest = list()
+
 /obj/effect/overmap
 	name = "map object"
 	icon = 'icons/obj/overmap.dmi'
@@ -50,6 +52,8 @@
 				landing_areas = list()
 			landing_areas |= console.shuttle_area
 
+	points_of_interest += name
+
 /obj/effect/overmap/sector
 	name = "generic sector"
 	desc = "Sector with some stuff in it."
@@ -75,7 +79,7 @@
 			T = T.ChangeTurf(/turf/unsimulated/map/edge)
 		else
 			T = T.ChangeTurf(/turf/unsimulated/map/)
-		T.lighting_clear_overlays()
+		T.lighting_clear_overlay()
 		turfs += T
 
 	var/area/overmap/A = new

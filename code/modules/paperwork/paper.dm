@@ -441,3 +441,7 @@
 /obj/item/weapon/paper/exodus_holodeck
 	name = "holodeck disclaimer"
 	info = "Bruises sustained in the holodeck can be healed simply by sleeping."
+
+/obj/item/weapon/paper/merchant
+	name = "sell permit"
+	info = "Мы учли жалобы сотрудников Торговой Федерации на неразбериху перед консолью покупок. Теперь, для произведения манипуляций с консолью, требуется доступ лидера торговой группы. Приятных продаж."

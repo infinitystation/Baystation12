@@ -48,7 +48,8 @@
 	if(confirm == "Yes")
 		message_admins("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
 		log_game("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
-		to_chat(world, "<span class='adminooc'>Администратор [usr.key] инициировал(а) обновление сервера в конце текущего раунда.</span>")
+		to_chat(world, "<span class='pm'><span class='howto'><b>~~ Администратор [usr.key] инициировал(а) обновление сервера в конце текущего раунда ~~</b></span></span>\n")
+//		to_chat(world, "<span class='adminooc'>Администратор [usr.key] инициировал(а) обновление сервера в конце текущего раунда.</span>")
 		ticker.updater_ckey = usr.key
 		ticker.update_waiting = 1
 

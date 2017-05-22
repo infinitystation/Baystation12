@@ -174,6 +174,7 @@
 	icon_state = "gglasses"
 	item_state = "gglasses"
 	body_parts_covered = 0
+	prescription = 5
 
 /obj/item/clothing/glasses/sunglasses
 	desc = "Strangely ancient technology used to help provide rudimentary eye cover. Enhanced shielding blocks many flashes."

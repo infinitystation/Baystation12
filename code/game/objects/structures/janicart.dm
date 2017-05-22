@@ -44,6 +44,8 @@
 				playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 				return
 		if(!mymop)
+			if (istype(user, /mob/living/silicon/robot))
+				return 0
 			user.drop_item()
 			mymop = I
 			I.loc = src

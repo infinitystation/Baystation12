@@ -250,6 +250,11 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/industrial/warning/cee
 	icon_state = "warningcee"
 
+/obj/effect/floor_decal/industrial/warning/half
+	name = "floor decal"
+	icon = 'icons/turf/flooring/infinity_decals.dmi'
+	icon_state = "warninghalf"
+
 /obj/effect/floor_decal/industrial/warning/dust
 	name = "hazard stripes"
 	icon_state = "warning_dust"

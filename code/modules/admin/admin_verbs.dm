@@ -98,7 +98,8 @@ var/list/admin_verbs_admin = list(
 	/client/proc/secrets,
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
 //	/datum/admins/proc/whitelist_panel,
-	/client/proc/debug_global_variables
+	/client/proc/debug_global_variables,
+	/client/proc/reestablish_db_connection
 	)
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,

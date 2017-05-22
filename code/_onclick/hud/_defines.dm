@@ -17,9 +17,6 @@
 
 //Lower left, persistant menu
 #define ui_inventory "WEST:6,SOUTH:5"
-#define ui_cam_track "WEST:6,SOUTH:5"
-#define ui_announce "WEST+1:8,SOUTH:5"
-#define ui_state_laws "WEST+2:10,SOUTH:5"
 
 //Lower center, persistant menu
 #define ui_sstore1 "WEST+2:10,SOUTH:5"

@@ -97,18 +97,17 @@
 	var/atom/movable/target = get_pin_data_as_type(IC_INPUT, 2, /atom/movable)
 	if(!istype(source) || !istype(target)) //Invalid input
 		return
-	var/turf/T = get_turf(src)
-	if(source.Adjacent(T) && target.Adjacent(T))
-		if(!source.reagents || !target.reagents)
-			return
-		if(ismob(source) || ismob(target))
-			return
-		if(!source.is_open_container() || !target.is_open_container())
-			return
-		if(!source.reagents.get_free_space() || !target.reagents.get_free_space())
-			return
 
-		source.reagents.trans_to(target, transfer_amount)
+	if(!source.reagents || !target.reagents)
+		return
+	if(ismob(source) || ismob(target))
+		return
+	if(!source.is_open_container() || !target.is_open_container())
+		return
+	if(!source.reagents.get_free_space() || !target.reagents.get_free_space())
+		return
+
+	source.reagents.trans_to(target, transfer_amount)
 
 // May make a reagent subclass of circuits in future.
 /obj/item/integrated_circuit/manipulation/reagent_storage
@@ -320,10 +319,19 @@
 	size = 2
 	complexity = 15
 	var/mob/controlling
-	cooldown_per_use = 2 SECONDS
+	cooldown_per_use = 1 SECOND
 	var/obj/item/aicard
 	activators = list("Upwards", "Downwards", "Left", "Right")
 	origin_tech = list(TECH_DATA = 4)
+
+/obj/item/integrated_circuit/manipulation/ai/verb/open_menu()
+	set name = "Control Inputs"
+	set desc = "With this you can press buttons on the assembly you are attached to."
+	set category = "Object"
+	set src = usr.loc
+
+	var/obj/item/device/electronic_assembly/assembly = get_assembly(src)
+	assembly.closed_interact(usr)
 
 /obj/item/integrated_circuit/manipulation/ai/relaymove(var/mob/user, var/direction)
 	switch(direction)
@@ -344,7 +352,8 @@
 	if(L && L.key)
 		L.forceMove(src)
 		controlling = L
-		card.forceMove(src)
+		user.drop_from_inventory(card)
+		card.dropInto(src)
 		aicard = card
 		user.visible_message("\The [user] loads \the [card] into \the [src]'s device slot")
 		to_chat(L, "<span class='notice'>### IICC FIRMWARE LOADED ###</span>")
@@ -361,7 +370,7 @@
 
 
 /obj/item/integrated_circuit/manipulation/ai/attackby(var/obj/item/I, var/mob/user)
-	if(is_type_in_list(I, list(/obj/item/weapon/aicard, /obj/item/device/paicard, /obj/item/device/mmi/digital)))
+	if(is_type_in_list(I, list(/obj/item/weapon/aicard, /obj/item/device/paicard, /obj/item/device/mmi)))
 		load_ai(user, I)
 	else return ..()
 
