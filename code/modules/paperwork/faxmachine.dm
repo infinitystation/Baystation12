@@ -177,6 +177,9 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 /obj/machinery/photocopier/faxmachine/proc/send_admin_fax(var/mob/sender, var/destination)
 	if(stat & (BROKEN|NOPOWER))
 		return
+	if(!is_relay_online())//Contact Centcom has a check, Syndie doesn't to allow for Traitor funs.
+		to_chat(usr, "<span class='warning'>No Emergency Bluespace Relay detected. Unable to transmit message.</span>")
+		return 1
 
 	use_power(200)
 
