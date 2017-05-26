@@ -14,9 +14,6 @@
 /mob/living/silicon/ai/instantiate_hud(var/datum/hud/HUD)
 	HUD.ai_hud()
 
-/datum/hud/proc/ai_hud()
-	return
-
 /mob/living/carbon/slime/instantiate_hud(var/datum/hud/HUD)
 	HUD.slime_hud()
 
