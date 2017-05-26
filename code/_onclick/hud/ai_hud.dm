@@ -74,7 +74,7 @@
 	using.icon = ui_style
 	using.icon_state = "take_picture"
 	using.screen_loc = ui_ai_take_image
-	using.ai_verb = /obj/item/device/camera/siliconcam/ai_camera/verb/take_image
+	using.ai_verb = /mob/living/silicon/ai/proc/ai_take_image
 	src.adding += using
 
 	//View Images
@@ -83,7 +83,7 @@
 	using.icon = ui_style
 	using.icon_state = "view_images"
 	using.screen_loc = ui_ai_view_images
-	using.ai_verb = /obj/item/device/camera/siliconcam/ai_camera/verb/view_images
+	using.ai_verb = /mob/living/silicon/ai/proc/ai_view_images
 	src.adding += using
 
 	//State Laws
