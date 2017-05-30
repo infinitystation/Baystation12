@@ -23,7 +23,7 @@ JOBS_HAVE_MINIMAL_ACCESS
 ## REQUIRES the database set up to work. Keep it hashed if you don't have a database set up.
 ## NOTE: If you have just set-up the database keep this DISABLED, as player age is determined from the first time they connect to the server with the database up. If you just set it up, it means
 ## you have noone older than 0 days, since noone has been logged yet. Only turn this on once you have had the database up for 30 days.
-USE_AGE_RESTRICTION_FOR_JOBS
+#USE_AGE_RESTRICTION_FOR_JOBS
 
 ## Unhash this entry to have certain antag roles require your account to be at least a certain number of days old for round start and auto-spawn selection.
 ## Non-automatic antagonist recruitment, such as being converted to cultism is not affected. Has the same database requirements and notes as USE_AGE_RESTRICTION_FOR_JOBS.
