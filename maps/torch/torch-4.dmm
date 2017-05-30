@@ -2057,7 +2057,7 @@
 "NC" = (/obj/machinery/atmospherics/pipe/simple/hidden,/obj/machinery/biogenerator,/turf/simulated/floor/tiled/white,/area/rnd/xenobiology/xenoflora_storage)
 "ND" = (/obj/machinery/atmospherics/portables_connector,/obj/machinery/portable_atmospherics/hydroponics{closed_system = 1; name = "isolation tray"},/turf/simulated/floor/tiled/white,/area/rnd/xenobiology/xenoflora_storage)
 "NE" = (/obj/machinery/atmospherics/pipe/simple/hidden/red,/turf/simulated/floor/tiled/white,/area/rnd/xenobiology/xenoflora_storage)
-"NF" = (/obj/machinery/atmospherics/pipe/simple/hidden/red,/obj/effect/floor_decal/corner/purple{dir = 9},/turf/simulated/floor/tiled/white,/area/rnd/xenobiology/xenoflora)
+"NF" = (/obj/machinery/atmospherics/pipe/simple/hidden/red,/obj/effect/floor_decal/corner/purple{dir = 9},/obj/structure/table/glass,/turf/simulated/floor/tiled/white,/area/rnd/xenobiology/xenoflora)
 "NG" = (/obj/machinery/atmospherics/pipe/simple/visible,/obj/effect/floor_decal/corner/purple{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white,/area/rnd/xenobiology/xenoflora)
 "NH" = (/obj/machinery/portable_atmospherics/hydroponics,/turf/simulated/floor/tiled/freezer,/area/rnd/xenobiology/xenoflora)
 "NI" = (/obj/machinery/portable_atmospherics/hydroponics,/obj/machinery/light{tag = "icon-tube1 (EAST)"; icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/freezer,/area/rnd/xenobiology/xenoflora)

@@ -56,7 +56,6 @@
 	cost = 150
 	containertype = /obj/structure/closet/crate/secure
 	containername = "chemical crate"
-	access = list(access_chemistry)
 
 /decl/hierarchy/supply_pack/reagents/alcohol_reagents
 	name = "Bar alcoholic dispenser refill"
