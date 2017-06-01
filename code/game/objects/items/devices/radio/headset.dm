@@ -139,6 +139,13 @@
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_com
 
+/obj/item/device/radio/headset/pilot //left only for infinity_torch, there is still pilot's headset left.
+	name = "pilot's headset"
+	desc = "A headset with access to the command and engineering channels."
+	icon_state = "com_headset"
+	item_state = "headset"
+	ks2type = /obj/item/device/encryptionkey/pilot
+
 /obj/item/device/radio/headset/heads/captain
 	name = "captain's headset"
 	desc = "The headset of the boss."
