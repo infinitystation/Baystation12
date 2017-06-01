@@ -31,27 +31,27 @@ Admin Observer
 Moderator		+MOD
 Mentor			+MENTOR
 
-Admin Candidate	+ADMIN
+Admin Candidate		+ADMIN
 Trial Admin		+@ +SPAWN +REJUV +VAREDIT +BAN
 Badmin			+@ +POSSESS +BUILDMODE +SERVER +FUN
 Game Admin		+@ +STEALTH +SOUNDS +DEBUG
 
 Game Master		+EVERYTHING
 
-Retired Admin	+ADMIN +STEALTH
+Retired Admin		+ADMIN +STEALTH
 
-JuniorDeveloper +FUN +SERVER +DEBUG +VAREDIT +SPAWN +MENTOR
+JuniorDeveloper 	+FUN +SERVER +DEBUG +VAREDIT +SPAWN +MENTOR
 
 Developer		+FUN +SERVER +DEBUG +VAREDIT +SPAWN +MENTOR +REJUV +POSSESS +BUILDMODE +MENTOR +SOUND
 
-SeniorDevepoper	+FUN +SERVER +DEBUG +VAREDIT +SPAWN +MENTOR +REJUV +POSSESS +BUILDMODE +MENTOR +SOUND +RIGHTS +STEALTH
+SeniorDevepoper		+FUN +SERVER +DEBUG +VAREDIT +SPAWN +MENTOR +REJUV +POSSESS +BUILDMODE +MENTOR +SOUND +RIGHTS +STEALTH
 
 Wiki Mentor		+MENTOR
 Head Wiki		+@ +RIGHTS
 
 Host			+EVERYTHING
 Head Admin		+@
-Project Lead	+@
+Project Lead		+@
 
 
 
