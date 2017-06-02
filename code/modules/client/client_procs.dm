@@ -137,7 +137,7 @@
 			var/DBQuery/query_onilne = dbcon.NewQuery("SELECT sum FROM online_score WHERE ckey='[sql_ckey]' AND year=YEAR(NOW()) AND month=MONTH(NOW()) AND day=DAYOFMONTH(NOW());")
 			query_onilne.Execute()
 			if(query_onilne.NextRow())
-				temp = query_o_s_in1.item[1]
+				temp = query_onilne.item[1]
 			sum = text2num(temp)
 			if(sum && sum > 0)
 				var/DBQuery/query_sum_upd = dbcon.NewQuery("UPDATE online_score SET sum= sum+1 WHERE ckey='[sql_ckey]' AND year=YEAR(NOW()) AND month=MONTH(NOW()) AND day=DAYOFMONTH(NOW());")
