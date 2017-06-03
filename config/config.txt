@@ -162,7 +162,7 @@ ALLOW_ADMIN_OOCCOLOR
 VOTE_DELAY 6000
 
 ## time period (deciseconds) which voting session will last (default 1 minute)
-VOTE_PERIOD 600
+VOTE_PERIOD 1800
 
 ## autovote initial delay (deciseconds) before first automatic transfer vote call (default 180 minutes)
 VOTE_AUTOTRANSFER_INITIAL 72000

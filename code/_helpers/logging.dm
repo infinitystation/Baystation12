@@ -41,6 +41,10 @@
 	warning(text)
 	to_debug_listeners(text, "WARNING")
 
+/proc/log_sql(text)
+	if (config.sql_enabled)
+		diary <<"\[[time_stamp()]] [game_id] SQL: [text][log_end]"
+
 /proc/to_debug_listeners(text, prefix = "DEBUG")
 	for(var/client/C in admins)
 		if(C.is_preference_enabled(/datum/client_preference/debug/show_debug_logs))
