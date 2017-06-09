@@ -5,22 +5,9 @@
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 
-/datum/gear/head/zhan_scarf
-	display_name = "Zhan headscarf (Tajara)"
-	path = /obj/item/clothing/head/tajaran/scarf
-	whitelisted = list(SPECIES_TAJARA)
-	sort_category = "Xenowear"
-
 /datum/gear/suit/unathi_mantle
 	display_name = "hide mantle (Unathi)"
 	path = /obj/item/clothing/suit/unathi/mantle
-	cost = 1
-	whitelisted = list(SPECIES_UNATHI)
-	sort_category = "Xenowear"
-
-/datum/gear/suit/unathi_robe
-	display_name = "roughspun robe (Unathi)"
-	path = /obj/item/clothing/suit/unathi/robe
 	cost = 1
 	whitelisted = list(SPECIES_UNATHI)
 	sort_category = "Xenowear"
@@ -98,6 +85,10 @@
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_RESOMI)
 
+/datum/gear/uniform/resomi/rainbow
+	display_name = "smock, rainbow (Resomi)"
+	path = /obj/item/clothing/under/resomi/rainbow
+
 /datum/gear/uniform/resomi/white
 	display_name = "smock, colored (Resomi)"
 	path = /obj/item/clothing/under/resomi/white
@@ -106,27 +97,25 @@
 /datum/gear/uniform/resomi/eng
 	display_name = "uniform, Engineering (Resomi)"
 	path = /obj/item/clothing/under/resomi/yellow
-	allowed_roles = list("Maintenance Assistant", "Roboticist", "Passenger", "Research Assistant", "Merchant")
+	allowed_roles = list("Chief Engineer","Station Engineer","Atmospherics Technician")
 
 /datum/gear/uniform/resomi/sec
 	display_name = "uniform, Security (Resomi)"
 	path = /obj/item/clothing/under/resomi/red
-	allowed_roles = list("Security Guard", "Passenger", "Research Assistant", "Merchant")
+	allowed_roles = list("Security Officer","Head of Security","Warden","Detective")
 
 /datum/gear/uniform/resomi/med
 	display_name = "uniform, Medical (Resomi)"
 	path = /obj/item/clothing/under/resomi/medical
-	allowed_roles = list("Medical Contractor", "Chemist", "Counselor", "Passenger", "Research Assistant", "Merchant")
 
 /datum/gear/uniform/resomi/science
 	display_name = "uniform, Science (Resomi)"
 	path = /obj/item/clothing/under/resomi/science
 
 /datum/gear/uniform/harness
-	display_name = "gear harness (Full Body Prosthetic, IPC, Diona)"
+	display_name = "gear harness (Full Body Prosthetic, Diona)"
 	path = /obj/item/clothing/under/harness
 	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_IPC,SPECIES_DIONA)
 
 /datum/gear/mask/ipc_monitor
 	display_name = "display monitor (IPC)"
@@ -145,17 +134,13 @@
 	path = /obj/item/clothing/shoes/workboots/toeless
 	sort_category = "Xenowear"
 
-/datum/gear/uniform/resomi/dress
-	display_name = "small dress (Resomi)"
-	path = /obj/item/clothing/under/resomi/dress
-
-/datum/gear/uniform/resomi/uniform
-	display_name = "small uniform (Resomi)"
-	path = /obj/item/clothing/under/resomi/uniform
-
-/datum/gear/uniform/resomi/formal
-	display_name = "small formal uniform (Resomi)"
-	path = /obj/item/clothing/under/resomi/formal
+/datum/gear/eyes/tajblind/sec
+	display_name = "sleek veil (Tajara)"
+	path = /obj/item/clothing/glasses/sunglasses/sechud/tajblind
+	whitelisted = list(SPECIES_TAJARA)
+	sort_category = "Xenowear"
+	cost = 1
+	allowed_roles = list("Security Officer","Head of Security","Warden","Detective")
 
 /datum/gear/eyes/tajblind/med
 	display_name = "medical veil (Tajara)"
@@ -163,7 +148,7 @@
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 	cost = 1
-	allowed_roles = list("Paramedic","Chief Medical Officer","Medical Doctor")
+	allowed_roles = list("Medical Doctor","Chief Medical Officer","Chemist","Paramedic","Geneticist")
 
 /datum/gear/eyes/tajblind/meson
 	display_name = "industrial veil (Tajara)"
@@ -171,4 +156,4 @@
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 	cost = 1
-	allowed_roles = list("Maintenance Assistant", "Prospector", "Research Assistant")
+	allowed_roles = list("Chief Engineer","Station Engineer","Atmospherics Technician", "Shaft Miner")
