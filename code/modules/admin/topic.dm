@@ -1945,7 +1945,7 @@
 
 	else if(href_list["noteedits"])
 		var/note_id = sanitizeSQL("[href_list["noteedits"]]")
-		var/DBQuery/query_noteedits = dbcon.NewQuery("SELECT edits FROM erro_notes WHERE id = '[note_id]'")
+		var/DBQuery/query_noteedits = dbcon.NewQuery("SELECT edits FROM erro_messages WHERE id = '[note_id]'")
 		if(!query_noteedits.Execute())
 			var/err = query_noteedits.ErrorMsg()
 			log_game("SQL ERROR obtaining edits from notes table. Error : \[[err]\]\n")

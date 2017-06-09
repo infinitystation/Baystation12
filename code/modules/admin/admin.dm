@@ -247,7 +247,8 @@ var/global/floorIsLava = 0
 	if (!istype(src,/datum/admins))
 		to_chat(usr, "Error: you are not an admin!")
 		return
-	PlayerNotesPage()
+	show_note()
+	//PlayerNotesPage()
 
 /datum/admins/proc/PlayerNotesPage(var/filter_term)
 	var/list/dat = list()
