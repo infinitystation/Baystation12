@@ -469,3 +469,9 @@
 	new /obj/item/weapon/storage/briefcase(src)
 	new /obj/item/weapon/storage/briefcase(src)
 	return
+
+/obj/structure/closet/wardrobe/empty
+	name = "surgery closet"
+	desc = "For the patient's clothes."
+	icon_state = "white"
+	icon_closed = "white"
