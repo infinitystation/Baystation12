@@ -205,3 +205,7 @@ var/list/flooring_types
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "diona"
 	flags = TURF_ACID_IMMUNE | TURF_REMOVE_SHOVEL
+
+/decl/flooring/tiling/asteroid
+	icon = 'icons/turf/floors.dmi'
+	icon_base = "asteroidfloor"

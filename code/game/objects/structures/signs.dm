@@ -400,3 +400,14 @@
 	name = "\improper Fourth Deck"
 	icon_state = "deck-4"
 
+/obj/structure/sign/nanotrasen
+	name = "\improper Nanotrasen logo"
+	desc = "Логотип корпорации будущего. Нано - отрожение технологий, Трэйзен - Фамилия генерального директора корпорации."
+	icon = 'icons/obj/infinity_decals.dmi'
+	icon_state = "NT"
+
+/obj/structure/sign/spider_clan
+	name = "\improper Spider Clan"
+	desc = "Клан паука - органиазия, в которой обучаются лучшие наемные убийцы изведанного космоса. Вероятно, я счастливчик, раз узнал это."
+	icon = 'icons/obj/infinity_decals.dmi'
+	icon_state = "spider_clan"

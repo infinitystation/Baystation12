@@ -321,6 +321,24 @@
 	icon_state = "north"
 	base_turf = /turf/simulated/floor/asteroid
 
+//Ninja areas
+
+/area/ninja_dojo
+	name = "\improper Ninja Base"
+	icon_state = "green"
+	requires_power = 0
+	dynamic_lighting = 1
+	flags = AREA_RAD_SHIELDED
+
+/area/ninja_dojo/dojo
+	name = "\improper Clan Dojo"
+	dynamic_lighting = 0
+
+/area/ninja_dojo/start
+	name = "\improper Clan Dojo"
+	icon_state = "shuttlered"
+	base_turf = /turf/simulated/floor/plating
+
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
 
 /area/maintenance/substation/command // AI and central cluster. This one will be between HoP office and meeting room (probably).
@@ -977,6 +995,14 @@ area/rnd/test_area
 /area/outpost/mining_main/west_hall
 	name = "Mining Outpost West Hallway"
 
+/area/outpost/mining_main/crew_hallway
+	name = "Mining Outpost Crew Hallway"
+	icon_state = "outpost_mine_west"
+
+/area/outpost/mining_main/resting
+	name = "Mining Outpost Resting Room"
+	icon_state = "outpost_mine_west"
+
 // Mining outpost
 /area/outpost/mining_main/maintenance
 	name = "Mining Outpost Maintenance"
@@ -987,7 +1013,7 @@ area/rnd/test_area
 	icon_state = "outpost_mine_north"
 
 /area/outpost/mining_west
-	name = "West Mining Outpost"
+	name = "West Outpost Outpost"
 	icon_state = "outpost_mine_west"
 
 // Engineering outpost

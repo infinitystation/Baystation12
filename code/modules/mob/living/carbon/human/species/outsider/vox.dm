@@ -17,8 +17,8 @@
 
 	taste_sensitivity = TASTE_DULL
 
-	speech_sounds = list('sound/voice/shriek1.ogg')
-	speech_chance = 20
+//	speech_sounds = list('sound/voice/shriek1.ogg')
+//	speech_chance = 20
 
 	warning_low_pressure = 50
 	hazard_low_pressure = 0
@@ -98,7 +98,7 @@
 	They aren't very smart, smell worse than a vox, and vomit constantly, \
 	earning them the true title of 'shitbird'."
 	rarity_value = 0.1
-	speech_chance = 60        // No volume control.
+//	speech_chance = 60        // No volume control.
 	siemens_coefficient = 0.5 // Ragged scaleless patches.
 
 	oxy_mod = 1.4
