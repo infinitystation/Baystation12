@@ -653,7 +653,7 @@ proc/establish_db_connection()
 	else
 		return 1
 
-
+/*
 /hook/startup/proc/connectOldDB()
 	if(!setup_old_database_connection())
 		world.log << "Your server failed to establish a connection with the SQL database."
@@ -695,5 +695,5 @@ proc/establish_old_db_connection()
 		return setup_old_database_connection()
 	else
 		return 1
-
+*/
 #undef FAILED_DB_CONNECTION_CUTOFF
