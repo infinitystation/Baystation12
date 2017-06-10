@@ -209,7 +209,7 @@ GUEST_BAN
 # USEWHITELIST
 
 ## set a server location for world reboot. Don't include the byond://, just give the address and port.
-#SERVER 88.198.175.74:4738
+#SERVER 193.70.42.67:7777
 
 ## set a server URL for the IRC bot to use; like SERVER, don't include the byond://
 ## Unlike SERVER, this one shouldn't break auto-reconnect

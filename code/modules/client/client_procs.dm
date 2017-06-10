@@ -291,7 +291,12 @@
 		var/DBQuery/query_insert = dbcon.NewQuery("INSERT INTO erro_player (ckey, firstseen, lastseen, ip, computerid, lastadminrank) VALUES ('[sql_ckey]', Now(), Now(), INET_ATON('[sql_ip]'), '[sql_computerid]', '[sql_admin_rank]')")
 		query_insert.Execute()
 
-	var/DBQuery/query_accesslog = dbcon.NewQuery("INSERT INTO `erro_connection_log`(`id`,`datetime`,`server_ip`,`server_port`,`ckey`,`ip`,`computerid`) VALUES(null,Now(),INET_ATON('[world.internet_address]'), '[world.port]','[sql_ckey]',INET_ATON('[sql_ip]'),'[sql_computerid]');")
+	var = temp_address
+	if(!world.internet_address)
+		temp_address = "193.70.42.67"
+	else
+		temp_address = world.internet_address
+	var/DBQuery/query_accesslog = dbcon.NewQuery("INSERT INTO `erro_connection_log`(`id`,`datetime`,`server_ip`,`server_port`,`ckey`,`ip`,`computerid`) VALUES(null,Now(),INET_ATON('[temp_address]'),'[world.port]','[sql_ckey]',INET_ATON('[sql_ip]'),'[sql_computerid]');")
 	query_accesslog.Execute()
 
 

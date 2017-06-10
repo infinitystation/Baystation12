@@ -9,15 +9,15 @@ datum/admins/proc/DB_staffwarn_record(var/ckey, var/reason)
 		to_chat(usr,"<span class='error'>Failed adding StaffWarn: db error</span>")
 		return
 
-	var/DBQuery/query = dbcon.NewQuery("SELECT id FROM erro_player WHERE ckey = '[dbckey]'")
+	var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM erro_player WHERE ckey = '[dbckey]'")
 	query.Execute()
-	var/playerid = -1
+	var/playerckey
 	if(query.NextRow())
-		playerid = query.item[1]
-	if(playerid == -1)
+		playerckey = query.item[1]
+	if(!playerckey)
 		to_chat(usr,"<font color='red'>You've attempted to set staffwarn on [ckey], but they haven't been seen yet. Staffwarn can only be set on existing players.</font>")
 		return
-	query = dbcon.NewQuery("UPDATE erro_player SET staffwarn='[dbreason]' WHERE id=[playerid]")
+	query = dbcon.NewQuery("UPDATE erro_player SET staffwarn='[dbreason]' WHERE ckey = '[playerckey]'")
 	query.Execute()
 	to_chat(usr,"<span class='notice'>StaffWarn saved to DB</span>")
 
@@ -88,7 +88,7 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		computerid = bancid
 		ip = banip
 
-	var/DBQuery/query = dbcon.NewQuery("SELECT id FROM erro_player WHERE ckey = '[ckey]'")
+	var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM erro_player WHERE ckey = '[dbckey]'")
 	if(!query.Execute())
 		return
 	var/validckey = 0
