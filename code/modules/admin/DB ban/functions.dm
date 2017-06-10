@@ -88,6 +88,7 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		computerid = bancid
 		ip = banip
 
+	var/dbckey = sql_sanitize_text(ckey)
 	var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM erro_player WHERE ckey = '[dbckey]'")
 	if(!query.Execute())
 		return

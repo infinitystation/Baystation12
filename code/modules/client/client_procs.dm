@@ -291,7 +291,7 @@
 		var/DBQuery/query_insert = dbcon.NewQuery("INSERT INTO erro_player (ckey, firstseen, lastseen, ip, computerid, lastadminrank) VALUES ('[sql_ckey]', Now(), Now(), INET_ATON('[sql_ip]'), '[sql_computerid]', '[sql_admin_rank]')")
 		query_insert.Execute()
 
-	var = temp_address
+	var/temp_address
 	if(!world.internet_address)
 		temp_address = "193.70.42.67"
 	else
