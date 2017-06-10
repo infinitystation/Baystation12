@@ -891,6 +891,10 @@
 	name = "\improper Garden"
 	icon_state = "garden"
 
+/area/hydroponics/storage
+	name = "\improper Hydroponics Storage"
+	icon_state = "garden"
+
 
 // Research
 /area/rnd/docking
