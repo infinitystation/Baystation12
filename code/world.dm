@@ -608,7 +608,7 @@ var/world_topic_spam_protect_time = world.timeofday
 	if (src.status != s)
 		src.status = s
 
-#define FAILED_DB_CONNECTION_CUTOFF 5
+#define FAILED_DB_CONNECTION_CUTOFF 25
 var/failed_db_connections = 0
 var/failed_old_db_connections = 0
 
