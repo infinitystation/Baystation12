@@ -97,7 +97,7 @@
 /datum/gear/uniform/resomi/eng
 	display_name = "uniform, Engineering (Resomi)"
 	path = /obj/item/clothing/under/resomi/yellow
-	allowed_roles = list("Chief Engineer","Station Engineer","Atmospherics Technician")
+	allowed_roles = list("Chief Engineer","Engineer")
 
 /datum/gear/uniform/resomi/sec
 	display_name = "uniform, Security (Resomi)"
@@ -156,4 +156,4 @@
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 	cost = 1
-	allowed_roles = list("Chief Engineer","Station Engineer","Atmospherics Technician", "Shaft Miner")
+	allowed_roles = list("Chief Engineer","Engineer","Shaft Miner")

@@ -26,7 +26,7 @@
 /datum/gear/head/beret/eng
 	display_name = "beret, engineering"
 	path = /obj/item/clothing/head/beret/engineering
-	allowed_roles = list("Station Engineer","Chief Engineer","Atmospheric Technician")
+	allowed_roles = list("Engineer","Chief Engineer")
 
 /datum/gear/head/beret/purp
 	display_name = "beret, purple"
@@ -53,4 +53,4 @@
 	whitelisted = "Tajara"
 
 /datum/gear/head/welding
-	allowed_roles = list("Roboticist","Station Engineer","Atmospheric Technician","Chief Engineer")
+	allowed_roles = list("Roboticist","Engineer","Chief Engineer")

@@ -22,7 +22,7 @@
 	allowed_roles = list("Medical Doctor","Chief Medical Officer","Chemist","Paramedic","Geneticist")
 
 /datum/gear/suit/roles/poncho/engineering
-	allowed_roles = list("Chief Engineer","Atmospheric Technician", "Station Engineer")
+	allowed_roles = list("Chief Engineer","Engineer")
 
 /datum/gear/suit/roles/poncho/science
 	allowed_roles = list("Research Director","Scientist", "Roboticist", "Xenobiologist")
@@ -61,12 +61,12 @@
 /datum/gear/suit/wintercoat/engineering
 	display_name = "winter coat, engineering"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat/engineering
-	allowed_roles = list("Chief Engineer","Atmospheric Technician", "Station Engineer")
+	allowed_roles = list("Chief Engineer","Engineer")
 
 /datum/gear/suit/wintercoat/atmos
 	display_name = "winter coat, atmospherics"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat/engineering/atmos
-	allowed_roles = list("Chief Engineer", "Atmospheric Technician", "Station Engineer")
+	allowed_roles = list("Chief Engineer","Engineer")
 
 /datum/gear/suit/wintercoat/hydro
 	display_name = "winter coat, hydroponics"

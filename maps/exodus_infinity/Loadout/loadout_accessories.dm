@@ -91,7 +91,7 @@
 /datum/gear/accessory/brown_drop_pouches
 	display_name = "drop pouches, engineering"
 	path = /obj/item/clothing/accessory/storage/drop_pouches/brown
-	allowed_roles = list("Station Engineer","Atmospheric Technician","Chief Engineer")
+	allowed_roles = list("Engineer","Chief Engineer")
 
 /datum/gear/accessory/black_drop_pouches
 	display_name = "drop pouches, security"
