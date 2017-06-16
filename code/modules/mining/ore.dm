@@ -7,19 +7,42 @@
 	var/datum/geosample/geologic_data
 	var/ore/ore = null // set to a type to find the right instance on init
 
-	New()
-		..()
-		if(ispath(ore))
-			ensure_ore_data_initialised()
-			ore = ores_by_type[ore]
-			if(ore.ore != type)
-				world.log << "[src] ([src.type]) had ore type [ore.type] but that type does not have [src.type] set as its ore item!"
-			update_ore()
+/obj/item/weapon/ore/New()
+	..()
+	if(ispath(ore))
+		ensure_ore_data_initialised()
+		ore = ores_by_type[ore]
+		if(ore.ore != type)
+			world.log << "[src] ([src.type]) had ore type [ore.type] but that type does not have [src.type] set as its ore item!"
+		update_ore()
 
-	proc/update_ore()
-		name = ore.display_name
-		icon_state = "ore_[ore.icon_tag]"
-		origin_tech = ore.origin_tech.Copy()
+/obj/item/weapon/ore/proc/update_ore()
+	name = ore.display_name
+	icon_state = "ore_[ore.icon_tag]"
+	origin_tech = ore.origin_tech.Copy()
+
+/obj/item/weapon/ore/Crossed(AM as mob|obj)
+	var/obj/item/weapon/storage/ore/OB
+	var/turf/simulated/floor/F = get_turf(src)
+	if(loc != F)
+		return ..()
+	if(ishuman(AM))
+		var/mob/living/carbon/human/H = AM
+		OB = H.is_in_hands(/obj/item/weapon/storage/ore)
+		if(!OB)
+			if(istype(H.s_store, /obj/item/weapon/storage/ore))
+				OB = H.s_store
+			else if(istype(H.belt, /obj/item/weapon/storage/ore))
+				OB = H.belt
+	else if(isrobot(AM))
+		var/mob/living/silicon/robot/R = AM
+		for(var/thing in R.get_all_slots())
+			if(istype(thing, /obj/item/weapon/storage/ore))
+				OB = thing
+				break
+	if(OB && istype(F, /turf/simulated/floor/asteroid))
+		F.attackby(OB, AM)
+	return ..()
 
 /obj/item/weapon/ore/slag
 	name = "Slag"
