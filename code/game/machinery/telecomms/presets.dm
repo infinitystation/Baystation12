@@ -244,3 +244,9 @@
 	network = "tcommsat"
 	produces_heat = 0
 	autolinkers = list("broadcasterCent")
+
+/obj/machinery/telecomms/relay/preset/ert
+	id = "Emergency Response Team Relay"
+	produces_heat = 0
+	autolinkers = list("cent_relay")
+
