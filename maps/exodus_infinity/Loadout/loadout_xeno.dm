@@ -157,3 +157,11 @@
 	sort_category = "Xenowear"
 	cost = 1
 	allowed_roles = list("Chief Engineer","Engineer","Shaft Miner")
+
+/datum/gear/gloves/vox
+	display_name = "insulated gauntlets (Vox)"
+	path = /obj/item/clothing/gloves/vox
+	whitelisted = list(SPECIES_VOXPARIAH)
+	sort_category = "Xenowear"
+	cost = 2
+	allowed_roles = list("Chief Engineer","Engineer")
