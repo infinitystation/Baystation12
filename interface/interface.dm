@@ -156,17 +156,7 @@ Any-Mode: (hotkey doesn't need to be on)
 		to_chat(src, admin)
 
 
-/client/var/language = "eng"
-/client/proc/show_motd(var/source = "welcome_eng")
-	var/label_lang 		= (language == "ru") ? "Язык" 			: "Language"
-	var/label_home 		= (language == "ru") ? "Главная" 		: "Home"
-	var/label_changelog = (language == "ru") ? "Обновления" 	: "Changelog"
-	var/label_rules 	= (language == "ru") ? "Правила" 		: "Rules"
-	var/label_stories 	= (language == "ru") ? "Истории" 		: "History"
-	var/label_wiki 		= (language == "ru") ? "Вики" 			: "Wiki"
-	var/label_admin 	= (language == "ru") ? "Администрация" 	: "Administration"
-	var/label_credits 	= (language == "ru") ? "Благодарности" 	: "Credits"
-	var/label_forum 	= (language == "ru") ? "Форум" 			: "Forum"
+/client/proc/show_motd(var/source = "welcome")
 
 
 	var/dat = {"
@@ -175,10 +165,10 @@ Any-Mode: (hotkey doesn't need to be on)
 <title>[source]</title>
 <meta charset="windows-1251">
 <script>
-	function page_home() 		{location.href='?_src_=welcome;motd=welcome_[language]';}
-	function page_changelog() 	{location.href='?_src_=welcome;motd=changelog_[language]';}
-	function page_rules() 		{location.href='?_src_=welcome;motd=rules_[language]';}
-	function page_credits() 	{location.href='?_src_=welcome;motd=credits_[language]';}
+	function page_home() 		{location.href='?_src_=welcome;motd=welcome';}
+	function page_changelog() 	{location.href='?_src_=welcome;motd=changelog';}
+	function page_rules() 		{location.href='?_src_=welcome;motd=rules';}
+	function page_credits() 	{location.href='?_src_=welcome;motd=credits';}
 	function page_stories()		{location.href='?_src_=welcome;motd=stories';}
 	function page_wiki() 		{location.href='?_src_=welcome;motd=wiki';}
 	function page_admin() 		{location.href='?_src_=welcome;motd=admins;';}
@@ -190,18 +180,15 @@ Any-Mode: (hotkey doesn't need to be on)
 
 <body>
 <table><tr>
-<td width = 80><input type="button" value="[label_home]" id="button1_home" onclick="page_home()">				</td>
+<td width = 80><input type="button" value="Главная" id="button1_home" onclick="page_home()">				</td>
 <td width = 40>
-<td><input type="button" value="[label_wiki]" 			id="button5_wiki" onclick="page_wiki()">				</td>
-<td><input type="button" value="[label_forum]" 			id="button6_admin" onclick="page_forum()">				</td>																					</td>
-<td><input type="button" value="[label_rules]" 			id="button3_rules" onclick="page_rules()">				</td>
-<td><input type="button" value="[label_changelog]" 		id="button2_changelog" onclick="page_changelog()">		</td>
-<td><input type="button" value="[label_stories]" 		id="button4_stories" onclick="page_stories()">			</td>
-<td><input type="button" value="[label_admin]" 			id="button6_admin" onclick="page_admin()">				</td>
-<td align="right"><input type="button" value="[label_credits]" id="button7_credits" onclick="page_credits()">	</td>
-</tr><tr>
-<td>[label_lang]: 															</td>
-<td><a href='?_src_=welcome;motd=switch_lang;old=[source]'>[language]</a> 	</td>
+<td><input type="button" value="Вики" 				id="button5_wiki" onclick="page_wiki()">				</td>
+<td><input type="button" value="Форум" 				id="button6_admin" onclick="page_forum()">				</td>																					</td>
+<td><input type="button" value="Правила" 			id="button3_rules" onclick="page_rules()">				</td>
+<td><input type="button" value="Обновления" 		id="button2_changelog" onclick="page_changelog()">		</td>
+<td><input type="button" value="Истории" 			id="button4_stories" onclick="page_stories()">			</td>
+<td><input type="button" value="Администрация" 		id="button6_admin" onclick="page_admin()">				</td>
+<td align="right"><input type="button" value="Благодарности" id="button7_credits" onclick="page_credits()">	</td>
 </tr><table>
 
 <br>
@@ -210,23 +197,13 @@ Any-Mode: (hotkey doesn't need to be on)
 
 </body></html>
 	"}
-	usr << browse(fix_html(dat), "window=hub_welcome;size=850x450;can_close=1;")
+	usr << browse(fix_html(dat), "window=hub_welcome;size=1000x500;can_close=1;")
 
 
 //Интерфейс приветствия
 //21459042ba2f1c10b56afbca2f55df86
 /client/Topic(href, href_list[])
 	switch(href_list["motd"])
-		if("switch_lang")
-			language = (language == "ru") ? "eng" : "ru"
-			switch(href_list["old"])
-				if("welcome_eng")	show_motd("welcome_ru")
-				if("welcome_ru")	show_motd("welcome_eng")
-				if("changelog_eng")	show_motd("changelog_ru")
-				if("changelog_ru")	show_motd("changelog_eng")
-				if("credits_eng")	show_motd("credits_ru")
-				if("credits_ru")	show_motd("credits_eng")
-				else	show_motd(href_list["old"])
 		if("wiki")		wiki()
 		if("forum")		forum()
 		else			show_motd(href_list["motd"])
@@ -236,4 +213,4 @@ Any-Mode: (hotkey doesn't need to be on)
 
 /client/verb/welcome()
 	set hidden = 1
-	show_motd("welcome_[language]")
+	show_motd("welcome")

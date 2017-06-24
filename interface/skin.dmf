@@ -1067,6 +1067,7 @@ window "chemdispenser_reagents"
 		size = 340x448
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		titlebar = false
 		statusbar = false
@@ -1081,6 +1082,7 @@ window "chemdispenser_reagents"
 		size = 64x32
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Dispense"
@@ -1094,6 +1096,7 @@ window "chemdispenser_reagents"
 		anchor1 = none
 		anchor2 = none
 		font-size = 15
+		background-color = none
 		is-visible = false
 		saved-params = ""
 		text = "Chloral Hydrate"
@@ -1237,7 +1240,7 @@ window "rpane"
 	elem "referenseb"
 		type = BUTTON
 		pos = 215,0
-		size = 80x20
+		size = 80x15
 		anchor1 = 34,0
 		anchor2 = 46,3
 		font-style = "bold"
