@@ -24,6 +24,9 @@
  * Text sanitization
  */
 
+proc/fix_html(var/t)
+	return replacetext(t, "ÿ", "&#1103;")
+
 //Used for preprocessing entered text
 /proc/sanitize(var/input, var/max_length = MAX_MESSAGE_LEN, var/encode = 1, var/trim = 1, var/extra = 1)
 	if(!input)
