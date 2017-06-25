@@ -1,4 +1,5 @@
 /var/obj/effect/lobby_image = new/obj/effect/lobby_image()
+var/list/accept_list = list()
 
 /obj/effect/lobby_image
 	name = "Baystation12"
@@ -20,8 +21,13 @@
 
 /mob/new_player/Login()
 	update_Login_details()	//handles setting lastKnownIP and computer_id for use by the ban systems as well as checking for multikeying
-	if(join_motd)
-		to_chat(src, "<div class=\"motd\">[join_motd]</div>")
+
+	spawn(20)
+		if(!(key in accept_list))
+			alert("ћы имеем актуальные правила и насто€тельно рекомендуем ¬ам ознакомиться с ними перед началом игры. Ќезнание правил не освобождает от ответственности.")
+			accept_list += key
+		client.show_motd("welcome")
+
 	to_chat(src, "<div class='info'>Game ID: <div class='danger'>[game_id]</div></div>")
 
 	if(!mind)
