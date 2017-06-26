@@ -203,10 +203,11 @@ Any-Mode: (hotkey doesn't need to be on)
 //Интерфейс приветствия
 //21459042ba2f1c10b56afbca2f55df86
 /client/Topic(href, href_list[])
-	switch(href_list["motd"])
-		if("wiki")		wiki()
-		if("forum")		forum()
-		else			show_motd(href_list["motd"])
+	if(href_list["motd"])
+		switch(href_list["motd"])
+			if("wiki")		wiki()
+			if("forum")		forum()
+			else		show_motd(href_list["motd"])
 
 	..()
 
