@@ -43,6 +43,7 @@
 	name = "surgery holosign"
 	desc = "Small wall-mounted holographic projector. This one reads SURGERY."
 	on_icon = "surgery"
+	layer = 5.1
 ////////////////////SWITCH///////////////////////////////////////
 
 /obj/machinery/button/holosign
