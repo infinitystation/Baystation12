@@ -197,7 +197,7 @@ Any-Mode: (hotkey doesn't need to be on)
 
 </body></html>
 	"}
-	usr << browse(fix_html(dat), "window=hub_welcome;size=1000x500;can_close=1;")
+	show_browser(usr, fix_html(dat), "window=hub_welcome;size=1000x500;can_close=1;")
 
 
 //Интерфейс приветствия
