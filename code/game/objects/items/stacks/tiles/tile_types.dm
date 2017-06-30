@@ -74,10 +74,10 @@
 	singular_name = "steel floor tile"
 	desc = "Those could work as a pretty decent throwing weapon." //why?
 	icon_state = "tile"
-	force = 4.0
+	force = 2.0
 	matter = list(DEFAULT_WALL_MATERIAL = 937.5)
-	throwforce = 6.0
-	throw_speed = 5
+	throwforce = 3.0
+	throw_speed = 3
 	throw_range = 20
 	flags = CONDUCT
 
