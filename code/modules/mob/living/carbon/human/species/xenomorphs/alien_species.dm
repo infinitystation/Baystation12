@@ -31,6 +31,7 @@
 
 	warning_low_pressure = 50
 	hazard_low_pressure = -1
+	darksight = 8
 
 	cold_level_1 = 50
 	cold_level_2 = -1
@@ -89,10 +90,10 @@
 
 	var/alien_number = 0
 	var/caste_name = "creature" // Used to update alien name.
-	var/weeds_heal_rate = 3     // Health regen on weeds.
+	var/weeds_heal_rate = 4     // Health regen on weeds.
 	var/weeds_plasma_rate = 5   // Plasma regen on weeds.
 
-	genders = list(NEUTER)
+	genders = list(FEMALE)
 
 /datum/species/xenos/handle_post_spawn(var/mob/living/carbon/human/H)
 	..(H)
@@ -145,7 +146,7 @@
 	var/heal_rate = weeds_heal_rate
 	var/mend_prob = 10
 	if (!H.resting)
-		heal_rate = weeds_heal_rate / 3
+		heal_rate = weeds_heal_rate / 4
 		mend_prob = 1
 
 	//first heal damages
@@ -219,7 +220,7 @@
 	name = "Xenophage Hunter"
 	weeds_plasma_rate = 5
 	caste_name = "hunter"
-	slowdown = -2
+	slowdown = -1.5
 	total_health = 300
 	base_color = "#001a33"
 
@@ -281,7 +282,7 @@
 	weeds_heal_rate = 5
 	weeds_plasma_rate = 20
 	caste_name = "queen"
-	slowdown = 4
+	slowdown = 3
 	rarity_value = 10
 
 	icobase = 'icons/mob/human_races/xenos/r_xenos_queen.dmi'
