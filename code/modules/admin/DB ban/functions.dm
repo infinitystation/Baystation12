@@ -38,14 +38,20 @@ datum/admins/proc/DB_staffwarn_remove(var/ckey)
 	to_chat(usr,"<span class='notice'>StaffWarn removed from DB</span>")
 	return 1
 
-//Either pass the mob you wish to ban in the 'banned_mob' attribute, or the banckey, banip and bancid variables. If both are passed, the mob takes priority! If a mob is not passed, banckey is the minimum that needs to be passed! banip and bancid are optional.
 datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = -1, var/reason, var/job = "", var/rounds = 0, var/banckey = null, var/banip = null, var/bancid = null)
+	if(!src || !src.owner)
+		return
+	_DB_ban_record(src.owner.ckey, src.owner.computer_id, src.owner.address, bantype, banned_mob, duration, reason, job, rounds, banckey, banip, bancid)
 
-	if(!check_rights(R_MOD,0) && !check_rights(R_BAN))	return
+//Either pass the mob you wish to ban in the 'banned_mob' attribute, or the banckey, banip and bancid variables. If both are passed, the mob takes priority! If a mob is not passed, banckey is the minimum that needs to be passed! banip and bancid are optional.
+/proc/_DB_ban_record(var/a_ckey, var/a_computerid, var/a_ip, var/bantype, var/mob/banned_mob, var/duration = -1, var/reason, var/job = "", var/rounds = 0, var/banckey = null, var/banip = null, var/bancid = null)
+
+	if(usr)
+		if(!check_rights(R_MOD,0) && !check_rights(R_BAN))	return
 
 	establish_db_connection()
 	if(!dbcon.IsConnected())
-		return
+		return 0
 
 	var/bantype_pass = 0
 	var/bantype_str
@@ -70,9 +76,9 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		if(BANTYPE_SOFTBAN)
 			bantype_str = "SOFT_TEMPBAN"
 			bantype_pass = 1
-	if( !bantype_pass ) return
-	if( !istext(reason) ) return
-	if( !isnum(duration) ) return
+	if( !bantype_pass ) return 0
+	if( !istext(reason) ) return 0
+	if( !isnum(duration) ) return 0
 
 	var/ckey
 	var/computerid
@@ -97,17 +103,9 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		validckey = 1
 	if(!validckey)
 		if(!banned_mob || (banned_mob && !IsGuestKey(banned_mob.key)))
-			message_admins("<font color='red'>[key_name_admin(usr)] attempted to ban [ckey], but [ckey] has not been seen yet. Please only ban actual players.</font>",1)
-			return
-
-	var/a_ckey
-	var/a_computerid
-	var/a_ip
-
-	if(src.owner && istype(src.owner, /client))
-		a_ckey = src.owner:ckey
-		a_computerid = src.owner:computer_id
-		a_ip = src.owner:address
+			if(usr)
+				message_admins("<font color='red'>[key_name_admin(usr)] attempted to ban [ckey], but [ckey] has not been seen yet. Please only ban actual players.</font>",1)
+			return 0
 
 	var/who
 	for(var/client/C in clients)
@@ -133,8 +131,12 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 	var/sql = "INSERT INTO erro_ban (`bantime`,`server_ip`,`server_port`,`round_id`,`bantype`,`reason`,`job`,`duration`,`expiration_time`,`ckey`,`computerid`,`ip`,`a_ckey`,`a_computerid`,`a_ip`,`who`,`adminwho`) VALUES (Now(), INET_ATON('[world.internet_address]'), '[world.port]', [world.port],'[bantype_str]', '[reason]', '[job]', [(duration)?"[duration]":"0"], Now() + INTERVAL [(duration>0) ? duration : 0] MINUTE, '[ckey]', '[computerid]', INET_ATON('[ip]'), '[a_ckey]', '[a_computerid]', INET_ATON('[a_ip]'), '[who]', '[adminwho]')"
 	var/DBQuery/query_insert = dbcon.NewQuery(sql)
 	query_insert.Execute()
-	to_chat(usr, "<span class='notice'>Ban saved to database.</span>")
-	message_admins("[key_name_admin(usr)] has added a [bantype_str] for [ckey] [(job)?"([job])":""] [(duration > 0)?"([duration] minutes)":""] with the reason: \"[reason]\" to the ban database.",1)
+	var/setter = a_ckey
+	if(usr)
+		to_chat(usr, "<span class='notice'>Ban saved to database.</span>")
+		setter = key_name_admin(usr)
+	message_admins("[setter] has added a [bantype_str] for [ckey] [(job)?"([job])":""] [(duration > 0)?"([duration] minutes)":""] with the reason: \"[reason]\" to the ban database.",1)
+	return 1
 
 
 

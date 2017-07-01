@@ -72,6 +72,8 @@
 /area/proc/air_doors_close()
 	if(!air_doors_activated)
 		air_doors_activated = 1
+		if(!all_doors)
+			return
 		for(var/obj/machinery/door/firedoor/E in all_doors)
 			if(!E.blocked)
 				if(E.operating)
@@ -83,6 +85,8 @@
 /area/proc/air_doors_open()
 	if(air_doors_activated)
 		air_doors_activated = 0
+		if(!all_doors)
+			return
 		for(var/obj/machinery/door/firedoor/E in all_doors)
 			if(!E.blocked)
 				if(E.operating)
@@ -97,6 +101,8 @@
 		fire = 1	//used for firedoor checks
 		updateicon()
 		mouse_opacity = 0
+		if(!all_doors)
+			return
 		for(var/obj/machinery/door/firedoor/D in all_doors)
 			if(!D.blocked)
 				if(D.operating)
@@ -110,6 +116,8 @@
 		fire = 0	//used for firedoor checks
 		updateicon()
 		mouse_opacity = 0
+		if(!all_doors)
+			return
 		for(var/obj/machinery/door/firedoor/D in all_doors)
 			if(!D.blocked)
 				if(D.operating)

@@ -429,6 +429,8 @@ Turf and target are seperate in case you want to teleport some distance from a t
 		moblist.Add(M)
 	for(var/mob/living/silicon/robot/M in sortmob)
 		moblist.Add(M)
+	for(var/mob/living/deity/M in sortmob)
+		moblist.Add(M)
 	for(var/mob/living/carbon/human/M in sortmob)
 		moblist.Add(M)
 	for(var/mob/living/carbon/brain/M in sortmob)
@@ -1040,6 +1042,8 @@ proc/is_hot(obj/item/W as obj)
 	if(locate(/obj/structure/bed, T))
 		. = TRUE
 	if(locate(/obj/structure/table, T))
+		. = TRUE
+	if(locate(/obj/effect/rune/, T))
 		. = TRUE
 
 	if(M == user)

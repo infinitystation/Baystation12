@@ -120,8 +120,6 @@
 	new /obj/item/clothing/shoes/sandal(src)
 	new /obj/item/clothing/shoes/sandal(src)
 	new /obj/item/clothing/shoes/sandal(src)
-	new /obj/item/clothing/under/resomi(src)
-	new /obj/item/clothing/under/resomi/white(src)
 	return
 
 
