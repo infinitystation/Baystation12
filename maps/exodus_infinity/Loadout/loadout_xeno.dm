@@ -5,9 +5,22 @@
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 
+/datum/gear/head/zhan_scarf
+	display_name = "Zhan headscarf (Tajara)"
+	path = /obj/item/clothing/head/tajaran/scarf
+	whitelisted = list(SPECIES_TAJARA)
+	sort_category = "Xenowear"
+
 /datum/gear/suit/unathi_mantle
 	display_name = "hide mantle (Unathi)"
 	path = /obj/item/clothing/suit/unathi/mantle
+	cost = 1
+	whitelisted = list(SPECIES_UNATHI)
+	sort_category = "Xenowear"
+
+/datum/gear/suit/unathi_robe
+	display_name = "roughspun robe (Unathi)"
+	path = /obj/item/clothing/suit/unathi/robe
 	cost = 1
 	whitelisted = list(SPECIES_UNATHI)
 	sort_category = "Xenowear"
