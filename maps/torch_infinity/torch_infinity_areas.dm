@@ -71,6 +71,10 @@
 	name = "\improper Fourth Deck Aft Hallway"
 	icon_state = "hallA"
 
+/area/hallway/primary/fourthdeck/ladders
+	name = "\improper Fourth Deck Ladders"
+	icon_state = "unknown"
+
 /area/maintenance/fourthdeck
 	name = "Fourth Deck Maintenance"
 	icon_state = "maintcentral"
@@ -114,6 +118,11 @@
 /area/hallway/primary/thirddeck/aft
 	name = "\improper Third Deck Aft Hallway"
 	icon_state = "hallA"
+
+/* For future ~Quardbreak
+/area/hallway/primary/thirddeck/ladders
+	name = "\improper Third Deck Ladders"
+	icon_state = "unknown" */
 
 /area/maintenance/thirddeck
 	name = "Third Deck Maintenance"
@@ -187,6 +196,11 @@
 	name = "\improper Second Deck Central Stairwell"
 	icon_state = "hallC2"
 
+/* For future ~Quardbreak
+/area/hallway/primary/seconddeck/ladders
+	name = "\improper Second Deck Ladders"
+	icon_state = "unknown" */
+
 /area/tcommsat/relay/seconddeck
 	name = "\improper Second Deck Relay"
 	icon_state = "tcomsatcham"
@@ -243,6 +257,14 @@
 	name = "\improper First Deck Aft Hallway"
 	icon_state = "hallA"
 
+/area/hallway/primary/firstdeck/ladders
+	name = "\improper First Deck Ladders"
+	icon_state = "unknown"
+
+/area/hallway/primary/firstdeck/stairs
+	name = "\improper First Deck Stairs"
+	icon_state = "unknown"
+
 /area/tcommsat/relay/firstdeck
 	name = "\improper First Deck Relay"
 	icon_state = "tcomsatcham"
@@ -281,6 +303,10 @@
 /area/hallway/primary/bridge/aft
 	name = "\improper Bridge Aft Hallway"
 	icon_state = "hallA"
+
+/area/hallway/primary/bridge/stairs
+	name = "\improper Bridge Stairs"
+	icon_state = "unknown"
 
 /area/tcommsat/relay/bridge
 	name = "\improper Bridge Relay"
