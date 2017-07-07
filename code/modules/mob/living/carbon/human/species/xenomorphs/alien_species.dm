@@ -9,6 +9,7 @@
 	hud_type = /datum/hud_data/alien
 	rarity_value = 3
 	health_hud_intensity = 1
+	blood_volume = 9999 //Nichego luchshe...
 
 	icon_template = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 	use_eye_icon = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'

@@ -76,7 +76,7 @@
 		var/obj/item/organ/internal/xenos/plasmavessel/P = internal_organs_by_name[BP_PLASMA]
 		if(P)
 			stat(null, "Phoron Stored: [P.stored_plasma]/[P.max_plasma]")
-		
+
 		var/obj/item/organ/internal/cell/potato = internal_organs_by_name[BP_CELL]
 		if(potato && potato.cell)
 			stat("Battery charge:", "[potato.get_charge()]/[potato.cell.maxcharge]")
@@ -874,16 +874,15 @@
 		src.verbs -= /mob/living/carbon/human/proc/remoteobserve
 		return
 
-	if(client.eye != client.mob)
-		remoteview_target = null
-		reset_view(0)
+//	if(client.eye != client.mob)
+//		remoteview_target = null
+//		reset_view(0)
 		return
-
+//
 	var/list/mob/creatures = list()
 
 	for(var/mob/living/carbon/h in world)
-		var/turf/temp_turf = get_turf(h)
-		if((temp_turf.z != 1 && temp_turf.z != 5) || h.stat!=CONSCIOUS) //Not on mining or the station. Or dead
+		if(h.stat!=CONSCIOUS) //Not on mining or the station. Or dead
 			continue
 		creatures += h
 
