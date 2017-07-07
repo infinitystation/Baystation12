@@ -15097,9 +15097,7 @@
 /turf/simulated/floor/shuttle/red,
 /area/shuttle/syndicate_elite/mothership)
 "aGR" = (
-/obj/machinery/computer/syndicate_elite_shuttle,
-/turf/simulated/floor/shuttle/red,
-/area/shuttle/syndicate_elite/mothership)
+/turf/simulated/floor/shuttle/red)
 "aGS" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/storage/box/bodybags,

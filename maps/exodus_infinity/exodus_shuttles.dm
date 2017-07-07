@@ -1,4 +1,5 @@
 // Escape shuttle and pods
+/*
 /datum/shuttle/ferry/emergency/centcom
 	name = "Escape"
 	location = 1
@@ -217,4 +218,4 @@
 	docking_controller_tag_station = "specops_shuttle_port"
 	docking_controller_tag_offsite = "specops_shuttle_fore"
 	dock_target_station = "specops_centcom_dock"
-	dock_target_offsite = "specops_dock_airlock"
+	dock_target_offsite = "specops_dock_airlock"*/

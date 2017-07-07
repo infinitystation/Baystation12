@@ -208,6 +208,8 @@ var/list/ai_verbs_default = list(
 
 /mob/living/silicon/ai/Destroy()
 	ai_list -= src
+	
+	. = ..()
 
 	qdel_null(announcement)
 	qdel_null(eyeobj)
@@ -217,8 +219,6 @@ var/list/ai_verbs_default = list(
 	qdel_null(aiRadio)
 	qdel_null(aiCamera)
 	hack = null
-
-	return ..()
 
 /mob/living/silicon/ai/proc/setup_icon()
 	var/file = file2text("config/custom_sprites.txt")

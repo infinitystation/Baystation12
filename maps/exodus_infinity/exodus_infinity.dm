@@ -16,7 +16,7 @@
 	#include "loadout/loadout_shoes.dm"
 	#include "loadout/loadout_suit.dm"
 	#include "loadout/loadout_uniform.dm"
-	#include "loadout/loadout_xeno.dm" //letta use exodus' loadout
+	#include "loadout/loadout_xeno.dm"
 
 	#include "../shared/exodus_torch/_include.dm"
 
