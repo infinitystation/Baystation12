@@ -101,6 +101,10 @@
 			return global.TELEBLOCK;
 		if("TWITCHBLOCK")
 			return global.TWITCHBLOCK;
+		if("ticket_panels")
+			return global.ticket_panels
+		if("tickets")
+			return global.tickets
 		if("Tier1Runes")
 			return global.Tier1Runes;
 		if("Tier2Runes")
@@ -191,6 +195,8 @@
 			return global.ai_list;
 		if("ai_names")
 			return global.ai_names;
+		if("all_grabobjects")
+			return global.all_grabobjects
 		if("ai_status_emotions")
 			return global.ai_status_emotions;
 		if("ai_verbs_default")
@@ -217,6 +223,8 @@
 			return global.all_antag_types_;
 		if("all_languages")
 			return global.all_languages;
+		if("all_grabstates")
+			return global.all_grabstates;
 		if("all_maps")
 			return global.all_maps;
 		if("all_money_accounts")
@@ -691,6 +699,8 @@
 			return global.hivemind_bank;
 		if("holder_mob_icon_cache")
 			return global.holder_mob_icon_cache;
+		if("holowarrant_users")
+			return global.holowarrant_users;
 		if("home_system_choices")
 			return global.home_system_choices;
 		if("host")
@@ -1712,6 +1722,8 @@
 			global.all_antag_types_=newval;
 		if("all_languages")
 			global.all_languages=newval;
+		if("all_grabstates")
+			global.all_grabstates=newval;
 		if("all_maps")
 			global.all_maps=newval;
 		if("all_money_accounts")
@@ -2186,6 +2198,8 @@
 			global.hivemind_bank=newval;
 		if("holder_mob_icon_cache")
 			global.holder_mob_icon_cache=newval;
+		if("holowarrant_users")
+			global.holowarrant_users=newval;
 		if("home_system_choices")
 			global.home_system_choices=newval;
 		if("host")
@@ -2550,6 +2564,8 @@
 			global.prisonsecuritywarp=newval;
 		if("prisonwarp")
 			global.prisonwarp=newval;
+		if("all_grabobjects")
+			global.all_grabobjects=newval;
 		if("prisonwarped")
 			global.prisonwarped=newval;
 		if("priv_all_access")
@@ -2880,6 +2896,10 @@
 			global.ticker=newval;
 		if("tickerProcess")
 			global.tickerProcess=newval;
+		if("ticket_panels")
+			global.ticket_panels=newval;
+		if("tickets")
+			global.tickets=newval;
 		if("total_lighting_corners")
 			global.total_lighting_corners=newval;
 		if("total_lighting_overlays")
@@ -3098,6 +3118,7 @@
 	"all_antag_spawnpoints_",
 	"all_antag_types_",
 	"all_languages",
+	"all_grabstates",
 	"all_maps",
 	"all_money_accounts",
 	"all_objectives",
@@ -3335,6 +3356,7 @@
 	"hit_appends",
 	"hivemind_bank",
 	"holder_mob_icon_cache",
+	"holowarrant_users",
 	"home_system_choices",
 	"host",
 	"href_logfile",
@@ -3439,6 +3461,7 @@
 	"meteors_threatening",
 	"midnight_rollovers",
 	"mil_branches",
+	"all_grabobjects",
 	"mining_floors",
 	"mining_walls",
 	"minor_air_alarms",
@@ -3682,6 +3705,8 @@
 	"tick_multiplier",
 	"ticker",
 	"tickerProcess",
+	"ticket_panels",
+	"tickets",
 	"total_lighting_corners",
 	"total_lighting_overlays",
 	"total_lighting_sources",
