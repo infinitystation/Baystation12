@@ -197,8 +197,9 @@
 /turf/simulated/floor/holofloor/tiled,
 /area/holodeck/source_emptycourt)
 "aaQ" = (
+/obj/effect/shuttle_landmark/skipjack/internim,
 /turf/space/transit/north,
-/area/rescue_base/transit)
+/area/space)
 "aaR" = (
 /turf/unsimulated/beach/sand,
 /area/beach)
@@ -544,8 +545,9 @@
 /turf/simulated/floor/holofloor/carpet,
 /area/holodeck/source_courtroom)
 "abJ" = (
+/obj/effect/shuttle_landmark/emergency/transit,
 /turf/space,
-/area/shuttle/escape/transit)
+/area/space)
 "abK" = (
 /obj/structure/holostool,
 /obj/effect/floor_decal/carpet{
@@ -701,8 +703,9 @@
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/holodeck/source_emptycourt)
 "aci" = (
+/obj/effect/shuttle_landmark/escape_pod/transit/pod3,
 /turf/space/transit/east,
-/area/shuttle/escape_pod5/transit)
+/area/space)
 "acj" = (
 /obj/effect/step_trigger/thrower{
 	direction = 1;
@@ -1157,8 +1160,9 @@
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/holodeck/source_boxingcourt)
 "adx" = (
+/obj/effect/shuttle_landmark/escape_pod/transit/pod5,
 /turf/space/transit/east,
-/area/shuttle/escape_pod3/transit)
+/area/space)
 "ady" = (
 /obj/item/clothing/head/collectable/paper,
 /turf/unsimulated/beach/sand,
@@ -2512,8 +2516,9 @@
 /turf/space/transit/north,
 /area/space)
 "agI" = (
+/obj/effect/shuttle_landmark/merc/internim,
 /turf/space/transit/north,
-/area/syndicate_station/transit)
+/area/space)
 "agJ" = (
 /obj/structure/undies_wardrobe,
 /turf/unsimulated/floor{
@@ -3294,8 +3299,9 @@
 /turf/space/transit/north,
 /area/skipjack_station/transit)
 "ahT" = (
+/obj/effect/shuttle_landmark/skipjack/internim,
 /turf/space,
-/area/skipjack_station/transit)
+/area/space)
 "ahU" = (
 /obj/structure/flora/ausbushes/palebush,
 /turf/unsimulated/floor{
@@ -3569,11 +3575,13 @@
 	},
 /area/rescue_base/base)
 "aiw" = (
+/obj/effect/shuttle_landmark/escape_pod/transit/pod1,
 /turf/space/transit/north,
-/area/shuttle/escape_pod1/transit)
+/area/space)
 "aix" = (
+/obj/effect/shuttle_landmark/escape_pod/transit/pod2,
 /turf/space/transit/north,
-/area/shuttle/escape_pod2/transit)
+/area/space)
 "aiy" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/storage/box/trackimp,
@@ -5122,6 +5130,7 @@
 	pixel_y = 0;
 	req_access = newlist()
 	},
+/obj/effect/shuttle_landmark/ert/start,
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
 "als" = (
@@ -11865,6 +11874,7 @@
 	tag_door = "supply_shuttle_hatch"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/shuttle_landmark/supply/centcom,
 /turf/simulated/floor/tiled,
 /area/supply/dock)
 "aAN" = (
@@ -15097,7 +15107,8 @@
 /turf/simulated/floor/shuttle/red,
 /area/shuttle/syndicate_elite/mothership)
 "aGR" = (
-/turf/simulated/floor/shuttle/red)
+/turf/simulated/floor/shuttle/red,
+/area/space)
 "aGS" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/storage/box/bodybags,
@@ -15703,13 +15714,13 @@
 /area/supply/dock)
 "aIg" = (
 /obj/structure/shuttle/engine/propulsion,
-/turf/simulated/floor/airless,
+/turf/space,
 /area/supply/dock)
 "aIh" = (
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "burst_l"
 	},
-/turf/simulated/floor/airless,
+/turf/space,
 /area/supply/dock)
 "aIi" = (
 /turf/simulated/shuttle/wall{
@@ -15784,7 +15795,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "burst_r"
 	},
-/turf/simulated/floor/airless,
+/turf/space,
 /area/supply/dock)
 "aIr" = (
 /obj/machinery/computer/station_alert/all,
@@ -17217,14 +17228,15 @@
 	req_access = list(13)
 	},
 /turf/unsimulated/floor{
-	icon_state = "vault";
-	dir = 5
+	icon_state = "plating";
+	name = "plating"
 	},
 /area/centcom/holding)
 "aLP" = (
+/obj/effect/floor_decal/industrial/warning/full,
 /turf/unsimulated/floor{
-	icon_state = "vault";
-	dir = 5
+	icon_state = "plating";
+	name = "plating"
 	},
 /area/centcom/holding)
 "aLQ" = (
@@ -17843,7 +17855,7 @@
 	name = "docking port controller";
 	pixel_x = 25;
 	pixel_y = 0;
-	req_one_access = list(13);
+	req_one_access = list(101);
 	tag_door = "centcom_dock_airlock"
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -19446,6 +19458,7 @@
 	pixel_y = -19
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/shuttle_landmark/emergency/start,
 /turf/simulated/floor/tiled,
 /area/shuttle/escape/centcom)
 "aQC" = (
@@ -20679,6 +20692,7 @@
 	name = "Ship Exterior";
 	req_access = list(201)
 	},
+/obj/effect/shuttle_landmark/merchant/start,
 /turf/simulated/floor/plating,
 /area/shuttle/merchant/home)
 "aTe" = (
@@ -21953,6 +21967,7 @@
 	pixel_y = 31;
 	req_access = list(150)
 	},
+/obj/effect/shuttle_landmark/skipjack/start,
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "aVQ" = (
@@ -25043,6 +25058,5389 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/escape/centcom)
+"bcF" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcG" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcH" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcI" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcJ" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcK" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcL" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcM" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcN" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcO" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcP" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcQ" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcR" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcS" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcT" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcU" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcV" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcW" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcX" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcY" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bcZ" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bda" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdb" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdc" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdd" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bde" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdf" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdg" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdh" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdi" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdj" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdk" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdl" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdm" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdn" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdo" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdp" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdq" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdr" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bds" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdt" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdu" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdv" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdw" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdx" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdy" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdz" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdA" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdB" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdC" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdD" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdE" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdF" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdG" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdH" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdI" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdJ" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdK" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdL" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdM" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdN" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdO" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdP" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdQ" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdR" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdS" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdT" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdU" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdV" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdW" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdX" = (
+/obj/effect/shuttle_landmark/mining/transit,
+/turf/space/transit/north,
+/area/space)
+"bdY" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bdZ" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bea" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beb" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bec" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bed" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bee" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bef" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beg" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beh" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bei" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bej" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bek" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bel" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bem" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"ben" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beo" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bep" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beq" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"ber" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bes" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bet" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beu" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bev" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bew" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bex" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bey" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bez" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beA" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beB" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beC" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beD" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beE" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beF" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beG" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beH" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beI" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beJ" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beK" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beL" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beM" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beN" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beO" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beP" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beQ" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beR" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beS" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beT" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beU" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beV" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beW" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beX" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beY" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"beZ" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bfa" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bfb" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bfc" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bfd" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bfe" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bff" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bfg" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bfh" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bfi" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bfj" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bfk" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bfl" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bfm" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bfn" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfo" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfp" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfq" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfr" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfs" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bft" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfu" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfv" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfw" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfx" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfy" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfz" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfA" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfB" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfC" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfD" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfE" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfF" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfG" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfH" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfI" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfJ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfK" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfL" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfM" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfN" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfO" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfP" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfQ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfR" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfS" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfT" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfU" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfV" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfW" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfX" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfY" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bfZ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bga" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgb" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgc" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgd" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bge" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgf" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bgg" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bgh" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgi" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgj" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgk" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgl" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgm" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgn" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgo" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgp" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgq" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgr" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgs" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgt" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgu" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgv" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgw" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgx" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgy" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgz" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgA" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgB" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgC" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgD" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgE" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgF" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgG" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgH" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgI" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgJ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgK" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgL" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgM" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgN" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgO" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgP" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgQ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgR" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgS" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgT" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgU" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgV" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgW" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgX" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgY" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bgZ" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bha" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bhb" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhc" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhd" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhe" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhf" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhg" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhh" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhi" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhj" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhk" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhl" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhm" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhn" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bho" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhp" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhq" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhr" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhs" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bht" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhu" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhv" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhw" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhx" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhy" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhz" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhA" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhB" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhC" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhD" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhE" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhF" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhG" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhH" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhI" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhJ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhK" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhL" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhM" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhN" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhO" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhP" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhQ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhR" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhS" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhT" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bhU" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bhV" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhW" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhX" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhY" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bhZ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bia" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bib" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bic" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bid" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bie" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bif" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"big" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bih" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bii" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bij" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bik" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bil" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bim" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bin" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bio" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bip" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biq" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bir" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bis" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bit" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biu" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biv" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biw" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bix" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biy" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biz" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biA" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biB" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biC" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biD" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biE" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biF" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biG" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biH" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biI" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biJ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biK" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biL" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biM" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biN" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"biO" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"biP" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biQ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biR" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biS" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biT" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biU" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"biV" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"biW" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"biX" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"biY" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"biZ" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bja" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjb" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjc" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjd" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bje" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjf" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjg" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjh" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bji" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjj" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjk" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjl" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjm" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjn" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjo" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bjp" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bjq" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bjr" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bjs" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bjt" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bju" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bjv" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bjw" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bjx" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bjy" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bjz" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bjA" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bjB" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjC" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjD" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjE" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjF" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjG" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjH" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bjI" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bjJ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjK" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjL" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjM" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjN" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjO" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bjP" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjQ" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjR" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjS" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjT" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjU" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjV" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjW" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjX" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjY" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bjZ" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bka" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkb" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkc" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkd" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bke" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkf" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkg" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkh" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bki" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bkj" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bkk" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bkl" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bkm" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bkn" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bko" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bkp" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bkq" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bkr" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bks" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bkt" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bku" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bkv" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkw" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkx" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bky" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkz" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkA" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkB" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bkC" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bkD" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkE" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkF" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkG" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkH" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkI" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkJ" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkK" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkL" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkM" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkN" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkO" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkP" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkQ" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkR" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkS" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkT" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkU" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkV" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bkW" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkX" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkY" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bkZ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bla" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blb" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blc" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bld" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"ble" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"blf" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"blg" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"blh" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bli" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"blj" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"blk" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bll" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"blm" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bln" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"blo" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"blp" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blq" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blr" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bls" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blt" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blu" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blv" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"blw" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"blx" = (
+/obj/effect/shuttle_landmark/engineering/transit,
+/turf/space/transit/east,
+/area/space)
+"bly" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blz" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blA" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blB" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blC" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blD" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blE" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"blF" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"blG" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"blH" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"blI" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"blJ" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"blK" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"blL" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"blM" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"blN" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"blO" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"blP" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"blQ" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"blR" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blS" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blT" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blU" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blV" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blW" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"blX" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"blY" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"blZ" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bma" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmb" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmc" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmd" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bme" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmf" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmg" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmh" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmi" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmj" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmk" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bml" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmm" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmn" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmo" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmp" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmq" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bmr" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bms" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmt" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmu" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmv" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmw" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmx" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmy" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bmz" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bmA" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bmB" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bmC" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bmD" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bmE" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bmF" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bmG" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bmH" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bmI" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bmJ" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bmK" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bmL" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmM" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmN" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmO" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmP" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmQ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bmR" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmS" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmT" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmU" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmV" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmW" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmX" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmY" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bmZ" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bna" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnb" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnc" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnd" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bne" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bnf" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bng" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bnh" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bni" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bnj" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bnk" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bnl" = (
+/obj/effect/shuttle_landmark/science/transit,
+/turf/space/transit/east,
+/area/space)
+"bnm" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bnn" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bno" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bnp" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bnq" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bnr" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bns" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bnt" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bnu" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bnv" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bnw" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bnx" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bny" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bnz" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bnA" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bnB" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bnC" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bnD" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bnE" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bnF" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bnG" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bnH" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bnI" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bnJ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bnK" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bnL" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bnM" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnN" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnO" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnP" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnQ" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnR" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnS" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnT" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnU" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnV" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnW" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnX" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnY" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bnZ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boa" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bob" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boc" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bod" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boe" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bof" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bog" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"boh" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boi" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boj" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bok" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bol" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bom" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bon" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"boo" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bop" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"boq" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bor" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bos" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bot" = (
+/obj/effect/landmark{
+	name = "DeitySpawn"
+	},
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bou" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bov" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bow" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"box" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"boy" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"boz" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"boA" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boB" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boC" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boD" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boE" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boF" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boG" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"boH" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"boI" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"boJ" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"boK" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"boL" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"boM" = (
+/obj/effect/landmark{
+	name = "DeitySpawn"
+	},
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"boN" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"boO" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"boP" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"boQ" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"boR" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"boS" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"boT" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boU" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boV" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boW" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boX" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boY" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"boZ" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bpa" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bpb" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpc" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpd" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpe" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpf" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpg" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bph" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bpi" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bpj" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bpk" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bpl" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bpm" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bpn" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bpo" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bpp" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bpq" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bpr" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bps" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bpt" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bpu" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpv" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpw" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpx" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpy" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpz" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpA" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bpB" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bpC" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bpD" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bpE" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bpF" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bpG" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bpH" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bpI" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bpJ" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bpK" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bpL" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bpM" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bpN" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpO" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpP" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpQ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpR" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpS" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpT" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bpU" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bpV" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpW" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpX" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpY" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bpZ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqa" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqb" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqc" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqd" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqe" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqf" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqg" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqh" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqi" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqj" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqk" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bql" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqm" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqn" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqo" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqp" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqq" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqr" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqs" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqt" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqu" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bqv" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bqw" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bqx" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bqy" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bqz" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bqA" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bqB" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bqC" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bqD" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bqE" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bqF" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bqG" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bqH" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqI" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqJ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqK" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqL" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqM" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqN" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bqO" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bqP" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqQ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqR" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqS" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqT" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqU" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bqV" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqW" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqX" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqY" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bqZ" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bra" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brb" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brc" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brd" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bre" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brf" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brg" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brh" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bri" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brj" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brk" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brl" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brm" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brn" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bro" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"brp" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"brq" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"brr" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"brs" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"brt" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bru" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"brv" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"brw" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"brx" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bry" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"brz" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"brA" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"brB" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brC" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brD" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brE" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brF" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brG" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brH" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"brI" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"brJ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brK" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brL" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brM" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brN" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brO" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"brP" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brQ" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brR" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brS" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brT" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brU" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brV" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brW" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brX" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brY" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"brZ" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsa" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsb" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsc" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsd" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bse" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsf" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsg" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsh" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsi" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bsj" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bsk" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bsl" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bsm" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bsn" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bso" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bsp" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bsq" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bsr" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bss" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bst" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bsu" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bsv" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsw" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsx" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsy" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsz" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsA" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsB" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bsC" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bsD" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsE" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsF" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsG" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsH" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsI" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsJ" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsK" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsL" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsM" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsN" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsO" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsP" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsQ" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsR" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsS" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsT" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsU" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsV" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"bsW" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsX" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsY" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bsZ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bta" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btb" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btc" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"btd" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bte" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"btf" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"btg" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bth" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bti" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"btj" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"btk" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"btl" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"btm" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"btn" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bto" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"btp" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btq" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btr" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bts" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btt" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btu" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btv" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"btw" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"btx" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bty" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btz" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btA" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btB" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btC" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btD" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"btE" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"btF" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"btG" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"btH" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"btI" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"btJ" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"btK" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"btL" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"btM" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"btN" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"btO" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"btP" = (
+/turf/unsimulated/floor{
+	name = "plating";
+	icon_state = "lava"
+	},
+/area/deity_spawn)
+"btQ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btR" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btS" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btT" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btU" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btV" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"btW" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"btX" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"btY" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"btZ" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bua" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bub" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"buc" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bud" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bue" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"buf" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bug" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"buh" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"bui" = (
+/turf/unsimulated/floor{
+	dir = 2;
+	icon = 'icons/misc/beach.dmi';
+	icon_state = "seashallow";
+	name = "water"
+	},
+/area/deity_spawn)
+"buj" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buk" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bul" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bum" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bun" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buo" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bup" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"buq" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bur" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bus" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"but" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buu" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buv" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buw" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bux" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buy" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buz" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buA" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buB" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buC" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buD" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buE" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buF" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buG" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buH" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buI" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buJ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buK" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buL" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buM" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buN" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buO" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buP" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buQ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buR" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buS" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buT" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buU" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buV" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buW" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buX" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buY" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"buZ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bva" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvb" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvc" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvd" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bve" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvf" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvg" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvh" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvi" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvj" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bvk" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bvl" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvm" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvn" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvo" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvp" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvq" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvr" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvs" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvt" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvu" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvv" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvw" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvx" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvy" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvz" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvA" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvB" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvC" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvD" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvE" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvF" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvG" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvH" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvI" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvJ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvK" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvL" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvM" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvN" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvO" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvP" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvQ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvR" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvS" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvT" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvU" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvV" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvW" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvX" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvY" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bvZ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwa" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwb" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwc" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwd" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bwe" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bwf" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwg" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwh" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwi" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwj" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwk" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwl" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwm" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwn" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwo" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwp" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwq" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwr" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bws" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwt" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwu" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwv" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bww" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwx" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwy" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwz" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwA" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwB" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwC" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwD" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwE" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwF" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwG" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwH" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwI" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwJ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwK" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwL" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwM" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwN" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwO" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwP" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwQ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwR" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwS" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwT" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwU" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwV" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwW" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bwX" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bwY" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bwZ" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxa" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxb" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxc" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxd" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxe" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxf" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxg" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxh" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxi" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxj" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxk" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxl" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxm" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxn" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxo" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxp" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxq" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxr" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxs" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxt" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxu" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxv" = (
+/obj/effect/step_trigger/teleporter/random/admin,
+/turf/space{
+	icon_state = "black"
+	},
+/area/space)
+"bxw" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxx" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxy" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxz" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxA" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxB" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxC" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxD" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxE" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxF" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxG" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxH" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxI" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxJ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxK" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxL" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxM" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxN" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxO" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxP" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxQ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxR" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxS" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxT" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxU" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxV" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxW" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxX" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxY" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bxZ" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bya" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"byb" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"byc" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"byd" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bye" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"byf" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"byg" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"byh" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"byi" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"byj" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"byk" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"byl" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"bym" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"byn" = (
+/turf/space/bluespace,
+/area/deity_spawn)
+"byo" = (
+/obj/effect/shuttle_landmark/escape_pod/out/pod1,
+/turf/space,
+/area/shuttle/escape_pod1/centcom)
+"byp" = (
+/obj/effect/shuttle_landmark/escape_pod/out/pod2,
+/turf/space,
+/area/shuttle/escape_pod2/centcom)
+"byq" = (
+/obj/effect/shuttle_landmark/escape_pod/out/pod5,
+/turf/space,
+/area/shuttle/escape_pod5/centcom)
+"byr" = (
+/obj/effect/shuttle_landmark/escape_pod/out/pod3,
+/turf/space,
+/area/shuttle/escape_pod3/centcom)
+"bys" = (
+/obj/effect/shuttle_landmark/merc/start,
+/turf/simulated/floor/shuttle/darkred,
+/area/syndicate_station/start)
+"byt" = (
+/obj/effect/shuttle_landmark/admin/start,
+/turf/simulated/floor/shuttle/red,
+/area/shuttle/administration/centcom)
+"byu" = (
+/obj/effect/shuttle_landmark/specops/start,
+/turf/simulated/floor/shuttle/red,
+/area/shuttle/specops/centcom)
+"byv" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/shuttle_landmark/ferry/start,
+/turf/simulated/floor/tiled,
+/area/shuttle/transport1/centcom)
+"byw" = (
+/obj/structure/flora/pottedplant/minitree,
+/turf/simulated/floor/shuttle/red,
+/area/skipjack_station/start)
+"byx" = (
+/obj/structure/flora/pottedplant/unusual,
+/turf/simulated/floor/shuttle/red,
+/area/skipjack_station/start)
 
 (1,1,1) = {"
 aaa
@@ -25082,62 +30480,62 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bcF
+bdg
+bdi
+bdk
+bdm
+bdo
+bdq
+bds
+bdu
+bdw
+bdy
+bdA
+bdC
+bdE
+bdG
+bdI
+bdK
+bdM
+bdO
+bdQ
+bdS
+bdU
+bdW
+bdZ
+beb
+bed
+bef
+beh
+bej
+bel
+ben
+bep
+ber
+bet
+bfj
+bfl
+bgf
+bgZ
+bhT
+biN
+bjH
+bkB
+blv
+bmq
+bnk
+bof
+boZ
+bpT
+bqN
+brH
+bsB
+btv
+bup
+bvj
+bwd
+bwX
 aaf
 aaf
 aaf
@@ -25339,7 +30737,7 @@ aai
 aai
 aai
 aai
-aaa
+bcG
 aai
 aai
 aai
@@ -25360,7 +30758,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -25368,33 +30765,34 @@ aai
 aai
 aai
 aai
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+beu
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bwY
 aaf
 aaf
 aaf
@@ -25596,7 +30994,7 @@ aai
 aai
 aai
 aai
-aaa
+bcH
 aai
 aai
 aai
@@ -25617,7 +31015,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -25625,33 +31022,34 @@ aai
 aai
 aai
 aai
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bev
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bwZ
 aaf
 aaf
 aaf
@@ -25853,7 +31251,7 @@ aai
 aai
 aai
 aai
-aaa
+bcI
 aai
 aai
 aai
@@ -25874,7 +31272,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -25882,33 +31279,34 @@ aai
 aai
 aai
 aai
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bew
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxa
 aaf
 aaf
 aaf
@@ -26110,7 +31508,7 @@ aai
 aai
 aai
 aai
-aaa
+bcJ
 aai
 aai
 aai
@@ -26131,7 +31529,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -26139,33 +31536,34 @@ aai
 aai
 aai
 aai
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bex
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxb
 aaf
 aaf
 aaf
@@ -26367,7 +31765,7 @@ aai
 aai
 aai
 aai
-aaa
+bcK
 aai
 aai
 aai
@@ -26388,7 +31786,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -26396,33 +31793,34 @@ aai
 aai
 aai
 aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aai
+aai
+aai
+aai
+aai
+bey
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxc
 aaf
 aaf
 aaf
@@ -26624,7 +32022,7 @@ aai
 aai
 aai
 aai
-aaa
+bcL
 aai
 aai
 aai
@@ -26645,7 +32043,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -26653,33 +32050,34 @@ aai
 aai
 aai
 aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aai
+aai
+aai
+aai
+aai
+bez
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxd
 aaf
 aaf
 aaf
@@ -26881,7 +32279,7 @@ aai
 aai
 aai
 aai
-aaa
+bcM
 aai
 aai
 aai
@@ -26902,7 +32300,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -26910,33 +32307,34 @@ aai
 aai
 aai
 aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aai
+aai
+aai
+aai
+aai
+beA
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxe
 aaf
 aaf
 aaf
@@ -27138,7 +32536,7 @@ aai
 aai
 aai
 aai
-aaa
+bcN
 aai
 aai
 aai
@@ -27159,7 +32557,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -27167,33 +32564,34 @@ aai
 aai
 aai
 aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aai
+aai
+aai
+aai
+aai
+beB
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxf
 aaf
 aaf
 aaf
@@ -27372,20 +32770,20 @@ abu
 abu
 abu
 abu
+aaf
+aaf
 abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 abv
 aai
 aai
@@ -27395,10 +32793,7 @@ aai
 aai
 aai
 aai
-aaa
-aai
-aai
-aai
+bcO
 aai
 aai
 aai
@@ -27417,40 +32812,43 @@ aai
 aai
 aai
 aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 aai
 aai
 aai
 aai
 aai
-aai
-aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+beC
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxg
 aaf
 aaf
 aaf
@@ -27623,27 +33021,54 @@ aai
 aai
 abu
 abu
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 abv
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+bcP
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+abv
+abv
+abv
+abv
+abv
+abv
+aai
+aai
+aai
+aai
+aaa
 aai
 aai
 aai
@@ -27658,56 +33083,29 @@ aai
 aai
 aai
 aai
-aai
-aai
-abv
-abv
-abv
-abv
-abv
-abv
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aaa
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+beD
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxh
 aaf
 aaf
 aaf
@@ -27879,27 +33277,27 @@ aai
 aai
 abu
 abu
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 abv
 abv
 aai
@@ -27909,7 +33307,7 @@ aai
 aai
 aai
 aai
-aaa
+bcQ
 aai
 aai
 aai
@@ -27918,11 +33316,17 @@ aai
 aai
 aai
 agH
-aiw
-aiw
-aiw
-aiw
+aai
+aai
+aai
+aai
 abv
+aai
+aai
+aai
+aai
+aaa
+aai
 aai
 aai
 aai
@@ -27936,35 +33340,29 @@ aai
 aai
 aai
 aai
-aai
-aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+beE
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxi
 aaf
 aaf
 aaf
@@ -28135,29 +33533,29 @@ aai
 aai
 aai
 abu
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-afs
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
 abv
 abv
 aai
@@ -28166,7 +33564,7 @@ aai
 aai
 aai
 aai
-aaa
+bcR
 aai
 aai
 aai
@@ -28175,11 +33573,17 @@ aai
 aai
 aai
 agH
+aai
 aiw
-aiw
-aiw
-aiw
+aai
+aai
 abv
+aai
+aai
+aai
+aai
+aaa
+aai
 aai
 aai
 aai
@@ -28193,35 +33597,29 @@ aai
 aai
 aai
 aai
-aai
-aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+beF
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+bnl
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxj
 aaf
 aaf
 aaf
@@ -28392,30 +33790,30 @@ aai
 aai
 aai
 abu
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-afs
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
 abv
 aai
 aai
@@ -28423,7 +33821,7 @@ aai
 aai
 aai
 aai
-aaa
+bcS
 aai
 aai
 aai
@@ -28432,11 +33830,17 @@ aai
 aai
 aai
 agC
-aiw
-aiw
-aiw
-aiw
+aai
+aai
+aai
+aai
 abv
+aai
+aai
+aai
+aai
+aaa
+aai
 aai
 aai
 aai
@@ -28450,35 +33854,29 @@ aai
 aai
 aai
 aai
-aai
-aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+beG
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxk
 aaf
 aaf
 aaf
@@ -28649,33 +34047,60 @@ aai
 aai
 aai
 abu
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-afs
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
 abv
 aai
 aai
+aai
+aai
+aai
+aai
+bcT
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+abv
+abv
+abv
+abv
+abv
+abv
+aai
+aai
+aai
+aai
+aaa
+aai
+aai
+aai
+bdX
 aai
 aai
 aai
@@ -28686,56 +34111,29 @@ aai
 aai
 aai
 aai
-aai
-aai
-abv
-abv
-abv
-abv
-abv
-abv
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aga
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+beH
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxl
 aaf
 aaf
 aaf
@@ -28906,30 +34304,30 @@ aai
 aai
 aai
 abv
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-afs
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
 abv
 aai
 aai
@@ -28937,62 +34335,62 @@ aai
 aai
 aai
 aai
+bcU
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 aaa
 aai
 aai
 aai
 aai
 aai
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aga
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+beI
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxm
 aaf
 aaf
 aaf
@@ -29163,30 +34561,30 @@ aai
 aai
 aai
 abv
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-afs
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
 abv
 aai
 aai
@@ -29194,7 +34592,7 @@ aai
 aai
 aai
 aai
-aaa
+bcV
 aai
 aai
 aai
@@ -29215,7 +34613,6 @@ aai
 aai
 aai
 aai
-aga
 aai
 aai
 aai
@@ -29223,33 +34620,34 @@ aai
 aai
 aai
 aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aai
+aai
+aai
+aai
+aai
+beJ
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxn
 aaf
 aaf
 aaf
@@ -29420,30 +34818,30 @@ aai
 aai
 aai
 abv
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-afs
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
 abv
 aai
 aai
@@ -29451,7 +34849,7 @@ aai
 aai
 aai
 aai
-aaa
+bcW
 aai
 aai
 aai
@@ -29460,10 +34858,10 @@ aai
 aai
 aai
 agH
-aix
-aix
-aix
-aix
+aai
+aai
+aai
+aai
 abv
 aai
 aai
@@ -29472,7 +34870,6 @@ aai
 aai
 aai
 aai
-aga
 aai
 aai
 aai
@@ -29480,33 +34877,34 @@ aai
 aai
 aai
 aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aai
+aai
+aai
+aai
+aai
+beK
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxo
 aaf
 aaf
 aaf
@@ -29677,29 +35075,29 @@ aai
 aai
 aai
 abv
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-afs
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
 abv
 abv
 aai
@@ -29708,7 +35106,7 @@ aai
 aai
 aai
 aai
-aaa
+bcX
 aai
 aai
 aai
@@ -29717,10 +35115,10 @@ aai
 aai
 aai
 agH
+aai
 aix
-aix
-aix
-aix
+aai
+aai
 abv
 aai
 aai
@@ -29729,7 +35127,6 @@ aai
 aai
 aai
 aai
-aga
 aai
 aai
 aai
@@ -29737,33 +35134,34 @@ aai
 aai
 aai
 aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aai
+aai
+aai
+aai
+aai
+beL
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxp
 aaf
 aaf
 aaf
@@ -29935,27 +35333,27 @@ aai
 aai
 abv
 abv
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 abv
 abv
 aai
@@ -29965,7 +35363,7 @@ aai
 aai
 aai
 aai
-aaa
+bcY
 aai
 aai
 aai
@@ -29974,10 +35372,10 @@ aai
 aai
 aai
 agC
-aix
-aix
-aix
-aix
+aai
+aai
+aai
+aai
 abv
 aai
 aai
@@ -29986,7 +35384,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -29994,33 +35391,34 @@ aai
 aai
 aai
 aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aai
+aai
+aai
+aai
+aai
+beM
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxq
 aaf
 aaf
 aaf
@@ -30193,26 +35591,26 @@ aai
 aai
 abv
 abv
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 abv
 aai
 aai
@@ -30222,7 +35620,7 @@ aai
 aai
 aai
 aai
-aaa
+bcZ
 aai
 aai
 aai
@@ -30243,7 +35641,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -30251,33 +35648,34 @@ aai
 aai
 aai
 aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aai
+aai
+aai
+aai
+aai
+beN
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxr
 aaf
 aaf
 aaf
@@ -30456,20 +35854,20 @@ abv
 abv
 abv
 abv
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
-abJ
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 abv
 aai
 aai
@@ -30479,7 +35877,7 @@ aai
 aai
 aai
 aai
-aaa
+bda
 aai
 aai
 aai
@@ -30500,7 +35898,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -30508,33 +35905,34 @@ aai
 aai
 aai
 aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aai
+aai
+aai
+aai
+aai
+beO
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxs
 aaf
 aaf
 aaf
@@ -30736,7 +36134,7 @@ aai
 aai
 aai
 aai
-aaa
+bdb
 aai
 aai
 aai
@@ -30757,7 +36155,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -30765,33 +36162,34 @@ aai
 aai
 aai
 aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aai
+aai
+aai
+aai
+aai
+beP
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxt
 aaf
 aaf
 aaf
@@ -30993,7 +36391,7 @@ aai
 aai
 aai
 aai
-aaa
+bdc
 aai
 aai
 aai
@@ -31014,7 +36412,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -31022,33 +36419,34 @@ aai
 aai
 aai
 aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aai
+aai
+aai
+aai
+aai
+beQ
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+bxu
 aaf
 aaf
 aaf
@@ -31250,7 +36648,7 @@ aai
 aai
 aai
 aai
-aaa
+bdd
 aai
 aai
 aai
@@ -31271,7 +36669,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -31279,33 +36676,34 @@ aai
 aai
 aai
 aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aai
+aai
+aai
+aai
+aai
+beR
+bfk
+bfm
+bgg
+bha
+bhU
+biO
+bjI
+bkC
+blw
+bmr
+bnm
+bog
+bpa
+bpU
+bqO
+brI
+bsC
+btw
+buq
+bvk
+bwe
+bxv
 aaf
 aaf
 aaf
@@ -31507,7 +36905,7 @@ aai
 aai
 aai
 aai
-aaa
+bde
 aai
 aai
 aai
@@ -31528,7 +36926,6 @@ aai
 aai
 aai
 aai
-aaa
 aai
 aai
 aai
@@ -31536,33 +36933,34 @@ aai
 aai
 aai
 aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aai
+aai
+aai
+aai
+aai
+beS
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -31764,62 +37162,62 @@ aai
 aai
 aai
 aai
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aae
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bdf
+bdh
+bdj
+bdl
+bdn
+bdp
+bdr
+bdt
+bdv
+bdx
+bdz
+bdB
+bdD
+bdF
+bdH
+bdJ
+bdL
+bdN
+bdP
+bdR
+bdT
+bdV
+bdY
+bea
+bec
+bee
+beg
+bei
+bek
+bem
+beo
+beq
+bes
+beT
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -32042,6 +37440,7 @@ aaf
 aaf
 aaf
 aaf
+aga
 aaf
 aaf
 aaf
@@ -32053,30 +37452,29 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+beU
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -32299,6 +37697,7 @@ aaf
 aaf
 aaf
 aaf
+aga
 aaf
 aaf
 aaf
@@ -32310,30 +37709,29 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+beV
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -32409,7 +37807,7 @@ asD
 ati
 aaf
 atT
-atT
+byq
 atT
 aaf
 aaf
@@ -32556,6 +37954,7 @@ aaf
 aaf
 aaf
 aaf
+aga
 aaf
 aaf
 aaf
@@ -32567,30 +37966,29 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+beW
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -32813,6 +38211,7 @@ aaf
 aaf
 aaf
 aaf
+aga
 aaf
 aaf
 aaf
@@ -32824,30 +38223,29 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+beX
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -33070,41 +38468,41 @@ aai
 aai
 aai
 aai
+aaa
 aai
 aai
 aai
 aai
 aai
 aai
-aai
-aae
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+beY
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -33334,34 +38732,34 @@ aaa
 aaa
 aaa
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+beZ
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -33591,34 +38989,34 @@ aai
 aai
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfa
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -33685,7 +39083,7 @@ aaf
 aaf
 aru
 aru
-aru
+byo
 aru
 asb
 asx
@@ -33848,34 +39246,34 @@ aai
 aai
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfb
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -34105,34 +39503,34 @@ aai
 aai
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfc
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -34362,34 +39760,34 @@ agC
 agC
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfd
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+blx
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -34605,48 +40003,48 @@ agH
 agC
 agC
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfe
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -34713,7 +40111,7 @@ aaf
 aaf
 arv
 arv
-arv
+byp
 arv
 asc
 asB
@@ -34855,55 +40253,55 @@ aai
 aai
 aai
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bff
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -35112,55 +40510,55 @@ aai
 aai
 aai
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfg
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -35369,55 +40767,55 @@ aaE
 aaE
 agC
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfh
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -35618,63 +41016,63 @@ aai
 aai
 agC
 agH
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
 agC
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfi
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -35874,64 +41272,64 @@ aai
 aai
 aai
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 agC
 agC
 agC
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aga
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -36007,7 +41405,7 @@ atk
 atl
 aaf
 atV
-atV
+byr
 atV
 aaf
 aaf
@@ -36131,64 +41529,64 @@ aai
 aai
 aai
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aga
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -36388,64 +41786,64 @@ aai
 aai
 aai
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aga
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -36645,64 +42043,64 @@ aai
 aai
 aai
 agC
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aga
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -36902,64 +42300,64 @@ aai
 aai
 aai
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aga
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -37159,64 +42557,64 @@ aai
 aai
 aai
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aga
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aac
+aga
 aaf
 aaf
 aaf
@@ -37390,15 +42788,15 @@ aac
 aac
 aac
 aca
-aci
-aci
-aci
+aac
+aac
+aac
 aca
 aac
 aca
-adx
-adx
-adx
+aac
+aac
+aac
 aca
 aac
 aac
@@ -37416,64 +42814,64 @@ aai
 aai
 aai
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 agC
 agC
 agC
 aai
 aaa
-aae
 aaf
 aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
+aga
 aaf
 aaf
 aaf
@@ -37647,15 +43045,15 @@ aac
 aac
 aac
 aca
+aac
 aci
-aci
-aci
+aac
 aca
 aac
 aca
-adx
-adx
-adx
+aac
+aac
+aac
 aca
 aac
 aac
@@ -37674,41 +43072,41 @@ aai
 aai
 agC
 agC
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
 agC
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aaa
+aaf
+aaf
+aaf
+aaf
+aaf
 aae
-aaf
-aaf
-aaf
-aaf
-aaf
 aaf
 aaf
 aaf
@@ -37904,15 +43302,15 @@ aac
 aac
 aac
 aca
-aci
-aci
-aci
+aac
+aac
+aac
 aca
 aac
 aca
+aac
 adx
-adx
-adx
+aac
 aca
 aac
 aac
@@ -37939,33 +43337,33 @@ aaE
 aaE
 aaE
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aaa
+aaf
+aaf
+aaf
+aaf
+aaf
 aae
-aaf
-aaf
-aaf
-aaf
-aaf
 aaf
 aaf
 aaf
@@ -38161,15 +43559,15 @@ aac
 aac
 aac
 aca
-aci
-aci
-aci
+aac
+aac
+aac
 aca
 aac
 aca
-adx
-adx
-adx
+aac
+aac
+aac
 aca
 aac
 aac
@@ -38196,33 +43594,33 @@ aai
 aai
 aai
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aaa
+aaf
+aaf
+aaf
+aaf
+aaf
 aae
-aaf
-aaf
-aaf
-aaf
-aaf
 aaf
 aaf
 aaf
@@ -38453,33 +43851,33 @@ aai
 aai
 aai
 aaE
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aaa
+aaf
+aaf
+aaf
+aaf
+aaf
 aae
-aaf
-aaf
-aaf
-aaf
-aaf
 aaf
 aaf
 aaf
@@ -38717,26 +44115,26 @@ agC
 agC
 agC
 agC
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
-agI
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 agC
 aai
 aaa
+aaf
+aaf
+aaf
+aaf
+aaf
 aae
-aaf
-aaf
-aaf
-aaf
-aaf
 aaf
 aaf
 aaf
@@ -38988,12 +44386,12 @@ agC
 agC
 aai
 aaa
+aaf
+aaf
+aaf
+aaf
+aaf
 aae
-aaf
-aaf
-aaf
-aaf
-aaf
 aaf
 aaf
 aaf
@@ -39245,12 +44643,12 @@ aai
 aai
 aai
 aaa
+aaf
+aaf
+aaf
+aaf
+aaf
 aae
-aaf
-aaf
-aaf
-aaf
-aaf
 aaf
 aaf
 aaf
@@ -39502,12 +44900,12 @@ aai
 aai
 aai
 aaa
+aaf
+aaf
+aaf
+aaf
+aaf
 aae
-aaf
-aaf
-aaf
-aaf
-aaf
 aaf
 aaf
 aaf
@@ -39759,12 +45157,12 @@ aai
 aai
 aai
 aaa
+aaf
+aaf
+aaf
+aaf
+aaf
 aae
-aaf
-aaf
-aaf
-aaf
-aaf
 aaf
 aaf
 aaf
@@ -40016,12 +45414,12 @@ aaa
 aaa
 aaa
 aaa
+aaf
+aaf
+aaf
+aaf
+aaf
 aae
-aaf
-aaf
-aaf
-aaf
-aaf
 aaf
 aaf
 aaf
@@ -40273,12 +45671,12 @@ aai
 aai
 aai
 aai
+aaf
+aaf
+aaf
+aaf
+aaf
 aae
-aaf
-aaf
-aaf
-aaf
-aaf
 aaf
 aaf
 aaf
@@ -40530,12 +45928,12 @@ aai
 aai
 aai
 aai
+aaf
+aaf
+aaf
+aaf
+aaf
 aae
-aaf
-aaf
-aaf
-aaf
-aaf
 aaf
 aaf
 aaf
@@ -42699,7 +48097,7 @@ avw
 avw
 awn
 avw
-avw
+byt
 avw
 awn
 avw
@@ -42986,7 +48384,7 @@ aCc
 aAG
 aHB
 aHV
-aHT
+byu
 aIz
 aHB
 aJi
@@ -43077,18 +48475,18 @@ aai
 aai
 aai
 aaE
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -43334,18 +48732,18 @@ aai
 aai
 aai
 aaE
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -43591,18 +48989,18 @@ aai
 aai
 aai
 aaE
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -43821,16 +49219,16 @@ aai
 aai
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -43848,18 +49246,18 @@ aai
 aai
 aai
 aaE
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aaE
 aaE
@@ -44021,7 +49419,7 @@ aJi
 aJx
 aJS
 aKy
-aKT
+byv
 aLD
 aJS
 aJx
@@ -44078,16 +49476,16 @@ aai
 aai
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -44108,19 +49506,19 @@ aaE
 aaE
 aaE
 aaE
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahT
-ahT
-ahT
-ahT
-ahT
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
 aaE
 aai
 aai
@@ -44335,16 +49733,16 @@ aai
 aai
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -44365,19 +49763,19 @@ aai
 aaE
 aaE
 aaE
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahT
-ahT
-ahT
-ahT
-ahT
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
 aaE
 aaE
 aai
@@ -44592,16 +49990,16 @@ aaE
 aaE
 aaE
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -44620,22 +50018,22 @@ aai
 aai
 aaE
 aaE
-ahT
-ahT
-ahT
-ahT
-ahT
-ahS
-ahS
-ahS
-ahS
-ahS
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
+aai
+aai
+aai
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaE
 aaE
 aai
@@ -44837,28 +50235,28 @@ aTt
 aaa
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -44876,24 +50274,24 @@ aai
 aai
 aai
 aaE
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
-ahS
-ahS
-ahS
-ahS
-ahS
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
+aai
+aai
+aai
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaE
 aai
 aai
@@ -45094,24 +50492,24 @@ aTt
 aaa
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aaE
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
 aaE
 aaE
 aaE
@@ -45133,24 +50531,24 @@ aai
 aai
 aai
 aaE
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
-ahS
-ahS
-ahS
-ahS
-ahS
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
+aai
+aai
+aai
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaE
 aai
 aai
@@ -45351,24 +50749,24 @@ aTt
 aaa
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -45390,24 +50788,24 @@ aai
 aai
 aai
 aaE
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
-ahS
-ahS
-ahS
-ahS
-ahS
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
+aai
+aai
+aai
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaE
 aai
 aai
@@ -45608,24 +51006,24 @@ aTt
 aaa
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -45647,24 +51045,24 @@ aai
 aai
 aai
 aaE
+aaf
+aaf
 ahT
-ahT
-ahT
-ahT
-ahT
-ahT
-ahS
-ahS
-ahS
-ahS
-ahS
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
+aaf
+aaf
+aaf
+aai
+aai
+aai
+aai
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaE
 aai
 aai
@@ -45865,24 +51263,24 @@ aTt
 aaa
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aaE
 aaE
@@ -45904,24 +51302,24 @@ aai
 aai
 aai
 aaE
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
-ahS
-ahS
-ahS
-ahS
-ahS
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
+aai
+aai
+aai
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaE
 aai
 aai
@@ -46122,26 +51520,26 @@ aTt
 aaa
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -46161,24 +51559,24 @@ aai
 aai
 aai
 aaE
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
-ahS
-ahS
-ahS
-ahS
-ahS
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
+aai
+aai
+aai
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaE
 aai
 aai
@@ -46387,18 +51785,18 @@ aaE
 aaE
 aaE
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -46418,24 +51816,24 @@ aai
 aai
 aai
 aaE
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
-ahS
-ahS
-ahS
-ahS
-ahS
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
+aai
+aai
+aai
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaE
 aai
 aai
@@ -46644,18 +52042,18 @@ aai
 aai
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -46676,22 +52074,22 @@ aai
 aai
 aaE
 aaE
-ahT
-ahT
-ahT
-ahT
-ahT
-ahS
-ahS
-ahS
-ahS
-ahS
-ahT
-ahT
-ahT
-ahT
-ahT
-ahT
+aaf
+aaf
+aaf
+aaf
+aaf
+aai
+aai
+aai
+aai
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaE
 aaE
 aai
@@ -46901,18 +52299,18 @@ aai
 aai
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -46935,19 +52333,19 @@ aai
 aaE
 aaE
 aaE
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahT
-ahT
-ahT
-ahT
-ahT
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
 aaE
 aaE
 aai
@@ -47158,18 +52556,18 @@ aaE
 aaE
 aaE
 aaE
+aai
+aai
 aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -47192,19 +52590,19 @@ aaE
 aaE
 aaE
 aaE
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahT
-ahT
-ahT
-ahT
-ahT
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aaf
+aaf
+aaf
+aaf
+aaf
 aaE
 aai
 aai
@@ -47407,26 +52805,26 @@ aaf
 aaa
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -47446,18 +52844,18 @@ aai
 aai
 aai
 aaE
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aaE
 aaE
@@ -47664,24 +53062,24 @@ aaf
 aaa
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aaE
 aaE
@@ -47703,18 +53101,18 @@ aai
 aai
 aai
 aaE
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -47921,24 +53319,24 @@ aaf
 aaa
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -47960,18 +53358,18 @@ aai
 aai
 aai
 aaE
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -48178,24 +53576,24 @@ aaf
 aaa
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -48217,18 +53615,18 @@ aai
 aai
 aai
 aaE
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
-ahS
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -48435,24 +53833,24 @@ aaf
 aaa
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aaE
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
 aaE
 aaE
 aaE
@@ -48692,28 +54090,28 @@ aaf
 aaa
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -48961,16 +54359,16 @@ aaE
 aaE
 aaE
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -49218,16 +54616,16 @@ aai
 aai
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -49475,16 +54873,16 @@ aai
 aai
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -49732,16 +55130,16 @@ aai
 aai
 aai
 aaE
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
-aaQ
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
+aai
 aaE
 aai
 aai
@@ -67008,27 +72406,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfn
+bgh
+bhb
+bhV
+biP
+bjJ
+bkD
+bly
+bms
+bnn
+boh
+bpb
+bpV
+bqP
+brJ
+bsD
+btx
+bur
+bvl
+bwf
+bxw
 aaf
 aaf
 aaf
@@ -67265,27 +72663,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfo
+bgi
+bhc
+bhW
+biQ
+bjK
+bkE
+blz
+bmt
+bno
+boi
+bpc
+bpW
+bqQ
+brK
+bsE
+bty
+bus
+bvm
+bwg
+bxx
 aaf
 aaf
 aaf
@@ -67522,27 +72920,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfp
+bgj
+bhd
+bhX
+biR
+bjL
+bkF
+blA
+bmu
+bnp
+boj
+bpd
+bpX
+bqR
+brL
+bsF
+btz
+but
+bvn
+bwh
+bxy
 aaf
 aaf
 aaf
@@ -67779,27 +73177,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfq
+bgk
+bhe
+bhY
+biS
+bjM
+bkG
+blB
+bmv
+bnq
+bok
+bpe
+bpY
+bqS
+brM
+bsG
+btA
+buu
+bvo
+bwi
+bxz
 aaf
 aaf
 aaf
@@ -68036,27 +73434,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfr
+bgl
+bhf
+bhZ
+biT
+bjN
+bkH
+blC
+bmw
+bnr
+bol
+bpf
+bpZ
+bqT
+brN
+bsH
+btB
+buv
+bvp
+bwj
+bxA
 aaf
 aaf
 aaf
@@ -68293,27 +73691,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfs
+bgm
+bhg
+bia
+biU
+bjO
+bkI
+blD
+bmx
+bns
+bom
+bpg
+bqa
+bqU
+brO
+bsI
+btC
+buw
+bvq
+bwk
+bxB
 aaf
 aaf
 aaf
@@ -68550,27 +73948,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bft
+bgn
+bhh
+bib
+biV
+bjP
+bkJ
+blE
+bmy
+bnt
+bon
+bph
+bqb
+bqV
+brP
+bsJ
+btD
+bux
+bvr
+bwl
+bxC
 aaf
 aaf
 aaf
@@ -68807,27 +74205,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfu
+bgo
+bhi
+bic
+biW
+bjQ
+bkK
+blF
+bmz
+bnu
+boo
+bpi
+bqc
+bqW
+brQ
+bsK
+btE
+buy
+bvs
+bwm
+bxD
 aaf
 aaf
 aaf
@@ -69064,27 +74462,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfv
+bgp
+bhj
+bid
+biX
+bjR
+bkL
+blG
+bmA
+bnv
+bop
+bpj
+bqd
+bqX
+brR
+bsL
+btF
+buz
+bvt
+bwn
+bxE
 aaf
 aaf
 aaf
@@ -69321,27 +74719,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfw
+bgq
+bhk
+bie
+biY
+bjS
+bkM
+blH
+bmB
+bnw
+boq
+bpk
+bqe
+bqY
+brS
+bsM
+btG
+buA
+bvu
+bwo
+bxF
 aaf
 aaf
 aaf
@@ -69578,27 +74976,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfx
+bgr
+bhl
+bif
+biZ
+bjT
+bkN
+blI
+bmC
+bnx
+bor
+bpl
+bqf
+bqZ
+brT
+bsN
+btH
+buB
+bvv
+bwp
+bxG
 aaf
 aaf
 aaf
@@ -69835,27 +75233,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfy
+bgs
+bhm
+big
+bja
+bjU
+bkO
+blJ
+bmD
+bny
+bos
+bpm
+bqg
+bra
+brU
+bsO
+btI
+buC
+bvw
+bwq
+bxH
 aaf
 amC
 amC
@@ -70092,27 +75490,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfz
+bgt
+bhn
+bih
+bjb
+bjV
+bkP
+blK
+bmE
+bnz
+bot
+bpn
+bqh
+brb
+brV
+bsP
+btJ
+buD
+bvx
+bwr
+bxI
 aaf
 amC
 amE
@@ -70349,27 +75747,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfA
+bgu
+bho
+bii
+bjc
+bjW
+bkQ
+blL
+bmF
+bnA
+bou
+bpo
+bqi
+brc
+brW
+bsQ
+btK
+buE
+bvy
+bws
+bxJ
 aaf
 amC
 amE
@@ -70606,27 +76004,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfB
+bgv
+bhp
+bij
+bjd
+bjX
+bkR
+blM
+bmG
+bnB
+bov
+bpp
+bqj
+brd
+brX
+bsR
+btL
+buF
+bvz
+bwt
+bxK
 aaf
 amC
 amE
@@ -70863,27 +76261,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfC
+bgw
+bhq
+bik
+bje
+bjY
+bkS
+blN
+bmH
+bnC
+bow
+bpq
+bqk
+bre
+brY
+bsS
+btM
+buG
+bvA
+bwu
+bxL
 aaf
 amC
 amE
@@ -71120,27 +76518,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfD
+bgx
+bhr
+bil
+bjf
+bjZ
+bkT
+blO
+bmI
+bnD
+box
+bpr
+bql
+brf
+brZ
+bsT
+btN
+buH
+bvB
+bwv
+bxM
 aaf
 amC
 amE
@@ -71377,27 +76775,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfE
+bgy
+bhs
+bim
+bjg
+bka
+bkU
+blP
+bmJ
+bnE
+boy
+bps
+bqm
+brg
+bsa
+bsU
+btO
+buI
+bvC
+bww
+bxN
 aaf
 amC
 amE
@@ -71634,27 +77032,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfF
+bgz
+bht
+bin
+bjh
+bkb
+bkV
+blQ
+bmK
+bnF
+boz
+bpt
+bqn
+brh
+bsb
+bsV
+btP
+buJ
+bvD
+bwx
+bxO
 aaf
 amC
 amE
@@ -71891,27 +77289,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfG
+bgA
+bhu
+bio
+bji
+bkc
+bkW
+blR
+bmL
+bnG
+boA
+bpu
+bqo
+bri
+bsc
+bsW
+btQ
+buK
+bvE
+bwy
+bxP
 aaf
 amC
 amE
@@ -72148,27 +77546,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfH
+bgB
+bhv
+bip
+bjj
+bkd
+bkX
+blS
+bmM
+bnH
+boB
+bpv
+bqp
+brj
+bsd
+bsX
+btR
+buL
+bvF
+bwz
+bxQ
 aaf
 amC
 amE
@@ -72405,27 +77803,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfI
+bgC
+bhw
+biq
+bjk
+bke
+bkY
+blT
+bmN
+bnI
+boC
+bpw
+bqq
+brk
+bse
+bsY
+btS
+buM
+bvG
+bwA
+bxR
 aaf
 amC
 amE
@@ -72662,27 +78060,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfJ
+bgD
+bhx
+bir
+bjl
+bkf
+bkZ
+blU
+bmO
+bnJ
+boD
+bpx
+bqr
+brl
+bsf
+bsZ
+btT
+buN
+bvH
+bwB
+bxS
 aaf
 amC
 amE
@@ -72919,27 +78317,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfK
+bgE
+bhy
+bis
+bjm
+bkg
+bla
+blV
+bmP
+bnK
+boE
+bpy
+bqs
+brm
+bsg
+bta
+btU
+buO
+bvI
+bwC
+bxT
 aaf
 amC
 amE
@@ -73176,27 +78574,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfL
+bgF
+bhz
+bit
+bjn
+bkh
+blb
+blW
+bmQ
+bnL
+boF
+bpz
+bqt
+brn
+bsh
+btb
+btV
+buP
+bvJ
+bwD
+bxU
 aaf
 amC
 amE
@@ -73433,27 +78831,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfM
+bgG
+bhA
+biu
+bjo
+bki
+blc
+blX
+bmR
+bnM
+boG
+bpA
+bqu
+bro
+bsi
+btc
+btW
+buQ
+bvK
+bwE
+bxV
 aaf
 amC
 amE
@@ -73690,27 +79088,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfN
+bgH
+bhB
+biv
+bjp
+bkj
+bld
+blY
+bmS
+bnN
+boH
+bpB
+bqv
+brp
+bsj
+btd
+btX
+buR
+bvL
+bwF
+bxW
 aaf
 amC
 amE
@@ -73947,27 +79345,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfO
+bgI
+bhC
+biw
+bjq
+bkk
+ble
+blZ
+bmT
+bnO
+boI
+bpC
+bqw
+brq
+bsk
+bte
+btY
+buS
+bvM
+bwG
+bxX
 aaf
 amC
 amE
@@ -74204,27 +79602,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfP
+bgJ
+bhD
+bix
+bjr
+bkl
+blf
+bma
+bmU
+bnP
+boJ
+bpD
+bqx
+brr
+bsl
+btf
+btZ
+buT
+bvN
+bwH
+bxY
 aaf
 amC
 amE
@@ -74461,27 +79859,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfQ
+bgK
+bhE
+biy
+bjs
+bkm
+blg
+bmb
+bmV
+bnQ
+boK
+bpE
+bqy
+brs
+bsm
+btg
+bua
+buU
+bvO
+bwI
+bxZ
 aaf
 amC
 amE
@@ -74718,27 +80116,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfR
+bgL
+bhF
+biz
+bjt
+bkn
+blh
+bmc
+bmW
+bnR
+boL
+bpF
+bqz
+brt
+bsn
+bth
+bub
+buV
+bvP
+bwJ
+bya
 aaf
 amC
 amE
@@ -74975,27 +80373,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfS
+bgM
+bhG
+biA
+bju
+bko
+bli
+bmd
+bmX
+bnS
+boM
+bpG
+bqA
+bru
+bso
+bti
+buc
+buW
+bvQ
+bwK
+byb
 aaf
 amC
 amE
@@ -75232,27 +80630,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfT
+bgN
+bhH
+biB
+bjv
+bkp
+blj
+bme
+bmY
+bnT
+boN
+bpH
+bqB
+brv
+bsp
+btj
+bud
+buX
+bvR
+bwL
+byc
 aaf
 amC
 amE
@@ -75489,27 +80887,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfU
+bgO
+bhI
+biC
+bjw
+bkq
+blk
+bmf
+bmZ
+bnU
+boO
+bpI
+bqC
+brw
+bsq
+btk
+bue
+buY
+bvS
+bwM
+byd
 aaf
 amC
 amE
@@ -75746,27 +81144,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfV
+bgP
+bhJ
+biD
+bjx
+bkr
+bll
+bmg
+bna
+bnV
+boP
+bpJ
+bqD
+brx
+bsr
+btl
+buf
+buZ
+bvT
+bwN
+bye
 aaf
 amC
 amE
@@ -76003,27 +81401,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfW
+bgQ
+bhK
+biE
+bjy
+bks
+blm
+bmh
+bnb
+bnW
+boQ
+bpK
+bqE
+bry
+bss
+btm
+bug
+bva
+bvU
+bwO
+byf
 aaf
 amC
 amE
@@ -76260,27 +81658,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfX
+bgR
+bhL
+biF
+bjz
+bkt
+bln
+bmi
+bnc
+bnX
+boR
+bpL
+bqF
+brz
+bst
+btn
+buh
+bvb
+bvV
+bwP
+byg
 aaf
 amC
 amE
@@ -76517,27 +81915,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfY
+bgS
+bhM
+biG
+bjA
+bku
+blo
+bmj
+bnd
+bnY
+boS
+bpM
+bqG
+brA
+bsu
+bto
+bui
+bvc
+bvW
+bwQ
+byh
 aaf
 amC
 amE
@@ -76774,27 +82172,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bfZ
+bgT
+bhN
+biH
+bjB
+bkv
+blp
+bmk
+bne
+bnZ
+boT
+bpN
+bqH
+brB
+bsv
+btp
+buj
+bvd
+bvX
+bwR
+byi
 aaf
 amC
 amE
@@ -77031,27 +82429,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bga
+bgU
+bhO
+biI
+bjC
+bkw
+blq
+bml
+bnf
+boa
+boU
+bpO
+bqI
+brC
+bsw
+btq
+buk
+bve
+bvY
+bwS
+byj
 aaf
 amC
 amE
@@ -77288,27 +82686,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bgb
+bgV
+bhP
+biJ
+bjD
+bkx
+blr
+bmm
+bng
+bob
+boV
+bpP
+bqJ
+brD
+bsx
+btr
+bul
+bvf
+bvZ
+bwT
+byk
 aaf
 amC
 amE
@@ -77545,27 +82943,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bgc
+bgW
+bhQ
+biK
+bjE
+bky
+bls
+bmn
+bnh
+boc
+boW
+bpQ
+bqK
+brE
+bsy
+bts
+bum
+bvg
+bwa
+bwU
+byl
 aaf
 amC
 amE
@@ -77802,27 +83200,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bgd
+bgX
+bhR
+biL
+bjF
+bkz
+blt
+bmo
+bni
+bod
+boX
+bpR
+bqL
+brF
+bsz
+btt
+bun
+bvh
+bwb
+bwV
+bym
 aaf
 amC
 amE
@@ -78059,27 +83457,27 @@ aaf
 aaf
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+bge
+bgY
+bhS
+biM
+bjG
+bkA
+blu
+bmp
+bnj
+boe
+boY
+bpS
+bqM
+brG
+bsA
+btu
+buo
+bvi
+bwc
+bwW
+byn
 aaf
 amC
 amE
@@ -82015,7 +87413,7 @@ asZ
 asH
 avf
 asH
-asH
+bys
 asH
 asH
 asH
@@ -86441,7 +91839,7 @@ aaf
 aaf
 aaf
 aUW
-aVo
+byw
 aVN
 aWx
 aWx
@@ -86698,7 +92096,7 @@ aaf
 aaf
 aaf
 aUX
-aVp
+aVo
 aVO
 aWx
 aWx
@@ -87469,7 +92867,7 @@ aaf
 aaf
 aaf
 aUW
-aVp
+byx
 aVR
 aWz
 aWx

@@ -1101,3 +1101,9 @@ area/rnd/test_area
 /area/construction
 	name = "\improper Engineering Construction Area"
 	icon_state = "yellow"
+
+/area/deity_spawn
+	name = "\improper Deity Spawn"
+	icon_state = "yellow"
+	requires_power = 0
+	dynamic_lighting = 0
