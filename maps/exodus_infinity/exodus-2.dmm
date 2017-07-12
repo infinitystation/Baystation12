@@ -33833,6 +33833,10 @@
 	icon_state = "warninghalf";
 	dir = 1
 	},
+/obj/machinery/door/airlock/medical{
+	name = "Morgue";
+	req_access = list(5)
+	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/starboard)
 "bkZ" = (
@@ -93879,7 +93883,7 @@ cFj
 cFm
 cFp
 bQs
-cFs
+cFq
 bRK
 aaa
 bxf
@@ -98715,7 +98719,7 @@ atO
 aup
 axQ
 ayP
-cFb
+ayP
 ayP
 ayP
 ayP
