@@ -16263,10 +16263,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/machinery/light{
+	icon_state = "tube1";
+	dir = 1
+	},
 /turf/simulated/floor/airless{
 	icon_state = "asteroidplating"
 	},
-/area/mine/unexplored)
+/area/mine/explored)
 "ZQ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -55909,8 +55913,8 @@ ac
 ac
 ac
 ac
-ZM
-ab
+CN
+bd
 ab
 ab
 ab
@@ -56166,8 +56170,8 @@ ac
 ac
 ac
 ac
-ZN
-ab
+CN
+bd
 ab
 ab
 ab
@@ -56423,8 +56427,8 @@ ac
 ac
 ac
 ac
-ZO
-ab
+CN
+bd
 ab
 ab
 ab
@@ -56678,10 +56682,10 @@ qF
 qF
 qF
 qF
+qF
 cB
-vb
 ZP
-ab
+bd
 ab
 ab
 ab
@@ -56935,10 +56939,10 @@ ad
 ad
 ad
 ad
+ad
 tY
-ac
-ZQ
-ab
+CN
+bd
 ab
 ab
 ab
@@ -57192,10 +57196,10 @@ ad
 ad
 ad
 ad
+ad
 tY
-ac
-ZR
-ab
+CN
+bd
 ab
 ab
 ab
@@ -57449,10 +57453,10 @@ ad
 ad
 ad
 ad
+ad
 tY
-ac
-ZS
-ab
+CN
+bd
 ab
 ab
 ab
@@ -57706,10 +57710,10 @@ ad
 ad
 ad
 ad
+ad
 tY
-ac
-ZT
-ab
+CN
+bd
 ab
 ab
 ab
@@ -57963,10 +57967,10 @@ BH
 ad
 ad
 ad
+ad
 tY
-ac
-ZU
-ab
+CN
+bd
 ab
 ab
 ab
@@ -58220,10 +58224,10 @@ Zp
 pA
 sT
 lG
+lG
 cB
-vb
-CN
-ab
+ZP
+bd
 ab
 ab
 ab
@@ -59254,13 +59258,13 @@ xP
 Ad
 tg
 bd
-ab
-ab
-ab
-ab
+bd
+bd
+bd
+bd
 mR
-ab
-ab
+bd
+bd
 ab
 ab
 ab
@@ -60025,12 +60029,12 @@ yd
 pA
 Zt
 bd
-ab
-ab
-ab
-ab
-ab
-ab
+bd
+bd
+bd
+bd
+bd
+bd
 ab
 ab
 ab
@@ -72821,8 +72825,8 @@ ac
 cB
 Zz
 ZC
-ZE
-ZG
+ZC
+ZC
 ZI
 cB
 ac
@@ -74617,7 +74621,7 @@ ac
 ac
 ac
 ac
-Zy
+Zx
 va
 va
 va
@@ -74877,8 +74881,8 @@ ac
 cB
 ZB
 ZD
-ZF
-ZH
+ZD
+ZD
 ZJ
 cB
 ac
