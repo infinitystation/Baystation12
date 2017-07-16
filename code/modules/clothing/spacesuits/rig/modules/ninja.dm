@@ -17,7 +17,7 @@
 	disruptive = 0
 
 	use_power_cost = 250 KILOWATTS
-	active_power_cost = 6 KILOWATTS		// 30 min battery life /w best (3kWh) cell
+	active_power_cost = 25 KILOWATTS
 	passive_power_cost = 0
 	module_cooldown = 10 SECONDS
 	origin_tech = list(TECH_MATERIAL = 5, TECH_POWER = 6, TECH_MAGNET = 6, TECH_ILLEGAL = 6, TECH_ENGINEERING = 7)
