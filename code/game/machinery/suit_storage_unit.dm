@@ -43,9 +43,7 @@
 
 /obj/machinery/suit_storage_unit/atmos
 	name = "Atmospherics Voidsuit Storage Unit"
-	SUIT_TYPE = /obj/item/clothing/suit/space/void/atmos
-	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/atmos
-	BOOTS_TYPE = /obj/item/clothing/shoes/magboots
+	SUIT_TYPE = /obj/item/clothing/suit/space/void/atmos/prepared
 	TANK_TYPE = /obj/item/weapon/tank/oxygen
 	MASK_TYPE = /obj/item/clothing/mask/breath
 	req_access = list(access_atmospherics)
@@ -57,9 +55,7 @@
 
 /obj/machinery/suit_storage_unit/engineering
 	name = "Engineering Voidsuit Storage Unit"
-	SUIT_TYPE = /obj/item/clothing/suit/space/void/engineering
-	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/engineering
-	BOOTS_TYPE = /obj/item/clothing/shoes/magboots
+	SUIT_TYPE = /obj/item/clothing/suit/space/void/engineering/prepared
 	TANK_TYPE = /obj/item/weapon/tank/oxygen
 	MASK_TYPE = /obj/item/clothing/mask/breath
 	req_access = list(access_engine)
@@ -77,9 +73,7 @@
 
 /obj/machinery/suit_storage_unit/medical
 	name = "Medical Voidsuit Storage Unit"
-	SUIT_TYPE = /obj/item/clothing/suit/space/void/medical
-	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/medical
-	BOOTS_TYPE = /obj/item/clothing/shoes/magboots
+	SUIT_TYPE = /obj/item/clothing/suit/space/void/medical/prepared
 	TANK_TYPE = /obj/item/weapon/tank/oxygen
 	MASK_TYPE = /obj/item/clothing/mask/breath
 	req_access = list(access_medical)
@@ -92,9 +86,7 @@
 
 /obj/machinery/suit_storage_unit/mining
 	name = "Mining Voidsuit Storage Unit"
-	SUIT_TYPE = /obj/item/clothing/suit/space/void/mining
-	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/mining
-	BOOTS_TYPE = /obj/item/clothing/shoes/magboots
+	SUIT_TYPE = /obj/item/clothing/suit/space/void/mining/prepared
 	TANK_TYPE = /obj/item/weapon/tank/oxygen
 	MASK_TYPE = /obj/item/clothing/mask/breath
 	req_access = list(access_mining)
@@ -107,9 +99,7 @@
 
 /obj/machinery/suit_storage_unit/science
 	name = "Excavation Voidsuit Storage Unit"
-	SUIT_TYPE = /obj/item/clothing/suit/space/void/excavation
-	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/excavation
-	BOOTS_TYPE = /obj/item/clothing/shoes/magboots
+	SUIT_TYPE = /obj/item/clothing/suit/space/void/excavation/prepared
 	TANK_TYPE = /obj/item/weapon/tank/oxygen
 	MASK_TYPE = /obj/item/clothing/mask/breath
 	req_access = list(access_xenoarch)
@@ -117,9 +107,7 @@
 
 /obj/machinery/suit_storage_unit/security
 	name = "Security Voidsuit Storage Unit"
-	SUIT_TYPE = /obj/item/clothing/suit/space/void/security
-	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/security
-	BOOTS_TYPE = /obj/item/clothing/shoes/magboots
+	SUIT_TYPE = /obj/item/clothing/suit/space/void/security/prepared
 	TANK_TYPE = /obj/item/weapon/tank/oxygen
 	MASK_TYPE = /obj/item/clothing/mask/breath
 	req_access = list(access_security)
@@ -132,9 +120,7 @@
 
 /obj/machinery/suit_storage_unit/merc
 	name = "Nonstandard Voidsuit Storage Unit"
-	SUIT_TYPE = /obj/item/clothing/suit/space/void/merc
-	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/merc
-	BOOTS_TYPE = /obj/item/clothing/shoes/magboots
+	SUIT_TYPE = /obj/item/clothing/suit/space/void/merc/prepared
 	TANK_TYPE = /obj/item/weapon/tank/oxygen
 	MASK_TYPE = /obj/item/clothing/mask/breath
 	req_access = list(access_syndicate)
