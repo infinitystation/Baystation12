@@ -789,7 +789,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 			if(!clean)
 				// Throw limb around.
 				if(src && istype(loc,/turf))
-					throw_at(get_edge_target_turf(src,pick(alldirs)),rand(1,3),30)
+					throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),30)
 				dir = 2
 		if(DROPLIMB_BURN)
 			new /obj/effect/decal/cleanable/ash(get_turf(victim))
@@ -808,16 +808,16 @@ Note that amputating the affected organ does in fact remove the infection from t
 					gore.basecolor =  use_blood_colour
 					gore.update_icon()
 
-			gore.throw_at(get_edge_target_turf(src,pick(alldirs)),rand(1,3),30)
+			gore.throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),30)
 
 			for(var/obj/item/organ/I in internal_organs)
 				I.removed()
 				if(istype(loc,/turf))
-					I.throw_at(get_edge_target_turf(src,pick(alldirs)),rand(1,3),30)
+					I.throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),30)
 
 			for(var/obj/item/I in src)
 				I.loc = get_turf(src)
-				I.throw_at(get_edge_target_turf(src,pick(alldirs)),rand(1,3),30)
+				I.throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),30)
 
 			qdel(src)
 
@@ -1310,10 +1310,10 @@ Note that amputating the affected organ does in fact remove the infection from t
 			bad = 1
 		if(!bad)
 			to_chat(user, "<span class='notice'>[H]'s skin is normal.</span>")
+	return 1
 
 /obj/item/organ/external/proc/jointlock(mob/living/carbon/human/target, mob/attacker)
 	var/obj/item/organ/external/E = src
-	attacker.visible_message("<span class='danger'>[attacker] [pick("bent", "twisted")] [target]'s [E.name] into a jointlock!</span>")
 
 	if(!E.can_feel_pain())
 		return
@@ -1322,5 +1322,5 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(armor < 100)
 		to_chat(target, "<span class='danger'>You feel extreme pain!</span>")
 
-		var/max_halloss = round(target.species.total_health * 0.8) //up to 80% of passing out
+		var/max_halloss = round(target.species.total_health * 0.8 * ((100 - armor) / 100)) //up to 80% of passing out, further reduced by armour
 		target.adjustHalLoss(Clamp(0, max_halloss - target.getHalLoss(), 30))

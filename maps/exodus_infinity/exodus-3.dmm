@@ -13747,7 +13747,7 @@
 	},
 /area/centcom/control)
 "aEn" = (
-/obj/machinery/computer/supply,
+/obj/item/modular_computer/console/preset/civilian,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},

@@ -69,7 +69,7 @@
 /mob/new_player/proc/Spawn_Prisoner()
 	var/mob/living/carbon/human/character = create_character()	//creates the human and transfers vars and mind
 
-	character.loc = pick(prisonwarp)
+	character.loc = pick(GLOB.prisonwarp)
 
 	setup_and_greet_prisoner(character)
 	qdel(src)

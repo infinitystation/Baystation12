@@ -38833,7 +38833,7 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "buh" = (
-/obj/machinery/computer/supply,
+/obj/item/modular_computer/console/preset/civilian,
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "bui" = (
@@ -45005,7 +45005,7 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/qm)
 "bFk" = (
-/obj/machinery/computer/supply,
+/obj/item/modular_computer/console/preset/civilian,
 /turf/simulated/floor/tiled,
 /area/quartermaster/qm)
 "bFl" = (
@@ -50429,7 +50429,6 @@
 	},
 /obj/item/weapon/circuitboard/arcade/battle,
 /obj/item/weapon/circuitboard/arcade/orion_trail,
-/obj/item/weapon/circuitboard/supplycomp,
 /turf/simulated/floor/plating,
 /area/storage/tech)
 "bPp" = (
@@ -51202,7 +51201,6 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
-/obj/item/weapon/circuitboard/supplycomp,
 /turf/simulated/floor/plating,
 /area/storage/tech)
 "bQE" = (

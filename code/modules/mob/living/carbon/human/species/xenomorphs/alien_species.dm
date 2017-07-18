@@ -12,7 +12,6 @@
 	blood_volume = 9999 //Nichego luchshe...
 
 	icon_template = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
-	use_eye_icon = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 	has_floating_eyes = TRUE
 
 	// temp until someone who isn't me makes some for this icon set

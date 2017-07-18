@@ -15,6 +15,8 @@
 	var/last_target
 	var/special_target_functional = 1
 
+	var/attacking = 0
+
 	w_class = ITEM_SIZE_NO_CONTAINER
 /*
 	This section is for overrides of existing procs.
@@ -142,7 +144,11 @@
 	current_grab.handle_resist(src)
 
 /obj/item/grab/proc/adjust_position()
-	current_grab.adjust_position(src)
+	if(!assailant.Adjacent(affecting))
+		qdel(src)
+		return 0
+	else
+		current_grab.adjust_position(src)
 
 /obj/item/grab/proc/reset_position()
 	current_grab.reset_position(src)
@@ -184,3 +190,7 @@
 
 /obj/item/grab/proc/assailant_moved()
 	current_grab.assailant_moved(src)
+
+/obj/item/grab/proc/resolve_openhand_attack()
+		return current_grab.resolve_openhand_attack(src)
+

@@ -46,7 +46,7 @@
 	if( findtext(href,"<script",1,0) )
 		world.log << "Attempted use of scripts within a topic call, by [src]"
 		message_admins("Attempted use of scripts within a topic call, by [src]")
-		//del(usr)
+		//qdel(usr)
 		return
 
 	//Admin PM
@@ -132,13 +132,13 @@
 		to_chat(src, "<span class='warning'>You are running an older version of BYOND than the server and may experience issues.</span>")
 		to_chat(src, "<span class='warning'>It is recommended that you update to at least [DM_VERSION] at http://www.byond.com/download/.</span>")
 	to_chat(src, "<span class='warning'>If the title screen is black, resources are still downloading. Please be patient until the title screen appears.</span>")
-	clients += src
-	directory[ckey] = src
+	GLOB.clients += src
+	GLOB.ckey_directory[ckey] = src
 
 	//Admin Authorisation
 	holder = admin_datums[ckey]
 	if(holder)
-		admins += src
+		GLOB.admins += src
 		holder.owner = src
 		var/sql_ckey = sanitizeSQL(src.ckey)
 		spawn for()
@@ -213,11 +213,12 @@
 	//DISCONNECT//
 	//////////////
 /client/Del()
+	ticket_panels -= src
 	if(holder)
 		holder.owner = null
-		admins -= src
-	directory -= ckey
-	clients -= src
+		GLOB.admins -= src
+	GLOB.ckey_directory -= ckey
+	GLOB.clients -= src
 	return ..()
 
 /client/Destroy()
@@ -286,7 +287,7 @@
 	var/admin_rank = "Player"
 	if(src.holder)
 		admin_rank = src.holder.rank
-		for(var/client/C in clients)
+		for(var/client/C in GLOB.clients)
 			if(C.staffwarn)
 				C.mob.send_staffwarn(src, "is connected", 0)
 

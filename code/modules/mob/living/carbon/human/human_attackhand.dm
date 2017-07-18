@@ -54,6 +54,13 @@
 	if(istype(M,/mob/living/carbon))
 		M.spread_disease_to(src, "Contact")
 
+	if(istype(H))
+		for (var/obj/item/grab/G in H)
+			if (G.assailant == H && G.affecting == src)
+				if(G.resolve_openhand_attack())
+					return 1
+
+
 	switch(M.a_intent)
 		if(I_HELP)
 			if(istype(H) && (is_asystole() || (status_flags & FAKEDEATH)))
@@ -101,7 +108,6 @@
 			return 1
 
 		if(I_GRAB)
-			message_admins("[H.name] is grabbing [src]")
 			visible_message("<span class='danger'>[M] attempted to grab \the [src]!</span>")
 			return H.make_grab(H, src)
 
@@ -184,7 +190,7 @@
 						attack_message = "[H] attempted to strike [src], but missed!"
 					else
 						attack_message = "[H] attempted to strike [src], but \he rolled out of the way!"
-						src.set_dir(pick(cardinal))
+						src.set_dir(pick(GLOB.cardinal))
 					miss_type = 1
 
 			if(!miss_type && block)
