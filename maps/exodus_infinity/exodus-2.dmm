@@ -69074,7 +69074,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/engineering)
+/area/maintenance/engi_shuttle)
 "cwo" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -69512,10 +69512,24 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/structure/sign/warning/secure_area,
 /turf/simulated/wall,
-/area/engineering)
+/area/maintenance/engi_shuttle)
 "cxb" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/plating,
+/area/maintenance/engi_shuttle)
+"cxc" = (
 /obj/structure/table/rack{
 	dir = 1
 	},
@@ -69531,18 +69545,12 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/turf/simulated/floor/plating,
-/area/engineering)
-"cxc" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
+/obj/effect/floor_decal/industrial/warning/corner{
+	icon_state = "warningcorner";
+	dir = 8
 	},
-/obj/structure/closet/emcloset,
 /turf/simulated/floor/plating,
-/area/engineering)
+/area/maintenance/engi_shuttle)
 "cxd" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -69550,6 +69558,7 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
+/obj/structure/closet/emcloset,
 /turf/simulated/floor/plating,
 /area/maintenance/engi_shuttle)
 "cxe" = (
@@ -69929,8 +69938,18 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engine_airlock)
 "cxQ" = (
-/turf/simulated/wall/r_wall,
-/area/engineering)
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/engineering{
+	name = "Shield Generator";
+	req_access = list(11)
+	},
+/obj/effect/floor_decal/industrial/warning/half,
+/turf/simulated/floor/plating,
+/area/maintenance/engi_shuttle)
 "cxR" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1380;
@@ -73686,6 +73705,54 @@
 /obj/effect/shuttle_landmark/engineering/start,
 /turf/simulated/floor/plating,
 /area/shuttle/constructionsite/station)
+"cFw" = (
+/obj/structure/sign/warning/secure_area,
+/turf/simulated/wall/r_wall,
+/area/maintenance/engi_shuttle)
+"cFx" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/engi_shuttle)
+"cFy" = (
+/obj/machinery/camera/network/engineering{
+	c_tag = "Shield Generator";
+	dir = 8;
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/engi_shuttle)
+"cFz" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/engi_shuttle)
+"cFA" = (
+/obj/machinery/power/shield_generator,
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/effect/floor_decal/industrial/warning/full,
+/turf/simulated/floor/plating,
+/area/maintenance/engi_shuttle)
 
 (1,1,1) = {"
 aaa
@@ -104706,12 +104773,12 @@ ctt
 cuf
 cuG
 cme
-cwo
+cwp
 cxb
 cxQ
-aaa
-aaa
-aah
+cFx
+cFz
+cvy
 aal
 aaa
 cAI
@@ -104963,12 +105030,12 @@ cml
 cml
 cme
 cme
-cwo
+cwp
 cxc
-cxQ
-aah
-aaa
-aaa
+cFw
+cFy
+cFA
+cvy
 czZ
 cAy
 cAy

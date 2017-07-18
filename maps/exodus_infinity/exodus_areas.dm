@@ -1107,3 +1107,10 @@ area/rnd/test_area
 	icon_state = "yellow"
 	requires_power = 0
 	dynamic_lighting = 0
+
+/area/admin_prison
+	name = "\improper Admin Prison"
+	dynamic_lighting = 0
+	requires_power = 0
+
+
