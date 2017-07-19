@@ -619,6 +619,29 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod5
 	number = 5
 
+/datum/shuttle/autodock/ferry/escape_pod/pod6
+	warmup_time = 10
+	shuttle_area = /area/shuttle/escape_pod6
+	number = 6
+/obj/effect/shuttle_landmark/escape_pod/start/pod6
+	number = 6
+/obj/effect/shuttle_landmark/escape_pod/out/pod6
+	number = 6
+/obj/effect/shuttle_landmark/escape_pod/transit/pod6
+	number = 6
+
+/datum/shuttle/autodock/ferry/escape_pod/pod7
+	warmup_time = 10
+	shuttle_area = /area/shuttle/escape_pod7
+	number = 7
+/obj/effect/shuttle_landmark/escape_pod/start/pod7
+	number = 7
+/obj/effect/shuttle_landmark/escape_pod/out/pod7
+	number = 7
+/obj/effect/shuttle_landmark/escape_pod/transit/pod7
+	number = 7
+
+
 /datum/shuttle/autodock/ferry/emergency
 
 

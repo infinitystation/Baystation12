@@ -4892,7 +4892,7 @@
 /turf/simulated/floor/tiled,
 /area/outpost/research/isolation_monitoring)
 "lv" = (
-/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/anomaly_container,
 /turf/simulated/floor/tiled/dark,
 /area/outpost/research/anomaly_storage)
 "lw" = (
@@ -16397,6 +16397,10 @@
 	},
 /turf/simulated/wall,
 /area/outpost/mining_main/east_hall)
+"ZX" = (
+/obj/structure/anomaly_container,
+/turf/simulated/floor/tiled/airless/asteroid,
+/area/mine/explored)
 
 (1,1,1) = {"
 aa
@@ -55019,7 +55023,7 @@ Xb
 gg
 gg
 ko
-mW
+ZX
 ad
 ad
 ad
@@ -63753,7 +63757,7 @@ ld
 kb
 kt
 kW
-lv
+kU
 gp
 ab
 bd

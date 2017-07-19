@@ -1113,4 +1113,10 @@ area/rnd/test_area
 	dynamic_lighting = 0
 	requires_power = 0
 
+/area/shuttle/escape_pod6
+	name = "\improper Escape Pod Six"
+	flags = AREA_RAD_SHIELDED
 
+/area/shuttle/escape_pod7
+	name = "\improper Escape Pod Seven"
+	flags = AREA_RAD_SHIELDED
