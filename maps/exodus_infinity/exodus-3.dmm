@@ -1,5 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-//Model dictionary trimmed on: 19-07-2017 01:16 (UTC)
 "aaa" = (
 /obj/effect/step_trigger/teleporter/random/admin,
 /turf/space/transit/north,
@@ -14985,6 +14984,7 @@
 	id = "crescent_checkpoint_access";
 	name = "Crescent Checkpoint"
 	},
+/obj/effect/floor_decal/industrial/warning/half,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -15282,6 +15282,7 @@
 	id = "crescent_checkpoint_access";
 	name = "Crescent Checkpoint"
 	},
+/obj/effect/floor_decal/industrial/warning/half,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -15592,6 +15593,11 @@
 	name = "Holding Cell";
 	req_access = list(2)
 	},
+/obj/effect/floor_decal/industrial/warning/half{
+	tag = "icon-warninghalf (EAST)";
+	icon_state = "warninghalf";
+	dir = 4
+	},
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -15608,6 +15614,7 @@
 	id = "CentComPort";
 	name = "Security Doors"
 	},
+/obj/effect/floor_decal/industrial/warning/half,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -15947,6 +15954,7 @@
 	name = "Security Doors";
 	opacity = 0
 	},
+/obj/effect/floor_decal/industrial/warning/half,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -16614,6 +16622,9 @@
 /obj/effect/floor_decal/corner/green{
 	dir = 4
 	},
+/obj/structure/bed/chair{
+	dir = 8
+	},
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -17130,6 +17141,11 @@
 /obj/machinery/door/airlock/glass{
 	name = "Arrivals Processing"
 	},
+/obj/effect/floor_decal/industrial/warning/half{
+	tag = "icon-warninghalf (EAST)";
+	icon_state = "warninghalf";
+	dir = 4
+	},
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -17458,6 +17474,11 @@
 "aMm" = (
 /obj/machinery/door/airlock/glass{
 	name = "Arrivals Bar"
+	},
+/obj/effect/floor_decal/industrial/warning/half{
+	tag = "icon-warninghalf (EAST)";
+	icon_state = "warninghalf";
+	dir = 4
 	},
 /turf/unsimulated/floor{
 	icon_state = "steel"
@@ -19291,12 +19312,17 @@
 /area/centcom/holding)
 "aQc" = (
 /obj/structure/sign/redcross,
-/turf/unsimulated/wall,
+/obj/effect/wingrille_spawn/reinforced/crescent,
+/turf/unsimulated/floor{
+	icon_state = "plating";
+	name = "plating"
+	},
 /area/centcom/holding)
 "aQd" = (
 /obj/machinery/door/airlock/glass_medical{
 	name = "Arrivals Medbay"
 	},
+/obj/effect/floor_decal/industrial/warning/half,
 /turf/unsimulated/floor{
 	icon_state = "white"
 	},
@@ -27072,6 +27098,7 @@
 /obj/effect/floor_decal/corner/green{
 	dir = 5
 	},
+/obj/machinery/vending/snack,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -27080,6 +27107,7 @@
 /obj/effect/floor_decal/corner/green{
 	dir = 5
 	},
+/obj/machinery/vending/coffee,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -27088,12 +27116,16 @@
 /obj/effect/floor_decal/corner/green{
 	dir = 5
 	},
+/obj/machinery/vending/cigarette,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
 /area/centcom/holding)
 "bhZ" = (
 /obj/effect/floor_decal/corner/green,
+/obj/structure/bed/chair{
+	dir = 8
+	},
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -27150,6 +27182,7 @@
 /obj/effect/floor_decal/corner/green{
 	dir = 10
 	},
+/obj/structure/flora/pottedplant/minitree,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -27157,6 +27190,9 @@
 "big" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 10
+	},
+/obj/structure/bed/chair{
+	dir = 1
 	},
 /turf/unsimulated/floor{
 	icon_state = "steel"
@@ -27180,6 +27216,90 @@
 	},
 /turf/simulated/floor/tiled,
 /area/shuttle/escape/centcom)
+"bij" = (
+/obj/effect/floor_decal/corner/green{
+	dir = 6
+	},
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/holding)
+"bik" = (
+/obj/effect/floor_decal/corner/green{
+	dir = 6
+	},
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/holding)
+"bil" = (
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/obj/structure/bed/chair,
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/holding)
+"bim" = (
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/obj/structure/bed/chair,
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/holding)
+"bin" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/obj/structure/flora/pottedplant/stoutbush,
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/holding)
+"bio" = (
+/obj/effect/floor_decal/corner/green{
+	dir = 6
+	},
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/holding)
+"bip" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/green{
+	dir = 10
+	},
+/obj/structure/flora/pottedplant/stoutbush,
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/holding)
+"biq" = (
+/obj/structure/bed/roller,
+/obj/machinery/vending/wallmed1{
+	name = "Emergency NanoMed";
+	pixel_x = 0;
+	pixel_y = 29
+	},
+/turf/unsimulated/floor{
+	icon_state = "white"
+	},
+/area/centcom/holding)
 
 (1,1,1) = {"
 aaa
@@ -50524,6 +50644,8 @@ aIc
 aIq
 aIG
 aGV
+aNz
+aGV
 aGV
 aGV
 aGV
@@ -50532,8 +50654,6 @@ aGV
 aGV
 aGV
 aNz
-aGV
-aGV
 aGV
 aQd
 aQH
@@ -51038,19 +51158,19 @@ aId
 aIs
 aHN
 aHu
-aHu
-aHu
+bij
+bik
 aKO
 aGV
 aGV
 bhZ
-aHu
+bio
 aKp
 aGV
 aGV
-bie
-aGX
-aQI
+bhZ
+aQc
+aQH
 aQH
 aQH
 aSn
@@ -51301,13 +51421,13 @@ aHN
 aLz
 aLz
 aHN
-bia
+aHN
 aHN
 aLz
 aLz
 aHN
 aGX
-aQJ
+biq
 aQJ
 aQH
 aQH
@@ -52076,7 +52196,7 @@ aHt
 bic
 aGV
 aGV
-bih
+big
 aHN
 aJs
 aGX
@@ -52325,15 +52445,15 @@ aaf
 aGX
 aJs
 aHN
+bil
 aGV
 aGV
 aGV
+aNz
 aGV
 aGV
 aGV
-aGV
-aGV
-aGV
+big
 aHN
 aJs
 aGX
@@ -52582,7 +52702,7 @@ aaf
 aGX
 aJs
 aHN
-aGV
+bim
 aGV
 aGV
 aGV
@@ -52590,7 +52710,7 @@ aGV
 aBc
 aGV
 aGV
-aGV
+big
 aHN
 aJs
 aGX
@@ -52839,7 +52959,7 @@ aaf
 aGX
 aJs
 aHN
-aLA
+bin
 aLA
 aLA
 aLA
@@ -52847,7 +52967,7 @@ aMU
 aLA
 aLA
 aLA
-aLA
+bip
 aHN
 aJs
 aGX
@@ -53096,7 +53216,7 @@ aaf
 aGX
 aGX
 aGX
-aHN
+aGX
 aHN
 aLB
 aHN
@@ -53104,7 +53224,7 @@ aGX
 aHN
 aLB
 aHN
-aHN
+aGX
 aGX
 aGX
 aGX
