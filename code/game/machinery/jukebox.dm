@@ -38,6 +38,8 @@ datum/track/New(var/title_name, var/audio)
 		new/datum/track("Part A", 'sound/misc/TestLoop1.ogg'),
 		new/datum/track("Scratch", 'sound/music/title1.ogg'),
 		new/datum/track("Trai`Tor", 'sound/music/traitor.ogg'),
+		new/datum/track("Melodical Piano", 'sound/music/Signal.ogg'),
+		new/datum/track("Through the Times", 'sound/music/chasing_time.ogg'),
 	)
 
 /obj/machinery/media/jukebox/New()
