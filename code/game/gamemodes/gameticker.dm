@@ -324,7 +324,7 @@ var/global/datum/controller/gameticker/ticker
 			game_finished = (evacuation_controller.round_over() || mode.station_was_nuked)
 			mode_finished = (!post_game && mode.check_finished())
 		else
-			game_finished = (mode.check_finished() || (evacuation_controller.round_over() && evacuation_controller.emergency_evacuation) || universe_has_ended)
+			game_finished = (mode.check_finished() || evacuation_controller.round_over() || universe_has_ended)	// По просьбам трудящихся
 			mode_finished = game_finished
 
 		if(!mode.explosion_in_progress && game_finished && (mode_finished || post_game))
