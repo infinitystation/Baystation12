@@ -38497,6 +38497,10 @@
 	icon_state = "warning";
 	dir = 1
 	},
+/obj/machinery/camera/network/research{
+	c_tag = "Research - Robotics - Garage";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/assembly/chargebay)
 "btA" = (
@@ -41202,6 +41206,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
 "byt" = (
@@ -74237,6 +74242,18 @@
 	dir = 2
 	},
 /area/shuttle/constructionsite/station)
+"cGy" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled,
+/area/assembly/robotics)
+"cGz" = (
+/obj/machinery/door/firedoor,
+/obj/effect/wingrille_spawn/reinforced/polarized{
+	id = "medical_cmo"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/plating,
+/area/crew_quarters/heads/cmo)
 
 (1,1,1) = {"
 aaa
@@ -92310,9 +92327,9 @@ aaa
 aaa
 aaa
 aaa
-cGd
-cGj
-cGk
+cFY
+cFY
+cFY
 aaa
 aaa
 aaa
@@ -92567,7 +92584,7 @@ aaa
 aaa
 aaa
 aaa
-cGe
+cFY
 aah
 aah
 aah
@@ -92824,7 +92841,7 @@ aaa
 aaa
 aaa
 aaa
-cGf
+cFY
 aah
 aaa
 aaa
@@ -93081,7 +93098,7 @@ aaa
 aaa
 aaa
 aaa
-cGg
+cFY
 aah
 aaa
 aaa
@@ -93338,7 +93355,7 @@ aaa
 aaa
 aaa
 aaa
-cGh
+cFY
 aah
 aaa
 aaa
@@ -93590,12 +93607,12 @@ aaa
 aaa
 aaa
 cFY
-cFZ
-cGa
-cGb
-cGc
+cFY
+cFY
+cFY
+cFY
 aaa
-cGi
+cFY
 aah
 aaa
 aaa
@@ -110107,9 +110124,9 @@ bFB
 bHb
 bIw
 bIw
-cGn
+cGm
 bMG
-cGq
+cGm
 bIw
 bIw
 bIw
@@ -110369,7 +110386,7 @@ bJY
 bOk
 bJY
 bQZ
-bIw
+cGz
 bTt
 bUU
 bWk
@@ -110626,7 +110643,7 @@ bMH
 bOl
 bPH
 bRa
-cGt
+cGm
 bTu
 bUT
 bWl
@@ -111392,9 +111409,9 @@ bFF
 bHg
 bIw
 bIw
-cGo
+cGm
 bMK
-cGr
+cGm
 bIw
 bIw
 bIw
@@ -119348,7 +119365,7 @@ bos
 bqf
 brP
 btE
-btE
+cGy
 bwK
 byv
 bAe
@@ -123960,9 +123977,9 @@ aSH
 aSH
 aSH
 aXr
-aYZ
 aSH
-aYZ
+aSH
+aSH
 bgI
 aSH
 cFP

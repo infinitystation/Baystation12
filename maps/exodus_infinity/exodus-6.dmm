@@ -10147,6 +10147,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
 "we" = (
@@ -10720,8 +10721,8 @@
 	},
 /area/mine/unexplored)
 "xF" = (
-/obj/structure/bed,
 /obj/item/weapon/bedsheet/brown,
+/obj/structure/bed/padded,
 /turf/simulated/floor/carpet,
 /area/outpost/mining_main/dorms)
 "xG" = (
@@ -11421,6 +11422,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining_main/medbay)
 "zq" = (
@@ -11782,6 +11784,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
 "zV" = (
@@ -11996,6 +11999,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
 "An" = (
@@ -12087,7 +12091,7 @@
 	},
 /area/mine/explored)
 "Au" = (
-/obj/structure/bed,
+/obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/brown,
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/dorms)
@@ -12814,6 +12818,7 @@
 	icon_state = "0-2"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/dorms)
 "Ce" = (
@@ -16401,6 +16406,35 @@
 /obj/structure/anomaly_container,
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
+"ZY" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled,
+/area/outpost/research/eva)
+"ZZ" = (
+/obj/item/weapon/bedsheet/brown,
+/obj/structure/bed/padded,
+/turf/simulated/floor/lino,
+/area/outpost/mining_main/dorms)
+"OVERFLOW" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/lino,
+/area/outpost/mining_main/resting)
+"OVERFLOX" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled,
+/area/outpost/mining_west)
 
 (1,1,1) = {"
 aa
@@ -31999,7 +32033,7 @@ ac
 ad
 oG
 wv
-wX
+OVERFLOX
 xz
 wV
 za
@@ -51787,7 +51821,7 @@ vR
 Dz
 DC
 DP
-wL
+OVERFLOW
 wL
 yh
 Ev
@@ -54093,7 +54127,7 @@ xD
 AJ
 Bu
 xD
-Au
+ZZ
 AQ
 xD
 ad
@@ -54505,7 +54539,7 @@ iG
 jH
 Mb
 Pb
-Pb
+ZY
 Pb
 Qb
 gg

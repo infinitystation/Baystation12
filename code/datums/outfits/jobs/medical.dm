@@ -26,11 +26,11 @@
 	l_hand = /obj/item/weapon/storage/firstaid/adv
 	r_pocket = /obj/item/device/flashlight/pen
 	id_type = /obj/item/weapon/card/id/medical
-
+/*
 /decl/hierarchy/outfit/job/medical/doctor/emergency_physician
 	name = OUTFIT_JOB_NAME("Emergency physician")
 	suit = /obj/item/clothing/suit/storage/toggle/fr_jacket
-
+*/
 /decl/hierarchy/outfit/job/medical/doctor/surgeon
 	name = OUTFIT_JOB_NAME("Surgeon")
 	uniform = /obj/item/clothing/under/rank/medical/blue
