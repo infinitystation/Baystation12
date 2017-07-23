@@ -16411,12 +16411,14 @@
 /turf/simulated/floor/tiled,
 /area/outpost/research/eva)
 "ZZ" = (
-/obj/item/weapon/bedsheet/brown,
 /obj/structure/bed/padded,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+/obj/item/weapon/bedsheet/brown,
+/turf/simulated/floor/lino,
+/area/outpost/mining_west)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -16425,7 +16427,6 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
 
@@ -32026,7 +32027,6 @@ ac
 ad
 oG
 wv
-ac
 xz
 wV
 za
@@ -51814,7 +51814,7 @@ vR
 Dz
 DC
 DP
-ab
+wL
 wL
 yh
 Ev
