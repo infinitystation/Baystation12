@@ -16413,13 +16413,6 @@
 "ZZ" = (
 /obj/item/weapon/bedsheet/brown,
 /obj/structure/bed/padded,
-/turf/simulated/floor/lino,
-/area/outpost/mining_main/dorms)
-"OVERFLOW" = (
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/lino,
-/area/outpost/mining_main/resting)
-"OVERFLOX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -32033,7 +32026,7 @@ ac
 ad
 oG
 wv
-OVERFLOX
+ac
 xz
 wV
 za
@@ -51821,7 +51814,7 @@ vR
 Dz
 DC
 DP
-OVERFLOW
+ab
 wL
 yh
 Ev
