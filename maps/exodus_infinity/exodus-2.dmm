@@ -74339,7 +74339,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled,
-/area/chapel/main)
+/area/hallway/secondary/exit)
 "cGM" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -74352,14 +74352,14 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled,
-/area/chapel/main)
+/area/hallway/secondary/exit)
 "cGN" = (
 /obj/structure/bed/chair{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled,
-/area/chapel/main)
+/area/hallway/secondary/exit)
 "cGO" = (
 /obj/machinery/camera/network/exodus{
 	c_tag = "Departures West";
@@ -74374,7 +74374,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
-/area/chapel/main)
+/area/hallway/secondary/exit)
 "cGP" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -74383,7 +74383,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled,
-/area/chapel/main)
+/area/hallway/secondary/exit)
 "cGQ" = (
 /obj/structure/cable/green,
 /obj/machinery/power/apc/super/critical{
@@ -74393,7 +74393,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled,
-/area/chapel/main)
+/area/hallway/secondary/exit)
 "cGR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
