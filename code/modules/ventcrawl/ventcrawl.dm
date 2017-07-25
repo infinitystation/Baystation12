@@ -44,6 +44,8 @@ var/list/ventcrawl_machinery = list(
 /mob/living/proc/is_allowed_vent_crawl_item(var/obj/item/carried_item)
 	if(is_type_in_list(carried_item, can_enter_vent_with))
 		return !get_inventory_slot(carried_item)
+	if(carried_item.w_class <= ITEM_SIZE_SMALL)
+		return 1
 
 /mob/living/carbon/is_allowed_vent_crawl_item(var/obj/item/carried_item)
 	if((carried_item in internal_organs) || (carried_item in stomach_contents))
