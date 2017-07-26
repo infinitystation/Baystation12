@@ -15656,13 +15656,13 @@
 /area/supply/dock)
 "aHU" = (
 /obj/structure/shuttle/engine/propulsion,
-/turf/space,
+/turf/simulated/floor/airless,
 /area/supply/dock)
 "aHV" = (
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "burst_l"
 	},
-/turf/space,
+/turf/simulated/floor/airless,
 /area/supply/dock)
 "aHW" = (
 /turf/simulated/shuttle/wall{
@@ -15737,7 +15737,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "burst_r"
 	},
-/turf/space,
+/turf/simulated/floor/airless,
 /area/supply/dock)
 "aIf" = (
 /obj/machinery/computer/station_alert/all,
@@ -18104,6 +18104,9 @@
 /area/merchant_station)
 "aNE" = (
 /obj/structure/bed/chair/office/dark,
+/obj/effect/landmark/start{
+	name = "Merchant Leader"
+	},
 /turf/simulated/floor/tiled,
 /area/merchant_station)
 "aNF" = (
@@ -25608,7 +25611,9 @@
 /turf/simulated/floor/tiled/white,
 /area/admin_prison)
 "bef" = (
-/obj/machinery/vending/boozeomat,
+/obj/machinery/vending/boozeomat{
+	req_access = newlist(/obj/item/weapon/nullrod)
+	},
 /turf/unsimulated/floor{
 	dir = 8;
 	icon_state = "wood"
@@ -25858,11 +25863,6 @@
 /area/admin_prison)
 "beL" = (
 /obj/structure/bed/chair/wood,
-/obj/machinery/button/toggle/door{
-	_door_functions = 4;
-	id = "cell_7";
-	pixel_x = 28
-	},
 /turf/simulated/floor/lino,
 /area/admin_prison)
 "beM" = (
@@ -26695,11 +26695,6 @@
 	tag = "icon-wooden_chair_preview (NORTH)";
 	icon_state = "wooden_chair_preview";
 	dir = 1
-	},
-/obj/machinery/button/toggle/door{
-	_door_functions = 4;
-	id = "cell_1";
-	pixel_x = -28
 	},
 /turf/simulated/floor/lino,
 /area/admin_prison)
@@ -30746,7 +30741,7 @@ aaf
 aaf
 aaf
 bcE
-bdD
+bdB
 bdB
 bdP
 beg
@@ -40527,7 +40522,7 @@ bdX
 bgu
 bgx
 bgH
-bgR
+bgQ
 bgZ
 bcE
 bcE
@@ -41031,7 +41026,7 @@ aaf
 bcE
 bcE
 bey
-beM
+beL
 bff
 bfn
 bfH
@@ -41555,7 +41550,7 @@ bcM
 bgu
 bgx
 bgH
-bgS
+bgQ
 bgZ
 bcE
 bcE
@@ -42059,7 +42054,7 @@ aaf
 bcE
 bcE
 bey
-beN
+beL
 bff
 bfn
 bfH
@@ -42583,7 +42578,7 @@ bcM
 bgu
 bgx
 bgH
-bgT
+bgQ
 bgZ
 bcE
 bcE
@@ -43087,7 +43082,7 @@ aaf
 bcE
 bcE
 bey
-beO
+beL
 bff
 bfn
 bfH
@@ -43611,7 +43606,7 @@ bdX
 bgu
 bgx
 bgH
-bgU
+bgQ
 bgZ
 bcE
 bcE
@@ -44115,7 +44110,7 @@ aaf
 bcE
 bcE
 bey
-beP
+beL
 bff
 bfn
 bfH
@@ -44639,7 +44634,7 @@ bcM
 bgu
 bgx
 bgH
-bgV
+bgQ
 bgZ
 bcE
 bcE
@@ -45143,7 +45138,7 @@ aaf
 bcE
 bcE
 bey
-beQ
+beL
 bff
 bfn
 bfH
