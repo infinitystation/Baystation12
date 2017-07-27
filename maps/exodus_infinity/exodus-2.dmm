@@ -57074,9 +57074,16 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology)
 "caM" = (
-/obj/machinery/light{
-	icon_state = "tube1";
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology)
@@ -58753,20 +58760,20 @@
 	pixel_y = 4
 	},
 /obj/item/weapon/storage/box/botanydisk,
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/freezer,
 /area/rnd/xenobiology/xenoflora)
 "cdx" = (
 /obj/machinery/botany/editor,
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/freezer,
 /area/rnd/xenobiology/xenoflora)
 "cdy" = (
 /obj/machinery/botany/extractor,
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/freezer,
 /area/rnd/xenobiology/xenoflora)
 "cdz" = (
 /obj/structure/table/standard,
 /obj/machinery/reagentgrinder,
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/freezer,
 /area/rnd/xenobiology/xenoflora)
 "cdA" = (
 /obj/machinery/light{
@@ -118732,10 +118739,10 @@ brz
 btj
 buR
 buV
-cVx
+cVv
 bzF
 buV
-cVF
+cVv
 buV
 bFF
 bHg
@@ -119506,10 +119513,10 @@ buV
 bxX
 bzI
 buV
-cVH
+cVv
 bEp
 bFI
-cVI
+cVv
 buV
 bKc
 bLt
@@ -131085,7 +131092,7 @@ bRC
 bSM
 cVJ
 bVE
-cVK
+cVJ
 bLJ
 bZB
 caR
@@ -131605,7 +131612,7 @@ bZD
 caT
 ccp
 ccp
-cVL
+ccp
 ccp
 ccp
 ccp
