@@ -127,6 +127,11 @@
 		icon_state = "hair_ponytail4"
 		gender = FEMALE
 
+	ponytail4TG
+		name = "Ponytail 4(TG)"
+		icon = 'icons/mob/infinity_human_face.dmi'
+		icon_state = "hair_ponytail4"
+
 	ponytail5
 		name = "Ponytail 5"
 		icon_state = "hair_ponytail5"
