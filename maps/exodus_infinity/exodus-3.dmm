@@ -4572,9 +4572,6 @@
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
 "akj" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
 	frequency = 1331;
@@ -4589,6 +4586,11 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (EAST)";
+	icon_state = "blueshuttlechair";
+	dir = 4
+	},
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
 "akk" = (
@@ -4598,9 +4600,6 @@
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
 "akl" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 8;
 	frequency = 1331;
@@ -4616,6 +4615,11 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (WEST)";
+	icon_state = "blueshuttlechair";
+	dir = 8
+	},
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
 "akm" = (
@@ -4623,7 +4627,9 @@
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
 "akn" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (NORTH)";
+	icon_state = "blueshuttlechair";
 	dir = 1
 	},
 /turf/simulated/floor/shuttle/black,
@@ -4638,13 +4644,15 @@
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
 "akp" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
 	frequency = 1331;
 	id_tag = "rescue_shuttle_pump"
+	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (EAST)";
+	icon_state = "blueshuttlechair";
+	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
@@ -4661,9 +4669,6 @@
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
 "aks" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
 /obj/machinery/button/remote/blast_door{
 	icon_state = "doorctrl0";
 	id = "rescuedock";
@@ -4676,6 +4681,11 @@
 	dir = 8;
 	frequency = 1331;
 	id_tag = "rescue_shuttle_pump"
+	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (WEST)";
+	icon_state = "blueshuttlechair";
+	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
@@ -4691,9 +4701,6 @@
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
 "akw" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
 /obj/item/device/radio/intercom/specops{
 	dir = 8;
 	pixel_x = 22;
@@ -4703,6 +4710,11 @@
 	dir = 8;
 	frequency = 1331;
 	id_tag = "rescue_shuttle_pump"
+	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (WEST)";
+	icon_state = "blueshuttlechair";
+	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
@@ -4720,9 +4732,6 @@
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
 "akz" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
 	frequency = 1331;
@@ -4730,6 +4739,11 @@
 	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (EAST)";
+	icon_state = "blueshuttlechair";
+	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
@@ -4743,9 +4757,6 @@
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
 "akC" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 8;
 	frequency = 1331;
@@ -4753,6 +4764,11 @@
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (WEST)";
+	icon_state = "blueshuttlechair";
+	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
@@ -5038,11 +5054,13 @@
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
 "ale" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (EAST)";
+	icon_state = "blueshuttlechair";
+	dir = 4
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
@@ -5056,11 +5074,13 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
 "alh" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (WEST)";
+	icon_state = "blueshuttlechair";
+	dir = 8
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
@@ -5111,7 +5131,9 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/rescue_base/start)
 "alo" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (NORTH)";
+	icon_state = "blueshuttlechair";
 	dir = 1
 	},
 /turf/simulated/floor/shuttle/darkred,
@@ -5319,6 +5341,11 @@
 /obj/machinery/recharger/wallcharger{
 	pixel_x = -25
 	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (EAST)";
+	icon_state = "blueshuttlechair";
+	dir = 4
+	},
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
 "alV" = (
@@ -5378,11 +5405,13 @@
 	pixel_y = 0;
 	tag = "permflash"
 	},
-/obj/structure/bed/chair{
-	dir = 8
-	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (WEST)";
+	icon_state = "blueshuttlechair";
+	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
@@ -5447,7 +5476,9 @@
 /turf/simulated/floor/plating,
 /area/rescue_base/start)
 "amk" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (EAST)";
+	icon_state = "blueshuttlechair";
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
@@ -5511,11 +5542,13 @@
 	},
 /area/rescue_base/base)
 "amr" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (EAST)";
+	icon_state = "blueshuttlechair";
+	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
@@ -8239,7 +8272,9 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "asx" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle/red{
+	tag = "icon-redshuttlechair (NORTH)";
+	icon_state = "redshuttlechair";
 	dir = 1
 	},
 /turf/simulated/floor/shuttle/darkred,
@@ -8386,7 +8421,9 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "asO" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle/red{
+	tag = "icon-redshuttlechair (EAST)";
+	icon_state = "redshuttlechair";
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/darkred,
@@ -8578,7 +8615,7 @@
 	},
 /area/centcom/evac)
 "ati" = (
-/obj/structure/bed/chair,
+/obj/structure/bed/chair/comfy/shuttle,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/shuttle.dmi';
 	icon_state = "floor"
@@ -8697,7 +8734,9 @@
 	},
 /area/centcom/evac)
 "atv" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (WEST)";
+	icon_state = "blueshuttlechair";
 	dir = 8
 	},
 /turf/unsimulated/floor{
@@ -8729,13 +8768,17 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "aty" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle/red{
+	tag = "icon-redshuttlechair (WEST)";
+	icon_state = "redshuttlechair";
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "atz" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle/red{
+	tag = "icon-redshuttlechair (EAST)";
+	icon_state = "redshuttlechair";
 	dir = 4
 	},
 /obj/machinery/light{
@@ -9351,6 +9394,7 @@
 	pixel_x = -2;
 	pixel_y = 4
 	},
+/obj/structure/table/standard,
 /turf/unsimulated/floor{
 	icon = 'icons/turf/shuttle.dmi';
 	icon_state = "floor3"
@@ -9760,7 +9804,7 @@
 	},
 /area/centcom/evac)
 "avD" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/office/dark{
 	dir = 1
 	},
 /turf/unsimulated/floor{
@@ -9769,7 +9813,7 @@
 	},
 /area/centcom/evac)
 "avE" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/office/dark{
 	dir = 4
 	},
 /turf/unsimulated/floor{
@@ -9821,15 +9865,17 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "avM" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
 /obj/machinery/button/flasher{
 	id = "syndieflash";
 	name = "Flasher";
 	pixel_x = 27;
 	pixel_y = 0;
 	tag = "permflash"
+	},
+/obj/structure/bed/chair/comfy/shuttle/red{
+	tag = "icon-redshuttlechair (WEST)";
+	icon_state = "redshuttlechair";
+	dir = 8
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
@@ -10401,9 +10447,10 @@
 	},
 /area/centcom/evac)
 "axf" = (
-/obj/structure/bed/chair{
-	dir = 4;
-	name = "Defense"
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (EAST)";
+	icon_state = "blueshuttlechair";
+	dir = 4
 	},
 /turf/unsimulated/floor{
 	icon = 'icons/turf/shuttle.dmi';
@@ -15422,7 +15469,10 @@
 	name = "Port Docking Hatch";
 	req_access = list(103)
 	},
-/turf/unsimulated/floor{
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
 	icon_state = "dark"
 	},
 /area/shuttle/specops/centcom)
@@ -15516,11 +15566,27 @@
 /area/shuttle/specops/centcom)
 "aHE" = (
 /obj/machinery/computer/shuttle_control/specops,
-/turf/simulated/floor/shuttle/red,
+/obj/effect/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/specops/centcom)
 "aHF" = (
-/obj/structure/bed/chair,
-/turf/simulated/floor/shuttle/red,
+/obj/effect/floor_decal/corner/red{
+	dir = 5
+	},
+/obj/structure/bed/chair/comfy/shuttle,
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/specops/centcom)
 "aHG" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
@@ -15531,18 +15597,39 @@
 	pixel_y = 25;
 	tag_door = "specops_shuttle_port_hatch"
 	},
-/obj/structure/bed/chair,
-/turf/simulated/floor/shuttle/red,
+/obj/effect/floor_decal/corner/red{
+	dir = 5
+	},
+/obj/structure/bed/chair/comfy/shuttle,
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/specops/centcom)
 "aHH" = (
-/turf/simulated/floor/shuttle/red,
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/specops/centcom)
 "aHI" = (
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
 	pixel_y = 32
 	},
-/turf/simulated/floor/shuttle/red,
+/obj/effect/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/specops/centcom)
 "aHJ" = (
 /obj/machinery/recharger/wallcharger{
@@ -15558,7 +15645,15 @@
 /obj/machinery/light/small/readylight{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/red,
+/obj/effect/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/specops/centcom)
 "aHK" = (
 /obj/machinery/door/airlock/centcom{
@@ -15671,10 +15766,17 @@
 	},
 /area/shuttle/escape/centcom)
 "aHX" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (EAST)";
+	icon_state = "blueshuttlechair";
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/red,
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/specops/centcom)
 "aHY" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
@@ -15685,7 +15787,12 @@
 	pixel_y = -25;
 	tag_door = "specops_shuttle_fore_hatch"
 	},
-/turf/simulated/floor/shuttle/red,
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/specops/centcom)
 "aHZ" = (
 /obj/machinery/door/airlock/external{
@@ -15696,7 +15803,12 @@
 	name = "Forward Docking Hatch";
 	req_access = list(103)
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/specops/centcom)
 "aIa" = (
 /obj/structure/bed,
@@ -15791,28 +15903,61 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/turf/simulated/floor/shuttle/red,
+/obj/effect/floor_decal/corner/red{
+	dir = 10
+	},
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/specops/centcom)
 "aIm" = (
 /obj/machinery/computer/prisoner{
 	name = "Implant Management"
 	},
-/turf/simulated/floor/shuttle/red,
+/obj/effect/floor_decal/corner/red{
+	dir = 10
+	},
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/specops/centcom)
 "aIn" = (
-/obj/structure/bed/chair{
+/obj/effect/floor_decal/corner/red{
+	dir = 10
+	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (NORTH)";
+	icon_state = "blueshuttlechair";
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/red,
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/specops/centcom)
 "aIo" = (
-/obj/structure/bed/chair{
-	dir = 1
-	},
 /obj/machinery/light/small/readylight{
 	dir = 2
 	},
-/turf/simulated/floor/shuttle/red,
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (NORTH)";
+	icon_state = "blueshuttlechair";
+	dir = 1
+	},
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/specops/centcom)
 "aIp" = (
 /turf/space,
@@ -15992,7 +16137,9 @@
 	},
 /area/shuttle/escape/centcom)
 "aIJ" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (NORTH)";
+	icon_state = "blueshuttlechair";
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -16281,22 +16428,39 @@
 	},
 /area/centcom/holding)
 "aJv" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/red,
+/obj/structure/bed/chair/comfy/shuttle/red{
+	tag = "icon-redshuttlechair (EAST)";
+	icon_state = "redshuttlechair";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/red{
+	dir = 9
+	},
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/escape/centcom)
 "aJw" = (
 /obj/machinery/camera/network/crescent{
 	c_tag = "Shuttle Cell"
 	},
-/turf/simulated/floor/shuttle/red,
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/escape/centcom)
 "aJx" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (EAST)";
+	icon_state = "blueshuttlechair";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -16430,20 +16594,45 @@
 /turf/simulated/floor/plating,
 /area/shuttle/escape/centcom)
 "aJO" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle/red{
+	tag = "icon-redshuttlechair (EAST)";
+	icon_state = "redshuttlechair";
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/red,
+/obj/effect/floor_decal/corner/red{
+	dir = 9
+	},
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/escape/centcom)
 "aJP" = (
 /obj/machinery/hologram/holopad,
-/turf/simulated/floor/shuttle/red,
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/escape/centcom)
 "aJQ" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle/red{
+	tag = "icon-redshuttlechair (WEST)";
+	icon_state = "redshuttlechair";
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/red,
+/obj/effect/floor_decal/corner/red{
+	dir = 6
+	},
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/escape/centcom)
 "aJR" = (
 /obj/item/weapon/storage/secure/safe{
@@ -16569,24 +16758,24 @@
 /turf/simulated/floor/tiled,
 /area/shuttle/transport1/centcom)
 "aKj" = (
-/obj/structure/bed/chair,
+/obj/structure/bed/chair/comfy/shuttle,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled,
 /area/shuttle/transport1/centcom)
 "aKk" = (
-/obj/structure/bed/chair,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/status_display{
 	pixel_y = 32
 	},
+/obj/structure/bed/chair/comfy/shuttle,
 /turf/simulated/floor/tiled,
 /area/shuttle/transport1/centcom)
 "aKl" = (
-/obj/structure/bed/chair,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/sign/nanotrasen{
 	pixel_y = 32
 	},
+/obj/structure/bed/chair/comfy/shuttle,
 /turf/simulated/floor/tiled,
 /area/shuttle/transport1/centcom)
 "aKm" = (
@@ -16637,7 +16826,12 @@
 /turf/simulated/floor/plating,
 /area/shuttle/escape/centcom)
 "aKr" = (
-/turf/simulated/floor/shuttle/red,
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/escape/centcom)
 "aKs" = (
 /obj/structure/table/woodentable,
@@ -16735,11 +16929,6 @@
 /turf/simulated/floor/tiled/white,
 /area/shuttle/transport1/centcom)
 "aKG" = (
-/obj/structure/bed/chair/comfy/captain{
-	tag = "icon-capchair_preview (WEST)";
-	icon_state = "capchair_preview";
-	dir = 8
-	},
 /obj/effect/floor_decal/industrial/warning/cee{
 	icon_state = "warningcee";
 	dir = 4
@@ -16750,6 +16939,11 @@
 	pixel_x = 0;
 	pixel_y = -25;
 	tag_door = "centcom_shuttle_hatch"
+	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (WEST)";
+	icon_state = "blueshuttlechair";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/transport1/centcom)
@@ -16833,7 +17027,12 @@
 	name = "Escape Shuttle Cell";
 	req_access = list(2)
 	},
-/turf/simulated/floor/shuttle/red,
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/escape/centcom)
 "aKR" = (
 /obj/item/modular_computer/console/preset/security,
@@ -17025,29 +17224,35 @@
 /turf/simulated/floor/tiled,
 /area/shuttle/transport1/centcom)
 "aLo" = (
-/obj/structure/bed/chair{
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (NORTH)";
+	icon_state = "blueshuttlechair";
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled,
 /area/shuttle/transport1/centcom)
 "aLp" = (
-/obj/structure/bed/chair{
-	dir = 1
-	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/status_display{
 	pixel_y = -32
 	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (NORTH)";
+	icon_state = "blueshuttlechair";
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/shuttle/transport1/centcom)
 "aLq" = (
-/obj/structure/bed/chair{
-	dir = 1
-	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/sign/nanotrasen{
 	pixel_y = -32
+	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (NORTH)";
+	icon_state = "blueshuttlechair";
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/shuttle/transport1/centcom)
@@ -17184,7 +17389,9 @@
 /turf/simulated/floor/greengrid,
 /area/shuttle/escape/centcom)
 "aLE" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (WEST)";
+	icon_state = "blueshuttlechair";
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -17797,7 +18004,9 @@
 /turf/simulated/floor/plating,
 /area/shuttle/escape/centcom)
 "aMW" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (WEST)";
+	icon_state = "blueshuttlechair";
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/grey_alt{
@@ -18080,9 +18289,6 @@
 /turf/simulated/floor/tiled,
 /area/shuttle/escape/centcom)
 "aNC" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -18093,7 +18299,20 @@
 /obj/machinery/recharger/wallcharger{
 	pixel_y = 26
 	},
-/turf/simulated/floor/shuttle/red,
+/obj/structure/bed/chair/comfy/shuttle/red{
+	tag = "icon-redshuttlechair (WEST)";
+	icon_state = "redshuttlechair";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/red{
+	dir = 6
+	},
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/escape/centcom)
 "aND" = (
 /obj/effect/floor_decal/corner/blue{
@@ -18917,7 +19136,9 @@
 	},
 /area/centcom/holding)
 "aPj" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (EAST)";
+	icon_state = "blueshuttlechair";
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/grey_alt{
@@ -19666,16 +19887,15 @@
 	icon_state = "tube1";
 	dir = 4
 	},
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (WEST)";
+	icon_state = "blueshuttlechair";
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/grey_alt{
 	tag = "icon-corner_white (SOUTHEAST)";
 	icon_state = "corner_white";
 	dir = 6
-	},
-/obj/structure/closet/walllocker/emerglocker{
-	pixel_x = 28
 	},
 /turf/simulated/floor/tiled,
 /area/shuttle/escape/centcom)
@@ -21839,9 +22059,7 @@
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "aVu" = (
-/obj/structure/bed/chair/office/light{
-	dir = 8
-	},
+/obj/structure/bed/chair/comfy/captain,
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "aVv" = (
@@ -21869,8 +22087,10 @@
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "aVw" = (
-/obj/structure/bed/chair/office/light{
-	dir = 4
+/obj/structure/bed/chair/comfy/shuttle/red{
+	tag = "icon-redshuttlechair (NORTH)";
+	icon_state = "redshuttlechair";
+	dir = 1
 	},
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
@@ -23201,7 +23421,9 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aYs" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle/red{
+	tag = "icon-redshuttlechair (EAST)";
+	icon_state = "redshuttlechair";
 	dir = 4
 	},
 /obj/machinery/light/small{
@@ -23215,11 +23437,14 @@
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "aYu" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/shuttle/red{
+	tag = "icon-redshuttlechair (WEST)";
+	icon_state = "redshuttlechair";
 	dir = 8
 	},
 /obj/machinery/light/small{
-	dir = 4
+	dir = 4;
+	pixel_y = 8
 	},
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
@@ -23394,7 +23619,9 @@
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "aYR" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/comfy/red{
+	tag = "icon-comfychair_preview (WEST)";
+	icon_state = "comfychair_preview";
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
@@ -24881,15 +25108,17 @@
 /turf/simulated/floor/tiled/white,
 /area/shuttle/escape/centcom)
 "bcb" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -22
+	},
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (EAST)";
+	icon_state = "blueshuttlechair";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/escape/centcom)
@@ -24925,13 +25154,15 @@
 /turf/simulated/floor/tiled/white,
 /area/shuttle/escape/centcom)
 "bch" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
 /obj/machinery/light,
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (EAST)";
+	icon_state = "blueshuttlechair";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/escape/centcom)
 "bci" = (
@@ -25037,7 +25268,12 @@
 /area/shuttle/administration/centcom)
 "bcA" = (
 /obj/effect/shuttle_landmark/specops/start,
-/turf/simulated/floor/shuttle/red,
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
 /area/shuttle/specops/centcom)
 "bcB" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -27295,6 +27531,42 @@
 	icon_state = "white"
 	},
 /area/centcom/holding)
+"bir" = (
+/obj/structure/bed/chair/comfy/shuttle{
+	tag = "icon-blueshuttlechair (NORTH)";
+	icon_state = "blueshuttlechair";
+	dir = 1
+	},
+/turf/simulated/floor/shuttle/red{
+	base_icon = 'icons/turf/flooring/tiles.dmi';
+	base_name = "dark";
+	icon = 'icons/turf/flooring/tiles.dmi';
+	icon_state = "dark"
+	},
+/area/shuttle/specops/centcom)
+"bis" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/bed/chair/comfy/shuttle,
+/turf/simulated/floor/tiled,
+/area/shuttle/transport1/centcom)
+"bit" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/bed/chair/comfy/shuttle,
+/turf/simulated/floor/tiled,
+/area/shuttle/transport1/centcom)
+"biu" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/bed/chair/comfy/shuttle,
+/turf/simulated/floor/tiled,
+/area/shuttle/transport1/centcom)
+"biv" = (
+/obj/structure/bed/chair/comfy/shuttle/red{
+	tag = "icon-redshuttlechair (WEST)";
+	icon_state = "redshuttlechair";
+	dir = 8
+	},
+/turf/simulated/floor/shuttle/red,
+/area/skipjack_station/start)
 
 (1,1,1) = {"
 aaa
@@ -36201,8 +36473,8 @@ asn
 asJ
 asK
 asJ
-atu
-atu
+asL
+asL
 asJ
 asK
 auq
@@ -36457,10 +36729,10 @@ arP
 aso
 asL
 asK
-ati
+asL
 att
 att
-atT
+asL
 asK
 asK
 asK
@@ -36714,10 +36986,10 @@ arP
 asp
 asJ
 asK
-ati
+asL
 att
 att
-atT
+asL
 asK
 asJ
 asJ
@@ -36972,8 +37244,8 @@ asq
 asK
 asK
 asJ
-atv
-atv
+asL
+asL
 asJ
 asK
 asK
@@ -44725,7 +44997,7 @@ aHd
 aHq
 aHH
 aHH
-aIn
+bir
 aHp
 aIW
 aJl
@@ -45244,7 +45516,7 @@ aHp
 aIW
 aJl
 aJI
-aKj
+bis
 aKJ
 aLo
 aJI
@@ -45501,7 +45773,7 @@ aIp
 aIW
 aJl
 aJJ
-aKj
+bit
 aKJ
 aLo
 aJJ
@@ -46015,7 +46287,7 @@ aCJ
 aIW
 aJl
 aJH
-aKj
+biu
 aKK
 aLo
 aJH
@@ -54242,11 +54514,11 @@ aIt
 aHQ
 aPJ
 aQg
-aQP
+aPj
 aPj
 aPj
 aQg
-aQS
+aPj
 aPj
 aIt
 aSr
@@ -84004,7 +84276,7 @@ asw
 asw
 arU
 aty
-atM
+aty
 aty
 aty
 aux
@@ -89473,7 +89745,7 @@ aXz
 aWd
 aYu
 aYR
-aYR
+biv
 aZM
 aUC
 bao
