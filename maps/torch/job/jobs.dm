@@ -1,4 +1,10 @@
 /datum/map/torch
+	species_to_job_whitelist = list(
+		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant,
+		/datum/job/roboticist, /datum/job/cargo_contractor, /datum/job/chef),
+		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/stowaway)
+	)
+
 	allowed_jobs = list(/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,
 						/datum/job/liaison, /datum/job/representative, /datum/job/sea, /datum/job/bridgeofficer, /datum/job/solgov_pilot,
 						/datum/job/senior_engineer, /datum/job/engineer, /datum/job/engineer_contractor, /datum/job/roboticist,
@@ -13,6 +19,20 @@
 						/datum/job/merchant, /datum/job/stowaway
 						)
 
+
+/datum/map/torch/setup_map()
+	..()
+	for(var/job_type in GLOB.using_map.allowed_jobs)
+		var/datum/job/job = decls_repository.get_decl(job_type)
+		// Most species are restricted from SCG security and command roles
+		if((job.department_flag & (SEC|COM)) && job.allowed_branches.len && !(/datum/mil_branch/civilian in job.allowed_branches))
+			for(var/species_name in list(SPECIES_IPC, SPECIES_TAJARA, SPECIES_SKRELL, SPECIES_UNATHI))
+				var/datum/species/S = all_species[species_name]
+				var/species_blacklist = species_to_job_blacklist[S.type]
+				if(!species_blacklist)
+					species_blacklist = list()
+					species_to_job_blacklist[S.type] = species_blacklist
+				species_blacklist |= job.type
 
 /datum/job/captain
 	title = "Commanding Officer"
@@ -1045,8 +1065,8 @@
 	department = "Civilian"
 	department_flag = CIV
 	faction = "Station"
-	total_positions = 0 //to be opened by admins when desired AT ROUNDSTART ONLY
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the invisible hand of the market"
 	selection_color = "#515151"
 	ideal_character_age = 30
@@ -1065,8 +1085,8 @@
 	department = "Civilian"
 	department_flag = CIV
 	faction = "Station"
-	total_positions = 0 //to be opened by admins on REQUEST (because seriously that's what happens)
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "yourself"
 	selection_color = "#515151"
 	ideal_character_age = 30
