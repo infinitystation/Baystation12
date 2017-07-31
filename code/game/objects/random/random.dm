@@ -73,7 +73,7 @@
 					prob(80);/obj/item/weapon/cell,\
 					prob(50);/obj/item/weapon/cell/high,\
 					prob(20);/obj/item/weapon/cell/super,\
-					prob(10);/obj/item/weapon/cell/hyper,\
+					prob(1);/obj/item/weapon/cell/hyper,\
 					prob(70);/obj/item/weapon/cell/device/standard,\
 					prob(50);/obj/item/weapon/cell/device/high)
 
@@ -172,13 +172,13 @@
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "firstaid"
 	item_to_spawn()
-		return pick(prob(4);/obj/item/weapon/storage/firstaid/regular,\
-					prob(3);/obj/item/weapon/storage/firstaid/toxin,\
-					prob(3);/obj/item/weapon/storage/firstaid/o2,\
-					prob(2);/obj/item/weapon/storage/firstaid/adv,\
+		return pick(prob(12);/obj/item/weapon/storage/firstaid/regular,\
+					prob(9);/obj/item/weapon/storage/firstaid/toxin,\
+					prob(9);/obj/item/weapon/storage/firstaid/o2,\
+					prob(6);/obj/item/weapon/storage/firstaid/adv,\
 					prob(1);/obj/item/weapon/storage/firstaid/combat,\
-					prob(2);/obj/item/weapon/storage/firstaid/empty,\
-					prob(3);/obj/item/weapon/storage/firstaid/fire)
+					prob(6);/obj/item/weapon/storage/firstaid/empty,\
+					prob(9);/obj/item/weapon/storage/firstaid/fire)
 
 
 /obj/random/contraband
@@ -582,12 +582,14 @@ obj/random/obstruction //Large objects to block things off in maintenance
 					/obj/item/device/toner,\
 					/obj/item/device/paicard,\
 					/obj/item/device/destTagger,\
-					/obj/item/weapon/beartrap,\
-					/obj/item/weapon/handcuffs,\
+					prob(75)
+						/obj/item/weapon/beartrap,\
+						/obj/item/weapon/handcuffs,\
 					/obj/item/weapon/camera_assembly,\
 					/obj/item/device/camera,\
 					/obj/item/device/pda,\
-					/obj/item/weapon/card/emag_broken,\
+					prob(35)
+						/obj/item/weapon/card/emag_broken,\
 					/obj/item/device/radio/headset,\
 					/obj/item/device/flashlight/glowstick/yellow,\
 					/obj/item/device/flashlight/glowstick/orange)
@@ -738,7 +740,7 @@ obj/random/obstruction //Large objects to block things off in maintenance
 					prob(5);/obj/item/clothing/gloves/duty,\
 					prob(3);/obj/item/clothing/gloves/guards,\
 					prob(3);/obj/item/clothing/gloves/tactical,\
-					prob(5);/obj/item/clothing/gloves/insulated/cheap)
+					prob(7);/obj/item/clothing/gloves/insulated/cheap)
 
 
 /obj/random/glasses
@@ -747,17 +749,17 @@ obj/random/obstruction //Large objects to block things off in maintenance
 	icon = 'icons/obj/clothing/glasses.dmi'
 	icon_state = "leforge"
 	item_to_spawn()
-		return pick(prob(3);/obj/item/clothing/glasses/sunglasses,\
+		return pick(prob(10);/obj/item/clothing/glasses/sunglasses,\
 					prob(7);/obj/item/clothing/glasses/regular,\
 					prob(5);/obj/item/clothing/glasses/meson,\
 					prob(4);/obj/item/clothing/glasses/meson/prescription,\
-					prob(6);/obj/item/clothing/glasses/science,\
-					prob(5);/obj/item/clothing/glasses/material,\
+					prob(7);/obj/item/clothing/glasses/science,\
+					prob(4);/obj/item/clothing/glasses/material,\
 					prob(3);/obj/item/clothing/glasses/welding,\
 					prob(4);/obj/item/clothing/glasses/hud/health,\
 					prob(3);/obj/item/clothing/glasses/hud/health/prescription,\
-					prob(4);/obj/item/clothing/glasses/hud/security,\
-					prob(3);/obj/item/clothing/glasses/hud/security/prescription,\
+					prob(2);/obj/item/clothing/glasses/hud/security,\
+					prob(1);/obj/item/clothing/glasses/hud/security/prescription,\
 					prob(2);/obj/item/clothing/glasses/sunglasses/sechud,\
 					prob(3);/obj/item/clothing/glasses/sunglasses/sechud/toggle,\
 					prob(1);/obj/item/clothing/glasses/sunglasses/sechud/goggles,\
@@ -770,8 +772,8 @@ obj/random/obstruction //Large objects to block things off in maintenance
 	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "tophat"
 	item_to_spawn()
-		return pick(prob(2);/obj/item/clothing/head/helmet,\
-					prob(1);/obj/item/clothing/head/helmet/tactical,\
+		return pick(prob(1);/obj/item/clothing/head/helmet,\
+/*					prob(1);/obj/item/clothing/head/helmet/tactical,\ */
 					prob(1);/obj/item/clothing/head/helmet/space/emergency,\
 					prob(1);/obj/item/clothing/head/bio_hood/general,\
 					prob(4);/obj/item/clothing/head/hardhat,\
@@ -819,7 +821,7 @@ obj/random/obstruction //Large objects to block things off in maintenance
 					prob(4);/obj/item/clothing/suit/storage/toggle/labcoat,\
 					prob(1);/obj/item/clothing/suit/space/emergency,\
 					prob(4);/obj/item/clothing/suit/armor/vest,\
-					prob(1);/obj/item/clothing/suit/storage/vest/tactical,\
+/*					prob(1);/obj/item/clothing/suit/storage/vest/tactical,\ */
 					prob(3);/obj/item/clothing/suit/storage/vest,\
 					prob(3);/obj/item/clothing/suit/storage/toggle/bomber,\
 					prob(3);/obj/item/clothing/suit/chef/classic,\
@@ -943,7 +945,7 @@ something, make sure it's not in one of the other lists.*/
 					prob(200);/obj/random/tank,\
 					prob(50);/obj/random/soap,\
 					prob(50);/obj/random/drinkbottle,\
-					prob(10);/obj/random/loot,\
+					prob(1);/obj/random/loot,\
 					prob(500);/obj/random/advdevice,\
 					prob(300);/obj/random/smokes,\
 					prob(100);/obj/random/masks,\
