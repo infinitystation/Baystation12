@@ -216,6 +216,9 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/corner/grey_alt/three_quarters
 	icon_state = "corner_white_three_quarters"
 
+/obj/effect/floor_decal/corner/grey_alt/full
+	icon_state = "corner_white_full"
+
 /obj/effect/floor_decal/spline/plain
 	name = "spline - plain"
 	icon_state = "spline_plain"

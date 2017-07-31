@@ -211,3 +211,14 @@
 /obj/structure/bed/chair/wood/wings
 	base_icon = "wooden_chair_wings"
 	icon_state = "wooden_chair_wings_preview"
+
+//INFINITY
+/obj/structure/bed/chair/comfy/shuttle
+	name = "shuttle chair"
+	desc = "It's a chair. It looks comfy."
+	icon_state = "blueshuttlechair"
+	icon = 'icons/obj/infinity_object.dmi'
+	color = "white"
+
+/obj/structure/bed/chair/comfy/shuttle/red
+	icon_state = "redshuttlechair"

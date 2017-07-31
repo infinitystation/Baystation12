@@ -209,7 +209,7 @@
 		to_chat(user, "<span class='warning'>You cannot [verb]e \the [src] with \the [S].</span>")
 		return null
 
-	if(manipulating) return M
+	if(manipulating) return null
 	manipulating = 1
 	to_chat(user, "<span class='notice'>You begin [verb]ing \the [src] with [M.display_name].</span>")
 	if(!do_after(user, 20, src) || !S.use(1))

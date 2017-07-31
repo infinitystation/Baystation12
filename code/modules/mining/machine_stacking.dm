@@ -46,7 +46,7 @@
 		return 1
 
 	if(href_list["change_stack"])
-		var/choice = input("What would you like to set the stack amount to?") as null|anything in list(1,5,10,20,50)
+		var/choice = input("What would you like to set the stack amount to?") as null|anything in list(1,5,10,20,50,60)
 		if(!choice) return
 		machine.stack_amt = choice
 
@@ -76,14 +76,14 @@
 	var/obj/machinery/mineral/output = null
 	var/list/stack_storage[0]
 	var/list/stack_paths[0]
-	var/stack_amt = 50; // Amount to stack before releassing
+	var/stack_amt = 60; // Amount to stack before releassing
 
 /obj/machinery/mineral/stacking_machine/New()
 	..()
 
 	for(var/stacktype in subtypesof(/obj/item/stack/material))
-		var/obj/item/stack/S = stacktype
-		var/stack_name = initial(S.name)
+		var/obj/item/stack/material/S = stacktype
+		var/stack_name = initial(S.default_type)
 		stack_storage[stack_name] = 0
 		stack_paths[stack_name] = stacktype
 
@@ -107,11 +107,11 @@
 /obj/machinery/mineral/stacking_machine/process()
 	if (src.output && src.input)
 		var/turf/T = get_turf(input)
-		for(var/obj/item/O in T.contents)
+		for(var/obj/item/stack/material/O in T.contents)
 			if(!O) return
-			if(istype(O,/obj/item/stack))
-				if(!isnull(stack_storage[O.name]))
-					stack_storage[O.name]++
+			if(istype(O, /obj/item/stack/material))
+				if(!isnull(stack_storage[O.default_type]))
+					stack_storage[O.default_type]++
 					O.loc = null
 				else
 					O.loc = output.loc
@@ -128,4 +128,3 @@
 
 	console.updateUsrDialog()
 	return
-
