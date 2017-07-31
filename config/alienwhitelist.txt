@@ -9,3 +9,4 @@ inubashirimomiji - skrell
 knayu - skrell	
 netreson - machine
 bartstarter - diona
+mrdogy - machine
