@@ -170,6 +170,10 @@ var/global/datum/controller/gameticker/ticker
 	if(config.sql_enabled)
 		statistic_cycle() // Polls population totals regularly and stores them in an SQL DB -- TLE
 
+	if(config.ooc_allowed && !config.ooc_during_round)
+		config.ooc_allowed = 0
+		to_world("<B>The OOC channel has been globally disabled!</B>")
+
 	return 1
 
 /datum/controller/gameticker
