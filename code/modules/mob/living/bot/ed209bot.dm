@@ -20,7 +20,7 @@
 	var/last_shot = 0
 
 /mob/living/bot/secbot/ed209/update_icons()
-	icon_state = "ed2090"
+	icon_state = "ed209[on]"
 
 /mob/living/bot/secbot/ed209/explode()
 	visible_message("<span class='warning'>[src] blows apart!</span>")
