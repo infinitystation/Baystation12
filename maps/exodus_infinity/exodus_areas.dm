@@ -138,14 +138,14 @@
 	icon_state = "shuttle"
 	base_turf = /turf/space/transit/east
 
-/area/shuttle/escape_pod5 //Pod 4 was lost to meteors
-	name = "\improper Escape Pod Five"
+/area/shuttle/escape_pod4
+	name = "\improper Escape Pod Four"
 	flags = AREA_RAD_SHIELDED
 
-/area/shuttle/escape_pod5/station
+/area/shuttle/escape_pod4/station
 	icon_state = "shuttle2"
 
-/area/shuttle/escape_pod5/transit
+/area/shuttle/escape_pod4/transit
 	icon_state = "shuttle"
 	base_turf = /turf/space/transit/east
 

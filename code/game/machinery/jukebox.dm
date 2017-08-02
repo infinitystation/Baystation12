@@ -29,17 +29,24 @@ datum/track/New(var/title_name, var/audio)
 
 	var/datum/track/current_track
 	var/list/datum/track/tracks = list(
-		new/datum/track("Beyond", 'sound/ambience/ambispace.ogg'),
-		new/datum/track("Clouds of Fire", 'sound/music/clouds.s3m'),
-		new/datum/track("D`Bert", 'sound/music/title2.ogg'),
-		new/datum/track("D`Fort", 'sound/ambience/song_game.ogg'),
-		new/datum/track("Floating", 'sound/music/main.ogg'),
-		new/datum/track("Endless Space", 'sound/music/space.ogg'),
-		new/datum/track("Part A", 'sound/misc/TestLoop1.ogg'),
-		new/datum/track("Scratch", 'sound/music/title1.ogg'),
-		new/datum/track("Trai`Tor", 'sound/music/traitor.ogg'),
-		new/datum/track("Melodical Piano", 'sound/music/Signal.ogg'),
-		new/datum/track("Through the Times", 'sound/music/chasing_time.ogg'),
+		new/datum/track("Beyond",				'sound/ambience/ambispace.ogg'),
+		new/datum/track("Clouds of Fire",		'sound/music/clouds.s3m'),
+		new/datum/track("D`Bert", 				'sound/music/title2.ogg'),
+		new/datum/track("D`Fort", 				'sound/ambience/song_game.ogg'),
+		new/datum/track("Floating", 			'sound/music/main.ogg'),
+		new/datum/track("Endless Space", 		'sound/music/space.ogg'),
+		new/datum/track("Part A", 				'sound/misc/TestLoop1.ogg'),
+		new/datum/track("Scratch", 				'sound/music/title1.ogg'),
+		new/datum/track("Trai`Tor", 			'sound/music/traitor.ogg'),
+		new/datum/track("Through the Times", 	'sound/music/chasing_time.ogg'),
+		new/datum/track("High Radiation", 		'sound/music/infinity/100_rentgen.ogg'),
+		new/datum/track("Pacific Van", 			'sound/music/infinity/daisuke_el_huervo.ogg'),
+		new/datum/track("The Passenger",		'sound/music/infinity/iggy_pop_the passenger.ogg'),
+		new/datum/track("Hard Times", 			'sound/music/infinity/johnny_cash_hurt.ogg'),
+		new/datum/track("One Piece At A Time", 	'sound/music/infinity/johnny_cash_one_piece_at_a_time.ogg'),
+		new/datum/track("Wonderful Lady", 		'sound/music/infinity/johnny_mathis_wonderful_wonderful.ogg'),
+		new/datum/track("Behind the Wire", 		'sound/music/infinity/wolfe_tones_the_man_behind_the_wire.ogg'),
+		new/datum/track("Melodical Piano", 		'sound/music/infinity/signal.ogg'),
 	)
 
 /obj/machinery/media/jukebox/New()

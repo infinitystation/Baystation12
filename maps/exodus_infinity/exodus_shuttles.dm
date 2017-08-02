@@ -303,7 +303,7 @@
 /obj/effect/shuttle_landmark/specops/start
 	name = "NAS Crescent"
 	landmark_tag = "nav_specops_start"
-	docking_controller = "specops_shuttle_port"
+	docking_controller = "specops_centcom_dock"
 
 /obj/effect/shuttle_landmark/specops/out
 	name = "Docking Bay"
@@ -314,14 +314,13 @@
 
 /datum/shuttle/autodock/multi/antag/rescue
 	name = "Rescue"
+	cloaked = 0
 	warmup_time = 9
 	move_time = 60
 	destinations = list(
 		"nav_ert_north_west",
-		"nav_ert_north",
 		"nav_ert_north_east",
 		"nav_ert_south_east",
-		"nav_ert_south",
 		"nav_ert_south_west",
 		"nav_ert_mine",
 		"nav_ert_dock",
@@ -354,26 +353,18 @@
 
 /obj/effect/shuttle_landmark/ert/northwest
 	name = "Northwest of Station"
-	landmark_tag = "nav_merc_north_west"
-
-/obj/effect/shuttle_landmark/ert/north
-	name = "North of Station"
-	landmark_tag = "nav_ert_north"
+	landmark_tag = "nav_ert_north_west"
 
 /obj/effect/shuttle_landmark/ert/northeast
-	name = "NorthEast of Station"
+	name = "Northeast of Station"
 	landmark_tag = "nav_ert_north_east"
 
 /obj/effect/shuttle_landmark/ert/southeast
 	name = "Southeast of Station"
 	landmark_tag = "nav_ert_south_east"
 
-/obj/effect/shuttle_landmark/ert/south
-	name = "South of Station"
-	landmark_tag = "nav_ert_south"
-
 /obj/effect/shuttle_landmark/ert/southwest
-	name = "Southwest pf Station"
+	name = "Southwest of Station"
 	landmark_tag = "nav_ert_south_west"
 
 /obj/effect/shuttle_landmark/ert/mine
@@ -455,7 +446,7 @@
 	landmark_tag = "nav_merc_north"
 
 /obj/effect/shuttle_landmark/merc/northeast
-	name = "NorthEast of Station"
+	name = "Northeast of Station"
 	landmark_tag = "nav_merc_north_east"
 
 /obj/effect/shuttle_landmark/merc/southeast
@@ -467,7 +458,7 @@
 	landmark_tag = "nav_merc_south"
 
 /obj/effect/shuttle_landmark/merc/southwest
-	name = "Southwest pf Station"
+	name = "Southwest of Station"
 	landmark_tag = "nav_merc_south_west"
 
 /obj/effect/shuttle_landmark/merc/mine
@@ -484,13 +475,10 @@
 	move_time = 60
 	destinations = list(
 		"nav_skipjack_north_west",
-		"nav_skipjack_north",
 		"nav_skipjack_north_east",
 		"nav_skipjack_south_east",
-		"nav_skipjack_south",
 		"nav_skipjack_south_west",
 		"nav_skipjack_mine",
-		"nav_skipjack_dock",
 		"nav_skipjack_start"
 		)
 	shuttle_area =  /area/skipjack_station/start
@@ -516,7 +504,7 @@
 	landmark_tag = "nav_skipjack_north_west"
 
 /obj/effect/shuttle_landmark/skipjack/northeast
-	name = "NorthEast of Station"
+	name = "Northeast of Station"
 	landmark_tag = "nav_skipjack_north_east"
 
 /obj/effect/shuttle_landmark/skipjack/southeast
@@ -524,7 +512,7 @@
 	landmark_tag = "nav_skipjack_south_east"
 
 /obj/effect/shuttle_landmark/skipjack/southwest
-	name = "Southwest pf Station"
+	name = "Southwest of Station"
 	landmark_tag = "nav_skipjack_south_west"
 
 /obj/effect/shuttle_landmark/skipjack/mine
@@ -608,38 +596,16 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod3
 	number = 3
 
-/datum/shuttle/autodock/ferry/escape_pod/pod5
+/datum/shuttle/autodock/ferry/escape_pod/pod4
 	warmup_time = 10
-	shuttle_area = /area/shuttle/escape_pod5/station
-	number = 5
-/obj/effect/shuttle_landmark/escape_pod/start/pod5
-	number = 5
-/obj/effect/shuttle_landmark/escape_pod/out/pod5
-	number = 5
-/obj/effect/shuttle_landmark/escape_pod/transit/pod5
-	number = 5
-
-/datum/shuttle/autodock/ferry/escape_pod/pod6
-	warmup_time = 10
-	shuttle_area = /area/shuttle/escape_pod6
-	number = 6
-/obj/effect/shuttle_landmark/escape_pod/start/pod6
-	number = 6
-/obj/effect/shuttle_landmark/escape_pod/out/pod6
-	number = 6
-/obj/effect/shuttle_landmark/escape_pod/transit/pod6
-	number = 6
-
-/datum/shuttle/autodock/ferry/escape_pod/pod7
-	warmup_time = 10
-	shuttle_area = /area/shuttle/escape_pod7
-	number = 7
-/obj/effect/shuttle_landmark/escape_pod/start/pod7
-	number = 7
-/obj/effect/shuttle_landmark/escape_pod/out/pod7
-	number = 7
-/obj/effect/shuttle_landmark/escape_pod/transit/pod7
-	number = 7
+	shuttle_area = /area/shuttle/escape_pod4/station
+	number = 4
+/obj/effect/shuttle_landmark/escape_pod/start/pod4
+	number = 4
+/obj/effect/shuttle_landmark/escape_pod/out/pod4
+	number = 4
+/obj/effect/shuttle_landmark/escape_pod/transit/pod4
+	number = 4
 
 
 /datum/shuttle/autodock/ferry/emergency
