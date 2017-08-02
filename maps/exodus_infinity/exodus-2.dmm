@@ -17,7 +17,6 @@
 /turf/space,
 /area/space)
 "aae" = (
-/obj/effect/shuttle_landmark/ert/north,
 /turf/space,
 /area/space)
 "aaf" = (
@@ -73933,7 +73932,6 @@
 /turf/space,
 /area/space)
 "cET" = (
-/obj/effect/shuttle_landmark/ert/south,
 /turf/space,
 /area/space)
 "cEU" = (
