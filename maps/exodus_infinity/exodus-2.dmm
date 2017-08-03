@@ -70420,10 +70420,10 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "cyf" = (
-/obj/structure/disposalpipe/trunk{
-	dir = 4
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
 	},
-/obj/structure/disposaloutlet,
 /turf/simulated/floor/airless,
 /area/space)
 "cyg" = (
@@ -81817,6 +81817,13 @@
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor/airless,
 /area/rnd/test_area)
+"cWa" = (
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/structure/disposaloutlet,
+/turf/simulated/floor/airless,
+/area/space)
 
 (1,1,1) = {"
 aaa
@@ -122614,7 +122621,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aah
 aaa
 aaa
 aaa
@@ -122863,16 +122870,16 @@ cvN
 cns
 aaa
 cyf
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+czn
+ctS
+ctS
+ctS
+czn
+ctS
+ctS
+ctS
+czn
+cWa
 aaa
 aaa
 aaa
@@ -123128,7 +123135,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aah
 aaa
 aaa
 aaa
@@ -123385,8 +123392,8 @@ aaa
 aaa
 aaa
 aaa
-aaa
 aah
+aaa
 aaa
 aaa
 aaa
