@@ -8058,6 +8058,7 @@
 	pixel_y = -25;
 	req_access = list(13)
 	},
+/obj/structure/lattice,
 /turf/space,
 /area/space)
 "aoY" = (
@@ -39292,6 +39293,10 @@
 	dir = 8
 	},
 /obj/random_multi/single_item/captains_spare_id,
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 22
+	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/captain)
 "buE" = (
@@ -40037,14 +40042,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
-	},
-/obj/machinery/camera/network/command{
-	c_tag = "Bridge - Captain's Quarters";
-	dir = 1
-	},
-/obj/item/device/radio/intercom{
-	dir = 1;
-	pixel_y = -22
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/captain)
@@ -81813,6 +81810,13 @@
 /obj/effect/shuttle_landmark/merc/southeast,
 /turf/space,
 /area/space)
+"cVZ" = (
+/obj/machinery/door/airlock/external{
+	name = "Toxins Test Chamber"
+	},
+/obj/machinery/shield_diffuser,
+/turf/simulated/floor/airless,
+/area/rnd/test_area)
 
 (1,1,1) = {"
 aaa
@@ -116337,10 +116341,10 @@ aaa
 aah
 aah
 aaa
-aaa
-aaa
-aaa
-aal
+aah
+aah
+aah
+aah
 aaa
 aoV
 apO
@@ -116596,7 +116600,7 @@ aaa
 aaa
 aaa
 aah
-aal
+aaa
 aah
 aah
 aoW
@@ -116851,12 +116855,12 @@ aaa
 aah
 aaa
 aaa
-aah
-aah
+aaa
+aaa
 aaa
 aah
 aaa
-aaa
+aah
 aoW
 aqB
 arp
@@ -117111,7 +117115,7 @@ aaa
 aaa
 aaa
 aaa
-aal
+aah
 aah
 aoX
 apP
@@ -117368,9 +117372,9 @@ aaa
 aaa
 aaa
 aaa
-aah
-aal
 aaa
+aaa
+aah
 aoW
 aqD
 arr
@@ -117624,8 +117628,8 @@ aaa
 aaa
 aaa
 aaa
-aah
-aah
+aaa
+aaa
 aah
 aah
 aoW
@@ -117882,14 +117886,14 @@ aaa
 aaa
 aaa
 aaa
+aaa
+aaa
+aaa
 aah
-aad
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
+aah
 aaa
 atD
 ava
@@ -121734,7 +121738,7 @@ aaa
 aam
 aal
 aaa
-aaa
+aad
 aaa
 aaa
 aaa
@@ -122611,7 +122615,7 @@ aaa
 aaa
 aaa
 aaa
-aah
+aaa
 aaa
 aaa
 aaa
@@ -122868,7 +122872,7 @@ aaa
 aaa
 aaa
 aaa
-aah
+aaa
 aaa
 aaa
 aaa
@@ -123125,7 +123129,7 @@ aaa
 aaa
 aaa
 aaa
-aah
+aaa
 aaa
 aaa
 aaa
@@ -130061,7 +130065,7 @@ ctS
 cAi
 aaa
 aaa
-aad
+aaa
 aaa
 aaa
 aaa
@@ -131608,7 +131612,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aad
 aaa
 aaa
 aaa
@@ -138243,7 +138247,7 @@ aaa
 aah
 bJf
 bJf
-bLN
+cVZ
 bNv
 bJg
 bJh

@@ -6376,6 +6376,94 @@
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/maintenance/sub/starboard)
+"ok" = (
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1379;
+	layer = 7;
+	master_tag = "sub_sec_airlock";
+	name = "exterior access button";
+	pixel_x = -25;
+	pixel_y = -25;
+	req_access = list(13)
+	},
+/obj/structure/lattice,
+/turf/space,
+/area/space)
+"ol" = (
+/obj/machinery/door/airlock/external/bolted{
+	frequency = 1379;
+	id_tag = "sub_sec_outer"
+	},
+/obj/machinery/shield_diffuser,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/fore)
+"om" = (
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1379;
+	layer = 7;
+	master_tag = "sub_cargo_airlock";
+	name = "exterior access button";
+	pixel_x = 25;
+	pixel_y = -25;
+	req_access = list(13)
+	},
+/obj/structure/lattice,
+/turf/space,
+/area/space)
+"on" = (
+/obj/machinery/door/airlock/external/bolted{
+	frequency = 1379;
+	id_tag = "sub_cargo_outer"
+	},
+/obj/machinery/shield_diffuser,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/port)
+"oo" = (
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1379;
+	layer = 7;
+	master_tag = "sub_research_airlock";
+	name = "exterior access button";
+	pixel_x = 25;
+	pixel_y = -25;
+	req_access = list(13)
+	},
+/obj/structure/lattice,
+/turf/space,
+/area/space)
+"op" = (
+/obj/machinery/shield_diffuser,
+/obj/machinery/door/airlock/external/bolted{
+	frequency = 1379;
+	id_tag = "sub_research_outer"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/sub/starboard)
+"oq" = (
+/obj/machinery/shield_diffuser,
+/obj/machinery/door/airlock/external/bolted{
+	frequency = 1379;
+	id_tag = "sub_engineering_outer"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/sub/aft)
+"or" = (
+/obj/structure/lattice,
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1379;
+	layer = 7;
+	master_tag = "sub_engineering_airlock";
+	name = "exterior access button";
+	pixel_x = -25;
+	pixel_y = 25;
+	req_access = list(13)
+	},
+/turf/space,
+/area/space)
 
 (1,1,1) = {"
 aa
@@ -24491,8 +24579,8 @@ aa
 aa
 aa
 aa
-dB
-dF
+aa
+aa
 bB
 dW
 dW
@@ -24747,9 +24835,9 @@ aa
 aa
 aa
 aa
-aa
+ac
 bB
-dG
+bB
 bB
 dW
 dW
@@ -25004,8 +25092,8 @@ aa
 aa
 aa
 aa
-aa
-bB
+om
+on
 be
 bB
 dW
@@ -25261,7 +25349,7 @@ aQ
 aa
 aa
 aa
-aa
+ac
 bB
 dH
 bB
@@ -33432,7 +33520,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 ad
 al
 ad
@@ -33689,8 +33777,8 @@ aa
 aa
 aa
 aa
-aa
-ad
+ok
+ol
 am
 ad
 ax
@@ -33946,9 +34034,9 @@ aa
 aa
 aa
 aa
-aa
+ac
 ad
-an
+ad
 ad
 aw
 ap
@@ -34204,8 +34292,8 @@ aa
 aa
 aa
 aa
-ag
-ao
+aa
+aa
 ap
 ay
 ap
@@ -34568,7 +34656,7 @@ gB
 gM
 ld
 gM
-aa
+ac
 aa
 aa
 aa
@@ -34824,8 +34912,8 @@ gE
 gB
 gM
 hg
-gM
-aa
+oq
+or
 aa
 aa
 aa
@@ -35079,10 +35167,10 @@ aa
 aa
 gE
 gB
-gE
-le
 gM
-aa
+gM
+gM
+ac
 aa
 aa
 aa
@@ -35337,8 +35425,8 @@ aa
 gE
 gB
 gE
-lf
-lx
+aa
+aa
 aa
 aa
 aa
@@ -54054,9 +54142,9 @@ aa
 aa
 aa
 aa
-eV
-fi
-ct
+aa
+aa
+ch
 fD
 ch
 aa
@@ -54310,9 +54398,9 @@ aa
 aa
 aa
 aa
-aa
+ac
 ct
-fj
+ct
 ct
 dN
 ch
@@ -54567,8 +54655,8 @@ aa
 aa
 aa
 aa
-aa
-ct
+oo
+op
 cm
 ct
 fE
@@ -54824,7 +54912,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 ct
 fk
 ct
@@ -55081,7 +55169,7 @@ aa
 aa
 aa
 aa
-ez
+ct
 ct
 fl
 ct
@@ -55338,7 +55426,7 @@ aa
 aa
 aa
 aa
-ez
+ct
 eW
 fm
 fw
@@ -55595,7 +55683,7 @@ aa
 aa
 aa
 aa
-ez
+ct
 eX
 fn
 cm
@@ -55852,7 +55940,7 @@ aa
 aa
 aa
 aa
-ez
+ct
 ct
 fo
 cm
