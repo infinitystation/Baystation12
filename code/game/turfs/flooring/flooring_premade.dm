@@ -113,6 +113,11 @@
 	icon_state = "cult"
 	initial_flooring = /decl/flooring/reinforced/cult
 
+/turf/simulated/floor/cult/airless
+	oxygen = 0
+	nitrogen = 0
+
+
 /turf/simulated/floor/cult/New()
 	..()
 	new /obj/effect/overlay/cult/cultfloor(src)

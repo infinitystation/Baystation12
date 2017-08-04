@@ -7771,21 +7771,27 @@
 	icon_state = "propulsion_r";
 	dir = 1
 	},
-/turf/space,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/centcom/evac)
 "art" = (
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion";
 	dir = 1
 	},
-/turf/space,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/centcom/evac)
 "aru" = (
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_l";
 	dir = 1
 	},
-/turf/space,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/centcom/evac)
 "arv" = (
 /turf/simulated/shuttle/wall{
@@ -9291,11 +9297,18 @@
 /obj/machinery/airlock_sensor{
 	frequency = 1331;
 	id_tag = "merc_shuttle_sensor";
-	pixel_x = 8;
+	pixel_x = -6;
 	pixel_y = 25
 	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	frequency = 1331;
+	id_tag = "merc_shuttle";
+	pixel_x = 6;
+	pixel_y = 25;
+	req_access = list(150)
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
@@ -11769,17 +11782,23 @@
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_l"
 	},
-/turf/space,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/syndicate_station/start)
 "aAm" = (
 /obj/structure/shuttle/engine/propulsion,
-/turf/space,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/syndicate_station/start)
 "aAn" = (
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_r"
 	},
-/turf/space,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/syndicate_station/start)
 "aAo" = (
 /turf/unsimulated/floor{
@@ -18078,6 +18097,7 @@
 	icon_state = "spiderling";
 	name = "dead spider"
 	},
+/obj/random/tech_supply,
 /turf/unsimulated/floor{
 	icon_state = "plating";
 	name = "plating"
@@ -18420,6 +18440,7 @@
 /obj/machinery/shower{
 	dir = 1
 	},
+/obj/random/soap,
 /turf/unsimulated/floor{
 	icon_state = "plating";
 	name = "plating"
@@ -18790,6 +18811,12 @@
 /obj/item/clothing/under/rank/mailman,
 /obj/item/clothing/accessory/storage,
 /obj/item/clothing/under/rank/dispatch,
+/obj/item/clothing/under/utility/mirania,
+/obj/item/clothing/under/utility/marine/tan,
+/obj/item/clothing/under/mime,
+/obj/item/clothing/under/hazard,
+/obj/item/clothing/under/frontier,
+/obj/item/clothing/under/pirate,
 /turf/unsimulated/floor{
 	icon_state = "carpet";
 	name = "carpet"
@@ -21499,8 +21526,9 @@
 "aUD" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
-	id = "skipjackshutters";
+	id = "SkipjackShuttersNorth";
 	name = "Blast Doors";
 	opacity = 0
 	},
@@ -21518,8 +21546,9 @@
 "aUE" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
-	id = "skipjackshutters";
+	id = "SkipjackShuttersNorth";
 	name = "Blast Doors";
 	opacity = 0
 	},
@@ -21534,8 +21563,9 @@
 "aUF" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
-	id = "skipjackshutters";
+	id = "SkipjackShuttersNorth";
 	name = "Blast Doors";
 	opacity = 0
 	},
@@ -23288,6 +23318,7 @@
 "aYt" = (
 /obj/structure/table/steel,
 /obj/random/maintenance,
+/obj/random/powercell,
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "aYu" = (
@@ -24199,12 +24230,7 @@
 	},
 /area/tdome/tdome1)
 "bav" = (
-/obj/structure/toilet{
-	dir = 4
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/machinery/light/small,
 /turf/simulated/floor/shuttle/black,
 /area/skipjack_station/start)
 "baw" = (
@@ -24230,6 +24256,7 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
+/obj/random/medical,
 /turf/simulated/floor/shuttle/white,
 /area/skipjack_station/start)
 "baz" = (
@@ -26138,7 +26165,6 @@
 /area/admin_prison)
 "bfn" = (
 /obj/effect/wingrille_spawn/reinforced/crescent,
-/obj/structure/window/reinforced/polarized,
 /turf/unsimulated/wall,
 /area/admin_prison)
 "bfo" = (
@@ -27415,6 +27441,44 @@
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
+/area/skipjack_station/start)
+"biw" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	frequency = 1331;
+	id_tag = "merc_shuttle_pump"
+	},
+/obj/structure/sign/warning/airlock{
+	pixel_y = 32
+	},
+/turf/simulated/floor/shuttle/darkred,
+/area/syndicate_station/start)
+"bix" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/tool,
+/turf/unsimulated/floor{
+	icon_state = "plating";
+	name = "plating"
+	},
+/area/syndicate_mothership/raider_base)
+"biy" = (
+/obj/effect/wingrille_spawn/reinforced,
+/turf/simulated/floor/shuttle/black,
+/area/skipjack_station/start)
+"biz" = (
+/obj/machinery/door/window{
+	dir = 1;
+	name = "Cell";
+	req_access = list(150)
+	},
+/turf/simulated/floor/shuttle/black,
+/area/skipjack_station/start)
+"biA" = (
+/obj/random/trash,
+/obj/structure/toilet{
+	dir = 4
+	},
+/turf/simulated/floor/shuttle/black,
 /area/skipjack_station/start)
 
 (1,1,1) = {"
@@ -39613,8 +39677,8 @@ bcM
 bcM
 bcM
 bgr
-bgx
-bgH
+bdX
+beK
 bgQ
 bgZ
 bcE
@@ -40120,7 +40184,7 @@ bcE
 bcE
 bey
 beL
-bff
+bgW
 bfn
 bfH
 bcM
@@ -40641,8 +40705,8 @@ bdX
 bdX
 bdX
 bgu
-bgx
-bgH
+bdX
+bgW
 bgQ
 bgZ
 bcE
@@ -41148,7 +41212,7 @@ bcE
 bcE
 bey
 beL
-bff
+bgW
 bfn
 bfH
 bdX
@@ -41669,8 +41733,8 @@ bcM
 bcM
 bcM
 bgu
-bgx
-bgH
+bdX
+bgW
 bgQ
 bgZ
 bcE
@@ -42176,7 +42240,7 @@ bcE
 bcE
 bey
 beL
-bff
+bgW
 bfn
 bfH
 bcM
@@ -42697,8 +42761,8 @@ bcM
 bcM
 bcM
 bgu
-bgx
-bgH
+bdX
+bgW
 bgQ
 bgZ
 bcE
@@ -43204,7 +43268,7 @@ bcE
 bcE
 bey
 beL
-bff
+bgW
 bfn
 bfH
 bcM
@@ -43725,8 +43789,8 @@ bdX
 bdX
 bdX
 bgu
-bgx
-bgH
+bdX
+bgW
 bgQ
 bgZ
 bcE
@@ -44232,7 +44296,7 @@ bcE
 bcE
 bey
 beL
-bff
+bgW
 bfn
 bfH
 bdX
@@ -44753,8 +44817,8 @@ bcM
 bcM
 bcM
 bgu
-bgx
-bgH
+bdX
+bgW
 bgQ
 bgZ
 bcE
@@ -45260,7 +45324,7 @@ bcE
 bcE
 bey
 beL
-bff
+bgW
 bfn
 bfH
 bfU
@@ -85413,7 +85477,7 @@ aaf
 aaf
 arA
 arU
-auz
+biw
 auz
 avp
 avO
@@ -85927,7 +85991,7 @@ aaf
 aaf
 aaf
 arU
-auB
+auW
 auW
 avp
 avQ
@@ -88054,8 +88118,8 @@ aYr
 aYM
 aYM
 aZK
-aYM
-aZx
+aUC
+biA
 aUC
 aUC
 aaf
@@ -88309,9 +88373,9 @@ aWZ
 aUC
 aUC
 aYN
-aZx
-aZL
 aYM
+aZL
+biy
 aYM
 bav
 aUC
@@ -88561,16 +88625,16 @@ aUC
 aUC
 aWc
 aWC
-aWY
+aYO
 aWd
 aXV
 aUC
-aYM
-aYM
-aYM
+aZx
 aZX
-bam
 aYM
+biz
+bam
+aZx
 aUC
 aUC
 aZH
@@ -88818,7 +88882,7 @@ bcC
 aVt
 aWd
 aWd
-aWY
+aYO
 aWf
 aXW
 aUC
@@ -89075,7 +89139,7 @@ aUU
 aVu
 aWd
 aWd
-aWY
+aYO
 aWd
 aWd
 aYs
@@ -89589,7 +89653,7 @@ aUV
 aVw
 aWd
 aWd
-aWY
+aYO
 aXz
 aWd
 aYu
@@ -89846,7 +89910,7 @@ bcD
 aVx
 aWf
 aWd
-aWY
+aYO
 aWd
 aXX
 aUC
@@ -90103,7 +90167,7 @@ aUC
 aUC
 aWg
 aWD
-aWY
+aYO
 aWd
 aXY
 aUC
@@ -91629,7 +91693,7 @@ aKE
 aJg
 aJg
 aIA
-aNs
+bix
 aOk
 aOY
 aIA

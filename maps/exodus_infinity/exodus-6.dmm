@@ -4222,6 +4222,7 @@
 	dir = 1;
 	pixel_y = -25
 	},
+/obj/item/device/suit_cooling_unit,
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/dock)
 "iB" = (
@@ -12898,7 +12899,6 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/item/weapon/storage/firstaid/regular,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/camera/network/mining{
 	c_tag = "Mining Outpost EVA";
@@ -12908,7 +12908,7 @@
 	dir = 8;
 	pixel_x = 22
 	},
-/obj/item/bodybag/cryobag,
+/obj/item/device/suit_cooling_unit,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
 "yO" = (
@@ -16004,6 +16004,1039 @@
 "DU" = (
 /turf/space,
 /area/space)
+"DV" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"DW" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"DX" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"DY" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"DZ" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ea" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Eb" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ec" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ed" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ee" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ef" = (
+/obj/structure/cult/pylon,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Eg" = (
+/obj/structure/cult/talisman,
+/obj/item/weapon/material/knife/ritual,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Eh" = (
+/obj/structure/cult/pylon,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ei" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ej" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ek" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"El" = (
+/obj/structure/table/woodentable,
+/obj/item/trash/candle,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Em" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"En" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Eo" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ep" = (
+/obj/structure/table/woodentable,
+/obj/item/trash/candle,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Eq" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Er" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Es" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Et" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Eu" = (
+/obj/random_multi/single_item/cult_faithless,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ev" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ew" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/melee/cultblade,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ex" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ey" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ez" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"EA" = (
+/obj/structure/bed/chair/wood/wings{
+	dir = 1
+	},
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"EB" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"EC" = (
+/obj/structure/bed/chair/wood/wings{
+	dir = 1
+	},
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"ED" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"EE" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"EF" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"EG" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"EH" = (
+/obj/structure/bed/chair/wood/wings{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"EI" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"EJ" = (
+/obj/structure/bed/chair/wood/wings{
+	dir = 1
+	},
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"EK" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"EL" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"EM" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"EN" = (
+/obj/structure/bed/chair/wood/wings{
+	dir = 1
+	},
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"EO" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"EP" = (
+/obj/structure/bed/chair/wood/wings{
+	dir = 1
+	},
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"EQ" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"ER" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"ES" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"ET" = (
+/obj/structure/sign/directions{
+	desc = "Непонн&#255;тный набор букв, символов и неприличных жестов...";
+	description_antag = "Свенный Алтарь.";
+	dir = 1;
+	name = "nikka tok-lyr sign"
+	},
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"EU" = (
+/obj/machinery/door/unpowered/simple/cult,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"EV" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"EW" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"EX" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"EY" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"EZ" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Fa" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Fb" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Fc" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Fd" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Fe" = (
+/obj/structure/constructshell/cult,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ff" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Fg" = (
+/obj/structure/constructshell/cult,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Fh" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Fi" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Fj" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Fk" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Fl" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Fm" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Fn" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Fo" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Fp" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Fq" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Fr" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Fs" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ft" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Fu" = (
+/obj/random_multi/single_item/cult_faithless,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Fv" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Fw" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Fx" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Fy" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Fz" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FA" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FB" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"FC" = (
+/obj/machinery/door/unpowered/simple/cult,
+/obj/effect/step_trigger/message{
+	message = "Отсюда так и тет кровавым запахом... Почему \green чувствую его в скафандре?"
+	},
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FD" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FE" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FF" = (
+/obj/machinery/door/unpowered/simple/cult,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FG" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FH" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FI" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FJ" = (
+/obj/structure/cult/pylon,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FK" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FL" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FM" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FN" = (
+/obj/machinery/door/unpowered/simple/cult,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FO" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FP" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FQ" = (
+/obj/machinery/door/unpowered/simple/cult,
+/obj/effect/step_trigger/message{
+	message = "Отсюда так и тет кровавым запахом... Почему \green чувствую его в скафандре?"
+	},
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FR" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"FS" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FT" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FU" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"FV" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FW" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FX" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FY" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"FZ" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ga" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Gb" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Gc" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gd" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ge" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Gf" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gg" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gh" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gi" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gj" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gk" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gl" = (
+/obj/structure/table/woodentable,
+/obj/item/glass_jar,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Gm" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Gn" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Go" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Gp" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Gq" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gr" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gs" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gt" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gu" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gv" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gw" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gx" = (
+/obj/structure/sign/directions{
+	desc = "Непонн&#255;тный набор букв, символов и неприличных жестов...";
+	description_antag = "Зал рукописей.";
+	dir = 1;
+	name = "pleggh tok-lyr sign"
+	},
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Gy" = (
+/obj/machinery/door/unpowered/simple/cult,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Gz" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"GA" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"GB" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"GC" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"GD" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"GE" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"GF" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"GG" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"GH" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"GI" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"GJ" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"GK" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"GL" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"GM" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"GN" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"GO" = (
+/obj/structure/bookcase,
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"GP" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"GQ" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"GR" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"GS" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"GT" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"GU" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"GV" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"GW" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"GX" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"GY" = (
+/obj/structure/bookcase,
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"GZ" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ha" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Hb" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hc" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hd" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"He" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hf" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hg" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hh" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hi" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hj" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hk" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hl" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hm" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Hn" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ho" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hp" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hq" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hr" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hs" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ht" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hu" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hv" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hw" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hx" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hy" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Hz" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"HA" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"HB" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HC" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HD" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HE" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HF" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HG" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HH" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HI" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HJ" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HK" = (
+/obj/random_multi/single_item/cult_faithless,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HL" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HM" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"HN" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"HO" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HP" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HQ" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HR" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HS" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HT" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HU" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HV" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HW" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HX" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HY" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"HZ" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ia" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ib" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ic" = (
+/obj/random_multi/single_item/cult_faithless,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Id" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ie" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"If" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ig" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ih" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ii" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ij" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ik" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Il" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Im" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"In" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Io" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ip" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Iq" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ir" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Is" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"It" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Iu" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Iv" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Iw" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ix" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Iy" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Iz" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"IA" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"IB" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IC" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"ID" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IE" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/paper/talisman,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IF" = (
+/obj/structure/bed/chair/wood/wings,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IG" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IH" = (
+/obj/structure/bed/chair/wood/wings,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"II" = (
+/obj/structure/table/woodentable,
+/obj/item/trash/candle,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IJ" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IK" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IL" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IM" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"IN" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"IO" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"IP" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IQ" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IR" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/weapon/pen,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IS" = (
+/obj/structure/cult/tome,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IT" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/book/tome{
+	name = "strange tome"
+	},
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IU" = (
+/obj/structure/cult/tome,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IV" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/weapon/pen,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IW" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IX" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"IY" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"IZ" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ja" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Jb" = (
+/obj/structure/bookcase,
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Jc" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Jd" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Je" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Jf" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Jg" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Jh" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Ji" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Jj" = (
+/obj/structure/bookcase,
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Jk" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Jl" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Jm" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Jn" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Jo" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Jp" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Jq" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Jr" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Js" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"Jt" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Ju" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Jv" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Jw" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Jx" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Jy" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"Jz" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"JA" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"JB" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"JC" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
 
 (1,1,1) = {"
 aa
@@ -32823,7 +33856,7 @@ ab
 ab
 ab
 ab
-ab
+ah
 ab
 ab
 ab
@@ -33080,10 +34113,10 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
+ah
+ah
+ah
+ah
 ab
 ab
 ab
@@ -33337,10 +34370,10 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
+ah
+ah
+ah
+ah
 ab
 ab
 ab
@@ -33596,9 +34629,9 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
+ah
+ah
+ah
 ab
 ab
 ab
@@ -33853,9 +34886,9 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
+ah
+ah
+ah
 ab
 ab
 ab
@@ -34111,8 +35144,8 @@ ab
 ab
 ab
 ab
-ab
-ab
+ah
+ah
 ab
 ab
 ab
@@ -34369,8 +35402,8 @@ ab
 ab
 ab
 ab
-ab
-ab
+ah
+ah
 ab
 ab
 ab
@@ -34626,9 +35659,9 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
+ah
+ah
+ah
 ab
 ab
 ab
@@ -34884,8 +35917,8 @@ ab
 ab
 ab
 ab
-ab
-ab
+ah
+ah
 ab
 ab
 ab
@@ -35139,11 +36172,11 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
+EY
+Fn
+FC
+FR
+Gg
 ab
 ab
 ab
@@ -35387,6 +36420,7 @@ ab
 ab
 ab
 ab
+DV
 ab
 ab
 ab
@@ -35395,23 +36429,22 @@ ab
 ab
 ab
 ab
+EZ
+Fo
+FD
+FS
+Gh
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+GN
+Ha
+Hn
+HA
+HN
+Ia
+In
+IA
+IN
 ab
 ab
 ab
@@ -35644,6 +36677,7 @@ ab
 ab
 ab
 ab
+DW
 ab
 ab
 ab
@@ -35652,24 +36686,23 @@ ab
 ab
 ab
 ab
+Fa
+Fp
+FE
+FT
+Gi
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+GC
+GO
+Hb
+Ho
+HB
+HO
+Ib
+Io
+IB
+IO
+Ja
 ab
 ab
 ab
@@ -35901,6 +36934,7 @@ ab
 ab
 ab
 ab
+DX
 ab
 ab
 ab
@@ -35909,26 +36943,25 @@ ab
 ab
 ab
 ab
+Fb
+Fq
+FF
+FU
+Gj
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+GD
+GP
+Hc
+Hp
+HC
+HP
+Ic
+Ip
+IC
+IP
+Jb
+Jl
+Ju
 ab
 ab
 ab
@@ -36160,32 +37193,32 @@ ab
 ab
 ab
 ab
+Ed
+Ek
+Er
+Ey
+EF
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+ER
+Fc
+Fr
+FG
+FV
+Gk
+Gv
+GE
+GQ
+Hd
+Hq
+HD
+HQ
+Id
+Iq
+ID
+IQ
+Jc
+Jm
+Jv
 ab
 ab
 ab
@@ -36416,33 +37449,33 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+DY
+Ee
+El
+Es
+Ez
+EG
+EM
+ES
+Fd
+Fs
+FH
+FW
+Gl
+Gw
+GF
+GR
+He
+Hr
+HE
+HR
+Ie
+Ir
+IE
+IR
+Jd
+Jn
+Jw
 ab
 ab
 ab
@@ -36673,33 +37706,33 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+DZ
+Ef
+Em
+Et
+EA
+EH
+EN
+ET
+Fe
+Ft
+FI
+FX
+Gm
+Gx
+GG
+GS
+Hf
+Hs
+HF
+HS
+If
+Is
+IF
+IS
+Je
+Jo
+Jx
 ab
 ab
 ab
@@ -36930,33 +37963,33 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ea
+Eg
+En
+Eu
+EB
+EI
+EO
+EU
+Ff
+Fu
+FJ
+FY
+Gn
+Gy
+GH
+GT
+Hg
+Ht
+HG
+HT
+Ig
+It
+IG
+IT
+Jf
+Jp
+Jy
 ab
 ab
 ab
@@ -37187,33 +38220,33 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Eb
+Eh
+Eo
+Ev
+EC
+EJ
+EP
+EV
+Fg
+Fv
+FK
+FZ
+Go
+Gz
+GI
+GU
+Hh
+Hu
+HH
+HU
+Ih
+Iu
+IH
+IU
+Jg
+Jq
+Jz
 ab
 ab
 ab
@@ -37444,33 +38477,33 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Ec
+Ei
+Ep
+Ew
+ED
+EK
+EQ
+EW
+Fh
+Fw
+FL
+Ga
+Gp
+GA
+GJ
+GV
+Hi
+Hv
+HI
+HV
+Ii
+Iv
+II
+IV
+Jh
+Jr
+JA
 ab
 ab
 ab
@@ -37702,32 +38735,32 @@ ab
 ab
 ab
 ab
+Ej
+Eq
+Ex
+EE
+EL
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+EX
+Fi
+Fx
+FM
+Gb
+Gq
+GB
+GK
+GW
+Hj
+Hw
+HJ
+HW
+Ij
+Iw
+IJ
+IW
+Ji
+Js
+JB
 ab
 ab
 ab
@@ -37966,25 +38999,25 @@ ab
 ab
 ab
 ab
+Fj
+Fy
+FN
+Gc
+Gr
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+GL
+GX
+Hk
+Hx
+HK
+HX
+Ik
+Ix
+IK
+IX
+Jj
+Jt
+JC
 ab
 ab
 ab
@@ -38223,23 +39256,23 @@ ab
 ab
 ab
 ab
+Fk
+Fz
+FO
+Gd
+Gs
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+GM
+GY
+Hl
+Hy
+HL
+HY
+Il
+Iy
+IL
+IY
+Jk
 ab
 ab
 ab
@@ -38480,22 +39513,22 @@ ab
 ab
 ab
 ab
+Fl
+FA
+FP
+Ge
+Gt
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+GZ
+Hm
+Hz
+HM
+HZ
+Im
+Iz
+IM
+IZ
 ab
 ab
 ab
@@ -38737,11 +39770,11 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
+Fm
+FB
+FQ
+Gf
+Gu
 ab
 ab
 ab
@@ -38995,8 +40028,8 @@ ab
 ab
 ab
 ab
-ab
-ab
+ah
+ah
 ab
 ab
 ab
@@ -39252,9 +40285,9 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
+ah
+ah
+ah
 ab
 ab
 ab
@@ -39510,9 +40543,9 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
+ah
+ah
+ah
 ab
 ab
 ab
@@ -39767,9 +40800,9 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
+ah
+ah
+ah
 ab
 ab
 ab
@@ -40024,10 +41057,10 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
+ah
+ah
+ah
+ah
 ab
 ab
 ab
@@ -40283,8 +41316,8 @@ ab
 ab
 ab
 ab
-ab
-ab
+ah
+ah
 ab
 ab
 ab
@@ -40540,10 +41573,10 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
+ah
+ah
+ah
+ah
 ab
 ab
 ab
@@ -40798,9 +41831,9 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
+ah
+ah
+ah
 ab
 ab
 ab

@@ -1726,6 +1726,7 @@
 /area/maintenance/sub/starboard)
 "eq" = (
 /obj/item/stack/cable_coil/random,
+/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/sub/starboard)
 "er" = (
@@ -2258,6 +2259,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/sub/starboard)
 "ft" = (
@@ -6464,6 +6466,116 @@
 	},
 /turf/space,
 /area/space)
+"os" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/port)
+"ot" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/port)
+"ou" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/port)
+"ov" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/starboard)
+"ow" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/starboard)
+"ox" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/port)
+"oy" = (
+/obj/structure/girder,
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/starboard)
+"oz" = (
+/obj/structure/bed/chair,
+/obj/effect/decal/remains,
+/turf/simulated/floor/plating,
+/area/space)
+"oA" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/starboard)
+"oB" = (
+/obj/structure/table/rack,
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/port)
+"oC" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/starboard)
+"oD" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/port)
+"oE" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/starboard)
+"oF" = (
+/obj/random/junk,
+/turf/simulated/floor/reinforced,
+/area/maintenance/sub/starboard)
+"oG" = (
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/starboard)
+"oH" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/random/junk,
+/turf/simulated/floor/reinforced,
+/area/maintenance/sub/starboard)
+"oI" = (
+/obj/random/junk,
+/turf/simulated/floor/reinforced,
+/area/maintenance/sub/starboard)
+"oJ" = (
+/obj/random/junk,
+/turf/simulated/floor/reinforced,
+/area/maintenance/sub/starboard)
+"oK" = (
+/obj/random/junk,
+/turf/simulated/floor/reinforced,
+/area/maintenance/sub/starboard)
+"oL" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/starboard)
+"oM" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/starboard)
+"oN" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/starboard)
+"oO" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/starboard)
+"oP" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/starboard)
+"oQ" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/starboard)
 
 (1,1,1) = {"
 aa
@@ -20511,8 +20623,8 @@ ab
 ab
 ab
 gV
-gV
 hY
+lg
 ab
 ab
 ab
@@ -21726,7 +21838,7 @@ aa
 ac
 ac
 bd
-be
+os
 bi
 bm
 bm
@@ -22500,7 +22612,7 @@ ac
 bd
 be
 be
-be
+ot
 be
 bA
 be
@@ -26123,7 +26235,7 @@ bd
 bd
 be
 be
-be
+oB
 bd
 bd
 bd
@@ -26635,9 +26747,9 @@ ac
 aa
 aa
 aa
-aa
-aa
-aa
+fB
+oz
+fB
 aa
 aa
 aa
@@ -27409,7 +27521,7 @@ bd
 be
 dp
 dp
-be
+oD
 bd
 bd
 bd
@@ -27920,7 +28032,7 @@ ac
 aa
 aa
 bd
-be
+ox
 be
 be
 be
@@ -29204,7 +29316,7 @@ ac
 ac
 bd
 dp
-be
+ou
 be
 bd
 ac
@@ -32000,12 +32112,12 @@ aw
 ap
 aa
 aa
+ac
 aa
 aa
 aa
 aa
-aa
-aa
+ac
 aa
 aa
 ab
@@ -32016,7 +32128,7 @@ ac
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -32257,12 +32369,12 @@ aw
 ap
 aa
 aa
+ac
 aa
 aa
 aa
 aa
-aa
-aa
+ac
 aa
 aa
 ab
@@ -32273,7 +32385,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -32514,12 +32626,12 @@ aw
 ap
 aa
 aa
+ac
 aa
 aa
 aa
 aa
-aa
-aa
+ac
 aa
 aa
 ab
@@ -32530,7 +32642,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -32762,7 +32874,7 @@ ap
 aQ
 aQ
 aS
-aa
+ac
 ab
 ac
 ac
@@ -33019,9 +33131,9 @@ ap
 aQ
 aQ
 aQ
-aa
+ac
 ab
-aa
+ac
 aQ
 ap
 aw
@@ -33033,12 +33145,12 @@ aQ
 aQ
 aQ
 aQ
-aa
+ac
 aa
 aa
 aa
 ac
-aa
+ac
 aQ
 aQ
 aQ
@@ -33285,12 +33397,12 @@ aw
 ap
 aa
 aa
+ac
 aa
 aa
 aa
 aa
-aa
-aa
+ac
 aa
 aa
 aa
@@ -33303,7 +33415,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 cv
@@ -33560,7 +33672,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 cv
@@ -33804,7 +33916,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -33817,7 +33929,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 cv
@@ -34074,7 +34186,7 @@ ap
 ap
 ap
 ap
-aa
+ac
 cv
 cv
 cv
@@ -34346,12 +34458,12 @@ aa
 dr
 di
 dj
-aa
-aa
-aa
+ac
+ac
+ac
 di
-aa
-aa
+ac
+ac
 dr
 eL
 fc
@@ -34602,7 +34714,7 @@ ac
 aa
 dr
 aa
-aa
+ac
 aa
 aa
 aa
@@ -34859,7 +34971,7 @@ ac
 aa
 dr
 aa
-aa
+ac
 aa
 aa
 aa
@@ -35076,8 +35188,8 @@ aa
 aa
 aa
 aa
-aa
-aa
+ac
+ac
 ap
 ap
 ap
@@ -35116,7 +35228,7 @@ dj
 di
 dr
 aa
-aa
+ac
 aa
 aa
 di
@@ -35333,7 +35445,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -35590,7 +35702,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -35630,7 +35742,7 @@ dj
 di
 dr
 aa
-aa
+ac
 aa
 aa
 di
@@ -35638,7 +35750,7 @@ di
 di
 aa
 aa
-aa
+ac
 aa
 dr
 di
@@ -35847,7 +35959,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -35887,7 +35999,7 @@ ac
 aa
 dr
 aa
-aa
+ac
 aa
 aa
 aa
@@ -35895,7 +36007,7 @@ di
 aa
 aa
 aa
-aa
+ac
 aa
 dr
 aa
@@ -36144,7 +36256,7 @@ ac
 aa
 dr
 aa
-aa
+ac
 aa
 aa
 aa
@@ -36152,7 +36264,7 @@ di
 aa
 aa
 aa
-aa
+ac
 aa
 dr
 aa
@@ -36402,13 +36514,13 @@ aa
 dr
 di
 dj
-aa
-aa
-aa
+ac
+ac
+ac
 di
-aa
-aa
-aa
+ac
+ac
+ac
 dj
 di
 dr
@@ -42825,19 +42937,19 @@ aa
 aa
 ch
 dt
-cm
+ov
 cm
 dN
-cm
+oC
 cm
 cm
 ct
 em
-ex
+oF
 ex
 ct
 em
-ex
+oI
 ex
 ct
 aa
@@ -43093,7 +43205,7 @@ em
 ex
 ex
 ct
-em
+oH
 ex
 ex
 ct
@@ -43596,11 +43708,11 @@ aa
 aa
 ch
 dv
-cm
+ow
 dD
 dN
 cm
-cm
+oE
 dx
 ch
 eo
@@ -43861,7 +43973,7 @@ cm
 ee
 eg
 ep
-ee
+oG
 eT
 fh
 eT
@@ -44368,7 +44480,7 @@ aa
 ch
 ch
 dA
-dA
+oy
 cm
 cm
 dE
@@ -44636,7 +44748,7 @@ cm
 cm
 dA
 ex
-ex
+oJ
 ex
 ch
 aa
@@ -44883,7 +44995,7 @@ oj
 dx
 dw
 dE
-cm
+oA
 dx
 dZ
 dw
@@ -45150,7 +45262,7 @@ cm
 cm
 ct
 ex
-ex
+oK
 ex
 ch
 aa
@@ -50569,7 +50681,7 @@ ch
 ch
 ch
 aa
-aa
+ac
 ct
 ct
 fD
@@ -50822,11 +50934,11 @@ ch
 dv
 dv
 oh
-cm
+oO
 cm
 ch
 aa
-aa
+ac
 aa
 ch
 dN
@@ -51082,9 +51194,9 @@ cm
 ch
 dA
 ch
-aa
-aa
-aa
+ac
+ac
+ac
 ch
 ge
 ch
@@ -51340,7 +51452,7 @@ cm
 cm
 ch
 aa
-aa
+ac
 aa
 ch
 dN
@@ -51591,10 +51703,10 @@ aa
 aa
 cK
 cm
-cm
+oM
 cm
 ch
-cm
+oQ
 ch
 ch
 ch
@@ -52106,7 +52218,7 @@ aa
 cK
 cm
 ch
-cm
+oN
 ch
 dA
 ch
@@ -52361,14 +52473,14 @@ aa
 aa
 aa
 ch
-cm
+oL
 dA
 cm
 hi
 cm
 ch
 aa
-aa
+ac
 aa
 ch
 dN
@@ -52621,12 +52733,12 @@ ch
 gU
 dA
 cm
-cm
+oP
 cm
 ch
-aa
-aa
-aa
+ac
+ac
+ac
 ch
 dN
 ch
@@ -52882,7 +52994,7 @@ cm
 cm
 ch
 aa
-aa
+ac
 aa
 ch
 dN
@@ -53139,7 +53251,7 @@ ch
 ch
 ch
 aa
-aa
+ac
 aa
 ch
 dN
@@ -53396,7 +53508,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 ch
 fD
@@ -53653,7 +53765,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 ch
 dN
@@ -53910,7 +54022,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 ch
 ge
@@ -54167,7 +54279,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 ch
 dN
