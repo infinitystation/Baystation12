@@ -6706,7 +6706,8 @@
 /area/maintenance/sub/central)
 "pq" = (
 /obj/structure/table/standard,
-/obj/random/junk,
+/obj/item/weapon/bonegel,
+/obj/item/weapon/bonesetter,
 /turf/simulated/floor/plating,
 /area/maintenance/sub/central)
 "pr" = (
@@ -6737,6 +6738,14 @@
 	pixel_y = 0
 	},
 /obj/random/trash,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pw" = (
+/obj/item/weapon/caution,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"px" = (
+/obj/item/weapon/caution,
 /turf/simulated/floor/plating,
 /area/maintenance/sub/central)
 
@@ -29216,7 +29225,7 @@ cv
 oX
 pd
 cF
-pn
+oZ
 pr
 cv
 ac
@@ -29470,11 +29479,11 @@ aa
 ac
 ac
 oS
-cF
+pw
 pe
 pj
 po
-ps
+pd
 cv
 ac
 bd
@@ -29726,7 +29735,7 @@ aa
 aa
 ac
 aa
-oT
+oS
 oY
 pf
 cF
@@ -30243,7 +30252,7 @@ cv
 cv
 pa
 cv
-pl
+pa
 cv
 cv
 cv
@@ -31271,7 +31280,7 @@ ac
 aa
 ac
 cv
-cF
+px
 cP
 cw
 cw
@@ -32298,7 +32307,7 @@ aa
 aa
 cv
 cG
-ph
+pe
 cF
 db
 cv
