@@ -54,6 +54,7 @@
 
 /mob/living/carbon/human/neaera/New(var/new_loc)
 	..(new_loc, "Neaera")
+	item_state = "neara"
 
 /mob/living/carbon/human/stok/New(var/new_loc)
 	..(new_loc, "Stok")
