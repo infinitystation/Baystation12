@@ -656,8 +656,8 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/obj/item/clothing/suit/armor/bulletproof/vest,
-/obj/item/clothing/suit/armor/bulletproof/vest,
+/obj/item/clothing/suit/armor/bulletproof,
+/obj/item/clothing/suit/armor/bulletproof,
 /obj/item/clothing/head/helmet/ballistic,
 /obj/item/clothing/head/helmet/ballistic,
 /turf/simulated/floor/tiled/dark,
@@ -673,8 +673,8 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/clothing/suit/armor/laserproof/vest,
-/obj/item/clothing/suit/armor/laserproof/vest,
+/obj/item/clothing/suit/armor/laserproof,
+/obj/item/clothing/suit/armor/laserproof,
 /obj/item/clothing/head/helmet/ablative,
 /obj/item/clothing/head/helmet/ablative,
 /turf/simulated/floor/tiled/dark,
@@ -3956,7 +3956,7 @@
 /obj/item/weapon/folder/red,
 /obj/item/weapon/pen,
 /obj/structure/table/steel_reinforced,
-/obj/item/weapon/paper/exodus_armory,
+/obj/item/weapon/paper/exodus_armory/infinity,
 /turf/simulated/floor/tiled/dark,
 /area/security/warden)
 "ahD" = (
@@ -6381,6 +6381,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/tiled,
 /area/security/brig)
 "alT" = (
@@ -7068,7 +7069,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/tiled,
 /area/security/brig)
 "ank" = (
@@ -20679,6 +20679,11 @@
 /obj/effect/floor_decal/corner/grey{
 	dir = 6
 	},
+/obj/item/weapon/paper_bin{
+	pixel_x = -2;
+	pixel_y = 5
+	},
+/obj/item/weapon/pen,
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "aMB" = (

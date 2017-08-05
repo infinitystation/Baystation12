@@ -1174,3 +1174,8 @@ var/list/random_useful_
 	// 1% chance that we reach here
 	var/lunches = lunchables_lunches()
 	return lunches[pick(lunches)]
+
+/obj/random_multi/single_item/cult_faithless
+	name = "Multi Point - Asteroid Faithless"
+	id = "Faithless"
+	item_path = /mob/living/simple_animal/hostile/faithless/cult
