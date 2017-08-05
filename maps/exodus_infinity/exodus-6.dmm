@@ -7883,6 +7883,19 @@
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
 "pO" = (
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"pP" = (
+/obj/structure/cult/pylon,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"pQ" = (
+/obj/structure/cult/talisman,
+/obj/item/weapon/material/knife/ritual,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"pR" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
@@ -7902,7 +7915,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"pP" = (
+"pS" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-c"
@@ -7922,7 +7935,39 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"pQ" = (
+"pT" = (
+/obj/structure/table/woodentable,
+/obj/item/trash/candle,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"pU" = (
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"pV" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/reagent_containers/food/drinks/zombiedrink,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"pW" = (
+/obj/random_multi/single_item/cult_faithless,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"pX" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/melee/cultblade,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"pY" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"pZ" = (
+/obj/structure/bed/chair/wood/wings{
+	dir = 1
+	},
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"qa" = (
 /obj/machinery/light_construct/small{
 	dir = 4
 	},
@@ -7933,11 +7978,64 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"pR" = (
+"qb" = (
+/obj/structure/bed/chair/wood/wings{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"qc" = (
+/obj/structure/sign/directions{
+	desc = "Непонн&#255;тный набор букв, символов и неприличных жестов...";
+	description_antag = "Свенный Алтарь.";
+	dir = 1;
+	name = "nikka tok-lyr sign"
+	},
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"qd" = (
+/obj/machinery/door/unpowered/simple/cult,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"qe" = (
+/obj/structure/constructshell/cult,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"qf" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"qg" = (
+/obj/machinery/door/unpowered/simple/cult,
+/obj/effect/step_trigger/message{
+	message = "Отсюда так и тет кровавым запахом... Почему \green чувствую его в скафандре?"
+	},
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"qh" = (
+/obj/structure/table/woodentable,
+/obj/item/glass_jar,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"qi" = (
 /obj/structure/grille,
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
-"pS" = (
+"qj" = (
+/obj/structure/sign/directions{
+	desc = "Непонн&#255;тный набор букв, символов и неприличных жестов...";
+	description_antag = "Зал рукописей.";
+	dir = 1;
+	name = "pleggh tok-lyr sign"
+	},
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"qk" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"ql" = (
 /obj/machinery/power/solar,
 /obj/structure/cable/yellow{
 	d2 = 4;
@@ -7945,7 +8043,7 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"pT" = (
+"qm" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
 	d2 = 4;
@@ -7958,7 +8056,7 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"pU" = (
+"qn" = (
 /obj/machinery/power/solar,
 /obj/structure/cable/yellow{
 	d2 = 8;
@@ -7966,7 +8064,11 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"pV" = (
+"qo" = (
+/obj/structure/bookcase,
+/turf/simulated/wall/cult,
+/area/mine/unexplored)
+"qp" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
 	d2 = 4;
@@ -7984,10 +8086,10 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"pW" = (
+"qq" = (
 /turf/simulated/wall,
 /area/outpost/engineering/meeting)
-"pX" = (
+"qr" = (
 /obj/structure/sink{
 	icon_state = "sink";
 	dir = 8;
@@ -8001,21 +8103,21 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/engineering/meeting)
-"pY" = (
+"qs" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/engineering/meeting)
-"pZ" = (
+"qt" = (
 /obj/machinery/alarm{
 	frequency = 1439;
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/engineering/meeting)
-"qa" = (
+"qu" = (
 /obj/machinery/shower{
 	dir = 8;
 	icon_state = "shower";
@@ -8033,18 +8135,18 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/engineering/meeting)
-"qb" = (
+"qv" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
-"qc" = (
+"qw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/engineering/meeting)
-"qd" = (
+"qx" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
@@ -8054,22 +8156,22 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/engineering/meeting)
-"qe" = (
+"qy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/engineering/meeting)
-"qf" = (
+"qz" = (
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/engineering/meeting)
-"qg" = (
+"qA" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Restrooms";
 	req_access = list(10)
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/engineering/meeting)
-"qh" = (
+"qB" = (
 /obj/structure/toilet{
 	dir = 8
 	},
@@ -8078,10 +8180,10 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/engineering/meeting)
-"qi" = (
+"qC" = (
 /turf/simulated/wall,
 /area/outpost/engineering/storage)
-"qj" = (
+"qD" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Restrooms";
 	req_access = list(10)
@@ -8090,7 +8192,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/engineering/meeting)
-"qk" = (
+"qE" = (
 /obj/structure/table/rack,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
@@ -8102,7 +8204,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"ql" = (
+"qF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
@@ -8111,7 +8213,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"qm" = (
+"qG" = (
 /obj/structure/cable/blue{
 	d1 = 2;
 	d2 = 4;
@@ -8129,7 +8231,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"qn" = (
+"qH" = (
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -8153,7 +8255,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"qo" = (
+"qI" = (
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -8171,7 +8273,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"qp" = (
+"qJ" = (
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -8181,7 +8283,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"qq" = (
+"qK" = (
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -8199,7 +8301,7 @@
 /obj/machinery/vending/cola,
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"qr" = (
+"qL" = (
 /obj/structure/cable/blue{
 	d1 = 2;
 	d2 = 8;
@@ -8220,7 +8322,7 @@
 /obj/item/modular_computer/console/preset/engineering,
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"qs" = (
+"qM" = (
 /obj/structure/table/standard,
 /obj/random/tech_supply,
 /obj/item/device/radio/intercom{
@@ -8229,7 +8331,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"qt" = (
+"qN" = (
 /obj/structure/table/standard,
 /obj/random/tech_supply,
 /obj/machinery/firealarm{
@@ -8238,19 +8340,28 @@
 	},
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"qu" = (
+"qO" = (
 /obj/structure/table/standard,
 /obj/random/tech_supply,
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"qv" = (
+"qP" = (
 /obj/structure/disposaloutlet{
 	dir = 1
 	},
 /obj/structure/disposalpipe/trunk,
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
-"qw" = (
+"qQ" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/paper/talisman,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"qR" = (
+/obj/structure/bed/chair/wood/wings,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"qS" = (
 /obj/structure/table/rack,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
@@ -8260,13 +8371,13 @@
 /obj/item/stack/cable_coil,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"qx" = (
+"qT" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"qy" = (
+"qU" = (
 /obj/structure/cable/blue,
 /obj/machinery/power/apc{
 	dir = 4;
@@ -8280,17 +8391,17 @@
 /obj/item/weapon/pickaxe,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"qz" = (
+"qV" = (
 /obj/machinery/floodlight,
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"qA" = (
+"qW" = (
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"qB" = (
+"qX" = (
 /turf/simulated/floor/carpet,
 /area/outpost/engineering/meeting)
-"qC" = (
+"qY" = (
 /obj/structure/cable/blue{
 	d1 = 1;
 	d2 = 2;
@@ -8301,11 +8412,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/carpet,
 /area/outpost/engineering/meeting)
-"qD" = (
+"qZ" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/carpet,
 /area/outpost/engineering/meeting)
-"qE" = (
+"ra" = (
 /obj/structure/sign/warning/deathsposal{
 	pixel_x = 32
 	},
@@ -8315,13 +8426,33 @@
 	},
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"qF" = (
+"rb" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/wall,
 /area/outpost/engineering/meeting)
-"qG" = (
+"rc" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/weapon/pen,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"rd" = (
+/obj/structure/cult/tome,
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"re" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/book/tome{
+	name = "strange tome"
+	},
+/turf/simulated/floor/cult/airless,
+/area/mine/unexplored)
+"rf" = (
 /obj/structure/table/rack,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
@@ -8329,10 +8460,10 @@
 /obj/random/tech_supply,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"qH" = (
+"rg" = (
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"qI" = (
+"rh" = (
 /obj/item/stack/material/plasteel{
 	amount = 10
 	},
@@ -8345,22 +8476,22 @@
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"qJ" = (
+"ri" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/engineering/storage)
-"qK" = (
+"rj" = (
 /obj/machinery/vending/snack,
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"qL" = (
+"rk" = (
 /obj/structure/bed/chair{
 	dir = 4
 	},
 /turf/simulated/floor/carpet,
 /area/outpost/engineering/meeting)
-"qM" = (
+"rl" = (
 /obj/structure/cable/blue{
 	d1 = 1;
 	d2 = 2;
@@ -8372,56 +8503,56 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer,
 /turf/simulated/floor/carpet,
 /area/outpost/engineering/meeting)
-"qN" = (
+"rm" = (
 /obj/structure/table/standard,
 /obj/item/weapon/storage/box/donkpockets,
 /turf/simulated/floor/carpet,
 /area/outpost/engineering/meeting)
-"qO" = (
+"rn" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
 /turf/simulated/floor/carpet,
 /area/outpost/engineering/meeting)
-"qP" = (
+"ro" = (
 /obj/structure/flora/pottedplant{
 	tag = "icon-plant-21";
 	icon_state = "plant-21"
 	},
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"qQ" = (
+"rp" = (
 /turf/simulated/wall,
 /area/outpost/engineering/power)
-"qR" = (
+"rq" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/engineering/hallway)
-"qS" = (
+"rr" = (
 /turf/simulated/wall,
 /area/outpost/engineering/hallway)
-"qT" = (
+"rs" = (
 /obj/machinery/light_construct/small,
 /obj/machinery/light/small,
 /turf/simulated/floor/airless{
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"qU" = (
+"rt" = (
 /turf/simulated/wall/r_wall,
 /area/outpost/engineering/telecomms)
-"qV" = (
+"ru" = (
 /turf/simulated/wall/r_wall,
 /area/outpost/engineering/storage)
-"qW" = (
+"rv" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"qX" = (
+"rw" = (
 /obj/item/stack/material/glass{
 	amount = 50
 	},
@@ -8434,15 +8565,15 @@
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"qY" = (
+"rx" = (
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"qZ" = (
+"ry" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"ra" = (
+"rz" = (
 /obj/structure/cable/blue{
 	d1 = 1;
 	d2 = 2;
@@ -8456,14 +8587,14 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer,
 /turf/simulated/floor/carpet,
 /area/outpost/engineering/meeting)
-"rb" = (
+"rA" = (
 /obj/structure/table/standard,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
 /turf/simulated/floor/carpet,
 /area/outpost/engineering/meeting)
-"rc" = (
+"rB" = (
 /obj/machinery/light{
 	icon_state = "tube1";
 	dir = 4
@@ -8471,7 +8602,7 @@
 /obj/machinery/pipedispenser,
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"rd" = (
+"rC" = (
 /obj/structure/cable{
 	icon_state = "0-4";
 	d2 = 4
@@ -8479,7 +8610,7 @@
 /obj/machinery/power/terminal,
 /turf/simulated/floor/plating,
 /area/outpost/engineering/power)
-"re" = (
+"rD" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/cable{
 	d2 = 8;
@@ -8500,7 +8631,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/engineering/power)
-"rf" = (
+"rE" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -8520,7 +8651,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/engineering/power)
-"rg" = (
+"rF" = (
 /obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
@@ -8538,12 +8669,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/engineering/power)
-"rh" = (
+"rG" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/engineering/power)
-"ri" = (
+"rH" = (
 /obj/structure/cable/yellow{
 	d2 = 2;
 	icon_state = "0-2"
@@ -8553,7 +8684,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"rj" = (
+"rI" = (
 /obj/effect/floor_decal/corner/yellow/diagonal{
 	dir = 4
 	},
@@ -8562,7 +8693,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"rk" = (
+"rJ" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
@@ -8570,7 +8701,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/outpost/engineering/hallway)
-"rl" = (
+"rK" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 4;
@@ -8580,7 +8711,7 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/engineering/hallway)
-"rm" = (
+"rL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	tag = "icon-intact (SOUTHWEST)";
 	icon_state = "intact";
@@ -8588,13 +8719,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"rn" = (
+"rM" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"ro" = (
+"rN" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -8602,7 +8733,7 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"rp" = (
+"rO" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	tag = "icon-warning_dust (WEST)";
 	icon_state = "warning_dust";
@@ -8610,7 +8741,7 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"rq" = (
+"rP" = (
 /obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2";
@@ -8622,14 +8753,14 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"rr" = (
+"rQ" = (
 /obj/machinery/cell_charger,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"rs" = (
+"rR" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/bluegrid{
 	name = "Mainframe Base";
@@ -8638,14 +8769,14 @@
 	temperature = 293.15
 	},
 /area/outpost/engineering/telecomms)
-"rt" = (
+"rS" = (
 /obj/machinery/telecomms/relay/preset/mining,
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/outpost/engineering/telecomms)
-"ru" = (
+"rT" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/alarm{
 	frequency = 1439;
@@ -8658,11 +8789,11 @@
 	temperature = 293.15
 	},
 /area/outpost/engineering/telecomms)
-"rv" = (
+"rU" = (
 /obj/structure/dispenser/oxygen,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"rw" = (
+"rV" = (
 /obj/item/stack/material/steel{
 	amount = 50
 	},
@@ -8675,12 +8806,12 @@
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"rx" = (
+"rW" = (
 /obj/structure/table/standard,
 /obj/item/weapon/storage/box/lights/mixed,
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"ry" = (
+"rX" = (
 /obj/structure/cable/blue{
 	d1 = 1;
 	d2 = 2;
@@ -8692,17 +8823,17 @@
 	},
 /turf/simulated/floor/carpet,
 /area/outpost/engineering/meeting)
-"rz" = (
+"rY" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
 /turf/simulated/floor/carpet,
 /area/outpost/engineering/meeting)
-"rA" = (
+"rZ" = (
 /obj/machinery/pipedispenser/disposal,
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"rB" = (
+"sa" = (
 /obj/machinery/power/smes/buildable/outpost_substation{
 	charge = 500000;
 	input_attempt = 1;
@@ -8717,7 +8848,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/engineering/power)
-"rC" = (
+"sb" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -8728,7 +8859,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/engineering/power)
-"rD" = (
+"sc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -8737,7 +8868,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/engineering/power)
-"rE" = (
+"sd" = (
 /obj/structure/cable/yellow{
 	d2 = 4;
 	icon_state = "0-4"
@@ -8754,7 +8885,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/engineering/power)
-"rF" = (
+"se" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -8764,7 +8895,7 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/engineering/power)
-"rG" = (
+"sf" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
 	d2 = 8;
@@ -8788,7 +8919,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"rH" = (
+"sg" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 8;
@@ -8802,7 +8933,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"rI" = (
+"sh" = (
 /obj/effect/floor_decal/corner/yellow/diagonal{
 	dir = 4
 	},
@@ -8811,11 +8942,11 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"rJ" = (
+"si" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/cyan,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"rK" = (
+"sj" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
 	d2 = 4;
@@ -8840,7 +8971,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"rL" = (
+"sk" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -8860,7 +8991,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"rM" = (
+"sl" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -8897,7 +9028,7 @@
 /obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"rN" = (
+"sm" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -8912,7 +9043,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"rO" = (
+"sn" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -8929,7 +9060,7 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/outpost/engineering/hallway)
-"rP" = (
+"so" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -8937,7 +9068,7 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"rQ" = (
+"sp" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -8955,7 +9086,7 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"rR" = (
+"sq" = (
 /obj/machinery/power/tracker,
 /obj/structure/cable/yellow{
 	d2 = 8;
@@ -8963,7 +9094,7 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"rS" = (
+"sr" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -8971,13 +9102,13 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"rT" = (
+"ss" = (
 /obj/random/tech_supply,
 /obj/random/tech_supply,
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"rU" = (
+"st" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
@@ -8997,7 +9128,7 @@
 	temperature = 293.15
 	},
 /area/outpost/engineering/telecomms)
-"rV" = (
+"su" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
@@ -9011,7 +9142,7 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/outpost/engineering/telecomms)
-"rW" = (
+"sv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
@@ -9026,11 +9157,11 @@
 	temperature = 293.15
 	},
 /area/outpost/engineering/telecomms)
-"rX" = (
+"sw" = (
 /obj/machinery/suit_cycler/engineering,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"rY" = (
+"sx" = (
 /obj/structure/table/rack,
 /obj/machinery/firealarm{
 	dir = 4;
@@ -9051,7 +9182,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/storage)
-"rZ" = (
+"sy" = (
 /obj/machinery/light{
 	dir = 8
 	},
@@ -9059,7 +9190,7 @@
 /obj/machinery/microwave,
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"sa" = (
+"sz" = (
 /obj/machinery/alarm{
 	dir = 1;
 	icon_state = "alarm0";
@@ -9067,7 +9198,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"sb" = (
+"sA" = (
 /obj/structure/cable/blue{
 	d1 = 1;
 	d2 = 2;
@@ -9082,7 +9213,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"sc" = (
+"sB" = (
 /obj/structure/cable/blue{
 	d2 = 8;
 	icon_state = "0-8"
@@ -9094,11 +9225,11 @@
 	},
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"sd" = (
+"sC" = (
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/wood,
 /area/outpost/engineering/meeting)
-"se" = (
+"sD" = (
 /obj/structure/cable/blue,
 /obj/structure/cable/blue{
 	d2 = 2;
@@ -9114,7 +9245,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/engineering/power)
-"sf" = (
+"sE" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -9127,7 +9258,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/engineering/power)
-"sg" = (
+"sF" = (
 /obj/structure/cable/blue{
 	d2 = 8;
 	icon_state = "0-8"
@@ -9139,12 +9270,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/engineering/power)
-"sh" = (
+"sG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
 /area/outpost/engineering/power)
-"si" = (
+"sH" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -9155,7 +9286,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sj" = (
+"sI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
@@ -9164,21 +9295,21 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sk" = (
+"sJ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sl" = (
+"sK" = (
 /obj/machinery/computer/shuttle_control/engineering,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sm" = (
+"sL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sn" = (
+"sM" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -9189,7 +9320,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"so" = (
+"sN" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	d1 = 1;
@@ -9202,7 +9333,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"sp" = (
+"sO" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -9212,13 +9343,13 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"sq" = (
+"sP" = (
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/outpost/engineering/hallway)
-"sr" = (
+"sQ" = (
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /obj/machinery/light{
@@ -9227,10 +9358,10 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/outpost/engineering/hallway)
-"ss" = (
+"sR" = (
 /turf/simulated/wall/r_wall,
 /area/outpost/engineering/hallway)
-"st" = (
+"sS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/blue{
@@ -9250,7 +9381,7 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/outpost/engineering/hallway)
-"su" = (
+"sT" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Storage";
 	req_access = list(10)
@@ -9262,7 +9393,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sv" = (
+"sU" = (
 /obj/structure/cable/blue{
 	d1 = 1;
 	d2 = 2;
@@ -9282,7 +9413,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sw" = (
+"sV" = (
 /obj/structure/cable/blue{
 	d1 = 1;
 	d2 = 2;
@@ -9292,7 +9423,7 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/engineering/hallway)
-"sx" = (
+"sW" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -9302,7 +9433,7 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/engineering/hallway)
-"sy" = (
+"sX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/firedoor/border_only,
@@ -9317,11 +9448,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/engineering/hallway)
-"sz" = (
+"sY" = (
 /obj/structure/sign/warning/high_voltage,
 /turf/simulated/wall,
 /area/outpost/engineering/hallway)
-"sA" = (
+"sZ" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -9335,20 +9466,20 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sB" = (
+"ta" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sC" = (
+"tb" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sD" = (
+"tc" = (
 /obj/structure/cable/yellow{
 	d2 = 2;
 	icon_state = "0-2"
@@ -9356,14 +9487,14 @@
 /obj/machinery/power/solar_control/autostart,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sE" = (
+"td" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sF" = (
+"te" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -9374,7 +9505,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sG" = (
+"tf" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 4;
@@ -9392,7 +9523,7 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"sH" = (
+"tg" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1379;
 	icon_state = "door_locked";
@@ -9402,7 +9533,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"sI" = (
+"th" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 6;
 	icon_state = "intact";
@@ -9417,7 +9548,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"sJ" = (
+"ti" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
 	dir = 1;
 	icon_state = "map";
@@ -9434,7 +9565,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"sK" = (
+"tj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 4;
 	icon_state = "intact";
@@ -9450,18 +9581,18 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"sL" = (
+"tk" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sM" = (
+"tl" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sN" = (
+"tm" = (
 /obj/item/device/radio/intercom{
 	dir = 2;
 	pixel_y = 22
@@ -9472,7 +9603,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sO" = (
+"tn" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 0;
 	pixel_y = 28
@@ -9482,7 +9613,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sP" = (
+"to" = (
 /obj/machinery/firealarm{
 	dir = 2;
 	pixel_y = 24
@@ -9492,11 +9623,11 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sQ" = (
+"tp" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sR" = (
+"tq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/blue{
@@ -9506,7 +9637,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sS" = (
+"tr" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/structure/cable/blue{
 	d1 = 4;
@@ -9515,7 +9646,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sT" = (
+"ts" = (
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -9527,7 +9658,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sU" = (
+"tt" = (
 /obj/machinery/light{
 	dir = 1
 	},
@@ -9538,7 +9669,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sV" = (
+"tu" = (
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -9546,7 +9677,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sW" = (
+"tv" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/cable/blue{
 	d1 = 4;
@@ -9555,7 +9686,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sX" = (
+"tw" = (
 /obj/structure/cable/blue{
 	d1 = 2;
 	d2 = 4;
@@ -9568,7 +9699,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sY" = (
+"tx" = (
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -9583,7 +9714,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"sZ" = (
+"ty" = (
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -9594,7 +9725,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"ta" = (
+"tz" = (
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -9607,7 +9738,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tb" = (
+"tA" = (
 /obj/structure/cable/blue{
 	d1 = 1;
 	d2 = 8;
@@ -9621,7 +9752,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tc" = (
+"tB" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -9634,7 +9765,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"td" = (
+"tC" = (
 /obj/structure/cable/blue{
 	d2 = 8;
 	icon_state = "0-8"
@@ -9650,7 +9781,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"te" = (
+"tD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/industrial/warning{
@@ -9658,14 +9789,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tf" = (
+"tE" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tg" = (
+"tF" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 4;
@@ -9673,7 +9804,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"th" = (
+"tG" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -9685,7 +9816,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"ti" = (
+"tH" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -9696,7 +9827,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tj" = (
+"tI" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -9712,7 +9843,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tk" = (
+"tJ" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -9731,7 +9862,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tl" = (
+"tK" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -9747,7 +9878,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tm" = (
+"tL" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 8;
@@ -9755,7 +9886,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tn" = (
+"tM" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	d1 = 2;
@@ -9777,7 +9908,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"to" = (
+"tN" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -9794,7 +9925,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"tp" = (
+"tO" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -9814,7 +9945,7 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"tq" = (
+"tP" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -9834,7 +9965,7 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"tr" = (
+"tQ" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -9858,7 +9989,7 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"ts" = (
+"tR" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -9880,7 +10011,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"tt" = (
+"tS" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -9907,7 +10038,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"tu" = (
+"tT" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -9941,7 +10072,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"tv" = (
+"tU" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -9964,7 +10095,7 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"tw" = (
+"tV" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -9994,7 +10125,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tx" = (
+"tW" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -10009,7 +10140,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"ty" = (
+"tX" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -10026,7 +10157,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tz" = (
+"tY" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -10039,7 +10170,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tA" = (
+"tZ" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -10050,7 +10181,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tB" = (
+"ua" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -10063,7 +10194,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tC" = (
+"ub" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -10078,7 +10209,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tD" = (
+"uc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -10094,7 +10225,7 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tE" = (
+"ud" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
@@ -10114,7 +10245,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tF" = (
+"ue" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -10129,7 +10260,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tG" = (
+"uf" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -10144,7 +10275,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tH" = (
+"ug" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -10164,7 +10295,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tI" = (
+"uh" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -10188,7 +10319,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tJ" = (
+"ui" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -10201,7 +10332,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tK" = (
+"uj" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -10214,7 +10345,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tL" = (
+"uk" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
@@ -10228,7 +10359,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tM" = (
+"ul" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -10237,13 +10368,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tN" = (
+"um" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tO" = (
+"un" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -10253,7 +10384,7 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tP" = (
+"uo" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
@@ -10262,10 +10393,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tQ" = (
+"up" = (
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tR" = (
+"uq" = (
 /obj/machinery/light,
 /obj/item/device/radio/intercom{
 	pixel_x = -6;
@@ -10273,7 +10404,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tS" = (
+"ur" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -10295,36 +10426,36 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tT" = (
+"us" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tU" = (
+"ut" = (
 /obj/effect/floor_decal/industrial/warning/dust,
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"tV" = (
+"uu" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning/dust,
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"tW" = (
+"uv" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/engineering/hallway)
-"tX" = (
+"uw" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/engineering/hallway)
-"tY" = (
+"ux" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/blue{
@@ -10344,7 +10475,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/hallway)
-"tZ" = (
+"uy" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -10361,7 +10492,7 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"ua" = (
+"uz" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1380;
 	icon_state = "door_locked";
@@ -10372,23 +10503,23 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"ub" = (
+"uA" = (
 /turf/simulated/wall/r_wall,
 /area/outpost/engineering/atmospherics)
-"uc" = (
+"uB" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"ud" = (
+"uC" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"ue" = (
+"uD" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4;
 	icon_state = "intact";
@@ -10397,7 +10528,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uf" = (
+"uE" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4;
 	icon_state = "intact";
@@ -10406,13 +10537,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"ug" = (
+"uF" = (
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uh" = (
+"uG" = (
 /obj/machinery/atmospherics/pipe/simple/visible/universal{
 	dir = 4
 	},
@@ -10421,7 +10552,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"ui" = (
+"uH" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
@@ -10438,7 +10569,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uj" = (
+"uI" = (
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	tag = "icon-intact-supply (NORTHWEST)";
 	icon_state = "intact-supply";
@@ -10456,7 +10587,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uk" = (
+"uJ" = (
 /obj/machinery/atmospherics/pipe/simple/visible/universal{
 	dir = 4
 	},
@@ -10466,7 +10597,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"ul" = (
+"uK" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	tag = "icon-intact (SOUTHWEST)";
 	icon_state = "intact";
@@ -10475,7 +10606,7 @@
 /obj/machinery/meter,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"um" = (
+"uL" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -10491,7 +10622,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"un" = (
+"uM" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -10511,7 +10642,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/engineering/hallway)
-"uo" = (
+"uN" = (
 /obj/machinery/power/emitter{
 	anchored = 0;
 	dir = 4;
@@ -10521,7 +10652,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"up" = (
+"uO" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	tag = "icon-map (EAST)";
 	icon_state = "map";
@@ -10529,22 +10660,22 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uq" = (
+"uP" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"ur" = (
+"uQ" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"us" = (
+"uR" = (
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"ut" = (
+"uS" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	tag = "icon-intact (SOUTHEAST)";
 	icon_state = "intact";
@@ -10552,13 +10683,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uu" = (
+"uT" = (
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uv" = (
+"uU" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	tag = "icon-intact (NORTHWEST)";
 	icon_state = "intact";
@@ -10570,7 +10701,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uw" = (
+"uV" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -10586,7 +10717,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"ux" = (
+"uW" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	frequency = 1380;
 	id_tag = "edock_airlock";
@@ -10608,12 +10739,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/engineering/hallway)
-"uy" = (
+"uX" = (
 /obj/machinery/atmospherics/pipe/manifold4w/visible/cyan,
 /obj/machinery/meter,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uz" = (
+"uY" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4;
 	icon_state = "intact";
@@ -10621,14 +10752,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uA" = (
+"uZ" = (
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 8;
 	target_pressure = 15000
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uB" = (
+"va" = (
 /obj/machinery/atmospherics/omni/mixer{
 	tag_east = 1;
 	tag_east_con = 0.79;
@@ -10638,7 +10769,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uC" = (
+"vb" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
 	tag = "icon-intact (EAST)";
 	icon_state = "intact";
@@ -10647,7 +10778,7 @@
 /obj/machinery/meter,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uD" = (
+"vc" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	tag = "icon-intact (NORTH)";
 	icon_state = "intact";
@@ -10660,7 +10791,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uE" = (
+"vd" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
 	tag = "icon-intact (EAST)";
 	icon_state = "intact";
@@ -10668,7 +10799,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uF" = (
+"ve" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
 	tag = "icon-intact (SOUTHWEST)";
 	icon_state = "intact";
@@ -10685,7 +10816,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uG" = (
+"vf" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	tag = "icon-warning_dust (NORTH)";
 	icon_state = "warning_dust";
@@ -10693,7 +10824,7 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"uH" = (
+"vg" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -10708,7 +10839,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"uI" = (
+"vh" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1380;
 	icon_state = "door_locked";
@@ -10718,7 +10849,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/engineering/hallway)
-"uJ" = (
+"vi" = (
 /obj/machinery/access_button{
 	command = "cycle_exterior";
 	frequency = 1380;
@@ -10735,7 +10866,7 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"uK" = (
+"vj" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-c"
@@ -10756,7 +10887,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"uL" = (
+"vk" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	tag = "icon-intact (NORTHWEST)";
 	icon_state = "intact";
@@ -10764,19 +10895,19 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uM" = (
+"vl" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue,
 /obj/machinery/meter,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uN" = (
+"vm" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	dir = 6
 	},
 /obj/machinery/meter,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uO" = (
+"vn" = (
 /obj/machinery/atmospherics/omni/filter{
 	power_rating = 15000;
 	tag_east = 4;
@@ -10786,14 +10917,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uP" = (
+"vo" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	dir = 10
 	},
 /obj/machinery/meter,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uQ" = (
+"vp" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 25;
@@ -10801,7 +10932,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uR" = (
+"vq" = (
 /obj/machinery/light{
 	dir = 1
 	},
@@ -10812,14 +10943,14 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"uS" = (
+"vr" = (
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"uT" = (
+"vs" = (
 /obj/effect/shuttle_landmark/engineering/out,
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"uU" = (
+"vt" = (
 /obj/machinery/light{
 	dir = 1
 	},
@@ -10830,19 +10961,19 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"uV" = (
+"vu" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/airless{
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"uW" = (
+"vv" = (
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uX" = (
+"vw" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	tag = "icon-intact (SOUTHEAST)";
 	icon_state = "intact";
@@ -10851,7 +10982,7 @@
 /obj/machinery/meter,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uY" = (
+"vx" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	tag = "icon-intact (EAST)";
 	icon_state = "intact";
@@ -10859,7 +10990,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"uZ" = (
+"vy" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	tag = "icon-intact (EAST)";
 	icon_state = "intact";
@@ -10878,7 +11009,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"va" = (
+"vz" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	tag = "icon-intact (EAST)";
 	icon_state = "intact";
@@ -10887,7 +11018,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/blue,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"vb" = (
+"vA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	tag = "icon-intact (EAST)";
 	icon_state = "intact";
@@ -10896,7 +11027,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/green,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"vc" = (
+"vB" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	tag = "icon-intact (NORTHWEST)";
 	icon_state = "intact";
@@ -10915,15 +11046,15 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"vd" = (
+"vC" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"ve" = (
+"vD" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"vf" = (
+"vE" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	tag = "icon-warning_dust (WEST)";
 	icon_state = "warning_dust";
@@ -10931,7 +11062,7 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"vg" = (
+"vF" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	tag = "icon-warning_dust (EAST)";
 	icon_state = "warning_dust";
@@ -10939,13 +11070,13 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"vh" = (
+"vG" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	dir = 6
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"vi" = (
+"vH" = (
 /obj/machinery/atmospherics/omni/filter{
 	power_rating = 15000;
 	tag_east = 5;
@@ -10955,25 +11086,25 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"vj" = (
+"vI" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	dir = 10
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"vk" = (
+"vJ" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue,
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/engineering/atmospherics)
-"vl" = (
+"vK" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green,
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/engineering/atmospherics)
-"vm" = (
+"vL" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 4;
@@ -10986,28 +11117,28 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"vn" = (
+"vM" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
 	},
 /obj/machinery/portable_atmospherics/canister/empty/phoron,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"vo" = (
+"vN" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
 	},
 /obj/machinery/portable_atmospherics/canister/empty/sleeping_agent,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"vp" = (
+"vO" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
 	},
 /obj/machinery/portable_atmospherics/canister/empty/carbon_dioxide,
 /turf/simulated/floor/tiled,
 /area/outpost/engineering/atmospherics)
-"vq" = (
+"vP" = (
 /obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos{
 	dir = 1;
 	frequency = 1441;
@@ -11019,7 +11150,7 @@
 	oxygen = 100000
 	},
 /area/outpost/engineering/atmospherics)
-"vr" = (
+"vQ" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 1;
 	frequency = 1441;
@@ -11034,7 +11165,7 @@
 	oxygen = 100000
 	},
 /area/outpost/engineering/atmospherics)
-"vs" = (
+"vR" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 1;
 	frequency = 1441;
@@ -11049,7 +11180,7 @@
 	oxygen = 0
 	},
 /area/outpost/engineering/atmospherics)
-"vt" = (
+"vS" = (
 /obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos{
 	dir = 1;
 	frequency = 1441;
@@ -11061,7 +11192,7 @@
 	oxygen = 0
 	},
 /area/outpost/engineering/atmospherics)
-"vu" = (
+"vT" = (
 /obj/machinery/air_sensor{
 	frequency = 1441;
 	id_tag = "outpost_o2_sensor"
@@ -11072,21 +11203,21 @@
 	oxygen = 100000
 	},
 /area/outpost/engineering/atmospherics)
-"vv" = (
+"vU" = (
 /turf/simulated/floor/reinforced{
 	name = "o2 floor";
 	nitrogen = 0;
 	oxygen = 100000
 	},
 /area/outpost/engineering/atmospherics)
-"vw" = (
+"vV" = (
 /turf/simulated/floor/reinforced{
 	name = "n2 floor";
 	nitrogen = 100000;
 	oxygen = 0
 	},
 /area/outpost/engineering/atmospherics)
-"vx" = (
+"vW" = (
 /obj/machinery/air_sensor{
 	frequency = 1441;
 	id_tag = "outpost_n2_sensor"
@@ -11097,7 +11228,7 @@
 	oxygen = 0
 	},
 /area/outpost/engineering/atmospherics)
-"vy" = (
+"vX" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/industrial/warning/dust{
 	tag = "icon-warning_dust (WEST)";
@@ -11106,7 +11237,7 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"vz" = (
+"vY" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/industrial/warning/dust{
 	tag = "icon-warning_dust (EAST)";
@@ -11115,20 +11246,20 @@
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/mine/explored)
-"vA" = (
+"vZ" = (
 /turf/simulated/wall,
 /area/outpost/mining_main/dorms)
-"vB" = (
+"wa" = (
 /obj/structure/table/woodentable,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/dorms)
-"vC" = (
+"wb" = (
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/brown,
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/dorms)
-"vD" = (
+"wc" = (
 /obj/machinery/button/remote/airlock{
 	id = "miningdorm3";
 	name = "Door Bolt Control";
@@ -11140,7 +11271,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/dorms)
-"vE" = (
+"wd" = (
 /obj/structure/closet/emcloset,
 /obj/item/device/radio/intercom{
 	dir = 4;
@@ -11151,7 +11282,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/dorms)
-"vF" = (
+"we" = (
 /obj/machinery/disposal,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/sign/warning/deathsposal{
@@ -11160,11 +11291,11 @@
 /obj/structure/disposalpipe/trunk,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/dorms)
-"vG" = (
+"wf" = (
 /obj/structure/toilet,
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/mining_main/dorms)
-"vH" = (
+"wg" = (
 /obj/item/weapon/towel/random,
 /obj/structure/table/standard,
 /obj/item/device/radio/intercom{
@@ -11174,7 +11305,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/mining_main/dorms)
-"vI" = (
+"wh" = (
 /obj/structure/curtain/open/shower,
 /obj/machinery/shower{
 	dir = 8;
@@ -11184,7 +11315,7 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/mining_main/dorms)
-"vJ" = (
+"wi" = (
 /obj/structure/bed/chair/wood{
 	tag = "icon-wooden_chair_preview (NORTH)";
 	icon_state = "wooden_chair_preview";
@@ -11195,14 +11326,14 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/dorms)
-"vK" = (
+"wj" = (
 /obj/machinery/light/small,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/dorms)
-"vL" = (
+"wk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
@@ -11211,7 +11342,7 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/dorms)
-"vM" = (
+"wl" = (
 /obj/machinery/door/airlock{
 	id_tag = "miningdorm3";
 	name = "Room 3"
@@ -11225,7 +11356,7 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/dorms)
-"vN" = (
+"wm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
@@ -11244,7 +11375,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/dorms)
-"vO" = (
+"wn" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 4
 	},
@@ -11257,7 +11388,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/dorms)
-"vP" = (
+"wo" = (
 /obj/machinery/door/airlock{
 	name = "Toilet"
 	},
@@ -11267,13 +11398,13 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/mining_main/dorms)
-"vQ" = (
+"wp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/mining_main/dorms)
-"vR" = (
+"wq" = (
 /obj/machinery/light/small,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9;
@@ -11281,7 +11412,7 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/mining_main/dorms)
-"vS" = (
+"wr" = (
 /obj/structure/sink{
 	dir = 4;
 	icon_state = "sink";
@@ -11294,7 +11425,7 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/mining_main/dorms)
-"vT" = (
+"ws" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -11302,20 +11433,20 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"vU" = (
+"wt" = (
 /obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris,
 /obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris,
 /turf/simulated/floor/airless{
 	icon_state = "asteroidplating"
 	},
 /area/mine/unexplored)
-"vV" = (
+"wu" = (
 /obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/libertycap,
 /turf/simulated/floor/airless{
 	icon_state = "asteroidplating"
 	},
 /area/mine/unexplored)
-"vW" = (
+"wv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/power/apc{
 	dir = 8;
@@ -11340,7 +11471,7 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/dorms)
-"vX" = (
+"ww" = (
 /obj/machinery/alarm{
 	dir = 8;
 	icon_state = "alarm0";
@@ -11355,28 +11486,28 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/dorms)
-"vY" = (
+"wx" = (
 /obj/item/clothing/under/rank/miner,
 /obj/item/remains/human,
 /turf/simulated/floor/airless{
 	icon_state = "asteroidplating"
 	},
 /area/mine/unexplored)
-"vZ" = (
+"wy" = (
 /obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
-"wa" = (
+"wz" = (
 /obj/structure/table/woodentable,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/carpet,
 /area/outpost/mining_main/dorms)
-"wb" = (
+"wA" = (
 /obj/item/weapon/bedsheet/brown,
 /obj/structure/bed/padded,
 /turf/simulated/floor/carpet,
 /area/outpost/mining_main/dorms)
-"wc" = (
+"wB" = (
 /obj/machinery/button/remote/airlock{
 	id = "miningdorm1";
 	name = "Door Bolt Control";
@@ -11388,7 +11519,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/carpet,
 /area/outpost/mining_main/dorms)
-"wd" = (
+"wC" = (
 /obj/structure/cable/blue{
 	d1 = 1;
 	d2 = 2;
@@ -11410,7 +11541,7 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/dorms)
-"we" = (
+"wD" = (
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
@@ -11425,7 +11556,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/dorms)
-"wf" = (
+"wE" = (
 /obj/machinery/button/remote/airlock{
 	id = "miningdorm2";
 	name = "Door Bolt Control";
@@ -11437,12 +11568,12 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/dorms)
-"wg" = (
+"wF" = (
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/brown,
 /turf/simulated/floor/lino,
 /area/outpost/mining_west)
-"wh" = (
+"wG" = (
 /obj/structure/bed/chair/wood{
 	tag = "icon-wooden_chair_preview (NORTH)";
 	icon_state = "wooden_chair_preview";
@@ -11453,14 +11584,14 @@
 	},
 /turf/simulated/floor/carpet,
 /area/outpost/mining_main/dorms)
-"wi" = (
+"wH" = (
 /obj/machinery/light/small,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /turf/simulated/floor/carpet,
 /area/outpost/mining_main/dorms)
-"wj" = (
+"wI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
@@ -11469,7 +11600,7 @@
 	},
 /turf/simulated/floor/carpet,
 /area/outpost/mining_main/dorms)
-"wk" = (
+"wJ" = (
 /obj/machinery/door/airlock{
 	id_tag = "miningdorm1";
 	name = "Room 1"
@@ -11483,7 +11614,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/outpost/mining_main/dorms)
-"wl" = (
+"wK" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /obj/structure/cable/blue{
 	d1 = 1;
@@ -11499,7 +11630,7 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/dorms)
-"wm" = (
+"wL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -11509,7 +11640,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/dorms)
-"wn" = (
+"wM" = (
 /obj/machinery/door/airlock{
 	id_tag = "miningdorm2";
 	name = "Room 2"
@@ -11523,7 +11654,7 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/dorms)
-"wo" = (
+"wN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
@@ -11532,7 +11663,7 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/dorms)
-"wp" = (
+"wO" = (
 /obj/structure/bed/chair/wood{
 	tag = "icon-wooden_chair_preview (NORTH)";
 	icon_state = "wooden_chair_preview";
@@ -11544,7 +11675,7 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/dorms)
-"wq" = (
+"wP" = (
 /obj/structure/disposalpipe/trunk,
 /obj/structure/disposaloutlet{
 	dir = 1
@@ -11553,7 +11684,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/unexplored)
-"wr" = (
+"wQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/glass{
 	name = "Crew Area";
@@ -11574,7 +11705,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/dorms)
-"ws" = (
+"wR" = (
 /obj/machinery/door/airlock/glass{
 	name = "Crew Area";
 	req_access = newlist()
@@ -11587,26 +11718,26 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/dorms)
-"wt" = (
+"wS" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
 	icon_state = "pipe-c"
 	},
 /turf/unsimulated/mask,
 /area/mine/unexplored)
-"wu" = (
+"wT" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/unsimulated/mask,
 /area/mine/unexplored)
-"wv" = (
+"wU" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/wall,
 /area/outpost/mining_main/crew_hallway)
-"ww" = (
+"wV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/blue{
 	d1 = 1;
@@ -11631,7 +11762,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"wx" = (
+"wW" = (
 /obj/effect/floor_decal/corner/brown{
 	tag = "icon-corner_white (SOUTHEAST)";
 	icon_state = "corner_white";
@@ -11639,15 +11770,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"wy" = (
+"wX" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/crew_hallway)
-"wz" = (
+"wY" = (
 /turf/simulated/wall,
 /area/outpost/mining_main/resting)
-"wA" = (
+"wZ" = (
 /obj/structure/cable/blue,
 /obj/structure/cable/blue{
 	d2 = 2;
@@ -11670,7 +11801,7 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"wB" = (
+"xa" = (
 /obj/effect/floor_decal/corner/brown{
 	tag = "icon-corner_white (SOUTHEAST)";
 	icon_state = "corner_white";
@@ -11681,13 +11812,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"wC" = (
+"xb" = (
 /obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"wD" = (
+"xc" = (
 /obj/structure/table/standard,
 /obj/machinery/microwave{
 	pixel_y = 6
@@ -11697,7 +11828,7 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"wE" = (
+"xd" = (
 /obj/structure/table/standard,
 /obj/machinery/power/apc{
 	dir = 1;
@@ -11712,7 +11843,7 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"wF" = (
+"xe" = (
 /obj/structure/table/standard,
 /obj/item/weapon/storage/box/donkpockets,
 /obj/structure/extinguisher_cabinet{
@@ -11720,7 +11851,7 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"wG" = (
+"xf" = (
 /obj/structure/flora/pottedplant/largebush,
 /obj/machinery/light{
 	dir = 4;
@@ -11728,7 +11859,7 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"wH" = (
+"xg" = (
 /obj/machinery/camera/network/mining{
 	c_tag = "Mining Outpost Crew Area Hallway";
 	dir = 4
@@ -11752,7 +11883,7 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"wI" = (
+"xh" = (
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
@@ -11764,14 +11895,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"wJ" = (
+"xi" = (
 /turf/simulated/wall,
 /area/outpost/mining_main/crew_hallway)
-"wK" = (
+"xj" = (
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/crew_hallway)
-"wL" = (
+"xk" = (
 /obj/machinery/light{
 	dir = 1
 	},
@@ -11786,7 +11917,7 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"wM" = (
+"xl" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	tag = "icon-warning_dust (NORTH)";
 	icon_state = "warning_dust";
@@ -11794,7 +11925,7 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"wN" = (
+"xm" = (
 /obj/machinery/mining/drill,
 /obj/effect/floor_decal/industrial/warning/dust{
 	tag = "icon-warning_dust (NORTH)";
@@ -11803,7 +11934,7 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"wO" = (
+"xn" = (
 /obj/machinery/light{
 	dir = 1
 	},
@@ -11814,15 +11945,15 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"wP" = (
+"xo" = (
 /turf/simulated/wall,
 /area/outpost/mining_west)
-"wQ" = (
+"xp" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/mining_west)
-"wR" = (
+"xq" = (
 /obj/machinery/vending/snack,
 /obj/machinery/camera/network/mining{
 	c_tag = "Mining Outpost Crew Area - Kitchen";
@@ -11830,14 +11961,14 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"wS" = (
+"xr" = (
 /obj/machinery/light_switch{
 	pixel_x = -24;
 	pixel_y = 28
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"wT" = (
+"xs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/blue{
 	d1 = 1;
@@ -11846,16 +11977,16 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"wU" = (
+"xt" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"wV" = (
+"xu" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/resting)
-"wW" = (
+"xv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/blue{
 	d1 = 1;
@@ -11871,7 +12002,7 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"wX" = (
+"xw" = (
 /obj/structure/table/rack,
 /obj/item/weapon/rig/industrial/equipped,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -11891,13 +12022,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"wY" = (
+"xx" = (
 /obj/structure/ore_box,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"wZ" = (
+"xy" = (
 /obj/structure/ore_box,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light/small{
@@ -11905,7 +12036,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"xa" = (
+"xz" = (
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/industrial/warning/dust{
 	tag = "icon-warning_dust (WEST)";
@@ -11914,11 +12045,11 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"xb" = (
+"xA" = (
 /obj/machinery/mining/brace,
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"xc" = (
+"xB" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	tag = "icon-warning_dust (EAST)";
 	icon_state = "warning_dust";
@@ -11926,7 +12057,7 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"xd" = (
+"xC" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	d1 = 1;
@@ -11943,7 +12074,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"xe" = (
+"xD" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -11961,7 +12092,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"xf" = (
+"xE" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -11979,7 +12110,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"xg" = (
+"xF" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -12001,7 +12132,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"xh" = (
+"xG" = (
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
@@ -12017,23 +12148,23 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"xi" = (
+"xH" = (
 /obj/item/weapon/pickaxe,
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xj" = (
+"xI" = (
 /obj/machinery/alarm{
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xk" = (
+"xJ" = (
 /obj/structure/table/standard,
 /obj/machinery/microwave,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xl" = (
+"xK" = (
 /obj/machinery/recharge_station,
 /obj/machinery/status_display{
 	layer = 4;
@@ -12043,28 +12174,28 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xm" = (
+"xL" = (
 /obj/structure/dispenser/oxygen,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xn" = (
+"xM" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xo" = (
+"xN" = (
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xp" = (
+"xO" = (
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/outpost/mining_west)
-"xq" = (
+"xP" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -12078,7 +12209,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_west)
-"xr" = (
+"xQ" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 2;
 	frequency = 1379;
@@ -12087,7 +12218,7 @@
 /obj/structure/closet/walllocker/emerglocker/north,
 /turf/simulated/floor,
 /area/outpost/mining_west)
-"xs" = (
+"xR" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	tag = "icon-warning_dust (NORTHEAST)";
 	icon_state = "warning_dust";
@@ -12095,7 +12226,7 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"xt" = (
+"xS" = (
 /obj/machinery/vending/coffee,
 /obj/machinery/status_display{
 	pixel_x = -32;
@@ -12103,10 +12234,10 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"xu" = (
+"xT" = (
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"xv" = (
+"xU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -12118,14 +12249,14 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"xw" = (
+"xV" = (
 /obj/structure/table/standard,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"xx" = (
+"xW" = (
 /obj/structure/table/standard,
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer,
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer{
@@ -12134,7 +12265,7 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"xy" = (
+"xX" = (
 /obj/structure/cable/blue{
 	d1 = 1;
 	d2 = 2;
@@ -12155,7 +12286,7 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"xz" = (
+"xY" = (
 /obj/effect/floor_decal/corner/brown{
 	tag = "icon-corner_white (SOUTHEAST)";
 	icon_state = "corner_white";
@@ -12169,7 +12300,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"xA" = (
+"xZ" = (
 /obj/machinery/door/airlock/glass_mining{
 	name = "Mining Station Storage";
 	req_access = list(48)
@@ -12187,7 +12318,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"xB" = (
+"ya" = (
 /obj/effect/floor_decal/industrial/warning/half,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -12197,7 +12328,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"xC" = (
+"yb" = (
 /obj/effect/floor_decal/industrial/warning/half,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -12208,11 +12339,11 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"xD" = (
+"yc" = (
 /obj/effect/floor_decal/industrial/warning/half,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"xE" = (
+"yd" = (
 /obj/machinery/cell_charger,
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -12222,23 +12353,23 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"xF" = (
+"ye" = (
 /obj/machinery/mining/brace,
 /obj/effect/floor_decal/industrial/warning/dust,
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"xG" = (
+"yf" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/wall,
 /area/outpost/mining_main/eva)
-"xH" = (
+"yg" = (
 /turf/simulated/wall,
 /area/outpost/mining_main/eva)
-"xI" = (
+"yh" = (
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/eva)
-"xJ" = (
+"yi" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -12250,20 +12381,20 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"xK" = (
+"yj" = (
 /obj/item/weapon/shovel,
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xL" = (
+"yk" = (
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xM" = (
+"yl" = (
 /obj/structure/table/standard,
 /obj/item/weapon/storage/box/donkpockets,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xN" = (
+"ym" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
@@ -12272,7 +12403,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xO" = (
+"yn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -12286,7 +12417,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xP" = (
+"yo" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -12301,7 +12432,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xQ" = (
+"yp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -12316,7 +12447,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xR" = (
+"yq" = (
 /obj/machinery/access_button{
 	command = "cycle_interior";
 	frequency = 1379;
@@ -12344,7 +12475,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"xS" = (
+"yr" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/external{
 	frequency = 1379;
@@ -12370,7 +12501,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_west)
-"xT" = (
+"ys" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -12386,7 +12517,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_west)
-"xU" = (
+"yt" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
 	dir = 4;
 	icon_state = "map";
@@ -12406,7 +12537,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_west)
-"xV" = (
+"yu" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/external{
 	frequency = 1379;
@@ -12430,7 +12561,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_west)
-"xW" = (
+"yv" = (
 /obj/machinery/access_button{
 	command = "cycle_exterior";
 	frequency = 1379;
@@ -12458,7 +12589,7 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"xX" = (
+"yw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
@@ -12474,7 +12605,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"xY" = (
+"yx" = (
 /obj/machinery/vending/cigarette,
 /obj/machinery/alarm{
 	dir = 4;
@@ -12484,7 +12615,7 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"xZ" = (
+"yy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/blue{
@@ -12494,13 +12625,13 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"ya" = (
+"yz" = (
 /obj/structure/bed/chair{
 	dir = 1
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"yb" = (
+"yA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/blue{
 	d1 = 1;
@@ -12518,7 +12649,7 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"yc" = (
+"yB" = (
 /obj/effect/floor_decal/corner/brown{
 	tag = "icon-corner_white (SOUTHEAST)";
 	icon_state = "corner_white";
@@ -12530,12 +12661,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"yd" = (
+"yC" = (
 /obj/structure/closet/secure_closet/miner,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"ye" = (
+"yD" = (
 /obj/structure/closet/secure_closet/miner,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -12543,7 +12674,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"yf" = (
+"yE" = (
 /obj/structure/closet/secure_closet/miner,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/camera/network/mining{
@@ -12559,19 +12690,19 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"yg" = (
+"yF" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner,
 /turf/simulated/floor/airless{
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"yh" = (
+"yG" = (
 /obj/effect/floor_decal/industrial/warning/dust,
 /turf/simulated/floor/airless{
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"yi" = (
+"yH" = (
 /obj/structure/table/rack,
 /obj/item/clothing/suit/space/void/mining/prepared,
 /obj/item/weapon/mining_scanner,
@@ -12589,20 +12720,20 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"yj" = (
+"yI" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"yk" = (
+"yJ" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 5
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"yl" = (
+"yK" = (
 /obj/machinery/suit_cycler/mining,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/alarm{
@@ -12612,7 +12743,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"ym" = (
+"yL" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
@@ -12628,7 +12759,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"yn" = (
+"yM" = (
 /obj/machinery/light,
 /obj/structure/cable{
 	d1 = 4;
@@ -12646,7 +12777,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"yo" = (
+"yN" = (
 /obj/machinery/light_construct/small{
 	dir = 4
 	},
@@ -12655,7 +12786,7 @@
 	},
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
-"yp" = (
+"yO" = (
 /obj/item/weapon/storage/backpack/satchel,
 /obj/item/clothing/glasses/meson,
 /obj/machinery/light/small{
@@ -12664,13 +12795,13 @@
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"yq" = (
+"yP" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"yr" = (
+"yQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -12679,7 +12810,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"ys" = (
+"yR" = (
 /obj/machinery/door/airlock/glass_mining{
 	name = "Break Room";
 	req_access = list(54)
@@ -12697,14 +12828,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"yt" = (
+"yS" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"yu" = (
+"yT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -12715,20 +12846,20 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"yv" = (
+"yU" = (
 /obj/machinery/atmospherics/pipe/simple/visible/universal{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"yw" = (
+"yV" = (
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 4;
 	target_pressure = 200
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"yx" = (
+"yW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 9;
 	icon_state = "intact";
@@ -12736,7 +12867,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"yy" = (
+"yX" = (
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	tag_airpump = "mining_west_outpost_pump";
 	tag_exterior_door = "mining_west_outpost_outer";
@@ -12754,7 +12885,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_west)
-"yz" = (
+"yY" = (
 /obj/structure/ore_box,
 /obj/machinery/airlock_sensor{
 	frequency = 1379;
@@ -12769,7 +12900,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_west)
-"yA" = (
+"yZ" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/camera/network/mining{
@@ -12778,7 +12909,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_west)
-"yB" = (
+"za" = (
 /obj/structure/ore_box,
 /obj/effect/floor_decal/industrial/warning/dust{
 	tag = "icon-warning_dust (SOUTHEAST)";
@@ -12787,7 +12918,7 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"yC" = (
+"zb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable{
@@ -12799,17 +12930,17 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"yD" = (
+"zc" = (
 /turf/simulated/wall,
 /area/outpost/mining_main/medbay)
-"yE" = (
+"zd" = (
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -24
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"yF" = (
+"ze" = (
 /obj/structure/flora/pottedplant/overgrown,
 /obj/machinery/light{
 	dir = 4;
@@ -12821,7 +12952,7 @@
 	},
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"yG" = (
+"zf" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/glass{
 	name = "Crew Area";
@@ -12842,7 +12973,7 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"yH" = (
+"zg" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/glass{
 	name = "Crew Area";
@@ -12855,15 +12986,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/crew_hallway)
-"yI" = (
+"zh" = (
 /turf/simulated/wall,
 /area/outpost/mining_main/east_hall)
-"yJ" = (
+"zi" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/east_hall)
-"yK" = (
+"zj" = (
 /obj/structure/table/rack,
 /obj/item/clothing/suit/space/void/mining/prepared,
 /obj/item/weapon/mining_scanner,
@@ -12881,21 +13012,21 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"yL" = (
+"zk" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"yM" = (
+"zl" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"yN" = (
+"zm" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
@@ -12911,7 +13042,7 @@
 /obj/item/device/suit_cooling_unit,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"yO" = (
+"zn" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -12923,18 +13054,18 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"yP" = (
+"zo" = (
 /obj/item/weapon/storage/toolbox/mechanical,
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"yQ" = (
+"zp" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"yR" = (
+"zq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
@@ -12943,14 +13074,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"yS" = (
+"zr" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/brown/diagonal,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"yT" = (
+"zs" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -12958,14 +13089,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"yU" = (
+"zt" = (
 /obj/machinery/conveyor_switch{
 	id = "mining_west";
 	pixel_x = 5
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"yV" = (
+"zu" = (
 /obj/structure/table/standard,
 /obj/machinery/light{
 	dir = 1
@@ -12985,7 +13116,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining_main/medbay)
-"yW" = (
+"zv" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/table/standard,
 /obj/machinery/alarm{
@@ -12996,7 +13127,7 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining_main/medbay)
-"yX" = (
+"zw" = (
 /obj/structure/table/standard,
 /obj/structure/closet/medical_wall{
 	pixel_y = 32
@@ -13007,7 +13138,7 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining_main/medbay)
-"yY" = (
+"zx" = (
 /obj/machinery/disposal,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/sign/warning/deathsposal{
@@ -13016,14 +13147,14 @@
 /obj/structure/disposalpipe/trunk,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"yZ" = (
+"zy" = (
 /obj/machinery/door/airlock/multi_tile/glass{
 	name = "Resting Room"
 	},
 /obj/machinery/door/firedoor/multi_tile,
 /turf/simulated/floor/lino,
 /area/outpost/mining_main/resting)
-"za" = (
+"zz" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
 	},
@@ -13047,7 +13178,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"zb" = (
+"zA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
@@ -13056,12 +13187,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"zc" = (
+"zB" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/west_hall)
-"zd" = (
+"zC" = (
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
@@ -13082,7 +13213,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"ze" = (
+"zD" = (
 /obj/item/weapon/storage/backpack/satchel,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -13098,7 +13229,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"zf" = (
+"zE" = (
 /obj/item/weapon/storage/belt/utility,
 /obj/item/weapon/pickaxe,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -13115,7 +13246,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"zg" = (
+"zF" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -13126,7 +13257,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/eva)
-"zh" = (
+"zG" = (
 /obj/structure/table/rack,
 /obj/item/clothing/suit/space/void/mining/prepared,
 /obj/item/weapon/mining_scanner,
@@ -13147,7 +13278,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"zi" = (
+"zH" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -13159,7 +13290,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"zj" = (
+"zI" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
@@ -13168,16 +13299,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"zk" = (
+"zJ" = (
 /obj/machinery/mech_recharger,
 /turf/simulated/floor,
 /area/outpost/mining_main/eva)
-"zl" = (
+"zK" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor,
 /area/outpost/mining_main/eva)
-"zm" = (
+"zL" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -13194,7 +13325,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/eva)
-"zn" = (
+"zM" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 2;
 	frequency = 1379;
@@ -13206,7 +13337,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/eva)
-"zo" = (
+"zN" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -13221,11 +13352,11 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"zp" = (
+"zO" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"zq" = (
+"zP" = (
 /obj/effect/floor_decal/corner/brown/diagonal{
 	dir = 4
 	},
@@ -13235,7 +13366,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"zr" = (
+"zQ" = (
 /obj/structure/bed/chair{
 	dir = 1
 	},
@@ -13244,11 +13375,11 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"zs" = (
+"zR" = (
 /obj/effect/floor_decal/corner/brown/diagonal,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"zt" = (
+"zS" = (
 /obj/machinery/power/apc{
 	dir = 2;
 	name = "south bump";
@@ -13262,14 +13393,14 @@
 /obj/effect/floor_decal/corner/brown/diagonal,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"zu" = (
+"zT" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
 	pixel_y = -22
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"zv" = (
+"zU" = (
 /obj/machinery/alarm{
 	dir = 1;
 	icon_state = "alarm0";
@@ -13283,7 +13414,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"zw" = (
+"zV" = (
 /obj/machinery/mineral/input,
 /obj/machinery/conveyor{
 	backwards = 2;
@@ -13293,11 +13424,11 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"zx" = (
+"zW" = (
 /obj/machinery/mineral/unloading_machine,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_west)
-"zy" = (
+"zX" = (
 /obj/machinery/conveyor{
 	dir = 8;
 	id = "mining_west"
@@ -13305,7 +13436,7 @@
 /obj/machinery/mineral/output,
 /turf/simulated/floor,
 /area/outpost/mining_west)
-"zz" = (
+"zY" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
@@ -13314,7 +13445,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_west)
-"zA" = (
+"zZ" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -13322,7 +13453,7 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor,
 /area/outpost/mining_west)
-"zB" = (
+"Aa" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -13341,7 +13472,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"zC" = (
+"Ab" = (
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
@@ -13358,7 +13489,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining_main/medbay)
-"zD" = (
+"Ac" = (
 /obj/effect/floor_decal/corner/paleblue{
 	tag = "icon-corner_white (NORTH)";
 	icon_state = "corner_white";
@@ -13378,7 +13509,7 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining_main/medbay)
-"zE" = (
+"Ad" = (
 /obj/effect/floor_decal/corner/paleblue{
 	tag = "icon-corner_white (NORTH)";
 	icon_state = "corner_white";
@@ -13397,7 +13528,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining_main/medbay)
-"zF" = (
+"Ae" = (
 /obj/machinery/door/airlock/glass_medical{
 	name = "Infirmary"
 	},
@@ -13420,7 +13551,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining_main/medbay)
-"zG" = (
+"Af" = (
 /obj/effect/floor_decal/corner/white{
 	tag = "icon-corner_white (NORTHWEST)";
 	icon_state = "corner_white";
@@ -13443,7 +13574,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"zH" = (
+"Ag" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	tag = "icon-corner_white (EAST)";
 	icon_state = "corner_white";
@@ -13469,7 +13600,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"zI" = (
+"Ah" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	tag = "icon-corner_white (NORTHEAST)";
 	icon_state = "corner_white";
@@ -13496,7 +13627,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"zJ" = (
+"Ai" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	tag = "icon-corner_white (NORTHEAST)";
 	icon_state = "corner_white";
@@ -13519,7 +13650,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"zK" = (
+"Aj" = (
 /obj/effect/floor_decal/corner/grey_alt/three_quarters{
 	tag = "icon-corner_white_three_quarters (NORTH)";
 	icon_state = "corner_white_three_quarters";
@@ -13541,7 +13672,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"zL" = (
+"Ak" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/glass{
 	name = "West wing"
@@ -13564,7 +13695,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"zM" = (
+"Al" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -13586,7 +13717,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"zN" = (
+"Am" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/structure/cable/blue{
@@ -13605,7 +13736,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"zO" = (
+"An" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
@@ -13624,23 +13755,23 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"zP" = (
+"Ao" = (
 /obj/structure/window/reinforced,
 /turf/simulated/floor/airless{
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"zQ" = (
+"Ap" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"zR" = (
+"Aq" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"zS" = (
+"Ar" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 6
 	},
@@ -13653,7 +13784,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"zT" = (
+"As" = (
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -13664,7 +13795,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"zU" = (
+"At" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
@@ -13685,7 +13816,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"zV" = (
+"Au" = (
 /obj/effect/floor_decal/industrial/warning/half,
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
@@ -13697,7 +13828,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"zW" = (
+"Av" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
@@ -13712,7 +13843,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"zX" = (
+"Aw" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
@@ -13722,7 +13853,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"zY" = (
+"Ax" = (
 /obj/effect/floor_decal/industrial/warning/half,
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
@@ -13737,7 +13868,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"zZ" = (
+"Ay" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/external{
 	frequency = 1379;
@@ -13751,11 +13882,11 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/eva)
-"Aa" = (
+"Az" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden,
 /turf/simulated/floor,
 /area/outpost/mining_main/eva)
-"Ab" = (
+"AA" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
 	dir = 4;
 	icon_state = "map";
@@ -13763,7 +13894,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/eva)
-"Ac" = (
+"AB" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/external{
 	frequency = 1379;
@@ -13775,7 +13906,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/eva)
-"Ad" = (
+"AC" = (
 /obj/machinery/access_button{
 	command = "cycle_exterior";
 	frequency = 1379;
@@ -13798,7 +13929,7 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"Ae" = (
+"AD" = (
 /obj/machinery/conveyor{
 	backwards = 2;
 	dir = 2;
@@ -13808,7 +13939,7 @@
 /obj/structure/plasticflaps/mining,
 /turf/simulated/floor,
 /area/outpost/mining_west)
-"Af" = (
+"AE" = (
 /obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -22
@@ -13820,7 +13951,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining_main/medbay)
-"Ag" = (
+"AF" = (
 /obj/effect/floor_decal/corner/paleblue{
 	tag = "icon-corner_white (WEST)";
 	icon_state = "corner_white";
@@ -13829,7 +13960,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining_main/medbay)
-"Ah" = (
+"AG" = (
 /obj/effect/floor_decal/corner/paleblue{
 	tag = "icon-corner_white (WEST)";
 	icon_state = "corner_white";
@@ -13842,7 +13973,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining_main/medbay)
-"Ai" = (
+"AH" = (
 /obj/machinery/door/airlock/glass_medical{
 	name = "Infirmary"
 	},
@@ -13857,7 +13988,7 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining_main/medbay)
-"Aj" = (
+"AI" = (
 /obj/effect/floor_decal/corner/white{
 	tag = "icon-corner_white (NORTHWEST)";
 	icon_state = "corner_white";
@@ -13870,7 +14001,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"Ak" = (
+"AJ" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
@@ -13885,7 +14016,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"Al" = (
+"AK" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 8
 	},
@@ -13905,7 +14036,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"Am" = (
+"AL" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
@@ -13917,7 +14048,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"An" = (
+"AM" = (
 /obj/effect/floor_decal/corner/grey_alt{
 	tag = "icon-corner_white (SOUTHEAST)";
 	icon_state = "corner_white";
@@ -13933,7 +14064,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"Ao" = (
+"AN" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/glass{
 	name = "West wing"
@@ -13948,7 +14079,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"Ap" = (
+"AO" = (
 /obj/effect/floor_decal/corner/grey_alt/three_quarters,
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 4;
@@ -13956,7 +14087,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"Aq" = (
+"AP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 10;
 	icon_state = "intact"
@@ -13969,7 +14100,7 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"Ar" = (
+"AQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
@@ -13986,7 +14117,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"As" = (
+"AR" = (
 /obj/machinery/door/airlock/glass_mining{
 	name = "Mining Station Bridge";
 	req_access = list(48)
@@ -14010,7 +14141,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"At" = (
+"AS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -14024,7 +14155,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"Au" = (
+"AT" = (
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -14042,7 +14173,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"Av" = (
+"AU" = (
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -14061,7 +14192,7 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"Aw" = (
+"AV" = (
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -14079,7 +14210,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Ax" = (
+"AW" = (
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -14100,7 +14231,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Ay" = (
+"AX" = (
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -14119,7 +14250,7 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Az" = (
+"AY" = (
 /obj/machinery/door/airlock/glass_mining{
 	name = "Mining Station Bridge";
 	req_access = list(48)
@@ -14138,7 +14269,7 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"AA" = (
+"AZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -14155,7 +14286,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"AB" = (
+"Ba" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -14172,7 +14303,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"AC" = (
+"Bb" = (
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -14184,7 +14315,7 @@
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"AD" = (
+"Bc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -14203,18 +14334,18 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"AE" = (
+"Bd" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"AF" = (
+"Be" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/eva)
-"AG" = (
+"Bf" = (
 /obj/structure/dispenser/oxygen,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/light_switch{
@@ -14222,7 +14353,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"AH" = (
+"Bg" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/power/apc{
@@ -14233,7 +14364,7 @@
 /obj/structure/cable/blue,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"AI" = (
+"Bh" = (
 /obj/machinery/floodlight,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/status_display{
@@ -14241,12 +14372,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"AJ" = (
+"Bi" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/ore_box,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/eva)
-"AK" = (
+"Bj" = (
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	tag_airpump = "mining_east_pump";
 	tag_exterior_door = "mining_east_outer";
@@ -14267,7 +14398,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/eva)
-"AL" = (
+"Bk" = (
 /obj/structure/ore_box,
 /obj/machinery/airlock_sensor{
 	frequency = 1379;
@@ -14285,7 +14416,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/eva)
-"AM" = (
+"Bl" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/camera/network/mining{
@@ -14294,7 +14425,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/eva)
-"AN" = (
+"Bm" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -14309,7 +14440,7 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"AO" = (
+"Bn" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	tag = "icon-warningcorner_dust (EAST)";
 	icon_state = "warningcorner_dust";
@@ -14319,7 +14450,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"AP" = (
+"Bo" = (
 /obj/machinery/conveyor_switch{
 	id = "mining_west";
 	pixel_y = 10
@@ -14336,12 +14467,12 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"AQ" = (
+"Bp" = (
 /obj/machinery/light_construct/small,
 /obj/machinery/light/small,
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
-"AR" = (
+"Bq" = (
 /obj/machinery/sleeper{
 	dir = 4
 	},
@@ -14351,7 +14482,7 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining_main/medbay)
-"AS" = (
+"Br" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
@@ -14363,13 +14494,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining_main/medbay)
-"AT" = (
+"Bs" = (
 /turf/simulated/wall,
 /area/outpost/mining_main/maintenance)
-"AU" = (
+"Bt" = (
 /turf/simulated/wall,
 /area/outpost/mining_main/west_hall)
-"AV" = (
+"Bu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/blue{
@@ -14383,7 +14514,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"AW" = (
+"Bv" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
@@ -14396,7 +14527,7 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/outpost/mining_main/crew_hallway)
-"AX" = (
+"Bw" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
 	dir = 4;
 	icon_state = "map";
@@ -14409,7 +14540,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"AY" = (
+"Bx" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
@@ -14423,7 +14554,7 @@
 /obj/structure/closet/firecloset/full,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"AZ" = (
+"By" = (
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -14431,17 +14562,17 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"Ba" = (
+"Bz" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Bb" = (
+"BA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/universal,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Bc" = (
+"BB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/blue{
@@ -14452,11 +14583,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Bd" = (
+"BC" = (
 /obj/effect/floor_decal/corner/grey_alt,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Be" = (
+"BD" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -14472,7 +14603,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"Bf" = (
+"BE" = (
 /obj/machinery/conveyor_switch{
 	id = "mining_external"
 	},
@@ -14480,7 +14611,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"Bg" = (
+"BF" = (
 /obj/machinery/power/smes/buildable/outpost_substation{
 	charge = 500000;
 	input_attempt = 1;
@@ -14495,7 +14626,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"Bh" = (
+"BG" = (
 /obj/machinery/power/sensor{
 	long_range = 1;
 	name_tag = "Mining Outpost"
@@ -14511,7 +14642,7 @@
 /obj/machinery/recharge_station,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"Bi" = (
+"BH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/blue{
@@ -14526,7 +14657,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"Bj" = (
+"BI" = (
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -14539,11 +14670,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"Bk" = (
+"BJ" = (
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"Bl" = (
+"BK" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
@@ -14555,7 +14686,7 @@
 /obj/machinery/door/window/eastright,
 /turf/simulated/floor/tiled/dark,
 /area/outpost/mining_main/west_hall)
-"Bm" = (
+"BL" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
 	dir = 4;
 	icon_state = "map";
@@ -14576,31 +14707,31 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"Bn" = (
+"BM" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/west_hall)
-"Bo" = (
+"BN" = (
 /obj/machinery/light,
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
-"Bp" = (
+"BO" = (
 /obj/machinery/light,
 /turf/simulated/floor/airless{
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"Bq" = (
+"BP" = (
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 2;
 	target_pressure = 200
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Br" = (
+"BQ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
@@ -14619,7 +14750,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Bs" = (
+"BR" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -14634,14 +14765,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/outpost/mining_main/east_hall)
-"Bt" = (
+"BS" = (
 /obj/structure/disposalpipe/junction{
 	icon_state = "pipe-j2";
 	dir = 4
 	},
 /turf/simulated/wall,
 /area/outpost/mining_main/refinery)
-"Bu" = (
+"BT" = (
 /obj/structure/disposaloutlet{
 	dir = 4
 	},
@@ -14650,31 +14781,31 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"Bv" = (
+"BU" = (
 /obj/machinery/conveyor{
 	dir = 4;
 	id = "mining_internal"
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"Bw" = (
+"BV" = (
 /obj/machinery/conveyor{
 	dir = 9;
 	id = "mining_internal"
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"Bx" = (
+"BW" = (
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"By" = (
+"BX" = (
 /obj/machinery/mineral/unloading_machine{
 	icon_state = "unloader-corner"
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"Bz" = (
+"BY" = (
 /obj/machinery/conveyor{
 	dir = 4;
 	id = "mining_external"
@@ -14682,7 +14813,7 @@
 /obj/machinery/mineral/input,
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"BA" = (
+"BZ" = (
 /obj/machinery/conveyor{
 	dir = 4;
 	id = "mining_external"
@@ -14690,7 +14821,7 @@
 /obj/structure/plasticflaps/mining,
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"BB" = (
+"Ca" = (
 /obj/machinery/conveyor{
 	dir = 4;
 	id = "mining_external"
@@ -14711,7 +14842,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"BC" = (
+"Cb" = (
 /obj/machinery/conveyor{
 	dir = 4;
 	id = "mining_external"
@@ -14725,7 +14856,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"BD" = (
+"Cc" = (
 /obj/machinery/power/terminal{
 	icon_state = "term";
 	dir = 1
@@ -14742,7 +14873,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"BE" = (
+"Cd" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -14751,7 +14882,7 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"BF" = (
+"Ce" = (
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
@@ -14763,34 +14894,34 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"BG" = (
+"Cf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"BH" = (
+"Cg" = (
 /obj/machinery/atmospherics/pipe/simple/visible/universal{
 	dir = 4
 	},
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"BI" = (
+"Ch" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"BJ" = (
+"Ci" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 10;
 	icon_state = "intact"
 	},
 /turf/simulated/wall,
 /area/outpost/mining_main/west_hall)
-"BK" = (
+"Cj" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/external{
 	frequency = 1379;
@@ -14802,7 +14933,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor,
 /area/outpost/mining_main/west_hall)
-"BL" = (
+"Ck" = (
 /obj/machinery/status_display{
 	layer = 4;
 	pixel_x = -32;
@@ -14814,7 +14945,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"BM" = (
+"Cl" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/blue{
@@ -14826,7 +14957,7 @@
 /obj/machinery/atmospherics/pipe/manifold4w/hidden,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"BN" = (
+"Cm" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8
 	},
@@ -14839,10 +14970,10 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/dark,
 /area/outpost/mining_main/east_hall)
-"BO" = (
+"Cn" = (
 /turf/simulated/wall,
 /area/outpost/mining_main/refinery)
-"BP" = (
+"Co" = (
 /obj/machinery/conveyor{
 	dir = 2;
 	id = "mining_internal"
@@ -14850,7 +14981,7 @@
 /obj/structure/plasticflaps/mining,
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"BQ" = (
+"Cp" = (
 /obj/machinery/conveyor{
 	dir = 2;
 	id = "mining_internal"
@@ -14859,7 +14990,7 @@
 /obj/structure/plasticflaps/mining,
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"BR" = (
+"Cq" = (
 /obj/machinery/light{
 	icon_state = "tube1";
 	dir = 8
@@ -14880,7 +15011,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"BS" = (
+"Cr" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -14892,13 +15023,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"BT" = (
+"Cs" = (
 /obj/machinery/atmospherics/pipe/simple/visible/universal{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"BU" = (
+"Ct" = (
 /obj/machinery/light/small,
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 8;
@@ -14906,17 +15037,17 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"BV" = (
+"Cu" = (
 /obj/machinery/atmospherics/pipe/tank/air{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"BW" = (
+"Cv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/wall,
 /area/outpost/mining_main/west_hall)
-"BX" = (
+"Cw" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
 	frequency = 1379;
@@ -14928,11 +15059,11 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/west_hall)
-"BY" = (
+"Cx" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden,
 /turf/simulated/floor,
 /area/outpost/mining_main/west_hall)
-"BZ" = (
+"Cy" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -14962,7 +15093,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/west_hall)
-"Ca" = (
+"Cz" = (
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
@@ -14974,7 +15105,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Cb" = (
+"CA" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/blue{
@@ -14991,10 +15122,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Cc" = (
+"CB" = (
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Cd" = (
+"CC" = (
 /obj/machinery/mineral/input,
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/loading{
@@ -15002,11 +15133,11 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"Ce" = (
+"CD" = (
 /obj/machinery/mineral/unloading_machine,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"Cf" = (
+"CE" = (
 /obj/machinery/conveyor{
 	dir = 4;
 	id = "mining_internal"
@@ -15014,7 +15145,7 @@
 /obj/machinery/mineral/output,
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"Cg" = (
+"CF" = (
 /obj/machinery/conveyor{
 	dir = 4;
 	id = "mining_internal"
@@ -15022,7 +15153,7 @@
 /obj/structure/plasticflaps/mining,
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"Ch" = (
+"CG" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/structure/cable{
 	d1 = 1;
@@ -15033,11 +15164,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"Ci" = (
+"CH" = (
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
-"Cj" = (
+"CI" = (
 /obj/structure/ore_box,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
@@ -15049,11 +15180,11 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/west_hall)
-"Ck" = (
+"CJ" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden,
 /turf/simulated/floor,
 /area/outpost/mining_main/west_hall)
-"Cl" = (
+"CK" = (
 /obj/structure/sign/warning/airlock{
 	pixel_x = 32
 	},
@@ -15067,7 +15198,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/west_hall)
-"Cm" = (
+"CL" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/blue{
@@ -15079,7 +15210,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Cn" = (
+"CM" = (
 /obj/machinery/conveyor_switch/oneway{
 	id = "mining_internal";
 	name = "mining conveyor"
@@ -15093,19 +15224,19 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Co" = (
+"CN" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/refinery)
-"Cp" = (
+"CO" = (
 /obj/machinery/conveyor{
 	dir = 2;
 	id = "mining_internal"
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"Cq" = (
+"CP" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/camera/network/mining{
@@ -15114,7 +15245,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/west_hall)
-"Cr" = (
+"CQ" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/external{
 	frequency = 1379;
@@ -15125,26 +15256,26 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/west_hall)
-"Cs" = (
+"CR" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/structure/sign/warning/docking_area,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/east_hall)
-"Ct" = (
+"CS" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/structure/sign/warning/airlock,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/east_hall)
-"Cu" = (
+"CT" = (
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Cv" = (
+"CU" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/blue{
 	d1 = 1;
@@ -15160,7 +15291,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Cw" = (
+"CV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -15169,7 +15300,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Cx" = (
+"CW" = (
 /obj/structure/closet/crate,
 /obj/structure/noticeboard{
 	pixel_y = 27
@@ -15187,7 +15318,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Cy" = (
+"CX" = (
 /obj/structure/closet/crate,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -15202,7 +15333,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Cz" = (
+"CY" = (
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
@@ -15218,7 +15349,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"CA" = (
+"CZ" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -5;
 	pixel_y = 30
@@ -15232,7 +15363,7 @@
 /obj/effect/floor_decal/corner/brown/diagonal,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"CB" = (
+"Da" = (
 /obj/machinery/status_display{
 	layer = 4;
 	pixel_x = 0;
@@ -15247,7 +15378,7 @@
 /obj/effect/floor_decal/corner/brown/diagonal,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"CC" = (
+"Db" = (
 /obj/structure/cable/blue{
 	d2 = 2;
 	icon_state = "0-2"
@@ -15261,7 +15392,7 @@
 /obj/effect/floor_decal/corner/brown/diagonal,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"CD" = (
+"Dc" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 1;
 	use_power = 1
@@ -15273,7 +15404,7 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"CE" = (
+"Dd" = (
 /obj/effect/floor_decal/industrial/warning/dust,
 /obj/machinery/access_button{
 	command = "cycle_exterior";
@@ -15285,13 +15416,13 @@
 	},
 /turf/simulated/floor/tiled/airless/asteroid,
 /area/mine/explored)
-"CF" = (
+"De" = (
 /obj/effect/shuttle_landmark/mining/out,
 /turf/simulated/floor/airless{
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"CG" = (
+"Df" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1380;
 	icon_state = "door_locked";
@@ -15302,7 +15433,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/east_hall)
-"CH" = (
+"Dg" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	frequency = 1380;
 	id_tag = "mining_outpost_airlock";
@@ -15327,7 +15458,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/east_hall)
-"CI" = (
+"Dh" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1380;
 	icon_state = "door_locked";
@@ -15341,7 +15472,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/east_hall)
-"CJ" = (
+"Di" = (
 /obj/machinery/access_button{
 	command = "cycle_interior";
 	frequency = 1380;
@@ -15356,13 +15487,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"CK" = (
+"Dj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"CL" = (
+"Dk" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/blue{
@@ -15378,25 +15509,25 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"CM" = (
+"Dl" = (
 /obj/machinery/door/window/westright{
 	name = "Production Area";
 	req_access = list(48)
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"CN" = (
+"Dm" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/brown/diagonal,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"CO" = (
+"Dn" = (
 /obj/effect/floor_decal/corner/brown/diagonal,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"CP" = (
+"Do" = (
 /obj/structure/cable/blue{
 	d1 = 1;
 	d2 = 2;
@@ -15409,7 +15540,7 @@
 /obj/effect/floor_decal/corner/brown/diagonal,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"CQ" = (
+"Dp" = (
 /obj/machinery/mineral/input,
 /obj/machinery/conveyor{
 	dir = 2;
@@ -15417,7 +15548,7 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"CR" = (
+"Dq" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/blue{
@@ -15428,7 +15559,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"CS" = (
+"Dr" = (
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -15436,7 +15567,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"CT" = (
+"Ds" = (
 /obj/machinery/door/window/westleft{
 	name = "Production Area";
 	req_access = list(48)
@@ -15448,7 +15579,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"CU" = (
+"Dt" = (
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -15456,7 +15587,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"CV" = (
+"Du" = (
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
@@ -15465,7 +15596,7 @@
 /obj/effect/floor_decal/corner/brown/diagonal,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"CW" = (
+"Dv" = (
 /obj/structure/cable/blue{
 	d1 = 1;
 	d2 = 8;
@@ -15477,15 +15608,15 @@
 /obj/effect/floor_decal/corner/brown/diagonal,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"CX" = (
+"Dw" = (
 /obj/machinery/mineral/processing_unit_console,
 /turf/simulated/wall/r_wall,
 /area/outpost/mining_main/refinery)
-"CY" = (
+"Dx" = (
 /obj/machinery/mineral/processing_unit,
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"CZ" = (
+"Dy" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -15506,7 +15637,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"Da" = (
+"Dz" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
@@ -15526,7 +15657,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"Db" = (
+"DA" = (
 /obj/machinery/access_button{
 	command = "cycle_exterior";
 	frequency = 1380;
@@ -15545,17 +15676,17 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"Dc" = (
+"DB" = (
 /obj/machinery/computer/shuttle_control/mining,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Dd" = (
+"DC" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"De" = (
+"DD" = (
 /obj/structure/closet/crate,
 /obj/structure/window/reinforced{
 	dir = 8
@@ -15567,7 +15698,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"Df" = (
+"DE" = (
 /obj/structure/closet/crate,
 /obj/effect/floor_decal/corner/grey_alt{
 	tag = "icon-corner_white (SOUTHWEST)";
@@ -15576,10 +15707,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"Dg" = (
+"DF" = (
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/refinery)
-"Dh" = (
+"DG" = (
 /obj/machinery/conveyor{
 	dir = 2;
 	id = "mining_internal"
@@ -15587,7 +15718,7 @@
 /obj/machinery/mineral/output,
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"Di" = (
+"DH" = (
 /obj/machinery/light{
 	icon_state = "tube1";
 	dir = 8
@@ -15598,7 +15729,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Dj" = (
+"DI" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -15609,7 +15740,7 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Dk" = (
+"DJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -15618,17 +15749,17 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Dl" = (
+"DK" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Dm" = (
+"DL" = (
 /obj/machinery/mineral/stacking_unit_console,
 /turf/simulated/wall/r_wall,
 /area/outpost/mining_main/refinery)
-"Dn" = (
+"DM" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/disposalpipe/segment{
@@ -15637,7 +15768,7 @@
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/east_hall)
-"Do" = (
+"DN" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -15650,20 +15781,20 @@
 /obj/random/coin,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Dp" = (
+"DO" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Dq" = (
+"DP" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Dr" = (
+"DQ" = (
 /obj/effect/floor_decal/industrial/loading{
 	tag = "icon-loadingarea (WEST)";
 	icon_state = "loadingarea";
@@ -15671,7 +15802,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"Ds" = (
+"DR" = (
 /obj/machinery/conveyor{
 	dir = 8;
 	id = "mining_internal"
@@ -15679,14 +15810,14 @@
 /obj/structure/plasticflaps,
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"Dt" = (
+"DS" = (
 /obj/machinery/conveyor{
 	dir = 8;
 	id = "mining_internal"
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"Du" = (
+"DT" = (
 /obj/machinery/conveyor{
 	dir = 8;
 	id = "mining_internal"
@@ -15694,11 +15825,11 @@
 /obj/machinery/mineral/output,
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"Dv" = (
+"DU" = (
 /obj/machinery/mineral/stacking_machine,
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"Dw" = (
+"DV" = (
 /obj/machinery/mineral/input,
 /obj/machinery/conveyor{
 	tag = "icon-conveyor0 (NORTHEAST)";
@@ -15708,11 +15839,11 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/refinery)
-"Dx" = (
+"DW" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/wall,
 /area/outpost/mining_main/east_hall)
-"Dy" = (
+"DX" = (
 /obj/machinery/conveyor{
 	dir = 1;
 	id = "mining_internal_mint"
@@ -15722,21 +15853,21 @@
 	},
 /turf/simulated/floor,
 /area/outpost/mining_main/east_hall)
-"Dz" = (
+"DY" = (
 /obj/machinery/conveyor_switch/oneway{
 	id = "mining_internal_mint";
 	name = "mining conveyor"
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"DA" = (
+"DZ" = (
 /obj/machinery/light{
 	icon_state = "tube1";
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"DB" = (
+"Ea" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
 	icon_state = "pipe-c"
@@ -15756,7 +15887,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"DC" = (
+"Eb" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -15776,7 +15907,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"DD" = (
+"Ec" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -15800,7 +15931,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"DE" = (
+"Ed" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -15819,14 +15950,14 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"DF" = (
+"Ee" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-c"
 	},
 /turf/simulated/wall,
 /area/outpost/mining_main/east_hall)
-"DG" = (
+"Ef" = (
 /obj/machinery/conveyor{
 	dir = 6;
 	icon_state = "conveyor0";
@@ -15836,11 +15967,11 @@
 /obj/machinery/mineral/output,
 /turf/simulated/floor,
 /area/outpost/mining_main/east_hall)
-"DH" = (
+"Eg" = (
 /obj/machinery/mineral/mint,
 /turf/simulated/floor,
 /area/outpost/mining_main/east_hall)
-"DI" = (
+"Eh" = (
 /obj/machinery/conveyor{
 	dir = 8;
 	id = "mining_internal_mint"
@@ -15851,7 +15982,7 @@
 /obj/machinery/mineral/input,
 /turf/simulated/floor,
 /area/outpost/mining_main/east_hall)
-"DJ" = (
+"Ei" = (
 /obj/machinery/conveyor{
 	dir = 8;
 	id = "mining_internal_mint"
@@ -15862,14 +15993,14 @@
 /obj/machinery/mineral/output,
 /turf/simulated/floor,
 /area/outpost/mining_main/east_hall)
-"DK" = (
+"Ej" = (
 /obj/machinery/mineral/unloading_machine,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"DL" = (
+"Ek" = (
 /obj/effect/floor_decal/industrial/loading{
 	tag = "icon-loadingarea (WEST)";
 	icon_state = "loadingarea";
@@ -15878,7 +16009,7 @@
 /obj/machinery/mineral/input,
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/east_hall)
-"DM" = (
+"El" = (
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
@@ -15894,7 +16025,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"DN" = (
+"Em" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
@@ -15910,11 +16041,11 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"DO" = (
+"En" = (
 /obj/machinery/light_construct/small,
 /turf/unsimulated/mask,
 /area/mine/explored)
-"DP" = (
+"Eo" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -15936,7 +16067,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"DQ" = (
+"Ep" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -15958,7 +16089,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"DR" = (
+"Eq" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -15980,7 +16111,7 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"DS" = (
+"Er" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
@@ -15997,1046 +16128,13 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
-"DT" = (
+"Es" = (
 /obj/effect/shuttle_landmark/skipjack/mine,
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
-"DU" = (
+"Et" = (
 /turf/space,
 /area/space)
-"DV" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"DW" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"DX" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"DY" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"DZ" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ea" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Eb" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ec" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ed" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ee" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ef" = (
-/obj/structure/cult/pylon,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Eg" = (
-/obj/structure/cult/talisman,
-/obj/item/weapon/material/knife/ritual,
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Eh" = (
-/obj/structure/cult/pylon,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ei" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ej" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ek" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"El" = (
-/obj/structure/table/woodentable,
-/obj/item/trash/candle,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Em" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"En" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Eo" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ep" = (
-/obj/structure/table/woodentable,
-/obj/item/trash/candle,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Eq" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Er" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Es" = (
-/obj/structure/table/woodentable,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Et" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Eu" = (
-/obj/random_multi/single_item/cult_faithless,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ev" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ew" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/melee/cultblade,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ex" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ey" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ez" = (
-/obj/structure/table/woodentable,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"EA" = (
-/obj/structure/bed/chair/wood/wings{
-	dir = 1
-	},
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"EB" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"EC" = (
-/obj/structure/bed/chair/wood/wings{
-	dir = 1
-	},
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"ED" = (
-/obj/structure/table/woodentable,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"EE" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"EF" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"EG" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"EH" = (
-/obj/structure/bed/chair/wood/wings{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"EI" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"EJ" = (
-/obj/structure/bed/chair/wood/wings{
-	dir = 1
-	},
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"EK" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"EL" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"EM" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"EN" = (
-/obj/structure/bed/chair/wood/wings{
-	dir = 1
-	},
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"EO" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"EP" = (
-/obj/structure/bed/chair/wood/wings{
-	dir = 1
-	},
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"EQ" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"ER" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"ES" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"ET" = (
-/obj/structure/sign/directions{
-	desc = "Непонн&#255;тный набор букв, символов и неприличных жестов...";
-	description_antag = "Свенный Алтарь.";
-	dir = 1;
-	name = "nikka tok-lyr sign"
-	},
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"EU" = (
-/obj/machinery/door/unpowered/simple/cult,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"EV" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"EW" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"EX" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"EY" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"EZ" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Fa" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Fb" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Fc" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Fd" = (
-/obj/structure/table/woodentable,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Fe" = (
-/obj/structure/constructshell/cult,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ff" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Fg" = (
-/obj/structure/constructshell/cult,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Fh" = (
-/obj/structure/table/woodentable,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Fi" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Fj" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Fk" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Fl" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Fm" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Fn" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Fo" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Fp" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Fq" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Fr" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Fs" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ft" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Fu" = (
-/obj/random_multi/single_item/cult_faithless,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Fv" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Fw" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Fx" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Fy" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Fz" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FA" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FB" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"FC" = (
-/obj/machinery/door/unpowered/simple/cult,
-/obj/effect/step_trigger/message{
-	message = "Отсюда так и тет кровавым запахом... Почему \green чувствую его в скафандре?"
-	},
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FD" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FE" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FF" = (
-/obj/machinery/door/unpowered/simple/cult,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FG" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FH" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FI" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FJ" = (
-/obj/structure/cult/pylon,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FK" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FL" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FM" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FN" = (
-/obj/machinery/door/unpowered/simple/cult,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FO" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FP" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FQ" = (
-/obj/machinery/door/unpowered/simple/cult,
-/obj/effect/step_trigger/message{
-	message = "Отсюда так и тет кровавым запахом... Почему \green чувствую его в скафандре?"
-	},
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FR" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"FS" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FT" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FU" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"FV" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FW" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FX" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FY" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"FZ" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ga" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Gb" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Gc" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gd" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ge" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Gf" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gg" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gh" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gi" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gj" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gk" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gl" = (
-/obj/structure/table/woodentable,
-/obj/item/glass_jar,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Gm" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Gn" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Go" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Gp" = (
-/obj/structure/table/woodentable,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Gq" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gr" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gs" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gt" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gu" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gv" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gw" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gx" = (
-/obj/structure/sign/directions{
-	desc = "Непонн&#255;тный набор букв, символов и неприличных жестов...";
-	description_antag = "Зал рукописей.";
-	dir = 1;
-	name = "pleggh tok-lyr sign"
-	},
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Gy" = (
-/obj/machinery/door/unpowered/simple/cult,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Gz" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"GA" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"GB" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"GC" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"GD" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"GE" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"GF" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"GG" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"GH" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"GI" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"GJ" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"GK" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"GL" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"GM" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"GN" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"GO" = (
-/obj/structure/bookcase,
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"GP" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"GQ" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"GR" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"GS" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"GT" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"GU" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"GV" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"GW" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"GX" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"GY" = (
-/obj/structure/bookcase,
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"GZ" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ha" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Hb" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hc" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hd" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"He" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hf" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hg" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hh" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hi" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hj" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hk" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hl" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hm" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Hn" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ho" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hp" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hq" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hr" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hs" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ht" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hu" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hv" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hw" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hx" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hy" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Hz" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"HA" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"HB" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HC" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HD" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HE" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HF" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HG" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HH" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HI" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HJ" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HK" = (
-/obj/random_multi/single_item/cult_faithless,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HL" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HM" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"HN" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"HO" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HP" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HQ" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HR" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HS" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HT" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HU" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HV" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HW" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HX" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HY" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"HZ" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ia" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ib" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ic" = (
-/obj/random_multi/single_item/cult_faithless,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Id" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ie" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"If" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ig" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ih" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ii" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ij" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ik" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Il" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Im" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"In" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Io" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ip" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Iq" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ir" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Is" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"It" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Iu" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Iv" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Iw" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ix" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Iy" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Iz" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"IA" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"IB" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IC" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"ID" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IE" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/paper/talisman,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IF" = (
-/obj/structure/bed/chair/wood/wings,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IG" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IH" = (
-/obj/structure/bed/chair/wood/wings,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"II" = (
-/obj/structure/table/woodentable,
-/obj/item/trash/candle,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IJ" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IK" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IL" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IM" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"IN" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"IO" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"IP" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IQ" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IR" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/paper_bin{
-	pixel_x = -3;
-	pixel_y = 7
-	},
-/obj/item/weapon/pen,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IS" = (
-/obj/structure/cult/tome,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IT" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/book/tome{
-	name = "strange tome"
-	},
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IU" = (
-/obj/structure/cult/tome,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IV" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/paper_bin{
-	pixel_x = -3;
-	pixel_y = 7
-	},
-/obj/item/weapon/pen,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IW" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IX" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"IY" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"IZ" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ja" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Jb" = (
-/obj/structure/bookcase,
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Jc" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Jd" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Je" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Jf" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Jg" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Jh" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Ji" = (
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Jj" = (
-/obj/structure/bookcase,
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Jk" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Jl" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Jm" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Jn" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Jo" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Jp" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Jq" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Jr" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Js" = (
-/obj/structure/bookcase,
-/turf/simulated/floor/cult/airless,
-/area/mine/unexplored)
-"Jt" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Ju" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Jv" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Jw" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Jx" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Jy" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"Jz" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"JA" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"JB" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
-"JC" = (
-/turf/simulated/wall/cult,
-/area/mine/unexplored)
 
 (1,1,1) = {"
 aa
@@ -30834,13 +29932,13 @@ ab
 ab
 ab
 ab
-wP
-wP
-wP
-wP
-wP
-wP
-wP
+xo
+xo
+xo
+xo
+xo
+xo
+xo
 ad
 ac
 ab
@@ -31091,13 +30189,13 @@ ab
 ab
 ab
 ab
-wP
-xi
-xK
-yp
-yP
-zp
-wP
+xo
+xH
+yj
+yO
+zo
+zO
+xo
 ad
 ac
 ab
@@ -31348,13 +30446,13 @@ ab
 ab
 ab
 ab
-wP
-xj
-xL
-yq
-yQ
-zq
-wP
+xo
+xI
+yk
+yP
+zp
+zP
+xo
 ad
 ac
 ab
@@ -31605,13 +30703,13 @@ ab
 ab
 ad
 ad
-wP
-xk
-xM
-yr
-yR
-zr
-wP
+xo
+xJ
+yl
+yQ
+zq
+zQ
+xo
 ad
 ac
 ab
@@ -31862,13 +30960,13 @@ ab
 ad
 ad
 ad
-wP
-wQ
-wQ
-ys
-wQ
-wQ
-wP
+xo
+xp
+xp
+yR
+xp
+xp
+xo
 ad
 ac
 ab
@@ -32119,13 +31217,13 @@ ab
 ad
 ad
 ad
-wP
-xl
-xN
-yt
+xo
+xK
+ym
 yS
-zs
-wP
+zr
+zR
+xo
 ad
 ac
 ab
@@ -32376,13 +31474,13 @@ ad
 ad
 ad
 ae
-wQ
-xm
-xO
-yu
+xp
+xL
+yn
 yT
-zt
-wP
+zs
+zS
+xo
 ad
 ac
 ac
@@ -32633,13 +31731,13 @@ ad
 ad
 ad
 ae
-wQ
-xn
-xP
-yv
-xL
-zu
-wP
+xp
+xM
+yo
+yU
+yk
+zT
+xo
 ad
 ac
 ab
@@ -32713,7 +31811,7 @@ ab
 aa
 aa
 aa
-DU
+Et
 "}
 (62,1,1) = {"
 aa
@@ -32890,13 +31988,13 @@ ad
 ad
 ae
 ae
-wQ
+xp
+xN
+yp
+yV
+zt
+yk
 xo
-xQ
-yw
-yU
-xL
-wP
 ad
 ad
 ac
@@ -33147,14 +32245,14 @@ ad
 ad
 ae
 ae
-wP
-xp
-xR
-yx
-wP
-zv
-wP
-AO
+xo
+xO
+yq
+yW
+xo
+zU
+xo
+Bn
 ad
 ac
 ab
@@ -33404,13 +32502,13 @@ ad
 ad
 ae
 ae
-wP
-wQ
-xS
-wQ
-wP
-zw
-Ae
+xo
+xp
+yr
+xp
+xo
+zV
+AD
 dc
 ae
 ac
@@ -33661,14 +32759,14 @@ ac
 ad
 ae
 nb
-wP
-xq
-xT
-yy
-wP
-zx
-wP
-AP
+xo
+xP
+ys
+yX
+xo
+zW
+xo
+Bo
 ae
 ac
 ab
@@ -33918,13 +33016,13 @@ ac
 ad
 ae
 nc
-wP
-xr
-xU
-yz
-wP
-zy
-wP
+xo
+xQ
+yt
+yY
+xo
+zX
+xo
 pI
 ae
 ac
@@ -34174,14 +33272,14 @@ ac
 ac
 ad
 ae
-wC
-wP
-wQ
-xV
-yA
-wP
-zz
-wP
+xb
+xo
+xp
+yu
+yZ
+xo
+zY
+xo
 ae
 ae
 ac
@@ -34433,12 +33531,12 @@ ad
 ae
 ae
 ae
-xs
-xW
-yB
-wP
-zA
-wP
+xR
+yv
+za
+xo
+zZ
+xo
 ae
 ae
 ac
@@ -34691,10 +33789,10 @@ ae
 ae
 ae
 ae
-xX
-yC
-yC
-zB
+yw
+zb
+zb
+Aa
 ae
 ae
 af
@@ -35467,7 +34565,7 @@ ac
 ae
 pt
 ae
-AQ
+Bp
 ja
 ab
 ab
@@ -36172,11 +35270,11 @@ ab
 ab
 ab
 ab
-EY
-Fn
-FC
-FR
-Gg
+pO
+pO
+qg
+pO
+pO
 ab
 ab
 ab
@@ -36420,7 +35518,7 @@ ab
 ab
 ab
 ab
-DV
+pO
 ab
 ab
 ab
@@ -36429,22 +35527,22 @@ ab
 ab
 ab
 ab
-EZ
-Fo
-FD
-FS
-Gh
+pO
+pU
+qf
+pU
+pO
 ab
 ab
-GN
-Ha
-Hn
-HA
-HN
-Ia
-In
-IA
-IN
+pO
+pO
+pO
+pO
+pO
+pO
+pO
+pO
+pO
 ab
 ab
 ab
@@ -36677,7 +35775,7 @@ ab
 ab
 ab
 ab
-DW
+pO
 ab
 ab
 ab
@@ -36686,23 +35784,23 @@ ab
 ab
 ab
 ab
-Fa
-Fp
-FE
-FT
-Gi
+pO
+pU
+pU
+pU
+pO
 ab
-GC
-GO
-Hb
-Ho
-HB
-HO
-Ib
-Io
-IB
-IO
-Ja
+pO
+qo
+qk
+qk
+qk
+qk
+qk
+qk
+qk
+pO
+pO
 ab
 ab
 ab
@@ -36934,7 +36032,7 @@ ab
 ab
 ab
 ab
-DX
+pO
 ab
 ab
 ab
@@ -36943,25 +36041,25 @@ ab
 ab
 ab
 ab
-Fb
-Fq
-FF
-FU
-Gj
+pO
+pO
+qd
+pO
+pO
 ab
-GD
-GP
-Hc
-Hp
-HC
-HP
-Ic
-Ip
-IC
-IP
-Jb
-Jl
-Ju
+pO
+qk
+pU
+pU
+pU
+pU
+pW
+pU
+pU
+qk
+qo
+pO
+pO
 ab
 ab
 ab
@@ -37193,32 +36291,32 @@ ab
 ab
 ab
 ab
-Ed
-Ek
-Er
-Ey
-EF
+pO
+pO
+pO
+pO
+pO
 ab
-ER
-Fc
-Fr
-FG
-FV
-Gk
-Gv
-GE
-GQ
-Hd
-Hq
-HD
-HQ
-Id
-Iq
-ID
-IQ
-Jc
-Jm
-Jv
+pO
+pO
+pU
+pU
+pU
+pO
+pO
+pO
+qk
+pU
+qk
+qk
+qk
+qk
+pU
+pU
+pU
+pU
+qk
+pO
 ab
 ab
 ab
@@ -37449,33 +36547,33 @@ ab
 ab
 ab
 ab
-DY
-Ee
-El
-Es
-Ez
-EG
-EM
-ES
-Fd
-Fs
-FH
-FW
-Gl
-Gw
-GF
-GR
-He
-Hr
-HE
-HR
-Ie
-Ir
-IE
-IR
-Jd
-Jn
-Jw
+pO
+pO
+pT
+pV
+pY
+pO
+pO
+pO
+pY
+pU
+pU
+pU
+qh
+pO
+pO
+qk
+pU
+pU
+qf
+pU
+pU
+pU
+qQ
+rc
+pU
+qk
+pO
 ab
 ab
 ab
@@ -37706,33 +36804,33 @@ ab
 ab
 ab
 ab
-DZ
-Ef
-Em
-Et
-EA
-EH
-EN
-ET
-Fe
-Ft
-FI
-FX
-Gm
-Gx
-GG
-GS
-Hf
-Hs
-HF
-HS
-If
-Is
-IF
-IS
-Je
-Jo
-Jx
+pO
+pP
+pU
+pU
+pZ
+qb
+pZ
+qc
+qe
+qf
+pU
+pU
+pU
+qj
+qk
+qk
+pU
+qk
+qk
+qk
+pU
+pU
+qR
+rd
+pU
+qk
+pO
 ab
 ab
 ab
@@ -37785,7 +36883,7 @@ ac
 ae
 pt
 ae
-AQ
+Bp
 ja
 ab
 ab
@@ -37963,33 +37061,33 @@ ab
 ab
 ab
 ab
-Ea
-Eg
-En
-Eu
-EB
-EI
-EO
-EU
-Ff
-Fu
-FJ
-FY
-Gn
-Gy
-GH
-GT
-Hg
-Ht
-HG
-HT
-Ig
-It
-IG
-IT
-Jf
-Jp
-Jy
+pO
+pQ
+pU
+pW
+pU
+pU
+pU
+qd
+pU
+pW
+pP
+pU
+qf
+qd
+pU
+pU
+pU
+pU
+pU
+pU
+pU
+pU
+pU
+re
+pU
+qk
+pO
 ab
 ab
 ab
@@ -38220,33 +37318,33 @@ ab
 ab
 ab
 ab
-Eb
-Eh
-Eo
-Ev
-EC
-EJ
-EP
-EV
-Fg
-Fv
-FK
-FZ
-Go
-Gz
-GI
-GU
-Hh
-Hu
-HH
-HU
-Ih
-Iu
-IH
-IU
-Jg
-Jq
-Jz
+pO
+pP
+pU
+pU
+pZ
+pZ
+pZ
+pO
+qe
+pU
+pU
+pU
+pU
+pO
+qk
+qk
+pU
+qk
+qk
+qk
+pU
+qf
+qR
+rd
+pU
+qk
+pO
 ab
 ab
 ab
@@ -38477,33 +37575,33 @@ ab
 ab
 ab
 ab
-Ec
-Ei
-Ep
-Ew
-ED
-EK
-EQ
-EW
-Fh
-Fw
-FL
-Ga
-Gp
-GA
-GJ
-GV
-Hi
-Hv
-HI
-HV
-Ii
-Iv
-II
-IV
-Jh
-Jr
-JA
+pO
+pO
+pT
+pX
+pY
+pO
+pO
+pO
+pY
+pU
+pU
+pU
+pY
+pO
+pO
+qk
+pU
+pU
+pU
+pU
+pU
+pU
+pT
+rc
+pU
+qk
+pO
 ab
 ab
 ab
@@ -38735,32 +37833,32 @@ ab
 ab
 ab
 ab
-Ej
-Eq
-Ex
-EE
-EL
+pO
+pO
+pO
+pO
+pO
 ab
-EX
-Fi
-Fx
-FM
-Gb
-Gq
-GB
-GK
-GW
-Hj
-Hw
-HJ
-HW
-Ij
-Iw
-IJ
-IW
-Ji
-Js
-JB
+pO
+pO
+pU
+pU
+pU
+pO
+pO
+pO
+qk
+qf
+qk
+qk
+qk
+qk
+pU
+pU
+pU
+pU
+qk
+pO
 ab
 ab
 ab
@@ -38999,25 +38097,25 @@ ab
 ab
 ab
 ab
-Fj
-Fy
-FN
-Gc
-Gr
+pO
+pO
+qd
+pO
+pO
 ab
-GL
-GX
-Hk
-Hx
-HK
-HX
-Ik
-Ix
-IK
-IX
-Jj
-Jt
-JC
+pO
+qk
+pU
+pU
+pW
+pU
+pU
+pU
+pU
+qk
+qo
+pO
+pO
 ab
 ab
 ab
@@ -39256,23 +38354,23 @@ ab
 ab
 ab
 ab
-Fk
-Fz
-FO
-Gd
-Gs
+pO
+pU
+pU
+pU
+pO
 ab
-GM
-GY
-Hl
-Hy
-HL
-HY
-Il
-Iy
-IL
-IY
-Jk
+pO
+qo
+qk
+qk
+qk
+qk
+qk
+qk
+qk
+pO
+pO
 ab
 ab
 ab
@@ -39513,22 +38611,22 @@ ab
 ab
 ab
 ab
-Fl
-FA
-FP
-Ge
-Gt
+pO
+pU
+qf
+pU
+pO
 ab
 ab
-GZ
-Hm
-Hz
-HM
-HZ
-Im
-Iz
-IM
-IZ
+pO
+pO
+pO
+pO
+pO
+pO
+pO
+pO
+pO
 ab
 ab
 ab
@@ -39770,11 +38868,11 @@ ab
 ab
 ab
 ab
-Fm
-FB
-FQ
-Gf
-Gu
+pO
+pO
+qg
+pO
+pO
 ab
 ab
 ab
@@ -40354,8 +39452,8 @@ ab
 ac
 ac
 ae
-pO
-pP
+pR
+pS
 ae
 ac
 ac
@@ -40870,7 +39968,7 @@ ac
 ae
 pt
 ae
-AQ
+Bp
 ja
 ac
 ab
@@ -41893,10 +40991,10 @@ ac
 ac
 ae
 ae
-pO
+pR
 pm
 pm
-pP
+pS
 ae
 ac
 ab
@@ -42149,8 +41247,8 @@ ac
 ac
 ac
 ae
-pO
-pP
+pR
+pS
 ae
 ae
 ae
@@ -42661,9 +41759,9 @@ ac
 ac
 ja
 pI
-pO
+pR
 pm
-pP
+pS
 ae
 ac
 ac
@@ -44719,7 +43817,7 @@ ac
 ae
 pt
 ae
-AQ
+Bp
 ja
 ac
 ac
@@ -50626,12 +49724,12 @@ ab
 ab
 ab
 ab
-yD
-yD
-yD
-yD
-yD
-yD
+zc
+zc
+zc
+zc
+zc
+zc
 ac
 ac
 ad
@@ -50883,12 +49981,12 @@ ab
 ab
 ab
 ab
-yD
-yV
-zC
-Af
-AR
-yD
+zc
+zu
+Ab
+AE
+Bq
+zc
 ac
 ac
 ac
@@ -51131,7 +50229,7 @@ ab
 ab
 ab
 oI
-vY
+wx
 ab
 ab
 ab
@@ -51140,12 +50238,12 @@ ab
 ab
 ab
 ab
-yD
-yW
-zD
-Ag
-AS
-yD
+zc
+zv
+Ac
+AF
+Br
+zc
 ac
 ac
 ac
@@ -51387,24 +50485,24 @@ ab
 ab
 ab
 ab
-vU
-vV
-oI
-wq
 wt
+wu
+oI
+wP
+wS
 ab
 ab
 ab
 ab
 ab
-yD
-yX
-zE
-Ah
-yD
-yD
-AT
-AT
+zc
+zw
+Ad
+AG
+zc
+zc
+Bs
+Bs
 ac
 ad
 ad
@@ -51644,24 +50742,24 @@ ab
 ab
 ab
 ab
-vV
-vZ
+wu
+wy
 iw
 ab
-wu
+wT
 ab
 ab
 ab
 ab
 ab
-yD
-yD
-zF
-Ai
-AT
-Bg
-BD
-AT
+zc
+zc
+Ae
+AH
+Bs
+BF
+Cc
+Bs
 ac
 ad
 ad
@@ -51905,21 +51003,21 @@ ab
 ab
 ab
 ab
-wu
+wT
 ab
-wz
-wz
-wz
-wz
-wz
-yY
-zG
-Aj
-AU
-Bh
-BE
-AT
-AT
+wY
+wY
+wY
+wY
+wY
+zx
+Af
+AI
+Bt
+BG
+Cd
+Bs
+Bs
 ad
 ad
 ae
@@ -52162,25 +51260,25 @@ ab
 ab
 ab
 ab
-wu
-wz
-wz
-wR
-xt
-xY
-wz
-wz
-zH
-Ak
-AV
-Bi
-BF
-BS
-Ch
-xJ
-xJ
-xJ
-CZ
+wT
+wY
+wY
+xq
+xS
+yx
+wY
+wY
+Ag
+AJ
+Bu
+BH
+Ce
+Cr
+CG
+yi
+yi
+yi
+Dy
 ae
 ac
 ac
@@ -52412,28 +51510,28 @@ ab
 ab
 ab
 ab
-vA
-vA
-vA
-vA
-vA
-vA
-vA
-wu
-wz
-wD
-wS
-xu
-xu
-yE
-yZ
-zI
-Al
-AU
-Bj
-BG
-BT
-Ci
+vZ
+vZ
+vZ
+vZ
+vZ
+vZ
+vZ
+wT
+wY
+xc
+xr
+xT
+xT
+zd
+zy
+Ah
+AK
+Bt
+BI
+Cf
+Cs
+CH
 ad
 ad
 ae
@@ -52669,28 +51767,28 @@ ab
 ab
 ab
 ab
-vA
-vB
-vJ
-vA
+vZ
 wa
-wh
-vA
-wu
+wi
+vZ
 wz
-wE
+wG
+vZ
 wT
-xv
-xZ
-xZ
-xZ
-zJ
-Am
-AU
-Bk
-BH
-BU
-AT
+wY
+xd
+xs
+xU
+yy
+yy
+yy
+Ai
+AL
+Bt
+BJ
+Cg
+Ct
+Bs
 ad
 ad
 ae
@@ -52926,28 +52024,28 @@ ab
 ab
 ab
 ab
-vA
-vC
-vK
-vA
+vZ
 wb
-wi
-vA
-wu
-wz
-wF
-wU
-xw
-ya
+wj
+vZ
+wA
+wH
+vZ
+wT
+wY
+xe
+xt
+xV
+yz
+xT
 xu
-wV
-zK
-An
-AU
-Bk
-BI
-BV
-AT
+Aj
+AM
+Bt
+BJ
+Ch
+Cu
+Bs
 ad
 ad
 ae
@@ -53183,30 +52281,30 @@ ab
 ab
 ab
 ab
-vA
-vD
-vL
-vA
+vZ
 wc
-wj
-vA
-wu
-wz
-wG
-wU
-xx
-ya
-yF
-wz
-zL
-Ao
-AU
-AU
-BJ
-BW
-BW
-BW
-CD
+wk
+vZ
+wB
+wI
+vZ
+wT
+wY
+xf
+xt
+xW
+yz
+ze
+wY
+Ak
+AN
+Bt
+Bt
+Ci
+Cv
+Cv
+Cv
+Dc
 ae
 pt
 ae
@@ -53440,30 +52538,30 @@ ab
 ab
 ab
 ab
-vA
-vA
-vM
-vA
-vA
-wk
-vA
-wv
-wz
-wz
-wV
-wV
-wV
-wz
-wz
-zM
-Ap
-AW
-Bl
-zc
-BX
-Cj
-Cq
-tU
+vZ
+vZ
+wl
+vZ
+vZ
+wJ
+vZ
+wU
+wY
+wY
+xu
+xu
+xu
+wY
+wY
+Al
+AO
+Bv
+BK
+zB
+Cw
+CI
+CP
+ut
 ae
 pt
 ae
@@ -53697,30 +52795,30 @@ ab
 ab
 ab
 ab
-vA
-vE
-vN
-vW
+vZ
 wd
-wl
-wr
-ww
-wA
-wH
-wW
-xy
-yb
-yG
-za
-zN
-Aq
-AX
-Bm
-BK
-BY
-Ck
-Cr
-CE
+wm
+wv
+wC
+wK
+wQ
+wV
+wZ
+xg
+xv
+xX
+yA
+zf
+zz
+Am
+AP
+Bw
+BL
+Cj
+Cx
+CJ
+CQ
+Dd
 ae
 pt
 ae
@@ -53954,30 +53052,30 @@ ab
 ab
 ab
 ab
-vA
-vF
-vO
-vX
+vZ
 we
-wm
-ws
-wx
-wB
-wI
-wx
-xz
-yc
-yH
-zb
-zO
-Ar
-AY
-Bn
-zc
-BZ
-Cl
-zc
-tU
+wn
+ww
+wD
+wL
+wR
+wW
+xa
+xh
+wW
+xY
+yB
+zg
+zA
+An
+AQ
+Bx
+BM
+zB
+Cy
+CK
+zB
+ut
 ae
 pt
 ae
@@ -54211,36 +53309,36 @@ ab
 ab
 ab
 ab
-vA
-vA
-vP
-vA
-vA
-wn
-vA
-wy
-wy
-wJ
-wK
-xA
-wK
-wJ
-zc
-zc
-As
-zc
-zc
-AU
-AU
-AU
-AU
+vZ
+vZ
+wo
+vZ
+vZ
+wM
+vZ
+wX
+wX
+xi
+xj
+xZ
+xj
+xi
+zB
+zB
+AR
+zB
+zB
+Bt
+Bt
+Bt
+Bt
 ok
 ae
-Da
-so
-so
-so
-DB
+Dz
+sN
+sN
+sN
+Ea
 ac
 ac
 ac
@@ -54468,24 +53566,24 @@ ab
 ab
 ab
 ab
-vA
-vG
-vQ
-vA
+vZ
 wf
-wo
-vA
+wp
+vZ
+wE
+wN
+vZ
 dV
 dV
-wJ
-wX
-xB
-yd
-wJ
+xi
+xw
+ya
+yC
+xi
 ae
-zc
-At
-zc
+zB
+AS
+zB
 ae
 ae
 ae
@@ -54497,7 +53595,7 @@ ad
 ad
 ad
 ad
-DC
+Eb
 ac
 ac
 ac
@@ -54725,24 +53823,24 @@ ab
 ab
 ab
 ab
-vA
-vH
-vR
-vA
+vZ
 wg
-vK
-vA
+wq
+vZ
+wF
+wj
+vZ
 ae
 ae
-wK
-wY
-xC
-ye
-wK
+xj
+xx
+yb
+yD
+xj
 ae
-zc
-As
-zc
+zB
+AR
+zB
 ae
 ae
 ae
@@ -54754,7 +53852,7 @@ ad
 ad
 ad
 ad
-DC
+Eb
 ac
 ac
 ac
@@ -54982,24 +54080,24 @@ ab
 ab
 ab
 ab
-vA
-vI
-vS
-vA
-vB
-wp
-vA
+vZ
+wh
+wr
+vZ
+wa
+wO
+vZ
 ad
 ae
-wJ
-wZ
-xD
-yf
-wJ
+xi
+xy
+yc
+yE
+xi
 ae
-zP
-Au
-AZ
+Ao
+AT
+By
 ae
 ad
 ad
@@ -55011,7 +54109,7 @@ ad
 ad
 ad
 ad
-DC
+Eb
 ac
 ac
 ac
@@ -55239,24 +54337,24 @@ ab
 ab
 ab
 ab
-vA
-vA
-vA
-vA
-vA
-vA
-vA
+vZ
+vZ
+vZ
+vZ
+vZ
+vZ
+vZ
 ad
 ad
-wJ
-wJ
-wK
-wJ
-wJ
+xi
+xi
+xj
+xi
+xi
 ae
-zP
-Au
-AZ
+Ao
+AT
+By
 ad
 ad
 ad
@@ -55268,7 +54366,7 @@ ad
 ad
 ad
 ad
-DC
+Eb
 ac
 ac
 ac
@@ -55511,9 +54609,9 @@ ad
 ad
 ad
 ad
-zP
-Au
-AZ
+Ao
+AT
+By
 ad
 ad
 ad
@@ -55525,7 +54623,7 @@ ad
 ad
 ad
 ad
-DC
+Eb
 ac
 ac
 ab
@@ -55768,9 +54866,9 @@ ad
 ad
 ad
 ad
-zP
-Av
-AZ
+Ao
+AU
+By
 ad
 ad
 ad
@@ -55782,7 +54880,7 @@ ad
 ad
 ad
 ad
-DC
+Eb
 ac
 ac
 ab
@@ -56025,9 +55123,9 @@ ad
 ad
 ad
 ad
-zP
-Aw
-AZ
+Ao
+AV
+By
 ad
 ad
 ad
@@ -56039,8 +55137,8 @@ ad
 ad
 ad
 ad
-DC
-DO
+Eb
+En
 ac
 ac
 ab
@@ -56282,9 +55380,9 @@ ad
 ad
 ad
 ad
-zP
-Aw
-AZ
+Ao
+AV
+By
 ad
 ad
 ad
@@ -56296,7 +55394,7 @@ ad
 ad
 ad
 ad
-DC
+Eb
 ac
 ac
 ac
@@ -56539,9 +55637,9 @@ ad
 ad
 ad
 ad
-zP
-Aw
-AZ
+Ao
+AV
+By
 ad
 ad
 ad
@@ -56553,7 +55651,7 @@ ad
 ad
 ad
 ad
-DC
+Eb
 ac
 ab
 ab
@@ -56796,9 +55894,9 @@ ad
 ad
 ad
 ad
-zP
-Ax
-AZ
+Ao
+AW
+By
 ad
 ad
 ad
@@ -56810,7 +55908,7 @@ ad
 ad
 ad
 ad
-DC
+Eb
 ac
 ab
 ab
@@ -57053,9 +56151,9 @@ ac
 ad
 ad
 ad
-zP
-Aw
-AZ
+Ao
+AV
+By
 ad
 ad
 ad
@@ -57067,7 +56165,7 @@ ad
 ad
 ad
 ad
-DC
+Eb
 ac
 ab
 ab
@@ -57256,7 +56354,7 @@ ad
 ad
 ad
 ad
-qb
+qv
 ja
 ab
 ab
@@ -57310,10 +56408,10 @@ ac
 ad
 ad
 ad
-zP
-Aw
-AZ
-Bo
+Ao
+AV
+By
+BN
 da
 dV
 dV
@@ -57324,7 +56422,7 @@ dV
 dV
 dV
 da
-DD
+Ec
 ac
 ab
 ab
@@ -57567,9 +56665,9 @@ ac
 ad
 ad
 ad
-zP
-Aw
-AZ
+Ao
+AV
+By
 ad
 dc
 ae
@@ -57580,8 +56678,8 @@ ae
 ae
 ae
 ae
-yh
-DC
+yG
+Eb
 ac
 ab
 ab
@@ -57757,7 +56855,7 @@ ae
 ae
 ae
 ae
-pO
+pR
 pm
 pm
 pm
@@ -57824,9 +56922,9 @@ ac
 ad
 ad
 ad
-zP
-Ay
-AZ
+Ao
+AX
+By
 ad
 dc
 ae
@@ -57837,8 +56935,8 @@ ae
 ae
 ae
 ae
-yh
-DC
+yG
+Eb
 ac
 ab
 ab
@@ -58010,11 +57108,11 @@ ae
 ae
 ae
 ae
-pO
+pR
 pm
 pm
 pm
-pP
+pS
 ae
 ae
 ae
@@ -58081,9 +57179,9 @@ ac
 ad
 ad
 ad
-zP
-Aw
-AZ
+Ao
+AV
+By
 ad
 dc
 ae
@@ -58094,8 +57192,8 @@ ae
 ae
 ae
 ae
-yh
-DC
+yG
+Eb
 ac
 ab
 ab
@@ -58267,10 +57365,10 @@ pm
 pm
 pm
 pm
-pP
+pS
 ae
 ae
-pQ
+qa
 ae
 ae
 ad
@@ -58338,9 +57436,9 @@ ac
 ad
 ad
 ad
-zP
-Aw
-AZ
+Ao
+AV
+By
 ad
 dc
 ae
@@ -58351,8 +57449,8 @@ ae
 ae
 ae
 ae
-yh
-DC
+yG
+Eb
 ac
 ab
 ab
@@ -58595,21 +57693,21 @@ ja
 ad
 ad
 ae
-zP
-Aw
-AZ
+Ao
+AV
+By
 ae
 dc
 ae
 ae
 ae
-CF
+De
 ae
 ae
 ae
 ae
-yh
-DC
+yG
+Eb
 ac
 ab
 ab
@@ -58846,27 +57944,27 @@ ab
 ab
 ab
 ja
-wL
-xa
-xE
+xk
+xz
+yd
 ad
 ad
 ae
-yJ
-Az
-yJ
-Bp
+zi
+AY
+zi
+BO
 da
 lM
 lM
-Cs
-CG
-yJ
-Db
+CR
+Df
+zi
+DA
 lM
 lM
 da
-DD
+Ec
 ac
 ab
 ab
@@ -59103,27 +58201,27 @@ ab
 ab
 ab
 ja
-wM
+xl
 nc
-tU
+ut
 ad
 ae
 ae
-yJ
-AA
-yJ
+zi
+AZ
+zi
 ae
 ae
 ae
 ae
-yJ
-CH
-yJ
+zi
+Dg
+zi
 ae
 ae
 ae
 ae
-DC
+Eb
 ac
 ac
 ac
@@ -59360,29 +58458,29 @@ ab
 ab
 ab
 ja
-wN
-xb
-xF
+xm
+xA
+ye
 ae
 ae
-yJ
-yJ
-Az
-yJ
-yJ
+zi
+zi
+AY
+zi
+zi
 ae
 ae
-yJ
-Ct
-CI
-yJ
-yJ
-yI
+zi
+CS
+Dh
+zi
+zi
+zh
 ae
 ae
-DE
-xJ
-ym
+Ed
+yi
+yL
 ac
 ab
 ab
@@ -59617,29 +58715,29 @@ ab
 ab
 ab
 ja
-wN
-xb
-xF
+xm
+xA
+ye
 ae
-yI
-yJ
-zQ
-AB
+zh
+zi
+Ap
 Ba
-yJ
-yI
-yI
-yJ
-Cu
-CJ
-Ba
-Dc
-yI
-Dn
-Dx
-DF
-yI
-to
+Bz
+zi
+zh
+zh
+zi
+CT
+Di
+Bz
+DB
+zh
+DM
+DW
+Ee
+zh
+tN
 ac
 ab
 ab
@@ -59874,29 +58972,29 @@ ac
 ac
 ac
 ja
-wO
-xc
+xn
+xB
 ok
-yg
-yI
-zd
-zR
-AC
+yF
+zh
+zC
+Aq
 Bb
-Bq
-BL
-Ca
-Cc
-Cc
-CK
-Cc
-Cc
-Di
-Do
-Dy
-DG
-yI
-to
+BA
+BP
+Ck
+Cz
+CB
+CB
+Dj
+CB
+CB
+DH
+DN
+DX
+Ef
+zh
+tN
 ac
 ac
 ac
@@ -60134,26 +59232,26 @@ ae
 ae
 ae
 ae
-yh
-yJ
-ze
-zS
-AD
+yG
+zi
+zD
+Ar
 Bc
-Br
-BM
-Cb
-Cm
-Cv
+BB
+BQ
+Cl
+CA
 CL
-CR
-Dd
-Dj
-Dp
-Cc
-DH
-yI
-DP
+CU
+Dk
+Dq
+DC
+DI
+DO
+CB
+Eg
+zh
+Eo
 ae
 ae
 ae
@@ -60391,26 +59489,26 @@ ae
 ae
 ae
 ae
-yh
-yJ
-zf
-zT
-AE
+yG
+zi
+zE
+As
 Bd
-Bs
-BN
-Cc
-Cn
-Cw
-Cc
-CS
-Cc
-Cw
-Cc
-Cc
-DI
-yJ
-DQ
+BC
+BR
+Cm
+CB
+CM
+CV
+CB
+Dr
+CB
+CV
+CB
+CB
+Eh
+zi
+Ep
 ae
 ae
 ae
@@ -60621,53 +59719,53 @@ ae
 ae
 ae
 ae
-pO
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-so
-xd
-xG
-xG
-xG
-zg
-zU
-AF
-xG
-Bt
-BO
-Cd
-BO
-Cx
-Cc
-CS
-Cc
-Dk
-Dq
-Dz
+pR
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+sN
+xC
+yf
+yf
+yf
+zF
+At
+Be
+yf
+BS
+Cn
+CC
+Cn
+CW
+CB
+Dr
+CB
 DJ
-yJ
-DQ
+DP
+DY
+Ei
+zi
+Ep
 ac
 ac
 ac
@@ -60860,7 +59958,7 @@ ae
 pL
 pm
 ps
-qT
+rs
 ja
 ac
 ab
@@ -60870,7 +59968,7 @@ ab
 ac
 ac
 ae
-pO
+pR
 pm
 pm
 pm
@@ -60878,7 +59976,7 @@ pm
 pm
 pm
 pm
-uK
+vj
 ae
 ae
 ae
@@ -60893,7 +59991,7 @@ ae
 ae
 ae
 ae
-pQ
+qa
 ae
 ae
 ae
@@ -60903,28 +60001,28 @@ ae
 ae
 ae
 ae
-xe
-xH
-yi
-yK
-zh
-zV
-AG
-xH
-Bu
-BO
-Ce
-BO
-Cy
-Cc
-CS
-Cc
-Dl
-Cc
-Cc
+xD
+yg
+yH
+zj
+zG
+Au
+Bf
+yg
+BT
+Cn
+CD
+Cn
+CX
+CB
+Dr
+CB
 DK
-yI
-DR
+CB
+CB
+Ej
+zh
+Eq
 ac
 ab
 ab
@@ -61160,28 +60258,28 @@ ad
 ad
 ae
 ae
-xf
-xI
-yj
-yL
-zi
-zW
-AH
-xH
-Bv
-BO
-Cf
-BO
-Cz
-CM
-CT
-De
-Co
-Dr
-DA
-DL
+xE
+yh
 yI
-to
+zk
+zH
+Av
+Bg
+yg
+BU
+Cn
+CE
+Cn
+CY
+Dl
+Ds
+DD
+CN
+DQ
+DZ
+Ek
+zh
+tN
 ac
 ab
 ab
@@ -61417,28 +60515,28 @@ ad
 ad
 ad
 ae
-xf
-xI
-yk
-yM
-zj
-zX
-AI
-xH
-Bv
-BO
-Bv
-BO
-CA
+xE
+yh
+yJ
+zl
+zI
+Aw
+Bh
+yg
+BU
+Cn
+BU
+Cn
+CZ
+Dm
+Dt
+DE
 CN
-CU
-Df
-Co
-Ds
-BO
-yI
-yI
-to
+DR
+Cn
+zh
+zh
+tN
 ac
 ab
 ab
@@ -61674,28 +60772,28 @@ ac
 ad
 ad
 ae
-xg
-xH
-yl
-yN
-zk
-zY
-AJ
-xH
-Bw
-BP
-Bv
-BO
-CB
-CO
-CV
-Dg
+xF
+yg
+yK
+zm
+zJ
+Ax
+Bi
+yg
+BV
 Co
-Dt
-BO
-DM
-xJ
+BU
+Cn
+Da
+Dn
+Du
+DF
+CN
 DS
+Cn
+El
+yi
+Er
 ac
 ab
 ab
@@ -61931,26 +61029,26 @@ ac
 ac
 ad
 ae
-to
-xH
-xH
-xH
-zl
-zZ
-zl
-xH
-Bx
-BO
-Cg
-BO
-CC
-CP
-CW
-CO
-Dm
-Du
-BO
-to
+tN
+yg
+yg
+yg
+zK
+Ay
+zK
+yg
+BW
+Cn
+CF
+Cn
+Db
+Do
+Dv
+Dn
+DL
+DT
+Cn
+tN
 ae
 ac
 ac
@@ -62148,15 +61246,15 @@ ad
 ad
 ae
 pL
-so
-so
-tn
-so
-so
-so
-so
-uK
-uV
+sN
+sN
+tM
+sN
+sN
+sN
+sN
+vj
+vu
 ja
 ac
 ab
@@ -62188,26 +61286,26 @@ ac
 ac
 ad
 ae
-xh
-xJ
-ym
-xH
-zm
-Aa
-AK
-xH
-By
-BQ
-Bv
-Co
-Co
-Co
-CX
-Co
-Co
-Dv
-BO
-to
+xG
+yi
+yL
+yg
+zL
+Az
+Bj
+yg
+BX
+Cp
+BU
+CN
+CN
+CN
+Dw
+CN
+CN
+DU
+Cn
+tN
 ae
 ac
 ac
@@ -62407,7 +61505,7 @@ ae
 ae
 ae
 ae
-to
+tN
 ae
 ae
 ae
@@ -62447,24 +61545,24 @@ ad
 ae
 ae
 ae
-yn
-xH
-zn
-Ab
-AL
-xH
-Bz
-BO
-Bw
-Cp
-Cp
-CQ
-CY
-Dh
-Cp
-Dw
-BO
-to
+yM
+yg
+zM
+AA
+Bk
+yg
+BY
+Cn
+BV
+CO
+CO
+Dp
+Dx
+DG
+CO
+DV
+Cn
+tN
 ae
 ac
 ab
@@ -62484,7 +61582,7 @@ ae
 ad
 ad
 ad
-DT
+Es
 ad
 ad
 ad
@@ -62664,7 +61762,7 @@ ad
 ad
 ad
 ae
-to
+tN
 ae
 ad
 ad
@@ -62704,24 +61802,24 @@ ac
 ad
 ad
 ae
-to
-xH
-zl
-Ac
-AM
-xH
-BA
-BO
-BO
-BO
-BO
-BO
-BO
-BO
-BO
-BO
-BO
-to
+tN
+yg
+zK
+AB
+Bl
+yg
+BZ
+Cn
+Cn
+Cn
+Cn
+Cn
+Cn
+Cn
+Cn
+Cn
+Cn
+tN
 ae
 ac
 ab
@@ -62921,7 +62019,7 @@ ad
 ad
 ad
 ae
-to
+tN
 ae
 ad
 ad
@@ -62961,24 +62059,24 @@ ac
 ad
 ad
 ae
-xh
-yO
-zo
-Ad
-AN
-Be
-BB
-BR
-xJ
-xJ
-xJ
-xJ
-xJ
-xJ
-xJ
-xJ
-xJ
-DN
+xG
+zn
+zN
+AC
+Bm
+BD
+Ca
+Cq
+yi
+yi
+yi
+yi
+yi
+yi
+yi
+yi
+yi
+Em
 ae
 ac
 ab
@@ -63178,7 +62276,7 @@ ad
 ad
 ad
 ae
-to
+tN
 ae
 ad
 ad
@@ -63224,7 +62322,7 @@ ae
 ae
 ae
 ae
-BC
+Cb
 dc
 ae
 ae
@@ -63435,7 +62533,7 @@ ad
 ad
 ad
 ae
-to
+tN
 ae
 ad
 ad
@@ -63475,13 +62573,13 @@ ac
 ac
 ad
 ad
-yo
+yN
 ad
 ae
 ae
 ae
-Bf
-BC
+BE
+Cb
 dc
 ae
 ae
@@ -63692,7 +62790,7 @@ ad
 ad
 ad
 ae
-to
+tN
 ae
 ad
 ad
@@ -63738,13 +62836,13 @@ ae
 ae
 ae
 ae
-BC
+Cb
 dc
 ae
 ae
 ae
 ae
-vT
+ws
 ae
 ae
 ac
@@ -63949,7 +63047,7 @@ ad
 ad
 ad
 ae
-to
+tN
 ae
 ad
 ad
@@ -64206,7 +63304,7 @@ ad
 ad
 ad
 ae
-to
+tN
 ae
 ad
 ad
@@ -64459,11 +63557,11 @@ ac
 ac
 ac
 ja
-rp
-rp
-rp
-rp
-tp
+rO
+rO
+rO
+rO
+tO
 oi
 ae
 ae
@@ -64716,15 +63814,15 @@ ab
 ab
 ab
 ja
-rq
-rS
-rS
-rS
-tq
-tU
+rP
+sr
+sr
+sr
+tP
+ut
 ae
-uo
-uo
+uN
+uN
 ac
 ab
 ab
@@ -64973,12 +64071,12 @@ ab
 ab
 ab
 ja
-rr
-rT
-sp
+rQ
+ss
+sO
 nc
-tr
-tV
+tQ
+uu
 ae
 ac
 ac
@@ -65232,10 +64330,10 @@ ab
 ja
 ja
 ja
-qS
-sH
-ts
-qS
+rr
+tg
+tR
+rr
 ac
 ac
 ab
@@ -65489,10 +64587,10 @@ ab
 ab
 ab
 ab
-qS
-sI
-tt
-qS
+rr
+th
+tS
+rr
 ab
 ab
 ab
@@ -65746,10 +64844,10 @@ ab
 ab
 ab
 ab
-qS
-sJ
-tu
-qS
+rr
+ti
+tT
+rr
 ab
 ab
 ab
@@ -66002,11 +65100,11 @@ ab
 ab
 ab
 ab
-qS
-qS
-sK
-tv
-qS
+rr
+rr
+tj
+tU
+rr
 ab
 ab
 ab
@@ -66259,11 +65357,11 @@ ab
 ab
 ab
 ab
-qS
-sq
-sL
-tw
-qS
+rr
+sP
+tk
+tV
+rr
 ab
 ab
 ab
@@ -66516,11 +65614,11 @@ ab
 ab
 ab
 ab
-qS
-sr
-sM
-tx
-qS
+rr
+sQ
+tl
+tW
+rr
 ab
 ab
 ab
@@ -66773,11 +65871,11 @@ ab
 ab
 ab
 ab
-qS
-qS
-sN
-tx
-qS
+rr
+rr
+tm
+tW
+rr
 ab
 ab
 ab
@@ -67031,10 +66129,10 @@ ab
 ab
 ab
 ab
-qS
-sO
-tx
-qS
+rr
+tn
+tW
+rr
 ab
 ab
 ab
@@ -67285,21 +66383,21 @@ ab
 ab
 ab
 ab
-qU
-qU
-qU
-ss
-sP
-ty
-ss
-ub
-ub
-ub
-ub
-ub
-ub
-ub
-ub
+rt
+rt
+rt
+sR
+to
+tX
+sR
+uA
+uA
+uA
+uA
+uA
+uA
+uA
+uA
 ab
 ab
 ab
@@ -67542,21 +66640,21 @@ ab
 ab
 ab
 ab
-qU
-rs
-rU
-ss
-sQ
-tz
-qR
-uc
-uc
-uc
-uc
-uW
-vh
-vn
-ub
+rt
+rR
+st
+sR
+tp
+tY
+rq
+uB
+uB
+uB
+uB
+vv
+vG
+vM
+uA
 ab
 ab
 ab
@@ -67799,21 +66897,21 @@ ab
 ab
 ab
 ab
-qU
 rt
-rV
-st
-sR
-tA
-qR
-ud
-up
-uy
-uL
+rS
+su
+sS
+tq
+tZ
+rq
+uC
+uO
 uX
-vi
-vo
-ub
+vk
+vw
+vH
+vN
+uA
 ab
 ab
 ab
@@ -68056,21 +67154,21 @@ ab
 ab
 ab
 ab
-qU
-ru
-rW
-ss
-sS
-tB
-tW
-ue
-uq
-uz
-us
+rt
+rT
+sv
+sR
+tr
+ua
+uv
+uD
+uP
 uY
-vj
-vp
-ub
+uR
+vx
+vI
+vO
+uA
 ab
 ab
 ab
@@ -68309,25 +67407,25 @@ ab
 ab
 ab
 ab
-qi
-qi
-qi
-qi
-qV
-qV
-qV
-ss
-sT
-tC
-tX
-uf
-ur
-uz
-us
-uY
-us
-us
+qC
+qC
+qC
+qC
+ru
+ru
+ru
+sR
+ts
 ub
+uw
+uE
+uQ
+uY
+uR
+vx
+uR
+uR
+uA
 ab
 ab
 ab
@@ -68566,26 +67664,26 @@ ab
 ab
 ab
 ab
-qi
-qk
-qw
-qG
-qW
-rv
-rX
+qC
+qE
 qS
-sU
-tx
-qR
-ug
-us
-uA
-us
+rf
+rv
+rU
+sw
+rr
+tt
+tW
+rq
+uF
+uR
 uZ
-ub
-ub
-ub
-ub
+uR
+vy
+uA
+uA
+uA
+uA
 ab
 ab
 ab
@@ -68823,26 +67921,26 @@ ab
 ab
 ab
 ab
-qi
-ql
-qx
-qH
-qH
-qH
-qH
-su
-sV
-tx
-qR
-uh
-us
-uB
-uM
+qC
+qF
+qT
+rg
+rg
+rg
+rg
+sT
+tu
+tW
+rq
+uG
+uR
 va
-vk
-vq
-vu
-ub
+vl
+vz
+vJ
+vP
+vT
+uA
 ab
 ab
 ab
@@ -69080,26 +68178,26 @@ ab
 ab
 ab
 ab
-qi
-qm
-qy
-qI
-qX
+qC
+qG
+qU
+rh
 rw
-rY
-qS
-sW
-tD
-ss
-ui
-us
-uC
-uN
+rV
+sx
+rr
+tv
+uc
+sR
+uH
+uR
 vb
-vl
-vr
-vv
-ub
+vm
+vA
+vK
+vQ
+vU
+uA
 ab
 ab
 ab
@@ -69333,30 +68431,30 @@ ab
 ab
 ab
 ab
-pW
-pW
-pW
-pW
-qi
-qn
-qi
-qJ
-qJ
-qJ
-qi
-qS
-sX
-tE
-tY
-uj
-ut
-uD
-uO
+qq
+qq
+qq
+qq
+qC
+qH
+qC
+ri
+ri
+ri
+qC
+rr
+tw
+ud
+ux
+uI
+uS
 vc
-ub
-ub
-ub
-ub
+vn
+vB
+uA
+uA
+uA
+uA
 ab
 ab
 ab
@@ -69590,30 +68688,30 @@ ab
 ab
 ab
 ab
-pW
-pX
-pX
-pX
-pW
-qo
-qz
-qK
-qY
+qq
+qr
+qr
+qr
+qq
+qI
+qV
+rj
 rx
-rZ
-qR
-sV
-tF
-ss
-uk
-uu
-uE
-uP
+rW
+sy
+rq
+tu
+ue
+sR
+uJ
+uT
 vd
-vl
-vs
-vw
-ub
+vo
+vC
+vK
+vR
+vV
+uA
 ab
 ab
 ab
@@ -69847,30 +68945,30 @@ ab
 ab
 ab
 ab
-pW
-pY
-qc
-qe
-qj
-qp
-qA
-qA
-qZ
-qA
-qA
-qR
-sV
-tx
-qR
-ul
-uv
-uF
-uQ
+qq
+qs
+qw
+qy
+qD
+qJ
+qW
+qW
+ry
+qW
+qW
+rq
+tu
+tW
+rq
+uK
+uU
 ve
-vk
-vt
-vx
-ub
+vp
+vD
+vJ
+vS
+vW
+uA
 ab
 ab
 ab
@@ -70104,30 +69202,30 @@ ab
 ad
 ab
 ab
-pW
-pZ
-qd
-qf
-pW
 qq
-qB
-qL
-qB
-qB
-sa
-qS
-sV
-tx
-ss
-ub
-ub
-ub
-ub
-ub
-ub
-ub
-ub
-ub
+qt
+qx
+qz
+qq
+qK
+qX
+rk
+qX
+qX
+sz
+rr
+tu
+tW
+sR
+uA
+uA
+uA
+uA
+uA
+uA
+uA
+uA
+uA
 ab
 ab
 ab
@@ -70361,21 +69459,21 @@ ab
 ad
 ab
 ab
-pW
-qa
-pW
-qg
-pW
-qr
-qC
-qM
-ra
-ry
-sb
-sv
-sY
-tG
-qS
+qq
+qu
+qq
+qA
+qq
+qL
+qY
+rl
+rz
+rX
+sA
+sU
+tx
+uf
+rr
 ad
 ad
 ad
@@ -70443,7 +69541,7 @@ ae
 ae
 ae
 ae
-vT
+ws
 ab
 ab
 ab
@@ -70618,21 +69716,21 @@ ad
 ad
 ad
 ad
-pW
-pW
-pW
-qh
-pW
-qs
-qD
-qN
-rb
-rz
-sc
-qS
-sZ
-tH
-qS
+qq
+qq
+qq
+qB
+qq
+qM
+qZ
+rm
+rA
+rY
+sB
+rr
+ty
+ug
+rr
 ad
 ad
 ad
@@ -70692,7 +69790,7 @@ ae
 ae
 ae
 ae
-vT
+ws
 ae
 ae
 ae
@@ -70877,19 +69975,19 @@ ad
 ad
 ad
 ad
-pW
-pW
-pW
-qt
-qB
-qO
-qO
-qB
-qA
-qR
-sV
-tI
-qS
+qq
+qq
+qq
+qN
+qX
+rn
+rn
+qX
+qW
+rq
+tu
+uh
+rr
 ad
 ad
 ad
@@ -71136,17 +70234,17 @@ ad
 ad
 ad
 ad
-pW
-qu
-qE
-qP
-rc
-rA
-sd
-qR
-sV
-tx
-qS
+qq
+qO
+ra
+ro
+rB
+rZ
+sC
+rq
+tu
+tW
+rr
 ad
 ad
 ad
@@ -71393,17 +70491,17 @@ ad
 ad
 ad
 ad
-pW
-pW
-qF
-pW
-pW
-pW
-pW
-qS
-ta
-tJ
-qS
+qq
+qq
+rb
+qq
+qq
+qq
+qq
+rr
+tz
+ui
+rr
 ad
 ad
 ad
@@ -71651,16 +70749,16 @@ ad
 ad
 ad
 ad
-qv
+qP
 du
-qQ
-rd
-rB
-se
-sw
-tb
-tK
-qS
+rp
+rC
+sa
+sD
+sV
+tA
+uj
+rr
 ad
 ad
 ad
@@ -71910,14 +71008,14 @@ ad
 ad
 ad
 ad
-qQ
-re
-rC
-sf
-sx
-tc
-tL
-qS
+rp
+rD
+sb
+sE
+sW
+tB
+uk
+rr
 ad
 ad
 ad
@@ -72167,14 +71265,14 @@ ad
 ad
 ad
 ad
-qQ
-rf
-rD
-sg
-qS
-td
-tM
-qS
+rp
+rE
+sc
+sF
+rr
+tC
+ul
+rr
 ad
 ad
 ad
@@ -72424,14 +71522,14 @@ ad
 ad
 ad
 ad
-qQ
-rg
-rE
-sh
-sy
-te
-tN
-qS
+rp
+rF
+sd
+sG
+sX
+tD
+um
+rr
 ad
 ad
 ad
@@ -72681,14 +71779,14 @@ ad
 ad
 ad
 ad
-qQ
-rh
-rF
-rh
-sz
-tf
-tO
-qS
+rp
+rG
+se
+rG
+sY
+tE
+un
+rr
 ad
 ad
 ad
@@ -72938,14 +72036,14 @@ ad
 ad
 ad
 ad
-qR
-ri
-rG
-si
-sA
-tg
-tM
-qR
+rq
+rH
+sf
+sH
+sZ
+tF
+ul
+rq
 ad
 ad
 ad
@@ -73195,14 +72293,14 @@ ad
 ad
 ad
 ad
-qR
-ri
+rq
 rH
-sj
-sB
-th
-tP
-qR
+sg
+sI
+ta
+tG
+uo
+rq
 ad
 ad
 ad
@@ -73452,22 +72550,22 @@ ad
 ad
 ad
 ad
-qR
-rj
+rq
 rI
-sk
-sC
-ti
-tQ
-qR
+sh
+sJ
+tb
+tH
+up
+rq
 ad
 ad
 da
-uR
-vf
-vf
-vf
-vy
+vq
+vE
+vE
+vE
+vX
 da
 ad
 ad
@@ -73709,22 +72807,22 @@ ad
 ad
 ad
 ad
-qS
-rk
-rk
-sl
-sD
-tj
-tQ
-qR
+rr
+rJ
+rJ
+sK
+tc
+tI
+up
+rq
 ad
 ad
-uG
-uS
-uS
-uS
-uS
-uS
+vf
+vr
+vr
+vr
+vr
+vr
 mF
 ad
 ad
@@ -73763,7 +72861,7 @@ ae
 ae
 ae
 ae
-vT
+ws
 ab
 ab
 ab
@@ -73966,22 +73064,22 @@ ad
 ad
 ad
 ad
-qS
-rl
-rl
-qR
-qS
-tk
-tR
-qS
-qR
-qR
-ss
-uS
-uS
-uS
-uS
-uS
+rr
+rK
+rK
+rq
+rr
+tJ
+uq
+rr
+rq
+rq
+sR
+vr
+vr
+vr
+vr
+vr
 mF
 ad
 ad
@@ -74223,22 +73321,22 @@ ad
 ad
 ad
 ad
-qR
-rm
-rJ
-sm
-sE
-tl
-tS
-tZ
-um
-uw
-uH
-uS
-uS
-uS
-uS
-uS
+rq
+rL
+si
+sL
+td
+tK
+ur
+uy
+uL
+uV
+vg
+vr
+vr
+vr
+vr
+vr
 mF
 ad
 ad
@@ -74480,22 +73578,22 @@ ad
 ad
 ad
 ad
-qR
-rn
-rK
-sn
-sF
-tm
-tT
-ua
-un
-ux
-uI
-uT
-uS
-uS
-uS
-uS
+rq
+rM
+sj
+sM
+te
+tL
+us
+uz
+uM
+uW
+vh
+vs
+vr
+vr
+vr
+vr
 mF
 ad
 ad
@@ -74737,22 +73835,22 @@ ad
 ad
 ad
 ad
-qS
-qR
-rL
-qR
-ss
-qR
-qR
-qS
-qR
-qR
-ss
-uS
-uS
-uS
-uS
-uS
+rr
+rq
+sk
+rq
+sR
+rq
+rq
+rr
+rq
+rq
+sR
+vr
+vr
+vr
+vr
+vr
 mF
 ad
 ad
@@ -74995,21 +74093,21 @@ ad
 ad
 ad
 ad
-qR
-rM
-qR
+rq
+sl
+rq
 ad
 ad
 ad
 ad
 ad
 ad
-uJ
-uS
-uS
-uS
-uS
-uS
+vi
+vr
+vr
+vr
+vr
+vr
 mF
 ad
 ad
@@ -75252,21 +74350,21 @@ ad
 ad
 ad
 ad
-qR
-rN
-qR
+rq
+sm
+rq
 ad
 ad
 ad
 ad
 ad
 ad
-uG
-uS
-uS
-uS
-uS
-uS
+vf
+vr
+vr
+vr
+vr
+vr
 mF
 ad
 ad
@@ -75510,7 +74608,7 @@ ad
 ad
 ad
 ad
-rO
+sn
 ad
 ad
 ad
@@ -75519,11 +74617,11 @@ ad
 ad
 ad
 da
-uU
-vg
-vg
-vg
-vz
+vt
+vF
+vF
+vF
+vY
 da
 ad
 ad
@@ -75544,7 +74642,7 @@ ad
 ad
 ad
 ae
-vT
+ws
 ae
 ae
 ae
@@ -75754,7 +74852,7 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
 ad
 ad
@@ -75767,7 +74865,7 @@ ad
 ad
 ad
 ad
-rP
+so
 ad
 ad
 ad
@@ -76011,33 +75109,33 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
 ad
-rP
+so
 ad
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
 ad
-pR
+qi
 ad
 ad
 ad
@@ -76268,33 +75366,33 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
-pT
-pV
-pV
-pV
-pV
-pV
-pV
-pV
-pV
-pV
-ro
-rQ
-ro
-sG
-sG
-sG
-sG
-sG
-sG
-sG
-sG
-sG
-vm
+qm
+qp
+qp
+qp
+qp
+qp
+qp
+qp
+qp
+qp
+rN
+sp
+rN
+tf
+tf
+tf
+tf
+tf
+tf
+tf
+tf
+tf
+vL
 ad
-pR
+qi
 ad
 ad
 ad
@@ -76525,33 +75623,33 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 ad
-rP
+so
 ad
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 ad
-pR
+qi
 ad
 ad
 ad
@@ -76782,7 +75880,7 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
 ad
 ad
@@ -76795,7 +75893,7 @@ ad
 ad
 ad
 ad
-rP
+so
 ad
 ad
 ad
@@ -76808,7 +75906,7 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
 ad
 ad
@@ -77039,33 +76137,33 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
 ad
-rP
+so
 ad
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
 ad
-pR
+qi
 ad
 ad
 ad
@@ -77296,33 +76394,33 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
-pT
-pV
-pV
-pV
-pV
-pV
-pV
-pV
-pV
-pV
-ro
-rQ
-ro
-sG
-sG
-sG
-sG
-sG
-sG
-sG
-sG
-sG
-vm
+qm
+qp
+qp
+qp
+qp
+qp
+qp
+qp
+qp
+qp
+rN
+sp
+rN
+tf
+tf
+tf
+tf
+tf
+tf
+tf
+tf
+tf
+vL
 ad
-pR
+qi
 ad
 ad
 ad
@@ -77553,33 +76651,33 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 ad
-rP
+so
 ad
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 ad
-pR
+qi
 ad
 ad
 ad
@@ -77810,7 +76908,7 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
 ad
 ad
@@ -77823,7 +76921,7 @@ ad
 ad
 ad
 ad
-rP
+so
 ad
 ad
 ad
@@ -77836,7 +76934,7 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
 ad
 ad
@@ -78067,33 +77165,33 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
 ad
-rP
+so
 ad
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
-pS
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
+ql
 ad
-pR
+qi
 ad
 ad
 ad
@@ -78324,33 +77422,33 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
-pT
-pV
-pV
-pV
-pV
-pV
-pV
-pV
-pV
-pV
-ro
-rQ
-ro
-sG
-sG
-sG
-sG
-sG
-sG
-sG
-sG
-sG
-vm
+qm
+qp
+qp
+qp
+qp
+qp
+qp
+qp
+qp
+qp
+rN
+sp
+rN
+tf
+tf
+tf
+tf
+tf
+tf
+tf
+tf
+tf
+vL
 ad
-pR
+qi
 ad
 ad
 ad
@@ -78581,33 +77679,33 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 ad
-rP
+so
 ad
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
-pU
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 ad
-pR
+qi
 ad
 ad
 ad
@@ -78838,7 +77936,7 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
 ad
 ad
@@ -78851,7 +77949,7 @@ ad
 ad
 ad
 ad
-rP
+so
 ad
 ad
 ad
@@ -78864,7 +77962,7 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
 ad
 ad
@@ -79095,33 +78193,33 @@ ad
 ad
 ad
 ad
-pR
-pR
-pR
-pR
-pR
-pR
-pR
-pR
-pR
-pR
+qi
+qi
+qi
+qi
+qi
+qi
+qi
+qi
+qi
+qi
 ad
-pR
+qi
 ad
-rR
+sq
 ad
-pR
+qi
 ad
-pR
-pR
-pR
-pR
-pR
-pR
-pR
-pR
-pR
-pR
+qi
+qi
+qi
+qi
+qi
+qi
+qi
+qi
+qi
+qi
 ad
 ad
 ad
@@ -79363,11 +78461,11 @@ ad
 ad
 ad
 ad
-pR
+qi
 ad
 ad
 ad
-pR
+qi
 ad
 ad
 ad
@@ -79620,11 +78718,11 @@ ad
 ad
 ad
 ad
-pR
-pR
-pR
-pR
-pR
+qi
+qi
+qi
+qi
+qi
 ad
 ad
 ad

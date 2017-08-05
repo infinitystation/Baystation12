@@ -6576,6 +6576,169 @@
 /obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/sub/starboard)
+"oR" = (
+/obj/random/closet,
+/obj/item/stack/cable_coil/random,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"oS" = (
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/door/firedoor/border_only,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"oT" = (
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/door/firedoor/border_only,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"oU" = (
+/obj/random/trash,
+/obj/item/weapon/screwdriver,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"oV" = (
+/obj/structure/table,
+/obj/random/medical/lite,
+/mob/living/simple_animal/mouse/gray{
+	name = "Dr.Death";
+	real_name = "Dr.Death"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"oW" = (
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/obj/effect/decal/cleanable/cobweb,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"oX" = (
+/obj/item/weapon/circular_saw,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"oY" = (
+/obj/random/drinkbottle,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"oZ" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pa" = (
+/obj/machinery/door/airlock/maintenance{
+	req_access = list(12)
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pb" = (
+/obj/item/usedcryobag,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pc" = (
+/obj/effect/decal/cleanable/mucus,
+/obj/item/stack/nanopaste,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pd" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pe" = (
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pf" = (
+/obj/item/weapon/tape_roll,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pg" = (
+/obj/effect/decal/cleanable/vomit,
+/obj/structure/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 12;
+	tag = "icon-sink (EAST)"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"ph" = (
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pi" = (
+/obj/structure/table/standard,
+/obj/item/stack/medical/advanced/bruise_pack,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pj" = (
+/obj/machinery/optable,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pk" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white,
+/area/maintenance/sub/central)
+"pl" = (
+/obj/machinery/door/airlock/maintenance{
+	req_access = list(12)
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pm" = (
+/obj/structure/table/standard,
+/obj/item/weapon/weldingtool,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pn" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"po" = (
+/obj/item/weapon/hemostat,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pp" = (
+/obj/random/trash,
+/turf/simulated/floor/tiled/white,
+/area/maintenance/sub/central)
+"pq" = (
+/obj/structure/table/standard,
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pr" = (
+/obj/structure/table/standard,
+/obj/item/weapon/scalpel,
+/obj/item/weapon/retractor,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"ps" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
+"pt" = (
+/obj/random/junk,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white,
+/area/maintenance/sub/central)
+"pu" = (
+/obj/random/closet,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white,
+/area/maintenance/sub/central)
+"pv" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/maintenance/sub/central)
 
 (1,1,1) = {"
 aa
@@ -22612,7 +22775,7 @@ ac
 bd
 be
 be
-ot
+os
 be
 bA
 be
@@ -27483,8 +27646,8 @@ aa
 aa
 aa
 aa
-aa
-aa
+ac
+ac
 aa
 ac
 ac
@@ -27521,7 +27684,7 @@ bd
 be
 dp
 dp
-oD
+os
 bd
 bd
 bd
@@ -27740,8 +27903,8 @@ aa
 aa
 aa
 aa
-aa
-aa
+ac
+ac
 aa
 aa
 ac
@@ -27997,7 +28160,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -28020,19 +28183,19 @@ aa
 aa
 aa
 ac
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ac
 aa
 aa
 bd
-ox
+os
 be
 be
 be
@@ -28254,7 +28417,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -28277,14 +28440,14 @@ ac
 ac
 ac
 ac
+aa
+aa
 ac
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aa
+ac
+aa
+ac
+aa
 ac
 ac
 ac
@@ -28535,13 +28698,13 @@ aa
 aa
 ac
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+cv
+cv
+cv
+cv
+cv
+cv
+cv
 ac
 aa
 ac
@@ -28792,13 +28955,13 @@ aa
 aa
 ac
 aa
-aa
-aa
-aa
-ac
-ac
-aa
-aa
+cv
+oW
+gj
+pi
+pm
+pq
+cv
 ac
 bd
 bd
@@ -29049,13 +29212,13 @@ aa
 aa
 ac
 aa
-aa
-aa
-aa
-aa
-ac
-aa
-aa
+cv
+oX
+pd
+cF
+pn
+pr
+cv
 ac
 bd
 be
@@ -29282,16 +29445,16 @@ aa
 aa
 aa
 ac
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
 ac
 ac
 aa
@@ -29306,17 +29469,17 @@ aa
 aa
 ac
 ac
-ac
-aa
-aa
-ac
-ac
-ac
-ac
+oS
+cF
+pe
+pj
+po
+ps
+cv
 ac
 bd
 dp
-ou
+os
 be
 bd
 ac
@@ -29563,13 +29726,13 @@ aa
 aa
 ac
 aa
-aa
-aa
-aa
-ac
-aa
-aa
-aa
+oT
+oY
+pf
+cF
+cF
+pt
+cv
 ac
 bd
 dq
@@ -29819,14 +29982,14 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
 aa
-aa
-aa
+cv
+oZ
+pg
+pk
+pp
+pu
+cv
 ac
 bd
 bd
@@ -30075,15 +30238,15 @@ aa
 ac
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-ac
-aa
-aa
-aa
+cv
+cv
+cv
+pa
+cv
+pl
+cv
+cv
+cv
 ac
 aa
 aa
@@ -30332,13 +30495,13 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-ac
-aa
+cv
+oR
+oU
+pb
+cv
+fa
+cv
 aa
 aa
 ac
@@ -30589,13 +30752,13 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-ac
-aa
+cv
+fa
+oV
+pc
+cv
+cF
+cv
 aa
 aa
 ac
@@ -30846,12 +31009,12 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
 cv
 cv
+cv
+cv
+cv
+gi
 cv
 cv
 cv
@@ -31104,15 +31267,15 @@ aa
 aa
 aa
 aa
+ac
 aa
-aa
-aa
+ac
 cv
 cF
 cP
 cw
 cw
-cw
+pv
 dm
 cw
 dy
@@ -32135,7 +32298,7 @@ aa
 aa
 cv
 cG
-cF
+ph
 cF
 db
 cv
@@ -40365,7 +40528,7 @@ ap
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 cv
@@ -40622,7 +40785,7 @@ ap
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 cv
@@ -40879,14 +41042,14 @@ ap
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 cv
 dL
 cv
-aa
-aa
+ac
+ac
 ef
 ef
 ef
@@ -41133,25 +41296,25 @@ aa
 ap
 aw
 ap
-aa
-aa
-aa
-aa
-aa
-aa
+ac
+ac
+ac
+ac
+ac
+ac
 cv
 cv
 cv
 aa
 aa
+ac
 aa
 aa
 aa
 aa
 aa
 aa
-aa
-aa
+ac
 aa
 aa
 aa
@@ -41393,7 +41556,7 @@ ap
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 ch
@@ -41401,14 +41564,14 @@ dM
 ch
 aa
 aa
+ac
 aa
 aa
 aa
 aa
 aa
 aa
-aa
-aa
+ac
 aa
 aa
 aa
@@ -41650,7 +41813,7 @@ ap
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 ch
@@ -41658,14 +41821,14 @@ dN
 ch
 aa
 aa
+ac
 aa
 aa
 aa
 aa
 aa
 aa
-aa
-aa
+ac
 aa
 aa
 aa
@@ -41907,7 +42070,7 @@ ap
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 ch
@@ -41915,14 +42078,14 @@ dN
 ch
 aa
 aa
+ac
 aa
 aa
 aa
 aa
 aa
 aa
-aa
-aa
+ac
 aa
 aa
 aa
@@ -42164,7 +42327,7 @@ ap
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 ch
@@ -42172,14 +42335,14 @@ dO
 ch
 aa
 aa
+ac
 aa
 aa
 aa
 aa
 aa
 aa
-aa
-aa
+ac
 aa
 aa
 aa
@@ -42416,7 +42579,7 @@ ap
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -42673,7 +42836,7 @@ ap
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -42930,7 +43093,7 @@ ap
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -42940,7 +43103,7 @@ dt
 ov
 cm
 dN
-oC
+ov
 cm
 cm
 ct
@@ -42949,12 +43112,12 @@ oF
 ex
 ct
 em
-oI
+oF
 ex
 ct
-aa
-aa
-aa
+ac
+ac
+ac
 ch
 fG
 gh
@@ -43184,14 +43347,14 @@ ap
 aZ
 aZ
 ap
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
 ch
 du
 dw
@@ -43444,7 +43607,7 @@ ap
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -43701,18 +43864,18 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
 aa
 ch
 dv
-ow
+ov
 dD
 dN
 cm
-oE
+ov
 dx
 ch
 eo
@@ -43958,7 +44121,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -44215,7 +44378,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -44472,7 +44635,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -44729,7 +44892,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -44748,7 +44911,7 @@ cm
 cm
 dA
 ex
-oJ
+oF
 ex
 ch
 aa
@@ -44986,7 +45149,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -44995,7 +45158,7 @@ oj
 dx
 dw
 dE
-oA
+ov
 dx
 dZ
 dw
@@ -45239,15 +45402,15 @@ cp
 cs
 cm
 ch
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
 ch
 dw
 dw
@@ -45262,7 +45425,7 @@ cm
 cm
 ct
 ex
-oK
+oF
 ex
 ch
 aa
@@ -45500,7 +45663,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 aa
 aa
@@ -45757,13 +45920,13 @@ aa
 aa
 aa
 aa
+ac
 aa
 aa
 aa
 aa
 aa
-aa
-aa
+ac
 aa
 ch
 dT
@@ -46014,13 +46177,13 @@ aa
 aa
 aa
 aa
+ac
 aa
 aa
 aa
 aa
 aa
-aa
-aa
+ac
 aa
 ch
 cm
@@ -46271,13 +46434,13 @@ aa
 aa
 aa
 aa
+ac
 aa
 aa
 aa
 aa
 aa
-aa
-aa
+ac
 aa
 ch
 cm
@@ -46528,14 +46691,14 @@ aa
 aa
 aa
 aa
+ac
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
+ac
+ac
 ch
 cm
 ch
@@ -46783,15 +46946,15 @@ cn
 ch
 cK
 ch
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
 aa
 ch
 cm
@@ -47048,7 +47211,7 @@ aa
 aa
 aa
 aa
-aa
+ac
 aa
 ch
 cm
@@ -50934,7 +51097,7 @@ ch
 dv
 dv
 oh
-oO
+ov
 cm
 ch
 aa
@@ -51703,10 +51866,10 @@ aa
 aa
 cK
 cm
-oM
+ov
 cm
 ch
-oQ
+ov
 ch
 ch
 ch
@@ -52218,7 +52381,7 @@ aa
 cK
 cm
 ch
-oN
+ov
 ch
 dA
 ch
@@ -52473,7 +52636,7 @@ aa
 aa
 aa
 ch
-oL
+ov
 dA
 cm
 hi
@@ -52733,7 +52896,7 @@ ch
 gU
 dA
 cm
-oP
+ov
 cm
 ch
 ac

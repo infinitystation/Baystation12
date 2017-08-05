@@ -274,6 +274,10 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/industrial/hatch/yellow
 	color = "#CFCF55"
 
+/obj/effect/floor_decal/industrial/hatch/grey
+	color = "#808080"
+
+
 /obj/effect/floor_decal/industrial/outline
 	name = "white outline"
 	icon_state = "outline"
