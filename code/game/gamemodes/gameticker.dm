@@ -164,15 +164,14 @@ var/global/datum/controller/gameticker/ticker
 	if(admins_number == 0)
 		send2adminirc("Round has started with no admins online.")
 
+	if(config.ooc_allowed && !config.ooc_during_round)
+		config.ooc_allowed = 0
+		to_world("<B>The OOC channel has been globally disabled!</B>")
 
 	processScheduler.start()
 
 	if(config.sql_enabled)
 		statistic_cycle() // Polls population totals regularly and stores them in an SQL DB -- TLE
-
-	if(config.ooc_allowed && !config.ooc_during_round)
-		config.ooc_allowed = 0
-		to_world("<B>The OOC channel has been globally disabled!</B>")
 
 	return 1
 
@@ -333,6 +332,9 @@ var/global/datum/controller/gameticker/ticker
 
 		if(!mode.explosion_in_progress && game_finished && (mode_finished || post_game))
 			current_state = GAME_STATE_FINISHED
+			if(!config.ooc_allowed)
+				config.ooc_allowed = 1
+				to_world("<B>The OOC channel has been globally disabled!</B>")
 			declare_completion()
 			Master.SetRunLevel(RUNLEVEL_POSTGAME)
 
