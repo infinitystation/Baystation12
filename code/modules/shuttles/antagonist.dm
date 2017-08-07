@@ -1,9 +1,9 @@
-/obj/machinery/computer/shuttle_control/multi/vox
+/obj/machinery/computer/shuttle_control/multi/antag/vox
 	name = "skipjack control console"
 	req_access = list(access_syndicate)
 	shuttle_tag = "Skipjack"
 
-/obj/machinery/computer/shuttle_control/multi/syndicate
+/obj/machinery/computer/shuttle_control/multi/antag/syndicate
 	name = "mercenary shuttle control console"
 	req_access = list(access_syndicate)
 	shuttle_tag = "Mercenary"
@@ -13,7 +13,7 @@
 	req_access = list(access_cent_specops)
 	shuttle_tag = "Rescue"
 
-/obj/machinery/computer/shuttle_control/multi/ninja
+/obj/machinery/computer/shuttle_control/multi/antag/sninja
 	name = "stealth shuttle control console"
 	req_access = list(access_syndicate)
 	shuttle_tag = "Ninja"

@@ -7807,6 +7807,7 @@
 "arx" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id = "syndieshutters";
 	name = "Blast Doors";
@@ -7826,6 +7827,7 @@
 "ary" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id = "syndieshutters";
 	name = "Blast Doors";
@@ -7842,6 +7844,7 @@
 "arz" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id = "syndieshutters";
 	name = "Blast Doors";
@@ -8067,7 +8070,7 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "arX" = (
-/obj/machinery/computer/shuttle_control/multi/syndicate,
+/obj/machinery/computer/shuttle_control/multi/antag/syndicate,
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "arY" = (
@@ -8435,10 +8438,10 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "asP" = (
-/obj/structure/computerframe,
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/modular_computer/console/preset/mercenary,
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "asQ" = (
@@ -8640,8 +8643,8 @@
 	},
 /area/syndicate_station/start)
 "atl" = (
-/obj/machinery/door/window/northright{
-	name = "Flight Deck";
+/obj/machinery/door/airlock/hatch{
+	name = "Cockpit";
 	req_access = list(150)
 	},
 /turf/simulated/floor/shuttle/darkred,
@@ -9500,6 +9503,13 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "syndieshutters_infirmary";
+	name = "Blast Doors";
+	opacity = 0
+	},
 /turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "auR" = (
@@ -9510,9 +9520,8 @@
 /turf/simulated/floor/shuttle/black,
 /area/syndicate_station/start)
 "auT" = (
-/obj/machinery/door/window{
-	dir = 2;
-	name = "Seating";
+/obj/machinery/door/airlock/hatch{
+	name = "Troops Section";
 	req_access = list(150)
 	},
 /turf/simulated/floor/shuttle/darkred,
@@ -10056,11 +10065,7 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "awi" = (
-/obj/machinery/door/window{
-	dir = 4;
-	name = "Brig";
-	req_access = list(150)
-	},
+/obj/machinery/door/airlock/hatch,
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "awj" = (
@@ -10550,63 +10555,53 @@
 	},
 /area/supply/dock)
 "axs" = (
-/obj/machinery/sleeper{
-	dir = 4
-	},
+/obj/structure/table/standard,
+/obj/item/weapon/storage/backpack/dufflebag/syndie/med,
+/obj/item/weapon/storage/firstaid/combat,
 /obj/machinery/light{
-	dir = 8;
 	icon_state = "tube1";
-	pixel_y = 0
+	dir = 8
 	},
-/turf/simulated/floor/shuttle/white,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "axt" = (
-/obj/machinery/atmospherics/unary/cryo_cell,
-/turf/simulated/floor/shuttle/white,
+/obj/structure/table/standard,
+/obj/item/weapon/storage/firstaid/toxin{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/weapon/storage/firstaid/adv{
+	pixel_x = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "axu" = (
-/obj/machinery/atmospherics/portables_connector,
-/obj/machinery/portable_atmospherics/canister/oxygen/prechilled,
-/turf/simulated/floor/shuttle/white,
+/obj/structure/table/standard,
+/obj/item/weapon/storage/firstaid/o2{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/weapon/storage/firstaid/fire{
+	pixel_x = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "axv" = (
-/obj/structure/table/standard,
-/obj/item/roller{
-	pixel_y = 8
-	},
-/obj/item/weapon/reagent_containers/blood/OMinus,
-/obj/item/weapon/reagent_containers/blood/OMinus,
-/obj/item/weapon/reagent_containers/syringe/antiviral,
-/obj/item/weapon/reagent_containers/syringe/antiviral,
-/obj/item/weapon/reagent_containers/glass/beaker/cryoxadone{
-	pixel_x = 0;
-	pixel_y = 0
-	},
-/turf/simulated/floor/shuttle/white,
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/canister/oxygen/prechilled,
+/obj/effect/floor_decal/industrial/warning/full,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "axw" = (
-/obj/structure/table/standard,
-/obj/structure/closet/secure_closet/medical_wall{
-	pixel_y = 32;
-	req_access = list(150)
-	},
-/obj/item/weapon/reagent_containers/glass/bottle/antitoxin{
-	pixel_x = -4;
-	pixel_y = 8
-	},
-/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline{
-	pixel_x = 4;
-	pixel_y = 7
-	},
-/obj/item/weapon/reagent_containers/syringe,
+/obj/machinery/atmospherics/unary/cryo_cell,
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/weapon/reagent_containers/syringe/antiviral,
-/obj/item/weapon/reagent_containers/syringe/antiviral,
-/obj/item/bodybag/cryobag,
-/obj/item/bodybag/cryobag,
-/turf/simulated/floor/shuttle/white,
+/obj/effect/floor_decal/industrial/warning/full,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "axx" = (
 /obj/machinery/light{
@@ -10639,7 +10634,8 @@
 	},
 /obj/structure/table/steel,
 /obj/random/tech_supply,
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "axA" = (
 /obj/structure/table/steel,
@@ -10650,7 +10646,8 @@
 	},
 /obj/item/clothing/glasses/night,
 /obj/random/tech_supply,
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "axB" = (
 /obj/item/clothing/gloves/insulated,
@@ -10660,7 +10657,8 @@
 /obj/item/clothing/glasses/night,
 /obj/structure/table/steel,
 /obj/random/tech_supply,
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "axC" = (
 /obj/item/clothing/gloves/insulated,
@@ -10671,7 +10669,8 @@
 /obj/item/clothing/glasses/night,
 /obj/structure/table/steel,
 /obj/random/tech_supply,
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "axD" = (
 /obj/item/clothing/gloves/insulated,
@@ -10685,7 +10684,8 @@
 	},
 /obj/structure/table/steel,
 /obj/random/tech_supply,
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "axE" = (
 /obj/structure/table/rack,
@@ -10763,14 +10763,16 @@
 /turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "axM" = (
-/turf/simulated/floor/shuttle/white,
+/obj/structure/table/standard,
+/obj/item/weapon/defibrillator/loaded,
+/obj/item/weapon/defibrillator/compact/combat/loaded,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "axN" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 5;
-	icon_state = "intact"
-	},
-/turf/simulated/floor/shuttle/white,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/structure/bed/roller,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "axO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -10779,18 +10781,23 @@
 /turf/simulated/floor/shuttle/white,
 /area/syndicate_station/start)
 "axP" = (
-/obj/structure/table/standard,
-/obj/item/weapon/storage/box/bodybags,
-/obj/item/weapon/storage/box/gloves,
-/obj/item/weapon/storage/box/masks,
-/turf/simulated/floor/shuttle/white,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "axQ" = (
 /obj/item/device/radio/intercom/syndicate{
 	dir = 4;
 	pixel_x = -22
 	},
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/corner/red{
+	tag = "icon-corner_white (EAST)";
+	icon_state = "corner_white";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "axR" = (
 /obj/item/weapon/screwdriver,
@@ -10798,7 +10805,8 @@
 /obj/random/tech_supply,
 /obj/effect/spawner/newbomb/timer/syndicate,
 /obj/random/loot,
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "axS" = (
 /obj/machinery/door/blast/regular{
@@ -10982,42 +10990,46 @@
 /turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "ayo" = (
-/obj/machinery/bodyscanner{
-	dir = 8
+/obj/machinery/sleeper{
+	dir = 4
 	},
-/turf/simulated/floor/shuttle/white,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "ayp" = (
-/obj/machinery/body_scanconsole{
-	dir = 8
-	},
-/turf/simulated/floor/shuttle/white,
+/obj/effect/floor_decal/corner/grey_alt/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "ayq" = (
-/obj/machinery/door/window{
-	dir = 4;
-	name = "Infirmary";
+/obj/machinery/door/airlock/centcom{
+	name = "Infimary";
 	req_access = list(150)
 	},
-/turf/simulated/floor/shuttle/white,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "ayr" = (
-/obj/machinery/door/window/westright{
-	name = "Tool Storage";
+/obj/machinery/door/airlock/centcom{
+	name = "Special Equipment";
 	req_access = list(150)
 	},
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/industrial/warning/half{
+	tag = "icon-warninghalf (EAST)";
+	icon_state = "warninghalf";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "ays" = (
 /obj/item/weapon/stool/padded,
-/turf/simulated/floor/shuttle/darkred,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "ayt" = (
 /obj/structure/table/steel,
 /obj/item/weapon/pickaxe/diamonddrill,
 /obj/random/tech_supply,
 /obj/effect/spawner/newbomb/timer/syndicate,
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "ayu" = (
 /obj/machinery/door/blast/regular{
@@ -11123,8 +11135,11 @@
 /turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "ayG" = (
-/obj/structure/bed/roller,
-/turf/simulated/floor/shuttle/white,
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/machinery/sleeper{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "ayH" = (
 /obj/machinery/door/window{
@@ -11149,7 +11164,8 @@
 /obj/structure/table/steel,
 /obj/random/tech_supply,
 /obj/effect/spawner/newbomb/timer/syndicate,
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "ayK" = (
 /obj/machinery/door/blast/regular{
@@ -11247,36 +11263,36 @@
 /turf/simulated/floor/tiled,
 /area/supply/dock)
 "ayX" = (
+/obj/effect/floor_decal/corner/pink/diagonal,
 /obj/machinery/button/remote/blast_door{
 	id = "syndieshutters_infirmary";
 	name = "remote shutter control";
 	pixel_x = -25
 	},
-/obj/structure/mopbucket,
-/turf/simulated/floor/shuttle/white,
-/area/syndicate_station/start)
-"ayY" = (
-/obj/structure/table/standard,
-/obj/item/weapon/defibrillator/loaded,
-/turf/simulated/floor/shuttle/white,
-/area/syndicate_station/start)
-"ayZ" = (
-/obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/combat,
-/obj/item/weapon/storage/firstaid/regular,
-/obj/item/weapon/storage/backpack/dufflebag/syndie/med,
-/obj/item/weapon/defibrillator/compact/combat/loaded,
-/turf/simulated/floor/shuttle/white,
-/area/syndicate_station/start)
-"aza" = (
-/obj/machinery/light{
+/obj/machinery/bodyscanner{
 	dir = 4
 	},
-/obj/item/device/radio/intercom/syndicate{
-	dir = 8;
-	pixel_x = 22
+/turf/simulated/floor/tiled/white,
+/area/syndicate_station/start)
+"ayY" = (
+/obj/effect/floor_decal/corner/beige/diagonal,
+/mob/living/bot/medbot/merc,
+/turf/simulated/floor/tiled/white,
+/area/syndicate_station/start)
+"ayZ" = (
+/obj/effect/floor_decal/corner/beige/diagonal,
+/obj/structure/table/standard,
+/obj/item/weapon/storage/box/syringes{
+	pixel_x = 3;
+	pixel_y = 2
 	},
-/turf/simulated/floor/shuttle/white,
+/obj/item/weapon/storage/box/beakers,
+/turf/simulated/floor/tiled/white,
+/area/syndicate_station/start)
+"aza" = (
+/obj/effect/floor_decal/corner/beige/diagonal,
+/obj/machinery/chem_master,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "azb" = (
 /obj/machinery/door/window{
@@ -11294,7 +11310,8 @@
 	pixel_y = 0
 	},
 /obj/item/weapon/storage/backpack/dufflebag/syndie/ammo,
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "azd" = (
 /obj/structure/table/rack,
@@ -11302,7 +11319,8 @@
 /obj/item/device/multitool,
 /obj/item/weapon/tape_roll,
 /obj/item/weapon/tape_roll,
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "aze" = (
 /obj/machinery/button/remote/blast_door{
@@ -11312,7 +11330,8 @@
 	pixel_y = -25;
 	req_access = list(150)
 	},
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/industrial/hatch/grey,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "azf" = (
 /obj/machinery/button/remote/blast_door{
@@ -11326,7 +11345,8 @@
 /obj/item/weapon/plastique,
 /obj/item/weapon/plastique,
 /obj/item/device/multitool/hacktool,
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "azg" = (
 /obj/machinery/optable,
@@ -11359,13 +11379,25 @@
 	},
 /area/centcom/living)
 "azk" = (
-/obj/structure/window/reinforced/crescent{
+/obj/effect/floor_decal/corner/pink/diagonal,
+/obj/machinery/body_scanconsole{
 	dir = 1
 	},
-/obj/structure/table/standard,
-/obj/item/clothing/mask/surgical,
-/obj/item/clothing/gloves/latex,
-/turf/simulated/floor/shuttle/white,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/obj/structure/closet/secure_closet/medical_wall{
+	pixel_x = -32;
+	pixel_y = 0;
+	req_access = list(150)
+	},
+/obj/item/weapon/reagent_containers/blood/OMinus,
+/obj/item/weapon/reagent_containers/blood/OMinus,
+/obj/item/weapon/reagent_containers/blood/OMinus,
+/obj/item/weapon/reagent_containers/blood/OMinus,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "azl" = (
 /obj/machinery/door/window{
@@ -11376,36 +11408,24 @@
 /turf/simulated/floor/shuttle/white,
 /area/syndicate_station/start)
 "azm" = (
-/obj/structure/window/reinforced/crescent{
-	dir = 1
-	},
-/obj/machinery/iv_drip,
-/turf/simulated/floor/shuttle/white,
+/obj/effect/floor_decal/corner/beige/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "azn" = (
-/obj/structure/table/standard,
-/obj/structure/window/reinforced/crescent{
-	dir = 8
+/obj/effect/floor_decal/corner/beige/diagonal,
+/obj/structure/bed/chair/office/light{
+	dir = 4
 	},
-/obj/item/weapon/storage/firstaid/toxin{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/weapon/storage/firstaid/adv{
-	pixel_x = 1
-	},
-/turf/simulated/floor/shuttle/white,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "azo" = (
-/obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/o2{
-	pixel_x = 3;
-	pixel_y = 3
+/obj/effect/floor_decal/corner/beige/diagonal,
+/obj/machinery/chemical_dispenser/ert,
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
 	},
-/obj/item/weapon/storage/firstaid/fire{
-	pixel_x = 1
-	},
-/turf/simulated/floor/shuttle/white,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "azp" = (
 /obj/item/weapon/weldingtool,
@@ -11433,14 +11453,16 @@
 	name = "Telecoms Mainframe";
 	req_access = list(150)
 	},
-/turf/simulated/floor/shuttle/darkred,
+/obj/effect/floor_decal/industrial/hatch/grey,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "azs" = (
 /obj/machinery/door/blast/regular{
 	id = "syndieshutters_telebay";
 	name = "Outer Airlock"
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/warning/half,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "azt" = (
 /obj/structure/table/reinforced,
@@ -11550,33 +11572,33 @@
 /area/supply/dock)
 "azF" = (
 /obj/structure/table/standard,
-/obj/machinery/light/small{
-	dir = 8
+/obj/item/weapon/reagent_containers/spray/cleaner{
+	pixel_x = -6
 	},
 /obj/item/weapon/reagent_containers/spray/sterilizine,
-/obj/item/weapon/reagent_containers/spray/cleaner,
-/turf/simulated/floor/shuttle/white,
+/obj/structure/window/reinforced/crescent{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/pink/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "azG" = (
-/obj/structure/sink{
-	dir = 4;
-	icon_state = "sink";
-	pixel_x = 11;
-	pixel_y = 0
-	},
-/obj/item/weapon/reagent_containers/glass/bottle/stoxin,
-/obj/item/weapon/reagent_containers/glass/bottle/stoxin,
-/obj/item/weapon/reagent_containers/syringe,
-/obj/item/clothing/mask/surgical,
-/obj/item/clothing/gloves/latex,
+/obj/machinery/iv_drip,
 /obj/structure/closet/secure_closet/medical_wall{
 	pixel_x = 32;
 	pixel_y = 0;
 	req_access = list(150)
 	},
-/obj/item/weapon/tank/anesthetic,
-/obj/item/clothing/mask/breath/medical,
-/turf/simulated/floor/shuttle/white,
+/obj/item/clothing/gloves/latex,
+/obj/item/clothing/mask/surgical,
+/obj/item/weapon/reagent_containers/glass/bottle/stoxin,
+/obj/item/weapon/reagent_containers/glass/bottle/stoxin,
+/obj/item/weapon/reagent_containers/syringe,
+/obj/structure/window/reinforced/crescent{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/pink/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "azH" = (
 /obj/effect/landmark{
@@ -11593,11 +11615,11 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/shuttle/darkred,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "azK" = (
 /obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/shuttle/darkred,
+/turf/simulated/floor/tiled/dark,
 /area/syndicate_station/start)
 "azL" = (
 /obj/machinery/vending/medical,
@@ -11692,23 +11714,30 @@
 /area/centcom/living)
 "azY" = (
 /obj/structure/table/standard,
-/obj/item/weapon/reagent_containers/syringe/antiviral,
-/obj/item/weapon/reagent_containers/syringe/antiviral,
+/obj/machinery/oxygen_pump/anesthetic{
+	pixel_x = -32;
+	pixel_y = 0
+	},
 /obj/item/stack/medical/advanced/bruise_pack,
-/turf/simulated/floor/shuttle/white,
+/obj/item/weapon/reagent_containers/syringe/antiviral,
+/obj/item/weapon/reagent_containers/syringe/antiviral,
+/obj/effect/floor_decal/corner/pink/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "azZ" = (
 /obj/machinery/optable,
-/turf/simulated/floor/shuttle/white,
+/obj/effect/floor_decal/corner/pink/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "aAa" = (
 /obj/structure/table/standard,
+/obj/item/weapon/storage/firstaid/surgery,
 /obj/item/device/radio/intercom/syndicate{
 	dir = 8;
 	pixel_x = 22
 	},
-/obj/item/weapon/storage/firstaid/surgery,
-/turf/simulated/floor/shuttle/white,
+/obj/effect/floor_decal/corner/pink/diagonal,
+/turf/simulated/floor/tiled/white,
 /area/syndicate_station/start)
 "aAb" = (
 /obj/structure/shuttle/engine/heater,
@@ -11727,7 +11756,7 @@
 /area/syndicate_station/start)
 "aAe" = (
 /obj/machinery/teleport/hub,
-/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "aAf" = (
@@ -21708,7 +21737,7 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aUU" = (
-/obj/machinery/computer/shuttle_control/multi/vox,
+/obj/machinery/computer/shuttle_control/multi/antag/vox,
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "aUV" = (
@@ -27480,6 +27509,87 @@
 	},
 /turf/simulated/floor/shuttle/black,
 /area/skipjack_station/start)
+"biB" = (
+/obj/structure/bed/chair/comfy/shuttle/red{
+	tag = "icon-rschair (WEST)";
+	icon_state = "rschair";
+	dir = 8
+	},
+/obj/structure/closet/hydrant{
+	pixel_y = 32
+	},
+/turf/simulated/floor/shuttle/darkred,
+/area/syndicate_station/start)
+"biC" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 5;
+	icon_state = "intact"
+	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/syndicate_station/start)
+"biD" = (
+/obj/effect/floor_decal/corner/red{
+	tag = "icon-corner_white (EAST)";
+	icon_state = "corner_white";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_station/start)
+"biE" = (
+/obj/effect/floor_decal/corner/red{
+	tag = "icon-corner_white (EAST)";
+	icon_state = "corner_white";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_station/start)
+"biF" = (
+/obj/effect/floor_decal/corner/red{
+	tag = "icon-corner_white (EAST)";
+	icon_state = "corner_white";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_station/start)
+"biG" = (
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_station/start)
+"biH" = (
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_station/start)
+"biI" = (
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_station/start)
+"biJ" = (
+/obj/effect/floor_decal/corner/red,
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_station/start)
+"biK" = (
+/obj/effect/floor_decal/corner/red,
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_station/start)
+"biL" = (
+/obj/effect/floor_decal/corner/red,
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_station/start)
+"biM" = (
+/obj/effect/floor_decal/corner/red,
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_station/start)
+"biN" = (
+/obj/effect/floor_decal/industrial/hatch/grey,
+/turf/simulated/floor/tiled/dark,
+/area/syndicate_station/start)
+"biO" = (
+/obj/machinery/door/window{
+	dir = 1;
+	name = "Surgery";
+	req_access = list(150)
+	},
+/obj/effect/floor_decal/corner/pink/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/syndicate_station/start)
 
 (1,1,1) = {"
 aaa
@@ -82917,10 +83027,10 @@ arU
 axt
 axN
 ayp
-axM
-axM
-azl
-axM
+ayp
+ayp
+ayp
+biO
 azZ
 aAb
 aAm
@@ -83172,9 +83282,9 @@ asw
 asw
 arU
 axu
-axO
-axM
-axM
+axN
+ayp
+ayp
 ayY
 azm
 azG
@@ -83429,9 +83539,9 @@ asw
 asw
 arU
 axv
-axM
-axM
-axM
+biC
+ayp
+ayp
 ayZ
 azn
 arU
@@ -83687,8 +83797,8 @@ asw
 arU
 axw
 axP
-axM
-axM
+ayp
+ayp
 aza
 azo
 arU
@@ -83934,18 +84044,18 @@ atl
 atx
 atL
 atW
-auh
+asw
 asw
 arU
 arU
 arU
 awi
-awI
+awi
 arU
 arU
 arU
 ayq
-ayH
+ayq
 arU
 arU
 arU
@@ -84188,7 +84298,7 @@ asw
 asw
 asw
 arU
-aty
+biB
 aty
 aty
 aty
@@ -84701,8 +84811,8 @@ arY
 asw
 asw
 asw
-arU
-atA
+atl
+asw
 asw
 asw
 asw
@@ -84967,13 +85077,13 @@ arU
 arU
 arU
 arU
-awj
-awJ
+awi
+awi
 arU
 arU
 arU
 ayr
-ayI
+ayr
 arU
 arU
 arU
@@ -85229,8 +85339,8 @@ asw
 arU
 axz
 axQ
-asw
-asw
+biG
+biJ
 azc
 azr
 arU
@@ -85485,9 +85595,9 @@ asw
 asw
 arU
 axA
-asw
-asw
-asw
+biD
+biH
+biK
 azd
 arU
 arU
@@ -85717,13 +85827,13 @@ aqU
 aqU
 aqW
 aqX
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aqW
+aqW
+aqW
+aqW
+aqW
+aqV
+aqV
 aaf
 aaf
 aaf
@@ -85742,9 +85852,9 @@ asw
 awK
 arU
 axB
-asw
-asw
-asw
+biE
+biI
+biL
 aze
 arU
 azJ
@@ -85976,7 +86086,7 @@ aqV
 aaf
 aaf
 aaf
-aaf
+aqV
 aaf
 aaf
 aaf
@@ -85999,10 +86109,10 @@ awk
 awL
 arU
 axC
-asw
+biF
 ays
-asw
-asw
+biM
+biN
 azs
 azK
 aAd
@@ -86042,7 +86152,7 @@ aML
 aML
 aIA
 aIA
-aIz
+aIA
 aaf
 aaf
 aaf
@@ -86231,12 +86341,12 @@ aqS
 aqS
 aqS
 aqV
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+aqV
+aqV
+aqV
+aqV
+aqV
+aqV
 arp
 arB
 arB
@@ -86299,7 +86409,7 @@ aJB
 aJB
 aJB
 aOK
-aIz
+aIA
 aIz
 aaf
 aaf
@@ -86490,7 +86600,7 @@ aqS
 aqS
 aaf
 aaf
-aaf
+aqV
 aaf
 aaf
 aaf
@@ -86556,7 +86666,7 @@ aMM
 aIS
 aJB
 aJg
-aIz
+aIA
 aIz
 aIz
 aaf

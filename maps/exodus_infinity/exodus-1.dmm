@@ -6690,6 +6690,7 @@
 "pm" = (
 /obj/structure/table/standard,
 /obj/item/weapon/weldingtool,
+/obj/item/weapon/FixOVein,
 /turf/simulated/floor/plating,
 /area/maintenance/sub/central)
 "pn" = (
@@ -6701,7 +6702,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/sub/central)
 "pp" = (
-/obj/random/trash,
 /turf/simulated/floor/tiled/white,
 /area/maintenance/sub/central)
 "pq" = (
@@ -6712,7 +6712,7 @@
 /area/maintenance/sub/central)
 "pr" = (
 /obj/structure/table/standard,
-/obj/item/weapon/scalpel,
+/obj/item/weapon/material/kitchen/utensil/knife,
 /obj/item/weapon/retractor,
 /turf/simulated/floor/plating,
 /area/maintenance/sub/central)
@@ -6748,6 +6748,21 @@
 /obj/item/weapon/caution,
 /turf/simulated/floor/plating,
 /area/maintenance/sub/central)
+"py" = (
+/obj/machinery/porta_turret,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/airless,
+/area/space)
+"pz" = (
+/obj/machinery/porta_turret,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/airless,
+/area/space)
+"pA" = (
+/obj/machinery/porta_turret,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/airless,
+/area/space)
 
 (1,1,1) = {"
 aa
@@ -29479,8 +29494,8 @@ aa
 ac
 ac
 oS
-pw
-pe
+cF
+cF
 pj
 po
 pd
@@ -33855,8 +33870,8 @@ aa
 aa
 ab
 ac
-aa
-aa
+py
+aQ
 ac
 aa
 aa
@@ -34112,7 +34127,7 @@ dd
 ab
 ab
 ac
-aa
+aQ
 dr
 dr
 dr
@@ -37196,7 +37211,7 @@ dd
 ab
 ab
 ac
-aa
+aQ
 dr
 dr
 dr
@@ -37210,7 +37225,7 @@ dr
 dr
 dr
 dr
-aa
+aQ
 ac
 aa
 aa
@@ -37453,8 +37468,8 @@ aa
 aa
 ab
 ac
-aa
-aa
+pz
+aQ
 ac
 aa
 aa
@@ -37466,8 +37481,8 @@ aa
 aa
 aa
 ac
-aa
-aa
+aQ
+pA
 ac
 aa
 aa

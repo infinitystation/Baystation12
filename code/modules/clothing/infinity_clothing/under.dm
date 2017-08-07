@@ -1,0 +1,15 @@
+//Папочка с нашими комбезами, футболочками, портянками и всего, что вы не носите.
+
+/obj/item/clothing/under/civilian
+	name = "white-black suit"
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	icon_override = 'icons/mob/infinity/uniform.dmi'
+	desc = "Рубашка с темными штанами в одном комплекте. Что ещё нужно джентельмену?"
+	icon_state = "white-black"
+	worn_state = "white-black"
+
+/obj/item/clothing/under/civilian/black
+	name = "black-white suit"
+	desc = "Тёмна&#255; рубашка с белыми штанами. Что ещё нужно громиле из Группы Орлова?"
+	icon_state = "black-white"
+	worn_state = "black-white"

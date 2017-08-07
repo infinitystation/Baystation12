@@ -250,3 +250,14 @@
 	..()
 	reagents.add_reagent("frostoil", 60)
 	update_icon()
+
+/obj/item/weapon/reagent_containers/glass/bottle/hyronalin
+	name = "hyronalin bottle"
+	desc = "A small bottle. Contains hyronalin - used to cure radiation poisoning."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "bottle-2"
+
+/obj/item/weapon/reagent_containers/glass/bottle/hyronalin/New()
+	..()
+	reagents.add_reagent("hyronalin", 60)
+	update_icon()

@@ -223,6 +223,6 @@
 	material_alteration = MATERIAL_ALTERATION_NONE
 
 /obj/structure/bed/chair/comfy/shuttle/red
-	icon_state = "bschair_preview"
+	icon_state = "rschair_preview"
 	base_icon = "rschair"
 	material_alteration = MATERIAL_ALTERATION_NONE

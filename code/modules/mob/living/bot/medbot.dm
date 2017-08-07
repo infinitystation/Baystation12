@@ -323,3 +323,16 @@
 					S.update_icons() // apply the skin
 					user.drop_from_inventory(src)
 					qdel(src)
+
+/mob/living/bot/medbot/merc
+	name = "Painkiller"
+	desc = "Побывав в дес&#255;тках гор&#255;чих точках, этот хмурый медбот настолько очерствел, что замочал навсегда. Однако, лечит покруче некоторых."
+	icon_state = "medibot0"
+	req_one_access = list(access_syndicate)
+	botcard_access = list(access_syndicate)
+	skin = "bezerk"
+	vocal = 0
+	treatment_brute = "bicaridine"
+	treatment_oxy = "dexalin"
+	treatment_fire = "dermaline"
+	treatment_tox = "anti_toxin"

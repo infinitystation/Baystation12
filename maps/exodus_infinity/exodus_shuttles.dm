@@ -322,6 +322,7 @@
 		"nav_ert_north_east",
 		"nav_ert_south_east",
 		"nav_ert_south_west",
+		"nav_ert_satel",
 		"nav_ert_mine",
 		"nav_ert_dock",
 		"nav_ert_start"
@@ -367,6 +368,10 @@
 	name = "Southwest of Station"
 	landmark_tag = "nav_ert_south_west"
 
+/obj/effect/shuttle_landmark/ert/satellite
+	name = "East of Telecommunication Satellite"
+	landmark_tag = "nav_ert_satel"
+
 /obj/effect/shuttle_landmark/ert/mine
 	name = "North from Asteroid Engineering Base"
 	landmark_tag = "nav_ert_mine"
@@ -403,15 +408,16 @@
 	warmup_time = 9
 	move_time = 60
 	destinations = list(
-		"nav_merc_mine",
-		"nav_merc_dock",
 		"nav_merc_start",
+		"nav_merc_dock",
 		"nav_merc_north_west",
 		"nav_merc_north",
 		"nav_merc_north_east",
 		"nav_merc_south_east",
 		"nav_merc_south",
-		"nav_merc_south_west"
+		"nav_merc_south_west",
+		"nav_merc_mine",
+		"nav_merc_satel"
 		)
 	shuttle_area = /area/syndicate_station/start
 	dock_target = "merc_shuttle"
@@ -460,6 +466,10 @@
 /obj/effect/shuttle_landmark/merc/southwest
 	name = "Southwest of Station"
 	landmark_tag = "nav_merc_south_west"
+
+/obj/effect/shuttle_landmark/merc/satellite
+	name = "South of Telecommunication Satellite"
+	landmark_tag = "nav_merc_satel"
 
 /obj/effect/shuttle_landmark/merc/mine
 	name = "East from Asteroid Research Base"
