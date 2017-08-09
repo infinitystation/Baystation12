@@ -539,7 +539,7 @@
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
 	var/number
 
-/datum/shuttle/autodock/ferry/escape_pod/exodus/New()
+/datum/shuttle/autodock/ferry/escape_pod/New()
 	name = "Escape Pod [number]"
 	dock_target = "escape_pod_[number]"
 	arming_controller = "escape_pod_[number]_berth"
