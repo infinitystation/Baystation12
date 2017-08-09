@@ -539,7 +539,7 @@
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
 	var/number
 
-/datum/shuttle/autodock/ferry/escape_pod/New()
+/datum/shuttle/autodock/ferry/escape_pod/exodus/New()
 	name = "Escape Pod [number]"
 	dock_target = "escape_pod_[number]"
 	arming_controller = "escape_pod_[number]_berth"
@@ -574,7 +574,6 @@
 	..()
 
 /datum/shuttle/autodock/ferry/escape_pod/pod1
-	warmup_time = 10
 	shuttle_area = /area/shuttle/escape_pod1/station
 	number = 1
 /obj/effect/shuttle_landmark/escape_pod/start/pod1
@@ -585,7 +584,6 @@
 	number = 1
 
 /datum/shuttle/autodock/ferry/escape_pod/pod2
-	warmup_time = 10
 	shuttle_area = /area/shuttle/escape_pod2/station
 	number = 2
 /obj/effect/shuttle_landmark/escape_pod/start/pod2
@@ -596,7 +594,6 @@
 	number = 2
 
 /datum/shuttle/autodock/ferry/escape_pod/pod3
-	warmup_time = 10
 	shuttle_area = /area/shuttle/escape_pod3/station
 	number = 3
 /obj/effect/shuttle_landmark/escape_pod/start/pod3
@@ -607,7 +604,6 @@
 	number = 3
 
 /datum/shuttle/autodock/ferry/escape_pod/pod4
-	warmup_time = 10
 	shuttle_area = /area/shuttle/escape_pod4/station
 	number = 4
 /obj/effect/shuttle_landmark/escape_pod/start/pod4

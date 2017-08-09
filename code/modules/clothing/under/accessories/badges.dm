@@ -49,6 +49,7 @@
 	var/emagged //Emagging removes Sec check.
 
 /obj/item/clothing/accessory/badge/holo/cord
+	name = "neck holobadge"
 	icon_state = "holobadge-cord"
 	slot_flags = SLOT_MASK | SLOT_TIE
 
