@@ -11327,6 +11327,9 @@
 /obj/effect/floor_decal/corner/grey{
 	dir = 5
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/fitness)
 "auZ" = (
@@ -13785,6 +13788,7 @@
 	c_tag = "Dormitory Fitness Room East";
 	dir = 1
 	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/fitness)
 "azm" = (
@@ -13797,7 +13801,6 @@
 /turf/simulated/floor/tiled,
 /area/crew_quarters/fitness)
 "azn" = (
-/obj/machinery/light,
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
 	},
@@ -14867,7 +14870,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/fitness)
 "aBs" = (
@@ -16386,6 +16388,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
+	},
+/obj/structure/sink{
+	icon_state = "sink";
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
@@ -19179,7 +19187,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/chapel/office)
 "aJC" = (
-/obj/structure/disposalpipe/trunk,
 /obj/structure/table/woodentable,
 /obj/item/weapon/storage/fancy/crayons,
 /turf/simulated/floor/lino,
@@ -20005,7 +20012,6 @@
 /obj/item/device/flashlight/lamp{
 	pixel_y = 10
 	},
-/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/lino,
 /area/chapel/office)
 "aLd" = (
@@ -20637,15 +20643,15 @@
 /turf/simulated/floor/tiled/dark,
 /area/chapel/office)
 "aMw" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/lino,
 /area/chapel/office)
@@ -21675,6 +21681,10 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/lino,
 /area/chapel/office)
 "aOm" = (
@@ -21687,6 +21697,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/lino,
 /area/chapel/office)
 "aOn" = (
@@ -21698,6 +21711,9 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/lino,
 /area/chapel/office)
 "aOo" = (
@@ -21706,11 +21722,17 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/lino,
 /area/chapel/office)
 "aOp" = (
 /obj/machinery/disposal,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/office)
 "aOq" = (
@@ -25237,8 +25259,9 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
 "aVj" = (
-/obj/structure/flora/pottedplant/decorative,
-/turf/simulated/floor/wood,
+/obj/structure/window/reinforced/full,
+/obj/structure/flora/ausbushes/palebush,
+/turf/simulated/floor/grass,
 /area/crew_quarters/bar)
 "aVk" = (
 /obj/structure/table/woodentable,
@@ -25570,9 +25593,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "aVL" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/machinery/light{
 	icon_state = "tube1";
 	dir = 8
@@ -25582,6 +25602,7 @@
 	pixel_x = -24
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled,
 /area/hallway/secondary/exit)
 "aVM" = (
@@ -26290,6 +26311,12 @@
 	id_tag = "escape_dock_north_pump"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
+/obj/machinery/airlock_sensor{
+	frequency = 1380;
+	id_tag = "escape_dock_north_sensor";
+	pixel_x = 0;
+	pixel_y = -25
+	},
 /turf/simulated/floor/plating,
 /area/hallway/secondary/exit)
 "aXi" = (
@@ -28950,7 +28977,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/hydroponics/garden)
 "bcb" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -28970,6 +28996,10 @@
 	icon_state = "corner_white";
 	dir = 1
 	},
+/obj/structure/disposalpipe/junction{
+	icon_state = "pipe-j2";
+	dir = 2
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/starboard)
 "bcc" = (
@@ -28983,6 +29013,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/starboard)
@@ -28999,6 +29032,9 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/grey_alt,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/starboard)
 "bce" = (
@@ -29017,6 +29053,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/wood,
 /area/library)
 "bcf" = (
@@ -29029,6 +29068,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/floor/carpet,
@@ -29050,6 +29092,9 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/carpet,
 /area/library)
 "bch" = (
@@ -29064,6 +29109,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/carpet,
 /area/library)
 "bci" = (
@@ -29076,6 +29124,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/floor/carpet,
@@ -29096,6 +29147,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "bck" = (
@@ -29108,6 +29162,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "bcl" = (
@@ -29132,6 +29189,9 @@
 	icon_state = "chapel";
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "bcm" = (
@@ -29151,6 +29211,9 @@
 	icon_state = "chapel";
 	dir = 4
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "bcn" = (
@@ -29161,6 +29224,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/simulated/floor/carpet,
 /area/chapel/main)
@@ -29178,6 +29244,9 @@
 	icon_state = "chapel";
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "bcp" = (
@@ -29194,6 +29263,9 @@
 	icon_state = "chapel";
 	dir = 4
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "bcq" = (
@@ -29204,6 +29276,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
@@ -29217,6 +29292,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "bcs" = (
@@ -29226,6 +29304,10 @@
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/secondary/exit)
 "bct" = (
@@ -29912,6 +29994,10 @@
 	pixel_x = -24
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/disposal,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/secondary/exit)
 "bdN" = (
@@ -29994,6 +30080,12 @@
 	id_tag = "escape_dock_south_pump"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
+/obj/machinery/airlock_sensor{
+	frequency = 1380;
+	id_tag = "escape_dock_south_sensor";
+	pixel_x = 0;
+	pixel_y = 25
+	},
 /turf/simulated/floor/plating,
 /area/hallway/secondary/exit)
 "bdR" = (
@@ -53563,7 +53655,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/machinery/atmospherics/valve{
+/obj/machinery/atmospherics/valve/open{
+	tag = "icon-map_valve1 (EAST)";
+	icon_state = "map_valve1";
 	dir = 4
 	},
 /turf/simulated/floor/reinforced,
@@ -55249,7 +55343,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/obj/machinery/atmospherics/valve{
+/obj/machinery/atmospherics/valve/open{
+	tag = "icon-map_valve1 (EAST)";
+	icon_state = "map_valve1";
 	dir = 4
 	},
 /turf/simulated/floor/reinforced,
@@ -74333,6 +74429,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology)
+"cFY" = (
+/obj/structure/lattice,
+/obj/effect/landmark{
+	name = "carpspawn"
+	},
+/turf/space,
+/area/space)
 
 (1,1,1) = {"
 aaa
@@ -109641,7 +109744,7 @@ asc
 asP
 atA
 atC
-auW
+auU
 auU
 awC
 axr
@@ -124323,7 +124426,7 @@ aSD
 aSD
 aRj
 aaf
-aaf
+cFY
 bqB
 bsm
 bsm
@@ -124568,17 +124671,17 @@ aaa
 aaa
 aaa
 aaf
+aVP
+aXj
 aSD
-aXi
+aaf
 aSD
-aaa
-aSD
-bdR
-aSD
+bdS
+aVP
 aaa
 aaa
 aaf
-aaa
+aaf
 aaf
 aaa
 bqB
@@ -124825,19 +124928,19 @@ aaa
 aaa
 aaa
 aaa
-aVP
-aXj
-aSD
-aaf
-aSD
-bdS
-aVP
-aaf
-aaf
-aaf
-aaf
-aaf
-aay
+aaa
+aXk
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 bqB
 bsm
 bsm
@@ -125083,7 +125186,7 @@ aaa
 aaa
 aaa
 aaa
-aXk
+aaa
 aaa
 aaa
 aaa
