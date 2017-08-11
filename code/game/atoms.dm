@@ -12,7 +12,6 @@
 	var/fluorescent // Shows up under a UV light.
 	var/allow_spin = 1
 
-
 	///Chemistry.
 	var/datum/reagents/reagents = null
 
@@ -250,6 +249,8 @@ its easier to just keep the beam vertical.
 		else
 			f_name += "oil-stained [name][infix]."
 
+	if(!isobserver(user))
+		user.visible_message("<font size=1>[user.name] looks at [src].</font>")
 	to_chat(user, "\icon[src] That's [f_name] [suffix]")
 	to_chat(user, desc)
 
