@@ -1201,7 +1201,6 @@ window "outputwindow"
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		titlebar = false
 		statusbar = false
@@ -1253,8 +1252,8 @@ window "rpane"
 		command = "welcome"
 	elem "changelog"
 		type = BUTTON
-		pos = 279,0
-		size = 128x24
+		pos = 280,0
+		size = 144x24
 		anchor1 = none
 		anchor2 = none
 		background-color = none
@@ -1264,8 +1263,8 @@ window "rpane"
 		group = "rpanemode"
 	elem "Lore"
 		type = BUTTON
-		pos = 410,0
-		size = 99x24
+		pos = 428,0
+		size = 108x24
 		anchor1 = none
 		anchor2 = none
 		background-color = none
@@ -1300,7 +1299,7 @@ window "rpane"
 		button-type = pushbox
 	elem "browseb"
 		type = BUTTON
-		pos = 512,0
+		pos = 550,0
 		size = 72x20
 		anchor1 = none
 		anchor2 = none
@@ -1354,7 +1353,6 @@ window "infowindow"
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Info"
 		is-pane = true
@@ -1367,7 +1365,6 @@ window "infowindow"
 		is-default = true
 		saved-params = ""
 		highlight-color = #00aa00
-		tab-background-color = none
 		on-show = ".winset\"rpane.infob.is-visible=true;rpane.browseb.is-visible=true?rpane.infob.pos=130,0:rpane.infob.pos=65,0 rpane.textb.is-visible=true rpane.infob.is-checked=true rpane.rpanewindow.pos=0,30 rpane.rpanewindow.size=0x0 rpane.rpanewindow.left=infowindow\""
 		on-hide = ".winset\"rpane.infob.is-visible=false;rpane.browseb.is-visible=true?rpane.browseb.is-checked=true rpane.rpanewindow.left=browserwindow:rpane.textb.is-visible=true rpane.rpanewindow.pos=0,30 rpane.rpanewindow.size=0x0 rpane.rpanewindow.left=\""
 
@@ -1378,7 +1375,6 @@ window "text_editor"
 		size = 360x488
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		border = sunken
 		saved-params = "pos;size;is-minimized;is-maximized"
@@ -1391,7 +1387,6 @@ window "text_editor"
 		size = 104x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "Exit without saving"
 		command = ""
@@ -1401,7 +1396,6 @@ window "text_editor"
 		size = 104x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "Save"
 		command = ""
@@ -1411,7 +1405,6 @@ window "text_editor"
 		size = 104x24
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "Save + Exit"
 		command = ""
