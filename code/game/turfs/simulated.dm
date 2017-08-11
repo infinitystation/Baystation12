@@ -24,8 +24,8 @@
 		T.ChangeTurf(new_turf_type)
 
 // This is not great.
-/turf/simulated/proc/wet_floor(var/wet_val = 1, var/overwrite = FALSE)
-	if(wet_val < wet && !overwrite)
+/turf/simulated/proc/wet_floor(var/wet_val = 1)
+	if(wet_val < wet)
 		return
 
 	if(!wet)
@@ -101,6 +101,7 @@
 
 		if(istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = M
+			var/footstepsound = null
 			// Tracking blood
 			var/list/bloodDNA = null
 			var/bloodcolor=""
@@ -119,12 +120,46 @@
 					H.track_blood--
 
 			if (bloodDNA)
-				src.AddTracks(H.species.get_move_trail(H),bloodDNA,H.dir,0,bloodcolor) // Coming
+				src.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,H.dir,0,bloodcolor) // Coming
 				var/turf/simulated/from = get_step(H,reverse_direction(H.dir))
 				if(istype(from) && from)
-					from.AddTracks(H.species.get_move_trail(H),bloodDNA,0,H.dir,bloodcolor) // Going
+					from.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,0,H.dir,bloodcolor) // Going
 
 				bloodDNA = null
+
+			//Shoe sounds
+			if(istype(src, /turf/simulated/floor/grass))
+				footstepsound = "grassfootsteps"
+			else if(istype(src, /turf/simulated/floor/beach/water))
+				footstepsound = "waterfootsteps"
+			else if(istype(src, /turf/simulated/floor/wood))
+				footstepsound = "woodfootsteps"
+			else if(istype(src, /turf/simulated/floor/carpet))
+				footstepsound = "carpetfootsteps"
+			else if(istype(src, /turf/simulated/floor/beach/sand))
+				footstepsound = "dirtfootsteps"
+			else if(istype(src,/turf/simulated/floor/plating))
+				footstepsound = "platingfootsteps"
+			else if(istype(src,/turf/simulated/floor/snow))
+				footstepsound = "snowsteps"
+			else if(istype(src,/turf/simulated/floor/plating))
+				footstepsound = "platingfootsteps"
+			else
+				footstepsound = "erikafootsteps"
+
+			if(istype(H.shoes, /obj/item/clothing/shoes) && !H.throwing)//This is probably the worst possible way to handle walking sfx.
+				if(H.m_intent == "run")
+					if(H.footstep >= 1)//Every two steps.
+						H.footstep = 0
+						playsound(src, footstepsound, 100, 1)
+					else
+						H.footstep++
+				else
+					if(H.footstep >= 6)
+						H.footstep = 0
+						playsound(src, footstepsound, 100, 1)
+					else
+						H.footstep++
 
 		if(src.wet)
 
