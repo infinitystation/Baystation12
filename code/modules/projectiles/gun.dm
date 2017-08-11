@@ -49,6 +49,7 @@
 	origin_tech = list(TECH_COMBAT = 1)
 	attack_verb = list("struck", "hit", "bashed")
 	zoomdevicename = "scope"
+	drawsound = 'sound/items/unholster.ogg'
 
 	var/burst = 1
 	var/fire_delay = 6 	//delay after shooting before the gun can be used again
@@ -78,6 +79,8 @@
 	var/tmp/mob/living/last_moved_mob //Used to fire faster at more than one person.
 	var/tmp/told_cant_shoot = 0 //So that it doesn't spam them with the fact they cannot hit them.
 	var/tmp/lock_time = -100
+
+	var/safety = 0
 
 /obj/item/weapon/gun/New()
 	..()
@@ -136,6 +139,10 @@
 		else
 			handle_click_empty(user)
 		return 0
+	if(safety)
+		to_chat(user, "<span class='danger'>The gun's safety is on!</span>")
+		handle_click_empty(user)
+		return 0
 	return 1
 
 /obj/item/weapon/gun/emp_act(severity)
@@ -151,9 +158,6 @@
 	if(user && user.client && user.aiming && user.aiming.active && user.aiming.aiming_at != A)
 		PreFire(A,user,params) //They're using the new gun system, locate what they're aiming at.
 		return
-
-	if(user && user.a_intent == I_HELP) //regardless of what happens, refuse to shoot if help intent is on
-		to_chat(user, "<span class='warning'>You refrain from firing your [src] as your intent is set to help.</span>")
 	else
 		Fire(A,user,params) //Otherwise, fire normally.
 
@@ -423,6 +427,10 @@
 	if(firemodes.len > 1)
 		var/datum/firemode/current_mode = firemodes[sel_mode]
 		to_chat(user, "The fire selector is set to [current_mode.name].")
+	if(safety)
+		to_chat(user, "<span class='notice'>The safety is on.</span>")
+	else
+		to_chat(user, "<span class='notice'>The safety is off.</span>")
 
 /obj/item/weapon/gun/proc/switch_firemodes()
 	if(firemodes.len <= 1)
@@ -441,3 +449,13 @@
 	if(new_mode)
 		to_chat(user, "<span class='notice'>\The [src] is now set to [new_mode.name].</span>")
 
+//Gun safety
+/obj/item/weapon/gun/AltClick(mob/user)
+	..()
+	if(user.incapacitated())
+		to_chat(user, "<span class='warning'>You can't do that right now!</span>")
+		return
+	if(src == user.get_active_hand())
+		safety = !safety
+		playsound(user, 'sound/weapons/selector.ogg', 50, 1)
+		to_chat(user, "<span class='notice'>You toggle the safety [safety ? "on":"off"].</span>")
