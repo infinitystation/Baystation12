@@ -427,10 +427,7 @@
 	if(firemodes.len > 1)
 		var/datum/firemode/current_mode = firemodes[sel_mode]
 		to_chat(user, "The fire selector is set to [current_mode.name].")
-	if(safety)
-		to_chat(user, "<span class='notice'>The safety is on.</span>")
-	else
-		to_chat(user, "<span class='notice'>The safety is off.</span>")
+	to_chat(user, "<span class='notice'>The safety is [safety ? "on" : "off"].</span>")
 
 /obj/item/weapon/gun/proc/switch_firemodes()
 	if(firemodes.len <= 1)
