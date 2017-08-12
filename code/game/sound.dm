@@ -51,6 +51,9 @@ var/list/keyboard_sound = list('sound/machines/keypress1.ogg','sound/machines/ke
 var/list/switch_sound = list('sound/machines/switch1.ogg','sound/machines/switch2.ogg','sound/machines/switch3.ogg','sound/machines/switch4.ogg')
 var/list/button_sound = list('sound/machines/button1.ogg','sound/machines/button2.ogg','sound/machines/button3.ogg','sound/machines/button4.ogg')
 
+/proc/absolute(x as num)
+	return abs(x)
+
 /proc/playsound(var/atom/source, soundin, vol as num, vary, extrarange as num, falloff, var/is_global, var/frequency)
 
 	soundin = get_sfx(soundin) // same sound for everyone
@@ -71,8 +74,12 @@ var/list/button_sound = list('sound/machines/button1.ogg','sound/machines/button
 			var/turf/T = get_turf(M)
 			if(T && T.z == turf_source.z)
 				M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, is_global)
+			var/z_dist = abs(T.z - turf_source.z)
+			if(T && z_dist <= 1)
+				M.playsound_local(turf_source, soundin, vol/(1+z_dist), vary, frequency, falloff, is_global)
 
 var/const/FALLOFF_SOUNDS = 0.5
+var/const/Z_MAX = 5
 
 /mob/proc/playsound_local(var/turf/turf_source, soundin, vol as num, vary, frequency, falloff, is_global)
 	if(!src.client || ear_deaf > 0)	return
