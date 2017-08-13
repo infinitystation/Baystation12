@@ -251,6 +251,11 @@ its easier to just keep the beam vertical.
 
 	if(!isobserver(user))
 		user.visible_message("<font size=1>[user.name] looks at [src].</font>")
+
+		if(get_dist(user,src) > 5)//Don't get descriptions of things far away.
+			to_chat(user, "<span class='info'>It's too far away to see clearly.</span>")
+			return
+
 	to_chat(user, "\icon[src] That's [f_name] [suffix]")
 	to_chat(user, desc)
 
