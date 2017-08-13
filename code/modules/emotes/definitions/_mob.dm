@@ -75,6 +75,7 @@
 		/decl/emote/audible/sniff,
 		/decl/emote/audible/snore,
 		/decl/emote/audible/whimper,
+		/decl/emote/audible/whistle,
 		/decl/emote/audible/yawn,
 		/decl/emote/audible/clap,
 		/decl/emote/audible/chuckle,

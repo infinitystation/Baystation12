@@ -61,6 +61,8 @@ var/list/woodfootsteps = list ('sound/effects/footsteps/wood/wood_step1.ogg','so
 var/list/carpetfootsteps = list ('sound/effects/footsteps/carpet/carpet_step1.ogg','sound/effects/footsteps/carpet/carpet_step2.ogg','sound/effects/footsteps/carpet/carpet_step3.ogg','sound/effects/footsteps/carpet/carpet_step4.ogg','sound/effects/footsteps/carpet/carpet_step5.ogg','sound/effects/footsteps/carpet/carpet_step6.ogg','sound/effects/footsteps/carpet/carpet_step7.ogg','sound/effects/footsteps/carpet/carpet_step8.ogg')
 var/list/platingfootsteps = list('sound/effects/footsteps/plating1.ogg','sound/effects/footsteps/plating2.ogg', 'sound/effects/footsteps/plating3.ogg', 'sound/effects/footsteps/plating4.ogg')
 
+var/list/gun_sound = list('sound/weapons/gunshot.ogg', 'sound/weapons/gunshot2.ogg', 'sound/weapons/gunshot3.ogg', 'sound/weapons/gunshot4.ogg')
+
 /proc/absolute(x as num)
 	return abs(x)
 
@@ -205,5 +207,5 @@ var/const/Z_MAX = 5
 			if ("sandfootsteps") soundin = pick(sandfootsteps)
 			if ("woodfootsteps") soundin = pick(woodfootsteps)
 			if ("carpetfootsteps") soundin = pick(carpetfootsteps)
-			//if ("gunshot") soundin = pick(gun_sound)
+			if ("gunshot") soundin = pick(gun_sound)
 	return soundin

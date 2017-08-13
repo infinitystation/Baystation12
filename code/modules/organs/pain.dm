@@ -38,7 +38,7 @@ mob/living/carbon/human/proc/handle_pain()
 	var/obj/item/organ/external/damaged_organ = null
 	for(var/obj/item/organ/external/E in organs)
 		if(!E.can_feel_pain()) continue
-		var/dam = E.get_damage()
+		var/dam = E.get_pain() + E.get_damage()
 		// make the choice of the organ depend on damage,
 		// but also sometimes use one of the less damaged ones
 		if(dam > maxdam && (maxdam == 0 || prob(70)) )
