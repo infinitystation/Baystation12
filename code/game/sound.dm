@@ -61,6 +61,9 @@ var/list/woodfootsteps = list ('sound/effects/footsteps/wood/wood_step1.ogg','so
 var/list/carpetfootsteps = list ('sound/effects/footsteps/carpet/carpet_step1.ogg','sound/effects/footsteps/carpet/carpet_step2.ogg','sound/effects/footsteps/carpet/carpet_step3.ogg','sound/effects/footsteps/carpet/carpet_step4.ogg','sound/effects/footsteps/carpet/carpet_step5.ogg','sound/effects/footsteps/carpet/carpet_step6.ogg','sound/effects/footsteps/carpet/carpet_step7.ogg','sound/effects/footsteps/carpet/carpet_step8.ogg')
 var/list/platingfootsteps = list('sound/effects/footsteps/plating1.ogg','sound/effects/footsteps/plating2.ogg', 'sound/effects/footsteps/plating3.ogg', 'sound/effects/footsteps/plating4.ogg')
 
+/proc/absolute(x as num)
+	return abs(x)
+
 /proc/playsound(var/atom/source, soundin, vol as num, vary, extrarange as num, falloff, var/is_global, var/frequency)
 
 	soundin = get_sfx(soundin) // same sound for everyone
@@ -81,8 +84,12 @@ var/list/platingfootsteps = list('sound/effects/footsteps/plating1.ogg','sound/e
 			var/turf/T = get_turf(M)
 			if(T && T.z == turf_source.z)
 				M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, is_global)
+			var/z_dist = abs(T.z - turf_source.z)
+			if(T && z_dist <= 1)
+				M.playsound_local(turf_source, soundin, vol/(1+z_dist), vary, frequency, falloff, is_global)
 
 var/const/FALLOFF_SOUNDS = 0.5
+var/const/Z_MAX = 5
 
 /mob/proc/playsound_local(var/turf/turf_source, soundin, vol as num, vary, frequency, falloff, is_global)
 	if(!src.client || ear_deaf > 0)	return
