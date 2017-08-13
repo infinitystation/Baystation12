@@ -968,7 +968,7 @@ mob/proc/yank_out_object()
 
 	return 0
 
-/mob/proc/updateicon()
+/mob/update_icon()
 	return
 
 /mob/verb/face_direction()

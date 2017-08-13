@@ -212,7 +212,9 @@ var/list/admin_verbs_debug = list(
 	/datum/admins/proc/view_runtimes,
 	/client/proc/secrets,
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
-	/client/proc/debug_global_variables
+	/client/proc/debug_global_variables,
+	/client/proc/cmd_analyse_health_context,
+	/client/proc/cmd_analyse_health_panel
 	)
 
 var/list/admin_verbs_paranoid_debug = list(

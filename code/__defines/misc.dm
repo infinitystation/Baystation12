@@ -201,6 +201,11 @@
 //Error handler defines
 #define ERROR_USEFUL_LEN 2
 
+#define RAD_LEVEL_LOW 0.5 // Around the level at which radiation starts to become harmful
+#define RAD_LEVEL_MODERATE 5
+#define RAD_LEVEL_HIGH 25
+#define RAD_LEVEL_VERY_HIGH 75
+
 //Hardcore mode stuff
 #define STARVATION_MIN 60 //If you have less nutrition than this value, the hunger indicator starts flashing
 
@@ -217,3 +222,4 @@
 #define STARVATION_BRAIN_DAMAGE 2.5
 
 #define STARVATION_OXY_HEAL_RATE 1 //While starving, THIS much oxygen damage is restored per life tick (instead of the default 5)
+
