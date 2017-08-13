@@ -86,7 +86,7 @@ var/global/universe_has_ended = 0
 		if(!istype(A,/area) || istype(A, /area/space) || istype(A,/area/beach))
 			continue
 
-		A.updateicon()
+		A.update_icon()
 
 /datum/universal_state/supermatter_cascade/OverlayAndAmbientSet()
 	spawn(0)
