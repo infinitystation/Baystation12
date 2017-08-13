@@ -20,4 +20,3 @@ hellpony - Admin Candidate
 romeo517 - Admin Candidate
 
 JohnTheBastard - Host
-quardbreak - Host

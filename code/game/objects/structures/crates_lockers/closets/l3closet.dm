@@ -106,7 +106,8 @@
 	icon_closed = "bio_command"
 	icon_opened = "bio_commandopen"
 
-	will_contain = list(
+/obj/structure/closet/l3closet/xeno_anom/WillContain()
+	return list(
 		/obj/item/clothing/suit/bio_suit/anomaly,
 		/obj/item/clothing/head/bio_hood/anomaly,
 		/obj/item/clothing/mask/breath,
