@@ -51,6 +51,16 @@ var/list/keyboard_sound = list('sound/machines/keypress1.ogg','sound/machines/ke
 var/list/switch_sound = list('sound/machines/switch1.ogg','sound/machines/switch2.ogg','sound/machines/switch3.ogg','sound/machines/switch4.ogg')
 var/list/button_sound = list('sound/machines/button1.ogg','sound/machines/button2.ogg','sound/machines/button3.ogg','sound/machines/button4.ogg')
 
+//Foostep sounds:
+var/list/erikafootsteps = list('sound/effects/footsteps/tile1.wav','sound/effects/footsteps/tile2.wav','sound/effects/footsteps/tile3.wav','sound/effects/footsteps/tile4.wav')
+var/list/grassfootsteps = list('sound/effects/footsteps/grass/grass1.wav','sound/effects/footsteps/grass/grass2.wav','sound/effects/footsteps/grass/grass3.wav','sound/effects/footsteps/grass/grass4.wav')
+var/list/dirtfootsteps = list('sound/effects/footsteps/dirt/dirt1.wav','sound/effects/footsteps/dirt/dirt2.wav','sound/effects/footsteps/dirt/dirt3.wav','sound/effects/footsteps/dirt/dirt4.wav')
+var/list/waterfootsteps = list('sound/effects/footsteps/water/slosh1.wav','sound/effects/footsteps/water/slosh2.wav','sound/effects/footsteps/water/slosh3.wav','sound/effects/footsteps/water/slosh4.wav')
+var/list/sandfootsteps = list('sound/effects/footsteps/sand/sand_step1.ogg','sound/effects/footsteps/sand/sand_step2.ogg','sound/effects/footsteps/sand/sand_step3.ogg','sound/effects/footsteps/sand/sand_step4.ogg','sound/effects/footsteps/sand/sand_step5.ogg','sound/effects/footsteps/sand/sand_step6.ogg','sound/effects/footsteps/sand/sand_step7.ogg','sound/effects/footsteps/sand/sand_step8.ogg')
+var/list/woodfootsteps = list ('sound/effects/footsteps/wood/wood_step1.ogg','sound/effects/footsteps/wood/wood_step2.ogg','sound/effects/footsteps/wood/wood_step3.ogg','sound/effects/footsteps/wood/wood_step4.ogg','sound/effects/footsteps/wood/wood_step5.ogg','sound/effects/footsteps/wood/wood_step6.ogg','sound/effects/footsteps/wood/wood_step7.ogg','sound/effects/footsteps/wood/wood_step8.ogg')
+var/list/carpetfootsteps = list ('sound/effects/footsteps/carpet/carpet_step1.ogg','sound/effects/footsteps/carpet/carpet_step2.ogg','sound/effects/footsteps/carpet/carpet_step3.ogg','sound/effects/footsteps/carpet/carpet_step4.ogg','sound/effects/footsteps/carpet/carpet_step5.ogg','sound/effects/footsteps/carpet/carpet_step6.ogg','sound/effects/footsteps/carpet/carpet_step7.ogg','sound/effects/footsteps/carpet/carpet_step8.ogg')
+var/list/platingfootsteps = list('sound/effects/footsteps/plating1.ogg','sound/effects/footsteps/plating2.ogg', 'sound/effects/footsteps/plating3.ogg', 'sound/effects/footsteps/plating4.ogg')
+
 /proc/absolute(x as num)
 	return abs(x)
 
@@ -188,5 +198,12 @@ var/const/Z_MAX = 5
 			if ("keyboard") soundin = pick(keyboard_sound)
 			if ("switch") soundin = pick(switch_sound)
 			if ("button") soundin = pick(button_sound)
+			if ("erikafootsteps") soundin = pick(erikafootsteps)
+			if ("grassfootsteps") soundin = pick(grassfootsteps)
+			if ("dirtfootsteps") soundin = pick(dirtfootsteps)
+			if ("waterfootsteps") soundin = pick(waterfootsteps)
+			if ("sandfootsteps") soundin = pick(sandfootsteps)
+			if ("woodfootsteps") soundin = pick(woodfootsteps)
+			if ("carpetfootsteps") soundin = pick(carpetfootsteps)
 			//if ("gunshot") soundin = pick(gun_sound)
 	return soundin

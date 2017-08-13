@@ -274,7 +274,7 @@
 	desc = "A veil which is wrapped to cover the head and chest."
 	icon_state = "hijab"
 	body_parts_covered = 0
-	flags_inv = BLOCKHAIR
+	flags_inv = BLOCKHEADHAIR
 
 /obj/item/clothing/head/kippa
 	name = "kippa"

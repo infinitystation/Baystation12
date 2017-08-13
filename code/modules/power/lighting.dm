@@ -42,7 +42,7 @@ var/global/list/light_type_cache = list()
 		if(istype(fixture, /obj/machinery/light))
 			fixture_type = fixture.type
 		fixture.transfer_fingerprints_to(src)
-		stage = 2
+		stage = 1
 
 	update_icon()
 
@@ -60,24 +60,25 @@ var/global/list/light_type_cache = list()
 		if(1) to_chat(user, "It's an empty frame.")
 		if(2) to_chat(user, "It's wired.")
 		if(3) to_chat(user, "The casing is closed.")
+
 /obj/machinery/light_construct/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	src.add_fingerprint(user)
-	if (istype(W, /obj/item/weapon/wrench))
-		if (src.stage == 1)
+	if(istype(W, /obj/item/weapon/wrench))
+		if(src.stage == 1)
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 			to_chat(usr, "You begin deconstructing \a [src].")
-			if (!do_after(usr, 30,src))
+			if(!do_after(usr, 30,src))
 				return
-			new /obj/item/stack/material/steel( get_turf(src.loc), sheets_refunded )
+			new /obj/item/stack/material/steel(get_turf(src.loc), sheets_refunded)
 			user.visible_message("[user.name] deconstructs [src].", \
 				"You deconstruct [src].", "You hear a noise.")
 			playsound(src.loc, 'sound/items/Deconstruct.ogg', 75, 1)
 			qdel(src)
-		if (src.stage == 2)
+		if(src.stage == 2)
 			to_chat(usr, "You have to remove the wires first.")
 			return
 
-		if (src.stage == 3)
+		if(src.stage == 3)
 			to_chat(usr, "You have to unscrew the case first.")
 			return
 
@@ -92,9 +93,9 @@ var/global/list/light_type_cache = list()
 		return
 
 	if(istype(W, /obj/item/stack/cable_coil))
-		if (src.stage != 1) return
+		if(src.stage != 1) return
 		var/obj/item/stack/cable_coil/coil = W
-		if (coil.use(1))
+		if(coil.use(1))
 			src.stage = 2
 			src.update_icon()
 			user.visible_message("[user.name] adds wires to [src].", \
@@ -102,7 +103,7 @@ var/global/list/light_type_cache = list()
 		return
 
 	if(istype(W, /obj/item/weapon/screwdriver))
-		if (src.stage == 2)
+		if(src.stage == 2)
 			src.stage = 3
 			src.update_icon()
 			user.visible_message("[user.name] closes [src]'s casing.", \

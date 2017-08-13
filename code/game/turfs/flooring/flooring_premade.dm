@@ -228,6 +228,9 @@
 /turf/simulated/floor/beach/water
 	name = "water"
 	icon_state = "water"
+	light_color = "#00BFFF"
+	light_power = 2
+	light_range = 2
 
 /turf/simulated/floor/beach/water/update_dirt()
 	return	// Water doesn't become dirty
