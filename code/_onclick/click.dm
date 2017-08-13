@@ -459,7 +459,7 @@ var/const/CLICK_HANDLER_ALL                  = (~0)
 	if(scrambling)
 		return
 	if(!has_limbs)
-		src << "\red You can't even move yourself - you have no limbs!"
+		src << "<span class='warning'>You can't even move yourself - you have no limbs!</span>"
 	var/dx = A.x - x
 	var/dy = A.y - y
 	if(!dx && !dy) return
@@ -476,6 +476,6 @@ var/const/CLICK_HANDLER_ALL                  = (~0)
 			Move(get_step(src,direction))
 			scrambling = 0
 			dir = 2
-			src.visible_message("\red <b>[src]</b> crawls!")
+			src.visible_message("<span class='warning'><b>[src]</b> crawls!</span>")
 		//else
 		//	scrambling = 0
