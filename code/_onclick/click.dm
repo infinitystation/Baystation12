@@ -472,7 +472,7 @@ var/const/CLICK_HANDLER_ALL                  = (~0)
 		else		direction = WEST
 	if(direction)
 		scrambling = 1
-		spawn(35)//if(do_after(src, 5))
+		spawn(30)//if(do_after(src, 5))
 			Move(get_step(src,direction))
 			scrambling = 0
 			dir = 2

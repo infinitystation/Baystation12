@@ -91,6 +91,8 @@
 			if(mind.changeling)
 				stat("Chemical Storage", mind.changeling.chem_charges)
 				stat("Genetic Damage Time", mind.changeling.geneticdamage)
+		/*if(nutrition)
+			stat("Nutrition:", "[nutrition]")*/
 
 /mob/living/carbon/human/ex_act(severity)
 	if(!blinded)
