@@ -24,7 +24,7 @@
 		return
 	var/turf/T = mob.loc
 
-	if (!( istype(T, /turf) ))
+	if(!(istype(T, /turf)))
 		return
 
 	var/datum/gas_mixture/env = T.return_air()
@@ -118,7 +118,7 @@
 		alert("Invalid mob")
 
 /proc/make_types_fancy(var/list/types)
-	if (ispath(types))
+	if(ispath(types))
 		types = list(types)
 	. = list()
 	for(var/type in types)
@@ -150,22 +150,22 @@
 			/mob/living = "LIVING",
 			/mob = "M"
 		)
-		for (var/tn in TYPES_SHORTCUTS)
-			if (copytext(typename,1, length("[tn]/")+1)=="[tn]/" /*findtextEx(typename,"[tn]/",1,2)*/ )
+		for(var/tn in TYPES_SHORTCUTS)
+			if(copytext(typename,1, length("[tn]/")+1)=="[tn]/" /*findtextEx(typename,"[tn]/",1,2)*/ )
 				typename = TYPES_SHORTCUTS[tn]+copytext(typename,length("[tn]/"))
 				break
 		.[typename] = type
 
 /proc/get_fancy_list_of_atom_types()
 	var/static/list/pre_generated_list
-	if (!pre_generated_list) //init
+	if(!pre_generated_list) //init
 		pre_generated_list = make_types_fancy(typesof(/atom))
 	return pre_generated_list
 
 
 /proc/get_fancy_list_of_datum_types()
 	var/static/list/pre_generated_list
-	if (!pre_generated_list) //init
+	if(!pre_generated_list) //init
 		pre_generated_list = make_types_fancy(sortList(typesof(/datum) - typesof(/atom)))
 	return pre_generated_list
 
@@ -291,7 +291,7 @@
 	set name = "Del-All"
 
 	var/list/matches = get_fancy_list_of_atom_types()
-	if (!isnull(object) && object!="")
+	if(!isnull(object) && object!="")
 		matches = filter_fancy_list(matches, object)
 
 	if(matches.len==0)
@@ -331,12 +331,12 @@
 	set category = "Admin"
 	set name = "Grant Full Access"
 
-	if (!ticker)
+	if(!ticker)
 		alert("Wait until the game starts")
 		return
-	if (istype(M, /mob/living/carbon/human))
+	if(istype(M, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = M
-		if (H.wear_id)
+		if(H.wear_id)
 			var/obj/item/weapon/card/id/id = H.wear_id
 			if(istype(H.wear_id, /obj/item/device/pda))
 				var/obj/item/device/pda/pda = H.wear_id
