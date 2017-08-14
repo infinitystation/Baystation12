@@ -13,6 +13,9 @@
 
 	var/foodsupply = 0
 	var/toxins = 0
+	var/radium = 0
+	var/radiation_storage = 0
+	var/foodsupply_storage = 0
 
 /obj/machinery/disease2/incubator/attackby(var/obj/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/weapon/reagent_containers/glass) || istype(O,/obj/item/weapon/reagent_containers/syringe))
@@ -128,13 +131,16 @@
 		GLOB.nanomanager.update_uis(src)
 
 	if(beaker)
-		if(foodsupply < 100 && beaker.reagents.remove_reagent("virusfood",5))
-			if(foodsupply + 10 <= 100)
+		if(foodsupply < 100 && foodsupply + 10 <= 100)
+			if(beaker.reagents.remove_reagent("virusfood",5))
 				foodsupply += 10
-			else
-				beaker.reagents.add_reagent("virusfood",(100 - foodsupply)/2)
-				foodsupply = 100
-			GLOB.nanomanager.update_uis(src)
+		else if (!(foodsupply + 10 <= 100))
+			if(beaker.reagents.remove_reagent("virusfood",1))
+				if (!(foodsupply >= 100))
+					foodsupply += 1
+				else
+					foodsupply_storage += 2
+		GLOB.nanomanager.update_uis(src)
 
 		if (locate(/datum/reagent/toxin) in beaker.reagents.reagent_list && toxins < 100)
 			for(var/datum/reagent/toxin/T in beaker.reagents.reagent_list)
@@ -144,6 +150,20 @@
 					toxins = 100
 					break
 			GLOB.nanomanager.update_uis(src)
+
+		if (radiation < 100)
+			if (beaker.reagents.remove_reagent("radium",1))
+				radiation_storage += 4
+			GLOB.nanomanager.update_uis(src)
+
+	if (foodsupply_storage)
+		if (!(foodsupply == 100))
+			if (foodsupply_storage > 100 - foodsupply)
+				foodsupply_storage -= 100 - foodsupply
+				foodsupply = 100
+			else
+				foodsupply_storage = 0
+				foodsupply += foodsupply_storage
 
 /obj/machinery/disease2/incubator/Topic(href, href_list)
 	if (..()) return 1
@@ -177,7 +197,17 @@
 		return 1
 
 	if (href_list["rad"])
-		radiation = min(100, radiation + 10)
+		if (radiation_storage)
+			if (radiation_storage <= 100)
+				if ((radiation + radiation_storage) <= 100)
+					radiation += radiation_storage
+					radiation_storage = 0
+				else
+					radiation = 100
+					radiation_storage -= 100 - radiation
+			else
+				radiation = 100
+				radiation_storage -= 100
 		return 1
 
 	if (href_list["flush"])
