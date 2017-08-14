@@ -227,7 +227,7 @@ proc/slur(phrase)
 			//if(11,12)	newletter="<big>[newletter]</big>"
 			//if(13)	newletter="<small>[newletter]</small>"
 		newphrase+="[newletter]";counter-=1
-	return newphrase
+	return sanitize_a0(newphrase)
 
 /proc/stutter(n)
 	var/te = html_decode(n)
