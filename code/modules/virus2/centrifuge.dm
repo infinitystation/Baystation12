@@ -31,6 +31,8 @@
 	..()
 	if(! (stat & (BROKEN|NOPOWER)) && (isolating || curing))
 		icon_state = "centrifuge_moving"
+	else if (! (stat & (BROKEN|NOPOWER)) && !(isolating || curing))
+		icon_state = "centrifuge"
 
 /obj/machinery/computer/centrifuge/attack_hand(var/mob/user as mob)
 	if(..()) return
