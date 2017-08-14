@@ -164,5 +164,6 @@
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/kelotane,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/leporazine,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/oxycodone,
+			/obj/item/weapon/reagent_containers/chem_disp_cartridge/glucose,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/bicaridine
 		)

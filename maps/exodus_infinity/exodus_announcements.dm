@@ -1,11 +1,11 @@
 /datum/map/exodus
-	emergency_shuttle_docked_message = "The Emergency Shuttle has docked with the station. You have approximately %ETD% to board the Emergency Shuttle."
-	emergency_shuttle_leaving_dock = "The Emergency Shuttle has left the station. Estimate %ETA% until the shuttle docks at %dock_name%."
+	emergency_shuttle_docked_message = "Эвакуационный шаттл производит стыковку с КСН Исход. Шаттл отбывает через %ETD%."
+	emergency_shuttle_leaving_dock = "Эвакуационный шаттл покинул КСН ИТсход. Расчетное время прибытия: %ETA%, пункт назначения: %dock_name%."
 
-	emergency_shuttle_called_message = "An emergency evacuation shuttle has been called. It will arrive in approximately %ETA%"
+	emergency_shuttle_called_message = "Был вызван Эвакуационный шаттл. Расчетное время прибытия: %ETA%"
 	emergency_shuttle_called_sound = 'sound/AI/shuttlecalled.ogg'
 
-	emergency_shuttle_recall_message = "The emergency shuttle has been recalled."
+	emergency_shuttle_recall_message = "Эвакуационный шаттл был отозван.."
 
 	command_report_sound = 'sound/AI/commandreport.ogg'
 	grid_check_sound = 'sound/AI/poweroff.ogg'

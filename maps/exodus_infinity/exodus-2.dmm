@@ -3246,6 +3246,7 @@
 	name = "Escape Pod";
 	req_access = list(13)
 	},
+/obj/machinery/shield_diffuser,
 /turf/simulated/floor/plating,
 /area/maintenance/security_starboard)
 "agl" = (
@@ -11406,11 +11407,12 @@
 	name = "Escape Pod";
 	req_access = list(13)
 	},
+/obj/machinery/shield_diffuser,
 /turf/simulated/floor/plating,
 /area/hallway/secondary/entry/pods)
 "avh" = (
 /obj/structure/sign/warning/pods,
-/turf/simulated/wall,
+/turf/simulated/wall/r_wall,
 /area/hallway/secondary/entry/pods)
 "avi" = (
 /obj/machinery/door/airlock/external{
@@ -11421,6 +11423,7 @@
 	name = "Escape Pod";
 	req_access = list(13)
 	},
+/obj/machinery/shield_diffuser,
 /turf/simulated/floor/plating,
 /area/hallway/secondary/entry/pods)
 "avj" = (
@@ -18166,7 +18169,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/mouse,
+/obj/structure/table/rack,
+/obj/random/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/bar)
 "aHz" = (
@@ -18217,6 +18221,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/structure/table/rack,
+/obj/random/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/library)
 "aHE" = (
@@ -39460,7 +39466,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/random_multi/single_item/captains_spare_id,
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 22
@@ -54531,6 +54536,7 @@
 	name = "Escape Pod";
 	req_access = list(13)
 	},
+/obj/machinery/shield_diffuser,
 /turf/simulated/floor/plating,
 /area/maintenance/cargo)
 "bWr" = (
@@ -74436,6 +74442,28 @@
 	},
 /turf/space,
 /area/space)
+"cFZ" = (
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/turf/simulated/floor/plating,
+/area/maintenance/evahallway)
+"cGa" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/turf/simulated/floor/plating,
+/area/maintenance/arrivals)
+"cGb" = (
+/mob/living/simple_animal/mouse,
+/turf/simulated/floor/plating,
+/area/maintenance/bar)
+"cGc" = (
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/turf/simulated/floor/plating,
+/area/maintenance/bar)
 
 (1,1,1) = {"
 aaa
@@ -85581,7 +85609,7 @@ aaa
 afp
 aaf
 aaf
-aqD
+aaf
 aqD
 aqD
 aqD
@@ -85839,12 +85867,12 @@ afp
 aaa
 aaa
 aaa
+aaa
 arr
 asd
 asd
 atG
-auh
-avf
+aqD
 avN
 awJ
 axA
@@ -86096,11 +86124,11 @@ afp
 aaf
 aaa
 aaa
+aaa
 ars
 ase
 asR
 atH
-aui
 avg
 avO
 awJ
@@ -86351,13 +86379,13 @@ aaa
 aaa
 afp
 aaf
+aaa
 aaf
 aaa
 art
 asd
 asd
 atI
-auj
 avh
 avP
 awJ
@@ -86615,7 +86643,7 @@ aqD
 aqD
 aqD
 aqD
-avf
+aqD
 avQ
 awK
 axC
@@ -86864,15 +86892,15 @@ aaa
 aaa
 aaa
 afp
-aaa
 aaf
+aaf
+aaa
 aaa
 aru
 asf
 asf
 atJ
-auh
-avf
+aqD
 avR
 awL
 axB
@@ -87124,11 +87152,11 @@ afp
 aaa
 aaa
 aaa
+aaa
 arv
 asg
 asS
 atK
-aui
 avi
 avS
 awL
@@ -87381,11 +87409,11 @@ afp
 aac
 aaa
 aaa
+aaa
 arw
 asf
 asf
 atL
-auj
 avh
 avT
 awL
@@ -87637,7 +87665,7 @@ aaa
 afp
 aaf
 aaf
-aqD
+aaf
 aqD
 aqD
 aqD
@@ -87907,7 +87935,7 @@ awN
 ayB
 azC
 ayA
-aBP
+cGa
 aCI
 aDM
 aFi
@@ -96118,7 +96146,7 @@ akO
 aol
 apd
 apd
-apd
+cFZ
 arx
 ash
 asT
@@ -97463,9 +97491,9 @@ bPA
 bFC
 aaa
 aaf
-bUS
-bWl
-bXI
+aaa
+aaa
+aaa
 aaa
 aaf
 aaf
@@ -97720,9 +97748,9 @@ bPB
 bMz
 bMz
 bTx
-bUT
-bWm
-bUT
+bUS
+bWl
+bXI
 bYW
 cam
 cbD
@@ -97978,7 +98006,7 @@ bQW
 bSm
 bTx
 bUT
-bWn
+bWm
 bUT
 bYW
 can
@@ -98234,9 +98262,9 @@ bPD
 bQX
 bSm
 bTx
-bUU
-bWo
-bXJ
+bUT
+bWn
+bUT
 bYW
 cao
 cbF
@@ -98490,11 +98518,11 @@ bEe
 bPD
 bQY
 bSn
-bMz
-bUV
-bWp
-bXK
-bYX
+bTx
+bUU
+bWo
+bXJ
+bYW
 cap
 cbF
 cdj
@@ -98747,11 +98775,11 @@ bEe
 bPD
 bQY
 bSo
-bMz
-bMz
+bTx
+bTx
 bWq
-bMz
-bYX
+bTx
+bYW
 caq
 cbG
 cdi
@@ -107921,11 +107949,11 @@ adM
 abi
 abi
 abi
-abi
-abi
+afo
+afo
 agk
-abi
-abi
+afo
+afo
 aby
 aby
 aby
@@ -108178,11 +108206,11 @@ adL
 aee
 abi
 aaa
-abi
-afK
-agl
-agS
-abi
+afo
+afL
+agm
+agT
+afo
 aaa
 aaf
 aaf
@@ -108436,9 +108464,9 @@ aef
 abi
 aaf
 afo
-afL
-agm
-agT
+afM
+agn
+afM
 afo
 aaa
 aaa
@@ -108694,7 +108722,7 @@ abi
 aaa
 afo
 afM
-agn
+ago
 afM
 afo
 aaa
@@ -108950,9 +108978,9 @@ abi
 abi
 aaf
 afo
-afM
-ago
-afM
+afN
+agp
+agU
 afo
 aaa
 aaa
@@ -109207,9 +109235,9 @@ aaf
 aaf
 aaa
 afo
-afN
-agp
-agU
+aaa
+aaa
+aaa
 afo
 aaa
 aaa
@@ -109463,11 +109491,11 @@ aaf
 aaf
 aaa
 aaa
-afo
+aaf
 aaa
 aaa
 aaa
-afo
+aaf
 aaa
 aaa
 aaa
@@ -113099,7 +113127,7 @@ aaj
 aDv
 aHu
 aJi
-aJi
+cGc
 aDv
 aDv
 aPu
@@ -113355,7 +113383,7 @@ atE
 aaj
 aDv
 aHu
-aJi
+cGb
 aDv
 aDv
 aJi
