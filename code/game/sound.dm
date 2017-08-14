@@ -207,5 +207,6 @@ var/const/Z_MAX = 5
 			if ("sandfootsteps") soundin = pick(sandfootsteps)
 			if ("woodfootsteps") soundin = pick(woodfootsteps)
 			if ("carpetfootsteps") soundin = pick(carpetfootsteps)
+			if ("platingfootsteps") soundin = pick(platingfootsteps)
 			if ("gunshot") soundin = pick(gun_sound)
 	return soundin
