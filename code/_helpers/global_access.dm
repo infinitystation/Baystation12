@@ -549,6 +549,8 @@
 			return global.grassfootsteps;
 		if("gravity_is_on")
 			return global.gravity_is_on;
+		if("gun_sound")
+			return global.gun_sound;
 		if("gyrotrons")
 			return global.gyrotrons;
 		if("hadevent")
@@ -1788,6 +1790,8 @@
 			global.grassfootsteps=newval;
 		if("gravity_is_on")
 			global.gravity_is_on=newval;
+		if("gun_sound")
+			global.gun_sound=newval;
 		if("gyrotrons")
 			global.gyrotrons=newval;
 		if("hadevent")
@@ -2752,6 +2756,7 @@
 	"godcult",
 	"grassfootsteps",
 	"gravity_is_on",
+	"gun_sound",
 	"gyrotrons",
 	"hadevent",
 	"hair_styles_female_list",
