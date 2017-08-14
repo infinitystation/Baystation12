@@ -8075,7 +8075,7 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "arX" = (
-/obj/machinery/computer/shuttle_control/multi/antag/syndicate,
+/obj/machinery/computer/shuttle_control/multi/syndicate,
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "arY" = (
@@ -21739,7 +21739,7 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aUU" = (
-/obj/machinery/computer/shuttle_control/multi/antag/vox,
+/obj/machinery/computer/shuttle_control/multi/vox,
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "aUV" = (
