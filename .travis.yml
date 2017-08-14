@@ -15,7 +15,6 @@ env:
     - TEST=MAP MAP_PATH=example 
     - TEST=MAP MAP_PATH=exodus_infinity
     - TEST=MAP MAP_PATH=torch
-    - TEST=MAP MAP_PATH=torch_infinity
     - TEST=MAP MAP_PATH=overmap_example
 
 cache:
