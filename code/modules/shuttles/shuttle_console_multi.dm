@@ -20,6 +20,8 @@
 		if(CanInteract(usr, GLOB.default_state))
 			shuttle.set_destination(dest_key, usr)
 
+/obj/machinery/computer/shuttle_control/multi/antag
+	ui_template = "shuttle_control_console_antag.tmpl"
 
 /obj/machinery/computer/shuttle_control/multi/antag/get_ui_data(var/datum/shuttle/autodock/multi/antag/shuttle)
 	. = ..()

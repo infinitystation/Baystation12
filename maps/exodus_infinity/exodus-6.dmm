@@ -16199,6 +16199,20 @@
 	icon_state = "asteroidplating"
 	},
 /area/mine/explored)
+"Ez" = (
+/obj/machinery/light{
+	icon_state = "tube1";
+	dir = 1
+	},
+/turf/simulated/floor/asteroid,
+/area/mine/explored)
+"EA" = (
+/obj/machinery/light{
+	icon_state = "tube1";
+	dir = 1
+	},
+/turf/simulated/floor/asteroid,
+/area/mine/explored)
 
 (1,1,1) = {"
 aa
@@ -55854,7 +55868,7 @@ nA
 jN
 ok
 ae
-Ey
+Ex
 ac
 ac
 ac
@@ -72623,15 +72637,15 @@ tH
 up
 rq
 ad
-ad
+BN
 da
-vq
 vE
 vE
 vE
-vX
+vE
+vE
 da
-ad
+Ez
 ad
 ad
 ad
@@ -74679,15 +74693,15 @@ ad
 ad
 ad
 ad
-ad
+BN
 da
-vt
 vF
 vF
 vF
-vY
+vF
+vF
 da
-ad
+EA
 ad
 ad
 ad

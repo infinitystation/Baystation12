@@ -914,9 +914,14 @@
 		return
 
 	// Puke if toxloss is too high
-	if(!stat)
-		if (getToxLoss() >= 45 && nutrition > 20)
-			spawn vomit()
+	var/obj/item/organ/internal/liver/L = internal_organs_by_name[BP_LIVER]
+	var/obj/item/organ/internal/kidneys/K = internal_organs_by_name[BP_KIDNEYS]
+	var/tox_loss = getToxLoss()
+
+	if(!stat && !lastpuke && tox_loss > 5 && ((L && !(L.status & ORGAN_DEAD)) || (K && !(K.status & ORGAN_DEAD))))
+		if (prob(10))
+			var/vom_stats = 70 / max(7, 70 - getToxLoss())
+			spawn vomit(1, vom_stats, vom_stats)
 
 	//0.1% chance of playing a scary sound to someone who's in complete darkness
 	if(isturf(loc) && rand(1,1000) == 1)
@@ -971,41 +976,31 @@
 				if(sleeping) return
 
 				if(prob(3)) //3% chance of a tiny amount of oxygen damage (1-10)
-
 					adjustOxyLoss(rand(1,10))
 					to_chat(src, "<span class='danger'>[pick(hunger_phrases)]</span>")
 
 				else if(prob(5)) //5% chance of being weakened
-
-					eye_blurry += 10
 					Weaken(10)
 					adjustOxyLoss(rand(1,15))
 					to_chat(src, "<span class='danger'>You're starving! The lack of strength makes you black out for a few moments...</span>")
 
-			if(STARVATION_NEARDEATH to STARVATION_WEAKNESS) //5-30, 5% chance of weakening and 1-230 oxygen damage. 5% chance of a seizure. 10% chance of dropping item
+			if(STARVATION_NEARDEATH to STARVATION_WEAKNESS) //5-30, 5% chance of weakening and 1-23 oxygen damage. 5% chance of a seizure. 10% chance of dropping item
 				if(sleeping) return
 
 				if(prob(5))
-
 					adjustOxyLoss(rand(1,20))
 					to_chat(src, "<span class='danger'>You're starving. You feel your life force slowly leaving your body...</span>")
 					eye_blurry += 20
 					if(weakened < 1) Weaken(20)
 
 				else if(paralysis<1 && prob(5)) //Mini seizure (25% duration and strength of a normal seizure)
-
 					visible_message("<span class='danger'>\The [src] starts having a seizure!</span>", \
 							"<span class='warning'>You have a seizure!</span>")
 					Paralyse(5)
 					make_jittery(500)
-					adjustOxyLoss(rand(1,25))
-					eye_blurry += 20
 
 			if(-INFINITY to STARVATION_NEARDEATH) //Fuck the whole body up at this point
-				to_chat(src, "<span class='danger'>You are dying from starvation!</span>")
-				adjustToxLoss(STARVATION_TOX_DAMAGE)
-				adjustOxyLoss(STARVATION_OXY_DAMAGE)
-				adjustBrainLoss(STARVATION_BRAIN_DAMAGE)
+				to_chat(src, "<span class='danger'>Without food, I feel very, very bad...</span>")
 
 				if(prob(10))
 					Weaken(15)
