@@ -33,7 +33,7 @@
 /datum/gear/uniform/roboticist_skirt
 	display_name = "skirt, roboticist"
 	path = /obj/item/clothing/under/rank/roboticist/skirt
-	allowed_roles = list("Roboticist")
+	allowed_roles = list(/datum/job/roboticist)
 
 /datum/gear/uniform/suit
 	display_name = "suit selection"
@@ -66,7 +66,7 @@
 /datum/gear/uniform/scrubs
 	display_name = "medical scrubs"
 	path = /obj/item/clothing/under/rank/medical/black
-	allowed_roles = list("Medical Doctor","Chief Medical Officer","Chemist","Paramedic","Geneticist")
+	allowed_roles = list(MED_ROLES)
 
 /datum/gear/uniform/scrubs/New()
 	..()
@@ -102,22 +102,22 @@
 /datum/gear/uniform/corpsecsuit
 	display_name = "uniform, corporate (Security)"
 	path = /obj/item/clothing/under/rank/security/corp
-	allowed_roles = list("Security Officer","Head of Security","Warden")
+	allowed_roles = list(SEC_ROLES_PRIMARY)
 
 /datum/gear/uniform/uniform_hop
 	display_name = "uniform, HoP's dress"
 	path = /obj/item/clothing/under/dress/dress_hop
-	allowed_roles = list("Head of Personnel")
+	allowed_roles = list(/datum/job/hop)
 
 /datum/gear/uniform/uniform_hr
 	display_name = "uniform, HR director (HoP)"
 	path = /obj/item/clothing/under/dress/dress_hr
-	allowed_roles = list("Head of Personnel")
+	allowed_roles = list(/datum/job/hop)
 
 /datum/gear/uniform/navysecsuit
 	display_name = "uniform, navyblue (Security)"
 	path = /obj/item/clothing/under/rank/security/navyblue
-	allowed_roles = list("Security Officer","Head of Security","Warden")
+	allowed_roles = list(SEC_ROLES_PRIMARY)
 
 /datum/gear/uniform/skirt
 	display_name = "skirt selection"

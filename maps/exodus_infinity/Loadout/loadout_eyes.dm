@@ -26,27 +26,27 @@
 /datum/gear/eyes/security
 	display_name = "Security HUD"
 	path = /obj/item/clothing/glasses/hud/security
-	allowed_roles = list("Security Officer","Head of Security","Warden")
+	allowed_roles = list(SEC_ROLES_PRIMARY)
 
 /datum/gear/eyes/security/prescription
 	display_name = "Security HUD, prescription"
 	path = /obj/item/clothing/glasses/hud/security/prescription
-	allowed_roles = list("Security Officer","Head of Security","Warden")
+	allowed_roles = list(SEC_ROLES_PRIMARY)
 
 /datum/gear/eyes/secaviators
 	display_name = "Security HUD Aviators"
 	path = /obj/item/clothing/glasses/sunglasses/sechud/toggle
-	allowed_roles = list("Security Officer","Head of Security","Warden")
+	allowed_roles = list(SEC_ROLES_PRIMARY)
 
 /datum/gear/eyes/medical
 	display_name = "Medical HUD"
 	path = /obj/item/clothing/glasses/hud/health
-	allowed_roles = list("Medical Doctor","Chief Medical Officer","Chemist","Paramedic","Geneticist")
+	allowed_roles = list(MED_ROLES)
 
 /datum/gear/eyes/medical/prescription
 	display_name = "Medical HUD, prescription"
 	path = /obj/item/clothing/glasses/hud/health/prescription
-	allowed_roles = list("Medical Doctor","Chief Medical Officer","Chemist","Paramedic","Geneticist")
+	allowed_roles = list(MED_ROLES)
 
 /datum/gear/eyes/shades
 	display_name = "sunglasses, fat"
