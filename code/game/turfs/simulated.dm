@@ -101,7 +101,7 @@
 
 		if(istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = M
-			var/footstepsound = null
+			//var/footstepsound = null
 			// Tracking blood
 			var/list/bloodDNA = null
 			var/bloodcolor=""
@@ -127,7 +127,7 @@
 
 				bloodDNA = null
 
-			//Shoe sounds
+			/*Shoe sounds
 			if(istype(src, /turf/simulated/floor/grass))
 				footstepsound = "grassfootsteps"
 			else if(istype(src, /turf/simulated/floor/beach/water))
@@ -159,7 +159,7 @@
 						H.footstep = 0
 						playsound(src, footstepsound, 100, 1)
 					else
-						H.footstep++
+						H.footstep++*/
 
 		if(src.wet)
 
