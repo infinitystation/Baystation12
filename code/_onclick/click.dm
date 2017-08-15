@@ -61,10 +61,6 @@
 		CtrlClickOn(A)
 		return 1
 
-	if(lying && istype(A, /turf/) && !istype(A, /turf/space/))
-		if(A.Adjacent(src) && !get_active_hand())
-			scramble(A)
-
 	if(stat || paralysis || stunned || weakened)
 		return
 
@@ -267,7 +263,7 @@
 
 /mob/proc/TurfAdjacent(var/turf/T)
 	return T.AdjacentQuick(src)
-
+    
 /mob/observer/ghost/TurfAdjacent(var/turf/T)
 	if(!isturf(loc) || !client)
 		return FALSE
@@ -448,34 +444,3 @@ var/const/CLICK_HANDLER_ALL                  = (~0)
 	click_handler = new new_click_handler_type(src)
 	click_handler.Enter()
 	click_handlers.Push(click_handler)
-
-/mob/proc/scramble(var/atom/A)
-	var/direction
-	if(stat || buckled || paralysis || stunned || sleeping || (status_flags & FAKEDEATH) || restrained() || (weakened > 5))
-		return
-	if(!istype(src.loc, /turf/))
-		return
-	if(!A || !x || !y || !A.x || !A.y) return
-	if(scrambling)
-		return
-	if(!has_limbs)
-		src << "<span class='warning'>You can't even move yourself - you have no limbs!</span>"
-	var/dx = A.x - x
-	var/dy = A.y - y
-	if(!dx && !dy) return
-
-	if(abs(dx) < abs(dy))
-		if(dy > 0)	direction = NORTH
-		else		direction = SOUTH
-	else
-		if(dx > 0)	direction = EAST
-		else		direction = WEST
-	if(direction)
-		scrambling = 1
-		spawn(30)//if(do_after(src, 5))
-			Move(get_step(src,direction))
-			scrambling = 0
-			dir = 2
-			src.visible_message("<span class='warning'><b>[src]</b> crawls!</span>")
-		//else
-		//	scrambling = 0
