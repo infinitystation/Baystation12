@@ -10,6 +10,7 @@
 	#include "exodus_unit_testing.dm"
 	#include "exodus_zas_tests.dm"
 
+	#include "loadout/job_defines.dm"
 	#include "loadout/_defines.dm"
 	#include "loadout/loadout_accessories.dm"
 	#include "loadout/loadout_eyes.dm"

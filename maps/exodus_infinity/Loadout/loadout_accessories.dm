@@ -45,7 +45,7 @@
 /datum/gear/accessory/holster
 	display_name = "holster selection"
 	path = /obj/item/clothing/accessory/holster
-	allowed_roles = list("Captain", "Head of Personnel", "Security Officer", "Warden", "Head of Security","Detective")
+	allowed_roles = list(SEC_ROLES, /datum/job/captain, /datum/job/hop)
 
 /datum/gear/accessory/holster/New()
 	..()
@@ -71,37 +71,37 @@
 /datum/gear/accessory/stethoscope
 	display_name = "stethoscope (medical)"
 	path = /obj/item/clothing/accessory/stethoscope
-	allowed_roles = list("Paramedic","Chief Medical Officer","Medical Doctor")
+	allowed_roles = list(MED_ROLES_PRIMARY)
 
 /datum/gear/accessory/brown_vest
 	display_name = "webbing, engineering"
 	path = /obj/item/clothing/accessory/storage/brown_vest
-	allowed_roles = list("Station Engineer","Atmospheric Technician","Chief Engineer")
+	allowed_roles = list(ENG_ROLES)
 
 /datum/gear/accessory/black_vest
 	display_name = "webbing, security"
 	path = /obj/item/clothing/accessory/storage/black_vest
-	allowed_roles = list("Security Officer","Head of Security","Warden")
+	allowed_roles = list(SEC_ROLES_PRIMARY)
 
 /datum/gear/accessory/white_vest
 	display_name = "webbing, medical"
 	path = /obj/item/clothing/accessory/storage/white_vest
-	allowed_roles = list("Paramedic","Chief Medical Officer","Medical Doctor")
+	allowed_roles = list(MED_ROLES_PRIMARY)
 
 /datum/gear/accessory/brown_drop_pouches
 	display_name = "drop pouches, engineering"
 	path = /obj/item/clothing/accessory/storage/drop_pouches/brown
-	allowed_roles = list("Engineer","Chief Engineer")
+	allowed_roles = list(ENG_ROLES)
 
 /datum/gear/accessory/black_drop_pouches
 	display_name = "drop pouches, security"
 	path = /obj/item/clothing/accessory/storage/drop_pouches/black
-	allowed_roles = list("Security Officer","Head of Security","Warden")
+	allowed_roles = list(SEC_ROLES_PRIMARY)
 
 /datum/gear/accessory/white_drop_pouches
 	display_name = "drop pouches, medical"
 	path =/obj/item/clothing/accessory/storage/drop_pouches/white
-	allowed_roles = list("Paramedic","Chief Medical Officer","Medical Doctor")
+	allowed_roles = list(MED_ROLES_PRIMARY)
 
 /datum/gear/accessory/webbing
 	display_name = "webbing, simple"

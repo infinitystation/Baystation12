@@ -120,7 +120,7 @@
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 	cost = 1
-	allowed_roles = list("Security Officer","Head of Security","Warden","Detective")
+	allowed_roles = list(SEC_ROLES)
 
 /datum/gear/eyes/tajblind/med
 	display_name = "medical veil (Tajara)"
@@ -128,7 +128,7 @@
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 	cost = 1
-	allowed_roles = list("Medical Doctor","Chief Medical Officer","Chemist","Paramedic","Geneticist")
+	allowed_roles = list(MED_ROLES)
 
 /datum/gear/eyes/tajblind/meson
 	display_name = "industrial veil (Tajara)"
@@ -136,4 +136,4 @@
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 	cost = 1
-	allowed_roles = list("Chief Engineer","Engineer","Shaft Miner")
+	allowed_roles = list(ENG_ROLES, /datum/job/mining)
