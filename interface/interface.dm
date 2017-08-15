@@ -180,7 +180,6 @@ Any-Mode: (hotkey doesn't need to be on)
 	function page_stories()		{location.href='?_src_=welcome;motd=stories';}
 	function page_wiki() 		{location.href='?_src_=welcome;motd=wiki';}
 	function page_admin() 		{location.href='?_src_=welcome;motd=admins;';}
-	function page_shame() 		{location.href='?_src_=welcome;motd=shames;';}
 	function page_forum() 		{location.href='?_src_=welcome;motd=forum;';}
 
 </script>
@@ -197,7 +196,6 @@ Any-Mode: (hotkey doesn't need to be on)
 <td><input type="button" value="Обновления" 		id="button2_changelog" onclick="page_changelog()">		</td>
 <td><input type="button" value="Истории" 			id="button4_stories" onclick="page_stories()">			</td>
 <td><input type="button" value="Администрация" 		id="button6_admin" onclick="page_admin()">				</td>
-<td><input type="button" value="Доска позора" 		id="button6_admin" onclick="page_shame()">				</td>
 <td align="right"><input type="button" value="Благодарности" id="button7_credits" onclick="page_credits()">	</td>
 </tr><table>
 
