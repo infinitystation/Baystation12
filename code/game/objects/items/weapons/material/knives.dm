@@ -17,7 +17,6 @@
 		..() //Updates force.
 		throwforce = max(3,force-3)
 		hitsound = 'sound/weapons/bladeslice.ogg'
-		icon_state += "_open"
 		w_class = ITEM_SIZE_NORMAL
 		attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	else
@@ -25,9 +24,19 @@
 		edge = 0
 		sharp = 0
 		hitsound = initial(hitsound)
-		icon_state = initial(icon_state)
 		w_class = initial(w_class)
 		attack_verb = initial(attack_verb)
+	update_icon()
+	usr.update_inv_l_hand()
+	usr.update_inv_r_hand()
+
+/obj/item/weapon/material/butterfly/update_icon()
+	if(active)
+		icon_state += "_open"
+		item_state = "butterflyknife_open"
+	else
+		icon_state = initial(icon_state)
+		item_state = initial(item_state)
 
 /obj/item/weapon/material/butterfly/switchblade
 	name = "switchblade"
