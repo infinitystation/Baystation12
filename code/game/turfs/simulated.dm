@@ -101,7 +101,8 @@
 
 		if(istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = M
-			//var/footstepsound = null
+			var/footstepsound = null
+			var/footstepsound_volume = 75
 			// Tracking blood
 			var/list/bloodDNA = null
 			var/bloodcolor=""
@@ -127,39 +128,41 @@
 
 				bloodDNA = null
 
-			/*Shoe sounds
+			//Shoe sounds
 			if(istype(src, /turf/simulated/floor/grass))
 				footstepsound = "grassfootsteps"
 			else if(istype(src, /turf/simulated/floor/beach/water))
 				footstepsound = "waterfootsteps"
-			else if(istype(src, /turf/simulated/floor/wood))
+				footstepsound_volume = 30
+			else if(istype(src, /turf/simulated/floor/wood) || src.name == "wooden floor")
 				footstepsound = "woodfootsteps"
-			else if(istype(src, /turf/simulated/floor/carpet))
+			else if(istype(src, /turf/simulated/floor/carpet) || src.name == "carpet")
 				footstepsound = "carpetfootsteps"
+				footstepsound_volume = 30
 			else if(istype(src, /turf/simulated/floor/beach/sand))
 				footstepsound = "dirtfootsteps"
-			else if(istype(src,/turf/simulated/floor/plating))
+			else if(istype(src,/turf/simulated/floor/plating || src.name == "plating"))
 				footstepsound = "platingfootsteps"
 			else if(istype(src,/turf/simulated/floor/snow))
 				footstepsound = "snowsteps"
-			else if(istype(src,/turf/simulated/floor/plating))
-				footstepsound = "platingfootsteps"
+				footstepsound_volume = 30
 			else
 				footstepsound = "erikafootsteps"
+				footstepsound_volume = 92.5
 
 			if(istype(H.shoes, /obj/item/clothing/shoes) && !H.throwing)//This is probably the worst possible way to handle walking sfx.
 				if(H.m_intent == "run")
 					if(H.footstep >= 1)//Every two steps.
 						H.footstep = 0
-						playsound(src, footstepsound, 100, 1)
+						playsound(src, footstepsound, footstepsound_volume, 1)
 					else
 						H.footstep++
 				else
-					if(H.footstep >= 6)
+					if(H.footstep >= 4)
 						H.footstep = 0
-						playsound(src, footstepsound, 100, 1)
+						playsound(src, footstepsound, footstepsound_volume, 1)
 					else
-						H.footstep++*/
+						H.footstep++
 
 		if(src.wet)
 
