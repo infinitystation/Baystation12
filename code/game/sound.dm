@@ -84,8 +84,12 @@ var/list/gun_sound = list('sound/weapons/gunshot.ogg', 'sound/weapons/gunshot2.o
 			var/turf/T = get_turf(M)
 			if(T && T.z == turf_source.z)
 				M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, is_global)
+			var/z_dist = abs(T.z - turf_source.z)
+			if(T && z_dist <= 1)
+				M.playsound_local(turf_source, soundin, vol/(1+z_dist), vary, frequency, falloff, is_global)
 
 var/const/FALLOFF_SOUNDS = 0.5
+var/const/Z_MAX = 5
 
 /mob/proc/playsound_local(var/turf/turf_source, soundin, vol as num, vary, frequency, falloff, is_global)
 	if(!src.client || ear_deaf > 0)	return
