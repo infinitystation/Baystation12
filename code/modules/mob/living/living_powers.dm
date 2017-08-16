@@ -7,7 +7,8 @@
 	set category = "Abilities"
 
 	if(incapacitated())
-		return
+		if(!resting)
+			return
 
 	hiding = !hiding
 	if(hiding)

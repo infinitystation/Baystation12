@@ -93,8 +93,6 @@
 /turf/simulated/Entered(atom/A, atom/OL)
 	if (istype(A,/mob/living))
 		var/mob/living/M = A
-		if(M.lying)
-			return ..()
 
 		// Dirt overlays.
 		update_dirt()
@@ -120,13 +118,22 @@
 					bloodcolor = H.feet_blood_color
 					H.track_blood--
 
-			if (bloodDNA)
-				src.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,H.dir,0,bloodcolor) // Coming
-				var/turf/simulated/from = get_step(H,reverse_direction(H.dir))
-				if(istype(from) && from)
-					from.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,0,H.dir,bloodcolor) // Going
+			if(bloodDNA)
+				if(M.lying)
+					src.AddTracks(/obj/effect/decal/cleanable/blood/tracks,bloodDNA,H.dir,0,bloodcolor) // Coming
+					var/turf/simulated/from = get_step(H,reverse_direction(H.dir))
+					if(istype(from) && from)
+						from.AddTracks(/obj/effect/decal/cleanable/blood/tracks,bloodDNA,0,H.dir,bloodcolor) // Going
+				else
+					src.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,H.dir,0,bloodcolor) // Coming
+					var/turf/simulated/from = get_step(H,reverse_direction(H.dir))
+					if(istype(from) && from)
+						from.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,0,H.dir,bloodcolor) // Going
 
 				bloodDNA = null
+
+			if(M.lying)
+				return ..()
 
 			//Shoe sounds
 			if(istype(src, /turf/simulated/floor/grass))
