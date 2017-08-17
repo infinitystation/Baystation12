@@ -319,3 +319,9 @@
 	slot = slot_tie
 	flags = GEAR_HAS_COLOR_SELECTION
 	sort_category = "Accessories"
+
+/datum/gear/boot_knife
+	display_name = "boot knife"
+	path = /obj/item/weapon/material/kitchen/utensil/knife/boot
+	cost = 3
+	allowed_roles = MILITARY_ROLES
