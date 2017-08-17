@@ -32,7 +32,6 @@
 /datum/gear/gloves/rainbow
 	display_name = "gloves, rainbow"
 	path = /obj/item/clothing/gloves/rainbow
-	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/gloves/evening
 	display_name = "gloves, evening"

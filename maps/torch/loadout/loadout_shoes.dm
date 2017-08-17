@@ -14,7 +14,6 @@
 	display_name = "athletic shoes"
 	path = /obj/item/clothing/shoes/athletic
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = SEMIFORMAL_ROLES
 
 /datum/gear/shoes/boots
 	display_name = "boot selection"
@@ -61,7 +60,6 @@
 	display_name = "flats"
 	path = /obj/item/clothing/shoes/flats
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = SEMIANDFORMAL_ROLES
 
 /datum/gear/shoes/high
 	display_name = "high tops selection"
