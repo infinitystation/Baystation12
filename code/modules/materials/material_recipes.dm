@@ -93,6 +93,7 @@
 	recipes += new/datum/stack_recipe("Metal crate", /obj/structure/closet/crate, 10, time = 50, one_per_turf = 1)
 	recipes += new/datum/stack_recipe("knife grip", /obj/item/weapon/material/butterflyhandle, 4, time = 20, one_per_turf = 0, on_floor = 1, supplied_material = "[name]")
 	recipes += new/datum/stack_recipe("dark floor tile", /obj/item/stack/tile/floor_dark, 1, 4, 20)
+//	recipes += new/datum/stack_recipe("metal barricade", /obj/structure/m_barricade, 5, time = 80, one_per_turf = 1, on_floor = 1)
 
 /material/stone/generate_recipes()
 	..()
