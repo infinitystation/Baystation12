@@ -146,6 +146,8 @@
 			else if(istype(src,/turf/simulated/floor/snow))
 				footstepsound = "snowsteps"
 				footstepsound_volume = 30
+			else if(istype(src,/turf/space || src.name == "space"))
+				footstepsound = null
 			else
 				footstepsound = "erikafootsteps"
 				footstepsound_volume = 92.5
