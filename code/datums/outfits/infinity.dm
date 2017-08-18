@@ -41,3 +41,27 @@
 	id_type = /obj/item/weapon/card/id/security
 	id_desc = "An ID of SCG police marshals."
 	id_pda_assignment = "Colonial Marshal Officer"
+
+/decl/hierarchy/outfit/DF/army/private
+	name = "SCG Private Army"
+	hierarchy_type = /decl/hierarchy/outfit/DF/army
+	shoes = /obj/item/clothing/shoes/jungleboots
+	uniform = /obj/item/clothing/under/utility/marine/tan
+	suit = /obj/item/clothing/suit/storage/vest/tactical
+	head = /obj/item/clothing/head/helmet/tactical
+	l_ear = /obj/item/device/radio/headset/specops
+	belt = /obj/item/weapon/storage/belt/security/tactical
+	l_pocket = /obj/random/rank/marine/private
+	r_pocket = /obj/item/device/flashlight/maglight
+
+/decl/hierarchy/outfit/DF/army/sergeant
+	name = "SCG Sergeant Army"
+	hierarchy_type = /decl/hierarchy/outfit/DF/army
+	shoes = /obj/item/clothing/shoes/jungleboots
+	uniform = /obj/item/clothing/under/utility/marine/tan
+	suit = /obj/item/clothing/suit/storage/vest/tactical
+	head = /obj/item/clothing/head/helmet/tactical
+	l_ear = /obj/item/device/radio/headset/specops
+	belt = /obj/item/weapon/storage/belt/security/tactical
+	l_pocket = /obj/random/rank/marine/sergeant
+	r_pocket = /obj/item/device/flashlight/maglight

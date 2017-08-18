@@ -1085,6 +1085,27 @@ something, make sure it's not in one of the other lists.*/
 				/obj/item/weapon/rig/unathi,
 				/obj/item/weapon/rig/unathi/fancy)
 
+/obj/random/rank
+	name = "Random SCG ranks"
+	desc = "This is a random SCG ranks."
+	icon = 'icons/obj/clothing/ties.dmi'
+	icon_state = "fleetrank"
+
+/obj/random/rank/marine/private
+	name = "Random SCG private marine ranks"
+
+/obj/random/rank/marine/private/spawn_choices()
+	return list(/obj/item/clothing/accessory/rank/marine/enlisted/e2 = 2,
+				/obj/item/clothing/accessory/rank/marine/enlisted/e3 = 3,
+				/obj/item/clothing/accessory/rank/marine/enlisted/e4 = 1)
+
+/obj/random/rank/marine/sergeant
+	name = "Random SCG sergeant marine ranks"
+
+/obj/random/rank/marine/sergeant/spawn_choices()
+	return list(/obj/item/clothing/accessory/rank/marine/enlisted/e5 = 3,
+				/obj/item/clothing/accessory/rank/marine/enlisted/e6 = 1)
+
 /*
 	Selects one spawn point out of a group of points with the same ID and asks it to generate its items
 */
