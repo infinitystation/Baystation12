@@ -295,7 +295,7 @@ for reference:
 
 /obj/structure/m_barricade/proc/update_health()
 	if(health < 0)
-		visible_message("\red [src] collapses!")
+		visible_message("<span class='danger'>[src] collapses!</span>")
 		new /obj/item/stack/material/plasteel(src.loc, 4)
 		qdel(src)
 		return
@@ -309,7 +309,7 @@ for reference:
 		return 1
 	if(locate(/obj/structure/table) in get_turf(mover)) //Tables let you climb on barricades.
 		return 1
-	if (get_dir(loc, target) == dir)
+	if(get_dir(loc, target) == dir)
 		return 0
 	else
 		return 1
@@ -319,7 +319,7 @@ for reference:
 	cover = get_step(loc, get_dir(from, loc))
 	if(!cover)
 		return 1
-	if (get_dist(src.turf, loc) <= 1) //Tables won't help you if people are THIS close
+	if(get_dist(src.turf, loc) <= 1) //Tables won't help you if people are THIS close
 		return 1
 
 	var/chance = 50
@@ -354,22 +354,22 @@ for reference:
 		return 1
 
 /obj/structure/m_barricade/attackby(obj/item/W as obj, mob/user as mob)
-	if (!W) return
+	if(!W) return
 
 	if(istype(W, /obj/item/weapon/weldingtool))
 		var/obj/item/weapon/weldingtool/WT = W
 		if(health < 80)
-			user << "It's too damaged for that. Better just to build a new one."
+			to_chat(user, "It's too damaged for that. Better just to build a new one.")
 			return
 
 		if(health >= 300)
-			user << "It's already in perfect condition."
+			to_chat(user, "It's already in perfect condition.")
 			return
 
 		if(WT.remove_fuel(0, user))
-			user.visible_message("\blue [user] begins repairing damage to the [src].","\blue You begin repairing the damage to the [src].")
+			user.visible_message("<span class='notice'>[user] begins repairing damage to the [src].</span>","<span class='notice'>You begin repairing the damage to the [src].</span>")
 			if(do_after(user,50))
-				user.visible_message("\blue [user] repairs the damaged [src].","\blue Your repair the [src]'s damage.")
+				user.visible_message("<span class='notice'>[user] repairs the damaged [src].</span>","<span class='notice'>Your repair the [src]'s damage."</span>)
 				health += 150
 				if(health > 300) health = 300
 				update_health()
@@ -390,5 +390,4 @@ for reference:
 	src.health -= rand(15,20)
 	playsound(src, 'sound/effects/metalhit.ogg', 100, 1)
 	visible_message("<span class='danger'>[M] slashes at the [src]!</span>")
-	update_health()
-*/
+	update_health()*/
