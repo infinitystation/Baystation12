@@ -788,6 +788,7 @@
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				log_and_message_admins("has banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.")
+				to_world("<span class='notice'><b>BAN: Администратор [usr.client.ckey] заблокировал(а) игрока [M.ckey] на [mins] минут. Причина: [reason]</b></span>")
 
 				qdel(M.client)
 				//qdel(M)	// See no reason why to delete mob. Important stuff can be lost. And ban can be lifted before round ends.
@@ -811,6 +812,7 @@
 				ban_unban_log_save("[usr.client.ckey] has permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.")
 				add_note(M.ckey,"[usr.client.ckey] has permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.", null, usr.ckey, 0)
 				log_and_message_admins("has banned [M.ckey].\nReason: [reason]\nThis is a permanent ban.")
+				to_world("<span class='notice'><b>BAN: Администратор [usr.client.ckey] НАВСЕГДА заблокировал(а) игрока [M.ckey]. Причина: [reason]</b></span>")
 				feedback_inc("ban_perma",1)
 				DB_ban_record(BANTYPE_PERMA, M, -1, reason)
 
@@ -863,6 +865,7 @@
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				log_admin("[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.")
 				message_admins("<span class='notice'>[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.</span>")
+				to_world("<span class='notice'><b>BAN: Администратор [usr.client.ckey] заблокировал(а) игрока [M.ckey] на [mins] минут. Причина: [reason]</b></span>")
 
 				qdel(M.client)
 				M.ckey = null
@@ -888,6 +891,7 @@
 				add_note(M.ckey,"[usr.client.ckey] has soft permabanned [M.ckey]. - Reason: [reason] - This is a soft permanent ban.", null, usr.ckey, 0)
 				log_admin("[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis is a soft permanent ban.")
 				message_admins("<span class='notice'>[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis is a soft permanent ban.</span>")
+				to_world("<span class='notice'><b>BAN: Администратор [usr.client.ckey] НАВСЕГДА заблокировал(а) игрока [M.ckey]. Причина: [reason]</b></span>")
 				feedback_inc("ban_perma",1)
 
 
