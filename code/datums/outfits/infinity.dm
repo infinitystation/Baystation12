@@ -42,7 +42,7 @@
 	id_desc = "An ID of SCG police marshals."
 	id_pda_assignment = "Colonial Marshal Officer"
 
-/decl/hierarchy/outfit/DF_army_private
+/decl/hierarchy/outfit/DF/army/private
 	name = "SCG Private Army"
 	hierarchy_type = /decl/hierarchy/outfit/DF_army
 	shoes = /obj/item/clothing/shoes/jungleboots
@@ -54,7 +54,7 @@
 	l_pocket = /obj/random/rank/marine/private
 	r_pocket = /obj/item/device/flashlight/maglight
 
-/decl/hierarchy/outfit/DF_army_sergeant
+/decl/hierarchy/outfit/DF/army/sergeant
 	name = "SCG Sergeant Army"
 	hierarchy_type = /decl/hierarchy/outfit/DF_army
 	shoes = /obj/item/clothing/shoes/jungleboots
