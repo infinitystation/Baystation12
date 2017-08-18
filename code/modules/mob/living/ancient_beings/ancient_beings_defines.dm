@@ -4,4 +4,3 @@
 
 	maxHealth = 5000
 	health = 5000
-
