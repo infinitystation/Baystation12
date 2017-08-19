@@ -33,5 +33,5 @@ delete-after: True
 # Also, all entries are changed into a single [] after a master changelog generation. Just remove the brackets when you add new entries.
 # Please surround your changes in  double quotes ("), as certain characters otherwise screws up compiling. The quotes will not show up in the changelog.
 changes: 
-  - tweak: "Adds more signals letting someone know they have toxin damage and giving them a chance to get help."
-  - tweak: "Adjusts how often internal organ damage messages are displayed."
+  - tweak: "Makes it easier to recover people from severe radiation damage."
+  - tweak: "Puts a limit on recovery time for surgery with peridaxon, two minutes after death the organ will no longer be savable."
