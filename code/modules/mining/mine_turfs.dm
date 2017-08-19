@@ -42,9 +42,9 @@ var/list/mining_floors = list()
 	spawn(0)
 		MineralSpread()
 	if(ticker)
-		initialize()
+		Initialize()
 
-/turf/simulated/mineral/initialize()
+/turf/simulated/mineral/Initialize()
 	spawn(2)
 		update_icon(1)
 
