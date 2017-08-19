@@ -44,7 +44,6 @@
 
 /decl/hierarchy/outfit/DF/army/private
 	name = "SCG Private Army"
-	hierarchy_type = /decl/hierarchy/outfit/DF/army
 	shoes = /obj/item/clothing/shoes/jungleboots
 	uniform = /obj/item/clothing/under/utility/marine/tan
 	suit = /obj/item/clothing/suit/storage/vest/tactical
@@ -56,7 +55,6 @@
 
 /decl/hierarchy/outfit/DF/army/sergeant
 	name = "SCG Sergeant Army"
-	hierarchy_type = /decl/hierarchy/outfit/DF/army
 	shoes = /obj/item/clothing/shoes/jungleboots
 	uniform = /obj/item/clothing/under/utility/marine/tan
 	suit = /obj/item/clothing/suit/storage/vest/tactical
