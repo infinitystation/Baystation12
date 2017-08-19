@@ -42,24 +42,40 @@
 	id_desc = "An ID of SCG police marshals."
 	id_pda_assignment = "Colonial Marshal Officer"
 
-/decl/hierarchy/outfit/DF/army/private
-	name = "SCG Private Army"
+/decl/hierarchy/outfit/army/private
+	name = "SCG Marine Private"
 	shoes = /obj/item/clothing/shoes/jungleboots
 	uniform = /obj/item/clothing/under/utility/marine/tan
 	suit = /obj/item/clothing/suit/storage/vest/tactical
 	head = /obj/item/clothing/head/helmet/tactical
 	l_ear = /obj/item/device/radio/headset/specops
 	belt = /obj/item/weapon/storage/belt/security/tactical
-	l_pocket = /obj/random/rank/marine/private
 	r_pocket = /obj/item/device/flashlight/maglight
 
-/decl/hierarchy/outfit/DF/army/sergeant
-	name = "SCG Sergeant Army"
+
+/decl/hierarchy/outfit/army/private/post_equip(var/mob/living/carbon/human/H)
+	..()
+	var/obj/item/clothing/under = H.w_uniform
+	if(uniform)
+		var/obj/random/rank/marine/private/rank = new()
+		if(under.can_attach_accessory(rank))
+			under.attach_accessory(null, rank)
+
+/decl/hierarchy/outfit/army/sergeant
+	name = "SCG Marine Sergeant"
 	shoes = /obj/item/clothing/shoes/jungleboots
 	uniform = /obj/item/clothing/under/utility/marine/tan
 	suit = /obj/item/clothing/suit/storage/vest/tactical
 	head = /obj/item/clothing/head/helmet/tactical
 	l_ear = /obj/item/device/radio/headset/specops
 	belt = /obj/item/weapon/storage/belt/security/tactical
-	l_pocket = /obj/random/rank/marine/sergeant
 	r_pocket = /obj/item/device/flashlight/maglight
+
+
+/decl/hierarchy/outfit/army/sergeant/post_equip(var/mob/living/carbon/human/H)
+	..()
+	var/obj/item/clothing/under/uniform = H.w_uniform
+	if(uniform)
+		var/obj/random/rank/marine/sergeant/rank = new()
+		if(uniform.can_attach_accessory(rank))
+			uniform.attach_accessory(null, rank)
