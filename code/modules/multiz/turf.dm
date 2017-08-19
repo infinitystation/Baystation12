@@ -47,6 +47,10 @@
 
 /turf/simulated/open/Entered(var/atom/movable/mover)
 	..()
+
+	if(locate(/obj/structure/catwalk) in src)
+		return
+
 	mover.fall()
 
 // Called when thrown object lands on this turf.
