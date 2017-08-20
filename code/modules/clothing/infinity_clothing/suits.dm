@@ -28,3 +28,12 @@
 	icon_state = "black_jacket_o"
 	icon_open = "black_jacket_o"
 	icon_closed = "black_jacket_c"
+
+/obj/item/clothing/suit/armor/Syndy_armor
+	name = "Space marine's armor vest"
+	icon = 'icons/obj/clothing/infinity/TG_copy/infinity_work.dmi'
+	icon_override = 'icons/infinity_work.dmi'
+	item_state = null
+	icon_state = "marine_armor"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	armor = list(melee = 60, bullet = 60, laser = 60, energy = 40, bomb = 20, bio = 0, rad = 0)
