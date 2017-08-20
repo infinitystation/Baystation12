@@ -81,7 +81,7 @@
 	var/tmp/told_cant_shoot = 0 //So that it doesn't spam them with the fact they cannot hit them.
 	var/tmp/lock_time = -100
 
-	var/safety = 0
+	var/safety = 1
 
 /obj/item/weapon/gun/New()
 	..()

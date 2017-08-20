@@ -17,6 +17,7 @@
 	circuit = /obj/item/weapon/circuitboard/cryopodcontrol
 	density = 0
 	interact_offline = 1
+	light_color = "#00bf00"
 	var/mode = null
 
 	//Used for logging people entering cryosleep and important items they are carrying.
@@ -33,6 +34,7 @@
 	desc = "An interface between crew and the robotic storage systems."
 	icon = 'icons/obj/robot_storage.dmi'
 	icon_state = "console"
+	light_color = "#00bfe1"
 	circuit = /obj/item/weapon/circuitboard/robotstoragecontrol
 
 	storage_type = "cyborgs"
@@ -158,6 +160,10 @@
 	density = 1
 	anchored = 1
 	dir = WEST
+
+	light_color = "#00bf00"
+	light_power = 0.5
+	light_range = 2
 
 	var/base_icon_state = "body_scanner_0"
 	var/occupied_icon_state = "body_scanner_1"
@@ -450,6 +456,8 @@
 
 	icon_state = base_icon_state
 
+	light_range = 1
+
 	//Eject any items that aren't meant to be in the pod.
 	var/list/items = src.contents
 	if(occupant) items -= occupant
@@ -502,6 +510,8 @@
 			H.in_stasis = 1
 
 		icon_state = occupied_icon_state
+
+		light_range = 2
 
 		to_chat(usr, "<span class='notice'>[on_enter_occupant_message]</span>")
 		to_chat(usr, "<span class='notice'><b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</b></span>")

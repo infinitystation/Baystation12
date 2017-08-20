@@ -1,4 +1,3 @@
-
 /datum/map/exodus
 	name = "Exodus"
 	full_name = "NSS Exodus"

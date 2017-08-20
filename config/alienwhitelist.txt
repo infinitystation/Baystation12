@@ -1,13 +1,16 @@
-kirill1243 - skrell
-kosteg - machine
-sosiskoed - diona
 sosiskoed - giant armoured serpentid
-redknighthero - machine
-vankoska - diona
-rucat - machine
-lukecage - skrell
-inubashirimomiji - skrell
-knayu - skrell	
-netreson - machine
+sosiskoed - vox
+sosiskoed - diona
 bartstarter - diona
+vankoska - diona
+vankoska - skrell
+knayu - skrell
+lukecage - skrell
+kirill1243 - skrell
+inubashirimomiji - skrell	
+rucat - machine
+kosteg - machine
+netreson - machine
+quardbreak - machine
+redknighthero - machine
 kotovsyndrome - machine

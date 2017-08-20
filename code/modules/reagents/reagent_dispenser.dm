@@ -147,6 +147,10 @@
 			overlays += test
 
 	else if(isflamesource(W))
+		var/turf/T = get_turf(src)
+		for(var/obj/vehicle/train/cargo/trolley/S in T.contents)
+			if(S.load == src)
+				S.load = null
 		log_and_message_admins("triggered a fueltank explosion with \a [W].")
 		user.visible_message("<span class='danger'>\The [user] puts \the [W] to \the [src]!</span>", "<span class='danger'>You put your [W] to \the [src] and with a moment of lucidity you realize, this might not have been the smartest thing you've ever done.</span>")
 		src.explode()

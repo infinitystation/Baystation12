@@ -76,6 +76,7 @@
 		M.forceMove(get_turf(target_ladder))
 
 /obj/structure/ladder/proc/getTargetLadder(var/mob/M)
+	M.dir = 1
 	if((!target_up && !target_down) || (target_up && !istype(target_up.loc, /turf) || (target_down && !istype(target_down.loc,/turf))))
 		to_chat(M, "<span class='notice'>\The [src] is incomplete and can't be climbed.</span>")
 		return
@@ -164,6 +165,12 @@
 
 	Uncross(atom/movable/A)
 		if(A.dir == dir)
+			for(var/turf/turf in locs)
+				var/turf/simulated/open/above = GetAbove(turf)
+				for(var/obj/O in above.contents)
+					if(O.density || istype(O, /obj/structure/catwalk))
+						to_chat(usr, "<span class='warning'>\The [O] blocks your way.</span>")
+						return 1
 			// This is hackish but whatever.
 			var/turf/target = get_step(GetAbove(A), dir)
 			var/turf/source = A.loc

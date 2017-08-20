@@ -19,6 +19,15 @@
 	var/obj/screen/using
 	var/obj/screen/inventory/inv_box
 
+	mymob.fade = new /obj/screen()
+	mymob.fade.icon = 'icons/mob/fullscreen2.dmi'
+	mymob.fade.icon_state = "fade"
+	mymob.fade.name = " "
+	mymob.fade.screen_loc = "WEST,SOUTH to EAST,NORTH"
+	mymob.fade.plane = BASE_AREA_LAYER
+	mymob.fade.mouse_opacity = 0
+	hud_elements |= mymob.fade
+
 	// Draw the various inventory equipment slots.
 	var/has_hidden_gear
 	for(var/gear_slot in hud_data.gear)
@@ -293,5 +302,4 @@
 	f_style = "Shaved"
 	if(dna.species == SPECIES_HUMAN) //no more xenos losing ears/tentacles
 		h_style = pick("Bedhead", "Bedhead 2", "Bedhead 3")
-	all_underwear.Cut()
 	regenerate_icons()

@@ -54,11 +54,6 @@
 	..()
 	gear_tweaks += new/datum/gear_tweak/path(/obj/item/weapon/reagent_containers/food/drinks/coffeecup)
 
-/datum/gear/boot_knife
-	display_name = "boot knife"
-	path = /obj/item/weapon/material/kitchen/utensil/knife/boot
-	cost = 3
-
 /datum/gear/lunchbox
 	display_name = "lunchbox"
 	description = "A little lunchbox."

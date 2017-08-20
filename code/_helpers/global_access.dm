@@ -307,6 +307,8 @@
 			return global.cargo_supply_pack_root;
 		if("cargo_supply_packs")
 			return global.cargo_supply_packs;
+		if("carpetfootsteps")
+			return global.carpetfootsteps;
 		if("changelog_hash")
 			return global.changelog_hash;
 		if("channel_to_radio_key")
@@ -415,6 +417,8 @@
 			return global.description_icons;
 		if("diary")
 			return global.diary;
+		if("dirtfootsteps")
+			return global.dirtfootsteps;
 		if("dna_activity_bounds")
 			return global.dna_activity_bounds;
 		if("dna_genes")
@@ -437,6 +441,8 @@
 			return global.endgame_safespawns;
 		if("engineering_positions")
 			return global.engineering_positions;
+		if("erikafootsteps")
+			return global.erikafootsteps;
 		if("ert")
 			return global.ert;
 		if("ert_base_chance")
@@ -533,12 +539,12 @@
 			return global.ghost_traps;
 		if("global_message_listener")
 			return global.global_message_listener;
-		if("global_underwear")
-			return global.global_underwear;
 		if("global_vars_")
 			return global.global_vars_;
 		if("godcult")
 			return global.godcult;
+		if("grassfootsteps")
+			return global.grassfootsteps;
 		if("gravity_is_on")
 			return global.gravity_is_on;
 		if("gun_sound")
@@ -829,6 +835,8 @@
 			return global.plant_controller;
 		if("plant_seed_sprites")
 			return global.plant_seed_sprites;
+		if("platingfootsteps")
+			return global.platingfootsteps;
 		if("playable_species")
 			return global.playable_species;
 		if("point_source_descriptions")
@@ -943,6 +951,8 @@
 			return global.rustle_sound;
 		if("same_wires")
 			return global.same_wires;
+		if("sandfootsteps")
+			return global.sandfootsteps;
 		if("scheduler")
 			return global.scheduler;
 		if("science_positions")
@@ -995,6 +1005,8 @@
 			return global.slot_equipment_priority;
 		if("slot_flags_enumeration")
 			return global.slot_flags_enumeration;
+		if("snowsteps")
+			return global.snowsteps;
 		if("solar_gen_rate")
 			return global.solar_gen_rate;
 		if("solars_list")
@@ -1191,6 +1203,8 @@
 			return global.vsc;
 		if("warrant_uid")
 			return global.warrant_uid;
+		if("waterfootsteps")
+			return global.waterfootsteps;
 		if("wax_recipes")
 			return global.wax_recipes;
 		if("weighted_mundaneevent_locations")
@@ -1207,6 +1221,8 @@
 			return global.wirelessProcess;
 		if("wizards")
 			return global.wizards;
+		if("woodfootsteps")
+			return global.woodfootsteps;
 		if("world_topic_spam_protect_ip")
 			return global.world_topic_spam_protect_ip;
 		if("world_topic_spam_protect_time")
@@ -1532,6 +1548,8 @@
 			global.cargo_supply_pack_root=newval;
 		if("cargo_supply_packs")
 			global.cargo_supply_packs=newval;
+		if("carpetfootsteps")
+			global.carpetfootsteps=newval;
 		if("changelog_hash")
 			global.changelog_hash=newval;
 		if("channel_to_radio_key")
@@ -1640,6 +1658,8 @@
 			global.description_icons=newval;
 		if("diary")
 			global.diary=newval;
+		if("dirtfootsteps")
+			global.dirtfootsteps=newval;
 		if("dna_activity_bounds")
 			global.dna_activity_bounds=newval;
 		if("dna_genes")
@@ -1662,6 +1682,8 @@
 			global.endgame_safespawns=newval;
 		if("engineering_positions")
 			global.engineering_positions=newval;
+		if("erikafootsteps")
+			global.erikafootsteps=newval;
 		if("ert")
 			global.ert=newval;
 		if("ert_base_chance")
@@ -1758,12 +1780,12 @@
 			global.ghost_traps=newval;
 		if("global_message_listener")
 			global.global_message_listener=newval;
-		if("global_underwear")
-			global.global_underwear=newval;
 		if("global_vars_")
 			global.global_vars_=newval;
 		if("godcult")
 			global.godcult=newval;
+		if("grassfootsteps")
+			global.grassfootsteps=newval;
 		if("gravity_is_on")
 			global.gravity_is_on=newval;
 		if("gun_sound")
@@ -2054,6 +2076,8 @@
 			global.plant_controller=newval;
 		if("plant_seed_sprites")
 			global.plant_seed_sprites=newval;
+		if("platingfootsteps")
+			global.platingfootsteps=newval;
 		if("playable_species")
 			global.playable_species=newval;
 		if("point_source_descriptions")
@@ -2168,6 +2192,8 @@
 			global.rustle_sound=newval;
 		if("same_wires")
 			global.same_wires=newval;
+		if("sandfootsteps")
+			global.sandfootsteps=newval;
 		if("scheduler")
 			global.scheduler=newval;
 		if("science_positions")
@@ -2220,6 +2246,8 @@
 			global.slot_equipment_priority=newval;
 		if("slot_flags_enumeration")
 			global.slot_flags_enumeration=newval;
+		if("snowsteps")
+			global.snowsteps=newval;
 		if("solar_gen_rate")
 			global.solar_gen_rate=newval;
 		if("solars_list")
@@ -2416,6 +2444,8 @@
 			global.vsc=newval;
 		if("warrant_uid")
 			global.warrant_uid=newval;
+		if("waterfootsteps")
+			global.waterfootsteps=newval;
 		if("wax_recipes")
 			global.wax_recipes=newval;
 		if("weighted_mundaneevent_locations")
@@ -2432,6 +2462,8 @@
 			global.wirelessProcess=newval;
 		if("wizards")
 			global.wizards=newval;
+		if("woodfootsteps")
+			global.woodfootsteps=newval;
 		if("world_topic_spam_protect_ip")
 			global.world_topic_spam_protect_ip=newval;
 		if("world_topic_spam_protect_time")
@@ -2603,6 +2635,7 @@
 	"cargo_positions",
 	"cargo_supply_pack_root",
 	"cargo_supply_packs",
+	"carpetfootsteps",
 	"changelog_hash",
 	"channel_to_radio_key",
 	"chargen_robolimbs",
@@ -2657,6 +2690,7 @@
 	"department_radio_keys",
 	"description_icons",
 	"diary",
+	"dirtfootsteps",
 	"dna_activity_bounds",
 	"dna_genes",
 	"doppler_arrays",
@@ -2668,6 +2702,7 @@
 	"endgame_exits",
 	"endgame_safespawns",
 	"engineering_positions",
+	"erikafootsteps",
 	"ert",
 	"ert_base_chance",
 	"escape_pods",
@@ -2716,9 +2751,9 @@
 	"ghost_sightless_images",
 	"ghost_traps",
 	"global_message_listener",
-	"global_underwear",
 	"global_vars_",
 	"godcult",
+	"grassfootsteps",
 	"gravity_is_on",
 	"gun_sound",
 	"gyrotrons",
@@ -2864,6 +2899,7 @@
 	"pipe_processing_killed",
 	"plant_controller",
 	"plant_seed_sprites",
+	"platingfootsteps",
 	"playable_species",
 	"point_source_descriptions",
 	"points_of_interest",
@@ -2921,6 +2957,7 @@
 	"runtime_diary",
 	"rustle_sound",
 	"same_wires",
+	"sandfootsteps",
 	"scheduler",
 	"science_positions",
 	"secondary_mode",
@@ -2947,6 +2984,7 @@
 	"skipped_unit_tests",
 	"slot_equipment_priority",
 	"slot_flags_enumeration",
+	"snowsteps",
 	"solar_gen_rate",
 	"solars_list",
 	"sortInstance",
@@ -3045,6 +3083,7 @@
 	"vote",
 	"vsc",
 	"warrant_uid",
+	"waterfootsteps",
 	"wax_recipes",
 	"weighted_mundaneevent_locations",
 	"weighted_randomevent_locations",
@@ -3053,6 +3092,7 @@
 	"wireColours",
 	"wirelessProcess",
 	"wizards",
+	"woodfootsteps",
 	"world_topic_spam_protect_ip",
 	"world_topic_spam_protect_time",
 	"world_uplinks",

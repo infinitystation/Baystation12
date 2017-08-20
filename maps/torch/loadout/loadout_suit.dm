@@ -35,7 +35,6 @@
 	display_name = "trenchcoat selection"
 	path = /obj/item/clothing/suit/storage/det_trench
 	cost = 3
-	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/suit/trenchcoat/New()
 	..()
@@ -46,7 +45,9 @@
 	gear_tweaks += new/datum/gear_tweak/path(trenchcoats)
 
 /datum/gear/suit/poncho
-	allowed_roles = RESTRICTED_ROLES
+	display_name = "poncho selection"
+	path = /obj/item/clothing/suit/poncho/colored
+	cost = 1
 
 /datum/gear/suit/roles/poncho/security
 	allowed_roles = list(/datum/job/guard, /datum/job/merchant)
@@ -63,8 +64,13 @@
 /datum/gear/suit/roles/poncho/cargo
 	allowed_roles = list(/datum/job/cargo_contractor, /datum/job/merchant)
 
-/datum/gear/suit/suit_jacket
-	allowed_roles = FORMAL_ROLES
+/datum/gear/suit/suit_jacket/New()
+	..()
+	var/suitjackets = list()
+	suitjackets["black suit jacket"] = /obj/item/clothing/suit/storage/toggle/internalaffairs/plain
+	suitjackets["blue suit jacket"] = /obj/item/clothing/suit/storage/toggle/lawyer/bluejacket
+	suitjackets["purple suit jacket"] = /obj/item/clothing/suit/storage/lawyer/purpjacket
+	gear_tweaks += new/datum/gear_tweak/path(suitjackets)
 
 /datum/gear/suit/hazard
 	display_name = "hazard vests"
@@ -76,14 +82,12 @@
 
 /datum/gear/suit/hoodie
 	display_name = "hoodie"
-	path = /obj/item/clothing/suit/storage/toggle/hoodie
+	path = /obj/item/clothing/suit/storage/hooded/hoodie
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/suit/hoodie_sel
 	display_name = "hoodies"
 	path = /obj/item/clothing/suit/storage/toggle/hoodie
-	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/suit/hoodie_sel/New()
 	..()
@@ -98,12 +102,10 @@
 	display_name = "labcoat, colored"
 	path = /obj/item/clothing/suit/storage/toggle/labcoat
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/suit/leather
 	display_name = "jacket selection"
 	path = /obj/item/clothing/suit/storage/leather_jacket
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/suit/leather/New()
 	..()
@@ -160,12 +162,10 @@
 /datum/gear/suit/wintercoat
 	display_name = "winter coat"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat
-	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/suit/track
 	display_name = "track jacket selection"
 	path = /obj/item/clothing/suit/storage/toggle/track
-	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/suit/track/New()
 	..()
