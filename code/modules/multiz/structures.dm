@@ -165,6 +165,12 @@
 
 	Uncross(atom/movable/A)
 		if(A.dir == dir)
+			for(var/turf/turf in locs)
+				var/turf/simulated/open/above = GetAbove(turf)
+				for(var/obj/O in above.contents)
+					if(O.density || istype(O, /obj/structure/catwalk))
+						to_chat(usr, "<span class='warning'>\The [O] blocks your way.</span>")
+						return 1
 			// This is hackish but whatever.
 			var/turf/target = get_step(GetAbove(A), dir)
 			var/turf/source = A.loc
