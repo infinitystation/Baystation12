@@ -118,13 +118,48 @@
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 	user.visible_message("<span class='notice'>[user] closes and secures the hatch on [target]'s [affected.name] with \the [tool].</span>", \
 	"<span class='notice'>You close and secure the hatch on [target]'s [affected.name] with \the [tool].</span>")
-	affected.hatch = 0
-	affected.germ_level = 0
+	affected.hatch = 1
 
 /datum/surgery_step/robotics/close_hatch/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 	user.visible_message("<span class='warning'>[user]'s [tool.name] slips, failing to close the hatch on [target]'s [affected.name].</span>",
 	"<span class='warning'>Your [tool.name] slips, failing to close the hatch on [target]'s [affected.name].</span>")
+
+//////////////////////////////////////////////////////////////////
+//	 screw back robotic limb hatch surgery step
+//////////////////////////////////////////////////////////////////
+/datum/surgery_step/robotics/screw_hatch
+	allowed_tools = list(
+		/obj/item/weapon/screwdriver = 100,
+		/obj/item/weapon/coin = 50,
+		/obj/item/weapon/material/kitchen/utensil/knife = 50
+	)
+
+	min_duration = 90
+	max_duration = 110
+
+/datum/surgery_step/robotics/screw_hatch/can_use(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
+	if(..())
+		var/obj/item/organ/external/affected = target.get_organ(target_zone)
+		return affected && affected.hatch == 1 && target_zone != BP_MOUTH
+
+/datum/surgery_step/robotics/screw_hatch/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
+	var/obj/item/organ/external/affected = target.get_organ(target_zone)
+	user.visible_message("[user] starts to screw the maintenance hatch on [target]'s [affected.name] with \the [tool].", \
+	"You start to screw the maintenance hatch on [target]'s [affected.name] with \the [tool].")
+	..()
+
+/datum/surgery_step/robotics/screw_hatch/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
+	var/obj/item/organ/external/affected = target.get_organ(target_zone)
+	user.visible_message("<span class='notice'>[user] has screw the maintenance hatch on [target]'s [affected.name] with \the [tool].</span>", \
+	"<span class='notice'>You have screw the maintenance hatch on [target]'s [affected.name] with \the [tool].</span>",)
+	affected.germ_level = 0
+	affected.hatch = 0
+
+/datum/surgery_step/robotics/screw_hatch/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
+	var/obj/item/organ/external/affected = target.get_organ(target_zone)
+	user.visible_message("<span class='warning'>[user]'s [tool.name] slips, failing to screw the hatch on [target]'s [affected.name].</span>",
+	"<span class='warning'>Your [tool.name] slips, failing to screw the hatch on [target]'s [affected.name].</span>")
 
 //////////////////////////////////////////////////////////////////
 //	robotic limb brute damage repair surgery step
