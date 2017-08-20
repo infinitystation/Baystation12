@@ -10,11 +10,13 @@
 
 	if(nutrition > 500)
 		nutrition = 500
-	if(light_amount > 2) //if there's enough light, heal
-		adjustBruteLoss(-1)
-		adjustFireLoss(-1)
-		adjustToxLoss(-1)
-		adjustOxyLoss(-1)
+
+	if(health < 100)
+		if(light_amount > 2) //if there's enough light, heal
+			adjustBruteLoss(-1)
+			adjustFireLoss(-1)
+			adjustToxLoss(-1)
+			adjustOxyLoss(-1)
 
 	if(!client)
 		handle_npc(src)
