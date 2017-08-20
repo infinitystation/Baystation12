@@ -81,7 +81,8 @@
 	var/tmp/told_cant_shoot = 0 //So that it doesn't spam them with the fact they cannot hit them.
 	var/tmp/lock_time = -100
 
-	var/safety = 1
+	var/have_safety = TRUE
+	var/safety = TRUE
 
 /obj/item/weapon/gun/New()
 	..()
@@ -90,6 +91,9 @@
 
 	if(isnull(scoped_accuracy))
 		scoped_accuracy = accuracy
+
+	if(!have_safety)
+		safety = FALSE
 
 /obj/item/weapon/gun/update_twohanding()
 	if(one_hand_penalty)
@@ -140,10 +144,12 @@
 		else
 			handle_click_empty(user)
 		return 0
-	if(safety)
-		to_chat(user, "<span class='danger'>The gun's safety is on!</span>")
-		handle_click_empty(user)
-		return 0
+
+	if(have_safety)
+		if(safety)
+			to_chat(user, "<span class='danger'>The gun's safety is on!</span>")
+			handle_click_empty(user)
+			return 0
 	return 1
 
 /obj/item/weapon/gun/emp_act(severity)
@@ -428,7 +434,9 @@
 	if(firemodes.len > 1)
 		var/datum/firemode/current_mode = firemodes[sel_mode]
 		to_chat(user, "The fire selector is set to [current_mode.name].")
-	to_chat(user, "<span class='notice'>The safety is [safety ? "on" : "off"].</span>")
+
+	if(have_safety)
+		to_chat(user, "<span class='notice'>The safety is [safety ? "on" : "off"].</span>")
 
 /obj/item/weapon/gun/proc/switch_firemodes()
 	if(firemodes.len <= 1)
@@ -453,7 +461,9 @@
 	if(user.incapacitated())
 		to_chat(user, "<span class='warning'>You can't do that right now!</span>")
 		return
+
 	if(src == user.get_active_hand())
-		safety = !safety
-		playsound(user, 'sound/weapons/selector.ogg', 50, 1)
-		to_chat(user, "<span class='notice'>You toggle the safety [safety ? "on":"off"].</span>")
+		if(have_safety)
+			safety = !safety
+			playsound(user, 'sound/weapons/selector.ogg', 50, 1)
+			to_chat(user, "<span class='notice'>You toggle the safety [safety ? "on":"off"].</span>")
