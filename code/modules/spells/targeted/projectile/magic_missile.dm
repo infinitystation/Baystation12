@@ -18,7 +18,7 @@
 	proj_step_delay = 5
 
 	hud_state = "wiz_mm"
-
+	// TODO@inf-dev: поменять ~bear1ake
 	amt_paralysis = 3
 	amt_stunned = 3
 
@@ -54,3 +54,4 @@
 	proj_trail = 1
 	proj_trail_lifespan = 5
 	proj_trail_icon_state = "magicmd"
+
