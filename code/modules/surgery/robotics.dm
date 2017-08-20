@@ -110,14 +110,14 @@
 
 /datum/surgery_step/robotics/close_hatch/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
-	user.visible_message("[user] begins to close and secure the hatch on [target]'s [affected.name] with \the [tool]." , \
-	"You begin to close and secure the hatch on [target]'s [affected.name] with \the [tool].")
+	user.visible_message("[user] begins to close the hatch on [target]'s [affected.name] with \the [tool]." , \
+	"You begin to close the hatch on [target]'s [affected.name] with \the [tool].")
 	..()
 
 /datum/surgery_step/robotics/close_hatch/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
-	user.visible_message("<span class='notice'>[user] closes and secures the hatch on [target]'s [affected.name] with \the [tool].</span>", \
-	"<span class='notice'>You close and secure the hatch on [target]'s [affected.name] with \the [tool].</span>")
+	user.visible_message("<span class='notice'>[user] closes the hatch on [target]'s [affected.name] with \the [tool].</span>", \
+	"<span class='notice'>You close the hatch on [target]'s [affected.name] with \the [tool].</span>")
 	affected.hatch = 1
 
 /datum/surgery_step/robotics/close_hatch/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
