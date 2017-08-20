@@ -114,8 +114,8 @@
 		if ((R.dir == Rturn) && R.anchored)//ѕроверка правой стороны
 			src.RightSide[3] = 1*/
 	//check <<"check: [check]"
-	//world << "dir = [src.dir]"
-	//world << "railing[LeftSide[1]][LeftSide[2]][LeftSide[3]]-[RightSide[1]][RightSide[2]][RightSide[3]]"
+	//to_world("dir = [src.dir]")
+	//to_world("railing[LeftSide[1]][LeftSide[2]][LeftSide[3]]-[RightSide[1]][RightSide[2]][RightSide[3]]")
 
 /obj/structure/railing/update_icon(var/UpdateNeighgors = 1)
 	NeighborsCheck(UpdateNeighgors)
@@ -128,13 +128,13 @@
 		//лева€ сторона
 		if (check & 32)
 			overlays += image ('icons/obj/railing.dmi', src, "corneroverlay")
-			//world << "32 check"
+			//to_world("32 check")
 		if ((check & 16) || !(check & 32) || (check & 64))
 			overlays += image ('icons/obj/railing.dmi', src, "frontoverlay_l")
-			//world << "16 check"
+			//to_world("16 check")
 		if (!(check & 2) || (check & 1) || (check & 4))
 			overlays += image ('icons/obj/railing.dmi', src, "frontoverlay_r")
-			//world << "no 4 or 2 check"
+			//to_world("no 4 or 2 check")
 			if(check & 4)
 				switch (src.dir)
 					if (NORTH)
