@@ -950,60 +950,6 @@
 					if(!(M.status_flags & GODMODE))
 						M.adjustBruteLoss(5)
 					nutrition += 10
-	handle_starvation()
-
-/mob/living/carbon/human/proc/handle_starvation()
-	if(nutrition < 100) //Nutrition is below 100 = starvation
-
-		var/list/hunger_phrases = list(
-			"You feel weak and malnourished. You must find something to eat now!",
-			"You haven't eaten in ages, and your body feels weak! It's time to eat something.",
-			"You can barely remember the last time you had a proper, nutritional meal. Your body will shut down soon if you don't eat something!",
-			"Your body is running out of essential nutrients! You have to eat something soon.",
-			"If you don't eat something very soon, you're going to starve to death."
-			)
-
-		//When you're starving, the rate at which oxygen damage is healed is reduced by 80% (you only restore 1 oxygen damage per life tick, instead of 5)
-
-		switch(nutrition)
-			if(STARVATION_NOTICE to STARVATION_MIN) //60-80
-				if(sleeping) return
-
-				if(prob(2))
-					to_chat(src, "<span class='notice'>You're very hungry.</span>")
-
-			if(STARVATION_WEAKNESS to STARVATION_NOTICE) //30-60
-				if(sleeping) return
-
-				if(prob(3)) //3% chance of a tiny amount of oxygen damage (1-10)
-					adjustOxyLoss(rand(1,10))
-					to_chat(src, "<span class='danger'>[pick(hunger_phrases)]</span>")
-
-				else if(prob(5)) //5% chance of being weakened
-					Weaken(10)
-					adjustOxyLoss(rand(1,15))
-					to_chat(src, "<span class='danger'>You're starving! The lack of strength makes you black out for a few moments...</span>")
-
-			if(STARVATION_NEARDEATH to STARVATION_WEAKNESS) //5-30, 5% chance of weakening and 1-23 oxygen damage. 5% chance of a seizure. 10% chance of dropping item
-				if(sleeping) return
-
-				if(prob(5))
-					adjustOxyLoss(rand(1,20))
-					to_chat(src, "<span class='danger'>You're starving. You feel your life force slowly leaving your body...</span>")
-					eye_blurry += 20
-					if(weakened < 1) Weaken(20)
-
-				else if(paralysis<1 && prob(5)) //Mini seizure (25% duration and strength of a normal seizure)
-					visible_message("<span class='danger'>\The [src] starts having a seizure!</span>", \
-							"<span class='warning'>You have a seizure!</span>")
-					Paralyse(5)
-					make_jittery(500)
-
-			if(-INFINITY to STARVATION_NEARDEATH) //Fuck the whole body up at this point
-				to_chat(src, "<span class='danger'>Without food, I feel very, very bad...</span>")
-
-				if(prob(10))
-					Weaken(15)
 
 /mob/living/carbon/human/proc/handle_changeling()
 	if(mind && mind.changeling)
