@@ -3,6 +3,7 @@ var/list/admin_verbs_default = list(
 //	/client/proc/secrets,
 	/client/proc/deadmin_self,			//destroys our own admin datum so we can play as a regular player,
 	/client/proc/hide_verbs,			//hides all our adminverbs,
+	/client/proc/getserverlog,			//allows us to fetch server logs (diary) for other days,
 	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
 //	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
 //	/client/proc/debug_global_variables,//as above but for global variables,
@@ -34,7 +35,6 @@ var/list/admin_verbs_admin = list(
 	/client/proc/cmd_admin_check_contents,	//displays the contents of an instance,
 	/datum/admins/proc/access_news_network,	//allows access of newscasters,
 	/client/proc/giveruntimelog,		//allows us to give access to runtime logs to somebody,
-	/client/proc/getserverlog,			//allows us to fetch server logs (diary) for other days,
 	/client/proc/jumptocoord,			//we ghost and jump to a coordinate,
 	/client/proc/Getmob,				//teleports a mob to our location,
 	/client/proc/Getkey,				//teleports a mob with a certain ckey to our location,
@@ -214,7 +214,8 @@ var/list/admin_verbs_debug = list(
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
 	/client/proc/debug_global_variables,
 	/client/proc/cmd_analyse_health_context,
-	/client/proc/cmd_analyse_health_panel
+	/client/proc/cmd_analyse_health_panel,
+	/client/proc/reestablish_db_connection
 	)
 
 var/list/admin_verbs_paranoid_debug = list(
