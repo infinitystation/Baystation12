@@ -420,32 +420,32 @@
 
 			visible_message("[user] starts putting [grab.affecting:name] into \the [src].", 3)
 
-			if(do_after(user, 20, src))
-				if(!M || !grab || !grab.affecting) return
+			if(!M || !grab || !grab.affecting) return
 
-				M.forceMove(src)
+			M.forceMove(src)
 
-				if(M.client)
-					M.client.perspective = EYE_PERSPECTIVE
-					M.client.eye = src
+			if(M.client)
+				M.client.perspective = EYE_PERSPECTIVE
+				M.client.eye = src
 
-			icon_state = occupied_icon_state
+		icon_state = occupied_icon_state
 
-			to_chat(M, "<span class='notice'>[on_enter_occupant_message]</span>")
-			to_chat(M, "<span class='notice'><b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</b></span>")
-			set_occupant(M)
-			time_entered = world.time
-			if(ishuman(M) && applies_stasis)
-				var/mob/living/carbon/human/H = M
-				H.in_stasis = 1
+		to_chat(M, "<span class='notice'>[on_enter_occupant_message]</span>")
+		to_chat(M, "<span class='notice'><b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</b></span>")
+		set_occupant(M)
+		time_entered = world.time
+		if(ishuman(M) && applies_stasis)
+			var/mob/living/carbon/human/H = M
+			H.in_stasis = 1
 
-			// Book keeping!
-			var/turf/location = get_turf(src)
-			log_admin("[key_name_admin(M)] has entered a stasis pod. (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[location.x];Y=[location.y];Z=[location.z]'>JMP</a>)")
-			message_admins("<span class='notice'>[key_name_admin(M)] has entered a stasis pod.</span>")
+		// Book keeping!
+		var/turf/location = get_turf(src)
+		log_admin("[key_name_admin(M)] has entered a stasis pod. (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[location.x];Y=[location.y];Z=[location.z]'>JMP</a>)")
+		message_admins("<span class='notice'>[key_name_admin(M)] has entered a stasis pod.</span>")
 
-			//Despawning occurs when process() is called with an occupant without a client.
-			src.add_fingerprint(M)
+		//Despawning occurs when process() is called with an occupant without a client.
+		src.add_fingerprint(M)
+		qdel(G)
 
 /obj/machinery/cryopod/verb/eject()
 	set name = "Eject Pod"
