@@ -175,6 +175,7 @@
 		img.pixel_y = copy.offset_y[j]
 		c.overlays += img
 	c.updateinfolinks()
+	c.update_icon()
 	if(need_toner)
 		toner--
 	if(toner == 0)
