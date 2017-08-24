@@ -41,17 +41,29 @@
 		to_chat(usr, "Вы не можете обновить сервер так как активированна команда смены билда.")
 		return
 
-	var/confirm = alert("Инициировать обновление в конце раунда?", "End Round", "Yes", "Cancel")
-	if(confirm == "Cancel")
-		return
+	if(ticker.update_waiting)
+		var/confirm_cancellation = alert("Отменить обновление в конце раунда?", "Cancel Server Update", "Yes", "No")
+		if(confirm_cancellation == "No")
+			return
+		if(confirm_cancellation == "Yes")
+			message_admins("[key_name_admin(usr)] отменил(а) обновление сервера в конце текущего раунда.")
+			log_game("[key_name_admin(usr)] отменил(а) обновление сервера в конце текущего раунда.")
+			ticker.updater_ckey = null
+			ticker.update_waiting = FALSE
+			return
 
-	if(confirm == "Yes")
-		message_admins("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
-		log_game("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
-		to_chat(world, "<span class='pm'><span class='howto'><b>~~ Администратор [usr.key] инициировал(а) обновление сервера в конце текущего раунда ~~</b></span></span>\n")
-//		to_chat(world, "<span class='adminooc'>Администратор [usr.key] инициировал(а) обновление сервера в конце текущего раунда.</span>")
-		ticker.updater_ckey = usr.key
-		ticker.update_waiting = 1
+	else
+		var/confirm = alert("Инициировать обновление в конце раунда?", "End Round", "Yes", "Cancel")
+		if(confirm == "Cancel")
+			return
+
+		if(confirm == "Yes")
+			message_admins("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
+			log_game("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
+			to_chat(world, "<span class='pm'><span class='howto'><b>~~ Администратор [usr.key] инициировал(а) обновление сервера в конце текущего раунда ~~</b></span></span>\n")
+	//		to_chat(world, "<span class='adminooc'>Администратор [usr.key] инициировал(а) обновление сервера в конце текущего раунда.</span>")
+			ticker.updater_ckey = usr.key
+			ticker.update_waiting = 1
 
 /proc/force_update_server()
 	if(currentbuild.folder == currentbuild.update)

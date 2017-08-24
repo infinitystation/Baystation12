@@ -123,6 +123,7 @@
 	..()
 	if(gun)
 		gun = new gun(src)
+		gun.have_safety = FALSE
 
 /obj/item/rig_module/mounted/engage(atom/target)
 

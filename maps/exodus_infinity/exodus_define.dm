@@ -30,6 +30,11 @@
 	shuttle_called_message = "A crew transfer to %Dock_name% has been scheduled. The shuttle has been called. It will arrive in approximately %ETA%"
 	shuttle_recall_message = "The scheduled crew transfer has been cancelled."
 
+	emergency_shuttle_docked_message = "The Emergency Shuttle has docked with the station. You have approximately %ETD% to board the Emergency Shuttle."
+	emergency_shuttle_leaving_dock = "The Emergency Shuttle has left the station. Estimate %ETA% minutes until the shuttle docks at %Dock_name%."
+	emergency_shuttle_called_message = "An emergency evacuation shuttle has been called. It will arrive in approximately %ETA%"
+	emergency_shuttle_recall_message = "The Emergency Shuttle has been recalled."
+
 	evac_controller_type = /datum/evacuation_controller/shuttle
 
 /datum/map/exodus/perform_map_generation()

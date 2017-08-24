@@ -91,7 +91,7 @@ var/datum/server_build/currentbuild
 		return
 
 	if(ticker.update_waiting)
-		to_chat(usr, "¬ы не можете сменить текущий билд так как активированна команда обновлени€ сервера.")
+		to_chat(usr, "¬ы не можете сменить текущий билд так как активированна команда обновлени&#255; сервера.")
 		return
 
 	var/list/buildchoices = list()

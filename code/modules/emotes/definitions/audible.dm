@@ -18,7 +18,7 @@
 
 /decl/emote/audible/gasp
 	key ="gasp"
-	emote_message_3p = "USER задыхается."
+	emote_message_3p = "USER задыхаетс&#255;."
 	conscious = 0
 
 /decl/emote/audible/gasp/do_extra(var/mob/M)
@@ -175,7 +175,7 @@
 
 /decl/emote/audible/cough
 	key = "cough"
-	emote_message_3p = "USER кашляет!"
+	emote_message_3p = "USER кашл&#255;ет!"
 	conscious = 0
 
 /decl/emote/audible/cough/do_extra(var/mob/M)
@@ -245,7 +245,7 @@
 
 /decl/emote/audible/laugh
 	key = "laugh"
-	emote_message_3p = "USER смеется."
+	emote_message_3p = "USER смеетс&#255;."
 
 /decl/emote/audible/laugh/do_extra(var/mob/M)
 	if(M.stat)//No dead or unconcious people screaming pls.
@@ -275,7 +275,7 @@
 
 /decl/emote/audible/groan
 	key = "groan"
-	emote_message_3p = "USER тяжело вздыхает."
+	emote_message_3p = "USER т&#255;жело вздыхает."
 	conscious = 0
 
 /decl/emote/audible/moan
