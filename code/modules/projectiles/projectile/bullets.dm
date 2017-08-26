@@ -158,8 +158,8 @@
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
 	check_armour = "melee"
-	damage = 20
-	agony = 60
+	damage = 5
+	agony = 50
 	embed = 0
 	sharp = 0
 
