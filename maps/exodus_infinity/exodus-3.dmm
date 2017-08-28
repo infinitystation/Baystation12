@@ -27637,6 +27637,45 @@
 	icon_state = "steel"
 	},
 /area/centcom/control)
+"biX" = (
+/obj/item/weapon/caution/cone,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snowplating"
+	},
+/area/ninja_dojo/dojo)
+"biY" = (
+/obj/item/weapon/caution/cone,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snowplating"
+	},
+/area/ninja_dojo/dojo)
+"biZ" = (
+/obj/item/weapon/caution/cone,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snowplating"
+	},
+/area/ninja_dojo/dojo)
+"bja" = (
+/turf/simulated/shuttle/wall{
+	icon_state = "swall_s";
+	dir = 4
+	},
+/area/space)
+"bjb" = (
+/turf/space,
+/area/shuttle/merchant/home)
+"bjc" = (
+/turf/simulated/shuttle/wall{
+	icon_state = "swall_s";
+	dir = 1
+	},
+/area/space)
+"bjd" = (
+/turf/space,
+/area/shuttle/merchant/home)
 
 (1,1,1) = {"
 aaa
@@ -48897,7 +48936,7 @@ avK
 awx
 avK
 avK
-biU
+biT
 avK
 aAo
 aAw
@@ -74635,7 +74674,7 @@ aNc
 aNI
 aJd
 aqV
-aaf
+bja
 aQl
 aQW
 aRL
@@ -74643,7 +74682,7 @@ aRL
 aRL
 aTR
 aQm
-aaf
+bjc
 aaf
 aVN
 aWk
@@ -74892,7 +74931,7 @@ aLK
 aNI
 aMp
 aaf
-aPK
+aPL
 aQk
 aQW
 aRL
@@ -74900,7 +74939,7 @@ aSz
 aTt
 aTS
 aQk
-aUs
+aPL
 aaf
 aaf
 aaf
@@ -75149,7 +75188,7 @@ aNd
 aNJ
 aMp
 aaf
-aPL
+aPM
 aQm
 aQX
 aRM
@@ -75157,7 +75196,7 @@ aSA
 aTu
 aTT
 aQl
-aPL
+aUI
 aaf
 aaf
 aaf
@@ -75406,7 +75445,7 @@ aLK
 aNK
 aMp
 aaf
-aPM
+bjb
 aQn
 aQY
 aRN
@@ -75414,7 +75453,7 @@ aSB
 aTv
 aTU
 aQn
-aUI
+bjd
 aaf
 aqV
 aqV
@@ -83076,7 +83115,7 @@ axN
 ayp
 ayp
 biQ
-biR
+biQ
 biO
 azZ
 aAb
@@ -83273,7 +83312,7 @@ amE
 apR
 aoz
 aoy
-aoy
+biX
 aoy
 aoy
 aoy
@@ -84561,10 +84600,10 @@ aoy
 aoy
 aoy
 aoy
-aoy
+biY
 aoz
 aoy
-aoy
+biZ
 aoy
 aoy
 aoy
