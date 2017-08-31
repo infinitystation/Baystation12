@@ -28099,16 +28099,11 @@
 /area/crew_quarters/bar)
 "baq" = (
 /obj/structure/table/woodentable,
-/obj/item/weapon/material/kitchen/utensil/fork/plastic,
-/obj/item/weapon/material/kitchen/utensil/fork/plastic,
-/obj/item/weapon/material/kitchen/utensil/fork/plastic,
-/obj/item/weapon/material/kitchen/utensil/fork/plastic,
-/obj/item/weapon/material/kitchen/utensil/fork/plastic,
 /obj/item/weapon/material/kitchen/utensil/spoon/plastic,
 /obj/item/weapon/material/kitchen/utensil/spoon/plastic,
 /obj/item/weapon/material/kitchen/utensil/spoon/plastic,
-/obj/item/weapon/material/kitchen/utensil/spoon/plastic,
-/obj/item/weapon/material/kitchen/utensil/spoon/plastic,
+/obj/item/weapon/material/kitchen/utensil/fork/plastic,
+/obj/item/weapon/material/kitchen/utensil/fork/plastic,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
@@ -37859,6 +37854,8 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
+/obj/item/stack/material/plasteel/ten,
+/obj/item/stack/material/plasteel/ten,
 /turf/simulated/floor/tiled,
 /area/assembly/robotics)
 "brX" = (
@@ -40611,6 +40608,7 @@
 	pixel_y = 3
 	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/item/stack/material/plasteel/ten,
 /turf/simulated/floor/tiled,
 /area/assembly/robotics)
 "bwS" = (
@@ -74463,6 +74461,34 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
+"cGe" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/polarized{
+	tag = "icon-rwindow (EAST)";
+	icon_state = "rwindow";
+	dir = 4
+	},
+/obj/structure/window/reinforced/polarized{
+	tag = "icon-rwindow (NORTH)";
+	icon_state = "rwindow";
+	dir = 1
+	},
+/obj/structure/window/reinforced/polarized{
+	tag = "icon-rwindow (WEST)";
+	icon_state = "rwindow";
+	dir = 8
+	},
+/obj/structure/window/reinforced/polarized,
+/turf/simulated/wall,
+/area/crew_quarters/bar)
+"cGf" = (
+/obj/item/weapon/paper{
+	info = "ƒ∆ŒÕÕ» ◊≈–“Œ¬€ √” » ¬≈«ƒ≈, ŒÕ» Õ¿ ƒ≈–≈¬‹ﬂ’! Œƒ»Õ ƒ¿∆≈ ”œ¿À ÃÕ≈ Õ¿ √ŒÀŒ¬”...";
+	name = "some sheet of paper"
+	},
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood,
+/area/crew_quarters/bar)
 
 (1,1,1) = {"
 aaa
@@ -111081,7 +111107,7 @@ aVo
 aTO
 aYq
 aDs
-aDs
+cGe
 aDs
 aYD
 bgl
@@ -111338,8 +111364,8 @@ aVp
 aWA
 aYr
 baq
-bbP
 aDs
+cGf
 aYD
 bgk
 bhU
@@ -125245,7 +125271,7 @@ bPk
 bQQ
 bSf
 bTo
-bUL
+bUN
 bNN
 bTn
 bTn
@@ -125759,7 +125785,7 @@ bPm
 bQS
 bSh
 bPn
-bUN
+bUL
 bNN
 aaf
 aaf
