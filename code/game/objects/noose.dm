@@ -1,72 +1,91 @@
-/obj/item/stack/cable_coil/building_checks(datum/stack_recipe/R, multiplier)
-	if(R.title == "noose")
-		if(!(locate(/obj/structure/bed) in usr.loc) && !(locate(/obj/structure/table) in usr.loc) && !(locate(/obj/structure/toilet) in usr.loc))
-			to_chat(usr, "<span class='warning'>You have to be standing on top of a chair/table/toilet to make a noose!</span>")
-			return FALSE
-	return ..()
+//nooses from aurora station
+/obj/item/stack/cable_coil/verb/make_noose()
+	set name = "Make Noose"
+	set category = "Object"
+	var/mob/M = usr
 
-/obj/structure/bed/chair/noose //It's a "chair".
+	if(ishuman(M) && !M.restrained() && !M.stat && !M.paralysis && ! M.stunned)
+		if(!istype(usr.loc,/turf)) return
+		if(!(locate(/obj/item/weapon/stool) in usr.loc) && !(locate(/obj/structure/bed) in usr.loc) && !(locate(/obj/structure/table) in usr.loc) && !(locate(/obj/structure/toilet) in usr.loc))
+			to_chat(usr, "<span class='warning'>You have to be standing on top of a chair/table/bed to make a noose!</span>")
+			return 0
+		if(src.amount <= 24)
+			to_chat(usr, "<span class='warning'> You need at least 25 lengths to make a noose!</span>")
+			return
+		new /obj/structure/noose(usr.loc)
+		to_chat(usr, "<span class='notice'>You wind some cable together to make a noose, tying it to the ceiling.</span>")
+		src.use(25)
+	else
+		to_chat(usr, "<span class='notice'>You cannot do that.</span>")
+	..()
+
+/obj/structure/noose
 	name = "noose"
-	desc = "Well this just got a whole lot more morbid."
-	icon = 'icons/obj/infinity_object.dmi'
+	desc = "A morbid apparatus."
 	icon_state = "noose"
-	layer = FLY_LAYER
-	var/image/over
+	buckle_lying = 0
+	icon = 'icons/obj/noose.dmi'
+	anchored = 1
+	can_buckle = 1
+	layer = 5
+	var/image/over = null
+	var/ticks = 0
 
-/obj/structure/bed/chair/noose/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/weapon/wrench))
-		return
-
+/obj/structure/noose/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/weapon/wirecutters))
 		user.visible_message("[user] cuts the noose.", "<span class='notice'>You cut the noose.</span>")
-		if(has_buckled_mobs())
-			for(var/m in buckled_mobs)
-				var/mob/living/buckled_mob = m
-				if(buckled_mob.mob_has_gravity())
-					buckled_mob.visible_message("<span class='danger'>[buckled_mob] falls over and hits the ground!</span>",\
-												"<span class='userdanger'>You fall over and hit the ground!</span>")
-					buckled_mob.adjustBruteLoss(10)
+		if(buckled_mob)
+			buckled_mob.visible_message("<span class='danger'>[buckled_mob] falls over and hits the ground!</span>",\
+										"<span class='danger'>You fall over and hit the ground!</span>")
+			buckled_mob.adjustBruteLoss(10)
+			buckled_mob.silent = 0
 		var/obj/item/stack/cable_coil/C = new(get_turf(src))
 		C.amount = 25
 		qdel(src)
 		return
 	..()
 
-/obj/structure/bed/chair/noose/New()
+/obj/structure/noose/New()
 	..()
 	pixel_y += 16 //Noose looks like it's "hanging" in the air
 	over = image(icon, "noose_overlay")
-	over.layer = FLY_LAYER
-	add_overlay(over, priority = 0)
+	over.layer = MOB_LAYER + 0.1
 
-/obj/structure/bed/chair/noose/Destroy()
+/obj/structure/noose/Destroy()
+	GLOB.processing_objects -= src
 	return ..()
 
-/obj/structure/bed/chair/noose/post_buckle_mob(mob/living/M)
-	if(has_buckled_mobs())
-		src.layer = MOB_LAYER
+/obj/structure/noose/post_buckle_mob(mob/living/M)
+	if(M == buckled_mob)
+		layer = MOB_LAYER
+		overlays += over
+		GLOB.processing_objects |= src
+		M.pixel_y = initial(M.pixel_y) + 8 //rise them up a bit
 		M.dir = SOUTH
-		animate(M, pixel_y = initial(pixel_y) + 8, time = 8, easing = LINEAR_EASING)
 	else
 		layer = initial(layer)
-		M.pixel_x = initial(M.pixel_x)
+		overlays -= over
+		GLOB.processing_objects -= src
 		pixel_x = initial(pixel_x)
-		M.pixel_y = M.get_standard_pixel_y_offset(M.lying)
+		M.pixel_x = initial(M.pixel_x)
+		M.pixel_y = initial(M.pixel_y)
 
-/obj/structure/bed/chair/noose/user_unbuckle_mob(mob/living/M,mob/living/user)
-	if(has_buckled_mobs())
+/obj/structure/noose/user_unbuckle_mob(mob/living/user)
+	if(buckled_mob && buckled_mob.buckled == src)
+		var/mob/living/M = buckled_mob
 		if(M != user)
 			user.visible_message("<span class='notice'>[user] begins to untie the noose over [M]'s neck...</span>",\
 								"<span class='notice'>You begin to untie the noose over [M]'s neck...</span>")
-			if(!do_mob(user, M, 100))
+			if(do_mob(user, M, 100))
+				user.visible_message("<span class='notice'>[user] unties the noose over [M]'s neck!</span>",\
+									"<span class='notice'>You untie the noose over [M]'s neck!</span>")
+			else
 				return
-			user.visible_message("<span class='notice'>[user] unties the noose over [M]'s neck!</span>",\
-								"<span class='notice'>You untie the noose over [M]'s neck!</span>")
 		else
 			M.visible_message(\
 				"<span class='warning'>[M] struggles to untie the noose over their neck!</span>",\
-				"<span class='notice'>You struggle to untie the noose over your neck... (Stay still for 15 seconds.)</span>")
-			if(!do_after(M, 150, target = src))
+				"<span class='notice'>You struggle to untie the noose over your neck.</span>")
+			if(!do_after(M, 150))
 				if(M && M.buckled)
 					to_chat(M, "<span class='warning'>You fail to untie yourself!</span>")
 				return
@@ -76,82 +95,90 @@
 				"<span class='warning'>[M] unties the noose over their neck!</span>",\
 				"<span class='notice'>You untie the noose over your neck!</span>")
 			M.Weaken(3)
-		if(istype(M, /mob/living/carbon/human))
-			var/mob/living/carbon/human/H = M
-			H.noosed = FALSE
-		unbuckle_all_mobs(force=1)
-		M.pixel_z = initial(M.pixel_z)
-		pixel_z = initial(pixel_z)
+		unbuckle_mob()
+		buckled_mob.silent = 0
 		add_fingerprint(user)
 
-/obj/structure/bed/chair/noose/user_buckle_mob(mob/living/carbon/human/M, mob/user)
-	if(!in_range(user, src) || user.stat || user.restrained() || !iscarbon(M))
-		return FALSE
+/obj/structure/noose/user_buckle_mob(mob/living/carbon/human/M, mob/user)
+	if(!in_range(user, src) || user.stat || user.restrained() || !istype(M))
+		return 0
 
-	if(M.loc != src.loc) return FALSE //Can only noose someone if they're on the same tile as noose
+	if (ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/external/affecting = H.get_organ("head")
+		if(!affecting)
+			to_chat(user, "<span class='danger'>They don't have a head.</span>")
+			return
+
+	if(M.loc != src.loc) return 0 //Can only noose someone if they're on the same tile as noose
 
 	add_fingerprint(user)
 
 	if(M == user && buckle_mob(M))
 		M.visible_message(\
-			"<span class='suicide'>[M] ties \the [src] over their neck!</span>",\
-			"<span class='suicide'>You tie \the [src] over your neck!</span>")
+			"<span class='warning'>[M] ties \the [src] over their neck!</span>",\
+			"<span class='warning'>You tie \the [src] over your neck!</span>")
 		playsound(user.loc, 'sound/effects/noosed.ogg', 50, 1, -1)
-		M.noosed = TRUE
-		return TRUE
+		return 1
 	else
 		M.visible_message(\
 			"<span class='danger'>[user] attempts to tie \the [src] over [M]'s neck!</span>",\
-			"<span class='userdanger'>[user] ties \the [src] over your neck!</span>")
+			"<span class='danger'>[user] ties \the [src] over your neck!</span>")
 		to_chat(user, "<span class='notice'>It will take 20 seconds and you have to stand still.</span>")
-		if(do_mob(user, M, 200))
+		if(do_after(user, 200))
 			if(buckle_mob(M))
 				M.visible_message(\
 					"<span class='danger'>[user] ties \the [src] over [M]'s neck!</span>",\
 					"<span class='userdanger'>[user] ties \the [src] over your neck!</span>")
 				playsound(user.loc, 'sound/effects/noosed.ogg', 50, 1, -1)
-				M.noosed = TRUE
-				return TRUE
+				return 1
 			else
 				user.visible_message(\
 					"<span class='warning'>[user] fails to tie \the [src] over [M]'s neck!</span>",\
 					"<span class='warning'>You fail to tie \the [src] over [M]'s neck!</span>")
-				return FALSE
+				return 0
 		else
 			user.visible_message(\
 				"<span class='warning'>[user] fails to tie \the [src] over [M]'s neck!</span>",\
 				"<span class='warning'>You fail to tie \the [src] over [M]'s neck!</span>")
-			return FALSE
+			return 0
 
-/obj/structure/bed/chair/noose/process()
-	if(!has_buckled_mobs())
+/obj/structure/noose/process(mob/living/carbon/human/M, mob/user)
+	if(!buckled_mob)
+		GLOB.processing_objects -= src
+		buckled_mob.pixel_x = initial(buckled_mob.pixel_x)
+		pixel_x = initial(pixel_x)
 		return
-	for(var/m in buckled_mobs)
-		var/mob/living/buckled_mob = m
-		if(pixel_x >= 0)
-			animate(src, pixel_x = -3, time = 45, easing = ELASTIC_EASING)
-			animate(m, pixel_x = -3, time = 45, easing = ELASTIC_EASING)
-		else
-			animate(src, pixel_x = 3, time = 45, easing = ELASTIC_EASING)
-			animate(m, pixel_x = 3, time = 45, easing = ELASTIC_EASING)
-		if(buckled_mob.mob_has_gravity())
-			buckled_mob.adjustOxyLoss(5)
-			if(prob(40))
-				buckled_mob.emote("gasp")
-			if(prob(20))
-				var/flavor_text = list("<span class='suicide'>[buckled_mob]'s legs flail for anything to stand on.</span>",\
-										"<span class='suicide'>[buckled_mob]'s hands are desperately clutching the noose.</span>",\
-										"<span class='suicide'>[buckled_mob]'s limbs sway back and forth with diminishing strength.</span>")
-				if(buckled_mob.stat == DEAD)
-					flavor_text = list("<span class='suicide'>[buckled_mob]'s limbs lifelessly sway back and forth.</span>",\
-										"<span class='suicide'>[buckled_mob]'s eyes stare straight ahead.</span>")
-				buckled_mob.visible_message(pick(flavor_text))
-				playsound(buckled_mob.loc, 'sound/effects/noose_idle.ogg', 30, 1, -3)
 
-/mob/living/carbon/human
-	var/noosed = FALSE
+	ticks++
+	switch(ticks)
+		if(1)
+			pixel_x -= 1
+			buckled_mob.pixel_x -= 1
+		if(2)
+			pixel_x = initial(pixel_x)
+			buckled_mob.pixel_x = initial(buckled_mob.pixel_x)
+		if(3) //Every third tick it plays a sound and RNG's a flavor text
+			pixel_x += 1
+			buckled_mob.pixel_x += 1
+			if(buckled_mob)
+				if(prob(15))
+					var/flavor_text = list("<span class='warning'>[buckled_mob]'s legs flail for anything to stand on.</span>",\
+											"<span class='warning'>[buckled_mob]'s hands are desperately clutching the noose.</span>",\
+											"<span class='warning'>[buckled_mob]'s limbs sway back and forth with diminishing strength.</span>")
+					if(buckled_mob.stat == DEAD)
+						flavor_text = list("<span class='warning'>[buckled_mob]'s limbs lifelessly sway back and forth.</span>",\
+											"<span class='warning'>[buckled_mob]'s eyes stare straight ahead.</span>")
+					buckled_mob.visible_message(pick(flavor_text))
+				playsound(buckled_mob.loc, 'sound/effects/noose_idle.ogg', 50, 1, -3)
+		if(4)
+			pixel_x = initial(pixel_x)
+			buckled_mob.pixel_x = initial(buckled_mob.pixel_x)
+			ticks = 0
 
-/mob/living/carbon/human/proc/checknoosedrop()
-	if(noosed)
-		for(var/obj/structure/bed/chair/noose/noose in loc)
-			noose.unbuckle_all_mobs(force = 1)
+	if(buckled_mob)
+		buckled_mob.adjustOxyLoss(5)
+		buckled_mob.adjustBrainLoss(1)
+		buckled_mob.silent = max(buckled_mob.silent, 10)
+		if(prob(25)) //to reduce gasp spam
+			buckled_mob.emote("gasp")
