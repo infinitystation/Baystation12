@@ -8,8 +8,7 @@
 	initial_flooring = /decl/flooring/tiling/asteroid
 
 /turf/simulated/floor/asteroid/aired
-	oxygen = MOLES_O2STANDARD
-	nitrogen = MOLES_N2STANDARD
+	initial_gas = list(oxygen = MOLES_O2STANDARD, nitrogen = MOLES_N2STANDARD)
 	temperature = TCMB
 
 /turf/simulated/floor/tiled/asteroid

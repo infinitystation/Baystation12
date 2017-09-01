@@ -8,10 +8,7 @@
 	var/holy = 0
 
 	// Initial air contents (in moles)
-	var/oxygen = 0
-	var/carbon_dioxide = 0
-	var/nitrogen = 0
-	var/phoron = 0
+	var/list/initial_gas
 
 	//Properties for airtight tiles (/wall)
 	var/thermal_conductivity = 0.05
@@ -27,6 +24,8 @@
 	var/blessed = 0             // Has the turf been blessed?
 
 	var/list/decals
+
+	var/movement_delay
 
 /turf/New()
 	..()
@@ -225,7 +224,7 @@ var/const/enterloopsanity = 100
 
 //expects an atom containing the reagents used to clean the turf
 /turf/proc/clean(atom/source, mob/user = null)
-	if(source.reagents.has_reagent("water", 1) || source.reagents.has_reagent("cleaner", 1))
+	if(source.reagents.has_reagent(/datum/reagent/water, 1) || source.reagents.has_reagent(/datum/reagent/space_cleaner, 1))
 		clean_blood()
 		remove_cleanables()
 	else

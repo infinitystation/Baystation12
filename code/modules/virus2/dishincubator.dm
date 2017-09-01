@@ -132,10 +132,10 @@
 
 	if(beaker)
 		if(foodsupply < 100 && foodsupply + 10 <= 100)
-			if(beaker.reagents.remove_reagent("virusfood",5))
+			if(beaker.reagents.remove_reagent("/datum/reagent/nutriment/virus_food",5))
 				foodsupply += 10
 		else if (!(foodsupply + 10 <= 100))
-			if(beaker.reagents.remove_reagent("virusfood",1))
+			if(beaker.reagents.remove_reagent("/datum/reagent/nutriment/virus_food",1))
 				if (!(foodsupply >= 100))
 					foodsupply += 1
 				else
@@ -145,7 +145,7 @@
 		if (locate(/datum/reagent/toxin) in beaker.reagents.reagent_list && toxins < 100)
 			for(var/datum/reagent/toxin/T in beaker.reagents.reagent_list)
 				toxins += max(T.strength,1)
-				beaker.reagents.remove_reagent(T.id,1)
+				beaker.reagents.remove_reagent(T.type,1)
 				if(toxins > 100)
 					toxins = 100
 					break

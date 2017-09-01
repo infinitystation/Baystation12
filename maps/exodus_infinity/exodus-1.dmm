@@ -3251,8 +3251,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/bluegrid{
 	name = "Mainframe Base";
-	nitrogen = 82.1472;
-	oxygen = 21.8366;
+	initial_gas = list("nitrogen" = 82.1472, "oxygen" = 21.8366);
 	temperature = 293.15
 	},
 /area/maintenance/sub/relay_station)
@@ -3271,8 +3270,7 @@
 	},
 /turf/simulated/floor/bluegrid{
 	name = "Mainframe Base";
-	nitrogen = 82.1472;
-	oxygen = 21.8366;
+	initial_gas = list("nitrogen" = 82.1472, "oxygen" = 21.8366);
 	temperature = 293.15
 	},
 /area/maintenance/sub/relay_station)
@@ -3317,8 +3315,7 @@
 	},
 /turf/simulated/floor/bluegrid{
 	name = "Mainframe Base";
-	nitrogen = 82.1472;
-	oxygen = 21.8366;
+	initial_gas = list("nitrogen" = 82.1472, "oxygen" = 21.8366);
 	temperature = 293.15
 	},
 /area/maintenance/sub/relay_station)
@@ -3346,8 +3343,7 @@
 	},
 /turf/simulated/floor/bluegrid{
 	name = "Mainframe Base";
-	nitrogen = 82.1472;
-	oxygen = 21.8366;
+	initial_gas = list("nitrogen" = 82.1472, "oxygen" = 21.8366);
 	temperature = 293.15
 	},
 /area/maintenance/sub/relay_station)

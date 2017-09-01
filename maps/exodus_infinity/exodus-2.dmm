@@ -2464,7 +2464,7 @@
 /area/security/meeting)
 "aeM" = (
 /obj/structure/table/standard,
-/obj/item/weapon/book/manual/security_space_law,
+/obj/item/weapon/book/manual/nt_regs,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -4814,7 +4814,7 @@
 /area/security/warden)
 "aji" = (
 /obj/structure/table/standard,
-/obj/item/weapon/book/manual/security_space_law{
+/obj/item/weapon/book/manual/nt_regs{
 	pixel_x = -3;
 	pixel_y = 5
 	},
@@ -5635,7 +5635,7 @@
 	dir = 4
 	},
 /obj/structure/bookcase,
-/obj/item/weapon/book/manual/security_space_law,
+/obj/item/weapon/book/manual/nt_regs,
 /obj/structure/noticeboard{
 	pixel_y = 27
 	},
@@ -7958,7 +7958,7 @@
 	icon_state = "1-8"
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/book/manual/security_space_law{
+/obj/item/weapon/book/manual/nt_regs{
 	pixel_y = 6
 	},
 /obj/machinery/camera/network/security{
@@ -9613,7 +9613,7 @@
 /area/security/prison)
 "arE" = (
 /obj/structure/table/standard,
-/obj/item/weapon/book/manual/security_space_law,
+/obj/item/weapon/book/manual/nt_regs,
 /turf/simulated/floor/tiled,
 /area/security/prison)
 "arF" = (
@@ -31994,7 +31994,7 @@
 /turf/simulated/floor/carpet,
 /area/bridge/meeting_room)
 "bhv" = (
-/obj/item/weapon/book/manual/security_space_law,
+/obj/item/weapon/book/manual/nt_regs,
 /obj/structure/table/woodentable,
 /obj/structure/cable/green{
 	d1 = 4;
@@ -35554,7 +35554,7 @@
 /area/crew_quarters/captain)
 "bnO" = (
 /obj/structure/table/woodentable,
-/obj/item/weapon/book/manual/security_space_law,
+/obj/item/weapon/book/manual/nt_regs,
 /obj/random_multi/single_item/captains_spare_id{
 	weight = 10
 	},
@@ -73693,7 +73693,7 @@
 /obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/reinforced{
 	name = "engine floor";
-	oxygen = 0
+	initial_gas = list("oxygen" = 0)
 	},
 /area/engineering/engine_room)
 "cED" = (
@@ -73705,7 +73705,7 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced{
 	name = "engine floor";
-	oxygen = 0
+	initial_gas = list("oxygen" = 0)
 	},
 /area/engineering/engine_room)
 "cEE" = (
@@ -73727,7 +73727,7 @@
 	},
 /turf/simulated/floor/reinforced{
 	name = "engine floor";
-	oxygen = 0
+	initial_gas = list("oxygen" = 0)
 	},
 /area/engineering/engine_room)
 "cEF" = (
@@ -74053,7 +74053,7 @@
 	},
 /turf/simulated/floor/reinforced{
 	name = "engine floor";
-	oxygen = 0
+	initial_gas = list("oxygen" = 0)
 	},
 /area/engineering/engine_room)
 "cFd" = (
@@ -74070,7 +74070,7 @@
 	},
 /turf/simulated/floor/reinforced{
 	name = "engine floor";
-	oxygen = 0
+	initial_gas = list("oxygen" = 0)
 	},
 /area/engineering/engine_room)
 "cFf" = (
@@ -74174,7 +74174,7 @@
 	},
 /turf/simulated/floor/reinforced{
 	name = "engine floor";
-	oxygen = 0
+	initial_gas = list("oxygen" = 0)
 	},
 /area/engineering/engine_room)
 "cFt" = (

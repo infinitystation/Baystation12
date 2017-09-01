@@ -8775,8 +8775,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/bluegrid{
 	name = "Mainframe Base";
-	nitrogen = 82.1472;
-	oxygen = 21.8366;
+	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472);
 	temperature = 293.15
 	},
 /area/outpost/engineering/telecomms)
@@ -8795,8 +8794,7 @@
 	},
 /turf/simulated/floor/bluegrid{
 	name = "Mainframe Base";
-	nitrogen = 82.1472;
-	oxygen = 21.8366;
+	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472);
 	temperature = 293.15
 	},
 /area/outpost/engineering/telecomms)
@@ -9134,8 +9132,7 @@
 	},
 /turf/simulated/floor/bluegrid{
 	name = "Mainframe Base";
-	nitrogen = 82.1472;
-	oxygen = 21.8366;
+	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472);
 	temperature = 293.15
 	},
 /area/outpost/engineering/telecomms)
@@ -9163,8 +9160,7 @@
 	},
 /turf/simulated/floor/bluegrid{
 	name = "Mainframe Base";
-	nitrogen = 82.1472;
-	oxygen = 21.8366;
+	initial_gas = list("oxygen" = 21.8366, "nitrogen" = 82.1472);
 	temperature = 293.15
 	},
 /area/outpost/engineering/telecomms)
@@ -11157,8 +11153,7 @@
 	},
 /turf/simulated/floor/reinforced{
 	name = "o2 floor";
-	nitrogen = 0;
-	oxygen = 100000
+	initial_gas = list("oxygen" = 100000, "nitrogen" = 0)
 	},
 /area/outpost/engineering/atmospherics)
 "vQ" = (
@@ -11172,8 +11167,7 @@
 	},
 /turf/simulated/floor/reinforced{
 	name = "o2 floor";
-	nitrogen = 0;
-	oxygen = 100000
+	initial_gas = list("oxygen" = 100000, "nitrogen" = 0)
 	},
 /area/outpost/engineering/atmospherics)
 "vR" = (
@@ -11187,8 +11181,7 @@
 	},
 /turf/simulated/floor/reinforced{
 	name = "n2 floor";
-	nitrogen = 100000;
-	oxygen = 0
+	initial_gas = list("oxygen" = 0, "nitrogen" = 100000)
 	},
 /area/outpost/engineering/atmospherics)
 "vS" = (
@@ -11199,8 +11192,7 @@
 	},
 /turf/simulated/floor/reinforced{
 	name = "n2 floor";
-	nitrogen = 100000;
-	oxygen = 0
+	initial_gas = list("oxygen" = 0, "nitrogen" = 100000)
 	},
 /area/outpost/engineering/atmospherics)
 "vT" = (
@@ -11210,22 +11202,19 @@
 	},
 /turf/simulated/floor/reinforced{
 	name = "o2 floor";
-	nitrogen = 0;
-	oxygen = 100000
+	initial_gas = list("oxygen" = 100000, "nitrogen" = 0)
 	},
 /area/outpost/engineering/atmospherics)
 "vU" = (
 /turf/simulated/floor/reinforced{
 	name = "o2 floor";
-	nitrogen = 0;
-	oxygen = 100000
+	initial_gas = list("oxygen" = 100000, "nitrogen" = 0)
 	},
 /area/outpost/engineering/atmospherics)
 "vV" = (
 /turf/simulated/floor/reinforced{
 	name = "n2 floor";
-	nitrogen = 100000;
-	oxygen = 0
+	initial_gas = list("oxygen" = 0, "nitrogen" = 100000)
 	},
 /area/outpost/engineering/atmospherics)
 "vW" = (
@@ -11235,8 +11224,7 @@
 	},
 /turf/simulated/floor/reinforced{
 	name = "n2 floor";
-	nitrogen = 100000;
-	oxygen = 0
+	initial_gas = list("oxygen" = 0, "nitrogen" = 100000)
 	},
 /area/outpost/engineering/atmospherics)
 "vX" = (

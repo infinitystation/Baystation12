@@ -6814,7 +6814,7 @@
 /area/ninja_dojo/dojo)
 "api" = (
 /obj/structure/bookcase,
-/obj/item/weapon/book/manual/security_space_law,
+/obj/item/weapon/book/manual/nt_regs,
 /turf/unsimulated/floor{
 	dir = 8;
 	icon_state = "wood"

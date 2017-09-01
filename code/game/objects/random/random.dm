@@ -1106,6 +1106,18 @@ something, make sure it's not in one of the other lists.*/
 	return list(/obj/item/clothing/accessory/rank/marine/enlisted/e5 = 3,
 				/obj/item/clothing/accessory/rank/marine/enlisted/e6 = 1)
 
+/obj/random/hostile
+	name = "Random Hostile Mob"
+	desc = "This is a random hostile mob."
+	icon = 'icons/mob/amorph.dmi'
+	icon_state = "standing"
+	spawn_nothing_percentage = 80
+
+obj/random/hostile/spawn_choices()
+	return list(/mob/living/simple_animal/hostile/viscerator,
+				/mob/living/simple_animal/hostile/carp,
+				/mob/living/simple_animal/hostile/carp/pike)
+
 /*
 	Selects one spawn point out of a group of points with the same ID and asks it to generate its items
 */
