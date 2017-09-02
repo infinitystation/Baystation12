@@ -1,7 +1,10 @@
 /proc/add_note(target_ckey, notetext, timestamp, adminckey, logged = 1, server)
+	if(!usr.client.holder) return
+
 	if(!dbcon.IsConnected())
-		usr << "<span class='danger'>Failed to establish database connection.</span>"
+		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>")
 		return
+
 	if(!target_ckey)
 		var/new_ckey = ckey(input(usr,"Who would you like to add a note for?","Enter a ckey",null) as text)
 		if(!new_ckey)
@@ -49,8 +52,11 @@
 	var/ckey
 	var/notetext
 	var/adminckey
+
+	if(!usr.client.holder) return
+
 	if(!dbcon.IsConnected())
-		usr << "<span class='danger'>Failed to establish database connection.</span>"
+		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>")
 		return
 	if(!note_id)
 		return
@@ -75,8 +81,10 @@
 	show_note(ckey)
 
 /proc/edit_note(note_id)
+	if(!usr.client.holder) return
+
 	if(!dbcon.IsConnected())
-		usr << "<span class='danger'>Failed to establish database connection.</span>"
+		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>")
 		return
 	if(!note_id)
 		return
@@ -121,7 +129,7 @@
 	<input type='hidden' name='_src_' value='holder'>\
 	<input type='text' name='notessearch' value='[index]'>\
 	<input type='submit' value='Search'></form>"
-	if(!linkless)
+	if(!linkless && usr.client.holder)
 		output = navbar
 	if(target_ckey)
 		var/target_sql_ckey = sanitizeSQL(target_ckey)
@@ -131,7 +139,7 @@
 			log_game("SQL ERROR obtaining ckey, notetext, adminckey, last_editor, server from notes table. Error : \[[err]\]\n")
 			return
 		output += "<h2><center>Notes of [target_ckey]</center></h2>"
-		if(!linkless)
+		if(!linkless && usr.client.holder)
 			output += "<center><a href='?_src_=holder;addnote=[target_ckey]'>\[Add Note\]</a></center>"
 		output += ruler
 		while(query_get_notes.NextRow())
@@ -150,7 +158,8 @@
 	else if(index)
 		var/index_ckey
 		var/search
-		output += "<center><a href='?_src_=holder;addnoteempty=1'>\[Add Note\]</a></center>"
+		if(usr.client.holder)
+			output += "<center><a href='?_src_=holder;addnoteempty=1'>\[Add Note\]</a></center>"
 		output += ruler
 		if(!isnum(index))
 			index = sanitizeSQL(index)
@@ -170,6 +179,14 @@
 			index_ckey = query_list_notes.item[1]
 			output += "<a href='?_src_=holder;shownoteckey=[index_ckey]'>[index_ckey]</a><br>"
 	else
-		output += "<center><a href='?_src_=holder;addnoteempty=1'>\[Add Note\]</a></center>"
+		if(usr.client.holder)
+			output += "<center><a href='?_src_=holder;addnoteempty=1'>\[Add Note\]</a></center>"
 		output += ruler
-	usr << browse(output, "window=show_notes;size=900x500")
+	show_browser(usr, output, "window=show_notes;size=900x500")
+
+/client/verb/self_notes()
+	set name = "View Admin Remarks"
+	set category = "OOC"
+	set desc = "View the notes that admins have written about you"
+
+	show_note(usr.ckey)
