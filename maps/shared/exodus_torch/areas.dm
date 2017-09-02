@@ -434,6 +434,10 @@
 	name = "\improper EVA Storage"
 	icon_state = "eva"
 
+/area/ai_monitored/storage/eva/civilian
+	name = "\improper Civilian EVA Storage"
+	icon_state = "eva"
+
 /area/turret_protected/ai
 	name = "\improper AI Chamber"
 	icon_state = "ai_chamber"

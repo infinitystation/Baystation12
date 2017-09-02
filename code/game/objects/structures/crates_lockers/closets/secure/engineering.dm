@@ -24,7 +24,7 @@
 		/obj/item/device/radio/headset/heads/ce,
 		/obj/item/weapon/storage/toolbox/mechanical,
 		/obj/item/clothing/suit/storage/hazardvest,
-		/obj/item/clothing/mask/gas_alt,
+		/obj/item/clothing/mask/gas/alt,
 		/obj/item/device/multitool,
 		/obj/item/device/flash,
 		/obj/item/taperoll/engineering,
