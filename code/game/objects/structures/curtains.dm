@@ -49,6 +49,10 @@
 	name = "bed curtain"
 	color = "#854636"
 
+/obj/structure/curtain/open/bar
+	name = "bar curtain"
+	color = "#854636"
+
 /obj/structure/curtain/open/privacy
 	name = "privacy curtain"
 	color = "#B8F5E3"

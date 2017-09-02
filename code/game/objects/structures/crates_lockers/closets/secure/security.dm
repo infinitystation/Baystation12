@@ -168,7 +168,7 @@
 	return list(
 		new/datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel_sec)),
 		new/datum/atom_creator/simple(/obj/item/weapon/storage/backpack/dufflebag/sec, 50),
-		/obj/item/clothing/mask/gas_alt,
+		/obj/item/clothing/mask/gas/half,
 		/obj/item/clothing/suit/armor/vest/nt,
 		/obj/item/clothing/head/helmet,
 		/obj/item/device/radio/headset/headset_sec,
