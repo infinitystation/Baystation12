@@ -955,6 +955,9 @@ About the new airlock wires panel:
 				src.p_open = 0
 		else
 			src.p_open = 1
+		var/interact_sound = "[p_open ? "open" : "close"]"
+		user.visible_message("[user] [p_open ? "exposed" : "unexposed"] the airlock wire panel.", "You [p_open ? "exposed" : "unexposed"] the airlock wire panel.")
+		playsound(src.loc, "sound/machines/Custom_screwdriver[interact_sound].ogg", 50, 1)
 		src.update_icon()
 	else if(istype(C, /obj/item/weapon/wirecutters))
 		return src.attack_hand(user)

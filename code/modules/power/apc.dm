@@ -541,7 +541,10 @@
 				update_icon()
 		else
 			wiresexposed = !wiresexposed
-			to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"]")
+			var/interact_sound = "[wiresexposed ? "open" : "close"]"
+			to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"].")
+			playsound(src.loc, "sound/machines/Custom_screwdriver[interact_sound].ogg", 50, 1)
+
 			update_icon()
 
 	else if (istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/device/pda))			// trying to unlock the interface with an ID card

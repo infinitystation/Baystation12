@@ -766,7 +766,9 @@
 			if(istype(W, /obj/item/weapon/screwdriver))  // Opening that Air Alarm up.
 //				to_chat(user, "You pop the Air Alarm's maintence panel open.")
 				wiresexposed = !wiresexposed
-				to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"]")
+				var/interact_sound = "[wiresexposed ? "open" : "close"]"
+				to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"].")
+				playsound(src.loc, "sound/machines/Custom_screwdriver[interact_sound].ogg", 50, 1)
 				update_icon()
 				return
 
@@ -925,6 +927,9 @@ FIRE ALARM
 
 	if (istype(W, /obj/item/weapon/screwdriver) && buildstage == 2)
 		wiresexposed = !wiresexposed
+		var/interact_sound = "[wiresexposed ? "open" : "close"]"
+		to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"].")
+		playsound(src.loc, "sound/machines/Custom_screwdriver[interact_sound].ogg", 50, 1)
 		update_icon()
 		return
 
