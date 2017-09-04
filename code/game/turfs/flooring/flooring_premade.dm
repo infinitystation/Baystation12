@@ -78,6 +78,8 @@
 /turf/simulated/floor/reinforced/nitrogen
 	initial_gas = list("nitrogen" = ATMOSTANK_NITROGEN)
 
+/turf/simulated/floor/reinforced/hydrogen
+	initial_gas = list("hydrogen" = ATMOSTANK_HYDROGEN)
 
 /turf/simulated/floor/reinforced/oxygen
 	initial_gas = list("oxygen" = ATMOSTANK_OXYGEN)
@@ -107,10 +109,6 @@
 
 /turf/simulated/floor/cult/airless
 	initial_gas = list(oxygen = 0, nitrogen = 0)
-
-/turf/simulated/floor/cult/New()
-	..()
-	new /obj/effect/overlay/cult/cultfloor(src)
 
 /turf/simulated/floor/cult/cultify()
 	return
