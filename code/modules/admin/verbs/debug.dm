@@ -469,14 +469,18 @@
 	for(var/areatype in areas_without_camera)
 		log_debug("* [areatype]")
 
-/datum/admins/proc/cmd_admin_dress()
+/client/proc/cmd_admin_dress(mob/living/carbon/human/F as mob in GLOB.human_mob_list)
 	set category = "Fun"
 	set name = "Select equipment"
 
 	if(!check_rights(R_FUN))
 		return
 
-	var/mob/living/carbon/human/H = input("Select mob.", "Select equipment.") as null|anything in GLOB.human_mob_list
+	var/mob/living/carbon/human/H
+	if(F)
+		H = F
+	else
+		H = input("Select mob.", "Select equipment.") as null|anything in GLOB.human_mob_list
 	if(!H)
 		return
 
