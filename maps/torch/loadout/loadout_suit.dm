@@ -46,6 +46,8 @@
 	gear_tweaks += new/datum/gear_tweak/path(trenchcoats)
 
 /datum/gear/suit/poncho
+	display_name = "poncho selection"
+	path = /obj/item/clothing/suit/poncho/colored
 	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/suit/roles/poncho/security
@@ -65,6 +67,14 @@
 
 /datum/gear/suit/suit_jacket
 	allowed_roles = FORMAL_ROLES
+
+/datum/gear/suit/suit_jacket/New()
+	..()
+	var/suitjackets = list()
+	suitjackets["black suit jacket"] = /obj/item/clothing/suit/storage/toggle/internalaffairs/plain
+	suitjackets["blue suit jacket"] = /obj/item/clothing/suit/storage/toggle/lawyer/bluejacket
+	suitjackets["purple suit jacket"] = /obj/item/clothing/suit/storage/lawyer/purpjacket
+	gear_tweaks += new/datum/gear_tweak/path(suitjackets)
 
 /datum/gear/suit/hazard
 	display_name = "hazard vests"
