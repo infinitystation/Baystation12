@@ -49,6 +49,7 @@
 /datum/gear/head/bandana
 	display_name = "bandana selection"
 	path = /obj/item/clothing/head/bandana
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/head/bandana/New()
 	..()
@@ -62,10 +63,12 @@
 	display_name = "hair bow"
 	path = /obj/item/clothing/head/hairflower/bow
 	flags = GEAR_HAS_COLOR_SELECTION
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/head/cap
 	display_name = "cap selection"
 	path = /obj/item/clothing/head/soft
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/head/cap/New()
 	..()
@@ -88,6 +91,7 @@
 /datum/gear/head/hairflower
 	display_name = "hair flower pin"
 	path = /obj/item/clothing/head/hairflower
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/head/hardhat
 	display_name = "hardhat selection"
@@ -125,6 +129,7 @@
 /datum/gear/head/informalhat
 	display_name = "informal hat selection"
 	path = /obj/item/clothing/head/cowboy_hat
+	allowed_roles = SEMIFORMAL_ROLES
 
 /datum/gear/head/informalhat/New()
 	..()
