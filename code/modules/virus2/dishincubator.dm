@@ -132,10 +132,10 @@
 
 	if(beaker)
 		if(foodsupply < 100 && foodsupply + 10 <= 100)
-			if(beaker.reagents.remove_reagent("/datum/reagent/nutriment/virus_food",5))
+			if(beaker.reagents.remove_reagent(/datum/reagent/nutriment/virus_food,5))
 				foodsupply += 10
 		else if (!(foodsupply + 10 <= 100))
-			if(beaker.reagents.remove_reagent("/datum/reagent/nutriment/virus_food",1))
+			if(beaker.reagents.remove_reagent(/datum/reagent/nutriment/virus_food,1))
 				if (!(foodsupply >= 100))
 					foodsupply += 1
 				else
