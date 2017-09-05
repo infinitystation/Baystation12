@@ -86,6 +86,17 @@
 	active_power_usage = round(initial(active_power_usage) * 5)
 	return 1
 
+/obj/machinery/porta_turret/Destroy()
+	var/area/A = get_area(src)
+	if(src in A)
+		A.turret_controls -= src
+	. = ..()
+
+/obj/machinery/porta_turret/Initialize()
+	var/area/A = get_area(src)
+	A.turret_controls += src
+	. = ..()
+
 /obj/machinery/porta_turret/New()
 	..()
 	req_access.Cut()

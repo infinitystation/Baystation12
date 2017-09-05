@@ -39,27 +39,14 @@
 	icon_state = "control_kill"
 
 /obj/machinery/turretid/Destroy()
-	if(control_area)
-		var/area/A = control_area
-		if(A && istype(A))
-			A.turret_controls -= src
+	var/area/A = get_area(src)
+	if(src in A)
+		A.turret_controls -= src
 	. = ..()
 
 /obj/machinery/turretid/Initialize()
-	if(!control_area)
-		control_area = get_area(src)
-	else if(istext(control_area))
-		for(var/area/A in world)
-			if(A.name && A.name==control_area)
-				control_area = A
-				break
-
-	if(control_area)
-		var/area/A = control_area
-		if(istype(A))
-			A.turret_controls += src
-		else
-			control_area = null
+	var/area/A = get_area(src)
+	A.turret_controls += src
 
 	power_change() //Checks power and initial settings
 	. = ..()
@@ -194,9 +181,9 @@
 	TC.check_anomalies = check_anomalies
 	TC.ailock = ailock
 
-	if(istype(control_area))
-		for (var/obj/machinery/porta_turret/aTurret in control_area)
-			aTurret.setState(TC)
+	var/area/A = get_area(src)
+	for(var/obj/machinery/porta_turret/aTurret in A.turret_controls)
+		aTurret.setState(TC)
 
 	update_icon()
 
