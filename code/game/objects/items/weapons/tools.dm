@@ -168,6 +168,8 @@
 	var/welding = 0 	//Whether or not the welding tool is off(0), on(1) or currently welding(2)
 	var/status = 1 		//Whether the welder is secured or unsecured (able to attach rods to it to make a flamethrower)
 	var/max_fuel = 20 	//The max amount of fuel the welder can hold
+	var/acti_sound = 'sound/items/WelderActivate.ogg'
+	var/deac_sound = 'sound/items/WelderDeactivate.ogg'
 
 /obj/item/weapon/weldingtool/New()
 //	var/random_fuel = min(rand(10,20),max_fuel)
@@ -321,6 +323,7 @@
 				to_chat(M, "<span class='notice'>You switch the [src] on.</span>")
 			else if(T)
 				T.visible_message("<span class='danger'>\The [src] turns on.</span>")
+			playsound(loc, acti_sound, 50, 1)
 			src.force = 15
 			src.damtype = "fire"
 			welding = 1
@@ -337,6 +340,7 @@
 			to_chat(M, "<span class='notice'>You switch \the [src] off.</span>")
 		else if(T)
 			T.visible_message("<span class='warning'>\The [src] turns off.</span>")
+		playsound(loc, deac_sound, 50, 1)
 		src.force = 3
 		src.damtype = "brute"
 		src.welding = 0
