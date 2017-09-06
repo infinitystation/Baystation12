@@ -205,3 +205,5 @@
 #define RAD_LEVEL_MODERATE 5
 #define RAD_LEVEL_HIGH 25
 #define RAD_LEVEL_VERY_HIGH 75
+
+#define ANNOUNSER_NAME "[station_name()] Automated Announcement System"
