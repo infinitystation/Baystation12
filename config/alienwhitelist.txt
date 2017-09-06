@@ -16,6 +16,7 @@ netreson - machine
 quardbreak - machine
 redknighthero - machine
 kotovsyndrome - machine
+wheatley2013 - machine
 nikita588 - machine
 themaybat - skrell
 themaybat - resomi
