@@ -163,6 +163,7 @@ var/global/datum/controller/gameticker/ticker
 			admins_number++
 	if(admins_number == 0)
 		send2adminirc("Round has started with no admins online.")
+		send2admindiscord("**Round has started with no admins online.** {ADMIN_PING}")
 
 	if(config.ooc_allowed && !config.ooc_during_round)
 		config.ooc_allowed = 0
