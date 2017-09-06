@@ -114,6 +114,7 @@
 		if(connected_port)
 			disconnect()
 			to_chat(user, "<span class='notice'>You disconnect \the [src] from the port.</span>")
+			playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 			update_icon()
 			return
 		else
@@ -121,6 +122,7 @@
 			if(possible_port)
 				if(connect(possible_port))
 					to_chat(user, "<span class='notice'>You connect \the [src] to the port.</span>")
+					playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 					update_icon()
 					return
 				else

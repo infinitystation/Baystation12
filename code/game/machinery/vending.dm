@@ -161,10 +161,12 @@
 		if (I) //for IDs and PDAs and wallets with IDs
 			paid = pay_with_card(I,W)
 			handled = 1
+			playsound(user.loc, 'sound/machines/id_swipe.ogg', 100, 1)
 		else if (istype(W, /obj/item/weapon/spacecash/ewallet))
 			var/obj/item/weapon/spacecash/ewallet/C = W
 			paid = pay_with_ewallet(C)
 			handled = 1
+			playsound(user.loc, 'sound/machines/id_swipe.ogg', 100, 1)
 		else if (istype(W, /obj/item/weapon/spacecash/bundle))
 			var/obj/item/weapon/spacecash/bundle/C = W
 			paid = pay_with_cash(C)
@@ -182,7 +184,9 @@
 		return
 	else if(istype(W, /obj/item/weapon/screwdriver))
 		src.panel_open = !src.panel_open
-		to_chat(user, "You [src.panel_open ? "open" : "close"] the maintenance panel.")
+		var/interact_sound = "[src.panel_open ? "open" : "close"]"
+		to_chat(user, "You [interact_sound] the maintenance panel.")
+		playsound(src.loc, "sound/machines/Custom_screwdriver[interact_sound].ogg", 50, 1)
 		src.overlays.Cut()
 		if(src.panel_open)
 			src.overlays += image(src.icon, "[initial(icon_state)]-panel")

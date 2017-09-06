@@ -259,5 +259,5 @@
 
 /obj/item/weapon/reagent_containers/glass/bottle/hyronalin/New()
 	..()
-	reagents.add_reagent("hyronalin", 60)
+	reagents.add_reagent(/datum/reagent/hyronalin, 60)
 	update_icon()

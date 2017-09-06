@@ -9,6 +9,7 @@
 	display_name = "short jumpskirt"
 	path = /obj/item/clothing/under/shortjumpskirt
 	flags = GEAR_HAS_COLOR_SELECTION
+	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/uniform/jumpsuit
 	display_name = "generic jumpsuits"
@@ -120,6 +121,7 @@
 /datum/gear/uniform/casual_pants
     display_name = "casual pants selection"
     path = /obj/item/clothing/under/casual_pants
+    allowed_roles = SEMIFORMAL_ROLES
 
 /datum/gear/uniform/casual_pants/New()
 	..()
@@ -137,6 +139,7 @@
 /datum/gear/uniform/shorts
 	display_name = "shorts selection"
 	path = /obj/item/clothing/under/shorts/jeans
+	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/uniform/shorts/New()
 	..()
@@ -151,6 +154,7 @@
 /datum/gear/uniform/tacticool
 	display_name = "tacticool turtleneck"
 	path = /obj/item/clothing/under/syndicate/tacticool
+	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/uniform/corporate
 	display_name = "corporate uniform selection"

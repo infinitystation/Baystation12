@@ -239,6 +239,7 @@
 /datum/gear/accessory/hawaii
 	display_name = "hawaii shirt"
 	path = /obj/item/clothing/accessory/toggleable/hawaii
+	allowed_roles = SEMIFORMAL_ROLES
 
 /datum/gear/accessory/hawaii/New()
 	..()
@@ -252,6 +253,7 @@
 	display_name = "scarf"
 	path = /obj/item/clothing/accessory/scarf
 	flags = GEAR_HAS_COLOR_SELECTION
+	allowed_roles = SEMIFORMAL_ROLES
 
 /datum/gear/accessory/solawardmajor
 	display_name = "SolGov major award selection"
@@ -319,6 +321,7 @@
 	slot = slot_tie
 	flags = GEAR_HAS_COLOR_SELECTION
 	sort_category = "Accessories"
+	allowed_roles = SEMIFORMAL_ROLES
 
 /datum/gear/boot_knife
 	display_name = "boot knife"

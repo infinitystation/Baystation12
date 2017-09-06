@@ -150,7 +150,7 @@
 			var/last_editor = query_get_notes.item[5]
 			var/server = query_get_notes.item[6]
 			output += "<b>[timestamp] | [server] | [adminckey]</b>"
-			if(!linkless)
+			if(!linkless && usr.client.holder)
 				output += " <a href='?_src_=holder;removenote=[id]'>\[Remove Note\]</a> <a href='?_src_=holder;editnote=[id]'>\[Edit Note\]</a>"
 				if(last_editor)
 					output += " <font size='2'>Last edit by [last_editor] <a href='?_src_=holder;noteedits=[id]'>(Click here to see edit log)</a></font>"

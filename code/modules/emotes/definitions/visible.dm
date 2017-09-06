@@ -95,7 +95,7 @@
 /decl/emote/visible/aflap
 	key = "aflap"
 	check_restraints = TRUE
-	emote_message_3p = "USER агрессивно машет крыль&#255;ми ANGRILY!"
+	emote_message_3p = "USER агрессивно машет крыль&#255;ми!"
 
 /decl/emote/visible/eyebrow
 	key = "eyebrow"
