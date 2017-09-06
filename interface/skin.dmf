@@ -1108,10 +1108,6 @@ window "mainwindow"
 		anchor1 = none
 		anchor2 = none
 		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		background-color = none
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-maximized = true
@@ -1124,6 +1120,7 @@ window "mainwindow"
 		size = 1x1
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = ""
 	elem "hotkey_toggle"
@@ -1132,14 +1129,6 @@ window "mainwindow"
 		size = 80x20
 		anchor1 = 100,100
 		anchor2 = none
-		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
 		background-color = none
 		saved-params = ""
 		text = "Hotkey Toggle"
@@ -1151,14 +1140,6 @@ window "mainwindow"
 		size = 634x416
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
 		background-color = none
 		saved-params = "splitter"
 		right = "rpane"
@@ -1180,14 +1161,6 @@ window "mainwindow"
 		anchor1 = 100,100
 		anchor2 = none
 		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		background-color = none
 		saved-params = "is-checked"
 		text = "Chat"
 		command = ".winset \"saybutton.is-checked=true?input.command=\"!say \\\"\" macrobutton.is-checked=false:input.command=\""
@@ -1200,14 +1173,6 @@ window "mapwindow"
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
-		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
 		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		titlebar = false
@@ -1224,12 +1189,6 @@ window "mapwindow"
 		anchor2 = 100,100
 		font-family = "Arial Rounded MT Bold,Arial Black,Arial,sans-serif"
 		font-size = 7
-		text-color = none
-		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		text-color = none
 		is-default = true
 		saved-params = "icon-size"
 		on-show = ".winset\"mainwindow.mainvsplit.left=mapwindow\""
@@ -1238,19 +1197,10 @@ window "mapwindow"
 window "outputwindow"
 	elem "outputwindow"
 		type = MAIN
-		pos = 372,0
+		pos = 281,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
-		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		titlebar = false
 		statusbar = false
@@ -1258,29 +1208,6 @@ window "outputwindow"
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		is-minimized = false
-		is-maximized = false
-		can-scroll = none
-		icon = ""
-		image = ""
-		image-mode = stretch
-		keep-aspect = false
-		transparent-color = none
-		alpha = 255
-		macro = ""
-		menu = ""
-		on-close = ""
-	elem "browseroutput"
-		type = BROWSER
-		pos = 0,0
-		size = 640x480
-		anchor1 = 0,0
-		anchor2 = 100,100
-		background-color = #ffffff
-		is-visible = false
-		is-disabled = true
-		saved-params = ""
-		auto-format = false
 	elem "output"
 		type = OUTPUT
 		pos = 0,0
@@ -1300,14 +1227,6 @@ window "rpane"
 		anchor1 = none
 		anchor2 = none
 		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 	elem "rpanewindow"
@@ -1317,49 +1236,20 @@ window "rpane"
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		background-color = none
 		saved-params = "splitter"
 		right = "outputwindow"
 		is-vert = false
-		splitter = 50
-		show-splitter = true
-		lock = none
-	elem "rulesb"
 	elem "referenseb"
-	elem "rulesb"
 		type = BUTTON
 		pos = 204,0
 		size = 72x20
 		anchor1 = none
 		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
-		text-color = #000000
-		background-color = none
 		font-style = "bold"
 		background-color = none
 		saved-params = "is-checked"
-		on-size = ""
-		text = "Rules"
 		text = "Referense"
 		command = "welcome"
-		text = "Rules"
-		command = "rules"
-		is-flat = false
-		stretch = false
-		is-checked = false
-		group = "rpanemode"
-		button-type = pushbutton
-		command = "rules"
-		group = "rpanemode"
 	elem "changelog"
 		type = BUTTON
 		pos = 280,0
@@ -1367,19 +1257,8 @@ window "rpane"
 		anchor1 = none
 		anchor2 = none
 		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		background-color = none
 		saved-params = "is-checked"
-		on-size = ""
-		text = "Changelog"
 		text = "BayStation 12 Changelog"
-		text = "Changelog"
 		command = "Changelog"
 		group = "rpanemode"
 	elem "Lore"
@@ -1389,19 +1268,8 @@ window "rpane"
 		anchor1 = none
 		anchor2 = none
 		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		background-color = none
 		saved-params = "is-checked"
-		on-size = ""
-		text = "Lore"
 		text = "BayStation 12 Lore"
-		text = "Lore"
 		command = "Lore"
 		group = "rpanemode"
 	elem "forumb"
@@ -1411,55 +1279,9 @@ window "rpane"
 		anchor1 = none
 		anchor2 = none
 		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		background-color = none
 		saved-params = "is-checked"
 		text = "Forum"
 		command = "forum"
-		group = "rpanemode"
-	elem "wikib"
-		type = BUTTON
-		pos = 152,0
-		size = 60x16
-		anchor1 = none
-		anchor2 = none
-		font-family = ""
-		font-size = 0
-		font-style = ""
-		text-color = #000000
-		background-color = none
-		is-visible = true
-		is-disabled = false
-		is-transparent = false
-		is-default = false
-		border = none
-		drop-zone = false
-		right-click = false
-		saved-params = "is-checked"
-		on-size = ""
-		text = "Wiki"
-		image = ""
-		command = "wiki"
-		is-flat = false
-		stretch = false
-		is-checked = false
-		group = "rpanemode"
-		button-type = pushbutton
-	elem "wikib"
-		type = BUTTON
-		pos = 152,0
-		size = 60x16
-		anchor1 = none
-		anchor2 = none
-		saved-params = "is-checked"
-		text = "Wiki"
-		command = "wiki"
 		group = "rpanemode"
 	elem "textb"
 		type = BUTTON
@@ -1467,6 +1289,7 @@ window "rpane"
 		size = 60x20
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Text"
@@ -1480,6 +1303,7 @@ window "rpane"
 		size = 72x20
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Browser"
@@ -1492,6 +1316,7 @@ window "rpane"
 		size = 60x20
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Info"
@@ -1592,4 +1417,3 @@ window "text_editor"
 		border = line
 		saved-params = ""
 		multi-line = true
-
