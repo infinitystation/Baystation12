@@ -112,7 +112,7 @@
 
 	pulse(0)
 	if(!holder)
-		visible_message("\icon[src] *beep* *beep*")
+		visible_message("[icon2html(src, world)] *beep* *beep*")
 	cooldown = 2
 	spawn(10)
 		process_cooldown()
@@ -137,7 +137,7 @@
 		var/obj/effect/beam/ir_beam/beam = b
 		if(beam.loc in turfs_that_need_beams)
 			turfs_that_need_beams -= beam.loc
-			beam.invisibility = visible ? 0 : INVISIBILITY_MAXIMUM
+			beam.set_invisibility(visible ? 0 : INVISIBILITY_MAXIMUM)
 		else
 			existing_beams -= beam
 			qdel(beam)

@@ -735,7 +735,7 @@
 	// hide called by levelupdate if turf intact status changes
 	// change visibility status and force update of icon
 	hide(var/intact)
-		invisibility = intact ? 101: 0	// hide if floor is intact
+		set_invisibility(intact ? 101: 0)	// hide if floor is intact
 		update_icon()
 
 	// update actual icon_state depending on visibility
@@ -819,7 +819,7 @@
 					var/obj/structure/disposalpipe/broken/P = new(src.loc)
 					P.set_dir(D)
 
-		src.invisibility = 101	// make invisible (since we won't delete the pipe immediately)
+		src.set_invisibility(101)	// make invisible (since we won't delete the pipe immediately)
 		var/obj/structure/disposalholder/H = locate() in src
 		if(H)
 			// holder was present
@@ -1258,7 +1258,7 @@
 			found = 1
 			break
 	if(!found)
-		to_chat(user, "\icon[src]<span class=notice>\The [src] is not linked to any junctions!</span>")
+		to_chat(user, "[icon2html(src, user)]<span class=notice>\The [src] is not linked to any junctions!</span>")
 		return
 	var/obj/machinery/disposal_switch/NC = new/obj/machinery/disposal_switch(A, id_tag)
 	transfer_fingerprints_to(NC)
