@@ -105,21 +105,22 @@
 /datum/gear/uniform/resomi/eng
 	display_name = "uniform, Engineering (Resomi)"
 	path = /obj/item/clothing/under/resomi/yellow
-	allowed_roles = list("Maintenance Assistant", "Roboticist", "Passenger", "Research Assistant", "Merchant")
+	allowed_roles = ENGINEERING_ROLES
 
 /datum/gear/uniform/resomi/sec
 	display_name = "uniform, Security (Resomi)"
 	path = /obj/item/clothing/under/resomi/red
-	allowed_roles = list("Security Guard", "Passenger", "Research Assistant", "Merchant")
+	allowed_roles = SECURITY_ROLES
 
 /datum/gear/uniform/resomi/med
 	display_name = "uniform, Medical (Resomi)"
 	path = /obj/item/clothing/under/resomi/medical
-	allowed_roles = list("Medical Contractor", "Chemist", "Counselor", "Passenger", "Research Assistant", "Merchant")
+	allowed_roles = MEDICAL_ROLES
 
 /datum/gear/uniform/resomi/science
 	display_name = "uniform, Science (Resomi)"
 	path = /obj/item/clothing/under/resomi/science
+	allowed_roles = NANOTRASEN_ROLES
 
 /datum/gear/uniform/harness
 	display_name = "gear harness (Full Body Prosthetic, Diona, Giant Armoured Serpentid)"
