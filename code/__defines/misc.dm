@@ -207,3 +207,5 @@
 #define RAD_LEVEL_VERY_HIGH 75
 
 #define ANNOUNSER_NAME "[station_name()] Automated Announcement System"
+
+#define DOOR_CRUSH_DAMAGE 15

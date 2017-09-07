@@ -166,6 +166,7 @@
 	if (src.operating || (stat & BROKEN || stat & NOPOWER))
 		return
 	force_close()
+	crush()
 
 
 // Proc: repair()
@@ -210,3 +211,17 @@
 
 /obj/machinery/door/blast/shutters/open
 	begins_closed = FALSE
+
+//It's doesn't using right now, but i think we should store it for better days
+/obj/machinery/door/proc/crush()
+	for(var/mob/living/L in get_turf(src))
+		if(ishuman(L)) //For humans
+			var/mob/living/carbon/human/H = L
+			H.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
+			H.Weaken(5)
+			if(H.can_feel_pain())
+				H.emote("scream")
+		else //for simple_animals & borgs
+			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
+	for(var/obj/mecha/M in get_turf(src))
+		M.take_damage(DOOR_CRUSH_DAMAGE)
