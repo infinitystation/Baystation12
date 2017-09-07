@@ -8,6 +8,7 @@
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "body_scanner_0"
 	anchored = 1
+	density = 1
 
 	use_power = 1
 	idle_power_usage = 60
