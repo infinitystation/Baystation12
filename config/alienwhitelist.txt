@@ -15,6 +15,7 @@ kosteg - machine
 netreson - machine
 quardbreak - machine
 redknighthero - machine
+wheatley2013 - machine
 kotovsyndrome - machine
 nikita588 - machine
 themaybat - skrell
