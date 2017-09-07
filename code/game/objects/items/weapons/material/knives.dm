@@ -27,8 +27,6 @@
 		w_class = initial(w_class)
 		attack_verb = initial(attack_verb)
 	update_icon()
-	usr.update_inv_l_hand()
-	usr.update_inv_r_hand()
 
 /obj/item/weapon/material/butterfly/update_icon()
 	if(active)
