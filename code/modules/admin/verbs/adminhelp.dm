@@ -123,6 +123,7 @@
 	log_admin("HELP: [key_name(src)]: [original_msg] - heard by [admin_number_present] non-AFK admins.")
 	if(admin_number_present <= 0)
 		adminmsg2adminirc(src, null, "[html_decode(original_msg)] - !![admin_number_afk ? "All admins AFK ([admin_number_afk])" : "No admins online"]!!")
+		send2admindiscord("**Help**: [key_name(src)]: `[original_msg]` - **[admin_number_afk ? "All admins AFK ([admin_number_afk])" : "No admins online"]** {ADMIN_PING}")
 	else
 		adminmsg2adminirc(src, null, "[html_decode(original_msg)]")
 

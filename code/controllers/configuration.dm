@@ -184,6 +184,11 @@ var/list/gamemode_cache = list()
 	var/python_path = "" //Path to the python executable.  Defaults to "python" on windows and "/usr/bin/env python2" on unix
 	var/use_lib_nudge = 0 //Use the C library nudge instead of the python nudge.
 
+
+	// Discord crap.
+	var/discord_url
+	var/discord_password
+
 	// Event settings
 	var/expected_round_length = 3 * 60 * 60 * 10 // 3 hours
 	// If the first delay has a custom start time
@@ -770,6 +775,11 @@ var/list/gamemode_cache = list()
 					error_silence_time = text2num(value)
 				if("error_msg_delay")
 					error_msg_delay = text2num(value)
+
+				if("discord_url")
+					discord_url = value
+				if("discord_password")
+					discord_password = value
 
 				else
 					log_misc("Unknown setting in configuration: '[name]'")

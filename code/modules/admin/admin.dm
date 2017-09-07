@@ -812,6 +812,7 @@ var/global/floorIsLava = 0
 	var/long_message = " toggled hub visibility.  The server is now [world.visibility ? "visible" : "invisible"] ([world.visibility])."
 
 	send2adminirc("[key_name(src)]" + long_message)
+	send2admindiscord("[key_name(src)]" + long_message)
 	log_and_message_admins("toggled hub visibility.")
 	feedback_add_details("admin_verb","THUB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc
 

@@ -361,6 +361,7 @@ var/global/list/additional_antag_types = list()
 		feedback_set("escaped_total",escaped_total)
 
 	send2mainirc("A round of [src.name] has ended - [surviving_total] survivor\s, [ghosts] ghost\s.")
+	send2maindiscord("A round of **[src.name]** has ended - **[surviving_total]** survivors, **[ghosts]** ghosts.")
 
 	return 0
 
