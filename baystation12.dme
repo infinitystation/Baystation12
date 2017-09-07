@@ -543,6 +543,7 @@
 #include "code\game\machinery\machinery.dm"
 #include "code\game\machinery\magnet.dm"
 #include "code\game\machinery\mass_driver.dm"
+#include "code\game\machinery\metal_detector.dm"
 #include "code\game\machinery\navbeacon.dm"
 #include "code\game\machinery\newscaster.dm"
 #include "code\game\machinery\nuclear_bomb.dm"
