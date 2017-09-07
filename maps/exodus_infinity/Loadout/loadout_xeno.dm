@@ -110,12 +110,12 @@
 /datum/gear/uniform/resomi/eng
 	display_name = "uniform, Engineering (Resomi)"
 	path = /obj/item/clothing/under/resomi/yellow
-	allowed_roles = list("Chief Engineer","Station Engineer","Atmospherics Technician")
+	allowed_roles = list(ENG_ROLES)
 
 /datum/gear/uniform/resomi/sec
 	display_name = "uniform, Security (Resomi)"
 	path = /obj/item/clothing/under/resomi/red
-	allowed_roles = list("Security Officer","Head of Security","Warden","Detective")
+	allowed_roles = list(SEC_ROLES)
 
 /datum/gear/uniform/resomi/med
 	display_name = "uniform, Medical (Resomi)"
