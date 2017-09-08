@@ -72,9 +72,9 @@
 	return (!density)
 
 /obj/structure/closet/proc/can_open()
-	if((setup & CLOSET_HAS_LOCK) && locked)
+	if(locked)
 		return 0
-	if((setup & CLOSET_CAN_BE_WELDED) && welded)
+	if(welded)
 		return 0
 	return 1
 
@@ -297,7 +297,7 @@
 			open()
 	else if(istype(W, /obj/item/weapon/packageWrap))
 		return
-	else if(istype(W, /obj/item/weapon/weldingtool) && (setup & CLOSET_CAN_BE_WELDED))
+	else if(istype(W, /obj/item/weapon/weldingtool))
 		var/obj/item/weapon/weldingtool/WT = W
 		if(!WT.remove_fuel(0,user))
 			if(!WT.isOn())
