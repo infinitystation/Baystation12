@@ -1121,7 +1121,6 @@ CIRCUITS BELOW
 	build_path = /obj/item/weapon/circuitboard/scan_consolenew
 	sort_string = "FAGAA"
 
-//Make cloning usable again! ~Quardbreak
 /datum/design/circuit/clonecontrol
 	name = "cloning control console"
 	id = "clonecontrol"
@@ -1143,7 +1142,6 @@ CIRCUITS BELOW
 	build_path = /obj/item/weapon/circuitboard/clonescanner
 	sort_string = "FAGAG"
 
-//Make cloning usable again! ~Quardbreak
 
 /datum/design/circuit/resleever
 	name = "neural lace resleever"

@@ -61,3 +61,7 @@
 		update_icon()
 	else
 		return ..()
+
+/obj/item/weapon/implantcase/health
+	name = "glass case - 'health'"
+	imp = /obj/item/weapon/implant/health
