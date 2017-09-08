@@ -4,7 +4,7 @@
 	icon = 'icons/obj/machines/metal_detector.dmi'
 	icon_state = "metal-detector"
 	anchored = 1
-	var/on = 1
+	var/on = 0
 	var/locked = 1
 	idle_power_usage = 10
 	active_power_usage = 120 // No idea what the realistic amount would be.
