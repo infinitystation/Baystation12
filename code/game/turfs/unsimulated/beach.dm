@@ -4,7 +4,7 @@
 
 /turf/unsimulated/beach/sand
 	name = "Sand"
-	icon_state = "sand"
+	icon_state = "desert0"
 
 /turf/unsimulated/beach/coastline
 	name = "Coastline"
