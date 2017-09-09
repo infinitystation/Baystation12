@@ -96,7 +96,7 @@ var/global/universe_has_ended = 0
 			else
 				L.update_lumcount(0.0, 0.4, 1)
 
-		for(var/turf/space/T in turfs)
+		for(var/turf/space/T)
 			OnTurfChange(T)
 
 /datum/universal_state/supermatter_cascade/proc/MiscSet()

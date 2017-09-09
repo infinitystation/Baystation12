@@ -40,7 +40,6 @@
 		luminosity = 1
 
 /turf/Destroy()
-	turfs -= src
 	remove_cleanables()
 	..()
 	return QDEL_HINT_IWILLGC

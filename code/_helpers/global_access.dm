@@ -1167,8 +1167,6 @@
 			return global.turbolift_controller;
 		if("turbolifts")
 			return global.turbolifts;
-		if("turfs")
-			return global.turfs;
 		if("turret_icons")
 			return global.turret_icons;
 		if("uniqueness_repository")
@@ -2406,8 +2404,6 @@
 			global.turbolift_controller=newval;
 		if("turbolifts")
 			global.turbolifts=newval;
-		if("turfs")
-			global.turfs=newval;
 		if("turret_icons")
 			global.turret_icons=newval;
 		if("uniqueness_repository")
@@ -3061,7 +3057,6 @@
 	"transfer_controller",
 	"turbolift_controller",
 	"turbolifts",
-	"turfs",
 	"turret_icons",
 	"uniqueness_repository",
 	"universe_has_ended",
