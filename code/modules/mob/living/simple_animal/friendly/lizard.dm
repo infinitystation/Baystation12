@@ -16,6 +16,7 @@
 	response_harm   = "stomps on"
 	mob_size = MOB_MINISCULE
 	possession_candidate = 1
+	holder_type = /obj/item/weapon/holder/lizard
 
 /mob/living/simple_animal/lizard/wizard
 	name = "Wizard"
