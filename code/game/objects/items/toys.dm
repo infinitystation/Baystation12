@@ -767,6 +767,13 @@
 	desc = "A farwa plush doll. It's soft and comforting!"
 	icon_state = "farwaplushie"
 
+//BIRB!!!!
+/obj/item/toy/canary
+	name = "canary"
+	desc = "Small mechanical canary in a cage, does absolutely nothing of any importance!"
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "canary"
+
 //Toy cult sword
 /obj/item/toy/cultsword
 	name = "foam sword"
