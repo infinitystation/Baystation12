@@ -78,3 +78,5 @@
 		GLOB.universe = new newstate
 	if(on_enter)
 		GLOB.universe.OnEnter()
+
+/datum/universal_state/proc/convert_parallax(parallax_spacemaster)
