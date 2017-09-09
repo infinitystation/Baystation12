@@ -46,10 +46,6 @@ proc/createRandomZlevel()
 			maploader.load_map(file)
 			log_debug("away mission loaded: [map]")
 
-		for(var/x in 1 to world.maxx)
-			for(var/y in 1 to world.maxy)
-				turfs += locate(x,y,world.maxz)
-
 		for(var/obj/effect/landmark/L in landmarks_list)
 			if (L.name != "awaystart")
 				continue
