@@ -316,7 +316,7 @@
 	name = "Rescue"
 	cloaked = 0
 	warmup_time = 9
-	move_time = 60
+	move_time = 135 //2,25 Minutes
 	destinations = list(
 		"nav_ert_north_west",
 		"nav_ert_north_east",
@@ -406,7 +406,7 @@
 /datum/shuttle/autodock/multi/antag/mercenary
 	name = "Mercenary"
 	warmup_time = 9
-	move_time = 60
+	move_time = 135 //2,25 Minutes
 	destinations = list(
 		"nav_merc_start",
 		"nav_merc_dock",
