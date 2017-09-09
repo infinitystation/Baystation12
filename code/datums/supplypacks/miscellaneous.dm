@@ -257,3 +257,10 @@
 	cost = 10
 	containername = "\improper Pest Control Crate"
 
+/decl/hierarchy/supply_pack/miscellaneous/mairbags
+	name = "Personal airbags"
+	contains = list(/obj/item/airbag,
+					/obj/item/airbag)
+	cost = 25
+	containername = "airbag crate"
+

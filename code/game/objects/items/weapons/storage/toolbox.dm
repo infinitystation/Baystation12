@@ -30,6 +30,8 @@
 	var/item = pick(list(/obj/item/device/flashlight, /obj/item/device/flashlight/flare,  /obj/item/device/flashlight/glowstick/red))
 	new item(src)
 	new /obj/item/device/radio(src)
+	if(prob(5))
+		new /obj/item/airbag(src)
 
 /obj/item/weapon/storage/toolbox/mechanical
 	name = "mechanical toolbox"
