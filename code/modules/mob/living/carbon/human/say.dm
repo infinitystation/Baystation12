@@ -188,9 +188,11 @@
 					used_radios += r_ear
 
 /mob/living/carbon/human/handle_speech_sound()
+	if(species.name == SPECIES_HUMAN)
+		species.speech_sounds = gender == MALE ? 'sound/voice/clearing-throat-m.ogg' : 'sound/voice/clearing-throat-f.ogg'
 	if(species.speech_sounds && prob(species.speech_chance))
 		var/list/returns[2]
-		returns[1] = sound(pick(species.speech_sounds))
+		returns[1] = sound(pick(species.speech_sounds), volume = 35)
 		returns[2] = 50
 		return returns
 	return ..()
