@@ -55,6 +55,14 @@
 		)
 	autohiss_exempt = list(LANGUAGE_SIIK_MAAS)
 
+/datum/species/resomi
+	autohiss_basic_map = list(
+			"з" = list("с", "сс", "ссс")
+		)
+	autohiss_extra_map = list(
+			"ч" = list("р", "лл")
+		)
+	autohiss_exempt = list(LANGUAGE_RESOMI)
 
 /datum/species/proc/handle_autohiss(message, datum/language/lang, mode)
 	if(!autohiss_basic_map)
