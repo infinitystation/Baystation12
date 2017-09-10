@@ -33,7 +33,7 @@
 	var/obj/effect/shuttle_landmark/home_waypoint
 
 	var/cloaked = 1
-	var/announcer_name
+	var/announcer
 	var/arrival_message
 	var/departure_message
 	var/message_frequency = "Common" //Default is Common
@@ -57,12 +57,12 @@
 /datum/shuttle/autodock/proc/announce_departure()
 	if(cloaked || isnull(departure_message))
 		return
-	GLOB.global_announcer.autosay(departure_message, announcer_name || "[station_name()]", message_frequency)
+	GLOB.global_announcer.autosay(departure_message, announcer || "[station_name()]", message_frequency)
 
 /datum/shuttle/autodock/proc/announce_arrival()
 	if(cloaked || isnull(arrival_message))
 		return
-	GLOB.global_announcer.autosay(arrival_message, announcer_name || "[station_name()]", message_frequency)
+	GLOB.global_announcer.autosay(arrival_message, announcer || "[station_name()]", message_frequency)
 
 /datum/shuttle/autodock/multi/antag/set_destination(var/destination_key, mob/user)
 	if(!return_warning && destination_key == home_waypoint.name)

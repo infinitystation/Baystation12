@@ -332,7 +332,7 @@
 	current_location = "nav_ert_start"
 	landmark_transition = "nav_ert_transition"
 	home_waypoint = "nav_ert_start"
-	announcer_name = "NAS Crescent"
+	announcer = "NAS Crescent"
 	arrival_message = "Внимание, судно Департамента по Защите Активов входит в космическое пространство NSS Exodus."
 	departure_message = "Внимание, судно Департамента по Защите Активов покидает космическое пространство NSS Exodus."
 
@@ -427,7 +427,7 @@
 	dock_target = "merc_shuttle"
 	current_location = "nav_merc_start"
 	landmark_transition = "nav_merc_transition"
-	announcer_name = "NAS Crescent"
+	announcer = "NAS Crescent"
 	home_waypoint = "nav_merc_start"
 	arrival_message = "Внимание, неизвестное судно обнаружено в космическом пространстве рЯдом с NSS Exodus. \
 	Судно классифицировано как транспортник PM-24 'Flare'."
@@ -499,7 +499,7 @@
 	dock_target = "skipjack_shuttle"
 	current_location = "nav_skipjack_start"
 	landmark_transition = "nav_skipjack_transition"
-	announcer_name = "NAS Crescent"
+	announcer = "NAS Crescent"
 	home_waypoint = "nav_skipjack_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
