@@ -1,9 +1,10 @@
-/datum/shuttle/autodock/multi
+/datum/shuttle/autodock
 	var/list/destinations
 
+/datum/shuttle/autodock/multi
 	category = /datum/shuttle/autodock/multi
 
-/datum/shuttle/autodock/multi/New(_name)
+/datum/shuttle/autodock/New(_name)
 	..(_name)
 
 	//build destination list
@@ -16,7 +17,7 @@
 			log_error("Shuttle [name] could not find waypoint with tag [waypoint_tag]!")
 	destinations = found_waypoints
 
-/datum/shuttle/autodock/multi/proc/set_destination(var/destination_key, mob/user)
+/datum/shuttle/autodock/proc/set_destination(var/destination_key, mob/user)
 	if(moving_status != SHUTTLE_IDLE)
 		return
 	next_location = destinations[destination_key]
@@ -26,39 +27,42 @@
 /datum/shuttle/autodock/multi/antag
 	warmup_time = 10 SECONDS //replaced the old move cooldown
 
+	category = /datum/shuttle/autodock/multi/antag
+
+/datum/shuttle/autodock
 	var/obj/effect/shuttle_landmark/home_waypoint
 
 	var/cloaked = 1
-	var/announcer
+	var/announcer_name
 	var/arrival_message
 	var/departure_message
+	var/message_frequency = "Common" //Default is Common
 	var/return_warning = 0
 
-	category = /datum/shuttle/autodock/multi/antag
 
-/datum/shuttle/autodock/multi/antag/New()
+/datum/shuttle/autodock/New()
 	..()
 	if(home_waypoint)
 		home_waypoint = locate(home_waypoint)
 	else
 		home_waypoint = current_location
 
-/datum/shuttle/autodock/multi/antag/shuttle_moved()
+/datum/shuttle/autodock/shuttle_moved()
 	if(current_location == home_waypoint)
 		announce_arrival()
 	else if(next_location == home_waypoint)
 		announce_departure()
 	..()
 
-/datum/shuttle/autodock/multi/antag/proc/announce_departure()
+/datum/shuttle/autodock/proc/announce_departure()
 	if(cloaked || isnull(departure_message))
 		return
-	command_announcement.Announce(departure_message, announcer || "[GLOB.using_map.boss_name]")
+	GLOB.global_announcer.autosay(departure_message, announcer_name || "[station_name()]", message_frequency)
 
-/datum/shuttle/autodock/multi/antag/proc/announce_arrival()
+/datum/shuttle/autodock/proc/announce_arrival()
 	if(cloaked || isnull(arrival_message))
 		return
-	command_announcement.Announce(arrival_message, announcer || "[GLOB.using_map.boss_name]")
+	GLOB.global_announcer.autosay(arrival_message, announcer_name || "[station_name()]", message_frequency)
 
 /datum/shuttle/autodock/multi/antag/set_destination(var/destination_key, mob/user)
 	if(!return_warning && destination_key == home_waypoint.name)

@@ -332,7 +332,7 @@
 	current_location = "nav_ert_start"
 	landmark_transition = "nav_ert_transition"
 	home_waypoint = "nav_ert_start"
-	announcer = "NAS Crescent"
+	announcer_name = "NAS Crescent"
 	arrival_message = "Внимание, судно Департамента по Защите Активов входит в космическое пространство NSS Exodus."
 	departure_message = "Внимание, судно Департамента по Защите Активов покидает космическое пространство NSS Exodus."
 
@@ -386,9 +386,13 @@
 	warmup_time = 10
 	shuttle_area = /area/supply/dock
 	dock_target = "supply_shuttle"
+	cloaked = 0
 	current_location = "nav_cargo_start"
 	waypoint_offsite = "nav_cargo_start"
 	waypoint_station = "nav_cargo_station"
+	arrival_message = "The Supply Shuttle has been arrived and docked with the station."
+	departure_message = "The Supply Shuttle has been undocked from the station."
+	message_frequency = "Supply"
 
 /obj/effect/shuttle_landmark/supply/centcom
 	name = "NAS Crescent"
@@ -423,7 +427,7 @@
 	dock_target = "merc_shuttle"
 	current_location = "nav_merc_start"
 	landmark_transition = "nav_merc_transition"
-	announcer = "NAS Crescent"
+	announcer_name = "NAS Crescent"
 	home_waypoint = "nav_merc_start"
 	arrival_message = "Внимание, неизвестное судно обнаружено в космическом пространстве рЯдом с NSS Exodus. \
 	Судно классифицировано как транспортник PM-24 'Flare'."
@@ -495,7 +499,7 @@
 	dock_target = "skipjack_shuttle"
 	current_location = "nav_skipjack_start"
 	landmark_transition = "nav_skipjack_transition"
-	announcer = "NAS Crescent"
+	announcer_name = "NAS Crescent"
 	home_waypoint = "nav_skipjack_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."

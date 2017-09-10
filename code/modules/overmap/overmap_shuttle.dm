@@ -30,7 +30,7 @@ var/list/sector_shuttles = list()
 /datum/shuttle/autodock/overmap/can_force()
 	return ..() && can_go()
 
-/datum/shuttle/autodock/overmap/proc/set_destination(var/obj/effect/shuttle_landmark/A)
+/datum/shuttle/autodock/overmap/set_destination(var/obj/effect/shuttle_landmark/A)
 	if(A != current_location)
 		next_location = A
 
