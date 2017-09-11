@@ -66,7 +66,8 @@ What is the naming convention for planes or layers?
 #define PLANE_SPACE_PARALLAX (SPACE_PLANE + 1) // -97
 #define PLANE_SPACE_DUST (PLANE_SPACE_PARALLAX + 1) // -96
 #define PLANE_ABOVE_PARALLAX (PLANE_SPACE_BACKGROUND + 3) // -95
-#define OPEN_SPACE_PLANE -94 //
+#define TRANSIT_SPACE_PLANE -94
+#define OPEN_SPACE_PLANE -93
 
 #define BELOW_TURF_PLANE             -22 // objects that are below turfs. Useful for asteroid smoothing or other such magic.
 	// TURF_LAYER 2
