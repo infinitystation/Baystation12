@@ -4,8 +4,6 @@
 	path = "torch"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 
-	load_legacy_saves = TRUE
-
 	lobby_icon = 'maps/torch/icons/lobby.dmi'
 
 	station_levels = list(1,2,3,4,5)
