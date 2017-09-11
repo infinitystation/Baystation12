@@ -14,6 +14,7 @@
 	var/allowed_directions = DOWN
 	var/obj/structure/ladder/target_up
 	var/obj/structure/ladder/target_down
+	var/base_icon = "ladder"
 
 	var/const/climb_time = 2 SECONDS
 	var/static/list/climbsounds = list('sound/effects/ladder.ogg')
@@ -26,7 +27,10 @@
 			if(L.allowed_directions & UP)
 				target_down = L
 				L.target_up = src
-				return
+
+				L.update_icon()
+				break
+
 	update_icon()
 
 /obj/structure/ladder/Destroy()
@@ -135,7 +139,7 @@
 	return airflow || !density
 
 /obj/structure/ladder/update_icon()
-	icon_state = "ladder[!!(allowed_directions & UP)][!!(allowed_directions & DOWN)]"
+	icon_state = "[base_icon][!!(allowed_directions & UP)][!!(allowed_directions & DOWN)]"
 
 /obj/structure/ladder/up
 	allowed_directions = UP

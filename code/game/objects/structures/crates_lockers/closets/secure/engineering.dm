@@ -28,7 +28,8 @@
 		/obj/item/device/multitool,
 		/obj/item/device/flash,
 		/obj/item/taperoll/engineering,
-		/obj/item/weapon/crowbar/brace_jack
+		/obj/item/weapon/crowbar/brace_jack,
+		/obj/item/weapon/ladder_mobile
 	)
 
 /obj/structure/closet/secure_closet/engineering_electrical
@@ -89,7 +90,8 @@
 		/obj/item/clothing/mask/gas,
 		/obj/item/clothing/glasses/meson,
 		/obj/item/weapon/cartridge/engineering,
-		/obj/item/taperoll/engineering
+		/obj/item/taperoll/engineering,
+		/obj/item/weapon/ladder_mobile
 	)
 
 /obj/structure/closet/secure_closet/atmos_personal

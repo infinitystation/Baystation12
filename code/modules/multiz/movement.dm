@@ -23,12 +23,12 @@
 	if(!istype(start))
 		to_chat(src, "<span class='notice'>You are unable to move from here.</span>")
 		return 0
-		
+
 	var/turf/destination = (direction == UP) ? GetAbove(src) : GetBelow(src)
 	if(!destination)
 		to_chat(src, "<span class='notice'>There is nothing of interest in this direction.</span>")
 		return 0
-	
+
 	if(!start.CanZPass(src, direction))
 		to_chat(src, "<span class='warning'>\The [start] is in the way.</span>")
 		return 0
@@ -128,14 +128,18 @@
 	if(anchored)
 		return FALSE
 
-	if(locate(/obj/structure/lattice, loc))
-		return FALSE
-
 	// See if something prevents us from falling.
 	var/turf/below = GetBelow(src)
 	for(var/atom/A in below)
 		if(!A.CanPass(src, src.loc))
 			return FALSE
+
+	if(locate(/obj/structure/lattice, loc))
+		return FALSE
+
+	//Ladders too
+	if(below && locate(/obj/structure/ladder) in below)
+		return FALSE
 
 	return TRUE
 
