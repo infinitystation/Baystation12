@@ -15,15 +15,14 @@
 		)
 
 /obj/item/weapon/ladder_mobile/proc/place_ladder(atom/A, mob/user)
-
-	if (istype(A, /turf/simulated/open))         //Place into open space
+	if(istype(A, /turf/simulated/open))         //Place into open space
 		var/turf/below_loc = GetBelow(A)
-		if (!below_loc || (istype(/turf/space, below_loc)))
+		if(!below_loc || (istype(/turf/space, below_loc)))
 			to_chat(user, "<span class='notice'>Why would you do that?! There is only infinite space there...</span>")
 			return
 		user.visible_message("<span class='warning'>[user] begins to lower \the [src] into \the [A].</span>",
 			"<span class='warning'>You begin to lower \the [src] into \the [A].</span>")
-		if (!handle_action(A, user))
+		if(!handle_action(A, user))
 			return
 		// Create the lower ladder first. ladder/Initialize() will make the upper
 		// ladder create the appropriate links. So the lower ladder must exist first.
@@ -37,12 +36,12 @@
 
 	else if (istype(A, /turf/simulated/floor))        //Place onto Floor
 		var/turf/upper_loc = GetAbove(A)
-		if (!upper_loc || !istype(upper_loc,/turf/simulated/open))
-			user << "<span class='notice'>There is something above. You can't deploy!</span>"
+		if(!upper_loc || !istype(upper_loc,/turf/simulated/open))
+			to_chat(user, "<span class='notice'>There is something above. You can't deploy!</span>")
 			return
 		user.visible_message("<span class='warning'>[user] begins deploying \the [src] on \the [A].</span>",
 			"<span class='warning'>You begin to deploy \the [src] on \the [A].</span>")
-		if (!handle_action(A, user))
+		if(!handle_action(A, user))
 			return
 		// Ditto here. Create the lower ladder first.
 		var/obj/structure/ladder/mobile/downer = new(A)
@@ -54,16 +53,16 @@
 		qdel(src)
 
 /obj/item/weapon/ladder_mobile/afterattack(atom/A, mob/user,proximity)
-	if (!proximity)
+	if(!proximity)
 		return
 
 	place_ladder(A,user)
 
 /obj/item/weapon/ladder_mobile/proc/handle_action(atom/A, mob/user)
-	if (!do_after(user, 30, src))
+	if(!do_after(user, 30, src))
 		to_chat(user, "Can't place ladder! You were interrupted!")
 		return FALSE
-	if (!A || QDELETED(src) || QDELETED(user))
+	if(!A || QDELETED(src) || QDELETED(user))
 		// Shit was deleted during delay, call is no longer valid.
 		return FALSE
 	return TRUE
@@ -77,7 +76,7 @@
 	set category = "Object"
 	set src in oview(1)
 
-	if (usr.incapacitated() || !usr.IsAdvancedToolUser() || !ishuman(usr))
+	if(usr.incapacitated() || !usr.IsAdvancedToolUser() || !ishuman(usr))
 		to_chat(usr, "<span class='warning'>You can't do that right now!</span>")
 		return
 
@@ -85,11 +84,11 @@
 	H.visible_message("<span class='notice'>[H] starts folding up [src].</span>",
 		"<span class='notice'>You start folding up [src].</span>")
 
-	if (!do_after(H, 30, src))
+	if(!do_after(H, 30, src))
 		to_chat(H, "<span class='warning'>You are interrupted!</span>")
 		return
 
-	if (QDELETED(src))
+	if(QDELETED(src))
 		return
 
 	var/obj/item/weapon/ladder_mobile/R = new(get_turf(H))
