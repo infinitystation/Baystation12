@@ -386,13 +386,9 @@
 	warmup_time = 10
 	shuttle_area = /area/supply/dock
 	dock_target = "supply_shuttle"
-	cloaked = 0
 	current_location = "nav_cargo_start"
 	waypoint_offsite = "nav_cargo_start"
 	waypoint_station = "nav_cargo_station"
-	arrival_message = "The Supply Shuttle has been arrived and docked with the station."
-	departure_message = "The Supply Shuttle has been undocked from the station."
-	message_frequency = "Supply"
 
 /obj/effect/shuttle_landmark/supply/centcom
 	name = "NAS Crescent"
