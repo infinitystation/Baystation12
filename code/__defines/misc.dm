@@ -209,7 +209,3 @@
 #define ANNOUNSER_NAME "[station_name()] Automated Announcement System"
 
 #define DOOR_CRUSH_DAMAGE 15
-
-//Parallax defines.
-#define PARALLAX_SPACE 0x1
-#define PARALLAX_DUST 0x2
