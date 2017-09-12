@@ -73,7 +73,7 @@
 
 /obj/machinery/metal_detector/interact(mob/user as mob)
 	var/dat
-	dat += "<br>Lock behaviour controls: <a href='?src=\ref[src];locked=1'>[locked ? "Yes" : "No"]</a><b><br>"
+	dat += "<br>Lock behaviour controls: <a href='?src=\ref[src];locked=1'>[locked ? "Yes" : "No"]</a><br>"
 
 	if(!locked)
 		dat += text({"

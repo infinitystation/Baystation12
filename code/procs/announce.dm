@@ -48,19 +48,19 @@
 	Log(message, message_title)
 
 datum/announcement/proc/Message(message as text, message_title as text)
-	GLOB.global_announcer.autosay("<font size=3><span class='warning'>[title]:</span> [message]</font>", announcer ? announcer : ANNOUNSER_NAME)
+	GLOB.global_announcer.autosay("<b><font size=3><span class='warning'>[title]:</span> [message]</font></b>", announcer ? announcer : ANNOUNSER_NAME)
 
 datum/announcement/minor/Message(message as text, message_title as text)
 	GLOB.global_announcer.autosay(message, ANNOUNSER_NAME)
 
 datum/announcement/priority/Message(message as text, message_title as text)
-	GLOB.global_announcer.autosay("<font size=3><span class='alert'>[message_title]:</span> [message]</font>", announcer ? announcer : ANNOUNSER_NAME)
+	GLOB.global_announcer.autosay("<b><font size=3><span class='warning'>[message_title]:</span> [message]</font></b>", announcer ? announcer : ANNOUNSER_NAME)
 
 datum/announcement/priority/command/Message(message as text, message_title as text)
-	GLOB.global_announcer.autosay("<font size=3><span class='warning'>[command_name()] [message_title]:</span> [message]</font>", ANNOUNSER_NAME)
+	GLOB.global_announcer.autosay("<b><font size=3><span class='warning'>[command_name()] [message_title]:</span> [message]</font></b>", ANNOUNSER_NAME)
 
 datum/announcement/priority/security/Message(message as text, message_title as text)
-	GLOB.global_announcer.autosay("<font size=3><font color='red'>[message_title]:</span> [message]</font>", ANNOUNSER_NAME)
+	GLOB.global_announcer.autosay("<b><font size=3><span class='warning'>[message_title]:</span> [message]</font></b>", ANNOUNSER_NAME)
 
 datum/announcement/proc/NewsCast(message as text, message_title as text)
 	if(!newscast)
