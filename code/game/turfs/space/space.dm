@@ -2,7 +2,7 @@
 	plane = SPACE_PLANE
 	icon = 'icons/turf/space.dmi'
 	name = "\proper space"
-	icon_state = "empty"
+	icon_state = "0"
 	dynamic_lighting = 0
 
 	temperature = T20C
@@ -11,12 +11,8 @@
 //	heat_capacity = 700000 No.
 
 /turf/space/New()
-	icon_state = "[((x + y) ^ ~(x * y) + z) % 25]"
-	var/image/I = image('icons/turf/space_parallax1.dmi',"[icon_state]")
-	I.plane = PLANE_SPACE_DUST
-	I.alpha = 80
-	I.blend_mode = BLEND_ADD
-	overlays += I
+	if((icon_state == "0") && (!keep_sprite))
+		icon_state = "[((x + y) ^ ~(x * y)) % 25]"
 	update_starlight()
 	..()
 
