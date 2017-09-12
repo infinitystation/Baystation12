@@ -101,6 +101,20 @@
 	if(!accessories.len)
 		src.verbs -= /obj/item/clothing/proc/removetie_verb
 
+/obj/item/clothing/AltClick(var/mob/usr)
+	if(!istype(usr, /mob/living)) return
+	if(usr.stat) return
+	if(src.loc == usr)
+		if(accessories.len)
+			var/obj/item/clothing/accessory/B
+			if(accessories.len > 1)
+				B = input("Select an accessory to remove from [src]") as null|anything in accessories
+			else
+				B = accessories[1]
+			remove_accessory(usr, B)
+			if(!accessories.len)
+				verbs -= /obj/item/clothing/proc/removetie_verb
+
 /obj/item/clothing/emp_act(severity)
 	if(accessories.len)
 		for(var/obj/item/clothing/accessory/A in accessories)
