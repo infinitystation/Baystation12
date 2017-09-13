@@ -72,3 +72,8 @@
 	icon_state = "bulb-construct-item"
 	refund_amt = 1
 	build_machine_type = /obj/machinery/light_construct/small
+
+/obj/item/frame/party_alarm
+	name = "party alarm frame"
+	desc = "Used fpr building party alarms."
+	build_machine_type = /obj/machinery/partyalarm
