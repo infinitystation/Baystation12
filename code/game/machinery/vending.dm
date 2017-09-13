@@ -198,8 +198,9 @@
 			attack_hand(user)
 		return
 	else if((flags & OBJ_ANCHORABLE) && istype(W, /obj/item/weapon/wrench))
-		wrench_floor_bolts(user)
-		power_change()
+		if(src.panel_open)
+			wrench_floor_bolts(user)
+			power_change()
 		return
 	else if(istype(W, /obj/item/weapon/coin) && premium.len > 0)
 		user.drop_item()
