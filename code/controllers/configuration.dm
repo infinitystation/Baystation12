@@ -104,14 +104,6 @@ var/list/gamemode_cache = list()
 	var/forumurl
 	var/githuburl
 
-	//Alert level description
-	var/alert_desc_green = "¬се угрозы станции устранены. ќфицеры службы безопасности больше не можут носить оружие на виду, законы о конфиденциальности возвращаются в полное соблюдение."
-	var/alert_desc_orange_upto = "—танция получила возможную информацию о возможной враждебной угрозе на станции. —отрудники службы безопасности могут носить оружие на виду, случайные обыски разрешены."
-	var/alert_desc_orange_downto = "Ќепосредственная угроза миновала. ќфицеры службы безопасности больше не могут использовать оружие у всех на виду, но могут по-прежнему носить его. —лучайные поиски по-прежнему разрешены."
-	var/alert_desc_red_upto = "—уществует непосредственная серьезная угроза дл€ станции. ќфицеры службы безопасности могут носить летальное оружие у всех на виду. —лучайные обыски разрешены и рекомендуются."
-	var/alert_desc_red_downto = "ћеханизм самоуничтожения был деактивирован, однако непосредственная серьезная угроза всЄ ещЄ существует на станции. ќфицеры службы безопасности могут носить летальное оружие у всех на виду, случайные обыски разрешены и рекомендуюся."
-	var/alert_desc_delta = "ћеханизм самоуничтожения станции активирован. ¬есь экипаж обязан немедленно подчиняться всем указаниям глав и офицеров. Ћюбые нарушения приказов могут быть наказуемы смертью пр€мо на месте. Ёто не учебная тревога."
-
 	var/forbid_singulo_possession = 0
 
 	//game_options.txt configs
@@ -561,24 +553,6 @@ var/list/gamemode_cache = list()
 
 				if("load_jobs_from_txt")
 					load_jobs_from_txt = 1
-
-				if("alert_red_upto")
-					config.alert_desc_red_upto = value
-
-				if("alert_red_downto")
-					config.alert_desc_red_downto = value
-
-				if("alert_orange_downto")
-					config.alert_desc_orange_downto = value
-
-				if("alert_orange_upto")
-					config.alert_desc_orange_upto = value
-
-				if("alert_green")
-					config.alert_desc_green = value
-
-				if("alert_delta")
-					config.alert_desc_delta = value
 
 				if("forbid_singulo_possession")
 					forbid_singulo_possession = 1
