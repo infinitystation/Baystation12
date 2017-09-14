@@ -128,7 +128,7 @@
 	ask_verb = "chirrups"
 	exclaim_verb = "trills"
 	colour = "alien"
-	key = "v"
+	key = "e"
 	flags = WHITELISTED
 	space_chance = 50
 	syllables = list(
