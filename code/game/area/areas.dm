@@ -67,9 +67,10 @@
 		atmosalm = danger_level
 		for (var/obj/machinery/alarm/AA in src)
 			AA.update_icon()
-		return 1
 
-	update_icon()
+		update_icon()
+
+		return 1
 
 	return 0
 
