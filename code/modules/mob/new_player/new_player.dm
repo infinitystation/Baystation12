@@ -125,7 +125,7 @@
 			to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
 			return
 
-		if(world.time - round_start_time < (1 MINUTES))
+		if(world.time - round_start_time < (20 MINUTES))
 			if(!client.holder)
 				to_chat(src, "<span class='warning'>Sorry, you should wait 20 minutes from the start of the round to be observer. See \"Round Duration\" timer in Status tab to check how much time has passed from the round start.</span>")
 				return
