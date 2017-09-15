@@ -43,8 +43,7 @@
 	else
 		output += "<a href='byond://?src=\ref[src];manifest=1'>View the Crew Manifest</A><br><br>"
 		output += "<p><a href='byond://?src=\ref[src];late_join=1'>Join Game!</A></p>"
-
-	output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
+		output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
 
 	if(!IsGuestKey(src.key))
 		establish_db_connection()
@@ -121,9 +120,15 @@
 	if(href_list["observe"])
 		if(client.banprisoned)
 			return
-		if(!(initialization_stage&INITIALIZATION_COMPLETE))
+
+		if(!(initialization_stage & INITIALIZATION_COMPLETE))
 			to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
 			return
+
+		if(world.time - round_start_time < (1 MINUTES))
+			if(!client.holder)
+				to_chat(src, "<span class='warning'>Sorry, you should wait 20 minutes from the start of the round to be observer. See \"Round Duration\" timer in Status tab to check how much time has passed from the round start.</span>")
+				return
 
 		if(!config.respawn_delay || client.holder || alert(src,"Are you sure you wish to observe? You will have to wait [config.respawn_delay] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
 			if(!client)	return 1

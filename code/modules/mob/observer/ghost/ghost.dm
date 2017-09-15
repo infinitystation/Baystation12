@@ -163,6 +163,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(stat == DEAD)
 		announce_ghost_joinleave(ghostize(1))
 	else
+		if(world.time - round_start_time < (20 MINUTES))
+			if(!client.holder)
+				to_chat(src, "<span class='warning'>Sorry, you should wait 20 minutes from the start of the round to be observer. See \"Round Duration\" timer in Status tab to check how much time has passed from the round start.</span>")
+				return
+
 		var/response
 		if(src.client && src.client.holder)
 			response = alert(src, "You have the ability to Admin-Ghost. The regular Ghost verb will announce your presence to dead chat. Both variants will allow you to return to your body using 'aghost'.\n\nWhat do you wish to do?", "Are you sure you want to ghost?", "Ghost", "Admin Ghost", "Stay in body")
