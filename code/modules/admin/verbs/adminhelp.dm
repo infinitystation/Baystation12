@@ -4,12 +4,12 @@
 	set name = "Adminhelp"
 
 	if(config.ahelp_allowed == 0)
-		to_chat(src, "<font color='red'>Error: Admin-PM: Adminhelp is currently off for everyone.</font>")
+		to_chat(src, "<font color='red'>Error: Admin-Help: Adminhelp is currently off for everyone.</font>")
 		return
 
 	//handle muting and automuting
 	if(prefs.muted & MUTE_ADMINHELP)
-		to_chat(src, "<font color='red'>Error: Admin-PM: You cannot send adminhelps (Muted).</font>")
+		to_chat(src, "<font color='red'>Error: Admin-Help: You cannot send adminhelps (Muted).</font>")
 		return
 
 	adminhelped = 1 //Determines if they get the message to reply by clicking the name.
