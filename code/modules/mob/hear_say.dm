@@ -185,6 +185,8 @@
 		if(speaker_name != speaker.real_name && !isAI(speaker)) //Announce computer and various stuff that broadcasts doesn't use it's real name but AI's can't pretend to be other mobs.
 			speaker_name = "[speaker.real_name] ([speaker_name])"
 		track = "[speaker_name] ([ghost_follow_link(speaker, src)])"
+	else
+		playsound(loc, 'sound/effects/radio_chatter.ogg', 25, 0, -1)
 
 	var/formatted
 	if(language)
