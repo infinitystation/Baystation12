@@ -466,7 +466,7 @@
 	access = list(access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor, access_construction,
 			            access_solgov_crew)
-	
+
 /datum/job/roboticist
 	title = "Roboticist"
 	department = "Engineering"
@@ -1074,7 +1074,7 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	latejoin_at_spawnpoints = 1
-	access = list(access_merchant)
+	access = list(access_merchant, access_merchant_leader)
 	announced = FALSE
 
 /datum/job/stowaway
