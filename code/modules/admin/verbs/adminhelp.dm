@@ -3,6 +3,10 @@
 	set category = "Admin"
 	set name = "Adminhelp"
 
+	if(config.ahelp_allowed == 0)
+		to_chat(src, "<font color='red'>Error: Admin-PM: Adminhelp is currently off for everyone.</font>")
+		return
+
 	//handle muting and automuting
 	if(prefs.muted & MUTE_ADMINHELP)
 		to_chat(src, "<font color='red'>Error: Admin-PM: You cannot send adminhelps (Muted).</font>")
@@ -130,3 +134,11 @@
 	feedback_add_details("admin_verb","AH") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
+/client/proc/cmd_toggle_admin_help()
+	set category = "Server"
+	set name = "Toggle Admin Help"
+
+	config.ahelp_allowed = !config.ahelp_allowed
+	log_admin("[key_name(src)] has turned admin help [config.ahelp_allowed ? "on" : "off"].")
+	message_admins("[key_name_admin(src)] has turned admin help [config.ahelp_allowed ? "on" : "off"].", 0)
+	feedback_add_details("admin_verb","TAH") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

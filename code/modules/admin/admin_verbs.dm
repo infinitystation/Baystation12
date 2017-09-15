@@ -171,7 +171,8 @@ var/list/admin_verbs_server = list(
 	/client/proc/nanomapgen_DumpImage,
 	/client/proc/adminchangebuild,
 	/client/proc/update_server,
-	/client/proc/update_server_round_end
+	/client/proc/update_server_round_end,
+	/client/proc/cmd_toggle_admin_help
 	)
 var/list/admin_verbs_debug = list(
 	/client/proc/getruntimelog,                     // allows us to access runtime logs to somebody,
