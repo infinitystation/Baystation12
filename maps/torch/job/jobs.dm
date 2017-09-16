@@ -12,6 +12,7 @@
 		/datum/species/tajaran = list(HUMAN_ONLY_JOBS),
 		/datum/species/machine = list(HUMAN_ONLY_JOBS),
 		/datum/species/diona   = list(HUMAN_ONLY_JOBS, /datum/job/guard),	//Other jobs unavailable via branch restrictions,
+		/datum/species/resomi  = list(HUMAN_ONLY_JOBS),
 	)
 #undef HUMAN_ONLY_JOBS
 
