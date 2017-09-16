@@ -116,32 +116,34 @@
 	src.add_fingerprint(usr)
 	return
 
-/obj/machinery/dna_scannernew/attackby(var/obj/item/weapon/item as obj, var/mob/user as mob)
-	if(istype(item, /obj/item/weapon/reagent_containers/glass))
+/obj/machinery/dna_scannernew/attackby(var/obj/item/I as obj, var/mob/user as mob)
+	if(istype(I, /obj/item/weapon/reagent_containers/glass))
 		if(beaker)
 			to_chat(user, "<span class='warning'>A beaker is already loaded into the machine.</span>")
 			return
 
-		beaker = item
+		beaker = I
 		user.drop_item()
-		item.loc = src
-		user.visible_message("\The [user] adds \a [item] to \the [src]!", "You add \a [item] to \the [src]!")
+		I.loc = src
+		user.visible_message("\The [user] adds \a [I] to \the [src]!", "You add \a [I] to \the [src]!")
 		return
-	else if (!istype(item, /obj/item/grab))
+
+	if(istype(I, /obj/item/grab))
+		var/obj/item/grab/G = I
+		if(!ismob(G.affecting))
+			return
+		if(src.occupant)
+			to_chat(user, "<span class='warning'>The scanner is already occupied!</span>")
+			return
+		if(G.affecting.abiotic())
+			to_chat(user, "<span class='warning'>The subject cannot have abiotic items on.</span>")
+			return
+		put_in(G.affecting)
+		src.add_fingerprint(user)
+		qdel(G)
 		return
-	var/obj/item/grab/G = item
-	if (!ismob(G.affecting))
-		return
-	if (src.occupant)
-		to_chat(user, "<span class='warning'>The scanner is already occupied!</span>")
-		return
-	if (G.affecting.abiotic())
-		to_chat(user, "<span class='warning'>The subject cannot have abiotic items on.</span>")
-		return
-	put_in(G.affecting)
-	src.add_fingerprint(user)
-	qdel(G)
-	return
+
+	return ..()
 
 //Like grab-putting, but for mouse-drop.
 /obj/machinery/dna_scannernew/MouseDrop_T(var/mob/target, var/mob/user)
