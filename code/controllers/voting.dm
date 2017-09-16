@@ -479,7 +479,7 @@ datum/controller/vote
 				. += "<font color='grey'>Add Antagonist (Disallowed)</font>"
 			. += "</li>"
 			//custom
-			if(trialmin)
+			if(C.holder)
 				. += "<li><a href='?src=\ref[src];vote=custom'>Custom</a></li>"
 			. += "</ul><hr>"
 		. += "<a href='?src=\ref[src];vote=close' style='position:absolute;right:50px'>Close</a></body></html>"
