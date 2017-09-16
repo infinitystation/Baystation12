@@ -125,9 +125,9 @@
 			to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
 			return
 
-		if(world.time - round_start_time < (5 MINUTES))
+		if(world.time - round_start_time < (config.observe_delay MINUTES))
 			if(!client.holder)
-				to_chat(src, "<span class='warning'>Sorry, you should wait 5 minutes from the start of the round to be observer. See \"Round Duration\" timer in Status tab to check how much time has passed from the round start.</span>")
+				to_chat(src, "<span class='warning'>Sorry, you should wait [config.observe_delay] minutes from the start of the round to be observer. See \"Round Duration\" timer in Status tab to check how much time has passed from the round start.</span>")
 				return
 
 		if(!config.respawn_delay || client.holder || alert(src,"Are you sure you wish to observe? You will have to wait [config.respawn_delay] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")

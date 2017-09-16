@@ -172,7 +172,8 @@ var/list/admin_verbs_server = list(
 	/client/proc/adminchangebuild,
 	/client/proc/update_server,
 	/client/proc/update_server_round_end,
-	/client/proc/cmd_toggle_admin_help
+	/client/proc/cmd_toggle_admin_help,
+	/client/proc/observe_delay
 	)
 var/list/admin_verbs_debug = list(
 	/client/proc/getruntimelog,                     // allows us to access runtime logs to somebody,
@@ -971,3 +972,20 @@ var/list/admin_verbs_mentor = list(
 	T.add_spell(new S)
 	feedback_add_details("admin_verb","GS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_and_message_admins("gave [key_name(T)] the spell [S].")
+
+/client/proc/observe_delay()
+	set name = "Change roundstart observe delay"
+	set category = "Server"
+
+	if(!holder)
+		return
+
+	var/oldtime = config.observe_delay
+	var/newtime = input("Set a new time. Its must be in MINUTES (not in seconds/byond tick). Set 0 to remove delay.", "Set Delay") as num|null
+
+	if(newtime <= 0)
+		message_admins("Admin [key_name_admin(usr)] has disabled observe delay.", 1)
+	else
+		message_admins("Admin [key_name_admin(usr)] has changed observe delay from [oldtime] to [newtime] minutes.", 1)
+
+	config.observe_delay = newtime

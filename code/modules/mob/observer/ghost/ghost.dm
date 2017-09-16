@@ -163,9 +163,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(stat == DEAD)
 		announce_ghost_joinleave(ghostize(1))
 	else
-		if(world.time - round_start_time < (5 MINUTES))
+		if(world.time - round_start_time < (config.observe_delay MINUTES))
 			if(!client.holder)
-				to_chat(src, "<span class='warning'>Sorry, you should wait 5 minutes from the start of the round to be observer. See \"Round Duration\" timer in Status tab to check how much time has passed from the round start.</span>")
+				to_chat(src, "<span class='warning'>Sorry, you should wait [config.observe_delay] minutes from the start of the round to be observer. See \"Round Duration\" timer in Status tab to check how much time has passed from the round start.</span>")
 				return
 
 		var/response
