@@ -419,6 +419,19 @@
 	for(var/obj/item/smallDelivery/O in src)
 		wrapcheck = 1
 
+	for(var/atom/A in src) //Fix mail by Error_777
+		if(istype(A, /obj/item/smallDelivery))
+			H.tomail = 1
+			break
+		if(istype(A, /mob/living/silicon/robot/drone))
+			H.tomail = 1
+			break
+		if(H.contents.len > 0)
+			eject(src)
+		else
+			H.init(src)
+			H.start(src)
+
 	if(wrapcheck == 1)
 		H.tomail = 1
 
