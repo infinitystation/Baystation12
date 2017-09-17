@@ -655,11 +655,6 @@ default behaviour is:
 	set category = "IC"
 
 	resting = !resting
-	if(resting)
-		verbs += /mob/living/proc/hide
-	else
-		verbs -= /mob/living/proc/hide
-		reset_layer()
 	to_chat(src, "<span class='notice'>You are now [resting ? "resting" : "getting up"]</span>")
 
 //called when the mob receives a bright flash

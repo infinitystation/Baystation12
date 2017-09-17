@@ -113,17 +113,24 @@
 						bloodcolor=S.blood_color
 						S.track_blood--
 			else
-				if(H.track_blood && H.feet_blood_DNA)
-					bloodDNA = H.feet_blood_DNA
-					bloodcolor = H.feet_blood_color
-					H.track_blood--
+				if(H.lying)
+					if(H.track_blood && H.blood_DNA || H.feet_blood_DNA)
+						bloodDNA = H.feet_blood_DNA
+						bloodcolor = H.feet_blood_color
+						H.track_blood--
+				else
+					if(H.track_blood && H.feet_blood_DNA)
+						bloodDNA = H.feet_blood_DNA
+						bloodcolor = H.feet_blood_color
+						H.track_blood--
+
 
 			if(bloodDNA)
-				if(M.lying)
-					src.AddTracks(/obj/effect/decal/cleanable/blood/tracks,bloodDNA,H.dir,0,bloodcolor) // Coming
+				if(H.lying)
+					src.AddTracks(/obj/effect/decal/cleanable/blood/tracks/crawl,bloodDNA,H.dir,0,bloodcolor) // Coming
 					var/turf/simulated/from = get_step(H,reverse_direction(H.dir))
 					if(istype(from) && from)
-						from.AddTracks(/obj/effect/decal/cleanable/blood/tracks,bloodDNA,0,H.dir,bloodcolor) // Going
+						from.AddTracks(/obj/effect/decal/cleanable/blood/tracks/crawl,bloodDNA,0,H.dir,bloodcolor) // Going
 				else
 					src.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,H.dir,0,bloodcolor) // Coming
 					var/turf/simulated/from = get_step(H,reverse_direction(H.dir))
@@ -131,9 +138,6 @@
 						from.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,0,H.dir,bloodcolor) // Going
 
 				bloodDNA = null
-
-			if(M.lying)
-				return ..()
 
 			//Shoe sounds
 			if(istype(src, /turf/simulated/floor/grass))
