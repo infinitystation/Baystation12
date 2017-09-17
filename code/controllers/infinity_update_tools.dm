@@ -60,7 +60,7 @@
 		if(confirm == "Yes")
 			message_admins("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
 			log_game("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
-			to_chat(world, "<span class='pm'><span class='howto'><b>~~ Администратор [usr.key] инициировал(а) обновление сервера в конце текущего раунда ~~</b></span></span>\n")
+			to_chat(world, "<span class='pm'><span class='howto'><b>~~ [usr.client.holder.rights & R_ADMIN ? "Администратор" : "Сотрудник"] [usr.key] инициировал(а) обновление сервера в конце текущего раунда ~~</b></span></span>\n")
 	//		to_chat(world, "<span class='adminooc'>Администратор [usr.key] инициировал(а) обновление сервера в конце текущего раунда.</span>")
 			ticker.updater_ckey = usr.key
 			ticker.update_waiting = 1
@@ -74,7 +74,7 @@
 		to_chat(usr, "Вы не можете обновить сервер так как активированна команда смены билда.")
 		return
 
-	to_chat(world, "<span class='adminooc'><FONT size=5>ВНИМАНИЕ! СЕРВЕР ОБНОВЛЯЕТСЯ ЧЕРЕЗ 10 СЕКУНД! СЕРВЕР НЕ БУДЕТ РАБОТАТЬ НЕСКОЛЬКО МИНУТ!</FONT><br>Обновление в конце раунда инициировано администратором [ticker.updater_ckey]</span>.")
+	to_chat(world, "<span class='adminooc'><FONT size=5>ВНИМАНИЕ! СЕРВЕР ОБНОВЛЯЕТСЯ ЧЕРЕЗ 10 СЕКУНД! СЕРВЕР НЕ БУДЕТ РАБОТАТЬ НЕСКОЛЬКО МИНУТ!</FONT><br>Обновление в конце раунда инициировано [usr.client.holder.rights & R_ADMIN ? "администратором" : "сотрудником"] [usr.key] [ticker.updater_ckey]</span>.")
 	sound_to(world, sound('sound/effects/alarm.ogg', repeat = 0, wait = 0, volume = 100, channel = 1))
 	sleep(100)
 	shell("sh ../update.sh [currentbuild.dmb_file] [currentbuild.folder] [world.port] [currentbuild.update]")
