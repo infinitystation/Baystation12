@@ -206,6 +206,9 @@
 #define RAD_LEVEL_HIGH 25
 #define RAD_LEVEL_VERY_HIGH 75
 
+#define RADIATION_THRESHOLD_CUTOFF 0.1	// Radiation will not affect a tile when below this value.
+
 #define ANNOUNSER_NAME "[station_name()] Automated Announcement System"
 
 #define DOOR_CRUSH_DAMAGE 15
+
