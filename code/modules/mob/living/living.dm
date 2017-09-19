@@ -178,7 +178,7 @@ default behaviour is:
 		return 0
 
 	return can_move_mob(tmob, 1, 0)
-	
+
 /mob/living/verb/succumb()
 	set hidden = 1
 	if ((src.health < src.maxHealth/2)) // Health below half of maxhealth.
@@ -553,6 +553,7 @@ default behaviour is:
 
 
 						step(pulling, get_dir(pulling.loc, T))
+						set_dir(get_dir(src, pulling))
 						if(t)
 							M.start_pulling(t)
 				else
@@ -564,6 +565,7 @@ default behaviour is:
 									stop_pulling()
 					if (pulling)
 						step(pulling, get_dir(pulling.loc, T))
+						set_dir(get_dir(src, pulling))
 	else
 		stop_pulling()
 		. = ..()
