@@ -74,6 +74,8 @@
 	#include "../../code/modules/lobby_music/Torch.dm"
 	#include "../../code/modules/lobby_music/title1.dm"
 
+	#include "../../code/modules/lobby_music/jamatar_lepus_rising.dm"
+
 	#define using_map_DATUM /datum/map/torch
 
 #elif !defined(MAP_OVERRIDE)
