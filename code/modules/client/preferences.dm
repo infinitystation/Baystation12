@@ -15,7 +15,10 @@ datum/preferences
 	var/last_id
 
 	//game-preferences
-	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
+
+	//Saved changlog filesize to detect if there was a change
+	var/lastchangelog = ""
+	var/lastinfchangelog = ""
 
 	//character preferences
 	var/species_preview                 //Used for the species selection window.
