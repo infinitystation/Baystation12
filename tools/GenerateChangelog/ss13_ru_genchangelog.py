@@ -101,7 +101,7 @@ if failed_cache_read and os.path.isfile(args.targetFile):
     from bs4.element import NavigableString
     print(' Generating cache...')
     with open(args.targetFile, 'r', encoding="utf8") as f:
-        soup = BeautifulSoup(f)
+        soup = BeautifulSoup(f, "html.parser")
         for e in soup.find_all('div', {'class': 'commit'}):
             entry = {}
             date = datetime.strptime(e.h2.string.strip(), dateformat).date()  # key
