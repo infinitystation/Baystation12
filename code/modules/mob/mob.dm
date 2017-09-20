@@ -367,7 +367,7 @@
 */
 
 /client/verb/changes()
-	set name = "Baystation 12 Changelog"
+	set name = "Baystation12 Changelog"
 	set category = "OOC"
 	getFiles(
 		'html/88x31.png',

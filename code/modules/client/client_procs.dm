@@ -204,7 +204,7 @@
 		to_chat(src, "<span class='info'>You have unread updates in the Infinity Space Station changelog.</span>")
 		winset(src, "rpane.changelog_infinity", "background-color=#eaeaea;font-style=bold")
 		if(config.aggressive_changelog)
-			src.changes()
+			src.changes_infinity()
 
 	if(isnum(player_age) && player_age < 7)
 		src.lore_splash()
