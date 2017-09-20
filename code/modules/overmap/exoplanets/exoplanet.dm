@@ -243,8 +243,8 @@
 		if(2 to 3)
 			if(prob(flora_prob))
 				spawn_flora(T)
-			/*if(prob(fauna_prob))
-				spawn_fauna(T)*/
+			if(prob(fauna_prob))
+				spawn_fauna(T)
 		if(5 to 6)
 			if(prob(flora_prob/3))
 				spawn_flora(T)
