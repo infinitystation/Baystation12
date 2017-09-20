@@ -2,7 +2,7 @@
 	plane = OBJ_PLANE
 
 	appearance_flags = TILE_BOUND
-	glide_size = 5
+	glide_size = 5.5
 
 	var/last_move = null
 	var/anchored = 0

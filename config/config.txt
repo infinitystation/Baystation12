@@ -247,7 +247,7 @@ BANAPPEALS https://infinity.so/index.php?/forum/5-суд/
 ALLOW_HOLIDAYS
 
 ##Defines the ticklag for the world.  0.9 is the normal one, 0.5 is smoother.
-TICKLAG 0.9
+TICKLAG 0.3
 
 ##Defines world FPS. Defaults to 20.
 FPS 30
