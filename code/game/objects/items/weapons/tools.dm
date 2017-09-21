@@ -449,7 +449,7 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 50)
 	center_of_mass = "x=16;y=20"
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
-	hitsound = list('sound/weapons/crowbarhit.ogg', 'sound/weapons/crowbarhit2.ogg')
+	hitsound = 'sound/weapons/crowbarhit.ogg' //'sound/weapons/crowbarhit2.ogg')
 
 /obj/item/weapon/crowbar/red
 	icon = 'icons/obj/items.dmi'
