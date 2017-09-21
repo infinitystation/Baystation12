@@ -60,7 +60,7 @@
 
 			if(is_special_character(C.mob))
 				entry += " - <b><font color='red'>Antagonist</font></b>"
-				if (istype(src.mob, /mob/observer/ghost))  ///obj/item/organ/brain //
+				if(istype(C.mob, /mob/observer/ghost) && C.mob.stat == DEAD)
 					dead_antags++
 				else
 					living_antags++
