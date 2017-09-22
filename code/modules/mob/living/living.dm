@@ -553,7 +553,6 @@ default behaviour is:
 
 
 						step(pulling, get_dir(pulling.loc, T))
-						set_dir(get_dir(src, pulling))
 						if(t)
 							M.start_pulling(t)
 				else
@@ -565,7 +564,9 @@ default behaviour is:
 									stop_pulling()
 					if (pulling)
 						step(pulling, get_dir(pulling.loc, T))
-						set_dir(get_dir(src, pulling))
+						var/obj/O = pulling
+						if(O.w_class >= ITEM_SIZE_HUGE)
+							set_dir(get_dir(src, O))
 	else
 		stop_pulling()
 		. = ..()
