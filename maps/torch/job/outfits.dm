@@ -464,6 +464,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/torch/crew/medical/counselor/chaplain
 	name = OUTFIT_JOB_NAME("Chaplain - Torch")
 	uniform = /obj/item/clothing/under/rank/chaplain
+	l_hand = /obj/item/weapon/storage/bible
 
 /decl/hierarchy/outfit/job/torch/crew/medical/counselor/ec
 	name = OUTFIT_JOB_NAME("Counselor - Expeditionary Corps")
@@ -651,7 +652,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/torch/crew/service/pathfinder
 	name = OUTFIT_JOB_NAME("Pathfinder")
-	uniform = /obj/item/clothing/under/utility/expeditionary/officer/service 
+	uniform = /obj/item/clothing/under/utility/expeditionary/officer/service
 	shoes = /obj/item/clothing/shoes/dutyboots
 	head = /obj/item/clothing/head/soft/sol/expedition
 	id_type = /obj/item/weapon/card/id/torch/crew/pathfinder
