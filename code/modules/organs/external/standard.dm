@@ -74,6 +74,11 @@
 	if(prob(25))
 		owner.grasp_damage_disarm(src)
 
+/obj/item/organ/external/arm/emp_act(severity)
+	..()
+	if(prob(25))
+		owner.grasp_damage_disarm(src)
+
 /obj/item/organ/external/arm/right
 	organ_tag = BP_R_ARM
 	name = "right arm"
@@ -107,6 +112,12 @@
 		to_chat(owner, "<span class='warning'>Your [src] buckles from the shock!</span>")
 		owner.Weaken(5)
 
+/obj/item/organ/external/leg/emp_act(severity)
+	..()
+	if(prob(20))
+		to_chat(owner, "<span class='warning'>Your [src] buckles from the shock!</span>")
+		owner.Weaken(5)
+
 /obj/item/organ/external/leg/right
 	organ_tag = BP_R_LEG
 	name = "right leg"
@@ -137,6 +148,12 @@
 	if(!owner || agony_amount < 5)
 		return
 	if(prob(agony_amount*4))
+		to_chat(owner, "<span class='warning'>You lose your footing as your [src] spasms!</span>")
+		owner.Weaken(5)
+
+/obj/item/organ/external/foot/emp_act(severity)
+	..()
+	if(prob(40))
 		to_chat(owner, "<span class='warning'>You lose your footing as your [src] spasms!</span>")
 		owner.Weaken(5)
 
@@ -174,6 +191,12 @@
 	if(!owner || (agony_amount < 5))
 		return
 	owner.grasp_damage_disarm(src)
+
+/obj/item/organ/external/hand/emp_act(severity)
+	..()
+	if(prob(50))
+		owner.grasp_damage_disarm(src)
+
 
 /obj/item/organ/external/hand/removed()
 	owner.drop_from_inventory(owner.gloves)
