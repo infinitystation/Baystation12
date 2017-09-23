@@ -534,7 +534,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	lit = 1
 	update_icon()
 	light_effects(user)
-	set_light(2)
+	set_light(2, light_color = "#E38F46")
 	GLOB.processing_objects.Add(src)
 
 /obj/item/weapon/flame/lighter/proc/light_effects(mob/living/carbon/user)
@@ -634,7 +634,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			to_chat(loc, "<span class='warning'>[src]'s flame flickers.</span>")
 			set_light(0)
 			spawn(4)
-				set_light(2)
+				set_light(2, light_color = "#E38F46")
 		reagents.remove_reagent(/datum/reagent/fuel, 0.05)
 	else
 		shutoff()
