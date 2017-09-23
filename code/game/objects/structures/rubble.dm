@@ -14,7 +14,7 @@
 
 /obj/structure/rubble/New()
 	..()
-	if(prob(emptyprob)) 
+	if(prob(emptyprob))
 		lootleft = 0
 
 /obj/structure/rubble/Initialize()
@@ -24,8 +24,9 @@
 /obj/structure/rubble/update_icon()
 	overlays.Cut()
 	var/list/parts = list()
-	for(var/i = 1 to 7)
-		var/image/I = image(icon,"rubble[rand(1,9)]")
+	for(var/i = 1 to 20)
+		var/image/I = image(icon,"rubble[rand(1,71)]")
+		I.color = "#54362E"
 		if(prob(10))
 			var/atom/A = pick(loot)
 			if(initial(A.icon) && initial(A.icon_state))
@@ -54,7 +55,7 @@
 		lootleft--
 		update_icon()
 		to_chat(user, "<span class='notice'>You find \a [booty] and pull it carefully out of \the [src].</span>")
-		
+
 /obj/structure/rubble/attackby(var/obj/item/I, var/mob/user)
 	if (istype(I, /obj/item/weapon/pickaxe))
 		var/obj/item/weapon/pickaxe/P = I
