@@ -30,3 +30,5 @@
 	//the second is the message in question.
 	var/last_taste_time = 0
 	var/last_taste_text = ""
+
+	var/is_sleeping = 0
