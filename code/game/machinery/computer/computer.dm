@@ -68,18 +68,18 @@
 	if(stat & NOPOWER)
 		set_light(0)
 		if(icon_keyboard)
-			overlays += make_screen_overlay(icon,"[icon_keyboard]_off", overlay_layer)
+			overlays += image(icon,"[icon_keyboard]_off", overlay_layer)
 		return
 	else
 		set_light(light_range_on, light_power_on)
 
 	if(stat & BROKEN)
-		overlays += make_screen_overlay(icon,"[icon_state]_broken", overlay_layer)
+		overlays += image(icon,"[icon_state]_broken", overlay_layer)
 	else
-		overlays += make_screen_overlay(icon,icon_screen, overlay_layer)
+		overlays += image(icon,icon_screen, overlay_layer)
 
 	if(icon_keyboard)
-		overlays += make_screen_overlay(icon, icon_keyboard, overlay_layer)
+		overlays += image(icon, icon_keyboard, overlay_layer)
 
 /obj/machinery/computer/proc/set_broken()
 	stat |= BROKEN

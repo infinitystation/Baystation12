@@ -95,4 +95,4 @@ var/list/ai_status_emotions = list(
 	picture_state = state
 	if(overlays.len)
 		overlays.Cut()
-	overlays += make_screen_overlay('icons/obj/status_display.dmi', icon_state=picture_state)
+	overlays += image('icons/obj/status_display.dmi', icon_state=picture_state)
