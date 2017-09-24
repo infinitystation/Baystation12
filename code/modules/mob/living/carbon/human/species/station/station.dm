@@ -12,7 +12,7 @@
 	secondary_langs = list(LANGUAGE_SOL_COMMON)
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 17
-	max_age = 85
+	max_age = 100
 	gluttonous = GLUT_TINY
 
 	speech_chance = 30
