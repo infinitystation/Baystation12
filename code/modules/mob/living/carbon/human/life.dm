@@ -296,6 +296,8 @@
 			internal = null
 
 		if(internal)
+			if((head && (head.item_flags & AIRTIGHT)))
+				playsound(loc, "sound/voice/gasmask[rand(1, 10)].ogg", 75, 1)
 			return internal.remove_air_volume(volume_needed)
 		else if(internals)
 			internals.icon_state = "internal0"
