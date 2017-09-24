@@ -170,7 +170,7 @@
 	remove_display()
 	if(!picture || picture_state != state)
 		picture_state = state
-		picture = image('icons/obj/status_display.dmi', icon_state=picture_state)
+		picture = make_screen_overlay('icons/obj/status_display.dmi', icon_state=picture_state)
 	overlays |= picture
 	set_light(1.5, 1, COLOR_WHITE)
 

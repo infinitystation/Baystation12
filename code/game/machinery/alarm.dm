@@ -901,7 +901,7 @@ FIRE ALARM
 			var/decl/security_level/sl = security_state.current_security_level
 
 			set_light(sl.light_range, sl.light_power, sl.light_color_alarm)
-			src.overlays += image(sl.icon, sl.overlay_alarm)
+			src.overlays += make_screen_overlay(sl.icon, sl.overlay_alarm)
 
 /obj/machinery/firealarm/fire_act(datum/gas_mixture/air, temperature, volume)
 	if(src.detecting)
