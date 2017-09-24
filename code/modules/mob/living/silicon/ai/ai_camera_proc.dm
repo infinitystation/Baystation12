@@ -1,7 +1,7 @@
 /mob/living/silicon/ai/proc/ai_take_image()
-	aiCamera.toggle_camera_mode()
+	silicon_camera.toggle_camera_mode()
 	return
 
 /mob/living/silicon/ai/proc/ai_view_images()
-	aiCamera.viewpictures()
+	silicon_camera.viewpictures()
 	return
