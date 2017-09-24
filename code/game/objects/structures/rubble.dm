@@ -24,7 +24,7 @@
 /obj/structure/rubble/update_icon()
 	overlays.Cut()
 	var/list/parts = list()
-	for(var/i = 1 to 7)
+	for(var/i = 1 to 10)
 		var/image/I = image(icon,"rubble[rand(1,71)]")
 		I.color = "#54362E"
 		if(prob(10))
