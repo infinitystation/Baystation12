@@ -63,3 +63,11 @@
 			new cash_type(src)
 		else
 			break
+
+/obj/structure/closet/secure_closet/freezer/var/jones = FALSE
+
+/obj/structure/closet/secure_closet/freezer/ex_act()
+	if(!jones)
+		jones = TRUE
+	else
+		..()
