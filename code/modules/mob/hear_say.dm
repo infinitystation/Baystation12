@@ -92,6 +92,7 @@
 		return
 
 	var/track = null
+	var/jobname // the mob's "job"
 
 	//non-verbal languages are garbled if you can't see the speaker. Yes, this includes if they are inside a closet.
 	if (language && (language.flags & NONVERBAL))
@@ -128,13 +129,27 @@
 		if(H.voice)
 			speaker_name = H.voice
 
+
+		/*if(H.age && H.gender)//If they have an age and gender
+			var/ageAndGender
+			jobname = H.get_assignment()
+
+			if(H.get_assignment() == "No id")//If they don't have an ID then we don't know their job.
+				jobname = "Unknown"
+
+			if(H.isSynthetic())
+				ageAndGender = ageAndGender2Desc(H.age, H.gender, synthetic_flag = 1)//Get their age and gender
+			else
+				ageAndGender = ageAndGender2Desc(H.age, H.gender)
+
+			speaker_name += " \[" + "[jobname] " + "[ageAndGender]" + "]"*/ //Print it out.
+
 	if(hard_to_hear)
 		speaker_name = "unknown"
 
 	var/changed_voice
 
 	if(istype(src, /mob/living/silicon/ai) && !hard_to_hear)
-		var/jobname // the mob's "job"
 		var/mob/living/carbon/human/impersonating //The crew member being impersonated, if any.
 
 		if (ishuman(speaker))
