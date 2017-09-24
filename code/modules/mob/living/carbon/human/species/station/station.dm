@@ -15,7 +15,7 @@
 	max_age = 85
 	gluttonous = GLUT_TINY
 
-	speech_chance = 40
+	speech_chance = 30
 
 	spawn_flags = SPECIES_CAN_JOIN
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_TONE | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
