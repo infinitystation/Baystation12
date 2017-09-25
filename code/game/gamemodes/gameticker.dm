@@ -339,11 +339,6 @@ var/global/datum/controller/gameticker/ticker
 			declare_completion()
 			Master.SetRunLevel(RUNLEVEL_POSTGAME)
 
-			if(update_waiting)
-				force_update_server()
-			if(buildchangechecked)
-				forcechangebuild(nextbuild)
-
 			spawn(50)
 				if(config.allow_map_switching && config.auto_map_vote && GLOB.all_maps.len > 1)
 					vote.automap()
@@ -361,11 +356,17 @@ var/global/datum/controller/gameticker/ticker
 
 				else
 					feedback_set_details("end_proper","proper completion")
-					if(!delay_end)
+					if(!delay_end && !update_waiting)
 						to_world("<span class='notice'><b>Restarting in [restart_timeout/10] seconds</b></span>")
 
 				if(blackbox)
 					blackbox.save_all_data_to_sql()
+
+				if(update_waiting)
+					force_update_server()
+
+				if(buildchangechecked)
+					forcechangebuild(nextbuild)
 
 				var/wait_for_tickets
 				var/delay_notified = 0

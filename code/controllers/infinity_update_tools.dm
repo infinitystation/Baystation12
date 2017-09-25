@@ -1,5 +1,5 @@
 /datum/controller/gameticker
-	var/update_waiting = 0				//build updating?
+	var/update_waiting = FALSE			//build updating?
 	var/updater_ckey = ""				//who updating build?
 
 /client/proc/update_server()
@@ -41,29 +41,24 @@
 		to_chat(usr, "Вы не можете обновить сервер так как активированна команда смены билда.")
 		return
 
-	if(ticker.update_waiting)
-		var/confirm_cancellation = alert("Отменить обновление в конце раунда?", "Cancel Server Update", "Yes", "No")
-		if(confirm_cancellation == "No")
-			return
-		if(confirm_cancellation == "Yes")
-			message_admins("[key_name_admin(usr)] отменил(а) обновление сервера в конце текущего раунда.")
-			log_game("[key_name_admin(usr)] отменил(а) обновление сервера в конце текущего раунда.")
-			ticker.updater_ckey = null
-			ticker.update_waiting = FALSE
-			return
+	var/confirm = alert("Инициировать обновление в конце раунда?", "End Round", "Yes", "No", "Cancel Update")
+	if(confirm == "Yes")
+		message_admins("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
+		log_game("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
+		to_chat(world, "<span class='pm'><span class='howto'><b>~~ [usr.client.holder.rights & R_ADMIN ? "Администратор" : "Сотрудник"] [ticker.updater_ckey] инициировал(а) обновление сервера в конце текущего раунда ~~</b></span></span>\n")
+		ticker.update_waiting = TRUE
+		ticker.updater_ckey = usr.key
+		return
 
+	else if(confirm == "Cancel Update")
+		message_admins("[key_name_admin(usr)] отменил(а) обновление сервера в конце текущего раунда.")
+		log_game("[key_name_admin(usr)] отменил(а) обновление сервера в конце текущего раунда.")
+		ticker.update_waiting = FALSE
+		ticker.updater_ckey = ""
+		return
 	else
-		var/confirm = alert("Инициировать обновление в конце раунда?", "End Round", "Yes", "Cancel")
-		if(confirm == "Cancel")
-			return
+		return
 
-		if(confirm == "Yes")
-			message_admins("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
-			log_game("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
-			to_chat(world, "<span class='pm'><span class='howto'><b>~~ [usr.client.holder.rights & R_ADMIN ? "Администратор" : "Сотрудник"] [usr.key] инициировал(а) обновление сервера в конце текущего раунда ~~</b></span></span>\n")
-	//		to_chat(world, "<span class='adminooc'>Администратор [usr.key] инициировал(а) обновление сервера в конце текущего раунда.</span>")
-			ticker.updater_ckey = usr.key
-			ticker.update_waiting = 1
 
 /proc/force_update_server()
 	if(currentbuild.folder == currentbuild.update)
@@ -77,4 +72,5 @@
 	to_chat(world, "<span class='adminooc'><FONT size=5>ВНИМАНИЕ! СЕРВЕР ОБНОВЛЯЕТСЯ ЧЕРЕЗ 10 СЕКУНД! СЕРВЕР НЕ БУДЕТ РАБОТАТЬ НЕСКОЛЬКО МИНУТ!</FONT><br>Обновление в конце раунда инициировано [usr.client.holder.rights & R_ADMIN ? "администратором" : "сотрудником"] [usr.key] [ticker.updater_ckey]</span>.")
 	sound_to(world, sound('sound/effects/alarm.ogg', repeat = 0, wait = 0, volume = 100, channel = 1))
 	sleep(100)
-	shell("sh ../update.sh [currentbuild.dmb_file] [currentbuild.folder] [world.port] [currentbuild.update]")
+	shell("sudo sh ../update.sh [currentbuild.dmb_file] [currentbuild.folder] [world.port] [currentbuild.update]")
+
