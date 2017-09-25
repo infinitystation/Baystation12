@@ -453,13 +453,13 @@ var/const/CLICK_HANDLER_ALL                  = (~0)
 	var/direction
 	if(stat || buckled || paralysis || stunned || sleeping || (status_flags & FAKEDEATH) || restrained() || (weakened > 5))
 		return
-	if(!istype(src.loc, /turf/))
+	if(!istype(src.loc, /turf/) || istype(src.loc, /turf/space))
 		return
 	if(!A || !x || !y || !A.x || !A.y) return
 	if(scrambling)
 		return
 	if(!has_limbs)
-		src << "<span class='warning'>You can't even move yourself - you have no limbs!</span>"
+		to_chat(src, "<span class='warning'>You can't even move yourself - you have no limbs!</span>")
 	var/dx = A.x - x
 	var/dy = A.y - y
 	if(!dx && !dy) return
@@ -472,10 +472,10 @@ var/const/CLICK_HANDLER_ALL                  = (~0)
 		else		direction = WEST
 	if(direction)
 		scrambling = 1
-		spawn(25)//if(do_after(src, 5))
-			Move(get_step(src,direction))
+		if(do_after(src, 20))
+			Move(get_step(src, direction))
 			scrambling = 0
 			dir = 2
 			src.visible_message("<span class='warning'><b>[src]</b> crawls!</span>")
-		//else
-		//	scrambling = 0
+		else
+			scrambling = 0
