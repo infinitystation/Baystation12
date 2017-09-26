@@ -27,6 +27,7 @@
 			switch(C.mob.stat)
 				if(UNCONSCIOUS)
 					entry += " - <font color='darkgray'><b>Unconscious</b></font>"
+					living++
 				if(DEAD)
 					if(isghost(C.mob))
 						var/mob/observer/ghost/O = C.mob
