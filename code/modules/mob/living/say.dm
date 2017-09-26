@@ -52,6 +52,7 @@ var/list/department_radio_keys = list(
 	  ":ì" = "Service",		".ì" = "Service",
 	  ":ç" = "AI Private",	".ç" = "AI Private",
 	  ":ÿ" = "Entertainment",".ÿ" = "Entertainment",
+	  ":í" = "Exploration",		".í" = "Exploration",
 
 	  ":Ê" = "right ear",	".Ê" = "right ear",
 	  ":Ä" = "left ear",	".Ä" = "left ear",
@@ -68,6 +69,7 @@ var/list/department_radio_keys = list(
 	  ":Ì" = "Service",		".Ì" = "Service",
 	  ":Ç" = "AI Private",	".Ç" = "AI Private",
 	  ":ß" = "Entertainment",".ß" = "Entertainment",
+	  ":Í" = "Exploration",		".Í" = "Exploration",
 )
 
 
