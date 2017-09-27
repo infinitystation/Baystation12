@@ -64,13 +64,13 @@
 	return ..()
 
 /obj/item/weapon/reagent_containers/food/drinks/self_feed_message(var/mob/user)
-	if(amount_per_transfer_from_this >= reagents.total_volume)
+	if(amount_per_transfer_from_this == volume && amount_per_transfer_from_this >= reagents.total_volume)
 		visible_message("<big><span class='notice'>[user] gulped down the whole [src]. Wow!</span></big>")
 	else
 		to_chat(user, "<span class='notice'>You swallow a gulp from \the [src].</span>")
 
 /obj/item/weapon/reagent_containers/food/drinks/feed_sound(var/mob/user)
-	if(amount_per_transfer_from_this >= reagents.total_volume)
+	if(amount_per_transfer_from_this == volume && amount_per_transfer_from_this >= reagents.total_volume)
 		playsound(user.loc, 'sound/items/drinking_after.ogg', rand(10, 50), 1)
 	else
 		playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), 1)

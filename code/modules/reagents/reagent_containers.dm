@@ -126,7 +126,7 @@
 		istype(src,/obj/item/weapon/reagent_containers/food/drinks/glass2) || \
 		istype(src,/obj/item/weapon/reagent_containers/food/drinks/shaker))
 			var/whole_gulp_time = reagents.total_volume
-			if(amount_per_transfer_from_this >= volume)
+			if(amount_per_transfer_from_this == volume && amount_per_transfer_from_this >= reagents.total_volume)
 				playsound(user.loc, 'sound/items/drinking.ogg', reagents.total_volume, 1)
 				do_after(user, whole_gulp_time, src)
 
