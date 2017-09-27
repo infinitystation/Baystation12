@@ -133,19 +133,30 @@
 				new /mob/living/simple_animal/hostile/hivebot(get_turf(src))
 				new /mob/living/simple_animal/hostile/hivebot/range(get_turf(src))
 				new /mob/living/simple_animal/hostile/hivebot/rapid(get_turf(src))
-	sleep(100)
-	visible_message("<span class='boldannounce'>The [src] warps out!</span>")
-	playsound(src.loc, 'sound/effects/EMPulse.ogg', 25, 1)
-	qdel(src)
-	return
+	spawn(1 MINUTES)
+		visible_message("<span class='boldannounce'>The [src] warps out!</span>")
+		playsound(src.loc, 'sound/effects/EMPulse.ogg', 25, 1)
+		qdel(src)
+		return
 
 /mob/living/simple_animal/hostile/hivebot/verb/RepairSelf()
 	set name = "Self Repair"
 	set category = "Hivebot"
 	set desc = "Attempts to repair damage to our body. You will have to remain motionless until repairs are complete."
+
 	if(!isturf(loc))
 		return
-	src << "<span class='info'>Attempting to repair damage to our body, stand by...</span>"
-	if(do_mob(src, src, 100))
-		health = maxHealth
-		src << "<span class='inf+o'>We successfully repaired ourselves.</span>"
+
+	if(health < maxHealth)
+		to_chat(src, "<span class='info'>Attempting to repair damage to our body, stand by...</span>")
+		if(do_mob(src, src, 1 MINUTES))
+			if(prob(60))
+				health = min(maxHealth, health + 50)
+				to_chat(src, "<span class='notice'>We successfully repaired half of our ourselves. The current value of the system in [health / 2]%.</span>")
+			else
+				health = maxHealth
+				to_chat(src, "<span class='notice'>We successfully repaired ourselves. The current value of the system in [health / 2]%.</span>")
+			return
+	else
+		to_chat(src, "<span class='notice'>We are already in perfect condition, there are no requirements for repair.</span>")
+		return
