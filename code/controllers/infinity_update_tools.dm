@@ -43,8 +43,11 @@
 		to_chat(usr, "Вы не можете обновить сервер так как активированна команда смены билда.")
 		return
 
-	var/confirm = alert("Инициировать обновление в конце раунда? Текущий статус: обновление [ticker.update_waiting ? "" : "не"] запланировано.", "End Round", "Yes", "No", "Cancel Update")
-	if(confirm == "Yes")
+	var/confirm = alert("Инициировать обновление в конце раунда? Текущий статус: обновление [ticker.update_waiting ? "" : "не"] запланировано.", "End Round", "Trigger End round Update", "Cancel Update", "Exit")
+	if(confirm == "Trigger End round Update")
+		if(ticker.update_waiting)
+			if(alert("Внимание! Обновление в  конце раунда уже было запланировано сотрудником [ticker.updater_ckey], в случае продолжения ticker.updater_ckey будет перезаписан на Ваш псевдоним. Вы уверены?", "Да", "Нет") == "Нет")
+				return
 		ticker.update_waiting = TRUE
 		ticker.updater_ckey = usr.key
 		message_admins("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
