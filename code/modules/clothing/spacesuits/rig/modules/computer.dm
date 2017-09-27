@@ -369,7 +369,7 @@
 	var/atom/interfaced_with // Currently draining power from this device.
 	var/total_power_drained = 0
 	var/drain_loc
-	var/max_draining_rate = 300 KILOWATTS
+	var/max_draining_rate = 250 KILOWATTS
 
 /obj/item/rig_module/power_sink/deactivate()
 
