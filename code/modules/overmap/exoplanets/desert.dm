@@ -75,7 +75,6 @@
 	density = 0
 	anchored = 1
 	can_buckle = 1
-	buckle_dir = SOUTH
 	var/exposed = 0
 	var/busy
 
@@ -114,6 +113,9 @@
 				user.visible_message("<span class='notice'>\The [buckled_mob] has been freed from \the [src] by \the [user].</span>")
 			unbuckle_mob()
 
+		busy = FALSE
+		return
+
 /obj/structure/quicksand/unbuckle_mob()
 	..()
 	update_icon()
@@ -128,7 +130,6 @@
 	icon_state = "open"
 	overlays.Cut()
 	if(buckled_mob)
-		overlays += buckled_mob
 		var/image/I = image(icon,icon_state="overlay")
 		I.plane = ABOVE_HUMAN_PLANE
 		I.layer = ABOVE_HUMAN_LAYER
