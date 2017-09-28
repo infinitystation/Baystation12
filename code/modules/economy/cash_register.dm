@@ -263,7 +263,7 @@
 					T.purpose = transaction_purpose
 					T.amount = "([transaction_amount])"
 					T.source_terminal = machine_id
-					T.date = current_date_string
+					T.date = stationdate2text()
 					T.time = stationtime2text()
 					D.transaction_log.Add(T)
 
@@ -273,7 +273,7 @@
 					T.purpose = transaction_purpose
 					T.amount = "[transaction_amount]"
 					T.source_terminal = machine_id
-					T.date = current_date_string
+					T.date = stationdate2text()
 					T.time = stationtime2text()
 					linked_account.transaction_log.Add(T)
 
@@ -311,7 +311,7 @@
 			T.purpose = transaction_purpose
 			T.amount = "[transaction_amount]"
 			T.source_terminal = machine_id
-			T.date = current_date_string
+			T.date = stationdate2text()
 			T.time = stationtime2text()
 			linked_account.transaction_log.Add(T)
 
