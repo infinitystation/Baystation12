@@ -45,8 +45,6 @@
 /obj/structure/toilet/attackby(obj/item/I as obj, mob/living/user as mob)
 	if(iswrench(I))
 		var/choices = list()
-		if(cistern)
-			choices += "Stash"
 		if(anchored)
 			choices += "Disconnect"
 		else
@@ -57,8 +55,6 @@
 		if(!Adjacent(user) || !response)	//moved away or cancelled
 			return
 		switch(response)
-			if("Stash")
-				stash_goods(I, user)
 			if("Disconnect")
 				user.visible_message("<span class='notice'>[user] starts disconnecting [src].</span>", "<span class='notice'>You begin disconnecting [src]...</span>")
 				if(do_after(user, 40, target = src))
