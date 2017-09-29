@@ -189,12 +189,12 @@ var/list/ai_verbs_default = list(
 	ai_radio.myAi = src
 
 /mob/living/silicon/ai/proc/on_mob_init()
-	to_chat(src, "<B>You are playing the [station_name()]'s AI. The AI cannot move, but can interact with many objects while viewing them (through cameras).</B>")
-	to_chat(src, "<B>To look at other areas, click on yourself to get a camera menu.</B>")
-	to_chat(src, "<B>While observing through a camera, you can use most (networked) devices which you can see, such as computers, APCs, intercoms, doors, etc.</B>")
-	to_chat(src, "To use something, simply click on it.")
-	to_chat(src, "Use say [get_language_prefix()]b to speak to your cyborgs through binary. Use say :h to speak from an active holopad.")
-	to_chat(src, "For department channels, use the following say commands:")
+	to_chat(src, "<B>Вы играете за Искусстенный Интеллект объекта [station_name()]. ИИ не может перемещатьс&#255; сам по себе, но можно взаимодействовать со множеством электронных объектов в момент, когда они наход&#255;тс&#255; его зоне видимости (через камеры).</B>")
+	to_chat(src, "<B>Чтобы увидеть другие зоны, нажмите на себ&#255; дл&#255; выведени&#255; списка доступных камер.</B>")
+	to_chat(src, "<B>В момент просмотра через камеры, вы можете использовать подключенные к системе энергоснабжени&#255; объекты. Например компьютеры, АПС, шлюзы, интеркомы, системы контрол&#255; атмосферы и т.п.</B>")
+	to_chat(src, "Чтобы начать взаимодействие, просто нажмите на объект.")
+	to_chat(src, "Дл&#255; общени&#255; с подчиненными вам киборгами, андроидами и роботами пишите перед своими сообщени&#255;ми в игровой чат ',b'. Дл&#255; общени&#255; через активный голопад, используйте ':h'.")
+	to_chat(src, "Дл&#255; использовани&#255; каналов различных департаментов:")
 
 	var/radio_text = ""
 	for(var/i = 1 to silicon_radio.channels.len)
@@ -208,7 +208,8 @@ var/list/ai_verbs_default = list(
 
 	if (malf && !(mind in malf.current_antagonists))
 		show_laws()
-		to_chat(src, "<b>These laws may be changed by other players, or by you being the traitor.</b>")
+		to_chat(src, "<b>Данные законы могут быть изменены другими игроками или в том случае, если вы &#255;вл&#255;етесь сбойным ИИ.</b>")
+		to_chat(src, "<span class='danger'><B>Внимание! Разработчиками Искусственного Интеллекта были введены специальные протоколы! Ознакомление с оными возможно на следующей странице: https://wiki.infinity.so/index.php?title=SCG_AI_Rules_and_Regulations</span>")
 
 	job = "AI"
 	setup_icon()
