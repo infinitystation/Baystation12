@@ -122,15 +122,20 @@
 				to_chat(user, "<span class='warning'>\The [blocked] is in the way!</span>")
 				return
 
-		if(istype(src,/obj/item/weapon/reagent_containers/glass) || \
-		istype(src,/obj/item/weapon/reagent_containers/food/drinks/glass2) || \
-		istype(src,/obj/item/weapon/reagent_containers/food/drinks/shaker))
-			var/whole_gulp_time = reagents.total_volume
+		var/use_time = 10
+		if(istype(src, /obj/item/weapon/reagent_containers/glass) || \
+		istype(src, /obj/item/weapon/reagent_containers/food/drinks) || \
+		istype(src, /obj/item/weapon/reagent_containers/food/drinks/glass2) || \
+		istype(src, /obj/item/weapon/reagent_containers/food/drinks/shaker))
+
 			if(amount_per_transfer_from_this == volume && amount_per_transfer_from_this >= reagents.total_volume)
+				use_time = reagents.total_volume
 				playsound(user.loc, 'sound/items/drinking.ogg', reagents.total_volume, 1)
-				do_after(user, whole_gulp_time, src)
 
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //puts a limit on how fast people can eat/drink things
+		if(!do_after(user, use_time, src))
+			return
+
 		self_feed_message(user)
 		reagents.trans_to_mob(user, issmall(user) ? ceil(amount_per_transfer_from_this/2) : amount_per_transfer_from_this, CHEM_INGEST)
 		feed_sound(user)

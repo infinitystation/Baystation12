@@ -304,6 +304,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		to_chat(H, "<span class='notice'>You take a drag on your [name].</span>")
 		smoke(5)
 		return 1
+
+	if(H.on_fire && !lit)
+		light("<span class='notice'>[user] lights [src] with [H]'s burning body. What a cold-blooded badass.</span>")
+		return
+
 	return ..()
 
 /obj/item/clothing/mask/smokable/cigarette/afterattack(obj/item/weapon/reagent_containers/glass/glass, mob/user as mob, proximity)

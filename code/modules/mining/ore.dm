@@ -44,8 +44,21 @@
 		F.attackby(OB, AM)
 	return ..()
 
+/obj/item/weapon/ore/Value(var/base)
+	. = ..()
+	if(!ore)
+		return
+	var/material/M
+	if(ore.smelts_to) 
+		M = get_material_by_name(ore.smelts_to)
+	else if (ore.compresses_to)
+		M = get_material_by_name(ore.compresses_to)
+	if(!istype(M))
+		return
+	return 0.5*M.value*ore.result_amount
+
 /obj/item/weapon/ore/slag
-	name = "Slag"
+	name = "slag"
 	desc = "Someone screwed up..."
 	icon_state = "slag"
 

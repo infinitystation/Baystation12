@@ -87,3 +87,7 @@
 	plushes["spider plush"] = /obj/item/toy/plushie/spider
 	plushes["farwa plush"] = /obj/item/toy/plushie/farwa
 	gear_tweaks += new /datum/gear_tweak/path(plushes)
+
+/datum/gear/kittyears
+	display_name = "kitty ears"
+	description = "A pair of kitty ears. Meow!"

@@ -90,6 +90,10 @@ proc/medical_scan_results(var/mob/living/carbon/human/H, var/verbose)
 	if (H.internal_organs_by_name[BP_STACK])
 		. += "<span class='notice'>Subject has a neural lace implant.</span>"
 
+	// Blood type.
+	if(H.b_type)
+		. += "<span class='notice'>Blood Type: [H.b_type]</span>"
+
 	// Pulse rate.
 	var/pulse_result = "normal"
 	if(H.should_have_organ(BP_HEART))
