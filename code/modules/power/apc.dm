@@ -142,7 +142,11 @@
 	//Override because the APC does not directly connect to the network; it goes through a terminal.
 	//The terminal is what the power computer looks for anyway.
 	if(!terminal)
-		make_terminal()
+		if(operating)
+			make_terminal()
+		else
+			return
+
 	if(terminal)
 		terminal.connect_to_network()
 
@@ -172,7 +176,6 @@
 	return drained_energy
 
 /obj/machinery/power/apc/New(turf/loc, var/ndir, var/building=0)
-	wires = new(src)
 
 	// offset 24 pixels in direction of dir
 	// this allows the APC to be embedded in a wall, yet still inside an area
@@ -236,6 +239,7 @@
 	terminal.master = src
 
 /obj/machinery/power/apc/proc/init_round_start()
+	wires = new(src)
 	has_electronics = 2 //installed and secured
 	// is starting with a power cell installed, create it and set its charge level
 	if(cell_type)
