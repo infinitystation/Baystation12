@@ -12,7 +12,7 @@
 /obj/machinery/disposal
 	name = "disposal unit"
 	desc = "A pneumatic waste disposal unit."
-	icon = 'icons/obj/pipes/disposal_infinity.dmi'
+	icon = 'icons/obj/pipes/disposal.dmi'
 	icon_state = "disposal"
 	anchored = 1
 	density = 1
@@ -28,6 +28,14 @@
 	active_power_usage = 2200	//the pneumatic pump power. 3 HP ~ 2200W
 	idle_power_usage = 100
 	flags = OBJ_CLIMBABLE
+
+/obj/machinery/disposal/small
+	icon = 'icons/obj/pipes/disposal_small.dmi'
+	density = 0
+
+// Same disposal unit, but with sprites by Gverdy
+/obj/machinery/disposal/unstandart
+	icon = 'icons/obj/pipes/disposal_infinity.dmi'
 
 // create a new disposal
 // find the attached trunk (if present) and init gas resvr.
@@ -690,7 +698,7 @@
 		plane = ABOVE_PLATING_PLANE
 		base_icon_state = icon_state
 		return
-		
+
 	// pipe is deleted
 	// ensure if holder is present, it is expelled
 	Destroy()
