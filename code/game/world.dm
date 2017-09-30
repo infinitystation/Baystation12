@@ -1,4 +1,4 @@
-/var/server_name = "Baystation 12"
+/var/server_name = "Infinity RU"
 
 /var/game_id = null
 /hook/global_init/proc/generate_gameid()
@@ -129,7 +129,7 @@
 		initialize_unit_tests()
 #endif
 
-	spawn(3000)		//so we aren't adding to the round-start lag
+	spawn(2000)		//so we aren't adding to the round-start lag
 		if(config.ToRban)
 			ToRban_autoupdate()
 
@@ -530,13 +530,13 @@ var/world_topic_spam_protect_time = world.timeofday
 	var/F = file("data/mode.txt")
 	fdel(F)
 	F << the_mode
-
+/*
 /hook/startup/proc/loadMOTD()
 	world.load_motd()
 	return 1
 
 /world/proc/load_motd()
-	join_motd = file2text("config/motd.txt")
+	join_motd = file2text("config/motd.txt")*/
 
 
 /proc/load_configuration()
@@ -544,6 +544,7 @@ var/world_topic_spam_protect_time = world.timeofday
 	config.load("config/config.txt")
 	config.load("config/game_options.txt","game_options")
 	config.loadsql("config/dbconfig.txt")
+	config.loadbuildlist("config/builds.txt")
 	config.load_event("config/custom_event.txt")
 
 /hook/startup/proc/loadMods()
@@ -596,13 +597,13 @@ var/world_topic_spam_protect_time = world.timeofday
 	var/s = ""
 
 	if (config && config.server_name)
-		s += "<b>[config.server_name]</b> &#8212; "
+		s += "<b>[config.server_name]</b>: "
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=\"http://\">" //Change this to wherever you want the hub to link to.
+	s += "<a href=\"https://infinity-ss13.ru\">" //Change this to wherever you want the hub to link to.
 //	s += "[game_version]"
-	s += "Default"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
+	s += "Forum"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
 	s += ")"
 
@@ -661,7 +662,7 @@ var/world_topic_spam_protect_time = world.timeofday
 #undef WORLD_SETUP_LOG
 #undef WORLD_LOG_START
 
-#define FAILED_DB_CONNECTION_CUTOFF 5
+#define FAILED_DB_CONNECTION_CUTOFF 25
 var/failed_db_connections = 0
 var/failed_old_db_connections = 0
 
@@ -706,7 +707,7 @@ proc/establish_db_connection()
 	else
 		return 1
 
-
+/*
 /hook/startup/proc/connectOldDB()
 	if(!setup_old_database_connection())
 		world.log << "Your server failed to establish a connection with the SQL database."
@@ -747,6 +748,6 @@ proc/establish_old_db_connection()
 	if(!dbcon_old || !dbcon_old.IsConnected())
 		return setup_old_database_connection()
 	else
-		return 1
+		return 1 */
 
 #undef FAILED_DB_CONNECTION_CUTOFF
