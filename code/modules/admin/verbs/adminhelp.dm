@@ -30,7 +30,7 @@
 	var/list/surnames = list()
 	var/list/forenames = list()
 	var/list/ckeys = list()
-	for(var/mob/M in GLOB.mob_list)
+	for(var/mob/M in SSmobs.mob_list)
 		var/list/indexing = list(M.real_name, M.name)
 		if(M.mind)
 			indexing += M.mind.name

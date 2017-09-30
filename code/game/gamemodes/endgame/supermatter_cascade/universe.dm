@@ -71,7 +71,7 @@ var/global/universe_has_ended = 0
 "}
 		priority_announcement.Announce(txt,"Œ¡Õ¿–”∆≈Õ  ¿— ¿ƒ —”œ≈–Ã¿“≈–»»")
 
-		for(var/obj/machinery/computer/shuttle_control/C in GLOB.machines)
+		for(var/obj/machinery/computer/shuttle_control/C in SSmachines.machinery)
 			if(istype(C, /obj/machinery/computer/shuttle_control/research) || istype(C, /obj/machinery/computer/shuttle_control/mining))
 				C.req_access = list()
 				C.req_one_access = list()
@@ -100,12 +100,12 @@ var/global/universe_has_ended = 0
 			OnTurfChange(T)
 
 /datum/universal_state/supermatter_cascade/proc/MiscSet()
-	for (var/obj/machinery/firealarm/alm in GLOB.machines)
+	for (var/obj/machinery/firealarm/alm in SSmachines.machinery)
 		if (!(alm.stat & BROKEN))
 			alm.ex_act(2)
 
 /datum/universal_state/supermatter_cascade/proc/APCSet()
-	for (var/obj/machinery/power/apc/APC in GLOB.machines)
+	for (var/obj/machinery/power/apc/APC in SSmachines.machinery)
 		if (!(APC.stat & BROKEN) && !APC.is_critical)
 			APC.chargemode = 0
 			if(APC.cell)

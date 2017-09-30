@@ -91,10 +91,20 @@
 			return global.SMALLSIZEBLOCK;
 		if("SSatoms")
 			return global.SSatoms;
+		if("SSfastprocess")
+			return global.SSfastprocess;
 		if("SSgarbage")
 			return global.SSgarbage;
 		if("SSlegacy")
 			return global.SSlegacy;
+		if("SSmachines")
+			return global.SSmachines;
+		if("SSmobs")
+			return global.SSmobs;
+		if("SSobj")
+			return global.SSobj;
+		if("SSprocessing")
+			return global.SSprocessing;
 		if("TELEBLOCK")
 			return global.TELEBLOCK;
 		if("TWITCHBLOCK")
@@ -293,8 +303,6 @@
 			return global.camera_repository;
 		if("cameranet")
 			return global.cameranet;
-		if("cameranet_")
-			return global.cameranet_;
 		if("can_call_ert")
 			return global.can_call_ert;
 		if("captain_announcement")
@@ -655,8 +663,6 @@
 			return global.lunchables_lunches_;
 		if("lunchables_snacks_")
 			return global.lunchables_snacks_;
-		if("machinery_sort_required")
-			return global.machinery_sort_required;
 		if("magazine_icondata_keys")
 			return global.magazine_icondata_keys;
 		if("magazine_icondata_states")
@@ -713,8 +719,6 @@
 			return global.meteors_normal;
 		if("meteors_threatening")
 			return global.meteors_threatening;
-		if("midnight_rollovers")
-			return global.midnight_rollovers;
 		if("mil_branches")
 			return global.mil_branches;
 		if("mining_floors")
@@ -807,8 +811,6 @@
 			return global.photo_count;
 		if("pipe_colors")
 			return global.pipe_colors;
-		if("pipe_networks")
-			return global.pipe_networks;
 		if("pipe_processing_killed")
 			return global.pipe_processing_killed;
 		if("plant_controller")
@@ -915,8 +917,6 @@
 			return global.robot_inventory;
 		if("robot_modules")
 			return global.robot_modules;
-		if("rollovercheck_last_timeofday")
-			return global.rollovercheck_last_timeofday;
 		if("round_progressing")
 			return global.round_progressing;
 		if("round_start_time")
@@ -1292,10 +1292,20 @@
 			global.SMALLSIZEBLOCK=newval;
 		if("SSatoms")
 			global.SSatoms=newval;
+		if("SSfastprocess")
+			global.SSfastprocess=newval;
 		if("SSgarbage")
 			global.SSgarbage=newval;
 		if("SSlegacy")
 			global.SSlegacy=newval;
+		if("SSmachines")
+			global.SSmachines=newval;
+		if("SSmobs")
+			global.SSmobs=newval;
+		if("SSobj")
+			global.SSobj=newval;
+		if("SSprocessing")
+			global.SSprocessing=newval;
 		if("TELEBLOCK")
 			global.TELEBLOCK=newval;
 		if("TWITCHBLOCK")
@@ -1494,8 +1504,6 @@
 			global.camera_repository=newval;
 		if("cameranet")
 			global.cameranet=newval;
-		if("cameranet_")
-			global.cameranet_=newval;
 		if("can_call_ert")
 			global.can_call_ert=newval;
 		if("captain_announcement")
@@ -1856,8 +1864,6 @@
 			global.lunchables_lunches_=newval;
 		if("lunchables_snacks_")
 			global.lunchables_snacks_=newval;
-		if("machinery_sort_required")
-			global.machinery_sort_required=newval;
 		if("magazine_icondata_keys")
 			global.magazine_icondata_keys=newval;
 		if("magazine_icondata_states")
@@ -1914,8 +1920,6 @@
 			global.meteors_normal=newval;
 		if("meteors_threatening")
 			global.meteors_threatening=newval;
-		if("midnight_rollovers")
-			global.midnight_rollovers=newval;
 		if("mil_branches")
 			global.mil_branches=newval;
 		if("mining_floors")
@@ -2008,8 +2012,6 @@
 			global.photo_count=newval;
 		if("pipe_colors")
 			global.pipe_colors=newval;
-		if("pipe_networks")
-			global.pipe_networks=newval;
 		if("pipe_processing_killed")
 			global.pipe_processing_killed=newval;
 		if("plant_controller")
@@ -2116,8 +2118,6 @@
 			global.robot_inventory=newval;
 		if("robot_modules")
 			global.robot_modules=newval;
-		if("rollovercheck_last_timeofday")
-			global.rollovercheck_last_timeofday=newval;
 		if("round_progressing")
 			global.round_progressing=newval;
 		if("round_start_time")
@@ -2447,8 +2447,13 @@
 	"SKILLS",
 	"SMALLSIZEBLOCK",
 	"SSatoms",
+	"SSfastprocess",
 	"SSgarbage",
 	"SSlegacy",
+	"SSmachines",
+	"SSmobs",
+	"SSobj",
+	"SSprocessing",
 	"TELEBLOCK",
 	"TWITCHBLOCK",
 	"Tier1Runes",
@@ -2548,7 +2553,6 @@
 	"camera_range_display_status",
 	"camera_repository",
 	"cameranet",
-	"cameranet_",
 	"can_call_ert",
 	"captain_announcement",
 	"cargo_supply_pack_root",
@@ -2729,7 +2733,6 @@
 	"lunchables_ethanol_reagents_",
 	"lunchables_lunches_",
 	"lunchables_snacks_",
-	"machinery_sort_required",
 	"magazine_icondata_keys",
 	"magazine_icondata_states",
 	"maint_all_access",
@@ -2758,7 +2761,6 @@
 	"meteors_moderate",
 	"meteors_normal",
 	"meteors_threatening",
-	"midnight_rollovers",
 	"mil_branches",
 	"mining_floors",
 	"mining_walls",
@@ -2805,7 +2807,6 @@
 	"paramslist_cache",
 	"photo_count",
 	"pipe_colors",
-	"pipe_networks",
 	"pipe_processing_killed",
 	"plant_controller",
 	"plant_seed_sprites",
@@ -2859,7 +2860,6 @@
 	"robot_hud_colours",
 	"robot_inventory",
 	"robot_modules",
-	"rollovercheck_last_timeofday",
 	"round_progressing",
 	"round_start_time",
 	"roundstart_hour",
