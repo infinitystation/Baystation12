@@ -350,7 +350,7 @@
 
 	// flush handle
 	if(flush)
-		overlays += image('icons/obj/pipes/disposal_infinity.dmi', "dispover-handle")
+		overlays += image(icon, "dispover-handle")
 
 	// only handle is shown if no power
 	if(stat & NOPOWER || mode == -1)
@@ -358,13 +358,13 @@
 
 	// 	check for items in disposal - occupied light
 	if(contents.len > 0)
-		overlays += image('icons/obj/pipes/disposal_infinity.dmi', "dispover-full")
+		overlays += image(icon, "dispover-full")
 
 	// charging and ready light
 	if(mode == 1)
-		overlays += image('icons/obj/pipes/disposal_infinity.dmi', "dispover-charge")
+		overlays += image(icon, "dispover-charge")
 	else if(mode == 2)
-		overlays += image('icons/obj/pipes/disposal_infinity.dmi', "dispover-ready")
+		overlays += image(icon, "dispover-ready")
 
 // timed process
 // charge the gas reservoir and perform flush if ready
