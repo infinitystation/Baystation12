@@ -56,10 +56,17 @@
 		to_chat(user, "<span class='notice'>You find \a [booty] and pull it carefully out of \the [src].</span>")
 
 /obj/structure/rubble/attackby(var/obj/item/I, var/mob/user)
-	if (istype(I, /obj/item/weapon/pickaxe))
-		var/obj/item/weapon/pickaxe/P = I
+	if (istype(I, /obj/item/weapon/pickaxe) || istype(I, /obj/item/weapon/shovel))
+		var/digspeed
+		if (istype(I, /obj/item/weapon/pickaxe))
+			var/obj/item/weapon/pickaxe/P = I
+			digspeed = P.digspeed
+		if (istype(I, /obj/item/weapon/shovel))
+			var/obj/item/weapon/shovel/S = I
+			digspeed = S.digspeed
+
 		visible_message("[user] starts clearing away \the [src].")
-		if(do_after(user,P.digspeed, src))
+		if(do_after(user, digspeed, src))
 			visible_message("[user] clears away \the [src].")
 			if(lootleft && prob(1))
 				var/obj/item/booty = pick(loot)
