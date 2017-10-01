@@ -12,6 +12,11 @@
 	if(can_buckle && buckled_mob)
 		user_unbuckle_mob(user)
 
+/obj/attack_robot(mob/living/user)
+	. = ..()
+	if(can_buckle && buckled_mob && Adjacent(user)) // attack_robot is called on all ranges, so the Adjacent check is needed
+		return user_unbuckle_mob(user)
+
 /obj/MouseDrop_T(mob/living/M, mob/living/user)
 	. = ..()
 	if(can_buckle && istype(M))

@@ -182,6 +182,10 @@
 	anchored = 0
 	buckle_pixel_shift = "x=0;y=6"
 
+	var/up_state ="up"
+	var/down_state = "down"
+	var/roller_type = /obj/item/roller
+
 /obj/structure/bed/roller/update_icon()
 	return // Doesn't care about material or anything else.
 
@@ -208,8 +212,10 @@
 	slot_flags = SLOT_BACK
 	w_class = ITEM_SIZE_HUGE // Can't be put in backpacks. Oh well. For now.
 
+	var/bed_type = /obj/structure/bed/roller
+
 /obj/item/roller/attack_self(mob/user)
-		var/obj/structure/bed/roller/R = new /obj/structure/bed/roller(user.loc)
+		var/obj/structure/bed/roller/R = new bed_type(user.loc)
 		R.add_fingerprint(user)
 		qdel(src)
 
@@ -229,25 +235,27 @@
 	name = "roller bed rack"
 	desc = "A rack for carrying a collapsed roller bed."
 	icon = 'icons/obj/rollerbed.dmi'
-	icon_state = "folded"
-	var/obj/item/roller/held
+	icon_state = "borgbed_stored"
+	var/obj/structure/bed/roller/borg/held
+
+/obj/item/roller_holder/update_icon()
+	icon_state = "borgbed_[held ? "stored" : "deployed"]"
 
 /obj/item/roller_holder/New()
 	..()
-	held = new /obj/item/roller(src)
+	held = new(src)
 
 /obj/item/roller_holder/attack_self(mob/user as mob)
 
 	if(!held)
-		to_chat(user, "<span class='notice'>The rack is empty.</span>")
+		to_chat(user, "<span class='notice'>The [src.name] is empty.</span>")
 		return
 
-	to_chat(user, "<span class='notice'>You deploy the roller bed.</span>")
-	var/obj/structure/bed/roller/R = new /obj/structure/bed/roller(user.loc)
-	R.add_fingerprint(user)
-	qdel(held)
+	to_chat(user, "<span class='notice'>You deploy \the [held].</span>")
+	held.add_fingerprint(user)
+	held.forceMove(get_turf(src))
 	held = null
-
+	update_icon()
 
 /obj/structure/bed/roller/proc/move_buckled()
 	if(buckled_mob)
@@ -259,10 +267,10 @@
 /obj/structure/bed/roller/post_buckle_mob(mob/living/M as mob)
 	if(M == buckled_mob)
 		set_density(1)
-		icon_state = "up"
+		icon_state = up_state
 	else
 		set_density(0)
-		icon_state = "down"
+		icon_state = down_state
 
 	return ..()
 
@@ -281,10 +289,33 @@
 		if(!ishuman(usr))	return
 		if(buckled_mob)	return 0
 		visible_message("[usr] collapses \the [src.name].")
-		new/obj/item/roller(get_turf(src))
+		new roller_type(get_turf(src))
 		spawn(0)
 			qdel(src)
 		return
+
+/obj/item/roller_holder/Destroy()
+	if(held)
+		qdel(held)
+		held = null
+	..()
+
+/obj/item/roller/borg
+	name = "hover roller bed"
+	desc = "A collapsed cyborg hover roller bed that can be carried around."
+	icon = 'icons/obj/rollerbed.dmi'
+	icon_state = "borgbed_stored"
+	bed_type = /obj/structure/bed/roller/borg
+	w_class = ITEM_SIZE_NORMAL
+
+/obj/structure/bed/roller/borg
+	name = "hover roller bed"
+	icon = 'icons/obj/rollerbed.dmi'
+	icon_state = "borgbed_down"
+	up_state ="borgbed_up"
+	down_state = "borgbed_down"
+	roller_type = /obj/item/roller/borg
+	w_class = ITEM_SIZE_NORMAL
 
 /obj/structure/bed/sofa
 	name = "comfy sofa"
