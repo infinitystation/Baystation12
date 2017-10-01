@@ -12,7 +12,7 @@
 "ar" = (/turf/simulated/floor/tiled/airless,/area/djstation)
 "as" = (/obj/random/junk,/turf/simulated/floor/tiled/airless,/area/djstation)
 "at" = (/turf/simulated/floor/airless,/area/djstation)
-"au" = (/obj/machinery/door/airlock/external{icon_state = "door_locked"; locked = 1},/turf/simulated/floor/airless,/area/djstation)
+"au" = (/obj/machinery/door/airlock/external{icon_state = "door_locked";locked = 1},/turf/simulated/floor/airless,/area/djstation)
 "av" = (/obj/structure/table/glass,/obj/random/loot,/turf/simulated/floor/airless,/area/djstation)
 "aw" = (/obj/random/closet,/obj/random/loot,/turf/simulated/floor/tiled/airless,/area/djstation)
 "ax" = (/obj/random/junk,/turf/simulated/floor/airless,/area/djstation)
