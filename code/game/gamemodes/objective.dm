@@ -419,6 +419,7 @@ datum/objective/steal
 		"a functional AI" = /obj/item/weapon/aicard,
 		"a pair of magboots" = /obj/item/clothing/shoes/magboots,
 		"the [station_name()] blueprints" = /obj/item/blueprints,
+		"the multimeter" = /obj/item/device/multitool/multimeter,
 		"a nasa voidsuit" = /obj/item/clothing/suit/space/void,
 		"28 moles of phoron (full tank)" = /obj/item/weapon/tank,
 		"a sample of slime extract" = /obj/item/slime_extract,

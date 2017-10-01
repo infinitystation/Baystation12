@@ -212,3 +212,6 @@
 
 #define DOOR_CRUSH_DAMAGE 15
 
+// Multimeter defines
+#define METER_MESURING "Измерение" // Measuring
+#define METER_CHECKING "Прозвонка" // Checking

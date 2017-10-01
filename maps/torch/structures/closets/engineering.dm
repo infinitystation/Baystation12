@@ -40,6 +40,7 @@
 		/obj/item/device/holowarrant,
 		/obj/item/weapon/folder/yellow,
 		/obj/item/weapon/storage/box/armband/engine,
+		/obj/item/device/multitool/multimeter,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
