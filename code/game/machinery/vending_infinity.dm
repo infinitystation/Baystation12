@@ -42,3 +42,11 @@
 					/obj/item/clothing/under/rank/guard = 1,
 					/obj/item/clothing/under/rank/security = 1,
 					/obj/item/clothing/glasses/hud/security = 1)
+
+/obj/machinery/vending/cola/small
+	name = "Robust Softdrinks"
+	desc = "A softdrink vendor provided by Robust Industries, LLC."
+	density = 0
+	icon = 'icons/obj/infinity_object.dmi'
+	icon_state = "Cola_Machine_small"
+	icon_vend = "Cola_Machine_small-vend"

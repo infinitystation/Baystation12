@@ -517,7 +517,7 @@
 
 	GLOB.nanomanager.update_uis(src)
 
-/obj/machinery/vending/process()
+/obj/machinery/vending/Process()
 	if(stat & (BROKEN|NOPOWER))
 		return
 
@@ -726,6 +726,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 2,/obj/item/weapon/reagent_containers/food/drinks/cans/space_up = 1,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea = 1,/obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 1)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
+
 
 /obj/machinery/vending/fitness
 	name = "SweatMAX"
