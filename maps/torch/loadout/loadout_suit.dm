@@ -69,7 +69,7 @@
 	display_name = "suit jackets"
 	path = /obj/item/clothing/suit/storage
 	allowed_roles = FORMAL_ROLES
-	
+
 /datum/gear/suit/suit_jacket/New()
 	..()
 	var/suitjackets = list()
@@ -163,6 +163,31 @@
 	display_name = "winter coat"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat
 	allowed_roles = RESTRICTED_ROLES
+
+/datum/gear/suit/wintercoat/engineering
+	display_name = "engineering winter coat"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/engineering
+	allowed_roles = ENGINEERING_ROLES
+
+/datum/gear/suit/wintercoat/cargo
+	display_name = "cargo winter coat"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/cargo
+	allowed_roles = SUPPLY_ROLES
+
+/datum/gear/suit/wintercoat/medical
+	display_name = "medical winter coat"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/medical
+	allowed_roles = MEDICAL_ROLES
+
+/datum/gear/suit/wintercoat/security
+	display_name = "security winter coat"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/security
+	allowed_roles = SECURITY_ROLES
+
+/datum/gear/suit/wintercoat/research
+	display_name = "science winter coat"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/science
+	allowed_roles = RESEARCH_ROLES
 
 /datum/gear/suit/track
 	display_name = "track jacket selection"
