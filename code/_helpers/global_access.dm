@@ -191,8 +191,6 @@
 			return global.air_alarm_topic;
 		if("air_blocked")
 			return global.air_blocked;
-		if("air_master")
-			return global.air_master;
 		if("air_processing_killed")
 			return global.air_processing_killed;
 		if("alarm_manager")
@@ -1105,8 +1103,6 @@
 			return global.tg_z_state;
 		if("tgui_process")
 			return global.tgui_process;
-		if("tick_multiplier")
-			return global.tick_multiplier;
 		if("ticker")
 			return global.ticker;
 		if("tickerProcess")
@@ -1392,8 +1388,6 @@
 			global.air_alarm_topic=newval;
 		if("air_blocked")
 			global.air_blocked=newval;
-		if("air_master")
-			global.air_master=newval;
 		if("air_processing_killed")
 			global.air_processing_killed=newval;
 		if("alarm_manager")
@@ -2306,8 +2300,6 @@
 			global.tg_z_state=newval;
 		if("tgui_process")
 			global.tgui_process=newval;
-		if("tick_multiplier")
-			global.tick_multiplier=newval;
 		if("ticker")
 			global.ticker=newval;
 		if("tickerProcess")
