@@ -1723,7 +1723,6 @@
 "Ju" = (/obj/machinery/atmospherics/pipe/manifold/visible/red{tag = "icon-map (WEST)";icon_state = "map";dir = 8},/obj/machinery/meter,/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/reinforced,/area/thruster/d3port)
 "Jy" = (/obj/machinery/atmospherics/pipe/simple/visible/fuel{dir = 5},/turf/simulated/floor/reinforced,/area/thruster/d3starboard)
 "JM" = (/obj/machinery/atmospherics/pipe/simple/visible{icon_state = "intact";dir = 10},/obj/machinery/alarm{frequency = 1439;pixel_y = 23;req_one_access = list(201)},/turf/simulated/floor/plating,/area/maintenance/thirddeck/aftstarboard)
-"JN" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/grille,/turf/simulated/floor/airless,/area/maintenance/thirddeck/aftstarboard)
 "Ka" = (/turf/simulated/wall/r_wall,/area/thruster/d3port)
 "Kb" = (/obj/machinery/atmospherics/portables_connector,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/reinforced,/area/thruster/d3starboard)
 "Kc" = (/obj/structure/grille,/obj/structure/window/reinforced{dir = 1},/obj/structure/window/reinforced,/turf/simulated/floor,/area/crew_quarters/gym)
