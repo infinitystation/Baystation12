@@ -1,13 +1,12 @@
 //Multimeter by Bear1ake, ported from Infinity-tgstation
 /obj/item/device/multitool/multimeter
 	name = "multimeter"
-	desc = "»спользуется для измерения потребления электроэнергии оборудования и прозвонки проводов. –екомендуется докторами"
+	desc = "»спользуетс&#255; дл&#255; измерени&#255; потреблени&#255; электроэнергии оборудовани&#255; и прозвонки проводов. –екомендуетс&#255; докторами."
 	icon = 'icons/obj/infinity_object.dmi'
 	icon_state = "multimeter"
-	origin_tech = "magnets=3;engineering=3"
+	origin_tech = list(TECH_MAGNET = 4, TECH_ENGINEERING = 4)
 	var/mode = METER_MESURING // Mode
 
-//mode
 /obj/item/device/multitool/multimeter/attack_self(mob/user)
 	switch(mode)
 		if(METER_MESURING)
