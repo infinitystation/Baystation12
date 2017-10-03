@@ -43,6 +43,13 @@
 	desc = "A 9mm practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/practice
 
+/obj/item/ammo_casing/c9mm/spent
+
+/obj/item/ammo_casing/c9mm/spent/New()
+	..()
+	if(ispath(projectile_type))
+		BB = null
+
 
 /obj/item/ammo_casing/c45
 	desc = "A .45 bullet casing."

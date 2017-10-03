@@ -22,7 +22,7 @@
 	start_pressure = 90 * ONE_ATMOSPHERE
 
 /obj/machinery/portable_atmospherics/powered/pump/admin_filled
-	start_pressure = 150 * ONE_ATMOSPHERE
+	start_pressure = 500 * ONE_ATMOSPHERE
 
 /obj/machinery/portable_atmospherics/powered/pump/New()
 	..()
