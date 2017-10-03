@@ -300,13 +300,18 @@ Class Procs:
 	return 1
 
 /obj/machinery/proc/default_part_replacement(var/mob/user, var/obj/item/weapon/storage/part_replacer/R)
+	var/shouldplaysound = 0
 	if(!istype(R))
 		return 0
 	if(!component_parts)
 		return 0
-	if(panel_open)
+	if(panel_open || R.works_from_distance)
 		var/obj/item/weapon/circuitboard/CB = locate(/obj/item/weapon/circuitboard) in component_parts
 		var/P
+		if(R.works_from_distance)
+			to_chat(user, "<span class='notice'>Following parts detected in the machine:</span>")
+			for(var/var/obj/item/C in component_parts)
+				to_chat(user, "<span class='notice'>	[C.name]</span>")
 		for(var/obj/item/weapon/stock_parts/A in component_parts)
 			for(var/T in CB.req_components)
 				if(ispath(A.type, T))
@@ -321,6 +326,7 @@ Class Procs:
 						component_parts += B
 						B.loc = null
 						to_chat(user, "<span class='notice'>[A.name] replaced with [B.name].</span>")
+						shouldplaysound = 1 //Only play the sound when parts are actually replaced!
 						break
 			update_icon()
 			RefreshParts()
@@ -328,6 +334,8 @@ Class Procs:
 		to_chat(user, "<span class='notice'>Following parts detected in the machine:</span>")
 		for(var/var/obj/item/C in component_parts)
 			to_chat(user, "<span class='notice'>	[C.name]</span>")
+	if(shouldplaysound)
+		R.play_rped_sound()
 	return 1
 
 /obj/machinery/proc/dismantle()
