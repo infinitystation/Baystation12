@@ -152,7 +152,7 @@
 			GLOB.nanomanager.update_uis(src)
 
 		if (radiation < 100)
-			if (beaker.reagents.remove_reagent("radium",1))
+			if (beaker.reagents.remove_reagent(/datum/reagent/radium, 1))
 				radiation_storage += 4
 			GLOB.nanomanager.update_uis(src)
 
