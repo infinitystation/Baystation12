@@ -66,7 +66,7 @@
 	#include "infinity_station_maps/torch-9.dmm" // #include "torch-9.dmm"
 	#include "infinity_station_maps/torch-10.dmm" // #include "torch-10.dmm"
 	#include "infinity_station_maps/torch-11.dmm" // #include "torch-11.dmm"
-	#include "../away/bearcat/bearcat.dm"
+	#include "../away-inf/bearcat/bearcat.dm"
 
 	#include "../../code/modules/lobby_music/chasing_time.dm"
 	#include "../../code/modules/lobby_music/absconditus.dm"
