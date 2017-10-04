@@ -41,7 +41,7 @@
 			return
 
 	if(!stat)
-		if(rand(1,100) <= 10)
+		if(rand(1,100) <= 20)
 			if(!eye_close_stat)
 				create_eye_blink()
 			change_eye_color(RED, GREEN, BLUE, 1)
