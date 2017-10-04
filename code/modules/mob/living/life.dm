@@ -56,6 +56,8 @@
 
 	handle_regular_hud_updates()
 
+	eye_blink()
+
 /mob/living/proc/handle_breathing()
 	return
 
