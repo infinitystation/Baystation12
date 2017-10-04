@@ -126,10 +126,10 @@
 
 			if(bloodDNA)
 				if(H.lying)
-					src.AddTracks(/obj/effect/decal/cleanable/blood/tracks/crawl,bloodDNA,H.dir,0,bloodcolor) // Coming
+					src.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,H.dir,0,bloodcolor) // Coming
 					var/turf/simulated/from = get_step(H,reverse_direction(H.dir))
 					if(istype(from) && from)
-						from.AddTracks(/obj/effect/decal/cleanable/blood/tracks/crawl,bloodDNA,0,H.dir,bloodcolor) // Going
+						from.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,0,H.dir,bloodcolor) // Going
 				else
 					src.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,H.dir,0,bloodcolor) // Coming
 					var/turf/simulated/from = get_step(H,reverse_direction(H.dir))
