@@ -495,10 +495,12 @@
 /datum/shuttle/autodock/ferry/specops
 	name = "Special Operations"
 	warmup_time = 10
+	location = 1
 	shuttle_area = /area/shuttle/specops/centcom
 	dock_target = "specops_shuttle_fore"
-	waypoint_station = "nav_specops_start"
-	waypoint_offsite = "nav_specops_out"
+	waypoint_station = "nav_specops_out"
+	waypoint_offsite = "nav_specops_start"
+	current_location = "nav_specops_start"
 
 /obj/effect/shuttle_landmark/specops/start
 	name = "Centcom"
