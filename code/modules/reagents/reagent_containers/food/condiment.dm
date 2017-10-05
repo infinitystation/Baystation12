@@ -55,6 +55,7 @@
 		to_chat(user, "<span class='notice'>You swallow some of contents of \the [src].</span>")
 
 	on_reagent_change()
+		icon = initial(icon)
 		if(reagents.reagent_list.len > 0)
 			switch(reagents.get_master_reagent_type())
 				if(/datum/reagent/nutriment/ketchup)
@@ -105,6 +106,12 @@
 				if(/datum/reagent/sugar)
 					name = "Sugar"
 					desc = "Tastey space sugar!"
+					center_of_mass = "x=16;y=6"
+				if(/datum/reagent/nutriment/szechuan)
+					name = "szechuan sauce"
+					desc = "A long forgotten sauce of Earth, recently re-discovered. Its taste is said to be stuff of legends."
+					icon = 'icons/obj/food_alt.dmi'
+					icon_state = "szechuan"
 					center_of_mass = "x=16;y=6"
 				else
 					name = "Misc Condiment Bottle"
@@ -187,3 +194,11 @@
 	New()
 		..()
 		reagents.add_reagent(/datum/reagent/nutriment/flour, 30)
+
+/obj/item/weapon/reagent_containers/food/condiment/szechuan
+	name = "szechuan sauce"
+	desc = "A long forgotten sauce of Earth, recently re-discovered. Its taste is said to be stuff of legends."
+
+/obj/item/weapon/reagent_containers/food/condiment/szechuan/New()
+	..()
+	reagents.add_reagent(/datum/reagent/nutriment/szechuan, 50)

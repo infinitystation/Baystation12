@@ -159,6 +159,14 @@
 	nutriment_factor = 5
 	color = "#4f330f"
 
+/datum/reagent/nutriment/szechuan
+	name = "Szechuan"
+	description = "A long forgotten sauce of Earth, recently re-discovered."
+	taste_description = "sense of legend."
+	reagent_state = LIQUID
+	nutriment_factor = 10
+	color = "#6d2d26" //rgb: 121, 35, 0
+
 /datum/reagent/nutriment/rice
 	name = "Rice"
 	description = "Enjoy the great taste of nothing."
