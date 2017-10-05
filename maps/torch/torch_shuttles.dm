@@ -492,7 +492,7 @@
 
 //SCGMC Assault Pod
 
-/datum/shuttle/autodock/ferry/specops/ert
+/datum/shuttle/autodock/ferry/specops
 	name = "Special Operations"
 	warmup_time = 10
 	shuttle_area = /area/shuttle/specops/centcom
