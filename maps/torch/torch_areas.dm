@@ -847,7 +847,6 @@
 /area/crew_quarters/sleep/cryo/aux
 	name = "\improper Auxiliary Cryogenic Storage"
 	icon_state = "Sleep"
-	flags = AREA_RAD_SHIELDED
 
 /area/crew_quarters/diplomat
 	name = "\improper Diplomatic Quarters"
@@ -1314,10 +1313,6 @@
 	name = "\improper Robotics Lab"
 	icon_state = "robotics"
 
-/area/rnd/lab
-	name = "\improper Research Lab"
-	icon_state = "toxlab"
-
 /area/rnd/misc_lab
 	name = "\improper Miscellaneous Research"
 	icon_state = "toxmisc"
@@ -1325,6 +1320,11 @@
 /area/rnd/research
 	name = "\improper Research and Development"
 	icon_state = "research"
+
+/area/rnd/breakroom
+	name = "\improper Research Break Room"
+	icon_state = "researchbreak"
+
 
 // Derelict
 
@@ -1412,7 +1412,6 @@
 /area/crew_quarters/sleep/cryo
 	name = "\improper Cryogenic Storage"
 	icon_state = "Sleep"
-	flags = AREA_RAD_SHIELDED
 
 /area/hydroponics
 	name = "\improper Hydroponics"
