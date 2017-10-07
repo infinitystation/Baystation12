@@ -620,6 +620,7 @@
 
 /datum/mil_rank/civ/civ
 	name = "Civilian"
+	name_short = null
 
 /datum/mil_rank/civ/nt
 	name = "NanoTrasen Employee"
@@ -629,7 +630,6 @@
 
 /datum/mil_rank/civ/offduty
 	name = "Off-Duty Personnel"
-	name_short = "Off-Duty"
 
 /datum/mil_rank/civ/synthetic
 	name = "Synthetic"

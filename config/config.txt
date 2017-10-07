@@ -218,7 +218,7 @@ GUEST_BAN
 #SERVERURL server.net:port
 
 ## forum address
-FORUMURL https://infinity.so
+FORUMURL https://infinity-ss13.ru/
 
 ## Wiki address
 WIKIURL https://wiki.baystation12.net/
@@ -227,7 +227,7 @@ WIKIURL https://wiki.baystation12.net/
 GITHUBURL https://github.com/infinitystation/Baystation12
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-BANAPPEALS https://infinity.so/index.php?/forum/5-суд/
+BANAPPEALS https://infinity-ss13.ru/index.php?/forum/5-суд/
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard
@@ -247,10 +247,10 @@ BANAPPEALS https://infinity.so/index.php?/forum/5-суд/
 ALLOW_HOLIDAYS
 
 ##Defines the ticklag for the world.  0.9 is the normal one, 0.5 is smoother.
-TICKLAG 0.3
+TICKLAG 0.33
 
 ##Defines world FPS. Defaults to 20.
-FPS 20
+FPS 45
 
 ## Whether the server will talk to other processes through socket_talk
 SOCKET_TALK 0
@@ -372,7 +372,7 @@ NINJAS_ALLOWED
 #RESPAWN_DELAY 30
 
 ## Strength of ambient star light. Set to 0 or less to turn off. A value of 1 is unlikely to have a noticeable effect in most lighting systems.
-STARLIGHT 1
+STARLIGHT 2
 
 ## Defines which races are allowed to join as ERT, in singular form. If unset, defaults to only human. Casing matters, separate using ;
 ## Example races include: Human, Tajara, Skrell, Unathi

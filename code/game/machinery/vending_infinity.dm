@@ -42,3 +42,59 @@
 					/obj/item/clothing/under/rank/guard = 1,
 					/obj/item/clothing/under/rank/security = 1,
 					/obj/item/clothing/glasses/hud/security = 1)
+
+/obj/machinery/vending/cola/small
+	name = "Robust Softdrinks"
+	desc = "A softdrink vendor provided by Robust Industries, LLC."
+	density = 0
+	icon = 'icons/obj/infinity_object.dmi'
+	icon_state = "Cola_Machine_small"
+	icon_vend = "Cola_Machine_small-vend"
+	products = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 5,/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb = 5,/obj/item/weapon/reagent_containers/food/drinks/cans/starkist = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 5,/obj/item/weapon/reagent_containers/food/drinks/cans/space_up = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea = 5, /obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 5)
+	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/cans/thirteenloko = 5, /obj/item/weapon/reagent_containers/food/snacks/liquidfood = 5)
+	prices = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 1,/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb = 1,/obj/item/weapon/reagent_containers/food/drinks/cans/starkist = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 2,/obj/item/weapon/reagent_containers/food/drinks/cans/space_up = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea = 1,/obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 1)
+
+/obj/machinery/vending/coffee/small
+	name = "Hot Drinks machine"
+	desc = "A vending machine which dispenses hot drinks."
+	density = 0
+	icon = 'icons/obj/infinity_object.dmi'
+	icon_state = "Covfefe_Machine_small"
+	icon_vend = "Covfefe_Machine_small-vend"
+	products = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 5,/obj/item/weapon/reagent_containers/food/drinks/tea = 5,/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 5)
+	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/ice = 5)
+	prices = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 3, /obj/item/weapon/reagent_containers/food/drinks/tea = 3, /obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 3)
+
+/obj/machinery/vending/cigarette/small
+	name = "Cigarette machine"
+	desc = "A specialized vending machine designed to contribute to your slow and uncomfortable death."
+	vend_delay = 21
+	density = 0
+	icon = 'icons/obj/infinity_object.dmi'
+	icon_state = "Cigs_Machine_small"
+	icon_vend = "Cigs_Machine_small-vend"
+	products = list(/obj/item/weapon/storage/fancy/cigarettes = 2,
+					/obj/item/weapon/storage/fancy/cigarettes/luckystars = 2,
+					/obj/item/weapon/storage/fancy/cigarettes/jerichos = 2,
+					/obj/item/weapon/storage/fancy/cigarettes/menthols = 2,
+					/obj/item/weapon/storage/fancy/cigarettes/carcinomas = 2,
+					/obj/item/weapon/storage/fancy/cigarettes/professionals = 2,
+					/obj/item/weapon/storage/box/matches = 10,
+					/obj/item/weapon/flame/lighter/random = 4,
+					/obj/item/clothing/mask/smokable/ecig/util = 1,
+					///obj/item/clothing/mask/smokable/ecig/deluxe = 2,
+					/obj/item/clothing/mask/smokable/ecig/simple = 1,
+					/obj/item/weapon/reagent_containers/ecig_cartridge/med_nicotine = 5,
+					/obj/item/weapon/reagent_containers/ecig_cartridge/high_nicotine = 5,
+					/obj/item/weapon/reagent_containers/ecig_cartridge/orange = 5,
+					/obj/item/weapon/reagent_containers/ecig_cartridge/mint = 5,
+					/obj/item/weapon/reagent_containers/ecig_cartridge/watermelon = 5,
+					/obj/item/weapon/reagent_containers/ecig_cartridge/grape = 5)
+	contraband = list(/obj/item/weapon/flame/lighter/zippo = 2)
+	premium = list(/obj/item/weapon/storage/fancy/cigar = 5,/obj/item/weapon/storage/fancy/cigarettes/killthroat = 5)

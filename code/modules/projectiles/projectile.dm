@@ -135,7 +135,7 @@
 
 	spawn()
 		setup_trajectory(curloc, targloc, x_offset, y_offset, angle_offset) //plot the initial trajectory
-		process()
+		Process()
 
 	return 0
 
@@ -190,7 +190,8 @@
 		to_chat(target_mob, "<span class='danger'>You've been hit in the [parse_zone(def_zone)] by \the [src]!</span>")
 	else
 		target_mob.visible_message("<span class='danger'>\The [target_mob] is hit by \the [src] in the [parse_zone(def_zone)]!</span>")//X has fired Y is now given by the guns so you cant tell who shot you if you could not see the shooter
-
+		if(damage_type == BRUTE)
+			playsound(target_mob.loc, pick('sound/effects/bullethit1.ogg', 'sound/effects/bullethit2.ogg', 'sound/effects/bullethit3.ogg', 'sound/effects/bullethit4.ogg'), 100, 1)
 	//admin logs
 	if(!no_attack_log)
 		if(istype(firer, /mob))
@@ -278,7 +279,7 @@
 /obj/item/projectile/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	return 1
 
-/obj/item/projectile/process()
+/obj/item/projectile/Process()
 	var/first_step = 1
 
 	spawn while(src && src.loc)
@@ -413,9 +414,9 @@
 
 	//plot the initial trajectory
 	setup_trajectory(curloc, targloc)
-	return process(targloc)
+	return Process(targloc)
 
-/obj/item/projectile/test/process(var/turf/targloc)
+/obj/item/projectile/test/Process(var/turf/targloc)
 	while(src) //Loop on through!
 		if(result)
 			return (result - 1)

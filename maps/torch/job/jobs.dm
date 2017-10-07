@@ -60,6 +60,9 @@
 		/datum/mil_rank/fleet/o6
 	)
 
+	software_on_spawn = list(/datum/computer_file/program/comm,
+							 /datum/computer_file/program/card_mod,
+							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/hop
 	title = "Executive Officer"
@@ -91,7 +94,7 @@
 			            access_cmo, access_qm, access_network, access_surgery, access_mailsorting, access_heads_vault, access_ce,
 			            access_hop, access_hos, access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_sec_doors, access_psychiatrist,
 			            access_medical_equip, access_solgov_crew, access_robotics_engineering, access_emergency_armory, access_gun, access_expedition_shuttle, access_guppy,
-			            access_seneng, access_senmed, access_senadv, access_hangar, access_guppy_helm, access_expedition_shuttle_helm)
+			            access_seneng, access_senmed, access_senadv, access_hangar, access_guppy_helm, access_expedition_shuttle_helm, access_explorer, access_pathfinder)
 	minimal_access = list(access_security, access_brig, access_armory, access_forensics_lockers,
 			            access_medical, access_morgue, access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_change_ids, access_ai_upload, access_teleporter, access_eva, access_heads,
@@ -100,7 +103,12 @@
 			            access_cmo, access_qm, access_network, access_surgery, access_mailsorting, access_heads_vault, access_ce,
 			            access_hop, access_hos, access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_sec_doors, access_psychiatrist,
 			            access_medical_equip, access_solgov_crew, access_robotics_engineering, access_emergency_armory, access_gun, access_expedition_shuttle, access_guppy,
-			            access_seneng, access_senmed, access_senadv, access_hangar, access_guppy_helm, access_aquila)
+			            access_seneng, access_senmed, access_senadv, access_hangar, access_guppy_helm, access_aquila, access_explorer, access_pathfinder)
+
+	software_on_spawn = list(/datum/computer_file/program/comm,
+							 /datum/computer_file/program/card_mod,
+							 /datum/computer_file/program/camera_monitor)
+
 
 
 /datum/job/rd
@@ -119,6 +127,9 @@
 						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_petrov_helm, access_guppy_helm)
 	minimal_access = list()
 
+	software_on_spawn = list(/datum/computer_file/program/comm,
+							 /datum/computer_file/program/aidiag,
+							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/cmo
 	title = "Chief Medical Officer"
@@ -143,6 +154,10 @@
 			            access_cmo, access_surgery, access_RC_announce, access_keycard_auth, access_psychiatrist,
 			            access_medical_equip, access_solgov_crew, access_senmed)
 	minimal_access = list()
+
+	software_on_spawn = list(/datum/computer_file/program/comm,
+							 /datum/computer_file/program/suit_sensors,
+							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/chief_engineer
 	title = "Chief Engineer"
@@ -176,6 +191,15 @@
 			            access_network, access_ce, access_RC_announce, access_keycard_auth, access_tcomsat,
 			            access_solgov_crew, access_robotics_engineering, access_seneng, access_hangar, access_robotics)
 
+	software_on_spawn = list(/datum/computer_file/program/comm,
+							 /datum/computer_file/program/ntnetmonitor,
+							 /datum/computer_file/program/power_monitor,
+							 /datum/computer_file/program/supermatter_monitor,
+							 /datum/computer_file/program/alarm_monitor,
+							 /datum/computer_file/program/atmos_control,
+							 /datum/computer_file/program/rcon_console,
+							 /datum/computer_file/program/camera_monitor)
+
 /datum/job/hos
 	title = "Chief of Security"
 	supervisors = "the Commanding Officer and the Executive Officer"
@@ -203,6 +227,10 @@
 			            access_hos, access_RC_announce, access_keycard_auth, access_sec_doors,
 			            access_solgov_crew, access_gun)
 	minimal_access = list()
+
+	software_on_spawn = list(/datum/computer_file/program/comm,
+							 /datum/computer_file/program/digitalwarrant,
+							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/liaison
 	title = "NanoTrasen Liaison"
@@ -274,6 +302,8 @@
 			            access_kitchen, access_cargo, access_RC_announce, access_keycard_auth, access_guppy_helm,
 			            access_solgov_crew, access_gun, access_expedition_shuttle, access_guppy, access_senadv, access_hangar)
 
+	software_on_spawn = list(/datum/computer_file/program/camera_monitor)
+
 /datum/job/bridgeofficer
 	title = "Bridge Officer"
 	department = "Support"
@@ -302,22 +332,29 @@
 			            access_heads, access_janitor, access_kitchen, access_cargo, access_RC_announce, access_keycard_auth,
 			            access_solgov_crew)
 
+	software_on_spawn = list(/datum/computer_file/program/comm,
+							 /datum/computer_file/program/suit_sensors,
+							 /datum/computer_file/program/power_monitor,
+							 /datum/computer_file/program/supermatter_monitor,
+							 /datum/computer_file/program/alarm_monitor,
+							 /datum/computer_file/program/camera_monitor)
+
 /datum/job/solgov_pilot
 	title = "SolGov Pilot"
-	department = "Support"
-	department_flag = SPT
+	department = "Exploration"
+	department_flag = EXP
 
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Commanding Officer and the Executive Officer"
-	selection_color = "#515151"
+	selection_color = "#68099e"
 	minimal_player_age = 5
 	economic_modifier = 7
 	ideal_character_age = 40
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/solgov_pilot
+	outfit_type = /decl/hierarchy/outfit/job/torch/crew/exploration/solgov_pilot
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/service/solgov_pilot/fleet,
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/exploration/solgov_pilot/fleet,
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/o2,
@@ -325,22 +362,22 @@
 	)
 
 
-	access = list(access_maint_tunnels, access_external_airlocks, access_emergency_storage, access_solgov_crew,access_aquila, access_aquila_helm,
-						access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy, access_guppy_helm, access_hangar, access_solgov_crew, access_heads)
+	access = list(access_maint_tunnels, access_external_airlocks, access_eva, access_emergency_storage, access_solgov_crew, access_aquila, access_aquila_helm,
+						access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy, access_guppy_helm, access_hangar, access_solgov_crew, access_heads, access_explorer, access_cent_creed) //Yes, the last one is weird. It's used to make intercoms work.
 
 /datum/job/pathfinder
 	title = "Pathfinder"
-	department = "Service"
-	department_flag = SRV
+	department = "Exploration"
+	department_flag = EXP
 
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Commanding Officer and the Executive Officer"
-	selection_color = "#515151"
+	selection_color = "#68099e"
 	minimal_player_age = 7
 	economic_modifier = 7
 	ideal_character_age = 35
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/pathfinder
+	outfit_type = /decl/hierarchy/outfit/job/torch/crew/exploration/pathfinder
 	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/o2,
@@ -348,20 +385,19 @@
 	)
 
 
-	access = list(access_maint_tunnels, access_heads, access_emergency_storage, access_tech_storage,  access_cargo, access_guppy_helm,
-						access_cargo_bot, access_solgov_crew, access_expedition_shuttle, access_guppy, access_hangar)
+	access = list(access_pathfinder, access_explorer, access_eva, access_maint_tunnels, access_heads, access_emergency_storage, access_tech_storage, access_guppy_helm, access_solgov_crew, access_expedition_shuttle, access_guppy, access_hangar, access_cent_creed)
 
 /datum/job/explorer
 	title = "Explorer"
-	department = "Service"
-	department_flag = SRV
+	department = "Exploration"
+	department_flag = EXP
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the Commanding Officer, Executive Officer, and Pathfinder"
-	selection_color = "#515151"
+	selection_color = "#68099e"
 	minimal_player_age = 4
 	ideal_character_age = 20
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/explorer
+	outfit_type = /decl/hierarchy/outfit/job/torch/crew/exploration/explorer
 	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
 
 	allowed_ranks = list(
@@ -371,8 +407,7 @@
 		/datum/mil_rank/fleet/e5,
 	)
 
-	access = list(access_maint_tunnels, access_emergency_storage, access_cargo, access_guppy_helm,
-						access_cargo_bot, access_solgov_crew, access_expedition_shuttle, access_guppy, access_hangar)
+	access = list(access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm, access_solgov_crew, access_expedition_shuttle, access_guppy, access_hangar, access_cent_creed)
 
 /datum/job/senior_engineer
 	title = "Senior Engineer"
@@ -407,6 +442,12 @@
 			            access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor, access_construction,
 			            access_tcomsat, access_solgov_crew, access_seneng)
 
+	software_on_spawn = list(/datum/computer_file/program/power_monitor,
+							 /datum/computer_file/program/supermatter_monitor,
+							 /datum/computer_file/program/alarm_monitor,
+							 /datum/computer_file/program/atmos_control,
+							 /datum/computer_file/program/rcon_console,
+							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/engineer
 	title = "Engineer"
@@ -446,6 +487,13 @@
 			            access_solgov_crew)
 	minimal_access = list()
 
+	software_on_spawn = list(/datum/computer_file/program/power_monitor,
+							 /datum/computer_file/program/supermatter_monitor,
+							 /datum/computer_file/program/alarm_monitor,
+							 /datum/computer_file/program/atmos_control,
+							 /datum/computer_file/program/rcon_console,
+							 /datum/computer_file/program/camera_monitor)
+
 /datum/job/engineer_contractor
 	title = "Maintenance Assistant"
 	department = "Engineering"
@@ -467,6 +515,13 @@
 	access = list(access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor, access_construction,
 			            access_solgov_crew)
+
+	software_on_spawn = list(/datum/computer_file/program/power_monitor,
+							 /datum/computer_file/program/supermatter_monitor,
+							 /datum/computer_file/program/alarm_monitor,
+							 /datum/computer_file/program/atmos_control,
+							 /datum/computer_file/program/rcon_console,
+							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/roboticist
 	title = "Roboticist"
@@ -518,6 +573,10 @@
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_eva, access_sec_doors, access_solgov_crew, access_gun)
 	minimal_access = list()
+
+	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
+							 /datum/computer_file/program/camera_monitor)
+
 /datum/job/detective
 	title = "Forensic Technician"
 	total_positions = 1
@@ -547,6 +606,8 @@
 			            access_sec_doors, access_solgov_crew)
 	minimal_access = list()
 
+	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
+							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/officer
 	title = "Master at Arms"
@@ -579,6 +640,8 @@
 			            access_eva, access_sec_doors, access_solgov_crew)
 	minimal_access = list()
 
+	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
+							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/senior_doctor
 	title = "Physician"
@@ -609,6 +672,8 @@
 			            access_crematorium, access_chemistry, access_surgery,
 			            access_medical_equip, access_solgov_crew, access_senmed)
 
+	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
+							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/doctor
 	title = "Corpsman"
@@ -638,6 +703,8 @@
 			            access_eva, access_surgery, access_medical_equip, access_solgov_crew)
 	minimal_access = list()
 
+	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
+							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/doctor_contractor
 	title = "Medical Contractor"
@@ -663,6 +730,8 @@
 	access = list(access_medical, access_morgue, access_crematorium, access_virology, access_surgery, access_medical_equip, access_solgov_crew,
 		            access_eva, access_maint_tunnels, access_emergency_storage, access_external_airlocks)
 
+	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
+							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/chemist
 	title = "Chemist"
@@ -678,6 +747,9 @@
 
 	access = list(access_medical, access_medical_equip, access_chemistry)
 	minimal_access = list()
+
+	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
+							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/psychiatrist
 	title = "Counselor"
@@ -704,6 +776,130 @@
 	access = list(access_medical, access_morgue, access_chapel_office, access_crematorium, access_psychiatrist, access_solgov_crew)
 	minimal_access = list()
 
+	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
+							 /datum/computer_file/program/camera_monitor)
+
+/datum/job/psychiatrist/equip(var/mob/living/carbon/human/H, var/alt_title, var/ask_questions = TRUE)
+	. = ..()
+	if(!.)
+		return
+	if(!ask_questions)
+		return
+
+	var/obj/item/weapon/storage/bible/B = locate(/obj/item/weapon/storage/bible) in H
+	if(!B)
+		return
+
+	spawn(0)
+		var/religion_name = "Christianity"
+		var/new_religion = sanitize(input(H, "You are the crew services officer. Would you like to change your religion? Default is Christianity, in SPACE.", "Name change", religion_name), MAX_NAME_LEN)
+
+		if(!new_religion)
+			new_religion = religion_name
+		switch(lowertext(new_religion))
+			if("christianity")
+				B.name = pick("The Holy Bible","The Dead Sea Scrolls")
+			if("satanism")
+				B.name = "The Unholy Bible"
+			if("cthulu")
+				B.name = "The Necronomicon"
+			if("islam")
+				B.name = "Quran"
+			if("scientology")
+				B.name = pick("The Biography of L. Ron Hubbard","Dianetics")
+			if("chaos")
+				B.name = "The Book of Lorgar"
+			if("imperium")
+				B.name = "Uplifting Primer"
+			if("toolboxia")
+				B.name = "Toolbox Manifesto"
+			if("homosexuality")
+				B.name = "Guys Gone Wild"
+			//if("lol", "wtf", "gay", "penis", "ass", "poo", "badmin", "shitmin", "deadmin", "cock", "cocks")
+			//	B.name = pick("Woodys Got Wood: The Aftermath", "War of the Cocks", "Sweet Bro and Hella Jef: Expanded Edition")
+			//	H.setBrainLoss(100) // starts off retarded as fuck
+			if("science")
+				B.name = pick("Principle of Relativity", "Quantum Enigma: Physics Encounters Consciousness", "Programming the Universe", "Quantum Physics and Theology", "String Theory for Dummies", "How To: Build Your Own Warp Drive", "The Mysteries of Bluespace", "Playing God: Collector's Edition")
+			else
+				B.name = "The Holy Book of [new_religion]"
+		feedback_set_details("religion_name","[new_religion]")
+
+	spawn(1)
+		var/deity_name = "Space Jesus"
+		var/new_deity = sanitize(input(H, "Would you like to change your deity? Default is Space Jesus.", "Name change", deity_name), MAX_NAME_LEN)
+
+		if((length(new_deity) == 0) || (new_deity == "Space Jesus") )
+			new_deity = deity_name
+		B.deity_name = new_deity
+
+		var/accepted = 0
+		var/outoftime = 0
+		spawn(200) // 20 seconds to choose
+			outoftime = 1
+		var/new_book_style = "Bible"
+
+		while(!accepted)
+			if(!B) break // prevents possible runtime errors
+			new_book_style = input(H,"Which bible style would you like?") in list("Bible", "Koran", "Scrapbook", "Creeper", "White Bible", "Holy Light", "Athiest", "Tome", "The King in Yellow", "Ithaqua", "Scientology", "the bible melts", "Necronomicon")
+			switch(new_book_style)
+				if("Koran")
+					B.icon_state = "koran"
+					B.item_state = "koran"
+				if("Scrapbook")
+					B.icon_state = "scrapbook"
+					B.item_state = "scrapbook"
+				if("Creeper")
+					B.icon_state = "creeper"
+					B.item_state = "syringe_kit"
+				if("White Bible")
+					B.icon_state = "white"
+					B.item_state = "syringe_kit"
+				if("Holy Light")
+					B.icon_state = "holylight"
+					B.item_state = "syringe_kit"
+				if("Athiest")
+					B.icon_state = "athiest"
+					B.item_state = "syringe_kit"
+				if("Tome")
+					B.icon_state = "tome"
+					B.item_state = "syringe_kit"
+				if("The King in Yellow")
+					B.icon_state = "kingyellow"
+					B.item_state = "kingyellow"
+				if("Ithaqua")
+					B.icon_state = "ithaqua"
+					B.item_state = "ithaqua"
+				if("Scientology")
+					B.icon_state = "scientology"
+					B.item_state = "scientology"
+				if("the bible melts")
+					B.icon_state = "melted"
+					B.item_state = "melted"
+				if("Necronomicon")
+					B.icon_state = "necronomicon"
+					B.item_state = "necronomicon"
+				else
+					B.icon_state = "bible"
+					B.item_state = "bible"
+
+			H.update_inv_l_hand() // so that it updates the bible's item_state in his hand
+
+			switch(input(H,"Look at your bible - is this what you want?") in list("Yes","No"))
+				if("Yes")
+					accepted = 1
+				if("No")
+					if(outoftime)
+						to_chat(H, "Welp, out of time, buddy. You're stuck. Next time choose faster.")
+						accepted = 1
+
+		if(ticker)
+			ticker.Bible_icon_state = B.icon_state
+			ticker.Bible_item_state = B.item_state
+			ticker.Bible_name = B.name
+			ticker.Bible_deity_name = B.deity_name
+		feedback_set_details("religion_deity","[new_deity]")
+		feedback_set_details("religion_book","[new_book_style]")
+	return 1
 
 /datum/job/qm
 	title = "Deck Officer"
@@ -736,6 +932,7 @@
 						access_cargo_bot, access_qm, access_mailsorting, access_solgov_crew, access_expedition_shuttle, access_guppy, access_hangar)
 	minimal_access = list()
 
+	software_on_spawn = list(/datum/computer_file/program/supply)
 
 /datum/job/cargo_tech
 	title = "Deck Technician"
@@ -765,6 +962,7 @@
 						access_cargo_bot, access_mailsorting, access_solgov_crew, access_expedition_shuttle, access_guppy, access_hangar)
 	minimal_access = list()
 
+	software_on_spawn = list(/datum/computer_file/program/supply)
 
 /datum/job/cargo_contractor
 	title = "Supply Assistant"
@@ -782,6 +980,7 @@
 
 	access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mailsorting, access_hangar, access_guppy, access_guppy_helm, access_solgov_crew)
 
+	software_on_spawn = list(/datum/computer_file/program/supply)
 
 /datum/job/janitor
 	title = "Sanitation Technician"

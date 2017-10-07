@@ -11,10 +11,11 @@
 	var/list/loot = list(/obj/item/weapon/cell,/obj/item/stack/material/iron,/obj/item/stack/rods)
 	var/lootleft = 2
 	var/emptyprob = 30
+	var/health = 40
 
 /obj/structure/rubble/New()
 	..()
-	if(prob(emptyprob)) 
+	if(prob(emptyprob))
 		lootleft = 0
 
 /obj/structure/rubble/Initialize()
@@ -33,7 +34,7 @@
 				I.icon_state = initial(A.icon_state)
 				I.color = initial(A.color)
 			if(!lootleft)
-				I.color = "#54362E"
+				I.color = "#54362e"
 		I.appearance_flags = PIXEL_SCALE
 		I.pixel_x = rand(-16,16)
 		I.pixel_y = rand(-16,16)
@@ -54,16 +55,29 @@
 		lootleft--
 		update_icon()
 		to_chat(user, "<span class='notice'>You find \a [booty] and pull it carefully out of \the [src].</span>")
-		
+
 /obj/structure/rubble/attackby(var/obj/item/I, var/mob/user)
-	if (istype(I, /obj/item/weapon/pickaxe))
-		var/obj/item/weapon/pickaxe/P = I
+	if (istype(I, /obj/item/weapon/pickaxe) || istype(I, /obj/item/weapon/shovel))
+		var/digspeed
+		if (istype(I, /obj/item/weapon/pickaxe))
+			var/obj/item/weapon/pickaxe/P = I
+			digspeed = P.digspeed
+		if (istype(I, /obj/item/weapon/shovel))
+			var/obj/item/weapon/shovel/S = I
+			digspeed = S.digspeed
+
 		visible_message("[user] starts clearing away \the [src].")
-		if(do_after(user,P.digspeed, src))
+		if(do_after(user, digspeed, src))
 			visible_message("[user] clears away \the [src].")
 			if(lootleft && prob(1))
 				var/obj/item/booty = pick(loot)
 				booty = new booty(loc)
+			qdel(src)
+	else 
+		..()
+		health -= I.force
+		if(health < 1)
+			visible_message("[user] clears away \the [src].")
 			qdel(src)
 
 /obj/structure/rubble/house

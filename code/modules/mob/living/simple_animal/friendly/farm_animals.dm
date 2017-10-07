@@ -47,11 +47,15 @@
 
 		if(locate(/obj/effect/plant) in loc)
 			var/obj/effect/plant/SV = locate() in loc
-			SV.die_off(1)
-
-		if(locate(/obj/machinery/portable_atmospherics/hydroponics/soil/invisible) in loc)
-			var/obj/machinery/portable_atmospherics/hydroponics/soil/invisible/SP = locate() in loc
-			qdel(SP)
+			if(prob(60))
+				src.visible_message("<span class='notice'>\The [src] eats the plants.</span>")
+				SV.die_off(1)
+				if(locate(/obj/machinery/portable_atmospherics/hydroponics/soil/invisible) in loc)
+					var/obj/machinery/portable_atmospherics/hydroponics/soil/invisible/SP = locate() in loc
+					qdel(SP)
+			else if(prob(20))
+				src.visible_message("<span class='notice'>\The [src] chews on the plants.</span>")
+			return
 
 		if(!pulledby)
 			var/obj/effect/plant/food
@@ -64,12 +68,6 @@
 	..()
 	if(stat == CONSCIOUS)
 		visible_message("<span class='warning'>[src] gets an evil-looking gleam in their eye.</span>")
-
-/mob/living/simple_animal/hostile/retaliate/goat/Move()
-	..()
-	if(!stat)
-		for(var/obj/effect/plant/SV in loc)
-			SV.die_off(1)
 
 /mob/living/simple_animal/hostile/retaliate/goat/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	var/obj/item/weapon/reagent_containers/glass/G = O
@@ -253,16 +251,24 @@ var/global/chicken_count = 0
 		E.pixel_x = rand(-6,6)
 		E.pixel_y = rand(-6,6)
 		if(chicken_count < MAX_CHICKENS && prob(10))
-			GLOB.processing_objects.Add(E)
+			E.amount_grown = 1
+			START_PROCESSING(SSobj, E)
 
-/obj/item/weapon/reagent_containers/food/snacks/egg/var/amount_grown = 0
-/obj/item/weapon/reagent_containers/food/snacks/egg/process()
+/obj/item/weapon/reagent_containers/food/snacks/egg
+	var/amount_grown = 0
+
+/obj/item/weapon/reagent_containers/food/snacks/egg/Destroy()
+	if(amount_grown)
+		STOP_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/item/weapon/reagent_containers/food/snacks/egg/Process()
 	if(isturf(loc))
 		amount_grown += rand(1,2)
 		if(amount_grown >= 100)
 			visible_message("[src] hatches with a quiet cracking sound.")
 			new /mob/living/simple_animal/chick(get_turf(src))
-			GLOB.processing_objects.Remove(src)
+			STOP_PROCESSING(SSobj, src)
 			qdel(src)
 	else
-		GLOB.processing_objects.Remove(src)
+		return PROCESS_KILL

@@ -246,6 +246,14 @@
 		mymob.nutrition_icon.screen_loc = ui_nutrition
 		hud_elements |= mymob.nutrition_icon
 
+	/*
+	mymob.noise1 = new /obj/screen()
+	mymob.noise1.icon = 'icons/mob/noise.dmi'
+	mymob.noise1.icon_state = pick("1", "2", "3")
+	mymob.noise1.name = " "
+	mymob.noise1.screen_loc = "1,1 to 15,15"
+	mymob.noise1.mouse_opacity = 0
+	hud_elements |= mymob.noise1 */
 
 	mymob.pain = new /obj/screen( null )
 

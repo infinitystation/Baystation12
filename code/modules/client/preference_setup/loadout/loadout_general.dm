@@ -49,10 +49,7 @@
 /datum/gear/coffeecup
 	display_name = "coffee cup"
 	path = /obj/item/weapon/reagent_containers/food/drinks/coffeecup
-
-/datum/gear/coffeecup/New()
-	..()
-	gear_tweaks += new/datum/gear_tweak/path(/obj/item/weapon/reagent_containers/food/drinks/coffeecup)
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/lunchbox
 	display_name = "lunchbox"
@@ -90,3 +87,7 @@
 	plushes["spider plush"] = /obj/item/toy/plushie/spider
 	plushes["farwa plush"] = /obj/item/toy/plushie/farwa
 	gear_tweaks += new /datum/gear_tweak/path(plushes)
+
+/datum/gear/kittyears
+	display_name = "kitty ears"
+	description = "A pair of kitty ears. Meow!"

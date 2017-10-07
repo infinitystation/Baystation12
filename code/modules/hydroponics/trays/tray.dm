@@ -429,6 +429,9 @@
 		return 0
 
 	if(istype(O, /obj/item/weapon/wirecutters) || istype(O, /obj/item/weapon/scalpel))
+		if(closed_system)
+			to_chat(user, "<span class='warning'>You can't use [O] on \the [src] while lid is closed.</span>")
+			return
 
 		if(!seed)
 			to_chat(user, "There is nothing to take a sample from in \the [src].")
@@ -452,7 +455,7 @@
 		// Bookkeeping.
 		check_health()
 		force_update = 1
-		process()
+		Process()
 
 		return
 
@@ -475,6 +478,9 @@
 			return 1
 
 	else if (istype(O, /obj/item/seeds))
+		if(closed_system)
+			to_chat(user, "<span class='warning'>You can't use [O] on \the [src] while lid is closed.</span>")
+			return
 
 		if(!seed)
 
@@ -503,6 +509,9 @@
 			to_chat(user, "<span class='danger'>\The [src] already has seeds in it!</span>")
 
 	else if (istype(O, /obj/item/weapon/material/minihoe))  // The minihoe
+		if(closed_system)
+			to_chat(user, "<span class='warning'>You can't use [O] on \the [src] while lid is closed.</span>")
+			return
 
 		if(weedlevel > 0)
 			user.visible_message("<span class='danger'>[user] starts uprooting the weeds.</span>", "<span class='danger'>You remove the weeds from the [src].</span>")
@@ -512,6 +521,9 @@
 			to_chat(user, "<span class='danger'>This plot is completely devoid of weeds. It doesn't need uprooting.</span>")
 
 	else if (istype(O, /obj/item/weapon/storage/plants))
+		if(closed_system)
+			to_chat(user, "<span class='warning'>You can't use [O] on \the [src] while lid is closed.</span>")
+			return
 
 		attack_hand(user)
 
@@ -522,6 +534,9 @@
 			S.handle_item_insertion(G, 1)
 
 	else if ( istype(O, /obj/item/weapon/plantspray) )
+		if(closed_system)
+			to_chat(user, "<span class='warning'>You can't use [O] on \the [src] while lid is closed.</span>")
+			return
 
 		var/obj/item/weapon/plantspray/spray = O
 		user.remove_from_mob(O)

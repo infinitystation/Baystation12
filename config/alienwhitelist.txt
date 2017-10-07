@@ -1,5 +1,7 @@
 kirill1243 - giant armoured serpentid
 sosiskoed - giant armoured serpentid
+sarumyn - giant armoured serpentid
+diesiege - giant armoured serpentid
 sosiskoed - vox
 vankoska - diona
 sosiskoed - diona
@@ -18,6 +20,7 @@ redknighthero - machine
 wheatley2013 - machine
 kotovsyndrome - machine
 wheatley2013 - machine
+parasoul - machine
 nikita588 - machine
 themaybat - skrell
 themaybat - resomi

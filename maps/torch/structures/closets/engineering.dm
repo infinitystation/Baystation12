@@ -33,13 +33,14 @@
 		/obj/item/clothing/glasses/welding/superior,
 		/obj/item/weapon/gun/energy/gun,
 		/obj/item/clothing/accessory/holster/thigh,
-		/obj/item/clothing/suit/storage/vest/solgov/command,
+		new /datum/atom_creator/weighted(list(/obj/item/clothing/suit/storage/vest/solgov/command, /obj/item/clothing/suit/armor/pcarrier/medium/command)),
 		/obj/item/clothing/head/helmet/solgov/command,
 		/obj/item/weapon/clipboard,
 		/obj/item/device/flashlight,
 		/obj/item/device/holowarrant,
 		/obj/item/weapon/folder/yellow,
 		/obj/item/weapon/storage/box/armband/engine,
+		/obj/item/device/multitool/multimeter,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)

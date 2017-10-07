@@ -25,12 +25,12 @@ var/global/floorIsLava = 0
 				var/msg = rendered
 				to_chat(C, msg)
 /proc/admin_notice(var/message, var/rights)
-	for(var/mob/M in GLOB.mob_list)
+	for(var/mob/M in SSmobs.mob_list)
 		if(check_rights(rights, 0, M))
 			to_chat(M, message)
 ///////////////////////////////////////////////////////////////////////////////////////////////Panels
 
-/datum/admins/proc/show_player_panel(var/mob/M in GLOB.mob_list)
+/datum/admins/proc/show_player_panel(var/mob/M in SSmobs.mob_list)
 	set category = "Admin"
 	set name = "Show Player Panel"
 	set desc="Edit player (respawn, ban, heal, etc)"
@@ -631,23 +631,27 @@ var/global/floorIsLava = 0
 /datum/admins/proc/Game()
 	if(!check_rights(0))	return
 
-	var/dat = {"
-		<center><B>Game Panel</B></center><hr>\n
-		<A href='?src=\ref[src];c_mode=1'>Change Game Mode</A><br>
-		"}
-	if(master_mode == "secret")
-		dat += "<A href='?src=\ref[src];f_secret=1'>(Force Secret Mode)</A><br>"
+	var/dat = {"<center><B>Game Panel</B></center><hr>\n"}
+	if(check_rights(R_ADMIN))
+		dat += {"<A href='?src=\ref[src];c_mode=1'>Change Game Mode</A><br>"}
 
-	dat += {"
-		<BR>
-		<A href='?src=\ref[src];create_object=1'>Create Object</A><br>
-		<A href='?src=\ref[src];quick_create_object=1'>Quick Create Object</A><br>
-		<A href='?src=\ref[src];create_turf=1'>Create Turf</A><br>
-		<A href='?src=\ref[src];create_mob=1'>Create Mob</A><br>
-		<br><A href='?src=\ref[src];vsc=airflow'>Edit Airflow Settings</A><br>
-		<A href='?src=\ref[src];vsc=phoron'>Edit Phoron Settings</A><br>
-		<A href='?src=\ref[src];vsc=default'>Choose a default ZAS setting</A><br>
-		"}
+		if(master_mode == "secret")
+			dat += {"<A href='?src=\ref[src];f_secret=1'>(Force Secret Mode)</A><br>"}
+
+		dat += {"<br>"}
+
+	if(check_rights(R_SPAWN))
+		dat += {"<A href='?src=\ref[src];create_object=1'>Create Object</A><br>"}
+		dat += {"<A href='?src=\ref[src];quick_create_object=1'>Quick Create Object</A><br>"}
+		dat += {"<A href='?src=\ref[src];create_turf=1'>Create Turf</A><br>"}
+		dat += {"<A href='?src=\ref[src];create_mob=1'>Create Mob</A><br>"}
+
+		dat += {"<br>"}
+
+	if(check_rights(R_DEBUG|R_SERVER))
+		dat += {"<A href='?src=\ref[src];vsc=airflow'>Edit Airflow Settings</A><br>"}
+		dat += {"<A href='?src=\ref[src];vsc=phoron'>Edit Phoron Settings</A><br>"}
+		dat += {"<A href='?src=\ref[src];vsc=default'>Choose a default ZAS setting</A><br>"}
 
 	usr << browse(dat, "window=admin2;size=210x280")
 	return
@@ -978,7 +982,7 @@ var/global/floorIsLava = 0
 
 	world.Reboot()
 
-/datum/admins/proc/unprison(var/mob/M in GLOB.mob_list)
+/datum/admins/proc/unprison(var/mob/M in SSmobs.mob_list)
 	set category = "Admin"
 	set name = "Unprison"
 	if (isAdminLevel(M.z))
@@ -1119,7 +1123,7 @@ var/global/floorIsLava = 0
 	feedback_add_details("admin_verb","SA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
-/datum/admins/proc/show_traitor_panel(var/mob/M in GLOB.mob_list)
+/datum/admins/proc/show_traitor_panel(var/mob/M in SSmobs.mob_list)
 	set category = "Admin"
 	set desc = "Edit mobs's memory and role"
 	set name = "Show Traitor Panel"
@@ -1235,7 +1239,7 @@ var/global/floorIsLava = 0
 
 /datum/admins/proc/output_ai_laws()
 	var/ai_number = 0
-	for(var/mob/living/silicon/S in GLOB.mob_list)
+	for(var/mob/living/silicon/S in SSmobs.mob_list)
 		ai_number++
 		if(isAI(S))
 			to_chat(usr, "<b>AI [key_name(S, usr)]'s laws:</b>")

@@ -128,6 +128,27 @@ proc/age2agedescription(age)
 		if(70 to INFINITY)	return "elderly"
 		else				return "unknown"
 
+
+proc/ageAndGender2Desc(age, gender, var/synthetic_flag = 0)//Used for the radio
+	if(synthetic_flag)
+		return "Mechanical Voice"
+	else
+		if(gender == FEMALE)
+			switch(age)
+				if(0 to 15)			return "Girl"
+				if(15 to 25)		return "Young Woman"
+				if(25 to 60)		return "Woman"
+				if(60 to INFINITY)	return "Old Woman"
+				else				return "Unknown"
+		if(gender == MALE)
+			switch(age)
+				if(0 to 15)			return "Boy"
+				if(15 to 25)		return "Young Man"
+				if(25 to 60)		return "Man"
+				if(60 to INFINITY)	return "Old Man"
+				else				return "Unknown"
+	return
+
 /proc/RoundHealth(health)
 	var/list/icon_states = icon_states('icons/mob/hud_med.dmi')
 	for(var/icon_state in icon_states)
@@ -169,7 +190,7 @@ proc/age2agedescription(age)
 		if(uninterruptible)
 			continue
 
-		if(!user || user.incapacitated() || user.loc != user_loc)
+		if(!user || user.incapacitated(INCAPACITATION_STUNNED|INCAPACITATION_RESTRAINED|INCAPACITATION_KNOCKOUT) || user.loc != user_loc)
 			. = 0
 			break
 
@@ -188,7 +209,7 @@ proc/age2agedescription(age)
 	if (progbar)
 		qdel(progbar)
 
-/proc/do_after(mob/user, delay, atom/target = null, needhand = 1, progress = 1, var/incapacitation_flags = INCAPACITATION_DEFAULT, var/same_direction = 0)
+/proc/do_after(mob/user, delay, atom/target = null, needhand = 1, progress = 1, var/incapacitation_flags = INCAPACITATION_STUNNED|INCAPACITATION_RESTRAINED|INCAPACITATION_KNOCKOUT, var/same_direction = 0)
 	if(!user)
 		return 0
 	var/atom/target_loc = null

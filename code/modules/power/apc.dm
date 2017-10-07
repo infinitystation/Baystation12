@@ -96,7 +96,6 @@
 	var/locked = 1
 	var/coverlocked = 1
 	var/aidisabled = 0
-	var/tdir = null
 	var/obj/machinery/power/terminal/terminal = null
 	var/lastused_light = 0
 	var/lastused_equip = 0
@@ -143,7 +142,11 @@
 	//Override because the APC does not directly connect to the network; it goes through a terminal.
 	//The terminal is what the power computer looks for anyway.
 	if(!terminal)
-		make_terminal()
+		if(operating)
+			make_terminal()
+		else
+			return
+
 	if(terminal)
 		terminal.connect_to_network()
 
@@ -173,17 +176,14 @@
 	return drained_energy
 
 /obj/machinery/power/apc/New(turf/loc, var/ndir, var/building=0)
-	wires = new(src)
 
 	// offset 24 pixels in direction of dir
 	// this allows the APC to be embedded in a wall, yet still inside an area
 	if (building)
 		set_dir(ndir)
-	src.tdir = dir		// to fix Vars bug
-	set_dir(SOUTH)
 
-	pixel_x = (src.tdir & 3)? 0 : (src.tdir == 4 ? 24 : -24)
-	pixel_y = (src.tdir & 3)? (src.tdir ==1 ? 24 : -24) : 0
+	pixel_x = (src.dir & 3)? 0 : (src.dir == 4 ? 24 : -24)
+	pixel_y = (src.dir & 3)? (src.dir ==1 ? 24 : -24) : 0
 
 	if (building==0)
 		init_round_start()
@@ -235,10 +235,11 @@
 	// create a terminal object at the same position as original turf loc
 	// wires will attach to this
 	terminal = new/obj/machinery/power/terminal(src.loc)
-	terminal.set_dir(tdir)
+	terminal.set_dir(dir)
 	terminal.master = src
 
 /obj/machinery/power/apc/proc/init_round_start()
+	wires = new(src)
 	has_electronics = 2 //installed and secured
 	// is starting with a power cell installed, create it and set its charge level
 	if(cell_type)
@@ -299,27 +300,27 @@
 		status_overlays_lighting.len = 4
 		status_overlays_environ.len = 4
 
-		status_overlays_lock[1] = image(icon, "apcox-0")    // 0=blue 1=red
-		status_overlays_lock[2] = image(icon, "apcox-1")
+		status_overlays_lock[1] =  make_screen_overlay(icon, "apcox-0")    // 0=blue 1=red
+		status_overlays_lock[2] =  make_screen_overlay(icon, "apcox-1")
 
-		status_overlays_charging[1] = image(icon, "apco3-0")
-		status_overlays_charging[2] = image(icon, "apco3-1")
-		status_overlays_charging[3] = image(icon, "apco3-2")
+		status_overlays_charging[1] =  make_screen_overlay(icon, "apco3-0")
+		status_overlays_charging[2] =  make_screen_overlay(icon, "apco3-1")
+		status_overlays_charging[3] =  make_screen_overlay(icon, "apco3-2")
 
-		status_overlays_equipment[1] = image(icon, "apco0-0")
-		status_overlays_equipment[2] = image(icon, "apco0-1")
-		status_overlays_equipment[3] = image(icon, "apco0-2")
-		status_overlays_equipment[4] = image(icon, "apco0-3")
+		status_overlays_equipment[1] =  make_screen_overlay(icon, "apco0-0")
+		status_overlays_equipment[2] =  make_screen_overlay(icon, "apco0-1")
+		status_overlays_equipment[3] =  make_screen_overlay(icon, "apco0-2")
+		status_overlays_equipment[4] =  make_screen_overlay(icon, "apco0-3")
 
-		status_overlays_lighting[1] = image(icon, "apco1-0")
-		status_overlays_lighting[2] = image(icon, "apco1-1")
-		status_overlays_lighting[3] = image(icon, "apco1-2")
-		status_overlays_lighting[4] = image(icon, "apco1-3")
+		status_overlays_lighting[1] =  make_screen_overlay(icon, "apco1-0")
+		status_overlays_lighting[2] =  make_screen_overlay(icon, "apco1-1")
+		status_overlays_lighting[3] =  make_screen_overlay(icon, "apco1-2")
+		status_overlays_lighting[4] =  make_screen_overlay(icon, "apco1-3")
 
-		status_overlays_environ[1] = image(icon, "apco2-0")
-		status_overlays_environ[2] = image(icon, "apco2-1")
-		status_overlays_environ[3] = image(icon, "apco2-2")
-		status_overlays_environ[4] = image(icon, "apco2-3")
+		status_overlays_environ[1] =  make_screen_overlay(icon, "apco2-0")
+		status_overlays_environ[2] =  make_screen_overlay(icon, "apco2-1")
+		status_overlays_environ[3] =  make_screen_overlay(icon, "apco2-2")
+		status_overlays_environ[4] =  make_screen_overlay(icon, "apco2-3")
 
 	var/update = check_updates() 		//returns 0 if no need to update icons.
 						// 1 if we need to update the icon_state
@@ -366,16 +367,16 @@
 		if(update_state & (UPDATE_OPENED1|UPDATE_OPENED2|UPDATE_BROKE))
 			set_light(0)
 		else if(update_state & UPDATE_BLUESCREEN)
-			set_light(l_range = 2, l_power = 0.5, l_color = "#0000FF")
+			set_light(l_range = 2, l_power = 0.5, l_color = "#0000ff")
 		else if(!(stat & (BROKEN|MAINT)) && update_state & UPDATE_ALLGOOD)
 			var/color
 			switch(charging)
 				if(0)
-					color = "#F86060"
+					color = "#f86060"
 				if(1)
-					color = "#A8B0F8"
+					color = "#a8b0f8"
 				if(2)
-					color = "#82FF4C"
+					color = "#82ff4c"
 			set_light(l_range = 2, l_power = 0.5, l_color = color)
 		else
 			set_light(0)
@@ -1003,7 +1004,7 @@
 	else
 		return 0
 
-/obj/machinery/power/apc/process()
+/obj/machinery/power/apc/Process()
 
 	if(stat & (BROKEN|MAINT))
 		return

@@ -88,7 +88,7 @@
 			light_x1 = ux + 1
 			light_y1 = uy + 2
 			light_x2 = ux + lift_size_x - 1
-			light_y2 = uy + lift_size_y - 1
+			light_y2 = uy + lift_size_y - 2
 
 		if(EAST)
 
@@ -195,8 +195,8 @@
 		// Place lights
 		var/turf/placing1 = locate(light_x1, light_y1, cz)
 		var/turf/placing2 = locate(light_x2, light_y2, cz)
-		var/obj/machinery/light/light1 = new(placing1, light)
-		var/obj/machinery/light/light2 = new(placing2, light)
+		var/obj/machinery/light/small/light1 = new(placing1, light)
+		var/obj/machinery/light/small/light2 = new(placing2, light)
 		if(udir == NORTH || udir == SOUTH)
 			light1.set_dir(WEST)
 			light2.set_dir(EAST)

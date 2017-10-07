@@ -181,7 +181,7 @@
 
 /obj/item/weapon/weldingtool/Destroy()
 	if(welding)
-		GLOB.processing_objects -= src
+		STOP_PROCESSING(SSobj, src)
 	return ..()
 
 /obj/item/weapon/weldingtool/examine(mob/user)
@@ -227,7 +227,7 @@
 	return
 
 
-/obj/item/weapon/weldingtool/process()
+/obj/item/weapon/weldingtool/Process()
 	if(welding)
 		if(!remove_fuel(0.05))
 			setWelding(0)
@@ -328,14 +328,14 @@
 			src.damtype = "fire"
 			welding = 1
 			update_icon()
-			GLOB.processing_objects |= src
+			START_PROCESSING(SSobj, src)
 		else
 			if(M)
 				to_chat(M, "<span class='notice'>You need more welding fuel to complete this task.</span>")
 			return
 	//Otherwise
 	else if(!set_welding && welding)
-		GLOB.processing_objects -= src
+		STOP_PROCESSING(SSobj, src)
 		if(M)
 			to_chat(M, "<span class='notice'>You switch \the [src] off.</span>")
 		else if(T)
@@ -449,7 +449,6 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 50)
 	center_of_mass = "x=16;y=20"
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
-	hitsound = list('sound/weapons/crowbarhit.ogg', 'sound/weapons/crowbarhit2.ogg')
 
 /obj/item/weapon/crowbar/red
 	icon = 'icons/obj/items.dmi'

@@ -39,3 +39,15 @@ var/const/WIRE_TRANSMIT = 4
 		if(WIRE_TRANSMIT)
 			R.broadcasting = mended && !IsIndexCut(WIRE_SIGNAL)
 	GLOB.nanomanager.update_uis(holder)
+
+/datum/wires/radio/SolveWireFunction(var/function)
+	var/sf = ""
+	switch(function)
+		if(WIRE_SIGNAL)
+			sf = "Port A"
+		if(WIRE_RECEIVE)
+			sf = "Port B"
+		if(WIRE_TRANSMIT)
+			sf = "Port C"
+
+	return sf

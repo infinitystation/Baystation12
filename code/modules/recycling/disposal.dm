@@ -12,7 +12,7 @@
 /obj/machinery/disposal
 	name = "disposal unit"
 	desc = "A pneumatic waste disposal unit."
-	icon = 'icons/obj/pipes/disposal_infinity.dmi'
+	icon = 'icons/obj/pipes/disposal.dmi'
 	icon_state = "disposal"
 	anchored = 1
 	density = 1
@@ -28,6 +28,14 @@
 	active_power_usage = 2200	//the pneumatic pump power. 3 HP ~ 2200W
 	idle_power_usage = 100
 	flags = OBJ_CLIMBABLE
+
+/obj/machinery/disposal/small
+	icon = 'icons/obj/pipes/disposal_small.dmi'
+	density = 0
+
+// Same disposal unit, but with sprites by Gverdy
+/obj/machinery/disposal/unstandart
+	icon = 'icons/obj/pipes/disposal_infinity.dmi'
 
 // create a new disposal
 // find the attached trunk (if present) and init gas resvr.
@@ -342,7 +350,7 @@
 
 	// flush handle
 	if(flush)
-		overlays += image('icons/obj/pipes/disposal_infinity.dmi', "dispover-handle")
+		overlays += image(icon, "dispover-handle")
 
 	// only handle is shown if no power
 	if(stat & NOPOWER || mode == -1)
@@ -350,17 +358,17 @@
 
 	// 	check for items in disposal - occupied light
 	if(contents.len > 0)
-		overlays += image('icons/obj/pipes/disposal_infinity.dmi', "dispover-full")
+		overlays += image(icon, "dispover-full")
 
 	// charging and ready light
 	if(mode == 1)
-		overlays += image('icons/obj/pipes/disposal_infinity.dmi', "dispover-charge")
+		overlays += image(icon, "dispover-charge")
 	else if(mode == 2)
-		overlays += image('icons/obj/pipes/disposal_infinity.dmi', "dispover-ready")
+		overlays += image(icon, "dispover-ready")
 
 // timed process
 // charge the gas reservoir and perform flush if ready
-/obj/machinery/disposal/process()
+/obj/machinery/disposal/Process()
 	if(!air_contents || (stat & BROKEN))			// nothing can happen if broken
 		update_use_power(0)
 		return
@@ -677,7 +685,8 @@
 	var/dpdir = 0		// bitmask of pipe directions
 	dir = 0				// dir will contain dominant direction for junction pipes
 	var/health = 10 	// health points 0-10
-	plane = ABOVE_PLATING_PLANE
+	alpha = 192 // Plane and alpha modified for mapping, reset to normal on spawn.
+	plane = ABOVE_TURF_PLANE
 	layer = DISPOSALS_PIPE_LAYER
 	var/base_icon_state	// initial icon state on map
 	var/sortType = ""
@@ -685,9 +694,10 @@
 	// new pipe, set the icon_state as on map
 	New()
 		..()
+		alpha = 255
+		plane = ABOVE_PLATING_PLANE
 		base_icon_state = icon_state
 		return
-
 
 	// pipe is deleted
 	// ensure if holder is present, it is expelled

@@ -273,3 +273,54 @@
 	possible_transfer_amounts = "10;20;30;60"
 	volume = 120
 */
+//Copypasta from beaker code
+/obj/item/weapon/reagent_containers/glass/juice_jug
+	name = "juice jug"
+	desc = "A juice jug, part of a grinder. You probably can hold here a compote!"
+	icon = 'icons/obj/kitchen.dmi'
+	icon_state = "blender_jug_e"
+	volume = 100
+	matter = list("glass" = 500)
+	possible_transfer_amounts = "5;10;15;25;30;60;100"
+
+/obj/item/weapon/reagent_containers/glass/juice_jug/New()
+	..()
+	desc += " Can hold up to [volume] units."
+
+/obj/item/weapon/reagent_containers/glass/juice_jug/on_reagent_change()
+		update_icon()
+
+/obj/item/weapon/reagent_containers/glass/juice_jug/pickup(mob/user)
+		..()
+		update_icon()
+
+/obj/item/weapon/reagent_containers/glass/juice_jug/dropped(mob/user)
+		..()
+		update_icon()
+
+/obj/item/weapon/reagent_containers/glass/juice_jug/attack_hand()
+		..()
+		update_icon()
+
+/obj/item/weapon/reagent_containers/glass/juice_jug/update_icon()
+	overlays.Cut()
+
+	if(reagents.total_volume)
+		var/image/filling = image('icons/obj/reagentfillings.dmi', src, "[icon_state]10")
+
+		var/percent = round((reagents.total_volume / volume) * 100)
+		switch(percent)
+			if(0 to 9)		filling.icon_state = "[icon_state]-10"
+			if(10 to 24) 	filling.icon_state = "[icon_state]10"
+			if(25 to 49)	filling.icon_state = "[icon_state]25"
+			if(50 to 74)	filling.icon_state = "[icon_state]50"
+			if(75 to 79)	filling.icon_state = "[icon_state]75"
+			if(80 to 90)	filling.icon_state = "[icon_state]80"
+			if(91 to INFINITY)	filling.icon_state = "[icon_state]100"
+
+		filling.color = reagents.get_color()
+		overlays += filling
+
+		if (!is_open_container())
+			var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
+			overlays += lid

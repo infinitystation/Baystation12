@@ -50,7 +50,7 @@
 /mob
 	var/get_rig_stats = 0
 
-/obj/item/rig_module/ai_container/process()
+/obj/item/rig_module/ai_container/Process()
 	if(integrated_ai)
 		var/obj/item/weapon/rig/rig = get_rig()
 		if(rig && rig.ai_override_enabled)
@@ -369,7 +369,7 @@
 	var/atom/interfaced_with // Currently draining power from this device.
 	var/total_power_drained = 0
 	var/drain_loc
-	var/max_draining_rate = 300 KILOWATTS
+	var/max_draining_rate = 250 KILOWATTS
 
 /obj/item/rig_module/power_sink/deactivate()
 
@@ -423,7 +423,7 @@
 		return 1
 	return 0
 
-/obj/item/rig_module/power_sink/process()
+/obj/item/rig_module/power_sink/Process()
 
 	if(!interfaced_with)
 		return ..()

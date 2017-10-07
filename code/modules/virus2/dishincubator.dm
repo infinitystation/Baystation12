@@ -91,7 +91,7 @@
 		ui.set_initial_data(data)
 		ui.open()
 
-/obj/machinery/disease2/incubator/process()
+/obj/machinery/disease2/incubator/Process()
 	if(dish && on && dish.virus2)
 		use_power(50,EQUIP)
 		if(!powered(EQUIP))
@@ -152,7 +152,7 @@
 			GLOB.nanomanager.update_uis(src)
 
 		if (radiation < 100)
-			if (beaker.reagents.remove_reagent("radium",1))
+			if (beaker.reagents.remove_reagent(/datum/reagent/radium, 1))
 				radiation_storage += 4
 			GLOB.nanomanager.update_uis(src)
 

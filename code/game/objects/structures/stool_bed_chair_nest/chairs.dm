@@ -220,6 +220,7 @@
 	name = "shuttle chair"
 	icon_state = "bschair_preview"
 	base_icon = "bschair"
+	color = null
 	material_alteration = MATERIAL_ALTERATION_NONE
 
 /obj/structure/bed/chair/comfy/shuttle/red

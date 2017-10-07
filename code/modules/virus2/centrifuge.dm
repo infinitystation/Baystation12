@@ -79,7 +79,7 @@
 		ui.set_initial_data(data)
 		ui.open()
 
-/obj/machinery/computer/centrifuge/process()
+/obj/machinery/computer/centrifuge/Process()
 	..()
 	if (stat & (NOPOWER|BROKEN)) return
 

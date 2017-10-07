@@ -52,6 +52,9 @@
 /obj/machinery/suit_storage_unit/atmos/alt
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/atmos/alt
 	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/atmos/alt
+	MASK_TYPE = /obj/item/clothing/mask/breath
+	TANK_TYPE = /obj/item/weapon/tank/oxygen
+	BOOTS_TYPE = /obj/item/clothing/shoes/magboots
 
 /obj/machinery/suit_storage_unit/engineering
 	name = "Engineering Voidsuit Storage Unit"
@@ -64,11 +67,14 @@
 /obj/machinery/suit_storage_unit/engineering/alt
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/engineering/alt
 	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/engineering/alt
+	TANK_TYPE = /obj/item/weapon/tank/oxygen
+	BOOTS_TYPE = /obj/item/clothing/shoes/magboots
 	MASK_TYPE = /obj/item/clothing/mask/breath
 
 /obj/machinery/suit_storage_unit/engineering/salvage
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/engineering/salvage
 	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/engineering/salvage
+	BOOTS_TYPE = /obj/item/clothing/shoes/magboots
 	MASK_TYPE = /obj/item/clothing/mask/breath
 
 /obj/machinery/suit_storage_unit/medical
@@ -82,6 +88,8 @@
 /obj/machinery/suit_storage_unit/medical/alt
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/medical/alt
 	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/medical/alt
+	TANK_TYPE = /obj/item/weapon/tank/oxygen
+	BOOTS_TYPE = /obj/item/clothing/shoes/magboots
 	MASK_TYPE = /obj/item/clothing/mask/breath
 
 /obj/machinery/suit_storage_unit/mining
@@ -95,6 +103,8 @@
 /obj/machinery/suit_storage_unit/mining/alt
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/mining/alt
 	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/mining/alt
+	TANK_TYPE = /obj/item/weapon/tank/oxygen
+	BOOTS_TYPE = /obj/item/clothing/shoes/magboots
 	MASK_TYPE = /obj/item/clothing/mask/breath
 
 /obj/machinery/suit_storage_unit/science
@@ -116,6 +126,8 @@
 /obj/machinery/suit_storage_unit/security/alt
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/security/alt
 	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/security/alt
+	TANK_TYPE = /obj/item/weapon/tank/oxygen
+	BOOTS_TYPE = /obj/item/clothing/shoes/magboots
 	MASK_TYPE = /obj/item/clothing/mask/breath
 
 /obj/machinery/suit_storage_unit/merc
@@ -794,7 +806,7 @@
 	departments = list("Mercenary")
 	species = list(SPECIES_HUMAN,SPECIES_TAJARA,SPECIES_SKRELL,SPECIES_UNATHI,SPECIES_RESOMI)
 	can_repair = 1
-	
+
 /obj/machinery/suit_cycler/pilot
 	name = "Pilot suit cycler"
 	model_text = "Pilot"
@@ -1042,7 +1054,7 @@
 	src.updateUsrDialog()
 	return
 
-/obj/machinery/suit_cycler/process()
+/obj/machinery/suit_cycler/Process()
 
 	if(electrified > 0)
 		electrified--
@@ -1202,6 +1214,15 @@
 					slot_l_hand_str = "atmos_voidsuit",
 					slot_r_hand_str = "atmos_voidsuit",
 				)
+		if("Explorer")
+			if(helmet)
+				helmet.name = "exploration voidsuit helmet"
+				helmet.icon_state = "helm_explorer"
+				helmet.item_state = "helm_explorer"
+			if(suit)
+				suit.name = "exploration voidsuit"
+				suit.icon_state = "void_explorer"
+
 		if("^%###^%$" || "Mercenary")
 			if(helmet)
 				helmet.name = "blood-red voidsuit helmet"
