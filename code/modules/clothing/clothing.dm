@@ -537,6 +537,8 @@ BLIND     // can't see anything
 	var/can_hold_knife
 	var/obj/item/holding
 
+	var/stealth_step
+
 	permeability_coefficient = 0.50
 	force = 2
 	var/overshoes = 0
