@@ -150,10 +150,12 @@ proc/get_radio_key_from_channel(var/channel)
 	return returns
 
 /mob/living/proc/get_speech_ending(verb, var/ending)
-	if(ending=="!")
-		return pick("exclaims","shouts","yells")
-	if(ending=="?")
-		return "asks"
+	if(copytext(ending, length(ending) - 1) == "!!")
+		verb = pick("кричит", "вопит")
+	else if(ending == "!")
+		verb = "восклицает"
+	else if(ending == "?")
+		verb = "спрашивает"
 	return verb
 
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="", whispering)
@@ -309,7 +311,7 @@ proc/get_radio_key_from_channel(var/channel)
 				if(O) //It's possible that it could be deleted in the meantime.
 					O.hear_talk(src, stars(message), verb, speaking)
 
-	
+
 	if(whispering)
 		log_whisper("[name]/[key] : [message]")
 	else

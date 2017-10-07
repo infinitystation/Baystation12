@@ -32,6 +32,9 @@
 	for(var/cp in get_client_preferences())
 		var/datum/client_preference/client_pref = cp
 		client_preference_keys += client_pref.key
+		if(!client_pref.may_toggle(preference_mob()))
+			pref.preferences_enabled -= client_pref.key
+			pref.preferences_disabled -= client_pref.key
 		if((client_pref.key in pref.preferences_enabled) || (client_pref.key in pref.preferences_disabled))
 			continue
 

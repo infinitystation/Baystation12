@@ -126,7 +126,7 @@
 
 	// Used by admin log.
 	var/injected_with_monkey = ""
-	if((buf.types & DNA2_BUF_SE) && (block ? (GetState() && block == MONKEYBLOCK) : GetState(MONKEYBLOCK)))
+	if((buf.types & DNA2_BUF_SE) && (block ? (GetState() && block == GLOB.MONKEYBLOCK) : GetState(GLOB.MONKEYBLOCK)))
 		injected_with_monkey = " <span class='danger'>(MONKEY)</span>"
 	admin_attack_log(user, M, "Injected using \the [src]", "Has been injected with \the [src]", "used \the [src][injected_with_monkey] to inject into")
 
@@ -141,7 +141,7 @@
 	value = 0xFFF
 	//block = 2
 	New()
-		block = HULKBLOCK
+		block = GLOB.HULKBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antihulk
@@ -151,7 +151,7 @@
 	value = 0x001
 	//block = 2
 	New()
-		block = HULKBLOCK
+		block = GLOB.HULKBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/xraymut
@@ -161,7 +161,7 @@
 	value = 0xFFF
 	//block = 8
 	New()
-		block = XRAYBLOCK
+		block = GLOB.XRAYBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antixray
@@ -171,7 +171,7 @@
 	value = 0x001
 	//block = 8
 	New()
-		block = XRAYBLOCK
+		block = GLOB.XRAYBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/firemut
@@ -181,7 +181,7 @@
 	value = 0xFFF
 	//block = 10
 	New()
-		block = FIREBLOCK
+		block = GLOB.FIREBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antifire
@@ -191,7 +191,7 @@
 	value = 0x001
 	//block = 10
 	New()
-		block = FIREBLOCK
+		block = GLOB.FIREBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/telemut
@@ -201,7 +201,7 @@
 	value = 0xFFF
 	//block = 12
 	New()
-		block = TELEBLOCK
+		block = GLOB.TELEBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antitele
@@ -211,7 +211,7 @@
 	value = 0x001
 	//block = 12
 	New()
-		block = TELEBLOCK
+		block = GLOB.TELEBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/nobreath
@@ -221,7 +221,7 @@
 	value = 0xFFF
 	//block = 2
 	New()
-		block = NOBREATHBLOCK
+		block = GLOB.NOBREATHBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antinobreath
@@ -231,7 +231,7 @@
 	value = 0x001
 	//block = 2
 	New()
-		block = NOBREATHBLOCK
+		block = GLOB.NOBREATHBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/remoteview
@@ -241,7 +241,7 @@
 	value = 0xFFF
 	//block = 2
 	New()
-		block = REMOTEVIEWBLOCK
+		block = GLOB.REMOTEVIEWBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antiremoteview
@@ -251,7 +251,7 @@
 	value = 0x001
 	//block = 2
 	New()
-		block = REMOTEVIEWBLOCK
+		block = GLOB.REMOTEVIEWBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/regenerate
@@ -261,7 +261,7 @@
 	value = 0xFFF
 	//block = 2
 	New()
-		block = REGENERATEBLOCK
+		block = GLOB.REGENERATEBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antiregenerate
@@ -271,7 +271,7 @@
 	value = 0x001
 	//block = 2
 	New()
-		block = REGENERATEBLOCK
+		block = GLOB.REGENERATEBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/runfast
@@ -281,7 +281,7 @@
 	value = 0xFFF
 	//block = 2
 	New()
-		block = INCREASERUNBLOCK
+		block = GLOB.INCREASERUNBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antirunfast
@@ -291,7 +291,7 @@
 	value = 0x001
 	//block = 2
 	New()
-		block = INCREASERUNBLOCK
+		block = GLOB.INCREASERUNBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/morph
@@ -301,7 +301,7 @@
 	value = 0xFFF
 	//block = 2
 	New()
-		block = MORPHBLOCK
+		block = GLOB.MORPHBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antimorph
@@ -311,7 +311,7 @@
 	value = 0x001
 	//block = 2
 	New()
-		block = MORPHBLOCK
+		block = GLOB.MORPHBLOCK
 		..()
 
 /* No COLDBLOCK on bay
@@ -322,7 +322,7 @@
 	value = 0xFFF
 	//block = 2
 	New()
-		block = COLDBLOCK
+		block = GLOB.COLDBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/anticold
@@ -332,7 +332,7 @@
 	value = 0x001
 	//block = 2
 	New()
-		block = COLDBLOCK
+		block = GLOB.COLDBLOCK
 		..()
 */
 
@@ -343,7 +343,7 @@
 	value = 0xFFF
 	//block = 2
 	New()
-		block = NOPRINTSBLOCK
+		block = GLOB.NOPRINTSBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antinoprints
@@ -353,7 +353,7 @@
 	value = 0x001
 	//block = 2
 	New()
-		block = NOPRINTSBLOCK
+		block = GLOB.NOPRINTSBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/insulation
@@ -363,7 +363,7 @@
 	value = 0xFFF
 	//block = 2
 	New()
-		block = SHOCKIMMUNITYBLOCK
+		block = GLOB.SHOCKIMMUNITYBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antiinsulation
@@ -373,7 +373,7 @@
 	value = 0x001
 	//block = 2
 	New()
-		block = SHOCKIMMUNITYBLOCK
+		block = GLOB.SHOCKIMMUNITYBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/midgit
@@ -383,7 +383,7 @@
 	value = 0xFFF
 	//block = 2
 	New()
-		block = SMALLSIZEBLOCK
+		block = GLOB.SMALLSIZEBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antimidgit
@@ -393,7 +393,7 @@
 	value = 0x001
 	//block = 2
 	New()
-		block = SMALLSIZEBLOCK
+		block = GLOB.SMALLSIZEBLOCK
 		..()
 
 /////////////////////////////////////
@@ -404,7 +404,7 @@
 	value = 0x001
 	//block = 1
 	New()
-		block = GLASSESBLOCK
+		block = GLOB.GLASSESBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/glassesmut
@@ -414,7 +414,7 @@
 	value = 0xFFF
 	//block = 1
 	New()
-		block = GLASSESBLOCK
+		block = GLOB.GLASSESBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/epimut
@@ -424,7 +424,7 @@
 	value = 0xFFF
 	//block = 3
 	New()
-		block = HEADACHEBLOCK
+		block = GLOB.HEADACHEBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antiepi
@@ -434,7 +434,7 @@
 	value = 0x001
 	//block = 3
 	New()
-		block = HEADACHEBLOCK
+		block = GLOB.HEADACHEBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/anticough
@@ -444,7 +444,7 @@
 	value = 0x001
 	//block = 5
 	New()
-		block = COUGHBLOCK
+		block = GLOB.COUGHBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/coughmut
@@ -454,7 +454,7 @@
 	value = 0xFFF
 	//block = 5
 	New()
-		block = COUGHBLOCK
+		block = GLOB.COUGHBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/clumsymut
@@ -464,7 +464,7 @@
 	value = 0xFFF
 	//block = 6
 	New()
-		block = CLUMSYBLOCK
+		block = GLOB.CLUMSYBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/anticlumsy
@@ -474,7 +474,7 @@
 	value = 0x001
 	//block = 6
 	New()
-		block = CLUMSYBLOCK
+		block = GLOB.CLUMSYBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antitour
@@ -484,7 +484,7 @@
 	value = 0x001
 	//block = 7
 	New()
-		block = TWITCHBLOCK
+		block = GLOB.TWITCHBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/tourmut
@@ -494,7 +494,7 @@
 	value = 0xFFF
 	//block = 7
 	New()
-		block = TWITCHBLOCK
+		block = GLOB.TWITCHBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/stuttmut
@@ -504,7 +504,7 @@
 	value = 0xFFF
 	//block = 9
 	New()
-		block = NERVOUSBLOCK
+		block = GLOB.NERVOUSBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antistutt
@@ -514,7 +514,7 @@
 	value = 0x001
 	//block = 9
 	New()
-		block = NERVOUSBLOCK
+		block = GLOB.NERVOUSBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/blindmut
@@ -524,7 +524,7 @@
 	value = 0xFFF
 	//block = 11
 	New()
-		block = BLINDBLOCK
+		block = GLOB.BLINDBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antiblind
@@ -534,7 +534,7 @@
 	value = 0x001
 	//block = 11
 	New()
-		block = BLINDBLOCK
+		block = GLOB.BLINDBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/deafmut
@@ -544,7 +544,7 @@
 	value = 0xFFF
 	//block = 13
 	New()
-		block = DEAFBLOCK
+		block = GLOB.DEAFBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antideaf
@@ -554,7 +554,7 @@
 	value = 0x001
 	//block = 13
 	New()
-		block = DEAFBLOCK
+		block = GLOB.DEAFBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/hallucination
@@ -564,7 +564,7 @@
 	value = 0xFFF
 	//block = 2
 	New()
-		block = HALLUCINATIONBLOCK
+		block = GLOB.HALLUCINATIONBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/antihallucination
@@ -574,7 +574,7 @@
 	value = 0x001
 	//block = 2
 	New()
-		block = HALLUCINATIONBLOCK
+		block = GLOB.HALLUCINATIONBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/h2m
@@ -584,7 +584,7 @@
 	value = 0xFFF
 	//block = 14
 	New()
-		block = MONKEYBLOCK
+		block = GLOB.MONKEYBLOCK
 		..()
 
 /obj/item/weapon/dnainjector/m2h
@@ -594,5 +594,5 @@
 	value = 0x001
 	//block = 14
 	New()
-		block = MONKEYBLOCK
+		block = GLOB.MONKEYBLOCK
 		..()
