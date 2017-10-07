@@ -140,6 +140,7 @@
 	if(holder)
 		GLOB.admins += src
 		holder.owner = src
+		handle_staff_login()
 		var/sql_ckey = sanitizeSQL(src.ckey)
 		spawn for()
 			var/sum = 0
@@ -217,12 +218,29 @@
 
 	if(holder)
 		src.control_freak = 0 //Devs need 0 for profiler access
+
+/client/proc/handle_staff_login()
+	if(admin_datums[ckey] && ticker)
+		var/datum/admins/holder = admin_datums[ckey]
+		message_staff("[key_name(src)] ([holder.rank]) logged.")
+
+/client/proc/handle_staff_logout()
+	if(admin_datums[ckey] && ticker)
+		var/datum/admins/holder = admin_datums[ckey]
+		message_staff("[key_name(src)] ([holder.rank]) logout.")
+		if(!GLOB.admins.len) //Apparently the admin logging out is no longer an admin at this point, so we have to check this towards 0 and not towards 1. Awell.
+			send2adminirc("[key_name(src)] logged out - no more admins online.")
+			if(config.delist_when_no_admins && world.visibility)
+				world.visibility = FALSE
+				send2adminirc("Toggled hub visibility. The server is now invisible ([world.visibility]).")
+
 	//////////////
 	//DISCONNECT//
 	//////////////
 /client/Del()
 	ticket_panels -= src
 	if(holder)
+		handle_staff_logout()
 		holder.owner = null
 		GLOB.admins -= src
 	GLOB.ckey_directory -= ckey
