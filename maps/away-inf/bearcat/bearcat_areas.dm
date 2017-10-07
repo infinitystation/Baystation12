@@ -161,6 +161,10 @@
 	icon_state = "tcomsatcham"
 	ambience = list('sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/signal.ogg','sound/ambience/sonar.ogg')
 
+/area/ship/scrap/shuttle/outgoing
+  name = "\improper Exploration Shuttle"
+  icon_state = "tcomsatcham"
+
 /area/ship/scrap/shuttle/lift
   name = "\improper Cargo Lift"
   icon_state = "shuttle3"

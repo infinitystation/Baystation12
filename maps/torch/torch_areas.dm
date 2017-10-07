@@ -1348,6 +1348,12 @@
 	name = "\improper Alien Shuttle Base"
 	requires_power = 1
 
+/area/admin_prison
+	name = "\improper Admin Prison"
+	dynamic_lighting = 0
+	requires_power = 0
+
+
 // Shuttles
 /area/shuttle/administration/centcom
 	name = "\improper Administration Shuttle"
