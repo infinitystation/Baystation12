@@ -206,8 +206,6 @@
 #define RAD_LEVEL_HIGH 25
 #define RAD_LEVEL_VERY_HIGH 75
 
-#define RADIATION_THRESHOLD_CUTOFF 0.1	// Radiation will not affect a tile when below this value.
-
 #define ANNOUNSER_NAME "[station_name()] Automated Announcement System"
 
 #define DOOR_CRUSH_DAMAGE 15
@@ -215,3 +213,7 @@
 // Multimeter defines
 #define METER_MESURING "Измерение" // Measuring
 #define METER_CHECKING "Прозвонка" // Checking
+
+#define RADIATION_THRESHOLD_CUTOFF 0.1	// Radiation will not affect a tile when below this value.
+
+#define LEGACY_RECORD_STRUCTURE(X, Y) GLOBAL_LIST_EMPTY(##X);/datum/computer_file/data/##Y/var/list/fields[0];/datum/computer_file/data/##Y/New(){..();GLOB.##X.Add(src);}/datum/computer_file/data/##Y/Destroy(){..();GLOB.##X.Remove(src);}

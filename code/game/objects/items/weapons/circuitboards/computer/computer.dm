@@ -17,10 +17,6 @@
 	build_path = /obj/machinery/computer/borgupload
 	origin_tech = list(TECH_DATA = 4)
 
-/obj/item/weapon/circuitboard/med_data
-	name = T_BOARD("medical records console")
-	build_path = /obj/machinery/computer/med_data
-
 /obj/item/weapon/circuitboard/scan_consolenew
 	name = T_BOARD("DNA machine")
 	build_path = /obj/machinery/computer/scan_consolenew
@@ -30,14 +26,6 @@
 	name = T_BOARD("teleporter control console")
 	build_path = /obj/machinery/computer/teleporter
 	origin_tech = list(TECH_DATA = 2, TECH_BLUESPACE = 2)
-
-/obj/item/weapon/circuitboard/secure_data
-	name = T_BOARD("security records console")
-	build_path = /obj/machinery/computer/secure_data
-
-/obj/item/weapon/circuitboard/skills
-	name = T_BOARD("employment records console")
-	build_path = /obj/machinery/computer/skills
 
 /obj/item/weapon/circuitboard/atmos_alert
 	name = T_BOARD("atmospheric alert console")
