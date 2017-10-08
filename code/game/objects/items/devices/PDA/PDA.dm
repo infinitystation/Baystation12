@@ -876,7 +876,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 
 	overlays.Cut()
 	if(new_message || new_news)
-		overlays += image('icons/obj/pda.dmi', "pda-r")
+		overlays += image(icon, "pda-r")
 
 /obj/item/device/pda/proc/detonate_act(var/obj/item/device/pda/P)
 	//TODO: sometimes these attacks show up on the message server
@@ -1009,7 +1009,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 			if(M.stat == DEAD && M.is_preference_enabled(/datum/client_preference/ghost_ears)) // src.client is so that ghosts don't have to listen to mice
 				if(istype(M, /mob/new_player))
 					continue
-				M.show_message("<span class='game say'>PDA Message - <span class='name'>[owner]</span> -> <span class='name'>[P.owner]</span>: <span class='message'>[t]</span></span>")
+				M.show_message("<span class='game say'>[initial(name)] Message - <span class='name'>[owner]</span> -> <span class='name'>[P.owner]</span>: <span class='message'>[t]</span></span>")
 
 		if(!conversations.Find("\ref[P]"))
 			conversations.Add("\ref[P]")
@@ -1206,7 +1206,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 			return
 		if(!owner)
 			set_owner_rank_job(idcard.registered_name, idcard.rank, idcard.assignment)
-			name = "PDA-[owner] ([ownjob])"
+			name = "[initial(name)]-[owner] ([ownjob])"
 			to_chat(user, "<span class='notice'>Card scanned.</span>")
 		else
 			//Basic safety check. If either both objects are held by user or PDA is on ground and card is in hand.
@@ -1437,4 +1437,4 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	set_rank_job(rank, job)
 
 /obj/item/device/pda/proc/update_label()
-	name = "PDA-[owner] ([ownjob])"
+	name = "[initial(name)]-[owner] ([ownjob])"

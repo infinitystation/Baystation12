@@ -274,39 +274,39 @@
 	volume = 120
 */
 //Copypasta from beaker code
-/obj/item/weapon/reagent_containers/glass/juice_jug
-	name = "juice jug"
-	desc = "A juice jug, part of a grinder. You probably can hold here a compote!"
-	icon = 'icons/obj/kitchen.dmi'
-	icon_state = "blender_jug_e"
+/obj/item/weapon/reagent_containers/glass/jug
+	name = "jug"
+	desc = "A glass jug. You probably can hold here a compote!"
+	icon = 'icons/obj/kuvshin.dmi'
+	icon_state = "kuvshin"
 	volume = 100
 	matter = list("glass" = 500)
 	possible_transfer_amounts = "5;10;15;25;30;60;100"
 
-/obj/item/weapon/reagent_containers/glass/juice_jug/New()
+/obj/item/weapon/reagent_containers/glass/jug/New()
 	..()
 	desc += " Can hold up to [volume] units."
 
-/obj/item/weapon/reagent_containers/glass/juice_jug/on_reagent_change()
+/obj/item/weapon/reagent_containers/glass/jug/on_reagent_change()
 		update_icon()
 
-/obj/item/weapon/reagent_containers/glass/juice_jug/pickup(mob/user)
+/obj/item/weapon/reagent_containers/glass/jug/pickup(mob/user)
 		..()
 		update_icon()
 
-/obj/item/weapon/reagent_containers/glass/juice_jug/dropped(mob/user)
+/obj/item/weapon/reagent_containers/glass/jug/dropped(mob/user)
 		..()
 		update_icon()
 
-/obj/item/weapon/reagent_containers/glass/juice_jug/attack_hand()
+/obj/item/weapon/reagent_containers/glass/jug/attack_hand()
 		..()
 		update_icon()
 
-/obj/item/weapon/reagent_containers/glass/juice_jug/update_icon()
+/obj/item/weapon/reagent_containers/glass/jug/update_icon()
 	overlays.Cut()
 
 	if(reagents.total_volume)
-		var/image/filling = image('icons/obj/reagentfillings.dmi', src, "[icon_state]10")
+		var/image/filling = image(icon, src, "[icon_state]10")
 
 		var/percent = round((reagents.total_volume / volume) * 100)
 		switch(percent)
