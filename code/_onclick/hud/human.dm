@@ -255,6 +255,13 @@
 	mymob.noise1.mouse_opacity = 0
 	hud_elements |= mymob.noise1 */
 
+	mymob.fixeye = new /obj/screen()
+	mymob.fixeye.icon = 'icons/mob/screen/fixed_eye.dmi'
+	mymob.fixeye.icon_state = "fixeye"
+	mymob.fixeye.name = "fixeye"
+	mymob.fixeye.screen_loc = ui_fixeye
+	hud_elements |= mymob.fixeye
+
 	mymob.pain = new /obj/screen( null )
 
 	mymob.zone_sel = new /obj/screen/zone_sel( null )

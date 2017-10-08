@@ -8,6 +8,7 @@
 	item_state = "wc"
 	item_state_slots = list(slot_wear_id_str = "wc")
 	note = "Thank you for choosing the Kuiper Manufacturing Group Model III!" //Current note in the notepad function
+	f_color = COLOR_GREEN
 
 /obj/item/device/pda/wrist/attack_hand(var/mob/user)
 	if(loc == user)

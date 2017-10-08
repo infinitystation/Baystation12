@@ -170,5 +170,6 @@
 	var/has_limbs = 1
 	var/scrambling = 0
 
-	var/list/progressbars = null	//for stacking do_after bars
+	var/list/progressbars = null //for stacking do_after bars
 	var/obj/screen/noise1 = null
+	var/obj/screen/fixeye = null

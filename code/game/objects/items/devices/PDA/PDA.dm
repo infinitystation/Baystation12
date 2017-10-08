@@ -27,6 +27,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	var/scanmode = 0 //1 is medical scanner, 2 is forensics, 3 is reagent scanner.
 	var/fon = 0 //Is the flashlight function on?
 	var/f_lum = 2 //Luminosity for the flashlight function
+	var/f_color = COLOR_WHITE
 	var/message_silent = 0 //To beep or not to beep, that is the question
 	var/news_silent = 1 //To beep or not to beep, that is the question.  The answer is No.
 	var/toff = 0 //If 1, messenger disabled
@@ -645,7 +646,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 				set_light(0)
 			else
 				fon = 1
-				set_light(f_lum)
+				set_light(f_lum, l_color = f_color)
 		if("Medical Scan")
 			if(scanmode == 1)
 				scanmode = 0

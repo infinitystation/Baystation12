@@ -30,6 +30,7 @@
 #define ui_swaphand2 "CENTER:16,SOUTH+1:5"
 #define ui_storage1 "CENTER+1:16,SOUTH:5"
 #define ui_storage2 "CENTER+2:16,SOUTH:5"
+#define ui_fixeye "EAST-1:28, SOUTH+3:40"
 
 #define ui_alien_head "CENTER-3:12,SOUTH:5"		//aliens
 #define ui_alien_oclothing "CENTER-2:14,SOUTH:5"//aliens

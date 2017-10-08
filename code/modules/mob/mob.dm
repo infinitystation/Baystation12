@@ -518,7 +518,7 @@
 		onclose(usr, "[name]")
 	if(href_list["flavor_change"])
 		update_flavor_text()
-		
+
 //	..()
 	return
 
@@ -1007,18 +1007,14 @@ mob/proc/yank_out_object()
 /mob/update_icon()
 	return
 
-/mob/verb/face_direction()
-
-	set name = "Face Direction"
-	set category = "IC"
-	set src = usr
-
+/mob/proc/face_direction()
 	set_face_dir()
 
 	if(!facing_dir)
 		to_chat(usr, "You are now not facing anything.")
 	else
 		to_chat(usr, "You are now facing [dir2text(facing_dir)].")
+
 /mob/proc/set_face_dir(var/newdir)
 	if(!isnull(facing_dir) && newdir == facing_dir)
 		facing_dir = null
