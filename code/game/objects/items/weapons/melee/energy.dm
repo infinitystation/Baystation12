@@ -6,7 +6,7 @@
 	edge = 0
 	armor_penetration = 50
 	flags = NOBLOODY
-	damtype = "burn"
+	damtype = "fire"
 	hitsound = 'sound/weapons/blade1.ogg'
 
 /obj/item/weapon/melee/energy/proc/activate(mob/living/user)
