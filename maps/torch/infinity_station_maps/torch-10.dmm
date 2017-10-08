@@ -2643,8 +2643,6 @@
 "Dnv" = (/turf/simulated/floor/asteroid,/area/space)
 "Dnx" = (/obj/structure/sign/redcross,/turf/simulated/shuttle/wall{icon_state = "wall3"},/area/syndicate_station/start)
 "Dny" = (/obj/effect/floor_decal/corner/pink/diagonal,/turf/simulated/floor/tiled/white,/area/syndicate_station/start)
-"DnA" = (/obj/machinery/light/small{dir = 8},/turf/simulated/shuttle/wall{icon_state = "wall3"},/area/syndicate_mothership/elite_squad)
-"DnB" = (/obj/machinery/light/small{dir = 4},/turf/simulated/shuttle/wall{icon_state = "wall3"},/area/syndicate_mothership/elite_squad)
 "Dob" = (/obj/structure/flora/pottedplant/minitree,/turf/simulated/floor/shuttle/red,/area/skipjack_station/start)
 "Doc" = (/obj/structure/flora/pottedplant/unusual,/turf/simulated/floor/shuttle/red,/area/skipjack_station/start)
 "Doh" = (/obj/effect/floor_decal/corner/red{dir = 5},/obj/structure/holohoop,/turf/simulated/floor/holofloor/tiled,/area/admin_prison)

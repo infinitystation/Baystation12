@@ -1696,7 +1696,6 @@
 "Zy" = (/obj/structure/table/steel_reinforced,/obj/machinery/door/firedoor/border_only,/obj/machinery/door/window/brigdoor/eastleft{name = "Requisitions";req_access = list(41)},/obj/random/maintenance/solgov,/turf/simulated/floor/plating,/area/vacant/cargo)
 "Zz" = (/obj/machinery/door/airlock/external{frequency = 1379;icon_state = "door_locked";id_tag = "eng_eva_inner";locked = 1;name = "Engineering EVA Internal Access";req_access = list(13)},/obj/machinery/atmospherics/pipe/simple/hidden,/turf/simulated/floor/plating,/area/maintenance/seconddeck/aftport)
 "ZA" = (/obj/structure/cable/yellow{d1 = 1;d2 = 2;icon_state = "1-2"},/turf/simulated/floor/airless,/area/solar/port)
-"ZB" = (/obj/structure/sign/deck/second,/turf/simulated/wall/r_wall,/area/maintenance/seconddeck/forestarboard)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
