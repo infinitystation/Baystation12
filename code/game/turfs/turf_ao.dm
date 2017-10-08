@@ -1,4 +1,4 @@
-#define WALL_AO_ALPHA 150
+#define WALL_AO_ALPHA 100
 
 // This converts a regular dir into a icon_smoothing dir (which can represent all dirs in a single bitfield)
 // Index is dir, the order of these matters.
