@@ -164,7 +164,7 @@ steam.start() -- spawns the effect
 /obj/effect/effect/smoke
 	name = "smoke"
 	icon_state = "smoke"
-//	opacity = 1 //¿√¿, œ–ŒŸ¿…“≈ ◊®–Õ€≈ œﬂ“Õ¿ﬂ.
+	opacity = 1
 	anchored = 0.0
 	mouse_opacity = 0
 	var/amount = 6.0
@@ -178,6 +178,8 @@ steam.start() -- spawns the effect
 /obj/effect/effect/smoke/New()
 	..()
 	spawn (time_to_live)
+		set_opacity(0)
+		update_nearby_tiles()
 		qdel(src)
 
 /obj/effect/effect/smoke/Crossed(mob/living/carbon/M as mob )
