@@ -7,6 +7,7 @@ var/list/gamemode_cache = list()
 	var/nudge_script_path = "nudge.py"  // where the nudge.py script is located
 
 	var/ooc_during_round = 0
+	var/emojis = 0
 
 	var/log_ooc = 0						// log OOC channel
 	var/log_access = 0					// log login/logout
@@ -300,6 +301,9 @@ var/list/gamemode_cache = list()
 
 				if ("ooc_during_round")
 					ooc_during_round = 1
+
+				if("emojis")
+					config.emojis = 1
 
 				if ("log_ooc")
 					config.log_ooc = 1

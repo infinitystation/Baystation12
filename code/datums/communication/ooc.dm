@@ -42,6 +42,8 @@
 		if(target.is_key_ignored(C.key)) // If we're ignored by this person, then do nothing.
 			continue
 		var/sent_message = "[create_text_tag("ooc", "OOC:", target)] <EM>[C.key]:</EM> <span class='message'>[message]</span>"
+		if(holder)
+			sent_message = emoji_parse(sent_message)
 		if(can_badmin)
 			receive_communication(C, target, "<font color='[ooc_color]'><span class='ooc'>[sent_message]</font></span>")
 		else
