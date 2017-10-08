@@ -1,4 +1,4 @@
-################################
+п»ї################################
 # Example Changelog File
 #
 # Note: This file, and files beginning with ".", and files that don't end in ".yml" will not be read. If you change this file, you will look really dumb.
@@ -33,8 +33,8 @@ delete-after: True
 # Also, all entries are changed into a single [] after a master changelog generation. Just remove the brackets when you add new entries.
 # Please surround your changes in  double quotes ("), as certain characters otherwise screws up compiling. The quotes will not show up in the changelog.
 changes: 
-  - maptweak: "На лестничных пролетах и у лифтов было изменено расположение настенных обозначений палуб."
-  - maptweak: "Петров изменен в угоду симетрии."
-  - maptweak: "В комнату отдыха РНД добавлены затемненные стекла."
-  - maptweak: "В вирусологию перенесен анализатор антител."
-  - maptweak: "Мелкие улучшения."
+  - maptweak: "РќР° Р»РµСЃС‚РЅРёС‡РЅС‹С… РїСЂРѕР»РµС‚Р°С… Рё Сѓ Р»РёС„С‚РѕРІ Р±С‹Р»Рѕ РёР·РјРµРЅРµРЅРѕ СЂР°СЃРїРѕР»РѕР¶РµРЅРёРµ РЅР°СЃС‚РµРЅРЅС‹С… РѕР±РѕР·РЅР°С‡РµРЅРёР№ РїР°Р»СѓР±."
+  - maptweak: "РџРµС‚СЂРѕРІ РёР·РјРµРЅРµРЅ РІ СѓРіРѕРґСѓ СЃРёРјРµС‚СЂРёРё."
+  - maptweak: "Р’ РєРѕРјРЅР°С‚Сѓ РѕС‚РґС‹С…Р° Р РќР” РґРѕР±Р°РІР»РµРЅС‹ Р·Р°С‚РµРјРЅРµРЅРЅС‹Рµ СЃС‚РµРєР»Р°."
+  - maptweak: "Р’ РІРёСЂСѓСЃРѕР»РѕРіРёСЋ РїРµСЂРµРЅРµСЃРµРЅ Р°РЅР°Р»РёР·Р°С‚РѕСЂ Р°РЅС‚РёС‚РµР»."
+  - maptweak: "РњРµР»РєРёРµ СѓР»СѓС‡С€РµРЅРёСЏ."
