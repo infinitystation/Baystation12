@@ -59,8 +59,9 @@
 
 /obj/structure/largecrate/animal/New()
 	..()
-	for(var/i = 1;i<=held_count;i++)
-		new held_type(src)
+	if(held_type)
+		for(var/i = 1;i<=held_count;i++)
+			new held_type(src)
 
 /obj/structure/largecrate/animal/mulebot
 	name = "Mulebot crate"
