@@ -30,3 +30,4 @@ GLOBAL_LIST_INIT(cww_dir, list( // cww_dir[dir] = counter-clockwise rotation of 
 	32, 40, 36, 44, 33, 41, 37, 45, 34, 42, 38, 46, 35, 43, 39, 47, // DOWN - Same as first line but +32
 	48, 56, 52, 60, 49, 57, 53, 61, 50, 58, 54, 62, 51, 59, 55, 63  // UP+DOWN - Same as first line but +48
 ))
+GLOBAL_LIST_INIT(ao_cornerdirs, list(NORTHWEST, SOUTHEAST, NORTHEAST, SOUTHWEST))

@@ -26,6 +26,7 @@
 		if(istype(below) && !istype(below,/turf/space))
 			N = below.density ? /turf/simulated/floor/airless : /turf/simulated/open
 
+	var/old_ao_neighbors = ao_neighbors
 	var/obj/fire/old_fire = fire
 	var/old_opacity = opacity
 	var/old_dynamic_lighting = dynamic_lighting
@@ -69,6 +70,7 @@
 
 	W.post_change()
 	. = W
+	W.ao_neighbors = old_ao_neighbors
 
 	if(lighting_overlays_initialised)
 		lighting_overlay = old_lighting_overlay

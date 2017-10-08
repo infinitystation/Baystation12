@@ -27,6 +27,11 @@
 
 	var/movement_delay
 
+/turf/Initialize()
+	. = ..()
+	update_icon(1)
+	regenerate_ao()
+
 /turf/New()
 	..()
 	for(var/atom/movable/AM as mob|obj in src)
