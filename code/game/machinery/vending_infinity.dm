@@ -98,3 +98,30 @@
 					/obj/item/weapon/reagent_containers/ecig_cartridge/grape = 5)
 	contraband = list(/obj/item/weapon/flame/lighter/zippo = 2)
 	premium = list(/obj/item/weapon/storage/fancy/cigar = 5,/obj/item/weapon/storage/fancy/cigarettes/killthroat = 5)
+
+// From Old-World-Blues
+/obj/machinery/vending/thundervend
+	name = "Violence-o-Mate"
+	desc = "That's a guns and ammo vendor."
+	icon = 'icons/obj/thundervend.dmi'
+	density = 0
+	ads_list = list(
+		"ULTRAVIOLENCE!",
+		"Do you like to hurt other people, mate?",
+		"You're not a nice person!",
+		"Get a goddamn gun and take them out!",
+		"Why did you come back here?"
+	)
+	icon_state = "thundervendor"
+	products = list(
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/combatpain = 60,
+		/obj/item/weapon/material/hatchet/tacknife = 30,
+		/obj/item/weapon/gun/projectile/automatic/sts35 = 10,
+		/obj/item/weapon/grenade/chem_grenade/metalfoam = 20,
+		/obj/item/weapon/grenade/chem_grenade/cleaner = 30,
+		/obj/item/weapon/gun/energy = 10,
+		/obj/item/weapon/grenade/flashbang = 20,
+		/obj/item/ammo_magazine/c762 = 30,
+	)
+	vend_delay = 10
+	density = 1
