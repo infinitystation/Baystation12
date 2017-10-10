@@ -1,6 +1,6 @@
 //Lallander was here
 /mob/living/carbon/human/whisper(message as text)
-	message = sanitize(message)
+//	message = sanitize(message)
 
 	if (src.client)
 		if (src.client.prefs.muted & MUTE_IC)
