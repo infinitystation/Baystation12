@@ -3,57 +3,107 @@
 	name = "cryogenic spawner"
 	desc = "A man-sized pod for entering suspended animation."
 	icon = 'icons/obj/Cryogenic2.dmi'
-	icon_state = "body_scanner_0"
-	dir = WEST
+	icon_state = "body_scanner_1"
 	density = 1
 	anchored = 1
-	var/player_spawn = 0
+	var/use_left = 1
+	var/list/rights_required
+	var/list/species_can_only_use
 
-/obj/cryo_spawner/attack_ghost(mob/observer/ghost/user as mob)
+	/* todo
+	var/uniform
+	var/shoes
+	var/gloves
+	var/suit
+	var/r_store
+	var/l_store
+	var/back
+	var/ear
+	*/
 
-	if(!ticker || ticker.current_state!=GAME_STATE_PLAYING)
-		alert("Noway, bugogosse")
-		return 0
+/obj/cryo_spawner/attack_ghost(mob/user)
+	var/client/C = user.client
+
+	if(!ticker || ticker.current_state != GAME_STATE_PLAYING)
+		return
+
+	if(rights_required)
+		if(!check_rights(rights_required, TRUE, C))
+			return
+
+	if(use_left == 0)
+		to_chat(user, "<span class='notice'>Sorry, exceeded usage limit.</span>")
+		return
+
+	if(species_can_only_use)
+		if(!(C.prefs.species in species_can_only_use))
+			to_chat(user, "<span class='warning'>Sorry, your current species is restructing to spawn.</span>")
+			return
+
+	if(alert("Would you like to spawn?",,"Yes","No") == "No") return
+
+	// Все проверки пройдены, начинаем подготавливать игрока к созданию его/её тела
+	spawn_procedure(C)
+
+/obj/cryo_spawner/proc/spawn_procedure(client/C)
+	if(!C) return
+
+	var/is_admin
+	if(check_rights(R_ADMIN, 0, C))
+		is_admin = 1
 
 	var/mob/living/carbon/human/new_character
-	if(!user) return
-	var/is_admin = check_rights(show_msg = player_spawn)
 
-	if((!is_admin && !player_spawn) || alert("Would you like to spawn?",,"Yes","No") == "No") return
-
-	if(!is_admin)
-		if(player_spawn> 0)
-			player_spawn -= 1
-
-	if(!user) return
-	var/client/client = user.client
-
-	if(client.prefs.species)
-		new_character = new(loc, client.prefs.species)
+	if(C.prefs.species)
+		new_character = new(loc, C.prefs.species)
 
 	if(!new_character)
 		new_character = new(loc)
 
 	new_character.lastarea = get_area(loc)
 
-	client.prefs.copy_to(new_character)
+	C.prefs.copy_to(new_character)
 
-	new_character.name = client.prefs.real_name
+	new_character.name = C.prefs.real_name
 	new_character.dna.ready_dna(new_character)
-	new_character.dna.b_type = client.prefs.b_type
+	new_character.dna.b_type = C.prefs.b_type
 
 	// Do the initial caching of the player's body icons.
 	new_character.force_update_limbs()
 	new_character.update_eyes()
 	new_character.regenerate_icons()
 
-	new_character.key = user.key
+	new_character.key = C.key
+
+	if(use_left >= 0)
+		use_left--
+
+	update_icon()
 
 	log_game("[key_name(new_character)] have been spawned with [name]", src, 0)
 	equip_character(new_character, is_admin)
 
+/obj/cryo_spawner/proc/equip_character(mob/living/carbon/human/H, is_admin = 0)
+	return
 
-/obj/cryo_spawner/proc/equip_character(mob/living/carbon/human/H, is_admin=0)
+obj/cryo_spawner/update_icon()
+	icon_state = "body_scanner_0"
+	sleep(10)
+	icon_state = initial(icon_state)
+
+/obj/cryo_spawner/civilian
+	name = "civilian cryogenic spawner"
+
+/obj/cryo_spawner/civilian/equip_character(mob/living/carbon/human/H, is_admin)
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/color/black(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes(H), slot_shoes)
+
+/obj/cryo_spawner/central_command
+	name = "central command cryogenic spawner"
+	rights_required = list(R_SPAWN)
+	species_can_only_use = list(SPECIES_HUMAN)
+
+/obj/cryo_spawner/central_command/equip_character(mob/living/carbon/human/H, is_admin)
 	if(is_admin)
 		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/centcom_captain(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/laceup(H), slot_shoes)
@@ -86,12 +136,14 @@
 		W.registered_name = H.real_name
 		H.equip_to_slot_or_del(W, slot_wear_id)
 
+/obj/cryo_spawner/thunderdome
+	use_left = -1
+	species_can_only_use = list(SPECIES_HUMAN)
 
-/obj/cryo_spawner/thunderred
+/obj/cryo_spawner/thunderdome/red_team
 	name = "thunderdome spawner (RED)"
-	player_spawn = -1
 
-/obj/cryo_spawner/thunderred/equip_character(mob/living/carbon/human/H, is_admin)
+/obj/cryo_spawner/thunderdome/red_team/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/color/red(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/thick/combat(H), slot_gloves)
@@ -107,12 +159,10 @@
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 
-/obj/cryo_spawner/thunderblue
+/obj/cryo_spawner/thunderdome/blue_team
 	name = "thunderdome spawner (BLUE)"
-	dir = EAST
-	player_spawn = -1
 
-/obj/cryo_spawner/thunderblue/equip_character(mob/living/carbon/human/H, is_admin)
+/obj/cryo_spawner/thunderdome/blue_team/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/color/blue(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/thick/combat(H), slot_gloves)
