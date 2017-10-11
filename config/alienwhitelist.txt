@@ -12,6 +12,8 @@ lukecage - skrell
 kirill1243 - skrell
 vankoska - skrell
 inubashirimomiji - skrell	
+themaybat - skrell
+salyvador - skrell
 rucat - machine
 kosteg - machine
 netreson - machine
@@ -22,7 +24,6 @@ kotovsyndrome - machine
 wheatley2013 - machine
 parasoul - machine
 nikita588 - machine
-themaybat - skrell
 themaybat - resomi
 kirill1243 - resomi
 cre77 - resomi
