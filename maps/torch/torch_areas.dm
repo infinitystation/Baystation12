@@ -1524,6 +1524,10 @@
 	name = "\improper Thunderdome (Admin.)"
 	icon_state = "purple"
 
+/area/tdome/testing
+	name = "\improper Thunderdome (TESTING AREA)"
+	icon_state = "purple"
+
 /area/tdome/tdomeobserve
 	name = "\improper Thunderdome (Observer.)"
 	icon_state = "purple"
