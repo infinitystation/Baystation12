@@ -195,6 +195,23 @@
 		reagents.add_reagent(/datum/reagent/cryoxadone, 30)
 		update_icon()
 
+/obj/item/weapon/reagent_containers/glass/beaker/large/cryolife //extreme powerfull beaker for cryo
+	New()
+		..()
+		reagents.add_reagent(/datum/reagent/inaprovaline, 10)
+		reagents.add_reagent(/datum/reagent/iron, 10)
+		reagents.add_reagent(/datum/reagent/peridaxon, 10)
+		reagents.add_reagent(/datum/reagent/tramadol, 10)
+		reagents.add_reagent(/datum/reagent/tricordrazine, 10)
+		reagents.add_reagent(/datum/reagent/dexalinp, 10)
+		reagents.add_reagent(/datum/reagent/dylovene, 10)
+		reagents.add_reagent(/datum/reagent/hyronalin, 10)
+		reagents.add_reagent(/datum/reagent/cryoxadone, 10)
+		reagents.add_reagent(/datum/reagent/clonexadone, 10)
+		reagents.add_reagent(/datum/reagent/kelotane, 10)
+		reagents.add_reagent(/datum/reagent/bicaridine, 10)
+		update_icon()
+
 /obj/item/weapon/reagent_containers/glass/beaker/sulphuric
 	New()
 		..()
