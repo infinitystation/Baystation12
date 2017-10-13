@@ -563,6 +563,7 @@ var/list/worths = list(
 					/obj/item/weedkiller = 30,
 					/obj/item/sign/medipolma = 1500,
 					/obj/item = 5,
+					/obj/item/documents = -10000,
 //STRUCTURES,
 					/obj/structure/dogbed = 15,
 					/obj/structure/ore_box = 12,

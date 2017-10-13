@@ -431,6 +431,7 @@ datum/objective/steal
 		"a head of personnel's jumpsuit" = /obj/item/clothing/under/rank/head_of_personnel,
 		"the hypospray" = /obj/item/weapon/reagent_containers/hypospray,
 		"the captain's pinpointer" = /obj/item/weapon/pinpointer,
+		"the secret documents of SEV 'Torch'" = /obj/item/documents,
 		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
 	)
 
