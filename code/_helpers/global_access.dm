@@ -53,6 +53,8 @@
 			return global.SSmachines;
 		if("SSmobs")
 			return global.SSmobs;
+		if("SSvines")
+			return global.SSvines;
 		if("SSobj")
 			return global.SSobj;
 		if("SSopen_space")
@@ -1170,6 +1172,8 @@
 			global.SSmachines=newval;
 		if("SSmobs")
 			global.SSmobs=newval;
+		if("SSvines")
+			global.SSvines=newval;
 		if("SSobj")
 			global.SSobj=newval;
 		if("SSopen_space")
@@ -2260,6 +2264,7 @@
 	"SSlegacy",
 	"SSmachines",
 	"SSmobs",
+	"SSvines",
 	"SSobj",
 	"SSopen_space",
 	"SSprocessing",

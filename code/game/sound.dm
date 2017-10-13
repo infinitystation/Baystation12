@@ -64,7 +64,7 @@ var/list/snowsteps = list('sound/effects/footsteps/snow/snowstep1.ogg','sound/ef
 
 var/list/gun_sound = list('sound/weapons/gunshot.ogg', 'sound/weapons/gunshot2.ogg', 'sound/weapons/gunshot3.ogg', 'sound/weapons/gunshot4.ogg')
 
-/proc/playsound(var/atom/source, soundin, vol as num, vary, extrarange as num, falloff, var/is_global, var/frequency)
+/proc/playsound(var/atom/source, soundin, vol as num, vary, extrarange as num, falloff, var/is_global, var/frequency, var/is_ambiance = 0)
 
 	soundin = get_sfx(soundin) // same sound for everyone
 
@@ -82,7 +82,7 @@ var/list/gun_sound = list('sound/weapons/gunshot.ogg', 'sound/weapons/gunshot2.o
 			continue
 		if(get_dist(M, turf_source) <= (world.view + extrarange) * 2)
 			var/turf/T = get_turf(M)
-			if(T && T.z == turf_source.z)
+			if(T && T.z == turf_source.z && (!is_ambiance || M.is_preference_enabled(/datum/client_preference/play_ambiance)))
 				M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, is_global)
 
 var/const/FALLOFF_SOUNDS = 0.5
