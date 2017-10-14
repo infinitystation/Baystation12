@@ -56,6 +56,8 @@ var/list/integrated_circuit_blacklist = list(/obj/item/integrated_circuit, /obj/
 		qdel(O)
 		metal = min(metal+1,maxMetal)
 		return 1
+	if(default_part_replacement(user, O))
+		return
 	return ..()
 
 /obj/machinery/integrated_circuit_printer/attack_hand(var/mob/user)
