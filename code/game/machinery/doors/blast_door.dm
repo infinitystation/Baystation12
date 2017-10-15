@@ -225,3 +225,10 @@
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
 	for(var/obj/mecha/M in get_turf(src))
 		M.take_damage(DOOR_CRUSH_DAMAGE)
+
+//הכÿ באחû ֵ׀ׂ
+/obj/machinery/door/blast/regular/admin/ex_act()
+	return
+
+/obj/machinery/door/blast/regular/admin/emp_act()
+	return
