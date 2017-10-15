@@ -232,3 +232,9 @@
 
 /obj/machinery/door/blast/regular/admin/emp_act()
 	return
+
+/obj/machinery/door/blast/regular/admin/emag_act()
+	return
+
+/obj/machinery/door/blast/regular/admin/take_damage()
+	return
