@@ -133,7 +133,6 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	var/list/eng = new()
 	var/list/med = new()
 	var/list/sci = new()
-	var/list/car = new()
 	var/list/civ = new()
 	var/list/bot = new()
 	var/list/misc = new()
@@ -179,41 +178,43 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 			isactive[name] = CR.GetStatus()
 
 			//cael - to prevent multiple appearances of a player/job combination, add a continue after each line
+		var/datum/job/job = job_master.occupations_by_title[rank]
+		if(!job)
+			misc[name] = rank
+			continue
+
 		var/department = 0
-		if(rank in GLOB.command_positions)
+		if(job.department_flag & COM)
 			heads[name] = rank
 			department = 1
-		if(rank in GLOB.support_positions)
+		if(job.department_flag & SPT)
 			spt[name] = rank
 			department = 1
-		if(rank in GLOB.security_positions)
+		if(job.department_flag & SEC)
 			sec[name] = rank
 			department = 1
-		if(rank in GLOB.engineering_positions)
+		if(job.department_flag & ENG)
 			eng[name] = rank
 			department = 1
-		if(rank in GLOB.medical_positions)
+		if(job.department_flag & MED)
 			med[name] = rank
 			department = 1
-		if(rank in GLOB.science_positions)
+		if(job.department_flag & SCI)
 			sci[name] = rank
 			department = 1
-		if(rank in GLOB.cargo_positions)
-			car[name] = rank
-			department = 1
-		if(rank in GLOB.civilian_positions)
-			civ[name] = rank
-			department = 1
-		if(rank in GLOB.service_positions)
-			srv[name] = rank
-			department = 1
-		if(rank in GLOB.supply_positions)
-			sup[name] = rank
-			department = 1
-		if(rank in GLOB.exploration_positions)
+		if(job.department_flag & EXP)
 			exp[name] = rank
 			department = 1
-		if(!department && !(name in heads))
+		if(job.department_flag & CIV)
+			civ[name] = rank
+			department = 1
+		if(job.department_flag & SRV)
+			srv[name] = rank
+			department = 1
+		if(job.department_flag & SUP)
+			sup[name] = rank
+			department = 1
+		if((job.department_flag & MSC) || (!department && !(name in heads)))
 			misc[name] = rank
 
 	// Synthetics don't have actual records, so we will pull them from here.
@@ -238,56 +239,50 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 		for(var/name in spt)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[spt[name]]</td><td>[isactive[name]]</td></tr>"
 			even = !even
+	if(sci.len > 0)
+		dat += "<tr><th colspan=3>Research</th></tr>"
+		for(var/name in sci)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[sci[name]]</td><td>[isactive[name]]</td></tr>"
+			even = !even
 	if(sec.len > 0)
 		dat += "<tr><th colspan=3>Security</th></tr>"
 		for(var/name in sec)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[sec[name]]</td><td>[isactive[name]]</td></tr>"
-			even = !even
-	if(eng.len > 0)
-		dat += "<tr><th colspan=3>Engineering</th></tr>"
-		for(var/name in eng)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[eng[name]]</td><td>[isactive[name]]</td></tr>"
 			even = !even
 	if(med.len > 0)
 		dat += "<tr><th colspan=3>Medical</th></tr>"
 		for(var/name in med)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[med[name]]</td><td>[isactive[name]]</td></tr>"
 			even = !even
-	if(sci.len > 0)
-		dat += "<tr><th colspan=3>Research</th></tr>"
-		for(var/name in sci)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[sci[name]]</td><td>[isactive[name]]</td></tr>"
+	if(eng.len > 0)
+		dat += "<tr><th colspan=3>Engineering</th></tr>"
+		for(var/name in eng)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[eng[name]]</td><td>[isactive[name]]</td></tr>"
 			even = !even
 	if(sup.len > 0)
 		dat += "<tr><th colspan=3>Supply</th></tr>"
 		for(var/name in sup)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[sup[name]]</td><td>[isactive[name]]</td></tr>"
 			even = !even
-	if(srv.len > 0)
-		dat += "<tr><th colspan=3>Service</th></tr>"
-		for(var/name in srv)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[srv[name]]</td><td>[isactive[name]]</td></tr>"
-			even = !even
-	if(car.len > 0)
-		dat += "<tr><th colspan=3>Cargo</th></tr>"
-		for(var/name in car)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[car[name]]</td><td>[isactive[name]]</td></tr>"
-			even = !even
-	if(civ.len > 0)
-		dat += "<tr><th colspan=3>Civilian</th></tr>"
-		for(var/name in civ)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[civ[name]]</td><td>[isactive[name]]</td></tr>"
-			even = !even
 	if(exp.len > 0)
 		dat += "<tr><th colspan=3>Exploration</th></tr>"
 		for(var/name in exp)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[exp[name]]</td><td>[isactive[name]]</td></tr>"
 			even = !even
-	// in case somebody is insane and added them to the manifest, why not
+	if(srv.len > 0)
+		dat += "<tr><th colspan=3>Service</th></tr>"
+		for(var/name in srv)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[srv[name]]</td><td>[isactive[name]]</td></tr>"
+			even = !even
 	if(bot.len > 0)
 		dat += "<tr><th colspan=3>Silicon</th></tr>"
 		for(var/name in bot)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[bot[name]]</td><td>[isactive[name]]</td></tr>"
+			even = !even
+	if(civ.len > 0)
+		dat += "<tr><th colspan=3>Civilian</th></tr>"
+		for(var/name in civ)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[mil_ranks[name]][name]</td><td>[civ[name]]</td><td>[isactive[name]]</td></tr>"
 			even = !even
 	// misc guys
 	if(misc.len > 0)
@@ -326,10 +321,10 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	for(var/datum/computer_file/crew_record/CR in department_crew_manifest(filter, blacklist))
 		filtered_entries.Add(list(list(
 			"name" = CR.GetName(),
-			"rank" = CR.GetRank(),
+			"rank" = CR.GetPosition(),
 			"status" = CR.GetStatus(),
 			"branch" = CR.GetBranch(),
-			"rank" = CR.GetRank()
+			"milrank" = CR.GetRank()
 		)))
 	return filtered_entries
 
@@ -337,17 +332,16 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	return list(\
 		"heads" = filtered_nano_crew_manifest(GLOB.command_positions),\
 		"spt" = filtered_nano_crew_manifest(GLOB.support_positions),\
+		"sci" = filtered_nano_crew_manifest(GLOB.science_positions),\
 		"sec" = filtered_nano_crew_manifest(GLOB.security_positions),\
 		"eng" = filtered_nano_crew_manifest(GLOB.engineering_positions),\
 		"med" = filtered_nano_crew_manifest(GLOB.medical_positions),\
-		"sci" = filtered_nano_crew_manifest(GLOB.science_positions),\
-		"car" = filtered_nano_crew_manifest(GLOB.cargo_positions),\
 		"sup" = filtered_nano_crew_manifest(GLOB.supply_positions),\
-		"srv" = filtered_nano_crew_manifest(GLOB.service_positions),\
-		"civ" = filtered_nano_crew_manifest(GLOB.civilian_positions),\
 		"exp" = filtered_nano_crew_manifest(GLOB.exploration_positions),\
-		"bot" = silicon_nano_crew_manifest(GLOB.cargo_positions),\
-		"misc" = filtered_nano_crew_manifest(GLOB.cargo_positions)\
+		"srv" = filtered_nano_crew_manifest(GLOB.service_positions),\
+		"bot" = silicon_nano_crew_manifest(GLOB.nonhuman_positions),\
+		"civ" = filtered_nano_crew_manifest(GLOB.civilian_positions),\
+		"misc" = filtered_nano_crew_manifest(GLOB.unsorted_positions)\
 		)
 
 /proc/get_crewmember_record(var/name)

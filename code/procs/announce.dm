@@ -128,7 +128,7 @@ datum/announcement/proc/Log(message as text, message_title as text)
 
 	if(job.department_flag & (COM | CIV | MSC))
 		return "Common"
-	if(job.department_flag & (SUP | CRG))
+	if(job.department_flag & SUP)
 		return "Supply"
 	if(job.department_flag & SPT)
 		return "Command"

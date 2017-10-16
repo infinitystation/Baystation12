@@ -227,3 +227,8 @@
 	icon_state = "rschair_preview"
 	base_icon = "rschair"
 	material_alteration = MATERIAL_ALTERATION_NONE
+
+/obj/structure/bed/chair/bogani
+	desc = "A strange chair, not from around here."
+	base_icon = "bogchair"
+	icon_state = "bogchair_preview"

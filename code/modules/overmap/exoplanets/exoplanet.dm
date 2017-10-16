@@ -20,6 +20,9 @@
 	var/repopulating = 0
 	var/repopulate_types = list() // animals which have died that may come back
 
+	var/max_features = 2
+	var/list/possible_features //pre-defined list of features to pick from, will use all types otherwise
+
 
 /obj/effect/overmap/sector/exoplanet/New()
 	if(!GLOB.using_map.use_overmap)
@@ -43,20 +46,20 @@
 	spawn()
 		generate_atmosphere()
 		generate_map()
+		generate_features()
 		generate_landing()
 		update_biome()
 		START_PROCESSING(SSobj, src)
 
 //attempt at more consistent history generation for xenoarch finds.
 /obj/effect/overmap/sector/exoplanet/proc/get_engravings()
-	if(!actors)
-		actors += pick("alien humanoid","amorphic blob","short, hairy being","rodent-like creature","robot","primate","reptilian alien","unidentifiable object","statue","starship","unusual devices","structure")
+	if(!actors.len)
+		actors += pick("alien humanoid","an amorphic blob","a short, hairy being","a rodent-like creature","a robot","a primate","a reptilian alien","an unidentifiable object","a statue","a starship","unusual devices","a structure")
 		actors += pick("alien humanoids","amorphic blobs","short, hairy beings","rodent-like creatures","robots","primates","reptilian aliens")
 
-	var/engravings = "[pick("Engraved","Carved","Etched")] on the item is [pick("an image of","a frieze of","a depiction of")] a \
-	[pick(actors[1])] \
+	var/engravings = "[actors[1]] \
 	[pick("surrounded by","being held aloft by","being struck by","being examined by","communicating with")] \
-	[pick(actors[2])]"
+	[actors[2]]"
 	if(prob(50))
 		engravings += ", [pick("they seem to be enjoying themselves","they seem extremely angry","they look pensive","they are making gestures of supplication","the scene is one of subtle horror","the scene conveys a sense of desperation","the scene is completely bizarre")]"
 	engravings += "."
@@ -106,6 +109,30 @@
 	repopulate_types |= M.type
 
 /obj/effect/overmap/sector/exoplanet/proc/generate_map()
+
+/obj/effect/overmap/sector/exoplanet/proc/generate_features()
+	if(!possible_features)
+		possible_features = subtypesof(/datum/random_map/feature)
+	for(var/F in possible_features)
+		var/datum/random_map/feature/FT = F
+		if(initial(FT.unique) && map_count[initial(FT.descriptor)])
+			possible_features -= F
+		if(initial(FT.limit_x) + 2 * TRANSITIONEDGE > world.maxx)
+			possible_features -= F
+		if(initial(FT.limit_y) + 2 * TRANSITIONEDGE > world.maxy)
+			possible_features -= F
+
+	max_features = rand(0,max_features)
+	for(var/zlevel in map_z)
+		for(var/i = 1 to max_features)
+			if(!possible_features.len)
+				return
+			var/datum/random_map/feature/F = pick(possible_features)
+			var/tx = rand(TRANSITIONEDGE, world.maxx - TRANSITIONEDGE - initial(F.limit_x))
+			var/ty = rand(TRANSITIONEDGE, world.maxy - TRANSITIONEDGE - initial(F.limit_y))
+			var/turf/T = locate(tx,ty,zlevel)
+			if(T)
+				F = new F(null,tx,ty,zlevel)
 
 /obj/effect/overmap/sector/exoplanet/proc/get_biostuff(var/datum/random_map/noise/exoplanet/random_map)
 	seeds += random_map.small_flora_types
@@ -250,6 +277,9 @@
 	var/land_type = /turf/simulated/floor
 	var/water_type
 
+	//intended x*y size, used to adjust spawn probs
+	var/intended_x = 150
+	var/intended_y = 150
 	var/large_flora_prob = 60
 	var/flora_prob = 60
 	var/fauna_prob = 2
@@ -265,6 +295,12 @@
 	planetary_area = new planetary_area()
 	water_level = rand(water_level_min,water_level_max)
 	generate_flora()
+
+	//automagically adjust probs for bigger maps to help with lag
+	var/size_mod = intended_x / world.maxx * intended_y / world.maxy
+	flora_prob *= size_mod
+	large_flora_prob *= size_mod
+	fauna_prob *= size_mod
 	..()
 
 /datum/random_map/noise/exoplanet/proc/noise2value(var/value)
@@ -319,21 +355,28 @@
 		else if(carnivore_prob < 20)
 			S.set_trait(TRAIT_CARNIVOROUS,1)
 		small_flora_types += S
-	for(var/i = 1 to flora_diversity)
-		var/datum/seed/S = new()
-		S.randomize()
-		S.set_trait(TRAIT_PRODUCT_ICON,"alien[rand(1,5)]")
-		S.set_trait(TRAIT_PLANT_ICON,"tree5")
-		S.set_trait(TRAIT_SPREAD,0)
-		S.set_trait(TRAIT_HARVEST_REPEAT,1)
-		S.chems["woodpulp"] = 1
-		big_flora_types += S
+	if(large_flora_prob)
+		var/tree_diversity = max(1,flora_diversity/2)
+		for(var/i = 1 to tree_diversity)
+			var/datum/seed/S = new()
+			S.randomize()
+			S.set_trait(TRAIT_PRODUCT_ICON,"alien[rand(1,5)]")
+			S.set_trait(TRAIT_PLANT_ICON,"tree")
+			S.set_trait(TRAIT_SPREAD,0)
+			S.set_trait(TRAIT_HARVEST_REPEAT,1)
+			S.set_trait(TRAIT_LARGE,1)
+			var/color = pick(plantcolors)
+			if(color == "RANDOM")
+				color = get_random_colour(0,75,190)
+			S.set_trait(TRAIT_LEAVES_COLOUR,color)
+			S.chems["woodpulp"] = 1
+			big_flora_types += S
 
 /datum/random_map/noise/exoplanet/proc/spawn_flora(var/turf/T, var/big)
 	if(big)
-		new /obj/effect/vine(T, pick(big_flora_types), start_matured = 1)
+		new /obj/machinery/portable_atmospherics/hydroponics/soil/invisible(T, pick(big_flora_types), 1)
 	else
-		new /obj/effect/vine(T, pick(small_flora_types), start_matured = 1)
+		new /obj/machinery/portable_atmospherics/hydroponics/soil/invisible(T, pick(small_flora_types), 1)
 
 /turf/simulated/floor/exoplanet
 	name = "space land"

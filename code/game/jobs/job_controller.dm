@@ -31,6 +31,8 @@ var/global/datum/controller/occupations/job_master
 			occupations += job
 			occupations_by_type[job.type] = job
 			occupations_by_title[job.title] = job
+			for(var/alt_title in job.alt_titles)
+				occupations_by_title[alt_title] = job
 			if(!setup_titles) continue
 			if(job.department_flag & COM)
 				GLOB.command_positions |= job.title
@@ -50,8 +52,6 @@ var/global/datum/controller/occupations/job_master
 				GLOB.supply_positions |= job.title
 			if(job.department_flag & SRV)
 				GLOB.service_positions |= job.title
-			if(job.department_flag & CRG)
-				GLOB.cargo_positions |= job.title
 			if(job.department_flag & CIV)
 				GLOB.civilian_positions |= job.title
 			if(job.department_flag & MSC)
