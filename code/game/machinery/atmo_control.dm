@@ -524,5 +524,74 @@ Rate: [volume_rate] L/sec<BR>"}
 		radio_connection.post_signal(src, signal, filter = RADIO_ATMOSIA)
 
 
+/obj/machinery/air_sensor/nacelle
+	output = 15
+
+/obj/machinery/air_sensor/nacelle/first
+	id_tag = "ReacEng1"
+	output = 63
+
+/obj/machinery/air_sensor/nacelle/first/plasma
+	id_tag = "ReacEngPlasma1"
+	output = 15
+
+/obj/machinery/air_sensor/nacelle/first/oxygen
+	id_tag = "ReacEngOxygen1"
+	output = 15
+
+/obj/machinery/air_sensor/nacelle/second
+	id_tag = "ReacEng2"
+	output = 63
+
+/obj/machinery/air_sensor/nacelle/second/plasma
+	id_tag = "ReacEngPlasma2"
+	output = 15
+
+/obj/machinery/air_sensor/nacelle/second/oxygen
+	id_tag = "ReacEngOxygen2"
+	output = 15
+
+/obj/machinery/air_sensor/nacelle/third
+	id_tag = "ReacEng3"
+	output = 63
+
+/obj/machinery/air_sensor/nacelle/third/plasma
+	id_tag = "ReacEngPlasma3"
+	output = 15
+
+/obj/machinery/air_sensor/nacelle/third/oxygen
+	id_tag = "ReacEngOxygen3"
+	output = 15
+
+/obj/machinery/air_sensor/nacelle/fourth
+	id_tag = "ReacEng4"
+	output = 63
+
+/obj/machinery/air_sensor/nacelle/fourth/plasma
+	id_tag = "ReacEngPlasma4"
+	output = 15
+
+/obj/machinery/air_sensor/nacelle/fourth/oxygen
+	id_tag = "ReacEngOxygen4"
+	output = 15
 
 
+/obj/machinery/computer/general_air_control/engines_tanks
+	name = "Reactive Engines Tank Monitoring"
+	frequency = 1439
+	sensors = list("ReacEngPlasma1" = "First Engine Plasma",
+				"ReacEngOxygen1" = "First Engine Oxygen",
+				"ReacEngPlasma2" = "Second Engine Plasma",
+				"ReacEngOxygen2" = "Second Engine Oxygen",
+				"ReacEngPlasma3" = "Third Engine Plasma",
+				"ReacEngOxygen3" = "Third Engine Oxygen",
+				"ReacEngPlasma4" = "Fourth Engine Plasma",
+				"ReacEngOxygen4" = "Fourth Engine Oxygen")
+
+/obj/machinery/computer/general_air_control/engines_flame
+	name = "Reactive Engines Chamber Monitoring"
+	frequency = 1439
+	sensors = list("ReacEng1" = "First Engine",
+ 				"ReacEng2" = "Second Engine",
+				"ReacEng3" = "Third Engine",
+				"ReacEng4" = "Fourth Engine")

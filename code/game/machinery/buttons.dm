@@ -232,3 +232,23 @@
 	radio_connection.post_signal(src, signal, filter = RADIO_ATMOSIA)
 	active = !active
 	update_icon()
+
+/obj/machinery/button/toggle/valve/nacelle
+	name = "Reactive Engine Fuel Control"
+	frequency = 1490
+
+/obj/machinery/button/toggle/valve/nacelle/first
+	name = "First Reactive Engine Fuel Control"
+	id = "RE1F"
+
+/obj/machinery/button/toggle/valve/nacelle/second
+	name = "Second Reactive Engine Fuel Control"
+	id = "RE2F"
+
+/obj/machinery/button/toggle/valve/nacelle/third
+	name = "Third Reactive Engine Fuel Control"
+	id = "RE33F"
+
+/obj/machinery/button/toggle/valve/nacelle/fourth
+	name = "Fourth Reactive Engine Fuel Control"
+	id = "RE4F"
