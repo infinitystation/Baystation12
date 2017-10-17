@@ -247,7 +247,7 @@
 
 /obj/machinery/button/toggle/valve/nacelle/third
 	name = "Third Reactive Engine Fuel Control"
-	id = "RE33F"
+	id = "RE3F"
 
 /obj/machinery/button/toggle/valve/nacelle/fourth
 	name = "Fourth Reactive Engine Fuel Control"
