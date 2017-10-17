@@ -580,12 +580,12 @@ Rate: [volume_rate] L/sec<BR>"}
 	name = "Reactive Engines Tank Monitoring"
 	frequency = 1439
 	sensors = list("ReacEngPlasma1" = "First Engine Plasma",
-				"ReacEngOxygen1" = "First Engine Oxygen",
 				"ReacEngPlasma2" = "Second Engine Plasma",
-				"ReacEngOxygen2" = "Second Engine Oxygen",
 				"ReacEngPlasma3" = "Third Engine Plasma",
-				"ReacEngOxygen3" = "Third Engine Oxygen",
 				"ReacEngPlasma4" = "Fourth Engine Plasma",
+				"ReacEngOxygen1" = "First Engine Oxygen",
+				"ReacEngOxygen2" = "Second Engine Oxygen",
+				"ReacEngOxygen3" = "Third Engine Oxygen",
 				"ReacEngOxygen4" = "Fourth Engine Oxygen")
 
 /obj/machinery/computer/general_air_control/engines_flame
