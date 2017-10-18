@@ -167,6 +167,12 @@ var/list/datum/power/changeling/powerinstances = list()
 	genomecost = 7
 	verbpath = /mob/proc/changeling_rapidregen
 
+/datum/power/changeling/dissonant_shriek
+	name = "Dissonant Shriek"
+	desc = "We shift our vocal cords to release a high-frequency sound that overloads nearby electronics."
+	helptext = "Фигачит ЭМИ и лопает лампочки."
+	genomecost = 8
+	verbpath = /mob/proc/changeling_dissonant_shriek
 
 
 // Modularchangling, totally stolen from the new player panel.  YAYY

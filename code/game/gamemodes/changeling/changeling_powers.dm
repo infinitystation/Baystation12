@@ -802,3 +802,18 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 
 	feedback_add_details("changeling_powers","ED")
 	return 1
+
+/mob/proc/changeling_dissonant_shriek()
+	set category = "Changeling"
+	set name = "Dissonant Shriek (40)"
+	set desc = "Shift your vocal cords to release a high-frequency sound that overloads nearby electronics."
+
+	var/datum/changeling/changeling = changeling_power(40, 0)
+	if(!changeling) return 0
+	changeling.chem_charges -= 40
+
+	for(var/obj/machinery/light/L in range(5, usr))
+		L.on = 1
+		L.broken()
+	empulse(get_turf(usr), 2, 5, 1)
+	return 1
