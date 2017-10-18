@@ -813,7 +813,9 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	changeling.chem_charges -= 40
 
 	for(var/obj/machinery/light/L in range(5, usr))
-		L.on = 1
-		L.broken()
-	empulse(get_turf(usr), 2, 5, 1)
+		L.flicker()
+		if(prob(30))
+			L.on = 1
+			L.broken()
+	empulse(get_turf(usr), 2, 4, 1)
 	return 1
