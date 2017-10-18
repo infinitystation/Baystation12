@@ -132,7 +132,7 @@
 "cB" = (/obj/machinery/vending/assist,/obj/effect/floor_decal/industrial/outline/grey,/turf/simulated/floor/tiled/dark,/area/storage/tech)
 "cC" = (/obj/machinery/hologram/holopad,/turf/simulated/floor/tiled/dark,/area/storage/tech)
 "cD" = (/obj/structure/table/rack,/obj/effect/floor_decal/industrial/outline/yellow,/obj/item/weapon/circuitboard/integrated_printer,/obj/item/weapon/circuitboard/rdserver,/obj/item/weapon/circuitboard/protolathe,/obj/item/weapon/circuitboard/destructive_analyzer,/obj/item/weapon/circuitboard/rdconsole,/turf/simulated/floor/tiled/dark,/area/storage/tech)
-"cE" = (/obj/structure/table/rack,/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled/dark,/area/storage/tech)
+"cE" = (/obj/structure/table/rack,/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light/small{dir = 4},/obj/item/weapon/circuitboard/bluespacerelay,/turf/simulated/floor/tiled/dark,/area/storage/tech)
 "cF" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/ladder/up,/turf/simulated/floor/plating,/area/maintenance/seconddeck/aftstarboard)
 "cG" = (/obj/structure/closet/toolcloset,/turf/simulated/floor/plating,/area/maintenance/seconddeck/aftstarboard)
 "cH" = (/obj/structure/closet/coffin,/obj/effect/landmark/start{name = "Stowaway"},/turf/simulated/floor/plating,/area/vacant/chapel)
