@@ -103,6 +103,12 @@
 	icon_state = "purple"
 	starts_with = list(/datum/reagent/tramadol = 5)
 
+
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/inaprovaline
+	name = "autoinjector (inaprovaline)"
+	icon_state = "green"
+	starts_with = list(/datum/reagent/inaprovaline = 5)
+
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/combatpain
 	name = "autoinjector (oxycodone)"
 	icon_state = "black"
