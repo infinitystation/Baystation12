@@ -303,52 +303,52 @@
 
 //torch large pods
 /area/shuttle/escape_pod6/station
-	name = "\improper Escape Pod One"
+	name = "Escape Pod One"
 	flags = AREA_RAD_SHIELDED
 
 /area/shuttle/escape_pod7/station
-	name = "\improper Escape Pod Two"
+	name = "Escape Pod Two"
 	flags = AREA_RAD_SHIELDED
 
 /area/shuttle/escape_pod8/station
-	name = "\improper Escape Pod Three"
+	name = "Escape Pod Three"
 	flags = AREA_RAD_SHIELDED
 
 /area/shuttle/escape_pod9/station
-	name = "\improper Escape Pod Four"
+	name = "Escape Pod Four"
 	flags = AREA_RAD_SHIELDED
 
 /area/shuttle/escape_pod10/station
-	name = "\improper Escape Pod Five"
+	name = "Escape Pod Five"
 	flags = AREA_RAD_SHIELDED
 
 /area/shuttle/escape_pod11/station
-	name = "\improper Escape Pod Six"
+	name = "Escape Pod Six"
 	flags = AREA_RAD_SHIELDED
 
 //torch small pods
 /area/shuttle/escape_pod12/station
-	name = "\improper Escape Pod Seven"
+	name = "Escape Pod Seven"
 	flags = AREA_RAD_SHIELDED
 
 /area/shuttle/escape_pod13/station
-	name = "\improper Escape Pod Eight"
+	name = "Escape Pod Eight"
 	flags = AREA_RAD_SHIELDED
 
 /area/shuttle/escape_pod14/station
-	name = "\improper Escape Pod Nine"
+	name = "Escape Pod Nine"
 	flags = AREA_RAD_SHIELDED
 
 /area/shuttle/escape_pod15/station
-	name = "\improper Escape Pod Ten"
+	name = "Escape Pod Ten"
 	flags = AREA_RAD_SHIELDED
 
 /area/shuttle/escape_pod16/station
-	name = "\improper Escape Pod Eleven"
+	name = "Escape Pod Eleven"
 	flags = AREA_RAD_SHIELDED
 
 /area/shuttle/escape_pod17/station
-	name = "\improper Escape Pod Twelve"
+	name = "Escape Pod Twelve"
 	flags = AREA_RAD_SHIELDED
 
 //Charon
@@ -1532,23 +1532,3 @@
 	name = "\improper Thunderdome (Observer.)"
 	icon_state = "purple"
 
-// GENERIC MINING AREAS
-
-/area/mine
-	icon_state = "mining"
-	ambience = list('sound/ambience/ambimine.ogg', 'sound/ambience/song_game.ogg')
-	sound_env = ASTEROID
-
-/area/mine/explored
-	name = "Mine"
-	icon_state = "explored"
-
-/area/mine/unexplored
-	name = "Mine"
-	icon_state = "unexplored"
-
-// OUTPOSTS
-
-/area/outpost/abandoned
-	name = "Abandoned Outpost"
-	icon_state = "dark"

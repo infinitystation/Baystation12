@@ -234,6 +234,8 @@ var/list/gamemode_cache = list()
 	var/error_silence_time = 6000 // How long a unique error will be silenced for
 	var/error_msg_delay = 50 // How long to wait between messaging admins about occurrences of a unique error
 
+	var/max_gear_cost = 10 // Used in chargen for accessory loadout limit. 0 disables loadout, negative allows infinite points.
+
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
 	for (var/T in L)
@@ -760,6 +762,11 @@ var/list/gamemode_cache = list()
 					discord_url = value
 				if("discord_password")
 					discord_password = value
+
+				if("max_gear_cost")
+					max_gear_cost = text2num(value)
+					if(max_gear_cost < 0)
+						max_gear_cost = INFINITY
 
 				else
 					log_misc("Unknown setting in configuration: '[name]'")
