@@ -26,11 +26,11 @@
 	id_slot = slot_wear_id
 	id_type = /obj/item/weapon/card/id/centcom/station
 	id_pda_assignment = "DJ"
-
+/*
 /decl/hierarchy/outfit/marshal
 	name = "SCG Marshal"
 	shoes = /obj/item/clothing/shoes/dutyboots
-	uniform = /obj/item/clothing/under/utility/fleet/security
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/security
 	suit = /obj/item/clothing/suit/storage/toggle/marshal_jacket
 	head = /obj/item/clothing/head/beret/sol/fleet/security
 	l_ear = /obj/item/device/radio/headset/headset_sec
@@ -41,11 +41,11 @@
 	id_type = /obj/item/weapon/card/id/security
 	id_desc = "An ID of SCG police marshals."
 	id_pda_assignment = "Colonial Marshal Officer"
-
+*/
 /decl/hierarchy/outfit/army/private
 	name = "SCG Marine Private"
 	shoes = /obj/item/clothing/shoes/jungleboots
-	uniform = /obj/item/clothing/under/utility/marine/tan
+	uniform = /obj/item/clothing/under/solgov/utility/marine/tan
 	suit = /obj/item/clothing/suit/storage/vest/tactical
 	head = /obj/item/clothing/head/helmet/tactical
 	l_ear = /obj/item/device/radio/headset/specops
@@ -64,7 +64,7 @@
 /decl/hierarchy/outfit/army/sergeant
 	name = "SCG Marine Sergeant"
 	shoes = /obj/item/clothing/shoes/jungleboots
-	uniform = /obj/item/clothing/under/utility/marine/tan
+	uniform = /obj/item/clothing/under/solgov/utility/marine/tan
 	suit = /obj/item/clothing/suit/storage/vest/tactical
 	head = /obj/item/clothing/head/helmet/tactical
 	l_ear = /obj/item/device/radio/headset/specops

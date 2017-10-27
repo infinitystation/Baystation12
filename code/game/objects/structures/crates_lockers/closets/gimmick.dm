@@ -66,7 +66,7 @@
 /obj/structure/closet/gimmick/marine/WillContain()
 	return list(
 		/obj/item/clothing/glasses/sunglasses/sechud,
-		/obj/item/clothing/under/utility/marine/urban,
+		/obj/item/clothing/under/solgov/utility/marine/urban,
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/device/radio/headset/specops,
