@@ -11,6 +11,7 @@
 	#include "torch_unit_testing.dm"
 	#include "torch_gamemodes.dm"
 	#include "torch_antagonism.dm"
+	#include "torch_npcs.dm"
 
 	#include "datums/uniforms.dm"
 	#include "datums/uniforms_expedition.dm"
@@ -75,6 +76,7 @@
 //	#include "../away/derelict/derelict.dm"
 	#include "../away/bearcat/bearcat.dm"
 	#include "../away/lost_supply_base/lost_supply_base.dm"
+	#include "../away/marooned/marooned.dm"
 
 	#include "../../code/modules/lobby_music/chasing_time.dm"
 	#include "../../code/modules/lobby_music/human.dm"
