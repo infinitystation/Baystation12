@@ -61,6 +61,9 @@
 	locked = 0
 	coverlocked = 0
 
+/obj/machinery/power/apc/high/critical
+	is_critical = 1
+
 /obj/machinery/power/apc/super
 	cell_type = /obj/item/weapon/cell/super
 

@@ -71,7 +71,6 @@
 	#include "infinity_station_maps/torch-5.dmm"
 	#include "infinity_station_maps/torch-6.dmm"
 	#include "infinity_station_maps/torch-7.dmm"
-	#include "infinity_station_maps/torch-10.dmm"
 	#include "../away/empty.dmm"
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
