@@ -94,19 +94,6 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		computerid = bancid
 		ip = banip
 
-	var/dbckey = sql_sanitize_text(ckey)
-	var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM erro_player WHERE ckey = '[dbckey]'")
-	if(!query.Execute())
-		return
-	var/validckey = 0
-	if(query.NextRow())
-		validckey = 1
-	if(!validckey)
-		if(!banned_mob || (banned_mob && !IsGuestKey(banned_mob.key)))
-			if(usr)
-				message_admins("<font color='red'>[key_name_admin(usr)] attempted to ban [ckey], but [ckey] has not been seen yet. Please only ban actual players.</font>",1)
-			return 0
-
 	var/who
 	for(var/client/C in GLOB.clients)
 		if(!who)

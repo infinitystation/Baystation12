@@ -492,7 +492,7 @@ var/global/list/robot_modules = list(
 					LANGUAGE_INDEPENDENT= 1,
 					LANGUAGE_SPACER = 1
 					)
-	
+
 /obj/item/weapon/robot_module/clerical/butler
 	sprites = list(	"Waitress" = "Service",
 					"Kent" = "toiletbot",
@@ -691,11 +691,11 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/multitool(src)
 	src.modules += new /obj/item/device/lightreplacer(src)
 	src.modules += new /obj/item/weapon/gripper(src)
-	src.modules += new /obj/item/weapon/soap(src)
 	src.modules += new /obj/item/weapon/gripper/no_use/loader(src)
 	src.modules += new /obj/item/weapon/extinguisher(src)
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/device/floor_painter(src)
+	src.modules += new /obj/item/weapon/reagent_containers/spray/cleaner/drone(src)
 
 	robot.internals = new/obj/item/weapon/tank/jetpack/carbondioxide(src)
 	src.modules += robot.internals
@@ -756,8 +756,12 @@ var/global/list/robot_modules = list(
 	var/obj/item/stack/material/cyborg/plastic/P = new (src)
 	P.synths = list(plastic)
 	src.modules += P
-
 	..()
+
+/obj/item/weapon/robot_module/drone/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+	..()
+	var/obj/item/weapon/reagent_containers/spray/cleaner/drone/SC = locate() in src.modules
+	SC.reagents.add_reagent(/datum/reagent/space_cleaner, 8 * amount)
 
 /obj/item/weapon/robot_module/drone/construction
 	name = "construction drone module"

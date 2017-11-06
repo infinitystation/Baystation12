@@ -222,6 +222,52 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/spline/plain
 	name = "spline - plain"
 	icon_state = "spline_plain"
+	alpha = 229
+
+/obj/effect/floor_decal/spline/plain/black
+	color = "#333333"
+
+/obj/effect/floor_decal/spline/plain/blue
+	color = COLOR_BLUE_GRAY
+
+/obj/effect/floor_decal/spline/plain/paleblue
+	color = COLOR_PALE_BLUE_GRAY
+
+/obj/effect/floor_decal/spline/plain/green
+	color = COLOR_GREEN_GRAY
+
+/obj/effect/floor_decal/spline/plain/lime
+	color = COLOR_PALE_GREEN_GRAY
+
+/obj/effect/floor_decal/spline/plain/yellow
+	color = COLOR_BROWN
+
+/obj/effect/floor_decal/spline/plain/beige
+	color = COLOR_BEIGE
+
+/obj/effect/floor_decal/spline/plain/red
+	color = COLOR_RED_GRAY
+
+/obj/effect/floor_decal/spline/plain/pink
+	color = COLOR_PALE_RED_GRAY
+
+/obj/effect/floor_decal/spline/plain/purple
+	color = COLOR_PURPLE_GRAY
+
+/obj/effect/floor_decal/spline/plain/mauve
+	color = COLOR_PALE_PURPLE_GRAY
+
+/obj/effect/floor_decal/spline/plain/orange
+	color = COLOR_DARK_ORANGE
+
+/obj/effect/floor_decal/spline/plain/brown
+	color = COLOR_DARK_BROWN
+
+/obj/effect/floor_decal/spline/plain/white
+	color = COLOR_WHITE
+
+/obj/effect/floor_decal/spline/plain/grey
+	color = "#8d8c8c"
 
 /obj/effect/floor_decal/spline/fancy
 	name = "spline - fancy"
@@ -277,15 +323,23 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/industrial/hatch/grey
 	color = "#808080"
 
+/obj/effect/floor_decal/industrial/hatch/red
+	color = COLOR_RED_GRAY
+
+/obj/effect/floor_decal/industrial/hatch/orange
+	color = COLOR_DARK_ORANGE
+
+/obj/effect/floor_decal/industrial/hatch/blue
+	color = COLOR_BLUE_GRAY
+
+/obj/effect/floor_decal/industrial/shutoff
+	name = "shutoff valve marker"
+	icon_state = "shutoff"
 
 /obj/effect/floor_decal/industrial/outline
 	name = "white outline"
 	icon_state = "outline"
 	alpha = 229
-
-/obj/effect/floor_decal/industrial/shutoff
-	name = "shutoff valve marker"
-	icon_state = "shutoff"
 
 /obj/effect/floor_decal/industrial/outline/blue
 	name = "blue outline"
@@ -302,6 +356,10 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/industrial/outline/red
 	name = "red outline"
 	color = COLOR_RED_GRAY
+
+/obj/effect/floor_decal/industrial/outline/orange
+	name = "orange outline"
+	color = COLOR_DARK_ORANGE
 
 /obj/effect/floor_decal/industrial/loading
 	name = "loading area"
