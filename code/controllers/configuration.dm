@@ -5,7 +5,7 @@ var/list/gamemode_cache = list()
 	var/server_suffix = 0				// generate numeric suffix based on server port
 
 	var/ooc_during_round = 0
-	var/emojis = 0
+	var/emojis = 1
 
 	var/log_ooc = 0						// log OOC channel
 	var/log_access = 0					// log login/logout
