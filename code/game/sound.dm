@@ -52,17 +52,6 @@ GLOBAL_LIST_INIT(keystroke_sound,list('sound/machines/keyboard1.ogg','sound/mach
 GLOBAL_LIST_INIT(switch_sound,list('sound/machines/switch1.ogg','sound/machines/switch2.ogg','sound/machines/switch3.ogg','sound/machines/switch4.ogg'))
 GLOBAL_LIST_INIT(button_sound,list('sound/machines/button1.ogg','sound/machines/button2.ogg','sound/machines/button3.ogg','sound/machines/button4.ogg'))
 
-// Foostep sounds:
-GLOBAL_LIST_INIT(erikafootsteps, list('sound/effects/footsteps/tile1.wav','sound/effects/footsteps/tile2.wav','sound/effects/footsteps/tile3.wav','sound/effects/footsteps/tile4.wav'))
-GLOBAL_LIST_INIT(grassfootsteps, list('sound/effects/footsteps/grass/grass1.wav','sound/effects/footsteps/grass/grass2.wav','sound/effects/footsteps/grass/grass3.wav','sound/effects/footsteps/grass/grass4.wav'))
-GLOBAL_LIST_INIT(dirtfootsteps, list('sound/effects/footsteps/dirt/dirt1.wav','sound/effects/footsteps/dirt/dirt2.wav','sound/effects/footsteps/dirt/dirt3.wav','sound/effects/footsteps/dirt/dirt4.wav'))
-GLOBAL_LIST_INIT(waterfootsteps, list('sound/effects/footsteps/water/slosh1.wav','sound/effects/footsteps/water/slosh2.wav','sound/effects/footsteps/water/slosh3.wav','sound/effects/footsteps/water/slosh4.wav'))
-GLOBAL_LIST_INIT(sandfootsteps, list('sound/effects/footsteps/sand/sand_step1.ogg','sound/effects/footsteps/sand/sand_step2.ogg','sound/effects/footsteps/sand/sand_step3.ogg','sound/effects/footsteps/sand/sand_step4.ogg','sound/effects/footsteps/sand/sand_step5.ogg','sound/effects/footsteps/sand/sand_step6.ogg','sound/effects/footsteps/sand/sand_step7.ogg','sound/effects/footsteps/sand/sand_step8.ogg'))
-GLOBAL_LIST_INIT(woodfootsteps, list('sound/effects/footsteps/wood/wood_step1.ogg','sound/effects/footsteps/wood/wood_step2.ogg','sound/effects/footsteps/wood/wood_step3.ogg','sound/effects/footsteps/wood/wood_step4.ogg','sound/effects/footsteps/wood/wood_step5.ogg','sound/effects/footsteps/wood/wood_step6.ogg','sound/effects/footsteps/wood/wood_step7.ogg','sound/effects/footsteps/wood/wood_step8.ogg'))
-GLOBAL_LIST_INIT(carpetfootsteps, list('sound/effects/footsteps/carpet/carpet_step1.ogg','sound/effects/footsteps/carpet/carpet_step2.ogg','sound/effects/footsteps/carpet/carpet_step3.ogg','sound/effects/footsteps/carpet/carpet_step4.ogg','sound/effects/footsteps/carpet/carpet_step5.ogg','sound/effects/footsteps/carpet/carpet_step6.ogg','sound/effects/footsteps/carpet/carpet_step7.ogg','sound/effects/footsteps/carpet/carpet_step8.ogg'))
-GLOBAL_LIST_INIT(platingfootsteps, list('sound/effects/footsteps/plating1.ogg','sound/effects/footsteps/plating2.ogg', 'sound/effects/footsteps/plating3.ogg', 'sound/effects/footsteps/plating4.ogg'))
-GLOBAL_LIST_INIT(snowsteps, list('sound/effects/footsteps/snow/snowstep1.ogg','sound/effects/footsteps/snow/snowstep2.ogg','sound/effects/footsteps/snow/snowstep3.ogg','sound/effects/footsteps/snow/snowstep4.ogg'))
-
 GLOBAL_LIST_INIT(gun_sound, list('sound/weapons/gunshot.ogg', 'sound/weapons/gunshot2.ogg', 'sound/weapons/gunshot3.ogg', 'sound/weapons/gunshot4.ogg'))
 
 /proc/playsound(var/atom/source, soundin, vol as num, vary, extrarange as num, falloff, var/is_global, var/frequency, var/is_ambiance = 0)
@@ -196,14 +185,5 @@ var/const/FALLOFF_SOUNDS = 0.5
 			if ("keystroke") soundin = pick(GLOB.keystroke_sound)
 			if ("switch") soundin = pick(GLOB.switch_sound)
 			if ("button") soundin = pick(GLOB.button_sound)
-			if ("erikafootsteps") soundin = pick(GLOB.erikafootsteps)
-			if ("grassfootsteps") soundin = pick(GLOB.grassfootsteps)
-			if ("dirtfootsteps") soundin = pick(GLOB.dirtfootsteps)
-			if ("waterfootsteps") soundin = pick(GLOB.waterfootsteps)
-			if ("sandfootsteps") soundin = pick(GLOB.sandfootsteps)
-			if ("woodfootsteps") soundin = pick(GLOB.woodfootsteps)
-			if ("carpetfootsteps") soundin = pick(GLOB.carpetfootsteps)
-			if ("platingfootsteps") soundin = pick(GLOB.platingfootsteps)
-			if ("snowsteps") soundin = pick(GLOB.snowsteps)
 			if ("gunshot") soundin = pick(GLOB.gun_sound)
 	return soundin

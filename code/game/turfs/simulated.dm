@@ -23,8 +23,8 @@
 		T.ChangeTurf(new_turf_type)
 
 // This is not great.
-/turf/simulated/proc/wet_floor(var/wet_val = 1)
-	if(wet_val < wet)
+/turf/simulated/proc/wet_floor(var/wet_val = 1, var/overwrite = FALSE)
+	if(wet_val < wet && !overwrite)
 		return
 
 	if(!wet)
@@ -110,8 +110,6 @@
 						bloodcolor=S.blood_color
 						S.track_blood--
 
-					if(!H.lying && !H.buckled && !H.throwing && !S.stealth_step)
-						trigger_footstep_sound(H)
 			else
 				if(H.lying)
 					if(H.track_blood && H.blood_DNA || H.feet_blood_DNA)
@@ -198,38 +196,3 @@
 		coil.turf_place(src, user)
 		return
 	return ..()
-
-/turf/simulated/proc/trigger_footstep_sound(mob/living/carbon/human/H as mob)
-	// Shoe sounds
-	var/footstepsound = null
-	var/footstepsound_volume = 75
-
-	if(istype(src,/turf/simulated/floor/plating || src.name == "plating"))
-		footstepsound = "platingfootsteps"
-	else if(istype(src, /turf/simulated/floor/grass))
-		footstepsound = "grassfootsteps"
-	else if(istype(src, /turf/simulated/floor/beach/water))
-		footstepsound = "waterfootsteps"
-		footstepsound_volume = 30
-	else if(istype(src, /turf/simulated/floor/wood) || src.name == "wooden floor")
-		footstepsound = "woodfootsteps"
-	else if(istype(src, /turf/simulated/floor/carpet) || src.name == "carpet")
-		footstepsound = "carpetfootsteps"
-		footstepsound_volume = 30
-	else if(istype(src, /turf/simulated/floor/beach/sand))
-		footstepsound = "dirtfootsteps"
-	else if(istype(src,/turf/simulated/floor/snow))
-		footstepsound = "snowsteps"
-		footstepsound_volume = 30
-	else
-		footstepsound = "erikafootsteps"
-		footstepsound_volume = 92.5
-
-	if(H.footstep >= 1)//Every two steps.
-		H.footstep = 0
-		if(H.m_intent == "walk")
-			playsound(src, footstepsound, (footstepsound_volume / 2), 1) // dividing volume to 2 because human currently have walk intent
-		else
-			playsound(src, footstepsound, footstepsound_volume, 1)
-	else
-		H.footstep++
