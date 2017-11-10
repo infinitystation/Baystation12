@@ -179,6 +179,7 @@
 	return drained_energy
 
 /obj/machinery/power/apc/New(turf/loc, var/ndir, var/building=0)
+	..()
 
 	// offset 24 pixels in direction of dir
 	// this allows the APC to be embedded in a wall, yet still inside an area
@@ -200,8 +201,6 @@
 		src.update_icon()
 
 	name = replacetextEx(name, "\improper", "")
-
-	..()
 
 /obj/machinery/power/apc/Initialize()
 	. = ..()
