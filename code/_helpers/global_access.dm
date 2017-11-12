@@ -51,16 +51,18 @@
 			return global.SSlegacy;
 		if("SSmachines")
 			return global.SSmachines;
+		if("SSmapping")
+			return global.SSmapping;
 		if("SSmobs")
 			return global.SSmobs;
-		if("SSvines")
-			return global.SSvines;
 		if("SSobj")
 			return global.SSobj;
 		if("SSopen_space")
 			return global.SSopen_space;
 		if("SSprocessing")
 			return global.SSprocessing;
+		if("SSvines")
+			return global.SSvines;
 		if("Tier1Runes")
 			return global.Tier1Runes;
 		if("Tier2Runes")
@@ -79,8 +81,6 @@
 			return global._client_preferences_by_key;
 		if("_client_preferences_by_type")
 			return global._client_preferences_by_type;
-		if("_preloader")
-			return global._preloader;
 		if("accept_list")
 			return global.accept_list;
 		if("account_hack_attempted")
@@ -1120,16 +1120,18 @@
 			global.SSlegacy=newval;
 		if("SSmachines")
 			global.SSmachines=newval;
+		if("SSmapping")
+			global.SSmapping=newval;
 		if("SSmobs")
 			global.SSmobs=newval;
-		if("SSvines")
-			global.SSvines=newval;
 		if("SSobj")
 			global.SSobj=newval;
 		if("SSopen_space")
 			global.SSopen_space=newval;
 		if("SSprocessing")
 			global.SSprocessing=newval;
+		if("SSvines")
+			global.SSvines=newval;
 		if("Tier1Runes")
 			global.Tier1Runes=newval;
 		if("Tier2Runes")
@@ -1148,8 +1150,6 @@
 			global._client_preferences_by_key=newval;
 		if("_client_preferences_by_type")
 			global._client_preferences_by_type=newval;
-		if("_preloader")
-			global._preloader=newval;
 		if("accept_list")
 			global.accept_list=newval;
 		if("account_hack_attempted")
@@ -2163,11 +2163,12 @@
 	"SSgarbage",
 	"SSlegacy",
 	"SSmachines",
+	"SSmapping",
 	"SSmobs",
-	"SSvines",
 	"SSobj",
 	"SSopen_space",
 	"SSprocessing",
+	"SSvines",
 	"Tier1Runes",
 	"Tier2Runes",
 	"Tier3Runes",
@@ -2177,7 +2178,6 @@
 	"_client_preferences",
 	"_client_preferences_by_key",
 	"_client_preferences_by_type",
-	"_preloader",
 	"accept_list",
 	"account_hack_attempted",
 	"actor",
@@ -2252,7 +2252,6 @@
 	"blocked",
 	"bomb_set",
 	"borers",
-	"button_sound",
 	"cable_list",
 	"cached_icons",
 	"cached_space",
@@ -2276,7 +2275,6 @@
 	"church_name",
 	"client_preference_stats_",
 	"client_repository",
-	"clown_sound",
 	"combatlog",
 	"comm_message_listeners",
 	"command_announcement",
@@ -2335,7 +2333,6 @@
 	"eventchance",
 	"exclude_jobs",
 	"explosion_in_progress",
-	"explosion_sound",
 	"explosion_turfs",
 	"facial_hair_styles_female_list",
 	"facial_hair_styles_list",
@@ -2356,7 +2353,6 @@
 	"fluidtrack_cache",
 	"follow_repository",
 	"forced_ambiance_list",
-	"fracture_sound",
 	"fruit_icon_cache",
 	"fuel_injectors",
 	"fusion_cores",
@@ -2386,7 +2382,6 @@
 	"hair_styles_male_list",
 	"hazard_overlays",
 	"hidden_skill_types",
-	"hiss_sound",
 	"hivemind_bank",
 	"holder_mob_icon_cache",
 	"host",
@@ -2407,7 +2402,6 @@
 	"jobban_runonce",
 	"joblist",
 	"join_motd",
-	"keyboard_sound",
 	"landmarks_list",
 	"language_keys",
 	"last_chew",
@@ -2417,7 +2411,6 @@
 	"license_to_url",
 	"light_overlay_cache",
 	"light_type_cache",
-	"lighter_sound",
 	"lighting_overlays_initialised",
 	"lighting_update_corners",
 	"lighting_update_corners_old",
@@ -2487,7 +2480,6 @@
 	"nextbuild",
 	"ninjas",
 	"ninjastart",
-	"non_fakeattack_weapons",
 	"not_incapacitated_turf_state",
 	"ntnet_card_uid",
 	"ntnet_global",
@@ -2503,7 +2495,6 @@
 	"outfits_decls_by_type_",
 	"outfits_decls_root_",
 	"overmap_event_handler",
-	"page_sound",
 	"paiController",
 	"pai_emotions",
 	"pai_software_by_key",
@@ -2538,7 +2529,6 @@
 	"processing_turfs",
 	"prometheans",
 	"protected_objects",
-	"punch_sound",
 	"rad_collectors",
 	"radiation_repository",
 	"radio_controller",
@@ -2567,7 +2557,6 @@
 	"roundstart_hour",
 	"rune_list",
 	"runtime_diary",
-	"rustle_sound",
 	"same_wires",
 	"sandfootsteps",
 	"scheduler",
@@ -2577,7 +2566,6 @@
 	"sent_spiders_to_station",
 	"server_name",
 	"severity_to_string",
-	"shatter_sound",
 	"ship_engines",
 	"shuttle_controller",
 	"side_effects",
@@ -2592,7 +2580,6 @@
 	"sound_player",
 	"sounds_cache",
 	"spacevines_spawned",
-	"spark_sound",
 	"sparring_attack_cache",
 	"spells",
 	"splatter_cache",
@@ -2623,8 +2610,6 @@
 	"swapmaps_initialized",
 	"swapmaps_loaded",
 	"swapmaps_mode",
-	"swing_hit_sound",
-	"switch_sound",
 	"syndicate_access",
 	"syndicate_code_phrase",
 	"syndicate_code_response",
