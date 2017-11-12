@@ -36,8 +36,8 @@ datum/track/New(var/title_name, var/audio)
 		new/datum/track("D`Fort", 								'sound/ambience/song_game.ogg'),
 		new/datum/track("Endless Space", 						'sound/music/space.ogg'),
 		new/datum/track("Floating", 							'sound/music/main.ogg'),
-		new/datum/track("Hard Times", 							'sound/music/infinity/johnny_cash_hurt.ogg'),
-		new/datum/track("High Radiation", 						'sound/music/infinity/100_rentgen.ogg'),
+		new/datum/track("Hard Times", 							'sound/music/infinity/JohnnyCash_Hurt.ogg'),
+		new/datum/track("High Radiation", 						'sound/music/infinity/100rengen.ogg'),
 		new/datum/track("Lone Digger", 							'sound/music/infinity/CaravanPalace_LoneDigger.ogg'),
 		new/datum/track("Make This Right", 						'sound/music/infinity/TheToxicAvenger_MakeThisRight.ogg'),
 		new/datum/track("Night Call", 							'sound/music/infinity/Nightcall.ogg'),
@@ -46,7 +46,7 @@ datum/track/New(var/title_name, var/audio)
 		new/datum/track("Scratch", 								'sound/music/title1.ogg'),
 		new/datum/track("Trai`Tor", 							'sound/music/traitor.ogg'),
 		new/datum/track("Through the Times", 					'sound/music/chasing_time.ogg'),
-		new/datum/track("Wonderful Lady", 						'sound/music/infinity/johnny_mathis_wonderful_wonderful.ogg'),
+		new/datum/track("Wonderful Lady", 						'sound/music/infinity/JohnnyMathis_Wonderful_Wonderful.ogg'),
 		new/datum/track("When We Stand Together", 				'sound/music/infinity/Nickelback_WhenWeStandTogether.ogg'),
 	)
 
