@@ -40,7 +40,7 @@ datum/track/New(var/title_name, var/audio)
 		new/datum/track("High Radiation", 						'sound/music/infinity/100rengen.ogg'),
 		new/datum/track("Lone Digger", 							'sound/music/infinity/CaravanPalace_LoneDigger.ogg'),
 		new/datum/track("Make This Right", 						'sound/music/infinity/TheToxicAvenger_MakeThisRight.ogg'),
-		new/datum/track("Night Call", 							'sound/music/infinity/Nightcall.ogg'),
+		new/datum/track("Night Call", 							'sound/music/infinity/Kavinsky_Nightcall.ogg'),
 		new/datum/track("Night City",	 						'sound/music/infinity/HotlineMiami_Miami.ogg'),
 		new/datum/track("Part A", 								'sound/misc/TestLoop1.ogg'),
 		new/datum/track("Scratch", 								'sound/music/title1.ogg'),

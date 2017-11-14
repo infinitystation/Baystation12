@@ -1,27 +1,10 @@
-<h1>Добро пожаловать на Infinity</h1>
-Используется стандартный билд BayStation12 с небольшими модификациями.
-
-Форум сервера:			https://infinity.so
-Правила сервера:		https://wiki.infinity.so/index.php?title=Правила_Сервера
-Вики BayStation12:		https://wiki.baystation12.net/ 
-Логи сервера: 			http://gg.gg/Infinity_LOGS 
-Код сервера:			https://github.com/infinitystation 
-
-<span style="color: #ff0000;"><big>Обязательно прочтите правила сервера перед игрой! Они отличаются от правил игры на других серверах!<big></span>
-
-<span style="color: #0000ff;">Чтобы получить возможность играть за иные расы кроме людей, унатхов и таяр, напишите заявку в разделе с квентами на форуме. Обязательно прочтите правила.</span>
-
-<span style="color: #0000ff;">Респавн отключён для тех, кто уже в игре. Цените жизнь своего персонажа и ваших коллег. Погибнув, вы сможете играть лишь в следующем раунде.</spam>
-
 <span class="main"><h1>Добро пожаловать на Infinity</h1>
-Используется стандартный билд BayStation12 с небольшими модификациями.<br>
+ИспользуетсЯ стандартный билд BayStation12 с небольшими модификациЯми.<br>
+<a href=" https://infinity-ss13.ru">Форум сервера</a>
+<a href=" https://infinity-ss13.ru/index.php?/topic/768-правила-игры-на-сервере/">Правила сервера</a>
+<a href=" https://wiki.baystation12.net/">Вики BayStation12</a>
+<a href=" http://gg.gg/Infinity_LOGS">Логи сервера</a>
+<a href=" https://github.com/infinitystation">Код сервера</a>
 <br>
-<a href=" https://infinity-ss13.ru">Форум</a><br>
-<a href=" https://infinity-ss13.ru/index.php?/topic/768-правила-игры-на-сервере/">Правила игры</a><br>
-<a href=" https://wiki.baystation12.net/">Вики</a><br>
-<a href=" http://gg.gg/Infinity_LOGS">Логи</a><br>
-<a href=" https://github.com/infinitystation">Код</a><br>
-<br>
-<span style="color: #0000ff;">Чтобы получить возможность играть за иные расы кроме людей, унатхов и таяр, напишите заявку в разделе с квентами на форуме. Обязательно прочтите правила.</span>
+<span style="color: #0000ff;">Чтобы получить возможность играть за иные расы кроме людей, унатхов и таЯр, напишите заЯвку в разделе с квентами на форуме. ОбЯзательно прочтите правила.</span>
 </span>
-</body></html>

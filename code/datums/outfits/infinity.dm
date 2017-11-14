@@ -26,22 +26,23 @@
 	id_slot = slot_wear_id
 	id_type = /obj/item/weapon/card/id/centcom/station
 	id_pda_assignment = "DJ"
-/*
+
 /decl/hierarchy/outfit/marshal
 	name = "SCG Marshal"
-	shoes = /obj/item/clothing/shoes/dutyboots
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/security
-	suit = /obj/item/clothing/suit/storage/toggle/marshal_jacket
-	head = /obj/item/clothing/head/beret/sol/fleet/security
+	shoes = /obj/item/clothing/shoes/jackboots
+	uniform = /obj/item/clothing/under/rank/security/navyblue
+	suit = /obj/item/clothing/suit/armor/vest/solgov
 	l_ear = /obj/item/device/radio/headset/headset_sec
-	belt = /obj/item/weapon/gun/energy/gun
+	belt = /obj/item/weapon/storage/belt/security/marshal
 	l_pocket = /obj/item/clothing/accessory/holster/thigh
-	r_pocket = /obj/item/clothing/accessory/badge/marshal
+	r_pocket = /obj/item/clothing/accessory/solgov/rank/marine/enlisted/e4
+	r_hand = /obj/item/clothing/accessory/badge/marshal
+	l_hand = /obj/item/weapon/gun/energy/taser
 	id_slot = slot_wear_id
 	id_type = /obj/item/weapon/card/id/security
 	id_desc = "An ID of SCG police marshals."
-	id_pda_assignment = "Colonial Marshal Officer"
-*/
+	id_pda_assignment = "Colonial Bureau Officer"
+/*
 /decl/hierarchy/outfit/army/private
 	name = "SCG Marine Private"
 	shoes = /obj/item/clothing/shoes/jungleboots
@@ -79,3 +80,4 @@
 		var/obj/random/rank/marine/sergeant/rank = new()
 		if(uniform.can_attach_accessory(rank))
 			uniform.attach_accessory(null, rank)
+*/

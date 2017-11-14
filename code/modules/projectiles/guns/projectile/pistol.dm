@@ -28,6 +28,9 @@
 /obj/item/weapon/gun/projectile/sec/flash
 	name = ".45 signal pistol"
 
+/obj/item/weapon/gun/projectile/sec/lethal
+	magazine_type = /obj/item/ammo_magazine/c45m
+
 /obj/item/weapon/gun/projectile/sec/wood
 	desc = "The NT Mk58 is a cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. This one has a sweet wooden grip. Uses .45 rounds."
 	name = "custom .45 Pistol"
