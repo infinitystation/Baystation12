@@ -22,9 +22,6 @@
 /obj/machinery/camera/network/thunder
 	network = list(NETWORK_THUNDER)
 
-/obj/machinery/camera/network/lana //Event lana's complex camera net
-	network = list(NETWORK_LANA)
-
 // EMP
 
 /obj/machinery/camera/emp_proof/Initialize()

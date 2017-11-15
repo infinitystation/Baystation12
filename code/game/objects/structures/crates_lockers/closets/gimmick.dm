@@ -56,23 +56,6 @@
 		/obj/item/clothing/suit/space/void/swat = 2,
 		/obj/item/clothing/under/syndicate/tacticool = 2)
 
-/obj/structure/closet/gimmick/marine
-	name = "marine gear closet"
-	desc = "It's a storage unit for Marine gear."
-	icon_state = "syndicate1"
-	icon_closed = "syndicate1"
-	icon_opened = "syndicate1open"
-
-/obj/structure/closet/gimmick/marine/WillContain()
-	return list(
-		/obj/item/clothing/glasses/sunglasses/sechud,
-		/obj/item/clothing/under/solgov/utility/marine/urban,
-		/obj/item/clothing/mask/gas/half,
-		/obj/item/clothing/accessory/storage/black_vest,
-		/obj/item/device/radio/headset/specops,
-		/obj/item/device/radio/off,
-		/obj/item/weapon/combitool)
-
 /obj/structure/closet/thunderdome
 	name = "\improper Thunderdome closet"
 	desc = "Everything you need!"
