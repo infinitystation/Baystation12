@@ -1,9 +1,9 @@
-kirill1243 - giant armoured serpentid
 sosiskoed - giant armoured serpentid
+kirill1243 - giant armoured serpentid
 sarumyn - giant armoured serpentid
 diesiege - giant armoured serpentid
-portos - giant armoured serpentid
 rex127 - giant armoured serpentid
+portos - giant armoured serpentid
 sosiskoed - vox
 vankoska - diona
 sosiskoed - diona
@@ -15,6 +15,7 @@ kirill1243 - skrell
 vankoska - skrell
 inubashirimomiji - skrell	
 themaybat - skrell
+hellpony - skrell
 salyvador - skrell
 rucat - machine
 kosteg - machine
