@@ -122,7 +122,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 			var/obj/item/I = L.get_active_hand()
 			holder.add_hiddenprint(L)
 			if(href_list["cut"]) // Toggles the cut/mend status
-				if(istype(I, /obj/item/weapon/wirecutters))
+				if(isWirecutter(I))
 					var/colour = href_list["cut"]
 					CutWireColour(colour)
 				else
@@ -140,7 +140,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 							return 0
 					else
 						to_chat(L, "<span class='notice'>Переведите мультиметр в режим измерен&#255;.</span>")
-				else if(istype(I, /obj/item/device/multitool))
+				else if(isMultitool(I))
 					var/colour = href_list["pulse"]
 					PulseColour(colour)
 				else

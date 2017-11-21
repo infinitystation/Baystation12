@@ -273,7 +273,7 @@
 			return 0
 		if(istype(W,/obj/item/tk_grab))
 			return 0
-		if(istype(W, /obj/item/weapon/weldingtool))
+		if(isWelder(W))
 			var/obj/item/weapon/weldingtool/WT = W
 			if(WT.isOn())
 				slice_into_parts(WT, user)
@@ -305,7 +305,7 @@
 			open()
 	else if(istype(W, /obj/item/weapon/packageWrap))
 		return
-	else if(istype(W, /obj/item/weapon/weldingtool))
+	else if(isWelder(W))
 		var/obj/item/weapon/weldingtool/WT = W
 		if(!WT.remove_fuel(0,user))
 			if(!WT.isOn())
@@ -381,6 +381,12 @@
 	src.add_fingerprint(user)
 	if(!src.toggle())
 		to_chat(usr, "<span class='notice'>It won't budge!</span>")
+
+/obj/structure/closet/attack_ghost(mob/ghost)
+	if(ghost.client && ghost.client.inquisitive_ghost)
+		ghost.examinate(src)
+		if (!src.opened)
+			to_chat(ghost, "It contains: [english_list(contents)].")
 
 /obj/structure/closet/verb/verb_toggleopen()
 	set src in oview(1)

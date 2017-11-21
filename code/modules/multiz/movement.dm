@@ -131,6 +131,9 @@
 	if(anchored && !anchor_bypass)
 		return FALSE
 
+	if(locate(/obj/structure/lattice, loc) || locate(/obj/structure/catwalk, loc))
+		return FALSE
+
 	// See if something prevents us from falling.
 	var/turf/below = GetBelow(src)
 	for(var/atom/A in below)
