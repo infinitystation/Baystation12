@@ -37,7 +37,9 @@ var/list/mining_floors = list()
 	has_resources = 1
 
 /turf/simulated/mineral/New()
-	mining_walls += src
+	if (!mining_walls["[src.z]"])
+		mining_walls["[src.z]"] = list()
+	mining_walls["[src.z]"] += src
 	spawn(0)
 		MineralSpread()
 	if(ticker)
@@ -48,7 +50,8 @@ var/list/mining_floors = list()
 		update_icon(1)
 
 /turf/simulated/mineral/Destroy()
-	mining_walls -= src
+	if (mining_walls["[src.z]"])
+		mining_walls["[src.z]"] -= src
 	return ..()
 
 /turf/simulated/mineral/can_build_cable()
@@ -430,12 +433,15 @@ var/list/mining_floors = list()
 	has_resources = 1
 
 /turf/simulated/floor/asteroid/New()
-	mining_floors += src
+	if (!mining_floors["[src.z]"])
+		mining_floors["[src.z]"] = list()
+	mining_floors["[src.z]"] += src
 	if(prob(20))
 		overlay_detail = "asteroid[rand(0,9)]"
 
 /turf/simulated/floor/asteroid/Destroy()
-	mining_floors -= src
+	if (mining_floors["[src.z]"])
+		mining_floors["[src.z]"] -= src
 	return ..()
 
 /turf/simulated/floor/asteroid/ex_act(severity)

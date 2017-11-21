@@ -429,7 +429,7 @@
 	if (O.is_open_container())
 		return 0
 
-	if(istype(O, /obj/item/weapon/wirecutters) || istype(O, /obj/item/weapon/scalpel))
+	if(isWirecutter(O) || istype(O, /obj/item/weapon/scalpel))
 		if(closed_system)
 			to_chat(user, "<span class='warning'>You can't use [O] on \the [src] while lid is closed.</span>")
 			return
@@ -549,7 +549,7 @@
 		qdel(O)
 		check_health()
 
-	else if(mechanical && istype(O, /obj/item/weapon/wrench))
+	else if(mechanical && isWrench(O))
 
 		//If there's a connector here, the portable_atmospherics setup can handle it.
 		if(locate(/obj/machinery/atmospherics/portables_connector/) in loc)

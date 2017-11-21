@@ -68,8 +68,7 @@
 	onclose(user, "cryopod_console")
 
 /obj/machinery/computer/cryopod/Topic(href, href_list)
-
-	if(..())
+	if((. = ..()))
 		return
 
 	var/mob/user = usr
