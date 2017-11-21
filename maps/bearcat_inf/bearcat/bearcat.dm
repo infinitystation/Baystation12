@@ -3,6 +3,7 @@
 #include "bearcat_loadouts.dm"
 #include "bearcat-1.dmm"
 #include "bearcat-2.dmm"
+#include "bearcat-3.dmm"
 
 /obj/effect/overmap/ship/bearcat
 	name = "FTV Bearcat"

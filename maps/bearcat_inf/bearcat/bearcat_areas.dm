@@ -49,6 +49,24 @@
 	name = "\improper Medical Bay"
 	icon_state = "medbay"
 
+/area/ship/scrap/top/brig
+	name = "\improper Brig"
+	icon_state = "brig"
+
+/area/ship/scrap/top/hallway
+	name = "Hallway"
+	icon_state = "crew_quarters"
+
+/area/ship/scrap/top/hallway/port
+	name = "\improper Top Hallway - Port"
+
+/area/ship/scrap/top/hallway/starbound
+	name = "\improper Top Hallway - Starbound"
+
+/area/ship/scrap/top/hallway/gym
+	name = "\improper Gym"
+	icon_state = "fitness"
+
 /area/ship/scrap/cargo
 	name = "\improper Cargo Hold"
 	icon_state = "quartstorage"

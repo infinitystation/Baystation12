@@ -56,16 +56,43 @@
 /datum/gear/accessory/guns
 	display_name = "guns"
 	flags = GEAR_HAS_COLOR_SELECTION
-	cost = 4
+	cost = 5
 	sort_category = "Utility"
 	path = /obj/item/weapon/gun/projectile/
 
 /datum/gear/accessory/guns/New()
 	..()
 	var/guns = list()
-	guns["holdout"] = /obj/item/weapon/gun/projectile/pistol
-	guns[".45 gun"] = /obj/item/weapon/gun/projectile/sec/lethal
+	guns["holdout pistol"] = /obj/item/weapon/gun/projectile/pistol
+	guns[".45 pistol"] = /obj/item/weapon/gun/projectile/sec/lethal
 	gear_tweaks += new/datum/gear_tweak/path(guns)
+
+/datum/gear/accessory/guns_energy
+	display_name = "small energy gun"
+	cost = 7
+	sort_category = "Utility"
+	path = /obj/item/weapon/gun/energy/gun/small
+
+/datum/gear/accessory/guns_sec
+	display_name = "energy gun"
+	cost = 6
+	sort_category = "Utility"
+	path = /obj/item/weapon/gun/energy/gun
+	allowed_roles = list(/datum/job/officer)
+
+	/obj/item/weapon/gun/projectile/automatic/wt550
+/datum/gear/accessory/ammo
+	display_name = "ammo"
+	cost = 2
+	sort_category = "Utility"
+	path = /obj/item/ammo_magazine
+
+/datum/gear/accessory/ammo/New()
+	..()
+	var/guns = list()
+	guns["holdout pistol ammo"] = /obj/item/ammo_magazine/mc9mm
+	guns[".45 pistol ammo"] = /obj/item/ammo_magazine/c45m
+	gear_tweaks += new/datum/gear_tweak/path(ammo)
 
 /datum/gear/accessory
 	display_name = "locket"

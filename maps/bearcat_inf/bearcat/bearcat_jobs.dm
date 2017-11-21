@@ -71,7 +71,7 @@
 	supervisors = "literally everyone, you bottom feeder"
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/hand
 	alt_titles = list(
-		"Cook" = /decl/hierarchy/outfit/job/bearcat/hand/cook,
+		"Steward" = /decl/hierarchy/outfit/job/bearcat/hand/cook,
 		"Cargo Hand",
 		"Passenger")
 	hud_icon = "hudcargotechnician"
@@ -82,6 +82,15 @@
 	total_positions = 2
 	spawn_positions = 2
 	hud_icon = "hudengineer"
+
+/datum/job/officer
+	title = "Security Guard"
+	supervisors = "the Captain and Your laws."
+	total_positions = 1
+	spawn_positions = 2
+	alt_titles = list(
+		"Sheriff")
+	hud_icon = "hudsecurityofficer"
 
 /datum/job/cyborg
 	supervisors = "your laws and the Captain"
@@ -95,7 +104,7 @@
 
 /decl/hierarchy/outfit/job/bearcat/
 	hierarchy_type = /decl/hierarchy/outfit/job/bearcat
-	pda_type = /obj/item/device/pda
+	pda_type = /obj/item/device/pda/wrist
 	pda_slot = slot_l_store
 	l_ear = null
 	r_ear = null
@@ -107,7 +116,7 @@
 	pda_type = /obj/item/device/pda/captain
 	r_pocket = /obj/item/device/radio
 	id_type = /obj/item/weapon/card/id/gold
-	
+
 
 /decl/hierarchy/outfit/job/bearcat/captain/post_equip(var/mob/living/carbon/human/H)
 	..()
@@ -138,7 +147,7 @@
 	uniform = /obj/item/clothing/under/det/black
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/laceup
-	pda_type = /obj/item/device/pda/medical
+	pda_type = /obj/item/device/pda/wrist/medical
 
 /decl/hierarchy/outfit/job/bearcat/mate
 	name = BEARCAT_OUTFIT_JOB_NAME("First Mate")
@@ -148,6 +157,43 @@
 	pda_type = /obj/item/device/pda/cargo
 	l_hand = /obj/item/weapon/clipboard
 
+/decl/hierarchy/outfit/job/bearcat/security
+	name = BEARCAT_OUTFIT_JOB_NAME("Security Guard")
+	uniform = /obj/item/clothing/under/syndicate
+	shoes = /obj/item/clothing/shoes/jackboots
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+	pda_type = /obj/item/device/pda/wrist/security
+	belt = /obj/item/weapon/melee/baton/loaded
+	head = /obj/item/clothing/head/warden
+	id_type = /obj/item/weapon/card/id/security
+	suit = /obj/item/clothing/suit/armor/pcarrier/medium
+	gloves = /obj/item/clothing/gloves/thick
+
+/obj/structure/closet/secure_closet/security/bearcat
+	name = "security guard's locker"
+	req_access = list(access_brig)
+	icon_state = "sec1"
+	icon_closed = "sec"
+	icon_locked = "sec1"
+	icon_opened = "secopen"
+	icon_broken = "secbroken"
+	icon_off = "secoff"
+
+/obj/structure/closet/secure_closet/security/bearcat/WillContain()
+	return list(
+		new/datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel_sec)),
+		new/datum/atom_creator/simple(/obj/item/weapon/storage/backpack/dufflebag/sec, 50),
+		/obj/item/clothing/mask/gas/half,
+		/obj/item/weapon/handcuffs,
+		/obj/item/weapon/storage/belt/security,
+		/obj/item/device/flash,
+		/obj/item/device/radio/off,
+		/obj/item/taperoll/police,
+		/obj/item/device/hailer,
+		/obj/item/weapon/gun/energy/taser,
+		/obj/item/device/holowarrant,
+	)
+
 /decl/hierarchy/outfit/job/bearcat/hand
 	name = BEARCAT_OUTFIT_JOB_NAME("Deck Hand")
 
@@ -156,7 +202,7 @@
 	uniform = pick(list(/obj/item/clothing/under/overalls,/obj/item/clothing/under/focal,/obj/item/clothing/under/hazard,/obj/item/clothing/under/rank/cargotech,/obj/item/clothing/under/color/black,/obj/item/clothing/under/color/grey,/obj/item/clothing/under/casual_pants/track, ))
 
 /decl/hierarchy/outfit/job/bearcat/hand/cook
-	name = BEARCAT_OUTFIT_JOB_NAME("Cook")
+	name = BEARCAT_OUTFIT_JOB_NAME("Steward")
 	head = /obj/item/clothing/head/chefhat
 	suit = /obj/item/clothing/suit/chef/classic
 
