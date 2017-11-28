@@ -1,12 +1,13 @@
 /obj/structure/sign/dedicationplaque
 	name = "\improper SEV Torch dedication plaque"
 	desc = "S.E.V. Torch - Mako Class - Sol Expeditionary Corps Registry 95519 - Shiva Fleet Yards, Mars - First Vessel To Bear The Name - Launched 2560 - Sol Central Government - 'Never was anything great achieved without danger.'"
-	icon = 'maps/torch/icons/obj/solgov-decals.dmi'
+	icon = 'icons/obj/decals.dmi'
 	icon_state = "lightplaque"
 
 /obj/structure/sign/ecplaque
 	name = "\improper Expeditionary Directives"
 	desc = "A plaque with Expeditionary Corps logo etched in it."
+	icon = 'maps/torch/icons/obj/solgov-decals.dmi'
 	icon_state = "ecplaque"
 	var/directives = {"<hr><center>
 		1. <b>Exploring the unknown is your Primary Mission</b><br>
