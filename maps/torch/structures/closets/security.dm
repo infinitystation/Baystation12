@@ -50,7 +50,7 @@
 
 /obj/structure/closet/secure_closet/cos/WillContain()
 	return list(
-		/obj/item/clothing/suit/armor/pcarrier/medium/command,
+		/obj/item/clothing/suit/armor/pcarrier/medium/command/security,
 		/obj/item/clothing/head/helmet/solgov/command,
 		/obj/item/clothing/head/HoS/dermal,
 		/obj/item/weapon/cartridge/hos,

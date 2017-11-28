@@ -730,6 +730,10 @@
 	name = "\improper Exploration Equipment"
 	icon_state = "exploration"
 
+/area/quartermaster/shuttlefuel
+	name = "\improper Shuttle Fuel Bay"
+	icon_state = "toxstorage"
+
 /area/quartermaster/hangar
 	name = "\improper Hangar Deck"
 	icon_state = "hangar"
@@ -1261,12 +1265,6 @@
  	sound_env = LARGE_ENCLOSED
 
 // Medical
-
-/area/medical/biostorage
-	name = "\improper Secondary Storage"
-	icon_state = "medbay4"
-	ambience = list('sound/ambience/signal.ogg')
-
 /area/medical/chemistry
 	name = "\improper Chemistry"
 	icon_state = "chem"
@@ -1295,6 +1293,10 @@
 
 /area/assembly/robotics
 	name = "\improper Robotics Lab"
+	icon_state = "robotics"
+
+/area/assembly/robotics_surgery
+	name = "\improper Robotics Operating Theatre"
 	icon_state = "robotics"
 
 /area/rnd/misc_lab

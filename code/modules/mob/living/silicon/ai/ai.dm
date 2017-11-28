@@ -211,7 +211,7 @@ var/list/ai_verbs_default = list(
 	if (malf && !(mind in malf.current_antagonists))
 		show_laws()
 		to_chat(src, "<b>Данные законы могут быть изменены другими игроками или в том случае, если вы &#255;вл&#255;етесь сбойным ИИ.</b>")
-		to_chat(src, "<span class='danger'><B>Внимание! Разработчиками Искусственного Интеллекта были введены специальные протоколы! Ознакомление с оными возможно на следующей странице: https://wiki.infinity-ss13.ru/index.php?title=SCG_AI_Rules_and_Regulations</span>")
+		to_chat(src, "<span class='danger'><B>Внимание! Разработчиками Искусственного Интеллекта были введены специальные протоколы! Ознакомление с оными возможно на следующей странице: https://wiki.infinity-ss13.ru/index.php?title=SCG_AI_Rules_and_Regulations</b></span>")
 
 	job = "AI"
 	setup_icon()
