@@ -687,6 +687,13 @@
 	icon_state = "hair_manbun"
 	gender = MALE
 
+/datum/sprite_accessory/hair/leftsidecut
+	name = "Left Sidecut"
+	icon_state = "hair_leftside"
+
+/datum/sprite_accessory/hair/rightsidecut
+	name = "Right Sidecut"
+	icon_state = "hair_rightside"
 
 /*
 ///////////////////////////////////
@@ -819,6 +826,10 @@
 /datum/sprite_accessory/facial_hair/chinless
 	name = "Chinless Beard"
 	icon_state = "facial_chinlessbeard"
+
+/datum/sprite_accessory/facial_hair/braided
+	name = "Braided Beard"
+	icon_state = "facial_biker"
 
 /*
 ///////////////////////////////////

@@ -146,7 +146,8 @@
 /obj/item/weapon/weldingtool
 	name = "welding tool"
 	icon = 'icons/obj/tools.dmi'
-	icon_state = "welder"
+	icon_state = "welder_m"
+	item_state = "welder"
 	desc = "A heavy but portable welding gun with its own interchangeable fuel tank. It features a simple toggle switch and a port for attaching an external tank."
 	description_info = "Use in your hand to toggle the welder on and off. Hold in one hand and click with an empty hand to remove its internal tank. Click on an object to try to weld it. You can seal airlocks, attach heavy-duty machines like emitters and disposal chutes, and repair damaged walls - these are only a few of its uses. Each use of the welder will consume a unit of fuel. Be sure to wear protective equipment such as goggles, a mask, or certain voidsuit helmets to prevent eye damage. You can refill the welder with a welder tank by clicking on it, but be sure to turn it off first!"
 	description_fluff = "One of many tools of ancient design, still used in today's busy world of engineering with only minor tweaks here and there. Compact machinery and innovations in fuel storage have allowed for conveniences like this one-piece, handheld welder to exist."
@@ -175,11 +176,15 @@
 	var/acti_sound = 'sound/items/WelderActivate.ogg'
 	var/deac_sound = 'sound/items/WelderDeactivate.ogg'
 
-	var/obj/item/weapon/fuel_cartridge/tank = /obj/item/weapon/fuel_cartridge // where the fuel is stored
+	var/obj/item/weapon/welder_tank/tank = /obj/item/weapon/welder_tank // where the fuel is stored
 
 /obj/item/weapon/weldingtool/Initialize()
 	if(ispath(tank))
 		tank = new tank
+
+	set_extension(src, /datum/extension/base_icon_state, /datum/extension/base_icon_state, icon_state)
+	update_icon()
+
 	. = ..()
 
 /obj/item/weapon/weldingtool/Destroy()
@@ -197,13 +202,29 @@
 		else
 			to_chat(user, "There is no tank attached.")
 
+/obj/item/weapon/weldingtool/MouseDrop(atom/over)
+	if(!CanMouseDrop(over, usr))
+		return
+
+	if(istype(over, /obj/item/weapon/weldpack))
+		var/obj/item/weapon/weldpack/wp = over
+		if(wp.welder)
+			to_chat(usr, "\The [wp] already has \a [wp.welder] attached.")
+		else
+			usr.drop_from_inventory(src, wp)
+			wp.welder = src
+			usr.visible_message("[usr] attaches \the [src] to \the [wp].", "You attach \the [src] to \the [wp].")
+			wp.update_icon()
+		return
+
+	..()
 
 /obj/item/weapon/weldingtool/attackby(obj/item/W as obj, mob/user as mob)
 	if(welding)
 		to_chat(user, "<span class='danger'>Stop welding first!</span>")
 		return
 
-	if(istype(W,/obj/item/weapon/screwdriver))
+	if(isScrewdriver(W))
 		status = !status
 		if(status)
 			to_chat(user, "<span class='notice'>You secure the welder.</span>")
@@ -233,7 +254,7 @@
 		src.add_fingerprint(user)
 		return
 
-	if(istype(W, /obj/item/weapon/fuel_cartridge))
+	if(istype(W, /obj/item/weapon/welder_tank))
 		if(tank)
 			to_chat(user, "Remove the current tank first.")
 			return
@@ -245,6 +266,7 @@
 		user.drop_from_inventory(W, src)
 		tank = W
 		user.visible_message("[user] slots \a [W] into \the [src].", "You slot \a [W] into \the [src].")
+		update_icon()
 		return
 
 	..()
@@ -257,6 +279,7 @@
 				user.visible_message("[user] removes \the [tank] from \the [src].", "You remove \the [tank] from \the [src].")
 				user.put_in_hands(tank)
 				tank = null
+				update_icon()
 			else
 				to_chat(user, "\The [tank] can't be removed.")
 		else
@@ -349,7 +372,17 @@
 
 /obj/item/weapon/weldingtool/update_icon()
 	..()
-	icon_state = welding ? "welder1" : "welder"
+
+	var/datum/extension/base_icon_state/bis = get_extension(src, /datum/extension/base_icon_state)
+	icon_state = welding ? "[bis.base_icon_state]1" : "[bis.base_icon_state]"
+	item_state = welding ? "welder1" : "welder"
+
+	underlays.Cut()
+	if(tank)
+		var/image/tank_image = image(tank.icon, icon_state = tank.icon_state)
+		tank_image.pixel_z = 0
+		underlays += tank_image
+
 	var/mob/M = loc
 	if(istype(M))
 		M.update_inv_l_hand()
@@ -431,21 +464,21 @@
 				spawn(100)
 					H.disabilities &= ~NEARSIGHTED
 
-/obj/item/weapon/fuel_cartridge
-	name = "welding fuel cartridge"
+/obj/item/weapon/welder_tank
+	name = "welding fuel tank"
 	desc = "An interchangeable fuel tank meant for a welding tool."
-	icon = 'icons/obj/ammo.dmi'
-	icon_state = "fuel"
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "fuel_m"
 	w_class = ITEM_SIZE_SMALL
 	var/max_fuel = 20
 	var/can_remove = 1
 
-/obj/item/weapon/fuel_cartridge/Initialize()
+/obj/item/weapon/welder_tank/Initialize()
 	create_reagents(max_fuel)
 	reagents.add_reagent(/datum/reagent/fuel, max_fuel)
 	. = ..()
 
-/obj/item/weapon/fuel_cartridge/afterattack(obj/O as obj, mob/user as mob, proximity)
+/obj/item/weapon/welder_tank/afterattack(obj/O as obj, mob/user as mob, proximity)
 	if(!proximity) return
 	if (istype(O, /obj/structure/reagent_dispensers/fueltank) && get_dist(src,O) <= 1)
 		O.reagents.trans_to_obj(src, max_fuel)
@@ -455,67 +488,79 @@
 
 /obj/item/weapon/weldingtool/mini
 	name = "miniature welding tool"
+	icon_state = "welder_s"
+	item_state = "welder"
 	desc = "A smaller welder, meant for quick or emergency use."
 	origin_tech = list(TECH_ENGINEERING = 2)
 	matter = list(DEFAULT_WALL_MATERIAL = 15, "glass" = 5)
 	w_class = ITEM_SIZE_SMALL
-	tank = /obj/item/weapon/fuel_cartridge/mini
+	tank = /obj/item/weapon/welder_tank/mini
 
-/obj/item/weapon/fuel_cartridge/mini
-	name = "small welding fuel cartridge"
+/obj/item/weapon/welder_tank/mini
+	name = "small welding fuel tank"
+	icon_state = "fuel_s"
 	w_class = ITEM_SIZE_TINY
 	max_fuel = 5
 	can_remove = 0
 
 /obj/item/weapon/weldingtool/largetank
 	name = "industrial welding tool"
+	icon_state = "welder_l"
+	item_state = "welder"
 	desc = "A heavy-duty portable welder, made to ensure it won't suddenly go cold on you."
 	origin_tech = list(TECH_ENGINEERING = 2)
 	matter = list(DEFAULT_WALL_MATERIAL = 70, "glass" = 60)
 	w_class = ITEM_SIZE_LARGE
-	tank = /obj/item/weapon/fuel_cartridge/large
+	tank = /obj/item/weapon/welder_tank/large
 
-/obj/item/weapon/fuel_cartridge/large
-	name = "large welding fuel cartridge"
+/obj/item/weapon/welder_tank/large
+	name = "large welding fuel tank"
+	icon_state = "fuel_l"
 	w_class = ITEM_SIZE_NORMAL
 	max_fuel = 40
 
 /obj/item/weapon/weldingtool/hugetank
 	name = "upgraded welding tool"
+	icon_state = "welder_h"
+	item_state = "welder"
 	desc = "A sizable welding tool with room to accomodate the largest of fuel tanks."
 	w_class = ITEM_SIZE_HUGE
 	origin_tech = list(TECH_ENGINEERING = 3)
 	matter = list(DEFAULT_WALL_MATERIAL = 70, "glass" = 120)
-	tank = /obj/item/weapon/fuel_cartridge/huge
+	tank = /obj/item/weapon/welder_tank/huge
 
-/obj/item/weapon/fuel_cartridge/huge
-	name = "huge welding fuel cartridge"
+/obj/item/weapon/welder_tank/huge
+	name = "huge welding fuel tank"
+	icon_state = "fuel_h"
 	w_class = ITEM_SIZE_LARGE
 	max_fuel = 80
 
 /obj/item/weapon/weldingtool/experimental
 	name = "experimental welding tool"
+	icon_state = "welder_l"
+	item_state = "welder"
 	desc = "This welding tool feels heavier in your possession than is normal. There appears to be no external fuel port."
 	w_class = ITEM_SIZE_LARGE
 	origin_tech = list(TECH_ENGINEERING = 4, TECH_PHORON = 3)
 	matter = list(DEFAULT_WALL_MATERIAL = 70, "glass" = 120)
-	tank = /obj/item/weapon/fuel_cartridge/experimental
+	tank = /obj/item/weapon/welder_tank/experimental
 
-/obj/item/weapon/fuel_cartridge/experimental
-	name = "experimental welding fuel cartridge"
+/obj/item/weapon/welder_tank/experimental
+	name = "experimental welding fuel tank"
+	icon_state = "fuel_x"
 	w_class = ITEM_SIZE_NORMAL
 	max_fuel = 40
 	can_remove = 0
 	var/last_gen = 0
 
-/obj/item/weapon/fuel_cartridge/experimental/Initialize()
+/obj/item/weapon/welder_tank/experimental/Initialize()
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
-/obj/item/weapon/fuel_cartridge/experimental/Destroy()
+/obj/item/weapon/welder_tank/experimental/Destroy()
 	STOP_PROCESSING(SSobj, src)
 
-/obj/item/weapon/fuel_cartridge/experimental/Process()
+/obj/item/weapon/welder_tank/experimental/Process()
 	var/cur_fuel = reagents.get_reagent_amount(/datum/reagent/fuel)
 	if(cur_fuel < max_fuel)
 		var/gen_amount = ((world.time-last_gen)/25)
