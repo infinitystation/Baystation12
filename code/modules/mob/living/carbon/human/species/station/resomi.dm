@@ -18,6 +18,7 @@
 	base_color = "#001144"
 	tail = "resomitail"
 	tail_hair = "feathers"
+	strength = STR_LOW
 	reagent_tag = IS_RESOMI
 
 	icobase = 'icons/mob/human_races/r_resomi.dmi'
