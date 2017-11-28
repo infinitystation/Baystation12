@@ -9,7 +9,6 @@
 	max_shells = 6
 	ammo_type = /obj/item/ammo_casing/a357
 	var/chamber_offset = 0 //how many empty chambers in the cylinder until you hit a round
-	have_safety = 0
 
 /obj/item/weapon/gun/projectile/revolver/AltClick()
 	if(CanPhysicallyInteract(usr))

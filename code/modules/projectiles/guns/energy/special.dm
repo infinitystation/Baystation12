@@ -145,7 +145,6 @@
 	origin_tech = null
 	self_recharge = 1
 	charge_meter = 0
-	have_safety = FALSE
 
 /obj/item/weapon/gun/energy/staff/special_check(var/mob/user)
 	if((user.mind && !wizards.is_antagonist(user.mind)))
