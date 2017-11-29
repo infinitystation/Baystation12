@@ -21,6 +21,7 @@ salyvador - skrell
 rucat - machine
 kosteg - machine
 netreson - machine
+rockyfail - machine
 quardbreak - machine
 redknighthero - machine
 wheatley2013 - machine
