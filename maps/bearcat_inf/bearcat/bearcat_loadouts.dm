@@ -80,7 +80,6 @@
 	path = /obj/item/weapon/gun/energy/gun
 	allowed_roles = list(/datum/job/officer)
 
-	/obj/item/weapon/gun/projectile/automatic/wt550
 /datum/gear/accessory/ammo
 	display_name = "ammo"
 	cost = 2
@@ -89,9 +88,9 @@
 
 /datum/gear/accessory/ammo/New()
 	..()
-	var/guns = list()
-	guns["holdout pistol ammo"] = /obj/item/ammo_magazine/mc9mm
-	guns[".45 pistol ammo"] = /obj/item/ammo_magazine/c45m
+	var/ammo = list()
+	ammo["holdout pistol ammo"] = /obj/item/ammo_magazine/mc9mm
+	ammo[".45 pistol ammo"] = /obj/item/ammo_magazine/c45m
 	gear_tweaks += new/datum/gear_tweak/path(ammo)
 
 /datum/gear/accessory
