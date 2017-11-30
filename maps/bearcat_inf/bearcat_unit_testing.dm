@@ -1,5 +1,5 @@
 /datum/map/overmap_example
-	// Unit test exemptions
+	/// Unit test exemptions
 	apc_test_exempt_areas = list(
 		/area/space = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/ship/scrap/maintenance/engine/port = NO_SCRUBBER|NO_VENT,
