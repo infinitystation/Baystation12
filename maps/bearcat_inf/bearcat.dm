@@ -1,7 +1,12 @@
 #if !defined(using_map_DATUM)
-	#include "overmap_unit_testing.dm"
-
-	#include "bearcat/bearcat.dm"
+	#include "bearcat_areas.dm"
+	#include "bearcat_overmap.dm"
+	#include "bearcat_areas.dm"
+	#include "bearcat_jobs.dm"
+	#include "bearcat_loadouts.dm"
+	#include "bearcat_unit_testing.dm"
+	#include "bearcat-1.dmm"
+	#include "bearcat-2.dmm"
 	#include "../away/lost_supply_base/lost_supply_base.dm"
 	#include "../away/smugglers/smugglers.dm"
 

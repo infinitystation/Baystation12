@@ -395,7 +395,7 @@
 
 /obj/random/trash //Mostly remains and cleanable decals. Stuff a janitor could clean up
 	name = "random trash"
-	desc = "This is some random trash."
+	desc = "This is some random spaceship hull trash.."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "greenglow"
 
@@ -413,6 +413,19 @@
 				/obj/effect/decal/cleanable/flour,
 				/obj/effect/decal/cleanable/dirt,
 				/obj/item/remains/robot)
+
+/obj/random/trash/space //Mostly remains and cleanable decals. Stuff a janitor could clean up
+	name = "random space trash"
+	desc = "This is some random trash."
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "greenglow"
+
+/obj/random/trash/space/spawn_choices()
+	return list(/obj/item/weapon/ore/iron = 1,
+				/obj/item/weapon/ore/glass = 5,
+				/obj/effect/decal/cleanable/ash = 5,
+				/obj/effect/decal/cleanable/dirt = 3,
+				/obj/item/remains/robot = 2)
 
 
 obj/random/closet //A couple of random closets to spice up maint

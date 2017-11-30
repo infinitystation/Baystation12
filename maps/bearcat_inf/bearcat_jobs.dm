@@ -1,5 +1,5 @@
 /datum/map/overmap_example
-	allowed_jobs = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/doctor, /datum/job/hop, /datum/job/cyborg, /datum/job/assistant, /datum/job/engineer)
+	allowed_jobs = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/doctor, /datum/job/hop, /datum/job/cyborg, /datum/job/officer, /datum/job/assistant, /datum/job/engineer)
 
 /datum/job/captain
 	supervisors = "the Merchant Code and your conscience"
@@ -86,6 +86,7 @@
 /datum/job/officer
 	title = "Security Guard"
 	supervisors = "the Captain and Your laws."
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/security
 	total_positions = 1
 	spawn_positions = 2
 	alt_titles = list(
@@ -166,8 +167,10 @@
 	belt = /obj/item/weapon/melee/baton/loaded
 	head = /obj/item/clothing/head/warden
 	id_type = /obj/item/weapon/card/id/security
+	r_pocket = /obj/item/device/radio
 	suit = /obj/item/clothing/suit/armor/pcarrier/medium
 	gloves = /obj/item/clothing/gloves/thick
+	flags = OUTFIT_HAS_BACKPACK
 
 /obj/structure/closet/secure_closet/security/bearcat
 	name = "security guard's locker"
