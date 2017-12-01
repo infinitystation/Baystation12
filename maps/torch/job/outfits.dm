@@ -148,7 +148,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	name = OUTFIT_JOB_NAME("NanoTrasen Liaison")
 	l_ear = /obj/item/device/radio/headset/heads/torchntcommand
 	uniform = /obj/item/clothing/under/suit_jacket/nt
-	suit = /obj/item/clothing/suit/storage/toggle/internalaffairs/plain
+	suit = /obj/item/clothing/suit/storage/toggle/suit/black
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/torch/passenger/research/liaison
 	pda_type = /obj/item/device/pda/heads
@@ -157,7 +157,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	name = OUTFIT_JOB_NAME("SolGov Representative")
 	l_ear = /obj/item/device/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/internalaffairs/plain/solgov
-	suit = /obj/item/clothing/suit/storage/toggle/internalaffairs/plain
+	suit = /obj/item/clothing/suit/storage/toggle/suit/black
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/torch/crew/representative
 	pda_type = /obj/item/device/pda/heads
@@ -371,11 +371,11 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/torch/crew/medical/contractor/xenosurgeon
 	name = OUTFIT_JOB_NAME("Xenosurgeon")
-	uniform = /obj/item/clothing/under/rank/medical/purple
+	uniform = /obj/item/clothing/under/rank/medical/scrubs/purple
 
 /decl/hierarchy/outfit/job/torch/crew/medical/contractor/mortus
 	name = OUTFIT_JOB_NAME("Mortician")
-	uniform = /obj/item/clothing/under/rank/medical/black
+	uniform = /obj/item/clothing/under/rank/medical/scrubs/black
 
 /decl/hierarchy/outfit/job/torch/crew/medical/contractor/virologist
 	name = OUTFIT_JOB_NAME("Virologist - Torch")

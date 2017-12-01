@@ -871,17 +871,6 @@ menu "menu"
 		group = "size"
 		saved-params = "is-checked"
 	elem 
-		name = ""
-		command = ""
-		category = "&Icons"
-		saved-params = "is-checked"
-	elem "textmode"
-		name = "&Text"
-		command = ".winset \"menu.textmode.is-checked=true?mapwindow.map.text-mode=true:mapwindow.map.text-mode=false\""
-		category = "&Icons"
-		can-check = true
-		saved-params = "is-checked"
-	elem 
 		name = "&Help"
 		command = ""
 		saved-params = "is-checked"
@@ -1183,6 +1172,7 @@ window "mapwindow"
 		anchor2 = 100,100
 		font-family = "Arial Rounded MT Bold,Arial Black,Arial,sans-serif"
 		font-size = 7
+		text-color = none
 		is-default = true
 		saved-params = "icon-size"
 		on-show = ".winset\"mainwindow.mainvsplit.left=mapwindow\""
@@ -1216,74 +1206,77 @@ window "outputwindow"
 window "rpane"
 	elem "rpane"
 		type = MAIN
-		pos = 281,-40
+		pos = 281,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 	elem "rpanewindow"
 		type = CHILD
 		pos = 0,0
-		size = 638x474
+		size = 640x499
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = none
 		saved-params = "splitter"
 		right = "outputwindow"
 		is-vert = false
-	elem "referenseb"
+	elem "rulesb"
 		type = BUTTON
-		pos = 192,0
-		size = 72x20
+		pos = 278,0
+		size = 60x16
 		anchor1 = none
 		anchor2 = none
-		font-style = "bold"
-		background-color = none
 		saved-params = "is-checked"
-		text = "Referense"
-		command = "welcome"
+		text = "Rules"
+		command = "rules"
+		group = "rpanemode"
 	elem "changelog"
 		type = BUTTON
-		pos = 272,0
-		size = 152x24
+		pos = 341,0
+		size = 67x16
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
-		text = "Baystation12 Changelog"
-		command = "Baystation12-Changelog"
+		text = "Changelog"
+		command = "Changelog"
 		group = "rpanemode"
-	elem "changelog_infinity"
+	elem "Lore"
 		type = BUTTON
-		pos = 432,0
-		size = 112x24
+		pos = 413,0
+		size = 67x16
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
-		text = "Infinity Changelog"
-		command = "Infinity-Station-Changelog"
+		text = "Lore"
+		command = "Lore"
 		group = "rpanemode"
 	elem "forumb"
 		type = BUTTON
-		pos = 128,0
-		size = 60x20
+		pos = 215,0
+		size = 60x16
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "Forum"
 		command = "forum"
 		group = "rpanemode"
+	elem "wikib"
+		type = BUTTON
+		pos = 152,0
+		size = 60x16
+		anchor1 = none
+		anchor2 = none
+		saved-params = "is-checked"
+		text = "Wiki"
+		command = "wiki"
+		group = "rpanemode"
 	elem "textb"
 		type = BUTTON
 		pos = 0,0
-		size = 60x20
+		size = 60x16
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Text"
@@ -1293,11 +1286,10 @@ window "rpane"
 		button-type = pushbox
 	elem "browseb"
 		type = BUTTON
-		pos = 550,0
-		size = 72x20
+		pos = 464,0
+		size = 60x16
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Browser"
@@ -1307,10 +1299,9 @@ window "rpane"
 	elem "infob"
 		type = BUTTON
 		pos = 64,0
-		size = 60x20
+		size = 60x16
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Info"

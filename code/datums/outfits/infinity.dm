@@ -20,7 +20,7 @@
 	name = "Daft Punk"
 	shoes = /obj/item/clothing/shoes/laceup
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
-	suit = /obj/item/clothing/suit/storage/toggle/internalaffairs
+	suit = /obj/item/clothing/suit/storage/toggle/suit/black
 	head = /obj/item/clothing/head/helmet/daft_punk
 	gloves = /obj/item/clothing/gloves/daft_punk
 	id_slot = slot_wear_id
