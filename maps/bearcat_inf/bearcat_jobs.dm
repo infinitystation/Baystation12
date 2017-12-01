@@ -193,7 +193,7 @@
 		/obj/item/device/radio/off,
 		/obj/item/taperoll/police,
 		/obj/item/device/hailer,
-		/obj/item/weapon/gun/energy/taser,
+		/obj/item/weapon/gun/energy/stunrevolver,
 		/obj/item/device/holowarrant,
 	)
 
