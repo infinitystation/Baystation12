@@ -53,14 +53,25 @@
 	..()
 	gear_tweaks += new/datum/gear_tweak/path(/obj/item/clothing/accessory/holster)
 
-//Weapon
+/obj/item/stack/medical/bruise_pack
 
-/datum/gear/weapon
-	sort_category = "Guns"
+/datum/gear/accessory/bruise
+	display_name = "roll of gauze"
+	sort_category = "Utility"
+	path = /obj/item/stack/medical/bruise_pack
+	cost = 1
+
+/datum/gear/accessory/burn
+	display_name = "ointment"
+	sort_category = "Utility"
+	path = /obj/item/stack/medical/ointment
+	cost = 1
+
+//Weapons
 
 /datum/gear/weapon/guns
 	display_name = "guns"
-	flags = GEAR_HAS_COLOR_SELECTION
+	sort_category = "Guns"
 	cost = 5
 	path = /obj/item/weapon/gun/projectile/
 
@@ -83,17 +94,13 @@
 	ammo[".45 pistol ammo"] = /obj/item/ammo_magazine/c45m
 	gear_tweaks += new/datum/gear_tweak/path(ammo)
 
-/datum/gear/weapon/gun_energy
-	display_name = "small energy gun"
-	cost = 7
-	path = /obj/item/weapon/gun/energy/gun/small
-
+/*
 /datum/gear/weapon/sec_energy_gun
 	display_name = "sheriff's energy gun"
 	cost = 6
 	path = /obj/item/weapon/gun/energy/gun
 	allowed_roles = list(/datum/job/officer)
-
+*/
 /datum/gear/accessory
 	display_name = "locket"
 	path = /obj/item/clothing/accessory/locket
@@ -432,7 +439,7 @@
 /datum/gear/suit/suit_jacket
 	display_name = "suit jackets"
 	path = /obj/item/clothing/suit/storage
-
+/*
 /datum/gear/suit/suit_jacket/New()
 	..()
 	var/suitjackets = list()
@@ -448,7 +455,7 @@
 	suitjackets["blue suit jacket"] = /obj/item/clothing/suit/storage/toggle/lawyer/bluejacket
 	suitjackets["purple suit jacket"] = /obj/item/clothing/suit/storage/lawyer/purpjacket
 	gear_tweaks += new/datum/gear_tweak/path(suitjackets)
-
+*/
 /datum/gear/suit/leather
 	display_name = "jacket selection"
 	path = /obj/item/clothing/suit
