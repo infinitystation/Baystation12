@@ -425,6 +425,16 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	path = /obj/item/device/destTagger
 	category = "General"
 
+/datum/autolathe/recipe/camera
+	name = "polaroid camera"
+	path = /obj/item/device/camera
+	category = "General"
+
+/datum/autolathe/recipe/camera_film
+	name = "camera film"
+	path = /obj/item/device/camera_film
+	category = "General"
+
 /datum/autolathe/recipe/labeler
 	name = "hand labeler"
 	path = /obj/item/weapon/hand_labeler
