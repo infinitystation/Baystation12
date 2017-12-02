@@ -81,8 +81,6 @@
 	var/tmp/told_cant_shoot = 0 //So that it doesn't spam them with the fact they cannot hit them.
 	var/tmp/lock_time = -100
 
-	var/have_safety = TRUE
-	var/safety = TRUE
 
 /obj/item/weapon/gun/New()
 	..()
@@ -91,9 +89,6 @@
 
 	if(isnull(scoped_accuracy))
 		scoped_accuracy = accuracy
-
-	if(!have_safety)
-		safety = FALSE
 
 /obj/item/weapon/gun/update_twohanding()
 	if(one_hand_penalty)
@@ -121,7 +116,6 @@
 //Any checks that shouldn't result in handle_click_empty() being called if they fail should go here.
 //Otherwise, if you want handle_click_empty() to be called, check in consume_next_projectile() and return null there.
 /obj/item/weapon/gun/proc/special_check(var/mob/user)
-
 	if(!istype(user, /mob/living))
 		return 0
 	if(!user.IsAdvancedToolUser())
@@ -144,12 +138,6 @@
 		else
 			handle_click_empty(user)
 		return 0
-
-	if(have_safety)
-		if(safety)
-			to_chat(user, "<span class='danger'>The gun's safety is on!</span>")
-			handle_click_empty(user)
-			return 0
 	return 1
 
 /obj/item/weapon/gun/emp_act(severity)
@@ -157,7 +145,7 @@
 		O.emp_act(severity)
 
 /obj/item/weapon/gun/afterattack(atom/A, mob/living/user, adjacent, params)
-	if(adjacent) return //A is adjacent, is the user, or is on the user's person
+	if(adjacent) return //A is adjacent, is the user, or is on the user's person //потом вернуть как было
 
 	if(!user.aiming)
 		user.aiming = new(user)
@@ -165,6 +153,8 @@
 	if(user && user.client && user.aiming && user.aiming.active && user.aiming.aiming_at != A)
 		PreFire(A,user,params) //They're using the new gun system, locate what they're aiming at.
 		return
+	if(user && user.a_intent == I_HELP) //regardless of what happens, refuse to shoot if help intent is on
+		to_chat(user, "<span class='warning'>You refrain from firing \the [src] as your intent is set to help.</span>")
 	else
 		Fire(A,user,params) //Otherwise, fire normally.
 
@@ -177,13 +167,12 @@
 		return ..() //Pistolwhippin'
 
 /obj/item/weapon/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
-	if(!user || !target) return
+	if(!user || !target)   return
 	if(target.z != user.z) return
 
 	add_fingerprint(user)
 
-	if(!special_check(user))
-		return
+	if(!special_check(user)) return
 
 	if(world.time < next_fire_time)
 		if (world.time % 3) //to prevent spam
@@ -435,9 +424,6 @@
 		var/datum/firemode/current_mode = firemodes[sel_mode]
 		to_chat(user, "The fire selector is set to [current_mode.name].")
 
-	if(have_safety)
-		to_chat(user, "<span class='notice'>The safety is [safety ? "on" : "off"].</span>")
-
 /obj/item/weapon/gun/proc/switch_firemodes()
 	if(firemodes.len <= 1)
 		return null
@@ -454,16 +440,3 @@
 	var/datum/firemode/new_mode = switch_firemodes(user)
 	if(new_mode)
 		to_chat(user, "<span class='notice'>\The [src] is now set to [new_mode.name].</span>")
-
-//Gun safety
-/obj/item/weapon/gun/AltClick(mob/user)
-	..()
-	if(user.incapacitated())
-		to_chat(user, "<span class='warning'>You can't do that right now!</span>")
-		return
-
-	if(src == user.get_active_hand())
-		if(have_safety)
-			safety = !safety
-			playsound(user, 'sound/weapons/selector.ogg', 50, 1)
-			to_chat(user, "<span class='notice'>You toggle the safety [safety ? "on":"off"].</span>")
