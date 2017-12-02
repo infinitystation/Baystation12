@@ -69,13 +69,13 @@
 
 //Weapons
 
-/datum/gear/weapon/guns
+/datum/gear/weapon
 	display_name = "guns"
 	sort_category = "Guns"
 	cost = 5
 	path = /obj/item/weapon/gun/projectile/
 
-/datum/gear/weapon/guns/New()
+/datum/gear/weapon/New()
 	..()
 	var/guns = list()
 	guns["holdout pistol"] = /obj/item/weapon/gun/projectile/pistol

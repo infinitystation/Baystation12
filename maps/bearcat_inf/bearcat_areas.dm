@@ -96,6 +96,10 @@
 	name = "\improper Port Escape Pods"
 	icon_state = "green"
 
+/area/ship/scrap/security
+	name = "\improper Jail"
+	icon_state = "red"
+
 /area/ship/scrap/escape_star
 	name = "\improper Starboard Escape Pods"
 	icon_state = "yellow"
