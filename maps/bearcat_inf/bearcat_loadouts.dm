@@ -67,6 +67,19 @@
 	path = /obj/item/stack/medical/ointment
 	cost = 1
 
+/datum/gear/accessory/pda
+	display_name = "PDA selection"
+	sort_category = "Utility"
+	path = /obj/item/device/pda
+	cost = 2
+
+/datum/gear/accessory/pda/New()
+	..()
+	var/pda = list()
+	pda["micro computer"] = /obj/item/device/pda
+	pda["wrist computer"] = /obj/item/device/pda/wrist
+	gear_tweaks += new/datum/gear_tweak/path(pda)
+
 //Weapons
 
 /datum/gear/weapon

@@ -105,8 +105,11 @@
 
 /decl/hierarchy/outfit/job/bearcat/
 	hierarchy_type = /decl/hierarchy/outfit/job/bearcat
-	pda_type = /obj/item/device/pda/wrist
+	pda_type = /obj/item/weapon/storage/wallet
 	pda_slot = slot_l_store
+	backpack = /obj/item/weapon/storage/backpack
+	satchel_job = /obj/item/weapon/storage/backpack/satchel/grey
+	messenger_bag = /obj/item/weapon/storage/backpack/messenger
 	l_ear = null
 	r_ear = null
 
@@ -148,14 +151,12 @@
 	uniform = /obj/item/clothing/under/det/black
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/laceup
-	pda_type = /obj/item/device/pda/wrist/medical
 
 /decl/hierarchy/outfit/job/bearcat/mate
 	name = BEARCAT_OUTFIT_JOB_NAME("First Mate")
 	uniform = /obj/item/clothing/under/suit_jacket/checkered
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/sunglasses/big
-	pda_type = /obj/item/device/pda/cargo
 	l_hand = /obj/item/weapon/clipboard
 
 /decl/hierarchy/outfit/job/bearcat/security
@@ -163,14 +164,12 @@
 	uniform = /obj/item/clothing/under/syndicate
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/sunglasses/big
-	pda_type = /obj/item/device/pda/wrist/security
 	belt = /obj/item/weapon/melee/baton/loaded
 	head = /obj/item/clothing/head/warden
 	id_type = /obj/item/weapon/card/id/security
 	r_pocket = /obj/item/device/radio
 	suit = /obj/item/clothing/suit/armor/pcarrier/medium
 	gloves = /obj/item/clothing/gloves/thick
-	flags = OUTFIT_HAS_BACKPACK
 
 /obj/structure/closet/secure_closet/security/bearcat
 	name = "security guard's locker"
