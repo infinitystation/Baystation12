@@ -49,7 +49,7 @@
 	density = 0
 
 //In case multiple shuttles can dock at a location,
-//subtypes can be used to hold the shuttle-specific data
+///subtypes can be used to hold the shuttle-specific data
 /obj/effect/shuttle_landmark/docking_arm_starboard
 	name = "Bearcat Starboard-side Docking Arm"
 	docking_controller = "bearcat_starboard_dock"
