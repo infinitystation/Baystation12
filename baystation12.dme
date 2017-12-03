@@ -2539,7 +2539,6 @@
 #include "maps\_map_include.dm"
 #include "maps\bearcat_inf\bearcat.dm"
 #include "maps\bearcat_inf\bearcat_define.dm"
-#include "maps\bearcat_inf\bearcat_shuttles.dm"
 #include "maps\exodus_infinity\exodus_define.dm"
 #include "maps\overmap_example\overmap_example_define.dm"
 #include "maps\torch\torch_define.dm"
