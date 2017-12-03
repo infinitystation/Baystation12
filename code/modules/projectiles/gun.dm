@@ -165,6 +165,8 @@
 	if(user && user.client && user.aiming && user.aiming.active && user.aiming.aiming_at != A)
 		PreFire(A,user,params) //They're using the new gun system, locate what they're aiming at.
 		return
+	if(user && user.a_intent == I_HELP && !have_safety) //regardless of what happens, refuse to shoot if help intent is on
+		to_chat(user, "<span class='warning'>You refrain from firing \the [src] as your intent is set to help.</span>")
 	else
 		Fire(A,user,params) //Otherwise, fire normally.
 
