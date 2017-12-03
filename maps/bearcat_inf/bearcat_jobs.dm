@@ -1,5 +1,5 @@
 /datum/map/overmap_example
-	allowed_jobs = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/doctor, /datum/job/hop, /datum/job/cyborg, /datum/job/officer, /datum/job/assistant, /datum/job/engineer)
+	allowed_jobs = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/hop, /datum/job/officer, /datum/job/doctor, /datum/job/engineer, /datum/job/roboticist, /datum/job/assistant, /datum/job/cyborg)
 
 /datum/job/captain
 	supervisors = "the Merchant Code and your conscience"
@@ -83,6 +83,13 @@
 	spawn_positions = 2
 	hud_icon = "hudengineer"
 
+/datum/job/roboticist
+	title = "Roboticist"
+	supervisors = "your mad brain and the Captain."
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/roboticist
+	total_positions = 1
+	spawn_positions = 1
+
 /datum/job/officer
 	title = "Security Guard"
 	supervisors = "the Captain and Your laws."
@@ -159,6 +166,21 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	l_hand = /obj/item/weapon/clipboard
+
+/decl/hierarchy/outfit/job/bearcat/roboticist
+	name = BEARCAT_OUTFIT_JOB_NAME("Roboticist")
+	uniform = /obj/item/clothing/under/rank/roboticist
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat
+	shoes = /obj/item/clothing/shoes/black
+	glasses = /obj/item/clothing/glasses/welding
+	belt = /obj/item/weapon/storage/belt/utility
+
+/decl/hierarchy/outfit/job/bearcat/roboticist/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(H.gender == "female")
+		if(prob(50))
+			uniform = /obj/item/clothing/under/rank/roboticist/skirt
+	else return
 
 /decl/hierarchy/outfit/job/bearcat/security
 	name = BEARCAT_OUTFIT_JOB_NAME("Security Guard")
