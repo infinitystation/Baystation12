@@ -423,6 +423,7 @@
 /obj/random/trash/space/spawn_choices()
 	return list(/obj/item/weapon/ore/iron = 1,
 				/obj/item/weapon/ore/glass = 5,
+				/obj/item/stack/rods = 2,
 				/obj/effect/decal/cleanable/ash = 5,
 				/obj/effect/decal/cleanable/dirt = 3,
 				/obj/item/remains/robot = 2)
