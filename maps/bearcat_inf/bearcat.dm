@@ -7,6 +7,7 @@
 	#include "bearcat_unit_testing.dm"
 	#include "bearcat-1.dmm"
 	#include "bearcat-2.dmm"
+	#include "bearcat-3.dmm"
 	#include "../away/lost_supply_base/lost_supply_base.dm"
 	#include "../away/smugglers/smugglers.dm"
 
