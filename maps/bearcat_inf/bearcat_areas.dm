@@ -49,23 +49,41 @@
 	name = "\improper Medical Bay"
 	icon_state = "medbay"
 
-/area/ship/scrap/top/brig
-	name = "\improper Brig"
-	icon_state = "brig"
-
-/area/ship/scrap/top/hallway
-	name = "Hallway"
-	icon_state = "crew_quarters"
-
 /area/ship/scrap/top/hallway/port
 	name = "\improper Top Hallway - Port"
+	icon_state = "hallP"
 
 /area/ship/scrap/top/hallway/starbound
 	name = "\improper Top Hallway - Starbound"
+	icon_state = "hallS"
 
-/area/ship/scrap/top/hallway/gym
+/area/ship/scrap/top/hallway/aft
+	name = "\improper Top Hallway - Aft"
+	icon_state = "hallA"
+
+/area/ship/scrap/top/gym
 	name = "\improper Gym"
 	icon_state = "fitness"
+
+/area/ship/scrap/top/research
+	name = "\improper Research"
+	icon_state = "devlab"
+
+/area/ship/scrap/top/robotics
+	name = "\improper Robotic Maintenance"
+	icon_state = "robotics"
+
+/area/ship/scrap/top/den
+	name = "\improper Den"
+	icon_state = "bar"
+
+/area/ship/scrap/top/aft_solars
+	name = "\improper Aft Solars"
+	icon_state = "panelsS"
+
+/area/ship/scrap/top/aft_solars/control
+	name = "\improper Aft Solars Control"
+	icon_state = "SolarcontrolS"
 
 /area/ship/scrap/cargo
 	name = "\improper Cargo Hold"
@@ -97,7 +115,7 @@
 	icon_state = "green"
 
 /area/ship/scrap/security
-	name = "\improper Jail"
+	name = "\improper Brig"
 	icon_state = "red"
 
 /area/ship/scrap/escape_star
@@ -105,7 +123,7 @@
 	icon_state = "yellow"
 
 /area/ship/scrap/broken1
-	name = "\improper Robotic Maintenance"
+	name = "\improper Compartment 1-A"
 	icon_state = "green"
 
 /area/ship/scrap/broken2
