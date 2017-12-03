@@ -1,7 +1,7 @@
 /datum/shuttle/autodock/multi/lift
 	name = "Cargo Lift"
 	warmup_time = 3
-	move_time = 2
+	move_time = 0
 	destination_tags = list(
 		"nav_bearcat_lift_top",
 		"nav_bearcat_lift_middle",
@@ -9,7 +9,7 @@
 		)
 	shuttle_area = /area/ship/scrap/shuttle/lift
 	current_location = "nav_bearcat_lift_bottom"
-	landmark_transition = "nav_bearcat_lift_middle"
+	landmark_transition = null
 	sound_takeoff = 'sound/effects/lift_heavy_start.ogg'
 	sound_landing = 'sound/effects/lift_heavy_stop.ogg'
 	knockdown = 0
