@@ -81,6 +81,10 @@
 	name = "\improper Aft Solars"
 	icon_state = "panelsS"
 
+/area/ship/scrap/top/escape_port
+	name = "\improper Fore Top Escape Pods"
+	icon_state = "green"
+
 /area/ship/scrap/top/aft_solars/control
 	name = "\improper Aft Solars Control"
 	icon_state = "SolarcontrolS"
