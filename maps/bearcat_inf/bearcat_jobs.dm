@@ -1,5 +1,5 @@
 /datum/map/overmap_example
-	allowed_jobs = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/hop, /datum/job/officer, /datum/job/doctor, /datum/job/engineer, /datum/job/roboticist, /datum/job/assistant, /datum/job/cyborg)
+	allowed_jobs = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/hop, /datum/job/officer, /datum/job/doctor, /datum/job/engineer, /datum/job/roboticist, /datum/job/qm, /datum/job/assistant, /datum/job/cyborg)
 
 /datum/job/captain
 	supervisors = "the Merchant Code and your conscience"
@@ -87,6 +87,13 @@
 	title = "Roboticist"
 	supervisors = "your mad brain and the Captain."
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/roboticist
+	total_positions = 1
+	spawn_positions = 1
+
+/datum/job/qm
+	title = "Quartermaster"
+	supervisors = "your greed and the Captain."
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/qm
 	total_positions = 1
 	spawn_positions = 1
 
@@ -181,6 +188,14 @@
 		if(prob(50))
 			uniform = /obj/item/clothing/under/rank/roboticist/skirt
 	else return
+
+/decl/hierarchy/outfit/job/bearcat/qm
+	name = BEARCAT_OUTFIT_JOB_NAME("Quartermaster")
+	uniform = /obj/item/clothing/under/rank/cargo
+	shoes = /obj/item/clothing/shoes/brown
+	glasses = /obj/item/clothing/glasses/sunglasses
+	l_hand = /obj/item/weapon/clipboard
+	id_type = /obj/item/weapon/card/id/cargo/head
 
 /decl/hierarchy/outfit/job/bearcat/security
 	name = BEARCAT_OUTFIT_JOB_NAME("Security Guard")
