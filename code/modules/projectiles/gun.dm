@@ -81,8 +81,8 @@
 	var/tmp/told_cant_shoot = 0 //So that it doesn't spam them with the fact they cannot hit them.
 	var/tmp/lock_time = -100
 
-	var/have_safety = TRUE
-	var/safety = TRUE
+	var/have_safety = FALSE
+	var/safety
 
 /obj/item/weapon/gun/New()
 	..()
@@ -92,8 +92,8 @@
 	if(isnull(scoped_accuracy))
 		scoped_accuracy = accuracy
 
-	if(!have_safety)
-		safety = FALSE
+	if(have_safety)
+		safety = TRUE
 
 /obj/item/weapon/gun/update_twohanding()
 	if(one_hand_penalty)
