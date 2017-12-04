@@ -155,12 +155,12 @@
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/brute
 	name = "autoinjector (anti-injury)"
-	icon_state = "red"
+	icon_state = "icons/obj/infinity_object/red"
 	starts_with = list(/datum/reagent/bicaridine = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/burn
 	name = "autoinjector (anti-burn)"
-	icon_state = "yellow"
+	icon_state = "icons/obj/infinity_object/yellow"
 	starts_with = list(/datum/reagent/kelotane = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/rad
