@@ -259,7 +259,8 @@
 /obj/item/weapon/storage/firstaid/engineer_individual
 	name = "engineer individual medical kit"
 	desc = "A small box decorated in warning colors that contains a limited supply of medical reagents."
-	icon_state = "icons/obj/infinity_object/survivalengmed"
+	icon = 'icons/obj/infinity_object.dmi'
+	icon_state = "survivalengmed"
 	storage_slots = 10
 	can_hold = list(
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
@@ -280,7 +281,8 @@
 /obj/item/weapon/storage/firstaid/individual
 	name = "individual medical kit"
 	desc = "A small box decorated in warning colors that contains a limited supply of medical reagents."
-	icon_state = "icons/obj/infinity_object/survivalmed"
+	icon = 'icons/obj/infinity_object.dmi'
+	icon_state = "survivalmed"
 	storage_slots = 10
 	can_hold = list(
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
@@ -299,7 +301,8 @@
 /obj/item/weapon/storage/firstaid/military_individual
 	name = "military individual medical kit"
 	desc = "A small box decorated in dark colors that contains a limited supply of medical reagents."
-	icon_state = "icons/obj/infinity_object/survivalmilmed"
+	icon = 'icons/obj/infinity_object.dmi'
+	icon_state = "survivalmilmed"
 	storage_slots = 10
 	can_hold = list(
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
