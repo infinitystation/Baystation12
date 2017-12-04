@@ -12,7 +12,11 @@
 	company_name  = "Legit Cargo Ltd."
 	company_short = "LC"
 	overmap_event_areas = 11
-
+/*
+	station_levels = list(1,2,3)
+	contact_levels = list(1,2,3)
+	admin_levels = list(6)
+*/
 	evac_controller_type = /datum/evacuation_controller/lifepods
 	lobby_icon = 'maps/bearcat_inf/bearcat_lobby.dmi'
 	lobby_screens = list("spess","aesthetic")

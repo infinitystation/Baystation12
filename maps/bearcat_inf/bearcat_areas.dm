@@ -32,6 +32,10 @@
 	name = "\improper Crew Cabin #3"
 	icon_state = "yellow"
 
+/area/ship/scrap/crew/gym
+	name = "\improper Gym"
+	icon_state = "fitness"
+
 /area/ship/scrap/crew/saloon
 	name = "\improper Saloon"
 	icon_state = "conference"
@@ -60,10 +64,6 @@
 /area/ship/scrap/top/hallway/aft
 	name = "\improper Top Hallway - Aft"
 	icon_state = "hallA"
-
-/area/ship/scrap/top/gym
-	name = "\improper Gym"
-	icon_state = "fitness"
 
 /area/ship/scrap/top/research
 	name = "\improper Research"
@@ -138,6 +138,10 @@
 	name = "\improper Compartment 1-C"
 	icon_state = "cave"
 
+/area/ship/scrap/middle/requisition
+	name = "\improper Requisition"
+	icon_state = "storage"
+
 /area/ship/scrap/maintenance
 	name = "\improper Maintenance Compartments"
 	icon_state = "amaint"
@@ -206,11 +210,29 @@
 	icon_state = "tcomsatcham"
 	ambience = list('sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/signal.ogg','sound/ambience/sonar.ogg')
 
+//shuttles
+
 /area/ship/scrap/shuttle/outgoing
   name = "\improper Exploration Shuttle"
   icon_state = "tcomsatcham"
+
+/area/shuttle/pirat
+  name = "\improper Pirats Shuttle"
+  icon_state = "shuttlered"
+
+/area/shuttle/another
+  name = "\improper Unknown Shuttle"
+  icon_state = "green"
 
 /area/ship/scrap/shuttle/lift
   name = "\improper Cargo Lift"
   icon_state = "shuttle3"
   base_turf = /turf/simulated/open
+
+//Special Areas
+
+/area/admin/pirat_bay
+	name = "\improper Pirat Bay"
+	icon_state = "cave"
+	requires_power = 0
+	dynamic_lighting = 0
