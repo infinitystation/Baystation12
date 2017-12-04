@@ -37,6 +37,8 @@
 	//var/list/icon_keys = list()		//keys
 	//var/list/ammo_states = list()	//values
 
+	have_safety = TRUE
+
 /obj/item/weapon/gun/projectile/New()
 	..()
 	if (starts_loaded)
