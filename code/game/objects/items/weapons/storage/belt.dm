@@ -126,7 +126,9 @@
 	desc = "Can hold security gear like handcuffs and flashes."
 	icon_state = "securitybelt"
 	item_state = "security"
+	storage_slots = 7
 	can_hold = list(
+		/obj/item/weapon/storage/firstaid/military_individual,
 		/obj/item/weapon/crowbar,
 		/obj/item/weapon/grenade,
 		/obj/item/weapon/reagent_containers/spray/pepper,

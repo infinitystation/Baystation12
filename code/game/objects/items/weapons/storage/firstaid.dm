@@ -2,6 +2,7 @@
  * Contains:
  *		First Aid Kits
  * 		Pill Bottles
+ *		Private First Aid Kits
  */
 
 /*
@@ -252,3 +253,66 @@
 	desc = "Mild painkiller, also known as Tylenol. Won't fix the cause of your headache (unlike cyanide), but might make it bearable."
 
 	startswith = list(/obj/item/weapon/reagent_containers/pill/paracetamol = 7)
+
+//Personal firstaid kit
+
+/obj/item/weapon/storage/firstaid/engineer_individual
+	name = "engineer individual medical kit"
+	desc = "A small box decorated in warning colors that contains a limited supply of medical reagents."
+	icon_state = "survivalengmed"
+	storage_slots = 10
+	can_hold = list(
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
+		/obj/item/stack/medical/bruise_pack,
+		/obj/item/stack/medical/ointment,
+		/obj/item/weapon/reagent_containers/pill
+		)
+	startswith = list(
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/burn,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/brute,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/rad,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/detox,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/inaprovaline,
+		/obj/item/stack/medical/bruise_pack,
+		/obj/item/stack/medical/ointment
+		)
+
+/obj/item/weapon/storage/firstaid/individual
+	name = "individual medical kit"
+	desc = "A small box decorated in warning colors that contains a limited supply of medical reagents."
+	icon_state = "survivalmed"
+	storage_slots = 10
+	can_hold = list(
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
+		/obj/item/stack/medical/bruise_pack,
+		/obj/item/stack/medical/ointment,
+		/obj/item/weapon/reagent_containers/pill
+		)
+	startswith = list(
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/inaprovaline,
+		/obj/item/stack/medical/bruise_pack,
+		/obj/item/stack/medical/ointment
+		)
+
+
+
+/obj/item/weapon/storage/firstaid/military_individual
+	name = "military individual medical kit"
+	desc = "A small box decorated in dark colors that contains a limited supply of medical reagents."
+	icon_state = "survivalmilmed"
+	storage_slots = 10
+	can_hold = list(
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
+		/obj/item/stack/medical/bruise_pack,
+		/obj/item/stack/medical/ointment,
+		/obj/item/weapon/reagent_containers/pill
+		)
+	startswith = list(
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/burn,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/brute,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pain = 2,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/detox,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/inaprovaline,
+		/obj/item/stack/medical/bruise_pack,
+		/obj/item/stack/medical/ointment
+		)
