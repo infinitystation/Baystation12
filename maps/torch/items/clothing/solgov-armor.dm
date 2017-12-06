@@ -41,3 +41,9 @@
 
 /obj/item/clothing/suit/armor/pcarrier/medium/command/security
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/storage/pouches, /obj/item/clothing/accessory/armor/tag/solgov/com/sec)
+
+/obj/item/clothing/suit/armor/pcarrier/navy/light/medical
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate, /obj/item/clothing/accessory/armor/tag/medical,/obj/item/clothing/accessory/storage/pouches)
+
+/obj/item/clothing/suit/armor/pcarrier/medium/command/medical
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/armor/tag/commedical,/obj/item/clothing/accessory/storage/pouches)

@@ -114,3 +114,33 @@
 		/obj/item/weapon/gun/energy/gun = 2,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/gun/energy/gun, /obj/item/weapon/gun/energy/gun/small))
 	)
+
+/obj/structure/closet/secure_closet/guncabinet/sidearm/pbullet
+	name = "personal sidearm cabinet"
+
+/obj/structure/closet/secure_closet/guncabinet/sidearm/pbullet/WillContain()
+	return list(/obj/item/weapon/gun/projectile/colt/officer = 6, /obj/item/ammo_magazine/c45m = 12)
+
+/obj/structure/closet/secure_closet/guncabinet/sidearm/shotgun
+	name = "shotgun sidearm cabinet"
+
+/obj/structure/closet/secure_closet/guncabinet/sidearm/shotgun/WillContain()
+	return list(/obj/item/weapon/gun/projectile/shotgun/pump = 2, /obj/item/weapon/storage/box/shotgunammo = 4, /obj/item/weapon/storage/box/shotgunshells = 4)
+
+/obj/structure/closet/secure_closet/guncabinet/sidearm/cshotgun
+	name = "combat shotgun cabinet"
+
+/obj/structure/closet/secure_closet/guncabinet/sidearm/cshotgun/WillContain()
+	return list(/obj/item/weapon/gun/projectile/shotgun/pump/combat = 2, /obj/item/weapon/storage/box/shotgunammo = 4, /obj/item/weapon/storage/box/shotgunshells = 4)
+
+/obj/structure/closet/secure_closet/guncabinet/sidearm/SMG
+	name = "SMG cabinet"
+
+/obj/structure/closet/secure_closet/guncabinet/sidearm/SMG/WillContain()
+	return list(/obj/item/weapon/gun/projectile/automatic/wt550 = 2, /obj/item/weapon/gun/projectile/automatic/c20r = 2, /obj/item/ammo_magazine/mc9mmt = 4, /obj/item/ammo_magazine/a10mm = 4)
+
+/obj/structure/closet/secure_closet/guncabinet/sidearm/rifle
+	name = "rifle cabinet"
+
+/obj/structure/closet/secure_closet/guncabinet/sidearm/rifle/WillContain()
+	return list(/obj/item/weapon/gun/projectile/automatic/z8 = 4, /obj/item/ammo_magazine/box/a556 = 8)
