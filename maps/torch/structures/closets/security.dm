@@ -33,6 +33,7 @@
 		/obj/item/clothing/accessory/holster/thigh,
 		/obj/item/device/holowarrant,
 		/obj/item/device/flashlight/maglight,
+		/obj/item/weapon/storage/firstaid/military_individual,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel_sec)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/sec, /obj/item/weapon/storage/backpack/messenger/sec))
 	)
@@ -76,6 +77,7 @@
 		/obj/item/device/holowarrant,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/device/flashlight/maglight,
+		/obj/item/weapon/storage/firstaid/military_individual,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel_sec)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/sec, /obj/item/weapon/storage/backpack/messenger/sec))
 	)
@@ -113,6 +115,7 @@
 		/obj/item/device/holowarrant,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/device/flashlight/maglight,
+		/obj/item/weapon/storage/firstaid/military_individual,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel_sec)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/sec, /obj/item/weapon/storage/backpack/messenger/sec))
 	)
@@ -157,6 +160,7 @@
 		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
 		/obj/item/device/holowarrant,
 		/obj/item/device/flashlight/maglight,
+		/obj/item/weapon/storage/firstaid/military_individual,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel_sec)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/sec, /obj/item/weapon/storage/backpack/messenger/sec))
 	)

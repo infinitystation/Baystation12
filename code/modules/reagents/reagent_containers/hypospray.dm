@@ -144,7 +144,7 @@
 		to_chat(user, "<span class='notice'>It is spent.</span>")
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/detox
-	name = "autoinjector (antitox)"
+	name = "autoinjector (anti-toxin)"
 	icon_state = "green"
 	starts_with = list(/datum/reagent/dylovene = 5)
 
@@ -153,18 +153,38 @@
 	icon_state = "purple"
 	starts_with = list(/datum/reagent/tramadol = 5)
 
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/brute
+	name = "autoinjector (anti-injury)"
+	icon = 'icons/obj/infinity_object.dmi'
+	icon_state = "red"
+	starts_with = list(/datum/reagent/bicaridine = 5)
+
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/burn
+	name = "autoinjector (anti-burn)"
+	icon = 'icons/obj/infinity_object.dmi'
+	icon_state = "icons/obj/infinity_object/yellow"
+	starts_with = list(/datum/reagent/kelotane = 5)
+
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/rad
+	name = "autoinjector (anti-rad)"
+	icon_state = "green"
+	starts_with = list(/datum/reagent/hyronalin = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/inaprovaline
 	name = "autoinjector (inaprovaline)"
-	icon_state = "green"
+	icon_state = "blue"
 	starts_with = list(/datum/reagent/inaprovaline = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/combatpain
-	name = "autoinjector (oxycodone)"
+	name = "autoinjector (combat paikiller)"
 	icon_state = "black"
 	starts_with = list(/datum/reagent/tramadol/oxycodone = 5)
+
+
+
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/mindbreaker
 	name = "autoinjector"
 	icon_state = "black"
 	starts_with = list(/datum/reagent/mindbreaker = 5)
+

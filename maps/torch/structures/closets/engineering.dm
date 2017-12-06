@@ -43,6 +43,7 @@
 		/obj/item/weapon/folder/yellow,
 		/obj/item/weapon/storage/box/armband/engine,
 		/obj/item/device/multitool/multimeter,
+		/obj/item/weapon/storage/firstaid/engineer_individual,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
@@ -71,6 +72,7 @@
 		/obj/item/weapon/cartridge/atmos,
 		/obj/item/device/flashlight,
 		/obj/item/taperoll/atmos,
+		/obj/item/weapon/storage/firstaid/engineer_individual,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
@@ -96,6 +98,7 @@
 		/obj/item/weapon/cartridge/engineering,
 		/obj/item/device/flashlight,
 		/obj/item/taperoll/engineering,
+		/obj/item/weapon/storage/firstaid/engineer_individual,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
@@ -128,6 +131,7 @@
 		/obj/item/weapon/cartridge/ce,
 		/obj/item/device/flashlight,
 		/obj/item/device/megaphone,
+		/obj/item/weapon/storage/firstaid/engineer_individual,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
@@ -155,5 +159,6 @@
 		/obj/item/clothing/mask/gas,
 		/obj/item/weapon/cartridge/atmos,
 		/obj/item/taperoll/atmos,
+		/obj/item/weapon/storage/firstaid/engineer_individual,
 		/obj/item/device/analyzer
 	)
