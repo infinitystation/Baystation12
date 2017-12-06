@@ -631,3 +631,19 @@ ranks - marines
 /obj/item/clothing/accessory/solgov/rank/marine/flag/o10_alt
 	name = "ranks (O-10 commandant of the Marine Corps)"
 	desc = "Insignia denoting the rank of Commandant of the Marine Corps."
+
+//custom accessoryes
+
+/obj/item/clothing/accessory/armor/tag/medical
+	name = "\improper Medical Corps crest"
+	desc = "An emblem depicting the crest of medical corps."
+	icon = 'icons/obj/infinity_object.dmi'
+	icon_state = "medflag"
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/suits.dmi', slot_wear_suit_str = 'icons/mob/infinity/suits.dmi')
+
+/obj/item/clothing/accessory/armor/tag/commedical
+	name = "\improper command Medical Corps crest"
+	desc = "An emblem depicting the crest of medical corps."
+	icon = 'icons/obj/infinity_object.dmi'
+	icon_state = "commedflag"
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/suits.dmi', slot_wear_suit_str = 'icons/mob/infinity/suits.dmi')

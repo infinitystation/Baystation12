@@ -65,4 +65,3 @@
 	set popup_menu = 1
 
 	toggle_scope(usr, 2.0)
-
