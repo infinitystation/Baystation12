@@ -76,103 +76,103 @@
 "bx" = (/obj/structure/computerframe,/turf/simulated/floor/plating,/area/ship/scrap/top/research)
 "by" = (/turf/simulated/wall,/area/ship/scrap/top/hallway/aft)
 "bz" = (/obj/machinery/door/airlock/autoname,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"bA" = (/turf/simulated/wall/r_wall,/area/ship/scrap/top/hallway/aft)
-"bB" = (/obj/machinery/door/airlock/autoname,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"bC" = (/turf/simulated/wall,/area/ship/scrap/top/robotics)
-"bD" = (/turf/simulated/wall/r_wall,/area/ship/scrap/top/robotics)
-"bE" = (/obj/machinery/constructable_frame/machine_frame,/obj/random/coin,/obj/effect/decal/cleanable/cobweb{tag = "icon-cobweb1 (EAST)"; icon_state = "cobweb1"; dir = 4},/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
-"bF" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/unary/vent_scrubber/on,/turf/simulated/floor/plating,/area/ship/scrap/top/research)
-"bG" = (/obj/random/junk,/obj/effect/decal/cleanable/dirt,/obj/structure/cable{icon_state = "0-2"; pixel_y = 1; d2 = 2},/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
-"bH" = (/obj/machinery/light/small{icon_state = "bulb1"; dir = 1},/obj/machinery/oxygen_pump{pixel_y = 32},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
-"bI" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"bJ" = (/obj/effect/shuttle_landmark/lift/top,/turf/simulated/open,/area/ship/scrap/top/hallway/port)
-"bK" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
-"bL" = (/obj/machinery/light/small{icon_state = "bulb1"; dir = 1},/obj/machinery/oxygen_pump{pixel_y = 32},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"bM" = (/obj/machinery/alarm{dir = 4; pixel_x = -22},/obj/machinery/cryopod/robot{dir = 4},/obj/machinery/computer/cryopod/robot{pixel_x = 0; pixel_y = 32},/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
-"bN" = (/obj/machinery/recharge_station,/turf/simulated/floor/tiled,/area/ship/scrap/top/robotics)
-"bO" = (/obj/machinery/organ_printer/robot/mapped,/turf/simulated/floor/tiled,/area/ship/scrap/top/robotics)
-"bP" = (/obj/machinery/light_construct{tag = "icon-tube-construct-stage1 (WEST)"; icon_state = "tube-construct-stage1"; dir = 8},/obj/effect/decal/cleanable/dirt,/obj/structure/girder,/turf/simulated/floor/plating,/area/ship/scrap/top/research)
-"bQ" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/simulated/floor/plating,/area/ship/scrap/top/research)
-"bR" = (/obj/random/trash,/obj/effect/decal/cleanable/dirt,/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/research)
-"bS" = (/obj/machinery/door/airlock/autoname,/obj/machinery/door/firedoor,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/item/taperoll/engineering/applied,/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
-"bT" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"bU" = (/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"bV" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/open,/area/ship/scrap/top/hallway/port)
-"bW" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
-"bX" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"bY" = (/obj/machinery/door/airlock/autoname,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
-"bZ" = (/obj/structure/cable{icon_state = "6-8"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/turf/simulated/floor/tiled,/area/ship/scrap/top/robotics)
-"ca" = (/obj/random/junk,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
-"cb" = (/obj/structure/table/rack{dir = 8; layer = 2.9},/obj/item/stack/material/glass/ten{amount = 20},/obj/item/stack/material/steel/fifty,/obj/item/weapon/storage/toolbox/mechanical,/obj/item/clothing/head/welding,/obj/item/stack/cable_coil,/obj/item/stack/cable_coil,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/turf/simulated/floor/tiled,/area/ship/scrap/top/robotics)
-"cc" = (/obj/effect/wingrille_spawn/reinforced,/obj/machinery/door/firedoor,/obj/machinery/door/blast/regular{density = 0; dir = 4; icon_state = "pdoor0"; id = "scraplock"; name = "External Blast Doors"; opacity = 0},/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
-"cd" = (/obj/random/junk,/obj/item/frame/apc,/obj/machinery/light_switch{pixel_x = -26},/turf/simulated/floor/plating,/area/ship/scrap/top/research)
-"ce" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
-"cf" = (/obj/structure/flora/pottedplant/dead,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
-"cg" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
-"ch" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"ci" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/random/junk,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"cj" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
-"ck" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
-"cl" = (/obj/structure/cable{icon_state = "4-9"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
-"cm" = (/obj/machinery/power/apc{dir = 4; name = "east bump"; pixel_x = 24},/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/structure/table/steel,/obj/machinery/cell_charger,/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 1},/obj/item/device/robotanalyzer,/obj/random/powercell,/turf/simulated/floor/tiled,/area/ship/scrap/top/robotics)
-"cn" = (/obj/structure/table/standard,/obj/item/stack/cable_coil/random,/obj/item/stack/cable_coil/random,/obj/item/weapon/flame/lighter/random,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
-"co" = (/obj/structure/bed/chair/office/light,/obj/effect/decal/cleanable/greenglow,/turf/simulated/floor/plating,/area/ship/scrap/top/research)
-"cp" = (/obj/structure/table/standard,/obj/item/weapon/reagent_containers/glass/beaker/vial,/obj/item/weapon/reagent_containers/glass/beaker/vial,/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
-"cq" = (/obj/item/device/radio/intercom{dir = 4; pixel_x = -22},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
-"cr" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
-"cs" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"ct" = (/obj/item/device/radio/intercom{dir = 8; pixel_x = 22},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
-"cu" = (/obj/structure/closet/shipping_wall{pixel_x = -28},/obj/random/technology_scanner,/obj/random/tech_supply,/obj/structure/table/rack{dir = 8; layer = 2.9},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/item/stack/nanopaste,/obj/random/tech_supply,/obj/item/weapon/tape_roll,/turf/simulated/floor/tiled,/area/ship/scrap/top/robotics)
-"cv" = (/obj/item/weapon/stool,/obj/effect/landmark/start{name = "Roboticist"},/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
-"cw" = (/obj/structure/table/steel,/obj/random/tool,/obj/random/tech_supply,/obj/random/tech_supply,/obj/random/assembly,/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
-"cx" = (/obj/structure/table/standard,/obj/random/junk,/obj/item/device/radio/headset,/obj/effect/decal/cleanable/dirt,/obj/item/stack/medical/splint/ghetto,/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
-"cy" = (/obj/structure/table/standard,/obj/random/advdevice,/obj/item/integrated_circuit/arithmetic/random,/turf/simulated/floor/plating,/area/ship/scrap/top/research)
-"cz" = (/obj/structure/table/standard,/obj/random/tank,/obj/random/medical/lite,/obj/effect/decal/cleanable/cobweb2{tag = "icon-cobweb2 (WEST)"; icon_state = "cobweb2"; dir = 8},/turf/simulated/floor/plating,/area/ship/scrap/top/research)
-"cA" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4; layer = 2.4; level = 2},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
-"cB" = (/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/obj/machinery/atmospherics/pipe/manifold/hidden/supply,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"cC" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/door/firedoor,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"cD" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/light/small{icon_state = "bulb1"; dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
-"cE" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"cF" = (/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_y = 25},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/random/junk,/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"cG" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/light/small{icon_state = "bulb1"; dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"cH" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/door/firedoor,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
-"cI" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"cJ" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8; layer = 2.4; level = 2},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
-"cK" = (/obj/structure/table/rack{dir = 8; layer = 2.9},/obj/item/weapon/handcuffs/cable/yellow,/obj/item/device/flash/synthetic,/obj/item/device/flash/synthetic,/obj/machinery/light_switch{pixel_x = -25},/obj/item/weapon/weldpack,/obj/random/technology_scanner,/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
-"cL" = (/obj/structure/bed,/obj/item/device/radio/intercom{dir = 1; pixel_y = -22},/obj/random/trash,/turf/simulated/floor/tiled,/area/ship/scrap/top/robotics)
-"cM" = (/obj/machinery/mecha_part_fabricator{req_access = newlist()},/obj/item/robot_parts/r_arm,/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
-"cN" = (/turf/simulated/wall,/area/ship/scrap/top/aft_solars/control)
-"cO" = (/turf/simulated/wall/r_wall,/area/ship/scrap/top/aft_solars/control)
-"cP" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/door/airlock/autoname/engineering,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
-"cQ" = (/obj/machinery/door/airlock/autoname,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"cR" = (/obj/structure/girder,/turf/simulated/floor/airless,/area/space)
-"cS" = (/obj/random/trash/space,/turf/simulated/floor/airless,/area/space)
-"cT" = (/turf/simulated/floor/airless,/area/space)
-"cU" = (/obj/structure/closet/emcloset/legacy,/obj/machinery/light/small{icon_state = "bulb1"; dir = 1},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
-"cV" = (/obj/machinery/power/smes/buildable,/obj/structure/cable{icon_state = "0-4"; d2 = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
-"cW" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_y = 0},/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
-"cX" = (/obj/machinery/power/apc{dir = 4; name = "east bump"; pixel_x = 24},/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/item/device/radio/intercom{pixel_y = 22},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
-"cY" = (/obj/structure/table/rack,/obj/random/maintenance,/obj/random/maintenance,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"cZ" = (/obj/structure/closet,/obj/random/maintenance,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"da" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"db" = (/obj/machinery/space_heater,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"dc" = (/obj/structure/grille/broken,/obj/item/stack/rods,/turf/simulated/floor/airless,/area/space)
-"dd" = (/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/airless,/area/ship/scrap/top/aft_solars)
-"de" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/airless,/area/ship/scrap/top/aft_solars)
-"df" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/airless,/area/ship/scrap/top/aft_solars)
-"dg" = (/obj/machinery/door/airlock/external/bolted{frequency = 1380; id_tag = "solar_outer"},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
-"dh" = (/obj/machinery/embedded_controller/radio/airlock/airlock_controller{frequency = 1380; id_tag = "solar"; pixel_x = 0; pixel_y = -25; req_access = list(13); tag_airpump = "solar_pump"; tag_chamber_sensor = "solar_sensor"; tag_exterior_door = "solar_outer"; tag_interior_door = "solar_inner"},/obj/machinery/airlock_sensor{frequency = 1380; id_tag = "solar_sensor"; pixel_x = 0; pixel_y = -35},/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 4; frequency = 1380; id_tag = "solar_pump"},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
-"di" = (/obj/machinery/door/airlock/external/bolted{frequency = 1380; id_tag = "solar_inner"},/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
-"dj" = (/obj/machinery/power/terminal{tag = "icon-term (NORTH)"; icon_state = "term"; dir = 1},/obj/machinery/access_button{command = "cycle_interior"; frequency = 1380; master_tag = "solar_airlock"; name = "interior access button"; pixel_x = -24; pixel_y = 24; req_access = list(13)},/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/obj/structure/sign/warning/airlock{pixel_x = -32; pixel_y = -32},/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/obj/machinery/power/sensor{long_range = 1; name_tag = "Solar Grid"},/obj/machinery/light/small,/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
-"dk" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
-"dl" = (/obj/machinery/power/solar_control,/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
-"dm" = (/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/turf/simulated/wall,/area/ship/scrap/top/aft_solars/control)
-"dn" = (/obj/machinery/atmospherics/portables_connector{dir = 8},/obj/machinery/portable_atmospherics/canister/air/airlock,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"do" = (/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"dp" = (/obj/structure/table/rack,/obj/random/maintenance,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
-"dq" = (/obj/structure/grille,/turf/simulated/floor/airless,/area/space)
-"dr" = (/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/airless,/area/ship/scrap/top/aft_solars)
-"ds" = (/obj/structure/ladder,/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
+"bA" = (/obj/machinery/door/airlock/autoname,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"bB" = (/turf/simulated/wall,/area/ship/scrap/top/robotics)
+"bC" = (/obj/machinery/constructable_frame/machine_frame,/obj/random/coin,/obj/effect/decal/cleanable/cobweb{tag = "icon-cobweb1 (EAST)"; icon_state = "cobweb1"; dir = 4},/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
+"bD" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/unary/vent_scrubber/on,/turf/simulated/floor/plating,/area/ship/scrap/top/research)
+"bE" = (/obj/random/junk,/obj/effect/decal/cleanable/dirt,/obj/structure/cable{icon_state = "0-2"; pixel_y = 1; d2 = 2},/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
+"bF" = (/obj/machinery/light/small{icon_state = "bulb1"; dir = 1},/obj/machinery/oxygen_pump{pixel_y = 32},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
+"bG" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"bH" = (/obj/effect/shuttle_landmark/lift/top,/turf/simulated/open,/area/ship/scrap/top/hallway/port)
+"bI" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
+"bJ" = (/obj/machinery/light/small{icon_state = "bulb1"; dir = 1},/obj/machinery/oxygen_pump{pixel_y = 32},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"bK" = (/obj/machinery/alarm{dir = 4; pixel_x = -22},/obj/machinery/cryopod/robot{dir = 4},/obj/machinery/computer/cryopod/robot{pixel_x = 0; pixel_y = 32},/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
+"bL" = (/obj/machinery/recharge_station,/turf/simulated/floor/tiled,/area/ship/scrap/top/robotics)
+"bM" = (/obj/machinery/organ_printer/robot/mapped,/turf/simulated/floor/tiled,/area/ship/scrap/top/robotics)
+"bN" = (/turf/simulated/wall/r_wall,/area/ship/scrap/top/robotics)
+"bO" = (/obj/machinery/light_construct{tag = "icon-tube-construct-stage1 (WEST)"; icon_state = "tube-construct-stage1"; dir = 8},/obj/effect/decal/cleanable/dirt,/obj/structure/girder,/turf/simulated/floor/plating,/area/ship/scrap/top/research)
+"bP" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/simulated/floor/plating,/area/ship/scrap/top/research)
+"bQ" = (/obj/random/trash,/obj/effect/decal/cleanable/dirt,/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/research)
+"bR" = (/obj/machinery/door/airlock/autoname,/obj/machinery/door/firedoor,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/item/taperoll/engineering/applied,/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
+"bS" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"bT" = (/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"bU" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/open,/area/ship/scrap/top/hallway/port)
+"bV" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
+"bW" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"bX" = (/obj/machinery/door/airlock/autoname,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
+"bY" = (/obj/structure/cable{icon_state = "6-8"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/turf/simulated/floor/tiled,/area/ship/scrap/top/robotics)
+"bZ" = (/obj/random/junk,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
+"ca" = (/obj/structure/table/rack{dir = 8; layer = 2.9},/obj/item/stack/material/glass/ten{amount = 20},/obj/item/stack/material/steel/fifty,/obj/item/weapon/storage/toolbox/mechanical,/obj/item/clothing/head/welding,/obj/item/stack/cable_coil,/obj/item/stack/cable_coil,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/turf/simulated/floor/tiled,/area/ship/scrap/top/robotics)
+"cb" = (/obj/effect/wingrille_spawn/reinforced,/obj/machinery/door/firedoor,/obj/machinery/door/blast/regular{density = 0; dir = 4; icon_state = "pdoor0"; id = "scraplock"; name = "External Blast Doors"; opacity = 0},/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
+"cc" = (/obj/random/junk,/obj/item/frame/apc,/obj/machinery/light_switch{pixel_x = -26},/turf/simulated/floor/plating,/area/ship/scrap/top/research)
+"cd" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
+"ce" = (/obj/structure/flora/pottedplant/dead,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
+"cf" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
+"cg" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"ch" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/random/junk,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"ci" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
+"cj" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
+"ck" = (/obj/structure/cable{icon_state = "4-9"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
+"cl" = (/obj/machinery/power/apc{dir = 4; name = "east bump"; pixel_x = 24},/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/structure/table/steel,/obj/machinery/cell_charger,/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 1},/obj/item/device/robotanalyzer,/obj/random/powercell,/turf/simulated/floor/tiled,/area/ship/scrap/top/robotics)
+"cm" = (/obj/structure/table/standard,/obj/item/stack/cable_coil/random,/obj/item/stack/cable_coil/random,/obj/item/weapon/flame/lighter/random,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
+"cn" = (/obj/structure/bed/chair/office/light,/obj/effect/decal/cleanable/greenglow,/turf/simulated/floor/plating,/area/ship/scrap/top/research)
+"co" = (/obj/structure/table/standard,/obj/item/weapon/reagent_containers/glass/beaker/vial,/obj/item/weapon/reagent_containers/glass/beaker/vial,/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
+"cp" = (/obj/item/device/radio/intercom{dir = 4; pixel_x = -22},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
+"cq" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
+"cr" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"cs" = (/obj/item/device/radio/intercom{dir = 8; pixel_x = 22},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
+"ct" = (/obj/structure/closet/shipping_wall{pixel_x = -28},/obj/random/technology_scanner,/obj/random/tech_supply,/obj/structure/table/rack{dir = 8; layer = 2.9},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/item/stack/nanopaste,/obj/random/tech_supply,/obj/item/weapon/tape_roll,/turf/simulated/floor/tiled,/area/ship/scrap/top/robotics)
+"cu" = (/obj/item/weapon/stool,/obj/effect/landmark/start{name = "Roboticist"},/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
+"cv" = (/obj/structure/table/steel,/obj/random/tool,/obj/random/tech_supply,/obj/random/tech_supply,/obj/random/assembly,/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
+"cw" = (/obj/structure/table/standard,/obj/random/junk,/obj/item/device/radio/headset,/obj/effect/decal/cleanable/dirt,/obj/item/stack/medical/splint/ghetto,/turf/simulated/floor/tiled,/area/ship/scrap/top/research)
+"cx" = (/obj/structure/table/standard,/obj/random/advdevice,/obj/item/integrated_circuit/arithmetic/random,/turf/simulated/floor/plating,/area/ship/scrap/top/research)
+"cy" = (/obj/structure/table/standard,/obj/random/tank,/obj/random/medical/lite,/obj/effect/decal/cleanable/cobweb2{tag = "icon-cobweb2 (WEST)"; icon_state = "cobweb2"; dir = 8},/turf/simulated/floor/plating,/area/ship/scrap/top/research)
+"cz" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4; layer = 2.4; level = 2},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
+"cA" = (/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/obj/machinery/atmospherics/pipe/manifold/hidden/supply,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"cB" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/door/firedoor,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"cC" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/light/small{icon_state = "bulb1"; dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
+"cD" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"cE" = (/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_y = 25},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/random/junk,/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"cF" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/light/small{icon_state = "bulb1"; dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"cG" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/door/firedoor,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
+"cH" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"cI" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8; layer = 2.4; level = 2},/turf/simulated/floor/tiled,/area/ship/scrap/top/hallway/aft)
+"cJ" = (/obj/structure/table/rack{dir = 8; layer = 2.9},/obj/item/weapon/handcuffs/cable/yellow,/obj/item/device/flash/synthetic,/obj/item/device/flash/synthetic,/obj/machinery/light_switch{pixel_x = -25},/obj/item/weapon/weldpack,/obj/random/technology_scanner,/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
+"cK" = (/obj/structure/bed,/obj/item/device/radio/intercom{dir = 1; pixel_y = -22},/obj/random/trash,/turf/simulated/floor/tiled,/area/ship/scrap/top/robotics)
+"cL" = (/obj/machinery/mecha_part_fabricator{req_access = newlist()},/obj/item/robot_parts/r_arm,/turf/simulated/floor/plating,/area/ship/scrap/top/robotics)
+"cM" = (/turf/simulated/wall,/area/ship/scrap/top/aft_solars/control)
+"cN" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/door/airlock/autoname/engineering,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
+"cO" = (/obj/machinery/door/airlock/autoname,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"cP" = (/obj/structure/girder,/turf/simulated/floor/airless,/area/space)
+"cQ" = (/obj/random/trash/space,/turf/simulated/floor/airless,/area/space)
+"cR" = (/turf/simulated/floor/airless,/area/space)
+"cS" = (/obj/structure/closet/emcloset/legacy,/obj/machinery/light/small{icon_state = "bulb1"; dir = 1},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
+"cT" = (/obj/machinery/power/smes/buildable,/obj/structure/cable{icon_state = "0-4"; d2 = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
+"cU" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_y = 0},/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
+"cV" = (/obj/machinery/power/apc{dir = 4; name = "east bump"; pixel_x = 24},/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/item/device/radio/intercom{pixel_y = 22},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
+"cW" = (/obj/structure/table/rack,/obj/random/maintenance,/obj/random/maintenance,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"cX" = (/obj/structure/closet,/obj/random/maintenance,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"cY" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"cZ" = (/obj/machinery/space_heater,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"da" = (/obj/structure/grille/broken,/obj/item/stack/rods,/turf/simulated/floor/airless,/area/space)
+"db" = (/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/airless,/area/ship/scrap/top/aft_solars)
+"dc" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/airless,/area/ship/scrap/top/aft_solars)
+"dd" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/airless,/area/ship/scrap/top/aft_solars)
+"de" = (/obj/machinery/door/airlock/external/bolted{frequency = 1380; id_tag = "solar_outer"},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
+"df" = (/obj/machinery/embedded_controller/radio/airlock/airlock_controller{frequency = 1380; id_tag = "solar"; pixel_x = 0; pixel_y = -25; req_access = list(13); tag_airpump = "solar_pump"; tag_chamber_sensor = "solar_sensor"; tag_exterior_door = "solar_outer"; tag_interior_door = "solar_inner"},/obj/machinery/airlock_sensor{frequency = 1380; id_tag = "solar_sensor"; pixel_x = 0; pixel_y = -35},/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 4; frequency = 1380; id_tag = "solar_pump"},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
+"dg" = (/obj/machinery/door/airlock/external/bolted{frequency = 1380; id_tag = "solar_inner"},/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
+"dh" = (/obj/machinery/power/terminal{tag = "icon-term (NORTH)"; icon_state = "term"; dir = 1},/obj/machinery/access_button{command = "cycle_interior"; frequency = 1380; master_tag = "solar_airlock"; name = "interior access button"; pixel_x = -24; pixel_y = 24; req_access = list(13)},/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/obj/structure/sign/warning/airlock{pixel_x = -32; pixel_y = -32},/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/obj/machinery/power/sensor{long_range = 1; name_tag = "Solar Grid"},/obj/machinery/light/small,/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
+"di" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
+"dj" = (/obj/machinery/power/solar_control,/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
+"dk" = (/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/turf/simulated/wall,/area/ship/scrap/top/aft_solars/control)
+"dl" = (/obj/machinery/atmospherics/portables_connector{dir = 8},/obj/machinery/portable_atmospherics/canister/air/airlock,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"dm" = (/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"dn" = (/obj/structure/table/rack,/obj/random/maintenance,/turf/simulated/floor/plating,/area/ship/scrap/top/hallway/aft)
+"do" = (/obj/structure/grille,/turf/simulated/floor/airless,/area/space)
+"dp" = (/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/airless,/area/ship/scrap/top/aft_solars)
+"dq" = (/turf/simulated/wall/r_wall,/area/ship/scrap/top/aft_solars/control)
+"dr" = (/obj/structure/ladder,/turf/simulated/floor/plating,/area/ship/scrap/top/aft_solars/control)
+"ds" = (/turf/simulated/wall/r_wall,/area/ship/scrap/top/hallway/aft)
 "dt" = (/obj/structure/grille/broken,/turf/simulated/floor/airless,/area/space)
 "du" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/airless,/area/space)
 "dv" = (/obj/effect/wingrille_spawn/reinforced,/obj/machinery/door/firedoor,/obj/machinery/door/blast/regular{density = 0; dir = 2; icon_state = "pdoor0"; id = "scraplock"; name = "External Blast Doors"; opacity = 0},/turf/simulated/floor/airless,/area/ship/scrap/top/aft_solars/control)
@@ -238,28 +238,28 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacadaeaeaeafagagafahah
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamanaoadapaqarasasatasasajauavakawaxayakaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamanazaAaBaCaDaEaEaEaFaEaGaHaIaJaKaLaMakacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacamanaNadaOaPaQaRaSaSaRaRaTaUaVakaWaXaYaZaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacadadaeadaebabbafasbcbdasasajbebfakbgbhbiakaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabjbkblbmbnaqboagbpbcbdasasaibqauakbrbsbtakacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacbubvbwbxbjbybzbyasasasasasbAbBbybCbDbDbCbCacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabjbEbFbGbjbHbIbyasbJasasasbybKbLbCbMbNbObDacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabubPbQbRbSbTbUbyasasasasbVbybWbXbYbZcacbccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacbjcdcecfbncgchbyasasasasasbycicjbCckclcmbDaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacbucncocpbncqcrbAbybybybybybAcsctbCcucvcwccacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabjcxcyczbncAcBcCcDcEcFbTcGcHcIcJbDcKcLcMbDacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabnbnbjbjbncNcNcOcOcPcNcObybycQbybDbCbDbDbDaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaccRcScTcTcTcOcUcNcVcWcXcOcYcZdadbbyaaacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacdcdddedfdfdgdhdidjdkdldmdndododpbydqdcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadqdqdrcTcTcTcNcOcOcNdscNcObybybybAbycTcRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadtcTdrducTcScTcTducNdvcNcScTcTcTcTducTdtaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadqcTdrcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTdqaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacRcSdrdwdwdxdydwdwdydwdydwdydydwdzdAdzdtaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadtdBdCdDdDdDdEdDdDdFdGdDdHdGdGdIdGdGdJdqaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadqcTdKdLdLdKdLdKdKdLdMdNdLdLdKdLdKdKdKdcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadqdqcTducTcTcTcTcTcTcTcTcTcTcTcSducTcTdqaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadccTcTcTcScTcTcTcTcTducTcTcTdqdtdqdqcRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadqdtdqcTcTcTcTducTcScTcTcTcTdtaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadqcRdtdqdqcTcTcTcTcTcTcTdqaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadqdtdqdcdtdtdqcRdqaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacadadaeadadbabbafasbcbdasasajbebfakbgbhbialaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabjbkblbmbnaqboafbpbcbdasasajbqauakbrbsbtakacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacbubvbwbxbnbybzbyasasasasasbybAbybBbBbBbBbBacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabjbCbDbEbnbFbGbyasbHasasasbybIbJbBbKbLbMbNacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabubObPbQbRbSbTbyasasasasbUbybVbWbXbYbZcacbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacbjcccdcebncfcgbyasasasasasbychcibBcjckclbNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacbucmcncobncpcqbybybybybybybycrcsbBctcucvcbacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabjcwcxcybnczcAcBcCcDcEbScFcGcHcIbBcJcKcLbNacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabnbnbjbjbncMcMcMcMcNcMcMbybycObybNbBbNbNbNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaccPcQcRcRcRcMcScMcTcUcVcMcWcXcYcZbyaaacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacdadbdcdddddedfdgdhdidjdkdldmdmdnbydodaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadododpcRcRcRcMdqdqcMdrcMdqdsdsbydsbycRcPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadtcRdpducRcQcRcRducMdvcMcQcRcRcRcRducRdtaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadocRdpcRcRcRcRcRcRcRcRcRcRcRcRcRcRcRcRdoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacPcQdpdwdwdxdydwdwdydwdydwdydydwdzdAdzdtaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadtdBdCdDdDdDdEdDdDdFdGdDdHdGdGdIdGdGdJdoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadocRdKdLdLdKdLdKdKdLdMdNdLdLdKdLdKdKdKdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadodocRducRcRcRcRcRcRcRcRcRcRcRcQducRcRdoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadacRcRcRcQcRcRcRcRcRducRcRcRdodtdodocPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadodtdocRcRcRcRducRcQcRcRcRcRdtaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadocPdtdodocRcRcRcRcRcRcRdoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadodtdodadtdtdocPdoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

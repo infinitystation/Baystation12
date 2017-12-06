@@ -1,5 +1,5 @@
 /datum/map/overmap_example
-	allowed_jobs = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/hop, /datum/job/officer, /datum/job/doctor, /datum/job/engineer, /datum/job/roboticist, /datum/job/qm, /datum/job/assistant, /datum/job/cyborg)
+	allowed_jobs = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/hop, /datum/job/officer, /datum/job/doctor, /datum/job/engineer, /datum/job/qm, /datum/job/roboticist, /datum/job/assistant, /datum/job/cyborg)
 
 /datum/job/captain
 	supervisors = "the Merchant Code and your conscience"
