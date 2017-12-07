@@ -12,10 +12,6 @@
 	key = "deathgasp"
 	emote_message_3p = "USER lets out a waning guttural screech, green blood bubbling from its maw."
 
-/decl/emote/audible/whimper
-	key ="whimper"
-	emote_message_3p = "USER whimpers."
-
 /decl/emote/audible/gasp
 	key ="gasp"
 	emote_message_3p = "USER задыхаетс&#255;."
@@ -41,11 +37,11 @@
 
 /decl/emote/audible/scretch
 	key ="scretch"
-	emote_message_3p = "USER scretches."
+	emote_message_3p = "USER чешется."
 
 /decl/emote/audible/choke
 	key ="choke"
-	emote_message_3p = "USER chokes."
+	emote_message_3p = "USER подавился."
 	conscious = 0
 
 /decl/emote/audible/gnarl
@@ -54,7 +50,7 @@
 
 /decl/emote/audible/chirp
 	key ="chirp"
-	emote_message_3p = "USER chirps!"
+	emote_message_3p = "USER щебечет!"
 	emote_sound = 'sound/misc/nymphchirp.ogg'
 
 /decl/emote/audible/alarm
@@ -74,8 +70,8 @@
 
 /decl/emote/audible/whistle
 	key = "whistle"
-	emote_message_1p = "You whistle."
-	emote_message_3p = "USER whistles."
+	emote_message_1p = "Вы свистите."
+	emote_message_3p = "USER свистит."
 
 /decl/emote/audible/whistle/do_extra(var/mob/M)
 	if(M.stat)//No dead or unconcious people screaming pls.
