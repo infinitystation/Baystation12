@@ -228,8 +228,6 @@
 	airtank = new()
 	airtank.adjust_gas("oxygen", MOLES_O2STANDARD, 0)
 	airtank.adjust_gas("nitrogen", MOLES_N2STANDARD, 0)
-	airtank.total_moles = 105
-	airtank.temperature = 296
 	return_air()
 
 /obj/machinery/cryopod/lifepod/return_air()
