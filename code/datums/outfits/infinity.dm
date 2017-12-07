@@ -42,7 +42,7 @@
 	back = /obj/item/weapon/storage/backpack/satchel/black
 	backpack_contents = list(
 		/obj/item/weapon/storage/box/survival/troops = 1,
-		/obj/item/weapon/storage/firstaid/military_individual/troops =1)
+		/obj/item/weapon/storage/firstaid/individual/military_individual/troops =1)
 
 /decl/hierarchy/outfit/scg/troops/post_equip(var/mob/living/carbon/human/H)
 	..()
@@ -78,7 +78,7 @@
 	belt = /obj/item/weapon/storage/belt/utility/full_buy
 	backpack_contents = list(
 		/obj/item/weapon/storage/box/survival/troops = 1,
-		/obj/item/weapon/storage/firstaid/military_individual/troops =1,
+		/obj/item/weapon/storage/firstaid/individual/military_individual/troops =1,
 		/obj/item/weapon/plastique = 3)
 
 /decl/hierarchy/outfit/scg/troops/engineer/post_equip(var/mob/living/carbon/human/H)
@@ -124,7 +124,7 @@
 	belt = /obj/item/weapon/storage/belt/security/troops
 	backpack_contents = list(
 		/obj/item/weapon/storage/box/survival/troops = 1,
-		/obj/item/weapon/storage/firstaid/military_individual/troops =1)
+		/obj/item/weapon/storage/firstaid/individual/military_individual/troops =1)
 
 /decl/hierarchy/outfit/scg/troops/sergeant/post_equip(var/mob/living/carbon/human/H)
 	..()
