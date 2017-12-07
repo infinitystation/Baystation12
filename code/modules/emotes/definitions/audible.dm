@@ -296,7 +296,7 @@
 			emote_sound = "sound/voice/giggle_male_[rand(1,2)].ogg"
 
 		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/giggle_female_[rand(1,2)].ogg"
+			emote_sound = "sound/voice/giggle_female_[rand(1,3)].ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)
