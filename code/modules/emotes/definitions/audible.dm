@@ -165,6 +165,20 @@
 	key = "clap"
 	emote_message_3p = "USER хлопает."
 
+/decl/emote/audible/clap/do_extra(var/mob/M)
+	if(M.stat)//No dead or unconcious people screaming pls.
+		return
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.isMonkey())//|| M.gender == NEUTER) It would be nice to whistle in Machine body. ~Quardbreak
+			return
+
+		emote_sound = "sound/effects/clap.ogg"
+
+		if(emote_sound)
+			playsound(M, emote_sound, 25, 0, 1)
+
 /decl/emote/audible/chuckle
 	key = "chuckle"
 	emote_message_3p = "USER chuckles."
@@ -189,6 +203,25 @@
 
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/cough_female.ogg"
+
+		if(emote_sound)
+			playsound(M, emote_sound, 25, 0, 1)
+
+/decl/emote/audible/salute
+	key = "salute"
+	emote_message_3p_target = "USER выполн&#255;ет воинское приветствие TARGET."
+	emote_message_3p = "USER выполн&#255;ет воинское приветствие."
+
+/decl/emote/audible/salute/do_extra(var/mob/M)
+	if(M.stat)//No dead or unconcious people screaming pls.
+		return
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.isMonkey())//|| M.gender == NEUTER) It would be nice to whistle in Machine body. ~Quardbreak
+			return
+
+		emote_sound = "sound/effects/salute.ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)

@@ -82,25 +82,6 @@
 	emote_message_3p_target = "USER делает поклон TARGET."
 	emote_message_3p = "USER делает поклон."
 
-/decl/emote/visible/salute
-	key = "salute"
-	emote_message_3p_target = "USER выполн&#255;ет воинское приветствие TARGET."
-	emote_message_3p = "USER выполн&#255;ет воинское приветствие."
-
-/decl/emote/visible/salute/do_extra(var/mob/M)
-	if(M.stat)//No dead or unconcious people screaming pls.
-		return
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.isMonkey())//|| M.gender == NEUTER) It would be nice to whistle in Machine body. ~Quardbreak
-			return
-
-		emote_sound = "sound/effects/salute.ogg"
-
-		if(emote_sound)
-			playsound(M, emote_sound, 25, 0, 1)
-
 /decl/emote/visible/flap
 	key = "flap"
 	check_restraints = TRUE
