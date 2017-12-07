@@ -297,7 +297,7 @@
 		/obj/item/stack/medical/ointment
 		)
 
-/obj/item/weapon/storage/firstaid/military_individual/troops
+/obj/item/weapon/storage/firstaid/individual/military_individual/troops
 	startswith = list(
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/burn,
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/brute,
