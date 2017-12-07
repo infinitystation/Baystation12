@@ -19,21 +19,21 @@
 
 /decl/emote/visible/sway
 	key ="sway"
-	emote_message_3p = "USER sways around dizzily."
+	emote_message_3p = "USER раскачивается до головокружения."
 
 /decl/emote/visible/sulk
 	key ="sulk"
-	emote_message_3p = "USER sulks down sadly."
+	emote_message_3p = "USER грустно садится."
 
 /decl/emote/visible/dance
 	key ="dance"
 	check_restraints = TRUE
-	emote_message_3p = "USER dances around happily."
+	emote_message_3p = "USER танцует."
 
 /decl/emote/visible/roll
 	key ="roll"
 	check_restraints = TRUE
-	emote_message_3p = "USER rolls."
+	emote_message_3p = "USER катается."
 
 /decl/emote/visible/shake
 	key ="shake"
@@ -87,6 +87,20 @@
 	emote_message_3p_target = "USER выполн&#255;ет воинское приветствие TARGET."
 	emote_message_3p = "USER выполн&#255;ет воинское приветствие."
 
+/decl/emote/visible/salute/do_extra(var/mob/M)
+	if(M.stat)//No dead or unconcious people screaming pls.
+		return
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.isMonkey())//|| M.gender == NEUTER) It would be nice to whistle in Machine body. ~Quardbreak
+			return
+
+		emote_sound = "sound/effects/salute.ogg"
+
+		if(emote_sound)
+			playsound(M, emote_sound, 25, 0, 1)
+
 /decl/emote/visible/flap
 	key = "flap"
 	check_restraints = TRUE
@@ -99,7 +113,7 @@
 
 /decl/emote/visible/eyebrow
 	key = "eyebrow"
-	emote_message_3p = "USER приподнимает брови."
+	emote_message_3p = "USER приподнимает бровь."
 
 /decl/emote/visible/twitch
 	key = "twitch"
@@ -176,11 +190,11 @@
 
 /decl/emote/visible/tremble
 	key = "tremble"
-	emote_message_3p = "USER trembles in fear!"
+	emote_message_3p = "USER трепещет в страхе!"
 
 /decl/emote/visible/wink
 	key = "wink"
-	emote_message_3p = "USER winks."
+	emote_message_3p = "USER подмигивает."
 
 /decl/emote/visible/hug
 	key = "hug"
@@ -216,7 +230,7 @@
 
 /decl/emote/visible/vibrate
 	key = "vibrate"
-	emote_message_3p = "USER vibrates!"
+	emote_message_3p = "USER вибрирует!"
 
 /decl/emote/visible/deathgasp_robot
 	key = "deathgasp"
