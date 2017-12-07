@@ -135,6 +135,10 @@
 		icon_state = "wt550"
 	return
 
+/obj/item/weapon/gun/projectile/automatic/wt550/lethal
+	ammo_type = /obj/item/ammo_casing/c9mm
+	magazine_type = /obj/item/ammo_magazine/mc9mmt
+
 /obj/item/weapon/gun/projectile/automatic/z8
 	name = "bullpup assault rifle"
 	desc = "The Z8 Bulldog is an older model bullpup carbine, made by the now defunct Zendai Foundries. Uses armor piercing 7.62mm rounds. Makes you feel like a space marine when you hold it."

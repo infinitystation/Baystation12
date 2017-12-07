@@ -74,6 +74,16 @@
 	new /obj/item/weapon/wirecutters(src)
 	new /obj/item/stack/cable_coil(src,30,pick("red","yellow","orange"))
 
+/obj/item/weapon/storage/belt/utility/full_buy/New()
+	..()
+	new /obj/item/weapon/screwdriver(src)
+	new /obj/item/weapon/wrench(src)
+	new /obj/item/weapon/weldingtool(src)
+	new /obj/item/weapon/crowbar(src)
+	new /obj/item/weapon/wirecutters(src)
+	new /obj/item/device/multitool(src)
+	new /obj/item/weapon/welder_tank(src)
+
 
 /obj/item/weapon/storage/belt/utility/atmostech/New()
 	..()
@@ -121,6 +131,19 @@
 	icon_state = "emsbelt"
 	item_state = "emsbelt"
 
+/obj/item/weapon/storage/belt/medical/emt/combat
+	name = "combat medical belt"
+
+/obj/item/weapon/storage/belt/medical/emt/combat/New()
+	..()
+	new /obj/item/weapon/storage/pill_bottle/dylovene(src)
+	new /obj/item/weapon/storage/pill_bottle/dexalin(src)
+	new /obj/item/weapon/storage/pill_bottle/spaceacillin(src)
+	new /obj/item/weapon/storage/pill_bottle/bicaridine(src)
+	new /obj/item/weapon/storage/pill_bottle/inaprovaline(src)
+	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
+	new /obj/item/weapon/storage/pill_bottle/kelotane(src)
+
 /obj/item/weapon/storage/belt/security
 	name = "security belt"
 	desc = "Can hold security gear like handcuffs and flashes."
@@ -165,6 +188,18 @@
 	new /obj/item/ammo_magazine/c45m(src)
 	new /obj/item/weapon/gun/projectile/sec/lethal(src)
 
+/obj/item/weapon/storage/belt/security/troops
+	name = "combat belt"
+
+/obj/item/weapon/storage/belt/security/troops/New()
+	..()
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/weapon/gun/projectile/sec/lethal(src)
+	new /obj/item/ammo_magazine/c45m(src)
 
 /obj/item/weapon/storage/belt/soulstone
 	name = "soul stone belt"

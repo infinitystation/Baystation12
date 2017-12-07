@@ -162,7 +162,7 @@
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/burn
 	name = "autoinjector (anti-burn)"
 	icon = 'icons/obj/infinity_object.dmi'
-	icon_state = "icons/obj/infinity_object/yellow"
+	icon_state = "yellow"
 	starts_with = list(/datum/reagent/kelotane = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/rad

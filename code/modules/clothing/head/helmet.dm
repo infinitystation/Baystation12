@@ -27,6 +27,11 @@
 	desc = "A helmet with 'PRIVATE SECURITY' printed on the back in cyan lettering."
 	icon_state = "helmet_pcrc"
 
+/obj/item/clothing/head/helmet/marine
+	name = "\improper combat helmet"
+	desc = "A helmet with 'MARINE CORPS' printed on the back in red lettering."
+	icon_state = "helmet_nt"
+
 /obj/item/clothing/head/helmet/nt/guard
 	name = "\improper NanoTrasen helmet"
 	desc = "A helmet painted in NanoTrasen colors. Probably belongs to corporate security."

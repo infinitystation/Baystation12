@@ -42,6 +42,10 @@
 	heat_protection = FEET
 	max_heat_protection_temperature = SHOE_MAX_HEAT_PROTECTION_TEMPERATURE
 
+/obj/item/clothing/shoes/combat/marine
+	icon_state = "swat"
+	armor = list(melee = 50, bullet = 50, laser = 30,energy = 25, bomb = 50, bio = 10, rad = 0)
+
 /obj/item/clothing/shoes/jungleboots
 	name = "jungle boots"
 	desc = "A pair of durable brown boots. Waterproofed for use planetside."
