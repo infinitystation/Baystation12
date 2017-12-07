@@ -321,7 +321,6 @@
 	icon_state = "helmet_sol"
 	icon = 'maps/torch/icons/obj/solgov-head.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
-	armor = list(melee = 20, bullet = 30, laser = 30,energy = 20, bomb = 5, bio = 0, rad = 0)
 
 /obj/item/clothing/head/helmet/solgov/security
 	name = "security helmet"
