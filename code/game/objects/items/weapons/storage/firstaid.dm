@@ -114,7 +114,6 @@
 	desc = "Contains tools for surgery. Has precise foam fitting for safe transport and automatically sterilizes the content between uses."
 	icon_state = "surgerykit"
 	item_state = "firstaid-surgery"
-
 	storage_slots = 14
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = null
@@ -256,40 +255,26 @@
 
 //Personal firstaid kit
 
-/obj/item/weapon/storage/firstaid/engineer_individual
-	name = "engineer individual medical kit"
-	desc = "A small box decorated in warning colors that contains a limited supply of medical reagents."
+/obj/item/weapon/storage/firstaid/individual
+	name = "master kit"
 	icon = 'icons/obj/infinity_object.dmi'
-	icon_state = "survivalengmed"
+	slot_flags = SLOT_BELT
+	max_w_class = ITEM_SIZE_SMALL
 	storage_slots = 10
 	can_hold = list(
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
 		/obj/item/stack/medical/bruise_pack,
 		/obj/item/stack/medical/ointment,
-		/obj/item/weapon/reagent_containers/pill
-		)
-	startswith = list(
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/burn,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/brute,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/rad,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/detox,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/inaprovaline,
-		/obj/item/stack/medical/bruise_pack,
-		/obj/item/stack/medical/ointment
+		/obj/item/weapon/reagent_containers/pill,
+		/obj/item/weapon/storage/pill_bottle,
+		/obj/item/stack/medical/advanced,
+		/obj/item/weapon/reagent_containers/syringe
 		)
 
-/obj/item/weapon/storage/firstaid/individual
+/obj/item/weapon/storage/firstaid/individual/all
 	name = "individual medical kit"
 	desc = "A small box decorated in warning colors that contains a limited supply of medical reagents."
-	icon = 'icons/obj/infinity_object.dmi'
 	icon_state = "survivalmed"
-	storage_slots = 10
-	can_hold = list(
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
-		/obj/item/stack/medical/bruise_pack,
-		/obj/item/stack/medical/ointment,
-		/obj/item/weapon/reagent_containers/pill
-		)
 	startswith = list(
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/inaprovaline,
 		/obj/item/stack/medical/bruise_pack,
@@ -298,22 +283,14 @@
 
 
 
-/obj/item/weapon/storage/firstaid/military_individual
+/obj/item/weapon/storage/firstaid/individual/military_individual
 	name = "military individual medical kit"
 	desc = "A small box decorated in dark colors that contains a limited supply of medical reagents."
-	icon = 'icons/obj/infinity_object.dmi'
 	icon_state = "survivalmilmed"
-	storage_slots = 10
-	can_hold = list(
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
-		/obj/item/stack/medical/bruise_pack,
-		/obj/item/stack/medical/ointment,
-		/obj/item/weapon/reagent_containers/pill
-		)
 	startswith = list(
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/burn,
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/brute,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pain = 2,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pain,
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/detox,
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/inaprovaline,
 		/obj/item/stack/medical/bruise_pack,
