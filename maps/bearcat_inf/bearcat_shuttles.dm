@@ -91,6 +91,6 @@
 /obj/machinery/door/airlock/autoname/engineering
 	req_access = list(access_engine)
 
-//wild capitalism
+//wild capitalism (no)
 /datum/computer_file/program/merchant
-	required_access = null
+	required_access = 57

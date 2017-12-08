@@ -102,7 +102,7 @@
 	supervisors = "the Captain and Your laws."
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/security
 	total_positions = 1
-	spawn_positions = 2
+	spawn_positions = 1
 	alt_titles = list(
 		"Sheriff")
 	hud_icon = "hudsecurityofficer"
