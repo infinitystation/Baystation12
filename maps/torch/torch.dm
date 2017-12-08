@@ -31,6 +31,7 @@
 	#include "items/uniform_vendor.dm"
 
 	#include "items/clothing/clothing.dm"
+	#include "items/clothing/solgov-infinity.dm"
 	#include "items/clothing/solgov-accessory.dm"
 	#include "items/clothing/solgov-armor.dm"
 	#include "items/clothing/solgov-feet.dm"
@@ -41,6 +42,7 @@
 	#include "job/access.dm"
 	#include "job/jobs.dm"
 	#include "job/outfits.dm"
+	#include "job/infinity.dm"
 
 	#include "structures/closets.dm"
 	#include "structures/signs.dm"
