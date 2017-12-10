@@ -82,20 +82,9 @@
 	icon_state = "horns_ram"
 	species_allowed = list(SPECIES_UNATHI)
 
-/* WIP WIP WIP
 /datum/sprite_accessory/hair/infinity/una_horns_angler
 	name = "Horns - Angler"
 	icon_state = "horns_angler"
-	species_allowed = list(SPECIES_UNATHI)
-
-/datum/sprite_accessory/hair/infinity/una_snout_sharplight
-	name = "Snouts - Sharplight"
-	icon_state = "snout_sharplight"
-	species_allowed = list(SPECIES_UNATHI)
-
-/datum/sprite_accessory/hair/infinity/una_snout_roundlight
-	name = "Snouts - Roundlight"
-	icon_state = "snout_roundlight"
 	species_allowed = list(SPECIES_UNATHI)
 
 /datum/sprite_accessory/hair/infinity/una_frills_simple
@@ -108,8 +97,8 @@
 	icon_state = "frills_short"
 	species_allowed = list(SPECIES_UNATHI)
 
-/datum/sprite_accessory/hair/infinity/una_frills_aqua
-	name = "Frills - Aqua"
-	icon_state = "frills_aqua"
+/datum/sprite_accessory/facial_hair/infinity
+	name = "Snouts - Sharplight"
+	icon = 'icons/mob/infinity_mob_clothing/hairs.dmi'
+	icon_state = "snout_sharplight"
 	species_allowed = list(SPECIES_UNATHI)
-*/
