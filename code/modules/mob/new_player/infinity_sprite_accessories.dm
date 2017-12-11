@@ -66,11 +66,12 @@
 	name = "Horns - Short"
 	icon_state = "horns_short"
 	species_allowed = list(SPECIES_UNATHI)
-
+/*
 /datum/sprite_accessory/hair/infinity/una_horns_simple
 	name = "Horns - Simple"
 	icon_state = "horns_simple"
 	species_allowed = list(SPECIES_UNATHI)
+*/
 
 /datum/sprite_accessory/hair/infinity/una_horns_curled
 	name = "Horns - Curled"
@@ -82,9 +83,9 @@
 	icon_state = "horns_ram"
 	species_allowed = list(SPECIES_UNATHI)
 
-/datum/sprite_accessory/hair/infinity/una_horns_angler
-	name = "Horns - Angler"
-	icon_state = "horns_angler"
+/datum/sprite_accessory/hair/infinity/una_frills_short
+	name = "Frills - Short"
+	icon_state = "frills_short"
 	species_allowed = list(SPECIES_UNATHI)
 
 /datum/sprite_accessory/hair/infinity/una_frills_simple
@@ -92,9 +93,9 @@
 	icon_state = "frills_simple"
 	species_allowed = list(SPECIES_UNATHI)
 
-/datum/sprite_accessory/hair/infinity/una_frills_short
-	name = "Frills - Short"
-	icon_state = "frills_short"
+/datum/sprite_accessory/hair/infinity/una_frills_aqua
+	name = "Frills - Aqua"
+	icon_state = "frills_aqua_s"
 	species_allowed = list(SPECIES_UNATHI)
 
 /datum/sprite_accessory/facial_hair/infinity
