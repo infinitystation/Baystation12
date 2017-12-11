@@ -18,7 +18,7 @@
 	base_color = "#001144"
 	tail = "resomitail"
 	tail_hair = "feathers"
-	strength = STR_LOW
+	strength = STR_HIGH
 	reagent_tag = IS_RESOMI
 
 	icobase = 'icons/mob/human_races/r_resomi.dmi'
@@ -27,7 +27,7 @@
 	damage_mask = 'icons/mob/human_races/masks/dam_mask_resomi.dmi'
 	blood_mask = 'icons/mob/human_races/masks/blood_resomi.dmi'
 
-	slowdown = -2 //speed fix?
+	slowdown = -0.7 //speed fix?
 	total_health = 150
 	brute_mod = 1.35
 	burn_mod =  1.35
