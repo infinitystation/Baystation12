@@ -95,7 +95,7 @@
 
 /datum/sprite_accessory/hair/infinity/una_frills_aqua
 	name = "Frills - Aqua"
-	icon_state = "frills_aqua_s"
+	icon_state = "frills_aqua"
 	species_allowed = list(SPECIES_UNATHI)
 
 /datum/sprite_accessory/facial_hair/infinity
