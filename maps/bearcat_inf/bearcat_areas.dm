@@ -138,6 +138,10 @@
 	name = "\improper Compartment 1-C"
 	icon_state = "cave"
 
+/area/ship/scrap/ore_melting
+	name = "\improper Melting Section"
+	icon_state = "cave"
+
 /area/ship/scrap/middle/requisition
 	name = "\improper Requisition"
 	icon_state = "storage"
