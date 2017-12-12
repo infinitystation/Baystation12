@@ -10,7 +10,7 @@
 	uniform = /obj/item/clothing/under/solgov/utility/marine/urban
 	l_pocket = /obj/item/device/flashlight/maglight
 	shoes = /obj/item/clothing/shoes/combat/marine
-	back = /obj/item/weapon/storage/backpack/satchel/black
+	back = /obj/item/weapon/storage/backpack/satchel/leather/black
 	backpack_contents = list(
 		/obj/item/weapon/storage/box/survival/troops = 1,
 		/obj/item/weapon/storage/firstaid/individual/military_individual/troops =1)

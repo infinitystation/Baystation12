@@ -137,11 +137,6 @@
 	icon_state = "beaker"
 	startswith = list(/obj/item/weapon/reagent_containers/glass/beaker = 7)
 
-/obj/item/weapon/storage/box/injectors
-	name = "box of DNA injectors"
-	desc = "This box contains injectors it seems."
-	startswith = list(/obj/item/weapon/dnainjector/h2m = 6)
-
 
 /obj/item/weapon/storage/box/blanks
 	name = "box of blank shells"

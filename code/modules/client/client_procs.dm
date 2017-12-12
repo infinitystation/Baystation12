@@ -378,6 +378,7 @@
 		'html/images/ntlogo.png',
 		'html/images/bluentlogo.png',
 		'html/images/sollogo.png',
+		'html/images/terralogo.png',
 		'html/images/talisman.png'
 		)
 

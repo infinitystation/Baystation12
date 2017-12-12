@@ -227,7 +227,7 @@
 	. = ..()
 	airtank = new()
 	airtank.adjust_gas("oxygen", MOLES_O2STANDARD, 0)
-	airtank.adjust_gas("nitrogen", MOLES_N2STANDARD, 0)
+	airtank.adjust_gas("nitrogen", MOLES_N2STANDARD)
 	return_air()
 
 /obj/machinery/cryopod/lifepod/return_air()
