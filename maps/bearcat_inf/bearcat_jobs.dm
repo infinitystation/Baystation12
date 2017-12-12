@@ -121,9 +121,6 @@
 	hierarchy_type = /decl/hierarchy/outfit/job/bearcat
 	pda_type = null
 	pda_slot = slot_l_store
-	backpack = /obj/item/weapon/storage/backpack
-	satchel_job = /obj/item/weapon/storage/backpack/satchel/grey
-	messenger_bag = /obj/item/weapon/storage/backpack/messenger
 	l_pocket = /obj/item/weapon/storage/wallet/poly
 	l_ear = null
 	r_ear = null

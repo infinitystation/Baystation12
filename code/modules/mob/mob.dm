@@ -418,7 +418,6 @@
 		'html/chevron.png',
 		'html/chevron-expand.png',
 		'html/changelog.css',
-		'html/changelog.js',
 		'html/changelog.html'
 		)
 	src << browse('html/changelog_infinity.html', "window=changes;size=675x650")
