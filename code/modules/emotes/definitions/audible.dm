@@ -359,3 +359,18 @@
 /decl/emote/audible/grunt
 	key = "grunt"
 	emote_message_3p = "USER ворчит."
+
+/decl/emote/audible/bug_hiss
+	key ="hiss"
+	emote_message_3p = "USER шипит."
+	emote_sound = 'sound/voice/BugHiss.ogg'
+
+/decl/emote/audible/bug_buzz
+	key ="buzz"
+	emote_message_3p = "USER гудит крыльями." //саня постарался
+	emote_sound = 'sound/voice/BugBuzz.ogg'
+
+/decl/emote/audible/bug_chitter
+	key ="chitter"
+	emote_message_3p = "USER верещит."
+	emote_sound = 'sound/voice/Bug.ogg'
