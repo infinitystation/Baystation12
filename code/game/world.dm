@@ -515,13 +515,13 @@ var/world_topic_spam_protect_time = world.timeofday
 	var/F = file("data/mode.txt")
 	fdel(F)
 	F << the_mode
-/*
+
 /hook/startup/proc/loadMOTD()
 	world.load_motd()
 	return 1
 
 /world/proc/load_motd()
-	join_motd = file2text("config/motd.txt")*/
+	join_motd = sanitize_a0(file2text("config/motd.txt"))
 
 
 /proc/load_configuration()
