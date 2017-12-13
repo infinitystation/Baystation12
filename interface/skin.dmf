@@ -1244,7 +1244,7 @@ window "rpane"
 	elem "changelog_infinity"
 		type = BUTTON
 		pos = 413,0
-		size = 100x16
+		size = 105x16
 		anchor1 = none
 		anchor2 = none
 		saved-params = "is-checked"
