@@ -399,7 +399,7 @@
 		winset(src, "rpane.changelog", "background-color=none;font-style=;")
 
 /client/verb/changes_infinity()
-	set name = "Infinity Station Changelog"
+	set name = "Infinity Changelog"
 	set category = "OOC"
 	getFiles(
 		'html/88x31.png',

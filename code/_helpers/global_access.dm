@@ -81,8 +81,6 @@
 			return global._client_preferences_by_key;
 		if("_client_preferences_by_type")
 			return global._client_preferences_by_type;
-		if("accept_list")
-			return global.accept_list;
 		if("account_hack_attempted")
 			return global.account_hack_attempted;
 		if("actor")
@@ -1144,8 +1142,6 @@
 			global._client_preferences_by_key=newval;
 		if("_client_preferences_by_type")
 			global._client_preferences_by_type=newval;
-		if("accept_list")
-			global.accept_list=newval;
 		if("account_hack_attempted")
 			global.account_hack_attempted=newval;
 		if("actor")
