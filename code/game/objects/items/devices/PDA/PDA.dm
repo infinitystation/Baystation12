@@ -339,6 +339,15 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	else
 		return 0
 
+/obj/item/device/pda/proc/toggle_light()
+	if(can_use())
+		if(fon)
+			fon = 0
+			set_light(0)
+		else
+			fon = 1
+			set_light(f_lum, l_color = f_color)
+
 /obj/item/device/pda/GetAccess()
 	if(id)
 		return id.GetAccess()
@@ -641,12 +650,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 //MAIN FUNCTIONS===================================
 
 		if("Light")
-			if(fon)
-				fon = 0
-				set_light(0)
-			else
-				fon = 1
-				set_light(f_lum, l_color = f_color)
+			toggle_light()
 		if("Medical Scan")
 			if(scanmode == 1)
 				scanmode = 0
@@ -959,6 +963,9 @@ var/global/list/obj/item/device/pda/PDAs = list()
 /obj/item/device/pda/AltClick()
 	if(Adjacent(usr))
 		verb_remove_id()
+
+/obj/item/device/pda/CtrlAltClick()
+	toggle_light()
 
 /obj/item/device/pda/proc/create_message(var/mob/living/U = usr, var/obj/item/device/pda/P, var/tap = 1)
 	if(!istype(P))
