@@ -312,7 +312,15 @@ proc/TextPreview(var/string,var/len=40)
 
 //alternative copytext() for encoded text, doesn't break html entities (&#34; and other)
 /proc/copytext_preserve_html(var/text, var/first, var/last)
-	return html_encode(copytext(html_decode(text), first, last))
+	var/temp = replacetextEx(text, "&#255;", "ß")
+	temp = replacetextEx(temp, "&#1103;", "ß")
+	var/delta = length(text) - length(temp)
+	if(delta < 0)
+		delta = 0
+	var/msg = html_encode(copytext(html_decode(text), first, last + delta))
+	msg = replacetextEx(msg, "&amp;#255;", "&#255;")
+	msg = replacetextEx(msg, "&amp;#1103;", "&#1103;")
+	return msg
 
 //For generating neat chat tag-images
 //The icon var could be local in the proc, but it's a waste of resources
@@ -517,6 +525,8 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 		t = replacetextEx(t, "\\u00fc", "\\u044c")
 		t = replacetextEx(t, "\\u00fd", "\\u044d")
 		t = replacetextEx(t, "\\u00fe", "\\u044e")
+	t = replacetextEx(t, "&amp;#255;", "\\u044f")
+	t = replacetextEx(t, "&amp;#1103;", "\\u044f")
 	t = replacetextEx(t, "&#255;", "\\u044f")
 	t = replacetextEx(t, "&#1103;", "\\u044f")
 	return t
