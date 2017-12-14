@@ -360,7 +360,7 @@
 		if(lentext(msg) <= 40)
 			return "<span class='notice'>[sanitize_u2a(msg)]</span>"
 		else
-			return "<span class='notice'>[copytext_preserve_html(sanitize_u2a(msg), 1, 37)]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></span>"
+			return "<span class='notice'>[sanitize_u2a(copytext_preserve_html(msg, 1, 37))]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></span>"
 
 /*
 /mob/verb/help()
