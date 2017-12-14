@@ -1,15 +1,15 @@
-<span class="main"><h1>Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РЅР° Infinity</h1>
-РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ СЃС‚Р°РЅРґР°СЂС‚РЅС‹Р№ Р±РёР»Рґ BayStation12 СЃ РЅРµР±РѕР»СЊС€РёРјРё РјРѕРґРёС„РёРєР°С†РёСЏРјРё.<br>
-<a href=" https://infinity-ss13.ru/index.php?/topic/768-РїСЂР°РІРёР»Р°-РёРіСЂС‹-РЅР°-СЃРµСЂРІРµСЂРµ/">РџСЂР°РІРёР»Р° СЃРµСЂРІРµСЂР°</a>
-<a href=" https://infinity-ss13.ru">Р¤РѕСЂСѓРј СЃРµСЂРІРµСЂР°</a>
-<a href=" https://wiki.baystation12.net/">BayStation12 Р’РёРєРё</a>
-<a href=" https://wiki.infinity-ss13.ru/">РќР°С€Р° Р’РёРєРё</a>
-<a href=" http://gg.gg/Infinity_LOGS">Р›РѕРіРё СЃРµСЂРІРµСЂР°</a>
-<a href=" https://github.com/infinitystation">РљРѕРґ СЃРµСЂРІРµСЂР°</a>
+<span class="main"><h1>Добро пожаловать на Infinity</h1>
+Используется стандартный билд BayStation12 с небольшими модификациями.<br>
+<a href=" https://infinity-ss13.ru/index.php?/topic/768-правила-игры-на-сервере/">Правила сервера</a>
+<a href=" https://infinity-ss13.ru">Форум сервера</a>
+<a href=" https://wiki.baystation12.net/">BayStation12 Вики</a>
+<a href=" https://wiki.infinity-ss13.ru/">Наша Вики</a>
+<a href=" http://gg.gg/Infinity_LOGS">Логи сервера</a>
+<a href=" https://github.com/infinitystation">Код сервера</a>
 <span style="color: #3399ff;">Emergency Help: 
-<a href=" https://wiki.infinity-ss13.ru/index.php?title=Starter_Guide">РљР°Рє РЅР°С‡Р°С‚СЊ РёРіСЂР°С‚СЊ?</a>
-<a href=" https://wiki.infinity-ss13.ru/index.php?title=How_To_Military_Guide">РљР°Рє РёРіСЂР°С‚СЊ Р·Р° РІРѕРµРЅРЅС‹С… Рё СЌРєСЃРїРµРґРёС†РёРѕРЅРЅРёРєРѕРІ?</a>
-<a href=" https://infinity-ss13.ru/index.php?/topic/163-Р·Р°СЏРІРєР°-РІ-discord-РєРѕРЅС„РµСЂРµРЅС†РёСЋ/">РљР°Рє РїРѕРїР°СЃС‚СЊ РЅР° СЃРµСЂРІРµСЂ РІ РґРёСЃРєРѕСЂРґРµ?</a>
+<a href=" https://wiki.infinity-ss13.ru/index.php?title=Starter_Guide">Как начать играть?</a>
+<a href=" https://wiki.infinity-ss13.ru/index.php?title=How_To_Military_Guide">Как играть за военных и экспедиционников?</a>
+<a href=" https://infinity-ss13.ru/index.php?/topic/163-заявка-в-discord-конференцию/">Как попасть на сервер в дискорде?</a>
 </span>
-<span style="color: #0000ff;">Р§С‚РѕР±С‹ РїРѕР»СѓС‡РёС‚СЊ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РёРіСЂР°С‚СЊ Р·Р° РёРЅС‹Рµ СЂР°СЃС‹ РєСЂРѕРјРµ Р»СЋРґРµР№, СѓРЅР°С‚С…РѕРІ Рё С‚Р°СЏСЂ, РЅР°РїРёС€РёС‚Рµ Р·Р°СЏРІРєСѓ РІ СЂР°Р·РґРµР»Рµ СЃ РєРІРµРЅС‚Р°РјРё РЅР° С„РѕСЂСѓРјРµ. РћР±СЏР·Р°С‚РµР»СЊРЅРѕ РїСЂРѕС‡С‚РёС‚Рµ РїСЂР°РІРёР»Р°.</span>
+<span style="color: #0000ff;">Чтобы получить возможность играть за иные расы кроме людей, унатхов и таяр, напишите заявку в разделе с квентами на форуме. Обязательно прочтите правила.</span>
 </span>
