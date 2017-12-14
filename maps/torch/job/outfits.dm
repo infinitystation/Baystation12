@@ -715,36 +715,3 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	..()
 	var/obj/item/weapon/card/id/torch/stowaway/ID = new(H.loc)
 	H.put_in_hands(ID)
-
-/obj/structure/closet/gimmick/marine
-	name = "marine gear closet"
-	desc = "It's a storage unit for Marine gear."
-	icon_state = "syndicate1"
-	icon_closed = "syndicate1"
-	icon_opened = "syndicate1open"
-
-/obj/structure/closet/gimmick/marine/WillContain()
-	return list(
-		/obj/item/clothing/glasses/sunglasses/sechud,
-		/obj/item/clothing/under/solgov/utility/marine/urban,
-		/obj/item/clothing/mask/gas/half,
-		/obj/item/clothing/accessory/storage/black_vest,
-		/obj/item/device/radio/headset/specops,
-		/obj/item/device/radio/off,
-		/obj/item/weapon/combitool)
-
-/decl/hierarchy/outfit/marshal
-	name = "SCG Marshal"
-	shoes = /obj/item/clothing/shoes/jackboots
-	uniform = /obj/item/clothing/under/rank/security/navyblue
-	suit = /obj/item/clothing/suit/armor/vest/solgov
-	l_ear = /obj/item/device/radio/headset/headset_sec
-	belt = /obj/item/weapon/storage/belt/security/marshal
-	l_pocket = /obj/item/clothing/accessory/holster/thigh
-	r_pocket = /obj/item/clothing/accessory/solgov/rank/marine/enlisted/e4
-	r_hand = /obj/item/clothing/accessory/badge/marshal
-	l_hand = /obj/item/weapon/gun/energy/taser
-	id_slot = slot_wear_id
-	id_type = /obj/item/weapon/card/id/security
-	id_desc = "An ID of SCG police marshals."
-	id_pda_assignment = "Colonial Bureau Officer"
