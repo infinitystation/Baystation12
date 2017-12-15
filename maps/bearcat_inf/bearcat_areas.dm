@@ -139,7 +139,7 @@
 	icon_state = "cave"
 
 /area/ship/scrap/ore_melting
-	name = "\improper Melting Section"
+	name = "\improper Smelting Section"
 	icon_state = "cave"
 
 /area/ship/scrap/middle/requisition
