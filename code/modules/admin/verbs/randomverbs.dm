@@ -481,13 +481,19 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		return
 	var/input = sanitize(input(usr, "Please enter anything you want. Anything. Serious.", "What?", "") as message|null, extra = 0)
 	var/customname = sanitizeSafe(input(usr, "Pick a title for the report.", "Title") as text|null)
+	var/custombossname = sanitizeSafe(input(usr, "Pick a boss for the report ('No' if you don't want to change it).", "Boss Name") as text|null)
 	if(!input)
 		return
 	if(!customname)
 		customname = "[command_name()] Update"
+	if(custombossname)
+		command_name = custombossname
+	else
+		command_name = "[GLOB.using_map.boss_name]"
 
 	//New message handling
 	post_comm_message(customname, replacetext(input, "\n", "<br/>"))
+
 
 	switch(alert("Should this be announced to the general population?",,"Yes","No"))
 		if("Yes")
