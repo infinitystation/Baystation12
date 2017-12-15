@@ -31,13 +31,12 @@
 	if(!is_open_container() && !diff)
 		open(user)
 
-
 /obj/item/weapon/reagent_containers/food/snacks/canfood/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W,/obj/item/weapon/material/knife))
 		if(do_after(user, 150, src))
 			open(user)
 			return
-	else if(istype(W,/obj/item/weapon/material/canknife))
+	else if(istype(W,/obj/item/weapon/material/canknife) || istype(W, /obj/item/weapon/material/kitchen/utensil/knife))
 		if(do_after(user, 50, src))
 			open(user)
 			return
