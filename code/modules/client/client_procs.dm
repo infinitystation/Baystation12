@@ -123,6 +123,13 @@
 		qdel(src)
 		return
 
+	if(config.player_limit != 0)
+		if((GLOB.clients.len >= config.player_limit) && !(ckey in admin_datums))
+			alert(src,"This server is currently full and not accepting new connections.","Server Full","OK")
+			log_admin("[ckey] tried to join and was turned away due to the server being full (player_limit=[config.player_limit])")
+			qdel(src)
+			return
+
 	// Change the way they should download resources.
 	if(config.resource_urls && config.resource_urls.len)
 		src.preload_rsc = pick(config.resource_urls)
@@ -204,7 +211,7 @@
 			src.changes()
 
 	if(prefs.lastinfchangelog != inf_changelog_hash) //bolds the changelog button on the interface so we know there are updates.
-		to_chat(src, "<span class='info'>You have unread updates in the Infinity Space Station changelog.</span>")
+		to_chat(src, "<span class='info'>You have unread updates in the Infinity changelog.</span>")
 		winset(src, "rpane.changelog_infinity", "background-color=#eaeaea;font-style=bold")
 		if(config.aggressive_changelog)
 			src.changes_infinity()
@@ -378,6 +385,7 @@
 		'html/images/ntlogo.png',
 		'html/images/bluentlogo.png',
 		'html/images/sollogo.png',
+		'html/images/terralogo.png',
 		'html/images/talisman.png'
 		)
 

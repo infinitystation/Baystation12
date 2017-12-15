@@ -138,6 +138,10 @@
 	name = "\improper Compartment 1-C"
 	icon_state = "cave"
 
+/area/ship/scrap/ore_melting
+	name = "\improper Smelting Section"
+	icon_state = "cave"
+
 /area/ship/scrap/middle/requisition
 	name = "\improper Requisition"
 	icon_state = "storage"
@@ -228,11 +232,3 @@
   name = "\improper Cargo Lift"
   icon_state = "shuttle3"
   base_turf = /turf/simulated/open
-
-//Special Areas
-
-/area/admin/pirat_bay
-	name = "\improper Pirat Bay"
-	icon_state = "cave"
-	requires_power = 0
-	dynamic_lighting = 0

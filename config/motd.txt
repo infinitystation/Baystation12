@@ -1,10 +1,15 @@
 <span class="main"><h1>ƒобро пожаловать на Infinity</h1>
-»спользуется стандартный билд BayStation12 с небольшими модификациями.<br>
-<a href=" https://infinity-ss13.ru">‘орум сервера</a>
+»спользуетс€ стандартный билд BayStation12 с небольшими модификаци€ми.<br>
 <a href=" https://infinity-ss13.ru/index.php?/topic/768-правила-игры-на-сервере/">ѕравила сервера</a>
-<a href=" https://wiki.baystation12.net/">¬ики BayStation12</a>
+<a href=" https://infinity-ss13.ru">‘орум сервера</a>
+<a href=" https://wiki.baystation12.net/">BayStation12 ¬ики</a>
+<a href=" https://wiki.infinity-ss13.ru/">Ќаша ¬ики</a>
 <a href=" http://gg.gg/Infinity_LOGS">Ћоги сервера</a>
 <a href=" https://github.com/infinitystation"> од сервера</a>
-<br>
-<span style="color: #0000ff;">„тобы получить возможность играть за иные расы кроме людей, унатхов и таяр, напишите заявку в разделе с квентами на форуме. ќбязательно прочтите правила.</span>
+<span style="color: #3399ff;">Emergency Help: 
+<a href=" https://wiki.infinity-ss13.ru/index.php?title=Starter_Guide"> ак начать играть?</a>
+<a href=" https://wiki.infinity-ss13.ru/index.php?title=How_To_Military_Guide"> ак играть за военных и экспедиционников?</a>
+<a href=" https://infinity-ss13.ru/index.php?/topic/163-за€вка-в-discord-конференцию/"> ак попасть на сервер в дискорде?</a>
+</span>
+<span style="color: #0000ff;">„тобы получить возможность играть за иные расы кроме людей, унатхов и та€р, напишите за€вку в разделе с квентами на форуме. ќб€зательно прочтите правила.</span>
 </span>

@@ -120,6 +120,28 @@
 
 
 
+/obj/effect/landmark/corpse/pirat
+	name = "Pirat"
+	corpseuniform = /obj/item/clothing/under/pirate
+	corpseshoes = /obj/random/shoes/poor
+	corpsegloves = /obj/random/gloves/poor
+	corpsehelmet = /obj/random/hat/poor
+	corpsepocket1 = /obj/item/device/radio/off
+	corpseidjob = "Pirat"
+	corpseidaccess = "Syndicate"
+
+
+
+/obj/effect/landmark/corpse/pirat/space
+	name = "Space Pirat"
+	corpsesuit = /obj/item/clothing/suit/space
+	corpsemask = /obj/item/clothing/mask/breath
+	corpsehelmet = /obj/item/clothing/head/helmet/space
+	corpseback = /obj/item/weapon/tank/oxygen
+	corpseid = 1
+
+
+
 ///////////Civilians//////////////////////
 
 /obj/effect/landmark/corpse/chef

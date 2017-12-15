@@ -81,8 +81,6 @@
 			return global._client_preferences_by_key;
 		if("_client_preferences_by_type")
 			return global._client_preferences_by_type;
-		if("accept_list")
-			return global.accept_list;
 		if("account_hack_attempted")
 			return global.account_hack_attempted;
 		if("actor")
@@ -215,8 +213,6 @@
 			return global.autolathe_categories;
 		if("autolathe_recipes")
 			return global.autolathe_recipes;
-		if("backbaglist")
-			return global.backbaglist;
 		if("base_miss_chance")
 			return global.base_miss_chance;
 		if("basic_robolimb")
@@ -263,8 +259,6 @@
 			return global.chemical_reaction_logs;
 		if("chemical_reactions_list")
 			return global.chemical_reactions_list;
-		if("chemistryProcess")
-			return global.chemistryProcess;
 		if("chicken_count")
 			return global.chicken_count;
 		if("church_name")
@@ -535,8 +529,6 @@
 			return global.license_to_url;
 		if("light_overlay_cache")
 			return global.light_overlay_cache;
-		if("light_type_cache")
-			return global.light_type_cache;
 		if("lighting_overlays_initialised")
 			return global.lighting_overlays_initialised;
 		if("lighting_update_corners")
@@ -1150,8 +1142,6 @@
 			global._client_preferences_by_key=newval;
 		if("_client_preferences_by_type")
 			global._client_preferences_by_type=newval;
-		if("accept_list")
-			global.accept_list=newval;
 		if("account_hack_attempted")
 			global.account_hack_attempted=newval;
 		if("actor")
@@ -1284,8 +1274,6 @@
 			global.autolathe_categories=newval;
 		if("autolathe_recipes")
 			global.autolathe_recipes=newval;
-		if("backbaglist")
-			global.backbaglist=newval;
 		if("base_miss_chance")
 			global.base_miss_chance=newval;
 		if("basic_robolimb")
@@ -1332,8 +1320,6 @@
 			global.chemical_reaction_logs=newval;
 		if("chemical_reactions_list")
 			global.chemical_reactions_list=newval;
-		if("chemistryProcess")
-			global.chemistryProcess=newval;
 		if("chicken_count")
 			global.chicken_count=newval;
 		if("church_name")
@@ -1604,8 +1590,6 @@
 			global.license_to_url=newval;
 		if("light_overlay_cache")
 			global.light_overlay_cache=newval;
-		if("light_type_cache")
-			global.light_type_cache=newval;
 		if("lighting_overlays_initialised")
 			global.lighting_overlays_initialised=newval;
 		if("lighting_update_corners")
@@ -2245,7 +2229,6 @@
 	"attack_log_repository",
 	"autolathe_categories",
 	"autolathe_recipes",
-	"backbaglist",
 	"base_miss_chance",
 	"basic_robolimb",
 	"blackbox",
@@ -2270,7 +2253,6 @@
 	"checked_for_inactives",
 	"chemical_reaction_logs",
 	"chemical_reactions_list",
-	"chemistryProcess",
 	"chicken_count",
 	"church_name",
 	"client_preference_stats_",
@@ -2410,7 +2392,6 @@
 	"last_tick_duration",
 	"license_to_url",
 	"light_overlay_cache",
-	"light_type_cache",
 	"lighting_overlays_initialised",
 	"lighting_update_corners",
 	"lighting_update_corners_old",

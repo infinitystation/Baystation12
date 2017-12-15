@@ -360,7 +360,7 @@
 	name = "Overeye Long"
 	icon_state = "hair_longovereye"
 
-/datum/sprite_accessory/hair/fag
+/datum/sprite_accessory/hair/flow
 	name = "Flow Hair"
 	icon_state = "hair_f"
 
@@ -872,7 +872,7 @@
 	species_allowed = list(SPECIES_UNATHI)
 
 /datum/sprite_accessory/hair/una_horns
-	name = "Unathi Horns"
+	name = "Horns - Simple"
 	icon_state = "soghun_horns"
 	species_allowed = list(SPECIES_UNATHI)
 

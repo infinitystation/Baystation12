@@ -135,12 +135,6 @@
 /obj/machinery/power/apc/connect_to_network()
 	//Override because the APC does not directly connect to the network; it goes through a terminal.
 	//The terminal is what the power computer looks for anyway.
-	if(!terminal)
-		if(operating)
-			make_terminal()
-		else
-			return
-
 	if(terminal)
 		terminal.connect_to_network()
 
@@ -233,6 +227,8 @@
 /obj/machinery/power/apc/proc/init_round_start()
 	wires = new(src)
 	has_electronics = 2 //installed and secured
+	if(!terminal)
+		make_terminal() //wired
 	// is starting with a power cell installed, create it and set its charge level
 	if(cell_type)
 		src.cell = new cell_type(src)

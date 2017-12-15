@@ -3,7 +3,7 @@
 	GLOB.dead_mob_list_ -= src
 	GLOB.living_mob_list_ -= src
 	unset_machine()
-	qdel(hud_used)
+	QDEL_NULL(hud_used)
 	for(var/obj/item/grab/G in grabbed_by)
 		qdel(G)
 	clear_fullscreen()
@@ -358,9 +358,9 @@
 	if (flavor_text && flavor_text != "")
 		var/msg = replacetext(flavor_text, "\n", " ")
 		if(lentext(msg) <= 40)
-			return "<span class='notice'>[msg]</span>"
+			return "<span class='notice'>[sanitize_u2a(msg)]</span>"
 		else
-			return "<span class='notice'>[copytext_preserve_html(msg, 1, 37)]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></span>"
+			return "<span class='notice'>[sanitize_u2a(copytext_preserve_html(msg, 1, 37))]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></span>"
 
 /*
 /mob/verb/help()
@@ -375,6 +375,9 @@
 	getFiles(
 		'html/88x31.png',
 		'html/bug-minus.png',
+		'html/burn-exclamation.png',
+		'html/chevron.png',
+		'html/chevron-expand.png',
 		'html/cross-circle.png',
 		'html/hard-hat-exclamation.png',
 		'html/image-minus.png',
@@ -383,13 +386,10 @@
 		'html/music-minus.png',
 		'html/music-plus.png',
 		'html/tick-circle.png',
-		'html/wrench-screwdriver.png',
+		'html/scales.png',
 		'html/spell-check.png',
-		'html/burn-exclamation.png',
-		'html/chevron.png',
-		'html/chevron-expand.png',
+		'html/wrench-screwdriver.png',
 		'html/changelog.css',
-		'html/changelog.js',
 		'html/changelog.html'
 		)
 	src << browse('html/changelog.html', "window=changes;size=675x650")
@@ -399,7 +399,7 @@
 		winset(src, "rpane.changelog", "background-color=none;font-style=;")
 
 /client/verb/changes_infinity()
-	set name = "Infinity Station Changelog"
+	set name = "Infinity Changelog"
 	set category = "OOC"
 	getFiles(
 		'html/88x31.png',
@@ -418,7 +418,6 @@
 		'html/chevron.png',
 		'html/chevron-expand.png',
 		'html/changelog.css',
-		'html/changelog.js',
 		'html/changelog.html'
 		)
 	src << browse('html/changelog_infinity.html', "window=changes;size=675x650")

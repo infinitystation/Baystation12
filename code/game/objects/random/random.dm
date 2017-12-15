@@ -752,6 +752,23 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/clothing/shoes/blue = 4,
 				/obj/item/clothing/shoes/leather = 4)
 
+/obj/random/shoes/poor
+	name = "random poor footwear"
+	icon_state = "wizard"
+
+/obj/random/shoes/poor/spawn_choices()
+	return list(/obj/item/clothing/shoes/workboots = 3,
+				/obj/item/clothing/shoes/jackboots = 1,
+				/obj/item/clothing/shoes/laceup = 2,
+				/obj/item/clothing/shoes/black = 4,
+				/obj/item/clothing/shoes/jungleboots = 1,
+				/obj/item/clothing/shoes/dutyboots = 1,
+				/obj/item/clothing/shoes/sandal = 2,
+				/obj/item/clothing/shoes/brown = 4,
+				/obj/item/clothing/shoes/red = 4,
+				/obj/item/clothing/shoes/blue = 4,
+				/obj/item/clothing/shoes/leather = 4)
+
 /obj/random/gloves
 	name = "random gloves"
 	desc = "This is a random pair of gloves."
@@ -771,6 +788,18 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/clothing/gloves/guards = 3,
 				/obj/item/clothing/gloves/tactical = 3,
 				/obj/item/clothing/gloves/insulated/cheap = 7)
+
+/obj/random/gloves/poor
+	name = "random poor gloves"
+	icon_state = "work"
+
+/obj/random/gloves/poor/spawn_choices()
+	return list(/obj/item/clothing/gloves/insulated = 1,
+				/obj/item/clothing/gloves/thick = 4,
+				/obj/item/clothing/gloves/white = 2,
+				/obj/item/clothing/gloves/rainbow = 1,
+				/obj/item/clothing/gloves/duty = 4,
+				/obj/item/clothing/gloves/insulated/cheap = 3)
 
 /obj/random/glasses
 	name = "random eyewear"
@@ -812,6 +841,23 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/clothing/head/hardhat/dblue = 4,
 				/obj/item/clothing/head/ushanka = 3,
 				/obj/item/clothing/head/welding = 2)
+
+/obj/random/hat/poor
+	name = "random poor headgear"
+	icon_state = "flat_cap"
+
+/obj/random/hat/poor/spawn_choices()
+	return list(/obj/item/clothing/head/helmet = 1,
+				/obj/item/clothing/head/helmet/space/emergency = 1,
+				/obj/item/clothing/head/hardhat = 4,
+				/obj/item/clothing/head/ushanka = 3,
+				/obj/item/clothing/head/bandana = 4,
+				/obj/item/clothing/head/bowlerhat = 1,
+				/obj/item/clothing/head/cardborg = 2,
+				/obj/item/clothing/head/orangebandana = 3,
+				/obj/item/clothing/head/soft/grey = 3,
+				/obj/item/clothing/head/flatcap = 3,
+				/obj/item/clothing/head/welding = 1)
 
 /obj/random/suit
 	name = "random suit"

@@ -9,8 +9,8 @@
 	#include "bearcat-1.dmm"
 	#include "bearcat-2.dmm"
 	#include "bearcat-3.dmm"
-	#include "../away/lost_supply_base/lost_supply_base.dm"
-	#include "../away/smugglers/smugglers.dm"
+	#include "../away-inf/lost_supply_base/lost_supply_base.dm"
+	#include "../away-inf/smugglers/smugglers.dm"
 
 	#include "../../code/modules/lobby_music/businessend.dm"
 	#include "../../code/modules/lobby_music/salutjohn.dm"
