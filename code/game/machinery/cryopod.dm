@@ -228,7 +228,7 @@
 	airtank = new()
 	airtank.adjust_gas("oxygen", MOLES_O2STANDARD, 0)
 	airtank.adjust_gas("nitrogen", MOLES_N2STANDARD)
-	airtank.total_molet = 103.984
+	airtank.total_moles = 103.984
 	airtank.temperature = 293
 	return_air()
 
