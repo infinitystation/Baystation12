@@ -63,21 +63,6 @@
 	suits["formal outfit"] = /obj/item/clothing/under/rank/internalaffairs/plain
 	gear_tweaks += new/datum/gear_tweak/path(suits)
 
-/datum/gear/uniform/scrubs
-	display_name = "medical scrubs"
-	path = /obj/item/clothing/under/rank/medical/black
-	allowed_roles = list(MED_ROLES)
-
-/datum/gear/uniform/scrubs/New()
-	..()
-	var/scrubcolor = list()
-	scrubcolor["black scrubs"] = /obj/item/clothing/under/rank/medical/black
-	scrubcolor["blue scrubs"] = /obj/item/clothing/under/rank/medical/blue
-	scrubcolor["green scrubs"] = /obj/item/clothing/under/rank/medical/green
-	scrubcolor["navy blue scrubs"] = /obj/item/clothing/under/rank/medical/navyblue
-	scrubcolor["purple scrubs"] = /obj/item/clothing/under/rank/medical/purple
-	gear_tweaks += new/datum/gear_tweak/path(scrubcolor)
-
 /datum/gear/uniform/dress
 	display_name = "dress selection"
 	path = /obj/item/clothing/under/dress
