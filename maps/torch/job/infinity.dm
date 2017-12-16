@@ -104,6 +104,7 @@
 		else
 			qdel(rank)
 
+//evil things
 
 /decl/hierarchy/outfit/scg/troops/sergeant
 	name = "SCG Marine Sergeant"
