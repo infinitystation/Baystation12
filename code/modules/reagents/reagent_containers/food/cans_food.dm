@@ -19,7 +19,7 @@
 	name = "Master Can"
 	desc = "Master Can"
 	icon = 'icons/obj/infinity_object.dmi'
-	icon_state = "crystal"
+	icon_state = "crystal2"
 
 /obj/item/weapon/material/canknife
 	name = "can-opener"
@@ -49,6 +49,13 @@
 	to_chat(user, "<span class='notice'>You open \the [src]!</span>")
 	flags |= OPENCONTAINER
 	icon_state = open_state
+
+/obj/item/weapon/reagent_containers/food/snacks/canfood/attack(mob/M as mob, mob/user as mob, def_zone)
+	if(force && !(flags & NOBLUDGEON) && user.a_intent == I_HURT)
+		return ..()
+	if(standard_feed_mob(user, M))
+		return
+	return 0
 
 #undef HARD
 #undef EASY

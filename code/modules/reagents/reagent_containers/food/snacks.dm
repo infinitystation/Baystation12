@@ -45,6 +45,8 @@
 		qdel(src)
 		return 0
 
+
+
 	if(istype(M, /mob/living/carbon))
 		//TODO: replace with standard_feed_mob() call.
 		var/mob/living/carbon/C = M
