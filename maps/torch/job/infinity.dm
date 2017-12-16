@@ -16,7 +16,7 @@
 	back = /obj/item/weapon/storage/backpack/satchel/leather/black
 	backpack_contents = list(
 		/obj/item/weapon/storage/box/survival/troops = 1,
-		/obj/item/weapon/storage/firstaid/individual/military_individual/troops =1)
+		/obj/item/weapon/storage/firstaid/individual/military/troops =1)
 	flags = OUTFIT_HAS_BACKPACK
 
 /decl/hierarchy/outfit/scg/troops/post_equip(var/mob/living/carbon/human/H)
@@ -57,7 +57,7 @@
 	id_pda_assignment = "Marine Combat Engineer"
 	backpack_contents = list(
 		/obj/item/weapon/storage/box/survival/troops = 1,
-		/obj/item/weapon/storage/firstaid/individual/military_individual/troops =1,
+		/obj/item/weapon/storage/firstaid/individual/military/troops =1,
 		/obj/item/weapon/plastique = 3)
 
 /decl/hierarchy/outfit/scg/troops/engineer/New()
@@ -117,7 +117,7 @@
 	id_pda_assignment = "Marine Squad Leader"
 	backpack_contents = list(
 		/obj/item/weapon/storage/box/survival/troops = 1,
-		/obj/item/weapon/storage/firstaid/individual/military_individual/troops =1)
+		/obj/item/weapon/storage/firstaid/individual/military/troops =1)
 
 /decl/hierarchy/outfit/scg/troops/sergeant/New()
 	..()
@@ -134,7 +134,7 @@
 			qdel(rank)
 
 /obj/structure/closet/gimmick/marine
-	name = "marine gear closet"
+	name = "heavy marine gear closet"
 	desc = "It's a storage unit for Marine gear."
 	icon_state = "syndicate1"
 	icon_closed = "syndicate1"

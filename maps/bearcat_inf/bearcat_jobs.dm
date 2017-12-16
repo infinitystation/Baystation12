@@ -73,6 +73,7 @@
 	alt_titles = list(
 		"Steward" = /decl/hierarchy/outfit/job/bearcat/hand/cook,
 		"Cargo Hand",
+		"Digger" = /decl/hierarchy/outfit/job/bearcat/hand/digger,
 		"Passenger")
 	hud_icon = "hudcargotechnician"
 
@@ -82,6 +83,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	hud_icon = "hudengineer"
+	alt_titles = null
 
 /datum/job/roboticist
 	title = "Roboticist"
@@ -89,6 +91,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/roboticist
 	total_positions = 1
 	spawn_positions = 1
+	alt_titles = null
 
 /datum/job/qm
 	title = "Quartermaster"
@@ -168,6 +171,7 @@
 	name = BEARCAT_OUTFIT_JOB_NAME("First Mate")
 	uniform = /obj/item/clothing/under/suit_jacket/checkered
 	shoes = /obj/item/clothing/shoes/laceup
+	id_type = /obj/item/weapon/card/id/silver
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	l_hand = /obj/item/weapon/clipboard
 
@@ -242,6 +246,13 @@
 	name = BEARCAT_OUTFIT_JOB_NAME("Steward")
 	head = /obj/item/clothing/head/chefhat
 	suit = /obj/item/clothing/suit/chef/classic
+
+/decl/hierarchy/outfit/job/bearcat/hand/digger
+	name = BEARCAT_OUTFIT_JOB_NAME("Digger")
+	suit = /obj/item/clothing/suit/chef/classic
+	uniform = /obj/item/clothing/under/rank/miner
+	r_pocket = /obj/item/device/flashlight/lantern
+	belt = /obj/item/weapon/pickaxe
 
 /decl/hierarchy/outfit/job/bearcat/hand/engine
 	name = BEARCAT_OUTFIT_JOB_NAME("Junior Engineer")

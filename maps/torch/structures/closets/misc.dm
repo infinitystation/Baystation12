@@ -94,7 +94,7 @@
 
 /obj/structure/closet/secure_closet/guncabinet/sidearm/WillContain()
 	return list(
-			/obj/item/clothing/accessory/holster/thigh = 2,
+			/obj/item/clothing/accessory/holster/thigh = 3,
 			/obj/item/weapon/gun/energy/gun = 3,
 	)
 

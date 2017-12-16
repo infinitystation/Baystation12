@@ -146,7 +146,7 @@
 	item_state = "security"
 	storage_slots = 6
 	can_hold = list(
-		/obj/item/weapon/storage/firstaid/individual/military_individual,
+		/obj/item/weapon/storage/firstaid/individual/military,
 		/obj/item/weapon/crowbar,
 		/obj/item/weapon/grenade,
 		/obj/item/weapon/reagent_containers/spray/pepper,
