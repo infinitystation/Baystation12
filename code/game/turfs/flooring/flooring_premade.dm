@@ -259,7 +259,7 @@
 
 /turf/simulated/floor/beach/water/ocean
 	icon_state = "seadeep"
-
+/*
 /turf/simulated/floor/beach/water/New()
 	..()
 	overlays += image("icon"='icons/misc/beach.dmi',"icon_state"="water5","layer"=MOB_LAYER+0.1)
@@ -267,6 +267,7 @@
 	light_power = 2
 	light_range = 2
 	set_light(light_range, light_power, light_color)
+*/
 
 /turf/simulated/floor/beach/water/Destroy()
 	light_color = null
