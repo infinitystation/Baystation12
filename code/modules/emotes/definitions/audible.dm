@@ -181,7 +181,7 @@
 
 /decl/emote/audible/chuckle
 	key = "chuckle"
-	emote_message_3p = "USER chuckles."
+	emote_message_3p = "USER усмехнулся."
 
 /decl/emote/audible/cough
 	key = "cough"

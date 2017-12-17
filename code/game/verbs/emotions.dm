@@ -27,6 +27,12 @@
 	if(emoteCooldownCheck() == 1)
 		emote("scream")
 
+/mob/living/verb/scratch()
+	set name = "Почесаться"
+	set category = "Emotions"
+	if(emoteCooldownCheck() == 1)
+		emote("scratch")
+
 /mob/living/verb/blush()
 	set name = "Краснеть"
 	set category = "Emotions"
