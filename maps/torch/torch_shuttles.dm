@@ -183,7 +183,7 @@
 	name = "Petrov"
 	warmup_time = 10
 	shuttle_area = list(/area/shuttle/petrov/ship,/area/shuttle/petrov/cell1,/area/shuttle/petrov/cell2,/area/shuttle/petrov/cell3)
-	dock_target = "petrov_shuttle"
+	dock_target = "petrov_shuttle_airlock"
 	waypoint_station = "nav_petrov_start"
 	waypoint_offsite = "nav_petrov_out"
 
