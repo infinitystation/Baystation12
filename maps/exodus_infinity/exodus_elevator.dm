@@ -34,6 +34,18 @@
 		/area/turbolift/engineering_station
 		)
 
+/obj/turbolift_map_holder/exodus/dorms
+	name = "Exodus turbolift map placeholder - Dormitorium"
+	icon = 'icons/obj/turbolift_preview_2x2.dmi'
+	dir = SOUTH
+	lift_size_x = 4
+	lift_size_y = 3
+
+	areas_to_use = list(
+		/area/turbolift/dorms_maintenance,
+		/area/turbolift/dorms_station
+		)
+
 /obj/turbolift_map_holder/exodus/cargo
 	name = "Exodus turbolift map placeholder - Cargo"
 

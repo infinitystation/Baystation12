@@ -19,7 +19,7 @@
 
 /decl/emote/visible/sway
 	key ="sway"
-	emote_message_3p = "USER раскачивается до головокружения."
+	emote_message_3p = "USER раскачиваетс&#255; до головокружения."
 
 /decl/emote/visible/sulk
 	key ="sulk"

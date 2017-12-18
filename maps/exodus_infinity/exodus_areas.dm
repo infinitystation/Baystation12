@@ -518,6 +518,15 @@
 	lift_announce_str = "Arriving at the maintenance level, below the Engineering department."
 	base_turf = /turf/simulated/floor/plating
 
+/area/turbolift/dorms_station
+	name = "Station - By Fitness"
+	lift_announce_str = "Arriving at the station level."
+
+/area/turbolift/dorms_maintenance
+	name = "Maintenance - Below Fitness"
+	lift_announce_str = "Arriving at the main dormitorium level, below the fitness room."
+	base_turf = /turf/simulated/floor/plating
+
 /area/turbolift/cargo_station
 	name = "Station - By Cargo"
 	lift_announce_str = "Arriving at the station level, by the Cargo department."
@@ -619,6 +628,20 @@
 	name = "\improper Dormitory Bedroom One"
 	icon_state = "Sleep"
 	sound_env = SMALL_SOFTFLOOR
+
+/area/crew_quarters/top/stair
+	name = "\improper Dormitory Top Stair"
+	icon_state = "Sleep"
+	sound_env = SMALL_SOFTFLOOR
+
+/area/crew_quarters/top/fitness
+	name = "\improper Fitness Room"
+	icon_state = "fitness"
+
+/area/crew_quarters/top/toilet
+	name = "\improper Locker Toilets"
+	icon_state = "toilet"
+	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/locker/locker_toilet
 	name = "\improper Locker Toilets"
