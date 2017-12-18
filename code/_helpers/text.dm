@@ -654,3 +654,11 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	. = base
 	if(rest)
 		. += .(rest)
+
+/proc/deep_string_equals(var/A, var/B)
+	if (lentext(A) != lentext(B))
+		return FALSE
+	for (var/i = 1 to lentext(A))
+		if (text2ascii(A, i) != text2ascii(B, i))
+			return FALSE
+	return TRUE

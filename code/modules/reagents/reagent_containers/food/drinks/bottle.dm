@@ -201,7 +201,7 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/vodka
 	name = "Tunguska Triple Distilled"
-	desc = "Aah, vodka. Prime choice of drink AND fuel by Russians worldwide."
+	desc = "Aah, vodka. Prime choice of drink AND fuel by Terrans around the galaxy."
 	icon_state = "vodkabottle"
 	center_of_mass = "x=17;y=3"
 	New()
@@ -413,6 +413,34 @@
 опх дюкэмеиьел днкаюбкемхх мюохрйнб ме асдэре лмни - окчире мю йнмрпхаэчрхмц х охьхре йнлюоюйрмн х ашярпн
 онкмше хлемю опнйнб дкъ янгдюмхъ асршкн асукю ме мсфмш.
 */
+//////////////////////////PREMIUM ALCOHOL ///////////////////////
+/obj/item/weapon/reagent_containers/food/drinks/bottle/premiumvodka
+	name = "Four Stripes Quadruple Distilled"
+	desc = "Premium distilled vodka imported directly from the Terran Colonial Confederation."
+	icon_state = "premiumvodka"
+	center_of_mass = "x=17;y=3"
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/premiumvodka/New()
+	..()
+	reagents.add_reagent(/datum/reagent/ethanol/vodka/premium, 100)
+	var/namepick = pick("Four Stripes","Gilgamesh","Novaya Zemlya","Terran","STS-35")
+	var/typepick = pick("Absolut","Gold","Quadruple Distilled","Platinum","Standard")
+	name = "[namepick] [typepick]"
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/premiumwine
+	name = "Uve De Blanc"
+	desc = "You feel pretentious just looking at it."
+	icon_state = "premiumwine"
+	center_of_mass = "x=16;y=4"
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/premiumwine/New()
+	..()
+	reagents.add_reagent(/datum/reagent/ethanol/wine/premium, 100)
+	var/namepick = pick("Calumont","Sciacchemont","Recioto","Torcalota")
+	var/agedyear = rand(2350,2550)
+	name = "Chateau [namepick] De Blanc"
+	desc += " This bottle is marked as [agedyear] Vintage."
+
 //////////////////////////JUICES AND STUFF ///////////////////////
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/orangejuice
