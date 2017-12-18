@@ -224,6 +224,14 @@
   name = "\improper Pirats Shuttle"
   icon_state = "shuttlered"
 
+/area/admin/pirat_bay
+  name = "\improper Pirat Bay"
+  icon_state = "shuttlered"
+
+/area/admin/prison
+  name = "\improper Ban Prison"
+  icon_state = "green"
+
 /area/shuttle/another
   name = "\improper Unknown Shuttle"
   icon_state = "green"
@@ -232,3 +240,18 @@
   name = "\improper Cargo Lift"
   icon_state = "shuttle3"
   base_turf = /turf/simulated/open
+
+// ACTORS GUILD
+/area/acting
+	name = "\improper Centcom Acting Guild"
+	icon_state = "red"
+	dynamic_lighting = 0
+	requires_power = 0
+
+/area/acting/backstage
+	name = "\improper Backstage"
+
+/area/acting/stage
+	name = "\improper Stage"
+	dynamic_lighting = 1
+	icon_state = "yellow"
