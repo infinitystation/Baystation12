@@ -80,40 +80,45 @@
 	pda["wrist computer"] = /obj/item/device/pda/wrist
 	gear_tweaks += new/datum/gear_tweak/path(pda)
 
-//Weapons
 
-/datum/gear/weapon
+///////////
+//Weapons//
+///////////
+
+
+/datum/gear/accessory/guns
 	display_name = "guns"
-	sort_category = "Guns"
+	sort_category = "Utility"
 	cost = 5
 	path = /obj/item/weapon/gun/projectile/
 
-/datum/gear/weapon/New()
+/datum/gear/accessory/guns/New()
 	..()
 	var/guns = list()
 	guns["holdout pistol"] = /obj/item/weapon/gun/projectile/pistol
 	guns[".45 pistol"] = /obj/item/weapon/gun/projectile/sec/lethal
 	gear_tweaks += new/datum/gear_tweak/path(guns)
 
-/datum/gear/weapon/ammo
-	display_name = "pistol ammo"
+/datum/gear/accessory/ammo
+	display_name = "guns ammo"
+	sort_category = "Utility"
 	cost = 2
 	path = /obj/item/ammo_magazine
 
-/datum/gear/weapon/ammo/New()
+/datum/gear/accessory/ammo/New()
 	..()
 	var/ammo = list()
 	ammo["holdout pistol ammo"] = /obj/item/ammo_magazine/mc9mm
 	ammo[".45 pistol ammo"] = /obj/item/ammo_magazine/c45m
 	gear_tweaks += new/datum/gear_tweak/path(ammo)
 
-/*
-/datum/gear/weapon/sec_energy_gun
-	display_name = "sheriff's energy gun"
-	cost = 6
-	path = /obj/item/weapon/gun/energy/gun
-	allowed_roles = list(/datum/job/officer)
-*/
+/datum/gear/accessory/boot_knife
+	display_name = "boot knife"
+	sort_category = "Utility"
+	path = /obj/item/weapon/material/kitchen/utensil/knife/boot
+	cost = 3
+
+
 /datum/gear/accessory
 	display_name = "locket"
 	path = /obj/item/clothing/accessory/locket
@@ -180,16 +185,6 @@
 	path = /obj/item/clothing/accessory/bowtie/color
 	flags = GEAR_HAS_COLOR_SELECTION
 
-/datum/gear/accessory/wallet
-	display_name = "wallet"
-	path = /obj/item/weapon/storage/wallet
-	flags = GEAR_HAS_COLOR_SELECTION
-
-/datum/gear/accessory/wallet_poly
-	display_name = "wallet, polychromic"
-	path = /obj/item/weapon/storage/wallet/poly
-	cost = 2
-
 /datum/gear/accessory/holster
 	display_name = "holster selection"
 	path = /obj/item/clothing/accessory/holster
@@ -228,11 +223,6 @@
 	display_name = "kneepads"
 	path = /obj/item/clothing/accessory/kneepads
 
-/datum/gear/boot_knife
-	display_name = "boot knife"
-	path = /obj/item/weapon/material/kitchen/utensil/knife/boot
-	cost = 3
-
 /datum/gear/eyes
 	display_name = "prescription glasses"
 	path = /obj/item/clothing/glasses/regular
@@ -246,6 +236,25 @@
 /datum/gear/eyes/fashionglasses
 	display_name = "glasses"
 	path = /obj/item/clothing/glasses
+
+/datum/gear/eyes/fashionglasses/New()
+	..()
+	var/glasses = list()
+	glasses["green glasses"] = /obj/item/clothing/glasses/gglasses
+	glasses["hipster glasses"] = /obj/item/clothing/glasses/regular/hipster
+	glasses["monocle"] = /obj/item/clothing/glasses/monocle
+	glasses["scanning goggles"] = /obj/item/clothing/glasses/regular/scanners
+	gear_tweaks += new/datum/gear_tweak/path(glasses)
+
+/datum/gear/eyes/medical
+	display_name = "Medical HUD"
+	path = /obj/item/clothing/glasses/hud/health
+	allowed_roles = list(/datum/job/doctor)
+
+/datum/gear/eyes/medical/prescription
+	display_name = "Medical HUD, prescription"
+	path = /obj/item/clothing/glasses/hud/health/prescription
+	allowed_roles = list(/datum/job/doctor)
 
 /datum/gear/eyes/shades/
 	display_name = "sunglasses"
@@ -261,6 +270,16 @@
 	display_name = "sunglasses, presciption"
 	path = /obj/item/clothing/glasses/sunglasses/prescription
 	cost = 3
+
+/datum/gear/eyes/hudpatch
+	display_name = "iPatch"
+	path = /obj/item/clothing/glasses/eyepatch/hud
+
+/datum/gear/eyes/medpatch
+	display_name = "HUDpatch, Medical"
+	path = /obj/item/clothing/glasses/eyepatch/hud/medical
+	allowed_roles = list(/datum/job/doctor)
+	cost = 2
 
 /datum/gear/gloves
 	cost = 2
@@ -449,26 +468,6 @@
 	trenchcoats["coat, duster"] = /obj/item/clothing/suit/leathercoat
 	gear_tweaks += new/datum/gear_tweak/path(trenchcoats)
 
-/datum/gear/suit/suit_jacket
-	display_name = "suit jackets"
-	path = /obj/item/clothing/suit/storage
-/*
-/datum/gear/suit/suit_jacket/New()
-	..()
-	var/suitjackets = list()
-	suitjackets["black suit jacket"] = /obj/item/clothing/suit/storage/toggle/internalaffairs/plain
-	suitjackets["blue suit jacket"] = /obj/item/clothing/suit/storage/toggle/lawyer/bluejacket
-	suitjackets["purple suit jacket"] = /obj/item/clothing/suit/storage/lawyer/purpjacket
-	gear_tweaks += new/datum/gear_tweak/path(suitjackets)
-
-/datum/gear/suit/suit_jacket/New()
-	..()
-	var/suitjackets = list()
-	suitjackets["black suit jacket"] = /obj/item/clothing/suit/storage/toggle/internalaffairs/plain
-	suitjackets["blue suit jacket"] = /obj/item/clothing/suit/storage/toggle/lawyer/bluejacket
-	suitjackets["purple suit jacket"] = /obj/item/clothing/suit/storage/lawyer/purpjacket
-	gear_tweaks += new/datum/gear_tweak/path(suitjackets)
-*/
 /datum/gear/suit/leather
 	display_name = "jacket selection"
 	path = /obj/item/clothing/suit

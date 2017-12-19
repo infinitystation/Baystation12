@@ -165,6 +165,7 @@
 	name = BEARCAT_OUTFIT_JOB_NAME("Ship's Doc")
 	uniform = /obj/item/clothing/under/det/black
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
+	glasses = /obj/item/clothing/glasses/hud/health
 	shoes = /obj/item/clothing/shoes/laceup
 
 /decl/hierarchy/outfit/job/bearcat/mate
