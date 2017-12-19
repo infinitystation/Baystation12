@@ -220,13 +220,17 @@
   name = "\improper Exploration Shuttle"
   icon_state = "tcomsatcham"
 
-/area/shuttle/pirat
-  name = "\improper Pirats Shuttle"
-  icon_state = "shuttlered"
+/area/pirats
+	name = "\improper Pirats Bay"
+	icon_state = "syndie-ship"
+	requires_power = 0
+	dynamic_lighting = 0
 
-/area/admin/pirat_bay
-  name = "\improper Pirat Bay"
-  icon_state = "shuttlered"
+/area/pirats/shuttle
+	name = "\improper Pirats Shuttle"
+	icon_state = "yellow"
+	dynamic_lighting = 1
+	flags = AREA_RAD_SHIELDED
 
 /area/admin/prison
   name = "\improper Ban Prison"
@@ -242,6 +246,7 @@
   base_turf = /turf/simulated/open
 
 // ACTORS GUILD
+
 /area/acting
 	name = "\improper Centcom Acting Guild"
 	icon_state = "red"

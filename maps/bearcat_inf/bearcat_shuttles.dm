@@ -48,8 +48,57 @@
 	icon_screen = "lift"
 	density = 0
 
-//In case multiple shuttles can dock at a location,
-///subtypes can be used to hold the shuttle-specific data
+//Raiders' shuttle
+
+/datum/shuttle/autodock/multi/antag/skipjack
+	name = "Skipjack"
+	warmup_time = 7
+	destination_tags = list(
+		"nav_skipjack_deck1",
+		"nav_skipjack_deck2",
+		"nav_skipjack_deck3",
+		"nav_skipjack_dock",
+		"nav_skipjack_start",
+		"nav_lost_supply_base_antag",
+		"nav_smugglers_antag"
+		)
+	shuttle_area =  /area/pirats/shuttle
+	dock_target = "skipjack_shuttle"
+	current_location = "nav_skipjack_start"
+	landmark_transition = "nav_skipjack_transition"
+	announcer = "Vessel Short-Ranged Sensor Array"
+	home_waypoint = "nav_skipjack_start"
+	arrival_message = "Внимание, неизвестный шаттл приблизился на близкое расстояние"
+	departure_message = "Внимание, неизвестный шаттл отдаляется от судна."
+
+/obj/effect/shuttle_landmark/skipjack/start
+	name = "Pirats Bar"
+	landmark_tag = "nav_skipjack_start"
+	docking_controller = "skipjack_base"
+
+/obj/effect/shuttle_landmark/skipjack/internim
+	name = "In transit"
+	landmark_tag = "nav_skipjack_transition"
+
+/obj/effect/shuttle_landmark/skipjack/dock
+	name = "Docking Port"
+	landmark_tag = "nav_skipjack_dock"
+	docking_controller = "eva"
+
+/obj/effect/shuttle_landmark/skipjack/deck1
+	name = "Northeast of the Lower"
+	landmark_tag = "nav_skipjack_deck1"
+
+/obj/effect/shuttle_landmark/skipjack/deck2
+	name = "Southeast of the Middle"
+	landmark_tag = "nav_skipjack_deck2"
+
+/obj/effect/shuttle_landmark/skipjack/deck3
+	name = "East of the Upper Deck"
+	landmark_tag = "nav_skipjack_deck3"
+
+///Also///
+
 /obj/effect/shuttle_landmark/docking_arm_starboard
 	name = "Bearcat Starboard-side Docking Arm"
 	docking_controller = "bearcat_starboard_dock"
