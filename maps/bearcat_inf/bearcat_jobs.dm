@@ -1,5 +1,5 @@
 /datum/map/overmap_example
-	allowed_jobs = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/hop, /datum/job/officer, /datum/job/doctor, /datum/job/engineer, /datum/job/qm, /datum/job/roboticist, /datum/job/assistant, /datum/job/cyborg)
+	allowed_jobs = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/hop, /datum/job/officer, /datum/job/bartender, /datum/job/doctor, /datum/job/engineer, /datum/job/qm, /datum/job/roboticist, /datum/job/assistant, /datum/job/cyborg)
 
 /datum/job/captain
 	supervisors = "the Merchant Code and your conscience"
@@ -65,6 +65,13 @@
 	supervisors = "the Captain and the Merchant Code"
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/mate
 	hud_icon = "hudheadofpersonnel"
+
+/datum/job/bartender
+	title = "Bartender"
+	supervisors = "the Captain"
+	outfit_type = /decl/hierarchy/outfit/job/bearcat/bartender
+	total_positions = 1
+	spawn_positions = 1
 
 /datum/job/assistant
 	title = "Deck Hand"
@@ -236,6 +243,13 @@
 		/obj/item/device/holowarrant,
 	)
 
+/decl/hierarchy/outfit/job/bearcat/bartender
+	name = BEARCAT_OUTFIT_JOB_NAME("Bartender")
+	uniform = /obj/item/clothing/under/rank/bartender
+	shoes = /obj/item/clothing/shoes/black
+	id_type = /obj/item/weapon/card/id/civilian/bartender
+	r_pocket = /obj/item/device/radio
+
 /decl/hierarchy/outfit/job/bearcat/hand
 	name = BEARCAT_OUTFIT_JOB_NAME("Deck Hand")
 
@@ -250,7 +264,6 @@
 
 /decl/hierarchy/outfit/job/bearcat/hand/digger
 	name = BEARCAT_OUTFIT_JOB_NAME("Digger")
-	suit = /obj/item/clothing/suit/chef/classic
 	uniform = /obj/item/clothing/under/rank/miner
 	r_pocket = /obj/item/device/flashlight/lantern
 	belt = /obj/item/weapon/pickaxe
