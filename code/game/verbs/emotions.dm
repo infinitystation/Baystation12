@@ -118,7 +118,7 @@
 		emote("glare")
 
 /mob/living/verb/groan()
-	set name = "Простонать с досадой"
+	set name = "Вздохнуть с досадой"
 	set category = "Emotions"
 	if(emoteCooldownCheck() == 1)
 		emote("groan")
@@ -178,7 +178,7 @@
 		emote("grunt")
 
 /mob/living/verb/sniff()
-	set name = "Похюхать"
+	set name = "Понюхать"
 	set category = "Emotions"
 	if(emoteCooldownCheck() == 1)
 		emote("sniff")

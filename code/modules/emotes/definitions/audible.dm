@@ -304,7 +304,7 @@
 
 /decl/emote/audible/groan
 	key = "groan"
-	emote_message_3p = "USER т&#255;жело вздыхает."
+	emote_message_3p = "USER досадно вздыхает."
 	conscious = 0
 
 /decl/emote/audible/moan
