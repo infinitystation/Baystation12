@@ -74,15 +74,19 @@
 	icon_state = "robotics"
 
 /area/ship/scrap/top/den
-	name = "\improper Den"
+	name = "\improper Space Bar"
 	icon_state = "bar"
 
 /area/ship/scrap/top/aft_solars
 	name = "\improper Aft Solars"
 	icon_state = "panelsS"
 
-/area/ship/scrap/top/escape_port
-	name = "\improper Fore Top Escape Pods"
+/area/ship/scrap/top/escape/port
+	name = "\improper Top Port Escape Pods"
+	icon_state = "green"
+
+/area/ship/scrap/top/escape/starbound
+	name = "\improper Top Starbound Escape Pods"
 	icon_state = "green"
 
 /area/ship/scrap/top/aft_solars/control

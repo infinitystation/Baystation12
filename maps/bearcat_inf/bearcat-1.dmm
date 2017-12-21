@@ -223,7 +223,7 @@
 "eo" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9; pixel_y = 0},/turf/simulated/floor/plating,/area/ship/scrap/maintenance/lower)
 "ep" = (/obj/machinery/light/small{dir = 4},/obj/structure/mopbucket,/obj/item/weapon/reagent_containers/glass/bucket,/obj/item/weapon/mop,/turf/simulated/floor/plating,/area/ship/scrap/maintenance/lower)
 "eq" = (/turf/simulated/wall/r_wall,/area/ship/scrap/maintenance/techstorage)
-"er" = (/obj/item/weapon/stock_parts/console_screen,/obj/item/weapon/stock_parts/console_screen,/obj/item/weapon/stock_parts/console_screen,/obj/item/weapon/stock_parts/micro_laser,/obj/item/weapon/stock_parts/micro_laser,/obj/item/weapon/stock_parts/micro_laser,/obj/item/weapon/stock_parts/micro_laser/ultra,/obj/structure/table/rack,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/plating,/area/ship/scrap/maintenance/techstorage)
+"er" = (/obj/item/weapon/stock_parts/console_screen,/obj/item/weapon/stock_parts/console_screen,/obj/item/weapon/stock_parts/console_screen,/obj/item/weapon/stock_parts/micro_laser,/obj/item/weapon/stock_parts/micro_laser,/obj/item/weapon/stock_parts/micro_laser,/obj/item/weapon/stock_parts/micro_laser/ultra,/obj/structure/table/rack,/obj/machinery/light/small{dir = 1},/obj/item/weapon/smes_coil/weak,/turf/simulated/floor/plating,/area/ship/scrap/maintenance/techstorage)
 "es" = (/obj/structure/closet/toolcloset,/obj/effect/floor_decal/corner/yellow{icon_state = "corner_white"; dir = 5},/turf/simulated/floor/tiled,/area/ship/scrap/maintenance/techstorage)
 "et" = (/turf/simulated/wall,/area/ship/scrap/maintenance/techstorage)
 "eu" = (/turf/simulated/wall,/area/ship/scrap/maintenance/storage)
