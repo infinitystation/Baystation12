@@ -521,7 +521,7 @@
 	warmup_time = 10
 	location = 1
 	shuttle_area = /area/shuttle/specops/centcom
-	dock_target = "specops_shuttle_fore"
+	dock_target = "specops_shuttle_port"
 	waypoint_station = "nav_specops_out"
 	waypoint_offsite = "nav_specops_start"
 	current_location = "nav_specops_start"
