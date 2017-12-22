@@ -3,7 +3,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/can
 	name = "canned stew"
-	desc = "With You From 20 century! It can has mix of meat, rice and some spice."
+	desc = "With You Since 20 century! It can has mix of meat, rice and some spice."
 	icon = 'icons/obj/infinity_food.dmi'
 	icon_state = "can1"
 	var/opened_state = "can1_opened"
@@ -17,7 +17,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/can/two
 	name = "canned stew"
-	desc = "With You From 20 century! It can has mix of meat and broth."
+	desc = "With You Since 20 century! It can has mix of meat and broth."
 	icon_state = "can2"
 	opened_state = "can2_opened"
 	empty_state = "can2_opened"
@@ -27,7 +27,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/can/three
 	name = "canned stew"
-	desc = "With You From 20 century! It can has jelly."
+	desc = "With You Since 20 century! It can has jelly."
 	icon_state = "can3"
 	opened_state = "can3_opened"
 	empty_state = "can3_opened"
@@ -38,7 +38,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/can/four
 	name = "canned stew"
-	desc = "With You From 20 century! It can has... Something strange - you can't recognize, but it has meat..."
+	desc = "With You Since 20 century! It can has... Something strange - you can't recognize, but it has meat..."
 	icon_state = "can4"
 	opened_state = "can4_opened"
 	empty_state = "can4_opened"
@@ -47,7 +47,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/can/five
 	name = "canned vegetables"
-	desc = "With You From 20 century! It can has mix of vegetables, vines, water... You really want it?"
+	desc = "With You Since 20 century! It can has mix of vegetables, vines, water... You really want it?"
 	icon_state = "can5"
 	opened_state = "can5_opened"
 	empty_state = "can5_opened"
@@ -63,7 +63,7 @@
 
 /obj/item/trash/canfood/empty
 	name = "Can"
-	desc = "Empty "
+	desc = "Empty."
 	icon = 'icons/obj/infinity_food.dmi'
 	icon_state = "can1_empty"
 
@@ -80,15 +80,18 @@
 /obj/item/weapon/reagent_containers/food/snacks/can/update_icon()
 	if(bitecount == bitesize)
 		icon_state = "[initial(icon_state)]_empty"
-//		to_chat(user, "<span class='notice'>\The [src]\ is empty.</span>")
 		return
 
 /obj/item/weapon/reagent_containers/food/snacks/can/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W,/obj/item/weapon/material/knife))
+		to_chat(user, "<span class='notice'>You're starting open\the [src]!</span>")
+		user.visible_message("<span class='warning'>\The [user] is trying to open /the [src] with [W]!/</span>")
 		if(do_after(user, 150, src))
 			open(user)
 			return
 	else if(istype(W,/obj/item/weapon/material/canknife) || istype(W, /obj/item/weapon/material/kitchen/utensil/knife))
+		to_chat(user, "<span class='notice'>You're starting open\the [src]!</span>")
+		user.visible_message("<span class='warning'>\The [user] is trying to open /the [src] with [W]!/</span>")
 		if(do_after(user, 50, src))
 			open(user)
 			return
@@ -100,7 +103,7 @@
 	playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1)
 	to_chat(user, "<span class='notice'>You open \the [src]!</span>")
 	flags |= OPENCONTAINER
-	icon_state = "[initial(icon_state)]_open"
+	icon_state = "[initial(icon_state)]_opened"
 
 /obj/item/weapon/reagent_containers/food/snacks/can/attack(mob/M as mob, mob/user as mob, def_zone)
 	if(force && !(flags & NOBLUDGEON) && user.a_intent == I_HURT)
