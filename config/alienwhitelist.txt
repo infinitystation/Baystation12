@@ -16,6 +16,7 @@ kirill1243 - skrell
 vankoska - skrell
 inubashirimomiji - skrell	
 themaybat - skrell
+twinindifferent - skrell
 hellpony - skrell
 salyvador - skrell
 rucat - machine
@@ -29,6 +30,7 @@ kotovsyndrome - machine
 wheatley2013 - machine
 parasoul - machine
 nikita588 - machine
+twinindifferent - resomi
 themaybat - resomi
 kirill1243 - resomi
 cre77 - resomi
