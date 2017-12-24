@@ -285,21 +285,14 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 525)
 	caliber = "22"
 	max_ammo = 15
-	multiple_sprites = 1
-
-/obj/item/ammo_magazine/c22m
-	initial_ammo = 0
 
 /obj/item/ammo_magazine/c22mr
 	name = "magazine (.22LR, rubber)"
 	icon = 'icons/obj/infinity_ammo.dmi'
-	icon_state = "rubber22"
+	icon_state = "ruber22"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a22lr/rubber
 	matter = list(DEFAULT_WALL_MATERIAL = 525)
 	caliber = "22"
 	max_ammo = 15
-	multiple_sprites = 1
 
-/obj/item/ammo_magazine/c22mr/empty
-	initial_ammo = 0
