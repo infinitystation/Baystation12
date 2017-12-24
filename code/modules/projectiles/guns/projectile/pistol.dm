@@ -175,6 +175,28 @@
 	icon_state = "silencer"
 	w_class = ITEM_SIZE_SMALL
 
+/obj/item/weapon/gun/projectile/spistol
+	name = ".22LR pisro"
+	desc = "The Lumoco Arms P3 Whisper. A small, easily concealable gun. Uses 9mm rounds."
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "pistol0"
+	item_state = null
+	w_class = ITEM_SIZE_SMALL
+	caliber = "22"
+	fire_delay = 1
+	origin_tech = list(TECH_COMBAT = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/c22m
+	allowed_magazines = /obj/item/ammo_magazine/c22mr
+	auto_eject = 1
+	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
+
+/obj/item/weapon/gun/projectile/spistol/update_icon()
+	if(ammo_magazine)
+		icon_state = "pistol0"
+	else
+		icon_state = "pistol_empty"
+
 /obj/item/weapon/gun/projectile/pirate
 	name = "zip gun"
 	desc = "Little more than a barrel, handle, and firing mechanism, cheap makeshift firearms like this one are not uncommon in frontier systems."

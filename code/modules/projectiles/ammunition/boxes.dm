@@ -11,6 +11,18 @@
 	max_ammo = 6
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/a22lr
+	//name = "ammo box (.357)"
+	//desc = "A box of .357 ammo"
+	//icon_state = "357"
+	name = "speed loader (.22LR)"
+	desc = "A speed loader for revolvers."
+	icon_state = "38"
+	caliber = "22"
+	ammo_type = /obj/item/ammo_casing/a22lr
+	max_ammo = 10
+	multiple_sprites = 1
+
 /obj/item/ammo_magazine/c50
 	name = "speed loader (.50)"
 	desc = "A speed loader for revolvers."
@@ -262,3 +274,32 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 600)
 	max_ammo = 7
 	multiple_sprites = 1
+
+
+/obj/item/ammo_magazine/c22m
+	name = "magazine (.22LR)"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "letal22"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/a22lr
+	matter = list(DEFAULT_WALL_MATERIAL = 525)
+	caliber = "22"
+	max_ammo = 15
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/c22m
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/c22mr
+	name = "magazine (.22LR, rubber)"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "rubber22"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/a22lr/rubber
+	matter = list(DEFAULT_WALL_MATERIAL = 525)
+	caliber = "22"
+	max_ammo = 15
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/c22mr/empty
+	initial_ammo = 0
