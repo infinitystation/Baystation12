@@ -19,11 +19,11 @@
 
 /decl/emote/visible/sway
 	key ="sway"
-	emote_message_3p = "USER раскачиваетс&#255; до головокружения."
+	emote_message_3p = "USER раскачиваетс&#255; до головокружени&#255;."
 
 /decl/emote/visible/sulk
 	key ="sulk"
-	emote_message_3p = "USER грустно садится."
+	emote_message_3p = "USER грустно садитс&#255;."
 
 /decl/emote/visible/dance
 	key ="dance"
@@ -33,7 +33,7 @@
 /decl/emote/visible/roll
 	key ="roll"
 	check_restraints = TRUE
-	emote_message_3p = "USER катается."
+	emote_message_3p = "USER катаетс&#255;."
 
 /decl/emote/visible/shake
 	key ="shake"

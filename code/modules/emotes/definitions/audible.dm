@@ -37,11 +37,11 @@
 
 /decl/emote/audible/scretch
 	key ="scretch"
-	emote_message_3p = "USER чешется."
+	emote_message_3p = "USER чешетс&#255;."
 
 /decl/emote/audible/choke
 	key ="choke"
-	emote_message_3p = "USER подавился."
+	emote_message_3p = "USER подавилс&#255;."
 	conscious = 0
 
 /decl/emote/audible/gnarl
@@ -181,7 +181,7 @@
 
 /decl/emote/audible/chuckle
 	key = "chuckle"
-	emote_message_3p = "USER усмехнулся."
+	emote_message_3p = "USER усмехнулс&#255;."
 
 /decl/emote/audible/cough
 	key = "cough"
@@ -367,7 +367,7 @@
 
 /decl/emote/audible/bug_buzz
 	key ="buzz"
-	emote_message_3p = "USER гудит крыльями." //саня постарался
+	emote_message_3p = "USER жужжит."
 	emote_sound = 'sound/voice/BugBuzz.ogg'
 
 /decl/emote/audible/bug_chitter
