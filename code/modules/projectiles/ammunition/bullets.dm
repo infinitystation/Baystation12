@@ -1,3 +1,14 @@
+/obj/item/ammo_casing/a22lr
+	desc = "A .22LR bullet casing."
+	caliber = "22"
+	projectile_type = /obj/item/projectile/bullet/pistol/tiny
+
+/obj/item/ammo_casing/a22lr/rubber
+	desc = "A .22LR rubber bullet casing."
+	icon_state = "r-casing"
+	spent_icon = "r-casing-spent"
+	projectile_type = /obj/item/projectile/bullet/pistol/tiny/rubber
+
 /obj/item/ammo_casing/a357
 	desc = "A .357 bullet casing."
 	caliber = "357"

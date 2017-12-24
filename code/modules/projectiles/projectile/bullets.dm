@@ -131,8 +131,21 @@
 	damage = 25 //9mm, .38, etc
 	armor_penetration = 13.5
 
+/obj/item/projectile/bullet/pistol/tiny
+	damage = 20 //.22, etc
+	armor_penetration = 10
+
+/obj/item/projectile/bullet/pistol/tiny/rubber
+	name = "rubber bullet tiny"
+	check_armour = "melee"
+	damage = 1
+	agony = 15
+	embed = 0
+	sharp = 0
+	armor_penetration = 1
+
 /obj/item/projectile/bullet/pistol/medium
-	damage = 26.5 //.45
+	damage = 26.5 //.45, 7.63x25
 	armor_penetration = 14.5
 
 /obj/item/projectile/bullet/pistol/medium/smg
@@ -203,9 +216,30 @@
 	damage = 35
 	armor_penetration = 30
 
+/obj/item/projectile/bullet/rifle/a763r
+	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	damage = 36
+	armor_penetration = 40
+
+/obj/item/projectile/bullet/rifle/a127
+	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
+	damage = 70 //.50BMG
+	stun = 1
+	weaken = 1
+	penetrating = 3
+	armor_penetration = 75
+	hitscan = 1
+	penetration_modifier = 1.25
+
+/obj/item/projectile/bullet/rifle/a127apds
+	damage = 65
+	penetrating = 4
+	armor_penetration = 85
+	penetration_modifier = 1.5
+
 /obj/item/projectile/bullet/rifle/a145
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
-	damage = 80
+	damage = 80 //14,7x114
 	stun = 3
 	weaken = 3
 	penetrating = 5
