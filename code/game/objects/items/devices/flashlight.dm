@@ -336,7 +336,7 @@
 	icon_state = "floor1" //not a slime extract sprite but... something close enough!
 	item_state = "slime"
 	w_class = ITEM_SIZE_TINY
-	brightness_on = 6
+	brightness_on = 5
 	on = 1 //Bio-luminesence has one setting, on.
 
 /obj/item/device/flashlight/slime/New()
