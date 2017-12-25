@@ -286,7 +286,7 @@
 	caliber = "22"
 	max_ammo = 15
 
-/obj/item/ammo_magazine/c22mr
+/obj/item/ammo_magazine/c22m/rubber
 	name = "magazine (.22LR, rubber)"
 	icon = 'icons/obj/infinity_ammo.dmi'
 	icon_state = "ruber22"
@@ -296,3 +296,15 @@
 	caliber = "22"
 	max_ammo = 15
 
+/obj/item/ammo_magazine/c12m
+	name = "magazine (12 gauge)"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "m12gb"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun
+	matter = list(DEFAULT_WALL_MATERIAL = 525)
+	caliber = "shotgun"
+	max_ammo = 8
+
+/obj/item/ammo_magazine/box/c12m/empty
+	initial_ammo = 0

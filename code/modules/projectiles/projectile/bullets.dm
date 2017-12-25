@@ -201,6 +201,16 @@
 	range_step = 1
 	spread_step = 10
 
+/obj/item/projectile/bullet/explosion/shotgun
+	name = "grenade"
+	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
+
+/obj/item/projectile/bullet/gyro/on_hit(var/atom/target, var/blocked = 0)
+	if(isturf(target))
+		explosion(target, -1, 1, 1)
+	..()
+
+
 /* "Rifle" rounds */
 
 /obj/item/projectile/bullet/rifle

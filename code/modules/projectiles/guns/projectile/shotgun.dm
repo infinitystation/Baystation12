@@ -121,3 +121,31 @@
 	w_class = ITEM_SIZE_NORMAL
 	force = 5
 	one_hand_penalty = 0
+
+/obj/item/weapon/gun/projectile/shotgun/magazine
+	name = "bulldog"
+	desc = "The mass-produced W-T Remmington 29x shotgun is a favourite of police and security forces on many worlds. Useful for sweeping alleys."
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "bulldog"
+	item_state = "shotgun"
+	max_shells = 4
+	w_class = ITEM_SIZE_HUGE
+	force = 10
+	flags =  CONDUCT
+	slot_flags = null
+	caliber = "shotgun"
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/c12m
+	allowed_magazines = /obj/item/ammo_magazine/c12m
+	ammo_type = /obj/item/ammo_casing/shotgun
+	one_hand_penalty = 4
+	wielded_item_state = "gun_wielded"
+	auto_eject = 1
+	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
+
+/obj/item/weapon/gun/projectile/shotgun/magazine/update_icon()
+	if(ammo_magazine)
+		icon_state = "bulldog"
+	else
+		icon_state = "bulldog-e"
