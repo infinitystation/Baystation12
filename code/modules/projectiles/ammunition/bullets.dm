@@ -178,6 +178,14 @@
 	projectile_type = /obj/item/projectile/energy/flash/flare
 	matter = list(DEFAULT_WALL_MATERIAL = 90, "glass" = 90)
 
+/obj/item/ammo_casing/shotgun/greande
+	name = "shotgun grenade"
+	desc = "A 12 gauge grenade."
+	icon_state = "gshell"
+	spent_icon = "gshell-spent"
+	projectile_type = /obj/item/projectile/bullet/explosion/shotgun
+	matter = list(DEFAULT_WALL_MATERIAL = 500)
+
 /obj/item/ammo_casing/a556
 	desc = "A 5.56mm bullet casing."
 	caliber = "a556"

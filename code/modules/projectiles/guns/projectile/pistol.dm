@@ -176,18 +176,22 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/weapon/gun/projectile/spistol
-	name = ".22LR pisro"
-	desc = "The Lumoco Arms P3 Whisper. A small, easily concealable gun. Uses 9mm rounds."
+	name = ".22LR pistol"
+	desc = "The TH22. A small sidearm, with futuristic design. Uses .22LR rounds."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "pistol0"
-	item_state = null
+	item_icons = list(
+		slot_l_hand_str = 'icons/mob/items/lefthand_guns.dmi',
+		slot_r_hand_str = 'icons/mob/items/righthand_guns.dmi',
+		)
+	item_state = "gun"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "22"
 	fire_delay = 1
 	origin_tech = list(TECH_COMBAT = 2)
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/c22m
-	allowed_magazines = /obj/item/ammo_magazine/c22mr
+	allowed_magazines = /obj/item/ammo_magazine/c22m
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 

@@ -139,3 +139,20 @@
 	caliber = "22"
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/a22lr
+
+/obj/item/weapon/gun/projectile/revolver/shotgun
+	name = "shotgun revolver"
+	desc = "The old RSH-12 shotgun revolder designer for spec ops. Useful for sweeping alleys."
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "rsh-12"
+	item_icons = list(
+		slot_l_hand_str = 'icons/mob/items/lefthand_guns.dmi',
+		slot_r_hand_str = 'icons/mob/items/righthand_guns.dmi',
+		)
+	item_state = "gun"
+	max_shells = 4
+	fire_delay = 8
+	force = 10
+	caliber = "shotgun"
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
+	ammo_type = /obj/item/ammo_casing/shotgun
