@@ -415,8 +415,8 @@ datum/objective/steal
 		"a bluespace rift generator" = /obj/item/integrated_circuit/manipulation/bluespace_rift,
 		"an RCD" = /obj/item/weapon/rcd,
 		"a jetpack" = /obj/item/weapon/tank/jetpack,
-		"a captain's jumpsuit" = /obj/item/clothing/under/rank/captain,
 		"a functional AI" = /obj/item/weapon/aicard,
+		"a pathfinder's deluxe machete"	 = /obj/item/weapon/material/hatchet/machete/deluxe,
 		"a pair of magboots" = /obj/item/clothing/shoes/magboots,
 		"the [station_name()] blueprints" = /obj/item/blueprints,
 		"the multimeter" = /obj/item/device/multitool/multimeter,
@@ -425,14 +425,13 @@ datum/objective/steal
 		"a sample of slime extract" = /obj/item/slime_extract,
 		"a piece of corgi meat" = /obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
 		"a research director's jumpsuit" = /obj/item/clothing/under/rank/research_director,
-		"a chief engineer's jumpsuit" = /obj/item/clothing/under/rank/chief_engineer,
-		"a chief medical officer's jumpsuit" = /obj/item/clothing/under/rank/chief_medical_officer,
-		"a head of security's jumpsuit" = /obj/item/clothing/under/rank/head_of_security,
-		"a head of personnel's jumpsuit" = /obj/item/clothing/under/rank/head_of_personnel,
+		"a Formal Outfit of SCG representative" = /obj/item/clothing/under/rank/internalaffairs/plain/solgov,
+		"a Formal Outfit of NT liason" = /obj/item/clothing/under/rank/internalaffairs/plain/nt,
+		"a Tactical Goggles" = /obj/item/clothing/glasses/tacgoggles,
 		"the hypospray" = /obj/item/weapon/reagent_containers/hypospray,
 		"the captain's pinpointer" = /obj/item/weapon/pinpointer,
-		"the secret documents of SEV 'Torch'" = /obj/item/documents,
 		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
+		"a ballistic armor vest" =  /obj/item/clothing/suit/armor/bulletproof/vest,
 	)
 
 	var/global/possible_items_special[] = list(
