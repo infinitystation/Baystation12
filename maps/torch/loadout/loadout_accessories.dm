@@ -407,6 +407,12 @@
 	cost = 3
 	allowed_roles = MILITARY_ROLES
 
+/datum/gear/violin
+	display_name = "violin"
+	path = /obj/item/device/violin
+	cost = 5
+	allowed_roles = RESTRICTED_ROLES
+
 /datum/gear/accessory/torch_patch
 	display_name = "Torch mission patch"
 	path = /obj/item/clothing/accessory/solgov/torch_patch
