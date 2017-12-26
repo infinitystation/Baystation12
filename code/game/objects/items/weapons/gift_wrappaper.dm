@@ -77,6 +77,7 @@
 		/obj/item/toy/crossbow,
 		/obj/item/weapon/gun/projectile/revolver/capgun,
 		/obj/item/device/flashlight/slime,
+		/obj/item/stack/flag/solgov,
 		/obj/item/weapon/material/stick,
 		/obj/item/pizzabox/margherita,
 		/obj/item/frame/party_alarm,
