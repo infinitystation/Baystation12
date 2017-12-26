@@ -39,6 +39,7 @@
 	setLabel(L, usr)
 
 /obj/item/weapon/reagent_containers/chem_disp_cartridge/proc/setLabel(L, mob/user = null)
+	if(!isliving(user) || user.stat) return
 	if(L)
 		if(user)
 			to_chat(user, "<span class='notice'>You set the label on \the [src] to '[L]'.</span>")
