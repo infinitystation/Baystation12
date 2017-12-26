@@ -310,7 +310,7 @@
 	if(!O || O.is_stump() || !O.sever_tendon())
 		return 0
 
-	user.visible_message("<span class='danger'>\The [user] cut \the [src]'s [O.tendon_name] with \the [W]!</span>")
+	user.visible_message("<span class='danger'>\The [user] cut \the [affecting]'s [O.tendon_name] with \the [W]!</span>")
 	if(W.hitsound) playsound(affecting.loc, W.hitsound, 50, 1, -1)
 	G.last_action = world.time
 	admin_attack_log(user, affecting, "hamstrung their victim", "was hamstrung", "hamstrung")
