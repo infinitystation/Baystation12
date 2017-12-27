@@ -36,7 +36,7 @@
 				/datum/mil_rank/ec/e2,
 				/datum/mil_rank/ec/e4,
 				/datum/mil_rank/ec/o1
-			)
+			),
 			/datum/mil_branch/fleet = list(
 				/datum/mil_rank/fleet/e1,
 				/datum/mil_rank/fleet/e2,
@@ -68,7 +68,7 @@
 				/datum/mil_rank/ec/o3,
 				/datum/mil_rank/ec/o5,
 				/datum/mil_rank/ec/o6
-			)
+			),
 			/datum/mil_branch/fleet = list(
 				/datum/mil_rank/fleet/e6,
 				/datum/mil_rank/fleet/e7,
