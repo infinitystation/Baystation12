@@ -7,7 +7,7 @@
 /datum/gear/accessory/vest
 	display_name = "black vest"
 	path = /obj/item/clothing/accessory/toggleable/vest
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/accessory/suspenders
 	display_name = "suspenders"
@@ -17,12 +17,12 @@
 /datum/gear/accessory/wcoat
 	display_name = "waistcoat"
 	path = /obj/item/clothing/accessory/wcoat
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/accessory/zhongshan
 	display_name = "zhongshan jacket, colour select"
 	path = /obj/item/clothing/accessory/toggleable/zhongshan
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/dashiki
@@ -39,7 +39,7 @@
 /datum/gear/accessory/sherwani
 	display_name = "sherwani, colour select"
 	path = /obj/item/clothing/accessory/sherwani
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/qipao
@@ -317,7 +317,7 @@
 /datum/gear/accessory/hawaii
 	display_name = "hawaii shirt"
 	path = /obj/item/clothing/accessory/toggleable/hawaii
-	allowed_roles = SEMIFORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/accessory/hawaii/New()
 	..()
@@ -331,7 +331,7 @@
 	display_name = "scarf"
 	path = /obj/item/clothing/accessory/scarf
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = SEMIFORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/accessory/solawardmajor
 	display_name = "SolGov major award selection"
@@ -399,7 +399,7 @@
 	slot = slot_tie
 	flags = GEAR_HAS_COLOR_SELECTION
 	sort_category = "Accessories"
-	allowed_roles = SEMIFORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/boot_knife
 	display_name = "boot knife"

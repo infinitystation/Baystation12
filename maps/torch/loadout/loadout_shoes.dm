@@ -14,7 +14,7 @@
 	display_name = "athletic shoes, colour select"
 	path = /obj/item/clothing/shoes/athletic
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = SEMIFORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/shoes/boots
 	display_name = "boot selection"
@@ -67,5 +67,5 @@
 /datum/gear/shoes/high
 	display_name = "high tops selection"
 	path = /obj/item/clothing/shoes/hightops
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_TYPE_SELECTION

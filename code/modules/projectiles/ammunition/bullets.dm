@@ -193,6 +193,15 @@
 	icon_state = "rifle-casing"
 	spent_icon = "rifle-casing-spent"
 
+/obj/item/ammo_casing/a12755
+	name = "bullet casing"
+	desc = "A 12.7x55mm bullet casing."
+	icon_state = "lcasing"
+	spent_icon = "lcasing-spent"
+	caliber = "127x55"
+/obj/item/projectile/bullet/rifle/a12755
+	matter = list(DEFAULT_WALL_MATERIAL = 750)
+
 /obj/item/ammo_casing/a145
 	name = "shell casing"
 	desc = "A 14.5mm shell."

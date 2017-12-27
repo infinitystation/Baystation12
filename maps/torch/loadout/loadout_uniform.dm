@@ -82,7 +82,7 @@
 /datum/gear/uniform/dress
 	display_name = "dress selection"
 	path = /obj/item/clothing/under
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/uniform/dress/New()
 	..()
@@ -100,78 +100,78 @@
 	display_name = "cheongsam, colour select"
 	path = /obj/item/clothing/under/cheongsam
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/uniform/abaya
 	display_name = "abaya, colour select"
 	path = /obj/item/clothing/under/abaya
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/uniform/skirt
 	display_name = "skirt selection"
 	path = /obj/item/clothing/under/skirt
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/skirt_c
 	display_name = "short skirt, colour select"
 	path = /obj/item/clothing/under/skirt_c
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/uniform/skirt_c/dress
 	display_name = "simple dress, colour select"
 	path = /obj/item/clothing/under/skirt_c/dress
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/uniform/casual_pants
 	display_name = "casual pants selection"
 	path = /obj/item/clothing/under/casual_pants
-	allowed_roles = SEMIFORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/formal_pants
 	display_name = "formal pants selection"
 	path = /obj/item/clothing/under/formal_pants
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/formal_pants/custom
 	display_name = "suit pants, colour select"
 	path = /obj/item/clothing/under/formal_pants
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/uniform/formal_pants/baggycustom
 	display_name = "baggy suit pants, colour select"
 	path = /obj/item/clothing/under/formal_pants/baggy
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/uniform/shorts
 	display_name = "shorts selection"
 	path = /obj/item/clothing/under/shorts/jeans
-	allowed_roles = RESTRICTED_ROLES
+	allowed_roles = NOTFORMAL_ROLES
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/shorts/custom
 	display_name = "athletic shorts, colour select"
 	path = /obj/item/clothing/under/shorts/
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/uniform/turtleneck
 	display_name = "sweater, colour select"
 	path = /obj/item/clothing/under/rank/psych/turtleneck/sweater
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/uniform/tacticool
 	display_name = "tacticool turtleneck"
 	path = /obj/item/clothing/under/syndicate/tacticool
-	allowed_roles = RESTRICTED_ROLES
+	allowed_roles = NOTFORMAL_ROLES
 
 /datum/gear/uniform/corporate
 	display_name = "corporate uniform selection"

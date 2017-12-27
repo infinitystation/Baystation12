@@ -84,6 +84,24 @@
 	access = access_emergency_armory
 	security_level = SUPPLY_SECURITY_HIGH
 
+/decl/hierarchy/supply_pack/security/revolver_shotgun
+	name = "Weapons - Ballistic shotgun sidearm"
+	contains = list(/obj/item/weapon/gun/projectile/revolver/shotgun = 2)
+	cost = 50
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "\improper Ballistic small-bore sidearm crate"
+	access = access_emergency_armory
+	security_level = SUPPLY_SECURITY_HIGH
+
+/decl/hierarchy/supply_pack/security/spistol
+	name = "Weapons - Ballistic small-bore sidearm"
+	contains = list(/obj/item/weapon/gun/projectile/spistol = 3)
+	cost = 45
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "\improper Ballistic small-bore sidearm crate"
+	access = access_emergency_armory
+	security_level = SUPPLY_SECURITY_HIGH
+
 /decl/hierarchy/supply_pack/security/pdw
 	name = "Weapons - Ballistic PDWs"
 	contains = list(/obj/item/weapon/gun/projectile/automatic/wt550 = 2)
@@ -152,7 +170,7 @@
 
 /decl/hierarchy/supply_pack/security/pistolammorubber //overriding standard pack
 	name = "Ammo - Assorted Non-Lethal, Pistol"
-	contains = list(/obj/item/ammo_magazine/c45m/rubber = 2, /obj/item/ammo_magazine/c45m/flash = 2, /obj/item/ammo_magazine/c44/rubber = 2)
+	contains = list(/obj/item/ammo_magazine/c45m/rubber = 2, /obj/item/ammo_magazine/c45m/flash = 2, /obj/item/ammo_magazine/c44/rubber = 2, /obj/item/ammo_magazine/c22m/rubber = 2)
 	cost = 25
 	containername = "\improper Non-lethal ammunition crate"
 	access = access_heads //only heads get these
@@ -167,5 +185,22 @@
 	cost = 30
 	containertype = /obj/structure/closet/crate/secure/weapon
 	containername = "\improper .44 magnum ammunition crate"
+	access = access_heads
+	security_level = SUPPLY_SECURITY_ELEVATED
+
+/decl/hierarchy/supply_pack/security/lr22_ammorubber
+	name = "Ammo - .22LR, Non-Lethal"
+	contains = list(/obj/item/ammo_magazine/c22m/rubber = 8)
+	cost = 25
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "\improper .22LR non-lethal ammunition crate"
+	access = access_heads
+
+/decl/hierarchy/supply_pack/security/lr22_ammo
+	name = "Ammo - .22LR"
+	contains = list(/obj/item/ammo_magazine/c22m = 5)
+	cost = 40
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "\improper .22LR ammunition crate"
 	access = access_heads
 	security_level = SUPPLY_SECURITY_ELEVATED

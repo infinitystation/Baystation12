@@ -287,3 +287,28 @@
 		to_chat(user, "<span class='warning'>You need to open the cover to unload [src].</span>")
 		return
 	..()
+
+/obj/item/weapon/gun/projectile/automatic/amrcarabine
+	name = "assault rifle"
+	desc = "The rugged STS-35 is a durable automatic weapon of a make popular on the frontier worlds. The serial number has been scratched off. Uses 5.56mm rounds."
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "amrcarabine"
+	item_state = null
+	w_class = ITEM_SIZE_HUGE
+	force = 10
+	caliber = "127x55"
+	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 1)
+	slot_flags = SLOT_BACK
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/c12755
+	allowed_magazines = /obj/item/ammo_magazine/c12755
+	one_hand_penalty = 7
+	wielded_item_state = "z8carbine-wielded"
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, use_launcher=null, one_hand_penalty=7, burst_accuracy=null, dispersion=null),
+		list(mode_name="2-round bursts", burst=2,    fire_delay=null, move_delay=10,    use_launcher=null, one_hand_penalty=10, burst_accuracy=list(0,-2,-2), dispersion=list(0.0, 0.8, 1.0)),
+		)
+
+/obj/item/weapon/gun/projectile/automatic/amrcarabine/update_icon()
+	icon_state = (ammo_magazine)? "amrcarabine" : "amrcarabine-e"
+	..()

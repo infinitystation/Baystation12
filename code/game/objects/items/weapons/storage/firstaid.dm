@@ -260,7 +260,7 @@
 	icon = 'icons/obj/infinity_object.dmi'
 	icon_state = "survivalmed"
 	slot_flags = SLOT_BELT
-	max_storage_space  = 10
+	storage_slots  = 10
 	can_hold = list(
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
 		/obj/item/stack/medical/bruise_pack,

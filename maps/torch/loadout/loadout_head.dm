@@ -124,7 +124,7 @@
 /datum/gear/head/informalhat
 	display_name = "informal hat selection"
 	path = /obj/item/clothing/head
-	allowed_roles = SEMIFORMAL_ROLES
+	allowed_roles = NOTFORMAL_ROLES
 
 /datum/gear/head/informalhat/New()
 	..()

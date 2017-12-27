@@ -35,7 +35,7 @@
 	display_name = "trenchcoat selection"
 	path = /obj/item/clothing/suit
 	cost = 3
-	allowed_roles = RESTRICTED_ROLES
+	allowed_roles = NOTFORMAL_ROLES
 
 /datum/gear/suit/trenchcoat/New()
 	..()
@@ -48,7 +48,7 @@
 /datum/gear/suit/poncho
 	display_name = "poncho selection"
 	path = /obj/item/clothing/suit/poncho/colored
-	allowed_roles = RESTRICTED_ROLES
+	allowed_roles = NOTFORMAL_ROLES
 
 /datum/gear/suit/roles/poncho/security
 	allowed_roles = list(/datum/job/guard, /datum/job/merchant)
@@ -68,7 +68,7 @@
 /datum/gear/suit/suit_jacket
 	display_name = "standard suit jackets"
 	path = /obj/item/clothing/suit/storage/toggle/suit
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/suit/suit_jacket/New()
 	..()
@@ -81,7 +81,7 @@
 /datum/gear/suit/custom_suit_jacket
 	display_name = "suit jacket, colour select"
 	path = /obj/item/clothing/suit/storage/toggle/suit
-	allowed_roles = FORMAL_ROLES
+	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/suit/hazard
@@ -98,7 +98,7 @@
 /datum/gear/suit/hoodie_sel
 	display_name = "standard hoodies"
 	path = /obj/item/clothing/suit/storage/toggle/hoodie
-	allowed_roles = RESTRICTED_ROLES
+	allowed_roles = NOTFORMAL_ROLES
 
 /datum/gear/suit/hoodie_sel/New()
 	..()
@@ -190,7 +190,7 @@
 /datum/gear/suit/track
 	display_name = "track jacket selection"
 	path = /obj/item/clothing/suit/storage/toggle/track
-	allowed_roles = RESTRICTED_ROLES
+	allowed_roles = NOTFORMAL_ROLES
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/suit/pcarrier

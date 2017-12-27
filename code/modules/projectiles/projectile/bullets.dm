@@ -132,8 +132,8 @@
 	armor_penetration = 13.5
 
 /obj/item/projectile/bullet/pistol/tiny
-	damage = 20 //.22, etc
-	armor_penetration = 10
+	damage = 8 //.22, etc
+	armor_penetration = 8
 
 /obj/item/projectile/bullet/pistol/tiny/rubber
 	name = "rubber bullet tiny"
@@ -207,7 +207,7 @@
 
 /obj/item/projectile/bullet/gyro/on_hit(var/atom/target, var/blocked = 0)
 	if(isturf(target))
-		explosion(target, -1, 1, 1)
+		explosion(target, 1, 1, 1)
 	..()
 
 
@@ -231,6 +231,15 @@
 	damage = 36
 	armor_penetration = 40
 
+/obj/item/projectile/bullet/rifle/a12755
+	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
+	damage = 50 //12x55mm
+	stun = 1
+	weaken = 1
+	penetrating = 1
+	armor_penetration = 60
+	penetration_modifier = 1.1
+
 /obj/item/projectile/bullet/rifle/a127
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
 	damage = 70 //.50BMG
@@ -241,7 +250,7 @@
 	hitscan = 1
 	penetration_modifier = 1.25
 
-/obj/item/projectile/bullet/rifle/a127apds
+/obj/item/projectile/bullet/rifle/a127/apds
 	damage = 65
 	penetrating = 4
 	armor_penetration = 85
