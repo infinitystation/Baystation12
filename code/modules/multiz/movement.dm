@@ -152,12 +152,14 @@
 	if(anchored && !anchor_bypass)
 		return FALSE
 
+	var/turf/below = GetBelow(src)
+
 	//Override will make checks from different location used for prediction
 	if(location_override)
 		if(locate(/obj/structure/lattice, location_override) || locate(/obj/structure/catwalk, location_override))
 			return FALSE
 
-		var/turf/below = GetBelow(location_override)
+		below = GetBelow(location_override)
 		for(var/atom/A in below)
 			if(!A.CanPass(src, location_override))
 				return FALSE
