@@ -548,7 +548,7 @@
 	matter = list("glass" = 100)
 
 	brightness_range = 8	// luminosity when on, also used in power calculation
-	brightness_power = 7
+	brightness_power = 5
 	brightness_color = "#ffffff"
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_range = 4, l_power = 1, l_color = "#da0205"),
@@ -559,7 +559,7 @@
 	w_class = ITEM_SIZE_SMALL
 	name = "large light tube"
 	brightness_range = 10
-	brightness_power = 7
+	brightness_power = 6
 
 /obj/item/weapon/light/bulb
 	name = "light bulb"
@@ -571,7 +571,7 @@
 	matter = list("glass" = 100)
 
 	brightness_range = 4
-	brightness_power = 3
+	brightness_power = 2
 	brightness_color = "#fae1af"
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_range = 3, l_power = 1, l_color = "#da0205"),
