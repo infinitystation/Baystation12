@@ -16,18 +16,15 @@
 	species_to_branch_whitelist = list(
 		/datum/species/diona   = list(/datum/mil_branch/civilian),
 		/datum/species/nabber  = list(/datum/mil_branch/civilian),
-		/datum/species/unathi  = list(/datum/mil_branch/civilian),
 		/datum/species/tajaran = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
 		/datum/species/skrell  = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
-		/datum/species/resomi  = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
-		/datum/species/vox     = list()
+		/datum/species/unathi  = list(/datum/mil_branch/civilian),
+		/datum/species/vox     = list(),
+		/datum/species/resomi  = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps)
 	)
 
 	species_to_branch_blacklist = list(
-		/datum/species/machine 	= list(/datum/mil_branch/marine_corps),
-		/datum/species/tajaran	= list(/datum/mil_branch/marine_corps, /datum/mil_branch/fleet),
-		/datum/species/skrell 	= list(/datum/mil_branch/marine_corps, /datum/mil_branch/fleet),
-		/datum/species/resomi 	= list(/datum/mil_branch/marine_corps, /datum/mil_branch/fleet),
+		/datum/species/machine = list(/datum/mil_branch/marine_corps)
 	)
 
 	species_to_rank_whitelist = list(
@@ -61,45 +58,6 @@
 			)
 		)
 	)
-	species_to_rank_blacklist = list(
-		/datum/species/machine = list(
-			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/e7,
-				/datum/mil_rank/ec/o3,
-				/datum/mil_rank/ec/o5,
-				/datum/mil_rank/ec/o6
-			),
-			/datum/mil_branch/fleet = list(
-				/datum/mil_rank/fleet/e6,
-				/datum/mil_rank/fleet/e7,
-				/datum/mil_rank/fleet/e8,
-				/datum/mil_rank/fleet/e9,
-				/datum/mil_rank/fleet/e9_alt1,
-				/datum/mil_rank/fleet/o2,
-				/datum/mil_rank/fleet/o3,
-				/datum/mil_rank/fleet/o4,
-				/datum/mil_rank/fleet/o5,
-				/datum/mil_rank/fleet/o6
-			)
-		),
-		/datum/species/tajaran = list(
-			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/e7,
-				/datum/mil_rank/ec/o3,
-				/datum/mil_rank/ec/o5,
-				/datum/mil_rank/ec/o6
-			)
-		),
-		/datum/species/skrell = list(
-			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/e7,
-				/datum/mil_rank/ec/o3,
-				/datum/mil_rank/ec/o5,
-				/datum/mil_rank/ec/o6
-			)
-		)
-	)
-
 
 /*
  *  Branches
