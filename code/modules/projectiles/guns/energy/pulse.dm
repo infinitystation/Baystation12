@@ -24,10 +24,16 @@
 	force = 8
 	projectile_type = /obj/item/projectile/beam/pulse/mid
 	max_shots = 24
+	burst = 1
 	w_class = ITEM_SIZE_LARGE
 	one_hand_penalty= 3
 	burst_delay = 2
 	move_delay = 2
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-pulse bursts", burst=3,    fire_delay=null, move_delay=4,    one_hand_penalty=9, burst_accuracy=list(0,-1,-1.5), dispersion=list(0.0, 0.5, 1.0)),
+		)
+
 
 /obj/item/weapon/gun/energy/pulse_rifle/pistol
 	name = "pulse pistol"
@@ -37,11 +43,16 @@
 	force = 6
 	projectile_type = /obj/item/projectile/beam/pulse
 	max_shots = 21
+	burst = 1
 	w_class = ITEM_SIZE_NORMAL
 	one_hand_penalty=1 //a bit heavy
 	burst_delay = 1
 	move_delay = 1
 	wielded_item_state = null
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, one_hand_penalty=1, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-pulse bursts", burst=3,    fire_delay=null, move_delay=2,    one_hand_penalty=3, burst_accuracy=list(0,-1,-2), dispersion=list(0.0, 0.5, 0.8)),
+		)
 
 /obj/item/weapon/gun/energy/pulse_rifle/mounted
 	self_recharge = 1
