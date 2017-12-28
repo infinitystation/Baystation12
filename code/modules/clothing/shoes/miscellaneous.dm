@@ -1,5 +1,5 @@
-/obj/item/clothing/shoes/handle_movement() //this was made to rewrite clown shoes squeaking
-	playsound(src, 'sound/effects/step.ogg', 45, 1)
+//obj/item/clothing/shoes/handle_movement() //this was made to rewrite clown shoes squeaking
+//	playsound(src, 'sound/effects/step.ogg', 45, 1)
 
 /obj/item/clothing/shoes/syndigaloshes
 	desc = "A pair of brown shoes. They seem to have extra grip."
