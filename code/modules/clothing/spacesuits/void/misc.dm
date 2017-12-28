@@ -22,6 +22,14 @@
 	flags_inv = HIDESHOES|HIDEJUMPSUIT
 	siemens_coefficient = 0.6
 
+/obj/item/clothing/suit/space/void/military/New()
+	..()
+	slowdown_per_slot[slot_wear_suit] = 1
+
+/obj/item/clothing/suit/space/void/military/prepared/New()
+	..()
+	helmet = /obj/item/clothing/head/helmet/space/void/military
+	boots = /obj/item/clothing/shoes/magboots
 
 /obj/item/clothing/head/helmet/space/void/military
 	name = "military voidsuit helmet"
@@ -35,12 +43,3 @@
 		)
 	siemens_coefficient = 0.6
 	light_overlay = "helmet_light_dual"
-
-/obj/item/clothing/suit/space/void/military/prepared/New()
-	..()
-	helmet = new /obj/item/clothing/head/helmet/space/void/military
-	boots = new /obj/item/clothing/shoes/magboots
-
-/obj/item/clothing/suit/space/void/military/New()
-	..()
-	slowdown_per_slot[slot_wear_suit] = 1
