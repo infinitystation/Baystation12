@@ -87,6 +87,35 @@
 	icon_broken = "nanotbroken"
 	icon_off = "nanotoff"
 
+/obj/structure/closet/secure_closet/guncabinet/sec_armory
+	name = "security armory cabinet"
+	req_access = list()
+	req_one_access = list(access_armory)
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/egun
+	name = "energy gun cabinet"
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/egun/WillContain()
+	return list(/obj/item/weapon/gun/energy/gun = 4)
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/ion
+	name = "ion rifle cabinet"
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/ion/WillContain()
+	return list(/obj/item/weapon/gun/energy/ionrifle = 2)
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/stun
+	name = "stun rifle cabinet"
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/stun/WillContain()
+	return list(/obj/item/weapon/gun/energy/stunrevolver/rifle = 2)
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/grenade
+	name = "grenade launcher cabinet"
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/grenade/WillContain()
+	return list(/obj/item/weapon/gun/launcher/grenade)
+
 /obj/structure/closet/secure_closet/guncabinet/sidearm
 	name = "sidearm cabinet"
 	req_access = list()
