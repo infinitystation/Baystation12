@@ -340,3 +340,12 @@
 	desc = "This is a decorative shrub. It's been trimmed into the shape of an apple."
 	icon_state = "applebush"
 
+/obj/structure/flora/pottedplant/xmas
+	name = "small christmas tree"
+	desc = "This is a tiny well lit decorative christmas tree."
+	icon = 'icons/obj/infinity_object.dmi'
+	icon_state = "plant-xmas"
+
+/obj/structure/flora/pottedplant/xmas/New()
+	..()
+	set_light(2)
