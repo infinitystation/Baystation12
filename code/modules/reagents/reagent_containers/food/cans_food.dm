@@ -78,7 +78,7 @@
 		open(user)
 
 /obj/item/weapon/reagent_containers/food/snacks/can/update_icon()
-	if(bitecount == bitesize)
+	if(!reagents.total_volume)
 		icon_state = "[initial(icon_state)]_empty"
 		return
 
@@ -109,6 +109,7 @@
 	if(force && !(flags & NOBLUDGEON) && user.a_intent == I_HURT)
 		return ..()
 	if(standard_feed_mob(user, M))
+		update_icon(src)
 		return
 	return 0
 
