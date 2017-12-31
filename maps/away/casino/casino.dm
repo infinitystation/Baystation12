@@ -15,7 +15,12 @@
 		"nav_casino_2",
 		"nav_casino_3",
 		"nav_casino_4",
-		"nav_casino_antag"
+		"nav_casino_antag",
+		"nav_casino_hangar",
+
+	restricted_waypoints = list(
+		"Casino Cutter" = list("nav_casino_hangar"),
+	)
 	)
 
 /datum/map_template/ruin/away_site/casino
@@ -67,7 +72,7 @@
 	name = "In transit"
 	landmark_tag = "nav_casino_transit"
 
-/obj/machinery/computer/shuttle_control/casino_cutter
+/obj/machinery/computer/shuttle_control/explore/casino_cutter
 	name = "cutter control console"
 	shuttle_tag = "Casino Cutter"
 
@@ -140,3 +145,23 @@
 
 /obj/structure/casino/craps/craps_down
 	icon_state = "craps_down"
+
+//========================used bullet casings=======================
+/obj/item/ammo_casing/a556/used/Initialize()
+	. = ..()
+	expend()
+	pixel_x = rand(-10, 10)
+	pixel_y = rand(-10, 10)
+
+
+/obj/item/ammo_casing/c45/used/Initialize()
+	. = ..()
+	expend()
+	pixel_x = rand(-10, 10)
+	pixel_y = rand(-10, 10)
+
+/obj/item/ammo_casing/a50/used/Initialize()
+	. = ..()
+	expend()
+	pixel_x = rand(-10, 10)
+	pixel_y = rand(-10, 10)

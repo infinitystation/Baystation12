@@ -10,7 +10,6 @@
 	icon_closed = "capsecure"
 	icon_locked = "capsecure1"
 	icon_opened = "capsecureopen"
-	icon_broken = "capsecurebroken"
 	icon_off = "capsecureoff"
 
 /obj/structure/closet/secure_closet/CO/WillContain()
@@ -43,7 +42,6 @@
 	icon_closed = "twosolsecure"
 	icon_locked = "twosolsecure1"
 	icon_opened = "twosolsecureopen"
-	icon_broken = "twosolsecurebroken"
 	icon_off = "twosolsecureoff"
 
 /obj/structure/closet/secure_closet/XO/WillContain()
@@ -80,7 +78,6 @@
 	icon_closed = "sol"
 	icon_locked = "sol1"
 	icon_opened = "solopen"
-	icon_broken = "solbroken"
 	icon_off = "soloff"
 
 /obj/structure/closet/secure_closet/sea/WillContain()
@@ -109,7 +106,6 @@
 	icon_closed = "sol"
 	icon_locked = "sol1"
 	icon_opened = "solopen"
-	icon_broken = "solbroken"
 	icon_off = "soloff"
 
 /obj/structure/closet/secure_closet/bridgeofficer/WillContain()

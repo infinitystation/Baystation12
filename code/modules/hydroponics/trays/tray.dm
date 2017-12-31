@@ -161,8 +161,8 @@
 			nymph.visible_message("<font color='blue'><b>[nymph]</b> rolls around in [src] for a bit.</font>","<font color='blue'>You roll around in [src] for a bit.</font>")
 		return
 
-/obj/machinery/portable_atmospherics/hydroponics/New()
-	..()
+/obj/machinery/portable_atmospherics/hydroponics/Initialize()
+	. = ..()
 	temp_chem_holder = new()
 	temp_chem_holder.create_reagents(10)
 	temp_chem_holder.flags |= OPENCONTAINER
@@ -170,6 +170,12 @@
 	if(mechanical)
 		connect()
 	update_icon()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/machinery/portable_atmospherics/hydroponics/LateInitialize()
+	. = ..()
+	if(locate(/obj/item/seeds) in get_turf(src))
+		plant()
 
 /obj/machinery/portable_atmospherics/hydroponics/bullet_act(var/obj/item/projectile/Proj)
 
@@ -562,6 +568,7 @@
 	else if(O.force && seed)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.visible_message("<span class='danger'>\The [seed.display_name] has been attacked by [user] with \the [O]!</span>")
+		playsound(get_turf(src), O.hitsound, 100, 1)
 		if(!dead)
 			health -= O.force
 			check_health()
@@ -647,3 +654,15 @@
 	closed_system = !closed_system
 	to_chat(user, "You [closed_system ? "close" : "open"] the tray's lid.")
 	update_icon()
+
+//proc for trays to spawn pre-planted
+/obj/machinery/portable_atmospherics/hydroponics/proc/plant()
+	var/obj/item/seeds/S = locate() in get_turf(src)
+	seed = S.seed
+	lastproduce = 0
+	dead = 0
+	age = 1
+	health = (istype(S, /obj/item/seeds/cutting) ? round(seed.get_trait(TRAIT_ENDURANCE)/rand(2,5)) : seed.get_trait(TRAIT_ENDURANCE))
+	lastcycle = world.time
+	qdel(S)
+	check_health()
