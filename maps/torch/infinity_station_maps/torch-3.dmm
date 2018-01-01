@@ -138,7 +138,7 @@
 "cH" = (/obj/structure/table/rack,/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light/small{dir = 4},/obj/item/weapon/circuitboard/bluespacerelay,/turf/simulated/floor/tiled/dark,/area/storage/tech)
 "cI" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/ladder/up,/turf/simulated/floor/plating,/area/maintenance/seconddeck/aftstarboard)
 "cJ" = (/obj/structure/closet/toolcloset,/turf/simulated/floor/plating,/area/maintenance/seconddeck/aftstarboard)
-"cK" = (/obj/structure/closet/coffin,/obj/effect/landmark/start{name = "Stowaway"},/turf/simulated/floor/plating,/area/vacant/chapel)
+"cK" = (/obj/structure/closet/coffin,/obj/effect/landmark/start{name = "Stowaway"},/obj/item/weapon/crowbar/prybar,/turf/simulated/floor/plating,/area/vacant/chapel)
 "cL" = (/obj/structure/table/marble,/turf/simulated/floor/plating,/area/vacant/chapel)
 "cM" = (/turf/simulated/wall,/area/vacant/chapel)
 "cN" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/plating,/area/maintenance/seconddeck/forestarboard)

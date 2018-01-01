@@ -410,7 +410,7 @@
 /datum/gear/violin
 	display_name = "violin"
 	path = /obj/item/device/violin
-	cost = 5
+	cost = 3
 	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/accessory/torch_patch
