@@ -192,7 +192,6 @@
 	new /obj/item/ammo_magazine/mc9mmt(src)
 	new /obj/item/ammo_magazine/mc9mmt(src)
 	new /obj/item/ammo_magazine/mc9mmt(src)
-	new /obj/item/ammo_magazine/mc9mmt(src)
 	new /obj/item/weapon/gun/projectile/sec/lethal(src)
 	new /obj/item/ammo_magazine/c45m(src)
 
