@@ -425,7 +425,6 @@ datum/objective/steal
 		"a sample of slime extract" = /obj/item/slime_extract,
 		"a piece of corgi meat" = /obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
 		"a research director's jumpsuit" = /obj/item/clothing/under/rank/research_director,
-		"a Formal Outfit of SCG representative" = /obj/item/clothing/under/rank/internalaffairs/plain/solgov,
 		"a Formal Outfit of NT liason" = /obj/item/clothing/under/rank/internalaffairs/plain/nt,
 		"a Tactical Goggles" = /obj/item/clothing/glasses/tacgoggles,
 		"the hypospray" = /obj/item/weapon/reagent_containers/hypospray,
