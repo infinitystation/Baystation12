@@ -119,6 +119,8 @@
 		return
 	if(!Adjacent(target))
 		to_chat(user, "<span class='warning'>Please stay close to \the [src].</span>")
+		breather.remove_from_mob(contained)
+		breather = null
 		return
 	//when there is a breather:
 	if(breather && target != breather)
