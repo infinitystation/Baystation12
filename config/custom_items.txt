@@ -53,3 +53,11 @@ item_name: honorary SCG beret
 item_desc: A beret which is awarded to someone, who did their best to serve SolGov. This one has golden badge with name "Journey" written on it.
 item_icon: beret_journey
 }
+{
+ckey: kosteg
+character_name: Valkyr
+item_path: /obj/item/weapon/reagent_containers/hypospray
+item_name: valkyrs hypospray
+item_desc: The hypospray from DeForest Medical Corporation. You can see word "Valkyr" written on it by black marker.
+item_icon: hypospray_valkyr
+}
