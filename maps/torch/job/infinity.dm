@@ -158,3 +158,25 @@
 	id_desc = "An ID of SCG police marshals."
 	id_pda_assignment = "Colonial Bureau Officer"
 
+//corpses
+
+/obj/effect/landmark/corpse/crewman
+	name = "Unknown"
+	corpseradio = /obj/item/device/radio/headset
+	corpseuniform = /obj/item/clothing/under/solgov/utility/fleet
+	corpseback = /obj/item/weapon/storage/backpack/satchel/leather/navy
+	corpsehelmet = /obj/item/clothing/head/beret/solgov/fleet
+	corpseshoes = /obj/item/clothing/shoes/dutyboots
+	corpseid = 1
+	corpseidjob = "Crewman"
+	corpseidaccess = 101
+
+/obj/effect/landmark/corpse/bridgeofficer/scg
+	name = "Unknown"
+	corpseradio = /obj/item/device/radio/headset/headset_com
+	corpseuniform = /obj/item/clothing/under/solgov/utility/fleet/command
+	corpsehelmet = /obj/item/clothing/head/beret/solgov/fleet/command
+	corpseshoes = /obj/item/clothing/shoes/dutyboots
+	corpseback = /obj/item/weapon/storage/backpack/satchel/pocketbook/navy
+	corpseidjob = "Bridge Officer"
+	corpseidaccess = 102
