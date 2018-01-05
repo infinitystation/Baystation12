@@ -23,13 +23,13 @@ rucat - machine
 kosteg - machine
 netreson - machine
 rockyfail - machine
+parasoul - machine
+hodovoy - machine
+nikita588 - machine
 quardbreak - machine
 redknighthero - machine
 wheatley2013 - machine
 kotovsyndrome - machine
-wheatley2013 - machine
-parasoul - machine
-nikita588 - machine
 twinindifferent - resomi
 themaybat - resomi
 kirill1243 - resomi
