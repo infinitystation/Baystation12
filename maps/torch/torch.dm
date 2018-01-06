@@ -28,6 +28,7 @@
 	#include "items/manuals.dm"
 	#include "items/stamps.dm"
 	#include "items/uniform_vendor.dm"
+	#include "items/rigs.dm"
 
 	#include "items/clothing/clothing.dm"
 	#include "items/clothing/solgov-infinity.dm"
@@ -86,6 +87,7 @@
 	#include "../away/blueriver/blueriver.dm"
 	#include "../away/slavers/slavers_base.dm"
 	#include "../away/hydro/hydro.dm"
+	#include "../away/mobius_rift/mobius_rift.dm"
 
 	#include "../../code/modules/lobby_music/chasing_time.dm"
 	#include "../../code/modules/lobby_music/human.dm"

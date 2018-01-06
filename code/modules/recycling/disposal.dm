@@ -63,7 +63,7 @@
 	if(stat & BROKEN || !I || !user)
 		return
 
-	src.add_fingerprint(user)
+	add_fingerprint(user, 0, I)
 	if(mode<=0) // It's off
 		if(isScrewdriver(I))
 			if(contents.len > 0)
@@ -899,7 +899,7 @@
 		var/turf/T = src.loc
 		if(!T.is_plating())
 			return		// prevent interaction with T-scanner revealed pipes
-		src.add_fingerprint(user)
+		src.add_fingerprint(user, 0, I)
 		if(istype(I, /obj/item/weapon/weldingtool))
 			var/obj/item/weapon/weldingtool/W = I
 
@@ -1539,7 +1539,7 @@
 	var/turf/T = src.loc
 	if(!T.is_plating())
 		return		// prevent interaction with T-scanner revealed pipes
-	src.add_fingerprint(user)
+	src.add_fingerprint(user, 0, I)
 	if(istype(I, /obj/item/weapon/weldingtool))
 		var/obj/item/weapon/weldingtool/W = I
 
@@ -1658,7 +1658,7 @@
 	attackby(var/obj/item/I, var/mob/user)
 		if(!I || !user)
 			return
-		src.add_fingerprint(user)
+		src.add_fingerprint(user, 0, I)
 		if(isScrewdriver(I))
 			if(mode==0)
 				mode=1

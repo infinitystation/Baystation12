@@ -51,7 +51,7 @@
 	allowed_roles = NOTFORMAL_ROLES
 
 /datum/gear/suit/roles/poncho/security
-	allowed_roles = list(/datum/job/guard, /datum/job/merchant)
+	allowed_roles = list(/datum/job/guard, /datum/job/analyst, /datum/job/merchant)
 
 /datum/gear/suit/roles/poncho/medical
 	allowed_roles = list(/datum/job/doctor_contractor, /datum/job/psychiatrist, /datum/job/merchant)
@@ -110,10 +110,10 @@
 	gear_tweaks += new/datum/gear_tweak/path(hoodies)
 
 /datum/gear/suit/labcoat
-	display_name = "labcoat, colour select"
-	path = /obj/item/clothing/suit/storage/toggle/labcoat
+	display_name = "coat, colour select"
+	path = /obj/item/clothing/suit/storage/toggle/labcoat/coat
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = NON_MILITARY_ROLES
+	allowed_roles = FORMAL_ROLES
 
 /datum/gear/suit/leather
 	display_name = "jacket selection"

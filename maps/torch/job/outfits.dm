@@ -167,6 +167,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/torch/crew/representative
 	pda_type = /obj/item/device/pda/heads
+	backpack_contents = list(/obj/item/clothing/accessory/badge/solgov/representative = 1)
 
 /decl/hierarchy/outfit/job/torch/crew/command/sea
 	name = OUTFIT_JOB_NAME("Senior Enlisted Advisor")
@@ -313,6 +314,14 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/det/grey
 	suit = /obj/item/clothing/suit/storage/toggle/marshal_jacket
 	shoes = /obj/item/clothing/shoes/dress
+
+/decl/hierarchy/outfit/job/torch/crew/security/analyst
+	name = OUTFIT_JOB_NAME("Crime Scene Analyst")
+	uniform = /obj/item/clothing/under/det
+	suit = /obj/item/clothing/suit/storage/forensics/blue
+	shoes = /obj/item/clothing/shoes/laceup
+	id_type = /obj/item/weapon/card/id/torch/contractor/security
+	pda_type = /obj/item/device/pda/detective
 
 /decl/hierarchy/outfit/job/torch/crew/security/maa
 	name = OUTFIT_JOB_NAME("Master at Arms")

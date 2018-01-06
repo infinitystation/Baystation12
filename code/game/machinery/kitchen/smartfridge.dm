@@ -164,7 +164,7 @@
 			if(S.dried_type == S.type)
 				S.dry = 1
 				S.name = "dried [S.name]"
-				S.color = "#aaaaaa"
+				S.color = "#a38463"
 				stock_item(S)
 			else
 				var/D = S.dried_type
@@ -297,8 +297,6 @@
 
 	var/mob/user = usr
 	var/datum/nanoui/ui = GLOB.nanomanager.get_open_ui(user, src, "main")
-
-	src.add_fingerprint(user)
 
 	if(href_list["close"])
 		user.unset_machine()
