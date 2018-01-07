@@ -531,81 +531,81 @@ Rate: [volume_rate] L/sec<BR>"}
 
 
 /obj/machinery/air_sensor/nacelle
-	output = 15
+	output = 127
 
 /obj/machinery/air_sensor/nacelle/first
 	id_tag = "ReacEng1"
-	output = 63
+	output = 127
 
 /obj/machinery/air_sensor/nacelle/first/plasma
 	id_tag = "ReacEngPlasma1"
-	output = 15
+	output = 67
 
 /obj/machinery/air_sensor/nacelle/first/oxygen
 	id_tag = "ReacEngOxygen1"
-	output = 15
+	output = 7
 
 /obj/machinery/air_sensor/nacelle/first/co2
 	id_tag = "ReacEngCO21"
-	output = 15
+	output = 37
 
 /obj/machinery/air_sensor/nacelle/second
 	id_tag = "ReacEng2"
-	output = 63
+	output = 127
 
 /obj/machinery/air_sensor/nacelle/second/plasma
 	id_tag = "ReacEngPlasma2"
-	output = 15
+	output = 67
 
 /obj/machinery/air_sensor/nacelle/second/oxygen
 	id_tag = "ReacEngOxygen2"
-	output = 15
+	output = 7
 
 /obj/machinery/air_sensor/nacelle/second/co2
 	id_tag = "ReacEngCO22"
-	output = 15
+	output = 37
 
 /obj/machinery/air_sensor/nacelle/third
 	id_tag = "ReacEng3"
-	output = 63
+	output = 127
 
 /obj/machinery/air_sensor/nacelle/third/plasma
 	id_tag = "ReacEngPlasma3"
-	output = 15
+	output = 67
 
 /obj/machinery/air_sensor/nacelle/third/oxygen
 	id_tag = "ReacEngOxygen3"
-	output = 15
+	output = 7
 
 /obj/machinery/air_sensor/nacelle/third/co2
 	id_tag = "ReacEngCO23"
-	output = 15
+	output = 37
 
 /obj/machinery/air_sensor/nacelle/fourth
 	id_tag = "ReacEng4"
-	output = 63
+	output = 127
 
 /obj/machinery/air_sensor/nacelle/fourth/plasma
 	id_tag = "ReacEngPlasma4"
-	output = 15
+	output = 67
 
 /obj/machinery/air_sensor/nacelle/fourth/oxygen
 	id_tag = "ReacEngOxygen4"
-	output = 15
+	output = 7
 
 /obj/machinery/air_sensor/nacelle/fourth/co2
 	id_tag = "ReacEngCO24"
-	output = 15
+	output = 37
 
 
 
 /obj/machinery/computer/general_air_control/engines_tanks
 	name = "Reactive Engines Tank Monitoring"
 	frequency = 1439
-	sensors = list("ReacEngPlasma1" = "First Engine Plasma",
-				"ReacEngPlasma2" = "Second Engine Plasma",
-				"ReacEngPlasma3" = "Third Engine Plasma",
-				"ReacEngPlasma4" = "Fourth Engine Plasma",
+	sensors = list("ReacEngPlasma1" = "First Engine Hydrogen",
+				"ReacEngPlasma2" = "Second Engine Hydrogen",
+				"ReacEngPlasma3" = "Third Engine Hydrogen",
+				"ReacEngPlasma4" = "Fourth Engine Hydrogen",
 				"ReacEngOxygen1" = "First Engine Oxygen",
 				"ReacEngOxygen2" = "Second Engine Oxygen",
 				"ReacEngOxygen3" = "Third Engine Oxygen",
