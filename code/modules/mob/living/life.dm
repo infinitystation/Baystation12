@@ -30,6 +30,8 @@
 		//stuff in the stomach
 		handle_stomach()
 
+		aura_check(AURA_TYPE_LIFE)
+
 		. = 1
 
 	//Handle temperature/pressure differences between body and environment
@@ -188,6 +190,8 @@
 		set_fullscreen(disabilities & NEARSIGHTED, "impaired", /obj/screen/fullscreen/impaired, 1)
 		set_fullscreen(eye_blurry, "blurry", /obj/screen/fullscreen/blurry)
 		set_fullscreen(druggy, "high", /obj/screen/fullscreen/high)
+
+	set_fullscreen(stat == UNCONSCIOUS, "blackout", /obj/screen/fullscreen/blackout)
 
 	if(machine)
 		var/viewflags = machine.check_eye(src)
