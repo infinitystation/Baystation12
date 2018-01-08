@@ -155,7 +155,7 @@ USE_CORTICAL_STACKS
 ALLOW_ADMIN_OOCCOLOR
 
 ## If metadata is supported
-# ALLOW_METADATA
+ALLOW_METADATA
 
 ## allow players to initiate a restart vote
 #ALLOW_VOTE_RESTART
