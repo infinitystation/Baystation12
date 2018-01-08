@@ -54,12 +54,12 @@
 	desc = "A 9mm practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/practice
 
-/obj/item/ammo_casing/c9mm/spent
+/obj/item/ammo_casing/c9mm/used/Initialize()
+	. = ..()
+	expend()
+	pixel_x = rand(-10, 10)
+	pixel_y = rand(-10, 10)
 
-/obj/item/ammo_casing/c9mm/spent/New()
-	..()
-	if(ispath(projectile_type))
-		BB = null
 
 /obj/item/ammo_casing/c44
 	desc = "A .44 magnum bullet casing."
@@ -101,12 +101,6 @@
 /obj/item/ammo_casing/c45/flash
 	desc = "A .45 flash shell casing."
 	projectile_type = /obj/item/projectile/energy/flash
-
-/obj/item/ammo_casing/c45/spent
-	desc = "A .45 bullet casing."
-	caliber = ".45"
-	projectile_type = null
-	icon_state = "s-casing-spent"
 
 /obj/item/ammo_casing/a10mm
 	desc = "A 10mm bullet casing."
