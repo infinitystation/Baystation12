@@ -296,6 +296,9 @@
 
 	if(print_flavor_text()) msg += "[print_flavor_text()]\n"
 
+	if(ooc_notes)
+		msg += "<span class = 'deptradio'>OOC Notes:</span> <a href='?src=\ref[src];ooc_notes=1'>\[View\]</a>\n"
+
 	msg += "*---------*</span><br>"
 	msg += applying_pressure
 

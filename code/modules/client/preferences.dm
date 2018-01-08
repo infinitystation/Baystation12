@@ -329,6 +329,7 @@ datum/preferences
 	character.sec_record = sec_record
 	character.gen_record = gen_record
 	character.exploit_record = exploit_record
+	character.ooc_notes = metadata
 
 	character.home_system = home_system
 	character.citizenship = citizenship

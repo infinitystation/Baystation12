@@ -419,6 +419,9 @@
 		if(!handle_strip(href_list["item"],usr,locate(href_list["holder"])))
 			show_inv(usr)
 
+	if(href_list["ooc_notes"])
+		src.Examine_OOC()
+
 	if (href_list["criminal"])
 		if(hasHUD(usr,"security"))
 

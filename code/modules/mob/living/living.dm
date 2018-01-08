@@ -470,7 +470,9 @@ default behaviour is:
 	set src in view()
 
 	if(config.allow_Metadata)
-		if(client)
+		if(ooc_notes)
+			to_chat(usr, "[src]'s Metainfo:<br>[ooc_notes]")
+		else if(client)
 			to_chat(usr, "[src]'s Metainfo:<br>[client.prefs.metadata]")
 		else
 			to_chat(usr, "[src] does not have any stored infomation!")
