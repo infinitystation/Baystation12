@@ -6,51 +6,41 @@
 	desc = "With You Since 20 century! It can has mix of meat, rice and some spice."
 	icon = 'icons/obj/infinity_food.dmi'
 	icon_state = "can1"
-	var/opened_state = "can1_opened"
-	var/empty_state = "can1_opened"
 	flags = 0
-	trash = /obj/item/trash/canfood/empty
+	trash = /obj/item/trash/canfood
 	nutriment_desc = list("rice" = 4, "meat" = 3)
-	nutriment_amt = 20
+	nutriment_amt = 25
 	var/diff = HARD
 	bitesize = 6
 
 /obj/item/weapon/reagent_containers/food/snacks/can/two
 	name = "canned stew"
-	desc = "With You Since 20 century! It can has mix of meat and broth."
+	desc = "With You Since 20 century! It can has mix of meat and meat broth."
 	icon_state = "can2"
-	opened_state = "can2_opened"
-	empty_state = "can2_opened"
 	nutriment_desc = list("meat" = 7)
 	nutriment_amt = 25
 
 
 /obj/item/weapon/reagent_containers/food/snacks/can/three
-	name = "canned stew"
+	name = "canned jelly"
 	desc = "With You Since 20 century! It can has jelly."
 	icon_state = "can3"
-	opened_state = "can3_opened"
-	empty_state = "can3_opened"
 	nutriment_amt = 10
 	New()
 		..()
 		reagents.add_reagent(/datum/reagent/nutriment/cherryjelly, 8)
 
 /obj/item/weapon/reagent_containers/food/snacks/can/four
-	name = "canned stew"
+	name = "canned strange stew"
 	desc = "With You Since 20 century! It can has... Something strange - you can't recognize, but it has meat..."
 	icon_state = "can4"
-	opened_state = "can4_opened"
-	empty_state = "can4_opened"
 	nutriment_desc = list("meat" = 5)
-	nutriment_amt = 18
+	nutriment_amt = 22
 
 /obj/item/weapon/reagent_containers/food/snacks/can/five
 	name = "canned vegetables"
 	desc = "With You Since 20 century! It can has mix of vegetables, vines, water... You really want it?"
 	icon_state = "can5"
-	opened_state = "can5_opened"
-	empty_state = "can5_opened"
 	nutriment_desc = list("rice" = 4)
 	nutriment_amt = 16
 	New()
@@ -61,11 +51,14 @@
 		reagents.add_reagent(/datum/reagent/drink/juice/carrot, 1)
 		reagents.add_reagent(/datum/reagent/drink/juice/orange, 1)
 
-/obj/item/trash/canfood/empty
-	name = "Can"
-	desc = "Empty."
+/obj/item/trash/canfood
+	name = "empty can"
+	desc = "With You Since 20 century! It can has mix of air, bacteries and food parts."
 	icon = 'icons/obj/infinity_food.dmi'
 	icon_state = "can1_empty"
+
+/obj/item/trash/canfood/Initialize()
+	icon_state = "can[(rand(1,5))]_empty"
 
 /obj/item/weapon/material/canknife
 	name = "can-opener"
@@ -95,8 +88,11 @@
 		if(do_after(user, 50, src))
 			open(user)
 			return
-	else
-		to_chat(user, "<span class='warning'>You need can-opener to open this!</span>")
+	else if(istype(W,/obj/item/weapon/material/kitchen/utensil))
+		if(src.flags |= OPENCONTAINER)
+			..()
+		else
+			to_chat(user, "<span class='warning'>You need can-opener to open this!</span>")
 	return
 
 /obj/item/weapon/reagent_containers/food/snacks/can/proc/open(mob/user)
