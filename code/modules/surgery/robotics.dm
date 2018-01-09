@@ -128,6 +128,7 @@
 //////////////////////////////////////////////////////////////////
 //	close robotic limb surgery step
 //////////////////////////////////////////////////////////////////
+
 /datum/surgery_step/robotics/close_hatch
 	allowed_tools = list(
 		/obj/item/weapon/retractor = 100,
@@ -164,6 +165,7 @@
 //////////////////////////////////////////////////////////////////
 //	 screw back robotic limb hatch surgery step
 //////////////////////////////////////////////////////////////////
+/*
 /datum/surgery_step/robotics/screw_hatch
 	allowed_tools = list(
 		/obj/item/weapon/screwdriver = 100,
@@ -196,7 +198,7 @@
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 	user.visible_message("<span class='warning'>[user]'s [tool.name] slips, failing to screw the hatch on [target]'s [affected.name].</span>",
 	"<span class='warning'>Your [tool.name] slips, failing to screw the hatch on [target]'s [affected.name].</span>")
-
+*/
 //////////////////////////////////////////////////////////////////
 //	robotic limb brute damage repair surgery step
 //////////////////////////////////////////////////////////////////
