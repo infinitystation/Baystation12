@@ -625,6 +625,26 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	item_state = "zippo"
 	max_fuel = 10
 
+/obj/item/weapon/flame/lighter/zippo/engraved
+	name = "\improper Engraved Zippo lighter"
+	icon = 'icons/obj/items_inf.dmi'
+	icon_state = "engraved"
+
+/obj/item/weapon/flame/lighter/zippo/gold
+	name = "\improper Gold Zippo lighter"
+	icon = 'icons/obj/items_inf.dmi'
+	icon_state = "gold"
+
+/obj/item/weapon/flame/lighter/zippo/station
+	name = "\improper Special Zippo lighter"
+	icon = 'icons/obj/items_inf.dmi'
+	icon_state = "13"
+
+/obj/item/weapon/flame/lighter/zippo/black
+	name = "\improper Black Zippo lighter"
+	icon = 'icons/obj/items_inf.dmi'
+	icon_state = "black"
+
 /obj/item/weapon/flame/lighter/zippo/light_effects(mob/user)
 	user.visible_message("<span class='rose'>Without even breaking stride, [user] flips open and lights [src] in one smooth movement.</span>")
 	playsound(src.loc, 'sound/items/zippo_open.ogg', 100, 1, -4)

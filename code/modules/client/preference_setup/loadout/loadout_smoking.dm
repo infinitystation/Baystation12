@@ -18,6 +18,15 @@
 	display_name = "zippo"
 	path = /obj/item/weapon/flame/lighter/zippo
 
+/datum/gear/zippo/New()
+	..()
+	var/zippo_type = list()
+	zippo_type["engraved"] = /obj/item/weapon/flame/lighter/zippo/engraved
+	zippo_type["golden"] = /obj/item/weapon/flame/lighter/zippo/gold
+	zippo_type["old generation"] = /obj/item/weapon/flame/lighter/zippo/station
+	zippo_type["black"] = /obj/item/weapon/flame/lighter/zippo/black
+	gear_tweaks += new/datum/gear_tweak/path(zippo_type)
+
 /datum/gear/ashtray
 	display_name = "ashtray, plastic"
 	path = /obj/item/weapon/material/ashtray/plastic

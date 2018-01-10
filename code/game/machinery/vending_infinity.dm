@@ -1,6 +1,6 @@
 /obj/machinery/vending/clothing
 	name = "ClothesMate" //renamed to make the slogan rhyme
-	icon = 'icons/obj/infinity_vend.dmi'
+	icon = 'icons/obj/vending_inf.dmi'
 	desc = "A vending machine for clothing."
 	icon_state = "clothes"
 	product_slogans = "Dress for success!;Prepare to look swagalicious!;Look at all this free swag!;Why leave style up to fate? Use the ClothesMate!"
@@ -16,7 +16,7 @@
 /obj/machinery/vending/security_clothes
 	name = "Security clothes"
 	desc = "All our clothes - it is your clothes!"
-	icon = 'icons/obj/infinity_vend.dmi'
+	icon = 'icons/obj/vending_inf.dmi'
 	icon_state = "sec"
 	icon_deny = "sec-deny"
 	vend_delay = 15
@@ -47,7 +47,7 @@
 	name = "Robust Softdrinks"
 	desc = "A softdrink vendor provided by Robust Industries, LLC."
 	density = 0
-	icon = 'icons/obj/infinity_object.dmi'
+	icon = 'icons/obj/vending_inf.dmi'
 	icon_state = "Cola_Machine_small"
 	icon_vend = "Cola_Machine_small-vend"
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 5,/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 5,
@@ -64,7 +64,7 @@
 	name = "Hot Drinks machine"
 	desc = "A vending machine which dispenses hot drinks."
 	density = 0
-	icon = 'icons/obj/infinity_object.dmi'
+	icon = 'icons/obj/vending_inf.dmi'
 	icon_state = "Covfefe_Machine_small"
 	icon_vend = "Covfefe_Machine_small-vend"
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 5,/obj/item/weapon/reagent_containers/food/drinks/tea = 5,/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 5)
@@ -76,7 +76,7 @@
 	desc = "A specialized vending machine designed to contribute to your slow and uncomfortable death."
 	vend_delay = 21
 	density = 0
-	icon = 'icons/obj/infinity_object.dmi'
+	icon = 'icons/obj/vending_inf.dmi'
 	icon_state = "Cigs_Machine_small"
 	icon_vend = "Cigs_Machine_small-vend"
 	products = list(/obj/item/weapon/storage/fancy/cigarettes = 2,
@@ -103,7 +103,7 @@
 /obj/machinery/vending/thundervend
 	name = "Violence-o-Mate"
 	desc = "That's a guns and ammo vendor."
-	icon = 'icons/obj/thundervend.dmi'
+	icon = 'icons/obj/vending_inf.dmi'
 	density = 0
 	ads_list = list(
 		"ULTRAVIOLENCE!",

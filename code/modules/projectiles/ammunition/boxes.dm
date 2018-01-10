@@ -306,7 +306,8 @@
 	caliber = "shotgun"
 	max_ammo = 8
 
-/obj/item/ammo_magazine/box/c12m/empty
+/obj/item/ammo_magazine/c12m/empty
+	icon_state = "m12gb-0"
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/c12755
