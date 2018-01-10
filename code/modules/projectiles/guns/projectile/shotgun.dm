@@ -124,11 +124,11 @@
 
 /obj/item/weapon/gun/projectile/shotgun/magazine
 	name = "bulldog"
-	desc = "The mass-produced W-T Remmington 29x shotgun is a favourite of police and security forces on many worlds. Useful for sweeping alleys."
+	desc = "The mass-produced by Aussec Armory, in past known as 'Striker', shotgun AS-53 'Buldog' is an echo of the past in new package. Reborned storm shotgun usually can be saw in hands of mercenaries groups and Private Military Companies."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "bulldog"
 	item_state = "shotgun"
-	max_shells = 4
+	max_shells = 1
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	flags =  CONDUCT

@@ -290,7 +290,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/amrcarabine
 	name = "assault rifle"
-	desc = "The rugged STS-35 is a durable automatic weapon of a make popular on the frontier worlds. The serial number has been scratched off. Uses 5.56mm rounds."
+	desc = "The loud and deadly and manufactured by Aussec Armory, bullpup carabine LDC-542 is a standart weapon for a long-medium ranged combat units in Private Military Companies. Uses 12.7x55mm rounds."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "amrcarabine"
 	item_state = null
@@ -305,8 +305,8 @@
 	one_hand_penalty = 7
 	wielded_item_state = "z8carbine-wielded"
 	firemodes = list(
-		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, use_launcher=null, one_hand_penalty=7, burst_accuracy=null, dispersion=null),
-		list(mode_name="2-round bursts", burst=2,    fire_delay=null, move_delay=10,    use_launcher=null, one_hand_penalty=10, burst_accuracy=list(0,-2,-2), dispersion=list(0.0, 0.8, 1.0)),
+		list(mode_name="semiauto",       burst=1,    fire_delay=4,    move_delay=3, use_launcher=null, one_hand_penalty=7, burst_accuracy=null, dispersion=null),
+		list(mode_name="2-round bursts", burst=2,    fire_delay=6, move_delay=5,    use_launcher=null, one_hand_penalty=15, burst_accuracy=list(0,-2), dispersion=list(0.0, 0.4)),
 		)
 
 /obj/item/weapon/gun/projectile/automatic/amrcarabine/update_icon()
