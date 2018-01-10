@@ -1437,6 +1437,15 @@
 	name = "\improper Thunderdome (TESTING AREA)"
 	icon_state = "purple"
 
+/area/tdome/testing/engineering
+	name = "\improper Thunderdome"
+	requires_power = 0
+	dynamic_lighting = 1
+
+/area/tdome/testing/engineering/unpowered
+	name = "\improper Thunderdome"
+	requires_power = 1
+
 /area/tdome/tdomeobserve
 	name = "\improper Thunderdome (Observer.)"
 	icon_state = "purple"
