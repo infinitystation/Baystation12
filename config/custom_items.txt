@@ -57,7 +57,7 @@ item_icon: beret_journey
 ckey: kosteg
 character_name: Valkyr
 item_path: /obj/item/weapon/reagent_containers/hypospray
-item_name: valkyrs hypospray
-item_desc: The hypospray from DeForest Medical Corporation. You can see word "Valkyr" written on it by black marker.
+item_name: Modified Hypospray
+item_desc: Modified version of standart DeForest Medical Corporation hypospray. It's handle is inscribed with words 'A gift from S. Hughes to Valkyr. Don't you dare to forget me, you, tin can'.
 item_icon: hypospray_valkyr
 }
