@@ -302,7 +302,7 @@ datum/objective/escape
 			return 0
 
 		var/area/check_area = location.loc
-		return check_area && is_type_in_list(check_area, GLOB.using_map.post_round_safe_areas)
+		return check_area && is_type_in_list(check_area, GLOB.using_map.post_round_safe_areas) || owner.current.z in GLOB.using_map.admin_levels
 
 
 
