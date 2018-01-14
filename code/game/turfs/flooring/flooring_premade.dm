@@ -42,7 +42,7 @@
 	name = "wooden floor"
 	icon = 'icons/turf/flooring/wood.dmi'
 	icon_state = "wood"
-	flags = TURF_CAN_BURN
+	turf_flags = TURF_CAN_BURN
 	initial_flooring = /decl/flooring/wood
 
 /turf/simulated/floor/grass

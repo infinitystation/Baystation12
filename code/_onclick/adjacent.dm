@@ -111,7 +111,7 @@ Quick adjacency (to turf):
 	Check if obj block pass in any direction like windows, windor, etc
 */
 /obj/proc/is_block_dir(target_dir, border_only, atom/target)
-	if(flags & ON_BORDER) // windows have throwpass but are on border, check them first
+	if(obj_flags & ATOM_FLAG_CHECKS_BORDER) // windows have throwpass but are on border, check them first
 		if(dir & target_dir)
 			return TRUE
 	if(!border_only)

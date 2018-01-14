@@ -387,7 +387,7 @@
 	volume = 100
 	center_of_mass = "x=12;y=5"
 
-	flags = 0 // starts closed
+	obj_flags = 0 // starts closed
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/champagne/New() //it's all here writen wrong with short proc name's, not as contributing guide says, so it's done as it's had to be
 	..()
@@ -408,7 +408,7 @@
 			new /obj/effect/decal/cleanable/champagne(usr.loc)
 		else
 			user.visible_message("<span class='notice'>\The [user] professional opens \the [src]</span>")
-		flags |= OPENCONTAINER
+		obj_flags |= ATOM_FLAG_OPEN_CONTAINER
 /*
 опх дюкэмеиьел днкаюбкемхх мюохрйнб ме асдэре лмни - окчире мю йнмрпхаэчрхмц х охьхре йнлюоюйрмн х ашярпн
 онкмше хлемю опнйнб дкъ янгдюмхъ асршкн асукю ме мсфмш.

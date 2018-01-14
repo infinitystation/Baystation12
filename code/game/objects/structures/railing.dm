@@ -7,7 +7,7 @@
 	layer = 5.2//Just above doors
 	//pressure_resistance = 4*ONE_ATMOSPHERE
 	anchored = 1
-	flags = ON_BORDER | OBJ_CLIMBABLE
+	obj_flags = ATOM_FLAG_CHECKS_BORDER | ATOM_FLAG_CLIMBABLE
 	icon_state = "railing0"
 	var/broken = 0
 	var/health=70
@@ -20,7 +20,7 @@
 	..()
 	if(constructed)	//player-constructed railings
 		anchored = 0
-	if(flags & OBJ_CLIMBABLE)
+	if(obj_flags & ATOM_FLAG_CLIMBABLE)
 		verbs += /atom/proc/climb_on
 	if(src.anchored)
 		spawn(5)
@@ -28,7 +28,7 @@
 
 /obj/structure/railing/Destroy()
 	anchored = null
-	flags = null
+	obj_flags = null
 	broken = 1
 	for(var/obj/structure/railing/R in oview(src, 1))
 		R.update_icon()
@@ -38,7 +38,7 @@
 	if(!mover)
 		return 1
 
-	if(istype(mover) && mover.checkpass(PASSTABLE))
+	if(istype(mover) && mover.checkpass(PASS_FLAG_TABLE))
 		return 1
 	if(get_dir(loc, target) == dir)
 		return !density
@@ -203,7 +203,7 @@
 	return
 
 /obj/structure/railing/CheckExit(atom/movable/O as mob|obj, target as turf)
-	if(istype(O) && O.checkpass(PASSTABLE))
+	if(istype(O) && O.checkpass(PASS_FLAG_TABLE))
 		return 1
 	if(get_dir(O.loc, target) == dir)
 		return 0

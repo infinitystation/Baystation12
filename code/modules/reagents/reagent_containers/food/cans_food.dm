@@ -6,7 +6,7 @@
 	desc = "With You Since 20 century! It can has mix of meat, rice and some spice."
 	icon = 'icons/obj/infinity_food.dmi'
 	icon_state = "can1"
-	flags = 0
+	obj_flags = 0
 	trash = /obj/item/trash/canfood
 	nutriment_desc = list("rice" = 4, "meat" = 3)
 	nutriment_amt = 25
@@ -89,7 +89,7 @@
 			open(user)
 			return
 	else if(istype(W,/obj/item/weapon/material/kitchen/utensil))
-		if(src.flags |= OPENCONTAINER)
+		if(src.obj_flags |= ATOM_FLAG_OPEN_CONTAINER)
 			..()
 		else
 			to_chat(user, "<span class='warning'>You need can-opener to open this!</span>")
@@ -98,11 +98,11 @@
 /obj/item/weapon/reagent_containers/food/snacks/can/proc/open(mob/user)
 	playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1)
 	to_chat(user, "<span class='notice'>You open \the [src]!</span>")
-	flags |= OPENCONTAINER
+	obj_flags |= ATOM_FLAG_OPEN_CONTAINER
 	icon_state = "[initial(icon_state)]_opened"
 
 /obj/item/weapon/reagent_containers/food/snacks/can/attack(mob/M as mob, mob/user as mob, def_zone)
-	if(force && !(flags & NOBLUDGEON) && user.a_intent == I_HURT)
+	if(force && !(obj_flags & ITEM_FLAG_NO_BLUDGEON) && user.a_intent == I_HURT)
 		return ..()
 	if(standard_feed_mob(user, M))
 		update_icon(src)

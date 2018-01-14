@@ -297,7 +297,7 @@
 			internal = null
 
 		if(internal)
-			if((head && (head.item_flags & AIRTIGHT)))
+			if((head && (head.item_flags & ITEM_FLAG_AIRTIGHT)))
 				playsound(loc, "sound/voice/gasmask[rand(1, 10)].ogg", 75, 1)
 			return internal.remove_air_volume(volume_needed)
 		else if(internals)
@@ -457,7 +457,7 @@
 //		log_debug("Hot. Difference = [body_temperature_difference]. Recovering [recovery_amt]")
 		bodytemperature += recovery_amt
 
-	//This proc returns a number made up of the flags for body parts which you are protected on. (such as HEAD, UPPER_TORSO, LOWER_TORSO, etc. See setup.dm for the full list)
+	//This proc returns a number made up of theobj_flags for body parts which you are protected on. (such as HEAD, UPPER_TORSO, LOWER_TORSO, etc. See setup.dm for the full list)
 /mob/living/carbon/human/proc/get_heat_protection_flags(temperature) //Temperature is the temperature you're being exposed to.
 	. = 0
 	//Handle normal clothing
