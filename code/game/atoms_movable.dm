@@ -4,6 +4,8 @@
 	appearance_flags = TILE_BOUND
 	//glide_size = 5.5
 
+	var/movable_flags
+
 	var/last_move = null
 	var/anchored = 0
 	// var/elevation = 2    - not used anywhere

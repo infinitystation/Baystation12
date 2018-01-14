@@ -27,7 +27,7 @@
 	var/list/allowed_objects = list(/obj/structure/closet)
 	active_power_usage = 2200	//the pneumatic pump power. 3 HP ~ 2200W
 	idle_power_usage = 100
-	flags = OBJ_CLIMBABLE
+	atom_flags = ATOM_FLAG_CLIMBABLE
 
 /obj/machinery/disposal/small
 	icon = 'icons/obj/pipes/disposal_small.dmi'
@@ -1615,7 +1615,7 @@
 	var/active = 0
 	var/turf/target	// this will be where the output objects are 'thrown' to.
 	var/mode = 0
-	flags = OBJ_CLIMBABLE
+	atom_flags = ATOM_FLAG_CLIMBABLE
 
 	New()
 		..()

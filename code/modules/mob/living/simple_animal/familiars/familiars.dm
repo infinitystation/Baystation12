@@ -134,7 +134,7 @@
 
 	speak_emote = list("пищит")
 	holder_type = /obj/item/weapon/holder/mouse
-	pass_flags = PASSTABLE
+	pass_flags = PASS_FLAG_TABLE
 	mob_size = MOB_MINISCULE
 
 	response_harm = "stamps on"

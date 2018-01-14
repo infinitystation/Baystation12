@@ -7,7 +7,7 @@
 	icon_state = "brown"
 	item_state = "brown"
 	permeability_coefficient = 0.05
-	item_flags = NOSLIP
+	item_flags = ITEM_FLAG_NOSLIP
 	origin_tech = list(TECH_ILLEGAL = 3)
 	var/list/clothing_choices = list()
 	siemens_coefficient = 0.8
@@ -23,7 +23,7 @@
 	icon_state = "swat"
 	force = 3
 	armor = list(melee = 80, bullet = 60, laser = 60,energy = 25, bomb = 50, bio = 10, rad = 0)
-	item_flags = NOSLIP
+	item_flags = ITEM_FLAG_NOSLIP
 	siemens_coefficient = 0.6
 	can_hold_knife = 1
 
@@ -33,7 +33,7 @@
 	icon_state = "jungle"
 	force = 5
 	armor = list(melee = 80, bullet = 60, laser = 60,energy = 25, bomb = 50, bio = 10, rad = 0)
-	item_flags = NOSLIP
+	item_flags = ITEM_FLAG_NOSLIP
 	siemens_coefficient = 0.6
 	can_hold_knife = 1
 
@@ -174,7 +174,7 @@
 	desc = "Help you swim good."
 	name = "swimming fins"
 	icon_state = "flippers"
-	item_flags = NOSLIP
+	item_flags = ITEM_FLAG_NOSLIP
 	species_restricted = null
 
 /obj/item/clothing/shoes/swimmingfins/New()

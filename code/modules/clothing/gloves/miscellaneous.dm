@@ -64,7 +64,7 @@
 	max_heat_protection_temperature = GLOVES_MAX_HEAT_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/gloves/thick/modified
-	item_flags = PREMODIFIED
+	item_flags = ITEM_FLAG_PREMODIFIED
 
 /obj/item/clothing/gloves/thick/swat
 	desc = "These tactical gloves are somewhat fire and impact-resistant."
@@ -101,7 +101,7 @@
 	item_state = "ggloves"
 
 /obj/item/clothing/gloves/thick/botany/modified
-	item_flags = PREMODIFIED
+	item_flags = ITEM_FLAG_PREMODIFIED
 
 /obj/item/clothing/gloves/latex
 	name = "latex gloves"
@@ -113,7 +113,7 @@
 	germ_level = 0
 
 /obj/item/clothing/gloves/latex/modified
-	item_flags = PREMODIFIED
+	item_flags = ITEM_FLAG_PREMODIFIED
 
 /obj/item/clothing/gloves/latex/nitrile
 	name = "nitrile gloves"
@@ -122,7 +122,7 @@
 	item_state = "ngloves"
 
 /obj/item/clothing/gloves/latex/nitrile/modified
-	item_flags = PREMODIFIED
+	item_flags = ITEM_FLAG_PREMODIFIED
 
 /obj/item/clothing/gloves/duty
 	desc = "These brown duty gloves are made from a durable synthetic."
@@ -133,7 +133,7 @@
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 5, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/gloves/duty/modified
-	item_flags = PREMODIFIED
+	item_flags = ITEM_FLAG_PREMODIFIED
 
 /obj/item/clothing/gloves/tactical
 	desc = "These brown tactical gloves are made from a durable synthetic, and have hardened knuckles."

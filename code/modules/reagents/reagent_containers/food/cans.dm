@@ -2,7 +2,7 @@
 	volume = 40 //just over one and a half cups
 	amount_per_transfer_from_this = 5
 	possible_transfer_amounts = "5;10;15;30;35;40"
-	flags = 0 //starts closed
+	obj_flags = 0 //starts closed
 
 //DRINKS
 
