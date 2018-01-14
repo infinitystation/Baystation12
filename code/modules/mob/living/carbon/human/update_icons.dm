@@ -157,8 +157,8 @@ Please contact me on #coderbus IRC. ~Carn x
 	if (icon_update)
 		if(is_cloaked())
 
-			icon = 'icons/mob/human.dmi'
-			icon_state = "blank"
+			icon = 'icons/mob/infinity_mob.dmi'
+			icon_state = "cloak_full"
 
 			for(var/entry in list(overlays_standing[R_HAND_LAYER], overlays_standing[L_HAND_LAYER]))
 				if(istype(entry, /image))
