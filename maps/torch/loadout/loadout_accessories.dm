@@ -410,8 +410,13 @@
 /datum/gear/violin
 	display_name = "violin"
 	path = /obj/item/device/violin
-	cost = 3
+	cost = 2
 	allowed_roles = RESTRICTED_ROLES
+
+/datum/gear/comb
+	display_name = "plastic comb"
+	path = /obj/item/weapon/haircomb
+	cost = 0
 
 /datum/gear/accessory/torch_patch
 	display_name = "Torch mission patch"
