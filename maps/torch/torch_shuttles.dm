@@ -520,12 +520,12 @@
 
 //SCGMC Assault Pod
 
-/datum/shuttle/autodock/ferry/specops
+/datum/shuttle/autodock/ferry/specops/scg
 	name = "Special Operations"
 	warmup_time = 10
 	location = 1
 	shuttle_area = /area/shuttle/specops/centcom
-	dock_target = "specops_shuttle_port"
+	dock_target = "specops_shuttle_fore"
 	waypoint_station = "nav_specops_out"
 	waypoint_offsite = "nav_specops_start"
 	current_location = "nav_specops_start"
@@ -533,7 +533,7 @@
 /obj/effect/shuttle_landmark/specops/start
 	name = "Centcom"
 	landmark_tag = "nav_specops_start"
-	docking_controller = "specops_shuttle_port"
+	docking_controller = "specops_shuttle_cent"
 
 /obj/effect/shuttle_landmark/specops/out
 	name = "Docking Bay"
