@@ -3,7 +3,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/can
 	name = "canned stew"
-	desc = "With You Since 20 century! It can has mix of meat, rice and some spice."
+	desc = "With You Since 20 century! This can has mix of meat, rice and some spice."
 	icon = 'icons/obj/infinity_food.dmi'
 	icon_state = "can1"
 	obj_flags = 0
@@ -15,7 +15,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/can/two
 	name = "canned stew"
-	desc = "With You Since 20 century! It can has mix of meat and meat broth."
+	desc = "With You Since 20 century! This can has mix of meat and meat broth."
 	icon_state = "can2"
 	nutriment_desc = list("meat" = 7)
 	nutriment_amt = 25
@@ -23,7 +23,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/can/three
 	name = "canned jelly"
-	desc = "With You Since 20 century! It can has jelly."
+	desc = "With You Since 20 century! This can has jelly."
 	icon_state = "can3"
 	nutriment_amt = 10
 	New()
@@ -32,14 +32,14 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/can/four
 	name = "canned strange stew"
-	desc = "With You Since 20 century! It can has... Something strange - you can't recognize, but it has meat..."
+	desc = "With You Since 20 century! This can has... Something strange - you can't recognize, but it has meat..."
 	icon_state = "can4"
 	nutriment_desc = list("meat" = 5)
 	nutriment_amt = 22
 
 /obj/item/weapon/reagent_containers/food/snacks/can/five
 	name = "canned vegetables"
-	desc = "With You Since 20 century! It can has mix of vegetables, vines, water... You really want it?"
+	desc = "With You Since 20 century! This can has mix of vegetables, vines, water... You really want it?"
 	icon_state = "can5"
 	nutriment_desc = list("rice" = 4)
 	nutriment_amt = 16
@@ -53,7 +53,7 @@
 
 /obj/item/trash/canfood
 	name = "empty can"
-	desc = "With You Since 20 century! It can has mix of air, bacteries and food parts."
+	desc = "With You Since 20 century! This can has mix of air, bacteries and food parts."
 	icon = 'icons/obj/infinity_food.dmi'
 	icon_state = "can1_empty"
 
@@ -77,14 +77,14 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/can/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W,/obj/item/weapon/material/knife))
-		to_chat(user, "<span class='notice'>You're starting open\the [src]!</span>")
+		to_chat(user, "<span class='notice'>You're starting open the [src]!</span>")
 		user.visible_message("<span class='warning'>\The [user] is trying to open /the [src] with [W]!/</span>")
 		if(do_after(user, 150, src))
 			open(user)
 			return
 	else if(istype(W,/obj/item/weapon/material/canknife) || istype(W, /obj/item/weapon/material/kitchen/utensil/knife))
-		to_chat(user, "<span class='notice'>You're starting open\the [src]!</span>")
-		user.visible_message("<span class='warning'>\The [user] is trying to open /the [src] with [W]!/</span>")
+		to_chat(user, "<span class='notice'>You're starting open the [src]!</span>")
+		user.visible_message("<span class='warning'>The [user] is trying to open the [src] with [W]!</span>")
 		if(do_after(user, 50, src))
 			open(user)
 			return
@@ -97,7 +97,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/can/proc/open(mob/user)
 	playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1)
-	to_chat(user, "<span class='notice'>You open \the [src]!</span>")
+	to_chat(user, "<span class='notice'>You open the [src]!</span>")
 	obj_flags |= ATOM_FLAG_OPEN_CONTAINER
 	icon_state = "[initial(icon_state)]_opened"
 
@@ -111,7 +111,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/can/standard_feed_mob(var/mob/user, var/mob/target)
 	if(!is_open_container())
-		to_chat(user, "<span class='notice'>You need to open \the [src]!</span>")
+		to_chat(user, "<span class='notice'>You need to open the [src]!</span>")
 		return 1
 	return ..()
 
