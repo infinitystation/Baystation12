@@ -1,6 +1,4 @@
 #include "bearcat_areas.dm"
-#include "bearcat-1.dmm"
-#include "bearcat-2.dmm"
 
 /obj/effect/overmap/ship/bearcat
 	name = "light freighter"
@@ -129,37 +127,3 @@
 			qdel(eyegore)
 	var/obj/item/weapon/cell/super/C = new()
 	H.put_in_any_hand_if_possible(C)
-
-
-/obj/effect/shuttle_landmark/docking_arm_port
-	name = "Bearcat Port-side Docking Arm"
-	docking_controller = "bearcat_dock_port"
-
-/obj/effect/shuttle_landmark/docking_arm_port/shuttle
-	landmark_tag = "nav_bearcat_port_dock_shuttle"
-
-/obj/machinery/computer/shuttle_control/explore/bearcat
-	name = "exploration shuttle console"
-	shuttle_tag = "Exploration Shuttle"
-
-/datum/shuttle/autodock/overmap/exploration
-	name = "Exploration Shuttle"
-	shuttle_area = /area/ship/scrap/shuttle/outgoing
-	dock_target = "bearcat_shuttle"
-	current_location = "nav_bearcat_port_dock_shuttle"
-	move_time = 60
-	landmark_transition = "nav_bearcat_transit"
-
-/obj/effect/shuttle_landmark/docking_arm_port/dock
-	name = "SEV Second Deck Dock"
-	landmark_tag = "nav_bearcat_torch_dock"
-	docking_controller = "eva_airlock"
-
-/obj/effect/shuttle_landmark/docking_arm_port/transit
-	name = "In Transit"
-	landmark_tag = "nav_bearcat_transit"
-
-/obj/effect/shuttle_landmark/docking_arm_port/torch_near
-	name = "SEV Fourth Deck South"
-	landmark_tag = "nav_bearcat_torch"
-	docking_controller = null

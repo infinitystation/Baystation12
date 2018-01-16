@@ -1,4 +1,3 @@
-#include "lost_supply_base.dmm"
 #include "lost_supply_base_areas.dm"
 #include "../../away/mining/mining_areas.dm"
 
