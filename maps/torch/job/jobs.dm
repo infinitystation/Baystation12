@@ -514,7 +514,7 @@
 	department = "Engineering"
 	department_flag = ENG
 
-	total_positions = 1
+	total_positions = 2
 	spawn_positions = 1
 	supervisors = "the Chief Engineer"
 	selection_color = "#5b4d20"
@@ -604,9 +604,7 @@
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "the Chief of Security"
-	alt_titles = list(
-		"Field Military Specialist",
-		"Military Police")
+	alt_titles = list("Military Police")
 	economic_modifier = 4
 	minimal_player_age = 10
 	ideal_character_age = 25
