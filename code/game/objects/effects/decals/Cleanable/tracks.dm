@@ -200,14 +200,3 @@ var/global/list/image/fluidtrack_cache=list()
 	gender = PLURAL
 	random_icon_states = null
 	amount = 0
-
-/obj/effect/decal/cleanable/blood/tracks/crawl
-	name = "wet tracks"
-	dryname = "dried tracks"
-	desc = "They look like still wet tracks left by a humanoid corpse."
-	drydesc = "They look like dried tracks left by a humanoid corpse."
-	coming_state = "crawl"
-	going_state  = ""
-	gender = PLURAL
-	random_icon_states = null
-	amount = 0
