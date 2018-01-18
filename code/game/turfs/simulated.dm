@@ -92,6 +92,8 @@
 /turf/simulated/Entered(atom/A, atom/OL)
 	if (istype(A,/mob/living))
 		var/mob/living/M = A
+		if(M.lying)
+			return ..()
 
 		// Dirt overlays.
 		update_dirt()
