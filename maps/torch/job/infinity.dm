@@ -158,7 +158,11 @@
 	id_desc = "An ID of SCG police marshals."
 	id_pda_assignment = "Colonial Bureau Officer"
 
-//corpses
+
+			//////////
+			//CORPSE//
+			//////////
+
 
 /obj/effect/landmark/corpse/crewman
 	name = "Unknown"
@@ -166,14 +170,15 @@
 
 /decl/hierarchy/outfit/corpse/crewman
 	name = "Dead Unknown"
-//	radio = /obj/item/device/radio/headset
+	l_ear = /obj/item/device/radio/headset
 	uniform = /obj/item/clothing/under/solgov/utility/fleet
 	back = /obj/item/weapon/storage/backpack/satchel/leather/navy
 	head = /obj/item/clothing/head/beret/solgov/fleet
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id = 1
-//	idjob = "Crewman"
-//	idaccess = 101
+	id_type = /obj/item/weapon/card/id/torch/crew
+	id_desc = "Crewman"
+	id_slot = slot_wear_id
 
 /obj/effect/landmark/corpse/bridgeofficer/scg
 	name = "Unknown"
@@ -181,10 +186,34 @@
 
 /decl/hierarchy/outfit/corpse/bridgeofficer/scg
 	name = "Dead Unknown"
-//	radio = /obj/item/device/radio/headset/headset_com
+	l_ear = /obj/item/device/radio/headset
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/command
 	head = /obj/item/clothing/head/beret/solgov/fleet/command
 	shoes = /obj/item/clothing/shoes/dutyboots
 	back = /obj/item/weapon/storage/backpack/satchel/pocketbook/navy
-//	idjob = "Bridge Officer"
-//	idaccess = 102
+	id_type = /obj/item/weapon/card/id/torch/crew
+	id_desc = "Bridge Officer"
+	id_slot = slot_wear_id
+
+/obj/effect/landmark/corpse/pirat
+	name = "Pirat"
+	corpse_outfit = /decl/hierarchy/outfit/corpse/pirat_inf
+
+/decl/hierarchy/outfit/corpse/pirat_inf
+	name = "Dead Pirat"
+	uniform = /obj/item/clothing/under/pirate
+	shoes = /obj/random/shoes/poor
+	gloves = /obj/random/gloves/poor
+	head = /obj/random/hat/poor
+	l_pocket = /obj/item/device/radio/off
+
+/obj/effect/landmark/corpse/pirat/space
+	name = "Space Pirat"
+	corpse_outfit = /decl/hierarchy/outfit/corpse/pirat_inf/space
+
+/decl/hierarchy/outfit/corpse/pirat_inf/space
+	name = "Dead Space Pirat"
+	suit = /obj/item/clothing/suit/space
+	mask = /obj/item/clothing/mask/breath
+	head = /obj/item/clothing/head/helmet/space
+	back = /obj/item/weapon/tank/oxygen
