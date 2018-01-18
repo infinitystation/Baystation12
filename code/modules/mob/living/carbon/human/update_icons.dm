@@ -157,9 +157,6 @@ Please contact me on #coderbus IRC. ~Carn x
 	if (icon_update)
 		if(is_cloaked())
 
-			icon = 'icons/mob/infinity_mob.dmi'
-			icon_state = "cloak_full"
-
 			for(var/entry in list(overlays_standing[R_HAND_LAYER], overlays_standing[L_HAND_LAYER]))
 				if(istype(entry, /image))
 					overlays += entry
@@ -169,6 +166,15 @@ Please contact me on #coderbus IRC. ~Carn x
 
 			if(species.has_floating_eyes)
 				overlays |= species.get_eyes(src)
+
+			if(!species == SPECIES_NABBER())
+
+				icon = 'icons/mob/infinity_mob.dmi'
+				icon_state = "cloak_full"
+
+			else
+				icon = 'icons/mob/infinity_mob_nabber.dmi'
+				icon_state = "cloak_full"
 
 		else
 			icon = stand_icon
