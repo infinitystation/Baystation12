@@ -1,3 +1,6 @@
+//Amount of time in deciseconds to wait before deleting all drawn segments of a projectile.
+#define SEGMENT_DELETION_DELAY 2
+
 /obj/item/projectile
 	name = "projectile"
 	icon = 'icons/obj/projectiles.dmi'
@@ -18,6 +21,7 @@
 	var/atom/original = null // the target clicked (not necessarily where the projectile is headed). Should probably be renamed to 'target' or something.
 	var/turf/starting = null // the projectile's starting turf
 	var/list/permutated = list() // we've passed through these atoms, don't try to hit them again
+	var/list/segments = list() //For hitscan projectiles with tracers.
 
 	var/p_x = 16
 	var/p_y = 16 // the pixel location of the tile that the player clicked. Default is the center
@@ -61,9 +65,20 @@
 	var/matrix/effect_transform			// matrix to rotate and scale projectile effects - putting it here so it doesn't
 										//  have to be recreated multiple times
 
-/obj/item/projectile/New()
+/obj/item/projectile/Initialize()
 	damtype = damage_type //TODO unify these vars properly
+	if(!hitscan)
+		animate_movement = SLIDE_STEPS
+	else animate_movement = NO_STEPS
+	. = ..()
+
+/obj/item/projectile/Destroy()
+	return ..()
+
+/obj/item/projectile/forceMove()
 	..()
+	if(istype(loc, /turf/space/) && istype(loc.loc, /area/space))
+		qdel(src)
 
 //TODO: make it so this is called more reliably, instead of sometimes by bullet_act() and sometimes not
 /obj/item/projectile/proc/on_hit(var/atom/target, var/blocked = 0, var/def_zone = null)
@@ -78,12 +93,16 @@
 	//radiation protection is handled separately from other armour types.
 	L.apply_effect(irradiate, IRRADIATE, L.getarmor(null, "rad"))
 
+
 	return 1
 
 //called when the projectile stops flying because it collided with something
 /obj/item/projectile/proc/on_impact(var/atom/A)
 	impact_effect(effect_transform)		// generate impact effect
-	return
+	if(damage && damage_type == BURN)
+		var/turf/T = get_turf(A)
+		if(T)
+			T.hotspot_expose(700, 5)
 
 //Checks if the projectile is eligible for embedding. Not that it necessarily will.
 /obj/item/projectile/proc/can_embed()
@@ -137,6 +156,8 @@
 	spawn()
 		setup_trajectory(curloc, targloc, x_offset, y_offset, angle_offset) //plot the initial trajectory
 		Process()
+		spawn(SEGMENT_DELETION_DELAY)
+			QDEL_NULL_LIST(segments)
 
 	return 0
 
@@ -321,7 +342,6 @@
 			first_step = 0
 		else if(!bumped)
 			tracer_effect(effect_transform)
-
 		if(!hitscan)
 			sleep(step_delay)	//add delay between movement iterations if it's not a hitscan weapon
 
@@ -363,7 +383,11 @@
 			M.set_transform(T)
 			M.pixel_x = location.pixel_x
 			M.pixel_y = location.pixel_y
-			M.activate()
+			if(!hitscan) //Bullets don't hit their target instantly, so we can't link the deletion of the muzzle flash to the bullet's Destroy()
+				spawn(1)
+					qdel(M)
+			else
+				segments += M
 
 /obj/item/projectile/proc/tracer_effect(var/matrix/M)
 	if(ispath(tracer_type))
@@ -374,9 +398,10 @@
 			P.pixel_x = location.pixel_x
 			P.pixel_y = location.pixel_y
 			if(!hitscan)
-				P.activate(step_delay)	//if not a hitscan projectile, remove after a single delay
+				spawn(step_delay)	//if not a hitscan projectile, remove after a single delay. Do not spawn hitscan projectiles. EVER.
+					qdel(P)
 			else
-				P.activate()
+				segments += P
 
 /obj/item/projectile/proc/impact_effect(var/matrix/M)
 	if(ispath(impact_type))
@@ -386,7 +411,7 @@
 			P.set_transform(M)
 			P.pixel_x = location.pixel_x
 			P.pixel_y = location.pixel_y
-			P.activate()
+			segments += P
 
 //"Tracing" projectile
 /obj/item/projectile/test //Used to see if you can hit them.

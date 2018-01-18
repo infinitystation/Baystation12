@@ -195,8 +195,6 @@
 			return global.ascii_reset;
 		if("ascii_yellow")
 			return global.ascii_yellow;
-		if("ashtray_cache")
-			return global.ashtray_cache;
 		if("asset_cache")
 			return global.asset_cache;
 		if("asset_datums")
@@ -1256,8 +1254,6 @@
 			global.ascii_reset=newval;
 		if("ascii_yellow")
 			global.ascii_yellow=newval;
-		if("ashtray_cache")
-			global.ashtray_cache=newval;
 		if("asset_cache")
 			global.asset_cache=newval;
 		if("asset_datums")

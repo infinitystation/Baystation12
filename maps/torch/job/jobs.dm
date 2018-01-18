@@ -1,8 +1,8 @@
 /datum/map/torch
 	species_to_job_whitelist = list(
-		/datum/species/nabber = list(/datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/chemist,
-			/datum/job/roboticist, /datum/job/cargo_contractor, /datum/job/chef, /datum/job/engineer_contractor, /datum/job/doctor_contractor, /datum/job/bartender),
-		/datum/species/vox = list(/datum/job/cyborg, /datum/job/merchant, /datum/job/stowaway)
+		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/chemist,
+		/datum/job/roboticist, /datum/job/cargo_contractor, /datum/job/chef, /datum/job/engineer_contractor, /datum/job/doctor_contractor, /datum/job/bartender),
+		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/stowaway)
 	)
 
 #define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hop, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos, /datum/job/representative, /datum/job/sea, /datum/job/pathfinder, /datum/job/warden
@@ -11,7 +11,6 @@
 		/datum/species/skrell  = list(HUMAN_ONLY_JOBS),
 		/datum/species/tajaran = list(HUMAN_ONLY_JOBS),
 		/datum/species/machine = list(HUMAN_ONLY_JOBS),
-		/datum/species/resomi  = list(HUMAN_ONLY_JOBS),
 		/datum/species/diona   = list(HUMAN_ONLY_JOBS, /datum/job/guard, /datum/job/officer, /datum/job/detective),	//Other jobs unavailable via branch restrictions,
 	)
 #undef HUMAN_ONLY_JOBS
@@ -26,7 +25,7 @@
 						/datum/job/qm, /datum/job/cargo_tech, /datum/job/cargo_contractor,
 						/datum/job/janitor, /datum/job/chef, /datum/job/bartender,
 						/datum/job/senior_scientist, /datum/job/nt_pilot, /datum/job/scientist, /datum/job/mining, /datum/job/guard, /datum/job/scientist_assistant,
-						/datum/job/cyborg,
+						/datum/job/ai, /datum/job/cyborg,
 						/datum/job/crew, /datum/job/assistant,
 						/datum/job/merchant, /datum/job/stowaway
 						)
@@ -75,15 +74,12 @@
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/XO
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/XO/fleet,
-		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/command/XO/marine
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/XO/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/o5,
 		/datum/mil_rank/fleet/o5,
-		/datum/mil_rank/marine/o5,
-		/datum/mil_rank/fleet/o4,
-		/datum/mil_rank/marine/o4
+		/datum/mil_rank/fleet/o4
 	)
 
 
@@ -171,14 +167,11 @@
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/chief_engineer/fleet
-//		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/command/chief_engineer/marine
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/o3,
 		/datum/mil_rank/fleet/o3,
-		/datum/mil_rank/marine/o3,
-		/datum/mil_rank/fleet/o2,
-		/datum/mil_rank/marine/o2,
+		/datum/mil_rank/fleet/o2
 	)
 
 	access = list(access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
@@ -210,16 +203,13 @@
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/cos
 	allowed_branches = list(
-//		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/cos/fleet,
-		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/command/cos/marine
+		/datum/mil_branch/expeditionary_corps,
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/cos/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/o3,
 		/datum/mil_rank/fleet/o3,
-		/datum/mil_rank/marine/o3,
-		/datum/mil_rank/fleet/o2,
-		/datum/mil_rank/marine/o2,
+		/datum/mil_rank/fleet/o2
 	)
 
 	access = list(access_security, access_brig, access_armory, access_forensics_lockers,
@@ -284,18 +274,14 @@
 	minimal_player_age = 21
 	economic_modifier = 8
 	ideal_character_age = 45
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/sea
+	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/sea/fleet
 	allowed_branches = list(
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/sea/fleet,
-		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/command/sea/marine
+		/datum/mil_branch/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e9,
-		/datum/mil_rank/marine/e9,
 		/datum/mil_rank/fleet/e9_alt1,
-		/datum/mil_rank/marine/e9_alt1,
-		/datum/mil_rank/fleet/e8,
-		/datum/mil_rank/marine/e8_alt
+		/datum/mil_rank/fleet/e8
 	)
 
 
@@ -322,12 +308,10 @@
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/bridgeofficer/fleet
-//		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/command/bridgeofficer/marine
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/o1,
-		/datum/mil_rank/fleet/o1,
-		/datum/mil_rank/marine/o1
+		/datum/mil_rank/fleet/o1
 	)
 
 
@@ -402,18 +386,13 @@
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/engineering/senior_engineer/fleet
-//		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/engineering/senior_engineer/marine
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e8,
-		/datum/mil_rank/marine/e8,
 		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/fleet/e7,
-		/datum/mil_rank/marine/e7,
 		/datum/mil_rank/fleet/e6,
-		/datum/mil_rank/marine/e6,
-		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/marine/e5
+		/datum/mil_rank/fleet/e5
 	)
 
 	access = list(access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
@@ -448,19 +427,14 @@
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer/fleet
-//		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer/marine
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/marine/e5,
 		/datum/mil_rank/fleet/e4,
 		/datum/mil_rank/ec/e4,
-		/datum/mil_rank/marine/e4,
 		/datum/mil_rank/fleet/e3,
-		/datum/mil_rank/marine/e3,
 		/datum/mil_rank/ec/e2,
-		/datum/mil_rank/fleet/e2,
-		/datum/mil_rank/marine/e2
+		/datum/mil_rank/fleet/e2
 	)
 
 	access = list(access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
@@ -514,7 +488,7 @@
 	department = "Engineering"
 	department_flag = ENG
 
-	total_positions = 2
+	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Chief Engineer"
 	selection_color = "#5b4d20"
@@ -540,20 +514,15 @@
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/security/brig_officer
 	allowed_branches = list(
-//		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/security/brig_officer/fleet,
-		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/security/brig_officer/marine
+		/datum/mil_branch/expeditionary_corps,
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/security/brig_officer/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e8,
-		/datum/mil_rank/marine/e8,
 		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/fleet/e7,
-		/datum/mil_rank/marine/e7,
 		/datum/mil_rank/fleet/e6,
-		/datum/mil_rank/marine/e6,
-		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/marine/e5
+		/datum/mil_rank/fleet/e5
 	)
 
 	access = list(access_security, access_brig, access_armory, access_forensics_lockers,
@@ -577,17 +546,13 @@
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech/fleet,
-		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech/marine,
 		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech/civ
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e3,
-		/datum/mil_rank/marine/e3,
 		/datum/mil_rank/ec/e4,
 		/datum/mil_rank/fleet/e4,
-		/datum/mil_rank/marine/e4,
 		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/marine/e5,
 		/datum/mil_rank/civ/marshal
 	)
 
@@ -604,25 +569,20 @@
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "the Chief of Security"
-	alt_titles = list("Military Police")
 	economic_modifier = 4
 	minimal_player_age = 10
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/security/maa
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/security/maa/fleet,
-		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/security/maa/marine
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/security/maa/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e2,
 		/datum/mil_rank/fleet/e2,
-		/datum/mil_rank/marine/e2,
 		/datum/mil_rank/fleet/e3,
-		/datum/mil_rank/marine/e3,
 		/datum/mil_rank/ec/e4,
-		/datum/mil_rank/fleet/e4,
-		/datum/mil_rank/marine/e4
+		/datum/mil_rank/fleet/e4
 	)
 
 
@@ -772,128 +732,6 @@
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
 
-/datum/job/psychiatrist/equip(var/mob/living/carbon/human/H, var/alt_title, var/ask_questions = TRUE)
-	. = ..()
-	if(!.)
-		return
-	if(!ask_questions)
-		return
-
-	var/obj/item/weapon/storage/bible/B = locate(/obj/item/weapon/storage/bible) in H
-	if(!B)
-		return
-
-	spawn(0)
-		var/religion_name = "Christianity"
-		var/new_religion = sanitize(input(H, "You are the crew services officer. Would you like to change your religion? Default is Christianity, in SPACE.", "Name change", religion_name), MAX_NAME_LEN)
-
-		if(!new_religion)
-			new_religion = religion_name
-		switch(lowertext(new_religion))
-			if("christianity")
-				B.name = pick("The Holy Bible","The Dead Sea Scrolls")
-			if("satanism")
-				B.name = "The Unholy Bible"
-			if("cthulu")
-				B.name = "The Necronomicon"
-			if("islam")
-				B.name = "Quran"
-			if("scientology")
-				B.name = pick("The Biography of L. Ron Hubbard","Dianetics")
-			if("chaos")
-				B.name = "The Book of Lorgar"
-			if("imperium")
-				B.name = "Uplifting Primer"
-			if("toolboxia")
-				B.name = "Toolbox Manifesto"
-			if("homosexuality")
-				B.name = "Guys Gone Wild"
-			//if("lol", "wtf", "gay", "penis", "ass", "poo", "badmin", "shitmin", "deadmin", "cock", "cocks")
-			//	B.name = pick("Woodys Got Wood: The Aftermath", "War of the Cocks", "Sweet Bro and Hella Jef: Expanded Edition")
-			//	H.setBrainLoss(100) // starts off retarded as fuck
-			if("science")
-				B.name = pick("Principle of Relativity", "Quantum Enigma: Physics Encounters Consciousness", "Programming the Universe", "Quantum Physics and Theology", "String Theory for Dummies", "How To: Build Your Own Warp Drive", "The Mysteries of Bluespace", "Playing God: Collector's Edition")
-			else
-				B.name = "The Holy Book of [new_religion]"
-		feedback_set_details("religion_name","[new_religion]")
-
-	spawn(1)
-		var/deity_name = "Space Jesus"
-		var/new_deity = sanitize(input(H, "Would you like to change your deity? Default is Space Jesus.", "Name change", deity_name), MAX_NAME_LEN)
-
-		if((length(new_deity) == 0) || (new_deity == "Space Jesus") )
-			new_deity = deity_name
-		B.deity_name = new_deity
-
-		var/accepted = 0
-		var/outoftime = 0
-		spawn(200) // 20 seconds to choose
-			outoftime = 1
-		var/new_book_style = "Bible"
-
-		while(!accepted)
-			if(!B) break // prevents possible runtime errors
-			new_book_style = input(H,"Which bible style would you like?") in list("Bible", "Koran", "Scrapbook", "Creeper", "White Bible", "Holy Light", "Athiest", "Tome", "The King in Yellow", "Ithaqua", "Scientology", "the bible melts", "Necronomicon")
-			switch(new_book_style)
-				if("Koran")
-					B.icon_state = "koran"
-					B.item_state = "koran"
-				if("Scrapbook")
-					B.icon_state = "scrapbook"
-					B.item_state = "scrapbook"
-				if("Creeper")
-					B.icon_state = "creeper"
-					B.item_state = "syringe_kit"
-				if("White Bible")
-					B.icon_state = "white"
-					B.item_state = "syringe_kit"
-				if("Holy Light")
-					B.icon_state = "holylight"
-					B.item_state = "syringe_kit"
-				if("Athiest")
-					B.icon_state = "athiest"
-					B.item_state = "syringe_kit"
-				if("Tome")
-					B.icon_state = "tome"
-					B.item_state = "syringe_kit"
-				if("The King in Yellow")
-					B.icon_state = "kingyellow"
-					B.item_state = "kingyellow"
-				if("Ithaqua")
-					B.icon_state = "ithaqua"
-					B.item_state = "ithaqua"
-				if("Scientology")
-					B.icon_state = "scientology"
-					B.item_state = "scientology"
-				if("the bible melts")
-					B.icon_state = "melted"
-					B.item_state = "melted"
-				if("Necronomicon")
-					B.icon_state = "necronomicon"
-					B.item_state = "necronomicon"
-				else
-					B.icon_state = "bible"
-					B.item_state = "bible"
-
-			H.update_inv_l_hand() // so that it updates the bible's item_state in his hand
-
-			switch(input(H,"Look at your bible - is this what you want?") in list("Yes","No"))
-				if("Yes")
-					accepted = 1
-				if("No")
-					if(outoftime)
-						to_chat(H, "Welp, out of time, buddy. You're stuck. Next time choose faster.")
-						accepted = 1
-
-		if(ticker)
-			ticker.Bible_icon_state = B.icon_state
-			ticker.Bible_item_state = B.item_state
-			ticker.Bible_name = B.name
-			ticker.Bible_deity_name = B.deity_name
-		feedback_set_details("religion_deity","[new_deity]")
-		feedback_set_details("religion_book","[new_book_style]")
-	return 1
-
 /datum/job/qm
 	title = "Deck Officer"
 	department = "Supply"
@@ -908,23 +746,16 @@
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/supply/deckofficer/fleet
-//		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/supply/deckofficer/marine
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/o1,
 		/datum/mil_rank/fleet/o1,
-		/datum/mil_rank/marine/o1,
 		/datum/mil_rank/fleet/o2,
-		/datum/mil_rank/marine/o2,
 		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/marine/e5,
 		/datum/mil_rank/fleet/e6,
-		/datum/mil_rank/marine/e6,
 		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/fleet/e7,
-		/datum/mil_rank/marine/e7,
-		/datum/mil_rank/fleet/e8,
-		/datum/mil_rank/marine/e8
+		/datum/mil_rank/fleet/e8
 	)
 
 	access = list(access_maint_tunnels, access_heads, access_emergency_storage, access_tech_storage,  access_cargo, access_guppy_helm,
@@ -946,17 +777,13 @@
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/supply/tech/fleet
-//		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/supply/tech/marine
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e2,
 		/datum/mil_rank/ec/e2,
-		/datum/mil_rank/marine/e2,
 		/datum/mil_rank/fleet/e3,
-		/datum/mil_rank/marine/e3,
 		/datum/mil_rank/fleet/e4,
-		/datum/mil_rank/ec/e4,
-		/datum/mil_rank/marine/e4
+		/datum/mil_rank/ec/e4
 	)
 
 	access = list(access_maint_tunnels, access_emergency_storage, access_cargo, access_guppy_helm,
@@ -999,18 +826,14 @@
 		/datum/mil_branch/civilian,
 		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/torch/crew/service/janitor/ec,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/service/janitor/fleet
-//		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/service/janitor/marine
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/contractor,
 		/datum/mil_rank/fleet/e2,
 		/datum/mil_rank/ec/e2,
-		/datum/mil_rank/marine/e2,
 		/datum/mil_rank/fleet/e3,
-		/datum/mil_rank/marine/e3,
 		/datum/mil_rank/fleet/e4,
-		/datum/mil_rank/ec/e4,
-		/datum/mil_rank/marine/e4
+		/datum/mil_rank/ec/e4
 	)
 
 	access = list(access_maint_tunnels, access_emergency_storage, access_janitor, access_solgov_crew)
@@ -1032,18 +855,14 @@
 		/datum/mil_branch/civilian,
 		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/torch/crew/service/cook/ec,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/service/cook/fleet
-//		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/service/cook/marine
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/contractor,
 		/datum/mil_rank/ec/e2,
 		/datum/mil_rank/fleet/e2,
-		/datum/mil_rank/marine/e2,
 		/datum/mil_rank/fleet/e3,
-		/datum/mil_rank/marine/e3,
 		/datum/mil_rank/ec/e4,
-		/datum/mil_rank/fleet/e4,
-		/datum/mil_rank/marine/e4
+		/datum/mil_rank/fleet/e4
 	)
 
 	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_solgov_crew)
@@ -1081,17 +900,13 @@
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/service/crewman/fleet
-//		/datum/mil_branch/marine_corps = /decl/hierarchy/outfit/job/torch/crew/service/crewman/marine
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e2,
 		/datum/mil_rank/fleet/e2,
-		/datum/mil_rank/marine/e2,
 		/datum/mil_rank/fleet/e3,
-		/datum/mil_rank/marine/e3,
 		/datum/mil_rank/ec/e4,
-		/datum/mil_rank/fleet/e4,
-		/datum/mil_rank/marine/e4
+		/datum/mil_rank/fleet/e4
 	)
 
 
@@ -1286,7 +1101,7 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	latejoin_at_spawnpoints = 1
-	access = list(access_merchant, access_merchant_leader)
+	access = list(access_merchant)
 	announced = FALSE
 
 /datum/job/stowaway
