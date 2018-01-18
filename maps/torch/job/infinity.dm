@@ -162,21 +162,29 @@
 
 /obj/effect/landmark/corpse/crewman
 	name = "Unknown"
-	corpseradio = /obj/item/device/radio/headset
-	corpseuniform = /obj/item/clothing/under/solgov/utility/fleet
-	corpseback = /obj/item/weapon/storage/backpack/satchel/leather/navy
-	corpsehelmet = /obj/item/clothing/head/beret/solgov/fleet
-	corpseshoes = /obj/item/clothing/shoes/dutyboots
-	corpseid = 1
-	corpseidjob = "Crewman"
-	corpseidaccess = 101
+	corpse_outfit = /decl/hierarchy/outfit/corpse/crewman
+
+/decl/hierarchy/outfit/corpse/crewman
+	name = "Dead Unknown"
+//	radio = /obj/item/device/radio/headset
+	uniform = /obj/item/clothing/under/solgov/utility/fleet
+	back = /obj/item/weapon/storage/backpack/satchel/leather/navy
+	head = /obj/item/clothing/head/beret/solgov/fleet
+	shoes = /obj/item/clothing/shoes/dutyboots
+	id = 1
+//	idjob = "Crewman"
+//	idaccess = 101
 
 /obj/effect/landmark/corpse/bridgeofficer/scg
 	name = "Unknown"
-	corpseradio = /obj/item/device/radio/headset/headset_com
-	corpseuniform = /obj/item/clothing/under/solgov/utility/fleet/command
-	corpsehelmet = /obj/item/clothing/head/beret/solgov/fleet/command
-	corpseshoes = /obj/item/clothing/shoes/dutyboots
-	corpseback = /obj/item/weapon/storage/backpack/satchel/pocketbook/navy
-	corpseidjob = "Bridge Officer"
-	corpseidaccess = 102
+	corpse_outfit = /decl/hierarchy/outfit/corpse/bridgeofficer/scg
+
+/decl/hierarchy/outfit/corpse/bridgeofficer/scg
+	name = "Dead Unknown"
+//	radio = /obj/item/device/radio/headset/headset_com
+	uniform = /obj/item/clothing/under/solgov/utility/fleet/command
+	head = /obj/item/clothing/head/beret/solgov/fleet/command
+	shoes = /obj/item/clothing/shoes/dutyboots
+	back = /obj/item/weapon/storage/backpack/satchel/pocketbook/navy
+//	idjob = "Bridge Officer"
+//	idaccess = 102

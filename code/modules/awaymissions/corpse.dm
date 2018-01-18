@@ -75,24 +75,31 @@
 
 /obj/effect/landmark/corpse/pirat
 	name = "Pirat"
-	corpseuniform = /obj/item/clothing/under/pirate
-	corpseshoes = /obj/random/shoes/poor
-	corpsegloves = /obj/random/gloves/poor
-	corpsehelmet = /obj/random/hat/poor
-	corpsepocket1 = /obj/item/device/radio/off
-	corpseidjob = "Pirat"
-	corpseidaccess = "Syndicate"
+	corpse_outfit = /decl/hierarchy/outfit/corpse/pirat
+
+/decl/hierarchy/outfit/corpse/pirat
+	name = "Dead Pirat"
+	uniform = /obj/item/clothing/under/pirate
+	shoes = /obj/random/shoes/poor
+	gloves = /obj/random/gloves/poor
+	head = /obj/random/hat/poor
+	l_pocket = /obj/item/device/radio/off
+//	idjob = "Pirat"
+//	idaccess = "Syndicate"
 
 
 
 /obj/effect/landmark/corpse/pirat/space
 	name = "Space Pirat"
-	corpsesuit = /obj/item/clothing/suit/space
-	corpsemask = /obj/item/clothing/mask/breath
-	corpsehelmet = /obj/item/clothing/head/helmet/space
-	corpseback = /obj/item/weapon/tank/oxygen
-	corpseid = 1
+	corpse_outfit = /decl/hierarchy/outfit/corpse/pirat/space
 
+/decl/hierarchy/outfit/corpse/pirat/space
+	name = "Dead Space Pirat"
+	suit = /obj/item/clothing/suit/space
+	mask = /obj/item/clothing/mask/breath
+	head = /obj/item/clothing/head/helmet/space
+	back = /obj/item/weapon/tank/oxygen
+	id = 1
 
 
 ///////////Civilians//////////////////////
