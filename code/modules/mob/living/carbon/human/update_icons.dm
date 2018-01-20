@@ -167,7 +167,7 @@ Please contact me on #coderbus IRC. ~Carn x
 			if(species.has_floating_eyes)
 				overlays |= species.get_eyes(src)
 
-			if(!species == SPECIES_NABBER())
+			if(src.species != SPECIES_NABBER())
 
 				icon = 'icons/mob/infinity_mob.dmi'
 				icon_state = "cloak_full"
