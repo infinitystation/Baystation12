@@ -1,26 +1,3 @@
-sosiskoed - giant armoured serpentid
-kirill1243 - giant armoured serpentid
-sarumyn - giant armoured serpentid
-diesiege - giant armoured serpentid
-rex127 - giant armoured serpentid
-portos - giant armoured serpentid
-sosiskoed - vox
-wolforbykot - vox
-vankoska - diona
-sosiskoed - diona
-maxi2000 - diona
-bartstarter - diona
-inubashirimomiji - diona
-knayu - skrell
-lukecage - skrell
-hodovoy - skrell
-kirill1243 - skrell
-vankoska - skrell
-inubashirimomiji - skrell	
-themaybat - skrell
-twinindifferent - skrell
-hellpony - skrell
-salyvador - skrell
 rucat - machine
 kosteg - machine
 netreson - machine
@@ -32,9 +9,33 @@ quardbreak - machine
 redknighthero - machine
 wheatley2013 - machine
 kotovsyndrome - machine
+knayu - skrell
+lukecage - skrell
+hodovoy - skrell
+kirill1243 - skrell
+vankoska - skrell
+inubashirimomiji - skrell	
+themaybat - skrell
+twinindifferent - skrell
+hellpony - skrell
+salyvador - skrell
+sosiskoed - giant armoured serpentid
+kirill1243 - giant armoured serpentid
+sarumyn - giant armoured serpentid
+diesiege - giant armoured serpentid
+rex127 - giant armoured serpentid
+portos - giant armoured serpentid
 twinindifferent - resomi
 wheatley2013 - resomi
 themaybat - resomi
 netreson - resomi
 kirill1243 - resomi
 cre77 - resomi
+vankoska - diona
+sosiskoed - diona
+maxi2000 - diona
+bartstarter - diona
+inubashirimomiji - diona
+sosiskoed - vox
+wolforbykot - vox
+kotovsyndrome - unathi
