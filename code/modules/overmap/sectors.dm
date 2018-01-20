@@ -55,12 +55,15 @@ var/list/points_of_interest = list()
 	if(base)
 		GLOB.using_map.station_levels |= map_z
 		GLOB.using_map.contact_levels |= map_z
-	
+
 
 	//handle automatic waypoints that spawned before us
 	for(var/obj/effect/shuttle_landmark/automatic/L in world)
 		if(L.z in map_z)
 			L.add_to_sector(src, 1)
+
+/obj/effect/overmap/proc/get_overmap_munition_target(var/obj/effect/overmap_munition/munition)
+	return locate(rand(50,world.maxx-50),rand(50,world.maxy-50),pick(map_z))
 
 	//find shuttle waypoints
 	var/list/found_waypoints = list()
@@ -128,3 +131,9 @@ var/list/points_of_interest = list()
 
 	testing("Overmap build complete.")
 	return 1
+
+/obj/effect/overmap/proc/projectile_left_map_edge(var/obj/item/projectile/ship_munition/proj)
+	qdel(proj)
+
+/obj/effect/overmap/proc/get_fore_dir()
+	return NORTH
