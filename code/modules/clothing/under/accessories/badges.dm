@@ -76,7 +76,7 @@
 			var/obj/item/device/pda/pda = O
 			id_card = pda.id
 
-		if(access_sec_guard in id_card.access || emagged)
+		if(access_research in id_card.access || emagged)
 			to_chat(user, "You imprint your ID details onto the badge.")
 			set_name(user.real_name)
 		else
@@ -128,7 +128,7 @@
 	slot_flags = SLOT_BELT | SLOT_TIE
 	slot = ACCESSORY_SLOT_INSIGNIA
 	badge_string = "Colonial Marshal Bureau"
-	
+
 /obj/item/clothing/accessory/badge/press
 	name = "press badge"
 	desc = "A leather-backed plastic badge displaying that the owner is certified press personnel."
