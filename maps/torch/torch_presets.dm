@@ -8,6 +8,7 @@ var/const/NETWORK_POD         = "General Utility Pod"
 var/const/NETWORK_SECOND_DECK = "Second Deck"
 var/const/NETWORK_SUPPLY      = "Supply"
 var/const/NETWORK_HANGAR      = "Hangar"
+var/const/NETWORK_MISSILE     = "Missile Pod"
 var/const/NETWORK_EXPLO       = "Exploration"
 var/const/NETWORK_THIRD_DECK  = "Third Deck"
 
@@ -42,6 +43,7 @@ var/const/NETWORK_THIRD_DECK  = "Third Deck"
 		NETWORK_ENGINEERING,
 		NETWORK_ENGINE,
 		NETWORK_MEDICAL,
+		NETWORK_MISSILE,
 		NETWORK_RESEARCH,
 		NETWORK_SECURITY,
 		NETWORK_SUPPLY,
@@ -108,6 +110,9 @@ var/const/NETWORK_THIRD_DECK  = "Third Deck"
 
 /obj/machinery/camera/network/engine
 	network = list(NETWORK_ENGINE)
+
+/obj/machinery/camera/network/missile
+	network = list(NETWORK_MISSILE)
 
 /obj/machinery/camera/network/engineering_outpost
 	network = list(NETWORK_ENGINEERING_OUTPOST)

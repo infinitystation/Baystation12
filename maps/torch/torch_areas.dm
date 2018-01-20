@@ -1259,6 +1259,10 @@
 	name = "\improper Research Break Room"
 	icon_state = "researchbreak"
 
+/area/rnd/pilot
+	name = "\improper NanoTrasen Pilot Office"
+	icon_state = "researchbreak"
+
 /area/alien
 	name = "\improper Alien base"
 	icon_state = "yellow"

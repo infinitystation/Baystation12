@@ -17,6 +17,10 @@
 	var/thrust_limit = 1 //global thrust limit for all engines, 0..1
 	var/triggers_events = 1
 
+	var/list/weapons = list() // Linked weapons.
+	var/last_weapon_target = "center of mass"
+	var/list/targets = list() // Points that can be targetted.
+
 /obj/effect/overmap/ship/Initialize()
 	. = ..()
 	for(var/datum/ship_engine/E in ship_engines)
@@ -36,6 +40,18 @@
 		if (N.z in map_z)
 			N.linked = src
 			//testing("Navigation console at level [N.z] linked to overmap object '[name]'.")
+	for(var/obj/machinery/power/ship_weapon/W in SSmachines.machinery)
+		if (W.z in map_z)
+			W.linked = src
+			weapons |= W
+			//testing("Weapon at level [W.z] linked to overmap object '[name]'.")
+	for(var/obj/machinery/computer/weapons/W in SSmachines.machinery)
+		if (W.z in map_z)
+			W.linked = src
+			//testing("Fire control console at level [W.z] linked to overmap object '[name]'.")
+	for(var/obj/effect/landmark/overmap_target/T in landmarks_list)
+		if(T.z in map_z)
+			targets |= T
 	START_PROCESSING(SSobj, src)
 
 /obj/effect/overmap/ship/relaymove(mob/user, direction)
@@ -174,3 +190,21 @@
 	if(istype(A,/turf/unsimulated/map/edge))
 		handle_wraparound()
 	..()
+
+/obj/effect/overmap/ship/projectile_left_map_edge(var/obj/item/projectile/ship_munition/proj)
+	if(proj && proj.fired_by)
+		var/obj/effect/overmap_munition/munition = new (get_step(loc, dir), proj)
+		munition.fired_by = proj.fired_by
+		munition.fired_at = proj.fired_at
+		munition.set_dir(dir)
+		if(munition.loc == loc)
+			qdel(munition)
+		else
+			walk(munition, dir, 5)
+	..()
+
+/obj/effect/overmap/ship/get_overmap_munition_target(var/obj/effect/overmap_munition/munition)
+	return get_turf(pick(targets))
+
+/obj/effect/overmap/ship/get_fore_dir()
+	return fore_dir

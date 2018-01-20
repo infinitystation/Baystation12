@@ -109,6 +109,10 @@
 	name = T_BOARD("helm control console")
 	build_path = /obj/machinery/computer/helm
 
+/obj/item/weapon/circuitboard/ship_weapon
+	name = T_BOARD("weapon control console")
+	build_path = /obj/machinery/computer/weapons
+
 /obj/item/weapon/circuitboard/nav
 	name = T_BOARD("navigation console")
 	build_path = /obj/machinery/computer/navigation
