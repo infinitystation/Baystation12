@@ -7,6 +7,7 @@
 		slot_r_hand_str = "helmet",
 		)
 	valid_accessory_slots = list(ACCESSORY_SLOT_HELM_C)
+	slot_flags = SLOT_HEAD|SLOT_BACK
 	restricted_accessory_slots = list(ACCESSORY_SLOT_HELM_C)
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	body_parts_covered = HEAD
