@@ -1,5 +1,5 @@
 /obj/machinery/power/ship_weapon/maser
-	name = "MRSL-42 'Chaser"
+	name = "MRSL-42 'Chaser'"
 	desc = " осмический Ћазер —редней ƒальности (Medium-Ranged Space Laser) 'Chaser' является одним из передовых лазерных корабельных орудий в своЄм классе. »спользуется для пробития энергетических щитов и длительного обстрела вражеских судов. ћалоэффективен против бронированных стен."
 	projectile_type = /obj/item/projectile/ship_munition/energy
 	use_power = 1

@@ -2,7 +2,7 @@
 #include "../../away/mining/mining_areas.dm"
 
 /obj/effect/overmap/sector/lost_supply_base
-	name = "Abandoned supply base"
+	name = "supply station"
 	desc = "This looks like abandoned and heavy damaged supply station."
 	icon_state = "object"
 	known = 0
@@ -13,6 +13,14 @@
 		"nav_lost_supply_base_3",
 		"nav_lost_supply_base_antag"
 	)
+
+/datum/map_template/ruin/away_site/lost_supply_base_inf
+	name = "Lost Supply Base"
+	id = "awaysite_lost_supply_base"
+	description = "An abandoned supply base."
+	prefix = "maps/away-inf/"
+	suffixes = list("lost_supply_base/lost_supply_base.dmm")
+	cost = 1
 
 /obj/effect/shuttle_landmark/nav_lost_supply_base/nav1
 	name = "Abandoned Supply Base Navpoint #1"

@@ -12,7 +12,7 @@
 	icon  ='icons/obj/ship_misc.dmi'
 	fire_sound = 'sound/effects/torpedo.ogg'
 	penetrating = 2
-	kill_count = 256
+	kill_count = 400
 	damage = 200
 
 /obj/item/projectile/ship_munition/torpedo/on_hit(var/atom/target, var/blocked = 0)

@@ -13,6 +13,7 @@
 		"nav_yacht_1",
 		"nav_yacht_2",
 		"nav_yacht_3",
+		"nav_yacht_aquila",
 		"nav_yacht_antag"
 	)
 
@@ -34,6 +35,10 @@
 /obj/effect/shuttle_landmark/nav_yacht/nav3
 	name = "Small Yacht Navpoint #3"
 	landmark_tag = "nav_yacht_3"
+
+/obj/effect/shuttle_landmark/nav_yacht/aquila
+	name = "Small Yacht Navpoint Aquila Dock"
+	landmark_tag = "nav_yacht_aquila"
 
 /obj/effect/shuttle_landmark/nav_yacht/nav4
 	name = "Small Yacht Navpoint #4"

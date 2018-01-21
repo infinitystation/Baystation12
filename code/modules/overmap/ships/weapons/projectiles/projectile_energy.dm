@@ -9,7 +9,7 @@
 	damage = 500 // pew
 	penetrating = 1
 	armor_penetration = 90
-	kill_count = 256
+	kill_count = 400
 
 	on_hit(var/atom/target, var/blocked = 0)
 		explosion(target, -1, 0, 1, 2, 0)

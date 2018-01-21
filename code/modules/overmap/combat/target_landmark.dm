@@ -141,3 +141,43 @@ obj/effect/landmark/overmap_target/torch/third/fussion
 /obj/effect/landmark/overmap_target/torch/fifth/dockB
 	name = "dock ports B"
 	difficulty = 40
+
+					/////////
+					//Yacht//
+					/////////
+
+/obj/effect/landmark/overmap_target/yacht/bridge
+	name = "bridge"
+	difficulty = 60
+
+/obj/effect/landmark/overmap_target/yacht/engine
+	name = "engine"
+	difficulty = 80
+
+/obj/effect/landmark/overmap_target/yacht/superstructure
+	name = "center of mass"
+	difficulty = 10
+
+/obj/effect/landmark/overmap_target/yacht/solars_right
+	name = "solar arrays right"
+	difficulty = 50
+
+/obj/effect/landmark/overmap_target/yacht/solars_left
+	name = "solar arrays left"
+	difficulty = 50
+
+/obj/effect/landmark/overmap_target/yacht/aft_starboard
+	name = "aft starboard hull"
+	difficulty = 40
+
+/obj/effect/landmark/overmap_target/yacht/fore_starboard
+	name = "fore starboard hull"
+	difficulty = 30
+
+/obj/effect/landmark/overmap_target/yacht/aft_port
+	name = "aft port hull"
+	difficulty = 30
+
+/obj/effect/landmark/overmap_target/yacht/fore_port
+	name = "fore port hull"
+	difficulty = 30

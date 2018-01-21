@@ -5,6 +5,7 @@
 	color = "#00FFFF"
 	vessel_mass = 60
 	default_delay = 3 MINUTES
+	triggers_events = 0
 	speed_mod = 0.1 MINUTE
 	burn_delay = 10 SECONDS
 
@@ -15,7 +16,7 @@
 		GLOB.using_map.area_purity_test_exempt_areas += A.type
 	..()
 
-/datum/map_template/ruin/away_site/bearcat_wreck
+/datum/map_template/ruin/away_site/bearcat_wreck_inf
 	name = "Bearcat Wreck Infinity"
 	id = "awaysite_bearcat_wreck"
 	description = "A wrecked light freighter."
