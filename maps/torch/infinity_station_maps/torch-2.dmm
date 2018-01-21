@@ -1776,7 +1776,7 @@
 "Ih" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/obj/machinery/bookbinder{pixel_y = 0},/turf/simulated/floor/wood,/area/crew_quarters/lounge)
 "Ii" = (/obj/machinery/newscaster{pixel_y = 32},/turf/simulated/floor/wood,/area/crew_quarters/lounge)
 "Ij" = (/obj/machinery/light/small{dir = 1},/turf/simulated/floor/wood,/area/crew_quarters/lounge)
-"Ik" = (/obj/structure/bookcase,/obj/item/weapon/book/manual/anomaly_spectroscopy,/obj/item/weapon/book/manual/anomaly_testing,/obj/item/weapon/book/manual/materials_chemistry_analysis,/obj/item/weapon/book/manual/stasis,/turf/simulated/floor/wood,/area/crew_quarters/lounge)
+"Ik" = (/obj/structure/bookcase,/obj/item/weapon/book/manual/anomaly_spectroscopy,/obj/item/weapon/book/manual/anomaly_testing,/obj/item/weapon/book/manual/materials_chemistry_analysis,/obj/item/weapon/book/manual/stasis,/obj/item/weapon/book/manual/atmospipes,/obj/item/weapon/book/manual/engineering_construction,/obj/item/weapon/book/manual/engineering_guide,/obj/item/weapon/book/manual/engineering_hacking,/turf/simulated/floor/wood,/area/crew_quarters/lounge)
 "Il" = (/obj/item/frame/apc,/turf/simulated/floor/plating,/area/vacant/cabin)
 "Im" = (/obj/effect/floor_decal/corner/lime,/obj/random/trash,/turf/simulated/floor/tiled,/area/vacant/cabin)
 "In" = (/obj/structure/bed/chair/office/light{dir = 8},/turf/simulated/floor/plating,/area/vacant/cabin)
