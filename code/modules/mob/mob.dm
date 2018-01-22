@@ -31,6 +31,7 @@
 	toxin = null
 	fire = null
 	bodytemp = null
+	minsbodytemp = null
 	healths = null
 	throw_icon = null
 	nutrition_icon = null
@@ -1010,6 +1011,35 @@ mob/proc/yank_out_object()
 		to_chat(usr, "You are now not facing anything.")
 	else
 		to_chat(usr, "You are now facing [dir2text(facing_dir)].")
+
+/mob/proc/air_temperature(var/obj/screen/A, var/mob/user)
+
+	var/air_contents = A.return_air()
+	if(!air_contents)
+		to_chat(user, "<span class='warning'>It's very cold... oh, shit.</span>")
+		return 0
+
+	var/list/result = atmosanalyzer_scan_lesser(A, air_contents)
+	print_atmos_analysis_lesser(user, result)
+	return 1
+
+/mob/proc/print_atmos_analysis_lesser(user, var/list/result)
+	for(var/line in result)
+		to_chat(user, "<span class='notice'>[line]</span>")
+
+/mob/proc/atmosanalyzer_scan_lesser(var/atom/target, var/datum/gas_mixture/mixture)
+	. = list()
+	. += "<span class='notice'>Results of the analysis of \the [target]:</span>"
+	if(!mixture)
+		mixture = target.return_air()
+
+	if(mixture)
+		var/total_moles = mixture.total_moles
+		if (total_moles>0)
+			for(var/mix in mixture.gas)
+			. += "<span class='notice'>Temperature: [round(mixture.temperature-T0C)]&deg;C / [round(mixture.temperature)]K</span>"
+			return
+	. += "<span class='warning'>\The [target] has no gases!</span>"
 
 /mob/proc/set_face_dir(var/newdir)
 	if(!isnull(facing_dir) && newdir == facing_dir)

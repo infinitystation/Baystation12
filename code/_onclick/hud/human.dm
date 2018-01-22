@@ -231,6 +231,13 @@
 		mymob.bodytemp.screen_loc = ui_temp
 		hud_elements |= mymob.bodytemp
 
+		mymob.minsbodytemp = new /obj/screen()
+		mymob.minsbodytemp.icon = 'icons/mob/screen/status.dmi'
+		mymob.minsbodytemp.icon_state = "mintemp0"
+		mymob.minsbodytemp.name = "air_temperature"
+		mymob.minsbodytemp.screen_loc = ui_mintemp
+		hud_elements |= mymob.minsbodytemp
+
 	if(target.isSynthetic())
 		target.cells = new /obj/screen()
 		target.cells.icon = 'icons/mob/screen1_robot.dmi'

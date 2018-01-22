@@ -233,6 +233,18 @@
 			else
 				src.bodytemp.icon_state = "temp-2"
 
+		switch(src.bodytemperature) //310.055 optimal body temp
+			if(320 to INFINITY)
+				src.bodytemp.icon_state = "mintemp2"
+			if(315 to 320)
+				src.bodytemp.icon_state = "mintemp1"
+			if(305 to 315)
+				src.bodytemp.icon_state = "mintemp0"
+			if(205 to 302)
+				src.bodytemp.icon_state = "mintemp-1"
+			else
+				src.bodytemp.icon_state = "mintemp-2"
+
 //Oxygen and fire does nothing yet!!
 //	if (src.oxygen) src.oxygen.icon_state = "oxy[src.oxygen_alert ? 1 : 0]"
 //	if (src.fire) src.fire.icon_state = "fire[src.fire_alert ? 1 : 0]"
