@@ -69,8 +69,9 @@
 
 	msg = sanitize(msg)
 	var/rawmsg = msg
-	if(holder)
-		msg = emoji_parse(msg)
+	msg = emoji_parse(msg)
+//	if(holder)
+//		msg = emoji_parse(msg)
 
 	var/datum/client_lite/receiver_lite = client_repository.get_lite_client(C)
 	var/datum/client_lite/sender_lite = client_repository.get_lite_client(src)
