@@ -844,7 +844,7 @@
 				if(middle_temp <= 253)
 					middle_temp = middle_temp += 10
 				if (loc_temp >= middle_temp)
-					minitemp_step = (getSpeciesOrSynthTemp(HEAT_LEVEL_1) - middle_temp)/7
+					minitemp_step = (getSpeciesOrSynthTemp(HEAT_LEVEL_1) - middle_temp)/6
 
 					if (loc_temp >= getSpeciesOrSynthTemp(HEAT_LEVEL_1))
 						minsbodytemp.icon_state = "mintemp5"
@@ -860,17 +860,17 @@
 						minsbodytemp.icon_state = "mintemp0"
 
 				else if (loc_temp <= middle_temp)
-					minitemp_step = (middle_temp - getSpeciesOrSynthTemp(COLD_LEVEL_1))/7
+					minitemp_step = (middle_temp - getSpeciesOrSynthTemp(COLD_LEVEL_1))/6
 
 					if (loc_temp <= getSpeciesOrSynthTemp(COLD_LEVEL_1))
 						minsbodytemp.icon_state = "mintemp-5"
-					else if (loc_temp <= middle_temp - minitemp_step*5)
-						minsbodytemp.icon_state = "mintemp-4"
 					else if (loc_temp <= middle_temp - minitemp_step*4)
-						minsbodytemp.icon_state = "mintemp-3"
+						minsbodytemp.icon_state = "mintemp-4"
 					else if (loc_temp <= middle_temp - minitemp_step*3)
-						minsbodytemp.icon_state = "mintemp-2"
+						minsbodytemp.icon_state = "mintemp-3"
 					else if (loc_temp <= middle_temp - minitemp_step*2)
+						minsbodytemp.icon_state = "mintemp-2"
+					else if (loc_temp <= middle_temp - minitemp_step*1)
 						minsbodytemp.icon_state = "mintemp-1"
 					else
 						minsbodytemp.icon_state = "mintemp0"
