@@ -364,7 +364,7 @@ BLIND     // can't see anything
 	icon = 'icons/obj/clothing/hats.dmi'
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/items/lefthand_hats.dmi',
-		slot_r_hand_str = 'icons/mob/items/righthand_hats.dmi',
+		slot_r_hand_str = 'icons/mob/items/righthand_hats.dmi'
 		)
 	body_parts_covered = HEAD
 	slot_flags = SLOT_HEAD
@@ -377,7 +377,7 @@ BLIND     // can't see anything
 
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/head.dmi',
-		SPECIES_RESOMI = 'icons/mob/species/resomi/head.dmi'
+		SPECIES_RESOMI = 'icons/mob/species/resomi/head.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
 		)
 	blood_overlay_type = "helmetblood"
@@ -652,7 +652,7 @@ BLIND     // can't see anything
 
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/suit.dmi',
-		SPECIES_RESOMI = 'icons/mob/species/resomi/suit.dmi'
+		SPECIES_RESOMI = 'icons/mob/species/resomi/suit.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/suit.dmi'
 		)
 
@@ -703,7 +703,7 @@ BLIND     // can't see anything
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/uniform.dmi',
 		SPECIES_NABBER = 'icons/mob/species/nabber/uniform.dmi',
-		SPECIES_RESOMI = 'icons/mob/species/resomi/uniform.dmi'
+		SPECIES_RESOMI = 'icons/mob/species/resomi/uniform.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/uniform.dmi'
 		)
 

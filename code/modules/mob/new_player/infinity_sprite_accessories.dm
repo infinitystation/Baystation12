@@ -61,17 +61,11 @@
 	icon_state = "waterfall"
 
 //Unath
-
+/*
 /datum/sprite_accessory/hair/infinity/una_horns_short
 	name = "Horns - Short"
 	icon_state = "horns_short"
 	species_allowed = list(SPECIES_UNATHI)
-/*
-/datum/sprite_accessory/hair/infinity/una_horns_simple
-	name = "Horns - Simple"
-	icon_state = "horns_simple"
-	species_allowed = list(SPECIES_UNATHI)
-*/
 
 /datum/sprite_accessory/hair/infinity/una_horns_curled
 	name = "Horns - Curled"
@@ -103,3 +97,4 @@
 	icon = 'icons/mob/infinity_mob_clothing/hairs.dmi'
 	icon_state = "snout_sharplight"
 	species_allowed = list(SPECIES_UNATHI)
+*/

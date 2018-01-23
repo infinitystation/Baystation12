@@ -874,7 +874,7 @@
 	species_allowed = list(SPECIES_UNATHI)
 
 /datum/sprite_accessory/hair/una_horns
-	name = "Horns - Simple"
+	name = "Unathi Horns"
 	icon_state = "soghun_horns"
 	species_allowed = list(SPECIES_UNATHI)
 
