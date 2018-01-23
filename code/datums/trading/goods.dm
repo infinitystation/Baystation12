@@ -40,7 +40,8 @@
 								/obj/item/weapon/deck                 = TRADER_SUBTYPES_ONLY,
 								/obj/item/weapon/pack                 = TRADER_SUBTYPES_ONLY,
 								/obj/item/weapon/dice                 = TRADER_ALL,
-								/obj/item/weapon/dice/d20/cursed      = TRADER_BLACKLIST)
+								/obj/item/weapon/dice/d20/cursed      = TRADER_BLACKLIST,
+								/obj/item/weapon/gun/launcher/money   = TRADER_THIS_TYPE)
 
 /datum/trader/ship/electronics
 	name = "Electronic Shop Employee"
@@ -351,7 +352,7 @@ Sells devices, odds and ends, and medical stuff
 								  /obj/item/weapon/storage/firstaid/toxin  = TRADER_THIS_TYPE,
 								  /obj/item/weapon/storage/firstaid/adv  = TRADER_THIS_TYPE,
 								  /obj/item/weapon/storage/box/bloodpacks  = TRADER_THIS_TYPE,
-								  /obj/item/weapon/reagent_containers/blood  = TRADER_SUBTYPES_ONLY,
+								  /obj/item/weapon/reagent_containers/ivbag  = TRADER_SUBTYPES_ONLY,
 								  /obj/item/weapon/retractor = TRADER_THIS_TYPE,
 								  /obj/item/weapon/hemostat = TRADER_THIS_TYPE,
 								  /obj/item/weapon/cautery = TRADER_THIS_TYPE,

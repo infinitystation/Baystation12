@@ -265,6 +265,7 @@ BLIND     // can't see anything
 		SPECIES_VOX = 'icons/mob/species/vox/gloves.dmi',
 		SPECIES_NABBER = 'icons/mob/species/nabber/gloves.dmi',
 		SPECIES_RESOMI = 'icons/mob/species/resomi/gloves.dmi',
+		SPECIES_UNATHI = 'icons/mob/species/unathi/hands.dmi'
 		)
 	blood_overlay_type = "bloodyhands"
 
@@ -377,6 +378,7 @@ BLIND     // can't see anything
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/head.dmi',
 		SPECIES_RESOMI = 'icons/mob/species/resomi/head.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
 		)
 	blood_overlay_type = "helmetblood"
 
@@ -572,6 +574,7 @@ BLIND     // can't see anything
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/shoes.dmi',
 		SPECIES_RESOMI = 'icons/mob/species/resomi/shoes.dmi',
+		SPECIES_UNATHI = 'icons/mob/species/unathi/feet.dmi'
 		)
 	blood_overlay_type = "shoeblood"
 
@@ -650,6 +653,7 @@ BLIND     // can't see anything
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/suit.dmi',
 		SPECIES_RESOMI = 'icons/mob/species/resomi/suit.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/suit.dmi'
 		)
 
 /obj/item/clothing/suit/update_clothing_icon()
@@ -700,6 +704,7 @@ BLIND     // can't see anything
 		SPECIES_VOX = 'icons/mob/species/vox/uniform.dmi',
 		SPECIES_NABBER = 'icons/mob/species/nabber/uniform.dmi',
 		SPECIES_RESOMI = 'icons/mob/species/resomi/uniform.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/uniform.dmi'
 		)
 
 	//convenience var for defining the icon state for the overlay used when the clothing is worn.
