@@ -163,10 +163,35 @@
 			//CORPSE//
 			//////////
 
+/obj/effect/landmark/corpse/syndicate
+	name = "Syndicate Operative"
+	corpse_outfits = list(/decl/hierarchy/outfit/mercenary/syndicate)
+	spawn_flags = CORPSE_SPAWNER_NO_RANDOMIZATION
+
+/obj/effect/landmark/corpse/syndicate/commando
+	name = "Syndicate Commando"
+	corpse_outfits = list(/decl/hierarchy/outfit/mercenary/syndicate/commando)
+
 
 /obj/effect/landmark/corpse/crewman
-	name = "Unknown"
-	corpse_outfit = /decl/hierarchy/outfit/corpse/crewman
+	name = "Crewman"
+	corpse_outfits = list(/decl/hierarchy/outfit/corpse/crewman)
+
+/obj/effect/landmark/corpse/bridgeofficer/scg
+	name = "Bridge Officer"
+	corpse_outfits = list(/decl/hierarchy/outfit/corpse/bridgeofficer/scg)
+
+/obj/effect/landmark/corpse/inf_pirat
+	name = "Pirat"
+	corpse_outfits = list(/decl/hierarchy/outfit/corpse/pirat_inf)
+
+/obj/effect/landmark/corpse/inf_pirat/space
+	name = "Space Pirat"
+	corpse_outfits = list(/decl/hierarchy/outfit/corpse/pirat_inf/space)
+
+					///////////
+					//Outfits//
+					///////////
 
 /decl/hierarchy/outfit/corpse/crewman
 	name = "Dead Unknown"
@@ -180,10 +205,6 @@
 	id_desc = "Crewman"
 	id_slot = slot_wear_id
 
-/obj/effect/landmark/corpse/bridgeofficer/scg
-	name = "Unknown"
-	corpse_outfit = /decl/hierarchy/outfit/corpse/bridgeofficer/scg
-
 /decl/hierarchy/outfit/corpse/bridgeofficer/scg
 	name = "Dead Unknown"
 	l_ear = /obj/item/device/radio/headset
@@ -195,10 +216,6 @@
 	id_desc = "Bridge Officer"
 	id_slot = slot_wear_id
 
-/obj/effect/landmark/corpse/pirat
-	name = "Pirat"
-	corpse_outfit = /decl/hierarchy/outfit/corpse/pirat_inf
-
 /decl/hierarchy/outfit/corpse/pirat_inf
 	name = "Dead Pirat"
 	uniform = /obj/item/clothing/under/pirate
@@ -206,10 +223,6 @@
 	gloves = /obj/random/gloves/poor
 	head = /obj/random/hat/poor
 	l_pocket = /obj/item/device/radio/off
-
-/obj/effect/landmark/corpse/pirat/space
-	name = "Space Pirat"
-	corpse_outfit = /decl/hierarchy/outfit/corpse/pirat_inf/space
 
 /decl/hierarchy/outfit/corpse/pirat_inf/space
 	name = "Dead Space Pirat"

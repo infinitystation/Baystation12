@@ -712,7 +712,7 @@
 "nJ" = (/obj/structure/table/rack,/obj/random/maintenance/solgov,/obj/random/tool,/turf/simulated/floor/plating,/area/maintenance/thirddeck/forestarboard)
 "nK" = (/obj/structure/sign/warning/secure_area,/turf/simulated/wall,/area/engineering/atmos/aux)
 "nL" = (/obj/machinery/door/airlock/atmos{name = "Auxiliary Atmospherics"; req_access = list(24); secured_wires = 1},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/door/firedoor/border_only,/turf/simulated/floor/plating,/area/engineering/atmos/aux)
-"nM" = (/obj/machinery/iv_drip,/turf/simulated/floor/plating,/area/maintenance/thirddeck/forestarboard)
+"nM" = (/obj/structure/iv_drip,/turf/simulated/floor/plating,/area/maintenance/thirddeck/forestarboard)
 "nN" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/ladder/updown,/turf/simulated/floor/plating,/area/maintenance/thirddeck/forestarboard)
 "nO" = (/turf/unsimulated/mask,/area/hallway/primary/thirddeck/center)
 "nP" = (/obj/effect/floor_decal/corner/blue/diagonal{dir = 4},/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/white,/area/crew_quarters/mess)
