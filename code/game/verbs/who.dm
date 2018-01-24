@@ -16,6 +16,7 @@
 	var/dead_antags = 0 //Are antagonists, and have finally met their match
 
 	if(check_rights(R_INVESTIGATE, 0))
+		game_log("ADMIN", "[usr.key] checked advanced who in-round.")
 		for(var/client/C in GLOB.clients)
 			var/entry = "\t[C.key]"
 			if(!C.mob) //If mob is null, print error and skip rest of info for client.
