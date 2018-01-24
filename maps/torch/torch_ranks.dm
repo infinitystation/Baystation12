@@ -56,8 +56,8 @@
 		),
 		/datum/species/unathi = list(
 			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/e2,
-				/datum/mil_rank/ec/e4,
+				/datum/mil_rank/ec/e3,
+				/datum/mil_rank/ec/e5,
 				/datum/mil_rank/ec/o1
 			)
 		),
@@ -71,8 +71,8 @@
 		),
 		/datum/species/resomi = list(
 			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/e2,
-				/datum/mil_rank/ec/e4,
+				/datum/mil_rank/ec/e3,
+				/datum/mil_rank/ec/e5,
 				/datum/mil_rank/ec/o1
 			)
 		)
