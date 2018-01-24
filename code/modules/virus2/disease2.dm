@@ -112,7 +112,7 @@ LEGACY_RECORD_STRUCTURE(virus_records, virus_record)
 		e.fire(mob,stage)
 
 	//fever
-	if(!mob.chem_effects[CE_ANTIVIRAL])
+	if(!mob.chem_effects[CE_ANTIVIRAL] && mob.species.name != SPECIES_RESOMI)
 		mob.bodytemperature = max(mob.bodytemperature, min(310+5*min(stage,max_stage) ,mob.bodytemperature+5*min(stage,max_stage)))
 
 /datum/disease2/disease/proc/cure(var/mob/living/carbon/mob, antigen)
