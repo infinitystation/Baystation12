@@ -87,7 +87,7 @@
 		return
 	if(isturf(a) || get_dist(src,a) > 1)
 		walk_to(src,a,0,movement_delay())
-	else if(istype(a, /obj/item))
+	else if(istype(a, /obj/item) && !istype(a, /mob))
 		pickup(a)
 	else
 		hit(a)
