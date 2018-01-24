@@ -229,7 +229,7 @@ BLIND     // can't see anything
 	var/light_protection = 0
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/eyes.dmi',
-		SPECIES_RESOMI = 'icons/mob/species/resomi/eyes.dmi',
+		SPECIES_RESOMI = 'icons/mob/species/resomi/eyes.dmi'
 		)
 
 /obj/item/clothing/glasses/get_icon_state(mob/user_mob, slot)
