@@ -59,9 +59,6 @@
 		if(L.z in map_z)
 			L.add_to_sector(src, 1)
 
-/obj/effect/overmap/proc/get_overmap_munition_target(var/obj/effect/overmap_munition/munition)
-	return locate(rand(50,world.maxx-50),rand(50,world.maxy-50),pick(map_z))
-
 	//find shuttle waypoints
 	var/list/found_waypoints = list()
 	for(var/waypoint_tag in generic_waypoints)
@@ -134,3 +131,6 @@
 
 /obj/effect/overmap/proc/get_fore_dir()
 	return NORTH
+
+/obj/effect/overmap/proc/get_overmap_munition_target(var/obj/effect/overmap_munition/munition)
+	return locate(rand(50,world.maxx-50),rand(50,world.maxy-50),pick(map_z))
