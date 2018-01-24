@@ -33,8 +33,8 @@
 	species_to_rank_whitelist = list(
 		/datum/species/machine = list(
 			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/e2,
-				/datum/mil_rank/ec/e4,
+				/datum/mil_rank/ec/e3,
+				/datum/mil_rank/ec/e5,
 				/datum/mil_rank/ec/o1
 			),
 			/datum/mil_branch/fleet = list(
@@ -49,8 +49,8 @@
 		),
 		/datum/species/tajaran = list(
 			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/e2,
-				/datum/mil_rank/ec/e4,
+				/datum/mil_rank/ec/e3,
+				/datum/mil_rank/ec/e5,
 				/datum/mil_rank/ec/o1
 			)
 		),
@@ -63,8 +63,8 @@
 		),
 		/datum/species/skrell = list(
 			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/e2,
-				/datum/mil_rank/ec/e4,
+				/datum/mil_rank/ec/e3,
+				/datum/mil_rank/ec/e5,
 				/datum/mil_rank/ec/e7,
 				/datum/mil_rank/ec/o1
 			)
@@ -141,8 +141,8 @@
 	email_domain = "torch.ec.scg"
 
 	rank_types = list(
-		/datum/mil_rank/ec/e2,
-		/datum/mil_rank/ec/e4,
+		/datum/mil_rank/ec/e3,
+		/datum/mil_rank/ec/e5,
 		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/ec/o1,
 		/datum/mil_rank/ec/o3,
@@ -151,8 +151,8 @@
 	)
 
 	spawn_rank_types = list(
-		/datum/mil_rank/ec/e2,
-		/datum/mil_rank/ec/e4,
+		/datum/mil_rank/ec/e3,
+		/datum/mil_rank/ec/e5,
 		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/ec/o1,
 		/datum/mil_rank/ec/o3,
@@ -435,16 +435,16 @@
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/ec/enlisted)
 	sort_order = 1
 
-/datum/mil_rank/ec/e2
+/datum/mil_rank/ec/e3
 	name = "Explorer"
 	name_short = "XPL"
-	accessory = list(/obj/item/clothing/accessory/solgov/rank/ec/enlisted/e2)
-	sort_order = 2
+	accessory = list(/obj/item/clothing/accessory/solgov/rank/ec/enlisted/e3)
+	sort_order = 3
 
-/datum/mil_rank/ec/e4
+/datum/mil_rank/ec/e5
 	name = "Senior Explorer"
 	name_short = "SXPL"
-	accessory = list(/obj/item/clothing/accessory/solgov/rank/ec/enlisted/e4)
+	accessory = list(/obj/item/clothing/accessory/solgov/rank/ec/enlisted/e5)
 	sort_order = 5
 
 /datum/mil_rank/ec/e7
