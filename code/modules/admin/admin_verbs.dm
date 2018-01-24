@@ -444,6 +444,7 @@ var/list/admin_verbs_mentor = list(
 		var/mob/body = mob
 		var/mob/observer/ghost/ghost = body.ghostize(1)
 		ghost.admin_ghosted = 1
+		log_admin("[key_name(usr)] used aghost.")
 		if(body)
 			body.teleop = ghost
 			if(!body.key)
@@ -471,6 +472,7 @@ var/list/admin_verbs_mentor = list(
 	set category = "Admin"
 	if(holder)
 		holder.player_panel_old()
+		log_admin("[key_name(usr)] opened old player panel.")
 	feedback_add_details("admin_verb","PP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
@@ -479,6 +481,7 @@ var/list/admin_verbs_mentor = list(
 	set category = "Admin"
 	if(holder)
 		holder.player_panel_new()
+		log_admin("[key_name(usr)] opened player panel.")
 	feedback_add_details("admin_verb","PPN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
