@@ -1,4 +1,7 @@
-/datum/hud/proc/ai_hud(ui_style = 'icons/mob/screen_ai.dmi') //~KareTa
+/mob/living/silicon/ai
+	hud_type = /datum/hud/ai
+
+/datum/hud/ai/FinalizeInstantiation() //~KareTa
 
 	src.adding = list()
 	var/obj/screen/ai_button/using
@@ -6,7 +9,6 @@
 	//AI Core
 	using = new /obj/screen/ai_button()
 	using.name = "Ai Core"
-	using.icon = ui_style
 	using.icon_state = "ai_core"
 	using.screen_loc = ui_ai_core
 	using.ai_verb = /mob/living/silicon/ai/proc/core
@@ -15,7 +17,6 @@
 	//AI_Announcement
 	using = new /obj/screen/ai_button()
 	using.name = "AI Announcement"
-	using.icon = ui_style
 	using.icon_state = "announcement"
 	using.screen_loc = ui_ai_announcement
 	using.ai_verb = /mob/living/silicon/ai/proc/ai_announcement
@@ -24,7 +25,6 @@
 	//Camera Track
 	using = new /obj/screen/ai_button()
 	using.name = "Track With Camera"
-	using.icon = ui_style
 	using.icon_state = "track"
 	using.screen_loc = ui_ai_cam_track
 	using.ai_verb = /mob/living/silicon/ai/proc/ai_camera_track
@@ -34,7 +34,6 @@
 	//Camera Lights
 	using = new /obj/screen/ai_button()
 	using.name = "Toggle Camera Lights"
-	using.icon = ui_style
 	using.icon_state = "camera_light"
 	using.screen_loc = ui_ai_cam_light
 	using.ai_verb = /mob/living/silicon/ai/proc/toggle_camera_light
@@ -43,7 +42,6 @@
 	//Change Network
 	using = new /obj/screen/ai_button()
 	using.name = "Jump to Network"
-	using.icon = ui_style
 	using.icon_state = "camera"
 	using.screen_loc = ui_ai_cam_change_network
 	using.ai_verb = /mob/living/silicon/ai/proc/ai_network_change
@@ -53,7 +51,6 @@
 	//Set Sensor Augmentation
 	using = new /obj/screen/ai_button()
 	using.name = "Set Sensor Augmentation"
-	using.icon = ui_style
 	using.icon_state = "ai_sensor"
 	using.screen_loc = ui_ai_sensor
 	using.ai_verb = /mob/living/silicon/ai/proc/sensor_mode
@@ -62,7 +59,6 @@
 	//Crew Manifest
 	using = new /obj/screen/ai_button()
 	using.name = "Show Crew Manifest"
-	using.icon = ui_style
 	using.icon_state = "manifest"
 	using.screen_loc = ui_ai_crew_manifest
 	using.ai_verb = /mob/living/silicon/ai/proc/ai_roster
@@ -71,7 +67,6 @@
 	//Toggle Camera Mode
 	using = new /obj/screen/ai_button()
 	using.name = "Toggle Camera Mode"
-	using.icon = ui_style
 	using.icon_state = "take_picture"
 	using.screen_loc = ui_ai_take_image
 	using.ai_verb = /mob/living/silicon/ai/proc/ai_take_image
@@ -80,7 +75,6 @@
 	//View Images
 	using = new /obj/screen/ai_button()
 	using.name = "View Images"
-	using.icon = ui_style
 	using.icon_state = "view_images"
 	using.screen_loc = ui_ai_view_images
 	using.ai_verb = /mob/living/silicon/ai/proc/ai_view_images
@@ -89,7 +83,6 @@
 	//State Laws
 	using = new /obj/screen/ai_button()
 	using.name = "State Laws"
-	using.icon = ui_style
 	using.icon_state = "state_laws"
 	using.screen_loc = ui_ai_state_laws
 	using.ai_verb = /mob/living/silicon/ai/proc/ai_checklaws
@@ -98,7 +91,6 @@
 	//Call Shuttle
 	using = new /obj/screen/ai_button()
 	using.name = "Call Shuttle"
-	using.icon = ui_style
 	using.icon_state = "call_shuttle"
 	using.screen_loc = ui_ai_call_shuttle
 	using.ai_verb = /mob/living/silicon/ai/proc/ai_call_shuttle
@@ -107,7 +99,6 @@
 	//Move Upwards
 	using = new /obj/screen/ai_button()
 	using.name = "Move Upwards"
-	using.icon = ui_style
 	using.icon_state = "ai_up"
 	using.screen_loc = ui_ai_up
 	using.ai_verb = /mob/verb/up
@@ -116,7 +107,6 @@
 	//Move Downwards
 	using = new /obj/screen/ai_button()
 	using.name = "Move Downwards"
-	using.icon = ui_style
 	using.icon_state = "ai_down"
 	using.screen_loc = ui_ai_down
 	using.ai_verb = /mob/verb/down
