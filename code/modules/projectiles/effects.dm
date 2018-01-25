@@ -155,13 +155,13 @@
 	illum_color = "#00cc00"
 
 /obj/effect/projectile/laser/emitter/tracer
-	icon_state = "laser/emitter"
+	icon_state = "emitter"
 
 /obj/effect/projectile/laser/emitter/muzzle
-	icon_state = "muzzle_laser/emitter"
+	icon_state = "muzzle_emitter"
 
 /obj/effect/projectile/laser/emitter/impact
-	icon_state = "impact_laser/emitter"
+	icon_state = "impact_emitter"
 
 //----------------------------
 // Stun beam
