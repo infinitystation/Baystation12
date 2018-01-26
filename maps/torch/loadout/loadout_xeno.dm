@@ -130,6 +130,7 @@
 	display_name = "uniform, Expeditionary Utility (Resomi)"
 	path = /obj/item/clothing/under/solgov/utility/expeditionary/resomi
 	allowed_roles = SOLGOV_ROLES
+	cost = 0 //Because it's work uniform
 
 /datum/gear/uniform/resomi/expeditionary/command
 	display_name = "uniform, Expeditionary Command Utility (Resomi)"
