@@ -82,6 +82,10 @@
 	var/list/valid_colors = list("#c20c00", "#0227f7", "#6262ff", "#454545", "#009900", "#e17291")
 	gear_tweaks = list(new/datum/gear_tweak/color(valid_colors))
 
+				//////////
+				//RESOMI//
+				//////////
+
 /datum/gear/uniform/resomi
 	display_name = "smock, grey (Resomi)"
 	path = /obj/item/clothing/under/resomi
@@ -103,6 +107,10 @@
 	path = /obj/item/clothing/under/resomi/yellow
 	allowed_roles = ENGINEERING_ROLES
 
+/datum/gear/uniform/resomi/eng/roboitcs
+	display_name = "uniform, Robotics (Resomi)"
+	path = /obj/item/clothing/under/resomi/robotics
+
 /datum/gear/uniform/resomi/sec
 	display_name = "uniform, Security (Resomi)"
 	path = /obj/item/clothing/under/resomi/red
@@ -117,6 +125,27 @@
 	display_name = "uniform, Science (Resomi)"
 	path = /obj/item/clothing/under/resomi/science
 	allowed_roles = NANOTRASEN_ROLES
+
+/datum/gear/uniform/resomi/expeditionary
+	display_name = "uniform, Expeditionary Utility (Resomi)"
+	path = /obj/item/clothing/under/solgov/utility/expeditionary/resomi
+	allowed_roles = SOLGOV_ROLES
+
+/datum/gear/uniform/resomi/expeditionary/command
+	display_name = "uniform, Expeditionary Command Utility (Resomi)"
+	path = /obj/item/clothing/under/solgov/mildress/expeditionary/officer/resomi
+
+/datum/gear/uniform/resomi/expeditionary/pt
+	display_name = "uniform, Expeditionary PT (Resomi)"
+	path = /obj/item/clothing/under/solgov/pt/expeditionary/resomi
+
+/datum/gear/uniform/resomi/expeditionary/mildress
+	display_name = "uniform, Expeditionary Mildress (Resomi)"
+	path = /obj/item/clothing/under/solgov/mildress/expeditionary/resomi
+
+				///////
+				//IPC//
+				///////
 
 /datum/gear/mask/ipc_monitor
 	display_name = "display monitor (IPC)"
