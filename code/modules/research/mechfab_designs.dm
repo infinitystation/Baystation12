@@ -316,65 +316,6 @@
 	time = 60
 	materials = list(DEFAULT_WALL_MATERIAL = 50000, "uranium" = 10000)
 
-/datum/design/item/mechfab/phazon
-	category = "Phazon"
-
-/datum/design/item/mechfab/phazon/chassis
-	name = "Phazon chassis"
-	id = "phazon_chassis"
-	build_path = /obj/item/mecha_parts/chassis/phazon
-	time = 30
-	materials = list(DEFAULT_WALL_MATERIAL = 25000)
-
-/datum/design/item/mechfab/phazon/torso
-	name = "Phazon torso"
-	id = "phazon_torso"
-	build_path = /obj/item/mecha_parts/part/phazon_torso
-	time = 30
-	materials = list(DEFAULT_WALL_MATERIAL=35000,"glass"=10000,"phoron"=20000)
-
-/datum/design/item/mechfab/phazon/head
-	name = "Phazon head"
-	id = "phazon_head"
-	build_path = /obj/item/mecha_parts/part/phazon_head
-	time = 30
-	materials = list(DEFAULT_WALL_MATERIAL=15000,"glass"=5000,"phoron"=10000,"silver"=3000)
-
-/datum/design/item/mechfab/phazon/left_arm
-	name = "Phazon left arm"
-	id = "phazon_left_arm"
-	build_path = /obj/item/mecha_parts/part/phazon_left_arm
-	time = 30
-	materials = list(DEFAULT_WALL_MATERIAL=20000,"phoron"=10000,"silver"=3000)
-
-/datum/design/item/mechfab/phazon/right_arm
-	name = "Phazon right arm"
-	id = "phazon_right_arm"
-	build_path = /obj/item/mecha_parts/part/phazon_right_arm
-	time = 30
-	materials = list(DEFAULT_WALL_MATERIAL=20000,"phoron"=10000,"silver"=3000)
-
-/datum/design/item/mechfab/phazon/left_leg
-	name = "Phazon left leg"
-	id = "phazon_left_leg"
-	build_path = /obj/item/mecha_parts/part/phazon_left_leg
-	time = 30
-	materials = list(DEFAULT_WALL_MATERIAL=20000,"phoron"=10000,"silver"=3000)
-
-/datum/design/item/mechfab/phazon/right_leg
-	name = "Phazon right leg"
-	id = "phazon_right_leg"
-	build_path = /obj/item/mecha_parts/part/phazon_right_leg
-	time = 30
-	materials = list(DEFAULT_WALL_MATERIAL=20000,"phoron"=10000,"silver"=3000)
-
-/datum/design/item/mechfab/phazon/armour
-	name = "Phazon armour plates"
-	id = "phazon_armour"
-	build_path = /obj/item/mecha_parts/part/phazon_armor
-	time = 70
-	materials = list(DEFAULT_WALL_MATERIAL=20000,"phoron"=10000,"uranium"=10000,"silver"=3000,"diamond"=1000)
-
 /datum/design/item/robot_upgrade
 	build_type = MECHFAB
 	time = 12
