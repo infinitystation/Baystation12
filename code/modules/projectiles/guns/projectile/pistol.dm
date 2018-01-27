@@ -181,8 +181,8 @@
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "pistol0"
 	item_icons = list(
-		slot_l_hand_str = 'icons/mob/items/lefthand_guns.dmi',
-		slot_r_hand_str = 'icons/mob/items/righthand_guns.dmi',
+		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_guns.dmi',
+		slot_r_hand_str = 'icons/mob/onmob/items/righthand_guns.dmi',
 		)
 	item_state = "gun"
 	w_class = ITEM_SIZE_SMALL

@@ -8,7 +8,7 @@
 	//var/darkness_view = 0//Base human is 2
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'icons/mob/species/resomi/eyes.dmi',
-		SPECIES_UNATHI = 'icons/mob/species/unathi/eyes.dmi'
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/eyes.dmi'
 		)
 	var/prescription = 0
 	var/toggleable = 0
