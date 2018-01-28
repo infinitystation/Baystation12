@@ -31,14 +31,14 @@
 	stealth_step = TRUE
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/species/resomi/shoes.dmi'
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/feet.dmi'
 	)
 
 /obj/item/clothing/head/helmet/space/rig/light
 	name = "hood"
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/species/resomi/helmet.dmi'
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi'
 	)
 
 /obj/item/weapon/rig/light/hacker
@@ -115,7 +115,7 @@
 		)
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/species/resomi/back.dmi'
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/back.dmi'
 	)
 
 	..()
@@ -156,14 +156,14 @@
 	siemens_coefficient = 0
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/species/resomi/gloves.dmi'
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/hands.dmi'
 	)
 
 /obj/item/clothing/suit/space/rig/light/ninja
 	breach_threshold = 38 //comparable to regular hardsuits
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/species/resomi/suit.dmi'
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi'
 	)
 
 /obj/item/weapon/rig/light/stealth

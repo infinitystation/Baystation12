@@ -15,7 +15,7 @@
 		SPECIES_UNATHI = 'icons/mob/species/unathi/helmet.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
 		SPECIES_SKRELL = 'icons/mob/species/skrell/helmet.dmi',
-		SPECIES_RESOMI = 'icons/mob/species/resomi/helmet.dmi',
+		SPECIES_RESOMI = 'icons/mob/species/Resomi/helmet.dmi',
 		SPECIES_BOGANI = 'icons/mob/species/bogani/helmet.dmi',
 		SPECIES_EGYNO  = 'icons/mob/species/bogani/helmet.dmi',
 		)
@@ -47,7 +47,7 @@
 		SPECIES_UNATHI = 'icons/mob/species/unathi/suit.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',
 		SPECIES_SKRELL = 'icons/mob/species/skrell/suit.dmi',
-		SPECIES_RESOMI = 'icons/mob/species/resomi/suit.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',
 		SPECIES_BOGANI = 'icons/mob/species/bogani/suits.dmi',
 		SPECIES_EGYNO  = 'icons/mob/species/bogani/suits.dmi',
 		)

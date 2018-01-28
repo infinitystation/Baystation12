@@ -97,7 +97,7 @@ var/const/NO_EMAG_ACT = -50
 	item_state = "card-id"
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/species/resomi/id.dmi'
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/id.dmi'
 		)
 
 	var/access = list()
