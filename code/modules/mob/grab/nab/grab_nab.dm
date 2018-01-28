@@ -34,11 +34,6 @@
 	same_tile = 1
 	ladder_carry = 1
 	force_danger = 1
-/*
-	if(assailant == istype(list(/mob/living/carbon/human/xdrone, /mob/living/carbon/human/xsentinel, /mob/living/carbon/human/xhunter, /mob/living/carbon/human/xqueen)))
-		force_stand = 0
-		shield_assailant = 0
-*/
 
 /datum/grab/nab/on_hit_grab(var/obj/item/grab/G)
 	var/mob/living/carbon/human/affecting = G.affecting
