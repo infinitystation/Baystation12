@@ -151,6 +151,10 @@
 	display_name = "uniform, Expeditionary Mildress (Resomi)"
 	path = /obj/item/clothing/under/solgov/mildress/expeditionary/resomi
 
+/datum/gear/uniform/resomi/resomicoat
+	display_name = "small coat (Resomi)"
+	path = /obj/item/clothing/suit/storage/toggle/Resomicoat
+	
 				///////
 				//IPC//
 				///////
