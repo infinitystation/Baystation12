@@ -1,0 +1,430 @@
+"aa" = (/turf/space,/area/space)
+"ab" = (/turf/simulated/wall/r_wall,/area/space)
+"ac" = (/turf/simulated/floor/airless,/area/space)
+"ad" = (/obj/machinery/door/firedoor,/turf/simulated/floor,/area/space)
+"ae" = (/turf/simulated/floor/tiled,/area/space)
+"af" = (/turf/simulated/floor,/area/space)
+"ag" = (/obj/structure/table/marble,/turf/simulated/wall/r_wall,/area/space)
+"ah" = (/obj/structure/table/marble,/turf/simulated/floor/tiled,/area/space)
+"ai" = (/obj/structure/bed/chair,/turf/simulated/floor/tiled,/area/space)
+"aj" = (/obj/structure/bed/chair{tag = "icon-chair_preview (EAST)"; icon_state = "chair_preview"; dir = 4},/turf/simulated/floor/tiled,/area/space)
+"ak" = (/obj/structure/table/standard,/turf/simulated/floor/tiled,/area/space)
+"al" = (/obj/structure/bed/chair{tag = "icon-chair_preview (WEST)"; icon_state = "chair_preview"; dir = 8},/turf/simulated/floor/tiled,/area/space)
+"am" = (/obj/structure/fitness/punchingbag,/turf/simulated/floor/tiled,/area/space)
+"an" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel,/turf/simulated/wall/r_wall,/area/space)
+"ao" = (/obj/structure/fitness/weightlifter,/turf/simulated/floor/tiled,/area/space)
+"ap" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel{icon_state = "intact"; dir = 6},/turf/simulated/floor,/area/space)
+"aq" = (/obj/machinery/atmospherics/pipe/manifold/hidden/fuel,/turf/simulated/floor,/area/space)
+"ar" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel{icon_state = "intact"; dir = 4},/turf/simulated/floor,/area/space)
+"as" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel{icon_state = "intact"; dir = 4},/obj/structure/catwalk,/turf/simulated/floor,/area/space)
+"at" = (/obj/machinery/atmospherics/pipe/manifold/hidden/fuel{icon_state = "map"; dir = 1},/obj/structure/catwalk,/turf/simulated/floor,/area/space)
+"au" = (/obj/machinery/atmospherics/unary/engine{tag = "icon-nozzle (WEST)"; icon_state = "nozzle"; dir = 8},/turf/simulated/wall/r_wall,/area/space)
+"av" = (/obj/structure/bed/chair{icon_state = "chair_preview"; dir = 1},/turf/simulated/floor/tiled,/area/space)
+"aw" = (/obj/structure/catwalk,/turf/simulated/floor,/area/space)
+"ax" = (/obj/machinery/atmospherics/pipe/manifold/hidden/fuel{tag = "icon-map (WEST)"; icon_state = "map"; dir = 8},/obj/structure/catwalk,/turf/simulated/floor,/area/space)
+"ay" = (/obj/effect/floor_decal/industrial/warning/half{tag = "icon-warninghalf (EAST)"; icon_state = "warninghalf"; dir = 4},/obj/machinery/door/firedoor,/turf/simulated/floor/tiled,/area/space)
+"az" = (/obj/effect/floor_decal/industrial/warning/half,/obj/machinery/door/firedoor,/turf/simulated/floor/tiled,/area/space)
+"aA" = (/turf/simulated/floor/reinforced/hydrogen/fuel,/area/space)
+"aB" = (/obj/effect/wingrille_spawn/reinforced/full,/turf/simulated/floor,/area/space)
+"aC" = (/obj/structure/closet/crate/internals/fuel,/turf/simulated/floor,/area/space)
+"aD" = (/obj/machinery/atmospherics/unary/heater{tag = "icon-heater_0 (EAST)"; icon_state = "heater_0"; dir = 4},/turf/simulated/floor,/area/space)
+"aE" = (/obj/machinery/atmospherics/pipe/manifold/hidden/fuel{icon_state = "map"; dir = 1},/turf/simulated/floor,/area/space)
+"aF" = (/obj/machinery/atmospherics/unary/heater{tag = "icon-heater_0 (WEST)"; icon_state = "heater_0"; dir = 8},/turf/simulated/floor,/area/space)
+"aG" = (/turf/simulated/wall/ocp_wall,/area/space)
+"aH" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel,/obj/structure/catwalk,/turf/simulated/floor,/area/space)
+"aI" = (/obj/effect/floor_decal/corner/green,/turf/simulated/floor/tiled,/area/space)
+"aJ" = (/obj/machinery/portable_atmospherics/canister/hydrogen,/turf/simulated/floor,/area/space)
+"aK" = (/obj/machinery/atmospherics/pipe/manifold4w/hidden/fuel,/turf/simulated/floor,/area/space)
+"aL" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel,/turf/simulated/floor,/area/space)
+"aM" = (/obj/machinery/shield_diffuser,/obj/structure/catwalk,/turf/simulated/floor/airless,/area/space)
+"aN" = (/obj/machinery/power/ship_weapon/maser/old{dir = 8; icon_state = "maser"; name = "MRSL-34 'Fighter2"; tag = "icon-maser (NORTH)"},/obj/structure/catwalk,/obj/structure/cable{icon_state = "0-2"; d2 = 2},/turf/simulated/floor/airless,/area/space)
+"aO" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_y = 23},/turf/simulated/floor,/area/space)
+"aP" = (/obj/structure/cable{d2 = 8; icon_state = "0-8"},/turf/simulated/floor,/area/space)
+"aQ" = (/obj/effect/floor_decal/industrial/warning/half{icon_state = "warninghalf"; dir = 4},/turf/simulated/floor,/area/space)
+"aR" = (/obj/effect/floor_decal/corner/green{tag = "icon-corner_white (NORTH)"; icon_state = "corner_white"; dir = 1},/turf/simulated/floor/tiled,/area/space)
+"aS" = (/obj/machinery/power/ship_weapon/maser/old{dir = 8; icon_state = "maser"; name = "MRSL-34 'Fighter1"; tag = "icon-maser (NORTH)"},/obj/structure/catwalk,/obj/structure/cable{icon_state = "0-4"; d2 = 4},/obj/structure/cable,/obj/structure/cable{icon_state = "0-2"; d2 = 2},/turf/simulated/floor/airless,/area/space)
+"aT" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor,/area/space)
+"aU" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor,/area/space)
+"aV" = (/obj/machinery/power/terminal{icon_state = "term"; dir = 1},/turf/simulated/floor,/area/space)
+"aW" = (/turf/simulated/floor/tiled/white,/area/space)
+"aX" = (/obj/item/modular_computer/console/preset/command,/turf/simulated/floor/tiled/dark,/area/space)
+"aY" = (/turf/simulated/floor/tiled/dark,/area/space)
+"aZ" = (/obj/machinery/power/apc/critical{dir = 1; name = "north bump"; pixel_x = 0; pixel_y = 23},/turf/simulated/floor/tiled/dark,/area/space)
+"ba" = (/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/fuel{icon_state = "intact"; dir = 5},/turf/simulated/floor,/area/space)
+"bb" = (/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/fuel{icon_state = "intact"; dir = 4},/turf/simulated/floor,/area/space)
+"bc" = (/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/manifold/hidden/fuel,/turf/simulated/floor,/area/space)
+"bd" = (/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/fuel{icon_state = "intact"; dir = 10},/turf/simulated/floor,/area/space)
+"be" = (/obj/machinery/power/ship_weapon/maser/old{dir = 8; icon_state = "maser"; tag = "icon-maser (NORTH)"},/obj/structure/catwalk,/obj/structure/cable,/turf/simulated/floor/airless,/area/space)
+"bf" = (/obj/machinery/power/apc{dir = 8; name = "west bump"; pixel_x = -24; pixel_y = 0},/turf/simulated/floor/tiled/white,/area/space)
+"bg" = (/obj/machinery/hologram/holopad/longrange,/turf/simulated/floor/tiled/dark,/area/space)
+"bh" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial/warning/half{tag = "icon-warninghalf (WEST)"; icon_state = "warninghalf"; dir = 8},/turf/simulated/floor/tiled/dark,/area/space)
+"bi" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/turf/simulated/floor,/area/space)
+"bj" = (/turf/simulated/wall/titanium,/area/space)
+"bk" = (/obj/structure/shuttle/engine/propulsion/burst/right{tag = "icon-burst_r (EAST)"; icon_state = "burst_r"; dir = 4},/obj/structure/shuttle/engine/heater{dir = 4; icon_state = "heater"; pixel_x = -32},/turf/simulated/floor,/area/space)
+"bl" = (/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/fuel,/turf/simulated/floor,/area/space)
+"bm" = (/obj/machinery/floodlight,/turf/simulated/floor,/area/space)
+"bn" = (/obj/item/modular_computer/console/preset/security,/turf/simulated/floor/tiled/dark,/area/space)
+"bo" = (/obj/machinery/light/spot{dir = 4},/turf/simulated/floor,/area/space)
+"bp" = (/obj/machinery/sleeper,/turf/simulated/floor/tiled/white,/area/space)
+"bq" = (/obj/structure/table/reinforced,/obj/item/weapon/storage/firstaid/o2{pixel_x = 4; pixel_y = 4},/obj/item/weapon/storage/firstaid/toxin,/turf/simulated/floor/tiled/white,/area/space)
+"br" = (/obj/structure/table/reinforced,/obj/item/weapon/storage/firstaid/fire{pixel_x = 4; pixel_y = 4},/obj/item/weapon/storage/firstaid/regular,/turf/simulated/floor/tiled/white,/area/space)
+"bs" = (/obj/structure/shuttle/engine/heater{dir = 4; icon_state = "heater"; pixel_x = -32},/obj/structure/shuttle/engine/propulsion{dir = 4},/turf/simulated/floor,/area/space)
+"bt" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial/warning/half,/turf/simulated/floor/tiled,/area/space)
+"bu" = (/obj/item/modular_computer/console/preset/civilian/professional,/turf/simulated/floor/tiled/dark,/area/space)
+"bv" = (/obj/item/modular_computer/console/preset/engineering,/turf/simulated/floor/tiled/dark,/area/space)
+"bw" = (/obj/item/modular_computer/console/preset/medical,/turf/simulated/floor/tiled/dark,/area/space)
+"bx" = (/obj/structure/flora/pottedplant/stoutbush,/turf/simulated/floor/tiled/dark,/area/space)
+"by" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8; layer = 4; level = 1},/turf/simulated/floor,/area/space)
+"bz" = (/obj/machinery/portable_atmospherics/powered/pump/filled,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor,/area/space)
+"bA" = (/obj/machinery/portable_atmospherics/powered/scrubber,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor,/area/space)
+"bB" = (/obj/structure/sink{dir = 8; icon_state = "sink"; pixel_x = -15; tag = "icon-sink (WEST)"},/turf/simulated/floor/tiled/white,/area/space)
+"bC" = (/obj/item/bodybag/cryobag,/obj/structure/closet/medical_wall/filled{pixel_x = 26},/turf/simulated/floor/tiled/white,/area/space)
+"bD" = (/obj/effect/floor_decal/industrial/warning/half{tag = "icon-warninghalf (NORTH)"; icon_state = "warninghalf"; dir = 1},/turf/simulated/floor,/area/space)
+"bE" = (/obj/effect/floor_decal/corner/grey_alt,/turf/simulated/floor/tiled,/area/space)
+"bF" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial/warning/half,/turf/simulated/floor/tiled/dark,/area/space)
+"bG" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/item/device/radio/intercom{dir = 4; pixel_x = -22},/obj/structure/closet/firecloset/full,/turf/simulated/floor/tiled,/area/space)
+"bH" = (/obj/structure/catwalk,/obj/machinery/atmospherics/unary/vent_pump/on,/turf/simulated/floor,/area/space)
+"bI" = (/obj/machinery/light{icon_state = "tube1"; dir = 1},/obj/structure/catwalk,/obj/machinery/recharger/wallcharger{pixel_x = 4; pixel_y = 28},/turf/simulated/floor,/area/space)
+"bJ" = (/obj/machinery/door/airlock/maintenance{name = "Storage"},/turf/simulated/floor,/area/space)
+"bK" = (/obj/structure/reagent_dispensers/fueltank,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor,/area/space)
+"bL" = (/obj/structure/reagent_dispensers/watertank,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor,/area/space)
+"bM" = (/obj/item/weapon/stool,/obj/machinery/button/remote/blast_door{desc = "A remote control-switch for the torpedos launcher door."; id = "torp_patrol"; name = "Torpedos Pod Control"; pixel_x = 0; pixel_y = 24; req_access = list(11)},/turf/simulated/floor,/area/space)
+"bN" = (/obj/machinery/conveyor_switch{id = "torp"},/turf/simulated/floor,/area/space)
+"bO" = (/obj/structure/closet/bombcloset,/turf/simulated/floor,/area/space)
+"bP" = (/obj/structure/flora/pottedplant/minitree,/obj/effect/floor_decal/corner/red,/turf/simulated/floor/tiled,/area/space)
+"bQ" = (/obj/effect/floor_decal/corner/red,/turf/simulated/floor/tiled,/area/space)
+"bR" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial/warning/half{tag = "icon-warninghalf (EAST)"; icon_state = "warninghalf"; dir = 4},/turf/simulated/floor/tiled,/area/space)
+"bS" = (/obj/effect/floor_decal/corner/grey_alt,/obj/effect/floor_decal/corner/grey_alt{tag = "icon-corner_white (NORTH)"; icon_state = "corner_white"; dir = 1},/turf/simulated/floor/tiled,/area/space)
+"bT" = (/obj/structure/sign/directions/bridge{dir = 4; icon_state = "direction_bridge"; pixel_x = 32; pixel_y = 28; tag = "icon-direction_bridge (EAST)"},/turf/simulated/floor/tiled,/area/space)
+"bU" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial/warning/half{tag = "icon-warninghalf (WEST)"; icon_state = "warninghalf"; dir = 8},/turf/simulated/floor/tiled,/area/space)
+"bV" = (/obj/effect/floor_decal/corner/blue,/turf/simulated/floor/tiled,/area/space)
+"bW" = (/obj/effect/floor_decal/corner/blue,/obj/structure/sign/directions/bridge{dir = 1; icon_state = "direction_bridge"; pixel_y = 28; tag = "icon-direction_bridge (NORTH)"},/turf/simulated/floor/tiled,/area/space)
+"bX" = (/obj/effect/wingrille_spawn/reinforced/full,/obj/machinery/door/firedoor,/turf/simulated/floor,/area/space)
+"bY" = (/obj/item/modular_computer/console/preset/civilian,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled,/area/space)
+"bZ" = (/obj/structure/bed/chair/comfy/shuttle{icon_state = "bschair_preview"; dir = 8},/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled,/area/space)
+"ca" = (/obj/machinery/hologram/holopad,/obj/structure/catwalk,/turf/simulated/floor,/area/space)
+"cb" = (/obj/structure/bed/chair/comfy/shuttle{tag = "icon-bschair_preview (NORTH)"; icon_state = "bschair_preview"; dir = 1},/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/turf/simulated/floor/tiled/dark,/area/space)
+"cc" = (/obj/structure/bed/chair/comfy/shuttle{tag = "icon-bschair_preview (NORTH)"; icon_state = "bschair_preview"; dir = 1},/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/universal{icon_state = "map_universal"; dir = 4},/turf/simulated/floor/tiled/dark,/area/space)
+"cd" = (/obj/structure/bed/chair/comfy/shuttle{tag = "icon-bschair_preview (NORTH)"; icon_state = "bschair_preview"; dir = 1},/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/cyan{icon_state = "intact"; dir = 10},/turf/simulated/floor/tiled/dark,/area/space)
+"ce" = (/obj/structure/bed/chair/comfy/shuttle{tag = "icon-bschair_preview (NORTH)"; icon_state = "bschair_preview"; dir = 1},/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/tiled/dark,/area/space)
+"cf" = (/obj/structure/catwalk,/obj/machinery/power/apc{dir = 4; name = "east bump"; pixel_x = 24; pixel_y = 0},/obj/structure/cable/green{d2 = 8; icon_state = "0-8"},/turf/simulated/floor,/area/space)
+"cg" = (/obj/machinery/door/blast/regular{id = "torp_patrol"},/turf/simulated/floor,/area/space)
+"ch" = (/obj/machinery/power/ship_weapon/torpedo{tag = "icon-torpedo (WEST)"; icon_state = "torpedo"; dir = 8},/turf/simulated/wall/r_wall,/area/space)
+"ci" = (/obj/structure/torpedo_loader{tag = "icon-loader_closed (WEST)"; icon_state = "loader_closed"; dir = 8},/turf/simulated/floor,/area/space)
+"cj" = (/obj/effect/floor_decal/industrial/warning/half{tag = "icon-warninghalf (EAST)"; icon_state = "warninghalf"; dir = 4},/obj/machinery/door/firedoor,/turf/simulated/floor,/area/space)
+"ck" = (/obj/effect/floor_decal/corner/paleblue{dir = 1},/turf/simulated/floor/tiled,/area/space)
+"cl" = (/obj/effect/floor_decal/corner/grey_alt{tag = "icon-corner_white (NORTH)"; icon_state = "corner_white"; dir = 1},/turf/simulated/floor/tiled,/area/space)
+"cm" = (/obj/effect/floor_decal/corner/yellow{tag = "icon-corner_white (NORTH)"; icon_state = "corner_white"; dir = 1},/turf/simulated/floor/tiled,/area/space)
+"cn" = (/obj/effect/floor_decal/corner/yellow{tag = "icon-corner_white (NORTH)"; icon_state = "corner_white"; dir = 1},/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/tiled,/area/space)
+"co" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial/warning/half{tag = "icon-warninghalf (WEST)"; icon_state = "warninghalf"; dir = 8},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled,/area/space)
+"cp" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled,/area/space)
+"cq" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial/warning/half{tag = "icon-warninghalf (EAST)"; icon_state = "warninghalf"; dir = 4},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled,/area/space)
+"cr" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor,/area/space)
+"cs" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/table/reinforced,/obj/machinery/recharger,/turf/simulated/floor/tiled,/area/space)
+"ct" = (/obj/machinery/hologram/holopad/longrange,/obj/structure/catwalk,/turf/simulated/floor,/area/space)
+"cu" = (/obj/structure/bed/chair/comfy/shuttle,/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/cyan{dir = 6; icon_state = "intact"},/turf/simulated/floor/tiled/dark,/area/space)
+"cv" = (/obj/structure/bed/chair/comfy/shuttle,/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/cyan{dir = 4; icon_state = "intact"},/turf/simulated/floor/tiled/dark,/area/space)
+"cw" = (/obj/structure/bed/chair/comfy/shuttle,/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/atmospherics/pipe/manifold/hidden/cyan,/turf/simulated/floor/tiled/dark,/area/space)
+"cx" = (/obj/structure/bed/chair/comfy/shuttle,/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/atmospherics/pipe/simple/hidden/cyan{dir = 4; icon_state = "intact"},/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/dark,/area/space)
+"cy" = (/obj/machinery/embedded_controller/radio/airlock/docking_port{cycle_to_external_air = 0; frequency = 1337; id_tag = "patrol_shuttle"; pixel_x = 24; pixel_y = 0; req_access = list(88); tag_exterior_sensor = null},/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/cyan{icon_state = "intact"; dir = 10},/turf/simulated/floor,/area/space)
+"cz" = (/obj/structure/catwalk,/obj/structure/handrai,/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 2; frequency = 1337; id_tag = "patrol_shuttle_pump"},/turf/simulated/floor,/area/space)
+"cA" = (/obj/structure/catwalk,/obj/machinery/airlock_sensor{frequency = 1337; id_tag = "patrol_shuttle_sensor"; pixel_x = -5; pixel_y = 24},/obj/machinery/access_button/airlock_exterior{frequency = 1337; master_tag = "patrol_shuttle"; pixel_x = 6; pixel_y = 24},/obj/machinery/light/small{dir = 4},/turf/simulated/floor,/area/space)
+"cB" = (/obj/machinery/conveyor{dir = 4; icon_state = "conveyor0"; id = "torp"; tag = "icon-conveyor0 (EAST)"},/obj/item/projectile/ship_munition/torpedo,/turf/simulated/floor,/area/space)
+"cC" = (/obj/effect/floor_decal/industrial/warning/half,/obj/machinery/door/firedoor,/turf/simulated/floor/tiled/white,/area/space)
+"cD" = (/turf/simulated/wall,/area/space)
+"cE" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/industrial/warning/half{tag = "icon-warninghalf (NORTH)"; icon_state = "warninghalf"; dir = 1},/obj/machinery/door/firedoor,/turf/simulated/floor/tiled,/area/space)
+"cF" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor,/area/space)
+"cG" = (/obj/structure/closet/emcloset,/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/alarm{alarm_id = "petrov2"; dir = 4; pixel_x = -25; pixel_y = 0; rcon_setting = 2},/turf/simulated/floor/tiled,/area/space)
+"cH" = (/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/red{icon_state = "intact"; dir = 6},/turf/simulated/floor,/area/space)
+"cI" = (/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/red{icon_state = "intact"; dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/cyan,/turf/simulated/floor,/area/space)
+"cJ" = (/obj/machinery/light,/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/red{icon_state = "intact"; dir = 4},/obj/machinery/recharger/wallcharger{pixel_x = 4; pixel_y = -34},/turf/simulated/floor,/area/space)
+"cK" = (/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/red{icon_state = "intact"; dir = 4},/turf/simulated/floor,/area/space)
+"cL" = (/obj/structure/catwalk,/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor,/area/space)
+"cM" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/access_button/airlock_interior{frequency = 1337; master_tag = "patrol_shuttle"; pixel_x = 24; pixel_y = -24},/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/cyan{dir = 5; icon_state = "intact"},/turf/simulated/floor,/area/space)
+"cN" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/door/airlock/glass_external{frequency = 1337; id_tag = "patrol_shuttle_inner"; name = "Patrol Shuttle External Access"},/obj/machinery/atmospherics/pipe/simple/hidden/cyan{dir = 4; icon_state = "intact"},/turf/simulated/floor,/area/space)
+"cO" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/obj/item/device/radio/intercom{dir = 1; pixel_y = -22},/obj/machinery/atmospherics/pipe/manifold/hidden/cyan,/turf/simulated/floor,/area/space)
+"cP" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/obj/machinery/oxygen_pump{pixel_y = -32},/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 8; frequency = 1337; id_tag = "patrol_shuttle_pump"},/turf/simulated/floor,/area/space)
+"cQ" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/door/airlock/external{density = 1; frequency = 1337; id_tag = "patrol_shuttle_outer"; name = "Patrol Shuttle External Access"},/turf/simulated/floor,/area/space)
+"cR" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/machinery/atmospherics/pipe/simple/hidden/fuel,/turf/simulated/floor,/area/space)
+"cS" = (/obj/structure/table/reinforced,/obj/item/weapon/paper_bin,/obj/item/weapon/pen,/turf/simulated/floor/tiled/white,/area/space)
+"cT" = (/obj/structure/table/reinforced,/obj/item/weapon/reagent_containers/food/drinks/coffeecup/SCG,/turf/simulated/floor/tiled/white,/area/space)
+"cU" = (/obj/structure/bed/chair{tag = "icon-chair_preview (WEST)"; icon_state = "chair_preview"; dir = 8},/turf/simulated/floor/tiled/white,/area/space)
+"cV" = (/obj/structure/closet/secure_closet/engineering_torch,/turf/simulated/floor/tiled,/area/space)
+"cW" = (/obj/structure/closet/secure_closet/engineering_welding,/turf/simulated/floor/tiled,/area/space)
+"cX" = (/obj/structure/flora/pottedplant/subterranean,/turf/simulated/floor/tiled,/area/space)
+"cY" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/portable_atmospherics/canister/empty,/obj/machinery/atmospherics/portables_connector{dir = 1},/turf/simulated/floor,/area/space)
+"cZ" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/portable_atmospherics/canister/air,/obj/machinery/atmospherics/portables_connector{dir = 1},/turf/simulated/floor,/area/space)
+"da" = (/obj/structure/closet/crate/freezer/rations,/turf/simulated/floor,/area/space)
+"db" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor,/area/space)
+"dc" = (/obj/machinery/power/terminal,/obj/structure/cable,/turf/simulated/floor,/area/space)
+"dd" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/fuel,/turf/simulated/floor,/area/space)
+"de" = (/obj/structure/closet/firecloset/full,/turf/simulated/floor,/area/space)
+"df" = (/obj/item/modular_computer/console/preset/medical,/turf/simulated/floor/tiled/white,/area/space)
+"dg" = (/obj/structure/table/reinforced,/obj/item/weapon/folder/white,/turf/simulated/floor/tiled/white,/area/space)
+"dh" = (/obj/structure/bed/chair{tag = "icon-chair_preview (WEST)"; icon_state = "chair_preview"; dir = 8},/obj/machinery/power/apc{dir = 4; name = "east bump"; pixel_x = 24; pixel_y = 0},/turf/simulated/floor/tiled/white,/area/space)
+"di" = (/obj/structure/toilet{tag = "icon-toilet00 (EAST)"; icon_state = "toilet00"; dir = 4},/turf/simulated/floor/tiled/freezer,/area/space)
+"dj" = (/obj/machinery/button/remote/airlock{id = "patrol_toilet"; name = "Lock"; pixel_x = 24; pixel_y = -8; specialfunctions = 4},/turf/simulated/floor/tiled/freezer,/area/space)
+"dk" = (/obj/machinery/shower{icon_state = "shower"; dir = 4},/obj/machinery/button/remote/airlock{id = "patrol_shower"; name = "Lock"; pixel_x = 24; pixel_y = -8; specialfunctions = 4},/turf/simulated/floor/tiled/freezer,/area/space)
+"dl" = (/obj/effect/floor_decal/industrial/warning/half{icon_state = "warninghalf"; dir = 4},/obj/machinery/door/firedoor,/turf/simulated/floor/tiled,/area/space)
+"dm" = (/obj/structure/closet/secure_closet/engineering_electrical,/turf/simulated/floor/tiled,/area/space)
+"dn" = (/obj/machinery/recharge_station,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor,/area/space)
+"do" = (/obj/structure/cable/green{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/machinery/mech_recharger,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor,/area/space)
+"dp" = (/obj/machinery/power/smes,/obj/structure/cable/green{d2 = 8; icon_state = "0-8"},/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor,/area/space)
+"dq" = (/obj/machinery/portable_atmospherics/powered/pump/filled,/turf/simulated/floor,/area/space)
+"dr" = (/turf/simulated/floor/tiled/freezer,/area/space)
+"ds" = (/obj/effect/floor_decal/corner/red{dir = 1},/turf/simulated/floor/tiled,/area/space)
+"dt" = (/obj/machinery/vending/engineering,/turf/simulated/floor/tiled,/area/space)
+"du" = (/obj/machinery/power/apc{dir = 4; name = "east bump"; pixel_x = 24; pixel_y = 0},/turf/simulated/floor/tiled,/area/space)
+"dv" = (/obj/structure/fuel_port{pixel_y = 32},/turf/simulated/floor,/area/space)
+"dw" = (/obj/structure/shuttle/engine/propulsion/burst/left{tag = "icon-burst_l (EAST)"; icon_state = "burst_l"; dir = 4},/obj/structure/shuttle/engine/heater{dir = 4; icon_state = "heater"; pixel_x = -32},/turf/simulated/floor,/area/space)
+"dx" = (/obj/machinery/portable_atmospherics/powered/scrubber,/turf/simulated/floor,/area/space)
+"dy" = (/obj/structure/closet/secure_closet/medical_torch,/turf/simulated/floor/tiled/white,/area/space)
+"dz" = (/obj/structure/flora/pottedplant/orientaltree,/turf/simulated/floor/tiled/white,/area/space)
+"dA" = (/obj/machinery/atmospherics/unary/cryo_cell,/turf/simulated/floor/tiled/white,/area/space)
+"dB" = (/obj/machinery/atmospherics/unary/freezer,/turf/simulated/floor/tiled/white,/area/space)
+"dC" = (/obj/structure/mirror{pixel_x = -32},/obj/structure/sink{dir = 8; icon_state = "sink"; pixel_x = -15; tag = "icon-sink (WEST)"},/turf/simulated/floor/tiled/freezer,/area/space)
+"dD" = (/obj/structure/urinal{pixel_y = 28},/turf/simulated/floor/tiled/freezer,/area/space)
+"dE" = (/obj/machinery/vending/engivend,/turf/simulated/floor/tiled,/area/space)
+"dF" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled,/area/space)
+"dG" = (/obj/structure/dispenser/oxygen,/turf/simulated/floor/tiled,/area/space)
+"dH" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor,/area/space)
+"dI" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor,/area/space)
+"dJ" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/fuel{icon_state = "intact"; dir = 4},/turf/simulated/floor,/area/space)
+"dK" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/fuel{icon_state = "intact"; dir = 6},/turf/simulated/floor,/area/space)
+"dL" = (/obj/structure/catwalk,/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/machinery/atmospherics/pipe/simple/hidden/fuel{icon_state = "intact"; dir = 9},/turf/simulated/floor,/area/space)
+"dM" = (/obj/machinery/sleeper{tag = "icon-sleeper_0 (EAST)"; icon_state = "sleeper_0"; dir = 4},/turf/simulated/floor/tiled/white,/area/space)
+"dN" = (/obj/machinery/atmospherics/pipe/simple/visible{tag = "icon-intact (NORTHEAST)"; icon_state = "intact"; dir = 5},/turf/simulated/floor/tiled/white,/area/space)
+"dO" = (/obj/machinery/atmospherics/pipe/manifold/visible{tag = "icon-map (EAST)"; icon_state = "map"; dir = 4},/obj/structure/table/standard,/obj/machinery/vending/wallmed1{pixel_x = 26},/obj/machinery/cell_charger,/obj/item/weapon/reagent_containers/glass/beaker/cryoxadone,/turf/simulated/floor/tiled/white,/area/space)
+"dP" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial/warning/half,/turf/simulated/floor/tiled/white,/area/space)
+"dQ" = (/obj/machinery/vending/tool,/turf/simulated/floor/tiled,/area/space)
+"dR" = (/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/tiled,/area/space)
+"dS" = (/obj/machinery/bodyscanner{tag = "icon-body_scanner_0 (EAST)"; icon_state = "body_scanner_0"; dir = 4},/turf/simulated/floor/tiled/white,/area/space)
+"dT" = (/obj/machinery/body_scanconsole{tag = "icon-body_scannerconsole (WEST)"; icon_state = "body_scannerconsole"; dir = 8},/turf/simulated/floor/tiled/white,/area/space)
+"dU" = (/obj/machinery/atmospherics/portables_connector{dir = 1},/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/tiled/white,/area/space)
+"dV" = (/obj/effect/floor_decal/industrial/warning/half,/obj/machinery/door/firedoor,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/tiled,/area/space)
+"dW" = (/obj/machinery/suit_storage_unit/engineering/alt,/turf/simulated/floor/tiled,/area/space)
+"dX" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel{icon_state = "intact"; dir = 6},/turf/simulated/wall/ocp_wall,/area/space)
+"dY" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel{icon_state = "intact"; dir = 4},/turf/simulated/wall/ocp_wall,/area/space)
+"dZ" = (/obj/machinery/atmospherics/pipe/manifold/hidden/fuel{tag = "icon-map (EAST)"; icon_state = "map"; dir = 4},/turf/simulated/floor,/area/space)
+"ea" = (/obj/structure/table/standard,/obj/item/weapon/storage/firstaid/toxin{pixel_x = 3; pixel_y = 3},/obj/item/weapon/storage/firstaid/adv,/turf/simulated/floor/tiled/white,/area/space)
+"eb" = (/obj/machinery/power/apc{name = "south bump"; pixel_y = -25},/turf/simulated/floor/tiled/white,/area/space)
+"ec" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/embedded_controller/radio/airlock/access_controller{id_tag = "prototype_controller_patrol"; name = "Fusion Maintenance Access Controller"; pixel_x = 26; pixel_y = 0; req_access = list(11); tag_exterior_door = "prototype_exterior"; tag_interior_door = "prototype_interior"},/turf/simulated/floor/tiled,/area/space)
+"ed" = (/obj/effect/floor_decal/industrial/warning/corner{icon_state = "warningcorner"; dir = 8},/turf/simulated/floor/reinforced/airless,/area/space)
+"ee" = (/turf/simulated/floor/reinforced/airless,/area/space)
+"ef" = (/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction,/obj/effect/floor_decal/industrial/warning/half{icon_state = "warninghalf"; dir = 4},/turf/simulated/floor/reinforced/airless,/area/space)
+"eg" = (/obj/structure/table/standard,/obj/item/weapon/storage/firstaid/o2{pixel_x = 3; pixel_y = 3},/obj/item/weapon/storage/firstaid/fire,/turf/simulated/floor/tiled/white,/area/space)
+"eh" = (/obj/structure/table/standard,/obj/item/weapon/storage/firstaid/regular{pixel_x = 3; pixel_y = 3},/obj/item/weapon/storage/firstaid/regular,/turf/simulated/floor/tiled/white,/area/space)
+"ei" = (/obj/effect/floor_decal/industrial/warning{tag = "icon-warning (NORTHWEST)"; icon_state = "warning"; dir = 9},/obj/effect/floor_decal/industrial/warning/corner,/turf/simulated/floor/tiled,/area/space)
+"ej" = (/obj/effect/floor_decal/industrial/warning/half,/turf/simulated/floor/tiled,/area/space)
+"ek" = (/obj/effect/floor_decal/industrial/warning{dir = 5},/obj/effect/floor_decal/industrial/warning/corner{dir = 8},/turf/simulated/floor/tiled,/area/space)
+"el" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/tiled,/area/space)
+"em" = (/obj/machinery/door/firedoor,/obj/effect/wingrille_spawn/reinforced,/turf/simulated/floor,/area/space)
+"en" = (/obj/structure/closet/radiation,/obj/machinery/light/small{dir = 4},/turf/simulated/floor,/area/space)
+"eo" = (/obj/structure/sign/warning/radioactive,/turf/simulated/wall/r_wall,/area/space)
+"ep" = (/obj/machinery/power/apc/super/critical{dir = 1; is_critical = 1; name = "north bump"; pixel_y = 24},/obj/structure/cable{icon_state = "0-2"; d2 = 2},/turf/simulated/floor,/area/space)
+"eq" = (/obj/structure/cable/yellow{d2 = 2; icon_state = "0-2"},/obj/effect/floor_decal/industrial/warning/corner,/obj/machinery/light{icon_state = "tube1"; dir = 1},/turf/simulated/floor,/area/space)
+"er" = (/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/effect/floor_decal/industrial/warning{dir = 6},/turf/simulated/floor,/area/space)
+"es" = (/obj/machinery/door/airlock/hatch{icon_state = "door_locked"; id_tag = "prototype_access_hatch"; locked = 1; req_access = list(11)},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor,/area/space)
+"et" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/reinforced/airless,/area/space)
+"eu" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/floor_decal/industrial/warning{dir = 9},/turf/simulated/floor/reinforced/airless,/area/space)
+"ev" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/floor_decal/industrial/warning/corner{dir = 1},/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/turf/simulated/floor/reinforced/airless,/area/space)
+"ew" = (/obj/structure/cable/yellow{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 1},/turf/simulated/floor/reinforced/airless,/area/space)
+"ex" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/turf/simulated/floor/reinforced/airless,/area/space)
+"ey" = (/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 5},/turf/simulated/floor/reinforced/airless,/area/space)
+"ez" = (/obj/machinery/atmospherics/pipe/simple/heat_exchanging,/obj/effect/floor_decal/industrial/warning/half{icon_state = "warninghalf"; dir = 4},/turf/simulated/floor/reinforced/airless,/area/space)
+"eA" = (/obj/structure/table/reinforced,/turf/simulated/floor/tiled/white,/area/space)
+"eB" = (/obj/structure/iv_drip,/obj/structure/closet/secure_closet/medical_wall{pixel_x = 26},/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,/turf/simulated/floor/tiled/white,/area/space)
+"eC" = (/obj/structure/table/rack,/obj/item/device/flashlight/maglight,/obj/item/device/flashlight/maglight,/obj/item/device/flashlight/maglight,/obj/item/device/flashlight/maglight,/obj/item/device/flashlight/maglight,/obj/item/device/flashlight/maglight,/obj/item/device/flashlight/maglight,/turf/simulated/floor/tiled,/area/space)
+"eD" = (/obj/structure/table/rack,/obj/item/weapon/storage/firstaid/individual/military/troops,/obj/item/weapon/storage/firstaid/individual/military/troops,/obj/item/weapon/storage/firstaid/individual/military/troops,/obj/item/weapon/storage/firstaid/individual/military/troops,/obj/item/weapon/storage/firstaid/individual/military/troops,/obj/item/weapon/storage/firstaid/individual/military/troops,/obj/item/weapon/storage/firstaid/individual/military/troops,/obj/item/weapon/storage/firstaid/individual/military/troops,/turf/simulated/floor/tiled,/area/space)
+"eE" = (/obj/effect/floor_decal/industrial/warning/half{tag = "icon-warninghalf (EAST)"; icon_state = "warninghalf"; dir = 4},/turf/simulated/floor/tiled,/area/space)
+"eF" = (/obj/machinery/suit_storage_unit/security/alt,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled,/area/space)
+"eG" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/tiled,/area/space)
+"eH" = (/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/access_button/airlock_exterior{master_tag = "prototype_controller_patrol"; pixel_x = 23; pixel_y = 23},/turf/simulated/floor/tiled,/area/space)
+"eI" = (/obj/effect/floor_decal/industrial/warning/half{tag = "icon-warninghalf (WEST)"; icon_state = "warninghalf"; dir = 8},/obj/machinery/door/firedoor,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/door/airlock/maintenance_hatch/bolted{frequency = 1379; id_tag = "prototype_exterior_patrol"; name = "Fusion Maintenance"},/turf/simulated/floor,/area/space)
+"eJ" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/access_button/airlock_interior{master_tag = "prototype_controller_patrol"; pixel_x = 23; pixel_y = -24},/obj/machinery/shower{dir = 1},/turf/simulated/floor,/area/space)
+"eK" = (/obj/machinery/door/firedoor,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/floor_decal/industrial/warning/half{tag = "icon-warninghalf (WEST)"; icon_state = "warninghalf"; dir = 8},/obj/machinery/door/airlock/maintenance_hatch/bolted{frequency = 1379; id_tag = "prototype_interior_patrol"; name = "Fusion Maintenance"},/turf/simulated/floor,/area/space)
+"eL" = (/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor,/area/space)
+"eM" = (/obj/machinery/fusion_fuel_injector/mapped{anchored = 0; dir = 4; icon_state = "injector0"; id_tag = "fusion_injector_patrol"},/turf/simulated/floor/reinforced,/area/space)
+"eN" = (/obj/effect/wingrille_spawn/reinforced_phoron,/obj/machinery/door/blast/regular/open{dir = 4; icon_state = "pdoor0"; id = "prototype_chamber_blast_patrol"},/turf/simulated/floor,/area/space)
+"eO" = (/obj/effect/floor_decal/industrial/warning/corner{icon_state = "warningcorner"; dir = 1},/turf/simulated/floor/reinforced/airless,/area/space)
+"eP" = (/obj/effect/floor_decal/industrial/warning/corner{icon_state = "warningcorner"; dir = 1},/obj/effect/floor_decal/industrial/warning/corner{icon_state = "warningcorner"; dir = 8},/turf/simulated/floor/reinforced/airless,/area/space)
+"eQ" = (/obj/effect/floor_decal/industrial/warning/corner,/obj/effect/floor_decal/industrial/warning{dir = 9},/turf/simulated/floor/reinforced/airless,/area/space)
+"eR" = (/obj/effect/floor_decal/industrial/warning,/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/industrial/warning/corner{dir = 1},/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/turf/simulated/floor/reinforced/airless,/area/space)
+"eS" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 8},/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 5},/turf/simulated/floor/reinforced/airless,/area/space)
+"eT" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/obj/effect/floor_decal/industrial/warning/corner,/turf/simulated/floor/reinforced/airless,/area/space)
+"eU" = (/obj/machinery/optable,/turf/simulated/floor/tiled/white,/area/space)
+"eV" = (/obj/machinery/door/airlock/highsecurity{name = "Troops Armory"},/turf/simulated/floor/tiled,/area/space)
+"eW" = (/obj/machinery/door/firedoor,/turf/simulated/floor/tiled,/area/space)
+"eX" = (/obj/machinery/door/firedoor,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor,/area/space)
+"eY" = (/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor,/area/space)
+"eZ" = (/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor,/area/space)
+"fa" = (/obj/machinery/power/emitter/gyrotron{dir = 4; id_tag = "fusion_gyrotron_patrol"},/obj/structure/cable/green{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/reinforced,/area/space)
+"fb" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/reinforced/airless,/area/space)
+"fc" = (/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 4},/obj/effect/floor_decal/industrial/warning/corner{icon_state = "warningcorner"; dir = 1},/obj/effect/floor_decal/industrial/warning/corner{icon_state = "warningcorner"; dir = 8},/turf/simulated/floor/reinforced/airless,/area/space)
+"fd" = (/obj/machinery/power/fusion_core/mapped,/obj/structure/cable/yellow,/turf/simulated/floor/reinforced/airless,/area/space)
+"fe" = (/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 8},/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/obj/effect/floor_decal/industrial/warning/corner,/turf/simulated/floor/reinforced/airless,/area/space)
+"ff" = (/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 4},/turf/simulated/floor/reinforced/airless,/area/space)
+"fg" = (/obj/machinery/power/apc{name = "south bump"; pixel_y = -25},/turf/simulated/floor/tiled,/area/space)
+"fh" = (/obj/structure/cable,/obj/structure/cable{icon_state = "0-2"; d2 = 2},/obj/machinery/power/apc/critical{dir = 8; name = "west bump"; pixel_x = -24},/turf/simulated/floor/tiled,/area/space)
+"fi" = (/obj/machinery/button/remote/blast_door{desc = "A remote control-switch for the prototype exhaust"; id = "prototype_exhaust_patrol"; name = "Chamber Exhaust"; pixel_x = 0; pixel_y = 21; req_access = list(11)},/obj/machinery/button/remote/blast_door{desc = "A remote control-switch for the observation shutters"; id = "fusion_observation_patrol"; name = "Chamber Observation"; pixel_x = 0; pixel_y = 29; req_access = list(11)},/obj/machinery/button/remote/blast_door{desc = "A remote control-switch for the engine containment doors"; id = "prototype_chamber_blast_patrol"; name = "Chamber Containment"; pixel_x = 0; pixel_y = 37; req_access = list(11)},/obj/machinery/computer/fusion_fuel_control{id_tag = "fusion_injector_patrol"; req_access = list(11)},/turf/simulated/floor,/area/space)
+"fj" = (/obj/effect/wingrille_spawn/reinforced_phoron,/obj/machinery/door/blast/regular{dir = 4; id = "fusion_observation"},/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor,/area/space)
+"fk" = (/obj/effect/floor_decal/industrial/warning,/obj/structure/closet/crate/radiation,/obj/item/stack/material/deuterium/fifty,/obj/item/stack/material/deuterium/fifty,/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor,/area/space)
+"fl" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 8},/obj/structure/cable/green{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor,/area/space)
+"fm" = (/obj/effect/floor_decal/industrial/warning/corner{icon_state = "warningcorner"; dir = 8},/obj/effect/floor_decal/industrial/warning/corner{icon_state = "warningcorner"; dir = 1},/turf/simulated/floor/reinforced/airless,/area/space)
+"fn" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 10},/turf/simulated/floor/reinforced/airless,/area/space)
+"fo" = (/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 1},/obj/effect/floor_decal/industrial/warning/corner{icon_state = "warningcorner"; dir = 8},/turf/simulated/floor/reinforced/airless,/area/space)
+"fp" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 1},/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 6},/turf/simulated/floor/reinforced/airless,/area/space)
+"fq" = (/obj/effect/floor_decal/industrial/warning/corner,/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/turf/simulated/floor/reinforced/airless,/area/space)
+"fr" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel,/turf/simulated/wall/ocp_wall,/area/space)
+"fs" = (/obj/structure/table/rack,/turf/simulated/floor/tiled,/area/space)
+"ft" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/light{dir = 8},/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/tiled,/area/space)
+"fu" = (/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/structure/bed/chair/office/dark{dir = 4},/obj/effect/floor_decal/industrial/warning/corner{dir = 8},/turf/simulated/floor/tiled,/area/space)
+"fv" = (/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/computer/fusion_core_control{id_tag = "fusion_core_patrol"; req_access = list(11)},/turf/simulated/floor,/area/space)
+"fw" = (/obj/structure/cable/green{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/wingrille_spawn/reinforced_phoron,/obj/machinery/door/blast/regular{dir = 4; id = "fusion_observation"},/obj/structure/cable/green{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor,/area/space)
+"fx" = (/obj/machinery/power/smes/buildable/preset/torch/engine_main{RCon_tag = "Prototype - Main"},/obj/structure/cable/green{d2 = 8; icon_state = "0-8"},/turf/simulated/floor,/area/space)
+"fy" = (/obj/machinery/power/terminal{dir = 8},/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor,/area/space)
+"fz" = (/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/structure/cable/yellow,/turf/simulated/floor,/area/space)
+"fA" = (/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 10},/turf/simulated/floor/reinforced/airless,/area/space)
+"fB" = (/obj/effect/floor_decal/industrial/warning/corner{icon_state = "warningcorner"; dir = 8},/obj/effect/floor_decal/industrial/warning/corner,/turf/simulated/floor/reinforced/airless,/area/space)
+"fC" = (/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/reinforced/airless,/area/space)
+"fD" = (/obj/effect/floor_decal/industrial/warning/corner,/obj/effect/floor_decal/industrial/warning/corner{icon_state = "warningcorner"; dir = 8},/turf/simulated/floor/reinforced/airless,/area/space)
+"fE" = (/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 6},/turf/simulated/floor/reinforced/airless,/area/space)
+"fF" = (/obj/effect/floor_decal/industrial/warning{tag = "icon-warning (SOUTHWEST)"; icon_state = "warning"; dir = 10},/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/turf/simulated/floor/tiled,/area/space)
+"fG" = (/obj/effect/floor_decal/industrial/warning{dir = 6},/obj/effect/floor_decal/industrial/warning/corner{icon_state = "warningcorner"; dir = 1},/turf/simulated/floor/tiled,/area/space)
+"fH" = (/obj/machinery/power/smes/buildable{charge = 0; RCon_tag = "Prototype - Distribution"},/turf/simulated/floor,/area/space)
+"fI" = (/obj/machinery/power/terminal{dir = 8},/obj/structure/cable/green,/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/tiled,/area/space)
+"fJ" = (/obj/machinery/computer/gyrotron_control{id_tag = "fusion_gyrotron_patrol"; req_access = list(11)},/turf/simulated/floor,/area/space)
+"fK" = (/obj/effect/wingrille_spawn/reinforced_phoron,/obj/machinery/door/blast/regular{dir = 4; id = "fusion_observation"},/turf/simulated/floor,/area/space)
+"fL" = (/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 1},/obj/machinery/fusion_fuel_compressor,/turf/simulated/floor,/area/space)
+"fM" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 1},/turf/simulated/floor,/area/space)
+"fN" = (/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/machinery/light,/turf/simulated/floor,/area/space)
+"fO" = (/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 1},/obj/machinery/power/port_gen/pacman/mrs,/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/turf/simulated/floor,/area/space)
+"fP" = (/obj/effect/floor_decal/industrial/warning/corner,/turf/simulated/floor/reinforced/airless,/area/space)
+"fQ" = (/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{tag = "icon-intact (NORTH)"; icon_state = "intact"; dir = 1},/obj/effect/floor_decal/industrial/warning/half{icon_state = "warninghalf"; dir = 4},/turf/simulated/floor/reinforced/airless,/area/space)
+"fR" = (/obj/machinery/door/blast/regular{dir = 4; id = "prototype_exhaust_patrol"},/turf/simulated/floor/reinforced/airless,/area/space)
+"fS" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel{icon_state = "intact"; dir = 5},/turf/simulated/wall/ocp_wall,/area/space)
+"fT" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel{icon_state = "intact"; dir = 9},/turf/simulated/wall/ocp_wall,/area/space)
+"fU" = (/obj/machinery/door/blast/regular{dir = 4; id = "prototype_exhaust_patrol"},/obj/machinery/shield_diffuser,/turf/simulated/floor/reinforced/airless,/area/space)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababacacabababababababababababababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababababababadadababababababababababababababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababababababaeaeaeaeabababababababafafafabafafafabafafafabafafafabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabacabacabababagahaeaeaiaiaeaeabaeaeabababafafafabafafafabafafafabafafafababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababadabadabababahaeaeajakakalaeabaeamaeabababafabababafabababafabababafanababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababaoaeaeaeaeaeabahaeaeajakakalaeabaeaeaeababafafafafabafafafafafafabafapaqarasatauaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababaoaeaeaeaeaeadahaeaeaeavavaeaeadaeaeaeaeabafafafafafafafafafafafafafafafafawaxauaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababaoaeaeaeaeaeayaeaeaeaeaeaeaeaeayaeaeaeaeabafafafafababababababababababababawaxauaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababakakabafababababababazazababababafababababababafafabaAaAaBafafaCaDaEaFaGawaHababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababafafafafafafafafaIaeafafafafafafafafafafafafafabaAaAaBafafaJaDaKaFaGaGaLababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaMaNabaOaPafaQafafababababababaIaRabababababababababababafafababababafafababaLabaGaGaHafafababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaMaSaTaUaVafabafafabaWaWaWaWabaIaRadaXaYaZaYaYadaYaYaYabafababawawawawawawawbabbbbbcbbbbbbbbbdababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaMbeabababababafafabbfaWaWaWayaIaRadaXaYbgaYaYbhaYaYaYabafabafawbiafafafafbjbjbjbjbjbjbjbkafblbmabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababafafafafabaWaWaWaWabaeaRabbnaYaYaYaYbhaYaYaYabafabafawafbobjbjbjbjbjbpbqbrbjbjbsafblbmabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababafafafafabaWaWaWababbtbtababbubvbwbnabbxaYababafababawbybjbjbjbzbAbjbBaWbCbjbjbjbjblbmabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababababbDabababababababaebEaeaeababadadababadbFabaeaeaeabawbjbjbjbGawbHbIawawawbJbKbLbjblafabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababbMbNafafafabbOabbPbQbQbQbRbQbQaebRbEbEbSbTbUbVbVbVbVbWbVaebUaeaeaebRawafbXbYbZcacbcccdcecfbjbjbjbjblafabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacgchciafafafafafcjafcjaeckckckbRckckckbRaebSclclbUaecmcmcmcmcmcncocpcpcpcqcrafbXcsbZctcucvcwcxcybjczcAbjblafabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababcBcBcBcBabababababcCcCadcDaeaeaeabaeaeclaeababababababadcEabababababcFbjbjbjcGcHcIcJcKcLcMcNcOcPcQcRafabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababcScTaWaWcUcDcDcDcDababbtbtababaWaWaWabcVaeaeadcWcXabafcFbibjbjbjcYcZbjdadbdcbjbjbjbjdddeabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababdfaWdgaWaWdhcDdidjcDdkcDbQaeabbfaWaWaWabcVaeaedlaedmabafcFafbobjbjbjbjbjdndodpbjbjbsafdddqabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababababcCabcCcCcDcDcDdrcDdrcDbQdsadaWaWaWaWabdtaeduabadadababcFbyafafafdvbjbjbjbjbjbjbjdwafdddxabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababdyaWdzaWaWdAdBcDdCdDdrcDbQdsabaWaWaWaWabdEaedFdlaeaedGabdHdIdIdIdIdIdIdIdJdJdKdKdJdJdJdLababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababdMaWaWaWaWdNdOcDdCdrdrdrbQdsababaddPababdQaedFadaeaedRababababababababaGaGaGabawafafababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababdSdTaWaWaWaWdUcDcDcDcDcDbQdsbRaeaeaeaeababaddVabdWdWabababaGaGaGaGaGaGaGaGdXdYdZababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababeaaWebaWaWaWaWafafafafafaedsbRaeaeaeaeababaeecababababababaGedeeeeeeeeeeeeefaGaHabababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababegehabadcCadabababababababadadeiejejekdGabaeelemeneoepeqereseteuevewexeyeeezaGaxauaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababeAaWeBabababaeaeabeCeDadeEeFeFeEakabeGeHeIeJeKaUeLeMeNeOePeQeReSeTeeezaGaxauaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababababeAeUeAababaeaeaeeVaeaeeWeEeFeFeEakabeXbtabababeYeZfaeNeefbfcfdfeffeeezdXbcauaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababababababababaefgaeeVaeaeeWeEeFeFeEdRabfhaefifjfkfleLeMeNeefmfnfofpfqeeezfrababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababababfsfsadeEeFeFeEakabftfufvfwfxfyfzeMeNeefAfBfCfDfEeeezfrababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababababababababababfFejejfGababfHfIfJfKfLfMfNfOaGeeeefPfCedeeeefQfrabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababababababababababababababababaGaGaGaGfRaGaGaGfSfTabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababababababababababababababababababababababaGfUaGababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+"}
