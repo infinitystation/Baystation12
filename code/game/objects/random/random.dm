@@ -854,7 +854,7 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/clothing/head/bandana = 4,
 				/obj/item/clothing/head/bowlerhat = 1,
 				/obj/item/clothing/head/cardborg = 2,
-				/obj/item/clothing/head/orangebandana = 3,
+				/obj/item/clothing/head/bandana/orange = 3,
 				/obj/item/clothing/head/soft/grey = 3,
 				/obj/item/clothing/head/flatcap = 3,
 				/obj/item/clothing/head/welding = 1)
