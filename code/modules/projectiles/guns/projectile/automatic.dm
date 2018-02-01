@@ -302,6 +302,7 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/c12755
 	allowed_magazines = /obj/item/ammo_magazine/c12755
+	ammo_type = /obj/item/ammo_casing/a12755
 	one_hand_penalty = 7
 	wielded_item_state = "z8carbine-wielded"
 	firemodes = list(
