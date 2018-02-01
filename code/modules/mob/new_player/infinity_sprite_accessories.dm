@@ -156,3 +156,19 @@ c
 /datum/sprite_accessory/hair/resomi/mushroom
 	name = "Resomi Mushroom"
 	icon_state = "resomi_mushroom"
+
+/datum/sprite_accessory/hair/resomi/twies
+	name = "Resomi Twies"
+	icon_state = "resomi_twies"
+
+/datum/sprite_accessory/hair/resomi/backstrafe
+	name = "Resomi Backstrafe"
+	icon_state = "resomi_backstrafe"
+
+/datum/sprite_accessory/hair/resomi/longway
+	name = "Resomi Long way"
+	icon_state = "resomi_longway"
+
+/datum/sprite_accessory/hair/resomi/notree
+	name = "Resomi Tree"
+	icon_state = "resomi_notree"
