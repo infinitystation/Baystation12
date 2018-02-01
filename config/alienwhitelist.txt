@@ -46,6 +46,7 @@ wolforbykot - unathi
 hodovoy - unathi
 kirill1243 - unathi
 aragog94 - unathi
-denmag - tajara
-solark - tajara
-furrydog  - tajara
+denmag - tajaran
+solark - tajaran
+furrydog  - tajaran
+arhod - tajaran
