@@ -50,3 +50,27 @@
 	icon_state = "resomi_greydress"
 	worn_state = "resomi_greydress"
 	species_restricted = list(SPECIES_RESOMI)
+
+/obj/item/clothing/under/solgov/fleet/special
+	name = "special fleet utility"
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	icon_override = 'icons/mob/infinity/uniform.dmi'
+	icon_state = "fleet"
+	worn_state = "fleet"
+
+/obj/item/clothing/under/solgov/fleet/special/officer
+	name = "special fleet command utility"
+	icon_state = "fleet_of"
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/command/fleet)
+
+/obj/item/clothing/under/solgov/fleet/special/officer/commander
+	name = "special fleet high command uniform"
+	icon_state = "fleet_com"
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/command/fleet)
+
+/obj/item/clothing/head/soft/solgov/fleet_special
+	name = "\improper Special Fleet cap"
+	desc = "A navy blue utility cover bearing the crest of the SCG Fleet."
+	icon = 'icons/obj/clothing/infinity/hats.dmi'
+	icon_override = 'icons/mob/infinity/hats.dmi'
+	icon_state = "fleetsoft"
