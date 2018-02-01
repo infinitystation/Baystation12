@@ -26,8 +26,8 @@
 			possible_targets += thing
 		for(var/obj/effect/overmap_event/thing in loc)
 			possible_targets += thing
-		for(var/obj/effect/overmap_munition/thing in loc)
-			possible_targets += thing
+//		for(var/obj/effect/overmap_munition/thing in loc)
+//			possible_targets += thing
 		possible_targets -= src
 		if(possible_targets.len)
 			var/hit = pick(possible_targets)
@@ -96,9 +96,9 @@
 
 				qdel(src)
 
-			else if(istype(hit, /obj/effect/overmap_munition))
-				qdel(hit)
-				qdel(src)
+//			else if(istype(hit, /obj/effect/overmap_munition))
+//				qdel(hit)
+//				qdel(src)
 
 			//else if(istype(hit, /obj/effect/overmap/sector))
 			//else if(istype(hit, /obj/effect/overmap_event))

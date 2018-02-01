@@ -30,20 +30,20 @@ var/datum/antagonist/wizard/wizards
 	var/kill
 	var/escape
 	var/steal
-	var/hijack
+//	var/hijack
 
-	switch(rand(1,100))
+	switch(rand(1,99))
 		if(1 to 30)
 			escape = 1
 			kill = 1
 		if(31 to 60)
 			escape = 1
 			steal = 1
-		if(61 to 99)
+		else
 			kill = 1
 			steal = 1
-		else
-			hijack = 1
+//		else
+//			hijack = 1
 
 	if(kill)
 		var/datum/objective/assassinate/kill_objective = new
@@ -59,10 +59,10 @@ var/datum/antagonist/wizard/wizards
 		var/datum/objective/survive/survive_objective = new
 		survive_objective.owner = wizard
 		wizard.objectives |= survive_objective
-	if(hijack)
-		var/datum/objective/hijack/hijack_objective = new
-		hijack_objective.owner = wizard
-		wizard.objectives |= hijack_objective
+//	if(hijack)
+//		var/datum/objective/hijack/hijack_objective = new
+//		hijack_objective.owner = wizard
+//		wizard.objectives |= hijack_objective
 	return
 
 /datum/antagonist/wizard/update_antag_mob(var/datum/mind/wizard)

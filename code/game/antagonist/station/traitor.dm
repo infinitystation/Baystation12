@@ -60,18 +60,18 @@ var/datum/antagonist/traitor/traitors
 				steal_objective.owner = traitor
 				steal_objective.find_target()
 				traitor.objectives += steal_objective
-		switch(rand(1,100))
-			if(1 to 10)
+		switch(rand(1,10))
+			if(1)
 				if (!(locate(/datum/objective/escape) in traitor.objectives))
 					var/datum/objective/escape/escape_objective = new
 					escape_objective.owner = traitor
 					traitor.objectives += escape_objective
 
 			else
-				if (!(locate(/datum/objective/hijack) in traitor.objectives))
-					var/datum/objective/hijack/hijack_objective = new
-					hijack_objective.owner = traitor
-					traitor.objectives += hijack_objective
+				if (!(locate(/datum/objective/survive) in traitor.objectives))
+					var/datum/objective/survive/survive_objective = new
+					survive_objective.owner = traitor
+					traitor.objectives += survive_objective
 	return
 
 /datum/antagonist/traitor/equip(var/mob/living/carbon/human/traitor_mob)
