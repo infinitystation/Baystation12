@@ -2,7 +2,7 @@
 
 /datum/sprite_accessory/hair/infinity
 	name = "Angel hair"
-	icon = 'icons/mob/infinity_mob_clothing/hairs.dmi'
+	icon = 'icons/mob/infinity_human_face.dmi'
 	icon_state = "angel"
 
 /datum/sprite_accessory/hair/infinity/shortcover
@@ -60,6 +60,10 @@
 	name = "Long hair 3"
 	icon_state = "waterfall"
 
+/datum/sprite_accessory/hair/infinity/ponytail4TG
+	name = "Ponytail 4(TG)"
+	icon_state = "hair_ponytail4"
+
 //Unath
 /*
 /datum/sprite_accessory/hair/infinity/una_horns_short
@@ -94,7 +98,61 @@
 
 /datum/sprite_accessory/facial_hair/infinity
 	name = "Snouts - Sharplight"
-	icon = 'icons/mob/infinity_mob_clothing/hairs.dmi'
+c
 	icon_state = "snout_sharplight"
 	species_allowed = list(SPECIES_UNATHI)
 */
+
+				//////////
+				//RESOMI//
+				//////////
+
+/datum/sprite_accessory/hair/resomi
+	name = "Resomi Plumage"
+	icon_state = "resomi_default"
+	icon = 'icons/mob/infinity_human_face.dmi'
+	species_allowed = list(SPECIES_RESOMI)
+
+/datum/sprite_accessory/hair/resomi/ears
+	name = "Resomi Ears"
+	icon_state = "resomi_ears"
+
+/datum/sprite_accessory/hair/resomi/excited
+	name = "Resomi Spiky"
+	icon_state = "resomi_spiky"
+
+/datum/sprite_accessory/hair/resomi/hedgehog
+	name = "Resomi Hedgehog"
+	icon_state = "resomi_hedge"
+
+/datum/sprite_accessory/hair/resomi/long
+	name = "Resomi Unpruned"
+	icon_state = "resomi_long"
+
+/datum/sprite_accessory/hair/resomi/sunburst
+	name = "Resomi Sunburst"
+	icon_state = "resomi_burst_short"
+
+/datum/sprite_accessory/hair/resomi/mohawk
+	name = "Resomi Mohawk"
+	icon_state = "resomi_mohawk"
+
+/datum/sprite_accessory/hair/resomi/pointy
+	name = "Resomi Pointy"
+	icon_state = "resomi_pointy"
+
+/datum/sprite_accessory/hair/resomi/upright
+	name = "Resomi Upright"
+	icon_state = "resomi_upright"
+
+/datum/sprite_accessory/hair/resomi/mane
+	name = "Resomi Mane"
+	icon_state = "resomi_mane"
+
+/datum/sprite_accessory/hair/resomi/droopy
+	name = "Resomi Droopy"
+	icon_state = "resomi_droopy"
+
+/datum/sprite_accessory/hair/resomi/mushroom
+	name = "Resomi Mushroom"
+	icon_state = "resomi_mushroom"
