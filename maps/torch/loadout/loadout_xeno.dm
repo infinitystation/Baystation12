@@ -99,6 +99,18 @@
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_RESOMI)
 
+/datum/gear/uniform/resomi/dress
+	display_name = "small dress (Resomi)"
+	path = /obj/item/clothing/under/resomi/dress
+
+/datum/gear/uniform/resomi/uniform
+	display_name = "small uniform (Resomi)"
+	path = /obj/item/clothing/under/resomi/uniform
+
+/datum/gear/uniform/resomi/formal
+	display_name = "small formal uniform (Resomi)"
+	path = /obj/item/clothing/under/resomi/formal
+
 /datum/gear/uniform/resomi/rainbow
 	display_name = "smock, rainbow (Resomi)"
 	path = /obj/item/clothing/under/resomi/rainbow
@@ -133,28 +145,29 @@
 	path = /obj/item/clothing/under/resomi/science
 	allowed_roles = NANOTRASEN_ROLES
 
+/datum/gear/uniform/resomi/expeditionary/pt
+	display_name = "uniform, Expeditionary PT (Resomi)"
+	path = /obj/item/clothing/under/solgov/pt/expeditionary/resomi
+
 /datum/gear/uniform/resomi/expeditionary
 	display_name = "uniform, Expeditionary Utility (Resomi)"
 	path = /obj/item/clothing/under/solgov/utility/expeditionary/resomi
 	allowed_roles = SOLGOV_ROLES
-	cost = 0 //Because it's work uniform
+	cost = 0 //Because it's working uniform
 
 /datum/gear/uniform/resomi/expeditionary/command
 	display_name = "uniform, Expeditionary Command Utility (Resomi)"
 	path = /obj/item/clothing/under/solgov/mildress/expeditionary/officer/resomi
 
-/datum/gear/uniform/resomi/expeditionary/pt
-	display_name = "uniform, Expeditionary PT (Resomi)"
-	path = /obj/item/clothing/under/solgov/pt/expeditionary/resomi
-
 /datum/gear/uniform/resomi/expeditionary/mildress
 	display_name = "uniform, Expeditionary Mildress (Resomi)"
 	path = /obj/item/clothing/under/solgov/mildress/expeditionary/resomi
 
-/datum/gear/uniform/resomi/resomicoat
+/datum/gear/suit/resomi/resomicoat
 	display_name = "small coat (Resomi)"
 	path = /obj/item/clothing/suit/storage/toggle/Resomicoat
-	
+	whitelisted = list(SPECIES_RESOMI)
+
 				///////
 				//IPC//
 				///////
@@ -190,18 +203,6 @@
 	display_name = "toeless workboots"
 	path = /obj/item/clothing/shoes/workboots/toeless
 	sort_category = "Xenowear"
-
-/datum/gear/uniform/resomi/dress
-	display_name = "small dress (Resomi)"
-	path = /obj/item/clothing/under/resomi/dress
-
-/datum/gear/uniform/resomi/uniform
-	display_name = "small uniform (Resomi)"
-	path = /obj/item/clothing/under/resomi/uniform
-
-/datum/gear/uniform/resomi/formal
-	display_name = "small formal uniform (Resomi)"
-	path = /obj/item/clothing/under/resomi/formal
 
 // Taj clothing
 /datum/gear/eyes/medical/tajblind
@@ -317,6 +318,20 @@
 /datum/gear/mask/gas/vox
 	display_name = "vox breathing mask"
 	path = /obj/item/clothing/mask/gas/vox
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_VOX)
+	allowed_roles = list(/datum/job/merchant, /datum/job/stowaway) //Since that is the only role vox can be beside stowaway.
+
+/datum/gear/uniform/vox
+	display_name = "vox clothing"
+	path = /obj/item/clothing/under/vox/vox_casual
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_VOX)
+	allowed_roles = list(/datum/job/merchant, /datum/job/stowaway) //Since that is the only role vox can be beside stowaway.
+
+/datum/gear/uniform/vox_robes
+	display_name = "vox robes"
+	path = /obj/item/clothing/under/vox/vox_robes
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_VOX)
 	allowed_roles = list(/datum/job/merchant, /datum/job/stowaway) //Since that is the only role vox can be beside stowaway.
