@@ -2009,7 +2009,7 @@
 "MG" = (/obj/machinery/atmospherics/pipe/simple/visible/red,/turf/simulated/floor/reinforced,/area/thruster/d3port)
 "MH" = (/obj/structure/sign/warning/secure_area,/turf/simulated/wall/r_wall,/area/maintenance/thirddeck/port)
 "MI" = (/obj/machinery/light/small,/obj/random/toolbox,/turf/simulated/floor/plating,/area/maintenance/thirddeck/port)
-"MJ" = (/obj/machinery/button/remote/airlock{id = "engineering_cubicle"; name = "Missile Pod Bolt Control"; pixel_x = -25; pixel_y = -22; req_one_access = list(56,57,58); specialfunctions = 4},/turf/simulated/floor/plating,/area/maintenance/thirddeck/port)
+"MJ" = (/obj/machinery/button/remote/airlock{id = "missileairlock"; name = "Missile Pod Bolt Control"; pixel_x = -25; pixel_y = -22; req_one_access = list(56,57,58); specialfunctions = 4},/turf/simulated/floor/plating,/area/maintenance/thirddeck/port)
 "MK" = (/obj/structure/largecrate,/obj/random/maintenance/solgov,/obj/random/maintenance/solgov,/turf/simulated/floor/plating,/area/maintenance/thirddeck/port)
 "ML" = (/obj/effect/floor_decal/industrial/warning{dir = 10},/turf/simulated/floor/reinforced/oxygen,/area/thruster/d3port)
 "MM" = (/turf/simulated/floor/reinforced/oxygen,/area/thruster/d3port)
