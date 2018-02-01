@@ -31,6 +31,16 @@
 	item_cost = 8
 	path = /obj/item/ammo_magazine/c556
 
+/datum/uplink_item/item/ammo/a12755
+	name = "12.7x55mm"
+	item_cost = 8
+	path = /obj/item/ammo_magazine/c12755
+
+/datum/uplink_item/item/ammo/c12m
+	name = "Automatic Shotgun Magazine"
+	item_cost = 10
+	path = /obj/item/ammo_magazine/c12m
+
 /datum/uplink_item/item/ammo/sniperammo
 	name = "14.5mm"
 	item_cost = 8
