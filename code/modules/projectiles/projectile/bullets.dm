@@ -231,14 +231,11 @@
 	damage = 36
 	armor_penetration = 40
 
-/obj/item/projectile/bullet/rifle/a12755
+/obj/item/projectile/bullet/rifle/a12755 //this one has 10 ammo in magazine.
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
-	damage = 50 //12x55mm
-	stun = 1
-	weaken = 1
-	penetrating = 1
-	armor_penetration = 60
-	penetration_modifier = 1.1
+	damage = 45 //12x55mm
+	armor_penetration =
+	penetration_modifier = 0.75
 
 /obj/item/projectile/bullet/rifle/a127
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'

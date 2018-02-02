@@ -297,7 +297,7 @@
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = "127x55"
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
+	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/c12755

@@ -317,7 +317,7 @@
 	caliber = "127x55"
 	matter = list(DEFAULT_WALL_MATERIAL = 2300)
 	ammo_type = /obj/item/ammo_casing/a12755
-	max_ammo = 10
+	max_ammo = 8
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/c12755/empty
