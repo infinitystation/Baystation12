@@ -410,9 +410,9 @@ datum/objective/terrorists
 
 datum/objective/terrorists/kidnap
 	choose_target()
-		var/list/roles = list(/datum/job/captain, /datum/job/hop,/datum/job/chief_engineer,
-		/datum/job/liaison,/datum/job/representative,
-		/datum/job/senior_scientist,/datum/job/rd,
+		var/list/roles = list("Commanding Officer","Executive Officer","Chief Engineer",
+		"NanoTrasen Liaison","SolGov Representative",
+		"Senior Researcher","Research Supervisor","Research Director",
 		"Journalist","Investor","Independent Observer",)
 		var/list/possible_targets = list()
 		var/list/priority_targets = list()
@@ -465,7 +465,6 @@ datum/objective/steal
 		"a pair of magboots" = /obj/item/clothing/shoes/magboots,
 		"the [station_name()] blueprints" = /obj/item/blueprints,
 		"the multimeter" = /obj/item/device/multitool/multimeter,
-		"a nasa voidsuit" = /obj/item/clothing/suit/space/void,
 		"28 moles of phoron (full tank)" = /obj/item/weapon/tank,
 		"a sample of slime extract" = /obj/item/slime_extract,
 		"a piece of corgi meat" = /obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
