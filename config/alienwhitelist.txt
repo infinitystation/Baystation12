@@ -48,5 +48,6 @@ kirill1243 - unathi
 aragog94 - unathi
 denmag - tajaran
 solark - tajaran
-furrydog  - tajaran
+logfol - tajaran
+furrydog - tajaran
 arhod - tajaran
