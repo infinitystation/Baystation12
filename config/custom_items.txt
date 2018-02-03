@@ -63,6 +63,7 @@ item_icon: hypospray_valkyr
 }
 {
 ckey: twinindifferent
+character_name: Atwii
 item_path: /obj/item/device/radio/headset
 item_name: Pioneer's headphones
 item_desc: Just a small pilot like headphones with micro. Engage!
@@ -70,9 +71,25 @@ item_icon: headset_pioneer
 }
 {
 ckey: twinindifferent
+character_name: Atwii
 item_path: /obj/item/clothing/suit/storage/leather_jacket
 item_name: Pioneer's bloody jacket
 item_desc: That small jacket looks like someone want to make it cooler in "hot" days.
 item_icon: small_jacket_pioneer
 }
-
+{
+ckey: twinindifferent
+character_name: Shattara
+item_path: /obj/item/device/radio/headset
+item_name: Pioneer's headphones
+item_desc: Just a small pilot like headphones with micro. Engage!
+item_icon: headset_pioneer
+}
+{
+ckey: twinindifferent
+character_name: Shattara
+item_path: /obj/item/clothing/suit/storage/leather_jacket
+item_name: Pioneer's bloody jacket
+item_desc: That small jacket looks like someone want to make it cooler in "hot" days.
+item_icon: small_jacket_pioneer
+}
