@@ -313,16 +313,28 @@
 /obj/item/clothing/head/helmet/space/rig/hazard
 	light_overlay = "helmet_light_dual"
 	camera = /obj/machinery/camera/network/security
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI) //still needs Resomi sprites
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI,SPECIES_RESOMI) //still needs Resomi sprites
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/hands.dmi'
+		)
 
 /obj/item/clothing/suit/space/rig/hazard
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI,SPECIES_RESOMI)
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/hands.dmi'
+		)
 
 /obj/item/clothing/shoes/magboots/rig/hazard
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI,SPECIES_RESOMI)
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/hands.dmi'
+		)
 
 /obj/item/clothing/gloves/rig/hazard
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI,SPECIES_RESOMI)
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/hands.dmi'
+		)
 
 /obj/item/weapon/rig/hazard/equipped
 
