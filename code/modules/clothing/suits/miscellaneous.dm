@@ -366,7 +366,7 @@
 //This one has buttons for some reason
 /obj/item/clothing/suit/storage/toggle/brown_jacket
 	name = "leather jacket"
-	desc = "A gray leather coat."
+	desc = "A brown leather coat."
 	icon_state = "brown_jacket"
 	item_state = "brown_jacket"
 	icon_open = "brown_jacket_open"
