@@ -37,3 +37,14 @@
 	icon_state = "marine_armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	armor = list(melee = 60, bullet = 60, laser = 60, energy = 40, bomb = 20, bio = 0, rad = 0)
+
+/obj/item/clothing/suit/storage/toggle/long_jacket
+	name = "long jacket"
+	desc = "A gray leather coat."
+	icon = 'icons/obj/clothing/infinity/suits.dmi'
+	icon_override = 'icons/mob/infinity/suits.dmi'
+	icon_state = "longjacket"
+	item_state = "longjacket"
+	icon_open = "longjacket_open"
+	icon_closed = "longjacket"
+	body_parts_covered = UPPER_TORSO|ARMS
