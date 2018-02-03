@@ -25,6 +25,7 @@
 	name_language = LANGUAGE_UNATHI
 	health_hud_intensity = 2
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 3
+	ambiguous_genders = TRUE
 
 	min_age = 18
 	max_age = 260

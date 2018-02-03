@@ -184,6 +184,8 @@
 	var/list/base_skin_colours
 
 	var/list/genders = list(MALE, FEMALE)
+	var/ambiguous_genders = FALSE // If true, people examining a member of this species whom are not also the same species will see them as gender neutral.  Because aliens.
+
 
 	// Bump vars
 	var/bump_flag = HUMAN	// What are we considered to be when bumped?
@@ -296,11 +298,22 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 /datum/species/proc/hug(var/mob/living/carbon/human/H,var/mob/living/target)
 
 	var/t_him = "them"
-	switch(target.gender)
-		if(MALE)
-			t_him = "him"
-		if(FEMALE)
-			t_him = "her"
+	if(ishuman(target))
+		var/mob/living/carbon/human/T = target
+		if(!T.species.ambiguous_genders || (T.species.ambiguous_genders && H.species == T.species))
+			switch(T.identifying_gender)
+				if(MALE)
+					t_him = "him"
+				if(FEMALE)
+					t_him = "her"
+		else
+			t_him = "them"
+	else
+		switch(target.gender)
+			if(MALE)
+				t_him = "him"
+			if(FEMALE)
+				t_him = "her"
 
 	H.visible_message("<span class='notice'>[H] hugs [target] to make [t_him] feel better!</span>", \
 					"<span class='notice'>You hug [target] to make [t_him] feel better!</span>")

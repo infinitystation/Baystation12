@@ -20,6 +20,7 @@
 	tail_hair = "feathers"
 	strength = STR_HIGH
 	reagent_tag = IS_RESOMI
+	ambiguous_genders = TRUE
 
 	icobase = 'icons/mob/human_races/r_resomi.dmi'
 	deform = 'icons/mob/human_races/r_resomi.dmi'
@@ -30,7 +31,7 @@
 	eye_icon = "eyes_resomi"
 	eye_icon_location = 'icons/mob/infinity_human_face.dmi'
 
-	slowdown = -0.7 //speed fix?
+	slowdown = -0.8 //speed fix?
 	total_health = 150
 	brute_mod = 1.35
 	burn_mod =  1.35

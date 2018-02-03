@@ -157,6 +157,7 @@
 	secondary_langs = list(LANGUAGE_SKRELLIAN)
 	name_language = null
 	health_hud_intensity = 1.75
+	ambiguous_genders = TRUE
 
 	min_age = 19
 	max_age = 90
