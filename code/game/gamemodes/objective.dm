@@ -443,9 +443,8 @@ datum/objective/terrorists/kidnap
 			//if (!target.current.restrained())
 			//	return 0 // They're loose. Close but no cigar.
 
-			var/area/syndicate_station/start/A = locate()
-			var/area/syndicate_mothership/elite_squad/B = locate()
-			for(var/mob/living/carbon/human/M in A || B)
+			var/area/syndicate_mothership/elite_squad/A = locate()
+			for(var/mob/living/carbon/human/M in A)
 				if(target.current == M)
 					return 1 //They're restrained on the shuttle. Success.
 		else
