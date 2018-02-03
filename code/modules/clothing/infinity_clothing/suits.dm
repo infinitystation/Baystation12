@@ -41,6 +41,8 @@
 /obj/item/clothing/suit/storage/toggle/long_jacket
 	name = "long jacket"
 	desc = "A gray leather coat."
+	icon = 'icons/obj/clothing/infinity/suits.dmi'
+	icon_override = 'icons/mob/infinity/suits.dmi'
 	icon_state = "longjacket"
 	item_state = "longjacket"
 	icon_open = "longjacket_open"
