@@ -366,7 +366,7 @@
 //This one has buttons for some reason
 /obj/item/clothing/suit/storage/toggle/brown_jacket
 	name = "leather jacket"
-	desc = "A gray leather coat."
+	desc = "A brown leather coat."
 	icon_state = "brown_jacket"
 	item_state = "brown_jacket"
 	icon_open = "brown_jacket_open"
@@ -387,15 +387,6 @@
 	icon_open = "marshal_jacket_open"
 	icon_closed = "marshal_jacket"
 	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA)
-	body_parts_covered = UPPER_TORSO|ARMS
-
-/obj/item/clothing/suit/storage/toggle/long_jacket
-	name = "long jacket"
-	desc = "A gray leather coat."
-	icon_state = "longjacket"
-	item_state = "longjacket"
-	icon_open = "longjacket_open"
-	icon_closed = "longjacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/toggle/hoodie
