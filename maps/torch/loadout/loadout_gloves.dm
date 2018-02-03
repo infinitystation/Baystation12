@@ -9,7 +9,6 @@
 	display_name = "gloves, colored"
 	flags = GEAR_HAS_COLOR_SELECTION
 	path = /obj/item/clothing/gloves/color
-	allowed_roles = FORMAL_ROLES
 
 /datum/gear/gloves/latex
 	display_name = "gloves, latex"
@@ -26,13 +25,11 @@
 /datum/gear/gloves/rainbow
 	display_name = "gloves, rainbow"
 	path = /obj/item/clothing/gloves/rainbow
-	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/gloves/evening
 	display_name = "gloves, evening, colour select"
 	path = /obj/item/clothing/gloves/color/evening
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = FORMAL_ROLES
 
 /datum/gear/ring
 	display_name = "ring"

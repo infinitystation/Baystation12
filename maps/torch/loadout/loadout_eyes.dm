@@ -8,12 +8,10 @@
 /datum/gear/eyes/eyepatch
 	display_name = "eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/eyes/fashionglasses
 	display_name = "glasses"
 	path = /obj/item/clothing/glasses
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/eyes/fashionglasses/New()
 	..()

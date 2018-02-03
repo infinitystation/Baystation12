@@ -100,7 +100,6 @@
 /datum/gear/uniform/resomi/rainbow
 	display_name = "smock, rainbow (Resomi)"
 	path = /obj/item/clothing/under/resomi/rainbow
-	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/uniform/resomi/white
 	display_name = "smock, colored (Resomi)"

@@ -7,57 +7,47 @@
 /datum/gear/accessory/vest
 	display_name = "black vest"
 	path = /obj/item/clothing/accessory/toggleable/vest
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/accessory/suspenders
 	display_name = "suspenders"
 	path = /obj/item/clothing/accessory/suspenders
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/accessory/wcoat
 	display_name = "waistcoat"
 	path = /obj/item/clothing/accessory/wcoat
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/accessory/zhongshan
 	display_name = "zhongshan jacket, colour select"
 	path = /obj/item/clothing/accessory/toggleable/zhongshan
-	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/dashiki
 	display_name = "dashiki selection"
 	path = /obj/item/clothing/accessory/dashiki
-	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/thawb
 	display_name = "thawb"
 	path = /obj/item/clothing/accessory/thawb
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/accessory/sherwani
 	display_name = "sherwani, colour select"
 	path = /obj/item/clothing/accessory/sherwani
-	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/qipao
 	display_name = "qipao blouse, colour select"
 	path = /obj/item/clothing/accessory/qipao
-	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/sweater
 	display_name = "turtleneck sweater, colour select"
 	path = /obj/item/clothing/accessory/sweater
-	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/tangzhuang
 	display_name = "tangzhuang jacket, colour select"
 	path = /obj/item/clothing/accessory/tangzhuang
-	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/necklace
@@ -68,7 +58,6 @@
 /datum/gear/accessory/bowtie
 	display_name = "bowtie, horrible"
 	path = /obj/item/clothing/accessory/bowtie/ugly
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/accessory/bowtie/color
 	display_name = "bowtie, colour select"
@@ -161,7 +150,6 @@
 /datum/gear/accessory/tie
 	display_name = "tie selection"
 	path = /obj/item/clothing/accessory
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/accessory/tie/New()
 	..()
@@ -180,7 +168,6 @@
 /datum/gear/accessory/tie_color
 	display_name = "colored tie"
 	path = /obj/item/clothing/accessory
-	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/tie_color/New()
@@ -321,7 +308,6 @@
 /datum/gear/accessory/hawaii
 	display_name = "hawaii shirt"
 	path = /obj/item/clothing/accessory/toggleable/hawaii
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/accessory/hawaii/New()
 	..()
@@ -335,7 +321,6 @@
 	display_name = "scarf"
 	path = /obj/item/clothing/accessory/scarf
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = SEMIANDFORMAL_ROLES
 
 /datum/gear/accessory/solawardmajor
 	display_name = "SolGov major award selection"
@@ -403,7 +388,6 @@
 	slot = slot_tie
 	flags = GEAR_HAS_COLOR_SELECTION
 	sort_category = "Accessories"
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/boot_knife
 	display_name = "boot knife"
@@ -415,12 +399,11 @@
 	display_name = "violin"
 	path = /obj/item/device/violin
 	cost = 2
-	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/comb
 	display_name = "plastic comb"
 	path = /obj/item/weapon/haircomb
-	cost = 0
+	cost = 1
 
 /datum/gear/accessory/torch_patch
 	display_name = "Torch mission patch"

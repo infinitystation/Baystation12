@@ -6,9 +6,16 @@
 <a href=" https://wiki.infinity-ss13.ru/">Наша Вики</a>
 <a href=" http://gg.gg/Infinity_LOGS">Логи сервера</a>
 <a href=" https://github.com/infinitystation">Код сервера</a>
-<span style="color: #3399ff;">Emergency Help: 
+<span style="color: #3399ff;">Emergency Help: </span>
 <a href=" https://wiki.infinity-ss13.ru/index.php?title=Starter_Guide">Как начать играть?</a>
 <a href=" https://wiki.infinity-ss13.ru/index.php?title=How_To_Military_Guide">Как играть за флот и экспедиционников?</a>
 <a href=" https://infinity-ss13.ru/index.php?/forum/35-квенты/">Я хочу играть за кого-то кроме людей.</a>
 <a href=" https://discord.gg/mn456xK ">Я хочу попасть на сервер в дискорде! (прямая ссылка)</a>
+
+<span style="color: #cc0000;">Q: Как зайти в игру? Мне доступен лишь киборг и ИИ.</span>
+<span style="color: #009933;">A: Зайдите во вкладку настройки Вашего персонажа. Выберите occupation. Измените содержимое поля перед Branch of Service и затем перед Rank. Для первого раза, желательно, выставьте civilian и поиграйте за пассажира.</span>
+
+<span style="color: #ff0000;">Внимание! У экипажа и работников корпораций имеется дресс код. </span>
+<a href=" https://wiki.baystation12.net/Uniform_Guide ">Форма экипажа описана здесь.</a>
+Для корпоративных работников главное, чтобы в рабочее время на Вас был виден  комбинезон Вашего работодателя.
 </span>

@@ -43,7 +43,6 @@
 /datum/gear/mask/bandana
 	display_name = "bandana selection"
 	path = /obj/item/clothing
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/mask/bandana/New()
 	..()
@@ -53,12 +52,10 @@
 	display_name = "hair bow, colour select"
 	path = /obj/item/clothing/head/hairflower/bow
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/head/cap
 	display_name = "cap selection"
 	path = /obj/item/clothing/head
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/head/cap/New()
 	..()
@@ -81,7 +78,6 @@
 /datum/gear/head/hairflower
 	display_name = "hair flower pin"
 	path = /obj/item/clothing/head/hairflower
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/head/hardhat
 	display_name = "hardhat selection"
@@ -101,7 +97,6 @@
 /datum/gear/head/formalhat
 	display_name = "formal hat selection"
 	path = /obj/item/clothing/head
-	allowed_roles = FORMAL_ROLES
 
 /datum/gear/head/formalhat/New()
 	..()
@@ -119,7 +114,6 @@
 /datum/gear/head/informalhat
 	display_name = "informal hat selection"
 	path = /obj/item/clothing/head
-	allowed_roles = NOTFORMAL_ROLES
 
 /datum/gear/head/informalhat/New()
 	..()
@@ -189,11 +183,6 @@
 /datum/gear/head/surgical/custom
 	display_name = "surgical cap, colour select"
 	flags = GEAR_HAS_COLOR_SELECTION
-
-/datum/gear/head/veteranhat
-	display_name = "veteran hat"
-	path = /obj/item/clothing/head/soft/solgov/veteranhat
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/head/welding/New()
 	..()

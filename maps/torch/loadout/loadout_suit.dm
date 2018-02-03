@@ -10,13 +10,11 @@
 	display_name = "apron, blue"
 	path = /obj/item/clothing/suit/apron
 	cost = 1
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/suit/overalls
 	display_name = "apron, overalls"
 	path = /obj/item/clothing/suit/apron/overalls
 	cost = 1
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/suit/medcoat
 	display_name = "medical suit selection"
@@ -31,7 +29,6 @@
 	display_name = "trenchcoat selection"
 	path = /obj/item/clothing/suit
 	cost = 3
-	allowed_roles = NOTFORMAL_ROLES
 
 /datum/gear/suit/trenchcoat/New()
 	..()
@@ -44,7 +41,6 @@
 /datum/gear/suit/poncho
 	display_name = "poncho selection"
 	path = /obj/item/clothing/suit/poncho/colored
-	allowed_roles = NOTFORMAL_ROLES
 
 /datum/gear/suit/roles/poncho/security
 	allowed_roles = list(/datum/job/guard, /datum/job/merchant)
@@ -64,7 +60,6 @@
 /datum/gear/suit/suit_jacket
 	display_name = "standard suit jackets"
 	path = /obj/item/clothing/suit/storage/toggle/suit
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/suit/suit_jacket/New()
 	..()
@@ -77,7 +72,6 @@
 /datum/gear/suit/custom_suit_jacket
 	display_name = "suit jacket, colour select"
 	path = /obj/item/clothing/suit/storage/toggle/suit
-	allowed_roles = NON_MILITARY_ROLES
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/suit/hazard
@@ -89,12 +83,10 @@
 	display_name = "hoodie, colour select"
 	path = /obj/item/clothing/suit/storage/hooded/hoodie
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/suit/hoodie_sel
 	display_name = "standard hoodies"
 	path = /obj/item/clothing/suit/storage/toggle/hoodie
-	allowed_roles = NOTFORMAL_ROLES
 
 /datum/gear/suit/hoodie_sel/New()
 	..()
@@ -115,12 +107,10 @@
 	display_name = "coat, colour select"
 	path = /obj/item/clothing/suit/storage/toggle/labcoat/coat
 	flags = GEAR_HAS_COLOR_SELECTION
-	allowed_roles = FORMAL_ROLES
 
 /datum/gear/suit/leather
 	display_name = "jacket selection"
 	path = /obj/item/clothing/suit
-	allowed_roles = NON_MILITARY_ROLES
 
 /datum/gear/suit/leather/New()
 	..()
@@ -162,7 +152,6 @@
 /datum/gear/suit/wintercoat
 	display_name = "winter coat"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat
-	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/suit/wintercoat/engineering
 	display_name = "engineering winter coat"
@@ -192,7 +181,6 @@
 /datum/gear/suit/track
 	display_name = "track jacket selection"
 	path = /obj/item/clothing/suit/storage/toggle/track
-	allowed_roles = NOTFORMAL_ROLES
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/suit/pcarrier
