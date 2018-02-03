@@ -301,11 +301,10 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	if(ishuman(target))
 		var/mob/living/carbon/human/T = target
 		if(!T.species.ambiguous_genders || (T.species.ambiguous_genders && H.species == T.species))
-			switch(T.identifying_gender)
-				if(MALE)
-					t_him = "him"
-				if(FEMALE)
-					t_him = "her"
+			if(MALE)
+				t_him = "him"
+			if(FEMALE)
+				t_him = "her"
 		else
 			t_him = "them"
 	else
