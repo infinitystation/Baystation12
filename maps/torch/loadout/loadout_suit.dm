@@ -208,3 +208,8 @@
 	armors += /obj/item/clothing/suit/armor/pcarrier/navy
 	armors += /obj/item/clothing/suit/armor/pcarrier/tan
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(armors)
+
+/datum/gear/suit/long_jacket
+	display_name = "long jacket"
+	path = /obj/item/clothing/suit/storage/toggle/long_jacket
+	allowed_roles = RESTRICTED_ROLES
