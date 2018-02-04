@@ -3,7 +3,7 @@
 /datum/song
 	var/name = "Untitled"
 	var/list/lines = new()
-	var/tempo = 5
+	var/tempo = 4
 
 /obj/structure/device/piano
 	name = "space minimoog"
