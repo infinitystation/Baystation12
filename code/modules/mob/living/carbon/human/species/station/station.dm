@@ -93,6 +93,7 @@
 	additional_langs = list(LANGUAGE_SIIK_MAAS)
 	name_language = LANGUAGE_SIIK_MAAS
 	health_hud_intensity = 1.75
+	ambiguous_genders = TRUE
 
 	min_age = 19
 	max_age = 140
