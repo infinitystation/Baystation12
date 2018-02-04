@@ -23,7 +23,23 @@
 		/obj/item/weapon/circuitboard,
 		/obj/item/weapon/smes_coil,
 		/obj/item/weapon/computer_hardware,
-		/obj/item/weapon/fuel_assembly
+		/obj/item/weapon/fuel_assembly,
+		/obj/item/device/flash,
+		/obj/item/device/flash/synthetic,
+		/obj/item/device/assembly/prox_sensor,
+		/obj/item/device/healthanalyzer,
+		/obj/item/device/robotanalyzer,
+		/obj/item/stack/nanopaste,
+		/obj/item/weapon/gun/energy/gun,
+		/obj/item/organ/internal/posibrain,
+		/obj/item/weapon/aicard,
+		/obj/item/borg/upgrade,
+		/obj/item/weapon/reagent_containers/glass/beaker,
+		/obj/item/robot_parts,
+		/obj/item/mecha_parts,
+		/obj/item/weapon/reagent_containers
+
+
 		)
 
 	var/obj/item/wrapped = null // Item currently being held.
