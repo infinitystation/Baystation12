@@ -181,7 +181,7 @@
 	name = "Xenophage Drone"
 	caste_name = "drone"
 	weeds_plasma_rate = 15
-	slowdown = 1
+	slowdown = 0
 	rarity_value = 5
 	base_color = "#000d1a"
 	icobase = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
@@ -220,7 +220,7 @@
 	name = "Xenophage Hunter"
 	weeds_plasma_rate = 5
 	caste_name = "hunter"
-	slowdown = -1.5
+	slowdown = -1
 	total_health = 300
 	base_color = "#001a33"
 

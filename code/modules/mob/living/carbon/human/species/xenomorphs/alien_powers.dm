@@ -257,6 +257,11 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 	if(!A.density)
 		return
 
+	if(!A.stat)
+		src.visible_message("\The [src] easly openning \the [A]!")
+		A.open()
+		return
+
 	src.visible_message("\The [src] begins to pry open \the [A]!")
 
 	if(!do_after(src,120,A))
