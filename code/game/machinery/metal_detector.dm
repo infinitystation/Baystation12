@@ -1,6 +1,6 @@
 /obj/machinery/metal_detector
-	name = "metal detector"
-	desc = ""
+	name = "weapon detector"
+	desc = "...Don't pass it with weapon or grenade if you don't want to be spotted..."
 	icon = 'icons/obj/machines/metal_detector.dmi'
 	icon_state = "metal-detector"
 	anchored = 1
@@ -30,14 +30,19 @@
 	if(emagged)
 		to_chat(user, "<span class='warning'>ERROR</span>")
 		return
-	if(locked)
-		to_chat(user, "<span class='warning'>Access denied.</span>")
-		return
 	if(on)
 		to_chat(user, "<span class='warning'>It must be turned off first!</span>")
 		return
 
-	if(istype(W,/obj/item/weapon/wrench))
+	if(istype(W, /obj/item/weapon/card/id))
+		if(allowed(usr))
+			locked = !locked
+			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the metal detector interface.</span>")
+		else
+			to_chat(user, "<span class='warning'>Access denied.</span>")
+			return
+
+	if(istype(W, /obj/item/weapon/wrench))
 		visible_message(
 			"<span class='notice'>You begin [anchored ? "un" : ""]securing [name]...</span>",
 			"<span class='notice'>[user] begin [anchored ? "un" : ""]securing [name]...</span>")
