@@ -13,7 +13,7 @@
 	)
 
 /datum/map_template/ruin/away_site/smugglers_inf
-	name = "Smugglers' Base"
+	name = "Smugglers' Base Infinity"
 	id = "awaysite_smugglers"
 	description = "Yarr."
 	prefix = "maps/away-inf/"
