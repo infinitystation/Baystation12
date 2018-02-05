@@ -91,6 +91,7 @@
 /datum/gear/kittyears
 	display_name = "kitty ears"
 	description = "A pair of kitty ears. Meow!"
+	path = /obj/item/clothing/head/kitty
 
 /datum/gear/workvisa
 	display_name = "work visa"
