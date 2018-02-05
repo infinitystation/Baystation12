@@ -38,6 +38,7 @@ maxi2000 - diona
 bartstarter - diona
 inubashirimomiji - diona
 cre77 - vox
+rex127 - vox
 sosiskoed - vox
 wolforbykot - vox
 kotovsyndrome - unathi
@@ -45,6 +46,7 @@ wolforbykot - unathi
 hodovoy - unathi
 kirill1243 - unathi
 aragog94 - unathi
+hodovoy - unathi
 denmag - tajaran
 solark - tajaran
 logfol - tajaran
