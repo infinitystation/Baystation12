@@ -52,7 +52,6 @@
 		ticker.updater_ckey = usr.key
 		message_admins("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
 		log_game("[key_name_admin(usr)] запланировал(а) обновление сервера в конце текущего раунда.")
-		to_chat(world, "<span class='pm'><span class='howto'><b>~~ Сотрудник [usr.key] запланировал(а) обновление сервера в конце текущего раунда ~~</b></span></span>\n")
 		return
 
 	else if(confirm == "Cancel Update")
