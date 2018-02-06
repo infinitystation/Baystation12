@@ -41,7 +41,6 @@ cre77 - vox
 rex127 - vox
 sosiskoed - vox
 wolforbykot - vox
-wheatley2013 - vox
 kotovsyndrome - unathi
 wolforbykot - unathi
 hodovoy - unathi
@@ -53,3 +52,4 @@ solark - tajaran
 logfol - tajaran
 furrydog - tajaran
 arhod - tajaran
+wheatley2013 - vox
