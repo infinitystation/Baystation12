@@ -132,7 +132,7 @@
 		"You feel uncomfortably warm.",
 		"Your overheated skin itches."
 		)
-	cold_discomfort_level = 275
+	cold_discomfort_level = 230
 
 	sexybits_location = BP_GROIN
 
