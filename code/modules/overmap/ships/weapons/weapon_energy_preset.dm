@@ -15,7 +15,7 @@
 	max_draw_per_tick = 100000
 
 /obj/machinery/power/ship_weapon/maser/dawn
-	name = "'dawn of the world' cannon"
+	name = "'dawn of new world' cannon"
 	projectile_type = /obj/item/projectile/ship_munition/energy/dawn
 	use_power = 0
 	idle_power_usage = 0
