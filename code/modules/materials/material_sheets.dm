@@ -97,10 +97,10 @@
 	icon_state = "sheet-marble"
 	default_type = "marble"
 
-/obj/item/stack/material/marble/ten/New()
+/obj/item/stack/material/marble/ten
 	amount = 10
 
-/obj/item/stack/material/marble/fifty/New()
+/obj/item/stack/material/marble/fifty
 	amount = 50
 
 /obj/item/stack/material/diamond
@@ -108,7 +108,7 @@
 	icon_state = "sheet-diamond"
 	default_type = "diamond"
 
-/obj/item/stack/material/diamond/ten/New()
+/obj/item/stack/material/diamond/ten
 	amount = 10
 
 /obj/item/stack/material/uranium
@@ -116,7 +116,7 @@
 	icon_state = "sheet-uranium"
 	default_type = "uranium"
 
-/obj/item/stack/material/uranium/ten/New()
+/obj/item/stack/material/uranium/ten
 	amount = 10
 
 /obj/item/stack/material/phoron
@@ -124,10 +124,10 @@
 	icon_state = "sheet-phoron"
 	default_type = "phoron"
 
-/obj/item/stack/material/phoron/ten/New()
+/obj/item/stack/material/phoron/ten
 	amount = 10
 
-/obj/item/stack/material/phoron/fifty/New()
+/obj/item/stack/material/phoron/fifty
 	amount = 50
 
 /obj/item/stack/material/plastic
@@ -135,10 +135,10 @@
 	icon_state = "sheet-plastic"
 	default_type = "plastic"
 
-/obj/item/stack/material/plastic/ten/New()
+/obj/item/stack/material/plastic/ten
 	amount = 10
 
-/obj/item/stack/material/plastic/fifty/New()
+/obj/item/stack/material/plastic/fifty
 	amount = 50
 
 /obj/item/stack/material/gold
@@ -146,7 +146,7 @@
 	icon_state = "sheet-gold"
 	default_type = "gold"
 
-/obj/item/stack/material/gold/ten/New()
+/obj/item/stack/material/gold/ten
 	amount = 10
 
 /obj/item/stack/material/silver
@@ -154,7 +154,7 @@
 	icon_state = "sheet-silver"
 	default_type = "silver"
 
-/obj/item/stack/material/silver/ten/New()
+/obj/item/stack/material/silver/ten
 	amount = 10
 
 //Valuable resource, cargo can sell it.
@@ -163,7 +163,7 @@
 	icon_state = "sheet-adamantine"
 	default_type = "platinum"
 
-/obj/item/stack/material/platinum/ten/New()
+/obj/item/stack/material/platinum/ten
 	amount = 10
 
 //Extremely valuable to Research.
@@ -172,7 +172,7 @@
 	icon_state = "sheet-mythril"
 	default_type = "mhydrogen"
 
-/obj/item/stack/material/mhydrogen/ten/New()
+/obj/item/stack/material/mhydrogen/ten
 	amount = 10
 
 //Fuel for MRSPACMAN generator.
@@ -182,10 +182,10 @@
 	default_type = "tritium"
 	apply_colour = 1
 
-/obj/item/stack/material/tritium/ten/New()
+/obj/item/stack/material/tritium/ten
 	amount = 10
 
-/obj/item/stack/material/tritium/fifty/New()
+/obj/item/stack/material/tritium/fifty
 	amount = 50
 
 /obj/item/stack/material/osmium
@@ -194,7 +194,7 @@
 	default_type = "osmium"
 	apply_colour = 1
 
-/obj/item/stack/material/osmium/ten/New()
+/obj/item/stack/material/osmium/ten
 	amount = 10
 
 /obj/item/stack/material/ocp
@@ -204,10 +204,10 @@
 	default_type = "osmium-carbide plasteel"
 	apply_colour = 1
 
-/obj/item/stack/material/ocp/ten/New()
+/obj/item/stack/material/ocp/ten
 	amount = 10
 
-/obj/item/stack/material/ocp/fifty/New()
+/obj/item/stack/material/ocp/fifty
 	amount = 50
 
 // Fusion fuel.
@@ -217,7 +217,7 @@
 	default_type = "deuterium"
 	apply_colour = 1
 
-/obj/item/stack/material/deuterium/fifty/New()
+/obj/item/stack/material/deuterium/fifty
 	amount = 50
 
 /obj/item/stack/material/steel
@@ -225,10 +225,10 @@
 	icon_state = "sheet-metal"
 	default_type = DEFAULT_WALL_MATERIAL
 
-/obj/item/stack/material/steel/ten/New()
+/obj/item/stack/material/steel/ten
 	amount = 10
 
-/obj/item/stack/material/steel/fifty/New()
+/obj/item/stack/material/steel/fifty
 	amount = 50
 
 /obj/item/stack/material/plasteel
@@ -237,10 +237,10 @@
 	item_state = "sheet-metal"
 	default_type = "plasteel"
 
-/obj/item/stack/material/plasteel/ten/New()
+/obj/item/stack/material/plasteel/ten
 	amount = 10
 
-/obj/item/stack/material/plasteel/fifty/New()
+/obj/item/stack/material/plasteel/fifty
 	amount = 50
 
 /obj/item/stack/material/wood
@@ -248,10 +248,10 @@
 	icon_state = "sheet-wood"
 	default_type = "wood"
 
-/obj/item/stack/material/wood/ten/New()
+/obj/item/stack/material/wood/ten
 	amount = 10
 
-/obj/item/stack/material/wood/fifty/New()
+/obj/item/stack/material/wood/fifty
 	amount = 50
 
 /obj/item/stack/material/cloth
@@ -264,10 +264,10 @@
 	icon_state = "sheet-card"
 	default_type = "cardboard"
 
-/obj/item/stack/material/cardboard/ten/New()
+/obj/item/stack/material/cardboard/ten
 	amount = 10
 
-/obj/item/stack/material/cardboard/fifty/New()
+/obj/item/stack/material/cardboard/fifty
 	amount = 50
 
 /obj/item/stack/material/leather
@@ -281,10 +281,10 @@
 	icon_state = "sheet-glass"
 	default_type = "glass"
 
-/obj/item/stack/material/glass/ten/New()
+/obj/item/stack/material/glass/ten
 	amount = 10
 
-/obj/item/stack/material/glass/fifty/New()
+/obj/item/stack/material/glass/fifty
 	amount = 50
 
 /obj/item/stack/material/glass/reinforced
@@ -292,10 +292,10 @@
 	icon_state = "sheet-rglass"
 	default_type = "rglass"
 
-/obj/item/stack/material/glass/reinforced/ten/New()
+/obj/item/stack/material/glass/reinforced/ten
 	amount = 10
 
-/obj/item/stack/material/glass/reinforced/fifty/New()
+/obj/item/stack/material/glass/reinforced/fifty
 	amount = 50
 
 /obj/item/stack/material/glass/phoronglass
@@ -312,5 +312,5 @@
 	icon_state = "sheet-phoronrglass"
 	default_type = "rphglass"
 
-/obj/item/stack/material/glass/phoronrglass/ten/New()
+/obj/item/stack/material/glass/phoronrglass/ten
 	amount = 10
