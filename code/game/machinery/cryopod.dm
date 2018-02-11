@@ -500,7 +500,7 @@
 	src.go_out()
 	add_fingerprint(usr)
 
-	name = initial(name)
+	SetName(initial(name))
 	return
 
 /obj/machinery/cryopod/verb/move_inside()
@@ -556,7 +556,7 @@
 /obj/machinery/cryopod/proc/set_occupant(var/mob/living/carbon/occupant)
 	src.occupant = occupant
 	if(!occupant)
-		name = initial(name)
+		SetName(initial(name))
 		return
 
 	occupant.stop_pulling()
@@ -568,7 +568,5 @@
 	occupant.forceMove(src)
 	time_entered = world.time
 
-	name = "[name] ([occupant])"
+	SetName("[name] ([occupant])")
 	icon_state = occupied_icon_state
-
-

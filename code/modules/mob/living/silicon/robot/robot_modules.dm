@@ -227,7 +227,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/shockpaddles/robot(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent(/datum/reagent/acid/polyacid, 250)
-	src.emag.name = "Polyacid spray"
+	src.emag.SetName("Polyacid spray")
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
 	synths += medicine
@@ -280,7 +280,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/inflatable_dispenser/robot(src) // Allows usage of inflatables. Since they are basically robotic alternative to EMTs, they should probably have them.
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent(/datum/reagent/acid/polyacid, 250)
-	src.emag.name = "Polyacid spray"
+	src.emag.SetName("Polyacid spray")
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(15000)
 	synths += medicine
@@ -470,7 +470,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/reagent_containers/glass/bucket(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent(/datum/reagent/lube, 250)
-	src.emag.name = "Lube spray"
+	src.emag.SetName("Lube spray")
 	..()
 
 /obj/item/weapon/robot_module/janitor/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -536,7 +536,7 @@ var/global/list/robot_modules = list(
 
 	var/datum/reagents/R = src.emag.create_reagents(50)
 	R.add_reagent(/datum/reagent/chloralhydrate/beer2, 50)
-	src.emag.name = "Mickey Finn's Special Brew"
+	src.emag.SetName("Mickey Finn's Special Brew")
 	..()
 
 /obj/item/weapon/robot_module/clerical/general
@@ -706,7 +706,7 @@ var/global/list/robot_modules = list(
 	src.modules += robot.internals
 
 	src.emag = new /obj/item/weapon/gun/energy/plasmacutter(src)
-	src.emag.name = "Plasma Cutter"
+	src.emag.SetName("Plasma Cutter")
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(25000)
 	var/datum/matter_synth/glass = new /datum/matter_synth/glass(25000)

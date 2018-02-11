@@ -7,8 +7,7 @@
 	color = "#FFC966"
 	vessel_mass = 30
 	default_delay = 35 SECONDS
-	speed_mod = 5 SECONDS
-	triggers_events = 0
+	speed_mod = 10 SECONDS
 	generic_waypoints = list(
 		"nav_yacht_1",
 		"nav_yacht_2",

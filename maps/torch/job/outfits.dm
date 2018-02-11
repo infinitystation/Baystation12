@@ -217,6 +217,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	name = OUTFIT_JOB_NAME("Roboticist - Torch")
 	uniform = /obj/item/clothing/under/rank/roboticist
 	shoes = /obj/item/clothing/shoes/black
+	l_ear = /obj/item/device/radio/headset/torchroboticist
 	id_type = /obj/item/weapon/card/id/torch/contractor/engineering/roboticist
 	pda_type = /obj/item/device/pda/roboticist
 
@@ -603,7 +604,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/torch/passenger/passenger/PI
 	name = OUTFIT_JOB_NAME("Private Investigator - Torch")
-	backpack_contents = list(/obj/item/clothing/accessory/badge = 1)
+	backpack_contents = list(/obj/item/clothing/accessory/badge/PI = 1)
 
 /decl/hierarchy/outfit/job/torch/passenger/passenger/journalist
 	name = OUTFIT_JOB_NAME("Journalist - Torch")

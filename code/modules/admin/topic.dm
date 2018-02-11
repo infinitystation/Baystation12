@@ -1778,7 +1778,7 @@
 						if(O)
 							O.set_dir(obj_dir)
 							if(obj_name)
-								O.name = obj_name
+								O.SetName(obj_name)
 								if(istype(O,/mob))
 									var/mob/M = O
 									M.real_name = obj_name

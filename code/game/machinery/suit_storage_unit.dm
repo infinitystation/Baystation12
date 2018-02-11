@@ -1090,11 +1090,11 @@
 	switch(target_department)
 		if("Engineering")
 			if(helmet)
-				helmet.name = "engineering voidsuit helmet"
+				helmet.SetName("engineering voidsuit helmet")
 				helmet.icon_state = "rig0-engineering"
 				helmet.item_state = "eng_helm"
 			if(suit)
-				suit.name = "engineering voidsuit"
+				suit.SetName("engineering voidsuit")
 				suit.icon_state = "rig-engineering"
 				suit.item_state_slots = list(
 					slot_l_hand_str = "eng_voidsuit",
@@ -1102,11 +1102,11 @@
 				)
 		if("Mining")
 			if(helmet)
-				helmet.name = "mining voidsuit helmet"
+				helmet.SetName("mining voidsuit helmet")
 				helmet.icon_state = "rig0-mining"
 				helmet.item_state = "mining_helm"
 			if(suit)
-				suit.name = "mining voidsuit"
+				suit.SetName("mining voidsuit")
 				suit.icon_state = "rig-mining"
 				suit.item_state_slots = list(
 					slot_l_hand_str = "mining_voidsuit",
@@ -1114,11 +1114,11 @@
 				)
 		if("Science")
 			if(helmet)
-				helmet.name = "excavation voidsuit helmet"
+				helmet.SetName("excavation voidsuit helmet")
 				helmet.icon_state = "rig0-excavation"
 				helmet.item_state = "excavation_helm"
 			if(suit)
-				suit.name = "excavation voidsuit"
+				suit.SetName("excavation voidsuit")
 				suit.icon_state = "rig-excavation"
 				suit.item_state_slots = list(
 					slot_l_hand_str = "excavation_voidsuit",
@@ -1126,11 +1126,11 @@
 				)
 		if("Medical")
 			if(helmet)
-				helmet.name = "medical voidsuit helmet"
+				helmet.SetName("medical voidsuit helmet")
 				helmet.icon_state = "rig0-medical"
 				helmet.item_state = "medical_helm"
 			if(suit)
-				suit.name = "medical voidsuit"
+				suit.SetName("medical voidsuit")
 				suit.icon_state = "rig-medical"
 				suit.item_state_slots = list(
 					slot_l_hand_str = "medical_voidsuit",
@@ -1138,11 +1138,11 @@
 				)
 		if("Security")
 			if(helmet)
-				helmet.name = "security voidsuit helmet"
+				helmet.SetName("security voidsuit helmet")
 				helmet.icon_state = "rig0-sec"
 				helmet.item_state = "sec_helm"
 			if(suit)
-				suit.name = "security voidsuit"
+				suit.SetName("security voidsuit")
 				suit.icon_state = "rig-sec"
 				suit.item_state_slots = list(
 					slot_l_hand_str = "sec_voidsuit",
@@ -1150,11 +1150,11 @@
 				)
 		if("Atmos")
 			if(helmet)
-				helmet.name = "atmospherics voidsuit helmet"
+				helmet.SetName("atmospherics voidsuit helmet")
 				helmet.icon_state = "rig0-atmos"
 				helmet.item_state = "atmos_helm"
 			if(suit)
-				suit.name = "atmospherics voidsuit"
+				suit.SetName("atmospherics voidsuit")
 				suit.icon_state = "rig-atmos"
 				suit.item_state_slots = list(
 					slot_l_hand_str = "atmos_voidsuit",
@@ -1162,20 +1162,20 @@
 				)
 		if("Explorer")
 			if(helmet)
-				helmet.name = "exploration voidsuit helmet"
+				helmet.SetName("exploration voidsuit helmet")
 				helmet.icon_state = "helm_explorer"
 				helmet.item_state = "helm_explorer"
 			if(suit)
-				suit.name = "exploration voidsuit"
+				suit.SetName("exploration voidsuit")
 				suit.icon_state = "void_explorer"
 
 		if("^%###^%$" || "Mercenary")
 			if(helmet)
-				helmet.name = "blood-red voidsuit helmet"
+				helmet.SetName("blood-red voidsuit helmet")
 				helmet.icon_state = "rig0-syndie"
 				helmet.item_state = "syndie_helm"
 			if(suit)
-				suit.name = "blood-red voidsuit"
+				suit.SetName("blood-red voidsuit")
 				suit.icon_state = "rig-syndie"
 				suit.item_state_slots = list(
 					slot_l_hand_str = "syndie_voidsuit",
@@ -1183,12 +1183,12 @@
 				)
 		if("Pilot")
 			if(helmet)
-				helmet.name = "pilot voidsuit helmet"
+				helmet.SetName("pilot voidsuit helmet")
 				helmet.icon_state = "rig0_pilot"
 				helmet.item_state = "pilot_helm"
 			if(suit)
-				suit.name = "pilot voidsuit"
+				suit.SetName("pilot voidsuit")
 				suit.icon_state = "rig-pilot"
 
-	if(helmet) helmet.name = "refitted [helmet.name]"
-	if(suit) suit.name = "refitted [suit.name]"
+	if(helmet) helmet.SetName("refitted [helmet.name]")
+	if(suit) suit.SetName("refitted [suit.name]")

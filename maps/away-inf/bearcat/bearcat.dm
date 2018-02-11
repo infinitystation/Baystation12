@@ -5,7 +5,6 @@
 	color = "#00FFFF"
 	vessel_mass = 60
 	default_delay = 3 MINUTES
-	triggers_events = 0
 	speed_mod = 0.1 MINUTE
 	burn_delay = 10 SECONDS
 
