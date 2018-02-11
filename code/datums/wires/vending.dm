@@ -23,7 +23,7 @@ var/const/VENDING_WIRE_IDSCAN = 8
 	var/obj/machinery/vending/V = holder
 	. += ..()
 	. += "<BR>The orange light is [V.seconds_electrified ? "off" : "on"].<BR>"
-	. += "The red light is [V.shoot_inventory ? "off" : "blinking"].<BR>"
+	. += "The red light is [V.shoot_inventory ? "blinking" : "off"].<BR>"
 	. += "The green light is [(V.categories & CAT_HIDDEN) ? "on" : "off"].<BR>"
 	. += "The [V.scan_id ? "purple" : "yellow"] light is on.<BR>"
 
