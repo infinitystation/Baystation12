@@ -103,7 +103,7 @@
 	description = "A work visa issued by the Sol Central Government for the purpose of work."
 	path = /obj/item/weapon/paper/workvisa
 
-/datum/gear/mirror/
+/datum/gear/mirror
 	display_name = "handheld mirror"
 	sort_category = "Cosmetics"
 	path = /obj/item/weapon/mirror
@@ -111,11 +111,13 @@
 /datum/gear/lipstick
 	display_name = "lipstick selection"
 	path = /obj/item/weapon/lipstick
+	sort_category = "Cosmetics"
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/comb
 	display_name = "plastic comb"
 	path = /obj/item/weapon/haircomb
+	sort_category = "Cosmetics"
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/mask
