@@ -26,6 +26,10 @@
 		/obj/item/rig_module/fabricator/energy_net
 		)
 
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
+		)
+
 //Has most of the modules removed
 /obj/item/weapon/rig/merc/empty
 	initial_modules = list(
@@ -40,6 +44,10 @@
 	armor = list(melee = 90, bullet = 80, laser = 80, energy = 25, bomb = 90, bio = 100, rad = 70)
 	offline_slowdown = 4
 	online_slowdown = 2
+
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
+		)
 
 /obj/item/weapon/rig/merc/heavy/empty
 	initial_modules = list(

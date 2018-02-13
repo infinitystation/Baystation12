@@ -18,6 +18,10 @@
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/light
 	glove_type = /obj/item/clothing/gloves/rig/light
 
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
+		)
+
 /obj/item/clothing/suit/space/rig/light
 	name = "suit"
 	breach_threshold = 18 //comparable to voidsuits
@@ -56,6 +60,10 @@
 	chest_type = /obj/item/clothing/suit/lightrig/hacker
 	glove_type = /obj/item/clothing/gloves/lightrig/hacker
 	boot_type = /obj/item/clothing/shoes/lightrig/hacker
+
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
+		)
 
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
@@ -115,8 +123,9 @@
 		)
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/back.dmi'
-	)
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/rig_back.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
+		)
 
 	..()
 
