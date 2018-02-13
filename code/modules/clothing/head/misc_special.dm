@@ -31,8 +31,11 @@
 	flash_protection = FLASH_PROTECTION_MAJOR
 	tint = TINT_HEAVY
 	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
 		)
+
 
 /obj/item/clothing/head/welding/attack_self()
 	if(!base_state)
@@ -76,11 +79,17 @@
 		slot_l_hand_str = "demonwelding",
 		slot_r_hand_str = "demonwelding",
 		)
+	sprite_sheets = (
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi'
+		)
 
 /obj/item/clothing/head/welding/knight
 	name = "knightly welding helmet"
 	desc = "A painted welding helmet, this one looks like a knights helmet."
 	icon_state = "knightwelding"
+	sprite_sheets = (
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi'
+		)
 
 /obj/item/clothing/head/welding/fancy
 	name = "fancy welding helmet"
@@ -89,6 +98,9 @@
 	item_state_slots = list(
 		slot_l_hand_str = "fancywelding",
 		slot_r_hand_str = "fancywelding",
+		)
+	sprite_sheets = (
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi'
 		)
 
 /obj/item/clothing/head/welding/engie
@@ -99,6 +111,9 @@
 		slot_l_hand_str = "engiewelding",
 		slot_r_hand_str = "engiewelding",
 		)
+	sprite_sheets = (
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi'
+		)
 
 /obj/item/clothing/head/welding/carp
 	name = "carp welding helmet"
@@ -107,6 +122,9 @@
 	item_state_slots = list(
 		slot_l_hand_str = "carpwelding",
 		slot_r_hand_str = "carpwelding",
+		)
+	sprite_sheets = (
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi'
 		)
 
 /*
