@@ -240,7 +240,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		ownrank = newrank
 	else
 		ownrank = ownjob
-	SetName(newname + " (" + ownjob + ")")
+	name = newname + " (" + ownjob + ")"
 
 
 //AI verb and proc for sending PDA messages.
@@ -1397,7 +1397,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		var/name = P.owner
 		if (name in names)
 			namecounts[name]++
-			SetName(text("[name] ([namecounts[name]])"))
+			name = text("[name] ([namecounts[name]])")
 		else
 			names.Add(name)
 			namecounts[name] = 1
@@ -1447,3 +1447,4 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	set_rank_job(rank, job)
 
 /obj/item/device/pda/proc/update_label()
+	name = "[initial(name)]-[owner] ([ownjob])"
