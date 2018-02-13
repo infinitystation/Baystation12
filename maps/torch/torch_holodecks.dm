@@ -40,6 +40,7 @@
 		"meetinghall"      = new/datum/holodeck_program(/area/holodeck/source_meetinghall),
 		"courtroom"        = new/datum/holodeck_program(/area/holodeck/source_courtroom, list('sound/music/traitor.ogg')),
 		"wildlifecarp"     = new/datum/holodeck_program(/area/holodeck/source_wildlife, list()),
+		"paradeground"     = new/datum/holodeck_program(/area/holodeck/source_military, list()),
 		"turnoff"          = new/datum/holodeck_program(/area/holodeck/source_plating, list())
 	)
 
@@ -52,6 +53,7 @@
 			"Boxing Ring"       = "boxingcourt",
 			"Beach"             = "beach",
 			"Desert"            = "desert",
+			"Parade Ground"            = "paradeground",
 			"Space"             = "space",
 			"Picnic Area"       = "picnicarea",
 			"Snow Field"        = "snowfield",

@@ -418,6 +418,10 @@ var/list/floor_decals = list()
 	name = "orange outline"
 	color = COLOR_DARK_ORANGE
 
+/obj/effect/floor_decal/industrial/outline/green
+	name = "orange outline"
+	color = COLOR_GREEN
+
 /obj/effect/floor_decal/industrial/loading
 	name = "loading area"
 	icon_state = "loadingarea"
@@ -546,6 +550,23 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/ss13/infinity/l10
 	name = "L10"
 	icon_state = "L10"
+
+/obj/effect/floor_decal/ss13/infinity/l10
+	name = "L10"
+	icon_state = "L10"
+
+/obj/effect/floor_decal/parade
+	name = "first"
+	icon = 'icons/turf/flooring/infinity_decals.dmi'
+	icon_state = "first"
+
+/obj/effect/floor_decal/parade/second
+	name = "second"
+	icon_state = "second"
+
+/obj/effect/floor_decal/parade/third
+	name = "third"
+	icon_state = "third"
 
 /obj/effect/floor_decal/sign
 	name = "floor sign"

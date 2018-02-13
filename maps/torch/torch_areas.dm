@@ -1136,6 +1136,10 @@
 /area/holodeck/source_wildlife
 	name = "\improper Holodeck - Wildlife Simulation"
 
+/area/holodeck/source_military
+	name = "\improper Holodeck - Military Parade Ground"
+	sound_env = AUDITORIUM
+
 /area/holodeck/source_meetinghall
 	name = "\improper Holodeck - Meeting Hall"
 	sound_env = AUDITORIUM
