@@ -25,6 +25,14 @@
 	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
 	set_autorun("sensormonitor")
 
+// Detectives
+/obj/item/modular_computer/console/preset/medical/detective/install_default_programs()
+	..()
+	hard_drive.store_file(new/datum/computer_file/program/camera_monitor())
+	hard_drive.store_file(new/datum/computer_file/program/records())
+	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
+	set_autorun("records")
+
 // Research
 /obj/item/modular_computer/console/preset/research/install_default_hardware()
 	..()
