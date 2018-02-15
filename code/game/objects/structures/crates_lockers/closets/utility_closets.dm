@@ -253,6 +253,40 @@
 		/obj/random/firstaid,
 		/obj/random/medical/lite = 12)
 
+/obj/structure/closet/medical_wall/filled/regular/WillContain()
+	return list(
+		/obj/item/weapon/storage/firstaid/regular,
+		/obj/item/bodybag/cryobag = 1,
+		/obj/random/medical/lite = 6)
+
+/obj/structure/closet/medical_wall/filled/engineering/WillContain()
+	return list(
+		/obj/item/weapon/storage/firstaid/regular,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/rad = 4,
+		/obj/random/medical/lite = 6)
+
+/obj/structure/closet/medical_wall/filled/security/WillContain()
+	return list(
+		/obj/item/weapon/storage/firstaid/regular,
+		/obj/item/weapon/storage/pill_bottle/kelotane,
+		/obj/item/weapon/storage/pill_bottle/bicaridine,
+		/obj/item/bodybag/cryobag = 1,
+		/obj/random/medical/lite = 4)
+
+/obj/structure/closet/medical_wall/filled/shuttle/WillContain()
+	return list(
+		/obj/item/weapon/storage/firstaid/regular,
+		/obj/item/bodybag/cryobag = 2,
+		/obj/random/medical/lite = 8)
+
+/obj/structure/closet/medical_wall/filled/small_shuttle/WillContain()
+	return list(
+		/obj/item/weapon/storage/firstaid/regular,
+		/obj/item/weapon/storage/pill_bottle/inaprovaline,
+		/obj/item/weapon/storage/pill_bottle/paracetamol,
+		/obj/item/bodybag/cryobag = 1,
+		/obj/random/medical/lite = 4)
+
 /obj/structure/closet/shipping_wall
 	name = "shipping supplies closet"
 	desc = "It's a wall-mounted storage unit containing supplies for preparing shipments."
