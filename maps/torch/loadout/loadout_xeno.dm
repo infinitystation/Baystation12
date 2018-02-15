@@ -130,19 +130,20 @@
 	path = /obj/item/clothing/under/resomi/science
 	allowed_roles = NANOTRASEN_ROLES
 
-/datum/gear/uniform/resomi/expeditionary/pt
-	display_name = "uniform, Expeditionary PT (Resomi)"
-	path = /obj/item/clothing/under/solgov/pt/expeditionary/resomi
-
 /datum/gear/uniform/resomi/expeditionary
 	display_name = "uniform, Expeditionary Utility (Resomi)"
 	path = /obj/item/clothing/under/solgov/utility/expeditionary/resomi
 	allowed_roles = SOLGOV_ROLES
-	cost = 0 //Because it's working uniform
+	whitelisted = list(SPECIES_RESOMI)
+	cost = 0 //Because it's work uniform
+
+/datum/gear/uniform/resomi/expeditionary/pt
+	display_name = "uniform, Expeditionary PT (Resomi)"
+	path = /obj/item/clothing/under/solgov/pt/expeditionary/resomi
 
 /datum/gear/uniform/resomi/expeditionary/command
 	display_name = "uniform, Expeditionary Command Utility (Resomi)"
-	path = /obj/item/clothing/under/solgov/mildress/expeditionary/officer/resomi
+/obj/item/clothing/under/solgov/utility/expeditionary/officer/resomi
 
 /datum/gear/uniform/resomi/expeditionary/mildress
 	display_name = "uniform, Expeditionary Mildress (Resomi)"
