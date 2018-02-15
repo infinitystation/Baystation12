@@ -195,6 +195,7 @@
 	name = "Zeng-Hu Pharmaceuticals cap"
 	icon = 'maps/away/lar_maria/lar_maria_sprites.dmi'
 	icon_state = "zhp_cap"
+	item_state = "greensoft"
 	item_icons = list(slot_head_str = 'maps/away/lar_maria/lar_maria_sprites.dmi')
 
 /mob/living/simple_animal/hostile/lar_maria/virologist

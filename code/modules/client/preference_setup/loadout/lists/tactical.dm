@@ -21,13 +21,31 @@
 	display_name = "armor pouches"
 	path = /obj/item/clothing/accessory/storage/pouches
 	cost = 2
-	flags = GEAR_HAS_SUBTYPE_SELECTION
+
+/datum/gear/tactical/armor_pouches/New()
+	..()
+	var/pouches = list()
+	pouches["black armor pouch"] = /obj/item/clothing/accessory/storage/pouches
+	pouches["green armor pouch"] = /obj/item/clothing/accessory/storage/pouches/green
+	pouches["navy armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/navy
+	pouches["blue armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/blue
+	pouches["tan armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/tan
+	gear_tweaks += new/datum/gear_tweak/path(pouches)
 
 /datum/gear/tactical/large_pouches
 	display_name = "armor large pouches"
 	path = /obj/item/clothing/accessory/storage/pouches/large
 	cost = 5
-	flags = GEAR_HAS_SUBTYPE_SELECTION
+
+/datum/gear/tactical/large_pouches/New()
+	..()
+	var/lpouches = list()
+	lpouches["black large armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/large
+	lpouches["green large armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/large/green
+	lpouches["navy large armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/large/navy
+	lpouches["blue large armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/large/blue
+	lpouches["tan large armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/large/tan
+	gear_tweaks += new/datum/gear_tweak/path(lpouches)
 
 /datum/gear/tactical/armor_deco
 	display_name = "armor customization"
