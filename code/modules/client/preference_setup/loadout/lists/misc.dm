@@ -144,6 +144,7 @@
 /datum/gear/zippo
 	display_name = "zippo"
 	path = /obj/item/weapon/flame/lighter/zippo
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/ashtray
 	display_name = "ashtray, plastic"
@@ -172,4 +173,9 @@
 /datum/gear/ecig/deluxe
 	display_name = "electronic cigarette, deluxe"
 	path = /obj/item/clothing/mask/smokable/ecig/deluxe
+	cost = 2
+
+/datum/gear/mind_healer
+	display_name = "Methylphenidate, pill bottle"
+	path = /obj/item/weapon/storage/pill_bottle/methylphenidate
 	cost = 2

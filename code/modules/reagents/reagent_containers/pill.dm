@@ -189,6 +189,14 @@
 	reagents.add_reagent(/datum/reagent/dermaline, 15)
 	color = reagents.get_color()
 
+/obj/item/weapon/reagent_containers/pill/hyronalin
+	name = "Hyronalin (15u)"
+	desc = "Used to treat burn wounds."
+	icon_state = "pill2"
+/obj/item/weapon/reagent_containers/pill/hyronalin/New()
+	..()
+	reagents.add_reagent(/datum/reagent/hyronalin, 15)
+	color = reagents.get_color()
 
 /obj/item/weapon/reagent_containers/pill/dylovene
 	name = "Dylovene (15u)"

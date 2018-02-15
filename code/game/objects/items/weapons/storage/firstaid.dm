@@ -52,7 +52,7 @@
 		)
 
 /obj/item/weapon/storage/firstaid/toxin
-	name = "toxin first aid"
+	name = "toxin first-aid kit"
 	desc = "Used to treat when you have a high amount of toxins in your body."
 	icon_state = "antitoxin"
 	item_state = "firstaid-toxin"
@@ -68,7 +68,7 @@
 	icon_state = pick("antitoxin","antitoxfirstaid","antitoxfirstaid2","antitoxfirstaid3")
 
 /obj/item/weapon/storage/firstaid/o2
-	name = "oxygen deprivation first aid"
+	name = "oxygen first-aid kit"
 	desc = "A box full of oxygen goodies."
 	icon_state = "o2"
 	item_state = "firstaid-o2"
@@ -90,6 +90,19 @@
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
 		/obj/item/stack/medical/advanced/bruise_pack = 3,
 		/obj/item/stack/medical/advanced/ointment = 2,
+		/obj/item/stack/medical/splint
+		)
+
+/obj/item/weapon/storage/firstaid/brute
+	name = "brute first-aid kit"
+	desc = "Use it when your hands will be broken... Or worse."
+	icon_state = "radfirstaid3"
+	item_state = "firstaid-advanced"
+
+	startswith = list(
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pain,
+		/obj/item/stack/medical/advanced/bruise_pack = 4,
 		/obj/item/stack/medical/splint
 		)
 
@@ -191,6 +204,12 @@
 	desc = "Contains pills used to treat burn wounds."
 
 	startswith = list(/obj/item/weapon/reagent_containers/pill/dermaline = 14)
+
+/obj/item/weapon/storage/pill_bottle/hyronalin
+	name = "bottle of Hyronalin pills"
+	desc = "Contains pills used to treat radiation effects."
+
+	startswith = list(/obj/item/weapon/reagent_containers/pill/hyronalin = 14)
 
 /obj/item/weapon/storage/pill_bottle/dylovene
 	name = "bottle of Dylovene pills"
