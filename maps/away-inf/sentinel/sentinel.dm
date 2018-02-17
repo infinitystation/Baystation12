@@ -13,7 +13,7 @@
 	start_y = 2
 
 /obj/effect/overmap/ship/patrol/New()
-	name = "SPC [pick("Bloodhound","Rescuer","Cobra","Cavalry","Anchor","God's hand")], \a [name]"
+	name = "SPC [pick("Bloodhound","Rescuer","Cobra","Cavalry","Anchor","God's hand","Korobochka")], \a [name]"
 	for(var/area/ship/patrol/A)
 		A.name = "\improper [name] - [A.name]"
 		GLOB.using_map.area_purity_test_exempt_areas += A.type
@@ -42,17 +42,43 @@
 
 /obj/structure/closet/secure_closet/guncabinet/patrol/energy/WillContain()
 	return list(
-		/obj/item/clothing/accessory/holster/thigh = 4,
-		/obj/item/weapon/gun/energy/gun = 4,
+		/obj/item/clothing/accessory/holster/thigh = 8,
+		/obj/item/weapon/gun/energy/gun = 8
 	)
 
 /obj/structure/closet/secure_closet/guncabinet/patrol/assault/WillContain()
 	return list(
 		/obj/item/ammo_magazine/a762 = 16,
-		/obj/item/weapon/gun/projectile/automatic/z8 = 4,
+		/obj/item/weapon/gun/projectile/automatic/z8 = 4
+	)
+
+/obj/structure/closet/secure_closet/guncabinet/patrol/carabine/WillContain()
+	return list(
+		/obj/item/ammo_magazine/c12755 = 6,
+		/obj/item/weapon/gun/projectile/automatic/amrcarabine = 2
+	)
+
+/obj/structure/closet/secure_closet/guncabinet/patrol/shotgun/WillContain()
+	return list(
+		/obj/item/ammo_casing/shotgun/pellet = 20,
+		/obj/item/clothing/accessory/storage/bandolier = 2,
+		/obj/item/weapon/gun/projectile/shotgun/pump/combat/lethal = 2
 	)
 
 /obj/machinery/computer/shuttle_control/explore/patrol
 	name = "shuttle control console"
 	shuttle_tag = "Patrol"
 	req_access = list(access_bridge)
+
+/obj/turbolift_map_holder/sentinel
+	name = "Sentinel turbolift map placeholder"
+	icon = 'icons/obj/turbolift_preview_2x2.dmi'
+	depth = 2
+	lift_size_x = 3
+	lift_size_y = 3
+
+	areas_to_use = list(
+		/area/turbolift/sentinel_first,
+		/area/turbolift/sentinel_second
+		)
+

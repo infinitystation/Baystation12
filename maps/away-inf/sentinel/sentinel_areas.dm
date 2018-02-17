@@ -188,7 +188,26 @@
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/ship/patrol/shuttle/lift
-  name = "\improper Cargo Lift"
-  icon_state = "shuttle3"
-  base_turf = /turf/simulated/open
+/area/turbolift/sentinel_second
+	name = "lift (upper deck)"
+	lift_floor_label = "Deck 1"
+	lift_floor_name = "Crew Deck"
+	lift_announce_str = "Arriving at Habitation Deck: EVA. Security Wing. Telecommunications. Mess Hall. Hydroponics. Cryogenic Storage. Holodeck."
+
+/area/turbolift/sentinel_first
+	name = "lift (lower deck)"
+	lift_floor_label = "Deck 2"
+	lift_floor_name = "Utility Deck"
+	lift_announce_str = "Arriving at Hangar Deck: Shuttle Docks. Cargo Storage. Main Hangar. Supply Office. Expedition Preparation. Mineral Processing."
+	base_turf = /turf/simulated/floor
+
+/area/turbolift/startsent
+	name = "\improper Turbolift Start"
+
+/area/turbolift/firstdecksent
+	name = "\improper first deck"
+	base_turf = /turf/simulated/open
+
+/area/turbolift/seconddecksenst
+	name = "\improper second deck"
+	base_turf = /turf/simulated/open
