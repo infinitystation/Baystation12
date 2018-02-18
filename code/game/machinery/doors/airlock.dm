@@ -76,6 +76,11 @@
 	icon = 'icons/obj/doors/Doorcom.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_com
 
+/obj/machinery/door/airlock/command/autoname/New()
+	var/area/A = get_area(src)
+	name = A.name
+	..()
+
 /obj/machinery/door/airlock/security
 	name = "Airlock"
 	icon = 'icons/obj/doors/Doorsec.dmi'
@@ -144,6 +149,10 @@
 	icon = 'icons/obj/doors/Doorele.dmi'
 	opacity = 1 // Was 0, are you sry?
 
+/obj/machinery/door/airlock/centcom/autoname/New()
+	var/area/A = get_area(src)
+	name = A.name
+	..()
 /obj/machinery/door/airlock/vault
 	name = "Vault"
 	icon = 'icons/obj/doors/vault.dmi'

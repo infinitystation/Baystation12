@@ -76,6 +76,10 @@
 /obj/machinery/door/airlock/autoname/engineering
 	req_access = list(access_engine)
 
+/obj/machinery/door/airlock/autoname/security
+	req_access = list(access_brig)
+
+
 /turf/simulated/floor/usedup
 	initial_gas = list("carbon_dioxide" = MOLES_O2STANDARD, "nitrogen" = MOLES_N2STANDARD)
 
