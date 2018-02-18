@@ -51,6 +51,9 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 	one_hand_penalty = 3 //a little heavier than the regular shotgun
 
+/obj/item/weapon/gun/projectile/shotgun/pump/combat/lethal
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel
 	name = "double-barreled shotgun"
 	desc = "A true classic."
