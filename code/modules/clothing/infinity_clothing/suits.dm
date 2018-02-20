@@ -22,27 +22,26 @@
 
 /obj/item/clothing/suit/storage/toggle/civilian
 	name = "black jacket"
-	desc = "Чёрна&#255; куртка для насто&#255;щего белого мужчины."
+	desc = "Чёрна&#255; куртка для насто&#255;щего, белого мужчины."
 	icon = 'icons/obj/clothing/infinity/suits.dmi'
 	icon_override = 'icons/mob/infinity/suits.dmi'
 	icon_state = "black_jacket_o"
 	icon_open = "black_jacket_o"
 	icon_closed = "black_jacket_c"
 
-/obj/item/clothing/suit/armor/Syndy_armor
-	name = "Space marine's armor vest"
-	icon = 'icons/obj/clothing/infinity/TG_copy/infinity_work.dmi'
-	icon_override = 'icons/infinity_work.dmi'
-	item_state = null
-	icon_state = "marine_armor"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	armor = list(melee = 60, bullet = 60, laser = 60, energy = 40, bomb = 20, bio = 0, rad = 0)
-
 /obj/item/clothing/suit/storage/toggle/longjacket
 	name = "long jacket"
 	desc = "A long gray jacket"
 	icon = 'icons/obj/clothing/infinity/suits.dmi'
 	icon_override = 'icons/mob/infinity/suits.dmi'
+	item_icons = list(
+		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_uniforms.dmi',
+		slot_r_hand_str = 'icons/mob/onmob/items/righthand_uniforms.dmi',
+		)
+	item_state_slots = list(
+		slot_l_hand_str = "jensensuit",
+		slot_r_hand_str = "jensensuit",
+	)
 	icon_state = "longjacket"
-	icon_open = "longjacket"
-	icon_closed = "longjacket_t"
+	icon_open = "longjacket_open"
+	icon_closed = "longjacket"

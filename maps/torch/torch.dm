@@ -60,6 +60,7 @@
 	#include "loadout/loadout_eyes.dm"
 	#include "loadout/loadout_gloves.dm"
 	#include "loadout/loadout_head.dm"
+	#include "loadout/loadout_infinity.dm"
 	#include "loadout/loadout_shoes.dm"
 	#include "loadout/loadout_suit.dm"
 	#include "loadout/loadout_uniform.dm"

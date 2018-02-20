@@ -5,4 +5,3 @@
 	icon = 'icons/infinity_custom_items_obj.dmi'
 	accessory_icons = list(slot_w_uniform_str = 'icons/infinity_custom_items_mob.dmi', slot_wear_suit_str = 'icons/infinity_custom_items_mob.dmi')
 	icon_state = "talisman"
-	slot_flags = SLOT_TIE
