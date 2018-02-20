@@ -77,9 +77,9 @@
 		if(prob(2))
 			if(active_breathing)
 				owner.visible_message(
-					"<B>\The [owner]</B> coughs up blood!",
-					"<span class='warning'>You cough up blood!</span>",
-					"You hear someone coughing!",
+					"<B>[owner]</B> кашл&#255;ет кровью!",
+					"<span class='warning'>Вы кашл&#255;ете кровью!</span>",
+					"Вы слышите кашель!",
 				)
 			else
 				var/obj/item/organ/parent = owner.get_organ(parent_organ)
@@ -91,9 +91,9 @@
 		if(prob(4))
 			if(active_breathing)
 				owner.visible_message(
-					"<B>\The [owner]</B> gasps for air!",
-					"<span class='danger'>You can't breathe!</span>",
-					"You hear someone gasp for air!",
+					"<B>[owner]</B> задыхаетс&#255;!",
+					"<span class='danger'>Вы задыхаетесь!</span>",
+					"Вы слышите как кто-то задыхаетс&#255;!",
 				)
 			else
 				to_chat(owner, "<span class='danger'>You're having trouble getting enough [breath_type]!</span>")
@@ -103,7 +103,7 @@
 /obj/item/organ/internal/lungs/proc/rupture()
 	var/obj/item/organ/external/parent = owner.get_organ(parent_organ)
 	if(istype(parent))
-		owner.custom_pain("You feel a stabbing pain in your [parent.name]!", 50, affecting = parent)
+		owner.custom_pain("Вы чувствуете колющую боль в [parent.name]!", 50, affecting = parent)
 	bruise()
 
 /obj/item/organ/internal/lungs/proc/handle_breath(datum/gas_mixture/breath, var/forced)
@@ -262,7 +262,7 @@
 		var/damage = 0
 		if(breath.temperature <= species.cold_level_1)
 			if(prob(20))
-				to_chat(owner, "<span class='danger'>You feel your face freezing and icicles forming in your lungs!</span>")
+				to_chat(owner, "<span class='danger'>Ваше лицо замерзает вместе с вашими легкими!</span>")
 			switch(breath.temperature)
 				if(species.cold_level_3 to species.cold_level_2)
 					damage = COLD_GAS_DAMAGE_LEVEL_3
@@ -278,7 +278,7 @@
 			owner.fire_alert = 1
 		else if(breath.temperature >= species.heat_level_1)
 			if(prob(20))
-				to_chat(owner, "<span class='danger'>You feel your face burning and a searing heat in your lungs!</span>")
+				to_chat(owner, "<span class='danger'>Ваше лицо горит вместе с вашими легкими!</span>")
 
 			switch(breath.temperature)
 				if(species.heat_level_1 to species.heat_level_2)
@@ -335,7 +335,7 @@
 		breathtype += pick("shallow and rapid")
 	if(!breathtype.len)
 		breathtype += "healthy"
-	
+
 	. += "[english_list(breathtype)] breathing"
 
 	return english_list(.)
