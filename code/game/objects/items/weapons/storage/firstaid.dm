@@ -317,8 +317,8 @@
 	startswith = list(
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/burn,
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/brute,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/inaprovaline,
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pain = 2,
 		/obj/item/stack/medical/bruise_pack,
-		/obj/item/stack/medical/ointment,
-		/obj/item/stack/medical/splint
+		/obj/item/stack/medical/ointment
 		)

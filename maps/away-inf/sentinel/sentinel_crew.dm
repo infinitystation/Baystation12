@@ -237,3 +237,64 @@
 			uniform.attach_accessory(null, rank)
 		else
 			qdel(rank)
+
+///////////
+//CLOSETS//
+///////////
+
+/obj/structure/closet/secure_closet/patrol/
+	name = "marine locker"
+	req_access = list(access_brig)
+	icon_state = "sec1"
+	icon_closed = "sec"
+	icon_locked = "sec1"
+	icon_opened = "secopen"
+	icon_off = "secoff"
+
+/obj/structure/closet/secure_closet/patrol/WillContain()
+	return list(
+		/obj/item/weapon/storage/belt/security/troops/patrol,
+		/obj/item/weapon/melee/baton/loaded,
+		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
+		/obj/item/clothing/accessory/storage/black_vest,
+		/obj/item/clothing/gloves/thick/combat/marine,
+		/obj/item/device/flashlight/maglight,
+		/obj/item/weapon/storage/firstaid/individual/military/troops
+	)
+
+/obj/structure/closet/secure_closet/patrol/marine_eng/WillContain()
+	return list(
+		/obj/item/weapon/storage/belt/utility/full_buy,
+		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
+		/obj/item/clothing/accessory/storage/black_vest,
+		/obj/item/clothing/gloves/insulated/combat,
+		/obj/item/device/flashlight/maglight,
+		/obj/item/weapon/storage/firstaid/individual/military/troops
+	)
+
+/obj/structure/closet/secure_closet/patrol/marine_med/WillContain()
+	return list(
+		/obj/item/weapon/defibrillator/compact/combat/loaded,
+		/obj/item/clothing/glasses/hud/health/visor,
+		/obj/item/clothing/accessory/storage/black_vest,
+		/obj/item/clothing/gloves/insulated/combat,
+		/obj/item/device/flashlight/maglight,
+		/obj/item/weapon/storage/firstaid/individual/military/troops
+	)
+
+/obj/structure/closet/secure_closet/patrol/marine_lead/WillContain()
+	return list(
+		/obj/item/weapon/storage/belt/security/troops/patrol,
+		/obj/item/weapon/melee/baton/loaded,
+		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
+		/obj/item/clothing/accessory/storage/black_vest,
+		/obj/item/clothing/gloves/thick/combat/marine,
+		/obj/item/device/flashlight/maglight,
+		/obj/item/weapon/storage/firstaid/individual/military/troops,
+		/obj/item/device/megaphone
+	)
+
+/obj/item/weapon/storage/belt/security/troops/patrol/New()
+	..()
+	new /obj/item/weapon/gun/projectile/sec/lethal(src)
+	new /obj/item/ammo_magazine/c45m(src)
