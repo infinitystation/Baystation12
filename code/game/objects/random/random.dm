@@ -195,14 +195,14 @@
 	spawn_nothing_percentage = 50
 
 /obj/random/contraband/spawn_choices()
-	return list(/obj/item/weapon/haircomb = 4,
-				/obj/item/weapon/storage/pill_bottle/tramadol = 3,
+	return list(/obj/item/weapon/storage/pill_bottle/tramadol = 3,
 				/obj/item/weapon/storage/pill_bottle/happy = 2,
 				/obj/item/weapon/storage/pill_bottle/zoom = 2,
 				/obj/item/weapon/reagent_containers/glass/beaker/vial/random/toxin = 1,
 				/obj/item/weapon/reagent_containers/glass/beaker/sulphuric = 1,
 				/obj/item/weapon/contraband/poster = 5,
 				/obj/item/weapon/material/butterfly = 2,
+				/obj/item/clothing/accessory/necklace/collar/shock = 3,
 				/obj/item/weapon/material/butterflyblade = 3,
 				/obj/item/weapon/material/butterflyhandle = 3,
 				/obj/item/weapon/material/wirerod = 3,
