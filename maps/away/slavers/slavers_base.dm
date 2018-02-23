@@ -59,9 +59,15 @@
 	icon_state = "dirty_mattress"
 	anchored = 0
 
+/obj/structure/slavers_base/mattress/clean
+	name = "mattress"
+	desc = "Clean mattress. Not so comfortable, but enought."
+	icon_state = "mattress"
+	anchored = 0
+
 /decl/hierarchy/outfit/corpse
 	name = "Corpse Clothing"
-	
+
 /decl/hierarchy/outfit/corpse/New()
 	..()
 	hierarchy_type = type
