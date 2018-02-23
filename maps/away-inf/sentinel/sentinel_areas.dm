@@ -113,6 +113,10 @@
 	name = "\improper Maintenance Upper Aft"
 	icon_state = "amaint"
 
+/area/ship/patrol/maintenance/upper/pods
+	name = "\improper Maintenance Pods Section"
+	icon_state = "amaint"
+
 /area/ship/patrol/maintenance/upper/port
 	name = "\improper Maintenance Upper Port"
 	icon_state = "amaint"
@@ -168,10 +172,6 @@
 /area/ship/patrol/dock
 	name = "\improper Docking Bay"
 	icon_state = "entry_1"
-
-/area/ship/patrol/escape
-	name = "\improper Aft Escape Pods"
-	icon_state = "green"
 
 
 

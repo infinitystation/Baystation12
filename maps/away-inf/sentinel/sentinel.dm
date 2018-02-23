@@ -9,8 +9,9 @@
 	fore_dir = WEST
 	vessel_mass = 120
 	default_delay = 20 SECONDS
-	start_x = 15
-	start_y = 15
+	known = 0
+	start_x = 2
+	start_y = 2
 
 	restricted_waypoints = list("Albatross" = list("nav_hangar_calypso"))
 	generic_waypoints = list(
@@ -21,11 +22,12 @@
 		)
 
 /obj/effect/overmap/ship/patrol/New()
-	name = "SPC [pick("Sentinel","Swordfish","Rescuer","Cobra","Cavalry","Anchor","God's hand","Boxi","Scarabaeus","Purposeful","Helios")], \a [name]"
+	name = "SPC [pick("Sentinel","Swordfish","Rescuer","Cavalry","Anchor","Scarabaeus","Purposeful","Helios")], \a [name]"
 	for(var/area/ship/patrol/A)
 		A.name = "\improper [name] - [A.name]"
 		GLOB.using_map.area_purity_test_exempt_areas += A.type
 	..()
+
 
 /datum/map_template/ruin/away_site/patrol
 	name = "Sol Patrol Ship (ERT)"
@@ -33,21 +35,22 @@
 	description = "A saviour for souls of SEV Torch's crew."
 	prefix = "maps/away-inf/"
 	suffixes = list("sentinel/sentinel-1.dmm", "sentinel/sentinel-2.dmm")
-	cost = 100
+	cost = 1000
+	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/albatross)
 
-/obj/effect/shuttle_landmark/patrol/nav1
+/obj/effect/shuttle_landmark/nav_patrol/nav1
 	name = "Patrol Ship Fore"
 	landmark_tag = "nav_patrol_1"
 
-/obj/effect/shuttle_landmark/patrol/nav2
+/obj/effect/shuttle_landmark/nav_patrol/nav2
 	name = "Patrol Ship Aft"
 	landmark_tag = "nav_patrol_2"
 
-/obj/effect/shuttle_landmark/patrol/nav3
+/obj/effect/shuttle_landmark/nav_patrol/nav3
 	name = "Patrol Ship Port"
 	landmark_tag = "nav_patrol_3"
 
-/obj/effect/shuttle_landmark/patrol/nav4
+/obj/effect/shuttle_landmark/nav_patrol/nav4
 	name = "Patrol Ship Starboard"
 	landmark_tag = "nav_patrol_4"
 
@@ -63,7 +66,7 @@
 
 /obj/machinery/suit_storage_unit/patrol_marine
 	name = "Marine Voidsuit Storage Unit"
-	suit_type = /obj/item/clothing/suit/space/void/military/prepared
+	suit_type = /obj/item/clothing/suit/space/void/military/prepared/patrol
 	tank_type = /obj/item/weapon/tank/oxygen
 	mask_type = /obj/item/clothing/mask/gas/half
 	req_access = list(access_security)
