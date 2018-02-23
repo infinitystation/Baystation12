@@ -32,12 +32,12 @@ var/list/mob_hat_cache = list()
 	pass_flags = PASS_FLAG_TABLE
 	braintype = "Drone"
 	lawupdate = 0
-	density = 1
+	density = 0
 	req_access = list(access_engine, access_robotics)
 	integrated_light_power = 3
 	local_transmit = 1
 	possession_candidate = 1
-	speed = -1
+	speed = 0.5
 
 	can_pull_size = ITEM_SIZE_NORMAL
 	can_pull_mobs = MOB_PULL_SMALLER
@@ -120,6 +120,7 @@ var/list/mob_hat_cache = list()
 	module_type = /obj/item/weapon/robot_module/drone/construction
 	hat_x_offset = 1
 	hat_y_offset = -12
+	density = 1
 	can_pull_size = ITEM_SIZE_NO_CONTAINER
 	can_pull_mobs = MOB_PULL_SAME
 
