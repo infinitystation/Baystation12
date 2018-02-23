@@ -24,10 +24,18 @@
 	max_stored_power = 10
 	max_draw_per_tick = 1
 
+/obj/machinery/power/ship_weapon/maser/pulse
+	name = "MRSP-84 'Pulsar'"
+	projectile_type = /obj/item/projectile/ship_munition/energy/dawn
+	idle_power_usage = 7000
+	shot_power = 10000
+	max_stored_power = 100000
+	max_draw_per_tick = 20000
+
 /obj/machinery/power/ship_weapon/maser/old
 	name = "MRSL-34 'Fighter"
 	desc = " осмический Ћазер —редней ƒальности (Medium-Ranged Space Laser). ЌадЄжный и доказавший свою эффективность против пиратских судов и малых кораблей в пределах человеческой границы и за еЄ предеами, 'Fighter' является стандартной моделью боевых космических лазеров. »спользуется для пробития энергетических щитов и длительного обстрела вражеских судов. ћалоэффективен против толстой обшивки."
 	projectile_type = /obj/item/projectile/ship_munition/energy
 	shot_power = 100000
-	max_stored_power = 1000000
+	max_stored_power = 100000
 	max_draw_per_tick = 10000

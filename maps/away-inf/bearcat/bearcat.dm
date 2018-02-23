@@ -24,11 +24,6 @@
 	cost = 1
 	shuttles_to_initialise = list(/datum/shuttle/autodock/ferry/lift)
 
-/obj/effect/overmap/ship/bearcat/New()
-	name = "[pick("FTV","ITV","IEV")] [pick("Bearcat", "Firebug", "Defiant", "Unsinkable","Horizon","Vagrant")]"
-	..()
-
-
 /datum/shuttle/autodock/ferry/lift
 	name = "Cargo Lift"
 	shuttle_area = /area/ship/scrap/shuttle/lift
