@@ -18,7 +18,7 @@
 	icon_state = "rig-secTG"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS
 	allowed = list(/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/handcuffs,/obj/item/weapon/tank)
-	armor = list(melee = 60, bullet = 50, laser = 50,energy = 15, bomb = 35, bio = 100, rad = 30)
+	armor = list(melee = 30, bullet = 50, laser = 50,energy = 30, bomb = 60, bio = 100, rad = 40)
 	flags_inv = HIDESHOES|HIDEJUMPSUIT
 	siemens_coefficient = 0.6
 
@@ -26,8 +26,7 @@
 	..()
 	slowdown_per_slot[slot_wear_suit] = 1
 
-/obj/item/clothing/suit/space/void/military/prepared/New()
-	..()
+/obj/item/clothing/suit/space/void/military/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/military
 	boots = /obj/item/clothing/shoes/magboots
 
