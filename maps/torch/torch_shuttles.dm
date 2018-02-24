@@ -569,6 +569,7 @@
 	landmark_transition = "nav_transit_calypso"
 	range = 1
 	fuel_consumption = 4
+	defer_initialisation = TRUE
 
 /obj/effect/shuttle_landmark/torch/hangar/exploration_shuttle
 	name = "Charon Hangar"
