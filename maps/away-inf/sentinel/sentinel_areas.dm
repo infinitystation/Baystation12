@@ -163,7 +163,7 @@
 	icon_state = "yellow"
 
 /area/ship/patrol/command/lasers
-	name = "\improper MRSL platform"
+	name = "\improper MRSP platform"
 	icon_state = "yellow"
 
 

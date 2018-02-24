@@ -64,12 +64,6 @@
 
 	C.prefs.copy_to(new_character)
 
-	if(random_name)
-//		C.prefs.real_name = getrandom_name(gender)
-		new_character.name = random_name(gender)
-	else
-		new_character.name = C.prefs.real_name
-
 	new_character.dna.ready_dna(new_character)
 	new_character.dna.b_type = C.prefs.b_type
 
@@ -79,6 +73,12 @@
 	new_character.regenerate_icons()
 
 	new_character.key = C.key
+
+	if(random_name)
+//		C.prefs.real_name = getrandom_name(gender)
+		new_character.name = random_name(gender)
+	else
+		new_character.name = C.prefs.real_name
 
 	if(use_left >= 0)
 		use_left--
@@ -91,7 +91,7 @@
 /obj/cryo_spawner/proc/equip_character(mob/living/carbon/human/H, is_admin = 0)
 	return
 
-obj/cryo_spawner/update_icon()
+/obj/cryo_spawner/update_icon()
 	icon_state = "body_scanner_0"
 	sleep(10)
 	icon_state = initial(icon_state)

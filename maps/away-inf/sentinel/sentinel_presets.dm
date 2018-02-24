@@ -53,7 +53,7 @@
 	autolinkers = list("sentHub", "sentrelay", "albrelay", "senttroops", "sentmedical", "sentcommon", "sentcommand",
 	 "receiverSent", "broadcasterSent")
 
- /obj/machinery/telecomms/broadcaster/preset_sent
+/obj/machinery/telecomms/broadcaster/preset_sent
 	id = "Patrol Broadcaster"
 	network = "senttcommsat"
 	autolinkers = list("broadcasterSent")
@@ -143,3 +143,28 @@
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
+
+
+
+/obj/item/device/radio/headset/rescue
+	name = "rescue team radio headset"
+	desc = "The headset of the rescue team member."
+	icon_state = "com_headset"
+	item_state = "headset"
+	ks2type = /obj/item/device/encryptionkey/rescue
+
+/obj/item/device/radio/headset/rescue/leader
+	name = "rescue team leader radio headset"
+	desc = "The headset of the rescue team member."
+	icon_state = "com_headset"
+	item_state = "headset"
+	ks2type = /obj/item/device/encryptionkey/rescue/leader
+
+/obj/item/device/encryptionkey/rescue //for events
+	name = "\improper rescue radio encryption key"
+	icon_state = "cargo_cypherkey"
+	channels = list("Response Team" = 1)
+
+/obj/item/device/encryptionkey/rescue/leader
+	name = "\improper rescue leader radio encryption key"
+	channels = list("Response Team" = 1, "Command" = 1, )

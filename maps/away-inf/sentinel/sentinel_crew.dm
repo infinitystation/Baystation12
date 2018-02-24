@@ -23,10 +23,11 @@
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/navy(H), slot_back)
 
 	var/obj/item/weapon/card/id/torch/crew/W = new(H)
-	W.name = "[H.real_name]'s ID Card ([W.assignment])"
+	if(!W) return
+	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Patrol Craft."
 	W.assignment = "Patrol Craft Crewman"
-	W.registered_name = H.real_name
+	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 //	H.post_equip
@@ -49,10 +50,11 @@
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/navy(H), slot_back)
 
 	var/obj/item/weapon/card/id/torch/crew/engineering/W = new(H)
-	W.name = "[H.real_name]'s ID Card ([W.assignment])"
+	if(!W) return
+	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Patrol Craft."
 	W.assignment = "Patrol Craft Engineer"
-	W.registered_name = H.real_name
+	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 //	H.post_equip
@@ -75,10 +77,11 @@
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/navy(H), slot_back)
 
 	var/obj/item/weapon/card/id/torch/crew/medical/W = new(H)
-	W.name = "[H.real_name]'s ID Card ([W.assignment])"
+	if(!W) return
+	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Patrol Craft."
 	W.assignment = "Patrol Craft Doctor"
-	W.registered_name = H.real_name
+	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 //	H.post_equip
@@ -101,10 +104,11 @@
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/navy(H), slot_back)
 
 	var/obj/item/weapon/card/id/patrol/officer/W = new(H)
-	W.name = "[H.real_name]'s ID Card ([W.assignment])"
+	if(!W) return
+	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Patrol Craft."
 	W.assignment = "Patrol Craft Officer"
-	W.registered_name = H.real_name
+	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 //	H.post_equip
@@ -133,11 +137,12 @@
 	H.equip_to_slot_or_del(new /obj/item/device/radio/headset/heads(H), slot_l_ear)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/navy(H), slot_back)
 
-	var/obj/item/weapon/card/id/torch/crew/bridgeofficer/W = new(H)
-	W.name = "[H.real_name]'s ID Card ([W.assignment])"
+	var/obj/item/weapon/card/id/patrol/captain/W = new(H)
+	if(!W) return
+	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Patrol Craft."
 	W.assignment = "Patrol Craft Captain"
-	W.registered_name = H.real_name
+	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 //	H.post_equip
@@ -157,13 +162,14 @@
 /obj/cryo_spawner/patrol_craft/marine/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/marine/urban(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
-	H.equip_to_slot_or_del(new /obj/item/device/radio/headset/headset_sec(H), slot_l_ear)
-	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/black(H), slot_back)
+	H.equip_to_slot_or_del(new /obj/item/device/radio/headset/rescue(H), slot_l_ear)
+	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/ert/security(H), slot_back)
 
 	var/obj/item/weapon/card/id/patrol/marine/W = new(H)
-	W.name = "[H.real_name]'s ID Card ([W.assignment])"
+	if(!W) return
+	H.set_id_info(W)
 	W.assignment = "Trooper"
-	W.registered_name = H.real_name
+	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 //	H.post_equip
@@ -183,13 +189,14 @@
 /obj/cryo_spawner/patrol_craft/marine_eng/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/marine/urban(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
-	H.equip_to_slot_or_del(new /obj/item/device/radio/headset/headset_sec(H), slot_l_ear)
-	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/black(H), slot_back)
+	H.equip_to_slot_or_del(new /obj/item/device/radio/headset/rescue(H), slot_l_ear)
+	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/ert/engineer(H), slot_back)
 
 	var/obj/item/weapon/card/id/patrol/marine/W = new(H)
-	W.name = "[H.real_name]'s ID Card ([W.assignment])"
+	if(!W) return
+	H.set_id_info(W)
 	W.assignment = "Combat Engineer"
-	W.registered_name = H.real_name
+	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 //	H.post_equip
@@ -209,13 +216,14 @@
 /obj/cryo_spawner/patrol_craft/marine_med/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/marine/urban(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
-	H.equip_to_slot_or_del(new /obj/item/device/radio/headset/headset_sec(H), slot_l_ear)
-	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/black(H), slot_back)
+	H.equip_to_slot_or_del(new /obj/item/device/radio/headset/rescue(H), slot_l_ear)
+	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/ert/medical(H), slot_back)
 
 	var/obj/item/weapon/card/id/patrol/marine/W = new(H)
-	W.name = "[H.real_name]'s ID Card ([W.assignment])"
+	if(!W) return
+	H.set_id_info(W)
 	W.assignment = "Combat Medic"
-	W.registered_name = H.real_name
+	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 //	H.post_equip
@@ -235,13 +243,14 @@
 /obj/cryo_spawner/patrol_craft/marine_lead/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/marine/urban(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
-	H.equip_to_slot_or_del(new /obj/item/device/radio/headset/headset_sec(H), slot_l_ear)
-	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/black(H), slot_back)
+	H.equip_to_slot_or_del(new /obj/item/device/radio/headset/rescue/leader(H), slot_l_ear)
+	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/ert/commander(H), slot_back)
 
-	var/obj/item/weapon/card/id/patrol/officer/W = new(H)
-	W.name = "[H.real_name]'s ID Card ([W.assignment])"
+	var/obj/item/weapon/card/id/patrol/marine/leader/W = new(H)
+	if(!W) return
+	H.set_id_info(W)
 	W.assignment = "Squad Leader"
-	W.registered_name = H.real_name
+	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 //	H.post_equip
@@ -352,6 +361,15 @@
 	access = list(access_security, access_medical, access_engine, access_maint_tunnels, access_emergency_storage,
 			            access_heads, access_janitor, access_kitchen, access_cargo, access_RC_announce, access_keycard_auth,
 			            access_solgov_crew, access_albatross)
+
+/obj/item/weapon/card/id/patrol/captain
+	desc = "An identification card issued to SolGov crewmembers aboard the Sol Patrol Craft."
+	icon_state = "solgov"
+	access = list(access_security, access_brig, access_armory,
+			            access_medical, access_engine, access_maint_tunnels, access_external_airlocks,
+			            access_heads, access_atmospherics, access_kitchen, access_network, access_surgery, access_RC_announce, access_keycard_auth, access_tcomsat,
+			            access_solgov_crew, access_gun, access_albatross, access_barracks, access_troopsarm)
+
 
 /var/const/access_albatross = 301
 /datum/access/albatross

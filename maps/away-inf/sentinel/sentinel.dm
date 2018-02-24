@@ -13,12 +13,16 @@
 	start_x = 2
 	start_y = 2
 
-	restricted_waypoints = list("Albatross" = list("nav_hangar_calypso"))
 	generic_waypoints = list(
 		"nav_patrol_1",
 		"nav_patrol_2",
 		"nav_patrol_3",
-		"nav_patrol_4"
+		"nav_patrol_4",
+		"nav_hangar_albatross"
+		)
+
+	restricted_waypoints = list(
+	"Albatross" = list("nav_hangar_albatross")
 		)
 
 /obj/effect/overmap/ship/patrol/New()
@@ -69,7 +73,7 @@
 	suit_type = /obj/item/clothing/suit/space/void/military/prepared/patrol
 	tank_type = /obj/item/weapon/tank/oxygen
 	mask_type = /obj/item/clothing/mask/gas/half
-	req_access = list(access_security)
+	req_access = list(302)
 	islocked = 1
 
 /obj/turbolift_map_holder/sentinel
@@ -83,3 +87,8 @@
 		/area/turbolift/sentinel_first,
 		/area/turbolift/sentinel_second
 		)
+
+/obj/machinery/computer/shuttle_control/explore/albatross
+	name = "albatross control console"
+	shuttle_tag = "Albatross"
+	req_access = list(access_albatross)
