@@ -179,9 +179,9 @@
 	if(!W) return
 	H.set_id_info(W)
 	W.assignment = "Trooper"
-	W.military_branch = /datum/mil_branch/marine
-	W.military_rank = /datum/mil_rank/marine/e2
-	W.name = "[H.real_name]'s ID Card ([W.assignment])"
+	W.military_branch = "Marine Corps"
+	W.military_rank = "Private First Class"
+	W.name = "PFC [H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 //	H.post_equip
@@ -208,9 +208,9 @@
 	if(!W) return
 	H.set_id_info(W)
 	W.assignment = "Squad Engineer"
-	W.military_branch = /datum/mil_branch/marine
-	W.military_rank = /datum/mil_rank/marine/e3
-	W.name = "[H.real_name]'s ID Card ([W.assignment])"
+	W.military_branch = "Marine Corps"
+	W.military_rank = "Lance Corporal"
+	W.name = "LCAP [H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 //	H.post_equip
@@ -237,9 +237,9 @@
 	if(!W) return
 	H.set_id_info(W)
 	W.assignment = "Squad Medic"
-	W.military_branch = /datum/mil_branch/marine
-	W.military_rank = /datum/mil_rank/marine/e3
-	W.name = "[H.real_name]'s ID Card ([W.assignment])"
+	W.military_branch = "Marine Corps"
+	W.military_rank = "Lance Corporal"
+	W.name = "LCAP [H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 //	H.post_equip
@@ -266,9 +266,9 @@
 	if(!W) return
 	H.set_id_info(W)
 	W.assignment = "Squad Leader"
-	W.military_branch = /datum/mil_branch/marine
-	W.military_rank = /datum/mil_rank/marine/e5
-	W.name = "[W.military_rank] [H.real_name]'s ID Card ([W.assignment])"
+	W.military_branch = "Marine Corps"
+	W.military_rank = "Sergeant"
+	W.name = "SRG [H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 //	H.post_equip
