@@ -2060,7 +2060,7 @@
 "NF" = (/obj/structure/cable/green,/obj/machinery/power/apc/high{dir = 4; name = "east bump"; pixel_x = 24},/turf/simulated/floor/plating,/area/vacant/missile)
 "NG" = (/obj/structure/torpedo{icon_state = "torpedo"; dir = 8},/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/plating,/area/vacant/missile)
 "NH" = (/obj/structure/torpedo{icon_state = "torpedo"; dir = 8},/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/camera/network/missile{icon_state = "camera"; dir = 8},/turf/simulated/floor/plating,/area/vacant/missile)
-"NI" = (/obj/machinery/door/blast/regular{dir = 4; id = "misspodgun"; name = "Missile Pod Launcher Door"},/obj/machinery/shield_diffuser,/turf/simulated/floor/plating,/area/vacant/missile)
+"NI" = (/obj/machinery/door/blast/regular{dir = 2; id = "misspodgun"; name = "Missile Pod Launcher Door"},/obj/machinery/shield_diffuser,/turf/simulated/floor/plating,/area/vacant/missile)
 "NJ" = (/obj/machinery/power/ship_weapon/torpedo{icon_state = "torpedo"; dir = 8},/turf/simulated/wall/r_wall,/area/vacant/missile)
 "NK" = (/obj/structure/torpedo_loader{icon_state = "loader_closed"; dir = 8},/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/floor_decal/industrial/warning/cee{dir = 4},/turf/simulated/floor/plating,/area/vacant/missile)
 "NL" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/random/trash,/turf/simulated/floor/plating,/area/vacant/missile)

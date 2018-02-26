@@ -159,6 +159,15 @@
 	reagents.add_reagent(/datum/reagent/inaprovaline, 30)
 	color = reagents.get_color()
 
+/obj/item/weapon/reagent_containers/pill/nanoblood
+	name = "Nanoblood (5u)"
+	desc = "Used to stabilize blood level."
+	icon_state = "pill8"
+/obj/item/weapon/reagent_containers/pill/nanoblood/New()
+	..()
+	reagents.add_reagent(/datum/reagent/nanoblood, 30)
+	color = reagents.get_color()
+
 
 /obj/item/weapon/reagent_containers/pill/dexalin
 	name = "Dexalin (15u)"

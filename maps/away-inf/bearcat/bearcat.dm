@@ -8,6 +8,12 @@
 	speed_mod = 0.1 MINUTE
 	burn_delay = 10 SECONDS
 
+	generic_waypoints = list(
+		"navpoint",
+		"nav_marooned_2",
+		"nav_marooned_antag"
+	)
+
 /obj/effect/overmap/ship/bearcat/New()
 	name = "[pick("FTV","ITV","IEV")] [pick("Bearcat", "Firebug", "Defiant", "Unsinkable","Horizon","Vagrant")], \a [name]"
 	for(var/area/ship/scrap/A)
@@ -55,6 +61,26 @@
 	landmark_tag = "nav_bearcat_lift_bottom"
 	base_area = /area/ship/scrap/cargo/lower
 	base_turf = /turf/simulated/floor
+
+/obj/effect/shuttle_landmark/nav_bearcat/nav1
+	name = "Freighter Fore"
+	landmark_tag = "nav_bearcat_1"
+	autoset = 1
+
+/obj/effect/shuttle_landmark/nav_bearcat/nav2
+	name = "Freighter Port"
+	landmark_tag = "nav_bearcat_2"
+	autoset = 1
+
+/obj/effect/shuttle_landmark/nav_bearcat/nav3
+	name = "Freighter Starboard"
+	landmark_tag = "nav_bearcat_3"
+	autoset = 1
+
+/obj/effect/shuttle_landmark/nav_bearcat/nav4
+	name = "Bearcat Wreck Aft"
+	landmark_tag = "nav_bearcat_antag"
+	autoset = 1
 
 /obj/machinery/power/apc/derelict
 	cell_type = /obj/item/weapon/cell/crap/empty

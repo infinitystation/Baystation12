@@ -432,3 +432,9 @@
 	desc = "Клан паука - органиазаци&#255;, в которой обучаютс&#255; лучшие наемные убийцы изведанного космоса. Веро&#255тно, мне повезло, если &#255; знаю это."
 	icon = 'icons/obj/infinity_decals.dmi'
 	icon_state = "spider_clan"
+
+/obj/structure/sign/fifthfleet
+	name = "\improper Fifth Fleet"
+	desc = "Клан паука - органиазаци&#255;, в которой обучаютс&#255; лучшие наемные убийцы изведанного космоса. Веро&#255тно, мне повезло, если &#255; знаю это."
+	icon = 'icons/obj/infinity_decals.dmi'
+	icon_state = "fifthfleet"

@@ -35,22 +35,3 @@
 	name = "SEV Torch Dock"
 	landmark_tag = "nav_albatross_dock"
 	docking_controller = "nuke_shuttle_dock_airlock"
-
-
-
-
-/obj/effect/shuttle_landmark/nav_patrol/nav1
-	name = "Patrol Ship Fore"
-	landmark_tag = "nav_patrol_1"
-
-/obj/effect/shuttle_landmark/nav_patrol/nav2
-	name = "Patrol Ship Aft"
-	landmark_tag = "nav_patrol_2"
-
-/obj/effect/shuttle_landmark/nav_patrol/nav3
-	name = "Patrol Ship Port"
-	landmark_tag = "nav_patrol_3"
-
-/obj/effect/shuttle_landmark/nav_patrol/nav4
-	name = "Patrol Ship Starboard"
-	landmark_tag = "nav_patrol_4"

@@ -35,6 +35,15 @@
 		/obj/item/weapon/storage/pill_bottle/paracetamol
 		)
 
+/obj/item/weapon/storage/firstaid/fire/special
+	startswith = list(
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
+		/obj/item/stack/medical/advanced/ointment = 4,
+		/obj/item/weapon/storage/pill_bottle/kelotane,
+		/obj/item/weapon/storage/pill_bottle/paracetamol
+		)
+
+
 /obj/item/weapon/storage/firstaid/fire/New()
 	..()
 	icon_state = pick("ointment","firefirstaid")
@@ -101,9 +110,8 @@
 
 	startswith = list(
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pain,
 		/obj/item/stack/medical/advanced/bruise_pack = 4,
-		/obj/item/stack/medical/splint
+		/obj/item/stack/medical/splint = 2
 		)
 
 /obj/item/weapon/storage/firstaid/combat
@@ -120,6 +128,17 @@
 		/obj/item/weapon/storage/pill_bottle/tramadol,
 		/obj/item/weapon/storage/pill_bottle/spaceacillin,
 		/obj/item/stack/medical/splint,
+		)
+
+/obj/item/weapon/storage/firstaid/combat/special
+	startswith = list(
+		/obj/item/weapon/storage/pill_bottle/bicaridine,
+		/obj/item/weapon/storage/pill_bottle/dermaline,
+		/obj/item/weapon/storage/pill_bottle/tramadol,
+		/obj/item/weapon/storage/pill_bottle/dexalin_plus,
+		/obj/item/weapon/storage/pill_bottle/inaprovaline,
+		/obj/item/weapon/storage/pill_bottle/dylovene,
+		/obj/item/weapon/storage/pill_bottle/nanoblood
 		)
 
 /obj/item/weapon/storage/firstaid/surgery
@@ -165,7 +184,7 @@
 	name = "pill bottle"
 	desc = "It's an airtight container for storing medication."
 	icon_state = "pill_canister"
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical_new.dmi'
 	item_state = "contsolid"
 	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_TINY
@@ -177,30 +196,35 @@
 
 /obj/item/weapon/storage/pill_bottle/antitox
 	name = "bottle of Dylovene pills"
+	icon_state = "pill_canister_gre"
 	desc = "Contains pills used to counter toxins."
 
 	startswith = list(/obj/item/weapon/reagent_containers/pill/antitox = 21)
 
 /obj/item/weapon/storage/pill_bottle/bicaridine
 	name = "bottle of Bicaridine pills"
+	icon_state = "pill_canister_red"
 	desc = "Contains pills used to stabilize the severely injured."
 
 	startswith = list(/obj/item/weapon/reagent_containers/pill/bicaridine = 21)
 
 /obj/item/weapon/storage/pill_bottle/dexalin_plus
 	name = "bottle of Dexalin Plus pills"
+	icon_state = "pill_canister_blu"
 	desc = "Contains pills used to treat extreme cases of oxygen deprivation."
 
 	startswith = list(/obj/item/weapon/reagent_containers/pill/dexalin_plus = 14)
 
 /obj/item/weapon/storage/pill_bottle/dexalin
 	name = "bottle of Dexalin pills"
+	icon_state = "pill_canister_blu"
 	desc = "Contains pills used to treat oxygen deprivation."
 
 	startswith = list(/obj/item/weapon/reagent_containers/pill/dexalin = 21)
 
 /obj/item/weapon/storage/pill_bottle/dermaline
 	name = "bottle of Dermaline pills"
+	icon_state = "pill_canister_yel"
 	desc = "Contains pills used to treat burn wounds."
 
 	startswith = list(/obj/item/weapon/reagent_containers/pill/dermaline = 14)
@@ -213,30 +237,41 @@
 
 /obj/item/weapon/storage/pill_bottle/dylovene
 	name = "bottle of Dylovene pills"
+	icon_state = "pill_canister_gre"
 	desc = "Contains pills used to treat toxic substances in the blood."
 
 	startswith = list(/obj/item/weapon/reagent_containers/pill/dylovene = 21)
 
 /obj/item/weapon/storage/pill_bottle/inaprovaline
 	name = "bottle of Inaprovaline pills"
+	icon_state = "pill_canister_whi"
 	desc = "Contains pills used to stabilize patients."
 
 	startswith = list(/obj/item/weapon/reagent_containers/pill/inaprovaline = 21)
 
+/obj/item/weapon/storage/pill_bottle/nanoblood
+	name = "bottle of Nanoblood pills"
+	desc = "Contains pills used to return patient's blood level in near-normal condition. Cause overdose with small liver damage due toxins - don't distibute for untrained personal. Don't use it if patient have infected wounds."
+
+	startswith = list(/obj/item/weapon/reagent_containers/pill/nanoblood = 14)
+
 /obj/item/weapon/storage/pill_bottle/kelotane
 	name = "bottle of kelotane pills"
+	icon_state = "pill_canister_yel"
 	desc = "Contains pills used to treat burns."
 
 	startswith = list(/obj/item/weapon/reagent_containers/pill/kelotane = 21)
 
 /obj/item/weapon/storage/pill_bottle/spaceacillin
 	name = "bottle of Spaceacillin pills"
+	icon_state = "pill_canister_gre"
 	desc = "A theta-lactam antibiotic. Effective against many diseases likely to be encountered in space."
 
 	startswith = list(/obj/item/weapon/reagent_containers/pill/spaceacillin = 14)
 
 /obj/item/weapon/storage/pill_bottle/tramadol
 	name = "bottle of Tramadol pills"
+	icon_state = "pill_canister_pin"
 	desc = "Contains pills used to relieve pain."
 
 	startswith = list(/obj/item/weapon/reagent_containers/pill/tramadol = 14)
@@ -268,6 +303,7 @@
 
 /obj/item/weapon/storage/pill_bottle/paracetamol
 	name = "bottle of paracetamol"
+	icon_state = "pill_canister_pin"
 	desc = "Mild painkiller, also known as Tylenol. Won't fix the cause of your headache (unlike cyanide), but might make it bearable."
 
 	startswith = list(/obj/item/weapon/reagent_containers/pill/paracetamol = 21)

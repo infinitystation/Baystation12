@@ -2,6 +2,12 @@
 	//TCOMMS//
 	//////////
 
+/obj/machinery/telecomms/hub/presetsent
+	id = "Patrol Hub"
+	network = "senttcommsat"
+	autolinkers = list("sentHub", "sentrelay", "albrelay", "senttroops", "sentmedical", "sentcommon", "sentcommand",
+	 "receiverSent", "broadcasterSent")
+
 /obj/machinery/telecomms/relay/preset/sent
 	id = "Patrol Relay"
 	network = "senttcommsat"
@@ -47,12 +53,6 @@
 	network = "senttcommsat"
 	autolinkers = list("processorsent2")
 
-/obj/machinery/telecomms/hub/presetsent
-	id = "Patrol Hub"
-	network = "senttcommsat"
-	autolinkers = list("sentHub", "sentrelay", "albrelay", "senttroops", "sentmedical", "sentcommon", "sentcommand",
-	 "receiverSent", "broadcasterSent")
-
 /obj/machinery/telecomms/broadcaster/preset_sent
 	id = "Patrol Broadcaster"
 	network = "senttcommsat"
@@ -81,38 +81,6 @@
 	freq_listening = list(MED_FREQ)
 	network = "senttcommsat"
 	autolinkers = list("sentmedical")
-
-	/////////////
-	//GUNCABINS//
-	/////////////
-
-/obj/structure/closet/secure_closet/guncabinet/patrol
-	name = "storm group cabinet"
-	req_access = list(access_troopsarm)
-
-/obj/structure/closet/secure_closet/guncabinet/patrol/energy/WillContain()
-	return list(
-		/obj/item/clothing/accessory/holster/thigh = 6,
-		/obj/item/weapon/gun/energy/gun = 6
-	)
-
-/obj/structure/closet/secure_closet/guncabinet/patrol/assault/WillContain()
-	return list(
-		/obj/item/ammo_magazine/a762 = 12,
-		/obj/item/weapon/gun/projectile/automatic/z8 = 3
-	)
-
-/obj/structure/closet/secure_closet/guncabinet/patrol/carabine/WillContain()
-	return list(
-		/obj/item/ammo_magazine/c12755 = 3,
-		/obj/item/weapon/gun/projectile/automatic/amrcarabine = 1
-	)
-
-/obj/structure/closet/secure_closet/guncabinet/patrol/shotgun/WillContain()
-	return list(
-		/obj/item/clothing/accessory/storage/bandolier/patrol = 2,
-		/obj/item/weapon/gun/projectile/shotgun/pump/combat/lethal = 2
-	)
 
 		////////
 		//SMES//
@@ -143,28 +111,3 @@
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
-
-
-
-/obj/item/device/radio/headset/rescue
-	name = "rescue team radio headset"
-	desc = "The headset of the rescue team member."
-	icon_state = "com_headset"
-	item_state = "headset"
-	ks2type = /obj/item/device/encryptionkey/rescue
-
-/obj/item/device/radio/headset/rescue/leader
-	name = "rescue team leader radio headset"
-	desc = "The headset of the rescue team member."
-	icon_state = "com_headset"
-	item_state = "headset"
-	ks2type = /obj/item/device/encryptionkey/rescue/leader
-
-/obj/item/device/encryptionkey/rescue //for events
-	name = "\improper rescue radio encryption key"
-	icon_state = "cargo_cypherkey"
-	channels = list("Response Team" = 1)
-
-/obj/item/device/encryptionkey/rescue/leader
-	name = "\improper rescue leader radio encryption key"
-	channels = list("Response Team" = 1, "Command" = 1, )

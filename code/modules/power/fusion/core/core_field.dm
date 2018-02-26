@@ -307,6 +307,17 @@
 
 /obj/effect/fusion_em_field/proc/change_size(var/newsize = 1)
 	var/changed = 0
+/* Good bye, sweet unworkable code ;-;
+	if( ((newsize-1)%2==0) && (newsize<=13) )
+		icon = 'icons/obj/machines/power/fusion.dmi'
+		if(newsize>1)
+			icon = "icons/effects/[newsize*32]x[newsize*32].dmi"
+		icon_state = "emfield_s[newsize]"
+		pixel_x = ((newsize-1) * -16) * PIXEL_MULTIPLIER
+		pixel_y = ((newsize-1) * -16) * PIXEL_MULTIPLIER
+		size = newsize
+		changed = newsize
+*/
 
 	if( ((newsize-1)%2==0) && (newsize<=13) )
 		icon = 'icons/obj/machines/power/fusion.dmi'

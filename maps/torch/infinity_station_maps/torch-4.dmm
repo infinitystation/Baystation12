@@ -1936,7 +1936,7 @@
 "aLl" = (/obj/machinery/light{dir = 8},/obj/item/device/radio/intercom{dir = 4; pixel_x = -22},/turf/simulated/floor/tiled/dark,/area/command/armoury)
 "aLm" = (/turf/simulated/floor/tiled/dark,/area/command/armoury)
 "aLn" = (/obj/effect/floor_decal/corner/blue{icon_state = "corner_white"; dir = 8},/turf/simulated/floor/tiled/dark,/area/command/armoury)
-"aLo" = (/obj/machinery/camera/network/command{c_tag = "Bridge - Emergency Armory - Starboard"; dir = 2},/obj/effect/floor_decal/corner/blue{icon_state = "corner_white"; dir = 8},/obj/structure/sign/solgov{pixel_x = -1; pixel_y = 34},/turf/simulated/floor/tiled/dark,/area/command/armoury)
+"aLo" = (/obj/machinery/camera/network/command{c_tag = "Bridge - Emergency Armory - Starboard"; dir = 2},/obj/effect/floor_decal/corner/blue{icon_state = "corner_white"; dir = 8},/obj/structure/sign/solgov{pixel_x = 0; pixel_y = 32},/turf/simulated/floor/tiled/dark,/area/command/armoury)
 "aLp" = (/obj/machinery/firealarm{pixel_y = 24},/obj/effect/floor_decal/corner/blue{icon_state = "corner_white"; dir = 8},/turf/simulated/floor/tiled/dark,/area/command/armoury)
 "aLq" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/command/armoury)
 "aLr" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/tiled/dark,/area/command/armoury)

@@ -19,12 +19,16 @@
 	glove_type = /obj/item/clothing/gloves/rig/light
 
 	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/rig_back.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
 		)
 
 /obj/item/clothing/suit/space/rig/light
 	name = "suit"
 	breach_threshold = 18 //comparable to voidsuits
+	sprite_sheets = list(
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit_if.dmi'
+		)
 
 /obj/item/clothing/gloves/rig/light
 	name = "gloves"
@@ -172,7 +176,8 @@
 	breach_threshold = 38 //comparable to regular hardsuits
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi'
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit_if.dmi'
 	)
 
 /obj/item/weapon/rig/light/stealth

@@ -40,7 +40,7 @@
 		emote("blush")
 
 /mob/living/verb/blink()
-	set name = "Промаргаться"
+	set name = "Проморгаться"
 	set category = "Emotions"
 	if(emoteCooldownCheck() == 1)
 		emote("blink")
@@ -250,7 +250,7 @@
 		emote("yawn")
 
 /mob/living/verb/salute()
-	set name = ".Сделать воинское приветствие"
+	set name = "Сделать воинское приветствие"
 	set category = "Emotions"
 	if(emoteCooldownCheck() == 1)
 		emote("salute")

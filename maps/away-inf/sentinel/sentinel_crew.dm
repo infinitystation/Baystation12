@@ -27,6 +27,8 @@
 	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Patrol Craft."
 	W.assignment = "Patrol Craft Crewman"
+	W.military_branch = /datum/mil_branch/fleet
+	W.military_rank = /datum/mil_rank/fleet/e3
 	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
@@ -54,6 +56,8 @@
 	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Patrol Craft."
 	W.assignment = "Patrol Craft Engineer"
+	W.military_branch = /datum/mil_branch/fleet
+	W.military_rank = /datum/mil_rank/fleet/e4
 	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
@@ -81,6 +85,8 @@
 	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Patrol Craft."
 	W.assignment = "Patrol Craft Doctor"
+	W.military_branch = /datum/mil_branch/fleet
+	W.military_rank = /datum/mil_rank/fleet/e4
 	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
@@ -108,6 +114,8 @@
 	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Patrol Craft."
 	W.assignment = "Patrol Craft Officer"
+	W.military_branch = /datum/mil_branch/fleet
+	W.military_rank = /datum/mil_rank/fleet/o1
 	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
@@ -142,6 +150,8 @@
 	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Patrol Craft."
 	W.assignment = "Patrol Craft Captain"
+	W.military_branch = /datum/mil_branch/fleet
+	W.military_rank = /datum/mil_rank/fleet/o3
 	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
@@ -169,6 +179,8 @@
 	if(!W) return
 	H.set_id_info(W)
 	W.assignment = "Trooper"
+	W.military_branch = /datum/mil_branch/marine
+	W.military_rank = /datum/mil_rank/marine/e2
 	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
@@ -195,7 +207,9 @@
 	var/obj/item/weapon/card/id/patrol/marine/W = new(H)
 	if(!W) return
 	H.set_id_info(W)
-	W.assignment = "Combat Engineer"
+	W.assignment = "Squad Engineer"
+	W.military_branch = /datum/mil_branch/marine
+	W.military_rank = /datum/mil_rank/marine/e3
 	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
@@ -222,7 +236,9 @@
 	var/obj/item/weapon/card/id/patrol/marine/W = new(H)
 	if(!W) return
 	H.set_id_info(W)
-	W.assignment = "Combat Medic"
+	W.assignment = "Squad Medic"
+	W.military_branch = /datum/mil_branch/marine
+	W.military_rank = /datum/mil_rank/marine/e3
 	W.name = "[H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
@@ -250,7 +266,9 @@
 	if(!W) return
 	H.set_id_info(W)
 	W.assignment = "Squad Leader"
-	W.name = "[H.real_name]'s ID Card ([W.assignment])"
+	W.military_branch = /datum/mil_branch/marine
+	W.military_rank = /datum/mil_rank/marine/e5
+	W.name = "[W.military_rank] [H.real_name]'s ID Card ([W.assignment])"
 	H.equip_to_slot_or_del(W, slot_wear_id)
 
 //	H.post_equip
@@ -262,129 +280,3 @@
 			uniform.attach_accessory(null, leader)
 		else
 			qdel(leader)
-
-///////////
-//CLOSETS//
-///////////
-
-/obj/structure/closet/secure_closet/patrol
-	name = "marine locker"
-	req_access = list(access_barracks)
-	icon_state = "sec1"
-	icon_closed = "sec"
-	icon_locked = "sec1"
-	icon_opened = "secopen"
-	icon_off = "secoff"
-
-/obj/structure/closet/secure_closet/patrol/WillContain()
-	return list(
-		/obj/item/weapon/storage/belt/security/patrol,
-		/obj/item/weapon/melee/baton/loaded,
-		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/clothing/accessory/storage/black_vest,
-		/obj/item/clothing/gloves/thick/combat/marine,
-		/obj/item/device/flashlight/maglight,
-		/obj/item/weapon/storage/firstaid/individual/military/troops
-	)
-
-/obj/structure/closet/secure_closet/patrol/marine_eng/WillContain()
-	return list(
-		/obj/item/weapon/storage/belt/utility/full_buy,
-		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/clothing/accessory/storage/black_vest,
-		/obj/item/clothing/gloves/insulated/combat,
-		/obj/item/device/flashlight/maglight,
-		/obj/item/weapon/storage/firstaid/individual/military/troops
-	)
-
-/obj/structure/closet/secure_closet/patrol/marine_med/WillContain()
-	return list(
-		/obj/item/weapon/defibrillator/compact/combat/loaded,
-		/obj/item/clothing/glasses/hud/health/visor,
-		/obj/item/clothing/accessory/storage/black_vest,
-		/obj/item/clothing/gloves/insulated/combat,
-		/obj/item/device/flashlight/maglight,
-		/obj/item/weapon/storage/firstaid/individual/military/troops
-	)
-
-/obj/structure/closet/secure_closet/patrol/marine_lead
-	name = "marine leader locker"
-	req_access = list(access_barracks)
-
-/obj/structure/closet/secure_closet/patrol/marine_lead/WillContain()
-	return list(
-		/obj/item/weapon/storage/belt/security/patrol,
-		/obj/item/weapon/melee/baton/loaded,
-		/obj/item/clothing/glasses/sunglasses/sechud/goggles,
-		/obj/item/clothing/accessory/storage/black_vest,
-		/obj/item/clothing/gloves/thick/combat/marine,
-		/obj/item/device/flashlight/maglight,
-		/obj/item/weapon/storage/firstaid/individual/military/troops,
-		/obj/item/device/megaphone
-	)
-
-/obj/item/weapon/storage/belt/security/patrol/New()
-	..()
-	new /obj/item/weapon/gun/projectile/sec/lethal(src)
-	new /obj/item/ammo_magazine/c45m(src)
-
-
-
-/obj/item/clothing/accessory/storage/bandolier/patrol/New()
-	..()
-
-	for(var/i = 0, i < slots, i++)
-		new /obj/item/ammo_casing/shotgun/pellet(hold)
-
-/obj/item/clothing/suit/space/void/military/prepared/patrol
-	starting_accessories = list(/obj/item/clothing/accessory/solgov/fleet_patch/fifth)
-
-
-
-
-
-/obj/item/weapon/card/id/patrol/marine
-	desc = "An identification card issued to SolGov crewmembers aboard the Sol Patrol Craft."
-	icon_state = "solgov"
-	access = list(access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-	 access_solgov_crew, access_barracks)
-
-/obj/item/weapon/card/id/patrol/marine/leader
-	desc = "An identification card issued to SolGov crewmembers aboard the Sol Patrol Craft."
-	icon_state = "solgov"
-	access = list(access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-	 access_solgov_crew, access_barracks, access_troopsarm, access_heads, access_keycard_auth, access_albatross)
-
-/obj/item/weapon/card/id/patrol/officer
-	desc = "An identification card issued to SolGov crewmembers aboard the Sol Patrol Craft."
-	icon_state = "solgov"
-	access = list(access_security, access_medical, access_engine, access_maint_tunnels, access_emergency_storage,
-			            access_heads, access_janitor, access_kitchen, access_cargo, access_RC_announce, access_keycard_auth,
-			            access_solgov_crew, access_albatross)
-
-/obj/item/weapon/card/id/patrol/captain
-	desc = "An identification card issued to SolGov crewmembers aboard the Sol Patrol Craft."
-	icon_state = "solgov"
-	access = list(access_security, access_brig, access_armory,
-			            access_medical, access_engine, access_maint_tunnels, access_external_airlocks,
-			            access_heads, access_atmospherics, access_kitchen, access_network, access_surgery, access_RC_announce, access_keycard_auth, access_tcomsat,
-			            access_solgov_crew, access_gun, access_albatross, access_barracks, access_troopsarm)
-
-
-/var/const/access_albatross = 301
-/datum/access/albatross
-	id = access_albatross
-	desc = "Albatross"
-	region = ACCESS_TYPE_NONE
-
-/var/const/access_barracks = 302
-/datum/access/barracks
-	id = access_barracks
-	desc = "Barracks"
-	region = ACCESS_TYPE_NONE
-
-/var/const/access_troopsarm = 303
-/datum/access/troopsarm
-	id = access_troopsarm
-	desc = "Troops Armory"
-	region = ACCESS_TYPE_NONE

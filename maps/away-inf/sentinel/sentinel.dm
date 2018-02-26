@@ -1,7 +1,15 @@
 #include "sentinel_areas.dm"
-#include "sentinel_shuttle.dm"
 #include "sentinel_crew.dm"
+#include "sentinel_datums.dm"
+#include "sentinel_items.dm"
 #include "sentinel_presets.dm"
+#include "sentinel_shuttle.dm"
+#include "sentinel_structures.dm"
+#include "sentinel_turbolift.dm"
+
+	///////////
+	//OVERMAP//
+	///////////
 
 /obj/effect/overmap/ship/patrol
 	name = "Cobra-Class Craft"
@@ -42,6 +50,7 @@
 	cost = 1000
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/albatross)
 
+
 /obj/effect/shuttle_landmark/nav_patrol/nav1
 	name = "Patrol Ship Fore"
 	landmark_tag = "nav_patrol_1"
@@ -71,22 +80,10 @@
 /obj/machinery/suit_storage_unit/patrol_marine
 	name = "Marine Voidsuit Storage Unit"
 	suit_type = /obj/item/clothing/suit/space/void/military/prepared/patrol
-	tank_type = /obj/item/weapon/tank/oxygen
+	tank_type = /obj/item/weapon/tank/emergency/oxygen/double
 	mask_type = /obj/item/clothing/mask/gas/half
 	req_access = list(302)
 	islocked = 1
-
-/obj/turbolift_map_holder/sentinel
-	name = "Sentinel turbolift map placeholder"
-	icon = 'icons/obj/turbolift_preview_2x2.dmi'
-	depth = 2
-	lift_size_x = 3
-	lift_size_y = 3
-
-	areas_to_use = list(
-		/area/turbolift/sentinel_first,
-		/area/turbolift/sentinel_second
-		)
 
 /obj/machinery/computer/shuttle_control/explore/albatross
 	name = "albatross control console"

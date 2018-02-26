@@ -9,6 +9,7 @@ var/global/datum/controller/gameticker/ticker
 	var/post_game = 0
 	var/event_time = null
 	var/event = 0
+	var/admin_ending = 0 //Are you bad man or developer?
 
 	var/list/datum/mind/minds = list()//The people in the game. Used for objective tracking.
 
@@ -333,7 +334,7 @@ var/global/datum/controller/gameticker/ticker
 			game_finished = (mode.check_finished() || evacuation_controller.round_over() || universe_has_ended)	// По просьбам трудящихся
 			mode_finished = game_finished
 
-		if(!mode.explosion_in_progress && game_finished && (mode_finished || post_game))
+		if(!mode.explosion_in_progress && game_finished && (mode_finished || post_game) || admin_ending)
 			current_state = GAME_STATE_FINISHED
 			if(!config.ooc_allowed)
 				config.ooc_allowed = 1

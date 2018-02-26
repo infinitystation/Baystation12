@@ -207,6 +207,12 @@
 	max_ammo = 15 //if we lived in a world where normal mags had 30 rounds, this would be a 20 round mag
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/a762/extended
+	name = "extended magazine (7.62mm)"
+	origin_tech = list(TECH_COMBAT = 3)
+	matter = list(DEFAULT_WALL_MATERIAL = 2400)
+	max_ammo = 21
+
 /obj/item/ammo_magazine/a762/empty
 	initial_ammo = 0
 

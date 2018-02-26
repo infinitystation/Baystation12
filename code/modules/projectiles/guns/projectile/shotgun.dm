@@ -126,8 +126,8 @@
 	one_hand_penalty = 0
 
 /obj/item/weapon/gun/projectile/shotgun/magazine
-	name = "AS-53 'Bulldog' automatic shotgun"
-	desc = "The mass-produced by Aussec Armory, in past known as 'Striker', shotgun AS-53 'Bulldog' is an echo of the past in new package. Reborned assault shotgun usually can be saw in hands of mercenaries groups and Private Military Companies."
+	name = "AS-53 'Striker' automatic shotgun"
+	desc = "The mass-produced by Aussec Armory, shotgun AS-53 'Striker' is an echo of the past in new package. Reborned assault shotgun usually can be saw in hands of mercenaries groups and Private Military Companies."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "bulldog"
 	item_state = "shotgun"
