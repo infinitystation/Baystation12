@@ -102,7 +102,8 @@ var/list/admin_verbs_admin = list(
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
 //	/datum/admins/proc/whitelist_panel,
 	/client/proc/debug_global_variables,
-	/client/proc/reestablish_db_connection
+	/client/proc/reestablish_db_connection,
+	/client/proc/list_current_ghettoboxes
 	)
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
@@ -313,7 +314,8 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/enable_debug_verbs,
 	/client/proc/roll_dices,
 	/proc/possess,
-	/proc/release
+	/proc/release,
+	/client/proc/list_current_ghettoboxes
 	)
 var/list/admin_verbs_mod = list(
 	/client/proc/cmd_admin_pm_context,	// right-click adminPM interface,
