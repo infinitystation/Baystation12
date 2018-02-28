@@ -64,6 +64,11 @@
 	name = "Ponytail 4(TG)"
 	icon_state = "hair_ponytail4"
 
+/datum/sprite_accessory/hair/infinity/zone
+	name = "Zone"
+	icon_state = "zone"
+
+
 //Unath
 /*
 /datum/sprite_accessory/hair/infinity/una_horns_short
