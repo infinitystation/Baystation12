@@ -27,6 +27,7 @@
 	name = "suit"
 	breach_threshold = 18 //comparable to voidsuits
 	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit_if.dmi'
 		)
 
@@ -46,7 +47,9 @@
 	name = "hood"
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi'
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
+
 	)
 
 /obj/item/weapon/rig/light/hacker
