@@ -14,24 +14,29 @@
 	name = "Silver tag collar"
 	desc = "A collar for your little pets... or the big ones."
 	icon = 'icons/obj/clothing/infinity/ties.dmi'
-	icon_state = "collar_blk"
+	icon_state = "collar_bksilv"
 	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_suit_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_mask = 'icons/mob/infinity/sprite_accessories.dmi')
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/misc.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi'
+		)
+
 
 /obj/item/clothing/accessory/necklace/collar/gold
 	name = "Golden tag collar"
 	desc = "A collar for your little pets... or the big ones."
-	icon_state = "collar_gold"
+	icon_state = "collar_bkgold"
 
 /obj/item/clothing/accessory/necklace/collar/bell
 	name = "Bell collar"
 	desc = "A collar with a tiny bell hanging from it, purrfect furr kitties."
-	icon_state = "collar_bell"
+	icon_state = "collar_bkbell"
 
 /obj/item/clothing/accessory/necklace/collar/shock
 	name = "Shock collar"
 	desc = "A collar used to ease hungry predators."
-	icon_state = "collar_shk0"
-	item_state = "collar_shk"
+	icon_state = "collar_bkshk0"
+	item_state = "collar_bkshk"
 	var/on = FALSE // 0 for off, 1 for on, starts off to encourage people to set non-default frequencies and codes.
 	var/frequency = 1449
 	var/code = 2
@@ -68,7 +73,7 @@
 			else
 				if(href_list["power"])
 					on = !( on )
-					icon_state = "collar_shk[on]" // And apparently this works, too?!
+					icon_state = "collar_bkshk[on]" // And apparently this works, too?!
 		if(!( master ))
 			if(istype(loc, /mob))
 				attack_self(loc)
@@ -131,17 +136,17 @@
 /obj/item/clothing/accessory/necklace/collar/spike
 	name = "Spiked collar"
 	desc = "A collar with spikes that look as sharp as your teeth."
-	icon_state = "collar_spike"
+	icon_state = "collar_bkspike"
 
 /obj/item/clothing/accessory/necklace/collar/pink
 	name = "Pink collar"
 	desc = "This collar will make your pets look FA-BU-LOUS."
-	icon_state = "collar_pink"
+	icon_state = "collar_pisilv"
 
 /obj/item/clothing/accessory/necklace/collar/holo
 	name = "Holo-collar"
 	desc = "An expensive holo-collar for the modern day pet."
-	icon_state = "collar_holo"
+	icon_state = "collar_bkholo"
 
 /obj/item/clothing/accessory/necklace/collar/holo/attack_self(mob/user as mob)
 	user << "<span class='notice'>[name]'s interface is projected onto your hand.</span>"
