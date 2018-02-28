@@ -77,14 +77,6 @@
 /obj/machinery/door/airlock/autoname/marine
 	req_access = list(access_security)
 
-/obj/machinery/suit_storage_unit/patrol_marine
-	name = "Marine Voidsuit Storage Unit"
-	suit_type = /obj/item/clothing/suit/space/void/military/prepared/patrol
-	tank_type = /obj/item/weapon/tank/emergency/oxygen/double
-	mask_type = /obj/item/clothing/mask/gas/half
-	req_access = list(302)
-	islocked = 1
-
 /obj/machinery/computer/shuttle_control/explore/albatross
 	name = "albatross control console"
 	shuttle_tag = "Albatross"
