@@ -442,7 +442,7 @@
 
 /obj/machinery/power/port_gen/pacman/super/potato
 	name = "nuclear reactor"
-	desc = "PTTO-3, an industrial all-in-one nuclear power plant by Neo-Chernobyl GmbH. It uses uranium and vodka as a fuel source. Rated for 150 kW max safe output."
+	desc = "PTTO-3, an industrial all-in-one nuclear power plant by Neo-Chernobyl GmbH. It uses uranium and vodka as a fuel source, but water will reduce reactor's temperature gain. Rated for 150 kW max safe output."
 	power_gen = 30000			//Watts output per power_output level
 	icon_state = "potato"
 	max_safe_output = 4
@@ -469,7 +469,12 @@
 		temperature_gain = 60
 		reagents.remove_any(1)
 		if(prob(2))
-			audible_message("<span class='notice'>[src] churns happily</span>")
+			audible_message("<span class='notice'>[src] churns happily!</span>")
+	else if(reagents.has_reagent("water"))
+		temperature_gain = -10
+		reagents.remove_any(1)
+		if(prob(2))
+			audible_message("<span class='notice'>[src] churns unhappily...</span>")
 	else
 		rad_power = initial(rad_power)
 		temperature_gain = initial(temperature_gain)
