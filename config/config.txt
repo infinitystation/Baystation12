@@ -224,7 +224,7 @@ GUEST_BAN
 FORUMURL https://infinity-ss13.ru/
 
 ## Wiki address
-WIKIURL https://wiki.baystation12.net/
+WIKIURL https://wiki.infinity-ss13.ru/
 
 ## GitHub address
 GITHUBURL https://github.com/infinitystation/Baystation12
