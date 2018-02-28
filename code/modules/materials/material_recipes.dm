@@ -126,6 +126,7 @@
 	recipes += new/datum/stack_recipe("beehive assembly", /obj/item/beehive_assembly, 4)
 	recipes += new/datum/stack_recipe("beehive frame", /obj/item/honey_frame, 1)
 	recipes += new/datum/stack_recipe("book shelf", /obj/structure/bookcase, 5, time = 15, one_per_turf = 1, on_floor = 1)
+	recipes += new/datum/stack_recipe("wooden altar", /obj/structure/table/rack/wooden, 3, time = 15, one_per_turf = 1, on_floor = 1)
 	recipes += new/datum/stack_recipe("zip gun frame", /obj/item/weapon/zipgunframe, 5)
 	recipes += new/datum/stack_recipe("coilgun stock", /obj/item/weapon/coilgun_assembly, 5)
 	recipes += new/datum/stack_recipe("stick", /obj/item/weapon/material/stick, 1)
