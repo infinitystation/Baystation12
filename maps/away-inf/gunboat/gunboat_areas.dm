@@ -44,5 +44,9 @@
 /area/ship/gunboat/command/armory
 	name = "Gunboat Armory"
 
+/area/ship/gunboat/command/eva
+	name = "Gunboat EVA"
+	icon_state = "blue"
+
 /area/ship/gunboat/command/brig
 	name = "Gunboat Brig"

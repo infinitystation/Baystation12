@@ -3,7 +3,7 @@
 	random_name = TRUE
 	species_can_only_use = list(SPECIES_HUMAN,SPECIES_IPC)
 
-/obj/cryo_spawner/patrol_craft/equip_character(mob/living/carbon/human/H, is_admin)
+/obj/cryo_spawner/gunboat/equip_character(mob/living/carbon/human/H, is_admin)
 	..()
 	var/obj/item/clothing/under/uniform = H.w_uniform
 	if(uniform)
@@ -16,13 +16,13 @@
 /obj/cryo_spawner/gunboat/gunner
 	name = "gunboat gunner"
 
-/obj/cryo_spawner/patrol_craft/crewman/equip_character(mob/living/carbon/human/H, is_admin)
+/obj/cryo_spawner/gunboat/gunner/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/fleet(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/off(H), slot_l_store)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/navy(H), slot_back)
 
-	var/obj/item/weapon/card/id/torch/crew/W = new(H)
+	var/obj/item/weapon/card/id/torch/crew/bridgeofficer/W = new(H)
 	if(!W) return
 	H.set_id_info(W)
 	W.desc = "An identification card issued to SolGov crewmembers aboard the Gunboat."
@@ -45,7 +45,7 @@
 /obj/cryo_spawner/gunboat/engineer
 	name = "gunboat engineer"
 
-/obj/cryo_spawner/patrol_craft/engineer/equip_character(mob/living/carbon/human/H, is_admin)
+/obj/cryo_spawner/gunboat/engineer/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/fleet/engineering(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/off(H), slot_l_store)
@@ -74,7 +74,7 @@
 /obj/cryo_spawner/gunboat/doctor
 	name = "gunboat doctor"
 
-/obj/cryo_spawner/patrol_craft/doctor/equip_character(mob/living/carbon/human/H, is_admin)
+/obj/cryo_spawner/gunboat/doctor/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/fleet/medical(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/off(H), slot_l_store)
@@ -103,12 +103,12 @@
 
 /obj/cryo_spawner/gunboat/captain
 	name = "gunboat captain"
-	species_can_only_use = list(SPECIES_HUMAN)
 
-/obj/cryo_spawner/patrol_craft/captain/equip_character(mob/living/carbon/human/H, is_admin)
+/obj/cryo_spawner/gunboat/captain/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/fleet/command(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/off(H), slot_l_store)
+	H.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun(H), slot_belt)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/navy(H), slot_back)
 
 	var/obj/item/weapon/card/id/torch/crew/bridgeofficer/W = new(H)
@@ -130,3 +130,9 @@
 			uniform.attach_accessory(null, captain)
 		else
 			qdel(captain)
+	if(uniform)
+		var/obj/item/clothing/accessory/solgov/speciality/pilot/spec = new()
+		if(uniform.can_attach_accessory(spec))
+			uniform.attach_accessory(null, spec)
+		else
+			qdel(spec)
