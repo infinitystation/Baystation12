@@ -1,9 +1,9 @@
-GLOBAL_LIST_EMPTY(ghettobox_list)
+GLOBAL_LIST_EMPTY(boombox_list)
 
-/client/proc/list_current_ghettoboxes()
+/client/proc/list_current_boomboxes()
 	set category = "Admin"
-	set name = "List current ghettoboxes"
-	set desc = "Lists all the current ghettoboxes"
+	set name = "List current boomboxes"
+	set desc = "Lists all the current boomboxes"
 
 	if(!holder)
 		to_chat(src, "Only administrators may use this command.")
@@ -11,31 +11,33 @@ GLOBAL_LIST_EMPTY(ghettobox_list)
 
 	var/list/dat = list("<html><body><center>")
 
-	dat += "<b>Current ghettoboxes list (WIP):</b>"
+	dat += "<b>Current boomboxes control list:</b><br>"
 
-	for(var/a in GLOB.ghettobox_list)
-		var/obj/item/device/ghettobox/G = a
-		dat += "[G.name] <a href='?_src_=vars;Vars=\ref[G]'>\ref[G]</a>"
+	for(var/a in GLOB.boombox_list)
+		var/obj/item/device/boombox/G = a
+		dat += {"[G.name] : <a href='?_src_=vars;Vars=\ref[G]'>VV</a> |
+			<a href='?_src_=holder;adminplayerobservefollow=\ref[G]'>Current location</a><br>"}
 
 	dat += "</center></body></html>"
 
-	src << browse(jointext(dat, null), "window=freeslots;size=300x640;can_close=1")
-	feedback_add_details("admin_verb","LCG") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	src << browse(jointext(dat, null), "window=freeslots;size=300x300;can_close=1")
+	feedback_add_details("admin_verb","LCB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/obj/item/device/ghettobox
-	name = "Ghettobox"
-	desc = "A retro-designed device that can play music from the cassettes."
-	icon = 'icons/obj/ghettobox.dmi'
+/obj/item/device/boombox
+	name = "Boombox"
+	desc = "A retro-designed device that can blow up your ears."
+	icon = 'icons/obj/boombox.dmi'
 	icon_state = "boombox0"
 	item_state = "defibunit"
 	w_class = ITEM_SIZE_LARGE
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_BELT
+	slot_flags = SLOT_BACK
 	throwforce = 2
 	throw_speed = 4
 	throw_range = 10
 
 	matter = list(DEFAULT_WALL_MATERIAL = 60, "glass" = 30)
+
 	var/emagged = 0
 	var/playing = 0
 	var/volume = 20 // max 50
@@ -43,52 +45,78 @@ GLOBAL_LIST_EMPTY(ghettobox_list)
 	var/sound_id
 	var/datum/sound_token/sound_token
 
+	var/obj/item/weapon/cell/device/cell = /obj/item/weapon/cell/device
 	var/obj/item/device/cassette/cassette = null
 
 	var/serial_number
 
-/obj/item/device/ghettobox/New()
+/obj/item/device/boombox/New()
 	..()
 	serial_number = "[rand(1,999)]"
-	SetName("Ghettobox #[serial_number]")
+	SetName("Boombox #[serial_number]")
+
+	if(ispath(cell))
+		cell = new cell(src)
 
 	if(ispath(cassette))
 		cassette = new cassette(src)
 
 	sound_id = "[type]_[sequential_id(type)]"
 
-	GLOB.ghettobox_list += src
+	GLOB.boombox_list += src
 	update_icon()
 
-/obj/item/device/ghettobox/Destroy()
+/obj/item/device/boombox/Destroy()
 	StopPlaying()
+
+	if(cell)
+		qdel(cell)
+		cell = null
+
 	if(cassette)
 		qdel(cassette)
 		cassette = null
-	GLOB.ghettobox_list -= src
+
+	GLOB.boombox_list -= src
 	. = ..()
 
-/obj/item/device/ghettobox/update_icon()
+/obj/item/device/boombox/Process()
+	if(cell && playing)
+		if(cell.charge < 0.0833333333)
+			StopPlaying()
+			visible_message("<span class='warning'>The [src] is suddenly turned off.</span>")
+			return
+		else
+			cell.use(0.0833333333)
+			world << "BOOMBOX-DEV: the curret charge is [cell.charge]%"
+
+/obj/item/device/boombox/update_icon()
 	icon_state = "boombox[playing ? "1" : "0"]"
 
-/obj/item/device/ghettobox/examine(mob/user)
+/obj/item/device/boombox/examine(mob/user)
 	. = ..()
 	if(cassette)
-		to_chat(user, "<span class='notice'>You can see a cassette inside it. The label says \"[cassette.sound_name]\".</span>")
+		to_chat(user, "<span class='notice'>You can see a cassette inside it. The label says \"[cassette.name]\".</span>")
 
-/obj/item/device/ghettobox/attack_self(mob/user)
+/obj/item/device/boombox/attack_self(mob/user)
+	playsound(get_turf(src), 'sound/machines/click.ogg')
 	if(playing)
 		StopPlaying()
-	else if(emagged)
+		return
+
+	if(cell && cell.charge < 0.0333333333 || !cell)
+		return
+
+	if(emagged)
 		emag_play()
 	else
 		StartPlaying()
 
-/obj/item/device/ghettobox/attackby(obj/item/I, mob/user, params)
+/obj/item/device/boombox/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/device/cassette))
 		var/obj/item/device/cassette/C = I
 		if(cassette)
-			to_chat(user, "<span class='notice'>There's already a cassette inside.</span>")
+			to_chat(user, "<span class='notice'>There is already a cassette inside.</span>")
 			return
 
 		if(C.ruined)
@@ -105,9 +133,34 @@ GLOBAL_LIST_EMPTY(ghettobox_list)
 			"<span class='notice'>[user] insert a [C] into \the [src].</span>")
 		playsound(get_turf(src), 'sound/weapons/TargetOn.ogg', 50, 1)
 		return
+
+	if(istype(I, /obj/item/weapon/cell/device))
+		var/obj/item/weapon/cell/device/C = I
+		if(cell)
+			to_chat(user, "<span class='notice'>[src] already has a cell installed.</span>")
+			return
+
+		if(!user.unEquip(C))
+			return
+
+		I.forceMove(src)
+		cell = C
+		to_chat(user, "<span class='notice'>You insert a [C] into \the [src].</span>")
+		return
+
+	else if(isScrewdriver(I))
+		if(cell)
+			StopPlaying()
+			to_chat(user, "<span class='notice'>You pulled out [cell] out of [src] with [I].</span>")
+			usr.put_in_hands(cell)
+			cell = null
+		else
+			to_chat(user, "<span class='notice'>[src] doesn't have a cell installed.</span>")
+		return
+
 	..()
 
-/obj/item/device/ghettobox/verb/eject()
+/obj/item/device/boombox/verb/eject()
 	set name = "Eject Cassette"
 	set category = "Object"
 
@@ -124,29 +177,30 @@ GLOBAL_LIST_EMPTY(ghettobox_list)
 
 	if(playing)
 		StopPlaying()
+
 	visible_message(
 			"<span class='notice'>You eject the cassette.</span>",
 			"<span class='notice'>[usr] ejects the cassette.</span>")
-	playsound(get_turf(src), 'sound/weapons/TargetOn.ogg', 50, 1)
+	playsound(get_turf(src), "sound/machines/Custom_screwdriveropen.ogg", 30, 1)
 	usr.put_in_hands(cassette)
 	cassette = null
 	update_icon()
 
-/obj/item/device/ghettobox/fire_act()
+/obj/item/device/boombox/fire_act()
 	StopPlaying()
 	if(cassette)
 		cassette.ruin()
 	return ..()
 
 
-/obj/item/device/ghettobox/attack_hand(mob/user)
+/obj/item/device/boombox/attack_hand(mob/user)
 	if(user.get_inactive_hand() == src)
 		if(cassette)
 			eject()
 			return
 	..()
 
-/obj/item/device/ghettobox/verb/volume()
+/obj/item/device/boombox/verb/volume()
 	set name = "Change Volume"
 	set category = "Object"
 	var/vol = input(usr, "What volume would you like the sound to play at? (maximum number is 50)",, volume) as null|num
@@ -154,7 +208,7 @@ GLOBAL_LIST_EMPTY(ghettobox_list)
 		AdjustVolume(vol)
 	return
 
-/obj/item/device/ghettobox/emag_act(var/remaining_charges, var/mob/user)
+/obj/item/device/boombox/emag_act(var/remaining_charges, var/mob/user)
 	if(!emagged)
 		emagged = 1
 		StopPlaying()
@@ -162,7 +216,7 @@ GLOBAL_LIST_EMPTY(ghettobox_list)
 		update_icon()
 		return 1
 
-/obj/item/device/ghettobox/proc/emag_play()
+/obj/item/device/boombox/proc/emag_play()
 	playsound(loc, 'sound/items/AirHorn.ogg', 100, 1)
 	for(var/mob/living/carbon/M in ohearers(6, src))
 		if(istype(M, /mob/living/carbon/human))
@@ -181,13 +235,18 @@ GLOBAL_LIST_EMPTY(ghettobox_list)
 	spawn(15)
 		explode()
 
-/obj/item/device/ghettobox/proc/explode()
+/obj/item/device/boombox/proc/explode()
+	if(cell)
+		qdel(cell)
+		cell = null
+
 	if(cassette)
 		qdel(cassette)
 		cassette = null
 
 	walk_to(src, 0)
 	src.visible_message("<span class='danger'>\the [src] blows apart!</span>", 1)
+	log_and_message_admins("шарманка #[serial_number] доигралась и взорвалась!")
 
 	explosion(src.loc, 0, 0, 1, rand(1, 2), 1)
 
@@ -198,8 +257,10 @@ GLOBAL_LIST_EMPTY(ghettobox_list)
 	new /obj/effect/decal/cleanable/blood/oil(src.loc)
 	qdel(src)
 
-/obj/item/device/ghettobox/proc/StartPlaying()
-	playsound(get_turf(src), 'sound/machines/click.ogg')
+/obj/item/device/boombox/proc/StartPlaying()
+	if(isnull(cell))
+		return
+
 	if(isnull(cassette))
 		return
 
@@ -209,26 +270,28 @@ GLOBAL_LIST_EMPTY(ghettobox_list)
 
 	// Jukeboxes cheat massively and actually don't share id. This is only done because it's music rather than ambient noise.
 	sound_token = sound_player.PlayLoopingSound(src, sound_id, cassette.sound_file, volume = volume, range = 7, falloff = 3, prefer_mute = TRUE)
+	START_PROCESSING(SSobj, src)
 
-	log_and_message_admins("завёл шарманку с музыкальным произведением \"[cassette.sound_name]\" (serial number is #[serial_number])")
+	log_and_message_admins("запустил(а) шарманку <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> с музыкальным произведением \"[cassette.name]\".")
 
 	playing = 1
 	update_icon()
 
-/obj/item/device/ghettobox/proc/StopPlaying()
+/obj/item/device/boombox/proc/StopPlaying()
 	playsound(get_turf(src), 'sound/machines/click.ogg')
 	playing = 0
 	update_icon()
+	STOP_PROCESSING(SSobj, src)
 	QDEL_NULL(sound_token)
 
-/obj/item/device/ghettobox/proc/AdjustVolume(var/new_volume)
+/obj/item/device/boombox/proc/AdjustVolume(var/new_volume)
 	volume = Clamp(new_volume, 0, 50)
 	if(sound_token)
 		sound_token.SetVolume(volume)
 
 // DJ Starter pack
-/obj/item/device/ghettobox/full
-	cassette = /obj/item/device/cassette
+/obj/item/device/boombox/custom_starter_pack
+	cassette = /obj/item/device/cassette/custom
 
 /obj/item/device/cassette
 	name = "cassette"
@@ -240,15 +303,9 @@ GLOBAL_LIST_EMPTY(ghettobox_list)
 	force = 1
 	throwforce = 0
 
-	var/sound_name = null
 	var/sound/sound_file = null
 
 	var/ruined = 0
-
-/obj/item/device/cassette/examine(mob/user)
-	. = ..()
-	if(!isnull(sound_name))
-		to_chat(user, "<span class='notice'>You see a sticker on the cassette, it seems there is written \"[sound_name]\".</span>")
 
 /obj/item/device/cassette/update_icon()
 	overlays.Cut()
@@ -259,28 +316,9 @@ GLOBAL_LIST_EMPTY(ghettobox_list)
 	ruin()
 
 /obj/item/device/cassette/attack_self(mob/user)
-	if(isnull(sound_file) && isnull(sound_name))
-		if(setup_cassette(user))
-			log_and_message_admins("загрузил(а) мелодию в компакт-кассету с названием \"[sound_name]\"")
-		return
-
 	if(!ruined)
 		to_chat(user, "<span class='notice'>You pull out all the tape!</span>")
 		ruin()
-
-/obj/item/device/cassette/proc/setup_cassette(mob/user)
-	sound_file = input(user, "Pick file:","File") as null|file
-	if(isnull(sound_file)) return 0
-
-	sound_name = input(user, "Name the cassette:") as null|text
-	if(isnull(sound_name)) return 0
-
-	sound_name = sanitizeSafe(sound_name)
-
-	if(sound_file && sound_name)
-		return 1
-
-	return 0
 
 /obj/item/device/cassette/proc/ruin()
 	ruined = TRUE
@@ -306,13 +344,37 @@ GLOBAL_LIST_EMPTY(ghettobox_list)
 				new_name = sanitizeSafe(new_name)
 
 				if(new_name)
-					sound_name = new_name
+					SetName("cassette - \"[new_name]\"")
 					to_chat(user, "<span class='notice'>You label the cassette '[new_name]'.</span>")
 				else
-					sound_name = null
+					SetName("cassette")
 					to_chat(user, "<span class='notice'>You scratch off the label.</span>")
 		return
 	..()
+
+/obj/item/device/cassette/custom/attack_self(mob/user)
+	if(isnull(sound_file))
+		if(setup_cassette(user))
+			log_and_message_admins("загрузил(а) мелодию в <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>компакт-кассету</a> с названием \"[src.name]\"")
+		return
+	..()
+
+/obj/item/device/cassette/custom/proc/setup_cassette(mob/user)
+	sound_file = input(user, "Pick file:","File") as null|file
+	if(isnull(sound_file)) return 0
+
+	var/new_name = input(user, "Name the cassette:") as null|text
+	if(isnull(new_name)) return 0
+
+	new_name = sanitizeSafe(new_name)
+
+	if(new_name)
+		SetName("cassette - \"[new_name]\"")
+
+	if(sound_file && new_name)
+		return 1
+
+	return 0
 
 /obj/item/device/cassette/random/New()
 	icon_state = "tape_[pick("white", "blue", "red", "yellow", "purple")]"
@@ -320,9 +382,9 @@ GLOBAL_LIST_EMPTY(ghettobox_list)
 //Custom pre-made cassetes
 
 /obj/item/device/cassette/title2
-	sound_name = "Title 2"
+	name = "Title 2"
 	sound_file = 'sound/music/title2.ogg'
 
 /obj/item/device/cassette/clouds
-	sound_name = "Clouds"
+	name = "Clouds"
 	sound_file = 'sound/music/clouds.s3m'
