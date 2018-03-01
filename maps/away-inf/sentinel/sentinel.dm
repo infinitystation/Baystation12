@@ -15,9 +15,9 @@
 	name = "Cobra-Class Craft"
 	color = "#990000"
 	fore_dir = WEST
-	vessel_mass = 120
-	default_delay = 20 SECONDS
-	known = 0
+	vessel_mass = 100
+	default_delay = 30 SECONDS
+	speed_mod = 4 SECONDS
 	start_x = 2
 	start_y = 2
 
