@@ -2,25 +2,33 @@ GLOBAL_LIST_EMPTY(boombox_list)
 
 /client/proc/list_current_boomboxes()
 	set category = "Admin"
-	set name = "List current boomboxes"
-	set desc = "Lists all the current boomboxes"
+	set name = "List current Boomboxes"
+	set desc = "Lists all the current boomboxes and control it"
 
-	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+	if(!check_rights(R_ADMIN|R_SPAWN, 0, usr))
 		return
 
-	var/list/dat = list("<html><body><center>")
+	var/list/dat = list("<html><body><center><div class='statusDisplay'>")
 
-	dat += "<b>Current boomboxes control list:</b><br>"
+	dat += "<b>Current boomboxes list:</b><br>"
 
-	for(var/a in GLOB.boombox_list)
-		var/obj/item/device/boombox/G = a
-		dat += {"[G.name] : <a href='?_src_=vars;Vars=\ref[G]'>VV</a> |
-			<a href='?_src_=holder;adminplayerobservefollow=\ref[G]'>Current location</a><br>"}
+	if(!GLOB.boombox_list)
+		dat += "At the moment there are no items in this world session."
+	else
+		for(var/a in GLOB.boombox_list)
+			var/obj/item/device/boombox/G = a
+			dat += "[G.name] : <a href='?_src_=holder;play_boombox=\ref[G]'>Play/Stop</a> | "
+			dat += "<a href='?_src_=holder;adminplayerobservefollow=\ref[G]'>Current location</a> | "
+			dat += "<a href='?_src_=vars;Vars=\ref[G]'>VV</a> | "
+			dat += "<a href='?_src_=holder;explode_boombox=\ref[G]'>\[<font color='red'>X</font>\]</a><br>"
 
-	dat += "</center></body></html>"
+	dat += "</div></center></body></html>"
+	dat = jointext(dat,null)
 
-	src << browse(jointext(dat, null), "window=freeslots;size=300x300;can_close=1")
+	var/datum/browser/popup = new(usr, "List current Boomboxes","List current Boomboxes", 420, 300, src)
+	popup.set_content(dat)
+	popup.open()
+
 	feedback_add_details("admin_verb","LCB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /obj/item/device/boombox
@@ -88,7 +96,7 @@ GLOBAL_LIST_EMPTY(boombox_list)
 			return
 		else
 			cell.use(0.0833333333)
-			world << "BOOMBOX-DEV: the curret charge is [cell.charge]%"
+			// world << "BOOMBOX-DEV: the curret charge is [cell.charge]%"
 
 /obj/item/device/boombox/update_icon()
 	icon_state = "boombox[playing ? "1" : "0"]"
@@ -290,7 +298,7 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		sound_token.SetVolume(volume)
 
 // DJ Starter pack
-/obj/item/device/boombox/custom_starter_pack
+/obj/item/device/boombox/elite_pack
 	cassette = /obj/item/device/cassette/custom
 
 /obj/item/device/cassette
@@ -351,6 +359,10 @@ GLOBAL_LIST_EMPTY(boombox_list)
 					to_chat(user, "<span class='notice'>You scratch off the label.</span>")
 		return
 	..()
+
+/obj/item/device/cassette/custom
+	name = "dusty casette"
+	desc = "A dusty cassette, very expensive by the way."
 
 /obj/item/device/cassette/custom/attack_self(mob/user)
 	if(isnull(sound_file))
