@@ -210,6 +210,7 @@
 	name = "life pod"
 	desc = "A man-sized pod for entering suspended animation. Dubbed 'cryocoffin' by more cynical spacers, it is pretty barebone, counting on stasis system to keep the victim alive rather than packing extended supply of food or air. Can be ordered with symbols of common religious denominations to be used in space funerals too."
 	on_store_name = "Life Pod Oversight"
+	density = 0
 	time_till_despawn = 20 MINUTES
 	icon_state = "redpod0"
 	base_icon_state = "redpod0"
