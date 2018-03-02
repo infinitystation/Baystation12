@@ -58,6 +58,8 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 	var/holopadType = HOLOPAD_SHORT_RANGE //Whether the holopad is short-range or long-range.
 	var/base_icon = "holopad-B"
 
+	var/obj/effect/overlay/holoray/ray
+
 /obj/machinery/hologram/holopad/New()
 	..()
 	desc = "It's a floor-mounted device for projecting holographic images. Its ID is '[loc.loc]'"
@@ -237,11 +239,9 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 
 /obj/machinery/hologram/holopad/proc/create_holo(mob/living/silicon/ai/A, mob/living/carbon/caller_id, turf/T = loc)
 	var/obj/effect/overlay/hologram = new(T)//Spawn a blank effect at the location.
+	ray  = new(T) //The link between the projection and the projector.
 	if(caller_id)
-		var/tempicon = 0
-		var/datum/computer_file/crew_record/R = get_crewmember_record(caller_id.name)
-		if(R)
-			tempicon = R.photo_front
+		var/tempicon = getFlatIcon(caller_id, SOUTH, always_use_defdir = 1)
 		hologram.overlays += getHologramIcon(icon(tempicon), hologram_color = holopadType) // Add the callers image as an overlay to keep coloration!
 	else
 		if(holopadType == HOLOPAD_LONG_RANGE)
@@ -251,6 +251,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	if(A)
 		if(A.holo_icon_malf == TRUE)
 			hologram.overlays += icon("icons/effects/effects.dmi", "malf-scanline")
+			ray.overlays += icon("icons/effects/effects.dmi", "malf-scanline")
 	hologram.mouse_opacity = 0//So you can't click on it.
 	hologram.plane = ABOVE_HUMAN_PLANE
 	hologram.layer = ABOVE_HUMAN_LAYER //Above all the other objects/mobs. Or the vast majority of them.
@@ -263,10 +264,15 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		hologram.SetName("[A.name] (Hologram)") //If someone decides to right click.
 		A.holo = src
 		masters[A] = hologram
+	hologram.light_color = holopadType == HOLOPAD_LONG_RANGE ? "#e1df7d" : "#7db4e1"
 	hologram.set_light(2)	//hologram lighting
 	hologram.color = color //painted holopad gives coloured holograms
+	ray.light_color = holopadType == HOLOPAD_LONG_RANGE ? "#e1df7d" : "#7db4e1"
+	ray.set_light(2)
+	ray.color = holopadType == HOLOPAD_LONG_RANGE ? "#e1df7d" : "#7db4e1"
 	set_light(2)			//pad lighting
 	icon_state = "[base_icon]1"
+	update_holoray(hologram, T)
 	return 1
 
 /obj/machinery/hologram/holopad/proc/clear_holo(mob/living/silicon/ai/user, mob/living/carbon/caller_id)
@@ -277,6 +283,9 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	if(caller_id)
 		qdel(masters[caller_id])//Get rid of user's hologram
 		masters -= caller_id //Discard the caller from the list of those who use holopad
+	if(ray)
+		qdel(ray)
+		ray = null
 	if (!masters.len)//If no users left
 		set_light(0)			//pad lighting (hologram lighting will be handled automatically since its owner was deleted)
 		icon_state = "[base_icon]0"
@@ -317,6 +326,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		var/obj/effect/overlay/H = masters[user]
 		H.forceMove(get_turf(user.eyeobj))
 		masters[user] = H
+		update_holoray(H, get_turf(user.eyeobj))
 
 		if(!(H in view(src)))
 			clear_holo(user)
@@ -332,12 +342,48 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 				clear_holo(user)
 	return 1
 
+/obj/machinery/hologram/holopad/proc/update_holoray(var/obj/effect/overlay/holo, var/turf/new_turf)
+
+	var/turf/T = holo.loc
+	var/turf/dest = new_turf
+
+	var/disty = holo.y - ray.y
+	var/distx = holo.x - ray.x
+	var/newangle
+
+	if(!disty)
+		if(distx >= 0)
+			newangle = 90
+		else
+			newangle = 270
+	else
+		newangle = arctan(distx/disty)
+		if(disty < 0)
+			newangle += 180
+		else if(distx < 0)
+			newangle += 360
+	var/matrix/M = matrix()
+	if(get_dist(T, dest) <= 1)
+		animate(ray, transform = turn(M.Scale(1,sqrt(distx*distx+disty*disty)),newangle),time = 3)
+	else
+		ray.transform = turn(M.Scale(1,sqrt(distx*distx+disty*disty)),newangle)
 
 /obj/machinery/hologram/holopad/proc/set_dir_hologram(new_dir, mob/living/silicon/ai/user)
 	if(masters[user])
 		var/obj/effect/overlay/hologram = masters[user]
 		hologram.dir = new_dir
 
+/obj/effect/overlay/holoray
+	name = "holoray"
+	icon = 'icons/effects/96x96.dmi'
+	icon_state = "holoray"
+	layer = FLY_LAYER
+	plane = LYING_MOB_PLANE
+	anchored = 1
+	mouse_opacity = 0
+	pixel_x = -32
+	pixel_y = -32
+	alpha = 120
 
 
 /*
