@@ -47,7 +47,7 @@
 
 	var/on = 1
 	var/datum/ship_engine/electric/controller
-	var/thrust_limit = 1   // Value between 1 and 0 to limit the resulting thrust
+	var/thrust_limit = 0.1   // Value between 1 and 0 to limit the resulting thrust
 
 	var/use_power_per_thrust = 10000
 	var/max_draw_per_tick = 50000
