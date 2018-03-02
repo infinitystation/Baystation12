@@ -65,7 +65,7 @@
 	..()
 	var/obj/item/clothing/under/uniform = H.w_uniform
 	if(uniform)
-		var/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4/engineer = new()
+		var/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3/engineer = new()
 		if(uniform.can_attach_accessory(engineer))
 			uniform.attach_accessory(null, engineer)
 		else
@@ -76,6 +76,7 @@
 
 /obj/cryo_spawner/gunboat/doctor/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/fleet/medical(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/toggle/labcoat(H), slot_wear_suit)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/off(H), slot_l_store)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel/leather/navy(H), slot_back)
@@ -94,7 +95,7 @@
 	..()
 	var/obj/item/clothing/under/uniform = H.w_uniform
 	if(uniform)
-		var/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4/doctor = new()
+		var/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3/doctor = new()
 		if(uniform.can_attach_accessory(doctor))
 			uniform.attach_accessory(null, doctor)
 		else
