@@ -39,7 +39,7 @@
 /obj/item/weapon/wrench/power
 	name = "hand drill"
 	desc = "A simple powered hand drill. It's fitted with a bolt bit."
-	icon = 'icons/obj/tools.dmi'
+	icon = 'icons/obj/infinity_object.dmi'
 	icon_state = "drill_bolt"
 	item_state = "drill"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
@@ -123,10 +123,11 @@
 	if((CLUMSY in user.mutations) && prob(50))
 		M = user
 	return eyestab(M,user)
+
 /obj/item/weapon/screwdriver/power
 	name = "hand drill"
 	desc = "A simple powered hand drill. It's fitted with a screw bit."
-	icon = 'icons/obj/tools.dmi'
+	icon = 'icons/obj/infinity_object.dmi'
 	icon_state = "drill_screw"
 	item_state = "drill"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
