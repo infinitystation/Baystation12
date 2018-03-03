@@ -270,6 +270,8 @@
 		if(W.hitsound)
 			playsound(affecting.loc, W.hitsound, 50, 1, -1)
 
+		playsound(affecting.loc, 'sound/voice/throat.ogg', 50, 1, -1)
+
 	G.last_action = world.time
 
 	admin_attack_log(user, src, "Knifed their victim", "Was knifed", "knifed")

@@ -204,7 +204,7 @@
 			if(show_ssd && !client && !teleop)
 				M.visible_message("<span class='notice'>[M] shakes [src] trying to wake [t_him] up!</span>", \
 				"<span class='notice'>You shake [src], but they do not respond... Maybe they have S.S.D?</span>")
-			else if(lying || src.sleeping)
+			else if(lying || src.sleeping || is_sleeping)
 				src.sleeping = max(0,src.sleeping-5)
 				if(src.sleeping == 0)
 					src.resting = 0
@@ -322,6 +322,8 @@
 
 	item.throw_at(target, throw_range, item.throw_speed, src)
 
+	playsound(src, 'sound/effects/throw.ogg', 50, 1)
+
 /mob/living/carbon/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	..()
 	var/temp_inc = max(min(BODYTEMP_HEATING_MAX*(1-get_heat_protection()), exposed_temperature - bodytemperature), 0)
@@ -356,11 +358,16 @@
 	set name = "Sleep"
 	set category = "IC"
 
-	if(usr.sleeping)
-		to_chat(usr, "<span class='warning'>You are already sleeping</span>")
-		return
-	if(alert(src,"You sure you want to sleep for a while?","Sleep","Yes","No") == "Yes")
-		usr.sleeping = 20 //Short nap
+	if(is_sleeping)
+		if(alert(src, "It's time to wake up?", "Sleep", "Yes", "No") == "No")
+			return to_chat(usr, "... Five more minutes ... Please ...")
+		else
+			to_chat(usr, "I wonder what's happened when i was asleep...")
+	else
+		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "No")
+			return
+
+	is_sleeping = !is_sleeping
 
 /mob/living/carbon/Bump(var/atom/movable/AM, yes)
 	if(now_pushing || !yes)
