@@ -2112,6 +2112,30 @@
 	if(href_list["stickyban"])
 		stickyban(href_list["stickyban"],href_list)
 
+	if(href_list["play_boombox"])
+		if(!check_rights(R_ADMIN|R_SPAWN, 0, usr))
+			return
+
+		var/obj/item/device/boombox/G = locate(href_list["play_boombox"])
+		if(!G)
+			return
+
+		G.attack_self(usr)
+
+	if(href_list["explode_boombox"])
+		if(!check_rights(R_ADMIN|R_SPAWN, 0, usr))
+			return
+
+		var/obj/item/device/boombox/G = locate(href_list["explode_boombox"])
+		if(!G)
+			return
+
+		switch(alert("Do you really want explode this?",,"Yes","No"))
+			if("Yes")
+				G.emag_play()
+				log_and_message_admins("запустил процесс самоуничтожение шарманки <a href='?_src_=holder;adminplayerobservefollow=\ref[G]'>#[G.serial_number]</a>.\n")
+			if("No")
+				return
 
 mob/living/proc/can_centcom_reply()
 	return 0
