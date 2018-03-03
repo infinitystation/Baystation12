@@ -26,9 +26,15 @@
 	icon_state = "helmet_nt"
 
 /obj/item/clothing/head/helmet/pcrc
-	name = "\improper PCRC helmet"
-	desc = "A helmet with 'PRIVATE SECURITY' printed on the back in cyan lettering."
-	icon_state = "helmet_pcrc"
+    name = "\improper PCRC helmet"
+    desc = "A helmet with 'PRIVATE SECURITY' printed on the back in cyan lettering."
+    icon_state = "helmet_pcrc"
+
+/obj/item/clothing/head/helmet/pcrc/cover
+	starting_accessories = list(/obj/item/clothing/accessory/armor/helmcover/pcrc)
+
+/obj/item/clothing/head/helmet/saare/cover
+	starting_accessories = list(/obj/item/clothing/accessory/armor/helmcover/saare)
 
 /obj/item/clothing/head/helmet/marine
 	name = "\improper combat helmet"

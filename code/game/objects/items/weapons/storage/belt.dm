@@ -193,6 +193,15 @@
 	new /obj/item/weapon/gun/projectile/sec/lethal(src)
 	new /obj/item/ammo_magazine/c45m(src)
 
+/obj/item/weapon/storage/belt/security/troops/sts/New()
+	..()
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/weapon/gun/projectile/sec/lethal(src)
+	new /obj/item/ammo_magazine/c45m(src)
+
 /obj/item/weapon/storage/belt/soulstone
 	name = "soul stone belt"
 	desc = "Designed for ease of access to the shards during a fight, as to not let a single enemy spirit slip away."

@@ -255,6 +255,10 @@
 	name = "brown pocketbook"
 	color = "#1c2133"
 
+/obj/item/weapon/storage/backpack/satchel/pocketbook/khaki
+	name = "khaki leather satchel"
+	color = "#baa481"
+
 /obj/item/weapon/storage/backpack/satchel/pocketbook/reddish
 	name = "auburn pocketbook"
 	color = "#512828"

@@ -564,6 +564,9 @@
 	item_state = "jensensuit"
 	worn_state = "pcrc"
 
+/obj/item/clothing/under/pcrc/tactical
+	starting_accessories = list(/obj/item/clothing/accessory/ubac)
+
 /obj/item/clothing/under/grayson
 	name = "\improper Grayson overalls"
 	desc = "A set of overalls belonging to Grayson Manufactories, a manufacturing and mining company."
@@ -594,6 +597,9 @@
 	desc = "A uniform belonging to Strategic Assault and Asset Retention Enterprises, a minor private military corporation."
 	icon_state = "saare"
 	worn_state = "saare"
+
+/obj/item/clothing/under/saare/tactical
+	starting_accessories = list(/obj/item/clothing/accessory/ubac/green)
 
 /obj/item/clothing/under/frontier
 	name = "frontier clothes"
