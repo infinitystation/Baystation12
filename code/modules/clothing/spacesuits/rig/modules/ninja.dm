@@ -37,6 +37,13 @@
 
 	var/mob/living/carbon/human/H = holder.wearer
 
+	if(istype(H.get_active_hand(), /obj/item/weapon/melee/energy/blade/))
+		H.drop_item()
+
+	if(istype(H.get_inactive_hand(), /obj/item/weapon/melee/energy/blade))
+		H.swap_hand()
+		H.drop_item()
+
 	if(H.add_cloaking_source(src))
 		anim(get_turf(H), H, 'icons/effects/effects.dmi', "electricity",null,20,null)
 
@@ -50,7 +57,7 @@
 	if(H.remove_cloaking_source(src))
 		anim(get_turf(H), H,'icons/mob/mob.dmi',,"uncloak",,H.dir)
 		anim(get_turf(H), H, 'icons/effects/effects.dmi', "electricity",null,20,null)
-	
+
 	// We still play the sound, even if not visibly uncloaking. Ninjas are not that stealthy.
 	playsound(get_turf(H), 'sound/effects/stealthoff.ogg', 75, 1)
 
