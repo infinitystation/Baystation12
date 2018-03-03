@@ -1,3 +1,5 @@
-Sladkoeshka - Host
-Terror4000rus - Host
+Sladkoeshka - GameMaster
+Terror4000rus - GameMaster
+Logfol - HeadAdmin
+Bear1ake - Host
 KareTa - Host
