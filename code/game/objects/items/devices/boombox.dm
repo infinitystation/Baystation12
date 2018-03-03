@@ -137,8 +137,8 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		I.forceMove(src)
 		cassette = C
 		visible_message(
-			"<span class='notice'>You insert a [C] into \the [src].</span>",
-			"<span class='notice'>[user] insert a [C] into \the [src].</span>")
+			"<span class='notice'>[user] insert a [C] into \the [src].</span>",
+			"<span class='notice'>You insert a [C] into \the [src].</span>")
 		playsound(get_turf(src), 'sound/weapons/TargetOn.ogg', 50, 1)
 		return
 
@@ -183,8 +183,8 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		StopPlaying()
 
 	visible_message(
-			"<span class='notice'>You eject the cassette.</span>",
-			"<span class='notice'>[usr] ejects the cassette.</span>")
+			"<span class='notice'>[usr] eject the cassette.</span>",
+			"<span class='notice'>You eject the cassette.</span>")
 	playsound(get_turf(src), "sound/machines/Custom_screwdriveropen.ogg", 30, 1)
 	usr.put_in_hands(cassette)
 	cassette = null
