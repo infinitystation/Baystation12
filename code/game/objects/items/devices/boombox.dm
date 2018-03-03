@@ -1,32 +1,33 @@
 GLOBAL_LIST_EMPTY(boombox_list)
 
-/client/proc/list_current_boomboxes()
+/datum/admins/proc/list_current_boomboxes()
 	set category = "Fun"
-	set name = "List current Boomboxes"
+	set name = "Boombox Panel"
 	set desc = "Lists all the current boomboxes and control it"
 
-	if(!check_rights(R_ADMIN|R_SPAWN, 0, usr))
+	if(!check_rights(R_ADMIN|R_FUN, 0, usr))
 		return
 
-	var/list/dat = list("<html><body><center><div class='statusDisplay'>")
+	var/list/dat = list("<div align='center'><h1>Boombox Panel</h1><br>")
 
-	dat += "<b>Current boomboxes list:</b><br>"
+	dat += "<b>Current boomboxes in world ([GLOB.boombox_list.len]):</b></div><br>"
+	dat += "<hr>"
 
-	if(!GLOB.boombox_list)
-		dat += "At the moment there are no items in this world session."
+	if(GLOB.boombox_list.len == 0)
+		dat += "<div class='statusDisplay'><center>At the moment there are no items in this world session.</center></div>"
 	else
 		for(var/a in GLOB.boombox_list)
-			var/obj/item/device/boombox/G = a
-			dat += "[G.name] : <a href='?_src_=holder;play_boombox=\ref[G]'>Play/Stop</a> | "
-			dat += "<a href='?_src_=holder;adminplayerobservefollow=\ref[G]'>Current location</a> | "
-			dat += "<a href='?_src_=vars;Vars=\ref[G]'>VV</a> | "
-			dat += "<a href='?_src_=holder;explode_boombox=\ref[G]'>\[<font color='red'>X</font>\]</a><br>"
+			var/obj/item/device/boombox/B = a
+			dat += "<div class='statusDisplay'>"
+			dat += "[B.name] : <a href='?_src_=holder;play_boombox=\ref[B]'>[B.playing ? "<font color=cc5555>Stop</font>" : "<font color=55cc55>Play</font>"]</a> | "
+			dat += "<a href='?_src_=holder;boombox_volume=\ref[B]'>Volume</a> | "
+			dat += "<a href='?_src_=holder;adminplayerobservefollow=\ref[B]'>Current location</a> | "
+			dat += "<a href='?_src_=vars;Vars=\ref[B]'>VV</a> | "
+			dat += "<a href='?_src_=holder;explode_boombox=\ref[B]'><font color=cc5555>\[X\]</font></a><br>"
+			dat += "</div>"
 
-	dat += "</div></center></body></html>"
-	dat = jointext(dat,null)
-
-	var/datum/browser/popup = new(usr, "List current Boomboxes","List current Boomboxes", 420, 300, src)
-	popup.set_content(dat)
+	var/datum/browser/popup = new(usr, "boombox_panel", "Boombox Panel", 455, 325, src)
+	popup.set_content(jointext(dat, null))
 	popup.open()
 
 	feedback_add_details("admin_verb","LCB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -46,7 +47,6 @@ GLOBAL_LIST_EMPTY(boombox_list)
 
 	matter = list(DEFAULT_WALL_MATERIAL = 60, "glass" = 30)
 
-	var/emagged = 0
 	var/playing = 0
 	var/volume = 20 // max 50
 
@@ -71,6 +71,8 @@ GLOBAL_LIST_EMPTY(boombox_list)
 
 	sound_id = "[type]_[sequential_id(type)]"
 
+	message_admins("Boombox: <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> has been created.")
+
 	GLOB.boombox_list += src
 	update_icon()
 
@@ -86,6 +88,7 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		cassette = null
 
 	GLOB.boombox_list -= src
+	message_admins("Boombox: #[serial_number] is deleted.")
 	. = ..()
 
 /obj/item/device/boombox/Process()
@@ -111,14 +114,11 @@ GLOBAL_LIST_EMPTY(boombox_list)
 	if(playing)
 		StopPlaying()
 		return
-
-	if(cell && cell.charge < 0.0333333333 || !cell)
-		return
-
-	if(emagged)
-		emag_play()
 	else
-		StartPlaying()
+		if(cell && cell.charge < 0.0333333333 || !cell)
+			return
+		else
+			StartPlaying()
 
 /obj/item/device/boombox/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/device/cassette))
@@ -179,10 +179,6 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		to_chat(usr, "<span class='notice'>There's no cassette in \the [src].</span>")
 		return
 
-	if(emagged)
-		to_chat(usr, "<span class='notice'>The cassette seems to be stuck inside.</span>")
-		return
-
 	if(playing)
 		StopPlaying()
 
@@ -211,20 +207,17 @@ GLOBAL_LIST_EMPTY(boombox_list)
 /obj/item/device/boombox/verb/volume()
 	set name = "Change Volume"
 	set category = "Object"
+
+	if(usr.incapacitated())
+		return
+
 	var/vol = input(usr, "What volume would you like the sound to play at? (maximum number is 50)",, volume) as null|num
 	if(vol)
 		AdjustVolume(vol)
 	return
 
-/obj/item/device/boombox/emag_act(var/remaining_charges, var/mob/user)
-	if(!emagged)
-		emagged = 1
-		StopPlaying()
-		visible_message("<span class='danger'>\The [src] makes a fizzling sound.</span>")
-		update_icon()
-		return 1
-
 /obj/item/device/boombox/proc/emag_play()
+	visible_message("<span class='danger'>\The [src] makes a fizzling sound.</span>")
 	playsound(loc, 'sound/items/AirHorn.ogg', 100, 1)
 	for(var/mob/living/carbon/M in ohearers(6, src))
 		if(istype(M, /mob/living/carbon/human))
@@ -254,7 +247,6 @@ GLOBAL_LIST_EMPTY(boombox_list)
 
 	walk_to(src, 0)
 	src.visible_message("<span class='danger'>\the [src] blows apart!</span>", 1)
-	log_and_message_admins("шарманка #[serial_number] доигралась и взорвалась!")
 
 	explosion(src.loc, 0, 0, 1, rand(1, 2), 1)
 
@@ -272,15 +264,18 @@ GLOBAL_LIST_EMPTY(boombox_list)
 	if(isnull(cassette))
 		return
 
-	if(src.cassette.ruined)
-		src.visible_message("<span class='warning'>The cassette has become unusable.</span>", 1)
+	if(!cassette.sound_file)
+		return
+
+	if(cassette.ruined)
+		src.visible_message("<span class='warning'>The cassette is unusable to play.</span>", 1)
 		return
 
 	// Jukeboxes cheat massively and actually don't share id. This is only done because it's music rather than ambient noise.
 	sound_token = sound_player.PlayLoopingSound(src, sound_id, cassette.sound_file, volume = volume, range = 7, falloff = 3, prefer_mute = TRUE)
 	START_PROCESSING(SSobj, src)
 
-	log_and_message_admins("запустил(а) шарманку <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> с музыкальным произведением \"[cassette.name]\".")
+	log_and_message_admins("launched a boombox <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> the \"[cassette.name]\".")
 
 	playing = 1
 	update_icon()
@@ -367,7 +362,7 @@ GLOBAL_LIST_EMPTY(boombox_list)
 /obj/item/device/cassette/custom/attack_self(mob/user)
 	if(isnull(sound_file))
 		if(setup_cassette(user))
-			log_and_message_admins("загрузил(а) мелодию в <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>компакт-кассету</a> с названием \"[src.name]\"")
+			log_and_message_admins("uploaded file in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the tape</a> with name \"[src.name]\"")
 		return
 	..()
 
