@@ -36,6 +36,33 @@
 /obj/item/weapon/wrench/Initialize()
 	icon_state = "wrench[pick("","_red","_black")]"
 	. = ..()
+/obj/item/weapon/wrench/power
+	name = "hand drill"
+	desc = "A simple powered hand drill. It's fitted with a bolt bit."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "drill_bolt"
+	item_state = "drill"
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+	slot_flags = SLOT_BELT
+	matter = list(DEFAULT_WALL_MATERIAL = 5000, "silver" = 2000)
+	force = 8.0 //might or might not be too high, subject to change
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 3)
+	throwforce = 8.0
+	center_of_mass = "x=17;y=16"
+	attack_verb = list("drilled", "screwed", "jabbed")
+	//usesound = 'sound/items/drill_use.ogg'
+
+/obj/item/weapon/wrench/power/attack_self(mob/user)
+	playsound(get_turf(user),'sound/items/change_drill.ogg',50,1)
+	var/obj/item/weapon/wirecutters/power/s_drill = new /obj/item/weapon/screwdriver/power
+	to_chat(user, "<span class='notice'>You attach the screw driver bit to [src].</span>")
+	qdel(src)
+	user.put_in_active_hand(s_drill)
+
+/obj/item/weapon/wrench/power/Initialize()
+        . = ..()
+        icon_state = "drill_bolt"
 
 /*
  * Screwdriver
@@ -96,6 +123,36 @@
 	if((CLUMSY in user.mutations) && prob(50))
 		M = user
 	return eyestab(M,user)
+/obj/item/weapon/screwdriver/power
+	name = "hand drill"
+	desc = "A simple powered hand drill. It's fitted with a screw bit."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "drill_screw"
+	item_state = "drill"
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+	slot_flags = SLOT_BELT
+	origin_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 3)
+	matter = list(DEFAULT_WALL_MATERIAL = 5000, "silver" = 2000)
+	force = 8 //might or might not be too high, subject to change
+	w_class = ITEM_SIZE_NORMAL
+	throwforce = 8
+	throw_speed = 2
+	throw_range = 3 //it's heavier than a screw driver/wrench, so it does more damage, but can't be thrown as far
+	center_of_mass = "x=16;y=7"
+	attack_verb = list("drilled", "screwed", "jabbed","whacked")
+	hitsound = 'sound/items/drill_hit.ogg'
+	//usesound = 'sound/items/drill_use.ogg'
+
+/obj/item/weapon/screwdriver/power/attack_self(mob/user)
+	playsound(get_turf(user),'sound/items/change_drill.ogg',50,1)
+	var/obj/item/weapon/wrench/power/b_drill = new /obj/item/weapon/wrench/power
+	to_chat(user, "<span class='notice'>You attach the bolt driver bit to [src].</span>")
+	qdel(src)
+	user.put_in_active_hand(b_drill)
+
+/obj/item/weapon/screwdriver/power/Initialize()
+        . = ..()
+        icon_state = "drill_screw"
 
 /*
  * Wirecutters
@@ -139,6 +196,38 @@
 		return
 	else
 		..()
+
+/obj/item/weapon/wirecutters/power
+	name = "jaws of life"
+	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a cutting head."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "jaws_cutter"
+	item_state = "jawsoflife"
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+	slot_flags = SLOT_BELT
+	force = 15.0
+	throwforce = 10.0
+	throw_speed = 2.0
+	throw_range = 2.0
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 3)
+	matter = list(DEFAULT_WALL_MATERIAL = 5000, "silver" = 2000)
+	center_of_mass = "x=18;y=10"
+	attack_verb = list("pinched", "nipped")
+	sharp = 1
+	edge = 1
+	//usesound = 'sound/items/jaws_cut.ogg'
+
+/obj/item/weapon/wirecutters/power/attack_self(mob/user)
+	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, 1)
+	var/obj/item/weapon/crowbar/power/pryjaws = new /obj/item/weapon/crowbar/power
+	to_chat(user, "<span class='notice'>You attach the pry jaws to [src].</span>")
+	qdel(src)
+	user.put_in_active_hand(pryjaws)
+
+/obj/item/weapon/wirecutters/power/Initialize()
+        . = ..()
+        icon_state = "jaws_cutter"
 
 /*
  * Welding Tool
@@ -628,6 +717,36 @@
 /obj/item/weapon/crowbar/prybar/Initialize()
 	icon_state = "prybar[pick("","_red","_green","_aubergine","_blue")]"
 	. = ..()
+
+/obj/item/weapon/crowbar/power
+	name = "jaws of life"
+	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a prying head."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "jaws_pry"
+	item_state = "jawsoflife"
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+	slot_flags = SLOT_BELT
+	force = 15.0
+	throwforce = 10.0
+	throw_speed = 2.0
+	throw_range = 2.0
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 3)
+	matter = list(DEFAULT_WALL_MATERIAL = 5000, "silver" = 2000)
+	center_of_mass = "x=18;y=10"
+	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
+	//usesound = 'sound/items/jaws_cut.ogg'
+
+/obj/item/weapon/crowbar/power/attack_self(mob/user)
+	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, 1)
+	var/obj/item/weapon/wirecutters/power/cutjaws = new /obj/item/weapon/wirecutters/power
+	to_chat(user, "<span class='notice'>You attach the cutting jaws to [src].</span>")
+	qdel(src)
+	user.put_in_active_hand(cutjaws)
+
+/obj/item/weapon/crowbar/power/Initialize()
+        . = ..()
+        icon_state = "jaws_pry"
 
 /*
  * Combitool
