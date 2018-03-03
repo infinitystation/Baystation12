@@ -1,6 +1,7 @@
 /obj/item/clothing/accessory/locket
 	name = "silver locket"
 	desc = "A silver locket that seems to have space for a photo within."
+	description_info = "Also, you can write in locket with a pen."
 	icon_state = "locket"
 	item_state = "locket"
 	slot_flags = 0
