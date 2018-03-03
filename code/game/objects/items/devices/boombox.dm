@@ -1,7 +1,7 @@
 GLOBAL_LIST_EMPTY(boombox_list)
 
 /client/proc/list_current_boomboxes()
-	set category = "Admin"
+	set category = "Fun"
 	set name = "List current Boomboxes"
 	set desc = "Lists all the current boomboxes and control it"
 
