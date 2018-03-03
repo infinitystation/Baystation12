@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/colt
-	name = "vintage .45 pistol"
+	name = "Colt 'M1911' pistol"
 	desc = "A cheap Martian knock-off of a Colt M1911. Uses .45 rounds."
 	magazine_type = /obj/item/ammo_magazine/c45m
 	allowed_magazines = /obj/item/ammo_magazine/c45m
@@ -9,7 +9,7 @@
 	load_method = MAGAZINE
 
 /obj/item/weapon/gun/projectile/colt/officer
-	name = "military .45 pistol"
+	name = "WT45 'military' pistol"
 	desc = "The WT45 - a mass produced kinetic sidearm well-known in films and entertainment programming for being the daily carry choice issued to officers of the Sol Central Government Defense Forces. Uses .45 rounds."
 	icon_state = "usp"
 	accuracy = 0.35
@@ -23,10 +23,10 @@
 		icon_state = "usp-e"
 
 /obj/item/weapon/gun/projectile/sec
-	name = ".45 pistol"
+	name = "Mk58 pistol"
 	desc = "The NT Mk58 is a cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Found pretty much everywhere humans are. Uses .45 rounds."
 	icon_state = "secguncomp"
-	magazine_type = /obj/item/ammo_magazine/c45m/flash
+	magazine_type = null
 	allowed_magazines = /obj/item/ammo_magazine/c45m
 	caliber = ".45"
 	accuracy = -0.35
@@ -42,7 +42,8 @@
 		icon_state = "secguncomp-e"
 
 /obj/item/weapon/gun/projectile/sec/flash
-	name = ".45 signal pistol"
+	name = "Mk58 signal pistol"
+	magazine_type = /obj/item/ammo_magazine/c45m/flash
 
 /obj/item/weapon/gun/projectile/sec/lethal
 	magazine_type = /obj/item/ammo_magazine/c45m
@@ -73,7 +74,7 @@
 	allowed_magazines = /obj/item/ammo_magazine/c45m
 
 /obj/item/weapon/gun/projectile/magnum_pistol
-	name = ".50 magnum pistol"
+	name = "'Magnus' pistol"
 	desc = "The HelTek Magnus, a robust terran handgun that uses .50 AE ammo."
 	icon_state = "magnum"
 	item_state = "revolver"
@@ -114,7 +115,7 @@
 		icon_state = "gyropistol"
 
 /obj/item/weapon/gun/projectile/pistol
-	name = "holdout pistol"
+	name = "P3 'Whisper' pistol"
 	desc = "The Lumoco Arms P3 Whisper. A small, easily concealable gun. Uses 9mm rounds."
 	icon_state = "pistol"
 	item_state = null
@@ -176,7 +177,7 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/weapon/gun/projectile/spistol
-	name = ".22LR pistol"
+	name = "TH22 pistol"
 	desc = "The TH22. A small sidearm, with futuristic design. Uses .22LR rounds."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "pistol0"

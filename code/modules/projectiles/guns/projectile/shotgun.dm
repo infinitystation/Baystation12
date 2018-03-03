@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/shotgun/pump
-	name = "shotgun"
+	name = "Remmington 29x shotgun"
 	desc = "The mass-produced W-T Remmington 29x shotgun is a favourite of police and security forces on many worlds. Useful for sweeping alleys."
 	icon_state = "shotgun"
 	item_state = "shotgun"
@@ -42,7 +42,7 @@
 	update_icon()
 
 /obj/item/weapon/gun/projectile/shotgun/pump/combat
-	name = "combat shotgun"
+	name = "KS-40 combat shotgun"
 	desc = "Built for close quarters combat, the Hephaestus Industries KS-40 is widely regarded as a weapon of choice for repelling boarders."
 	icon_state = "cshotgun"
 	item_state = "cshotgun"

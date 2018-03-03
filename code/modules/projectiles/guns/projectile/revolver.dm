@@ -141,7 +141,7 @@
 	ammo_type = /obj/item/ammo_casing/a22lr
 
 /obj/item/weapon/gun/projectile/revolver/shotgun
-	name = "shotgun revolver"
+	name = "RSH-12 shotgun-revolver"
 	desc = "The old RSH-12 shotgun revolder designer for spec ops. Useful for sweeping alleys."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "rsh-12"
