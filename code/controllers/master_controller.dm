@@ -42,6 +42,9 @@ datum/controller/game_controller/proc/setup()
 
 	transfer_controller = new
 
+	if(config.sql_enabled)
+		db_reconnect = new
+
 	report_progress("Initializations complete")
 	initialization_stage |= INITIALIZATION_COMPLETE
 
