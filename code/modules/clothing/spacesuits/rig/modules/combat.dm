@@ -245,6 +245,18 @@
 	blade.creator = M
 	M.put_in_hands(blade)
 
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/weapon/rig/light/ninja/rig
+		for(var/obj/item/weapon/rig/R in H.back)
+			if(istype(R, /obj/item/weapon/rig/light/ninja))
+				rig = R
+		if(rig)
+			for(var/obj/item/rig_module/stealth_field/S in rig.installed_modules)
+				if(S && H.is_cloaked())
+					S.deactivate()
+
+
 /obj/item/rig_module/mounted/energy_blade/deactivate()
 
 	..()
