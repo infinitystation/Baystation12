@@ -24,7 +24,7 @@
 		return
 	var/turf/T = mob.loc
 
-	if(!(istype(T, /turf)))
+	if (!( istype(T, /turf) ))
 		return
 
 	var/datum/gas_mixture/env = T.return_air()
@@ -331,12 +331,12 @@
 	set category = "Admin"
 	set name = "Grant Full Access"
 
-	if(!ticker)
+	if (!ticker)
 		alert("Wait until the game starts")
 		return
-	if(istype(M, /mob/living/carbon/human))
+	if (istype(M, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = M
-		if(H.wear_id)
+		if (H.wear_id)
 			var/obj/item/weapon/card/id/id = H.wear_id
 			if(istype(H.wear_id, /obj/item/device/pda))
 				var/obj/item/device/pda/pda = H.wear_id
