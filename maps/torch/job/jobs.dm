@@ -260,7 +260,7 @@
 	economic_modifier = 15
 	minimal_player_age = 10
 	alt_titles = list(
-		"Inspector General"
+		"Inspector General",
 		"SolGov Ombudsman"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/representative
