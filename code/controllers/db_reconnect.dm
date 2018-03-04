@@ -5,10 +5,10 @@ var/datum/controller/db_reconnect/db_reconnect
 
 /datum/controller/db_reconnect/New()
 	timerbuffer = (5 MINUTES)
-	processing_objects += src
+	START_PROCESSING(SSprocessing, src)
 
 /datum/controller/db_reconnect/Destroy()
-	processing_objects -= src
+	STOP_PROCESSING(SSprocessing, src)
 
 /datum/controller/db_reconnect/proc/process()
 	if(time_till_auto_recconect() <= 0)
