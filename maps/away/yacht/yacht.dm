@@ -8,11 +8,15 @@
 	vessel_mass = 30
 	default_delay = 35 SECONDS
 	speed_mod = 10 SECONDS
+
+	restricted_waypoints = list(
+		"Aquila" = list("nav_yacht_aquila")
+	)
+
 	generic_waypoints = list(
 		"nav_yacht_1",
 		"nav_yacht_2",
 		"nav_yacht_3",
-		"nav_yacht_aquila",
 		"nav_yacht_antag"
 	)
 
