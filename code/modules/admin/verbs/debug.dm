@@ -128,7 +128,7 @@
 			/obj/item/device/radio/headset = "HEADSET",
 			/obj/item/clothing/head/helmet/space = "SPESSHELMET",
 			/obj/item/weapon/book/manual = "MANUAL",
-			/obj/item/weapon/reagent_containers/food/drinks = "DRINK", //longest paths comes first
+			/obj/item/weapon/reagent_containers/food/drinks = "DRINK",
 			/obj/item/weapon/reagent_containers/food = "FOOD",
 			/obj/item/weapon/reagent_containers = "REAGENT_CONTAINERS",
 			/obj/item/weapon = "WEAPON",
