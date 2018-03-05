@@ -1,11 +1,6 @@
 /datum/gear/suit/special
 	display_name = "special jackets selection"
-
-/datum/gear/suit/special/New()
-	..()
-	var/sjackets = list()
-	sjackets["long jacket"] = /obj/item/clothing/suit/storage/toggle/longjacket
-	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(sjackets)
+	path = /obj/item/clothing/suit/storage/toggle/longjacket
 
 /datum/gear/accessory/talisman
 	display_name = "bone talisman"
