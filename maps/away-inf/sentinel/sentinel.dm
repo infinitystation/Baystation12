@@ -5,6 +5,7 @@
 #include "sentinel_presets.dm"
 #include "sentinel_shuttle.dm"
 #include "sentinel_structures.dm"
+#include "sentinel_targets.dm"
 #include "sentinel_turbolift.dm"
 
 	///////////
