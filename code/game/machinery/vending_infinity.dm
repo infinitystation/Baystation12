@@ -122,7 +122,7 @@
 		/obj/item/weapon/grenade/empgrenade = 15,
 		/obj/item/weapon/gun/energy/xray = 10,
 		/obj/item/weapon/gun/projectile/automatic/sts35 = 10,
-		/obj/item/ammo_magazine/a762 = 30,
+		/obj/item/ammo_magazine/c556 = 30,
 		/obj/item/weapon/gun/energy/ionrifle = 3,
 		/obj/item/weapon/gun/energy/sniperrifle = 1,
 		/obj/item/weapon/gun/projectile/heavysniper = 1,
