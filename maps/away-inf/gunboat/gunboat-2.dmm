@@ -60,7 +60,7 @@
 "bh" = (/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
 "bi" = (/obj/machinery/atmospherics/pipe/simple/hidden/universal{dir = 4},/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
 "bj" = (/obj/machinery/atmospherics/omni/filter{tag_east = 3; tag_north = 2; tag_south = 8; tag_west = 1},/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
-"bk" = (/obj/effect/wingrille_spawn/reinforced_phoron,/obj/machinery/atmospherics/pipe/simple/hidden/green{icon_state = "intact"; dir = 8},/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
+"bk" = (/obj/effect/wingrille_spawn/reinforced_phoron,/obj/machinery/atmospherics/pipe/simple/visible/yellow{dir = 4},/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
 "bl" = (/obj/machinery/atmospherics/unary/outlet_injector{dir = 8; frequency = 1700; icon_state = "map_injector"; id = "air_in"; use_power = 1},/turf/simulated/floor/reinforced/airmix,/area/ship/gunboat/engine/upper)
 "bm" = (/obj/machinery/computer/helm,/turf/simulated/floor/tiled,/area/ship/gunboat/command/bridge)
 "bn" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/structure/bed/chair/office/dark{dir = 8},/turf/simulated/floor/tiled,/area/ship/gunboat/command/bridge)
@@ -97,42 +97,41 @@
 "bS" = (/obj/machinery/alarm{dir = 1; pixel_y = -25; req_one_access = list(24,11)},/obj/machinery/atmospherics/pipe/simple/hidden/supply{icon_state = "intact-supply"; dir = 5},/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
 "bT" = (/obj/machinery/atmospherics/pipe/manifold/visible/yellow{icon_state = "map"; dir = 1},/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
 "bU" = (/obj/machinery/atmospherics/pipe/simple/visible/yellow{dir = 4},/obj/machinery/computer/general_air_control/large_tank_control{frequency = 1700; input_tag = "air_in"; name = "Air Supply Control"; output_tag = "air_out"; sensors = list("air_sensor" = "Tank")},/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
-"bV" = (/obj/effect/wingrille_spawn/reinforced_phoron,/obj/machinery/atmospherics/pipe/simple/visible/yellow{dir = 4},/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
-"bW" = (/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos{dir = 8; frequency = 1700; icon_state = "map_vent_in"; id_tag = "air_out"; tag = "icon-map_vent_in (WEST)"},/turf/simulated/floor/reinforced/airmix,/area/ship/gunboat/engine/upper)
-"bX" = (/obj/machinery/computer/navigation,/obj/machinery/light,/turf/simulated/floor/tiled,/area/ship/gunboat/command/bridge)
-"bY" = (/obj/structure/table/standard,/obj/machinery/button/remote/blast_door{id = "mb_torpedo_l"; name = "Port Launch Pod Blastdoor Control"; pixel_x = -6; pixel_y = -24},/obj/machinery/button/remote/blast_door{id = "mb_torpedo_r"; name = "Starboard Launch Pod Blastdoor Control"; pixel_x = 6; pixel_y = -24},/turf/simulated/floor/tiled,/area/ship/gunboat/command/bridge)
-"bZ" = (/obj/structure/table/standard,/obj/effect/floor_decal/corner/red/three_quarters,/obj/item/weapon/folder/red,/obj/item/weapon/folder/red,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
-"ca" = (/obj/structure/table/standard,/obj/effect/floor_decal/corner/red{dir = 10},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
-"cb" = (/obj/effect/wingrille_spawn/reinforced,/obj/machinery/door/firedoor,/obj/structure/cable,/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
-"cc" = (/obj/effect/floor_decal/corner/red{dir = 1},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 1},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
-"cd" = (/obj/effect/floor_decal/corner/red{dir = 4},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/structure/sink{dir = 4; icon_state = "sink"; pixel_x = 11; pixel_y = 4},/obj/structure/mirror{pixel_x = 28},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
-"ce" = (/obj/structure/table/standard,/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled,/area/ship/gunboat/hallway)
-"cf" = (/obj/structure/sign/warning/pods{pixel_y = -32},/turf/simulated/floor/tiled,/area/ship/gunboat/hallway)
-"cg" = (/obj/structure/closet/firecloset/full,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled,/area/ship/gunboat/hallway)
-"ch" = (/obj/machinery/door/airlock/maintenance{req_access = list(80)},/turf/simulated/floor/plating,/area/ship/gunboat/hallway)
-"ci" = (/obj/machinery/atmospherics/binary/pump/on{dir = 2; target_pressure = 200},/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
-"cj" = (/obj/machinery/pipedispenser,/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
-"ck" = (/obj/structure/bed/padded,/obj/item/weapon/bedsheet/mime,/obj/effect/floor_decal/corner/red{dir = 10},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
-"cl" = (/obj/structure/closet/secure_closet/brig{id = "Cellg"; name = "Cell Locker"},/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light/small{dir = 4},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
-"cm" = (/turf/simulated/wall,/area/ship/gunboat/escape)
-"cn" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial/hatch/yellow,/obj/effect/floor_decal/industrial/warning/half,/obj/machinery/door/airlock/glass_mining{name = "Escape Pods"; req_access = list(80)},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled,/area/ship/gunboat/escape)
-"co" = (/turf/simulated/floor/plating,/area/ship/gunboat/hallway)
-"cp" = (/obj/machinery/portable_atmospherics/powered/scrubber,/turf/simulated/floor/plating,/area/ship/gunboat/hallway)
-"cq" = (/obj/machinery/atmospherics/portables_connector{icon_state = "map_connector"; dir = 1},/obj/machinery/light{icon_state = "tube1"; dir = 4},/obj/machinery/portable_atmospherics/canister/air,/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
-"cr" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/wall/r_wall,/area/ship/gunboat/command/brig)
-"cs" = (/obj/effect/floor_decal/industrial/loading,/obj/machinery/power/apc{dir = 8; name = "west bump"; pixel_x = -24; pixel_y = 0},/obj/structure/cable{icon_state = "0-4"; d2 = 4},/obj/machinery/light{icon_state = "tube1"; dir = 1},/turf/simulated/floor/tiled,/area/ship/gunboat/escape)
-"ct" = (/obj/effect/floor_decal/industrial/loading,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/turf/simulated/floor/tiled,/area/ship/gunboat/escape)
-"cu" = (/obj/effect/floor_decal/industrial/loading,/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/tiled,/area/ship/gunboat/escape)
-"cv" = (/obj/effect/floor_decal/industrial/loading,/obj/machinery/alarm{dir = 0; icon_state = "alarm0"; pixel_x = 0; pixel_y = 24},/obj/machinery/firealarm{dir = 4; layer = 3.3; pixel_x = 26},/turf/simulated/floor/tiled,/area/ship/gunboat/escape)
-"cw" = (/obj/machinery/portable_atmospherics/powered/pump/filled,/turf/simulated/floor/plating,/area/ship/gunboat/hallway)
-"cx" = (/obj/machinery/door/blast/regular/open{dir = 2; icon_state = "pdoor0"; id = "gunboat_sensor"},/turf/simulated/floor/reinforced/airless,/area/ship/gunboat/command/bridge)
-"cy" = (/obj/machinery/shipsensors,/obj/structure/cable,/turf/simulated/floor/reinforced/airless,/area/ship/gunboat/command/bridge)
-"cz" = (/turf/simulated/wall/r_wall,/area/ship/gunboat/escape)
-"cA" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/door/window/northright,/obj/structure/window/reinforced{dir = 4},/obj/machinery/cryopod/lifepod,/turf/simulated/floor/plating,/area/ship/gunboat/escape)
-"cB" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/door/window/northright,/obj/machinery/cryopod/lifepod,/turf/simulated/floor/plating,/area/ship/gunboat/escape)
-"cC" = (/obj/machinery/door/blast/regular,/turf/simulated/floor/plating,/area/ship/gunboat/escape)
-"cD" = (/obj/effect/landmark/map_data{height = 2},/turf/space,/area/space)
-"cE" = (/obj/effect/overmap/ship/gunboat,/turf/space,/area/space)
+"bV" = (/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos{dir = 8; frequency = 1700; icon_state = "map_vent_in"; id_tag = "air_out"; tag = "icon-map_vent_in (WEST)"},/turf/simulated/floor/reinforced/airmix,/area/ship/gunboat/engine/upper)
+"bW" = (/obj/machinery/computer/navigation,/obj/machinery/light,/turf/simulated/floor/tiled,/area/ship/gunboat/command/bridge)
+"bX" = (/obj/structure/table/standard,/obj/machinery/button/remote/blast_door{id = "mb_torpedo_l"; name = "Port Launch Pod Blastdoor Control"; pixel_x = -6; pixel_y = -24},/obj/machinery/button/remote/blast_door{id = "mb_torpedo_r"; name = "Starboard Launch Pod Blastdoor Control"; pixel_x = 6; pixel_y = -24},/turf/simulated/floor/tiled,/area/ship/gunboat/command/bridge)
+"bY" = (/obj/structure/table/standard,/obj/effect/floor_decal/corner/red/three_quarters,/obj/item/weapon/folder/red,/obj/item/weapon/folder/red,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
+"bZ" = (/obj/structure/table/standard,/obj/effect/floor_decal/corner/red{dir = 10},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
+"ca" = (/obj/effect/wingrille_spawn/reinforced,/obj/machinery/door/firedoor,/obj/structure/cable,/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
+"cb" = (/obj/effect/floor_decal/corner/red{dir = 1},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 1},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
+"cc" = (/obj/effect/floor_decal/corner/red{dir = 4},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/structure/sink{dir = 4; icon_state = "sink"; pixel_x = 11; pixel_y = 4},/obj/structure/mirror{pixel_x = 28},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
+"cd" = (/obj/structure/table/standard,/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled,/area/ship/gunboat/hallway)
+"ce" = (/obj/structure/sign/warning/pods{pixel_y = -32},/turf/simulated/floor/tiled,/area/ship/gunboat/hallway)
+"cf" = (/obj/structure/closet/firecloset/full,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled,/area/ship/gunboat/hallway)
+"cg" = (/obj/machinery/door/airlock/maintenance{req_access = list(80)},/turf/simulated/floor/plating,/area/ship/gunboat/hallway)
+"ch" = (/obj/machinery/atmospherics/binary/pump/on{dir = 2; target_pressure = 200},/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
+"ci" = (/obj/machinery/pipedispenser,/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
+"cj" = (/obj/structure/bed/padded,/obj/item/weapon/bedsheet/mime,/obj/effect/floor_decal/corner/red{dir = 10},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
+"ck" = (/obj/structure/closet/secure_closet/brig{id = "Cellg"; name = "Cell Locker"},/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light/small{dir = 4},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
+"cl" = (/turf/simulated/wall,/area/ship/gunboat/escape)
+"cm" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial/hatch/yellow,/obj/effect/floor_decal/industrial/warning/half,/obj/machinery/door/airlock/glass_mining{name = "Escape Pods"; req_access = list(80)},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled,/area/ship/gunboat/escape)
+"cn" = (/turf/simulated/floor/plating,/area/ship/gunboat/hallway)
+"co" = (/obj/machinery/portable_atmospherics/powered/scrubber,/turf/simulated/floor/plating,/area/ship/gunboat/hallway)
+"cp" = (/obj/machinery/atmospherics/portables_connector{icon_state = "map_connector"; dir = 1},/obj/machinery/light{icon_state = "tube1"; dir = 4},/obj/machinery/portable_atmospherics/canister/air,/turf/simulated/floor/plating,/area/ship/gunboat/engine/upper)
+"cq" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/wall/r_wall,/area/ship/gunboat/command/brig)
+"cr" = (/obj/effect/floor_decal/industrial/loading,/obj/machinery/power/apc{dir = 8; name = "west bump"; pixel_x = -24; pixel_y = 0},/obj/structure/cable{icon_state = "0-4"; d2 = 4},/obj/machinery/light{icon_state = "tube1"; dir = 1},/turf/simulated/floor/tiled,/area/ship/gunboat/escape)
+"cs" = (/obj/effect/floor_decal/industrial/loading,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/turf/simulated/floor/tiled,/area/ship/gunboat/escape)
+"ct" = (/obj/effect/floor_decal/industrial/loading,/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/tiled,/area/ship/gunboat/escape)
+"cu" = (/obj/effect/floor_decal/industrial/loading,/obj/machinery/alarm{dir = 0; icon_state = "alarm0"; pixel_x = 0; pixel_y = 24},/obj/machinery/firealarm{dir = 4; layer = 3.3; pixel_x = 26},/turf/simulated/floor/tiled,/area/ship/gunboat/escape)
+"cv" = (/obj/machinery/portable_atmospherics/powered/pump/filled,/turf/simulated/floor/plating,/area/ship/gunboat/hallway)
+"cw" = (/obj/machinery/door/blast/regular/open{dir = 2; icon_state = "pdoor0"; id = "gunboat_sensor"},/turf/simulated/floor/reinforced/airless,/area/ship/gunboat/command/bridge)
+"cx" = (/obj/machinery/shipsensors,/obj/structure/cable,/turf/simulated/floor/reinforced/airless,/area/ship/gunboat/command/bridge)
+"cy" = (/turf/simulated/wall/r_wall,/area/ship/gunboat/escape)
+"cz" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/door/window/northright,/obj/structure/window/reinforced{dir = 4},/obj/machinery/cryopod/lifepod,/turf/simulated/floor/plating,/area/ship/gunboat/escape)
+"cA" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/door/window/northright,/obj/machinery/cryopod/lifepod,/turf/simulated/floor/plating,/area/ship/gunboat/escape)
+"cB" = (/obj/machinery/door/blast/regular,/turf/simulated/floor/plating,/area/ship/gunboat/escape)
+"cC" = (/obj/effect/landmark/map_data{height = 2},/turf/space,/area/space)
+"cD" = (/obj/effect/overmap/ship/gunboat,/turf/space,/area/space)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -177,21 +176,21 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababacadadadadaeabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababacacacadadadadaeaeaeababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababacacacacadafagadaeaeaeahahahababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababaiaiaiacacacacacajakalamanaoapaqaeahahahahahahababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababaiaiaiaiacacacacacarakasasatauavawaeaxayazahahahahabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaiaiaiaAaBacaCaDaEaFaGakaHaHaIaJaeaeaeaKaLaxaMahahahahabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababaiaiaiaiacacacacajakalamanaoapaqaeahahahahahahababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababaiaiaiaiaiacacacacarakasasatauavawaeaxayazahahahahabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaiaiaiaAaBaiaCaDaEaFaGakaHaHaIaJaeaeaeaKaLaxaMahahahahabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababaNaOaPaQaRaSaTaUaVaWaXaYaZbabbbcbdbebfbgbhbibjbkblahahabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababaNbmbnbobpacbqbrbsbtbuakbvbwbxbybzbAaHbBbCbDbEbFbGahahabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababaNbHbIbJbKacbLbMbNbObPakbQbybxbybRbAaHbSbibTbUbVbWahahabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaiaiaibXbYacbZcacbcccdakcecfbxcgaHchaHahaxcicjahahahahabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababaiaiaiaiacacacacckclakcmcmcncmaHcocpahaxcqahahahahabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababaiaiaiacacacacaccraccsctcucvaHcwadahahahahahahababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababababababababcxcyczcAcAcAcBczadadahahahababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababaiaiczcCcCcCcCczadadababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababczababababczabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababaNbmbnbobpaibqbrbsbtbuakbvbwbxbybzbAaHbBbCbDbEbFbGahahabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababaNbHbIbJbKaibLbMbNbObPakbQbybxbybRbAaHbSbibTbUbkbVahahabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaiaiaibWbXaibYbZcacbccakcdcebxcfaHcgaHahaxchciahahahahabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababaiaiaiaiaiacacaccjckakclclcmclaHcncoahaxcpahahahahabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababaiaiaiaiacacacaccqaccrcsctcuaHcvadahahahahahahababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababababababababcwcxcyczczczcAcyadadahahahababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababaiaicycBcBcBcBcyadadababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababcyababababcyabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacDcEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacCcDaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
