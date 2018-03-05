@@ -2113,29 +2113,45 @@
 		stickyban(href_list["stickyban"],href_list)
 
 	if(href_list["play_boombox"])
-		if(!check_rights(R_ADMIN|R_SPAWN, 0, usr))
+		if(!check_rights(R_ADMIN|R_FUN, 0, usr))
 			return
 
-		var/obj/item/device/boombox/G = locate(href_list["play_boombox"])
-		if(!G)
+		var/obj/item/device/boombox/B = locate(href_list["play_boombox"])
+		if(!B)
 			return
 
-		G.attack_self(usr)
+		B.attack_self(usr)
+		list_current_boomboxes()
+		return
+
+	if(href_list["boombox_volume"])
+		if(!check_rights(R_ADMIN|R_FUN, 0, usr))
+			return
+
+		var/obj/item/device/boombox/B = locate(href_list["boombox_volume"])
+		if(!B)
+			return
+
+		var/vol = input(usr, "What volume would you like the sound to play at? (maximum number is 50)",, B.volume) as null|num
+		if(vol)
+			B.AdjustVolume(vol)
+		list_current_boomboxes()
+		return
 
 	if(href_list["explode_boombox"])
-		if(!check_rights(R_ADMIN|R_SPAWN, 0, usr))
+		if(!check_rights(R_ADMIN|R_FUN, 0, usr))
 			return
 
-		var/obj/item/device/boombox/G = locate(href_list["explode_boombox"])
-		if(!G)
+		var/obj/item/device/boombox/B = locate(href_list["explode_boombox"])
+		if(!B)
 			return
 
 		switch(alert("Do you really want explode this?",,"Yes","No"))
 			if("Yes")
-				G.emag_play()
-				log_and_message_admins("запустил процесс самоуничтожение шарманки <a href='?_src_=holder;adminplayerobservefollow=\ref[G]'>#[G.serial_number]</a>.\n")
-			if("No")
-				return
+				B.explode()
+				log_and_message_admins("launched self-destruction mechanism in boombox <a href='?_src_=holder;adminplayerobservefollow=\ref[B]'>#[B.serial_number]</a>.")
+		list_current_boomboxes()
+		return
 
 mob/living/proc/can_centcom_reply()
 	return 0
