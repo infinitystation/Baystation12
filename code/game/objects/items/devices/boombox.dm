@@ -99,7 +99,6 @@ GLOBAL_LIST_EMPTY(boombox_list)
 			return
 		else
 			cell.use(0.0833333333)
-			// world << "BOOMBOX-DEV: the curret charge is [cell.charge]%"
 
 /obj/item/device/boombox/update_icon()
 	icon_state = "boombox[playing ? "1" : "0"]"
