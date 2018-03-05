@@ -259,7 +259,7 @@
 /obj/item/weapon/form_printer
 	//name = "paperwork printer"
 	name = "paper dispenser"
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "paper_bin1"
 	item_state = "sheet-metal"
 

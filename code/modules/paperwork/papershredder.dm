@@ -1,7 +1,7 @@
 /obj/machinery/papershredder
 	name = "paper shredder"
 	desc = "For those documents you don't want seen."
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "papershredder0"
 	density = 1
 	anchored = 1
@@ -128,7 +128,7 @@
 
 /obj/item/weapon/shreddedp
 	name = "shredded paper"
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "shredp"
 	randpixel = 5
 	throwforce = 0

@@ -1,7 +1,7 @@
 /obj/item/weapon/tape_roll
 	name = "duct tape"
 	desc = "A roll of sticky tape. Possibly for taping ducks... or was that ducts?"
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "taperoll"
 	w_class = ITEM_SIZE_SMALL
 
@@ -78,7 +78,7 @@
 /obj/item/weapon/ducttape
 	name = "piece of tape"
 	desc = "A piece of sticky tape."
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "tape"
 	w_class = ITEM_SIZE_TINY
 	layer = ABOVE_OBJ_LAYER

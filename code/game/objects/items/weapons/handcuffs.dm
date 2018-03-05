@@ -178,6 +178,6 @@ var/last_chew = 0
 	desc = "DIY!"
 	icon_state = "tape_cross"
 	item_state = null
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	breakouttime = 200
 	cuff_type = "duct tape"
