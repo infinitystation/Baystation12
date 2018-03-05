@@ -588,6 +588,8 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	t = replacetext(t, "\[solcrest\]", "<img src = sollogo.png>")
 	t = replacetext(t, "\[terraseal\]", "<img src = terralogo.png>")
 	t = replacetext(t, "\[editorbr\]", "")
+	t = replacetext(t, "\[img\]","<img src=\"")
+	t = replacetext(t, "\[/img\]", "\" />")
 	return t
 
 // Random password generator
