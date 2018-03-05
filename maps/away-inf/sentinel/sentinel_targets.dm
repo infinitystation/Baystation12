@@ -1,3 +1,7 @@
+/obj/effect/landmark/overmap_target/sentinel/superstructure
+	name = "center of mass"
+	difficulty = 10
+
 /obj/effect/landmark/overmap_target/sentinel/lower/engine
 	name = "engine"
 	difficulty = 60

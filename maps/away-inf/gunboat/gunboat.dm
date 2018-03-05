@@ -1,6 +1,7 @@
 #include "gunboat_areas.dm"
 #include "gunboat_crew.dm"
 #include "gunboat_define.dm"
+#include "gunboat_targets.dm"
 
 /obj/effect/overmap/ship/gunboat
 	name = "gunboat"
