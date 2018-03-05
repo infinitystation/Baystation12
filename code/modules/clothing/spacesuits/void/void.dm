@@ -12,10 +12,10 @@
 	//Species-specific stuff.
 	species_restricted = list(SPECIES_HUMAN, SPECIES_IPC)
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/species/unathi/helmet.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
 		SPECIES_SKRELL = 'icons/mob/species/skrell/helmet.dmi',
-		SPECIES_RESOMI = 'icons/mob/species/Resomi/helmet.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
 		SPECIES_BOGANI = 'icons/mob/species/bogani/helmet.dmi',
 		SPECIES_EGYNO  = 'icons/mob/species/bogani/helmet.dmi',
 		)
@@ -44,7 +44,7 @@
 
 	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_IPC)
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/species/unathi/suit.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',
 		SPECIES_SKRELL = 'icons/mob/species/skrell/suit.dmi',
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',
