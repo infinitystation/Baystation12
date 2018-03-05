@@ -22,7 +22,7 @@
 	allowed_spawns = list("Cryogenic Storage")
 	default_spawn = "Cryogenic Storage"
 	use_overmap = 1
-	num_exoplanets = 0
+	num_exoplanets = 3
 	welcome_sound = 'sound/effects/cowboysting.ogg'
 
 	emergency_shuttle_leaving_dock = "Attention all hands: the escape pods have been launched, maintaining burn for %ETA%."
