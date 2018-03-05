@@ -316,10 +316,10 @@
 	..()
 
 /obj/item/weapon/gun/projectile/automatic/amrcarabine/verb/scope()
-    set category = "Object"
-    set name = "Use Scope"
-    set popup_menu = 1
-    toggle_scope(usr, 1.5)
+	set category = "Object"
+	set name = "Use Scope"
+	set popup_menu = 1
+	toggle_scope(usr, 1.5)
 
 
 /obj/item/weapon/gun/projectile/automatic/z9
