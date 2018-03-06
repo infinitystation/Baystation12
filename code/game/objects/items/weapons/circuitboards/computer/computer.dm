@@ -109,9 +109,9 @@
 	name = T_BOARD("helm control console")
 	build_path = /obj/machinery/computer/helm
 
-/obj/item/weapon/circuitboard/ship_weapon
-	name = T_BOARD("weapon control console")
-	build_path = /obj/machinery/computer/weapons
+/obj/item/weapon/circuitboard/engine
+	name = T_BOARD("engine control console")
+	build_path = /obj/machinery/computer/engines
 
 /obj/item/weapon/circuitboard/nav
 	name = T_BOARD("navigation console")
@@ -145,3 +145,7 @@
 /obj/item/weapon/circuitboard/account_database
 	name = T_BOARD("accounts uplink terminal")
 	build_path = /obj/machinery/computer/account_database
+
+/obj/item/weapon/circuitboard/ship_weapon
+	name = T_BOARD("weapon control console")
+	build_path = /obj/machinery/computer/weapons

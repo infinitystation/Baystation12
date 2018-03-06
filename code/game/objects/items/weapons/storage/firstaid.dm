@@ -29,8 +29,8 @@
 
 	startswith = list(
 		/obj/item/device/healthanalyzer,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
-		/obj/item/stack/medical/ointment,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pain = 1,
+		/obj/item/stack/medical/ointment = 3,
 		/obj/item/weapon/storage/pill_bottle/kelotane,
 		/obj/item/weapon/storage/pill_bottle/paracetamol
 		)
@@ -55,7 +55,7 @@
 		/obj/item/stack/medical/bruise_pack = 2,
 		/obj/item/stack/medical/ointment = 1,
 		/obj/item/device/healthanalyzer,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector = 2,
 		/obj/item/weapon/storage/pill_bottle/antidexafen,
 		/obj/item/weapon/storage/pill_bottle/paracetamol
 		)
@@ -67,8 +67,9 @@
 	item_state = "firstaid-toxin"
 
 	startswith = list(
-		/obj/item/weapon/reagent_containers/syringe/antitoxin = 3,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/detox = 4,
 		/obj/item/weapon/storage/pill_bottle/antitox,
+		/obj/item/weapon/reagent_containers/pill/hyronalin = 3,
 		/obj/item/device/healthanalyzer,
 		)
 
@@ -84,8 +85,8 @@
 
 	startswith = list(
 		/obj/item/weapon/storage/pill_bottle/dexalin,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
-		/obj/item/weapon/reagent_containers/syringe/inaprovaline,
+		/obj/item/weapon/storage/pill_bottle/inaprovaline,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector = 4,
 		/obj/item/device/healthanalyzer,
 		)
 
@@ -96,7 +97,7 @@
 	item_state = "firstaid-advanced"
 
 	startswith = list(
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
+		/obj/item/weapon/storage/pill_bottle/assorted,
 		/obj/item/stack/medical/advanced/bruise_pack = 3,
 		/obj/item/stack/medical/advanced/ointment = 2,
 		/obj/item/stack/medical/splint
@@ -357,4 +358,18 @@
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pain = 2,
 		/obj/item/stack/medical/bruise_pack,
 		/obj/item/stack/medical/ointment
+		)
+
+/obj/item/weapon/storage/pill_bottle/assorted
+	name = "bottle of assorted pills"
+	desc = "Commonly found on paramedics, these assorted pill bottles contain all the basics."
+
+	startswith = list(
+			/obj/item/weapon/reagent_containers/pill/inaprovaline = 6,
+			/obj/item/weapon/reagent_containers/pill/dylovene = 6,
+			/obj/item/weapon/reagent_containers/pill/sugariron = 2,
+			/obj/item/weapon/reagent_containers/pill/tramadol = 2,
+			/obj/item/weapon/reagent_containers/pill/dexalin = 2,
+			/obj/item/weapon/reagent_containers/pill/kelotane = 2,
+			/obj/item/weapon/reagent_containers/pill/hyronalin
 		)

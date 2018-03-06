@@ -31,6 +31,8 @@
 	..()
 	if(! (stat & (BROKEN|NOPOWER)) && (isolating || curing))
 		icon_state = "centrifuge_moving"
+	if(! (stat & (BROKEN|NOPOWER)))
+		icon_state = (isolating || curing) ? "centrifuge_moving" : "centrifuge"
 	else if (! (stat & (BROKEN|NOPOWER)) && !(isolating || curing))
 		icon_state = "centrifuge"
 
