@@ -250,10 +250,10 @@ BANAPPEALS https://infinity-ss13.ru/index.php?/forum/5-суд/
 ALLOW_HOLIDAYS
 
 ##Defines the ticklag for the world.  0.9 is the normal one, 0.5 is smoother.
-TICKLAG 0.33
+TICKLAG 0.3
 
 ##Defines world FPS. Defaults to 20.
-FPS 45
+FPS 30
 
 ## Whether the server will talk to other processes through socket_talk
 SOCKET_TALK 0
