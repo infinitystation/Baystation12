@@ -241,7 +241,7 @@
 	var/smashsound = pick('sound/effects/gore/smash1.ogg', 'sound/effects/gore/smash2.ogg', 'sound/effects/gore/smash3.ogg', 'sound/effects/gore/trauma1.ogg')
 	playsound(loc, smashsound, 50, 1, -1)
 	if(client)
-		shake_camera(src, 10, 0.5)
+		shake_camera(src, 7, 0.5)
 	var/damage = 10
 	apply_damage(rand(0, damage), BRUTE, BP_HEAD)
 	apply_damage(rand(0, damage), BRUTE, BP_CHEST)

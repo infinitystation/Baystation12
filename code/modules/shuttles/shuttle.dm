@@ -168,14 +168,15 @@
 						if(M.buckled)
 							to_chat(M, "<span class='warning'>Sudden acceleration presses you into your chair!</span>")
 							shake_camera(M, 3, 1)
-						else
-							to_chat(M, "<span class='warning'>A sudden rush of wind knocks you down!</span>")
-							shake_camera(M, 10, 1)
+
 				if(istype(M, /mob/living))
-					if(!M.buckled)
-						if(scatter_direction)
-							M.throw_at(get_edge_target_turf(M, scatter_direction), 9, 0.5)
-						M.Weaken(3)
+					if(scatter_direction)
+						if(!M.buckled)
+							M.throw_at(get_edge_target_turf(M, scatter_direction), 10, 0.5)
+					else
+						if(istype(M, /mob/living/carbon))
+							if(!M.buckled)
+								M.Weaken(3)
 
 		for(var/obj/structure/cable/C in A)
 			powernets |= C.powernet
