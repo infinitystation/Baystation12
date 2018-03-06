@@ -28,11 +28,11 @@
 	var/list/decals
 
 	var/movement_delay
-
+/*
 /turf/Initialize()
 	. = ..()
 	update_icon(1)
-	regenerate_ao()
+	regenerate_ao()*/
 
 /turf/New()
 	..()
