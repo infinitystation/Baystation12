@@ -357,8 +357,6 @@
 			return global.description_icons;
 		if("diary")
 			return global.diary;
-		if("dir2bdir")
-			return global.dir2bdir;
 		if("dna_activity_bounds")
 			return global.dna_activity_bounds;
 		if("dna_genes")
@@ -1418,8 +1416,6 @@
 			global.description_icons=newval;
 		if("diary")
 			global.diary=newval;
-		if("dir2bdir")
-			global.dir2bdir=newval;
 		if("dna_activity_bounds")
 			global.dna_activity_bounds=newval;
 		if("dna_genes")
@@ -2300,7 +2296,6 @@
 	"department_radio_keys",
 	"description_icons",
 	"diary",
-	"dir2bdir",
 	"dna_activity_bounds",
 	"dna_genes",
 	"doppler_arrays",
