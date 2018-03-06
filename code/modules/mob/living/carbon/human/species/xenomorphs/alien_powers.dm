@@ -119,7 +119,7 @@
 	set desc = "Plants some alien weeds"
 	set category = "Abilities"
 
-	if(check_alien_ability(50,1,BP_RESIN))
+	if(check_alien_ability(50,1,BP_RESIN) && !is_ventcrawling)
 		visible_message("<span class='alium'><B>[src] has planted some alien weeds!</B></span>")
 		new /obj/structure/alien/node(loc)
 	return
@@ -255,11 +255,6 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 		return
 
 	if(!A.density)
-		return
-
-	if(!A.stat)
-		src.visible_message("\The [src] easly openning \the [A]!")
-		A.open()
 		return
 
 	src.visible_message("\The [src] begins to pry open \the [A]!")
