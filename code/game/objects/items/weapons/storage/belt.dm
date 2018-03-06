@@ -171,6 +171,9 @@
 		/obj/item/weapon/magnetic_ammo
 		)
 
+/obj/item/weapon/storage/belt/security/marshal
+	storage_slots = 7
+
 /obj/item/weapon/storage/belt/security/marshal/New()
 	..()
 	new /obj/item/taperoll/police(src)
@@ -193,7 +196,7 @@
 	new /obj/item/weapon/gun/projectile/sec/lethal(src)
 	new /obj/item/ammo_magazine/c45m(src)
 
-/obj/item/weapon/storage/belt/security/troops/sts/New()
+/obj/item/weapon/storage/belt/security/troops_sts/New()
 	..()
 	new /obj/item/ammo_magazine/c556(src)
 	new /obj/item/ammo_magazine/c556(src)

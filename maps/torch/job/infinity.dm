@@ -192,7 +192,7 @@
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/heavy_saare
 	head = /obj/item/clothing/head/helmet/saare/cover
-	belt = /obj/item/weapon/storage/belt/security/troops/sts
+	belt = /obj/item/weapon/storage/belt/security/troops_sts
 	r_hand = /obj/item/weapon/gun/projectile/automatic/sts35
 	id_pda_assignment = "SAARE PMC"
 	back = /obj/item/weapon/storage/backpack/satchel/pocketbook/khaki

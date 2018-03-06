@@ -61,8 +61,8 @@
 	user.put_in_active_hand(s_drill)
 
 /obj/item/weapon/wrench/power/Initialize()
-        . = ..()
-        icon_state = "drill_bolt"
+	. = ..()
+	icon_state = "drill_bolt"
 
 /*
  * Screwdriver
@@ -152,8 +152,8 @@
 	user.put_in_active_hand(b_drill)
 
 /obj/item/weapon/screwdriver/power/Initialize()
-        . = ..()
-        icon_state = "drill_screw"
+	. = ..()
+	icon_state = "drill_screw"
 
 /*
  * Wirecutters
@@ -227,8 +227,8 @@
 	user.put_in_active_hand(pryjaws)
 
 /obj/item/weapon/wirecutters/power/Initialize()
-        . = ..()
-        icon_state = "jaws_cutter"
+	. = ..()
+	icon_state = "jaws_cutter"
 
 /*
  * Welding Tool
@@ -746,8 +746,8 @@
 	user.put_in_active_hand(cutjaws)
 
 /obj/item/weapon/crowbar/power/Initialize()
-        . = ..()
-        icon_state = "jaws_pry"
+	. = ..()
+	icon_state = "jaws_pry"
 
 /*
  * Combitool

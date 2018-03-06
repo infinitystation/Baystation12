@@ -173,6 +173,8 @@
 			return global.all_objectives;
 		if("all_robolimbs")
 			return global.all_robolimbs;
+		if("all_solved_wires")
+			return global.all_solved_wires;
 		if("all_species")
 			return global.all_species;
 		if("all_ui_styles")
@@ -189,6 +191,8 @@
 			return global.antag_add_finished;
 		if("antag_names_to_ids_")
 			return global.antag_names_to_ids_;
+		if("ao_cache")
+			return global.ao_cache;
 		if("appearance_manager")
 			return global.appearance_manager;
 		if("area_repository")
@@ -319,6 +323,8 @@
 			return global.custom_items;
 		if("damage_icon_parts")
 			return global.damage_icon_parts;
+		if("db_reconnect")
+			return global.db_reconnect;
 		if("dbcon")
 			return global.dbcon;
 		if("dbcon_old")
@@ -351,6 +357,8 @@
 			return global.description_icons;
 		if("diary")
 			return global.diary;
+		if("dir2bdir")
+			return global.dir2bdir;
 		if("dna_activity_bounds")
 			return global.dna_activity_bounds;
 		if("dna_genes")
@@ -363,6 +371,8 @@
 			return global.dummy_lighting_corner;
 		if("economic_species_modifier")
 			return global.economic_species_modifier;
+		if("emojis")
+			return global.emojis;
 		if("empty_playable_ai_cores")
 			return global.empty_playable_ai_cores;
 		if("endgame_exits")
@@ -485,6 +495,8 @@
 			return global.image_repository;
 		if("inactive_keys")
 			return global.inactive_keys;
+		if("inf_changelog_hash")
+			return global.inf_changelog_hash;
 		if("init")
 			return global.init;
 		if("initialization_stage")
@@ -979,6 +991,8 @@
 			return global.total_unit_tests;
 		if("traitors")
 			return global.traitors;
+		if("transaction_devices")
+			return global.transaction_devices;
 		if("transfer_controller")
 			return global.transfer_controller;
 		if("turbolift_controller")
@@ -1220,6 +1234,8 @@
 			global.all_objectives=newval;
 		if("all_robolimbs")
 			global.all_robolimbs=newval;
+		if("all_solved_wires")
+			global.all_solved_wires=newval;
 		if("all_species")
 			global.all_species=newval;
 		if("all_ui_styles")
@@ -1236,6 +1252,8 @@
 			global.antag_add_finished=newval;
 		if("antag_names_to_ids_")
 			global.antag_names_to_ids_=newval;
+		if("ao_cache")
+			global.ao_cache=newval;
 		if("appearance_manager")
 			global.appearance_manager=newval;
 		if("area_repository")
@@ -1366,6 +1384,8 @@
 			global.custom_items=newval;
 		if("damage_icon_parts")
 			global.damage_icon_parts=newval;
+		if("db_reconnect")
+			global.db_reconnect=newval;
 		if("dbcon")
 			global.dbcon=newval;
 		if("dbcon_old")
@@ -1398,6 +1418,8 @@
 			global.description_icons=newval;
 		if("diary")
 			global.diary=newval;
+		if("dir2bdir")
+			global.dir2bdir=newval;
 		if("dna_activity_bounds")
 			global.dna_activity_bounds=newval;
 		if("dna_genes")
@@ -1410,6 +1432,8 @@
 			global.dummy_lighting_corner=newval;
 		if("economic_species_modifier")
 			global.economic_species_modifier=newval;
+		if("emojis")
+			global.emojis=newval;
 		if("empty_playable_ai_cores")
 			global.empty_playable_ai_cores=newval;
 		if("endgame_exits")
@@ -1532,6 +1556,8 @@
 			global.image_repository=newval;
 		if("inactive_keys")
 			global.inactive_keys=newval;
+		if("inf_changelog_hash")
+			global.inf_changelog_hash=newval;
 		if("init")
 			global.init=newval;
 		if("initialization_stage")
@@ -2026,6 +2052,8 @@
 			global.total_unit_tests=newval;
 		if("traitors")
 			global.traitors=newval;
+		if("transaction_devices")
+			global.transaction_devices=newval;
 		if("transfer_controller")
 			global.transfer_controller=newval;
 		if("turbolift_controller")
@@ -2139,7 +2167,6 @@
 	"_client_preferences",
 	"_client_preferences_by_key",
 	"_client_preferences_by_type",
-	"accept_list",
 	"account_hack_attempted",
 	"actor",
 	"additional_antag_types",
@@ -2181,6 +2208,7 @@
 	"all_money_accounts",
 	"all_objectives",
 	"all_robolimbs",
+	"all_solved_wires",
 	"all_species",
 	"all_ui_styles",
 	"all_unit_tests_passed",
@@ -2189,6 +2217,7 @@
 	"announced_news_types",
 	"antag_add_finished",
 	"antag_names_to_ids_",
+	"ao_cache",
 	"appearance_manager",
 	"area_repository",
 	"artefact_feedback",
@@ -2222,7 +2251,6 @@
 	"captain_announcement",
 	"cargo_supply_pack_root",
 	"cargo_supply_packs",
-	"carpetfootsteps",
 	"changelog_hash",
 	"channel_to_radio_key",
 	"chargen_robolimbs",
@@ -2255,6 +2283,7 @@
 	"custom_event_msg",
 	"custom_items",
 	"damage_icon_parts",
+	"db_reconnect",
 	"dbcon",
 	"dbcon_old",
 	"deathsquad",
@@ -2271,17 +2300,17 @@
 	"department_radio_keys",
 	"description_icons",
 	"diary",
-	"dirtfootsteps",
+	"dir2bdir",
 	"dna_activity_bounds",
 	"dna_genes",
 	"doppler_arrays",
 	"dreams",
 	"dummy_lighting_corner",
 	"economic_species_modifier",
+	"emojis",
 	"empty_playable_ai_cores",
 	"endgame_exits",
 	"endgame_safespawns",
-	"erikafootsteps",
 	"ert",
 	"ert_base_chance",
 	"escape_pods",
@@ -2326,9 +2355,7 @@
 	"global_message_listener",
 	"global_vars_",
 	"godcult",
-	"grassfootsteps",
 	"gravity_is_on",
-	"gun_sound",
 	"gyrotrons",
 	"gzn_check",
 	"hadevent",
@@ -2342,6 +2369,7 @@
 	"id_card_states",
 	"image_repository",
 	"inactive_keys",
+	"inf_changelog_hash",
 	"init",
 	"initialization_stage",
 	"integrated_circuit_blacklist",
@@ -2454,7 +2482,6 @@
 	"pipe_processing_killed",
 	"plant_controller",
 	"plant_seed_sprites",
-	"platingfootsteps",
 	"playable_species",
 	"point_source_descriptions",
 	"possible_cable_coil_colours",
@@ -2507,7 +2534,6 @@
 	"rune_list",
 	"runtime_diary",
 	"same_wires",
-	"sandfootsteps",
 	"secondary_mode",
 	"secret_force_mode",
 	"send_emergency_team",
@@ -2521,7 +2547,6 @@
 	"skipped_unit_tests",
 	"slot_equipment_priority",
 	"slot_flags_enumeration",
-	"snowsteps",
 	"solar_gen_rate",
 	"solars_list",
 	"sortInstance",
@@ -2592,6 +2617,7 @@
 	"total_lighting_sources",
 	"total_unit_tests",
 	"traitors",
+	"transaction_devices",
 	"transfer_controller",
 	"turbolift_controller",
 	"turbolifts",
@@ -2610,7 +2636,6 @@
 	"visual_nets",
 	"vote",
 	"vsc",
-	"waterfootsteps",
 	"wax_recipes",
 	"weighted_mundaneevent_locations",
 	"weighted_randomevent_locations",
@@ -2618,7 +2643,6 @@
 	"whitelisted_species",
 	"wireColours",
 	"wizards",
-	"woodfootsteps",
 	"world_topic_spam_protect_ip",
 	"world_topic_spam_protect_time",
 	"world_uplinks",
