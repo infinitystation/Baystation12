@@ -213,6 +213,8 @@
 		t = replacetext(t, "\[row\]", "")
 		t = replacetext(t, "\[cell\]", "")
 		t = replacetext(t, "\[logo\]", "")
+
+	if(!istype(src, /obj/item/weapon/paper/nano))
 		t = replacetext(t, "\[img\]", "")
 
 	if(iscrayon)
@@ -300,8 +302,9 @@
 
 		log += "<br />\[[time_stamp()]] [key_name(usr)] added: [t]"
 
-		if(findtext(t,"\[img]"))
-			message_admins("[key_name_admin(usr)] added an image to <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>[src]</a>.")
+		if(istype(src, /obj/item/weapon/paper/nano))
+			if(findtext(t,"\[img]"))
+				message_admins("[key_name_admin(usr)] added an image to <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>[src]</a>.")
 
 		var/last_fields_value = fields
 
@@ -420,6 +423,10 @@
 
 	add_fingerprint(user)
 	return
+
+/obj/item/weapon/paper/nano
+	name = "nano paper"
+	color = "#ccffff"
 
 /*
  * Premade paper
