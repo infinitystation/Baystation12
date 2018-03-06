@@ -18,6 +18,7 @@
 	var/sound_landing = 'sound/effects/shuttle_landing.ogg'
 
 	var/knockdown = 1 //whether shuttle downs non-buckled people when it moves
+	var/scatter_direction //here goes direction in which people's will fly in stated direction and bumping on something
 
 	var/defer_initialisation = FALSE //this shuttle will/won't be initialised by something after roundstart
 
@@ -168,10 +169,12 @@
 							to_chat(M, "<span class='warning'>Sudden acceleration presses you into your chair!</span>")
 							shake_camera(M, 3, 1)
 						else
-							to_chat(M, "<span class='warning'>The floor lurches beneath you!</span>")
+							to_chat(M, "<span class='warning'>A sudden rush of wind knocks you down!</span>")
 							shake_camera(M, 10, 1)
-				if(istype(M, /mob/living/carbon))
+				if(istype(M, /mob/living))
 					if(!M.buckled)
+						if(scatter_direction)
+							M.throw_at(get_edge_target_turf(M, scatter_direction), 9, 0.5)
 						M.Weaken(3)
 
 		for(var/obj/structure/cable/C in A)

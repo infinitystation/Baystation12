@@ -99,7 +99,7 @@
 		for(var/atom/A in get_turf(src))
 			if(A == src) continue
 			if(istype(A,/mob/living))
-				if(A:lying) continue
+				if(A:lying && !src:lying) continue
 				src.throw_impact(A,speed)
 			if(isobj(A))
 				if(A.density && !A.throwpass)	// **TODO: Better behaviour for windows which are dense, but shouldn't always stop movement
@@ -112,7 +112,7 @@
 		return 0
 	//use a modified version of Bresenham's algorithm to get from the atom's current position to that of the target
 	src.throwing = 1
-	if(target.allow_spin && src.allow_spin)
+	if(src.allow_spin)
 		SpinAnimation(5,1)
 	src.thrower = thrower
 	src.throw_source = get_turf(src)	//store the origin turf
