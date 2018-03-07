@@ -63,7 +63,7 @@
 /obj/item/weapon/material/canknife
 	name = "can-opener"
 	desc = "Simple can-opener"
-	icon = 'icons/obj/infinity_object.dmi'
+	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "opener"
 
 /obj/item/weapon/reagent_containers/food/snacks/can/attack_self(mob/user as mob)

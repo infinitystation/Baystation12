@@ -39,7 +39,7 @@
 /obj/item/weapon/wrench/power
 	name = "hand drill"
 	desc = "A simple powered hand drill. It's fitted with a bolt bit."
-	icon = 'icons/obj/infinity_object.dmi'
+	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "drill_bolt"
 	item_state = "drill"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
@@ -127,7 +127,7 @@
 /obj/item/weapon/screwdriver/power
 	name = "hand drill"
 	desc = "A simple powered hand drill. It's fitted with a screw bit."
-	icon = 'icons/obj/infinity_object.dmi'
+	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "drill_screw"
 	item_state = "drill"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE

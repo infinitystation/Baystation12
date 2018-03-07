@@ -219,7 +219,7 @@
 /obj/item/wheelchair_kit
 	name = "compressed wheelchair kit"
 	desc = "Collapsed parts, prepared to immediately spring into the shape of a wheelchair."
-	icon = 'icons/obj/infinity_object.dmi'
+	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "wheelchair-item"
 	item_state = "rbed"
 	w_class = ITEM_SIZE_LARGE

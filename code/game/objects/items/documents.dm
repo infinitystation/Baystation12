@@ -1,7 +1,7 @@
 /obj/item/documents
 	name = "secret documents"
 	desc = "\"Особо Cекретный\" материал о сборке и функционале ИИ корабл&#255; - даже если ничего из этого непон&#255;тно, оно выгл&#255;дит более чем серьезно. На каждом документе установлена печать Экспедиционного Корпуса ПСС."
-	icon = 'icons/obj/infinity_object.dmi'
+	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "docs_generic"
 	item_state = "paper"
 	var/information

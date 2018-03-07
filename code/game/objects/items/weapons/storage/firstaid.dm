@@ -313,7 +313,7 @@
 
 /obj/item/weapon/storage/firstaid/individual
 	name = "master kit"
-	icon = 'icons/obj/infinity_object.dmi'
+	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "survivalmed"
 	slot_flags = SLOT_BELT
 	storage_slots  = 10
