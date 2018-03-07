@@ -200,6 +200,9 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/corner/pink/diagonal
 	icon_state = "corner_white_diagonal"
 
+/obj/effect/floor_decal/corner/pink/full
+	icon_state = "corner_white_full"
+
 /obj/effect/floor_decal/corner/pink/three_quarters
 	icon_state = "corner_white_three_quarters"
 
