@@ -402,13 +402,14 @@ var/list/name_to_material
 /material/plasteel/titanium
 	name = "titanium"
 	brute_armor = 10
-	burn_armor = 8
+	burn_armor = 7
 	integrity = 300
 	explosion_resistance = 20
 	melting_point = 3000
 	hardness = 90
-	weight = 25
-	stack_type = null
+	weight = 28
+	stack_type = /obj/item/stack/material/titanium
+	stack_origin_tech = list(TECH_MATERIAL = 4)
 	icon_base = "metal"
 	door_icon_base = "metal"
 	icon_colour = "#d1e6e3"
