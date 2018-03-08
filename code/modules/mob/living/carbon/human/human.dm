@@ -1540,9 +1540,3 @@
 //Point at which you dun breathe no more. Separate from asystole crit, which is heart-related.
 /mob/living/carbon/human/proc/nervous_system_failure()
 	return getBrainLoss() >= maxHealth * 0.75
-
-/mob/living/throw_impact(atom/hit_atom)
-	if(istype(hit_atom, /mob/living))
-		src.Weaken(4)
-	visible_message("<span class='danger'>[src] slams into \the [hit_atom]!</span>")
-	take_impact_damage(hit_atom)
