@@ -589,6 +589,15 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set_invisibility(pre_invis)
 	transform = null	//make goast stand up
 
+/mob/observer/ghost/verb/set_ghost_alpha()
+	set name = "Set Ghost Alpha"
+	set desc = "Giving you option to enter value for custom ghost transparency"
+	set category = "Ghost"
+	var/input = input("New alpha value (maximum number is 127):",, alpha) as null|num
+	if(!input)
+		return
+	alpha = Clamp(input, 0, 127)
+
 /mob/observer/ghost/verb/respawn()
 	set name = "Respawn"
 	set category = "OOC"
