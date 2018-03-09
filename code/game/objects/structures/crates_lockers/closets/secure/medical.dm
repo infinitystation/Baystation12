@@ -73,7 +73,8 @@
 		/obj/item/weapon/storage/firstaid/o2,
 		/obj/item/weapon/storage/firstaid/toxin,
 		/obj/item/weapon/storage/box/masks,
-		/obj/item/clothing/gloves/latex/nitrile
+		/obj/item/clothing/gloves/latex/nitrile,
+		/obj/item/clothing/accessory/stethoscope
 	)
 
 /obj/structure/closet/secure_closet/medical3
