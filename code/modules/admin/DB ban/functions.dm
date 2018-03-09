@@ -123,6 +123,15 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		to_chat(usr, "<span class='notice'>Ban saved to database.</span>")
 		setter = key_name_admin(usr)
 	message_admins("[setter] has added a [bantype_str] for [ckey] [(job)?"([job])":""] [(duration > 0)?"([duration] minutes)":""] with the reason: \"[reason]\" to the ban database.",1)
+	switch(bantype_str)
+		if("PERMABAN")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [setter] ЖЕСТКО и НАВСЕГДА заблокировал(а) игрока [ckey]. Причина: [reason].</b></span>")
+		if("TEMPBAN")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [setter] ЖЕСТКО заблокировал(а) игрока [ckey]. Причина: [reason]. Срок - [duration] минут.</b></span>")
+		if("SOFT_PERMBAN")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [setter] перманентно отправил(а) икрока [ckey] в бан-тюрьму. Причина: [reason].</b></span>")
+		if("SOFT_TEMPBAN")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [setter] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: [reason]. Срок - [duration] минут.</b></span>")
 	return 1
 
 
