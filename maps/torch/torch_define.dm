@@ -41,7 +41,6 @@
 
 	default_law_type = /datum/ai_laws/solgov
 	use_overmap = 1
-	num_exoplanets = 1
 	planet_size = list(129,129)
 
 	away_site_budget = 3
@@ -71,7 +70,7 @@
 		if(O.name == torch.name)
 			continue
 		space_things |= O
-	
+
 	for(var/obj/effect/overmap/O in space_things)
 		var/location_desc = " at present co-ordinates."
 		if (O.loc != torch.loc)
