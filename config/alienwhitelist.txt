@@ -1,57 +1,59 @@
 rucat - machine
 kosteg - machine
+hodovoy - machine
+parasoul - machine
 netreson - machine
 rockyfail - machine
-parasoul - machine
-hodovoy - machine
 nikita588 - machine
 quardbreak - machine
 redknighthero - machine
 kotovsyndrome - machine
-knayu - skrell
+inubashirimomiji - skrell
+twinindifferent - skrell
+wheatley2013 - skrell
+kirill1243 - skrell	
+themaybat - skrell
+salyvador - skrell
+hellpony - skrell
+vankoska - skrell
 lukecage - skrell
 hodovoy - skrell
-kirill1243 - skrell
-wheatley2013 - skrell
-vankoska - skrell
-inubashirimomiji - skrell	
-themaybat - skrell
-twinindifferent - skrell
-hellpony - skrell
-salyvador - skrell
+knayu - skrell
 redknighthero - giant armoured serpentid
+kirill1243 - giant armoured serpentid
 themaybat - giant armoured serpentid
 sosiskoed - giant armoured serpentid
-kirill1243 - giant armoured serpentid
+diesiege - giant armoured serpentid
 hodovoy - giant armoured serpentid
 sarumyn - giant armoured serpentid
-diesiege - giant armoured serpentid
 rex127 - giant armoured serpentid
 portos - giant armoured serpentid
 twinindifferent - resomi
 wheatley2013 - resomi
+kirill1243 - resomi
 themaybat - resomi
 netreson - resomi
-kirill1243 - resomi
-cre77 - resomi
 hodovoy - resomi
+cre77 - resomi
 vankoska - diona
-sosiskoed - diona
 maxi2000 - diona
+sosiskoed - diona
 bartstarter - diona
 inubashirimomiji - diona
 cre77 - vox
 rex127 - vox
 sosiskoed - vox
 wolforbykot - vox
+wheatley2013 - vox
 kotovsyndrome - unathi
 wolforbykot - unathi
-hodovoy - unathi
 kirill1243 - unathi
 aragog94 - unathi
+hodovoy - unathi
+ashton_fox - tajaran
+mrnicolas - tajaran
+furrydog - tajaran
+logfol - tajaran
 denmag - tajaran
 solark - tajaran
-logfol - tajaran
-furrydog - tajaran
 arhod - tajaran
-wheatley2013 - vox
