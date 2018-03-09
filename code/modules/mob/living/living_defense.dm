@@ -236,7 +236,11 @@
 //This is called when the mob is thrown into a dense turf
 /mob/living/proc/turf_collision(var/turf/T, var/speed)
 	visible_message("<span class='danger'>[src] slams into \the [T]!</span>")
-	playsound(loc, 'sound/effects/bangtaper.ogg', 50, 1, -1)
+	var/smashsound = pick('sound/effects/gore/smash1.ogg', 'sound/effects/gore/smash2.ogg', 'sound/effects/gore/smash3.ogg', 'sound/effects/gore/trauma1.ogg')
+	playsound(loc, smashsound, 50, 1, -1)
+	if(src.client)
+		shake_camera(src, 7, 1)
+	src.Weaken(4)
 	src.take_organ_damage(speed*5)
 
 /mob/living/proc/near_wall(var/direction,var/distance=1)
