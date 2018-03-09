@@ -412,3 +412,24 @@
 			skin_state = SKIN_NORMAL
 	update_skin(1)
 
+
+//Aurora
+
+/mob/living/carbon/human/proc/self_destruct()
+	set category = "Abilities"
+	set name = "Engage Self-Destruct"
+	set desc = "When all else has failed, bite the bullet."
+
+	if(stat || paralysis || stunned || weakened || lying)
+		src << "<span class='warning'>You cannot do that in your current state.</span>"
+		return
+
+	src.visible_message(
+	"<span class='danger'>\The [src] begins to beep ominously!</span>",
+	"<span class='danger'>WARNING: SELF-DESTRUCT ENGAGED. Unit termination finalized in three seconds!</span>"
+	)
+	sleep(10)
+	playsound(src, 'sound/items/countdown.ogg', 125, 1)
+	sleep(20)
+	explosion(src, -1, 1, 3)
+	src.gib()

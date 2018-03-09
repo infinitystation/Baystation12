@@ -30,6 +30,11 @@ var/datum/robolimb/basic_robolimb
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_main.dmi'
 	unavailable_at_fab = 1
 
+/datum/robolimb/bishop/special
+	company = "Bishop Special"
+	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_special.dmi'
+	use_eye_icon = "bishop_eyes"
+
 /datum/robolimb/bishop/alt
 	company = "Bishop Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_alt.dmi'
@@ -47,6 +52,11 @@ var/datum/robolimb/basic_robolimb
 	desc = "This limb has a militaristic black and green casing with gold stripes."
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_main.dmi'
 	unavailable_at_fab = 1
+
+/datum/robolimb/hephaestus/special
+	company = "Hephaestus Special"
+	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_special.dmi'
+	use_eye_icon = "heph_eyes"
 
 /datum/robolimb/hephaestus/alt
 	company = "Hephaestus Alt."
@@ -75,6 +85,11 @@ var/datum/robolimb/basic_robolimb
 	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_main.dmi'
 	unavailable_at_fab = 1
 
+/datum/robolimb/xion/special
+	company = "Xion Special"
+	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_special.dmi'
+	use_eye_icon = "xion_eyes"
+
 /datum/robolimb/xion/alt
 	company = "Xion Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_alt.dmi'
@@ -100,6 +115,11 @@ var/datum/robolimb/basic_robolimb
 	can_eat = 1
 	unavailable_at_fab = 1
 
+/datum/robolimb/wardtakahashi/special
+	company = "Ward-Takahashi Special"
+	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_special.dmi'
+	use_eye_icon = "zenghu_eyes"
+
 /datum/robolimb/wardtakahashi/alt
 	company = "Ward-Takahashi Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_alt.dmi'
@@ -120,6 +140,12 @@ var/datum/robolimb/basic_robolimb
 	restricted_to = list(SPECIES_IPC)
 	use_eye_icon = "blank_eyes"
 	unavailable_at_fab = 1
+
+/datum/robolimb/morpheus/special
+	company = "Morpheus Special"
+	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_special.dmi'
+	use_eye_icon = "eyes_industry"
+	restricted_to = list()
 
 /datum/robolimb/morpheus/alt
 	company = "Morpheus Alt."
@@ -149,5 +175,14 @@ var/datum/robolimb/basic_robolimb
 	company = "Morgan Black"
 	desc = "Most authenic faux-wood on the market. The actuators underneath are still metal though."
 	icon = 'icons/mob/human_races/cyberlimbs/morgan/morgan_main.dmi'
+	use_eye_icon = "blank_eyes"
+	unavailable_at_fab = 1
+	unavailable_at_chargen = 1
+
+/datum/robolimb/terminator
+	company = "Terminator"
+	desc = "Hunter-Killer model. From where you got it?"
+	icon = 'icons/mob/human_races/cyberlimbs/morpheus/terminator_main.dmi'
+	use_eye_icon = "eyes_terminator"
 	unavailable_at_fab = 1
 	unavailable_at_chargen = 1
