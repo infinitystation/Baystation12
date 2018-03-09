@@ -15,11 +15,23 @@
 
 /datum/gear/head/bandana
 	display_name = "bandana selection"
-	path = /obj/item/clothing
+	path = /obj/item/clothing/mask/bandana
 
 /datum/gear/head/bandana/New()
 	..()
-	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(typesof(/obj/item/clothing/mask/bandana) + typesof(/obj/item/clothing/head/bandana))
+	var/bandanas = list()
+	bandanas["black bandana"] = /obj/item/clothing/mask/bandana
+	bandanas["blue bandana"] = /obj/item/clothing/mask/bandana/blue
+	bandanas["botany bandana"] = /obj/item/clothing/mask/bandana/botany
+	bandanas["camo bandana"] = /obj/item/clothing/mask/bandana/camo
+	bandanas["gold bandana"] = /obj/item/clothing/mask/bandana/gold
+	bandanas["green bandana"] = /obj/item/clothing/mask/bandana/green
+	bandanas["orange bandana"] = /obj/item/clothing/mask/bandana/orange
+	bandanas["purple bandana"] = /obj/item/clothing/mask/bandana/purple
+	bandanas["red bandana"] = /obj/item/clothing/mask/bandana/red
+	bandanas["scull bandana"] = /obj/item/clothing/mask/bandana/skull
+	gear_tweaks += new/datum/gear_tweak/path(bandanas)
+
 
 /datum/gear/head/bow
 	display_name = "hair bow, colour select"
