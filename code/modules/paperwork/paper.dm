@@ -83,7 +83,6 @@
 	set name = "Rename paper"
 	set category = "Object"
 	set src in usr
-	playsound(src,'sound/effects/PEN_Ball_Point_Pen_Circling_01_mono.ogg',40,1)
 
 	if((CLUMSY in usr.mutations) && prob(50))
 		to_chat(usr, "<span class='warning'>You cut yourself on the paper.</span>")
