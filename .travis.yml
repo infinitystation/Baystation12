@@ -14,6 +14,7 @@ env:
     - TEST=WEB
     - TEST=MAP MAP_PATH=example 
     - TEST=MAP MAP_PATH=torch
+    - TEST=MAP MAP_PATH=exodus_infinity
     - TEST=MAP MAP_PATH=overmap_example
     - TEST=MAP MAP_PATH=away_sites_testing
 
