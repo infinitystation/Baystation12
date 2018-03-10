@@ -2,12 +2,12 @@
 	name = "gun cabinet"
 	req_access = list(access_armory)
 	icon = 'icons/obj/guncabinet.dmi'
-	icon_state = "base"
-	icon_off ="base"
-	icon_broken ="base"
-	icon_locked ="base"
+	icon_state = "base1"
+	icon_off ="baseoff"
+	icon_broken ="sparks"
+	icon_locked ="base1"
 	icon_closed ="base"
-	icon_opened = "base"
+	icon_opened = "baseopen"
 
 /obj/structure/closet/secure_closet/guncabinet/Initialize()
 	. = ..()
