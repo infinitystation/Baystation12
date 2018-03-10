@@ -32,7 +32,7 @@
 	value = 12
 
 /material/plasteel/titanium
-	value = 10
+	value = 15
 
 /material/glass/reinforced
 	value = 2

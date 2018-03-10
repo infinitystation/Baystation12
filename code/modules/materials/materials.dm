@@ -413,7 +413,7 @@ var/list/name_to_material
 	icon_base = "metal"
 	door_icon_base = "metal"
 	icon_colour = "#d1e6e3"
-	icon_reinf = "reinf_metal"
+	icon_reinf = "reinf_over"
 
 /material/plasteel/ocp
 	name = "osmium-carbide plasteel"
