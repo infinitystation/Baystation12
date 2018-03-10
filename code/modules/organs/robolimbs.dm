@@ -33,6 +33,7 @@ var/datum/robolimb/basic_robolimb
 /datum/robolimb/bishop/special
 	company = "Bishop Special"
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_special.dmi'
+	can_eat = null
 	use_eye_icon = "bishop_eyes"
 
 /datum/robolimb/bishop/alt
@@ -56,6 +57,7 @@ var/datum/robolimb/basic_robolimb
 /datum/robolimb/hephaestus/special
 	company = "Hephaestus Special"
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_special.dmi'
+	can_eat = null
 	use_eye_icon = "heph_eyes"
 
 /datum/robolimb/hephaestus/alt
@@ -88,6 +90,7 @@ var/datum/robolimb/basic_robolimb
 /datum/robolimb/xion/special
 	company = "Xion Special"
 	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_special.dmi'
+	can_eat = null
 	use_eye_icon = "xion_eyes"
 
 /datum/robolimb/xion/alt
@@ -118,6 +121,7 @@ var/datum/robolimb/basic_robolimb
 /datum/robolimb/wardtakahashi/special
 	company = "Ward-Takahashi Special"
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_special.dmi'
+	can_eat = null
 	use_eye_icon = "zenghu_eyes"
 
 /datum/robolimb/wardtakahashi/alt
@@ -144,6 +148,7 @@ var/datum/robolimb/basic_robolimb
 /datum/robolimb/morpheus/special
 	company = "Morpheus Special"
 	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_special.dmi'
+	can_eat = null
 	use_eye_icon = "eyes_industry"
 	restricted_to = list()
 
