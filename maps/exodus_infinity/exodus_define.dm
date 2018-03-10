@@ -1,4 +1,4 @@
-/datum/map/exodus
+//datum/map/exodus
 	name = "Exodus"
 	full_name = "NSS Exodus"
 	path = "exodus_infinity"
