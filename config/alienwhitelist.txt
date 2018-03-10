@@ -1,14 +1,75 @@
 rucat - machine
+rucat - xion machine 
+rucat - bishop machine 
+rucat - morpheus machine 
+rucat - gephaestus machine
+rucat - ward-Takahashi machine
+rex127 - machine
+rex127 - xion machine 
+rex127 - bishop machine 
+rex127 - morpheus machine 
+rex127 - gephaestus machine
+rex127 - ward-Takahashi machine
 kosteg - machine
+kosteg - xion machine 
+kosteg - bishop machine 
+kosteg - morpheus machine 
+kosteg - gephaestus machine
+kosteg - ward-Takahashi machine
 hodovoy - machine
+hodovoy - xion machine 
+hodovoy - bishop machine 
+hodovoy - morpheus machine 
+hodovoy - gephaestus machine
+hodovoy - ward-Takahashi machine
 parasoul - machine
+parasoul - xion machine 
+parasoul - bishop machine 
+parasoul - morpheus machine 
+parasoul - gephaestus machine
+parasoul - ward-Takahashi machine
 netreson - machine
+netreson - xion machine 
+netreson - bishop machine 
+netreson - morpheus machine 
+netreson - gephaestus machine
+netreson - ward-Takahashi machine
 rockyfail - machine
+rockyfail - xion machine 
+rockyfail - bishop machine 
+rockyfail - morpheus machine 
+rockyfail - gephaestus machine
+rockyfail - ward-Takahashi machine
 nikita588 - machine
+nikita588 - xion machine 
+nikita588 - bishop machine 
+nikita588 - morpheus machine 
+nikita588 - gephaestus machine
+nikita588 - ward-Takahashi machine
 quardbreak - machine
+quardbreak - xion machine 
+quardbreak - bishop machine 
+quardbreak - morpheus machine 
+quardbreak - gephaestus machine
+quardbreak - ward-Takahashi machine
 wheatley2013 - machine
+wheatley2013 - xion machine 
+wheatley2013 - bishop machine 
+wheatley2013 - morpheus machine 
+wheatley2013 - gephaestus machine
+wheatley2013 - ward-Takahashi machine
 redknighthero - machine
+redknighthero - xion machine 
+redknighthero - bishop machine 
+redknighthero - morpheus machine 
+redknighthero - gephaestus machine
+redknighthero - ward-Takahashi machine
 kotovsyndrome - machine
+kotovsyndrome - xion machine 
+kotovsyndrome - bishop machine 
+kotovsyndrome - morpheus machine 
+kotovsyndrome - gephaestus machine
+kotovsyndrome - ward-Takahashi machine
 inubashirimomiji - skrell
 twinindifferent - skrell
 wheatley2013 - skrell

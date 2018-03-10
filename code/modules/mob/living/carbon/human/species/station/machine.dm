@@ -104,31 +104,22 @@
 	return "<span class='danger'>[T.His] monitor is completely busted!</span>\n"
 
 /datum/species/machine/industrial
-	name = "Morpheus Machine"
+	name = SPECIES_IPC_MORPH
 
-	brute_mod = 0.8
-	burn_mod = 1.1
 	slowdown = 1
 
-	blurb = "The first commercialized attempt Morpheus made at an industrial-type IPC. \
-	Designed for extra durability and increased weight loads, the first generation Industrial was considered a success, \
-	though it possessed some issues. A limited power cell and actuators designed for heavy lifting and not \
-	locomotion resulted in a slow and frequently charging machine. A special addition to the chassis makes up for these \
-	drawbacks - the ability to simply slot a suit cooling unit onto the model's back and make use of its built-in heat \
-	transferal conduits, allowing the Industrial to perform EVA without any extra peripherals such as a voidsuit."
+	strength = STR_VHIGH
 
+	blurb = "Первая комерческая попытка Морфеус создать ИПК индустриального типа. \
+	Спроектированный для повышенной нагрузки и обладающий высокой подъемной силы, первое индустриальное поколение признали \
+	успешным, не учитывя мелких недочетов. Из-за назначения способен переносить больший груз без потери своей и без того \
+	небольшой скорости."
 	icobase = 'icons/mob/human_races/r_industrial.dmi'
 	deform = 'icons/mob/human_races/r_industrial.dmi'
 
 	eye_icon = "eyes_industry"
 	appearance_flags = HAS_EYE_COLOR | HAS_UNDERWEAR
 	show_ssd = "completely quiescent"
-
-	heat_level_1 = 600
-	heat_level_2 = 1200
-	heat_level_3 = 2400
-
-	heat_discomfort_level = 800
 
 	has_limbs = list(
 		BP_CHEST =  list("path" = /obj/item/organ/external/chest),
@@ -151,10 +142,18 @@
 	return
 
 /datum/species/machine/hephaestus
-	name = "Hephaestus Machine"
+	name = SPECIES_IPC_HEPH
 
 	icobase = 'icons/mob/human_races/r_ind_hephaestus.dmi'
 	deform = 'icons/mob/human_races/r_ind_hephaestus.dmi'
+
+	blurb = "An extremely durable and heavy Industrial model branded by Hephaestus Industries. \
+	It is their improved Industrial model, with thicker plating and improved power cell. \
+	Its actuators struggle to carry the immense weight, however, making the unit quite slow. \
+	This chassis would be seen in roles where it would be dangerous or inefficient to use a less durable unit, \
+	such as engineering, security, and mining. While this unit still possesses built-in cooling conduits, the \
+	increased plating and thickness of said plating proved a difficult challenge for the engineers to develop good \
+	cooling, so the unit suffers somewhat from increased heat loads. Overtaxing its hardware will quickly lead to overheating."
 
 	slowdown = 1.5
 	brute_mod = 0.75
@@ -179,14 +178,6 @@
 		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right)
 		)
 
-	blurb = "An extremely durable and heavy Industrial model branded by Hephaestus Industries. \
-	It is their improved Industrial model, with thicker plating and improved power cell. \
-	Its actuators struggle to carry the immense weight, however, making the unit quite slow. \
-	This chassis would be seen in roles where it would be dangerous or inefficient to use a less durable unit, \
-	such as engineering, security, and mining. While this unit still possesses built-in cooling conduits, the \
-	increased plating and thickness of said plating proved a difficult challenge for the engineers to develop good \
-	cooling, so the unit suffers somewhat from increased heat loads. Overtaxing its hardware will quickly lead to overheating."
-
 /datum/species/machine/hephaestus/handle_limbs_setup(var/mob/living/carbon/human/H)
 	for(var/obj/item/organ/external/E in H.organs)
 		if(E.robotic < ORGAN_ROBOT)
@@ -194,13 +185,24 @@
 	return
 
 /datum/species/machine/takahashi
-	name = "Ward-Takahashi Machine"
+	name = SPECIES_IPC_WARD
 
 	icobase = 'icons/mob/human_races/r_ind_zenghu.dmi'
 	deform = 'icons/mob/human_races/r_ind_zenghu.dmi'
 
+	blurb = "Being a corporation focused primarily on medical sciences and treatments, \
+	Ward-Takahashi had little interest in the market of synthetics in the beginning.. \
+	However, after seeing the advances in almost all fields of the galactic market after the advent of synthetics, \
+	Ward-Takahashi set aside some funds for their own robotics department, \
+	focused mainly on medical service and even science related operations. \
+	Having taken some inspiration from biological life, the chassis has an interesting leg design: \
+	digitigrade legs provide the chassis with enhanced speed. A downside to this development was the reduction of metals on the chassis. \
+	Most plates covering the sensitive interior electronics are polymer casts to reduce the weight of the unit, \
+	resulting in a not-so-durable android."
+
+
 	brute_mod = 1.5
-	brute_mod = 1.3
+	burn_mod = 1.3
 	slowdown = -0.7
 
 	eye_icon = "zenghu_eyes"
@@ -221,16 +223,6 @@
 
 	appearance_flags = HAS_EYE_COLOR | HAS_UNDERWEAR
 
-	blurb = "Being a corporation focused primarily on medical sciences and treatments, \
-	Ward-Takahashi had little interest in the market of synthetics in the beginning.. \
-	However, after seeing the advances in almost all fields of the galactic market after the advent of synthetics, \
-	Ward-Takahashi set aside some funds for their own robotics department, \
-	focused mainly on medical service and even science related operations. \
-	Having taken some inspiration from biological life, the chassis has an interesting leg design: \
-	digitigrade legs provide the chassis with enhanced speed. A downside to this development was the reduction of metals on the chassis. \
-	Most plates covering the sensitive interior electronics are polymer casts to reduce the weight of the unit, \
-	resulting in a not-so-durable android."
-
 /datum/species/machine/takahashi/handle_limbs_setup(var/mob/living/carbon/human/H)
 	for(var/obj/item/organ/external/E in H.organs)
 		if(E.robotic < ORGAN_ROBOT)
@@ -239,10 +231,20 @@
 
 
 /datum/species/machine/bishop
-	name = "Bishop Machine"
+	name = SPECIES_IPC_BISH
 
 	icobase = 'icons/mob/human_races/r_ind_bishop.dmi'
 	deform = 'icons/mob/human_races/r_ind_bishop.dmi'
+
+	blurb = "Bishop Cybernetics frames are among the sleeker, flashier frames widely produced for IPCs. This brand-new, \
+	high end design has a focus on pioneering energy efficiency without sacrifice, fitting to Bishop's company vision. \
+	Cutting-edge technology in power management means this frame can operate longer while running more demanding processing \
+	algorithms than most. This extreme push to minimize power draw means this frame can be equipped with all sorts of extra \
+	equipment: a hologram for a face, flashing status displays and embedded lights solely meant for show. \
+	The one thing holding this frame back from perfection is the same common criticism leveled against almost all \
+	Bishop products: the shiny chrome and glass meant to put all of this tech on display means it's exposed and fragile. \
+	It's because of Bishop's unrelenting pursuit of vanity in their designs that these frames often suffer from issues with \
+	reliability and struggle to safely perform the same work as cheaper, more rugged frames."
 
 	brute_mod = 1.2
 	slowdown = -0.4
@@ -267,16 +269,6 @@
 
 	appearance_flags = HAS_EYE_COLOR | HAS_UNDERWEAR
 
-	blurb = "Bishop Cybernetics frames are among the sleeker, flashier frames widely produced for IPCs. This brand-new, \
-	high end design has a focus on pioneering energy efficiency without sacrifice, fitting to Bishop's company vision. \
-	Cutting-edge technology in power management means this frame can operate longer while running more demanding processing \
-	algorithms than most. This extreme push to minimize power draw means this frame can be equipped with all sorts of extra \
-	equipment: a hologram for a face, flashing status displays and embedded lights solely meant for show. \
-	The one thing holding this frame back from perfection is the same common criticism leveled against almost all \
-	Bishop products: the shiny chrome and glass meant to put all of this tech on display means it's exposed and fragile. \
-	It's because of Bishop's unrelenting pursuit of vanity in their designs that these frames often suffer from issues with \
-	reliability and struggle to safely perform the same work as cheaper, more rugged frames."
-
 /datum/species/machine/bishop/handle_limbs_setup(var/mob/living/carbon/human/H)
 	for(var/obj/item/organ/external/E in H.organs)
 		if(E.robotic < ORGAN_ROBOT)
@@ -284,13 +276,21 @@
 	return
 
 /datum/species/machine/xion
-	name = "Xion Machine"
+	name = SPECIES_IPC_XION
 
 	icobase = 'icons/mob/human_races/r_ind_xion.dmi'
 	deform = 'icons/mob/human_races/r_ind_xion.dmi'
 
 	eye_icon = "xion_eyes"
 	appearance_flags = HAS_EYE_COLOR | HAS_UNDERWEAR
+
+	blurb = "The Xion Manufacturing Group, being a subsidiary of Hephaestus Industries, \
+	saw the original Industrial models and wanted to develop their own chassis based off of the original design. \
+	The result is the Xion Industrial model. Sturdy and strong, this chassis is quite powerful and equally durable, \
+	with an ample power cell and improved actuators for carrying the increased weight of the body. \
+	The Xion model also retains sturdiness without covering the chassis in plating, \
+	allowing for the cooling systems to vent heat much easier than the Hephaestus-brand model. \
+	The Group did not wish to leave exposed cooling conduits, however, so this chassis will require a suit to perform EVA."
 
 	strength = STR_VHIGH
 	brute_mod = 1.2
@@ -314,15 +314,6 @@
 		)
 
 	passive_temp_gain = 2
-
-	blurb = "The Xion Manufacturing Group, being a subsidiary of Hephaestus Industries, \
-	saw the original Industrial models and wanted to develop their own chassis based off of the original design. \
-	The result is the Xion Industrial model. Sturdy and strong, this chassis is quite powerful and equally durable, \
-	with an ample power cell and improved actuators for carrying the increased weight of the body. \
-	The Xion model also retains sturdiness without covering the chassis in plating, \
-	allowing for the cooling systems to vent heat much easier than the Hephaestus-brand model. \
-	The Group did not wish to leave exposed cooling conduits, however, so this chassis will require a suit to perform EVA."
-
 
 /datum/species/machine/xion/handle_limbs_setup(var/mob/living/carbon/human/H)
 	for(var/obj/item/organ/external/E in H.organs)
