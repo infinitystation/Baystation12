@@ -189,20 +189,9 @@
 		to_chat(user, "<span class='notice'>[target] is full.</span>")
 		return 1
 
+	playsound(target.loc,'sound/effects/Liquid_transfer_mono.ogg',50,1)
 	var/trans = reagents.trans_to(target, amount_per_transfer_from_this)
 	to_chat(user, "<span class='notice'>You transfer [trans] unit\s of the solution to \the [target].</span>")
-
-	// The first one type probably make some items passing through this check which logicaly dont must execute liquid filling sound.
-	// But anyway, for first time i will use both /food/drinks/ type, because shakers and cups are using this parent type.
-	// And also because making if() arguments be too long is not a good idea.
-	if(istype(target, /obj/item/weapon/reagent_containers/food/drinks) || \
-	istype(target, /obj/item/weapon/reagent_containers/food/drinks/glass2) || \
-	istype(target, /obj/item/weapon/reagent_containers/food/drinks/shaker) || \
-	istype(target, /obj/item/weapon/reagent_containers/glass/bottle) || \
-	istype(target, /obj/item/weapon/reagent_containers/glass/bucket) || \
-	istype(target, /obj/item/weapon/reagent_containers/glass/beaker) || \
-	istype(target, /obj/item/weapon/reagent_containers/food/condiment))
-		playsound(target.loc, 'sound/effects/Liquid_transfer_mono.ogg', 30, 1)
 
 	return 1
 

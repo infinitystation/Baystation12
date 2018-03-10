@@ -163,6 +163,11 @@
 		message_admins("[key_name_admin(user)]<A HREF='?_src_=holder;adminmoreinfo=\ref[user]'>?</A> (<A HREF='?_src_=holder;adminplayerobservefollow=\ref[user]'>FLW</A>) прочитал(а) книгу [name]/[title].")
 		log_game("[user.ckey]/[user.real_name] прочитал(а) книгу [name]/[title].")
 		onclose(user, "book")
+		playsound(src.loc, pick('sound/items/BOOK_Turn_Page_1.ogg',\
+			'sound/items/BOOK_Turn_Page_2.ogg',\
+			'sound/items/BOOK_Turn_Page_3.ogg',\
+			'sound/items/BOOK_Turn_Page_4.ogg',\
+ 			), rand(40,80), 1)
 	else
 		to_chat(user, "This book is completely blank!")
 
