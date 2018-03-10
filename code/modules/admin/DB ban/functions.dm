@@ -108,6 +108,7 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		else
 			adminwho += ", [C]"
 
+	var/reason_public = reason
 	reason = sql_sanitize_text(reason)
 
 	if(!computerid)
@@ -125,13 +126,13 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 	message_admins("[setter] has added a [bantype_str] for [ckey] [(job)?"([job])":""] [(duration > 0)?"([duration] minutes)":""] with the reason: \"[reason]\" to the ban database.",1)
 	switch(bantype_str)
 		if("PERMABAN")
-			to_chat(world, "<span class='notice'><b>BAN: Администратор [setter] ЖЕСТКО и НАВСЕГДА заблокировал(а) игрока [ckey]. Причина: [reason].</b></span>")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] ЖЕСТКО и НАВСЕГДА заблокировал(а) игрока [ckey]. Причина: [reason_public]</b></span>")
 		if("TEMPBAN")
-			to_chat(world, "<span class='notice'><b>BAN: Администратор [setter] ЖЕСТКО заблокировал(а) игрока [ckey]. Причина: [reason]. Срок - [duration] минут.</b></span>")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] ЖЕСТКО заблокировал(а) игрока [ckey]. Причина: [reason_public] Срок - [duration] минут.</b></span>")
 		if("SOFT_PERMBAN")
-			to_chat(world, "<span class='notice'><b>BAN: Администратор [setter] перманентно отправил(а) икрока [ckey] в бан-тюрьму. Причина: [reason].</b></span>")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] перманентно отправил(а) икрока [ckey] в бан-тюрьму. Причина: [reason_public]</b></span>")
 		if("SOFT_TEMPBAN")
-			to_chat(world, "<span class='notice'><b>BAN: Администратор [setter] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: [reason]. Срок - [duration] минут.</b></span>")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: [reason_public] Срок - [duration] минут.</b></span>")
 	return 1
 
 
