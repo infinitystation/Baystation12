@@ -112,7 +112,6 @@
 		return 1
 
 	// only carbons can eat
-	var/use_time = 10
 	if(istype(target, /mob/living/carbon))
 		if(target == user)
 			if(istype(user, /mob/living/carbon/human))
@@ -126,21 +125,11 @@
 					return
 
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //puts a limit on how fast people can eat/drink things
-			if(!do_after(user, use_time, src))
-				return
 			self_feed_message(user)
 			reagents.trans_to_mob(user, issmall(user) ? ceil(amount_per_transfer_from_this/2) : amount_per_transfer_from_this, CHEM_INGEST)
 			feed_sound(user)
 			return 1
 
-		if(istype(src, /obj/item/weapon/reagent_containers/glass) || \
-		istype(src, /obj/item/weapon/reagent_containers/food/drinks) || \
-		istype(src, /obj/item/weapon/reagent_containers/food/drinks/glass2) || \
-		istype(src, /obj/item/weapon/reagent_containers/food/drinks/shaker))
-
-			if(amount_per_transfer_from_this == volume && amount_per_transfer_from_this >= reagents.total_volume)
-				use_time = reagents.total_volume
-				playsound(user.loc, 'sound/items/drinking.ogg', reagents.total_volume, 1)
 
 		else
 			var/mob/living/carbon/H = target
@@ -192,7 +181,6 @@
 	playsound(target.loc,'sound/effects/Liquid_transfer_mono.ogg',50,1)
 	var/trans = reagents.trans_to(target, amount_per_transfer_from_this)
 	to_chat(user, "<span class='notice'>You transfer [trans] unit\s of the solution to \the [target].</span>")
-
 	return 1
 
 /obj/item/weapon/reagent_containers/do_surgery(mob/living/carbon/M, mob/living/user)
