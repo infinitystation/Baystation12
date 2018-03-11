@@ -130,3 +130,29 @@
 	)
 	vend_delay = 10
 	density = 1
+
+/obj/machinery/vending/parts
+	name = "Denitz-Spares Vendor"
+	desc = "All what you need to build a new microwave or teleporter."
+	icon_state = "robotics"
+	icon_deny = "robotics-deny"
+	req_access = list(access_engine)
+	products = list(/obj/item/weapon/airlock_electronics = 4,/obj/item/weapon/airlock_electronics/secure = 2,
+					/obj/item/weapon/module/power_control = 4,
+					/obj/item/weapon/airalarm_electronics = 4, /obj/item/weapon/firealarm_electronics = 4,
+					/obj/item/weapon/cell = 4, /obj/item/weapon/light/tube = 10, /obj/item/weapon/light/bulb = 10, /obj/item/weapon/light/tube/large = 4,
+					/obj/item/weapon/stock_parts/scanning_module = 5,/obj/item/weapon/stock_parts/micro_laser = 5,
+					/obj/item/weapon/stock_parts/matter_bin = 5,/obj/item/weapon/stock_parts/manipulator = 5,
+					/obj/item/weapon/stock_parts/console_screen = 5,/obj/item/weapon/stock_parts/capacitor = 5)
+	contraband = list(/obj/item/device/flash = 2, /obj/item/weapon/airlock_brace = 2)
+	premium = list(/obj/item/weapon/partyalarm_electronics = 1, /obj/item/weapon/cell/high = 2)
+
+/obj/machinery/vending/parts/research
+	name = "Wolfor-Spares Vendor"
+	req_access = list(access_engine,access_tox)
+	products = list(/obj/item/weapon/cell = 5,
+					/obj/item/weapon/stock_parts/capacitor = 8,/obj/item/weapon/stock_parts/scanning_module = 8,
+					/obj/item/weapon/stock_parts/micro_laser = 8,/obj/item/weapon/stock_parts/matter_bin = 8,
+					/obj/item/weapon/stock_parts/manipulator = 8,/obj/item/weapon/stock_parts/console_screen = 8)
+	contraband = list(/obj/item/device/flash = 2,/obj/item/weapon/airlock_brace = 2,/obj/item/weapon/crowbar/brace_jack = 1)
+	premium = list(/obj/item/weapon/partyalarm_electronics = 1)

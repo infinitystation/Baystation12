@@ -1042,16 +1042,19 @@
 	premium = list(/obj/item/clothing/gloves/insulated = 1)
 
 /obj/machinery/vending/engivend
-	name = "Engi-Vend"
+	name = "Devicer'O Vend"
 	desc = "Spare tool vending. What? Did you expect some witty description?"
 	icon_state = "engivend"
 	icon_deny = "engivend-deny"
 	icon_vend = "engivend-vend"
 	vend_delay = 21
 	req_one_access = list(access_atmospherics,access_engine_equip)
-	products = list(/obj/item/clothing/glasses/meson = 2,/obj/item/device/multitool = 4,/obj/item/device/geiger = 4,/obj/item/weapon/airlock_electronics = 10,/obj/item/weapon/module/power_control = 10,/obj/item/weapon/airalarm_electronics = 10,/obj/item/weapon/cell = 10,/obj/item/clamp = 10)
-	contraband = list(/obj/item/weapon/cell/high = 3)
-	premium = list(/obj/item/weapon/storage/belt/utility = 3)
+	products = list(/obj/item/device/flashlight = 3,/obj/item/device/multitool = 3,/obj/item/device/multitool/multimeter = 3,
+	/obj/item/device/geiger = 3,/obj/item/device/analyzer = 3,/obj/item/device/t_scanner = 3,
+	/obj/item/device/cable_painter = 2,/obj/item/device/floor_painter = 2,/obj/item/device/pipe_painter = 2,
+	/obj/item/clamp = 4)
+	contraband = list(/obj/item/weapon/beartrap = 2,/obj/item/weapon/rcd = 1,/obj/item/weapon/rcd_ammo = 5)
+	premium = list(/obj/item/weapon/combitool = 1)
 
 //This one's from bay12
 /obj/machinery/vending/engineering
@@ -1065,7 +1068,7 @@
 					/obj/item/weapon/cell = 8, /obj/item/weapon/weldingtool = 8,/obj/item/clothing/head/welding = 8,
 					/obj/item/weapon/light/tube = 10,/obj/item/weapon/stock_parts/scanning_module = 5,/obj/item/weapon/stock_parts/micro_laser = 5,
 					/obj/item/weapon/stock_parts/matter_bin = 5,/obj/item/weapon/stock_parts/manipulator = 5,/obj/item/weapon/stock_parts/console_screen = 5,
-					/obj/item/weapon/stock_parts/capacitor = 5)
+					/obj/item/weapon/stock_parts/capacitor = 5, /obj/item/weapon/caution/cone = 10)
 	contraband = list(/obj/item/weapon/rcd = 1, /obj/item/weapon/rcd_ammo = 5)
 	// There was an incorrect entry (cablecoil/power).  I improvised to cablecoil/heavyduty.
 	// Another invalid entry, /obj/item/weapon/circuitry.  I don't even know what that would translate to, removed it.
