@@ -30,6 +30,8 @@
 	if(atom_flags & ATOM_FLAG_CLIMBABLE)
 		object_shaken()
 
+	playsound(src,'sound/machines/Table_Fall.ogg',100,1)
+
 	return
 
 /obj/structure/table/proc/unflipping_check(var/direction)

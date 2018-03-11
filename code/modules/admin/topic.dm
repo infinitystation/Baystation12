@@ -896,7 +896,6 @@
 
 				qdel(M.client)
 				//qdel(M)	// See no reason why to delete mob. Important stuff can be lost. And ban can be lifted before round ends.
-				to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] ЖЕСТКО заблокировал(а) игрока [M.key]. Причина: [reason]. Срок - [mins] минут.</b></span>")
 			if("No")
 				if(!check_rights(R_BAN))   return
 				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
@@ -922,7 +921,6 @@
 
 				qdel(M.client)
 				//qdel(M)
-				to_world("<span class='notice'><b>BAN: Администратор [usr.client.ckey] ЖЕСТКО и НАВСЕГДА заблокировал(а) игрока [M.ckey]. Причина: [reason].</b></span>")
 			if("Cancel")
 				return
 
@@ -975,7 +973,6 @@
 				qdel(M.client)
 				M.ckey = null
 				//qdel(M)	// See no reason why to delete mob. Important stuff can be lost. And ban can be lifted before round ends.
-				to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] временно отправил(а) игрока [M.ckey] в бан-тюрьму. Причина: [reason]. Срок - [mins] минут.</b></span>")
 			if("No")
 				if(!check_rights(R_BAN))   return
 				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
@@ -1004,7 +1001,6 @@
 				qdel(M.client)
 				M.ckey = null
 				//qdel(M)
-				to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] перманентно отправил(а) игрока [M.ckey] в бан-тюрьму. Причина: [reason].</b></span>")
 			if("Cancel")
 				return
 
