@@ -8,7 +8,8 @@
 	var/skipeyes = 0
 	var/skipface = 0
 
-	user.visible_message("<small>[user] looks at [src].</small>")
+	if(!isobserver(user))
+		user.visible_message("<small>[user] looks at [src].</small>")
 
 	//exosuits and helmets obscure our view and stuff.
 	if(wear_suit)

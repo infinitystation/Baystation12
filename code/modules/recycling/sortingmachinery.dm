@@ -262,6 +262,8 @@
 	if(user in target) //no wrapping closets that you are inside - it's not physically possible
 		return
 
+	playsound(src,'sound/machines/PAPER_Fold_01_mono.ogg',100,1)
+
 	if (istype(target, /obj/item) && !(istype(target, /obj/item/weapon/storage) && !istype(target,/obj/item/weapon/storage/box)))
 		var/obj/item/O = target
 		if (src.amount > 1)

@@ -99,6 +99,7 @@
 			return 1
 		if(reagents && reagents.total_volume)
 			to_chat(user, "<span class='notice'>You splash the contents of \the [src] onto [target].</span>") //They are on harm intent, aka wanting to spill it.
+			playsound(src,'sound/effects/Splash_Small_01_mono.ogg',50,1)
 			reagents.splash(target, reagents.total_volume)
 			return 1
 	..()
