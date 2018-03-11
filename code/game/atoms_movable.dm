@@ -1,7 +1,7 @@
 /atom/movable
 	plane = OBJ_PLANE
 
-	appearance_flags = TILE_BOUND|PIXEL_SCALE
+	appearance_flags = TILE_BOUND
 	//glide_size = 8
 
 	var/movable_flags
