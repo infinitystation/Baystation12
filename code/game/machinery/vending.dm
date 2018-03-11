@@ -1054,7 +1054,7 @@
 	/obj/item/device/cable_painter = 2,/obj/item/device/floor_painter = 2,/obj/item/device/pipe_painter = 2,
 	/obj/item/clamp = 4)
 	contraband = list(/obj/item/weapon/beartrap = 2,/obj/item/weapon/rcd = 1,/obj/item/weapon/rcd_ammo = 5)
-	premium = list(/obj/item/weapon/combitool = 1)
+	premium = list(/obj/item/weapon/combitool = 1,/obj/item/weapon/wrench/power = 1,/obj/item/weapon/wirecutters/power = 1)
 
 //This one's from bay12
 /obj/machinery/vending/engineering

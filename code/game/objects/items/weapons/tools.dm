@@ -201,7 +201,7 @@
 /obj/item/weapon/wirecutters/power
 	name = "jaws of life"
 	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a cutting head."
-	icon = 'icons/obj/tools.dmi'
+	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "jaws_cutter"
 	item_state = "jawsoflife"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
@@ -724,7 +724,7 @@
 /obj/item/weapon/crowbar/power
 	name = "jaws of life"
 	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a prying head."
-	icon = 'icons/obj/tools.dmi'
+	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "jaws_pry"
 	item_state = "jawsoflife"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
