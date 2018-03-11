@@ -34,7 +34,7 @@
 			"з" = list("с", "сс", "ссс")
 		)
 	autohiss_extra_map = list(
-			"ч" = list("р", "лл")
+			"ч" = list("щ", "щщ")
 		)
 	autohiss_exempt = list(LANGUAGE_RESOMI)
 
