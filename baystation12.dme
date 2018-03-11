@@ -978,6 +978,7 @@
 #include "code\game\objects\structures\railing.dm"
 #include "code\game\objects\structures\rubble.dm"
 #include "code\game\objects\structures\safe.dm"
+#include "code\game\objects\structures\sandbag.dm"
 #include "code\game\objects\structures\shotgun_rack.dm"
 #include "code\game\objects\structures\showcase.dm"
 #include "code\game\objects\structures\signs.dm"
