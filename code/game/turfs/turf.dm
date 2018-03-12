@@ -101,12 +101,6 @@ turf/attackby(obj/item/weapon/W as obj, mob/user as mob)
 			return
 	if (do_after(user, 25 + (5 * user.weakened), incapacitation_flags = ~INCAPACITATION_FORCELYING))
 		step_towards(O, src)
-		if(ismob(O))
-			animate(O, transform = turn(O.transform, 20), time = 2)
-			sleep(2)
-			animate(O, transform = turn(O.transform, -40), time = 4)
-			sleep(4)
-			animate(O, transform = turn(O.transform, 20), time = 2)
 
 /turf/Enter(atom/movable/mover as mob|obj, atom/forget as mob|obj|turf|area)
 

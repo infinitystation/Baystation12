@@ -1464,7 +1464,7 @@
 		return
 	if(href_list["eject"])
 		if(usr != src.occupant)	return
-		playsound(src, sound('sound/mecha/ROBOTIC_Servo_Large_Dual_Servos_Open_mono.ogg',100,1))
+		playsound(src, 'sound/mecha/ROBOTIC_Servo_Large_Dual_Servos_Open_mono.ogg',100,1)
 		src.eject()
 		return
 	if(href_list["toggle_lights"])
