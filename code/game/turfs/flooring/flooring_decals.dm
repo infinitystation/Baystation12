@@ -7,7 +7,7 @@ var/list/floor_decals = list()
 	name = "floor decal"
 	icon = 'icons/turf/flooring/decals.dmi'
 	plane = ABOVE_TURF_PLANE
-	layer = 0.5
+	layer = DECAL_LAYER
 	appearance_flags = RESET_COLOR
 	var/supplied_dir
 

@@ -1,7 +1,7 @@
 #define WALL_AO_ALPHA 135
 #define AO_ALL_NEIGHBORS 1910
 
-var/list/ao_cache = list()
+GLOBAL_LIST_EMPTY(ao_cache)
 
 /turf
 	var/permit_ao
@@ -48,14 +48,14 @@ var/list/ao_cache = list()
 
 			if (corner != 7)	// 7 is the 'no shadows' state, no reason to add overlays for it.
 				var/cache_key = "[corner]-[i]"
-				var/image/I = ao_cache[cache_key]
+				var/image/I = GLOB.ao_cache[cache_key]
 				if(!I)
 					I = image('icons/turf/flooring/shadows.dmi', "[corner]", dir = 1 << (i-1))
 					I.plane = ABOVE_TURF_PLANE
 					I.layer = RUNE_LAYER + 0.1
 					I.alpha = WALL_AO_ALPHA
 					I.appearance_flags = RESET_ALPHA|RESET_COLOR|TILE_BOUND
-					ao_cache[cache_key] = I
+					GLOB.ao_cache[cache_key] = I
 
 				if(!pixel_x && !pixel_y)
 					LAZYADD(ao_overlays, I)

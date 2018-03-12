@@ -191,8 +191,6 @@
 			return global.antag_add_finished;
 		if("antag_names_to_ids_")
 			return global.antag_names_to_ids_;
-		if("ao_cache")
-			return global.ao_cache;
 		if("appearance_manager")
 			return global.appearance_manager;
 		if("area_repository")
@@ -1250,8 +1248,6 @@
 			global.antag_add_finished=newval;
 		if("antag_names_to_ids_")
 			global.antag_names_to_ids_=newval;
-		if("ao_cache")
-			global.ao_cache=newval;
 		if("appearance_manager")
 			global.appearance_manager=newval;
 		if("area_repository")
@@ -2213,7 +2209,6 @@
 	"announced_news_types",
 	"antag_add_finished",
 	"antag_names_to_ids_",
-	"ao_cache",
 	"appearance_manager",
 	"area_repository",
 	"artefact_feedback",
