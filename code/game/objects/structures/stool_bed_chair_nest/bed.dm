@@ -191,18 +191,9 @@
 	var/up_state ="up"
 	var/down_state = "down"
 	var/roller_type = /obj/item/roller
-	var/roller_step = 0
 
 /obj/structure/bed/roller/update_icon()
 	return // Doesn't care about material or anything else.
-
-/obj/structure/bed/roller/Move()
-	. = ..()
-	if(roller_step)
-		roller_step = 0
-		playsound(src.loc, 'sound/effects/rollermove.ogg', 70, 1)
-	else
-		roller_step++
 
 /obj/structure/bed/roller/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(isWrench(W) || istype(W,/obj/item/stack) || isWirecutter(W))
