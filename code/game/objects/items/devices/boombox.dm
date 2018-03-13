@@ -291,6 +291,9 @@ GLOBAL_LIST_EMPTY(boombox_list)
 	if(sound_token)
 		sound_token.SetVolume(volume)
 
+/obj/item/device/boombox/personal
+	cassette = /obj/item/device/cassette/custom
+
 /obj/item/device/cassette
 	name = "cassette"
 	desc = "A magnetic tape that can hold some information."
@@ -351,20 +354,19 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		return */
 	..()
 
-/*
 /obj/item/device/cassette/custom
 	name = "dusty casette"
 	desc = "A dusty cassette, very expensive by the way."
 
 /obj/item/device/cassette/custom/attack_self(mob/user)
-	if(isnull(sound_file))
+	if(!tracks)
 		if(setup_cassette(user))
-			log_and_message_admins("uploaded file in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the tape</a> with name \"[src.name]\"")
+			log_and_message_admins("uploaded new sound <a href='?_src_=holder;listensound=\ref[tracks.sound]'>(preview)</a> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the cassette</a> with track name \"[tracks.title]\". <A HREF='?_src_=holder;wipedata=\ref[src]'>Wipe</A> data.")
 		return
 	..()
 
 /obj/item/device/cassette/custom/proc/setup_cassette(mob/user)
-	sound_file = input(user, "Pick file:","File") as null|file
+	var/sound_file = input(user, "Pick sound:","File") as null|file
 	if(isnull(sound_file)) return 0
 
 	var/new_name = input(user, "Name the cassette:") as null|text
@@ -376,9 +378,10 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		SetName("cassette - \"[new_name]\"")
 
 	if(sound_file && new_name)
+		tracks = new /datum/track(new_name, sound_file)
 		return 1
 
-	return 0*/
+	return 0
 
 /obj/item/device/cassette/random/New()
 	icon_state = "tape_[pick("white", "blue", "red", "yellow", "purple")]"
