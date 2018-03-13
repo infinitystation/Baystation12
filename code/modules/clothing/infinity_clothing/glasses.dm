@@ -1,11 +1,10 @@
-
 /obj/item/clothing/glasses/material/hybrid
 	name = "hybrid optical scanner"
 	desc = "This scanner has several buttons on one side and the TCC logo on the other. Under the logo engraving 'Thoughts are material.' On the inside there is a pair of connectors. It seems that this thing is not for ordinary eyes."
 	icon = 'icons/obj/clothing/infinity/glasses.dmi'
 	icon_state = "hybrid_off"
 	item_state = "glasses"
-	icon_override = 'icons/mob/infinity/glasses.dmi'
+	item_icons = list(slot_glasses_str = 'icons/mob/infinity/glasses.dmi')
 	vision_flags = null
 	var/on = FALSE
 	var/mode = FALSE
