@@ -12,8 +12,8 @@
 	var/obj/item/device/cassette/disk
 
 /obj/machinery/media/music_writer/Initialize(mapload)
-	pixel_x = (dir & 3)? 0 : (dir == 4 ? -24 : 24)
-	pixel_y = (dir & 3)? (dir ==1 ? -24 : 24) : 0
+	pixel_x = (dir & 3)? 0 : (dir == 4 ? -28 : 28)
+	pixel_y = (dir & 3)? (dir ==1 ? -25 : 25) : 0
 	. = ..(mapload)
 
 /obj/machinery/media/music_writer/Process()
