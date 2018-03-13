@@ -25,7 +25,6 @@ SUBSYSTEM_DEF(stickyban)
 
 		ban["matches_this_round"] = list()
 		ban["existing_user_matches_this_round"] = list()
-		ban["admin_matches_this_round"] = list()
 		cache[ckey] = ban
 
 	for (var/bannedckey in cache)

@@ -132,6 +132,8 @@ world/IsBanned(key,address,computer_id)
 					cachedban -= "reverting"
 					world.SetConfig("ban", bannedckey, list2stickyban(cachedban))
 				return null
+
+	return .
 #endif
 #undef OVERRIDE_BAN_SYSTEM
 
