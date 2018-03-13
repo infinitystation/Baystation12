@@ -12,7 +12,7 @@
 
 /mob/proc/setMoveCooldown(var/timeout)
 	if(client)
-		client.move_delay = max(world.time + timeout, client.move_delay)
+		client.move_delay = max(timeout, client.move_delay)
 
 /client/North()
 	..()
@@ -188,12 +188,13 @@
 	if(mob.control_object)	Move_object(direct)
 
 	if(mob.incorporeal_move && isobserver(mob))
+		if (mob.glide_size)
+			mob.glide_size = 0
 		Process_Incorpmove(direct)
 		return
 
-	if(moving)	return 0
-
-	if(world.time < move_delay)	return
+	if(moving || world.time < mob.l_move_time + move_delay)
+		return 0
 
 	if(locate(/obj/effect/stop/, mob.loc))
 		for(var/obj/effect/stop/S in mob.loc)
@@ -273,7 +274,7 @@
 			to_chat(src, "<span class='notice'>You're pinned to a wall by [mob.pinned[1]]!</span>")
 			return 0
 
-		move_delay = world.time//set move delay
+		move_delay = 0
 
 		switch(mob.m_intent)
 			if("run")
@@ -324,10 +325,11 @@
 
 		//We are now going to move
 		moving = 1
+		mob.glide_size = WORLD_ICON_SIZE / max(move_delay, world.tick_lag) * world.tick_lag
 		//Something with pulling things
 		if(locate(/obj/item/grab, mob))
 			for (var/obj/item/grab/G in mob)
-				move_delay = max(move_delay, world.time + G.grab_slowdown())
+				move_delay = max(move_delay, G.grab_slowdown())
 				var/list/L = mob.ret_grab()
 				if(istype(L, /list))
 					if(L.len == 2)
