@@ -2151,6 +2151,40 @@
 		list_current_boomboxes()
 		return
 
+	if(href_list["listensound"])
+		var/sound/S = sound(locate(href_list["listensound"]))
+		if(!S)
+			return
+		S.channel = 703
+		sound_to(usr, S)
+		to_chat(usr, "<B><A HREF='?_src_=holder;stoplistensound=1'>Stop listening</A></B>")
+
+	if(href_list["stoplistensound"])
+		var/sound/S = sound(null)
+		S.channel = 703
+		sound_to(usr, S)
+
+	if(href_list["wipedata"])
+		var/obj/item/device/cassette/disk = locate(href_list["wipedata"])
+		if(!disk.tracks)
+			to_chat(usr, "This disk have no data or wiped.")
+			return
+
+		if(alert("Wipe data written by [(disk.uploader_ckey) ? disk.uploader_ckey : "<b>*NULL*</b>"]?",,"Yes", "No") == "Yes")
+			if(istype(disk.loc, /obj/machinery/media/jukebox))
+				var/obj/machinery/media/jukebox/J = disk.loc
+				if(J.current_track && J.current_track == disk.tracks)
+					J.StopPlaying()
+					J.current_track = null
+
+			if(istype(disk.loc, /obj/item/device/boombox))
+				var/obj/item/device/boombox/B = disk.loc
+				if(B.playing)
+					B.StopPlaying()
+
+			qdel(disk.tracks)
+			disk.name = "burned cassette"
+
 mob/living/proc/can_centcom_reply()
 	return 0
 
