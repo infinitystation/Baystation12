@@ -60,21 +60,22 @@
 		disk = D
 
 /obj/machinery/media/music_writer/attack_hand(mob/user)
-	var/list/dat = ""
-	if(writing)
-		dat += "Memory scan completed. <br>Writing from scan of [retard.name] mind... Please Stand By."
-	else if(!coin || !disk)
-		dat += "Please insert a coin[disk ? "" : " and disk"]."
-	else
-		dat += "<A href='?src=\ref[src];write=1'>Write</A>"
+	if(locate(user, src.loc))
+		var/list/dat = ""
+		if(writing)
+			dat += "Memory scan completed. <br>Writing from scan of [retard.name] mind... Please Stand By."
+		else if(!coin || !disk)
+			dat += "Please insert a coin[disk ? "" : " and disk"]."
+		else
+			dat += "<A href='?src=\ref[src];write=1'>Write</A>"
 
-	if(disk)
-		dat += "<br><a href='?src=\ref[src];eject=1'>Eject Disk</a>"
+		if(disk)
+			dat += "<br><a href='?src=\ref[src];eject=1'>Eject Disk</a>"
 
-	playsound(get_turf(src), 'sound/machines/console/console2.ogg', 40, 1)
+		playsound(get_turf(src), 'sound/machines/console/console2.ogg', 40, 1)
 
-	user << browse(dat, "window=musicwriter;size=200x100")
-	onclose(user, "onclose")
+		user << browse(dat, "window=musicwriter;size=200x100")
+		onclose(user, "onclose")
 	return
 
 /obj/machinery/media/music_writer/Topic(href, href_list)
