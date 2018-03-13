@@ -186,6 +186,7 @@
 #include "code\controllers\subsystems\mapping.dm"
 #include "code\controllers\subsystems\open_space.dm"
 #include "code\controllers\subsystems\skybox.dm"
+#include "code\controllers\subsystems\stickyban.dm"
 #include "code\controllers\subsystems\sun.dm"
 #include "code\controllers\subsystems\wireless.dm"
 #include "code\controllers\subsystems\xenoarch.dm"
