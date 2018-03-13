@@ -1,15 +1,11 @@
 /obj/item/clothing/glasses
 	name = "glasses"
 	icon = 'icons/obj/clothing/glasses.dmi'
-	//w_class = ITEM_SIZE_SMALL
-	//slot_flags = SLOT_EYES
-	//var/vision_flags = FALSE
-	//var/darkness_view = FALSE//Base human is 2
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/eyes.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/eyes.dmi'
 		)
-	var/hud_type = HUD_NO_HUD
+	var/hud_type
 	var/prescription = FALSE
 	var/toggleable = FALSE
 	var/off_state = "degoggles"

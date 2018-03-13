@@ -48,13 +48,13 @@
 /obj/effect/projectile/laser/omni
 	light_color = COLOR_LUMINOL
 
-/obj/effect/projectile/laser/omni/tracer//tracer
+/obj/effect/projectile/laser/omni/tracer
 	icon_state = "beam_omni"
 
-/obj/effect/projectile/laser/omni/muzzle//muzzle
+/obj/effect/projectile/laser/omni/muzzle
 	icon_state = "muzzle_omni"
 
-/obj/effect/projectile/laser/omni/impact//impact
+/obj/effect/projectile/laser/omni/impact
 	icon_state = "impact_omni"
 
 //----------------------------
@@ -144,7 +144,7 @@
 	icon_state = "impact_plasmacutter"
 
 //----------------------------
-// laser/emitter beam
+// Emitter beam
 //----------------------------
 /obj/effect/projectile/laser/emitter/
 	light_power = 3

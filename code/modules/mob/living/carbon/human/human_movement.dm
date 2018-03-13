@@ -61,6 +61,8 @@
 				tally += 0.5
 			else if(E.status & ORGAN_BROKEN)
 				tally += 1.5
+			else if(E.speed_mod)
+				tally += E.speed_mod
 
 	if(shock_stage >= 10) tally += 3
 

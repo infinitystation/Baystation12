@@ -72,6 +72,7 @@
 	var/arterial_bleed_severity = 1    // Multiplier for bleeding in a limb.
 	var/tendon_name = "tendon"         // Flavour text for Achilles tendon, etc.
 	var/cavity_name = "cavity"
+	var/speed_mod = 0
 
 	// Surgery vars.
 	var/cavity_max_w_class = 0
@@ -1020,7 +1021,13 @@ Note that amputating the affected organ does in fact remove the infection from t
 		 (R.restricted_to.len && !(species.name in R.restricted_to)) || \
 		 (R.applies_to_part.len && !(organ_tag in R.applies_to_part)))
 			R = basic_robolimb
+			brute_mod = R.brute_mod
+			burn_mod = R.burn_mod
+			speed_mod = R.speed_mod
 		else
+			speed_mod = R.speed_mod
+			brute_mod = R.brute_mod
+			burn_mod = R.burn_mod
 			model = company
 			force_icon = R.icon
 			name = "robotic [initial(name)]"

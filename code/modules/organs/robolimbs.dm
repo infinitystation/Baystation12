@@ -17,6 +17,9 @@ var/datum/robolimb/basic_robolimb
 	var/unavailable_at_chargen                           // If set, not available at chargen.
 	var/unavailable_at_fab                               // If set, cannot be fabricated.
 	var/can_eat
+	var/brute_mod = 1
+	var/speed_mod = 0
+	var/burn_mod = 1
 	var/use_eye_icon = "eyes_s"
 	var/can_feel_pain
 	var/skintone
@@ -55,10 +58,22 @@ var/datum/robolimb/basic_robolimb
 	unavailable_at_fab = 1
 
 /datum/robolimb/hephaestus/special
-	company = "Hephaestus Special"
+	company = "Hephaestus Special Partial"
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_special.dmi'
-	can_eat = null
+	applies_to_part = list(BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND, BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT)
 	use_eye_icon = "heph_eyes"
+	brute_mod = 0.7
+	burn_mod = 0.7
+	speed_mod = 0.18
+
+/datum/robolimb/hephaestus/special_full
+	company = "Hephaestus Special Full"
+	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_special.dmi'
+	use_eye_icon = "heph_eyes"
+	restricted_to = list(SPECIES_IPC)
+	brute_mod = 0.7
+	burn_mod = 0.7
+	speed_mod = 0.18
 
 /datum/robolimb/hephaestus/alt
 	company = "Hephaestus Alt."
@@ -71,7 +86,6 @@ var/datum/robolimb/basic_robolimb
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_monitor.dmi'
 	restricted_to = list(SPECIES_IPC)
 	can_eat = null
-	unavailable_at_fab = 1
 
 /datum/robolimb/zenghu
 	company = "Zeng-Hu"
@@ -119,10 +133,31 @@ var/datum/robolimb/basic_robolimb
 	unavailable_at_fab = 1
 
 /datum/robolimb/wardtakahashi/special
-	company = "Ward-Takahashi Special"
+	company = "Ward-Takahashi Special Upper"
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_special.dmi'
 	can_eat = null
 	use_eye_icon = "zenghu_eyes"
+	applies_to_part = list(BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND, BP_HEAD, BP_CHEST, BP_GROIN)
+	brute_mod = 1.2
+	burn_mod = 1.2
+	speed_mod = -0.8
+
+/datum/robolimb/wardtakahashi/special_full
+	company = "Ward-Takahashi Special Full"
+	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_special.dmi'
+	can_eat = null
+	use_eye_icon = "zenghu_eyes"
+	brute_mod = 1.2
+	burn_mod = 1.2
+	speed_mod = -0.8
+
+/datum/robolimb/wardtakahashi/running
+	company = "Ward-Takahashi Running Prosthesis"
+	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_special.dmi'
+	applies_to_part = list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT)
+	brute_mod = 1.5
+	burn_mod = 1.5
+	speed_mod = -0.20
 
 /datum/robolimb/wardtakahashi/alt
 	company = "Ward-Takahashi Alt."

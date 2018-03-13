@@ -204,8 +204,7 @@
 		else
 			visible_message("[user] collapses \the [src.name].")
 			new/obj/item/roller(get_turf(src))
-			spawn(0)
-				qdel(src)
+			QDEL_IN(src, 0)
 		return
 	..()
 
@@ -296,8 +295,7 @@
 		if(buckled_mob)	return 0
 		visible_message("[usr] collapses \the [src.name].")
 		new roller_type(get_turf(src))
-		spawn(0)
-			qdel(src)
+		QDEL_IN(src, 0)
 		return
 
 /obj/item/roller_holder/Destroy()

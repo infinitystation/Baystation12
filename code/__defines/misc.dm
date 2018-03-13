@@ -227,6 +227,11 @@
 #define SUPPLY_SECURITY_ELEVATED 1
 #define SUPPLY_SECURITY_HIGH 2
 
+// secure gun authorization settings
+#define UNAUTHORIZED      0
+#define AUTHORIZED        1
+#define ALWAYS_AUTHORIZED 2
+
 /*
 Define for getting a bitfield of adjacent turfs that meet a condition.
  ORIGIN is the object to step from, VAR is the var to write the bitfield to
@@ -272,3 +277,4 @@ Define for getting a bitfield of adjacent turfs that meet a condition.
 			}                                        \
 		}                                            \
 }
+
