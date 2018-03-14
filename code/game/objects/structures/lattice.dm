@@ -75,6 +75,12 @@
 			return
 	return
 
+/obj/structure/lattice/catwalk/hoist_act(turf/dest)
+	for (var/A in src)
+		var/atom/movable/AM = A
+		AM.forceMove(dest)
+	..()
+
 /obj/structure/lattice/proc/updateOverlays()
 	//if(!(istype(src.loc, /turf/space)))
 	//	qdel(src)

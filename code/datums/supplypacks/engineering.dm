@@ -253,3 +253,14 @@
 	containername = "\improper Engineering voidsuit crate"
 	containertype = /obj/structure/closet/crate/secure/large
 	access = access_engine
+
+/decl/hierarchy/supply_pack/engineering/hoist
+	name = "Hoist Crate"
+	contains = list(
+		/obj/item/hoist_kit,
+		/obj/item/hoist_kit,
+		/obj/item/hoist_kit
+	)
+	cost = 50
+	containertype = /obj/structure/closet/crate
+	containername = "hoist crate"
