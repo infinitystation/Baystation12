@@ -263,7 +263,7 @@ GLOBAL_LIST_EMPTY(boombox_list)
 	if(isnull(cassette))
 		return
 
-	if(!cassette.sound_file)
+	if(!cassette.tracks)
 		return
 
 	if(cassette.ruined)
@@ -271,19 +271,19 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		return
 
 	// Jukeboxes cheat massively and actually don't share id. This is only done because it's music rather than ambient noise.
-	sound_token = sound_player.PlayLoopingSound(src, sound_id, cassette.sound_file, volume = volume, range = 7, falloff = 3, prefer_mute = TRUE)
-	START_PROCESSING(SSobj, src)
+	sound_token = sound_player.PlayLoopingSound(src, sound_id, cassette.tracks.sound, volume = volume, range = 7, falloff = 3, prefer_mute = TRUE)
 
-	log_and_message_admins("launched a boombox <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> the \"[cassette.name]\".")
+	log_and_message_admins("launched a boombox <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> with the song \"[cassette.tracks.title]\".")
 
 	playing = 1
+	START_PROCESSING(SSobj, src)
 	update_icon()
 
 /obj/item/device/boombox/proc/StopPlaying()
 	playsound(get_turf(src), 'sound/machines/click.ogg')
 	playing = 0
-	update_icon()
 	STOP_PROCESSING(SSobj, src)
+	update_icon()
 	QDEL_NULL(sound_token)
 
 /obj/item/device/boombox/proc/AdjustVolume(var/new_volume)
@@ -291,8 +291,7 @@ GLOBAL_LIST_EMPTY(boombox_list)
 	if(sound_token)
 		sound_token.SetVolume(volume)
 
-// DJ Starter pack
-/obj/item/device/boombox/elite_pack
+/obj/item/device/boombox/personal
 	cassette = /obj/item/device/cassette/custom
 
 /obj/item/device/cassette
@@ -304,10 +303,11 @@ GLOBAL_LIST_EMPTY(boombox_list)
 	matter = list(DEFAULT_WALL_MATERIAL = 20, "glass" = 5)
 	force = 1
 	throwforce = 0
-
-	var/sound/sound_file = null
-
 	var/ruined = 0
+	var/can_be_rewrited = TRUE
+
+	var/list/datum/track/tracks
+	var/uploader_ckey
 
 /obj/item/device/cassette/update_icon()
 	overlays.Cut()
@@ -337,21 +337,21 @@ GLOBAL_LIST_EMPTY(boombox_list)
 			to_chat(user, "<span class='notice'>You wound the cassette back in.</span>")
 			fix()
 		return
-	else
-		if(istype(I, /obj/item/weapon/pen))
-			if(loc == user && !user.incapacitated())
-				var/new_name = input(user, "What would you like to label the cassette?", "Cassette labeling") as null|text
-				if(isnull(new_name)) return
+	/*
+	if(istype(I, /obj/item/weapon/pen))
+		if(loc == user && !user.incapacitated())
+			var/new_name = input(user, "What would you like to label the cassette?", "Cassette labeling") as null|text
+			if(isnull(new_name)) return
 
-				new_name = sanitizeSafe(new_name)
+			new_name = sanitizeSafe(new_name)
 
-				if(new_name)
-					SetName("cassette - \"[new_name]\"")
-					to_chat(user, "<span class='notice'>You label the cassette '[new_name]'.</span>")
-				else
-					SetName("cassette")
-					to_chat(user, "<span class='notice'>You scratch off the label.</span>")
-		return
+			if(new_name)
+				SetName("cassette - \"[new_name]\"")
+				to_chat(user, "<span class='notice'>You label the cassette '[new_name]'.</span>")
+			else
+				SetName("cassette")
+				to_chat(user, "<span class='notice'>You scratch off the label.</span>")
+		return */
 	..()
 
 /obj/item/device/cassette/custom
@@ -359,14 +359,14 @@ GLOBAL_LIST_EMPTY(boombox_list)
 	desc = "A dusty cassette, very expensive by the way."
 
 /obj/item/device/cassette/custom/attack_self(mob/user)
-	if(isnull(sound_file))
+	if(!tracks)
 		if(setup_cassette(user))
-			log_and_message_admins("uploaded file in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the tape</a> with name \"[src.name]\"")
+			log_and_message_admins("uploaded new sound <a href='?_src_=holder;listensound=\ref[tracks.sound]'>(preview)</a> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the cassette</a> with track name \"[tracks.title]\". <A HREF='?_src_=holder;wipedata=\ref[src]'>Wipe</A> data.")
 		return
 	..()
 
 /obj/item/device/cassette/custom/proc/setup_cassette(mob/user)
-	sound_file = input(user, "Pick file:","File") as null|file
+	var/sound_file = input(user, "Pick sound:","File") as null|file
 	if(isnull(sound_file)) return 0
 
 	var/new_name = input(user, "Name the cassette:") as null|text
@@ -378,6 +378,7 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		SetName("cassette - \"[new_name]\"")
 
 	if(sound_file && new_name)
+		tracks = new /datum/track(new_name, sound_file)
 		return 1
 
 	return 0
@@ -389,8 +390,10 @@ GLOBAL_LIST_EMPTY(boombox_list)
 
 /obj/item/device/cassette/title2
 	name = "Title 2"
-	sound_file = 'sound/music/title2.ogg'
+	tracks = new /datum/track("Title 2", 'sound/music/title2.ogg')
+	can_be_rewrited = FALSE
 
 /obj/item/device/cassette/clouds
 	name = "Clouds"
-	sound_file = 'sound/music/clouds.s3m'
+	tracks = new /datum/track("Clouds of Fire", 'sound/music/clouds.s3m')
+	can_be_rewrited = FALSE
