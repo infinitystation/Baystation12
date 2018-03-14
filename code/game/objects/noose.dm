@@ -1,4 +1,3 @@
-//nooses from aurora station
 /obj/item/stack/cable_coil/verb/make_noose()
 	set name = "Make Noose"
 	set category = "Object"
@@ -9,6 +8,10 @@
 		if(!(locate(/obj/item/weapon/stool) in usr.loc) && !(locate(/obj/structure/bed) in usr.loc) && !(locate(/obj/structure/table) in usr.loc) && !(locate(/obj/structure/toilet) in usr.loc))
 			to_chat(usr, "<span class='warning'>You have to be standing on top of a chair/table/bed to make a noose!</span>")
 			return 0
+		var/turf/above = GetAbove(get_turf(src))
+		if(above && isopenspace(above))
+			to_chat(usr, "<span class='warning'>There no roof above us, we can't make noose without without surface.</span>")
+			return
 		if(src.amount <= 24)
 			to_chat(usr, "<span class='warning'> You need at least 25 lengths to make a noose!</span>")
 			return
@@ -19,7 +22,7 @@
 		to_chat(usr, "<span class='notice'>You cannot do that.</span>")
 	..()
 
-/obj/structure/noose
+/obj/structure/noose // From Aurora
 	name = "noose"
 	desc = "A morbid apparatus."
 	icon_state = "noose"
@@ -52,20 +55,20 @@
 	over.layer = MOB_LAYER + 0.1
 
 /obj/structure/noose/Destroy()
-	GLOB.processing_objects -= src
+	STOP_PROCESSING(SSobj, src)
 	return ..()
 
 /obj/structure/noose/post_buckle_mob(mob/living/M)
 	if(M == buckled_mob)
 		layer = MOB_LAYER
 		overlays += over
-		GLOB.processing_objects |= src
+		START_PROCESSING(SSobj, src)
 		M.pixel_y = initial(M.pixel_y) + 8 //rise them up a bit
 		M.dir = SOUTH
 	else
 		layer = initial(layer)
 		overlays -= over
-		GLOB.processing_objects -= src
+		STOP_PROCESSING(SSobj, src)
 		pixel_x = initial(pixel_x)
 		M.pixel_x = initial(M.pixel_x)
 		M.pixel_y = initial(M.pixel_y)
@@ -143,9 +146,9 @@
 				"<span class='warning'>You fail to tie \the [src] over [M]'s neck!</span>")
 			return 0
 
-/obj/structure/noose/process(mob/living/carbon/human/M, mob/user)
+/obj/structure/noose/Process(mob/living/carbon/human/M, mob/user)
 	if(!buckled_mob)
-		GLOB.processing_objects -= src
+		STOP_PROCESSING(SSobj, src)
 		buckled_mob.pixel_x = initial(buckled_mob.pixel_x)
 		pixel_x = initial(pixel_x)
 		return
@@ -162,6 +165,10 @@
 			pixel_x += 1
 			buckled_mob.pixel_x += 1
 			if(buckled_mob)
+				if (ishuman(buckled_mob))
+					var/mob/living/carbon/human/H = buckled_mob
+					if (!H.can_feel_pain() || H.isSynthetic())
+						return
 				if(prob(15))
 					var/flavor_text = list("<span class='warning'>[buckled_mob]'s legs flail for anything to stand on.</span>",\
 											"<span class='warning'>[buckled_mob]'s hands are desperately clutching the noose.</span>",\
@@ -177,6 +184,10 @@
 			ticks = 0
 
 	if(buckled_mob)
+		if (ishuman(buckled_mob))
+			var/mob/living/carbon/human/H = buckled_mob
+			if (!H.can_feel_pain() || H.isSynthetic())
+				return
 		buckled_mob.adjustOxyLoss(5)
 		buckled_mob.adjustBrainLoss(1)
 		buckled_mob.silent = max(buckled_mob.silent, 10)
