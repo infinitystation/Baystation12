@@ -554,7 +554,12 @@
 	ex_act(1)
 	if(!QDELETED(src))
 		qdel(src)//Just as a failsafe
+		return
 
+/obj/item/crush_act()
+	..()
+	new /obj/item/stack/sheet/refined_scrap(loc)
+	qdel(src)
 
 #undef PISTON_MOVE_DAMAGE
 #undef PISTON_MOVE_DIVISOR
