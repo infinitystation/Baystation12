@@ -97,10 +97,21 @@
 /obj/machinery/crusher_base/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(status != "idle" && prob(40) && ishuman(user))
 		var/mob/living/carbon/human/M = user
-		M.apply_damage(45, BRUTE, user.get_active_hand())
-		M.apply_damage(45, PAIN)
-		M.visible_message("<span class='danger'>[user]'s hand catches in the [src]!</span>", "<span class='danger'>Your hand gets caught in the [src]!</span>")
-		M.say("*scream")
+		var/prot = 0
+
+		if(M.getSpeciesOrSynthTemp(HEAT_LEVEL_1) > 400)
+			prot = 1
+		else if(M.gloves)
+			var/obj/item/clothing/gloves/G = M.gloves
+			if(G.max_heat_protection_temperature)
+				if(G.max_heat_protection_temperature > 400)
+					prot = 1
+
+		if(prot == 0 || !(COLD_RESISTANCE in user.mutations))
+			M.apply_damage(45, BRUTE, user.get_active_hand())
+			M.apply_damage(45, PAIN)
+			M.visible_message("<span class='danger'>[user]'s hand catches in the [src]!</span>", "<span class='danger'>Your hand gets caught in the [src]!</span>")
+			M.say("*scream")
 		return
 	if(default_deconstruction_screwdriver(user, O))
 		return
@@ -172,6 +183,10 @@
 			overlays += make_screen_overlay(icon, "[asmtype]-overlay-green")
 	if(panel_open)
 		overlays += image(icon, "[asmtype]-hatch")
+
+	var/turf/above = GetAbove(get_turf(src))
+	if(above && isopenspace(above))
+		above.update_icon()
 
 /obj/machinery/crusher_base/power_change()
 	..()
@@ -388,6 +403,7 @@
 /obj/machinery/crusher_piston/Initialize()
 	. = ..()
 
+	update_turf_above()
 	// Setup the immovable items typecache.
 	// 	(We only want to do this once as this is a huge list.)
 	if(!LAZYLEN(immovable_items))
@@ -402,12 +418,14 @@
 	reset_blockers()
 	if(!QDELETED(crs_base))
 		QDEL_NULL(crs_base)
+	update_turf_above()
 	return ..()
 
 /obj/machinery/crusher_piston/proc/reset_blockers()
 	QDEL_NULL(pb1)
 	QDEL_NULL(pb2)
 	QDEL_NULL(pb3)
+	update_turf_above()
 
 /obj/machinery/crusher_piston/proc/extend_0_1()
 	use_power(5 KILOWATTS)
@@ -416,6 +434,7 @@
 		return 0
 	icon_state="piston_0_1"
 	stage = 1
+	update_turf_above()
 	pb1 = new(loc)
 	for(var/atom/movable/AM in get_turf(loc))
 		crs_base.items_to_move += AM
@@ -429,6 +448,7 @@
 		return 0
 	icon_state="piston_1_2"
 	stage = 2
+	update_turf_above()
 	pb2 = new(get_step(T,SOUTH))
 	for(var/atom/movable/AM in extension_turf)
 		crs_base.items_to_move += AM
@@ -442,6 +462,7 @@
 		return 0
 	icon_state="piston_2_3"
 	stage = 3
+	update_turf_above()
 	pb3 = new(get_step(T,SOUTH))
 	for(var/atom/movable/AM in extension_turf)
 		crs_base.items_to_move += AM
@@ -450,14 +471,17 @@
 /obj/machinery/crusher_piston/proc/retract_3_0()
 	icon_state="piston_3_0"
 	stage = 0
+	update_turf_above()
 	reset_blockers()
 /obj/machinery/crusher_piston/proc/retract_2_0()
 	icon_state="piston_2_0"
 	stage = 0
+	update_turf_above()
 	reset_blockers()
 /obj/machinery/crusher_piston/proc/retract_1_0()
 	icon_state="piston_1_0"
 	stage = 0
+	update_turf_above()
 	reset_blockers()
 
 /obj/machinery/crusher_piston/proc/can_extend_into(var/turf/extension_turf)
@@ -468,6 +492,11 @@
 		if(is_type_in_typecache(A, immovable_items))
 			return 0
 	return 1
+
+/obj/machinery/crusher_piston/proc/update_turf_above()
+	var/turf/above = GetAbove(get_turf(src))
+	if(above && isopenspace(above))
+		above.update_icon()
 
 /obj/effect/piston_blocker
 	name = "trash compactor piston"
