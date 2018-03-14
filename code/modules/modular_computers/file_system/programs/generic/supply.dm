@@ -49,9 +49,9 @@
 			data["credits_crates"] = supply_controller.point_sources["crate"] ? supply_controller.point_sources["crate"] : 0
 			data["credits_phoron"] = supply_controller.point_sources["phoron"] ? supply_controller.point_sources["phoron"] : 0
 			data["credits_platinum"] = supply_controller.point_sources["platinum"] ? supply_controller.point_sources["platinum"] : 0
-			data["credits_refined_scrap"] = supply_controller.point_sources["refined_scrap"] ? supply_controller.point_sources["refined_scrap"] : 0
 			data["credits_paperwork"] = supply_controller.point_sources["manifest"] ? supply_controller.point_sources["manifest"] : 0
 			data["credits_virology"] = supply_controller.point_sources["virology"] ? supply_controller.point_sources["virology"] : 0
+			data["credits_refined_scrap"] = supply_controller.point_sources["refined_scrap"] ? supply_controller.point_sources["refined_scrap"] : 0
 			data["can_print"] = can_print()
 
 		if(3)// Shuttle monitoring and control

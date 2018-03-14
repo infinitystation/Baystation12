@@ -116,8 +116,8 @@ var/list/point_source_descriptions = list(
 	"crate" = "From exported crates",
 	"phoron" = "From exported phoron",
 	"platinum" = "From exported platinum",
-	"refined_scrap" = "From exported refined scrap",
 	"virology" = "From uploaded antibody data",
+	"refined_scrap" = "From exported refined scrap",
 	"total" = "Total" // If you're adding additional point sources, add it here in a new line. Don't forget to put a comma after the old last line.
 	)
 
@@ -134,7 +134,7 @@ var/list/point_source_descriptions = list(
 	var/points_per_slip = 2
 	var/points_per_platinum = 5 // 5 points per sheet
 	var/points_per_phoron = 5
-	var/points_per_refined_scrap = 2
+	var/points_per_refined_scrap = 5
 	var/point_sources = list()
 	var/pointstotalsum = 0
 	var/pointstotal = 0
@@ -212,7 +212,7 @@ var/list/point_source_descriptions = list(
 							switch(P.get_material_name())
 								if("phoron") phoron_count += P.get_amount()
 								if("platinum") plat_count += P.get_amount()
-						else if(istype(A, /obj/item/stack/sheet/refined_scrap))
+						if(istype(A, /obj/item/stack/sheet/refined_scrap))
 							var/obj/item/stack/P = A
 							scrap_count = P.get_amount()
 				qdel(MA)
