@@ -5,7 +5,7 @@
 	size = 8
 	requires_ntnet = 0
 	available_on_ntnet = 0
-	required_access = access_cargo
+	required_access = list(access_cargo, access_janitor)
 	usage_flags = PROGRAM_TELESCREEN
 	nanomodule_path = /datum/nano_module/program/crushercontrol/
 
@@ -93,16 +93,19 @@
 
 
 /datum/nano_module/program/crushercontrol/proc/airlock_open()
-	for(var/obj/machinery/door/airlock/arlk in airlocks)
-		arlk.unlock()
-		arlk.open()
-		arlk.lock()
+	for(var/thing in airlocks)
+		var/obj/machinery/door/airlock/arlk = thing
+		if (!arlk.cur_command)
+			// Not using do_command so that the command queuer works.
+			arlk.cur_command = "secure_open"
+			arlk.execute_current_command()
 
 /datum/nano_module/program/crushercontrol/proc/airlock_close()
-	for(var/obj/machinery/door/airlock/arlk in airlocks)
-		arlk.unlock()
-		arlk.close()
-		arlk.lock()
+	for(var/thing in airlocks)
+		var/obj/machinery/door/airlock/arlk = thing
+		if (!arlk.cur_command)
+			arlk.cur_command = "secure_close"
+			arlk.execute_current_command()
 
 /datum/nano_module/program/crushercontrol/proc/crush_start()
 	for(var/obj/machinery/crusher_base/pstn in pistons)

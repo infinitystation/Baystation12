@@ -165,11 +165,11 @@
 
 	if(powered(EQUIP))
 		if(blocked == 1)
-			make_screen_overlay('icons/obj/machines/crusherbase.dmi', "[asmtype]-overlay-red")
+			overlays += make_screen_overlay(icon, "[asmtype]-overlay-red")
 		else if(action != "idle")
-			make_screen_overlay('icons/obj/machines/crusherbase.dmi', "[asmtype]-overlay-orange")
+			overlays += make_screen_overlay(icon, "[asmtype]-overlay-orange")
 		else
-			make_screen_overlay('icons/obj/machines/crusherbase.dmi', "[asmtype]-overlay-green")
+			overlays += make_screen_overlay(icon, "[asmtype]-overlay-green")
 	if(panel_open)
 		overlays += image(icon, "[asmtype]-hatch")
 
