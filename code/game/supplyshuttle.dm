@@ -116,7 +116,7 @@ var/list/point_source_descriptions = list(
 	"crate" = "From exported crates",
 	"phoron" = "From exported phoron",
 	"platinum" = "From exported platinum",
-	"refined scrap" = "From exported refined scrap",
+	"refined_scrap" = "From exported refined scrap",
 	"virology" = "From uploaded antibody data",
 	"total" = "Total" // If you're adding additional point sources, add it here in a new line. Don't forget to put a comma after the old last line.
 	)
@@ -227,7 +227,7 @@ var/list/point_source_descriptions = list(
 
 		if(scrap_count)
 			var/temp = scrap_count * points_per_refined_scrap
-			add_points_from_source(temp, "refined scrap")
+			add_points_from_source(temp, "refined_scrap")
 	//Buyin
 	proc/buy()
 		if(!shoppinglist.len) return
