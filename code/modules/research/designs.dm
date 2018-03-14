@@ -2159,6 +2159,13 @@ CIRCUITS BELOW
 	build_path = /obj/item/weapon/circuitboard/replicator
 	sort_string = "WAAAR"
 
+/datum/design/circuit/crusher_base
+	name = "trash compactor"
+	id = "crusher_base"
+	req_tech = list(TECH_ENGINEERING = 3, TECH_DATA = 1, TECH_MAGNET = 1, TECH_MATERIALS = 3)
+	build_path = /obj/item/weapon/circuitboard/crusher
+	sort_string = "WAAAB"
+
 /datum/design/circuit/aicore
 	name = "AI core"
 	id = "aicore"
