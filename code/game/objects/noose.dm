@@ -10,7 +10,7 @@
 			return 0
 		var/turf/above = GetAbove(get_turf(src))
 		if(above && isopenspace(above))
-			to_chat(usr, "<span class='warning'>There no roof above us, we can't make noose without without surface.</span>")
+			to_chat(usr, "<span class='warning'>There no roof above us, we can't make noose without surface.</span>")
 			return
 		if(src.amount <= 24)
 			to_chat(usr, "<span class='warning'> You need at least 25 lengths to make a noose!</span>")
