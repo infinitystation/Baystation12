@@ -140,17 +140,7 @@ var/datum/robolimb/basic_robolimb
 	applies_to_part = list(BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND, BP_HEAD, BP_CHEST, BP_GROIN)
 	brute_mod = 1.2
 	burn_mod = 1.2
-	speed_mod = -0.08
-
-/datum/robolimb/wardtakahashi/special_full
-	company = "Ward-Takahashi Special Full"
-	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_special.dmi'
-	can_eat = null
-	use_eye_icon = "zenghu_eyes"
-	restricted_to = list(SPECIES_IPC)
-	brute_mod = 1.2
-	burn_mod = 1.2
-	speed_mod = -0.12
+	speed_mod = -0.05
 
 /datum/robolimb/wardtakahashi/running
 	company = "Ward-Takahashi Running Prosthesis"
@@ -158,7 +148,7 @@ var/datum/robolimb/basic_robolimb
 	applies_to_part = list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT)
 	brute_mod = 1.5
 	burn_mod = 1.5
-	speed_mod = -0.20
+	speed_mod = -0.16
 
 /datum/robolimb/wardtakahashi/alt
 	company = "Ward-Takahashi Alt."
