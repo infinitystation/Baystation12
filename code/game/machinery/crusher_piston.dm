@@ -557,7 +557,6 @@
 		return
 
 /obj/item/crush_act()
-	..()
 	new /obj/item/stack/sheet/refined_scrap(loc)
 	qdel(src)
 

@@ -298,7 +298,7 @@
 		status_overlays_equipment[POWERCHAN_OFF_TEMP + 1] = make_screen_overlay(icon, "apco0-1")
 		status_overlays_equipment[POWERCHAN_OFF_AUTO + 1] = make_screen_overlay(icon, "apco0-1")
 		status_overlays_equipment[POWERCHAN_ON + 1] = make_screen_overlay(icon, "apco0-2")
-		status_overlays_equipment[POWERCHAN_ON_AUTO + 1] = image(icon, "apco0-3")
+		status_overlays_equipment[POWERCHAN_ON_AUTO + 1] = make_screen_overlay(icon, "apco0-3")
 
 		status_overlays_lighting[POWERCHAN_OFF + 1] = make_screen_overlay(icon, "apco1-0")
 		status_overlays_lighting[POWERCHAN_OFF_TEMP + 1] = make_screen_overlay(icon, "apco1-1")
