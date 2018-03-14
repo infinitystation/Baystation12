@@ -2288,7 +2288,6 @@ CIRCUITS BELOW
 	build_path = /obj/item/weapon/aiModule/tyrant
 	sort_string = "XACAD"
 
-
 // Infinity's designs list
 
 /datum/design/item/optical/material
