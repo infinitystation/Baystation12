@@ -1,6 +1,6 @@
-/obj/machinery/telepad
-	name = "telepad"
-	desc = "A bluespace telepad used for teleporting objects to and from a location."
+/obj/machinery/cargopad
+	name = "cargo telepad"
+	desc = "A telepad used by the Rapid Crate Sender."
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "cpad-idle"
 	var/pad_type = "cpad"
@@ -11,7 +11,7 @@
 	idle_power_usage = 200
 	active_power_usage = 5000
 
-/obj/machinery/telepad/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/machinery/cargopad/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/weapon/wrench))
 		playsound(src, 'sound/items/Ratchet.ogg', 50, 1)
 		if(do_after(user, 20, src))
@@ -33,18 +33,7 @@
 			new /obj/item/stack/material/glass(get_turf(src))
 			qdel(src)
 
-///SCI TELEPAD///
-/obj/machinery/telepad/science
-	name = "telescience telepad"
-	icon_state = "qpad-idle"
-	pad_type = "qpad"
-
-//CARGO TELEPAD//
-/obj/machinery/telepad/cargo
-	name = "cargo telepad"
-	desc = "A telepad used by the Rapid Crate Sender."
-
-/obj/machinery/telepad/cargo/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/machinery/cargopad/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/weapon/rcs))
 		var/obj/item/weapon/rcs/rcs = W
 		if(isnull(rcs.pad) || rcs.emagged)
@@ -68,7 +57,7 @@
 /obj/item/device/telepad_beacon/attack_self(mob/user as mob)
 	if(user)
 		to_chat(user, "<span class = 'notice'>Locked In</span>")
-		new /obj/machinery/telepad/cargo(user.loc)
+		new /obj/machinery/cargopad(user.loc)
 		playsound(src, 'sound/effects/pop.ogg', 100, 1, 1)
 		user.drop_item()
 		qdel(src)
@@ -90,7 +79,7 @@
 	throw_speed = 1
 	throw_range = 5
 	var/charge = 100
-	var/obj/machinery/telepad/cargo/pad = null
+	var/obj/machinery/cargopad/pad = null
 	var/mode = 0
 	var/emagged = FALSE
 	var/teleporting = FALSE
@@ -118,7 +107,7 @@
 	if(!istype(target))
 		return
 
-	if(istype(target, /obj/machinery/telepad))
+	if(istype(target, /obj/machinery/cargopad))
 		return
 
 	if(teleporting)
@@ -126,25 +115,29 @@
 
 	var/turf/T = get_turf(src)
 	if(isnull(pad))
-		T.audible_message("<font color=Maroon><B>Rapid-Crate-Sender Assistant</B>: ERROR - Cargo pad is not linked with device.</font>")
+		T.audible_message("<font color=Maroon><b>Rapid Crate Sender Assistant</b></font> says, \"ERROR - Cargo pad is not linked with device.\"")
 		return
 
 	if(!(locate(pad) in SSmachines.machinery))
-		T.audible_message("<font color=Maroon><B>Rapid-Crate-Sender Assistant</B>: ERROR - Unable to locate linked cargo pad.</font>")
+		T.audible_message("<font color=Maroon><b>Rapid Crate Sender Assistant</b></font> says, \"ERROR - Unable to locate linked cargo pad.\"")
+		return
+
+	if(!istype(target, /obj/structure/closet))
+		T.audible_message("<font color=Maroon><b>Rapid Crate Sender Assistant</b></font> says, \"ERROR - This object is blacklisted and can't be send.\"")
 		return
 
 	if(target.anchored)
-		T.audible_message("<font color=Maroon><B>Rapid-Crate-Sender Assistant</B>: ERROR - This object is immovable and can't be send.</font>")
+		T.audible_message("<font color=Maroon><b>Rapid Crate Sender Assistant</b></font> says, \"ERROR - This object is immovable and can't be send.\"")
 		return
 
 	if(charge < 25)
-		T.audible_message("<font color=Maroon><B>Rapid-Crate-Sender Assistant</B>: ERROR - Charge is too low to use send function.</font>")
+		T.audible_message("<font color=Maroon><b>Rapid Crate Sender Assistant</b></font> says, \"ERROR - Charge is too low to use send function.\"")
 		return
 	else
 		teleporting = TRUE
 		var/time_to_send = 30 + (10 * w_class)
 		if(do_after(user, time_to_send, target))
-			T.audible_message("<font color=Maroon><B>Rapid-Crate-Sender Assistant</B>: The marking was successful, the target will be sent in a few seconds.</font>")
+			T.audible_message("<font color=Maroon><b>Rapid Crate Sender Assistant</b></font> says, \"The marking was successful, the target will be sent in a few seconds.\"")
 			if(send(target))
 				charge -= 50
 		teleporting = FALSE
@@ -153,7 +146,7 @@
 /obj/item/weapon/rcs/proc/send(var/obj/target as obj)
 	if(target)
 		var/turf/T = get_turf(pad)
-		T.audible_message("<font color=Maroon><B>Cargo Pad System</B>: Warning, incoming package detected.</font>")
+		T.audible_message("<font color=Maroon><b>Cargo Pad System</b></font> says, \"Warning, incoming package detected.\"")
 		sleep(25)
 
 		playsound(get_turf(target), 'sound/items/goggles_charge.ogg', 50)
