@@ -106,3 +106,8 @@
 			spawn(0)
 				sleep(5)
 				icon_state = initial(icon_state)
+
+/obj/structure/filingcabinet/ids
+	name = "access card cabinet"
+	desc = "A large cabinet with access cards."
+	can_hold = list(/obj/item/weapon/card/id)
