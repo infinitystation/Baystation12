@@ -71,6 +71,7 @@
 		if(!on && !mode)
 			flash_protection = FLASH_PROTECTION_MAJOR
 			vision_flags = null
+			tint = TINT_MODERATE
 			icon_state = "hybrid_weld"
 			on = !on
 			to_chat(user, "You switch \the [src] to welding protection mode.")
@@ -78,6 +79,7 @@
 		if(on && !mode)
 			flash_protection = FLASH_PROTECTION_NONE
 			vision_flags = SEE_OBJS
+			tint = TINT_NONE
 			icon_state = "hybrid_mat"
 			mode = !mode
 			to_chat(user, "You switch \the [src] to material mode.")
