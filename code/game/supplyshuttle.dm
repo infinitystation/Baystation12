@@ -214,7 +214,7 @@ var/list/point_source_descriptions = list(
 								if("platinum") plat_count += P.get_amount()
 						if(istype(A, /obj/item/stack/sheet/refined_scrap))
 							var/obj/item/stack/P = A
-							scrap_count = P.get_amount()
+							scrap_count += P.get_amount()
 				qdel(MA)
 
 		if(phoron_count)
