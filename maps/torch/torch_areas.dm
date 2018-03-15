@@ -635,6 +635,11 @@
 	name = "\improper Auxiliary Engineering Hard Storage"
 	icon_state = "engineering_storage"
 
+/area/engineering/gravity_gen
+	name = "\improper Gravity Generator"
+	icon_state = "engine"
+	sound_env = SMALL_ENCLOSED
+
 //Vacant Areas
 /area/vacant
 	name = "\improper Vacant Area"

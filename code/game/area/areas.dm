@@ -33,6 +33,10 @@
 		power_light = 0
 		power_equip = 0
 		power_environ = 0
+	if(alwaysgravity == TRUE)
+		has_gravity = 1
+	else if(nevergravity == TRUE)
+		has_gravity = 0
 	power_change()		// all machines set to current power level, also updates lighting icon
 
 /area/proc/get_contents()
@@ -381,8 +385,13 @@ var/list/mob/living/forced_ambiance_list = new
 	if(!T)
 		T = get_turf(AT)
 	var/area/A = get_area(T)
-	if(A && A.has_gravity())
+	if(istype(T, /turf/space)) //because space
+		return 0
+	else if(A && A.has_gravity)
 		return 1
+	else
+		if(T && length(SSmachines.gravity_generators))
+			return 1
 	return 0
 
 /area/proc/get_dimensions()
