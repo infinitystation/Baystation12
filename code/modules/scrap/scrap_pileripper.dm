@@ -51,10 +51,7 @@
 			break
 		if(istype(ripped_item, /obj/structure/rubble))
 			var/obj/structure/rubble/pile = ripped_item
-			new /obj/item/weapon/scrap_lump(pile.loc)
-			new /obj/item/weapon/scrap_lump(pile.loc)
-			new /obj/item/weapon/scrap_lump(pile.loc)
-			qdel(pile)
+			pile.crush_act()
 			count++
 		else if(istype(ripped_item, /obj/item))
 			ripped_item.forceMove(src.loc)

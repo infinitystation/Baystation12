@@ -7,9 +7,10 @@
 	icon = 'icons/obj/scrap/refine.dmi'
 
 /obj/structure/scrap_cube/crush_act()
-	new /obj/item/weapon/scrap_lump(loc)
-	new /obj/item/weapon/scrap_lump(loc)
-	new /obj/item/weapon/scrap_lump(loc)
+	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+	for(var/obj/structure/rubble/r in contents)
+		for(var/i in 1, i < r.lootleft, i++)
+			new /obj/item/weapon/scrap_lump(loc)
 	qdel(src)
 
 /obj/structure/scrap_cube/proc/make_pile()
@@ -18,9 +19,9 @@
 	qdel(src)
 
 /obj/structure/scrap_cube/Initialize(mapload, size = -1)
+	. = ..()
 	if(size < 0)
 		new /obj/structure/rubble/house(src)
-	. = ..()
 
 /obj/structure/scrap_cube/attackby(obj/item/W, mob/user)
 	user.do_attack_animation(src)

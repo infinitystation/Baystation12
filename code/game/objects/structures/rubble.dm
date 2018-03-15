@@ -93,6 +93,12 @@
 	var/obj/container = new /obj/structure/scrap_cube(loc, lootleft)
 	forceMove(container)
 
+/obj/structure/rubble/crush_act()
+	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+	for(var/i in 1, i < lootleft, i++)
+		new /obj/item/weapon/scrap_lump(loc)
+	qdel(src)
+
 /obj/structure/rubble/house
 	loot = list(/obj/item/weapon/archaeological_find/bowl,
 	/obj/item/weapon/archaeological_find/remains/,
