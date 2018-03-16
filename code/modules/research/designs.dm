@@ -2291,7 +2291,7 @@ CIRCUITS BELOW
 // Infinity's designs list
 
 /datum/design/item/optical/material
-	name = "hybrid"
+	name = "advanced material glasses"
 	id = "hybrid_mw"
 	req_tech = list(TECH_MAGNET = 4, TECH_ENGINEERING = 5)
 	materials = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 50, "silver" = 100)

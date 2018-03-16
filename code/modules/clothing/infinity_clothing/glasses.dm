@@ -1,5 +1,5 @@
 /obj/item/clothing/glasses/material/hybrid
-	name = "advanced material glasses prototype"
+	name = "advanced optical material scanner"
 	desc = "Prototype hybrid glasses with toggleable welding shielding"
 	icon = 'icons/obj/clothing/infinity/glasses.dmi'
 	icon_state = "hybrid_off"
