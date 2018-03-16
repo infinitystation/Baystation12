@@ -23,7 +23,8 @@
 		/obj/item/weapon/folder,
 		/obj/item/weapon/photo,
 		/obj/item/weapon/paper_bundle,
-		/obj/item/weapon/sample)
+		/obj/item/weapon/sample,
+		/obj/item/weapon/card)
 
 /obj/structure/filingcabinet/chestdrawer
 	name = "chest drawer"
@@ -106,8 +107,3 @@
 			spawn(0)
 				sleep(5)
 				icon_state = initial(icon_state)
-
-/obj/structure/filingcabinet/ids
-	name = "access card cabinet"
-	desc = "A large cabinet with access cards."
-	can_hold = list(/obj/item/weapon/card/id)
