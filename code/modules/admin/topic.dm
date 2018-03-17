@@ -2110,45 +2110,45 @@
 	if(href_list["stickyban"])
 		stickyban(href_list["stickyban"],href_list)
 
-	if(href_list["play_boombox"])
+	if(href_list["pmp_play"])
 		if(!check_rights(R_ADMIN|R_FUN, 0, usr))
 			return
 
-		var/obj/item/device/boombox/B = locate(href_list["play_boombox"])
-		if(!B)
+		var/obj/item/device/pmp/pmp = locate(href_list["pmp_play"])
+		if(!pmp)
 			return
 
-		B.attack_self(usr)
-		list_current_boomboxes()
+		pmp.attack_self(usr)
+		pmp_control_panel()
 		return
 
-	if(href_list["boombox_volume"])
+	if(href_list["pmp_volume"])
 		if(!check_rights(R_ADMIN|R_FUN, 0, usr))
 			return
 
-		var/obj/item/device/boombox/B = locate(href_list["boombox_volume"])
-		if(!B)
+		var/obj/item/device/pmp/pmp = locate(href_list["pmp_volume"])
+		if(!pmp)
 			return
 
-		var/vol = input(usr, "What volume would you like the sound to play at? (maximum number is 50)",, B.volume) as null|num
+		var/vol = input(usr, "What volume would you like the sound to play at? (maximum number is 50)",, pmp.volume) as null|num
 		if(vol)
-			B.AdjustVolume(vol)
-		list_current_boomboxes()
+			pmp.AdjustVolume(vol)
+		pmp_control_panel()
 		return
 
-	if(href_list["explode_boombox"])
+	if(href_list["pmp_explode"])
 		if(!check_rights(R_ADMIN|R_FUN, 0, usr))
 			return
 
-		var/obj/item/device/boombox/B = locate(href_list["explode_boombox"])
-		if(!B)
+		var/obj/item/device/pmp/pmp = locate(href_list["pmp_explode"])
+		if(!pmp)
 			return
 
 		switch(alert("Do you really want explode this?",,"Yes","No"))
 			if("Yes")
-				B.explode()
-				log_and_message_admins("launched self-destruction mechanism in boombox <a href='?_src_=holder;adminplayerobservefollow=\ref[B]'>#[B.serial_number]</a>.")
-		list_current_boomboxes()
+				pmp.explode()
+				log_and_message_admins("launched self-destruction mechanism in [pmp] <a href='?_src_=holder;adminplayerobservefollow=\ref[pmp]'>#[pmp.serial_number]</a>.")
+		pmp_control_panel()
 		return
 
 	if(href_list["listensound"])
@@ -2177,10 +2177,10 @@
 					J.StopPlaying()
 					J.current_track = null
 
-			if(istype(disk.loc, /obj/item/device/boombox))
-				var/obj/item/device/boombox/B = disk.loc
-				if(B.playing)
-					B.StopPlaying()
+			if(istype(disk.loc, /obj/item/device/pmp))
+				var/obj/item/device/pmp/pmp = disk.loc
+				if(pmp.playing)
+					pmp.StopPlaying()
 
 			qdel(disk.tracks)
 			disk.name = "burned cassette"

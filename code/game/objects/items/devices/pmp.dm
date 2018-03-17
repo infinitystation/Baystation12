@@ -1,46 +1,46 @@
-GLOBAL_LIST_EMPTY(boombox_list)
+GLOBAL_LIST_EMPTY(pmp_list)
 
-/datum/admins/proc/list_current_boomboxes()
+/datum/admins/proc/pmp_control_panel()
 	set category = "Fun"
-	set name = "Boombox Panel"
-	set desc = "Lists all the current boomboxes and control it"
+	set name = "PMP Panel"
+	set desc = "Lists all the current portable media players and control it."
 
 	if(!check_rights(R_ADMIN|R_FUN, 0, usr))
 		return
 
-	var/list/dat = list("<div align='center'><h1>Boombox Panel</h1><br>")
+	var/list/dat = list("<div align='center'><h1>PMP Control Panel</h1><br>")
 
-	dat += "<b>Current boomboxes in world ([GLOB.boombox_list.len]):</b></div><br>"
+	dat += "<b>Current portable media players in world ([GLOB.pmp_list.len]):</b></div><br>"
 	dat += "<hr>"
 
-	if(GLOB.boombox_list.len == 0)
-		dat += "<div class='statusDisplay'><center>At the moment there are no items in this world session.</center></div>"
+	if(GLOB.pmp_list.len == 0)
+		dat += "<div class='statusDisplay'><center>At the moment there are no devices in this world session.</center></div>"
 	else
-		for(var/a in GLOB.boombox_list)
-			var/obj/item/device/boombox/B = a
+		for(var/a in GLOB.pmp_list)
+			var/obj/item/device/pmp/p = a
 			dat += "<div class='statusDisplay'>"
-			dat += "[B.name] : <a href='?_src_=holder;play_boombox=\ref[B]'>[B.playing ? "<font color=cc5555>Stop</font>" : "<font color=55cc55>Play</font>"]</a> | "
-			dat += "<a href='?_src_=holder;boombox_volume=\ref[B]'>Volume</a> | "
-			dat += "<a href='?_src_=holder;adminplayerobservefollow=\ref[B]'>Current location</a> | "
-			dat += "<a href='?_src_=vars;Vars=\ref[B]'>VV</a> | "
-			dat += "<a href='?_src_=holder;explode_boombox=\ref[B]'><font color=cc5555>\[X\]</font></a><br>"
+			dat += "PMP #[p.serial_number] : <a href='?_src_=holder;pmp_play=\ref[p]'>[p.playing ? "<font color=cc5555>Stop</font>" : "<font color=55cc55>Play</font>"]</a> | "
+			dat += "<a href='?_src_=holder;pmp_volume=\ref[p]'>Volume</a> | "
+			dat += "<a href='?_src_=holder;adminplayerobservefollow=\ref[p]'>Current location</a> | "
+			dat += "<a href='?_src_=vars;Vars=\ref[p]'>VV</a> | "
+			dat += "<a href='?_src_=holder;pmp_explode=\ref[p]'><font color=cc5555>\[X\]</font></a><br>"
 			dat += "</div>"
 
-	var/datum/browser/popup = new(usr, "boombox_panel", "Boombox Panel", 455, 325, src)
+	var/datum/browser/popup = new(usr, "pmp_panel",, 455, 325, src)
 	popup.set_content(jointext(dat, null))
 	popup.open()
 
-	feedback_add_details("admin_verb","LCB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	feedback_add_details("admin_verb","LCPMP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/obj/item/device/boombox
-	name = "Boombox"
-	desc = "A retro-designed device that can blow up your ears."
-	icon = 'icons/obj/boombox.dmi'
-	icon_state = "boombox0"
-	item_state = "defibunit"
-	w_class = ITEM_SIZE_LARGE
+/obj/item/device/pmp
+	name = "portable media player"
+	desc = "A little device which looks like a old radio. Can be used to play soft tunes."
+	icon = 'icons/obj/pmp.dmi'
+	icon_state = "pmp"
+	item_state = "radio"
+	w_class = ITEM_SIZE_NORMAL
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_BACK
+	slot_flags = SLOT_BELT
 	throwforce = 2
 	throw_speed = 4
 	throw_range = 10
@@ -58,10 +58,9 @@ GLOBAL_LIST_EMPTY(boombox_list)
 
 	var/serial_number
 
-/obj/item/device/boombox/New()
-	..()
+/obj/item/device/pmp/Initialize()
+	. = ..()
 	serial_number = "[rand(1,999)]"
-	SetName("Boombox #[serial_number]")
 
 	if(ispath(cell))
 		cell = new cell(src)
@@ -71,43 +70,49 @@ GLOBAL_LIST_EMPTY(boombox_list)
 
 	sound_id = "[type]_[sequential_id(type)]"
 
-	message_admins("Boombox: <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> has been created.")
+	message_admins("RADIO: <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> has been created.")
 
-	GLOB.boombox_list += src
+	GLOB.pmp_list += src
 	update_icon()
 
-/obj/item/device/boombox/Destroy()
+/obj/item/device/pmp/Destroy()
 	StopPlaying()
-
 	if(cell)
 		QDEL_NULL(cell)
 
 	if(cassette)
 		QDEL_NULL(cassette)
 
-	GLOB.boombox_list -= src
-	message_admins("Boombox: #[serial_number] is deleted.")
+	message_admins("RADIO: #[serial_number] is deleted.")
+	GLOB.pmp_list -= src
 	. = ..()
 
-/obj/item/device/boombox/Process()
+/obj/item/device/pmp/Process()
 	if(cell && playing)
 		if(cell.charge < 0.0833333333)
 			StopPlaying()
-			visible_message("<span class='warning'>The [src] is suddenly turned off.</span>")
+			visible_message("<span class='warning'>\The [src] is suddenly turned off.</span>")
 			return
 		else
 			cell.use(0.0833333333)
 
-/obj/item/device/boombox/update_icon()
-	icon_state = "boombox[playing ? "1" : "0"]"
+/obj/item/device/pmp/update_icon()
+	overlays.Cut()
+	if(playing)
+		overlays += image(icon, "[icon_state]_play")
+	if(!cell)
+		overlays += image(icon, "[icon_state]_open")
 
-/obj/item/device/boombox/examine(mob/user)
+/obj/item/device/pmp/examine(mob/user)
 	. = ..()
-	if(cassette)
-		to_chat(user, "<span class='notice'>You can see a cassette inside it. The label says \"[cassette.name]\".</span>")
+	if(user in oview(src, 2))
+		if(serial_number)
+			to_chat(user, "The serial number \"#[serial_number]\" is generated on the case.")
+		if(cassette)
+			to_chat(user, "<span class='notice'>You can see a cassette inside it. The label says \"[cassette.name]\".</span>")
 
-/obj/item/device/boombox/attack_self(mob/user)
-	playsound(get_turf(src), 'sound/machines/click.ogg')
+/obj/item/device/pmp/attack_self(mob/user)
+	playsound(get_turf(src), 'sound/machines/switch1.ogg')
 	if(playing)
 		StopPlaying()
 		return
@@ -117,7 +122,7 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		else
 			StartPlaying()
 
-/obj/item/device/boombox/attackby(obj/item/I, mob/user, params)
+/obj/item/device/pmp/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/device/cassette))
 		var/obj/item/device/cassette/C = I
 		if(cassette)
@@ -136,7 +141,7 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		visible_message(
 			"<span class='notice'>[user] insert a [C] into \the [src].</span>",
 			"<span class='notice'>You insert a [C] into \the [src].</span>")
-		playsound(get_turf(src), 'sound/weapons/TargetOn.ogg', 50, 1)
+		playsound(get_turf(src), 'sound/weapons/TargetOn.ogg', 35, 1)
 		return
 
 	if(istype(I, /obj/item/weapon/cell/device))
@@ -151,6 +156,7 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		I.forceMove(src)
 		cell = C
 		to_chat(user, "<span class='notice'>You insert a [C] into \the [src].</span>")
+		update_icon()
 		return
 
 	else if(isScrewdriver(I))
@@ -159,12 +165,13 @@ GLOBAL_LIST_EMPTY(boombox_list)
 			to_chat(user, "<span class='notice'>You pulled out [cell] out of [src] with [I].</span>")
 			usr.put_in_hands(cell)
 			cell = null
+			update_icon()
 		else
-			to_chat(user, "<span class='notice'>[src] doesn't have a cell installed.</span>")
+			to_chat(user, "<span class='notice'>\The [src] doesn't have a cell installed.</span>")
 		return
 	..()
 
-/obj/item/device/boombox/MouseDrop(var/obj/over_object)
+/obj/item/device/pmp/MouseDrop(var/obj/over_object)
 	if(!over_object)
 		return
 
@@ -181,7 +188,7 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		if("l_hand")
 			eject(usr)
 
-/obj/item/device/boombox/proc/eject(mob/user)
+/obj/item/device/pmp/proc/eject(mob/user)
 	if(!cassette)
 		to_chat(user, "<span class='notice'>There's no cassette in \the [src].</span>")
 		return
@@ -189,10 +196,10 @@ GLOBAL_LIST_EMPTY(boombox_list)
 	if(playing)
 		StopPlaying()
 
-	playsound(get_turf(src), "sound/machines/Custom_screwdriveropen.ogg", 30, 1)
+	playsound(get_turf(src), "sound/machines/Custom_screwdriveropen.ogg", 20, 1)
 	if(user)
 		visible_message(
-			"<span class='notice'>[usr] eject the cassette.</span>",
+			"<span class='notice'>[user] eject the cassette.</span>",
 			"<span class='notice'>You eject the cassette.</span>")
 	if(user)
 		user.put_in_hands(cassette)
@@ -200,15 +207,10 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		cassette.dropInto(loc)
 	cassette = null
 
-/obj/item/device/boombox/fire_act()
-	StopPlaying()
-	if(cassette)
-		cassette.ruin()
-	return ..()
-
-/obj/item/device/boombox/verb/volume()
+/obj/item/device/pmp/verb/volume()
 	set name = "Change Volume"
 	set category = "Object"
+	set src in oview(1)
 
 	if(usr.incapacitated())
 		return
@@ -218,27 +220,12 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		AdjustVolume(vol)
 	return
 
-/obj/item/device/boombox/proc/emag_play()
-	visible_message("<span class='danger'>\The [src] makes a fizzling sound.</span>")
-	playsound(loc, 'sound/items/AirHorn.ogg', 100, 1)
-	for(var/mob/living/carbon/M in ohearers(6, src))
-		if(istype(M, /mob/living/carbon/human))
-			var/mob/living/carbon/human/H = M
-			if(istype(H.l_ear, /obj/item/clothing/ears/earmuffs) || istype(H.r_ear, /obj/item/clothing/ears/earmuffs))
-				continue
-		M.sleeping = 0
-		M.stuttering += 20
-		M.ear_deaf += 30
-		M.Weaken(3)
-		if(prob(30))
-			M.Stun(10)
-			M.Paralyse(4)
-		else
-			M.make_jittery(400)
-	spawn(15)
-		explode()
+/obj/item/device/pmp/proc/AdjustVolume(var/new_volume)
+	volume = Clamp(new_volume, 0, 50)
+	if(sound_token)
+		sound_token.SetVolume(volume)
 
-/obj/item/device/boombox/proc/explode()
+/obj/item/device/pmp/proc/explode()
 	walk_to(src, 0)
 	src.visible_message("<span class='danger'>\the [src] blows apart!</span>", 1)
 
@@ -251,7 +238,7 @@ GLOBAL_LIST_EMPTY(boombox_list)
 	new /obj/effect/decal/cleanable/blood/oil(src.loc)
 	qdel(src)
 
-/obj/item/device/boombox/proc/StartPlaying()
+/obj/item/device/pmp/proc/StartPlaying()
 	if(isnull(cell))
 		return
 
@@ -268,25 +255,25 @@ GLOBAL_LIST_EMPTY(boombox_list)
 	// Jukeboxes cheat massively and actually don't share id. This is only done because it's music rather than ambient noise.
 	sound_token = sound_player.PlayLoopingSound(src, sound_id, cassette.tracks.sound, volume = volume, range = 7, falloff = 3, prefer_mute = TRUE)
 
-	log_and_message_admins("launched a boombox <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> with the song \"[cassette.tracks.title]\".")
+	log_and_message_admins("launched a [src] <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> with the song \"[cassette.tracks.title]\".")
 
 	playing = 1
 	START_PROCESSING(SSobj, src)
 	update_icon()
 
-/obj/item/device/boombox/proc/StopPlaying()
-	playsound(get_turf(src), 'sound/machines/click.ogg')
+/obj/item/device/pmp/proc/StopPlaying()
 	playing = 0
 	STOP_PROCESSING(SSobj, src)
-	update_icon()
 	QDEL_NULL(sound_token)
+	update_icon()
 
-/obj/item/device/boombox/proc/AdjustVolume(var/new_volume)
-	volume = Clamp(new_volume, 0, 50)
-	if(sound_token)
-		sound_token.SetVolume(volume)
+/obj/item/device/pmp/fire_act()
+	StopPlaying()
+	if(cassette)
+		cassette.ruin()
+	return ..()
 
-/obj/item/device/boombox/personal
+/obj/item/device/pmp/personal
 	cassette = /obj/item/device/cassette/custom
 
 /obj/item/device/cassette
@@ -375,7 +362,6 @@ GLOBAL_LIST_EMPTY(boombox_list)
 	if(sound_file && new_name)
 		tracks = new /datum/track(new_name, sound_file)
 		return 1
-
 	return 0
 
 /obj/item/device/cassette/random/New()

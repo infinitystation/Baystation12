@@ -103,7 +103,7 @@ var/list/admin_verbs_admin = list(
 //	/datum/admins/proc/whitelist_panel,
 	/client/proc/debug_global_variables,
 	/client/proc/reestablish_db_connection,
-	/datum/admins/proc/list_current_boomboxes
+	/datum/admins/proc/pmp_control_panel
 	)
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
@@ -132,7 +132,7 @@ var/list/admin_verbs_fun = list(
 	/client/proc/toggle_random_events,
 	/client/proc/editappear,
 	/client/proc/roll_dices,
-	/datum/admins/proc/list_current_boomboxes,
+	/datum/admins/proc/pmp_control_panel,
 	/datum/admins/proc/call_supply_drop,
 	/datum/admins/proc/call_drop_pod,
 	/client/proc/create_dungeon,
