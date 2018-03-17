@@ -47,10 +47,6 @@
 	path = /obj/item/clothing/accessory/holster
 	allowed_roles = list(SEC_ROLES, /datum/job/captain, /datum/job/hop)
 
-/datum/gear/accessory/holster/New()
-	..()
-	gear_tweaks += new/datum/gear_tweak/path(/obj/item/clothing/accessory/holster)
-
 /datum/gear/accessory/tie
 	display_name = "tie selection"
 	path = /obj/item/clothing/accessory
