@@ -98,6 +98,13 @@
 	description = "A pair of kitty ears. Meow!"
 	path = /obj/item/clothing/head/kitty
 
+/datum/gear/kittyears/New()
+	..()
+	var/kittyearss = list()
+	kittyearss["tailles ears"] = /obj/item/clothing/head/kitty/tailless
+	kittyearss["tailed ears"] = /obj/item/clothing/head/kitty
+	gear_tweaks += new /datum/gear_tweak/path(kittyearss)
+
 /datum/gear/workvisa
 	display_name = "work visa"
 	description = "A work visa issued by the Sol Central Government for the purpose of work."

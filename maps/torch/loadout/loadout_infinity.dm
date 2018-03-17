@@ -1,7 +1,3 @@
-/datum/gear/suit/special
-	display_name = "special jackets selection"
-	path = /obj/item/clothing/suit/storage/toggle/longjacket
-
 /datum/gear/accessory/talisman
 	display_name = "bone talisman"
 	path = /obj/item/clothing/accessory/necklace/talisman
