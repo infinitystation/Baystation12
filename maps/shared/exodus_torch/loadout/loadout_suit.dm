@@ -2,10 +2,6 @@
 	display_name = "hazard vests"
 	path = /obj/item/clothing/suit/storage/hazardvest
 
-/datum/gear/suit/hazard/New()
-	..()
-	gear_tweaks += new/datum/gear_tweak/path(/obj/item/clothing/suit/storage/hazardvest)
-
 /datum/gear/suit/hoodie
 	display_name = "hoodie"
 	path = /obj/item/clothing/suit/storage/toggle/hoodie
@@ -49,11 +45,6 @@
 	path = /obj/item/clothing/suit/poncho/colored
 	cost = 1
 
-/datum/gear/suit/poncho/New()
-	..()
-	gear_tweaks += new/datum/gear_tweak/path(/obj/item/clothing/suit/poncho/colored)
-
-
 /datum/gear/suit/roles/poncho/security
 	display_name = "poncho, security"
 	path = /obj/item/clothing/suit/poncho/roles/security
@@ -81,7 +72,3 @@
 /datum/gear/suit/track
 	display_name = "track jacket selection"
 	path = /obj/item/clothing/suit/storage/toggle/track
-
-/datum/gear/suit/track/New()
-	..()
-	gear_tweaks += new/datum/gear_tweak/path(/obj/item/clothing/suit/storage/toggle/track)

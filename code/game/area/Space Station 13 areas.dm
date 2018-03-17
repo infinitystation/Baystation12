@@ -141,10 +141,10 @@ area/space/atmosalert()
 /area/rnd/xenobiology
 	name = "\improper Xenobiology Lab"
 	icon_state = "xeno_lab"
-
+/*
 /area/rnd/xenobiology/lobby
 	name = "\improper Xenobiology Lobby"
-	icon_state = "xeno_lab"
+	icon_state = "xeno_lab"*/
 
 /area/rnd/xenobiology/xenoflora
 	name = "\improper Xenoflora Lab"

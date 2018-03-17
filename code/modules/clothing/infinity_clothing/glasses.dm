@@ -43,7 +43,7 @@
 /obj/item/clothing/glasses/material/hybrid/special //special glasses for spacial MrNicolas
 	name = "hybrid optical scanner"
 	desc = "This scanner has several buttons on one side and the TCC logo on the other. Under the logo engraving 'Thoughts are material.' On the inside there is a pair of connectors. It seems that this thing is not for ordinary eyes."
-	icon_state = "hybrid_off"
+	icon_state = "hybrids_off"
 
 /obj/item/clothing/glasses/material/hybrid/special/Process()
 	if(ishuman(loc))
@@ -72,7 +72,7 @@
 			flash_protection = FLASH_PROTECTION_MAJOR
 			vision_flags = null
 			tint = TINT_MODERATE
-			icon_state = "hybrid_weld"
+			icon_state = "hybrids_weld"
 			on = !on
 			to_chat(user, "You switch \the [src] to welding protection mode.")
 			goto hybr_loop
@@ -80,14 +80,14 @@
 			flash_protection = FLASH_PROTECTION_NONE
 			vision_flags = SEE_OBJS
 			tint = TINT_NONE
-			icon_state = "hybrid_mat"
+			icon_state = "hybrids_mat"
 			mode = !mode
 			to_chat(user, "You switch \the [src] to material mode.")
 			goto hybr_loop
 		if(on && mode)
 			flash_protection = FLASH_PROTECTION_NONE
 			vision_flags = null
-			icon_state = "hybrid_off"
+			icon_state = "hybrids_off"
 			mode = !mode
 			on = !on
 			to_chat(user, "You switch off \the [src].")

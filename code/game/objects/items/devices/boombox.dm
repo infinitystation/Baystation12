@@ -80,12 +80,10 @@ GLOBAL_LIST_EMPTY(boombox_list)
 	StopPlaying()
 
 	if(cell)
-		qdel(cell)
-		cell = null
+		QDEL_NULL(cell)
 
 	if(cassette)
-		qdel(cassette)
-		cassette = null
+		QDEL_NULL(cassette)
 
 	GLOB.boombox_list -= src
 	message_admins("Boombox: #[serial_number] is deleted.")
@@ -164,44 +162,49 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		else
 			to_chat(user, "<span class='notice'>[src] doesn't have a cell installed.</span>")
 		return
-
 	..()
 
-/obj/item/device/boombox/verb/eject()
-	set name = "Eject Cassette"
-	set category = "Object"
+/obj/item/device/boombox/MouseDrop(var/obj/over_object)
+	if(!over_object)
+		return
+
+	//makes sure that the clothing is equipped so that we can't drag it into our hand from miles away.
+	if(!(src.loc == usr))
+		return
 
 	if(usr.incapacitated())
 		return
 
+	switch(over_object.name)
+		if("r_hand")
+			eject(usr)
+		if("l_hand")
+			eject(usr)
+
+/obj/item/device/boombox/proc/eject(mob/user)
 	if(!cassette)
-		to_chat(usr, "<span class='notice'>There's no cassette in \the [src].</span>")
+		to_chat(user, "<span class='notice'>There's no cassette in \the [src].</span>")
 		return
 
 	if(playing)
 		StopPlaying()
 
-	visible_message(
+	playsound(get_turf(src), "sound/machines/Custom_screwdriveropen.ogg", 30, 1)
+	if(user)
+		visible_message(
 			"<span class='notice'>[usr] eject the cassette.</span>",
 			"<span class='notice'>You eject the cassette.</span>")
-	playsound(get_turf(src), "sound/machines/Custom_screwdriveropen.ogg", 30, 1)
-	usr.put_in_hands(cassette)
+	if(user)
+		user.put_in_hands(cassette)
+	else
+		cassette.dropInto(loc)
 	cassette = null
-	update_icon()
 
 /obj/item/device/boombox/fire_act()
 	StopPlaying()
 	if(cassette)
 		cassette.ruin()
 	return ..()
-
-
-/obj/item/device/boombox/attack_hand(mob/user)
-	if(user.get_inactive_hand() == src)
-		if(cassette)
-			eject()
-			return
-	..()
 
 /obj/item/device/boombox/verb/volume()
 	set name = "Change Volume"
@@ -236,14 +239,6 @@ GLOBAL_LIST_EMPTY(boombox_list)
 		explode()
 
 /obj/item/device/boombox/proc/explode()
-	if(cell)
-		qdel(cell)
-		cell = null
-
-	if(cassette)
-		qdel(cassette)
-		cassette = null
-
 	walk_to(src, 0)
 	src.visible_message("<span class='danger'>\the [src] blows apart!</span>", 1)
 

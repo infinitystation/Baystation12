@@ -487,6 +487,7 @@ var/list/worths = list(
 					/obj/item/device/slime_scanner = 300,
 					/obj/item/device/transfer_valve = 50,
 					/obj/item/device/violin = 250,
+					/obj/item/device/guitar = 175,
 					/obj/item/device/pda = 60,
 					/obj/item/device/radio = 150,
 					/obj/item/weapon/tank/phoron/onetankbomb = 200,
