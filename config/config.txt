@@ -300,7 +300,7 @@ IRC_BOT_HOST localhost
 MAIN_IRC #infinity_ss13
 
 ## IRC channel to send adminhelps to.  Leave blank to disable adminhelps-to-irc.
-ADMIN_IRC #infinity_ss13
+ADMIN_IRC #infinity_ss13_admin
 
 ## Path to the python2 executable on the system.  Leave blank for default.
 ## Default is "python" on Windows, "/usr/bin/env python2" on UNIX.
