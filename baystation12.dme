@@ -548,6 +548,7 @@
 #include "code\game\machinery\bluespacerelay.dm"
 #include "code\game\machinery\buttons.dm"
 #include "code\game\machinery\CableLayer.dm"
+#include "code\game\machinery\cargopad.dm"
 #include "code\game\machinery\cell_charger.dm"
 #include "code\game\machinery\constructable_frame.dm"
 #include "code\game\machinery\crusher_piston.dm"
