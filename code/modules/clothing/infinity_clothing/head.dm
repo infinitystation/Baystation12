@@ -6,8 +6,16 @@
 	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
 	icon_state = "daft_helmet"
 
-/obj/item/clothing/head/collectable/kitty/tailless
-	name = "collectable tailless kitty ears"
+/obj/item/clothing/head/kitty/tailless
+	name = "tailless kitty ears"
 	desc = "The fur feels.....a little bit realistic."
 	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
-	icon_state = "kitty_tailless"
+	item_state = "kitty_tailless"
+
+	update_icon(var/mob/living/carbon/human/user)
+		if(!istype(user)) return
+		var/icon/ears = new/icon("icon" = 'icons/mob/infinity/hats.dmi', "icon_state" = "kitty")
+		ears.Blend(rgb(user.r_hair, user.g_hair, user.b_hair), ICON_ADD)
+
+		var/icon/earbit = new/icon("icon" = 'icons/mob/onmob/head.dmi', "icon_state" = "kittyinner")
+		ears.Blend(earbit, ICON_OVERLAY)
