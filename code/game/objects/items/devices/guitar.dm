@@ -6,7 +6,8 @@
 	icon = 'icons/obj/items.dmi'
 	icon_state = "guitar"
 	icon_state = "guitar"
-	force = 10
+	force = 13
+	w_class = ITEM_SIZE_LARGE
 	var/datum/song/song
 	var/playing = 0
 	var/help = 0
