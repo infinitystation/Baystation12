@@ -223,7 +223,7 @@
 		size = O.w_class
 
 	user.visible_message(
-		"<span class='notice'>[user] begins to [movtext] \the [hoistee]!</span",
+		"<span class='notice'>[user] begins to [movtext] \the [hoistee]!</span>",
 		"<span class='notice'>You begin to [movtext] \the [hoistee]!</span>",
 		"<span class='notice'>You hear the sound of a crank.</span>"
 		)
