@@ -27,7 +27,7 @@
 						/datum/job/janitor, /datum/job/chef, /datum/job/bartender,
 						/datum/job/senior_scientist, /datum/job/nt_pilot, /datum/job/scientist, /datum/job/mining, /datum/job/guard, /datum/job/scientist_assistant,
 						/datum/job/ai, /datum/job/cyborg,
-						/datum/job/crew, /datum/job/assistant,
+						/datum/job/crew, /datum/job/assistant, /datum/job/offduty,
 						/datum/job/merchant, /datum/job/stowaway
 						)
 
@@ -586,12 +586,14 @@
 	economic_modifier = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
-	alt_titles = list("Criminal Investigator")
+	alt_titles = list(
+		"Criminal Investigator"
+	)
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech/fleet,
-		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech/civ
+		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e3,
@@ -599,7 +601,8 @@
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/fleet/e4,
 		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/civ/marshal
+		/datum/mil_rank/civ/contractor = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech/contractor,
+		/datum/mil_rank/civ/marshal = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech/marshal
 	)
 
 	access = list(access_security, access_brig, access_forensics_lockers,
@@ -1113,7 +1116,6 @@
 	selection_color = "#515151"
 	economic_modifier = 6
 	alt_titles = list(
-		"Private Investigator" = /decl/hierarchy/outfit/job/torch/passenger/passenger/PI,
 		"Journalist" = /decl/hierarchy/outfit/job/torch/passenger/passenger/journalist,
 		"Historian",
 		"Botanist",
@@ -1123,14 +1125,45 @@
 		"Entertainer",
 		"Independent Observer",
 		"Sociologist",
-		"Trainer",
-		"Off-Duty")
+		"Trainer")
 	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/passenger
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/civ,
-		/datum/mil_rank/civ/offduty,
 		/datum/mil_rank/civ/nt
+	)
+
+/datum/job/offduty
+	title = "Off-Duty"
+	department_flag = CIV
+
+	total_positions = 6
+	spawn_positions = 6
+	supervisors = "the Executive Officer and Commanding Officer"
+	selection_color = "#515151"
+	outfit_type = /decl/hierarchy/outfit/job/torch/offduty
+	allowed_branches = list(
+		/datum/mil_branch/expeditionary_corps,
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/offduty/fleet
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/ec/e3,
+		/datum/mil_rank/ec/e5,
+		/datum/mil_rank/ec/e7,
+		/datum/mil_rank/ec/o1 = /decl/hierarchy/outfit/job/torch/offduty/officer,
+		/datum/mil_rank/ec/o3 = /decl/hierarchy/outfit/job/torch/offduty/officer,
+		/datum/mil_rank/fleet/e1,
+		/datum/mil_rank/fleet/e2,
+		/datum/mil_rank/fleet/e3,
+		/datum/mil_rank/fleet/e4,
+		/datum/mil_rank/fleet/e5,
+		/datum/mil_rank/fleet/e6,
+		/datum/mil_rank/fleet/e7,
+		/datum/mil_rank/fleet/e8,
+		/datum/mil_rank/fleet/o1,
+		/datum/mil_rank/fleet/o2,
+		/datum/mil_rank/fleet/o3,
+		/datum/mil_rank/fleet/o4
 	)
 
 /datum/job/cyborg
