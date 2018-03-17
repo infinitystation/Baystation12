@@ -43,13 +43,12 @@ var/datum/robolimb/basic_robolimb
 	company = "Bishop Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_alt.dmi'
 	applies_to_part = list(BP_HEAD)
-	unavailable_at_fab = 1
 
 /datum/robolimb/bishop/alt/monitor
 	company = "Bishop Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_monitor.dmi'
+	can_eat = null
 	restricted_to = list(SPECIES_IPC)
-	unavailable_at_fab = 1
 
 /datum/robolimb/hephaestus
 	company = "Hephaestus Industries"
@@ -69,6 +68,7 @@ var/datum/robolimb/basic_robolimb
 /datum/robolimb/hephaestus/special_full
 	company = "Hephaestus Special Full"
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_special.dmi'
+	can_eat = null
 	use_eye_icon = "heph_eyes"
 	restricted_to = list(SPECIES_IPC)
 	brute_mod = 0.7
@@ -79,9 +79,8 @@ var/datum/robolimb/basic_robolimb
 	company = "Hephaestus Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_alt.dmi'
 	applies_to_part = list(BP_HEAD)
-	unavailable_at_fab = 1
 
-/datum/robolimb/hesphiastos/alt/monitor
+/datum/robolimb/hephaestus/alt/monitor
 	company = "Hephaestus Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_monitor.dmi'
 	restricted_to = list(SPECIES_IPC)
@@ -111,14 +110,12 @@ var/datum/robolimb/basic_robolimb
 	company = "Xion Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_alt.dmi'
 	applies_to_part = list(BP_HEAD)
-	unavailable_at_fab = 1
 
 /datum/robolimb/xion/alt/monitor
 	company = "Xion Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_monitor.dmi'
 	restricted_to = list(SPECIES_IPC)
 	can_eat = null
-	unavailable_at_fab = 1
 
 /datum/robolimb/nanotrasen
 	company = "NanoTrasen"
@@ -154,14 +151,12 @@ var/datum/robolimb/basic_robolimb
 	company = "Ward-Takahashi Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_alt.dmi'
 	applies_to_part = list(BP_HEAD)
-	unavailable_at_fab = 1
 
 /datum/robolimb/wardtakahashi/alt/monitor
 	company = "Ward-Takahashi Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_monitor.dmi'
 	restricted_to = list(SPECIES_IPC)
 	can_eat = null
-	unavailable_at_fab = 1
 
 /datum/robolimb/morpheus
 	company = "Morpheus"
@@ -182,7 +177,6 @@ var/datum/robolimb/basic_robolimb
 	company = "Morpheus Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_alt.dmi'
 	applies_to_part = list(BP_HEAD)
-	unavailable_at_fab = 1
 
 /datum/robolimb/veymed
 	company = "Vey-Med"
