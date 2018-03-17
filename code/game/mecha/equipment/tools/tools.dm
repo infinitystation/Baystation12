@@ -19,6 +19,16 @@
 		//loading
 		if(istype(target,/obj))
 			var/obj/O = target
+
+			if(istype(target, /obj/structure/rubble))
+				var/obj/structure/rubble/pile = target
+				playsound(target, 'sound/machines/airlock_creaking.ogg', 50, 1)
+				if(do_after_cooldown(pile))
+					occupant_message("<font color='red'>You squeeze the [pile.name] into compact shape.</font>")
+					pile.make_cube()
+				else
+					occupant_message("<font color='red'>[target] is firmly secured.</font>")
+
 			if(O.buckled_mob)
 				return
 			if(locate(/mob/living) in O)

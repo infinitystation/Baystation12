@@ -68,6 +68,11 @@
 	key = "blink"
 	emote_message_3p = "USER моргает."
 
+/decl/emote/visible/blink/do_emote(var/mob/user)
+	if(isliving(user))
+		var/mob/living/L = user
+		L.eye_blink()
+
 /decl/emote/visible/airguitar
 	key = "airguitar"
 	check_restraints = TRUE

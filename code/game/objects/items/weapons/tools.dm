@@ -701,6 +701,7 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 140)
 	center_of_mass = "x=16;y=20"
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
+	hitsound = 'sound/weapons/crowbarhit.ogg'
 
 /obj/item/weapon/crowbar/red
 	icon_state = "red_crowbar"
@@ -759,7 +760,7 @@
 /obj/item/weapon/combitool
 	name = "combi-tool"
 	desc = "It even has one of those nubbins for doing the thingy."
-	icon = 'icons/obj/items.dmi'
+	icon = 'icons/obj/tools.dmi'
 	icon_state = "combitool"
 	w_class = ITEM_SIZE_SMALL
 

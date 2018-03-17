@@ -58,6 +58,7 @@
 			lootleft--
 			update_icon()
 			to_chat(user, "<span class='notice'>You find \a [booty] and pull it carefully out of \the [src].</span>")
+			new /obj/item/weapon/scrap_lump(loc)
 		is_rummaging = 0
 	else
 		to_chat(user, "<span class='warning'>Someone is already rummaging here!</span>")
@@ -78,13 +79,25 @@
 			if(lootleft && prob(1))
 				var/obj/item/booty = pick(loot)
 				booty = new booty(loc)
+			new /obj/item/weapon/scrap_lump(loc)
 			qdel(src)
-	else 
+	else
 		..()
 		health -= I.force
 		if(health < 1)
 			visible_message("[user] clears away \the [src].")
+			new /obj/item/weapon/scrap_lump(loc)
 			qdel(src)
+
+/obj/structure/rubble/proc/make_cube()
+	var/obj/container = new /obj/structure/scrap_cube(loc, lootleft)
+	forceMove(container)
+
+/obj/structure/rubble/crush_act()
+	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+	for(var/i in 1, i < lootleft, i++)
+		new /obj/item/weapon/scrap_lump(loc)
+	qdel(src)
 
 /obj/structure/rubble/house
 	loot = list(/obj/item/weapon/archaeological_find/bowl,
