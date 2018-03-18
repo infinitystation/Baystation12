@@ -2,18 +2,6 @@
 	display_name = "cane"
 	path = /obj/item/weapon/cane
 
-/datum/gear/misic
-	display_name = "instruments selection"
-	description = "Musical instruments. Be ready for tomatoes and a spoiled eggs!"
-	path = /obj/item/device
-
-/datum/gear/misic/New()
-	..()
-	var/instruments = list()
-	instruments["violin"] = /obj/item/device/violin
-	instruments["guitar"] = /obj/item/device/guitar
-	gear_tweaks += new /datum/gear_tweak/path(instruments)
-
 /datum/gear/dice
 	display_name = "dice pack"
 	path = /obj/item/weapon/storage/pill_bottle/dice

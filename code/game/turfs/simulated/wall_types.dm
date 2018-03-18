@@ -65,6 +65,8 @@
 	return
 /turf/simulated/wall/titanium/New(var/newloc)
 	..(newloc,"titanium")
+/turf/simulated/wall/titanium_r
+	icon_state = "rgeneric"
 /turf/simulated/wall/titanium_r/New(var/newloc)
 	..(newloc,"titanium","titanium")
 

@@ -15,3 +15,16 @@
 	collar["pink collar"] = /obj/item/clothing/accessory/necklace/collar/pink
 	collar["holo collar"] = /obj/item/clothing/accessory/necklace/collar/holo
 	gear_tweaks += new/datum/gear_tweak/path(collar)
+
+/datum/gear/music
+	display_name = "instruments selection"
+	description = "Musical instruments. Be ready for tomatoes and a spoiled eggs!"
+	path = /obj/item/device
+	allowed_roles = RESTRICTED_ROLES
+
+/datum/gear/music/New()
+	..()
+	var/instruments = list()
+	instruments["violin"] = /obj/item/device/violin
+	instruments["guitar"] = /obj/item/device/guitar
+	gear_tweaks += new /datum/gear_tweak/path(instruments)
