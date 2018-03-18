@@ -625,7 +625,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	item_state = "zippo"
 	max_fuel = 10
 
-/obj/item/weapon/flame/lighter/zippo/infinity/engraved
+/obj/item/weapon/flame/lighter/zippo/infinity
 	name = "\improper Engraved Zippo lighter"
 	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "engraved"
