@@ -43,6 +43,9 @@ var/bomb_set
 		if(timeleft <= 0)
 			spawn
 				explode()
+		else
+			var/volume = (timeleft <= 30 ? 35 : 10)
+			playsound(loc, 'sound/machines/nuke_timer.ogg', volume, 0)
 		GLOB.nanomanager.update_uis(src)
 
 /obj/machinery/nuclearbomb/attackby(obj/item/weapon/O as obj, mob/user as mob, params)
