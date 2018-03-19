@@ -18,7 +18,6 @@
 	var/sound_landing = 'sound/effects/shuttle_landing.ogg'
 
 	var/knockdown = 1 //whether shuttle downs non-buckled people when it moves
-	var/scatter_direction //here goes direction in which people's will fly in stated direction and bumping on something
 
 	var/defer_initialisation = FALSE //this shuttle will/won't be initialised by something after roundstart
 
@@ -163,20 +162,16 @@
 					TA.ChangeTurf(get_base_turf_by_area(TA), 1, 1)
 		if(knockdown)
 			for(var/mob/M in A)
-				if(M.client)
-					spawn(0)
+				spawn(0)
+					if(istype(M, /mob/living))
 						if(M.buckled)
 							to_chat(M, "<span class='warning'>Sudden acceleration presses you into your chair!</span>")
 							shake_camera(M, 3, 1)
-
-				if(istype(M, /mob/living))
-					if(scatter_direction)
-						if(!M.buckled)
-							M.throw_at(get_edge_target_turf(M, scatter_direction), 10, 0.5)
-					else
-						if(istype(M, /mob/living/carbon))
-							if(!M.buckled)
-								M.Weaken(3)
+						else
+							to_chat(M, "<span class='warning'>The floor lurches beneath you!</span>")
+							shake_camera(M, 10, 1)
+							M.visible_message("<span class='warning'>[M.name] is tossed around by the sudden acceleration!</span>")	
+							M.throw_at_random(FALSE, 4, 0.5)
 
 		for(var/obj/structure/cable/C in A)
 			powernets |= C.powernet
