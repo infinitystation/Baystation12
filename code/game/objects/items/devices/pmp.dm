@@ -211,7 +211,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 /obj/item/device/pmp/verb/volume()
 	set name = "Change Volume"
 	set category = "Object"
-	set src in oview(1)
+	set src in usr
 
 	if(usr.incapacitated())
 		return
