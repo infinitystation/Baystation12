@@ -3,6 +3,14 @@ mob/proc/flash_pain(var/target)
 		animate(pain, alpha = target, time = 15, easing = ELASTIC_EASING)
 		animate(pain, alpha = 0, time = 20)
 
+mob/living/carbon/proc/flash_noise()
+	if(noise)
+		var/obj/item/organ/internal/eyes/E = src.internal_organs_by_name[BP_EYES]
+		var/heckyea = src.isSynthetic() || E && E.robotic >= ORGAN_ROBOT ? 255 : 0
+		animate(noise, icon_state = "[rand(1,9)]j", alpha = 255, time = 10, easing = BOUNCE_EASING, flags = EASE_IN)
+		spawn(20)
+			animate(noise, icon_state = "[rand(1,9)]", alpha = heckyea, time = 50, easing = BOUNCE_EASING, flags = EASE_OUT)
+
 mob/var/last_pain_message
 mob/var/next_pain_time = 0
 
@@ -21,8 +29,9 @@ mob/living/carbon/proc/custom_pain(var/message, var/power, var/force, var/obj/it
 			affecting.add_pain(ceil(power/2))
 		else
 			adjustHalLoss(ceil(power/2))
-	
+
 	flash_pain(min(round(2*power)+55, 255))
+	flash_noise()
 
 	// Anti message spam checks
 	if(force || (message != last_pain_message) || (world.time >= next_pain_time))

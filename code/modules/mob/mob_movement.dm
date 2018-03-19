@@ -245,6 +245,9 @@
 	if(!mob.lastarea)
 		mob.lastarea = get_area(mob.loc)
 
+	if(istype(mob.loc,/obj/mecha)) //mecha handles spacemove internally
+		return mob.loc.relaymove(mob, direct)
+
 	if(!mob.check_solid_ground())
 		var/allowmove = mob.Allow_Spacemove(0)
 		if(!allowmove)
@@ -480,6 +483,15 @@
 	if(Check_Shoegrip())
 		return 0
 	return prob_slip
+
+/mob/proc/update_gravity()
+	return
+
+/mob/proc/mob_has_gravity(turf/T)
+	return has_gravity(src, T)
+
+/mob/proc/mob_negates_gravity()
+	return 0
 
 #define DO_MOVE(this_dir) var/final_dir = turn(this_dir, -dir2angle(dir)); Move(get_step(mob, final_dir), final_dir);
 

@@ -119,6 +119,7 @@
 		/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris,
 		/obj/item/device/paicard,
 		/obj/item/device/violin,
+		/obj/item/device/guitar,
 		/obj/item/weapon/storage/belt/utility/full,
 		/obj/item/clothing/accessory/horrible)
 

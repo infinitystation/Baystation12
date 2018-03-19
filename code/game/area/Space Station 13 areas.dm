@@ -44,6 +44,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	var/used_environ = 0
 
 	var/has_gravity = 1
+	var/alwaysgravity
+	var/nevergravity
+
 	var/obj/machinery/power/apc/apc = null
 	var/no_air = null
 //	var/list/lights				// list of all lights on this area
@@ -138,10 +141,10 @@ area/space/atmosalert()
 /area/rnd/xenobiology
 	name = "\improper Xenobiology Lab"
 	icon_state = "xeno_lab"
-
+/*
 /area/rnd/xenobiology/lobby
 	name = "\improper Xenobiology Lobby"
-	icon_state = "xeno_lab"
+	icon_state = "xeno_lab"*/
 
 /area/rnd/xenobiology/xenoflora
 	name = "\improper Xenoflora Lab"

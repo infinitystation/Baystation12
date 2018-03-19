@@ -74,6 +74,15 @@ var/obj/screen/robot_inventory
 	mymob.healths.SetName("health")
 	mymob.healths.screen_loc = ui_borg_health
 
+//Static Effect
+	mymob.noise = new /obj/screen()
+	mymob.noise.icon = 'icons/mob/noise.dmi'
+	mymob.noise.icon_state = "[rand(1,9)]"
+	mymob.noise.name = ""
+	mymob.noise.screen_loc = "WEST,SOUTH to EAST,NORTH"
+	mymob.noise.mouse_opacity = 0
+	src.adding += mymob.noise
+
 //Installed Module
 	mymob.hands = new /obj/screen()
 	mymob.hands.icon = 'icons/mob/screen1_robot.dmi'

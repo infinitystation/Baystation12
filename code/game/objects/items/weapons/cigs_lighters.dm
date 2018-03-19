@@ -625,25 +625,34 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	item_state = "zippo"
 	max_fuel = 10
 
-/obj/item/weapon/flame/lighter/zippo/engraved
+/obj/item/weapon/flame/lighter/zippo/infinity
 	name = "\improper Engraved Zippo lighter"
 	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "engraved"
 
-/obj/item/weapon/flame/lighter/zippo/gold
+/obj/item/weapon/flame/lighter/zippo/infinity/gold
 	name = "\improper Gold Zippo lighter"
-	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "gold"
 
-/obj/item/weapon/flame/lighter/zippo/station
+/obj/item/weapon/flame/lighter/zippo/infinity/station
 	name = "\improper Special Zippo lighter"
-	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "13"
 
-/obj/item/weapon/flame/lighter/zippo/black
+/obj/item/weapon/flame/lighter/zippo/infinity/black
 	name = "\improper Black Zippo lighter"
-	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "black"
+
+/obj/item/weapon/flame/lighter/zippo/infinity/blue
+	name = "\improper Blue Zippo lighter"
+	icon_state = "bluezippo"
+
+/obj/item/weapon/flame/lighter/zippo/infinity/red
+	name = "\improper Red Zippo lighter"
+	icon_state = "redzippo"
+
+/obj/item/weapon/flame/lighter/zippo/infinity/butterfly
+	name = "\improper Butterfly Zippo lighter"
+	icon_state = "butterzippo"
 
 /obj/item/weapon/flame/lighter/zippo/light_effects(mob/user)
 	user.visible_message("<span class='rose'>Without even breaking stride, [user] flips open and lights [src] in one smooth movement.</span>")

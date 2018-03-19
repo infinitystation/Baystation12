@@ -90,6 +90,7 @@
 	jackets += /obj/item/clothing/suit/storage/leather_jacket/nanotrasen
 	jackets += /obj/item/clothing/suit/storage/toggle/brown_jacket/nanotrasen
 	jackets += /obj/item/clothing/suit/storage/leather_jacket
+	jackets += /obj/item/clothing/suit/storage/toggle/longjacket
 	jackets += /obj/item/clothing/suit/storage/toggle/brown_jacket
 	jackets += /obj/item/clothing/suit/storage/mbill
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(jackets)

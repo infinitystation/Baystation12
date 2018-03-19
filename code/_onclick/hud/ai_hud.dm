@@ -6,6 +6,15 @@
 	src.adding = list()
 	var/obj/screen/ai_button/using
 
+	//AI Static Effect
+	mymob.noise = new /obj/screen()
+	mymob.noise.icon = 'icons/mob/noise.dmi'
+	mymob.noise.icon_state = "[rand(1,9)]"
+	mymob.noise.name = ""
+	mymob.noise.screen_loc = "WEST,SOUTH to EAST,NORTH"
+	mymob.noise.mouse_opacity = 0
+	src.adding += mymob.noise
+
 	//AI Core
 	using = new /obj/screen/ai_button()
 	using.name = "Ai Core"

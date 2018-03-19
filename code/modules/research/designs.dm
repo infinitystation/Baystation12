@@ -2287,3 +2287,13 @@ CIRCUITS BELOW
 	req_tech = list(TECH_DATA = 4, TECH_ILLEGAL = 2, TECH_MATERIAL = 6)
 	build_path = /obj/item/weapon/aiModule/tyrant
 	sort_string = "XACAD"
+
+// Infinity's designs list
+
+/datum/design/item/optical/material
+	name = "advanced material glasses"
+	id = "hybrid_mw"
+	req_tech = list(TECH_MAGNET = 4, TECH_ENGINEERING = 5)
+	materials = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 50, "silver" = 100)
+	build_path = /obj/item/clothing/glasses/material/hybrid
+	sort_string = "GAAAD"

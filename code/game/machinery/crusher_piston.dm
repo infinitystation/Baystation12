@@ -555,6 +555,14 @@
 	if(!QDELETED(src))
 		qdel(src)//Just as a failsafe
 
+/obj/item/crush_act()
+	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+	for(var/i in 1, i < w_class, i++)
+		new /obj/item/weapon/scrap_lump(src.loc)
+	for(var/obj/item/I in contents)
+		I.forceMove(src.loc)
+		I.crush_act()
+	qdel(src)
 
 #undef PISTON_MOVE_DAMAGE
 #undef PISTON_MOVE_DIVISOR

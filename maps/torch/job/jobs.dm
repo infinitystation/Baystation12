@@ -27,7 +27,7 @@
 						/datum/job/janitor, /datum/job/chef, /datum/job/bartender,
 						/datum/job/senior_scientist, /datum/job/nt_pilot, /datum/job/scientist, /datum/job/mining, /datum/job/guard, /datum/job/scientist_assistant,
 						/datum/job/ai, /datum/job/cyborg,
-						/datum/job/crew, /datum/job/assistant,
+						/datum/job/crew, /datum/job/assistant, /datum/job/offduty,
 						/datum/job/merchant, /datum/job/stowaway
 						)
 
@@ -48,11 +48,17 @@
 
 /datum/job/captain
 	title = "Commanding Officer"
+	department = "Command"
 	supervisors = "the Sol Central Government and the Sol Code of Military Justice"
+	department_flag = COM
+	head_position = 1
 	minimal_player_age = 21
 	economic_modifier = 15
 	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/CO
+	total_positions = 1
+	spawn_positions = 1
+	req_admin_notify = 1
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps
 	)
@@ -68,7 +74,11 @@
 	title = "Executive Officer"
 	supervisors = "the Commanding Officer"
 	department = "Command"
-	department_flag = COM
+	department_flag = COM|CIV
+	head_position = 1
+	total_positions = 1
+	spawn_positions = 1
+	req_admin_notify = 1
 	minimal_player_age = 21
 	economic_modifier = 10
 	ideal_character_age = 45
@@ -112,6 +122,12 @@
 /datum/job/rd
 	title = "Research Director"
 	supervisors = "NanoTrasen and the Commanding Officer"
+	department = "Science"
+	department_flag = SCI|COM
+	head_position = 1
+	total_positions = 1
+	spawn_positions = 1
+	req_admin_notify = 1
 	economic_modifier = 20
 	minimal_player_age = 14
 	ideal_character_age = 60
@@ -132,6 +148,12 @@
 /datum/job/cmo
 	title = "Chief Medical Officer"
 	supervisors = "the Commanding Officer and the Executive Officer"
+	head_position = 1
+	department = "Medical"
+	department_flag = MED|COM
+	total_positions = 1
+	spawn_positions = 1
+	req_admin_notify = 1
 	economic_modifier = 10
 	minimal_player_age = 21
 	ideal_character_age = 48
@@ -161,6 +183,12 @@
 /datum/job/chief_engineer
 	title = "Chief Engineer"
 	supervisors = "the Commanding Officer and the Executive Officer"
+	head_position = 1
+	department = "Engineering"
+	department_flag = ENG|COM
+	total_positions = 1
+	spawn_positions = 1
+	req_admin_notify = 1
 	economic_modifier = 9
 	ideal_character_age = 40
 	minimal_player_age = 21
@@ -199,6 +227,12 @@
 /datum/job/hos
 	title = "Chief of Security"
 	supervisors = "the Commanding Officer and the Executive Officer"
+	head_position = 1
+	department = "Security"
+	department_flag = SEC|COM
+	total_positions = 1
+	spawn_positions = 1
+	req_admin_notify = 1
 	economic_modifier = 8
 	minimal_player_age = 21
 	ideal_character_age = 35
@@ -228,7 +262,6 @@
 	title = "NanoTrasen Liaison"
 	department = "Support"
 	department_flag = SPT
-
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "NanoTrasen and Corporate Regulations"
@@ -242,7 +275,6 @@
 	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/research/cl
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-
 	access = list(access_liaison, access_tox, access_tox_storage, access_heads, access_research,
 						access_mining, access_mining_office, access_mining_station, access_xenobiology,
 						access_xenoarch, access_nanotrasen, access_sec_guard,
@@ -252,7 +284,6 @@
 	title = "SolGov Representative"
 	department = "Support"
 	department_flag = SPT
-
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Sol Central Government and the SCG Charter"
@@ -275,7 +306,6 @@
 	title = "Senior Enlisted Advisor"
 	department = "Support"
 	department_flag = SPT
-
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Commanding Officer and the Executive Officer"
@@ -305,7 +335,6 @@
 	title = "Bridge Officer"
 	department = "Support"
 	department_flag = SPT
-
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Commanding Officer and heads of staff"
@@ -383,7 +412,6 @@
 	title = "Senior Engineer"
 	department = "Engineering"
 	department_flag = ENG
-
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Chief Engineer"
@@ -419,6 +447,8 @@
 
 /datum/job/engineer
 	title = "Engineer"
+	department = "Engineering"
+	department_flag = ENG
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "the Chief Engineer"
@@ -516,6 +546,8 @@
 
 /datum/job/warden
 	title = "Brig Officer"
+	department = "Security"
+	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Chief of Security"
@@ -546,18 +578,22 @@
 
 /datum/job/detective
 	title = "Forensic Technician"
+	department = "Security"
+	department_flag = SEC
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Chief of Security"
 	economic_modifier = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
-	alt_titles = list("Criminal Investigator")
+	alt_titles = list(
+		"Criminal Investigator"
+	)
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech/fleet,
-		/datum/mil_branch/civilian = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech/civ
+		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e3,
@@ -565,7 +601,8 @@
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/fleet/e4,
 		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/civ/marshal
+		/datum/mil_rank/civ/contractor = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech/contractor,
+		/datum/mil_rank/civ/marshal = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech/marshal
 	)
 
 	access = list(access_security, access_brig, access_forensics_lockers,
@@ -578,6 +615,8 @@
 
 /datum/job/officer
 	title = "Master at Arms"
+	department = "Security"
+	department_flag = SEC
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "the Chief of Security"
@@ -642,6 +681,9 @@
 /datum/job/doctor
 	title = "Corpsman"
 	minimal_player_age = 7
+	department = "Medical"
+	department_flag = MED
+
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the Chief Medical Officer"
@@ -718,6 +760,9 @@
 
 /datum/job/psychiatrist
 	title = "Counselor"
+	department = "Medical"
+	department_flag = MED
+
 	total_positions = 1
 	spawn_positions = 1
 	ideal_character_age = 40
@@ -897,7 +942,6 @@
 	title = "Crewman"
 	department = "Service"
 	department_flag = SRV
-
 	total_positions = 5
 	spawn_positions = 5
 	supervisors = "the Executive Officer and SolGov Personnel"
@@ -966,6 +1010,8 @@
 						access_hangar, access_petrov, access_petrov_helm, access_guppy_helm, access_mining)
 /datum/job/scientist
 	title = "Scientist"
+	department = "Science"
+	department_flag = SCI
 	total_positions = 6
 	spawn_positions = 6
 	supervisors = "the Research Director"
@@ -1064,11 +1110,12 @@
 	title = "Passenger"
 	total_positions = 12
 	spawn_positions = 12
+	department = "Civilian"
+	department_flag = CIV
 	supervisors = "the Executive Officer"
 	selection_color = "#515151"
 	economic_modifier = 6
 	alt_titles = list(
-		"Private Investigator" = /decl/hierarchy/outfit/job/torch/passenger/passenger/PI,
 		"Journalist" = /decl/hierarchy/outfit/job/torch/passenger/passenger/journalist,
 		"Historian",
 		"Botanist",
@@ -1078,14 +1125,45 @@
 		"Entertainer",
 		"Independent Observer",
 		"Sociologist",
-		"Trainer",
-		"Off-Duty")
+		"Trainer")
 	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/passenger
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/civ,
-		/datum/mil_rank/civ/offduty,
 		/datum/mil_rank/civ/nt
+	)
+
+/datum/job/offduty
+	title = "Off-Duty"
+	department_flag = CIV
+
+	total_positions = 6
+	spawn_positions = 6
+	supervisors = "the Executive Officer and Commanding Officer"
+	selection_color = "#515151"
+	outfit_type = /decl/hierarchy/outfit/job/torch/offduty
+	allowed_branches = list(
+		/datum/mil_branch/expeditionary_corps,
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/offduty/fleet
+	)
+	allowed_ranks = list(
+		/datum/mil_rank/ec/e3,
+		/datum/mil_rank/ec/e5,
+		/datum/mil_rank/ec/e7,
+		/datum/mil_rank/ec/o1 = /decl/hierarchy/outfit/job/torch/offduty/officer,
+		/datum/mil_rank/ec/o3 = /decl/hierarchy/outfit/job/torch/offduty/officer,
+		/datum/mil_rank/fleet/e1,
+		/datum/mil_rank/fleet/e2,
+		/datum/mil_rank/fleet/e3,
+		/datum/mil_rank/fleet/e4,
+		/datum/mil_rank/fleet/e5,
+		/datum/mil_rank/fleet/e6,
+		/datum/mil_rank/fleet/e7,
+		/datum/mil_rank/fleet/e8,
+		/datum/mil_rank/fleet/o1,
+		/datum/mil_rank/fleet/o2,
+		/datum/mil_rank/fleet/o3,
+		/datum/mil_rank/fleet/o4
 	)
 
 /datum/job/cyborg
@@ -1101,7 +1179,6 @@
 
 	total_positions = 2
 	spawn_positions = 2
-	availablity_chance = 30
 	supervisors = "the invisible hand of the market"
 	selection_color = "#515151"
 	ideal_character_age = 30
@@ -1121,7 +1198,6 @@
 
 	total_positions = 1
 	spawn_positions = 1
-	availablity_chance = 20
 	supervisors = "yourself"
 	selection_color = "#515151"
 	ideal_character_age = 30

@@ -570,7 +570,6 @@
 	landmark_transition = "nav_transit_calypso"
 	range = 1
 	fuel_consumption = 4
-	scatter_direction = SOUTH
 
 /obj/effect/shuttle_landmark/torch/hangar/exploration_shuttle
 	name = "Charon Hangar"
@@ -613,7 +612,6 @@
 	sound_takeoff = 'sound/effects/rocket.ogg'
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
 	fuel_consumption = 2
-	scatter_direction = NORTH
 
 /obj/effect/shuttle_landmark/torch/hangar/guppy
 	name = "Guppy Hangar"

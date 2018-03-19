@@ -117,6 +117,7 @@ var/list/point_source_descriptions = list(
 	"phoron" = "From exported phoron",
 	"platinum" = "From exported platinum",
 	"virology" = "From uploaded antibody data",
+	"refined_scrap" = "From exported refined scrap",
 	"total" = "Total" // If you're adding additional point sources, add it here in a new line. Don't forget to put a comma after the old last line.
 	)
 
@@ -133,6 +134,7 @@ var/list/point_source_descriptions = list(
 	var/points_per_slip = 2
 	var/points_per_platinum = 5 // 5 points per sheet
 	var/points_per_phoron = 5
+	var/points_per_refined_scrap = 5
 	var/point_sources = list()
 	var/pointstotalsum = 0
 	var/pointstotal = 0
@@ -181,6 +183,7 @@ var/list/point_source_descriptions = list(
 	proc/sell()
 		var/phoron_count = 0
 		var/plat_count = 0
+		var/scrap_count = 0
 		for(var/area/subarea in shuttle.shuttle_area)
 			for(var/atom/movable/MA in subarea)
 				if(MA.anchored)	continue
@@ -209,6 +212,9 @@ var/list/point_source_descriptions = list(
 							switch(P.get_material_name())
 								if("phoron") phoron_count += P.get_amount()
 								if("platinum") plat_count += P.get_amount()
+						if(istype(A, /obj/item/stack/sheet/refined_scrap))
+							var/obj/item/stack/P = A
+							scrap_count += P.get_amount()
 				qdel(MA)
 
 		if(phoron_count)
@@ -219,6 +225,9 @@ var/list/point_source_descriptions = list(
 			var/temp = plat_count * points_per_platinum
 			add_points_from_source(temp, "platinum")
 
+		if(scrap_count)
+			var/temp = scrap_count * points_per_refined_scrap
+			add_points_from_source(temp, "refined_scrap")
 	//Buyin
 	proc/buy()
 		if(!shoppinglist.len) return

@@ -44,6 +44,8 @@
 ckey: parasoul
 character_name: Krieg Jaeger
 item_path: /obj/item/clothing/accessory/necklace/talisman
+item_name: beastslayer's bone talisman
+item_desc: Grim periapt made of sinew and fangs of unknown monstrosity. Most likely a trophy of a cunning beast-hunter.
 }
 {
 ckey: kosteg
@@ -102,7 +104,12 @@ item_desc: Black patch with two starfighters on it and Starclaymore logo. Fancy.
 item_icon: starclaymore_patch
 }
 {
+ckey: mrnicolas
+character_name: Cathrine Fund
+item_path: /obj/item/clothing/glasses/material/hybrid/special
+}
+{
 ckey: billluxe
 character_name: Villyx
-item_path: /obj/item/device/boombox/personal
+item_path: /obj/item/device/pmp/personal
 }
