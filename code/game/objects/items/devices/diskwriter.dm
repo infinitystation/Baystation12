@@ -3,9 +3,9 @@
 	icon = 'icons/obj/infinity_object.dmi'
 	icon_state = "writer_off"
 	density = 0
-	var/coin = 0
-
 	var/mob/retard //current user
+	var/coin = 0
+	var/cooldown = 0 // Every 5 minute after successful re-write.
 
 	var/writing = FALSE
 
@@ -20,6 +20,8 @@
 	if(writing)
 		if(!check_victim())
 			set_off()
+	if(cooldown)
+		cooldown -= 1 SECOND
 
 /obj/machinery/media/music_writer/proc/check_victim()
 	if(locate(retard, src.loc))
@@ -54,7 +56,7 @@
 			to_chat(user, "<span class='warning'>\The [D] is ruined, you can't use it.</span>")
 			return
 
-		visible_message("<span class='notice'>[usr] insert the disk in to \the [src].</span>")
+		visible_message("<span class='notice'>[user] insert the disk in to \the [src].</span>")
 		user.drop_item()
 		D.forceMove(src)
 		disk = D
@@ -92,66 +94,71 @@
 			return
 
 		visible_message("<span class='notice'>[usr] eject the disk from \the [src].</span>")
-		playsound(get_turf(src), 'sound/machines/console/console3.ogg', 40, 1)
-		usr.put_in_hands(disk)
-		disk = null
+		eject(usr)
 
 	if(href_list["write"])
-		if(!writing && !retard && coin && disk)
+		if(!writing && !retard && coin && disk && cooldown == 0)
 			if(disk.can_be_rewrited)
-				var/interact_sound = "sound/machines/console/console_interact[rand(1,7)].ogg"
-				playsound(get_turf(src), interact_sound, 40, 1)
+				if(write_disk(usr))
+					message_admins("[retard.real_name]([retard.ckey]) uploaded new sound <A HREF='?_src_=holder;listensound=\ref[disk.tracks.sound]'>(preview)</A> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the cassette</a> named as \"[disk.tracks.title]\". <A HREF='?_src_=holder;wipedata=\ref[disk]'>Wipe</A> data.")
+					coin -= 1
+					cooldown += 5 MINUTES
+					sleep(40)
 
-				set_on(usr)
+					playsound(get_turf(src), 'sound/machines/console/console_success.ogg', 40, 1)
+					sleep(20)
 
-				var/new_sound_file = input(usr, "Pick file:","File") as null|file
-				if(!new_sound_file)
-					playsound(get_turf(src), 'sound/machines/console/console_error.ogg', 40, 1)
-					return
-
-				interact_sound = "sound/machines/console/console_interact[rand(1,7)].ogg"
-				playsound(get_turf(src), interact_sound, 40, 1)
-
-				var/new_name = input(usr, "Name the cassette:") as null|text
-				if(!new_name)
-					playsound(get_turf(src), 'sound/machines/console/console_error.ogg', 40, 1)
-					return
-
-				interact_sound = "sound/machines/console/console_interact[rand(1,7)].ogg"
-				playsound(get_turf(src), interact_sound, 40, 1)
-
-				new_name = sanitizeSafe(new_name)
-
-				playsound(get_turf(src), 'sound/machines/console/console.ogg', 40)
-
-				if(new_sound_file && new_name && writing)
-					SetName("cassette - \"[new_name]\"")
-
-					if(disk.tracks) //Removing old datum disk if there one
-						qdel(disk.tracks)
-
-					var/datum/track/T = new(new_name, new_sound_file)
-
-					if(T)
-						disk.tracks = T
-						disk.uploader_ckey = retard.ckey
-
-						message_admins("[retard.real_name]([retard.ckey]) uploaded new sound <A HREF='?_src_=holder;listensound=\ref[new_sound_file]'>(preview)</A> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the cassette</a> named as [new_name]. <A HREF='?_src_=holder;wipedata=\ref[disk]'>Wipe</A> data.")
-						sleep(40)
-
-						playsound(get_turf(src), 'sound/machines/console/console_success.ogg', 40, 1)
-						sleep(20)
-						playsound(get_turf(src), 'sound/machines/console/console3.ogg', 40, 1)
-
-						usr.put_in_hands(disk)
-						disk = null
-
-						coin -= 1
-						set_off()
+					eject(usr)
+					set_off()
 			else
 				playsound(get_turf(src), 'sound/machines/console/console_error.ogg', 40, 1)
 				to_chat(usr, "<span class='danger'>You can't rewrite this disk.</span>")
-				return
+	return
+
+/obj/machinery/media/music_writer/proc/write_disk(mob/user)
+	var/interact_sound = "sound/machines/console/console_interact[rand(1,7)].ogg"
+	playsound(get_turf(src), interact_sound, 40, 1)
+
+	set_on(user)
+
+	var/new_sound_file = input(user, "Pick file:","File") as null|file
+	if(!new_sound_file)
+		playsound(get_turf(src), 'sound/machines/console/console_error.ogg', 40, 1)
+		return
+
+	interact_sound = "sound/machines/console/console_interact[rand(1,7)].ogg"
+	playsound(get_turf(src), interact_sound, 40, 1)
+
+	var/new_name = input(user, "Name the cassette:") as null|text
+	if(!new_name)
+		playsound(get_turf(src), 'sound/machines/console/console_error.ogg', 40, 1)
+		return
+
+	interact_sound = "sound/machines/console/console_interact[rand(1,7)].ogg"
+	playsound(get_turf(src), interact_sound, 40, 1)
+
+	new_name = sanitizeSafe(new_name)
+
+	if(new_sound_file && new_name && writing)
+		playsound(get_turf(src), 'sound/machines/console/console.ogg', 40)
+
+		disk.SetName("cassette - \"[new_name]\"")
+
+		if(disk.tracks) //Removing old datum disk if there one
+			qdel(disk.tracks)
+
+		var/datum/track/T = new(new_name, new_sound_file)
+
+		if(T)
+			disk.tracks = T
+			disk.uploader_ckey = retard.ckey
+			return 1
+	return 0
+
+/obj/machinery/media/music_writer/proc/eject(mob/user)
+	playsound(get_turf(src), 'sound/machines/console/console3.ogg', 40, 1)
+	user.put_in_hands(disk)
+	disk = null
 
 /obj/machinery/media/music_writer/update_icon()
 	if(writing)

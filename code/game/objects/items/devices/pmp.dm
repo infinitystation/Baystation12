@@ -89,7 +89,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 
 /obj/item/device/pmp/Process()
 	if(cell && playing)
-		if(cell.charge < 0.0833333333)
+		if(cell.charge <= 0.0833333333)
 			StopPlaying()
 			visible_message("<span class='warning'>\The [src] is suddenly turned off.</span>")
 			return
@@ -117,7 +117,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 		StopPlaying()
 		return
 	else
-		if(cell && cell.charge < 0.0333333333 || !cell)
+		if(cell && cell.charge <= 0.0833333333 || !cell)
 			return
 		else
 			StartPlaying()
@@ -162,6 +162,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 	else if(isScrewdriver(I))
 		if(cell)
 			StopPlaying()
+			playsound(src.loc, 'sound/items/Screwdriver.ogg', 45, 1)
 			to_chat(user, "<span class='notice'>You pulled out [cell] out of [src] with [I].</span>")
 			usr.put_in_hands(cell)
 			cell = null
