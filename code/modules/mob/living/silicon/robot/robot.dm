@@ -248,8 +248,10 @@
 				to_chat(src, "<span class='warning'>Custom Sprite Sheet does not contain a valid icon_state for [ckey]-[modtype]</span>")
 		else
 			icontype = module_sprites[1]
-		icon_state = module_sprites[icontype]
-	update_icon()
+		var/icon_state_robo = module_sprites[icontype]
+		for(var/obj/item/weapon/robot_module/module in contents)
+			if(module.do_transform_animation(icon_state_robo))
+				update_icon()
 	return module_sprites
 
 /mob/living/silicon/robot/proc/pick_module()
@@ -967,8 +969,10 @@
 			icontype = module_sprites[1]
 	else
 		icontype = input("Select an icon! [triesleft ? "You have [triesleft] more chance\s." : "This is your last try."]", "Robot Icon", icontype, null) in module_sprites
-	icon_state = module_sprites[icontype]
-	update_icon()
+	var/icon_state_robo = module_sprites[icontype]
+	for(var/obj/item/weapon/robot_module/module in contents)
+		if(module.do_transform_animation(icon_state_robo))
+			update_icon()
 
 	if (module_sprites.len > 1 && triesleft >= 1 && client)
 		icon_selection_tries--
