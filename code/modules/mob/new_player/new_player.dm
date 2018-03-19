@@ -254,7 +254,7 @@
 		if(client)
 			client.prefs.process_link(src, href_list)
 	else if(!href_list["late_join"])
-		if(client.banprisoned)
+		if(client && client.banprisoned)
 			new_player_panel_prisoner()
 		else
 			new_player_panel()
