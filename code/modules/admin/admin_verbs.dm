@@ -136,7 +136,9 @@ var/list/admin_verbs_fun = list(
 	/datum/admins/proc/call_supply_drop,
 	/datum/admins/proc/call_drop_pod,
 	/client/proc/create_dungeon,
-	/datum/admins/proc/ai_hologram_set
+	/datum/admins/proc/ai_hologram_set,
+	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
+	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
 	)
 
 var/list/admin_verbs_spawn = list(
