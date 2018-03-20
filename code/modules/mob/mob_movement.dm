@@ -383,6 +383,9 @@
 
 		moving = 0
 
+		if(mob.pulling)
+			mob.update_vision_cone()
+
 		return .
 
 	return

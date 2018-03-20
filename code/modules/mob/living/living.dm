@@ -593,6 +593,11 @@ default behaviour is:
 		for(var/mob/living/carbon/slime/M in view(1,src))
 			M.UpdateFeed()
 
+	for(var/mob/M in oview(src))
+		M.update_vision_cone()
+
+	update_vision_cone()
+
 /mob/living/verb/resist()
 	set name = "Resist"
 	set category = "IC"
@@ -764,6 +769,23 @@ default behaviour is:
 		layer = HIDING_MOB_LAYER
 	else
 		..()
+
+/mob/living/set_dir()
+	..()
+	update_vision_cone()
+
+/mob/living/Move(NewLoc, direct)
+	for(var/client/C in in_vision_cones)
+		if(src in C.hidden_mobs)
+			var/turf/T = get_turf(src)
+			var/image/I = image('icons/effects/footstepsound.dmi', loc = T, icon_state = "blip", layer = 18)
+			C.images += I
+			spawn(6)
+				if(C)
+					C.images -= I
+		else
+			in_vision_cones.Remove(C)
+	. = ..()
 
 /mob/living/update_icons()
 	if(auras)
