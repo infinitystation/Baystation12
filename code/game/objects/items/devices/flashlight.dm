@@ -136,6 +136,21 @@
 	slot_flags = SLOT_EARS
 	brightness_on = 2
 	w_class = ITEM_SIZE_TINY
+	var/holo_cooldown = 0
+
+/obj/item/device/flashlight/pen/afterattack(atom/target, mob/user, proximity_flag)
+	if(!proximity_flag)
+		if(holo_cooldown > world.time)
+			to_chat(user, "<span class='warning'>[src] is not ready yet!</span>")
+			return
+		var/T = get_turf(target)
+		if(locate(/mob/living) in T)
+			var/obj/effect/medical_holosign/holo = new /obj/effect/medical_holosign(T, user) //produce a holographic glow
+			holo.plane = target.plane
+			holo.layer = target.layer + 0.01
+			holo_cooldown = world.time + 100
+			return
+	..()
 
 /obj/item/device/flashlight/maglight
 	name = "maglight"

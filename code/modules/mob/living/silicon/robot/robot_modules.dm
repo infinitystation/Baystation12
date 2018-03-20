@@ -70,9 +70,9 @@ var/global/list/robot_modules = list(
 
 /obj/item/weapon/robot_module/proc/do_transform_animation(var/robo_icon)
 	var/mob/living/silicon/robot/R = loc
-	var/obj/effect/fade_mimic/ANM = new /obj/effect/fade_mimic(R.loc, R)
+	var/obj/effect/fading/ANM = new /obj/effect/fading(R.loc, R)
 	ANM.layer = R.layer - 0.01
-	new /obj/effect/small_smoke(R.loc)
+	new /obj/effect/fading/small_smoke(R.loc)
 	R.alpha = 0
 	animate(R, icon_state = robo_icon, alpha = 255, time = 50)
 	var/prev_lockcharge = R.lockcharge
@@ -84,39 +84,6 @@ var/global/list/robot_modules = list(
 	if(!prev_lockcharge)
 		R.SetLockdown(0)
 	return 1
-
-/obj/effect/small_smoke
-	name = "smoke"
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "smoke"
-	anchored = 0
-	mouse_opacity = 0
-	var/duration = 50
-
-/obj/effect/small_smoke/Initialize()
-	. = ..()
-	animate(src, alpha = 0, time = duration)
-	QDEL_IN(src, duration)
-
-/obj/effect/fade_mimic
-	name = "strange smoke"
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "smoke"
-	anchored = 0
-	mouse_opacity = 0
-	var/duration = 50
-
-/obj/effect/fade_mimic/Initialize(mapload, atom/mimiced_atom)
-	. = ..()
-	alpha = initial(alpha)
-	if(mimiced_atom)
-		name = mimiced_atom.name
-		appearance = mimiced_atom.appearance
-		set_dir(mimiced_atom.dir)
-		mouse_opacity = 2
-
-	animate(src, alpha = 0, time = duration)
-	QDEL_IN(src, duration)
 
 /obj/item/weapon/robot_module/proc/Reset(var/mob/living/silicon/robot/R)
 	remove_camera_networks(R)
