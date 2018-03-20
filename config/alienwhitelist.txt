@@ -1,5 +1,6 @@
 rucat - machine
 rex127 - machine
+logfol - machine
 kosteg - machine
 hodovoy - machine
 parasoul - machine
@@ -34,6 +35,7 @@ twinindifferent - resomi
 wheatley2013 - resomi
 kirill1243 - resomi
 themaybat - resomi
+pixelduck - resomi
 netreson - resomi
 hodovoy - resomi
 cre77 - resomi
