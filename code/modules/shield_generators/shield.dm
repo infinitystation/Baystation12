@@ -249,6 +249,8 @@
 	else
 		explosion_resistance = 0
 
+/obj/effect/shield/get_explosion_resistance()
+	return explosion_resistance
 
 // Shield collision checks below
 
