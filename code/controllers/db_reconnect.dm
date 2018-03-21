@@ -10,7 +10,7 @@ var/datum/controller/db_reconnect/db_reconnect
 /datum/controller/db_reconnect/Destroy()
 	STOP_PROCESSING(SSprocessing, src)
 
-/datum/controller/db_reconnect/proc/Process()
+/datum/controller/db_reconnect/Process()
 	if(timerbuffer <= 0)
 		dbcon.Disconnect()
 		failed_db_connections = 0
