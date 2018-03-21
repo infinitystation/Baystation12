@@ -149,7 +149,7 @@
 
 /area/crew_quarters/safe_room/thirddeck
 	name = "\improper Third Deck Safe Room"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 
 //Second Deck (Z-3)
@@ -194,7 +194,7 @@
 
 /area/crew_quarters/safe_room/seconddeck
 	name = "\improper Second Deck Safe Room"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 
 //First Deck (Z-4)
@@ -248,7 +248,7 @@
 
 /area/crew_quarters/safe_room/firstdeck
 	name = "\improper First Deck Safe Room"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/maintenance/substation/firstdeck // First Deck (Z-4)
 	name = "First Deck Substation"
@@ -291,7 +291,7 @@
 
 /area/crew_quarters/safe_room/bridge
 	name = "\improper Bridge Safe Room"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/bridge/storage
 	name = "\improper Bridge Storage Room"
@@ -304,52 +304,52 @@
 //torch large pods
 /area/shuttle/escape_pod6/station
 	name = "Escape Pod One"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod7/station
 	name = "Escape Pod Two"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod8/station
 	name = "Escape Pod Three"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod9/station
 	name = "Escape Pod Four"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod10/station
 	name = "Escape Pod Five"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod11/station
 	name = "Escape Pod Six"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 //torch small pods
 /area/shuttle/escape_pod12/station
 	name = "Escape Pod Seven"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod13/station
 	name = "Escape Pod Eight"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod14/station
 	name = "Escape Pod Nine"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod15/station
 	name = "Escape Pod Ten"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod16/station
 	name = "Escape Pod Eleven"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod17/station
 	name = "Escape Pod Twelve"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 //Charon
 
@@ -357,7 +357,7 @@
 	name = "\improper Charon"
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/plating
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/exploration_shuttle/cockpit
 	name = "\improper Charon - Cockpit"
@@ -380,7 +380,7 @@
 	base_turf = /turf/simulated/floor/reinforced/airless
 	requires_power = 1
 	dynamic_lighting = 1
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 //Guppy
 
@@ -389,7 +389,7 @@
 	icon_state = "shuttlered"
 	requires_power = 1
 	dynamic_lighting = 1
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 
 //Petrov
@@ -398,7 +398,7 @@
 	name = "\improper NSV Petrov"
 	requires_power = 1
 	dynamic_lighting = 1
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/petrov/ship
 	icon_state = "shuttlered"
@@ -419,7 +419,7 @@
 	icon_state = "shuttle"
 	requires_power = 0
 	dynamic_lighting = 1
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/turbolift/start
 	name = "\improper Turbolift Start"
@@ -455,7 +455,7 @@
 	icon_state = "green"
 	requires_power = 0
 	dynamic_lighting = 1
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/ninja_dojo/dojo
 	name = "\improper Clan Dojo"
@@ -484,7 +484,7 @@
 	name = "\improper Mercenary Forward Operating Base"
 	icon_state = "yellow"
 	requires_power = 0
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 //Skipjack
 
@@ -500,7 +500,7 @@
 	icon_state = "yellow"
 	requires_power = 0
 	dynamic_lighting = 1
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/rescue_base/base
 	name = "\improper Barracks"
@@ -791,7 +791,7 @@
 /area/rnd/blanks
 	name = "\improper Aux Custodial Supplies"
 	icon_state = "decontamination"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 // Crew areas
 /area/crew_quarters/bar
@@ -836,13 +836,13 @@
 	name = "\improper Safe Room"
 	icon_state = "crew_quarters"
 	sound_env = SMALL_ENCLOSED
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/crew_quarters/sleep/bunk
 	name = "\improper Bunk Room"
 	icon_state = "Sleep"
 	sound_env = SMALL_SOFTFLOOR
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/crew_quarters/sleep/cryo/aux
 	name = "\improper Auxiliary Cryogenic Storage"
@@ -1032,7 +1032,7 @@
 /area/maintenance/exterior
 	name = "\improper Exterior Reinforcements"
 	icon_state = "maint_security_starboard"
-	flags = AREA_EXTERNAL
+	area_flags = AREA_FLAG_EXTERNAL
 	has_gravity = FALSE
 	turf_initializer = /decl/turf_initializer/maintenance/space
 
@@ -1071,7 +1071,7 @@
 	sound_env = SMALL_ENCLOSED
 
 /area/solar
-	flags = AREA_EXTERNAL
+	area_flags = AREA_FLAG_EXTERNAL
 	requires_power = 1
 	always_unpowered = 1
 	has_gravity = FALSE
