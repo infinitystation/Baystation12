@@ -349,7 +349,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 	..()
 
 /obj/item/device/cassette/custom/proc/setup_cassette(mob/user)
-	var/sound_file = input(user, "Pick sound:","File") as null|file
+	var/sound_file = input(user, "Pick sound:","File") as null|sound
 	if(isnull(sound_file)) return 0
 
 	var/new_name = input(user, "Name the cassette:") as null|text

@@ -121,7 +121,7 @@
 
 	set_on(user)
 
-	var/new_sound_file = input(user, "Pick file:","File") as null|file
+	var/new_sound_file = input(user, "Pick file:","File") as null|sound
 	if(!new_sound_file)
 		playsound(get_turf(src), 'sound/machines/console/console_error.ogg', 40, 1)
 		return
