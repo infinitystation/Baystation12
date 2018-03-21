@@ -10,6 +10,18 @@ var/obj/screen/robot_inventory
 
 	var/obj/screen/using
 
+//Fov
+	var/mob/living/silicon/robot/r = mymob
+	if(r.can_have_fov)
+		r.fov = new /obj/screen()
+		r.fov.icon = 'icons/mob/hide.dmi'
+		r.fov.icon_state = "combat"
+		r.fov.name = ""
+		r.fov.screen_loc = "1,1"
+		r.fov.mouse_opacity = 0
+		r.fov.layer = UNDER_HUD_LAYER
+		src.adding += r.fov
+
 //Radio
 	using = new /obj/screen()
 	using.SetName("radio")

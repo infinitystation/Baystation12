@@ -23,7 +23,7 @@
 	mymob.fade = new /obj/screen()
 	mymob.fade.icon = 'icons/mob/fullscreen2.dmi'
 	mymob.fade.icon_state = "fade"
-	mymob.fade.name = " "
+	mymob.fade.name = ""
 	mymob.fade.screen_loc = "WEST,SOUTH to EAST,NORTH"
 	mymob.fade.plane = BASE_AREA_LAYER
 	mymob.fade.mouse_opacity = 0
@@ -38,6 +38,17 @@
 	mymob.noise.mouse_opacity = 0
 	mymob.noise.alpha = target.isSynthetic() || E && E.robotic >= ORGAN_ROBOT ? 255 : 0
 	hud_elements |= mymob.noise
+
+	if(target.can_have_fov)
+		var/mob/living/carbon/human/H = mymob
+		H.fov = new /obj/screen()
+		H.fov.icon = 'icons/mob/hide.dmi'
+		H.fov.icon_state = "combat"
+		H.fov.name = ""
+		H.fov.screen_loc = "1,1"
+		H.fov.mouse_opacity = 0
+		H.fov.layer = UNDER_HUD_LAYER
+		hud_elements |= H.fov
 
 	// Draw the various inventory equipment slots.
 	var/has_hidden_gear
@@ -263,15 +274,6 @@
 		mymob.nutrition_icon.SetName("nutrition")
 		mymob.nutrition_icon.screen_loc = ui_nutrition
 		hud_elements |= mymob.nutrition_icon
-
-	/*
-	mymob.noise1 = new /obj/screen()
-	mymob.noise1.icon = 'icons/mob/noise.dmi'
-	mymob.noise1.icon_state = pick("1", "2", "3")
-	mymob.noise1.name = " "
-	mymob.noise1.screen_loc = "1,1 to 15,15"
-	mymob.noise1.mouse_opacity = 0
-	hud_elements |= mymob.noise1 */
 
 	mymob.fixeye = new /obj/screen()
 	mymob.fixeye.icon = 'icons/mob/screen/fixed_eye.dmi'
