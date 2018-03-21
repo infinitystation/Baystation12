@@ -160,7 +160,7 @@
 /area/ship/scrap/maintenance/lower
 	name = "\improper Lower Deck Maintenance Compartments"
 	icon_state = "sub_maint_aft"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/ship/scrap/maintenance/storage
 	name = "\improper Tools Storage"
@@ -234,7 +234,7 @@
 	name = "\improper Pirats Shuttle"
 	icon_state = "yellow"
 	dynamic_lighting = 1
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/admin/prison
   name = "\improper Ban Prison"
