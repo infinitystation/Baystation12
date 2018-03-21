@@ -23,7 +23,7 @@
 	mymob.fade = new /obj/screen()
 	mymob.fade.icon = 'icons/mob/fullscreen2.dmi'
 	mymob.fade.icon_state = "fade"
-	mymob.fade.name = " "
+	mymob.fade.name = ""
 	mymob.fade.screen_loc = "WEST,SOUTH to EAST,NORTH"
 	mymob.fade.plane = BASE_AREA_LAYER
 	mymob.fade.mouse_opacity = 0
@@ -39,12 +39,12 @@
 	mymob.noise.alpha = target.isSynthetic() || E && E.robotic >= ORGAN_ROBOT ? 255 : 0
 	hud_elements |= mymob.noise
 
-	if(ishuman(mymob))
+	if(target.can_have_fov)
 		var/mob/living/carbon/human/H = mymob
 		H.fov = new /obj/screen()
 		H.fov.icon = 'icons/mob/hide.dmi'
 		H.fov.icon_state = "combat"
-		H.fov.name = " "
+		H.fov.name = ""
 		H.fov.screen_loc = "1,1"
 		H.fov.mouse_opacity = 0
 		H.fov.layer = UNDER_HUD_LAYER

@@ -5,6 +5,9 @@
 	else
 		add_to_living_mob_list()
 
+	if(can_have_fov)
+		using_fov = 1
+
 //mob verbs are faster than object verbs. See mob/verb/examine.
 /mob/living/verb/pulled(atom/movable/AM as mob|obj in oview(1))
 	set name = "Pull"

@@ -12,13 +12,13 @@
 //Defines.
 #define OPPOSITE_DIR(D) turn(D, 180)
 
-client/
+/client/
 	var/list/hidden_atoms = list()
 	var/list/hidden_mobs = list()
 
 
 
-atom/proc/InCone(atom/center = usr, dir = NORTH)
+/atom/proc/InCone(atom/center = usr, dir = NORTH)
 	if(get_dist(center, src) == 0 || src == center) return 0
 	var/d = get_dir(center, src)
 
@@ -33,10 +33,10 @@ atom/proc/InCone(atom/center = usr, dir = NORTH)
 		return (dir & (NORTH|SOUTH)) ? 1 : 0
 	return (dir & (EAST|WEST)) ? 1 : 0
 
-mob/dead/InCone(mob/center = usr, dir = NORTH)
+/mob/dead/InCone(mob/center = usr, dir = NORTH)
 	return
 
-mob/living/InCone(mob/center = usr, dir = NORTH)
+/mob/living/InCone(mob/center = usr, dir = NORTH)
 	. = ..()
 	for(var/obj/item/grab/G in center)//TG doesn't have the grab item. But if you're porting it and you do then uncomment this.
 		if(src == G.affecting)
@@ -45,14 +45,19 @@ mob/living/InCone(mob/center = usr, dir = NORTH)
 			return .
 
 
-proc/cone(atom/center = usr, dir = NORTH, list/list = oview(center))
+/proc/cone(atom/center = usr, dir = NORTH, list/list = oview(center))
 	for(var/atom/O in list) if(!O.InCone(center, dir)) list -= O
 	return list
 
-mob/proc/update_vision_cone()
+/mob/proc/update_vision_cone()
 	return
 
-mob/living/carbon/human/update_vision_cone()
+/mob/living/update_vision_cone()
+	if(!can_have_fov)
+		if(using_fov)
+			hide_cone()
+		return
+
 	var/delay = 10
 	if(src.client)
 		var/image/I = null
@@ -76,7 +81,7 @@ mob/living/carbon/human/update_vision_cone()
 				if(src.pulling == M)//If we're pulling them we don't want them to be invisible, too hard to play like that.
 					I.override = 0
 
-//				else if(M.footstep >= 1)
+			//	else if(M.footstep >= 1)
 				M.in_vision_cones[src.client] = 1
 
 			//Optional items can be made invisible too. Uncomment this part if you wish to items to be invisible.
@@ -90,31 +95,49 @@ mob/living/carbon/human/update_vision_cone()
 	else
 		return
 
-mob/living/carbon/human/proc/SetFov(var/n)
+/mob/living/proc/SetFov(var/n)
+	if(!can_have_fov)
+		return
+
 	if(!n)
 		hide_cone()
 	else
 		show_cone()
 
-mob/living/carbon/human/proc/check_fov()
+/mob/living/proc/check_fov()
+	if(!can_have_fov)
+		return
+
+	if(isnull(fov))
+		src.fov = new /obj/screen()
+		src.fov.icon = 'icons/mob/hide.dmi'
+		src.fov.icon_state = "combat"
+		src.fov.name = ""
+		src.fov.screen_loc = "1,1"
+		src.fov.mouse_opacity = 0
+		src.fov.layer = UNDER_HUD_LAYER
+		src.client.screen |= src.fov
 
 	if(resting || lying || client.eye != client.mob)
 		src.fov.alpha = 0
 		return
 
-	else if(src.usefov)
+	else if(src.using_fov)
 		show_cone()
 
 	else
 		hide_cone()
 
 //Making these generic procs so you can call them anywhere.
-mob/living/carbon/human/proc/show_cone()
+/mob/living/proc/show_cone()
+	if(!can_have_fov)
+		return
+
 	if(src.fov)
 		src.fov.alpha = 255
-		src.usefov = 1
+		src.using_fov = 1
 
-mob/living/carbon/human/proc/hide_cone()
+/mob/living/proc/hide_cone()
 	if(src.fov)
 		src.fov.alpha = 0
-		src.usefov = 0
+		src.using_fov = 0

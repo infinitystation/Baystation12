@@ -26,7 +26,8 @@
 
 	var/list/in_vision_cones = list()
 	var/obj/screen/fov = null // The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
-	var/usefov = 1
+	var/using_fov
+	var/can_have_fov = 0 // Hacky trick
 
 	var/now_pushing = null
 	var/mob_bump_flag = 0
