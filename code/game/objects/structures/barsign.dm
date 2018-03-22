@@ -1,6 +1,7 @@
 /obj/structure/sign/double/barsign	// The sign is 64x32, so it needs two tiles. ;3
-	name = "a bar sign"
-	desc = "A jumbo-sized LED sign."
+	name = "bar sign"
+	desc = "A jumbo-sized LED sign. This one seems to be showing its age."
+	description_info = "If your ID has bar access, you may swipe it on this sign to alter its display."
 	icon = 'icons/obj/barsigns.dmi'
 	icon_state = "empty"
 	plane = -10 //Above humans
