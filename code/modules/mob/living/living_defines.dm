@@ -25,9 +25,9 @@
 	var/t_n2 = null
 
 	var/list/in_vision_cones = list()
-	var/obj/screen/fov = null // The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
-	var/using_fov
-	var/can_have_fov = 0 // Hacky trick
+	var/obj/screen/vision_cone_overlay = null // The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
+	var/vision_cone
+	var/can_have_vision_cone = 0 // Hacky trick
 
 	var/now_pushing = null
 	var/mob_bump_flag = 0

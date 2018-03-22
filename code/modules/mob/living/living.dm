@@ -5,8 +5,13 @@
 	else
 		add_to_living_mob_list()
 
-	if(can_have_fov)
-		using_fov = 1
+/mob/living/Initialize()
+	. = ..()
+	if(can_have_vision_cone)
+		vision_cone = 1
+
+	GLOB.dir_set_event.register(src, src, /mob/proc/update_vision_cone)
+	GLOB.moved_event.register(src, src, /mob/proc/update_vision_cone)
 
 //mob verbs are faster than object verbs. See mob/verb/examine.
 /mob/living/verb/pulled(atom/movable/AM as mob|obj in oview(1))
@@ -773,23 +778,6 @@ default behaviour is:
 	else
 		..()
 
-/mob/living/set_dir()
-	..()
-	update_vision_cone()
-
-/mob/living/Move(NewLoc, direct)
-	for(var/client/C in in_vision_cones)
-		if(src in C.hidden_mobs)
-			var/turf/T = get_turf(src)
-			var/image/I = image('icons/effects/footstepsound.dmi', loc = T, icon_state = "blip", layer = 18)
-			C.images += I
-			spawn(6)
-				if(C)
-					C.images -= I
-		else
-			in_vision_cones.Remove(C)
-	. = ..()
-
 /mob/living/update_icons()
 	if(auras)
 		overlays |= auras
@@ -808,4 +796,7 @@ default behaviour is:
 	if(auras)
 		for(var/a in auras)
 			remove_aura(a)
+
+	GLOB.dir_set_event.unregister(src, src, /mob/proc/update_vision_cone)
+	GLOB.moved_event.unregister(src, src, /mob/proc/update_vision_cone)
 	return ..()
