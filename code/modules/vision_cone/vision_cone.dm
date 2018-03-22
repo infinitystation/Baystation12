@@ -33,7 +33,7 @@
 		return (dir & (NORTH|SOUTH)) ? 1 : 0
 	return (dir & (EAST|WEST)) ? 1 : 0
 
-/mob/dead/InCone(mob/center = usr, dir = NORTH)
+/mob/observer/ghost/InCone(mob/center = usr, dir = NORTH)
 	return
 
 /mob/living/InCone(mob/center = usr, dir = NORTH)
