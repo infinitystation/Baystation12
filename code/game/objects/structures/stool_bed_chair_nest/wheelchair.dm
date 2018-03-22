@@ -23,7 +23,7 @@
 		buckled_mob.set_dir(dir)
 
 /obj/structure/bed/chair/wheelchair/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/wrench) || istype(W,/obj/item/stack) || istype(W, /obj/item/weapon/wirecutters))
+	if(isWrench(W) || istype(W,/obj/item/stack) || isWirecutter(W))
 		return
 	..()
 
@@ -191,30 +191,35 @@
 		usr.pulledby = null
 	..()
 
-/obj/structure/bed/chair/wheelchair/verb/collapse(mob/user)
+/obj/structure/bed/chair/wheelchair/verb/collapse()
+	set src in oview(1)
 	set name = "Collapse Wheelchair"
 	set category = "Object"
-	set src in oview(1)
 
-	if(in_range(src, usr))
-		if(!ishuman(usr))
-			return
-		if(user.incapacitated())
-			return
-		if(buckled_mob)
-			to_chat(user, "<span class='warning'>You can't collapse \the [src.name] while it still on use.</span>")
-			return
-		visible_message("[user] starts collapse \the [src.name].")
-		if(do_after(user, 40, src))
-			var/obj/item/wheelchair_kit/K = new /obj/item/wheelchair_kit(get_turf(user))
-			visible_message("<span class='notice'>[user] collapses \the [src.name].</span>")
-			K.add_fingerprint(user)
-			qdel(src)
+	if(!CanPhysicallyInteract(usr))
+		return
+
+	if(!ishuman(usr))
+		return
+
+	if(usr.incapacitated())
+		return
+
+	if(buckled_mob)
+		to_chat(usr, "<span class='warning'>You can't collapse \the [src.name] while it still on use.</span>")
+		return
+
+	visible_message("[usr] starts collapse \the [src.name].")
+	if(do_after(usr, 40, src))
+		var/obj/item/wheelchair_kit/K = new /obj/item/wheelchair_kit(get_turf(usr))
+		visible_message("<span class='notice'>[usr] collapses \the [src.name].</span>")
+		K.add_fingerprint(usr)
+		qdel(src)
 
 /obj/item/wheelchair_kit
 	name = "compressed wheelchair kit"
 	desc = "Collapsed parts, prepared to immediately spring into the shape of a wheelchair."
-	icon = 'icons/obj/infinity_object.dmi'
+	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "wheelchair-item"
 	item_state = "rbed"
 	w_class = ITEM_SIZE_LARGE

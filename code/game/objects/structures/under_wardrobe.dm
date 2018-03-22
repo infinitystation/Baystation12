@@ -123,6 +123,6 @@
 	name = "dresser"
 	desc = "Holds item of clothing you shouldn't be showing off in the hallways."
 	icon = 'icons/obj/infinity_object.dmi'
-	icon_state = "dresser"
+	icon_state = "metal_dresser"
 
 #undef WARDROBE_BLIND_MESSAGE

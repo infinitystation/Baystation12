@@ -279,6 +279,9 @@
 	src.add_fingerprint(user)
 	return
 
+/obj/item/weapon/storage/attack_ghost(mob/user as mob)
+	show_to(user)
+
 /obj/item/weapon/storage/proc/gather_all(var/turf/T, var/mob/user)
 	var/success = 0
 	var/failure = 0

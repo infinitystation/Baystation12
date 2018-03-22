@@ -48,7 +48,7 @@
 /obj/machinery/atmospherics/binary/passive_gate/hide(var/i)
 	update_underlays()
 
-/obj/machinery/atmospherics/binary/passive_gate/process()
+/obj/machinery/atmospherics/binary/passive_gate/Process()
 	..()
 
 	last_flow_rate = 0
@@ -241,7 +241,7 @@
 	return
 
 /obj/machinery/atmospherics/binary/passive_gate/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
-	if (!istype(W, /obj/item/weapon/wrench))
+	if(!isWrench(W))
 		return ..()
 	if (unlocked)
 		to_chat(user, "<span class='warning'>You cannot unwrench \the [src], turn it off first.</span>")

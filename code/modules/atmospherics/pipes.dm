@@ -3,7 +3,7 @@
 	var/datum/gas_mixture/air_temporary // used when reconstructing a pipeline that broke
 	var/datum/pipeline/parent
 	var/volume = 0
-	var/leaking = 0
+	var/leaking = 0		// Do not set directly, use set_leaking(TRUE/FALSE)
 	use_power = 0
 
 	var/alert_pressure = 170*ONE_ATMOSPHERE
@@ -24,6 +24,23 @@
 
 /obj/machinery/atmospherics/pipe/hides_under_flooring()
 	return level != 2
+
+/obj/machinery/atmospherics/pipe/proc/set_leaking(var/new_leaking)
+	if(new_leaking && !leaking)
+		START_PROCESSING(SSmachines, src)
+		leaking = TRUE
+		if(parent)
+			parent.leaks |= src
+			if(parent.network)
+				parent.network.leaks |= src
+	else if (!new_leaking && leaking)
+		STOP_PROCESSING(SSmachines, src)
+		leaking = FALSE
+		if(parent)
+			parent.leaks -= src
+			if(parent.network)
+				parent.network.leaks -= src
+
 
 /obj/machinery/atmospherics/pipe/proc/pipeline_expansion()
 	return null
@@ -78,7 +95,7 @@
 	if(istype(W,/obj/item/device/pipe_painter))
 		return 0
 
-	if (!istype(W, /obj/item/weapon/wrench))
+	if(!isWrench(W))
 		return ..()
 	var/turf/T = src.loc
 	if (level==1 && isturf(T) && !T.is_plating())
@@ -189,7 +206,7 @@
 		set_invisibility(i ? 101 : 0)
 	update_icon()
 
-/obj/machinery/atmospherics/pipe/simple/process()
+/obj/machinery/atmospherics/pipe/simple/Process()
 	if(!parent) //This should cut back on the overhead calling build_network thousands of times per cycle
 		..()
 	else if(leaking)
@@ -273,13 +290,10 @@
 		qdel(src)
 	else if(node1 && node2)
 		overlays += icon_manager.get_atmos_icon("pipe", , pipe_color, "[pipe_icon]intact[icon_connect_type]")
-		if(leaking)
-			leaking = 0
+		set_leaking(FALSE)
 	else
 		overlays += icon_manager.get_atmos_icon("pipe", , pipe_color, "[pipe_icon]exposed[node1?1:0][node2?1:0][icon_connect_type]")
-		if(!leaking)
-			leaking = 1
-			GLOB.processing_objects |= src
+		set_leaking(TRUE)
 
 /obj/machinery/atmospherics/pipe/simple/update_underlays()
 	return
@@ -460,7 +474,7 @@
 /obj/machinery/atmospherics/pipe/manifold/pipeline_expansion()
 	return list(node1, node2, node3)
 
-/obj/machinery/atmospherics/pipe/manifold/process()
+/obj/machinery/atmospherics/pipe/manifold/Process()
 	if(!parent)
 		..()
 	else
@@ -515,6 +529,7 @@
 	if(!check_icon_cache())
 		return
 
+	set_leaking(!(node1 && node2 && node3))
 	alpha = 255
 
 	if(!node1 && !node2 && !node3)
@@ -708,7 +723,7 @@
 /obj/machinery/atmospherics/pipe/manifold4w/pipeline_expansion()
 	return list(node1, node2, node3, node4)
 
-/obj/machinery/atmospherics/pipe/manifold4w/process()
+/obj/machinery/atmospherics/pipe/manifold4w/Process()
 	if(!parent)
 		..()
 	else
@@ -773,6 +788,7 @@
 	if(!check_icon_cache())
 		return
 
+	set_leaking(!(node1 && node2 && node3 && node4))
 	alpha = 255
 
 	if(!node1 && !node2 && !node3 && !node4)
@@ -975,7 +991,7 @@
 /obj/machinery/atmospherics/pipe/cap/pipeline_expansion()
 	return list(node)
 
-/obj/machinery/atmospherics/pipe/cap/process()
+/obj/machinery/atmospherics/pipe/cap/Process()
 	if(!parent)
 		..()
 	else
@@ -984,7 +1000,7 @@
 	if(node)
 		node.disconnect(src)
 
-	..()
+	. = ..()
 
 /obj/machinery/atmospherics/pipe/cap/disconnect(obj/machinery/atmospherics/reference)
 	if(reference == node)
@@ -1091,12 +1107,12 @@
 	initialize_directions = SOUTH
 	density = 1
 
-/obj/machinery/atmospherics/pipe/tank/New()
+/obj/machinery/atmospherics/pipe/tank/Initialize()
 	icon_state = "air"
 	initialize_directions = dir
-	..()
+	. = ..()
 
-/obj/machinery/atmospherics/pipe/tank/process()
+/obj/machinery/atmospherics/pipe/tank/Process()
 	if(!parent)
 		..()
 	else
@@ -1106,7 +1122,7 @@
 	if(node1)
 		node1.disconnect(src)
 
-	..()
+	. = ..()
 
 /obj/machinery/atmospherics/pipe/tank/pipeline_expansion()
 	return list(node1)
@@ -1237,6 +1253,20 @@
 	..()
 	icon_state = "n2o"
 
+/obj/machinery/atmospherics/pipe/tank/hydrogen
+	name = "Pressure Tank (Hydrogen)"
+	icon_state = "h2_map"
+
+/obj/machinery/atmospherics/pipe/tank/hydrogen/New()
+	air_temporary = new
+	air_temporary.volume = volume
+	air_temporary.temperature = T20C
+
+	air_temporary.adjust_gas("hydrogen", (start_pressure)*(air_temporary.volume)/(R_IDEAL_GAS_EQUATION*air_temporary.temperature))
+
+	..()
+	icon_state = "h2"
+
 /obj/machinery/atmospherics/pipe/vent
 	icon = 'icons/obj/atmospherics/pipe_vent.dmi'
 	icon_state = "intact"
@@ -1261,7 +1291,7 @@
 	name = "Larger vent"
 	volume = 1000
 
-/obj/machinery/atmospherics/pipe/vent/process()
+/obj/machinery/atmospherics/pipe/vent/Process()
 	if(!parent)
 		if(build_killswitch <= 0)
 			. = PROCESS_KILL
@@ -1276,7 +1306,7 @@
 	if(node1)
 		node1.disconnect(src)
 
-	..()
+	. = ..()
 
 /obj/machinery/atmospherics/pipe/vent/pipeline_expansion()
 	return list(node1)

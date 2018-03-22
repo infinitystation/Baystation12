@@ -31,29 +31,32 @@ var/global/datum/controller/occupations/job_master
 			occupations += job
 			occupations_by_type[job.type] = job
 			occupations_by_title[job.title] = job
+			job.current_positions = 0
+			for(var/alt_title in job.alt_titles)
+				occupations_by_title[alt_title] = job
 			if(!setup_titles) continue
 			if(job.department_flag & COM)
-				command_positions |= job.title
+				GLOB.command_positions |= job.title
 			if(job.department_flag & SPT)
-				support_positions |= job.title
+				GLOB.support_positions |= job.title
 			if(job.department_flag & SEC)
-				security_positions |= job.title
+				GLOB.security_positions |= job.title
 			if(job.department_flag & ENG)
-				engineering_positions += job.title
+				GLOB.engineering_positions += job.title
 			if(job.department_flag & MED)
-				medical_positions |= job.title
+				GLOB.medical_positions |= job.title
 			if(job.department_flag & SCI)
-				science_positions |= job.title
+				GLOB.science_positions |= job.title
+			if(job.department_flag & EXP)
+				GLOB.exploration_positions |= job.title
 			if(job.department_flag & SUP)
-				supply_positions |= job.title
+				GLOB.supply_positions |= job.title
 			if(job.department_flag & SRV)
-				service_positions |= job.title
-			if(job.department_flag & CRG)
-				cargo_positions |= job.title
+				GLOB.service_positions |= job.title
 			if(job.department_flag & CIV)
-				civilian_positions |= job.title
+				GLOB.civilian_positions |= job.title
 			if(job.department_flag & MSC)
-				nonhuman_positions |= job.title
+				GLOB.nonhuman_positions |= job.title
 
 		return 1
 
@@ -102,6 +105,7 @@ var/global/datum/controller/occupations/job_master
 				Debug("Player: [player] is now Rank: [rank], JCP:[job.current_positions], JPL:[position_limit]")
 				player.mind.assigned_role = rank
 				player.mind.role_alt_title = GetPlayerAltTitle(player, rank)
+				player.mind.assigned_job = GetJob(rank)
 				unassigned -= player
 				job.current_positions++
 				return 1
@@ -151,7 +155,7 @@ var/global/datum/controller/occupations/job_master
 			if(job.is_restricted(player.client.prefs))
 				continue
 
-			if(job.title in command_positions) //If you want a command position, select it!
+			if(job.title in GLOB.command_positions) //If you want a command position, select it!
 				continue
 
 			if(jobban_isbanned(player, job.title))
@@ -181,7 +185,7 @@ var/global/datum/controller/occupations/job_master
 	///This proc is called before the level loop of DivideOccupations() and will try to select a head, ignoring ALL non-head preferences for every level until it locates a head or runs out of levels to check
 	proc/FillHeadPosition()
 		for(var/level = 1 to 3)
-			for(var/command_position in command_positions)
+			for(var/command_position in GLOB.command_positions)
 				var/datum/job/job = GetJob(command_position)
 				if(!job)	continue
 				var/list/candidates = FindOccupationCandidates(job, level)
@@ -221,7 +225,7 @@ var/global/datum/controller/occupations/job_master
 
 	///This proc is called at the start of the level loop of DivideOccupations() and will cause head jobs to be checked before any other jobs of the same level
 	proc/CheckHeadPositions(var/level)
-		for(var/command_position in command_positions)
+		for(var/command_position in GLOB.command_positions)
 			var/datum/job/job = GetJob(command_position)
 			if(!job)	continue
 			var/list/candidates = FindOccupationCandidates(job, level)
@@ -354,9 +358,13 @@ var/global/datum/controller/occupations/job_master
 
 		if(job)
 
-			//Equip custom gear loadout.
-			var/list/custom_equip_slots = list() //If more than one item takes the same slot, all after the first one spawn in storage.
-			var/list/custom_equip_leftovers = list()
+			//Equip job items.
+			job.setup_account(H)
+			job.equip(H, H.mind ? H.mind.role_alt_title : "", H.char_branch, H.char_rank)
+			job.apply_fingerprints(H)
+
+			// Equip custom gear loadout, replacing any job items
+			var/list/loadout_taken_slots = list()
 			if(H.client.prefs.Gear() && job.loadout_allowed)
 				for(var/thing in H.client.prefs.Gear())
 					var/datum/gear/G = gear_datums[thing]
@@ -376,24 +384,12 @@ var/global/datum/controller/occupations/job_master
 							to_chat(H, "<span class='warning'>Your current species, job or whitelist status does not permit you to spawn with [thing]!</span>")
 							continue
 
-						if(G.slot && !(G.slot in custom_equip_slots))
-							// This is a miserable way to fix the loadout overwrite bug, but the alternative requires
-							// adding an arg to a bunch of different procs. Will look into it after this merge. ~ Z
-							var/metadata = H.client.prefs.Gear()[G.display_name]
-							if(G.slot == slot_wear_mask || G.slot == slot_wear_suit || G.slot == slot_head)
-								custom_equip_leftovers += thing
-							else if(H.equip_to_slot_or_del(G.spawn_item(H, metadata), G.slot))
-								to_chat(H, "<span class='notice'>Equipping you with \the [thing]!</span>")
-								custom_equip_slots.Add(G.slot)
-							else
-								custom_equip_leftovers.Add(thing)
+						if(!G.slot || G.slot == slot_tie || (G.slot in loadout_taken_slots) || !G.spawn_on_mob(H, H.client.prefs.Gear()[G.display_name]))
+							spawn_in_storage.Add(G)
 						else
-							spawn_in_storage += thing
-			//Equip job items.
-			job.setup_account(H)
-			job.equip(H, H.mind ? H.mind.role_alt_title : "", H.char_branch)
-			job.apply_fingerprints(H)
+							loadout_taken_slots.Add(G.slot)
 
+			// do accessories last so they don't attach to a suit that will be replaced
 			if(H.char_rank && H.char_rank.accessory)
 				for(var/accessory_path in H.char_rank.accessory)
 					var/list/accessory_data = H.char_rank.accessory[accessory_path]
@@ -406,18 +402,7 @@ var/global/datum/controller/occupations/job_master
 					else
 						for(var/i in 1 to (isnull(accessory_data)? 1 : accessory_data))
 							H.equip_to_slot_or_del(new accessory_path(src), slot_tie)
-			//If some custom items could not be equipped before, try again now.
-			for(var/thing in custom_equip_leftovers)
-				var/datum/gear/G = gear_datums[thing]
-				if(G.slot in custom_equip_slots)
-					spawn_in_storage += thing
-				else
-					var/metadata = H.client.prefs.Gear()[G.display_name]
-					if(H.equip_to_slot_or_del(G.spawn_item(H, metadata), G.slot))
-						to_chat(H, "<span class='notice'>Equipping you with \the [thing]!</span>")
-						custom_equip_slots.Add(G.slot)
-					else
-						spawn_in_storage += thing
+
 		else
 			to_chat(H, "Your job is [rank] and the game just can't handle it! Please report this bug to an administrator.")
 
@@ -463,24 +448,9 @@ var/global/datum/controller/occupations/job_master
 					var/sound/announce_sound = (ticker.current_state <= GAME_STATE_SETTING_UP)? null : sound('sound/misc/boatswain.ogg', volume=20)
 					captain_announcement.Announce("All hands, Captain [H.real_name] on deck!", new_sound=announce_sound)
 
-			//Deferred item spawning.
-			for(var/thing in spawn_in_storage)
-				var/datum/gear/G = gear_datums[thing]
-				var/metadata = H.client.prefs.Gear()[G.display_name]
-				var/item = G.spawn_item(null, metadata)
-
-				var/atom/placed_in = H.equip_to_storage(item)
-				if(placed_in)
-					to_chat(H, "<span class='notice'>Placing \the [item] in your [placed_in.name]!</span>")
-					continue
-				if(H.equip_to_appropriate_slot(item))
-					to_chat(H, "<span class='notice'>Placing \the [item] in your inventory!</span>")
-					continue
-				if(H.put_in_hands(item))
-					to_chat(H, "<span class='notice'>Placing \the [item] in your hands!</span>")
-					continue
-				to_chat(H, "<span class='danger'>Failed to locate a storage object on your mob, either you spawned with no arms and no backpack or this is a bug.</span>")
-				qdel(item)
+		// put any loadout items that couldn't spawn into storage or on the ground
+		for(var/datum/gear/G in spawn_in_storage)
+			G.spawn_in_storage_or_drop(H, H.client.prefs.Gear()[G.display_name])
 
 		if(istype(H)) //give humans wheelchairs, if they need them.
 			var/obj/item/organ/external/l_foot = H.get_organ(BP_L_FOOT)

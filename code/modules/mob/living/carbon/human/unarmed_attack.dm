@@ -5,7 +5,7 @@ var/global/list/sparring_attack_cache = list()
 	var/attack_verb = list("attack")	// Empty hand hurt intent verb.
 	var/attack_noun = list("fist")
 	var/damage = 0						// Extra empty hand attack damage.
-	var/attack_sound = "punch"
+	var/attack_sound = list('sound/effects/hit_kick.ogg', 'sound/effects/hit_punch.ogg')
 	var/miss_sound = 'sound/weapons/punchmiss.ogg'
 	var/shredding = 0 // Calls the old attack_alien() behavior on objects/mobs when on harm intent.
 	var/sharp = 0
@@ -72,8 +72,6 @@ var/global/list/sparring_attack_cache = list()
 					if(!T.density)
 						step(target, get_dir(get_turf(user), get_turf(target)))
 						target.visible_message("<span class='danger'>[pick("[target] was sent flying backward!", "[target] staggers back from the impact!")]</span>")
-					else
-						target.visible_message("<span class='danger'>[target] slams into [T]!</span>")
 					if(prob(50))
 						target.set_dir(GLOB.reverse_dir[target.dir])
 					target.apply_effect(attack_damage * 0.4, WEAKEN, armour)
@@ -94,7 +92,7 @@ var/global/list/sparring_attack_cache = list()
 /datum/unarmed_attack/proc/show_attack(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target, var/zone, var/attack_damage)
 	var/obj/item/organ/external/affecting = target.get_organ(zone)
 	user.visible_message("<span class='warning'>[user] [pick(attack_verb)] [target] in the [affecting.name]!</span>")
-	playsound(user.loc, attack_sound, 25, 1, -1)
+	playsound(user.loc, pick(attack_sound), 25, 1, -1)
 
 /datum/unarmed_attack/proc/handle_eye_attack(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target)
 	var/obj/item/organ/internal/eyes/eyes = target.internal_organs_by_name[BP_EYES]
@@ -122,7 +120,7 @@ var/global/list/sparring_attack_cache = list()
 	if(istype(user.wear_mask, /obj/item/clothing/mask/muzzle))
 		return 0
 	for(var/obj/item/clothing/C in list(user.wear_mask, user.head, user.wear_suit))
-		if(C && (C.body_parts_covered & FACE) && (C.item_flags & THICKMATERIAL))
+		if(C && (C.body_parts_covered & FACE) && (C.item_flags & ITEM_FLAG_THICKMATERIAL))
 			return 0 //prevent biting through a space helmet or similar
 	if (user == target && (zone == BP_HEAD || zone == BP_EYES || zone == BP_MOUTH))
 		return 0 //how do you bite yourself in the head?

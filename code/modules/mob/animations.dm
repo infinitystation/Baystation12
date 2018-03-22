@@ -155,8 +155,15 @@ note dizziness decrements automatically in the mob's Life() proc.
 		default_pixel_x = mob.default_pixel_x
 		default_pixel_y = mob.default_pixel_y
 
-	animate(src, pixel_x = pixel_x + pixel_x_diff, pixel_y = pixel_y + pixel_y_diff, time = 2)
-	animate(pixel_x = default_pixel_x, pixel_y = default_pixel_y, time = 2)
+	var/turn_dir
+	switch(src.dir)
+		if(EAST)
+			turn_dir = 10
+		if(WEST)
+			turn_dir = -10
+
+	animate(src, pixel_x = pixel_x + pixel_x_diff, pixel_y = pixel_y + pixel_y_diff, transform = turn(matrix(), turn_dir), time = 2)//, easing = CUBIC_EASING)
+	animate(pixel_x = default_pixel_x, pixel_y = default_pixel_y, transform = matrix(), time = 2)//, easing = CUBIC_EASING)
 
 /mob/do_attack_animation(atom/A)
 	..()
@@ -196,7 +203,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 		I.pixel_z = 16
 
 	// And animate the attack!
-	animate(I, alpha = 175, pixel_x = 0, pixel_y = 0, pixel_z = 0, time = 3)
+	animate(I, alpha = 175, pixel_x = 0, pixel_y = 0, pixel_z = 0, time = 3, easing = QUAD_EASING)
 
 /mob/proc/spin(spintime, speed)
 	spawn()
@@ -229,3 +236,12 @@ note dizziness decrements automatically in the mob's Life() proc.
 		return
 	playsound(T, "sparks", 50, 1)
 	anim(T,src,'icons/mob/mob.dmi',,"phaseout",,dir)
+
+/atom/movable/proc/receive_damage(atom/A)
+	var/pixel_x_diff = rand(-2,2)
+	var/pixel_y_diff = rand(-2,2)
+	animate(src, pixel_x = pixel_x + pixel_x_diff, pixel_y = pixel_y + pixel_y_diff, time = 2)
+	animate(pixel_x = initial(pixel_x), pixel_y = initial(pixel_y), time = 2)
+
+/mob/living/receive_damage(atom/A)
+	..()

@@ -19,9 +19,9 @@
 	level = 1
 
 
-/obj/machinery/atmospherics/portables_connector/New()
+/obj/machinery/atmospherics/portables_connector/Initialize()
 	initialize_directions = dir
-	..()
+	. = ..()
 
 /obj/machinery/atmospherics/portables_connector/update_icon()
 	icon_state = "connector"
@@ -37,7 +37,7 @@
 /obj/machinery/atmospherics/portables_connector/hide(var/i)
 	update_underlays()
 
-/obj/machinery/atmospherics/portables_connector/process()
+/obj/machinery/atmospherics/portables_connector/Process()
 	..()
 	if(!on)
 		return
@@ -72,7 +72,7 @@
 
 	node = null
 
-	..()
+	. = ..()
 
 /obj/machinery/atmospherics/portables_connector/atmos_init()
 	..()
@@ -132,7 +132,7 @@
 
 
 /obj/machinery/atmospherics/portables_connector/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
-	if (!istype(W, /obj/item/weapon/wrench))
+	if(!isWrench(W))
 		return ..()
 	if (connected_device)
 		to_chat(user, "<span class='warning'>You cannot unwrench \the [src], dettach \the [connected_device] first.</span>")

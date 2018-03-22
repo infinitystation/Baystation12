@@ -1,10 +1,13 @@
+//Good luck. --BlueNexus
+
+//Static version of the clamp
 /obj/machinery/clamp
 	name = "stasis clamp"
 	desc = "A magnetic clamp which can halt the flow of gas in a pipe, via a localised stasis field."
 	icon = 'icons/atmos/clamp.dmi'
 	icon_state = "pclamp0"
-	var/obj/machinery/atmospherics/pipe/simple/target = null
 	anchored = 1.0
+	var/obj/machinery/atmospherics/pipe/simple/target = null
 	var/open = 1
 
 	var/datum/pipe_network/network_node1
@@ -46,10 +49,10 @@
 /obj/machinery/clamp/Destroy()
 	if(!open)
 		spawn(-1) open()
-	..()
+	. = ..()
 
 /obj/machinery/clamp/proc/open()
-	if(open)
+	if(open || !target)
 		return 0
 
 	target.build_network()
@@ -91,11 +94,11 @@
 	if(target.node2)
 		target.node2.build_network()
 		node2 = target.node2
-	if(istype(node1))
+	if(istype(node1) && node1.parent)
 		var/datum/pipeline/P1 = node1.parent
 		P1.build_pipeline(node1)
 		qdel(P1)
-	if(istype(node2))
+	if(istype(node2) && node2.parent)
 		var/datum/pipeline/P2 = node2.parent
 		P2.build_pipeline(node2)
 		qdel(P2)
@@ -133,6 +136,7 @@
 	desc = "A magnetic clamp which can halt the flow of gas in a pipe, via a localised stasis field."
 	icon = 'icons/atmos/clamp.dmi'
 	icon_state = "pclamp0"
+	origin_tech = list(TECH_ENGINEERING = 4, TECH_MAGNET = 4)
 
 /obj/item/clamp/afterattack(var/atom/A, mob/user as mob, proximity)
 	if(!proximity)

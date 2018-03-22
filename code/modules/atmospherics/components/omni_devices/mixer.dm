@@ -19,8 +19,8 @@
 	var/tag_east_con
 	var/tag_west_con
 
-	var/max_flow_rate = 200
-	var/set_flow_rate = 200
+	var/max_flow_rate = ATMOS_DEFAULT_VOLUME_MIXER
+	var/set_flow_rate = ATMOS_DEFAULT_VOLUME_MIXER
 
 	var/list/mixing_inputs = list()
 
@@ -53,7 +53,7 @@
 /obj/machinery/atmospherics/omni/mixer/Destroy()
 	inputs.Cut()
 	output = null
-	..()
+	. = ..()
 
 /obj/machinery/atmospherics/omni/mixer/sort_ports()
 	for(var/datum/omni_port/P in ports)
@@ -98,7 +98,7 @@
 
 	return 0
 
-/obj/machinery/atmospherics/omni/mixer/process()
+/obj/machinery/atmospherics/omni/mixer/Process()
 	if(!..())
 		return 0
 

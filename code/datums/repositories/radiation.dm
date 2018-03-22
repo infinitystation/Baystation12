@@ -18,7 +18,7 @@ var/global/repository/radiation/radiation_repository = new()
 /datum/radiation_source/Destroy()
 	radiation_repository.sources -= src
 	if(radiation_repository.sources_assoc[src.source_turf] == src)
-		radiation_repository.sources -= src.source_turf
+		radiation_repository.sources_assoc -= src.source_turf
 	src.source_turf = null
 	. = ..()
 
@@ -47,8 +47,8 @@ var/global/repository/radiation/radiation_repository = new()
 		if(dist > source.range)
 			continue // Too far to possibly affect
 		if(source.respect_maint)
-			var/atom/A = T.loc
-			if(A.flags & AREA_RAD_SHIELDED)
+			var/area/A = T.loc
+			if(A.area_flags & AREA_FLAG_RAD_SHIELDED)
 				continue // In shielded area
 		if(source.flat)
 			. = max(., source.rad_power)
@@ -61,10 +61,13 @@ var/global/repository/radiation/radiation_repository = new()
 			origin = get_step_towards(origin, T) //Raytracing
 			if(!(origin in resistance_cache)) //Only get the resistance if we don't already know it.
 				origin.calc_rad_resistance()
-			working = max((working - (origin.cached_rad_resistance * config.radiation_resistance_multiplier)), 0)
-			if(working <= .)
+			if(origin.cached_rad_resistance)
+				working = max(round((working / (origin.cached_rad_resistance * config.radiation_resistance_multiplier)), 0.1), 0)
+			if((working <= .) || (working <= RADIATION_THRESHOLD_CUTOFF))
 				break // Already affected by a stronger source (or its zero...)
 		. = max((working * (1 / (dist ** 2))), .) //Butchered version of the inverse square law. Works for this purpose
+		if(. <= RADIATION_THRESHOLD_CUTOFF)
+			. = 0
 
 // Add a radiation source instance to the repository.  It will override any existing source on the same turf.
 /repository/radiation/proc/add_source(var/datum/radiation_source/S)
@@ -116,13 +119,13 @@ var/global/repository/radiation/radiation_repository = new()
 		else if(O.density) //So open doors don't get counted
 			var/material/M = O.get_material()
 			if(!M)	continue
-			cached_rad_resistance += M.weight
+			cached_rad_resistance += M.weight / config.radiation_material_resistance_divisor
 	// Looks like storing the contents length is meant to be a basic check if the cache is stale due to items enter/exiting.  Better than nothing so I'm leaving it as is. ~Leshana
 	radiation_repository.resistance_cache[src] = (length(contents) + 1)
 
 /turf/simulated/wall/calc_rad_resistance()
 	radiation_repository.resistance_cache[src] = (length(contents) + 1)
-	cached_rad_resistance = (density ? material.weight : 0)
+	cached_rad_resistance = (density ? material.weight / config.radiation_material_resistance_divisor : 0)
 
 /obj
 	var/rad_resistance = 0  // Allow overriding rad resistance

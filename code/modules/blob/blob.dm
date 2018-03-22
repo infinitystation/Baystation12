@@ -152,7 +152,7 @@
 	switch(W.damtype)
 		if("fire")
 			damage = (W.force / fire_resist)
-			if(istype(W, /obj/item/weapon/weldingtool))
+			if(isWelder(W))
 				playsound(loc, 'sound/items/Welder.ogg', 100, 1)
 		if("brute")
 			damage = (W.force / brute_resist)
@@ -187,15 +187,15 @@
 		if(-INFINITY to 33)
 			icon_state = "blob_factory"
 
-/obj/effect/blob/core/New(loc)
-	GLOB.processing_objects.Add(src)
-	return ..(loc)
+/obj/effect/blob/core/Initialize()
+	. = ..()
+	START_PROCESSING(SSobj, src)
 
 /obj/effect/blob/core/Destroy()
-	GLOB.processing_objects.Remove(src)
+	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/effect/blob/core/process()
+/obj/effect/blob/core/Process()
 	set waitfor = 0
 	if(!blob_may_process)
 		return

@@ -40,15 +40,15 @@
 		if(VERM_MICE)
 			spawn_types = list(/mob/living/simple_animal/mouse) // The base mouse type selects a random color for us
 			max_number = 12
-			vermstring = "мышей"
+			vermstring = "mice"
 		if(VERM_LIZARDS)
 			spawn_types = list(/mob/living/simple_animal/lizard)
 			max_number = 6
-			vermstring = "ящериц"
+			vermstring = "lizards"
 		if(VERM_SPIDERS)
 			spawn_types = list(/obj/effect/spider/spiderling)
 			max_number = 3
-			vermstring = "пауков"
+			vermstring = "spiders"
 
 	spawn(0)
 		var/num = 0
@@ -66,7 +66,7 @@
 				S.amount_grown = -1
 
 /datum/event/infestation/announce()
-	command_announcement.Announce("Bioscans indicate that [vermstring] have been breeding in \the [location]. Clear them out, before this starts to affect productivity.", "Major Bill's Shipping Critter Sensor")
+	command_announcement.Announce("Bioscans indicate that [vermstring] have been breeding in \the [location]. Clear them out, before this starts to affect productivity.", "Major Bill's Shipping Critter Sensor", zlevels = affecting_z)
 
 /datum/event/infestation/proc/set_location_get_infestation_turfs()
 	location = pick_area(list(/proc/is_not_space_area, /proc/is_station_area))

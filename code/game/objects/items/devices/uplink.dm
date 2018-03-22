@@ -46,15 +46,15 @@
 	src.uplink_owner = owner
 	world_uplinks += src
 	uses = telecrystals
-	GLOB.processing_objects += src
+	START_PROCESSING(SSobj, src)
 
 /obj/item/device/uplink/Destroy()
 	uplink_owner = null
 	world_uplinks -= src
-	GLOB.processing_objects -= src
+	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/device/uplink/process()
+/obj/item/device/uplink/Process()
 	if(world.time > next_offer_time)
 		next_offer_time = world.time + offer_time
 		discount_amount = pick(90;0.9, 80;0.8, 70;0.7, 60;0.6, 50;0.5, 40;0.4, 30;0.3, 20;0.2, 10;0.1)
@@ -145,29 +145,28 @@
 	return ..()
 
 // The purchasing code.
-/obj/item/device/uplink/Topic(href, href_list)
-	if(..())
-		return 1
-
-	var/mob/user = usr
+/obj/item/device/uplink/OnTopic(user, href_list)
 	if(href_list["buy_item"])
 		var/datum/uplink_item/UI = (locate(href_list["buy_item"]) in uplink.items)
 		UI.buy(src, usr)
+		. = TOPIC_REFRESH
 	else if(href_list["lock"])
 		toggle()
-		var/datum/nanoui/ui = GLOB.nanomanager.get_open_ui(user, src, "main")
-		ui.close()
+		GLOB.nanomanager.close_user_uis(user, src, "main")
+		. = TOPIC_HANDLED
 	else if(href_list["return"])
 		nanoui_menu = round(nanoui_menu/10)
+		. = TOPIC_REFRESH
 	else if(href_list["menu"])
 		nanoui_menu = text2num(href_list["menu"])
 		if(href_list["id"])
-			exploit_id = href_list["id"]
+			exploit_id = text2num(href_list["id"])
 		if(href_list["category"])
 			category = locate(href_list["category"]) in uplink.categories
+		. = TOPIC_REFRESH
 
-	update_nano_data()
-	return 1
+	if(. == TOPIC_REFRESH)
+		update_nano_data()
 
 /obj/item/device/uplink/proc/update_nano_data()
 	if(nanoui_menu == 0)
@@ -186,29 +185,39 @@
 		nanoui_data["items"] = items
 	else if(nanoui_menu == 2)
 		var/permanentData[0]
-		for(var/datum/data/record/L in sortRecord(GLOB.data_core.locked))
-			permanentData[++permanentData.len] = list(Name = L.fields["name"],"id" = L.fields["id"])
+		for(var/datum/computer_file/crew_record/L in GLOB.all_crew_records)
+			permanentData[++permanentData.len] = list(Name = L.get_name(),"id" = L.uid, "exploit" = length(L.get_antagRecord()))
 		nanoui_data["exploit_records"] = permanentData
 	else if(nanoui_menu == 21)
 		nanoui_data["exploit_exists"] = 0
 
-		for(var/datum/data/record/L in GLOB.data_core.locked)
-			if(L.fields["id"] == exploit_id)
+		for(var/datum/computer_file/crew_record/L in GLOB.all_crew_records)
+			if(L.uid == exploit_id)
 				nanoui_data["exploit"] = list()  // Setting this to equal L.fields passes it's variables that are lists as reference instead of value.
 								 // We trade off being able to automatically add shit for more control over what gets passed to json
 								 // and if it's sanitized for html.
-				nanoui_data["exploit"]["nanoui_exploit_record"] = html_encode(L.fields["exploit_record"])                         		// Change stuff into html
-				nanoui_data["exploit"]["nanoui_exploit_record"] = replacetext(nanoui_data["exploit"]["nanoui_exploit_record"], "\n", "<br>")    // change line breaks into <br>
-				nanoui_data["exploit"]["name"] =  html_encode(L.fields["name"])
-				nanoui_data["exploit"]["sex"] =  html_encode(L.fields["sex"])
-				nanoui_data["exploit"]["age"] =  html_encode(L.fields["age"])
-				nanoui_data["exploit"]["species"] =  html_encode(L.fields["species"])
-				nanoui_data["exploit"]["rank"] =  html_encode(L.fields["rank"])
-				nanoui_data["exploit"]["home_system"] =  html_encode(L.fields["home_system"])
-				nanoui_data["exploit"]["citizenship"] =  html_encode(L.fields["citizenship"])
-				nanoui_data["exploit"]["faction"] =  html_encode(L.fields["faction"])
-				nanoui_data["exploit"]["religion"] =  html_encode(L.fields["religion"])
-				nanoui_data["exploit"]["fingerprint"] =  html_encode(L.fields["fingerprint"])
+				var/list/fields = list(
+					REC_FIELD(name),
+					REC_FIELD(sex),
+					REC_FIELD(age),
+					REC_FIELD(species),
+					REC_FIELD(rank),
+					REC_FIELD(homeSystem),
+					REC_FIELD(citizenship),
+					REC_FIELD(faction),
+					REC_FIELD(religion),
+					REC_FIELD(fingerprint),
+					REC_FIELD(antagRecord))
+				var/list/rec_fields = list()
+				for(var/field in fields)
+					var/record_field/F = locate(field) in L.fields
+					if(!F)
+						continue
+					rec_fields.Add(list(list(
+						"name" = html_encode(F.name), 
+						"val" = F.get_display_value()
+					)))
+				nanoui_data["exploit"]["fields"] =  rec_fields
 
 				nanoui_data["exploit_exists"] = 1
 				break
@@ -231,9 +240,9 @@
 // Includes normal radio uplink, multitool uplink,
 // implant uplink (not the implant tool) and a preset headset uplink.
 
-/obj/item/device/radio/uplink/New(var/loc, var/owner)
+/obj/item/device/radio/uplink/New(var/loc, var/owner, var/amount)
 	..()
-	hidden_uplink = new(src, owner)
+	hidden_uplink = new(src, owner, amount)
 	icon_state = "radio"
 
 /obj/item/device/radio/uplink/attack_self(mob/user as mob)

@@ -69,3 +69,21 @@ var/const/CAMERA_WIRE_NOTHING2 = 32
 		return 1
 	else
 		return 0
+
+/datum/wires/camera/SolveWireFunction(var/function)
+	var/sf = ""
+	switch(function)
+		if(CAMERA_WIRE_FOCUS)
+			sf = "Port A"
+		if(CAMERA_WIRE_POWER)
+			sf = "Port B"
+		if(CAMERA_WIRE_LIGHT)
+			sf = "Port C"
+		if(CAMERA_WIRE_ALARM)
+			sf = "Port D"
+		if(CAMERA_WIRE_NOTHING1)
+			sf = "Port E"
+		if(CAMERA_WIRE_NOTHING2)
+			sf = "Port F"
+
+	return sf

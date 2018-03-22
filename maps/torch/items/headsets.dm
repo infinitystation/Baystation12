@@ -33,7 +33,6 @@
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 
-
 /obj/item/device/radio/headset/headset_deckofficer
 	name = "deck officer's radio headset"
 	desc = "The headset of the chief box pusher."
@@ -41,16 +40,35 @@
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_deckofficer
 
-
 /obj/item/weapon/storage/box/headset/torchxo
 	name = "box of spare executive officer headsets"
 	desc = "A box full of executive officer headsets."
 	startswith = list(/obj/item/device/radio/headset/heads/torchxo = 7)
 
-
-/obj/item/device/radio/headset/pilot
-	name = "pilot's headset"
-	desc = "A headset with access to the command and engineering channels."
+/obj/item/device/radio/headset/bridgeofficer
+	name = "bridge officer's headset"
+	desc = "A headset with access to the command, engineering and exploration channels."
 	icon_state = "com_headset"
 	item_state = "headset"
-	ks2type = /obj/item/device/encryptionkey/pilot
+	ks2type = /obj/item/device/encryptionkey/bridgeofficer
+
+/obj/item/device/radio/headset/exploration
+	name = "exploration headset"
+	desc = "A headset for real tools, with access to the exploration channel."
+	icon_state = "srv_headset"
+	item_state = "headset"
+	ks2type = /obj/item/device/encryptionkey/exploration
+
+/obj/item/device/radio/headset/pathfinder
+	name = "pathfinder's headset"
+	desc = "A headset with access to the command and exploration channels."
+	icon_state = "com_headset"
+	item_state = "headset"
+	ks2type = /obj/item/device/encryptionkey/pathfinder
+
+/obj/item/device/radio/headset/torchroboticist
+	name = "roboticist's headset"
+	desc = "A headset with access to the engineering and medical channels."
+	icon_state = "eng_headset"
+	item_state = "headset"
+	ks2type = /obj/item/device/encryptionkey/headset_torchroboticist

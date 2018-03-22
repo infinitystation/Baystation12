@@ -123,6 +123,13 @@
 		qdel(src)
 		return
 
+	if(config.player_limit != 0)
+		if((GLOB.clients.len >= config.player_limit) && !(ckey in admin_datums))
+			alert(src,"This server is currently full and not accepting new connections.","Server Full","OK")
+			log_admin("[ckey] tried to join and was turned away due to the server being full (player_limit=[config.player_limit])")
+			qdel(src)
+			return
+
 	// Change the way they should download resources.
 	if(config.resource_urls && config.resource_urls.len)
 		src.preload_rsc = pick(config.resource_urls)
@@ -140,6 +147,7 @@
 	if(holder)
 		GLOB.admins += src
 		holder.owner = src
+		handle_staff_login()
 		var/sql_ckey = sanitizeSQL(src.ckey)
 		spawn for()
 			var/sum = 0
@@ -170,6 +178,8 @@
 	. = ..()	//calls mob.Login()
 	prefs.sanitize_preferences()
 
+	GLOB.using_map.map_info(src)
+
 	if(custom_event_msg && custom_event_msg != "")
 		to_chat(src, "<h1 class='alert'>Custom Event</h1>")
 		to_chat(src, "<h2 class='alert'>A custom event is taking place. OOC Info:</h2>")
@@ -195,10 +205,16 @@
 
 
 	if(prefs.lastchangelog != changelog_hash) //bolds the changelog button on the interface so we know there are updates.
-		to_chat(src, "<span class='info'>You have unread updates in the changelog.</span>")
+		to_chat(src, "<span class='info'>You have unread updates in the Baystation 12 changelog.</span>")
 		winset(src, "rpane.changelog", "background-color=#eaeaea;font-style=bold")
 		if(config.aggressive_changelog)
 			src.changes()
+
+	if(prefs.lastinfchangelog != inf_changelog_hash) //bolds the changelog button on the interface so we know there are updates.
+		to_chat(src, "<span class='info'>You have unread updates in the Infinity changelog.</span>")
+		winset(src, "rpane.changelog_infinity", "background-color=#eaeaea;font-style=bold")
+		if(config.aggressive_changelog)
+			src.changes_infinity()
 
 	if(isnum(player_age) && player_age < 7)
 		src.lore_splash()
@@ -209,12 +225,29 @@
 
 	if(holder)
 		src.control_freak = 0 //Devs need 0 for profiler access
+
+/client/proc/handle_staff_login()
+	if(admin_datums[ckey] && ticker)
+		var/datum/admins/holder = admin_datums[ckey]
+		message_staff("[key_name(src)] ([holder.rank]) logged.")
+
+/client/proc/handle_staff_logout()
+	if(admin_datums[ckey] && ticker)
+		var/datum/admins/holder = admin_datums[ckey]
+		message_staff("[key_name(src)] ([holder.rank]) logout.")
+		if(!GLOB.admins.len) //Apparently the admin logging out is no longer an admin at this point, so we have to check this towards 0 and not towards 1. Awell.
+			send2adminirc("[key_name(src)] logged out - no more admins online.")
+			if(config.delist_when_no_admins && world.visibility)
+				world.visibility = FALSE
+				send2adminirc("Toggled hub visibility. The server is now invisible ([world.visibility]).")
+
 	//////////////
 	//DISCONNECT//
 	//////////////
 /client/Del()
 	ticket_panels -= src
 	if(holder)
+		handle_staff_logout()
 		holder.owner = null
 		GLOB.admins -= src
 	GLOB.ckey_directory -= ckey
@@ -352,6 +385,7 @@
 		'html/images/ntlogo.png',
 		'html/images/bluentlogo.png',
 		'html/images/sollogo.png',
+		'html/images/terralogo.png',
 		'html/images/talisman.png'
 		)
 

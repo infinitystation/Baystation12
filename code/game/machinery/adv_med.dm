@@ -74,6 +74,8 @@
 	return
 
 /obj/machinery/bodyscanner/attackby(obj/item/grab/normal/G, user as mob)
+	if(!istype(G))
+		return ..()
 	if (!ismob(G.affecting))
 		return
 	if (src.occupant)
@@ -184,12 +186,12 @@
 	density = 0
 	anchored = 1
 
-/obj/machinery/body_scanconsole/New()
-	..()
-	spawn( 5 )
-		src.connected = locate(/obj/machinery/bodyscanner, get_step(src, src.dir))
-		return
-	return
+/obj/machinery/body_scanconsole/Initialize()
+	for(var/D in GLOB.cardinal)
+		src.connected = locate(/obj/machinery/bodyscanner, get_step(src, D))
+		if(src.connected)
+			break
+	return ..()
 
 /*
 
@@ -246,23 +248,20 @@
 	return
 
 
-/obj/machinery/body_scanconsole/Topic(href, href_list)
-	if (..())
-		return
-
+/obj/machinery/body_scanconsole/OnTopic(user, href_list)
 	if (href_list["print"])
 		if (!src.connected)
-			to_chat(usr, "\icon[src]<span class='warning'>Error: No body scanner connected.</span>")
-			return
+			to_chat(user, "\icon[src]<span class='warning'>Error: No body scanner connected.</span>")
+			return TOPIC_REFRESH
 		var/mob/living/carbon/human/occupant = src.connected.occupant
 		if (!src.connected.occupant)
-			to_chat(usr, "\icon[src]<span class='warning'>The body scanner is empty.</span>")
-			return
+			to_chat(user, "\icon[src]<span class='warning'>The body scanner is empty.</span>")
+			return TOPIC_REFRESH
 		if (!istype(occupant,/mob/living/carbon/human))
-			to_chat(usr, "\icon[src]<span class='warning'>The body scanner cannot scan that lifeform.</span>")
-			return
+			to_chat(user, "\icon[src]<span class='warning'>The body scanner cannot scan that lifeform.</span>")
+			return TOPIC_REFRESH
 		new/obj/item/weapon/paper/(loc, "<tt>[connected.occupant.get_medical_data()]</tt>", "Body scan report - [occupant]")
-
+		return TOPIC_REFRESH
 
 /proc/get_severity(amount)
 	if(!amount)
@@ -300,16 +299,18 @@
 			pulse_result = H.get_pulse(1)
 	else
 		pulse_result = "ERROR - Nonstandard biology"
-	. += "<b>Pulse rate:</b> [pulse_result]bpm."
+	dat += "<b>Pulse rate:</b> [pulse_result]bpm."
 
+	// Blood type.
+	dat += "<span class='notice'>Blood Type: [H.b_type]</span>"
 	// Blood pressure. Based on the idea of a normal blood pressure being 120 over 80.
 	if(H.get_blood_volume() <= 70)
-		. += "<span class='danger'>Severe blood loss detected.</span>"
-	. += "<b>Blood pressure:</b> [H.get_blood_pressure()] ([H.get_blood_oxygenation()]% blood oxygenation)"
-	. += "<b>Blood volume:</b> [H.vessel.get_reagent_amount(/datum/reagent/blood)]/[H.species.blood_volume]u"
+		dat += "<span class='danger'>Severe blood loss detected.</span>"
+	dat += "<b>Blood pressure:</b> [H.get_blood_pressure()] ([H.get_blood_oxygenation()]% blood oxygenation)"
+	dat += "<b>Blood volume:</b> [H.vessel.get_reagent_amount(/datum/reagent/blood)]/[H.species.blood_volume]u"
 
 	// Body temperature.
-	. += "<b>Body temperature:</b> [H.bodytemperature-T0C]&deg;C ([H.bodytemperature*1.8-459.67]&deg;F)"
+	dat += "<b>Body temperature:</b> [H.bodytemperature-T0C]&deg;C ([H.bodytemperature*1.8-459.67]&deg;F)"
 
 	dat += "<b>Physical Trauma:</b>\t[get_severity(H.getBruteLoss())]"
 	dat += "<b>Burn Severity:</b>\t[get_severity(H.getFireLoss())]"
@@ -356,7 +357,7 @@
 			table += "</td><td>[english_list(E.get_scan_results(), nothing_text = "", and_text = ", ")]</td></tr>"
 
 	table += "<tr><td>---</td><td><b>INTERNAL ORGANS</b></td><td>---</td></tr>"
-	for(var/obj/item/organ/I in H.internal_organs)
+	for(var/obj/item/organ/internal/I in H.internal_organs)
 		table += "<tr><td>[I.name]</td>"
 		table += "<td>"
 		if(I.is_broken())

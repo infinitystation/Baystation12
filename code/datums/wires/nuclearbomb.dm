@@ -56,3 +56,14 @@ var/const/NUCLEARBOMB_WIRE_SAFETY		= 4
 		if(NUCLEARBOMB_WIRE_LIGHT)
 			N.lighthack = !mended
 			N.update_icon()
+
+/datum/wires/mulebot/SolveWireFunction(var/function)
+	var/sf = ""
+	switch(function)
+		if(NUCLEARBOMB_WIRE_LIGHT)
+			sf = "Port A"
+		if(NUCLEARBOMB_WIRE_TIMING)
+			sf = "Port B"
+		if(NUCLEARBOMB_WIRE_SAFETY)
+			sf = "Port C"
+	return sf

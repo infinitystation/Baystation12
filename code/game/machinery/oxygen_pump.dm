@@ -4,6 +4,7 @@
 /obj/machinery/oxygen_pump
 	name = "emergency oxygen pump"
 	icon = 'icons/obj/walllocker.dmi'
+	desc = "A wall mounted oxygen pump with a retractable face mask that you can pull over your face in case of emergencies."
 	icon_state = "emerg"
 
 	anchored = TRUE
@@ -111,17 +112,19 @@
 		to_chat(user, "<span class='warning'>Remove their [target.head] first.</span>")
 		return
 	if(!tank)
-		to_chat(user, "<span class='warning'>There is no tank in \the [src]!</span>")
+		to_chat(user, "<span class='warning'>There is no tank in \the [src].</span>")
 		return
 	if(stat & MAINT)
-		to_chat(user, "<span class='warning'>Please close \the maintenance hatch first!</span>")
+		to_chat(user, "<span class='warning'>Please close \the maintenance hatch first.</span>")
 		return
 	if(!Adjacent(target))
-		to_chat(user, "<span class='warning'>Please close stay close to /the [src].</span>")
+		to_chat(user, "<span class='warning'>Please stay close to \the [src].</span>")
+		breather.remove_from_mob(contained)
+		breather = null
 		return
 	//when there is a breather:
 	if(breather && target != breather)
-		to_chat(user, "<span class='warning'>\The pump is already in use</span>")
+		to_chat(user, "<span class='warning'>\The pump is already in use.</span>")
 		return
 	//Checking if breather is still valid
 	if(target == breather && target.wear_mask != contained)
@@ -130,7 +133,7 @@
 	return 1
 
 /obj/machinery/oxygen_pump/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/screwdriver))
+	if(isScrewdriver(W))
 		stat ^= MAINT
 		user.visible_message("<span class='notice'>\The [user] [stat & MAINT ? "opens" : "closes"] \the [src].</span>", "<span class='notice'>You [stat & MAINT ? "open" : "close"] \the [src].</span>")
 		if(stat & MAINT)
@@ -158,7 +161,7 @@
 		to_chat(user, "<span class='warning'>It is missing a tank!</span>")
 
 
-/obj/machinery/oxygen_pump/process()
+/obj/machinery/oxygen_pump/Process()
 	if(breather)
 		if(!can_apply_to_target(breather))
 			if(tank)

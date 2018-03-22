@@ -49,13 +49,11 @@
 			my_effect.trigger = pick(TRIGGER_WATER, TRIGGER_ACID, TRIGGER_VOLATILE, TRIGGER_TOXIN)
 
 /obj/machinery/artifact/Destroy()
-	qdel(my_effect)
-	qdel(secondary_effect)
-	my_effect = null
-	secondary_effect = null
+	QDEL_NULL(my_effect)
+	QDEL_NULL(secondary_effect)
 	. = ..()
 
-/obj/machinery/artifact/process()
+/obj/machinery/artifact/Process()
 	var/turf/L = loc
 	if(!istype(L)) 	// We're inside a container or on null turf, either way stop processing effects
 		return
@@ -224,7 +222,7 @@
 			secondary_effect.ToggleActivate(0)
 
 	else if (istype(W,/obj/item/weapon/flame) && W:lit ||\
-			istype(W,/obj/item/weapon/weldingtool) && W:welding)
+			isWelder(W) && W:welding)
 		if(my_effect.trigger == TRIGGER_HEAT)
 			my_effect.ToggleActivate()
 		if(secondary_effect && secondary_effect.trigger == TRIGGER_HEAT && prob(25))

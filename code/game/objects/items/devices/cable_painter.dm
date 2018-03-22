@@ -3,7 +3,7 @@ obj/item/device/cable_painter
 	desc = "A device for repainting cables."
 	description_info = "Use this device to select a preferred cable color. Apply it to a bundle of cables on your person, or use it on installed cabling on the floor to paint it in your chosen color."
 	description_fluff = "A device often used by spacefaring engineers to color-code their electrical systems. An experienced technician can identify traditional installations by color alone."
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "labeler0"
 	item_state = "flight"
 	var/color_selection
@@ -34,7 +34,7 @@ obj/item/device/cable_painter/attack_self(mob/user)
 			return
 		A.color = picked_color
 		to_chat(user, "<span class='notice'>You set \the [A]'s color to [lowertext(color_selection)].</span>")
-	else if(istype(A, /obj/item/stack/cable_coil))
+	else if(isCoil(A))
 		var/obj/item/stack/cable_coil/c = A
 		c.set_cable_color(color_selection, user)
 	else

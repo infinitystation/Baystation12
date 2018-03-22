@@ -53,20 +53,20 @@
 	if(!material)
 		qdel(src)
 	else
-		name = "[material.display_name] [initial(name)]"
+		SetName("[material.display_name] [initial(name)]")
 		health = round(material.integrity/10)
 		if(applies_material_colour)
 			color = material.icon_colour
 		if(material.products_need_process())
-			GLOB.processing_objects |= src
+			START_PROCESSING(SSobj, src)
 		if(material.conductive)
-			flags |= CONDUCT
+			obj_flags |= OBJ_FLAG_CONDUCTIBLE
 		else
-			flags &= (~CONDUCT)
+			obj_flags &= (~OBJ_FLAG_CONDUCTIBLE)
 		update_force()
 
 /obj/item/weapon/material/Destroy()
-	GLOB.processing_objects -= src
+	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
 /obj/item/weapon/material/apply_hit_effect()

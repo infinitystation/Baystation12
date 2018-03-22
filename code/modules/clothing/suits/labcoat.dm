@@ -7,7 +7,7 @@
 	icon_closed = "labcoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
-	allowed = list(/obj/item/device/analyzer,/obj/item/stack/medical,/obj/item/weapon/dnainjector,/obj/item/weapon/reagent_containers/dropper,/obj/item/weapon/reagent_containers/syringe,/obj/item/weapon/reagent_containers/hypospray,/obj/item/device/healthanalyzer,/obj/item/device/flashlight/pen,/obj/item/weapon/reagent_containers/glass/bottle,/obj/item/weapon/reagent_containers/glass/beaker,/obj/item/weapon/reagent_containers/pill,/obj/item/weapon/storage/pill_bottle,/obj/item/weapon/paper)
+	allowed = list(/obj/item/device/analyzer,/obj/item/stack/medical,/obj/item/weapon/reagent_containers/dropper,/obj/item/weapon/reagent_containers/syringe,/obj/item/weapon/reagent_containers/hypospray,/obj/item/device/healthanalyzer,/obj/item/device/flashlight/pen,/obj/item/weapon/reagent_containers/glass/bottle,/obj/item/weapon/reagent_containers/glass/beaker,/obj/item/weapon/reagent_containers/pill,/obj/item/weapon/storage/pill_bottle,/obj/item/weapon/paper)
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 50, rad = 0)
 	valid_accessory_slots = list(ACCESSORY_SLOT_ARMBAND)
 	restricted_accessory_slots = list(ACCESSORY_SLOT_ARMBAND)
@@ -78,3 +78,17 @@
 	icon_state = "blue_edge_labcoat_open"
 	icon_open = "blue_edge_labcoat_open"
 	icon_closed = "blue_edge_labcoat"
+
+/obj/item/clothing/suit/storage/toggle/labcoat/coat
+	name = "coat"
+	desc = "A cozy overcoat."
+	color = "#292929"
+
+/obj/item/clothing/suit/storage/toggle/labcoat/xyn_machine
+	name = "\improper Xynergy labcoat"
+	desc = "A stiffened, stylised labcoat designed to fit IPCs. It has blue and purple trim, denoting it as a Xynergy labcoat."
+	icon_state = "labcoat_xy"
+	icon_open = "labcoat_xy_open"
+	icon_closed = "labcoat_xy"
+	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 20, rad = 0)
+	species_restricted = list(SPECIES_IPC)

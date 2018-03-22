@@ -14,23 +14,23 @@ var/global/floorIsLava = 0
 	msg = "<span class=\"log_message\"><span class=\"prefix\">STAFF LOG:</span> <span class=\"message\">[msg]</span></span>"
 	log_adminwarn(msg)
 	for(var/client/C in GLOB.admins)
-		if(R_INVESTIGATE & C.holder.rights)
+		if(C.holder)
 			to_chat(C, msg)
 /proc/msg_admin_attack(var/text) //Toggleable Attack Messages
 	log_attack(text)
 	var/rendered = "<span class=\"log_message\"><span class=\"prefix\">ATTACK:</span> <span class=\"message\">[text]</span></span>"
 	for(var/client/C in GLOB.admins)
 		if(check_rights(R_INVESTIGATE, 0, C))
-			if(C.is_preference_enabled(/datum/client_preference/admin/show_attack_logs))
+			if(C.get_preference_value(/datum/client_preference/staff/show_attack_logs) == GLOB.PREF_SHOW)
 				var/msg = rendered
 				to_chat(C, msg)
 /proc/admin_notice(var/message, var/rights)
-	for(var/mob/M in GLOB.mob_list)
+	for(var/mob/M in SSmobs.mob_list)
 		if(check_rights(rights, 0, M))
 			to_chat(M, message)
 ///////////////////////////////////////////////////////////////////////////////////////////////Panels
 
-/datum/admins/proc/show_player_panel(var/mob/M in GLOB.mob_list)
+/datum/admins/proc/show_player_panel(var/mob/M in SSmobs.mob_list)
 	set category = "Admin"
 	set name = "Show Player Panel"
 	set desc="Edit player (respawn, ban, heal, etc)"
@@ -631,23 +631,27 @@ var/global/floorIsLava = 0
 /datum/admins/proc/Game()
 	if(!check_rights(0))	return
 
-	var/dat = {"
-		<center><B>Game Panel</B></center><hr>\n
-		<A href='?src=\ref[src];c_mode=1'>Change Game Mode</A><br>
-		"}
-	if(master_mode == "secret")
-		dat += "<A href='?src=\ref[src];f_secret=1'>(Force Secret Mode)</A><br>"
+	var/dat = {"<center><B>Game Panel</B></center><hr>\n"}
+	if(check_rights(R_ADMIN))
+		dat += {"<A href='?src=\ref[src];c_mode=1'>Change Game Mode</A><br>"}
 
-	dat += {"
-		<BR>
-		<A href='?src=\ref[src];create_object=1'>Create Object</A><br>
-		<A href='?src=\ref[src];quick_create_object=1'>Quick Create Object</A><br>
-		<A href='?src=\ref[src];create_turf=1'>Create Turf</A><br>
-		<A href='?src=\ref[src];create_mob=1'>Create Mob</A><br>
-		<br><A href='?src=\ref[src];vsc=airflow'>Edit Airflow Settings</A><br>
-		<A href='?src=\ref[src];vsc=phoron'>Edit Phoron Settings</A><br>
-		<A href='?src=\ref[src];vsc=default'>Choose a default ZAS setting</A><br>
-		"}
+		if(master_mode == "secret")
+			dat += {"<A href='?src=\ref[src];f_secret=1'>(Force Secret Mode)</A><br>"}
+
+		dat += {"<br>"}
+
+	if(check_rights(R_SPAWN))
+		dat += {"<A href='?src=\ref[src];create_object=1'>Create Object</A><br>"}
+		dat += {"<A href='?src=\ref[src];quick_create_object=1'>Quick Create Object</A><br>"}
+		dat += {"<A href='?src=\ref[src];create_turf=1'>Create Turf</A><br>"}
+		dat += {"<A href='?src=\ref[src];create_mob=1'>Create Mob</A><br>"}
+
+		dat += {"<br>"}
+
+	if(check_rights(R_DEBUG|R_SERVER))
+		dat += {"<A href='?src=\ref[src];vsc=airflow'>Edit Airflow Settings</A><br>"}
+		dat += {"<A href='?src=\ref[src];vsc=phoron'>Edit Phoron Settings</A><br>"}
+		dat += {"<A href='?src=\ref[src];vsc=default'>Choose a default ZAS setting</A><br>"}
 
 	usr << browse(dat, "window=admin2;size=210x280")
 	return
@@ -721,6 +725,111 @@ var/global/floorIsLava = 0
 		to_world("<span class=notice><b>[usr.key] Announces:</b><p style='text-indent: 50px'>[message]</p></span>")
 		log_admin("Announce: [key_name(usr)] : [message]")
 	feedback_add_details("admin_verb","A") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/datum/admins/proc/intercom()
+	set category = "Fun"
+	set name = "Intercom Msg"
+	set desc = "Send an intercom message, like an arrivals announcement."
+	if(!check_rights(0))	return
+
+	var/channel = input("Channel for message:","Channel", null) as null|anything in radiochannels
+
+	if(channel) //They picked a channel
+		var/sender = input("Name of sender (max 75):", "Announcement", "Announcement Computer") as null|text
+
+		if(sender) //They put a sender
+			sender = sanitize(sender, 75, extra = 0)
+			var/message = input("Message content (max 500):", "Contents", "This is a test of the announcement system.") as null|message
+
+			if(message) //They put a message
+				message = sanitize(message, 500, extra = 0)
+				GLOB.global_announcer.autosay("[message]", "[sender]", "[channel == "Common" ? null : channel]") //Common is a weird case, as it's not a "channel", it's just talking into a radio without a channel set.
+				log_admin("Intercom: [key_name(usr)] : [sender]:[message]")
+
+	feedback_add_details("admin_verb","IN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/datum/admins/proc/intercom_convo()
+	set category = "Fun"
+	set name = "Intercom Convo"
+	set desc = "Send an intercom conversation, like several uses of the Intercom Msg verb."
+	set waitfor = FALSE //Why bother? We have some sleeps. You can leave tho!
+	if(!check_rights(0))	return
+
+	var/channel = input("Channel for message:","Channel", null) as null|anything in radiochannels
+
+	if(!channel) //They picked a channel
+		return
+
+	to_chat(usr,"<span class='notice'><B>Intercom Convo Directions</B><br>Start the conversation with the sender, a pipe (|), and then the message on one line. Then hit enter to \
+		add another line, and type a (whole) number of seconds to pause between that message, and the next message, then repeat the message syntax up to 20 times. For example:<br>\
+		--- --- ---<br>\
+		Some Guy|Hello guys, what's up?<br>\
+		5<br>\
+		Other Guy|Hey, good to see you.<br>\
+		5<br>\
+		Some Guy|Yeah, you too.<br>\
+		--- --- ---<br>\
+		The above will result in those messages playing, with a 5 second gap between each. Maximum of 20 messages allowed.</span>")
+
+	var/list/decomposed
+	var/message = input(usr,"See your chat box for instructions. Keep a copy elsewhere in case it is rejected when you click OK.", "Input Conversation", "") as null|message
+
+	if(!message)
+		return
+
+	//Split on pipe or \n
+	decomposed = splittext(message,regex("\\||$","m"))
+	decomposed += "0" //Tack on a final 0 sleep to make 3-per-message evenly
+
+	//Time to find how they screwed up.
+	//Wasn't the right length
+	if((decomposed.len) % 3) //+1 to accomidate the lack of a wait time for the last message
+		to_chat(usr,"<span class='warning'>You passed [decomposed.len] segments (senders+messages+pauses). You must pass a multiple of 3, minus 1 (no pause after the last message). That means a sender and message on every other line (starting on the first), separated by a pipe character (|), and a number every other line that is a pause in seconds.</span>")
+		return
+
+	//Too long a conversation
+	if((decomposed.len / 3) > 20)
+		to_chat(usr,"<span class='warning'>This conversation is too long! 20 messages maximum, please.</span>")
+		return
+
+	//Missed some sleeps, or sanitized to nothing.
+	for(var/i = 1; i < decomposed.len; i++)
+
+		//Sanitize sender
+		var/clean_sender = sanitize(decomposed[i])
+		if(!clean_sender)
+			to_chat(usr,"<span class='warning'>One part of your conversation was not able to be sanitized. It was the sender of the [(i+2)/3]\th message.</span>")
+			return
+		decomposed[i] = clean_sender
+
+		//Sanitize message
+		var/clean_message = sanitize(decomposed[++i])
+		if(!clean_message)
+			to_chat(usr,"<span class='warning'>One part of your conversation was not able to be sanitized. It was the body of the [(i+2)/3]\th message.</span>")
+			return
+		decomposed[i] = clean_message
+
+		//Sanitize wait time
+		var/clean_time = text2num(decomposed[++i])
+		if(!isnum(clean_time))
+			to_chat(usr,"<span class='warning'>One part of your conversation was not able to be sanitized. It was the wait time after the [(i+2)/3]\th message.</span>")
+			return
+		if(clean_time > 60)
+			to_chat(usr,"<span class='warning'>Max 60 second wait time between messages for sanity's sake please.</span>")
+			return
+		decomposed[i] = clean_time
+
+	log_admin("Intercom convo started by: [key_name(usr)] : [sanitize(message)]")
+	feedback_add_details("admin_verb","IN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+	//Sanitized AND we still have a chance to send it? Wow!
+	if(LAZYLEN(decomposed))
+		for(var/i = 1; i < decomposed.len; i++)
+			var/this_sender = decomposed[i]
+			var/this_message = decomposed[++i]
+			var/this_wait = decomposed[++i]
+			GLOB.global_announcer.autosay("[this_message]", "[this_sender]", "[channel == "Common" ? null : channel]") //Common is a weird case, as it's not a "channel", it's just talking into a radio without a channel set.
+			sleep(this_wait SECONDS)
 
 /datum/admins/proc/toggleooc()
 	set category = "Server"
@@ -811,6 +920,11 @@ var/global/floorIsLava = 0
 	world.visibility = !(world.visibility)
 	var/long_message = " toggled hub visibility.  The server is now [world.visibility ? "visible" : "invisible"] ([world.visibility])."
 
+	if(world.visibility)
+		world.hub_password = "kMZy3U5jJHSiBQjr"
+	else
+		world.hub_password = "SORRYNOPASSWORD"
+
 	send2adminirc("[key_name(src)]" + long_message)
 	send2admindiscord("[key_name(src)]" + long_message)
 	log_and_message_admins("toggled hub visibility.")
@@ -841,6 +955,28 @@ var/global/floorIsLava = 0
 	else
 		to_chat(usr, "<span class='warning'>Error: Start Now: Game has already started.</span>")
 		return 0
+
+
+/datum/admins/proc/endnow()
+	set category = "Server"
+	set desc="Ending game round"
+	set name="End Round"
+	if (!usr.client.holder)
+		return
+	if(!check_rights(R_ADMIN))
+		return
+	var/confirm = alert("End the game round?", "Game Ending", "Yes", "Cancel")
+	if(confirm == "Cancel")
+		return
+	if(confirm == "Yes")
+		to_world("<span class='danger'>Game ending!</span> <span class='notice'>Initiated by [usr.key]!</span>")
+		log_admin("[key_name(usr)] initiated a game ending.")
+		feedback_add_details("admin_verb","R") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+		if(blackbox)
+			blackbox.save_all_data_to_sql()
+
+		ticker.admin_ending = 1
 
 /datum/admins/proc/toggleenter()
 	set category = "Server"
@@ -978,7 +1114,7 @@ var/global/floorIsLava = 0
 
 	world.Reboot()
 
-/datum/admins/proc/unprison(var/mob/M in GLOB.mob_list)
+/datum/admins/proc/unprison(var/mob/M in SSmobs.mob_list)
 	set category = "Admin"
 	set name = "Unprison"
 	if (isAdminLevel(M.z))
@@ -1081,7 +1217,7 @@ var/global/floorIsLava = 0
 
 	if(!seedtype || !plant_controller.seeds[seedtype])
 		return
-	new /obj/effect/plant(get_turf(usr), plant_controller.seeds[seedtype])
+	new /obj/effect/vine(get_turf(usr), plant_controller.seeds[seedtype])
 	log_admin("[key_name(usr)] spawned [seedtype] vines at ([usr.x],[usr.y],[usr.z])")
 
 /datum/admins/proc/spawn_atom(var/object as text)
@@ -1119,7 +1255,7 @@ var/global/floorIsLava = 0
 	feedback_add_details("admin_verb","SA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
-/datum/admins/proc/show_traitor_panel(var/mob/M in GLOB.mob_list)
+/datum/admins/proc/show_traitor_panel(var/mob/M in SSmobs.mob_list)
 	set category = "Admin"
 	set desc = "Edit mobs's memory and role"
 	set name = "Show Traitor Panel"
@@ -1235,7 +1371,7 @@ var/global/floorIsLava = 0
 
 /datum/admins/proc/output_ai_laws()
 	var/ai_number = 0
-	for(var/mob/living/silicon/S in GLOB.mob_list)
+	for(var/mob/living/silicon/S in SSmobs.mob_list)
 		ai_number++
 		if(isAI(S))
 			to_chat(usr, "<b>AI [key_name(S, usr)]'s laws:</b>")
@@ -1480,7 +1616,7 @@ datum/admins/var/obj/item/weapon/paper/admin/faxreply // var to hold fax replies
 /datum/admins/proc/faxCallback(var/obj/item/weapon/paper/admin/P, var/obj/machinery/photocopier/faxmachine/destination)
 	var/customname = input(src.owner, "Pick a title for the report", "Title") as text|null
 
-	P.name = "[P.origin] - [customname]"
+	P.SetName("[P.origin] - [customname]")
 	P.desc = "This is a paper titled '" + P.name + "'."
 
 	var/shouldStamp = 1
@@ -1492,7 +1628,7 @@ datum/admins/var/obj/item/weapon/paper/admin/faxreply // var to hold fax replies
 	if(shouldStamp)
 		P.stamps += "<hr><i>This paper has been stamped by the [P.origin] Quantum Relay.</i>"
 
-		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
+		var/image/stampoverlay = image('icons/obj/bureaucracy_inf.dmi')
 		var/{x; y;}
 		x = rand(-2, 0)
 		y = rand(-1, 2)

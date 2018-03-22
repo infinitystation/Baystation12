@@ -26,42 +26,41 @@
 	attack_hand(var/mob/user as mob)
 		if(..(user))
 			return
-		src.add_fingerprint(usr)
 		var/dat = {"
 		<html>
 			<head>
 				<style type="text/css">
 					a.green:link
 					{
-						color:#00CC00;
+						color:#00cc00;
 					}
 					a.green:visited
 					{
-						color:#00CC00;
+						color:#00cc00;
 					}
 					a.green:hover
 					{
-						color:#00CC00;
+						color:#00cc00;
 					}
 					a.green:active
 					{
-						color:#00CC00;
+						color:#00cc00;
 					}
 					a.red:link
 					{
-						color:#FF0000;
+						color:#ff0000;
 					}
 					a.red:visited
 					{
-						color:#FF0000;
+						color:#ff0000;
 					}
 					a.red:hover
 					{
-						color:#FF0000;
+						color:#ff0000;
 					}
 					a.red:active
 					{
-						color:#FF0000;
+						color:#ff0000;
 					}
 				</style>
 			</head>
@@ -97,7 +96,6 @@
 		if(..())
 			return
 		usr.set_machine(src)
-		src.add_fingerprint(usr)
 
 
 		if(href_list["scan"])

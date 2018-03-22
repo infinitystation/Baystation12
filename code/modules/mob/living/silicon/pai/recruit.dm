@@ -34,9 +34,9 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 		if(istype(card,/obj/item/device/paicard) && istype(candidate,/datum/paiCandidate))
 			var/mob/living/silicon/pai/pai = new(card)
 			if(!candidate.name)
-				pai.name = pick(GLOB.ninja_names)
+				pai.SetName(pick(GLOB.ninja_names))
 			else
-				pai.name = candidate.name
+				pai.SetName(candidate.name)
 			pai.real_name = pai.name
 			pai.key = candidate.key
 
@@ -139,7 +139,7 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 				}
 				tr.d0 th {
 					background-color: none;
-					color: #4477E0;
+					color: #4477e0;
 					text-align:right;
 					vertical-align:top;
 					width:120px;
@@ -157,7 +157,7 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 					font-weight:bold;
 				}
 				a {
-					color:#4477E0;
+					color:#4477e0;
 				}
 				a.button {
 					color:white;
@@ -279,7 +279,7 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 						color: white;
 					}
 					tr.d2 td {
-						background-color: #00FF00;
+						background-color: #00ff00;
 						color: white;
 						text-align:center;
 					}

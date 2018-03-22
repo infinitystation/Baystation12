@@ -29,16 +29,17 @@ var/list/mob_hat_cache = list()
 	universal_speak = 0
 	universal_understand = 1
 	gender = NEUTER
-	pass_flags = PASSTABLE
+	pass_flags = PASS_FLAG_TABLE
 	braintype = "Drone"
 	lawupdate = 0
-	density = 1
+	density = 0
 	req_access = list(access_engine, access_robotics)
 	integrated_light_power = 3
 	local_transmit = 1
 	possession_candidate = 1
+	speed = 0.5
 
-	can_pull_size = ITEM_SIZE_NO_CONTAINER
+	can_pull_size = ITEM_SIZE_NORMAL
 	can_pull_mobs = MOB_PULL_SMALLER
 
 	mob_bump_flag = SIMPLE_ANIMAL
@@ -49,6 +50,8 @@ var/list/mob_hat_cache = list()
 	mob_size = MOB_MEDIUM // Small mobs can't open doors, it's a huge pain for drones.
 
 	laws = /datum/ai_laws/drone
+
+	silicon_camera = /obj/item/device/camera/siliconcam/drone_camera
 
 	//Used for self-mailing.
 	var/mail_destination = ""
@@ -117,7 +120,8 @@ var/list/mob_hat_cache = list()
 	module_type = /obj/item/weapon/robot_module/drone/construction
 	hat_x_offset = 1
 	hat_y_offset = -12
-	can_pull_size = ITEM_SIZE_HUGE
+	density = 1
+	can_pull_size = ITEM_SIZE_NO_CONTAINER
 	can_pull_mobs = MOB_PULL_SAME
 
 /mob/living/silicon/robot/drone/New()
@@ -141,7 +145,6 @@ var/list/mob_hat_cache = list()
 	update_icon()
 
 /mob/living/silicon/robot/drone/init()
-	aiCamera = new/obj/item/device/camera/siliconcam/drone_camera(src)
 	additional_law_channels["Drone"] = ":d"
 	if(!module) module = new module_type(src)
 
@@ -152,14 +155,14 @@ var/list/mob_hat_cache = list()
 /mob/living/silicon/robot/drone/fully_replace_character_name(pickedName as text)
 	// Would prefer to call the grandparent proc but this isn't possible, so..
 	real_name = pickedName
-	name = real_name
+	SetName(real_name)
 
 /mob/living/silicon/robot/drone/updatename()
 	if(controlling_ai)
 		real_name = "remote drone ([controlling_ai.name])"
 	else
 		real_name = "[initial(name)] ([random_id(type,100,999)])"
-	name = real_name
+	SetName(real_name)
 
 /mob/living/silicon/robot/drone/update_icon()
 
@@ -205,7 +208,7 @@ var/list/mob_hat_cache = list()
 		to_chat(user, "<span class='danger'>\The [src] is not compatible with \the [W].</span>")
 		return
 
-	else if (istype(W, /obj/item/weapon/crowbar))
+	else if(isCrowbar(W))
 		to_chat(user, "<span class='danger'>\The [src] is hermetically sealed. You can't open the case.</span>")
 		return
 

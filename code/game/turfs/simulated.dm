@@ -13,7 +13,7 @@
 	var/max_fire_temperature_sustained = 0 //The max temperature of the fire which it was subjected to
 	var/dirt = 0
 
-	var/datum/scheduled_task/unwet_task
+	var/timer_id
 
 /turf/simulated/post_change()
 	..()
@@ -23,8 +23,8 @@
 		T.ChangeTurf(new_turf_type)
 
 // This is not great.
-/turf/simulated/proc/wet_floor(var/wet_val = 1)
-	if(wet_val < wet)
+/turf/simulated/proc/wet_floor(var/wet_val = 1, var/overwrite = FALSE)
+	if(wet_val < wet && !overwrite)
 		return
 
 	if(!wet)
@@ -32,23 +32,12 @@
 		wet_overlay = image('icons/effects/water.dmi',src,"wet_floor")
 		overlays += wet_overlay
 
-	if(unwet_task)
-		unwet_task.trigger_task_in(8 SECONDS)
-	else
-		unwet_task = schedule_task_in(8 SECONDS)
-		task_triggered_event.register(unwet_task, src, /turf/simulated/proc/task_unwet_floor)
+	timer_id = addtimer(CALLBACK(src,/turf/simulated/proc/unwet_floor),8 SECONDS, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_NO_HASH_WAIT|TIMER_OVERRIDE)
 
-/turf/simulated/proc/task_unwet_floor(var/triggered_task, var/check_very_wet = TRUE)
-	if(triggered_task == unwet_task)
-		task_triggered_event.unregister(unwet_task, src, /turf/simulated/proc/task_unwet_floor)
-		unwet_task = null
-		unwet_floor(check_very_wet)
-
-/turf/simulated/proc/unwet_floor(var/check_very_wet)
+/turf/simulated/proc/unwet_floor(var/check_very_wet = TRUE)
 	if(check_very_wet && wet >= 2)
 		wet--
-		unwet_task = schedule_task_in(8 SECONDS)
-		task_triggered_event.register(unwet_task, src, /turf/simulated/proc/task_unwet_floor)
+		timer_id = addtimer(CALLBACK(src,/turf/simulated/proc/unwet_floor), 8 SECONDS, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_NO_HASH_WAIT|TIMER_OVERRIDE)
 		return
 
 	wet = 0
@@ -68,10 +57,10 @@
 	levelupdate()
 
 /turf/simulated/Destroy()
-	task_unwet_floor(unwet_task, FALSE)
+	deltimer(timer_id)
 	return ..()
 
-/turf/simulated/proc/AddTracks(var/typepath,var/bloodDNA,var/comingdir,var/goingdir,var/bloodcolor="#A10808")
+/turf/simulated/proc/AddTracks(var/typepath,var/bloodDNA,var/comingdir,var/goingdir,var/bloodcolor=COLOR_BLOOD_HUMAN)
 	var/obj/effect/decal/cleanable/blood/tracks/tracks = locate(typepath) in src
 	if(!tracks)
 		tracks = new typepath(src)
@@ -100,8 +89,6 @@
 
 		if(istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = M
-			var/footstepsound = null
-			var/footstepsound_volume = 75
 			// Tracking blood
 			var/list/bloodDNA = null
 			var/bloodcolor=""
@@ -120,50 +107,12 @@
 					H.track_blood--
 
 			if (bloodDNA)
-				src.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,H.dir,0,bloodcolor) // Coming
+				src.AddTracks(H.species.get_move_trail(H),bloodDNA,H.dir,0,bloodcolor) // Coming
 				var/turf/simulated/from = get_step(H,reverse_direction(H.dir))
 				if(istype(from) && from)
-					from.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,0,H.dir,bloodcolor) // Going
+					from.AddTracks(H.species.get_move_trail(H),bloodDNA,0,H.dir,bloodcolor) // Going
 
 				bloodDNA = null
-
-			//Shoe sounds
-			if(istype(src, /turf/simulated/floor/grass))
-				footstepsound = "grassfootsteps"
-			else if(istype(src, /turf/simulated/floor/beach/water))
-				footstepsound = "waterfootsteps"
-				footstepsound_volume = 30
-			else if(istype(src, /turf/simulated/floor/wood) || src.name == "wooden floor")
-				footstepsound = "woodfootsteps"
-			else if(istype(src, /turf/simulated/floor/carpet) || src.name == "carpet")
-				footstepsound = "carpetfootsteps"
-				footstepsound_volume = 30
-			else if(istype(src, /turf/simulated/floor/beach/sand))
-				footstepsound = "dirtfootsteps"
-			else if(istype(src,/turf/simulated/floor/plating || src.name == "plating"))
-				footstepsound = "platingfootsteps"
-			else if(istype(src,/turf/simulated/floor/snow))
-				footstepsound = "snowsteps"
-				footstepsound_volume = 30
-			else if(istype(src,/turf/space || src.name == "space"))
-				footstepsound = null
-			else
-				footstepsound = "erikafootsteps"
-				footstepsound_volume = 92.5
-
-			if(istype(H.shoes, /obj/item/clothing/shoes) && !H.throwing)//This is probably the worst possible way to handle walking sfx.
-				if(H.m_intent == "run")
-					if(H.footstep >= 1)//Every two steps.
-						H.footstep = 0
-						playsound(src, footstepsound, footstepsound_volume, 1)
-					else
-						H.footstep++
-				else
-					if(H.footstep >= 4)
-						H.footstep = 0
-						playsound(src, footstepsound, footstepsound_volume, 1)
-					else
-						H.footstep++
 
 		if(src.wet)
 
@@ -219,7 +168,7 @@
 	return 0
 
 /turf/simulated/attackby(var/obj/item/thing, var/mob/user)
-	if(istype(thing, /obj/item/stack/cable_coil) && can_build_cable(user))
+	if(isCoil(thing) && can_build_cable(user))
 		var/obj/item/stack/cable_coil/coil = thing
 		coil.turf_place(src, user)
 		return

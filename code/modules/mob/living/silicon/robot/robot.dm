@@ -46,7 +46,9 @@
 	var/module_state_2 = null
 	var/module_state_3 = null
 
-	var/obj/item/device/radio/borg/radio = null
+	silicon_camera = /obj/item/device/camera/siliconcam/robot_camera
+	silicon_radio = /obj/item/device/radio/borg
+
 	var/mob/living/silicon/ai/connected_ai = null
 	var/obj/item/weapon/cell/cell = /obj/item/weapon/cell/high
 	var/obj/machinery/camera/camera = null
@@ -68,7 +70,7 @@
 	var/locked = 1
 	var/has_power = 1
 	var/spawn_module = null
-	var/radio_key_type = null
+
 	var/spawn_sound = 'sound/voice/liveagain.ogg'
 	var/pitch_toggle = 1
 	var/list/req_access = list(access_robotics)
@@ -114,9 +116,6 @@
 	icontype = "Basic"
 	updatename(modtype)
 	update_icon()
-
-	radio = new /obj/item/device/radio/borg(src)
-	common_radio = radio
 
 	if(!scrambledcodes && !camera)
 		camera = new /obj/machinery/camera(src)
@@ -165,13 +164,8 @@
 		M.set_multiplier(mult)
 
 /mob/living/silicon/robot/proc/init()
-	aiCamera = new/obj/item/device/camera/siliconcam/robot_camera(src)
 	if(ispath(module))
 		new module(src)
-	if(radio_key_type)
-		qdel(radio.keyslot)
-		radio.keyslot = new radio_key_type(radio)
-		radio.recalculateChannels()
 	if(lawupdate)
 		var/new_ai = select_active_ai_with_fewest_borgs()
 		if(new_ai)
@@ -219,20 +213,22 @@
 //If there's an MMI in the robot, have it ejected when the mob goes away. --NEO
 //Improved /N
 /mob/living/silicon/robot/Destroy()
-	if(mmi && mind)//Safety for when a cyborg gets dust()ed. Or there is no MMI inside.
-		var/turf/T = get_turf(loc)//To hopefully prevent run time errors.
-		if(T)	mmi.loc = T
-		if(mmi.brainmob)
-			mind.transfer_to(mmi.brainmob)
+	if(mmi)//Safety for when a cyborg gets dust()ed. Or there is no MMI inside.
+		if(mind)
+			mmi.dropInto(loc)
+			if(mmi.brainmob)
+				mind.transfer_to(mmi.brainmob)
+			else
+				to_chat(src, "<span class='danger'>Oops! Something went very wrong, your MMI was unable to receive your mind. You have been ghosted. Please make a bug report so we can fix this bug.</span>")
+				ghostize()
+				//ERROR("A borg has been destroyed, but its MMI lacked a brainmob, so the mind could not be transferred. Player: [ckey].")
+			mmi = null
 		else
-			to_chat(src, "<span class='danger'>Oops! Something went very wrong, your MMI was unable to receive your mind. You have been ghosted. Please make a bug report so we can fix this bug.</span>")
-			ghostize()
-			//ERROR("A borg has been destroyed, but its MMI lacked a brainmob, so the mind could not be transferred. Player: [ckey].")
-		mmi = null
+			QDEL_NULL(mmi)
 	if(connected_ai)
 		connected_ai.connected_robots -= src
-	qdel(wires)
-	wires = null
+	connected_ai = null
+	QDEL_NULL(wires)
 	return ..()
 
 /mob/living/silicon/robot/proc/set_module_sprites(var/list/new_sprites)
@@ -252,8 +248,10 @@
 				to_chat(src, "<span class='warning'>Custom Sprite Sheet does not contain a valid icon_state for [ckey]-[modtype]</span>")
 		else
 			icontype = module_sprites[1]
-		icon_state = module_sprites[icontype]
-	update_icon()
+		var/icon_state_robo = module_sprites[icontype]
+		for(var/obj/item/weapon/robot_module/module in contents)
+			if(module.do_transform_animation(icon_state_robo))
+				update_icon()
 	return module_sprites
 
 /mob/living/silicon/robot/proc/pick_module()
@@ -286,7 +284,7 @@
 	if(prefix)
 		modtype = prefix
 
-	if(istype(mmi, /obj/item/device/mmi/digital/posibrain))
+	if(istype(mmi, /obj/item/organ/internal/posibrain))
 		braintype = "Android"
 	else if(istype(mmi, /obj/item/device/mmi/digital/robot))
 		braintype = "Robot"
@@ -308,10 +306,6 @@
 
 	// if we've changed our name, we also need to update the display name for our PDA
 	setup_PDA()
-
-	// Synths aren't in data_core, but are on manifest. Invalidate old one so the
-	// synth shows up.
-	GLOB.data_core.ResetPDAManifest()
 
 	//We also need to update name of internal camera.
 	if (camera)
@@ -485,7 +479,7 @@
 				to_chat(usr, "<span class='notice'>You install the [W.name].</span>")
 				return
 
-	if (istype(W, /obj/item/weapon/weldingtool))
+	if(isWelder(W))
 		if (src == user)
 			to_chat(user, "<span class='warning'>You lack the reach to be able to repair yourself.</span>")
 			return
@@ -517,7 +511,7 @@
 			for(var/mob/O in viewers(user, null))
 				O.show_message(text("<span class='warning'>[user] has fixed some of the burnt wires on [src]!</span>"), 1)
 
-	else if (istype(W, /obj/item/weapon/crowbar))	// crowbar means open or close the cover
+	else if(isCrowbar(W))	// crowbar means open or close the cover - we all know what a crowbar is by now
 		if(opened)
 			if(cell)
 				user.visible_message("<span class='notice'>\The [user] begins clasping shut \the [src]'s maintenance hatch.</span>", "<span class='notice'>You begin closing up \the [src].</span>")
@@ -611,26 +605,26 @@
 			C.brute_damage = 0
 			C.electronics_damage = 0
 
-	else if (istype(W, /obj/item/weapon/wirecutters) || istype(W, /obj/item/device/multitool))
+	else if(isWirecutter(W) || isMultitool(W))
 		if (wiresexposed)
 			wires.Interact(user)
 		else
 			to_chat(user, "You can't reach the wiring.")
-	else if(istype(W, /obj/item/weapon/screwdriver) && opened && !cell)	// haxing
+	else if(isScrewdriver(W) && opened && !cell)	// haxing
 		wiresexposed = !wiresexposed
 		to_chat(user, "The wires have been [wiresexposed ? "exposed" : "unexposed"].")
 		update_icon()
 
 	else if(istype(W, /obj/item/weapon/screwdriver) && opened && cell)	// radio
-		if(radio)
-			radio.attackby(W,user)//Push it to the radio to let it handle everything
+		if(silicon_radio)
+			silicon_radio.attackby(W,user)//Push it to the radio to let it handle everything
 		else
 			to_chat(user, "Unable to locate a radio.")
 		update_icon()
 
 	else if(istype(W, /obj/item/device/encryptionkey/) && opened)
-		if(radio)//sanityyyyyy
-			radio.attackby(W,user)//GTFO, you have your own procs
+		if(silicon_radio)//sanityyyyyy
+			silicon_radio.attackby(W,user)//GTFO, you have your own procs
 		else
 			to_chat(user, "Unable to locate a radio.")
 	else if (istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/device/pda)||istype(W, /obj/item/weapon/card/robot))			// trying to unlock the interface with an ID card
@@ -871,7 +865,7 @@
 	return
 
 /mob/living/silicon/robot/proc/radio_menu()
-	radio.interact(src)//Just use the radio's Topic() instead of bullshit special-snowflake code
+	silicon_radio.interact(src)//Just use the radio's Topic() instead of bullshit special-snowflake code
 
 
 /mob/living/silicon/robot/Move(a, b, flag)
@@ -975,8 +969,10 @@
 			icontype = module_sprites[1]
 	else
 		icontype = input("Select an icon! [triesleft ? "You have [triesleft] more chance\s." : "This is your last try."]", "Robot Icon", icontype, null) in module_sprites
-	icon_state = module_sprites[icontype]
-	update_icon()
+	var/icon_state_robo = module_sprites[icontype]
+	for(var/obj/item/weapon/robot_module/module in contents)
+		if(module.do_transform_animation(icon_state_robo))
+			update_icon()
 
 	if (module_sprites.len > 1 && triesleft >= 1 && client)
 		icon_selection_tries--
@@ -1114,3 +1110,8 @@
 				to_chat(src, "Hack attempt detected.")
 			return 1
 		return
+
+/mob/living/silicon/robot/incapacitated(var/incapacitation_flags = INCAPACITATION_DEFAULT)
+	..()
+	if ((incapacitation_flags & INCAPACITATION_FORCELYING) && (lockcharge))
+		return 1

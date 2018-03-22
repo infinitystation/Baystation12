@@ -34,6 +34,14 @@
 		/obj/item/weapon/implantpad
 		)
 
+/obj/item/weapon/storage/box/syndie_kit/imp_imprinting
+	name = "box (I)"
+	startswith = list(
+		/obj/item/weapon/implanter/imprinting,
+		/obj/item/weapon/implantpad,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/mindbreaker
+		)
+
 // Space suit uplink kit
 /obj/item/weapon/storage/backpack/satchel/syndie_kit/space
 	//name = "\improper EVA gear pack"
@@ -96,10 +104,18 @@
 
 /obj/item/weapon/storage/backpack/satchel/syndie_kit/revolver
 	name = "\improper Tough operator"
-	desc = "Revolver with ammunition."
+	desc = ".357 revolver, with ammunition."
 	startswith = list(
 		/obj/item/weapon/gun/projectile/revolver,
 		/obj/item/ammo_magazine/a357
+	)
+
+/obj/item/weapon/storage/backpack/satchel/syndie_kit/revolver2
+	name = "\improper Dandy tough operator"
+	desc = ".44 magnum revolver, with ammunition."
+	startswith = list(
+		/obj/item/weapon/gun/projectile/revolver/webley,
+		/obj/item/ammo_magazine/c44
 	)
 
 /obj/item/weapon/storage/box/syndie_kit/toxin
@@ -108,6 +124,13 @@
 	startswith = list(
 		/obj/item/weapon/reagent_containers/glass/beaker/vial/random/toxin,
 		/obj/item/weapon/reagent_containers/syringe
+	)
+
+/obj/item/weapon/storage/box/syndie_kit/syringegun
+	startswith = list(
+		/obj/item/weapon/gun/launcher/syringe/disguised,
+		/obj/item/weapon/syringe_cartridge = 4,
+		/obj/item/weapon/reagent_containers/syringe = 4
 	)
 
 /obj/item/weapon/storage/box/syndie_kit/cigarette
@@ -174,6 +197,6 @@
 	name = "armor satchel"
 	desc = "A satchel for when you don't want to try a diplomatic approach."
 	startswith = list(
-		/obj/item/clothing/suit/storage/vest/merc,
+		/obj/item/clothing/suit/armor/pcarrier/merc,
 		/obj/item/clothing/head/helmet/merc
 	)

@@ -67,16 +67,46 @@
 	foldable = null //special form fitted boxes should not be foldable.
 
 /obj/item/weapon/storage/box/survival/
+	name = "crew survival kit"
+	desc = "A box decorated in warning colors that contains a limited supply of survival tools. The panel and white stripe indicate this one contains oxygen."
+	icon_state = "survival"
 	startswith = list(/obj/item/clothing/mask/breath = 1,
-					/obj/item/weapon/tank/emergency/oxygen = 1)
+					/obj/item/weapon/tank/emergency/oxygen = 1,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector = 1,
+					/obj/item/stack/medical/bruise_pack = 1,
+					/obj/item/device/flashlight/glowstick = 1,
+					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
+
+/obj/item/weapon/storage/box/survival/troops
+	name = "field survival kit"
+	startswith = list(/obj/item/clothing/mask/breath = 1,
+					/obj/item/weapon/tank/emergency/oxygen = 1,
+					/obj/item/device/flashlight/glowstick = 1,
+					/obj/item/weapon/crowbar/prybar = 1,
+					/obj/item/device/radio/off = 1,
+					/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 2)
 
 /obj/item/weapon/storage/box/vox/
+	name = "vox survival kit"
+	desc = "A box decorated in warning colors that contains a limited supply of survival tools. The panel and black stripe indicate this one contains nitrogen."
+	icon_state = "survivalvox"
 	startswith = list(/obj/item/clothing/mask/breath = 1,
-					/obj/item/weapon/tank/emergency/nitrogen = 1)
+					/obj/item/weapon/tank/emergency/nitrogen = 1,
+					/obj/item/stack/medical/bruise_pack = 1,
+					/obj/item/device/flashlight/glowstick = 1,
+					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
 
 /obj/item/weapon/storage/box/engineer/
+	name = "engineer survival kit"
+	desc = "A box decorated in warning colors that contains a limited supply of survival tools. The panel and orange stripe indicate this one as the engineering variant."
+	icon_state = "survivaleng"
 	startswith = list(/obj/item/clothing/mask/breath = 1,
-					/obj/item/weapon/tank/emergency/oxygen/engi = 1)
+					/obj/item/weapon/tank/emergency/oxygen/engi = 1,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector = 1,
+					/obj/item/weapon/reagent_containers/hypospray/autoinjector/detox = 1,
+					/obj/item/stack/medical/bruise_pack = 1,
+					/obj/item/device/flashlight/glowstick = 1,
+					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
 
 /obj/item/weapon/storage/box/gloves
 	name = "box of sterile gloves"
@@ -109,11 +139,6 @@
 	name = "box of beakers"
 	icon_state = "beaker"
 	startswith = list(/obj/item/weapon/reagent_containers/glass/beaker = 7)
-
-/obj/item/weapon/storage/box/injectors
-	name = "box of DNA injectors"
-	desc = "This box contains injectors it seems."
-	startswith = list(/obj/item/weapon/dnainjector/h2m = 6)
 
 
 /obj/item/weapon/storage/box/blanks
@@ -155,6 +180,10 @@
 	name = "box of 14.5mm shells"
 	desc = "It has a picture of a gun and several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
 	startswith = list(/obj/item/ammo_casing/a145 = 7)
+
+/obj/item/weapon/storage/box/sniperammo/apds
+	name = "box of 14.5mm APDS shells"
+	startswith = list(/obj/item/ammo_casing/a145/apds = 3)
 
 /obj/item/weapon/storage/box/flashbangs
 	name = "box of flashbangs"
@@ -286,6 +315,12 @@
 	icon_state = "id"
 	startswith = list(/obj/item/weapon/card/id = 7)
 
+/obj/item/weapon/storage/box/large/ids
+	name = "box of spare IDs"
+	desc = "Has so, so many empty IDs."
+	icon_state = "id_large"
+	startswith = list(/obj/item/weapon/card/id = 14)
+
 /obj/item/weapon/storage/box/seccarts
 	name = "box of spare R.O.B.U.S.T. Cartridges"
 	desc = "A box full of R.O.B.U.S.T. Cartridges, used by Security."
@@ -303,7 +338,7 @@
 	desc = "<B><FONT color='red'>WARNING:</FONT></B> <I>Keep out of reach of children</I>."
 	icon_state = "mousetraps"
 	startswith = list(/obj/item/device/assembly/mousetrap = 6)
-	
+
 /obj/item/weapon/storage/box/mousetraps/empty
 	startswith = null
 
@@ -336,7 +371,9 @@
 			W.lit = 1
 			W.damtype = "burn"
 			W.icon_state = "match_lit"
-			GLOB.processing_objects.Add(W)
+			START_PROCESSING(SSobj, W)
+			playsound(src.loc, 'sound/items/match.ogg', 60, 1, -4)
+			user.visible_message("<span class='notice'>[user] strikes the match on the matchbox.</span>")
 		W.update_icon()
 		return
 
@@ -361,7 +398,7 @@
 
 /obj/item/weapon/storage/box/lights/bulbs
 	startswith = list(/obj/item/weapon/light/bulb = 21)
-	
+
 /obj/item/weapon/storage/box/lights/bulbs/empty
 	startswith = null
 
@@ -370,7 +407,7 @@
 	icon_state = "lighttube"
 	startswith = list(/obj/item/weapon/light/tube = 17,
 					/obj/item/weapon/light/tube/large = 4)
-					
+
 /obj/item/weapon/storage/box/lights/tubes/empty
 	startswith = null
 
@@ -380,7 +417,7 @@
 	startswith = list(/obj/item/weapon/light/tube = 12,
 					/obj/item/weapon/light/tube/large = 4,
 					/obj/item/weapon/light/bulb = 5)
-					
+
 /obj/item/weapon/storage/box/lights/mixed/empty
 	startswith = null
 
@@ -390,6 +427,11 @@
 	startswith = list(/obj/item/device/flashlight/glowstick = 1, /obj/item/device/flashlight/glowstick/red = 1,
 					/obj/item/device/flashlight/glowstick/blue = 1, /obj/item/device/flashlight/glowstick/orange = 1,
 					/obj/item/device/flashlight/glowstick/yellow = 1, /obj/item/device/flashlight/glowstick/random = 1)
+
+/obj/item/weapon/storage/box/greenglowsticks
+	name = "box of green glowsticks"
+	icon_state = "box"
+	startswith = list(/obj/item/device/flashlight/glowstick = 6)
 
 /obj/item/weapon/storage/box/freezer
 	name = "portable freezer"
@@ -444,11 +486,6 @@
 
 //Spare Armbands
 
-/obj/item/weapon/storage/box/armband
-	name = "box of spare military police armbands"
-	desc = "A box full of security armbands. For use in emergencies when provisional security personnel are needed."
-	startswith = list(/obj/item/clothing/accessory/armband/mp = 5)
-
 /obj/item/weapon/storage/box/armband/engine
 	name = "box of spare engineering armbands"
 	desc = "A box full of engineering armbands. For use in emergencies when provisional engineering peronnel are needed."
@@ -458,3 +495,18 @@
 	name = "box of spare medical armbands"
 	desc = "A box full of medical armbands. For use in emergencies when provisional medical personnel are needed."
 	startswith = list(/obj/item/clothing/accessory/armband/med = 5)
+
+/obj/item/weapon/storage/box/imprinting
+	name = "box of education implants"
+	desc = "A box full of neural implants for on-job training."
+	startswith = list(
+		/obj/item/weapon/implanter,
+		/obj/item/weapon/implantpad,
+		/obj/item/weapon/implantcase/imprinting = 3
+		)
+
+/obj/item/weapon/storage/box/detergent
+	name = "detergent pods bag"
+	desc = "A bag full of juicy yummy detergent pods."
+	icon_state = "detergent"
+	startswith = list(/obj/item/weapon/reagent_containers/pill/detergent = 10)

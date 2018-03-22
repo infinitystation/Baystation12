@@ -7,7 +7,16 @@
 
 	var/list/Lines = list()
 
+	//for admins
+	var/living = 0 //Currently alive and in the round (possibly unconscious, but not officially dead)
+	var/dead = 0 //Have been in the round but are now deceased
+	var/observers = 0 //Have never been in the round (thus observing)
+	var/lobby = 0 //Are currently in the lobby
+	var/living_antags = 0 //Are antagonists, and currently alive
+	var/dead_antags = 0 //Are antagonists, and have finally met their match
+
 	if(check_rights(R_INVESTIGATE, 0))
+		game_log("ADMIN", "[usr.key] checked advanced who in-round.")
 		for(var/client/C in GLOB.clients)
 			var/entry = "\t[C.key]"
 			if(!C.mob) //If mob is null, print error and skip rest of info for client.
@@ -19,15 +28,24 @@
 			switch(C.mob.stat)
 				if(UNCONSCIOUS)
 					entry += " - <font color='darkgray'><b>Unconscious</b></font>"
+					living++
 				if(DEAD)
 					if(isghost(C.mob))
 						var/mob/observer/ghost/O = C.mob
 						if(O.started_as_observer)
-							entry += " - <font color='gray'>Observing</font>"
+							entry += " - <span style='color:gray'>Observing</span>"
+							observers++
 						else
-							entry += " - <font color='black'><b>DEAD</b></font>"
+							entry += " - <b>DEAD</b>"
+							dead++
+					else if(isnewplayer(C.mob))
+						entry += " - <span style='color:gray'><i>Lobby</i></span>"
+						lobby++
 					else
-						entry += " - <font color='black'><b>DEAD</b></font>"
+						entry += " - <b>DEAD</b>"
+						dead++
+				else
+					living++
 
 			var/age
 			if(isnum(C.player_age))
@@ -44,6 +62,10 @@
 
 			if(is_special_character(C.mob))
 				entry += " - <b><font color='red'>Antagonist</font></b>"
+				if(istype(C.mob, /mob/observer/ghost) && C.mob.stat == DEAD)
+					dead_antags++
+				else
+					living_antags++
 			if(C.is_afk())
 				entry += " (AFK - [C.inactivity2text()])"
 			entry += " (<A HREF='?_src_=holder;adminmoreinfo=\ref[C.mob]'>?</A>)"
@@ -56,8 +78,13 @@
 	for(var/line in sortList(Lines))
 		msg += "[line]\n"
 
-	msg += "<b>Total Players: [length(Lines)]</b>"
-	to_chat(src, msg)
+	if(check_rights(R_INVESTIGATE, 0))
+		msg += "<b><span class='notice'>Total Living: [living]</span> | Total Dead: [dead] | <span style='color:gray'>Observing: [observers]</span> | <span style='color:gray'><i>In Lobby: [lobby]</i></span> | <span class='bad'>Living Antags: [living_antags]</span> | <span class='good'>Dead Antags: [dead_antags]</span></b>\n"
+		msg += "<b>Total Players: [length(Lines)]</b>\n"
+		to_chat(src, msg)
+	else
+		msg += "<b>Total Players: [length(Lines)]</b>"
+		to_chat(src, msg)
 
 /client/verb/staffwho()
 	set category = "Admin"

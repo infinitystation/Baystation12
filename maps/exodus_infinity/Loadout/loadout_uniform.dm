@@ -18,17 +18,13 @@
 	path = /obj/item/clothing/under/blackjumpskirt
 
 /datum/gear/uniform/shortjumpskirt
-    display_name = "short jumpskirt"
-    path = /obj/item/clothing/under/shortjumpskirt
-    flags = GEAR_HAS_COLOR_SELECTION
+	display_name = "short jumpskirt"
+	path = /obj/item/clothing/under/shortjumpskirt
+	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/uniform/jumpsuit
 	display_name = "generic jumpsuits"
 	path = /obj/item/clothing/under/color/grey
-
-/datum/gear/uniform/jumpsuit/New()
-	..()
-	gear_tweaks += new/datum/gear_tweak/path(/obj/item/clothing/under/color)
 
 /datum/gear/uniform/roboticist_skirt
 	display_name = "skirt, roboticist"
@@ -62,21 +58,6 @@
 	suits["white-blue suit"] = /obj/item/clothing/under/lawyer/bluesuit
 	suits["formal outfit"] = /obj/item/clothing/under/rank/internalaffairs/plain
 	gear_tweaks += new/datum/gear_tweak/path(suits)
-
-/datum/gear/uniform/scrubs
-	display_name = "medical scrubs"
-	path = /obj/item/clothing/under/rank/medical/black
-	allowed_roles = list(MED_ROLES)
-
-/datum/gear/uniform/scrubs/New()
-	..()
-	var/scrubcolor = list()
-	scrubcolor["black scrubs"] = /obj/item/clothing/under/rank/medical/black
-	scrubcolor["blue scrubs"] = /obj/item/clothing/under/rank/medical/blue
-	scrubcolor["green scrubs"] = /obj/item/clothing/under/rank/medical/green
-	scrubcolor["navy blue scrubs"] = /obj/item/clothing/under/rank/medical/navyblue
-	scrubcolor["purple scrubs"] = /obj/item/clothing/under/rank/medical/purple
-	gear_tweaks += new/datum/gear_tweak/path(scrubcolor)
 
 /datum/gear/uniform/dress
 	display_name = "dress selection"

@@ -30,20 +30,20 @@ var/datum/antagonist/wizard/wizards
 	var/kill
 	var/escape
 	var/steal
-	var/hijack
+//	var/hijack
 
-	switch(rand(1,100))
+	switch(rand(1,99))
 		if(1 to 30)
 			escape = 1
 			kill = 1
 		if(31 to 60)
 			escape = 1
 			steal = 1
-		if(61 to 99)
+		else
 			kill = 1
 			steal = 1
-		else
-			hijack = 1
+//		else
+//			hijack = 1
 
 	if(kill)
 		var/datum/objective/assassinate/kill_objective = new
@@ -59,36 +59,27 @@ var/datum/antagonist/wizard/wizards
 		var/datum/objective/survive/survive_objective = new
 		survive_objective.owner = wizard
 		wizard.objectives |= survive_objective
-	if(hijack)
-		var/datum/objective/hijack/hijack_objective = new
-		hijack_objective.owner = wizard
-		wizard.objectives |= hijack_objective
+//	if(hijack)
+//		var/datum/objective/hijack/hijack_objective = new
+//		hijack_objective.owner = wizard
+//		wizard.objectives |= hijack_objective
 	return
 
 /datum/antagonist/wizard/update_antag_mob(var/datum/mind/wizard)
 	..()
 	wizard.store_memory("<B>Remember:</B> do not forget to prepare your spells.")
 	wizard.current.real_name = "[pick(GLOB.wizard_first)] [pick(GLOB.wizard_second)]"
-	wizard.current.name = wizard.current.real_name
+	wizard.current.SetName(wizard.current.real_name)
 
 /datum/antagonist/wizard/equip(var/mob/living/carbon/human/wizard_mob)
 
 	if(!..())
 		return 0
 
-	wizard_mob.equip_to_slot_or_del(new /obj/item/device/radio/headset(wizard_mob), slot_l_ear)
-	wizard_mob.equip_to_slot_or_del(new /obj/item/clothing/under/color/lightpurple(wizard_mob), slot_w_uniform)
-	wizard_mob.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal(wizard_mob), slot_shoes)
-	wizard_mob.equip_to_slot_or_del(new /obj/item/clothing/suit/wizrobe(wizard_mob), slot_wear_suit)
-	wizard_mob.equip_to_slot_or_del(new /obj/item/clothing/head/wizard(wizard_mob), slot_head)
-	if(wizard_mob.backbag == 2) wizard_mob.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack(wizard_mob), slot_back)
-	if(wizard_mob.backbag == 3) wizard_mob.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel_norm(wizard_mob), slot_back)
-	if(wizard_mob.backbag == 4) wizard_mob.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(wizard_mob), slot_back)
-	wizard_mob.equip_to_slot_or_del(new /obj/item/weapon/storage/box(wizard_mob), slot_in_backpack)
-	wizard_mob.equip_to_slot_or_del(new /obj/item/weapon/teleportation_scroll(wizard_mob), slot_r_store)
-	var/obj/item/I = new /obj/item/weapon/spellbook(get_turf(wizard_mob))
-	wizard_mob.put_in_hands(I) //makes sure to at least have it on the ground for the wizard, considering how important it is.
-	wizard_mob.update_icons()
+	var/outfit_type = pick(subtypesof(/decl/hierarchy/outfit/wizard))
+	var/decl/hierarchy/outfit/wizard_outfit = outfit_by_type(outfit_type)
+	wizard_outfit.equip(wizard_mob)
+
 	return 1
 
 /datum/antagonist/wizard/check_victory()

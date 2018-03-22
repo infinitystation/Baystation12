@@ -12,10 +12,6 @@
 	key = "deathgasp"
 	emote_message_3p = "USER lets out a waning guttural screech, green blood bubbling from its maw."
 
-/decl/emote/audible/whimper
-	key ="whimper"
-	emote_message_3p = "USER whimpers."
-
 /decl/emote/audible/gasp
 	key ="gasp"
 	emote_message_3p = "USER задыхаетс&#255;."
@@ -41,11 +37,11 @@
 
 /decl/emote/audible/scretch
 	key ="scretch"
-	emote_message_3p = "USER scretches."
+	emote_message_3p = "USER чешетс&#255;."
 
 /decl/emote/audible/choke
 	key ="choke"
-	emote_message_3p = "USER chokes."
+	emote_message_3p = "USER подавилс&#255;."
 	conscious = 0
 
 /decl/emote/audible/gnarl
@@ -54,7 +50,7 @@
 
 /decl/emote/audible/chirp
 	key ="chirp"
-	emote_message_3p = "USER chirps!"
+	emote_message_3p = "USER щебечет!"
 	emote_sound = 'sound/misc/nymphchirp.ogg'
 
 /decl/emote/audible/alarm
@@ -74,8 +70,8 @@
 
 /decl/emote/audible/whistle
 	key = "whistle"
-	emote_message_1p = "You whistle."
-	emote_message_3p = "USER whistles."
+	emote_message_1p = "Вы свистите."
+	emote_message_3p = "USER свистит."
 
 /decl/emote/audible/whistle/do_extra(var/mob/M)
 	if(M.stat)//No dead or unconcious people screaming pls.
@@ -169,9 +165,23 @@
 	key = "clap"
 	emote_message_3p = "USER хлопает."
 
+/decl/emote/audible/clap/do_extra(var/mob/M)
+	if(M.stat)//No dead or unconcious people screaming pls.
+		return
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.isMonkey())//|| M.gender == NEUTER) It would be nice to whistle in Machine body. ~Quardbreak
+			return
+
+		emote_sound = "sound/effects/clap.ogg"
+
+		if(emote_sound)
+			playsound(M, emote_sound, 25, 0, 1)
+
 /decl/emote/audible/chuckle
 	key = "chuckle"
-	emote_message_3p = "USER chuckles."
+	emote_message_3p = "USER усмехнулс&#255;."
 
 /decl/emote/audible/cough
 	key = "cough"
@@ -193,6 +203,25 @@
 
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/cough_female.ogg"
+
+		if(emote_sound)
+			playsound(M, emote_sound, 25, 0, 1)
+
+/decl/emote/audible/salute
+	key = "salute"
+	emote_message_3p_target = "USER выполн&#255;ет воинское приветствие TARGET."
+	emote_message_3p = "USER выполн&#255;ет воинское приветствие."
+
+/decl/emote/audible/salute/do_extra(var/mob/M)
+	if(M.stat)//No dead or unconcious people screaming pls.
+		return
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.isMonkey())//|| M.gender == NEUTER) It would be nice to whistle in Machine body. ~Quardbreak
+			return
+
+		emote_sound = "sound/effects/salute.ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)
@@ -275,7 +304,7 @@
 
 /decl/emote/audible/groan
 	key = "groan"
-	emote_message_3p = "USER т&#255;жело вздыхает."
+	emote_message_3p = "USER досадно вздыхает."
 	conscious = 0
 
 /decl/emote/audible/moan
@@ -300,7 +329,7 @@
 			emote_sound = "sound/voice/giggle_male_[rand(1,2)].ogg"
 
 		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/giggle_female_[rand(1,2)].ogg"
+			emote_sound = "sound/voice/giggle_female_[rand(1,3)].ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)
@@ -330,3 +359,18 @@
 /decl/emote/audible/grunt
 	key = "grunt"
 	emote_message_3p = "USER ворчит."
+
+/decl/emote/audible/bug_hiss
+	key ="hiss"
+	emote_message_3p = "USER шипит."
+	emote_sound = 'sound/voice/BugHiss.ogg'
+
+/decl/emote/audible/bug_buzz
+	key ="buzz"
+	emote_message_3p = "USER жужжит."
+	emote_sound = 'sound/voice/BugBuzz.ogg'
+
+/decl/emote/audible/bug_chitter
+	key ="chitter"
+	emote_message_3p = "USER верещит."
+	emote_sound = 'sound/voice/Bug.ogg'

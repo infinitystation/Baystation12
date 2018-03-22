@@ -15,7 +15,10 @@ datum/preferences
 	var/last_id
 
 	//game-preferences
-	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
+
+	//Saved changlog filesize to detect if there was a change
+	var/lastchangelog = ""
+	var/lastinfchangelog = ""
 
 	//character preferences
 	var/species_preview                 //Used for the species selection window.
@@ -59,7 +62,7 @@ datum/preferences
 /datum/preferences/proc/CalculateSkillPoints()
 	used_skillpoints = 0
 	for(var/V in SKILLS) for(var/datum/skill/S in SKILLS[V])
-		var/multiplier = 1
+		var/multiplier = S.cost_multiplier
 		switch(skills[S.ID])
 			if(SKILL_NONE)
 				used_skillpoints += 0 * multiplier
@@ -129,7 +132,7 @@ datum/preferences
 	dat += player_setup.content(user)
 
 	dat += "</html></body>"
-	var/datum/browser/popup = new(user, "Character Setup","Character Setup", 800, 800, src)
+	var/datum/browser/popup = new(user, "Character Setup","Character Setup", 1200, 800, src)
 	popup.set_content(dat)
 	popup.open()
 
@@ -167,7 +170,7 @@ datum/preferences
 		sanitize_preferences()
 		close_load_dialog(usr)
 	else if(href_list["resetslot"])
-		if("No" == alert("This will reset the current slot. Continue?", "Reset current slot?", "No", "Yes"))
+		if(real_name != input("This will reset the current slot. Enter the character's full name to confirm."))
 			return 0
 		load_character(SAVE_RESET)
 		sanitize_preferences()
@@ -217,6 +220,7 @@ datum/preferences
 	character.b_skin = b_skin
 
 	character.s_tone = s_tone
+	character.s_base = s_base
 
 	character.h_style = h_style
 	character.f_style = f_style
@@ -253,7 +257,7 @@ datum/preferences
 				O.robotize()
 		else //normal organ
 			O.force_icon = null
-			O.name = initial(O.name)
+			O.SetName(initial(O.name))
 			O.desc = initial(O.desc)
 	//For species that don't care about your silly prefs
 	character.species.handle_limbs_setup(character)
@@ -283,9 +287,8 @@ datum/preferences
 				UW.ForceEquipUnderwear(character, FALSE)
 		else
 			all_underwear -= underwear_category_name
-	if(backbag > 6 || backbag < 1)
-		backbag = 1 //Same as above
-	character.backbag = backbag
+
+	character.backpack_setup = new(backpack, backpack_metadata["[backpack]"])
 
 	for(var/N in character.organs_by_name)
 		var/obj/item/organ/external/O = character.organs_by_name[N]
@@ -327,6 +330,7 @@ datum/preferences
 	character.sec_record = sec_record
 	character.gen_record = gen_record
 	character.exploit_record = exploit_record
+	character.ooc_notes = metadata
 
 	character.home_system = home_system
 	character.citizenship = citizenship

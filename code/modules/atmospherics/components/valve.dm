@@ -38,13 +38,13 @@
 /obj/machinery/atmospherics/valve/hide(var/i)
 	update_underlays()
 
-/obj/machinery/atmospherics/valve/New()
+/obj/machinery/atmospherics/valve/Initialize()
 	switch(dir)
 		if(NORTH, SOUTH)
 			initialize_directions = NORTH|SOUTH
 		if(EAST, WEST)
 			initialize_directions = EAST|WEST
-	..()
+	. = ..()
 
 /obj/machinery/atmospherics/valve/network_expand(datum/pipe_network/new_network, obj/machinery/atmospherics/pipe/reference)
 	if(reference == node1)
@@ -84,7 +84,7 @@
 	node1 = null
 	node2 = null
 
-	..()
+	. = ..()
 
 /obj/machinery/atmospherics/valve/proc/open()
 	if(open) return 0
@@ -137,11 +137,9 @@
 	else
 		src.open()
 
-/obj/machinery/atmospherics/valve/process()
+/obj/machinery/atmospherics/valve/Process()
 	..()
-	. = PROCESS_KILL
-
-	return
+	return PROCESS_KILL
 
 /obj/machinery/atmospherics/valve/atmos_init()
 	..()

@@ -23,7 +23,7 @@ var/const/VENDING_WIRE_IDSCAN = 8
 	var/obj/machinery/vending/V = holder
 	. += ..()
 	. += "<BR>The orange light is [V.seconds_electrified ? "off" : "on"].<BR>"
-	. += "The red light is [V.shoot_inventory ? "off" : "blinking"].<BR>"
+	. += "The red light is [V.shoot_inventory ? "blinking" : "off"].<BR>"
 	. += "The green light is [(V.categories & CAT_HIDDEN) ? "on" : "off"].<BR>"
 	. += "The [V.scan_id ? "purple" : "yellow"] light is on.<BR>"
 
@@ -45,7 +45,7 @@ var/const/VENDING_WIRE_IDSCAN = 8
 		if(VENDING_WIRE_THROW)
 			V.shoot_inventory = !mended
 		if(VENDING_WIRE_CONTRABAND)
-			V.categories &= ~CAT_HIDDEN  
+			V.categories &= ~CAT_HIDDEN
 		if(VENDING_WIRE_ELECTRIFY)
 			if(mended)
 				V.seconds_electrified = 0
@@ -53,3 +53,17 @@ var/const/VENDING_WIRE_IDSCAN = 8
 				V.seconds_electrified = -1
 		if(VENDING_WIRE_IDSCAN)
 			V.scan_id = 1
+
+/datum/wires/vending/SolveWireFunction(var/function)
+	var/sf = ""
+	switch(function)
+		if(VENDING_WIRE_THROW)
+			sf = "A"
+		if(VENDING_WIRE_CONTRABAND)
+			sf = "D"
+		if(VENDING_WIRE_ELECTRIFY)
+			sf = "B"
+		if(VENDING_WIRE_IDSCAN)
+			sf = "E"
+
+	return sf

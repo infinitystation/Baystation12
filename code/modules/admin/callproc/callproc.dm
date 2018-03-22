@@ -220,13 +220,15 @@
 		if(!target)
 			to_chat(usr, "Your callproc target no longer exists.")
 			return
-		log_admin("[key_name(src)] called [target]'s [procname]() with [arguments.len ? "the arguments [list2params(arguments)]" : "no arguments"].")
+		log_admin("[key_name(usr)] called [target]'s [procname]() with [arguments.len ? "the arguments [list2params(arguments)]" : "no arguments"].")
+		message_admins("[key_name(usr)] called [target]'s [procname]() with [arguments.len ? "the arguments [list2params(arguments)]" : "no arguments"].")
 		if(arguments.len)
 			returnval = call(target, procname)(arglist(arguments))
 		else
 			returnval = call(target, procname)()
 	else
-		log_admin("[key_name(src)] called [procname]() with [arguments.len ? "the arguments [list2params(arguments)]" : "no arguments"].")
+		log_admin("[key_name(usr)] called [procname]() with [arguments.len ? "the arguments [list2params(arguments)]" : "no arguments"].")
+		message_admins("[key_name(usr)] called [procname]() with [arguments.len ? "the arguments [list2params(arguments)]" : "no arguments"].")
 		returnval = call(procname)(arglist(arguments))
 
 	to_chat(usr, "<span class='info'>[procname]() returned: [json_encode(returnval)]</span>")

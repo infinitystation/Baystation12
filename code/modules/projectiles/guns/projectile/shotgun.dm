@@ -1,12 +1,12 @@
 /obj/item/weapon/gun/projectile/shotgun/pump
-	name = "shotgun"
+	name = "Remmington 29x shotgun"
 	desc = "The mass-produced W-T Remmington 29x shotgun is a favourite of police and security forces on many worlds. Useful for sweeping alleys."
 	icon_state = "shotgun"
 	item_state = "shotgun"
 	max_shells = 4
 	w_class = ITEM_SIZE_HUGE
 	force = 10
-	flags =  CONDUCT
+	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BACK
 	caliber = "shotgun"
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
@@ -15,6 +15,7 @@
 	handle_casings = HOLD_CASINGS
 	one_hand_penalty = 2
 	var/recentpump = 0 // to prevent spammage
+	wielded_item_state = "gun_wielded"
 
 /obj/item/weapon/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)
@@ -41,7 +42,7 @@
 	update_icon()
 
 /obj/item/weapon/gun/projectile/shotgun/pump/combat
-	name = "combat shotgun"
+	name = "KS-40 combat shotgun"
 	desc = "Built for close quarters combat, the Hephaestus Industries KS-40 is widely regarded as a weapon of choice for repelling boarders."
 	icon_state = "cshotgun"
 	item_state = "cshotgun"
@@ -49,6 +50,9 @@
 	max_shells = 7 //match the ammo box capacity, also it can hold a round in the chamber anyways, for a total of 8.
 	ammo_type = /obj/item/ammo_casing/shotgun
 	one_hand_penalty = 3 //a little heavier than the regular shotgun
+
+/obj/item/weapon/gun/projectile/shotgun/pump/combat/lethal
+	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel
 	name = "double-barreled shotgun"
@@ -62,11 +66,13 @@
 	max_shells = 2
 	w_class = ITEM_SIZE_HUGE
 	force = 10
-	flags =  CONDUCT
+	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BACK
 	caliber = "shotgun"
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 1)
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	one_hand_penalty = 2
+	wielded_item_state = "gun_wielded"
 
 	burst_delay = 0
 	firemodes = list(
@@ -87,7 +93,7 @@
 
 //this is largely hacky and bad :(	-Pete
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel/attackby(var/obj/item/A as obj, mob/user as mob)
-	if(w_class > 3 && (istype(A, /obj/item/weapon/circular_saw) || istype(A, /obj/item/weapon/melee/energy) || istype(A, /obj/item/weapon/pickaxe/plasmacutter)))
+	if(w_class > 3 && (istype(A, /obj/item/weapon/circular_saw) || istype(A, /obj/item/weapon/melee/energy) || istype(A, /obj/item/weapon/gun/energy/plasmacutter)))
 		to_chat(user, "<span class='notice'>You begin to shorten the barrel of \the [src].</span>")
 		if(loaded.len)
 			for(var/i in 1 to max_shells)
@@ -102,7 +108,7 @@
 			one_hand_penalty = 0
 			slot_flags &= ~SLOT_BACK	//you can't sling it on your back
 			slot_flags |= (SLOT_BELT|SLOT_HOLSTER) //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally) - or in a holster, why not.
-			name = "sawn-off shotgun"
+			SetName("sawn-off shotgun")
 			desc = "Omar's coming!"
 			to_chat(user, "<span class='warning'>You shorten the barrel of \the [src]!</span>")
 	else
@@ -118,3 +124,31 @@
 	w_class = ITEM_SIZE_NORMAL
 	force = 5
 	one_hand_penalty = 0
+
+/obj/item/weapon/gun/projectile/shotgun/magazine
+	name = "AS-53 'Striker' automatic shotgun"
+	desc = "The mass-produced by Aussec Armory, shotgun AS-53 'Striker' is an echo of the past in new package. Reborned assault shotgun usually can be saw in hands of mercenaries groups and Private Military Companies."
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "bulldog"
+	item_state = "shotgun"
+	max_shells = 1
+	w_class = ITEM_SIZE_HUGE
+	force = 10
+	obj_flags =  OBJ_FLAG_CONDUCTIBLE
+	slot_flags = null
+	caliber = "shotgun"
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/c12m
+	allowed_magazines = /obj/item/ammo_magazine/c12m
+	ammo_type = /obj/item/ammo_casing/shotgun
+	one_hand_penalty = 4
+	wielded_item_state = "gun_wielded"
+	auto_eject = 1
+	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
+
+/obj/item/weapon/gun/projectile/shotgun/magazine/update_icon()
+	if(ammo_magazine)
+		icon_state = "bulldog"
+	else
+		icon_state = "bulldog-e"

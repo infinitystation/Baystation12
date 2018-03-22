@@ -91,6 +91,10 @@
 	var/active = 0
 	var/icontype = "beacon"
 
+/obj/machinery/power/singularity_beacon/Destroy()
+	if(active)
+		STOP_PROCESSING(SSmachines, src)
+	. = ..()
 
 /obj/machinery/power/singularity_beacon/proc/Activate(mob/user = null)
 	if(surplus() < 1500)
@@ -101,7 +105,8 @@
 			singulo.target = src
 	icon_state = "[icontype]1"
 	active = 1
-	GLOB.machines |= src
+
+	START_PROCESSING(SSmachines, src)
 	if(user)
 		to_chat(user, "<span class='notice'>You activate the beacon.</span>")
 
@@ -129,7 +134,7 @@
 
 
 /obj/machinery/power/singularity_beacon/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W,/obj/item/weapon/screwdriver))
+	if(isScrewdriver(W))
 		if(active)
 			to_chat(user, "<span class='danger'>You need to deactivate the beacon first!</span>")
 			return
@@ -156,13 +161,12 @@
 	..()
 
 //stealth direct power usage
-/obj/machinery/power/singularity_beacon/process()
+/obj/machinery/power/singularity_beacon/Process()
 	if(!active)
 		return PROCESS_KILL
 	else
 		if(draw_power(1500) < 1500)
 			Deactivate()
-
 
 /obj/machinery/power/singularity_beacon/syndicate
 	icontype = "beaconsynd"

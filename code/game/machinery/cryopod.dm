@@ -47,9 +47,9 @@
 /obj/machinery/computer/cryopod/attack_hand(mob/user = usr)
 	if(stat & (NOPOWER|BROKEN))
 		return
+	..()
 
 	user.set_machine(src)
-	src.add_fingerprint(usr)
 
 	var/dat
 
@@ -67,25 +67,16 @@
 	user << browse(dat, "window=cryopod_console")
 	onclose(user, "cryopod_console")
 
-/obj/machinery/computer/cryopod/Topic(href, href_list)
-
-	if(..())
-		return
-
-	var/mob/user = usr
-
-	src.add_fingerprint(user)
-
+/obj/machinery/computer/cryopod/OnTopic(user, href_list, state)
 	if(href_list["log"])
-
 		var/dat = "<b>Recently stored [storage_type]</b><br/><hr/><br/>"
 		for(var/person in frozen_crew)
 			dat += "[person]<br/>"
 		dat += "<hr/>"
+		show_browser(user, dat, "window=cryolog")
+		. = TOPIC_REFRESH
 
-		user << browse(dat, "window=cryolog")
-
-	if(href_list["view"])
+	else if(href_list["view"])
 		if(!allow_items) return
 
 		var/dat = "<b>Recently stored objects</b><br/><hr/><br/>"
@@ -93,43 +84,45 @@
 			dat += "[I.name]<br/>"
 		dat += "<hr/>"
 
-		user << browse(dat, "window=cryoitems")
+		show_browser(user, dat, "window=cryoitems")
+		. = TOPIC_HANDLED
 
 	else if(href_list["item"])
 		if(!allow_items) return
 
 		if(frozen_items.len == 0)
 			to_chat(user, "<span class='notice'>There is nothing to recover from storage.</span>")
-			return
+			return TOPIC_HANDLED
 
-		var/obj/item/I = input(usr, "Please choose which object to retrieve.","Object recovery",null) as null|anything in frozen_items
-		if(!I)
-			return
+		var/obj/item/I = input(user, "Please choose which object to retrieve.","Object recovery",null) as null|anything in frozen_items
+		if(!I || !CanUseTopic(user, state))
+			return TOPIC_HANDLED
 
 		if(!(I in frozen_items))
 			to_chat(user, "<span class='notice'>\The [I] is no longer in storage.</span>")
-			return
+			return TOPIC_HANDLED
 
 		visible_message("<span class='notice'>The console beeps happily as it disgorges \the [I].</span>", 3)
 
-		I.forceMove(get_turf(src))
+		I.dropInto(loc)
 		frozen_items -= I
+		. = TOPIC_REFRESH
 
 	else if(href_list["allitems"])
-		if(!allow_items) return
+		if(!allow_items) return TOPIC_HANDLED
 
 		if(frozen_items.len == 0)
 			to_chat(user, "<span class='notice'>There is nothing to recover from storage.</span>")
-			return
+			return TOPIC_HANDLED
 
 		visible_message("<span class='notice'>The console beeps happily as it disgorges the desired objects.</span>", 3)
 
 		for(var/obj/item/I in frozen_items)
-			I.forceMove(get_turf(src))
+			I.dropInto(loc)
 			frozen_items -= I
+		. = TOPIC_REFRESH
 
-	src.updateUsrDialog()
-	return
+	attack_hand(user)
 
 /obj/item/weapon/circuitboard/cryopodcontrol
 	name = "Circuit board (Cryogenic Oversight Console)"
@@ -213,6 +206,63 @@
 	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
 	applies_stasis = 0
 
+/obj/machinery/cryopod/lifepod
+	name = "life pod"
+	desc = "A man-sized pod for entering suspended animation. Dubbed 'cryocoffin' by more cynical spacers, it is pretty barebone, counting on stasis system to keep the victim alive rather than packing extended supply of food or air. Can be ordered with symbols of common religious denominations to be used in space funerals too."
+	on_store_name = "Life Pod Oversight"
+	density = 0
+	time_till_despawn = 20 MINUTES
+	icon_state = "redpod0"
+	base_icon_state = "redpod0"
+	occupied_icon_state = "redpod1"
+	var/launched = 0
+	var/datum/gas_mixture/airtank
+
+/obj/machinery/cryopod/lifepod/Initialize()
+	. = ..()
+	airtank = new()
+	airtank.temperature = T0C
+	airtank.adjust_gas("oxygen", MOLES_O2STANDARD, 0)
+	airtank.adjust_gas("nitrogen", MOLES_N2STANDARD)
+	airtank.total_moles = 103.984
+	airtank.temperature = 293
+	return_air()
+
+/obj/machinery/cryopod/lifepod/return_air()
+	return airtank
+
+/obj/machinery/cryopod/lifepod/proc/launch()
+	launched = 1
+	for(var/d in GLOB.cardinal)
+		var/turf/T = get_step(src,d)
+		var/obj/machinery/door/blast/B = locate() in T
+		if(B && B.density)
+			B.force_open()
+			break
+
+	var/list/possible_locations = list()
+	if(GLOB.using_map.use_overmap)
+		var/obj/effect/overmap/O = map_sectors["[z]"]
+		for(var/obj/effect/overmap/OO in range(O,2))
+			if(OO.in_space || istype(OO,/obj/effect/overmap/sector/exoplanet))
+				possible_locations |= text2num(level)
+
+	var/newz = GLOB.using_map.get_empty_zlevel()
+	if(possible_locations.len && prob(10))
+		newz = pick(possible_locations)
+	var/turf/nloc = locate(rand(TRANSITIONEDGE, world.maxx-TRANSITIONEDGE), rand(TRANSITIONEDGE, world.maxy-TRANSITIONEDGE),newz)
+	if(!istype(nloc, /turf/space))
+		explosion(nloc, 1, 2, 3)
+	playsound(loc,'sound/effects/rocket.ogg',100)
+	forceMove(nloc)
+
+//Don't use these for in-round leaving
+/obj/machinery/cryopod/lifepod/Process()
+	if(evacuation_controller && evacuation_controller.state >= EVAC_LAUNCHING)
+		if(occupant && !launched)
+			launch()
+		..()
+
 /obj/machinery/cryopod/New()
 	announce = new /obj/item/device/radio/intercom(src)
 	..()
@@ -258,8 +308,12 @@
 	return 1
 
 //Lifted from Unity stasis.dm and refactored. ~Zuhayr
-/obj/machinery/cryopod/process()
+/obj/machinery/cryopod/Process()
 	if(occupant)
+		if(applies_stasis && iscarbon(occupant))
+			var/mob/living/carbon/C = occupant
+			C.SetStasis(3)
+
 		//Allow a ten minute gap between entering the pod and actually despawning.
 		if(world.time - time_entered < time_till_despawn)
 			return
@@ -353,18 +407,9 @@
 			//current_mode.possible_traitors.Remove(occupant)
 
 	// Delete them from datacore.
-
-	if(PDA_Manifest.len)
-		PDA_Manifest.Cut()
-	for(var/datum/data/record/R in GLOB.data_core.medical)
-		if ((R.fields["name"] == occupant.real_name))
-			qdel(R)
-	for(var/datum/data/record/T in GLOB.data_core.security)
-		if ((T.fields["name"] == occupant.real_name))
-			qdel(T)
-	for(var/datum/data/record/G in GLOB.data_core.general)
-		if ((G.fields["name"] == occupant.real_name))
-			qdel(G)
+	var/datum/computer_file/crew_record/R = get_crewmember_record(occupant.real_name)
+	if(R)
+		qdel(R)
 
 	icon_state = base_icon_state
 
@@ -377,11 +422,14 @@
 	//  and records should not be fetched by name as there is no guarantee names are unique
 	var/role_alt_title = occupant.mind ? occupant.mind.role_alt_title : "Unknown"
 
-	control_computer.frozen_crew += "[occupant.real_name], [role_alt_title] - [stationtime2text()]"
-	control_computer._admin_logs += "[key_name(occupant)] ([role_alt_title]) at [stationtime2text()]"
+	if(control_computer)
+		control_computer.frozen_crew += "[occupant.real_name], [role_alt_title] - [stationtime2text()]"
+		control_computer._admin_logs += "[key_name(occupant)] ([role_alt_title]) at [stationtime2text()]"
 	log_and_message_admins("[key_name(occupant)] ([role_alt_title]) entered cryostorage.")
 
-	announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
+	var/leave_announce = occupant.mind.assigned_job ? occupant.mind.assigned_job.announced : null
+	if(leave_announce)
+		announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
 	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>", 3)
 
 	//This should guarantee that ghosts don't spawn.
@@ -422,21 +470,7 @@
 
 			if(!M || !grab || !grab.affecting) return
 
-			M.forceMove(src)
-
-			if(M.client)
-				M.client.perspective = EYE_PERSPECTIVE
-				M.client.eye = src
-
-		icon_state = occupied_icon_state
-
-		to_chat(M, "<span class='notice'>[on_enter_occupant_message]</span>")
-		to_chat(M, "<span class='notice'><b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</b></span>")
-		set_occupant(M)
-		time_entered = world.time
-		if(ishuman(M) && applies_stasis)
-			var/mob/living/carbon/human/H = M
-			H.in_stasis = 1
+			set_occupant(M)
 
 		// Book keeping!
 		var/turf/location = get_turf(src)
@@ -469,7 +503,7 @@
 	src.go_out()
 	add_fingerprint(usr)
 
-	name = initial(name)
+	SetName(initial(name))
 	return
 
 /obj/machinery/cryopod/verb/move_inside()
@@ -500,23 +534,7 @@
 			to_chat(usr, "<span class='notice'><B>\The [src] is in use.</B></span>")
 			return
 
-		usr.stop_pulling()
-		usr.client.perspective = EYE_PERSPECTIVE
-		usr.client.eye = src
-		usr.forceMove(src)
 		set_occupant(usr)
-		if(ishuman(usr) && applies_stasis)
-			var/mob/living/carbon/human/H = occupant
-			H.in_stasis = 1
-
-		icon_state = occupied_icon_state
-
-		light_range = 2
-
-		to_chat(usr, "<span class='notice'>[on_enter_occupant_message]</span>")
-		to_chat(usr, "<span class='notice'><b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</b></span>")
-
-		time_entered = world.time
 
 		src.add_fingerprint(usr)
 
@@ -532,17 +550,26 @@
 		occupant.client.perspective = MOB_PERSPECTIVE
 
 	occupant.forceMove(get_turf(src))
-	if(ishuman(occupant) && applies_stasis)
-		var/mob/living/carbon/human/H = occupant
-		H.in_stasis = 0
 	set_occupant(null)
 
 	icon_state = base_icon_state
 
 	return
 
-/obj/machinery/cryopod/proc/set_occupant(var/occupant)
+/obj/machinery/cryopod/proc/set_occupant(var/mob/living/carbon/occupant)
 	src.occupant = occupant
-	name = initial(name)
-	if(occupant)
-		name = "[name] ([occupant])"
+	if(!occupant)
+		SetName(initial(name))
+		return
+
+	occupant.stop_pulling()
+	if(occupant.client)
+		to_chat(occupant, "<span class='notice'>[on_enter_occupant_message]</span>")
+		to_chat(occupant, "<span class='notice'><b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</b></span>")
+		occupant.client.perspective = EYE_PERSPECTIVE
+		occupant.client.eye = src
+	occupant.forceMove(src)
+	time_entered = world.time
+
+	SetName("[name] ([occupant])")
+	icon_state = occupied_icon_state

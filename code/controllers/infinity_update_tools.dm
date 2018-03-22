@@ -1,5 +1,5 @@
 /datum/controller/gameticker
-	var/update_waiting = 0				//build updating?
+	var/update_waiting = FALSE			//build updating?
 	var/updater_ckey = ""				//who updating build?
 
 /client/proc/update_server()
@@ -24,6 +24,8 @@
 	if(confirm == "Yes")
 		message_admins("[key_name_admin(usr)] запустил(а) обновление сервера.")
 		log_game("[key_name_admin(usr)] запустил(а) обновление сервера.")
+		if(!ticker.updater_ckey)
+			ticker.updater_ckey = usr.key
 		force_update_server()
 
 /client/proc/update_server_round_end()
@@ -41,29 +43,25 @@
 		to_chat(usr, "Вы не можете обновить сервер так как активированна команда смены билда.")
 		return
 
-	if(ticker.update_waiting)
-		var/confirm_cancellation = alert("Отменить обновление в конце раунда?", "Cancel Server Update", "Yes", "No")
-		if(confirm_cancellation == "No")
-			return
-		if(confirm_cancellation == "Yes")
-			message_admins("[key_name_admin(usr)] отменил(а) обновление сервера в конце текущего раунда.")
-			log_game("[key_name_admin(usr)] отменил(а) обновление сервера в конце текущего раунда.")
-			ticker.updater_ckey = null
-			ticker.update_waiting = FALSE
-			return
+	var/confirm = alert("Инициировать обновление в конце раунда? Текущий статус: обновление [ticker.update_waiting ? "" : "не"] запланировано.", "End Round", "Trigger End round Update", "Cancel Update", "Exit")
+	if(confirm == "Trigger End round Update")
+		if(ticker.update_waiting)
+			if(alert("Внимание! Обновление в  конце раунда уже было запланировано сотрудником [ticker.updater_ckey], в случае продолжения ticker.updater_ckey будет перезаписан на Ваш псевдоним. Вы уверены?", "Да", "Нет") == "Нет")
+				return
+		ticker.update_waiting = TRUE
+		ticker.updater_ckey = usr.key
+		message_admins("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
+		log_game("[key_name_admin(usr)] запланировал(а) обновление сервера в конце текущего раунда.")
+		return
 
+	else if(confirm == "Cancel Update")
+		ticker.update_waiting = FALSE
+		ticker.updater_ckey = ""
+		message_admins("[key_name_admin(usr)] отменил(а) обновление сервера в конце текущего раунда.")
+		log_game("[key_name_admin(usr)] отменил(а) обновление сервера в конце текущего раунда.")
+		return
 	else
-		var/confirm = alert("Инициировать обновление в конце раунда?", "End Round", "Yes", "Cancel")
-		if(confirm == "Cancel")
-			return
-
-		if(confirm == "Yes")
-			message_admins("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
-			log_game("[key_name_admin(usr)] инициировал(а) обновление сервера в конце текущего раунда.")
-			to_chat(world, "<span class='pm'><span class='howto'><b>~~ Администратор [usr.key] инициировал(а) обновление сервера в конце текущего раунда ~~</b></span></span>\n")
-	//		to_chat(world, "<span class='adminooc'>Администратор [usr.key] инициировал(а) обновление сервера в конце текущего раунда.</span>")
-			ticker.updater_ckey = usr.key
-			ticker.update_waiting = 1
+		return
 
 /proc/force_update_server()
 	if(currentbuild.folder == currentbuild.update)
@@ -74,7 +72,7 @@
 		to_chat(usr, "Вы не можете обновить сервер так как активированна команда смены билда.")
 		return
 
-	to_chat(world, "<span class='adminooc'><FONT size=5>ВНИМАНИЕ! СЕРВЕР ОБНОВЛЯЕТСЯ ЧЕРЕЗ 10 СЕКУНД! СЕРВЕР НЕ БУДЕТ РАБОТАТЬ НЕСКОЛЬКО МИНУТ!</FONT><br>Обновление в конце раунда инициировано администратором [ticker.updater_ckey]</span>.")
+	to_chat(world, "<span class='adminooc'><font size=5>ВНИМАНИЕ! СЕРВЕР ОБНОВЛЯЕТСЯ ЧЕРЕЗ 10 СЕКУНД! СЕРВЕР НЕ БУДЕТ РАБОТАТЬ НЕСКОЛЬКО МИНУТ!</font><br>Обновление [ticker.update_waiting ? "в конце раунда запланировано" : "запущено"] сотрудником [ticker.updater_ckey]</span>.")
 	sound_to(world, sound('sound/effects/alarm.ogg', repeat = 0, wait = 0, volume = 100, channel = 1))
 	sleep(100)
-	shell("sh ../update.sh [currentbuild.dmb_file] [currentbuild.folder] [world.port] [currentbuild.update]")
+	shell("sudo sh ../update.sh [currentbuild.dmb_file] [currentbuild.folder] [world.port] [currentbuild.update]")

@@ -28,6 +28,8 @@ var/datum/antagonist/mercenary/mercs
 		return 0
 	global_objectives = list()
 	global_objectives |= new /datum/objective/nuclear
+	global_objectives |= new /datum/objective/terrorists/kidnap
+	global_objectives |= new /datum/objective/terrorists/kidnap
 	return 1
 
 /datum/antagonist/mercenary/equip(var/mob/living/carbon/human/player)

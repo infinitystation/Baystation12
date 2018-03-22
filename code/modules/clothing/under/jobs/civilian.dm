@@ -94,15 +94,10 @@
 	name = "formal outfit"
 	starting_accessories = null
 
-/obj/item/clothing/under/rank/internalaffairs/plain/solgov
-	desc = "A plain shirt and pair of pressed black pants."
-	name = "formal outfit"
-	starting_accessories = list(/obj/item/clothing/accessory/blue_clip,/obj/item/clothing/accessory/badge/representative)
-
 /obj/item/clothing/under/rank/internalaffairs/plain/nt
 	desc = "A plain shirt and pair of pressed black pants."
 	name = "formal outfit"
-	starting_accessories = list(/obj/item/clothing/accessory/red_long,/obj/item/clothing/accessory/badge/nanotrasen)
+	starting_accessories = list(/obj/item/clothing/accessory/red_long)
 
 
 /obj/item/clothing/under/rank/janitor

@@ -36,9 +36,9 @@
 	set src in usr
 
 	if (t)
-		src.name = text("data disk- '[]'", t)
+		src.SetName(text("data disk- '[]'", t))
 	else
-		src.name = "data disk"
+		src.SetName("data disk")
 	src.add_fingerprint(usr)
 	return
 
@@ -97,7 +97,7 @@ var/const/NO_EMAG_ACT = -50
 	item_state = "card-id"
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/species/resomi/id.dmi'
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/id.dmi'
 		)
 
 	var/access = list()
@@ -153,11 +153,12 @@ var/const/NO_EMAG_ACT = -50
 	return
 
 /obj/item/weapon/card/id/proc/update_name()
-	name = "[registered_name]'s ID Card"
+	var/final_name = "[registered_name]'s ID Card"
 	if(military_rank && military_rank.name_short)
-		name = military_rank.name_short + " " + name
+		final_name = military_rank.name_short + " " + final_name
 	if(assignment)
-		name = name + " ([assignment])"
+		final_name = final_name + " ([assignment])"
+	SetName(final_name)
 
 /obj/item/weapon/card/id/proc/set_id_photo(var/mob/M)
 	front = getFlatIcon(M, SOUTH, always_use_defdir = 1)

@@ -11,7 +11,7 @@
 
 	var/start_pressure = ONE_ATMOSPHERE
 	var/maximum_pressure = 90 * ONE_ATMOSPHERE
-	flags = OBJ_CLIMBABLE
+	atom_flags = ATOM_FLAG_CLIMBABLE
 
 /obj/machinery/portable_atmospherics/New()
 	..()
@@ -34,7 +34,7 @@
 			connect(port)
 			update_icon()
 
-/obj/machinery/portable_atmospherics/process()
+/obj/machinery/portable_atmospherics/Process()
 	if(!connected_port) //only react when pipe_network will ont it do it for you
 		//Allow for reactions
 		air_contents.react()
@@ -110,7 +110,7 @@
 		update_icon()
 		return
 
-	else if (istype(W, /obj/item/weapon/wrench))
+	else if(isWrench(W))
 		if(connected_port)
 			disconnect()
 			to_chat(user, "<span class='notice'>You disconnect \the [src] from the port.</span>")
@@ -169,7 +169,7 @@
 		power_change()
 		return
 
-	if(istype(I, /obj/item/weapon/screwdriver))
+	if(isScrewdriver(I))
 		if(!cell)
 			to_chat(user, "<span class='warning'>There is no power cell installed.</span>")
 			return

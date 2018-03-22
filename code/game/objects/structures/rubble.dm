@@ -11,10 +11,12 @@
 	var/list/loot = list(/obj/item/weapon/cell,/obj/item/stack/material/iron,/obj/item/stack/rods)
 	var/lootleft = 2
 	var/emptyprob = 30
+	var/health = 40
+	var/is_rummaging = 0
 
 /obj/structure/rubble/New()
 	..()
-	if(prob(emptyprob)) 
+	if(prob(emptyprob))
 		lootleft = 0
 
 /obj/structure/rubble/Initialize()
@@ -25,7 +27,7 @@
 	overlays.Cut()
 	var/list/parts = list()
 	for(var/i = 1 to 7)
-		var/image/I = image(icon,"rubble[rand(1,9)]")
+		var/image/I = image(icon,"rubble[rand(1,15)]")
 		if(prob(10))
 			var/atom/A = pick(loot)
 			if(initial(A.icon) && initial(A.icon_state))
@@ -33,7 +35,7 @@
 				I.icon_state = initial(A.icon_state)
 				I.color = initial(A.color)
 			if(!lootleft)
-				I.color = "#54362E"
+				I.color = "#54362e"
 		I.appearance_flags = PIXEL_SCALE
 		I.pixel_x = rand(-16,16)
 		I.pixel_y = rand(-16,16)
@@ -44,27 +46,58 @@
 	overlays = parts
 
 /obj/structure/rubble/attack_hand(mob/user)
-	if(!lootleft)
-		to_chat(user, "<span class='warning'>There's nothing left in this one but unusable garbage...</span>")
-		return
-	visible_message("[user] starts rummaging through \the [src].")
-	if(do_after(user, 30))
-		var/obj/item/booty = pick(loot)
-		booty = new booty(loc)
-		lootleft--
-		update_icon()
-		to_chat(user, "<span class='notice'>You find \a [booty] and pull it carefully out of \the [src].</span>")
-		
+	if(!is_rummaging)
+		if(!lootleft)
+			to_chat(user, "<span class='warning'>There's nothing left in this one but unusable garbage...</span>")
+			return
+		visible_message("[user] starts rummaging through \the [src].")
+		is_rummaging = 1
+		if(do_after(user, 30))
+			var/obj/item/booty = pick(loot)
+			booty = new booty(loc)
+			lootleft--
+			update_icon()
+			to_chat(user, "<span class='notice'>You find \a [booty] and pull it carefully out of \the [src].</span>")
+			new /obj/item/weapon/scrap_lump(loc)
+		is_rummaging = 0
+	else
+		to_chat(user, "<span class='warning'>Someone is already rummaging here!</span>")
+
 /obj/structure/rubble/attackby(var/obj/item/I, var/mob/user)
-	if (istype(I, /obj/item/weapon/pickaxe))
-		var/obj/item/weapon/pickaxe/P = I
+	if (istype(I, /obj/item/weapon/pickaxe) || istype(I, /obj/item/weapon/shovel))
+		var/digspeed
+		if (istype(I, /obj/item/weapon/pickaxe))
+			var/obj/item/weapon/pickaxe/P = I
+			digspeed = P.digspeed
+		if (istype(I, /obj/item/weapon/shovel))
+			var/obj/item/weapon/shovel/S = I
+			digspeed = S.digspeed
+
 		visible_message("[user] starts clearing away \the [src].")
-		if(do_after(user,P.digspeed, src))
+		if(do_after(user, digspeed, src))
 			visible_message("[user] clears away \the [src].")
 			if(lootleft && prob(1))
 				var/obj/item/booty = pick(loot)
 				booty = new booty(loc)
+			new /obj/item/weapon/scrap_lump(loc)
 			qdel(src)
+	else
+		..()
+		health -= I.force
+		if(health < 1)
+			visible_message("[user] clears away \the [src].")
+			new /obj/item/weapon/scrap_lump(loc)
+			qdel(src)
+
+/obj/structure/rubble/proc/make_cube()
+	var/obj/container = new /obj/structure/scrap_cube(loc, lootleft)
+	forceMove(container)
+
+/obj/structure/rubble/crush_act()
+	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+	for(var/i in 1, i < lootleft, i++)
+		new /obj/item/weapon/scrap_lump(loc)
+	qdel(src)
 
 /obj/structure/rubble/house
 	loot = list(/obj/item/weapon/archaeological_find/bowl,

@@ -1,6 +1,7 @@
 /obj/effect/overmap/sector/exoplanet/desert
 	name = "desert exoplanet"
 	desc = "An arid exoplanet with sparse biological resources but rich mineral deposits underground."
+	color = "#d6cca4"
 
 /obj/effect/overmap/sector/exoplanet/desert/generate_map()
 	if(prob(70))
@@ -16,28 +17,27 @@
 		atmosphere.temperature = T20C + rand(20, 100)
 		atmosphere.update_values()
 
-/obj/effect/overmap/sector/exoplanet/desert/update_biome()
+/obj/effect/overmap/sector/exoplanet/desert/adapt_seed(var/datum/seed/S)
 	..()
-	for(var/datum/seed/S in seeds)
-		if(prob(90))
-			S.set_trait(TRAIT_REQUIRES_WATER,0)
-		else
-			S.set_trait(TRAIT_REQUIRES_WATER,1)
-			S.set_trait(TRAIT_WATER_CONSUMPTION,1)
-		if(prob(15))
-			S.set_trait(TRAIT_STINGS,1)
+	if(prob(90))
+		S.set_trait(TRAIT_REQUIRES_WATER,0)
+	else
+		S.set_trait(TRAIT_REQUIRES_WATER,1)
+		S.set_trait(TRAIT_WATER_CONSUMPTION,1)
+	if(prob(15))
+		S.set_trait(TRAIT_STINGS,1)
 
 /datum/random_map/noise/exoplanet/desert
 	descriptor = "desert exoplanet"
 	smoothing_iterations = 4
 	land_type = /turf/simulated/floor/exoplanet/desert
 	planetary_area = /area/exoplanet/desert
-	plantcolors = list("#EFDD6F","#7B4A12","#E49135","#BA6222","#5C755E","#120309")
+	plantcolors = list("#efdd6f","#7b4a12","#e49135","#ba6222","#5c755e","#120309")
 
 	flora_prob = 10
 	large_flora_prob = 0
 	flora_diversity = 4
-	fauna_types = list(/mob/living/simple_animal/thinbug, /mob/living/simple_animal/tindalos)
+	fauna_types = list(/mob/living/simple_animal/thinbug, /mob/living/simple_animal/tindalos, /mob/living/simple_animal/hostile/voxslug)
 
 /datum/random_map/noise/exoplanet/desert/get_additional_spawns(var/value, var/turf/T)
 	..()
@@ -64,7 +64,7 @@
 
 /turf/simulated/floor/exoplanet/desert/fire_act(datum/gas_mixture/air, temperature, volume)
 	if((temperature > T0C + 1700 && prob(5)) || temperature > T0C + 3000)
-		name = "molten silica"
+		SetName("molten silica")
 		icon_state = "sandglass"
 		diggable = 0
 
@@ -75,7 +75,6 @@
 	density = 0
 	anchored = 1
 	can_buckle = 1
-	buckle_dir = SOUTH
 	var/exposed = 0
 	var/busy
 
@@ -114,6 +113,9 @@
 				user.visible_message("<span class='notice'>\The [buckled_mob] has been freed from \the [src] by \the [user].</span>")
 			unbuckle_mob()
 
+		busy = FALSE
+		return
+
 /obj/structure/quicksand/unbuckle_mob()
 	..()
 	update_icon()
@@ -128,7 +130,6 @@
 	icon_state = "open"
 	overlays.Cut()
 	if(buckled_mob)
-		overlays += buckled_mob
 		var/image/I = image(icon,icon_state="overlay")
 		I.plane = ABOVE_HUMAN_PLANE
 		I.layer = ABOVE_HUMAN_LAYER

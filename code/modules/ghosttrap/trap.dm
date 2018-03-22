@@ -107,13 +107,13 @@ var/list/ghost_traps
 	to_chat(target, "<b>Remember, the purpose of your existence is to serve the crew and the [station_name()]. Above all else, do no harm.</b>")
 	to_chat(target, "<b>Use say [target.get_language_prefix()]b to speak to other artificial intelligences.</b>")
 	var/turf/T = get_turf(target)
-	var/obj/item/device/mmi/digital/posibrain/P = target.loc
+	var/obj/item/organ/internal/posibrain/P = target.loc
 	T.visible_message("<span class='notice'>\The [P] chimes quietly.</span>")
 	if(!istype(P)) //wat
 		return
 	P.searching = 0
-	P.name = "positronic brain ([P.brainmob.name])"
-	P.icon_state = "posibrain-occupied"
+	P.SetName("positronic brain ([P.brainmob.name])")
+	P.update_icon()
 
 // Allows people to set their own name. May or may not need to be removed for posibrains if people are dumbasses.
 /datum/ghosttrap/proc/set_new_name(var/mob/target)
@@ -123,7 +123,7 @@ var/list/ghost_traps
 	var/newname = sanitizeSafe(input(target,"Enter a name, or leave blank for the default name.", "Name change",target.real_name) as text, MAX_NAME_LEN)
 	if (newname && newname != "")
 		target.real_name = newname
-		target.name = target.real_name
+		target.SetName(target.real_name)
 
 /***********************************
 * Diona pods and walking mushrooms *

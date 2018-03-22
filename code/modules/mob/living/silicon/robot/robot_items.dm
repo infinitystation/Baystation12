@@ -54,7 +54,7 @@
 			to_chat(user, "The [src] is empty.  Put something inside it first.")
 	if(response == "Sync")
 		var/success = 0
-		for(var/obj/machinery/r_n_d/server/S in GLOB.machines)
+		for(var/obj/machinery/r_n_d/server/S in SSmachines.machinery)
 			for(var/datum/tech/T in files.known_tech) //Uploading
 				S.files.AddTech2Known(T)
 			for(var/datum/tech/T in S.files.known_tech) //Downloading
@@ -251,7 +251,7 @@
 
 	//n_name = copytext(n_name, 1, 32)
 	if(( get_dist(user,paper) <= 1  && user.stat == 0))
-		paper.name = "paper[(n_name ? text("- '[n_name]'") : null)]"
+		paper.SetName("paper[(n_name ? text("- '[n_name]'") : null)]")
 	add_fingerprint(user)
 	return
 
@@ -259,7 +259,7 @@
 /obj/item/weapon/form_printer
 	//name = "paperwork printer"
 	name = "paper dispenser"
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "paper_bin1"
 	item_state = "sheet-metal"
 
@@ -404,3 +404,8 @@
 
 	to_chat(user, "You fail to pick up \the [A] with \the [src]")
 	return
+
+/obj/item/weapon/reagent_containers/spray/cleaner/drone
+	name = "space cleaner"
+	desc = "BLAM!-brand non-foaming space cleaner!"
+	volume = 150

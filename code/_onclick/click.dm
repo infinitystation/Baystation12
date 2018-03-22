@@ -48,6 +48,9 @@
 	if(modifiers["shift"] && modifiers["ctrl"])
 		CtrlShiftClickOn(A)
 		return 1
+	if(modifiers["ctrl"] && modifiers["alt"])
+		CtrlAltClickOn(A)
+		return 1
 	if(modifiers["middle"])
 		MiddleClickOn(A)
 		return 1
@@ -281,6 +284,16 @@
 	return
 
 /*
+	Control+Alt click
+*/
+/mob/proc/CtrlAltClickOn(var/atom/A)
+	A.CtrlAltClick(src)
+	return
+
+/atom/proc/CtrlAltClick(var/mob/user)
+	return
+
+/*
 	Misc helpers
 
 	Laser Eyes: as the name implies, handles this since nothing else does currently
@@ -321,6 +334,8 @@
 		if(dx > 0)	direction = EAST
 		else		direction = WEST
 	if(direction != dir)
+		if(facing_dir)
+			facing_dir = direction
 		facedir(direction)
 
 /obj/screen/click_catcher

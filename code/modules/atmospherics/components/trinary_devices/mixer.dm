@@ -66,7 +66,7 @@
 	if (!mixing_inputs)
 		mixing_inputs = list(src.air1 = node1_concentration, src.air2 = node2_concentration)
 
-/obj/machinery/atmospherics/trinary/mixer/process()
+/obj/machinery/atmospherics/trinary/mixer/Process()
 	..()
 
 	last_power_draw = 0
@@ -98,7 +98,7 @@
 	return 1
 
 /obj/machinery/atmospherics/trinary/mixer/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
-	if (!istype(W, /obj/item/weapon/wrench))
+	if(!isWrench(W))
 		return ..()
 	var/datum/gas_mixture/int_air = return_air()
 	var/datum/gas_mixture/env_air = loc.return_air()

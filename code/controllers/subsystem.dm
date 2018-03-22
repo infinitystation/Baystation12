@@ -1,12 +1,12 @@
 
 /datum/controller/subsystem
 	// Metadata; you should define these.
-	name = "fire coderbus" //name of the subsystem
-	var/init_order = INIT_ORDER_DEFAULT		//order of initialization. Higher numbers are initialized first, lower numbers later. Use defines in __DEFINES/subsystems.dm for easy understanding of order.
-	var/wait = 20			//time to wait (in deciseconds) between each call to fire(). Must be a positive integer.
-	var/priority = 50		//When mutiple subsystems need to run in the same tick, higher priority subsystems will run first and be given a higher share of the tick before MC_TICK_CHECK triggers a sleep
+	name = "fire coderbus"              //name of the subsystem
+	var/init_order = INIT_ORDER_DEFAULT //order of initialization. Higher numbers are initialized first, lower numbers later. Use defines in __DEFINES/subsystems.dm for easy understanding of order.
+	var/wait = 20                       //time to wait (in deciseconds) between each call to fire(). Must be a positive integer.
+	var/priority = SS_PRIORITY_DEFAULT  //When mutiple subsystems need to run in the same tick, higher priority subsystems will run first and be given a higher share of the tick before MC_TICK_CHECK triggers a sleep
 
-	var/flags = 0			//see MC.dm in __DEFINES Most flags must be set on world start to take full effect. (You can also restart the mc to force them to process again)
+	var/flags = 0                       //see MC.dm in __DEFINES Most flags must be set on world start to take full effect. (You can also restart the mc to force them to process again)
 
 	//set to 0 to prevent fire() calls, mostly for admin use or subsystems that may be resumed later
 	//	use the SS_NO_FIRE flag instead for systems that never fire to keep it from even being added to the list
@@ -31,7 +31,7 @@
 
 	var/runlevels = RUNLEVELS_DEFAULT	//points of the game at which the SS can fire
 
-	var/static/failure_strikes = 0 //How many times we suspect this subsystem has crashed the MC, 3 strikes and you're out!
+	var/static/list/failure_strikes //How many times we suspect a subsystem type has crashed the MC, 3 strikes and you're out!
 
 //Do not override
 /datum/controller/subsystem/New()
@@ -192,7 +192,7 @@
 		if (SS_SLEEPING)
 			. = "S"
 		if (SS_IDLE)
-			. = " "
+			. = "  "
 
 //could be used to postpone a costly subsystem for (default one) var/cycles, cycles
 //for instance, during cpu intensive operations like explosions

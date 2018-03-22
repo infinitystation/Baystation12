@@ -58,9 +58,9 @@
 	var/oldbroken = is_broken()
 	. = ..()
 	if(is_broken() && !oldbroken && owner && !owner.stat)
-		to_chat(owner, "<span class='danger'>You go blind!</span>")
+		to_chat(owner, "<span class='danger'>Вы ослепли!</span>")
 
-/obj/item/organ/internal/eyes/process() //Eye damage replaces the old eye_stat var.
+/obj/item/organ/internal/eyes/Process() //Eye damage replaces the old eye_stat var.
 	..()
 	if(!owner)
 		return

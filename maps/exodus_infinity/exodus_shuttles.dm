@@ -317,7 +317,7 @@
 	cloaked = 0
 	warmup_time = 9
 	move_time = 135 //2,25 Minutes
-	destinations = list(
+	destination_tags = list(
 		"nav_ert_north_west",
 		"nav_ert_north_east",
 		"nav_ert_south_east",
@@ -407,7 +407,7 @@
 	name = "Mercenary"
 	warmup_time = 9
 	move_time = 135 //2,25 Minutes
-	destinations = list(
+	destination_tags = list(
 		"nav_merc_start",
 		"nav_merc_dock",
 		"nav_merc_north_west",
@@ -483,7 +483,7 @@
 	name = "Skipjack"
 	warmup_time = 9
 	move_time = 60
-	destinations = list(
+	destination_tags = list(
 		"nav_skipjack_north_west",
 		"nav_skipjack_north_east",
 		"nav_skipjack_south_east",

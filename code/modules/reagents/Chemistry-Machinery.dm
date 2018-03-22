@@ -29,13 +29,11 @@
 	var/pillsprite = "1"
 	var/client/has_sprites = list()
 	var/max_pill_count = 20
-	flags = OPENCONTAINER
+	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 
 /obj/machinery/chem_master/New()
+	create_reagents(120)
 	..()
-	var/datum/reagents/R = new/datum/reagents(120)
-	reagents = R
-	R.my_atom = src
 
 /obj/machinery/chem_master/ex_act(severity)
 	switch(severity)
@@ -171,18 +169,20 @@
 			var/amount_per_pill = reagents.total_volume/count
 			if (amount_per_pill > 60) amount_per_pill = 60
 
-			var/name = sanitizeSafe(input(usr,"Name:","Name your pill!","[reagents.get_master_reagent_name()] ([amount_per_pill] units)"), MAX_NAME_LEN)
+			var/name = sanitizeSafe(input(usr,"Name:","Name your pill!","[reagents.get_master_reagent_name()] ([amount_per_pill]u)"), MAX_NAME_LEN)
 
 			if(reagents.total_volume/count < 1) //Sanity checking.
 				return
-			while (count--)
+			while (count-- && count >= 0)
 				var/obj/item/weapon/reagent_containers/pill/P = new/obj/item/weapon/reagent_containers/pill(src.loc)
 				if(!name) name = reagents.get_master_reagent_name()
-				P.name = "[name] pill"
+				P.SetName("[name] pill")
 				P.icon_state = "pill"+pillsprite
+				if(P.icon_state in list("pill1", "pill2", "pill3", "pill4", "pill5")) // if using greyscale, take colour from reagent
+					P.color = reagents.get_color()
 				reagents.trans_to_obj(P,amount_per_pill)
 				if(src.loaded_pill_bottle)
-					if(loaded_pill_bottle.contents.len < loaded_pill_bottle.storage_slots)
+					if(loaded_pill_bottle.contents.len < loaded_pill_bottle.max_storage_space)
 						P.loc = loaded_pill_bottle
 						src.updateUsrDialog()
 
@@ -191,7 +191,7 @@
 				var/name = sanitizeSafe(input(usr,"Name:","Name your bottle!",reagents.get_master_reagent_name()), MAX_NAME_LEN)
 				var/obj/item/weapon/reagent_containers/glass/bottle/P = new/obj/item/weapon/reagent_containers/glass/bottle(src.loc)
 				if(!name) name = reagents.get_master_reagent_name()
-				P.name = "[name] bottle"
+				P.SetName("[name] bottle")
 				P.icon_state = bottlesprite
 				reagents.trans_to_obj(P,60)
 				P.update_icon()
@@ -199,7 +199,7 @@
 				var/obj/item/weapon/reagent_containers/food/condiment/P = new/obj/item/weapon/reagent_containers/food/condiment(src.loc)
 				reagents.trans_to_obj(P,50)
 		else if(href_list["change_pill"])
-			#define MAX_PILL_SPRITE 20 //max icon state of the pill sprites
+			#define MAX_PILL_SPRITE 25 //max icon state of the pill sprites
 			var/dat = "<table>"
 			for(var/i = 1 to MAX_PILL_SPRITE)
 				dat += "<tr><td><a href=\"?src=\ref[src]&pill_sprite=[i]\"><img src=\"pill[i].png\" /></a></td></tr>"
@@ -239,7 +239,7 @@
 	if(!beaker)
 		dat = "Please insert beaker.<BR>"
 		if(src.loaded_pill_bottle)
-			dat += "<A href='?src=\ref[src];ejectp=1'>Eject Pill Bottle \[[loaded_pill_bottle.contents.len]/[loaded_pill_bottle.storage_slots]\]</A><BR><BR>"
+			dat += "<A href='?src=\ref[src];ejectp=1'>Eject Pill Bottle \[[loaded_pill_bottle.contents.len]/[loaded_pill_bottle.max_storage_space]\]</A><BR><BR>"
 		else
 			dat += "No pill bottle inserted.<BR><BR>"
 		dat += "<A href='?src=\ref[src];close=1'>Close</A>"
@@ -247,7 +247,7 @@
 		var/datum/reagents/R = beaker:reagents
 		dat += "<A href='?src=\ref[src];eject=1'>Eject beaker and Clear Buffer</A><BR>"
 		if(src.loaded_pill_bottle)
-			dat += "<A href='?src=\ref[src];ejectp=1'>Eject Pill Bottle \[[loaded_pill_bottle.contents.len]/[loaded_pill_bottle.storage_slots]\]</A><BR><BR>"
+			dat += "<A href='?src=\ref[src];ejectp=1'>Eject Pill Bottle \[[loaded_pill_bottle.contents.len]/[loaded_pill_bottle.max_storage_space]\]</A><BR><BR>"
 		else
 			dat += "No pill bottle inserted.<BR><BR>"
 		if(!R.total_volume)
@@ -310,13 +310,18 @@
 	var/limit = 10
 	var/list/holdingitems = list()
 	var/list/sheet_reagents = list(
-		/obj/item/stack/material/iron = /datum/reagent/iron,
-		/obj/item/stack/material/uranium = /datum/reagent/uranium,
-		/obj/item/stack/material/phoron = /datum/reagent/toxin/phoron,
-		/obj/item/stack/material/phoron/fifty = /datum/reagent/toxin/phoron,
-		/obj/item/stack/material/gold = /datum/reagent/gold,
-		/obj/item/stack/material/silver = /datum/reagent/silver,
-		/obj/item/stack/material/mhydrogen = /datum/reagent/hydrazine
+		/obj/item/stack/material/iron	 		= /datum/reagent/iron,
+		/obj/item/stack/material/uranium 		= /datum/reagent/uranium,
+		/obj/item/stack/material/uranium/ten	= /datum/reagent/uranium,
+		/obj/item/stack/material/phoron 		= /datum/reagent/toxin/phoron,
+		/obj/item/stack/material/phoron/ten		= /datum/reagent/toxin/phoron,
+		/obj/item/stack/material/phoron/fifty	= /datum/reagent/toxin/phoron,
+		/obj/item/stack/material/gold 			= /datum/reagent/gold,
+		/obj/item/stack/material/gold/ten		= /datum/reagent/gold,
+		/obj/item/stack/material/silver 		= /datum/reagent/silver,
+		/obj/item/stack/material/silver/ten		= /datum/reagent/silver,
+		/obj/item/stack/material/mhydrogen 		= /datum/reagent/hydrazine,
+		/obj/item/stack/material/mhydrogen/ten 	= /datum/reagent/hydrazine
 		)
 
 /obj/machinery/reagentgrinder/New()
@@ -446,34 +451,26 @@
 	return
 
 
-/obj/machinery/reagentgrinder/Topic(href, href_list)
-	if(..())
-		return 1
-
-	switch(href_list["action"])
-		if ("grind")
-			grind()
-		if("eject")
-			eject()
-		if ("detach")
-			detach()
-	src.updateUsrDialog()
-	return 1
+/obj/machinery/reagentgrinder/OnTopic(user, href_list)
+	if(href_list["action"])
+		switch(href_list["action"])
+			if ("grind")
+				grind()
+			if("eject")
+				eject()
+			if ("detach")
+				detach()
+		interact(user)
+		return TOPIC_REFRESH
 
 /obj/machinery/reagentgrinder/proc/detach()
-
-	if (usr.stat != 0)
-		return
 	if (!beaker)
 		return
-	beaker.loc = src.loc
+	beaker.dropInto(loc)
 	beaker = null
 	update_icon()
 
 /obj/machinery/reagentgrinder/proc/eject()
-
-	if (usr.stat != 0)
-		return
 	if (!holdingitems || holdingitems.len == 0)
 		return
 

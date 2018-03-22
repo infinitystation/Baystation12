@@ -28,7 +28,7 @@
 	if(!seed)
 		return INITIALIZE_HINT_QDEL
 
-	name = "[seed.seed_name]"
+	SetName("[seed.seed_name]")
 	trash = seed.get_trash_type()
 	if(!dried_type)
 		dried_type = type
@@ -39,7 +39,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/grown/proc/fill_reagents()
 	if(!seed)
 		return
-	
+
 	if(!seed.chems)
 		return
 
@@ -122,7 +122,7 @@
 			descriptors -= chosen
 			desc += "[(descriptor_count>1 && descriptor_count!=descriptor_num) ? "," : "" ] [chosen]"
 			descriptor_num--
-		if(seed.seed_noun == "spores")
+		if(seed.seed_noun == SEED_NOUN_SPORES)
 			desc += " mushroom"
 		else
 			desc += " fruit"
@@ -149,7 +149,7 @@
 
 			if(istype(M,/mob/living/carbon/human))
 				var/mob/living/carbon/human/H = M
-				if(H.shoes && H.shoes.item_flags & NOSLIP)
+				if(H.shoes && H.shoes.item_flags & ITEM_FLAG_NOSLIP)
 					return
 
 			M.stop_pulling()
@@ -169,7 +169,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/grown/attackby(var/obj/item/weapon/W, var/mob/user)
 
 	if(seed)
-		if(seed.get_trait(TRAIT_PRODUCES_POWER) && istype(W, /obj/item/stack/cable_coil))
+		if(seed.get_trait(TRAIT_PRODUCES_POWER) && isCoil(W))
 			var/obj/item/stack/cable_coil/C = W
 			if(C.use(5))
 				//TODO: generalize this.

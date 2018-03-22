@@ -1,23 +1,23 @@
 #ifndef OVERRIDE_BAN_SYSTEM
+
+//These are exclusive, so once it goes over one of these numbers, it reverts the ban
+#define STICKYBAN_MAX_MATCHES 20
+#define STICKYBAN_MAX_EXISTING_USER_MATCHES 5 //ie, users who were connected before the ban triggered
+
 //Blocks an attempt to connect before even creating our client datum thing.
 world/IsBanned(key,address,computer_id)
 	if(ckey(key) in admin_datums)
 		return ..()
+
+	if (text2num(computer_id) == 2147483647) //this cid causes stickybans to go haywire
+		log_access("Failed Login (invalid cid): [key] [address]-[computer_id]")
+		return list("reason"="invalid login data", "desc"="Error: Could not check ban status, Please try again. Error message: Your computer provided an invalid Computer ID.)")
 
 	//Guest Checking
 	if(!config.guests_allowed && IsGuestKey(key))
 		log_access("Failed Login: [key] - Guests not allowed")
 		message_admins("<span class='notice'>Failed Login: [key] - Guests not allowed</span>")
 		return list("reason"="guest", "desc"="\nReason: Guests not allowed. Please sign in with a byond account.")
-
-	//check if the IP address is a known TOR node
-	if(config && config.ToRban && ToRban_isbanned(address))
-		log_access("Failed Login: [src] - Banned: ToR")
-		message_admins("<span class='notice'>Failed Login: [src] - Banned: ToR</span>")
-		//ban their computer_id and ckey for posterity
-		AddBan(ckey(key), computer_id, "Use of ToR", "Automated Ban", 0, 0)
-		return list("reason"="Using ToR", "desc"="\nReason: The network you are using to connect has been banned.\nIf you believe this is a mistake, please request help at [config.banappeals]")
-
 
 	if(config.ban_legacy_system)
 
@@ -71,13 +71,76 @@ world/IsBanned(key,address,computer_id)
 
 			var/desc = "\nReason: You, or another user of this computer or connection ([pckey]) is banned from playing here. The ban reason is:\n[reason]\nThis ban was applied by [ackey] on [bantime], [expires]"
 
-			return list("reason"="[bantype]", "desc"="[desc]")
+			. = list("reason"="[bantype]", "desc"="[desc]")
 
 		if (failedcid)
 			message_admins("[key] has logged in with a blank computer id in the ban check.")
 		if (failedip)
 			message_admins("[key] has logged in with a blank ip in the ban check.")
-		return ..()	//default pager ban stuff
+
+	var/list/ban = ..()	//default pager ban stuff
+	var/ckey = ckey(key)
+	if (ban)
+		var/bannedckey = "ERROR"
+		if (ban["ckey"])
+			bannedckey = ban["ckey"]
+
+		var/newmatch = FALSE
+		var/client/C = GLOB.ckey_directory[ckey]
+		var/cachedban = SSstickyban.cache[bannedckey]
+
+		//rogue ban in the process of being reverted.
+		if (cachedban && cachedban["reverting"])
+			return null
+
+		if (cachedban && ckey != bannedckey)
+			newmatch = TRUE
+			if (cachedban["keys"])
+				if (cachedban["keys"][ckey])
+					newmatch = FALSE
+			if (cachedban["matches_this_round"][ckey])
+				newmatch = FALSE
+
+		if (newmatch && cachedban)
+			var/list/newmatches = cachedban["matches_this_round"]
+			var/list/newmatches_connected = cachedban["existing_user_matches_this_round"]
+
+			newmatches[ckey] = ckey
+			if (C)
+				newmatches_connected[ckey] = ckey
+
+			if (\
+				newmatches.len > STICKYBAN_MAX_MATCHES || \
+				newmatches_connected.len > STICKYBAN_MAX_EXISTING_USER_MATCHES \
+				)
+				if (cachedban["reverting"])
+					return null
+				cachedban["reverting"] = TRUE
+
+				world.SetConfig("ban", bannedckey, null)
+
+				log_game("Stickyban on [bannedckey] detected as rogue, reverting to its roundstart state")
+				message_admins("Stickyban on [bannedckey] detected as rogue, reverting to its roundstart state")
+				//do not convert to timer.
+				spawn (5)
+					world.SetConfig("ban", bannedckey, null)
+					sleep(1)
+					world.SetConfig("ban", bannedckey, null)
+					cachedban["matches_this_round"] = list()
+					cachedban["existing_user_matches_this_round"] = list()
+					cachedban["admin_matches_this_round"] = list()
+					cachedban -= "reverting"
+					world.SetConfig("ban", bannedckey, list2stickyban(cachedban))
+				return null
+
+		if (C) //user is already connected!.
+			to_chat(C, "You are about to get disconnected for matching a sticky ban after you connected. If this turns out to be the ban evasion detection system going haywire, we will automatically detect this and revert the matches. if you feel that this is the case, please wait EXACTLY 6 seconds then reconnect using file -> reconnect to see if the match was reversed.")
+
+		var/desc = "\nReason:(StickyBan) You, or another user of this computer or connection ([bannedckey]) is banned from playing here. The ban reason is:\n[ban["message"]]\nThis ban was applied by [ban["admin"]]\nThis is a BanEvasion Detection System ban, if you think this ban is a mistake, please wait EXACTLY 6 seconds, then try again before filing an appeal.\n"
+		. = list("reason" = "Stickyban", "desc" = desc)
+		log_access("Failed Login: [key] [computer_id] [address] - StickyBanned [ban["message"]] Target Username: [bannedckey] Placed by [ban["admin"]]")
+
+	return .
 #endif
 #undef OVERRIDE_BAN_SYSTEM
 

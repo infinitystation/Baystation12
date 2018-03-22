@@ -12,7 +12,7 @@ var/list/integrated_circuit_blacklist = list(/obj/item/integrated_circuit, /obj/
 	anchored = 1
 	var/metal = 0
 	var/maxMetal = 100
-	var/metal_mult = 0.5
+	var/metal_mult = 0.1
 	use_power = 1
 	idle_power_usage = 30
 	active_power_usage = 2500
@@ -56,6 +56,8 @@ var/list/integrated_circuit_blacklist = list(/obj/item/integrated_circuit, /obj/
 		qdel(O)
 		metal = min(metal+1,maxMetal)
 		return 1
+	if(default_part_replacement(user, O))
+		return
 	return ..()
 
 /obj/machinery/integrated_circuit_printer/attack_hand(var/mob/user)

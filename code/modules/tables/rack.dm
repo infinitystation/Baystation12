@@ -31,3 +31,23 @@
 /obj/structure/table/rack/holorack/dismantle(obj/item/weapon/wrench/W, mob/user)
 	to_chat(user, "<span class='warning'>You cannot dismantle \the [src].</span>")
 	return
+
+/obj/structure/table/rack/bograck
+	name = "strange rack"
+	desc ="Must be the color."
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "bograck"
+	can_plate = 0
+	can_reinforce = 0
+	flipped = -1
+
+/obj/structure/table/rack/dark
+	color = COLOR_GRAY40
+
+/obj/structure/table/rack/wooden
+	name = "wooden altar"
+	desc = "A simple wooden altar covered in cloth."
+	icon = 'icons/obj/cult.dmi'
+	icon_state = "churchaltar"
+	color = COLOR_WHITE
+	material = "wood"

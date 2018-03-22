@@ -2,23 +2,17 @@
 	name = "altar"
 	desc = "A structure made for the express purpose of religion."
 	health = 50
-	power_adjustment = 10
-	important_structure = 1
-	build_cost = 500
+	power_adjustment = 5
+	deity_flags = DEITY_STRUCTURE_ALONE
+	build_cost = 1000
 	var/mob/living/target
 	var/cycles_before_converted = 5
 	var/next_cycle = 0
-
-/obj/structure/deity/altar/New()
-	..()
-	if(linked_god)
-		linked_god.power_min += 10
 
 /obj/structure/deity/altar/Destroy()
 	if(target)
 		remove_target()
 	if(linked_god)
-		linked_god.power_min -= 10
 		to_chat(src, "<span class='danger'>You've lost an altar!</span>")
 	return ..()
 
@@ -32,7 +26,7 @@
 			user.drop_from_inventory(G)
 	else ..()
 
-/obj/structure/deity/altar/process()
+/obj/structure/deity/altar/Process()
 	if(!target || world.time < next_cycle)
 		return
 	if(!linked_god || target.stat)
@@ -66,7 +60,7 @@
 	if(target || !linked_god)
 		return
 	cycles_before_converted = initial(cycles_before_converted)
-	GLOB.processing_objects |= src
+	START_PROCESSING(SSobj, src)
 	target = L
 	update_icon()
 	GLOB.destroyed_event.register(L,src,/obj/structure/deity/altar/proc/remove_target)
@@ -74,21 +68,18 @@
 	GLOB.death_event.register(L, src, /obj/structure/deity/altar/proc/remove_target)
 
 /obj/structure/deity/altar/proc/remove_target()
-	GLOB.processing_objects -= src
+	STOP_PROCESSING(SSobj, src)
 	GLOB.destroyed_event.unregister(target, src)
 	GLOB.moved_event.unregister(target, src)
 	GLOB.death_event.unregister(target, src)
 	target = null
 	update_icon()
 
-/obj/structure/deity/altar/Topic(var/href, var/list/href_list)
-	if(..())
-		return 1
-
+/obj/structure/deity/altar/OnTopic(var/user, var/list/href_list)
 	if(href_list["resist"])
 		var/mob/living/M = locate(href_list["resist"])
-		if(!M || target != M || M.stat || M.last_special > world.time)
-			return
+		if(!istype(M) || target != M || M.stat || M.last_special > world.time)
+			return TOPIC_HANDLED
 
 		M.last_special = world.time + 10 SECONDS
 		M.visible_message("<span class='warning'>\The [M] writhes on top of \the [src]!</span>", "<span class='notice'>You struggle against the intruding thoughts, keeping them at bay!</span>")
@@ -98,6 +89,7 @@
 			to_chat(M, "<span class='danger'>The mental strain is too much for you! You feel your body weakening!</span>")
 			M.adjustToxLoss(15)
 			M.adjustHalLoss(30)
+		return TOPIC_REFRESH
 
 /obj/structure/deity/altar/update_icon()
 	overlays.Cut()

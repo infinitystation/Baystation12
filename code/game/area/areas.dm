@@ -6,6 +6,7 @@
 /area
 	var/global/global_uid = 0
 	var/uid
+	var/area_flags
 
 /area/New()
 	icon_state = "white"
@@ -22,7 +23,7 @@
 	else
 		luminosity = 1
 
-	name = replacetextEx(name, "\improper", "")
+	//name = replacetextEx(name, "\improper", "")
 
 	..()
 
@@ -32,6 +33,10 @@
 		power_light = 0
 		power_equip = 0
 		power_environ = 0
+	if(alwaysgravity == TRUE)
+		has_gravity = 1
+	else if(nevergravity == TRUE)
+		has_gravity = 0
 	power_change()		// all machines set to current power level, also updates lighting icon
 
 /area/proc/get_contents()
@@ -263,6 +268,8 @@
 /area/proc/set_lightswitch(var/new_switch)
 	if(lightswitch != new_switch)
 		lightswitch = new_switch
+		for(var/obj/machinery/light_switch/L in src)
+			L.sync_state()
 		update_icon()
 		power_change()
 
@@ -293,7 +300,7 @@ var/list/mob/living/forced_ambiance_list = new
 
 /area/proc/play_ambience(var/mob/living/L)
 	// Ambience goes down here -- make sure to list each area seperately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch
-	if(!(L && L.is_preference_enabled(/datum/client_preference/play_ambiance)))	return
+	if(!(L && L.get_preference_value(/datum/client_preference/play_ambiance) == GLOB.PREF_YES))	return
 
 
 	// If we previously were in an area with force-played ambiance, stop it.
@@ -303,7 +310,7 @@ var/list/mob/living/forced_ambiance_list = new
 
 	var/turf/T = get_turf(L)
 	var/hum = 0
-	if(!L.ear_deaf)
+	if(!L.ear_deaf && !always_unpowered && power_environ)
 		for(var/obj/machinery/atmospherics/unary/vent_pump/vent in src)
 			if(vent.can_pump())
 				hum = 1
@@ -312,7 +319,7 @@ var/list/mob/living/forced_ambiance_list = new
 	if(hum)
 		if(!L.client.ambience_playing)
 			L.client.ambience_playing = 1
-			L.playsound_local(T,sound('sound/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 25, channel = 2))
+			L.playsound_local(T,sound('sound/ambience/vents.ogg', repeat = 1, wait = 0, volume = 20, channel = 2))
 	else
 		if(L.client.ambience_playing)
 			L.client.ambience_playing = 0
@@ -321,13 +328,16 @@ var/list/mob/living/forced_ambiance_list = new
 	if(forced_ambience)
 		if(forced_ambience.len)
 			forced_ambiance_list |= L
-			L.playsound_local(T,sound(pick(forced_ambience), repeat = 1, wait = 0, volume = 25, channel = 1))
+			var/volume = 25
+			if(istype(src, /area/space))
+				volume = 100
+			L.playsound_local(T,sound(pick(forced_ambience), repeat = 1, wait = 0, volume = volume, channel = 1))
 		else
 			sound_to(L, sound(null, channel = 1))
 	else if(src.ambience.len && prob(35))
-		if((world.time >= L.client.played + 600))
+		if((world.time >= L.client.played + 3 MINUTES))
 			var/sound = pick(ambience)
-			L.playsound_local(T, sound(sound, repeat = 0, wait = 0, volume = 25, channel = 1))
+			L.playsound_local(T, sound(sound, repeat = 0, wait = 0, volume = 15, channel = 1))
 			L.client.played = world.time
 
 /area/proc/gravitychange(var/gravitystate = 0)
@@ -344,7 +354,7 @@ var/list/mob/living/forced_ambiance_list = new
 
 	if(istype(mob,/mob/living/carbon/human/))
 		var/mob/living/carbon/human/H = mob
-		if(istype(H.shoes, /obj/item/clothing/shoes/magboots) && (H.shoes.item_flags & NOSLIP))
+		if(istype(H.shoes, /obj/item/clothing/shoes/magboots) && (H.shoes.item_flags & ITEM_FLAG_NOSLIP))
 			return
 
 		if(H.m_intent == "run")
@@ -375,8 +385,13 @@ var/list/mob/living/forced_ambiance_list = new
 	if(!T)
 		T = get_turf(AT)
 	var/area/A = get_area(T)
-	if(A && A.has_gravity())
+	if(istype(T, /turf/space)) //because space
+		return 0
+	else if(A && A.has_gravity)
 		return 1
+	else
+		if(T && length(SSmachines.gravity_generators))
+			return 1
 	return 0
 
 /area/proc/get_dimensions()

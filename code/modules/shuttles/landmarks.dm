@@ -41,6 +41,11 @@
 		docking_controller = locate(docking_tag)
 		if(!istype(docking_controller))
 			log_error("Could not find docking controller for shuttle waypoint '[name]', docking tag was '[docking_tag]'.")
+		if(GLOB.using_map.use_overmap)
+			var/obj/effect/overmap/location = map_sectors["[z]"]
+			if(location && location.docking_codes)
+				docking_controller.docking_codes = location.docking_codes
+	shuttle_controller.register_landmark(tag, src)
 
 /obj/effect/shuttle_landmark/proc/is_valid(var/datum/shuttle/shuttle)
 	if(shuttle.current_location == src)
@@ -69,22 +74,24 @@
 	autoset = 1
 	var/shuttle_restricted //name of the shuttle, null for generic waypoint
 
-/obj/effect/shuttle_landmark/automatic/New()
-	tag = landmark_tag+"-[x]-[y]"
-	..()
-
 /obj/effect/shuttle_landmark/automatic/Initialize()
+	tag = landmark_tag+"-[x]-[y]"
 	. = ..()
 	base_area = get_area(src)
 	if(!GLOB.using_map.use_overmap)
 		return
-	var/obj/effect/overmap/O = map_sectors["[z]"]
+	add_to_sector(map_sectors["[z]"])
+
+/obj/effect/shuttle_landmark/automatic/proc/add_to_sector(var/obj/effect/overmap/O, var/tag_only)
 	if(!istype(O))
 		return
+	SetName("[O.name] - [name]")
 	if(shuttle_restricted)
-		O.restricted_waypoints += src
+		if(!O.restricted_waypoints[shuttle_restricted])
+			O.restricted_waypoints[shuttle_restricted] = list()
+		O.restricted_waypoints[shuttle_restricted] += tag_only ? tag : src
 	else
-		O.generic_waypoints  += src
+		O.generic_waypoints += tag_only ? tag : src
 
 //Subtype that calls explosion on init to clear space for shuttles
 /obj/effect/shuttle_landmark/automatic/clearing
@@ -104,7 +111,7 @@
 	name = "bluespace flare"
 	desc = "Burst transmitter used to broadcast all needed information for shuttle navigation systems. Has a flare attached for marking the spot where you probably shouldn't be standing."
 	icon_state = "bluflare"
-	light_color = "#3728FF"
+	light_color = "#3728ff"
 	var/active
 
 /obj/item/device/spaceflare/attack_self(var/mob/user)
@@ -118,7 +125,7 @@
 	active = 1
 	var/turf/T = get_turf(src)
 	var/obj/effect/shuttle_landmark/automatic/mark = new(T)
-	mark.name = "Beacon signal ([T.x],[T.y])"
+	mark.SetName("Beacon signal ([T.x],[T.y])")
 	if(ismob(loc))
 		var/mob/M = loc
 		M.drop_from_inventory(src,T)

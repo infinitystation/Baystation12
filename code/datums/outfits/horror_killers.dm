@@ -30,6 +30,7 @@
 	r_hand = /obj/item/weapon/material/twohanded/fireaxe
 
 /decl/hierarchy/outfit/masked_killer/post_equip(var/mob/living/carbon/human/H)
+	..()
 	var/victim = get_mannequin(H.ckey)
 	for(var/obj/item/carried_item in H.get_equipped_items(TRUE))
 		carried_item.add_blood(victim) //Oh yes, there will be blood.. just not blood from the killer because that's odd
@@ -49,6 +50,7 @@
 	pda_type = /obj/item/device/pda/heads
 
 /decl/hierarchy/outfit/reaper/post_equip(var/mob/living/carbon/human/H)
+	..()
 	var/obj/item/weapon/storage/secure/briefcase/sec_briefcase = new(H)
 	for(var/obj/item/briefcase_item in sec_briefcase)
 		qdel(briefcase_item)
@@ -56,6 +58,6 @@
 		sec_briefcase.contents += new /obj/item/weapon/spacecash/bundle/c1000
 	sec_briefcase.contents += new /obj/item/weapon/gun/energy/crossbow
 	sec_briefcase.contents += new /obj/item/weapon/gun/projectile/revolver/mateba
-	sec_briefcase.contents += new /obj/item/ammo_magazine/a357
+	sec_briefcase.contents += new /obj/item/ammo_magazine/c50
 	sec_briefcase.contents += new /obj/item/weapon/plastique
 	H.equip_to_slot_or_del(sec_briefcase, slot_l_hand)

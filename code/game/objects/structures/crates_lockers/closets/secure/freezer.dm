@@ -17,7 +17,6 @@
 	icon_closed = "fridge"
 	icon_locked = "fridge1"
 	icon_opened = "fridgeopen"
-	icon_broken = "fridgebroken"
 	icon_off = "fridgebroken"
 
 /obj/structure/closet/secure_closet/freezer/meat/WillContain()
@@ -31,7 +30,6 @@
 	icon_closed = "fridge"
 	icon_locked = "fridge1"
 	icon_opened = "fridgeopen"
-	icon_broken = "fridgebroken"
 	icon_off = "fridgebroken"
 
 /obj/structure/closet/secure_closet/freezer/fridge/WillContain()
@@ -47,7 +45,6 @@
 	icon_closed = "fridge"
 	icon_locked = "fridge1"
 	icon_opened = "fridgeopen"
-	icon_broken = "fridgebroken"
 	icon_off = "fridgebroken"
 	req_access = list(access_heads_vault)
 
@@ -63,3 +60,11 @@
 			new cash_type(src)
 		else
 			break
+
+/obj/structure/closet/secure_closet/freezer/var/jones = FALSE
+
+/obj/structure/closet/secure_closet/freezer/ex_act()
+	if(!jones)
+		jones = TRUE
+	else
+		..()

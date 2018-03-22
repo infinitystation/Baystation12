@@ -94,7 +94,7 @@
 		if(79 to 80)
 			new/obj/item/weapon/pickaxe/gold(src)
 		if(81 to 82)
-			new/obj/item/weapon/pickaxe/plasmacutter(src)
+			new/obj/item/weapon/gun/energy/plasmacutter(src)
 		if(83 to 84)
 			new/obj/item/toy/katana(src)
 		if(85 to 86)
@@ -112,7 +112,7 @@
 		if(92)
 			new/obj/item/weapon/material/sword/katana(src)
 		if(93)
-			new/obj/item/weapon/dnainjector/xraymut(src) // Probably the least OP
+			new/obj/effect/mine/kick(src) // Probably the least OP
 		if(94) // Why the hell not
 			new/obj/item/weapon/storage/backpack/clown(src)
 			new/obj/item/clothing/under/rank/clown(src)

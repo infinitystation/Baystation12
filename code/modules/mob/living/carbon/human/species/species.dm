@@ -21,23 +21,34 @@
 	var/prone_icon                            // If set, draws this from icobase when mob is prone.
 	var/has_floating_eyes                     // Eyes will overlay over darkness (glow)
 
-	var/blood_color = "#A10808"               // Red.
-	var/flesh_color = "#FFC896"               // Pink.
+	var/blood_color = COLOR_BLOOD_HUMAN               // Red.
+	var/flesh_color = "#ffc896"               // Pink.
 	var/blood_oxy = 1
 	var/base_color                            // Used by changelings. Should also be used for icon previes..
+	var/limb_blend = ICON_ADD
 	var/tail                                  // Name of tail state in species effects icon file.
 	var/tail_animation                        // If set, the icon to obtain tail animation states from.
+	var/tail_blend = ICON_ADD
 	var/tail_hair
+
+	var/list/hair_styles
+	var/list/facial_hair_styles
+
+	var/eye_icon = "eyes_s"
+	var/eye_icon_location = 'icons/mob/human_face.dmi'
+
+	var/organs_icon		//species specific internal organs icons
 
 	var/default_h_style = "Bald"
 	var/default_f_style = "Shaved"
 
 	var/race_key = 0                          // Used for mob icon cache string.
-	var/icon/icon_template                    // Used for mob icon generation for non-32x32 species.
+	var/icon/icon_template = 'icons/mob/human_races/r_template.dmi' // Used for mob icon generation for non-32x32 species.
 	var/pixel_offset_x = 0                    // Used for offsetting large icons.
 	var/pixel_offset_y = 0                    // Used for offsetting large icons.
 
 	var/mob_size	= MOB_MEDIUM
+	var/strength    = STR_MEDIUM
 	var/show_ssd = "fast asleep"
 	var/virus_immune
 	var/short_sighted                         // Permanent weldervision.
@@ -83,9 +94,9 @@
 	var/dusted_anim = "dust-h"
 	var/death_sound
 	var/death_message = "seizes up and falls limp, their eyes dead and lifeless..."
-	var/knockout_message = "has been knocked unconscious!"
-	var/halloss_message = "slumps to the ground, too weak to continue fighting."
-	var/halloss_message_self = "You're in too much pain to keep going..."
+	var/knockout_message = "collapses, having been knocked unconscious."
+	var/halloss_message = "slumps over, too weak to continue fighting..."
+	var/halloss_message_self = "The pain is too severe for you to keep going..."
 
 	var/spawns_with_stack = 0
 	// Environment tolerance/life processes vars.
@@ -94,7 +105,7 @@
 	var/breath_type = "oxygen"                        // Non-oxygen gas breathed, if any.
 	var/poison_type = "phoron"                        // Poisonous air.
 	var/exhale_type = "carbon_dioxide"                // Exhaled gas type.
-	var/cold_level_1 = 260                            // Cold damage level 1 below this point.
+	var/cold_level_1 = 243                            // Cold damage level 1 below this point. -30 Celsium degrees
 	var/cold_level_2 = 200                            // Cold damage level 2 below this point.
 	var/cold_level_3 = 120                            // Cold damage level 3 below this point.
 	var/heat_level_1 = 360                            // Heat damage level 1 above this point.
@@ -105,7 +116,6 @@
 	var/warning_high_pressure = WARNING_HIGH_PRESSURE // High pressure warning.
 	var/warning_low_pressure = WARNING_LOW_PRESSURE   // Low pressure warning.
 	var/hazard_low_pressure = HAZARD_LOW_PRESSURE     // Dangerously low pressure.
-	var/light_dam                                     // If set, mob will be damaged in light over this value and heal in light below its negative.
 	var/body_temperature = 310.15	                  // Species will try to stabilize at this temperature.
 	                                                  // (also affects temperature processing)
 
@@ -134,7 +144,7 @@
 	var/has_fine_manipulation = 1 // Can use small items.
 	var/siemens_coefficient = 1   // The lower, the thicker the skin and better the insulation.
 	var/darksight = 2             // Native darksight distance.
-	var/flags = 0                 // Various specific features.
+	var/species_flags = 0         // Various specific features.
 	var/appearance_flags = 0      // Appearance/display related features.
 	var/spawn_flags = 0           // Flags that specify who can spawn as this species
 	var/slowdown = 0              // Passive movement speed malus (or boost, if negative)
@@ -159,6 +169,7 @@
 
 	var/obj/effect/decal/cleanable/blood/tracks/move_trail = /obj/effect/decal/cleanable/blood/tracks/footprints // What marks are left when walking
 
+	var/list/skin_overlays = list()
 
 	var/list/has_limbs = list(
 		BP_CHEST =  list("path" = /obj/item/organ/external/chest),
@@ -174,7 +185,13 @@
 		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right)
 		)
 
+	// The basic skin colours this species uses
+	var/list/base_skin_colours
+
 	var/list/genders = list(MALE, FEMALE)
+	var/ambiguous_genders = FALSE // If true, people examining a member of this species whom are not also the same species will see them as gender neutral.  Because aliens.
+
+	var/have_vision_cone = TRUE
 
 	// Bump vars
 	var/bump_flag = HUMAN	// What are we considered to be when bumped?
@@ -183,6 +200,30 @@
 
 	var/pass_flags = 0
 	var/breathing_sound = 'sound/voice/monkey.ogg'
+	var/list/equip_adjust = list()
+	var/list/equip_overlays = list()
+
+	var/sexybits_location	//organ tag where they are located if they can be kicked for increased pain
+
+	var/list/prone_overlay_offset = list(0, 0) // amount to shift overlays when lying
+/*
+These are all the things that can be adjusted for equipping stuff and
+each one can be in the NORTH, SOUTH, EAST, and WEST direction. Specify
+the direction to shift the thing and what direction.
+
+example:
+	equip_adjust = list(
+		slot_back_str = list(NORTH = list(SOUTH = 12, EAST = 7), EAST = list(SOUTH = 2, WEST = 12))
+			)
+
+This would shift back items (backpacks, axes, etc.) when the mob
+is facing either north or east.
+When the mob faces north the back item icon is shifted 12 pixes down and 7 pixels to the right.
+When the mob faces east the back item icon is shifted 2 pixels down and 12 pixels to the left.
+
+The slots that you can use are found in items_clothing.dm and are the inventory slot string ones, so make sure
+	you use the _str version of the slot.
+*/
 
 /datum/species/proc/get_eyes(var/mob/living/carbon/human/H)
 	return
@@ -214,12 +255,12 @@
 	return sanitizeName(name)
 
 /datum/species/proc/equip_survival_gear(var/mob/living/carbon/human/H,var/extendedtank = 1)
-	if(H.backbag == 1)
-		if (extendedtank)	H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/engineer(H), slot_r_hand)
-		else	H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H), slot_r_hand)
-	else
+	if(istype(H.get_equipped_item(slot_back), /obj/item/weapon/storage/backpack))
 		if (extendedtank)	H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/engineer(H.back), slot_in_backpack)
 		else	H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H.back), slot_in_backpack)
+	else
+		if (extendedtank)	H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/engineer(H), slot_r_hand)
+		else	H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H), slot_r_hand)
 
 /datum/species/proc/create_organs(var/mob/living/carbon/human/H) //Handles creation of mob organs.
 
@@ -265,11 +306,21 @@
 /datum/species/proc/hug(var/mob/living/carbon/human/H,var/mob/living/target)
 
 	var/t_him = "them"
-	switch(target.gender)
-		if(MALE)
-			t_him = "him"
-		if(FEMALE)
-			t_him = "her"
+	if(ishuman(target))
+		var/mob/living/carbon/human/T = target
+		if(!T.species.ambiguous_genders || (T.species.ambiguous_genders && H.species == T.species))
+			if(MALE)
+				t_him = "him"
+			if(FEMALE)
+				t_him = "her"
+		else
+			t_him = "them"
+	else
+		switch(target.gender)
+			if(MALE)
+				t_him = "him"
+			if(FEMALE)
+				t_him = "her"
 
 	H.visible_message("<span class='notice'>[H] hugs [target] to make [t_him] feel better!</span>", \
 					"<span class='notice'>You hug [target] to make [t_him] feel better!</span>")
@@ -373,6 +424,7 @@
 		return 1
 
 	H.set_fullscreen(H.eye_blind && !H.equipment_prescription, "blind", /obj/screen/fullscreen/blind)
+	H.set_fullscreen(H.stat == UNCONSCIOUS, "blackout", /obj/screen/fullscreen/blackout)
 
 	if(config.welder_vision)
 		H.set_fullscreen(H.equipment_tint_total, "welder", /obj/screen/fullscreen/impaired, H.equipment_tint_total)
@@ -431,3 +483,102 @@
 		return /obj/effect/decal/cleanable/blood/tracks/footprints
 	else
 		return move_trail
+
+/datum/species/proc/update_skin(var/mob/living/carbon/human/H)
+	return
+
+/datum/species/proc/disarm_attackhand(var/mob/living/carbon/human/attacker, var/mob/living/carbon/human/target)
+	attacker.do_attack_animation(target)
+
+	if(target.w_uniform)
+		target.w_uniform.add_fingerprint(attacker)
+	var/obj/item/organ/external/affecting = target.get_organ(ran_zone(attacker.zone_sel.selecting))
+
+	var/list/holding = list(target.get_active_hand() = 40, target.get_inactive_hand() = 20)
+
+	//See if they have any guns that might go off
+	for(var/obj/item/weapon/gun/W in holding)
+		if(W && prob(holding[W]))
+			var/list/turfs = list()
+			for(var/turf/T in view())
+				turfs += T
+			if(turfs.len)
+				var/turf/shoot_to = pick(turfs)
+				target.visible_message("<span class='danger'>[target]'s [W] goes off during the struggle!</span>")
+				return W.afterattack(shoot_to,target)
+
+	var/randn = rand(1, 100)
+	if(!(species_flags & SPECIES_FLAG_NO_SLIP) && randn <= 25)
+		var/armor_check = target.run_armor_check(affecting, "melee")
+		target.apply_effect(3, WEAKEN, armor_check)
+		playsound(target.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		if(armor_check < 100)
+			target.visible_message("<span class='danger'>[attacker] has pushed [target]!</span>")
+		else
+			target.visible_message("<span class='warning'>[attacker] attempted to push [target]!</span>")
+		return
+
+	if(randn <= 60)
+		//See about breaking grips or pulls
+		if(target.break_all_grabs(attacker))
+			playsound(target.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+			return
+
+		//Actually disarm them
+		for(var/obj/item/I in holding)
+			if(I)
+				target.drop_from_inventory(I)
+				target.visible_message("<span class='danger'>[attacker] has disarmed [target]!</span>")
+				playsound(target.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+				return
+
+	playsound(target.loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+	target.visible_message("<span class='danger'>[attacker] attempted to disarm \the [target]!</span>")
+
+/datum/species/proc/disfigure_msg(var/mob/living/carbon/human/H) //Used for determining the message a disfigured face has on examine. To add a unique message, just add this onto a specific species and change the "return" message.
+	var/datum/gender/T = gender_datums[H.get_gender()]
+	return "<span class='danger'>[T.His] face is horribly mangled!</span>\n"
+
+/datum/species/proc/max_skin_tone()
+	if(appearance_flags & HAS_SKIN_TONE_GRAV)
+		return 100
+	if(appearance_flags & HAS_SKIN_TONE_SPCR)
+		return 165
+	return 220
+
+/datum/species/proc/get_hair_styles()
+	var/list/L = LAZYACCESS(hair_styles, type)
+	if(!L)
+		L = list()
+		LAZYSET(hair_styles, type, L)
+		for(var/hairstyle in GLOB.hair_styles_list)
+			var/datum/sprite_accessory/S = GLOB.hair_styles_list[hairstyle]
+			if(!(get_bodytype() in S.species_allowed))
+				continue
+			ADD_SORTED(L, hairstyle, /proc/cmp_text_asc)
+			L[hairstyle] = S
+	return L
+
+/datum/species/proc/get_facial_hair_styles(var/gender)
+	var/list/facial_hair_styles_by_species = LAZYACCESS(facial_hair_styles, type)
+	if(!facial_hair_styles_by_species)
+		facial_hair_styles_by_species = list()
+		LAZYSET(facial_hair_styles, type, facial_hair_styles_by_species)
+
+	var/list/facial_hair_style_by_gender = facial_hair_styles_by_species[gender]
+	if(!facial_hair_style_by_gender)
+		facial_hair_style_by_gender = list()
+		LAZYSET(facial_hair_styles_by_species, gender, facial_hair_style_by_gender)
+
+		for(var/facialhairstyle in GLOB.facial_hair_styles_list)
+			var/datum/sprite_accessory/S = GLOB.facial_hair_styles_list[facialhairstyle]
+			if(gender == MALE && S.gender == FEMALE)
+				continue
+			if(gender == FEMALE && S.gender == MALE)
+				continue
+			if(!(get_bodytype() in S.species_allowed))
+				continue
+			ADD_SORTED(facial_hair_style_by_gender, facialhairstyle, /proc/cmp_text_asc)
+			facial_hair_style_by_gender[facialhairstyle] = S
+
+	return facial_hair_style_by_gender

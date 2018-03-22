@@ -96,8 +96,8 @@
 		to_chat(src, "<span class='danger'>[method]: Unable to state laws. Communication method unavailable.</span>")
 	stating_laws[prefix] = 0
 
-/mob/living/silicon/proc/statelaw(var/law)
-	if(src.say(law))
+/mob/living/silicon/proc/statelaw(var/law, var/mob/living/L = src)
+	if(L.say(law))
 		sleep(10)
 		return 1
 
@@ -106,7 +106,7 @@
 /mob/living/silicon/proc/law_channels()
 	var/list/channels = new()
 	channels += MAIN_CHANNEL
-	channels += common_radio.channels
+	channels += silicon_radio.channels
 	channels += additional_law_channels
 	channels += "Binary"
 	return channels

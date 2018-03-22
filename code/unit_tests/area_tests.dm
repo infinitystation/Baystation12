@@ -59,6 +59,8 @@
 	for(var/area/A)
 		if(!A.contents.len)
 			continue
+		if(A.type in GLOB.using_map.area_purity_test_exempt_areas)
+			continue
 		if(A.name != initial(A.name))
 			log_bad("[log_info_line(A)] has an edited name.")
 			impure_areas++
@@ -77,6 +79,8 @@
 	var/unused_areas = 0
 	for(var/area_type in subtypesof(/area))
 		if(area_type in GLOB.using_map.area_usage_test_exempted_areas)
+			continue
+		if(is_path_in_list(area_type, GLOB.using_map.area_usage_test_exempted_root_areas))
 			continue
 		var/area/located_area = locate(area_type)
 		if(located_area && !located_area.z)

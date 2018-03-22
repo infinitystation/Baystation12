@@ -4,11 +4,6 @@
 		eyes.update_colour()
 		regenerate_icons()
 
-/mob/living/carbon/var/list/internal_organs = list()
-/mob/living/carbon/human/var/list/organs = list()
-/mob/living/carbon/human/var/list/organs_by_name = list() // map organ names to organs
-/mob/living/carbon/human/var/list/internal_organs_by_name = list() // so internal organs have less ickiness too
-
 /mob/living/carbon/human/proc/get_bodypart_name(var/zone)
 	var/obj/item/organ/external/E = get_organ(zone)
 	if(E) . = E.name
@@ -34,7 +29,7 @@
 
 	//processing internal organs is pretty cheap, do that first.
 	for(var/obj/item/organ/I in internal_organs)
-		I.process()
+		I.Process()
 
 	handle_stance()
 	handle_grasp()
@@ -49,7 +44,7 @@
 			bad_external_organs -= E
 			continue
 		else
-			E.process()
+			E.Process()
 
 			if (!lying && !buckled && world.time - l_move_time < 15)
 			//Moving around with fractured ribs won't do you any good
@@ -74,6 +69,11 @@
 
 	// Buckled to a bed/chair. Stance damage is forced to 0 since they're sitting on something solid
 	if (istype(buckled, /obj/structure/bed))
+		return
+
+	// Can't fall if nothing pulls you down
+	var/area/area = get_area(src)
+	if (!area || !area.has_gravity())
 		return
 
 	var/limb_pain
@@ -192,14 +192,6 @@
 			custom_pain("The sharp pain in your [affected.name] forces you to drop [thing]!", 30)
 		else
 			visible_message("<B>\The [src]</B> drops what they were holding in their [grasp_name]!")
-
-
-//Handles chem traces
-/mob/living/carbon/human/proc/handle_trace_chems()
-	//New are added for reagents to random organs.
-	for(var/datum/reagent/A in reagents.reagent_list)
-		var/obj/item/organ/O = pick(organs)
-		O.trace_chemicals[A.name] = 100
 
 /mob/living/carbon/human/proc/sync_organ_dna()
 	var/list/all_bits = internal_organs|organs

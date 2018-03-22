@@ -33,8 +33,8 @@
 	for(var/obj/item/W in src)
 		drop_from_inventory(W)
 	set_species(species.primitive_form)
-	dna.SetSEState(MONKEYBLOCK,1)
-	dna.SetSEValueRange(MONKEYBLOCK,0xDAC, 0xFFF)
+	dna.SetSEState(GLOB.MONKEYBLOCK,1)
+	dna.SetSEValueRange(GLOB.MONKEYBLOCK,0xDAC, 0xFFF)
 
 	to_chat(src, "<B>You are now [species.name]. </B>")
 	qdel(animation)
@@ -140,7 +140,7 @@
 	O.job = "Cyborg"
 	if(O.mind.assigned_role == "Cyborg")
 		if(O.mind.role_alt_title == "Android")
-			O.mmi = new /obj/item/device/mmi/digital/posibrain(O)
+			O.mmi = new /obj/item/organ/internal/posibrain(O)
 		else if(O.mind.role_alt_title == "Robot")
 			O.mmi = new /obj/item/device/mmi/digital/robot(O)
 		else

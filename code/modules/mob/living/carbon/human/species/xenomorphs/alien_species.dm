@@ -1,6 +1,6 @@
 //Stand-in until this is made more lore-friendly.
 /datum/species/xenos
-	name = "Xenophage"
+	name = SPECIES_XENO
 	name_plural = "Xenophages"
 
 	default_language = "Xenophage"
@@ -24,6 +24,7 @@
 	has_fine_manipulation = 0
 	siemens_coefficient = 0
 	gluttonous = GLUT_ANYTHING
+	ambiguous_genders = TRUE
 	stomach_capacity = MOB_MEDIUM
 
 	brute_mod = 0.25 // Hardened carapace.
@@ -37,14 +38,14 @@
 	cold_level_2 = -1
 	cold_level_3 = -1
 
-	flags = NO_SCAN | NO_PAIN | NO_SLIP | NO_POISON | NO_EMBED
+	species_flags = SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_MINOR_CUT | SPECIES_FLAG_NO_EMBED | SPECIES_FLAG_NO_TANGLE
 	appearance_flags = HAS_EYE_COLOR | HAS_SKIN_COLOR
 
 	spawn_flags = SPECIES_IS_RESTRICTED
 
 	reagent_tag = IS_XENOS
 
-	blood_color = "#05EE05"
+	blood_color = "#05ee05"
 	flesh_color = "#282846"
 	base_color =  "#00060c"
 
@@ -124,7 +125,7 @@
 
 	alien_number++ //Keep track of how many aliens we've had so far.
 	H.real_name = "alien [caste_name] ([alien_number])"
-	H.name = H.real_name
+	H.SetName(H.real_name)
 
 	..()
 
@@ -135,7 +136,7 @@
 	var/datum/gas_mixture/environment = T.return_air()
 	if(!environment) return
 
-	var/obj/effect/plant/plant = locate() in T
+	var/obj/effect/vine/plant = locate() in T
 	if((environment.gas["phoron"] > 0 || (plant && plant.seed && plant.seed.name == "xenomorph")) && !regenerate(H))
 		var/obj/item/organ/internal/xenos/plasmavessel/P = H.internal_organs_by_name["plasma vessel"]
 		P.stored_plasma += weeds_plasma_rate
@@ -181,7 +182,7 @@
 	name = "Xenophage Drone"
 	caste_name = "drone"
 	weeds_plasma_rate = 15
-	slowdown = 1
+	slowdown = 0
 	rarity_value = 5
 	base_color = "#000d1a"
 	icobase = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
@@ -220,7 +221,7 @@
 	name = "Xenophage Hunter"
 	weeds_plasma_rate = 5
 	caste_name = "hunter"
-	slowdown = -1.5
+	slowdown = -1
 	total_health = 300
 	base_color = "#001a33"
 
@@ -319,10 +320,10 @@
 	// Make sure only one official queen exists at any point.
 	if(!alien_queen_exists(1,H))
 		H.real_name = "alien queen ([alien_number])"
-		H.name = H.real_name
+		H.SetName(H.real_name)
 	else
 		H.real_name = "alien princess ([alien_number])"
-		H.name = H.real_name
+		H.SetName(H.real_name)
 
 /datum/hud_data/alien
 

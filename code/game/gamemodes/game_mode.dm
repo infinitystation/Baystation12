@@ -455,7 +455,7 @@ var/global/list/additional_antag_types = list()
 //////////////////////////
 proc/display_roundstart_logout_report()
 	var/msg = "<span class='notice'><b>Roundstart logout report</b>\n\n"
-	for(var/mob/living/L in GLOB.mob_list)
+	for(var/mob/living/L in SSmobs.mob_list)
 
 		if(L.ckey)
 			var/found = 0
@@ -479,7 +479,7 @@ proc/display_roundstart_logout_report()
 					continue //Dead
 
 			continue //Happy connected client
-		for(var/mob/observer/ghost/D in GLOB.mob_list)
+		for(var/mob/observer/ghost/D in SSmobs.mob_list)
 			if(D.mind && (D.mind.original == L || D.mind.current == L))
 				if(L.stat == DEAD)
 					msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), the [L.job] (Dead)\n"
@@ -494,7 +494,7 @@ proc/display_roundstart_logout_report()
 
 	msg += "</span>" // close the span from right at the top
 
-	for(var/mob/M in GLOB.mob_list)
+	for(var/mob/M in SSmobs.mob_list)
 		if(M.client && M.client.holder)
 			to_chat(M, msg)
 proc/get_nt_opposed()

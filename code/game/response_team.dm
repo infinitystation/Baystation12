@@ -66,7 +66,7 @@ client/verb/JoinResponseTeam()
 proc/percentage_dead()
 	var/total = 0
 	var/deadcount = 0
-	for(var/mob/living/carbon/human/H in GLOB.mob_list)
+	for(var/mob/living/carbon/human/H in SSmobs.mob_list)
 		if(H.client) // Monkeys and mice don't have a client, amirite?
 			if(H.stat == 2) deadcount++
 			total++
@@ -78,7 +78,7 @@ proc/percentage_dead()
 proc/percentage_antagonists()
 	var/total = 0
 	var/antagonists = 0
-	for(var/mob/living/carbon/human/H in GLOB.mob_list)
+	for(var/mob/living/carbon/human/H in SSmobs.mob_list)
 		if(is_special_character(H) >= 1)
 			antagonists++
 		total++
@@ -111,11 +111,11 @@ proc/trigger_armed_response_team(var/force = 0)
 
 	// there's only a certain chance a team will be sent
 	if(!prob(send_team_chance))
-		command_announcement.Announce("Хоть и команда быстрого реагирования была предложена для [station_name()], нам не удалось отправить вам отряд в данный момент.", "[GLOB.using_map.boss_name]")
+		command_announcement.Announce("Отряд Быстрого Реагирования не может быть мобилизован по причине отсутствия свободных ОБР. [station_name()], ликвидируйте проблему своими силами.", "[GLOB.using_map.boss_name]")
 		can_call_ert = 0 // Only one call per round, ladies.
 		return
 
-	command_announcement.Announce("Команда быстрого реагирования была предложена для [station_name()]. Мы готовим команду для вылета на станцию, ожидайте в ближайшее время.", "[GLOB.using_map.boss_name]")
+	command_announcement.Announce("Отряд Быстрого Реагирования мобилизуруется для оказания помощи [station_name()]. Ожидайте прибытия оперативников в ближайшее время.", "[GLOB.using_map.boss_name]")
 	evacuation_controller.add_can_call_predicate(new/datum/evacuation_predicate/ert())
 
 	can_call_ert = 0 // Only one call per round, gentleman.

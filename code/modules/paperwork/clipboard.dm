@@ -1,6 +1,6 @@
 /obj/item/weapon/clipboard
 	name = "clipboard"
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "clipboard"
 	item_state = "clipboard"
 	throwforce = 0
@@ -10,6 +10,7 @@
 	var/obj/item/weapon/pen/haspen		//The stored pen.
 	var/obj/item/weapon/toppaper	//The topmost piece of paper.
 	slot_flags = SLOT_BELT
+	matter = list(DEFAULT_WALL_MATERIAL = 70)
 
 /obj/item/weapon/clipboard/New()
 	update_icon()

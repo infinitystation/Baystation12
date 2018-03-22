@@ -2,6 +2,8 @@
 	filename = "aidiag"
 	filedesc = "AI Maintenance Utility"
 	program_icon_state = "generic"
+	program_key_state = "mining_key"
+	program_menu_icon = "person"
 	extended_desc = "This program is capable of reconstructing damaged AI systems. It can also be used to upload basic laws to the AI. Requires direct AI connection via inteliCard slot."
 	size = 12
 	requires_ntnet = 0
@@ -42,9 +44,9 @@
 		A.laws.clear_supplied_laws()
 		to_chat(A, "<span class='danger'>Non-core laws reset.</span>")
 		return 1
-	if(href_list["PRG_uploadNTDefault"])
-		A.laws = new/datum/ai_laws/nanotrasen
-		to_chat(A, "<span class='danger'>All laws purged. NT Default lawset uploaded.</span>")
+	if(href_list["PRG_uploadDefault"])
+		A.laws = new GLOB.using_map.default_law_type
+		to_chat(A, "<span class='danger'>All laws purged. Default lawset uploaded.</span>")
 		return 1
 	if(href_list["PRG_addCustomSuppliedLaw"])
 		var/law_to_add = sanitize(input("Please enter a new law for the AI.", "Custom Law Entry"))

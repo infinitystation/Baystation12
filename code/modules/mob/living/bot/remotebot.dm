@@ -1,6 +1,7 @@
 /mob/living/bot/remotebot
 	name = "Remote-Bot"
 	desc = "A remote controlled robot used by lazy people to switch channels and get pizza."
+	icon = 'icons/mob/bot/fetchbot.dmi'
 	icon_state = "fetchbot1"
 	health = 15
 	maxHealth = 15
@@ -87,7 +88,7 @@
 		return
 	if(isturf(a) || get_dist(src,a) > 1)
 		walk_to(src,a,0,movement_delay())
-	else if(istype(a, /obj/item))
+	else if(istype(a, /obj/item) && !istype(a, /mob))
 		pickup(a)
 	else
 		hit(a)

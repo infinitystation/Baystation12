@@ -24,7 +24,7 @@
 	icon_state = "syndicate1"
 	icon_closed = "syndicate1"
 	icon_opened = "syndicate1open"
-	anchored = 0
+	anchored = 1
 
 /obj/structure/closet/gimmick/russian
 	name = "russian surplus closet"
@@ -92,3 +92,35 @@
 		/obj/item/weapon/storage/box/flashbangs = 3,
 		/obj/item/clothing/head/helmet/thunderdome = 3
 	)
+
+/obj/structure/closet/gimmick/ert
+	name = "emergency response team closet"
+	desc = "It's a storage unit for Tacticool gear."
+	icon_state = "syndicate1"
+	icon_closed = "syndicate1"
+	icon_opened = "syndicate1open"
+
+/obj/structure/closet/gimmick/ert/WillContain()
+	return list(
+		/obj/item/weapon/coin/silver =2,
+		/obj/item/clothing/mask/balaclava = 2,
+		/obj/item/clothing/head/beret/centcom/officer = 2,
+		/obj/item/clothing/under/ert = 2,
+		/obj/item/clothing/under/syndicate/combat = 2)
+
+
+
+/obj/structure/closet/gimmick/marine
+	name = "strike team closet"
+	desc = "It's a storage unit for Tacticool gear."
+	icon_state = "syndicate1"
+	icon_closed = "syndicate1"
+	icon_opened = "syndicate1open"
+
+/obj/structure/closet/gimmick/ert/WillContain()
+	return list(
+		/obj/item/weapon/coin/silver =2,
+		/obj/item/clothing/mask/balaclava = 2,
+		/obj/item/clothing/head/beret/centcom/officer = 2,
+		/obj/item/clothing/under/ert = 2,
+		/obj/item/clothing/under/syndicate/combat = 2)

@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/temperature
-	name = "temperature gun"
+	name = "expermental temperature gun"
 	icon_state = "freezegun"
 	item_state = "freezegun"
 	fire_sound = 'sound/weapons/pulse3.ogg'
@@ -10,19 +10,21 @@
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 4, TECH_POWER = 3, TECH_MAGNET = 2)
 	slot_flags = SLOT_BELT|SLOT_BACK
 	one_hand_penalty = 2
+	wielded_item_state = "gun_wielded"
 
 	projectile_type = /obj/item/projectile/temp
 	cell_type = /obj/item/weapon/cell/high
+	combustion = 0
 
 
-/obj/item/weapon/gun/energy/temperature/New()
-	..()
-	GLOB.processing_objects.Add(src)
+/obj/item/weapon/gun/energy/temperature/Initialize()
+	. = ..()
+	START_PROCESSING(SSobj, src)
 
 
 /obj/item/weapon/gun/energy/temperature/Destroy()
-	GLOB.processing_objects.Remove(src)
-	..()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
 
 
 /obj/item/weapon/gun/energy/temperature/attack_self(mob/living/user as mob)
@@ -41,28 +43,21 @@
 	user << browse(dat, "window=freezegun;size=450x300;can_resize=1;can_close=1;can_minimize=1")
 	onclose(user, "window=freezegun", src)
 
+/obj/item/weapon/gun/energy/temperature/Topic(user, href_list, state = GLOB.inventory_state)
+	..()
 
-/obj/item/weapon/gun/energy/temperature/Topic(href, href_list)
-	if (..())
-		return 1
-	usr.set_machine(src)
-	src.add_fingerprint(usr)
-
-
-
+/obj/item/weapon/gun/energy/temperature/OnTopic(user, href_list)
 	if(href_list["temp"])
 		var/amount = text2num(href_list["temp"])
 		if(amount > 0)
 			src.current_temperature = min(500, src.current_temperature+amount)
 		else
 			src.current_temperature = max(0, src.current_temperature+amount)
-	if (istype(src.loc, /mob))
-		attack_self(src.loc)
-	src.add_fingerprint(usr)
-	return
+		. = TOPIC_REFRESH
 
+		attack_self(user)
 
-/obj/item/weapon/gun/energy/temperature/process()
+/obj/item/weapon/gun/energy/temperature/Process()
 	switch(temperature)
 		if(0 to 100) charge_cost = 100
 		if(100 to 250) charge_cost = 50

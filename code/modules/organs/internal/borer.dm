@@ -8,7 +8,7 @@
 	parent_organ = BP_HEAD
 	vital = 1
 
-/obj/item/organ/internal/borer/process()
+/obj/item/organ/internal/borer/Process()
 
 	// Borer husks regenerate health, feel no pain, and are resistant to stuns and brainloss.
 	for(var/chem_name in GLOB.borer_reagent_types_by_name)
@@ -26,7 +26,7 @@
 		blood_splatter(H,B,1)
 		var/obj/effect/decal/cleanable/blood/splatter/goo = locate() in get_turf(owner)
 		if(goo)
-			goo.name = "husk ichor"
+			goo.SetName("husk ichor")
 			goo.desc = "It's thick and stinks of decay."
 			goo.basecolor = "#412464"
 			goo.update_icon()

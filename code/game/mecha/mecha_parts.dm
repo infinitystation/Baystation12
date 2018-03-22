@@ -6,10 +6,10 @@
 
 /obj/item/mecha_parts
 	name = "mecha part"
-	icon = 'icons/blue_brig/mecha/mech_construct.dmi'
+	icon = 'icons/mecha/mech_construct.dmi'
 	icon_state = "blank"
 	w_class = ITEM_SIZE_HUGE
-	flags = CONDUCT
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2)
 
 
@@ -18,7 +18,7 @@
 	icon_state = "backbone"
 	randpixel = 0
 	var/datum/construction/construct
-	flags = CONDUCT
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
 	attackby(obj/item/W as obj, mob/user as mob)
 		if(!construct || !construct.action(W, user))
@@ -205,36 +205,43 @@
 /obj/item/mecha_parts/part/phazon_torso
 	name="Phazon Torso"
 	icon_state = "phazon_harness"
-	origin_tech = list(TECH_MATERIAL = 7, TECH_BLUESPACE = 7, TECH_DATA = 7, TECH_POWER = 7)
+	//construction_time = 300
+	//construction_cost = list(DEFAULT_WALL_MATERIAL=35000,"glass"=10000,"phoron"=20000)
+	origin_tech = list(TECH_DATA = 5, TECH_MATERIAL = 7, TECH_BLUESPACE = 6, TECH_POWER = 6)
 
 /obj/item/mecha_parts/part/phazon_head
 	name="Phazon Head"
 	icon_state = "phazon_head"
-	origin_tech = list(TECH_MATERIAL =5, TECH_BLUESPACE = 2, TECH_MAGNET = 6, TECH_DATA = 6)
+	//construction_time = 200
+	//construction_cost = list(DEFAULT_WALL_MATERIAL=15000,"glass"=5000,"phoron"=10000)
+	origin_tech = list(TECH_DATA = 4, TECH_MATERIAL = 5, TECH_MAGNET = 6)
 
 /obj/item/mecha_parts/part/phazon_left_arm
 	name="Phazon Left Arm"
 	icon_state = "phazon_l_arm"
-	origin_tech = list(TECH_MATERIAL = 5, TECH_BLUESPACE = 2, TECH_MAGNET = 3)
+	//construction_time = 200
+	//construction_cost = list(DEFAULT_WALL_MATERIAL=20000,"phoron"=10000)
+	origin_tech = list(TECH_MATERIAL = 5, TECH_BLUESPACE = 2, TECH_MAGNET = 2)
 
 /obj/item/mecha_parts/part/phazon_right_arm
 	name="Phazon Right Arm"
 	icon_state = "phazon_r_arm"
-	origin_tech = list(TECH_MATERIAL = 5, TECH_BLUESPACE = 2, TECH_MAGNET = 3)
+	//construction_time = 200
+	//construction_cost = list(DEFAULT_WALL_MATERIAL=20000,"phoron"=10000)
+	origin_tech = list(TECH_MATERIAL = 5, TECH_BLUESPACE = 2, TECH_MAGNET = 2)
 
 /obj/item/mecha_parts/part/phazon_left_leg
 	name="Phazon Left Leg"
 	icon_state = "phazon_l_leg"
-	origin_tech = list(TECH_MATERIAL = 5, TECH_BLUESPACE = 2, TECH_MAGNET = 3)
+	//construction_time = 200
+	//construction_cost = list(DEFAULT_WALL_MATERIAL=20000,"phoron"=10000)
+	origin_tech = list(TECH_MATERIAL = 5, TECH_BLUESPACE = 3, TECH_MAGNET = 3)
 
 /obj/item/mecha_parts/part/phazon_right_leg
 	name="Phazon Right Leg"
 	icon_state = "phazon_r_leg"
-	origin_tech = list(TECH_MATERIAL = 5,TECH_BLUESPACE = 2, TECH_MAGNET = 3)
-
-/obj/item/mecha_parts/part/phazon_armor
-	name="Phazon Right Armour"
-	icon_state = "phazon_armor"
+	//construction_time = 200
+	//construction_cost = list(DEFAULT_WALL_MATERIAL=20000,"phoron"=10000)
 	origin_tech = list(TECH_MATERIAL = 5, TECH_BLUESPACE = 3, TECH_MAGNET = 3)
 
 ///////// Odysseus

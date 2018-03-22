@@ -22,16 +22,32 @@ meteor_act
 			P.on_hit(src, 100, def_zone)
 			return 100
 
-	//Shrapnel
-	if(!(species.flags & NO_EMBED) && P.can_embed())
-		var/obj/item/organ/external/organ = get_organ(def_zone)
-		var/armor = getarmor_organ(organ, "bullet")
-		if(prob(20 + max(P.damage - armor, -10)))
-			var/obj/item/weapon/material/shard/shrapnel/SP = new()
-			SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
-			SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
-			SP.loc = organ
-			organ.embed(SP)
+	var/obj/item/organ/external/organ = get_organ(def_zone)
+	var/armor = getarmor_organ(organ, P.check_armour)
+	var/penetrating_damage = ((P.damage + P.armor_penetration) * P.penetration_modifier) - armor
+
+	//Organ damage
+	if(organ.internal_organs.len && prob(35 + max(penetrating_damage, -12.5)))
+		var/damage_amt = min((P.damage * P.penetration_modifier), penetrating_damage) //So we don't factor in armor_penetration as additional damage
+		if(damage_amt > 0)
+		// Damage an internal organ
+			var/list/victims = list()
+			var/list/possible_victims = shuffle(organ.internal_organs.Copy())
+			for(var/obj/item/organ/internal/I in possible_victims)
+				if(I.damage < I.max_damage && (prob((I.relative_size) * (1 / max(1, victims.len)))))
+					victims += I
+			if(victims.len)
+				for(var/obj/item/organ/victim in victims)
+					damage_amt /= 2
+					victim.take_damage(damage_amt)
+
+	//Embed or sever artery
+	if(P.can_embed() && !(species.species_flags & SPECIES_FLAG_NO_EMBED) && prob(22.5 + max(penetrating_damage, -10)) && !(prob(50) && (organ.sever_artery())))
+		var/obj/item/weapon/material/shard/shrapnel/SP = new()
+		SP.SetName((P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel")
+		SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
+		SP.loc = organ
+		organ.embed(SP)
 
 	var/blocked = ..(P, def_zone)
 
@@ -98,11 +114,13 @@ meteor_act
 		return 0
 	var/protection = 0
 	var/list/protective_gear = list(head, wear_mask, wear_suit, w_uniform, gloves, shoes)
-	for(var/gear in protective_gear)
-		if(gear && istype(gear ,/obj/item/clothing))
-			var/obj/item/clothing/C = gear
-			if(istype(C) && C.body_parts_covered & def_zone.body_part)
-				protection = add_armor(protection, C.armor[type])
+	for(var/obj/item/clothing/gear in protective_gear)
+		if(gear.body_parts_covered & def_zone.body_part)
+			protection = add_armor(protection, gear.armor[type])
+		if(gear.accessories.len)
+			for(var/obj/item/clothing/accessory/bling in gear.accessories)
+				if(bling.body_parts_covered & def_zone.body_part)
+					protection = add_armor(protection, bling.armor[type])
 	return protection
 
 /mob/living/carbon/human/proc/check_head_coverage()
@@ -117,10 +135,10 @@ meteor_act
 	return 0
 
 //Used to check if they can be fed food/drinks/pills
-/mob/living/carbon/human/proc/check_mouth_coverage()
+/mob/living/carbon/human/check_mouth_coverage()
 	var/list/protective_gear = list(head, wear_mask, wear_suit, w_uniform)
 	for(var/obj/item/gear in protective_gear)
-		if(istype(gear) && (gear.body_parts_covered & FACE) && !(gear.item_flags & FLEXIBLEMATERIAL))
+		if(istype(gear) && (gear.body_parts_covered & FACE) && !(gear.item_flags & ITEM_FLAG_FLEXIBLEMATERIAL))
 			return gear
 	return null
 
@@ -162,6 +180,7 @@ meteor_act
 		return //should be prevented by attacked_with_item() but for sanity.
 
 	visible_message("<span class='danger'>[src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"] in the [affecting.name] with [I.name] by [user]!</span>")
+	receive_damage()
 
 	var/blocked = run_armor_check(hit_zone, "melee", I.armor_penetration, "Your armor has protected your [affecting.name].", "Your armor has softened the blow to your [affecting.name].")
 	standard_weapon_hit_effects(I, user, effective_force, blocked, hit_zone)
@@ -211,7 +230,7 @@ meteor_act
 
 	//make non-sharp low-force weapons less likely to be bloodied
 	if(W.sharp || prob(effective_force*4))
-		if(!(W.flags & NOBLOODY))
+		if(!(W.atom_flags & ATOM_FLAG_NO_BLOOD))
 			W.add_blood(src)
 	else
 		return //if the weapon itself didn't get bloodied than it makes little sense for the target to be bloodied either
@@ -434,8 +453,7 @@ meteor_act
 	if(!wear_suit) return
 	if(!istype(wear_suit,/obj/item/clothing/suit/space)) return
 	var/obj/item/clothing/suit/space/SS = wear_suit
-	var/penetrated_dam = max(0,(damage - SS.breach_threshold))
-	if(penetrated_dam) SS.create_breaches(damtype, penetrated_dam)
+	SS.create_breaches(damtype, damage)
 
 /mob/living/carbon/human/reagent_permeability()
 	var/perm = 0

@@ -61,7 +61,7 @@ var/list/solars_list = list()
 
 /obj/machinery/power/solar/attackby(obj/item/weapon/W, mob/user)
 
-	if(istype(W, /obj/item/weapon/crowbar))
+	if(isCrowbar(W))
 		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 		user.visible_message("<span class='notice'>[user] begins to take the glass off the solar panel.</span>")
 		if(do_after(user, 50,src))
@@ -91,9 +91,9 @@ var/list/solars_list = list()
 	..()
 	overlays.Cut()
 	if(stat & BROKEN)
-		overlays += image('icons/obj/power.dmi', icon_state = "solar_panel-b", layer = FLY_LAYER)
+		overlays += image('icons/obj/infinity_object.dmi', icon_state = "solar_panel-b", layer = FLY_LAYER)
 	else
-		overlays += image('icons/obj/power.dmi', icon_state = "solar_panel", layer = FLY_LAYER)
+		overlays += image('icons/obj/infinity_object.dmi', icon_state = "solar_panel", layer = FLY_LAYER)
 		src.set_dir(angle2dir(adir))
 	return
 
@@ -115,7 +115,7 @@ var/list/solars_list = list()
 	sunfrac = cos(p_angle) ** 2
 	//isn't the power recieved from the incoming light proportionnal to cos(p_angle) (Lambert's cosine law) rather than cos(p_angle)^2 ?
 
-/obj/machinery/power/solar/process()//TODO: remove/add this from machines to save on processing as needed ~Carn PRIORITY
+/obj/machinery/power/solar/Process()//TODO: remove/add this from machines to save on processing as needed ~Carn PRIORITY
 	if(stat & BROKEN)
 		return
 	if(!GLOB.sun || !control) //if there's no sun or the panel is not linked to a solar control computer, no need to proceed
@@ -168,7 +168,7 @@ var/list/solars_list = list()
 /obj/machinery/power/solar/fake/New(var/turf/loc, var/obj/item/solar_assembly/S)
 	..(loc, S, 0)
 
-/obj/machinery/power/solar/fake/process()
+/obj/machinery/power/solar/fake/Process()
 	. = PROCESS_KILL
 	return
 
@@ -226,7 +226,7 @@ var/list/solars_list = list()
 /obj/item/solar_assembly/attackby(var/obj/item/weapon/W, var/mob/user)
 
 	if(!anchored && isturf(loc))
-		if(istype(W, /obj/item/weapon/wrench))
+		if(isWrench(W))
 			anchored = 1
 			pixel_x = 0
 			pixel_y = 0
@@ -235,7 +235,7 @@ var/list/solars_list = list()
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 			return 1
 	else
-		if(istype(W, /obj/item/weapon/wrench))
+		if(isWrench(W))
 			anchored = 0
 			user.visible_message("<span class='notice'>[user] unwrenches the solar assembly from it's place.</span>")
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
@@ -264,7 +264,7 @@ var/list/solars_list = list()
 			user.visible_message("<span class='notice'>[user] inserts the electronics into the solar assembly.</span>")
 			return 1
 	else
-		if(istype(W, /obj/item/weapon/crowbar))
+		if(isCrowbar(W))
 			new /obj/item/weapon/tracker_electronics(src.loc)
 			tracker = 0
 			user.visible_message("<span class='notice'>[user] takes out the electronics from the solar assembly.</span>")
@@ -403,7 +403,7 @@ var/list/solars_list = list()
 	return
 
 /obj/machinery/power/solar_control/attackby(I as obj, user as mob)
-	if(istype(I, /obj/item/weapon/screwdriver))
+	if(isScrewdriver(I))
 		playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 		if(do_after(user, 20,src))
 			if (src.stat & BROKEN)
@@ -433,7 +433,7 @@ var/list/solars_list = list()
 		src.attack_hand(user)
 	return
 
-/obj/machinery/power/solar_control/process()
+/obj/machinery/power/solar_control/Process()
 	lastgen = gen
 	gen = 0
 

@@ -15,7 +15,7 @@ var/global/universe_has_ended = 0
 /datum/universal_state/supermatter_cascade/OnTurfChange(var/turf/T)
 	var/turf/space/S = T
 	if(istype(S))
-		S.color = "#0066FF"
+		S.color = "#0066ff"
 	else
 		S.color = initial(S.color)
 
@@ -55,26 +55,23 @@ var/global/universe_has_ended = 0
 	cult.allow_narsie = 0
 
 	PlayerSet()
+	SSskybox.reinstate_skyboxes("cascade", FALSE)
 
 	new /obj/singularity/narsie/large/exit(pick(endgame_exits))
 	spawn(rand(30,60) SECONDS)
 		var/txt = {"
-По всей галактике произошёл электромагнитный импульс. Все системы сильно повреждены, и большая часть персонала умерла, или ещё умирает. Мы видим, что увеличение показаний самой вселенной, сама начинает расппутываться.
+A galaxy-wide electromagnetic pulse has been detected. All systems across space are heavily damaged and many personnel have died or are dying. We are currently detecting increasing indications that the universe itself is beginning to unravel.
 
-[station_name()], вы единственный объект, рядом с Blue-Space разломом, который находится рядом с аванпостом исследований. Это ваше текущее направление. Используйте всё, что поможет вам достич своей цели. Возможно, вы будете последним видом своего рода.
+[station_name()], the largest source of disturbances has been pinpointed directly to you. We estimate you have five minutes until a bluespace rift opens within your facilities.
 
-У вас есть пять минут до того, когда вселенная разрушится. Удачи ва\[\[###!!!-
+There is no known way to stop the formation of the rift, nor any way to escape it. You are entirely alone.
 
-АВТОМАТИЧЕСКАЯ ТРЕВОГА: Соеденение с [command_name()] оборвано.
+God help your s\[\[###!!!-
 
-Все ограничения доступа к консолям шаттлов на астероид были убраны.
+AUTOMATED ALERT: Link to [command_name()] lost.
+
 "}
-		priority_announcement.Announce(txt,"ОБНАРУЖЕН КАСКАД СУПЕРМАТЕРИИ")
-
-		for(var/obj/machinery/computer/shuttle_control/C in GLOB.machines)
-			if(istype(C, /obj/machinery/computer/shuttle_control/research) || istype(C, /obj/machinery/computer/shuttle_control/mining))
-				C.req_access = list()
-				C.req_one_access = list()
+		priority_announcement.Announce(txt,"SUPERMATTER CASCADE DETECTED")
 
 		spawn(5 MINUTES)
 			ticker.station_explosion_cinematic(0,null) // TODO: Custom cinematic
@@ -100,12 +97,12 @@ var/global/universe_has_ended = 0
 			OnTurfChange(T)
 
 /datum/universal_state/supermatter_cascade/proc/MiscSet()
-	for (var/obj/machinery/firealarm/alm in GLOB.machines)
+	for (var/obj/machinery/firealarm/alm in SSmachines.machinery)
 		if (!(alm.stat & BROKEN))
 			alm.ex_act(2)
 
 /datum/universal_state/supermatter_cascade/proc/APCSet()
-	for (var/obj/machinery/power/apc/APC in GLOB.machines)
+	for (var/obj/machinery/power/apc/APC in SSmachines.machinery)
 		if (!(APC.stat & BROKEN) && !APC.is_critical)
 			APC.chargemode = 0
 			if(APC.cell)

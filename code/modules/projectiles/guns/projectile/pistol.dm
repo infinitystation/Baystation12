@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/colt
-	name = "vintage .45 pistol"
+	name = "Colt 'M1911' pistol"
 	desc = "A cheap Martian knock-off of a Colt M1911. Uses .45 rounds."
 	magazine_type = /obj/item/ammo_magazine/c45m
 	allowed_magazines = /obj/item/ammo_magazine/c45m
@@ -8,13 +8,29 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	load_method = MAGAZINE
 
+/obj/item/weapon/gun/projectile/colt/officer
+	name = "WT45 'military' pistol"
+	desc = "The WT45 - a mass produced kinetic sidearm well-known in films and entertainment programming for being the daily carry choice issued to officers of the Sol Central Government Defense Forces. Uses .45 rounds."
+	icon_state = "usp"
+	accuracy = 0.35
+	fire_delay = 6.5
+
+/obj/item/weapon/gun/projectile/colt/officer/update_icon()
+	..()
+	if(ammo_magazine && ammo_magazine.stored_ammo.len)
+		icon_state = "usp"
+	else
+		icon_state = "usp-e"
+
 /obj/item/weapon/gun/projectile/sec
-	name = ".45 pistol"
+	name = "Mk58 pistol"
 	desc = "The NT Mk58 is a cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Found pretty much everywhere humans are. Uses .45 rounds."
 	icon_state = "secguncomp"
-	magazine_type = /obj/item/ammo_magazine/c45m/flash
+	magazine_type = null
 	allowed_magazines = /obj/item/ammo_magazine/c45m
 	caliber = ".45"
+	accuracy = -0.35
+	fire_delay = 5.5
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	load_method = MAGAZINE
 
@@ -26,12 +42,17 @@
 		icon_state = "secguncomp-e"
 
 /obj/item/weapon/gun/projectile/sec/flash
-	name = ".45 signal pistol"
+	name = "Mk58 signal pistol"
+	magazine_type = /obj/item/ammo_magazine/c45m/flash
+
+/obj/item/weapon/gun/projectile/sec/lethal
+	magazine_type = /obj/item/ammo_magazine/c45m
 
 /obj/item/weapon/gun/projectile/sec/wood
-	desc = "The NT Mk58 is a cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. This one has a sweet wooden grip. Uses .45 rounds."
+	desc = "The NT Mk58 is a cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. This one has a sweet wooden grip, among other modifications. Uses .45 rounds."
 	name = "custom .45 Pistol"
 	icon_state = "secgundark"
+	accuracy = 0
 
 /obj/item/weapon/gun/projectile/sec/wood/update_icon()
 	..()
@@ -53,12 +74,14 @@
 	allowed_magazines = /obj/item/ammo_magazine/c45m
 
 /obj/item/weapon/gun/projectile/magnum_pistol
-	name = ".50 magnum pistol"
-	desc = "A robust handgun that uses .50 AE ammo."
+	name = "'Magnus' pistol"
+	desc = "The HelTek Magnus, a robust terran handgun that uses .50 AE ammo."
 	icon_state = "magnum"
 	item_state = "revolver"
 	force = 14.0
 	caliber = ".50"
+	fire_delay = 12
+	screen_shake = 2
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/a50
 	allowed_magazines = /obj/item/ammo_magazine/a50
@@ -80,6 +103,7 @@
 	ammo_type = /obj/item/ammo_casing/a75
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/a75
+	fire_delay = 25
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 
@@ -91,7 +115,7 @@
 		icon_state = "gyropistol"
 
 /obj/item/weapon/gun/projectile/pistol
-	name = "holdout pistol"
+	name = "P3 'Whisper' pistol"
 	desc = "The Lumoco Arms P3 Whisper. A small, easily concealable gun. Uses 9mm rounds."
 	icon_state = "pistol"
 	item_state = null
@@ -152,6 +176,32 @@
 	icon_state = "silencer"
 	w_class = ITEM_SIZE_SMALL
 
+/obj/item/weapon/gun/projectile/spistol
+	name = "TH22 pistol"
+	desc = "The TH22. A small sidearm, with futuristic design. Uses .22LR rounds."
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "pistol0"
+	item_icons = list(
+		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_guns.dmi',
+		slot_r_hand_str = 'icons/mob/onmob/items/righthand_guns.dmi',
+		)
+	item_state = "gun"
+	w_class = ITEM_SIZE_SMALL
+	caliber = "22"
+	fire_delay = 1
+	origin_tech = list(TECH_COMBAT = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/c22m
+	allowed_magazines = /obj/item/ammo_magazine/c22m
+	auto_eject = 1
+	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
+
+/obj/item/weapon/gun/projectile/spistol/update_icon()
+	if(ammo_magazine)
+		icon_state = "pistol0"
+	else
+		icon_state = "pistol_empty"
+
 /obj/item/weapon/gun/projectile/pirate
 	name = "zip gun"
 	desc = "Little more than a barrel, handle, and firing mechanism, cheap makeshift firearms like this one are not uncommon in frontier systems."
@@ -160,6 +210,7 @@
 	handle_casings = CYCLE_CASINGS //player has to take the old casing out manually before reloading
 	load_method = SINGLE_CASING
 	max_shells = 1 //literally just a barrel
+	have_safety = 0
 
 	var/global/list/ammo_types = list(
 		/obj/item/ammo_casing/a357              = ".357",
@@ -225,7 +276,7 @@
 		buildstate++
 		update_icon()
 		return
-	else if(isscrewdriver(thing) && buildstate == 3)
+	else if(isScrewdriver(thing) && buildstate == 3)
 		user.visible_message("<span class='notice'>\The [user] secures the trigger assembly with \the [thing].</span>")
 		playsound(loc, 'sound/items/Screwdriver.ogg', 50, 1)
 		var/obj/item/weapon/gun/projectile/pirate/zipgun

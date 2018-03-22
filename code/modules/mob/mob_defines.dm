@@ -4,7 +4,7 @@
 
 	appearance_flags = PIXEL_SCALE
 	animate_movement = 2
-	flags = PROXMOVE
+	movable_flags = MOVABLE_FLAG_PROXMOVE
 
 	virtual_mob = /mob/observer/virtual/mob
 
@@ -26,6 +26,7 @@
 	var/obj/screen/toxin = null
 	var/obj/screen/fire = null
 	var/obj/screen/bodytemp = null
+	var/obj/screen/minsbodytemp = null
 	var/obj/screen/healths = null
 	var/obj/screen/throw_icon = null
 	var/obj/screen/nutrition_icon = null
@@ -36,7 +37,10 @@
 	var/obj/screen/gun/move/gun_move_icon = null
 	var/obj/screen/gun/run/gun_run_icon = null
 	var/obj/screen/gun/mode/gun_setting_icon = null
+
 	var/obj/screen/fade = null
+	var/obj/screen/noise = null
+	var/obj/screen/fixeye = null
 
 	var/obj/screen/movable/ability_master/ability_master = null
 
@@ -101,9 +105,6 @@
 	var/obj/item/weapon/storage/s_active = null//Carbon
 	var/obj/item/clothing/mask/wear_mask = null//Carbon
 
-
-	var/datum/hud/hud_used = null
-
 	var/list/grabbed_by = list(  )
 
 	var/in_throw_mode = 0
@@ -166,3 +167,5 @@
 	var/flavor_text = ""
 
 	var/nabbing = 0  // Whether a creature with a CAN_NAB tag is grabbing normally or in nab mode.
+
+	var/list/progressbars = null //for stacking do_after bars

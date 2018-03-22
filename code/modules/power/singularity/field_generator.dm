@@ -59,9 +59,8 @@ field_generator power level display
 	..()
 	fields = list()
 	connected_gens = list()
-	return
 
-/obj/machinery/field_generator/process()
+/obj/machinery/field_generator/Process()
 	if(Varedit_start == 1)
 		if(active == 0)
 			active = 1
@@ -76,7 +75,6 @@ field_generator power level display
 	if(src.active == 2)
 		calc_power()
 		update_icon()
-	return
 
 
 /obj/machinery/field_generator/attack_hand(mob/user as mob)
@@ -102,7 +100,7 @@ field_generator power level display
 	if(active)
 		to_chat(user, "The [src] needs to be off.")
 		return
-	else if(istype(W, /obj/item/weapon/wrench))
+	else if(isWrench(W))
 		switch(state)
 			if(0)
 				state = 1
@@ -121,7 +119,7 @@ field_generator power level display
 			if(2)
 				to_chat(user, "<span class='warning'> The [src.name] needs to be unwelded from the floor.</span>")
 				return
-	else if(istype(W, /obj/item/weapon/weldingtool))
+	else if(isWelder(W))
 		var/obj/item/weapon/weldingtool/WT = W
 		switch(state)
 			if(0)
@@ -312,12 +310,12 @@ field_generator power level display
 /obj/machinery/field_generator/proc/cleanup()
 	clean_up = 1
 	for (var/obj/machinery/containment_field/F in fields)
-		if (isnull(F))
+		if (QDELETED(F))
 			continue
 		qdel(F)
 	fields = list()
 	for(var/obj/machinery/field_generator/FG in connected_gens)
-		if (isnull(FG))
+		if (QDELETED(FG))
 			continue
 		FG.connected_gens.Remove(src)
 		if(!FG.clean_up)//Makes the other gens clean up as well
@@ -332,7 +330,7 @@ field_generator power level display
 	//I want to avoid using global variables.
 	spawn(1)
 		var/temp = 1 //stops spam
-		for(var/obj/singularity/O in GLOB.machines)
+		for(var/obj/singularity/O in SSmachines.machinery)
 			if(O.last_warning && temp)
 				if((world.time - O.last_warning) > 50) //to stop message-spam
 					temp = 0

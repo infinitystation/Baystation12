@@ -1,5 +1,15 @@
-mob/proc/flash_pain()
-	flick("pain",pain)
+mob/proc/flash_pain(var/target)
+	if(pain)
+		animate(pain, alpha = target, time = 15, easing = ELASTIC_EASING)
+		animate(pain, alpha = 0, time = 20)
+
+mob/living/carbon/proc/flash_noise()
+	if(noise)
+		var/obj/item/organ/internal/eyes/E = src.internal_organs_by_name[BP_EYES]
+		var/heckyea = src.isSynthetic() || E && E.robotic >= ORGAN_ROBOT ? 255 : 0
+		animate(noise, icon_state = "[rand(1,9)]j", alpha = 255, time = 10, easing = BOUNCE_EASING, flags = EASE_IN)
+		spawn(20)
+			animate(noise, icon_state = "[rand(1,9)]", alpha = heckyea, time = 50, easing = BOUNCE_EASING, flags = EASE_OUT)
 
 mob/var/last_pain_message
 mob/var/next_pain_time = 0
@@ -11,6 +21,8 @@ mob/living/carbon/proc/custom_pain(var/message, var/power, var/force, var/obj/it
 	if(!message || stat || !can_feel_pain() || chem_effects[CE_PAINKILLER] > power)
 		return 0
 
+	power -= chem_effects[CE_PAINKILLER]/2	//Take the edge off.
+
 	// Excessive halloss is horrible, just give them enough to make it visible.
 	if(!nohalloss && power)
 		if(affecting)
@@ -18,11 +30,16 @@ mob/living/carbon/proc/custom_pain(var/message, var/power, var/force, var/obj/it
 		else
 			adjustHalLoss(ceil(power/2))
 
+	flash_pain(min(round(2*power)+55, 255))
+	flash_noise()
+
 	// Anti message spam checks
 	if(force || (message != last_pain_message) || (world.time >= next_pain_time))
 		last_pain_message = message
-		if(power >= 50)
+		if(power >= 70)
 			to_chat(src, "<span class='danger'><font size=3>[message]</font></span>")
+		else if(power >= 40)
+			to_chat(src, "<span class='danger'><font size=2>[message]</font></span>")
 		else if(power >= 10)
 			to_chat(src, "<span class='danger'>[message]</span>")
 		else
@@ -57,15 +74,12 @@ mob/living/carbon/human/proc/handle_pain()
 			if(1 to 10)
 				msg =  "Your [damaged_organ.name] [burning ? "burns" : "hurts"]."
 			if(11 to 90)
-				flash_weak_pain()
-				msg = "<font size=2>Your [damaged_organ.name] [burning ? "burns" : "hurts"] badly!</font>"
+				msg = "Your [damaged_organ.name] [burning ? "burns" : "hurts"] badly!"
 			if(91 to 10000)
-				flash_pain()
-				msg = "<font size=3>OH GOD! Your [damaged_organ.name] is [burning ? "on fire" : "hurting terribly"]!</font>"
-		custom_pain(msg, 0, prob(10), affecting = damaged_organ)
-
+				msg = "OH GOD! Your [damaged_organ.name] is [burning ? "on fire" : "hurting terribly"]!"
+		custom_pain(msg, maxdam, prob(10), damaged_organ, TRUE)
 	// Damage to internal organs hurts a lot.
-	for(var/obj/item/organ/I in internal_organs)
+	for(var/obj/item/organ/internal/I in internal_organs)
 		if(prob(1) && !((I.status & ORGAN_DEAD) || I.robotic >= ORGAN_ROBOT) && I.damage > 5)
 			var/obj/item/organ/external/parent = get_organ(I.parent_organ)
 			var/pain = 10

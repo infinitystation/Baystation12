@@ -148,7 +148,7 @@
 
 /obj/machinery/button/toggle/door
 	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "doorctrl0"
+	icon_state = "doorctrl"
 
 	var/_door_functions = 1
 /*	Bitflag, 	1 = open
@@ -159,9 +159,9 @@
 
 /obj/machinery/button/toggle/door/update_icon()
 	if(active)
-		icon_state = "doorctrl0"
+		icon_state = "[initial(icon_state)]"
 	else
-		icon_state = "doorctrl2"
+		icon_state = "[initial(icon_state)]2"
 
 /obj/machinery/button/toggle/door/Initialize()
 	if(_wifi_id)
@@ -232,3 +232,23 @@
 	radio_connection.post_signal(src, signal, filter = RADIO_ATMOSIA)
 	active = !active
 	update_icon()
+
+/obj/machinery/button/toggle/valve/nacelle
+	name = "Reactive Engine Fuel Control"
+	frequency = 1490
+
+/obj/machinery/button/toggle/valve/nacelle/first
+	name = "First Reactive Engine Fuel Control"
+	id = "RE1F"
+
+/obj/machinery/button/toggle/valve/nacelle/second
+	name = "Second Reactive Engine Fuel Control"
+	id = "RE2F"
+
+/obj/machinery/button/toggle/valve/nacelle/third
+	name = "Third Reactive Engine Fuel Control"
+	id = "RE3F"
+
+/obj/machinery/button/toggle/valve/nacelle/fourth
+	name = "Fourth Reactive Engine Fuel Control"
+	id = "RE4F"

@@ -73,13 +73,16 @@ datum/preferences
 		return TOPIC_REFRESH
 
 	else if(href_list["gender"])
-		var/new_gender = input(user, "Choose your character's gender:", "Character Preference", pref.gender) as null|anything in S.genders
-		if(new_gender && CanUseTopic(user))
+		var/new_gender = input(user, "Choose your character's gender:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.gender) as null|anything in S.genders
+		S = all_species[pref.species]
+		if(new_gender && CanUseTopic(user) && (new_gender in S.genders))
 			pref.gender = new_gender
+			if(!(pref.f_style in S.get_facial_hair_styles(pref.gender)))
+				ResetFacialHair()
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["age"])
-		var/new_age = input(user, "Choose your character's age:\n([S.min_age]-[S.max_age])", "Character Preference", pref.age) as num|null
+		var/new_age = input(user, "Choose your character's age:\n([S.min_age]-[S.max_age])", CHARACTER_PREFERENCE_INPUT_TITLE, pref.age) as num|null
 		if(new_age && CanUseTopic(user))
 			pref.age = max(min(round(text2num(new_age)), S.max_age), S.min_age)
 			return TOPIC_REFRESH
@@ -94,7 +97,8 @@ datum/preferences
 		return TOPIC_REFRESH
 
 	else if(href_list["metadata"])
-		var/new_metadata = sanitize(input(user, "Enter any information you'd like others to see, such as Roleplay-preferences:", "Game Preference" , pref.metadata)) as message|null
+		var/new_metadata = sanitize(input(user, "Enter any information you'd like others to see, such as Roleplay-preferences:", "Game Preference" , html_decode(pref.metadata)) as message, extra = 0)
+		new_metadata = sanitize_a0(new_metadata)
 		if(new_metadata && CanUseTopic(user))
 			pref.metadata = new_metadata
 			return TOPIC_REFRESH

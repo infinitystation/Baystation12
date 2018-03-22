@@ -37,6 +37,11 @@
 
 	var/affected_by_emp_until = 0
 
+/obj/machinery/camera/examine(mob/user)
+	. = ..()
+	if(stat & BROKEN)
+		to_chat(user, "<span class='warning'>It is completely demolished.</span>")
+
 /obj/machinery/camera/malf_upgrade(var/mob/living/silicon/ai/user)
 	..()
 	malf_upgraded = 1
@@ -108,7 +113,7 @@
 	wires = null
 	return ..()
 
-/obj/machinery/camera/process()
+/obj/machinery/camera/Process()
 	if((stat & EMPED) && world.time >= affected_by_emp_until)
 		stat &= ~EMPED
 		cancelCameraAlarm()
@@ -129,7 +134,7 @@
 			triggerCameraAlarm()
 			update_icon()
 			update_coverage()
-			GLOB.processing_objects |= src
+			START_PROCESSING(SSmachines, src)
 
 /obj/machinery/camera/bullet_act(var/obj/item/projectile/P)
 	take_damage(P.get_structure_damage())
@@ -171,7 +176,7 @@
 /obj/machinery/camera/attackby(obj/item/W as obj, mob/living/user as mob)
 	update_coverage()
 	// DECONSTRUCTION
-	if(isscrewdriver(W))
+	if(isScrewdriver(W))
 //		to_chat(user, "<span class='notice'>You start to [panel_open ? "close" : "open"] the camera's panel.</span>")
 		//if(toggle_panel(user)) // No delay because no one likes screwdrivers trying to be hip and have a duration cooldown
 		panel_open = !panel_open
@@ -179,10 +184,10 @@
 		"<span class='notice'>You screw the camera's panel [panel_open ? "open" : "closed"].</span>")
 		playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 
-	else if((iswirecutter(W) || ismultitool(W)) && panel_open)
+	else if((isWirecutter(W) || isMultitool(W)) && panel_open)
 		interact(user)
 
-	else if(iswelder(W) && (wires.CanDeconstruct() || (stat & BROKEN)))
+	else if(isWelder(W) && (wires.CanDeconstruct() || (stat & BROKEN)))
 		if(weld(W, user))
 			if(assembly)
 				assembly.dropInto(loc)
@@ -194,6 +199,7 @@
 				if(stat & BROKEN)
 					assembly.state = 2
 					to_chat(user, "<span class='notice'>You repaired \the [src] frame.</span>")
+					cancelCameraAlarm()
 				else
 					assembly.state = 1
 					to_chat(user, "<span class='notice'>You cut \the [src] free from the wall.</span>")

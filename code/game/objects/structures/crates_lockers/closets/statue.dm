@@ -1,10 +1,11 @@
-/obj/structure/closet/statue
+/obj/structure/closet/statue //what
 	name = "statue"
 	desc = "An incredibly lifelike marble carving."
 	icon = 'icons/obj/statue.dmi'
 	icon_state = "human_male"
 	density = 1
 	anchored = 1
+	setup = 0
 	health = 0 //destroying the statue kills the mob within
 	var/intialTox = 0 	//these are here to keep the mob from taking damage from things that logically wouldn't affect a rock
 	var/intialFire = 0	//it's a little sloppy I know but it was this or the GODMODE flag. Lesser of two evils.
@@ -43,10 +44,10 @@
 		qdel(src)
 		return
 
-	GLOB.processing_objects.Add(src)
+	START_PROCESSING(SSobj, src)
 	..()
 
-/obj/structure/closet/statue/process()
+/obj/structure/closet/statue/Process()
 	timer--
 	for(var/mob/living/M in src) //Go-go gadget stasis field
 		M.setToxLoss(intialTox)
@@ -55,7 +56,7 @@
 		M.setOxyLoss(intialOxy)
 	if (timer <= 0)
 		dump_contents()
-		GLOB.processing_objects.Remove(src)
+		STOP_PROCESSING(SSobj, src)
 		qdel(src)
 
 /obj/structure/closet/statue/dump_contents()

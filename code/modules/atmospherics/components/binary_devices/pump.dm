@@ -39,6 +39,9 @@ Thus, the two variables affect pump operation are set in New():
 	air1.volume = ATMOS_DEFAULT_VOLUME_PUMP
 	air2.volume = ATMOS_DEFAULT_VOLUME_PUMP
 
+/obj/machinery/atmospherics/binary/pump/AltClick()
+	Topic(src, list("power" = "1"))
+
 /obj/machinery/atmospherics/binary/pump/on
 	icon_state = "map_on"
 	use_power = 1
@@ -62,7 +65,7 @@ Thus, the two variables affect pump operation are set in New():
 /obj/machinery/atmospherics/binary/pump/hide(var/i)
 	update_underlays()
 
-/obj/machinery/atmospherics/binary/pump/process()
+/obj/machinery/atmospherics/binary/pump/Process()
 	last_power_draw = 0
 	last_flow_rate = 0
 
@@ -190,27 +193,29 @@ Thus, the two variables affect pump operation are set in New():
 	return
 
 /obj/machinery/atmospherics/binary/pump/Topic(href,href_list)
-	if(..()) return 1
+	if((. = ..())) return
 
 	if(href_list["power"])
 		use_power = !use_power
+		. = 1
 
 	switch(href_list["set_press"])
 		if ("min")
 			target_pressure = 0
+			. = 1
 		if ("max")
 			target_pressure = max_pressure_setting
+			. = 1
 		if ("set")
 			var/new_pressure = input(usr,"Enter new output pressure (0-[max_pressure_setting]kPa)","Pressure control",src.target_pressure) as num
 			src.target_pressure = between(0, new_pressure, max_pressure_setting)
+			. = 1
 
-	usr.set_machine(src)
-	src.add_fingerprint(usr)
-
-	src.update_icon()
+	if(.)
+		src.update_icon()
 
 /obj/machinery/atmospherics/binary/pump/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
-	if (!istype(W, /obj/item/weapon/wrench))
+	if(!isWrench(W))
 		return ..()
 	if (!(stat & NOPOWER) && use_power)
 		to_chat(user, "<span class='warning'>You cannot unwrench this [src], turn it off first.</span>")

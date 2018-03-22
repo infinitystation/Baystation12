@@ -46,6 +46,9 @@ var/list/admin_verbs_admin = list(
 	/client/proc/admin_call_shuttle,	//allows us to call the emergency shuttle,
 	/client/proc/admin_cancel_shuttle,	//allows us to cancel the emergency shuttle, sending it back to centcomm,
 	/client/proc/cmd_admin_direct_narrate,	//send text directly to a player with no padding. Useful for narratives and fluff-text,
+	/client/proc/cmd_admin_visible_narrate,
+	/client/proc/cmd_admin_audible_narrate,
+	/client/proc/cmd_admin_local_narrate,
 	/client/proc/cmd_admin_world_narrate,	//sends text to all players with no padding,
 	/client/proc/cmd_admin_create_centcom_report,
 	/client/proc/check_ai_laws,			//shows AI and borg laws,
@@ -99,7 +102,8 @@ var/list/admin_verbs_admin = list(
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
 //	/datum/admins/proc/whitelist_panel,
 	/client/proc/debug_global_variables,
-	/client/proc/reestablish_db_connection
+	/client/proc/reestablish_db_connection,
+	/datum/admins/proc/pmp_control_panel
 	)
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
@@ -125,14 +129,16 @@ var/list/admin_verbs_fun = list(
 	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/cmd_admin_add_freeform_ai_law,
 	/client/proc/cmd_admin_add_random_ai_law,
-	/client/proc/make_sound,
 	/client/proc/toggle_random_events,
 	/client/proc/editappear,
 	/client/proc/roll_dices,
+	/datum/admins/proc/pmp_control_panel,
 	/datum/admins/proc/call_supply_drop,
 	/datum/admins/proc/call_drop_pod,
 	/client/proc/create_dungeon,
-	/datum/admins/proc/ai_hologram_set
+	/datum/admins/proc/ai_hologram_set,
+	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
+	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
 	)
 
 var/list/admin_verbs_spawn = list(
@@ -141,6 +147,7 @@ var/list/admin_verbs_spawn = list(
 	/datum/admins/proc/check_custom_items,
 	/datum/admins/proc/spawn_plant,
 	/datum/admins/proc/spawn_atom,		// allows us to spawn instances,
+	/client/proc/game_panel,
 	/client/proc/respawn_character,
 	/client/proc/respawn_as_self,
 	/client/proc/virus2_editor,
@@ -149,8 +156,8 @@ var/list/admin_verbs_spawn = list(
 var/list/admin_verbs_server = list(
 	/datum/admins/proc/capture_map_part,
 	/client/proc/Set_Holiday,
-	/client/proc/ToRban,
 	/datum/admins/proc/startnow,
+	/datum/admins/proc/endnow,
 	/datum/admins/proc/restart,
 	/datum/admins/proc/delay,
 	/datum/admins/proc/toggleaban,
@@ -182,7 +189,6 @@ var/list/admin_verbs_debug = list(
 	/client/proc/kill_air,
 	/client/proc/ZASSettings,
 	/client/proc/cmd_debug_make_powernets,
-	/client/proc/kill_airgroup,
 	/client/proc/debug_controller,
 	/client/proc/debug_antagonist_template,
 	/client/proc/cmd_debug_mob_lists,
@@ -198,6 +204,9 @@ var/list/admin_verbs_debug = list(
 	/client/proc/apply_random_map,
 	/client/proc/overlay_random_map,
 	/client/proc/delete_random_map,
+	/datum/admins/proc/map_template_load,
+	/datum/admins/proc/map_template_load_new_z,
+	/datum/admins/proc/map_template_upload,
 	/client/proc/show_plant_genes,
 	/client/proc/enable_debug_verbs,
 	/client/proc/callproc,
@@ -218,7 +227,9 @@ var/list/admin_verbs_debug = list(
 	/client/proc/debug_global_variables,
 	/client/proc/cmd_analyse_health_context,
 	/client/proc/cmd_analyse_health_panel,
-	/client/proc/reestablish_db_connection
+	/client/proc/reestablish_db_connection,
+	/client/proc/visualpower,
+	/client/proc/visualpower_remove
 	)
 
 var/list/admin_verbs_paranoid_debug = list(
@@ -257,6 +268,9 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/admin_call_shuttle,
 	/client/proc/admin_cancel_shuttle,
 	/client/proc/cmd_admin_direct_narrate,
+	/client/proc/cmd_admin_visible_narrate,
+	/client/proc/cmd_admin_audible_narrate,
+	/client/proc/cmd_admin_local_narrate,
 	/client/proc/cmd_admin_world_narrate,
 	/client/proc/play_local_sound,
 	/client/proc/play_sound,
@@ -272,11 +286,9 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/cmd_admin_add_freeform_ai_law,
 	/client/proc/cmd_admin_add_random_ai_law,
 	/client/proc/cmd_admin_create_centcom_report,
-	/client/proc/make_sound,
 	/client/proc/toggle_random_events,
 	/client/proc/cmd_admin_add_random_ai_law,
 	/client/proc/Set_Holiday,
-	/client/proc/ToRban,
 	/datum/admins/proc/startnow,
 	/datum/admins/proc/restart,
 	/datum/admins/proc/delay,
@@ -296,7 +308,6 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/reload_admins,
 	/client/proc/kill_air,
 	/client/proc/cmd_debug_make_powernets,
-	/client/proc/kill_airgroup,
 	/client/proc/debug_controller,
 	/client/proc/startSinglo,
 	/client/proc/cmd_debug_mob_lists,
@@ -306,7 +317,7 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/enable_debug_verbs,
 	/client/proc/roll_dices,
 	/proc/possess,
-	/proc/release
+	/proc/release,
 	)
 var/list/admin_verbs_mod = list(
 	/client/proc/cmd_admin_pm_context,	// right-click adminPM interface,
@@ -438,6 +449,7 @@ var/list/admin_verbs_mentor = list(
 		var/mob/body = mob
 		var/mob/observer/ghost/ghost = body.ghostize(1)
 		ghost.admin_ghosted = 1
+		log_admin("[key_name(usr)] used aghost.")
 		if(body)
 			body.teleop = ghost
 			if(!body.key)
@@ -465,6 +477,7 @@ var/list/admin_verbs_mentor = list(
 	set category = "Admin"
 	if(holder)
 		holder.player_panel_old()
+		log_admin("[key_name(usr)] opened old player panel.")
 	feedback_add_details("admin_verb","PP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
@@ -473,6 +486,7 @@ var/list/admin_verbs_mentor = list(
 	set category = "Admin"
 	if(holder)
 		holder.player_panel_new()
+		log_admin("[key_name(usr)] opened player panel.")
 	feedback_add_details("admin_verb","PPN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
@@ -605,7 +619,7 @@ var/list/admin_verbs_mentor = list(
 	log_and_message_admins("created an admin explosion at [epicenter.loc].")
 	feedback_add_details("admin_verb","DB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/give_disease2(mob/T as mob in GLOB.mob_list) // -- Giacom
+/client/proc/give_disease2(mob/T as mob in SSmobs.mob_list) // -- Giacom
 	set category = "Fun"
 	set name = "Give Disease"
 	set desc = "Gives a Disease to a mob."
@@ -634,20 +648,6 @@ var/list/admin_verbs_mentor = list(
 
 	feedback_add_details("admin_verb","GD2") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_and_message_admins("gave [key_name(T)] a [greater] disease2 with infection chance [D.infectionchance].")
-
-/client/proc/make_sound(var/obj/O in range(world.view)) // -- TLE
-	set category = "Special Verbs"
-	set name = "Make Sound"
-	set desc = "Display a message to everyone who can hear the target"
-	if(O)
-		var/message = sanitize(input("What do you want the message to be?", "Make Sound") as text|null)
-		if(!message)
-			return
-		for (var/mob/V in hearers(O))
-			V.show_message(message, 2)
-		log_and_message_admins("made \the [O] make a sound")
-		feedback_add_details("admin_verb","MS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
 
 /client/proc/togglebuildmodeself()
 	set name = "Toggle Build Mode Self"
@@ -868,12 +868,12 @@ var/list/admin_verbs_mentor = list(
 		M.s_tone =  -M.s_tone + 35
 
 	// hair
-	var/new_hstyle = input(usr, "Select a hair style", "Grooming")  as null|anything in hair_styles_list
+	var/new_hstyle = input(usr, "Select a hair style", "Grooming")  as null|anything in GLOB.hair_styles_list
 	if(new_hstyle)
 		M.h_style = new_hstyle
 
 	// facial hair
-	var/new_fstyle = input(usr, "Select a facial hair style", "Grooming")  as null|anything in facial_hair_styles_list
+	var/new_fstyle = input(usr, "Select a facial hair style", "Grooming")  as null|anything in GLOB.facial_hair_styles_list
 	if(new_fstyle)
 		M.f_style = new_fstyle
 
@@ -942,7 +942,7 @@ var/list/admin_verbs_mentor = list(
 			to_chat(src, "<b>Enabled maint drones.</b>")
 			message_admins("Admin [key_name_admin(usr)] has enabled maint drones.", 1)
 
-/client/proc/man_up(mob/T as mob in GLOB.mob_list)
+/client/proc/man_up(mob/T as mob in SSmobs.mob_list)
 	set category = "Fun"
 	set name = "Man Up"
 	set desc = "Tells mob to man up and deal with it."
@@ -957,13 +957,13 @@ var/list/admin_verbs_mentor = list(
 	set name = "Man Up Global"
 	set desc = "Tells everyone to man up and deal with it."
 
-	for (var/mob/T as mob in GLOB.mob_list)
+	for (var/mob/T as mob in SSmobs.mob_list)
 		to_chat(T, "<br><center><span class='notice'><b><font size=4>Man up.<br> Deal with it.</font></b><br>Move on.</span></center><br>")
 		sound_to(T, 'sound/voice/ManUp1.ogg')
 
 	log_and_message_admins("told everyone to man up and deal with it.")
 
-/client/proc/give_spell(mob/T as mob in GLOB.mob_list) // -- Urist
+/client/proc/give_spell(mob/T as mob in SSmobs.mob_list) // -- Urist
 	set category = "Fun"
 	set name = "Give Spell"
 	set desc = "Gives a spell to a mob."

@@ -11,6 +11,7 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BELT
 	loaded = /obj/item/weapon/rcd_ammo/large
+	combustion = 1
 
 	var/initial_cell_type = /obj/item/weapon/cell/hyper
 	var/initial_capacitor_type = /obj/item/weapon/stock_parts/capacitor/adv
@@ -60,7 +61,7 @@
 	visible_message("<span class='warning'>\The [src] beeps and ejects its empty cartridge.</span>")
 
 /obj/item/weapon/gun/magnetic/railgun/automatic // Adminspawn only, this shit is absurd.
-	name = "\improper RHR accelerator"
+	name = "\improper MI-227 'Meteor' accelerator"
 	desc = "The Mars Military Industries MI-227 Meteor. Originally a vehicle-mounted turret weapon for heavy anti-vehicular and anti-structural fire, the fact that it was made man-portable is mindboggling in itself."
 	icon_state = "heavy_railgun"
 
@@ -85,7 +86,7 @@
 		to_chat(user, "<span class='notice'>Someone has scratched <i>Ultima Ratio Regum</i> onto the side of the barrel.</span>")
 
 /obj/item/weapon/gun/magnetic/railgun/flechette
-	name = "flechette gun"
+	name = "MI-12 'Skadi' flechette gun"
 	desc = "The MI-12 Skadi is a burst fire capable railgun that fires flechette rounds at high velocity. Deadly against armour, but much less effective against soft targets."
 	icon_state = "flechette_gun"
 	item_state = "z8carbine"

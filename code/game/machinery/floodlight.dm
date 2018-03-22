@@ -20,7 +20,7 @@
 	overlays.Cut()
 	icon_state = "flood[open ? "o" : ""][open && cell ? "b" : ""]0[on]"
 
-/obj/machinery/floodlight/process()
+/obj/machinery/floodlight/Process()
 	if(!on)
 		return
 
@@ -99,7 +99,7 @@
 
 
 /obj/machinery/floodlight/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if (istype(W, /obj/item/weapon/screwdriver))
+	if(isScrewdriver(W))
 		if (!open)
 			if(unlocked)
 				unlocked = 0
@@ -108,7 +108,7 @@
 				unlocked = 1
 				to_chat(user, "You unscrew the battery panel.")
 
-	if (istype(W, /obj/item/weapon/crowbar))
+	if(isCrowbar(W))
 		if(unlocked)
 			if(open)
 				open = 0

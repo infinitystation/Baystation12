@@ -7,7 +7,7 @@
 	anchored = 1
 	use_power = 1
 	idle_power_usage = 40
-	flags = OBJ_ANCHORABLE
+	obj_flags = OBJ_FLAG_ANCHORABLE
 	var/biomass = 100
 	var/biomass_max = 100
 	var/biomass_per = 10
@@ -112,7 +112,7 @@
 	src.audible_message("<b>\The [src]</b> states, \"Your [text] is ready!\"")
 	playsound(src.loc, 'sound/machines/ding.ogg', 50, 1)
 	var/atom/A = new type(src.loc)
-	A.name = text
+	A.SetName(text)
 	A.desc = "Looks... actually pretty good."
 	use_power(75000)
 	return 1
@@ -141,7 +141,7 @@
 	if(world.time > make_time)
 		start_making = 1
 
-/obj/machinery/food_replicator/process()
+/obj/machinery/food_replicator/Process()
 	if(queued_dishes && queued_dishes.len)
 		if(start_making) //want to do this first so that the first dish won't instantly come out
 			src.audible_message("<b>\The [src]</b> rumbles and vibrates.")

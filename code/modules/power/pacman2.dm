@@ -76,22 +76,22 @@
 			O.loc = src
 			to_chat(user, "<span class='notice'>You add the phoron tank to the generator.</span>")
 		else if(!active)
-			if(istype(O, /obj/item/weapon/wrench))
+			if(isWrench(O))
 				anchored = !anchored
 				playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 				if(anchored)
 					to_chat(user, "<span class='notice'>You secure the generator to the floor.</span>")
 				else
 					to_chat(user, "<span class='notice'>You unsecure the generator from the floor.</span>")
-				makepowernets()
-			else if(istype(O, /obj/item/weapon/screwdriver))
+				SSmachines.makepowernets()
+			else if(isScrewdriver(O))
 				open = !open
 				playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 				if(open)
 					to_chat(user, "<span class='notice'>You open the access panel.</span>")
 				else
 					to_chat(user, "<span class='notice'>You close the access panel.</span>")
-			else if(istype(O, /obj/item/weapon/crowbar) && !open)
+			else if(isCrowbar(O) && !open)
 				var/obj/machinery/constructable_frame/machine_frame/new_frame = new /obj/machinery/constructable_frame/machine_frame(src.loc)
 				for(var/obj/item/I in component_parts)
 					I.loc = src.loc

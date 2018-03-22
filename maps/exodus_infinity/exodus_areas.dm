@@ -64,14 +64,14 @@
 
 /area/shuttle/specops/centcom
 	name = "\improper Special Ops Shuttle"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/administration
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/syndicate_elite
 	name = "\improper Merc Elite Shuttle"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/transport1/centcom
 	icon_state = "shuttle"
@@ -94,7 +94,7 @@
 
 /area/shuttle/escape
 	name = "\improper Emergency Shuttle"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape/station
 	name = "\improper Emergency Shuttle Station"
@@ -107,7 +107,7 @@
 
 /area/shuttle/escape_pod1
 	name = "\improper Escape Pod One"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod1/station
 	icon_state = "shuttle2"
@@ -118,7 +118,7 @@
 
 /area/shuttle/escape_pod2
 	name = "\improper Escape Pod Two"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod2/station
 	icon_state = "shuttle2"
@@ -129,7 +129,7 @@
 
 /area/shuttle/escape_pod3
 	name = "\improper Escape Pod Three"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod3/station
 	icon_state = "shuttle2"
@@ -140,7 +140,7 @@
 
 /area/shuttle/escape_pod4
 	name = "\improper Escape Pod Four"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod4/station
 	icon_state = "shuttle2"
@@ -181,7 +181,7 @@
 	icon_state = "yellow"
 	requires_power = 0
 	dynamic_lighting = 1
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/rescue_base/base
 	name = "\improper Barracks"
@@ -242,7 +242,7 @@
 	name = "\improper Independant Station"
 	icon_state = "yellow"
 	requires_power = 0
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/syndicate_station/start
 	name = "\improper Mercenary Forward Operating Base"
@@ -328,7 +328,7 @@
 	icon_state = "green"
 	requires_power = 0
 	dynamic_lighting = 1
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/ninja_dojo/dojo
 	name = "\improper Clan Dojo"
@@ -518,6 +518,15 @@
 	lift_announce_str = "Arriving at the maintenance level, below the Engineering department."
 	base_turf = /turf/simulated/floor/plating
 
+/area/turbolift/dorms_station
+	name = "Station - By Fitness"
+	lift_announce_str = "Arriving at the station level."
+
+/area/turbolift/dorms_maintenance
+	name = "Maintenance - Below Fitness"
+	lift_announce_str = "Arriving at the main dormitorium level, below the fitness room."
+	base_turf = /turf/simulated/floor/plating
+
 /area/turbolift/cargo_station
 	name = "Station - By Cargo"
 	lift_announce_str = "Arriving at the station level, by the Cargo department."
@@ -595,7 +604,7 @@
 /area/crew_quarters
 	name = "\improper Dormitories"
 	icon_state = "Sleep"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/crew_quarters/locker
 	name = "\improper Locker Room"
@@ -619,6 +628,20 @@
 	name = "\improper Dormitory Bedroom One"
 	icon_state = "Sleep"
 	sound_env = SMALL_SOFTFLOOR
+
+/area/crew_quarters/top/stair
+	name = "\improper Dormitory Top Stair"
+	icon_state = "Sleep"
+	sound_env = SMALL_SOFTFLOOR
+
+/area/crew_quarters/top/fitness
+	name = "\improper Fitness Room"
+	icon_state = "fitness"
+
+/area/crew_quarters/top/toilet
+	name = "\improper Locker Toilets"
+	icon_state = "toilet"
+	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/locker/locker_toilet
 	name = "\improper Locker Toilets"
@@ -917,6 +940,10 @@ area/rnd/test_area
 	name = "\improper Research Server Room"
 	icon_state = "server"
 
+/area/rnd/xenobiology/lobby
+	name = "\improper Xenobiology Lobby"
+	icon_state = "xeno_lab"
+
 //Storage
 
 /area/storage/art
@@ -1115,8 +1142,8 @@ area/rnd/test_area
 
 /area/shuttle/escape_pod6
 	name = "\improper Escape Pod Six"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/shuttle/escape_pod7
 	name = "\improper Escape Pod Seven"
-	flags = AREA_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED

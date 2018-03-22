@@ -2,9 +2,10 @@
 	var/list/motionTargets = list()
 	var/detectTime = 0
 	var/alarm_delay = 100 // Don't forget, there's another 10 seconds in queueAlarm()
-	flags = PROXMOVE
+	movable_flags = MOVABLE_FLAG_PROXMOVE
 
 /obj/machinery/camera/internal_process()
+	..()
 	// motion camera event loop
 	if (stat & (EMPED|NOPOWER))
 		return

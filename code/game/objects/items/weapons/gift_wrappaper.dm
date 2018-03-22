@@ -35,7 +35,7 @@
 /obj/effect/spresent/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()
 
-	if (!istype(W, /obj/item/weapon/wirecutters))
+	if(!isWirecutter(W))
 		to_chat(user, "<span class='warning'>I need wirecutters for that.</span>")
 		return
 
@@ -51,6 +51,7 @@
 
 /obj/item/weapon/a_gift/attack_self(mob/M as mob)
 	var/gift_type = pick(
+		/obj/item/weapon/storage/wallet/poly,
 		/obj/item/weapon/storage/wallet,
 		/obj/item/weapon/storage/photo_album,
 		/obj/item/weapon/storage/box/snappops,
@@ -62,17 +63,44 @@
 		/obj/item/weapon/pen/invisible,
 		/obj/item/weapon/lipstick/random,
 		/obj/item/weapon/grenade/smokebomb,
+		/obj/item/weapon/grenade/fake,
+		/obj/item/weapon/stamp/clown,
+		/obj/item/weapon/spacecash/bundle/c10,
+		/obj/item/clothing/shoes/slippers_worn,
 		/obj/item/weapon/corncob,
 		/obj/item/weapon/contraband/poster,
+		/obj/item/weapon/grenade/spawnergrenade/fake_carp,
 		/obj/item/weapon/book/manual/barman_recipes,
 		/obj/item/weapon/book/manual/chef_recipes,
 		/obj/item/weapon/bikehorn,
 		/obj/item/weapon/beach_ball,
 		/obj/item/weapon/beach_ball/holoball,
 		/obj/item/toy/water_balloon,
+		/obj/item/toy/balloon/nanotrasen,
+		/obj/item/weapon/marshalling_wand,
 		/obj/item/toy/blink,
 		/obj/item/toy/crossbow,
 		/obj/item/weapon/gun/projectile/revolver/capgun,
+		/obj/item/device/flashlight/slime,
+		/obj/item/stack/flag/solgov,
+		/obj/item/weapon/material/stick,
+		/obj/item/weapon/reagent_containers/food/snacks/can/three,
+		/obj/item/pizzabox/margherita,
+		/obj/item/frame/party_alarm,
+		/obj/item/clothing/head/philosopher_wig,
+		/obj/item/clothing/ears/earmuffs/headphones,
+		/obj/item/device/pda/wrist,
+		/obj/item/device/kit/paint/ripley/death,
+		/obj/item/clothing/mask/gas/clown_hat,
+		/obj/item/clothing/mask/fakemoustache,
+		/obj/item/clothing/mask/luchador/tecnicos,
+		/obj/item/clothing/head/festive,
+		/obj/item/clothing/head/helmet/daft_punk,
+		/obj/item/clothing/head/kitty,
+		/obj/item/weapon/glass_extra/straw,
+		/obj/item/weapon/ore/coal,
+		/obj/item/toy/plushie/nymph,
+		/obj/item/toy/plushie/farwa,
 		/obj/item/toy/katana,
 		/obj/item/toy/prize/deathripley,
 		/obj/item/toy/prize/durand,
@@ -91,6 +119,7 @@
 		/obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris,
 		/obj/item/device/paicard,
 		/obj/item/device/violin,
+		/obj/item/device/guitar,
 		/obj/item/weapon/storage/belt/utility/full,
 		/obj/item/clothing/accessory/horrible)
 
@@ -155,7 +184,7 @@
 	if (!( locate(/obj/structure/table, src.loc) ))
 		to_chat(user, "<span class='warning'>You MUST put the paper on a table!</span>")
 	if (W.w_class < ITEM_SIZE_HUGE)
-		if ((istype(user.l_hand, /obj/item/weapon/wirecutters) || istype(user.r_hand, /obj/item/weapon/wirecutters)))
+		if(isWirecutter(user.l_hand) || isWirecutter(user.r_hand))
 			var/a_used = W.get_storage_cost()
 			if (a_used == ITEM_SIZE_NO_CONTAINER)
 				to_chat(user, "<span class='warning'>You can't wrap that!</span>")//no gift-wrapping lit welders
@@ -172,7 +201,6 @@
 					var/obj/item/weapon/gift/G = new /obj/item/weapon/gift( src.loc, W )
 					G.add_fingerprint(user)
 					W.add_fingerprint(user)
-					src.add_fingerprint(user)
 					src.amount -= a_used
 
 			if (src.amount <= 0)

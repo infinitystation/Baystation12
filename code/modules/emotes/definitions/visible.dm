@@ -19,21 +19,21 @@
 
 /decl/emote/visible/sway
 	key ="sway"
-	emote_message_3p = "USER sways around dizzily."
+	emote_message_3p = "USER раскачиваетс&#255; до головокружени&#255;."
 
 /decl/emote/visible/sulk
 	key ="sulk"
-	emote_message_3p = "USER sulks down sadly."
+	emote_message_3p = "USER грустно садитс&#255;."
 
 /decl/emote/visible/dance
 	key ="dance"
 	check_restraints = TRUE
-	emote_message_3p = "USER dances around happily."
+	emote_message_3p = "USER танцует."
 
 /decl/emote/visible/roll
 	key ="roll"
 	check_restraints = TRUE
-	emote_message_3p = "USER rolls."
+	emote_message_3p = "USER катаетс&#255;."
 
 /decl/emote/visible/shake
 	key ="shake"
@@ -68,6 +68,11 @@
 	key = "blink"
 	emote_message_3p = "USER моргает."
 
+/decl/emote/visible/blink/do_emote(var/mob/user)
+	if(isliving(user))
+		var/mob/living/L = user
+		L.eye_blink()
+
 /decl/emote/visible/airguitar
 	key = "airguitar"
 	check_restraints = TRUE
@@ -82,11 +87,6 @@
 	emote_message_3p_target = "USER делает поклон TARGET."
 	emote_message_3p = "USER делает поклон."
 
-/decl/emote/visible/salute
-	key = "salute"
-	emote_message_3p_target = "USER выполн&#255;ет воинское приветствие TARGET."
-	emote_message_3p = "USER выполн&#255;ет воинское приветствие."
-
 /decl/emote/visible/flap
 	key = "flap"
 	check_restraints = TRUE
@@ -99,7 +99,7 @@
 
 /decl/emote/visible/eyebrow
 	key = "eyebrow"
-	emote_message_3p = "USER приподнимает брови."
+	emote_message_3p = "USER приподнимает бровь."
 
 /decl/emote/visible/twitch
 	key = "twitch"
@@ -176,11 +176,11 @@
 
 /decl/emote/visible/tremble
 	key = "tremble"
-	emote_message_3p = "USER trembles in fear!"
+	emote_message_3p = "USER трепещет в страхе!"
 
 /decl/emote/visible/wink
 	key = "wink"
-	emote_message_3p = "USER winks."
+	emote_message_3p = "USER подмигивает."
 
 /decl/emote/visible/hug
 	key = "hug"
@@ -216,7 +216,7 @@
 
 /decl/emote/visible/vibrate
 	key = "vibrate"
-	emote_message_3p = "USER vibrates!"
+	emote_message_3p = "USER вибрирует!"
 
 /decl/emote/visible/deathgasp_robot
 	key = "deathgasp"

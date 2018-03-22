@@ -2,10 +2,6 @@
 	display_name = "hazard vests"
 	path = /obj/item/clothing/suit/storage/hazardvest
 
-/datum/gear/suit/hazard/New()
-	..()
-	gear_tweaks += new/datum/gear_tweak/path(/obj/item/clothing/suit/storage/hazardvest)
-
 /datum/gear/suit/hoodie
 	display_name = "hoodie"
 	path = /obj/item/clothing/suit/storage/toggle/hoodie
@@ -49,14 +45,6 @@
 	path = /obj/item/clothing/suit/poncho/colored
 	cost = 1
 
-/datum/gear/suit/poncho/New()
-	..()
-	gear_tweaks += new/datum/gear_tweak/path(/obj/item/clothing/suit/poncho/colored)
-
-/datum/gear/suit/suit_jacket
-	display_name = "suit jackets"
-	path = /obj/item/clothing/suit/storage/toggle/lawyer/bluejacket
-
 /datum/gear/suit/roles/poncho/security
 	display_name = "poncho, security"
 	path = /obj/item/clothing/suit/poncho/roles/security
@@ -77,14 +65,6 @@
 	display_name = "poncho, supply"
 	path = /obj/item/clothing/suit/poncho/roles/cargo
 
-/datum/gear/suit/suit_jacket/New()
-	..()
-	var/suitjackets = list()
-	suitjackets["black suit jacket"] = /obj/item/clothing/suit/storage/toggle/internalaffairs/plain
-	suitjackets["blue suit jacket"] = /obj/item/clothing/suit/storage/toggle/lawyer/bluejacket
-	suitjackets["purple suit jacket"] = /obj/item/clothing/suit/storage/lawyer/purpjacket
-	gear_tweaks += new/datum/gear_tweak/path(suitjackets)
-
 /datum/gear/suit/wintercoat
 	display_name = "winter coat"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat
@@ -92,7 +72,3 @@
 /datum/gear/suit/track
 	display_name = "track jacket selection"
 	path = /obj/item/clothing/suit/storage/toggle/track
-
-/datum/gear/suit/track/New()
-	..()
-	gear_tweaks += new/datum/gear_tweak/path(/obj/item/clothing/suit/storage/toggle/track)

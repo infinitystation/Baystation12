@@ -19,6 +19,16 @@
 		//loading
 		if(istype(target,/obj))
 			var/obj/O = target
+
+			if(istype(target, /obj/structure/rubble))
+				var/obj/structure/rubble/pile = target
+				playsound(target, 'sound/machines/airlock_creaking.ogg', 50, 1)
+				if(do_after_cooldown(pile))
+					occupant_message("<font color='red'>You squeeze the [pile.name] into compact shape.</font>")
+					pile.make_cube()
+				else
+					occupant_message("<font color='red'>[target] is firmly secured.</font>")
+
 			if(O.buckled_mob)
 				return
 			if(locate(/mob/living) in O)
@@ -35,6 +45,7 @@
 				return
 
 			occupant_message("You lift [target] and start to load it into cargo compartment.")
+			playsound(src,'sound/mecha/hydraulic.ogg',100,1)
 			chassis.visible_message("[chassis] lifts [target] and starts to load it into cargo compartment.")
 			set_ready_state(0)
 			chassis.use_power(energy_drain)
@@ -88,6 +99,7 @@
 		chassis.use_power(energy_drain)
 		chassis.visible_message("<span class='danger'>\The [chassis] starts to drill \the [target]</span>", "<span class='warning'>You hear a large drill.</span>")
 		occupant_message("<span class='danger'>You start to drill \the [target]</span>")
+		playsound(src,'sound/mecha/mechdrill.ogg',100,1)
 		var/T = chassis.loc
 		var/C = target.loc	//why are these backwards? we may never know -Pete
 		if(do_after_cooldown(target))
@@ -143,6 +155,7 @@
 		chassis.use_power(energy_drain)
 		chassis.visible_message("<span class='danger'>\The [chassis] starts to drill \the [target]</span>", "<span class='warning'>You hear a large drill.</span>")
 		occupant_message("<span class='danger'>You start to drill \the [target]</span>")
+		playsound(src,'sound/mecha/mechdrill.ogg',100,1)
 		var/T = chassis.loc
 		var/C = target.loc	//why are these backwards? we may never know -Pete
 		if(do_after_cooldown(target))
@@ -190,11 +203,9 @@
 	var/max_water = 1000
 
 	New()
-		reagents = new/datum/reagents(max_water)
-		reagents.my_atom = src
+		create_reagents(max_water)
 		reagents.add_reagent(/datum/reagent/water, max_water)
 		..()
-		return
 
 	action(atom/target) //copypasted from extinguisher. TODO: Rewrite from scratch.
 		if(!action_checks(target) || get_dist(chassis, target)>3) return
@@ -416,7 +427,7 @@
 		P.icon = 'icons/obj/objects.dmi'
 		P.failchance = 0
 		P.icon_state = "anom"
-		P.name = "wormhole"
+		P.SetName("wormhole")
 		do_after_cooldown()
 		src = null
 		spawn(rand(150,300))

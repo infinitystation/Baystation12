@@ -1,8 +1,9 @@
 /obj/effect/overmap/sector/exoplanet
 	name = "exoplanet"
+	icon_state = "globe"
 	var/list/seeds = list()
 	var/list/animals = list()
-	var/animalcount
+	var/max_animal_count
 	var/datum/gas_mixture/atmosphere
 	var/list/breathgas = list()	//list of gases animals/plants require to survive
 	var/badgas					//id of gas that is toxic to life here
@@ -14,44 +15,52 @@
 	var/landmark_type = /obj/effect/shuttle_landmark/automatic
 
 	var/list/actors = list() //things that appear in engravings on xenoarch finds.
+	var/list/species = list() //list of names to use for simple animals
 
+	var/repopulating = 0
+	var/repopulate_types = list() // animals which have died that may come back
 
-/obj/effect/overmap/sector/exoplanet/New()
+	var/features_budget = 2
+	var/list/possible_features = list(/datum/map_template/ruin/exoplanet/monolith) //pre-defined list of features templates to pick from
+
+/obj/effect/overmap/sector/exoplanet/New(nloc, max_x, max_y)
 	if(!GLOB.using_map.use_overmap)
-		qdel(src)
 		return
 
-	maxx = world.maxx
-	maxy = world.maxy
+	maxx = max_x ? max_x : world.maxx
+	maxy = max_y ? max_y : world.maxy
 
 	name = "[generate_planet_name()], \a [name]"
 
 	world.maxz++
 	forceMove(locate(1,1,world.maxz))
-	map_z = GetConnectedZlevels(z)
-	for(var/zlevel in map_z)
-		map_sectors["[zlevel]"] = src
 
+	var/list/feature_types = possible_features.Copy()
+	possible_features.Cut()
+	for(var/T in feature_types)
+		var/datum/map_template/ruin/exoplanet/ruin = new T
+		possible_features[ruin.id] = ruin
 	..()
 
 /obj/effect/overmap/sector/exoplanet/proc/build_level()
 	spawn()
 		generate_atmosphere()
 		generate_map()
-		generate_landing()
+		generate_features()
+		for(var/i = 0 to 3)
+			generate_landing()
 		update_biome()
-		GLOB.processing_objects += src
+		START_PROCESSING(SSobj, src)
 
 //attempt at more consistent history generation for xenoarch finds.
 /obj/effect/overmap/sector/exoplanet/proc/get_engravings()
-	if(!actors)
-		actors += pick("alien humanoid","amorphic blob","short, hairy being","rodent-like creature","robot","primate","reptilian alien","unidentifiable object","statue","starship","unusual devices","structure")
+	if(!actors.len)
+		actors += pick("alien humanoid","an amorphic blob","a short, hairy being","a rodent-like creature","a robot","a primate","a reptilian alien","an unidentifiable object","a statue","a starship","unusual devices","a structure")
 		actors += pick("alien humanoids","amorphic blobs","short, hairy beings","rodent-like creatures","robots","primates","reptilian aliens")
 
-	var/engravings = "[pick("Engraved","Carved","Etched")] on the item is [pick("an image of","a frieze of","a depiction of")] a \
-	[pick(actors[1])] \
+	var/engravings = "[actors[1]] \
 	[pick("surrounded by","being held aloft by","being struck by","being examined by","communicating with")] \
-	[pick(actors[2])]"
+	[actors[2]]"
 	if(prob(50))
 		engravings += ", [pick("they seem to be enjoying themselves","they seem extremely angry","they look pensive","they are making gestures of supplication","the scene is one of subtle horror","the scene conveys a sense of desperation","the scene is completely bizarre")]"
 	engravings += "."
@@ -60,38 +69,50 @@
 //Not that it should ever get deleted but just in case
 /obj/effect/overmap/sector/exoplanet/Destroy()
 		. = ..()
-		GLOB.processing_objects -= src
+		STOP_PROCESSING(SSobj, src)
 
-/obj/effect/overmap/sector/exoplanet/process()
-	var/list/dead = list()
-	for(var/mob/M in animals)
-		if(M.stat == DEAD)
-			dead += M
+/obj/effect/overmap/sector/exoplanet/Process()
+	if(animals.len < 0.5*max_animal_count && !repopulating)
+		repopulating = 1
+		max_animal_count = round(max_animal_count * 0.5)
 	for(var/zlevel in map_z)
-		if(dead.len > 0.5*animalcount)
-			for(var/i = 1 to round(dead.len - 0.5*animalcount))
+		if(repopulating)
+			for(var/i = 1 to round(max_animal_count - animals.len))
 				if(prob(10))
-					var/turf/simulated/T = locate(rand(1,world.maxx), rand(1,world.maxy), zlevel)
-					var/mob/S = pick(dead)
-					S = new S.type(T)
+					var/turf/simulated/T = locate(rand(1,maxx), rand(1,maxy), zlevel)
+					var/mob_type = pick(repopulate_types)
+					var/mob/S = new mob_type(T)
+					animals += S
+					GLOB.death_event.register(S, src, /obj/effect/overmap/sector/exoplanet/proc/remove_animal)
+					GLOB.destroyed_event.register(S, src, /obj/effect/overmap/sector/exoplanet/proc/remove_animal)
 					adapt_animal(S)
+			if(animals.len >= max_animal_count)
+				repopulating = 0
 
 		if(!atmosphere)
 			continue
 		var/zone/Z
-		for(var/i = 1 to world.maxx)
-			var/turf/simulated/T = locate(i, 1, zlevel)
-			if(istype(T) && T.zone && T.zone.contents.len > (world.maxx*world.maxy*0.25)) //if it's a zone quarter of zlevel, good enough odds it's planetary main one
+		for(var/i = 1 to maxx)
+			var/turf/simulated/T = locate(i, 2, zlevel)
+			if(istype(T) && T.zone && T.zone.contents.len > (maxx*maxy*0.25)) //if it's a zone quarter of zlevel, good enough odds it's planetary main one
 				Z = T.zone
 				break
-		if(!Z.fire_tiles.len && !atmosphere.compare(Z.air)) //let fire die out first if there is one
+		if(Z && !Z.fire_tiles.len && !atmosphere.compare(Z.air)) //let fire die out first if there is one
 			var/datum/gas_mixture/daddy = new() //make a fake 'planet' zone gas
 			daddy.copy_from(atmosphere)
 			daddy.group_multiplier = Z.air.group_multiplier
 			Z.air.equalize(daddy)
 
+/obj/effect/overmap/sector/exoplanet/proc/remove_animal(var/mob/M)
+	animals -= M
+	GLOB.death_event.unregister(M, src)
+	GLOB.destroyed_event.unregister(M, src)
+	repopulate_types |= M.type
 
 /obj/effect/overmap/sector/exoplanet/proc/generate_map()
+
+/obj/effect/overmap/sector/exoplanet/proc/generate_features()
+	seedRuins(map_z, features_budget, /area/exoplanet, possible_features, maxx, maxy)
 
 /obj/effect/overmap/sector/exoplanet/proc/get_biostuff(var/datum/random_map/noise/exoplanet/random_map)
 	seeds += random_map.small_flora_types
@@ -100,31 +121,38 @@
 	for(var/mob/living/simple_animal/A in GLOB.living_mob_list_)
 		if(A.z in map_z)
 			animals += A
-	animalcount = animals.len
+			GLOB.death_event.register(A, src, /obj/effect/overmap/sector/exoplanet/proc/remove_animal)
+			GLOB.destroyed_event.register(A, src, /obj/effect/overmap/sector/exoplanet/proc/remove_animal)
+	max_animal_count = animals.len
 
 /obj/effect/overmap/sector/exoplanet/proc/update_biome()
-	for(var/gas in atmosphere.gas)
-		breathgas[gas] = round(0.4*atmosphere.gas[gas])
-	var/list/badgases = gas_data.gases.Copy()
-	badgases -= atmosphere.gas
-	badgas = pick(badgases)
 	for(var/datum/seed/S in seeds)
-		S.set_trait(TRAIT_IDEAL_HEAT,          atmosphere.temperature + rand(-5,5),800,70)
-		S.set_trait(TRAIT_HEAT_TOLERANCE,      S.get_trait(TRAIT_HEAT_TOLERANCE) + rand(-5,5),800,70)
-		S.set_trait(TRAIT_LOWKPA_TOLERANCE,    atmosphere.return_pressure() + rand(-5,-50),80,0)
-		S.set_trait(TRAIT_HIGHKPA_TOLERANCE,   atmosphere.return_pressure() + rand(5,50),500,110)
-		if(S.exude_gasses)
-			S.exude_gasses -= badgas
-		if(S.consume_gasses)
-			S.consume_gasses = list(pick(atmosphere.gas)) // ensure that if the plant consumes a gas, the atmosphere will have it
-		for(var/g in atmosphere.gas)
-			if(gas_data.flags[g] & XGM_GAS_CONTAMINANT)
-				S.set_trait(TRAIT_TOXINS_TOLERANCE, rand(10,15))
+		adapt_seed(S)
 
 	for(var/mob/living/simple_animal/A in animals)
 		adapt_animal(A)
 
+/obj/effect/overmap/sector/exoplanet/proc/adapt_seed(var/datum/seed/S)
+	S.set_trait(TRAIT_IDEAL_HEAT,          atmosphere.temperature + rand(-5,5),800,70)
+	S.set_trait(TRAIT_HEAT_TOLERANCE,      S.get_trait(TRAIT_HEAT_TOLERANCE) + rand(-5,5),800,70)
+	S.set_trait(TRAIT_LOWKPA_TOLERANCE,    atmosphere.return_pressure() + rand(-5,-50),80,0)
+	S.set_trait(TRAIT_HIGHKPA_TOLERANCE,   atmosphere.return_pressure() + rand(5,50),500,110)
+	if(S.exude_gasses)
+		S.exude_gasses -= badgas
+	if(S.consume_gasses)
+		S.consume_gasses = list(pick(atmosphere.gas)) // ensure that if the plant consumes a gas, the atmosphere will have it
+	for(var/g in atmosphere.gas)
+		if(gas_data.flags[g] & XGM_GAS_CONTAMINANT)
+			S.set_trait(TRAIT_TOXINS_TOLERANCE, rand(10,15))
+
 /obj/effect/overmap/sector/exoplanet/proc/adapt_animal(var/mob/living/simple_animal/A)
+	if(species[A.type])
+		A.SetName(species[A.type])
+		A.real_name = species[A.type]
+	else
+		A.SetName("alien creature")
+		A.real_name = "alien creature"
+		A.verbs |= /mob/living/simple_animal/proc/name_species
 	A.minbodytemp = atmosphere.temperature - 20
 	A.maxbodytemp = atmosphere.temperature + 30
 	A.bodytemperature = (A.maxbodytemp+A.minbodytemp)/2
@@ -133,6 +161,22 @@
 	if(A.max_gas)
 		A.max_gas = list()
 		A.max_gas[badgas] = 5
+
+/obj/effect/overmap/sector/exoplanet/proc/get_random_species_name()
+	return pick("nol","shan","can","fel","xor")+pick("a","e","o","t","ar")+pick("ian","oid","ac","ese","inian","rd")
+
+/obj/effect/overmap/sector/exoplanet/proc/rename_species(var/species_type, var/newname, var/force = FALSE)
+	if(species[species_type] && !force)
+		return FALSE
+
+	species[species_type] = newname
+	log_and_message_admins("renamed [species_type] to [newname]")
+	for(var/mob/living/simple_animal/A in animals)
+		if(istype(A,species_type))
+			A.SetName(newname)
+			A.real_name = newname
+			A.verbs -= /mob/living/simple_animal/proc/name_species
+	return TRUE
 
 /obj/effect/overmap/sector/exoplanet/proc/generate_landing()
 	var/turf/T = locate(rand(20, maxx-20), rand(20, maxy - 10),map_z[map_z.len])
@@ -152,38 +196,57 @@
 		if(prob(50)) //alium gas should be slightly less common than mundane shit
 			newgases -= "aliether"
 
+		var/sanity = prob(99.9)
+
 		var/total_moles = MOLES_CELLSTANDARD * rand(80,120)/100
 		var/gasnum = rand(1,4)
-		for(var/i = 1 to gasnum) //swapping gases wholesale. don't try at home
+		var/i = 1
+		while(i <= gasnum && total_moles && newgases.len)
 			var/ng = pick_n_take(newgases)	//pick a gas
+			if(sanity) //make sure atmosphere is not flammable... always
+				var/badflag = 0
+				if(gas_data.flags[ng] & XGM_GAS_OXIDIZER)
+					badflag = XGM_GAS_FUEL
+				if(gas_data.flags[ng] & XGM_GAS_FUEL)
+					badflag = XGM_GAS_OXIDIZER
+				if(badflag)
+					for(var/g in newgases)
+						if(gas_data.flags[g] & badflag)
+							newgases -= g
+					sanity = 0
+
 			var/part = total_moles * rand(3,80)/100 //allocate percentage to it
-			if(i == gasnum) //if it's last gas, let it have all remaining moles
+			if(i == gasnum || !newgases.len) //if it's last gas, let it have all remaining moles
 				part = total_moles
 			atmosphere.gas[ng] += part
 			total_moles = max(total_moles - part, 0)
+			i++
 
-	atmosphere.temperature = T20C + rand(-10, 10)
-	var/factor = max(rand(60,140)/100, 0.6)
-	atmosphere.multiply(factor)
+	//Set up gases for living things
+	for(var/gas in atmosphere.gas)
+		breathgas[gas] = round(0.4*atmosphere.gas[gas])
+	var/list/badgases = gas_data.gases.Copy()
+	badgases -= atmosphere.gas
+	badgas = pick(badgases)
 
 /obj/effect/overmap/sector/exoplanet/proc/process_map_edge(atom/movable/A)
 	var/new_x
 	var/new_y
 	if(A.x <= TRANSITIONEDGE)
-		new_x = world.maxx - TRANSITIONEDGE - 2
-		new_y = rand(TRANSITIONEDGE + 2, world.maxy - TRANSITIONEDGE - 2)
+		new_x = maxx - TRANSITIONEDGE - 2
+		new_y = rand(TRANSITIONEDGE + 2, maxy - TRANSITIONEDGE - 2)
 
-	else if (A.x >= (world.maxx - TRANSITIONEDGE + 1))
+	else if (A.x >= (maxx - TRANSITIONEDGE + 1))
 		new_x = TRANSITIONEDGE + 1
-		new_y = rand(TRANSITIONEDGE + 2, world.maxy - TRANSITIONEDGE - 2)
+		new_y = rand(TRANSITIONEDGE + 2, maxy - TRANSITIONEDGE - 2)
 
 	else if (A.y <= TRANSITIONEDGE)
-		new_y = world.maxy - TRANSITIONEDGE -2
-		new_x = rand(TRANSITIONEDGE + 2, world.maxx - TRANSITIONEDGE - 2)
+		new_y = maxy - TRANSITIONEDGE -2
+		new_x = rand(TRANSITIONEDGE + 2, maxx - TRANSITIONEDGE - 2)
 
-	else if (A.y >= (world.maxy - TRANSITIONEDGE + 1))
+	else if (A.y >= (maxy - TRANSITIONEDGE + 1))
 		new_y = TRANSITIONEDGE + 1
-		new_x = rand(TRANSITIONEDGE + 2, world.maxx - TRANSITIONEDGE - 2)
+		new_x = rand(TRANSITIONEDGE + 2, maxx - TRANSITIONEDGE - 2)
 
 	var/turf/T = locate(new_x, new_y, A.z)
 	if(T)
@@ -206,9 +269,12 @@
 	var/land_type = /turf/simulated/floor
 	var/water_type
 
+	//intended x*y size, used to adjust spawn probs
+	var/intended_x = 150
+	var/intended_y = 150
 	var/large_flora_prob = 60
 	var/flora_prob = 60
-	var/fauna_prob = 5
+	var/fauna_prob = 2
 	var/flora_diversity = 4
 
 	var/list/fauna_types = list()
@@ -216,15 +282,34 @@
 	var/list/big_flora_types = list()
 	var/list/plantcolors = list("RANDOM")
 
-/datum/random_map/noise/exoplanet/New()
+/datum/random_map/noise/exoplanet/New(var/seed, var/tx, var/ty, var/tz, var/tlx, var/tly, var/do_not_apply, var/do_not_announce, var/never_be_priority = 0)
 	target_turf_type = world.turf
 	planetary_area = new planetary_area()
 	water_level = rand(water_level_min,water_level_max)
 	generate_flora()
+
+	//automagically adjust probs for bigger maps to help with lag
+	var/size_mod = intended_x / tlx * intended_y / tly
+	flora_prob *= size_mod
+	large_flora_prob *= size_mod
+	fauna_prob *= size_mod
+
 	..()
+
+	GLOB.using_map.base_turf_by_z[num2text(tz)] = land_type
 
 /datum/random_map/noise/exoplanet/proc/noise2value(var/value)
 	return min(9,max(0,round((value/cell_range)*10)))
+
+/datum/random_map/noise/exoplanet/apply_to_turf(var/x,var/y)
+	var/turf/T = ..()
+	if(T && limit_x < world.maxx && (T.y == limit_y || T.x == limit_x))
+		T.set_density(1)
+		T.set_opacity(1)
+		if(istype(T, /turf/simulated))
+			var/turf/simulated/S = T
+			S.blocks_air = 1
+
 
 /datum/random_map/noise/exoplanet/get_map_char(var/value)
 	if(water_type && noise2value(value) < water_level)
@@ -243,8 +328,8 @@
 		if(2 to 3)
 			if(prob(flora_prob))
 				spawn_flora(T)
-			/*if(prob(fauna_prob))
-				spawn_fauna(T)*/
+			if(prob(fauna_prob))
+				spawn_fauna(T)
 		if(5 to 6)
 			if(prob(flora_prob/3))
 				spawn_flora(T)
@@ -275,21 +360,28 @@
 		else if(carnivore_prob < 20)
 			S.set_trait(TRAIT_CARNIVOROUS,1)
 		small_flora_types += S
-	for(var/i = 1 to flora_diversity)
-		var/datum/seed/S = new()
-		S.randomize()
-		S.set_trait(TRAIT_PRODUCT_ICON,"alien[rand(1,5)]")
-		S.set_trait(TRAIT_PLANT_ICON,"tree5")
-		S.set_trait(TRAIT_SPREAD,0)
-		S.set_trait(TRAIT_HARVEST_REPEAT,1)
-		S.chems["woodpulp"] = 1
-		big_flora_types += S
+	if(large_flora_prob)
+		var/tree_diversity = max(1,flora_diversity/2)
+		for(var/i = 1 to tree_diversity)
+			var/datum/seed/S = new()
+			S.randomize()
+			S.set_trait(TRAIT_PRODUCT_ICON,"alien[rand(1,5)]")
+			S.set_trait(TRAIT_PLANT_ICON,"tree")
+			S.set_trait(TRAIT_SPREAD,0)
+			S.set_trait(TRAIT_HARVEST_REPEAT,1)
+			S.set_trait(TRAIT_LARGE,1)
+			var/color = pick(plantcolors)
+			if(color == "RANDOM")
+				color = get_random_colour(0,75,190)
+			S.set_trait(TRAIT_LEAVES_COLOUR,color)
+			S.chems["woodpulp"] = 1
+			big_flora_types += S
 
 /datum/random_map/noise/exoplanet/proc/spawn_flora(var/turf/T, var/big)
 	if(big)
-		new /obj/effect/plant(T, pick(big_flora_types), start_matured = 1)
+		new /obj/machinery/portable_atmospherics/hydroponics/soil/invisible(T, pick(big_flora_types), 1)
 	else
-		new /obj/effect/plant(T, pick(small_flora_types), start_matured = 1)
+		new /obj/machinery/portable_atmospherics/hydroponics/soil/invisible(T, pick(small_flora_types), 1)
 
 /turf/simulated/floor/exoplanet
 	name = "space land"
@@ -301,11 +393,12 @@
 
 /turf/simulated/floor/exoplanet/Entered(atom/movable/A)
 	..()
+
 	if(A.simulated && GLOB.using_map.use_overmap)
-		if (A.x <= TRANSITIONEDGE || A.x >= (world.maxx - TRANSITIONEDGE + 1) || A.y <= TRANSITIONEDGE || A.y >= (world.maxy - TRANSITIONEDGE + 1))
-			var/obj/effect/overmap/sector/exoplanet/E = map_sectors["[z]"]
-			if(istype(E))
-				E.process_map_edge(A)
+		var/obj/effect/overmap/sector/exoplanet/sector = map_sectors["[z]"]
+		if(istype(sector))
+			if (A.x <= TRANSITIONEDGE || A.x >= (sector.maxx - TRANSITIONEDGE + 1) || A.y <= TRANSITIONEDGE || A.y >= (sector.maxy - TRANSITIONEDGE + 1))
+				sector.process_map_edge(A)
 
 /turf/simulated/floor/exoplanet/New()
 	if(GLOB.using_map.use_overmap)

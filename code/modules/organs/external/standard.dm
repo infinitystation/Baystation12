@@ -21,6 +21,7 @@
 	parent_organ = null
 	encased = "ribcage"
 	artery_name = "aorta"
+	cavity_name = "thoracic"
 
 /obj/item/organ/external/chest/robotize()
 	if(..())
@@ -50,6 +51,7 @@
 	dislocated = -1
 	gendered_icon = 1
 	artery_name = "iliac artery"
+	cavity_name = "abdominal"
 
 /obj/item/organ/external/arm
 	organ_tag = BP_L_ARM
@@ -103,7 +105,7 @@
 /obj/item/organ/external/leg/stun_act(var/stun_amount, var/agony_amount)
 	if(!owner || agony_amount < 5)
 		return
-	if(prob(agony_amount*2))
+	if(prob(min(agony_amount*2,50)))
 		to_chat(owner, "<span class='warning'>Your [src] buckles from the shock!</span>")
 		owner.Weaken(5)
 
@@ -136,7 +138,7 @@
 /obj/item/organ/external/foot/stun_act(var/stun_amount, var/agony_amount)
 	if(!owner || agony_amount < 5)
 		return
-	if(prob(agony_amount*4))
+	if(prob(min(agony_amount*4,70)))
 		to_chat(owner, "<span class='warning'>You lose your footing as your [src] spasms!</span>")
 		owner.Weaken(5)
 

@@ -94,19 +94,6 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		computerid = bancid
 		ip = banip
 
-	var/dbckey = sql_sanitize_text(ckey)
-	var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM erro_player WHERE ckey = '[dbckey]'")
-	if(!query.Execute())
-		return
-	var/validckey = 0
-	if(query.NextRow())
-		validckey = 1
-	if(!validckey)
-		if(!banned_mob || (banned_mob && !IsGuestKey(banned_mob.key)))
-			if(usr)
-				message_admins("<font color='red'>[key_name_admin(usr)] attempted to ban [ckey], but [ckey] has not been seen yet. Please only ban actual players.</font>",1)
-			return 0
-
 	var/who
 	for(var/client/C in GLOB.clients)
 		if(!who)
@@ -121,6 +108,7 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		else
 			adminwho += ", [C]"
 
+	var/reason_public = reason
 	reason = sql_sanitize_text(reason)
 
 	if(!computerid)
@@ -136,6 +124,15 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		to_chat(usr, "<span class='notice'>Ban saved to database.</span>")
 		setter = key_name_admin(usr)
 	message_admins("[setter] has added a [bantype_str] for [ckey] [(job)?"([job])":""] [(duration > 0)?"([duration] minutes)":""] with the reason: \"[reason]\" to the ban database.",1)
+	switch(bantype_str)
+		if("PERMABAN")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] ЖЕСТКО и НАВСЕГДА заблокировал(а) игрока [ckey]. Причина: [reason_public]</b></span>")
+		if("TEMPBAN")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] ЖЕСТКО заблокировал(а) игрока [ckey]. Причина: [reason_public] Срок - [duration] минут.</b></span>")
+		if("SOFT_PERMBAN")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] перманентно отправил(а) икрока [ckey] в бан-тюрьму. Причина: [reason_public]</b></span>")
+		if("SOFT_TEMPBAN")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: [reason_public] Срок - [duration] минут.</b></span>")
 	return 1
 
 
@@ -361,7 +358,7 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 	output += "<option value=''>--</option>"
 	for(var/j in get_all_jobs())
 		output += "<option value='[j]'>[j]</option>"
-	for(var/j in nonhuman_positions)
+	for(var/j in GLOB.nonhuman_positions)
 		output += "<option value='[j]'>[j]</option>"
 	var/list/bantypes = list("traitor","changeling","operative","revolutionary","cultist","wizard") //For legacy bans.
 	var/list/all_antag_types = all_antag_types()

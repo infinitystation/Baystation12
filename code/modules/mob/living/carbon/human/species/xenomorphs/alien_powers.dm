@@ -119,7 +119,7 @@
 	set desc = "Plants some alien weeds"
 	set category = "Abilities"
 
-	if(check_alien_ability(50,1,BP_RESIN))
+	if(check_alien_ability(50,1,BP_RESIN) && !is_ventcrawling)
 		visible_message("<span class='alium'><B>[src] has planted some alien weeds!</B></span>")
 		new /obj/structure/alien/node(loc)
 	return

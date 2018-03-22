@@ -43,7 +43,7 @@
 	return ..()
 
 
-obj/machinery/resleever/process()
+obj/machinery/resleever/Process()
 
 	if(occupant)
 		occupant.Paralyse(4) // We need to always keep the occupant sleeping if they're in here.
@@ -177,7 +177,7 @@ obj/machinery/resleever/process()
 		else
 			to_chat(user, "<span class='warning'>\The [src] already has a neural lace inside it!</span>")
 			return
-	else if(istype(W, /obj/item/weapon/wrench))
+	else if(isWrench(W))
 		if(isnull(occupant))
 			if(anchored)
 				anchored = 0

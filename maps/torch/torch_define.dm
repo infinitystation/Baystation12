@@ -10,13 +10,12 @@
 
 	station_levels = list(1,2,3,4,5)
 	contact_levels = list(1,2,3,4,5)
-	player_levels = list(1,2,3,4,5,6,7,8,9)
-	admin_levels = list(10,11)
-	empty_levels = list(6)
-	accessible_z_levels = list("1"=1,"2"=1,"3"=1,"4"=1,"5"=1,"6"=30,"7"=10,"8"=10)
-	overmap_size = 40
-	overmap_event_areas = 12
-	base_turf_by_z = list("9" = /turf/simulated/floor/asteroid)
+	player_levels = list(1,2,3,4,5,8)
+	admin_levels = list(6,7)
+	empty_levels = list(8)
+	accessible_z_levels = list("1"=1,"2"=1,"3"=1,"4"=1,"5"=1,"8"=30)
+	overmap_size = 35
+	overmap_event_areas = 34
 	usable_email_tlds = list("torch.ec.scg", "torch.fleet.mil", "torch.marine.mil", "freemail.nt")
 
 	allowed_spawns = list("Cryogenic Storage", "Cyborg Storage")
@@ -42,6 +41,9 @@
 
 	default_law_type = /datum/ai_laws/solgov
 	use_overmap = 1
+	planet_size = list(129,129)
+
+	away_site_budget = 3
 
 	id_hud_icons = 'maps/torch/icons/assignment_hud.dmi'
 	lobby_screens = list("title","title2")
@@ -60,30 +62,24 @@
 	welcome_text += "Next system targeted for jump:<br /><b>[generate_system_name()]</b><br />"
 	welcome_text += "Travel time to Sol:<br /><b>[rand(15,45)] days</b><br />"
 	welcome_text += "Time since last port visit:<br /><b>[rand(60,180)] days</b><br />"
-	welcome_text += "Scan results:<br />"
-	var/list/scan_results = list()
-	for(var/poi in points_of_interest)
-		if(poi == "SEV Torch")
+	welcome_text += "Scan results show the following points of interest:<br />"
+	var/list/space_things = list()
+	var/obj/effect/overmap/torch = map_sectors["1"]
+	for(var/zlevel in map_sectors)
+		var/obj/effect/overmap/O = map_sectors[zlevel]
+		if(O.name == torch.name)
 			continue
-		if(isnull(scan_results[poi]))
-			scan_results[poi] = 1
-		else
-			scan_results[poi] += 1
-	for(var/result in scan_results)
-		var/count = scan_results[result]
-		if(count == 1)
-			welcome_text += "\A <b>[result]</b><br />"
-		else
-			welcome_text += "[count] <b>[result]\s</b><br />"
+		space_things |= O
+
+	for(var/obj/effect/overmap/O in space_things)
+		var/location_desc = " at present co-ordinates."
+		if (O.loc != torch.loc)
+			var/bearing = round(90 - Atan2(O.x - torch.x, O.y - torch.y),5) //fucking triangles how do they work
+			if(bearing < 0)
+				bearing += 360
+			location_desc = ", bearing [bearing]."
+		welcome_text += "<li>\A <b>[O.name]</b>[location_desc]</li>"
+	welcome_text += "<br>No distress calls logged.<br />"
 
 	post_comm_message("SEV Torch Sensor Readings", welcome_text)
 	minor_announcement.Announce(message = "New [GLOB.using_map.company_name] Update available at all communication consoles.")
-
-
-
-/datum/map/torch/perform_map_generation()
-	new /datum/random_map/automata/cave_system(null,1,1,7,world.maxx,world.maxy) // Create the mining Z-level.
-	new /datum/random_map/noise/ore(null,1,1,7,64, 64)             // Create the mining ore distribution map.
-	new /datum/random_map/automata/cave_system(null,1,1,9,world.maxx,world.maxy) // Create the mining Z-level.
-	new /datum/random_map/noise/ore(null,1,1,9,64, 64)             // Create the mining ore distribution map.
-	return 1

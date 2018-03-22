@@ -111,7 +111,7 @@ Quick adjacency (to turf):
 	Check if obj block pass in any direction like windows, windor, etc
 */
 /obj/proc/is_block_dir(target_dir, border_only, atom/target)
-	if(flags & ON_BORDER) // windows have throwpass but are on border, check them first
+	if(obj_flags & ATOM_FLAG_CHECKS_BORDER) // windows have throwpass but are on border, check them first
 		if(dir & target_dir)
 			return TRUE
 	if(!border_only)
@@ -130,7 +130,7 @@ Quick adjacency (to turf):
 
 /*
 	This checks if you there is uninterrupted airspace between that turf and this one.
-	This is defined as any dense ON_BORDER object, or any dense object without throwpass.
+	This is defined as any dense ATOM_FLAG_CHECKS_BORDER object, or any dense object without throwpass.
 	The border_only flag allows you to not objects (for source and destination squares)
 */
 /turf/proc/ClickCross(var/target_dir, var/border_only, var/target_atom = null)
@@ -139,9 +139,18 @@ Quick adjacency (to turf):
 		if(!O.density || O == target_atom || O.throwpass)
 			continue
 
-		if(O.is_block_dir(target_dir, border_only, target_atom))
-			return FALSE
-	return TRUE
+		if(O.atom_flags & ATOM_FLAG_CHECKS_BORDER) // windows have throwpass but are on border, check them first
+			if( O.dir & target_dir || O.dir&(O.dir-1) ) // full tile windows are just diagonals mechanically
+				var/obj/structure/window/W = target_atom
+				if(istype(W))
+					if(!W.is_fulltile())	//exception for breaking full tile windows on top of single pane windows
+						return 0
+				else
+					return 0
+
+		else if( !border_only ) // dense, not on border, cannot pass over
+			return 0
+	return 1
 /*
 	Aside: throwpass does not do what I thought it did originally, and is only used for checking whether or not
 	a thrown object should stop after already successfully entering a square.  Currently the throw code involved

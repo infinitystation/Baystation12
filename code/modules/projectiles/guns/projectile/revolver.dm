@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/revolver
-	name = "revolver"
+	name = "HE 'Colt' revolver"
 	desc = "The Lumoco Arms HE Colt is a choice revolver for when you absolutely, positively need to put a hole in the other guy. Uses .357 ammo."
 	icon_state = "revolver"
 	item_state = "revolver"
@@ -7,8 +7,18 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	handle_casings = CYCLE_CASINGS
 	max_shells = 6
+	fire_delay = 6.75 //Revolvers are naturally slower-firing
 	ammo_type = /obj/item/ammo_casing/a357
 	var/chamber_offset = 0 //how many empty chambers in the cylinder until you hit a round
+	have_safety = 0
+
+/obj/item/weapon/gun/projectile/revolver/AltClick()
+	if(CanPhysicallyInteract(usr))
+		spin_cylinder()
+
+/obj/item/weapon/gun/projectile/revolver/AltClick()
+	if(CanPhysicallyInteract(usr))
+		spin_cylinder()
 
 /obj/item/weapon/gun/projectile/revolver/verb/spin_cylinder()
 	set name = "Spin cylinder"
@@ -36,7 +46,9 @@
 /obj/item/weapon/gun/projectile/revolver/mateba
 	name = "mateba"
 	icon_state = "mateba"
+	caliber = ".50"
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	ammo_type = /obj/item/ammo_casing/a50
 
 /obj/item/weapon/gun/projectile/revolver/detective
 	name = "revolver"
@@ -61,7 +73,7 @@
 	var/input = sanitizeSafe(input("What do you want to name the gun?", ,""), MAX_NAME_LEN)
 
 	if(src && input && !M.stat && in_range(M,src))
-		name = input
+		SetName(input)
 		to_chat(M, "You name the gun [input]. Say hello to your new friend.")
 		return 1
 
@@ -106,3 +118,41 @@
 	icon_state = "revolver"
 	desc += " Someone snipped off the barrel's toy mark. How dastardly."
 	return 1
+
+/obj/item/weapon/gun/projectile/revolver/webley
+	name = "service revolver"
+	desc = "A rugged top break revolver based on the Webley Mk. VI model, with modern improvements. Uses .44 magnum rounds."
+	icon_state = "webley"
+	item_state = "webley"
+	max_shells = 6
+	caliber = ".44"
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	ammo_type = /obj/item/ammo_casing/c44
+
+/obj/item/weapon/gun/projectile/revolver/lr22
+	name = ".22LR revolver"
+	desc = "A rugged revolver based on the Smith & Wesson 617 model, with modern improvements. Uses .22LR rounds."
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "22lr_revolver"
+	item_state = "revolver"
+	max_shells = 10
+	caliber = "22"
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	ammo_type = /obj/item/ammo_casing/a22lr
+
+/obj/item/weapon/gun/projectile/revolver/shotgun
+	name = "RSH-12 shotgun-revolver"
+	desc = "The old RSH-12 shotgun revolder designer for spec ops. Useful for sweeping alleys."
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "rsh-12"
+	item_icons = list(
+		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_guns.dmi',
+		slot_r_hand_str = 'icons/mob/onmob/items/righthand_guns.dmi',
+		)
+	item_state = "gun"
+	max_shells = 4
+	fire_delay = 8
+	force = 10
+	caliber = "shotgun"
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
+	ammo_type = /obj/item/ammo_casing/shotgun

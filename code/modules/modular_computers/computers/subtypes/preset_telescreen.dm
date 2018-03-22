@@ -17,3 +17,7 @@
 	..()
 	hard_drive.store_file(new/datum/computer_file/program/camera_monitor())
 	hard_drive.store_file(new/datum/computer_file/program/supermatter_monitor())
+
+/obj/item/modular_computer/telescreen/preset/trashcompactor/install_default_programs()
+	..()
+	hard_drive.store_file(new/datum/computer_file/program/crushercontrol())

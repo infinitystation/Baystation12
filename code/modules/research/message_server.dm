@@ -74,14 +74,12 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 	decryptkey = GenerateKey()
 	send_pda_message("System Administrator", "system", "This is an automated message. The messaging system is functioning correctly.")
 	..()
-	return
 
 /obj/machinery/message_server/Destroy()
 	message_servers -= src
-	..()
-	return
+	return ..()
 
-/obj/machinery/message_server/process()
+/obj/machinery/message_server/Process()
 	if(active && (stat & (BROKEN|NOPOWER)))
 		active = 0
 		power_failure = 10
@@ -118,18 +116,16 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 			if(Console.newmessagepriority < priority)
 				Console.newmessagepriority = priority
 				Console.icon_state = "req_comp[priority]"
-			switch(priority)
-				if(2)
-					if(!Console.silent)
-						playsound(Console.loc, 'sound/machines/twobeep.ogg', 50, 1)
-						Console.audible_message(text("\icon[Console] *The Requests Console beeps: 'PRIORITY Alert in [sender]'"),,5)
-					Console.message_log += "<B><FONT color='red'>High Priority message from <A href='?src=\ref[Console];write=[sender]'>[sender]</A></FONT></B><BR>[authmsg]"
-				else
-					if(!Console.silent)
-						playsound(Console.loc, 'sound/machines/twobeep.ogg', 50, 1)
-						Console.audible_message(text("\icon[Console] *The Requests Console beeps: 'Message from [sender]'"),,4)
-					Console.message_log += "<B>Message from <A href='?src=\ref[Console];write=[sender]'>[sender]</A></B><BR>[authmsg]"
-			Console.set_light(2)
+			if(priority > 1)
+				playsound(Console.loc, 'sound/machines/chime.ogg', 80, 1)
+				Console.audible_message("\icon[Console]<span class='warning'>\The [Console] announces: 'High priority message received from [sender]!'</span>", hearing_distance = 8)
+				Console.message_log += "<FONT color='red'>High Priority message from <A href='?src=\ref[Console];write=[sender]'>[sender]</A></FONT><BR>[authmsg]"
+			else
+				if(!Console.silent)
+					playsound(Console.loc, 'sound/machines/twobeep.ogg', 50, 1)
+					Console.audible_message("\icon[Console]<span class='notice'>\The [Console] announces: 'Message received from [sender].'</span>", hearing_distance = 5)
+				Console.message_log += "<B>Message from <A href='?src=\ref[Console];write=[sender]'>[sender]</A></B><BR>[authmsg]"
+		Console.set_light(2)
 
 
 /obj/machinery/message_server/attack_hand(user as mob)
@@ -160,6 +156,18 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 
 	return
 
+/obj/machinery/message_server/proc/send_to_department(var/department, var/message, var/tone)
+	var/reached = 0
+	for(var/obj/item/device/pda/P in PDAs)
+		if(P.toff)
+			continue
+		var/datum/job/J = job_master.GetJob(P.ownrank)
+		if(!J)
+			continue
+		if(J.department_flag & department)
+			P.new_info(P.message_silent, tone ? tone : P.ttone, "\icon[P] [message]")
+			reached++
+	return reached
 
 /datum/feedback_variable
 	var/variable
@@ -242,6 +250,7 @@ var/obj/machinery/blackbox_recorder/blackbox
 	var/list/msg_raider = list()
 	var/list/msg_cargo = list()
 	var/list/msg_service = list()
+	var/list/msg_exploration = list()
 
 	var/list/datum/feedback_variable/feedback = new()
 
@@ -290,7 +299,7 @@ var/obj/machinery/blackbox_recorder/blackbox
 	var/pda_msg_amt = 0
 	var/rc_msg_amt = 0
 
-	for(var/obj/machinery/message_server/MS in GLOB.machines)
+	for(var/obj/machinery/message_server/MS in SSmachines.machinery)
 		if(MS.pda_msgs.len > pda_msg_amt)
 			pda_msg_amt = MS.pda_msgs.len
 		if(MS.rc_msgs.len > rc_msg_amt)

@@ -3,7 +3,7 @@
 /datum/song
 	var/name = "Untitled"
 	var/list/lines = new()
-	var/tempo = 5
+	var/tempo = 4
 
 /obj/structure/device/piano
 	name = "space minimoog"
@@ -418,7 +418,7 @@
 	return
 
 /obj/structure/device/piano/attackby(obj/item/O as obj, mob/user as mob)
-	if (istype(O, /obj/item/weapon/wrench))
+	if(isWrench(O))
 		if (anchored)
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 			to_chat(user, "<span class='notice'>You begin to loosen \the [src]'s casters...</span>")

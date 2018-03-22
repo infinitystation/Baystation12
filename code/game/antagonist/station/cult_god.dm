@@ -84,13 +84,13 @@ var/datum/antagonist/godcultist/godcult
 		return 1
 
 /datum/antagonist/godcultist/proc/add_cultist(var/datum/mind/player, var/mob/living/deity/deity)
-	deity.change_follower(player.current, adding = 1)
+	deity.add_follower(player.current)
 	player.current.add_language(LANGUAGE_CULT)
 
 /datum/antagonist/godcultist/proc/remove_cultist(var/datum/mind/player)
 	var/mob/living/deity/god = get_deity(player)
 	if(god)
-		god.change_follower(player.current, adding = 0)
+		god.remove_follower(player.current)
 	player.current.remove_language(LANGUAGE_CULT)
 
 /datum/antagonist/godcultist/proc/get_deity(var/datum/mind/player)
@@ -111,6 +111,6 @@ var/datum/antagonist/godcultist/godcult
 		return
 
 	//Make em wait a few seconds.
-	src.visible_message("\[src] bows their head down, muttering something.", "<span class='notice'>You send the message \"[msg]\" to your master.</span>")
+	src.visible_message("\The [src] bows their head down, muttering something.", "<span class='notice'>You send the message \"[msg]\" to your master.</span>")
 	to_chat(D, "<span class='notice'>\The [src] (<A href='?src=\ref[D];jump=\ref[src];'>J</A>) prays, \"[msg]\"</span>")
 	log_and_message_admins("dprayed, \"[msg]\" to \the [key_name(D)]")

@@ -232,9 +232,9 @@
 					else
 
 						var/no_mask
-						if(!(C.wear_mask && C.wear_mask.item_flags & AIRTIGHT))
+						if(!(C.wear_mask && C.wear_mask.item_flags & ITEM_FLAG_AIRTIGHT))
 							var/mob/living/carbon/human/H = C
-							if(!(H.head && H.head.item_flags & AIRTIGHT))
+							if(!(H.head && H.head.item_flags & ITEM_FLAG_AIRTIGHT))
 								no_mask = 1
 
 						if(no_mask)
@@ -333,6 +333,17 @@
 		if("drop")
 			if(usr.client)
 				usr.client.drop_item()
+
+		if("fixeye")
+			usr.face_direction()
+			if(usr.facing_dir)
+				usr.fixeye.icon_state = "fixeye_on"
+			else
+				usr.fixeye.icon_state = "fixeye"
+
+		if("air_temperature")
+			if(usr.client)
+				usr.air_temperature()
 
 		if("module")
 			if(isrobot(usr))

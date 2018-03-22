@@ -67,7 +67,7 @@
 	stored_energy = 0
 	return last_stored_energy_transferred
 
-/obj/machinery/atmospherics/binary/circulator/process()
+/obj/machinery/atmospherics/binary/circulator/Process()
 	..()
 
 	if(last_worldtime_transfer < world.time - 50)
@@ -88,7 +88,7 @@
 	return 1
 
 /obj/machinery/atmospherics/binary/circulator/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/wrench))
+	if(isWrench(W))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		anchored = !anchored
 		user.visible_message("[user.name] [anchored ? "secures" : "unsecures"] the bolts holding [src.name] to the floor.", \

@@ -871,17 +871,6 @@ menu "menu"
 		group = "size"
 		saved-params = "is-checked"
 	elem 
-		name = ""
-		command = ""
-		category = "&Icons"
-		saved-params = "is-checked"
-	elem "textmode"
-		name = "&Text"
-		command = ".winset \"menu.textmode.is-checked=true?mapwindow.map.text-mode=true:mapwindow.map.text-mode=false\""
-		category = "&Icons"
-		can-check = true
-		saved-params = "is-checked"
-	elem 
 		name = "&Help"
 		command = ""
 		saved-params = "is-checked"
@@ -1107,7 +1096,6 @@ window "mainwindow"
 		size = 640x440
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-maximized = true
@@ -1120,7 +1108,6 @@ window "mainwindow"
 		size = 1x1
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = ""
 	elem "hotkey_toggle"
@@ -1129,7 +1116,6 @@ window "mainwindow"
 		size = 80x20
 		anchor1 = 100,100
 		anchor2 = none
-		background-color = none
 		saved-params = ""
 		text = "Hotkey Toggle"
 		command = ".winset \"mainwindow.macro!=macro ? mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true : mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true\""
@@ -1140,7 +1126,6 @@ window "mainwindow"
 		size = 634x416
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = none
 		saved-params = "splitter"
 		right = "rpane"
 		is-vert = true
@@ -1160,7 +1145,6 @@ window "mainwindow"
 		size = 40x20
 		anchor1 = 100,100
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "Chat"
 		command = ".winset \"saybutton.is-checked=true?input.command=\"!say \\\"\" macrobutton.is-checked=false:input.command=\""
@@ -1173,7 +1157,6 @@ window "mapwindow"
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		titlebar = false
 		statusbar = false
@@ -1189,6 +1172,7 @@ window "mapwindow"
 		anchor2 = 100,100
 		font-family = "Arial Rounded MT Bold,Arial Black,Arial,sans-serif"
 		font-size = 7
+		text-color = none
 		is-default = true
 		saved-params = "icon-size"
 		on-show = ".winset\"mainwindow.mainvsplit.left=mapwindow\""
@@ -1226,70 +1210,73 @@ window "rpane"
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 	elem "rpanewindow"
 		type = CHILD
 		pos = 0,0
-		size = 638x474
+		size = 640x499
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = none
 		saved-params = "splitter"
 		right = "outputwindow"
 		is-vert = false
-	elem "referenseb"
+	elem "rulesb"
 		type = BUTTON
-		pos = 204,0
-		size = 72x20
+		pos = 278,0
+		size = 60x16
 		anchor1 = none
 		anchor2 = none
-		font-style = "bold"
-		background-color = none
 		saved-params = "is-checked"
-		text = "Referense"
-		command = "welcome"
+		text = "Rules"
+		command = "rules"
+		group = "rpanemode"
 	elem "changelog"
 		type = BUTTON
-		pos = 280,0
-		size = 144x24
+		pos = 341,0
+		size = 67x16
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
-		text = "BayStation 12 Changelog"
-		command = "Changelog"
+		text = "Changelog"
+		command = "Baystation12-Changelog"
 		group = "rpanemode"
-	elem "Lore"
+	elem "changelog_infinity"
 		type = BUTTON
-		pos = 428,0
-		size = 108x24
+		pos = 413,0
+		size = 105x16
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
-		text = "BayStation 12 Lore"
-		command = "Lore"
+		text = "Infinity Changelog"
+		command = "Infinity-Changelog"
 		group = "rpanemode"
 	elem "forumb"
 		type = BUTTON
-		pos = 140,0
-		size = 60x20
+		pos = 215,0
+		size = 60x16
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "is-checked"
 		text = "Forum"
 		command = "forum"
 		group = "rpanemode"
+	elem "wikib"
+		type = BUTTON
+		pos = 152,0
+		size = 60x16
+		anchor1 = none
+		anchor2 = none
+		saved-params = "is-checked"
+		text = "Wiki"
+		command = "wiki"
+		group = "rpanemode"
 	elem "textb"
 		type = BUTTON
 		pos = 0,0
-		size = 60x20
+		size = 60x16
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Text"
@@ -1299,11 +1286,10 @@ window "rpane"
 		button-type = pushbox
 	elem "browseb"
 		type = BUTTON
-		pos = 550,0
-		size = 72x20
+		pos = 464,0
+		size = 60x16
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Browser"
@@ -1313,10 +1299,9 @@ window "rpane"
 	elem "infob"
 		type = BUTTON
 		pos = 64,0
-		size = 60x20
+		size = 60x16
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Info"
@@ -1417,3 +1402,4 @@ window "text_editor"
 		border = line
 		saved-params = ""
 		multi-line = true
+

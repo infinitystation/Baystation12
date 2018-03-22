@@ -2,7 +2,7 @@
 
 /datum/sprite_accessory/hair/infinity
 	name = "Angel hair"
-	icon = 'icons/mob/infinity_mob_clothing/hairs.dmi'
+	icon = 'icons/mob/infinity_human_face.dmi'
 	icon_state = "angel"
 
 /datum/sprite_accessory/hair/infinity/shortcover
@@ -59,3 +59,121 @@
 /datum/sprite_accessory/hair/infinity/long_hair_3
 	name = "Long hair 3"
 	icon_state = "waterfall"
+
+/datum/sprite_accessory/hair/infinity/ponytail4TG
+	name = "Ponytail 4(TG)"
+	icon_state = "hair_ponytail4"
+
+/datum/sprite_accessory/hair/infinity/zone
+	name = "Zone"
+	icon_state = "zone"
+
+
+//Unath
+/*
+/datum/sprite_accessory/hair/infinity/una_horns_short
+	name = "Horns - Short"
+	icon_state = "horns_short"
+	species_allowed = list(SPECIES_UNATHI)
+
+/datum/sprite_accessory/hair/infinity/una_horns_curled
+	name = "Horns - Curled"
+	icon_state = "horns_curled"
+	species_allowed = list(SPECIES_UNATHI)
+
+/datum/sprite_accessory/hair/infinity/una_horns_ram
+	name = "Horns - Ram"
+	icon_state = "horns_ram"
+	species_allowed = list(SPECIES_UNATHI)
+
+/datum/sprite_accessory/hair/infinity/una_frills_short
+	name = "Frills - Short"
+	icon_state = "frills_short"
+	species_allowed = list(SPECIES_UNATHI)
+
+/datum/sprite_accessory/hair/infinity/una_frills_simple
+	name = "Frills - Simple"
+	icon_state = "frills_simple"
+	species_allowed = list(SPECIES_UNATHI)
+
+/datum/sprite_accessory/hair/infinity/una_frills_aqua
+	name = "Frills - Aqua"
+	icon_state = "frills_aqua"
+	species_allowed = list(SPECIES_UNATHI)
+
+/datum/sprite_accessory/facial_hair/infinity
+	name = "Snouts - Sharplight"
+c
+	icon_state = "snout_sharplight"
+	species_allowed = list(SPECIES_UNATHI)
+*/
+
+				//////////
+				//RESOMI//
+				//////////
+
+/datum/sprite_accessory/hair/resomi
+	name = "Resomi Plumage"
+	icon_state = "resomi_default"
+	icon = 'icons/mob/infinity_human_face.dmi'
+	species_allowed = list(SPECIES_RESOMI)
+
+/datum/sprite_accessory/hair/resomi/ears
+	name = "Resomi Ears"
+	icon_state = "resomi_ears"
+
+/datum/sprite_accessory/hair/resomi/excited
+	name = "Resomi Spiky"
+	icon_state = "resomi_spiky"
+
+/datum/sprite_accessory/hair/resomi/hedgehog
+	name = "Resomi Hedgehog"
+	icon_state = "resomi_hedge"
+
+/datum/sprite_accessory/hair/resomi/long
+	name = "Resomi Unpruned"
+	icon_state = "resomi_long"
+
+/datum/sprite_accessory/hair/resomi/sunburst
+	name = "Resomi Sunburst"
+	icon_state = "resomi_burst_short"
+
+/datum/sprite_accessory/hair/resomi/mohawk
+	name = "Resomi Mohawk"
+	icon_state = "resomi_mohawk"
+
+/datum/sprite_accessory/hair/resomi/pointy
+	name = "Resomi Pointy"
+	icon_state = "resomi_pointy"
+
+/datum/sprite_accessory/hair/resomi/upright
+	name = "Resomi Upright"
+	icon_state = "resomi_upright"
+
+/datum/sprite_accessory/hair/resomi/mane
+	name = "Resomi Mane"
+	icon_state = "resomi_mane"
+
+/datum/sprite_accessory/hair/resomi/droopy
+	name = "Resomi Droopy"
+	icon_state = "resomi_droopy"
+
+/datum/sprite_accessory/hair/resomi/mushroom
+	name = "Resomi Mushroom"
+	icon_state = "resomi_mushroom"
+
+/datum/sprite_accessory/hair/resomi/twies
+	name = "Resomi Twies"
+	icon_state = "resomi_twies"
+
+/datum/sprite_accessory/hair/resomi/backstrafe
+	name = "Resomi Backstrafe"
+	icon_state = "resomi_backstrafe"
+
+/datum/sprite_accessory/hair/resomi/longway
+	name = "Resomi Long way"
+	icon_state = "resomi_longway"
+
+/datum/sprite_accessory/hair/resomi/notree
+	name = "Resomi Tree"
+	icon_state = "resomi_notree"

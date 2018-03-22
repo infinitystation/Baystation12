@@ -9,7 +9,8 @@
 	idle_power_usage = 30
 	active_power_usage = 200
 	power_channel = EQUIP
-	flags = OBJ_ANCHORABLE|OBJ_CLIMBABLE
+	atom_flags = ATOM_FLAG_CLIMBABLE
+	obj_flags = OBJ_FLAG_ANCHORABLE
 	var/obj/item/copyitem = null	//what's in the copier!
 	var/copies = 1	//how many copies to print!
 	var/toner = 30 //how much toner is left! woooooo~
@@ -85,7 +86,7 @@
 
 		if(toner >= 5)
 			var/mob/living/silicon/tempAI = usr
-			var/obj/item/device/camera/siliconcam/camera = tempAI.aiCamera
+			var/obj/item/device/camera/siliconcam/camera = tempAI.silicon_camera
 
 			if(!camera)
 				return
@@ -113,6 +114,7 @@
 			updateUsrDialog()
 		else
 			to_chat(user, "<span class='notice'>There is already something in \the [src].</span>")
+		return
 	else if(istype(O, /obj/item/device/toner))
 		if(toner <= 10) //allow replacing when low toner is affecting the print darkness
 			user.drop_item()
@@ -123,6 +125,7 @@
 			updateUsrDialog()
 		else
 			to_chat(user, "<span class='notice'>This cartridge is not yet ready for replacement! Use up the rest of the toner.</span>")
+		return
 	..()
 	return
 
@@ -155,7 +158,7 @@
 	copied = replacetext(copied, "<font face=\"[c.crayonfont]\" color=", "<font face=\"[c.crayonfont]\" nocolor=")	//This basically just breaks the existing color tag, which we need to do because the innermost tag takes priority.
 	c.info += copied
 	c.info += "</font>"//</font>
-	c.name = copy.name // -- Doohl
+	c.SetName(copy.name) // -- Doohl
 	c.fields = copy.fields
 	c.stamps = copy.stamps
 	c.stamped = copy.stamped
@@ -166,11 +169,11 @@
 	var/image/img                                //and puts a matching
 	for (var/j = 1, j <= min(temp_overlays.len, copy.ico.len), j++) //gray overlay onto the copy
 		if (findtext(copy.ico[j], "cap") || findtext(copy.ico[j], "cent"))
-			img = image('icons/obj/bureaucracy.dmi', "paper_stamp-circle")
+			img = image('icons/obj/bureaucracy_inf.dmi', "paper_stamp-circle")
 		else if (findtext(copy.ico[j], "deny"))
-			img = image('icons/obj/bureaucracy.dmi', "paper_stamp-x")
+			img = image('icons/obj/bureaucracy_inf.dmi', "paper_stamp-x")
 		else
-			img = image('icons/obj/bureaucracy.dmi', "paper_stamp-dots")
+			img = image('icons/obj/bureaucracy_inf.dmi', "paper_stamp-dots")
 		img.pixel_x = copy.offset_x[j]
 		img.pixel_y = copy.offset_y[j]
 		c.overlays += img
@@ -180,6 +183,7 @@
 		toner--
 	if(toner == 0)
 		visible_message("<span class='notice'>A red light on \the [src] flashes, indicating that it is out of toner.</span>")
+	c.update_icon()
 	return c
 
 
@@ -220,7 +224,7 @@
 	p.loc = src.loc
 	p.update_icon()
 	p.icon_state = "paper_words"
-	p.name = bundle.name
+	p.SetName(bundle.name)
 	return p
 
 /obj/item/device/toner

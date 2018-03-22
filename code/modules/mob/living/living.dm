@@ -5,6 +5,14 @@
 	else
 		add_to_living_mob_list()
 
+/mob/living/Initialize()
+	. = ..()
+	if(can_have_vision_cone)
+		vision_cone = 1
+
+	GLOB.dir_set_event.register(src, src, /mob/proc/update_vision_cone)
+	GLOB.moved_event.register(src, src, /mob/proc/update_vision_cone)
+
 //mob verbs are faster than object verbs. See mob/verb/examine.
 /mob/living/verb/pulled(atom/movable/AM as mob|obj in oview(1))
 	set name = "Pull"
@@ -17,7 +25,7 @@
 
 //mob verbs are faster than object verbs. See above.
 /mob/living/pointed(atom/A as mob|obj|turf in view())
-	if(src.stat || !src.canmove || src.restrained())
+	if(src.stat || src.restrained()) //!src.canmove
 		return 0
 	if(src.status_flags & FAKEDEATH)
 		return 0
@@ -97,28 +105,28 @@ default behaviour is:
 			if(!can_move_mob(tmob, 0, 0))
 				now_pushing = 0
 				return
-			if(a_intent == I_HELP || src.restrained())
+			if(src.restrained())
 				now_pushing = 0
 				return
-			if(istype(tmob, /mob/living/carbon/human) && (FAT in tmob.mutations))
-				if(prob(40) && !(FAT in src.mutations))
-					to_chat(src, "<span class='danger'>You fail to push [tmob]'s fat ass out of the way.</span>")
-					now_pushing = 0
-					return
-			if(tmob.r_hand && istype(tmob.r_hand, /obj/item/weapon/shield/riot))
-				if(prob(99))
-					now_pushing = 0
-					return
-			if(tmob.l_hand && istype(tmob.l_hand, /obj/item/weapon/shield/riot))
-				if(prob(99))
-					now_pushing = 0
-					return
+			if(tmob.a_intent != I_HELP)
+				if(istype(tmob, /mob/living/carbon/human) && (FAT in tmob.mutations))
+					if(prob(40) && !(FAT in src.mutations))
+						to_chat(src, "<span class='danger'>You fail to push [tmob]'s fat ass out of the way.</span>")
+						now_pushing = 0
+						return
+				if(tmob.r_hand && istype(tmob.r_hand, /obj/item/weapon/shield/riot))
+					if(prob(99))
+						now_pushing = 0
+						return
+				if(tmob.l_hand && istype(tmob.l_hand, /obj/item/weapon/shield/riot))
+					if(prob(99))
+						now_pushing = 0
+						return
 			if(!(tmob.status_flags & CANPUSH))
 				now_pushing = 0
 				return
-
 			tmob.LAssailant = src
-		if(isobj(AM))
+		if(isobj(AM) && !AM.anchored)
 			var/obj/I = AM
 			if(!can_pull_size || can_pull_size < I.w_class)
 				to_chat(src, "<span class='warning'>It won't budge!</span>")
@@ -144,6 +152,11 @@ default behaviour is:
 						now_pushing = 0
 						return
 				step(AM, t)
+				if (istype(AM, /mob/living))
+					var/mob/living/tmob = AM
+					if(istype(tmob.buckled, /obj/structure/bed))
+						if(!tmob.buckled.anchored)
+							step(tmob.buckled, t)
 				if(ishuman(AM) && AM:grabbed_by)
 					for(var/obj/item/grab/G in AM:grabbed_by)
 						step(G:assailant, get_dir(G:assailant, AM))
@@ -178,7 +191,7 @@ default behaviour is:
 		return 0
 
 	return can_move_mob(tmob, 1, 0)
-	
+
 /mob/living/verb/succumb()
 	set hidden = 1
 	if ((src.health < src.maxHealth/2)) // Health below half of maxhealth.
@@ -390,6 +403,14 @@ default behaviour is:
 /mob/living/proc/restore_all_organs()
 	return
 
+/mob/living/update_gravity(has_gravity)
+	if(!(ticker.current_state >= GAME_STATE_PLAYING))
+		return
+	if(has_gravity)
+		stop_floating()
+	else
+		start_floating()
+
 /mob/living/proc/revive()
 	rejuvenate()
 	if(buckled)
@@ -465,7 +486,9 @@ default behaviour is:
 	set src in view()
 
 	if(config.allow_Metadata)
-		if(client)
+		if(ooc_notes)
+			to_chat(usr, "[src]'s Metainfo:<br>[ooc_notes]")
+		else if(client)
 			to_chat(usr, "[src]'s Metainfo:<br>[client.prefs.metadata]")
 		else
 			to_chat(usr, "[src] does not have any stored infomation!")
@@ -564,6 +587,9 @@ default behaviour is:
 									stop_pulling()
 					if (pulling)
 						step(pulling, get_dir(pulling.loc, T))
+						var/obj/O = pulling
+						if(O.w_class >= ITEM_SIZE_HUGE)
+							set_dir(get_dir(src, O))
 	else
 		stop_pulling()
 		. = ..()
@@ -574,6 +600,11 @@ default behaviour is:
 	if(update_slimes)
 		for(var/mob/living/carbon/slime/M in view(1,src))
 			M.UpdateFeed()
+
+	for(var/mob/M in oview(src))
+		M.update_vision_cone()
+
+	update_vision_cone()
 
 /mob/living/verb/resist()
 	set name = "Resist"
@@ -746,3 +777,26 @@ default behaviour is:
 		layer = HIDING_MOB_LAYER
 	else
 		..()
+
+/mob/living/update_icons()
+	if(auras)
+		overlays |= auras
+
+/mob/living/proc/add_aura(var/obj/aura/aura)
+	LAZYDISTINCTADD(auras,aura)
+	update_icons()
+	return 1
+
+/mob/living/proc/remove_aura(var/obj/aura/aura)
+	LAZYREMOVE(auras,aura)
+	update_icons()
+	return 1
+
+/mob/living/Destroy()
+	if(auras)
+		for(var/a in auras)
+			remove_aura(a)
+
+	GLOB.dir_set_event.unregister(src, src, /mob/proc/update_vision_cone)
+	GLOB.moved_event.unregister(src, src, /mob/proc/update_vision_cone)
+	return ..()

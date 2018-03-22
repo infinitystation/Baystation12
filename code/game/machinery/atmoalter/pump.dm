@@ -22,7 +22,7 @@
 	start_pressure = 90 * ONE_ATMOSPHERE
 
 /obj/machinery/portable_atmospherics/powered/pump/admin_filled
-	start_pressure = 150 * ONE_ATMOSPHERE
+	start_pressure = 500 * ONE_ATMOSPHERE
 
 /obj/machinery/portable_atmospherics/powered/pump/New()
 	..()
@@ -63,7 +63,7 @@
 
 	..(severity)
 
-/obj/machinery/portable_atmospherics/powered/pump/process()
+/obj/machinery/portable_atmospherics/powered/pump/Process()
 	..()
 	var/power_draw = -1
 
@@ -145,25 +145,22 @@
 		ui.open()
 		ui.set_auto_update(1)
 
-/obj/machinery/portable_atmospherics/powered/pump/Topic(href, href_list)
-	if(..())
-		return 1
-
+/obj/machinery/portable_atmospherics/powered/pump/OnTopic(user, href_list)
 	if(href_list["power"])
 		on = !on
-		. = 1
+		. = TOPIC_REFRESH
 	if(href_list["direction"])
 		direction_out = !direction_out
-		. = 1
+		. = TOPIC_REFRESH
 	if (href_list["remove_tank"])
 		if(holding)
 			holding.dropInto(loc)
 			holding = null
-		. = 1
+		. = TOPIC_REFRESH
 	if (href_list["pressure_adj"])
 		var/diff = text2num(href_list["pressure_adj"])
 		target_pressure = min(10*ONE_ATMOSPHERE, max(0, target_pressure+diff))
-		. = 1
+		. = TOPIC_REFRESH
 
 	if(.)
 		update_icon()

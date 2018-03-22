@@ -51,7 +51,7 @@
 /obj/machinery/optable/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(air_group || (height==0)) return 1
 
-	if(istype(mover) && mover.checkpass(PASSTABLE))
+	if(istype(mover) && mover.checkpass(PASS_FLAG_TABLE))
 		return 1
 	else
 		return 0
@@ -77,14 +77,14 @@
 	icon_state = "table2-idle"
 	return 0
 
-/obj/machinery/optable/process()
+/obj/machinery/optable/Process()
 	check_victim()
 
 /obj/machinery/optable/proc/take_victim(mob/living/carbon/C, mob/living/carbon/user as mob)
 	if (C == user)
 		user.visible_message("[user] climbs on \the [src].","You climb on \the [src].")
 	else
-		visible_message("<span class='notice'>\The [C] has been laid on \the [src] by [user].</span>", 3)
+		visible_message("<span class='notice'>\The [C] has been laid on \the [src] by [user].</span>")
 	if (C.client)
 		C.client.perspective = EYE_PERSPECTIVE
 		C.client.eye = src

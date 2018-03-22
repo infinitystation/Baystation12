@@ -2,7 +2,9 @@
 	plane = OBJ_PLANE
 
 	appearance_flags = TILE_BOUND
-	glide_size = 5
+	glide_size = 8
+
+	var/movable_flags
 
 	var/last_move = null
 	var/anchored = 0
@@ -110,7 +112,7 @@
 		return 0
 	//use a modified version of Bresenham's algorithm to get from the atom's current position to that of the target
 	src.throwing = 1
-	if(target.allow_spin && src.allow_spin)
+	if(src.allow_spin)
 		SpinAnimation(5,1)
 	src.thrower = thrower
 	src.throw_source = get_turf(src)	//store the origin turf

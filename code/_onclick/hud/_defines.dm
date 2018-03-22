@@ -52,6 +52,7 @@
 #define ui_dropbutton "EAST-4:22,SOUTH:5"
 #define ui_drop_throw "EAST-1:28,SOUTH+1:7"
 #define ui_pull_resist "EAST-2:26,SOUTH+1:7"
+#define ui_fixeye "EAST-3:39, SOUTH+1:7"
 #define ui_acti "EAST-2:26,SOUTH:5"
 #define ui_movi "EAST-3:24,SOUTH:5"
 #define ui_zonesel "EAST-1:28,SOUTH:5"
@@ -79,8 +80,9 @@
 #define ui_alien_oxygen "EAST-1:28,NORTH-4:25"
 
 //Middle right (status indicators)
-#define ui_nutrition "EAST-1:28,CENTER-2:11"
+#define ui_nutrition "EAST-1:28,CENTER-3:11"
 #define ui_temp "EAST-1:28,CENTER-1:13"
+#define ui_mintemp "EAST-0:7,CENTER-2:22"
 #define ui_health "EAST-1:28,CENTER:15"
 #define ui_internal "EAST-1:28,CENTER+1:17"
 									//borgs

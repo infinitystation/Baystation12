@@ -1,8 +1,3 @@
-
-#define AUTOHISS_OFF 0
-#define AUTOHISS_BASIC 1
-#define AUTOHISS_FULL 2
-
 #define AUTOHISS_NUM 3
 
 
@@ -10,30 +5,9 @@
 	return message // no autohiss at this level
 
 /mob/living/carbon/human/handle_autohiss(message, datum/language/L)
-	if(!client || client.autohiss_mode == AUTOHISS_OFF) // no need to process if there's no client or they have autohiss off
+	if(!client || get_preference_value(/datum/client_preference/autohiss) == GLOB.PREF_OFF) // no need to process if there's no client or they have autohiss off
 		return message
-	return species.handle_autohiss(message, L, client.autohiss_mode)
-
-/client
-	var/autohiss_mode = AUTOHISS_OFF
-
-/client/verb/toggle_autohiss()
-	set name = "Toggle Auto-Hiss"
-	set desc = "Toggle automatic hissing as Unathi and r-rolling as Taj"
-	set category = "OOC"
-
-	autohiss_mode = (autohiss_mode + 1) % AUTOHISS_NUM
-	switch(autohiss_mode)
-		if(AUTOHISS_OFF)
-			to_chat(src, "Auto-hiss is now OFF.")
-		if(AUTOHISS_BASIC)
-			to_chat(src, "Auto-hiss is now BASIC.")
-		if(AUTOHISS_FULL)
-			to_chat(src, "Auto-hiss is now FULL.")
-		else
-			soft_assert(0, "invalid autohiss value [autohiss_mode]")
-			autohiss_mode = AUTOHISS_OFF
-			to_chat(src, "Auto-hiss is now OFF.")
+	return species.handle_autohiss(message, L, get_preference_value(/datum/client_preference/autohiss))
 
 /datum/species
 	var/list/autohiss_basic_map = null
@@ -60,7 +34,7 @@
 			"з" = list("с", "сс", "ссс")
 		)
 	autohiss_extra_map = list(
-			"ч" = list("р", "лл")
+			"ч" = list("щ", "щщ")
 		)
 	autohiss_exempt = list(LANGUAGE_RESOMI)
 
@@ -73,7 +47,7 @@
 		return message
 
 	var/map = autohiss_basic_map.Copy()
-	if(mode == AUTOHISS_FULL && autohiss_extra_map)
+	if(mode == GLOB.PREF_FULL && autohiss_extra_map)
 		map |= autohiss_extra_map
 
 	. = list()
@@ -103,8 +77,3 @@
 		message = copytext(message, min_index + 1)
 
 	return jointext(., null)
-
-#undef AUTOHISS_OFF
-#undef AUTOHISS_BASIC
-#undef AUTOHISS_FULL
-#undef AUTOHISS_NUM

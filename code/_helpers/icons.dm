@@ -84,7 +84,7 @@ hsv(hue, sat, val, apha)
 	Counterpart to rgb(), this takes the values you input and converts them to a string in "#hhhssvv" or "#hhhssvvaa"
 	format. Alpha is not included in the result if null.
 ReadHSV(rgb)
-	Takes an HSV string like "#100FF80" and converts it to a list such as list(256,255,128). If an HSVA format is used that
+	Takes an HSV string like "#100ff80" and converts it to a list such as list(256,255,128). If an HSVA format is used that
 	includes alpha, the list will have a fourth item for the alpha value.
 RGBtoHSV(rgb)
 	Takes an RGB or RGBA string like "#ffaa55" and converts it into an HSV or HSVA color such as "#080aaff".
@@ -820,12 +820,18 @@ proc // Creates a single icon from a given /atom or /image.  Only the first argu
 			if(4)	I.pixel_y++
 		overlays += I//And finally add the overlay.
 
-/proc/getHologramIcon(icon/A, safety=1, noDecolor=FALSE)//If safety is on, a new icon is not created.
+#define HOLOPAD_SHORT_RANGE 1 //For determining the color of holopads based on whether they're short or long range.
+#define HOLOPAD_LONG_RANGE 2
+
+/proc/getHologramIcon(icon/A, safety=1, noDecolor=FALSE, var/hologram_color=HOLOPAD_SHORT_RANGE)//If safety is on, a new icon is not created.
 	var/icon/flat_icon = safety ? A : new(A)//Has to be a new icon to not constantly change the same icon.
 	if (noDecolor == FALSE)
-		flat_icon.ColorTone(rgb(125,180,225))//Let's make it bluish.
+		if(hologram_color == HOLOPAD_LONG_RANGE)
+			flat_icon.ColorTone(rgb(225,223,125)) //Light yellow if it's a call to a long-range holopad.
+		else
+			flat_icon.ColorTone(rgb(125,180,225))//Let's make it bluish.
 	flat_icon.ChangeOpacity(0.5)//Make it half transparent.
-	var/icon/alpha_mask = new('icons/effects/effects.dmi', "scanline")//Scanline effect.
+	var/icon/alpha_mask = new('icons/effects/effects.dmi', "scanline-[hologram_color]")//Scanline effect.
 	flat_icon.AddAlphaMask(alpha_mask)//Finally, let's mix in a distortion effect.
 	return flat_icon
 
@@ -838,7 +844,7 @@ proc // Creates a single icon from a given /atom or /image.  Only the first argu
 	return composite
 
 proc/adjust_brightness(var/color, var/value)
-	if (!color) return "#FFFFFF"
+	if (!color) return "#ffffff"
 	if (!value) return color
 
 	var/list/RGB = ReadRGB(color)

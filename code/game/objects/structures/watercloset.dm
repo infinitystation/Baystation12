@@ -43,7 +43,42 @@
 	icon_state = "toilet[open][cistern]"
 
 /obj/structure/toilet/attackby(obj/item/I as obj, mob/living/user as mob)
-	if(istype(I, /obj/item/weapon/crowbar))
+	if(isWrench(I))
+		var/choices = list()
+		if(anchored)
+			choices += "Disconnect"
+		else
+			choices += "Connect"
+			choices += "Rotate"
+
+		var/response = input(user, "What do you want to do?", "[src]") as null|anything in choices
+		if(!Adjacent(user) || !response)	//moved away or cancelled
+			return
+		switch(response)
+			if("Disconnect")
+				user.visible_message("<span class='notice'>[user] starts disconnecting [src].</span>", "<span class='notice'>You begin disconnecting [src]...</span>")
+				if(do_after(user, 40, target = src))
+					if(!loc || !anchored)
+						return
+					user.visible_message("<span class='notice'>[user] disconnects [src]!</span>", "<span class='notice'>You disconnect [src]!</span>")
+					anchored = 0
+					update_icon()
+			if("Connect")
+				user.visible_message("<span class='notice'>[user] starts connecting [src].</span>", "<span class='notice'>You begin connecting [src]...</span>")
+				if(do_after(user, 40, target = src))
+					if(!loc || anchored)
+						return
+					user.visible_message("<span class='notice'>[user] connects [src]!</span>", "<span class='notice'>You connect [src]!</span>")
+					anchored = 1
+					update_icon()
+			if("Rotate")
+				var/list/dir_choices = list("North" = NORTH, "East" = EAST, "South" = SOUTH, "West" = WEST)
+				var/selected = input(user,"Select a direction for the connector.", "Connector Direction") in dir_choices
+				dir = dir_choices[selected]
+				update_icon()	//is this necessary? probably not
+		return
+
+	if(isCrowbar(I))
 		to_chat(user, "<span class='notice'>You start to [cistern ? "replace the lid on the cistern" : "lift the lid off the cistern"].</span>")
 		playsound(loc, 'sound/effects/stonedoor_openclose.ogg', 50, 1)
 		if(do_after(user, 30, src))
@@ -51,6 +86,45 @@
 			cistern = !cistern
 			update_icon()
 			return
+
+	if(istype(I, /obj/item/grab))
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		var/obj/item/grab/G = I
+		if(isliving(G.affecting))
+			var/mob/living/GM = G.affecting
+			if(can_place(GM, user))
+				if(GM.loc != get_turf(src))
+					to_chat(user, "<span class='warning'>[GM] needs to be on [src]!</span>")
+					return
+				if(!swirlie)
+					if(open)
+						GM.visible_message("<span class='danger'>[user] starts to give [GM] a swirlie!</span>", "<span class='userdanger'>[user] starts to give [GM] a swirlie...</span>")
+						swirlie = GM
+						if(do_after(user, 30, 0, target = src))
+							GM.visible_message("<span class='danger'>[user] gives [GM] a swirlie!</span>", "<span class='userdanger'>[user] gives [GM] a swirlie!</span>", "<span class='italics'>You hear a toilet flushing.</span>")
+							if(iscarbon(GM))
+								var/mob/living/carbon/C = GM
+								if(!C.internal)
+									C.adjustOxyLoss(5)
+							else
+								GM.adjustOxyLoss(5)
+						swirlie = null
+					else
+						playsound(src.loc, 'sound/effects/bang.ogg', 25, 1)
+						GM.visible_message("<span class='danger'>[user] slams [GM.name] into [src]!</span>", "<span class='userdanger'>[user] slams [GM.name] into [src]!</span>")
+						GM.adjustBruteLoss(5)
+			else
+				to_chat(user, "<span class='warning'>You need a tighter grip!</span>")
+		return
+
+	if(istype(I, /obj/item/weapon/material/kitchen/utensil/fork))
+		if(!open)
+			user.visible_message("<span class='warning'><B>[user]</B> скребет вилкой по крышке унитаза.</span>", "<span class='warning'>Ты поскреб вилкой по крышке унитаза. Наверное, стоит ее открыть ?</span>")
+			return
+		to_chat(user, "<span class='warning'>Вы начали чистить туалет вилкой.</span>")
+		if(do_after(user, 40, target = src))
+			user.visible_message("<span class='warning'><B>[user]</B> чистит унитаз вилкой!</span>", "<span class='warning'>Ты почистил унитаз вилкой!</span>")
+		return
 
 	if(cistern && !istype(user,/mob/living/silicon/robot)) //STOP PUTTING YOUR MODULES IN THE TOILET.
 		if(I.w_class > ITEM_SIZE_NORMAL)
@@ -65,6 +139,11 @@
 		to_chat(user, "You carefully place \the [I] into the cistern.")
 		return
 
+/obj/structure/toilet/proc/can_place(var/mob/target, var/mob/user)
+	for(var/obj/item/grab/G in target.grabbed_by)
+		if (G.force_danger())
+			return 1
+	return 0
 
 
 /obj/structure/urinal
@@ -118,7 +197,7 @@
 /obj/machinery/shower/attackby(obj/item/I as obj, mob/user as mob)
 	if(I.type == /obj/item/device/analyzer)
 		to_chat(user, "<span class='notice'>The water temperature seems to be [watertemp].</span>")
-	if(istype(I, /obj/item/weapon/wrench))
+	if(isWrench(I))
 		var/newtemp = input(user, "What setting would you like to set the temperature valve to?", "Water Temperature Valve") in temperature_settings
 		to_chat(user, "<span class='notice'>You begin to adjust the temperature valve with \the [I].</span>")
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
@@ -232,6 +311,11 @@
 				if(H.belt.clean_blood())
 					H.update_inv_belt(0)
 			H.clean_blood(washshoes)
+
+			var/obj/item/organ/external/head/head = H.organs_by_name[BP_HEAD]
+			if(istype(head))
+				head.forehead_graffiti = null
+				head.graffiti_style = null
 		else
 			if(M.wear_mask)						//if the mob is not human, it cleans the mask without asking for bitflags
 				if(M.wear_mask.clean_blood())
@@ -248,7 +332,7 @@
 
 	reagents.splash(O, 10)
 
-/obj/machinery/shower/process()
+/obj/machinery/shower/Process()
 	if(!on) return
 
 	for(var/thing in loc)
@@ -402,6 +486,12 @@
 	if(user.get_active_hand() != I) return		//Person has switched hands or the item in their hands
 
 	O.clean_blood()
+
+	if(istype(O, /obj/item/organ/external/head))
+		var/obj/item/organ/external/head/head = O
+		head.forehead_graffiti = null
+		head.graffiti_style = null
+
 	user.visible_message( \
 		"<span class='notice'>[user] washes \a [I] using \the [src].</span>", \
 		"<span class='notice'>You wash \a [I] using \the [src].</span>")

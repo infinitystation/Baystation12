@@ -105,20 +105,25 @@
 
 	// If the limbs can break, make sure we don't exceed the maximum damage a limb can take before breaking
 	var/datum/wound/created_wound
+	var/block_cut = !(brute > 15 || !(species.species_flags & SPECIES_FLAG_NO_MINOR_CUT))
+
 	if(brute)
+		var/to_create = BRUISE
 		if(can_cut)
+			if(!block_cut)
+				to_create = CUT
 			//need to check sharp again here so that blunt damage that was strong enough to break skin doesn't give puncture wounds
 			if(sharp && !edge)
-				created_wound = createwound( PIERCE, brute )
-			else
-				created_wound = createwound( CUT, brute )
-		else
-			createwound( BRUISE, brute )
+				to_create = PIERCE
+		created_wound = createwound(to_create, brute)
+
 	if(burn)
 		if(laser)
-			createwound( LASER, burn )
+			createwound(LASER, burn)
+			if(prob(40))
+				owner.IgniteMob()
 		else
-			createwound( BURN, burn )
+			createwound(BURN, burn)
 
 	add_pain(0.6*burn + 0.4*brute)
 	//If there are still hurties to dispense
@@ -134,7 +139,7 @@
 
 	return created_wound
 
-/obj/item/organ/external/proc/heal_damage(brute, burn, internal = 0, robo_repair = 0)
+/obj/item/organ/external/heal_damage(brute, burn, internal = 0, robo_repair = 0)
 	if(robotic >= ORGAN_ROBOT && !robo_repair)
 		return
 
@@ -167,10 +172,10 @@
 
 // Geneloss/cloneloss.
 /obj/item/organ/external/proc/get_genetic_damage()
-	return ((species.flags & NO_SCAN) || robotic >= ORGAN_ROBOT) ? 0 : genetic_degradation
+	return ((species && (species.species_flags & SPECIES_FLAG_NO_SCAN)) || robotic >= ORGAN_ROBOT) ? 0 : genetic_degradation
 
 /obj/item/organ/external/proc/remove_genetic_damage(var/amount)
-	if((species.flags & NO_SCAN) || robotic >= ORGAN_ROBOT)
+	if((species.species_flags & SPECIES_FLAG_NO_SCAN) || robotic >= ORGAN_ROBOT)
 		genetic_degradation = 0
 		status &= ~ORGAN_MUTATED
 		return
@@ -183,7 +188,7 @@
 	return -(genetic_degradation - last_gene_dam)
 
 /obj/item/organ/external/proc/add_genetic_damage(var/amount)
-	if((species.flags & NO_SCAN) || robotic >= ORGAN_ROBOT)
+	if((species.species_flags & SPECIES_FLAG_NO_SCAN) || robotic >= ORGAN_ROBOT)
 		genetic_degradation = 0
 		status &= ~ORGAN_MUTATED
 		return
@@ -239,10 +244,18 @@
 	return pain-last_pain
 
 /obj/item/organ/external/proc/stun_act(var/stun_amount, var/agony_amount)
-	return
+	if(agony_amount > 5 && owner && vital && get_pain() > 0.5 * max_damage)
+		owner.visible_message("<span class='warning'>[owner] reels in pain!</span>")
+		if(has_genitals() || get_pain() + agony_amount > max_damage)
+			owner.Weaken(6)
+		else
+			owner.Stun(6)
+			owner.drop_l_hand()
+			owner.drop_r_hand()
+		return 1
 
 /obj/item/organ/external/proc/get_agony_multiplier()
-	return 1
+	return has_genitals() ? 2 : 1
 
 /obj/item/organ/external/proc/sever_artery()
 	if(species && species.has_organ[BP_HEART])

@@ -41,12 +41,12 @@ datum/controller/vote
 				result()
 				for(var/client/C in voting)
 					if(C)
-						C << browse(null,"window=vote")
+						C << browse(null,"window=vote;size=450x740")
 				reset()
 			else
 				for(var/client/C in voting)
 					if(C)
-						C << browse(vote.interface(C),"window=vote")
+						C << browse(vote.interface(C),"window=vote;size=450x740")
 
 				voting.Cut()
 
@@ -324,7 +324,7 @@ datum/controller/vote
 							choices.Add("Add Antagonist")
 					else
 						var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-						if (security_state.current_security_level_is_same_or_higher_than(security_state.high_security_level))
+						if (security_state.current_security_level_is_same_or_higher_than(security_state.high_security_level) && !automatic)
 							to_chat(initiator_key, "The current alert status is too high to call for a crew transfer!")
 							return 0
 						if(ticker.current_state <= GAME_STATE_SETTING_UP)
@@ -492,7 +492,7 @@ datum/controller/vote
 			switch(href_list["vote"])
 				if("close")
 					voting -= usr.client
-					usr << browse(null, "window=vote")
+					usr << browse(null, "window=vote;size=450x740")
 					return
 				if("cancel")
 					if(usr.client.holder)
@@ -555,4 +555,4 @@ datum/controller/vote/proc/is_addantag_allowed(var/automatic)
 	set name = "Vote"
 
 	if(vote)
-		src << browse(vote.interface(client),"window=vote")
+		src << browse(vote.interface(client),"window=vote;size=450x740")

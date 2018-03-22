@@ -75,3 +75,19 @@ var/const/BORG_WIRE_CAMERA = 16
 
 /datum/wires/robot/proc/LockedCut()
 	return wires_status & BORG_WIRE_LOCKED_DOWN
+
+/datum/wires/robot/SolveWireFunction(var/function)
+	var/sf = ""
+	switch(function)
+		if(BORG_WIRE_LAWCHECK)
+			sf = "Port A"
+		if(BORG_WIRE_MAIN_POWER)
+			sf = "Port B"
+		if(BORG_WIRE_LOCKED_DOWN)
+			sf = "Port C"
+		if(BORG_WIRE_AI_CONTROL)
+			sf = "Port D"
+		if(BORG_WIRE_CAMERA)
+			sf = "Port E"
+
+	return sf

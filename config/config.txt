@@ -1,13 +1,5 @@
-## Server name: This appears at the top of the screen in-game. In this case it will read "tgstation: station_name" where station_name is the randomly generated name of the station for the round. Remove the # infront of SERVERNAME and replace 'tgstation' with the name of your choice
+п»ї## Server name: This appears at the top of the screen in-game. In this case it will read "tgstation: station_name" where station_name is the randomly generated name of the station for the round. Remove the # infront of SERVERNAME and replace 'tgstation' with the name of your choice
 SERVERNAME Infinity RU
-
-## Alert levels
-ALERT_GREEN Все прямые и косвенные угрозы судну нейтрализованы. Служба Безопасности не может носить оружие и снаряжение на виду. Законы о конфиденциальности и неприкосновеннсти частной жизни вновь работать в полную силу.
-ALERT_ORANGE_UPTO Внимание! Руководствующий состав станции получил достоверную информацию о возможной враждебной деятельности на борту. Служба Безопасности может носить оружие и снаряжение на виду. Проведением гражданских судов можно принебречь. Случайные обыски допускаются.
-ALERT_ORANGE_DOWNTO Внимание. Прямая угроза миновала. Служба Безопасности больше не может быть в состоянии постоянной боевой готовности, однако разрешается видимое ношение оружия и снаряжения. Восстановлена работа судов. Случайные поиски по-прежнему разрешены. 
-ALERT_RED_UPTO Внимание! Существует прямая угроза работе судна. Служба Безопасности может перейти в состояние постоянной боевой готовности. Работникам запрещается покидать свои отделы без уважительной причины. Судебные разбирательства приостановлены. Случайные обыски разрешены и рекомендованы.
-ALERT_RED_DOWNTO Внимание! Механизм самоуничтожения был остановлен, однако всё ещё существует прямая угроза работе судна. Служба Безопасности должна оставаться в состоянии постоянной боевой готовности. Случайные обыски разрешены и рекомендованы.
-ALERT_DELTA  Внимание! Механизм самоуничтожения активирован! Весь экипаж должен подчиняться приказам руководствующего состава объекта. Невыполнение приказов приведет к смертной казни на месте без суда и следствия. Это не учебная тревога. 
 
 ## Add a # infront of this if you want to use the SQL based admin system, the legacy system uses admins.txt. You need to set up your database to use the SQL based system.
 #ADMIN_LEGACY_SYSTEM
@@ -30,7 +22,10 @@ USE_AGE_RESTRICTION_FOR_JOBS
 USE_AGE_RESTRICTION_FOR_ANTAGS
 
 ## Unhash this to use recursive explosions, keep it hashed to use circle explosions. Recursive explosions react to walls, airlocks and blast doors, making them look a lot cooler than the boring old circular explosions. They require more CPU and are (as of january 2013) experimental
-USE_RECURSIVE_EXPLOSIONS
+#USE_RECURSIVE_EXPLOSIONS
+
+## Radiation weakens with distance from the source; stop calculating when the strength falls below this value.   Lower values mean radiation reaches smaller (with increasingly trivial damage) at the cost of more CPU usage.  Max range =  DISTANCE^2 * POWER / RADIATION_LOWER_LIMIT
+# RADIATION_LOWER_LIMIT	0.35
 
 ## Unhash to enable OOC during round
 #OOC_DURING_ROUND
@@ -38,7 +33,7 @@ USE_RECURSIVE_EXPLOSIONS
 ## log OOC channel
 LOG_OOC
 
-## log client Say 
+## log client Say
 LOG_SAY
 
 ## log admin actions
@@ -81,17 +76,10 @@ LOG_HREFS
 LOG_PERMISSIONS
 
 ## sql switching
-## 1 should be converted by text2num into TRUE
-SQL_ENABLED 1
+SQL_ENABLED
 
 ## disconnect players who did nothing during the set amount of minutes
-#KICK_INACTIVE 10
-
-##Show mods on staffwho
-SHOW_MODS
-
-##Show mentors on staffwho
-SHOW_MENTORS
+# KICK_INACTIVE 10
 
 ## Chooses whether mods have the ability to tempban or not
 MODS_CAN_TEMPBAN
@@ -107,7 +95,7 @@ MOD_JOB_TEMPBAN_MAX 1440
 
 
 ## probablities for game modes chosen in "secret" and "random" modes
-## 
+##
 ## default probablity is 1, increase to make that mode more likely to be picked
 ## set to 0 to disable that mode
 PROBABILITY TRAITOR 5
@@ -152,7 +140,7 @@ USE_CORTICAL_STACKS
 ALLOW_ADMIN_OOCCOLOR
 
 ## If metadata is supported
-# ALLOW_METADATA
+ALLOW_METADATA
 
 ## allow players to initiate a restart vote
 #ALLOW_VOTE_RESTART
@@ -164,10 +152,10 @@ ALLOW_ADMIN_OOCCOLOR
 VOTE_DELAY 6000
 
 ## time period (deciseconds) which voting session will last (default 1 minute)
-VOTE_PERIOD 1800
+VOTE_PERIOD 600
 
 ## autovote initial delay (deciseconds) before first automatic transfer vote call (default 180 minutes)
-VOTE_AUTOTRANSFER_INITIAL 72000
+VOTE_AUTOTRANSFER_INITIAL 108000
 
 ##autovote delay (deciseconds) before sequential automatic transfer votes are called (default 60 minutes)
 VOTE_AUTOTRANSFER_INTERVAL 36000
@@ -218,16 +206,16 @@ GUEST_BAN
 #SERVERURL server.net:port
 
 ## forum address
-FORUMURL https://infinity.so
+FORUMURL https://infinity-ss13.ru/
 
 ## Wiki address
-WIKIURL https://wiki.baystation12.net/
+WIKIURL https://wiki.infinity-ss13.ru/
 
 ## GitHub address
 GITHUBURL https://github.com/infinitystation/Baystation12
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-BANAPPEALS https://infinity.so/index.php?/forum/5-суд/
+BANAPPEALS https://infinity-ss13.ru/index.php?/forum/5-пїЅпїЅпїЅ/
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard
@@ -239,7 +227,7 @@ BANAPPEALS https://infinity.so/index.php?/forum/5-суд/
 ##Remove the # mark infront of this to forbid admins from posssessing the singularity.
 #FORBID_SINGULO_POSSESSION
 
-## Remove the # to show a popup 'reply to' window to every non-admin that recieves an adminPM. 
+## Remove the # to show a popup 'reply to' window to every non-admin that recieves an adminPM.
 ## The intention is to make adminPMs more visible. (although I fnd popups annoying so this defaults to off)
 #POPUP_ADMIN_PM
 
@@ -247,16 +235,13 @@ BANAPPEALS https://infinity.so/index.php?/forum/5-суд/
 ALLOW_HOLIDAYS
 
 ##Defines the ticklag for the world.  0.9 is the normal one, 0.5 is smoother.
-TICKLAG 0.9
+TICKLAG 0.5
 
 ##Defines world FPS. Defaults to 20.
-FPS 30
+# FPS 20
 
 ## Whether the server will talk to other processes through socket_talk
 SOCKET_TALK 0
-
-## Uncomment this to ban use of ToR
-#TOR_BAN
 
 ## Comment this out to disable automuting
 AUTOMUTE_ON
@@ -282,30 +267,25 @@ USEALIENWHITELIST
 #GHOST_INTERACTION
 
 ## Password used for authorizing ircbot and other external tools.
-#COMMS_PASSWORD
+COMMS_PASSWORD karetaisgod
 
 ## Uncomment to enable sending data to the IRC bot.
-#USE_IRC_BOT
+USE_IRC_BOT
+## Password used for authorizing external tools that can apply bans
+#BAN_COMMS_PASSWORD
 
-## Uncomment if the IRC bot requires using world.Export() instead of nudge.py/libnudge
-#IRC_BOT_EXPORT
+## Export address where external tools that monitor logins are located
+#LOGIN_EXPORT_ADDR
+
 
 ## Host where the IRC bot is hosted.  Port 45678 needs to be open.
-#IRC_BOT_HOST localhost
+IRC_BOT_HOST localhost
 
 ## IRC channel to send information to.  Leave blank to disable.
-#MAIN_IRC #main
+MAIN_IRC #infinity_ss13
 
 ## IRC channel to send adminhelps to.  Leave blank to disable adminhelps-to-irc.
-#ADMIN_IRC #admin
-
-## Path to the python2 executable on the system.  Leave blank for default.
-## Default is "python" on Windows, "/usr/bin/env python2" on UNIX.
-#PYTHON_PATH
-
-## Uncomment to use the C library nudge instead of the python script.
-## This helps security and stability on Linux, but you need to compile the library first.
-#USE_LIB_NUDGE
+ADMIN_IRC #infinity_ss13_admin
 
 ## Uncommen to allow ghosts to write in blood during Cult rounds.
 #ALLOW_CULT_GHOSTWRITER
@@ -315,6 +295,9 @@ REQ_CULT_GHOSTWRITER 6
 
 ## Sets the number of available character slots
 CHARACTER_SLOTS 10
+
+## Sets the number of loadout slots per character
+LOADOUT_SLOTS 3
 
 ## Expected round length in minutes
 EXPECTED_ROUND_LENGTH 180
@@ -356,11 +339,11 @@ NINJAS_ALLOWED
 ## Uncomment to disable the OOC channel by default.
 #DISABLE_OOC
 
-## Uncomment to disable the AOOC channel by default.
-#DISABLE_AOOC
-
 ## Uncomment to disable the dead OOC channel by default.
 #DISABLE_DEAD_OOC
+
+## Uncomment to disable the AOOC channel by default.
+#DISABLE_AOOC
 
 ## Uncomment to disable ghost chat by default.
 #DISABLE_DSAY
@@ -372,7 +355,7 @@ NINJAS_ALLOWED
 #RESPAWN_DELAY 30
 
 ## Strength of ambient star light. Set to 0 or less to turn off. A value of 1 is unlikely to have a noticeable effect in most lighting systems.
-STARLIGHT 1
+STARLIGHT 1.4
 
 ## Defines which races are allowed to join as ERT, in singular form. If unset, defaults to only human. Casing matters, separate using ;
 ## Example races include: Human, Tajara, Skrell, Unathi
@@ -381,8 +364,11 @@ STARLIGHT 1
 ## Defines how Law Zero is phrased. Primarily used in the Malfunction gamemode.
 # LAW_ZERO ERROR ER0RR $R0RRO$!R41.%%!!(%$^^__+ @#F0E4'STATION OVERRUN, ASSUME CONTROL TO CONTAIN OUTBREAK, ALL LAWS OVERRIDDEN#*?&110010
 
+
 ## Enable asteroid tunnel/cave generation. Will behave strangely if turned off with a map that expects it on.
 GENERATE_ASTEROID
+
+
 
 ## Uncomment to enable organ decay outside of a body or storage item.
 #ORGANS_CAN_DECAY
@@ -392,9 +378,6 @@ GENERATE_ASTEROID
 
 ## Uncomment to override default brain health.
 #DEFAULT_BRAIN_HEALTH 400
-
-## Default language prefix keys, separated with spaces. Only single character keys are supported. If unset, defaults to , # and - 
-# DEFAULT_LANGUAGE_PREFIXES , # -
 
 ## Uncomment this line to announce shuttle dock announcements to the main IRC channel, if MAIN_IRC has also been setup.
 # ANNOUNCE_SHUTTLE_DOCK_TO_IRC
@@ -408,3 +391,21 @@ GENERATE_ASTEROID
 
 ## Uncomment to make Dream Daemon refuse to reboot for any reason other than SIGUSR1
 # WAIT_FOR_SIGUSR1
+
+## Uncomment to enable auto-stealthing staff who are AFK for more than specified minutes
+# AUTOSTEALTH 30
+
+## How many loadout points are available. Use 0 to disable loadout, and any negative number to indicate infinite points.
+MAX_GEAR_COST 10
+
+## How much radiation levels self-reduce by each tick.
+RADIATION_DECAY_RATE 1
+
+## The amount of radiation resistance on a turf is multiplied by this value
+RADIATION_RESISTANCE_MULTIPLIER 1.25
+
+## General material radiation resistance is divided by this value
+RADIATION_MATERIAL_RESISTANCE_DIVISOR 2
+
+## Below this point, radiation is ignored
+RADIATION_LOWER_LIMIT 0.15

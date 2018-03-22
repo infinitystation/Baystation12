@@ -1,4 +1,3 @@
-
 //Chemical Reactions - Initialises all /datum/chemical_reaction into a list
 // It is filtered into multiple lists within a list.
 // For example:
@@ -17,18 +16,6 @@
 				chemical_reactions_list[reagent_id] = list()
 			chemical_reactions_list[reagent_id] += D
 
-//helper that ensures the reaction rate holds after iterating
-//Ex. REACTION_RATE(0.3) means that 30% of the reagents will react each chemistry tick (~2 seconds by default).
-#define REACTION_RATE(rate) (1.0 - (1.0-rate)**(1.0/PROCESS_REACTION_ITER))
-
-//helper to define reaction rate in terms of half-life
-//Ex.
-//HALF_LIFE(0) -> Reaction completes immediately (default chems)
-//HALF_LIFE(1) -> Half of the reagents react immediately, the rest over the following ticks.
-//HALF_LIFE(2) -> Half of the reagents are consumed after 2 chemistry ticks.
-//HALF_LIFE(3) -> Half of the reagents are consumed after 3 chemistry ticks.
-#define HALF_LIFE(ticks) (ticks? 1.0 - (0.5)**(1.0/(ticks*PROCESS_REACTION_ITER)) : 1.0)
-
 /datum/chemical_reaction
 	var/name = null
 	var/result = null
@@ -36,17 +23,6 @@
 	var/list/catalysts = list()
 	var/list/inhibitors = list()
 	var/result_amount = 0
-
-	//how far the reaction proceeds each time it is processed. Used with either REACTION_RATE or HALF_LIFE macros.
-	var/reaction_rate = HALF_LIFE(1)
-
-	//if less than 1, the reaction will be inhibited if the ratio of products/reagents is too high.
-	//0.5 = 50% yield -> reaction will only proceed halfway until products are removed.
-	var/yield = 1.0
-
-	//If limits on reaction rate would leave less than this amount of any reagent (adjusted by the reaction ratios),
-	//the reaction goes to completion. This is to prevent reactions from going on forever with tiny reagent amounts.
-	var/min_reaction = 2
 
 	var/mix_message = "The solution begins to bubble."
 	var/reaction_sound = 'sound/effects/bubbles.ogg'
@@ -68,62 +44,30 @@
 
 	return 1
 
-/datum/chemical_reaction/proc/calc_reaction_progress(var/datum/reagents/holder, var/reaction_limit)
-	var/progress = reaction_limit * reaction_rate //simple exponential progression
+// This proc returns a list of all reagents it wants to use; if the holder has several reactions that use the same reagent, it will split the reagent evenly between them
+/datum/chemical_reaction/proc/get_used_reagents()
+	. = list()
+	for(var/reagent in required_reagents)
+		. += reagent
 
-	//calculate yield
-	if(1-yield > 0.001) //if yield ratio is big enough just assume it goes to completion
-		/*
-			Determine the max amount of product by applying the yield condition:
-			(max_product/result_amount) / reaction_limit == yield/(1-yield)
+/datum/chemical_reaction/proc/process(var/datum/reagents/holder, var/limit)
+	var/data = send_data(holder)
 
-			We make use of the fact that:
-			reaction_limit = (holder.get_reagent_amount(reactant) / required_reagents[reactant]) of the limiting reagent.
-		*/
-		var/yield_ratio = yield/(1-yield)
-		var/max_product = yield_ratio * reaction_limit * result_amount //rearrange to obtain max_product
-		var/yield_limit = max(0, max_product - holder.get_reagent_amount(result))/result_amount
-
-		progress = min(progress, yield_limit) //apply yield limit
-
-	//apply min reaction progress - wasn't sure if this should go before or after applying yield
-	//I guess people can just have their miniscule reactions go to completion regardless of yield.
+	var/reaction_volume = holder.maximum_volume
 	for(var/reactant in required_reagents)
-		var/remainder = holder.get_reagent_amount(reactant) - progress*required_reagents[reactant]
-		if(remainder <= min_reaction*required_reagents[reactant])
-			progress = reaction_limit
-			break
+		var/A = holder.get_reagent_amount(reactant) / required_reagents[reactant] / limit // How much of this reagent we are allowed to use
+		if(reaction_volume > A)
+			reaction_volume = A
 
-	return progress
-
-/datum/chemical_reaction/proc/process(var/datum/reagents/holder)
-	//determine how far the reaction can proceed
-	var/list/reaction_limits = list()
 	for(var/reactant in required_reagents)
-		reaction_limits += holder.get_reagent_amount(reactant) / required_reagents[reactant]
-
-	//determine how far the reaction proceeds
-	var/reaction_limit = min(reaction_limits)
-	var/progress_limit = calc_reaction_progress(holder, reaction_limit)
-
-	var/reaction_progress = min(reaction_limit, progress_limit) //no matter what, the reaction progress cannot exceed the stoichiometric limit.
-
-	//need to obtain the new reagent's data before anything is altered
-	var/data = send_data(holder, reaction_progress)
-
-	//remove the reactants
-	for(var/reactant in required_reagents)
-		var/amt_used = required_reagents[reactant] * reaction_progress
-		holder.remove_reagent(reactant, amt_used, safety = 1)
+		holder.remove_reagent(reactant, reaction_volume * required_reagents[reactant], safety = 1)
 
 	//add the product
-	var/amt_produced = result_amount * reaction_progress
+	var/amt_produced = result_amount * reaction_volume
 	if(result)
 		holder.add_reagent(result, amt_produced, data, safety = 1)
 
 	on_reaction(holder, amt_produced)
-
-	return reaction_progress
 
 //called when a reaction processes
 /datum/chemical_reaction/proc/on_reaction(var/datum/reagents/holder, var/created_volume)
@@ -172,7 +116,7 @@
 
 /datum/chemical_reaction/oxycodone
 	name = "Oxycodone"
-	result = /datum/reagent/oxycodone
+	result = /datum/reagent/tramadol/oxycodone
 	required_reagents = list(/datum/reagent/ethanol = 1, /datum/reagent/tramadol = 1)
 	catalysts = list(/datum/reagent/toxin/phoron = 5)
 	result_amount = 1
@@ -495,7 +439,7 @@
 /datum/chemical_reaction/noexcutite
 	name = "Noexcutite"
 	result = /datum/reagent/noexcutite
-	required_reagents = list(/datum/reagent/oxycodone = 1, /datum/reagent/dylovene = 1)
+	required_reagents = list(/datum/reagent/tramadol/oxycodone = 1, /datum/reagent/dylovene = 1)
 	result_amount = 2
 
 /* Solidification */
@@ -526,7 +470,6 @@
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/potassium = 1)
 	result_amount = 2
 	mix_message = null
-	reaction_rate = HALF_LIFE(0)
 
 /datum/chemical_reaction/explosion_potassium/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/datum/effect/effect/system/reagents_explosion/e = new()
@@ -544,7 +487,6 @@
 	result = null
 	required_reagents = list(/datum/reagent/aluminum = 1, /datum/reagent/potassium = 1, /datum/reagent/sulfur = 1 )
 	result_amount = null
-	reaction_rate = HALF_LIFE(0)
 
 /datum/chemical_reaction/flash_powder/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -588,7 +530,6 @@
 	required_reagents = list(/datum/reagent/glycerol = 1, /datum/reagent/acid/polyacid = 1, /datum/reagent/acid = 1)
 	result_amount = 2
 	log_is_important = 1
-	reaction_rate = HALF_LIFE(0)
 
 /datum/chemical_reaction/nitroglycerin/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/datum/effect/effect/system/reagents_explosion/e = new()
@@ -620,7 +561,6 @@
 	result = null
 	required_reagents = list(/datum/reagent/potassium = 1, /datum/reagent/sugar = 1, /datum/reagent/phosphorus = 1)
 	result_amount = 0.4
-	reaction_rate = HALF_LIFE(0) //need to process everything at once for the smoke strength calculation to work
 
 /datum/chemical_reaction/chemsmoke/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -638,7 +578,6 @@
 	required_reagents = list(/datum/reagent/surfactant = 1, /datum/reagent/water = 1)
 	result_amount = 2
 	mix_message = "The solution violently bubbles!"
-	reaction_rate = HALF_LIFE(0)
 
 /datum/chemical_reaction/foam/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -656,7 +595,6 @@
 	result = null
 	required_reagents = list(/datum/reagent/aluminum = 3, /datum/reagent/foaming_agent = 1, /datum/reagent/acid/polyacid = 1)
 	result_amount = 5
-	reaction_rate = HALF_LIFE(0)
 
 /datum/chemical_reaction/metalfoam/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -673,7 +611,6 @@
 	result = null
 	required_reagents = list(/datum/reagent/iron = 3, /datum/reagent/foaming_agent = 1, /datum/reagent/acid/polyacid = 1)
 	result_amount = 5
-	reaction_rate = HALF_LIFE(0)
 
 /datum/chemical_reaction/ironfoam/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -694,7 +631,7 @@
 	result_amount = 5
 
 /datum/chemical_reaction/red_paint/send_data()
-	return "#FE191A"
+	return "#fe191a"
 
 /datum/chemical_reaction/orange_paint
 	name = "Orange paint"
@@ -703,7 +640,7 @@
 	result_amount = 5
 
 /datum/chemical_reaction/orange_paint/send_data()
-	return "#FFBE4F"
+	return "#ffbe4f"
 
 /datum/chemical_reaction/yellow_paint
 	name = "Yellow paint"
@@ -712,7 +649,7 @@
 	result_amount = 5
 
 /datum/chemical_reaction/yellow_paint/send_data()
-	return "#FDFE7D"
+	return "#fdfe7d"
 
 /datum/chemical_reaction/green_paint
 	name = "Green paint"
@@ -721,7 +658,7 @@
 	result_amount = 5
 
 /datum/chemical_reaction/green_paint/send_data()
-	return "#18A31A"
+	return "#18a31a"
 
 /datum/chemical_reaction/blue_paint
 	name = "Blue paint"
@@ -730,7 +667,7 @@
 	result_amount = 5
 
 /datum/chemical_reaction/blue_paint/send_data()
-	return "#247CFF"
+	return "#247cff"
 
 /datum/chemical_reaction/purple_paint
 	name = "Purple paint"
@@ -739,7 +676,7 @@
 	result_amount = 5
 
 /datum/chemical_reaction/purple_paint/send_data()
-	return "#CC0099"
+	return "#cc0099"
 
 /datum/chemical_reaction/grey_paint //mime
 	name = "Grey paint"
@@ -757,7 +694,7 @@
 	result_amount = 5
 
 /datum/chemical_reaction/brown_paint/send_data()
-	return "#846F35"
+	return "#846f35"
 
 /datum/chemical_reaction/blood_paint
 	name = "Blood paint"
@@ -769,7 +706,7 @@
 	var/t = T.get_data("blood")
 	if(t && t["blood_colour"])
 		return t["blood_colour"]
-	return "#FE191A" // Probably red
+	return "#fe191a" // Probably red
 
 /datum/chemical_reaction/milk_paint
 	name = "Milk paint"
@@ -778,7 +715,7 @@
 	result_amount = 5
 
 /datum/chemical_reaction/milk_paint/send_data()
-	return "#F0F8FF"
+	return "#f0f8ff"
 
 /datum/chemical_reaction/orange_juice_paint
 	name = "Orange juice paint"
@@ -787,7 +724,7 @@
 	result_amount = 5
 
 /datum/chemical_reaction/orange_juice_paint/send_data()
-	return "#E78108"
+	return "#e78108"
 
 /datum/chemical_reaction/tomato_juice_paint
 	name = "Tomato juice paint"
@@ -805,7 +742,7 @@
 	result_amount = 5
 
 /datum/chemical_reaction/lime_juice_paint/send_data()
-	return "#365E30"
+	return "#365e30"
 
 /datum/chemical_reaction/carrot_juice_paint
 	name = "Carrot juice paint"
@@ -850,7 +787,7 @@
 	result_amount = 5
 
 /datum/chemical_reaction/watermelon_juice_paint/send_data()
-	return "#B83333"
+	return "#b83333"
 
 /datum/chemical_reaction/lemon_juice_paint
 	name = "Lemon juice paint"
@@ -859,7 +796,7 @@
 	result_amount = 5
 
 /datum/chemical_reaction/lemon_juice_paint/send_data()
-	return "#AFAF00"
+	return "#afaf00"
 
 /datum/chemical_reaction/banana_juice_paint
 	name = "Banana juice paint"
@@ -868,7 +805,7 @@
 	result_amount = 5
 
 /datum/chemical_reaction/banana_juice_paint/send_data()
-	return "#C3AF00"
+	return "#c3af00"
 
 /datum/chemical_reaction/potato_juice_paint
 	name = "Potato juice paint"
@@ -895,12 +832,11 @@
 	result_amount = 5
 
 /datum/chemical_reaction/aluminum_paint/send_data()
-	return "#F0F8FF"
+	return "#f0f8ff"
 
 /* Slime cores */
 
 /datum/chemical_reaction/slime
-	reaction_rate = HALF_LIFE(0)
 	var/required = null
 
 /datum/chemical_reaction/slime/can_happen(var/datum/reagents/holder)
@@ -915,7 +851,7 @@
 	T.Uses--
 	if(T.Uses <= 0)
 		T.visible_message("\icon[T]<span class='notice'>\The [T]'s power is consumed in the reaction.</span>")
-		T.name = "used slime extract"
+		T.SetName("used slime extract")
 		T.desc = "This extract has been used up."
 
 //Grey
@@ -1066,11 +1002,9 @@
 	if(!(holder.my_atom && holder.my_atom.loc))
 		return
 
-	var/turf/location = get_turf(holder.my_atom.loc)
-	for(var/turf/simulated/floor/target_tile in range(0, location))
-		target_tile.assume_gas(/datum/reagent/toxin/phoron, 25, 1400)
-		spawn (0)
-			target_tile.hotspot_expose(700, 400)
+	var/turf/location = get_turf(holder.my_atom)
+	location.assume_gas("phoron", 250, 1400)
+	location.hotspot_expose(700, 400)
 
 //Yellow
 /datum/chemical_reaction/slime/overload
@@ -1365,6 +1299,12 @@
 	required_reagents = list(/datum/reagent/nutriment/ketchup = 2, "pepper" = 1, "salt" = 1)
 	result_amount = 4
 
+/datum/chemical_reaction/garlicsauce
+	name = "Garlic Sauce"
+	result = /datum/reagent/nutriment/garlicsauce
+	required_reagents = list(/datum/reagent/drink/juice/garlic = 1, /datum/reagent/nutriment/cornoil = 1)
+	result_amount = 2
+
 /datum/chemical_reaction/cheesewheel
 	name = "Cheesewheel"
 	result = null
@@ -1571,6 +1511,32 @@
 	result = /datum/reagent/ethanol/screwdrivercocktail
 	required_reagents = list(/datum/reagent/ethanol/vodka = 2, /datum/reagent/drink/juice/orange = 1)
 	result_amount = 3
+
+/datum/chemical_reaction/battuta
+	name = "Ibn Battuta"
+	result = /datum/reagent/ethanol/battuta
+	required_reagents = list(/datum/reagent/ethanol/herbal = 2, /datum/reagent/drink/juice/orange = 1)
+	catalysts = list(/datum/reagent/nutriment/mint)
+	result_amount = 3
+
+/datum/chemical_reaction/magellan
+	name = "Magellan"
+	result = /datum/reagent/ethanol/magellan
+	required_reagents = list(/datum/reagent/ethanol/wine = 1, /datum/reagent/ethanol/specialwhiskey = 1)
+	catalysts = list(/datum/reagent/sugar)
+	result_amount = 2
+
+/datum/chemical_reaction/zhenghe
+	name = "Zheng He"
+	result = /datum/reagent/ethanol/zhenghe
+	required_reagents = list(/datum/reagent/drink/tea = 2, /datum/reagent/ethanol/vermouth = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/armstrong
+	name = "Armstrong"
+	result = /datum/reagent/ethanol/armstrong
+	required_reagents = list(/datum/reagent/ethanol/beer = 2, /datum/reagent/ethanol/vodka = 1, /datum/reagent/drink/juice/lime = 1)
+	result_amount = 4
 
 /datum/chemical_reaction/bloody_mary
 	name = "Bloody Mary"
@@ -1969,3 +1935,9 @@
 	result = /datum/reagent/antidexafen
 	required_reagents = list(/datum/reagent/paracetamol = 1, /datum/reagent/carbon = 1)
 	result_amount = 2
+
+/datum/chemical_reaction/nanoblood
+	name = "Nanoblood"
+	result = /datum/reagent/nanoblood
+	required_reagents = list(/datum/reagent/dexalinp = 1, /datum/reagent/iron = 1, /datum/reagent/blood = 1)
+	result_amount = 3

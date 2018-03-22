@@ -13,7 +13,7 @@
 	slot_flags = SLOT_BACK
 
 	//copied from tank.dm
-	flags = CONDUCT
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	force = 5.0
 	throwforce = 10.0
 	throw_speed = 1
@@ -35,11 +35,15 @@
 
 /obj/item/device/suit_cooling_unit/Initialize()
 	. = ..()
-	GLOB.processing_objects |= src
+	START_PROCESSING(SSobj, src)
 	cell = new/obj/item/weapon/cell/high()		// 10K rated cell.
 	cell.forceMove(src)
 
-/obj/item/device/suit_cooling_unit/process()
+/obj/item/device/suit_cooling_unit/Destroy()
+	. = ..()
+	STOP_PROCESSING(SSobj, src)
+
+/obj/item/device/suit_cooling_unit/Process()
 	if (!on || !cell)
 		return
 
@@ -111,7 +115,7 @@
 	to_chat(user, "<span class='notice'>You switch \the [src] [on ? "on" : "off"].</span>")
 
 /obj/item/device/suit_cooling_unit/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if (istype(W, /obj/item/weapon/screwdriver))
+	if(isScrewdriver(W))
 		if(cover_open)
 			cover_open = 0
 			to_chat(user, "You screw the panel into place.")

@@ -11,15 +11,15 @@ var/datum/species/shapeshifter/promethean/prometheans
 	knockout_message = "collapses inwards, forming a disordered puddle of goo."
 	remains_type = /obj/effect/decal/cleanable/ash
 
-	blood_color = "#05FF9B"
-	flesh_color = "#05FFFB"
+	blood_color = "#05ff9b"
+	flesh_color = "#05fffb"
 
 	hunger_factor =    DEFAULT_HUNGER_FACTOR //todo
 	reagent_tag =      IS_SLIME
 	bump_flag =        SLIME
 	swap_flags =       MONKEY|SLIME|SIMPLE_ANIMAL
 	push_flags =       MONKEY|SLIME|SIMPLE_ANIMAL
-	flags =            NO_SCAN | NO_SLIP | NO_MINOR_CUT
+	species_flags =    SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_MINOR_CUT
 	appearance_flags = HAS_SKIN_COLOR | HAS_EYE_COLOR | HAS_HAIR_COLOR | RADIATION_GLOWS
 	spawn_flags =      SPECIES_IS_RESTRICTED
 

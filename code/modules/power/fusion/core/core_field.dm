@@ -33,8 +33,8 @@
 
 	var/light_min_range = 2
 	var/light_min_power = 3
-	var/light_max_range = 10
-	var/light_max_power = 10
+	var/light_max_range = 12
+	var/light_max_power = 12
 
 	var/last_range
 	var/last_power
@@ -58,60 +58,30 @@
 	catcher.SetSize(1)
 	particle_catchers.Add(catcher)
 
-	catcher = new (locate(src.x-1,src.y,src.z))
-	catcher.parent = src
-	catcher.SetSize(3)
-	particle_catchers.Add(catcher)
-	catcher = new (locate(src.x+1,src.y,src.z))
-	catcher.parent = src
-	catcher.SetSize(3)
-	particle_catchers.Add(catcher)
-	catcher = new (locate(src.x,src.y+1,src.z))
-	catcher.parent = src
-	catcher.SetSize(3)
-	particle_catchers.Add(catcher)
-	catcher = new (locate(src.x,src.y-1,src.z))
-	catcher.parent = src
-	catcher.SetSize(3)
-	particle_catchers.Add(catcher)
+	for(var/iter=1,iter<=6,iter++)
+		catcher = new (locate(src.x-iter,src.y,src.z))
+		catcher.parent = src
+		catcher.SetSize((iter*2)+1)
+		particle_catchers.Add(catcher)
 
-	catcher = new (locate(src.x-2,src.y,src.z))
-	catcher.parent = src
-	catcher.SetSize(5)
-	particle_catchers.Add(catcher)
-	catcher = new (locate(src.x+2,src.y,src.z))
-	catcher.parent = src
-	catcher.SetSize(5)
-	particle_catchers.Add(catcher)
-	catcher = new (locate(src.x,src.y+2,src.z))
-	catcher.parent = src
-	catcher.SetSize(5)
-	particle_catchers.Add(catcher)
-	catcher = new (locate(src.x,src.y-2,src.z))
-	catcher.parent = src
-	catcher.SetSize(5)
-	particle_catchers.Add(catcher)
+		catcher = new (locate(src.x+iter,src.y,src.z))
+		catcher.parent = src
+		catcher.SetSize((iter*2)+1)
+		particle_catchers.Add(catcher)
 
-	catcher = new (locate(src.x-3,src.y,src.z))
-	catcher.parent = src
-	catcher.SetSize(7)
-	particle_catchers.Add(catcher)
-	catcher = new (locate(src.x+3,src.y,src.z))
-	catcher.parent = src
-	catcher.SetSize(7)
-	particle_catchers.Add(catcher)
-	catcher = new (locate(src.x,src.y+3,src.z))
-	catcher.parent = src
-	catcher.SetSize(7)
-	particle_catchers.Add(catcher)
-	catcher = new (locate(src.x,src.y-3,src.z))
-	catcher.parent = src
-	catcher.SetSize(7)
-	particle_catchers.Add(catcher)
+		catcher = new (locate(src.x,src.y+iter,src.z))
+		catcher.parent = src
+		catcher.SetSize((iter*2)+1)
+		particle_catchers.Add(catcher)
 
-	GLOB.processing_objects.Add(src)
+		catcher = new (locate(src.x,src.y-iter,src.z))
+		catcher.parent = src
+		catcher.SetSize((iter*2)+1)
+		particle_catchers.Add(catcher)
 
-/obj/effect/fusion_em_field/process()
+	START_PROCESSING(SSobj, src)
+
+/obj/effect/fusion_em_field/Process()
 	//make sure the field generator is still intact
 	if(!owned_core || QDELETED(owned_core))
 		qdel(src)
@@ -235,7 +205,7 @@
 
 /obj/effect/fusion_em_field/proc/Rupture()
 	visible_message("<span class='danger'>\The [src] shudders like a dying animal before flaring to eye-searing brightness and rupturing!</span>")
-	set_light(15, 15, "#CCCCFF")
+	set_light(15, 15, "#ccccff")
 	empulse(get_turf(src), ceil(plasma_temperature/1000), ceil(plasma_temperature/300))
 	sleep(5)
 	RadiateAll()
@@ -250,8 +220,14 @@
 		calc_size = 3
 	else if(new_strength <= 500)
 		calc_size = 5
-	else
+	else if(new_strength <= 1000)
 		calc_size = 7
+	else if(new_strength <= 2000)
+		calc_size = 9
+	else if(new_strength <= 5000)
+		calc_size = 11
+	else
+		calc_size = 13
 	field_strength = new_strength
 	change_size(calc_size)
 
@@ -285,6 +261,8 @@
 			if(!plasma)
 				plasma = new
 			plasma.adjust_gas(reactant, max(1,round(reactants[reactant]*0.1)), 0) // *0.1 to compensate for *10 when uptaking gas.
+		if(!plasma)
+			return
 		plasma.temperature = (plasma_temperature/2)
 		plasma.update_values()
 		T.assume_air(plasma)
@@ -329,39 +307,28 @@
 
 /obj/effect/fusion_em_field/proc/change_size(var/newsize = 1)
 	var/changed = 0
-	switch(newsize)
-		if(1)
-			size = 1
-			icon = 'icons/obj/machines/power/fusion.dmi'
-			icon_state = "emfield_s1"
-			pixel_x = 0
-			pixel_y = 0
-			//
-			changed = 1
-		if(3)
-			size = 3
-			icon = 'icons/effects/96x96.dmi'
-			icon_state = "emfield_s3"
-			pixel_x = -32 * PIXEL_MULTIPLIER
-			pixel_y = -32 * PIXEL_MULTIPLIER
-			//
-			changed = 3
-		if(5)
-			size = 5
-			icon = 'icons/effects/160x160.dmi'
-			icon_state = "emfield_s5"
-			pixel_x = -64 * PIXEL_MULTIPLIER
-			pixel_y = -64 * PIXEL_MULTIPLIER
-			//
-			changed = 5
-		if(7)
-			size = 7
-			icon = 'icons/effects/224x224.dmi'
-			icon_state = "emfield_s7"
-			pixel_x = -96 * PIXEL_MULTIPLIER
-			pixel_y = -96 * PIXEL_MULTIPLIER
-			//
-			changed = 7
+/* Good bye, sweet unworkable code ;-;
+	if( ((newsize-1)%2==0) && (newsize<=13) )
+		icon = 'icons/obj/machines/power/fusion.dmi'
+		if(newsize>1)
+			icon = "icons/effects/[newsize*32]x[newsize*32].dmi"
+		icon_state = "emfield_s[newsize]"
+		pixel_x = ((newsize-1) * -16) * PIXEL_MULTIPLIER
+		pixel_y = ((newsize-1) * -16) * PIXEL_MULTIPLIER
+		size = newsize
+		changed = newsize
+*/
+
+	if( ((newsize-1)%2==0) && (newsize<=13) )
+		icon = 'icons/obj/machines/power/fusion.dmi'
+		if(newsize>1)
+			icon = "icons/effects/[newsize*32]x[newsize*32].dmi"
+		icon_state = "emfield_s[newsize]"
+		pixel_x = ((newsize-1) * -16) * PIXEL_MULTIPLIER
+		pixel_y = ((newsize-1) * -16) * PIXEL_MULTIPLIER
+		size = newsize
+		changed = newsize
+
 	for(var/obj/effect/fusion_particle_catcher/catcher in particle_catchers)
 		catcher.UpdateSize()
 	return changed
@@ -486,7 +453,7 @@
 	if(owned_core)
 		owned_core.owned_field = null
 		owned_core = null
-	GLOB.processing_objects.Remove(src)
+	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
 /obj/effect/fusion_em_field/bullet_act(var/obj/item/projectile/Proj)

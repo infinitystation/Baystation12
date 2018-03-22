@@ -32,11 +32,9 @@
 	if(istype(M) && M.can_wield_item(src) && is_held_twohanded(M))
 		wielded = 1
 		force = force_wielded
-		name = "[base_name] (wielded)"
 	else
 		wielded = 0
 		force = force_unwielded
-		name = "[base_name]"
 	update_icon()
 	..()
 
@@ -78,7 +76,7 @@
 	base_icon = "fireaxe"
 	name = "fire axe"
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
-	
+
 	// 15/32 with hardness 60 (steel) and 20/42 with hardness 80 (plasteel)
 	force_divisor = 0.525
 	unwielded_force_divisor = 0.25
@@ -99,8 +97,8 @@
 			W.shatter()
 		else if(istype(A,/obj/structure/grille))
 			qdel(A)
-		else if(istype(A,/obj/effect/plant))
-			var/obj/effect/plant/P = A
+		else if(istype(A,/obj/effect/vine))
+			var/obj/effect/vine/P = A
 			P.die_off()
 
 //spears, bay edition

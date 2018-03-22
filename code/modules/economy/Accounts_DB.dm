@@ -26,7 +26,7 @@
 		T.target_name = target
 		T.purpose = reason
 		T.amount = amount
-		T.date = current_date_string
+		T.date = stationdate2text()
 		T.time = stationtime2text()
 		T.source_terminal = machine_id
 		return T
@@ -200,7 +200,7 @@
 				var/text
 				var/obj/item/weapon/paper/P = new(loc)
 				if (detailed_account_view)
-					P.name = "account #[detailed_account_view.account_number] details"
+					P.SetName("account #[detailed_account_view.account_number] details")
 					var/title = "Account #[detailed_account_view.account_number] Details"
 					text = {"
 						[accounting_letterhead(title)]
@@ -238,7 +238,7 @@
 						"}
 
 				else
-					P.name = "financial account list"
+					P.SetName("financial account list")
 					text = {"
 						[accounting_letterhead("Financial Account List")]
 

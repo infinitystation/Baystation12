@@ -252,7 +252,7 @@
 	name = "unusual potted plant"
 	desc = "This is an unusual plant. It's bulbous ends emit a soft blue light."
 	icon_state = "plant-09"
-	set_light(l_range = 1, l_power = 0.5, l_color = "#0000FF")
+	set_light(l_range = 2, l_power = 2, l_color = "#007fff")
 
 /obj/structure/flora/pottedplant/orientaltree
 	name = "potted oriental tree"
@@ -270,7 +270,7 @@
 	icon_state = "plant-12"
 
 /obj/structure/flora/pottedplant/sticky
-	name = "styicky potted plant"
+	name = "sticky potted plant"
 	desc = "This is an odd plant. Its sticky leaves trap insects."
 	icon_state = "plant-13"
 
@@ -308,7 +308,7 @@
 	name = "subterranean potted plant"
 	desc = "This is a subterranean plant. It's bulbous ends glow faintly."
 	icon_state = "plant-20"
-	set_light(l_range = 1, l_power = 0.5, l_color = "#FF6633")
+	set_light(l_range = 1, l_power = 0.5, l_color = "#ff6633")
 
 /obj/structure/flora/pottedplant/minitree
 	name = "potted tree"
@@ -340,3 +340,12 @@
 	desc = "This is a decorative shrub. It's been trimmed into the shape of an apple."
 	icon_state = "applebush"
 
+/obj/structure/flora/pottedplant/xmas
+	name = "small christmas tree"
+	desc = "This is a tiny well lit decorative christmas tree."
+	icon = 'icons/obj/infinity_object.dmi'
+	icon_state = "plant-xmas"
+
+/obj/structure/flora/pottedplant/xmas/New()
+	..()
+	set_light(2)

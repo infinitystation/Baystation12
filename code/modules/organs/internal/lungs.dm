@@ -4,6 +4,7 @@
 	gender = PLURAL
 	organ_tag = BP_LUNGS
 	parent_organ = BP_CHEST
+	w_class = ITEM_SIZE_NORMAL
 	min_bruised_damage = 25
 	min_broken_damage = 45
 	max_damage = 70
@@ -63,7 +64,7 @@
 	poison_type = species.poison_type ? species.poison_type : "phoron"
 	exhale_type = species.exhale_type ? species.exhale_type : "carbon_dioxide"
 
-/obj/item/organ/internal/lungs/process()
+/obj/item/organ/internal/lungs/Process()
 	..()
 	if(!owner)
 		return
@@ -76,9 +77,9 @@
 		if(prob(2))
 			if(active_breathing)
 				owner.visible_message(
-					"<B>\The [owner]</B> coughs up blood!",
-					"<span class='warning'>You cough up blood!</span>",
-					"You hear someone coughing!",
+					"<B>[owner]</B> кашл&#255;ет кровью!",
+					"<span class='warning'>Вы кашл&#255;ете кровью!</span>",
+					"Вы слышите кашель!",
 				)
 			else
 				var/obj/item/organ/parent = owner.get_organ(parent_organ)
@@ -90,9 +91,9 @@
 		if(prob(4))
 			if(active_breathing)
 				owner.visible_message(
-					"<B>\The [owner]</B> gasps for air!",
-					"<span class='danger'>You can't breathe!</span>",
-					"You hear someone gasp for air!",
+					"<B>[owner]</B> задыхаетс&#255;!",
+					"<span class='danger'>Вы задыхаетесь!</span>",
+					"Вы слышите как кто-то задыхаетс&#255;!",
 				)
 			else
 				to_chat(owner, "<span class='danger'>You're having trouble getting enough [breath_type]!</span>")
@@ -102,10 +103,10 @@
 /obj/item/organ/internal/lungs/proc/rupture()
 	var/obj/item/organ/external/parent = owner.get_organ(parent_organ)
 	if(istype(parent))
-		owner.custom_pain("You feel a stabbing pain in your [parent.name]!", 50, affecting = parent)
+		owner.custom_pain("Вы чувствуете колющую боль в [parent.name]!", 50, affecting = parent)
 	bruise()
 
-/obj/item/organ/internal/lungs/proc/handle_breath(datum/gas_mixture/breath)
+/obj/item/organ/internal/lungs/proc/handle_breath(datum/gas_mixture/breath, var/forced)
 	if(!owner)
 		return 1
 	if(!breath)
@@ -131,6 +132,9 @@
 	// Lung damage increases the minimum safe pressure.
 	safe_pressure_min *= 1 + rand(1,4) * damage/max_damage
 
+	if(!forced && owner.chem_effects[CE_BREATHLOSS] && !owner.chem_effects[CE_STABLE]) //opiates are bad mmkay
+		safe_pressure_min *= 1 + rand(1,4) * owner.chem_effects[CE_BREATHLOSS]
+
 	var/failed_inhale = 0
 	var/failed_exhale = 0
 
@@ -142,12 +146,13 @@
 	var/toxins_pp = (poison/breath.total_moles)*breath_pressure
 	var/exhaled_pp = (exhaling/breath.total_moles)*breath_pressure
 
+	var/inhale_efficiency = min(round(inhale_pp/safe_pressure_min, 0.001), 3)
 	// Not enough to breathe
-	if(inhale_pp < safe_pressure_min)
+	if(inhale_efficiency < 1)
 		if(prob(20) && active_breathing)
 			owner.emote("gasp")
 
-		breath_fail_ratio = round(1 - inhale_pp/safe_pressure_min, 0.001)
+		breath_fail_ratio = 1 - inhale_efficiency
 		failed_inhale = 1
 	else
 		breath_fail_ratio = 0
@@ -221,7 +226,7 @@
 			last_failed_breath = world.time
 	else
 		last_failed_breath = null
-		owner.adjustOxyLoss(-5)
+		owner.adjustOxyLoss(-5 * inhale_efficiency)
 		if(robotic < ORGAN_ROBOT && species.breathing_sound && is_below_sound_pressure(get_turf(owner)))
 			if(breathing || owner.shock_stage >= 10)
 				sound_to(owner, sound(species.breathing_sound,0,0,0,5))
@@ -246,7 +251,7 @@
 		else
 			owner.emote(pick("shiver","twitch"))
 
-	if(damage || world.time > last_failed_breath + 2 MINUTES)
+	if(damage || owner.chem_effects[CE_BREATHLOSS] || world.time > last_failed_breath + 2 MINUTES)
 		owner.adjustOxyLoss(HUMAN_MAX_OXYLOSS*breath_fail_ratio)
 
 	owner.oxygen_alert = max(owner.oxygen_alert, 2)
@@ -257,7 +262,7 @@
 		var/damage = 0
 		if(breath.temperature <= species.cold_level_1)
 			if(prob(20))
-				to_chat(owner, "<span class='danger'>You feel your face freezing and icicles forming in your lungs!</span>")
+				to_chat(owner, "<span class='danger'>Ваше лицо замерзает вместе с вашими легкими!</span>")
 			switch(breath.temperature)
 				if(species.cold_level_3 to species.cold_level_2)
 					damage = COLD_GAS_DAMAGE_LEVEL_3
@@ -273,7 +278,7 @@
 			owner.fire_alert = 1
 		else if(breath.temperature >= species.heat_level_1)
 			if(prob(20))
-				to_chat(owner, "<span class='danger'>You feel your face burning and a searing heat in your lungs!</span>")
+				to_chat(owner, "<span class='danger'>Ваше лицо горит вместе с вашими легкими!</span>")
 
 			switch(breath.temperature)
 				if(species.heat_level_1 to species.heat_level_2)
@@ -308,3 +313,29 @@
 		species.get_environment_discomfort(owner,"heat")
 	else if(breath.temperature <= species.cold_discomfort_level)
 		species.get_environment_discomfort(owner,"cold")
+
+/obj/item/organ/internal/lungs/listen()
+	if(owner.failed_last_breath || !active_breathing)
+		return "no respiration"
+
+	if(robotic == ORGAN_ROBOT)
+		if(is_bruised())
+			return "malfunctioning fans"
+		else
+			return "air flowing"
+
+	. = list()
+	if(is_bruised())
+		. += "[pick("wheezing", "gurgling")] sounds"
+
+	var/list/breathtype = list()
+	if(get_oxygen_deprivation() > 50)
+		breathtype += pick("straining","labored")
+	if(owner.shock_stage > 50)
+		breathtype += pick("shallow and rapid")
+	if(!breathtype.len)
+		breathtype += "healthy"
+
+	. += "[english_list(breathtype)] breathing"
+
+	return english_list(.)

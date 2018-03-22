@@ -14,7 +14,7 @@ REAGENT SCANNER
 	desc = "A hand-held body scanner able to distinguish vital signs of the subject."
 	icon_state = "health"
 	item_state = "analyzer"
-	flags = CONDUCT
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 	throwforce = 3
 	w_class = ITEM_SIZE_SMALL
@@ -76,8 +76,10 @@ proc/medical_scan_results(var/mob/living/carbon/human/H, var/verbose)
 						brain_result = "<span class='notice'>minor brain damage</span>"
 					if(3 to 5)
 						brain_result = "<span class='warning'>weak</span>"
-					if(6 to INFINITY)
+					if(6 to 8)
 						brain_result = "<span class='danger'>extremely weak</span>"
+					if(9 to INFINITY)
+						brain_result = "<span class='danger'>fading</span>"
 					else
 						brain_result = "<span class='danger'>ERROR - Hardware fault</span>"
 	else
@@ -89,6 +91,10 @@ proc/medical_scan_results(var/mob/living/carbon/human/H, var/verbose)
 
 	if (H.internal_organs_by_name[BP_STACK])
 		. += "<span class='notice'>Subject has a neural lace implant.</span>"
+
+	// Blood type.
+	if(H.b_type)
+		. += "<span class='notice'>Blood Type: [H.b_type]</span>"
 
 	// Pulse rate.
 	var/pulse_result = "normal"
@@ -131,7 +137,7 @@ proc/medical_scan_results(var/mob/living/carbon/human/H, var/verbose)
 	if(H.is_asystole())
 		. += "<span class='danger'>Patient is suffering from cardiovascular shock. Administer CPR immediately.</span>"
 	else if(H.shock_stage > 80)
-		. += "<span class='warning'>Patient is at serious risk of entering cardiovascular shock.</span>"
+		. += "<span class='warning'>Patient is at serious risk of going into shock. Pain relief recommended.</span>"
 
 	// Other general warnings.
 	if(H.getOxyLoss() > 50)
@@ -139,7 +145,7 @@ proc/medical_scan_results(var/mob/living/carbon/human/H, var/verbose)
 	if(H.getToxLoss() > 50)
 		. += "<font color='green'><b>Major systemic organ failure detected.</b></font>"
 	if(H.getFireLoss() > 50)
-		. += "<font color='#FFA500'><b>Severe burn damage detected.</b></font>"
+		. += "<font color='#ffa500'><b>Severe burn damage detected.</b></font>"
 	if(H.getBruteLoss() > 50)
 		. += "<font color='red'><b>Severe anatomical damage detected.</b></font>"
 
@@ -189,7 +195,7 @@ proc/medical_scan_results(var/mob/living/carbon/human/H, var/verbose)
 				if(org.brute_dam > 0)
 					limb_result = "[limb_result] \[<font color = 'red'><b>[get_wound_severity(org.brute_ratio, org.vital)] physical trauma</b></font>\]"
 				if(org.burn_dam > 0)
-					limb_result = "[limb_result] \[<font color = '#FFA500'><b>[get_wound_severity(org.burn_ratio, org.vital)] burns</b></font>\]"
+					limb_result = "[limb_result] \[<font color = '#ffa500'><b>[get_wound_severity(org.burn_ratio, org.vital)] burns</b></font>\]"
 				if(org.status & ORGAN_BLEEDING)
 					limb_result = "[limb_result] \[<span class='danger'>bleeding</span>\]"
 				. += limb_result
@@ -231,11 +237,20 @@ proc/medical_scan_results(var/mob/living/carbon/human/H, var/verbose)
 			print_reagent_default_message = FALSE
 			. += "<span class='warning'>Non-medical reagent[(unknown > 1)?"s":""] found in subject's stomach.</span>"
 
+	if(H.chem_doses.len)
+		var/list/chemtraces = list()
+		for(var/T in H.chem_doses)
+			var/datum/reagent/R = T
+			if(initial(R.scannable))
+				chemtraces += "[initial(R.name)] ([H.chem_doses[T]])"
+		if(chemtraces.len)
+			. += "<span class='notice'>Metabolism products of [english_list(chemtraces)] found in subject's system.</span>"
+
 	if(H.virus2.len)
 		for (var/ID in H.virus2)
 			if (ID in virusDB)
 				print_reagent_default_message = FALSE
-				var/datum/data/record/V = virusDB[ID]
+				var/datum/computer_file/data/virus_record/V = virusDB[ID]
 				. += "<span class='warning'>Warning: Pathogen [V.fields["name"]] detected in subject's blood. Known antigen : [V.fields["antigen"]]</span>"
 
 	if(print_reagent_default_message)
@@ -281,7 +296,7 @@ proc/get_wound_severity(var/damage_ratio, var/vital = 0)
 	icon_state = "atmos"
 	item_state = "analyzer"
 	w_class = ITEM_SIZE_SMALL
-	flags = CONDUCT
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 	throwforce = 5
 	throw_speed = 4
@@ -327,7 +342,8 @@ proc/get_wound_severity(var/damage_ratio, var/vital = 0)
 	icon_state = "spectrometer"
 	item_state = "analyzer"
 	w_class = ITEM_SIZE_SMALL
-	flags = CONDUCT | OPENCONTAINER
+	atom_flags = ATOM_FLAG_OPEN_CONTAINER
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 	throwforce = 5
 	throw_speed = 4
@@ -341,15 +357,15 @@ proc/get_wound_severity(var/damage_ratio, var/vital = 0)
 
 /obj/item/device/mass_spectrometer/New()
 	..()
-	var/datum/reagents/R = new/datum/reagents(5)
-	reagents = R
-	R.my_atom = src
+	create_reagents(5)
 
 /obj/item/device/mass_spectrometer/on_reagent_change()
+	update_icon()
+
+/obj/item/device/mass_spectrometer/update_icon()
+	icon_state = initial(icon_state)
 	if(reagents.total_volume)
-		icon_state = initial(icon_state) + "_s"
-	else
-		icon_state = initial(icon_state)
+		icon_state += "_s"
 
 /obj/item/device/mass_spectrometer/attack_self(mob/user as mob)
 	if (user.incapacitated())
@@ -358,6 +374,7 @@ proc/get_wound_severity(var/damage_ratio, var/vital = 0)
 		return
 	if(reagents.total_volume)
 		var/list/blood_traces = list()
+		var/list/blood_doses = list()
 		for(var/datum/reagent/R in reagents.reagent_list)
 			if(R.type != /datum/reagent/blood)
 				reagents.clear_reagents()
@@ -365,13 +382,20 @@ proc/get_wound_severity(var/damage_ratio, var/vital = 0)
 				return
 			else
 				blood_traces = params2list(R.data["trace_chem"])
+				blood_doses = params2list(R.data["dose_chem"])
 				break
 		var/dat = "Trace Chemicals Found: "
-		for(var/R in blood_traces)
+		for(var/T in blood_traces)
+			var/datum/reagent/R = text2path(T)
 			if(details)
-				dat += "[R] ([blood_traces[R]] units) "
+				dat += "[initial(R.name)] ([blood_traces[T]] units) "
 			else
-				dat += "[R] "
+				dat += "[initial(R.name)] "
+		if(details)
+			dat += "\nMetabolism Products of Chemicals Found: "
+			for(var/T in blood_doses)
+				var/datum/reagent/R = text2path(T)
+				dat += "[initial(R.name)] ([blood_doses[T]] units) "
 		to_chat(user, "[dat]")
 		reagents.clear_reagents()
 	return
@@ -388,7 +412,7 @@ proc/get_wound_severity(var/damage_ratio, var/vital = 0)
 	icon_state = "spectrometer"
 	item_state = "analyzer"
 	w_class = ITEM_SIZE_SMALL
-	flags = CONDUCT
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 	throwforce = 5
 	throw_speed = 4
@@ -434,6 +458,7 @@ proc/get_wound_severity(var/damage_ratio, var/vital = 0)
 	name = "price scanner"
 	desc = "Using an up-to-date database of various costs and prices, this device estimates the market price of an item up to 0.001% accuracy."
 	icon_state = "price_scanner"
+	origin_tech = list(TECH_MATERIAL = 6, TECH_MAGNET = 4)
 	slot_flags = SLOT_BELT
 	w_class = ITEM_SIZE_SMALL
 	throwforce = 0
@@ -456,8 +481,8 @@ proc/get_wound_severity(var/damage_ratio, var/vital = 0)
 	item_state = "analyzer"
 	slot_flags = SLOT_BELT
 	w_class = ITEM_SIZE_SMALL
-	origin_tech = list(TECH_BIO = 1)
-	flags = CONDUCT
+	origin_tech = list(TECH_MAGNET = 1, TECH_BIO = 1)
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	matter = list(DEFAULT_WALL_MATERIAL = 30,"glass" = 20)
 
 /obj/item/device/slime_scanner/proc/list_gases(var/gases)

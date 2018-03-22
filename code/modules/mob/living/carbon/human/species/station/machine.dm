@@ -11,10 +11,14 @@
 	icobase = 'icons/mob/human_races/r_machine.dmi'
 	deform = 'icons/mob/human_races/r_machine.dmi'
 
+	eye_icon_location = 'icons/mob/infinity_human_face.dmi'
+	eye_icon = "blank_eyes"
+
 	language = LANGUAGE_EAL
 	unarmed_types = list(/datum/unarmed_attack/punch)
 	rarity_value = 2
-	num_alternate_languages = 2 // Now actually 2!
+	num_alternate_languages = 2
+	strength = STR_HIGH
 	name_language = LANGUAGE_EAL
 
 	min_age = 1
@@ -37,16 +41,16 @@
 	body_temperature = null
 	passive_temp_gain = 5  // This should cause IPCs to stabilize at ~80 C in a 20 C environment.
 
-	flags = NO_SCAN | NO_PAIN | NO_POISON
-	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION
-	appearance_flags = HAS_UNDERWEAR //IPCs can wear undies too :(
+	species_flags = SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_EMBED
+	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_LACE
+	appearance_flags = HAS_UNDERWEAR | HAS_EYE_COLOR //IPCs can wear undies too :(
 
-	blood_color = "#1F181F"
+	blood_color = "#1f181f"
 	flesh_color = "#575757"
 	virus_immune = 1
 
 	has_organ = list(
-		BP_BRAIN = /obj/item/organ/internal/mmi_holder/posibrain,
+		BP_POSIBRAIN = /obj/item/organ/internal/posibrain,
 		BP_OPTICS = /obj/item/organ/internal/eyes/optics
 		)
 
@@ -95,3 +99,84 @@
 
 /datum/species/machine/get_blood_name()
 	return "oil"
+
+/datum/species/machine/disfigure_msg(var/mob/living/carbon/human/H)
+	var/datum/gender/T = gender_datums[H.get_gender()]
+	return "<span class='danger'>[T.His] monitor is completely busted!</span>\n"
+
+/datum/species/machine/terminator
+	name = "Terminator"
+
+	blurb = "\[REDACTED\]"
+
+	icobase = 'icons/mob/human_races/r_terminator.dmi'
+	deform = 'icons/mob/human_races/r_terminator.dmi'
+
+	eye_icon = "eyes_terminator"
+	has_floating_eyes = 1
+	appearance_flags = HAS_EYE_COLOR | HAS_UNDERWEAR
+	spawn_flags = SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_LACE
+
+	unarmed_types = list(/datum/unarmed_attack/terminator)
+	rarity_value = 20
+	strength = STR_VHIGH
+	brute_mod = 0.3
+	burn_mod = 0.5
+	flash_mod = 0
+	siemens_coefficient = 0
+	mob_size = 20
+
+	show_ssd = "laying inert, its activation glyph dark"
+	death_sound = 'sound/effects/bang.ogg'
+	death_message = "collapses to the ground with a CLUNK, and begins to beep ominously."
+
+	has_limbs = list(
+		BP_CHEST =  list("path" = /obj/item/organ/external/chest),
+		BP_GROIN =  list("path" = /obj/item/organ/external/groin),
+		BP_HEAD =   list("path" = /obj/item/organ/external/head),
+		BP_L_ARM =  list("path" = /obj/item/organ/external/arm),
+		BP_R_ARM =  list("path" = /obj/item/organ/external/arm/right),
+		BP_L_LEG =  list("path" = /obj/item/organ/external/leg),
+		BP_R_LEG =  list("path" = /obj/item/organ/external/leg/right),
+		BP_L_HAND = list("path" = /obj/item/organ/external/hand),
+		BP_R_HAND = list("path" = /obj/item/organ/external/hand/right),
+		BP_L_FOOT = list("path" = /obj/item/organ/external/foot),
+		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right)
+		)
+
+	heat_level_1 = 1500
+	heat_level_2 = 2000
+	heat_level_3 = 5000
+
+	passive_temp_gain = 20
+
+	inherent_verbs = list(
+		/mob/living/carbon/human/proc/self_destruct
+	)
+/*
+	has_organ = list(
+		"brain" = /obj/item/organ/mmi_holder/posibrain/terminator,
+		"shielded cell" = /obj/item/organ/cell/terminator,
+		"optics" = /obj/item/organ/eyes/optical_sensor/terminator,
+		"data core" = /obj/item/organ/data
+	)
+*/
+
+	heat_discomfort_level = 2000
+	heat_discomfort_strings = list(
+		"Your CPU temperature probes warn you that you are approaching critical heat levels!"
+		)
+	slowdown = 1
+
+/datum/species/machine/terminator/handle_death(var/mob/living/carbon/human/H)
+	..()
+	playsound(H.loc, 'sound/items/countdown.ogg', 125, 1)
+	spawn(15)
+		explosion(H.loc, -1, 1, 3)
+		H.gib()
+
+/datum/species/machine/terminator/handle_limbs_setup(var/mob/living/carbon/human/H)
+	for(var/obj/item/organ/external/E in H.organs)
+		if(E.robotic < ORGAN_ROBOT)
+			E.robotize("Terminator")
+	return

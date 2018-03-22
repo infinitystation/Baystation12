@@ -93,12 +93,6 @@ var/list/datum/power/changeling/powerinstances = list()
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_extract_dna_sting
 
-/datum/power/changeling/paralysis_sting
-	name = "Paralysis Sting"
-	desc = "We silently sting a human, paralyzing them for a short time."
-	genomecost = 8
-	verbpath = /mob/proc/changeling_paralysis_sting
-
 /datum/power/changeling/LSDSting
 	name = "Hallucination Sting"
 	desc = "We evolve the ability to sting a target with a powerful hallunicationary chemical."
@@ -167,6 +161,12 @@ var/list/datum/power/changeling/powerinstances = list()
 	genomecost = 7
 	verbpath = /mob/proc/changeling_rapidregen
 
+/datum/power/changeling/dissonant_shriek
+	name = "Dissonant Shriek"
+	desc = "We shift our vocal cords to release a high-frequency sound that overloads nearby electronics."
+	helptext = "Фигачит ЭМИ и лопает лампочки."
+	genomecost = 8
+	verbpath = /mob/proc/changeling_dissonant_shriek
 
 
 // Modularchangling, totally stolen from the new player panel.  YAYY

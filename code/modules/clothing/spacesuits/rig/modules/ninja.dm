@@ -37,13 +37,15 @@
 
 	var/mob/living/carbon/human/H = holder.wearer
 
-	to_chat(H, "<font color='blue'><b>You are now invisible to normal detection.</b></font>")
-	H.cloaked = TRUE
-	H.update_icons()
+	if(istype(H.get_active_hand(), /obj/item/weapon/melee/energy/blade/))
+		H.drop_item()
 
-	anim(get_turf(H), H, 'icons/effects/effects.dmi', "electricity",null,20,null)
+	if(istype(H.get_inactive_hand(), /obj/item/weapon/melee/energy/blade))
+		H.swap_hand()
+		H.drop_item()
 
-	H.visible_message("[H.name] vanishes into thin air!",1)
+	if(H.add_cloaking_source(src))
+		anim(get_turf(H), H, 'icons/effects/effects.dmi', "electricity",null,20,null)
 
 /obj/item/rig_module/stealth_field/deactivate()
 
@@ -52,15 +54,11 @@
 
 	var/mob/living/carbon/human/H = holder.wearer
 
-	to_chat(H, "<span class='danger'>You are now visible.</span>")
-	H.cloaked = FALSE
-	H.update_icons()
+	if(H.remove_cloaking_source(src))
+		anim(get_turf(H), H,'icons/mob/mob.dmi',,"uncloak",,H.dir)
+		anim(get_turf(H), H, 'icons/effects/effects.dmi', "electricity",null,20,null)
 
-	anim(get_turf(H), H,'icons/mob/mob.dmi',,"uncloak",,H.dir)
-	anim(get_turf(H), H, 'icons/effects/effects.dmi', "electricity",null,20,null)
-
-	for(var/mob/O in oviewers(H))
-		O.show_message("[H.name] appears from thin air!",1)
+	// We still play the sound, even if not visibly uncloaking. Ninjas are not that stealthy.
 	playsound(get_turf(H), 'sound/effects/stealthoff.ogg', 75, 1)
 
 
@@ -231,11 +229,12 @@
 
 	explosion(get_turf(src), explosion_values[1], explosion_values[2], explosion_values[3], explosion_values[4])
 	if(holder && holder.wearer)
+		holder.wearer.gib()
 		holder.wearer.drop_from_inventory(src)
 		qdel(holder)
 	qdel(src)
 
-/obj/item/rig_module/self_destruct/process()
+/obj/item/rig_module/self_destruct/Process()
 	// Not being worn, leave it alone.
 	if(!holder || !holder.wearer || !holder.wearer.wear_suit == holder)
 		return 0
@@ -251,14 +250,17 @@
 		if(0)
 			return
 		if(1)
-			src.holder.set_light(1.5, 8.5, "#FF0A00")
+			src.holder.set_light(1.5, 8.5, "#ff0a00")
 			sleep(6)
 			src.holder.set_light(0, 0, "#000000")
 			spawn(6) .()
 		if(2)
-			src.holder.set_light(1.5, 8.5, "#FF0A00")
+			src.holder.set_light(1.5, 8.5, "#ff0a00")
 			sleep(2)
 			src.holder.set_light(0, 0, "#000000")
 			spawn(2) .()
 		if(3)
-			src.holder.set_light(1.5, 8.5, "#FF0A00")
+			src.holder.set_light(1.5, 8.5, "#ff0a00")
+
+/obj/item/rig_module/grenade_launcher/ninja
+	suit_overlay = null

@@ -5,7 +5,7 @@ var/datum/antagonist/xenos/xenomorphs
 	role_text = "Xenophage"
 	role_text_plural = "Xenophages"
 	mob_path = /mob/living/carbon/alien/larva
-	flags = ANTAG_OVERRIDE_MOB | ANTAG_RANDSPAWN | ANTAG_OVERRIDE_JOB | ANTAG_VOTABLE
+	flags = ANTAG_OVERRIDE_MOB | ANTAG_RANDSPAWN | ANTAG_OVERRIDE_JOB
 	welcome_text = "Hiss! You are a larval alien. Hide and bide your time until you are ready to evolve."
 	antaghud_indicator = "hudalien"
 	antag_indicator = "hudalien"
@@ -36,7 +36,7 @@ var/datum/antagonist/xenos/xenomorphs
 
 /datum/antagonist/xenos/proc/get_vents()
 	var/list/vents = list()
-	for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in GLOB.machines)
+	for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in SSmachines.machinery)
 		if(!temp_vent.welded && temp_vent.network && (temp_vent.loc.z in GLOB.using_map.station_levels))
 			if(temp_vent.network.normal_members.len > 50)
 				vents += temp_vent

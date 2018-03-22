@@ -135,7 +135,7 @@
 //almost never called, overwritten by all power machines but terminal and generator
 /obj/machinery/power/attackby(obj/item/weapon/W, mob/user)
 
-	if(istype(W, /obj/item/stack/cable_coil))
+	if(isCoil(W))
 
 		var/obj/item/stack/cable_coil/coil = W
 
@@ -233,22 +233,6 @@
 				if(C.d1 == d || C.d2 == d || C.d1 == reverse || C.d2 == reverse )
 					. += C
 	return .
-
-/hook/startup/proc/buildPowernets()
-	return makepowernets()
-
-// rebuild all power networks from scratch - only called at world creation or by the admin verb
-/proc/makepowernets()
-	for(var/datum/powernet/PN in GLOB.powernets)
-		qdel(PN)
-	GLOB.powernets.Cut()
-
-	for(var/obj/structure/cable/PC in cable_list)
-		if(!PC.powernet)
-			var/datum/powernet/NewPN = new()
-			NewPN.add_cable(PC)
-			propagate_network(PC,PC.powernet)
-	return 1
 
 //remove the old powernet and replace it with a new one throughout the network.
 /proc/propagate_network(var/obj/O, var/datum/powernet/PN)

@@ -88,7 +88,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 /mob/observer/ghost/Topic(href, href_list)
 	if (href_list["track"])
 		if(istype(href_list["track"],/mob))
-			var/mob/target = locate(href_list["track"]) in GLOB.mob_list
+			var/mob/target = locate(href_list["track"]) in SSmobs.mob_list
 			if(target)
 				ManualFollow(target)
 		else
@@ -356,6 +356,15 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(t)
 		print_atmos_analysis(src, atmosanalyzer_scan(t))
 
+/mob/observer/ghost/verb/check_radiation()
+	set name = "Check Radiation"
+	set category = "Ghost"
+
+	var/turf/t = get_turf(src)
+	if(t)
+		var/rads = radiation_repository.get_rads_at_turf(t)
+		to_chat(src, "<span class='notice'>Radiation level: [rads ? rads : "0"] Bq.</span>")
+
 /mob/observer/ghost/verb/become_mouse()
 	set name = "Become mouse"
 	set category = "Ghost"
@@ -381,7 +390,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/mob/living/simple_animal/mouse/host
 	var/obj/machinery/atmospherics/unary/vent_pump/vent_found
 	var/list/found_vents = list()
-	for(var/obj/machinery/atmospherics/unary/vent_pump/v in GLOB.machines)
+	for(var/obj/machinery/atmospherics/unary/vent_pump/v in SSmachines.machinery)
 		if(!v.welded && v.z == T.z)
 			found_vents.Add(v)
 	if(found_vents.len)
@@ -403,7 +412,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 	var/dat
 	dat += "<h4>Crew Manifest</h4>"
-	dat += GLOB.data_core.get_manifest()
+	dat += html_crew_manifest()
 
 	src << browse(dat, "window=manifest;size=370x420;can_close=1")
 
@@ -580,6 +589,15 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set_invisibility(pre_invis)
 	transform = null	//make goast stand up
 
+/mob/observer/ghost/verb/set_ghost_alpha()
+	set name = "Set Ghost Alpha"
+	set desc = "Giving you option to enter value for custom ghost transparency"
+	set category = "Ghost"
+	var/input = input("New alpha value (maximum number is 127):",, alpha) as null|num
+	if(!input)
+		return
+	alpha = Clamp(input, 0, 127)
+
 /mob/observer/ghost/verb/respawn()
 	set name = "Respawn"
 	set category = "OOC"
@@ -593,7 +611,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if (ticker.mode && ticker.mode.deny_respawn)
 		to_chat(usr, "<span class='notice'>Respawn is disabled for this roundtype.</span>")
 		return
-	else if(!MayRespawn(1, config.respawn_delay))
+	else if(!started_as_observer && !MayRespawn(1, config.respawn_delay))
 		return
 
 	to_chat(usr, "You can respawn now, enjoy your new life!")

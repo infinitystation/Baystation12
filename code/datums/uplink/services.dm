@@ -91,7 +91,7 @@
 	log_and_message_admins("has activated the service '[service_label]'", user)
 
 	if(service_duration)
-		schedule_task_with_source_in(service_duration, src, /obj/item/device/uplink_service/proc/deactivate)
+		addtimer(CALLBACK(src,/obj/item/device/uplink_service/proc/deactivate), service_duration)
 	else
 		deactivate()
 
@@ -195,57 +195,40 @@
 
 /obj/item/device/uplink_service/fake_crew_announcement/enable(var/mob/user = usr)
 	var/obj/item/weapon/card/id/I = user.GetIdCard()
-	var/datum/data/record/random_general_record
-	var/datum/data/record/random_medical_record
+	var/datum/computer_file/crew_record/random_record
 
-	while(null in GLOB.data_core.general)
-		GLOB.data_core.general -= null
-		log_error("Found a null entry in data_core.general")
+	if(GLOB.all_crew_records.len)
+		random_record = pick(GLOB.all_crew_records)
 
-	if(GLOB.data_core.general.len)
-		random_general_record	= pick(GLOB.data_core.general)
-		random_medical_record	= find_medical_record("id", random_general_record.fields["id"])
-
-	var/datum/data/record/general = GLOB.data_core.CreateGeneralRecord(user)
+	var/datum/computer_file/crew_record/new_record = CreateModularRecord(user)
 	if(I)
-		general.fields["age"] = I.age
-		general.fields["rank"] = I.assignment
-		general.fields["real_rank"] = I.assignment
-		general.fields["name"] = I.registered_name
-		general.fields["sex"] = I.sex
+		new_record.set_name(I.registered_name)
+		new_record.set_sex(I.sex)
+		new_record.set_age(I.age)
+		new_record.set_job(I.assignment)
+		new_record.set_fingerprint(I.fingerprint_hash)
+		new_record.set_bloodtype(I.blood_type)
+		new_record.set_dna(I.dna_hash)
+		if(I.military_branch)
+			new_record.set_branch(I.military_branch.name)
+			if(I.military_rank)
+				new_record.set_rank(I.military_rank.name)
 	else
-		var/mob/living/carbon/human/H
-		if(istype(user,/mob/living/carbon/human))
-			H = user
-			general.fields["age"] = H.age
-		else
-			general.fields["age"] = initial(H.age)
+		var/mob/living/carbon/human/H = user
+		var/age = istype(H) ? H.age : 30
 		var/assignment = GetAssignment(user)
-		general.fields["rank"] = assignment
-		general.fields["real_rank"] = assignment
-		general.fields["name"] = user.real_name
-		general.fields["sex"] = capitalize(user.gender)
+		new_record.set_name(user.real_name)
+		new_record.set_sex(capitalize(user.gender))
+		new_record.set_age(age)
+		new_record.set_job(assignment)
+	new_record.set_species(user.get_species())
 
-	general.fields["species"] = user.get_species()
-	var/datum/data/record/medical = GLOB.data_core.CreateMedicalRecord(general.fields["name"], general.fields["id"])
-	GLOB.data_core.CreateSecurityRecord(general.fields["name"], general.fields["id"])
+	if(random_record)
+		var/list/to_copy = list(REC_FIELD(citizenship),REC_FIELD(faction),REC_FIELD(religion),REC_FIELD(homeSystem),REC_FIELD(fingerprint),REC_FIELD(dna),REC_FIELD(bloodtype))
+		for(var/field in to_copy)
+			new_record.set_field(field, random_record.get_field(field))
 
-	if(random_general_record)
-		general.fields["citizenship"]	= random_general_record.fields["citizenship"]
-		general.fields["faction"] 		= random_general_record.fields["faction"]
-		general.fields["fingerprint"] 	= random_general_record.fields["fingerprint"]
-		general.fields["home_system"] 	= random_general_record.fields["home_system"]
-		general.fields["religion"] 		= random_general_record.fields["religion"]
-	if(random_medical_record)
-		medical.fields["b_type"]		= random_medical_record.fields["b_type"]
-		medical.fields["b_dna"]			= random_medical_record.fields["b_type"]
-
-	if(I)
-		general.fields["fingerprint"] 	= I.fingerprint_hash
-		medical.fields["b_type"]	= I.blood_type
-		medical.fields["b_dna"]		= I.dna_hash
-
-	var/datum/job/job = job_master.GetJob(general.fields["rank"])
+	var/datum/job/job = job_master.GetJob(new_record.get_job())
 	if(istype(job) && job.announced)
-		AnnounceArrivalSimple(general.fields["name"], general.fields["rank"], get_announcement_frequency(job))
+		AnnounceArrivalSimple(new_record.get_name(), new_record.get_job(), get_announcement_frequency(job))
 	. = ..()

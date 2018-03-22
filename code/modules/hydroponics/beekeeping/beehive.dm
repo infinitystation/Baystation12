@@ -36,12 +36,12 @@
 		to_chat(user, "The lid is open.")
 
 /obj/machinery/beehive/attackby(var/obj/item/I, var/mob/user)
-	if(istype(I, /obj/item/weapon/crowbar))
+	if(isCrowbar(I))
 		closed = !closed
 		user.visible_message("<span class='notice'>\The [user] [closed ? "closes" : "opens"] \the [src].</span>", "<span class='notice'>You [closed ? "close" : "open"] \the [src].</span>")
 		update_icon()
 		return
-	else if(istype(I, /obj/item/weapon/wrench))
+	else if(isWrench(I))
 		anchored = !anchored
 		user.visible_message("<span class='notice'>\The [user] [anchored ? "wrenches" : "unwrenches"] \the [src].</span>", "<span class='notice'>You [anchored ? "wrench" : "unwrench"] \the [src].</span>")
 		return
@@ -106,7 +106,7 @@
 		if(smoked)
 			to_chat(user, "The hive is smoked.")
 		return 1
-	else if(istype(I, /obj/item/weapon/screwdriver))
+	else if(isScrewdriver(I))
 		if(bee_count)
 			to_chat(user, "<span class='notice'>You can't dismantle \the [src] with these bees inside.</span>")
 			return
@@ -136,7 +136,7 @@
 			to_chat(user, "<span class='notice'>You take all filled honeycombs out.</span>")
 		return
 
-/obj/machinery/beehive/process()
+/obj/machinery/beehive/Process()
 	if(closed && !smoked && bee_count)
 		pollinate_flowers()
 		update_icon()
@@ -156,9 +156,11 @@
 
 /obj/machinery/honey_extractor
 	name = "honey extractor"
-	desc = "A machine used to turn honeycombs on the frame into honey and wax."
+	desc = "A machine used to extract honey and wax from a beehive frame."
 	icon = 'icons/obj/virology.dmi'
 	icon_state = "centrifuge"
+	anchored = 1
+	density = 1
 
 	var/processing = 0
 	var/honey = 0
@@ -268,7 +270,7 @@ var/global/list/datum/stack_recipe/wax_recipes = list( \
 
 /obj/item/bee_pack/proc/fill()
 	full = initial(full)
-	name = initial(name)
+	SetName(initial(name))
 	desc = initial(desc)
 	overlays.Cut()
 	overlays += "beepack-full"

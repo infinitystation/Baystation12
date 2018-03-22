@@ -11,7 +11,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	item_state = "electronic"
 	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_ID | SLOT_BELT
-	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/id.dmi')
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/onmob/Resomi/id.dmi')
 
 	//Main variables
 	var/owner = null
@@ -26,7 +26,8 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	//Secondary variables
 	var/scanmode = 0 //1 is medical scanner, 2 is forensics, 3 is reagent scanner.
 	var/fon = 0 //Is the flashlight function on?
-	var/f_lum = 2 //Luminosity for the flashlight function
+	var/f_lum = 3 //Luminosity for the flashlight function
+	var/f_color = COLOR_WHITE
 	var/message_silent = 0 //To beep or not to beep, that is the question
 	var/news_silent = 1 //To beep or not to beep, that is the question.  The answer is No.
 	var/toff = 0 //If 1, messenger disabled
@@ -61,6 +62,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	var/obj/item/weapon/card/id/id = null //Making it possible to slot an ID card into the PDA so it can function as both.
 	var/ownjob = null //related to above - this is assignment (potentially alt title)
 	var/ownrank = null // this one is rank, never alt title
+	var/pen = /obj/item/weapon/pen //determines what kind of pen spawns in a PDA
 
 	var/obj/item/device/paicard/pai = null	// A slot for a personal AI device
 
@@ -121,6 +123,9 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	default_cartridge = /obj/item/weapon/cartridge/head
 	icon_state = "pda-h"
 	news_silent = 1
+
+/obj/item/device/pda/heads/paperpusher
+	pen = /obj/item/weapon/pen/fancy
 
 /obj/item/device/pda/heads/hop
 	default_cartridge = /obj/item/weapon/cartridge/hop
@@ -224,7 +229,6 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	default_cartridge = /obj/item/weapon/cartridge/medical
 	icon_state = "pda-gene"
 
-
 // Special AI/pAI PDAs that cannot explode.
 /obj/item/device/pda/ai
 	icon_state = "NONE"
@@ -240,7 +244,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		ownrank = newrank
 	else
 		ownrank = ownjob
-	name = newname + " (" + ownjob + ")"
+	SetName(newname + " (" + ownjob + ")")
 
 
 //AI verb and proc for sending PDA messages.
@@ -324,7 +328,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	PDAs = sortAtom(PDAs)
 	if(default_cartridge)
 		cartridge = new default_cartridge(src)
-	new /obj/item/weapon/pen(src)
+	new pen(src)
 
 /obj/item/device/pda/proc/can_use()
 
@@ -338,6 +342,15 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		return 1
 	else
 		return 0
+
+/obj/item/device/pda/proc/toggle_light()
+	if(can_use())
+		if(fon)
+			fon = 0
+			set_light(0)
+		else
+			fon = 1
+			set_light(f_lum, l_color = f_color)
 
 /obj/item/device/pda/GetAccess()
 	if(id)
@@ -431,6 +444,9 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	var/has_reception = reception.telecomms_reception & TELECOMMS_RECEPTION_SENDER
 	data["reception"] = has_reception
 
+	if(mode==41)
+		data["crew_manifest"] = html_crew_manifest(1, 0)
+
 	if(mode==2)
 		var/convopdas[0]
 		var/pdas[0]
@@ -460,9 +476,6 @@ var/global/list/obj/item/device/pda/PDAs = list()
 				data["convo_name"] = sanitize(c["owner"])
 				data["convo_job"] = sanitize(c["job"])
 				break
-	if(mode==41)
-		GLOB.data_core.get_manifest_list()
-
 
 	if(mode==3)
 		var/turf/T = get_turf(user.loc)
@@ -476,15 +489,13 @@ var/global/list/obj/item/device/pda/PDAs = list()
 				var/o2_level = environment.gas["oxygen"]/total_moles
 				var/n2_level = environment.gas["nitrogen"]/total_moles
 				var/co2_level = environment.gas["carbon_dioxide"]/total_moles
-				var/phoron_level = environment.gas["phoron"]/total_moles
-				var/unknown_level =  1-(o2_level+n2_level+co2_level+phoron_level)
+				var/unknown_level =  1-(o2_level+n2_level+co2_level)
 				data["aircontents"] = list(\
 					"pressure" = "[round(pressure,0.1)]",\
 					"nitrogen" = "[round(n2_level*100,0.1)]",\
 					"oxygen" = "[round(o2_level*100,0.1)]",\
 					"carbon_dioxide" = "[round(co2_level*100,0.1)]",\
-					"phoron" = "[round(phoron_level*100,0.01)]",\
-					"other" = "[round(unknown_level, 0.01)]",\
+					"other" = "[round(unknown_level*100,0.01)]",\
 					"temp" = "[round(environment.temperature-T0C,0.1)]",\
 					"reading" = 1\
 					)
@@ -532,7 +543,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 
 		data["feed"] = feed
 
-	data["manifest"] = PDA_Manifest
+	data["manifest"] = nano_crew_manifest()
 
 	nanoUI = data
 	// update the ui if it exists, returns null if no ui is passed/found
@@ -587,7 +598,6 @@ var/global/list/obj/item/device/pda/PDAs = list()
 			ui.close()
 		return 0
 
-	add_fingerprint(U)
 	U.set_machine(src)
 
 	switch(href_list["choice"])
@@ -641,12 +651,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 //MAIN FUNCTIONS===================================
 
 		if("Light")
-			if(fon)
-				fon = 0
-				set_light(0)
-			else
-				fon = 1
-				set_light(f_lum)
+			toggle_light()
 		if("Medical Scan")
 			if(scanmode == 1)
 				scanmode = 0
@@ -880,7 +885,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 
 	overlays.Cut()
 	if(new_message || new_news)
-		overlays += image('icons/obj/pda.dmi', "pda-r")
+		overlays += image(icon, "pda-r")
 
 /obj/item/device/pda/proc/detonate_act(var/obj/item/device/pda/P)
 	//TODO: sometimes these attacks show up on the message server
@@ -960,6 +965,9 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	if(Adjacent(usr))
 		verb_remove_id()
 
+/obj/item/device/pda/CtrlAltClick()
+	toggle_light()
+
 /obj/item/device/pda/proc/create_message(var/mob/living/U = usr, var/obj/item/device/pda/P, var/tap = 1)
 	if(!istype(P))
 		to_chat(U, "<span class='notice'>ERROR: This user does not accept messages.</span>")
@@ -1007,13 +1015,13 @@ var/global/list/obj/item/device/pda/PDAs = list()
 			tempmessage[P] = t
 			return
 
-		tnote.Add(list(list("sent" = 1, "owner" = "[P.owner]", "job" = "[P.ownjob]", "message" = "[t]", "target" = "\ref[P]")))
-		P.tnote.Add(list(list("sent" = 0, "owner" = "[owner]", "job" = "[ownjob]", "message" = "[t]", "target" = "\ref[src]")))
+		tnote.Add(list(list("sent" = 1, "owner" = "[P.owner]", "job" = "[P.ownjob]", "message" = "[t]", "timestamp" = stationtime2text(), "target" = "\ref[P]")))
+		P.tnote.Add(list(list("sent" = 0, "owner" = "[owner]", "job" = "[ownjob]", "message" = "[t]", "timestamp" = stationtime2text(), "target" = "\ref[src]")))
 		for(var/mob/M in GLOB.player_list)
-			if(M.stat == DEAD && M.is_preference_enabled(/datum/client_preference/ghost_ears)) // src.client is so that ghosts don't have to listen to mice
+			if(M.stat == DEAD && M.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_ALL_SPEECH) // src.client is so that ghosts don't have to listen to mice
 				if(istype(M, /mob/new_player))
 					continue
-				M.show_message("<span class='game say'>PDA Message - <span class='name'>[owner]</span> -> <span class='name'>[P.owner]</span>: <span class='message'>[t]</span></span>")
+				M.show_message("<span class='game say'>[initial(name)] Message - <span class='name'>[owner]</span> -> <span class='name'>[P.owner]</span>: <span class='message'>[t]</span></span>")
 
 		if(!conversations.Find("\ref[P]"))
 			conversations.Add("\ref[P]")
@@ -1210,7 +1218,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 			return
 		if(!owner)
 			set_owner_rank_job(idcard.registered_name, idcard.rank, idcard.assignment)
-			name = "PDA-[owner] ([ownjob])"
+			name = "[initial(name)]-[owner] ([ownjob])"
 			to_chat(user, "<span class='notice'>Card scanned.</span>")
 		else
 			//Basic safety check. If either both objects are held by user or PDA is on ground and card is in hand.
@@ -1391,7 +1399,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		var/name = P.owner
 		if (name in names)
 			namecounts[name]++
-			name = text("[name] ([namecounts[name]])")
+			SetName(text("[name] ([namecounts[name]])"))
 		else
 			names.Add(name)
 			namecounts[name] = 1
@@ -1441,4 +1449,4 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	set_rank_job(rank, job)
 
 /obj/item/device/pda/proc/update_label()
-	name = "PDA-[owner] ([ownjob])"
+	SetName("[initial(name)]-[owner] ([ownjob])")

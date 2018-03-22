@@ -4,53 +4,41 @@ var/const/MED               =(1<<2)
 var/const/SCI               =(1<<3)
 var/const/CIV               =(1<<4)
 var/const/COM               =(1<<5)
-var/const/CRG               =(1<<6)
-var/const/MSC               =(1<<7)
-var/const/SRV               =(1<<8)
-var/const/SUP               =(1<<9)
-var/const/SPT               =(1<<10)
+var/const/MSC               =(1<<6)
+var/const/SRV               =(1<<7)
+var/const/SUP               =(1<<8)
+var/const/SPT               =(1<<9)
+var/const/EXP               =(1<<10)
 
-var/list/assistant_occupations = list(
-)
+GLOBAL_LIST_EMPTY(assistant_occupations)
 
-var/list/command_positions = list(
-)
+GLOBAL_LIST_EMPTY(command_positions)
 
-var/list/engineering_positions = list(
-)
+GLOBAL_LIST_EMPTY(engineering_positions)
 
-var/list/medical_positions = list(
-)
+GLOBAL_LIST_EMPTY(medical_positions)
 
-var/list/science_positions = list(
-)
+GLOBAL_LIST_EMPTY(science_positions)
 
-var/list/cargo_positions = list(
-)
+GLOBAL_LIST_EMPTY(civilian_positions)
 
-var/list/civilian_positions = list(
-)
+GLOBAL_LIST_EMPTY(security_positions)
 
+GLOBAL_LIST_INIT(nonhuman_positions, list("pAI"))
 
-var/list/security_positions = list(
-)
+GLOBAL_LIST_EMPTY(service_positions)
 
-var/list/nonhuman_positions = list(
-	"pAI"
-)
+GLOBAL_LIST_EMPTY(supply_positions)
 
-var/list/service_positions = list(
-)
+GLOBAL_LIST_EMPTY(support_positions)
 
-var/list/supply_positions = list(
-)
+GLOBAL_LIST_EMPTY(exploration_positions)
 
-var/list/support_positions = list(
-)
+GLOBAL_LIST_EMPTY(unsorted_positions) // for nano manifest
 
 
 /proc/guest_jobbans(var/job)
-	return ((job in command_positions) || (job in nonhuman_positions) || (job in security_positions))
+	return ((job in GLOB.command_positions) || (job in GLOB.nonhuman_positions) || (job in GLOB.security_positions))
 
 /proc/get_job_datums()
 	var/list/occupations = list()

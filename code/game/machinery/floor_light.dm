@@ -18,16 +18,16 @@ var/list/floor_light_cache = list()
 	var/damaged
 	var/default_light_range = 4
 	var/default_light_power = 2
-	var/default_light_colour = "#FFFFFF"
+	var/default_light_colour = "#ffffff"
 
 /obj/machinery/floor_light/prebuilt
 	anchored = 1
 
 /obj/machinery/floor_light/attackby(var/obj/item/W, var/mob/user)
-	if(istype(W, /obj/item/weapon/screwdriver))
+	if(isScrewdriver(W))
 		anchored = !anchored
 		visible_message("<span class='notice'>\The [user] has [anchored ? "attached" : "detached"] \the [src].</span>")
-	else if(istype(W, /obj/item/weapon/weldingtool) && (damaged || (stat & BROKEN)))
+	else if(isWelder(W) && (damaged || (stat & BROKEN)))
 		var/obj/item/weapon/weldingtool/WT = W
 		if(!WT.remove_fuel(0, user))
 			to_chat(user, "<span class='warning'>\The [src] must be on to complete this task.</span>")
@@ -78,7 +78,7 @@ var/list/floor_light_cache = list()
 		update_brightness()
 		return
 
-/obj/machinery/floor_light/process()
+/obj/machinery/floor_light/Process()
 	..()
 	var/need_update
 	if((!anchored || broken()) && on)

@@ -32,6 +32,7 @@
 	var/old_affecting_lights = affecting_lights
 	var/old_lighting_overlay = lighting_overlay
 	var/old_corners = corners
+	//var/old_ao_neighbors = ao_neighbors
 
 //	log_debug("Replacing [src.type] with [N]")
 
@@ -62,14 +63,14 @@
 	if(tell_universe)
 		GLOB.universe.OnTurfChange(W)
 
-	if(air_master)
-		air_master.mark_for_update(src) //handle the addition of the new turf.
+	SSair.mark_for_update(src) //handle the addition of the new turf.
 
 	for(var/turf/space/S in range(W,1))
 		S.update_starlight()
 
 	W.post_change()
 	. = W
+	//W.ao_neighbors = old_ao_neighbors
 
 	if(lighting_overlays_initialised)
 		lighting_overlay = old_lighting_overlay

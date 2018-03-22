@@ -116,34 +116,25 @@ Class Procs:
 	var/clicksound			// sound played on succesful interface use by a carbon lifeform
 	var/clickvol = 40		// sound played on succesful interface use
 
-/obj/machinery/New(l, d=0)
-	..(l)
+/obj/machinery/Initialize(mapload, d=0)
+	. = ..()
 	if(d)
 		set_dir(d)
-	if(!machinery_sort_required && ticker)
-		dd_insertObjectList(GLOB.machines, src)
-	else
-		GLOB.machines += src
-		machinery_sort_required = 1
+	START_PROCESSING(SSmachines, src)
 
 /obj/machinery/Destroy()
-	GLOB.machines -= src
+	STOP_PROCESSING(SSmachines, src)
 	if(component_parts)
 		for(var/atom/A in component_parts)
 			if(A.loc == src) // If the components are inside the machine, delete them.
 				qdel(A)
 			else // Otherwise we assume they were dropped to the ground during deconstruction, and were not removed from the component_parts list by deconstruction code.
 				component_parts -= A
-	if(contents) // The same for contents.
-		for(var/atom/A in contents)
-			qdel(A)
-	return ..()
+	. = ..()
 
-/obj/machinery/process()//If you dont use process or power why are you here
+/obj/machinery/Process()//If you dont use process or power why are you here
 	if(!(use_power || idle_power_usage || active_power_usage))
 		return PROCESS_KILL
-
-	return
 
 /obj/machinery/emp_act(severity)
 	if(use_power && stat == 0)
@@ -152,7 +143,7 @@ Class Procs:
 		var/obj/effect/overlay/pulse2 = new /obj/effect/overlay(loc)
 		pulse2.icon = 'icons/effects/effects.dmi'
 		pulse2.icon_state = "empdisable"
-		pulse2.name = "emp sparks"
+		pulse2.SetName("emp sparks")
 		pulse2.anchored = 1
 		pulse2.set_dir(pick(GLOB.cardinal))
 
@@ -248,8 +239,6 @@ Class Procs:
 			to_chat(user, "<span class='warning'>You momentarily forget how to use \the [src].</span>")
 			return 1
 
-	src.add_fingerprint(user)
-
 	return ..()
 
 /obj/machinery/proc/RefreshParts() //Placeholder proc for machines that are built using frames.
@@ -306,13 +295,18 @@ Class Procs:
 	return 1
 
 /obj/machinery/proc/default_part_replacement(var/mob/user, var/obj/item/weapon/storage/part_replacer/R)
+	var/shouldplaysound = 0
 	if(!istype(R))
 		return 0
 	if(!component_parts)
 		return 0
-	if(panel_open)
+	if(panel_open || R.works_from_distance)
 		var/obj/item/weapon/circuitboard/CB = locate(/obj/item/weapon/circuitboard) in component_parts
 		var/P
+		if(R.works_from_distance)
+			to_chat(user, "<span class='notice'>Following parts detected in the machine:</span>")
+			for(var/var/obj/item/C in component_parts)
+				to_chat(user, "<span class='notice'>	[C.name]</span>")
 		for(var/obj/item/weapon/stock_parts/A in component_parts)
 			for(var/T in CB.req_components)
 				if(ispath(A.type, T))
@@ -327,6 +321,7 @@ Class Procs:
 						component_parts += B
 						B.loc = null
 						to_chat(user, "<span class='notice'>[A.name] replaced with [B.name].</span>")
+						shouldplaysound = 1 //Only play the sound when parts are actually replaced!
 						break
 			update_icon()
 			RefreshParts()
@@ -334,6 +329,9 @@ Class Procs:
 		to_chat(user, "<span class='notice'>Following parts detected in the machine:</span>")
 		for(var/var/obj/item/C in component_parts)
 			to_chat(user, "<span class='notice'>	[C.name]</span>")
+	if(shouldplaysound)
+		R.play_rped_sound()
+		display_parts(user)
 	return 1
 
 /obj/machinery/proc/dismantle()
@@ -364,3 +362,13 @@ Class Procs:
 	..()
 	if(clicksound && istype(user, /mob/living/carbon))
 		playsound(src, clicksound, clickvol)
+
+/obj/machinery/proc/display_parts(mob/user)
+	to_chat(user, "<span class='notice'>Following parts detected in the machine:</span>")
+	for(var/var/obj/item/C in component_parts)
+		to_chat(user, "<span class='notice'>	[C.name]</span>")
+
+/obj/machinery/examine(mob/user)
+	. = ..(user)
+	if(component_parts && hasHUD(user, HUD_SCIENCE))
+		display_parts(user)

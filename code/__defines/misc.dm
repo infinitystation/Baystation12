@@ -1,8 +1,10 @@
 #define DEBUG
 // Turf-only flags.
-#define NOJAUNT 1 // This is used in literally one place, turf.dm, to block ethereal jaunt.
+#define TURF_FLAG_NOJAUNT 1 // This is used in literally one place, turf.dm, to block ethereal jaunt.
+#define TURF_FLAG_NORUINS 2
 
 #define TRANSITIONEDGE 7 // Distance from edge to move to another z-level.
+#define RUIN_MAP_EDGE_PAD 15
 
 // Invisibility constants.
 #define INVISIBILITY_LIGHTING    20
@@ -27,7 +29,6 @@
 
 // Some arbitrary defines to be used by self-pruning global lists. (see master_controller)
 #define PROCESS_KILL 26 // Used to trigger removal from a processing list.
-#define MAX_GEAR_COST 10 // Used in chargen for accessory loadout limit.
 
 // For secHUDs and medHUDs and variants. The number is the location of the image on the list hud_list of humans.
 #define      HEALTH_HUD 1 // A simple line rounding the mob's number health.
@@ -60,6 +61,7 @@
 #define MAX_LNAME_LEN         64
 #define MAX_NAME_LEN          26
 #define MAX_DESC_LEN          128
+#define MAX_TEXTFILE_LENGTH 128000		// 512GQ file
 
 // Event defines.
 #define EVENT_LEVEL_MUNDANE  1
@@ -72,8 +74,8 @@
 #define DEFAULT_JOB_TYPE /datum/job/assistant
 
 //Area flags, possibly more to come
-#define AREA_RAD_SHIELDED 1 // shielded from radiation, clearly
-#define AREA_EXTERNAL     2 // External as in exposed to space, not outside in a nice, green, forest
+#define AREA_FLAG_RAD_SHIELDED 1 // shielded from radiation, clearly
+#define AREA_FLAG_EXTERNAL     2 // External as in exposed to space, not outside in a nice, green, forest
 
 // Convoluted setup so defines can be supplied by Bay12 main server compile script.
 // Should still work fine for people jamming the icons into their repo.
@@ -98,9 +100,6 @@
 #define SHARD_STONE_PIECE "piece"
 #define SHARD_SPLINTER "splinters"
 #define SHARD_NONE ""
-
-#define OBJ_ANCHORABLE 0x1
-#define OBJ_CLIMBABLE 0x100
 
 #define MATERIAL_UNMELTABLE 0x1
 #define MATERIAL_BRITTLE    0x2
@@ -209,3 +208,90 @@
 #define ANNOUNSER_NAME "[station_name()] Automated Announcement System"
 
 #define DOOR_CRUSH_DAMAGE 15
+
+// Multimeter defines
+#define METER_MESURING "Измерение" // Measuring
+#define METER_CHECKING "Прозвонка" // Checking
+
+#define RADIATION_THRESHOLD_CUTOFF 0.1	// Radiation will not affect a tile when below this value.
+
+#define LEGACY_RECORD_STRUCTURE(X, Y) GLOBAL_LIST_EMPTY(##X);/datum/computer_file/data/##Y/var/list/fields[0];/datum/computer_file/data/##Y/New(){..();GLOB.##X.Add(src);}/datum/computer_file/data/##Y/Destroy(){..();GLOB.##X.Remove(src);}
+
+#define EDIT_SHORTTEXT 1	// Short (single line) text input field
+#define EDIT_LONGTEXT 2		// Long (multi line, papercode tag formattable) text input field
+#define EDIT_NUMERIC 3		// Single-line number input field
+#define EDIT_LIST 4			// Option select dialog
+
+#define REC_FIELD(KEY) 		/record_field/##KEY
+
+#define SUPPLY_SECURITY_ELEVATED 1
+#define SUPPLY_SECURITY_HIGH 2
+
+// secure gun authorization settings
+#define UNAUTHORIZED      0
+#define AUTHORIZED        1
+#define ALWAYS_AUTHORIZED 2
+
+/*
+Define for getting a bitfield of adjacent turfs that meet a condition.
+ ORIGIN is the object to step from, VAR is the var to write the bitfield to
+ TVAR is the temporary turf variable to use, FUNC is the condition to check.
+ FUNC generally should reference TVAR.
+ example:
+	var/turf/T
+	var/result = 0
+	CALCULATE_NEIGHBORS(src, result, T, isopenturf(T))
+*/
+#define CALCULATE_NEIGHBORS(ORIGIN, VAR, TVAR, FUNC) \
+	for (var/_tdir in GLOB.cardinal) {               \
+		TVAR = get_step(ORIGIN, _tdir);              \
+		if ((TVAR) && (FUNC)) {                      \
+			VAR |= 1 << _tdir;                       \
+		}                                            \
+	}                                                \
+	if (VAR & N_NORTH) {                             \
+		if (VAR & N_WEST) {                          \
+			TVAR = get_step(ORIGIN, NORTHWEST);      \
+			if (FUNC) {                              \
+				VAR |= N_NORTHWEST;                  \
+			}                                        \
+		}                                            \
+		if (VAR & N_EAST) {                          \
+			TVAR = get_step(ORIGIN, NORTHEAST);      \
+			if (FUNC) {                              \
+				VAR |= N_NORTHEAST;                  \
+			}                                        \
+		}                                            \
+	}                                                \
+	if (VAR & N_SOUTH) {                             \
+		if (VAR & N_WEST) {                          \
+			TVAR = get_step(ORIGIN, SOUTHWEST);      \
+			if (FUNC) {                              \
+				VAR |= N_SOUTHWEST;                  \
+			}                                        \
+		}                                            \
+		if (VAR & N_EAST) {                          \
+			TVAR = get_step(ORIGIN, SOUTHEAST);      \
+			if (FUNC) {                              \
+				VAR |= N_SOUTHEAST;                  \
+			}                                        \
+		}                                            \
+}
+
+// /atom/proc/use_check flags.
+#define USE_ALLOW_NONLIVING 1
+#define USE_ALLOW_NON_ADV_TOOL_USR 2
+#define USE_ALLOW_DEAD 4
+#define USE_ALLOW_INCAPACITATED 8
+#define USE_ALLOW_NON_ADJACENT 16
+#define USE_FORCE_SRC_IN_USER 32
+#define USE_DISALLOW_SILICONS 64
+
+#define USE_SUCCESS 0
+#define USE_FAIL_NON_ADJACENT 1
+#define USE_FAIL_NONLIVING 2
+#define USE_FAIL_NON_ADV_TOOL_USR 3
+#define USE_FAIL_DEAD 4
+#define USE_FAIL_INCAPACITATED 5
+#define USE_FAIL_NOT_IN_USER 6
+#define USE_FAIL_IS_SILICON 7

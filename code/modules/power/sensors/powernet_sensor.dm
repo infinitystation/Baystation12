@@ -45,7 +45,7 @@
 // Proc: process()
 // Parameters: None
 // Description: This has to be here because we need sensors to remain in Machines list.
-/obj/machinery/power/sensor/process()
+/obj/machinery/power/sensor/Process()
 	return 1
 
 // Proc: reading_to_text()
@@ -151,7 +151,7 @@
 	var/list/APC_data = list()
 	if(L.len > 0)
 		// These lists are used as replacement for number based APC settings
-		var/list/S = list("M-OFF","A-OFF","M-ON", "A-ON")
+		var/list/S = list("M-OFF", "DC-OFF","A-OFF","M-ON", "A-ON")
 		var/list/chg = list("N","C","F")
 
 		for(var/obj/machinery/power/apc/A in L)

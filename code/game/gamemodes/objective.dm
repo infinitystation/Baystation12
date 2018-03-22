@@ -302,7 +302,7 @@ datum/objective/escape
 			return 0
 
 		var/area/check_area = location.loc
-		return check_area && is_type_in_list(check_area, GLOB.using_map.post_round_safe_areas)
+		return check_area && is_type_in_list(check_area, GLOB.using_map.post_round_safe_areas) || owner.current.z in GLOB.using_map.admin_levels
 
 
 
@@ -404,7 +404,51 @@ datum/objective/harm
 datum/objective/nuclear
 	explanation_text = "Cause mass destruction with a nuclear device."
 
+datum/objective/terrorists
+	proc/choose_target()
+		return
 
+datum/objective/terrorists/kidnap
+	choose_target()
+		var/list/roles = list("Commanding Officer","Executive Officer","Chief Engineer",
+		"NanoTrasen Liaison","SolGov Representative",
+		"Senior Researcher","Research Supervisor","Research Director",
+		"Journalist","Investor","Independent Observer",)
+		var/list/possible_targets = list()
+		var/list/priority_targets = list()
+
+		for(var/datum/mind/possible_target in ticker.minds)
+			if(possible_target != owner && ishuman(possible_target.current) && (possible_target.current.stat != 2) && (!possible_target.special_role))
+				possible_targets += possible_target
+				for(var/role in roles)
+					if(possible_target.assigned_role == role)
+						priority_targets += possible_target
+						continue
+
+		if(priority_targets.len > 0)
+			target = pick(priority_targets)
+		else if(possible_targets.len > 0)
+			target = pick(possible_targets)
+
+		if(target && target.current)
+			explanation_text = "Ќаши наниматели хот€т, чтобы мы захватили '[target.current.real_name], [target.assigned_role]' и доставили на базу. ÷ель должна быть живой."
+		else
+			explanation_text = "Free Objective"
+		return target
+
+	check_completion()
+		if(target && target.current)
+			if (target.current.stat == 2)
+				return 0 // They're dead. Fail.
+			//if (!target.current.restrained())
+			//	return 0 // They're loose. Close but no cigar.
+
+			var/area/syndicate_mothership/elite_squad/A = locate()
+			for(var/mob/living/carbon/human/M in A)
+				if(target.current == M)
+					return 1 //They're restrained on the shuttle. Success.
+		else
+			return 0
 
 datum/objective/steal
 	var/obj/item/steal_target
@@ -415,22 +459,21 @@ datum/objective/steal
 		"a bluespace rift generator" = /obj/item/integrated_circuit/manipulation/bluespace_rift,
 		"an RCD" = /obj/item/weapon/rcd,
 		"a jetpack" = /obj/item/weapon/tank/jetpack,
-		"a captain's jumpsuit" = /obj/item/clothing/under/rank/captain,
 		"a functional AI" = /obj/item/weapon/aicard,
+		"a pathfinder's deluxe machete"	 = /obj/item/weapon/material/hatchet/machete/deluxe,
 		"a pair of magboots" = /obj/item/clothing/shoes/magboots,
 		"the [station_name()] blueprints" = /obj/item/blueprints,
-		"a nasa voidsuit" = /obj/item/clothing/suit/space/void,
+		"the multimeter" = /obj/item/device/multitool/multimeter,
 		"28 moles of phoron (full tank)" = /obj/item/weapon/tank,
 		"a sample of slime extract" = /obj/item/slime_extract,
 		"a piece of corgi meat" = /obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
 		"a research director's jumpsuit" = /obj/item/clothing/under/rank/research_director,
-		"a chief engineer's jumpsuit" = /obj/item/clothing/under/rank/chief_engineer,
-		"a chief medical officer's jumpsuit" = /obj/item/clothing/under/rank/chief_medical_officer,
-		"a head of security's jumpsuit" = /obj/item/clothing/under/rank/head_of_security,
-		"a head of personnel's jumpsuit" = /obj/item/clothing/under/rank/head_of_personnel,
+		"a Formal Outfit of NT liason" = /obj/item/clothing/under/rank/internalaffairs/plain/nt,
+		"a Tactical Goggles" = /obj/item/clothing/glasses/tacgoggles,
 		"the hypospray" = /obj/item/weapon/reagent_containers/hypospray,
 		"the captain's pinpointer" = /obj/item/weapon/pinpointer,
 		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
+		"a ballistic armor vest" =  /obj/item/clothing/suit/armor/bulletproof/vest,
 	)
 
 	var/global/possible_items_special[] = list(
@@ -492,7 +535,7 @@ datum/objective/steal
 				return found_amount>=target_amount
 
 			if("a functional AI")
-				for(var/mob/living/silicon/ai/ai in GLOB.mob_list)
+				for(var/mob/living/silicon/ai/ai in SSmobs.mob_list)
 					if(ai.stat == DEAD)
 						continue
 					var/turf/T = get_turf(ai)
@@ -818,7 +861,7 @@ datum/objective/heist/salvage
 	explanation_text = "Summon Nar-Sie via the use of the appropriate rune (Hell join self). It will only work if nine cultists stand on and around it. The convert rune is join blood self."
 
 /datum/objective/cult/eldergod/check_completion()
-	return (locate(/obj/singularity/narsie/large) in GLOB.machines)
+	return (locate(/obj/singularity/narsie/large) in SSmachines.machinery)
 
 /datum/objective/cult/sacrifice
 	explanation_text = "Conduct a ritual sacrifice for the glory of Nar-Sie."

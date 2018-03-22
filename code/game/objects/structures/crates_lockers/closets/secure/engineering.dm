@@ -5,7 +5,6 @@
 	icon_closed = "securece"
 	icon_locked = "securece1"
 	icon_opened = "secureceopen"
-	icon_broken = "securecebroken"
 	icon_off = "secureceoff"
 
 /obj/structure/closet/secure_closet/engineering_chief/WillContain()
@@ -39,16 +38,16 @@
 	icon_closed = "secureengelec"
 	icon_locked = "secureengelec1"
 	icon_opened = "toolclosetopen"
-	icon_broken = "secureengelecbroken"
 	icon_off = "secureengelecoff"
 
 /obj/structure/closet/secure_closet/engineering_electrical/WillContain()
 	return list(
 		/obj/item/clothing/gloves/nabber = 2,
-		/obj/item/clothing/gloves/insulated = 3,
+		/obj/item/clothing/gloves/insulated = 4,
 		/obj/item/weapon/storage/toolbox/electrical = 3,
 		/obj/item/weapon/module/power_control = 3,
-		/obj/item/device/multitool = 3
+		/obj/item/device/multitool = 3,
+		/obj/item/device/multitool/multimeter = 2
 	)
 
 /obj/structure/closet/secure_closet/engineering_welding
@@ -58,7 +57,6 @@
 	icon_closed = "secureengweld"
 	icon_locked = "secureengweld1"
 	icon_opened = "toolclosetopen"
-	icon_broken = "secureengweldbroken"
 	icon_off = "secureengweldoff"
 
 /obj/structure/closet/secure_closet/engineering_welding/WillContain()
@@ -66,7 +64,8 @@
 		/obj/item/clothing/head/welding = 3,
 		/obj/item/weapon/weldingtool/largetank = 3,
 		/obj/item/weapon/weldpack = 3,
-		/obj/item/clothing/glasses/welding = 3
+		/obj/item/clothing/glasses/welding = 3,
+		/obj/item/weapon/welder_tank = 6
 	)
 
 /obj/structure/closet/secure_closet/engineering_personal
@@ -76,7 +75,6 @@
 	icon_closed = "secureeng"
 	icon_locked = "secureeng1"
 	icon_opened = "secureengopen"
-	icon_broken = "secureengbroken"
 	icon_off = "secureengoff"
 
 /obj/structure/closet/secure_closet/engineering_personal/WillContain()
@@ -101,7 +99,6 @@
 	icon_closed = "secureatm"
 	icon_locked = "secureatm1"
 	icon_opened = "secureatmopen"
-	icon_broken = "secureatmbroken"
 	icon_off = "secureatmoff"
 
 /obj/structure/closet/secure_closet/atmos_personal/WillContain()

@@ -29,6 +29,7 @@ In short:
 	//Separated into separate procs for profiling
 	MiscSet()
 	KillMobs()
+	SSskybox.reinstate_skyboxes("narsie", FALSE)
 
 /datum/universal_state/hell/proc/MiscSet()
 	for(var/turf/simulated/floor/T)
@@ -36,6 +37,6 @@ In short:
 			new /obj/effect/gateway/active/cult(T)
 
 /datum/universal_state/hell/proc/KillMobs()
-	for(var/mob/living/simple_animal/M in GLOB.mob_list)
+	for(var/mob/living/simple_animal/M in SSmobs.mob_list)
 		if(M && !M.client)
 			M.set_stat(DEAD)

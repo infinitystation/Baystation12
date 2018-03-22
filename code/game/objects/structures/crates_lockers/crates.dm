@@ -5,7 +5,7 @@ obj/structure/closet/crate
 	icon_state = "crate"
 	icon_opened = "crateopen"
 	icon_closed = "crate"
-	flags = OBJ_CLIMBABLE
+	atom_flags = ATOM_FLAG_CLIMBABLE
 	setup = 0
 
 	storage_types = CLOSET_STORAGE_ITEMS
@@ -14,7 +14,7 @@ obj/structure/closet/crate
 	var/rigged = 0
 
 /obj/structure/closet/crate/open()
-	if(flags & OBJ_CLIMBABLE && !opened && can_open())
+	if((atom_flags & ATOM_FLAG_OPEN_CONTAINER) && !opened && can_open())
 		object_shaken()
 	. = ..()
 	if(.)
@@ -55,7 +55,7 @@ obj/structure/closet/crate
 			user.drop_item()
 			W.forceMove(src)
 			return
-	else if(istype(W, /obj/item/weapon/wirecutters))
+	else if(isWirecutter(W))
 		if(rigged)
 			to_chat(user, "<span class='notice'>You cut away the wiring.</span>")
 			playsound(loc, 'sound/items/Wirecutter.ogg', 100, 1)
@@ -105,6 +105,13 @@ obj/structure/closet/crate
 	icon_state = "o2crate"
 	icon_opened = "o2crateopen"
 	icon_closed = "o2crate"
+
+/obj/structure/closet/crate/internals/fuel
+	name = "\improper Fuel tank crate"
+	desc = "A fuel tank crate."
+
+/obj/structure/closet/crate/internals/fuel/WillContain()
+	return list(/obj/item/weapon/tank/hydrogen = 4)
 
 /obj/structure/closet/crate/trashcart
 	name = "trash cart"
@@ -302,7 +309,7 @@ obj/structure/closet/crate
 	)
 
 /obj/structure/closet/crate/secure/biohazard
-	name = "biohazarad cart"
+	name = "biohazard cart"
 	desc = "A heavy cart with extensive sealing. You shouldn't eat things you find in it."
 	icon_state = "biohazard"
 	icon_opened = "biohazardopen"
@@ -324,3 +331,13 @@ obj/structure/closet/crate
 
 /obj/structure/closet/crate/paper_refill/WillContain()
 	return list(/obj/item/weapon/paper = 30)
+
+/obj/structure/closet/crate/uranium
+	name = "fissibles crate"
+	desc = "A crate with a radiation sign on it."
+	icon_state = "radiation"
+	icon_opened = "radiationopen"
+	icon_closed = "radiation"
+
+/obj/structure/closet/crate/uranium/WillContain()
+	return list(/obj/item/stack/material/uranium/ten = 5)

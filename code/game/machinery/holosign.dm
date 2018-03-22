@@ -55,14 +55,13 @@
 /obj/machinery/button/holosign/attack_hand(mob/user as mob)
 	if(..())
 		return
-	add_fingerprint(user)
 
 	use_power(5)
 
 	active = !active
 	update_icon()
 
-	for(var/obj/machinery/holosign/M in GLOB.machines)
+	for(var/obj/machinery/holosign/M in SSmachines.machinery)
 		if (M.id == src.id)
 			spawn( 0 )
 				M.toggle()

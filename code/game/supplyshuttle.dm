@@ -43,7 +43,7 @@ var/list/mechtoys = list(
 		)
 
 /obj/structure/plasticflaps/CanPass(atom/A, turf/T)
-	if(istype(A) && A.checkpass(PASSGLASS))
+	if(istype(A) && A.checkpass(PASS_FLAG_GLASS))
 		return prob(60)
 
 	var/obj/structure/bed/B = A
@@ -116,6 +116,8 @@ var/list/point_source_descriptions = list(
 	"crate" = "From exported crates",
 	"phoron" = "From exported phoron",
 	"platinum" = "From exported platinum",
+	"virology" = "From uploaded antibody data",
+	"refined_scrap" = "From exported refined scrap",
 	"total" = "Total" // If you're adding additional point sources, add it here in a new line. Don't forget to put a comma after the old last line.
 	)
 
@@ -132,6 +134,7 @@ var/list/point_source_descriptions = list(
 	var/points_per_slip = 2
 	var/points_per_platinum = 5 // 5 points per sheet
 	var/points_per_phoron = 5
+	var/points_per_refined_scrap = 5
 	var/point_sources = list()
 	var/pointstotalsum = 0
 	var/pointstotal = 0
@@ -139,6 +142,7 @@ var/list/point_source_descriptions = list(
 	var/ordernum
 	var/list/shoppinglist = list()
 	var/list/requestlist = list()
+	var/list/donelist = list()
 	var/list/master_supply_list = list()
 	//shuttle movement
 	var/movetime = 1200
@@ -179,6 +183,7 @@ var/list/point_source_descriptions = list(
 	proc/sell()
 		var/phoron_count = 0
 		var/plat_count = 0
+		var/scrap_count = 0
 		for(var/area/subarea in shuttle.shuttle_area)
 			for(var/atom/movable/MA in subarea)
 				if(MA.anchored)	continue
@@ -207,6 +212,9 @@ var/list/point_source_descriptions = list(
 							switch(P.get_material_name())
 								if("phoron") phoron_count += P.get_amount()
 								if("platinum") plat_count += P.get_amount()
+						if(istype(A, /obj/item/stack/sheet/refined_scrap))
+							var/obj/item/stack/P = A
+							scrap_count += P.get_amount()
 				qdel(MA)
 
 		if(phoron_count)
@@ -217,6 +225,9 @@ var/list/point_source_descriptions = list(
 			var/temp = plat_count * points_per_platinum
 			add_points_from_source(temp, "platinum")
 
+		if(scrap_count)
+			var/temp = scrap_count * points_per_refined_scrap
+			add_points_from_source(temp, "refined_scrap")
 	//Buyin
 	proc/buy()
 		if(!shoppinglist.len) return
@@ -238,12 +249,13 @@ var/list/point_source_descriptions = list(
 			var/turf/pickedloc = clear_turfs[i]
 			clear_turfs.Cut(i,i+1)
 			shoppinglist -= S
+			donelist += S
 
 			var/datum/supply_order/SO = S
 			var/decl/hierarchy/supply_pack/SP = SO.object
 
 			var/obj/A = new SP.containertype(pickedloc)
-			A.name = "[SP.containername][SO.comment ? " ([SO.comment])":"" ]"
+			A.SetName("[SP.containername][SO.comment ? " ([SO.comment])":"" ]")
 			//supply manifest generation begin
 
 			var/obj/item/weapon/paper/manifest/slip

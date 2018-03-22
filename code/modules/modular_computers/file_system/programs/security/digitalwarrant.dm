@@ -1,12 +1,6 @@
-var/warrant_uid = 0
-/datum/datacore/var/list/warrants[] = list()
-/datum/data/record/warrant
-	var/warrant_id
-
-/datum/data/record/warrant/New()
-	..()
-	warrant_id = warrant_uid++
-
+LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
+/datum/computer_file/data/warrant/
+	var/archived = FALSE
 
 /datum/computer_file/program/digitalwarrant
 	filename = "digitalwarrant"
@@ -14,6 +8,8 @@ var/warrant_uid = 0
 	extended_desc = "Official NTsec program for creation and handling of warrants."
 	size = 8
 	program_icon_state = "warrant"
+	program_key_state = "security_key"
+	program_menu_icon = "star"
 	requires_ntnet = 1
 	available_on_ntnet = 1
 	required_access = access_security
@@ -22,7 +18,7 @@ var/warrant_uid = 0
 
 /datum/nano_module/digitalwarrant/
 	name = "Warrant Assistant"
-	var/datum/data/record/warrant/activewarrant
+	var/datum/computer_file/data/warrant/activewarrant
 
 /datum/nano_module/digitalwarrant/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
@@ -36,7 +32,7 @@ var/warrant_uid = 0
 		var/list/arrestwarrants = list()
 		var/list/searchwarrants = list()
 		var/list/archivedwarrants = list()
-		for(var/datum/data/record/warrant/W in GLOB.data_core.warrants)
+		for(var/datum/computer_file/data/warrant/W in GLOB.all_warrants)
 			var/charges = W.fields["charges"]
 			if(lentext(charges) > 50)
 				charges = copytext(charges, 1, 50) + "..."
@@ -44,7 +40,7 @@ var/warrant_uid = 0
 			"warrantname" = W.fields["namewarrant"],
 			"charges" = charges,
 			"auth" = W.fields["auth"],
-			"id" = W.warrant_id,
+			"id" = W.uid,
 			"arrestsearch" = W.fields["arrestsearch"],
 			"archived" = W.archived)
 			if (warrant["archived"])
@@ -73,8 +69,8 @@ var/warrant_uid = 0
 
 	if(href_list["editwarrant"])
 		. = 1
-		for(var/datum/data/record/warrant/W in GLOB.data_core.warrants)
-			if(W.warrant_id == text2num(href_list["editwarrant"]))
+		for(var/datum/computer_file/data/warrant/W in GLOB.all_warrants)
+			if(W.uid == text2num(href_list["editwarrant"]))
 				activewarrant = W
 				break
 
@@ -92,21 +88,21 @@ var/warrant_uid = 0
 
 	if(href_list["sendtoarchive"])
 		. = 1
-		for(var/datum/data/record/warrant/W in GLOB.data_core.warrants)
-			if(W.warrant_id == text2num(href_list["sendtoarchive"]))
+		for(var/datum/computer_file/data/warrant/W in GLOB.all_warrants)
+			if(W.uid == text2num(href_list["sendtoarchive"]))
 				W.archived = TRUE
 				break
 
 	if(href_list["restore"])
 		. = 1
-		for(var/datum/data/record/warrant/W in GLOB.data_core.warrants)
-			if(W.warrant_id == text2num(href_list["restore"]))
+		for(var/datum/computer_file/data/warrant/W in GLOB.all_warrants)
+			if(W.uid == text2num(href_list["restore"]))
 				W.archived = FALSE
 				break
 
 	if(href_list["addwarrant"])
 		. = 1
-		var/datum/data/record/warrant/W = new()
+		var/datum/computer_file/data/warrant/W = new()
 		if(CanInteract(user, GLOB.default_state))
 			if(href_list["addwarrant"] == "arrest")
 				W.fields["namewarrant"] = "Unknown"
@@ -122,25 +118,25 @@ var/warrant_uid = 0
 
 	if(href_list["savewarrant"])
 		. = 1
-		broadcast_security_hud_message("\A [activewarrant.fields["arrestsearch"]] warrant for <b>[activewarrant.fields["namewarrant"]]</b> has been [(activewarrant in GLOB.data_core.warrants) ? "edited" : "uploaded"].", nano_host())
-		GLOB.data_core.warrants |= activewarrant
+		broadcast_security_hud_message("\A [activewarrant.fields["arrestsearch"]] warrant for <b>[activewarrant.fields["namewarrant"]]</b> has been [(activewarrant in GLOB.all_warrants) ? "edited" : "uploaded"].", nano_host())
+		GLOB.all_warrants |= activewarrant
 		activewarrant = null
 
 	if(href_list["deletewarrant"])
 		. = 1
 		if(!activewarrant)
-			for(var/datum/data/record/warrant/W in GLOB.data_core.warrants)
-				if(W.warrant_id == text2num(href_list["deletewarrant"]))
+			for(var/datum/computer_file/crew_record/W in GLOB.all_crew_records)
+				if(W.uid == text2num(href_list["deletewarrant"]))
 					activewarrant = W
 					break
-		GLOB.data_core.warrants -= activewarrant
+		GLOB.all_warrants -= activewarrant
 		activewarrant = null
 
 	if(href_list["editwarrantname"])
 		. = 1
 		var/namelist = list()
-		for(var/datum/data/record/t in GLOB.data_core.general)
-			namelist += t.fields["name"]
+		for(var/datum/computer_file/crew_record/CR in GLOB.all_crew_records)
+			namelist += CR.get_name()
 		var/new_name = sanitize(input(usr, "Please input name") as null|anything in namelist)
 		if(CanInteract(user, GLOB.default_state))
 			if (!new_name || !activewarrant)

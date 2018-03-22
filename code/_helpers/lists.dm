@@ -248,45 +248,6 @@ proc/listclearnulls(list/list)
 		return (result + L.Copy(Li, 0))
 	return (result + R.Copy(Ri, 0))
 
-
-
-
-//Mergesort: Specifically for record datums in a list.
-/proc/sortRecord(var/list/datum/data/record/L, var/field = "name", var/order = 1)
-	if(isnull(L))
-		return list()
-	if(L.len < 2)
-		return L
-	var/middle = L.len / 2 + 1
-	return mergeRecordLists(sortRecord(L.Copy(0, middle), field, order), sortRecord(L.Copy(middle), field, order), field, order)
-
-//Mergsort: does the actual sorting and returns the results back to sortRecord
-/proc/mergeRecordLists(var/list/datum/data/record/L, var/list/datum/data/record/R, var/field = "name", var/order = 1)
-	var/Li=1
-	var/Ri=1
-	var/list/result = new()
-	if(!isnull(L) && !isnull(R))
-		while(Li <= L.len && Ri <= R.len)
-			var/datum/data/record/rL = L[Li]
-			if(isnull(rL))
-				L -= rL
-				continue
-			var/datum/data/record/rR = R[Ri]
-			if(isnull(rR))
-				R -= rR
-				continue
-			if(sorttext(rL.fields[field], rR.fields[field]) == order)
-				result += L[Li++]
-			else
-				result += R[Ri++]
-
-		if(Li <= L.len)
-			return (result + L.Copy(Li, 0))
-	return (result + R.Copy(Ri, 0))
-
-
-
-
 //Mergesort: any value in a list
 /proc/sortList(var/list/L)
 	if(L.len < 2)
@@ -677,6 +638,15 @@ proc/dd_sortedTextList(list/incoming)
 
 	values += value
 
+/proc/duplicates(var/list/L)
+	. = list()
+	var/list/checked = list()
+	for(var/value in L)
+		if(value in checked)
+			. |= value
+		else
+			checked += value
+
 /proc/assoc_by_proc(var/list/plain_list, var/get_initial_value)
 	. = list()
 	for(var/entry in plain_list)
@@ -740,3 +710,50 @@ proc/dd_sortedTextList(list/incoming)
 			L.Swap(start++,end--)
 
 	return L
+
+//Copies a list, and all lists inside it recusively
+//Does not copy any other reference type
+/proc/deepCopyList(list/l)
+	if(!islist(l))
+		return l
+	. = l.Copy()
+	for(var/i = 1 to l.len)
+		if(islist(.[i]))
+			.[i] = .(.[i])
+
+#define IS_VALID_INDEX(list, index) (list.len && index > 0 && index <= list.len)
+
+//Like typesof() or subtypesof(), but returns a typecache instead of a list
+/proc/typecacheof(path, ignore_root_path, only_root_path = FALSE)
+	if(ispath(path))
+		var/list/types = list()
+		if(only_root_path)
+			types = list(path)
+		else
+			types = ignore_root_path ? subtypesof(path) : typesof(path)
+		var/list/L = list()
+		for(var/T in types)
+			L[T] = TRUE
+		return L
+	else if(islist(path))
+		var/list/pathlist = path
+		var/list/L = list()
+		if(ignore_root_path)
+			for(var/P in pathlist)
+				for(var/T in subtypesof(P))
+					L[T] = TRUE
+		else
+			for(var/P in pathlist)
+				if(only_root_path)
+					L[P] = TRUE
+				else
+					for(var/T in typesof(P))
+						L[T] = TRUE
+		return L
+
+//Checks for specific types in specifically structured (Assoc "type" = TRUE) lists ('typecaches')
+/proc/is_type_in_typecache(atom/A, list/L)
+	if(!L || !L.len || !A)
+
+		return 0
+	return L[A.type]

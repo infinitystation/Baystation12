@@ -1,23 +1,6 @@
-bear1ake - Project Lead
-
-samorey - Game Master
-thehero13 - Game Master
-alexmorgan - Game Master 
-
-terror4000rus - Game Admin
-
-aieroivor - Badmin
-mrtrololo - Badmin
-sladkoeshka - Badmin
-temblrex - Badmin
-
-thedeadangel - Trial Admin
-neincat - Trial Admin
-kirill1243 - Trial Admin
-
-balalayka - Admin Candidate
-hellpony - Admin Candidate
-romeo517 - Admin Candidate
-
-JohnTheBastard - Host
-quardbreak - Host
+Sladkoeshka - GameMaster
+Terror4000rus - GameMaster
+Logfol - HeadAdmin
+Bear1ake - Host
+KareTa - Host
+billluxe - Host

@@ -78,7 +78,7 @@
 				/obj/item/weapon/cell = 8,
 				/obj/item/weapon/cell/high = 5,
 				/obj/item/weapon/cell/super = 2,
-				/obj/item/weapon/cell/hyper = 0.1,
+				/obj/item/weapon/cell/hyper = 1,
 				/obj/item/weapon/cell/device/standard = 7,
 				/obj/item/weapon/cell/device/high = 5)
 
@@ -179,13 +179,13 @@
 	icon_state = "firstaid"
 
 /obj/random/firstaid/spawn_choices()
-	return list(/obj/item/weapon/storage/firstaid/regular = 12,
-				/obj/item/weapon/storage/firstaid/toxin = 9,
-				/obj/item/weapon/storage/firstaid/o2 = 9,
-				/obj/item/weapon/storage/firstaid/adv = 6,
+	return list(/obj/item/weapon/storage/firstaid/regular = 4,
+				/obj/item/weapon/storage/firstaid/toxin = 3,
+				/obj/item/weapon/storage/firstaid/o2 = 3,
+				/obj/item/weapon/storage/firstaid/adv = 2,
 				/obj/item/weapon/storage/firstaid/combat = 1,
-				/obj/item/weapon/storage/firstaid/empty = 6,
-				/obj/item/weapon/storage/firstaid/fire = 9)
+				/obj/item/weapon/storage/firstaid/empty = 2,
+				/obj/item/weapon/storage/firstaid/fire = 3)
 
 /obj/random/contraband
 	name = "Random Illegal Item"
@@ -203,6 +203,7 @@
 				/obj/item/weapon/reagent_containers/glass/beaker/sulphuric = 1,
 				/obj/item/weapon/contraband/poster = 5,
 				/obj/item/weapon/material/butterfly = 2,
+				/obj/item/clothing/accessory/necklace/collar/shock = 3,
 				/obj/item/weapon/material/butterflyblade = 3,
 				/obj/item/weapon/material/butterflyhandle = 3,
 				/obj/item/weapon/material/wirerod = 3,
@@ -413,6 +414,20 @@
 				/obj/effect/decal/cleanable/flour,
 				/obj/effect/decal/cleanable/dirt,
 				/obj/item/remains/robot)
+
+/obj/random/trash/space //Mostly remains and cleanable decals. Stuff a janitor could clean up
+	name = "random space trash"
+	desc = "This is some random trash."
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "greenglow"
+
+/obj/random/trash/space/spawn_choices()
+	return list(/obj/item/weapon/ore/iron = 1,
+				/obj/item/weapon/ore/glass = 5,
+				/obj/item/stack/rods = 2,
+				/obj/effect/decal/cleanable/ash = 5,
+				/obj/effect/decal/cleanable/dirt = 3,
+				/obj/item/remains/robot = 2)
 
 
 obj/random/closet //A couple of random closets to spice up maint
@@ -727,11 +742,29 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/clothing/shoes/laceup = 4,
 				/obj/item/clothing/shoes/black = 4,
 				/obj/item/clothing/shoes/jungleboots = 3,
+				/obj/item/clothing/shoes/desertboots = 3,
 				/obj/item/clothing/shoes/dutyboots = 3,
 				/obj/item/clothing/shoes/tactical = 1,
 				/obj/item/clothing/shoes/dress = 3,
 				/obj/item/clothing/shoes/dress/white = 3,
 				/obj/item/clothing/shoes/sandal = 3,
+				/obj/item/clothing/shoes/brown = 4,
+				/obj/item/clothing/shoes/red = 4,
+				/obj/item/clothing/shoes/blue = 4,
+				/obj/item/clothing/shoes/leather = 4)
+
+/obj/random/shoes/poor
+	name = "random poor footwear"
+	icon_state = "wizard"
+
+/obj/random/shoes/poor/spawn_choices()
+	return list(/obj/item/clothing/shoes/workboots = 3,
+				/obj/item/clothing/shoes/jackboots = 1,
+				/obj/item/clothing/shoes/laceup = 2,
+				/obj/item/clothing/shoes/black = 4,
+				/obj/item/clothing/shoes/jungleboots = 1,
+				/obj/item/clothing/shoes/dutyboots = 1,
+				/obj/item/clothing/shoes/sandal = 2,
 				/obj/item/clothing/shoes/brown = 4,
 				/obj/item/clothing/shoes/red = 4,
 				/obj/item/clothing/shoes/blue = 4,
@@ -757,6 +790,18 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/clothing/gloves/tactical = 3,
 				/obj/item/clothing/gloves/insulated/cheap = 7)
 
+/obj/random/gloves/poor
+	name = "random poor gloves"
+	icon_state = "work"
+
+/obj/random/gloves/poor/spawn_choices()
+	return list(/obj/item/clothing/gloves/insulated = 1,
+				/obj/item/clothing/gloves/thick = 4,
+				/obj/item/clothing/gloves/white = 2,
+				/obj/item/clothing/gloves/rainbow = 1,
+				/obj/item/clothing/gloves/duty = 4,
+				/obj/item/clothing/gloves/insulated/cheap = 3)
+
 /obj/random/glasses
 	name = "random eyewear"
 	desc = "This is a random pair of glasses."
@@ -764,17 +809,17 @@ obj/random/obstruction/spawn_choices()
 	icon_state = "leforge"
 
 /obj/random/glasses/spawn_choices()
-	return list(/obj/item/clothing/glasses/sunglasses = 10,
+	return list(/obj/item/clothing/glasses/sunglasses = 3,
 				/obj/item/clothing/glasses/regular = 7,
 				/obj/item/clothing/glasses/meson = 5,
 				/obj/item/clothing/glasses/meson/prescription = 4,
-				/obj/item/clothing/glasses/science = 7,
-				/obj/item/clothing/glasses/material = 4,
+				/obj/item/clothing/glasses/science = 6,
+				/obj/item/clothing/glasses/material = 5,
 				/obj/item/clothing/glasses/welding = 3,
 				/obj/item/clothing/glasses/hud/health = 4,
 				/obj/item/clothing/glasses/hud/health/prescription = 3,
-				/obj/item/clothing/glasses/hud/security = 2,
-				/obj/item/clothing/glasses/hud/security/prescription = 1,
+				/obj/item/clothing/glasses/hud/security = 4,
+				/obj/item/clothing/glasses/hud/security/prescription = 3,
 				/obj/item/clothing/glasses/sunglasses/sechud = 2,
 				/obj/item/clothing/glasses/sunglasses/sechud/toggle = 3,
 				/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,
@@ -787,8 +832,8 @@ obj/random/obstruction/spawn_choices()
 	icon_state = "tophat"
 
 /obj/random/hat/spawn_choices()
-	return list(/obj/item/clothing/head/helmet = 1,
-/*				/obj/item/clothing/head/helmet/tactical = 1, */
+	return list(/obj/item/clothing/head/helmet = 2,
+				/obj/item/clothing/head/helmet/tactical = 1,
 				/obj/item/clothing/head/helmet/space/emergency = 1,
 				/obj/item/clothing/head/bio_hood/general = 1,
 				/obj/item/clothing/head/hardhat = 4,
@@ -798,32 +843,22 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/clothing/head/ushanka = 3,
 				/obj/item/clothing/head/welding = 2)
 
-/obj/random/solgov
-	name = "random solgov equipment"
-	desc = "This is a random piece of solgov equipment or clothing."
-	icon = 'icons/obj/clothing/hats.dmi'
-	icon_state = "helmet_sol"
+/obj/random/hat/poor
+	name = "random poor headgear"
+	icon_state = "flat_cap"
 
-/obj/random/solgov/spawn_choices()
-	return list(/obj/item/clothing/head/utility/fleet = 4,
-				/obj/item/clothing/head/utility/marine = 4,
-				/obj/item/clothing/head/utility/marine/tan = 3,
-				/obj/item/clothing/head/utility/marine/urban = 3,
-				/obj/item/clothing/head/soft/sol/expedition = 2,
-				/obj/item/clothing/head/soft/sol/fleet = 4,
-				/obj/item/clothing/head/helmet/solgov = 1,
-				/obj/item/clothing/suit/armor/vest/solgov = 2,
-				/obj/item/clothing/suit/storage/vest/solgov = 1,
-				/obj/item/clothing/suit/storage/service/expeditionary = 4,
-				/obj/item/clothing/under/utility/marine/tan = 2,
-				/obj/item/clothing/under/utility/marine/urban = 2,
-				/obj/item/clothing/under/utility/marine = 3,
-				/obj/item/clothing/under/utility = 5,
-				/obj/item/clothing/under/utility/fleet = 3,
-				/obj/item/clothing/under/pt/expeditionary = 4,
-				/obj/item/clothing/under/pt/marine = 2,
-				/obj/item/clothing/under/pt/fleet = 4,
-				/obj/item/clothing/accessory/armband/bluegold = 3)
+/obj/random/hat/poor/spawn_choices()
+	return list(/obj/item/clothing/head/helmet = 1,
+				/obj/item/clothing/head/helmet/space/emergency = 1,
+				/obj/item/clothing/head/hardhat = 4,
+				/obj/item/clothing/head/ushanka = 3,
+				/obj/item/clothing/head/bandana = 4,
+				/obj/item/clothing/head/bowlerhat = 1,
+				/obj/item/clothing/head/cardborg = 2,
+				/obj/item/clothing/head/bandana/orange = 3,
+				/obj/item/clothing/head/soft/grey = 3,
+				/obj/item/clothing/head/flatcap = 3,
+				/obj/item/clothing/head/welding = 1)
 
 /obj/random/suit
 	name = "random suit"
@@ -836,7 +871,7 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/clothing/suit/storage/toggle/labcoat = 4,
 				/obj/item/clothing/suit/space/emergency = 1,
 				/obj/item/clothing/suit/armor/vest = 4,
-/*				/obj/item/clothing/suit/storage/vest/tactical = 1, */
+				/obj/item/clothing/suit/storage/vest/tactical = 1,
 				/obj/item/clothing/suit/storage/vest = 3,
 				/obj/item/clothing/suit/storage/toggle/bomber = 3,
 				/obj/item/clothing/suit/chef/classic = 3,
@@ -859,7 +894,6 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/clothing/under/syndicate/combat = 1,
 				/obj/item/clothing/under/hazard = 4,
 				/obj/item/clothing/under/sterile = 4,
-				/obj/item/clothing/under/pt = 1,
 				/obj/item/clothing/under/casual_pants/camo = 2,
 				/obj/item/clothing/under/frontier = 2,
 				/obj/item/clothing/under/harness = 2,
@@ -901,27 +935,6 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/weapon/spacecash/bundle/c50 = 2,
 				/obj/item/weapon/spacecash/bundle/c100 = 2,
 				/obj/item/weapon/spacecash/bundle/c1000 = 1)
-
-/obj/random/maintenance/solgov //can be used for loot on non-torch maps, so not a torch item
-	name = "random maintenance item"
-	desc = "This is a random maintenance item."
-	icon = 'icons/obj/items.dmi'
-	icon_state = "gift1"
-
-/obj/random/maintenance/solgov/spawn_choices()
-	return list(/obj/random/junk = 4,
-				/obj/random/trash = 4,
-				/obj/random/maintenance/solgov/clean = 5)
-
-/obj/random/maintenance/solgov/clean
-	name = "random maintenance item"
-	desc = "This is a random maintenance item."
-	icon = 'icons/obj/items.dmi'
-	icon_state = "gift2"
-
-/obj/random/maintenance/solgov/clean/spawn_choices()
-	return list(/obj/random/solgov = 3,
-				/obj/random/maintenance/clean = 800)
 
 /obj/random/maintenance //Clutter and loot for maintenance and away missions
 	name = "random maintenance item"
@@ -1086,27 +1099,6 @@ something, make sure it's not in one of the other lists.*/
 				/obj/item/weapon/rig/unathi,
 				/obj/item/weapon/rig/unathi/fancy)
 
-/obj/random/rank
-	name = "Random SCG ranks"
-	desc = "This is a random SCG ranks."
-	icon = 'icons/obj/clothing/ties.dmi'
-	icon_state = "fleetrank"
-
-/obj/random/rank/marine/private
-	name = "Random SCG private marine ranks"
-
-/obj/random/rank/marine/private/spawn_choices()
-	return list(/obj/item/clothing/accessory/rank/marine/enlisted/e2 = 2,
-				/obj/item/clothing/accessory/rank/marine/enlisted/e3 = 3,
-				/obj/item/clothing/accessory/rank/marine/enlisted/e4 = 1)
-
-/obj/random/rank/marine/sergeant
-	name = "Random SCG sergeant marine ranks"
-
-/obj/random/rank/marine/sergeant/spawn_choices()
-	return list(/obj/item/clothing/accessory/rank/marine/enlisted/e5 = 3,
-				/obj/item/clothing/accessory/rank/marine/enlisted/e6 = 1)
-
 /obj/random/hostile
 	name = "Random Hostile Mob"
 	desc = "This is a random hostile mob."
@@ -1117,7 +1109,8 @@ something, make sure it's not in one of the other lists.*/
 obj/random/hostile/spawn_choices()
 	return list(/mob/living/simple_animal/hostile/viscerator,
 				/mob/living/simple_animal/hostile/carp,
-				/mob/living/simple_animal/hostile/carp/pike)
+				/mob/living/simple_animal/hostile/carp/pike,
+				/mob/living/simple_animal/hostile/vagrant/swarm)
 
 /*
 	Selects one spawn point out of a group of points with the same ID and asks it to generate its items

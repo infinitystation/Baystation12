@@ -139,3 +139,9 @@
 	delay = 20
 	eye_attack_text = "a forelimb"
 	eye_attack_text_victim = "a forelimb"
+
+/datum/unarmed_attack/terminator
+	attack_verb = list("pulverized", "crushed", "pounded")
+	attack_noun = list("power fist")
+	damage = 12
+	attack_sound = 'sound/weapons/heavysmash.ogg'

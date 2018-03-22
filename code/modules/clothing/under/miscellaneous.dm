@@ -519,14 +519,6 @@
 	worn_state = "tan_suit"
 	starting_accessories = list(/obj/item/clothing/accessory/yellow, /obj/item/clothing/accessory/toggleable/tan_jacket)
 
-/obj/item/clothing/under/suit_jacket/nt
-	name = "\improper NanoTrasen executive suit"
-	desc = "A suit that NanoTrasen gives to its executives."
-	icon_state = "ntsuit"
-	item_state = "bl_suit"
-	worn_state = "ntsuit"
-	starting_accessories = list(/obj/item/clothing/accessory/toggleable/nanotrasen_jacket, /obj/item/clothing/accessory/nt)
-
 /obj/item/clothing/under/serviceoveralls
 	name = "workman outfit"
 	desc = "The very image of a working man. Not that you're probably doing work."
@@ -572,35 +564,48 @@
 	item_state = "jensensuit"
 	worn_state = "pcrc"
 
+/obj/item/clothing/under/pcrc/tactical
+	starting_accessories = list(/obj/item/clothing/accessory/ubac)
+
 /obj/item/clothing/under/grayson
 	name = "\improper Grayson overalls"
-	desc = "A set of overalls belonging to Grayson Manufactories, a mining Trans-Stellar."
+	desc = "A set of overalls belonging to Grayson Manufactories, a manufacturing and mining company."
 	icon_state = "grayson"
 	worn_state = "grayson"
 
 /obj/item/clothing/under/wardt
 	name = "\improper Ward-Takahashi jumpsuit"
-	desc = "A jumpsuit belonging to Ward-Takahashi, a Trans-Stellar in the consumer goods market."
+	desc = "A jumpsuit belonging to Ward-Takahashi, a megacorp in the consumer goods and research market."
 	icon_state = "wardt"
 	worn_state = "wardt"
 
 /obj/item/clothing/under/mbill
 	name = "\improper Major Bill's uniform"
-	desc = "A uniform belonging to Major Bill's Transportation, a shipping megacorporation."
+	desc = "A uniform belonging to Major Bill's Transportation, a major shipping company."
 	icon_state = "mbill"
 	worn_state = "mbill"
 
+/obj/item/clothing/under/morpheus
+	name = "\improper Morpheus Cyberkinetics uniform"
+	desc = "A pair of overalls belonging to Morpheus Cyberkinetics, an IPC manufacturing company. It doesn't look like it would be comfortable on a human."
+	icon_state = "morpheus"
+	worn_state = "morpheus"
+
+// Replace this with actual uniform when someone wants to sprite one
 /obj/item/clothing/under/confederacy
-	name = "\improper Confederacy uniform"
-	desc = "A military uniform belonging to the Confederacy of Man, an independent human government."
+	name = "\improper Confederate uniform"
+	desc = "A military uniform belonging to the Terran Colonial Confederation, an independent human government."
 	icon_state = "confed"
 	worn_state = "confed"
 
 /obj/item/clothing/under/saare
 	name = "\improper SAARE uniform"
-	desc = "A dress uniform belonging to Stealth Assault Enterprises, a minor private military corporation."
+	desc = "A uniform belonging to Strategic Assault and Asset Retention Enterprises, a minor private military corporation."
 	icon_state = "saare"
 	worn_state = "saare"
+
+/obj/item/clothing/under/saare/tactical
+	starting_accessories = list(/obj/item/clothing/accessory/ubac/green)
 
 /obj/item/clothing/under/frontier
 	name = "frontier clothes"
@@ -610,19 +615,19 @@
 
 /obj/item/clothing/under/aether
 	name = "\improper Aether jumpsuit"
-	desc = "A jumpsuit belonging to Aether Atmospherics and Recycling, a Trans-Stellar that supplies recycling and atmospheric systems to colonies."
+	desc = "A jumpsuit belonging to Aether Atmospherics and Recycling, a company that supplies recycling and atmospheric systems to colonies."
 	icon_state = "aether"
 	worn_state = "aether"
 
 /obj/item/clothing/under/focal
 	name = "\improper Focal Point jumpsuit"
-	desc = "A jumpsuit belonging to Focal Point Energistics, an engineering megacorporation."
+	desc = "A jumpsuit belonging to Focal Point Energistics, an engineering corporation."
 	icon_state = "focal"
 	worn_state = "focal"
 
 /obj/item/clothing/under/hephaestus
 	name = "\improper Hephaestus jumpsuit"
-	desc = "A jumpsuit belonging to Hephaestus Industries, a Trans-Stellar best known for its arms production."
+	desc = "A jumpsuit belonging to Hephaestus Industries, a megacorp best known for its arms production."
 	icon_state = "heph"
 	worn_state = "heph"
 
@@ -648,18 +653,6 @@
 	icon_state = "turtleneck"
 	worn_state = "turtleneck"
 
-/obj/item/clothing/under/utility/expeditionary/monkey
-	name = "adjusted expeditionary uniform"
-	desc = "The utility uniform of the SCG Expeditionary Corps, made from biohazard resistant material. This one has silver trim. It was also mangled to fit a monkey. This better be worth the NJP you'll get for making it."
-	species_restricted = list("Monkey")
-	sprite_sheets = list("Monkey" = 'icons/mob/species/monkey/uniform.dmi')
-	starting_accessories = list(/obj/item/clothing/accessory/rank/fleet/officer/wo1_monkey)
-
-/obj/item/clothing/accessory/rank/fleet/officer/wo1_monkey
-	name = "makeshift ranks (WO-1 warrant officer 1)"
-	desc = "Insignia denoting the elusive rank of Warant Officer. Too bad it's obviously fake."
-	icon_state = "fleetrank_officer"
-
 /obj/item/clothing/under/savage_hunter
 	name = "savage hunter's hides"
 	desc = "Makeshift hides bound together with the sinew, packwax, and leather of some alien creature."
@@ -681,3 +674,22 @@
 	item_state = "wetsuit"
 	worn_state = "wetsuit"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+
+/obj/item/clothing/under/hazard
+	name = "hazard jumpsuit"
+	desc = "A high visibility jumpsuit made from heat and radiation resistant materials."
+	icon_state = "hazard"
+	item_state = "engi_suit"
+	worn_state = "hazard"
+	siemens_coefficient = 0.8
+	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 20, bio = 0, rad = 20)
+	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
+
+/obj/item/clothing/under/sterile
+	name = "sterile jumpsuit"
+	desc = "A sterile white jumpsuit with medical markings. Protects against all manner of biohazards."
+	icon_state = "sterile"
+	item_state = "w_suit"
+	worn_state = "sterile"
+	permeability_coefficient = 0.50
+	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 30, rad = 0)

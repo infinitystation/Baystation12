@@ -1,6 +1,6 @@
 language: generic
 sudo: false
-dist: trusty
+dist: precise
 
 env:
   global:
@@ -14,7 +14,9 @@ env:
     - TEST=WEB
     - TEST=MAP MAP_PATH=example 
     - TEST=MAP MAP_PATH=torch
+    - TEST=MAP MAP_PATH=exodus_infinity
     - TEST=MAP MAP_PATH=overmap_example
+    - TEST=MAP MAP_PATH=away_sites_testing
 
 cache:
   directories:
@@ -28,6 +30,8 @@ addons:
       - libgcc1:i386
       - libstdc++6:i386
       - oracle-java8-set-default
+      - python
+      - python-pip
 
 script:
   - test/run-test.sh

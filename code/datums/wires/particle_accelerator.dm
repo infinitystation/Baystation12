@@ -50,3 +50,17 @@ var/const/PARTICLE_LIMIT_POWER_WIRE = 8 // Determines how strong the PA can be.
 			C.strength_upper_limit = (mended ? 2 : 3)
 			if(C.strength_upper_limit < C.strength)
 				C.remove_strength()
+
+/datum/wires/particle_acc/SolveWireFunction(var/function)
+	var/sf = ""
+	switch(function)
+		if(PARTICLE_TOGGLE_WIRE)
+			sf = "Port A"
+		if(PARTICLE_STRENGTH_WIRE)
+			sf = "Port B"
+		if(PARTICLE_INTERFACE_WIRE)
+			sf = "Port C"
+		if(PARTICLE_LIMIT_POWER_WIRE)
+			sf = "Port D"
+
+	return sf

@@ -6,7 +6,7 @@
 /obj/item/weapon/paper
 	name = "sheet of paper"
 	gender = NEUTER
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "paper"
 	item_state = "paper"
 	randpixel = 8
@@ -30,10 +30,12 @@
 	var/list/offset_y[0] //usage by the photocopier
 	var/rigged = 0
 	var/spam_flag = 0
+	var/log = ""
 
 	var/const/deffont = "Verdana"
 	var/const/signfont = "Times New Roman"
 	var/const/crayonfont = "Comic Sans MS"
+	var/const/fancyfont = "Segoe Script"
 
 /obj/item/weapon/paper/New(loc, text,title)
 	..(loc)
@@ -41,7 +43,7 @@
 
 /obj/item/weapon/paper/proc/set_content(text,title)
 	if(title)
-		name = title
+		SetName(title)
 	info = html_encode(text)
 	info = parsepencode(text)
 	update_icon()
@@ -89,7 +91,7 @@
 
 	// We check loc one level up, so we can rename in clipboards and such. See also: /obj/item/weapon/photo/rename()
 	if((loc == usr || loc.loc && loc.loc == usr) && usr.stat == 0 && n_name)
-		name = n_name
+		SetName(n_name)
 		add_fingerprint(usr)
 
 /obj/item/weapon/paper/attack_self(mob/living/user as mob)
@@ -193,7 +195,7 @@
 		return P.get_signature(user)
 	return (user && user.real_name) ? user.real_name : "Anonymous"
 
-/obj/item/weapon/paper/proc/parsepencode(t, obj/item/weapon/pen/P, mob/user, iscrayon)
+/obj/item/weapon/paper/proc/parsepencode(t, obj/item/weapon/pen/P, mob/user, iscrayon, isfancy)
 	if(length(t) == 0)
 		return ""
 
@@ -213,8 +215,13 @@
 		t = replacetext(t, "\[cell\]", "")
 		t = replacetext(t, "\[logo\]", "")
 
+	if(!istype(src, /obj/item/weapon/paper/nano))
+		t = replacetext(t, "\[img\]", "")
+
 	if(iscrayon)
 		t = "<font face=\"[crayonfont]\" color=[P ? P.colour : "black"]><b>[t]</b></font>"
+	else if(isfancy)
+		t = "<font face=\"[fancyfont]\" color=[P ? P.colour : "black"]><i>[t]</i></font>"
 	else
 		t = "<font face=\"[deffont]\" color=[P ? P.colour : "black"]>[t]</font>"
 
@@ -275,8 +282,9 @@
 		if(!t)
 			return
 
-		var/obj/item/i = usr.get_active_hand() // Check to see if he still got that darn pen, also check if he's using a crayon or pen.
+		var/obj/item/i = usr.get_active_hand() // Check to see if he still got that darn pen, also check what type of pen
 		var/iscrayon = 0
+		var/isfancy = 0
 		if(!istype(i, /obj/item/weapon/pen))
 			if(usr.back && istype(usr.back,/obj/item/weapon/rig))
 				var/obj/item/weapon/rig/r = usr.back
@@ -291,14 +299,23 @@
 		if(istype(i, /obj/item/weapon/pen/crayon))
 			iscrayon = 1
 
+		if(istype(i, /obj/item/weapon/pen/fancy))
+			isfancy = 1
+
 
 		// if paper is not in usr, then it must be near them, or in a clipboard or folder, which must be in or near usr
 		if(src.loc != usr && !src.Adjacent(usr) && !((istype(src.loc, /obj/item/weapon/clipboard) || istype(src.loc, /obj/item/weapon/folder)) && (src.loc.loc == usr || src.loc.Adjacent(usr)) ) )
 			return
 
+		log += "<br />\[[time_stamp()]] [key_name(usr)] added: [t]"
+
+		if(istype(src, /obj/item/weapon/paper/nano))
+			if(findtext(t,"\[img]"))
+				message_admins("[key_name_admin(usr)] added an image to <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>[src]</a>.")
+
 		var/last_fields_value = fields
 
-		t = parsepencode(t, i, usr, iscrayon) // Encode everything from pencode to html
+		t = parsepencode(t, i, usr, iscrayon, isfancy) // Encode everything from pencode to html
 
 
 		if(fields > 50)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
@@ -312,6 +329,7 @@
 			info += t // Oh, he wants to edit to the end of the file, let him.
 			updateinfolinks()
 
+		playsound(src,'sound/effects/PEN_Ball_Point_Pen_Circling_01_mono.ogg',40,1)
 		update_space(t)
 
 		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]") // Update the window
@@ -339,9 +357,9 @@
 				return
 		var/obj/item/weapon/paper_bundle/B = new(src.loc)
 		if (name != "paper")
-			B.name = name
+			B.SetName(name)
 		else if (P.name != "paper" && P.name != "photo")
-			B.name = P.name
+			B.SetName(P.name)
 
 		user.drop_from_inventory(P)
 		user.drop_from_inventory(src)
@@ -371,9 +389,10 @@
 		if((!in_range(src, usr) && loc != user && !( istype(loc, /obj/item/weapon/clipboard) ) && loc.loc != user && user.get_active_hand() != P))
 			return
 
+		playsound(src,'sound/effects/Stamp.ogg',40,1)
 		stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper has been stamped with the [P.name].</i>"
 
-		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
+		var/image/stampoverlay = image('icons/obj/bureaucracy_inf.dmi')
 		var/{x; y;}
 		if(istype(P, /obj/item/weapon/stamp/captain) || istype(P, /obj/item/weapon/stamp/centcomm))
 			x = rand(-2, 0)
@@ -414,6 +433,10 @@
 	add_fingerprint(user)
 	return
 
+/obj/item/weapon/paper/nano
+	name = "nano paper"
+	color = "#ccffff"
+
 /*
  * Premade paper
  */
@@ -447,10 +470,19 @@
 	name = "holodeck disclaimer"
 	info = "Bruises sustained in the holodeck can be healed simply by sleeping."
 
+/obj/item/weapon/paper/workvisa
+	name = "Sol Work Visa"
+	info = "<center><b><large>Work Visa of the Sol Central Government</large></b></center><br><center><img src = sollogo.png><br><br><i><small>Issued on behalf of the Secretary-General.</small></i></center><hr><BR>This paper hereby permits the carrier to travel unhindered through Sol territories, colonies, and space for the purpose of work and labor."
+	desc = "A flimsy piece of laminated cardboard issued by the Sol Central Government."
+
+/obj/item/weapon/paper/workvisa/New()
+	..()
+	icon_state = "workvisa" //Has to be here or it'll assume default paper sprites.
+
 /obj/item/weapon/paper/merchant
 	name = "sell permit"
 	info = "Мы учли жалобы сотрудников Торговой Федерации на неразбериху перед консолью покупок. Теперь, дл&#255; произведени&#255; манипул&#255;ций с консолью, требуетс&#255; доступ лидера торговой группы. При&#255;тных продаж."
 
-/obj/item/weapon/paper/exodus_armory/infinity
-	name = "armory inventory"
-	info = "<center>\[logo]<BR><b><large>NSS Exodus</large></b><BR><i><date></i><BR><i>Armoury Inventory - Revision <field></i></center><hr><center>Armoury</center><list>\[*]<b>Deployable barriers</b>: 4\[*]<b>Biohazard suit(s)</b>: 1\[*]<b>Biohazard hood(s)</b>: 1\[*]<b>Face Mask(s)</b>: 1\[*]<b>Extended-capacity emergency oxygen tank(s)</b>: 1\[*]<b>Bomb suit(s)</b>: 1\[*]<b>Bomb hood(s)</b>: 1\[*]<b>Security officer's jumpsuit(s)</b>: 1\[*]<b>Brown shoes</b>: 1\[*]<b>Handcuff(s)</b>: 14\[*]<b>R.O.B.U.S.T. cartridges</b>: 7\[*]<b>Flash(s)</b>: 4\[*]<b>Can(s) of pepperspray</b>: 4\[*]<b>Gas mask(s)</b>: 6<field></list><hr><center>Secure Armoury</center><list>\[*]<b>LAEP90 Perun energy guns</b>: 4\[*]<b>Stun Revolver(s)</b>: 1\[*]<b>NT Mk44 NL(s)</b>: 3\[*]<b>Stun baton(s)</b>: 4\[*]<b>Airlock Brace</b>: 3\[*]<b>Maintenance Jack</b>: 1\[*]<b>Stab Vest(s)</b>: 3\[*]<b>Riot helmet(s)</b>: 3\[*]<b>Riot shield(s)</b>: 3\[*]<b>Corporate security heavy armoured vest(s)</b>: 4\[*]<b>NanoTrasen helmet(s)</b>: 4\[*]<b>Portable flasher(s)</b>: 3\[*]<b>Tracking implant(s)</b>: 4\[*]<b>Chemical implant(s)</b>: 5\[*]<b>Implanter(s)</b>: 2\[*]<b>Implant pad(s)</b>: 2\[*]<b>Locator(s)</b>: 1<field></list><hr><center>Tactical Equipment</center><list>\[*]<b>Implanter</b>: 1\[*]<b>Death Alarm implant(s)</b>: 7\[*]<b>Security radio headset(s)</b>: 4\[*]<b>Ablative suit(s)</b>: 2\[*]<b>Ablative helmet(s)</b>: 2\[*]<b>Ballistic suit(s)</b>: 2\[*]<b>Ballistic helmet(s)</b>: 2\[*]<b>Tear Gas Grenade(s)</b>: 7\[*]<b>Flashbang(s)</b>: 7\[*]<b>Beanbag Shell(s)</b>: 7\[*]<b>Stun Shell(s)</b>: 7\[*]<b>Illumination Shell(s)</b>: 7\[*]<b>W-T Remmington 29x shotgun(s)</b>: 2\[*]<b>NT Mk60 EW Halicon ion rifle(s)</b>: 2\[*]<b>Hephaestus Industries G40E laser carbine(s)</b>: 4\[*]<b>Flare(s)</b>: 4<field></list><hr><b>Warden (print)</b>:<field><b>Signature</b>:<br>"
+/obj/item/weapon/paper/reacengi
+	name = "reactive engines guide"
+	info = "<I>Смена #03-A, инженерный департамент произвел модификацию реактивных двигателей.</i> <br>Кратка&#255; инструкци&#255; по эксплуатации: <br>1) В начале Вашей смены нажмите на все кнопочки над консолью включени&#255;/отключени&#255; подачи топлива движков. Все должны гореть зеленым. <br>2) Всю смену нажимайте на запальник слева от указанных выше кнопок. <br>3) В случае ЧП, мы <b>не виноваты</b>."

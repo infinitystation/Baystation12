@@ -60,8 +60,21 @@ What is the naming convention for planes or layers?
 	FLOAT_PLANE = -32767
 */
 
-#define CLICKCATCHER_PLANE -99
-#define SPACE_PLANE -98
+#define CLICKCATCHER_PLANE -500
+
+#define SPACE_PLANE -499
+#define SKYBOX_PLANE SPACE_PLANE + 1
+
+#define DUST_PLANE SPACE_PLANE + 2
+	#define DEBRIS_LAYER 1
+	#define DUST_LAYER 2
+
+//Reserve planes for openspace
+#define OPENSPACE_PLANE_START -462
+#define OPENSPACE_PLANE_END -22
+#define OPENSPACE_PLANE -463
+#define OVER_OPENSPACE_PLANE -22
+
 
 #define BELOW_TURF_PLANE             -22 // objects that are below turfs. Useful for asteroid smoothing or other such magic.
 	// TURF_LAYER 2
@@ -82,6 +95,7 @@ What is the naming convention for planes or layers?
 #define TURF_PLANE				-19
 
 	#define BASE_TURF_LAYER -999
+	#define TURF_DETAIL_LAYER 1
 
 #define ABOVE_TURF_PLANE              -18 // For items which should appear above turfs but below other objects and hiding mobs, eg: wires & pipes
 
@@ -92,9 +106,10 @@ What is the naming convention for planes or layers?
 	#define EXPOSED_PIPE_LAYER          5
 	#define EXPOSED_WIRE_LAYER          6
 	#define EXPOSED_WIRE_TERMINAL_LAYER 7
-	#define BLOOD_LAYER                 8
-	#define MOUSETRAP_LAYER             9
-	#define PLANT_LAYER                 10
+	#define CATWALK_LAYER               8
+	#define BLOOD_LAYER                 9
+	#define MOUSETRAP_LAYER             10
+	#define PLANT_LAYER                 11
 
 #define HIDING_MOB_PLANE              -16 // for hiding mobs like MoMMIs or spiders or whatever, under most objects but over pipes & such.
 
@@ -190,6 +205,8 @@ What is the naming convention for planes or layers?
 	#define HUD_ABOVE_ITEM_LAYER 3
 
 
+//This is difference between highest and lowest visible
+#define PLANE_DIFFERENCE              22
 /image
 	plane = FLOAT_PLANE			// this is defunct, lummox fixed this on recent compilers, but it will bug out if I remove it for coders not on the most recent compile.
 

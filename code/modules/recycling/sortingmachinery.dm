@@ -6,7 +6,6 @@
 	var/obj/wrapped = null
 	density = 1
 	var/sortTag = null
-	flags = NOBLUDGEON
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
 	var/examtext = null
 	var/nameset = 0
@@ -14,12 +13,16 @@
 	var/label_x
 	var/tag_x
 
-/obj/structure/bigDelivery/attack_hand(mob/user as mob)
-	unwrap()
+/obj/structure/bigDelivery/attack_robot(mob/user as mob)
+	unwrap(user)
 
-/obj/structure/bigDelivery/proc/unwrap()
-	// Destroy will drop our wrapped object on the turf, so let it.
-	qdel(src)
+/obj/structure/bigDelivery/attack_hand(mob/user as mob)
+	unwrap(user)
+
+/obj/structure/bigDelivery/proc/unwrap(var/mob/user)
+	if(Adjacent(user))
+		// Destroy will drop our wrapped object on the turf, so let it.
+		qdel(src)
 
 /obj/structure/bigDelivery/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/device/destTagger))
@@ -48,7 +51,7 @@
 				user.visible_message("\The [user] titles \the [src] with \a [W], marking down: \"[str]\"",\
 				"<span class='notice'>You title \the [src]: \"[str]\"</span>",\
 				"You hear someone scribbling a note.")
-				name = "[name] ([str])"
+				SetName("[name] ([str])")
 				if(!examtext && !nameset)
 					nameset = 1
 					update_icon()
@@ -106,6 +109,18 @@
 			to_chat(user, "<span class='notice'>It has a note attached which reads, \"[examtext]\"</span>")
 	return
 
+/obj/structure/bigDelivery/Destroy()
+	if(wrapped) //sometimes items can disappear. For example, bombs. --rastaf0
+		wrapped.forceMove(get_turf(src))
+		if(istype(wrapped, /obj/structure/closet))
+			var/obj/structure/closet/O = wrapped
+			O.welded = 0
+		wrapped = null
+	var/turf/T = get_turf(src)
+	for(var/atom/movable/AM in contents)
+		AM.forceMove(T)
+	return ..()
+
 /obj/item/smallDelivery
 	desc = "A small wrapped package."
 	name = "small parcel"
@@ -117,17 +132,22 @@
 	var/nameset = 0
 	var/tag_x
 
-/obj/item/smallDelivery/attack_self(mob/user as mob)
-	if (src.wrapped) //sometimes items can disappear. For example, bombs. --rastaf0
-		wrapped.forceMove(user.loc)
-		user.drop_item()
-		if(ishuman(user))
-			user.put_in_hands(wrapped)
-		else
-			wrapped.forceMove(get_turf(src))
-
+/obj/item/smallDelivery/proc/unwrap(var/mob/user)
+	if (!wrapped || !Adjacent(user))
+		return
+	wrapped.forceMove(user.loc)
+	user.drop_item()
+	if(ishuman(user))
+		user.put_in_hands(wrapped)
+	else
+		wrapped.forceMove(get_turf(src))
 	qdel(src)
-	return
+
+/obj/item/smallDelivery/attack_robot(mob/user as mob)
+	unwrap(user)
+
+/obj/item/smallDelivery/attack_self(mob/user as mob)
+	unwrap(user)
 
 /obj/item/smallDelivery/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/device/destTagger))
@@ -156,7 +176,7 @@
 				user.visible_message("\The [user] titles \the [src] with \a [W], marking down: \"[str]\"",\
 				"<span class='notice'>You title \the [src]: \"[str]\"</span>",\
 				"You hear someone scribbling a note.")
-				name = "[name] ([str])"
+				SetName("[name] ([str])")
 				if(!examtext && !nameset)
 					nameset = 1
 					update_icon()
@@ -242,6 +262,8 @@
 	if(user in target) //no wrapping closets that you are inside - it's not physically possible
 		return
 
+	playsound(src,'sound/machines/PAPER_Fold_01_mono.ogg',100,1)
+
 	if (istype(target, /obj/item) && !(istype(target, /obj/item/weapon/storage) && !istype(target,/obj/item/weapon/storage/box)))
 		var/obj/item/O = target
 		if (src.amount > 1)
@@ -256,16 +278,16 @@
 			if(i in list(1,2,3,4,5))
 				P.icon_state = "deliverycrate[i]"
 				switch(i)
-					if(1) P.name = "tiny parcel"
-					if(3) P.name = "normal-sized parcel"
-					if(4) P.name = "large parcel"
-					if(5) P.name = "huge parcel"
+					if(1) P.SetName("tiny parcel")
+					if(3) P.SetName("normal-sized parcel")
+					if(4) P.SetName("large parcel")
+					if(5) P.SetName("huge parcel")
 			if(i < 1)
 				P.icon_state = "deliverycrate1"
-				P.name = "tiny parcel"
+				P.SetName("tiny parcel")
 			if(i > 5)
 				P.icon_state = "deliverycrate5"
-				P.name = "huge parcel"
+				P.SetName("huge parcel")
 			P.add_fingerprint(usr)
 			O.add_fingerprint(usr)
 			src.add_fingerprint(usr)
@@ -312,28 +334,16 @@
 		to_chat(user, "<span class='notice'>There are [amount] units of package wrap left!</span>")
 	return
 
-/obj/structure/bigDelivery/Destroy()
-	if(wrapped) //sometimes items can disappear. For example, bombs. --rastaf0
-		wrapped.forceMove(get_turf(src))
-		if(istype(wrapped, /obj/structure/closet))
-			var/obj/structure/closet/O = wrapped
-			O.welded = 0
-		wrapped = null
-	var/turf/T = get_turf(src)
-	for(var/atom/movable/AM in contents)
-		AM.forceMove(T)
-	return ..()
-
 /obj/item/device/destTagger
 	name = "destination tagger"
 	desc = "Used to set the destination of properly wrapped packages."
 	icon_state = "dest_tagger"
 	var/currTag = 0
-
 	w_class = ITEM_SIZE_SMALL
 	item_state = "electronic"
-	flags = CONDUCT
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
+	matter = list(DEFAULT_WALL_MATERIAL = 100, "glass" = 34)
 
 /obj/item/device/destTagger/proc/openwindow(mob/user as mob)
 	var/dat = "<tt><center><h1><b>TagMaster 2.3</b></h1></center>"
@@ -352,19 +362,24 @@
 
 /obj/item/device/destTagger/attack_self(mob/user as mob)
 	openwindow(user)
-	return
 
-/obj/item/device/destTagger/Topic(href, href_list)
-	src.add_fingerprint(usr)
+/obj/item/device/destTagger/OnTopic(user, href_list, state)
 	if(href_list["nextTag"] && href_list["nextTag"] in GLOB.tagger_locations)
 		src.currTag = href_list["nextTag"]
+		. = TOPIC_REFRESH
 	if(href_list["nextTag"] == "CUSTOM")
-		var/dest = input("Please enter custom location.", "Location", src.currTag ? src.currTag : "None")
-		if(dest != "None")
-			src.currTag = dest
+		var/dest = input(user, "Please enter custom location.", "Location", src.currTag ? src.currTag : "None")
+		if(CanUseTopic(user, state))
+			if(dest != "None")
+				src.currTag = dest
+			else
+				src.currTag = 0
+			. = TOPIC_REFRESH
 		else
-			src.currTag = 0
-	openwindow(usr)
+			. = TOPIC_HANDLED
+
+	if(. == TOPIC_REFRESH)
+		openwindow(user)
 
 /obj/machinery/disposal/deliveryChute
 	name = "Delivery chute"
@@ -418,6 +433,17 @@
 	playsound(src, 'sound/machines/disposalflush.ogg', 50, 0, 0)
 	sleep(5) // wait for animation to finish
 
+	if(prob(35))
+		for(var/mob/living/carbon/human/L in src)
+			var/list/obj/item/organ/external/crush = L.get_damageable_organs()
+			if(!crush.len)
+				return
+
+			var/obj/item/organ/external/E = pick(crush)
+
+			E.take_damage(45, used_weapon = "Blunt Trauma")
+			to_chat(L, "\The [src]'s mechanisms crush your [E.name]!")
+
 	H.init(src)	// copy the contents of disposer to holder
 
 	H.start(src) // start the holder processing movement
@@ -433,7 +459,7 @@
 	if(!I || !user)
 		return
 
-	if(istype(I, /obj/item/weapon/screwdriver))
+	if(isScrewdriver(I))
 		if(c_mode==0)
 			c_mode=1
 			playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
@@ -444,7 +470,7 @@
 			playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 			to_chat(user, "You attach the screws around the power connection.")
 			return
-	else if(istype(I,/obj/item/weapon/weldingtool) && c_mode==1)
+	else if(isWelder(I) && c_mode==1)
 		var/obj/item/weapon/weldingtool/W = I
 		if(W.remove_fuel(1,user))
 			to_chat(user, "You start slicing the floorweld off the delivery chute.")

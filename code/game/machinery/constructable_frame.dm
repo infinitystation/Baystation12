@@ -14,7 +14,7 @@
 	var/list/req_components = null
 	var/list/req_component_names = null
 	var/state = 1
-	flags = OBJ_CLIMBABLE
+	atom_flags = ATOM_FLAG_CLIMBABLE
 
 	proc/update_desc()
 		var/D
@@ -26,11 +26,17 @@
 			D = "Requires [english_list(component_list)]."
 		desc = D
 
+/obj/machinery/constructable_frame/proc/get_req_components_amt()
+	var/amt = 0
+	for(var/path in req_components)
+		amt += req_components[path]
+	return amt
+
 /obj/machinery/constructable_frame/machine_frame
 	attackby(obj/item/P as obj, mob/user as mob)
 		switch(state)
 			if(1)
-				if(istype(P, /obj/item/stack/cable_coil))
+				if(isCoil(P))
 					var/obj/item/stack/cable_coil/C = P
 					if (C.get_amount() < 5)
 						to_chat(user, "<span class='warning'>You need five lengths of cable to add them to the frame.</span>")
@@ -43,7 +49,7 @@
 							state = 2
 							icon_state = "box_1"
 				else
-					if(istype(P, /obj/item/weapon/wrench))
+					if(isWrench(P))
 						playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 						to_chat(user, "<span class='notice'>You dismantle the frame</span>")
 						new /obj/item/stack/material/steel(src.loc, 5)
@@ -72,7 +78,7 @@
 					else
 						to_chat(user, "<span class='warning'>This frame does not accept circuit boards of this type!</span>")
 				else
-					if(istype(P, /obj/item/weapon/wirecutters))
+					if(isWirecutter(P))
 						playsound(src.loc, 'sound/items/Wirecutter.ogg', 50, 1)
 						to_chat(user, "<span class='notice'>You remove the cables.</span>")
 						state = 1
@@ -81,10 +87,11 @@
 						A.amount = 5
 
 			if(3)
-				if(istype(P, /obj/item/weapon/crowbar))
+				if(isCrowbar(P))
 					playsound(src.loc, 'sound/items/Crowbar.ogg', 50, 1)
 					state = 2
 					circuit.loc = src.loc
+					components.Remove(circuit)
 					circuit = null
 					if(components.len == 0)
 						to_chat(user, "<span class='notice'>You remove the circuit board.</span>")
@@ -97,7 +104,7 @@
 					components = null
 					icon_state = "box_1"
 				else
-					if(istype(P, /obj/item/weapon/screwdriver))
+					if(isScrewdriver(P))
 						var/component_check = 1
 						for(var/R in req_components)
 							if(req_components[R] > 0)
@@ -129,28 +136,54 @@
 							new_machine.RefreshParts()
 							qdel(src)
 					else
-						if(istype(P, /obj/item))
-							for(var/I in req_components)
-								if(istype(P, I) && (req_components[I] > 0))
-									playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
-									if(istype(P, /obj/item/stack/cable_coil))
-										var/obj/item/stack/cable_coil/CP = P
-										if(CP.get_amount() > 1)
-											var/camt = min(CP.amount, req_components[I]) // amount of cable to take, idealy amount required, but limited by amount provided
-											var/obj/item/stack/cable_coil/CC = new /obj/item/stack/cable_coil(src)
-											CC.amount = camt
-											CC.update_icon()
-											CP.use(camt)
-											components += CC
-											req_components[I] -= camt
-											update_desc()
-											break
-									user.drop_item()
-									P.loc = src
-									components += P
-									req_components[I]--
-									update_desc()
-									break
-							to_chat(user, desc)
-							if(P && P.loc != src && !istype(P, /obj/item/stack/cable_coil))
-								to_chat(user, "<span class='warning'>You cannot add that component to the machine!</span>")
+						if(istype(P, /obj/item/weapon/storage/part_replacer) && P.contents.len && get_req_components_amt())
+							var/obj/item/weapon/storage/part_replacer/replacer = P
+							var/list/added_components = list()
+							var/list/part_list = list()
+
+							//Assemble a list of current parts, then sort them by their rating!
+							for(var/obj/item/weapon/stock_parts/co in replacer)
+								part_list += co
+							//Sort the parts. This ensures that higher tier items are applied first.
+							part_list = sortTim(part_list)
+
+							for(var/path in req_components)
+								while(req_components[path] > 0 && (locate(path) in part_list))
+									var/obj/item/part = (locate(path) in part_list)
+									added_components[part] = path
+									replacer.remove_from_storage(part, src)
+									req_components[path]--
+									part_list -= part
+
+							for(var/obj/item/weapon/stock_parts/part in added_components)
+								components += part
+								user << "<span class='notice'>[part.name] applied.</span>"
+							replacer.play_rped_sound()
+
+							update_desc()
+						else
+							if(istype(P, /obj/item))
+								for(var/I in req_components)
+									if(istype(P, I) && (req_components[I] > 0))
+										playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+										if(isCoil(P))
+											var/obj/item/stack/cable_coil/CP = P
+											if(CP.get_amount() > 1)
+												var/camt = min(CP.amount, req_components[I]) // amount of cable to take, idealy amount required, but limited by amount provided
+												var/obj/item/stack/cable_coil/CC = new /obj/item/stack/cable_coil(src)
+												CC.amount = camt
+												CC.update_icon()
+												CP.use(camt)
+												components += CC
+												req_components[I] -= camt
+												update_desc()
+												break
+										user.drop_item()
+										P.loc = src
+										components += P
+										req_components[I]--
+										update_desc()
+										break
+								to_chat(user, desc)
+								if(P && P.loc != src && !istype(P, /obj/item/stack/cable_coil))
+									to_chat(user, "<span class='warning'>You cannot add that component to the machine!</span>")

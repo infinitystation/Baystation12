@@ -42,8 +42,8 @@
 	steal_objective.find_target()
 	changeling.objectives += steal_objective
 
-	switch(rand(1,100))
-		if(1 to 80)
+	switch(rand(1,10))
+		if(1)
 			if (!(locate(/datum/objective/escape) in changeling.objectives))
 				var/datum/objective/escape/escape_objective = new
 				escape_objective.owner = changeling
@@ -62,13 +62,13 @@
 				var/mob/living/carbon/human/H = player.current
 				if(H.isSynthetic())
 					return 0
-				if(H.species.flags & NO_SCAN)
+				if(H.species.species_flags & SPECIES_FLAG_NO_SCAN)
 					return 0
 				return 1
 			else if(isnewplayer(player.current))
 				if(player.current.client && player.current.client.prefs)
 					var/datum/species/S = all_species[player.current.client.prefs.species]
-					if(S && (S.flags & NO_SCAN))
+					if(S && (S.species_flags & SPECIES_FLAG_NO_SCAN))
 						return 0
 					if(player.current.client.prefs.organ_data[BP_CHEST] == "cyborg") // Full synthetic.
 						return 0

@@ -17,27 +17,10 @@
 	build_path = /obj/machinery/computer/borgupload
 	origin_tech = list(TECH_DATA = 4)
 
-/obj/item/weapon/circuitboard/med_data
-	name = T_BOARD("medical records console")
-	build_path = /obj/machinery/computer/med_data
-
-/obj/item/weapon/circuitboard/scan_consolenew
-	name = T_BOARD("DNA machine")
-	build_path = /obj/machinery/computer/scan_consolenew
-	origin_tech = list(TECH_DATA = 2, TECH_BIO = 2)
-
 /obj/item/weapon/circuitboard/teleporter
 	name = T_BOARD("teleporter control console")
 	build_path = /obj/machinery/computer/teleporter
 	origin_tech = list(TECH_DATA = 2, TECH_BLUESPACE = 2)
-
-/obj/item/weapon/circuitboard/secure_data
-	name = T_BOARD("security records console")
-	build_path = /obj/machinery/computer/secure_data
-
-/obj/item/weapon/circuitboard/skills
-	name = T_BOARD("employment records console")
-	build_path = /obj/machinery/computer/skills
 
 /obj/item/weapon/circuitboard/atmos_alert
 	name = T_BOARD("atmospheric alert console")
@@ -56,11 +39,6 @@
 	name = T_BOARD("drone control console")
 	build_path = /obj/machinery/computer/drone_control
 	origin_tech = list(TECH_DATA = 3)
-
-/obj/item/weapon/circuitboard/cloning
-	name = T_BOARD("cloning control console")
-	build_path = /obj/machinery/computer/cloning
-	origin_tech = list(TECH_DATA = 3, TECH_BIO = 3)
 
 /obj/item/weapon/circuitboard/arcade/battle
 	name = T_BOARD("battle arcade machine")
@@ -131,6 +109,10 @@
 	name = T_BOARD("helm control console")
 	build_path = /obj/machinery/computer/helm
 
+/obj/item/weapon/circuitboard/engine
+	name = T_BOARD("engine control console")
+	build_path = /obj/machinery/computer/engines
+
 /obj/item/weapon/circuitboard/nav
 	name = T_BOARD("navigation console")
 	build_path = /obj/machinery/computer/navigation
@@ -163,3 +145,7 @@
 /obj/item/weapon/circuitboard/account_database
 	name = T_BOARD("accounts uplink terminal")
 	build_path = /obj/machinery/computer/account_database
+
+/obj/item/weapon/circuitboard/ship_weapon
+	name = T_BOARD("weapon control console")
+	build_path = /obj/machinery/computer/weapons

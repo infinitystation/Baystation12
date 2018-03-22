@@ -4,7 +4,7 @@
 	gender = PLURAL
 	icon = 'icons/obj/items.dmi'
 	icon_state = "handcuff"
-	flags = CONDUCT
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 	throwforce = 5
 	w_class = ITEM_SIZE_SMALL
@@ -17,15 +17,16 @@
 	var/breakouttime = 1200 //Deciseconds = 120s = 2 minutes
 	var/cuff_sound = 'sound/weapons/handcuffs.ogg'
 	var/cuff_type = "handcuffs"
-	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/handcuffs.dmi')
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/onmob/Resomi/misc.dmi')
 
-/obj/item/weapon/handcuffs/get_mob_overlay(mob/user_mob, slot)
-	var/image/ret = ..()
+
+
+/obj/item/weapon/handcuffs/get_icon_state(mob/user_mob, slot)
 	if(slot == slot_handcuffed_str)
-		ret.icon_state = "handcuff1"
+		return "handcuff1"
 	if(slot == slot_legcuffed_str)
-		ret.icon_state = "legcuff1"
-	return ret
+		return "legcuff1"
+	return ..()
 
 /obj/item/weapon/handcuffs/attack(var/mob/living/carbon/C, var/mob/living/user)
 
@@ -37,16 +38,22 @@
 		place_handcuffs(user, user)
 		return
 
-	if(!C.handcuffed)
-		if (C == user)
-			place_handcuffs(user, user)
-			return
+	// only carbons can be handcuffed
+	if(istype(C))
+		if(!C.handcuffed)
+			if (C == user)
+				place_handcuffs(user, user)
+				return
 
-		//check for an aggressive grab (or robutts)
-		if(can_place(C, user))
-			place_handcuffs(C, user)
+			//check for an aggressive grab (or robutts)
+			if(can_place(C, user))
+				place_handcuffs(C, user)
+			else
+				to_chat(user, "<span class='danger'>You need to have a firm grip on [C] before you can put \the [src] on!</span>")
 		else
-			to_chat(user, "<span class='danger'>You need to have a firm grip on [C] before you can put \the [src] on!</span>")
+			to_chat(user, "<span class='warning'>\The [C] is already handcuffed!</span>")
+	else
+		..()
 
 /obj/item/weapon/handcuffs/proc/can_place(var/mob/target, var/mob/user)
 	if(user == target || istype(user, /mob/living/silicon/robot) || istype(user, /mob/living/bot))
@@ -129,28 +136,28 @@ var/last_chew = 0
 	elastic = 1
 
 /obj/item/weapon/handcuffs/cable/red
-	color = "#DD0000"
+	color = "#dd0000"
 
 /obj/item/weapon/handcuffs/cable/yellow
-	color = "#DDDD00"
+	color = "#dddd00"
 
 /obj/item/weapon/handcuffs/cable/blue
-	color = "#0000DD"
+	color = "#0000dd"
 
 /obj/item/weapon/handcuffs/cable/green
-	color = "#00DD00"
+	color = "#00dd00"
 
 /obj/item/weapon/handcuffs/cable/pink
-	color = "#DD00DD"
+	color = "#dd00dd"
 
 /obj/item/weapon/handcuffs/cable/orange
-	color = "#DD8800"
+	color = "#dd8800"
 
 /obj/item/weapon/handcuffs/cable/cyan
-	color = "#00DDDD"
+	color = "#00dddd"
 
 /obj/item/weapon/handcuffs/cable/white
-	color = "#FFFFFF"
+	color = "#ffffff"
 
 /obj/item/weapon/handcuffs/cable/attackby(var/obj/item/I, mob/user as mob)
 	..()
@@ -171,6 +178,6 @@ var/last_chew = 0
 	desc = "DIY!"
 	icon_state = "tape_cross"
 	item_state = null
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	breakouttime = 200
 	cuff_type = "duct tape"

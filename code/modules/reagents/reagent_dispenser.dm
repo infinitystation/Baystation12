@@ -16,9 +16,7 @@
 		return
 
 /obj/structure/reagent_dispensers/New()
-	var/datum/reagents/R = new/datum/reagents(initial_capacity)
-	reagents = R
-	R.my_atom = src
+	create_reagents(initial_capacity)
 
 	if (!possible_transfer_amounts)
 		src.verbs -= /obj/structure/reagent_dispensers/verb/set_APTFT
@@ -83,7 +81,7 @@
 	possible_transfer_amounts = "10;25;50;100"
 	initial_capacity = 50000
 	initial_reagent_types = list(/datum/reagent/water = 1)
-	flags = OBJ_CLIMBABLE
+	atom_flags = ATOM_FLAG_CLIMBABLE
 
 /obj/structure/reagent_dispensers/fueltank
 	name = "fueltank"
@@ -94,7 +92,7 @@
 	var/modded = 0
 	var/obj/item/device/assembly_holder/rig = null
 	initial_reagent_types = list(/datum/reagent/fuel = 1)
-	flags = OBJ_CLIMBABLE
+	atom_flags = ATOM_FLAG_CLIMBABLE
 
 /obj/structure/reagent_dispensers/fueltank/examine(mob/user)
 	if(!..(user, 2))
@@ -145,13 +143,21 @@
 			overlays += test
 
 	else if(isflamesource(W))
+		if(user.a_intent != I_HURT)
+			to_chat(user, "<span class='warning'>You almost got [W] too close to [src]! That could have ended very badly for you.</span>")
+			return
+
 		var/turf/T = get_turf(src)
 		for(var/obj/vehicle/train/cargo/trolley/S in T.contents)
 			if(S.load == src)
 				S.load = null
-		log_and_message_admins("triggered a fueltank explosion with \a [W].")
-		user.visible_message("<span class='danger'>\The [user] puts \the [W] to \the [src]!</span>", "<span class='danger'>You put your [W] to \the [src] and with a moment of lucidity you realize, this might not have been the smartest thing you've ever done.</span>")
-		src.explode()
+
+		user.visible_message("<span class='warning'>[user] draws closer to the fueltank with [W].</span>", "<span class='warning'>You draw closer to the fueltank with [W].</span>")
+		if(do_after(user, 50, src))
+			log_and_message_admins("triggered a fueltank explosion with [W].")
+			user.visible_message("<span class='danger'>[user] puts [W] to [src]!</span>", "<span class='danger'>You put \the [W] to \the [src] and with a moment of lucidity you realize, this might not have been the smartest thing you've ever done.</span>")
+			src.explode()
+
 		return
 
 	return ..()
@@ -249,7 +255,7 @@
 	icon_state = "beertankTEMP"
 	amount_per_transfer_from_this = 10
 	initial_reagent_types = list(/datum/reagent/ethanol/beer = 1)
-	flags = OBJ_CLIMBABLE
+	atom_flags = ATOM_FLAG_CLIMBABLE
 
 /obj/structure/reagent_dispensers/virusfood
 	name = "Virus Food Dispenser"

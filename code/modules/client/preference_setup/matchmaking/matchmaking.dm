@@ -108,14 +108,11 @@ var/global/datum/matchmaker/matchmaker = new()
 //Finalizes and propagates info if both sides are done.
 /datum/relation/proc/finalize()
 	finalized = 1
+	to_chat(holder.current,"<span class='warning'>You have finalized a connection with [other.holder].</span>")
+	to_chat(other.holder.current,"<span class='warning'>[holder] has finalized a connection with you.</span>")
 	if(other && other.finalized)
-		var/datum/data/record/R1 = find_general_record("name", holder.name)
-		var/datum/data/record/R2 = find_general_record("name", other.holder.name)
-		var/info = prob(60) ? get_desc_string() : "[holder] and [other.holder] know each other, but the exact nature of their relationship is unclear."
-		if(R1)
-			R1.fields["connections"] |= info
-		if(R2)
-			R2.fields["connections"] |= info
+		to_chat(holder.current,"<span class='warning'>Your connection with [other.holder] is now confirmed!</span>")
+		to_chat(other.holder.current,"<span class='warning'>Your connection with [holder] is now confirmed!</span>")
 		var/list/candidates = filter_list(GLOB.player_list, /mob/living/carbon/human)
 		candidates -= holder.current
 		candidates -= other.holder.current
@@ -152,10 +149,11 @@ var/global/datum/matchmaker/matchmaker = new()
 	var/list/dat = list()
 	var/editable = 0
 	if(mind.gen_relations_info)
-		dat += "<b>Things they all know about you:</b><br>[mind.gen_relations_info]<br>"
+		dat += "<b>Things they all know about you:</b><br>[mind.gen_relations_info]<hr>"
+		dat += "An <b>\[F\]</b> indicates that the other player has finalized the connection.<br>"
 		dat += "<br>"
 	for(var/datum/relation/R in relations)
-		dat += "<b>[R.other.holder]</b>, [R.other.holder.role_alt_title ? R.other.holder.role_alt_title : R.other.holder.assigned_role]."
+		dat += "<b>[R.other.finalized ? "\[F\] " : ""][R.other.holder]</b>, [R.other.holder.role_alt_title ? R.other.holder.role_alt_title : R.other.holder.assigned_role]."
 		if (!R.finalized)
 			dat += " <a href='?src=\ref[src];del_relation=\ref[R]'>Remove</a>"
 			editable = 1

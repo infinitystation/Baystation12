@@ -22,7 +22,7 @@
 	screen.severity = severity
 
 	screens[category] = screen
-	if(client && stat != DEAD)
+	if(client && (stat != DEAD || screen.allstate))
 		client.screen += screen
 	return screen
 
@@ -66,6 +66,7 @@
 	plane = FULLSCREEN_PLANE
 	mouse_opacity = 0
 	var/severity = 0
+	var/allstate = 0 //shows if it should show up for dead people too
 
 /obj/screen/fullscreen/Destroy()
 	severity = 0
@@ -85,6 +86,12 @@
 
 /obj/screen/fullscreen/blind
 	icon_state = "blackimageoverlay"
+	layer = BLIND_LAYER
+
+/obj/screen/fullscreen/blackout
+	icon = 'icons/mob/screen1.dmi'
+	icon_state = "black"
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
 	layer = BLIND_LAYER
 
 /obj/screen/fullscreen/impaired
@@ -116,6 +123,18 @@
 	layer = FULLSCREEN_LAYER
 	alpha = 127
 
+/obj/screen/fullscreen/fadeout
+	icon = 'icons/mob/screen1.dmi'
+	icon_state = "black"
+	screen_loc = ui_entire_screen
+	layer = FULLSCREEN_LAYER
+	alpha = 0
+	allstate = 1
+
+/obj/screen/fullscreen/fadeout/Initialize()
+	. = ..()
+	animate(src, alpha = 255, time = 10)
+
 /obj/screen/fullscreen/scanline
 	icon = 'icons/effects/static.dmi'
 	icon_state = "scanlines"
@@ -125,3 +144,8 @@
 
 /obj/screen/fullscreen/fishbed
 	icon_state = "fishbed"
+	allstate = 1
+
+/obj/screen/fullscreen/pain
+	icon_state = "brutedamageoverlay6"
+	alpha = 0

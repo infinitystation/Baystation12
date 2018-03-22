@@ -88,6 +88,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/lobby_icon									// The icon which contains the lobby image(s)
 	var/list/lobby_screens = list()                 // The list of lobby screen to pick() from. If left unset the first icon state is always selected.
 	var/lobby_music/lobby_music                     // The track that will play in the lobby screen. Handed in the /setup_map() proc.
+	var/welcome_sound = 'sound/AI/welcome.ogg'		// Sound played on roundstart
 
 	var/default_law_type = /datum/ai_laws/nanotrasen  // The default lawset use by synth units, if not overriden by their laws var.
 	var/security_state = /decl/security_state/default // The default security state system to use.
@@ -95,12 +96,70 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/id_hud_icons = 'icons/mob/hud.dmi' // Used by the ID HUD (primarily sechud) overlay.
 
 	var/num_exoplanets = 0
+	var/list/planet_size  //dimensions of planet zlevel, defaults to world size. Due to how maps are generated, must be (2^n+1) e.g. 17,33,65,129 etc. Map will just round up to those if set to anything other.
+	var/away_site_budget = 0
+
+	var/list/loadout_blacklist	//list of types of loadout items that will not be pickable
+
+	//Economy stuff
+	var/starting_money = 75000		//Money in station account
+	var/department_money = 5000		//Money in department accounts
+	var/salary_modifier	= 1			//Multiplier to starting character money
+	var/station_departments = list()//Gets filled automatically depending on jobs allowed
+
+	//Factions prefs stuff
+	var/list/citizenship_choices = list(
+		"Earth",
+		"Mars",
+		"Terra",
+		"Gaia",
+		"Moghes",
+		"Ahdomai",
+		"Qerrbalak"
+	)
+
+	var/list/home_system_choices = list(
+		"Sol",
+		"Nyx",
+		"Tau Ceti",
+		"Epsilon Ursae Minoris",
+		"Zamsiin-lr",
+		"Gilgamesh"
+		)
+
+	var/list/faction_choices = list(
+		"Sol Central Government",
+		"Terran Colonial Confederation",
+		"Vey Med",
+		"Einstein Engines",
+		"Free Trade Union",
+		"NanoTrasen",
+		"Ward-Takahashi GMB",
+		"Gilthari Exports",
+		"Grayson Manufactories Ltd.",
+		"Aether Atmospherics",
+		"Zeng-Hu Pharmaceuticals",
+		"Hephaestus Industries",
+		"Commonwealth of Ahdomai"
+		)
+
+	var/list/religion_choices = list(
+		"Unitarianism",
+		"Hinduism",
+		"Buddhist",
+		"Islamic",
+		"Christian",
+		"Agnostic",
+		"Deist"
+		)
 
 /datum/map/New()
 	if(!map_levels)
 		map_levels = station_levels.Copy()
 	if(!allowed_jobs)
 		allowed_jobs = subtypesof(/datum/job)
+	if(!planet_size)
+		planet_size = list(world.maxx, world.maxy)
 
 /datum/map/proc/setup_map()
 	var/list/lobby_music_tracks = subtypesof(/lobby_music)
@@ -116,27 +175,51 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 /datum/map/proc/perform_map_generation()
 	return
 
+/datum/map/proc/build_away_sites()
+#ifdef UNIT_TEST
+	report_progress("Unit testing, so not loading away sites")
+	return // don't build away sites during unit testing
+#else
+	report_progress("Loading away sites...")
+	var/list/sites_by_spawn_weight = list()
+	for (var/site_name in SSmapping.away_sites_templates)
+		var/datum/map_template/ruin/away_site/site = SSmapping.away_sites_templates[site_name]
+		sites_by_spawn_weight[site] = site.spawn_weight
+	while (away_site_budget > 0 && sites_by_spawn_weight.len)
+		var/datum/map_template/ruin/away_site/selected_site = pickweight(sites_by_spawn_weight)
+		if (!selected_site)
+			break
+		sites_by_spawn_weight -= selected_site
+		if(selected_site.cost > away_site_budget)
+			continue
+		if (selected_site.load_new_z())
+			report_progress("Loaded away site [selected_site]!")
+			away_site_budget -= selected_site.cost
+	report_progress("Finished loading away sites, remaining budget [away_site_budget], remaining sites [sites_by_spawn_weight.len]")
+#endif
+
 /datum/map/proc/build_exoplanets()
 	if(!use_overmap)
 		return
 
 	for(var/i = 0, i < num_exoplanets, i++)
 		var/exoplanet_type = pick(subtypesof(/obj/effect/overmap/sector/exoplanet))
-		var/obj/effect/overmap/sector/exoplanet/new_planet = new exoplanet_type
+		var/obj/effect/overmap/sector/exoplanet/new_planet = new exoplanet_type(null, planet_size[1], planet_size[2])
 		new_planet.build_level()
 
 // Used to apply various post-compile procedural effects to the map.
-/datum/map/proc/refresh_mining_turfs()
+/datum/map/proc/refresh_mining_turfs(var/zlevel)
 
 	set background = 1
 	set waitfor = 0
 
-	for(var/thing in mining_walls)
+	for(var/thing in mining_walls["[zlevel]"])
 		var/turf/simulated/mineral/M = thing
 		M.update_icon()
-	for(var/thing in mining_floors)
+	for(var/thing in mining_floors["[zlevel]"])
 		var/turf/simulated/floor/asteroid/M = thing
-		M.updateMineralOverlays()
+		if(istype(M))
+			M.updateMineralOverlays()
 
 /datum/map/proc/get_network_access(var/network)
 	return 0
@@ -155,3 +238,47 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		world.maxz++
 		empty_levels = list(world.maxz)
 	return pick(empty_levels)
+
+
+/datum/map/proc/setup_economy()
+	news_network.CreateFeedChannel("Nyx Daily", "SolGov Minister of Information", 1, 1)
+	news_network.CreateFeedChannel("The Gibson Gazette", "Editor Mike Hammers", 1, 1)
+
+	for(var/loc_type in typesof(/datum/trade_destination) - /datum/trade_destination)
+		var/datum/trade_destination/D = new loc_type
+		weighted_randomevent_locations[D] = D.viable_random_events.len
+		weighted_mundaneevent_locations[D] = D.viable_mundane_events.len
+
+	if(!station_account)
+		station_account = create_account("[station_name()] Primary Account", starting_money)
+
+	for(var/job in allowed_jobs)
+		var/datum/job/J = decls_repository.get_decl(job)
+		if(J.department)
+			station_departments |= J.department
+	for(var/department in station_departments)
+		department_accounts[department] = create_account("[department] Account", department_money)
+
+	department_accounts["Vendor"] = create_account("Vendor Account", 0)
+	vendor_account = department_accounts["Vendor"]
+
+/datum/map/proc/map_info(var/client/victim)
+	return
+// Access check is of the type requires one. These have been carefully selected to avoid allowing the janitor to see channels he shouldn't
+// This list needs to be purged but people insist on adding more cruft to the radio.
+/datum/map/proc/default_internal_channels()
+	return list(
+		num2text(PUB_FREQ)   = list(),
+		num2text(AI_FREQ)    = list(access_synth),
+		num2text(ENT_FREQ)   = list(),
+		num2text(ERT_FREQ)   = list(access_cent_specops),
+		num2text(COMM_FREQ)  = list(access_heads),
+		num2text(ENG_FREQ)   = list(access_engine_equip, access_atmospherics),
+		num2text(MED_FREQ)   = list(access_medical_equip),
+		num2text(MED_I_FREQ) = list(access_medical_equip),
+		num2text(SEC_FREQ)   = list(access_security),
+		num2text(SEC_I_FREQ) = list(access_security),
+		num2text(SCI_FREQ)   = list(access_tox,access_robotics,access_xenobiology),
+		num2text(SUP_FREQ)   = list(access_cargo),
+		num2text(SRV_FREQ)   = list(access_janitor, access_hydroponics),
+	)

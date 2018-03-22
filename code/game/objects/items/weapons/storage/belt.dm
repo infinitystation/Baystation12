@@ -5,20 +5,17 @@
 	icon_state = "utilitybelt"
 	item_state = "utility"
 	storage_slots = 7
+	item_flags = ITEM_FLAG_IS_BELT
 	max_w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BELT
 	attack_verb = list("whipped", "lashed", "disciplined")
-	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/belt.dmi')
-	var/show_above_suit = 0
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/onmob/Resomi/belt.dmi')
 
 /obj/item/weapon/storage/belt/verb/toggle_layer()
 	set name = "Switch Belt Layer"
 	set category = "Object"
 
-	if(show_above_suit == -1)
-		to_chat(usr, "<span class='notice'>\The [src] cannot be worn above your suit!</span>")
-		return
-	show_above_suit = !show_above_suit
+	use_alt_layer = !use_alt_layer
 	update_icon()
 
 /obj/item/weapon/storage/update_icon()
@@ -31,7 +28,7 @@
 	var/image/ret = ..()
 	if(slot == slot_belt_str && contents.len)
 		for(var/obj/item/I in contents)
-			ret.overlays += image("icon" = 'icons/mob/belt.dmi', "icon_state" = "[I.item_state ? I.item_state : I.icon_state]")
+			ret.overlays += image("icon" = 'icons/mob/onmob/belt.dmi', "icon_state" = "[I.item_state ? I.item_state : I.icon_state]")
 	return ret
 
 /obj/item/weapon/storage/belt/utility
@@ -60,7 +57,8 @@
 		/obj/item/weapon/material/hatchet,
 		/obj/item/device/analyzer/plant_analyzer,
 		/obj/item/taperoll,
-		/obj/item/weapon/extinguisher/mini
+		/obj/item/weapon/extinguisher/mini,
+		/obj/item/weapon/marshalling_wand
 		)
 
 
@@ -73,6 +71,14 @@
 	new /obj/item/weapon/wirecutters(src)
 	new /obj/item/stack/cable_coil(src,30,pick("red","yellow","orange"))
 
+/obj/item/weapon/storage/belt/utility/full_buy/New()
+	..()
+	new /obj/item/weapon/screwdriver(src)
+	new /obj/item/weapon/wrench(src)
+	new /obj/item/weapon/weldingtool(src)
+	new /obj/item/weapon/crowbar(src)
+	new /obj/item/weapon/wirecutters(src)
+	new /obj/item/device/multitool(src)
 
 /obj/item/weapon/storage/belt/utility/atmostech/New()
 	..()
@@ -92,7 +98,6 @@
 	item_state = "medical"
 	can_hold = list(
 		/obj/item/device/healthanalyzer,
-		/obj/item/weapon/dnainjector,
 		/obj/item/weapon/reagent_containers/dropper,
 		/obj/item/weapon/reagent_containers/glass/beaker,
 		/obj/item/weapon/reagent_containers/glass/bottle,
@@ -120,12 +125,28 @@
 	icon_state = "emsbelt"
 	item_state = "emsbelt"
 
+/obj/item/weapon/storage/belt/medical/emt/combat
+	name = "combat medical belt"
+
+/obj/item/weapon/storage/belt/medical/emt/combat/New()
+	..()
+	new /obj/item/weapon/storage/pill_bottle/dylovene(src)
+	new /obj/item/weapon/storage/pill_bottle/dexalin(src)
+	new /obj/item/weapon/storage/pill_bottle/spaceacillin(src)
+	new /obj/item/weapon/storage/pill_bottle/bicaridine(src)
+	new /obj/item/weapon/storage/pill_bottle/inaprovaline(src)
+	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
+	new /obj/item/weapon/storage/pill_bottle/kelotane(src)
+
 /obj/item/weapon/storage/belt/security
 	name = "security belt"
 	desc = "Can hold security gear like handcuffs and flashes."
 	icon_state = "securitybelt"
 	item_state = "security"
+	storage_slots = 6
 	can_hold = list(
+		/obj/item/weapon/storage/firstaid/individual/military,
+		/obj/item/weapon/crowbar,
 		/obj/item/weapon/grenade,
 		/obj/item/weapon/reagent_containers/spray/pepper,
 		/obj/item/weapon/handcuffs,
@@ -150,6 +171,40 @@
 		/obj/item/device/holowarrant,
 		/obj/item/weapon/magnetic_ammo
 		)
+
+/obj/item/weapon/storage/belt/security/marshal
+	storage_slots = 7
+
+/obj/item/weapon/storage/belt/security/marshal/New()
+	..()
+	new /obj/item/taperoll/police(src)
+	new /obj/item/weapon/melee/baton/loaded(src)
+	new /obj/item/device/flashlight/maglight(src)
+	new /obj/item/weapon/handcuffs(src)
+	new /obj/item/ammo_magazine/c45m(src)
+	new /obj/item/ammo_magazine/c45m(src)
+	new /obj/item/weapon/gun/projectile/sec/lethal(src)
+
+/obj/item/weapon/storage/belt/security/troops
+	name = "combat belt"
+
+/obj/item/weapon/storage/belt/security/troops/New()
+	..()
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/weapon/gun/projectile/sec/lethal(src)
+	new /obj/item/ammo_magazine/c45m(src)
+
+/obj/item/weapon/storage/belt/security/troops_sts/New()
+	..()
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/weapon/gun/projectile/sec/lethal(src)
+	new /obj/item/ammo_magazine/c45m(src)
 
 /obj/item/weapon/storage/belt/soulstone
 	name = "soul stone belt"

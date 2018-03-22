@@ -61,8 +61,16 @@
 /decl/hierarchy/supply_pack/atmospherics/canister_phoron
 	name = "Phoron gas canister"
 	contains = list(/obj/machinery/portable_atmospherics/canister/phoron)
-	cost = 60
+	cost = 70
 	containername = "\improper Phoron gas canister crate"
+	containertype = /obj/structure/closet/crate/secure/large
+	access = access_atmospherics
+
+/decl/hierarchy/supply_pack/atmospherics/canister_hydrogen
+	name = "Hydrogen canister"
+	contains = list(/obj/machinery/portable_atmospherics/canister/hydrogen)
+	cost = 25
+	containername = "\improper Hydrogen canister crate"
 	containertype = /obj/structure/closet/crate/secure/large
 	access = access_atmospherics
 
@@ -79,5 +87,27 @@
 	contains = list(/obj/machinery/portable_atmospherics/canister/carbon_dioxide)
 	cost = 40
 	containername = "\improper CO2 canister crate"
+	containertype = /obj/structure/closet/crate/secure/large
+	access = access_atmospherics
+
+/decl/hierarchy/supply_pack/atmospherics/fuel
+	name = "Fuel tank crate"
+	contains = list(/obj/item/weapon/tank/hydrogen = 4)
+	cost = 15
+	containername = "\improper Fuel tank crate"
+
+/decl/hierarchy/supply_pack/atmospherics/phoron
+	name = "Phoron tank crate"
+	contains = list(/obj/item/weapon/tank/phoron = 3)
+	cost = 30
+	containername = "\improper Phoron tank crate"
+
+/decl/hierarchy/supply_pack/atmospherics/voidsuit
+	name = "Atmospherics voidsuit"
+	contains = list(/obj/item/clothing/suit/space/void/atmos/alt,
+					/obj/item/clothing/head/helmet/space/void/atmos/alt,
+					/obj/item/clothing/shoes/magboots)
+	cost = 120
+	containername = "\improper Atmospherics voidsuit crate"
 	containertype = /obj/structure/closet/crate/secure/large
 	access = access_atmospherics

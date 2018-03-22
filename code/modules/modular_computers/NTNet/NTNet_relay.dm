@@ -35,7 +35,7 @@
 	else
 		icon_state = "bus_off"
 
-/obj/machinery/ntnet_relay/process()
+/obj/machinery/ntnet_relay/Process()
 	if(operable())
 		use_power = 2
 	else
@@ -116,12 +116,12 @@
 	..()
 
 /obj/machinery/ntnet_relay/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
-	if(istype(W, /obj/item/weapon/screwdriver))
+	if(isScrewdriver(W))
 		playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 		panel_open = !panel_open
 		to_chat(user, "You [panel_open ? "open" : "close"] the maintenance hatch")
 		return
-	if(istype(W, /obj/item/weapon/crowbar))
+	if(isCrowbar(W))
 		if(!panel_open)
 			to_chat(user, "Open the maintenance panel first.")
 			return

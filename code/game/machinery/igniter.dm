@@ -37,11 +37,9 @@
 /obj/machinery/igniter/attack_hand(mob/user as mob)
 	if(..())
 		return
-	add_fingerprint(user)
 	ignite()
-	return
 
-/obj/machinery/igniter/process()	//ugh why is this even in process()?
+/obj/machinery/igniter/Process()	//ugh why is this even in process()?
 	if (on && powered() )
 		var/turf/location = src.loc
 		if (isturf(location))
@@ -94,7 +92,7 @@
 //		src.sd_SetLuminosity(0)
 
 /obj/machinery/sparker/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if (istype(W, /obj/item/weapon/screwdriver))
+	if(isScrewdriver(W))
 		add_fingerprint(user)
 		disable = !disable
 		if(disable)
@@ -102,6 +100,8 @@
 		else if(!disable)
 			user.visible_message("<span class='warning'>[user] has reconnected the [src]!</span>", "<span class='warning'>You fix the connection to the [src].</span>")
 		update_icon()
+	else
+		..()
 
 /obj/machinery/sparker/attack_ai()
 	if (anchored)
@@ -149,12 +149,12 @@
 	active = 1
 	icon_state = "launcheract"
 
-	for(var/obj/machinery/sparker/M in GLOB.machines)
+	for(var/obj/machinery/sparker/M in SSmachines.machinery)
 		if (M.id == id)
 			spawn( 0 )
 				M.ignite()
 
-	for(var/obj/machinery/igniter/M in GLOB.machines)
+	for(var/obj/machinery/igniter/M in SSmachines.machinery)
 		if(M.id == id)
 			M.ignite()
 

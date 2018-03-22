@@ -8,12 +8,13 @@
 	projectile_type = /obj/item/projectile/beam/pulse/heavy
 	max_shots = 36
 	w_class = ITEM_SIZE_HUGE
-	one_hand_penalty=6
+	one_hand_penalty= 6
 	multi_aim = 1
 	burst_delay = 3
 	burst = 3
 	move_delay = 4
 	accuracy = -1
+	wielded_item_state = "gun_wielded"
 
 /obj/item/weapon/gun/energy/pulse_rifle/carbine
 	name = "pulse carbine"
@@ -23,10 +24,16 @@
 	force = 8
 	projectile_type = /obj/item/projectile/beam/pulse/mid
 	max_shots = 24
+	burst = 1
 	w_class = ITEM_SIZE_LARGE
-	one_hand_penalty=3
+	one_hand_penalty= 3
 	burst_delay = 2
 	move_delay = 2
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-pulse bursts", burst=3,    fire_delay=null, move_delay=4,    one_hand_penalty=9, burst_accuracy=list(0,-1,-1.5), dispersion=list(0.0, 0.5, 1.0)),
+		)
+
 
 /obj/item/weapon/gun/energy/pulse_rifle/pistol
 	name = "pulse pistol"
@@ -36,10 +43,16 @@
 	force = 6
 	projectile_type = /obj/item/projectile/beam/pulse
 	max_shots = 21
+	burst = 1
 	w_class = ITEM_SIZE_NORMAL
 	one_hand_penalty=1 //a bit heavy
 	burst_delay = 1
 	move_delay = 1
+	wielded_item_state = null
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, one_hand_penalty=1, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-pulse bursts", burst=3,    fire_delay=null, move_delay=2,    one_hand_penalty=3, burst_accuracy=list(0,-1,-2), dispersion=list(0.0, 0.5, 0.8)),
+		)
 
 /obj/item/weapon/gun/energy/pulse_rifle/mounted
 	self_recharge = 1
@@ -51,7 +64,17 @@
 	cell_type = /obj/item/weapon/cell/super
 	fire_delay = 25
 	projectile_type=/obj/item/projectile/beam/pulse/destroy
-	charge_cost=40
+	charge_cost= 40
 
 /obj/item/weapon/gun/energy/pulse_rifle/destroyer/attack_self(mob/living/user as mob)
 	to_chat(user, "<span class='warning'>[src.name] has three settings, and they are all DESTROY.</span>")
+
+/obj/item/weapon/gun/energy/pulse_rifle/bogani
+	name = "pulsar cannon"
+	desc = "An alien weapon never before seen by the likes of your species."
+	icon_state = "bog_rifle"
+	item_state = "bog_rifle"
+	wielded_item_state = "bog_rifle-wielded"
+	projectile_type = /obj/item/projectile/beam/pulse/bogani
+	max_shots = 100 //Don't want it to run out
+	icon_rounder = 20

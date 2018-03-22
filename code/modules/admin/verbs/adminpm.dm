@@ -1,5 +1,5 @@
 //allows right clicking mobs to send an admin PM to their client, forwards the selected mob's client to cmd_admin_pm
-/client/proc/cmd_admin_pm_context(mob/M as mob in GLOB.mob_list)
+/client/proc/cmd_admin_pm_context(mob/M as mob in SSmobs.mob_list)
 	set category = null
 	set name = "Admin PM Mob"
 	if(!holder)
@@ -57,8 +57,6 @@
 		to_chat(src, "<span class='warning'>Error: Admin-PM: Non-admin to non-admin PM communication is forbidden.</span>")
 		return
 
-	msg = sanitize(msg)
-
 	//get message text, limit it's length.and clean/escape html
 	if(!msg)
 		msg = input(src,"Message:", "Private message to [key_name(C, 0, holder ? 1 : 0)]") as text|null
@@ -69,7 +67,11 @@
 			else		to_chat(src, "<span class='warning'>Error: Private-Message: Client not found. They may have lost connection, so try using an adminhelp!</span>")
 			return
 
-		msg = sanitize(msg)
+	msg = sanitize(msg)
+	var/rawmsg = msg
+	msg = emoji_parse(msg)
+//	if(holder)
+//		msg = emoji_parse(msg)
 
 	var/datum/client_lite/receiver_lite = client_repository.get_lite_client(C)
 	var/datum/client_lite/sender_lite = client_repository.get_lite_client(src)
@@ -125,21 +127,27 @@
 	var/sender_message = "<span class='pm'><span class='out'>" + create_text_tag("pm_out_alt", "PM", src) + " to <span class='name'>[get_options_bar(C, holder ? 1 : 0, holder ? 1 : 0, 1)]</span>"
 	if(holder)
 		sender_message += " (<a href='?_src_=holder;take_ticket=\ref[ticket]'>[(ticket.status == TICKET_OPEN) ? "TAKE" : "JOIN"]</a>) (<a href='?src=\ref[usr];close_ticket=\ref[ticket]'>CLOSE</a>)"
-	sender_message += ": <span class='message'>[msg]</span></span></span>"
+		sender_message += ": <span class='message'>[generate_ahelp_key_words(mob, msg)]</span>"
+	else
+		sender_message += ": <span class='message'>[msg]</span>"
+	sender_message += "</span></span>"
 	to_chat(src, sender_message)
 
 	var/receiver_message = "<span class='pm'><span class='in'>" + create_text_tag("pm_in", "", C) + " <b>\[[recieve_pm_type] PM\]</b> <span class='name'>[get_options_bar(src, C.holder ? 1 : 0, C.holder ? 1 : 0, 1)]</span>"
 	if(C.holder)
 		receiver_message += " (<a href='?_src_=holder;take_ticket=\ref[ticket]'>[(ticket.status == TICKET_OPEN) ? "TAKE" : "JOIN"]</a>) (<a href='?src=\ref[usr];close_ticket=\ref[ticket]'>CLOSE</a>)"
-	receiver_message += ": <span class='message'>[msg]</span></span></span>"
+		receiver_message += ": <span class='message'>[generate_ahelp_key_words(C.mob, msg)]</span>"
+	else
+		receiver_message += ": <span class='message'>[msg]</span>"
+	receiver_message += "</span></span>"
 	to_chat(C, receiver_message)
 
 	//play the recieving admin the adminhelp sound (if they have them enabled)
 	//non-admins shouldn't be able to disable this
-	if(C.is_preference_enabled(/datum/client_preference/holder/play_adminhelp_ping))
+	if(C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
 		sound_to(C, 'sound/effects/adminhelp.ogg')
 
-	log_admin("PM: [key_name(src)]->[key_name(C)]: [msg]")
+	log_admin("PM: [key_name(src)]->[key_name(C)]: [rawmsg]")
 	adminmsg2adminirc(src, C, html_decode(msg))
 
 	ticket.msgs += new /datum/ticket_msg(src.ckey, C.ckey, msg)

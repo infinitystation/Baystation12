@@ -18,7 +18,7 @@
 		/obj/item/device/depth_scanner,
 		/obj/item/device/core_sampler,
 		/obj/item/device/gps,
-		/obj/item/device/beacon_locator,
+		/obj/item/weapon/pinpointer/radio,
 		/obj/item/device/radio/beacon,
 		/obj/item/clothing/glasses/meson,
 		/obj/item/clothing/glasses/science,
@@ -38,7 +38,7 @@
 
 /obj/structure/closet/wardrobe/ptgear/WillContain()
 	return list(
-		/obj/item/clothing/under/pt/expeditionary = 4,
+		/obj/item/clothing/under/solgov/pt/expeditionary = 4,
 		/obj/item/clothing/shoes/white = 2,
 		/obj/item/clothing/shoes/black = 2)
 

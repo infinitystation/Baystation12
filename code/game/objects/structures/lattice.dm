@@ -8,7 +8,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	plane = ABOVE_PLATING_PLANE
 	layer = LATTICE_LAYER
-	//	flags = CONDUCT
+	//	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
 /obj/structure/lattice/Initialize()
 	. = ..()
@@ -55,7 +55,7 @@
 		var/turf/T = get_turf(src)
 		T.attackby(C, user) //BubbleWrap - hand this off to the underlying turf instead
 		return
-	if (istype(C, /obj/item/weapon/weldingtool))
+	if(isWelder(C))
 		var/obj/item/weapon/weldingtool/WT = C
 		if(WT.remove_fuel(0, user))
 			to_chat(user, "<span class='notice'>Slicing lattice joints...</span>")
@@ -75,6 +75,12 @@
 			return
 	return
 
+/obj/structure/lattice/catwalk/hoist_act(turf/dest)
+	for (var/A in src)
+		var/atom/movable/AM = A
+		AM.forceMove(dest)
+	..()
+
 /obj/structure/lattice/proc/updateOverlays()
 	//if(!(istype(src.loc, /turf/space)))
 	//	qdel(src)
@@ -89,7 +95,7 @@
 			if(locate(/obj/structure/lattice, T) || locate(/obj/structure/catwalk, T))
 				dir_sum += direction
 			else
-				if(!(istype(get_step(src, direction), /turf/space)))
+				if(!(istype(get_step(src, direction), /turf/space)) && !(istype(get_step(src, direction), /turf/simulated/open)))
 					dir_sum += direction
 
 		icon_state = "lattice[dir_sum]"

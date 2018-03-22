@@ -1,8 +1,7 @@
-#define TOPIC_NOACTION 0
-#define TOPIC_HANDLED 1
-#define TOPIC_REFRESH 2
 #define TOPIC_UPDATE_PREVIEW 4
 #define TOPIC_REFRESH_UPDATE_PREVIEW (TOPIC_REFRESH|TOPIC_UPDATE_PREVIEW)
+
+var/const/CHARACTER_PREFERENCE_INPUT_TITLE = "Character Preference"
 
 /datum/category_group/player_setup_category/general_preferences
 	name = "General"
@@ -38,6 +37,12 @@
 	name = "Global"
 	sort_order = 7
 	category_item_type = /datum/category_item/player_setup_item/player_global
+
+/datum/category_group/player_setup_category/law_pref
+	name = "Laws"
+	sort_order = 8
+	category_item_type = /datum/category_item/player_setup_item/law_pref
+
 
 /****************************
 * Category Collection Setup *

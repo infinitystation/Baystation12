@@ -5,7 +5,6 @@
 	icon_closed = "capsecure"
 	icon_locked = "capsecure1"
 	icon_opened = "capsecureopen"
-	icon_broken = "capsecurebroken"
 	icon_off = "capsecureoff"
 
 /obj/structure/closet/secure_closet/captains/WillContain()
@@ -16,7 +15,7 @@
 		/obj/item/clothing/suit/captunic/capjacket,
 		/obj/item/clothing/head/caphat/cap,
 		/obj/item/clothing/under/rank/captain,
-		/obj/item/clothing/suit/armor/vest/nt,
+		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
 		/obj/item/weapon/cartridge/captain,
 		/obj/item/clothing/head/helmet,
 		/obj/item/clothing/shoes/brown,
@@ -37,13 +36,12 @@
 	icon_closed = "hopsecure"
 	icon_locked = "hopsecure1"
 	icon_opened = "hopsecureopen"
-	icon_broken = "hopsecurebroken"
 	icon_off = "hopsecureoff"
 
 /obj/structure/closet/secure_closet/hop/WillContain()
 	return list(
 		/obj/item/clothing/glasses/sunglasses,
-		/obj/item/clothing/suit/armor/vest/nt,
+		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
 		/obj/item/clothing/head/helmet,
 		/obj/item/weapon/cartridge/hop,
 		/obj/item/device/radio/headset/heads/hop,
@@ -60,7 +58,6 @@
 	icon_closed = "hopsecure"
 	icon_locked = "hopsecure1"
 	icon_opened = "hopsecureopen"
-	icon_broken = "hopsecurebroken"
 	icon_off = "hopsecureoff"
 
 /obj/structure/closet/secure_closet/hop2/WillContain()
@@ -87,7 +84,6 @@
 	icon_closed = "hossecure"
 	icon_locked = "hossecure1"
 	icon_opened = "hossecureopen"
-	icon_broken = "hossecurebroken"
 	icon_off = "hossecureoff"
 
 /obj/structure/closet/secure_closet/hos/WillContain()
@@ -95,8 +91,7 @@
 		new/datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel_sec)),
 		/obj/item/clothing/head/HoS,
 		/obj/item/clothing/head/helmet/nt,
-		/obj/item/clothing/suit/armor/vest/nt,
-		/obj/item/clothing/suit/storage/vest/nt/hos,
+		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
 		/obj/item/clothing/under/rank/head_of_security/jensen,
 		/obj/item/clothing/under/rank/head_of_security/corp,
 		/obj/item/clothing/suit/armor/hos/jensen,
@@ -125,7 +120,6 @@
 	icon_closed = "wardensecure"
 	icon_locked = "wardensecure1"
 	icon_opened = "wardensecureopen"
-	icon_broken = "wardensecurebroken"
 	icon_off = "wardensecureoff"
 
 /obj/structure/closet/secure_closet/warden/WillContain()
@@ -133,11 +127,9 @@
 		new/datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel_sec)),
 		new/datum/atom_creator/simple(/obj/item/weapon/storage/backpack/dufflebag/sec, 50),
 		/obj/item/clothing/head/helmet/nt,
-		/obj/item/clothing/suit/armor/vest/nt,
-		/obj/item/clothing/suit/storage/vest/nt/warden,
+		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
 		/obj/item/clothing/under/rank/warden,
 		/obj/item/clothing/under/rank/warden/corp,
-		/obj/item/clothing/suit/armor/vest/warden,
 		/obj/item/clothing/head/warden,
 		/obj/item/weapon/cartridge/security,
 		/obj/item/device/radio/headset/headset_sec,
@@ -161,7 +153,6 @@
 	icon_closed = "sec"
 	icon_locked = "sec1"
 	icon_opened = "secopen"
-	icon_broken = "secbroken"
 	icon_off = "secoff"
 
 /obj/structure/closet/secure_closet/security/WillContain()
@@ -169,7 +160,7 @@
 		new/datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel_sec)),
 		new/datum/atom_creator/simple(/obj/item/weapon/storage/backpack/dufflebag/sec, 50),
 		/obj/item/clothing/mask/gas/half,
-		/obj/item/clothing/suit/armor/vest/nt,
+		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
 		/obj/item/clothing/head/helmet,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/weapon/storage/belt/security,
@@ -215,7 +206,7 @@
 	icon_closed = "cabinetdetective"
 	icon_locked = "cabinetdetective_locked"
 	icon_opened = "cabinetdetective_open"
-	icon_broken = "cabinetdetective_broken"
+	icon_broken = "cabinetdetective_sparks"
 	icon_off = "cabinetdetective_broken"
 
 /obj/structure/closet/secure_closet/detective/WillContain()
@@ -233,7 +224,7 @@
 		/obj/item/clothing/shoes/laceup,
 		/obj/item/weapon/storage/box/evidence,
 		/obj/item/device/radio/headset/headset_sec,
-		/obj/item/clothing/suit/armor/vest/detective,
+		/obj/item/clothing/suit/armor/pcarrier/light/nt,
 		/obj/item/ammo_magazine/c45m/flash,
 		/obj/item/taperoll/police,
 		/obj/item/weapon/gun/projectile/colt/detective,

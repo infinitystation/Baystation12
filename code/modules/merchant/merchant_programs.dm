@@ -3,12 +3,13 @@
 	filedesc = "Merchant's List"
 	extended_desc = "Allows communication and trade between passing vessels, even while jumping."
 	program_icon_state = "comm"
+	program_menu_icon = "cart"
 	nanomodule_path = /datum/nano_module/program/merchant
 	requires_ntnet = 1
 	available_on_ntnet = 1
 	size = 12
 	usage_flags = PROGRAM_CONSOLE
-	required_access = access_merchant_leader
+	required_access = access_merchant
 	var/obj/machinery/merchant_pad/pad = null
 	var/current_merchant = 0
 	var/show_trades = 0

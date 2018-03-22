@@ -21,6 +21,8 @@ datum/track/New(var/title_name, var/audio)
 	active_power_usage = 100
 	clicksound = 'sound/machines/buttonbeep.ogg'
 
+	var/obj/item/device/cassette/disk
+
 	var/playing = 0
 	var/volume = 20
 
@@ -29,24 +31,38 @@ datum/track/New(var/title_name, var/audio)
 
 	var/datum/track/current_track
 	var/list/datum/track/tracks = list(
-		new/datum/track("Beyond",				'sound/ambience/ambispace.ogg'),
-		new/datum/track("Clouds of Fire",		'sound/music/clouds.s3m'),
-		new/datum/track("D`Bert", 				'sound/music/title2.ogg'),
-		new/datum/track("D`Fort", 				'sound/ambience/song_game.ogg'),
-		new/datum/track("Floating", 			'sound/music/main.ogg'),
-		new/datum/track("Endless Space", 		'sound/music/space.ogg'),
-		new/datum/track("Part A", 				'sound/misc/TestLoop1.ogg'),
-		new/datum/track("Scratch", 				'sound/music/title1.ogg'),
-		new/datum/track("Trai`Tor", 			'sound/music/traitor.ogg'),
-		new/datum/track("Through the Times", 	'sound/music/chasing_time.ogg'),
-		new/datum/track("High Radiation", 		'sound/music/infinity/100_rentgen.ogg'),
-		new/datum/track("Pacific Van", 			'sound/music/infinity/daisuke_el_huervo.ogg'),
-		new/datum/track("The Passenger",		'sound/music/infinity/iggy_pop_the passenger.ogg'),
-		new/datum/track("Hard Times", 			'sound/music/infinity/johnny_cash_hurt.ogg'),
-		new/datum/track("One Piece At A Time", 	'sound/music/infinity/johnny_cash_one_piece_at_a_time.ogg'),
-		new/datum/track("Wonderful Lady", 		'sound/music/infinity/johnny_mathis_wonderful_wonderful.ogg'),
-		new/datum/track("Behind the Wire", 		'sound/music/infinity/wolfe_tones_the_man_behind_the_wire.ogg'),
-		new/datum/track("Melodical Piano", 		'sound/music/infinity/signal.ogg'),
+		new/datum/track("A light in the Darkness",				'sound/music/Torch.ogg'),
+		new/datum/track("Beyond",								'sound/ambience/ambispace.ogg'),
+		new/datum/track("Blues in Velvet Room",					'sound/music/blues_in_velvet_room.ogg'),
+		new/datum/track("Creep", 								'sound/music/infinity/Radiohead_Creep.ogg'),
+		new/datum/track("Clouds of Fire",						'sound/music/clouds.s3m'),
+		new/datum/track("Comet Haley",							'sound/music/comet_haley.ogg'),
+		new/datum/track("D`Bert", 								'sound/music/title2.ogg'),
+		new/datum/track("D`Fort", 								'sound/ambience/song_game.ogg'),
+		new/datum/track("I just don't understand You", 			'sound/music/royksopp_i_dust_dont_understand_you.ogg'),
+		new/datum/track("Endless Space", 						'sound/music/space.ogg'),
+		new/datum/track("Elevator", 							'sound/music/elevatormusic.ogg'),
+		new/datum/track("Floating", 							'sound/music/main.ogg'),
+		new/datum/track("First", 								'sound/music/1.ogg'),
+		new/datum/track("Hard Times", 							'sound/music/infinity/JohnnyCash_Hurt.ogg'),
+		new/datum/track("High Radiation", 						'sound/music/infinity/100rengen.ogg'),
+		new/datum/track("To the Stars", 						'sound/music/human.ogg'),
+		new/datum/track("Lone Digger", 							'sound/music/infinity/CaravanPalace_LoneDigger.ogg'),
+		new/datum/track("Lysendra", 							'sound/music/lysendraa.ogg'),
+		new/datum/track("Make This Right", 						'sound/music/infinity/TheToxicAvenger_MakeThisRight.ogg'),
+		new/datum/track("Marhaba", 								'sound/music/marhaba.ogg'),
+		new/datum/track("Night Call", 							'sound/music/infinity/Kavinsky_Nightcall.ogg'),
+		new/datum/track("Night City",	 						'sound/music/infinity/HotlineMiami_Miami.ogg'),
+		new/datum/track("Part A", 								'sound/misc/TestLoop1.ogg'),
+		new/datum/track("Salute John", 							'sound/music/salutjohn.ogg'),
+		new/datum/track("Space Oddity", 						'sound/music/space_oddity.ogg'),
+		new/datum/track("Scratch", 								'sound/music/title1.ogg'),
+		new/datum/track("Trai`Tor", 							'sound/music/traitor.ogg'),
+		new/datum/track("Treacherous Voyage ", 					'sound/music/treacherous_voyage.ogg'),
+		new/datum/track("Through the Times", 					'sound/music/chasing_time.ogg'),
+		new/datum/track("Thunderdome", 							'sound/music/THUNDERDOME.ogg'),
+		new/datum/track("Wonderful Lady", 						'sound/music/infinity/JohnnyMathis_Wonderful_Wonderful.ogg'),
+		new/datum/track("When We Stand Together", 				'sound/music/infinity/Nickelback_WhenWeStandTogether.ogg'),
 	)
 
 /obj/machinery/media/jukebox/New()
@@ -56,6 +72,9 @@ datum/track/New(var/title_name, var/audio)
 
 /obj/machinery/media/jukebox/Destroy()
 	StopPlaying()
+	if(disk)
+		qdel(disk)
+		disk = null
 	. = ..()
 
 /obj/machinery/media/jukebox/powered()
@@ -182,12 +201,29 @@ datum/track/New(var/title_name, var/audio)
 	qdel(src)
 
 /obj/machinery/media/jukebox/attackby(obj/item/W as obj, mob/user as mob)
-	src.add_fingerprint(user)
-
-	if(istype(W, /obj/item/weapon/wrench))
+	if(isWrench(W))
+		add_fingerprint(user)
 		wrench_floor_bolts(user, 0)
 		power_change()
 		return
+
+	if(istype(W, /obj/item/device/cassette))
+		var/obj/item/device/cassette/D = W
+		if(disk)
+			to_chat(user, "<span class='notice'>There is already a disk inside.</span>")
+			return
+
+		if(D.ruined)
+			to_chat(user, "<span class='warning'>\The [D] is ruined, you can't use it.</span>")
+			return
+
+		visible_message("<span class='notice'>[usr] insert the disk in to \the [src].</span>")
+		user.drop_item()
+		D.forceMove(src)
+		disk = D
+		current_track = disk.tracks
+		return
+
 	return ..()
 
 /obj/machinery/media/jukebox/emag_act(var/remaining_charges, var/mob/user)
@@ -221,3 +257,23 @@ datum/track/New(var/title_name, var/audio)
 	volume = Clamp(new_volume, 0, 50)
 	if(sound_token)
 		sound_token.SetVolume(volume)
+
+/obj/machinery/media/jukebox/verb/eject()
+	set name = "Eject Disk"
+	set category = "Object"
+	set src in oview(1)
+
+	if(usr.incapacitated())
+		return
+
+	if(!disk)
+		to_chat(usr, "<span class='notice'>There is no disk inside \the [src].</span>")
+		return
+
+	if(playing)
+		StopPlaying()
+	current_track = null
+
+	visible_message("<span class='notice'>[usr] eject the disk from \the [src].</span>")
+	usr.put_in_hands(disk)
+	disk = null

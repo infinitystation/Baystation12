@@ -50,7 +50,7 @@
 /mob
 	var/get_rig_stats = 0
 
-/obj/item/rig_module/ai_container/process()
+/obj/item/rig_module/ai_container/Process()
 	if(integrated_ai)
 		var/obj/item/weapon/rig/rig = get_rig()
 		if(rig && rig.ai_override_enabled)
@@ -123,7 +123,7 @@
 		return 1
 
 	// Okay, it wasn't a terminal being touched, check for all the simple insertions.
-	if(input_device.type in list(/obj/item/device/paicard, /obj/item/device/mmi, /obj/item/device/mmi/digital/posibrain))
+	if(input_device.type in list(/obj/item/device/paicard, /obj/item/device/mmi, /obj/item/organ/internal/posibrain))
 		if(integrated_ai)
 			integrated_ai.attackby(input_device,user)
 			// If the transfer was successful, we can clear out our vars.
@@ -185,8 +185,9 @@
 	integrated_ai = null
 	update_verb_holder()
 
-/obj/item/rig_module/ai_container/proc/integrate_ai(var/obj/item/ai,var/mob/user)
-	if(!ai) return
+/obj/item/rig_module/ai_container/proc/integrate_ai(var/obj/item/ai,var/mob/user) //вырублено, пока не пофиксим/понерфим это говно
+	to_chat(user, "<span class='warning'>This feature is currently disabled.</span>")
+/*	if(!ai) return
 
 	// The ONLY THING all the different AI systems have in common is that they all store the mob inside an item.
 	var/mob/living/ai_mob = locate(/mob/living) in ai.contents
@@ -224,7 +225,7 @@
 			to_chat(user, "<span class='warning'>There is no active AI within \the [ai].</span>")
 	else
 		to_chat(user, "<span class='warning'>There is no active AI within \the [ai].</span>")
-	update_verb_holder()
+	update_verb_holder()*/
 	return
 
 /obj/item/rig_module/datajack
@@ -243,8 +244,8 @@
 	interface_desc = "An induction-powered high-throughput datalink suitable for hacking encrypted networks."
 	var/list/stored_research
 
-/obj/item/rig_module/datajack/New()
-	..()
+/obj/item/rig_module/datajack/Initialize()
+	. =..()
 	stored_research = list()
 
 /obj/item/rig_module/datajack/engage(atom/target)
@@ -369,7 +370,7 @@
 	var/atom/interfaced_with // Currently draining power from this device.
 	var/total_power_drained = 0
 	var/drain_loc
-	var/max_draining_rate = 300 KILOWATTS
+	var/max_draining_rate = 250 KILOWATTS
 
 /obj/item/rig_module/power_sink/deactivate()
 
@@ -423,7 +424,7 @@
 		return 1
 	return 0
 
-/obj/item/rig_module/power_sink/process()
+/obj/item/rig_module/power_sink/Process()
 
 	if(!interfaced_with)
 		return ..()

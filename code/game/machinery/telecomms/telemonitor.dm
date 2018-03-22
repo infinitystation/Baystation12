@@ -69,8 +69,6 @@
 		if(..())
 			return
 
-
-		add_fingerprint(usr)
 		usr.set_machine(src)
 
 		if(href_list["viewmachine"])
@@ -92,7 +90,7 @@
 
 				if("probe")
 					if(machinelist.len > 0)
-						temp = "<font color = #D70B00>- FAILED: CANNOT PROBE WHEN BUFFER FULL -</font>"
+						temp = "<font color = #d70b00>- FAILED: CANNOT PROBE WHEN BUFFER FULL -</font>"
 
 					else
 						for(var/obj/machinery/telecomms/T in range(25, src))
@@ -100,7 +98,7 @@
 								machinelist.Add(T)
 
 						if(!machinelist.len)
-							temp = "<font color = #D70B00>- FAILED: UNABLE TO LOCATE NETWORK ENTITIES IN \[[network]\] -</font>"
+							temp = "<font color = #d70b00>- FAILED: UNABLE TO LOCATE NETWORK ENTITIES IN \[[network]\] -</font>"
 						else
 							temp = "<font color = #336699>- [machinelist.len] ENTITIES LOCATED & BUFFERED -</font>"
 
@@ -112,7 +110,7 @@
 			var/newnet = input(usr, "Which network do you want to view?", "Comm Monitor", network) as null|text
 			if(newnet && ((usr in range(1, src) || issilicon(usr))))
 				if(length(newnet) > 15)
-					temp = "<font color = #D70B00>- FAILED: NETWORK TAG STRING TOO LENGHTLY -</font>"
+					temp = "<font color = #d70b00>- FAILED: NETWORK TAG STRING TOO LENGHTLY -</font>"
 
 				else
 					network = newnet
@@ -124,7 +122,7 @@
 		return
 
 	attackby(var/obj/item/weapon/D as obj, var/mob/user as mob)
-		if(istype(D, /obj/item/weapon/screwdriver))
+		if(isScrewdriver(D))
 			playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 			if(do_after(user, 20, src))
 				if (src.stat & BROKEN)

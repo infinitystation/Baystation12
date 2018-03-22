@@ -49,7 +49,7 @@
 /mob/proc/send_staffwarn(var/client/C, var/action, var/noise = 1)
 	if(check_rights((R_ADMIN|R_MOD),0,C))
 		to_chat(C,"<span class='staffwarn'>StaffWarn: [client.ckey] [action]</span><br><span class='notice'>[client.staffwarn]</span>")
-		if(noise && C.is_preference_enabled(/datum/client_preference/holder/play_adminhelp_ping))
+		if(noise && C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
 			sound_to(C, 'sound/effects/adminhelp.ogg')
 
 /mob
@@ -65,8 +65,7 @@
 
 	client.images = null				//remove the images such as AIs being unable to see runes
 	client.screen = list()				//remove hud items just in case
-	if(hud_used)	qdel(hud_used)		//remove the hud objects
-	hud_used = new /datum/hud(src)
+	InitializeHud()
 
 	next_move = 1
 	set_sight(sight|SEE_SELF)
@@ -89,4 +88,4 @@
 	add_click_catcher()
 
 	//set macro to normal incase it was overriden (like cyborg currently does)
-	winset(src, null, "mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true input.background-color=#D3B5B5")
+	winset(src, null, "mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true input.background-color=#d3b5b5")

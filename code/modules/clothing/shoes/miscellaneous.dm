@@ -1,10 +1,13 @@
+//obj/item/clothing/shoes/handle_movement() //this was made to rewrite clown shoes squeaking
+//	playsound(src, 'sound/effects/step.ogg', 45, 1)
+
 /obj/item/clothing/shoes/syndigaloshes
 	desc = "A pair of brown shoes. They seem to have extra grip."
 	name = "brown shoes"
 	icon_state = "brown"
 	item_state = "brown"
 	permeability_coefficient = 0.05
-	item_flags = NOSLIP
+	item_flags = ITEM_FLAG_NOSLIP
 	origin_tech = list(TECH_ILLEGAL = 3)
 	var/list/clothing_choices = list()
 	siemens_coefficient = 0.8
@@ -20,7 +23,7 @@
 	icon_state = "swat"
 	force = 3
 	armor = list(melee = 80, bullet = 60, laser = 60,energy = 25, bomb = 50, bio = 10, rad = 0)
-	item_flags = NOSLIP
+	item_flags = ITEM_FLAG_NOSLIP
 	siemens_coefficient = 0.6
 	can_hold_knife = 1
 
@@ -30,7 +33,7 @@
 	icon_state = "jungle"
 	force = 5
 	armor = list(melee = 80, bullet = 60, laser = 60,energy = 25, bomb = 50, bio = 10, rad = 0)
-	item_flags = NOSLIP
+	item_flags = ITEM_FLAG_NOSLIP
 	siemens_coefficient = 0.6
 	can_hold_knife = 1
 
@@ -39,10 +42,23 @@
 	heat_protection = FEET
 	max_heat_protection_temperature = SHOE_MAX_HEAT_PROTECTION_TEMPERATURE
 
+/obj/item/clothing/shoes/combat/marine
+	icon_state = "swat"
+	armor = list(melee = 50, bullet = 50, laser = 30,energy = 25, bomb = 50, bio = 10, rad = 0)
+
 /obj/item/clothing/shoes/jungleboots
 	name = "jungle boots"
 	desc = "A pair of durable brown boots. Waterproofed for use planetside."
 	icon_state = "jungle"
+	force = 3
+	armor = list(melee = 30, bullet = 10, laser = 10, energy = 15, bomb = 20, bio = 10, rad = 0)
+	siemens_coefficient = 0.7
+	can_hold_knife = 1
+
+/obj/item/clothing/shoes/desertboots
+	name = "desert boots"
+	desc = "A pair of durable tan boots. Designed for use in hot climates."
+	icon_state = "desert"
 	force = 3
 	armor = list(melee = 30, bullet = 10, laser = 10, energy = 15, bomb = 20, bio = 10, rad = 0)
 	siemens_coefficient = 0.7
@@ -59,7 +75,7 @@
 /obj/item/clothing/shoes/tactical
 	name = "tactical boots"
 	desc = "Tan boots with extra padding and armor."
-	icon_state = "jungle"
+	icon_state = "desert"
 	force = 3
 	armor = list(melee = 40, bullet = 30, laser = 40,energy = 25, bomb = 50, bio = 0, rad = 0)
 	siemens_coefficient = 0.7
@@ -67,12 +83,12 @@
 
 /obj/item/clothing/shoes/dress
 	name = "dress shoes"
-	desc = "Sharp looking low quarters, perfect for a formal uniform."
+	desc = "The height of fashion, and they're pre-polished!"
 	icon_state = "laceups"
 
 /obj/item/clothing/shoes/dress/white
 	name = "white dress shoes"
-	desc = "Brilliantly white low quarters, not a spot on them."
+	desc = "Brilliantly white shoes, not a spot on them."
 	icon_state = "whitedress"
 
 /obj/item/clothing/shoes/sandal
@@ -101,7 +117,7 @@
 
 /obj/item/clothing/shoes/clown_shoes/New()
 	..()
-	slowdown_per_slot[slot_shoes]  = SHOES_SLOWDOWN+1
+	slowdown_per_slot[slot_shoes]  = 1
 
 /obj/item/clothing/shoes/clown_shoes/handle_movement(var/turf/walking, var/running)
 	if(running)
@@ -158,12 +174,12 @@
 	desc = "Help you swim good."
 	name = "swimming fins"
 	icon_state = "flippers"
-	item_flags = NOSLIP
+	item_flags = ITEM_FLAG_NOSLIP
 	species_restricted = null
 
 /obj/item/clothing/shoes/swimmingfins/New()
 	..()
-	slowdown_per_slot[slot_shoes] = SHOES_SLOWDOWN+1
+	slowdown_per_slot[slot_shoes] = 1
 
 /obj/item/clothing/shoes/athletic
 	name = "athletic shoes"

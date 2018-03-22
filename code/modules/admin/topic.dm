@@ -350,8 +350,28 @@
 //Regular jobs
 	//Command (Blue)
 		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr align='center' bgcolor='ccccff'><th colspan='[length(command_positions)]'><a href='?src=\ref[src];jobban3=commanddept;jobban4=\ref[M]'>Command Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in command_positions)
+		jobs += "<tr align='center' bgcolor='ccccff'><th colspan='[length(GLOB.command_positions)]'><a href='?src=\ref[src];jobban3=commanddept;jobban4=\ref[M]'>Command Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.command_positions)
+			if(!jobPos)	continue
+			var/datum/job/job = job_master.GetJob(jobPos)
+			if(!job) continue
+
+			if(jobban_isbanned(M, job.title))
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
+				counter++
+			else
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
+				counter++
+
+			if(counter >= 6) //So things dont get squiiiiished!
+				jobs += "</tr><tr>"
+				counter = 0
+		jobs += "</tr></table>"
+
+	//Command Support (Sky Blue)
+		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
+		jobs += "<tr bgcolor='87ceeb'><th colspan='[length(GLOB.support_positions)]'><a href='?src=\ref[src];jobban3=supportdept;jobban4=\ref[M]'>Command Support Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.support_positions)
 			if(!jobPos)	continue
 			var/datum/job/job = job_master.GetJob(jobPos)
 			if(!job) continue
@@ -371,8 +391,8 @@
 	//Security (Red)
 		counter = 0
 		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='ffddf0'><th colspan='[length(security_positions)]'><a href='?src=\ref[src];jobban3=securitydept;jobban4=\ref[M]'>Security Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in security_positions)
+		jobs += "<tr bgcolor='ffddf0'><th colspan='[length(GLOB.security_positions)]'><a href='?src=\ref[src];jobban3=securitydept;jobban4=\ref[M]'>Security Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.security_positions)
 			if(!jobPos)	continue
 			var/datum/job/job = job_master.GetJob(jobPos)
 			if(!job) continue
@@ -392,8 +412,8 @@
 	//Engineering (Yellow)
 		counter = 0
 		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='fff5cc'><th colspan='[length(engineering_positions)]'><a href='?src=\ref[src];jobban3=engineeringdept;jobban4=\ref[M]'>Engineering Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in engineering_positions)
+		jobs += "<tr bgcolor='fff5cc'><th colspan='[length(GLOB.engineering_positions)]'><a href='?src=\ref[src];jobban3=engineeringdept;jobban4=\ref[M]'>Engineering Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.engineering_positions)
 			if(!jobPos)	continue
 			var/datum/job/job = job_master.GetJob(jobPos)
 			if(!job) continue
@@ -413,8 +433,8 @@
 	//Medical (White)
 		counter = 0
 		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='ffeef0'><th colspan='[length(medical_positions)]'><a href='?src=\ref[src];jobban3=medicaldept;jobban4=\ref[M]'>Medical Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in medical_positions)
+		jobs += "<tr bgcolor='ffeef0'><th colspan='[length(GLOB.medical_positions)]'><a href='?src=\ref[src];jobban3=medicaldept;jobban4=\ref[M]'>Medical Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.medical_positions)
 			if(!jobPos)	continue
 			var/datum/job/job = job_master.GetJob(jobPos)
 			if(!job) continue
@@ -434,8 +454,8 @@
 	//Science (Purple)
 		counter = 0
 		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='e79fff'><th colspan='[length(science_positions)]'><a href='?src=\ref[src];jobban3=sciencedept;jobban4=\ref[M]'>Science Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in science_positions)
+		jobs += "<tr bgcolor='e79fff'><th colspan='[length(GLOB.science_positions)]'><a href='?src=\ref[src];jobban3=sciencedept;jobban4=\ref[M]'>Science Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.science_positions)
 			if(!jobPos)	continue
 			var/datum/job/job = job_master.GetJob(jobPos)
 			if(!job) continue
@@ -452,11 +472,72 @@
 				counter = 0
 		jobs += "</tr></table>"
 
+	//Exploration (Pale Purple)
+		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
+		jobs += "<tr bgcolor='b784a7'><th colspan='[length(GLOB.exploration_positions)]'><a href='?src=\ref[src];jobban3=explorationdept;jobban4=\ref[M]'>Exploration Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.exploration_positions)
+			if(!jobPos)	continue
+			var/datum/job/job = job_master.GetJob(jobPos)
+			if(!job) continue
+
+			if(jobban_isbanned(M, job.title))
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
+				counter++
+			else
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
+				counter++
+
+			if(counter >= 6) //So things dont get squiiiiished!
+				jobs += "</tr><tr>"
+				counter = 0
+		jobs += "</tr></table>"
+
+	//Service (Tea Green)
+		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
+		jobs += "<tr bgcolor='d0f0c0'><th colspan='[length(GLOB.service_positions)]'><a href='?src=\ref[src];jobban3=servicedept;jobban4=\ref[M]'>Service Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.service_positions)
+			if(!jobPos)	continue
+			var/datum/job/job = job_master.GetJob(jobPos)
+			if(!job) continue
+
+			if(jobban_isbanned(M, job.title))
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
+				counter++
+			else
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
+				counter++
+
+			if(counter >= 6) //So things dont get squiiiiished!
+				jobs += "</tr><tr>"
+				counter = 0
+		jobs += "</tr></table>"
+
+
+	//Supply (Khaki)
+		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
+		jobs += "<tr bgcolor='f0e68c'><th colspan='[length(GLOB.supply_positions)]'><a href='?src=\ref[src];jobban3=supplydept;jobban4=\ref[M]'>Supply Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.supply_positions)
+			if(!jobPos)	continue
+			var/datum/job/job = job_master.GetJob(jobPos)
+			if(!job) continue
+
+			if(jobban_isbanned(M, job.title))
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
+				counter++
+			else
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
+				counter++
+
+			if(counter >= 6) //So things dont get squiiiiished!
+				jobs += "</tr><tr>"
+				counter = 0
+		jobs += "</tr></table>"
+
 	//Civilian (Grey)
 		counter = 0
 		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='dddddd'><th colspan='[length(civilian_positions)]'><a href='?src=\ref[src];jobban3=civiliandept;jobban4=\ref[M]'>Civilian Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in civilian_positions)
+		jobs += "<tr bgcolor='dddddd'><th colspan='[length(GLOB.civilian_positions)]'><a href='?src=\ref[src];jobban3=civiliandept;jobban4=\ref[M]'>Civilian Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.civilian_positions)
 			if(!jobPos)	continue
 			var/datum/job/job = job_master.GetJob(jobPos)
 			if(!job) continue
@@ -482,8 +563,8 @@
 	//Non-Human (Green)
 		counter = 0
 		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='ccffcc'><th colspan='[length(nonhuman_positions)+1]'><a href='?src=\ref[src];jobban3=nonhumandept;jobban4=\ref[M]'>Non-human Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in nonhuman_positions)
+		jobs += "<tr bgcolor='ccffcc'><th colspan='[length(GLOB.nonhuman_positions)+1]'><a href='?src=\ref[src];jobban3=nonhumandept;jobban4=\ref[M]'>Non-human Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.nonhuman_positions)
 			if(!jobPos)	continue
 			var/datum/job/job = job_master.GetJob(jobPos)
 			if(!job) continue
@@ -570,44 +651,68 @@
 		var/list/joblist = list()
 		switch(href_list["jobban3"])
 			if("commanddept")
-				for(var/jobPos in command_positions)
+				for(var/jobPos in GLOB.command_positions)
+					if(!jobPos)	continue
+					var/datum/job/temp = job_master.GetJob(jobPos)
+					if(!temp) continue
+					joblist += temp.title
+			if("supportdept")
+				for(var/jobPos in GLOB.support_positions)
 					if(!jobPos)	continue
 					var/datum/job/temp = job_master.GetJob(jobPos)
 					if(!temp) continue
 					joblist += temp.title
 			if("securitydept")
-				for(var/jobPos in security_positions)
+				for(var/jobPos in GLOB.security_positions)
 					if(!jobPos)	continue
 					var/datum/job/temp = job_master.GetJob(jobPos)
 					if(!temp) continue
 					joblist += temp.title
 			if("engineeringdept")
-				for(var/jobPos in engineering_positions)
+				for(var/jobPos in GLOB.engineering_positions)
 					if(!jobPos)	continue
 					var/datum/job/temp = job_master.GetJob(jobPos)
 					if(!temp) continue
 					joblist += temp.title
 			if("medicaldept")
-				for(var/jobPos in medical_positions)
+				for(var/jobPos in GLOB.medical_positions)
 					if(!jobPos)	continue
 					var/datum/job/temp = job_master.GetJob(jobPos)
 					if(!temp) continue
 					joblist += temp.title
 			if("sciencedept")
-				for(var/jobPos in science_positions)
+				for(var/jobPos in GLOB.science_positions)
+					if(!jobPos)	continue
+					var/datum/job/temp = job_master.GetJob(jobPos)
+					if(!temp) continue
+					joblist += temp.title
+			if("explorationdept")
+				for(var/jobPos in GLOB.exploration_positions)
+					if(!jobPos)	continue
+					var/datum/job/temp = job_master.GetJob(jobPos)
+					if(!temp) continue
+					joblist += temp.title
+			if("servicedept")
+				for(var/jobPos in GLOB.service_positions)
+					if(!jobPos)	continue
+					var/datum/job/temp = job_master.GetJob(jobPos)
+					if(!temp) continue
+					joblist += temp.title
+			if("supplydept")
+				for(var/jobPos in GLOB.supply_positions)
 					if(!jobPos)	continue
 					var/datum/job/temp = job_master.GetJob(jobPos)
 					if(!temp) continue
 					joblist += temp.title
 			if("civiliandept")
-				for(var/jobPos in civilian_positions)
+				for(var/jobPos in GLOB.civilian_positions)
 					if(!jobPos)	continue
 					var/datum/job/temp = job_master.GetJob(jobPos)
 					if(!temp) continue
 					joblist += temp.title
 			if("nonhumandept")
 				joblist += "pAI"
-				for(var/jobPos in nonhuman_positions)
+				for(var/jobPos in GLOB.nonhuman_positions)
 					if(!jobPos)	continue
 					var/datum/job/temp = job_master.GetJob(jobPos)
 					if(!temp) continue
@@ -776,19 +881,18 @@
 				if(!reason)
 					return
 				AddBan(M.ckey, M.computer_id, reason, usr.ckey, 1, mins)
-				ban_unban_log_save("[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
-				add_note(M.ckey,"[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
-				to_chat(M, "<span class='danger'>You have been banned by [usr.client.ckey].\nReason: [reason].</span>")
-				to_chat(M, "<span class='warning'>This is a temporary ban, it will be removed in [mins] minutes.</span>")
+				ban_unban_log_save("[usr.client.ckey] has HARD banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
+				add_note(M.ckey,"[usr.client.ckey] has HARD banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
+				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [key_name(usr)].\nПричина: [reason]</BIG></span>")
+				to_chat(M, "<span class='warning'>Это временный бан, он истечет через [mins] минут.</span>")
 				feedback_inc("ban_tmp",1)
 				DB_ban_record(BANTYPE_TEMP, M, mins, reason)
 				feedback_inc("ban_tmp_mins",mins)
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>To try to resolve this matter head to [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				log_and_message_admins("has banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.")
-				to_world("<span class='notice'><b>BAN: Администратор [usr.client.ckey] заблокировал(а) игрока [M.ckey] на [mins] минут. Причина: [reason]</b></span>")
 
 				qdel(M.client)
 				//qdel(M)	// See no reason why to delete mob. Important stuff can be lost. And ban can be lifted before round ends.
@@ -803,16 +907,15 @@
 						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0, M.lastKnownIP)
 					if("No")
 						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0)
-				to_chat(M, "<span class='danger'>You have been banned by [usr.client.ckey].\nReason: [reason].</span>")
-				to_chat(M, "<span class='warning'>This is a permanent ban.</span>")
+				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [usr.client.ckey].\nПричина: [reason]</BIG></span>")
+				to_chat(M, "<span class='warning'>Это перманентный бан.</span>")
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>To try to resolve this matter head to [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
-				ban_unban_log_save("[usr.client.ckey] has permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.")
-				add_note(M.ckey,"[usr.client.ckey] has permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.", null, usr.ckey, 0)
+				ban_unban_log_save("[usr.client.ckey] has hard permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.")
+				add_note(M.ckey,"[usr.client.ckey] has hard permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.", null, usr.ckey, 0)
 				log_and_message_admins("has banned [M.ckey].\nReason: [reason]\nThis is a permanent ban.")
-				to_world("<span class='notice'><b>BAN: Администратор [usr.client.ckey] НАВСЕГДА заблокировал(а) игрока [M.ckey]. Причина: [reason]</b></span>")
 				feedback_inc("ban_perma",1)
 				DB_ban_record(BANTYPE_PERMA, M, -1, reason)
 
@@ -855,17 +958,17 @@
 						DB_ban_record(BANTYPE_SOFTBAN, M, mins, reason, bancid = M.computer_id)
 				ban_unban_log_save("[usr.client.ckey] has soft banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
 				add_note(M.ckey,"[usr.client.ckey] has soft banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
-				to_chat(M, "<span class='warning'><BIG><B>You have been soft banned by [usr.client.ckey].\nReason: [reason].</B></BIG></span>")
-				to_chat(M, "<span class='warning'>This is a soft temporary ban, it will be removed in [mins] minutes.</span>")
+				to_chat(M, "<span class='warning'><BIG>Администратор [usr.client.ckey] заблокировал вашу игру на сервере.\nПричина: [reason]</BIG></span>")
+				to_chat(M, "<span class='warning'>Это временна&#255; блокировка, она истечет через [mins] минут.</span>")
+				to_chat(M, "<span class='notice'>У вас есть доступ к игре на сервере в качестве заключенного.</span>")
 				feedback_inc("ban_tmp",1)
 				feedback_inc("ban_tmp_mins",mins)
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>To try to resolve this matter head to [config.banappeals].</span>")
+					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				log_admin("[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.")
 				message_admins("<span class='notice'>[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.</span>")
-				to_world("<span class='notice'><b>BAN: Администратор [usr.client.ckey] заблокировал(а) игрока [M.ckey] на [mins] минут. Причина: [reason]</b></span>")
 
 				qdel(M.client)
 				M.ckey = null
@@ -881,17 +984,17 @@
 						DB_ban_record(BANTYPE_SOFTPERMA, M, -1, reason, bancid = M.computer_id, banip = M.lastKnownIP)
 					if("No")
 						DB_ban_record(BANTYPE_SOFTPERMA, M, -1, reason, bancid = M.computer_id)
-				to_chat(M, "<span class='warning'><BIG><B>You have been soft banned by [usr.client.ckey].\nReason: [reason].</B></BIG></span>")
-				to_chat(M, "<span class='warning'>This is a soft permanent ban.</span>")
+				to_chat(M, "<span class='warning'><BIG>Администратор [usr.client.ckey] заблокировал вашу игру на сервере.\nПричина: [reason]</BIG></span>")
+				to_chat(M, "<span class='warning'>Это перманентна&#255; блокировка.</span>")
+				to_chat(M, "<span class='notice'>У вас есть доступ к игре на сервере в качестве заключенного.</span>")
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>To try to resolve this matter head to [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				ban_unban_log_save("[usr.client.ckey] has soft permabanned [M.ckey]. - Reason: [reason] - This is a soft permanent ban.")
 				add_note(M.ckey,"[usr.client.ckey] has soft permabanned [M.ckey]. - Reason: [reason] - This is a soft permanent ban.", null, usr.ckey, 0)
 				log_admin("[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis is a soft permanent ban.")
 				message_admins("<span class='notice'>[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis is a soft permanent ban.</span>")
-				to_world("<span class='notice'><b>BAN: Администратор [usr.client.ckey] НАВСЕГДА заблокировал(а) игрока [M.ckey]. Причина: [reason]</b></span>")
 				feedback_inc("ban_perma",1)
 
 
@@ -1175,7 +1278,7 @@
 
 		if(config.allow_admin_rev)
 			L.revive()
-			log_and_message_admins("healed / Rrvived [key_name(L)]")
+			log_and_message_admins("healed / Revived [key_name(L)]")
 		else
 			to_chat(usr, "Admin Rejuvinates have been disabled")
 
@@ -1673,7 +1776,7 @@
 						if(O)
 							O.set_dir(obj_dir)
 							if(obj_name)
-								O.name = obj_name
+								O.SetName(obj_name)
 								if(istype(O,/mob))
 									var/mob/M = O
 									M.real_name = obj_name
@@ -2007,6 +2110,80 @@
 	if(href_list["stickyban"])
 		stickyban(href_list["stickyban"],href_list)
 
+	if(href_list["pmp_play"])
+		if(!check_rights(R_ADMIN|R_FUN, 0, usr))
+			return
+
+		var/obj/item/device/pmp/pmp = locate(href_list["pmp_play"])
+		if(!pmp)
+			return
+
+		pmp.attack_self(usr)
+		pmp_control_panel()
+		return
+
+	if(href_list["pmp_volume"])
+		if(!check_rights(R_ADMIN|R_FUN, 0, usr))
+			return
+
+		var/obj/item/device/pmp/pmp = locate(href_list["pmp_volume"])
+		if(!pmp)
+			return
+
+		var/vol = input(usr, "What volume would you like the sound to play at? (maximum number is 50)",, pmp.volume) as null|num
+		if(vol)
+			pmp.AdjustVolume(vol)
+		pmp_control_panel()
+		return
+
+	if(href_list["pmp_explode"])
+		if(!check_rights(R_ADMIN|R_FUN, 0, usr))
+			return
+
+		var/obj/item/device/pmp/pmp = locate(href_list["pmp_explode"])
+		if(!pmp)
+			return
+
+		switch(alert("Do you really want explode this?",,"Yes","No"))
+			if("Yes")
+				pmp.explode()
+				log_and_message_admins("launched self-destruction mechanism in [pmp] <a href='?_src_=holder;adminplayerobservefollow=\ref[pmp]'>#[pmp.serial_number]</a>.")
+		pmp_control_panel()
+		return
+
+	if(href_list["listensound"])
+		var/sound/S = sound(locate(href_list["listensound"]))
+		if(!S)
+			return
+		S.channel = 703
+		sound_to(usr, S)
+		to_chat(usr, "<B><A HREF='?_src_=holder;stoplistensound=1'>Stop listening</A></B>")
+
+	if(href_list["stoplistensound"])
+		var/sound/S = sound(null)
+		S.channel = 703
+		sound_to(usr, S)
+
+	if(href_list["wipedata"])
+		var/obj/item/device/cassette/disk = locate(href_list["wipedata"])
+		if(!disk.tracks)
+			to_chat(usr, "This disk have no data or wiped.")
+			return
+
+		if(alert("Wipe data written by [(disk.uploader_ckey) ? disk.uploader_ckey : "<b>*NULL*</b>"]?",,"Yes", "No") == "Yes")
+			if(istype(disk.loc, /obj/machinery/media/jukebox))
+				var/obj/machinery/media/jukebox/J = disk.loc
+				if(J.current_track && J.current_track == disk.tracks)
+					J.StopPlaying()
+					J.current_track = null
+
+			if(istype(disk.loc, /obj/item/device/pmp))
+				var/obj/item/device/pmp/pmp = disk.loc
+				if(pmp.playing)
+					pmp.StopPlaying()
+
+			qdel(disk.tracks)
+			disk.name = "burned cassette"
 
 mob/living/proc/can_centcom_reply()
 	return 0
@@ -2015,7 +2192,7 @@ mob/living/carbon/human/can_centcom_reply()
 	return istype(l_ear, /obj/item/device/radio/headset) || istype(r_ear, /obj/item/device/radio/headset)
 
 mob/living/silicon/ai/can_centcom_reply()
-	return common_radio != null && !check_unable(2)
+	return silicon_radio != null && !check_unable(2)
 
 /datum/proc/extra_admin_link(var/prefix, var/sufix, var/short_links)
 	return list()
@@ -2053,5 +2230,5 @@ mob/living/silicon/ai/can_centcom_reply()
 
 /client/get_admin_jump_link(var/atom/target, var/delimiter, var/prefix, var/sufix)
 	if(holder)
-		var/short_links = is_preference_enabled(/datum/client_preference/ghost_follow_link_length)
+		var/short_links = get_preference_value(/datum/client_preference/ghost_follow_link_length) == GLOB.PREF_SHORT
 		return admin_jump_link(target, src, delimiter, prefix, sufix, short_links)

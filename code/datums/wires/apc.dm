@@ -70,3 +70,17 @@
 			else
 				if (A.aidisabled == 1)
 					A.aidisabled = 0
+
+/datum/wires/apc/SolveWireFunction(var/function)
+	var/sf = ""
+	switch(function)
+		if(APC_WIRE_IDSCAN)
+			sf = "Port A"
+		if(APC_WIRE_MAIN_POWER1)
+			sf = "Port B"
+		if(APC_WIRE_MAIN_POWER2)
+			sf = "Port C"
+		if(APC_WIRE_AI_CONTROL)
+			sf = "Port D"
+
+	return sf

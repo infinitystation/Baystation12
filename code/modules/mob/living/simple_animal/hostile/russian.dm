@@ -17,9 +17,10 @@
 	harm_intent_damage = 5
 	melee_damage_lower = 15
 	melee_damage_upper = 15
+	can_escape = 1
 	attacktext = "punched"
 	a_intent = I_HURT
-	var/corpse = /obj/effect/landmark/mobcorpse/russian
+	var/corpse = /obj/effect/landmark/corpse/russian
 	var/weapon1 = /obj/item/weapon/material/knife
 	unsuitable_atoms_damage = 15
 	faction = "russian"
@@ -29,12 +30,12 @@
 /mob/living/simple_animal/hostile/russian/ranged
 	icon_state = "russianranged"
 	icon_living = "russianranged"
-	corpse = /obj/effect/landmark/mobcorpse/russian/ranged
+	corpse = /obj/effect/landmark/corpse/russian/ranged
 	weapon1 = /obj/item/weapon/gun/projectile/revolver/mateba
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet
 	projectilesound = 'sound/weapons/gunshot/gunshot2.ogg'
-	casingtype = /obj/item/ammo_casing/a357
+	casingtype = /obj/item/ammo_casing/a50
 
 
 /mob/living/simple_animal/hostile/russian/death(gibbed, deathmessage, show_dead_message)

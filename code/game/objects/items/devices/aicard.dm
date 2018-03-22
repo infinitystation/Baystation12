@@ -28,7 +28,7 @@
 		data["name"] = carded_ai.name
 		data["hardware_integrity"] = carded_ai.hardware_integrity()
 		data["backup_capacitor"] = carded_ai.backup_capacitor()
-		data["radio"] = !carded_ai.aiRadio.disabledAi
+		data["radio"] = !carded_ai.ai_radio.disabledAi
 		data["wireless"] = !carded_ai.control_disabled
 		data["operational"] = carded_ai.stat != DEAD
 		data["flushing"] = flush
@@ -66,9 +66,9 @@
 				sleep(10)
 			flush = 0
 	if (href_list["radio"])
-		carded_ai.aiRadio.disabledAi = text2num(href_list["radio"])
-		to_chat(carded_ai, "<span class='warning'>Your Subspace Transceiver has been [carded_ai.aiRadio.disabledAi ? "disabled" : "enabled"]!</span>")
-		to_chat(user, "<span class='notice'>You [carded_ai.aiRadio.disabledAi ? "disable" : "enable"] the AI's Subspace Transceiver.</span>")
+		carded_ai.ai_radio.disabledAi = text2num(href_list["radio"])
+		to_chat(carded_ai, "<span class='warning'>Your Subspace Transceiver has been [carded_ai.ai_radio.disabledAi ? "disabled" : "enabled"]!</span>")
+		to_chat(user, "<span class='notice'>You [carded_ai.ai_radio.disabledAi ? "disable" : "enable"] the AI's Subspace Transceiver.</span>")
 	if (href_list["wireless"])
 		carded_ai.control_disabled = text2num(href_list["wireless"])
 		to_chat(carded_ai, "<span class='warning'>Your wireless interface has been [carded_ai.control_disabled ? "disabled" : "enabled"]!</span>")
@@ -106,7 +106,7 @@
 
 	ai.carded = 1
 	admin_attack_log(user, ai, "Carded with [src.name]", "Was carded with [src.name]", "used the [src.name] to card")
-	src.name = "[initial(name)] - [ai.name]"
+	src.SetName("[initial(name)] - [ai.name]")
 
 	ai.forceMove(src)
 	ai.destroy_eyeobj(src)
@@ -129,7 +129,7 @@
 	if(carded_ai && istype(carded_ai.loc, /turf))
 		carded_ai.canmove = 0
 		carded_ai.carded = 0
-	name = initial(name)
+	SetName(initial(name))
 	carded_ai.calculate_power_usage()
 	carded_ai = null
 	update_icon()

@@ -1,5 +1,5 @@
 /obj/machinery/uniform_vendor
-	name = "uniform Vendor"
+	name = "uniform vendor"
 	desc= "A uniform vendor for utility, service, and dress uniforms."
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "robotics"
@@ -19,11 +19,12 @@
 	var/list/uniforms = list()
 	var/list/selected_outfit = list()
 	var/static/decl/hierarchy/mil_uniform/mil_uniforms
+	var/global/list/issued_items = list()
 
 /obj/machinery/uniform_vendor/attack_hand(mob/user)
 	if(..())
 		return
-	user.set_machine(src)
+
 	var/dat = list()
 	dat += "User ID: <a href='byond://?src=\ref[src];ID=1'>[ID ? "[ID.registered_name], [ID.military_rank], [ID.military_branch]" : "--------"]</a>"
 	dat += "<hr>"
@@ -40,9 +41,11 @@
 				if(piece)
 					var/obj/item/clothing/C = piece
 					if(piece in selected_outfit)
-						dat += "<span class='linkOn'>[sanitize(initial(C.name))]</span><a href='byond://?src=\ref[src];rem=[piece]'>X</a>"
+						dat += "<span class='linkOn'>[sanitize(initial(C.name))]</span><a href='byond://?src=\ref[src];rem=\ref[piece]'>X</a>"
+					else if (can_issue(C))
+						dat += "<a href='byond://?src=\ref[src];add=\ref[piece]'>[sanitize(initial(C.name))]</a>"
 					else
-						dat += "<a href='byond://?src=\ref[src];add=[piece]'>[sanitize(initial(C.name))]</a>"
+						dat += "[sanitize(initial(C.name))] (ISSUED)"
 			dat += "<hr>"
 		dat += "<a href='byond://?src=\ref[src];vend=[1]'>Dispense</a>"
 	dat = jointext(dat,"<br>")
@@ -50,54 +53,59 @@
 	popup.set_content(dat)
 	popup.open()
 
-/obj/machinery/uniform_vendor/Topic(href, href_list)
-	if(..())
-		return 1
+/obj/machinery/uniform_vendor/OnTopic(var/mob/user, href_list)
 	if(href_list["ID"])
-		var/mob/M = usr
 		if(ID)
-			if(!issilicon(usr))
-				M.put_in_hands(ID)
+			if(!issilicon(user))
+				user.put_in_hands(ID)
 			else
 				ID.dropInto(loc)
 			ID = null
 			selected_outfit.Cut()
 		else
-			var/obj/item/weapon/card/id/I = M.get_active_hand()
-			if(I)
+			var/obj/item/weapon/card/id/I = user.get_active_hand()
+			if(I && user.unEquip(I, FALSE, src))
 				ID = I
-				M.drop_from_inventory(I,src)
-		. = 1
+		. = TOPIC_REFRESH
 	if(href_list["get_all"])
-		selected_outfit |= uniforms[href_list["get_all"]]
-		. = 1
+		if(!(href_list["get_all"] in uniforms))
+			return TOPIC_NOACTION
+		var/list/addition = uniforms[href_list["get_all"]]
+		for(var/G in addition)
+			if(can_issue(G))
+				selected_outfit |= addition
+		. = TOPIC_REFRESH
 	if(href_list["add"])
-		selected_outfit |= text2path(href_list["add"])
-		. = 1
+		var/uniform_path = locate(href_list["add"])
+		if(ispath(uniform_path))
+			selected_outfit |= uniform_path
+			. = TOPIC_REFRESH
+		else
+			. = TOPIC_NOACTION
 	if(href_list["rem"])
-		selected_outfit -= text2path(href_list["rem"])
-		. = 1
+		selected_outfit -= locate(href_list["rem"])
+		. = TOPIC_REFRESH
 	if(href_list["vend"])
 		spawn_uniform(selected_outfit)
 		selected_outfit.Cut()
-		. = 1
+		. = TOPIC_REFRESH
 	if(.)
-		attack_hand(usr)
+		attack_hand(user)
 
-/obj/machinery/uniform_vendor/attackby(obj/item/weapon/W as obj, mob/user as mob)
-
+/obj/machinery/uniform_vendor/attackby(var/obj/item/weapon/W, var/mob/user)
 	if(istype(W, /obj/item/weapon/clothingbag))
-		to_chat(user, "<span class='notice'>You put [W] into \the [src] recycling slot.</span>")
+		if(W.contents.len)
+			to_chat(user, "<span class='notice'>You must empty \the [W] before you can put it in \the [src].</span>")
+			return
+		to_chat(user, "<span class='notice'>You put \the [W] into \the [src]'s recycling slot.</span>")
 		qdel(W)
-		return
-
-	if(!istype(W, /obj/item/weapon/card/id))
-		to_chat(user, "<span class='notice'>You must use your ID card!</span>")
-		return
-	if(!ID)
+	else if(istype(W, /obj/item/weapon/card/id) && !ID && user.unEquip(W, FALSE, src))
 		to_chat(user, "<span class='notice'>You slide \the [W] into \the [src]!</span>")
 		ID = W
-		user.drop_from_inventory(W,src)
+		user.drop_from_inventory(W, src)
+		attack_hand(user)
+	else
+		..()
 
 /*	Outfit structures
 	branch
@@ -161,6 +169,7 @@
 
 	res["Service"] = list(
 		user_outfit.service_under,
+		user_outfit.service_skirt,
 		user_outfit.service_over,
 		user_outfit.service_shoes,
 		user_outfit.service_hat,
@@ -184,11 +193,28 @@
 
 /obj/machinery/uniform_vendor/proc/spawn_uniform(var/list/selected_outfit)
 	listclearnulls(selected_outfit)
+	if(!issued_items[user_id()])
+		issued_items[user_id()] = list()
+	var/list/checkedout = issued_items[user_id()]
 	if(selected_outfit.len > 1)
 		var/obj/item/weapon/clothingbag/bag = new /obj/item/weapon/clothingbag
 		for(var/item in selected_outfit)
 			new item(bag)
+			checkedout += item
 		bag.forceMove(get_turf(src))
 	else if (selected_outfit.len)
 		var/obj/item/clothing/C = selected_outfit[1]
 		new C(get_turf(src))
+		checkedout += C
+
+/obj/machinery/uniform_vendor/proc/user_id()
+	if(!ID)
+		return "UNKNOWN"
+	else
+		return "[ID.registered_name], [ID.military_rank], [ID.military_branch]"
+
+/obj/machinery/uniform_vendor/proc/can_issue(var/gear)
+	var/list/issued = issued_items[user_id()]
+	if(!issued || !issued.len)
+		return TRUE
+	return !(gear in issued)

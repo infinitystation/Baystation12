@@ -12,7 +12,7 @@
 	var/isolating = 0
 	var/state = HOME
 	var/datum/disease2/disease/virus2 = null
-	var/datum/data/record/entry = null
+	var/datum/computer_file/data/virus_record/entry = null
 	var/obj/item/weapon/reagent_containers/syringe/sample = null
 
 /obj/machinery/disease2/isolator/update_icon()
@@ -68,13 +68,14 @@
 					var/list/virus = B.data["virus2"]
 					for (var/ID in virus)
 						var/datum/disease2/disease/V = virus[ID]
-						var/datum/data/record/R = null
+						var/datum/computer_file/data/virus_record/R = null
 						if (ID in virusDB)
 							R = virusDB[ID]
 
-						var/mob/living/carbon/human/D = B.data["donor"]
+						var/weakref/W = B.data["donor"]
+						var/mob/living/carbon/human/D = W.resolve()
 						pathogen_pool.Add(list(list(\
-							"name" = "[D.get_species()] [B.name]", \
+							"name" = "[D ? D.get_species() : "Unidentified"] [B.name]", \
 							"dna" = B.data["blood_DNA"], \
 							"unique_id" = V.uniqueID, \
 							"reference" = "\ref[V]", \
@@ -87,7 +88,7 @@
 		if (LIST)
 			var/list/db[0]
 			for (var/ID in virusDB)
-				var/datum/data/record/r = virusDB[ID]
+				var/datum/computer_file/data/virus_record/r = virusDB[ID]
 				db.Add(list(list("name" = r.fields["name"], "record" = "\ref[r]")))
 
 			if (db.len > 0)
@@ -106,7 +107,7 @@
 		ui.set_initial_data(data)
 		ui.open()
 
-/obj/machinery/disease2/isolator/process()
+/obj/machinery/disease2/isolator/Process()
 	if (isolating > 0)
 		isolating -= 1
 		if (isolating == 0)
@@ -119,39 +120,31 @@
 			GLOB.nanomanager.update_uis(src)
 			update_icon()
 
-/obj/machinery/disease2/isolator/Topic(href, href_list)
-	if (..()) return 1
-
-	var/mob/user = usr
-	var/datum/nanoui/ui = GLOB.nanomanager.get_open_ui(user, src, "main")
-
-	src.add_fingerprint(user)
-
+/obj/machinery/disease2/isolator/OnTopic(user, href_list)
 	if (href_list["close"])
-		user.unset_machine()
-		ui.close()
-		return 0
+		GLOB.nanomanager.close_user_uis(user, src, "main")
+		return TOPIC_HANDLED
 
 	if (href_list[HOME])
 		state = HOME
-		return 1
+		return TOPIC_REFRESH
 
 	if (href_list[LIST])
 		state = LIST
-		return 1
+		return TOPIC_REFRESH
 
 	if (href_list[ENTRY])
-		if (istype(locate(href_list["view"]), /datum/data/record))
+		if (istype(locate(href_list["view"]), /datum/computer_file/data/virus_record))
 			entry = locate(href_list["view"])
 
 		state = ENTRY
-		return 1
+		return TOPIC_REFRESH
 
 	if (href_list["print"])
 		print(user)
-		return 1
+		return TOPIC_REFRESH
 
-	if(!sample) return 1
+	if(!sample) return TOPIC_HANDLED
 
 	if (href_list["isolate"])
 		var/datum/disease2/disease/V = locate(href_list["isolate"])
@@ -159,13 +152,13 @@
 			virus2 = V
 			isolating = 20
 			update_icon()
-		return 1
+		return TOPIC_REFRESH
 
 	if (href_list["eject"])
-		sample.loc = src.loc
+		sample.dropInto(loc)
 		sample = null
 		update_icon()
-		return 1
+		return TOPIC_REFRESH
 
 /obj/machinery/disease2/isolator/proc/print(var/mob/user)
 	var/obj/item/weapon/paper/P = new /obj/item/weapon/paper(loc)
@@ -173,7 +166,7 @@
 	switch (state)
 		if (HOME)
 			if (!sample) return
-			P.name = "paper - Patient Diagnostic Report"
+			P.SetName("paper - Patient Diagnostic Report")
 			P.info = {"
 				[virology_letterhead("Patient Diagnostic Report")]
 				<center><small><font color='red'><b>CONFIDENTIAL MEDICAL REPORT</b></font></small></center><br>
@@ -186,8 +179,9 @@
 			P.info += "<hr>"
 
 			for(var/datum/reagent/blood/B in sample.reagents.reagent_list)
-				var/mob/living/carbon/human/D = B.data["donor"]
-				P.info += "<large><u>[D.get_species()] [B.name]:</u></large><br>[B.data["blood_DNA"]]<br>"
+				var/weakref/W = B.data["donor"]
+				var/mob/living/carbon/human/D = W.resolve()
+				P.info += "<large><u>[D ? D.get_species() : "Unidentified"] [B.name]:</u></large><br>[B.data["blood_DNA"]]<br>"
 
 				var/list/virus = B.data["virus2"]
 				P.info += "<u>Pathogens:</u> <br>"
@@ -204,7 +198,7 @@
 "}
 
 		if (LIST)
-			P.name = "paper - Virus List"
+			P.SetName("paper - Virus List")
 			P.info = {"
 				[virology_letterhead("Virus List")]
 "}
@@ -212,7 +206,7 @@
 			var/i = 0
 			for (var/ID in virusDB)
 				i++
-				var/datum/data/record/r = virusDB[ID]
+				var/datum/computer_file/data/virus_record/r = virusDB[ID]
 				P.info += "[i]. " + r.fields["name"]
 				P.info += "<br>"
 
@@ -222,7 +216,7 @@
 "}
 
 		if (ENTRY)
-			P.name = "paper - Viral Profile"
+			P.SetName("paper - Viral Profile")
 			P.info = {"
 				[virology_letterhead("Viral Profile")]
 				[entry.fields["description"]]

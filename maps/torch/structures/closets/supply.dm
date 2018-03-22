@@ -9,7 +9,6 @@
 	icon_closed = "securecargo"
 	icon_locked = "securecargo1"
 	icon_opened = "securecargoopen"
-	icon_broken = "securecargobroken"
 	icon_off = "securecargooff"
 
 /obj/structure/closet/secure_closet/decktech/WillContain()
@@ -24,7 +23,9 @@
 		/obj/item/weapon/clipboard,
 		/obj/item/weapon/folder/yellow,
 		/obj/item/weapon/packageWrap,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack = 75, /obj/item/weapon/storage/backpack/satchel_norm = 25)),
+		/obj/item/weapon/marshalling_wand,
+		/obj/item/weapon/marshalling_wand,
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack = 75, /obj/item/weapon/storage/backpack/satchel/grey = 25)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/messenger = 75, /obj/item/weapon/storage/backpack/dufflebag = 25))
 	)
 
@@ -35,7 +36,6 @@
 	icon_closed = "secureqm"
 	icon_locked = "secureqm1"
 	icon_opened = "secureqmopen"
-	icon_broken = "secureqmbroken"
 	icon_off = "secureqmoff"
 
 /obj/structure/closet/secure_closet/deckofficer/WillContain()
@@ -55,7 +55,9 @@
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
 		/obj/item/device/holowarrant,
-		/obj/item/clothing/suit/armor/vest/solgov,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack = 75, /obj/item/weapon/storage/backpack/satchel_norm = 25)),
+		/obj/item/clothing/suit/armor/pcarrier/light/sol,
+		/obj/item/device/binoculars,
+		/obj/item/weapon/storage/firstaid/individual/all,
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack = 75, /obj/item/weapon/storage/backpack/satchel/grey = 25)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/messenger = 75, /obj/item/weapon/storage/backpack/dufflebag = 25))
 	)

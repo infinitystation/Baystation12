@@ -3,6 +3,8 @@
 	desc = "A computer used to control a nearby holodeck."
 	icon_keyboard = "tech_key"
 	icon_screen = "holocontrol"
+	req_access = list(access_heads)
+	var/islocked = 0
 
 	use_power = 1
 	active_power_usage = 8000 //8kW for the scenery + 500W per holoitem
@@ -39,10 +41,19 @@
 /obj/machinery/computer/HolodeckControl/attack_hand(var/mob/user as mob)
 	if(..())
 		return 1
+
 	user.set_machine(src)
 	var/dat
 
 	dat += "<B>Holodeck Control System</B><BR>"
+	if(!islocked)
+		dat += "Holodeck is <A href='?src=\ref[src];togglehololock=1'><font color=green>(UNLOCKED)</font></A><BR>"
+	else
+		dat += "Holodeck is <A href='?src=\ref[src];togglehololock=1'><font color=red>(LOCKED)</font></A><BR>"
+		show_browser(user, dat, "window=computer;size=400x500")
+		onclose(user, "computer")
+		return
+
 	dat += "<HR>Current Loaded Programs:<BR>"
 
 	if(!linkedholodeck)
@@ -91,7 +102,6 @@
 		dat += "Gravity is <A href='?src=\ref[src];gravity=1'><font color=green>(ON)</font></A><BR>"
 	else
 		dat += "Gravity is <A href='?src=\ref[src];gravity=1'><font color=blue>(OFF)</font></A><BR>"
-
 	user << browse(dat, "window=computer;size=400x500")
 	onclose(user, "computer")
 	return
@@ -125,6 +135,9 @@
 
 		else if(href_list["gravity"])
 			toggleGravity(linkedholodeck)
+
+		else if(href_list["togglehololock"])
+			togglelock(usr)
 
 		src.add_fingerprint(usr)
 	src.updateUsrDialog()
@@ -174,7 +187,7 @@
 	if (. && active && (stat & NOPOWER))
 		emergencyShutdown()
 
-/obj/machinery/computer/HolodeckControl/process()
+/obj/machinery/computer/HolodeckControl/Process()
 	for(var/item in holographic_objs) // do this first, to make sure people don't take items out when power is down.
 		if(!(get_turf(item) in linkedholodeck))
 			derez(item, 0)
@@ -338,3 +351,17 @@
 
 	active = 0
 	use_power = 1
+
+// Locking system
+
+/obj/machinery/computer/HolodeckControl/proc/togglelock(var/mob/user)
+	if(cantogglelock(user))
+		islocked = !islocked
+		audible_message("<span class='notice'>\The [src] emits a series of beeps to announce it has been [islocked ? null : "un"]locked.</span>", hearing_distance = 3)
+		return 0
+	else
+		to_chat(user, "<span class='warning'>Access denied.</span>")
+		return 1
+
+/obj/machinery/computer/HolodeckControl/proc/cantogglelock(var/mob/user)
+	return allowed(user)

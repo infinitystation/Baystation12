@@ -6,7 +6,7 @@
 /obj/machinery/power/tracker
 	name = "solar tracker"
 	desc = "A solar directional tracker."
-	icon = 'icons/obj/power.dmi'
+	icon = 'icons/obj/infinity_object.dmi'
 	icon_state = "tracker"
 	anchored = 1
 	density = 1
@@ -59,7 +59,7 @@
 
 /obj/machinery/power/tracker/attackby(var/obj/item/weapon/W, var/mob/user)
 
-	if(istype(W, /obj/item/weapon/crowbar))
+	if(isCrowbar(W))
 		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 		user.visible_message("<span class='notice'>[user] begins to take the glass off the solar tracker.</span>")
 		if(do_after(user, 50,src))

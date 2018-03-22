@@ -1,9 +1,9 @@
 /mob/Destroy()//This makes sure that mobs with clients/keys are not just deleted from the game.
-	GLOB.mob_list -= src
+	STOP_PROCESSING(SSmobs, src)
 	GLOB.dead_mob_list_ -= src
 	GLOB.living_mob_list_ -= src
 	unset_machine()
-	qdel(hud_used)
+	QDEL_NULL(hud_used)
 	for(var/obj/item/grab/G in grabbed_by)
 		qdel(G)
 	clear_fullscreen()
@@ -18,7 +18,7 @@
 		spellremove(src)
 	ghostize()
 	..()
-	return QDEL_HINT_HARDDEL_NOW
+	return QDEL_HINT_HARDDEL
 
 /mob/proc/remove_screen_obj_references()
 	hands = null
@@ -31,6 +31,7 @@
 	toxin = null
 	fire = null
 	bodytemp = null
+	minsbodytemp = null
 	healths = null
 	throw_icon = null
 	nutrition_icon = null
@@ -42,9 +43,9 @@
 	ability_master = null
 	zone_sel = null
 
-/mob/New()
-	GLOB.mob_list += src
-	..()
+/mob/Initialize()
+	. = ..()
+	START_PROCESSING(SSmobs, src)
 
 /mob/proc/show_message(msg, type, alt, alt_type)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
 	if(!client)	return
@@ -74,7 +75,7 @@
 // message is the message output to anyone who can see e.g. "[src] does something!"
 // self_message (optional) is what the src mob sees  e.g. "You do something!"
 // blind_message (optional) is what blind people will hear e.g. "You hear something!"
-/mob/visible_message(var/message, var/self_message, var/blind_message, var/range = world.view, var/checkghosts = null)
+/mob/visible_message(var/message, var/self_message, var/blind_message, var/range = world.view, var/checkghosts = null, var/narrate = FALSE)
 	var/turf/T = get_turf(src)
 	var/list/mobs = list()
 	var/list/objs = list()
@@ -90,13 +91,16 @@
 			M.show_message(self_message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 			continue
 
-		if(M.see_invisible >= invisibility)
+		if(M.see_invisible >= invisibility || narrate)
 			M.show_message(message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
 			continue
 
 		if(blind_message)
 			M.show_message(blind_message, AUDIBLE_MESSAGE)
 			continue
+	//Multiz, have shadow do same
+	if(shadow)
+		shadow.visible_message(message, self_message, blind_message)
 
 // Returns an amount of power drawn from the object (-1 if it's not viable).
 // If drain_check is set it will not actually drain power, just return a value.
@@ -111,7 +115,7 @@
 // self_message (optional) is what the src mob hears.
 // deaf_message (optional) is what deaf people will see.
 // hearing_distance (optional) is the range, how many tiles away the message can be heard.
-/mob/audible_message(var/message, var/self_message, var/deaf_message, var/hearing_distance = world.view, var/checkghosts = null)
+/mob/audible_message(var/message, var/self_message, var/deaf_message, var/hearing_distance = world.view, var/checkghosts = null, var/narrate = FALSE)
 	var/turf/T = get_turf(src)
 	var/list/mobs = list()
 	var/list/objs = list()
@@ -121,7 +125,7 @@
 		var/mob/M = m
 		if(self_message && M == src)
 			M.show_message(self_message, AUDIBLE_MESSAGE, deaf_message, VISIBLE_MESSAGE)
-		else if(M.see_invisible >= invisibility) // Cannot view the invisible
+		else if(M.see_invisible >= invisibility || narrate) // Cannot view the invisible
 			M.show_message(message, AUDIBLE_MESSAGE, deaf_message, VISIBLE_MESSAGE)
 		else
 			M.show_message(message, AUDIBLE_MESSAGE)
@@ -131,8 +135,8 @@
 		O.show_message(message, AUDIBLE_MESSAGE, deaf_message, VISIBLE_MESSAGE)
 
 /mob/proc/findname(msg)
-	for(var/mob/M in GLOB.mob_list)
-		if (M.real_name == text("[]", msg))
+	for(var/mob/M in SSmobs.mob_list)
+		if (M.real_name == msg)
 			return M
 	return 0
 
@@ -183,7 +187,7 @@
 	if ((incapacitation_flags & INCAPACITATION_STUNNED) && stunned)
 		return 1
 
-	if ((incapacitation_flags & INCAPACITATION_FORCELYING) && (weakened || resting))
+	if ((incapacitation_flags & INCAPACITATION_FORCELYING) && (weakened || resting || pinned.len))
 		return 1
 
 	if ((incapacitation_flags & INCAPACITATION_KNOCKOUT) && (stat || paralysis || sleeping || (status_flags & FAKEDEATH)))
@@ -355,9 +359,9 @@
 	if (flavor_text && flavor_text != "")
 		var/msg = replacetext(flavor_text, "\n", " ")
 		if(lentext(msg) <= 40)
-			return "<span class='notice'>[msg]</span>"
+			return "<span class='notice'>[sanitize_u2a(msg)]</span>"
 		else
-			return "<span class='notice'>[copytext_preserve_html(msg, 1, 37)]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></span>"
+			return "<span class='notice'>[sanitize_u2a(copytext_preserve_html(msg, 1, 37))]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></span>"
 
 /*
 /mob/verb/help()
@@ -367,7 +371,36 @@
 */
 
 /client/verb/changes()
-	set name = "Changelog"
+	set name = "Baystation12 Changelog"
+	set category = "OOC"
+	getFiles(
+		'html/88x31.png',
+		'html/bug-minus.png',
+		'html/burn-exclamation.png',
+		'html/chevron.png',
+		'html/chevron-expand.png',
+		'html/cross-circle.png',
+		'html/hard-hat-exclamation.png',
+		'html/image-minus.png',
+		'html/image-plus.png',
+		'html/map-pencil.png',
+		'html/music-minus.png',
+		'html/music-plus.png',
+		'html/tick-circle.png',
+		'html/scales.png',
+		'html/spell-check.png',
+		'html/wrench-screwdriver.png',
+		'html/changelog.css',
+		'html/changelog.html'
+		)
+	src << browse('html/changelog.html', "window=changes;size=675x650")
+	if(prefs.lastchangelog != changelog_hash)
+		prefs.lastchangelog = changelog_hash
+		prefs.save_preferences()
+		winset(src, "rpane.changelog", "background-color=none;font-style=;")
+
+/client/verb/changes_infinity()
+	set name = "Infinity Changelog"
 	set category = "OOC"
 	getFiles(
 		'html/88x31.png',
@@ -386,14 +419,13 @@
 		'html/chevron.png',
 		'html/chevron-expand.png',
 		'html/changelog.css',
-		'html/changelog.js',
 		'html/changelog.html'
 		)
-	src << browse('html/changelog.html', "window=changes;size=675x650")
-	if(prefs.lastchangelog != changelog_hash)
-		prefs.lastchangelog = changelog_hash
+	src << browse('html/changelog_infinity.html', "window=changes;size=675x650")
+	if(prefs.lastinfchangelog != inf_changelog_hash)
+		prefs.lastinfchangelog = inf_changelog_hash
 		prefs.save_preferences()
-		winset(src, "rpane.changelog", "background-color=none;font-style=;")
+		winset(src, "rpane.changelog_infinity", "background-color=none;font-style=;")
 
 /mob/new_player/verb/observe()
 	set name = "Observe"
@@ -438,7 +470,7 @@
 				namecounts[name] = 1
 			creatures[name] = O
 
-	for(var/mob/M in sortAtom(GLOB.mob_list))
+	for(var/mob/M in sortAtom(SSmobs.mob_list))
 		var/name = M.name
 		if (names.Find(name))
 			namecounts[name]++
@@ -486,6 +518,7 @@
 		onclose(usr, "[name]")
 	if(href_list["flavor_change"])
 		update_flavor_text()
+
 //	..()
 	return
 
@@ -705,8 +738,8 @@
 
 	if(lying)
 		set_density(0)
-		if(l_hand) unEquip(l_hand)
-		if(r_hand) unEquip(r_hand)
+		//if(l_hand) unEquip(l_hand)
+		//if(r_hand) unEquip(r_hand)
 	else
 		set_density(initial(density))
 	reset_layer()
@@ -726,6 +759,7 @@
 		regenerate_icons()
 	else if( lying != lying_prev )
 		update_icons()
+	update_vision_cone()
 
 	return canmove
 
@@ -774,6 +808,8 @@
 	if(status_flags & CANSTUN)
 		facing_dir = null
 		stunned = max(max(stunned,amount),0) //can't go below 0, getting a low amount of stun doesn't lower your current stun
+		if(l_hand) unEquip(l_hand)
+		if(r_hand) unEquip(r_hand)
 	return
 
 /mob/proc/SetStunned(amount) //if you REALLY need to set stun to a set amount without the whole "can't go below current stunned"
@@ -809,6 +845,8 @@
 	if(status_flags & CANPARALYSE)
 		facing_dir = null
 		paralysis = max(max(paralysis,amount),0)
+		if(l_hand) unEquip(l_hand)
+		if(r_hand) unEquip(r_hand)
 	return
 
 /mob/proc/SetParalysis(amount)
@@ -824,6 +862,8 @@
 /mob/proc/Sleeping(amount)
 	facing_dir = null
 	sleeping = max(max(sleeping,amount),0)
+	if(l_hand) unEquip(l_hand)
+	if(r_hand) unEquip(r_hand)
 	return
 
 /mob/proc/SetSleeping(amount)
@@ -850,9 +890,6 @@
 /mob/proc/get_species()
 	return ""
 
-/mob/proc/flash_weak_pain()
-	flick("weak_pain",pain)
-
 /mob/proc/get_visible_implants(var/class = 0)
 	var/list/visible_implants = list()
 	for(var/obj/item/O in embedded)
@@ -863,7 +900,7 @@
 /mob/proc/embedded_needs_process()
 	return (embedded.len > 0)
 
-mob/proc/yank_out_object()
+/mob/proc/yank_out_object()
 	set category = "Object"
 	set name = "Yank out object"
 	set desc = "Remove an embedded item at the cost of bleeding and pain."
@@ -903,7 +940,7 @@ mob/proc/yank_out_object()
 		to_chat(src, "<span class='warning'>You attempt to get a good grip on [selection] in your body.</span>")
 	else
 		to_chat(U, "<span class='warning'>You attempt to get a good grip on [selection] in [S]'s body.</span>")
-	if(!do_mob(U, S, 30))
+	if(!do_mob(U, S, 30, incapacitation_flags = INCAPACITATION_DEFAULT & (~INCAPACITATION_FORCELYING))) //let people pinned to stuff yank it out, otherwise they're stuck... forever!!!
 		return
 	if(!selection || !S || !U)
 		return
@@ -968,18 +1005,43 @@ mob/proc/yank_out_object()
 /mob/update_icon()
 	return
 
-/mob/verb/face_direction()
-
-	set name = "Face Direction"
-	set category = "IC"
-	set src = usr
-
+/mob/proc/face_direction()
 	set_face_dir()
 
 	if(!facing_dir)
 		to_chat(usr, "You are now not facing anything.")
 	else
 		to_chat(usr, "You are now facing [dir2text(facing_dir)].")
+
+/mob/proc/air_temperature(var/obj/screen/A, var/mob/user)
+
+	var/air_contents = A.return_air()
+	if(!air_contents)
+		to_chat(user, "<span class='warning'>It's very cold... oh, shit.</span>")
+		return 0
+
+	var/list/result = atmosanalyzer_scan_lesser(A, air_contents)
+	print_atmos_analysis_lesser(user, result)
+	return 1
+
+/mob/proc/print_atmos_analysis_lesser(user, var/list/result)
+	for(var/line in result)
+		to_chat(user, "<span class='notice'>[line]</span>")
+
+/mob/proc/atmosanalyzer_scan_lesser(var/atom/target, var/datum/gas_mixture/mixture)
+	. = list()
+	. += "<span class='notice'>Results of the analysis of \the [target]:</span>"
+	if(!mixture)
+		mixture = target.return_air()
+
+	if(mixture)
+		var/total_moles = mixture.total_moles
+		if (total_moles>0)
+			for(var/mix in mixture.gas)
+			. += "<span class='notice'>Temperature: [round(mixture.temperature-T0C)]&deg;C / [round(mixture.temperature)]K</span>"
+			return
+	. += "<span class='warning'>\The [target] has no gases!</span>"
+
 /mob/proc/set_face_dir(var/newdir)
 	if(!isnull(facing_dir) && newdir == facing_dir)
 		facing_dir = null
@@ -1062,7 +1124,7 @@ mob/proc/yank_out_object()
 	else
 		to_chat(usr, "You must be observing or in the lobby to join the antag pool.")
 /mob/proc/is_invisible_to(var/mob/viewer)
-	return (!alpha || !mouse_opacity || viewer.see_invisible < invisibility)
+	return (!alpha || !mouse_opacity || viewer.see_invisible < invisibility || src in (viewer.client.hidden_mobs || viewer.client.hidden_atoms))
 
 /client/proc/check_has_body_select()
 	return mob && mob.hud_used && istype(mob.zone_sel, /obj/screen/zone_sel)

@@ -1,25 +1,63 @@
+rucat - machine
+rex127 - machine
+logfol - machine
+kosteg - machine
+hodovoy - machine
+parasoul - machine
+netreson - machine
+billluxe - machine
+rockyfail - machine
+nikita588 - machine
+wheatley2013 - machine
+redknighthero - machine
+kotovsyndrome - machine
+inubashirimomiji - skrell
+twinindifferent - skrell
+wheatley2013 - skrell
+kirill1243 - skrell	
+themaybat - skrell
+salyvador - skrell
+hellpony - skrell
+vankoska - skrell
+lukecage - skrell
+hodovoy - skrell
+knayu - skrell
+redknighthero - giant armoured serpentid
 kirill1243 - giant armoured serpentid
+themaybat - giant armoured serpentid
 sosiskoed - giant armoured serpentid
-sosiskoed - vox
+diesiege - giant armoured serpentid
+hodovoy - giant armoured serpentid
+sarumyn - giant armoured serpentid
+rex127 - giant armoured serpentid
+portos - giant armoured serpentid
+twinindifferent - resomi
+wheatley2013 - resomi
+kirill1243 - resomi
+themaybat - resomi
+pixelduck - resomi
+netreson - resomi
+hodovoy - resomi
+cre77 - resomi
 vankoska - diona
+maxi2000 - diona
 sosiskoed - diona
 bartstarter - diona
 inubashirimomiji - diona
-knayu - skrell
-lukecage - skrell
-kirill1243 - skrell
-vankoska - skrell
-inubashirimomiji - skrell	
-rucat - machine
-kosteg - machine
-netreson - machine
-quardbreak - machine
-redknighthero - machine
-wheatley2013 - machine
-kotovsyndrome - machine
-wheatley2013 - machine
-nikita588 - machine
-themaybat - skrell
-themaybat - resomi
-kirill1243 - resomi
-cre77 - resomi
+cre77 - vox
+rex127 - vox
+sosiskoed - vox
+wolforbykot - vox
+wheatley2013 - vox
+kotovsyndrome - unathi
+wolforbykot - unathi
+kirill1243 - unathi
+aragog94 - unathi
+hodovoy - unathi
+ashtonfox - tajaran
+mrnicolas - tajaran
+furrydog - tajaran
+logfol - tajaran
+denmag - tajaran
+solark - tajaran
+arhod - tajaran

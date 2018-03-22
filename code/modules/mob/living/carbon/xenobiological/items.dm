@@ -11,7 +11,7 @@
 	origin_tech = list(TECH_BIO = 4)
 	var/Uses = 1 // uses before it goes inert
 	var/enhanced = 0 //has it been enhanced before?
-	flags = OPENCONTAINER
+	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 
 	attackby(obj/item/O as obj, mob/user as mob)
 		if(istype(O, /obj/item/weapon/slimesteroid2))
@@ -151,7 +151,7 @@
 
 		if (!newname)
 			newname = "pet slime"
-		pet.name = newname
+		pet.SetName(newname)
 		pet.real_name = newname
 		qdel(src)
 
@@ -182,7 +182,7 @@
 
 		if (!newname)
 			newname = "pet slime"
-		pet.name = newname
+		pet.SetName(newname)
 		pet.real_name = newname
 		qdel(src)
 
@@ -241,11 +241,11 @@
 	plane = ABOVE_TURF_PLANE
 	layer = RUNE_LAYER
 
-/obj/effect/golemrune/New()
+/obj/effect/golemrune/Initialize()
 	..()
-	GLOB.processing_objects.Add(src)
+	START_PROCESSING(SSobj, src)
 
-/obj/effect/golemrune/process()
+/obj/effect/golemrune/Process()
 	var/mob/observer/ghost/ghost
 	for(var/mob/observer/ghost/O in src.loc)
 		if(!O.client)	continue

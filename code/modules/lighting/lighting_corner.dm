@@ -102,6 +102,7 @@
 	var/lum_r = src.lum_r
 	var/lum_g = src.lum_g
 	var/lum_b = src.lum_b
+
 	var/mx = max(lum_r, lum_g, lum_b) // Scale it so 1 is the strongest lum, if it is above 1.
 	. = 1 // factor
 	if (mx > 1)

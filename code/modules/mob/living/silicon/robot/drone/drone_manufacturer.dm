@@ -38,7 +38,7 @@
 	if (stat & NOPOWER)
 		icon_state = "drone_fab_nopower"
 
-/obj/machinery/drone_fabricator/process()
+/obj/machinery/drone_fabricator/Process()
 
 	if(ticker.current_state < GAME_STATE_PLAYING)
 		return
@@ -72,9 +72,6 @@
 		return
 
 	if(player && !isghost(player.mob))
-		return
-
-	if(player.banprisoned)
 		return
 
 	visible_message("\The [src] churns and grinds as it lurches into motion, disgorging a shiny new drone after a few moments.")
@@ -121,7 +118,7 @@
 	if(!fabricator)
 
 		var/list/all_fabricators = list()
-		for(var/obj/machinery/drone_fabricator/DF in GLOB.machines)
+		for(var/obj/machinery/drone_fabricator/DF in SSmachines.machinery)
 			if((DF.stat & NOPOWER) || !DF.produce_drones || DF.drone_progress < 100)
 				continue
 			all_fabricators[DF.fabricator_tag] = DF

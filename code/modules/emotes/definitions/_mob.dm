@@ -70,6 +70,7 @@
 		/decl/emote/visible/shake,
 		/decl/emote/visible/shiver,
 		/decl/emote/visible/collapse,
+		/decl/emote/audible/salute,
 		/decl/emote/audible/gasp,
 		/decl/emote/audible/sneeze,
 		/decl/emote/audible/sniff,
@@ -95,7 +96,6 @@
 		/decl/emote/visible/airguitar,
 		/decl/emote/visible/blink_r,
 		/decl/emote/visible/bow,
-		/decl/emote/visible/salute,
 		/decl/emote/visible/flap,
 		/decl/emote/visible/aflap,
 		/decl/emote/visible/drool,
@@ -126,8 +126,8 @@
 /mob/living/silicon/robot
 	default_emotes = list(
 		/decl/emote/audible/clap,
+		/decl/emote/audible/salute,
 		/decl/emote/visible/bow,
-		/decl/emote/visible/salute,
 		/decl/emote/visible/flap,
 		/decl/emote/visible/aflap,
 		/decl/emote/visible/twitch,

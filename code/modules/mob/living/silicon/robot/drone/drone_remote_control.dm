@@ -13,16 +13,22 @@
 		to_chat(user, "<span class='warning'>You cannot take control of an autonomous, active drone.</span>")
 		return
 
-	if(health < -35 || emagged)
+	if(health <= 0 || emagged)
 		to_chat(user, "<span class='notice'><b>WARNING:</b> connection timed out.</span>")
 		return
+	
+	assume_control(user)
 
+/mob/living/silicon/robot/drone/proc/assume_control(var/mob/living/silicon/ai/user)
 	user.controlling_drone = src
 	controlling_ai = user
 	verbs += /mob/living/silicon/robot/drone/proc/release_ai_control_verb
 	local_transmit = FALSE
 	languages = controlling_ai.languages.Copy()
-	speech_synthesizer_langs = controlling_ai.speech_synthesizer_langs.Copy()
+
+	add_language("Drone Talk", 1)
+	default_language = all_languages["Drone Talk"]
+
 	stat = CONSCIOUS
 	if(user.mind)
 		user.mind.transfer_to(src)
@@ -53,20 +59,8 @@
 		return
 
 	var/mob/living/silicon/robot/drone/new_drone = create_drone()
-	user.controlling_drone = new_drone
-	new_drone.controlling_ai = user
-	new_drone.verbs += /mob/living/silicon/robot/drone/proc/release_ai_control_verb
-	new_drone.local_transmit = FALSE
-	new_drone.languages = new_drone.controlling_ai.languages.Copy()
-	new_drone.speech_synthesizer_langs = new_drone.controlling_ai.speech_synthesizer_langs.Copy()
+	new_drone.assume_control(user)
 
-	if(user.mind)
-		user.mind.transfer_to(new_drone)
-	else
-		new_drone.key = user.key
-	new_drone.updatename()
-
-	to_chat(new_drone, "<span class='notice'><b>You have shunted your primary control loop into \a [initial(new_drone.name)].</b> Use the <b>Release Control</b> verb to return to your core.</span>")
 
 /mob/living/silicon/robot/drone/death(gibbed)
 	if(controlling_ai)

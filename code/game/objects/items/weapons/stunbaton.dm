@@ -13,10 +13,10 @@
 	origin_tech = list(TECH_COMBAT = 2)
 	attack_verb = list("beaten")
 	var/stunforce = 0
-	var/agonyforce = 60
+	var/agonyforce = 30
 	var/status = 0		//whether the thing is on or not
 	var/obj/item/weapon/cell/bcell
-	var/hitcost = 10
+	var/hitcost = 7
 
 /obj/item/weapon/melee/baton/loaded
 	bcell = /obj/item/weapon/cell/device/high
@@ -52,7 +52,7 @@
 		icon_state = "[initial(name)]"
 
 	if(icon_state == "[initial(name)]_active")
-		set_light(1.5, 2, "#FF6A00")
+		set_light(1.5, 2, "#ff6a00")
 	else
 		set_light(0)
 
@@ -78,7 +78,7 @@
 			update_icon()
 		else
 			to_chat(user, "<span class='notice'>[src] already has a cell.</span>")
-	else if(istype(W, /obj/item/weapon/screwdriver))
+	else if(isScrewdriver(W))
 		if(bcell)
 			bcell.update_icon()
 			bcell.dropInto(loc)
@@ -178,7 +178,7 @@
 // Stunbaton module for Security synthetics
 /obj/item/weapon/melee/baton/robot
 	bcell = null
-	hitcost = 100
+	hitcost = 20
 
 // Addition made by Techhead0, thanks for fullfilling the todo!
 /obj/item/weapon/melee/baton/robot/examine_cell(mob/user)
@@ -223,7 +223,7 @@
 /obj/item/weapon/melee/baton/robot/electrified_arm/update_icon()
 	if(status)
 		icon_state = "electrified_arm_active"
-		set_light(1.5, 2, "#006AFF")
+		set_light(1.5, 2, "#006aff")
 	else
 		icon_state = "electrified_arm"
 		set_light(0)

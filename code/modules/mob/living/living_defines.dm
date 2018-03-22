@@ -8,6 +8,8 @@
 
 	var/hud_updateflag = 0
 
+	var/ooc_notes = null
+
 	//Damage related vars, NOTE: THESE SHOULD ONLY BE MODIFIED BY PROCS // what a joke
 	//var/bruteloss = 0 //Brutal damage caused by brute force (punching, being clubbed by a toolbox ect... this also accounts for pressure damage)
 	//var/oxyloss = 0   //Oxygen depravation damage (no air in lungs)
@@ -15,15 +17,17 @@
 	//var/fireloss = 0  //Burn damage caused by being way too hot, too cold or burnt.
 	//var/halloss = 0   //Hallucination damage. 'Fake' damage obtained through hallucinating or the holodeck. Sleeping should cause it to wear off.
 
-	var/hallucination = 0 //Directly affects how long a mob will hallucinate for
-	var/list/atom/hallucinations = list() //A list of hallucinated people that try to attack the mob. See /obj/effect/fake_attacker in hallucinations.dm
-
 	var/last_special = 0 //Used by the resist verb, likely used to prevent players from bypassing next_move by logging in/out.
 
 	var/t_phoron = null
 	var/t_oxygen = null
 	var/t_sl_gas = null
 	var/t_n2 = null
+
+	var/list/in_vision_cones = list()
+	var/obj/screen/vision_cone_overlay = null // The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
+	var/vision_cone
+	var/can_have_vision_cone = 0 // Hacky trick
 
 	var/now_pushing = null
 	var/mob_bump_flag = 0
@@ -49,5 +53,6 @@
 	var/slurring = null		//Carbon
 
 	var/job = null//Living
+	var/list/obj/aura/auras = null //Basically a catch-all aura/force-field thing.
 
 	var/obj/screen/cells = null

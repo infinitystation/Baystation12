@@ -43,10 +43,28 @@
 	return ..()
 
 /obj/structure/ladder/attackby(obj/item/C as obj, mob/user as mob)
-	attack_hand(user)
-	return
+	climb(user)
 
 /obj/structure/ladder/attack_hand(var/mob/M)
+	climb(M)
+
+/obj/structure/ladder/attack_ai(var/mob/M)
+	var/mob/living/silicon/ai/ai = M
+	if(!istype(ai))
+		return
+	var/mob/observer/eye/AIeye = ai.eyeobj
+	if(istype(AIeye))
+		instant_climb(AIeye)
+
+/obj/structure/ladder/attack_robot(var/mob/M)
+	climb(M)
+
+/obj/structure/ladder/proc/instant_climb(var/mob/M)
+	var/target_ladder = getTargetLadder(M)
+	if(target_ladder)
+		M.forceMove(get_turf(target_ladder))
+
+/obj/structure/ladder/proc/climb(var/mob/M)
 	if(!M.may_climb_ladders(src))
 		return
 
@@ -73,11 +91,8 @@
 		for (var/obj/item/grab/G in M)
 			G.adjust_position(force = 1)
 
-
 /obj/structure/ladder/attack_ghost(var/mob/M)
-	var/target_ladder = getTargetLadder(M)
-	if(target_ladder)
-		M.forceMove(get_turf(target_ladder))
+	instant_climb(M)
 
 /obj/structure/ladder/proc/getTargetLadder(var/mob/M)
 	M.dir = 1
@@ -156,54 +171,59 @@
 	density = 0
 	opacity = 0
 	anchored = 1
+	plane = ABOVE_TURF_PLANE
+	layer = RUNE_LAYER
 
-	Initialize()
-		for(var/turf/turf in locs)
-			var/turf/simulated/open/above = GetAbove(turf)
-			if(!above)
-				warning("Stair created without level above: ([loc.x], [loc.y], [loc.z])")
-				return INITIALIZE_HINT_QDEL
-			if(!istype(above))
-				above.ChangeTurf(/turf/simulated/open)
-		. = ..()
+/obj/structure/stairs/Initialize()
+	for(var/turf/turf in locs)
+		var/turf/simulated/open/above = GetAbove(turf)
+		if(!above)
+			warning("Stair created without level above: ([loc.x], [loc.y], [loc.z])")
+			return INITIALIZE_HINT_QDEL
+		if(!istype(above))
+			above.ChangeTurf(/turf/simulated/open)
+	. = ..()
 
-	Uncross(atom/movable/A)
-		if(A.dir == dir)
-			for(var/turf/turf in locs)
-				var/turf/simulated/open/above = GetAbove(turf)
-				for(var/obj/O in above.contents)
-					if(O.density || istype(O, /obj/structure/catwalk))
-						to_chat(usr, "<span class='warning'>\The [O] blocks your way.</span>")
-						return 1
-			// This is hackish but whatever.
-			var/turf/target = get_step(GetAbove(A), dir)
-			var/turf/source = A.loc
-			if(target.Enter(A, source))
-				A.loc = target
-				target.Entered(A, source)
-			return 0
-		return 1
+/obj/structure/stairs/Uncross(atom/movable/A)
+	if(A.dir == dir && upperStep(A.loc))
+		// This is hackish but whatever.
+		var/turf/target = get_step(GetAbove(A), dir)
+		var/turf/source = A.loc
+		var/turf/above = GetAbove(A)
+		if(above.CanZPass(source, UP) && target.Enter(A, source))
+			A.forceMove(target)
+			if(isliving(A))
+				var/mob/living/L = A
+				if(L.pulling)
+					L.pulling.forceMove(source)
+		else
+			to_chat(A, "<span class='warning'>Something blocks the path.</span>")
+		return 0
+	return 1
 
-	CanPass(obj/mover, turf/source, height, airflow)
-		return airflow || !density
+/obj/structure/stairs/proc/upperStep(var/turf/T)
+	return (T == loc)
 
-	// type paths to make mapping easier.
-	north
-		dir = NORTH
-		bound_height = 64
-		bound_y = -32
-		pixel_y = -32
+/obj/structure/stairs/CanPass(obj/mover, turf/source, height, airflow)
+	return airflow || !density
 
-	south
-		dir = SOUTH
-		bound_height = 64
+// type paths to make mapping easier.
+/obj/structure/stairs/north
+	dir = NORTH
+	bound_height = 64
+	bound_y = -32
+	pixel_y = -32
 
-	east
-		dir = EAST
-		bound_width = 64
-		bound_x = -32
-		pixel_x = -32
+/obj/structure/stairs/south
+	dir = SOUTH
+	bound_height = 64
 
-	west
-		dir = WEST
-		bound_width = 64
+/obj/structure/stairs/east
+	dir = EAST
+	bound_width = 64
+	bound_x = -32
+	pixel_x = -32
+
+/obj/structure/stairs/west
+	dir = WEST
+	bound_width = 64

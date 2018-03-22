@@ -69,11 +69,6 @@
 		src.visible_message("<span class='warning'>[src] triggers their deadman's switch!</span>")
 		signaler.signal()
 
-	//Stun Beams
-	if(P.taser_effect)
-		stun_effect_act(0, P.agony, def_zone, P)
-//		to_chat(src, "<span class='warning'>You have been hit by [P]!</span>")
-
 	//Armor
 	var/damage = P.damage
 	var/flags = P.damage_flags()
@@ -90,6 +85,29 @@
 	P.on_hit(src, absorb, def_zone)
 
 	return absorb
+
+/mob/living/proc/aura_check(var/type)
+	if(!auras)
+		return TRUE
+	. = TRUE
+	var/list/newargs = args - args[1]
+	for(var/a in auras)
+		var/obj/aura/aura = a
+		var/result = 0
+		switch(type)
+			if(AURA_TYPE_WEAPON)
+				result = aura.attackby(arglist(newargs))
+			if(AURA_TYPE_BULLET)
+				result = aura.bullet_act(arglist(newargs))
+			if(AURA_TYPE_THROWN)
+				result = aura.hitby(arglist(newargs))
+			if(AURA_TYPE_LIFE)
+				result = aura.life_tick()
+		if(result & AURA_FALSE)
+			. = FALSE
+		if(result & AURA_CANCEL)
+			break
+
 
 //Handles the effects of "stun" weapons
 /mob/living/proc/stun_effect_act(var/stun_amount, var/agony_amount, var/def_zone, var/used_weapon=null)
@@ -151,6 +169,8 @@
 
 //this proc handles being hit by a thrown atom
 /mob/living/hitby(atom/movable/AM as mob|obj,var/speed = THROWFORCE_SPEED_DIVISOR)//Standardization and logging -Sieve
+	if(!aura_check(AURA_TYPE_THROWN, AM, speed))
+		return
 	if(istype(AM,/obj/))
 		var/obj/O = AM
 		var/dtype = O.damtype
@@ -215,6 +235,12 @@
 
 //This is called when the mob is thrown into a dense turf
 /mob/living/proc/turf_collision(var/turf/T, var/speed)
+	visible_message("<span class='danger'>[src] slams into \the [T]!</span>")
+	var/smashsound = pick('sound/effects/gore/smash1.ogg', 'sound/effects/gore/smash2.ogg', 'sound/effects/gore/smash3.ogg', 'sound/effects/gore/trauma1.ogg')
+	playsound(loc, smashsound, 50, 1, -1)
+	if(src.client)
+		shake_camera(src, 7, 1)
+	src.Weaken(4)
 	src.take_organ_damage(speed*5)
 
 /mob/living/proc/near_wall(var/direction,var/distance=1)
@@ -275,8 +301,7 @@
 		ExtinguishMob() //Fire's been put out.
 		return 1
 
-	if(HUSK in mutations)
-		fire_stacks = max(0, fire_stacks - 0.1) //I guess the fire runs out of fuel eventually
+	fire_stacks = max(0, fire_stacks - 0.2) //I guess the fire runs out of fuel eventually
 
 	var/datum/gas_mixture/G = loc.return_air() // Check if we're standing in an oxygenless environment
 	if(G.get_by_flag(XGM_GAS_OXIDIZER) < 1)
@@ -364,7 +389,7 @@
 
 		B.UpdateIcon()
 
-		B.name = A.UpdateName()
+		B.SetName(A.UpdateName())
 
 		client.screen += B
 
