@@ -105,7 +105,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 
 /obj/item/device/pmp/examine(mob/user)
 	. = ..()
-	if(user in oview(src, 2))
+	if(user in view(1, src))
 		if(serial_number)
 			to_chat(user, "The serial number \"#[serial_number]\" is generated on the case.")
 		if(cassette)
@@ -211,7 +211,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 /obj/item/device/pmp/verb/volume()
 	set name = "Change Volume"
 	set category = "Object"
-	set src in usr
+	set src in view(1)
 
 	if(usr.incapacitated())
 		return

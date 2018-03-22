@@ -135,7 +135,7 @@
 		return 0
 	if(!species)
 		return 0
-	
+
 	if(bodytemperature > species.cold_level_1)
 		return 0
 	else if(bodytemperature > species.cold_level_2)
@@ -155,7 +155,7 @@
 /mob/living/carbon/human/proc/sonar_ping()
 	set name = "Listen In"
 	set desc = "Allows you to listen in to movement and noises around you."
-	set category = "Ability"
+	set category = "IC"
 
 	if(incapacitated())
 		to_chat(src, "<span class='warning'>You need to recover before you can use this ability.</span>")
@@ -166,7 +166,7 @@
 	if(is_deaf() || is_below_sound_pressure(get_turf(src)))
 		to_chat(src, "<span class='warning'>You are for all intents and purposes currently deaf!</span>")
 		return
-	next_sonar_ping += 10 SECONDS
+	next_sonar_ping += 20 SECONDS
 	var/heard_something = FALSE
 	to_chat(src, "<span class='notice'>You take a moment to listen in to your environment...</span>")
 	for(var/mob/living/L in range(client.view, src))
@@ -180,8 +180,7 @@
 		ping_image.pixel_x = (T.x - src.x) * WORLD_ICON_SIZE
 		ping_image.pixel_y = (T.y - src.y) * WORLD_ICON_SIZE
 		show_image(src, ping_image)
-		spawn(8)
-			qdel(ping_image)
+		addtimer(CALLBACK(src, .proc/clear_noise_effect, src.client, ping_image), 8)
 		var/feedback = list("<span class='notice'>There are noises of movement ")
 		var/direction = get_dir(src, L)
 		if(direction)
