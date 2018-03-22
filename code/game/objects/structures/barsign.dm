@@ -1,27 +1,16 @@
-/datum/barsign
-	var/icon = "empty"
-	var/name = "--------"
-	var/desc = null
-	var/pixel_x = 0
-	var/pixel_y = 0
-
-/datum/barsign/maltesefalcon
-	name = "Maltese Falcon"
-	icon = "maltesefalcon"
-	desc = "Play it again, sam."
-
 /obj/structure/sign/double/barsign	// The sign is 64x32, so it needs two tiles. ;3
-	name = "--------"
-	desc = "a bar sign"
+	name = "a bar sign"
+	desc = "A jumbo-sized LED sign."
 	icon = 'icons/obj/barsigns.dmi'
 	icon_state = "empty"
 	plane = -10 //Above humans
+	appearance_flags = 0
+	anchored = 1
 
 	req_access = list(access_bar)
 
 	var/sign_name = ""
-	var/list/barsigns=list()
-	var/cult = 0
+	var/list/barsigns = list()
 
 /obj/structure/sign/double/barsign/attack_ai(mob/user as mob)
 	return src.attack_hand(user)
@@ -56,15 +45,18 @@
 		desc = picked.desc
 	else
 		desc = "It displays \"[name]\"."
-/*
-/obj/structure/sign/double/barsign/cultify()
-	if(!cult)
-		icon_state = "narsiebistro"
-		name = "Narsie Bistro"
-		desc = "The last pub before the World's End."
-		cult = 1
-		pixel_x = 0 // just to make sure.
-		pixel_y = 0*/
+
+/datum/barsign
+	var/icon = "empty"
+	var/name = "A jumbo-sized LED sign."
+	var/desc = null
+	var/pixel_x = 0
+	var/pixel_y = 0
+
+/datum/barsign/maltesefalcon
+	name = "Maltese Falcon"
+	icon = "maltesefalcon"
+	desc = "Play it again, sam."
 
 /obj/structure/sign/double/barsign/emp_act()
 	icon_state = "empbarsign"
