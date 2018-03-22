@@ -337,7 +337,7 @@ NINJAS_ALLOWED
 #DISABLE_ENTRY
 
 ## Uncomment to disable the OOC channel by default.
-DISABLE_OOC
+#DISABLE_OOC
 
 ## Uncomment to disable the dead OOC channel by default.
 #DISABLE_DEAD_OOC
