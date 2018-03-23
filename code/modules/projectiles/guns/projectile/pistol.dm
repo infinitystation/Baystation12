@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/colt
-	name = "Colt 'M1911' pistol"
+	name = "colt pistol"
 	desc = "A cheap Martian knock-off of a Colt M1911. Uses .45 rounds."
 	magazine_type = /obj/item/ammo_magazine/c45m
 	allowed_magazines = /obj/item/ammo_magazine/c45m
@@ -9,7 +9,7 @@
 	load_method = MAGAZINE
 
 /obj/item/weapon/gun/projectile/colt/officer
-	name = "WT45 'military' pistol"
+	name = "WT45 pistol"
 	desc = "The WT45 - a mass produced kinetic sidearm well-known in films and entertainment programming for being the daily carry choice issued to officers of the Sol Central Government Defense Forces. Uses .45 rounds."
 	icon_state = "usp"
 	accuracy = 0.35
@@ -42,7 +42,6 @@
 		icon_state = "secguncomp-e"
 
 /obj/item/weapon/gun/projectile/sec/flash
-	name = "Mk58 signal pistol"
 	magazine_type = /obj/item/ammo_magazine/c45m/flash
 
 /obj/item/weapon/gun/projectile/sec/lethal
@@ -50,7 +49,7 @@
 
 /obj/item/weapon/gun/projectile/sec/wood
 	desc = "The NT Mk58 is a cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. This one has a sweet wooden grip, among other modifications. Uses .45 rounds."
-	name = "custom .45 Pistol"
+	name = "Mk58 custom pistol"
 	icon_state = "secgundark"
 	accuracy = 0
 
@@ -115,7 +114,7 @@
 		icon_state = "gyropistol"
 
 /obj/item/weapon/gun/projectile/pistol
-	name = "P3 'Whisper' pistol"
+	name = "P3 pistol"
 	desc = "The Lumoco Arms P3 Whisper. A small, easily concealable gun. Uses 9mm rounds."
 	icon_state = "pistol"
 	item_state = null

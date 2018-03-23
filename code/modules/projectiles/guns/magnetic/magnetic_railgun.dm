@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/magnetic/railgun
-	name = "railgun"
+	name = "MI-76 railgun"
 	desc = "The Mars Military Industries MI-76 Thunderclap. A man-portable mass driver for squad support anti-armour and destruction of fortifications and emplacements."
 	gun_unreliable = 0
 	icon_state = "railgun"
@@ -86,7 +86,7 @@
 		to_chat(user, "<span class='notice'>Someone has scratched <i>Ultima Ratio Regum</i> onto the side of the barrel.</span>")
 
 /obj/item/weapon/gun/magnetic/railgun/flechette
-	name = "MI-12 'Skadi' flechette gun"
+	name = "MI-12 flechette gun"
 	desc = "The MI-12 Skadi is a burst fire capable railgun that fires flechette rounds at high velocity. Deadly against armour, but much less effective against soft targets."
 	icon_state = "flechette_gun"
 	item_state = "z8carbine"
