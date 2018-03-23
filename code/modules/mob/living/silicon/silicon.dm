@@ -1,7 +1,6 @@
 /mob/living/silicon
 	gender = NEUTER
 	voice_name = "synthesized voice"
-	can_have_vision_cone = 1
 	var/syndicate = 0
 	var/const/MAIN_CHANNEL = "Main Frequency"
 	var/lawchannel = MAIN_CHANNEL // Default channel on which to state laws
