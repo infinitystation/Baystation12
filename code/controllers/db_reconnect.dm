@@ -1,10 +1,10 @@
 var/datum/controller/db_reconnect/db_reconnect
 
 /datum/controller/db_reconnect
-	var/timerbuffer = 5 MINUTES //buffer for time check
+	var/timerbuffer = 0 //buffer for time check
 
 /datum/controller/db_reconnect/New()
-	timerbuffer = (5 MINUTES)
+	timerbuffer = 30 MINUTES
 	START_PROCESSING(SSprocessing, src)
 
 /datum/controller/db_reconnect/Destroy()
@@ -19,6 +19,6 @@ var/datum/controller/db_reconnect/db_reconnect
 			log_debug("Warning! Auto Database reconnection failed: " + dbcon.ErrorMsg())
 		else
 			log_debug("Auto Database reconnection has been successful")
-			timerbuffer += 5 MINUTES
+			timerbuffer += 20 MINUTES
 	else
 		timerbuffer -= 1 SECOND

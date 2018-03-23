@@ -325,8 +325,6 @@
 			return global.custom_items;
 		if("damage_icon_parts")
 			return global.damage_icon_parts;
-		if("db_reconnect")
-			return global.db_reconnect;
 		if("dbcon")
 			return global.dbcon;
 		if("dbcon_old")
@@ -1388,8 +1386,6 @@
 			global.custom_items=newval;
 		if("damage_icon_parts")
 			global.damage_icon_parts=newval;
-		if("db_reconnect")
-			global.db_reconnect=newval;
 		if("dbcon")
 			global.dbcon=newval;
 		if("dbcon_old")
@@ -2288,7 +2284,6 @@
 	"custom_event_msg",
 	"custom_items",
 	"damage_icon_parts",
-	"db_reconnect",
 	"dbcon",
 	"dbcon_old",
 	"deathsquad",
