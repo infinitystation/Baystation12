@@ -88,11 +88,11 @@
 /obj/effect/landmark/overmap_target/torch/third
 	name = "second deck"
 
-obj/effect/landmark/overmap_target/torch/third/supermatter
+/obj/effect/landmark/overmap_target/torch/third/supermatter
 	name = "supermatter reactor"
 	difficulty = 80
 
-obj/effect/landmark/overmap_target/torch/third/fussion
+/obj/effect/landmark/overmap_target/torch/third/fussion
 	name = "fussion reactor"
 	difficulty = 80
 
