@@ -10,9 +10,6 @@
 		/area/turbolift/sentinel_second
 		)
 
-
-
-
 /area/turbolift/startsent
 	name = "\improper Turbolift Start"
 
@@ -23,9 +20,6 @@
 /area/turbolift/seconddecksenst
 	name = "\improper second deck"
 	base_turf = /turf/simulated/floor
-
-
-
 
 /area/turbolift/sentinel_second
 	name = "lift (upper deck)"
