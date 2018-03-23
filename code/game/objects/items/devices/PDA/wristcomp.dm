@@ -26,8 +26,7 @@
 		if (!usr.unEquip(src)) return
 		usr.put_in_hands(src)
 		src.add_fingerprint(usr)
-		return
-	return ..()
+	return
 
 /obj/item/device/pda/wrist/medical
 	default_cartridge = /obj/item/weapon/cartridge/medical
