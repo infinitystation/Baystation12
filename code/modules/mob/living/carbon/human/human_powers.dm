@@ -196,6 +196,17 @@
 		to_chat(src, "<span class='alium'>You channel a message: \"[msg]\" to [M]</span>")
 	return
 
+/mob/living/carbon/human/proc/darksight()
+	set name = "Night Vision"
+	set desc = "Turning on your natural ability."
+	set category = "Abilities"
+
+	var/obj/item/organ/internal/eyes/E = internal_organs_by_name[BP_EYES]
+	if(E.night_vision == 0)
+		E.night_vision = 1
+	else
+		E.night_vision = 0
+
 /***********
  diona verbs
 ***********/
