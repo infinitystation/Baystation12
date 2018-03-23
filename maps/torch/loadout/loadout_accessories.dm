@@ -173,3 +173,8 @@
 /datum/gear/clothing/tangzhuang
 
 /datum/gear/accessory/bowtie
+
+/datum/gear/accessory/ftupin
+	allowed_roles = list(/datum/job/scientist, /datum/job/mining, /datum/job/guard, /datum/job/scientist_assistant,
+						/datum/job/scientist_assistant, /datum/job/engineer_contractor, /datum/job/roboticist, /datum/job/doctor_contractor,
+						/datum/job/psychiatrist, /datum/job/cargo_contractor, /datum/job/bartender, /datum/job/merchant, /datum/job/assistant)

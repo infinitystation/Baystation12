@@ -41,14 +41,13 @@
 
 	default_law_type = /datum/ai_laws/solgov
 	use_overmap = 1
+	num_exoplanets = 1
 	planet_size = list(129,129)
 
 	away_site_budget = 3
 
 	id_hud_icons = 'maps/torch/icons/assignment_hud.dmi'
 	lobby_screens = list("title","title2")
-
-	num_exoplanets = 1
 
 /datum/map/torch/setup_map()
 	..()
@@ -83,3 +82,15 @@
 
 	post_comm_message("SEV Torch Sensor Readings", welcome_text)
 	minor_announcement.Announce(message = "New [GLOB.using_map.company_name] Update available at all communication consoles.")
+
+/turf/simulated/wall //landlubbers go home
+	name = "bulkhead"
+
+/turf/simulated/floor
+	name = "bare deck"
+
+/turf/simulated/floor/tiled
+	name = "deck"
+
+/decl/flooring/tiling
+	name = "deck"

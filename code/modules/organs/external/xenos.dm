@@ -67,6 +67,7 @@
 
 /obj/item/organ/internal/eyes/xenos
 	night_vision = 1
+	phoron_guard = 1
 
 /obj/item/organ/internal/eyes/xenos/update_colour()
 	if(!owner)

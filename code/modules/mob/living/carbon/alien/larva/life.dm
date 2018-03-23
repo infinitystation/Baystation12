@@ -1,4 +1,4 @@
-#define MIN_LARVA_BLOOD_DRINK 0.5
+#define MIN_LARVA_BLOOD_DRINK 0.8
 
 //Larvae regenerate health and nutrition from plasma and alien weeds.
 /mob/living/carbon/alien/larva/handle_environment(var/datum/gas_mixture/environment)
@@ -24,7 +24,7 @@
 	var/mob/living/carbon/human/M = loc.loc //ergh, replace with a flag sometime
 	if(!istype(M))
 		return
-	if(M.vessel.total_volume > 0)
+	if(M.vessel.total_volume > 250)
 		M.vessel.trans_to(src,min(M.vessel.total_volume,MIN_LARVA_BLOOD_DRINK))
 		update_progression()
 	else
