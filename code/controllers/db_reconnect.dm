@@ -16,9 +16,9 @@ var/datum/controller/db_reconnect/db_reconnect
 		failed_db_connections = 0
 
 		if(!establish_db_connection())
-			message_admins("Warning! Auto Database reconnection failed: " + dbcon.ErrorMsg())
+			log_debug("Warning! Auto Database reconnection failed: " + dbcon.ErrorMsg())
 		else
-			message_admins("Auto Database reconnection has been successful")
+			log_debug("Auto Database reconnection has been successful")
 			timerbuffer += 5 MINUTES
 	else
 		timerbuffer -= 1 SECOND

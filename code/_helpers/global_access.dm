@@ -63,6 +63,8 @@
 			return global.SSprocessing;
 		if("SSskybox")
 			return global.SSskybox;
+		if("SSstickyban")
+			return global.SSstickyban;
 		if("SSsun")
 			return global.SSsun;
 		if("SStimer")
@@ -823,6 +825,8 @@
 			return global.runtime_diary;
 		if("same_wires")
 			return global.same_wires;
+		if("scrap_recipes")
+			return global.scrap_recipes;
 		if("secondary_mode")
 			return global.secondary_mode;
 		if("secret_force_mode")
@@ -1122,6 +1126,8 @@
 			global.SSprocessing=newval;
 		if("SSskybox")
 			global.SSskybox=newval;
+		if("SSstickyban")
+			global.SSstickyban=newval;
 		if("SSsun")
 			global.SSsun=newval;
 		if("SStimer")
@@ -1882,6 +1888,8 @@
 			global.runtime_diary=newval;
 		if("same_wires")
 			global.same_wires=newval;
+		if("scrap_recipes")
+			global.scrap_recipes=newval;
 		if("secondary_mode")
 			global.secondary_mode=newval;
 		if("secret_force_mode")
@@ -2149,6 +2157,7 @@
 	"SSopen_space",
 	"SSprocessing",
 	"SSskybox",
+	"SSstickyban",
 	"SSsun",
 	"SStimer",
 	"SSvines",
@@ -2529,6 +2538,7 @@
 	"rune_list",
 	"runtime_diary",
 	"same_wires",
+	"scrap_recipes",
 	"secondary_mode",
 	"secret_force_mode",
 	"send_emergency_team",
