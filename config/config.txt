@@ -76,7 +76,7 @@ LOG_HREFS
 LOG_PERMISSIONS
 
 ## sql switching
-SQL_ENABLED
+SQL_ENABLED 1
 
 ## disconnect players who did nothing during the set amount of minutes
 # KICK_INACTIVE 10
@@ -152,7 +152,7 @@ ALLOW_METADATA
 VOTE_DELAY 6000
 
 ## time period (deciseconds) which voting session will last (default 1 minute)
-VOTE_PERIOD 600
+VOTE_PERIOD 1000
 
 ## autovote initial delay (deciseconds) before first automatic transfer vote call (default 180 minutes)
 VOTE_AUTOTRANSFER_INITIAL 108000
@@ -215,7 +215,7 @@ WIKIURL https://wiki.infinity-ss13.ru/
 GITHUBURL https://github.com/infinitystation/Baystation12
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-BANAPPEALS https://infinity-ss13.ru/index.php?/forum/5-пїЅпїЅпїЅ/
+BANAPPEALS https://infinity-ss13.ru/index.php?/forum/5-суд/
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard
