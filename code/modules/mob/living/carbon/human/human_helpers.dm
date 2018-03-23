@@ -180,7 +180,7 @@
 		ping_image.pixel_x = (T.x - src.x) * WORLD_ICON_SIZE
 		ping_image.pixel_y = (T.y - src.y) * WORLD_ICON_SIZE
 		show_image(src, ping_image)
-		addtimer(CALLBACK(src, .proc/clear_noise_effect, src.client, ping_image), 8)
+		addtimer(CALLBACK(src, .proc/clear_sonar_effect, src.client, ping_image), 8)
 		var/feedback = list("<span class='notice'>There are noises of movement ")
 		var/direction = get_dir(src, L)
 		if(direction)
@@ -202,6 +202,11 @@
 		to_chat(src, jointext(feedback,null))
 	if(!heard_something)
 		to_chat(src, "<span class='notice'>You hear no movement but your own.</span>")
+
+/mob/living/carbon/human/proc/clear_sonar_effect(var/client/C, var/image/I)
+	if(C && I)
+		C.images -= I
+	qdel(I)
 
 /mob/living/carbon/human/reset_layer()
 	if(hiding)

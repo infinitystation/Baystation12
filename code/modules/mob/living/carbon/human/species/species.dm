@@ -86,7 +86,7 @@
 	var/flash_mod =      1                    // Stun from blindness modifier.
 	var/metabolism_mod = 1                    // Reagent metabolism modifier
 	var/vision_flags = SEE_SELF               // Same flags as glasses.
-	var/have_fov = TRUE
+	var/have_vision_cone = TRUE
 
 
 	// Death vars.
@@ -192,8 +192,6 @@
 
 	var/list/genders = list(MALE, FEMALE)
 	var/ambiguous_genders = FALSE // If true, people examining a member of this species whom are not also the same species will see them as gender neutral.  Because aliens.
-
-	var/have_vision_cone = TRUE
 
 	// Bump vars
 	var/bump_flag = HUMAN	// What are we considered to be when bumped?
@@ -345,7 +343,6 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	H.mob_swap_flags = swap_flags
 	H.mob_push_flags = push_flags
 	H.pass_flags = pass_flags
-	H.can_have_vision_cone = have_fov
 
 /datum/species/proc/handle_pre_spawn(var/mob/living/carbon/human/H)
 	return

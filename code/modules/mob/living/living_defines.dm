@@ -24,6 +24,8 @@
 	var/t_sl_gas = null
 	var/t_n2 = null
 
+	var/list/hidden_atoms = list()
+	var/list/hidden_mobs = list()
 	var/list/in_vision_cones = list()
 	var/obj/screen/vision_cone_overlay = null // The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
 	var/vision_cone

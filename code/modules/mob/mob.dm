@@ -1124,7 +1124,7 @@
 	else
 		to_chat(usr, "You must be observing or in the lobby to join the antag pool.")
 /mob/proc/is_invisible_to(var/mob/viewer)
-	return (!alpha || !mouse_opacity || viewer.see_invisible < invisibility || src in (viewer.client.hidden_mobs || viewer.client.hidden_atoms))
+	return (!alpha || !mouse_opacity || viewer.see_invisible < invisibility)
 
 /client/proc/check_has_body_select()
 	return mob && mob.hud_used && istype(mob.zone_sel, /obj/screen/zone_sel)

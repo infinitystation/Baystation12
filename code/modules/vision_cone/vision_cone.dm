@@ -7,12 +7,7 @@
 // http://www.byond.com/forum/?post=195138
 ///////////////////////////////////////
 
-//Defines.
 #define OPPOSITE_DIR(D) turn(D, 180)
-
-/client/
-	var/list/hidden_atoms = list()
-	var/list/hidden_mobs = list()
 
 /proc/cone(atom/center = usr, dir = NORTH, list/list = oview(center))
 	for(var/atom/O in list) if(!O.InCone(center, dir)) list -= O
@@ -48,50 +43,58 @@
 	return
 
 /mob/living/update_vision_cone()
-	if(!can_have_vision_cone)
-		if(vision_cone)
-			hide_cone()
+	if(!src.client)
 		return
 
-	var/delay = 10
-	if(src.client)
-		var/image/I = null
-		for(I in src.client.hidden_atoms)
-			I.override = 0
-			addtimer(CALLBACK(src, .proc/clear_cone_effect, I), delay)
-			delay += 10
+	if(!src.vision_cone_overlay)
+		return
 
-		check_fov()
-		src.client.hidden_atoms = list()
-		src.client.hidden_mobs = list()
-		src.vision_cone_overlay.dir = src.dir
-		if(vision_cone_overlay.alpha != 0)
-			var/mob/living/M
-			for(M in cone(src, OPPOSITE_DIR(src.dir), view(10, src)))
-				I = image("split", M)
-				I.override = 1
-				src.client.images += I
-				src.client.hidden_atoms += I
-				src.client.hidden_mobs += M
-				if(src.pulling == M)//If we're pulling them we don't want them to be invisible, too hard to play like that.
+	var/image/I
+	var/mob/living/M
+
+	for(I in src.hidden_atoms)
+		I.override = 0
+		addtimer(CALLBACK(src, .proc/clear_vision_effect, src.client, I), 10)
+
+	src.hidden_atoms.Cut()
+	src.hidden_mobs.Cut()
+
+	check_fov()
+
+	if(!vision_cone || vision_cone_overlay.alpha != 255)
+		return
+
+	src.vision_cone_overlay.dir = src.dir
+
+	for(M in cone(src, OPPOSITE_DIR(src.dir), view(world.view, src)))
+		I = image("split", M)
+		I.override = 1
+		src.client.images += I
+		src.hidden_atoms += I
+		src.hidden_mobs += M
+		if(src.pulling)//If we're pulling them we don't want them to be invisible, too hard to play like that.
+			if(src.pulling == M)
+				I.override = 0
+
+			if(istype(src.pulling, /obj/structure/bed))
+				var/obj/structure/bed/B = src.pulling
+				for(M in B.buckled_mob)
 					I.override = 0
 
-			//	else if(M.footstep >= 1)
-				M.in_vision_cones[src.client] = 1
+		M.in_vision_cones[src] = 1
 
-		//Optional items can be made invisible too. Uncomment this part if you wish to items to be invisible.
-		//	var/obj/item/O
-		//	for(O in cone(src, OPPOSITE_DIR(src.dir), oview(src)))
-		//		I = image("split", O)
-		//		I.override = 1
-		//		src.client.images += I
-		//		src.client.hidden_atoms += I
-	else
-		return
+	//ToDo: Rework
+	//	var/obj/item/O
+	//	for(O in cone(src, OPPOSITE_DIR(src.dir), oview(src)))
+	//		I = image("split", O)
+	//		I.override = 1
+	//		src.client.images += I
+	//		src.hidden_atoms += I
 
-/mob/living/proc/clear_cone_effect(var/image/I)
-	if(I)
-		qdel(I)
+/mob/living/proc/clear_vision_effect(var/client/C, var/image/I)
+	if(C && I)
+		C.images -= I
+	qdel(I)
 
 /mob/living/proc/SetFov(var/n)
 	if(!can_have_vision_cone)
@@ -104,17 +107,9 @@
 
 /mob/living/proc/check_fov()
 	if(!can_have_vision_cone)
+		if(vision_cone_overlay)
+			hide_cone()
 		return
-
-	if(isnull(vision_cone_overlay))
-		src.vision_cone_overlay = new /obj/screen()
-		src.vision_cone_overlay.icon = 'icons/mob/hide.dmi'
-		src.vision_cone_overlay.icon_state = "combat"
-		src.vision_cone_overlay.name = ""
-		src.vision_cone_overlay.screen_loc = "1,1"
-		src.vision_cone_overlay.mouse_opacity = 0
-		src.vision_cone_overlay.layer = UNDER_HUD_LAYER
-		src.client.screen |= src.vision_cone_overlay
 
 	if(resting || lying || client.eye != client.mob)
 		src.vision_cone_overlay.alpha = 0
@@ -139,21 +134,29 @@
 		src.vision_cone_overlay.alpha = 0
 		src.vision_cone = 0
 
-/mob/living/set_dir()
-	..()
-	update_vision_cone()
+/mob/living/Initialize()
+	. = ..()
+	if(can_have_vision_cone)
+		vision_cone = 1
+		GLOB.dir_set_event.register(src, src, /mob/proc/update_vision_cone)
+		GLOB.moved_event.register(src, src, /mob/proc/update_vision_cone)
 
-/mob/living/Move(NewLoc, direct)
-	for(var/client/C in in_vision_cones)
-		if(src in C.hidden_mobs)
-			var/image/noise = image(icon = 'icons/effects/noise.dmi', icon_state = "noise", loc = src, layer = 18)
-			noise.alpha = 200
-			show_image(C, noise)
-			addtimer(CALLBACK(src, .proc/clear_noise_effect, C, noise), 7)
-		else
-			in_vision_cones.Remove(C)
+/mob/living/Destroy()
+	if(vision_cone)
+		GLOB.dir_set_event.unregister(src, src, /mob/proc/update_vision_cone)
+		GLOB.moved_event.unregister(src, src, /mob/proc/update_vision_cone)
 	. = ..()
 
-/mob/living/proc/clear_noise_effect(var/client/C, var/image/I)
-	if(C && I)
-		C.images -= I
+/mob/living/Move(NewLoc, direct)
+	for(var/mob/living/L in in_vision_cones)
+		if(src in L.hidden_mobs)
+			var/image/noise = image(icon = 'icons/effects/noise.dmi', icon_state = "noise", loc = get_turf(src), layer = 18)
+			noise.alpha = 200
+			show_image(L, noise)
+			addtimer(CALLBACK(src, .proc/clear_vision_effect, L.client, noise), 6)
+		else
+			in_vision_cones.Remove(L)
+	. = ..()
+
+/mob/living/is_invisible_to(var/mob/viewer)
+	return (!alpha || !mouse_opacity || viewer.see_invisible < invisibility || src in (viewer.hidden_mobs || viewer.hidden_atoms))
