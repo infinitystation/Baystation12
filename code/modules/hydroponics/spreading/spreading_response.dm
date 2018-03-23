@@ -99,6 +99,8 @@
 				if(prob(90))
 					src.visible_message("<span class='danger'>Tendrils lash to drag \the [victim] but \the [src] can't pull them across the ground!</span>")
 					can_grab = 0
+		if(istype(victim, /mob/living/carbon/alien/larva))
+			can_grab = FALSE
 		if(can_grab)
 			victim.visible_message("<span class='danger'>Tendrils lash out from \the [src] and drag \the [victim] in!</span>", "<span class='danger'>Tendrils lash out from \the [src] and drag you in!</span>")
 			victim.forceMove(src.loc)
