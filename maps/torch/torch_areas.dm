@@ -6,10 +6,18 @@
 	post_round_safe_areas = list (
 		/area/centcom,
 		/area/shuttle/escape/centcom,
-		/area/shuttle/escape_pod1/centcom,
-		/area/shuttle/escape_pod2/centcom,
-		/area/shuttle/escape_pod3/centcom,
-		/area/shuttle/escape_pod5/centcom,
+		/area/shuttle/escape_pod6/station,
+		/area/shuttle/escape_pod7/station,
+		/area/shuttle/escape_pod8/station,
+		/area/shuttle/escape_pod9/station,
+		/area/shuttle/escape_pod10/station,
+		/area/shuttle/escape_pod11/station,
+		/area/shuttle/escape_pod12/station,
+		/area/shuttle/escape_pod13/station,
+		/area/shuttle/escape_pod14/station,
+		/area/shuttle/escape_pod15/station,
+		/area/shuttle/escape_pod16/station,
+		/area/shuttle/escape_pod17/station,
 		/area/shuttle/transport1/centcom,
 		/area/shuttle/administration/centcom,
 		/area/shuttle/specops/centcom,
@@ -1284,7 +1292,7 @@
 /area/shuttle/administration/centcom
 	name = "\improper Administration Shuttle"
 	icon_state = "shuttlered"
-
+/*
 /area/shuttle/escape_pod1/centcom
 	icon_state = "shuttle"
 
@@ -1296,6 +1304,7 @@
 
 /area/shuttle/escape_pod5/centcom
 	icon_state = "shuttle"
+*/
 
 /area/supply/dock
 	name = "Supply Shuttle"
