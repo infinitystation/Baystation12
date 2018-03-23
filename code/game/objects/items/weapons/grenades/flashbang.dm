@@ -28,7 +28,7 @@
 
 /obj/item/weapon/grenade/flashbang/proc/bang(var/turf/T , var/mob/living/carbon/M)					// Added a new proc called 'bang' that takes a location and a person to be banged.
 	to_chat(M, "<span class='danger'>BANG</span>")// Called during the loop that bangs people in lockers/containers and when banging
-	playsound(src.loc, 'sound/effects/bang.ogg', 50, 1, 30)		// people in normal view.  Could theroetically be called during other explosions.
+	playsound(src.loc, 'sound/weapons/flashbang.ogg', 100)		// people in normal view.  Could theroetically be called during other explosions.
 																// -- Polymorph
 
 //Checking for protections
@@ -43,6 +43,9 @@
 				ear_safety += 1
 			if(istype(M:head, /obj/item/clothing/head/helmet))
 				ear_safety += 1
+	for(var/obj/mecha/mecha in M.loc)
+		if(M in mecha.contents)
+			ear_safety += 1
 
 //Flashing everyone
 	if(eye_safety < FLASH_PROTECTION_MODERATE)
@@ -51,6 +54,9 @@
 		M.Weaken(10)
 
 //Now applying sound
+	if(!ear_safety)
+		sound_to(M, 'sound/weapons/flash_ring.ogg')
+
 	if((get_dist(M, T) <= 2 || src.loc == M.loc || src.loc == M))
 		if(ear_safety > 0)
 			M.Stun(2)
