@@ -759,7 +759,6 @@
 		regenerate_icons()
 	else if( lying != lying_prev )
 		update_icons()
-	update_vision_cone()
 
 	return canmove
 

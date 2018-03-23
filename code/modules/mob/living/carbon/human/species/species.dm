@@ -86,7 +86,6 @@
 	var/flash_mod =      1                    // Stun from blindness modifier.
 	var/metabolism_mod = 1                    // Reagent metabolism modifier
 	var/vision_flags = SEE_SELF               // Same flags as glasses.
-	var/have_vision_cone = TRUE
 
 
 	// Death vars.
