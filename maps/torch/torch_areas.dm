@@ -640,6 +640,7 @@
 /area/vacant
 	name = "\improper Vacant Area"
 	icon_state = "construction"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/vacant/armory
 	name = "\improper Marine Armory"
@@ -664,6 +665,7 @@
 /area/vacant/prototype/control
 	name = "\improper Prototype Fusion Reactor Control Room"
 	icon_state = "engine_monitoring"
+	area_flags = null
 
 /area/vacant/prototype/engine
 	name = "\improper Prototype Fusion Reactor Chamber"
