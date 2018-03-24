@@ -586,7 +586,7 @@
 /obj/structure/sink{
 	pixel_y = 30
 	},
-/obj/structure/mirror{
+/obj/item/weapon/storage/mirror{
 	dir = 4;
 	pixel_x = -32;
 	pixel_y = 0
@@ -8107,7 +8107,7 @@
 	pixel_x = -12;
 	pixel_y = 2
 	},
-/obj/structure/mirror{
+/obj/item/weapon/storage/mirror{
 	dir = 4;
 	pixel_x = -32;
 	pixel_y = 0
@@ -11418,7 +11418,7 @@
 	pixel_x = 11;
 	pixel_y = 0
 	},
-/obj/structure/mirror{
+/obj/item/weapon/storage/mirror{
 	pixel_x = 30;
 	pixel_y = 0
 	},
