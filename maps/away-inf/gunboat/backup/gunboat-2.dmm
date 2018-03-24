@@ -104,7 +104,7 @@
 "bZ" = (/obj/structure/table/standard,/obj/effect/floor_decal/corner/red{dir = 10},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
 "ca" = (/obj/effect/wingrille_spawn/reinforced,/obj/machinery/door/firedoor,/obj/structure/cable,/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
 "cb" = (/obj/effect/floor_decal/corner/red{dir = 1},/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 1},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
-"cc" = (/obj/effect/floor_decal/corner/red{dir = 4},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/structure/sink{dir = 4; icon_state = "sink"; pixel_x = 11; pixel_y = 4},/obj/structure/mirror{pixel_x = 28},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
+"cc" = (/obj/effect/floor_decal/corner/red{dir = 4},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/structure/sink{dir = 4; icon_state = "sink"; pixel_x = 11; pixel_y = 4},/obj/item/weapon/storage/mirror{pixel_x = 28},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/tiled,/area/ship/gunboat/command/brig)
 "cd" = (/obj/structure/table/standard,/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled,/area/ship/gunboat/hallway)
 "ce" = (/obj/structure/sign/warning/pods{pixel_y = -32},/turf/simulated/floor/tiled,/area/ship/gunboat/hallway)
 "cf" = (/obj/structure/closet/firecloset/full,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled,/area/ship/gunboat/hallway)

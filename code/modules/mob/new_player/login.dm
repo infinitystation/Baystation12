@@ -36,12 +36,12 @@
 	set_sight(sight|SEE_TURFS)
 	GLOB.player_list |= src
 
-	if(!client.banprisoned)
-		new_player_panel()
-	else
-		new_player_panel_prisoner()
-
 	if(client)
+		if(client.banprisoned)
+			new_player_panel_prisoner()
+		else
+			new_player_panel()
+
 		//handle_privacy_poll()
 		client.playtitlemusic()
 		maybe_send_staffwarns("connected as new player")

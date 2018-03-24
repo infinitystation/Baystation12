@@ -25,10 +25,11 @@
 
 /mob/new_player/verb/new_player_panel()
 	set src = usr
-	if(!client.banprisoned)
-		new_player_panel_proc()
-	else
-		new_player_panel_prisoner()
+	if(client)
+		if(client.banprisoned)
+			new_player_panel_prisoner()
+		else
+			new_player_panel_proc()
 
 /mob/new_player/proc/new_player_panel_proc()
 	var/output = "<div align='center'>"
@@ -106,7 +107,7 @@
 		return 1
 
 	if(href_list["ready"])
-		if(client.banprisoned)
+		if(client && client.banprisoned)
 			return
 		if(!ticker || ticker.current_state <= GAME_STATE_PREGAME) // Make sure we don't ready up after the round has started
 			ready = text2num(href_list["ready"])
@@ -115,13 +116,14 @@
 
 	if(href_list["refresh"])
 		panel.close()
-		if(!client.banprisoned)
-			new_player_panel_proc()
-		else
-			new_player_panel_prisoner()
+		if(client)
+			if(client.banprisoned)
+				new_player_panel_prisoner()
+			else
+				new_player_panel_proc()
 
 	if(href_list["observe"])
-		if(client.banprisoned)
+		if(client && client.banprisoned)
 			return
 
 		if(!(initialization_stage & INITIALIZATION_COMPLETE))
@@ -174,7 +176,7 @@
 		Spawn_Prisoner()
 
 	if(href_list["late_join"])
-		if(client.banprisoned)
+		if(client && client.banprisoned)
 			return
 
 		if(!ticker || ticker.current_state != GAME_STATE_PLAYING)
@@ -183,12 +185,12 @@
 		LateChoices() //show the latejoin job selection menu
 
 	if(href_list["manifest"])
-		if(client.banprisoned)
+		if(client && client.banprisoned)
 			return
 		ViewManifest()
 
 	if(href_list["SelectedJob"])
-		if(client.banprisoned)
+		if(client && client.banprisoned)
 			return
 		var/datum/job/job = job_master.GetJob(href_list["SelectedJob"])
 
@@ -211,7 +213,7 @@
 		return
 
 	if(href_list["privacy_poll"])
-		if(client.banprisoned)
+		if(client && client.banprisoned)
 			return
 		establish_db_connection()
 		if(!dbcon.IsConnected())
@@ -254,10 +256,11 @@
 		if(client)
 			client.prefs.process_link(src, href_list)
 	else if(!href_list["late_join"])
-		if(client && client.banprisoned)
-			new_player_panel_prisoner()
-		else
-			new_player_panel()
+		if(client)
+			if(client.banprisoned)
+				new_player_panel_prisoner()
+			else
+				new_player_panel()
 
 	if(href_list["showpoll"])
 

@@ -397,7 +397,7 @@
 "hG" = (/obj/machinery/door/airlock/maintenance{req_access = list(12)},/obj/machinery/door/firedoor/border_only,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/plating,/area/maintenance/sub/aft)
 "hH" = (/obj/structure/sink{dir = 8; pixel_x = -12},/turf/simulated/floor/plating,/area/maintenance/sub/starboard)
 "hI" = (/obj/structure/door_assembly,/turf/simulated/floor/plating,/area/maintenance/sub/starboard)
-"hJ" = (/obj/structure/mirror{dir = 4; pixel_x = -28; pixel_y = 0},/turf/simulated/floor/plating,/area/maintenance/sub/starboard)
+"hJ" = (/obj/item/weapon/storage/mirror{dir = 4; pixel_x = -28; pixel_y = 0},/turf/simulated/floor/plating,/area/maintenance/sub/starboard)
 "hK" = (/obj/machinery/light/small{dir = 8},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/plating,/area/maintenance/sub/aft)
 "hL" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"; pixel_y = 0},/turf/simulated/floor/plating,/area/maintenance/sub/starboard)
 "hM" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/plating,/area/maintenance/sub/starboard)
