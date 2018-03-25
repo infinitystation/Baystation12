@@ -155,7 +155,7 @@ VOTE_DELAY 6000
 VOTE_PERIOD 1000
 
 ## autovote initial delay (deciseconds) before first automatic transfer vote call (default 180 minutes)
-VOTE_AUTOTRANSFER_INITIAL 108000
+VOTE_AUTOTRANSFER_INITIAL 66600
 
 ##autovote delay (deciseconds) before sequential automatic transfer votes are called (default 60 minutes)
 VOTE_AUTOTRANSFER_INTERVAL 36000
