@@ -21,15 +21,15 @@
 	display_name = "armor pouches"
 	path = /obj/item/clothing/accessory/storage/pouches
 	cost = 2
-
+	
 /datum/gear/tactical/armor_pouches/New()
 	..()
 	var/pouches = list()
-	pouches["black armor pouch"] = /obj/item/clothing/accessory/storage/pouches
-	pouches["green armor pouch"] = /obj/item/clothing/accessory/storage/pouches/green
-	pouches["navy armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/navy
-	pouches["blue armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/blue
-	pouches["tan armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/tan
+	pouches["black armor pouches"] = /obj/item/clothing/accessory/storage/pouches
+	pouches["blue armor pouches"] = /obj/item/clothing/accessory/storage/pouches/blue
+	pouches["navy blue armor pouches"] = /obj/item/clothing/accessory/storage/pouches/navy
+	pouches["green armor pouches"] = /obj/item/clothing/accessory/storage/pouches/green
+	pouches["tan armor pouches"] = /obj/item/clothing/accessory/storage/pouches/tan
 	gear_tweaks += new/datum/gear_tweak/path(pouches)
 
 /datum/gear/tactical/large_pouches
@@ -39,13 +39,14 @@
 
 /datum/gear/tactical/large_pouches/New()
 	..()
-	var/lpouches = list()
-	lpouches["black large armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/large
-	lpouches["green large armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/large/green
-	lpouches["navy large armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/large/navy
-	lpouches["blue large armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/large/blue
-	lpouches["tan large armor pouch"]	 = /obj/item/clothing/accessory/storage/pouches/large/tan
-	gear_tweaks += new/datum/gear_tweak/path(lpouches)
+	var/bigpouches = list()
+	bigpouches["large black armor pouches"] = /obj/item/clothing/accessory/storage/pouches/large
+	bigpouches["large blue armor pouches"] = /obj/item/clothing/accessory/storage/pouches/large/blue
+	bigpouches["large navy blue armor pouches"] = /obj/item/clothing/accessory/storage/pouches/large/navy
+	bigpouches["large green armor pouches"] = /obj/item/clothing/accessory/storage/pouches/large/green
+	bigpouches["large tan armor pouches"] = /obj/item/clothing/accessory/storage/pouches/large/tan
+	gear_tweaks += new/datum/gear_tweak/path(bigpouches)
+
 
 /datum/gear/tactical/armor_deco
 	display_name = "armor customization"

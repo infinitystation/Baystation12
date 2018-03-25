@@ -1650,7 +1650,7 @@
 "aFL" = (/obj/structure/kitchenspike,/obj/effect/floor_decal/corner/grey/diagonal,/turf/simulated/floor/tiled/white,/area/admin_prison)
 "aFM" = (/obj/effect/floor_decal/corner/grey/diagonal,/obj/structure/reagent_dispensers/beerkeg,/turf/simulated/floor/tiled/white,/area/admin_prison)
 "aFN" = (/obj/machinery/cooker/candy,/turf/unsimulated/floor{dir = 8; icon_state = "wood"},/area/admin_prison)
-"aFO" = (/obj/structure/table/woodentable,/obj/item/weapon/packageWrap,/obj/item/weapon/reagent_containers/food/drinks/shaker,/turf/unsimulated/floor{dir = 8; icon_state = "wood"},/area/admin_prison)
+"aFO" = (/obj/structure/table/woodentable,/obj/item/stack/package_wrap/twenty_five,/obj/item/weapon/reagent_containers/food/drinks/shaker,/turf/unsimulated/floor{dir = 8; icon_state = "wood"},/area/admin_prison)
 "aFP" = (/obj/structure/table/woodentable,/obj/item/weapon/book/manual/chef_recipes,/turf/unsimulated/floor{dir = 8; icon_state = "wood"},/area/admin_prison)
 "aFQ" = (/obj/machinery/vending/dinnerware,/turf/unsimulated/floor{dir = 8; icon_state = "wood"},/area/admin_prison)
 "aFR" = (/obj/effect/wingrille_spawn/reinforced/crescent,/turf/unsimulated/floor{icon_state = "dark"},/area/admin_prison)

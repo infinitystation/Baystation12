@@ -763,7 +763,7 @@
 "aoI" = (/obj/structure/kitchenspike,/obj/effect/floor_decal/corner/grey/diagonal,/turf/simulated/floor/tiled/white,/area/admin_prison)
 "aoJ" = (/obj/effect/floor_decal/corner/grey/diagonal,/obj/structure/reagent_dispensers/beerkeg,/turf/simulated/floor/tiled/white,/area/admin_prison)
 "aoK" = (/obj/machinery/cooker/candy,/turf/unsimulated/floor{dir = 8; icon_state = "wood"},/area/admin_prison)
-"aoL" = (/obj/structure/table/woodentable,/obj/item/weapon/packageWrap,/obj/item/weapon/reagent_containers/food/drinks/shaker,/turf/unsimulated/floor{dir = 8; icon_state = "wood"},/area/admin_prison)
+"aoL" = (/obj/structure/table/woodentable,/obj/item/stack/package_wrap/twenty_five,/obj/item/weapon/reagent_containers/food/drinks/shaker,/turf/unsimulated/floor{dir = 8; icon_state = "wood"},/area/admin_prison)
 "aoM" = (/obj/structure/table/woodentable,/obj/item/weapon/book/manual/chef_recipes,/turf/unsimulated/floor{dir = 8; icon_state = "wood"},/area/admin_prison)
 "aoN" = (/obj/machinery/vending/dinnerware,/turf/unsimulated/floor{dir = 8; icon_state = "wood"},/area/admin_prison)
 "aoO" = (/obj/effect/floor_decal/corner/green/three_quarters,/turf/simulated/floor/holofloor/tiled,/area/admin_prison)
