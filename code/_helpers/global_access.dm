@@ -991,8 +991,6 @@
 			return global.total_unit_tests;
 		if("traitors")
 			return global.traitors;
-		if("transaction_devices")
-			return global.transaction_devices;
 		if("transfer_controller")
 			return global.transfer_controller;
 		if("turbolift_controller")
@@ -2052,8 +2050,6 @@
 			global.total_unit_tests=newval;
 		if("traitors")
 			global.traitors=newval;
-		if("transaction_devices")
-			global.transaction_devices=newval;
 		if("transfer_controller")
 			global.transfer_controller=newval;
 		if("turbolift_controller")
@@ -2617,7 +2613,6 @@
 	"total_lighting_sources",
 	"total_unit_tests",
 	"traitors",
-	"transaction_devices",
 	"transfer_controller",
 	"turbolift_controller",
 	"turbolifts",
