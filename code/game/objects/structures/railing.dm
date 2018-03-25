@@ -160,6 +160,30 @@
 	update_icon()
 	return
 
+/obj/structure/railing/verb/flip() // This will help push railing to remote places, such as open space turfs
+	set name = "Flip Railing"
+	set category = "Object"
+	set src in oview(1)
+
+	if(usr.incapacitated())
+		return 0
+
+	if(!can_touch(usr) || ismouse(usr))
+		return
+
+	if(anchored)
+		to_chat(usr, "It is fastened to the floor therefore you can't flip it!")
+		return 0
+
+	if(!neighbor_turf_passable())
+		to_chat(usr, "You can't flip the [src] because something blocking it.")
+		return 0
+
+	src.loc = get_step(src, src.dir)
+	set_dir(turn(dir, 180))
+	update_icon()
+	return
+
 // So you can toss people or objects over
 /obj/structure/railing/CheckExit(atom/movable/O as mob|obj, target as turf)
 	if(istype(O) && O.checkpass(PASS_FLAG_TABLE))
