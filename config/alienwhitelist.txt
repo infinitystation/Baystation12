@@ -8,10 +8,10 @@ netreson - machine
 billluxe - machine
 rockyfail - machine
 nikita588 - machine
+skonoplich - machine
 wheatley2013 - machine
 redknighthero - machine
 kotovsyndrome - machine
-skonoplich - machine
 inubashirimomiji - skrell
 twinindifferent - skrell
 wheatley2013 - skrell
@@ -39,6 +39,8 @@ themaybat - resomi
 pixelduck - resomi
 netreson - resomi
 hodovoy - resomi
+wnfess - resomi
+yarida - resomi
 cre77 - resomi
 vankoska - diona
 maxi2000 - diona
