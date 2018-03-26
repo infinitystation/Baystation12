@@ -338,7 +338,7 @@
 "gz" = (/obj/machinery/light,/turf/simulated/floor/airless,/area/smugglers/base)
 "gA" = (/obj/structure/closet/crate/trashcart,/obj/item/weapon/mop,/obj/item/weapon/storage/box/lights/bulbs,/obj/machinery/atmospherics/unary/vent_pump{dir = 1; external_pressure_bound = 0; external_pressure_bound_default = 0; icon_state = "map_vent_in"; initialize_directions = 1; internal_pressure_bound = 4000; internal_pressure_bound_default = 4000; use_power = 1; pressure_checks = 2; pressure_checks_default = 2; pump_direction = 0},/turf/simulated/floor/tiled/airless,/area/smugglers/base)
 "gB" = (/obj/item/stack/material/steel,/turf/simulated/floor/tiled/airless,/area/smugglers/base)
-"gC" = (/obj/structure/sink{icon_state = "sink"; dir = 8; pixel_x = -12; pixel_y = 2},/obj/structure/mirror{pixel_x = -32},/obj/machinery/light/small,/turf/simulated/floor/tiled/airless{icon_state = "steel_broken0"},/area/lsb/supply)
+"gC" = (/obj/structure/sink{icon_state = "sink"; dir = 8; pixel_x = -12; pixel_y = 2},/obj/item/weapon/storage/mirror{pixel_x = -32},/obj/machinery/light/small,/turf/simulated/floor/tiled/airless{icon_state = "steel_broken0"},/area/lsb/supply)
 "gD" = (/obj/structure/toilet{dir = 1},/obj/machinery/light/small,/turf/simulated/floor/tiled/airless,/area/lsb/supply)
 "gE" = (/obj/machinery/shower{icon_state = "shower"; dir = 8},/obj/random/soap,/obj/machinery/light/small,/turf/simulated/floor/tiled/airless,/area/lsb/supply)
 "gF" = (/obj/effect/shuttle_landmark/nav_lost_supply_base/navantag,/turf/space,/area/space)

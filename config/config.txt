@@ -22,7 +22,7 @@ USE_AGE_RESTRICTION_FOR_JOBS
 USE_AGE_RESTRICTION_FOR_ANTAGS
 
 ## Unhash this to use recursive explosions, keep it hashed to use circle explosions. Recursive explosions react to walls, airlocks and blast doors, making them look a lot cooler than the boring old circular explosions. They require more CPU and are (as of january 2013) experimental
-#USE_RECURSIVE_EXPLOSIONS
+USE_RECURSIVE_EXPLOSIONS
 
 ## Radiation weakens with distance from the source; stop calculating when the strength falls below this value.   Lower values mean radiation reaches smaller (with increasingly trivial damage) at the cost of more CPU usage.  Max range =  DISTANCE^2 * POWER / RADIATION_LOWER_LIMIT
 # RADIATION_LOWER_LIMIT	0.35
@@ -76,7 +76,7 @@ LOG_HREFS
 LOG_PERMISSIONS
 
 ## sql switching
-SQL_ENABLED
+SQL_ENABLED 1
 
 ## disconnect players who did nothing during the set amount of minutes
 # KICK_INACTIVE 10
@@ -152,10 +152,10 @@ ALLOW_METADATA
 VOTE_DELAY 6000
 
 ## time period (deciseconds) which voting session will last (default 1 minute)
-VOTE_PERIOD 600
+VOTE_PERIOD 1000
 
 ## autovote initial delay (deciseconds) before first automatic transfer vote call (default 180 minutes)
-VOTE_AUTOTRANSFER_INITIAL 108000
+VOTE_AUTOTRANSFER_INITIAL 66600
 
 ##autovote delay (deciseconds) before sequential automatic transfer votes are called (default 60 minutes)
 VOTE_AUTOTRANSFER_INTERVAL 36000
@@ -215,7 +215,7 @@ WIKIURL https://wiki.infinity-ss13.ru/
 GITHUBURL https://github.com/infinitystation/Baystation12
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-BANAPPEALS https://infinity-ss13.ru/index.php?/forum/5-пїЅпїЅпїЅ/
+BANAPPEALS https://infinity-ss13.ru/index.php?/forum/5-суд/
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard

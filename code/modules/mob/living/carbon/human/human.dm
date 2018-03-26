@@ -5,7 +5,6 @@
 	icon = 'icons/mob/human.dmi'
 	icon_state = "body_m_s"
 	throw_range = 3 //NO TILSON
-	can_have_vision_cone = 0
 
 	var/list/hud_list[10]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
@@ -28,9 +27,6 @@
 		SetName(real_name)
 		if(mind)
 			mind.name = real_name
-
-		if(species.have_vision_cone)
-			can_have_vision_cone = 1
 
 	hud_list[HEALTH_HUD]      = new /image/hud_overlay('icons/mob/hud_med.dmi', src, "100")
 	hud_list[STATUS_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
@@ -690,7 +686,8 @@
 					var/turf/location = loc
 					if (istype(location, /turf/simulated))
 						location.add_vomit_floor(src, toxvomit)
-					ingested.remove_any(5)
+					if(ingested)
+						ingested.remove_any(5)
 					nutrition -= 30
 		sleep(350)	//wait 35 seconds before next volley
 		lastpuke = 0

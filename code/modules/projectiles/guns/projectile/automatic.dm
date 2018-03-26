@@ -20,7 +20,7 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/machine_pistol
-	name = "MP6 'Vesper' machine pistol"
+	name = "MP6 machine pistol"
 	desc = "The Lumoco Arms MP6 Vesper, A fairly common machine pistol. Sometimes refered to as an 'uzi' by the backwater spacers it is often associated with. Uses .45 rounds."
 	icon_state = "mpistolen"
 	item_state = "wt550"
@@ -107,7 +107,7 @@
 	..()
 
 /obj/item/weapon/gun/projectile/automatic/wt550
-	name = "WT-550 'Saber' submachine gun"
+	name = "WT-550 submachine gun"
 	desc = "The WT-550 Saber is a cheap self-defense weapon, mass-produced by Ward-Takahashi for paramilitary and private use. Uses 9mm rounds."
 	icon_state = "wt550"
 	item_state = "wt550"
@@ -140,7 +140,7 @@
 	magazine_type = /obj/item/ammo_magazine/mc9mmt
 
 /obj/item/weapon/gun/projectile/automatic/z8
-	name = "Z8 'Bulldog' carabine"
+	name = "Z8 carabine"
 	desc = "The Z8 Bulldog is an older model bullpup carbine, made by the now defunct Zendai Foundries. Uses armor piercing 7.62mm rounds. Makes you feel like a space marine when you hold it."
 	icon_state = "carbine"
 	item_state = "z8carbine"
@@ -210,7 +210,7 @@
 		to_chat(user, "\The [launcher] is empty.")
 
 /obj/item/weapon/gun/projectile/automatic/l6_saw
-	name = "L6 'SAW' machine gun"
+	name = "L6 machine gun"
 	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. Has 'Aussec Armoury- 2531' engraved on the reciever." //probably should refluff this
 	icon_state = "l6closed100"
 	item_state = "l6closedmag"
@@ -323,7 +323,7 @@
 
 
 /obj/item/weapon/gun/projectile/automatic/z9
-	name = "Z9 'Viper' carabine"
+	name = "Z9 carabine"
 	desc = "The assault carabine Z9 'Viper' made by Aussec Armory from blueprints of Z8 'Bulldog' manufactured the now defunct Zendai Foundries. Old design was swapped with more futuristic one. 'Viper' conting as one of newest weapon on market, so you cannot buy it easy. You don't know who may hold that gun, but they should be pretty rich... Like governments special forces or famouse PMC companies like SAARE."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "bullpup"

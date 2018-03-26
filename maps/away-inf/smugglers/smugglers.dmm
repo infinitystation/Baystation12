@@ -111,7 +111,7 @@
 "cg" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/computer/arcade,/turf/simulated/floor/tiled,/area/smugglers/dorms)
 "ch" = (/obj/structure/closet/crate/freezer/rations,/obj/effect/decal/cleanable/cobweb2,/obj/effect/decal/cleanable/dirt,/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_x = 0; pixel_y = 24; req_access = list(201)},/obj/structure/cable{d2 = 2; icon_state = "0-2"; pixel_y = 0},/turf/simulated/floor/tiled,/area/smugglers/dorms)
 "ci" = (/obj/machinery/shower{dir = 4; icon_state = "shower"; pixel_x = 0},/obj/structure/curtain/open/shower,/turf/simulated/floor,/area/smugglers/dorms)
-"cj" = (/obj/machinery/light/small{dir = 4},/obj/structure/sink{pixel_y = 15},/obj/structure/mirror{pixel_y = 30},/obj/random/trash,/turf/simulated/floor,/area/smugglers/dorms)
+"cj" = (/obj/machinery/light/small{dir = 4},/obj/structure/sink{pixel_y = 15},/obj/item/weapon/storage/mirror{pixel_y = 30},/obj/random/trash,/turf/simulated/floor,/area/smugglers/dorms)
 "ck" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/light/small{icon_state = "bulb1"; dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor,/area/smugglers/dorms)
 "cl" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/random/junk,/turf/simulated/floor,/area/smugglers/dorms)
 "cm" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/door/airlock/maintenance,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/smugglers/dorms)

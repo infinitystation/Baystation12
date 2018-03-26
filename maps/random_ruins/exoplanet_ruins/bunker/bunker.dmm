@@ -62,7 +62,7 @@
 "bj" = (/turf/simulated/floor/tiled,/area/space)
 "bk" = (/obj/machinery/atmospherics/pipe/simple/heat_exchanging{tag = "icon-intact (NORTH)"; icon_state = "intact"; dir = 1},/turf/simulated/wall/r_wall,/area/space)
 "bl" = (/obj/structure/sign/warning/docking_area{pixel_x = -32},/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/tiled/airless,/area/template_noop)
-"bm" = (/obj/structure/sink{dir = 8; icon_state = "sink"; pixel_x = -14; pixel_y = 4; tag = "icon-sink (WEST)"},/obj/structure/mirror{pixel_x = -26},/turf/simulated/floor/tiled/freezer,/area/space)
+"bm" = (/obj/structure/sink{dir = 8; icon_state = "sink"; pixel_x = -14; pixel_y = 4; tag = "icon-sink (WEST)"},/obj/item/weapon/storage/mirror{pixel_x = -26},/turf/simulated/floor/tiled/freezer,/area/space)
 "bn" = (/obj/machinery/light/small,/obj/machinery/power/apc{dir = 4; name = "east bump"; pixel_x = 24},/turf/simulated/floor/tiled/freezer,/area/space)
 "bo" = (/obj/machinery/light,/obj/effect/floor_decal/corner/grey_alt{tag = "icon-corner_white (NORTH)"; icon_state = "corner_white"; dir = 1},/turf/simulated/floor/tiled,/area/space)
 "bp" = (/obj/effect/floor_decal/corner/grey_alt{tag = "icon-corner_white (NORTH)"; icon_state = "corner_white"; dir = 1},/turf/simulated/floor/tiled,/area/space)

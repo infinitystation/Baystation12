@@ -6,10 +6,6 @@
 	post_round_safe_areas = list (
 		/area/centcom,
 		/area/shuttle/escape/centcom,
-		/area/shuttle/escape_pod1/centcom,
-		/area/shuttle/escape_pod2/centcom,
-		/area/shuttle/escape_pod3/centcom,
-		/area/shuttle/escape_pod5/centcom,
 		/area/shuttle/escape_pod6/station,
 		/area/shuttle/escape_pod7/station,
 		/area/shuttle/escape_pod8/station,
@@ -644,6 +640,7 @@
 /area/vacant
 	name = "\improper Vacant Area"
 	icon_state = "construction"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/vacant/armory
 	name = "\improper Marine Armory"
@@ -668,6 +665,7 @@
 /area/vacant/prototype/control
 	name = "\improper Prototype Fusion Reactor Control Room"
 	icon_state = "engine_monitoring"
+	area_flags = null
 
 /area/vacant/prototype/engine
 	name = "\improper Prototype Fusion Reactor Chamber"
@@ -1012,6 +1010,10 @@
 	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
 
+/area/bridge/disciplinary_board_room
+	name = "\improper Disciplinary Board Room"
+	sound_env = SMALL_ENCLOSED
+
 /area/crew_quarters/heads
 	icon_state = "head_quarters"
 
@@ -1292,7 +1294,7 @@
 /area/shuttle/administration/centcom
 	name = "\improper Administration Shuttle"
 	icon_state = "shuttlered"
-
+/*
 /area/shuttle/escape_pod1/centcom
 	icon_state = "shuttle"
 
@@ -1304,6 +1306,7 @@
 
 /area/shuttle/escape_pod5/centcom
 	icon_state = "shuttle"
+*/
 
 /area/supply/dock
 	name = "Supply Shuttle"

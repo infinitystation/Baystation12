@@ -316,4 +316,4 @@
 	return list(
 		/obj/item/stack/material/cardboard/ten,
 		/obj/item/device/destTagger,
-		/obj/item/weapon/packageWrap)
+		/obj/item/stack/package_wrap)

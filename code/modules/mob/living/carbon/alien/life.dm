@@ -18,7 +18,10 @@
 	update_icons()
 
 /mob/living/carbon/alien/proc/can_progress()
-	return 1
+	if(src.auto_progress == 1)
+		return 1
+	else
+		return 0
 
 
 /mob/living/carbon/alien/handle_mutations_and_radiation()

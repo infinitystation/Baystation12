@@ -246,6 +246,7 @@
 	//////////////
 /client/Del()
 	ticket_panels -= src
+	STOP_PROCESSING(SSprocessing, watched_variables_window)
 	if(holder)
 		handle_staff_logout()
 		holder.owner = null

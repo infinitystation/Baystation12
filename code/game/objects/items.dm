@@ -410,12 +410,19 @@ var/list/global/slot_flags_enumeration = list(
 				if(!disable_warning)
 					to_chat(H, "<span class='warning'>You need something you can attach \the [src] to.</span>")
 				return 0
-			var/obj/item/clothing/under/uniform = H.w_uniform
-			var/obj/item/clothing/suit/suit = H.wear_suit
-			if((uniform && !uniform.can_attach_accessory(src)) && (suit && !suit.can_attach_accessory(src)))
-				if (!disable_warning)
-					to_chat(H, "<span class='warning'>You can not equip \the [src].</span>")
-				return 0
+			if(H.w_uniform && (slot_w_uniform in mob_equip))
+				var/obj/item/clothing/under/uniform = H.w_uniform
+				if(uniform && !uniform.can_attach_accessory(src))
+					if (!disable_warning)
+						to_chat(H, "<span class='warning'>You cannot equip \the [src] to \the [uniform].</span>")
+					return 0
+			if(H.wear_suit && (slot_wear_suit in mob_equip))
+				var/obj/item/clothing/suit/suit = H.wear_suit
+				if(suit && !suit.can_attach_accessory(src))
+					if (!disable_warning)
+						to_chat(H, "<span class='warning'>You cannot equip \the [src] to \the [suit].</span>")
+					return 0
+
 	return 1
 
 /obj/item/proc/mob_can_unequip(mob/M, slot, disable_warning = 0)
@@ -663,9 +670,6 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 				user.client.pixel_y = 0
 
 		user.visible_message("\The [user] peers through the [zoomdevicename ? "[zoomdevicename] of [src]" : "[src]"].")
-		if(ishuman(user))
-			var/mob/living/carbon/human/HM = user
-			HM.SetFov(0)
 	else
 		user.client.view = world.view
 		if(!user.hud_used.hud_shown)
@@ -677,9 +681,6 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 		if(!cannotzoom)
 			user.visible_message("[zoomdevicename ? "\The [user] looks up from [src]" : "\The [user] lowers [src]"].")
-			if(ishuman(user))
-				var/mob/living/carbon/human/HM = user
-				HM.SetFov(1)
 	return
 
 /obj/item/proc/pwr_drain()

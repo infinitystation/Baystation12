@@ -31,7 +31,7 @@
 "aE" = (/obj/structure/table/rack{dir = 8},/obj/item/weapon/ladder_mobile,/obj/item/weapon/ladder_mobile,/turf/simulated/floor/plating,/area/space)
 "aF" = (/obj/effect/floor_decal/industrial/outline/yellow,/obj/machinery/portable_atmospherics/canister/phoron,/turf/simulated/floor/plating,/area/space)
 "aG" = (/obj/machinery/portable_atmospherics/canister/nitrogen,/obj/effect/floor_decal/industrial/outline/blue,/turf/simulated/floor/plating,/area/space)
-"aH" = (/obj/structure/table/steel,/obj/item/weapon/hand_labeler,/obj/item/weapon/packageWrap,/obj/structure/extinguisher_cabinet{pixel_x = -32},/obj/item/device/destTagger,/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/turf/simulated/floor/tiled,/area/space)
+"aH" = (/obj/structure/table/steel,/obj/item/weapon/hand_labeler,/obj/item/stack/package_wrap/twenty_five,/obj/structure/extinguisher_cabinet{pixel_x = -32},/obj/item/device/destTagger,/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/turf/simulated/floor/tiled,/area/space)
 "aI" = (/obj/structure/disposalpipe/segment,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled,/area/space)
 "aJ" = (/obj/machinery/hologram/holopad,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled,/area/space)
 "aK" = (/obj/structure/cable/green{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/cable/green{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/tiled,/area/space)

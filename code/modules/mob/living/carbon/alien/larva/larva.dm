@@ -6,7 +6,9 @@
 	icon_state = "larva"
 	language = "Hivemind"
 	maxHealth = 25
+	max_grown = 120
 	health = 25
+	auto_progress = 0
 
 /mob/living/carbon/alien/larva/New()
 	..()

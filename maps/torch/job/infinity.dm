@@ -237,7 +237,7 @@
 					///////////
 
 /decl/hierarchy/outfit/corpse/crewman
-	name = "Dead Unknown"
+	name = "Dead crewmember"
 	l_ear = /obj/item/device/radio/headset
 	uniform = /obj/item/clothing/under/solgov/utility/fleet
 	back = /obj/item/weapon/storage/backpack/satchel/leather/navy
@@ -249,7 +249,7 @@
 	id_slot = slot_wear_id
 
 /decl/hierarchy/outfit/corpse/bridgeofficer/scg
-	name = "Dead Unknown"
+	name = "Dead bridge officer"
 	l_ear = /obj/item/device/radio/headset
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/command
 	head = /obj/item/clothing/head/beret/solgov/fleet/command

@@ -63,6 +63,8 @@
 			return global.SSprocessing;
 		if("SSskybox")
 			return global.SSskybox;
+		if("SSstickyban")
+			return global.SSstickyban;
 		if("SSsun")
 			return global.SSsun;
 		if("SStimer")
@@ -259,6 +261,8 @@
 			return global.cargo_supply_packs;
 		if("changelog_hash")
 			return global.changelog_hash;
+		if("channel_color_presets")
+			return global.channel_color_presets;
 		if("channel_to_radio_key")
 			return global.channel_to_radio_key;
 		if("chargen_robolimbs")
@@ -321,8 +325,6 @@
 			return global.custom_items;
 		if("damage_icon_parts")
 			return global.damage_icon_parts;
-		if("db_reconnect")
-			return global.db_reconnect;
 		if("dbcon")
 			return global.dbcon;
 		if("dbcon_old")
@@ -821,6 +823,8 @@
 			return global.runtime_diary;
 		if("same_wires")
 			return global.same_wires;
+		if("scrap_recipes")
+			return global.scrap_recipes;
 		if("secondary_mode")
 			return global.secondary_mode;
 		if("secret_force_mode")
@@ -987,8 +991,6 @@
 			return global.total_unit_tests;
 		if("traitors")
 			return global.traitors;
-		if("transaction_devices")
-			return global.transaction_devices;
 		if("transfer_controller")
 			return global.transfer_controller;
 		if("turbolift_controller")
@@ -1120,6 +1122,8 @@
 			global.SSprocessing=newval;
 		if("SSskybox")
 			global.SSskybox=newval;
+		if("SSstickyban")
+			global.SSstickyban=newval;
 		if("SSsun")
 			global.SSsun=newval;
 		if("SStimer")
@@ -1316,6 +1320,8 @@
 			global.cargo_supply_packs=newval;
 		if("changelog_hash")
 			global.changelog_hash=newval;
+		if("channel_color_presets")
+			global.channel_color_presets=newval;
 		if("channel_to_radio_key")
 			global.channel_to_radio_key=newval;
 		if("chargen_robolimbs")
@@ -1378,8 +1384,6 @@
 			global.custom_items=newval;
 		if("damage_icon_parts")
 			global.damage_icon_parts=newval;
-		if("db_reconnect")
-			global.db_reconnect=newval;
 		if("dbcon")
 			global.dbcon=newval;
 		if("dbcon_old")
@@ -1878,6 +1882,8 @@
 			global.runtime_diary=newval;
 		if("same_wires")
 			global.same_wires=newval;
+		if("scrap_recipes")
+			global.scrap_recipes=newval;
 		if("secondary_mode")
 			global.secondary_mode=newval;
 		if("secret_force_mode")
@@ -2044,8 +2050,6 @@
 			global.total_unit_tests=newval;
 		if("traitors")
 			global.traitors=newval;
-		if("transaction_devices")
-			global.transaction_devices=newval;
 		if("transfer_controller")
 			global.transfer_controller=newval;
 		if("turbolift_controller")
@@ -2145,6 +2149,7 @@
 	"SSopen_space",
 	"SSprocessing",
 	"SSskybox",
+	"SSstickyban",
 	"SSsun",
 	"SStimer",
 	"SSvines",
@@ -2243,6 +2248,7 @@
 	"cargo_supply_pack_root",
 	"cargo_supply_packs",
 	"changelog_hash",
+	"channel_color_presets",
 	"channel_to_radio_key",
 	"chargen_robolimbs",
 	"checked_for_inactives",
@@ -2274,7 +2280,6 @@
 	"custom_event_msg",
 	"custom_items",
 	"damage_icon_parts",
-	"db_reconnect",
 	"dbcon",
 	"dbcon_old",
 	"deathsquad",
@@ -2524,6 +2529,7 @@
 	"rune_list",
 	"runtime_diary",
 	"same_wires",
+	"scrap_recipes",
 	"secondary_mode",
 	"secret_force_mode",
 	"send_emergency_team",
@@ -2607,7 +2613,6 @@
 	"total_lighting_sources",
 	"total_unit_tests",
 	"traitors",
-	"transaction_devices",
 	"transfer_controller",
 	"turbolift_controller",
 	"turbolifts",

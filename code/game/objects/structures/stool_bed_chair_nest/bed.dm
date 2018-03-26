@@ -229,7 +229,7 @@
 	if(istype(W,/obj/item/roller_holder))
 		var/obj/item/roller_holder/RH = W
 		if(!RH.held)
-			to_chat(user, "<span class='notice'>You collect the roller bed.</span>")
+			to_chat(user, "<span class='notice'>You collect [src].</span>")
 			src.forceMove(RH)
 			RH.held = src
 			return
@@ -238,7 +238,7 @@
 
 /obj/item/roller_holder
 	name = "roller bed rack"
-	desc = "A rack for carrying a collapsed roller bed."
+	desc = "A rack for carrying collapsed roller beds. Can also be used for carrying ironing boards."
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "borgbed_stored"
 	var/obj/structure/bed/roller/borg/held
@@ -246,20 +246,19 @@
 /obj/item/roller_holder/update_icon()
 	icon_state = "borgbed_[held ? "stored" : "deployed"]"
 
-/obj/item/roller_holder/New()
-	..()
+/obj/item/roller_holder/Initialize()
+	. = ..()
 	held = new(src)
 
 /obj/item/roller_holder/attack_self(mob/user as mob)
-
 	if(!held)
 		to_chat(user, "<span class='notice'>The [src.name] is empty.</span>")
 		return
 
-	to_chat(user, "<span class='notice'>You deploy \the [held].</span>")
-	held.add_fingerprint(user)
-	held.forceMove(get_turf(src))
-	held = null
+	var/obj/structure/bed/roller/R = held
+	R.forceMove(get_turf(src))
+	to_chat(user, "<span class='notice'>You deploy [R].</span>")
+	R.add_fingerprint(user)
 	update_icon()
 
 /obj/structure/bed/roller/proc/move_buckled()

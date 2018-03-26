@@ -5,14 +5,6 @@
 	else
 		add_to_living_mob_list()
 
-/mob/living/Initialize()
-	. = ..()
-	if(can_have_vision_cone)
-		vision_cone = 1
-
-	GLOB.dir_set_event.register(src, src, /mob/proc/update_vision_cone)
-	GLOB.moved_event.register(src, src, /mob/proc/update_vision_cone)
-
 //mob verbs are faster than object verbs. See mob/verb/examine.
 /mob/living/verb/pulled(atom/movable/AM as mob|obj in oview(1))
 	set name = "Pull"
@@ -601,17 +593,12 @@ default behaviour is:
 		for(var/mob/living/carbon/slime/M in view(1,src))
 			M.UpdateFeed()
 
-	for(var/mob/M in oview(src))
-		M.update_vision_cone()
-
-	update_vision_cone()
-
 /mob/living/verb/resist()
 	set name = "Resist"
 	set category = "IC"
 
-	if(!incapacitated(INCAPACITATION_KNOCKOUT) && canClick())
-		setClickCooldown(20)
+	if(!incapacitated(INCAPACITATION_KNOCKOUT) && last_resist + 2 SECONDS <= world.time)
+		last_resist = world.time
 		resist_grab()
 		if(!weakened)
 			process_resist()
@@ -796,7 +783,4 @@ default behaviour is:
 	if(auras)
 		for(var/a in auras)
 			remove_aura(a)
-
-	GLOB.dir_set_event.unregister(src, src, /mob/proc/update_vision_cone)
-	GLOB.moved_event.unregister(src, src, /mob/proc/update_vision_cone)
 	return ..()

@@ -149,7 +149,7 @@
 	display_name = "uniform, Expeditionary Mildress (Resomi)"
 	path = /obj/item/clothing/under/solgov/mildress/expeditionary/resomi
 
-/datum/gear/suit/resomi/resomicoat
+/datum/gear/suit/resomi
 	display_name = "small coat (Resomi)"
 	path = /obj/item/clothing/suit/storage/toggle/Resomicoat
 	sort_category = "Xenowear"
@@ -211,40 +211,15 @@
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 
-/datum/gear/shoes/caligae
-	display_name = "caligae (Tajara)"
-	path = /obj/item/clothing/shoes/sandal/tajaran/caligae
-	whitelisted = list(SPECIES_TAJARA)
-	sort_category = "Xenowear"
-
-/datum/gear/shoes/caligae/New()
-	..()
-	var/caligae = list()
-	caligae["no sock"] = /obj/item/clothing/shoes/sandal/tajaran/caligae
-	caligae["black sock"] = /obj/item/clothing/shoes/sandal/tajaran/caligae/black
-	caligae["grey sock"] = /obj/item/clothing/shoes/sandal/tajaran/caligae/grey
-	caligae["white sock"] = /obj/item/clothing/shoes/sandal/tajaran/caligae/white
-	gear_tweaks += new/datum/gear_tweak/path(caligae)
-
 /datum/gear/head/zhan_scarf
 	display_name = "Zhan headscarf (Tajara)"
 	path = /obj/item/clothing/head/tajaran/scarf
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 
-/datum/gear/accessory/capes
-	display_name = "shoulder capes (Tajara)"
-	path = /obj/item/clothing/accessory/shouldercape
-	whitelisted = list(SPECIES_TAJARA)
-	sort_category = "Xenowear"
+/datum/gear/shoes/caligae
 
-/datum/gear/accessory/capes/New()
-	..()
-	var/capes = list()
-	capes["simple cape"] = /obj/item/clothing/accessory/shouldercape/grunt
-	capes["decorated cape"] = /obj/item/clothing/accessory/shouldercape/officer
-	capes["government cape"] = /obj/item/clothing/accessory/shouldercape/command
-	gear_tweaks += new/datum/gear_tweak/path(capes)
+/datum/gear/accessory/capes
 
 // Pre-modified gloves
 

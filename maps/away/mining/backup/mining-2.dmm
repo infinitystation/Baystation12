@@ -123,7 +123,7 @@
 "cw" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/airless,/area/outpost/abandoned)
 "cx" = (/obj/effect/floor_decal/corner/paleblue{icon_state = "corner_white"; dir = 6},/turf/simulated/floor/tiled/airless,/area/outpost/abandoned)
 "cy" = (/obj/effect/decal/cleanable/blood,/turf/simulated/wall/titanium,/area/outpost/abandoned)
-"cF" = (/obj/structure/mirror{icon_state = "mirror_broke"; name = "mirror"; pixel_x = 30},/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/red{icon_state = "intact"; dir = 10},/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small/emergency{icon_state = "bulb1"; dir = 4},/turf/simulated/floor/tiled/white,/area/outpost/abandoned)
+"cF" = (/obj/item/weapon/storage/mirror{icon_state = "mirror_broke"; name = "mirror"; pixel_x = 30},/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/red{icon_state = "intact"; dir = 10},/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small/emergency{icon_state = "bulb1"; dir = 4},/turf/simulated/floor/tiled/white,/area/outpost/abandoned)
 "cG" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/titanium,/area/outpost/abandoned)
 "cH" = (/obj/effect/floor_decal/spline/fancy/wood{icon_state = "spline_fancy"; dir = 8},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/wood,/area/outpost/abandoned)
 "cI" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/wood,/area/outpost/abandoned)

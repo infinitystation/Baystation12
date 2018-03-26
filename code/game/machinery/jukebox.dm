@@ -47,6 +47,7 @@ datum/track/New(var/title_name, var/audio)
 		new/datum/track("Hard Times", 							'sound/music/infinity/JohnnyCash_Hurt.ogg'),
 		new/datum/track("High Radiation", 						'sound/music/infinity/100rengen.ogg'),
 		new/datum/track("To the Stars", 						'sound/music/human.ogg'),
+		new/datum/track("Lasers", 								'sound/music/lasers_rip_apart_the_bulkhead_looped.ogg'),
 		new/datum/track("Lone Digger", 							'sound/music/infinity/CaravanPalace_LoneDigger.ogg'),
 		new/datum/track("Lysendra", 							'sound/music/lysendraa.ogg'),
 		new/datum/track("Make This Right", 						'sound/music/infinity/TheToxicAvenger_MakeThisRight.ogg'),

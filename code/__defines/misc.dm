@@ -232,6 +232,11 @@
 #define AUTHORIZED        1
 #define ALWAYS_AUTHORIZED 2
 
+// wrinkle states for clothes
+#define WRINKLES_DEFAULT	0
+#define WRINKLES_WRINKLY	1
+#define WRINKLES_NONE		2
+
 /*
 Define for getting a bitfield of adjacent turfs that meet a condition.
  ORIGIN is the object to step from, VAR is the var to write the bitfield to

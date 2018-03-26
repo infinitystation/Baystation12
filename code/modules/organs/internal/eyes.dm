@@ -11,6 +11,7 @@
 	var/list/eye_colour = list(0,0,0)
 	var/innate_flash_protection = FLASH_PROTECTION_NONE
 	max_damage = 45
+	var/night_vision = 0
 
 /obj/item/organ/internal/eyes/optics
 	robotic = ORGAN_ROBOT
@@ -68,6 +69,8 @@
 		owner.eye_blurry = 20
 	if(is_broken())
 		owner.eye_blind = 20
+	if(night_vision == TRUE)
+		owner.see_invisible = 15
 
 /obj/item/organ/internal/eyes/proc/get_total_protection(var/flash_protection = FLASH_PROTECTION_NONE)
 	return (flash_protection + innate_flash_protection)

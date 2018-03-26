@@ -11,6 +11,9 @@
 	health_hud_intensity = 1
 	blood_volume = 9999 //Nichego luchshe...
 
+	eye_icon = "eyes"
+	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
+
 	icon_template = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 	has_floating_eyes = TRUE
 
@@ -60,6 +63,7 @@
 	breath_type = null
 	poison_type = null
 
+
 	vision_flags = SEE_SELF|SEE_MOBS
 
 	has_organ = list(
@@ -98,7 +102,6 @@
 
 /datum/species/xenos/handle_post_spawn(var/mob/living/carbon/human/H)
 	..(H)
-
 
 /datum/species/xenos/get_bodytype(var/mob/living/carbon/H)
 	return "Xenophage"
@@ -149,7 +152,6 @@
 	if (!H.resting)
 		heal_rate = weeds_heal_rate / 4
 		mend_prob = 1
-
 	//first heal damages
 	if (H.getBruteLoss() || H.getFireLoss() || H.getOxyLoss() || H.getToxLoss())
 		H.adjustBruteLoss(-heal_rate)
@@ -162,10 +164,15 @@
 
 	//next internal organs
 	for(var/obj/item/organ/I in H.internal_organs)
-		if(I.damage > 0)
+		if(I.damage > 0 & I.organ_tag != BP_BRAIN)
 			I.damage = max(I.damage - heal_rate, 0)
 			if (prob(5))
 				to_chat(H, "<span class='alium'>You feel a soothing sensation within your [I.parent_organ]...</span>")
+			if(I.can_recover())
+				I.status &= ~ORGAN_DEAD
+				H.update_body(1)
+				if(I.organ_tag == BP_HEART)
+					H.resuscitate()
 			return 1
 
 	//next mend broken bones, approx 10 ticks each
@@ -188,6 +195,9 @@
 	icobase = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 	deform =  'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 
+	eye_icon = "eyes"
+	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
+
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xenos,
 		BP_HEART =    /obj/item/organ/internal/heart,
@@ -206,7 +216,8 @@
 		/mob/living/carbon/human/proc/transfer_plasma,
 		/mob/living/carbon/human/proc/evolve,
 		/mob/living/carbon/human/proc/resin,
-		/mob/living/carbon/human/proc/corrosive_acid
+		/mob/living/carbon/human/proc/corrosive_acid,
+		/mob/living/carbon/human/proc/darksight
 		)
 
 /datum/species/xenos/drone/handle_post_spawn(var/mob/living/carbon/human/H)
@@ -221,9 +232,12 @@
 	name = "Xenophage Hunter"
 	weeds_plasma_rate = 5
 	caste_name = "hunter"
-	slowdown = -1
+	slowdown = -0.8
 	total_health = 300
 	base_color = "#001a33"
+
+	eye_icon = "eyes"
+	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_hunter.dmi'
 
 	icobase = 'icons/mob/human_races/xenos/r_xenos_hunter.dmi'
 	deform =  'icons/mob/human_races/xenos/r_xenos_hunter.dmi'
@@ -243,7 +257,8 @@
 		/mob/living/carbon/human/proc/tackle,
 		/mob/living/carbon/human/proc/leap,
 		/mob/living/carbon/human/proc/psychic_whisper,
-		/mob/living/carbon/human/proc/regurgitate
+		/mob/living/carbon/human/proc/regurgitate,
+		/mob/living/carbon/human/proc/darksight
 		)
 
 /datum/species/xenos/sentinel
@@ -255,6 +270,10 @@
 	total_health = 250
 	icobase = 'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
 	deform =  'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
+
+	eye_icon = "eyes"
+	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
+
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xenos,
@@ -272,7 +291,8 @@
 		/mob/living/carbon/human/proc/regurgitate,
 		/mob/living/carbon/human/proc/transfer_plasma,
 		/mob/living/carbon/human/proc/corrosive_acid,
-		/mob/living/carbon/human/proc/neurotoxin
+		/mob/living/carbon/human/proc/neurotoxin,
+		/mob/living/carbon/human/proc/darksight
 		)
 
 /datum/species/xenos/queen
@@ -284,6 +304,9 @@
 	caste_name = "queen"
 	slowdown = 3
 	rarity_value = 10
+
+	eye_icon = "eyes"
+	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_queen.dmi'
 
 	icobase = 'icons/mob/human_races/xenos/r_xenos_queen.dmi'
 	deform =  'icons/mob/human_races/xenos/r_xenos_queen.dmi'
@@ -310,7 +333,8 @@
 		/mob/living/carbon/human/proc/corrosive_acid,
 		/mob/living/carbon/human/proc/neurotoxin,
 		/mob/living/carbon/human/proc/resin,
-		/mob/living/carbon/human/proc/xeno_infest
+		/mob/living/carbon/human/proc/xeno_infest,
+		/mob/living/carbon/human/proc/darksight
 		)
 
 	genders = list(FEMALE)

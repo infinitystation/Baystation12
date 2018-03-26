@@ -24,6 +24,10 @@
 		to_chat(src, "<span class='warning'>You are not fully grown.</span>")
 		return
 
+	if(istype(loc,/obj/item/weapon/holder))
+		to_chat(src, "<span class='warning'>You can't evolve inside your food.</span>")
+		return
+
 	// confirm_evolution() handles choices and other specific requirements.
 	var/new_species = confirm_evolution()
 	if(!new_species || !adult_form )

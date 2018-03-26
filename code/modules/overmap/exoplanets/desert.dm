@@ -112,6 +112,10 @@
 			else
 				user.visible_message("<span class='notice'>\The [buckled_mob] has been freed from \the [src] by \the [user].</span>")
 			unbuckle_mob()
+		else
+			busy = 0
+			to_chat(user, "<span class='warning'>You slip and fail to get out!</span>")
+			return
 
 		busy = FALSE
 		return
