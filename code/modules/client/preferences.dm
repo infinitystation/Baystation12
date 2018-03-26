@@ -341,7 +341,7 @@ datum/preferences
 	character.used_skillpoints = used_skillpoints
 
 	if(!character.isSynthetic())
-		character.nutrition = rand(300,400)
+		character.nutrition = rand(140,360)
 
 	return
 
