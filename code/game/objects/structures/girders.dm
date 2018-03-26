@@ -5,6 +5,7 @@
 	plane = OBJ_PLANE
 	layer = BELOW_OBJ_LAYER
 	w_class = ITEM_SIZE_NO_CONTAINER
+	color = "#666666"
 	var/state = 0
 	var/health = 200
 	var/cover = 50 //how much cover the girder provides against projectiles.
@@ -50,6 +51,7 @@
 	health = min(health,initial(health))
 	state = 0
 	icon_state = initial(icon_state)
+	color = "#666666"
 	reinforcing = 0
 	if(reinf_material)
 		reinforce_girder()
@@ -194,6 +196,7 @@
 	health = 500
 	state = 2
 	icon_state = "reinforced"
+	color = "#777777"
 	reinforcing = 0
 
 /obj/structure/girder/proc/dismantle()
@@ -224,11 +227,16 @@
 		else
 	return
 
+/obj/structure/girder/reinforced
+	icon_state = "reinforced"
+	color = "#777777"
+
 /obj/structure/girder/cult
 	icon= 'icons/obj/cult.dmi'
 	icon_state= "cultgirder"
 	health = 250
 	cover = 70
+	color = null
 
 /obj/structure/girder/cult/dismantle()
 	qdel(src)

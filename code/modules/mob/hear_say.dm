@@ -138,21 +138,6 @@
 		if(H.voice)
 			speaker_name = H.voice
 
-
-		/*if(H.age && H.gender)//If they have an age and gender
-			var/ageAndGender
-			jobname = H.get_assignment()
-
-			if(H.get_assignment() == "No id")//If they don't have an ID then we don't know their job.
-				jobname = "Unknown"
-
-			if(H.isSynthetic())
-				ageAndGender = ageAndGender2Desc(H.age, H.gender, synthetic_flag = 1)//Get their age and gender
-			else
-				ageAndGender = ageAndGender2Desc(H.age, H.gender)
-
-			speaker_name += " \[" + "[jobname] " + "[ageAndGender]" + "]"*/ //Print it out.
-
 	if(hard_to_hear)
 		speaker_name = "unknown"
 
@@ -186,6 +171,17 @@
 			else
 				jobname = H.get_assignment()
 
+			/* Later
+			if(H.age && H.gender && H.species)
+				var/ageAndGender
+
+				if(H.isSynthetic())
+					ageAndGender = ageAndGender2Desc(H.age, H.gender, H.species.name, synthetic_flag = 1)//Get their age and gender
+				else
+					ageAndGender = ageAndGender2Desc(H.age, H.gender, H.species.name)
+
+				speaker_name += " \[" + "[jobname] " + "[ageAndGender]" + "]" */
+
 		else if (iscarbon(speaker)) // Nonhuman carbon mob
 			jobname = "No id"
 		else if (isAI(speaker))
@@ -210,7 +206,8 @@
 			speaker_name = "[speaker.real_name] ([speaker_name])"
 		track = "[speaker_name] ([ghost_follow_link(speaker, src)])"
 	else
-		playsound(loc, 'sound/effects/radio_chatter.ogg', 25, 0, -1)
+		var/radio_sound = list('sound/effects/radio1.ogg', 'sound/effects/radio2.ogg', 'sound/effects/radio3.ogg', 'sound/effects/radio4.ogg')
+		playsound(loc, pick(radio_sound), 15, 0, -1)
 
 	var/formatted
 	if(language)
