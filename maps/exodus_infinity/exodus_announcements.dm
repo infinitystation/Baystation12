@@ -1,4 +1,4 @@
-/datum/map/exodus
+/datum/map/exodus_infinity
 	emergency_shuttle_docked_message = "Эвакуационный шаттл производит стыковку с КСН Исход. Шаттл отбывает через %ETD%."
 	emergency_shuttle_leaving_dock = "Эвакуационный шаттл покинул КСН ИТсход. Расчетное время прибытия: %ETA%, пункт назначения: %dock_name%."
 
@@ -18,7 +18,7 @@
 	electrical_storm_moderate_sound = null
 	electrical_storm_major_sound = null
 
-/datum/map/exodus/level_x_biohazard_sound(var/bio_level)
+/datum/map/exodus_infinity/level_x_biohazard_sound(var/bio_level)
 	switch(bio_level)
 		if(7)
 			return 'sound/AI/outbreak7.ogg'
