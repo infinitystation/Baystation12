@@ -106,23 +106,27 @@ proc/age2agedescription(age)
 		else				return "unknown"
 
 
-proc/ageAndGender2Desc(age, gender, var/synthetic_flag = 0)//Used for the radio
+proc/ageAndGender2Desc(age, gender, species_name = "", var/synthetic_flag = 0)//Used for the radio
 	if(synthetic_flag)
 		return "Mechanical Voice"
 	else
+		if(species_name == SPECIES_HUMAN)
+			species_name = ""
+
 		if(gender == FEMALE)
 			switch(age)
-				if(0 to 15)			return "Girl"
-				if(15 to 25)		return "Young Woman"
-				if(25 to 60)		return "Woman"
-				if(60 to INFINITY)	return "Old Woman"
+				if(0 to 15)			return "[species_name] Girl"
+				if(15 to 25)		return "Young [species_name] Woman"
+				if(25 to 60)		return "[species_name] Woman"
+				if(60 to INFINITY)	return "Old [species_name] Woman"
 				else				return "Unknown"
+
 		if(gender == MALE)
 			switch(age)
-				if(0 to 15)			return "Boy"
-				if(15 to 25)		return "Young Man"
-				if(25 to 60)		return "Man"
-				if(60 to INFINITY)	return "Old Man"
+				if(0 to 15)			return "[species_name] Boy"
+				if(15 to 25)		return "Young [species_name] Man"
+				if(25 to 60)		return "[species_name] Man"
+				if(60 to INFINITY)	return "Old [species_name] Man"
 				else				return "Unknown"
 	return
 
