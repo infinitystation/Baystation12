@@ -608,15 +608,13 @@ macro "hotkeymode"
 		command = ".me"
 	elem 
 		name = "F5"
-		command = "msay"
-	elem 
-		name = "F5+REP"
+		command = "asay"
 	elem 
 		name = "F6"
 		command = "Player-Panel-New"
 	elem 
 		name = "F7"
-		command = "Admin-PM"
+		command = "msay"
 	elem 
 		name = "F8"
 		command = "Invisimin"
