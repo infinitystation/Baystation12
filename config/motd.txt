@@ -10,7 +10,7 @@
 <a href=" https://wiki.infinity-ss13.ru/index.php?title=Starter_Guide">Как начать играть?</a>
 <a href=" https://wiki.infinity-ss13.ru/index.php?title=How_To_Military_Guide">Как играть за флот и экспедиционников?</a>
 <a href=" https://infinity-ss13.ru/index.php?/forum/35-квенты/">Я хочу играть за кого-то кроме людей.</a>
-<a href=" https://discord.gg/mn456xK ">Я хочу попасть на сервер в дискорде! (прямая ссылка)</a>
+<a href=" https://discord.gg/N4atUkH ">Я хочу попасть на сервер в дискорде! (прямая ссылка)</a>
 
 <span style="color: #cc0000;">Q: Как зайти в игру за кого-то кроме киборга и ИИ?</span>
 <span style="color: #009933;">A: Зайдите во вкладку настройки Вашего персонажа. Выберите раздел "Occupation". Измените содержимое поля перед "Branch of Service" и затем перед "Rank". Для первого раза, желательно, выставьте "Civilian" и поиграйте за пассажира.</span>
