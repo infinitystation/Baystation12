@@ -9,10 +9,14 @@ datum/track/New(var/title_name, var/audio)
 	sound = audio
 
 /obj/machinery/media/jukebox
-	name = "space jukebox"
-	icon = 'icons/obj/jukebox.dmi'
-	icon_state = "jukebox2-nopower"
-	var/state_base = "jukebox2"
+	name = "mediatronic jukebox"
+	desc = "An immense, standalone touchscreen on a swiveling base, equipped with phased array speakers. Embossed on one corner of the ultrathin bezel is the brand name, 'Leitmotif Enterprise Edition'."
+	description_info = "Click the jukebox and then select a track on the interface. You can choose to play or stop the track, or set the volume. Use a wrench to attach or detach the jukebox to the floor. The room it is installed in must have power for it to operate!"
+	description_fluff = "The Leitmotif is Auraliving's most popular brand of retro jukebox, putting a modern spin on the ancient curved plasmascreen design. The Enterprise Edition allows an indefinite number of users to sync music from their devices simultaneously... of course the Expeditionary Corps made sure to lock down the selection before they installed this one."
+	description_antag = "Slide a cryptographic sequencer into the jukebox to overload its speakers. Instead of music, it'll produce a hellish blast of noise and explode!"
+	icon = 'icons/obj/jukebox_new.dmi'
+	icon_state = "jukebox3-nopower"
+	var/state_base = "jukebox3"
 	anchored = 1
 	density = 1
 	power_channel = EQUIP
@@ -20,6 +24,7 @@ datum/track/New(var/title_name, var/audio)
 	idle_power_usage = 10
 	active_power_usage = 100
 	clicksound = 'sound/machines/buttonbeep.ogg'
+	pixel_x = -8
 
 	var/obj/item/device/cassette/disk
 
@@ -65,6 +70,15 @@ datum/track/New(var/title_name, var/audio)
 		new/datum/track("Wonderful Lady", 						'sound/music/infinity/JohnnyMathis_Wonderful_Wonderful.ogg'),
 		new/datum/track("When We Stand Together", 				'sound/music/infinity/Nickelback_WhenWeStandTogether.ogg'),
 	)
+
+/obj/machinery/media/jukebox/old
+	name = "space jukebox"
+	desc = "A battered and hard-loved jukebox in some forgotten style, carefully restored to some semblance of working condition."
+	description_fluff = "No one these days knows what civilization is responsible for this machine's design - various alien species have been credited on more than one occasion."
+	icon = 'icons/obj/jukebox.dmi'
+	icon_state = "jukebox2-nopower"
+	state_base = "jukebox2"
+	pixel_x = 0
 
 /obj/machinery/media/jukebox/New()
 	..()
@@ -120,7 +134,7 @@ datum/track/New(var/title_name, var/audio)
 /obj/machinery/media/jukebox/tg_ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = 0, datum/tgui/master_ui = null, datum/ui_state/state = tg_default_state)
 	ui = tgui_process.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "jukebox", "RetroBox - Space Style", 340, 440, master_ui, state)
+		ui = new(user, src, ui_key, "jukebox", "Your Media Library", 340, 440, master_ui, state)
 		ui.open()
 
 /obj/machinery/media/jukebox/ui_data()

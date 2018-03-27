@@ -50,6 +50,7 @@
 	name = "fake moustache"
 	desc = "Warning: moustache is fake."
 	icon_state = "fake-moustache"
+	item_state = "fake-moustache"
 	flags_inv = HIDEFACE
 	body_parts_covered = 0
 	visible_name = "Scoundrel"
@@ -58,6 +59,7 @@
 	name = "Snorkel"
 	desc = "For the Swimming Savant."
 	icon_state = "snorkel"
+	item_state = "snorkel"
 	flags_inv = HIDEFACE
 	body_parts_covered = 0
 
