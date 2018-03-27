@@ -36,7 +36,7 @@
 	id = "awaysite_hydro"
 	description = "Hydroponics station with farmbots and goats."
 	suffixes = list("hydro/hydro.dmm")
-	cost = 0.75
+	cost = 1
 	accessibility_weight = 10
 
 // Objs //

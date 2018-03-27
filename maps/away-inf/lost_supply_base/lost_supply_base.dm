@@ -20,7 +20,7 @@
 	description = "An abandoned supply base."
 	prefix = "maps/away-inf/"
 	suffixes = list("lost_supply_base/lost_supply_base.dmm")
-	cost = 1
+	cost = 0.5
 
 /obj/effect/shuttle_landmark/nav_lost_supply_base/nav1
 	name = "Abandoned Supply Base Navpoint #1"

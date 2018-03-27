@@ -147,14 +147,14 @@
 		/area/mine,
 		/area/ship,
 		/area/smugglers,
-		/area/slavers_base,
+//		/area/slavers_base,
 		/area/hydro,
 		/area/yacht,
 		/area/bluespaceriver,
 		/area/mobius_rift,
 		/area/icarus,
-		/area/errant_pisces,
-		/area/lar_maria,
+//		/area/errant_pisces,
+//		/area/lar_maria,
 	)
 
 /datum/unit_test/zas_area_test/ai_chamber

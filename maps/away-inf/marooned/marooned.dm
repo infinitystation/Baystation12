@@ -32,7 +32,7 @@
 	description = "A snowy wasteland."
 	prefix = "maps/away-inf/"
 	suffixes = list("marooned/marooned.dmm")
-	cost = 1
+	cost = 0
 
 /obj/effect/shuttle_landmark/nav_marooned/nav1
 	name = "Planetside Navpoint #1"
