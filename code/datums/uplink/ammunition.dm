@@ -3,6 +3,7 @@
 *************/
 /datum/uplink_item/item/ammo
 	item_cost = 4
+	antag_costs = list(MODE_MERCENARY = 5)
 	category = /datum/uplink_category/ammunition
 
 /datum/uplink_item/item/ammo/c45m

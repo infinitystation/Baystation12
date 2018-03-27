@@ -69,6 +69,7 @@ Single Use Emergency Pouches
 		to_chat(user, "<span class='notice'>[src] needs to be opened before use.</span>")
 
 /obj/item/weapon/storage/med_pouch/trauma
+	name = "trauma medical pouch"
 	base_icon = "red"
 	injury_type = "trauma"
 
@@ -89,6 +90,7 @@ Single Use Emergency Pouches
 		"}
 
 /obj/item/weapon/storage/med_pouch/burn
+	name = "burn medical pouch"
 	base_icon = "orange"
 	injury_type = "burn"
 
@@ -111,6 +113,7 @@ Single Use Emergency Pouches
 		"}
 
 /obj/item/weapon/storage/med_pouch/oxyloss
+	name = "asphyxia medical pouch"
 	base_icon = "blue"
 	injury_type = "low oxygen"
 
@@ -133,6 +136,7 @@ Single Use Emergency Pouches
 		"}
 
 /obj/item/weapon/storage/med_pouch/toxin
+	name = "intoxication medical pouch"
 	base_icon = "green"
 	injury_type = "toxin"
 

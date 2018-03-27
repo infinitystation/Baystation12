@@ -32,6 +32,7 @@
 /datum/uplink_item/item/stealth_items/chameleon_projector
 	name = "Chameleon-Projector"
 	item_cost = 32
+	antag_costs = list(MODE_MERCENARY = 22)
 	path = /obj/item/device/chameleon
 
 /datum/uplink_item/item/stealth_items/sneakies
