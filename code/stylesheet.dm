@@ -22,7 +22,7 @@ em						{font-style: normal;font-weight: bold;}
 .ooc .looc				{color: #3a9696;}
 .ooc .elevated			{color: #306082;}
 .ooc .moderator			{color: #184880;}
-.ooc .developer			{color: #df7126;}
+.ooc .developer			{color: #b55801;}
 .ooc .admin				{color: #992d22;}
 .ooc .aooc				{color: #960018;}
 
