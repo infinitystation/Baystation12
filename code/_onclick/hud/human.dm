@@ -20,15 +20,6 @@
 	var/obj/screen/using
 	var/obj/screen/inventory/inv_box
 
-	mymob.fade = new /obj/screen()
-	mymob.fade.icon = 'icons/mob/fullscreen2.dmi'
-	mymob.fade.icon_state = "fade"
-	mymob.fade.name = ""
-	mymob.fade.screen_loc = "WEST,SOUTH to EAST,NORTH"
-	mymob.fade.plane = BASE_AREA_LAYER
-	mymob.fade.mouse_opacity = 0
-	hud_elements |= mymob.fade
-
 	var/obj/item/organ/internal/eyes/E = target.internal_organs_by_name[BP_EYES]
 	mymob.noise = new /obj/screen()
 	mymob.noise.icon = 'icons/mob/noise.dmi'

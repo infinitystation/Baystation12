@@ -149,3 +149,10 @@
 /obj/screen/fullscreen/pain
 	icon_state = "brutedamageoverlay6"
 	alpha = 0
+
+//Infinity
+/obj/screen/fullscreen/fade
+	icon = 'icons/mob/screen1.dmi'
+	icon_state = "black"
+	screen_loc = ui_entire_screen
+	layer = FULLSCREEN_LAYER
