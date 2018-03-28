@@ -12,7 +12,7 @@
 	var/max_draw_per_tick = 10000
 
 /obj/machinery/power/ship_weapon/maser/Initialize()
-	..()
+	. = ..()
 	connect_to_network()
 
 /obj/machinery/power/ship_weapon/maser/update_icon()

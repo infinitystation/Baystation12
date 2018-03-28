@@ -26,7 +26,7 @@
 	return data
 
 /obj/machinery/power/ship_weapon/Initialize()
-	..()
+	. = ..()
 	linked = map_sectors["[z]"]
 	weapon_number++
 	name = "[initial(name)] #[weapon_number]"

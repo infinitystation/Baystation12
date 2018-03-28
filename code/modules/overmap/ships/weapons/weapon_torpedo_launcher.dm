@@ -17,8 +17,8 @@
 			loader.layer = layer+0.1
 
 /obj/machinery/power/ship_weapon/torpedo/Initialize()
-	find_loader()
 	. = ..()
+	find_loader()
 
 /obj/machinery/power/ship_weapon/torpedo/Destroy()
 	if(loader && loader.launcher == src)

@@ -58,6 +58,7 @@
 	icon_state = "can1_empty"
 
 /obj/item/trash/canfood/Initialize()
+	. = ..()
 	icon_state = "can[(rand(1,5))]_empty"
 
 /obj/item/weapon/material/canknife

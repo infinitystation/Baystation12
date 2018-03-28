@@ -8,8 +8,8 @@
 	nozzle = _holder
 
 /datum/ship_engine/electric/Destroy()
-	..()
 	nozzle = null
+	. = ..()
 
 /datum/ship_engine/electric/get_status()
 	return nozzle.get_status()
@@ -65,7 +65,7 @@
 		stored_power += draw_power(draw_amount)
 
 /obj/machinery/power/engine/ion/Initialize()
-	..()
+	. = ..()
 	controller = new(src)
 	connect_to_network()
 
