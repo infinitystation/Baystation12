@@ -298,7 +298,7 @@
 "fL" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/turf/simulated/floor/reinforced/airless,/area/space)
 "fM" = (/obj/effect/floor_decal/industrial/warning{dir = 1},/turf/simulated/floor/reinforced/airless,/area/space)
 "fN" = (/obj/effect/floor_decal/industrial/warning/corner{icon_state = "warningcorner"; dir = 1},/turf/simulated/floor/reinforced/airless,/area/space)
-"fO" = (/obj/structure/railing,/obj/machinery/door/firedoor/border_only,/turf/simulated/floor/tiled,/area/space)
+"fO" = (/obj/structure/railing/mapped,/obj/machinery/door/firedoor/border_only,/turf/simulated/floor/tiled,/area/space)
 "fP" = (/obj/structure/closet/firecloset/full,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled,/area/space)
 "fQ" = (/obj/machinery/vending/tool,/obj/effect/floor_decal/industrial/outline/yellow,/obj/effect/floor_decal/corner/yellow{icon_state = "corner_white"; dir = 9},/turf/simulated/floor/tiled,/area/space)
 "fR" = (/obj/structure/table/rack,/obj/structure/window/reinforced{tag = "icon-rwindow (EAST)"; icon_state = "rwindow"; dir = 4},/obj/effect/floor_decal/industrial/outline/yellow,/obj/effect/floor_decal/corner/yellow{dir = 6},/obj/item/stack/material/steel/fifty,/obj/item/stack/material/steel/fifty,/obj/item/stack/material/steel/fifty,/obj/item/stack/material/steel/fifty,/obj/item/stack/material/steel/fifty,/obj/item/stack/material/steel/fifty,/obj/item/stack/material/plasteel/fifty,/obj/item/stack/material/ocp/fifty,/turf/simulated/floor/tiled,/area/space)
