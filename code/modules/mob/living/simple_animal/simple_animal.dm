@@ -332,7 +332,7 @@
 	return 1
 
 /mob/living/simple_animal/say(var/message)
-	var/verb = "говорит"
+	var/verb = "says"
 	if(speak_emote.len)
 		verb = pick(speak_emote)
 

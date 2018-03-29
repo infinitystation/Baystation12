@@ -21,35 +21,12 @@
 	icon_state = "ore_[ore.icon_tag]"
 	origin_tech = ore.origin_tech.Copy()
 
-/obj/item/weapon/ore/Crossed(AM as mob|obj)
-	var/obj/item/weapon/storage/ore/OB
-	var/turf/simulated/floor/F = get_turf(src)
-	if(loc != F)
-		return ..()
-	if(ishuman(AM))
-		var/mob/living/carbon/human/H = AM
-		OB = H.is_in_hands(/obj/item/weapon/storage/ore)
-		if(!OB)
-			if(istype(H.s_store, /obj/item/weapon/storage/ore))
-				OB = H.s_store
-			else if(istype(H.belt, /obj/item/weapon/storage/ore))
-				OB = H.belt
-	else if(isrobot(AM))
-		var/mob/living/silicon/robot/R = AM
-		for(var/thing in R.get_all_slots())
-			if(istype(thing, /obj/item/weapon/storage/ore))
-				OB = thing
-				break
-	if(OB && istype(F, /turf/simulated/floor/asteroid))
-		F.attackby(OB, AM)
-	return ..()
-
 /obj/item/weapon/ore/Value(var/base)
 	. = ..()
 	if(!ore)
 		return
 	var/material/M
-	if(ore.smelts_to) 
+	if(ore.smelts_to)
 		M = get_material_by_name(ore.smelts_to)
 	else if (ore.compresses_to)
 		M = get_material_by_name(ore.compresses_to)

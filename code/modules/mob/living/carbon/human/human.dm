@@ -818,15 +818,16 @@
 		src.verbs -= /mob/living/carbon/human/proc/remoteobserve
 		return
 
-//	if(client.eye != client.mob)
-//		remoteview_target = null
-//		reset_view(0)
+	if(client.eye != client.mob)
+		remoteview_target = null
+		reset_view(0)
 		return
-//
+
 	var/list/mob/creatures = list()
 
 	for(var/mob/living/carbon/h in world)
-		if(h.stat!=CONSCIOUS) //Not on mining or the station. Or dead
+		var/turf/temp_turf = get_turf(h)
+		if((temp_turf.z != 1 && temp_turf.z != 5) || h.stat!=CONSCIOUS) //Not on mining or the station. Or dead
 			continue
 		creatures += h
 

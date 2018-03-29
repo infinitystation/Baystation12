@@ -30,13 +30,6 @@ This saves us from having to call add_fingerprint() any time something is put in
 		qdel(W)
 	return null
 
-/mob/living/carbon/human/proc/is_in_hands(var/typepath)
-	if(istype(l_hand,typepath))
-		return l_hand
-	if(istype(r_hand,typepath))
-		return r_hand
-	return 0
-
 //Puts the item into our active hand if possible. returns 1 on success.
 /mob/living/carbon/human/put_in_active_hand(var/obj/item/W)
 	return (hand ? put_in_l_hand(W) : put_in_r_hand(W))

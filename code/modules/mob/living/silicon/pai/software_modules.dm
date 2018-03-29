@@ -20,7 +20,7 @@
 
 	proc/is_active(mob/living/silicon/pai/user)
 		return 0
-	
+
 	proc/on_purchase(mob/living/silicon/pai/user)
 		return
 
@@ -141,7 +141,7 @@
 	ram_cost = 5
 	id = "messenger"
 	toggle = 0
-	
+
 	on_ui_interact(mob/living/silicon/pai/user, datum/nanoui/ui=null, force_open=1)
 		var/data[0]
 
@@ -219,7 +219,7 @@
 	if(user && !user.pda)
 		user.pda = new(user)
 		user.pda.set_owner_rank_job(text("[]", user), "Personal Assistant")
-				
+
 /datum/pai_software/door_jack
 	name = "Door Jack"
 	ram_cost = 30
