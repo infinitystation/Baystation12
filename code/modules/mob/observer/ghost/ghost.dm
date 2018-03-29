@@ -299,6 +299,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set desc = "Follow and haunt a mob."
 	if(client && client.banprisoned)
 		return
+
 	if(!fh.show_entry()) return
 	ManualFollow(fh.followed_instance)
 
@@ -352,6 +353,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "Ghost"
 	if(client && client.banprisoned)
 		return
+
 	var/turf/t = get_turf(src)
 	if(t)
 		print_atmos_analysis(src, atmosanalyzer_scan(t))
@@ -370,6 +372,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "Ghost"
 	if(client && client.banprisoned)
 		return
+
 	if(config.disable_player_mice)
 		to_chat(src, "<span class='warning'>Spawning as a mouse is currently disabled.</span>")
 		return
@@ -410,6 +413,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "Ghost"
 	if(client && client.banprisoned)
 		return
+
 	var/dat
 	dat += "<h4>Crew Manifest</h4>"
 	dat += html_crew_manifest()
@@ -444,7 +448,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/pointed(atom/A as mob|obj|turf in view())
 	if(!..())
 		return 0
-	usr.visible_message("<span class='deadsay'><b>[src]</b> указывает на [A]</span>")
+	usr.visible_message("<span class='deadsay'><b>[src]</b> points to [A]</span>")
 	return 1
 
 /mob/observer/ghost/proc/show_hud_icon(var/icon_state, var/make_visible)
@@ -460,32 +464,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	else
 		remove_client_image(hud_image)
 
-/mob/observer/ghost/proc/toggle_visibility()
-	set category = "Ghost"
-	set name = "Toggle Visibility"
-	set desc = "Allows you to turn (in)visible (almost) at will."
-	if(client && client.banprisoned)
-		return
-	if(invisibility && !(args.len && args[1]) && world.time < next_visibility_toggle)
-		to_chat(src, "You must gather strength before you can turn visible again...")
-		return
-
-	if(invisibility == 0)
-		next_visibility_toggle = world.time + 1 MINUTE
-		visible_message("<span class='emote'>It fades from sight...</span>", "<span class='info'>You are now invisible.</span>")
-		invisibility = INVISIBILITY_OBSERVER
-		show_hud_icon("cult", FALSE)
-	else
-		to_chat(src, "<span class='info'>You are now visible!</span>")
-		invisibility = 0
-		show_hud_icon("cult", TRUE) // Give the ghost a cult icon which should be visible only to itself
-
 /mob/observer/ghost/verb/toggle_anonsay()
 	set category = "Ghost"
 	set name = "Toggle Anonymous Chat"
 	set desc = "Toggles showing your key in dead chat."
 	if(client && client.banprisoned)
 		return
+
 	src.anonsay = !src.anonsay
 	if(anonsay)
 		to_chat(src, "<span class='info'>Your key won't be shown when you speak in dead chat.</span>")

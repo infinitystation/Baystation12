@@ -10,7 +10,7 @@
 	var/blurb = "A completely nondescript species."      // A brief lore summary for use in the chargen screen.
 
 	// Icon/appearance vars.
-	var/icobase = 'icons/mob/human_races/r_human_new.dmi'    // Normal icon set.
+	var/icobase = 'icons/mob/human_races/r_human.dmi'    // Normal icon set.
 	var/deform = 'icons/mob/human_races/r_def_human.dmi' // Mutated icon set.
 
 	// Damage overlay and masks.
@@ -87,7 +87,6 @@
 	var/metabolism_mod = 1                    // Reagent metabolism modifier
 	var/vision_flags = SEE_SELF               // Same flags as glasses.
 
-
 	// Death vars.
 	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
 	var/remains_type = /obj/item/remains/xeno
@@ -106,7 +105,7 @@
 	var/breath_type = "oxygen"                        // Non-oxygen gas breathed, if any.
 	var/poison_type = "phoron"                        // Poisonous air.
 	var/exhale_type = "carbon_dioxide"                // Exhaled gas type.
-	var/cold_level_1 = 243                            // Cold damage level 1 below this point. -30 Celsium degrees
+	var/cold_level_1 = 243                           // Cold damage level 1 below this point. -30 Celsium degrees
 	var/cold_level_2 = 200                            // Cold damage level 2 below this point.
 	var/cold_level_3 = 120                            // Cold damage level 3 below this point.
 	var/heat_level_1 = 360                            // Heat damage level 1 above this point.

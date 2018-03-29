@@ -36,7 +36,7 @@
 	mob_size = MOB_SMALL
 
 	speak = list("Hi","Hello!","Cracker?","BAWWWWK george mellons griffing me")
-	speak_emote = list("squawks","говорит","yells")
+	speak_emote = list("squawks","says","yells")
 	emote_hear = list("squawks","bawks")
 	emote_see = list("flutters its wings")
 
@@ -687,7 +687,7 @@
 	if(stat)
 		return
 
-	var/verb = "говорит"
+	var/verb = "says"
 	if(speak_emote.len)
 		verb = pick(speak_emote)
 
@@ -716,14 +716,14 @@
 	..(message)
 
 
-/mob/living/simple_animal/parrot/hear_say(var/message, var/verb = "говорит", var/datum/language/language = null, var/alt_name = "",var/italics = 0, var/mob/speaker = null)
+/mob/living/simple_animal/parrot/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "",var/italics = 0, var/mob/speaker = null)
 	if(prob(50))
 		parrot_hear(message)
 	..()
 
 
 
-/mob/living/simple_animal/parrot/hear_radio(var/message, var/verb="говорит", var/datum/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0)
+/mob/living/simple_animal/parrot/hear_radio(var/message, var/verb="says", var/datum/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0)
 	if(prob(50) && available_channels.len)
 		parrot_hear("[pick(available_channels)] [message]")
 	..()

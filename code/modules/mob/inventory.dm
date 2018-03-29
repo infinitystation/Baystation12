@@ -291,7 +291,3 @@ var/list/slot_equipment_priority = list( \
 		var/obj/item/I = entry
 		if(I.body_parts_covered & body_parts)
 			. += I
-
-/mob/proc/get_all_slots()
- 	return list(wear_mask, back, l_hand, r_hand)
-

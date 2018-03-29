@@ -27,7 +27,7 @@
 	cold_level_2 = 50
 	cold_level_3 = 0
 
-	gluttonous = GLUT_SMALLER|GLUT_ITEM_NORMAL
+	gluttonous = GLUT_TINY|GLUT_ITEM_NORMAL
 	stomach_capacity = 12
 
 	breath_type = "nitrogen"

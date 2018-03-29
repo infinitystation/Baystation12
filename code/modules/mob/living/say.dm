@@ -70,6 +70,23 @@ var/list/department_radio_keys = list(
 	  ":З" = "AI Private",	".З" = "AI Private",
 	  ":Я" = "Entertainment",".Я" = "Entertainment",
 	  ":Н" = "Exploration",		".Н" = "Exploration",
+
+	  /*
+	  //kinda localization -- rastaf0
+	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
+	  ":ГЄ" = "right ear",	".ГЄ" = "right ear",
+	  ":Г¤" = "left ear",	".Г¤" = "left ear",
+	  ":Гё" = "intercom",	".Гё" = "intercom",
+	  ":Г°" = "department",	".Г°" = "department",
+	  ":Г±" = "Command",		".Г±" = "Command",
+	  ":ГІ" = "Science",		".ГІ" = "Science",
+	  ":Гј" = "Medical",		".Гј" = "Medical",
+	  ":Гі" = "Engineering",	".Гі" = "Engineering",
+	  ":Г»" = "Security",	".Г»" = "Security",
+	  ":Г¶" = "whisper",		".Г¶" = "whisper",
+	  ":ГҐ" = "Mercenary",	".ГҐ" = "Mercenary",
+	  ":Г©" = "Supply",		".Г©" = "Supply",
+	  */
 )
 
 
@@ -150,12 +167,10 @@ proc/get_radio_key_from_channel(var/channel)
 	return returns
 
 /mob/living/proc/get_speech_ending(verb, var/ending)
-	if(copytext(ending, length(ending) - 1) == "!!")
-		verb = pick("кричит", "вопит")
-	else if(ending == "!")
-		verb = "восклицает"
-	else if(ending == "?")
-		verb = "спрашивает"
+	if(ending=="!")
+		return pick("exclaims","shouts","yells")
+	if(ending=="?")
+		return "asks"
 	return verb
 
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="", whispering)

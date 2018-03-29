@@ -237,7 +237,7 @@
 	set category = "IC"
 
 	if((is_blind(src) || usr.stat) && !isobserver(src))
-		to_chat(src, "<span class='notice'>ѕохоже, тут что-то есть, но вы не можете этого увидеть.</span>")
+		to_chat(src, "<span class='notice'>Something is there but you can't see it.</span>")
 		return 1
 
 	face_atom(A)
