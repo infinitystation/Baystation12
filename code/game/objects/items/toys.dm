@@ -355,6 +355,7 @@
 /obj/item/toy/prize
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "ripleytoy"
+	w_class = ITEM_SIZE_SMALL
 	var/cooldown = 0
 
 //all credit to skasi for toy mech fun ideas
@@ -435,6 +436,7 @@
 	name = "Completely Glitched action figure"
 	desc = "A \"Space Life\" brand... wait, what the hell is this thing? It seems to be requesting the sweet release of death."
 	icon_state = "assistant"
+	w_class = ITEM_SIZE_SMALL
 	icon = 'icons/obj/toy.dmi'
 
 /obj/item/toy/figure/cmo
