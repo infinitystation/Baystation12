@@ -9,6 +9,11 @@
 	item_cost = 4
 	path = /obj/item/clothing/shoes/syndigaloshes
 
+/datum/uplink_item/item/stealth_items/sneakies
+	name = "Sneakies"
+	item_cost = 4
+	path = /obj/item/clothing/shoes/laceup/sneakies
+
 /datum/uplink_item/item/stealth_items/spy
 	name = "Bug Kit"
 	item_cost = 8
@@ -34,8 +39,3 @@
 	item_cost = 32
 	antag_costs = list(MODE_MERCENARY = 22)
 	path = /obj/item/device/chameleon
-
-/datum/uplink_item/item/stealth_items/sneakies
-	name = "Sneakies"
-	item_cost = 4
-	path = /obj/item/clothing/shoes/laceup/sneakies

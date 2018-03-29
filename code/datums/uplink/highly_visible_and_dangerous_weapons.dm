@@ -16,6 +16,12 @@
 	antag_costs = list(MODE_MERCENARY = 16)
 	path = /obj/item/weapon/gun/energy/crossbow
 
+/datum/uplink_item/item/visible_weapons/ion_pistol
+	name = "Ion Pistol"
+	item_cost = 45
+	antag_costs = list(MODE_MERCENARY = 20)
+	path = /obj/item/weapon/gun/energy/ionrifle/small
+
 /datum/uplink_item/item/visible_weapons/energy_sword
 	name = "Energy Sword"
 	item_cost = 32
@@ -27,12 +33,6 @@
 	item_cost = 32
 	antag_costs = list(MODE_MERCENARY = 12)
 	path = /obj/item/weapon/storage/box/syndie_kit/g9mm
-
-/datum/uplink_item/item/badassery/money_cannon
-	name = "Modified Money Cannon"
-	item_cost = 48
-	path = /obj/item/weapon/gun/launcher/money/hacked
-	desc = "Too much money? Not enough screaming? Try the Money Cannon."
 
 /datum/uplink_item/item/visible_weapons/riggedlaser
 	name = "Exosuit (APLU) Rigged Laser"
@@ -46,25 +46,36 @@
 	antag_costs = list(MODE_MERCENARY = 12)
 	path = /obj/item/weapon/gun/energy/gun
 
-/datum/uplink_item/item/visible_weapons/revolver
-	name = "Revolver, .357"
-	item_cost = 56
-	antag_costs = list(MODE_MERCENARY = 14)
-	path = /obj/item/weapon/storage/backpack/satchel/syndie_kit/revolver
+/datum/uplink_item/item/visible_weapons/detective_revolver
+	name = "Holdout Revolver"
+	item_cost = 38
+	antag_costs = list(MODE_MERCENARY = 12)
+	path = /obj/item/weapon/gun/projectile/revolver/detective
 
 /datum/uplink_item/item/visible_weapons/revolver2
-	name = "Revolver, .44"
+	name = "Revolver W4"
 	item_cost = 48
-	antag_costs = list(MODE_MERCENARY = 5)
+	antag_costs = list(MODE_MERCENARY = 12)
 	path = /obj/item/weapon/storage/backpack/satchel/syndie_kit/revolver2
 
-/datum/uplink_item/item/visible_weapons/grenade_launcher
-	name = "Grenade Launcher"
-	item_cost = 60
-	antag_costs = list(MODE_MERCENARY = 18)
-	path = /obj/item/weapon/gun/launcher/grenade/loaded
+/datum/uplink_item/item/visible_weapons/revolver
+	name = "Revolver 'Colt'"
+	item_cost = 56
+	antag_costs = list(MODE_MERCENARY = 20)
+	path = /obj/item/weapon/storage/backpack/satchel/syndie_kit/revolver
 
-//These are for traitors (or other antags, perhaps) to have the option of purchasing some merc gear.
+/datum/uplink_item/item/visible_weapons/deagle
+	name = "Magnum Pistol"
+	item_cost = 52
+	antag_costs = list(MODE_MERCENARY = 30)
+	path = /obj/item/weapon/gun/projectile/magnum_pistol
+
+/datum/uplink_item/item/visible_weapons/machine_pistol
+	name = "Machine Pistol"
+	item_cost = 45
+	antag_costs = list(MODE_MERCENARY = 10)
+	path = /obj/item/weapon/gun/projectile/automatic/machine_pistol
+
 /datum/uplink_item/item/visible_weapons/submachinegun
 	name = "Submachine Gun"
 	item_cost = 52
@@ -74,7 +85,7 @@
 /datum/uplink_item/item/visible_weapons/assaultrifle
 	name = "Assault Rifle"
 	item_cost = 60
-	antag_costs = list(MODE_MERCENARY = 25)
+	antag_costs = list(MODE_MERCENARY = 30)
 	path = /obj/item/weapon/gun/projectile/automatic/sts35
 
 /datum/uplink_item/item/visible_weapons/advanced_energy_gun
@@ -83,41 +94,17 @@
 	antag_costs = list(MODE_MERCENARY = 40)
 	path = /obj/item/weapon/gun/energy/gun/nuclear
 
-/datum/uplink_item/item/visible_weapons/ion_pistol
-	name = "Ion Pistol"
-	item_cost = 45
-	antag_costs = list(MODE_MERCENARY = 18)
-	path = /obj/item/weapon/gun/energy/ionrifle/small
+/datum/uplink_item/item/visible_weapons/sniper
+	name = "Sniper Carabine"
+	item_cost = 35
+	antag_roles = list(MODE_MERCENARY)
+	path = /obj/item/weapon/gun/projectile/automatic/amrcarabine
 
 /datum/uplink_item/item/visible_weapons/heavysniper
-	name = "Anti-materiel Rifle with ammunition"
+	name = "Anti-materiel Rifle"
 	item_cost = 68
 	antag_costs = list(MODE_MERCENARY = 45)
 	path = /obj/item/weapon/storage/secure/briefcase/heavysniper
-
-/datum/uplink_item/item/visible_weapons/sniper
-	name = "Sniper Carabine"
-	item_cost = 55
-	antag_costs = list(MODE_MERCENARY = 35)
-	path = /obj/item/weapon/gun/projectile/automatic/amrcarabine
-
-/datum/uplink_item/item/visible_weapons/machine_pistol
-	name = "Machine Pistol"
-	item_cost = 45
-	antag_costs = list(MODE_MERCENARY = 10)
-	path = /obj/item/weapon/gun/projectile/automatic/machine_pistol
-
-/datum/uplink_item/item/visible_weapons/automatic_shotgun
-	name = "Automatic Shotgun"
-	item_cost = 66
-	antag_costs = list(MODE_MERCENARY = 47)
-	path = /obj/item/weapon/gun/projectile/shotgun/magazine
-
-/datum/uplink_item/item/visible_weapons/combat_shotgun
-	name = "Combat Shotgun"
-	item_cost = 52
-	antag_costs = list(MODE_MERCENARY = 33)
-	path = /obj/item/weapon/gun/projectile/shotgun/pump/combat
 
 /datum/uplink_item/item/visible_weapons/sawnoff
 	name = "Sawnoff Shotgun"
@@ -125,17 +112,17 @@
 	antag_costs = list(MODE_MERCENARY = 27)
 	path = /obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn
 
-/datum/uplink_item/item/visible_weapons/deagle
-	name = "Magnum Pistol"
+/datum/uplink_item/item/visible_weapons/combat_shotgun
+	name = "Combat Shotgun"
 	item_cost = 52
 	antag_costs = list(MODE_MERCENARY = 33)
-	path = /obj/item/weapon/gun/projectile/magnum_pistol
+	path = /obj/item/weapon/gun/projectile/shotgun/pump/combat
 
-/datum/uplink_item/item/visible_weapons/detective_revolver
-	name = "Holdout Revolver"
-	item_cost = 38
-	antag_costs = list(MODE_MERCENARY = 18)
-	path = /obj/item/weapon/gun/projectile/revolver/detective
+/datum/uplink_item/item/visible_weapons/automatic_shotgun
+	name = "Automatic Shotgun"
+	item_cost = 45
+	antag_roles = list(MODE_MERCENARY)
+	path = /obj/item/weapon/gun/projectile/shotgun/magazine
 
 /datum/uplink_item/item/visible_weapons/pulserifle
 	name = "Pulse Rifle"
@@ -154,3 +141,9 @@
 	item_cost = 60
 	antag_costs = list(MODE_MERCENARY = 20)
 	path = /obj/item/weapon/gun/magnetic/railgun/flechette
+
+/datum/uplink_item/item/visible_weapons/grenade_launcher
+	name = "Grenade Launcher"
+	item_cost = 60
+	antag_costs = list(MODE_MERCENARY = 18)
+	path = /obj/item/weapon/gun/launcher/grenade/loaded

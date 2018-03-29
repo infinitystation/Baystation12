@@ -40,11 +40,13 @@
 /datum/uplink_item/item/ammo/c12m
 	name = "Automatic Shotgun Magazine"
 	item_cost = 10
+	antag_costs = list(MODE_MERCENARY = 10)
 	path = /obj/item/ammo_magazine/c12m
 
 /datum/uplink_item/item/ammo/sniperammo
 	name = "14.5mm"
 	item_cost = 8
+	antag_costs = list(MODE_MERCENARY = 8)
 	path = /obj/item/weapon/storage/box/sniperammo
 
 /datum/uplink_item/item/ammo/sniperammo/apds
