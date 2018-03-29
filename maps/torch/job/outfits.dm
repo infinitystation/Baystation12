@@ -492,7 +492,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/rank/bartender
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/torch/contractor/service/bartender
-	l_pocket = /obj/item/device/cassette/custom
 	pda_type = /obj/item/device/pda/bar
 
 /decl/hierarchy/outfit/job/torch/crew/service/crewman
