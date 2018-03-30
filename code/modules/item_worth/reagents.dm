@@ -598,3 +598,15 @@
 
 /datum/reagent/xenomicrobes
 	value = 5
+
+/datum/reagent/experimental
+	value = 30
+
+/datum/reagent/rsh4
+	value = 20
+
+/datum/reagent/rsh3
+	value = 25
+
+/datum/reagent/rsh2
+	value = 35
