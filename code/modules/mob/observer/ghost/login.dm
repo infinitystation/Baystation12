@@ -1,5 +1,6 @@
 /mob/observer/ghost/Login()
 	..()
+
 	if(client && client.banprisoned)
 		ckey = null
 		qdel(src)

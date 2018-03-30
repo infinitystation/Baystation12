@@ -63,7 +63,7 @@
 	var/is_synth = isSynthetic()
 	if(!(skipjumpsuit && skipface))
 		var/species_name = "\improper "
-		if(is_synth && !(species.type in typesof(/datum/species/machine)))
+		if(is_synth && species.type != /datum/species/machine)
 			species_name += "Cyborg "
 		species_name += "[species.name]"
 		msg += ", <b><font color='[species.get_flesh_colour(src)]'> \a [species_name]!</font></b>"
@@ -360,7 +360,7 @@
 	set desc = "Sets a description which will be shown when someone examines you."
 	set category = "IC"
 
-	pose =  sanitize(input(usr, "Это [src]. [get_visible_gender() == MALE ? "Он" : get_visible_gender() == FEMALE ? "Она" : "Оно"]...", "Pose", null)  as text)
+	pose =  sanitize(input(usr, "This is [src]. [get_visible_gender() == MALE ? "He" : get_visible_gender() == FEMALE ? "She" : "They"]...", "Pose", null)  as text)
 
 /mob/living/carbon/human/verb/set_flavor()
 	set name = "Set Flavour Text"

@@ -11,15 +11,15 @@
 		var/datum/language/speaking = parse_language(message)
 		if(speaking)
 			message = copytext(message, 2+length(speaking.key))
-		var/verb = "говорит"
+		var/verb = "says"
 		var/ending = copytext(message, length(message))
 		if (speaking)
 			verb = speaking.get_spoken_verb(ending)
 		else
 			if(ending=="!")
-				verb=pick("восклицает","кричит","вопит")
+				verb=pick("exclaims","shouts","yells")
 			if(ending=="?")
-				verb="спрашивает"
+				verb="asks"
 
 		if(prob(emp_damage*4))
 			if(prob(10))//10% chane to drop the message entirely

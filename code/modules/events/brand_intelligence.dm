@@ -43,12 +43,12 @@
 
 	if(IsMultiple(activeFor, 12))
 		originMachine.speak(pick("Try our aggressive new marketing strategies!", \
-								"You should buy products to feed your lifestyle obsession!", \
-								"Consume!", \
-								"Your money can buy happiness!", \
-								"Engage direct marketing!", \
-								"Advertising is legalized lying! But don't let that put you off our great deals!", \
-								"You don't want to buy anything? Yeah, well I didn't want to buy your mom either."))
+								 "You should buy products to feed your lifestyle obsession!", \
+								 "Consume!", \
+								 "Your money can buy happiness!", \
+								 "Engage direct marketing!", \
+								 "Advertising is legalized lying! But don't let that put you off our great deals!", \
+								 "You don't want to buy anything? Yeah, well I didn't want to buy your mom either."))
 
 /datum/event/brand_intelligence/end()
 	originMachine.shut_up = 1
@@ -56,5 +56,4 @@
 	for(var/obj/machinery/vending/infectedMachine in infectedVendingMachines)
 		infectedMachine.shut_up = 1
 		infectedMachine.shoot_inventory = 0
-	spawn(2 SECONDS)
-		command_announcement.Announce("All traces of the rampant brand intelligence have disappeared from the systems.", "[location_name()] Firewall Subroutines")
+	command_announcement.Announce("All traces of the rampant brand intelligence have disappeared from the systems.", "[location_name()] Firewall Subroutines")

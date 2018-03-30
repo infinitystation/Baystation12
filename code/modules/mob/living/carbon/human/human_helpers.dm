@@ -135,7 +135,7 @@
 		return 0
 	if(!species)
 		return 0
-
+	
 	if(bodytemperature > species.cold_level_1)
 		return 0
 	else if(bodytemperature > species.cold_level_2)

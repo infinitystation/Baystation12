@@ -56,25 +56,24 @@
 		if(1) to_chat(user, "It's an empty frame.")
 		if(2) to_chat(user, "It's wired.")
 		if(3) to_chat(user, "The casing is closed.")
-
 /obj/machinery/light_construct/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	src.add_fingerprint(user)
 	if(isWrench(W))
-		if(src.stage == 1)
+		if (src.stage == 1)
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 			to_chat(usr, "You begin deconstructing \a [src].")
-			if(!do_after(usr, 30,src))
+			if (!do_after(usr, 30,src))
 				return
-			new /obj/item/stack/material/steel(get_turf(src.loc), sheets_refunded)
+			new /obj/item/stack/material/steel( get_turf(src.loc), sheets_refunded )
 			user.visible_message("[user.name] deconstructs [src].", \
 				"You deconstruct [src].", "You hear a noise.")
 			playsound(src.loc, 'sound/items/Deconstruct.ogg', 75, 1)
 			qdel(src)
-		if(src.stage == 2)
+		if (src.stage == 2)
 			to_chat(usr, "You have to remove the wires first.")
 			return
 
-		if(src.stage == 3)
+		if (src.stage == 3)
 			to_chat(usr, "You have to unscrew the case first.")
 			return
 
@@ -89,9 +88,9 @@
 		return
 
 	if(istype(W, /obj/item/stack/cable_coil))
-		if(src.stage != 1) return
+		if (src.stage != 1) return
 		var/obj/item/stack/cable_coil/coil = W
-		if(coil.use(1))
+		if (coil.use(1))
 			src.stage = 2
 			src.update_icon()
 			user.visible_message("[user.name] adds wires to [src].", \
@@ -99,7 +98,7 @@
 		return
 
 	if(isScrewdriver(W))
-		if(src.stage == 2)
+		if (src.stage == 2)
 			src.stage = 3
 			src.update_icon()
 			user.visible_message("[user.name] closes [src]'s casing.", \
@@ -547,9 +546,9 @@
 	item_state = "c_tube"
 	matter = list("glass" = 100)
 
-	brightness_range = 6	// luminosity when on, also used in power calculation
-	brightness_power = 3
 	brightness_color = "#ffffff"
+	brightness_range = 7	// luminosity when on, also used in power calculation
+	brightness_power = 6
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_range = 4, l_power = 1, l_color = "#da0205"),
 		)
@@ -558,8 +557,8 @@
 /obj/item/weapon/light/tube/large
 	w_class = ITEM_SIZE_SMALL
 	name = "large light tube"
-	brightness_range = 8
-	brightness_power = 3
+	brightness_range = 9
+	brightness_power = 6
 
 /obj/item/weapon/light/bulb
 	name = "light bulb"
@@ -571,8 +570,8 @@
 	matter = list("glass" = 100)
 
 	brightness_range = 4
-	brightness_power = 2
 	brightness_color = "#fae1af"
+	brightness_power = 4
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_range = 3, l_power = 1, l_color = "#da0205"),
 		)
@@ -600,7 +599,7 @@
 	item_state = "egg4"
 	matter = list("glass" = 100)
 	brightness_range = 4
-	brightness_power = 2
+	brightness_power = 4
 
 // update the icon state and description of the light
 /obj/item/weapon/light/update_icon()

@@ -20,16 +20,6 @@
 	var/obj/screen/using
 	var/obj/screen/inventory/inv_box
 
-	var/obj/item/organ/internal/eyes/E = target.internal_organs_by_name[BP_EYES]
-	mymob.noise = new /obj/screen()
-	mymob.noise.icon = 'icons/mob/noise.dmi'
-	mymob.noise.icon_state = "[rand(1,9)]"
-	mymob.noise.name = ""
-	mymob.noise.screen_loc = "WEST,SOUTH to EAST,NORTH"
-	mymob.noise.mouse_opacity = 0
-	mymob.noise.alpha = target.isSynthetic() || E && E.robotic >= ORGAN_ROBOT ? 255 : 0
-	hud_elements |= mymob.noise
-
 	// Draw the various inventory equipment slots.
 	var/has_hidden_gear
 	for(var/gear_slot in hud_data.gear)

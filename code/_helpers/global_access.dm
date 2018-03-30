@@ -41,6 +41,8 @@
 			return global.SSair;
 		if("SSairflow")
 			return global.SSairflow;
+		if("SSantags")
+			return global.SSantags;
 		if("SSatoms")
 			return global.SSatoms;
 		if("SSfastprocess")
@@ -95,8 +97,6 @@
 			return global._client_preferences_by_type;
 		if("account_hack_attempted")
 			return global.account_hack_attempted;
-		if("actor")
-			return global.actor;
 		if("additional_antag_types")
 			return global.additional_antag_types;
 		if("admin_datums")
@@ -159,10 +159,6 @@
 			return global.allCasters;
 		if("allConsoles")
 			return global.allConsoles;
-		if("all_antag_spawnpoints_")
-			return global.all_antag_spawnpoints_;
-		if("all_antag_types_")
-			return global.all_antag_types_;
 		if("all_grabobjects")
 			return global.all_grabobjects;
 		if("all_grabstates")
@@ -191,8 +187,6 @@
 			return global.announced_news_types;
 		if("antag_add_finished")
 			return global.antag_add_finished;
-		if("antag_names_to_ids_")
-			return global.antag_names_to_ids_;
 		if("appearance_manager")
 			return global.appearance_manager;
 		if("area_repository")
@@ -235,8 +229,6 @@
 			return global.blocked;
 		if("bomb_set")
 			return global.bomb_set;
-		if("borers")
-			return global.borers;
 		if("cable_list")
 			return global.cable_list;
 		if("cached_icons")
@@ -289,8 +281,6 @@
 			return global.command_announcement;
 		if("command_name")
 			return global.command_name;
-		if("commandos")
-			return global.commandos;
 		if("common_tools")
 			return global.common_tools;
 		if("config")
@@ -313,8 +303,6 @@
 			return global.crew_repository;
 		if("csrfz_check")
 			return global.csrfz_check;
-		if("cult")
-			return global.cult;
 		if("currentbuild")
 			return global.currentbuild;
 		if("currently_running_tests")
@@ -329,8 +317,6 @@
 			return global.dbcon;
 		if("dbcon_old")
 			return global.dbcon_old;
-		if("deathsquad")
-			return global.deathsquad;
 		if("debug_verbs")
 			return global.debug_verbs;
 		if("decls_repository")
@@ -345,8 +331,6 @@
 			return global.default_pai_software;
 		if("defer_powernet_rebuild")
 			return global.defer_powernet_rebuild;
-		if("deity")
-			return global.deity;
 		if("delta_index")
 			return global.delta_index;
 		if("department_accounts")
@@ -377,8 +361,6 @@
 			return global.endgame_exits;
 		if("endgame_safespawns")
 			return global.endgame_safespawns;
-		if("ert")
-			return global.ert;
 		if("ert_base_chance")
 			return global.ert_base_chance;
 		if("escape_pods")
@@ -463,8 +445,6 @@
 			return global.global_message_listener;
 		if("global_vars_")
 			return global.global_vars_;
-		if("godcult")
-			return global.godcult;
 		if("gravity_is_on")
 			return global.gravity_is_on;
 		if("gyrotrons")
@@ -557,8 +537,6 @@
 			return global.lobby_image;
 		if("log_end")
 			return global.log_end;
-		if("loyalists")
-			return global.loyalists;
 		if("lunchables_drink_reagents_")
 			return global.lunchables_drink_reagents_;
 		if("lunchables_drinks_")
@@ -599,8 +577,6 @@
 			return global.mechas_list;
 		if("mechtoys")
 			return global.mechtoys;
-		if("mercs")
-			return global.mercs;
 		if("merged")
 			return global.merged;
 		if("message_delay")
@@ -667,8 +643,6 @@
 			return global.next_station_date_change;
 		if("nextbuild")
 			return global.nextbuild;
-		if("ninjas")
-			return global.ninjas;
 		if("ninjastart")
 			return global.ninjastart;
 		if("not_incapacitated_turf_state")
@@ -773,8 +747,6 @@
 			return global.radio_controller;
 		if("radiochannels")
 			return global.radiochannels;
-		if("raiders")
-			return global.raiders;
 		if("random_junk_")
 			return global.random_junk_;
 		if("random_maps")
@@ -787,8 +759,6 @@
 			return global.registered_macros_by_ckey_;
 		if("religion_name")
 			return global.religion_name;
-		if("renegades")
-			return global.renegades;
 		if("req_console_assistance")
 			return global.req_console_assistance;
 		if("req_console_information")
@@ -801,8 +771,6 @@
 			return global.restricted_camera_networks;
 		if("revdata")
 			return global.revdata;
-		if("revs")
-			return global.revs;
 		if("robot_custom_icons")
 			return global.robot_custom_icons;
 		if("robot_hud_colours")
@@ -989,8 +957,6 @@
 			return global.total_lighting_sources;
 		if("total_unit_tests")
 			return global.total_unit_tests;
-		if("traitors")
-			return global.traitors;
 		if("transfer_controller")
 			return global.transfer_controller;
 		if("turbolift_controller")
@@ -1039,8 +1005,6 @@
 			return global.whitelisted_species;
 		if("wireColours")
 			return global.wireColours;
-		if("wizards")
-			return global.wizards;
 		if("world_topic_spam_protect_ip")
 			return global.world_topic_spam_protect_ip;
 		if("world_topic_spam_protect_time")
@@ -1051,8 +1015,6 @@
 			return global.worths;
 		if("wrapped_species_by_ref")
 			return global.wrapped_species_by_ref;
-		if("xenomorphs")
-			return global.xenomorphs;
 		if("z_levels")
 			return global.z_levels;
 		if("zone_blocked")
@@ -1100,6 +1062,8 @@
 			global.SSair=newval;
 		if("SSairflow")
 			global.SSairflow=newval;
+		if("SSantags")
+			global.SSantags=newval;
 		if("SSatoms")
 			global.SSatoms=newval;
 		if("SSfastprocess")
@@ -1154,8 +1118,6 @@
 			global._client_preferences_by_type=newval;
 		if("account_hack_attempted")
 			global.account_hack_attempted=newval;
-		if("actor")
-			global.actor=newval;
 		if("additional_antag_types")
 			global.additional_antag_types=newval;
 		if("admin_datums")
@@ -1218,10 +1180,6 @@
 			global.allCasters=newval;
 		if("allConsoles")
 			global.allConsoles=newval;
-		if("all_antag_spawnpoints_")
-			global.all_antag_spawnpoints_=newval;
-		if("all_antag_types_")
-			global.all_antag_types_=newval;
 		if("all_grabobjects")
 			global.all_grabobjects=newval;
 		if("all_grabstates")
@@ -1250,8 +1208,6 @@
 			global.announced_news_types=newval;
 		if("antag_add_finished")
 			global.antag_add_finished=newval;
-		if("antag_names_to_ids_")
-			global.antag_names_to_ids_=newval;
 		if("appearance_manager")
 			global.appearance_manager=newval;
 		if("area_repository")
@@ -1294,8 +1250,6 @@
 			global.blocked=newval;
 		if("bomb_set")
 			global.bomb_set=newval;
-		if("borers")
-			global.borers=newval;
 		if("cable_list")
 			global.cable_list=newval;
 		if("cached_icons")
@@ -1348,8 +1302,6 @@
 			global.command_announcement=newval;
 		if("command_name")
 			global.command_name=newval;
-		if("commandos")
-			global.commandos=newval;
 		if("common_tools")
 			global.common_tools=newval;
 		if("config")
@@ -1372,8 +1324,6 @@
 			global.crew_repository=newval;
 		if("csrfz_check")
 			global.csrfz_check=newval;
-		if("cult")
-			global.cult=newval;
 		if("currentbuild")
 			global.currentbuild=newval;
 		if("currently_running_tests")
@@ -1388,8 +1338,6 @@
 			global.dbcon=newval;
 		if("dbcon_old")
 			global.dbcon_old=newval;
-		if("deathsquad")
-			global.deathsquad=newval;
 		if("debug_verbs")
 			global.debug_verbs=newval;
 		if("decls_repository")
@@ -1404,8 +1352,6 @@
 			global.default_pai_software=newval;
 		if("defer_powernet_rebuild")
 			global.defer_powernet_rebuild=newval;
-		if("deity")
-			global.deity=newval;
 		if("delta_index")
 			global.delta_index=newval;
 		if("department_accounts")
@@ -1436,8 +1382,6 @@
 			global.endgame_exits=newval;
 		if("endgame_safespawns")
 			global.endgame_safespawns=newval;
-		if("ert")
-			global.ert=newval;
 		if("ert_base_chance")
 			global.ert_base_chance=newval;
 		if("escape_pods")
@@ -1522,8 +1466,6 @@
 			global.global_message_listener=newval;
 		if("global_vars_")
 			global.global_vars_=newval;
-		if("godcult")
-			global.godcult=newval;
 		if("gravity_is_on")
 			global.gravity_is_on=newval;
 		if("gyrotrons")
@@ -1616,8 +1558,6 @@
 			global.lobby_image=newval;
 		if("log_end")
 			global.log_end=newval;
-		if("loyalists")
-			global.loyalists=newval;
 		if("lunchables_drink_reagents_")
 			global.lunchables_drink_reagents_=newval;
 		if("lunchables_drinks_")
@@ -1658,8 +1598,6 @@
 			global.mechas_list=newval;
 		if("mechtoys")
 			global.mechtoys=newval;
-		if("mercs")
-			global.mercs=newval;
 		if("merged")
 			global.merged=newval;
 		if("message_delay")
@@ -1726,8 +1664,6 @@
 			global.next_station_date_change=newval;
 		if("nextbuild")
 			global.nextbuild=newval;
-		if("ninjas")
-			global.ninjas=newval;
 		if("ninjastart")
 			global.ninjastart=newval;
 		if("not_incapacitated_turf_state")
@@ -1832,8 +1768,6 @@
 			global.radio_controller=newval;
 		if("radiochannels")
 			global.radiochannels=newval;
-		if("raiders")
-			global.raiders=newval;
 		if("random_junk_")
 			global.random_junk_=newval;
 		if("random_maps")
@@ -1846,8 +1780,6 @@
 			global.registered_macros_by_ckey_=newval;
 		if("religion_name")
 			global.religion_name=newval;
-		if("renegades")
-			global.renegades=newval;
 		if("req_console_assistance")
 			global.req_console_assistance=newval;
 		if("req_console_information")
@@ -1860,8 +1792,6 @@
 			global.restricted_camera_networks=newval;
 		if("revdata")
 			global.revdata=newval;
-		if("revs")
-			global.revs=newval;
 		if("robot_custom_icons")
 			global.robot_custom_icons=newval;
 		if("robot_hud_colours")
@@ -2048,8 +1978,6 @@
 			global.total_lighting_sources=newval;
 		if("total_unit_tests")
 			global.total_unit_tests=newval;
-		if("traitors")
-			global.traitors=newval;
 		if("transfer_controller")
 			global.transfer_controller=newval;
 		if("turbolift_controller")
@@ -2098,8 +2026,6 @@
 			global.whitelisted_species=newval;
 		if("wireColours")
 			global.wireColours=newval;
-		if("wizards")
-			global.wizards=newval;
 		if("world_topic_spam_protect_ip")
 			global.world_topic_spam_protect_ip=newval;
 		if("world_topic_spam_protect_time")
@@ -2110,8 +2036,6 @@
 			global.worths=newval;
 		if("wrapped_species_by_ref")
 			global.wrapped_species_by_ref=newval;
-		if("xenomorphs")
-			global.xenomorphs=newval;
 		if("z_levels")
 			global.z_levels=newval;
 		if("zone_blocked")
@@ -2138,6 +2062,7 @@
 	"SKILLS",
 	"SSair",
 	"SSairflow",
+	"SSantags",
 	"SSatoms",
 	"SSfastprocess",
 	"SSgarbage",
@@ -2165,7 +2090,6 @@
 	"_client_preferences_by_key",
 	"_client_preferences_by_type",
 	"account_hack_attempted",
-	"actor",
 	"additional_antag_types",
 	"admin_datums",
 	"admin_pm_repository",
@@ -2197,8 +2121,6 @@
 	"alien_whitelist",
 	"allCasters",
 	"allConsoles",
-	"all_antag_spawnpoints_",
-	"all_antag_types_",
 	"all_grabobjects",
 	"all_grabstates",
 	"all_languages",
@@ -2213,7 +2135,6 @@
 	"alphabet",
 	"announced_news_types",
 	"antag_add_finished",
-	"antag_names_to_ids_",
 	"appearance_manager",
 	"area_repository",
 	"artefact_feedback",
@@ -2235,7 +2156,6 @@
 	"blackbox",
 	"blocked",
 	"bomb_set",
-	"borers",
 	"cable_list",
 	"cached_icons",
 	"cached_space",
@@ -2262,7 +2182,6 @@
 	"comm_message_listeners",
 	"command_announcement",
 	"command_name",
-	"commandos",
 	"common_tools",
 	"config",
 	"contamination_overlay",
@@ -2274,7 +2193,6 @@
 	"created",
 	"crew_repository",
 	"csrfz_check",
-	"cult",
 	"currentbuild",
 	"currently_running_tests",
 	"custom_event_msg",
@@ -2282,7 +2200,6 @@
 	"damage_icon_parts",
 	"dbcon",
 	"dbcon_old",
-	"deathsquad",
 	"debug_verbs",
 	"decls_repository",
 	"default_material_composition",
@@ -2290,7 +2207,6 @@
 	"default_onmob_icons",
 	"default_pai_software",
 	"defer_powernet_rebuild",
-	"deity",
 	"delta_index",
 	"department_accounts",
 	"department_radio_keys",
@@ -2306,7 +2222,6 @@
 	"empty_playable_ai_cores",
 	"endgame_exits",
 	"endgame_safespawns",
-	"ert",
 	"ert_base_chance",
 	"escape_pods",
 	"escape_pods_by_name",
@@ -2349,7 +2264,6 @@
 	"ghost_traps",
 	"global_message_listener",
 	"global_vars_",
-	"godcult",
 	"gravity_is_on",
 	"gyrotrons",
 	"gzn_check",
@@ -2396,7 +2310,6 @@
 	"loadout_categories",
 	"lobby_image",
 	"log_end",
-	"loyalists",
 	"lunchables_drink_reagents_",
 	"lunchables_drinks_",
 	"lunchables_ethanol_reagents_",
@@ -2417,7 +2330,6 @@
 	"maze_cell_count",
 	"mechas_list",
 	"mechtoys",
-	"mercs",
 	"merged",
 	"message_delay",
 	"message_servers",
@@ -2451,7 +2363,6 @@
 	"next_duration_update",
 	"next_station_date_change",
 	"nextbuild",
-	"ninjas",
 	"ninjastart",
 	"not_incapacitated_turf_state",
 	"ntnet_card_uid",
@@ -2504,21 +2415,18 @@
 	"radiation_repository",
 	"radio_controller",
 	"radiochannels",
-	"raiders",
 	"random_junk_",
 	"random_maps",
 	"random_useful_",
 	"recentmessages",
 	"registered_macros_by_ckey_",
 	"religion_name",
-	"renegades",
 	"req_console_assistance",
 	"req_console_information",
 	"req_console_supplies",
 	"responsive_carriers",
 	"restricted_camera_networks",
 	"revdata",
-	"revs",
 	"robot_custom_icons",
 	"robot_hud_colours",
 	"robot_inventory",
@@ -2612,7 +2520,6 @@
 	"total_lighting_overlays",
 	"total_lighting_sources",
 	"total_unit_tests",
-	"traitors",
 	"transfer_controller",
 	"turbolift_controller",
 	"turbolifts",
@@ -2637,12 +2544,10 @@
 	"whitelist",
 	"whitelisted_species",
 	"wireColours",
-	"wizards",
 	"world_topic_spam_protect_ip",
 	"world_topic_spam_protect_time",
 	"world_uplinks",
 	"worths",
 	"wrapped_species_by_ref",
-	"xenomorphs",
 	"z_levels",
 	"zone_blocked")

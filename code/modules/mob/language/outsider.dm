@@ -35,7 +35,7 @@
 /datum/language/ling
 	name = "Changeling"
 	desc = "Although they are normally wary and suspicious of each other, changelings can commune over a distance."
-	speech_verb = "говорит"
+	speech_verb = "says"
 	colour = "changeling"
 	key = "g"
 	flags = RESTRICTED | HIVEMIND

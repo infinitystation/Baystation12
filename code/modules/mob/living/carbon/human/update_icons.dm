@@ -157,16 +157,10 @@ Please contact me on #coderbus IRC. ~Carn x
 	if (icon_update)
 		if(is_cloaked())
 
+			icon = 'icons/mob/human.dmi'
+			icon_state = "blank"
+
 			visible_overlays = list(visible_overlays[R_HAND_LAYER], visible_overlays[L_HAND_LAYER])
-
-			if(species.name != SPECIES_NABBER)
-
-				icon = 'icons/mob/infinity_mob.dmi'
-				icon_state = "cloak_full"
-
-			else
-				icon = 'icons/mob/infinity_mob_nabber.dmi'
-				icon_state = "cloak_full"
 
 		else
 			icon = stand_icon

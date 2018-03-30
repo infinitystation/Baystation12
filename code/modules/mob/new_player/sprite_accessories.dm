@@ -154,7 +154,6 @@
 	gender = FEMALE
 	flags = HAIR_TIEABLE
 
-
 /datum/sprite_accessory/hair/parted
 	name = "Parted"
 	icon_state = "hair_parted"
