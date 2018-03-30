@@ -60,12 +60,12 @@
 
 /datum/unarmed_attack/claws/strong
 	attack_verb = list("slashed")
-	damage = 5
+	damage = 10
 	shredding = 1
 
 /datum/unarmed_attack/bite/strong
 	attack_verb = list("mauled")
-	damage = 8
+	damage = 15
 	shredding = 1
 
 /datum/unarmed_attack/slime_glomp
