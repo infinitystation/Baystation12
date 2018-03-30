@@ -5,10 +5,12 @@
 /datum/chemical_reaction/rsh2
 	result = /datum/reagent/rsh2
 	required_reagents = list(/datum/reagent/experimental = 1)
-	result_amount = 2
+	result_amount = 1
 
 /datum/chemical_reaction/rsh2/New()
-    required_reagents |= list(pick(RANDOM_REAGENT) = pick(1,3))
+	var/random_amount = pick(1,3)
+	required_reagents |= list(pick(RANDOM_REAGENT) = random_amount)
+	result_amount += random_amount
 
 /datum/chemical_reaction/rsh3
 	result = /datum/reagent/rsh3
@@ -16,7 +18,9 @@
 	result_amount = 2
 
 /datum/chemical_reaction/rsh3/New()
-    required_reagents |= list(pick(RANDOM_REAGENT) = pick(1,3))
+	var/random_amount = pick(1,3)
+	required_reagents |= list(pick(RANDOM_REAGENT) = random_amount)
+	result_amount += random_amount
 
 /datum/chemical_reaction/rsh4
 	result = /datum/reagent/rsh4
@@ -24,6 +28,8 @@
 	result_amount = 2
 
 /datum/chemical_reaction/rsh4/New()
-    required_reagents |= list(pick(RANDOM_REAGENT) = pick(1,3))
+	var/random_amount = pick(1,3)
+	required_reagents |= list(pick(RANDOM_REAGENT) = random_amount)
+	result_amount += random_amount
 
 #undef RANDOM_REAGENT //place that in end of dm
