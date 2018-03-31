@@ -180,3 +180,22 @@ obj/item/weapon/gun/energy/retro
 	item_state = "redtag"
 	projectile_type = /obj/item/projectile/beam/lastertag/red
 	required_vest = /obj/item/clothing/suit/redtag
+
+/////Bogani rifle ////
+/obj/item/weapon/gun/energy/laser
+	name = "alien rifle"
+	desc = "An alien weapon never before seen by the likes of your species."
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "alienrifle"
+	item_state = "alienrifle"
+	wielded_item_state = "alienrifle-wielded"
+	icon_rounder = 25
+	self_recharge = 1
+	charge_cost = 40
+	one_hand_penalty = 4
+	max_shots = 15
+	fire_delay = 16 // heavy rifle
+	accuracy = 1
+	origin_tech = list(TECH_COMBAT = 6, TECH_MAGNET = 5)
+	matter = list(DEFAULT_WALL_MATERIAL = 2800)
+	projectile_type = /obj/item/projectile/beam/heavylaser/bogani

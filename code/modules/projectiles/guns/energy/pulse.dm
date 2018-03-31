@@ -72,9 +72,24 @@
 /obj/item/weapon/gun/energy/pulse_rifle/bogani
 	name = "pulsar cannon"
 	desc = "An alien weapon never before seen by the likes of your species."
-	icon_state = "bog_rifle"
-	item_state = "bog_rifle"
-	wielded_item_state = "bog_rifle-wielded"
+	slot_flags = SLOT_BELT|SLOT_BACK
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "lightalienrifle"
+	item_state = "lightalienrifle"
+	wielded_item_state = "lightalienrifle-wielded"
+	w_class = ITEM_SIZE_HUGE
+	force = 8
+	self_recharge = 1
 	projectile_type = /obj/item/projectile/beam/pulse/bogani
-	max_shots = 100 //Don't want it to run out
-	icon_rounder = 20
+	one_hand_penalty = 2
+	burst = 1
+	move_delay = 1
+	burst_delay = 2
+	accuracy = -1
+	max_shots = 30
+	icon_rounder = 25
+
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, one_hand_penalty=1, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-pulse bursts", burst=3,    fire_delay=null, move_delay=2,    one_hand_penalty=3, burst_accuracy=list(0,-1,-2), dispersion=list(0.0, 0.5, 0.8)),
+		)

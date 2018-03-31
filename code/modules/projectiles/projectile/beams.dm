@@ -43,6 +43,12 @@
 	tracer_type = /obj/effect/projectile/laser/heavy/tracer
 	impact_type = /obj/effect/projectile/laser/heavy/impact
 
+/obj/item/projectile/beam/heavylaser/bogani
+	name = "alien laser"
+	fire_sound = 'sound/weapons/marauder.ogg'
+	damage = 50
+	armor_penetration = 50
+
 /obj/item/projectile/beam/xray
 	name = "x-ray beam"
 	icon_state = "xray"
@@ -90,10 +96,11 @@
 	icon_state = "bogb"
 	fire_sound='sound/weapons/blaster.ogg'
 	damage = 30
+	armor_penetration = 10
 
-	muzzle_type = /obj/effect/projectile/laser/bogani/muzzle
-	tracer_type = /obj/effect/projectile/laser/bogani/tracer
-	impact_type = /obj/effect/projectile/laser/bogani/impact
+	muzzle_type = /obj/effect/projectile/laser/emitter/muzzle
+	tracer_type = /obj/effect/projectile/laser/emitter/tracer
+	impact_type = /obj/effect/projectile/laser/emitter/impact
 
 /obj/item/projectile/beam/emitter
 	name = "emitter beam"
