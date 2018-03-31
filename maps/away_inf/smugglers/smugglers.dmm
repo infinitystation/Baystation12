@@ -1,0 +1,4564 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/space,
+/area/space)
+"ab" = (
+/turf/simulated/floor/asteroid,
+/area/mine/explored)
+"ac" = (
+/turf/unsimulated/mask,
+/area/mine/unexplored)
+"ad" = (
+/obj/effect/overmap/sector/smugglers,
+/obj/machinery/access_button/airlock_exterior{
+	frequency = 1502;
+	master_tag = "asteroid_base_dock_airlock";
+	name = "exterior access button";
+	pixel_x = 25;
+	pixel_y = -25
+	},
+/turf/space,
+/area/space)
+"ae" = (
+/turf/simulated/wall/r_wall,
+/area/smugglers/base)
+"af" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1502;
+	icon_state = "door_locked";
+	id_tag = "ab_fore_dock_exter";
+	locked = 1
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"ag" = (
+/obj/machinery/airlock_sensor{
+	frequency = 1502;
+	id_tag = "asteroid_base_dock_sensor";
+	master_tag = "asteroid_base_dock_airlock";
+	pixel_x = 25
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 2;
+	frequency = 1502;
+	id_tag = "asteroid_base_dock_pump"
+	},
+/obj/effect/floor_decal/industrial/warning/full,
+/obj/item/weapon/beartrap{
+	anchored = 1;
+	deployed = 1;
+	icon_state = "beartrap1"
+	},
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor,
+/area/smugglers/base)
+"ah" = (
+/turf/unsimulated/mask,
+/area/mine/explored)
+"ai" = (
+/obj/machinery/atmospherics/unary/outlet_injector{
+	injecting = 1;
+	use_power = 1
+	},
+/turf/simulated/floor/airless,
+/area/smugglers/base)
+"aj" = (
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid,
+/area/mine/explored)
+"ak" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1502;
+	icon_state = "door_locked";
+	id_tag = "ab_fore_dock_inter";
+	locked = 1;
+	name = "Internal Airlock"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/turf/simulated/floor,
+/area/smugglers/base)
+"al" = (
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/obj/structure/cable{
+	icon_state = "0-4";
+	d2 = 4
+	},
+/obj/machinery/door/blast/regular{
+	id = "ab_blast";
+	name = "Observation Window"
+	},
+/obj/structure/window/reinforced/full,
+/turf/simulated/floor,
+/area/smugglers/base)
+"am" = (
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/grille,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-4";
+	d2 = 4
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/door/blast/regular{
+	id = "ab_blast";
+	name = "Observation Window"
+	},
+/obj/structure/window/reinforced/full,
+/turf/simulated/floor,
+/area/smugglers/base)
+"an" = (
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/door/blast/regular{
+	id = "ab_blast";
+	name = "Observation Window"
+	},
+/obj/structure/window/reinforced/full,
+/turf/simulated/floor,
+/area/smugglers/base)
+"ao" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	frequency = 1502;
+	id_tag = "asteroid_base_dock_airlock";
+	name = "Dock Airlock Controller";
+	pixel_x = -25;
+	tag_airpump = "asteroid_base_dock_pump";
+	tag_chamber_sensor = "asteroid_base_dock_sensor";
+	tag_exterior_door = "ab_fore_dock_exter";
+	tag_interior_door = "ab_fore_dock_inter"
+	},
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	frequency = 1502;
+	master_tag = "asteroid_base_dock_airlock";
+	name = "interior access button";
+	pixel_x = 25;
+	pixel_y = 25
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 5
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"ap" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"aq" = (
+/obj/machinery/floodlight,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"ar" = (
+/obj/item/stack/cable_coil{
+	pixel_x = 5;
+	pixel_y = 5;
+	pixel_z = 0
+	},
+/obj/item/stack/cable_coil,
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "Asteroid base main APC";
+	pixel_x = 0;
+	pixel_y = 24
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"as" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/obj/machinery/button/remote/blast_door{
+	id = "ab_blast";
+	name = "Observation Section";
+	pixel_x = 0;
+	pixel_y = 24;
+	req_access = newlist()
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"at" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/powered/scrubber,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"au" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"av" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/black{
+	icon_state = "map";
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"aw" = (
+/obj/machinery/door/airlock/maintenance,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"ax" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"ay" = (
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	frequency = 1501;
+	id_tag = "asteroid_base_east_airlock";
+	pixel_y = 25;
+	tag_airpump = "asteroid_base_east_pump";
+	tag_chamber_sensor = "asteroid_base_east_airlock";
+	tag_exterior_door = "asteroid_base_east_outer";
+	tag_exterior_sensor = null;
+	tag_interior_door = "asteroid_base_east_inner";
+	tag_interior_sensor = null
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	frequency = 1501;
+	master_tag = "asteroid_base_east_airlock";
+	name = "interior access button";
+	pixel_x = 17;
+	pixel_y = 25;
+	req_one_access = newlist()
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"az" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1501;
+	icon_state = "door_locked";
+	id_tag = "asteroid_base_east_inner";
+	locked = 1;
+	name = "Internal Airlock"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"aA" = (
+/obj/item/weapon/beartrap{
+	anchored = 1;
+	deployed = 1;
+	icon_state = "beartrap1"
+	},
+/obj/machinery/airlock_sensor{
+	frequency = 1501;
+	id_tag = "asteroid_base_east_sensor";
+	master_tag = "asteroid_base_east_airlock";
+	pixel_y = -25
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 8;
+	frequency = 1501;
+	id_tag = "asteroid_base_east_pump"
+	},
+/obj/effect/floor_decal/industrial/warning/full,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor,
+/area/smugglers/base)
+"aB" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1501;
+	icon_state = "door_locked";
+	id_tag = "asteroid_base_east_outer";
+	locked = 1
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"aC" = (
+/obj/machinery/access_button/airlock_exterior{
+	frequency = 1501;
+	master_tag = "asteroid_base_east_airlock";
+	name = "exterior access button";
+	pixel_x = -25;
+	pixel_y = 25
+	},
+/turf/simulated/floor/asteroid,
+/area/mine/explored)
+"aD" = (
+/obj/random/trash,
+/turf/simulated/floor/asteroid,
+/area/mine/explored)
+"aE" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"aF" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"aG" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/item/weapon/wirecutters,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/random/junk,
+/turf/simulated/floor,
+/area/smugglers/base)
+"aH" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"aI" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/random/ore_smug,
+/turf/simulated/floor,
+/area/smugglers/base)
+"aJ" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"aK" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/obj/machinery/light/small{
+	icon_state = "bulb1";
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"aL" = (
+/turf/simulated/wall,
+/area/smugglers/base)
+"aM" = (
+/obj/machinery/light/small/red{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"aN" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor,
+/area/smugglers/base)
+"aO" = (
+/obj/structure/table/rack{
+	dir = 8;
+	layer = 2.9
+	},
+/obj/item/clothing/mask/breath,
+/turf/simulated/floor,
+/area/smugglers/base)
+"aP" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"aQ" = (
+/obj/random/trash,
+/turf/simulated/floor,
+/area/smugglers/base)
+"aR" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 9
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"aS" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/item/weapon/paper/smug_1,
+/turf/simulated/floor,
+/area/smugglers/base)
+"aT" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 5
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"aU" = (
+/turf/simulated/floor,
+/area/smugglers/base)
+"aV" = (
+/obj/random/ore_smug,
+/turf/simulated/floor,
+/area/smugglers/base)
+"aW" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/turf/simulated/floor,
+/area/smugglers/base)
+"aX" = (
+/obj/structure/table/rack{
+	dir = 8;
+	layer = 2.9
+	},
+/obj/item/weapon/tank/air{
+	pixel_x = 5
+	},
+/obj/item/weapon/tank/air,
+/turf/simulated/floor,
+/area/smugglers/base)
+"aY" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/turf/simulated/floor,
+/area/smugglers/base)
+"aZ" = (
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
+	dir = 4
+	},
+/obj/random/ore_smug,
+/turf/simulated/floor,
+/area/smugglers/base)
+"ba" = (
+/obj/random/junk,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bb" = (
+/obj/machinery/floodlight,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bc" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/machinery/light/small/red,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bd" = (
+/obj/structure/table/rack{
+	dir = 8;
+	layer = 2.9
+	},
+/obj/random/voidsuit,
+/obj/random/voidhelmet,
+/turf/simulated/floor,
+/area/smugglers/base)
+"be" = (
+/obj/item/weapon/ore/silver,
+/obj/item/weapon/ore/silver{
+	pixel_x = 10;
+	pixel_y = -5
+	},
+/turf/simulated/floor/asteroid,
+/area/mine/explored)
+"bf" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"bg" = (
+/obj/item/weapon/paper/smug_2,
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bh" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/ore_box,
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bi" = (
+/obj/structure/ore_box,
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bj" = (
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
+	dir = 4
+	},
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bk" = (
+/turf/simulated/wall,
+/area/smugglers/office)
+"bl" = (
+/turf/simulated/wall/r_wall,
+/area/smugglers/office)
+"bm" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/empty,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bn" = (
+/obj/item/weapon/ore/slag,
+/obj/item/weapon/ore/slag{
+	pixel_x = 5;
+	pixel_y = -2
+	},
+/obj/item/weapon/ore/slag,
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bo" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/closet/crate/internals/fuel,
+/obj/item/stack/material/phoron/fifty,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bp" = (
+/obj/structure/ore_box,
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/obj/random/ore_smug,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bq" = (
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
+	dir = 4
+	},
+/obj/structure/closet/crate/plastic,
+/obj/random/loot,
+/obj/random/loot,
+/obj/random/loot,
+/obj/random/loot,
+/obj/random/loot,
+/obj/random/loot,
+/obj/random/smokes,
+/obj/random/smokes,
+/turf/simulated/floor,
+/area/smugglers/base)
+"br" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"bs" = (
+/obj/machinery/door/airlock/maintenance,
+/turf/simulated/floor,
+/area/smugglers/office)
+"bt" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/smugglers/office)
+"bu" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/paper,
+/obj/item/weapon/pen,
+/obj/item/device/flashlight/lamp,
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "Asteroid base office APC";
+	pixel_x = 0;
+	pixel_y = 24
+	},
+/turf/simulated/floor/tiled,
+/area/smugglers/office)
+"bv" = (
+/obj/structure/safe/floor,
+/obj/random/contraband,
+/obj/random/contraband,
+/obj/random/loot,
+/obj/random/projectile,
+/obj/random/cash,
+/obj/random/cash,
+/obj/random/cash,
+/obj/machinery/button/remote/blast_door{
+	id = "ab_blast";
+	name = "Observation Section";
+	pixel_x = 0;
+	pixel_y = 24;
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled,
+/area/smugglers/office)
+"bw" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bx" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor,
+/area/smugglers/base)
+"by" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/random/junk,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bz" = (
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
+	dir = 10
+	},
+/obj/structure/closet/crate/freezer,
+/obj/item/organ/internal/heart/vox,
+/obj/item/organ/internal/heart,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bA" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/closet/crate/plastic_smug_weapons,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bB" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
+/obj/structure/closet/crate/plastic_smug_ammo,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bC" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bD" = (
+/obj/structure/table/woodentable,
+/obj/random/coin{
+	pixel_x = -5;
+	pixel_y = -3
+	},
+/obj/random/coin,
+/obj/item/weapon/storage/bible/booze{
+	pixel_x = 10
+	},
+/obj/item/weapon/paper/smug_4{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/weapon/paper/smug_5,
+/turf/simulated/floor/tiled,
+/area/smugglers/office)
+"bE" = (
+/obj/structure/bed/chair/comfy/red{
+	dir = 8
+	},
+/obj/machinery/light{
+	icon_state = "tube1";
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/smugglers/office)
+"bF" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bG" = (
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bH" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 8
+	},
+/obj/machinery/portable_atmospherics/powered/pump/filled,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/weapon/wrench,
+/turf/simulated/floor/tiled,
+/area/smugglers/office)
+"bJ" = (
+/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/turf/simulated/floor/tiled,
+/area/smugglers/office)
+"bK" = (
+/turf/simulated/floor/tiled,
+/area/smugglers/office)
+"bL" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bM" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/hydrogen,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bN" = (
+/obj/structure/table/standard,
+/obj/random/tech_supply,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bO" = (
+/obj/structure/table/standard,
+/obj/random/toolbox,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bP" = (
+/obj/structure/table/standard,
+/obj/random/firstaid,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bQ" = (
+/obj/structure/closet/crate/trashcart,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bR" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister,
+/turf/simulated/floor,
+/area/smugglers/base)
+"bS" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"bT" = (
+/obj/machinery/portable_atmospherics/powered/scrubber,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/smugglers/base)
+"bU" = (
+/obj/machinery/constructable_frame/machine_frame,
+/obj/random/trash,
+/turf/simulated/floor/tiled,
+/area/smugglers/office)
+"bV" = (
+/obj/structure/table/rack,
+/obj/item/clothing/head/cowboy_hat,
+/obj/item/clothing/suit/armor/hos/jensen,
+/turf/simulated/floor/tiled,
+/area/smugglers/office)
+"bW" = (
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/tiled,
+/area/smugglers/office)
+"bX" = (
+/turf/simulated/wall/r_wall,
+/area/smugglers/dorms)
+"bY" = (
+/turf/simulated/wall,
+/area/smugglers/dorms)
+"bZ" = (
+/obj/machinery/door/airlock/maintenance{
+	name = "Restroom"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/smugglers/dorms)
+"ca" = (
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1;
+	sheets = 25
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor,
+/area/smugglers/dorms)
+"cb" = (
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/random/trash,
+/turf/simulated/floor,
+/area/smugglers/dorms)
+"cc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cd" = (
+/obj/structure/noticeboard{
+	pixel_y = 30
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/standard,
+/obj/machinery/microwave{
+	pixel_y = 10
+	},
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"ce" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate,
+/obj/random/snack,
+/obj/random/snack,
+/obj/random/snack,
+/obj/random/snack,
+/obj/random/snack,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate,
+/obj/random/drinkbottle,
+/obj/random/drinkbottle,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/arcade,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"ch" = (
+/obj/structure/closet/crate/freezer/rations,
+/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_x = 0;
+	pixel_y = 24;
+	req_access = list(201)
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"ci" = (
+/obj/machinery/shower{
+	dir = 4;
+	icon_state = "shower";
+	pixel_x = 0
+	},
+/obj/structure/curtain/open/shower,
+/turf/simulated/floor,
+/area/smugglers/dorms)
+"cj" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/sink{
+	pixel_y = 15
+	},
+/obj/item/weapon/storage/mirror{
+	pixel_y = 30
+	},
+/obj/random/trash,
+/turf/simulated/floor,
+/area/smugglers/dorms)
+"ck" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light/small{
+	icon_state = "bulb1";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor,
+/area/smugglers/dorms)
+"cl" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/random/junk,
+/turf/simulated/floor,
+/area/smugglers/dorms)
+"cm" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/maintenance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"co" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/random/junk,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cr" = (
+/obj/machinery/door/airlock/maintenance,
+/turf/simulated/floor,
+/area/smugglers/dorms)
+"cs" = (
+/obj/effect/decal/cleanable/vomit,
+/obj/random/medical/lite,
+/turf/simulated/floor,
+/area/smugglers/dorms)
+"ct" = (
+/obj/random/junk,
+/turf/simulated/floor,
+/area/smugglers/dorms)
+"cu" = (
+/obj/structure/cable,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/random/trash,
+/turf/simulated/floor,
+/area/smugglers/dorms)
+"cv" = (
+/obj/machinery/power/smes/buildable/outpost_substation,
+/obj/structure/cable,
+/turf/simulated/floor,
+/area/smugglers/dorms)
+"cw" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cx" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/machinery/light,
+/obj/random/trash,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cy" = (
+/obj/structure/table/standard,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/weapon/paper/smug_3,
+/obj/item/weapon/flame/lighter/random,
+/obj/random/coin,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cz" = (
+/obj/structure/table/standard,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/weapon/spacecash/bundle/c10,
+/obj/random/smokes,
+/obj/random/snack,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cA" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cB" = (
+/obj/structure/closet,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/medical,
+/obj/random/medical,
+/obj/random/tech_supply,
+/obj/random/action_figure,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cC" = (
+/obj/random/soap,
+/turf/simulated/floor,
+/area/smugglers/dorms)
+"cD" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/random/trash,
+/turf/simulated/floor,
+/area/smugglers/dorms)
+"cE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/maintenance,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cF" = (
+/obj/structure/closet/smuggler,
+/obj/random/suit,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cG" = (
+/obj/structure/bed,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cH" = (
+/obj/item/weapon/bedsheet/blue,
+/obj/random/trash,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cI" = (
+/obj/structure/bed,
+/obj/item/weapon/bedsheet/rd,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cJ" = (
+/obj/machinery/light/small{
+	icon_state = "bulb1";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/retaliate/malf_drone,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cK" = (
+/obj/structure/bed,
+/obj/item/weapon/bedsheet/captain,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/junk,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cM" = (
+/obj/structure/bed,
+/obj/item/weapon/bedsheet/orange,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cN" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled,
+/area/smugglers/dorms)
+"cO" = (
+/obj/effect/shuttle_landmark/nav_asteroid_base/nav1,
+/turf/simulated/floor/asteroid,
+/area/mine/explored)
+"cP" = (
+/obj/effect/shuttle_landmark/nav_asteroid_base/nav2,
+/turf/space,
+/area/space)
+"cQ" = (
+/obj/effect/landmark/random_gen/asteroid{
+	generation_height = 50;
+	generation_width = 50
+	},
+/turf/space,
+/area/space)
+
+(1,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+cQ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(2,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(3,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ah
+ah
+ah
+ah
+aa
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(4,1,1) = {"
+aa
+ab
+ab
+ac
+aa
+aa
+aa
+aa
+ah
+ah
+ah
+aj
+ab
+ab
+ab
+ac
+aj
+ac
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(5,1,1) = {"
+aa
+ac
+ab
+ab
+ac
+ac
+ab
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+aj
+aj
+aj
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(6,1,1) = {"
+aa
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+aj
+ac
+ac
+aj
+ac
+ac
+bX
+bX
+bX
+bX
+bX
+ac
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(7,1,1) = {"
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ac
+ac
+ac
+ae
+ae
+ae
+ae
+ae
+bY
+ca
+ck
+cu
+bX
+bX
+bX
+bX
+bX
+ab
+ab
+ab
+aa
+aa
+ab
+ab
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(8,1,1) = {"
+aa
+aa
+aa
+aa
+ab
+ac
+ac
+ac
+ac
+ac
+ae
+bm
+bw
+bF
+bL
+bY
+cb
+cl
+cv
+bY
+cF
+bY
+cF
+bX
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(9,1,1) = {"
+aa
+aa
+aa
+ae
+ae
+ae
+ae
+ae
+ae
+ae
+ae
+bm
+bx
+bx
+bM
+bY
+bY
+cm
+bY
+bY
+cG
+bY
+cK
+bX
+bX
+ac
+ac
+ab
+ab
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+ac
+aa
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(10,1,1) = {"
+aa
+aa
+ad
+af
+ag
+ak
+ao
+aE
+aP
+aP
+bf
+aP
+by
+aP
+aP
+bZ
+cc
+cn
+cw
+cE
+cH
+cJ
+cL
+cN
+bX
+ab
+ab
+ab
+ab
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(11,1,1) = {"
+aa
+aa
+aa
+ae
+ae
+ae
+ap
+aF
+aQ
+aV
+bg
+bn
+aQ
+aU
+aQ
+bY
+cd
+co
+cx
+bY
+cI
+bY
+cM
+bX
+bX
+ac
+ac
+ab
+ab
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(12,1,1) = {"
+aa
+aa
+aa
+ab
+ab
+ae
+aq
+aG
+aR
+aY
+bh
+bo
+bz
+aU
+bN
+bY
+ce
+cp
+cy
+bY
+cF
+bY
+cF
+bX
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(13,1,1) = {"
+aa
+aa
+aa
+ab
+ah
+ae
+ar
+aH
+aS
+aV
+bi
+bp
+bA
+aU
+bO
+bY
+cf
+cp
+cz
+bX
+bX
+bX
+bX
+bX
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(14,1,1) = {"
+aa
+aa
+aa
+ab
+ah
+ae
+ap
+aF
+aT
+aZ
+bj
+bq
+bB
+aU
+bP
+bY
+cg
+co
+cA
+bX
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(15,1,1) = {"
+aa
+aa
+aa
+aa
+ab
+ae
+as
+aI
+aU
+aU
+aU
+aU
+aU
+bG
+bQ
+bY
+ch
+cq
+cB
+bX
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(16,1,1) = {"
+aa
+aa
+aa
+aa
+ai
+al
+at
+aF
+aV
+aU
+aQ
+aV
+aU
+aU
+bR
+bY
+bY
+cr
+bY
+bX
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(17,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+am
+au
+aJ
+aQ
+ba
+aU
+aU
+aU
+aU
+bS
+bY
+ci
+cs
+cC
+bX
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(18,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+an
+av
+aK
+aW
+aW
+aK
+br
+bC
+bH
+bT
+bY
+cj
+ct
+cD
+bX
+ac
+ac
+ac
+ab
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(19,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+ae
+aw
+aL
+aL
+aL
+bk
+bs
+bk
+bk
+bk
+bX
+bX
+bX
+bX
+bX
+ac
+ac
+ab
+ab
+ac
+aD
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+cO
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(20,1,1) = {"
+aa
+aa
+ab
+ab
+ac
+ae
+ax
+aM
+aQ
+bb
+bk
+bt
+bt
+bI
+bU
+bl
+ac
+aj
+ac
+ac
+ac
+ac
+ab
+aD
+aD
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(21,1,1) = {"
+aa
+ab
+ab
+ac
+ac
+ae
+ap
+aN
+aU
+bc
+bk
+bu
+bD
+bJ
+bV
+bl
+ac
+aj
+ac
+ac
+ac
+ab
+ab
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(22,1,1) = {"
+ab
+ab
+ac
+ac
+ac
+ae
+ay
+aO
+aX
+bd
+bk
+bv
+bE
+bK
+bW
+bl
+ac
+ab
+ac
+ac
+ac
+ab
+ab
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(23,1,1) = {"
+ac
+ab
+ab
+ab
+ab
+ae
+az
+ae
+ae
+ae
+bl
+bl
+bl
+bl
+bl
+bl
+ac
+ab
+ab
+aj
+ac
+ab
+ab
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ab
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(24,1,1) = {"
+aa
+ac
+ab
+ab
+ab
+ae
+aA
+ae
+ac
+ac
+ac
+ac
+ab
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ac
+ab
+ac
+ab
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(25,1,1) = {"
+aa
+ac
+ab
+ab
+ab
+ae
+aB
+ae
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(26,1,1) = {"
+aa
+aa
+ab
+ab
+ab
+ab
+aC
+ac
+ac
+ac
+ac
+ab
+aj
+ac
+ab
+aj
+ac
+ac
+ac
+ab
+ab
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(27,1,1) = {"
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+aj
+ac
+ab
+ab
+ac
+ac
+ac
+ac
+aa
+ac
+ac
+ac
+ab
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ab
+ac
+ac
+ab
+ab
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(28,1,1) = {"
+aa
+aa
+aa
+aa
+ac
+ac
+ab
+ab
+ac
+ac
+ac
+aj
+ab
+ab
+ab
+ab
+ac
+ac
+aj
+aD
+ac
+ac
+ac
+ac
+aa
+aa
+aa
+ac
+ac
+ac
+ac
+ab
+ac
+ab
+ac
+ab
+ab
+ac
+ac
+ab
+ab
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(29,1,1) = {"
+ac
+ac
+aa
+aa
+ac
+ac
+ac
+ab
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ac
+ac
+aa
+aa
+ac
+ac
+ab
+ac
+ab
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ac
+ab
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(30,1,1) = {"
+aa
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ac
+ac
+ac
+ac
+ab
+ab
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ac
+ab
+ac
+ac
+aa
+aa
+aa
+ac
+ab
+ac
+ab
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(31,1,1) = {"
+ab
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+aj
+ac
+ac
+ac
+ab
+aj
+ac
+ac
+ac
+ac
+ac
+ab
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ac
+ac
+aa
+aa
+aa
+ac
+ab
+ac
+ab
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(32,1,1) = {"
+ab
+ab
+ac
+ab
+aj
+ac
+ac
+ab
+ab
+be
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(33,1,1) = {"
+ac
+ac
+ab
+ab
+ac
+ac
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+aj
+ab
+ac
+ab
+ab
+ac
+ac
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(34,1,1) = {"
+aa
+aa
+aa
+ab
+ac
+ac
+ab
+ab
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+ac
+ab
+ac
+ac
+ab
+ab
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(35,1,1) = {"
+aa
+aa
+aa
+ab
+ab
+ab
+aD
+ab
+ac
+ac
+ac
+ac
+ac
+ab
+ac
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+ab
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(36,1,1) = {"
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ac
+ab
+ab
+ab
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ac
+ac
+ab
+aD
+ab
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(37,1,1) = {"
+ac
+ac
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ac
+ab
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ac
+ac
+ab
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(38,1,1) = {"
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ab
+ab
+ac
+ab
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(39,1,1) = {"
+aa
+aa
+ac
+ac
+aj
+ab
+ab
+ab
+aj
+ac
+ab
+aD
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(40,1,1) = {"
+ac
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ac
+aj
+ab
+ab
+ab
+ab
+ac
+aj
+aD
+ab
+ab
+ab
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(41,1,1) = {"
+aa
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ac
+ac
+ab
+ab
+ac
+ac
+ab
+ac
+ab
+ac
+ac
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(42,1,1) = {"
+aa
+aa
+aa
+ac
+ab
+ab
+ab
+ac
+ac
+ac
+ab
+ac
+ab
+ab
+ab
+ac
+ab
+ac
+ac
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+cP
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(43,1,1) = {"
+aa
+aa
+aa
+ac
+ab
+ac
+ac
+ac
+ac
+ac
+ab
+ab
+ab
+ac
+ab
+ab
+ab
+ac
+ac
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(44,1,1) = {"
+aa
+aa
+aa
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+ac
+ac
+ac
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(45,1,1) = {"
+aa
+aa
+aa
+aa
+ab
+ac
+ac
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+ac
+ac
+ac
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(46,1,1) = {"
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+aa
+aa
+ab
+aa
+aa
+aa
+aa
+ab
+ab
+ac
+aa
+aa
+ab
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(47,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ac
+ac
+ac
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(48,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(49,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(50,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}

@@ -75,7 +75,7 @@
 	#include "../away/empty.dmm"
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
-	#include "../away-inf/bearcat/bearcat.dm"
+	#include "../away_inf/bearcat/bearcat.dm"
 	#include "../away/lost_supply_base/lost_supply_base.dm"
 	#include "../away/smugglers/smugglers.dm"
 
