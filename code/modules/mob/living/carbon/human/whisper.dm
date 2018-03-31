@@ -1,6 +1,6 @@
 //Lallander was here
 /mob/living/carbon/human/whisper(message as text)
-//	message = sanitize(message)
+//	message = sanitize(message, encode = 0) //TO-DO INFINITY
 
 	if (src.client)
 		if (src.client.prefs.muted & MUTE_IC)
