@@ -1755,6 +1755,7 @@
 #include "code\modules\mob\living\carbon\human\species\station\prometheans.dm"
 #include "code\modules\mob\living\carbon\human\species\station\resomi.dm"
 #include "code\modules\mob\living\carbon\human\species\station\station.dm"
+#include "code\modules\mob\living\carbon\human\species\xenomorphs\alien_autohiss.dm"
 #include "code\modules\mob\living\carbon\human\species\xenomorphs\alien_powers.dm"
 #include "code\modules\mob\living\carbon\human\species\xenomorphs\alien_species.dm"
 #include "code\modules\mob\living\carbon\human\species\xenomorphs\xenomorphs.dm"
