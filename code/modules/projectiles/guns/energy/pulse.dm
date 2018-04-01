@@ -77,6 +77,10 @@
 	icon_state = "lightalienrifle"
 	item_state = "lightalienrifle"
 	wielded_item_state = "lightalienrifle-wielded"
+	item_icons = list(
+		slot_r_hand_str = 'icons/mob/infinity/misc.dmi',
+		slot_l_hand_str = 'icons/mob/infinity/misctwo.dmi',
+		)
 	w_class = ITEM_SIZE_HUGE
 	force = 8
 	self_recharge = 1

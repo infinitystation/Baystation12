@@ -182,18 +182,22 @@ obj/item/weapon/gun/energy/retro
 	required_vest = /obj/item/clothing/suit/redtag
 
 /////Bogani rifle ////
-/obj/item/weapon/gun/energy/laser
+/obj/item/weapon/gun/energy/laser/bogani
 	name = "alien rifle"
 	desc = "An alien weapon never before seen by the likes of your species."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "alienrifle"
 	item_state = "alienrifle"
 	wielded_item_state = "alienrifle-wielded"
+	item_icons = list(
+		slot_r_hand_str = 'icons/mob/infinity/misc.dmi',
+		slot_l_hand_str = 'icons/mob/infinity/misctwo.dmi',
+		)
 	icon_rounder = 25
 	self_recharge = 1
 	charge_cost = 40
 	one_hand_penalty = 4
-	max_shots = 15
+	max_shots = 4
 	fire_delay = 16 // heavy rifle
 	accuracy = 1
 	origin_tech = list(TECH_COMBAT = 6, TECH_MAGNET = 5)
