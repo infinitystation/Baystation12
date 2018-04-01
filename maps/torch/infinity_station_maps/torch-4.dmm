@@ -5741,8 +5741,8 @@
 "akx" = (
 /obj/machinery/light/small,
 /obj/machinery/newscaster{
-	pixel_x = 28;
-	pixel_y = 0
+	pixel_x = 0;
+	pixel_y = -28
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head/aux)
@@ -8226,8 +8226,8 @@
 	pixel_y = -2
 	},
 /obj/machinery/newscaster{
-	pixel_x = 28;
-	pixel_y = 0
+	pixel_x = 0;
+	pixel_y = -28
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head/aux)
@@ -15196,36 +15196,18 @@
 /obj/effect/shuttle_landmark/torch/deck4/guppy,
 /turf/space,
 /area/space)
-"aAG" = (
-/obj/effect/wingrille_spawn/reinforced/full,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/machinery/door/blast/regular/open{
-	dir = 4;
-	id = "cmess";
-	name = "Captain's Mess Blast Doors"
-	},
-/obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/plating,
-/area/command/captainmess)
 "aAH" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_x = 0;
 	pixel_y = -24
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/flora/pottedplant/large,
 /turf/simulated/floor/carpet/blue2,
 /area/command/captainmess)
 "aAI" = (
@@ -16337,7 +16319,7 @@
 /obj/item/device/megaphone,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/effect/floor_decal/corner/red/three_quarters{
-	 icon_state = "corner_white_three_quarters";
+	icon_state = "corner_white_three_quarters";
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -28877,6 +28859,30 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
+"kMY" = (
+/obj/effect/wingrille_spawn/reinforced/full,
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id = "cmess";
+	name = "Captain's Mess Blast Doors"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green,
+/turf/simulated/floor/plating,
+/area/command/captainmess)
+"mFr" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/command/captainmess)
 
 (1,1,1) = {"
 aaa
@@ -37260,7 +37266,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aBQ
 aBQ
 aBQ
 aBQ
@@ -37461,8 +37467,8 @@ auh
 aws
 axv
 axv
-axv
-aAG
+kMY
+auh
 aBR
 aBR
 aBR
@@ -37663,7 +37669,7 @@ avi
 avk
 avk
 avk
-avk
+mFr
 aAH
 aBR
 aDg

@@ -3819,12 +3819,13 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/fore)
 "gW" = (
@@ -4202,8 +4203,8 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/fore)
@@ -4772,7 +4773,7 @@
 	pixel_y = 24
 	},
 /obj/structure/filingcabinet/filingcabinet{
-	 icon_state = "tallcabinet";
+	icon_state = "tallcabinet";
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -6785,7 +6786,7 @@
 	pixel_x = -24
 	},
 /obj/machinery/papershredder{
-	 icon_state = "papershredder0";
+	icon_state = "papershredder0";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
@@ -13141,7 +13142,7 @@
 	network = list("Command")
 	},
 /obj/machinery/papershredder{
-	 icon_state = "papershredder0";
+	icon_state = "papershredder0";
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -13159,7 +13160,7 @@
 	network = list("Command","Security")
 	},
 /obj/machinery/papershredder{
-	 icon_state = "papershredder0";
+	icon_state = "papershredder0";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -15260,6 +15261,17 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/fore)
+"DP" = (
+/obj/effect/floor_decal/corner/blue,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/bridge/fore)
 "Eb" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -15305,7 +15317,7 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped{
-	 icon_state = "railing0";
+	icon_state = "railing0";
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -15380,6 +15392,18 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/aft)
+"Jc" = (
+/obj/effect/floor_decal/corner/blue{
+	dir = 5
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/bridge/fore)
 "Kb" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 1
@@ -28921,8 +28945,8 @@ et
 eY
 fC
 bI
-gN
-hB
+Jc
+DP
 ii
 gX
 jH
