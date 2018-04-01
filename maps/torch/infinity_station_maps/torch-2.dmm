@@ -21489,6 +21489,13 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
+"OS" = (
+/obj/effect/floor_decal/corner/grey/diagonal{
+	dir = 4
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white,
+/area/crew_quarters/galley)
 "Pb" = (
 /obj/effect/floor_decal/corner/brown{
 	dir = 6
@@ -37742,7 +37749,7 @@ gT
 gR
 gR
 kv
-gR
+OS
 fP
 PQ
 Vj

@@ -2253,14 +2253,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/visible{
-	icon_state = "intact";
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/visible{
-	icon_state = "intact";
-	dir = 9
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/visible,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
 "ff" = (
@@ -2273,7 +2266,14 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/visible,
+/obj/machinery/atmospherics/pipe/simple/visible{
+	icon_state = "intact";
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/visible{
+	icon_state = "intact";
+	dir = 10
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
 "fg" = (
@@ -2652,7 +2652,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
 	frequency = 1331;
-	id_tag = "calypso_shuttle_pump"
+	id_tag = "calypso_shuttle_pump_out_internal"
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
@@ -2660,17 +2660,17 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 1;
-	frequency = 1331;
-	id_tag = "calypso_shuttle_pump"
-	},
 /obj/structure/handrai{
 	icon_state = "handrail";
 	dir = 1
 	},
 /obj/machinery/oxygen_pump{
 	pixel_y = -32
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 1;
+	frequency = 1331;
+	id_tag = "calypso_shuttle_pump_out_internal"
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
@@ -9920,10 +9920,8 @@
 	icon_state = "corner_white";
 	dir = 10
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 4;
-	level = 1
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
@@ -14991,10 +14989,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 8;
-	frequency = 1431;
-	id_tag = "guppy_shuttle_pump_out_internal"
+/obj/machinery/atmospherics/pipe/manifold/visible{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
@@ -15007,16 +15003,19 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 2;
-	frequency = 1431;
-	id_tag = "guppy_shuttle_pump"
+/obj/machinery/atmospherics/pipe/manifold/visible{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
 "DG" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 8;
+	frequency = 1431;
+	id_tag = "guppy_shuttle_pump_out_internal"
 	},
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
@@ -15274,11 +15273,6 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 4;
-	frequency = 1431;
-	id_tag = "guppy_shuttle_pump"
-	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	cycle_to_external_air = 1;
 	frequency = 1431;
@@ -15287,6 +15281,11 @@
 	pixel_y = -24;
 	req_access = list(89);
 	tag_exterior_sensor = "guppy_shuttle_sensor_external"
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 1;
+	frequency = 1431;
+	id_tag = "guppy_shuttle_pump_out_internal"
 	},
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
@@ -15297,7 +15296,15 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/visible,
+/obj/machinery/atmospherics/pipe/simple/visible{
+	icon_state = "intact";
+	dir = 6
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 1;
+	frequency = 1431;
+	id_tag = "guppy_shuttle_pump_out_internal"
+	},
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
 "Es" = (
