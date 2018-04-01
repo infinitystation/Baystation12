@@ -70,6 +70,8 @@
 	var/obj/item/weapon/coin/coin
 	var/datum/wires/vending/wires = null
 
+	var/cooldown = 0
+
 /obj/machinery/vending/New()
 	..()
 	wires = new(src)
@@ -155,7 +157,7 @@
 
 	var/obj/item/weapon/card/id/I = W.GetIdCard()
 
-	if (currently_vending && vendor_account && !vendor_account.suspended)
+	if (currently_vending && vendor_account && !vendor_account.suspended && cooldown < world.time - 25)
 		var/paid = 0
 		var/handled = 0
 
@@ -454,6 +456,7 @@
 	src.status_message = "Vending..."
 	src.status_error = 0
 	GLOB.nanomanager.update_uis(src)
+	cooldown = world.time
 
 	if (R.category & CAT_COIN)
 		if(!coin)
