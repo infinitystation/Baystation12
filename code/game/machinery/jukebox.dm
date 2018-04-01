@@ -26,6 +26,8 @@ datum/track/New(var/title_name, var/audio)
 	clicksound = 'sound/machines/buttonbeep.ogg'
 	pixel_x = -8
 
+	var/obj/item/device/cassette/disk
+
 	var/playing = 0
 	var/volume = 20
 
@@ -85,6 +87,9 @@ datum/track/New(var/title_name, var/audio)
 
 /obj/machinery/media/jukebox/Destroy()
 	StopPlaying()
+	if(disk)
+		qdel(disk)
+		disk = null
 	. = ..()
 
 /obj/machinery/media/jukebox/powered()
@@ -216,6 +221,24 @@ datum/track/New(var/title_name, var/audio)
 		wrench_floor_bolts(user, 0)
 		power_change()
 		return
+
+	if(istype(W, /obj/item/device/cassette))
+		var/obj/item/device/cassette/D = W
+		if(disk)
+			to_chat(user, "<span class='notice'>There is already a disk inside.</span>")
+			return
+
+		if(D.ruined)
+			to_chat(user, "<span class='warning'>\The [D] is ruined, you can't use it.</span>")
+			return
+
+		visible_message("<span class='notice'>[usr] insert the disk in to \the [src].</span>")
+		user.drop_item()
+		D.forceMove(src)
+		disk = D
+		current_track = disk.tracks
+		return
+
 	return ..()
 
 /obj/machinery/media/jukebox/emag_act(var/remaining_charges, var/mob/user)
@@ -249,3 +272,23 @@ datum/track/New(var/title_name, var/audio)
 	volume = Clamp(new_volume, 0, 50)
 	if(sound_token)
 		sound_token.SetVolume(volume)
+
+/obj/machinery/media/jukebox/verb/eject()
+	set name = "Eject Disk"
+	set category = "Object"
+	set src in oview(1)
+
+	if(usr.incapacitated())
+		return
+
+	if(!disk)
+		to_chat(usr, "<span class='notice'>There is no disk inside \the [src].</span>")
+		return
+
+	if(playing)
+		StopPlaying()
+	current_track = null
+
+	visible_message("<span class='notice'>[usr] eject the disk from \the [src].</span>")
+	usr.put_in_hands(disk)
+	disk = null
