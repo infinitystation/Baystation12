@@ -6863,11 +6863,11 @@
 	req_access = list(25,28)
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "mW" = (
 /obj/machinery/vending/boozeomat,
 /turf/simulated/wall,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "mX" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -7084,8 +7084,8 @@
 	dir = 4
 	},
 /obj/machinery/newscaster{
-	pixel_x = 28;
-	pixel_y = 0
+	pixel_x = 0;
+	pixel_y = -28
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
@@ -7174,7 +7174,7 @@
 "nF" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/lino,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "nH" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -7637,13 +7637,15 @@
 	req_access = list(25)
 	},
 /obj/machinery/disposal,
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "ot" = (
 /obj/structure/table/reinforced,
 /obj/machinery/chemical_dispenser/bar_soft/full,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "ou" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -8068,7 +8070,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/item/weapon/reagent_containers/glass/rag,
 /obj/machinery/light/spot{
 	dir = 8
 	},
@@ -8076,13 +8077,17 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/reagentgrinder{
+	pixel_y = 5
+	},
 /turf/simulated/floor/tiled/dark,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "pg" = (
 /obj/structure/table/reinforced,
 /obj/machinery/chemical_dispenser/bar_alc/full,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "ph" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -8749,16 +8754,20 @@
 	pixel_y = 0
 	},
 /obj/structure/table/reinforced,
+/obj/item/device/eftpos{
+	eftpos_name = "Bartender EFTPOS scanner"
+	},
 /turf/simulated/floor/tiled/dark,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "qg" = (
 /obj/structure/table/reinforced,
 /obj/machinery/chemical_dispenser/bar_coffee/full,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "qm" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -9152,14 +9161,22 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "rb" = (
-/obj/structure/closet/secure_closet/bar_torch,
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_x = 0;
 	pixel_y = -24
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/table/reinforced,
+/obj/item/weapon/reagent_containers/glass/rag,
+/obj/machinery/alarm{
+	dir = 4;
+	icon_state = "alarm0";
+	pixel_x = -22;
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/dark,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "rc" = (
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 1
@@ -9183,7 +9200,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/lino,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "rd" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	icon_state = "spline_fancy";
@@ -9201,12 +9218,8 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/lino,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "re" = (
-/obj/machinery/door/airlock{
-	name = "Bar";
-	req_access = list(25)
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -9218,8 +9231,14 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id = "bar";
+	name = "Bar Shutters"
+	},
+/obj/structure/table/marble,
 /turf/simulated/floor/lino,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "rf" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -15211,7 +15230,7 @@
 	dir = 9
 	},
 /obj/structure/closet/medical_wall/filled/security{
-	pixel_y = -32
+	pixel_y = -28
 	},
 /turf/simulated/floor/tiled,
 /area/security/equipment)
@@ -21462,7 +21481,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/lino,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "Oa" = (
 /obj/item/device/radio/intercom{
 	pixel_y = 22
@@ -21514,10 +21533,19 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
+"Pd" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/machinery/light/spot{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/crew_quarters/sleep/cryo)
 "Py" = (
 /obj/structure/sign/double/barsign,
 /turf/simulated/wall,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "Pz" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
@@ -21526,14 +21554,14 @@
 	dir = 8
 	},
 /turf/simulated/floor/lino,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "PQ" = (
 /obj/machinery/media/jukebox{
 	pixel_y = 8
 	},
 /obj/structure/table/marble,
 /turf/simulated/floor/lino,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "QQ" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -21552,6 +21580,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/mess)
+"Rf" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock{
+	name = "Bar";
+	req_access = list(25)
+	},
+/turf/simulated/floor/plating,
+/area/crew_quarters/bar)
 "Sy" = (
 /obj/structure/table/marble,
 /obj/machinery/door/blast/shutters{
@@ -21560,7 +21596,7 @@
 	name = "Bar Shutters"
 	},
 /turf/simulated/floor/lino,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "Tu" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -21575,18 +21611,35 @@
 /obj/item/weapon/pen,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
+"TQ" = (
+/obj/machinery/cryopod,
+/obj/machinery/light/spot{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/crew_quarters/sleep/cryo)
 "Ub" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
 	},
 /turf/simulated/floor/lino,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
+"UM" = (
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id = "bar";
+	name = "Bar Shutters"
+	},
+/turf/simulated/floor/plating,
+/area/crew_quarters/bar)
 "Vj" = (
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 8
 	},
 /turf/simulated/floor/lino,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "Vo" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -21603,6 +21656,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/item/weapon/stool/bar/padded,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/mess)
 "VV" = (
@@ -21622,7 +21676,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/lino,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "Ww" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -21647,18 +21701,13 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/mess)
 "WD" = (
-/obj/structure/table/reinforced,
-/obj/machinery/alarm{
-	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -22;
-	pixel_y = 0
-	},
-/obj/machinery/reagentgrinder{
-	pixel_y = 5
-	},
+/obj/structure/closet/secure_closet/bar_torch,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
+"XJ" = (
+/turf/simulated/wall,
+/area/crew_quarters/bar)
 "Yn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -21675,7 +21724,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/lino,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "YE" = (
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 4
@@ -21692,7 +21741,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/lino,
-/area/crew_quarters/mess)
+/area/crew_quarters/bar)
 "Zq" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -37145,13 +37194,13 @@ jo
 ks
 li
 mc
-hd
+XJ
 WD
 os
 pf
 qf
 rb
-hd
+XJ
 sP
 ui
 vA
@@ -37353,7 +37402,7 @@ Pz
 Yn
 VV
 rc
-hd
+XJ
 sQ
 ul
 sQ
@@ -37555,7 +37604,7 @@ ot
 pg
 qg
 rd
-rT
+Rf
 sM
 ui
 vC
@@ -37757,7 +37806,7 @@ Ub
 Ub
 Ub
 YE
-rT
+UM
 sN
 uj
 vD
@@ -37960,7 +38009,7 @@ Sy
 Sy
 re
 Py
-sP
+sM
 um
 vE
 wP
@@ -38171,7 +38220,7 @@ xU
 Ab
 Ba
 xU
-xU
+Pd
 xU
 xU
 Fl
@@ -38979,7 +39028,7 @@ xT
 Af
 Be
 xT
-xT
+TQ
 xT
 xT
 Fp
