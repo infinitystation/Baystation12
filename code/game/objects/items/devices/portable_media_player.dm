@@ -138,8 +138,8 @@ GLOBAL_LIST_EMPTY(pmp_list)
 		I.forceMove(src)
 		cassette = C
 		visible_message(
-			"<span class='notice'>[user] insert a [C] into \the [src].</span>",
-			"<span class='notice'>You insert a [C] into \the [src].</span>")
+			"<span class='notice'>[user] insert a cassette into \the [src].</span>",
+			"<span class='notice'>You insert a cassette into \the [src].</span>")
 		playsound(src, 'sound/weapons/TargetOn.ogg', 35, 1)
 		return
 
@@ -154,7 +154,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 
 		I.forceMove(src)
 		cell = C
-		to_chat(user, "<span class='notice'>You insert a [C] into \the [src].</span>")
+		to_chat(user, "<span class='notice'>You insert a cassette into \the [src].</span>")
 		update_icon()
 		return
 

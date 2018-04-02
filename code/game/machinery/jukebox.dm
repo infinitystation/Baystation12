@@ -232,11 +232,12 @@ datum/track/New(var/title_name, var/audio)
 			to_chat(user, "<span class='warning'>\The [D] is ruined, you can't use it.</span>")
 			return
 
-		visible_message("<span class='notice'>[usr] insert the disk in to \the [src].</span>")
+		visible_message("<span class='notice'>[usr] insert the cassette in to \the [src].</span>")
 		user.drop_item()
 		D.forceMove(src)
 		disk = D
-		current_track = disk.tracks
+		tracks += disk.tracks
+		//current_track = disk.tracks
 		return
 
 	return ..()
@@ -282,13 +283,14 @@ datum/track/New(var/title_name, var/audio)
 		return
 
 	if(!disk)
-		to_chat(usr, "<span class='notice'>There is no disk inside \the [src].</span>")
-		return
-
-	if(playing)
+		to_chat(usr, "<span class='notice'>There is no cassette inside \the [src].</span>")
+	else
 		StopPlaying()
-	current_track = null
-
-	visible_message("<span class='notice'>[usr] eject the disk from \the [src].</span>")
-	usr.put_in_hands(disk)
-	disk = null
+		current_track = null
+		for(var/datum/track/T in tracks)
+			if(T == disk.tracks)
+				tracks -= T
+		visible_message("<span class='notice'>[usr] eject the cassette from \the [src].</span>")
+		usr.put_in_hands(disk)
+		disk = null
+	return
