@@ -1,9 +1,10 @@
 /datum/map/siera // setting the map to use this list
 	security_state = /decl/security_state/default/sieradept
 
-//siera map alert levels. Refer to security_state.dm.
+//Siera map alert levels. Refer to security_state.dm.
 /decl/security_state/default/sieradept
 	all_security_levels = list(/decl/security_level/default/sieradept/code_green, /decl/security_level/default/sieradept/code_violet, /decl/security_level/default/sieradept/code_orange, /decl/security_level/default/sieradept/code_blue, /decl/security_level/default/sieradept/code_red, /decl/security_level/default/code_delta)
+	standard_security_levels = list(/decl/security_level/default/sieradept/code_green, /decl/security_level/default/sieradept/code_violet, /decl/security_level/default/sieradept/code_orange, /decl/security_level/default/sieradept/code_blue)
 
 /decl/security_level/default/sieradept
 	icon = 'maps/siera/icons/security_state.dmi'

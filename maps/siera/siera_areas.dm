@@ -6,10 +6,18 @@
 	post_round_safe_areas = list (
 		/area/centcom,
 		/area/shuttle/escape/centcom,
-		/area/shuttle/escape_pod1/centcom,
-		/area/shuttle/escape_pod2/centcom,
-		/area/shuttle/escape_pod3/centcom,
-		/area/shuttle/escape_pod5/centcom,
+		/area/shuttle/escape_pod6/station,
+		/area/shuttle/escape_pod7/station,
+		/area/shuttle/escape_pod8/station,
+		/area/shuttle/escape_pod9/station,
+		/area/shuttle/escape_pod10/station,
+		/area/shuttle/escape_pod11/station,
+		/area/shuttle/escape_pod12/station,
+		/area/shuttle/escape_pod13/station,
+		/area/shuttle/escape_pod14/station,
+		/area/shuttle/escape_pod15/station,
+		/area/shuttle/escape_pod16/station,
+		/area/shuttle/escape_pod17/station,
 		/area/shuttle/transport1/centcom,
 		/area/shuttle/administration/centcom,
 		/area/shuttle/specops/centcom,
@@ -88,16 +96,16 @@
 	name = "Fourth Deck Starboard Maintenance"
 	icon_state = "smaint"
 
+/area/maintenance/fourthdeck/port
+	name = "Fourth Deck Port Maintenance"
+	icon_state = "pmaint"
+
 /area/teleporter/fourthdeck
 	name = "\improper Fourth Deck Teleporter"
 	icon_state = "teleporter"
 
 /area/maintenance/substation/fourthdeck
 	name = "Fourth Deck Substation"
-
-/area/tcommsat/relay/fourthdeck
-	name = "\improper Fourth Deck Relay"
-	icon_state = "tcomsatcham"
 
 //Third Deck (Z-2)
 /area/hallway/primary/thirddeck/fore
@@ -151,6 +159,9 @@
 	name = "\improper Third Deck Safe Room"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/crew_quarters/laundry
+	name = "\improper Laundry Room"
+	icon_state = "Sleep"
 
 //Second Deck (Z-3)
 /area/maintenance/seconddeck
@@ -177,6 +188,10 @@
 	name = "Second Deck Central Maintenance"
 	icon_state = "maintcentral"
 
+/area/maintenance/seconddeck/hallway
+	name = "Second Deck Central Hallway"
+	icon_state = "hallC2"
+
 /area/teleporter/seconddeck
 	name = "\improper Second Deck Teleporter"
 	icon_state = "teleporter"
@@ -184,10 +199,6 @@
 /area/hallway/primary/seconddeck/center
 	name = "\improper Second Deck Central Stairwell"
 	icon_state = "hallC2"
-
-/area/tcommsat/relay/seconddeck
-	name = "\improper Second Deck Relay"
-	icon_state = "tcomsatcham"
 
 /area/maintenance/substation/seconddeck
 	name = "Second Deck Substation"
@@ -242,10 +253,6 @@
 	name = "\improper First Deck Aft Hallway"
 	icon_state = "hallA"
 
-/area/tcommsat/relay/firstdeck
-	name = "\improper First Deck Relay"
-	icon_state = "tcomsatcham"
-
 /area/crew_quarters/safe_room/firstdeck
 	name = "\improper First Deck Safe Room"
 	area_flags = AREA_FLAG_RAD_SHIELDED
@@ -281,10 +288,6 @@
 /area/hallway/primary/bridge/aft
 	name = "\improper Bridge Aft Hallway"
 	icon_state = "hallA"
-
-/area/tcommsat/relay/bridge
-	name = "\improper Bridge Relay"
-	icon_state = "tcomsatcham"
 
 /area/maintenance/substation/bridge // First Deck (Z-4)
 	name = "Bridge Substation"
@@ -469,7 +472,7 @@
 //Merchant
 
 /area/shuttle/merchant/home
-	name = "\improper Merchant Vessel - Home"
+	name = "\improper Merchant Vessel"
 	icon_state = "shuttlegrn"
 
 //Merc
@@ -523,7 +526,7 @@
 	name = "lift (upper deck)"
 	lift_floor_label = "Deck 1"
 	lift_floor_name = "Operations Deck"
-	lift_announce_str = "Arriving at Operations Deck: Infirmary. Research Wing. Auxiliary Cryogenic Storage. Emergency Armory. Diplomatic Quarters. Captain's Mess. Pilot's Lounge."
+	lift_announce_str = "Arriving at Operations Deck: Infirmary. Research Wing. Auxiliary Cryogenic Storage. Emergency Armory. Diplomatic Quarters. Captain's Mess. Pathfinder's Office."
 
 /area/turbolift/siera_second
 	name = "lift (maintenance)"
@@ -555,8 +558,8 @@
 	icon_state = "bar"
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/command/pilot
-	name = "\improper Pilot Lounge"
+/area/command/pathfinder
+	name = "\improper Pathfinder's Office"
 	icon_state = "head_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
@@ -635,10 +638,16 @@
 	name = "\improper Auxiliary Engineering Hard Storage"
 	icon_state = "engineering_storage"
 
+/area/engineering/gravity_gen
+	name = "\improper Gravity Generator"
+	icon_state = "engine"
+	sound_env = SMALL_ENCLOSED
+
 //Vacant Areas
 /area/vacant
 	name = "\improper Vacant Area"
 	icon_state = "construction"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/vacant/armory
 	name = "\improper Marine Armory"
@@ -663,6 +672,7 @@
 /area/vacant/prototype/control
 	name = "\improper Prototype Fusion Reactor Control Room"
 	icon_state = "engine_monitoring"
+	area_flags = null
 
 /area/vacant/prototype/engine
 	name = "\improper Prototype Fusion Reactor Chamber"
@@ -718,12 +728,6 @@
 	icon_state = "toxstorage"
 	sound_env = SMALL_ENCLOSED
 
-//DJSTATION
-
-/area/djstation
-	name = "\improper Listening Post"
-	icon_state = "LP"
-
 // Supply
 
 /area/quartermaster/deckofficer
@@ -746,39 +750,35 @@
 	name = "\improper Exploration Equipment"
 	icon_state = "exploration"
 
+/area/quartermaster/shuttlefuel
+	name = "\improper Shuttle Fuel Bay"
+	icon_state = "toxstorage"
+
+/area/quartermaster/quarantine
+	name = "\improper Hangar Quarantine"
+	icon_state = "toxstorage"
+
 /area/quartermaster/hangar
 	name = "\improper Hangar Deck"
 	icon_state = "hangar"
 	sound_env = LARGE_ENCLOSED
 
 // Research
-/area/rnd/anom
-	name = "\improper Anomalous Materials"
-	icon_state = "anolab"
-
 /area/rnd/canister
 	name = "\improper Canister Storage"
 	icon_state = "toxstorage"
 
 /area/rnd/development
-	name = "\improper Development Lab"
+	name = "\improper Fabricator Lab"
 	icon_state = "devlab"
 
 /area/rnd/entry
 	name = "\improper Research and Development Access"
 	icon_state = "decontamination"
 
-/area/rnd/equipment
-	name = "\improper Equipment Storage"
-	icon_state = "toxstorage"
-
 /area/rnd/locker
 	name = "\improper Research Locker Room"
 	icon_state = "locker"
-
-/area/rnd/wing
-	name = "\improper Lab Wing"
-	icon_state = "labwing"
 
 /area/rnd/xenobiology/entry
 	name = "\improper Xenobiology Access"
@@ -987,7 +987,7 @@
 	icon_state = "panelsS"
 
 /area/aux_eva
-	name = "\improper Auxiliary EVA Storage"
+	name = "\improper Command EVA Storage"
 	icon_state = "eva"
 
 /area/thruster
@@ -1020,6 +1020,10 @@
 	icon_state = "bridge"
 	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
+
+/area/bridge/disciplinary_board_room
+	name = "\improper Disciplinary Board Room"
+	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/heads
 	icon_state = "head_quarters"
@@ -1150,6 +1154,10 @@
 /area/holodeck/source_wildlife
 	name = "\improper Holodeck - Wildlife Simulation"
 
+/area/holodeck/source_military
+	name = "\improper Holodeck - Military Parade Ground"
+	sound_env = AUDITORIUM
+
 /area/holodeck/source_meetinghall
 	name = "\improper Holodeck - Meeting Hall"
 	sound_env = AUDITORIUM
@@ -1174,56 +1182,6 @@
 	name = "\improper Holodeck - Space"
 	has_gravity = 0
 	sound_env = SPACE
-
-// Construction Site
-
-/area/constructionsite
-	name = "\improper Construction Site"
-	icon_state = "storage"
-	ambience = list('sound/ambience/spookyspace1.ogg', 'sound/ambience/spookyspace2.ogg')
-
-/area/constructionsite/storage
-	name = "\improper Construction Site Storage Area"
-
-/area/constructionsite/bridge
-	name = "\improper Construction Site Bridge"
-	icon_state = "bridge"
-
-/area/constructionsite/hallway/aft
-	name = "\improper Construction Site Aft Hallway"
-	icon_state = "hallP"
-
-/area/constructionsite/hallway/fore
-	name = "\improper Construction Site Fore Hallway"
-	icon_state = "hallS"
-
-/area/constructionsite/atmospherics
-	name = "\improper Construction Site Atmospherics"
-	icon_state = "green"
-
-/area/constructionsite/medical
-	name = "\improper Construction Site Medbay"
-	icon_state = "medbay"
-
-/area/constructionsite/ai
-	name = "\improper Construction Computer Core"
-	icon_state = "ai"
-
-/area/constructionsite/engineering
-	name = "\improper Construction Site Engine Bay"
-	icon_state = "engine"
-
-/area/constructionsite/teleporter
-	name = "Construction Site Teleporter"
-	icon_state = "yellow"
-
-/area/solar/constructionsite
-	name = "\improper Construction Site Solars"
-	icon_state = "aft"
-
-/area/constructionsite/maintenance
-	name = "\improper Construction Site Maintenance"
-	icon_state = "yellow"
 
 // Engineering
 
@@ -1277,12 +1235,6 @@
  	sound_env = LARGE_ENCLOSED
 
 // Medical
-
-/area/medical/biostorage
-	name = "\improper Secondary Storage"
-	icon_state = "medbay4"
-	ambience = list('sound/ambience/signal.ogg')
-
 /area/medical/chemistry
 	name = "\improper Chemistry"
 	icon_state = "chem"
@@ -1313,6 +1265,10 @@
 	name = "\improper Robotics Lab"
 	icon_state = "robotics"
 
+/area/assembly/robotics_surgery
+	name = "\improper Robotics Operating Theatre"
+	icon_state = "robotics"
+
 /area/rnd/misc_lab
 	name = "\improper Miscellaneous Research"
 	icon_state = "misclab"
@@ -1325,18 +1281,9 @@
 	name = "\improper Research Break Room"
 	icon_state = "researchbreak"
 
-
-// Derelict
-
-/area/derelict/ship
-	name = "\improper Abandoned Ship"
-	icon_state = "yellow"
-
-// Misc
-/area/AIsattele
-	name = "\improper AI Satellite Teleporter Room"
-	icon_state = "teleporter"
-	ambience = list('sound/ambience/ambimalf.ogg')
+/area/rnd/pilot
+	name = "\improper NanoTrasen Pilot Office"
+	icon_state = "researchbreak"
 
 /area/alien
 	name = "\improper Alien base"
@@ -1358,7 +1305,7 @@
 /area/shuttle/administration/centcom
 	name = "\improper Administration Shuttle"
 	icon_state = "shuttlered"
-
+/*
 /area/shuttle/escape_pod1/centcom
 	icon_state = "shuttle"
 
@@ -1370,6 +1317,7 @@
 
 /area/shuttle/escape_pod5/centcom
 	icon_state = "shuttle"
+*/
 
 /area/supply/dock
 	name = "Supply Shuttle"
@@ -1527,6 +1475,15 @@
 /area/tdome/testing
 	name = "\improper Thunderdome (TESTING AREA)"
 	icon_state = "purple"
+
+/area/tdome/testing/engineering
+	name = "\improper Thunderdome"
+	requires_power = 0
+	dynamic_lighting = 1
+
+/area/tdome/testing/engineering/unpowered
+	name = "\improper Thunderdome"
+	requires_power = 1
 
 /area/tdome/tdomeobserve
 	name = "\improper Thunderdome (Observer.)"

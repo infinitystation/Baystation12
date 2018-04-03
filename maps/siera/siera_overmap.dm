@@ -1,15 +1,14 @@
 /obj/effect/overmap/ship/siera
-	name = "SEV siera"
+	name = "SEV Siera"
 	fore_dir = WEST
-	vessel_mass = 800
+	vessel_mass = 300
 	default_delay = 20 SECONDS
 	speed_mod = 5 SECONDS
-	start_x = 4
-	start_y = 5
 
 	restricted_waypoints = list(
 		"Charon" = list("nav_hangar_calypso"), 	//can't have random shuttles popping inside the ship
-		"Guppy" = list("nav_hangar_guppy")
+		"Guppy" = list("nav_hangar_guppy"),
+		"Albatross" = list("nav_albatross_dock")
 	)
 
 	generic_waypoints = list(
@@ -47,7 +46,7 @@
 	req_access = list(access_aquila_helm)
 
 /obj/machinery/computer/shuttle_control/explore/exploration_shuttle
-	name = "shuttle control console"
+	name = "charon control console"
 	shuttle_tag = "Charon"
 	req_access = list(access_expedition_shuttle_helm)
 

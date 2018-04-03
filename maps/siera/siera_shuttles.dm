@@ -183,7 +183,7 @@
 	name = "Petrov"
 	warmup_time = 10
 	shuttle_area = list(/area/shuttle/petrov/ship,/area/shuttle/petrov/cell1,/area/shuttle/petrov/cell2,/area/shuttle/petrov/cell3)
-	dock_target = "petrov_shuttle"
+	dock_target = "petrov_shuttle_airlock"
 	waypoint_station = "nav_petrov_start"
 	waypoint_offsite = "nav_petrov_out"
 
@@ -200,7 +200,7 @@
 /datum/shuttle/autodock/multi/antag/ninja
 	name = "Ninja"
 	warmup_time = 0
-	destinations = list(
+	destination_tags = list(
 		"nav_ninja_deck1",
 		"nav_ninja_deck2",
 		"nav_ninja_deck3",
@@ -212,12 +212,17 @@
 		"nav_ninja_start",
 		"nav_lost_supply_base_antag",
 		"nav_marooned_antag",
-		"nav_smugglers_antag"
+		"nav_smugglers_antag",
+		"nav_bearcat_antag",
+		"nav_magshield_antag",
+		"nav_casino_antag",
+		"nav_yacht_antag",
+		"nav_slavers_base_antag",
 		)
 	shuttle_area = /area/ninja_dojo/start
 	current_location = "nav_ninja_start"
 	landmark_transition = "nav_ninja_transition"
-	announcer = "SEV siera Sensor Array"
+	announcer = "SEV Siera Sensor Array"
 	arrival_message = "Attention, anomalous sensor reading detected entering vessel proximity."
 	departure_message = "Attention, anomalous sensor reading detected leaving vessel proximity."
 
@@ -231,19 +236,19 @@
 	landmark_tag = "nav_ninja_transition"
 
 /obj/effect/shuttle_landmark/ninja/deck1
-	name = "South of First Deck"
+	name = "West of Fourth Deck"
 	landmark_tag = "nav_ninja_deck1"
 
 /obj/effect/shuttle_landmark/ninja/deck2
-	name = "Northeast of Second Deck"
+	name = "East of Third Deck"
 	landmark_tag = "nav_ninja_deck2"
 
 /obj/effect/shuttle_landmark/ninja/deck3
-	name = "East of Third Deck"
+	name = "Northeast of Second Deck"
 	landmark_tag = "nav_ninja_deck3"
 
 /obj/effect/shuttle_landmark/ninja/deck4
-	name = "West of Fourth Deck"
+	name = "South of First Deck"
 	landmark_tag = "nav_ninja_deck4"
 
 /obj/effect/shuttle_landmark/ninja/deck5
@@ -318,7 +323,7 @@
 /datum/shuttle/autodock/multi/antag/mercenary
 	name = "Mercenary"
 	warmup_time = 0
-	destinations = list(
+	destination_tags = list(
 		"nav_merc_deck1",
 		"nav_merc_deck2",
 		"nav_merc_deck3",
@@ -331,13 +336,17 @@
 		"nav_merc_start",
 		"nav_lost_supply_base_antag",
 		"nav_marooned_antag",
-		"nav_smugglers_antag"
+		"nav_smugglers_antag",
+		"nav_magshield_antag",
+		"nav_casino_antag",
+		"nav_yacht_antag",
+		"nav_slavers_base_antag",
 		)
 	shuttle_area = /area/syndicate_station/start
 	dock_target = "merc_shuttle"
 	current_location = "nav_merc_start"
 	landmark_transition = "nav_merc_transition"
-	announcer = "SEV siera Sensor Array"
+	announcer = "SEV Siera Sensor Array"
 	home_waypoint = "nav_merc_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
@@ -357,19 +366,19 @@
 	docking_controller = "nuke_shuttle_dock_airlock"
 
 /obj/effect/shuttle_landmark/merc/deck1
-	name = "Northeast of First Deck"
+	name = "Northwest of Fourth Deck"
 	landmark_tag = "nav_merc_deck1"
 
 /obj/effect/shuttle_landmark/merc/deck2
-	name = "Southeast of the Second deck"
+	name = "South of Third deck"
 	landmark_tag = "nav_merc_deck2"
 
 /obj/effect/shuttle_landmark/merc/deck3
-	name = "South of Third deck"
+	name = "Southeast of the Second deck"
 	landmark_tag = "nav_merc_deck3"
 
 /obj/effect/shuttle_landmark/merc/deck4
-	name = "Northwest of Fourth Deck"
+	name = "Northeast of First Deck"
 	landmark_tag = "nav_merc_deck4"
 
 /obj/effect/shuttle_landmark/merc/deck5
@@ -381,7 +390,7 @@
 /datum/shuttle/autodock/multi/antag/skipjack
 	name = "Skipjack"
 	warmup_time = 0
-	destinations = list(
+	destination_tags = list(
 		"nav_skipjack_deck1",
 		"nav_skipjack_deck2",
 		"nav_skipjack_deck3",
@@ -394,13 +403,17 @@
 		"nav_skipjack_start",
 		"nav_lost_supply_base_antag",
 		"nav_marooned_antag",
-		"nav_smugglers_antag"
+		"nav_smugglers_antag",
+		"nav_magshield_antag",
+		"nav_casino_antag",
+		"nav_yacht_antag",
+		"nav_slavers_base_antag",
 		)
 	shuttle_area =  /area/skipjack_station/start
 	dock_target = "skipjack_shuttle"
 	current_location = "nav_skipjack_start"
 	landmark_transition = "nav_skipjack_transition"
-	announcer = "SEV siera Sensor Array"
+	announcer = "SEV Siera Sensor Array"
 	home_waypoint = "nav_skipjack_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
@@ -420,19 +433,19 @@
 	docking_controller = "skipjack_shuttle_dock_airlock"
 
 /obj/effect/shuttle_landmark/skipjack/deck1
-	name = "Northwest of First Deck"
+	name = "Northeast of Fourth Deck"
 	landmark_tag = "nav_skipjack_deck1"
 
 /obj/effect/shuttle_landmark/skipjack/deck2
-	name = "Southwest of the Second deck"
+	name = "Southeast of Third deck"
 	landmark_tag = "nav_skipjack_deck2"
 
 /obj/effect/shuttle_landmark/skipjack/deck3
-	name = "Southeast of Third deck"
+	name = "Southwest of Second deck"
 	landmark_tag = "nav_skipjack_deck3"
 
 /obj/effect/shuttle_landmark/skipjack/deck4
-	name = "Northwest of Fourth Deck"
+	name = "Northwest of First Deck"
 	landmark_tag = "nav_skipjack_deck4"
 
 /obj/effect/shuttle_landmark/skipjack/deck5
@@ -444,7 +457,7 @@
 /datum/shuttle/autodock/multi/antag/rescue
 	name = "Rescue"
 	warmup_time = 0
-	destinations = list(
+	destination_tags = list(
 		"nav_ert_deck1",
 		"nav_ert_deck2",
 		"nav_ert_deck3",
@@ -457,14 +470,18 @@
 		"nav_ert_start",
 		"nav_lost_supply_base_antag",
 		"nav_marooned_antag",
-		"nav_smugglers_antag"
+		"nav_smugglers_antag",
+		"nav_magshield_antag",
+		"nav_casino_antag",
+		"nav_yacht_antag",
+		"nav_slavers_base_antag",
 		)
 	shuttle_area = /area/rescue_base/start
 	dock_target = "rescue_shuttle"
 	current_location = "nav_ert_start"
 	landmark_transition = "nav_ert_transition"
 	home_waypoint = "nav_ert_start"
-	announcer = "SEV siera Sensor Array"
+	announcer = "SEV Siera Sensor Array"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
 
@@ -504,7 +521,7 @@
 
 //SCGMC Assault Pod
 
-/datum/shuttle/autodock/ferry/specops
+/datum/shuttle/autodock/ferry/specops/scg
 	name = "Special Operations"
 	warmup_time = 10
 	location = 1
@@ -517,7 +534,7 @@
 /obj/effect/shuttle_landmark/specops/start
 	name = "Centcom"
 	landmark_tag = "nav_specops_start"
-	docking_controller = "specops_shuttle_port"
+	docking_controller = "specops_shuttle_cent"
 
 /obj/effect/shuttle_landmark/specops/out
 	name = "Docking Bay"
@@ -546,11 +563,13 @@
 
 /datum/shuttle/autodock/overmap/exploration_shuttle
 	name = "Charon"
-	move_time = 300 //Five minutes
+	move_time = 90
 	shuttle_area = list(/area/exploration_shuttle/cockpit, /area/exploration_shuttle/atmos, /area/exploration_shuttle/power, /area/exploration_shuttle/crew, /area/exploration_shuttle/cargo, /area/exploration_shuttle/airlock)
+	dock_target = "calypso_shuttle"
 	current_location = "nav_hangar_calypso"
 	landmark_transition = "nav_transit_calypso"
 	range = 1
+	fuel_consumption = 4
 
 /obj/effect/shuttle_landmark/siera/hangar/exploration_shuttle
 	name = "Charon Hangar"
@@ -559,19 +578,19 @@
 	base_turf = /turf/simulated/floor/plating
 
 /obj/effect/shuttle_landmark/siera/deck1/exploration_shuttle
-	name = "Space near Deck Four"
+	name = "Space near Fourth Deck"
 	landmark_tag = "nav_deck1_calypso"
 
 /obj/effect/shuttle_landmark/siera/deck2/exploration_shuttle
-	name = "Space near Deck Three"
+	name = "Space near Third Deck"
 	landmark_tag = "nav_deck2_calypso"
 
 /obj/effect/shuttle_landmark/siera/deck3/exploration_shuttle
-	name = "Space near Deck Two"
+	name = "Space near Second Deck"
 	landmark_tag = "nav_deck3_calypso"
 
 /obj/effect/shuttle_landmark/siera/deck4/exploration_shuttle
-	name = "Space near Deck One"
+	name = "Space near First Deck"
 	landmark_tag = "nav_deck4_calypso"
 
 /obj/effect/shuttle_landmark/siera/deck5/exploration_shuttle
@@ -587,10 +606,12 @@
 	warmup_time = 5
 	move_time = 30
 	shuttle_area = /area/guppy_hangar/start
+	dock_target ="guppy_shuttle"
 	current_location = "nav_hangar_guppy"
 	landmark_transition = "nav_transit_guppy"
 	sound_takeoff = 'sound/effects/rocket.ogg'
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
+	fuel_consumption = 2
 
 /obj/effect/shuttle_landmark/siera/hangar/guppy
 	name = "Guppy Hangar"
@@ -599,19 +620,19 @@
 	base_turf = /turf/simulated/floor/plating
 
 /obj/effect/shuttle_landmark/siera/deck1/guppy
-	name = "Space near Deck Four"
+	name = "Space near Fourth Deck"
 	landmark_tag = "nav_deck1_guppy"
 
 /obj/effect/shuttle_landmark/siera/deck2/guppy
-	name = "Space near Deck Three"
+	name = "Space near Third Deck"
 	landmark_tag = "nav_deck2_guppy"
 
 /obj/effect/shuttle_landmark/siera/deck3/guppy
-	name = "Space near Deck Two"
+	name = "Space near Second Deck"
 	landmark_tag = "nav_deck3_guppy"
 
 /obj/effect/shuttle_landmark/siera/deck4/guppy
-	name = "Space near Deck One"
+	name = "Space near First Deck"
 	landmark_tag = "nav_deck4_guppy"
 
 /obj/effect/shuttle_landmark/siera/deck5/guppy
@@ -638,19 +659,19 @@
 	base_turf = /turf/simulated/floor/reinforced/airless
 
 /obj/effect/shuttle_landmark/siera/deck1/aquila
-	name = "Space near Deck Four"
+	name = "Space near Fourth Deck"
 	landmark_tag = "nav_deck1_aquila"
 
 /obj/effect/shuttle_landmark/siera/deck2/aquila
-	name = "Space near Deck Three"
+	name = "Space near Third Deck"
 	landmark_tag = "nav_deck2_aquila"
 
 /obj/effect/shuttle_landmark/siera/deck3/aquila
-	name = "Space near Deck Two"
+	name = "Space near Second Deck"
 	landmark_tag = "nav_deck3_aquila"
 
 /obj/effect/shuttle_landmark/siera/deck4/aquila
-	name = "Space near Deck One"
+	name = "Space near First Deck"
 	landmark_tag = "nav_deck4_aquila"
 
 /obj/effect/shuttle_landmark/siera/deck5/aquila

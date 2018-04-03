@@ -40,18 +40,20 @@
 		"meetinghall"      = new/datum/holodeck_program(/area/holodeck/source_meetinghall),
 		"courtroom"        = new/datum/holodeck_program(/area/holodeck/source_courtroom, list('sound/music/traitor.ogg')),
 		"wildlifecarp"     = new/datum/holodeck_program(/area/holodeck/source_wildlife, list()),
+		"paradeground"     = new/datum/holodeck_program(/area/holodeck/source_military, list()),
 		"turnoff"          = new/datum/holodeck_program(/area/holodeck/source_plating, list())
 	)
 
 	holodeck_supported_programs = list(
 
-		"sieraMainPrograms" = list(
+		"SieraMainPrograms" = list(
 			"Empty Court"       = "emptycourt",
 			"Basketball Court"  = "basketball",
 			"Thunderdome Court" = "thunderdomecourt",
 			"Boxing Ring"       = "boxingcourt",
 			"Beach"             = "beach",
 			"Desert"            = "desert",
+			"Parade Ground"            = "paradeground",
 			"Space"             = "space",
 			"Picnic Area"       = "picnicarea",
 			"Snow Field"        = "snowfield",
@@ -64,7 +66,7 @@
 
 	holodeck_restricted_programs = list(
 
-		"sieraMainPrograms" = list(
+		"SieraMainPrograms" = list(
 			"Wildlife Simulation" = "wildlifecarp"
 		)
 
