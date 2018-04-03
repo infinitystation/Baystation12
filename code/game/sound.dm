@@ -53,6 +53,8 @@ GLOBAL_LIST_INIT(switch_sound,list('sound/machines/switch1.ogg','sound/machines/
 GLOBAL_LIST_INIT(button_sound,list('sound/machines/button1.ogg','sound/machines/button2.ogg','sound/machines/button3.ogg','sound/machines/button4.ogg'))
 GLOBAL_LIST_INIT(chop_sound,list('sound/weapons/chop1.ogg','sound/weapons/chop2.ogg','sound/weapons/chop3.ogg'))
 
+GLOBAL_LIST_INIT(unarmed_attack_sound,list('sound/effects/hit_kick.ogg', 'sound/effects/hit_punch.ogg'))
+
 GLOBAL_LIST_INIT(gun_sound, list('sound/weapons/gunshot.ogg', 'sound/weapons/gunshot2.ogg', 'sound/weapons/gunshot3.ogg', 'sound/weapons/gunshot4.ogg'))
 
 /proc/playsound(var/atom/source, soundin, vol as num, vary, extrarange as num, falloff, var/is_global, var/frequency, var/is_ambiance = 0)
@@ -186,4 +188,5 @@ var/const/FALLOFF_SOUNDS = 0.5
 			if ("button") soundin = pick(GLOB.button_sound)
 			if ("gunshot") soundin = pick(GLOB.gun_sound)
 			if ("chop") soundin = pick(GLOB.chop_sound)
+			if ("unarmed") soundin = pick(GLOB.unarmed_attack_sound)
 	return soundin
