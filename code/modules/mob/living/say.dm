@@ -228,6 +228,8 @@ proc/get_radio_key_from_channel(var/channel)
 
 	message = trim_left(message)
 
+	if(ARABIC in mutations)
+		message = arabic_parse(message)
 	message = handle_autohiss(message, speaking)
 
 	if(!(speaking && (speaking.flags & NO_STUTTER)))

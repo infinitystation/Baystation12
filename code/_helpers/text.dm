@@ -347,6 +347,16 @@ proc/TextPreview(var/string,var/len=40)
 				return 1
 	return 0
 
+/proc/arabic_parse(t)
+	t = replacetext(t, "е", "э")
+	t = replacetext(t, "о", "а")
+	t = replacetext(t, "у", "ю")
+	t = replacetext(t, "ю", "у")
+	t = replacetext(t, "ы", "и")
+	t = replacetext(t, "и", "ы")
+	t = replacetext(t, "араша", "арашо")
+	return t
+
 //unicode sanitization
 /proc/sanitize_u(t)
 	t = html_encode(sanitize(t))

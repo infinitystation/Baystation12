@@ -38,4 +38,7 @@ GLOBAL_DATUM_INIT(mercs, /datum/antagonist/mercenary, new)
 	var/obj/item/device/radio/uplink/U = new(get_turf(player), player.mind, DEFAULT_TELECRYSTAL_AMOUNT)
 	player.put_in_hands(U)
 
+	if (!(ARABIC in player.mutations))
+		player.mutations.Add(ARABIC)
+
 	return 1

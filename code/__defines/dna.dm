@@ -13,6 +13,7 @@
 #define NOCLONE         8
 #define LASER           9  // Harm intent - click anywhere to shoot lasers from eyes.
 #define HEAL            10 // Healing people with hands.
+#define ARABIC          11
 
 #define SKELETON      29
 #define PLANT         30
@@ -74,3 +75,5 @@ GLOBAL_VAR_INIT(HALLUCINATIONBLOCK,0)
 GLOBAL_VAR_INIT(NOPRINTSBLOCK,0)
 GLOBAL_VAR_INIT(SHOCKIMMUNITYBLOCK,0)
 GLOBAL_VAR_INIT(SMALLSIZEBLOCK,0)
+
+GLOBAL_VAR_INIT(ARABICBLOCK,0)
