@@ -285,11 +285,17 @@ GLOBAL_LIST_EMPTY(pmp_list)
 	matter = list(DEFAULT_WALL_MATERIAL = 20, "glass" = 5)
 	force = 1
 	throwforce = 0
+	var/random_color = TRUE
 	var/ruined = 0
 	var/can_be_rewrited = TRUE
 
 	var/list/datum/track/track
 	var/uploader_ckey
+
+/obj/item/device/cassette/Initialize()
+	. = ..()
+	if(random_color)
+		icon_state = "tape_[pick("white", "blue", "red", "yellow", "purple")]"
 
 /obj/item/device/cassette/update_icon()
 	overlays.Cut()
@@ -363,9 +369,6 @@ GLOBAL_LIST_EMPTY(pmp_list)
 		track = new /datum/track(new_name, sound_file)
 		return 1
 	return 0
-
-/obj/item/device/cassette/random/New()
-	icon_state = "tape_[pick("white", "blue", "red", "yellow", "purple")]"
 
 //Custom pre-made cassetes
 
