@@ -38,7 +38,7 @@
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
 
-/obj/structure/closet/secure_closet/engineering_ship
+/obj/structure/closet/secure_closet/engineering_siera
 	name = "engineer's locker"
 	req_access = list(access_engine_equip)
 	icon_state = "secureeng1"
@@ -48,25 +48,19 @@
 	icon_broken = "secureengbroken"
 	icon_off = "secureengoff"
 
-/obj/structure/closet/secure_closet/engineering_ship/WillContain()
+/obj/structure/closet/secure_closet/engineering_siera/WillContain()
 	return list(
-		/obj/item/clothing/under/hazard,
-		/obj/item/clothing/accessory/storage/brown_vest,
+		new/datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		/obj/item/weapon/storage/belt/utility/full,
 		/obj/item/device/radio/headset/headset_eng,
 		/obj/item/clothing/suit/storage/hazardvest,
-		/obj/item/clothing/mask/gas,
+		/obj/item/device/flashlight,
 		/obj/item/clothing/glasses/meson,
 		/obj/item/weapon/cartridge/engineering,
 		/obj/item/taperoll/engineering,
-		/obj/item/weapon/cartridge/atmos,
-		/obj/item/device/flashlight,
-		/obj/item/taperoll/atmos,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
 
-/obj/structure/closet/secure_closet/atmos_ship
+/obj/structure/closet/secure_closet/atmos_siera
 	name = "atmospherics equipment locker"
 	req_access = list(access_atmospherics)
 	icon_state = "secureatm1"
@@ -76,18 +70,16 @@
 	icon_broken = "secureatmbroken"
 	icon_off = "secureatmoff"
 
-/obj/structure/closet/secure_closet/atmos_ship/WillContain()
+/obj/structure/closet/secure_closet/atmos_siera/WillContain()
 	return list(
-		/obj/item/clothing/under/hazard,
-		/obj/item/clothing/suit/fire/firefighter,
 		/obj/item/clothing/head/hardhat/red,
 		/obj/item/device/flashlight,
 		/obj/item/weapon/storage/belt/utility/full,
-		/obj/item/weapon/extinguisher,
+		/obj/item/weapon/extinguisher/mini,
 		/obj/item/device/radio/headset/headset_eng,
 		/obj/item/weapon/tank/emergency/oxygen/double,
 		/obj/item/clothing/mask/gas,
 		/obj/item/weapon/cartridge/atmos,
 		/obj/item/taperoll/atmos,
-		/obj/item/device/analyzer
+		/obj/item/weapon/storage/firstaid/individual/all,
 	)
