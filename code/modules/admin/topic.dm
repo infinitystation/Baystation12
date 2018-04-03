@@ -2165,25 +2165,26 @@
 		sound_to(usr, S)
 
 	if(href_list["wipedata"])
-		var/obj/item/device/cassette/disk = locate(href_list["wipedata"])
-		if(!disk.tracks)
-			to_chat(usr, "This disk have no data or wiped.")
+		var/obj/item/device/cassette/cassette = locate(href_list["wipedata"])
+		if(!cassette.track)
+			to_chat(usr, "This cassette have no data or already is wiped.")
 			return
 
-		if(alert("Wipe data written by [(disk.uploader_ckey) ? disk.uploader_ckey : "<b>*NULL*</b>"]?",,"Yes", "No") == "Yes")
-			if(istype(disk.loc, /obj/machinery/media/jukebox))
-				var/obj/machinery/media/jukebox/J = disk.loc
-				if(J.current_track && J.current_track == disk.tracks)
+		if(alert("Wipe data written by [(cassette.uploader_ckey) ? cassette.uploader_ckey : "<b>*NULL*</b>"]?",,"Yes", "No") == "Yes")
+			if(istype(cassette.loc, /obj/machinery/media/jukebox))
+				var/obj/machinery/media/jukebox/J = cassette.loc
+				if(J.current_track && J.current_track == cassette.track)
 					J.StopPlaying()
 					J.current_track = null
 
-			if(istype(disk.loc, /obj/item/device/pmp))
-				var/obj/item/device/pmp/pmp = disk.loc
+			if(istype(cassette.loc, /obj/item/device/pmp))
+				var/obj/item/device/pmp/pmp = cassette.loc
 				if(pmp.playing)
 					pmp.StopPlaying()
 
-			qdel(disk.tracks)
-			disk.name = "burned cassette"
+			qdel(cassette.track)
+			cassette.ruin()
+			cassette.name = "burned cassette"
 
 mob/living/proc/can_centcom_reply()
 	return 0

@@ -108,10 +108,10 @@ GLOBAL_LIST_EMPTY(pmp_list)
 		if(serial_number)
 			to_chat(user, "The serial number \"#[serial_number]\" is generated on the case.")
 		if(cassette)
-			to_chat(user, "<span class='notice'>You can see a cassette inside it. The label says \"[cassette.name]\".</span>")
+			to_chat(user, "<span class='notice'>You can see a cassette inside it. The label says \"[cassette.track.title]\".</span>")
 
 /obj/item/device/pmp/attack_self(mob/user)
-	playsound(src, "switch", 20)
+	playsound(src.loc, "switch", 20)
 	if(playing)
 		StopPlaying()
 		return
@@ -140,7 +140,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 		visible_message(
 			"<span class='notice'>[user] insert a cassette into \the [src].</span>",
 			"<span class='notice'>You insert a cassette into \the [src].</span>")
-		playsound(src, 'sound/weapons/TargetOn.ogg', 35, 1)
+		playsound(src.loc, 'sound/weapons/TargetOn.ogg', 35, 1)
 		return
 
 	if(istype(I, /obj/item/weapon/cell/device))
@@ -199,7 +199,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 	if(playing)
 		StopPlaying()
 
-	playsound(src, "sound/machines/Custom_screwdriveropen.ogg", 20, 1)
+	playsound(src.loc, "sound/machines/Custom_screwdriveropen.ogg", 20, 1)
 	if(user)
 		visible_message(
 			"<span class='notice'>[user] eject the cassette.</span>",
@@ -248,15 +248,15 @@ GLOBAL_LIST_EMPTY(pmp_list)
 	if(isnull(cassette))
 		return
 
-	if(!cassette.tracks)
+	if(!cassette.track)
 		return
 
 	if(cassette.ruined)
 		src.visible_message("<span class='warning'>The cassette is unusable to play.</span>", 1)
 		return
 
-	log_and_message_admins("launched a [src] <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> with the song \"[cassette.tracks.title]\".")
-	sound_token = sound_player.PlayLoopingSound(src, sound_id, cassette.tracks.sound, volume = volume, range = 7, falloff = 4, prefer_mute = TRUE)
+	log_and_message_admins("launched a [src] <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> with the song \"[cassette.track.title]\".")
+	sound_token = sound_player.PlayLoopingSound(src, sound_id, cassette.track.sound, volume = volume, range = 7, falloff = 4, prefer_mute = TRUE)
 	playing = 1
 	START_PROCESSING(SSobj, src)
 	update_icon()
@@ -288,7 +288,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 	var/ruined = 0
 	var/can_be_rewrited = TRUE
 
-	var/list/datum/track/tracks
+	var/list/datum/track/track
 	var/uploader_ckey
 
 /obj/item/device/cassette/update_icon()
@@ -341,9 +341,9 @@ GLOBAL_LIST_EMPTY(pmp_list)
 	desc = "A dusty cassette, very expensive by the way."
 
 /obj/item/device/cassette/custom/attack_self(mob/user)
-	if(!tracks)
+	if(!ruined && !track)
 		if(setup_cassette(user))
-			log_and_message_admins("uploaded new sound <a href='?_src_=holder;listensound=\ref[tracks.sound]'>(preview)</a> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the cassette</a> with track name \"[tracks.title]\". <A HREF='?_src_=holder;wipedata=\ref[src]'>Wipe</A> data.")
+			log_and_message_admins("uploaded new sound <a href='?_src_=holder;listensound=\ref[track.sound]'>(preview)</a> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the cassette</a> with track name \"[track.title]\". <A HREF='?_src_=holder;wipedata=\ref[src]'>Wipe</A> data.")
 		return
 	..()
 
@@ -360,7 +360,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 		SetName("cassette - \"[new_name]\"")
 
 	if(sound_file && new_name)
-		tracks = new /datum/track(new_name, sound_file)
+		track = new /datum/track(new_name, sound_file)
 		return 1
 	return 0
 
@@ -371,10 +371,10 @@ GLOBAL_LIST_EMPTY(pmp_list)
 
 /obj/item/device/cassette/title2
 	name = "Title 2"
-	tracks = new /datum/track("Title 2", 'sound/music/title2.ogg')
+	track = new /datum/track("Title 2", 'sound/music/title2.ogg')
 	can_be_rewrited = FALSE
 
 /obj/item/device/cassette/clouds
 	name = "Clouds"
-	tracks = new /datum/track("Clouds of Fire", 'sound/music/clouds.s3m')
+	track = new /datum/track("Clouds of Fire", 'sound/music/clouds.s3m')
 	can_be_rewrited = FALSE

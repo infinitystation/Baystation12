@@ -95,7 +95,7 @@
 		if(!writing && !retard && coin && disk && cooldown == 0)
 			if(disk.can_be_rewrited)
 				if(write_disk(usr))
-					message_admins("[retard.real_name]([retard.ckey]) uploaded new sound <A HREF='?_src_=holder;listensound=\ref[disk.tracks.sound]'>(preview)</A> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the cassette</a> named as \"[disk.tracks.title]\". <A HREF='?_src_=holder;wipedata=\ref[disk]'>Wipe</A> data.")
+					message_admins("[retard.real_name]([retard.ckey]) uploaded new sound <A HREF='?_src_=holder;listensound=\ref[disk.track.sound]'>(preview)</A> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the cassette</a> named as \"[disk.track.title]\". <A HREF='?_src_=holder;wipedata=\ref[disk]'>Wipe</A> data.")
 					coin -= 1
 					cooldown += 5 MINUTES
 					sleep(40)
@@ -155,13 +155,13 @@
 
 		disk.SetName("cassette - \"[new_name]\"")
 
-		if(disk.tracks) //Removing old datum disk if there one
-			qdel(disk.tracks)
+		if(disk.track) //Removing old datum disk if there one
+			qdel(disk.track)
 
 		var/datum/track/T = new(new_name, new_sound_file)
 
 		if(T)
-			disk.tracks = T
+			disk.track = T
 			disk.uploader_ckey = retard.ckey
 			return 1
 	return 0

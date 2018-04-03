@@ -26,7 +26,7 @@ datum/track/New(var/title_name, var/audio)
 	clicksound = 'sound/machines/buttonbeep.ogg'
 	pixel_x = -8
 
-	var/obj/item/device/cassette/disk
+	var/obj/item/device/cassette/cassette
 
 	var/playing = 0
 	var/volume = 20
@@ -87,9 +87,8 @@ datum/track/New(var/title_name, var/audio)
 
 /obj/machinery/media/jukebox/Destroy()
 	StopPlaying()
-	if(disk)
-		qdel(disk)
-		disk = null
+	if(cassette)
+		QDEL_NULL(cassette)
 	. = ..()
 
 /obj/machinery/media/jukebox/powered()
@@ -224,8 +223,8 @@ datum/track/New(var/title_name, var/audio)
 
 	if(istype(W, /obj/item/device/cassette))
 		var/obj/item/device/cassette/D = W
-		if(disk)
-			to_chat(user, "<span class='notice'>There is already a disk inside.</span>")
+		if(cassette)
+			to_chat(user, "<span class='notice'>There is already a cassette inside.</span>")
 			return
 
 		if(D.ruined)
@@ -235,9 +234,9 @@ datum/track/New(var/title_name, var/audio)
 		visible_message("<span class='notice'>[usr] insert the cassette in to \the [src].</span>")
 		user.drop_item()
 		D.forceMove(src)
-		disk = D
-		tracks += disk.tracks
-		//current_track = disk.tracks
+		cassette = D
+		tracks += cassette.track
+		//current_track = cassette.track
 		return
 
 	return ..()
@@ -282,15 +281,15 @@ datum/track/New(var/title_name, var/audio)
 	if(usr.incapacitated())
 		return
 
-	if(!disk)
+	if(!cassette)
 		to_chat(usr, "<span class='notice'>There is no cassette inside \the [src].</span>")
 	else
 		StopPlaying()
 		current_track = null
 		for(var/datum/track/T in tracks)
-			if(T == disk.tracks)
+			if(T == cassette.track)
 				tracks -= T
 		visible_message("<span class='notice'>[usr] eject the cassette from \the [src].</span>")
-		usr.put_in_hands(disk)
-		disk = null
+		usr.put_in_hands(cassette)
+		cassette = null
 	return

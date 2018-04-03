@@ -169,6 +169,17 @@
 	var/is_washing = 0
 	var/list/temperature_settings = list("normal" = 310, "boiling" = T0C+100, "freezing" = T0C)
 
+	var/sound_id
+	var/datum/sound_token/sound_token
+
+/obj/machinery/shower/Initialize()
+	. = ..()
+	sound_id = "[type]_[sequential_id(type)]"
+
+/obj/machinery/shower/Destroy()
+	QDEL_NULL(sound_token)
+	return ..()
+
 /obj/machinery/shower/New()
 	..()
 	create_reagents(50)
@@ -188,11 +199,17 @@
 	on = !on
 	update_icon()
 	if(on)
+		QDEL_NULL(sound_token)
+		playsound(src.loc, 'sound/machines/shower_start.ogg', 40)
+		sound_token = sound_player.PlayLoopingSound(src, sound_id, 'sound/machines/shower_mid3.ogg', volume = 20, range = 7, falloff = 4, prefer_mute = TRUE)
 		if (M.loc == loc)
 			wash(M)
 			process_heat(M)
 		for (var/atom/movable/G in src.loc)
 			G.clean_blood()
+	else
+		QDEL_NULL(sound_token)
+		playsound(src.loc, 'sound/machines/shower_end.ogg', 40)
 
 /obj/machinery/shower/attackby(obj/item/I as obj, mob/user as mob)
 	if(I.type == /obj/item/device/analyzer)
