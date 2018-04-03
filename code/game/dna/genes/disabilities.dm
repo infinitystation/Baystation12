@@ -127,11 +127,3 @@
 
 	New()
 		block=GLOB.GLASSESBLOCK
-
-/datum/dna/gene/disability/arabic
-	name = "Arabianess"
-	activation_message = "Your vocal chords feels rough."
-	disability = ARABIC
-
-/datum/dna/gene/disability/arabic/New()
-	block = GLOB.ARABICBLOCK
