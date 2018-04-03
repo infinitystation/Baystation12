@@ -1,5 +1,5 @@
-/obj/effect/overmap/ship/torch
-	name = "SEV Torch"
+/obj/effect/overmap/ship/siera
+	name = "SEV siera"
 	fore_dir = WEST
 	vessel_mass = 800
 	default_delay = 20 SECONDS

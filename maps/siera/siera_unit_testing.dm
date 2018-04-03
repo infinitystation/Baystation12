@@ -1,4 +1,4 @@
-/datum/map/torch
+/datum/map/siera
 	// Unit test exemptions
 	apc_test_exempt_areas = list(
 		/area/AIsattele = NO_SCRUBBER|NO_VENT|NO_APC,

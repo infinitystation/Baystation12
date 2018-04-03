@@ -1,5 +1,5 @@
 
-/datum/map/torch
+/datum/map/siera
 
 	holodeck_programs = list(
 		"emptycourt"       = new/datum/holodeck_program(/area/holodeck/source_emptycourt, list('sound/music/THUNDERDOME.ogg')),
@@ -45,7 +45,7 @@
 
 	holodeck_supported_programs = list(
 
-		"TorchMainPrograms" = list(
+		"sieraMainPrograms" = list(
 			"Empty Court"       = "emptycourt",
 			"Basketball Court"  = "basketball",
 			"Thunderdome Court" = "thunderdomecourt",
@@ -64,7 +64,7 @@
 
 	holodeck_restricted_programs = list(
 
-		"TorchMainPrograms" = list(
+		"sieraMainPrograms" = list(
 			"Wildlife Simulation" = "wildlifecarp"
 		)
 

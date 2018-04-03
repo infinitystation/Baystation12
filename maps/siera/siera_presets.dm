@@ -20,7 +20,7 @@ var/const/NETWORK_REACTOR	  = "Reactor"
 		if(NETWORK_ENGINE, NETWORK_REACTOR)
 			return access_engine
 
-/datum/map/torch/get_network_access(var/network)
+/datum/map/siera/get_network_access(var/network)
 	switch(network)
 		if(NETWORK_AQUILA)
 			return access_aquila
@@ -38,7 +38,7 @@ var/const/NETWORK_REACTOR	  = "Reactor"
 			return access_explorer
 	return get_shared_network_access(network) || ..()
 
-/datum/map/torch
+/datum/map/siera
 	// Networks that will show up as options in the camera monitor program
 	station_networks = list(
 		NETWORK_AQUILA,
@@ -148,14 +148,14 @@ var/const/NETWORK_REACTOR	  = "Reactor"
 //
 
 // Substation SMES
-/obj/machinery/power/smes/buildable/preset/torch/substation/configure_and_install_coils()
+/obj/machinery/power/smes/buildable/preset/siera/substation/configure_and_install_coils()
 	component_parts += new /obj/item/weapon/smes_coil(src)
 	component_parts += new /obj/item/weapon/smes_coil(src)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 
 // Substation SMES (charged and with full I/O setting)
-/obj/machinery/power/smes/buildable/preset/torch/substation_full/configure_and_install_coils()
+/obj/machinery/power/smes/buildable/preset/siera/substation_full/configure_and_install_coils()
 	component_parts += new /obj/item/weapon/smes_coil(src)
 	component_parts += new /obj/item/weapon/smes_coil(src)
 	_input_maxed = TRUE
@@ -165,7 +165,7 @@ var/const/NETWORK_REACTOR	  = "Reactor"
 	_fully_charged = TRUE
 
 // Main Engine output SMES
-/obj/machinery/power/smes/buildable/preset/torch/engine_main/configure_and_install_coils()
+/obj/machinery/power/smes/buildable/preset/siera/engine_main/configure_and_install_coils()
 	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
 	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
 	component_parts += new /obj/item/weapon/smes_coil/super_capacity(src)
@@ -177,7 +177,7 @@ var/const/NETWORK_REACTOR	  = "Reactor"
 	_fully_charged = TRUE
 
 // Shuttle SMES
-/obj/machinery/power/smes/buildable/preset/torch/shuttle/configure_and_install_coils()
+/obj/machinery/power/smes/buildable/preset/siera/shuttle/configure_and_install_coils()
 	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
@@ -186,7 +186,7 @@ var/const/NETWORK_REACTOR	  = "Reactor"
 	_fully_charged = TRUE
 
 // Hangar SMES. Charges the shuttles so needs a pretty big throughput.
-/obj/machinery/power/smes/buildable/preset/torch/hangar/configure_and_install_coils()
+/obj/machinery/power/smes/buildable/preset/siera/hangar/configure_and_install_coils()
 	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
 	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
 	_input_maxed = TRUE
@@ -195,7 +195,7 @@ var/const/NETWORK_REACTOR	  = "Reactor"
 	_output_on = TRUE
 	_fully_charged = TRUE
 
-/datum/map/torch/default_internal_channels()
+/datum/map/siera/default_internal_channels()
 	return list(
 		num2text(PUB_FREQ)   = list(),
 		num2text(AI_FREQ)    = list(access_synth),

@@ -1,4 +1,4 @@
-/datum/map/torch
+/datum/map/siera
 
 	base_floor_type = /turf/simulated/floor/reinforced/airless
 	base_floor_area = /area/maintenance/exterior
@@ -301,7 +301,7 @@
 	icon_state = "shuttle"
 	name = "\improper Transport Shuttle Centcom"
 
-//torch large pods
+//siera large pods
 /area/shuttle/escape_pod6/station
 	name = "Escape Pod One"
 	area_flags = AREA_FLAG_RAD_SHIELDED
@@ -326,7 +326,7 @@
 	name = "Escape Pod Six"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-//torch small pods
+//siera small pods
 /area/shuttle/escape_pod12/station
 	name = "Escape Pod Seven"
 	area_flags = AREA_FLAG_RAD_SHIELDED
@@ -513,31 +513,31 @@
 	base_turf = /turf/unsimulated/floor/rescue_base
 
 // Elevator areas.
-/area/turbolift/torch_top
+/area/turbolift/siera_top
 	name = "lift (bridge)"
 	lift_floor_label = "Bridge"
 	lift_floor_name = "Bridge"
 	lift_announce_str = "Arriving at Command Deck: Bridge. Meeting Room. Command Offices. AI Core. Landing Area. Auxiliary EVA."
 
-/area/turbolift/torch_third
+/area/turbolift/siera_third
 	name = "lift (upper deck)"
 	lift_floor_label = "Deck 1"
 	lift_floor_name = "Operations Deck"
 	lift_announce_str = "Arriving at Operations Deck: Infirmary. Research Wing. Auxiliary Cryogenic Storage. Emergency Armory. Diplomatic Quarters. Captain's Mess. Pilot's Lounge."
 
-/area/turbolift/torch_second
+/area/turbolift/siera_second
 	name = "lift (maintenance)"
 	lift_floor_label = "Deck 2"
 	lift_floor_name = "Maintenance Deck"
 	lift_announce_str = "Arriving at Maintenance Deck: Engineering. Atmospherics. Sanitation. Storage."
 
-/area/turbolift/torch_first
+/area/turbolift/siera_first
 	name = "lift (second deck)"
 	lift_floor_label = "Deck 3"
 	lift_floor_name = "Habitation Deck"
 	lift_announce_str = "Arriving at Habitation Deck: EVA. Security Wing. Telecommunications. Mess Hall. Hydroponics. Cryogenic Storage. Holodeck."
 
-/area/turbolift/torch_ground
+/area/turbolift/siera_ground
 	name = "lift (lower deck)"
 	lift_floor_label = "Deck 4"
 	lift_floor_name = "Hangar Deck"

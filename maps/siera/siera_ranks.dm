@@ -1,4 +1,4 @@
-/datum/map/torch
+/datum/map/siera
 	branch_types = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet,
@@ -68,7 +68,7 @@
 /datum/mil_branch/expeditionary_corps
 	name = "Expeditionary Corps"
 	name_short = "SCGEC"
-	email_domain = "torch.ec.scg"
+	email_domain = "siera.ec.scg"
 
 	rank_types = list(
 		/datum/mil_rank/ec/e2,
@@ -95,7 +95,7 @@
 /datum/mil_branch/fleet
 	name = "Fleet"
 	name_short = "SCGF"
-	email_domain = "torch.fleet.mil"
+	email_domain = "siera.fleet.mil"
 
 	rank_types = list(
 		/datum/mil_rank/fleet/e1,
@@ -151,7 +151,7 @@
 /datum/mil_branch/marine_corps
 	name = "Marine Corps"
 	name_short = "SCGMC"
-	email_domain = "torch.marine.mil"
+	email_domain = "siera.marine.mil"
 
 	rank_types = list(
 		/datum/mil_rank/marine/e1,

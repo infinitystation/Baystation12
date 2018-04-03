@@ -1,11 +1,11 @@
 //Some helpers because so much copypasta for pods
-/datum/shuttle/autodock/ferry/escape_pod/torchpod
-	category = /datum/shuttle/autodock/ferry/escape_pod/torchpod
+/datum/shuttle/autodock/ferry/escape_pod/sierapod
+	category = /datum/shuttle/autodock/ferry/escape_pod/sierapod
 	sound_takeoff = 'sound/effects/rocket.ogg'
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
 	var/number
 
-/datum/shuttle/autodock/ferry/escape_pod/torchpod/New()
+/datum/shuttle/autodock/ferry/escape_pod/sierapod/New()
 	name = "Escape Pod [number]"
 	dock_target = "escape_pod_[number]"
 	arming_controller = "escape_pod_[number]_berth"
@@ -41,7 +41,7 @@
 
 //Pods
 
-/datum/shuttle/autodock/ferry/escape_pod/torchpod/escape_pod6
+/datum/shuttle/autodock/ferry/escape_pod/sierapod/escape_pod6
 	warmup_time = 10
 	shuttle_area = /area/shuttle/escape_pod6/station
 	number = 6
@@ -52,7 +52,7 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod6
 	number = 6
 
-/datum/shuttle/autodock/ferry/escape_pod/torchpod/escape_pod7
+/datum/shuttle/autodock/ferry/escape_pod/sierapod/escape_pod7
 	warmup_time = 10
 	shuttle_area = /area/shuttle/escape_pod7/station
 	number = 7
@@ -63,7 +63,7 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod7
 	number = 7
 
-/datum/shuttle/autodock/ferry/escape_pod/torchpod/escape_pod8
+/datum/shuttle/autodock/ferry/escape_pod/sierapod/escape_pod8
 	warmup_time = 10
 	shuttle_area = /area/shuttle/escape_pod8/station
 	number = 8
@@ -74,7 +74,7 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod8
 	number = 8
 
-/datum/shuttle/autodock/ferry/escape_pod/torchpod/escape_pod9
+/datum/shuttle/autodock/ferry/escape_pod/sierapod/escape_pod9
 	warmup_time = 10
 	shuttle_area = /area/shuttle/escape_pod9/station
 	number = 9
@@ -85,7 +85,7 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod9
 	number = 9
 
-/datum/shuttle/autodock/ferry/escape_pod/torchpod/escape_pod10
+/datum/shuttle/autodock/ferry/escape_pod/sierapod/escape_pod10
 	warmup_time = 10
 	shuttle_area = /area/shuttle/escape_pod10/station
 	number = 10
@@ -97,7 +97,7 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod10
 	number = 10
 
-/datum/shuttle/autodock/ferry/escape_pod/torchpod/escape_pod11
+/datum/shuttle/autodock/ferry/escape_pod/sierapod/escape_pod11
 	warmup_time = 10
 	shuttle_area = /area/shuttle/escape_pod11/station
 	number = 11
@@ -111,7 +111,7 @@
 
 //Smoll pods
 
-/datum/shuttle/autodock/ferry/escape_pod/torchpod/escape_pod12
+/datum/shuttle/autodock/ferry/escape_pod/sierapod/escape_pod12
 	shuttle_area = /area/shuttle/escape_pod12/station
 	number = 12
 /obj/effect/shuttle_landmark/escape_pod/start/pod12
@@ -122,7 +122,7 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod12
 	number = 12
 
-/datum/shuttle/autodock/ferry/escape_pod/torchpod/escape_pod13
+/datum/shuttle/autodock/ferry/escape_pod/sierapod/escape_pod13
 	shuttle_area = /area/shuttle/escape_pod13/station
 	number = 13
 /obj/effect/shuttle_landmark/escape_pod/start/pod13
@@ -133,7 +133,7 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod13
 	number = 13
 
-/datum/shuttle/autodock/ferry/escape_pod/torchpod/escape_pod14
+/datum/shuttle/autodock/ferry/escape_pod/sierapod/escape_pod14
 	shuttle_area = /area/shuttle/escape_pod14/station
 	number = 14
 /obj/effect/shuttle_landmark/escape_pod/start/pod14
@@ -144,7 +144,7 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod14
 	number = 14
 
-/datum/shuttle/autodock/ferry/escape_pod/torchpod/escape_pod15
+/datum/shuttle/autodock/ferry/escape_pod/sierapod/escape_pod15
 	shuttle_area = /area/shuttle/escape_pod15/station
 	number = 15
 /obj/effect/shuttle_landmark/escape_pod/start/pod15
@@ -155,7 +155,7 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod15
 	number = 15
 
-/datum/shuttle/autodock/ferry/escape_pod/torchpod/escape_pod116
+/datum/shuttle/autodock/ferry/escape_pod/sierapod/escape_pod116
 	shuttle_area = /area/shuttle/escape_pod16/station
 	number = 16
 /obj/effect/shuttle_landmark/escape_pod/start/pod16
@@ -166,7 +166,7 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod16
 	number = 16
 
-/datum/shuttle/autodock/ferry/escape_pod/torchpod/escape_pod17
+/datum/shuttle/autodock/ferry/escape_pod/sierapod/escape_pod17
 	shuttle_area = /area/shuttle/escape_pod17/station
 	number = 17
 /obj/effect/shuttle_landmark/escape_pod/start/pod17
@@ -217,7 +217,7 @@
 	shuttle_area = /area/ninja_dojo/start
 	current_location = "nav_ninja_start"
 	landmark_transition = "nav_ninja_transition"
-	announcer = "SEV Torch Sensor Array"
+	announcer = "SEV siera Sensor Array"
 	arrival_message = "Attention, anomalous sensor reading detected entering vessel proximity."
 	departure_message = "Attention, anomalous sensor reading detected leaving vessel proximity."
 
@@ -337,7 +337,7 @@
 	dock_target = "merc_shuttle"
 	current_location = "nav_merc_start"
 	landmark_transition = "nav_merc_transition"
-	announcer = "SEV Torch Sensor Array"
+	announcer = "SEV siera Sensor Array"
 	home_waypoint = "nav_merc_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
@@ -400,7 +400,7 @@
 	dock_target = "skipjack_shuttle"
 	current_location = "nav_skipjack_start"
 	landmark_transition = "nav_skipjack_transition"
-	announcer = "SEV Torch Sensor Array"
+	announcer = "SEV siera Sensor Array"
 	home_waypoint = "nav_skipjack_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
@@ -464,7 +464,7 @@
 	current_location = "nav_ert_start"
 	landmark_transition = "nav_ert_transition"
 	home_waypoint = "nav_ert_start"
-	announcer = "SEV Torch Sensor Array"
+	announcer = "SEV siera Sensor Array"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
 
@@ -552,33 +552,33 @@
 	landmark_transition = "nav_transit_calypso"
 	range = 1
 
-/obj/effect/shuttle_landmark/torch/hangar/exploration_shuttle
+/obj/effect/shuttle_landmark/siera/hangar/exploration_shuttle
 	name = "Charon Hangar"
 	landmark_tag = "nav_hangar_calypso"
 	base_area = /area/quartermaster/hangar
 	base_turf = /turf/simulated/floor/plating
 
-/obj/effect/shuttle_landmark/torch/deck1/exploration_shuttle
+/obj/effect/shuttle_landmark/siera/deck1/exploration_shuttle
 	name = "Space near Deck Four"
 	landmark_tag = "nav_deck1_calypso"
 
-/obj/effect/shuttle_landmark/torch/deck2/exploration_shuttle
+/obj/effect/shuttle_landmark/siera/deck2/exploration_shuttle
 	name = "Space near Deck Three"
 	landmark_tag = "nav_deck2_calypso"
 
-/obj/effect/shuttle_landmark/torch/deck3/exploration_shuttle
+/obj/effect/shuttle_landmark/siera/deck3/exploration_shuttle
 	name = "Space near Deck Two"
 	landmark_tag = "nav_deck3_calypso"
 
-/obj/effect/shuttle_landmark/torch/deck4/exploration_shuttle
+/obj/effect/shuttle_landmark/siera/deck4/exploration_shuttle
 	name = "Space near Deck One"
 	landmark_tag = "nav_deck4_calypso"
 
-/obj/effect/shuttle_landmark/torch/deck5/exploration_shuttle
+/obj/effect/shuttle_landmark/siera/deck5/exploration_shuttle
 	name = "Space near Bridge"
 	landmark_tag = "nav_bridge_calypso"
 
-/obj/effect/shuttle_landmark/torch/transit/exploration_shuttle
+/obj/effect/shuttle_landmark/siera/transit/exploration_shuttle
 	name = "In transit"
 	landmark_tag = "nav_transit_calypso"
 
@@ -592,33 +592,33 @@
 	sound_takeoff = 'sound/effects/rocket.ogg'
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
 
-/obj/effect/shuttle_landmark/torch/hangar/guppy
+/obj/effect/shuttle_landmark/siera/hangar/guppy
 	name = "Guppy Hangar"
 	landmark_tag = "nav_hangar_guppy"
 	base_area = /area/quartermaster/hangar
 	base_turf = /turf/simulated/floor/plating
 
-/obj/effect/shuttle_landmark/torch/deck1/guppy
+/obj/effect/shuttle_landmark/siera/deck1/guppy
 	name = "Space near Deck Four"
 	landmark_tag = "nav_deck1_guppy"
 
-/obj/effect/shuttle_landmark/torch/deck2/guppy
+/obj/effect/shuttle_landmark/siera/deck2/guppy
 	name = "Space near Deck Three"
 	landmark_tag = "nav_deck2_guppy"
 
-/obj/effect/shuttle_landmark/torch/deck3/guppy
+/obj/effect/shuttle_landmark/siera/deck3/guppy
 	name = "Space near Deck Two"
 	landmark_tag = "nav_deck3_guppy"
 
-/obj/effect/shuttle_landmark/torch/deck4/guppy
+/obj/effect/shuttle_landmark/siera/deck4/guppy
 	name = "Space near Deck One"
 	landmark_tag = "nav_deck4_guppy"
 
-/obj/effect/shuttle_landmark/torch/deck5/guppy
+/obj/effect/shuttle_landmark/siera/deck5/guppy
 	name = "Space near Bridge"
 	landmark_tag = "nav_bridge_guppy"
 
-/obj/effect/shuttle_landmark/torch/transit/guppy
+/obj/effect/shuttle_landmark/siera/transit/guppy
 	name = "In transit"
 	landmark_tag = "nav_transit_guppy"
 
@@ -631,32 +631,32 @@
 	dock_target = "aquila_shuttle"
 	range = 2
 
-/obj/effect/shuttle_landmark/torch/hangar/aquila
+/obj/effect/shuttle_landmark/siera/hangar/aquila
 	name = "Aquila Hangar"
 	landmark_tag = "nav_hangar_aquila"
 	docking_controller = "aquila_shuttle_dock_airlock"
 	base_turf = /turf/simulated/floor/reinforced/airless
 
-/obj/effect/shuttle_landmark/torch/deck1/aquila
+/obj/effect/shuttle_landmark/siera/deck1/aquila
 	name = "Space near Deck Four"
 	landmark_tag = "nav_deck1_aquila"
 
-/obj/effect/shuttle_landmark/torch/deck2/aquila
+/obj/effect/shuttle_landmark/siera/deck2/aquila
 	name = "Space near Deck Three"
 	landmark_tag = "nav_deck2_aquila"
 
-/obj/effect/shuttle_landmark/torch/deck3/aquila
+/obj/effect/shuttle_landmark/siera/deck3/aquila
 	name = "Space near Deck Two"
 	landmark_tag = "nav_deck3_aquila"
 
-/obj/effect/shuttle_landmark/torch/deck4/aquila
+/obj/effect/shuttle_landmark/siera/deck4/aquila
 	name = "Space near Deck One"
 	landmark_tag = "nav_deck4_aquila"
 
-/obj/effect/shuttle_landmark/torch/deck5/aquila
+/obj/effect/shuttle_landmark/siera/deck5/aquila
 	name = "Space near Bridge"
 	landmark_tag = "nav_bridge_aquila"
 
-/obj/effect/shuttle_landmark/torch/transit/aquila
+/obj/effect/shuttle_landmark/siera/transit/aquila
 	name = "In transit"
 	landmark_tag = "nav_transit_aquila"
