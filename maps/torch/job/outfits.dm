@@ -493,6 +493,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/torch/contractor/service/bartender
 	pda_type = /obj/item/device/pda/bar
+	l_pocket = /obj/item/device/cassette/custom
 
 /decl/hierarchy/outfit/job/torch/crew/service/crewman
 	name = OUTFIT_JOB_NAME("Crewman")
