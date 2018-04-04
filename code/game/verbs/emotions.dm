@@ -6,7 +6,7 @@
 		emoteLastUse = world.time
 		return 1
 	else
-		to_chat(src, "<span class='warning'>Между эмоци&#255;ми должно пройти не менее [(world.time - emoteCooldown) / 10] секунд.</span>")
+		to_chat(src, "<span class='warning'>Между эмоци&#255;ми должно пройти не менее [emoteCooldown / 10] секунд.</span>")
 		return 0
 
 /mob/living/verb/laugh()
@@ -23,12 +23,6 @@
 	set name = "Кричать"
 	set category = "Emote"
 	emote("scream")
-
-/mob/living/verb/blush()
-	set name = "Краснеть"
-	set category = "Emotions"
-	if(emoteCooldownCheck() == 1)
-		emote("blush")
 
 /mob/living/verb/scratch()
 	set name = "Почесаться"

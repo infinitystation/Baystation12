@@ -302,28 +302,29 @@
 
 /obj/item/clothing/head/helmet/space/rig/medical
 	camera = /obj/machinery/camera/network/medbay
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN, SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_SKRELL)
 	sprite_sheets = list(
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi',
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
+		SPECIES_SKRELL = 'icons/mob/species/skrell/helmet.dmi'
 		)
 
 /obj/item/clothing/suit/space/rig/medical
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_UNATHI)
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi',
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi'
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi'
 		)
 
 /obj/item/clothing/shoes/magboots/rig/medical
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_UNATHI)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/feet.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/feet.dmi'
 		)
 
 /obj/item/clothing/gloves/rig/medical
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_UNATHI)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/hands.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/hands.dmi'
