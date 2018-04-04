@@ -19,7 +19,7 @@
 
 /decl/emote/visible/sway
 	key ="sway"
-	emote_message_3p = "USER раскачиваетс&#255; до головокружени&#255;."
+	emote_message_3p = "USER шатаетс&#255;."
 
 /decl/emote/visible/sulk
 	key ="sulk"
@@ -160,7 +160,7 @@
 
 /decl/emote/visible/grin
 	key = "grin"
-	emote_message_3p = "USER усмехаетс&#255;."
+	emote_message_3p = "USER скалитс&#255; в улыбке."
 
 /decl/emote/visible/shrug
 	key = "shrug"
@@ -204,11 +204,11 @@
 
 /decl/emote/visible/bounce
 	key = "bounce"
-	emote_message_3p = "USER bounces in place."
+	emote_message_3p = "USER прыгает на месте."
 
 /decl/emote/visible/jiggle
 	key = "jiggle"
-	emote_message_3p = "USER jiggles!"
+	emote_message_3p = "USER покачиваетс&#255;."
 
 /decl/emote/visible/lightup
 	key = "light"

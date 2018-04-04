@@ -29,8 +29,13 @@
 /obj/item/weapon/material/sword/katana
 	name = "katana"
 	desc = "Woefully underpowered in D20. This one looks pretty sharp."
+	item_icons = list(
+		slot_s_store_str = 'icons/mob/onmob/back.dmi'
+		)
 	icon_state = "katana"
 	item_state = "katana"
+	unbreakable = 1
+	default_material = "plasteel"
 	slot_flags = SLOT_BELT | SLOT_BACK
 
 /obj/item/weapon/material/sword/katana/replica

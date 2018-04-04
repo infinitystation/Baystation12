@@ -10705,7 +10705,7 @@
 /obj/machinery/door/window/brigdoor/westright{
 	dir = 4;
 	name = "suit storage";
-	req_access = list(57)
+	req_access = list(19)
 	},
 /obj/effect/floor_decal/corner/blue/diagonal,
 /obj/effect/floor_decal/corner/blue/diagonal{
@@ -12033,7 +12033,7 @@
 /obj/machinery/door/window/brigdoor/westright{
 	dir = 4;
 	name = "CO's suit storage";
-	req_access = list(19)
+	req_access = list(20)
 	},
 /obj/effect/floor_decal/corner/blue/diagonal,
 /obj/effect/floor_decal/corner/blue/diagonal{
@@ -19459,7 +19459,7 @@ aa
 aa
 aa
 aa
-aa
+pk
 aa
 aa
 aa
@@ -20269,7 +20269,7 @@ aa
 aa
 aa
 aa
-pk
+aa
 aa
 aa
 aa
