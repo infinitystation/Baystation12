@@ -98,8 +98,8 @@
 				"<span class='warning'>[M] unties the noose over their neck!</span>",\
 				"<span class='notice'>You untie the noose over your neck!</span>")
 			M.Weaken(3)
-		unbuckle_mob()
 		buckled_mob.silent = 0
+		unbuckle_mob()
 		add_fingerprint(user)
 
 /obj/structure/noose/user_buckle_mob(mob/living/carbon/human/M, mob/user)
