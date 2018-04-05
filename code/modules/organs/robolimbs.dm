@@ -231,3 +231,4 @@ var/datum/robolimb/basic_robolimb
 	use_eye_icon = "eyes_terminator"
 	unavailable_at_fab = 1
 	unavailable_at_chargen = 1
+	restricted_to = list(SPECIES_IPC)
