@@ -1,17 +1,18 @@
 #if !defined(using_map_DATUM)
 
 	#include "siera_announcements.dm"
+	#include "siera_antagonism.dm"
 	#include "siera_areas.dm"
 	#include "siera_elevator.dm"
 	#include "siera_holodecks.dm"
+	#include "siera_lobby.dm"
+	#include "siera_npcs.dm"
 	#include "siera_overmap.dm"
 	#include "siera_presets.dm"
 	#include "siera_ranks.dm"
+	#include "siera_security_state.dm"
 	#include "siera_shuttles.dm"
 	#include "siera_unit_testing.dm"
-	#include "siera_antagonism.dm"
-	#include "siera_npcs.dm"
-	#include "siera_security_state.dm"
 
 	#include "datums/uniforms.dm"
 	#include "datums/uniforms_expedition.dm"
@@ -91,20 +92,10 @@
 //	#include "../away/errant_pisces/errant_pisces.dm"
 //	#include "../away/lar_maria/lar_maria.dm"
 
-	#include "../../code/modules/lobby_music/chasing_time.dm"
-	#include "../../code/modules/lobby_music/siera.dm"
-	#include "../../code/modules/lobby_music/human.dm"
-	#include "../../code/modules/lobby_music/marhaba.dm"
-	#include "../../code/modules/lobby_music/treacherous_voyage.dm"
-	#include "../../code/modules/lobby_music/comet_haley.dm"
-	#include "../../code/modules/lobby_music/lysendraa.dm"
-	#include "../../code/modules/lobby_music/lasers.dm"
-	#include "../../code/modules/lobby_music/blues_in_velvet_room.dm"
-
 	#define using_map_DATUM /datum/map/siera
 
 #elif !defined(MAP_OVERRIDE)
 
-	#warn A map has already been included, ignoring siera
+	#warn A map has already been included, ignoring Siera
 
 #endif
