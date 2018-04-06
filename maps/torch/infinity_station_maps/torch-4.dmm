@@ -4893,13 +4893,17 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "aiW" = (
-/obj/structure/bed/roller,
 /obj/effect/floor_decal/industrial/warning/corner{
 	icon_state = "warningcorner";
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/pink{
 	dir = 10
+	},
+/obj/machinery/stasis{
+	tag = "icon-stasis_0 (WEST)";
+	icon_state = "stasis_0";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
@@ -5337,7 +5341,6 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "ajT" = (
-/obj/structure/bed/roller,
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
@@ -5364,15 +5367,14 @@
 /obj/effect/floor_decal/corner/pink{
 	dir = 9
 	},
-/obj/structure/sink{
-	dir = 4;
-	icon_state = "sink";
-	pixel_x = 11;
-	pixel_y = 0
-	},
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 36
+	},
+/obj/machinery/stasis{
+	tag = "icon-stasis_0 (WEST)";
+	icon_state = "stasis_0";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
@@ -6058,12 +6060,16 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "akY" = (
-/obj/structure/bed/roller,
 /obj/effect/floor_decal/corner/pink{
 	dir = 6
 	},
 /obj/effect/floor_decal/corner/pink{
 	dir = 9
+	},
+/obj/machinery/stasis{
+	tag = "icon-stasis_0 (WEST)";
+	icon_state = "stasis_0";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
@@ -10504,8 +10510,12 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmreception)
 "asH" = (
-/obj/structure/flora/pottedplant/orientaltree,
 /obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/machinery/stasis{
+	tag = "icon-stasis_0 (EAST)";
+	icon_state = "stasis_0";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
@@ -10546,7 +10556,6 @@
 	pixel_x = 39;
 	pixel_y = 4
 	},
-/obj/item/weapon/stool/padded,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -10565,6 +10574,7 @@
 	icon_state = "warningcorner";
 	dir = 1
 	},
+/obj/structure/flora/pottedplant/orientaltree,
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmreception)
 "asL" = (
@@ -11225,6 +11235,7 @@
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 6
 	},
+/obj/item/weapon/stool/padded,
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmreception)
 "atL" = (
@@ -21565,6 +21576,10 @@
 	pixel_x = 32;
 	pixel_y = -32
 	},
+/obj/machinery/light{
+	icon_state = "tube1";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/opscheck)
 "aLC" = (
@@ -23248,6 +23263,7 @@
 	departmentType = 5;
 	pixel_y = -32
 	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/security/opscheck)
 "aOI" = (
@@ -28865,6 +28881,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
+"iHv" = (
+/obj/structure/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 11;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/white,
+/area/medical/sleeper)
 "kMY" = (
 /obj/effect/wingrille_spawn/reinforced/full,
 /obj/machinery/door/blast/regular/open{
@@ -49578,7 +49603,7 @@ afC
 agE
 ahQ
 aiV
-agE
+iHv
 akX
 amf
 agE

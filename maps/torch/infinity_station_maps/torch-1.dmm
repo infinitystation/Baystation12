@@ -385,7 +385,11 @@
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
 "bd" = (
-/obj/machinery/floodlight,
+/obj/machinery/floodlight{
+	tag = "icon-flood00 (EAST)";
+	icon_state = "flood00";
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
 "be" = (
@@ -1711,7 +1715,6 @@
 /turf/simulated/floor/tiled,
 /area/shuttle/escape_pod7/station)
 "em" = (
-/obj/machinery/floodlight,
 /obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -22
@@ -1724,6 +1727,11 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/floodlight{
+	tag = "icon-flood00 (NORTH)";
+	icon_state = "flood00";
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition/storage)
 "en" = (
@@ -2905,6 +2913,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/fore)
+"gx" = (
+/obj/structure/closet/secure_closet/chemical,
+/turf/simulated/floor/tiled/white,
+/area/vacant/infirmary)
 "gy" = (
 /obj/structure/disposalpipe/up,
 /obj/effect/floor_decal/industrial/warning/full,
@@ -4875,7 +4887,11 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/machinery/floodlight,
+/obj/machinery/floodlight{
+	tag = "icon-flood00 (WEST)";
+	icon_state = "flood00";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/exploration_shuttle/cargo)
 "kK" = (
@@ -5314,6 +5330,10 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/fore)
+"lz" = (
+/obj/structure/iv_drip,
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "lA" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -6560,6 +6580,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/fourthdeck/center)
+"oa" = (
+/obj/structure/sign/bluecross_2,
+/turf/simulated/wall,
+/area/vacant/infirmary)
 "oc" = (
 /obj/structure/sign/warning/pods{
 	dir = 1
@@ -7395,12 +7419,16 @@
 /turf/simulated/floor/tiled/dark,
 /area/exploration_shuttle/cargo)
 "pK" = (
-/obj/machinery/floodlight,
 /obj/structure/cable/cyan,
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
 	pixel_x = -24
+	},
+/obj/machinery/floodlight{
+	tag = "icon-flood00 (NORTH)";
+	icon_state = "flood00";
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
@@ -11528,11 +11556,7 @@
 	name = "Stowaway"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/fourthdeck/aft)
-"wB" = (
-/obj/structure/sign/solgov,
-/turf/simulated/wall/r_wall,
-/area/maintenance/fourthdeck/aft)
+/area/vacant/infirmary)
 "wC" = (
 /obj/machinery/suit_cycler/pilot,
 /turf/simulated/floor/plating,
@@ -12220,17 +12244,13 @@
 /turf/simulated/floor,
 /area/quartermaster/hangar)
 "xR" = (
-/obj/structure/table/rack,
-/obj/random/tech_supply,
-/obj/random/tech_supply,
-/obj/random/tech_supply,
-/turf/simulated/floor/plating,
-/area/maintenance/fourthdeck/aft)
+/obj/machinery/vending/medical,
+/turf/simulated/floor/tiled/white,
+/area/vacant/infirmary)
 "xS" = (
-/obj/structure/table/rack,
-/obj/random/technology_scanner,
+/obj/machinery/chem_master,
 /turf/simulated/floor/plating,
-/area/maintenance/fourthdeck/aft)
+/area/vacant/infirmary)
 "xT" = (
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/plating,
@@ -13061,57 +13081,40 @@
 "zi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 8
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/plating,
-/area/maintenance/fourthdeck/aft)
-"zj" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/aft)
 "zk" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/structure/table/glass,
+/obj/random/junk,
+/obj/random/maintenance/solgov,
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -22
 	},
-/turf/simulated/floor/plating,
-/area/maintenance/fourthdeck/aft)
+/turf/simulated/floor/tiled/white,
+/area/vacant/infirmary)
 "zl" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/effect/landmark{
-	name = "xeno_spawn";
-	pixel_x = -1
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/fourthdeck/aft)
+/turf/simulated/floor/tiled/white,
+/area/vacant/infirmary)
 "zm" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/universal{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/fourthdeck/aft)
+/obj/random/junk,
+/turf/simulated/floor/tiled/white,
+/area/vacant/infirmary)
 "zn" = (
-/obj/machinery/alarm{
-	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24
+/obj/structure/bed/padded,
+/obj/item/weapon/bedsheet/medical,
+/obj/random/trash,
+/obj/structure/closet/medical_wall{
+	pixel_x = 32
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 10;
-	icon_state = "intact"
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/fourthdeck/aft)
+/turf/simulated/floor/tiled/white,
+/area/vacant/infirmary)
 "zo" = (
 /obj/structure/closet/bombcloset,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -13634,9 +13637,20 @@
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/aft)
 "Al" = (
-/obj/machinery/atmospherics/pipe/simple/hidden,
-/turf/simulated/floor/plating,
-/area/maintenance/fourthdeck/aft)
+/obj/item/bodybag,
+/obj/structure/table/standard,
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/item/weapon/storage/box/autoinjectors,
+/turf/simulated/floor/tiled/white,
+/area/vacant/infirmary)
 "Am" = (
 /obj/machinery/power/terminal{
 	dir = 4
@@ -13972,6 +13986,10 @@
 "Be" = (
 /turf/simulated/wall/r_wall,
 /area/quartermaster/office)
+"Bf" = (
+/obj/structure/bed/padded,
+/turf/simulated/floor/tiled/white,
+/area/vacant/infirmary)
 "Bg" = (
 /obj/machinery/door/blast/shutters{
 	dir = 2;
@@ -14661,19 +14679,15 @@
 /turf/simulated/floor,
 /area/quartermaster/hangar)
 "CV" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 5;
-	icon_state = "intact"
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/fourthdeck/aft)
-"CW" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden{
+/obj/structure/closet/l3closet/general,
+/obj/machinery/alarm{
 	dir = 4;
-	icon_state = "map"
+	icon_state = "alarm0";
+	pixel_x = -22;
+	pixel_y = 0
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/fourthdeck/aft)
+/area/vacant/infirmary)
 "CX" = (
 /obj/machinery/door/blast/regular{
 	density = 1;
@@ -15050,10 +15064,6 @@
 "DJ" = (
 /turf/simulated/wall/r_wall,
 /area/rnd/canister)
-"DK" = (
-/obj/machinery/space_heater,
-/turf/simulated/floor/plating,
-/area/maintenance/fourthdeck/aft)
 "DL" = (
 /obj/machinery/atmospherics/binary/pump,
 /turf/simulated/floor/plating,
@@ -15360,20 +15370,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/aft)
-"Ex" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/random/obstruction,
-/turf/simulated/floor/plating,
-/area/maintenance/fourthdeck/aft)
-"Ey" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 9
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/fourthdeck/aft)
 "Ez" = (
 /obj/structure/closet/crate,
 /obj/random/plushie,
@@ -15418,6 +15414,22 @@
 /obj/random/maintenance/solgov,
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/foreport)
+"EG" = (
+/obj/machinery/floodlight{
+	tag = "icon-flood00 (WEST)";
+	icon_state = "flood00";
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/hangar)
+"EH" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 5;
+	icon_state = "intact"
+	},
+/obj/machinery/space_heater,
+/turf/simulated/floor/plating,
+/area/maintenance/fourthdeck/aft)
 "EI" = (
 /obj/structure/bed/chair/comfy/shuttle{
 	icon_state = "bschair_preview";
@@ -15496,7 +15508,9 @@
 /turf/simulated/floor/plating,
 /area/rnd/canister)
 "EX" = (
-/obj/machinery/door/firedoor/border_only,
+/obj/structure/bed/chair/office/dark{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/aft)
 "EY" = (
@@ -15732,14 +15746,15 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/terminal,
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
-	dir = 8
-	},
 /obj/machinery/alarm{
 	frequency = 1439;
 	pixel_y = 23;
 	req_one_access = list(201)
+	},
+/obj/machinery/stasis{
+	tag = "icon-stasis_0 (WEST)";
+	icon_state = "stasis_0";
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
@@ -15774,6 +15789,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/grille,
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/aft)
 "Fz" = (
@@ -15808,6 +15824,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/foreport)
+"FD" = (
+/obj/machinery/stasis{
+	tag = "icon-stasis_0 (NORTH)";
+	icon_state = "stasis_0";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/vacant/infirmary)
 "FE" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -15959,17 +15983,22 @@
 /turf/simulated/floor/plating,
 /area/rnd/canister)
 "FT" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/aft)
 "FU" = (
-/obj/random/junk,
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4
+	},
+/obj/random/obstruction,
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/aft)
 "FV" = (
@@ -15978,9 +16007,7 @@
 	icon_state = "alarm0";
 	pixel_x = 24
 	},
-/obj/structure/bed/chair/office/dark{
-	dir = 8
-	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/aft)
 "FW" = (
@@ -17195,6 +17222,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/fourthdeck/center)
+"JQ" = (
+/obj/item/weapon/defibrillator/loaded,
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "JS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -17368,6 +17399,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition/eva)
+"Ky" = (
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "KE" = (
 /turf/simulated/wall/r_wall,
 /area/crew_quarters/laundry)
@@ -17541,6 +17576,18 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/fourthdeck/center)
+"LA" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/landmark{
+	name = "xeno_spawn";
+	pixel_x = -1
+	},
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "LD" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/structure/table/marble,
@@ -17689,6 +17736,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/deckofficer)
+"ML" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9;
+	icon_state = "intact"
+	},
+/obj/structure/reagent_dispensers/watertank,
+/turf/simulated/floor/plating,
+/area/maintenance/fourthdeck/aft)
 "MO" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -17891,6 +17946,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/office)
+"NE" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/random/obstruction,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "NF" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -18124,6 +18189,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/shield/fourthdeck)
+"OZ" = (
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "Pa" = (
 /turf/simulated/wall/r_wall,
 /area/maintenance/fourthdeck/port)
@@ -18481,6 +18550,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/fourthdeck/center)
+"Rb" = (
+/obj/item/weapon/reagent_containers/spray/sterilizine,
+/turf/simulated/floor/tiled/white,
+/area/vacant/infirmary)
 "Ri" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -18581,6 +18654,9 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/crew_quarters/laundry)
+"RV" = (
+/turf/simulated/wall,
+/area/vacant/infirmary)
 "RX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/plating,
@@ -18618,6 +18694,29 @@
 /obj/structure/table/marble,
 /turf/simulated/floor/tiled/dark,
 /area/vacant/mess)
+"Sg" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/fourthdeck/aft)
+"Si" = (
+/obj/machinery/optable,
+/obj/machinery/oxygen_pump/anesthetic{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/white,
+/area/vacant/infirmary)
 "Sj" = (
 /obj/structure/sink{
 	icon_state = "sink";
@@ -18703,6 +18802,13 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/vacant/mess)
+"SO" = (
+/obj/random/junk,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/fourthdeck/aft)
 "SP" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -18777,6 +18883,11 @@
 "To" = (
 /turf/simulated/wall/r_wall,
 /area/vacant/mess)
+"Ts" = (
+/obj/structure/table/standard,
+/obj/machinery/reagentgrinder,
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "Tt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -19077,6 +19188,9 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/center)
+"Vz" = (
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "VB" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -19156,6 +19270,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition)
+"VU" = (
+/obj/item/weapon/reagent_containers/spray/sterilizine,
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "VV" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -19310,6 +19428,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/fourthdeck/center)
+"Wv" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "WA" = (
 /obj/machinery/deployable/barrier,
 /turf/simulated/floor/plating,
@@ -19355,6 +19481,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/foreport)
+"WS" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/stasis{
+	tag = "icon-stasis_0 (WEST)";
+	icon_state = "stasis_0";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/exploration_shuttle/cargo)
 "WW" = (
 /obj/machinery/power/shield_generator,
 /obj/structure/cable/green,
@@ -19445,9 +19580,16 @@
 /area/maintenance/fourthdeck/starboard)
 "Xz" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/floodlight,
+/obj/machinery/floodlight{
+	tag = "icon-flood00 (EAST)";
+	icon_state = "flood00";
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/quartermaster/storage)
+"XM" = (
+/turf/simulated/wall/r_wall,
+/area/vacant/infirmary)
 "XN" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/effect/decal/cleanable/dirt,
@@ -19661,6 +19803,16 @@
 /obj/item/weapon/material/minihoe,
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/port)
+"Zf" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 4;
+	icon_state = "map"
+	},
+/obj/effect/landmark/start{
+	name = "Stowaway"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/fourthdeck/aft)
 "Zi" = (
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/port)
@@ -42575,8 +42727,8 @@ fk
 gc
 gV
 hX
-hW
-hW
+WS
+WS
 kJ
 mc
 nn
@@ -43373,9 +43525,9 @@ ag
 ag
 at
 aO
-bd
-bd
-bd
+EG
+EG
+EG
 aO
 aO
 aO
@@ -45013,7 +45165,7 @@ vq
 wz
 wz
 zi
-wz
+Sg
 wz
 wz
 wz
@@ -45212,16 +45364,16 @@ ah
 sC
 ue
 ah
-ah
+XM
+RV
+RV
+NE
+oa
+RV
+RV
 bW
-zj
 bW
 bW
-bW
-bW
-bW
-bW
-cH
 Fy
 FU
 bW
@@ -45414,18 +45566,18 @@ qX
 sD
 uf
 ah
-ah
+XM
 xR
 zk
-nr
+Wv
+FD
+Ts
+CV
 bW
 Cd
-CV
-DK
-bW
-bW
+EH
 Fz
-cH
+SO
 bW
 cH
 bX
@@ -45616,18 +45768,18 @@ qY
 sE
 ug
 ah
-ah
+XM
 xS
 zl
-mh
+LA
+VU
+Ky
+Vz
 bW
 Cd
-CW
+Zf
 DL
-CV
-bW
-cH
-cH
+ML
 bW
 Hf
 ah
@@ -45818,16 +45970,16 @@ ah
 sF
 ah
 ah
-ah
-xT
+XM
+gx
 zm
-Ak
+Wv
+Rb
+Vz
+Si
 bW
-bW
-bW
-bW
-Ex
-bW
+cH
+cH
 cH
 FV
 ah
@@ -46021,16 +46173,16 @@ sG
 uh
 ah
 wA
-cH
+Bf
 zn
 Al
-Al
-Al
-Al
-Al
-Ey
+OZ
+JQ
+lz
+bW
+Ak
 EX
-cH
+xT
 ah
 ah
 ah
@@ -46222,13 +46374,13 @@ ra
 sH
 ui
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+XM
+XM
+XM
+XM
+XM
+XM
+XM
 ah
 ah
 ah
@@ -46424,13 +46576,13 @@ ah
 sI
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+XM
+XM
+XM
+XM
+XM
+XM
+XM
 ah
 ah
 ah
@@ -46625,14 +46777,14 @@ fu
 fu
 sJ
 uj
-fu
-wB
-ah
-ah
-ah
-ah
-ah
-ah
+hk
+XM
+XM
+XM
+XM
+XM
+XM
+XM
 ah
 ah
 ah
