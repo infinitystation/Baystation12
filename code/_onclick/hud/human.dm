@@ -246,7 +246,7 @@
 		hud_elements |= mymob.nutrition_icon
 
 	mymob.fixeye = new /obj/screen()
-	mymob.fixeye.icon = 'icons/mob/screen/fixed_eye.dmi'
+	mymob.fixeye.icon = 'icons/mob/screen/infinity.dmi'
 	mymob.fixeye.icon_state = "fixeye"
 	mymob.fixeye.name = "fixeye"
 	mymob.fixeye.screen_loc = ui_fixeye
