@@ -4,10 +4,6 @@
 	path = "siera"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 
-	load_legacy_saves = TRUE
-
-	lobby_icon = 'maps/siera/icons/lobby.dmi'
-
 	station_levels = list(1,2,3,4,5)
 	contact_levels = list(1,2,3,4,5)
 	player_levels = list(1,2,3,4,5,8)
@@ -47,7 +43,6 @@
 	away_site_budget = 2
 
 	id_hud_icons = 'maps/siera/icons/assignment_hud.dmi'
-	lobby_screens = list("title","title2")
 
 /datum/map/siera/setup_map()
 	..()

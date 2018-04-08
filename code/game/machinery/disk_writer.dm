@@ -95,7 +95,7 @@
 		if(!writing && !retard && coin && disk && cooldown == 0)
 			if(disk.can_be_rewrited)
 				if(write_disk(usr))
-					message_admins("[retard.real_name]([retard.ckey]) uploaded new sound <A HREF='?_src_=holder;listensound=\ref[disk.track.sound]'>(preview)</A> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the cassette</a> named as \"[disk.track.title]\". <A HREF='?_src_=holder;wipedata=\ref[disk]'>Wipe</A> data.")
+					message_admins("[retard.real_name]([retard.ckey]) uploaded new sound <A HREF='?_src_=holder;listensound=\ref[disk.track.track]'>(preview)</A> in <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>the cassette</a> named as \"[disk.track.title]\". <A HREF='?_src_=holder;wipedata=\ref[disk]'>Wipe</A> data.")
 					coin -= 1
 					cooldown += 5 MINUTES
 					sleep(40)

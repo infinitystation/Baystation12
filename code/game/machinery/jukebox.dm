@@ -1,12 +1,18 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:32
 
-datum/track
+/datum/track
 	var/title
-	var/sound
+	var/track
 
-datum/track/New(var/title_name, var/audio)
-	title = title_name
-	sound = audio
+/datum/track/New(var/title, var/track)
+	src.title = title
+	src.track = track
+
+datum/track/proc/GetTrack()
+	if(ispath(track, /music_track))
+		var/music_track/music_track = decls_repository.get_decl(track)
+		return music_track.song
+	return track // Allows admins to continue their adminbus simply by overriding the track var
 
 /obj/machinery/media/jukebox
 	name = "mediatronic jukebox"
@@ -36,39 +42,26 @@ datum/track/New(var/title_name, var/audio)
 
 	var/datum/track/current_track
 	var/list/datum/track/tracks = list(
-		new/datum/track("A light in the Darkness",				'sound/music/Torch.ogg'),
-		new/datum/track("Beyond",								'sound/ambience/ambispace.ogg'),
-		new/datum/track("Blues in Velvet Room",					'sound/music/blues_in_velvet_room.ogg'),
-		new/datum/track("Creep", 								'sound/music/infinity/Radiohead_Creep.ogg'),
-		new/datum/track("Clouds of Fire",						'sound/music/clouds.s3m'),
-		new/datum/track("Comet Haley",							'sound/music/comet_haley.ogg'),
-		new/datum/track("D`Bert", 								'sound/music/title2.ogg'),
-		new/datum/track("D`Fort", 								'sound/ambience/song_game.ogg'),
-		new/datum/track("I just don't understand You", 			'sound/music/royksopp_i_dust_dont_understand_you.ogg'),
-		new/datum/track("Endless Space", 						'sound/music/space.ogg'),
-		new/datum/track("Elevator", 							'sound/music/elevatormusic.ogg'),
-		new/datum/track("Floating", 							'sound/music/main.ogg'),
-		new/datum/track("First", 								'sound/music/1.ogg'),
-		new/datum/track("Hard Times", 							'sound/music/infinity/JohnnyCash_Hurt.ogg'),
-		new/datum/track("High Radiation", 						'sound/music/infinity/100rengen.ogg'),
-		new/datum/track("To the Stars", 						'sound/music/human.ogg'),
-		new/datum/track("Lasers", 								'sound/music/lasers_rip_apart_the_bulkhead_looped.ogg'),
-		new/datum/track("Lone Digger", 							'sound/music/infinity/CaravanPalace_LoneDigger.ogg'),
-		new/datum/track("Lysendra", 							'sound/music/lysendraa.ogg'),
-		new/datum/track("Make This Right", 						'sound/music/infinity/TheToxicAvenger_MakeThisRight.ogg'),
-		new/datum/track("Marhaba", 								'sound/music/marhaba.ogg'),
-		new/datum/track("Night Call", 							'sound/music/infinity/Kavinsky_Nightcall.ogg'),
-		new/datum/track("Night City",	 						'sound/music/infinity/HotlineMiami_Miami.ogg'),
-		new/datum/track("Part A", 								'sound/misc/TestLoop1.ogg'),
-		new/datum/track("Salute John", 							'sound/music/salutjohn.ogg'),
-		new/datum/track("Space Oddity", 						'sound/music/space_oddity.ogg'),
-		new/datum/track("Scratch", 								'sound/music/title1.ogg'),
-		new/datum/track("Trai`Tor", 							'sound/music/traitor.ogg'),
-		new/datum/track("Treacherous Voyage ", 					'sound/music/treacherous_voyage.ogg'),
-		new/datum/track("Through the Times", 					'sound/music/chasing_time.ogg'),
-		new/datum/track("Thunderdome", 							'sound/music/THUNDERDOME.ogg'),
-		new/datum/track("Wonderful Lady", 						'sound/music/infinity/JohnnyMathis_Wonderful_Wonderful.ogg'),
-		new/datum/track("When We Stand Together", 				'sound/music/infinity/Nickelback_WhenWeStandTogether.ogg'),
+		new/datum/track("Beyond", /music_track/ambispace),
+		new/datum/track("Clouds of Fire", /music_track/clouds_of_fire),
+		new/datum/track("Stage Three", /music_track/dilbert),
+		new/datum/track("Asteroids", /music_track/df_theme),
+		new/datum/track("Floating", /music_track/floating),
+		new/datum/track("Endless Space", /music_track/endless_space),
+		new/datum/track("Fleet Party Theme", /music_track/one_loop),
+		new/datum/track("Scratch", /music_track/level3_mod),
+		new/datum/track("Absconditus", /music_track/absconditus),
+		new/datum/track("lasers rip apart the bulkhead", /music_track/lasers),
+		new/datum/track("Maschine Klash", /music_track/digit_one),
+		new/datum/track("Comet Halley", /music_track/comet_haley),
+		new/datum/track("Please Come Back Any Time", /music_track/elevator),
+		new/datum/track("Human", /music_track/human),
+		new/datum/track("Memories of Lysendraa", /music_track/lysendraa),
+		new/datum/track("Marhaba", /music_track/marhaba),
+		new/datum/track("Space Oddity", /music_track/space_oddity),
+		new/datum/track("THUNDERDOME", /music_track/thunderdome),
+		new/datum/track("Torch: A Light in the Darkness", /music_track/torch),
+		new/datum/track("Treacherous Voyage", /music_track/treacherous_voyage),
 	)
 
 /obj/machinery/media/jukebox/old
@@ -83,12 +76,14 @@ datum/track/New(var/title_name, var/audio)
 /obj/machinery/media/jukebox/New()
 	..()
 	update_icon()
-	sound_id = "[type]_[sequential_id(type)]"
+	sound_id = "[/obj/machinery/media/jukebox]_[sequential_id(/obj/machinery/media/jukebox)]"
 
 /obj/machinery/media/jukebox/Destroy()
 	StopPlaying()
 	if(cassette)
 		QDEL_NULL(cassette)
+	QDEL_NULL_LIST(tracks)
+	current_track = null
 	. = ..()
 
 /obj/machinery/media/jukebox/powered()
@@ -262,7 +257,7 @@ datum/track/New(var/title_name, var/audio)
 		return
 
 	// Jukeboxes cheat massively and actually don't share id. This is only done because it's music rather than ambient noise.
-	sound_token = sound_player.PlayLoopingSound(src, sound_id, current_track.sound, volume = volume, range = 7, falloff = 3, prefer_mute = TRUE)
+	sound_token = sound_player.PlayLoopingSound(src, sound_id, current_track.GetTrack(), volume = volume, range = 7, falloff = 3, prefer_mute = TRUE)
 
 	playing = 1
 	update_use_power(2)
