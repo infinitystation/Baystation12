@@ -68,6 +68,16 @@
 	name = "Zone"
 	icon_state = "zone"
 
+/datum/sprite_accessory/hair/infinity/modern
+	name = "Modern"
+	icon_state = "modern"
+
+/datum/sprite_accessory/hair/infinity/long
+	name = "Long hair 4"
+	icon_state = "long"
+
+
+
 
 //Unath
 /*
