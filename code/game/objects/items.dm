@@ -443,8 +443,8 @@ var/list/global/slot_flags_enumeration = list(
 
 	if(!(usr)) //BS12 EDIT
 		return
-	if(usr.incapacitated(INCAPACITATION_STUNNED) || usr.incapacitated(INCAPACITATION_KNOCKOUT) || usr.stat || usr.restrained() || !Adjacent(usr))//!usr.canmove
-		return //If they're stunned, or knocked out, then they can't pick shit up. But if they're just lying down they can.
+	if(!usr.canmove || usr.stat || usr.restrained() || !Adjacent(usr))
+		return
 	if((!istype(usr, /mob/living/carbon)) || (istype(usr, /mob/living/carbon/brain)))//Is humanoid, and is not a brain
 		to_chat(usr, "<span class='warning'>You can't pick things up!</span>")
 		return
@@ -671,6 +671,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 				user.client.pixel_y = 0
 
 		user.visible_message("\The [user] peers through the [zoomdevicename ? "[zoomdevicename] of [src]" : "[src]"].")
+
 	else
 		user.client.view = world.view
 		if(!user.hud_used.hud_shown)
@@ -682,6 +683,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 		if(!cannotzoom)
 			user.visible_message("[zoomdevicename ? "\The [user] looks up from [src]" : "\The [user] lowers [src]"].")
+
 	return
 
 /obj/item/proc/pwr_drain()
