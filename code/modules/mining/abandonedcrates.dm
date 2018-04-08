@@ -7,7 +7,7 @@
 	var/list/code = list()
 	var/list/lastattempt = list()
 	var/attempts = 10
-	var/codelen = 4
+	codelen = 4
 	locked = 1
 
 /obj/structure/closet/crate/secure/loot/New()

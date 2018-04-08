@@ -45,6 +45,7 @@
 	if(title)
 		SetName(title)
 	info = html_encode(text)
+	text = preSign(text)
 	info = parsepencode(text)
 	update_icon()
 	update_space(info)
@@ -432,6 +433,40 @@
 
 	add_fingerprint(user)
 	return
+
+/obj/item/weapon/paper/proc/preStampPaper(stamp_path)
+	var/obj/item/weapon/stamp/P = new stamp_path
+	stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper has been stamped with the [P.name].</i>"
+
+	var/image/stampoverlay = image('icons/obj/bureaucracy_inf.dmi')
+	var/{x; y;}
+	if(istype(P, /obj/item/weapon/stamp/captain) || istype(P, /obj/item/weapon/stamp/centcomm))
+		x = rand(-2, 0)
+		y = rand(-1, 2)
+	else
+		x = rand(-2, 2)
+		y = rand(-3, 2)
+	offset_x += x
+	offset_y += y
+	stampoverlay.pixel_x = x
+	stampoverlay.pixel_y = y
+
+	if(!ico)
+		ico = new
+	ico += "paper_[P.icon_state]"
+	stampoverlay.icon_state = "paper_[P.icon_state]"
+
+	if(!stamped)
+		stamped = new
+	stamped += P.type
+	overlays += stampoverlay
+
+	qdel(P)
+
+/obj/item/weapon/paper/proc/preSign(t)
+	t = replacetext(t, "\[sign\]", "<font face=\"[signfont]\"><i>")
+	t = replacetext(t, "\[/sign\]", "</i></font>")
+	return t
 
 /obj/item/weapon/paper/nano
 	name = "nano paper"

@@ -32,6 +32,9 @@
 	var/kit_desc
 	var/kit_icon
 	var/additional_data
+	var/assoc_paper_title
+	var/assoc_paper_info
+	var/assoc_paper_stamp_type
 
 /datum/custom_item/proc/is_valid(var/checker)
 	if(!item_path)
@@ -193,6 +196,12 @@
 				current_data.kit_icon = field_data
 			if("additional_data")
 				current_data.additional_data = field_data
+			if("paper_info")
+				current_data.assoc_paper_info = field_data
+			if("paper_title")
+				current_data.assoc_paper_title = field_data
+			if("paper_stamp_type")
+				current_data.assoc_paper_stamp_type = text2path(field_data)
 	return 1
 
 //gets the relevant list for the key from the listlist if it exists, check to make sure they are meant to have it and then calls the giving function
@@ -202,7 +211,6 @@
 		return
 
 	for(var/datum/custom_item/citem in key_list)
-
 		// Check for requisite ckey and character name.
 		if((lowertext(citem.assoc_key) != lowertext(M.ckey)) || (lowertext(citem.character_name) != lowertext(M.real_name)))
 			continue
@@ -240,6 +248,14 @@
 			citem.apply_to_item(existing_item)
 		else
 			place_custom_item(M,citem)
+
+		// Бумагу вперед! ~bear1ake
+		if(citem.assoc_paper_info || citem.assoc_paper_title || citem.assoc_paper_stamp_type)
+			var/obj/item/weapon/paper/AP = new(text = citem.assoc_paper_info, title = citem.assoc_paper_title)
+			if(citem.assoc_paper_stamp_type)
+				AP.preStampPaper(citem.assoc_paper_stamp_type)
+			AP.loc = M
+			M.equip_to_storage(AP)
 
 // Places the item on the target mob.
 /proc/place_custom_item(mob/living/carbon/human/M, var/datum/custom_item/citem)
