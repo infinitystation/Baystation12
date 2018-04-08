@@ -76,9 +76,6 @@
 	name = "Long hair 4"
 	icon_state = "long"
 
-
-
-
 //Unath
 /*
 /datum/sprite_accessory/hair/infinity/una_horns_short
