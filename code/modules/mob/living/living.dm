@@ -128,6 +128,7 @@ default behaviour is:
 		now_pushing = 0
 		spawn(0)
 			..()
+			var/saved_dir = AM.dir
 			if (!istype(AM, /atom/movable) || AM.anchored)
 				if(confused && prob(50) && m_intent=="run")
 					Weaken(2)
@@ -153,6 +154,8 @@ default behaviour is:
 					for(var/obj/item/grab/G in AM:grabbed_by)
 						step(G:assailant, get_dir(G:assailant, AM))
 						G.adjust_position()
+				if(saved_dir)
+					AM.set_dir(saved_dir)
 				now_pushing = 0
 			return
 	return
