@@ -81,7 +81,6 @@
 
 /turf/simulated/wall/titanium_r
 	icon_state = "rgeneric"
-	color = COLOR_WHEAT
 /turf/simulated/wall/titanium_r/New(var/newloc)
 	..(newloc,"titanium","titanium")
 

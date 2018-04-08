@@ -10,8 +10,8 @@ SUBSYSTEM_DEF(skybox)
 	var/BGrot
 	var/BGcolor
 	var/BGpath = 'icons/turf/skybox.dmi' //Path to our background. Lets us use anything we damn well please. Skyboxes need to be 736x736
-	var/BGstate = "nebula"
-	var/use_stars = FALSE
+	var/BGstate = "dyable"
+	var/use_stars = TRUE
 	var/star_path = 'icons/turf/skybox.dmi'
 	var/star_state = "stars"
 	var/list/skyboxes = list() //Keep track of all existing skyboxes.
