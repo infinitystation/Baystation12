@@ -5,6 +5,7 @@
 	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "multimeter"
 	origin_tech = list(TECH_MAGNET = 4, TECH_ENGINEERING = 4)
+	slot_flags = SLOT_BELT
 	var/mode = METER_MESURING // Mode
 
 /obj/item/device/multitool/multimeter/attack_self(mob/user)

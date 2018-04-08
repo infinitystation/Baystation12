@@ -170,13 +170,13 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 						var/name_by_type = name_by_type()
 						to_chat(L, "[name_by_type] wires:")
 						for(var/colour in src.wires)
-							if(unsolved_wires[colour]) //unsolved_wires[red]
+							if(unsolved_wires[colour])
 								if(do_after(L, 10, holder))
 									if(!IsColourCut(colour))
-										colour_function = unsolved_wires[colour] //unsolved_wires[red] = 1 so colour_index = 1
-										solved_colour_function = SolveWireFunction(colour_function) //unsolved_wires[red] = 1, 1 = AIRLOCK_WIRE_IDSCAN
-										to_chat(L, "the [colour] wire connected to [solved_colour_function]") //the red wire is the ID wire
-										playsound(O.loc, 'sound/machines/ping.ogg', 30, 1)
+										colour_function = unsolved_wires[colour]
+										solved_colour_function = SolveWireFunction(colour_function)
+										to_chat(L, "the [colour] wire connected to [solved_colour_function]")
+										playsound(O.loc, 'sound/machines/mbeep.ogg', 30, 1)
 									else
 										to_chat(L, "the [colour] wire not connected")
 								else
