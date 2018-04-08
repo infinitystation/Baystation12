@@ -1,4 +1,4 @@
-/lobby_music/bluesinvelvetroom
+/music_track/bluesinvelvetroom
     artist = "Shoji Meguro"
     title = "Blues In Velvet Room"
     album = "PERSONA 3 OST"

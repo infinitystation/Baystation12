@@ -42,7 +42,7 @@ datum/track/proc/GetTrack()
 
 	var/datum/track/current_track
 	var/list/datum/track/tracks = list(
-        new/datum/track("A light in the Darkness",	/music_track/torch)),
+        new/datum/track("A light in the Darkness",	/music_track/torch),
         new/datum/track("Beyond",					/music_track/ambispace),
         new/datum/track("Blues in Velvet Room",		/music_track/bluesinvelvetroom),
         new/datum/track("Creep",					/music_track/creep),
@@ -51,7 +51,7 @@ datum/track/proc/GetTrack()
         new/datum/track("D`Bert",					/music_track/dilbert),
         new/datum/track("D`Fort",					/music_track/df_theme),
         new/datum/track("Endless Space",			/music_track/endless_space),
-        new/datum/track("Elevator",					/music_track/elevator)),
+        new/datum/track("Elevator",					/music_track/elevator),
         new/datum/track("Floating",					/music_track/floating),
         new/datum/track("Maschine Klash",			/music_track/digit_one),
         new/datum/track("Hurt",						/music_track/hurt),
