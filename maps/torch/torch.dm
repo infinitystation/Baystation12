@@ -1,21 +1,23 @@
 #if !defined(using_map_DATUM)
 
 	#include "torch_announcements.dm"
+	#include "torch_antagonism.dm"
 	#include "torch_areas.dm"
 	#include "torch_elevator.dm"
 	#include "torch_holodecks.dm"
+	#include "torch_lobby.dm"
+	#include "torch_npcs.dm"
 	#include "torch_overmap.dm"
 	#include "torch_presets.dm"
 	#include "torch_ranks.dm"
+	#include "torch_security_state.dm"
 	#include "torch_shuttles.dm"
 	#include "torch_unit_testing.dm"
-	#include "torch_antagonism.dm"
-	#include "torch_npcs.dm"
-	#include "torch_security_state.dm"
 
 	#include "datums/uniforms.dm"
 	#include "datums/uniforms_expedition.dm"
 	#include "datums/uniforms_fleet.dm"
+	#include "datums/shackle_law_sets.dm"
 	#include "datums/supplypacks/security.dm"
 	#include "datums/supplypacks/science.dm"
 
@@ -74,13 +76,13 @@
 	#include "infinity_station_maps/torch-5.dmm"
 	#include "infinity_station_maps/torch-6.dmm"
 	#include "infinity_station_maps/torch-7.dmm"
-	#include "../away-inf/sentinel/sentinel.dm"
-	#include "../away-inf/gunboat/gunboat.dm"
-	#include "../away-inf/lost_supply_base/lost_supply_base.dm"
-	#include "../away-inf/smugglers/smugglers.dm"
-	#include "../away-inf/bearcat/bearcat.dm"
-	#include "../away-inf/yacht/yacht.dm"
-	#include "../away-inf/slavers/slavers_base.dm"
+	#include "../away_inf/sentinel/sentinel.dm"
+	#include "../away_inf/gunboat/gunboat.dm"
+	#include "../away_inf/lost_supply_base/lsb.dm"
+	#include "../away_inf/smugglers/smugglers.dm"
+	#include "../away_inf/bearcat/bearcat.dm"
+	#include "../away_inf/yacht/yacht.dm"
+	#include "../away_inf/slavers/slavers_base.dm"
 	#include "../away/empty.dmm"
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
@@ -95,16 +97,6 @@
 //	#include "../away/errant_pisces/errant_pisces.dm"
 //	#include "../away/lar_maria/lar_maria.dm"
 
-	#include "../../code/modules/lobby_music/chasing_time.dm"
-	#include "../../code/modules/lobby_music/Torch.dm"
-	#include "../../code/modules/lobby_music/human.dm"
-	#include "../../code/modules/lobby_music/marhaba.dm"
-	#include "../../code/modules/lobby_music/treacherous_voyage.dm"
-	#include "../../code/modules/lobby_music/comet_haley.dm"
-	#include "../../code/modules/lobby_music/lysendraa.dm"
-	#include "../../code/modules/lobby_music/lasers.dm"
-	#include "../../code/modules/lobby_music/blues_in_velvet_room.dm"
-
 	#define using_map_DATUM /datum/map/torch
 
 #elif !defined(MAP_OVERRIDE)
@@ -112,3 +104,4 @@
 	#warn A map has already been included, ignoring Torch
 
 #endif
+

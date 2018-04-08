@@ -15,6 +15,20 @@
 	path = /obj/item/clothing/ears/earring
 	sort_category = "Earwear"
 
+/datum/gear/kittyears
+	display_name = "kitty ears"
+	description = "A pair of kitty ears. Meow!"
+	path = /obj/item/clothing/head/kitty
+	sort_category = "Earwear"
+
+/datum/gear/kittyears/New()
+	..()
+	var/kittyearss = list()
+	kittyearss["tailles ears"] = /obj/item/clothing/head/kitty/tailless
+	kittyearss["tailed ears"] = /obj/item/clothing/head/kitty
+	kittyearss["fake tailed ears"] = /obj/item/clothing/head/collectable/kitty
+	gear_tweaks += new /datum/gear_tweak/path(kittyearss)
+
 /datum/gear/earrings/New()
 	..()
 	var/earrings = list()

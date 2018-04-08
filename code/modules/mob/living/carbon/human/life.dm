@@ -840,7 +840,7 @@
 				var/minitemp_step
 				var/middle_temp = ((getSpeciesOrSynthTemp(HEAT_LEVEL_1) + getSpeciesOrSynthTemp(COLD_LEVEL_1)))/2
 				if(middle_temp >= 340)
-					middle_temp = middle_temp -= 56
+					middle_temp = middle_temp -= 35
 				if(middle_temp >= 330)
 					middle_temp = middle_temp -= 10
 				if(middle_temp <= 253)

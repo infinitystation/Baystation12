@@ -26,12 +26,12 @@
 	pixel_offset_x = -16
 	has_fine_manipulation = 0
 	siemens_coefficient = 0
-	gluttonous = GLUT_ANYTHING
+	gluttonous = GLUT_SMALLER
 	ambiguous_genders = TRUE
 	stomach_capacity = MOB_MEDIUM
 
-	brute_mod = 0.25 // Hardened carapace.
-	burn_mod = 1.1    // Weak to fire.
+	brute_mod = 0.8 // Hardened carapace.
+	burn_mod = 0.8    // Weak to fire.
 
 	warning_low_pressure = 50
 	hazard_low_pressure = -1

@@ -74,7 +74,7 @@
 	title = "Executive Officer"
 	supervisors = "the Commanding Officer"
 	department = "Command"
-	department_flag = COM|CIV
+	department_flag = COM
 	head_position = 1
 	total_positions = 1
 	spawn_positions = 1

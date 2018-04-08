@@ -328,23 +328,23 @@
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "bullpup"
 	item_state = "bullpup"
-	w_class = ITEM_SIZE_HUGE
 	item_icons = list(
 		slot_r_hand_str = 'icons/mob/infinity/misc.dmi',
 		slot_l_hand_str = 'icons/mob/infinity/misctwo.dmi',
 		)
+	wielded_item_state = "bullpup-wielded"
+	w_class = ITEM_SIZE_HUGE
 	force = 12
 	caliber = "a762"
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 4)
 	ammo_type = /obj/item/ammo_casing/a762
-	slot_flags = SLOT_BACK
+	slot_flags = SLOT_BELT|SLOT_BACK
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/a762/extended
 	allowed_magazines = /obj/item/ammo_magazine/a762
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	one_hand_penalty = 4
-	wielded_item_state = "z8carbine-wielded"
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, use_launcher=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
 		list(mode_name="3-round bursts", burst=3,    fire_delay=0,	  move_delay=null, use_launcher=null, one_hand_penalty=5, burst_accuracy=list(0,-0.6,-1.2), dispersion=list(0.4, 0.8, 1.2)),

@@ -41,7 +41,10 @@ netreson - resomi
 hodovoy - resomi
 wnfess - resomi
 yarida - resomi
+forrya - resomi
 cre77 - resomi
+s1334 - resomi
+audie - resomi
 vankoska - diona
 maxi2000 - diona
 sosiskoed - diona
@@ -52,6 +55,7 @@ rex127 - vox
 sosiskoed - vox
 wolforbykot - vox
 wheatley2013 - vox
+darkscarletblood - unathi
 kotovsyndrome - unathi
 wolforbykot - unathi
 kirill1243 - unathi

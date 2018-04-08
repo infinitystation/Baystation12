@@ -70,6 +70,8 @@
 	var/obj/item/weapon/coin/coin
 	var/datum/wires/vending/wires = null
 
+	var/cooldown = 0
+
 /obj/machinery/vending/New()
 	..()
 	wires = new(src)
@@ -155,7 +157,7 @@
 
 	var/obj/item/weapon/card/id/I = W.GetIdCard()
 
-	if (currently_vending && vendor_account && !vendor_account.suspended)
+	if (currently_vending && vendor_account && !vendor_account.suspended && cooldown < world.time - 25)
 		var/paid = 0
 		var/handled = 0
 
@@ -454,6 +456,7 @@
 	src.status_message = "Vending..."
 	src.status_error = 0
 	GLOB.nanomanager.update_uis(src)
+	cooldown = world.time
 
 	if (R.category & CAT_COIN)
 		if(!coin)
@@ -1041,9 +1044,10 @@
 	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/cans/syndicola = 50,
 					/obj/item/weapon/reagent_containers/food/drinks/cans/syndicolax = 30,
-					/obj/item/weapon/reagent_containers/food/drinks/glass2/square/boda = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/glass2/square/bodaplus = 10)
-	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka = 0) // TODO Russian cola can
+					/obj/item/weapon/reagent_containers/food/drinks/cans/artbru = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/glass2/square/boda = 20,
+					/obj/item/weapon/reagent_containers/food/drinks/glass2/square/bodaplus = 20)
+	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/space_up = 300) // TODO Russian cola can
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
 /obj/machinery/vending/tool

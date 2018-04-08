@@ -22,11 +22,11 @@
 		..(P, def_zone)
 
 /obj/structure/curtain/attack_hand(mob/user)
-	playsound(get_turf(loc), "rustle", 15, 1, -5)
 	toggle()
 	..()
 
 /obj/structure/curtain/proc/toggle()
+	playsound(get_turf(loc), 'sound/effects/curtain.ogg', 15, 1, -5)
 	set_opacity(!opacity)
 	if(opacity)
 		icon_state = "closed"

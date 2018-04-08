@@ -375,13 +375,13 @@ macro "macro"
 		command = ".me"
 	elem 
 		name = "F5"
-		command = "msay"
+		command = "asay"
 	elem 
 		name = "F6"
 		command = "Player-Panel-New"
 	elem 
 		name = "F7"
-		command = "Admin-PM"
+		command = "msay"
 	elem 
 		name = "F8"
 		command = "Invisimin"
@@ -778,13 +778,13 @@ macro "borgmacro"
 		command = ".me"
 	elem 
 		name = "F5"
-		command = "msay"
+		command = "asay"
 	elem 
 		name = "F6"
 		command = "Player-Panel-New"
 	elem 
 		name = "F7"
-		command = "Admin-PM"
+		command = "msay"
 	elem 
 		name = "F8"
 		command = "Invisimin"

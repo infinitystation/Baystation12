@@ -188,7 +188,7 @@
 	base_color = "#006666"
 	organs_icon = 'icons/mob/human_races/organs/skrell.dmi'
 
-	cold_level_1 = 280 //Default 260 - Lower is better
+	cold_level_1 = 250 //Default 260 - Lower is better
 	cold_level_2 = 220 //Default 200
 	cold_level_3 = 130 //Default 120
 

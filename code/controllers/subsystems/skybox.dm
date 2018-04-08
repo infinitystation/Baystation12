@@ -10,7 +10,7 @@ SUBSYSTEM_DEF(skybox)
 	var/BGrot
 	var/BGcolor
 	var/BGpath = 'icons/turf/skybox.dmi' //Path to our background. Lets us use anything we damn well please. Skyboxes need to be 736x736
-	var/BGstate = "blink"
+	var/BGstate = "dyable"
 	var/use_stars = TRUE
 	var/star_path = 'icons/turf/skybox.dmi'
 	var/star_state = "stars"
@@ -18,7 +18,7 @@ SUBSYSTEM_DEF(skybox)
 
 /datum/controller/subsystem/skybox/Initialize(timeofday)
 	..(timeofday)
-	//BGcolor = RANDOM_RGB
+	BGcolor = RANDOM_RGB
 	BGrot = RANDOM_RIGHT_ANGLE
 
 /datum/controller/subsystem/skybox/Recover()

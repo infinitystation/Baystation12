@@ -41,8 +41,7 @@ var/bomb_set
 	if(timing)
 		timeleft = max(timeleft - (wait / 10), 0)
 		if(timeleft <= 0)
-			spawn
-				explode()
+			addtimer(CALLBACK(src, .proc/explode), 0)
 		else
 			var/volume = (timeleft <= 30 ? 35 : 10)
 			playsound(loc, 'sound/machines/nuke_timer.ogg', volume, 0)
@@ -373,12 +372,10 @@ var/bomb_set
 	item_state = "card-id"
 	w_class = ITEM_SIZE_TINY
 
-/obj/item/weapon/disk/nuclear/New()
-	..()
-	nuke_disks |= src
 
 /obj/item/weapon/disk/nuclear/Initialize()
 	. = ..()
+	nuke_disks |= src
 	// Can never be quite sure that a game mode has been properly initiated or not at this point, so always register
 	GLOB.moved_event.register(src, src, /obj/item/weapon/disk/nuclear/proc/check_z_level)
 
