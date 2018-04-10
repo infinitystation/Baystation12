@@ -52,8 +52,6 @@
 	if(stat == DEAD)
 		return 0
 
-	sound_to(src, 'sound/misc/death_sound.ogg')
-
 	facing_dir = null
 
 	if(!gibbed && deathmessage != "no message") // This is gross, but reliable. Only brains use it.
