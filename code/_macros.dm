@@ -87,6 +87,8 @@
 
 #define isMultitool(A) istype(A, /obj/item/device/multitool)
 
+#define isMultimeter(A) istype(A, /obj/item/device/multitool/multimeter)
+
 #define isCrowbar(A) istype(A, /obj/item/weapon/crowbar)
 
 #define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
