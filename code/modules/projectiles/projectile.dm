@@ -252,7 +252,7 @@
 		return 0
 
 	var/passthrough = 0 //if the projectile should continue flying
-	var/distance = get_dist(get_turf(A), starting)
+	var/distance = get_dist(starting, get_turf(A))
 
 	bumped = 1
 	if(ismob(A))

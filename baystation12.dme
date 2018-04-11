@@ -472,7 +472,6 @@
 #include "code\game\antagonist\station\rogue_ai.dm"
 #include "code\game\antagonist\station\traitor.dm"
 #include "code\game\area\areas.dm"
-#include "code\game\area\InfinityAreas.dm"
 #include "code\game\area\Space Station 13 areas.dm"
 #include "code\game\dna\dna2.dm"
 #include "code\game\dna\dna2_domutcheck.dm"
