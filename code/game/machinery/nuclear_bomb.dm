@@ -40,12 +40,9 @@ var/bomb_set
 /obj/machinery/nuclearbomb/Process(var/wait)
 	if(timing)
 		timeleft = max(timeleft - (wait / 10), 0)
-		playsound(loc, 'sound/items/timer.ogg', 50)
+		playsound(loc, 'sound/items/timer.ogg', timeleft <= 30 ? 50 : 25)
 		if(timeleft <= 0)
 			addtimer(CALLBACK(src, .proc/explode), 0)
-		else
-			var/volume = (timeleft <= 30 ? 35 : 10)
-			playsound(loc, 'sound/machines/nuke_timer.ogg', volume, 0)
 		GLOB.nanomanager.update_uis(src)
 
 /obj/machinery/nuclearbomb/attackby(obj/item/weapon/O as obj, mob/user as mob, params)
