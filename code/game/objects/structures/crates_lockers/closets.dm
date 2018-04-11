@@ -84,9 +84,9 @@
 	return (!density)
 
 /obj/structure/closet/proc/can_open()
-	if(locked)
+	if((setup & CLOSET_HAS_LOCK) && locked)
 		return 0
-	if(welded)
+	if((setup & CLOSET_CAN_BE_WELDED) && welded)
 		return 0
 	return 1
 
@@ -309,7 +309,7 @@
 			open()
 	else if(istype(W, /obj/item/stack/package_wrap))
 		return
-	else if(isWelder(W))
+	else if(isWelder(W) && (setup & CLOSET_CAN_BE_WELDED))
 		var/obj/item/weapon/weldingtool/WT = W
 		if(!WT.remove_fuel(0,user))
 			if(!WT.isOn())
@@ -321,7 +321,7 @@
 		src.update_icon()
 		user.visible_message("<span class='warning'>\The [src] has been [welded?"welded shut":"unwelded"] by \the [user].</span>", blind_message = "You hear welding.", range = 3)
 	else if(setup & CLOSET_HAS_LOCK)
-		if(istype(W, /obj/item/device/multitool/multimeter))
+		if(isMultimeter(W))
 			var/obj/item/device/multitool/multimeter/O = W
 			if(O.mode != METER_CHECKING)
 				to_chat(user, "<span class='notice'>Переключите мультиметр.</span>")
