@@ -66,7 +66,7 @@
 		var/area/A = loc
 		if((!(A.has_gravity)) || (istype(src,/turf/space)))
 			return
-		if(do_after(user, 20 + (user.weakened * 2) , incapacitation_flags = ~INCAPACITATION_FORCELYING))
+		if(do_after(user, 15 + (user.weakened * 2), src, incapacitation_flags = ~INCAPACITATION_FORCELYING))
 			if(step_towards(user, src))
 				user.visible_message("<font size=1><span class='warning'>[user] crawls on \the [src]</span></font>")
 
