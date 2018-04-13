@@ -26,7 +26,7 @@
 	var/kittyearss = list()
 	kittyearss["tailles ears"] = /obj/item/clothing/head/kitty/tailless
 	kittyearss["tailed ears"] = /obj/item/clothing/head/kitty
-	kittyearss["fake tailed ears"] = /obj/item/clothing/head/collectable/kitty
+	kittyearss["fake tailed ears"] = /obj/item/clothing/head/kitty/fake	// Ну почему сюда попала коллекционная вещь? ~bear1ake
 	gear_tweaks += new /datum/gear_tweak/path(kittyearss)
 
 /datum/gear/earrings/New()
