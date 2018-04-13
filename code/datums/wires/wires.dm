@@ -128,16 +128,15 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 				else
 					to_chat(L, "<span class='error'>You need wirecutters!</span>")
 			else if(href_list["pulse"])
-				if(istype(I, /obj/item/device/multitool/multimeter))
+				if(isMultimeter(I))
 					var/obj/item/device/multitool/multimeter/O = L.get_active_hand()
 					if(O.mode == METER_MESURING)
 						to_chat(L, "<span class='notice'>Закорачиваем контакты провода...</span>")
-						if(do_after(L, 50, holder))
-							var/colour = href_list["pulse"]
-							PulseColour(colour)
-							to_chat(L, "<span class='notice'>Провод закорочен (пропульсован).</span>")
-						else
-							return 0
+						if(!do_after(L, 50, holder))
+							return
+						var/colour = href_list["pulse"]
+						PulseColour(colour)
+						to_chat(L, "<span class='notice'>Провод закорочен (пропульсован).</span>")
 					else
 						to_chat(L, "<span class='notice'>Переведите мультиметр в режим измерен&#255;.</span>")
 				else if(isMultitool(I))
@@ -163,7 +162,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 
 			//multimeter stuff
 			else if(href_list["check"])
-				if(istype(I, /obj/item/device/multitool/multimeter))
+				if(isMultimeter(I))
 					var/obj/item/device/multitool/multimeter/O = L.get_active_hand()
 					if(O.mode == METER_CHECKING)
 						to_chat(L, "<span class='notice'>Перебираем провода...</span>")
@@ -171,18 +170,16 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 						to_chat(L, "[name_by_type] wires:")
 						for(var/colour in src.wires)
 							if(unsolved_wires[colour])
-								if(do_after(L, 10, holder))
-									if(!IsColourCut(colour))
-										colour_function = unsolved_wires[colour]
-										solved_colour_function = SolveWireFunction(colour_function)
-										to_chat(L, "the [colour] wire connected to [solved_colour_function]")
-										playsound(O.loc, 'sound/machines/mbeep.ogg', 30, 1)
-									else
-										to_chat(L, "the [colour] wire not connected")
+								if(!do_after(L, 10, holder))
+									return
+								if(!IsColourCut(colour))
+									colour_function = unsolved_wires[colour]
+									solved_colour_function = SolveWireFunction(colour_function)
+									to_chat(L, "the [colour] wire connected to [solved_colour_function]")
+									playsound(O.loc, 'sound/machines/mbeep.ogg', 30, 1)
 								else
-									return 0
-
-							//to_chat(L, "<span class='notice'>[all_solved_wires[holder_type]]</span>")
+									to_chat(L, "the [colour] wire not connected")
+						//to_chat(L, "<span class='notice'>[all_solved_wires[holder_type]]</span>")
 					else
 						to_chat(L, "<span class='notice'>Переключите мультиметр в режим прозвонки.</span>")
 				else

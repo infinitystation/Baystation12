@@ -549,7 +549,7 @@
 
 // Command
 /area/command/conference
-	name = "Conference Room"
+	name = "Briefing Room"
 	icon_state = "head_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 

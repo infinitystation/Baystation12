@@ -58,15 +58,6 @@
 		visible_message("<span class='warning'>\The [src] breaks down!</span>")
 		return break_to_parts() // if we break and form shards, return them to the caller to do !FUN! things with
 
-/obj/structure/table/Crossed(var/mob/living/M as mob)
-	if(isliving(M))
-		if(!flipped)
-			M.pixel_y = 12
-
-/obj/structure/table/Uncrossed(var/mob/living/M as mob)
-	if(isliving(M))
-		M.pixel_y = 0
-
 /obj/structure/table/Initialize()
 	. = ..()
 

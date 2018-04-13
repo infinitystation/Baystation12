@@ -1006,18 +1006,17 @@
 	else
 		to_chat(usr, "You are now facing [dir2text(facing_dir)].")
 
-/mob/proc/air_temperature(var/obj/screen/A, var/mob/user)
-
-	var/air_contents = A.return_air()
+/mob/proc/air_temperature()
+	var/air_contents = loc.return_air()
 	if(!air_contents)
-		to_chat(user, "<span class='warning'>It's very cold... oh, shit.</span>")
+		to_chat(usr, "<span class='warning'>It's very cold... oh, shit.</span>")
 		return 0
 
-	var/list/result = atmosanalyzer_scan_lesser(A, air_contents)
-	print_atmos_analysis_lesser(user, result)
+	var/list/result = atmosanalyzer_scan_lesser(usr, air_contents)
+	print_atmos_analysis_lesser(usr, result)
 	return 1
 
-/mob/proc/print_atmos_analysis_lesser(user, var/list/result)
+/mob/proc/print_atmos_analysis_lesser(var/mob/user, var/list/result)
 	for(var/line in result)
 		to_chat(user, "<span class='notice'>[line]</span>")
 

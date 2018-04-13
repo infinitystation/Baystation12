@@ -432,7 +432,7 @@
 	set desc = "When all else has failed, bite the bullet."
 
 	if(stat || paralysis || stunned || weakened || lying)
-		src << "<span class='warning'>You cannot do that in your current state.</span>"
+		to_chat(src, "<span class='warning'>You cannot do that in your current state.</span>")
 		return
 
 	src.visible_message(

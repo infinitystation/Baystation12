@@ -37,7 +37,7 @@ var/list/mob_hat_cache = list()
 	integrated_light_power = 3
 	local_transmit = 1
 	possession_candidate = 1
-	speed = 0.2
+	speed = 2
 
 	can_pull_size = ITEM_SIZE_NORMAL
 	can_pull_mobs = MOB_PULL_SMALLER
@@ -61,6 +61,9 @@ var/list/mob_hat_cache = list()
 	var/hat_y_offset = -13
 
 	holder_type = /obj/item/weapon/holder/drone
+
+	can_enter_vent_with = list(
+		/atom)
 
 /mob/living/silicon/robot/drone/New()
 	..()
@@ -123,10 +126,14 @@ var/list/mob_hat_cache = list()
 	density = 1
 	can_pull_size = ITEM_SIZE_NO_CONTAINER
 	can_pull_mobs = MOB_PULL_SAME
+	speed = 1.2
 
 /mob/living/silicon/robot/drone/New()
 
 	..()
+
+	if(!istype(src, /mob/living/silicon/robot/drone/construction))
+		verbs += /mob/living/proc/ventcrawl
 
 	verbs += /mob/living/proc/hide
 	remove_language("Robot Talk")

@@ -89,7 +89,7 @@
 /obj/item/weapon/coin/examine(mob/user)
 	..()
 	if(value)
-		to_chat(user, "<span class='info'>It's worth [value] credit\s.</span>")
+		to_chat(user, "<span class='info'>It's worth [value] Thaler\s.</span>")
 
 /obj/item/weapon/coin/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(isCoil(W))
