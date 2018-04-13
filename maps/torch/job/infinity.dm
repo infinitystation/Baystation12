@@ -1,3 +1,7 @@
+/decl/hierarchy/outfit/scg
+	name = "SCG"
+	uniform = /obj/item/clothing/under/solgov
+
 /decl/hierarchy/outfit/scg/troops
 	name = "SCG MarineHolder"
 	head = /obj/item/clothing/head/helmet/marine
@@ -222,7 +226,7 @@
 
 /obj/effect/landmark/corpse/bridgeofficer/scg
 	name = "Bridge Officer"
-	corpse_outfits = list(/decl/hierarchy/outfit/corpse/bridgeofficer/scg)
+	corpse_outfits = list(/decl/hierarchy/outfit/corpse/bridgeofficer)
 
 /obj/effect/landmark/corpse/inf_pirat
 	name = "Pirat"
@@ -248,7 +252,7 @@
 	id_desc = "Crewman"
 	id_slot = slot_wear_id
 
-/decl/hierarchy/outfit/corpse/bridgeofficer/scg
+/decl/hierarchy/outfit/corpse/bridgeofficer
 	name = "Dead bridge officer"
 	l_ear = /obj/item/device/radio/headset
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/command
