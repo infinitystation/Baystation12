@@ -19,8 +19,9 @@
 	desc = "A floating crystal that hums with an unearthly energy."
 	icon_state = "pylon"
 	var/isbroken = 0
-	light_power = 2
-	light_range = 13
+	light_max_bright = 0.5
+	light_inner_range = 1
+	light_outer_range = 13
 	light_color = "#3e0000"
 	var/obj/item/wepon = null
 
@@ -73,8 +74,8 @@
 	desc = "A desk covered in arcane manuscripts and tomes in unknown languages. Looking at the text makes your skin crawl."
 	icon_state = "tomealtar"
 	light_color = "#ED9200"
-	light_power = 1
-	light_range = 3
+	light_outer_range = 3
+	light_color="#ED9200"
 
 //sprites for this no longer exist	-Pete
 //(they were stolen from another game anyway)
@@ -97,7 +98,7 @@
 	var/spawnable = null
 
 /obj/effect/gateway/active
-	light_range=5
+	light_outer_range=5
 	light_color="#ff0000"
 	spawnable=list(
 		/mob/living/simple_animal/hostile/scarybat,
@@ -106,7 +107,7 @@
 	)
 
 /obj/effect/gateway/active/cult
-	light_range=5
+	light_outer_range=5
 	light_color="#ff0000"
 	spawnable=list(
 		/mob/living/simple_animal/hostile/scarybat/cult,

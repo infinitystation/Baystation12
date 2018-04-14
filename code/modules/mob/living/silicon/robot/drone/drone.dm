@@ -34,7 +34,7 @@ var/list/mob_hat_cache = list()
 	lawupdate = 0
 	density = 0
 	req_access = list(access_engine, access_robotics)
-	integrated_light_power = 3
+	integrated_light_max_bright = 0.5
 	local_transmit = 1
 	possession_candidate = 1
 	speed = 2
@@ -97,7 +97,7 @@ var/list/mob_hat_cache = list()
 	if(too_many_active_drones())
 		to_chat(src, "<span class='danger'>The maximum number of active drones has been reached..</span>")
 		return 0
-	if(jobban_isbanned(possessor,"Cyborg"))
+	if(jobban_isbanned(possessor,"Robot"))
 		to_chat(usr, "<span class='danger'>You are banned from playing synthetics and cannot spawn as a drone.</span>")
 		return 0
 	if(!possessor.MayRespawn(1,DRONE_SPAWN_DELAY))

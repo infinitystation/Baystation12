@@ -440,7 +440,7 @@ var/global/datum/controller/occupations/job_master
 			alt_title = H.mind.role_alt_title
 
 			switch(rank)
-				if("Cyborg")
+				if("Robot")
 					return H.Robotize()
 				if("AI")
 					return H
@@ -541,7 +541,7 @@ var/global/datum/controller/occupations/job_master
 				if(!J)	continue
 				J.total_positions = text2num(value)
 				J.spawn_positions = text2num(value)
-				if(name == "AI" || name == "Cyborg")//I dont like this here but it will do for now
+				if(name == "AI" || name == "Robot")//I dont like this here but it will do for now
 					J.total_positions = 0
 
 		return 1

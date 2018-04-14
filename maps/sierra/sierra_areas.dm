@@ -1,4 +1,4 @@
-/datum/map/siera
+/datum/map/sierra
 
 	base_floor_type = /turf/simulated/floor/reinforced/airless
 	base_floor_area = /area/maintenance/exterior
@@ -304,7 +304,7 @@
 	icon_state = "shuttle"
 	name = "\improper Transport Shuttle Centcom"
 
-//siera large pods
+//sierra large pods
 /area/shuttle/escape_pod6/station
 	name = "Escape Pod One"
 	area_flags = AREA_FLAG_RAD_SHIELDED
@@ -329,7 +329,7 @@
 	name = "Escape Pod Six"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-//siera small pods
+//sierra small pods
 /area/shuttle/escape_pod12/station
 	name = "Escape Pod Seven"
 	area_flags = AREA_FLAG_RAD_SHIELDED
@@ -516,31 +516,31 @@
 	base_turf = /turf/unsimulated/floor/rescue_base
 
 // Elevator areas.
-/area/turbolift/siera_top
+/area/turbolift/sierra_top
 	name = "lift (bridge)"
 	lift_floor_label = "Bridge"
 	lift_floor_name = "Bridge"
 	lift_announce_str = "Arriving at Command Deck: Bridge. Meeting Room. Command Offices. AI Core. Landing Area. Auxiliary EVA."
 
-/area/turbolift/siera_third
+/area/turbolift/sierra_third
 	name = "lift (upper deck)"
 	lift_floor_label = "Deck 1"
 	lift_floor_name = "Operations Deck"
 	lift_announce_str = "Arriving at Operations Deck: Infirmary. Research Wing. Auxiliary Cryogenic Storage. Emergency Armory. Diplomatic Quarters. Captain's Mess. Pathfinder's Office."
 
-/area/turbolift/siera_second
+/area/turbolift/sierra_second
 	name = "lift (maintenance)"
 	lift_floor_label = "Deck 2"
 	lift_floor_name = "Maintenance Deck"
 	lift_announce_str = "Arriving at Maintenance Deck: Engineering. Atmospherics. Sanitation. Storage."
 
-/area/turbolift/siera_first
+/area/turbolift/sierra_first
 	name = "lift (second deck)"
 	lift_floor_label = "Deck 3"
 	lift_floor_name = "Habitation Deck"
 	lift_announce_str = "Arriving at Habitation Deck: EVA. Security Wing. Telecommunications. Mess Hall. Hydroponics. Cryogenic Storage. Holodeck."
 
-/area/turbolift/siera_ground
+/area/turbolift/sierra_ground
 	name = "lift (lower deck)"
 	lift_floor_label = "Deck 4"
 	lift_floor_name = "Hangar Deck"

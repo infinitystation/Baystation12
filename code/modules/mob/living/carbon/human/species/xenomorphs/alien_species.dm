@@ -35,7 +35,8 @@
 
 	warning_low_pressure = 50
 	hazard_low_pressure = -1
-	darksight = 8
+	darksight_range = 8
+	darksight_tint = DARKTINT_GOOD
 
 	cold_level_1 = 50
 	cold_level_2 = -1

@@ -1,4 +1,4 @@
-/datum/map/siera
+/datum/map/sierra
 	branch_types = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet,
@@ -138,7 +138,7 @@
 /datum/mil_branch/expeditionary_corps
 	name = "Expeditionary Corps"
 	name_short = "SCGEC"
-	email_domain = "siera.ec.scg"
+	email_domain = "sierra.ec.scg"
 
 	rank_types = list(
 		/datum/mil_rank/ec/e3,
@@ -165,7 +165,7 @@
 /datum/mil_branch/fleet
 	name = "Fleet"
 	name_short = "SCGF"
-	email_domain = "siera.fleet.mil"
+	email_domain = "sierra.fleet.mil"
 
 	rank_types = list(
 		/datum/mil_rank/fleet/e1,

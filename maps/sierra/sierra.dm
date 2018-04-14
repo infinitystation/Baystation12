@@ -1,18 +1,18 @@
 #if !defined(using_map_DATUM)
 
-	#include "siera_announcements.dm"
-	#include "siera_antagonism.dm"
-	#include "siera_areas.dm"
-	#include "siera_elevator.dm"
-	#include "siera_holodecks.dm"
-	#include "siera_lobby.dm"
-	#include "siera_npcs.dm"
-	#include "siera_overmap.dm"
-	#include "siera_presets.dm"
-	#include "siera_ranks.dm"
-	#include "siera_security_state.dm"
-	#include "siera_shuttles.dm"
-	#include "siera_unit_testing.dm"
+	#include "sierra_announcements.dm"
+	#include "sierra_antagonism.dm"
+	#include "sierra_areas.dm"
+	#include "sierra_elevator.dm"
+	#include "sierra_holodecks.dm"
+	#include "sierra_lobby.dm"
+	#include "sierra_npcs.dm"
+	#include "sierra_overmap.dm"
+	#include "sierra_presets.dm"
+	#include "sierra_ranks.dm"
+	#include "sierra_security_state.dm"
+	#include "sierra_shuttles.dm"
+	#include "sierra_unit_testing.dm"
 
 	#include "datums/uniforms.dm"
 	#include "datums/uniforms_expedition.dm"
@@ -68,9 +68,9 @@
 	#include "loadout/loadout_xeno.dm"
 	#include "loadout/~defines.dm"
 
-	#include "siera/siera-1.dmm"
-	#include "siera/siera-2.dmm"
-	#include "siera/siera-3.dmm"
+	#include "sierra/sierra-1.dmm"
+	#include "sierra/sierra-2.dmm"
+	#include "sierra/sierra-3.dmm"
 	#include "../away_inf/sentinel/sentinel.dm"
 	#include "../away_inf/gunboat/gunboat.dm"
 	#include "../away_inf/lost_supply_base/lsb.dm"
@@ -92,10 +92,10 @@
 //	#include "../away/errant_pisces/errant_pisces.dm"
 //	#include "../away/lar_maria/lar_maria.dm"
 
-	#define using_map_DATUM /datum/map/siera
+	#define using_map_DATUM /datum/map/sierra
 
 #elif !defined(MAP_OVERRIDE)
 
-	#warn A map has already been included, ignoring Siera
+	#warn A map has already been included, ignoring Sierra
 
 #endif

@@ -1,5 +1,5 @@
-/datum/map/siera
-	lobby_icon = 'maps/siera/icons/lobby.dmi'
+/datum/map/sierra
+	lobby_icon = 'maps/sierra/icons/lobby.dmi'
 	lobby_screens = list("title","title2")
 	lobby_tracks = list(
 		/music_track/chasing_time,

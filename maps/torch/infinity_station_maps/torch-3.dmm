@@ -14747,13 +14747,18 @@
 /obj/machinery/door/airlock/mining{
 	name = "Compactor Maintenance"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/compactor)
 "Da" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
-/turf/simulated/floor/plating,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
 "Db" = (
 /obj/machinery/portable_atmospherics/canister/air,
@@ -15002,11 +15007,11 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/compactor)
 "DE" = (
 /obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/compactor)
 "DH" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -15044,7 +15049,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
 "DM" = (
 /obj/structure/table/steel,
@@ -15183,20 +15188,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
-/area/quartermaster/compactor)
-"El" = (
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "east bump";
-	pixel_x = 24
-	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
 "Em" = (
 /obj/structure/cable{
@@ -15494,7 +15486,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
 "ET" = (
 /obj/item/weapon/stool,
@@ -16452,6 +16444,14 @@
 /obj/item/device/pda/wrist,
 /turf/simulated/floor/plating,
 /area/quartermaster/compactor)
+"LB" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/quartermaster/compactor)
 "LH" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -16474,7 +16474,7 @@
 /obj/machinery/conveyor_switch/oneway{
 	id = "compactor"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
 "LO" = (
 /obj/random/junk,
@@ -16484,11 +16484,11 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 8
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
 "MW" = (
 /obj/structure/railing/mapped,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
 "NH" = (
 /obj/structure/disposaloutlet{
@@ -16512,7 +16512,7 @@
 	pixel_x = -32;
 	pixel_y = 0
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
 "Ox" = (
 /obj/structure/cable{
@@ -16625,7 +16625,13 @@
 	dir = 4;
 	pixel_y = 8
 	},
-/turf/simulated/floor/plating,
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/structure/cable/green,
+/turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
 "VC" = (
 /obj/structure/bed/chair,
@@ -16719,17 +16725,17 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "YI" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9;
 	pixel_y = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/plating,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
 "YM" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -16740,7 +16746,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
 "ZJ" = (
 /obj/item/hoist_kit,
@@ -34244,7 +34250,7 @@ Cr
 De
 DJ
 YY
-Yh
+Xz
 MW
 OV
 IW
@@ -34649,7 +34655,7 @@ Ph
 DL
 YI
 Da
-EP
+LB
 Vw
 IW
 ae
@@ -34849,7 +34855,7 @@ wv
 LH
 De
 DM
-El
+Yh
 Tb
 Xt
 IW

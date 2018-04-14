@@ -1,7 +1,7 @@
-/datum/map/siera
-	name = "Siera"
-	full_name = "SEV Siera"
-	path = "siera"
+/datum/map/sierra
+	name = "Sierra"
+	full_name = "SEV Sierra"
+	path = "sierra"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 
 	station_levels = list(1,2,3,4,5)
@@ -12,13 +12,13 @@
 	accessible_z_levels = list("1"=1,"2"=1,"3"=1,"4"=1,"5"=1,"8"=30)
 	overmap_size = 35
 	overmap_event_areas = 34
-	usable_email_tlds = list("siera.ec.scg", "siera.fleet.mil", "siera.marine.mil", "freemail.nt")
+	usable_email_tlds = list("sierra.ec.scg", "sierra.fleet.mil", "sierra.marine.mil", "freemail.nt")
 
 	allowed_spawns = list("Cryogenic Storage", "Cyborg Storage")
 	default_spawn = "Cryogenic Storage"
 
-	station_name  = "SEV Siera"
-	station_short = "Siera"
+	station_name  = "SEV Sierra"
+	station_short = "Sierra"
 	dock_name     = "TBD"
 	boss_name     = "Expeditionary Command"
 	boss_short    = "Command"
@@ -42,15 +42,15 @@
 
 	away_site_budget = 2
 
-	id_hud_icons = 'maps/siera/icons/assignment_hud.dmi'
+	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 
-/datum/map/siera/setup_map()
+/datum/map/sierra/setup_map()
 	..()
 	system_name = generate_system_name()
-	minor_announcement = new(new_sound = sound('sound/AI/siera/commandreport.ogg', volume = 45))
+	minor_announcement = new(new_sound = sound('sound/AI/sierra/commandreport.ogg', volume = 45))
 
-/datum/map/siera/send_welcome()
-	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Siera</b> Sensor Readings:</font><hr />"
+/datum/map/sierra/send_welcome()
+	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Sierra</b> Sensor Readings:</font><hr />"
 	welcome_text += "Report generated on [stationdate2text()] at [stationtime2text()]</center><br /><br />"
 	welcome_text += "Current system:<br /><b>[system_name()]</b><br />"
 	welcome_text += "Next system targeted for jump:<br /><b>[generate_system_name()]</b><br />"
@@ -58,24 +58,24 @@
 	welcome_text += "Time since last port visit:<br /><b>[rand(60,180)] days</b><br />"
 	welcome_text += "Scan results show the following points of interest:<br />"
 	var/list/space_things = list()
-	var/obj/effect/overmap/siera = map_sectors["1"]
+	var/obj/effect/overmap/sierra = map_sectors["1"]
 	for(var/zlevel in map_sectors)
 		var/obj/effect/overmap/O = map_sectors[zlevel]
-		if(O.name == siera.name)
+		if(O.name == sierra.name)
 			continue
 		space_things |= O
 
 	for(var/obj/effect/overmap/O in space_things)
 		var/location_desc = " at present co-ordinates."
-		if (O.loc != siera.loc)
-			var/bearing = round(90 - Atan2(O.x - siera.x, O.y - siera.y),5) //fucking triangles how do they work
+		if (O.loc != sierra.loc)
+			var/bearing = round(90 - Atan2(O.x - sierra.x, O.y - sierra.y),5) //fucking triangles how do they work
 			if(bearing < 0)
 				bearing += 360
 			location_desc = ", bearing [bearing]."
 		welcome_text += "<li>\A <b>[O.name]</b>[location_desc]</li>"
 	welcome_text += "<br>No distress calls logged.<br />"
 
-	post_comm_message("SEV Siera Sensor Readings", welcome_text)
+	post_comm_message("SEV Sierra Sensor Readings", welcome_text)
 	minor_announcement.Announce(message = "New [GLOB.using_map.company_name] Update available at all communication consoles.")
 
 /turf/simulated/wall //landlubbers go home

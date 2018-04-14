@@ -12,7 +12,7 @@ var/const/NETWORK_MISSILE     = "Missile Pod"
 var/const/NETWORK_EXPLO       = "Exploration"
 var/const/NETWORK_THIRD_DECK  = "Third Deck"
 
-/datum/map/siera/get_network_access(var/network)
+/datum/map/sierra/get_network_access(var/network)
 	switch(network)
 		if(NETWORK_AQUILA)
 			return access_aquila
@@ -30,7 +30,7 @@ var/const/NETWORK_THIRD_DECK  = "Third Deck"
 			return access_explorer
 	return get_shared_network_access(network) || ..()
 
-/datum/map/siera
+/datum/map/sierra
 	// Networks that will show up as options in the camera monitor program
 	station_networks = list(
 		NETWORK_ROBOTS,
@@ -149,14 +149,14 @@ var/const/NETWORK_THIRD_DECK  = "Third Deck"
 //
 
 // Substation SMES
-/obj/machinery/power/smes/buildable/preset/siera/substation/configure_and_install_coils()
+/obj/machinery/power/smes/buildable/preset/sierra/substation/configure_and_install_coils()
 	component_parts += new /obj/item/weapon/smes_coil(src)
 	component_parts += new /obj/item/weapon/smes_coil(src)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 
 // Substation SMES (charged and with full I/O setting)
-/obj/machinery/power/smes/buildable/preset/siera/substation_full/configure_and_install_coils()
+/obj/machinery/power/smes/buildable/preset/sierra/substation_full/configure_and_install_coils()
 	component_parts += new /obj/item/weapon/smes_coil(src)
 	component_parts += new /obj/item/weapon/smes_coil(src)
 	_input_maxed = TRUE
@@ -166,7 +166,7 @@ var/const/NETWORK_THIRD_DECK  = "Third Deck"
 	_fully_charged = TRUE
 
 // Main Engine output SMES
-/obj/machinery/power/smes/buildable/preset/siera/engine_main/configure_and_install_coils()
+/obj/machinery/power/smes/buildable/preset/sierra/engine_main/configure_and_install_coils()
 	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
 	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
 	component_parts += new /obj/item/weapon/smes_coil/super_capacity(src)
@@ -178,7 +178,7 @@ var/const/NETWORK_THIRD_DECK  = "Third Deck"
 	_fully_charged = TRUE
 
 // Shuttle SMES
-/obj/machinery/power/smes/buildable/preset/siera/shuttle/configure_and_install_coils()
+/obj/machinery/power/smes/buildable/preset/sierra/shuttle/configure_and_install_coils()
 	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
@@ -187,7 +187,7 @@ var/const/NETWORK_THIRD_DECK  = "Third Deck"
 	_fully_charged = TRUE
 
 // Hangar SMES. Charges the shuttles so needs a pretty big throughput.
-/obj/machinery/power/smes/buildable/preset/siera/hangar/configure_and_install_coils()
+/obj/machinery/power/smes/buildable/preset/sierra/hangar/configure_and_install_coils()
 	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
 	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
 	_input_maxed = TRUE
@@ -207,7 +207,7 @@ var/const/NETWORK_ENGINEERING_OUTPOST = "Engineering Outpost"
 		if(NETWORK_ENGINE, NETWORK_ENGINEERING_OUTPOST)
 			return access_engine
 
-/datum/map/siera/default_internal_channels()
+/datum/map/sierra/default_internal_channels()
 	return list(
 		num2text(PUB_FREQ)   = list(),
 		num2text(AI_FREQ)    = list(access_synth),

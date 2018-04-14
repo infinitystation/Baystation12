@@ -25,9 +25,8 @@
 	use_power = 0
 	unacidable = 1
 
-	light_color = "#7de1e1"
-	light_power = 1
-	light_range = 8
+	light_outer_range = 8
+	light_color="#7de1e1"
 
 	var/sprite_number = 0
 

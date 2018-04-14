@@ -525,3 +525,12 @@
 /obj/item/weapon/paper/compactor
 	name = "compactor guide"
 	info = "<I>Обслуживание гидравлического пресса</i> <br>Кратка&#255; инструкци&#255; по эксплуатации: <br>1) Не помещайте крупные объекты в камеру - поршни выйдут из строя. <br>2) В случае поломки одного из поршей (лампочка будет гореть красным) - пройдите в секцию обслуживания поршней, отверткой открутите панель на неисправном поршне, с помощью гаечного ключа выпустите давление из главной камеры. Не забудьте поставить всё на место по завершению процедуры. <br>3) Оденьте рабочие перчатки и противогаз при обслуживании поршня - возможна утечка горячего воздуха.</b>."
+
+/obj/item/weapon/paper/travelvisa
+	name = "Sol Travel Visa"
+	info = "<center><b><large>Travel Visa of the Sol Central Government</large></b></center><br><center><img src = sollogo.png><br><br><i><small>Issued on behalf of the Secretary-General.</small></i></center><hr><BR>This paper hereby permits the carrier to travel unhindered through Sol territories, colonies, and space for the purpose of pleasure and recreation."
+	desc = "A flimsy piece of laminated cardboard issued by the Sol Central Government."
+
+/obj/item/weapon/paper/travelvisa/New()
+	..()
+	icon_state = "travelvisa"
