@@ -12877,6 +12877,7 @@
 	icon_state = "tube1";
 	dir = 8
 	},
+/obj/vehicle/bike/gyroscooter,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/rd)
 "vA" = (

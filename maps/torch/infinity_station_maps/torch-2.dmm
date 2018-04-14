@@ -3470,17 +3470,6 @@
 "hd" = (
 /turf/simulated/wall,
 /area/crew_quarters/mess)
-"he" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/starboard)
-"hf" = (
-/obj/structure/disposalpipe/down,
-/obj/structure/lattice,
-/turf/simulated/open,
-/area/maintenance/thirddeck/starboard)
 "hg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -3492,10 +3481,6 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
-	},
-/obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
@@ -4269,39 +4254,31 @@
 /turf/simulated/floor/plating,
 /area/crew_quarters/mess)
 "ip" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
+	dir = 4
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/effect/floor_decal/industrial/warning{
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
-"iq" = (
-/obj/structure/disposalpipe/up{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/starboard)
 "ir" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "1-8"
 	},
-/obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9;
+	pixel_y = 0
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
@@ -4950,57 +4927,7 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/mess)
 "jy" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/starboard)
-"jz" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/starboard)
-"jA" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9;
-	pixel_y = 0
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/effect/floor_decal/industrial/warning/corner{
-	icon_state = "warningcorner";
-	dir = 1
-	},
+/obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
 "jB" = (
@@ -16256,16 +16183,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/safe_room/thirddeck)
 "CH" = (
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -24
+/obj/structure/disposalpipe/down{
+	dir = 4
 	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/plating,
+/obj/structure/lattice,
+/turf/simulated/open,
 /area/maintenance/thirddeck/foreport)
 "CI" = (
 /obj/structure/cable/green{
@@ -18471,7 +18393,7 @@
 /turf/simulated/wall,
 /area/maintenance/thirddeck/port)
 "Ha" = (
-/obj/random/closet,
+/obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
 "Hb" = (
@@ -21559,6 +21481,19 @@
 /obj/structure/table/marble,
 /turf/simulated/floor/lino,
 /area/crew_quarters/bar)
+"QM" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_x = 0;
+	pixel_y = 24
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/foreport)
 "QQ" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -21695,6 +21630,13 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
+"WW" = (
+/obj/effect/floor_decal/industrial/warning/full,
+/obj/structure/disposalpipe/up{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/foreport)
 "XJ" = (
 /turf/simulated/wall,
 /area/crew_quarters/bar)
@@ -35785,8 +35727,8 @@ oq
 oq
 oq
 oq
-BX
-CI
+QM
+WW
 AU
 AU
 Fg
@@ -35987,8 +35929,8 @@ xM
 xM
 xM
 xM
-xM
 CJ
+xM
 Dx
 AU
 Fh
@@ -40006,7 +39948,7 @@ cO
 dL
 eS
 bW
-he
+bf
 ip
 jy
 hd
@@ -40208,9 +40150,9 @@ cP
 dL
 eT
 bW
-hf
-iq
-jz
+bs
+ip
+dV
 hd
 ls
 mk
@@ -40412,7 +40354,7 @@ eU
 bW
 hg
 ir
-jA
+cS
 hd
 hd
 ml

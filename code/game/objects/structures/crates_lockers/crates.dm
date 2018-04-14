@@ -187,6 +187,16 @@ obj/structure/closet/crate
 /obj/structure/closet/crate/freezer/rations/WillContain()
 	return list(/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 4)
 
+/obj/structure/closet/crate/freezer/nanoblood
+	name = "nanoblood freezer"
+	desc = "A crate of nanoblood packs. Don't drink it."
+
+/obj/structure/closet/crate/freezer/nanoblood/WillContain()
+	return list(/obj/item/weapon/reagent_containers/ivbag/nanoblood = 4)
+
+/obj/structure/closet/crate/freezer/nanoblood/small/WillContain()
+	return list(/obj/item/weapon/reagent_containers/ivbag/nanoblood = 2)
+
 /obj/structure/closet/crate/bin
 	name = "large bin"
 	desc = "A large bin."
