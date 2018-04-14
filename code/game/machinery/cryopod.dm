@@ -154,6 +154,7 @@
 	anchored = 1
 	dir = WEST
 
+	light_max_bright = 0.25
 	light_outer_range = 2
 	light_color="#00bf00"
 
