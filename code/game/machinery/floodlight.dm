@@ -11,7 +11,7 @@
 	var/unlocked = 0
 	var/open = 0
 
-	var/l_max_bright = 0.8 //brightness of light when on, can be negative
+	var/l_max_bright = 0.75 //brightness of light when on, can be negative
 	var/l_inner_range = 1 //inner range of light when on, can be negative
 	var/l_outer_range = 6 //outer range of light when on, can be negative
 

@@ -221,7 +221,7 @@
 	var/produce_heat = 1500
 	activation_sound = 'sound/effects/flare.ogg'
 
-	flashlight_max_bright = 0.8
+	flashlight_max_bright = 0.75
 	flashlight_inner_range = 0.1
 	flashlight_outer_range = 5
 
@@ -370,7 +370,7 @@
 	w_class = ITEM_SIZE_TINY
 	on = 1 //Bio-luminesence has one setting, on.
 
-	flashlight_max_bright = 1
+	flashlight_max_bright = 0.75
 	flashlight_inner_range = 0.1
 	flashlight_outer_range = 6
 
@@ -394,7 +394,7 @@
 	w_class = ITEM_SIZE_LARGE
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
-	flashlight_max_bright = 1
+	flashlight_max_bright = 0.75
 	flashlight_inner_range = 3
 	flashlight_outer_range = 7
 
