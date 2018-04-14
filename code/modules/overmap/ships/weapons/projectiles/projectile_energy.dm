@@ -44,3 +44,16 @@
 	muzzle_type = /obj/effect/projectile/trilaser/muzzle
 	tracer_type = /obj/effect/projectile/trilaser/tracer
 	impact_type = /obj/effect/projectile/trilaser/impact
+
+/obj/item/projectile/ship_munition/energy/cruiser
+	damage = 2000
+	penetrating = 7
+	armor_penetration = 100
+
+	on_hit(var/atom/target, var/blocked = 0)
+		explosion(target, 2, 4, 5, 7, 0)
+		return 1
+
+	muzzle_type = /obj/effect/projectile/trilaser/muzzle
+	tracer_type = /obj/effect/projectile/trilaser/tracer
+	impact_type = /obj/effect/projectile/trilaser/impact
