@@ -212,9 +212,7 @@ var/list/point_source_descriptions = list(
 							switch(P.get_material_name())
 								if("phoron") phoron_count += P.get_amount()
 								if("platinum") plat_count += P.get_amount()
-						if(istype(A, /obj/item/stack/sheet/refined_scrap))
-							var/obj/item/stack/P = A
-							scrap_count += P.get_amount()
+								if("refscrap") scrap_count += P.get_amount()
 				qdel(MA)
 
 		if(phoron_count)

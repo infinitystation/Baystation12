@@ -17,12 +17,12 @@
 		return
 	if(istype(AM, /mob/living))
 		return
-	if(istype(AM, /obj/item/stack/sheet/refined_scrap))
-		var/obj/item/stack/sheet/refined_scrap/S = AM
+	if(istype(AM, /obj/item/stack/material/refined_scrap))
+		var/obj/item/stack/material/refined_scrap/S = AM
 		scrap_amount += S.get_amount()
 		qdel(S)
 		if(scrap_amount >= stack_amt)
-			new /obj/item/stack/sheet/refined_scrap(loc, stack_amt)
+			new /obj/item/stack/material/refined_scrap(loc, stack_amt)
 			scrap_amount -= stack_amt
 	else
 		AM.forceMove(loc)
@@ -35,5 +35,5 @@
 		return 1
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	visible_message("<span class='notice'>\The [src] was forced to release everything inside.</span>")
-	new /obj/item/stack/sheet/refined_scrap(loc, scrap_amount)
+	new /obj/item/stack/material/refined_scrap(loc, scrap_amount)
 	scrap_amount = 0

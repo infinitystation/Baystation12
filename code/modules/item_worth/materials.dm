@@ -22,6 +22,12 @@
 /material/steel
 	value = 4
 
+/material/scrap
+	value = 3
+
+/material/scrap/refined
+	value = 8
+
 /material/diona
 	value = 5
 

@@ -49,13 +49,5 @@ var/global/list/datum/stack_recipe/scrap_recipes = list ( \
 	new/datum/stack_recipe("cardborg helmet", /obj/item/clothing/head/cardborg), \
 )
 
-/obj/item/stack/sheet/refined_scrap
-	name = "refined scrap"
-	desc = "This is ghetto gold! It could be used as fuel or building material. Even central Command would give cargo points for this."
-	icon = 'icons/obj/scrap/refine.dmi'
-	icon_state = "refined"
-	max_amount = 20
-	amount = 1
-
 /obj/item/weapon/scrap_lump/crush_act()
 	return

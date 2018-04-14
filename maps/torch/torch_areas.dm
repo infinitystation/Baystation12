@@ -1361,6 +1361,11 @@
 	icon_state = "quartstorage"
 	sound_env = LARGE_ENCLOSED
 
+/area/quartermaster/compactor
+	name = "\improper Compactor"
+	icon_state = "quartstorage"
+	sound_env = LARGE_ENCLOSED
+
 // Crew
 
 /area/crew_quarters/sleep/cryo
