@@ -15016,7 +15016,7 @@
 "DH" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/trashcart,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "DI" = (
 /obj/machinery/light/small{
@@ -15024,7 +15024,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "DJ" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -15032,14 +15032,14 @@
 /obj/machinery/camera/network/second_deck{
 	c_tag = "Second Deck - Compactor"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "DK" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "DL" = (
 /obj/structure/cable/green{
@@ -15058,7 +15058,7 @@
 /obj/item/weapon/screwdriver,
 /obj/item/weapon/wrench,
 /obj/item/weapon/paper/compactor,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "DN" = (
 /turf/simulated/wall/r_wall,
@@ -15182,7 +15182,7 @@
 /area/quartermaster/compactor)
 "Eh" = (
 /obj/random/trash,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "Ek" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -15475,7 +15475,7 @@
 /turf/simulated/wall,
 /area/maintenance/seconddeck/foreport)
 "EP" = (
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "ER" = (
 /obj/effect/wingrille_spawn/reinforced,
@@ -15848,7 +15848,7 @@
 /obj/random/junk,
 /obj/random/junk,
 /obj/random/coin,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "FN" = (
 /obj/structure/cable/yellow{
@@ -16343,7 +16343,12 @@
 	id = "compactor"
 	},
 /obj/machinery/recycler,
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/techfloor/orange{
+	tag = "icon-techfloororange_edges (NORTH)";
+	icon_state = "techfloororange_edges";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/compactor)
 "HT" = (
 /obj/item/frame/apc,
@@ -16442,7 +16447,7 @@
 /obj/random/trash,
 /obj/random/junk,
 /obj/item/device/pda/wrist,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "LB" = (
 /obj/structure/cable/green{
@@ -16478,7 +16483,7 @@
 /area/quartermaster/compactor)
 "LO" = (
 /obj/random/junk,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "MA" = (
 /obj/effect/floor_decal/industrial/warning/corner{
@@ -16501,7 +16506,7 @@
 	icon_state = "bulb1";
 	dir = 1
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/compactor)
 "Ob" = (
 /obj/effect/floor_decal/industrial/warning/corner{
@@ -16528,7 +16533,12 @@
 	dir = 4;
 	id = "compactor"
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/techfloor/orange{
+	tag = "icon-techfloororange_edges (NORTH)";
+	icon_state = "techfloororange_edges";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/compactor)
 "Ph" = (
 /obj/machinery/door/airlock/mining{
@@ -16550,14 +16560,19 @@
 	dir = 4;
 	id = "compactor"
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/techfloor/orange{
+	tag = "icon-techfloororange_edges (NORTH)";
+	icon_state = "techfloororange_edges";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/compactor)
 "Sf" = (
 /obj/machinery/door/airlock/glass_mining{
 	name = "Compactor Chamber"
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
 "Ta" = (
 /obj/structure/cable{
@@ -16577,7 +16592,7 @@
 	dir = 8;
 	pixel_x = 22
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "TA" = (
 /obj/structure/fireaxecabinet{
@@ -16591,7 +16606,12 @@
 	id = "compactor"
 	},
 /obj/machinery/light/small,
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/techfloor/orange{
+	tag = "icon-techfloororange_edges (NORTH)";
+	icon_state = "techfloororange_edges";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/compactor)
 "Uy" = (
 /obj/structure/cable{
@@ -16607,7 +16627,12 @@
 /area/maintenance/seconddeck/foreport)
 "UZ" = (
 /obj/machinery/scrap/stacking_machine,
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/techfloor/orange{
+	tag = "icon-techfloororange_edges (NORTHEAST)";
+	icon_state = "techfloororange_edges";
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/compactor)
 "Vd" = (
 /obj/structure/computerframe,
@@ -16618,7 +16643,7 @@
 /area/maintenance/seconddeck/foreport)
 "Vn" = (
 /obj/item/weapon/scrap_lump,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "Vw" = (
 /obj/machinery/light/small{
@@ -16642,7 +16667,7 @@
 /obj/random/trash,
 /obj/random/junk,
 /obj/random/junk,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "VY" = (
 /obj/structure/disposalpipe/down,
@@ -16665,16 +16690,16 @@
 "Xt" = (
 /obj/structure/scrap_cube,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "Xz" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "Yh" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/scrap_cube,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "Yp" = (
 /obj/structure/cable{
@@ -16740,7 +16765,7 @@
 "YM" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "YY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
