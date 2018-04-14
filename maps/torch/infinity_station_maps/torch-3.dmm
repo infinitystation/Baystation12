@@ -15470,7 +15470,8 @@
 /area/maintenance/seconddeck/foreport)
 "EN" = (
 /obj/structure/disposalpipe/segment{
-	dir = 4
+	dir = 2;
+	icon_state = "pipe-c"
 	},
 /turf/simulated/wall,
 /area/maintenance/seconddeck/foreport)
@@ -16489,6 +16490,10 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 8
 	},
+/obj/item/modular_computer/telescreen/preset/trashcompactor{
+	pixel_x = -32;
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
 "MW" = (
@@ -16512,10 +16517,6 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	icon_state = "warningcorner";
 	dir = 1
-	},
-/obj/item/modular_computer/telescreen/preset/trashcompactor{
-	pixel_x = -32;
-	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
@@ -16674,6 +16675,15 @@
 /obj/structure/lattice,
 /turf/simulated/open,
 /area/maintenance/seconddeck/foreport)
+"Wj" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/floor_decal/techfloor/hole/right{
+	tag = "icon-techfloor_hole_right (EAST)";
+	icon_state = "techfloor_hole_right";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/quartermaster/compactor)
 "WJ" = (
 /obj/machinery/alarm{
 	pixel_y = 24
@@ -16686,6 +16696,13 @@
 "WN" = (
 /obj/structure/table/steel,
 /turf/simulated/floor/plating,
+/area/maintenance/seconddeck/foreport)
+"WV" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/wall,
 /area/maintenance/seconddeck/foreport)
 "Xt" = (
 /obj/structure/scrap_cube,
@@ -16773,10 +16790,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
-"ZJ" = (
-/obj/item/hoist_kit,
-/turf/simulated/floor/plating,
-/area/storage/cargo)
 "ZY" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -32458,7 +32471,7 @@ zJ
 FL
 nY
 EN
-nY
+WV
 nY
 nY
 lR
@@ -33263,7 +33276,7 @@ AK
 nY
 Ju
 nY
-DE
+Wj
 Eg
 EP
 VH
@@ -36901,7 +36914,7 @@ Cv
 Di
 Dh
 Dh
-ZJ
+Dh
 Dh
 FO
 EW

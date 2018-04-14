@@ -6507,7 +6507,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "nQ" = (
 /turf/simulated/wall,
@@ -7185,7 +7185,7 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "pg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -7194,7 +7194,7 @@
 	icon_state = "warning";
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "ph" = (
 /obj/structure/reagent_dispensers/watertank,
@@ -7202,7 +7202,7 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "pi" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -7747,19 +7747,19 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 9
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "qm" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "qn" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "qo" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -7908,6 +7908,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (NORTHEAST)";
+	icon_state = "steel_grid";
+	dir = 5
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/center)
 "qB" = (
@@ -7926,6 +7931,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (NORTHEAST)";
+	icon_state = "steel_grid";
+	dir = 5
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
 "qE" = (
@@ -7984,6 +7994,11 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (NORTHEAST)";
+	icon_state = "steel_grid";
+	dir = 5
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
 "qH" = (
@@ -8618,7 +8633,7 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 9
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "rF" = (
 /obj/machinery/hologram/holopad,
@@ -8627,22 +8642,22 @@
 /obj/effect/landmark{
 	name = "lightsout"
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "rG" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/vending/tool,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "rH" = (
 /obj/machinery/vending/parts/research,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "rI" = (
 /obj/machinery/vending/assist,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "rJ" = (
 /obj/structure/table/rack{
@@ -8654,7 +8669,7 @@
 /obj/random/tech_supply,
 /obj/random/tech_supply,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "rK" = (
 /obj/structure/table/rack{
@@ -8667,7 +8682,7 @@
 /obj/random/tech_supply,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/floor_decal/industrial/warning/corner,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "rL" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -9868,38 +9883,38 @@
 	pixel_x = -30;
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "ti" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "tj" = (
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "tk" = (
 /obj/item/device/radio/beacon,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "tl" = (
 /obj/effect/landmark/overmap_target/torch/fifth/dockB,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "tm" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "tn" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/glass{
 	name = "Primary Tool Storage"
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "to" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -10080,6 +10095,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
+	},
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (SOUTHWEST)";
+	icon_state = "steel_grid";
+	dir = 10
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
@@ -10707,7 +10727,7 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/industrial/warning/corner,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "uL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -10718,39 +10738,39 @@
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "uM" = (
 /obj/item/weapon/stool,
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 8
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "uN" = (
 /obj/structure/table/standard,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "uO" = (
 /obj/machinery/light,
 /obj/structure/table/standard,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "uP" = (
 /obj/structure/table/standard,
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/folder,
 /obj/item/weapon/pen,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "uQ" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/item/modular_computer/console/preset/civilian,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "uR" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -10758,7 +10778,7 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "uS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -11232,7 +11252,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "vM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -19372,6 +19392,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (SOUTHWEST)";
+	icon_state = "steel_grid";
+	dir = 10
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/center)
