@@ -548,7 +548,7 @@
 	item_state = "c_tube"
 	matter = list("glass" = 100)
 
-	b_max_bright = 1
+	b_max_bright = 0.9
 	b_outer_range = 6
 	b_colour = "#ffffff"
 	lighting_modes = list(
@@ -560,7 +560,7 @@
 	w_class = ITEM_SIZE_SMALL
 	name = "large light tube"
 	b_outer_range = 8
-	b_max_bright = 1.2
+	b_max_bright = 0.9
 
 /obj/item/weapon/light/bulb
 	name = "light bulb"
