@@ -2,7 +2,7 @@
 
 **Сайт оригинального разработчика:** https://baystation12.net  
 **Оригинальный код:** https://github.com/Baystation12/Baystation12  
-**Код**: https://github.com/infinitystation/Baystation12
+**Код**: https://github.com/infinitystation/Baystation12  
 **Сайт разработчика:** https://infinity-ss13.ru/  
 **Discord**: https://discordapp.com/invite/N4atUkH  
 **Используемые карты:** Модифицированный Torch
