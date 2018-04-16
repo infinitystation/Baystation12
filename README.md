@@ -1,6 +1,11 @@
-# baystation12
+# Модифицированный baystation12
 
-[Website](http://baystation12.net/) - [Code](http://github.com/Baystation12/Baystation12/) - [IRC](irc://irc.sorcery.net/#codershuttle)
+**Сайт оригинального разработчика:** https://baystation12.net  
+**Оригинальный код:** https://github.com/Baystation12/Baystation12  
+**Код**: https://github.com/infinitystation/Baystation12
+**Сайт разработчика:** https://infinity-ss13.ru/  
+**Discord**: https://discordapp.com/invite/N4atUkH  
+**Используемые карты:** Модифицированный Torch
 
 ---
 [![Build Status](https://travis-ci.org/infinitystation/Baystation12.svg?branch=master)](https://travis-ci.org/infinitystation/Baystation12)
