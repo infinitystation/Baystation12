@@ -505,7 +505,7 @@
 	else
 		return ..() //once open, behave like normal
 
-/obj/item/weapon/gun/projectile/automatic/l6_saw/update_icon()
+/obj/item/weapon/gun/projectile/automatic/m60/update_icon()
 	if(istype(ammo_magazine, /obj/item/ammo_magazine/box))
 		icon_state = "m60[cover_open ? "open" : "closed"]"
 		item_state = "m60"
