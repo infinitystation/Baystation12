@@ -10935,9 +10935,6 @@
 /obj/structure/closet/l3closet/security,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/item/device/radio/intercom{
 	pixel_y = 22
 	},
@@ -10952,6 +10949,9 @@
 	pixel_y = 30
 	},
 /obj/structure/closet/bombclosetsecurity,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/security/equipment)
 "tv" = (
@@ -13677,9 +13677,6 @@
 /area/security/processing)
 "xq" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -22
@@ -13710,6 +13707,9 @@
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 32;
 	pixel_y = 0
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/security/equipment)
@@ -14934,6 +14934,9 @@
 	pixel_x = -22
 	},
 /obj/structure/closet/secure_closet/security_torch,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/security/equipment)
 "zz" = (
@@ -14952,10 +14955,6 @@
 /obj/structure/table/steel,
 /obj/item/stack/package_wrap/twenty_five,
 /obj/item/weapon/hand_labeler,
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
-	},
 /obj/item/device/destTagger{
 	pixel_y = 13
 	},
@@ -15541,9 +15540,6 @@
 /turf/simulated/floor/tiled,
 /area/security/processing)
 "AD" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/tiled,
 /area/security/equipment)

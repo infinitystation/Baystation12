@@ -13218,7 +13218,7 @@
 "yS" = (
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	health = null
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
@@ -17728,7 +17728,7 @@
 "KL" = (
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	health = null
 	},
 /obj/structure/disposalpipe/sortjunction/untagged/flipped{
 	dir = 8
@@ -18916,7 +18916,7 @@
 "QQ" = (
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	health = null
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -19237,7 +19237,7 @@
 "Tb" = (
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	health = null
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
@@ -20174,7 +20174,7 @@
 "YN" = (
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	health = null
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -20355,7 +20355,7 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	health = null
 	},
 /obj/structure/closet/secure_closet/decktech,
 /obj/item/weapon/coin/silver{
@@ -42367,7 +42367,7 @@ tW
 aO
 sw
 aO
-ge
+aO
 aO
 Bk
 aO

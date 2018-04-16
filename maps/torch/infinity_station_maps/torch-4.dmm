@@ -491,6 +491,12 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
+/obj/machinery/alarm{
+	dir = 4;
+	icon_state = "alarm0";
+	pixel_x = -22;
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "aba" = (
@@ -682,6 +688,11 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
+/obj/machinery/alarm{
+	dir = 8;
+	icon_state = "alarm0";
+	pixel_x = 24
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "abm" = (
@@ -746,6 +757,12 @@
 /obj/item/weapon/bedsheet,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	icon_state = "alarm0";
+	pixel_x = -22;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
@@ -3566,10 +3583,6 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "agF" = (
-/obj/machinery/light{
-	icon_state = "tube1";
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
@@ -3638,35 +3651,33 @@
 /area/medical/surgery)
 "agJ" = (
 /obj/structure/closet/wardrobe/medic_torch,
-/obj/effect/floor_decal/borderfloorwhite{
-	icon_state = "borderfloor_white";
-	dir = 9
+/obj/effect/floor_decal/borderfloorwhite/cee{
+	tag = "icon-borderfloorcee_white (NORTH)";
+	icon_state = "borderfloorcee_white";
+	dir = 1
 	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	icon_state = "bordercolor";
-	dir = 9
+/obj/effect/floor_decal/corner/paleblue/bordercee,
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	icon_state = "borderfloorcorner2_white";
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	tag = "icon-borderfloorcorner2_white (NORTHEAST)";
+	icon_state = "borderfloorcorner2_white";
+	dir = 5
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTHEAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 5
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	icon_state = "bordercolorcorner2";
+	dir = 10
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/locker)
 "agK" = (
-/obj/effect/floor_decal/borderfloorwhite{
-	icon_state = "borderfloor_white";
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	icon_state = "bordercolor";
-	dir = 1
-	},
-/obj/effect/floor_decal/borderfloorwhite/corner2{
-	tag = "icon-borderfloorcorner2_white (NORTH)";
-	icon_state = "borderfloorcorner2_white";
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/paleblue/bordercorner2{
-	tag = "icon-bordercolorcorner2 (NORTH)";
-	icon_state = "bordercolorcorner2";
-	dir = 1
-	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -3680,6 +3691,32 @@
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
+	},
+/obj/effect/floor_decal/borderfloorwhite{
+	icon_state = "borderfloor_white";
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	icon_state = "bordercolor";
+	dir = 9
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	icon_state = "borderfloorcorner2_white";
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	tag = "icon-borderfloorcorner2_white (NORTH)";
+	icon_state = "borderfloorcorner2_white";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTH)";
+	icon_state = "bordercolorcorner2";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	icon_state = "bordercolorcorner2";
+	dir = 10
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/locker)
@@ -4406,18 +4443,33 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/paleblue{
-	icon_state = "corner_white";
-	dir = 6
-	},
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 8;
-	icon_state = "borderfloor_white";
-	pixel_x = 0
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	icon_state = "bordercolor";
+/obj/effect/floor_decal/borderfloorwhite/cee{
+	tag = "icon-borderfloorcee_white (WEST)";
+	icon_state = "borderfloorcee_white";
 	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercee{
+	tag = "icon-bordercolorcee (EAST)";
+	icon_state = "bordercolorcee";
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	tag = "icon-borderfloorcorner2_white (NORTH)";
+	icon_state = "borderfloorcorner2_white";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	icon_state = "borderfloorcorner2_white";
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	icon_state = "bordercolorcorner2";
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTH)";
+	icon_state = "bordercolorcorner2";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/locker)
@@ -5132,23 +5184,37 @@
 /area/medical/surgery)
 "ajb" = (
 /obj/structure/closet/secure_closet/medical_torch,
-/obj/effect/floor_decal/corner/paleblue{
-	icon_state = "corner_white";
-	dir = 6
-	},
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 8;
-	icon_state = "borderfloor_white";
-	pixel_x = 0
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	icon_state = "bordercolor";
+/obj/machinery/light{
+	icon_state = "tube1";
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1";
-	pixel_y = 0
+/obj/effect/floor_decal/borderfloorwhite/cee{
+	tag = "icon-borderfloorcee_white (WEST)";
+	icon_state = "borderfloorcee_white";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercee{
+	tag = "icon-bordercolorcee (EAST)";
+	icon_state = "bordercolorcee";
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	tag = "icon-borderfloorcorner2_white (NORTH)";
+	icon_state = "borderfloorcorner2_white";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	icon_state = "borderfloorcorner2_white";
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	icon_state = "bordercolorcorner2";
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTH)";
+	icon_state = "bordercolorcorner2";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/locker)
@@ -5382,12 +5448,20 @@
 	pixel_y = 0
 	},
 /obj/item/weapon/soap/nanotrasen,
+/obj/structure/curtain/open/shower,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head/aux)
 "ajF" = (
 /obj/machinery/shower{
 	icon_state = "shower";
 	dir = 8
+	},
+/obj/structure/curtain/open/shower,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head/aux)
@@ -5597,18 +5671,33 @@
 "ajW" = (
 /obj/structure/closet/secure_closet/medical_torch,
 /obj/structure/window/reinforced,
-/obj/effect/floor_decal/corner/paleblue{
-	icon_state = "corner_white";
-	dir = 6
-	},
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 8;
-	icon_state = "borderfloor_white";
-	pixel_x = 0
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	icon_state = "bordercolor";
+/obj/effect/floor_decal/borderfloorwhite/cee{
+	tag = "icon-borderfloorcee_white (WEST)";
+	icon_state = "borderfloorcee_white";
 	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercee{
+	tag = "icon-bordercolorcee (EAST)";
+	icon_state = "bordercolorcee";
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	tag = "icon-borderfloorcorner2_white (NORTH)";
+	icon_state = "borderfloorcorner2_white";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	icon_state = "borderfloorcorner2_white";
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	icon_state = "bordercolorcorner2";
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTH)";
+	icon_state = "bordercolorcorner2";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/locker)
@@ -5945,6 +6034,13 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head/aux)
 "akw" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/alarm{
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head/aux)
 "akx" = (
@@ -5952,6 +6048,9 @@
 /obj/machinery/newscaster{
 	pixel_x = 0;
 	pixel_y = -28
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head/aux)
@@ -6418,6 +6517,41 @@
 /area/medical/subacute)
 "ale" = (
 /obj/structure/closet/wardrobe/chemistry_white,
+/obj/effect/floor_decal/borderfloorwhite/cee,
+/obj/effect/floor_decal/corner/paleblue/bordercee{
+	tag = "icon-bordercolorcee (NORTH)";
+	icon_state = "bordercolorcee";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	icon_state = "borderfloorcorner2_white";
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	tag = "icon-borderfloorcorner2_white (SOUTHEAST)";
+	icon_state = "borderfloorcorner2_white";
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (SOUTHEAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	icon_state = "bordercolorcorner2";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/medical/locker)
+"alf" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = -24
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
 /obj/effect/floor_decal/borderfloorwhite{
 	icon_state = "borderfloor_white";
 	dir = 10
@@ -6426,11 +6560,14 @@
 	icon_state = "bordercolor";
 	dir = 10
 	},
-/turf/simulated/floor/tiled/white,
-/area/medical/locker)
-"alf" = (
-/obj/effect/floor_decal/borderfloorwhite,
-/obj/effect/floor_decal/corner/paleblue/border,
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	icon_state = "borderfloorcorner2_white";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	icon_state = "bordercolorcorner2";
+	dir = 8
+	},
 /obj/effect/floor_decal/borderfloorwhite/corner2{
 	icon_state = "borderfloorcorner2_white";
 	dir = 9
@@ -6438,14 +6575,6 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	icon_state = "bordercolorcorner2";
 	dir = 9
-	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_x = 0;
-	pixel_y = -24
-	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/locker)
@@ -6701,6 +6830,8 @@
 /obj/machinery/door/airlock{
 	name = "Showers"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head/aux)
 "alG" = (
@@ -7326,7 +7457,7 @@
 /obj/effect/floor_decal/corner/blue/three_quarters{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "amE" = (
 /turf/simulated/floor/tiled/techmaint,
@@ -7335,7 +7466,7 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 22
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "amG" = (
 /obj/machinery/light{
@@ -7390,9 +7521,10 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head/aux)
 "amL" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head/aux)
 "amM" = (
@@ -7928,9 +8060,6 @@
 /area/medical/infirmary)
 "anu" = (
 /obj/machinery/photocopier,
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -8204,7 +8333,7 @@
 	},
 /obj/item/weapon/pen,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "anR" = (
 /obj/structure/cable/green{
@@ -8240,8 +8369,8 @@
 	pixel_x = 32
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head/aux)
@@ -8458,11 +8587,6 @@
 	icon_state = "bordercolorcorner2";
 	dir = 10
 	},
-/obj/effect/floor_decal/steeldecal/steel_decals10{
-	tag = "icon-steel_decals10 (NORTH)";
-	icon_state = "steel_decals10";
-	dir = 1
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	tag = "icon-steel_decals6 (SOUTHWEST)";
 	icon_state = "steel_decals6";
@@ -8591,6 +8715,10 @@
 	icon_state = "bordercolorcorner2";
 	dir = 10
 	},
+/obj/machinery/light{
+	icon_state = "tube1";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmary)
 "aox" = (
@@ -8613,6 +8741,9 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	icon_state = "bordercolor";
+	dir = 4
+	},
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
@@ -8704,7 +8835,7 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "aoI" = (
 /obj/effect/floor_decal/scglogo{
@@ -8712,7 +8843,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "aoJ" = (
 /obj/effect/floor_decal/scglogo{
@@ -8720,7 +8851,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "aoK" = (
 /obj/structure/bed/chair{
@@ -8729,7 +8860,7 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "aoL" = (
 /obj/structure/cable/green{
@@ -9342,9 +9473,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/machinery/door/airlock/glass_medical{
 	id_tag = "TreatmentCenter";
 	name = "Infirmary Wing";
@@ -9567,7 +9695,7 @@
 	dir = 8;
 	icon_state = "1,1"
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "apX" = (
 /obj/structure/bed/chair{
@@ -9578,7 +9706,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "apY" = (
 /obj/machinery/hologram/holopad,
@@ -9879,6 +10007,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	icon_state = "borderfloorcorner2_white";
+	dir = 9
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmary)
 "aqz" = (
@@ -10124,7 +10256,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "aqS" = (
 /obj/structure/cable/green{
@@ -10138,7 +10270,7 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "aqT" = (
 /obj/structure/disposalpipe/segment{
@@ -10737,9 +10869,6 @@
 /turf/simulated/wall,
 /area/chapel/main)
 "arP" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -10754,11 +10883,13 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "arR" = (
@@ -10861,7 +10992,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "asa" = (
 /obj/structure/cable/green{
@@ -10872,7 +11003,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "asb" = (
 /obj/structure/bed/chair{
@@ -10884,7 +11015,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "asc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -10899,7 +11030,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "asd" = (
 /obj/structure/disposalpipe/segment,
@@ -11636,6 +11767,9 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "ata" = (
@@ -11645,6 +11779,10 @@
 	icon_state = "4-8"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9;
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "atb" = (
@@ -11719,20 +11857,20 @@
 	pixel_y = -24
 	},
 /obj/structure/cable/green,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "ath" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
 	pixel_y = -22
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "ati" = (
 /obj/effect/floor_decal/corner/blue/three_quarters{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "atj" = (
 /obj/machinery/disposal,
@@ -11927,7 +12065,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techmaint,
 /area/assembly/chargebay)
 "atA" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -12803,14 +12941,7 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white,
 /area/medical/equipstorage)
-"auS" = (
-/obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/tiled/white,
-/area/medical/equipstorage)
 "auT" = (
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white,
@@ -13546,12 +13677,10 @@
 	req_access = list(5)
 	},
 /obj/machinery/mech_recharger,
+/obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/medical/equipstorage)
 "awc" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
@@ -14053,7 +14182,7 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/effect/floor_decal/industrial/warning/half,
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techmaint,
 /area/assembly/chargebay)
 "awU" = (
 /obj/effect/wingrille_spawn/reinforced,
@@ -14603,6 +14732,11 @@
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (SOUTHEAST)";
+	icon_state = "steel_grid";
+	dir = 6
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "axY" = (
@@ -14620,15 +14754,14 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "axZ" = (
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 1
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (NORTHWEST)";
+	icon_state = "steel_grid";
+	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aya" = (
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 1
-	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -14640,36 +14773,70 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "ayb" = (
-/obj/effect/floor_decal/corner/paleblue{
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/effect/floor_decal/borderfloor{
+	tag = "icon-borderfloor (NORTH)";
+	icon_state = "borderfloor";
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/effect/floor_decal/corner/paleblue/border{
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2 (EAST)";
+	icon_state = "borderfloorcorner2";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (EAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "ayc" = (
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 1
-	},
 /obj/structure/sign/bluecross_2{
 	pixel_y = 32
+	},
+/obj/effect/floor_decal/borderfloor{
+	tag = "icon-borderfloor (NORTH)";
+	icon_state = "borderfloor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	icon_state = "bordercolor";
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "ayd" = (
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 1
-	},
 /obj/machinery/alarm{
 	pixel_y = 24
+	},
+/obj/effect/floor_decal/borderfloor{
+	tag = "icon-borderfloor (NORTH)";
+	icon_state = "borderfloor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	icon_state = "bordercolor";
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aye" = (
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 1
-	},
 /obj/machinery/atm{
 	pixel_y = 32
+	},
+/obj/effect/floor_decal/borderfloor{
+	tag = "icon-borderfloor (NORTH)";
+	icon_state = "borderfloor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	icon_state = "bordercolor";
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
@@ -14680,12 +14847,28 @@
 /obj/structure/closet/hydrant{
 	pixel_y = 32
 	},
+/obj/effect/floor_decal/borderfloor{
+	tag = "icon-borderfloor (NORTH)";
+	icon_state = "borderfloor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2 (NORTH)";
+	icon_state = "borderfloorcorner2";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTH)";
+	icon_state = "bordercolorcorner2";
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "ayg" = (
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 1
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
@@ -14693,9 +14876,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "ayh" = (
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 1
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -14706,32 +14886,54 @@
 "ayi" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/half{
-	icon_state = "warninghalf";
+/turf/simulated/floor/tiled/steel_grid,
+/area/hallway/primary/firstdeck/aft)
+"ayj" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (NORTHWEST)";
+	icon_state = "steel_grid";
+	dir = 9
+	},
+/obj/effect/floor_decal/borderfloor/corner{
+	tag = "icon-borderfloorcorner (EAST)";
+	icon_state = "borderfloorcorner";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/beige/bordercorner{
+	tag = "icon-bordercolorcorner (EAST)";
+	icon_state = "bordercolorcorner";
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
-"ayj" = (
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 1
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled,
-/area/hallway/primary/firstdeck/aft)
 "ayk" = (
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 1
-	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor{
+	tag = "icon-borderfloor (NORTH)";
+	icon_state = "borderfloor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	tag = "icon-bordercolor (NORTH)";
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2 (EAST)";
+	icon_state = "borderfloorcorner2";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/beige/bordercorner2{
+	tag = "icon-bordercolorcorner2 (EAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "ayl" = (
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 1
-	},
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
@@ -14742,19 +14944,16 @@
 	pixel_x = 0;
 	pixel_y = 24
 	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/firstdeck/aft)
-"aym" = (
-/obj/effect/floor_decal/corner/paleblue{
+/obj/effect/floor_decal/borderfloor{
+	tag = "icon-borderfloor (NORTH)";
+	icon_state = "borderfloor";
 	dir = 1
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/effect/floor_decal/corner/lightgrey/border{
+	tag = "icon-bordercolor (NORTH)";
+	icon_state = "bordercolor";
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "ayn" = (
@@ -15528,11 +15727,7 @@
 	sortType = "Miscellaneous Research"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/half{
-	icon_state = "warninghalf";
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/firstdeck/aft)
 "azn" = (
 /obj/structure/cable/green{
@@ -15550,6 +15745,11 @@
 	dir = 4;
 	name = "Chemistry";
 	sortType = "Chemistry"
+	},
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (NORTHWEST)";
+	icon_state = "steel_grid";
+	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
@@ -15655,11 +15855,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/half{
-	icon_state = "warninghalf";
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/firstdeck/aft)
 "azt" = (
 /obj/structure/cable/green{
@@ -16095,6 +16291,11 @@
 	pixel_y = -32;
 	pixel_z = -3
 	},
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (SOUTHEAST)";
+	icon_state = "steel_grid";
+	dir = 6
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "aAh" = (
@@ -16107,38 +16308,36 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "aAi" = (
-/obj/effect/floor_decal/corner/purple{
-	dir = 8
+/obj/effect/floor_decal/borderfloor/corner,
+/obj/effect/floor_decal/corner/purple/bordercorner,
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (NORTHWEST)";
+	icon_state = "steel_grid";
+	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAj" = (
-/obj/effect/floor_decal/corner/purple{
-	dir = 8
-	},
 /obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAk" = (
-/obj/effect/floor_decal/corner/purple{
-	dir = 8
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAl" = (
-/obj/effect/floor_decal/corner/purple{
-	dir = 8
-	},
 /obj/machinery/light,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAm" = (
-/obj/effect/floor_decal/corner/purple{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
@@ -16153,9 +16352,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAn" = (
-/obj/effect/floor_decal/corner/purple{
-	dir = 8
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-c"
@@ -16163,43 +16359,52 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAo" = (
-/obj/effect/floor_decal/corner/purple{
-	dir = 8
-	},
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_x = 0;
 	pixel_y = -24
 	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAp" = (
-/obj/effect/floor_decal/corner/purple{
-	dir = 8
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
 /obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAq" = (
-/obj/effect/floor_decal/corner/purple{
-	dir = 8
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
 	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAr" = (
-/obj/effect/floor_decal/corner/purple{
-	dir = 8
-	},
 /obj/machinery/camera/network/first_deck{
 	c_tag = "First Deck Hallway - Aft";
 	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner{
+	tag = "icon-borderfloorcorner (WEST)";
+	icon_state = "borderfloorcorner";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/purple/bordercorner{
+	tag = "icon-bordercolorcorner (WEST)";
+	icon_state = "bordercolorcorner";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (SOUTHEAST)";
+	icon_state = "steel_grid";
+	dir = 6
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
@@ -16210,47 +16415,41 @@
 	icon_state = "pipe-c"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/half{
-	icon_state = "warninghalf";
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/firstdeck/aft)
 "aAt" = (
-/obj/effect/floor_decal/corner/purple{
-	dir = 8
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
 	},
+/obj/effect/floor_decal/borderfloor/corner,
+/obj/effect/floor_decal/corner/purple/bordercorner,
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (NORTHWEST)";
+	icon_state = "steel_grid";
+	dir = 9
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAu" = (
-/obj/effect/floor_decal/corner/purple{
-	dir = 8
-	},
 /obj/item/device/radio/intercom{
 	dir = 1;
 	pixel_y = -22
 	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAv" = (
-/obj/effect/floor_decal/corner/purple{
-	dir = 8
-	},
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
 	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAw" = (
-/obj/effect/floor_decal/corner/purple{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/blue,
 /obj/machinery/camera/network/first_deck{
 	c_tag = "First Deck Hallway - Teleporter";
 	dir = 1
@@ -16258,25 +16457,21 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/firstdeck/aft)
-"aAx" = (
-/obj/effect/floor_decal/corner/blue{
-	dir = 10
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2 (NORTHWEST)";
+	icon_state = "borderfloorcorner2";
+	dir = 9
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/effect/floor_decal/corner/blue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTHWEST)";
+	icon_state = "bordercolorcorner2";
+	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAy" = (
-/obj/effect/floor_decal/corner/blue{
-	dir = 8
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
@@ -16285,14 +16480,34 @@
 	pixel_x = 0;
 	pixel_y = -24
 	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/blue/border,
+/obj/effect/floor_decal/borderfloor/corner2,
+/obj/effect/floor_decal/corner/blue/bordercorner2,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAz" = (
-/obj/effect/floor_decal/industrial/warning/corner,
 /obj/machinery/light,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/blue/border,
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2 (NORTHWEST)";
+	icon_state = "borderfloorcorner2";
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTHWEST)";
+	icon_state = "bordercolorcorner2";
+	dir = 9
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aAA" = (
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (SOUTHEAST)";
+	icon_state = "steel_grid";
+	dir = 6
+	},
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
@@ -16864,12 +17079,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/teleporter/firstdeck)
 "aBH" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/blast/shutters{
-	dir = 2;
+	dir = 1;
 	id = "teleport1";
 	name = "First Deck Teleporter Access Shutters"
 	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/teleporter/firstdeck)
 "aBI" = (
@@ -17669,9 +17884,6 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/machinery/button/windowtint{
 	id = "counsel_windows";
 	pixel_x = -6;
@@ -18213,9 +18425,7 @@
 /obj/machinery/atmospherics/valve/shutoff{
 	dir = 4
 	},
-/obj/effect/floor_decal/industrial/shutoff{
-	dir = 4
-	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central6,
 /turf/simulated/floor/tiled/white,
 /area/rnd/entry)
 "aDZ" = (
@@ -18368,9 +18578,6 @@
 /obj/item/weapon/pen,
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/folder/nt,
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/white,
 /area/rnd/breakroom)
@@ -18969,11 +19176,11 @@
 /obj/item/weapon/pen,
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/folder/nt,
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/structure/window/reinforced{
 	dir = 1
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/breakroom)
@@ -19786,7 +19993,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/rnd/breakroom)
 "aGD" = (
@@ -21898,7 +22104,7 @@
 	},
 /obj/machinery/chem_master,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/misc_lab)
 "aKb" = (
 /obj/structure/cable/green{
@@ -22499,7 +22705,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/misc_lab)
 "aLi" = (
 /obj/structure/cable/green{
@@ -25695,11 +25901,8 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/blanks)
@@ -25717,8 +25920,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/blanks)
@@ -30027,6 +30230,19 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
+"bAF" = (
+/obj/effect/floor_decal/borderfloor{
+	tag = "icon-borderfloor (NORTH)";
+	icon_state = "borderfloor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	tag = "icon-bordercolor (NORTH)";
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
 "bGJ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -30047,6 +30263,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
+"bPF" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
 "bRf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -30061,7 +30286,7 @@
 /obj/structure/sign/double/icarus/solgovflag/right{
 	pixel_y = 32
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "cEz" = (
 /obj/structure/table/marble,
@@ -30087,6 +30312,24 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/medical/locker)
+"dql" = (
+/obj/effect/floor_decal/borderfloor/corner{
+	tag = "icon-borderfloorcorner (NORTH)";
+	icon_state = "borderfloorcorner";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/lightgrey/bordercorner{
+	tag = "icon-bordercolorcorner (NORTH)";
+	icon_state = "bordercolorcorner";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (SOUTHEAST)";
+	icon_state = "steel_grid";
+	dir = 6
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
 "erH" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -30110,13 +30353,81 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/medical/locker)
+"feb" = (
+/obj/effect/floor_decal/borderfloor{
+	tag = "icon-borderfloor (NORTH)";
+	icon_state = "borderfloor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	tag = "icon-bordercolor (NORTH)";
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
+"gtO" = (
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
 "hhC" = (
 /obj/effect/floor_decal/scglogo{
 	icon_state = "0,1";
 	dir = 8
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
+"hmF" = (
+/obj/effect/floor_decal/corner/blue{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/command/conference)
+"hrM" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (SOUTHEAST)";
+	icon_state = "steel_grid";
+	dir = 6
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/center)
+"hxE" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (NORTHWEST)";
+	icon_state = "steel_grid";
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
 "hzJ" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -30128,11 +30439,40 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/locker)
+"hEm" = (
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
+/obj/effect/floor_decal/borderfloor/corner2,
+/obj/effect/floor_decal/corner/purple/bordercorner2,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
+"iKz" = (
+/obj/effect/floor_decal/borderfloor{
+	tag = "icon-borderfloor (NORTH)";
+	icon_state = "borderfloor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2 (EAST)";
+	icon_state = "borderfloorcorner2";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (EAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
 "jBf" = (
 /obj/effect/floor_decal/corner/blue/three_quarters{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "jCY" = (
 /obj/effect/floor_decal/corner/pink/bordercorner{
@@ -30162,6 +30502,9 @@
 /obj/effect/floor_decal/corner/pink/border,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
+"kLO" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/command/conference)
 "kMY" = (
 /obj/effect/wingrille_spawn/reinforced/full,
 /obj/machinery/door/blast/regular/open{
@@ -30198,6 +30541,21 @@
 /obj/effect/floor_decal/corner/pink/bordercorner,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
+"lWc" = (
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2 (NORTHWEST)";
+	icon_state = "borderfloorcorner2";
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/purple/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTHWEST)";
+	icon_state = "bordercolorcorner2";
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
 "meQ" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -30212,8 +30570,20 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
+"mtc" = (
+/obj/effect/floor_decal/borderfloor{
+	tag = "icon-borderfloor (NORTH)";
+	icon_state = "borderfloor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
 "mFr" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -30240,8 +30610,37 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
+"nqP" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/effect/floor_decal/borderfloor{
+	tag = "icon-borderfloor (NORTH)";
+	icon_state = "borderfloor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	tag = "icon-bordercolor (NORTH)";
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2 (NORTH)";
+	icon_state = "borderfloorcorner2";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/beige/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTH)";
+	icon_state = "bordercolorcorner2";
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
+"orV" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
 "oZQ" = (
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/pink/border,
@@ -30256,6 +30655,30 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
+"pqA" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/borderfloor{
+	tag = "icon-borderfloor (NORTH)";
+	icon_state = "borderfloor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	tag = "icon-bordercolor (NORTH)";
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2 (NORTH)";
+	icon_state = "borderfloorcorner2";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/lightgrey/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTH)";
+	icon_state = "bordercolorcorner2";
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
 "pDI" = (
 /obj/structure/closet/crate/secure/biohazard/blanks,
 /turf/simulated/floor/tiled/techmaint,
@@ -30266,8 +30689,14 @@
 	pixel_x = 4
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
+"qHk" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/crew_quarters/head/aux)
 "qMd" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -30286,19 +30715,38 @@
 /area/medical/infirmary)
 "qYW" = (
 /obj/structure/closet/crate/secure/biohazard/blanks,
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/blanks)
 "rje" = (
 /obj/item/weapon/stool/padded,
-/obj/effect/floor_decal/corner/paleblue{
-	icon_state = "corner_white";
-	dir = 9
-	},
 /turf/simulated/floor/tiled/white,
 /area/medical/locker)
+"rrq" = (
+/obj/effect/floor_decal/borderfloor{
+	tag = "icon-borderfloor (NORTH)";
+	icon_state = "borderfloor";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	tag = "icon-bordercolor (NORTH)";
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2 (EAST)";
+	icon_state = "borderfloorcorner2";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/lightgrey/bordercorner2{
+	tag = "icon-bordercolorcorner2 (EAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
 "rrN" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	icon_state = "borderfloor_white";
@@ -30320,6 +30768,22 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/command/conference)
+"sWg" = (
+/obj/effect/floor_decal/corner/green{
+	dir = 10
+	},
+/obj/structure/bed/padded,
+/obj/item/weapon/bedsheet,
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	icon_state = "alarm0";
+	pixel_x = 24
+	},
+/turf/simulated/floor/tiled/white,
+/area/medical/virology)
 "tcO" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -30382,7 +30846,7 @@
 /area/medical/sleeper)
 "tRB" = (
 /obj/structure/table/steel_reinforced,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "uJz" = (
 /obj/effect/floor_decal/borderfloorwhite{
@@ -30417,6 +30881,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
+"wLD" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/wall,
+/area/crew_quarters/head/aux)
 "wOA" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -30426,11 +30896,57 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 "wSk" = (
 /obj/effect/floor_decal/corner/blue/three_quarters,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techfloor,
+/area/command/conference)
+"xxS" = (
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (SOUTHEAST)";
+	icon_state = "steel_grid";
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloor/corner{
+	tag = "icon-borderfloorcorner (NORTH)";
+	icon_state = "borderfloorcorner";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner{
+	tag = "icon-bordercolorcorner (NORTH)";
+	icon_state = "bordercolorcorner";
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
+"xDv" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_steel_grid{
+	tag = "icon-steel_grid (SOUTHEAST)";
+	icon_state = "steel_grid";
+	dir = 6
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/aft)
+"xSp" = (
+/obj/effect/floor_decal/corner/blue{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
 /area/command/conference)
 
 (1,1,1) = {"
@@ -39813,8 +40329,8 @@ aeb
 akn
 aeb
 amD
-anP
-anP
+hmF
+hmF
 aoH
 aoH
 aoH
@@ -40020,7 +40536,7 @@ aoI
 wOA
 aqR
 arZ
-amE
+kLO
 auk
 avl
 aww
@@ -40418,7 +40934,7 @@ aeb
 ajz
 akp
 aeb
-amE
+kLO
 qcr
 aoJ
 apX
@@ -40621,8 +41137,8 @@ ajA
 akq
 liw
 jBf
-rCz
-rCz
+xSp
+xSp
 aoK
 aqS
 asc
@@ -42233,7 +42749,7 @@ afj
 aej
 ahp
 aiz
-aiz
+wLD
 akw
 alF
 amL
@@ -42638,7 +43154,7 @@ aed
 ahq
 aiz
 ajF
-ajF
+qHk
 aiz
 amM
 aiz
@@ -50327,7 +50843,7 @@ auG
 avR
 ary
 axX
-ayS
+hrM
 aAg
 aBk
 aCB
@@ -50731,7 +51247,7 @@ auI
 avT
 aru
 axZ
-azc
+hxE
 aAi
 aBn
 aCC
@@ -50934,7 +51450,7 @@ avU
 awV
 aya
 azd
-aAi
+gtO
 aBo
 aCD
 aDS
@@ -51134,7 +51650,7 @@ atJ
 auK
 avV
 awW
-axZ
+axt
 aze
 aAj
 aBp
@@ -51742,7 +52258,7 @@ avX
 asL
 ayd
 azc
-aAi
+lWc
 aBs
 aCH
 aDW
@@ -51942,7 +52458,7 @@ atM
 auO
 avY
 awX
-axZ
+mtc
 azh
 aAm
 aBt
@@ -52144,7 +52660,7 @@ atN
 auP
 avZ
 awX
-axZ
+mtc
 azi
 aAn
 aBu
@@ -52321,7 +52837,7 @@ aaE
 aaT
 abc
 abn
-abu
+sWg
 aae
 abt
 abF
@@ -52348,7 +52864,7 @@ awa
 asL
 aye
 azc
-aAi
+hEm
 aBs
 aCK
 aDZ
@@ -52747,7 +53263,7 @@ aqC
 arH
 asP
 atP
-auS
+atS
 awb
 awY
 ayg
@@ -53154,7 +53670,7 @@ atR
 atS
 awd
 axa
-axZ
+iKz
 azc
 aAq
 aBy
@@ -53356,9 +53872,9 @@ atS
 atS
 awe
 axa
-axZ
+mtc
 azl
-aAn
+bPF
 aBz
 aCP
 aEe
@@ -53558,8 +54074,8 @@ atT
 auU
 awf
 axa
-axZ
-azc
+xxS
+xDv
 aAr
 aBw
 aCQ
@@ -54164,7 +54680,7 @@ atW
 auX
 awh
 axd
-axZ
+feb
 azo
 aAj
 aBC
@@ -54366,7 +54882,7 @@ atX
 auY
 awi
 axe
-ayb
+nqP
 azf
 aAk
 aBD
@@ -54568,7 +55084,7 @@ atY
 auY
 awj
 axf
-axZ
+axt
 azc
 aAo
 aBE
@@ -55174,9 +55690,9 @@ aua
 ava
 awl
 axi
-axZ
+bAF
 azg
-aAi
+gtO
 aBE
 aCX
 aEm
@@ -55376,7 +55892,7 @@ aub
 avb
 awm
 axj
-ayj
+pqA
 azq
 aAw
 aBF
@@ -55578,9 +56094,9 @@ auc
 auc
 auc
 axk
-aym
+ayn
 azr
-aAx
+ayn
 aBG
 aCY
 aEn
@@ -55780,7 +56296,7 @@ aud
 aud
 aud
 axl
-ayb
+ayo
 azf
 aAy
 aBF
@@ -55982,7 +56498,7 @@ aua
 avc
 awn
 axi
-axZ
+rrq
 azc
 aAz
 aBF
@@ -56184,8 +56700,8 @@ aue
 avd
 awn
 axi
-axZ
-azc
+dql
+xDv
 aAA
 aBH
 aDb
@@ -57194,9 +57710,9 @@ abF
 abF
 avg
 axq
-ayi
+orV
 azw
-ayi
+orV
 axq
 avg
 aEr
