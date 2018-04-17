@@ -84,11 +84,11 @@
 			continue
 		var/area/located_area = locate(area_type)
 		if(located_area && !located_area.z)
-			log_bad("[log_info_line(located_area)] is unused.")
+			log_debug("[log_info_line(located_area)] is unused.")
 			unused_areas++
 
 	if(unused_areas)
-		fail("Found [unused_areas] unused area\s.")
+		pass("Found [unused_areas] unused area\s.")
 	else
 		pass("All areas are used.")
 	return 1
