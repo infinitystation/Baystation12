@@ -11,14 +11,26 @@
 	name = "hull"
 	color = COLOR_HULL
 
+/turf/simulated/wall/prepainted
+	paint_color = COLOR_GUNMETAL
+/turf/simulated/wall/r_wall/prepainted
+	paint_color = COLOR_GUNMETAL
+
 /turf/simulated/wall/r_wall/hull/Initialize()
 	. = ..()
 	paint_color = color
 	color = null //color is just for mapping
 	if(prob(40))
-		var/turf/space/S = locate() in trange(2, src)
-		var/bleach_factor = rand(20,80)/get_dist(src, S)
-		paint_color = adjust_brightness(paint_color, bleach_factor)
+		var/spacefacing = FALSE
+		for(var/direction in GLOB.cardinal)
+			var/turf/T = get_step(src, direction)
+			var/area/A = get_area(T)
+			if(A && (A.area_flags & AREA_FLAG_EXTERNAL))
+				spacefacing = TRUE
+				break
+		if(spacefacing)
+			var/bleach_factor = rand(10,50)
+			paint_color = adjust_brightness(paint_color, bleach_factor)
 	update_icon()
 
 

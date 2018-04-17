@@ -1213,7 +1213,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
 "cS" = (
-/obj/structure/closet/firecloset/full,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/central)
 "cT" = (
