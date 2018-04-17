@@ -6,7 +6,7 @@
 /obj/effect/overmap/ship/gunboat
 	name = "gunboat"
 	desc = "Sensor array is detecting a small vessel with heavy armor."
-	color = "#FFC966"
+	color = "#ffc966"
 	fore_dir = WEST
 	vessel_mass = 30
 	default_delay = 35 SECONDS

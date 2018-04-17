@@ -469,7 +469,7 @@ var/list/floor_decals = list()
 
 /obj/effect/floor_decal/corner/grey_alt
 	name = "grey corner"
-	color = "#B0AEAE"
+	color = "#b0aeae"
 
 /obj/effect/floor_decal/corner/grey_alt/diagonal
 	icon_state = "corner_white_diagonal"

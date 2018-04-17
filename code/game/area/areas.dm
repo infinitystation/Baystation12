@@ -1,4 +1,4 @@
-// Areas.dm
+g// Areas.dm
 
 
 
@@ -202,10 +202,10 @@
 		else
 			color = "#ffb2b2"
 			animate(src)
-			animate(src, color = "#B3DFFF", time = 0.5 SECOND, loop = -1, easing = SINE_EASING)
+			animate(src, color = "#b3dfff", time = 0.5 SECOND, loop = -1, easing = SINE_EASING)
 			animate(color = "#ffb2b2", time = 0.5 SECOND, loop = -1, easing = SINE_EASING)
 	else
-		animate(src, color = "#FFFFFF", time = 0.5 SECONDS, easing = QUAD_EASING)	// Stop the animation.
+		animate(src, color = "#ffffff", time = 0.5 SECONDS, easing = QUAD_EASING)	// Stop the animation.
 
 #undef DO_PARTY
 

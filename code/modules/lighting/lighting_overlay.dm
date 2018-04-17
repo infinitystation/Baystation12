@@ -96,11 +96,11 @@
 	var/set_luminosity = max > 1e-6
 	#endif
 
-	if((rr & gr & br & ar) && (rg + gg + bg + ag + rb + gb + bb + ab == 8))
+	/* if((rr & gr & br & ar) && (rg + gg + bg + ag + rb + gb + bb + ab == 8)) // Черные тайлы не оч ~bear1ake
 	//anything that passes the first case is very likely to pass the second, and addition is a little faster in this case
 		icon_state = "transparent"
 		color = null
-	else if(!set_luminosity)
+	else */if(!set_luminosity)
 		icon_state = LIGHTING_ICON_STATE_DARK
 		color = null
 	else
