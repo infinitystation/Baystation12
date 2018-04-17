@@ -1299,9 +1299,6 @@
 /area/storage/medical)
 "de" = (
 /obj/structure/table/rack,
-/obj/item/weapon/crowbar,
-/obj/item/weapon/crowbar,
-/obj/item/weapon/crowbar,
 /obj/item/device/flashlight,
 /obj/item/device/flashlight,
 /obj/item/device/flashlight,
@@ -1309,6 +1306,9 @@
 /obj/item/device/radio,
 /obj/item/device/radio,
 /obj/item/weapon/storage/box/bodybags,
+/obj/item/weapon/crowbar/prybar,
+/obj/item/weapon/crowbar/prybar,
+/obj/item/weapon/crowbar/prybar,
 /turf/simulated/floor/plating,
 /area/storage/medical)
 "df" = (
