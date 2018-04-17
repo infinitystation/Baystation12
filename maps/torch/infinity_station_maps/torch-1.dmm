@@ -3410,6 +3410,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/forestarboard)
+"hz" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/item/weapon/storage/firstaid/surgery,
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "hA" = (
 /obj/structure/closet/crate/freezer/rations,
 /turf/simulated/floor/tiled/white,
@@ -7517,22 +7526,18 @@
 /area/shuttle/petrov/ship)
 "pR" = (
 /obj/structure/table/rack,
-/obj/item/clothing/shoes/magboots,
 /obj/item/clothing/suit/bio_suit/anomaly,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/head/bio_hood/anomaly,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/item/device/radio/intercom{
 	pixel_y = 22
 	},
+/obj/item/clothing/mask/gas/half,
+/obj/item/clothing/head/bio_hood/anomaly,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "pS" = (
 /obj/structure/table/rack,
-/obj/item/clothing/shoes/magboots,
 /obj/item/clothing/suit/bio_suit/anomaly,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/head/bio_hood/anomaly,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/camera/network/research{
 	c_tag = "Petrov - Equipment Room";
@@ -7541,6 +7546,8 @@
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
+/obj/item/clothing/mask/gas/half,
+/obj/item/clothing/head/bio_hood/anomaly,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "pT" = (
@@ -8856,6 +8863,19 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/center)
+"rV" = (
+/obj/structure/table/rack{
+	dir = 8
+	},
+/obj/random/tech_supply,
+/obj/random/tech_supply,
+/obj/random/tech_supply,
+/obj/random/tech_supply,
+/obj/random/tech_supply,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/item/weapon/tape_roll,
+/turf/simulated/floor/tiled/techfloor,
+/area/storage/primary)
 "rW" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10746,6 +10766,7 @@
 /obj/structure/table/standard,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
+/obj/item/weapon/tape_roll,
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/primary)
 "uO" = (
@@ -13360,6 +13381,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
+/obj/item/weapon/defibrillator/loaded,
 /turf/simulated/floor/tiled/white,
 /area/vacant/infirmary)
 "zl" = (
@@ -14040,6 +14062,7 @@
 /area/shuttle/petrov/cell3)
 "AA" = (
 /obj/structure/bed,
+/obj/item/weapon/reagent_containers/glass/beaker/vial/away,
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell3)
 "AB" = (
@@ -14961,6 +14984,8 @@
 	pixel_x = -22;
 	pixel_y = 0
 	},
+/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
+/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
 /turf/simulated/floor/plating,
 /area/vacant/infirmary)
 "CX" = (
@@ -16873,6 +16898,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/port)
+"Hw" = (
+/obj/structure/computerframe,
+/obj/item/weapon/material/shard,
+/turf/simulated/floor/plating,
+/area/vacant/infirmary)
 "Hy" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
@@ -17509,10 +17539,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/fourthdeck/center)
-"JQ" = (
-/obj/item/weapon/defibrillator/loaded,
-/turf/simulated/floor/plating,
-/area/vacant/infirmary)
 "JS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -19698,10 +19724,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition)
-"VU" = (
-/obj/item/weapon/reagent_containers/spray/sterilizine,
-/turf/simulated/floor/plating,
-/area/vacant/infirmary)
 "VV" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -33469,7 +33491,7 @@ mK
 nS
 pj
 nO
-rJ
+rV
 tj
 uQ
 nO
@@ -46202,7 +46224,7 @@ XM
 xS
 zl
 LA
-VU
+Vz
 Ky
 Vz
 bW
@@ -46403,7 +46425,7 @@ ah
 XM
 gx
 zm
-Wv
+hz
 Rb
 Vz
 Si
@@ -46607,8 +46629,8 @@ Bf
 zn
 Al
 OZ
-JQ
 lz
+Hw
 bW
 Ak
 EX
@@ -47207,7 +47229,7 @@ fu
 fu
 sJ
 uj
-hk
+fu
 XM
 XM
 XM

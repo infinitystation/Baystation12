@@ -1105,7 +1105,7 @@
 	products = list(/obj/item/device/flashlight = 3,/obj/item/device/multitool = 3,/obj/item/device/multitool/multimeter = 3,
 	/obj/item/device/geiger = 3,/obj/item/device/analyzer = 3,/obj/item/device/t_scanner = 3,
 	/obj/item/device/cable_painter = 2,/obj/item/device/floor_painter = 2,/obj/item/device/pipe_painter = 2,
-	/obj/item/clamp = 4)
+	/obj/item/clamp = 4, /obj/item/weapon/tape_roll = 6)
 	contraband = list(/obj/item/weapon/beartrap = 2,/obj/item/weapon/rcd = 1,/obj/item/weapon/rcd_ammo = 5)
 	premium = list(/obj/item/weapon/combitool = 1,/obj/item/weapon/wrench/power = 1,/obj/item/weapon/wirecutters/power = 1)
 

@@ -5917,6 +5917,8 @@
 /obj/random/tech_supply,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
+/obj/item/weapon/tape_roll,
+/obj/item/weapon/tape_roll,
 /turf/simulated/floor/plating,
 /area/engineering/storage)
 "mi" = (
