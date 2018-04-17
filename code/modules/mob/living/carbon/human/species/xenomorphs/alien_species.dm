@@ -174,7 +174,7 @@
 		heal_rate *= 1.5
 		mend_prob *= 5
 
-    //next internal organs
+	//next internal organs
 	for(var/obj/item/organ/I in H.internal_organs)
 		if(I.damage > 0 & I.organ_tag != BP_BRAIN)
 			I.damage = max(I.damage - heal_rate, 0)
