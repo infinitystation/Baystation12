@@ -15,6 +15,8 @@
 
 #define LIGHTING_ROUND_VALUE (1 / 64) // Value used to round lumcounts, values smaller than 1/69 don't matter (if they do, thanks sinking points), greater values will make lighting less precise, but in turn increase performance, VERY SLIGHTLY.
 
+#define LIGHTING_SOFT_THRESHOLD 0
+
 #define LIGHTING_MULT_FACTOR 0.9
 
 // If I were you I'd leave this alone.
