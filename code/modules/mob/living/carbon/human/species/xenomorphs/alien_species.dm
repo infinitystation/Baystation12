@@ -174,12 +174,17 @@
 		heal_rate *= 1.5
 		mend_prob *= 5
 
-	//heal internal organs
+    //next internal organs
 	for(var/obj/item/organ/I in H.internal_organs)
-		if(I.damage > 0)
+		if(I.damage > 0 & I.organ_tag != BP_BRAIN)
 			I.damage = max(I.damage - heal_rate, 0)
 			if (prob(5))
 				to_chat(H, "<span class='alium'>You feel a soothing sensation within your [I.parent_organ]...</span>")
+			if(I.can_recover())
+				I.status &= ~ORGAN_DEAD
+				H.update_body(1)
+				if(I.organ_tag == BP_HEART)
+					H.resuscitate()
 			return 1
 
 	//heal damages
