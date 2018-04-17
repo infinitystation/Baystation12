@@ -16720,6 +16720,9 @@
 /area/security/range)
 "CX" = (
 /obj/structure/target_stake,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
 "CY" = (
@@ -17166,6 +17169,7 @@
 	name = "west bump";
 	pixel_x = -24
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
 "DU" = (
@@ -17621,9 +17625,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
 "EK" = (
@@ -17636,7 +17638,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+	dir = 5
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
@@ -17683,13 +17685,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/aftport)
-"EO" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+	dir = 10
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aftport)
@@ -17704,9 +17700,6 @@
 	name = "north bump";
 	pixel_x = 0;
 	pixel_y = 24
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aftport)
@@ -18003,6 +17996,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aftport)
 "Fz" = (
@@ -18017,7 +18011,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/valve/shutoff,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aftport)
 "FA" = (
@@ -18418,6 +18411,9 @@
 /obj/structure/closet/crate/trashcart,
 /obj/random/junk,
 /obj/random/junk,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aftport)
 "Gn" = (
@@ -18427,6 +18423,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
@@ -18446,7 +18445,7 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aftport)
@@ -21821,6 +21820,11 @@
 /obj/effect/floor_decal/corner_steel_grid/full,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
+"Oq" = (
+/obj/structure/closet/emcloset,
+/obj/machinery/atmospherics/valve/shutoff,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/port)
 "OK" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/hallway/primary/thirddeck/center)
@@ -22091,6 +22095,12 @@
 	},
 /turf/simulated/floor/lino,
 /area/crew_quarters/bar)
+"UJ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/port)
 "UM" = (
 /obj/machinery/door/airlock{
 	name = "Bar";
@@ -44373,7 +44383,7 @@ yk
 yk
 yk
 yk
-yk
+UJ
 DT
 EJ
 ye
@@ -44576,7 +44586,7 @@ xf
 xf
 xf
 CX
-yl
+Oq
 EK
 Fx
 Fx
@@ -45587,7 +45597,7 @@ By
 Ck
 Db
 xf
-EO
+Dj
 Dj
 Gn
 Fx

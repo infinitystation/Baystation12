@@ -1212,9 +1212,6 @@
 /obj/machinery/atmospherics/valve/shutoff,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
-"cS" = (
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/central)
 "cT" = (
 /obj/structure/table/rack,
 /obj/random/technology_scanner,
@@ -33244,7 +33241,7 @@ aC
 bc
 bG
 bG
-cS
+bH
 bb
 ej
 eU

@@ -295,9 +295,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
-"aR" = (
-/turf/simulated/floor/plating,
-/area/quartermaster/hangar)
 "aS" = (
 /obj/structure/sign/warning/docking_area,
 /turf/simulated/wall/r_wall,
@@ -44967,7 +44964,7 @@ ag
 ag
 ag
 ag
-aR
+aO
 aO
 bV
 cD
