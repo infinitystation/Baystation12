@@ -13,8 +13,8 @@
 	max_age = 45
 	health_hud_intensity = 3
 
-	blood_color = "#D514F7"
-	flesh_color = "#5F7BB0"
+	blood_color = "#d514f7"
+	flesh_color = "#5f7bb0"
 	base_color = "#001144"
 	tail = "resomitail"
 	tail_hair = "feathers"

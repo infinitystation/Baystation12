@@ -170,7 +170,7 @@
 	appearance_flags = HAS_HAIR_COLOR
 	vision_flags = DEFAULT_SIGHT | SEE_MOBS
 
-	blood_color = "#1F181F"
+	blood_color = "#1f181f"
 	flesh_color = "#575757"
 	virus_immune = 1
 	reagent_tag = IS_MACHINE
@@ -267,7 +267,7 @@
 
 	icobase = 'icons/mob/human_races/r_ind_xion.dmi'
 	deform = 'icons/mob/human_races/r_ind_xion.dmi'
-	
+
 	eyes = "xion_eyes"
 	flags = IS_IPC
 	passive_temp_gain = 5
