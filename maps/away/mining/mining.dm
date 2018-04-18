@@ -126,7 +126,7 @@
 	known = 0
 	start_x = 4
 	start_y = 5
-
+/*
 /datum/map_template/ruin/away_site/orb
 	name = "Mining - Orb"
 	id = "awaysite_mining_orb"
@@ -136,7 +136,7 @@
 	accessibility_weight = 10
 	spawn_guaranteed = TRUE
 	base_turf_for_zs = /turf/simulated/floor/asteroid
-
+*/
 /obj/effect/shuttle_landmark/orb/nav1
 	name = "Anchor point A"
 	landmark_tag = "nav_orb_1"

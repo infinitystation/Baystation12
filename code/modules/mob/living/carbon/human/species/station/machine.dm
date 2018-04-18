@@ -15,6 +15,11 @@
 	eye_icon = "blank_eyes"
 
 	language = LANGUAGE_EAL
+	secondary_langs = list(LANGUAGE_SOL_COMMON, LANGUAGE_INDEPENDENT, "Gutter", LANGUAGE_SPACER, \
+		LANGUAGE_LUNAR, LANGUAGE_SIGN, LANGUAGE_UNATHI, LANGUAGE_SIIK_MAAS, \
+		LANGUAGE_RESOMI, LANGUAGE_SKRELLIAN, \
+		LANGUAGE_SIIK_TAJR, LANGUAGE_NABBER)
+	assisted_langs = list(LANGUAGE_SIIK_TAJR, LANGUAGE_NABBER)
 	unarmed_types = list(/datum/unarmed_attack/punch)
 	rarity_value = 2
 	num_alternate_languages = 2

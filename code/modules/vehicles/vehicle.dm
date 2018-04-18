@@ -12,6 +12,7 @@
 	density = 1
 	anchored = 1
 	animate_movement=1
+	light_max_bright = 0.7
 	light_outer_range = 3
 
 	can_buckle = 1

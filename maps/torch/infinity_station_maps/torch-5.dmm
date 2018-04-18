@@ -15522,6 +15522,9 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/fore)
+"Ze" = (
+/turf/simulated/wall,
+/area/bridge/disciplinary_board_room)
 
 (1,1,1) = {"
 aa
@@ -28540,8 +28543,8 @@ aV
 aV
 aV
 aV
-bI
-bI
+Ze
+Ze
 gT
 hB
 gX
@@ -28736,14 +28739,14 @@ ah
 ah
 aX
 bs
-bI
+Ze
 ch
 cQ
 dD
 es
 eX
 fB
-bI
+Ze
 gU
 ht
 gX
@@ -28938,14 +28941,14 @@ ah
 ah
 aY
 bs
-bI
+Ze
 ci
 cR
 dE
 et
 eY
 fC
-bI
+Ze
 Jc
 DP
 ii
@@ -29140,7 +29143,7 @@ ah
 ah
 aZ
 bt
-bI
+Ze
 cj
 cS
 dF
@@ -29342,14 +29345,14 @@ ah
 ah
 ba
 bu
-bI
+Ze
 ck
 cT
 dG
 ev
 fa
 fE
-bI
+Ze
 gW
 hD
 ik
@@ -29544,7 +29547,7 @@ ah
 ah
 bb
 bu
-bI
+Ze
 cl
 cU
 dH
@@ -29746,9 +29749,9 @@ ah
 ah
 bc
 bu
-bI
-bI
-bI
+Ze
+Ze
+Ze
 dI
 cU
 fc
@@ -29950,11 +29953,11 @@ bd
 bu
 bJ
 cm
-bI
-bI
+Ze
+Ze
 ex
-bI
-bI
+Ze
+Ze
 bI
 gY
 gY

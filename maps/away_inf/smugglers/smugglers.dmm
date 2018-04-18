@@ -845,6 +845,7 @@
 /obj/structure/table/rack,
 /obj/item/clothing/head/cowboy_hat,
 /obj/item/clothing/suit/armor/hos/jensen,
+/obj/item/device/radio/intercept,
 /turf/simulated/floor/tiled,
 /area/smugglers/office)
 "bW" = (
@@ -1190,10 +1191,6 @@
 /obj/structure/bed,
 /obj/item/weapon/bedsheet/orange,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled,
-/area/smugglers/dorms)
-"cN" = (
-/obj/structure/table/standard,
 /turf/simulated/floor/tiled,
 /area/smugglers/dorms)
 "cO" = (
@@ -1706,7 +1703,7 @@ cF
 bY
 cF
 bX
-ab
+ac
 ab
 ab
 ab
@@ -1773,7 +1770,7 @@ cG
 bY
 cK
 bX
-bX
+ac
 ac
 ac
 ab
@@ -1839,9 +1836,9 @@ cE
 cH
 cJ
 cL
-cN
 bX
-ab
+ac
+ac
 ab
 ab
 ab
@@ -1907,7 +1904,7 @@ cI
 bY
 cM
 bX
-bX
+ac
 ac
 ac
 ab
@@ -2503,7 +2500,7 @@ bI
 bU
 bl
 ac
-aj
+ac
 ac
 ac
 ac
@@ -2570,7 +2567,7 @@ bJ
 bV
 bl
 ac
-aj
+ac
 ac
 ac
 ac
@@ -2637,7 +2634,7 @@ bK
 bW
 bl
 ac
-ab
+ac
 ac
 ac
 ac
@@ -2690,8 +2687,8 @@ aa
 ac
 ab
 ab
-ab
-ab
+ac
+ac
 ae
 az
 ae
@@ -2704,8 +2701,8 @@ bl
 bl
 bl
 ac
-ab
-ab
+ac
+ac
 aj
 ac
 ab
@@ -2754,7 +2751,7 @@ aa
 aa
 "}
 (24,1,1) = {"
-aa
+ac
 ac
 ab
 ab
@@ -2766,12 +2763,12 @@ ac
 ac
 ac
 ac
-ab
 ac
 ac
 ac
 ac
-ab
+ac
+aj
 ab
 ab
 ac

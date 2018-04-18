@@ -134,8 +134,10 @@
 	//randomize clickpoint a bit based on dispersion
 	if(dispersion)
 		var/radius = round((dispersion*0.443)*world.icon_size*0.8) //0.443 = sqrt(pi)/4 = 2a, where a is the side length of a square that shares the same area as a circle with diameter = dispersion
-		p_x = between(0, p_x + rand(-radius, radius), world.icon_size)
-		p_y = between(0, p_y + rand(-radius, radius), world.icon_size)
+		//p_x = between(0, p_x + rand(-radius, radius), world.icon_size)
+		//p_y = between(0, p_y + rand(-radius, radius), world.icon_size)
+		p_x = between(0, p_x + gaussian(0, radius) * 0.3, world.icon_size)
+		p_y = between(0, p_y + gaussian(0, radius) * 0.3, world.icon_size)
 
 //called to launch a projectile
 /obj/item/projectile/proc/launch(atom/target, var/target_zone, var/x_offset=0, var/y_offset=0, var/angle_offset=0)
@@ -192,14 +194,20 @@
 	if(!istype(target_mob))
 		return
 
-	var/distance_input = 15 * (distance - 1)
-	var/accuracy_input = round(15 * accuracy)
+	var/distance_input = 15 * (distance - 2)	// Бонус к попаданию до 4-х метров
+	var/accuracy_input = round(15 * accuracy)	// Это пока так и останется
 
-	//roll to-hit
-	miss_modifier = max(distance_input - accuracy_input + miss_modifier, 0)
+	// расчет модификатора попадания
+	miss_modifier = distance_input - accuracy_input + miss_modifier
 
-	if(distance <= 1 || target_mob == firer)
-		miss_modifier = 0
+	if(distance <= 1)
+		miss_modifier -= 10	// Еще бонус от ближнего расстояния
+
+	if(target_mob == original)
+		miss_modifier -= 30	// По человеку попали!
+
+	if(firer == original)
+		miss_modifier -= 30	// По себе уж точно промазать сложно
 
 	var/hit_zone = get_zone_with_miss_chance(def_zone, target_mob, miss_modifier, ranged_attack=(distance > 1 || original != target_mob)) //if the projectile hits a target we weren't originally aiming at then retain the chance to miss
 

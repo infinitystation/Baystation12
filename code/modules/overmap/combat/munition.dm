@@ -2,7 +2,7 @@
 	name = "munition"
 	icon = 'icons/obj/infinity_object.dmi'
 	icon_state = "munition"
-	color = "#6666FF"
+	color = "#6666ff"
 	var/obj/effect/overmap/ship/fired_by
 	var/fired_at
 	var/proj_type

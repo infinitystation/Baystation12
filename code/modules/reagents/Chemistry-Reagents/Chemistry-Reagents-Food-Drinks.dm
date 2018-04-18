@@ -1203,7 +1203,7 @@
 	name = "Champagne"
 	description = "Is this gold?"
 	taste_description = "bitter taste"
-	color = "#A89410"
+	color = "#a89410"
 	strength = 45
 
 	value = 0.15 // Cost

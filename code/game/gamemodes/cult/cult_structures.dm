@@ -73,9 +73,9 @@
 	name = "Desk"
 	desc = "A desk covered in arcane manuscripts and tomes in unknown languages. Looking at the text makes your skin crawl."
 	icon_state = "tomealtar"
-	light_color = "#ED9200"
+	light_color = "#ed9200"
 	light_outer_range = 3
-	light_color="#ED9200"
+	light_color= "ed9200"
 
 //sprites for this no longer exist	-Pete
 //(they were stolen from another game anyway)

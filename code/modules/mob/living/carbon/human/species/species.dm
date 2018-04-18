@@ -78,6 +78,8 @@
 		/datum/unarmed_attack/bite
 		)
 	var/list/unarmed_attacks = null           // For empty hand harm-intent attack
+
+	var/list/natural_armour_values            // Armour values used if naked.
 	var/brute_mod =      1                    // Physical damage multiplier.
 	var/burn_mod =       1                    // Burn damage multiplier.
 	var/oxy_mod =        1                    // Oxyloss modifier
@@ -85,6 +87,10 @@
 	var/radiation_mod =  1                    // Radiation modifier
 	var/flash_mod =      1                    // Stun from blindness modifier.
 	var/metabolism_mod = 1                    // Reagent metabolism modifier
+	var/stun_mod =       1                    // Stun period modifier.
+	var/paralysis_mod =  1                    // Paralysis period modifier.
+	var/weaken_mod =     1                    // Weaken period modifier.
+
 	var/vision_flags = SEE_SELF               // Same flags as glasses.
 
 	// Death vars.
@@ -205,6 +211,7 @@
 	var/sexybits_location	//organ tag where they are located if they can be kicked for increased pain
 
 	var/list/prone_overlay_offset = list(0, 0) // amount to shift overlays when lying
+	var/job_skill_buffs = list()				// A list containing jobs (/datum/job), with values the extra points that job recieves.
 
 /*
 These are all the things that can be adjusted for equipping stuff and
@@ -584,3 +591,10 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 			facial_hair_style_by_gender[facialhairstyle] = S
 
 	return facial_hair_style_by_gender
+
+/datum/species/proc/skills_from_age(age)	//Converts an age into a skill point allocation modifier. Can be used to give skill point bonuses/penalities not depending on job.
+	switch(age)
+		if(0 to 22) 	. = -1
+		if(23 to 30) 	. = 0
+		if(31 to 45)	. = 1
+		else			. = 2

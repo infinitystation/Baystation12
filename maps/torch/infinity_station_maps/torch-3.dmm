@@ -1212,10 +1212,6 @@
 /obj/machinery/atmospherics/valve/shutoff,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
-"cS" = (
-/obj/structure/closet/firecloset/full,
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/central)
 "cT" = (
 /obj/structure/table/rack,
 /obj/random/technology_scanner,
@@ -1303,9 +1299,6 @@
 /area/storage/medical)
 "de" = (
 /obj/structure/table/rack,
-/obj/item/weapon/crowbar,
-/obj/item/weapon/crowbar,
-/obj/item/weapon/crowbar,
 /obj/item/device/flashlight,
 /obj/item/device/flashlight,
 /obj/item/device/flashlight,
@@ -1313,6 +1306,9 @@
 /obj/item/device/radio,
 /obj/item/device/radio,
 /obj/item/weapon/storage/box/bodybags,
+/obj/item/weapon/crowbar/prybar,
+/obj/item/weapon/crowbar/prybar,
+/obj/item/weapon/crowbar/prybar,
 /turf/simulated/floor/plating,
 /area/storage/medical)
 "df" = (
@@ -5921,6 +5917,8 @@
 /obj/random/tech_supply,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
+/obj/item/weapon/tape_roll,
+/obj/item/weapon/tape_roll,
 /turf/simulated/floor/plating,
 /area/engineering/storage)
 "mi" = (
@@ -33245,7 +33243,7 @@ aC
 bc
 bG
 bG
-cS
+bH
 bb
 ej
 eU
