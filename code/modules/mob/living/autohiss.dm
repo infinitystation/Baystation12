@@ -18,12 +18,21 @@
 	autohiss_basic_map = list(
 			"s" = list("ss", "sss", "ssss"),
 
-			"ס" = list("סס", "סס", "ססס")
+			"ס" = list("ס", "סס", "ססס")
 		)
 	autohiss_extra_map = list(
 			"x" = list("ks", "kss", "ksss"),
 
-			"ק" = list("ש", "שש", "ששש")
+			"ך" = list("ץ"),
+
+			"ד" = list("ץ"),
+
+			"ח" = list("ס", "סס", "ססס"),
+
+			"ק" = list("ש", "שש", "ששש"),
+
+			"ז" = list("ר", "רר", "ררר")
+
 		)
 	autohiss_exempt = list(LANGUAGE_UNATHI)
 
@@ -40,7 +49,9 @@
 			"ח" = list("ס", "סס", "ססס")
 		)
 	autohiss_extra_map = list(
-			"ק" = list("ש", "שש")
+			"ק" = list("ש", "שש"),
+
+			"ז" = list("ר", "רר", "ררר")
 		)
 	autohiss_exempt = list(LANGUAGE_RESOMI)
 
