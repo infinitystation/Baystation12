@@ -8,6 +8,7 @@
 	check_armour = "bullet"
 	embed = 1
 	sharp = 1
+	step_delay = 0.4
 	penetration_modifier = 1.0
 	var/mob_passthrough_check = 0
 
