@@ -57,7 +57,7 @@ var/const/NUCLEARBOMB_WIRE_SAFETY		= 4
 			N.lighthack = !mended
 			N.update_icon()
 
-/datum/wires/mulebot/SolveWireFunction(var/function)
+/datum/wires/nuclearbomb/SolveWireFunction(var/function)
 	var/sf = ""
 	switch(function)
 		if(NUCLEARBOMB_WIRE_LIGHT)
