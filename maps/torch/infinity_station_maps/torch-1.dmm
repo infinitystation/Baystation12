@@ -11490,6 +11490,7 @@
 	dir = 5
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/item/device/price_scanner,
 /turf/simulated/floor/tiled,
 /area/quartermaster/deckofficer)
 "wf" = (
