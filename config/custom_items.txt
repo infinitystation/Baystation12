@@ -127,3 +127,10 @@ paper_info: [center]Центральное Правительство Солнечной Системы[/center][solcres
 paper_title: award certificate
 paper_stamp_type: /obj/item/weapon/stamp/solgov
 }
+{
+ckey: vankoska
+character_name: Terill Qerr
+item_path: /obj/item/device/pmp/personal
+req_titles: Senior Researcher, Scientist
+req_access: 47
+}
