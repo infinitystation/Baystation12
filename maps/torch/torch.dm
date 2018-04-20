@@ -96,7 +96,10 @@
 	#include "../away/mobius_rift/mobius_rift.dm"
 	#include "../away/icarus/icarus.dm"
 //	#include "../away/errant_pisces/errant_pisces.dm"
-//	#include "../away/lar_maria/lar_maria.dm"
+	#include "../away/lar_maria/lar_maria.dm"
+	#include "../away_inf/smugglers/smugglers.dmm"
+	#include "../away/lar_maria/lar_maria-1.dmm"
+	#include "../away/lar_maria/lar_maria-2.dmm"
 
 	#define using_map_DATUM /datum/map/torch
 
