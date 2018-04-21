@@ -8663,6 +8663,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/machinery/light/small,
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
 "qN" = (

@@ -79,7 +79,6 @@
 	#include "infinity_station_maps/torch-8.dmm"
 	#include "../away_inf/sentinel/sentinel.dm"
 	#include "../away_inf/gunboat/gunboat.dm"
-	#include "../away_inf/lost_supply_base/lsb.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/bearcat/bearcat.dm"
 	#include "../away_inf/yacht/yacht.dm"
