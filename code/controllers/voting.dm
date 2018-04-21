@@ -10,9 +10,7 @@
 	var/list/gamemode_names = list()
 	var/list/voted = list()
 	var/list/voting = list()
-	var/list/current_high_votes = list()
-	var/list/current_med_votes = list()
-	var/list/current_low_votes = list()
+	var/list/selected = list()
 	var/list/additional_text = list()
 	var/auto_muted = 0
 	var/auto_add_antag = 0
@@ -77,9 +75,7 @@
 		choices.Cut()
 		voted.Cut()
 		voting.Cut()
-		current_high_votes.Cut()
-		current_med_votes.Cut()
-		current_low_votes.Cut()
+		selected.Cut()
 		additional_text.Cut()
 
 	proc/get_result()
@@ -273,26 +269,12 @@
 			if(config.vote_no_dead && usr.stat == DEAD && !usr.client.holder)
 				return 0
 			if(vote && vote >= 1 && vote <= choices.len)
-				if(current_high_votes[ckey] && (current_high_votes[ckey] == vote || weight == 3))
-					choices[choices[current_high_votes[ckey]]] -= 3
-					current_high_votes -= ckey
-				if(current_med_votes[ckey] && (current_med_votes[ckey] == vote || weight == 2))
-					choices[choices[current_med_votes[ckey]]] -= 2
-					current_med_votes -= ckey
-				if(current_low_votes[ckey] && (current_low_votes[ckey] == vote || weight == 1))
-					choices[choices[current_low_votes[ckey]]]--
-					current_low_votes -= ckey
+				if(selected[ckey] && (selected[ckey] == vote || weight == 1))
+					choices[choices[selected[ckey]]] -= 1
+					selected -= ckey
 				voted += usr.ckey
-				switch(weight)
-					if(3)
-						current_high_votes[ckey] = vote
-						choices[choices[vote]] += 3
-					if(2)
-						current_med_votes[ckey] = vote
-						choices[choices[vote]] += 2
-					if(1)
-						current_low_votes[ckey] = vote
-						choices[choices[vote]] += 1
+				selected[ckey] = vote
+				choices[choices[vote]] += 1
 				return vote
 		return 0
 
@@ -426,20 +408,11 @@
 					else
 						. += "[choices[i]]"
 					. += "</td><td>"
-					if(current_high_votes[C.ckey] == i)
-						. += "<b><a href='?src=\ref[src];high_vote=[i]'>First</a></b>"
+					if(selected[C.ckey] == i)
+						. += "<b><a href='?src=\ref[src];selected=[i]'>Select</a></b>"
 					else
-						. += "<a href='?src=\ref[src];high_vote=[i]'>First</a>"
-					. += "</td><td>"
-					if(current_med_votes[C.ckey] == i)
-						. += "<b><a href='?src=\ref[src];med_vote=[i]'>Second</a></b>"
-					else
-						. += "<a href='?src=\ref[src];med_vote=[i]'>Second</a>"
-					. += "</td><td>"
-					if(current_low_votes[C.ckey] == i)
-						. += "<b><a href='?src=\ref[src];low_vote=[i]'>Third</a></b>"
-					else
-						. += "<a href='?src=\ref[src];low_vote=[i]'>Third</a>"
+						. += "<a href='?src=\ref[src];selected=[i]'>Select</a>"
+					. += "</td><td align = 'center'>[votes]</td>"
 					. += "</td><td align = 'center'>[votepercent]%</td>"
 					if (additional_text.len >= i)
 						. += additional_text[i]
@@ -529,14 +502,9 @@
 		else
 			var/weight = 1
 			var/t
-			if(href_list["high_vote"])
-				t = round(text2num(href_list["high_vote"]))
-				weight = 3
-			else if(href_list["med_vote"])
-				t = round(text2num(href_list["med_vote"]))
-				weight = 2
-			else if(href_list["low_vote"])
-				t = round(text2num(href_list["low_vote"]))
+			if(href_list["selected"])
+				t = round(text2num(href_list["selected"]))
+				weight = 1
 			if(t) // it starts from 1, so there's no problem
 				submit_vote(usr.ckey, t, weight)
 		usr.vote()
