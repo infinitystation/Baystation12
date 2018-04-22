@@ -1360,11 +1360,12 @@
 /turf/simulated/wall/r_wall,
 /area/thruster/d1starboard)
 "acE" = (
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	icon_state = "intact";
-	dir = 10
-	},
 /obj/structure/sign/warning/nosmoking_2,
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	tag = "icon-intact (EAST)";
+	icon_state = "intact";
+	dir = 4
+	},
 /turf/simulated/wall/r_wall,
 /area/thruster/d1starboard)
 "acF" = (
@@ -1372,6 +1373,9 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	icon_state = "intact";
 	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 10
 	},
 /turf/simulated/wall/r_wall,
 /area/thruster/d1starboard)
@@ -1629,21 +1633,11 @@
 /obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/third,
 /turf/simulated/floor/reinforced,
 /area/thruster/d1starboard)
-"adn" = (
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	icon_state = "intact";
-	dir = 5
-	},
-/turf/simulated/floor/reinforced,
-/area/thruster/d1starboard)
 "ado" = (
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	icon_state = "intact";
-	dir = 10
-	},
 /obj/effect/floor_decal/corner/purple{
 	dir = 5
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/blue,
 /turf/simulated/floor/reinforced,
 /area/thruster/d1starboard)
 "adp" = (
@@ -2104,25 +2098,15 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 4
 	},
-/obj/machinery/atmospherics/valve/digital{
-	dir = 2;
-	frequency = 1490;
-	id = "RE3F";
-	name = "RE3 digital valve"
-	},
 /obj/effect/landmark/overmap_target/torch/second/starbnacelle,
+/obj/machinery/atmospherics/pipe/simple/visible/blue,
 /turf/simulated/floor/reinforced,
 /area/thruster/d1starboard)
 "adW" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 4
 	},
-/obj/machinery/atmospherics/valve/digital{
-	dir = 2;
-	frequency = 1490;
-	id = "RE3F";
-	name = "RE3 digital valve"
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/reinforced,
 /area/thruster/d1starboard)
 "adX" = (
@@ -3214,38 +3198,22 @@
 /turf/simulated/wall/r_wall,
 /area/thruster/d1starboard)
 "afV" = (
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	icon_state = "intact";
-	dir = 6
-	},
 /obj/structure/sign/warning/compressed_gas,
 /turf/simulated/wall/ocp_wall{
 	heat_capacity = 412500
 	},
 /area/thruster/d1starboard)
 "afW" = (
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	icon_state = "intact";
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 6
-	},
 /obj/effect/wingrille_spawn/reinforced_phoron,
 /obj/machinery/door/blast/regular{
 	dir = 2;
 	id = "d3portnacelle"
 	},
-/turf/simulated/floor/reinforced,
-/area/thruster/d1starboard)
-"afX" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 9
-	},
-/obj/effect/wingrille_spawn/reinforced_phoron,
-/obj/machinery/door/blast/regular{
+/obj/machinery/atmospherics/valve/digital{
 	dir = 2;
-	id = "d3portnacelle"
+	frequency = 1490;
+	id = "RE3F";
+	name = "RE3 digital valve"
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d1starboard)
@@ -3901,12 +3869,6 @@
 	},
 /turf/simulated/floor/reinforced/carbon_dioxide,
 /area/thruster/d1starboard)
-"ahb" = (
-/obj/machinery/atmospherics/pipe/simple/visible/blue,
-/turf/simulated/wall/ocp_wall{
-	heat_capacity = 412500
-	},
-/area/thruster/d1starboard)
 "ahc" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -3916,16 +3878,16 @@
 	icon_state = "intact";
 	dir = 6
 	},
+/obj/machinery/sparker{
+	id = "engines";
+	pixel_x = -24
+	},
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 1;
 	injecting = 1;
 	use_power = 1
 	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/sparker{
-	id = "engines";
-	pixel_x = -24
-	},
+/obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/reinforced/airless,
 /area/thruster/d1starboard)
 "ahd" = (
@@ -3934,6 +3896,12 @@
 	dir = 8
 	},
 /obj/machinery/air_sensor/nacelle/third,
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 1;
+	injecting = 1;
+	use_power = 1
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/reinforced/airless,
 /area/thruster/d1starboard)
 "ahe" = (
@@ -4537,15 +4505,6 @@
 	},
 /turf/simulated/floor/reinforced/carbon_dioxide,
 /area/thruster/d1starboard)
-"aij" = (
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	icon_state = "intact";
-	dir = 5
-	},
-/turf/simulated/wall/ocp_wall{
-	heat_capacity = 412500
-	},
-/area/thruster/d1starboard)
 "aik" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -4555,12 +4514,6 @@
 	icon_state = "intact";
 	dir = 5
 	},
-/obj/machinery/atmospherics/unary/outlet_injector{
-	dir = 8;
-	injecting = 1;
-	use_power = 1
-	},
-/obj/effect/floor_decal/industrial/outline/blue,
 /obj/machinery/sparker{
 	id = "engines-3";
 	pixel_x = -24
@@ -9437,9 +9390,6 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmary)
 "apD" = (
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 5
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -10007,9 +9957,6 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmary)
 "aqB" = (
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 10
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -14117,7 +14064,6 @@
 /area/medical/infirmreception)
 "awV" = (
 /obj/machinery/door/firedoor,
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
@@ -14134,7 +14080,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/industrial/warning/half,
+/obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmreception)
 "awW" = (
@@ -14147,7 +14093,7 @@
 	name = "Infirmary Entry Lockdown Shutters";
 	opacity = 0
 	},
-/obj/effect/floor_decal/industrial/warning/half,
+/obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmreception)
 "awX" = (
@@ -17884,6 +17830,7 @@
 /area/hallway/primary/firstdeck/aft)
 "aDg" = (
 /obj/structure/closet/secure_closet/guncabinet{
+	name = "emp gun cabinet";
 	req_access = list(83)
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -17894,6 +17841,7 @@
 /area/command/armoury/tactical)
 "aDh" = (
 /obj/structure/closet/secure_closet/guncabinet{
+	name = "handgun cabinet";
 	req_access = list(83)
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -17924,6 +17872,7 @@
 /area/command/armoury/tactical)
 "aDj" = (
 /obj/structure/closet/secure_closet/guncabinet{
+	name = "lasergun cabinet";
 	req_access = list(83)
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -17935,6 +17884,7 @@
 /area/command/armoury/tactical)
 "aDk" = (
 /obj/structure/closet/secure_closet/guncabinet{
+	name = "stun gun cabinet";
 	req_access = list(83)
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -26016,15 +25966,6 @@
 	},
 /turf/simulated/floor/reinforced/carbon_dioxide,
 /area/thruster/d1port)
-"aRv" = (
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	icon_state = "intact";
-	dir = 6
-	},
-/turf/simulated/wall/ocp_wall{
-	heat_capacity = 412500
-	},
-/area/thruster/d1port)
 "aRw" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	icon_state = "intact";
@@ -26033,12 +25974,6 @@
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 9
-	},
-/obj/effect/floor_decal/industrial/outline/blue,
-/obj/machinery/atmospherics/unary/outlet_injector{
-	dir = 8;
-	injecting = 1;
-	use_power = 1
 	},
 /obj/machinery/sparker{
 	id = "engines-4";
@@ -26655,12 +26590,6 @@
 	},
 /turf/simulated/floor/reinforced/carbon_dioxide,
 /area/thruster/d1port)
-"aSz" = (
-/obj/machinery/atmospherics/pipe/simple/visible/blue,
-/turf/simulated/wall/ocp_wall{
-	heat_capacity = 412500
-	},
-/area/thruster/d1port)
 "aSA" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	icon_state = "intact";
@@ -26669,15 +26598,16 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/unary/outlet_injector{
-	injecting = 1;
-	use_power = 1
-	},
 /obj/machinery/sparker{
 	id = "engines";
 	pixel_x = -24
 	},
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 2;
+	injecting = 1;
+	use_power = 1
+	},
+/obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/reinforced/airless,
 /area/thruster/d1port)
 "aSB" = (
@@ -26686,6 +26616,11 @@
 	dir = 8
 	},
 /obj/machinery/air_sensor/nacelle/fourth,
+/obj/machinery/atmospherics/unary/outlet_injector{
+	injecting = 1;
+	use_power = 1
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/reinforced/airless,
 /area/thruster/d1port)
 "aSC" = (
@@ -27315,36 +27250,20 @@
 /area/thruster/d1port)
 "aTD" = (
 /obj/structure/sign/warning/compressed_gas,
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	icon_state = "intact";
-	dir = 5
-	},
 /turf/simulated/wall/ocp_wall{
 	heat_capacity = 412500
 	},
 /area/thruster/d1port)
 "aTE" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	icon_state = "intact";
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	icon_state = "intact";
-	dir = 10
-	},
 /obj/effect/wingrille_spawn/reinforced_phoron,
 /obj/machinery/door/blast/regular{
 	id = "d4portnacelle"
 	},
-/turf/simulated/floor/reinforced,
-/area/thruster/d1port)
-"aTF" = (
-/obj/effect/wingrille_spawn/reinforced_phoron,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 10
-	},
-/obj/machinery/door/blast/regular{
-	id = "d4portnacelle"
+/obj/machinery/atmospherics/valve/digital{
+	dir = 2;
+	frequency = 1490;
+	id = "RE4F";
+	name = "RE4 digital valve"
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d1port)
@@ -28201,25 +28120,15 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 4
 	},
-/obj/machinery/atmospherics/valve/digital{
-	dir = 2;
-	frequency = 1490;
-	id = "RE4F";
-	name = "RE4 digital valve"
-	},
 /obj/effect/landmark/overmap_target/torch/second/portnacelle,
+/obj/machinery/atmospherics/pipe/simple/visible/blue,
 /turf/simulated/floor/reinforced,
 /area/thruster/d1port)
 "aUY" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 4
 	},
-/obj/machinery/atmospherics/valve/digital{
-	dir = 2;
-	frequency = 1490;
-	id = "RE4F";
-	name = "RE4 digital valve"
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/reinforced,
 /area/thruster/d1port)
 "aUZ" = (
@@ -28446,22 +28355,12 @@
 /obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/fourth,
 /turf/simulated/floor/reinforced,
 /area/thruster/d1port)
-"aVE" = (
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	icon_state = "intact";
-	dir = 6
-	},
-/turf/simulated/floor/reinforced,
-/area/thruster/d1port)
 "aVF" = (
 /obj/effect/floor_decal/corner/purple{
 	icon_state = "corner_white";
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	icon_state = "intact";
-	dir = 9
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/blue,
 /turf/simulated/floor/reinforced,
 /area/thruster/d1port)
 "aVG" = (
@@ -28627,8 +28526,9 @@
 "aVZ" = (
 /obj/structure/sign/warning/nosmoking_2,
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
+	tag = "icon-intact (EAST)";
 	icon_state = "intact";
-	dir = 9
+	dir = 4
 	},
 /turf/simulated/wall/r_wall,
 /area/thruster/d1port)
@@ -28636,6 +28536,10 @@
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	icon_state = "intact";
+	dir = 9
 	},
 /turf/simulated/wall/r_wall,
 /area/thruster/d1port)
@@ -58197,12 +58101,12 @@ abC
 abC
 abC
 acE
-adn
+adT
 adU
 aeQ
 afV
-ahb
-aij
+ajo
+ajo
 ajo
 abF
 aaa
@@ -58234,12 +58138,12 @@ aaa
 aaa
 aEr
 aQo
-aRv
-aSz
+aQo
+aQo
 aTD
 aUr
 aUW
-aVE
+aUU
 aVZ
 aQn
 aQn
@@ -58604,7 +58508,7 @@ acG
 adp
 adW
 aeS
-afX
+afW
 ahd
 ail
 ajq
@@ -58640,7 +58544,7 @@ aaa
 aQq
 aRx
 aSB
-aTF
+aTE
 aUt
 aUY
 aVG

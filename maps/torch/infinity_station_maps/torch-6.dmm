@@ -1129,27 +1129,6 @@
 	name = "carpet"
 	},
 /area/syndicate_mothership/raider_base)
-"acL" = (
-/obj/effect/decal/cleanable/cobweb,
-/obj/machinery/autolathe{
-	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
-	hacked = 1;
-	name = "Unlocked Autolathe"
-	},
-/turf/unsimulated/floor{
-	icon_state = "plating";
-	name = "plating"
-	},
-/area/syndicate_mothership/raider_base)
-"acM" = (
-/obj/structure/closet/crate,
-/obj/item/stack/material/steel/fifty,
-/obj/item/stack/material/glass/fifty,
-/turf/unsimulated/floor{
-	icon_state = "plating";
-	name = "plating"
-	},
-/area/syndicate_mothership/raider_base)
 "acN" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/floor{
@@ -3603,6 +3582,7 @@
 /obj/structure/table/rack,
 /obj/random/hardsuit,
 /obj/item/clothing/glasses/thermal/plain/monocle,
+/obj/random/glasses,
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "ain" = (
@@ -3783,6 +3763,7 @@
 /obj/random/voidhelmet,
 /obj/item/weapon/material/harpoon,
 /obj/random/energy,
+/obj/random/hat,
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aiK" = (
@@ -3819,6 +3800,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/random/gloves,
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "aiO" = (
@@ -3849,6 +3831,8 @@
 /obj/random/voidsuit,
 /obj/random/voidhelmet,
 /obj/random/maintenance,
+/obj/random/hat,
+/obj/item/weapon/storage/belt/utility,
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aiQ" = (
@@ -3877,6 +3861,7 @@
 /obj/random/voidsuit,
 /obj/random/voidhelmet,
 /obj/random/energy,
+/obj/random/gloves,
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aiT" = (
@@ -4292,6 +4277,7 @@
 /obj/random/voidsuit,
 /obj/random/voidhelmet,
 /obj/random/projectile,
+/obj/item/weapon/tape_roll,
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "ajC" = (
@@ -4431,6 +4417,7 @@
 /area/skipjack_station/start)
 "ajP" = (
 /obj/random/maintenance,
+/obj/random/loot,
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "ajQ" = (
@@ -4696,11 +4683,6 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
-/area/skipjack_station/start)
-"ako" = (
-/obj/machinery/atmospherics/pipe/simple/visible,
-/obj/machinery/portable_atmospherics/hydroponics,
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "akp" = (
@@ -5050,11 +5032,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
-"ala" = (
-/obj/random/loot,
-/obj/vehicle/bike/thermal,
-/turf/simulated/floor/plating,
-/area/skipjack_station/start)
 "alb" = (
 /obj/structure/closet/crate/freezer/rations,
 /obj/item/clothing/mask/gas/cyborg,
@@ -5354,7 +5331,11 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "alE" = (
-/obj/machinery/portable_atmospherics/hydroponics,
+/obj/structure/closet/crate,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/glass/fifty,
+/obj/item/weapon/tape_roll,
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "alF" = (
@@ -6619,6 +6600,7 @@
 /area/syndicate_mothership)
 "aow" = (
 /obj/machinery/light/small,
+/obj/structure/slavers_base/mattress,
 /turf/simulated/floor/shuttle/black,
 /area/skipjack_station/start)
 "aox" = (
@@ -6643,6 +6625,7 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
+/obj/item/weapon/storage/belt/medical/emt,
 /turf/simulated/floor/shuttle/white,
 /area/skipjack_station/start)
 "aoA" = (
@@ -6658,6 +6641,7 @@
 	dir = 4
 	},
 /obj/item/weapon/melee/baton/cattleprod,
+/obj/item/weapon/defibrillator/compact/combat/loaded,
 /turf/simulated/floor/shuttle/white,
 /area/skipjack_station/start)
 "aoB" = (
@@ -12701,6 +12685,9 @@
 "aBx" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/newscaster{
+	pixel_x = 30
+	},
 /turf/unsimulated/floor{
 	dir = 2;
 	icon_state = "dark"
@@ -20546,14 +20533,14 @@
 	req_access = list(201)
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aSB" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
 "aSC" = (
 /obj/structure/closet/crate/freezer,
@@ -20561,7 +20548,7 @@
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov/clean,
 /obj/random/projectile,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aSD" = (
 /obj/structure/closet/crate,
@@ -20572,14 +20559,14 @@
 /obj/random/maintenance/solgov/clean,
 /obj/item/device/pda/wrist,
 /obj/item/device/pda/wrist,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aSE" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/spiderling_remains,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
 "aSF" = (
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -20587,7 +20574,7 @@
 /obj/random/loot,
 /obj/effect/decal/cleanable/cobweb2,
 /obj/random/plushie,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aSG" = (
 /turf/space,
@@ -20888,7 +20875,7 @@
 /area/merchant_station)
 "aTn" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
 "aTo" = (
 /obj/structure/table/rack,
@@ -20896,7 +20883,7 @@
 /obj/random/loot,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aTp" = (
 /obj/structure/closet/crate,
@@ -20904,15 +20891,15 @@
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov/clean,
 /obj/item/device/pda/wrist/engineering,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aTq" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
 "aTr" = (
 /obj/effect/floor_decal/industrial/outline/grey,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aTs" = (
 /obj/machinery/door/airlock/external{
@@ -21257,7 +21244,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/merchant_station)
 "aUf" = (
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
 "aUg" = (
 /turf/space,
@@ -21554,7 +21541,7 @@
 /obj/structure/table/rack,
 /obj/random/action_figure,
 /obj/effect/floor_decal/industrial/outline/grey,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aUR" = (
 /obj/structure/table/rack,
@@ -21577,7 +21564,7 @@
 	icon_state = "guest";
 	name = "Visitor's Card - Merchant's Station"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
 "aUS" = (
 /obj/machinery/alarm{
@@ -21586,7 +21573,7 @@
 	req_one_access = list(201)
 	},
 /obj/machinery/light/small,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aUT" = (
 /obj/structure/window/reinforced/crescent{
@@ -21837,7 +21824,7 @@
 	req_access = list(201)
 	},
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
 "aVr" = (
 /turf/simulated/floor/holofloor/desert,
@@ -22544,7 +22531,10 @@
 	dir = 2;
 	req_access = list(201)
 	},
-/turf/simulated/floor/tiled,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "aXl" = (
 /obj/structure/table/rack,
@@ -22552,32 +22542,20 @@
 	dir = 2;
 	req_access = list(201)
 	},
-/turf/simulated/floor/tiled,
+/obj/structure/window/reinforced{
+	dir = 8;
+	health = 1e+006
+	},
+/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "aXm" = (
 /obj/structure/grille,
 /obj/structure/window/shuttle,
 /turf/simulated/floor/plating,
 /area/shuttle/merchant/home)
-"aXn" = (
-/obj/structure/table/rack,
-/obj/machinery/door/window/brigdoor/northleft{
-	dir = 2;
-	req_access = list(201)
-	},
-/turf/simulated/floor/plating,
-/area/shuttle/merchant/home)
-"aXo" = (
-/obj/structure/table/rack,
-/obj/machinery/door/window/brigdoor/northright{
-	dir = 2;
-	req_access = list(201)
-	},
-/turf/simulated/floor/plating,
-/area/shuttle/merchant/home)
 "aXp" = (
 /obj/structure/flora/pottedplant/minitree,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "aXq" = (
 /obj/machinery/portable_atmospherics/canister/air/airlock,
@@ -22594,7 +22572,7 @@
 	dir = 8;
 	health = 1e+006
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "aXr" = (
 /obj/machinery/light/small{
@@ -23137,6 +23115,9 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/shuttle/merchant/home)
 "aYG" = (
@@ -23153,6 +23134,13 @@
 	},
 /obj/machinery/door/window/brigdoor/northleft{
 	req_access = list(201)
+	},
+/obj/structure/window/reinforced{
+	dir = 8;
+	health = 1e+006
+	},
+/obj/structure/window/reinforced{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/shuttle/merchant/home)
@@ -23173,6 +23161,10 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8;
+	health = 1e+006
 	},
 /turf/simulated/floor/tiled,
 /area/shuttle/merchant/home)
@@ -23603,39 +23595,53 @@
 	req_access = list(201)
 	},
 /obj/structure/table/rack,
-/turf/simulated/floor/tiled,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "aZI" = (
 /obj/machinery/door/window/brigdoor/northright{
 	req_access = list(201)
 	},
 /obj/structure/table/rack,
-/turf/simulated/floor/tiled,
+/obj/structure/window/reinforced{
+	dir = 8;
+	health = 1e+006
+	},
+/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "aZJ" = (
 /obj/machinery/door/window/brigdoor/northleft{
 	req_access = list(201)
 	},
 /obj/structure/closet/crate,
-/turf/simulated/floor/plating,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "aZK" = (
 /obj/machinery/door/window/brigdoor/northright{
 	req_access = list(201)
 	},
 /obj/structure/closet/crate,
-/turf/simulated/floor/plating,
+/obj/structure/window/reinforced{
+	dir = 8;
+	health = 1e+006
+	},
+/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "aZL" = (
 /obj/structure/table/reinforced,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "aZM" = (
 /obj/machinery/light{
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "aZN" = (
 /obj/machinery/door/airlock/external{
@@ -26018,6 +26024,14 @@
 /obj/structure/towel/yellow_stripped,
 /turf/simulated/floor/holofloor/beach/sand,
 /area/admin_prison)
+"dyc" = (
+/obj/machinery/autolathe{
+	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
+	hacked = 1;
+	name = "Unlocked Autolathe"
+	},
+/turf/simulated/floor/plating,
+/area/skipjack_station/start)
 "dPT" = (
 /obj/structure/towel/red_stripped,
 /turf/unsimulated/beach/sand,
@@ -30132,8 +30146,8 @@ ail
 aiI
 ajw
 ajw
-ako
-ako
+ajw
+ajw
 alD
 agH
 amO
@@ -30335,7 +30349,7 @@ aiJ
 ajx
 ajO
 ajx
-ala
+ajx
 alE
 agH
 amO
@@ -30538,7 +30552,7 @@ ajx
 ajx
 akp
 alb
-alE
+dyc
 agH
 amP
 aab
@@ -33346,7 +33360,7 @@ aao
 aao
 abc
 aaf
-acL
+aao
 aao
 adQ
 aaf
@@ -33548,7 +33562,7 @@ aao
 abt
 aaR
 aaf
-acM
+aao
 adj
 adR
 aaf
@@ -33947,7 +33961,7 @@ aae
 aae
 aae
 aaf
-aao
+aaR
 aao
 aaR
 aaR
@@ -61594,7 +61608,7 @@ aQc
 aah
 aah
 aWK
-aXn
+aXk
 aXX
 aYG
 aZf
@@ -61796,7 +61810,7 @@ aQc
 aVQ
 aah
 aWK
-aXo
+aXl
 aXX
 aYH
 aZf
