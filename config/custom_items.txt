@@ -127,3 +127,9 @@ paper_info: [center]Центральное Правительство Солнечной Системы[/center][solcres
 paper_title: award certificate
 paper_stamp_type: /obj/item/weapon/stamp/solgov
 }
+{
+ckey: wheatley2013
+character_name: Nexus
+item_path: /obj/item/clothing/suit/officerdnavyjacket
+req_titles: Bridge Officer, Deck Officer, Physician, Senior Engineer
+}
