@@ -1,14 +1,14 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
 /obj/effect/step_trigger/teleporter/random{
-	affect_ghosts = 1;
+	affect_ghosts = 0;
 	name = "escapeshuttle_leave";
 	teleport_x = 25;
 	teleport_x_offset = 245;
 	teleport_y = 25;
 	teleport_y_offset = 245;
-	teleport_z = 6;
-	teleport_z_offset = 6
+	teleport_z = 9;
+	teleport_z_offset = 0
 	},
 /turf/space{
 	icon_state = "black"
@@ -16,24 +16,24 @@
 /area/space)
 "ab" = (
 /obj/effect/step_trigger/teleporter/random{
-	affect_ghosts = 1;
+	affect_ghosts = 0;
 	name = "escapeshuttle_leave";
 	teleport_x = 25;
 	teleport_x_offset = 245;
 	teleport_y = 25;
 	teleport_y_offset = 245;
-	teleport_z = 6;
-	teleport_z_offset = 6
+	teleport_z = 9;
+	teleport_z_offset = 0
 	},
 /obj/effect/step_trigger/teleporter/random{
-	affect_ghosts = 1;
+	affect_ghosts = 0;
 	name = "escapeshuttle_leave";
 	teleport_x = 25;
 	teleport_x_offset = 245;
 	teleport_y = 25;
 	teleport_y_offset = 245;
-	teleport_z = 6;
-	teleport_z_offset = 6
+	teleport_z = 9;
+	teleport_z_offset = 0
 	},
 /turf/space{
 	icon_state = "black"
@@ -211,14 +211,14 @@
 /area/space)
 "aB" = (
 /obj/effect/step_trigger/teleporter/random{
-	affect_ghosts = 1;
+	affect_ghosts = 0;
 	name = "escapeshuttle_leave";
 	teleport_x = 25;
 	teleport_x_offset = 245;
 	teleport_y = 25;
 	teleport_y_offset = 245;
-	teleport_z = 6;
-	teleport_z_offset = 6
+	teleport_z = 9;
+	teleport_z_offset = 0
 	},
 /turf/space/transit/north,
 /area/space)

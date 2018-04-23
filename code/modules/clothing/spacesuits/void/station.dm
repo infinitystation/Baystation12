@@ -57,6 +57,7 @@
 
 /obj/item/clothing/suit/space/void/mining/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/mining
+	boots = /obj/item/clothing/shoes/magboots
 
 //Medical
 /obj/item/clothing/head/helmet/space/void/medical
@@ -186,6 +187,7 @@
 
 /obj/item/clothing/suit/space/void/mining/alt/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/mining/alt
+	boots = /obj/item/clothing/shoes/magboots
 
 //Medical
 /obj/item/clothing/head/helmet/space/void/medical/alt

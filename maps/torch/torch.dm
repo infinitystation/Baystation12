@@ -79,7 +79,6 @@
 	#include "infinity_station_maps/torch-8.dmm"
 	#include "../away_inf/sentinel/sentinel.dm"
 	#include "../away_inf/gunboat/gunboat.dm"
-	#include "../away_inf/lost_supply_base/lsb.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/bearcat/bearcat.dm"
 	#include "../away_inf/yacht/yacht.dm"
@@ -95,8 +94,10 @@
 	#include "../away/hydro/hydro.dm"
 	#include "../away/mobius_rift/mobius_rift.dm"
 	#include "../away/icarus/icarus.dm"
-//	#include "../away/errant_pisces/errant_pisces.dm"
+	#include "../away/errant_pisces/errant_pisces.dm"
 //	#include "../away/lar_maria/lar_maria.dm"
+	#include "../away_inf/smugglers/smugglers.dmm"
+	#include "../away/errant_pisces/errant_pisces.dmm"
 
 	#define using_map_DATUM /datum/map/torch
 

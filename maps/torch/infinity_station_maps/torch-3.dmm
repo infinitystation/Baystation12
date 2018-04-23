@@ -5391,6 +5391,7 @@
 	dir = 4
 	},
 /obj/structure/fireaxecabinet{
+	dir = 8;
 	pixel_x = 32
 	},
 /turf/simulated/floor/plating,
@@ -7557,7 +7558,7 @@
 /area/crew_quarters/safe_room/seconddeck)
 "oY" = (
 /obj/structure/table/rack,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "oZ" = (
 /obj/structure/bed/padded,
@@ -8190,14 +8191,14 @@
 	req_access = list(19);
 	specialfunctions = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "qm" = (
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "qn" = (
 /obj/structure/curtain/open/bed,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "qo" = (
 /obj/structure/closet/emcloset,
@@ -8209,7 +8210,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "qp" = (
 /obj/structure/closet/emcloset,
@@ -8217,7 +8218,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "qq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -8229,7 +8230,7 @@
 /obj/structure/fireaxecabinet{
 	pixel_y = 32
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "qr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -8245,7 +8246,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "qs" = (
 /obj/machinery/door/firedoor/border_only,
@@ -8271,7 +8272,7 @@
 	req_access = list(19);
 	specialfunctions = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "qt" = (
 /obj/structure/cable/green{
@@ -8336,7 +8337,6 @@
 /obj/machinery/door/airlock/maintenance_hatch{
 	req_one_access = newlist()
 	},
-/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/engineering/foyer)
 "qw" = (
@@ -8459,7 +8459,7 @@
 	name = "Engineering Bay";
 	req_one_access = list(10)
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/techmaint,
 /area/engineering/locker_room)
 "qC" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -8662,6 +8662,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/machinery/light/small,
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
 "qN" = (
@@ -9236,15 +9237,15 @@
 /area/maintenance/seconddeck/foreport)
 "rH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "rI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "rJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "rK" = (
 /obj/structure/cable{
@@ -9863,7 +9864,7 @@
 	icon_state = "intact"
 	},
 /obj/item/device/radio/beacon,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "sP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -9873,7 +9874,7 @@
 	dir = 4;
 	icon_state = "intact"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "sQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -9883,7 +9884,7 @@
 	dir = 4;
 	icon_state = "intact"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "sR" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -9893,7 +9894,7 @@
 	dir = 1;
 	icon_state = "map"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "sS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
@@ -9906,7 +9907,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "sT" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
@@ -9915,20 +9916,20 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "sU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "sV" = (
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 2;
 	target_pressure = 200
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "sW" = (
 /obj/structure/cable/green{
@@ -10415,21 +10416,21 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "tT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/structure/bed/chair,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "tU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/bed/chair,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "tV" = (
 /obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "tW" = (
 /obj/machinery/light{
@@ -10441,7 +10442,7 @@
 /obj/structure/closet/medical_wall/filled/regular{
 	pixel_x = 28
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "tX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
@@ -10449,14 +10450,14 @@
 	icon_state = "intact"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "tY" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
 	dir = 1;
 	icon_state = "map"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "tZ" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
@@ -10465,7 +10466,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "ua" = (
 /obj/structure/cable/green{
@@ -10768,7 +10769,7 @@
 	icon_state = "alarm0";
 	pixel_x = -22
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "uK" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -10779,7 +10780,7 @@
 /obj/machinery/newscaster{
 	pixel_y = -32
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "uL" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -10790,18 +10791,18 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "uM" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "uN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "uO" = (
 /obj/machinery/power/port_gen/pacman{
@@ -10816,7 +10817,7 @@
 	pixel_x = -24;
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "uP" = (
 /obj/machinery/atmospherics/portables_connector{
@@ -10824,7 +10825,7 @@
 	},
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "uQ" = (
 /obj/machinery/light_switch{
@@ -10837,7 +10838,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/safe_room/seconddeck)
 "uR" = (
 /obj/structure/cable/green{
@@ -11000,9 +11001,6 @@
 	dir = 8;
 	name = "Air to Supply"
 	},
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
@@ -11050,12 +11048,6 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/pipedispenser/disposal,
-/turf/simulated/floor/tiled,
-/area/engineering/atmos)
-"vm" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "vn" = (
@@ -11226,7 +11218,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/seconddeck)
 "vG" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -11613,7 +11605,7 @@
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov/clean,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/seconddeck)
 "wt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
@@ -11623,7 +11615,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/seconddeck)
 "wu" = (
 /obj/structure/closet/crate,
@@ -11636,7 +11628,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/seconddeck)
 "wv" = (
 /turf/simulated/wall/r_wall,
@@ -11767,7 +11759,10 @@
 	icon_state = "1-2"
 	},
 /obj/structure/fireaxecabinet{
-	pixel_x = -32
+	dir = 4;
+	icon_state = "fireaxe";
+	pixel_x = -32;
+	tag = "icon-fireaxe (EAST)"
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
@@ -11825,10 +11820,6 @@
 "wN" = (
 /obj/effect/floor_decal/corner/black{
 	icon_state = "corner_white";
-	dir = 4
-	},
-/obj/machinery/light{
-	icon_state = "tube1";
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
@@ -11971,14 +11962,14 @@
 	pixel_x = -22;
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/seconddeck)
 "xg" = (
 /obj/effect/landmark{
 	name = "xeno_spawn";
 	pixel_x = -1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/seconddeck)
 "xh" = (
 /obj/structure/closet/crate,
@@ -11988,7 +11979,7 @@
 	dir = 4;
 	pixel_x = 24
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/seconddeck)
 "xi" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
@@ -12374,15 +12365,15 @@
 /obj/structure/closet/crate/freezer/rations,
 /obj/random/snack,
 /obj/random/snack,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/seconddeck)
 "xV" = (
 /obj/machinery/light/small,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/seconddeck)
 "xW" = (
 /obj/structure/closet/secure_closet/guncabinet/sidearm/small,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/seconddeck)
 "xX" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -12492,14 +12483,14 @@
 	dir = 6
 	},
 /obj/machinery/meter,
-/obj/machinery/light{
-	icon_state = "tube1";
-	dir = 8
-	},
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/light/spot{
+	icon_state = "tube1";
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
@@ -12961,15 +12952,15 @@
 /area/engineering/atmos)
 "zn" = (
 /obj/effect/floor_decal/corner/white,
-/obj/machinery/light{
-	icon_state = "tube1";
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	icon_state = "intact";
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/paleblue{
+	dir = 4
+	},
+/obj/machinery/light/spot{
+	icon_state = "tube1";
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -14204,7 +14195,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "BP" = (
@@ -14924,6 +14914,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
+/obj/machinery/light/spot,
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "Dv" = (
@@ -14933,12 +14924,6 @@
 	c_tag = "Atmospherics - South";
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
-/area/engineering/atmos)
-"Dw" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light,
-/obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "Dx" = (
@@ -16518,6 +16503,14 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/compactor)
+"Od" = (
+/obj/structure/closet/secure_closet/atmos_torch,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/light/spot{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/engineering/atmos)
 "Ox" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -40333,7 +40326,7 @@ qS
 sd
 tl
 uo
-vj
+Od
 vV
 vV
 xv
@@ -40949,7 +40942,7 @@ Ap
 Bd
 BU
 CG
-Dw
+CG
 uo
 EE
 Fg
@@ -41141,7 +41134,7 @@ qW
 oo
 oo
 uo
-vm
+vX
 vY
 wL
 xx

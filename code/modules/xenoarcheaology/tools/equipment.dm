@@ -29,6 +29,7 @@
 
 /obj/item/clothing/suit/space/void/excavation/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/excavation
+	boots = /obj/item/clothing/shoes/magboots
 
 /obj/item/weapon/storage/belt/archaeology
 	name = "excavation gear-belt"
