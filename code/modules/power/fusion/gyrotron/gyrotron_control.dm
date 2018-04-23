@@ -9,10 +9,12 @@
 	var/id_tag
 	var/scan_range = 25
 
-/obj/machinery/computer/gyrotron_control/attack_ai(var/mob/user)
-	attack_hand(user)
+/obj/machinery/computer/gyrotron_control/attack_ai(mob/user as mob)
+	return src.attack_hand(user)
 
-/obj/machinery/computer/gyrotron_control/attack_hand(var/mob/user)
+/obj/machinery/computer/gyrotron_control/attack_hand(mob/user as mob)
+	if(..(user))
+		return
 	add_fingerprint(user)
 	interact(user)
 

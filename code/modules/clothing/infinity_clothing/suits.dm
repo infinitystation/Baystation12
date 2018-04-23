@@ -45,3 +45,10 @@
 	icon_state = "longjacket"
 	icon_open = "longjacket_open"
 	icon_closed = "longjacket"
+
+/obj/item/clothing/suit/officerdnavyjacket
+	name = "officer navy jacket"
+	desc = "The utility jacket of the SCG Fleet, made from an insulated materials."
+	icon = 'icons/obj/clothing/suits.dmi'
+	icon_state = "officerdnavyjacket"
+	body_parts_covered = UPPER_TORSO

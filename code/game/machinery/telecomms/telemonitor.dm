@@ -20,6 +20,8 @@
 	var/temp = ""				// temporary feedback messages
 
 	attack_hand(mob/user as mob)
+		if(..(user))
+			return
 		if(stat & (BROKEN|NOPOWER))
 			return
 		user.set_machine(src)
