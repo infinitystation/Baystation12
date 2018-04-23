@@ -263,6 +263,8 @@
 	return t
 
 /proc/convert1251_to_utf(t)
+	// Спецсимволы
+	t = replacetextEx(t, "№", "&#8470;")
 	//Ё, ё
 	t = replacetextEx(t, "Ё", "&#1025;")
 	t = replacetextEx(t, "ё", "&#1105;")

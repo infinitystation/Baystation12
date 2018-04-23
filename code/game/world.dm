@@ -488,7 +488,7 @@ var/world_topic_spam_protect_time = world.timeofday
 
 	if(config.wait_for_sigusr1_reboot && reason != 3)
 		text2file("foo", "reboot_called")
-		to_world("<span class=danger>World reboot waiting for external scripts. Please be patient.</span>")
+		to_chat(world, "<span class=danger>World reboot waiting for external scripts. Please be patient.</span>")
 		return
 
 	..(reason)

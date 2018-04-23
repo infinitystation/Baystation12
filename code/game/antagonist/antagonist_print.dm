@@ -38,7 +38,7 @@
 
 	// Display the results.
 	text += "<br>"
-	to_world(jointext(text,null))
+	to_chat(world, jointext(text,null))
 
 
 /datum/antagonist/proc/print_objective(var/datum/objective/O, var/num, var/append_success)

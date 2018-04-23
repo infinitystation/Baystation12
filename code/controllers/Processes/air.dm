@@ -13,7 +13,7 @@
 			air_master.failed_ticks++
 
 			if(air_master.failed_ticks > 5)
-				to_world("<SPAN CLASS='danger'>RUNTIME'S IN ATMOS TICKER.  Killing air simulation!</SPAN>")
+				to_chat(world, "<SPAN CLASS='danger'>RUNTIME'S IN ATMOS TICKER.  Killing air simulation!</SPAN>")
 
 				log_error("### ZAS SHUTDOWN")
 
