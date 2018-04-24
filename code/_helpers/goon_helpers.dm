@@ -115,6 +115,19 @@
 
 /proc/extA2U(t)
 	if(DM_VERSION < 511)
+		// Ñïåöñèìâîëû
+		t = replacetextEx(t, "\\x81", "\\u0403")//403h
+		t = replacetextEx(t, "\\xaa", "\\u0404")//404h
+		t = replacetextEx(t, "\\xaf", "\\u0407")//407h
+		t = replacetextEx(t, "\\x83", "\\u0453")//453h
+		t = replacetextEx(t, "\\xba", "\\u0454")//454h
+		t = replacetextEx(t, "\\xbf", "\\u0457")//457h
+		t = replacetextEx(t, "\\xa5", "\\u0490")//490h
+		t = replacetextEx(t, "\\xb4", "\\u0491")//491h
+		t = replacetextEx(t, "\\x95", "\\u2022")//2022h
+		t = replacetextEx(t, "\\x96", "\\u2013")//2013h
+		t = replacetextEx(t, "\\x97", "\\u2014")//2014h
+		t = replacetextEx(t, "\\xb9", "\\u2116")//2116h
 		//¨, ¸
 		t = replacetextEx(t, "\\xa8", "\\u0401")
 		t = replacetextEx(t, "\\xb8", "\\u0451")
@@ -186,6 +199,19 @@
 		t = replacetextEx(t, "\\xfd", "\\u044d")
 		t = replacetextEx(t, "\\xfe", "\\u044e")
 	else
+		// Ñïåöñèìâîëû
+		t = replacetextEx(t, "\\u0081", "\\u0403")//403h
+		t = replacetextEx(t, "\\u00aa", "\\u0404")//404h
+		t = replacetextEx(t, "\\u00af", "\\u0407")//407h
+		t = replacetextEx(t, "\\u0083", "\\u0453")//453h
+		t = replacetextEx(t, "\\u00ba", "\\u0454")//454h
+		t = replacetextEx(t, "\\u00bf", "\\u0457")//457h
+		t = replacetextEx(t, "\\u00a5", "\\u0490")//490h
+		t = replacetextEx(t, "\\u00b4", "\\u0491")//491h
+		t = replacetextEx(t, "\\u0095", "\\u2022")//2022h
+		t = replacetextEx(t, "\\u0096", "\\u2013")//2013h
+		t = replacetextEx(t, "\\u0097", "\\u2014")//2014h
+		t = replacetextEx(t, "\\u00b9", "\\u2116")//2116h
 		//¨, ¸
 		t = replacetextEx(t, "\\u00a8", "\\u0401")
 		t = replacetextEx(t, "\\u00b8", "\\u0451")
@@ -264,11 +290,22 @@
 
 /proc/convert1251_to_utf(t)
 	// Ñïåöñèìâîëû
-	t = replacetextEx(t, "¹", "&#8470;")
-	//¨, ¸
+	t = replacetextEx(t, "", "&#1027;")//403h
+	t = replacetextEx(t, "ª", "&#1028;")//404h
+	t = replacetextEx(t, "¯", "&#1031;")//407h
+	t = replacetextEx(t, "ƒ", "&#1107;")//453h
+	t = replacetextEx(t, "º", "&#1108;")//454h
+	t = replacetextEx(t, "¿", "&#1031;")//457h
+	t = replacetextEx(t, "¥", "&#1168;")//490h
+	t = replacetextEx(t, "´", "&#1169;")//491h
+	t = replacetextEx(t, "•", "&#8266;")//2022h
+	t = replacetextEx(t, "–", "&#8211;")//2013h
+	t = replacetextEx(t, "—", "&#8212;")//2014h
+	t = replacetextEx(t, "¹", "&#8470;")//2116h
+	// ¨, ¸
 	t = replacetextEx(t, "¨", "&#1025;")
 	t = replacetextEx(t, "¸", "&#1105;")
-	//À-Ï
+	// À-Ï
 	t = replacetextEx(t, "À", "&#1040;")
 	t = replacetextEx(t, "Á", "&#1041;")
 	t = replacetextEx(t, "Â", "&#1042;")
@@ -285,7 +322,7 @@
 	t = replacetextEx(t, "Í", "&#1053;")
 	t = replacetextEx(t, "Î", "&#1054;")
 	t = replacetextEx(t, "Ï", "&#1055;")
-	//Ð-ß
+	// Ð-ß
 	t = replacetextEx(t, "Ð", "&#1056;")
 	t = replacetextEx(t, "Ñ", "&#1057;")
 	t = replacetextEx(t, "Ò", "&#1058;")
@@ -302,7 +339,7 @@
 	t = replacetextEx(t, "Ý", "&#1069;")
 	t = replacetextEx(t, "Þ", "&#1070;")
 	t = replacetextEx(t, "ß", "&#1071;")
-	//à-ï
+	// à-ï
 	t = replacetextEx(t, "à", "&#1072;")
 	t = replacetextEx(t, "á", "&#1073;")
 	t = replacetextEx(t, "â", "&#1074;")
@@ -319,7 +356,7 @@
 	t = replacetextEx(t, "í", "&#1085;")
 	t = replacetextEx(t, "î", "&#1086;")
 	t = replacetextEx(t, "ï", "&#1087;")
-	//ð-ÿ
+	// ð-ÿ
 	t = replacetextEx(t, "ð", "&#1088;")
 	t = replacetextEx(t, "ñ", "&#1089;")
 	t = replacetextEx(t, "ò", "&#1090;")
