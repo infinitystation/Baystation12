@@ -42,7 +42,7 @@ var opts = {
 	'highlightTerms': [],
 	'highlightLimit': 5,
 	'highlightColor': '#FFFF00', //The color of the highlighted message
-	'pingDisabled': true, //Has the user disabled the ping counter
+	'pingDisabled': false, //Has the user disabled the ping counter
 
 	//Ping display
 	'lastPang': 0, //Timestamp of the last response from the server.
@@ -473,7 +473,7 @@ $(function() {
 				$('.connectionClosed[data-count="'+opts.noResponseCount+'"]:not(.restored)').addClass('restored').text('Your connection has been restored (probably)!');
 				opts.noResponse = false;
 		}
-	}, 120000); //2 minutes
+	}, 2000); //2 seconds
 
 
 	/*****************************************
