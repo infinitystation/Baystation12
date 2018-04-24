@@ -13,7 +13,7 @@ body {
 	background: #fff;
     font-family: Verdana, sans-serif;
     font-size: 9pt;
-    line-height: 1.2;
+    line-height: 1.4;
 	overflow-x: hidden;
 	overflow-y: scroll;
 	word-wrap: break-word;
@@ -36,24 +36,6 @@ img.icon {
 	min-height: 16px;
 	width: auto;
 	vertical-align: bottom;
-}
-
-
-.r:before { /* "repeated" badge class for combined messages */
-	content: 'x';
-}
-.r {
-	display: inline-block;
-	min-width: 0.5em;
-	font-size: 0.7em;
-	padding: 0.2em 0.3em;
-	line-height: 1;
-	color: white;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: middle;
-	background-color: crimson;
-	border-radius: 10px;
 }
 
 a {color: #0000ff;}
@@ -101,7 +83,7 @@ a.popt {text-decoration: none;}
 #ping {
 	position: fixed;
 	top: 0;
-	right: 80px;
+	right: 40px;
 	width: 45px;
 	background: #ddd;
 	height: 30px;
@@ -114,12 +96,12 @@ a.popt {text-decoration: none;}
 	font-size: 8pt;
 	padding-top: 2px;
 }
-#userBar {
+#options {
 	position: fixed;
 	top: 0;
 	right: 0;
 }
-#userBar .subCell {
+#options a {
 	background: #ddd;
     height: 30px;
 	padding: 5px 0;
@@ -129,23 +111,23 @@ a.popt {text-decoration: none;}
     line-height: 28px;
     border-top: 1px solid #b4b4b4;
 }
-#userBar .subCell:hover {background: #ccc;}
-#userBar .toggle {
+#options a:hover {background: #ccc;}
+#options .toggle {
 	width: 40px;
     background: #ccc;
     border-top: 0;
     float: right;
     text-align: center;
 }
-#userBar .sub {clear: both; display: none; width: 200px;}
-#userBar .sub.scroll {overflow-y: scroll;}
-#userBar .sub.subCell {padding: 0px 0px 0px 0px; line-height: 30px; font-size: 0.9em; clear: both;}
-#userBar .sub span {
+#options .sub {clear: both; display: none; width: 160px;}
+#options .sub.scroll {overflow-y: scroll;}
+#options .sub a {padding: 3px 0 3px 8px; line-height: 30px; font-size: 0.9em; clear: both;}
+#options .sub span {
 	display: block;
 	line-height: 30px;
 	float: left;
 }
-#userBar .sub i {
+#options .sub i {
 	display: block;
 	padding: 0 5px;
 	font-size: 1.1em;
@@ -154,14 +136,7 @@ a.popt {text-decoration: none;}
 	line-height: 30px;
 	float: right;
 }
-#userBar .sub input {
-	position: absolute;
-	padding: 7px 5px;
-	width: 121px;
-	line-height: 30px;
-	float: left;
-}
-#userBar .topCell {border-top: 0;}
+#options .decreaseFont {border-top: 0;}
 
 /* POPUPS */
 .popup {

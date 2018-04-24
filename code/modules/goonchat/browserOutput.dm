@@ -79,6 +79,10 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 		if("analyzeClientData")
 			data = analyzeClientData(arglist(params))
 
+	switch(href_list["action"])
+		if("openLink")
+			owner << link(href_list["link"])
+
 	if(data)
 		ehjax_send(data = data)
 
@@ -156,7 +160,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 
 	cookieSent = TRUE
 
-//Called by js client every 60 seconds
+//Called by js client every 2 (?) minutes
 /datum/chatOutput/proc/ping()
 	return "pong"
 

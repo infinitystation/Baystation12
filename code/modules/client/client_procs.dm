@@ -91,6 +91,10 @@
 		if("vars")		return view_var_Topic(href,href_list,hsrc)
 		if("chat")		return chatOutput.Topic(href, href_list)
 
+	switch(href_list["action"])
+		if("openLink")
+			src << link(href_list["link"])
+
 	..()	//redirect to hsrc.Topic()
 
 //This stops files larger than UPLOAD_LIMIT being sent from client to server via input(), client.Import() etc.
