@@ -56,7 +56,7 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 	if(!report_at_round_end)
 		return
 
-	to_chat(world, "<br><br><br><font size=3><b>Random Events This Round:</b></font>")
+	to_world("<br><br><br><font size=3><b>Random Events This Round:</b></font>")
 	for(var/datum/event/E in active_events|finished_events)
 		var/datum/event_meta/EM = E.event_meta
 		if(EM.name == "Nothing")
@@ -70,7 +70,7 @@ GLOBAL_DATUM_INIT(event_manager, /datum/event_manager, new)
 			else
 				message += "and ran to completion."
 
-		to_chat(world, message)
+		to_world(message)
 
 /datum/event_manager/proc/GetInteractWindow()
 	var/html = "<A align='right' href='?src=\ref[src];refresh=1'>Refresh</A>"
