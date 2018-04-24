@@ -112,8 +112,8 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 	set waitfor = FALSE
 
 	while (owner)
-		ehjax_send(data = owner.is_afk(29) ? "softPang" : "pang") // SoftPang isn't handled anywhere but it'll always reset the opts.lastPang.
-		sleep(30)
+		ehjax_send(data = owner.is_afk(1199) ? "softPang" : "pang") // SoftPang isn't handled anywhere but it'll always reset the opts.lastPang.
+		sleep(1200)
 
 /datum/chatOutput/proc/ehjax_send(client/C = owner, window = "browseroutput", data)
 	if(islist(data))
@@ -156,7 +156,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 
 	cookieSent = TRUE
 
-//Called by js client every 60 seconds
+//Called by js client every 2 (?) minutes
 /datum/chatOutput/proc/ping()
 	return "pong"
 
