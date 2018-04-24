@@ -112,7 +112,7 @@
 		/datum/reagent/radium =         list( -1.5,  0,   0.2),
 		/datum/reagent/adminordrazine = list(  1,    1,   1  ),
 		/datum/reagent/toxin/fertilizer/robustharvest =  list(  0,    0.2, 0  ),
-		/datum/reagent/toxin/fertilizer/left4zed =       list(  0,    0,   0.2)
+		/datum/reagent/toxin/fertilizer/left4zed =       list(  0,    0,   0.5)
 		)
 
 	// Mutagen list specifies minimum value for the mutation to take place, rather
