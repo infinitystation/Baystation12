@@ -3,6 +3,7 @@
 		//BLACK MAGIC THINGS//
 		//////////////////////
 	parent_type = /datum
+	var/datum/chatOutput/chatOutput
 		////////////////
 		//ADMIN THINGS//
 		////////////////

@@ -37,15 +37,15 @@
 			var/data_value = 1
 
 			switch(metal)
-				if("silicates", "carbonaceous rock", "iron")	
+				if("silicates", "carbonaceous rock", "iron")
 					ore_type = "surface minerals"
-				if("gold", "silver", "diamond")					
+				if("gold", "silver", "diamond")
 					ore_type = "precious metals"
 					data_value = 2
-				if("uranium")									
+				if("uranium")
 					ore_type = "nuclear fuel"
 					data_value = 3
-				if("phoron", "osmium", "hydrogen")				
+				if("phoron", "osmium", "hydrogen")
 					ore_type = "exotic matter"
 					data_value = 4
 
@@ -56,7 +56,7 @@
 
 		T.surveyed = 1
 
-	to_chat(user, "\icon[src] <span class='notice'>The scanner beeps and displays a readout.</span>")
+	to_chat(user, "[icon2html(src, user)] <span class='notice'>The scanner beeps and displays a readout.</span>")
 
 	for(var/ore_type in metals)
 		var/result = "no sign"
@@ -78,7 +78,7 @@
 	set category = "Object"
 	set name = "Get Survey Data"
 	set src in usr
-	
+
 	var/mob/M = usr
 	if(!istype(M))
 		return
