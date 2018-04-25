@@ -16,7 +16,8 @@
 	if(url)
 		to_chat(listener, url)
 
-	to_chat(listener, "<span class='good'>License: <a href='[license.url]'>[license.name]</a></span>")
+	to_chat(listener, "<span class='good'>License: [license.name]</span>")
+	to_chat(listener, "<span class='good'>License: [license.url]</span>")
 	sound_to(listener, sound(song, repeat = 1, wait = 0, volume = volume, channel = 1))
 
 // No VV editing anything about music tracks

@@ -43,7 +43,7 @@
 /obj/structure/bed/roller/ironingboard/examine(var/mob/user)
 	. = ..()
 	if(cloth)
-		to_chat(user, "<span class='notice'>\The \icon[cloth] [cloth] lies on it.</span>")
+		to_chat(user, "<span class='notice'>\The [icon2html(cloth, user)] [cloth] lies on it.</span>")
 
 /obj/structure/bed/roller/ironingboard/update_icon()
 	if(density)
@@ -107,7 +107,7 @@
 			var/mob/living/carbon/human/H = buckled_mob
 			var/zone = user.zone_sel.selecting
 			var/parsed = parse_zone(zone)
-		
+
 			visible_message("<span class='danger'>[user] begins ironing [src.buckled_mob]'s [parsed]!</span>", "<span class='danger'>You begin ironing [buckled_mob]'s [parsed]!</span>")
 			if(!do_after(user, 40, src))
 				return

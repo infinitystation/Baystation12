@@ -13,7 +13,7 @@
 	..()
 	atom_flags |= ATOM_FLAG_CHECKS_BORDER
 	update_layers()
-	//to_world(" New(). Dir:[dir]; Layer:[layer]; plane:[plane]")
+	//to_chat(world, " New(). Dir:[dir]; Layer:[layer]; plane:[plane]")
 
 /obj/structure/sandbag/Destroy()
 	basic_chance = null
