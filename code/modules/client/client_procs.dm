@@ -89,11 +89,6 @@
 		if("usr")		hsrc = mob
 		if("prefs")		return prefs.process_link(usr,href_list)
 		if("vars")		return view_var_Topic(href,href_list,hsrc)
-		if("chat")		return chatOutput.Topic(href, href_list)
-
-	switch(href_list["action"])
-		if("openLink")
-			src << link(href_list["link"])
 
 	..()	//redirect to hsrc.Topic()
 
@@ -117,8 +112,6 @@
 	///////////
 /client/New(TopicData)
 	TopicData = null							//Prevent calls to client.Topic from connect
-
-	chatOutput = new /datum/chatOutput(src)
 
 	if(!(connection in list("seeker", "web")))					//Invalid connection type.
 		return null
@@ -209,7 +202,7 @@
 	log_client_to_db()
 
 	send_resources()
-	chatOutput.start()
+
 
 	if(prefs.lastchangelog != changelog_hash) //bolds the changelog button on the interface so we know there are updates.
 		to_chat(src, "<span class='info'>You have unread updates in the Baystation 12 changelog.</span>")
