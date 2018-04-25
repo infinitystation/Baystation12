@@ -8063,6 +8063,16 @@
 	icon_state = "bordercolor";
 	dir = 9
 	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2 (NORTH)";
+	icon_state = "borderfloorcorner2";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTH)";
+	icon_state = "bordercolorcorner2";
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "oY" = (
@@ -8099,6 +8109,16 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2 (EAST)";
+	icon_state = "borderfloorcorner2";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (EAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "pa" = (
@@ -8117,6 +8137,16 @@
 /obj/effect/floor_decal/corner/blue/border{
 	tag = "icon-bordercolor (NORTH)";
 	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2 (NORTH)";
+	icon_state = "borderfloorcorner2";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTH)";
+	icon_state = "bordercolorcorner2";
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
