@@ -4911,7 +4911,6 @@
 	opacity = 0
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/half,
 /turf/simulated/floor/tiled,
 /area/quartermaster/quarantine)
 "kA" = (
@@ -6284,10 +6283,6 @@
 "mS" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/half{
-	icon_state = "warninghalf";
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -8220,10 +8215,6 @@
 "qu" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/half{
-	icon_state = "warninghalf";
-	dir = 4
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/fourthdeck/center)
 "qw" = (
@@ -8436,10 +8427,6 @@
 "qK" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/half{
-	icon_state = "warninghalf";
-	dir = 4
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/fourthdeck/aft)
 "qL" = (
@@ -9196,10 +9183,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/half{
-	icon_state = "warninghalf";
-	dir = 4
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/fourthdeck/center)
 "rS" = (
@@ -9458,10 +9441,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/half{
-	icon_state = "warninghalf";
-	dir = 4
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/fourthdeck/aft)
 "sj" = (
@@ -11358,19 +11337,12 @@
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/hallway/primary/fourthdeck/aft)
-"vj" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/half,
-/turf/simulated/floor/tiled/steel_grid,
-/area/hallway/primary/fourthdeck/aft)
 "vk" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/half,
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/fourthdeck/aft)
 "vl" = (
@@ -18040,10 +18012,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/storage)
-"Jv" = (
-/obj/effect/floor_decal/industrial/warning/half,
-/turf/simulated/floor/plating,
-/area/quartermaster/hangar)
 "Jx" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -20211,7 +20179,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/half,
 /turf/simulated/floor/tiled,
 /area/quartermaster/quarantine)
 "UG" = (
@@ -40744,7 +40711,7 @@ fT
 qN
 sj
 tH
-vj
+qK
 wm
 xI
 za
@@ -41738,7 +41705,7 @@ bd
 bd
 bd
 aO
-Jv
+aO
 aO
 aO
 aO
