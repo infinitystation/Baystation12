@@ -127,9 +127,9 @@ var/global/list/additional_antag_types = list()
 				return
 
 /datum/game_mode/proc/announce() //to be called when round starts
-	to_world("<B>Текущий игровой режим [capitalize(name)]!</B>")
-	if(round_description) to_world("[round_description]")
-	if(round_autoantag) to_world("Antagonists will be added to the round automagically as needed.")
+	to_chat(world, "<B>Текущий игровой режим [capitalize(name)]!</B>")
+	if(round_description) to_chat(world, "[round_description]")
+	if(round_autoantag) to_chat(world, "Antagonists will be added to the round automagically as needed.")
 	if(antag_templates && antag_templates.len)
 		var/antag_summary = "<b>Possible antagonist types:</b> "
 		var/i = 1
@@ -143,7 +143,7 @@ var/global/list/additional_antag_types = list()
 			i++
 		antag_summary += "."
 		if(antag_templates.len > 1 && master_mode != "secret")
-			to_world("[antag_summary]")
+			to_chat(world, "[antag_summary]")
 		else
 			message_admins("[antag_summary]")
 
@@ -345,7 +345,7 @@ var/global/list/additional_antag_types = list()
 		text += " (<b>[escaped_total>0 ? escaped_total : "none"] [evacuation_controller.emergency_evacuation ? "escaped" : "transferred"]</b>) and <b>[ghosts] ghosts</b>.<br>"
 	else
 		text += "There were <b>no survivors</b> (<b>[ghosts] ghosts</b>)."
-	to_world(text)
+	to_chat(world, text)
 
 	if(clients > 0)
 		feedback_set("round_end_clients",clients)

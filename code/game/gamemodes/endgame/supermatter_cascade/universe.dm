@@ -37,7 +37,7 @@ var/global/universe_has_ended = 0
 // Apply changes when entering state
 /datum/universal_state/supermatter_cascade/OnEnter()
 	set background = 1
-	to_world("<span class='sinister' style='font-size:22pt'>Вы ослеплены блестящей вспышкой энергии.</span>")
+	to_chat(world, "<span class='sinister' style='font-size:22pt'>Вы ослеплены блестящей вспышкой энергии.</span>")
 	sound_to(world, sound('sound/effects/cascade.ogg'))
 
 	for(var/mob/M in GLOB.player_list)
