@@ -101,7 +101,7 @@ a.popt {text-decoration: none;}
 #ping {
 	position: fixed;
 	top: 0;
-	right: 80px;
+	right: 40px;
 	width: 45px;
 	background: #ddd;
 	height: 30px;
@@ -137,7 +137,7 @@ a.popt {text-decoration: none;}
     float: right;
     text-align: center;
 }
-#userBar .sub {clear: both; display: none; width: 200px;}
+#userBar .sub {clear: both; display: none; width: 230px;}
 #userBar .sub.scroll {overflow-y: scroll;}
 #userBar .sub.subCell {padding: 0px 0px 0px 0px; line-height: 30px; font-size: 0.9em; clear: both;}
 #userBar .sub span {
@@ -149,7 +149,7 @@ a.popt {text-decoration: none;}
 	display: block;
 	padding: 0 5px;
 	font-size: 1.1em;
-	width: 22px;
+	width: 30px;
 	text-align: center;
 	line-height: 30px;
 	float: right;
@@ -360,7 +360,7 @@ h1.alert, h2.alert			{color: #000000;}
 .good                   		{color: #4f7529; font-weight: bold;}
 .bad                    		{color: #ee0000; font-weight: bold;}
 
-.icon 				{width: 1em; width: auto;}
+.icon 					{height: 1em; width: auto;}
 
 .name					{font-weight: bold;}
 
