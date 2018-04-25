@@ -15266,6 +15266,11 @@
 	pixel_y = 4
 	},
 /obj/item/weapon/storage/box/masks,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = 24
+	},
 /turf/simulated/floor/plating,
 /area/storage/research)
 "Et" = (
@@ -15680,16 +15685,8 @@
 /turf/simulated/floor/plating,
 /area/storage/cargo)
 "Ft" = (
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -24;
-	pixel_y = 0
-	},
-/turf/simulated/floor/plating,
-/area/storage/research)
-"Fu" = (
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/ladder/up,
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
 /area/storage/research)
 "Fv" = (
@@ -37714,7 +37711,7 @@ Dl
 DV
 Es
 Fa
-Fu
+Fa
 FR
 DV
 aa
