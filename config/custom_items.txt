@@ -123,7 +123,7 @@ item_path: /obj/item/clothing/accessory/medal/solgov/silver/sword
 item_desc: A silver medal awarded to members of the SCG for honorable service while under enemy fire. No: 48181
 req_titles: Brig Officer
 req_access: 2
-paper_info: [center]Р¦РµРЅС‚СЂР°Р»СЊРЅРѕРµ РџСЂР°РІРёС‚РµР»СЊСЃС‚РІРѕ РЎРѕР»РЅРµС‡РЅРѕР№ РЎРёСЃС‚РµРјС‹[/center][solcrest][br]Р”Р°РЅРЅС‹Рј СЃРµСЂС‚РёС„РёРєР°С‚РѕРј РїРѕРґС‚РІРµСЂР¶РґР°РµС‚СЃСЏ РЅР°РіСЂР°Р¶РґРµРЅРёРµ Р”Р¶РµР№СЃРѕРЅР° РњР°СЂС…РѕРґР° РјРµРґР°Р»СЊСЋ "РЈС‡Р°СЃС‚РЅРёРє Р‘РѕРµРІС‹С… Р”РµР№СЃС‚РІРёРё" Р·Р° РЅРµР№С‚СЂР°Р»РёР·Р°С†РёСЋ РїСЂРѕС‚РёРІРЅРёРєР° РІ РѕРїР°СЃРЅС‹С… СѓСЃР»РѕРІРёСЏС….[br]РџРѕРґРїРёСЃСЊ: [sign]Oliver Stocker[/sign]
+paper_info: [center]Центральное Правительство Солнечной Системы[/center][solcrest][br]Данным сертификатом подтверждается награждение Джейсона Мархода медалью "Участник Боевых Действии" за нейтрализацию противника в опасных условиях.[br]Подпись: [sign]Oliver Stocker[/sign]
 paper_title: award certificate
 paper_stamp_type: /obj/item/weapon/stamp/solgov
 }
