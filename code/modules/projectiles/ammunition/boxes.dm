@@ -328,3 +328,16 @@
 
 /obj/item/ammo_magazine/c12755/empty
 	initial_ammo = 0
+
+/obj/item/ammo_magazine/mc57
+	name = "magazine (5.7mm)"
+	icon = 'icons/event/ammo.dmi'
+	icon_state = "smg"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/c57
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "57"
+	max_ammo = 30
+
+/obj/item/ammo_magazine/mc57/empty
+	initial_ammo = 0
