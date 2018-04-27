@@ -43,7 +43,7 @@
 /obj/item/ammo_casing/c57
 	desc = "A 5.7mm bullet casing."
 	caliber = "57"
-	/obj/item/projectile/bullet/pistol/medium/fast
+	projectile_type = /obj/item/projectile/bullet/pistol/medium/fast
 
 /obj/item/ammo_casing/c9mm/flash
 	desc = "A 9mm flash shell casing."
