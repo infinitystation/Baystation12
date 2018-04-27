@@ -314,7 +314,7 @@
 				max_mult = G.point_blank_mult()
 	P.damage *= max_mult
 
-/obj/item/weapon/gun/proc/process_accuracy(obj/projectile, mob/user, atom/target, var/burst, var/held_twohanded)
+/obj/item/weapon/gun/proc/process_accuracy(obj/projectile, mob/living/user, atom/target, var/burst, var/held_twohanded)
 	var/obj/item/projectile/P = projectile
 	if(!istype(P))
 		return //default behaviour only applies to true projectiles
@@ -337,6 +337,8 @@
 		//Kinda balanced by fact you need like 2 seconds to aim
 		//As opposed to no-delay pew pew
 		P.accuracy += 2
+
+	P.accuracy += user.ranged_accuracy_mods()
 
 //does the actual launching of the projectile
 /obj/item/weapon/gun/proc/process_projectile(obj/projectile, mob/user, atom/target, var/target_zone, var/params=null)

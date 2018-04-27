@@ -25,6 +25,7 @@
 	icon_state = "box"
 	item_state = "syringe_kit"
 	max_storage_space = DEFAULT_BOX_STORAGE
+	use_sound = 'sound/effects/storage/box.ogg'
 	var/foldable = /obj/item/stack/material/cardboard	// BubbleWrap - if set, can be folded (when empty) into a sheet of cardboard
 
 /obj/item/weapon/storage/box/large
@@ -320,12 +321,6 @@
 	desc = "Has so, so many empty IDs."
 	icon_state = "id_large"
 	startswith = list(/obj/item/weapon/card/id = 14)
-
-/obj/item/weapon/storage/box/seccarts
-	name = "box of spare R.O.B.U.S.T. Cartridges"
-	desc = "A box full of R.O.B.U.S.T. Cartridges, used by Security."
-	icon_state = "pda"
-	startswith = list(/obj/item/weapon/cartridge/security = 7)
 
 /obj/item/weapon/storage/box/handcuffs
 	name = "box of spare handcuffs"

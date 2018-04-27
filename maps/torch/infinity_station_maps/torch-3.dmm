@@ -16427,7 +16427,7 @@
 "Ld" = (
 /obj/random/trash,
 /obj/random/junk,
-/obj/item/device/pda/wrist,
+/obj/item/modular_computer/pda/wrist,
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "LB" = (

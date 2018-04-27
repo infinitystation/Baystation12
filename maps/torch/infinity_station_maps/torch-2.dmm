@@ -13965,10 +13965,6 @@
 	pixel_x = 30
 	},
 /obj/structure/table/steel,
-/obj/item/weapon/storage/box/seccarts{
-	pixel_x = 3;
-	pixel_y = 2
-	},
 /obj/item/weapon/reagent_containers/spray/cleaner,
 /obj/effect/floor_decal/borderfloor{
 	tag = "icon-borderfloor (EAST)";

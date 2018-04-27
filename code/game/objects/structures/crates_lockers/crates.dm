@@ -185,7 +185,7 @@ obj/structure/closet/crate
 
 
 /obj/structure/closet/crate/freezer/rations/WillContain()
-	return list(/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 4)
+	return list(/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 50)
 
 /obj/structure/closet/crate/freezer/nanoblood
 	name = "nanoblood freezer"

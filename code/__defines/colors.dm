@@ -41,7 +41,7 @@
 #define COLOR_OFF_WHITE        "#eeeeee"
 #define COLOR_WHITE            "#ffffff"
 #define COLOR_NT_RED           "#9d2300"
-#define COLOR_GUNMETAL         "#80868e"
+#define COLOR_GUNMETAL         "#545c68"
 #define COLOR_MUZZLE_FLASH     "#ffffb2"
 #define COLOR_CHESTNUT         "#996633"
 #define COLOR_BEASTY_BROWN     "#663300"
@@ -61,3 +61,5 @@
 #define	PIPE_COLOR_ORANGE      "#b95a00"
 
 #define COLOR_BLOOD_HUMAN "#a10808"
+
+#define RANDOM_RGB rgb(rand(0,255), rand(0,255), rand(0,255))
