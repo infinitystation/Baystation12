@@ -14,7 +14,7 @@
 	eye_icon = "eyes"
 	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 
-	slowdown = -2
+	slowdown = -0.7
 
 	natural_armour_values = list(melee = 30, bullet = 15, laser = 25, energy = 30, bomb = 30, bio = 100, rad = 100)
 
@@ -211,7 +211,7 @@
 	name = "Xenophage Drone"
 	caste_name = "drone"
 	weeds_plasma_rate = 15
-	slowdown = -1
+	slowdown = 0
 
 	brute_mod =     0.6
 	burn_mod =      0.6
@@ -257,7 +257,7 @@
 	name = "Xenophage Hunter"
 	weeds_plasma_rate = 5
 	caste_name = "hunter"
-	slowdown = -3
+	slowdown = -0.7
 	total_health = 300
 	base_color = "#001a33"
 
@@ -292,7 +292,7 @@
 	name = "Xenophage Sentinel"
 	weeds_plasma_rate = 10
 	caste_name = "sentinel"
-	slowdown = -1
+	slowdown = 0
 	base_color = "#00284d"
 	total_health = 250
 	icobase = 'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
