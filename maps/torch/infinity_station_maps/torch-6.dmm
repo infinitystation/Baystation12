@@ -4504,7 +4504,7 @@
 /area/centcom/specops)
 "ajY" = (
 /obj/structure/table/reinforced,
-/obj/item/device/pda/ert,
+/obj/item/modular_computer/pda/ert,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -5951,13 +5951,13 @@
 /area/centcom/specops)
 "anb" = (
 /obj/structure/table/reinforced,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -5978,7 +5978,7 @@
 /area/centcom/specops)
 "ane" = (
 /obj/structure/table/reinforced,
-/obj/item/device/pda/captain,
+/obj/item/modular_computer/pda/captain,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -11149,7 +11149,7 @@
 	},
 /area/tdome/tdomeobserve)
 "ayt" = (
-/obj/item/device/pda/bar,
+/obj/item/modular_computer/pda,
 /obj/structure/closet/secure_closet/bar,
 /turf/unsimulated/floor{
 	icon_state = "white"
@@ -14871,12 +14871,12 @@
 /area/rescue_base/base)
 "aFO" = (
 /obj/structure/table/reinforced,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
-/obj/item/device/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
+/obj/item/modular_computer/pda/ert,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -20557,8 +20557,8 @@
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov/clean,
-/obj/item/device/pda/wrist,
-/obj/item/device/pda/wrist,
+/obj/item/modular_computer/pda/wrist,
+/obj/item/modular_computer/pda/wrist,
 /turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aSE" = (
@@ -20890,7 +20890,7 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov/clean,
-/obj/item/device/pda/wrist/engineering,
+/obj/item/modular_computer/pda/wrist/engineering,
 /turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aTq" = (
@@ -25827,8 +25827,8 @@
 /area/space)
 "bgb" = (
 /obj/structure/table/reinforced,
-/obj/item/device/pda/syndicate,
-/obj/item/device/pda/syndicate,
+/obj/item/modular_computer/pda/syndicate,
+/obj/item/modular_computer/pda/syndicate,
 /turf/unsimulated/floor{
 	icon_state = "lino";
 	name = "linoleum"

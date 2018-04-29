@@ -89,7 +89,7 @@
 		/obj/item/frame/party_alarm,
 		/obj/item/clothing/head/philosopher_wig,
 		/obj/item/clothing/ears/earmuffs/headphones,
-		/obj/item/device/pda/wrist,
+//		/obj/item/device/pda/wrist,
 		/obj/item/device/kit/paint/ripley/death,
 		/obj/item/clothing/mask/gas/clown_hat,
 		/obj/item/clothing/mask/fakemoustache,

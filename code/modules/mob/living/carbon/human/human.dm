@@ -257,50 +257,29 @@
 
 // Get rank from ID, ID inside PDA, PDA, ID in wallet, etc.
 /mob/living/carbon/human/proc/get_authentification_rank(var/if_no_id = "No id", var/if_no_job = "No job")
-	var/obj/item/device/pda/pda = wear_id
-	if (istype(pda))
-		if (pda.id)
-			return pda.id.rank
-		else
-			return pda.ownrank
+	var/obj/item/weapon/card/id/id = GetIdCard()
+	if(istype(id))
+		return id.rank ? id.rank : if_no_job
 	else
-		var/obj/item/weapon/card/id/id = get_idcard()
-		if(id)
-			return id.rank ? id.rank : if_no_job
-		else
-			return if_no_id
+		return if_no_id
 
 //gets assignment from ID or ID inside PDA or PDA itself
 //Useful when player do something with computers
 /mob/living/carbon/human/proc/get_assignment(var/if_no_id = "No id", var/if_no_job = "No job")
-	var/obj/item/device/pda/pda = wear_id
-	if (istype(pda))
-		if (pda.id)
-			return pda.id.assignment
-		else
-			return pda.ownjob
+	var/obj/item/weapon/card/id/id = GetIdCard()
+	if(istype(id))
+		return id.assignment ? id.assignment : if_no_job
 	else
-		var/obj/item/weapon/card/id/id = get_idcard()
-		if(id)
-			return id.assignment ? id.assignment : if_no_job
-		else
-			return if_no_id
+		return if_no_id
 
 //gets name from ID or ID inside PDA or PDA itself
 //Useful when player do something with computers
 /mob/living/carbon/human/proc/get_authentification_name(var/if_no_id = "Unknown")
-	var/obj/item/device/pda/pda = wear_id
-	if (istype(pda))
-		if (pda.id)
-			return pda.id.registered_name
-		else
-			return pda.owner
+	var/obj/item/weapon/card/id/id = GetIdCard()
+	if(istype(id))
+		return id.registered_name
 	else
-		var/obj/item/weapon/card/id/id = get_idcard()
-		if(id)
-			return id.registered_name
-		else
-			return if_no_id
+		return if_no_id
 
 //repurposed proc. Now it combines get_id_name() and get_face_name() to determine a mob's name variable. Made into a seperate proc as it'll be useful elsewhere
 /mob/living/carbon/human/proc/get_visible_name()
@@ -325,19 +304,9 @@
 //Useful when player is being seen by other mobs
 /mob/living/carbon/human/proc/get_id_name(var/if_no_id = "Unknown")
 	. = if_no_id
-	if(istype(wear_id,/obj/item/device/pda))
-		var/obj/item/device/pda/P = wear_id
-		return P.owner
-	if(wear_id)
-		var/obj/item/weapon/card/id/I = wear_id.GetIdCard()
-		if(I)
-			return I.registered_name
-	return
-
-//gets ID card object from special clothes slot or null.
-/mob/living/carbon/human/proc/get_idcard()
-	if(wear_id)
-		return wear_id.GetIdCard()
+	var/obj/item/weapon/card/id/I = GetIdCard()
+	if(istype(I))
+		return I.registered_name
 
 //Removed the horrible safety parameter. It was only being used by ninja code anyways.
 //Now checks siemens_coefficient of the affected area by default
@@ -467,12 +436,9 @@
 			var/perpname = "wot"
 			var/read = 0
 
-			if(wear_id)
-				if(istype(wear_id,/obj/item/weapon/card/id))
-					perpname = wear_id:registered_name
-				else if(istype(wear_id,/obj/item/device/pda))
-					var/obj/item/device/pda/tempPda = wear_id
-					perpname = tempPda.owner
+			var/obj/item/weapon/card/id/id = GetIdCard()
+			if(istype(id))
+				perpname = id.registered_name
 			else
 				perpname = src.name
 			var/datum/computer_file/crew_record/E = get_crewmember_record(perpname)
@@ -490,12 +456,9 @@
 			var/perpname = "wot"
 			var/modified = 0
 
-			if(wear_id)
-				if(istype(wear_id,/obj/item/weapon/card/id))
-					perpname = wear_id:registered_name
-				else if(istype(wear_id,/obj/item/device/pda))
-					var/obj/item/device/pda/tempPda = wear_id
-					perpname = tempPda.owner
+			var/obj/item/weapon/card/id/id = GetIdCard()
+			if(istype(id))
+				perpname = id.registered_name
 			else
 				perpname = src.name
 
@@ -521,14 +484,12 @@
 			var/perpname = "wot"
 			var/read = 0
 
-			if(wear_id)
-				if(istype(wear_id,/obj/item/weapon/card/id))
-					perpname = wear_id:registered_name
-				else if(istype(wear_id,/obj/item/device/pda))
-					var/obj/item/device/pda/tempPda = wear_id
-					perpname = tempPda.owner
+			var/obj/item/weapon/card/id/id = GetIdCard()
+			if(istype(id))
+				perpname = id.registered_name
 			else
 				perpname = src.name
+
 			var/datum/computer_file/crew_record/E = get_crewmember_record(perpname)
 			if(E)
 				if(hasHUD(usr, HUD_MEDICAL))
@@ -1014,7 +975,7 @@
 		to_chat(src, "<span class='notice'>You can't look up right now.</span>")
 	return
 
-/mob/living/carbon/human/proc/set_species(var/new_species, var/default_colour)
+/mob/living/carbon/human/proc/set_species(var/new_species, var/default_colour = 1)
 	if(!dna)
 		if(!new_species)
 			new_species = SPECIES_HUMAN
@@ -1039,6 +1000,7 @@
 		for(var/datum/language/L in species.assisted_langs)
 			remove_language(L)
 		// Clear out their species abilities.
+		species.remove_base_auras(src)
 		species.remove_inherent_verbs(src)
 		holder_type = null
 
@@ -1449,7 +1411,7 @@
 		. *= (H.robotic < ORGAN_ROBOT) ? pulse()/PULSE_NORM : 1.5
 
 /mob/living/carbon/human/need_breathe()
-	if(species.breathing_organ && should_have_organ(species.breathing_organ))
+	if(!(mNobreath in mutations) && species.breathing_organ && should_have_organ(species.breathing_organ))
 		return 1
 	else
 		return 0
@@ -1548,3 +1510,21 @@
 //Point at which you dun breathe no more. Separate from asystole crit, which is heart-related.
 /mob/living/carbon/human/proc/nervous_system_failure()
 	return getBrainLoss() >= maxHealth * 0.75
+
+/mob/living/carbon/human/melee_accuracy_mods()
+	. = ..()
+	if(get_shock() > 50)
+		. += 15
+	if(shock_stage > 10)
+		. += 15
+	if(shock_stage > 30)
+		. += 15
+
+/mob/living/carbon/human/ranged_accuracy_mods()
+	. = ..()
+	if(get_shock() > 50)
+		. -= 1
+	if(shock_stage > 10)
+		. -= 1
+	if(shock_stage > 30)
+		. -= 1

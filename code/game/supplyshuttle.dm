@@ -118,6 +118,7 @@ var/list/point_source_descriptions = list(
 	"platinum" = "From exported platinum",
 	"virology" = "From uploaded antibody data",
 	"refined_scrap" = "From exported refined scrap",
+	"gep" = "From uploaded good explorer points",
 	"total" = "Total" // If you're adding additional point sources, add it here in a new line. Don't forget to put a comma after the old last line.
 	)
 
@@ -213,6 +214,13 @@ var/list/point_source_descriptions = list(
 								if("phoron") phoron_count += P.get_amount()
 								if("platinum") plat_count += P.get_amount()
 								if("refscrap") scrap_count += P.get_amount()
+							continue
+
+						// Hahahaha must sell ore detector disks in crates
+						if(istype(A, /obj/item/weapon/disk/survey))
+							var/obj/item/weapon/disk/survey/D = A
+							add_points_from_source(round(D.Value() * 0.005), "gep")
+
 				qdel(MA)
 
 		if(phoron_count)

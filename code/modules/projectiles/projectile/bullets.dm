@@ -149,6 +149,11 @@
 	damage = 26.5 //.45, 7.63x25
 	armor_penetration = 14.5
 
+/obj/item/projectile/bullet/pistol/medium/fast
+	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	damage = 18 //4.6x30 mm, 5.7x28 mm
+	armor_penetration = 25
+
 /obj/item/projectile/bullet/pistol/medium/smg
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
 	damage = 28 //10mm

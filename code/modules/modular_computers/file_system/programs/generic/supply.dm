@@ -52,6 +52,7 @@
 			data["credits_paperwork"] = supply_controller.point_sources["manifest"] ? supply_controller.point_sources["manifest"] : 0
 			data["credits_virology"] = supply_controller.point_sources["virology"] ? supply_controller.point_sources["virology"] : 0
 			data["credits_refined_scrap"] = supply_controller.point_sources["refined_scrap"] ? supply_controller.point_sources["refined_scrap"] : 0
+			data["credits_gep"] = supply_controller.point_sources["gep"] ? supply_controller.point_sources["gep"] : 0
 			data["can_print"] = can_print()
 
 		if(3)// Shuttle monitoring and control

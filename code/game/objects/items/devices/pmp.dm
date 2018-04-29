@@ -256,7 +256,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 		return
 
 	log_and_message_admins("launched a [src] <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> with the song \"[cassette.track.title]\".")
-	sound_token = sound_player.PlayLoopingSound(src, sound_id, cassette.track.GetTrack(), volume = volume, range = 7, falloff = 4, prefer_mute = TRUE)
+	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, cassette.track.GetTrack(), volume = volume, range = 7, falloff = 4, prefer_mute = TRUE)
 	playing = 1
 	START_PROCESSING(SSobj, src)
 	update_icon()

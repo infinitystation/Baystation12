@@ -495,6 +495,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	ghostvision = !(ghostvision)
 	updateghostsight()
 	to_chat(src, "You [(ghostvision?"now":"no longer")] have ghost vision.")
+
 /mob/observer/ghost/verb/toggle_darkness()
 	set name = "Toggle Darkness"
 	set category = "Ghost"
@@ -502,6 +503,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 	seedarkness = !(seedarkness)
 	updateghostsight()
+	to_chat(src, "You [(seedarkness?"now":"no longer")] see darkness.")
 
 /mob/observer/ghost/proc/updateghostsight()
 	if (!seedarkness)

@@ -49,3 +49,14 @@ var/const/SMARTFRIDGE_WIRE_IDSCAN		= 4
 				S.seconds_electrified = -1
 		if(SMARTFRIDGE_WIRE_IDSCAN)
 			S.scan_id = 1
+
+/datum/wires/smartfridge/SolveWireFunction(var/function)
+	var/sf = ""
+	switch(function)
+		if(SMARTFRIDGE_WIRE_ELECTRIFY)
+			sf = "Port A"
+		if(SMARTFRIDGE_WIRE_THROW)
+			sf = "Port B"
+		if(SMARTFRIDGE_WIRE_IDSCAN)
+			sf = "Port C"
+	return sf
