@@ -6,7 +6,7 @@
 	density = 1
 	throwpass = 1
 	anchored = 1
-	atom_flags = ATOM_FLAG_CLIMBABLE
+	atom_flags = ATOM_FLAG_CLIMBABLE | ATOM_FLAG_CHECKS_BORDER
 	var/health = 200
 	var/maxhealth = 200
 	var/deployed = 0
@@ -14,12 +14,15 @@
 
 /obj/structure/barrier/New()
 	..()
-	atom_flags |= ATOM_FLAG_CHECKS_BORDER
 	update_layers()
 	update_icon()
 
 /obj/structure/barrier/Destroy()
-	basic_chance = null
+	visible_message("<span class='danger'>[src] was destroyed!</span>")
+	playsound(src, 'sound/effects/clang.ogg', 100, 1)
+	new /obj/item/stack/material/steel(src.loc)
+	new /obj/item/stack/material/steel(src.loc)
+	qdel(src)
 	return ..()
 
 /obj/structure/barrier/proc/update_layers()
@@ -122,13 +125,8 @@
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		playsound(src, 'sound/weapons/smash.ogg', 100, 1)
 		src.health -= W.force * 0.5
-		if (src.health <= 0)
-			visible_message("<span class='danger'>[src] was smashed apart!</span>")
-			playsound(src, 'sound/effects/clang.ogg', 100, 1)
-			new /obj/item/stack/material/steel(src.loc)
-			new /obj/item/stack/material/steel(src.loc)
-			qdel(src)
-			return
+		if(health <= 0)
+			Destroy()
 		..()
 
 /obj/structure/barrier/bullet_act(var/obj/item/projectile/P)
@@ -137,10 +135,7 @@
 	..()
 	src.health -= P.damage * 0.5 //TODO: More math, add AP mod.
 	if(health <= 0)
-		visible_message("<span class='danger'>[src] was destroyed!</span>")
-		playsound(src, 'sound/effects/clang.ogg', 100, 1)
-		new /obj/item/stack/material/steel(src.loc)
-		new /obj/item/stack/material/steel(src.loc)
+		Destroy()
 	qdel(P)
 	return
 
@@ -170,9 +165,8 @@
 
 /obj/structure/barrier/MouseDrop_T(mob/user as mob)
 	if(src.loc != user.loc)
-		to_chat(user, "You start climbing onto [src]...")
-		step(src, get_dir(src, src.dir))
-	return
+	to_chat(user, "You start climbing onto [src]...")
+	step(src, get_dir(src, src.dir))
 
 /obj/structure/barrier/ex_act(severity)
 	switch(severity)
