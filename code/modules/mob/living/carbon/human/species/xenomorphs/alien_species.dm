@@ -9,12 +9,10 @@
 	hud_type = /datum/hud_data/alien
 	rarity_value = 3
 	health_hud_intensity = 1
-	blood_volume = 9999 //Nichego luchshe...
+	blood_volume = 1400
 
 	eye_icon = "eyes"
 	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
-
-	slowdown = -0.7
 
 	natural_armour_values = list(melee = 30, bullet = 15, laser = 25, energy = 30, bomb = 30, bio = 100, rad = 100)
 
@@ -29,7 +27,7 @@
 
 	pixel_offset_x = -16
 	has_fine_manipulation = 0
-	siemens_coefficient = 0
+	siemens_coefficient = 0.2
 	gluttonous = GLUT_SMALLER
 	ambiguous_genders = TRUE
 	stomach_capacity = MOB_MEDIUM
@@ -59,8 +57,8 @@
 	reagent_tag = IS_XENOS
 
 	blood_color = "#05ee05"
-	flesh_color = "#282846"
-	base_color =  "#00060c"
+//	flesh_color = "#00060c"
+//	base_color =  "#00060c"
 
 	gibbed_anim = "gibbed-a"
 	dusted_anim = "dust-a"
@@ -174,9 +172,10 @@
 		heal_rate *= 1.5
 		mend_prob *= 5
 
-	//next internal organs
+	//next internal organs and blood
+	H.restore_blood()
 	for(var/obj/item/organ/I in H.internal_organs)
-		if(I.damage > 0 & I.organ_tag != BP_BRAIN)
+		if(I.damage > 0)
 			I.damage = max(I.damage - heal_rate, 0)
 			if (prob(5))
 				to_chat(H, "<span class='alium'>You feel a soothing sensation within your [I.parent_organ]...</span>")
@@ -217,7 +216,7 @@
 	burn_mod =      0.6
 
 	rarity_value = 5
-	base_color = "#000d1a"
+//	base_color = "#000d1a"
 	icobase = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 	deform =  'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 
@@ -257,18 +256,15 @@
 	name = "Xenophage Hunter"
 	weeds_plasma_rate = 5
 	caste_name = "hunter"
-	slowdown = -0.7
+	slowdown = -0.5
 	total_health = 300
-	base_color = "#001a33"
+//	base_color = "#001a33"
 
 	eye_icon = "eyes"
 	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_hunter.dmi'
 
 	icobase = 'icons/mob/human_races/xenos/r_xenos_hunter.dmi'
 	deform =  'icons/mob/human_races/xenos/r_xenos_hunter.dmi'
-
-	brute_mod =     0.8
-	burn_mod =      0.8
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
@@ -293,7 +289,7 @@
 	weeds_plasma_rate = 10
 	caste_name = "sentinel"
 	slowdown = 0
-	base_color = "#00284d"
+//	base_color = "#00284d"
 	total_health = 250
 	icobase = 'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
 	deform =  'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
@@ -333,8 +329,6 @@
 
 	eye_icon = "eyes"
 	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_queen.dmi'
-	brute_mod =     0.6
-	burn_mod =      0.6
 
 
 	icobase = 'icons/mob/human_races/xenos/r_xenos_queen.dmi'
