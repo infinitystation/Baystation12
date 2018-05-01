@@ -19,8 +19,9 @@
 	..()
 	if(ispath(projectile_type))
 		BB = new projectile_type(src)
-	pixel_x = rand(-14,14)
-	pixel_y = rand(-14,14)
+	if(randpixel)
+		pixel_x = rand(-randpixel, randpixel)
+		pixel_y = rand(-randpixel, randpixel)
 
 //removes the projectile from the ammo casing
 /obj/item/ammo_casing/proc/expend()
