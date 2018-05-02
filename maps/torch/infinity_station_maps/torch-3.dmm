@@ -11605,6 +11605,11 @@
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov/clean,
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (WEST)";
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/seconddeck)
 "wt" = (
@@ -11627,6 +11632,11 @@
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
+	},
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (EAST)";
+	icon_state = "techfloor_edges";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/seconddeck)
@@ -11962,6 +11972,11 @@
 	pixel_x = -22;
 	pixel_y = 0
 	},
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (WEST)";
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/seconddeck)
 "xg" = (
@@ -11978,6 +11993,11 @@
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 24
+	},
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (EAST)";
+	icon_state = "techfloor_edges";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/seconddeck)
@@ -12365,6 +12385,11 @@
 /obj/structure/closet/crate/freezer/rations,
 /obj/random/snack,
 /obj/random/snack,
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (WEST)";
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/seconddeck)
 "xV" = (
@@ -12373,6 +12398,11 @@
 /area/crew_quarters/safe_room/seconddeck)
 "xW" = (
 /obj/structure/closet/secure_closet/guncabinet/sidearm/small,
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (EAST)";
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/seconddeck)
 "xX" = (
@@ -14990,10 +15020,25 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (NORTH)";
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/compactor)
 "DE" = (
 /obj/effect/floor_decal/industrial/warning,
+/obj/effect/floor_decal/techfloor/corner{
+	tag = "icon-techfloor_corners (EAST)";
+	icon_state = "techfloor_corners";
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	tag = "icon-techfloor_corners (NORTH)";
+	icon_state = "techfloor_corners";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/compactor)
 "DH" = (
@@ -16491,6 +16536,12 @@
 	icon_state = "bulb1";
 	dir = 1
 	},
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (NORTH)";
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/compactor)
 "Ob" = (
@@ -16665,10 +16716,15 @@
 /area/maintenance/seconddeck/foreport)
 "Wj" = (
 /obj/effect/floor_decal/industrial/warning,
-/obj/effect/floor_decal/techfloor/hole/right{
-	tag = "icon-techfloor_hole_right (EAST)";
-	icon_state = "techfloor_hole_right";
-	dir = 4
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (NORTH)";
+	icon_state = "techfloor_edges";
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor/hole{
+	tag = "icon-techfloor_hole_left (NORTH)";
+	icon_state = "techfloor_hole_left";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/compactor)

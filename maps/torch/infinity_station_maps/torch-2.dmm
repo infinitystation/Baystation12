@@ -959,17 +959,12 @@
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
 	icon_state = "intact";
-	dir = 5
+	dir = 9
 	},
 /turf/simulated/wall/r_wall,
 /area/thruster/d3starboard)
 "cp" = (
 /obj/structure/sign/warning/nosmoking_2,
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	tag = "icon-intact (WEST)";
-	icon_state = "intact";
-	dir = 8
-	},
 /turf/simulated/wall/r_wall,
 /area/thruster/d3starboard)
 "cq" = (
@@ -977,9 +972,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	icon_state = "intact";
 	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	dir = 10
 	},
 /turf/simulated/wall/r_wall,
 /area/thruster/d3starboard)
@@ -1393,6 +1385,10 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 5
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	icon_state = "intact";
+	dir = 5
+	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
 "dh" = (
@@ -1400,13 +1396,20 @@
 	dir = 5
 	},
 /obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/first,
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	tag = "icon-intact (WEST)";
+	icon_state = "intact";
+	dir = 8
+	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
 "dj" = (
 /obj/effect/floor_decal/corner/purple{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/blue,
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 10
+	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
 "dk" = (
@@ -3437,6 +3440,11 @@
 /obj/machinery/gibber,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/galleybackroom)
+"gQ" = (
+/obj/structure/table/steel,
+/obj/item/weapon/stamp/brig,
+/turf/simulated/floor/tiled/dark,
+/area/security/bo)
 "gR" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -7061,16 +7069,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/effect/floor_decal/borderfloor{
-	dir = 8;
-	icon_state = "borderfloor_white";
-	tag = ""
-	},
-/obj/effect/floor_decal/corner/red/border{
-	tag = "icon-bordercolor (WEST)";
-	icon_state = "bordercolor";
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8;
 	icon_state = "borderfloorcorner2_white";
@@ -7080,6 +7078,16 @@
 	tag = "icon-bordercolorcorner2 (WEST)";
 	icon_state = "bordercolorcorner2";
 	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 10;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	tag = "icon-bordercolorcorner2 (SOUTHWEST)";
+	icon_state = "bordercolorcorner2";
+	dir = 10
 	},
 /turf/simulated/floor/tiled,
 /area/security/wing)
@@ -7102,6 +7110,16 @@
 	tag = "icon-bordercolor (EAST)";
 	icon_state = "bordercolor";
 	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 5;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTHEAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 5
 	},
 /turf/simulated/floor/tiled,
 /area/security/wing)
@@ -7356,6 +7374,9 @@
 	icon_state = "bordercolor";
 	dir = 9
 	},
+/obj/item/weapon/folder/red,
+/obj/item/weapon/folder/red,
+/obj/item/weapon/folder/red,
 /turf/simulated/floor/tiled/dark,
 /area/security/bo)
 "nS" = (
@@ -7473,11 +7494,11 @@
 /turf/simulated/wall,
 /area/security/armoury)
 "nY" = (
-/obj/structure/closet/secure_closet/guncabinet/sec_armory/egun,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/secured_egun,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/armoury)
 "nZ" = (
@@ -7816,9 +7837,14 @@
 	tag = ""
 	},
 /obj/effect/floor_decal/corner/red/border{
-	tag = "icon-bordercolor (NORTHWEST)";
+	tag = "icon-bordercolor (WEST)";
 	icon_state = "bordercolor";
-	dir = 9
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/black/border{
+	tag = "icon-bordercolor (NORTH)";
+	icon_state = "bordercolor";
+	dir = 1
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	tag = "icon-steel_decals10 (NORTHWEST)";
@@ -7846,7 +7872,7 @@
 	icon_state = "borderfloor_white";
 	tag = ""
 	},
-/obj/effect/floor_decal/corner/red/border{
+/obj/effect/floor_decal/corner/black/border{
 	tag = "icon-bordercolor (NORTH)";
 	icon_state = "bordercolor";
 	dir = 1
@@ -7875,19 +7901,24 @@
 	tag = ""
 	},
 /obj/effect/floor_decal/corner/red/border{
-	tag = "icon-bordercolor (NORTHEAST)";
+	tag = "icon-bordercolor (EAST)";
 	icon_state = "bordercolor";
-	dir = 5
+	dir = 4
 	},
-/obj/effect/floor_decal/steeldecal/steel_decals10{
-	tag = "icon-steel_decals10 (NORTHWEST)";
-	icon_state = "steel_decals10";
-	dir = 9
+/obj/effect/floor_decal/corner/black/border{
+	tag = "icon-bordercolor (NORTH)";
+	icon_state = "bordercolor";
+	dir = 1
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	tag = "icon-steel_decals10 (SOUTHWEST)";
 	icon_state = "steel_decals10";
 	dir = 10
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals10{
+	tag = "icon-steel_decals10 (NORTHWEST)";
+	icon_state = "steel_decals10";
+	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
@@ -8000,16 +8031,6 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/obj/effect/floor_decal/borderfloor{
-	dir = 8;
-	icon_state = "borderfloor_white";
-	tag = ""
-	},
-/obj/effect/floor_decal/corner/red/border{
-	tag = "icon-bordercolor (WEST)";
-	icon_state = "bordercolor";
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
 	icon_state = "borderfloorcorner2_white";
@@ -8019,6 +8040,16 @@
 	tag = "icon-bordercolorcorner2 (SOUTHWEST)";
 	icon_state = "bordercolorcorner2";
 	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	tag = "icon-bordercolorcorner2 (WEST)";
+	icon_state = "bordercolorcorner2";
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/security/wing)
@@ -8035,16 +8066,6 @@
 	name = "east bump";
 	pixel_x = 24
 	},
-/obj/effect/floor_decal/borderfloor{
-	dir = 4;
-	icon_state = "borderfloor_white";
-	tag = ""
-	},
-/obj/effect/floor_decal/corner/red/border{
-	tag = "icon-bordercolor (EAST)";
-	icon_state = "bordercolor";
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
 	icon_state = "borderfloorcorner2_white";
@@ -8054,6 +8075,16 @@
 	tag = "icon-bordercolorcorner2 (NORTHEAST)";
 	icon_state = "bordercolorcorner2";
 	dir = 5
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	tag = "icon-bordercolorcorner2 (SOUTHEAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 6
 	},
 /turf/simulated/floor/tiled,
 /area/security/wing)
@@ -8249,24 +8280,24 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
-	dir = 1;
+	dir = 5;
 	icon_state = "borderfloor_white";
 	tag = ""
 	},
 /obj/effect/floor_decal/corner/blue/border{
-	tag = "icon-bordercolor (NORTH)";
+	tag = "icon-bordercolor (NORTHEAST)";
 	icon_state = "bordercolor";
-	dir = 1
+	dir = 5
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
-	dir = 1;
+	dir = 5;
 	icon_state = "borderfloorcorner2_white";
 	tag = ""
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
-	tag = "icon-bordercolorcorner2 (NORTH)";
+	tag = "icon-bordercolorcorner2 (NORTHEAST)";
 	icon_state = "bordercolorcorner2";
-	dir = 1
+	dir = 5
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
@@ -8540,7 +8571,6 @@
 /turf/simulated/floor/plating,
 /area/security/bo)
 "px" = (
-/obj/machinery/computer/station_alert/security,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8;
 	icon_state = "borderfloor_white";
@@ -8561,6 +8591,7 @@
 	icon_state = "bordercolorcorner2";
 	dir = 10
 	},
+/obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/tiled/dark,
 /area/security/bo)
 "py" = (
@@ -9317,6 +9348,11 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 8;
+	id = "bo_pshutters";
+	name = "Privacy Shutters"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/bo)
 "qy" = (
@@ -9325,18 +9361,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/bo)
-"qz" = (
-/obj/effect/landmark/overmap_target/torch/fourth/brig,
-/turf/simulated/floor/tiled/dark,
-/area/security/bo)
 "qA" = (
-/obj/structure/table/steel_reinforced,
 /obj/machinery/photocopier/faxmachine{
 	department = "Warden's Office"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/structure/table/steel,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4;
 	icon_state = "borderfloor_white";
@@ -9960,11 +9992,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/bo)
 "rt" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/weapon/stamp/denied{
-	pixel_x = 5
-	},
-/obj/item/weapon/hand_labeler,
 /obj/machinery/newscaster/security_unit{
 	pixel_x = 30;
 	pixel_y = -30
@@ -9973,7 +10000,11 @@
 	dir = 8;
 	pixel_x = 22
 	},
-/obj/item/weapon/stamp/brig,
+/obj/structure/table/steel,
+/obj/item/weapon/paper_bin,
+/obj/item/weapon/clipboard,
+/obj/item/weapon/folder/red,
+/obj/item/weapon/pen,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4;
 	icon_state = "borderfloor_white";
@@ -10011,6 +10042,16 @@
 	icon_state = "bordercolor";
 	dir = 8
 	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 10;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	tag = "icon-bordercolorcorner2 (SOUTHWEST)";
+	icon_state = "bordercolorcorner2";
+	dir = 10
+	},
 /turf/simulated/floor/tiled,
 /area/security/wing)
 "rv" = (
@@ -10031,6 +10072,16 @@
 	tag = "icon-bordercolor (EAST)";
 	icon_state = "bordercolor";
 	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 5;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTHEAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 5
 	},
 /turf/simulated/floor/tiled,
 /area/security/wing)
@@ -10568,7 +10619,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
 "sj" = (
-/obj/item/modular_computer/console/preset/security,
 /obj/machinery/button/remote/airlock{
 	desc = "A remote control switch for the brig foyer.";
 	id = "BrigFoyer";
@@ -10599,14 +10649,16 @@
 	icon_state = "bordercolor";
 	dir = 10
 	},
+/obj/machinery/button/remote/blast_door{
+	id = "bo_pshutters";
+	name = "Privacy Shutters";
+	pixel_x = 0;
+	pixel_y = -34
+	},
+/obj/machinery/computer/station_alert/security,
 /turf/simulated/floor/tiled/dark,
 /area/security/bo)
 "sk" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/weapon/clipboard,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/folder/red,
-/obj/item/weapon/pen,
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/borderfloorblack/corner2{
@@ -10626,7 +10678,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/bo)
 "sm" = (
-/obj/machinery/computer/prisoner,
+/obj/item/modular_computer/console/preset/security,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6;
 	icon_state = "borderfloor_white";
@@ -11508,6 +11560,11 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	id = "bo_pshutters";
+	name = "Privacy Shutters"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/bo)
 "tq" = (
@@ -11541,6 +11598,16 @@
 /obj/effect/floor_decal/corner/red/border{
 	tag = "icon-bordercolor (WEST)";
 	icon_state = "bordercolor";
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	tag = "icon-bordercolorcorner2 (WEST)";
+	icon_state = "bordercolorcorner2";
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -12818,16 +12885,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/floor_decal/borderfloor{
-	dir = 1;
-	icon_state = "borderfloor_white";
-	tag = ""
-	},
-/obj/effect/floor_decal/corner/red/border{
-	tag = "icon-bordercolor (NORTH)";
-	icon_state = "bordercolor";
-	dir = 1
-	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
 	icon_state = "borderfloorcorner2_white";
@@ -12837,6 +12894,16 @@
 	tag = "icon-bordercolorcorner2 (NORTH)";
 	icon_state = "bordercolorcorner2";
 	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 4;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	tag = "icon-bordercolorcorner2 (EAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/security/wing)
@@ -13830,8 +13897,6 @@
 	icon_state = "alarm0";
 	pixel_y = -22
 	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
 	icon_state = "borderfloorcorner2_white";
@@ -13842,6 +13907,8 @@
 	icon_state = "bordercolorcorner2";
 	dir = 9
 	},
+/obj/effect/floor_decal/borderfloor/corner2,
+/obj/effect/floor_decal/corner/red/bordercorner2,
 /turf/simulated/floor/tiled,
 /area/security/wing)
 "wh" = (
@@ -15429,6 +15496,16 @@
 	icon_state = "bordercolor";
 	dir = 8
 	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 10;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (SOUTHWEST)";
+	icon_state = "bordercolorcorner2";
+	dir = 10
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "yJ" = (
@@ -16156,6 +16233,16 @@
 	tag = "icon-bordercolor (SOUTHWEST)";
 	icon_state = "bordercolor";
 	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/green/bordercorner2{
+	tag = "icon-bordercolorcorner2 (WEST)";
+	icon_state = "bordercolorcorner2";
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
@@ -17643,6 +17730,7 @@
 /obj/structure/closet/secure_closet/forensics,
 /obj/effect/floor_decal/industrial/outline/red,
 /obj/item/device/camera,
+/obj/item/weapon/storage/briefcase/crimekit,
 /turf/simulated/floor/tiled/white,
 /area/security/detectives_office)
 "Ci" = (
@@ -18095,6 +18183,7 @@
 	pixel_y = 0
 	},
 /obj/item/device/camera,
+/obj/item/weapon/storage/briefcase/crimekit,
 /turf/simulated/floor/tiled/white,
 /area/security/detectives_office)
 "CZ" = (
@@ -22127,6 +22216,10 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 10
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	icon_state = "intact";
+	dir = 6
+	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
 "LE" = (
@@ -22134,6 +22227,11 @@
 	dir = 10
 	},
 /obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/second,
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	tag = "icon-intact (EAST)";
+	icon_state = "intact";
+	dir = 4
+	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
 "LG" = (
@@ -22141,7 +22239,10 @@
 	icon_state = "corner_white";
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/blue,
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	icon_state = "intact";
+	dir = 9
+	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
 "LH" = (
@@ -22318,28 +22419,18 @@
 "Mc" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
-	icon_state = "intact";
-	dir = 6
+	dir = 10
 	},
 /turf/simulated/wall/r_wall,
 /area/thruster/d3port)
 "Md" = (
 /obj/structure/sign/warning/nosmoking_2,
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	tag = "icon-intact (WEST)";
-	icon_state = "intact";
-	dir = 8
-	},
 /turf/simulated/wall/r_wall,
 /area/thruster/d3port)
 "Me" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/blue{
-	icon_state = "intact";
-	dir = 9
 	},
 /turf/simulated/wall/r_wall,
 /area/thruster/d3port)
@@ -23057,6 +23148,14 @@
 /obj/effect/shuttle_landmark/merc/deck2,
 /turf/space,
 /area/space)
+"NX" = (
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	tag = "icon-intact (WEST)";
+	icon_state = "intact";
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/thruster/d3starboard)
 "NY" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -24176,6 +24275,15 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/wall,
 /area/crew_quarters/head)
+"Wz" = (
+/obj/effect/wingrille_spawn/reinforced_phoron,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	icon_state = "intact";
+	dir = 5
+	},
+/turf/simulated/floor/reinforced,
+/area/thruster/d3port)
 "WD" = (
 /obj/structure/closet/secure_closet/bar_torch,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -24187,6 +24295,15 @@
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled,
 /area/hydroponics/storage)
+"WN" = (
+/obj/effect/wingrille_spawn/reinforced_phoron,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	icon_state = "intact";
+	dir = 6
+	},
+/turf/simulated/floor/reinforced,
+/area/thruster/d3starboard)
 "WW" = (
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/structure/disposalpipe/up{
@@ -24242,6 +24359,29 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
+"XW" = (
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 5;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTHEAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 5
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	tag = "icon-bordercolorcorner2 (SOUTHEAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 6
+	},
+/turf/simulated/floor/tiled,
+/area/security/wing)
 "Ye" = (
 /obj/structure/sink{
 	dir = 1;
@@ -24306,6 +24446,18 @@
 	},
 /turf/simulated/floor/lino,
 /area/crew_quarters/bar)
+"Yv" = (
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	tag = "icon-intact (EAST)";
+	icon_state = "intact";
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/thruster/d3port)
+"Yz" = (
+/obj/structure/bed/chair,
+/turf/simulated/floor/tiled/dark,
+/area/security/bo)
 "YE" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -48189,7 +48341,7 @@ nm
 nS
 oH
 py
-qz
+oI
 oI
 sk
 nl
@@ -48391,8 +48543,8 @@ nn
 nT
 oI
 pz
-oI
-oI
+Yz
+gQ
 sl
 tp
 uN
@@ -49202,7 +49354,7 @@ pD
 qC
 rv
 so
-kN
+XW
 uR
 wl
 xp
@@ -51406,7 +51558,7 @@ aO
 aO
 bh
 bv
-cn
+WN
 dg
 el
 ft
@@ -51444,7 +51596,7 @@ Jd
 JZ
 KX
 LD
-Jd
+Wz
 Mj
 Mu
 Gw
@@ -51811,7 +51963,7 @@ aO
 aO
 aO
 cp
-el
+NX
 em
 fv
 go
@@ -51847,7 +51999,7 @@ Gx
 Je
 Kb
 KZ
-KX
+Yv
 Md
 Gw
 Gw
