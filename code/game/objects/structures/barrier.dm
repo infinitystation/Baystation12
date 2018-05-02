@@ -165,8 +165,8 @@
 
 /obj/structure/barrier/MouseDrop_T(mob/user as mob)
 	if(src.loc != user.loc)
-	to_chat(user, "You start climbing onto [src]...")
-	step(src, get_dir(src, src.dir))
+		to_chat(user, "You start climbing onto [src]...")
+		step(src, get_dir(src, src.dir))
 
 /obj/structure/barrier/ex_act(severity)
 	switch(severity)
