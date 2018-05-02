@@ -1397,9 +1397,9 @@
 	},
 /obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/first,
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
-	tag = "icon-intact (WEST)";
+	tag = "icon-intact (EAST)";
 	icon_state = "intact";
-	dir = 8
+	dir = 4
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
@@ -23150,9 +23150,9 @@
 /area/space)
 "NX" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
-	tag = "icon-intact (WEST)";
+	tag = "icon-intact (EAST)";
 	icon_state = "intact";
-	dir = 8
+	dir = 4
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
