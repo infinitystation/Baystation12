@@ -125,12 +125,13 @@
 	rolled_towel = /obj/item/rolled_towel/ilove
 
 /obj/item/rolled_towel/fitness
-	name = "rolled fintess mat"
+	name = "rolled fitness mat"
+	desc = "Fitness mat - place it in a gym for better training.."
 	icon_state = "rolled_gym_beach"
 	beach_towel = /obj/structure/towel/fitness
 
 /obj/structure/towel/fitness
-	name = "fintess mat"
+	name = "fitness mat"
 	icon_state = "gym_beach"
 	rolled_towel = /obj/item/rolled_towel/fitness
 

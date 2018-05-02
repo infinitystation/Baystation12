@@ -384,7 +384,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/bp15
 	name = "BP-15 PDW"
-	desc = "The BP-15 Moloh is a  personal defense weapon, produced by Aussec Armory for use by police spec ops or solders. Uses 5.7x28 mm rounds."
+	desc = "The BP-15 'Moloh' is a  personal defense weapon, produced by Aussec Armory for use by police spec ops or solders. Uses 5.7x28 mm rounds."
 	icon = 'icons/event/guns.dmi'
 	icon_state = "pdw"
 	item_state = "c20r"
