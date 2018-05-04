@@ -411,7 +411,7 @@ var/list/mob_hat_cache = list()
 
 /mob/living/silicon/robot/drone/robot_checklaws()
 	set category = "Silicon Commands"
-	set name = "State Laws"
+	name = "LAWS: Laws"
 
 	if(!controlling_ai)
 		return ..()

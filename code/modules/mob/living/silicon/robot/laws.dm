@@ -1,6 +1,6 @@
 /mob/living/silicon/robot/verb/cmd_show_laws()
 	set category = "Silicon Commands"
-	set name = "Show Laws"
+	set name = "LAWS: Show"
 	show_laws()
 
 /mob/living/silicon/robot/show_laws(var/everyone = 0)
@@ -50,5 +50,5 @@
 
 /mob/living/silicon/robot/proc/robot_checklaws()
 	set category = "Silicon Commands"
-	set name = "State Laws"
+	set name = "LAWS: State"
 	open_subsystem(/datum/nano_module/law_manager)
