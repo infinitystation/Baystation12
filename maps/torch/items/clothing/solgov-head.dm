@@ -84,6 +84,19 @@
 	desc = "A peaked grey uniform cap belonging to the SCG Expeditionary Corps. This one is trimmed in gold."
 	icon_state = "greydresscap_com"
 
+/obj/item/clothing/head/solgov/service/fleet
+	name = "fleet peaked cap"
+	desc = "A peaked dark-blue cap belonging to the SCG Fleet Corps."
+	icon = 'icons/obj/clothing/infinity/hats.dmi'
+	icon_state = "navygarrisoncap"
+	item_icons = list(slot_head_str = 'icons/obj/clothing/infinity/hats.dmi')
+
+/obj/item/clothing/head/solgov/service/fleet/command
+	name = "fleet officer's peaked cap"
+	desc = "A peaked khaki cap belonging to the SCG Fleet Corps. A common headwear of fleet officers."
+	icon = 'icons/obj/clothing/infinity/hats.dmi'
+	icon_state = "khakipeakcap_com"
+
 /obj/item/clothing/head/solgov/service/marine
 	name = "marine wheel cover"
 	desc = "A green service uniform cover with an SCG Marine Corps crest."

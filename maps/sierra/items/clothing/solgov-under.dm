@@ -217,17 +217,18 @@
 
 /obj/item/clothing/under/solgov/service/fleet
 	name = "fleet service uniform"
-	desc = "The service uniform of the SCG Fleet, made from immaculate white fabric."
-	icon_state = "whiteservice"
-	item_state = "nursesuit"
-	worn_state = "whiteservice"
-	starting_accessories = list(/obj/item/clothing/accessory/navy)
+	desc = "The service uniform of the SCG Fleet."
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	icon_state = "blackservice"
+	item_state = "blackservice"
+	worn_state = "blackservice"
 
-/obj/item/clothing/under/solgov/service/fleet/skirt
-	name = "fleet service skirt"
-	desc = "The service uniform skirt of the SCG Fleet, made from immaculate white fabric."
-	icon_state = "whiteservicefem"
-	worn_state = "whiteservicefem"
+/obj/item/clothing/under/solgov/service/fleet/command
+	name = "fleet officer's service uniform"
+	desc = "The service uniform of the SCG Fleet officer."
+	icon_state = "blackserviceof"
+	item_state = "blackserviceof"
+	worn_state = "blackserviceof"
 
 /obj/item/clothing/under/solgov/service/marine
 	name = "marine service uniform"
@@ -289,6 +290,36 @@
 	desc = "A feminine version of the SCG Expeditionary Corps dress uniform in gold trim."
 	icon_state = "greydressfem_com"
 	worn_state = "greydressfem_com"
+
+/obj/item/clothing/under/solgov/mildress/fleet
+	name = "fleet dress uniform"
+	desc = "The dress uniform of the SCG Fleet, made from immaculate white fabric. The rumors say this one was a service uniform once."
+	icon_state = "whiteservice"
+	item_state = "nursesuit"
+	worn_state = "whiteservice"
+	starting_accessories = list(/obj/item/clothing/accessory/black)
+
+/obj/item/clothing/under/solgov/mildress/fleet2
+	name = "fleet dress uniform"
+	desc = "The dress uniform of the SCG Fleet, made from immaculate white fabric."
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	icon_state = "whiteservice"
+	item_state = "nursesuit"
+	worn_state = "whiteservice"
+	starting_accessories = list(/obj/item/clothing/accessory/black)
+
+/obj/item/clothing/under/solgov/mildress/fleet/skirt
+		name = "fleet dress skirt"
+		desc = "The dress uniform skirt of the SCG Fleet, made from immaculate white fabric. The rumors say this one was a service uniform once."
+		icon_state = "whiteservicefem"
+		worn_state = "whiteservicefem"
+
+/obj/item/clothing/under/solgov/mildress/fleet2/skirt
+		name = "fleet dress skirt"
+		desc = "The dress uniform skirt of the SCG Fleet, made from immaculate white fabric."
+		icon_state = "whiteservicefem"
+		item_state = "whiteservicefem_s"
+		worn_state = "whiteservicefem"
 
 /obj/item/clothing/under/solgov/mildress/marine
 	name = "marine dress uniform"

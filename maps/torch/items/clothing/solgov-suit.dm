@@ -196,6 +196,26 @@
 	icon_closed = "whitedress_com"
 	blood_overlay_type = "coat"
 
+/obj/item/clothing/suit/storage/toggle/dress/fleet2
+	name = "fleet white dress jacket"
+	desc = "A navy white SCG Fleet dress jacket with silver accents and golden trims."
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	icon_state = "whitedress"
+	icon_open = "whitedress_open"
+	icon_closed = "whitedress"
+	item_state = "whitedressh"
+	item_icons = list(slot_wear_suit_str = 'icons/obj/clothing/infinity/uniform.dmi')
+
+/obj/item/clothing/suit/storage/toggle/dress/fleet2/command
+	name = "fleet officer's white dress jacket"
+	desc = "A navy white SCG Fleet dress jacket dripping with gold accents and trims."
+	icon_state = "whitedress_com"
+	//item_state = "labcoat"
+	icon_open = "whitedress_com_open"
+	icon_closed = "whitedress_com"
+	item_state = "whitedressh_com"
+	//blood_overlay_type = "coat"
+
 /obj/item/clothing/suit/dress/solgov/marine
 	name = "marine dress jacket"
 	desc = "A tailored black SCG Marine Corps dress jacket with red trim. So sexy it hurts."
