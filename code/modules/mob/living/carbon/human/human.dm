@@ -1528,3 +1528,14 @@
 		. -= 1
 	if(shock_stage > 30)
 		. -= 1
+	if(chem_doses.len)
+		for(var/T in chem_doses)
+			var/datum/reagent/R = T
+			if(istype(R, /datum/reagent/hyperzine))
+				. += 1
+			if(istype(R, /datum/reagent/adrenaline))
+				. += 2
+			if(istype(R, /datum/reagent/ethanol) && chem_doses[T] < 5 && chem_doses[T] > 1)
+				. += 1
+			if(istype(R, /datum/reagent/ethanol) && chem_doses[T] >= 5)
+				. -= 2
