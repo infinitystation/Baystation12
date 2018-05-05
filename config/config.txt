@@ -76,7 +76,7 @@ LOG_HREFS
 LOG_PERMISSIONS
 
 ## sql switching
-SQL_ENABLED 1
+#SQL_ENABLED 1
 
 ## disconnect players who did nothing during the set amount of minutes
 # KICK_INACTIVE 10
@@ -217,7 +217,7 @@ WIKIURL https://wiki.infinity-ss13.ru/
 GITHUBURL https://github.com/infinitystation/Baystation12
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-BANAPPEALS https://infinity-ss13.ru/index.php?/forum/5-суд/
+BANAPPEALS https://infinity-ss13.ru/index.php?/forum/5-пїЅпїЅпїЅ/
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard
