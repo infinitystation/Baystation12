@@ -105,7 +105,7 @@
 	return list(/obj/item/weapon/storage/toolbox/mechanical = 30,
 				/obj/item/weapon/storage/toolbox/electrical = 20,
 				/obj/item/weapon/storage/toolbox/emergency = 20,
-				/obj/item/weapon/storage/toolbox/syndicate = 10)
+				/obj/item/weapon/storage/toolbox/syndicate = 1)
 
 /obj/random/tech_supply
 	name = "random tech supply"
