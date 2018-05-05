@@ -5111,11 +5111,11 @@
 	dir = 4;
 	pixel_x = 24
 	},
-/obj/machinery/camera/network/research{
+/obj/machinery/light,
+/obj/machinery/camera/network/petrov{
 	c_tag = "Petrov - Cockpit";
 	dir = 8
 	},
-/obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "kV" = (
@@ -5167,6 +5167,10 @@
 /obj/machinery/light{
 	icon_state = "tube1";
 	dir = 4
+	},
+/obj/machinery/camera/network/petrov{
+	c_tag = "Petrov - Anomaly Lab";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
@@ -5957,6 +5961,10 @@
 	dir = 4;
 	pixel_x = 37
 	},
+/obj/machinery/camera/network/petrov{
+	c_tag = "Petrov - Gas Lab";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "mu" = (
@@ -6619,15 +6627,6 @@
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "nz" = (
-/obj/machinery/portable_atmospherics/canister/empty,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/white,
-/area/shuttle/petrov/ship)
-"nA" = (
-/obj/machinery/camera/network/research{
-	c_tag = "Petrov - Laboratory";
-	dir = 1
-	},
 /obj/machinery/portable_atmospherics/canister/empty,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
@@ -7867,15 +7866,14 @@
 /obj/structure/table/rack,
 /obj/item/clothing/suit/bio_suit/anomaly,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/camera/network/research{
-	c_tag = "Petrov - Equipment Room";
-	dir = 2
-	},
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
 /obj/item/clothing/mask/gas/half,
 /obj/item/clothing/head/bio_hood/anomaly,
+/obj/machinery/camera/network/petrov{
+	c_tag = "Petrov - Equipment Room"
+	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "pT" = (
@@ -11565,15 +11563,11 @@
 /obj/machinery/atmospherics/binary/pump{
 	dir = 4
 	},
-/obj/item/device/radio/intercom{
-	pixel_y = 22
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/obj/machinery/camera/network/research{
-	c_tag = "Petrov - Isolation Chambers";
-	dir = 2
+/obj/machinery/camera/network/petrov{
+	c_tag = "Petrov - Isolation Chambers"
 	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
@@ -20994,6 +20988,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
+"YE" = (
+/obj/item/device/radio/intercom{
+	pixel_y = 22
+	},
+/turf/simulated/floor/tiled/white,
+/area/shuttle/petrov/ship)
 "YF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -50282,7 +50282,7 @@ oO
 rj
 hk
 hk
-kY
+YE
 je
 yb
 zv
@@ -51084,7 +51084,7 @@ jf
 ke
 ld
 mq
-nA
+nz
 oR
 oO
 oO

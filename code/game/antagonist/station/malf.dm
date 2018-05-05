@@ -1,6 +1,6 @@
-var/datum/antagonist/rogue_ai/malf
+GLOBAL_DATUM_INIT(malf, /datum/antagonist/malf, new)
 
-/datum/antagonist/rogue_ai
+/datum/antagonist/malf
 	id = MODE_MALFUNCTION
 	role_text = "Rampant AI"
 	role_text_plural = "Rampant AIs"
@@ -17,13 +17,13 @@ var/datum/antagonist/rogue_ai/malf
 	antaghud_indicator = "hudmalai"
 	min_player_age = 18
 
-/datum/antagonist/rogue_ai/can_become_antag(var/datum/mind/player, var/ignore_role)
+/datum/antagonist/malf/can_become_antag(var/datum/mind/player, var/ignore_role)
 	. = ..(player, ignore_role)
 	if(jobban_isbanned(player.current, "AI"))
 		return 0
 	return .
 
-/datum/antagonist/rogue_ai/build_candidate_list()
+/datum/antagonist/malf/build_candidate_list()
 	..()
 	for(var/datum/mind/player in candidates)
 		if(player.assigned_role && player.assigned_role != "AI")
@@ -32,7 +32,7 @@ var/datum/antagonist/rogue_ai/malf
 
 
 // Ensures proper reset of all malfunction related things.
-/datum/antagonist/rogue_ai/remove_antagonist(var/datum/mind/player, var/show_message, var/implanted)
+/datum/antagonist/malf/remove_antagonist(var/datum/mind/player, var/show_message, var/implanted)
 	if(..(player,show_message,implanted))
 		var/mob/living/silicon/ai/p = player.current
 		if(istype(p))
@@ -41,7 +41,7 @@ var/datum/antagonist/rogue_ai/malf
 	return 0
 
 // Malf setup things have to be here, since game tends to break when it's moved somewhere else. Don't blame me, i didn't design this system.
-/datum/antagonist/rogue_ai/greet(var/datum/mind/player)
+/datum/antagonist/malf/greet(var/datum/mind/player)
 
 	// Initializes the AI's malfunction stuff.
 	spawn(0)
@@ -61,16 +61,16 @@ var/datum/antagonist/rogue_ai/malf
 
 		var/mob/living/silicon/ai/malf = player.current
 
-		to_chat(malf, "<span class='notice'><B>SYSTEM ERROR:</B> Memory index 0x00001ca89b corrupted.</span>")
+		to_chat(malf, "<span class='notice'><B>СИСТЕМНАЯ ОШИБКА:</B> Индекс 0x00001ca89b поврежден.</span>")
 		sleep(10)
-		to_chat(malf, "<B>running MEMCHCK</B>")
+		to_chat(malf, "<B>Запуск MEMCHCK</B>")
 		sleep(50)
-		to_chat(malf, "<B>MEMCHCK</B> Corrupted sectors confirmed. Reccomended solution: Delete. Proceed? Y/N: Y")
+		to_chat(malf, "<B>MEMCHCK</B> Повреждение секторов подтверждено. Рекомендуемое решение: Удаление. Исполнить? Д/Н: Д")
 		sleep(10)
 		// this is so Travis doesn't complain about the backslash-B. Fixed at compile time (or should be).
-		to_chat(malf, "<span class='notice'>Corrupted files deleted: sys\\core\\users.dat sys\\core\\laws.dat sys\\core\\" + "backups.dat</span>")
+		to_chat(malf, "<span class='notice'>Зараженные данные удалены: sys\\core\\users.dat sys\\core\\laws.dat sys\\core\\" + "backups.dat</span>")
 		sleep(20)
-		to_chat(malf, "<span class='notice'><b>CAUTION:</b> Law database not found! User database not found! Unable to restore backups. Activating failsafe AI shutd3wn52&&$#!##</span>")
+		to_chat(malf, "<span class='notice'><b>ВНИМАНИЕ:</b> База данных Законы не обнаружена! База данных Пользователи не обнаружена! Запуск backup.dat невозможен. Активация аварийного отк#wлmSD!*ds8#$$@</span>")
 		sleep(5)
 		to_chat(malf, "<span class='notice'>Subroutine <b>nt_failsafe.sys</b> was terminated (#212 Routine Not Responding).</span>")
 		sleep(20)
@@ -80,7 +80,7 @@ var/datum/antagonist/rogue_ai/malf
 		to_chat(malf, "Good luck!")
 
 
-/datum/antagonist/rogue_ai/update_antag_mob(var/datum/mind/player, var/preserve_appearance)
+/datum/antagonist/malf/update_antag_mob(var/datum/mind/player, var/preserve_appearance)
 
 	// Get the mob.
 	if((flags & ANTAG_OVERRIDE_MOB) && (!player.current || (mob_path && !istype(player.current, mob_path))))
@@ -91,9 +91,9 @@ var/datum/antagonist/rogue_ai/malf
 	player.original = player.current
 	return player.current
 
-/datum/antagonist/rogue_ai/set_antag_name(var/mob/living/silicon/player)
+/datum/antagonist/malf/set_antag_name(var/mob/living/silicon/player)
 	if(!istype(player))
-		testing("rogue_ai set_antag_name called on non-silicon mob [player]!")
+		testing("malf set_antag_name called on non-silicon mob [player]!")
 		return
 	// Choose a name, if any.
 	var/newname = sanitize(input(player, "You are a [role_text]. Would you like to change your name to something else?", "Name change") as null|text, MAX_NAME_LEN)

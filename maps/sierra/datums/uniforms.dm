@@ -69,15 +69,15 @@
 	utility_extra = list(/obj/item/clothing/head/beret/solgov/fleet, /obj/item/clothing/head/ushanka/solgov/fleet, /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet,/obj/item/clothing/head/soft/solgov/fleet)
 
 	service_under = /obj/item/clothing/under/solgov/service/fleet
-	service_skirt = /obj/item/clothing/under/solgov/service/fleet/skirt
+	service_skirt = null
 	service_over = null
-	service_shoes = /obj/item/clothing/shoes/dress/white
-	service_hat = /obj/item/clothing/head/solgov/dress/fleet
+	service_shoes = /obj/item/clothing/shoes/dress
+	service_hat = /obj/item/clothing/head/solgov/dress/fleet/garrison
 
-	dress_under = /obj/item/clothing/under/solgov/service/fleet
-	dress_skirt = /obj/item/clothing/under/solgov/service/fleet/skirt
-	dress_over = /obj/item/clothing/suit/storage/toggle/dress/fleet
-	dress_shoes = /obj/item/clothing/shoes/dress/white
+	dress_under = /obj/item/clothing/under/solgov/mildress/fleet2
+	dress_skirt = /obj/item/clothing/under/solgov/mildress/fleet2/skirt
+	dress_over = /obj/item/clothing/suit/dress/solgov/fleet/sailor
+	dress_shoes = /obj/item/clothing/shoes/dress
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet
 	dress_gloves = /obj/item/clothing/gloves/white
 
@@ -117,4 +117,3 @@ decl/hierarchy/mil_uniform/civilian
 	dress_over = /obj/item/clothing/suit/storage/toggle/internalaffairs/plain
 	dress_shoes = /obj/item/clothing/shoes/dress
 	dress_extra = list(/obj/item/clothing/accessory/wcoat)
-
