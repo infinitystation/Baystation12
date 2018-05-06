@@ -138,7 +138,7 @@
 		return 1
 	var/datum/gas_mixture/environment = A.return_air()
 
-	if(environment)
+	if(!(SPACERES in mutations) && environment)
 		if( abs(environment.temperature - bodytemperature) > 40 )
 			bodytemperature += (environment.temperature - bodytemperature) / 5
 		if(min_gas)
@@ -190,6 +190,7 @@
 		damage = (Proj.damage / 8)
 
 	adjustBruteLoss(damage)
+	Proj.on_hit(src)
 	return 0
 
 /mob/living/simple_animal/attack_hand(mob/living/carbon/human/M as mob)

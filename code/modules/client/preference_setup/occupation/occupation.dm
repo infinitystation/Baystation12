@@ -17,10 +17,6 @@
 	var/char_branch	= "None"   // military branch
 	var/char_rank = "None"     // military rank
 
-	var/list/skills_saved	 	= list()	   //List of /datum/job paths, with values (lists of "/decl/hierarchy/skill" , with values saved skill points spent). Should only include entries with nonzero spending.
-	var/list/skills_allocated	= list()	   //Same as above, but using instances rather than path strings for both jobs and skills.
-	var/list/points_by_job		= list()	   //List of jobs, with value the number of free skill points remaining
-
 	//Keeps track of preferrence for not getting any wanted jobs
 	var/alternate_option = 2
 
@@ -125,9 +121,8 @@
 		. += "<tr bgcolor='[job.selection_color]'><td width='40%' align='right'>"
 		var/rank = job.title
 		lastJob = job
-
+		. += "<a href='?src=\ref[src];job_info=[rank]'>\[?\]</a>"
 		. += "<a href='?src=\ref[src];set_skills=[rank]'>"
-
 		if(job.total_positions == 0 && job.spawn_positions == 0)
 			. += "<del>[rank]</del></a></td><td><b> \[UNAVAILABLE]</b></td></tr>"
 			continue
@@ -242,6 +237,7 @@
 			pref.char_branch = choice
 			pref.char_rank = "None"
 			prune_job_prefs()
+			pref.skills_allocated = pref.sanitize_skills(pref.skills_allocated)		// Check our skillset is still valid
 			return TOPIC_REFRESH
 
 	else if(href_list["char_rank"])
@@ -276,7 +272,6 @@
 		if(!istype(S) || !istype(J))
 			return
 		var/value = text2num(href_list["newvalue"])
-
 		update_skill_value(J, S, value)
 		panel.set_content(generate_skill_content(J))
 		panel.open()
@@ -287,12 +282,48 @@
 			return
 		var/HTML = list()
 		HTML += "<h2>[S.name]</h2>"
-		HTML += "<b>Generic Description</b>: [S.desc]<br>"
+		HTML += "[S.desc]<br>"
 		var/i
-		for(i=0, i <= SKILL_MAX, i++)
-			var/level_name = S.level_names[i+1]
-			HTML +=	"<br><b>[level_name]</b>: [S.desc_levels[level_name]]<br>"
+		for(i=SKILL_MIN, i <= SKILL_MAX, i++)
+			var/level_name = S.levels[i]
+			HTML +=	"<br><b>[level_name]</b>: [S.levels[level_name]]<br>"
 		show_browser(user, jointext(HTML, null), "window=\ref[user]skillinfo")
+
+	else if(href_list["job_info"])
+		var/rank = href_list["job_info"]
+		var/datum/job/job = job_master.GetJob(rank)
+		var/dat = list()
+
+		dat += "<p style='background-color: [job.selection_color]'><br><br><p>"
+		if(job.alt_titles)
+			dat += "<i><b>Alternative titles:</b> [english_list(job.alt_titles)].</i>"
+		send_rsc(user, job.get_job_icon(), "job[ckey(rank)].png")
+		dat += "<img src=job[ckey(rank)].png width=96 height=96 style='float:left;'>"
+		if(job.department)
+			dat += "<b>Department:</b> [job.department]."
+			if(job.head_position)
+				dat += "You are in charge of this department."
+
+		dat += "You answer to <b>[job.supervisors]</b> normally."
+
+		if(job.allowed_branches)
+			dat += "You can be of following ranks:"
+			for(var/T in job.allowed_branches)
+				var/datum/mil_branch/B = mil_branches.get_branch_by_type(T)
+				dat += "<li>[B.name]: [job.get_ranks(B.name)]"
+		dat += "<hr style='clear:left;'>"
+		if(config.wikiurl)
+			dat += "<a href='?src=\ref[src];job_wiki=[rank]'>Open wiki page in browser</a>"
+		var/description = job.get_description_blurb()
+		if(description)
+			dat += html_encode(description)
+		var/datum/browser/popup = new(user, "Job Info", "[capitalize(rank)]", 430, 520, src)
+		popup.set_content(jointext(dat,"<br>"))
+		popup.open()
+
+	else if(href_list["job_wiki"])
+		var/rank = href_list["job_wiki"]
+		open_link(user,"[config.wikiurl][rank]")
 
 	return ..()
 

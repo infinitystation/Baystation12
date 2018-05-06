@@ -1817,6 +1817,9 @@
 /area/bridge)
 "eQ" = (
 /obj/structure/displaycase,
+/obj/item/weapon/gun/projectile/revolver/webley/captain{
+	pixel_y = -3
+	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/co)
 "eR" = (
@@ -11374,16 +11377,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge)
-"yg" = (
-/obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 8
-	},
-/obj/structure/sign/solgov{
-	pixel_x = -32
-	},
-/turf/simulated/floor/reinforced/airless,
-/area/space)
 "yh" = (
 /obj/effect/floor_decal/scglogo{
 	icon_state = "1,0"
@@ -12005,12 +11998,6 @@
 /obj/structure/closet/secure_closet/cos,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/cos)
-"Eg" = (
-/obj/structure/sign/solgov{
-	pixel_x = 32
-	},
-/turf/simulated/wall/r_wall/hull,
-/area/hallway/primary/bridge/aft)
 "Eh" = (
 /obj/structure/table/glass,
 /obj/effect/floor_decal/corner/blue{
@@ -13313,15 +13300,6 @@
 	dir = 4
 	},
 /obj/structure/table/glass,
-/obj/item/weapon/cartridge/signal/science,
-/obj/item/weapon/cartridge/signal/science{
-	pixel_x = -4;
-	pixel_y = 2
-	},
-/obj/item/weapon/cartridge/signal/science{
-	pixel_x = 4;
-	pixel_y = 6
-	},
 /obj/item/device/healthanalyzer,
 /obj/item/weapon/book/manual/nt_regs,
 /turf/simulated/floor/tiled/white,
@@ -13409,7 +13387,6 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/obj/item/modular_computer/tablet/lease/preset/command,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/storage)
 "Mg" = (
@@ -13528,7 +13505,6 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/light,
 /obj/structure/closet/secure_closet/bridgeofficer,
-/obj/item/modular_computer/tablet/lease/preset/command,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/storage)
 "Ng" = (
@@ -14785,6 +14761,10 @@
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/fore)
+"Xp" = (
+/obj/structure/sign/solgov,
+/turf/simulated/wall/titanium,
+/area/aquila_hangar/start)
 "Xz" = (
 /turf/simulated/wall/r_wall/hull,
 /area/crew_quarters/heads/cobed)
@@ -32257,7 +32237,7 @@ eb
 eb
 Ec
 Fc
-Eg
+DN
 Ug
 DN
 ec
@@ -32459,7 +32439,7 @@ ec
 ec
 ec
 Gc
-ec
+Xp
 Vg
 Ib
 ec
@@ -35283,7 +35263,7 @@ ad
 ad
 ad
 gY
-ec
+Xp
 Ag
 Ag
 Ag
@@ -35485,7 +35465,7 @@ ad
 ad
 ad
 fp
-yg
+eg
 eg
 eg
 eg

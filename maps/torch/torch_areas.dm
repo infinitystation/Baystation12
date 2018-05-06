@@ -754,14 +754,14 @@
 	name = "\improper Shuttle Fuel Bay"
 	icon_state = "toxstorage"
 
-/area/quartermaster/quarantine
-	name = "\improper Hangar Quarantine"
-	icon_state = "toxstorage"
-
 /area/quartermaster/hangar
 	name = "\improper Hangar Deck"
 	icon_state = "hangar"
 	sound_env = LARGE_ENCLOSED
+
+/area/quartermaster/unused
+	name = "\improper Ready Room"
+	icon_state = "auxstorage"
 
 // Research
 /area/rnd/canister
@@ -1255,6 +1255,10 @@
 /area/medical/surgery
 	name = "\improper Operating Theatre"
 	icon_state = "surgery"
+
+/area/medical/autopsy
+	name = "\improper Autopsy"
+	icon_state = "autopsy"
 
 // Research
 /area/assembly/chargebay

@@ -62,7 +62,7 @@
 	return TRUE
 
 /mob/living/silicon/verb/activate_subsystem(var/datum/silicon_subsystem_name in silicon_subsystems_by_name)
-	set name = "Subsystems"
+	set name = "MAIN: Subsystems"
 	set desc = "Activates the given subsystem"
 	set category = "Silicon Commands"
 

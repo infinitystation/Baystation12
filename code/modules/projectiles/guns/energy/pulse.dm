@@ -82,18 +82,18 @@
 		slot_l_hand_str = 'icons/mob/infinity/misctwo.dmi',
 		)
 	w_class = ITEM_SIZE_HUGE
-	force = 8
+	force = 10
 	self_recharge = 1
 	projectile_type = /obj/item/projectile/beam/pulse/bogani
-	one_hand_penalty = 2
+	one_hand_penalty = 1
 	burst = 1
 	move_delay = 1
 	burst_delay = 2
-	accuracy = -1
 	max_shots = 30
 	icon_rounder = 25
 
 	firemodes = list(
-		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, one_hand_penalty=1, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-pulse bursts", burst=3,    fire_delay=null, move_delay=2,    one_hand_penalty=3, burst_accuracy=list(0,-1,-2), dispersion=list(0.0, 0.5, 0.8)),
+		list(mode_name="semiauto",       projectile_type = /obj/item/projectile/beam/pulse/bogani, burst=1,    fire_delay=0,    move_delay=null, one_hand_penalty=1, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-pulse bursts", projectile_type = /obj/item/projectile/beam/pulse/bogani, burst=3,    fire_delay=null, move_delay=2,    one_hand_penalty=3, burst_accuracy=list(0,-1,-2), dispersion=list(0.0, 0.5, 0.8)),
+		list(mode_name="shock",          projectile_type = /obj/item/projectile/beam/stun,         burst=1,    fire_delay=6,    move_delay=null, one_hand_penalty=1, burst_accuracy=null, dispersion=null),
 		)

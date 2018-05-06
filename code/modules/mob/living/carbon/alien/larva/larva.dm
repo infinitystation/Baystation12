@@ -6,7 +6,7 @@
 	icon_state = "larva"
 	language = "Hivemind"
 	maxHealth = 25
-	max_grown = 120
+	max_grown = 80
 	health = 25
 	auto_progress = 0
 

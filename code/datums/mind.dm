@@ -63,6 +63,8 @@
 	//put this here for easier tracking ingame
 	var/datum/money_account/initial_account
 
+	var/list/initial_email_login = list("login" = "", "password" = "")
+
 	//used for optional self-objectives that antagonists can give themselves, which are displayed at the end of the round.
 	var/ambitions
 
@@ -193,7 +195,7 @@
 		var/datum/mind/mind = locate(href_list["amb_edit"])
 		if(!mind)
 			return
-		var/new_ambition = input("Enter a new ambition", "Memory", mind.ambitions) as null|message
+		var/new_ambition = input("Enter a new ambition", "Memory", html_decode(mind.ambitions)) as null|message
 		if(isnull(new_ambition))
 			return
 		new_ambition = sanitize(new_ambition)
@@ -453,13 +455,8 @@
 	var/is_currently_brigged = 0
 	if(istype(T.loc,/area/security/brig))
 		is_currently_brigged = 1
-		for(var/obj/item/weapon/card/id/card in current)
+		if(current.GetIdCard())
 			is_currently_brigged = 0
-			break // if they still have ID they're not brigged
-		for(var/obj/item/device/pda/P in current)
-			if(P.id)
-				is_currently_brigged = 0
-				break // if they still have ID they're not brigged
 
 	if(!is_currently_brigged)
 		brigged_since = -1

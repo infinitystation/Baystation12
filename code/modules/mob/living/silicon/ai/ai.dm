@@ -27,8 +27,6 @@ var/list/ai_verbs_default = list(
 	/mob/living/silicon/ai/proc/toggle_hologram_movement,
 	/mob/living/silicon/ai/proc/ai_power_override,
 	/mob/living/silicon/ai/proc/ai_shutdown,
-	/mob/living/silicon/ai/proc/ai_view_images,
-	/mob/living/silicon/ai/proc/ai_take_image
 )
 
 //Not sure why this is necessary...
@@ -60,7 +58,6 @@ var/list/ai_verbs_default = list(
 	var/icon/holo_icon//Blue hologram. Face is assigned when AI is created.
 	var/icon/holo_icon_longrange //Yellow hologram.
 	var/holo_icon_malf = FALSE // for new hologram system
-	var/obj/item/device/pda/ai/aiPDA = null
 	var/obj/item/device/multitool/aiMulti = null
 
 	silicon_camera = /obj/item/device/camera/siliconcam/ai_camera
@@ -132,7 +129,6 @@ var/list/ai_verbs_default = list(
 				possibleNames -= pickedName
 				pickedName = null
 
-	aiPDA = new/obj/item/device/pda/ai(src)
 	fully_replace_character_name(pickedName)
 	anchored = 1
 	canmove = 0
@@ -210,7 +206,7 @@ var/list/ai_verbs_default = list(
 
 	to_chat(src, radio_text)
 
-	if (malf && !(mind in malf.current_antagonists))
+	if (malfunctioning && !(mind in GLOB.malf.current_antagonists))
 		show_laws()
 		to_chat(src, "<b>Данные законы могут быть изменены другими игроками или в том случае, если вы &#255;вл&#255;етесь сбойным ИИ.</b>")
 		to_chat(src, "<span class='danger'><B>Внимание! Разработчиками Искусственного Интеллекта были введены специальные протоколы! Ознакомление с оными возможно на следующей странице: https://wiki.infinity-ss13.ru/index.php?title=SCG_AI_Rules_and_Regulations</b></span>")
@@ -231,7 +227,6 @@ var/list/ai_verbs_default = list(
 	QDEL_NULL(announcement)
 	QDEL_NULL(eyeobj)
 	QDEL_NULL(psupply)
-	QDEL_NULL(aiPDA)
 	QDEL_NULL(aiMulti)
 	hack = null
 
@@ -286,15 +281,11 @@ var/list/ai_verbs_default = list(
 	if(eyeobj)
 		eyeobj.SetName("[pickedName] (AI Eye)")
 
-	// Set ai pda name
-	if(aiPDA)
-		aiPDA.set_owner_rank_job(pickedName, "AI")
-
 	setup_icon()
 
 /mob/living/silicon/ai/proc/pick_icon()
 	set category = "Silicon Commands"
-	set name = "Set AI Core Display"
+	set name = "MOOD: AI Core Display"
 	if(stat || !has_power())
 		return
 
@@ -318,13 +309,13 @@ var/list/ai_verbs_default = list(
 // this verb lets the ai see the stations manifest
 /mob/living/silicon/ai/proc/ai_roster()
 	set category = "Silicon Commands"
-	set name = "Show Crew Manifest"
+	set name = "CREW: Show Manifest"
 	show_station_manifest()
 
 /mob/living/silicon/ai/var/message_cooldown = 0
 /mob/living/silicon/ai/proc/ai_announcement()
 	set category = "Silicon Commands"
-	set name = "Make Announcement"
+	set name = "CREW: Make Announcement"
 
 	if(check_unable(AI_CHECK_WIRELESS | AI_CHECK_RADIO))
 		return
@@ -346,7 +337,7 @@ var/list/ai_verbs_default = list(
 
 /mob/living/silicon/ai/proc/ai_call_shuttle()
 	set category = "Silicon Commands"
-	set name = "Call Evacuation"
+	set name = "EVACUATION: Call"
 
 	if(check_unable(AI_CHECK_WIRELESS))
 		return
@@ -363,7 +354,7 @@ var/list/ai_verbs_default = list(
 
 /mob/living/silicon/ai/proc/ai_recall_shuttle()
 	set category = "Silicon Commands"
-	set name = "Cancel Evacuation"
+	set name = "EVACUATION: Cancel"
 
 	if(check_unable(AI_CHECK_WIRELESS))
 		return
@@ -378,7 +369,7 @@ var/list/ai_verbs_default = list(
 /mob/living/silicon/ai/var/emergency_message_cooldown = 0
 /mob/living/silicon/ai/proc/ai_emergency_message()
 	set category = "Silicon Commands"
-	set name = "Send Emergency Message"
+	set name = "COMM: Send Emergency Message"
 
 	if(check_unable(AI_CHECK_WIRELESS))
 		return
@@ -474,7 +465,7 @@ var/list/ai_verbs_default = list(
 
 /mob/living/silicon/ai/cancel_camera()
 	set category = "Silicon Commands"
-	set name = "Cancel Camera View"
+	name = "CAMERA: Cancel View"
 
 	//src.cameraFollow = null
 	src.view_core()
@@ -499,7 +490,7 @@ var/list/ai_verbs_default = list(
 
 /mob/living/silicon/ai/proc/ai_network_change(var/network in get_camera_network_list())
 	set category = "Silicon Commands"
-	set name = "Jump To Network"
+	set name = "CAMERA: Jump To Network"
 	unset_machine()
 
 	if(!network)
@@ -522,7 +513,7 @@ var/list/ai_verbs_default = list(
 
 /mob/living/silicon/ai/proc/ai_statuschange()
 	set category = "Silicon Commands"
-	set name = "AI Status"
+	set name = "MOOD: AI Status"
 
 	if(check_unable(AI_CHECK_WIRELESS))
 		return
@@ -532,7 +523,7 @@ var/list/ai_verbs_default = list(
 
 //I am the icon meister. Bow fefore me.	//>fefore
 /mob/living/silicon/ai/proc/ai_hologram_change()
-	set name = "Change Hologram"
+	set name = "HOLOGRAM: Change"
 	set desc = "Change the default hologram available to AI to something else."
 	set category = "Silicon Commands"
 
@@ -576,7 +567,7 @@ var/list/ai_verbs_default = list(
 
 //Toggles the luminosity and applies it by re-entereing the camera.
 /mob/living/silicon/ai/proc/toggle_camera_light()
-	set name = "Toggle Camera Light"
+	set name = "CAMERA: Toggle Light"
 	set desc = "Toggles the light on the camera the AI is looking through."
 	set category = "Silicon Commands"
 
@@ -646,7 +637,7 @@ var/list/ai_verbs_default = list(
 		return ..()
 
 /mob/living/silicon/ai/proc/control_integrated_radio()
-	set name = "Radio Settings"
+	set name = "COMM: Radio Settings"
 	set desc = "Allows you to change settings of your radio."
 	set category = "Silicon Commands"
 
@@ -658,13 +649,13 @@ var/list/ai_verbs_default = list(
 		src.silicon_radio.interact(src)
 
 /mob/living/silicon/ai/proc/sensor_mode()
-	set name = "Set Sensor Augmentation"
+	set name = "TOOL: Sensor Augmentation"
 	set category = "Silicon Commands"
 	set desc = "Augment visual feed with internal sensor overlays"
 	toggle_sensor_mode()
 
 /mob/living/silicon/ai/proc/toggle_hologram_movement()
-	set name = "Toggle Hologram Movement"
+	set name = "HOLOGRAM: Toggle Movement"
 	set category = "Silicon Commands"
 	set desc = "Toggles hologram movement based on moving with your virtual eye."
 
@@ -696,7 +687,7 @@ var/list/ai_verbs_default = list(
 	return istype(loc, /turf)
 
 /mob/living/silicon/ai/proc/multitool_mode()
-	set name = "Toggle Multitool Mode"
+	set name = "TOOL: Multitool Mode"
 	set category = "Silicon Commands"
 
 	multitool_mode = !multitool_mode
