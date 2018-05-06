@@ -241,7 +241,8 @@
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
 	damage = 45 //12x55mm
 	armor_penetration = 50
-	penetration_modifier = 0.75
+	penetrating = 2
+	penetration_modifier = 1.1
 
 /obj/item/projectile/bullet/rifle/a127
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
@@ -264,14 +265,14 @@
 	damage = 80 //14,7x114
 	stun = 3
 	weaken = 3
-	penetrating = 5
+	penetrating = 4
 	armor_penetration = 80
 	hitscan = 1 //so the PTR isn't useless as a sniper weapon
 	penetration_modifier = 1.25
 
 /obj/item/projectile/bullet/rifle/a145/apds
 	damage = 75
-	penetrating = 6
+	penetrating = 5
 	armor_penetration = 95
 	penetration_modifier = 1.5
 

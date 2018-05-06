@@ -103,33 +103,44 @@
 	eye_icon = "eyes"
 	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
 	encased = "carapace"
+	cannot_break = 0
 
 /obj/item/organ/external/chest/unbreakable/xeno
 	encased = "carapace"
+	cannot_break = 0
 
 /obj/item/organ/external/groin/unbreakable/xeno
 	encased = "carapace"
+	cannot_break = 0
 
 /obj/item/organ/external/arm/unbreakable/xeno
 	encased = "carapace"
+	cannot_break = 0
 
 /obj/item/organ/external/arm/right/unbreakable/xeno
 	encased = "carapace"
+	cannot_break = 0
 
 /obj/item/organ/external/leg/unbreakable/xeno
 	encased = "carapace"
+	cannot_break = 0
 
 /obj/item/organ/external/leg/right/unbreakable/xeno
 	encased = "carapace"
+	cannot_break = 0
 
 /obj/item/organ/external/foot/unbreakable/xeno
 	encased = "carapace"
+	cannot_break = 0
 
 /obj/item/organ/external/foot/right/unbreakable/xeno
 	encased = "carapace"
+	cannot_break = 0
 
 /obj/item/organ/external/hand/unbreakable/xeno
 	encased = "carapace"
+	cannot_break = 0
 
 /obj/item/organ/external/hand/right/unbreakable/xeno
 	encased = "carapace"
+	cannot_break = 0

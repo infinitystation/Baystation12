@@ -1075,7 +1075,7 @@
 	secured_wires = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/tiled,
 /area/crew_quarters/heads/office/xo)
 "cd" = (
 /obj/machinery/recharger/wallcharger{
@@ -12800,7 +12800,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/blue/border,
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 8;
 	icon_state = "borderfloorcorner_white";
@@ -13408,7 +13407,7 @@
 	req_access = list(84);
 	secured_wires = 1
 	},
-/turf/simulated/floor/tiled/steel_grid,
+/turf/simulated/floor/tiled,
 /area/crew_quarters/heads/office/cl)
 "tQ" = (
 /turf/simulated/wall/r_wall,

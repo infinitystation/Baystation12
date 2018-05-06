@@ -9,7 +9,6 @@ billluxe - machine
 rockyfail - machine
 nikita588 - machine
 skonoplich - machine
-wheatley2013 - machine
 redknighthero - machine
 kotovsyndrome - machine
 inubashirimomiji - skrell
@@ -38,6 +37,7 @@ kirill1243 - resomi
 themaybat - resomi
 pixelduck - resomi
 netreson - resomi
+taushai - resomi
 hodovoy - resomi
 wnfess - resomi
 yarida - resomi
@@ -64,6 +64,8 @@ hodovoy - unathi
 ashtonfox - tajaran
 mrnicolas - tajaran
 furrydog - tajaran
+korramy - tajaran
+selles - tajaran
 logfol - tajaran
 denmag - tajaran
 solark - tajaran

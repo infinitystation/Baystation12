@@ -82,7 +82,7 @@
 // Return to the Core.
 /mob/living/silicon/ai/proc/core()
 	set category = "Silicon Commands"
-	set name = "AI Core"
+	set name = "MAIN: AI Core"
 
 	view_core()
 
@@ -97,7 +97,7 @@
 
 /mob/living/silicon/ai/proc/toggle_acceleration()
 	set category = "Silicon Commands"
-	set name = "Toggle Camera Acceleration"
+	set name = "CAMERA: Acceleration"
 
 	if(!eyeobj)
 		return

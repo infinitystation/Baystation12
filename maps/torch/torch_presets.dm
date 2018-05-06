@@ -11,6 +11,7 @@ var/const/NETWORK_HANGAR      = "Hangar"
 var/const/NETWORK_MISSILE     = "Missile Pod"
 var/const/NETWORK_EXPLO       = "Exploration"
 var/const/NETWORK_THIRD_DECK  = "Third Deck"
+var/const/NETWORK_PETROV      = "Petrov"
 
 /datum/map/torch/get_network_access(var/network)
 	switch(network)
@@ -26,6 +27,8 @@ var/const/NETWORK_THIRD_DECK  = "Third Deck"
 			return access_mailsorting
 		if(NETWORK_HANGAR)
 			return access_hangar
+		if(NETWORK_PETROV)
+			return access_petrov
 		if(NETWORK_EXPLO)
 			return access_explorer
 	return get_shared_network_access(network) || ..()
@@ -52,6 +55,7 @@ var/const/NETWORK_THIRD_DECK  = "Third Deck"
 		NETWORK_HANGAR,
 		NETWORK_AQUILA,
 		NETWORK_CALYPSO,
+		NETWORK_PETROV,
 		NETWORK_POD,
 		NETWORK_ALARM_ATMOS,
 		NETWORK_ALARM_CAMERA,
@@ -86,6 +90,9 @@ var/const/NETWORK_THIRD_DECK  = "Third Deck"
 
 /obj/machinery/camera/network/pod
 	network = list(NETWORK_POD)
+
+/obj/machinery/camera/network/petrov
+	network = list(NETWORK_PETROV)
 
 /obj/machinery/camera/network/second_deck
 	network = list(NETWORK_SECOND_DECK)
