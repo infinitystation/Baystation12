@@ -2876,9 +2876,6 @@
 /area/crew_quarters/heads/office/co)
 "eO" = (
 /obj/structure/displaycase,
-/obj/item/weapon/gun/projectile/revolver/webley/captain{
-	pixel_y = -3
-	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/co)
 "eP" = (
