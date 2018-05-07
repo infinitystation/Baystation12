@@ -36,5 +36,6 @@
 /obj/item/weapon/gun/projectile/automatic/invider/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, var/list/params = list())
 	if (projetcile_type == 1)
 		..(target, user, clickparams, pointblank, reflex, list("Charged" = 1))
+		world << "FIRING WITH BP MODE"
 	else
 		..(target, user, clickparams, pointblank, reflex, list("Charged" = 0))
