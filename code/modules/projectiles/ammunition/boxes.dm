@@ -341,3 +341,14 @@
 
 /obj/item/ammo_magazine/mc57/empty
 	initial_ammo = 0
+
+/obj/item/ammo_magazine/in46x30mm
+	name = "magazine (4.6x30mm)"
+	icon_state = "10mm"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = "46x30mm"
+	matter = list(DEFAULT_WALL_MATERIAL = 1500)
+	ammo_type = /obj/item/ammo_casing/in46x30mm
+	max_ammo = 20
+	multiple_sprites = 1
