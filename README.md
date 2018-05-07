@@ -31,7 +31,7 @@ https://github.com/infinitystation/Baystation12.git
 2. Нажмите Build -> Compile или нажмите Ctrl + K.
 3. Дождитесь сообщения:  
 `...  
-saving baystation12.dme (DEBUG mode)  
+saving baystation12.dmb (DEBUG mode)  
 baystation12.dmb - 0 errors, 0 warnings`  
 Если будут проблемы, пишите в дискорд.
 
