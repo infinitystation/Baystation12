@@ -46,7 +46,6 @@
 		/obj/item/clothing/suit/armor/pcarrier/medium/command,
 		/obj/item/clothing/head/helmet/solgov/command,
 		/obj/item/device/radio/headset/heads/torchxo,
-		/obj/item/ammo_magazine/c44/rubber,
 		/obj/item/clothing/accessory/holster/thigh,
 		/obj/item/weapon/gun/energy/secure/gun,
 		/obj/item/weapon/melee/telebaton,
