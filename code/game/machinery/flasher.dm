@@ -94,7 +94,7 @@
 			if(E.is_bruised() && prob(E.damage + 50))
 				H.flash_eyes()
 				E.damage += rand(1, 5)
-		if(!O.blinded)
+		if(!O.blinded && !isAI(O))
 			O.flash_eyes()
 			O.eye_blurry += flash_time
 			O.confused += (flash_time + 2)

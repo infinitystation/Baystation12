@@ -172,3 +172,5 @@
 #define FLAGS_EQUALS(flag, flags) ((flag & (flags)) == (flags))
 
 #define isopenturf(target) istype(target, /turf/simulated/open)
+
+#define JOINTEXT(X) jointext(x, null)

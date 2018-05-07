@@ -325,3 +325,8 @@
 	cost = 25
 	containername = "airbag crate"
 
+/decl/hierarchy/supply_pack/miscellaneous/illuminate
+	name = "Illumination grenades"
+	contains = list(/obj/item/weapon/grenade/light = 8)
+	cost = 20
+	containername = "\improper Illumination grenade crate"
