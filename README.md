@@ -23,16 +23,16 @@
 1. Установить любой другой GIT-клиент.  
 Github for Windows, TortoiseGit, git-scm, SourceTree, или любой другой.  
 2. Зайти в клиент и клонировать репозиторий по ссылке:  
-https://github.com/infinitystation/-tg-station.git
+https://github.com/infinitystation/Baystation12.git
 
 ## УСТАНОВКА
 0. Убедитесь, что у вас есть BYOND. Скачать можно здесь: http://www.byond.com/.  
-1. Откройте файл tgstation.dme с помощью Dream Maker.
+1. Откройте файл baystation12.dme с помощью Dream Maker.
 2. Нажмите Build -> Compile или нажмите Ctrl + K.
 3. Дождитесь сообщения:  
-...  
-saving tgstation.dmb (DEBUG mode)  
-tgstation.dmb - 0 errors, 0 warnings  
+`...  
+saving baystation12.dme (DEBUG mode)  
+baystation12.dmb - 0 errors, 0 warnings`  
 Если будут проблемы, пишите в дискорд.
 
 ## СОДЕЙСТВИЕ РАЗРАБОТКЕ БИЛДА.
@@ -50,6 +50,11 @@ https://discord.gg/N4atUkH
 На случай если вы не имеете базу данных на СУБД MySQL или MariaDB, вам нужно будет изменить конфигурацию билда для запуска.  
 1. Закомментируйте ENABLE_STAT_TRACKING в файле config/dbconfig.txt при помощи #. Должно получится вот так `#ENABLE_STAT_TRACKING`.
 2. Закомментируйте SQL_ENABLED в файле config/config.txt при помощи #. Должно получится вот так `#SQL_ENABLED`.  
+
+## ПОЛНОМОЧИЯ АДМИНИСТРАТОРА
+Для получения полномочий администратора на вашем сервере, необходимо дописать файл config/admins.txt таким образом:  
+`byond-логин - GameMaster`  
+При этом, byond-логин должен быть в нижнем регистре и содержать только буквы и цифры (только буквы и цифры).
 
 ## ЛИЦЕНЗИЯ
 Весь исходный код после 8-го Января 2015-го года в 03:00 по Московскому времени лицензируется на условиях лицензионного соглашения [GNU Affero General Public License v3](http://www.gnu.org/licenses/agpl.html).  
