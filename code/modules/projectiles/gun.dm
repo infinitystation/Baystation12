@@ -201,7 +201,7 @@
 		var/obj/projectile = consume_next_projectile(user)
 		
 		if (params["Charged"] == 1)
-			projectile = /obj/item/projectile/bullet/smg/uni46x30mm_charged 
+			projectile = new /obj/item/projectile/bullet/smg/uni46x30mm_charged 
 			world << "PODMENA PROJECTILA"
 
 		if(!projectile)
