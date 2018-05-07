@@ -203,6 +203,7 @@
 		if (params["Charged"] == 1)
 			if (projectile == /obj/item/projectile/bullet/smg/uni46x30mm)
 				projectile = /obj/item/projectile/bullet/smg/uni46x30mm_charged 
+				world << "PODMENA PROJECTILA"
 
 		if(!projectile)
 			handle_click_empty(user)
