@@ -174,7 +174,7 @@
 	else
 		return ..() //Pistolwhippin'
 
-/obj/item/weapon/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
+/obj/item/weapon/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, var/list/params = list())
 	if(!user || !target) return
 	if(target.z != user.z) return
 
@@ -199,6 +199,11 @@
 	var/turf/targloc = get_turf(target) //cache this in case target gets deleted during shooting, e.g. if it was a securitron that got destroyed.
 	for(var/i in 1 to burst)
 		var/obj/projectile = consume_next_projectile(user)
+		
+		if (params["Charged"] == 1)
+			if (projectile == /obj/item/projectile/bullet/pistol/medium/smg/uni46x30mm)
+				projectile =  /obj/item/projectile/bullet/pistol/medium/smg/uni46x30mm_charged
+
 		if(!projectile)
 			handle_click_empty(user)
 			break

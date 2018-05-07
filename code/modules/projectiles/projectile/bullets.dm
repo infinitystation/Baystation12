@@ -345,3 +345,11 @@
 	pixel_x = rand(-10,10)
 	pixel_y = rand(-10,10)
 	..()
+
+/obj/item/projectile/bullet/smg/uni46x30mm
+	damage = 35
+	armor_penetration = 12
+
+/obj/item/projectile/bullet/smg/uni46x30mm_charged
+	damage = 25
+	armor_penetration = 30
