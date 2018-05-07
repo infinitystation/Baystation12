@@ -33,7 +33,7 @@
 			playsound(user, 'sound/weapons/selector.ogg', 50, 1)
 			to_chat(user, "<span class='notice'>You toggle the bullet penetration mode [projetcile_type ? "on":"off"].</span>")
 
-/obj/item/weapon/gun/projectile/automatic/invider/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, var/list/params = list())
+/obj/item/weapon/gun/projectile/automatic/invider/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, var/list/params = list())
 	if (projetcile_type == 1)
 		..(target, user, clickparams, pointblank, reflex, list("Charged" = 1))
 	else
