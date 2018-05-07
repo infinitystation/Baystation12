@@ -1689,6 +1689,24 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virologyaccess)
+"acV" = (
+/obj/structure/table/glass,
+/obj/item/weapon/pen,
+/obj/item/weapon/pen,
+/obj/item/weapon/paper_bin,
+/obj/item/weapon/folder/nt,
+/obj/structure/window/reinforced,
+/obj/effect/floor_decal/corner/purple/border{
+	tag = "icon-bordercolor (EAST)";
+	icon_state = "bordercolor";
+	dir = 4
+	},
+/obj/machinery/camera/network/research{
+	c_tag = "Research - Break Room";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/breakroom)
 "acW" = (
 /obj/structure/bed/chair/wheelchair,
 /obj/effect/decal/cleanable/cobweb,
@@ -1812,6 +1830,26 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d1starboard)
+"adn" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/camera/network/first_deck{
+	c_tag = "Command Hallway - Unused Office";
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/vacant/office)
 "ado" = (
 /obj/effect/floor_decal/corner/purple{
 	dir = 5
@@ -18180,22 +18218,6 @@
 /obj/machinery/self_destruct,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/nuke_storage)
-"aBX" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
-	},
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -24
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/wood,
-/area/vacant/office)
 "aBY" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -19798,20 +19820,6 @@
 "aEl" = (
 /obj/item/modular_computer/console/preset/research,
 /obj/structure/window/reinforced,
-/turf/simulated/floor/tiled/white,
-/area/rnd/breakroom)
-"aEm" = (
-/obj/structure/table/glass,
-/obj/item/weapon/pen,
-/obj/item/weapon/pen,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/folder/nt,
-/obj/structure/window/reinforced,
-/obj/effect/floor_decal/corner/purple/border{
-	tag = "icon-bordercolor (EAST)";
-	icon_state = "bordercolor";
-	dir = 4
-	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/breakroom)
 "aEn" = (
@@ -47229,7 +47237,7 @@ axG
 ayE
 azJ
 aAS
-aBX
+adn
 aDn
 aDr
 aFM
@@ -59350,7 +59358,7 @@ azg
 lWc
 aBE
 aCX
-aEm
+acV
 aFm
 aGF
 aHG

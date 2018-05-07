@@ -1129,6 +1129,34 @@
 	name = "carpet"
 	},
 /area/syndicate_mothership/raider_base)
+"acL" = (
+/turf/simulated/floor/plating,
+/obj/structure/window/reinforced{
+	dir = 1;
+	health = 1e+006
+	},
+/turf/simulated/shuttle/wall{
+	dir = 1;
+	icon_state = "diagonalWall3"
+	},
+/area/supply/dock)
+"acM" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	health = 1e+006
+	},
+/obj/structure/showcase{
+	desc = "A self-contained autopilot that controls supply drones.";
+	icon_state = "comm_server";
+	name = "Supply Drone Virtual Intelligence"
+	},
+/obj/machinery/light/spot,
+/obj/machinery/camera/network/supply{
+	c_tag = "Supply Office - Cargo Drone";
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/supply/dock)
 "acN" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/floor{
@@ -2522,6 +2550,17 @@
 	name = "linoleum"
 	},
 /area/centcom/creed)
+"afS" = (
+/turf/simulated/floor/plating,
+/obj/structure/window/reinforced{
+	dir = 1;
+	health = 1e+006
+	},
+/turf/simulated/shuttle/wall{
+	dir = 8;
+	icon_state = "diagonalWall3"
+	},
+/area/supply/dock)
 "afT" = (
 /turf/unsimulated/floor{
 	icon_state = "lino";
@@ -20223,41 +20262,6 @@
 "aRR" = (
 /turf/simulated/wall/r_wall,
 /area/merchant_station)
-"aRS" = (
-/turf/simulated/floor/plating,
-/obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
-	},
-/turf/simulated/shuttle/wall{
-	dir = 1;
-	icon_state = "diagonalWall3"
-	},
-/area/supply/dock)
-"aRT" = (
-/obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
-	},
-/obj/structure/showcase{
-	desc = "A self-contained autopilot that controls supply drones.";
-	icon_state = "comm_server";
-	name = "Supply Drone Virtual Intelligence"
-	},
-/obj/machinery/light/spot,
-/turf/simulated/floor/plating,
-/area/supply/dock)
-"aRU" = (
-/turf/simulated/floor/plating,
-/obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
-	},
-/turf/simulated/shuttle/wall{
-	dir = 8;
-	icon_state = "diagonalWall3"
-	},
-/area/supply/dock)
 "aRV" = (
 /obj/machinery/computer/pod{
 	id = "syndicate_elite";
@@ -33522,7 +33526,7 @@ aPq
 aPq
 aPq
 aPq
-aRS
+acL
 aOP
 aOG
 aOu
@@ -33724,7 +33728,7 @@ aPq
 aQx
 aPq
 aPq
-aRT
+acM
 aOP
 aOG
 aOu
@@ -33926,7 +33930,7 @@ aPq
 aPq
 aPq
 aPq
-aRU
+afS
 aOP
 aOG
 aOu

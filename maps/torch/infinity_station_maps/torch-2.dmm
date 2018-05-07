@@ -1403,6 +1403,15 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
+"di" = (
+/obj/machinery/camera/network/third_deck{
+	c_tag = "Third Deck Hallway - Holodeck Alt";
+	dir = 8
+	},
+/turf/simulated/floor/reinforced{
+	name = "Holodeck Projector Floor"
+	},
+/area/holodeck/alphadeck)
 "dj" = (
 /obj/effect/floor_decal/corner/purple{
 	dir = 5
@@ -45508,7 +45517,7 @@ is
 jB
 jB
 jB
-jB
+di
 jB
 jB
 jB
