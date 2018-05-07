@@ -270,7 +270,7 @@
 	projectile_type  = /obj/item/projectile/ion
 	matter = list(DEFAULT_WALL_MATERIAL = 260, "uranium" = 200)
 
-/obj/item/ammo_casing/in46x30mm
-	desc = "A 10mm bullet casing."
-	caliber = "10mm"
+/obj/item/ammo_casing/uni46x30mm
+	desc = "A 46x30 bullet casing."
+	caliber = "46x30"
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/smg
