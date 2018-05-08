@@ -174,7 +174,7 @@
 	else
 		return ..() //Pistolwhippin'
 
-/obj/item/weapon/gun/proc/modify_projectile(obj/projectile/p, var/list/params = list()) 
+/obj/item/weapon/gun/proc/modify_projectile(obj/item/projectile/p, var/list/params = list())
 	return p
 
 /obj/item/weapon/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, var/list/params = list())
@@ -202,6 +202,8 @@
 	var/turf/targloc = get_turf(target) //cache this in case target gets deleted during shooting, e.g. if it was a securitron that got destroyed.
 	for(var/i in 1 to burst)
 		var/obj/projectile = consume_next_projectile(user)
+
+		projectile = modify_projectile(projectile, params)
 
 		if(!projectile)
 			handle_click_empty(user)
