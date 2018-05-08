@@ -1,7 +1,8 @@
 /obj/item/weapon/gun/projectile/automatic/invider
 	name = "Invider submachine gun"
 	desc = "The Invider is a Hi-tech and rapid firing SMG. Uses 4.6x30mm universal rounds."
-	icon_state = "c20r"
+	icon = 'icons/event/guns.dmi'
+	icon_state = "pdw"
 	item_state = "c20r"
 	w_class = ITEM_SIZE_LARGE
 	var/projetcile_type = 0
@@ -19,7 +20,7 @@
 	//SMG
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=0, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=2,    one_hand_penalty=1, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=2,    one_hand_penalty=0, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
 		)
 
 /obj/item/weapon/gun/projectile/automatic/invider/CtrlAltClick(mob/user)
@@ -39,3 +40,11 @@
 		world << "FIRING WITH BP MODE"
 	else
 		..(target, user, clickparams, pointblank, reflex, list("Charged" = 0))
+
+/obj/item/weapon/gun/projectile/automatic/invider/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "pdw"
+	else
+		icon_state = "pdw-empty"
+	return

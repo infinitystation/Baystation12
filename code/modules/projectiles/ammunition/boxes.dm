@@ -344,7 +344,8 @@
 
 /obj/item/ammo_magazine/uni46x30mm
 	name = "magazine (4.6x30mm universal)"
-	icon_state = "10mm"
+	icon = 'icons/event/ammo.dmi'
+	icon_state = "smg"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	caliber = "46x30mm"
@@ -352,3 +353,6 @@
 	ammo_type = /obj/item/ammo_casing/uni46x30mm
 	max_ammo = 30
 	multiple_sprites = 1
+
+/obj/item/ammo_magazine/uni46x30mm/empty
+	initial_ammo = 0
