@@ -271,7 +271,7 @@
 
 	var/sql_ckey = sql_sanitize_text(ckey(key))
 
-	var/DBQuery/query = dbcon.NewQuery("SELECT datediff(day, Now(), firstseen) as age FROM erro_player WHERE ckey = '[sql_ckey]'")
+	var/DBQuery/query = dbcon.NewQuery("SELECT datediff(Now(), firstseen) as age FROM erro_player WHERE ckey = '[sql_ckey]'")
 	query.Execute()
 
 	if(query.NextRow())
