@@ -459,7 +459,6 @@ datum/objective/steal
 		"a pathfinder's deluxe machete"	 = /obj/item/weapon/material/hatchet/machete/deluxe,
 		"a pair of magboots" = /obj/item/clothing/shoes/magboots,
 		"the [station_name()] blueprints" = /obj/item/blueprints,
-		"the multimeter" = /obj/item/device/multitool/multimeter,
 		"28 moles of phoron (full tank)" = /obj/item/weapon/tank,
 		"a sample of slime extract" = /obj/item/slime_extract,
 		"a piece of corgi meat" = /obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
