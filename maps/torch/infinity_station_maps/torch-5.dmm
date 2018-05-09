@@ -2876,6 +2876,9 @@
 /area/crew_quarters/heads/office/co)
 "eO" = (
 /obj/structure/displaycase,
+/obj/item/weapon/gun/projectile/revolver/webley/captain{
+	pixel_y = -3
+	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/co)
 "eP" = (
@@ -3239,16 +3242,6 @@
 	id = "co_windows";
 	pixel_x = 24;
 	pixel_y = 6
-	},
-/obj/effect/floor_decal/borderfloorblack{
-	dir = 6;
-	icon_state = "borderfloor_white";
-	tag = ""
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	tag = "icon-bordercolor (SOUTHEAST)";
-	icon_state = "bordercolor";
-	dir = 6
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/co)

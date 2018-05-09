@@ -42,7 +42,7 @@
 	num_exoplanets = 1
 	planet_size = list(129,129)
 
-	away_site_budget = 2
+	away_site_budget = 1
 
 	id_hud_icons = 'maps/torch/icons/assignment_hud.dmi'
 

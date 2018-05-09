@@ -1965,6 +1965,7 @@
 /area/maintenance/thirddeck/aftstarboard)
 "ef" = (
 /obj/structure/ladder,
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aftstarboard)
 "eg" = (
@@ -14937,11 +14938,21 @@
 /area/crew_quarters/sleep/cryo)
 "xT" = (
 /obj/machinery/cryopod,
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (NORTHWEST)";
+	icon_state = "techfloor_edges";
+	dir = 9
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/sleep/cryo)
 "xU" = (
 /obj/machinery/cryopod{
 	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (NORTHEAST)";
+	icon_state = "techfloor_edges";
+	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/sleep/cryo)
@@ -19165,6 +19176,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aftport)
+"EO" = (
+/obj/structure/ladder,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/starboard)
 "EP" = (
 /obj/structure/closet/emcloset,
 /obj/structure/cable/green{
@@ -20608,6 +20624,11 @@
 /obj/structure/sign/ecplaque{
 	pixel_y = -30
 	},
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (SOUTHWEST)";
+	icon_state = "techfloor_edges";
+	dir = 10
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/sleep/cryo)
 "HK" = (
@@ -20616,6 +20637,11 @@
 	},
 /obj/structure/sign/double/solgovflag/left{
 	pixel_y = -32
+	},
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (SOUTHEAST)";
+	icon_state = "techfloor_edges";
+	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/sleep/cryo)
@@ -23294,6 +23320,15 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
+"Pt" = (
+/obj/machinery/cryopod,
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (WEST)";
+	icon_state = "techfloor_edges";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/crew_quarters/sleep/cryo)
 "Py" = (
 /obj/structure/sign/double/barsign,
 /turf/simulated/wall,
@@ -23385,6 +23420,17 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
+"Qi" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (SOUTHEAST)";
+	icon_state = "techfloor_edges";
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/crew_quarters/sleep/cryo)
 "Ql" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -23641,6 +23687,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hydroponics)
+"RW" = (
+/obj/machinery/cryopod,
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (SOUTHWEST)";
+	icon_state = "techfloor_edges";
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/crew_quarters/sleep/cryo)
 "Sa" = (
 /obj/machinery/door/airlock/freezer{
 	name = "Galley Cold Room";
@@ -24178,6 +24233,17 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
+"Wd" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	tag = "icon-techfloor_edges (EAST)";
+	icon_state = "techfloor_edges";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/crew_quarters/sleep/cryo)
 "Wn" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
@@ -40875,13 +40941,13 @@ VU
 vE
 wP
 xT
-xT
+RW
 Ab
 Ba
 xT
-xT
-xT
-xT
+Pt
+Pt
+RW
 Fl
 Gb
 xT
@@ -41077,13 +41143,13 @@ um
 vF
 wQ
 xU
-xU
+Qi
 Ab
 Ba
 xU
-xU
-xU
-xU
+Wd
+Wd
+Qi
 Fl
 Gb
 xU
@@ -41885,13 +41951,13 @@ ui
 VC
 wU
 xT
-xT
+RW
 Af
 Be
 xT
-xT
-xT
-xT
+Pt
+Pt
+RW
 Fp
 Bg
 GW
@@ -42087,13 +42153,13 @@ ui
 vJ
 wP
 xU
-xU
+Qi
 Af
 Be
 xU
-xU
-xU
-xU
+Wd
+Wd
+Qi
 Fp
 Ge
 GX
@@ -43079,8 +43145,8 @@ cP
 dL
 eT
 bW
-dV
 jy
+EO
 hh
 lj
 ls
