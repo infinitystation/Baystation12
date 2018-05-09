@@ -12243,6 +12243,9 @@
 	id = "sup_office";
 	name = "Supply Desk Shutters"
 	},
+/obj/item/device/radio/intercom{
+	pixel_y = 22
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "wk" = (
@@ -12250,9 +12253,6 @@
 	dir = 8;
 	icon_state = "doorbell";
 	pixel_x = -20
-	},
-/obj/machinery/newscaster{
-	pixel_x = -32
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 9;
@@ -16248,6 +16248,10 @@
 	frequency = 1431;
 	id_tag = "guppy_shuttle_pump"
 	},
+/obj/machinery/camera/network/pod{
+	c_tag = "General Utility Pod - Cargo";
+	dir = 2
+	},
 /turf/simulated/floor/plating,
 /area/guppy_hangar/start)
 "DG" = (
@@ -16917,6 +16921,10 @@
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 22
+	},
+/obj/machinery/camera/network/supply{
+	c_tag = "Supply Office - Main Storage";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/storage)
@@ -20090,10 +20098,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/autolathe,
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 22
-	},
 /obj/effect/floor_decal/corner/brown{
 	dir = 6
 	},
@@ -20688,6 +20692,10 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -25
+	},
+/obj/machinery/camera/network/supply{
+	c_tag = "Supply Office - Main Storage Alt";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/storage)
@@ -21538,6 +21546,35 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition/eva)
+"ZY" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/newscaster,
+/turf/simulated/wall,
+/area/quartermaster/office)
+"ZZ" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/light/spot,
+/obj/machinery/camera/network/hangar{
+	icon_state = "camera";
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/hangar)
+"OVERFLOW" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/light/spot,
+/obj/machinery/camera/network/hangar{
+	icon_state = "camera";
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/hangar)
 
 (1,1,1) = {"
 aa
@@ -40026,7 +40063,7 @@ wh
 CK
 yV
 zZ
-Bb
+ZY
 Bb
 Qg
 NK
@@ -43271,7 +43308,7 @@ aO
 aO
 tV
 aO
-Ij
+ZZ
 ag
 ag
 ag
@@ -43675,7 +43712,7 @@ bl
 su
 aO
 aO
-Ik
+Ij
 ag
 ag
 ag
@@ -44079,7 +44116,7 @@ er
 er
 er
 fn
-Ij
+OVERFLOW
 ag
 ag
 ag

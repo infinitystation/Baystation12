@@ -13692,6 +13692,10 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/camera/network/aquila{
+	c_tag = "Aquila - Engineering Room";
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/aquila_hangar/start)
 "up" = (
@@ -14127,6 +14131,10 @@
 "uX" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/secure_closet/guncabinet/sidearm/small,
+/obj/machinery/camera/network/aquila{
+	c_tag = "Aquila - Secure Storage";
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/aquila_hangar/start)
 "uY" = (
