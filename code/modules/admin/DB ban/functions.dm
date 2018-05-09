@@ -434,7 +434,7 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 				if(playerckey)
 					playersearch = "AND ckey = '[playerckey]' "
 				if(playerip)
-					ipsearch  = "AND ip = '[playerip]' "
+					ipsearch  = "AND ip = INET_ATON('[playerip]') "
 				if(playercid)
 					cidsearch  = "AND computerid = '[playercid]' "
 			else
@@ -443,7 +443,7 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 				if(playerckey && lentext(playerckey) >= 3)
 					playersearch = "AND ckey LIKE '[playerckey]%' "
 				if(playerip && lentext(playerip) >= 3)
-					ipsearch  = "AND ip LIKE '[playerip]%' "
+					ipsearch  = "AND INET_NTOA(ip) LIKE '[playerip]%' "
 				if(playercid && lentext(playercid) >= 7)
 					cidsearch  = "AND computerid LIKE '[playercid]%' "
 
@@ -464,7 +464,7 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 					else
 						bantypesearch += "'PERMABAN' "
 
-			var/DBQuery/select_query = dbcon.NewQuery("SELECT id, bantime, bantype, reason, job, duration, expiration_time, ckey, a_ckey, unbanned, unbanned_ckey, unbanned_datetime, edits, ip, computerid FROM erro_ban WHERE 1 [playersearch] [adminsearch] [ipsearch] [cidsearch] [bantypesearch] ORDER BY bantime DESC LIMIT 100")
+			var/DBQuery/select_query = dbcon.NewQuery("SELECT id, bantime, bantype, reason, job, duration, expiration_time, ckey, a_ckey, unbanned, unbanned_ckey, unbanned_datetime, edits, INET_NTOA(ip), computerid FROM erro_ban WHERE 1 [playersearch] [adminsearch] [ipsearch] [cidsearch] [bantypesearch] ORDER BY bantime DESC LIMIT 100")
 			select_query.Execute()
 
 			var/now = time2text(world.realtime, "YYYY-MM-DD hh:mm:ss") // MUST BE the same format as SQL gives us the dates in, and MUST be least to most specific (i.e. year, month, day not day, month, year)

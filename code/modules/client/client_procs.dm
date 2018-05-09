@@ -144,7 +144,7 @@
 
 	//Admin Authorisation
 	holder = admin_datums[ckey]
-	if(holder)
+	if(holder && config.sql_enabled)
 		GLOB.admins += src
 		holder.owner = src
 		handle_staff_login()
@@ -271,7 +271,7 @@
 
 	var/sql_ckey = sql_sanitize_text(ckey(key))
 
-	var/DBQuery/query = dbcon.NewQuery("SELECT datediff(Now(),firstseen) as age FROM erro_player WHERE ckey = '[sql_ckey]'")
+	var/DBQuery/query = dbcon.NewQuery("SELECT datediff(Now(), firstseen) as age FROM erro_player WHERE ckey = '[sql_ckey]'")
 	query.Execute()
 
 	if(query.NextRow())
@@ -300,7 +300,7 @@
 		player_age = text2num(query.item[2])
 		break
 
-	var/DBQuery/query_ip = dbcon.NewQuery("SELECT ckey FROM erro_player WHERE ip = '[address]'")
+	var/DBQuery/query_ip = dbcon.NewQuery("SELECT ckey FROM erro_player WHERE ip = INET_ATON('[address]')")
 	query_ip.Execute()
 	related_accounts_ip = ""
 	while(query_ip.NextRow())
@@ -333,7 +333,7 @@
 
 	if(sql_ckey_verify)
 		//Player already identified previously, we need to just update the 'lastseen', 'ip' and 'computer_id' variables
-		var/DBQuery/query_update = dbcon.NewQuery("UPDATE erro_player SET lastseen = Now(), ip = '[sql_ip]', computerid = '[sql_computerid]', lastadminrank = '[sql_admin_rank]' WHERE ckey = '[sql_ckey_verify]'")
+		var/DBQuery/query_update = dbcon.NewQuery("UPDATE erro_player SET lastseen = Now(), ip = INET_ATON('[sql_ip]'), computerid = '[sql_computerid]', lastadminrank = '[sql_admin_rank]' WHERE ckey = '[sql_ckey_verify]'")
 		query_update.Execute()
 	else
 		//New player!! Need to insert all the stuff
