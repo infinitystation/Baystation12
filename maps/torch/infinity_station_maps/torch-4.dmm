@@ -14749,6 +14749,10 @@
 /obj/machinery/keycard_auth{
 	pixel_x = -28
 	},
+/obj/machinery/camera/network/command{
+	c_tag = "Self-Destruct - Room";
+	dir = 4
+	},
 /turf/simulated/floor/blackgrid,
 /area/security/nuke_storage)
 "awD" = (
@@ -17617,6 +17621,10 @@
 /obj/machinery/keycard_auth{
 	pixel_x = -28
 	},
+/obj/machinery/camera/network/command{
+	c_tag = "Self-Destruct - Room";
+	dir = 4
+	},
 /turf/simulated/floor/blackgrid,
 /area/security/nuke_storage)
 "aAR" = (
@@ -17628,6 +17636,10 @@
 	dir = 8
 	},
 /obj/structure/flora/pottedplant/large,
+/obj/machinery/camera/network/first_deck{
+	c_tag = "Unset Office - Room";
+	dir = 4
+	},
 /turf/simulated/floor/carpet/blue2,
 /area/vacant/office)
 "aAT" = (
@@ -19828,6 +19840,10 @@
 	tag = "icon-bordercolor (EAST)";
 	icon_state = "bordercolor";
 	dir = 4
+	},
+/obj/machinery/camera/network/research{
+	c_tag = "Research - Restroom";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/breakroom)

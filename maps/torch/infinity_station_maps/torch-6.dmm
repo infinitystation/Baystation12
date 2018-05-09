@@ -20227,6 +20227,10 @@
 	name = "Supply Drone Virtual Intelligence"
 	},
 /obj/machinery/light/spot,
+/obj/machinery/camera/network/supply{
+	c_tag = "Supply Office - Cargo Drone";
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/supply/dock)
 "aRU" = (
