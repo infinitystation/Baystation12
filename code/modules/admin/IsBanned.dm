@@ -46,7 +46,7 @@ world/IsBanned(key,address,computer_id)
 		var/cidquery = ""
 		if(address)
 			failedip = 0
-			ipquery = " OR ip = '[address]' "
+			ipquery = " OR ip = INET_ATON('[address]') "
 
 		if(computer_id)
 			failedcid = 0
@@ -143,4 +143,3 @@ world/IsBanned(key,address,computer_id)
 	return .
 #endif
 #undef OVERRIDE_BAN_SYSTEM
-
