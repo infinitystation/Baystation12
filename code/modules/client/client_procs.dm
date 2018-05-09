@@ -144,7 +144,7 @@
 
 	//Admin Authorisation
 	holder = admin_datums[ckey]
-	if(holder)
+	if(holder && config.sql_enabled)
 		GLOB.admins += src
 		holder.owner = src
 		handle_staff_login()
@@ -333,7 +333,7 @@
 
 	if(sql_ckey_verify)
 		//Player already identified previously, we need to just update the 'lastseen', 'ip' and 'computer_id' variables
-		var/DBQuery/query_update = dbcon.NewQuery("UPDATE erro_player SET lastseen = Now(), ip = 'INET_ATON('[sql_ip]'), computerid = '[sql_computerid]', lastadminrank = '[sql_admin_rank]' WHERE ckey = '[sql_ckey_verify]'")
+		var/DBQuery/query_update = dbcon.NewQuery("UPDATE erro_player SET lastseen = Now(), ip = INET_ATON('[sql_ip]'), computerid = '[sql_computerid]', lastadminrank = '[sql_admin_rank]' WHERE ckey = '[sql_ckey_verify]'")
 		query_update.Execute()
 	else
 		//New player!! Need to insert all the stuff
