@@ -31,10 +31,18 @@
 	item_state = "wc-medical"
 	item_state_slots = list(slot_wear_id_str = "wc-medical")
 
+/obj/item/modular_computer/pda/wrist/medical/install_default_hardware()
+	..()
+	scanner = new /obj/item/weapon/computer_hardware/scanner/medical(src)
+
 /obj/item/modular_computer/pda/wrist/engineering
 	icon_state = "wc-engineering"
 	item_state = "wc-engineering"
 	item_state_slots = list(slot_wear_id_str = "wc-engineering")
+
+/obj/item/modular_computer/pda/wrist/engineering/install_default_hardware()
+	..()
+	scanner = new /obj/item/weapon/computer_hardware/scanner/atmos(src)
 
 /obj/item/modular_computer/pda/wrist/security
 	icon_state = "wc-security"
@@ -46,7 +54,15 @@
 	item_state = "wc-science"
 	item_state_slots = list(slot_wear_id_str = "wc-science")
 
+/obj/item/modular_computer/pda/wrist/science/install_default_hardware()
+	..()
+	scanner = new /obj/item/weapon/computer_hardware/scanner/reagent(src)
+
 /obj/item/modular_computer/pda/wrist/heads
 	icon_state = "wc-command"
 	item_state = "wc-command"
 	item_state_slots = list(slot_wear_id_str = "wc-command")
+
+/obj/item/modular_computer/pda/wrist/heads/install_default_hardware()
+	..()
+	scanner = new /obj/item/weapon/computer_hardware/scanner/paper(src)
