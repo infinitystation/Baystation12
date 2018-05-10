@@ -269,3 +269,9 @@
 	spent_icon = "empshell-spent"
 	projectile_type  = /obj/item/projectile/ion
 	matter = list(DEFAULT_WALL_MATERIAL = 260, "uranium" = 200)
+
+/obj/item/ammo_casing/uni46x30mm
+	desc = "A 46x30 bullet casing."
+	caliber = "46x30mm"
+	projectile_type = /obj/item/projectile/bullet/smg/uni46x30mm
+

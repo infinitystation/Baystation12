@@ -1,4 +1,4 @@
-archibald125 role=admin
-terror4000rus role=root
-liners role=admin
-bear1ake role=root
+archibald125
+terror4000rus
+liners
+bear1ake
