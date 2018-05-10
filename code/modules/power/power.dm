@@ -72,7 +72,7 @@
 // May also optionally specify an area, otherwise defaults to src.loc.loc
 /obj/machinery/proc/powered(var/chan = -1, var/area/check_area = null)
 
-	if(!src.loc)
+	if(!loc)
 		return 0
 
 	//Don't do this. It allows machines that set use_power to 0 when off (many machines) to
@@ -81,7 +81,7 @@
 	//	return 1
 
 	if(!check_area)
-		check_area = src.loc.loc		// make sure it's in an area
+		check_area = loc.loc		// make sure it's in an area
 	if(!check_area || !isarea(check_area))
 		return 0					// if not, then not powered
 	if(chan == -1)
