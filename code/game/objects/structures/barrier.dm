@@ -198,7 +198,7 @@
 
 	if(prob(chance))
 		visible_message("<span class='warning'>[P] hits \the [src]!</span>")
-		bullet_act()
+		bullet_act(P)
 		return 0
 
 	return 1
