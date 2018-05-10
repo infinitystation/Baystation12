@@ -144,7 +144,7 @@
 
 	//Admin Authorisation
 	holder = admin_datums[ckey]
-	if(holder && !dbcon.IsConnected())
+	if(holder && dbcon.IsConnected())
 		GLOB.admins += src
 		holder.owner = src
 		handle_staff_login()
