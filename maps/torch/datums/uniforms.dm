@@ -81,7 +81,12 @@
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet
 	dress_gloves = /obj/item/clothing/gloves/white
 
-	dress_extra = list(/obj/item/clothing/head/beret/solgov/fleet/dress, /obj/item/clothing/under/solgov/mildress/fleet2, /obj/item/clothing/under/solgov/mildress/fleet2/skirt)
+	dress_extra = list(
+		/obj/item/clothing/head/beret/solgov/fleet/dress,
+	  /obj/item/clothing/under/solgov/mildress/fleet2,
+		/obj/item/clothing/under/solgov/mildress/fleet2/skirt,
+		/obj/item/clothing/shoes/dress/white
+		)
 
 decl/hierarchy/mil_uniform/civilian
 	name = "Master civilian outfit"		//Basically just here for the rent-a-tux, ahem, I mean... dress uniform.
