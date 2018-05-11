@@ -213,7 +213,7 @@
 "aE" = (
 /obj/structure/sign/warning/docking_area,
 /turf/simulated/wall/r_wall,
-/area/maintenance/fourthdeck/starboard)
+/area/vacant/monitoring)
 "aF" = (
 /obj/structure/cable/cyan{
 	d1 = 2;
@@ -38585,7 +38585,7 @@ aa
 aa
 aa
 aE
-ak
+EC
 EC
 EC
 EC
@@ -38786,8 +38786,8 @@ aa
 aa
 aa
 aa
-ak
-ak
+EC
+EC
 Ly
 Xy
 FG
@@ -38988,8 +38988,8 @@ aa
 aa
 aa
 aa
-ak
-ak
+EC
+EC
 Hh
 GE
 Lr
@@ -39190,8 +39190,8 @@ aa
 aa
 aa
 aa
-ak
-ak
+EC
+EC
 Mx
 Gc
 Gc
@@ -39392,8 +39392,8 @@ aa
 aa
 aa
 aa
-ak
-ak
+EC
+EC
 Fa
 PK
 Gc
@@ -39594,8 +39594,8 @@ aa
 aa
 aa
 aa
-ak
-ak
+EC
+EC
 Hg
 UR
 Hh
@@ -39796,8 +39796,8 @@ aa
 aa
 aa
 aa
-ak
-ak
+EC
+EC
 EC
 EC
 EC
@@ -39998,8 +39998,8 @@ aa
 aa
 aa
 aa
-ak
-ak
+GI
+GI
 GI
 NX
 bE
@@ -40200,8 +40200,8 @@ aa
 aa
 aa
 aa
-ak
-ak
+GI
+GI
 GI
 Ny
 fH
