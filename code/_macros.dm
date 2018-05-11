@@ -173,4 +173,4 @@
 
 #define isopenturf(target) istype(target, /turf/simulated/open)
 
-#define JOINTEXT(X) jointext(x, null)
+#define JOINTEXT(X) jointext(X, null)
