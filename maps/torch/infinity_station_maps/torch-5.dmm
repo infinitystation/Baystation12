@@ -12893,11 +12893,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/disposalpipe/sortjunction/flipped{
-	dir = 8;
-	name = "Research Director";
-	sortType = "Research Director"
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
@@ -12914,6 +12909,11 @@
 	tag = "icon-steel_decals4 (NORTHEAST)";
 	icon_state = "steel_decals4";
 	dir = 5
+	},
+/obj/structure/disposalpipe/sortjunction{
+	dir = 4;
+	name = "Research Director";
+	sortType = "Research Director"
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/fore)

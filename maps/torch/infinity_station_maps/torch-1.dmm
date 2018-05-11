@@ -7578,7 +7578,7 @@
 /area/teleporter/fourthdeck)
 "pe" = (
 /obj/machinery/computer/teleporter{
-	dir = 1
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,

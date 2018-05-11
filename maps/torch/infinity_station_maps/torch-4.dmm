@@ -32651,13 +32651,8 @@
 /turf/simulated/wall/r_wall,
 /area/rnd/xenobiology)
 "aYs" = (
-/obj/structure/disposaloutlet{
-	dir = 4
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 1
-	},
 /obj/structure/lattice,
+/obj/structure/disposalpipe/segment,
 /turf/space,
 /area/space)
 "aYt" = (
@@ -57389,7 +57384,7 @@ aXz
 aXz
 aXk
 aYs
-aaa
+aYs
 aaa
 aaa
 aaa
@@ -60225,7 +60220,7 @@ aaa
 aaa
 aaa
 aaa
-aYw
+aaa
 aaa
 aaa
 aaa
@@ -61033,7 +61028,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aYw
 aaa
 aaa
 aaa
