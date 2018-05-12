@@ -4,7 +4,7 @@
 	You can deploy it with a screwdriver for maximum protection, or keep it in mobile position. \
 	Also, demontage can be done with a crowbar.In case of structural damage, can be repaired with welding tool."
 	icon = 'icons/obj/infinity_barrier.dmi'
-	icon_state = "barrier"
+	icon_state = "barrier_rised"
 	density = 1
 	throwpass = 1
 	anchored = 1
@@ -106,7 +106,7 @@
 //	if(user.species.reagent_tag == IS_XENOS) //TODO = MAKE_DAMAGE()
 //		..()
 	if(deployed)
-		to_chat(user, "<span class='notice'>[src] is already deployed. You can't move it down.</span>")
+		to_chat(user, "<span class='notice'>[src] is already deployed. You can't move it.</span>")
 	else
 		playsound(src, 'sound/effects/extout.ogg', 100, 1)
 		if(do_after(user, 5, src))
@@ -240,7 +240,7 @@
 	var/i = 0
 	for(var/obj/structure/barrier in user.loc.contents)
 		++i
-		if((src.dir == user.dir) && i > 1)
+		if((src.dir == user.dir) || i > 1)
 			to_chat(user, "<span class='warning'>There is no more space.</span>")
 			return 1
 	return 0
