@@ -210,3 +210,12 @@
 	containername = "\improper .22LR ammunition crate"
 	access = access_heads
 	security_level = SUPPLY_SECURITY_ELEVATED
+
+/decl/hierarchy/supply_pack/security/barriers
+	name = "Portable Barriers (2)"
+	contains = list(/obj/item/weapon/barrier = 2)
+	cost = 30
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "\improper portable barriers crate"
+	access = access_heads
+	security_level = SUPPLY_SECURITY_ELEVATED
