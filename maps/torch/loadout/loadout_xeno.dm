@@ -134,7 +134,6 @@
 	display_name = "uniform, Expeditionary Utility (Resomi)"
 	path = /obj/item/clothing/under/solgov/utility/expeditionary/resomi
 	allowed_roles = SOLGOV_ROLES
-	whitelisted = list(SPECIES_RESOMI)
 	cost = 0 //Because it's work uniform
 
 /datum/gear/uniform/resomi/expeditionary/pt
@@ -143,7 +142,7 @@
 
 /datum/gear/uniform/resomi/expeditionary/command
 	display_name = "uniform, Expeditionary Command Utility (Resomi)"
-/obj/item/clothing/under/solgov/utility/expeditionary/officer/resomi
+	path = /obj/item/clothing/under/solgov/utility/expeditionary/officer/resomi
 
 /datum/gear/uniform/resomi/expeditionary/mildress
 	display_name = "uniform, Expeditionary Mildress (Resomi)"
@@ -279,22 +278,13 @@
 
 // Vox clothing
 /datum/gear/mask/gas/vox
-	display_name = "vox breathing mask"
-	path = /obj/item/clothing/mask/gas/vox
-	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_VOX)
-	allowed_roles = list(/datum/job/merchant, /datum/job/stowaway) //Since that is the only role vox can be beside stowaway.
+	allowed_roles = list(/datum/job/merchant, /datum/job/stowaway)
 
-/datum/gear/uniform/vox
-	display_name = "vox clothing"
-	path = /obj/item/clothing/under/vox/vox_casual
-	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_VOX)
-	allowed_roles = list(/datum/job/merchant, /datum/job/stowaway) //Since that is the only role vox can be beside stowaway.
+/datum/gear/gloves/vox
+	allowed_roles = list(/datum/job/merchant, /datum/job/stowaway)
 
-/datum/gear/uniform/vox_robes
-	display_name = "vox robes"
-	path = /obj/item/clothing/under/vox/vox_robes
-	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_VOX)
-	allowed_roles = list(/datum/job/merchant, /datum/job/stowaway) //Since that is the only role vox can be beside stowaway.
+/datum/gear/uniform/vox_cloth
+	allowed_roles = list(/datum/job/merchant, /datum/job/stowaway)
+
+/datum/gear/uniform/vox_robe
+	allowed_roles = list(/datum/job/merchant, /datum/job/stowaway)
