@@ -15332,9 +15332,6 @@
 /area/hallway/primary/firstdeck/fore)
 "axI" = (
 /obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/corner/blue{
-	dir = 1
-	},
 /obj/machinery/door/airlock/glass,
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/firstdeck/center)
@@ -15638,13 +15635,7 @@
 /area/hallway/primary/firstdeck/center)
 "axY" = (
 /obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 4
-	},
 /obj/machinery/door/airlock/glass,
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 1
-	},
 /obj/structure/sign/bluecross_2{
 	pixel_y = 32
 	},
@@ -17019,9 +17010,6 @@
 /area/hallway/primary/firstdeck/fore)
 "azO" = (
 /obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/corner/blue{
-	dir = 8
-	},
 /obj/machinery/door/airlock/glass,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -17268,12 +17256,6 @@
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2,
 /turf/simulated/floor/tiled,
-/area/hallway/primary/firstdeck/center)
-"aAh" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/corner/purple,
-/obj/machinery/door/airlock/glass,
-/turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/firstdeck/center)
 "aAj" = (
 /obj/structure/disposalpipe/segment,
@@ -18636,6 +18618,26 @@
 /obj/structure/sign/deck/first{
 	pixel_x = -32
 	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 9;
+	icon_state = "borderfloor_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/green/border{
+	tag = "icon-bordercolor (NORTHWEST)";
+	icon_state = "bordercolor";
+	dir = 9
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 1;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/green/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTH)";
+	icon_state = "bordercolorcorner2";
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "aCz" = (
@@ -18649,17 +18651,23 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	tag = "icon-steel_decals6 (NORTH)";
+	icon_state = "steel_decals6";
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "aCA" = (
 /obj/effect/floor_decal/industrial/warning/corner,
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	tag = "icon-steel_decals6 (EAST)";
+	icon_state = "steel_decals6";
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "aCB" = (
-/obj/effect/floor_decal/corner/yellow{
-	dir = 6
-	},
-/obj/effect/floor_decal/industrial/warning,
 /obj/structure/sign/directions/evac{
 	dir = 2;
 	pixel_x = 32;
@@ -18680,6 +18688,27 @@
 	pixel_x = 32;
 	pixel_z = -6
 	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 5;
+	icon_state = "borderfloor_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/green/border{
+	tag = "icon-bordercolor (NORTHEAST)";
+	icon_state = "bordercolor";
+	dir = 5
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2_white (EAST)";
+	icon_state = "borderfloorcorner2_white";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/green/bordercorner2{
+	tag = "icon-bordercolorcorner2 (EAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "aCC" = (
@@ -19492,6 +19521,16 @@
 	dir = 4
 	},
 /obj/item/weapon/book/manual/sol_sop,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8;
+	icon_state = "borderfloor_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/green/border{
+	tag = "icon-bordercolor (WEST)";
+	icon_state = "bordercolor";
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "aDO" = (
@@ -20230,7 +20269,16 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8;
+	icon_state = "borderfloor_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/green/border{
+	tag = "icon-bordercolor (WEST)";
+	icon_state = "bordercolor";
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "aEQ" = (
@@ -20624,6 +20672,8 @@
 /obj/structure/largecrate,
 /obj/random/maintenance/solgov,
 /obj/effect/decal/cleanable/cobweb2,
+/obj/random/maintenance/solgov,
+/obj/random/maintenance/solgov,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "aFu" = (
@@ -21175,9 +21225,28 @@
 	pixel_x = -28;
 	pixel_y = 0
 	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/disposalpipe/trunk{
 	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 10;
+	icon_state = "borderfloor_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/green/border{
+	tag = "icon-bordercolor (SOUTHWEST)";
+	icon_state = "bordercolor";
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 9;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/green/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTHWEST)";
+	icon_state = "bordercolorcorner2";
+	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
@@ -21192,6 +21261,10 @@
 	dir = 8;
 	icon_state = "pipe-c"
 	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/green/border,
+/obj/effect/floor_decal/borderfloor/corner2,
+/obj/effect/floor_decal/corner/green/bordercorner2,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "aGi" = (
@@ -21205,6 +21278,18 @@
 	},
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/green/border,
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 9;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/green/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTHWEST)";
+	icon_state = "bordercolorcorner2";
+	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
@@ -21691,7 +21776,23 @@
 /area/command/armoury/tactical)
 "aGP" = (
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/structure/closet/bombclosetsecurity,
+/obj/structure/closet/crate/secure/weapon{
+	name = "portable barriers crate";
+	req_access = list(83)
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/item/weapon/barrier,
+/obj/item/weapon/barrier,
+/obj/item/weapon/barrier,
+/obj/item/weapon/barrier,
+/obj/item/weapon/screwdriver,
+/obj/item/weapon/crowbar,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/command/armoury/tactical)
 "aGQ" = (
@@ -25736,6 +25837,9 @@
 	dir = 1;
 	icon_state = "map"
 	},
+/obj/random/maintenance/solgov,
+/obj/random/maintenance/solgov,
+/obj/random/maintenance/solgov,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport)
 "aMG" = (
@@ -29807,6 +29911,9 @@
 	dir = 9
 	},
 /obj/structure/largecrate,
+/obj/random/maintenance/solgov,
+/obj/random/maintenance/solgov,
+/obj/random/maintenance/solgov,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport)
 "aTO" = (
@@ -32724,21 +32831,40 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore)
 "bbb" = (
-/obj/effect/floor_decal/corner/yellow{
-	dir = 6
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
 /obj/structure/railing/mapped{
 	icon_state = "railing0";
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/emcloset{
 	anchored = 1;
 	name = "anchored emergency closet"
 	},
+/obj/effect/floor_decal/borderfloor/cee{
+	tag = "icon-borderfloorcee_white (EAST)";
+	icon_state = "borderfloorcee_white";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/green/bordercee{
+	tag = "icon-bordercolorcee (WEST)";
+	icon_state = "bordercolorcee";
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	tag = "icon-borderfloorcorner2_white (EAST)";
+	icon_state = "borderfloorcorner2_white";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/green/bordercorner2{
+	tag = "icon-bordercolorcorner2 (EAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2,
+/obj/effect/floor_decal/corner/green/bordercorner2,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "bfq" = (
@@ -33639,6 +33765,13 @@
 /obj/structure/cable/green,
 /turf/simulated/floor/plating,
 /area/command/captainmess)
+"lgN" = (
+/obj/structure/largecrate,
+/obj/random/maintenance/solgov,
+/obj/random/maintenance/solgov,
+/obj/random/maintenance/solgov,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/aftport)
 "liw" = (
 /obj/machinery/door/airlock/vault/bolted{
 	id_tag = "meetingsafedoor";
@@ -33880,6 +34013,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
+"ntz" = (
+/obj/machinery/portable_atmospherics/powered/scrubber,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/foreport)
 "nSz" = (
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	tag = "icon-steel_decals4 (NORTH)";
@@ -34085,6 +34222,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/equipstorage)
+"pWU" = (
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	tag = "icon-steel_decals6 (NORTHEAST)";
+	icon_state = "steel_decals6";
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/center)
 "qcr" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/weapon/tableflag{
@@ -34318,6 +34463,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery)
+"sQe" = (
+/obj/machinery/light,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/lime/border,
+/obj/effect/floor_decal/borderfloor/corner2,
+/obj/effect/floor_decal/corner/lime/bordercorner2,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/center)
 "sRS" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -48286,7 +48439,7 @@ aNJ
 aHU
 aHU
 aQB
-aRO
+ntz
 aBQ
 aBQ
 aBQ
@@ -53522,7 +53675,7 @@ avN
 awT
 bEk
 ayS
-azW
+pWU
 qCB
 aCx
 aDM
@@ -53724,7 +53877,7 @@ avO
 awT
 uCE
 ayS
-azY
+sQe
 aqc
 aqc
 aqc
@@ -54734,7 +54887,7 @@ avS
 aru
 axY
 azb
-aAh
+axI
 aBn
 aBn
 aBn
@@ -57784,7 +57937,7 @@ aSm
 aTt
 aKU
 aUJ
-aVr
+lgN
 aEr
 aEr
 aEr
@@ -59802,7 +59955,7 @@ aQj
 aIJ
 aSr
 aTx
-aUl
+aVr
 aEr
 aEr
 aEr
@@ -61002,7 +61155,7 @@ aDd
 avf
 aFt
 aGL
-aGL
+aUl
 aIL
 aKc
 aLj
