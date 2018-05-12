@@ -77,7 +77,6 @@
 	#include "infinity_station_maps/torch-5.dmm"
 	#include "infinity_station_maps/torch-6.dmm"
 	#include "infinity_station_maps/torch-7.dmm"
-	#include "infinity_station_maps/torch-8.dmm"
 	#include "../away_inf/sentinel/sentinel.dm"
 	#include "../away_inf/gunboat/gunboat.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
