@@ -203,21 +203,25 @@
 	path = /obj/item/clothing/mask/gas/vox
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_VOX)
+	cost = 2
 
 /datum/gear/gloves/vox
 	display_name = "vox insulated gauntlets"
 	path = /obj/item/clothing/gloves/vox
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_VOX)
+	cost = 4
 
 /datum/gear/uniform/vox_cloth
 	display_name = "vox clothing"
 	path = /obj/item/clothing/under/vox/vox_casual
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_VOX)
+	cost = 0
 
 /datum/gear/uniform/vox_robe
 	display_name = "vox robe"
 	path = /obj/item/clothing/under/vox/vox_robes
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_VOX)
+	cost = 0
