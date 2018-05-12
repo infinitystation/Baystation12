@@ -49,6 +49,7 @@
 /obj/structure/closet/secure_closet/medical_torchsenior/WillContain()
 	return list(
 		/obj/item/clothing/under/sterile,
+		/obj/item/clothing/accessory/storage/white_vest,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/suit/surgicalapron,
 		/obj/item/clothing/shoes/white,
