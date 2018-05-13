@@ -8771,6 +8771,8 @@
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/item/weapon/barrier,
+/obj/item/weapon/barrier,
+/obj/item/weapon/barrier,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/armoury)
 "pI" = (
