@@ -5,6 +5,7 @@
 	icon_state = "magnetic_table_disabled"
 	var/icon_state_open = "magnetic_table_disabled"
 	var/icon_state_closed = "magnetic_table_enabled"
+	req_access = list(201)
 	can_plate = 0
 	can_reinforce = 0
 	flipped = -1
@@ -70,10 +71,6 @@
 	if(health <= 10 && !locked)
 		return
 
-	if(anchored == 0)
-		to_chat(user, "<span class='warning'>You need to secure the table first!</span>")
-		return
-
 	locked = !locked
 
 	update_icon()
@@ -84,3 +81,15 @@
 	playsound(src,'sound/machines/ding.ogg',100,1)
 
 	return
+
+/obj/structure/table/mag/attackby(obj/item/weapon/W as obj, mob/user as mob, var/click_params)
+	if(istype(W, /obj/item/weapon/card/id))
+		if(allowed(usr))
+			toggle_lock()
+		return
+	if(isitem(W))
+		if(user.drop_from_inventory(W, src.loc))
+			auto_align(W, click_params)
+			W.anchored = locked
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	..()
