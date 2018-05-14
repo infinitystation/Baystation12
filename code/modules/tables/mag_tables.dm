@@ -15,7 +15,6 @@
 	..()
 	verbs -= /obj/structure/table/verb/do_flip
 	verbs -= /obj/structure/table/proc/do_put
-	verbs += /obj/structure/table/mag/verb/lock
 
 /obj/structure/table/mag/Initialize()
 	. = ..()
