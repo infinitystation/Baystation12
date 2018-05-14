@@ -22,7 +22,6 @@
 	maxhealth = 20
 	health = 20
 
-
 /obj/structure/table/mag/update_icon()
 	if (locked)
 		icon_state = icon_state_closed
@@ -49,47 +48,32 @@
 		toggle_lock()
 	..()
 
-/obj/structure/table/mag/verb/lock()
-	set name = "Toggle magTable lock"
-	set desc = "..."
-	set category = "Object"
-	set src in oview(1)
-
-	if (!can_touch(usr) || ismouse(usr))
-		return
-
-	toggle_lock()
-
-	if(locked)
-		usr.visible_message("<span class='warning'>[usr] locks [src]!</span>")
-	else
-		usr.visible_message("<span class='warning'>[usr] unlocks [src]!</span>")
-
 
 /obj/structure/table/mag/proc/toggle_lock()
-
 	if(health <= 10 && !locked)
 		return
-
 	locked = !locked
-
 	update_icon()
-
 	for (var/obj/item/I in get_turf(src))
 		I.anchored = locked
-
-	playsound(src,'sound/machines/ding.ogg',100,1)
-
+	playsound(src, 'sound/effects/storage/briefcase.ogg', 100, 1)
 	return
 
 /obj/structure/table/mag/attackby(obj/item/weapon/W as obj, mob/user as mob, var/click_params)
-	if(istype(W, /obj/item/weapon/card/id))
+	if(istype(W, /obj/item/weapon/card/id) || istype(W, /obj/item/modular_computer))
 		if(allowed(usr))
 			toggle_lock()
-		return
+			if(locked)
+				usr.visible_message("<span class='warning'>[usr] locks [src]!</span>")
+			else
+				usr.visible_message("<span class='warning'>[usr] unlocks [src]!</span>")
+			return
 	if(isitem(W))
 		if(user.drop_from_inventory(W, src.loc))
 			auto_align(W, click_params)
 			W.anchored = locked
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	..()
+
+/obj/structure/table/mag/CtrlClick()
+	return
