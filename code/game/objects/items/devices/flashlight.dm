@@ -370,6 +370,7 @@
 	flashlight_outer_range = 6
 
 /obj/item/device/flashlight/slime/New()
+	set_light(flashlight_max_bright, flashlight_inner_range, flashlight_outer_range, 2, light_color)
 	..()
 
 /obj/item/device/flashlight/slime/update_icon()
