@@ -663,6 +663,7 @@ BLIND     // can't see anything
 		SPECIES_VOX = 'icons/mob/species/vox/suit.dmi',
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi',
+		SPECIES_NABBER = 'icons/mob/species/nabber/suit.dmi',
 		)
 
 /obj/item/clothing/suit/update_clothing_icon()
