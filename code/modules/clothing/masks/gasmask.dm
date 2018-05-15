@@ -143,7 +143,7 @@
 	icon_state = "respirator"
 	item_state = "respirator"
 	flags_inv = 0
-	body_parts_covered = FACE
+	body_parts_covered = 0
 	species_restricted = list(SPECIES_VOX)
 	filtered_gases = list("phoron", "sleeping_agent", "oxygen")
 	w_class = ITEM_SIZE_SMALL
@@ -154,5 +154,6 @@
 	desc = "Clearly not designed for a human face."
 	icon_state = "voxswat"
 	item_state = "voxswat"
+	body_parts_covered = 0
 	species_restricted = list(SPECIES_VOX)
 	filtered_gases = list("phoron", "sleeping_agent", "oxygen")
