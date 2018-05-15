@@ -384,7 +384,7 @@
 //Suicide handling.
 /obj/item/weapon/gun/var/mouthshoot = 0 //To stop people from suiciding twice... >.>
 /obj/item/weapon/gun/proc/handle_suicide(mob/living/user)
-	if(!ishuman(user))
+	if(!ishuman(user) || (have_safety && safety))
 		return
 	var/mob/living/carbon/human/M = user
 
