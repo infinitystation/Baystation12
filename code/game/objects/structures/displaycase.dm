@@ -82,7 +82,7 @@
 			W.pixel_y = -7
 			W.forceMove(get_turf(src))
 			Initialize()
-		return
+			return
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	take_damage(W.force)
 	..()
