@@ -217,7 +217,7 @@ WIKIURL https://wiki.infinity-ss13.ru/
 GITHUBURL https://github.com/infinitystation/Baystation12
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-BANAPPEALS https://infinity-ss13.ru/index.php?/forum/5-суд/
+BANAPPEALS https://infinity-ss13.ru/index.php?/forum/5-??
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard
@@ -398,7 +398,7 @@ GENERATE_ASTEROID
 # AUTOSTEALTH 30
 
 ## How many loadout points are available. Use 0 to disable loadout, and any negative number to indicate infinite points.
-MAX_GEAR_COST 10
+MAX_GEAR_COST 15
 
 ## How much radiation levels self-reduce by each tick.
 RADIATION_DECAY_RATE 1
