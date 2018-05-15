@@ -1552,15 +1552,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
-"dJ" = (
-/obj/machinery/access_button/airlock_exterior{
-	frequency = 1331;
-	master_tag = "calypso_shuttle";
-	pixel_x = -12;
-	pixel_y = -12
-	},
-/turf/simulated/wall/titanium_r,
-/area/exploration_shuttle/cockpit)
 "dK" = (
 /turf/simulated/wall/titanium,
 /area/exploration_shuttle/cockpit)
@@ -1811,6 +1802,12 @@
 	icon_state = "warning";
 	dir = 8
 	},
+/obj/machinery/access_button/airlock_exterior{
+	frequency = 1331;
+	master_tag = "calypso_shuttle";
+	pixel_x = 16;
+	pixel_y = 20
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
 "et" = (
@@ -1897,7 +1894,7 @@
 /obj/machinery/access_button/airlock_interior{
 	frequency = 1331;
 	master_tag = "calypso_shuttle";
-	pixel_x = -20;
+	pixel_x = -18;
 	pixel_y = 20
 	},
 /turf/simulated/floor/tiled,
@@ -5591,9 +5588,9 @@
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/effect/floor_decal/borderfloor{
-	tag = "icon-borderfloor_white (NORTH)";
+	dir = 1;
 	icon_state = "borderfloor_white";
-	dir = 1
+	tag = ""
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	tag = "icon-bordercolor (NORTH)";
@@ -5761,6 +5758,10 @@
 	dir = 8
 	},
 /obj/machinery/washing_machine,
+/obj/machinery/light{
+	icon_state = "tube1";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/laundry)
 "lP" = (
@@ -18590,9 +18591,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/borderfloor{
-	tag = "icon-borderfloor_white (NORTH)";
+	dir = 1;
 	icon_state = "borderfloor_white";
-	dir = 1
+	tag = ""
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	tag = "icon-bordercolor (NORTH)";
@@ -19926,9 +19927,9 @@
 	pixel_y = 32
 	},
 /obj/effect/floor_decal/borderfloor{
-	tag = "icon-borderfloor_white (NORTH)";
+	dir = 1;
 	icon_state = "borderfloor_white";
-	dir = 1
+	tag = ""
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	tag = "icon-bordercolor (NORTH)";
@@ -20710,9 +20711,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/borderfloor{
-	tag = "icon-borderfloor_white (NORTH)";
+	dir = 1;
 	icon_state = "borderfloor_white";
-	dir = 1
+	tag = ""
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	tag = "icon-bordercolor (NORTH)";
@@ -42705,7 +42706,7 @@ bg
 bN
 cr
 dc
-dJ
+bh
 et
 fc
 et
