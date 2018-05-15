@@ -2875,7 +2875,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/co)
 "eO" = (
-/obj/structure/displaycase,
+/obj/structure/displaycase{
+	req_access = list(20)
+	},
 /obj/item/weapon/gun/projectile/revolver/webley/captain{
 	pixel_y = -3
 	},
@@ -10569,6 +10571,36 @@
 /obj/machinery/sleeper{
 	dir = 4
 	},
+/obj/effect/floor_decal/borderfloorwhite{
+	tag = "icon-borderfloor_white (NORTHWEST)";
+	icon_state = "borderfloor_white";
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	tag = "icon-bordercolor (NORTHWEST)";
+	icon_state = "bordercolor";
+	dir = 9
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	tag = "icon-borderfloorcorner2_white (NORTH)";
+	icon_state = "borderfloorcorner2_white";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	tag = "icon-borderfloorcorner2_white (SOUTHWEST)";
+	icon_state = "borderfloorcorner2_white";
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (NORTH)";
+	icon_state = "bordercolorcorner2";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (SOUTHWEST)";
+	icon_state = "bordercolorcorner2";
+	dir = 10
+	},
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
 "qa" = (
@@ -10581,6 +10613,16 @@
 "qc" = (
 /obj/machinery/sleeper{
 	dir = 8
+	},
+/obj/effect/floor_decal/borderfloorwhite{
+	tag = "icon-borderfloor_white (NORTHEAST)";
+	icon_state = "borderfloor_white";
+	dir = 5
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	tag = "icon-bordercolor (NORTHEAST)";
+	icon_state = "bordercolor";
+	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
@@ -11184,6 +11226,15 @@
 /obj/machinery/body_scanconsole{
 	pixel_y = -2
 	},
+/obj/effect/floor_decal/borderfloorwhite{
+	tag = "icon-borderfloor_white (EAST)";
+	icon_state = "borderfloor_white";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	icon_state = "bordercolor";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
 "rc" = (
@@ -11597,10 +11648,39 @@
 	pixel_x = -32;
 	req_access = newlist()
 	},
+/obj/effect/floor_decal/borderfloorwhite{
+	tag = "icon-borderfloor_white (SOUTHWEST)";
+	icon_state = "borderfloor_white";
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	tag = "icon-bordercolor (SOUTHWEST)";
+	icon_state = "bordercolor";
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	tag = "icon-borderfloorcorner2_white (WEST)";
+	icon_state = "borderfloorcorner2_white";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (WEST)";
+	icon_state = "bordercolorcorner2";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
 "rD" = (
 /obj/machinery/bodyscanner,
+/obj/effect/floor_decal/borderfloorwhite{
+	tag = "icon-borderfloor_white (EAST)";
+	icon_state = "borderfloor_white";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	icon_state = "bordercolor";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
 "rE" = (
@@ -12047,10 +12127,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/fore)
 "sf" = (
-/obj/machinery/firealarm{
-	dir = 2;
-	pixel_y = 24
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	tag = "icon-steel_decals4 (NORTHWEST)";
 	icon_state = "steel_decals4";
@@ -12372,9 +12448,6 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/structure/closet/crate/freezer,
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
@@ -12386,6 +12459,12 @@
 	pixel_x = -22;
 	pixel_y = 0
 	},
+/obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/effect/floor_decal/corner/paleblue/diagonal{
+	icon_state = "corner_white_diagonal";
+	dir = 4
+	},
+/obj/structure/closet/crate/freezer/nanoblood/small,
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
 "sz" = (
@@ -12394,6 +12473,15 @@
 /obj/machinery/camera/network/aquila{
 	c_tag = "Aquila - Infirmary";
 	dir = 8
+	},
+/obj/effect/floor_decal/borderfloorwhite{
+	tag = "icon-borderfloor_white (EAST)";
+	icon_state = "borderfloor_white";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	icon_state = "bordercolor";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
@@ -13164,6 +13252,16 @@
 	pixel_x = -12;
 	pixel_y = 2
 	},
+/obj/effect/floor_decal/borderfloorwhite{
+	tag = "icon-borderfloor_white (WEST)";
+	icon_state = "borderfloor_white";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	tag = "icon-bordercolor (WEST)";
+	icon_state = "bordercolor";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
 "tu" = (
@@ -13173,6 +13271,15 @@
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 22
+	},
+/obj/effect/floor_decal/borderfloorwhite{
+	tag = "icon-borderfloor_white (EAST)";
+	icon_state = "borderfloor_white";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	icon_state = "bordercolor";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
@@ -13844,6 +13951,26 @@
 /obj/item/weapon/tank/anesthetic,
 /obj/item/clothing/mask/breath/medical,
 /obj/structure/iv_drip,
+/obj/effect/floor_decal/borderfloorwhite{
+	tag = "icon-borderfloor_white (SOUTHWEST)";
+	icon_state = "borderfloor_white";
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/pink/border{
+	tag = "icon-bordercolor (SOUTHWEST)";
+	icon_state = "bordercolor";
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	tag = "icon-borderfloorcorner2_white (WEST)";
+	icon_state = "borderfloorcorner2_white";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/pink/bordercorner2{
+	tag = "icon-bordercolorcorner2 (WEST)";
+	icon_state = "bordercolorcorner2";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
 "uu" = (
@@ -13852,6 +13979,26 @@
 /obj/item/weapon/reagent_containers/spray/cleaner,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/effect/floor_decal/borderfloorwhite{
+	tag = "icon-borderfloor_white (SOUTHEAST)";
+	icon_state = "borderfloor_white";
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/pink/border{
+	tag = "icon-bordercolor (SOUTHEAST)";
+	icon_state = "bordercolor";
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	tag = "icon-borderfloorcorner2_white (SOUTHEAST)";
+	icon_state = "borderfloorcorner2_white";
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/pink/bordercorner2{
+	tag = "icon-bordercolorcorner2 (SOUTHEAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 6
 	},
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
@@ -14197,7 +14344,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/aquila_hangar/start)
 "uX" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/secure_closet/guncabinet/sidearm/small,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/aquila_hangar/start)
@@ -14206,15 +14352,33 @@
 /obj/item/weapon/reagent_containers/syringe/antiviral,
 /obj/item/weapon/reagent_containers/syringe/antiviral,
 /obj/item/stack/medical/advanced/bruise_pack,
+/obj/effect/floor_decal/corner/pink/diagonal,
+/obj/effect/floor_decal/corner/pink/diagonal{
+	tag = "icon-corner_white_diagonal (EAST)";
+	icon_state = "corner_white_diagonal";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
 "uZ" = (
 /obj/machinery/optable,
+/obj/effect/floor_decal/corner/pink/diagonal,
+/obj/effect/floor_decal/corner/pink/diagonal{
+	tag = "icon-corner_white_diagonal (EAST)";
+	icon_state = "corner_white_diagonal";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
 "va" = (
 /obj/structure/table/standard,
 /obj/item/weapon/storage/firstaid/surgery,
+/obj/effect/floor_decal/corner/pink/diagonal,
+/obj/effect/floor_decal/corner/pink/diagonal{
+	tag = "icon-corner_white_diagonal (EAST)";
+	icon_state = "corner_white_diagonal";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
 "vb" = (
@@ -17372,6 +17536,19 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/bridge/fore)
+"FY" = (
+/obj/effect/floor_decal/borderfloorwhite{
+	tag = "icon-borderfloor_white (WEST)";
+	icon_state = "borderfloor_white";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	tag = "icon-bordercolor (WEST)";
+	icon_state = "bordercolor";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/aquila_hangar/start)
 "Gb" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -17434,6 +17611,29 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/bridgecheck)
+"Gp" = (
+/obj/effect/floor_decal/borderfloorwhite{
+	tag = "icon-borderfloor_white (NORTH)";
+	icon_state = "borderfloor_white";
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	tag = "icon-bordercolor (NORTH)";
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	tag = "icon-borderfloorcorner2_white (EAST)";
+	icon_state = "borderfloorcorner2_white";
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	tag = "icon-bordercolorcorner2 (EAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/aquila_hangar/start)
 "Gs" = (
 /obj/random/closet,
 /obj/random/maintenance/solgov/clean,
@@ -17477,6 +17677,19 @@
 /obj/effect/floor_decal/corner/red/bordercorner2,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/fore)
+"IK" = (
+/obj/effect/floor_decal/borderfloorwhite/corner{
+	tag = "icon-borderfloorcorner_white (WEST)";
+	icon_state = "borderfloorcorner_white";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner{
+	tag = "icon-bordercolorcorner (WEST)";
+	icon_state = "bordercolorcorner";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/aquila_hangar/start)
 "Jb" = (
 /obj/structure/sign/directions/bridge{
 	dir = 8;
@@ -17871,6 +18084,11 @@
 "PA" = (
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/bridge)
+"PQ" = (
+/obj/effect/floor_decal/borderfloorwhite,
+/obj/effect/floor_decal/corner/pink/border,
+/turf/simulated/floor/tiled/white,
+/area/aquila_hangar/start)
 "Qb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -17904,6 +18122,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
+	},
+/obj/machinery/firealarm{
+	dir = 2;
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/fore)
@@ -38055,8 +38277,8 @@ gu
 pe
 qa
 ra
-qb
-qb
+IK
+FY
 tt
 ut
 uY
@@ -38255,12 +38477,12 @@ hJ
 mW
 oj
 hI
+Gp
 qb
 qb
 qb
 qb
-qb
-qb
+PQ
 uZ
 eC
 vH
