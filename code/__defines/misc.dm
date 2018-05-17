@@ -299,6 +299,7 @@ Define for getting a bitfield of adjacent turfs that meet a condition.
 #define SHUTTLE_MISSION_PLANNED  1
 #define SHUTTLE_MISSION_STARTED  2
 #define SHUTTLE_MISSION_FINISHED 3
+#define SHUTTLE_MISSION_QUEUED   4
 
 //Built-in email accounts
 #define EMAIL_DOCUMENTS "document.server@internal-services.nt"
