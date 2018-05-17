@@ -208,16 +208,16 @@ GUEST_BAN
 #SERVERURL server.net:port
 
 ## forum address
-FORUMURL https://infinity-ss13.ru/
+FORUMURL https://infinity-ss13.info/
 
 ## Wiki address
-WIKIURL https://wiki.infinity-ss13.ru/
+WIKIURL https://wiki.infinity-ss13.info/
 
 ## GitHub address
 GITHUBURL https://github.com/infinitystation/Baystation12
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-BANAPPEALS https://infinity-ss13.ru/index.php?/forum/5-??
+BANAPPEALS https://infinity-ss13.info/index.php?/forum/5-??
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard

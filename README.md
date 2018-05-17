@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/infinitystation/Baystation12.svg?branch=master)](https://travis-ci.org/infinitystation/Baystation12)  
 
 **Код**: https://github.com/infinitystation/Baystation12  
-**Сайт разработчика:** https://infinity-ss13.ru/  
+**Сайт разработчика:** https://infinity-ss13.info/  
 **Discord**: https://discord.gg/N4atUkH  
 **Используемые карты:** Модифицированный Torch  
 

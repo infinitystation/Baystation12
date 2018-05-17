@@ -3,7 +3,7 @@
 	icon_state ="bookEngineering2"
 	author = "Engineering Encyclopedia"
 	title = "Engineering Textbook"
-	url = "https://wiki.infinity-ss13.ru/index.php?title=Guide_to_Engineering"
+	url = "https://wiki.infinity-ss13.info/index.php?title=Guide_to_Engineering"
 
 /obj/item/weapon/book/manual/New()
 	..()
@@ -230,7 +230,7 @@
 	icon_state ="bookEngineering"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Repairs and Construction"
-	url = "https://wiki.infinity-ss13.ru/index.php?title=Руководство_по_Конструированию"
+	url = "https://wiki.infinity-ss13.info/index.php?title=Руководство_по_Конструированию"
 
 /obj/item/weapon/book/manual/engineering_particle_accelerator
 	name = "Particle Accelerator User's Guide"
@@ -413,7 +413,7 @@
 	icon_state ="bookHacking"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Hacking"
-	url = "https://wiki.infinity-ss13.ru/index.php?title=Руководство_по_Взлому"
+	url = "https://wiki.infinity-ss13.info/index.php?title=Руководство_по_Взлому"
 
 /obj/item/weapon/book/manual/engineering_singularity_safety
 	name = "Singularity Safety in Special Circumstances"
