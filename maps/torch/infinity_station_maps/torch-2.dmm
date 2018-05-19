@@ -2793,7 +2793,9 @@
 /obj/effect/floor_decal/corner/grey{
 	dir = 10
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/co2/first,
+/obj/machinery/computer/general_air_control/large_tank_control/nacelle/co2/first{
+	dir = 1
+	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
 "fv" = (
@@ -3830,7 +3832,9 @@
 /turf/simulated/floor/tiled,
 /area/security/brig)
 "hw" = (
-/obj/item/modular_computer/console/preset/civilian,
+/obj/item/modular_computer/console/preset/civilian{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/security/brig)
 "hx" = (
@@ -4001,7 +4005,9 @@
 	icon_state = "intact";
 	dir = 9
 	},
-/obj/machinery/computer/general_air_control/engines_flame/first,
+/obj/machinery/computer/general_air_control/engines_flame/first{
+	dir = 1
+	},
 /obj/item/device/radio/intercom{
 	dir = 1;
 	pixel_y = -22
@@ -4023,10 +4029,20 @@
 /area/thruster/d3starboard)
 "hM" = (
 /obj/machinery/telecomms/hub/preset,
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/bluegrid,
 /area/tcommsat/chamber)
 "hN" = (
 /obj/machinery/bluespacerelay,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/bluegrid,
 /area/tcommsat/chamber)
 "hO" = (
@@ -4036,6 +4052,16 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/tcommsat/chamber)
 "hP" = (
@@ -4044,6 +4070,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/tcommsat/chamber)
@@ -4063,6 +4094,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/tcommsat/chamber)
@@ -4701,6 +4737,11 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/tcommsat/chamber)
 "iY" = (
@@ -5192,11 +5233,24 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/power/terminal{
+	icon_state = "term";
+	dir = 1
+	},
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/bluegrid,
 /area/tcommsat/chamber)
 "jZ" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/tcommsat/chamber)
@@ -5231,6 +5285,7 @@
 /area/tcommsat/computer)
 "ke" = (
 /obj/machinery/computer/telecomms/monitor{
+	dir = 4;
 	network = "tcommsat"
 	},
 /turf/simulated/floor/lino,
@@ -5808,6 +5863,7 @@
 /area/tcommsat/computer)
 "kU" = (
 /obj/machinery/computer/telecomms/server{
+	dir = 4;
 	network = "tcommsat"
 	},
 /turf/simulated/floor/lino,
@@ -5835,7 +5891,9 @@
 	dir = 8;
 	network = list("Command","Engineering")
 	},
-/obj/item/modular_computer/console/preset/research,
+/obj/item/modular_computer/console/preset/research{
+	dir = 8
+	},
 /turf/simulated/floor/lino,
 /area/tcommsat/computer)
 "kY" = (
@@ -6179,11 +6237,6 @@
 "lM" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
@@ -6209,7 +6262,9 @@
 /turf/simulated/floor/plating,
 /area/tcommsat/computer)
 "lO" = (
-/obj/machinery/computer/message_monitor,
+/obj/machinery/computer/message_monitor{
+	dir = 4
+	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -6789,8 +6844,6 @@
 /area/tcommsat/chamber)
 "mH" = (
 /obj/machinery/light,
-/obj/structure/cable/cyan,
-/obj/machinery/power/smes/batteryrack,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tcommsat/chamber)
 "mI" = (
@@ -6800,7 +6853,9 @@
 /turf/simulated/floor/plating,
 /area/tcommsat/computer)
 "mJ" = (
-/obj/machinery/computer/rdservercontrol,
+/obj/machinery/computer/rdservercontrol{
+	dir = 4
+	},
 /turf/simulated/floor/lino,
 /area/tcommsat/computer)
 "mK" = (
@@ -9981,7 +10036,9 @@
 /turf/simulated/floor/plating,
 /area/security/bo)
 "rs" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/item/modular_computer/console/preset/security{
+	dir = 4
+	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8;
 	icon_state = "borderfloor_white";
@@ -10674,7 +10731,9 @@
 	pixel_x = 0;
 	pixel_y = -34
 	},
-/obj/machinery/computer/station_alert/security,
+/obj/machinery/computer/station_alert/security{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/bo)
 "sk" = (
@@ -10697,7 +10756,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/bo)
 "sm" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/item/modular_computer/console/preset/security{
+	dir = 8
+	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6;
 	icon_state = "borderfloor_white";
@@ -14176,7 +14237,9 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/computer/aiupload,
+/obj/machinery/computer/aiupload{
+	dir = 1
+	},
 /obj/item/device/radio/intercom/locked/ai_private{
 	dir = 1;
 	pixel_y = -22
@@ -15231,17 +15294,18 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor/corner2,
-/obj/item/modular_computer/console/preset/security/detective,
 /obj/effect/floor_decal/corner/pink/diagonal,
 /obj/effect/floor_decal/corner/pink/diagonal{
 	tag = "icon-corner_white_diagonal (EAST)";
 	icon_state = "corner_white_diagonal";
 	dir = 4
 	},
+/obj/structure/table/glass,
+/obj/item/weapon/paper_bin,
+/obj/item/weapon/pen/blue,
 /turf/simulated/floor/tiled/white,
 /area/security/detectives_office)
 "yn" = (
-/obj/structure/table/glass,
 /obj/effect/floor_decal/corner/pink{
 	dir = 5
 	},
@@ -15249,11 +15313,12 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
-/obj/item/weapon/folder/blue,
+/obj/item/modular_computer/console/preset/security/detective{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/white,
 /area/security/detectives_office)
 "yo" = (
-/obj/structure/table/glass,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
@@ -15273,16 +15338,12 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 22
 	},
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen/blue{
-	pixel_x = 4;
-	pixel_y = 4
-	},
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_x = 0;
 	pixel_y = 40
 	},
+/obj/machinery/photocopier,
 /turf/simulated/floor/tiled/white,
 /area/security/detectives_office)
 "yp" = (
@@ -16013,7 +16074,9 @@
 	icon_state = "corner_white";
 	dir = 9
 	},
-/obj/machinery/photocopier,
+/obj/structure/table/glass,
+/obj/item/weapon/folder/blue,
+/obj/item/weapon/folder/blue,
 /turf/simulated/floor/tiled/white,
 /area/security/detectives_office)
 "zo" = (
@@ -16749,7 +16812,9 @@
 	icon_state = "corner_white_three_quarters";
 	dir = 8
 	},
-/obj/item/modular_computer/console/preset/security/detective,
+/obj/item/modular_computer/console/preset/security/detective{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/security/detectives_office)
 "Ar" = (
@@ -16869,7 +16934,9 @@
 /turf/simulated/floor/tiled,
 /area/security/processing)
 "AD" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/item/modular_computer/console/preset/security{
+	dir = 4
+	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 10;
 	icon_state = "borderfloor_white";
@@ -18546,7 +18613,9 @@
 /obj/machinery/newscaster{
 	pixel_x = -28
 	},
-/obj/item/modular_computer/console/preset/civilian,
+/obj/item/modular_computer/console/preset/civilian{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "DE" = (
@@ -21114,7 +21183,9 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
 	},
-/obj/item/modular_computer/console/preset/library,
+/obj/item/modular_computer/console/preset/library{
+	dir = 4
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/lounge)
 "IJ" = (
@@ -22323,7 +22394,9 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 10
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/second,
+/obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/second{
+	dir = 1
+	},
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
 	tag = "icon-intact (EAST)";
 	icon_state = "intact";
@@ -22360,7 +22433,9 @@
 	icon_state = "intact";
 	dir = 6
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/phoron/second,
+/obj/machinery/computer/general_air_control/large_tank_control/nacelle/phoron/second{
+	dir = 1
+	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
 "LJ" = (
@@ -24031,6 +24106,11 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/thirddeck/center)
+"TF" = (
+/obj/machinery/power/smes/batteryrack,
+/obj/structure/cable/cyan,
+/turf/simulated/floor/tiled/techfloor,
+/area/tcommsat/chamber)
 "TP" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -24356,6 +24436,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
+"Wa" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/bluegrid,
+/area/tcommsat/chamber)
 "Wc" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/steeldecal/steel_decals4{
@@ -33593,7 +33682,7 @@ aP
 fB
 Rm
 hM
-Rm
+TF
 jY
 aP
 aP
@@ -33796,7 +33885,7 @@ fC
 gu
 hN
 iW
-fC
+Wa
 kS
 aP
 aP

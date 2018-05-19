@@ -385,6 +385,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/maintenance/bridge/forestarboard)
 "aV" = (
@@ -714,6 +715,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/shield/bridge)
 "by" = (
@@ -1682,6 +1684,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/bridge)
 "cY" = (
@@ -2645,7 +2648,9 @@
 	pixel_x = 24;
 	pixel_y = -6
 	},
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 8
+	},
 /obj/machinery/button/windowtint{
 	id = "xo_windows";
 	pixel_x = 24;
@@ -6788,6 +6793,7 @@
 	req_access = list(12)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/maintenance/bridge/aftstarboard)
 "kJ" = (
@@ -7082,7 +7088,9 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
-/obj/machinery/computer/engines,
+/obj/machinery/computer/engines{
+	dir = 4
+	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -7116,7 +7124,9 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
 "ln" = (
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/bridge)
 "lo" = (
@@ -7754,7 +7764,9 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
-/obj/machinery/computer/helm,
+/obj/machinery/computer/helm{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
 "mg" = (
@@ -8719,7 +8731,9 @@
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "nq" = (
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 4
+	},
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
@@ -8744,7 +8758,9 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
 "ns" = (
-/obj/machinery/computer/navigation,
+/obj/machinery/computer/navigation{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/bridge)
 "nt" = (
@@ -9751,7 +9767,9 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 10
 	},
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/bridge)
 "oD" = (
@@ -9763,7 +9781,9 @@
 	pixel_x = 30;
 	pixel_y = 0
 	},
-/obj/machinery/computer/weapons,
+/obj/machinery/computer/weapons{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/bridge)
 "oE" = (
@@ -9852,7 +9872,9 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/heads/office/cos)
 "oK" = (
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 1
+	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -10063,6 +10085,7 @@
 /obj/machinery/door/airlock/maintenance_hatch{
 	req_access = list(12)
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/maintenance/bridge/aftport)
 "pa" = (
@@ -10636,12 +10659,16 @@
 /area/turret_protected/ai_outer_chamber)
 "qe" = (
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/modular_computer/console/preset/civilian,
+/obj/item/modular_computer/console/preset/civilian{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai)
 "qf" = (
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/modular_computer/console/preset/engineering,
+/obj/item/modular_computer/console/preset/engineering{
+	dir = 1
+	},
 /obj/machinery/camera/all/command{
 	c_tag = "AI Core - Port";
 	dir = 1
@@ -10650,7 +10677,9 @@
 /area/turret_protected/ai)
 "qg" = (
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/modular_computer/console/preset/research,
+/obj/item/modular_computer/console/preset/research{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai)
 "qh" = (
@@ -10671,14 +10700,18 @@
 /area/bridge)
 "qi" = (
 /obj/effect/floor_decal/corner/blue/three_quarters,
-/obj/machinery/computer/mecha,
+/obj/machinery/computer/mecha{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
 "qj" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 10
 	},
-/obj/machinery/computer/robotics,
+/obj/machinery/computer/robotics{
+	dir = 1
+	},
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -24
@@ -10686,7 +10719,9 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
 "qk" = (
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 1
+	},
 /obj/effect/floor_decal/corner/blue{
 	dir = 10
 	},
@@ -14368,6 +14403,9 @@
 	icon_state = "corner_white_diagonal";
 	dir = 4
 	},
+/obj/machinery/oxygen_pump/anesthetic{
+	pixel_y = -30
+	},
 /turf/simulated/floor/tiled/white,
 /area/aquila_hangar/start)
 "va" = (
@@ -15826,14 +15864,18 @@
 /area/crew_quarters/heads/office/cl)
 "xs" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/office/cl)
 "xt" = (
 /obj/effect/floor_decal/corner/grey{
 	dir = 9
 	},
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/sgr)
 "xu" = (
@@ -15882,7 +15924,9 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/rd)
 "xy" = (
@@ -16591,6 +16635,7 @@
 "yw" = (
 /obj/structure/cable/yellow,
 /obj/machinery/power/solar_control{
+	dir = 8;
 	id = "auxsolarbridge";
 	name = "Bridge Solar Control";
 	track = 1
@@ -17974,7 +18019,9 @@
 /area/aquila_hangar/start)
 "NR" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal,
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 1
+	},
 /obj/item/device/radio/intercom{
 	dir = 1;
 	pixel_y = -22

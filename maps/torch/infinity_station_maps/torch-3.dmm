@@ -2824,7 +2824,9 @@
 	dir = 8;
 	pixel_x = 22
 	},
-/obj/item/modular_computer/console/preset/research,
+/obj/item/modular_computer/console/preset/research{
+	dir = 8
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai_cyborg_station)
 "gz" = (
@@ -5352,7 +5354,9 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engineering_monitoring)
 "lk" = (
-/obj/machinery/computer/atmos_alert,
+/obj/machinery/computer/atmos_alert{
+	dir = 8
+	},
 /obj/machinery/newscaster{
 	pixel_x = 28;
 	pixel_y = 0
@@ -6213,6 +6217,7 @@
 /area/vacant/prototype/control)
 "mM" = (
 /obj/machinery/computer/fusion_fuel_control{
+	dir = 4;
 	id_tag = "fusion_injector";
 	req_access = list(11)
 	},
@@ -6243,6 +6248,9 @@
 	pixel_y = 29;
 	req_access = list(11)
 	},
+/obj/structure/table/standard,
+/obj/item/weapon/paper_bin,
+/obj/item/weapon/pen,
 /turf/simulated/floor/tiled/techmaint,
 /area/vacant/prototype/control)
 "mO" = (
@@ -6252,6 +6260,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/table/standard,
+/obj/item/weapon/folder/yellow,
+/obj/item/weapon/folder/yellow,
 /turf/simulated/floor/tiled/techmaint,
 /area/vacant/prototype/control)
 "mP" = (
@@ -6275,7 +6286,9 @@
 /obj/machinery/camera/network/engine{
 	c_tag = "Engine - Prototype Chamber 01"
 	},
-/obj/item/modular_computer/console/preset/engineering,
+/obj/item/modular_computer/console/preset/engineering{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/vacant/prototype/control)
 "mR" = (
@@ -6411,7 +6424,9 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/obj/machinery/computer/robotics,
+/obj/machinery/computer/robotics{
+	dir = 1
+	},
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25
@@ -6428,7 +6443,9 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engineering_monitoring)
 "ne" = (
-/obj/item/modular_computer/console/preset/engineering,
+/obj/item/modular_computer/console/preset/engineering{
+	dir = 4
+	},
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
@@ -6447,7 +6464,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/item/modular_computer/console/preset/engineering,
+/obj/item/modular_computer/console/preset/engineering{
+	dir = 8
+	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/engineering/engineering_monitoring)
@@ -6763,6 +6782,7 @@
 /area/vacant/prototype/engine)
 "nN" = (
 /obj/machinery/computer/fusion_core_control{
+	dir = 4;
 	id_tag = "fusion_core";
 	req_access = list(11)
 	},
@@ -6788,7 +6808,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/vacant/prototype/control)
 "nR" = (
-/obj/item/modular_computer/console/preset/engineering,
+/obj/item/modular_computer/console/preset/engineering{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/vacant/prototype/control)
 "nS" = (
@@ -7346,6 +7368,7 @@
 /area/vacant/prototype/control)
 "oL" = (
 /obj/machinery/computer/gyrotron_control{
+	dir = 4;
 	id_tag = "fusion_gyrotron";
 	req_access = list(11)
 	},
@@ -7852,7 +7875,9 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engine_monitoring)
 "py" = (
-/obj/item/modular_computer/console/preset/engineering,
+/obj/item/modular_computer/console/preset/engineering{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/engine_monitoring)
 "pz" = (
@@ -8912,6 +8937,7 @@
 	dir = 4
 	},
 /obj/machinery/computer/general_air_control/supermatter_core{
+	dir = 8;
 	frequency = 1438;
 	input_tag = "cooling_in";
 	name = "Engine Cooling Control";
@@ -11200,6 +11226,7 @@
 /area/engineering/atmos)
 "vo" = (
 /obj/machinery/computer/general_air_control/large_tank_control{
+	dir = 8;
 	frequency = 1441;
 	input_tag = "co2_in";
 	name = "Carbon Dioxide Supply Control";
@@ -12338,6 +12365,7 @@
 /area/engineering/atmos)
 "xz" = (
 /obj/machinery/computer/general_air_control/large_tank_control{
+	dir = 8;
 	frequency = 1441;
 	input_tag = "h2_in";
 	name = "Hydrogen Supply Control";
@@ -13057,6 +13085,7 @@
 /area/engineering/atmos)
 "ze" = (
 /obj/machinery/computer/general_air_control/large_tank_control{
+	dir = 4;
 	frequency = 1441;
 	input_tag = "n2_in";
 	name = "Nitrogen Supply Control";
@@ -13591,6 +13620,7 @@
 /area/engineering/atmos)
 "As" = (
 /obj/machinery/computer/general_air_control/large_tank_control{
+	dir = 8;
 	frequency = 1441;
 	input_tag = "n2o_in";
 	name = "Nitrous Oxide Supply Control";
@@ -14346,6 +14376,7 @@
 /area/engineering/atmos)
 "BM" = (
 /obj/machinery/computer/general_air_control/large_tank_control{
+	dir = 4;
 	frequency = 1441;
 	input_tag = "o2_in";
 	name = "Oxygen Supply Control";
@@ -15857,6 +15888,7 @@
 /area/maintenance/seconddeck/foreport)
 "Fo" = (
 /obj/machinery/power/solar_control{
+	dir = 1;
 	id = "auxsolarport";
 	name = "Port Solar Control";
 	track = 0
@@ -16936,6 +16968,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
+"UA" = (
+/obj/item/modular_computer/console/preset{
+	tag = "icon-console (NORTH)";
+	icon_state = "console";
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/foreport)
 "UZ" = (
 /obj/machinery/scrap/stacking_machine,
 /obj/effect/floor_decal/techfloor/orange{
@@ -16999,6 +17039,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/compactor)
+"WI" = (
+/obj/machinery/computer/drone_control{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/engineering/drone_fabrication)
 "WJ" = (
 /obj/machinery/alarm{
 	pixel_y = 24
@@ -30957,7 +31003,7 @@ hl
 rD
 sG
 tM
-sG
+WI
 rD
 wp
 wZ
@@ -32589,7 +32635,7 @@ nY
 Vd
 Fl
 VC
-Fl
+UA
 lR
 lR
 aa

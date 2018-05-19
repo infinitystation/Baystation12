@@ -1013,7 +1013,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/administration/centcom)
 "acB" = (
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 8
+	},
 /obj/effect/floor_decal/corner/brown{
 	dir = 6
 	},
@@ -1174,7 +1176,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/administration/centcom)
 "acT" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/item/modular_computer/console/preset/security{
+	dir = 8
+	},
 /obj/effect/floor_decal/corner/brown{
 	dir = 6
 	},
@@ -1408,6 +1412,7 @@
 /area/shuttle/administration/centcom)
 "adu" = (
 /obj/machinery/computer/shuttle_control{
+	dir = 8;
 	req_access = list(101);
 	shuttle_tag = "Administration"
 	},
@@ -2867,7 +2872,7 @@
 "agI" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id = "SkipjackShuttersNorth";
 	name = "Blast Doors";
@@ -2887,7 +2892,7 @@
 "agJ" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id = "SkipjackShuttersNorth";
 	name = "Blast Doors";
@@ -2904,7 +2909,7 @@
 "agK" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id = "SkipjackShuttersNorth";
 	name = "Blast Doors";
@@ -3061,7 +3066,9 @@
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "agZ" = (
-/obj/structure/computerframe,
+/obj/item/modular_computer/console/preset/civilian{
+	computer_emagged = 1
+	},
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "aha" = (
@@ -3274,7 +3281,9 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "ahC" = (
-/obj/machinery/computer/station_alert/all,
+/obj/machinery/computer/station_alert/all{
+	dir = 4
+	},
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -3408,8 +3417,9 @@
 	},
 /area/centcom/specops)
 "ahR" = (
-/obj/item/modular_computer/console/preset/command,
-/obj/item/weapon/card/id/centcom,
+/obj/item/modular_computer/console/preset/command{
+	dir = 4
+	},
 /turf/unsimulated/floor{
 	icon_state = "lino";
 	name = "linoleum"
@@ -3426,6 +3436,7 @@
 /area/centcom/creed)
 "ahT" = (
 /obj/machinery/computer/pod{
+	dir = 8;
 	id = "NTrasen";
 	name = "Hull Door Control"
 	},
@@ -3468,6 +3479,7 @@
 "ahY" = (
 /obj/machinery/computer/rdservercontrol{
 	badmin = 1;
+	dir = 1;
 	name = "Master R&amp;D Server Controller"
 	},
 /obj/effect/floor_decal/corner/green{
@@ -4180,7 +4192,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/modular_computer/console/preset/mercenary,
+/obj/item/modular_computer/console/preset/mercenary{
+	dir = 8
+	},
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "ajr" = (
@@ -4821,7 +4835,9 @@
 	},
 /area/centcom/control)
 "akG" = (
-/obj/item/modular_computer/console/preset/civilian,
+/obj/item/modular_computer/console/preset/civilian{
+	dir = 4
+	},
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -4871,7 +4887,9 @@
 	},
 /area/centcom/control)
 "akM" = (
-/obj/machinery/computer/crew,
+/obj/machinery/computer/crew{
+	dir = 8
+	},
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -5494,19 +5512,17 @@
 	},
 /area/centcom/control)
 "ama" = (
-/obj/machinery/computer/robotics,
-/turf/unsimulated/floor{
-	icon_state = "steel"
+/obj/machinery/computer/robotics{
+	dir = 4
 	},
-/area/centcom/control)
-"amb" = (
-/obj/item/modular_computer/console/preset/command,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
 /area/centcom/control)
 "amc" = (
-/obj/item/modular_computer/console/preset/medical,
+/obj/item/modular_computer/console/preset/medical{
+	dir = 8
+	},
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -5972,7 +5988,9 @@
 	},
 /area/centcom/control)
 "anf" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/item/modular_computer/console/preset/security{
+	dir = 1
+	},
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -7695,7 +7713,9 @@
 	},
 /area/centcom/holding)
 "aqK" = (
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 8
+	},
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -7767,7 +7787,9 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "aqW" = (
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 4
+	},
 /obj/effect/floor_decal/corner/black{
 	icon_state = "corner_white";
 	dir = 9
@@ -7791,7 +7813,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/specops/centcom)
 "aqY" = (
-/obj/machinery/computer/shuttle_control/specops,
+/obj/machinery/computer/shuttle_control/specops{
+	dir = 8
+	},
 /obj/effect/floor_decal/corner/black{
 	icon_state = "corner_white";
 	dir = 6
@@ -7829,7 +7853,9 @@
 	},
 /area/centcom/holding)
 "arb" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/item/modular_computer/console/preset/security{
+	dir = 8
+	},
 /obj/machinery/camera/network/crescent{
 	c_tag = "Crescent Arrivals North";
 	dir = 8
@@ -7931,6 +7957,7 @@
 /area/centcom/specops)
 "arp" = (
 /obj/machinery/computer/prisoner{
+	dir = 4;
 	name = "Implant Management"
 	},
 /obj/effect/floor_decal/corner/black{
@@ -9922,7 +9949,9 @@
 	},
 /area/centcom/holding)
 "avE" = (
-/obj/machinery/computer/operating,
+/obj/machinery/computer/operating{
+	dir = 1
+	},
 /obj/effect/floor_decal/corner/paleblue{
 	icon_state = "corner_white";
 	dir = 10
@@ -10278,6 +10307,7 @@
 /area/tdome/testing)
 "awq" = (
 /obj/machinery/computer/shuttle_control{
+	dir = 1;
 	req_access = list(101);
 	shuttle_tag = "Centcom"
 	},
@@ -12756,7 +12786,9 @@
 	},
 /area/ninja_dojo/start)
 "aBE" = (
-/obj/machinery/computer/station_alert/all,
+/obj/machinery/computer/station_alert/all{
+	dir = 1
+	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/unsimulated/floor{
 	dir = 2;
@@ -12764,7 +12796,9 @@
 	},
 /area/ninja_dojo/start)
 "aBF" = (
-/obj/machinery/computer/shuttle_control/multi/ninja,
+/obj/machinery/computer/shuttle_control/multi/ninja{
+	dir = 1
+	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/unsimulated/floor{
 	dir = 2;
@@ -12772,7 +12806,9 @@
 	},
 /area/ninja_dojo/start)
 "aBG" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/item/modular_computer/console/preset/security{
+	dir = 1
+	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/unsimulated/floor{
 	dir = 2;
@@ -13276,7 +13312,9 @@
 	},
 /area/admin_prison)
 "aCN" = (
-/obj/machinery/vending/dinnerware,
+/obj/machinery/vending/dinnerware{
+	dir = 2
+	},
 /obj/effect/floor_decal/corner/blue/diagonal,
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -15670,7 +15708,9 @@
 /turf/simulated/floor/lino,
 /area/admin_prison)
 "aHH" = (
-/obj/item/modular_computer/console/preset/ert,
+/obj/item/modular_computer/console/preset/ert{
+	dir = 1
+	},
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -17624,14 +17664,18 @@
 /turf/simulated/floor/holofloor/beach/sand,
 /area/admin_prison)
 "aLP" = (
-/obj/item/modular_computer/console/preset/medical,
+/obj/item/modular_computer/console/preset/medical{
+	dir = 4
+	},
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
 "aLQ" = (
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
 "aLR" = (
-/obj/item/modular_computer/console/preset/engineering,
+/obj/item/modular_computer/console/preset/engineering{
+	dir = 8
+	},
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
 "aLS" = (
@@ -17681,6 +17725,7 @@
 /area/admin_prison)
 "aLX" = (
 /obj/machinery/computer/prisoner{
+	dir = 4;
 	name = "Implant Management"
 	},
 /obj/machinery/light{
@@ -17689,7 +17734,9 @@
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
 "aLY" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/item/modular_computer/console/preset/security{
+	dir = 8
+	},
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
 "aLZ" = (
@@ -21184,7 +21231,6 @@
 	},
 /area/acting/backstage)
 "aTQ" = (
-/obj/structure/computerframe,
 /obj/effect/floor_decal/borderfloor{
 	tag = "icon-borderfloor_white (WEST)";
 	icon_state = "borderfloor_white";
@@ -21194,6 +21240,11 @@
 	tag = "icon-bordercolor (WEST)";
 	icon_state = "bordercolor";
 	dir = 8
+	},
+/obj/item/modular_computer/console/preset/civilian/professional{
+	tag = "icon-console (EAST)";
+	icon_state = "console";
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/merchant_station)
@@ -21467,7 +21518,9 @@
 	},
 /area/acting/backstage)
 "aUw" = (
-/obj/machinery/computer/shuttle_control/merchant,
+/obj/machinery/computer/shuttle_control/merchant{
+	dir = 4
+	},
 /obj/effect/floor_decal/borderfloor{
 	tag = "icon-borderfloor_white (WEST)";
 	icon_state = "borderfloor_white";
@@ -22571,7 +22624,9 @@
 /turf/simulated/floor/tiled,
 /area/merchant_station)
 "aWS" = (
-/obj/item/modular_computer/console/preset/merchant,
+/obj/item/modular_computer/console/preset/merchant{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/merchant_station)
 "aWT" = (
@@ -22736,6 +22791,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/random/loot,
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "aXl" = (
@@ -22980,17 +23036,17 @@
 /turf/simulated/floor/plating,
 /area/shuttle/merchant/home)
 "aXP" = (
-/obj/structure/computerframe,
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/item/modular_computer/console/preset/civilian/professional{
+	tag = "icon-console (EAST)";
+	icon_state = "console";
+	dir = 4
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/shuttle/merchant/home)
 "aXQ" = (
-/turf/simulated/floor/carpet/blue2,
-/area/shuttle/merchant/home)
-"aXR" = (
-/obj/structure/bed/chair/comfy/shuttle,
 /turf/simulated/floor/carpet/blue2,
 /area/shuttle/merchant/home)
 "aXS" = (
@@ -23238,7 +23294,9 @@
 /turf/simulated/floor/plating,
 /area/shuttle/merchant/home)
 "aYx" = (
-/obj/machinery/computer/shuttle_control/merchant,
+/obj/machinery/computer/shuttle_control/merchant{
+	dir = 4
+	},
 /turf/simulated/floor/carpet/blue2,
 /area/shuttle/merchant/home)
 "aYy" = (
@@ -23800,6 +23858,7 @@
 	dir = 8;
 	health = 1e+006
 	},
+/obj/random/loot,
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
 "aZJ" = (
@@ -25310,9 +25369,6 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/bed/chair/comfy/brown{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
 /area/merchant_station)
@@ -25523,7 +25579,9 @@
 /turf/simulated/floor/airless,
 /area/merchant_station)
 "bdW" = (
-/obj/machinery/power/solar_control/autostart,
+/obj/machinery/power/solar_control/autostart{
+	dir = 4
+	},
 /obj/structure/cable,
 /turf/simulated/floor/tiled,
 /area/merchant_station)
@@ -26299,6 +26357,14 @@
 /obj/structure/towel/pink_stripped,
 /turf/simulated/floor/holofloor/beach/sand,
 /area/admin_prison)
+"mlP" = (
+/obj/item/modular_computer/console/preset/command{
+	dir = 1
+	},
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/control)
 "prz" = (
 /obj/machinery/door/window/brigdoor/northright{
 	dir = 2;
@@ -26346,6 +26412,13 @@
 /obj/effect/floor_decal/corner/lightgrey/border,
 /turf/simulated/floor/tiled,
 /area/merchant_station)
+"vCC" = (
+/obj/structure/bed/chair/comfy/shuttle{
+	icon_state = "bschair_preview";
+	dir = 8
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/shuttle/merchant/home)
 "wNX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -44585,7 +44658,7 @@ agr
 akd
 akI
 alu
-agA
+mlP
 amC
 anf
 agr
@@ -44989,7 +45062,7 @@ agr
 akf
 akK
 alv
-amb
+mlP
 amC
 anf
 agr
@@ -59684,7 +59757,7 @@ aSZ
 aab
 aab
 aXg
-aXQ
+vCC
 aYy
 aYX
 aZB
@@ -59886,7 +59959,7 @@ aSZ
 aab
 aab
 aWO
-aXR
+aXQ
 aXQ
 aYY
 aZC
