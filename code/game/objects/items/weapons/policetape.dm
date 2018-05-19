@@ -108,7 +108,7 @@ var/list/tape_roll_applications = list()
 /obj/item/tape/research
 	name = "research tape"
 	desc = "A length of research tape. Better not cross it."
-	req_one_access = list(access_research,access_explorer)
+	req_one_access = list(access_research)
 	color = COLOR_WHITE
 
 /obj/item/taperoll/medical
