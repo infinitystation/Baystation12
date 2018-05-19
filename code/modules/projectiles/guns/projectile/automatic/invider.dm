@@ -24,7 +24,7 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/invider/modify_projectile(obj/item/projectile/p, var/list/params = list())
-	if (params["Charged"] == 1)
+	if (params["Charged"] == 1 && loaded.len)
 		p = new /obj/item/projectile/bullet/smg/uni46x30mm_charged
 	return p
 
