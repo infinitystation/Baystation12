@@ -143,6 +143,7 @@
 	name = "linoleum"
 	singular_name = "linoleum"
 	desc = "A piece of linoleum. It is the same size as a normal floor tile!"
+	icon = 'icons/obj/items.dmi'
 	icon_state = "tile-linoleum"
 
 /obj/item/stack/tile/linoleum/fifty
