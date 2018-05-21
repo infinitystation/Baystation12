@@ -126,10 +126,7 @@
 /mob/living/silicon/robot
 	default_emotes = list(
 		/decl/emote/audible/clap,
-		/decl/emote/audible/salute,
 		/decl/emote/visible/bow,
-		/decl/emote/visible/flap,
-		/decl/emote/visible/aflap,
 		/decl/emote/visible/twitch,
 		/decl/emote/visible/twitch_v,
 		/decl/emote/visible/nod,
@@ -163,4 +160,13 @@
 		/decl/emote/slime/angry,
 		/decl/emote/slime/frown,
 		/decl/emote/slime/smile
+		)
+
+/mob/living/silicon/pai
+	default_emotes = list(
+		/decl/emote/audible/synth,
+		/decl/emote/audible/synth/ping,
+		/decl/emote/audible/synth/buzz,
+		/decl/emote/audible/synth/confirm,
+		/decl/emote/audible/synth/deny
 		)
