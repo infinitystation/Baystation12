@@ -28,9 +28,11 @@
 			to_chat(src, "<span class='warning'>You don't have enough air in [L] to make a sound!</span>")
 			return
 		else if(L.breath_fail_ratio > 0.7)
-			whisper_say(length(message) > 5 ? stars(message) : message, speaking, alt_name)
+			return ..(length(message) > 5 ? stars(message) : message, alt_name = alt_name, speaking = speaking, whispering = 1)
 		else if(L.breath_fail_ratio > 0.4 && length(message) > 10)
-			whisper_say(message, speaking, alt_name)
+			return ..(message, alt_name = alt_name, speaking = speaking, whispering = 1)
+		else if(L.breath_fail_ratio > 0)
+			return ..(message, alt_name = alt_name, speaking = speaking, whispering = whispering)
 	else
 		return ..(message, alt_name = alt_name, speaking = speaking, whispering = whispering)
 

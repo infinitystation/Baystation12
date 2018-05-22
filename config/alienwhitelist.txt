@@ -32,6 +32,8 @@ sarumyn - giant armoured serpentid
 rex127 - giant armoured serpentid
 portos - giant armoured serpentid
 taushai - giant armoured serpentid
+ted201 - giant armoured serpentid
+s1334 - giant armoured serpentid
 twinindifferent - resomi
 wheatley2013 - resomi
 kirill1243 - resomi
@@ -70,6 +72,7 @@ furrydog - tajaran
 korramy - tajaran
 selles - tajaran
 logfol - tajaran
+moonmen - tajaran
 denmag - tajaran
 solark - tajaran
 arhod - tajaran

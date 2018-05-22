@@ -137,6 +137,9 @@ req_titles: Bridge Officer, Deck Officer, Physician, Senior Engineer
 ckey: vankoska
 character_name: Terill Qerr
 item_path: /obj/item/device/pmp/personal
-req_titles: Senior Researcher, Scientist
-req_access: 47
+}
+{
+ckey: korramy
+character_name: Quentin Willo
+item_path: /obj/item/device/pmp/personal
 }

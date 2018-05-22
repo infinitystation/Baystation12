@@ -217,7 +217,7 @@ WIKIURL https://wiki.infinity-ss13.info/
 GITHUBURL https://github.com/infinitystation/Baystation12
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-BANAPPEALS https://infinity-ss13.info/index.php?/forum/5-??
+BANAPPEALS https://infinity-ss13.info/index.php?/forum/5-суд/
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard

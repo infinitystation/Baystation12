@@ -1540,18 +1540,6 @@
 /obj/structure/ladder/up,
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition/storage)
-"dI" = (
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/industrial/warning/cee{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/quartermaster/hangar)
 "dK" = (
 /turf/simulated/wall/titanium,
 /area/exploration_shuttle/cockpit)
@@ -4617,6 +4605,7 @@
 /area/maintenance/fourthdeck/aft)
 "jT" = (
 /obj/machinery/computer/shuttle_control{
+	dir = 4;
 	req_access = list(75);
 	shuttle_tag = "Petrov"
 	},
@@ -6030,7 +6019,9 @@
 /obj/structure/closet/hydrant{
 	pixel_x = -25
 	},
-/obj/machinery/computer/area_atmos/area,
+/obj/machinery/computer/area_atmos/area{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "mq" = (
@@ -11402,7 +11393,9 @@
 /area/storage/primary)
 "uQ" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/modular_computer/console/preset/civilian,
+/obj/item/modular_computer/console/preset/civilian{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/primary)
 "uR" = (
@@ -12106,7 +12099,9 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/deckofficer)
 "wd" = (
-/obj/item/modular_computer/console/preset/dock,
+/obj/item/modular_computer/console/preset/dock{
+	dir = 8
+	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
 	icon_state = "borderfloor_white";
@@ -16970,7 +16965,9 @@
 /turf/simulated/floor/tiled/white,
 /area/vacant/infirmary)
 "FG" = (
-/obj/machinery/computer/atmos_alert,
+/obj/machinery/computer/atmos_alert{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/vacant/monitoring)
 "FH" = (
@@ -17746,7 +17743,9 @@
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
 "HB" = (
-/obj/machinery/computer/shuttle_control/explore/guppy,
+/obj/machinery/computer/shuttle_control/explore/guppy{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
 "HC" = (
@@ -18379,6 +18378,12 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
+"JV" = (
+/obj/item/modular_computer/console/preset/security{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/security/checkpoint2)
 "JX" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -18905,7 +18910,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/port)
 "Mx" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/item/modular_computer/console/preset,
 /turf/simulated/floor/plating,
 /area/vacant/monitoring)
 "MG" = (
@@ -20807,12 +20812,6 @@
 "Vz" = (
 /turf/simulated/floor/plating,
 /area/vacant/infirmary)
-"VC" = (
-/obj/effect/floor_decal/industrial/warning/cee{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/quartermaster/hangar)
 "VE" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -21087,10 +21086,6 @@
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/security/checkpoint2)
-"Xc" = (
-/obj/effect/floor_decal/industrial/warning/half,
-/turf/simulated/floor/plating,
-/area/quartermaster/hangar)
 "Xi" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -21098,18 +21093,6 @@
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/port)
-"Xm" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/cee{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/quartermaster/hangar)
 "Xq" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -35857,7 +35840,7 @@ tq
 uV
 vO
 xn
-vR
+JV
 uV
 uV
 uV
@@ -41898,7 +41881,7 @@ bc
 bL
 cq
 cq
-dI
+eq
 eq
 eq
 UY
@@ -41907,7 +41890,7 @@ ZU
 MW
 MV
 fm
-Xm
+fm
 fm
 fm
 bc
@@ -42100,7 +42083,7 @@ bd
 bd
 bd
 aO
-Xc
+aO
 aO
 aO
 aO
@@ -42109,7 +42092,7 @@ aO
 aO
 aO
 aH
-VC
+be
 be
 er
 er
@@ -42302,7 +42285,7 @@ be
 be
 be
 be
-VC
+be
 er
 er
 er
