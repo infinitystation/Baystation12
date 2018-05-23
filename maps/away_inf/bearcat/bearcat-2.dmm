@@ -197,16 +197,16 @@
 /turf/simulated/wall/r_wall,
 /area/ship/scrap/command/bridge)
 "av" = (
-/obj/structure/bed/chair{
-	icon_state = "chair_preview";
-	dir = 1
-	},
 /obj/machinery/power/apc/derelict{
 	dir = 8
 	},
 /obj/structure/cable{
 	d2 = 6;
 	icon_state = "0-6"
+	},
+/obj/structure/bed/chair/office/dark{
+	icon_state = "officechair_dark_preview";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/usedup,
 /area/ship/scrap/command/bridge)
@@ -224,11 +224,11 @@
 	department = "Captain";
 	pixel_x = 32
 	},
-/obj/structure/bed/chair{
-	icon_state = "chair_preview";
+/obj/item/ammo_casing/c45/used,
+/obj/structure/bed/chair/office/dark{
+	icon_state = "officechair_dark_preview";
 	dir = 1
 	},
-/obj/item/ammo_casing/c45/used,
 /turf/simulated/floor/tiled/dark/usedup,
 /area/ship/scrap/command/bridge)
 "ay" = (
@@ -243,7 +243,9 @@
 	pixel_y = -32
 	},
 /obj/machinery/light,
-/obj/item/modular_computer/console/preset/engineering,
+/obj/item/modular_computer/console/preset/engineering{
+	dir = 1
+	},
 /obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -22
@@ -266,7 +268,9 @@
 /obj/machinery/newscaster{
 	pixel_y = -32
 	},
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/usedup,
 /area/ship/scrap/command/bridge)
 "aC" = (
@@ -598,7 +602,9 @@
 	pixel_x = 0;
 	pixel_y = -32
 	},
-/obj/machinery/computer/message_monitor,
+/obj/machinery/computer/message_monitor{
+	dir = 4
+	},
 /turf/simulated/floor/bluegrid/airless,
 /area/ship/scrap/comms)
 "bb" = (
@@ -1685,7 +1691,7 @@
 /obj/machinery/newscaster{
 	pixel_x = -32
 	},
-/obj/machinery/media/jukebox,
+/obj/machinery/media/jukebox/old,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/saloon)
 "cE" = (
@@ -5291,7 +5297,6 @@
 	icon_state = "bulb1";
 	dir = 1
 	},
-/obj/structure/closet/firecloset/full,
 /turf/simulated/floor/tiled/airless,
 /area/ship/scrap/maintenance/atmos)
 "hZ" = (
@@ -5388,7 +5393,9 @@
 	icon_state = "corner_white";
 	dir = 10
 	},
-/obj/machinery/computer/engines,
+/obj/machinery/computer/engines{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/maintenance/engineering)
 "ih" = (
@@ -5417,7 +5424,9 @@
 	dir = 10
 	},
 /obj/machinery/light/small,
-/obj/item/modular_computer/console/preset/engineering,
+/obj/item/modular_computer/console/preset/engineering{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/maintenance/engineering)
 "ij" = (
@@ -6414,7 +6423,6 @@
 /obj/item/device/multitool{
 	pixel_x = 5
 	},
-/obj/item/weapon/cartridge/atmos,
 /obj/item/device/pipe_painter,
 /turf/simulated/floor/tiled/airless,
 /area/ship/scrap/maintenance/atmos)

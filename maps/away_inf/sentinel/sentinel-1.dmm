@@ -720,6 +720,7 @@
 	dir = 4
 	},
 /obj/machinery/computer/general_air_control/large_tank_control{
+	dir = 4;
 	frequency = 1442;
 	input_tag = "o2_in";
 	name = "Oxygen Supply Control";
@@ -1340,6 +1341,7 @@
 	dir = 6
 	},
 /obj/machinery/computer/general_air_control/large_tank_control{
+	dir = 4;
 	frequency = 1442;
 	input_tag = "n2_in";
 	name = "Nitrogen Supply Control";
@@ -2640,7 +2642,9 @@
 /turf/simulated/floor,
 /area/ship/patrol/command/bridge)
 "eQ" = (
-/obj/machinery/computer/engines,
+/obj/machinery/computer/engines{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/command/bridge)
 "eR" = (
@@ -2884,7 +2888,9 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/machinery/computer/helm,
+/obj/machinery/computer/helm{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/command/bridge)
 "fq" = (
@@ -3119,7 +3125,9 @@
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/lower/starboard)
 "fN" = (
-/obj/machinery/computer/sensors,
+/obj/machinery/computer/sensors{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/command/bridge)
 "fO" = (
@@ -3334,7 +3342,9 @@
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/lower/starboard)
 "gm" = (
-/obj/machinery/computer/station_alert/all,
+/obj/machinery/computer/station_alert/all{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/command/bridge)
 "gn" = (
@@ -3344,7 +3354,9 @@
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/obj/item/modular_computer/console/preset/command,
+/obj/item/modular_computer/console/preset/command{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/command/bridge)
 "go" = (
@@ -3579,7 +3591,7 @@
 /area/ship/patrol/crew/hallway/lower/aft)
 "gM" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/closet/firecloset/full,
+/obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/lower/aft)
 "gN" = (
@@ -3602,7 +3614,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/obj/structure/closet/firecloset/full,
+/obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled/dark,
 /area/albatros_hangar/start)
 "gP" = (
@@ -3945,7 +3957,9 @@
 /area/albatros_hangar/start)
 "hE" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/computer/shuttle_control/explore/albatross,
+/obj/machinery/computer/shuttle_control/explore/albatross{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/albatros_hangar/start)
 "hF" = (
@@ -5405,7 +5419,9 @@
 /turf/simulated/floor,
 /area/ship/patrol/command/hangar)
 "jP" = (
-/obj/structure/closet/firecloset/full,
+/obj/structure/closet/hydrant{
+	pixel_x = 28
+	},
 /turf/simulated/floor,
 /area/ship/patrol/command/hangar)
 "jQ" = (
@@ -6484,7 +6500,9 @@
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
 "lQ" = (
-/obj/machinery/computer/message_monitor,
+/obj/machinery/computer/message_monitor{
+	dir = 4
+	},
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -24;
@@ -6732,6 +6750,7 @@
 /area/ship/patrol/medbay)
 "mp" = (
 /obj/machinery/computer/telecomms/server{
+	dir = 4;
 	network = "senttcommsat"
 	},
 /obj/item/device/radio/intercom{
@@ -8187,6 +8206,7 @@
 	req_access = list(11)
 	},
 /obj/machinery/computer/fusion_fuel_control{
+	dir = 8;
 	id_tag = "fusion_injector_patrol";
 	req_access = list(11)
 	},
@@ -8194,7 +8214,7 @@
 	icon_state = "corner_white";
 	dir = 6
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/fussion/control)
 "oH" = (
 /obj/effect/wingrille_spawn/reinforced_phoron,
@@ -8414,6 +8434,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/computer/fusion_core_control{
+	dir = 8;
 	id_tag = "fusion_core_patrol";
 	req_access = list(11)
 	},
@@ -8421,7 +8442,7 @@
 	icon_state = "corner_white";
 	dir = 6
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/fussion/control)
 "pd" = (
 /obj/structure/cable/green{
@@ -8634,6 +8655,7 @@
 /area/ship/patrol/engineering/fussion/control)
 "px" = (
 /obj/machinery/computer/gyrotron_control{
+	dir = 8;
 	id_tag = "fusion_gyrotron_patrol";
 	req_access = list(11)
 	},
@@ -8641,7 +8663,7 @@
 	icon_state = "corner_white";
 	dir = 6
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/fussion/control)
 "py" = (
 /obj/effect/wingrille_spawn/reinforced_phoron,

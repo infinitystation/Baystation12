@@ -2200,7 +2200,9 @@
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "es" = (
-/obj/item/modular_computer/console/preset/civilian,
+/obj/item/modular_computer/console/preset/civilian{
+	dir = 8
+	},
 /turf/simulated/floor/carpet/blue2,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "et" = (
