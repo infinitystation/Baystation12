@@ -1,4 +1,4 @@
-forya - machine
+forrya - machine
 rucat - machine
 rex127 - machine
 logfol - machine
