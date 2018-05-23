@@ -128,12 +128,6 @@ paper_title: award certificate
 paper_stamp_type: /obj/item/weapon/stamp/solgov
 }
 {
-ckey: wheatley2013
-character_name: Nexus
-item_path: /obj/item/clothing/suit/officerdnavyjacket
-req_titles: Bridge Officer, Deck Officer, Physician, Senior Engineer
-}
-{
 ckey: vankoska
 character_name: Terill Qerr
 item_path: /obj/item/device/pmp/personal
@@ -142,4 +136,10 @@ item_path: /obj/item/device/pmp/personal
 ckey: korramy
 character_name: Quentin Willo
 item_path: /obj/item/device/pmp/personal
+}
+{
+ckey: quietproject 
+character_name: Arias Creo 
+item_path: /obj/item/clothing/mask/gas/swat 
+item_name: vo-coder mask
 }
