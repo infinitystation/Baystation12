@@ -140,6 +140,5 @@ item_path: /obj/item/device/pmp/personal
 {
 ckey: quietproject 
 character_name: Arias Creo 
-item_path: /obj/item/clothing/mask/gas/swat 
-item_name: vo-coder mask
+item_path: /obj/item/clothing/mask/gas/creo
 }
