@@ -385,6 +385,27 @@
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/aquila/
+	name = "\improper SEV Aquila"
+	icon_state = "shuttlered"
+	base_turf = /turf/simulated/floor/reinforced/airless
+	area_flags = AREA_FLAG_RAD_SHIELDED
+/area/aquila/cockpit
+	name = "\improper Aquila - Cockpit"
+/area/aquila/engineering
+	name = "\improper Aquila - Engineering Compartment"
+/area/aquila/storage
+	name = "\improper Aquila - Cargo Compartment"
+/area/aquila/medical
+	name = "\improper Aquila - Medical Compartment"
+/area/aquila/troops
+	name = "\improper Aquila - Troops Compartment"
+/area/aquila/crew
+	name = "\improper Aquila - Crew Compartment"
+/area/aquila/airlock
+	name = "\improper Aquila - Airlock Compartment"
+
+
 //Guppy
 
 /area/guppy_hangar/start
