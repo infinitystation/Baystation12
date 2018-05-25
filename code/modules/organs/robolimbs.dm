@@ -16,7 +16,7 @@ var/datum/robolimb/basic_robolimb
 	var/icon = 'icons/mob/human_races/robotic.dmi'       // Icon base to draw from.
 	var/unavailable_at_chargen                           // If set, not available at chargen.
 	var/unavailable_at_fab                               // If set, cannot be fabricated.
-	var/can_eat
+	var/can_eat = 1
 	var/brute_mod = 1
 	var/speed_mod = 0
 	var/burn_mod = 1
@@ -132,7 +132,7 @@ var/datum/robolimb/basic_robolimb
 /datum/robolimb/wardtakahashi/special
 	company = "Ward-Takahashi Special Upper"
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_special.dmi'
-	can_eat = null
+	can_eat = 0
 	use_eye_icon = "zenghu_eyes"
 	applies_to_part = list(BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND, BP_HEAD, BP_CHEST, BP_GROIN)
 	brute_mod = 1.2
@@ -156,7 +156,7 @@ var/datum/robolimb/basic_robolimb
 	company = "Ward-Takahashi Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_monitor.dmi'
 	restricted_to = list(SPECIES_IPC)
-	can_eat = null
+	can_eat = 0
 
 /datum/robolimb/morpheus
 	company = "Morpheus"
@@ -167,7 +167,7 @@ var/datum/robolimb/basic_robolimb
 /datum/robolimb/morpheus/special
 	company = "Morpheus Special"
 	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_special.dmi'
-	can_eat = null
+	can_eat = 0
 	use_eye_icon = "eyes_industry"
 	restricted_to = list()
 
@@ -231,4 +231,4 @@ var/datum/robolimb/basic_robolimb
 	use_eye_icon = "eyes_terminator"
 	unavailable_at_fab = 1
 	unavailable_at_chargen = 1
-	restricted_to = list(SPECIES_IPC)
+	restricted_to = list(SPECIES_IPC, "Terminator")

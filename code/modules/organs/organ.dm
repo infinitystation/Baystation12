@@ -25,6 +25,7 @@ var/list/organ_cache = list()
 	var/min_broken_damage = 30     	  // Damage before becoming broken
 	var/max_damage                    // Damage cap
 	var/rejecting                     // Is this organ already being rejected?
+	var/emp_coeff = 1 //coefficient for damages taken by EMP, if the organ is robotic.
 
 	var/death_time
 
@@ -246,11 +247,11 @@ var/list/organ_cache = list()
 		return
 	switch (severity)
 		if (1)
-			take_damage(9)
+			take_damage(rand(8,12) * emp_coeff)
 		if (2)
-			take_damage(3)
+			take_damage(rand(3,8) * emp_coeff)
 		if (3)
-			take_damage(1)
+			take_damage(rand(3) * emp_coeff)
 
 /**
  *  Remove an organ
