@@ -828,7 +828,7 @@
 	skill_points = 32
 
 	access = list(access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
-			            access_crematorium, access_chemistry, access_surgery,
+			            access_crematorium, access_chemistry, access_surgery, access_eva,
 			            access_medical_equip, access_solgov_crew, access_senmed)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,

@@ -1,3 +1,4 @@
+forrya - machine
 rucat - machine
 rex127 - machine
 logfol - machine
@@ -32,6 +33,8 @@ sarumyn - giant armoured serpentid
 rex127 - giant armoured serpentid
 portos - giant armoured serpentid
 taushai - giant armoured serpentid
+ted201 - giant armoured serpentid
+s1334 - giant armoured serpentid
 twinindifferent - resomi
 wheatley2013 - resomi
 kirill1243 - resomi
@@ -46,12 +49,14 @@ forrya - resomi
 cre77 - resomi
 s1334 - resomi
 audie - resomi
+shokumar - resomi
 vankoska - diona
 maxi2000 - diona
 sosiskoed - diona
 bartstarter - diona
 inubashirimomiji - diona
 gumboldty - diona
+wolforbykot - diona
 cre77 - vox
 rex127 - vox
 sosiskoed - vox
@@ -70,6 +75,7 @@ furrydog - tajaran
 korramy - tajaran
 selles - tajaran
 logfol - tajaran
+moonmen - tajaran
 denmag - tajaran
 solark - tajaran
 arhod - tajaran
