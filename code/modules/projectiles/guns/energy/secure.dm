@@ -211,3 +211,19 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 2000)
 	projectile_type = /obj/item/projectile/beam/midlaser
 	wielded_item_state = "laser-wielded"
+
+/obj/item/weapon/gun/energy/secure/laser/mounted
+	name = "robot laser carbine"
+	desc = "A robot-mounted equivalnet of the G40E carbine, which is always registered to its owner."
+	self_recharge = 1
+	use_external_power = 1
+	one_hand_penalty = 0
+	authorized_modes = list(ALWAYS_AUTHORIZED, AUTHORIZED)
+
+/obj/item/weapon/gun/energy/secure/laser/mounted/New()
+	var/mob/borg = get_holder_of_type(src, /mob/living/silicon/robot)
+	if(!borg)
+		CRASH("Invalid spawn location.")
+	registered_owner = borg.name
+	GLOB.registered_cyborg_weapons += src
+	..()
