@@ -13043,6 +13043,11 @@
 	icon_state = "steel_decals4";
 	dir = 10
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/fore)
 "xn" = (
@@ -20644,6 +20649,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/shield/fourthdeck)
+"UP" = (
+/obj/item/modular_computer/console/preset/security{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/security/checkpoint2)
 "UR" = (
 /obj/structure/table/steel,
 /obj/random/junk,
@@ -20924,12 +20935,6 @@
 /obj/effect/floor_decal/corner/lime/bordercorner,
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/fourthdeck/center)
-"Wb" = (
-/obj/item/modular_computer/console/preset/security{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark,
-/area/security/checkpoint2)
 "Wj" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/floodlight{
@@ -35824,7 +35829,7 @@ tq
 uV
 vO
 xn
-Wb
+UP
 uV
 uV
 uV

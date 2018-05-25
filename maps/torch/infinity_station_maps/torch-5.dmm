@@ -6654,6 +6654,9 @@
 	icon_state = "bordercolor";
 	dir = 4
 	},
+/obj/machinery/atm{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/fore)
 "kt" = (
@@ -7226,9 +7229,6 @@
 "lw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atm{
-	pixel_x = 32
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
 	icon_state = "borderfloor_white";
@@ -8617,6 +8617,11 @@
 /area/turret_protected/ai)
 "nh" = (
 /obj/machinery/ai_slipper,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "ni" = (
@@ -8635,6 +8640,10 @@
 	},
 /obj/machinery/status_display{
 	pixel_x = 32
+	},
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai)
@@ -8809,24 +8818,6 @@
 /obj/item/weapon/folder/blue,
 /turf/simulated/floor/carpet/blue2,
 /area/bridge/meeting_room)
-"nw" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/closet/hydrant{
-	pixel_x = 25
-	},
-/obj/effect/floor_decal/borderfloor{
-	dir = 4;
-	icon_state = "borderfloor_white";
-	tag = ""
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	tag = "icon-bordercolor (EAST)";
-	icon_state = "bordercolor";
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/bridge/fore)
 "nx" = (
 /turf/simulated/wall/r_wall,
 /area/crew_quarters/heads/office/cos)
@@ -9086,6 +9077,11 @@
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/corner/paleblue/bordercorner2,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/aft)
 "nM" = (
@@ -9843,6 +9839,9 @@
 	tag = "icon-bordercolor (EAST)";
 	icon_state = "bordercolor";
 	dir = 4
+	},
+/obj/structure/closet/hydrant{
+	pixel_x = 25
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/fore)
@@ -29437,7 +29436,7 @@ jx
 ks
 lw
 Lb
-nw
+lw
 oH
 jx
 qu
@@ -32668,7 +32667,7 @@ gY
 gY
 gs
 Jb
-mB
+KL
 nL
 oV
 pF
