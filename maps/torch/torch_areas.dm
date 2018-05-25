@@ -376,7 +376,7 @@
 	name = "\improper Charon - Airlock Compartment"
 
 //Aquila
-
+/*
 /area/aquila_hangar/start
 	name = "\improper SEV Aquila"
 	icon_state = "shuttlered"
@@ -384,28 +384,7 @@
 	requires_power = 1
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/aquila/
-	name = "\improper SEV Aquila"
-	icon_state = "shuttlered"
-	base_turf = /turf/simulated/floor/reinforced/airless
-	area_flags = AREA_FLAG_RAD_SHIELDED
-/area/aquila/cockpit
-	name = "\improper Aquila - Cockpit"
-/area/aquila/engineering
-	name = "\improper Aquila - Engineering Compartment"
-/area/aquila/storage
-	name = "\improper Aquila - Cargo Compartment"
-/area/aquila/medical
-	name = "\improper Aquila - Medical Compartment"
-/area/aquila/troops
-	name = "\improper Aquila - Troops Compartment"
-/area/aquila/crew
-	name = "\improper Aquila - Crew Compartment"
-/area/aquila/airlock
-	name = "\improper Aquila - Airlock Compartment"
-
-
+*/
 //Guppy
 
 /area/guppy_hangar/start
@@ -658,11 +637,6 @@
 /area/engineering/hardstorage/aux
 	name = "\improper Auxiliary Engineering Hard Storage"
 	icon_state = "engineering_storage"
-
-/area/engineering/gravity_gen
-	name = "\improper Gravity Generator"
-	icon_state = "engine"
-	sound_env = SMALL_ENCLOSED
 
 //Vacant Areas
 /area/vacant
@@ -1306,10 +1280,6 @@
 	name = "\improper Research Break Room"
 	icon_state = "researchbreak"
 
-/area/rnd/pilot
-	name = "\improper NanoTrasen Pilot Office"
-	icon_state = "researchbreak"
-
 /area/alien
 	name = "\improper Alien base"
 	icon_state = "yellow"
@@ -1383,11 +1353,6 @@
 
 /area/quartermaster/storage
 	name = "\improper Warehouse"
-	icon_state = "quartstorage"
-	sound_env = LARGE_ENCLOSED
-
-/area/quartermaster/compactor
-	name = "\improper Compactor"
 	icon_state = "quartstorage"
 	sound_env = LARGE_ENCLOSED
 
@@ -1501,19 +1466,6 @@
 /area/tdome/tdomeadmin
 	name = "\improper Thunderdome (Admin.)"
 	icon_state = "purple"
-
-/area/tdome/testing
-	name = "\improper Thunderdome (TESTING AREA)"
-	icon_state = "purple"
-
-/area/tdome/testing/engineering
-	name = "\improper Thunderdome"
-	requires_power = 0
-	dynamic_lighting = 1
-
-/area/tdome/testing/engineering/unpowered
-	name = "\improper Thunderdome"
-	requires_power = 1
 
 /area/tdome/tdomeobserve
 	name = "\improper Thunderdome (Observer.)"
