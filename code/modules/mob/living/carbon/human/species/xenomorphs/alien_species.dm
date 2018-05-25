@@ -29,7 +29,6 @@
 	has_fine_manipulation = 0
 	siemens_coefficient = 0.2
 	gluttonous = GLUT_SMALLER
-	ambiguous_genders = TRUE
 	stomach_capacity = MOB_MEDIUM
 
 	brute_mod =     0.75 // Hardened carapace.

@@ -29,7 +29,6 @@
 	blood_oxy = 0
 
 	reagent_tag = IS_NABBER
-	ambiguous_genders = TRUE
 
 	icon_template = 'icons/mob/human_races/r_template_tall.dmi'
 	icobase = 'icons/mob/human_races/r_nabber.dmi'

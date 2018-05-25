@@ -20,7 +20,6 @@
 	tail_hair = "feathers"
 	strength = STR_HIGH
 	reagent_tag = IS_RESOMI
-	ambiguous_genders = TRUE
 
 	icobase = 'icons/mob/human_races/r_resomi.dmi'
 	deform = 'icons/mob/human_races/r_resomi.dmi'

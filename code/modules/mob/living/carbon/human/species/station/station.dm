@@ -16,6 +16,7 @@
 	gluttonous = GLUT_TINY
 
 	speech_chance = 40
+	ambiguous_genders = 0
 
 	spawn_flags = SPECIES_CAN_JOIN
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_TONE_NORMAL | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
@@ -98,7 +99,6 @@
 	additional_langs = list(LANGUAGE_SIIK_MAAS)
 	name_language = LANGUAGE_SIIK_MAAS
 	health_hud_intensity = 1.75
-	ambiguous_genders = TRUE
 
 	min_age = 19
 	max_age = 140
@@ -163,7 +163,7 @@
 	secondary_langs = list(LANGUAGE_SKRELLIAN)
 	name_language = null
 	health_hud_intensity = 1.75
-	ambiguous_genders = TRUE
+
 
 	min_age = 19
 	max_age = 90
