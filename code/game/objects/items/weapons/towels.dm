@@ -4,7 +4,7 @@
 	icon_state = "towel"
 	item_flags = ITEM_FLAG_IS_BELT
 	slot_flags = SLOT_HEAD | SLOT_BELT | SLOT_OCLOTHING
-	force = 3.0
+	force = 1 //Don't break bones with it, please
 	w_class = ITEM_SIZE_NORMAL
 	attack_verb = list("whipped")
 	hitsound = 'sound/weapons/towelwhip.ogg'
