@@ -157,8 +157,8 @@
 /obj/machinery/honey_extractor
 	name = "honey extractor"
 	desc = "A machine used to extract honey and wax from a beehive frame."
-	icon = 'icons/obj/virology.dmi'
-	icon_state = "centrifuge"
+	icon = 'icons/obj/honey_ext.dmi'
+	icon_state = "honeyext"
 	anchored = 1
 	density = 1
 
@@ -176,14 +176,16 @@
 			return
 		user.visible_message("<span class='notice'>\The [user] loads \the [H] into \the [src] and turns it on.</span>", "<span class='notice'>You load \the [H] into \the [src] and turn it on.</span>")
 		processing = H.honey
-		icon_state = "centrifuge_moving"
+		icon = 'icons/obj/honey_ext.dmi'
+		icon_state = "honeyext_moving"
 		qdel(H)
 		spawn(50)
 			new /obj/item/honey_frame(loc)
 			new /obj/item/stack/wax(loc)
 			honey += processing
 			processing = 0
-			icon_state = "centrifuge"
+			icon = 'icons/obj/honey_ext.dmi'
+			icon_state = "honeyext"
 	else if(istype(I, /obj/item/weapon/reagent_containers/glass))
 		if(!honey)
 			to_chat(user, "<span class='notice'>There is no honey in \the [src].</span>")
