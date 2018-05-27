@@ -2164,7 +2164,8 @@
 		S.channel = 703
 		sound_to(usr, S)
 	if(href_list["show_skills"])
-		show_skills(usr, href_list["show_skills"] )
+		var/mob/living/carbon/human/M = href_list["show_skills"]
+		show_skills(usr, M)
 	if(href_list["wipedata"])
 		var/obj/item/device/cassette/cassette = locate(href_list["wipedata"])
 		if(!cassette.track)
