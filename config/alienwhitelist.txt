@@ -4,6 +4,7 @@ rex127 - machine
 logfol - machine
 kosteg - machine
 hodovoy - machine
+mishele - machine
 parasoul - machine
 netreson - machine
 billluxe - machine
