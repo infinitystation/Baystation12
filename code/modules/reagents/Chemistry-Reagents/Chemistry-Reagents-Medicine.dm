@@ -160,7 +160,7 @@
 	taste_description = "sludge"
 	reagent_state = LIQUID
 	color = "#8080ff"
-	metabolism = REM * 0.05
+	metabolism = REM * 0.5
 	scannable = 1
 	flags = IGNORE_MOB_SIZE
 
@@ -169,7 +169,7 @@
 	if(M.bodytemperature < 170)
 		M.adjustCloneLoss(-100 * removed)
 		M.add_chemical_effect(CE_OXYGENATED, 1)
-		M.heal_organ_damage(100 * removed, 100 * removed)
+		M.heal_organ_damage(10 * removed, 10 * removed)
 		M.add_chemical_effect(CE_PULSE, -2)
 
 /datum/reagent/clonexadone
@@ -178,7 +178,7 @@
 	taste_description = "slime"
 	reagent_state = LIQUID
 	color = "#80bfff"
-	metabolism = REM * 0.05
+	metabolism = REM * 0.5
 	scannable = 1
 	flags = IGNORE_MOB_SIZE
 
@@ -187,7 +187,7 @@
 	if(M.bodytemperature < 170)
 		M.adjustCloneLoss(-300 * removed)
 		M.add_chemical_effect(CE_OXYGENATED, 2)
-		M.heal_organ_damage(300 * removed, 300 * removed)
+		M.heal_organ_damage(30 * removed, 30 * removed)
 		M.add_chemical_effect(CE_PULSE, -2)
 
 /* Painkillers */

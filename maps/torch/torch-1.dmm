@@ -17,7 +17,7 @@
 /turf/space,
 /area/space)
 "ae" = (
-/obj/effect/shuttle_landmark/merc/deck1,
+/obj/effect/shuttle_landmark/merc/deck4,
 /turf/space,
 /area/space)
 "ag" = (
@@ -4195,7 +4195,7 @@
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
-/obj/effect/floor_decal/industrial/outline/blue,
+/obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "iR" = (
@@ -4422,18 +4422,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition/eva)
-"jr" = (
-/obj/machinery/atmospherics/omni/mixer{
-	tag_east = 2;
-	tag_north = 1;
-	tag_north_con = 0.33;
-	tag_south = 1;
-	tag_south_con = 0.33;
-	tag_west = 1;
-	tag_west_con = 0.34
-	},
-/turf/simulated/floor/tiled/white,
-/area/shuttle/petrov/ship)
 "js" = (
 /obj/machinery/disposal,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -4879,7 +4867,7 @@
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snix,
 /turf/simulated/floor/tiled/dark,
 /area/vacant/mess)
 "kk" = (
@@ -4958,6 +4946,18 @@
 /obj/machinery/status_display,
 /turf/simulated/wall/prepainted,
 /area/quartermaster/expedition)
+"kv" = (
+/obj/machinery/atmospherics/omni/mixer{
+	tag_east = 2;
+	tag_north = 1;
+	tag_north_con = 0.33;
+	tag_south = 1;
+	tag_south_con = 0.33;
+	tag_west = 1;
+	tag_west_con = 0.34
+	},
+/turf/simulated/floor/tiled/white,
+/area/shuttle/petrov/ship)
 "ky" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/cable/cyan{
@@ -5049,6 +5049,8 @@
 /area/maintenance/fourthdeck/aft)
 "kI" = (
 /obj/machinery/computer/shuttle_control{
+	icon_state = "computer";
+	dir = 4;
 	req_access = list(75);
 	shuttle_tag = "Petrov"
 	},
@@ -6750,14 +6752,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
-"nO" = (
-/obj/structure/sign/warning/hot_exhaust,
-/obj/machinery/atmospherics/pipe/simple/visible{
-	icon_state = "intact";
-	dir = 10
-	},
-/turf/simulated/wall/ocp_wall,
-/area/shuttle/petrov/ship)
 "nP" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7765,7 +7759,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/petrov/ship)
 "pI" = (
-/obj/machinery/computer/area_atmos/area,
+/obj/machinery/computer/area_atmos/area{
+	icon_state = "computer";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/petrov/ship)
 "pJ" = (
@@ -7784,10 +7781,6 @@
 	},
 /obj/machinery/light{
 	dir = 8
-	},
-/obj/item/device/radio/intercom{
-	dir = 4;
-	pixel_x = -22
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/fore)
@@ -7983,10 +7976,6 @@
 	},
 /turf/simulated/wall/prepainted,
 /area/crew_quarters/laundry)
-"qh" = (
-/obj/machinery/atmospherics/pipe/simple/visible,
-/turf/simulated/floor/tiled/white,
-/area/shuttle/petrov/ship)
 "qi" = (
 /obj/effect/floor_decal/corner/blue{
 	dir = 4
@@ -9001,15 +8990,6 @@
 	name = "Docking Port Airlock";
 	req_access = list(13)
 	},
-/obj/machinery/access_button{
-	command = "cycle_exterior";
-	frequency = 1331;
-	master_tag = "nuke_shuttle_dock_airlock";
-	name = "exterior access button";
-	pixel_x = -6;
-	pixel_y = 24;
-	req_one_access = list(13,80)
-	},
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor,
 /area/hallway/primary/fourthdeck/fore)
@@ -9067,15 +9047,6 @@
 	dir = 9
 	},
 /obj/item/device/radio/beacon,
-/obj/machinery/access_button{
-	command = "cycle_interior";
-	frequency = 1331;
-	master_tag = "nuke_shuttle_dock_airlock";
-	name = "interior access button";
-	pixel_x = -28;
-	pixel_y = 24;
-	req_one_access = list(13,80)
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 9
 	},
@@ -9096,7 +9067,7 @@
 /area/hallway/primary/fourthdeck/fore)
 "sr" = (
 /obj/machinery/computer/teleporter{
-	dir = 1
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/teleporter/fourthdeck)
@@ -9274,6 +9245,17 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/center)
+"sE" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1331;
+	icon_state = "door_locked";
+	id_tag = "nuke_shuttle_dock_inner";
+	locked = 1;
+	name = "Docking Port Airlock";
+	req_access = list(13)
+	},
+/turf/simulated/floor/plating,
+/area/hallway/primary/fourthdeck/fore)
 "sF" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10249,8 +10231,16 @@
 /turf/space,
 /area/space)
 "tM" = (
-/obj/structure/sign/warning/airlock,
-/turf/simulated/wall/r_wall/prepainted,
+/obj/machinery/shield_diffuser,
+/obj/machinery/door/airlock/external{
+	frequency = 1331;
+	icon_state = "door_locked";
+	id_tag = "nuke_shuttle_dock_outer";
+	locked = 1;
+	name = "Docking Port Airlock";
+	req_access = list(13)
+	},
+/turf/simulated/floor,
 /area/hallway/primary/fourthdeck/fore)
 "tN" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -10314,13 +10304,17 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/effect/floor_decal/corner/white{
 	dir = 8
+	},
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	frequency = 1331;
+	master_tag = "nuke_shuttle_dock_airlock";
+	name = "interior access button";
+	pixel_x = -23;
+	pixel_y = -22;
+	req_one_access = list(13,80)
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/fore)
@@ -10328,6 +10322,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/corner/blue,
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 22
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/fore)
 "tV" = (
@@ -11943,7 +11941,10 @@
 	icon_state = "corner_white";
 	dir = 5
 	},
-/obj/item/modular_computer/console/preset/dock,
+/obj/item/modular_computer/console/preset/dock{
+	icon_state = "console";
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/deckofficer)
 "wT" = (
@@ -16102,7 +16103,10 @@
 /turf/simulated/floor/plating,
 /area/vacant/monitoring)
 "EL" = (
-/obj/item/modular_computer/console/preset/security,
+/obj/item/modular_computer/console/preset/security{
+	icon_state = "console";
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/vacant/monitoring)
 "EM" = (
@@ -18193,7 +18197,10 @@
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
 "Jb" = (
-/obj/machinery/computer/shuttle_control/explore/guppy,
+/obj/machinery/computer/shuttle_control/explore/guppy{
+	icon_state = "computer";
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
 "Jc" = (
@@ -18763,17 +18770,6 @@
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/security/checkpoint2)
-"KP" = (
-/obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/visible{
-	icon_state = "intact";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
-/area/shuttle/petrov/ship)
 "KS" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -18788,25 +18784,19 @@
 /obj/structure/sign/solgov,
 /turf/simulated/wall/r_wall/hull,
 /area/hallway/primary/fourthdeck/center)
-"Le" = (
+"Ln" = (
+/obj/structure/sign/warning/hot_exhaust,
 /obj/machinery/atmospherics/pipe/simple/visible{
 	icon_state = "intact";
-	dir = 4
+	dir = 10
 	},
-/turf/simulated/wall/titanium,
+/turf/simulated/wall/ocp_wall,
 /area/shuttle/petrov/ship)
-"Li" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 8
+"Ly" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
 	},
-/turf/simulated/wall/titanium,
-/area/shuttle/petrov/ship)
-"Mj" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	icon_state = "intact";
-	dir = 6
-	},
-/turf/simulated/wall/titanium,
+/turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "MA" = (
 /obj/effect/floor_decal/corner/brown{
@@ -18836,6 +18826,13 @@
 "MH" = (
 /turf/simulated/wall/r_wall/hull,
 /area/quartermaster/expedition/storage)
+"Nd" = (
+/obj/effect/floor_decal/corner/blue/diagonal{
+	dir = 4
+	},
+/obj/machinery/vending/hotfood,
+/turf/simulated/floor/tiled/dark,
+/area/vacant/mess)
 "Nm" = (
 /obj/machinery/door/blast/shutters{
 	density = 0;
@@ -18881,6 +18878,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/expedition/storage)
+"NJ" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/outline/blue,
+/turf/simulated/floor/tiled/white,
+/area/shuttle/petrov/ship)
 "NK" = (
 /obj/structure/sign/warning/docking_area,
 /turf/simulated/wall/r_wall/hull,
@@ -18918,6 +18922,34 @@
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/security/checkpoint2)
+"Oo" = (
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible{
+	icon_state = "intact";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/shuttle/petrov/ship)
+"Oq" = (
+/obj/machinery/atmospherics/pipe/simple/visible,
+/turf/simulated/floor/tiled/white,
+/area/shuttle/petrov/ship)
+"Ox" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
+	},
+/turf/simulated/wall/titanium,
+/area/shuttle/petrov/ship)
+"OJ" = (
+/obj/item/modular_computer/console/preset/security{
+	icon_state = "console";
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/security/checkpoint2)
 "OX" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/security/checkpoint2)
@@ -18942,9 +18974,13 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
-"Pw" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
+"Pt" = (
+/obj/machinery/atmospherics/tvalve/digital{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	icon_state = "warningcorner";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
@@ -18990,6 +19026,27 @@
 /obj/item/modular_computer/console/preset/security,
 /turf/simulated/floor/tiled/dark,
 /area/security/checkpoint2)
+"QB" = (
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1331;
+	master_tag = "nuke_shuttle_dock_airlock";
+	name = "exterior access button";
+	pixel_x = -6;
+	pixel_y = 19;
+	req_one_access = list(13,80)
+	},
+/obj/machinery/shield_diffuser,
+/obj/machinery/door/airlock/external{
+	frequency = 1331;
+	icon_state = "door_locked";
+	id_tag = "nuke_shuttle_dock_outer";
+	locked = 1;
+	name = "Docking Port Airlock";
+	req_access = list(13)
+	},
+/turf/simulated/floor,
+/area/hallway/primary/fourthdeck/fore)
 "QI" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -19005,12 +19062,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
-"Rc" = (
+"Re" = (
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/fourthdeck/fore)
+"Rh" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	icon_state = "intact";
 	dir = 9
 	},
-/turf/simulated/wall/titanium,
+/turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "Rl" = (
 /obj/machinery/door/firedoor/border_only,
@@ -19060,6 +19121,10 @@
 /obj/structure/sign/warning/high_voltage,
 /turf/simulated/wall/r_wall/prepainted,
 /area/security/checkpoint2)
+"Rp" = (
+/obj/effect/wingrille_spawn/reinforced/full,
+/turf/simulated/floor/plating,
+/area/hallway/primary/fourthdeck/fore)
 "RJ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -19085,13 +19150,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
-"RO" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/outline/red,
-/turf/simulated/floor/tiled/white,
-/area/shuttle/petrov/ship)
 "RQ" = (
 /turf/simulated/wall/r_wall/hull,
 /area/storage/auxillary/starboard)
@@ -19103,16 +19161,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
-"Sl" = (
-/obj/machinery/atmospherics/tvalve/digital{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/warning/corner{
-	icon_state = "warningcorner";
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
-/area/shuttle/petrov/ship)
 "Sm" = (
 /obj/machinery/mining/brace{
 	dir = 8
@@ -19131,6 +19179,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition/storage)
+"SA" = (
+/obj/structure/sign/warning/airlock,
+/turf/simulated/wall/prepainted,
+/area/hallway/primary/fourthdeck/fore)
 "SD" = (
 /obj/machinery/door/blast/shutters{
 	density = 0;
@@ -19153,6 +19205,16 @@
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/security/checkpoint2)
+"SZ" = (
+/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/shuttle/petrov/ship)
 "Tc" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -19219,16 +19281,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/unused)
-"TX" = (
-/obj/machinery/atmospherics/pipe/simple/visible,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white,
-/area/shuttle/petrov/ship)
 "Uq" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 8
@@ -19244,6 +19296,13 @@
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/quartermaster/unused)
+"Vd" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	icon_state = "intact";
+	dir = 6
+	},
+/turf/simulated/wall/titanium,
+/area/shuttle/petrov/ship)
 "Vr" = (
 /turf/simulated/wall/r_wall/hull,
 /area/maintenance/fourthdeck/aft)
@@ -19265,6 +19324,13 @@
 "Wh" = (
 /turf/simulated/wall/r_wall/hull,
 /area/quartermaster/office)
+"Wi" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	icon_state = "intact";
+	dir = 9
+	},
+/turf/simulated/wall/titanium,
+/area/shuttle/petrov/ship)
 "Wv" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/cable/green{
@@ -19345,6 +19411,13 @@
 	},
 /turf/simulated/wall/prepainted,
 /area/quartermaster/office)
+"Yp" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	icon_state = "intact";
+	dir = 4
+	},
+/turf/simulated/wall/titanium,
+/area/shuttle/petrov/ship)
 "YA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -19354,13 +19427,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
-"Zr" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	icon_state = "intact";
-	dir = 9
-	},
-/turf/simulated/floor/tiled/white,
-/area/shuttle/petrov/ship)
 "ZG" = (
 /turf/simulated/wall/r_wall/hull,
 /area/hallway/primary/fourthdeck/center)
@@ -28353,7 +28419,7 @@ aa
 aa
 aa
 WZ
-WZ
+QB
 sj
 tM
 WZ
@@ -28552,15 +28618,15 @@ WZ
 WZ
 WZ
 WZ
-aa
-aa
+Rp
+Rp
 WZ
 qP
 sk
 tN
 WZ
-aa
-aa
+Rp
+Rp
 WZ
 WZ
 WZ
@@ -29564,10 +29630,10 @@ ej
 le
 le
 ow
-le
-le
+SA
+sE
 so
-tS
+sE
 vl
 wB
 le
@@ -32391,7 +32457,7 @@ ki
 lf
 mo
 nx
-oF
+Re
 oF
 oB
 sy
@@ -32587,13 +32653,13 @@ eq
 fp
 gg
 hg
-hW
+Nd
 jh
 kj
 lf
 mo
 ny
-oF
+Re
 pV
 oB
 sy
@@ -33611,7 +33677,7 @@ ug
 OX
 wI
 ye
-Qq
+OJ
 OX
 OX
 Db
@@ -48542,8 +48608,8 @@ aa
 aa
 aa
 aa
-Mj
-Rc
+Vd
+Wi
 fV
 fV
 fV
@@ -48744,15 +48810,15 @@ aa
 aa
 aa
 aa
-Le
+Yp
 gS
 hI
-RO
 iQ
+NJ
 kP
 lT
 nb
-iQ
+NJ
 py
 qJ
 sb
@@ -48946,15 +49012,15 @@ aa
 aa
 aa
 aa
-Li
-KP
+Ox
+Oo
 hJ
 iR
-Sl
+Pt
 rY
 lV
-jr
-Zr
+kv
+Rh
 py
 qK
 sc
@@ -49148,13 +49214,13 @@ aa
 aa
 aa
 aa
-nO
+Ln
 gT
 hK
 iS
 jS
 kT
-Pw
+Ly
 nc
 om
 pB
@@ -49557,9 +49623,9 @@ gV
 hM
 iU
 jU
-TX
-qh
-Zr
+SZ
+Oq
+Rh
 lQ
 pD
 lQ

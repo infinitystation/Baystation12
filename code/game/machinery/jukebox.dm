@@ -8,6 +8,42 @@
 	src.title = title
 	src.track = track
 
+GLOBAL_LIST_INIT(music_tracks, list(
+		new/datum/track("A light in the Darkness",	/music_track/torch),
+		new/datum/track("Beyond",					/music_track/ambispace),
+		new/datum/track("Blues in Velvet Room",		/music_track/bluesinvelvetroom),
+		new/datum/track("Creep",					/music_track/creep),
+		new/datum/track("Clouds of Fire",			/music_track/clouds_of_fire),
+		new/datum/track("Comet Haley",				/music_track/comet_haley),
+		new/datum/track("D`Bert",					/music_track/dilbert),
+		new/datum/track("D`Fort",					/music_track/df_theme),
+		new/datum/track("Endless Space",			/music_track/endless_space),
+		new/datum/track("Elevator",					/music_track/elevator),
+		new/datum/track("Floating",					/music_track/floating),
+		new/datum/track("Maschine Klash",			/music_track/digit_one),
+		new/datum/track("Hurt",						/music_track/hurt),
+		new/datum/track("High Radiation",			/music_track/radiation),
+		new/datum/track("Humanity Stars",			/music_track/human),
+		new/datum/track("Lasers",					/music_track/lasers),
+		new/datum/track("Lone Digger",				/music_track/digger),
+		new/datum/track("Memories of Lysendraa",	/music_track/lysendraa),
+		new/datum/track("Make This Right",			/music_track/right),
+		new/datum/track("Marhaba",					/music_track/marhaba),
+		new/datum/track("Night Call",				/music_track/nightcall),
+		new/datum/track("Night City",				/music_track/miami),
+		new/datum/track("Fleet Party Theme",		/music_track/one_loop),
+		new/datum/track("Salute John",				/music_track/salutjohn),
+		new/datum/track("Space Oddity",				/music_track/space_oddity),
+		new/datum/track("Scratch",					/music_track/level3_mod),
+		new/datum/track("Trai`Tor",					/music_track/absconditus),
+		new/datum/track("Treacherous Voyage ",		/music_track/treacherous_voyage),
+		new/datum/track("Through the Times",		/music_track/chasing_time),
+		new/datum/track("Thunderdome",				/music_track/thunderdome),
+		new/datum/track("Wake",						/music_track/wake),
+		new/datum/track("Wonderful Lady",			/music_track/wonderful),
+		new/datum/track("When We Stand Together",	/music_track/together),
+))
+
 datum/track/proc/GetTrack()
 	if(ispath(track, /music_track))
 		var/music_track/music_track = decls_repository.get_decl(track)
@@ -41,40 +77,7 @@ datum/track/proc/GetTrack()
 	var/datum/sound_token/sound_token
 
 	var/datum/track/current_track
-	var/list/datum/track/tracks = list(
-		new/datum/track("A light in the Darkness",	/music_track/torch),
-		new/datum/track("Beyond",					/music_track/ambispace),
-		new/datum/track("Blues in Velvet Room",		/music_track/bluesinvelvetroom),
-		new/datum/track("Creep",					/music_track/creep),
-		new/datum/track("Clouds of Fire",			/music_track/clouds_of_fire),
-		new/datum/track("Comet Haley",				/music_track/comet_haley),
-		new/datum/track("D`Bert",					/music_track/dilbert),
-		new/datum/track("D`Fort",					/music_track/df_theme),
-		new/datum/track("Endless Space",			/music_track/endless_space),
-		new/datum/track("Elevator",					/music_track/elevator),
-		new/datum/track("Floating",					/music_track/floating),
-		new/datum/track("Maschine Klash",			/music_track/digit_one),
-		new/datum/track("Hurt",						/music_track/hurt),
-		new/datum/track("High Radiation",			/music_track/radiation),
-		new/datum/track("Humanity Stars",			/music_track/human),
-		new/datum/track("Lasers",					/music_track/lasers),
-		new/datum/track("Lone Digger",				/music_track/digger),
-		new/datum/track("Memories of Lysendraa",	/music_track/lysendraa),
-		new/datum/track("Make This Right",			/music_track/right),
-		new/datum/track("Marhaba",					/music_track/marhaba),
-		new/datum/track("Night Call",				/music_track/nightcall),
-		new/datum/track("Night City",				/music_track/miami),
-		new/datum/track("Fleet Party Theme",		/music_track/one_loop),
-		new/datum/track("Salute John",				/music_track/salutjohn),
-		new/datum/track("Space Oddity",				/music_track/space_oddity),
-		new/datum/track("Scratch",					/music_track/level3_mod),
-		new/datum/track("Trai`Tor",					/music_track/absconditus),
-		new/datum/track("Treacherous Voyage ",		/music_track/treacherous_voyage),
-		new/datum/track("Through the Times",		/music_track/chasing_time),
-		new/datum/track("Thunderdome",				/music_track/thunderdome),
-		new/datum/track("Wonderful Lady",			/music_track/wonderful),
-		new/datum/track("When We Stand Together",	/music_track/together),
-	)
+	var/list/datum/track/tracks
 
 /obj/machinery/media/jukebox/old
 	name = "space jukebox"
@@ -89,6 +92,10 @@ datum/track/proc/GetTrack()
 	..()
 	update_icon()
 	sound_id = "[/obj/machinery/media/jukebox]_[sequential_id(/obj/machinery/media/jukebox)]"
+
+/obj/machinery/media/jukebox/Initialize()
+	. = ..()
+	tracks = tracks || GLOB.music_tracks.Copy()
 
 /obj/machinery/media/jukebox/Destroy()
 	StopPlaying()

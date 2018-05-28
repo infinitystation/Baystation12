@@ -134,8 +134,6 @@
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
 		)
 
-	..()
-
 /obj/item/weapon/rig/light/ninja/verb/rename_suit()
 	set name = "Name Ninja Suit"
 	set desc = "Rename your black voidsuit."
