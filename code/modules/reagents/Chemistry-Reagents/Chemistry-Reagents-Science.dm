@@ -2,7 +2,7 @@
 	name = "A001"
 	taste_description = "slime"
 	taste_mult = 2
-	description = "An experimental reagent. Causes haevy mutations. Don't smoke."
+	description = "An experimental reagent. Causes heavy mutations. Don't smoke."
 	reagent_state = SOLID
 	color = "#a8a8a8"
 
