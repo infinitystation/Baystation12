@@ -2074,6 +2074,11 @@
  *  whole item, transferring the reagents and deleting the whole item, which may
  *  have performance implications.
  */
+
+/obj/item/weapon/reagent_containers/food/snacks/slice/New()
+	..()
+	Initialize()
+
 /obj/item/weapon/reagent_containers/food/snacks/slice/Initialize()
 	. = ..()
 	if(filled)
