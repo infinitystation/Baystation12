@@ -68,17 +68,10 @@
 	cost = 1
 
 /datum/gear/accessory/pda
-	display_name = "PDA selection"
+	display_name = "PDA"
 	sort_category = "Utility"
-	path = /obj/item/device/pda
+	path = /obj/item/modular_computer/pda
 	cost = 2
-
-/datum/gear/accessory/pda/New()
-	..()
-	var/pda = list()
-	pda["micro computer"] = /obj/item/device/pda
-	pda["wrist computer"] = /obj/item/device/pda/wrist
-	gear_tweaks += new/datum/gear_tweak/path(pda)
 
 
 ///////////

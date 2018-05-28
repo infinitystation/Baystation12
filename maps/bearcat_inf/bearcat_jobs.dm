@@ -51,7 +51,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/chief_engineer
 
 /datum/job/doctor
-	title = "Doc"
+	title = "Doctor"
 	supervisors = "the Captain and your idea of Hippocratic Oath"
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/doc
 	alt_titles = list(
@@ -108,7 +108,7 @@
 	spawn_positions = 1
 
 /datum/job/officer
-	title = "Security Guard"
+	title = "Security"
 	supervisors = "the Captain and Your laws."
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/security
 	total_positions = 1
@@ -139,7 +139,7 @@
 	name = BEARCAT_OUTFIT_JOB_NAME("Captain")
 	uniform = /obj/item/clothing/under/casual_pants/classicjeans
 	shoes = /obj/item/clothing/shoes/black
-	pda_type = /obj/item/device/pda/captain
+	pda_type = /obj/item/modular_computer/pda/captain
 	r_pocket = /obj/item/device/radio
 	id_type = /obj/item/weapon/card/id/gold
 
@@ -161,7 +161,7 @@
 	suit = /obj/item/clothing/suit/storage/hazardvest
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/workboots
-	pda_type = /obj/item/device/pda/heads/ce
+	pda_type = /obj/item/modular_computer/pda/heads/ce
 	l_hand = /obj/item/weapon/wrench
 	belt = /obj/item/weapon/storage/belt/utility/full
 	id_type = /obj/item/weapon/card/id/engineering/head
@@ -169,7 +169,7 @@
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/bearcat/doc
-	name = BEARCAT_OUTFIT_JOB_NAME("Ship's Doc")
+	name = BEARCAT_OUTFIT_JOB_NAME("Doctor")
 	uniform = /obj/item/clothing/under/det/black
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	glasses = /obj/item/clothing/glasses/hud/health
@@ -207,7 +207,7 @@
 	id_type = /obj/item/weapon/card/id/cargo/head
 
 /decl/hierarchy/outfit/job/bearcat/security
-	name = BEARCAT_OUTFIT_JOB_NAME("Security Guard")
+	name = BEARCAT_OUTFIT_JOB_NAME("Security")
 	uniform = /obj/item/clothing/under/syndicate
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/sunglasses/big
