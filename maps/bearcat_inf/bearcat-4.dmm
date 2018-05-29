@@ -232,7 +232,6 @@
 /obj/item/device/flashlight,
 /obj/item/device/flashlight,
 /obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/glowstick/orange,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/pirats/shuttle)
@@ -732,7 +731,6 @@
 /area/pirats/shuttle)
 "bL" = (
 /obj/structure/table/rack,
-/obj/item/weapon/pickaxe/hand,
 /turf/simulated/floor/shuttle/darkred,
 /area/pirats/shuttle)
 "bM" = (

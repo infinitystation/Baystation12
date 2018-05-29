@@ -56,8 +56,8 @@
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/doc
 	alt_titles = list(
 		"Surgeon")
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	hud_icon = "hudmedicaldoctor"
 
 /datum/job/hop
@@ -65,7 +65,12 @@
 	supervisors = "the Captain and the Merchant Code"
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/mate
 	hud_icon = "hudheadofpersonnel"
-
+	access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers,
+			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
+			            access_all_personal_lockers, access_maint_tunnels, access_bar, access_janitor, access_construction, access_morgue,
+			            access_crematorium, access_kitchen, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_hydroponics, access_lawyer,
+			            access_chapel_office, access_library, access_research, access_mining, access_heads_vault, access_mining_station,
+			            access_hop, access_RC_announce, access_keycard_auth, access_gateway, access_fist_mate)
 /datum/job/bartender
 	title = "Bartender"
 	supervisors = "the Captain"
@@ -75,13 +80,13 @@
 
 /datum/job/assistant
 	title = "Deck Hand"
-	supervisors = "literally everyone, you bottom feeder"
+	supervisors = "Quartermaster, the Captain and the First Mate"
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/hand
 	alt_titles = list(
 		"Steward" = /decl/hierarchy/outfit/job/bearcat/hand/cook,
 		"Cargo Hand",
 		"Digger" = /decl/hierarchy/outfit/job/bearcat/hand/digger,
-		"Passenger")
+		)
 	hud_icon = "hudcargotechnician"
 
 /datum/job/engineer
@@ -102,14 +107,14 @@
 
 /datum/job/qm
 	title = "Quartermaster"
-	supervisors = "your greed and the Captain."
+	supervisors = "your greed, the Captain and the First Mate."
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/qm
 	total_positions = 1
 	spawn_positions = 1
 
 /datum/job/officer
 	title = "Security"
-	supervisors = "the Captain and Your laws."
+	supervisors = "the Captain and his laws."
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/security
 	total_positions = 1
 	spawn_positions = 1
