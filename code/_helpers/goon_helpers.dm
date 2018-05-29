@@ -113,267 +113,118 @@
 	var/icon/I = getFlatIcon(thing)
 	return icon2html(I, target)
 
+GLOBAL_LIST_INIT(c1251_to_utf_table, list(
+	"А" = "0410", "а" = "0430",
+	"Б" = "0411", "б" = "0431",
+	"В" = "0412", "в" = "0432",
+	"Г" = "0413", "г" = "0433",
+	"Д" = "0414", "д" = "0434",
+	"Е" = "0415", "е" = "0435",
+	"Ж" = "0416", "ж" = "0436",
+	"З" = "0417", "з" = "0437",
+	"И" = "0418", "и" = "0438",
+	"Й" = "0419", "й" = "0439",
+	"К" = "041a", "к" = "043a",
+	"Л" = "041b", "л" = "043b",
+	"М" = "041c", "м" = "043c",
+	"Н" = "041d", "н" = "043d",
+	"О" = "041e", "о" = "043e",
+	"П" = "041f", "п" = "043f",
+	"Р" = "0420", "р" = "0440",
+	"С" = "0421", "с" = "0441",
+	"Т" = "0422", "т" = "0442",
+	"У" = "0423", "у" = "0443",
+	"Ф" = "0424", "ф" = "0444",
+	"Х" = "0425", "х" = "0445",
+	"Ц" = "0426", "ц" = "0446",
+	"Ч" = "0427", "ч" = "0447",
+	"Ш" = "0428", "ш" = "0448",
+	"Щ" = "0429", "щ" = "0449",
+	"Ъ" = "042a", "ъ" = "044a",
+	"Ы" = "042b", "ы" = "044b",
+	"Ь" = "042c", "ь" = "044c",
+	"Э" = "042d", "э" = "044d",
+	"Ю" = "042e", "ю" = "044e",
+	"Я" = "042f", "я" = "044f",
+
+	"Ё" = "0401", "ё" = "0451",
+
+	"Ѓ" = "0403", "Є" = "0404",
+	"Ї" = "0407", "ѓ" = "0453",
+	"є" = "0454", "ї" = "0457",
+	"Ґ" = "0490", "ґ" = "0491",
+	"•" = "2022", "–" = "2013",
+	"—" = "2014", "№" = "2116"
+))
+
+GLOBAL_LIST_INIT(j1251_to_utf_table, list(
+	"c0" = "0410", "e0" = "0430",
+	"c1" = "0411", "e1" = "0431",
+	"c2" = "0412", "e2" = "0432",
+	"c3" = "0413", "e3" = "0433",
+	"c4" = "0414", "e4" = "0434",
+	"c5" = "0415", "e5" = "0435",
+	"c6" = "0416", "e6" = "0436",
+	"c7" = "0417", "e7" = "0437",
+	"c8" = "0418", "e8" = "0438",
+	"c9" = "0419", "e9" = "0439",
+	"ca" = "041a", "ea" = "043a",
+	"cb" = "041b", "eb" = "043b",
+	"cc" = "041c", "ec" = "043c",
+	"cd" = "041d", "ed" = "043d",
+	"ce" = "041e", "ee" = "043e",
+	"cf" = "041f", "ef" = "043f",
+	"d0" = "0420", "f0" = "0440",
+	"d1" = "0421", "f1" = "0441",
+	"d2" = "0422", "f2" = "0442",
+	"d3" = "0423", "f3" = "0443",
+	"d4" = "0424", "f4" = "0444",
+	"d5" = "0425", "f5" = "0445",
+	"d6" = "0426", "f6" = "0446",
+	"d7" = "0427", "f7" = "0447",
+	"d8" = "0428", "f8" = "0448",
+	"d9" = "0429", "f9" = "0449",
+	"da" = "042a", "fa" = "044a",
+	"db" = "042b", "fb" = "044b",
+	"dc" = "042c", "fc" = "044c",
+	"dd" = "042d", "fd" = "044d",
+	"de" = "042e", "fe" = "044e",
+	"df" = "042f", "ff" = "044f",
+
+	"a8" = "0401", "b8" = "0451",
+
+	"81" = "0403", "aa" = "0404",
+	"af" = "0407", "83" = "0453",
+	"ba" = "0454", "bf" = "0457",
+	"a5" = "0490", "b4" = "0491",
+	"95" = "2022", "96" = "2013",
+	"97" = "2014", "b9" = "2116"
+))
+
 /proc/extA2U(t)
+	if(!t)
+		return
+
+	t = replacetext(t, "&#255;", "\\u044f")
+	t = replacetext(t, "&#1103;", "\\u044f")
+
 	if(DM_VERSION < 511)
-		// Спецсимволы
-		t = replacetextEx(t, "\\x81", "\\u0403")//403h
-		t = replacetextEx(t, "\\xaa", "\\u0404")//404h
-		t = replacetextEx(t, "\\xaf", "\\u0407")//407h
-		t = replacetextEx(t, "\\x83", "\\u0453")//453h
-		t = replacetextEx(t, "\\xba", "\\u0454")//454h
-		t = replacetextEx(t, "\\xbf", "\\u0457")//457h
-		t = replacetextEx(t, "\\xa5", "\\u0490")//490h
-		t = replacetextEx(t, "\\xb4", "\\u0491")//491h
-		t = replacetextEx(t, "\\x95", "\\u2022")//2022h
-		t = replacetextEx(t, "\\x96", "\\u2013")//2013h
-		t = replacetextEx(t, "\\x97", "\\u2014")//2014h
-		t = replacetextEx(t, "\\xb9", "\\u2116")//2116h
-		//Ё, ё
-		t = replacetextEx(t, "\\xa8", "\\u0401")
-		t = replacetextEx(t, "\\xb8", "\\u0451")
-		//А-П
-		t = replacetextEx(t, "\\xc0", "\\u0410")
-		t = replacetextEx(t, "\\xc1", "\\u0411")
-		t = replacetextEx(t, "\\xc2", "\\u0412")
-		t = replacetextEx(t, "\\xc3", "\\u0413")
-		t = replacetextEx(t, "\\xc4", "\\u0414")
-		t = replacetextEx(t, "\\xc5", "\\u0415")
-		t = replacetextEx(t, "\\xc6", "\\u0416")
-		t = replacetextEx(t, "\\xc7", "\\u0417")
-		t = replacetextEx(t, "\\xc8", "\\u0418")
-		t = replacetextEx(t, "\\xc9", "\\u0419")
-		t = replacetextEx(t, "\\xca", "\\u041a")
-		t = replacetextEx(t, "\\xcb", "\\u041b")
-		t = replacetextEx(t, "\\xcc", "\\u041c")
-		t = replacetextEx(t, "\\xcd", "\\u041d")
-		t = replacetextEx(t, "\\xce", "\\u041e")
-		t = replacetextEx(t, "\\xcf", "\\u041f")
-		//Р-Я
-		t = replacetextEx(t, "\\xd0", "\\u0420")
-		t = replacetextEx(t, "\\xd1", "\\u0421")
-		t = replacetextEx(t, "\\xd2", "\\u0422")
-		t = replacetextEx(t, "\\xd3", "\\u0423")
-		t = replacetextEx(t, "\\xd4", "\\u0424")
-		t = replacetextEx(t, "\\xd5", "\\u0425")
-		t = replacetextEx(t, "\\xd6", "\\u0426")
-		t = replacetextEx(t, "\\xd7", "\\u0427")
-		t = replacetextEx(t, "\\xd8", "\\u0428")
-		t = replacetextEx(t, "\\xd9", "\\u0429")
-		t = replacetextEx(t, "\\xda", "\\u042a")
-		t = replacetextEx(t, "\\xdb", "\\u042b")
-		t = replacetextEx(t, "\\xdc", "\\u042c")
-		t = replacetextEx(t, "\\xdd", "\\u042d")
-		t = replacetextEx(t, "\\xde", "\\u042e")
-		t = replacetextEx(t, "\\xdf", "\\u042f")
-		//а-п
-		t = replacetextEx(t, "\\xe0", "\\u0430")
-		t = replacetextEx(t, "\\xe1", "\\u0431")
-		t = replacetextEx(t, "\\xe2", "\\u0432")
-		t = replacetextEx(t, "\\xe3", "\\u0433")
-		t = replacetextEx(t, "\\xe4", "\\u0434")
-		t = replacetextEx(t, "\\xe5", "\\u0435")
-		t = replacetextEx(t, "\\xe6", "\\u0436")
-		t = replacetextEx(t, "\\xe7", "\\u0437")
-		t = replacetextEx(t, "\\xe8", "\\u0438")
-		t = replacetextEx(t, "\\xe9", "\\u0439")
-		t = replacetextEx(t, "\\xea", "\\u043a")
-		t = replacetextEx(t, "\\xeb", "\\u043b")
-		t = replacetextEx(t, "\\xec", "\\u043c")
-		t = replacetextEx(t, "\\xed", "\\u043d")
-		t = replacetextEx(t, "\\xee", "\\u043e")
-		t = replacetextEx(t, "\\xef", "\\u043f")
-		//р-я
-		t = replacetextEx(t, "\\xf0", "\\u0440")
-		t = replacetextEx(t, "\\xf1", "\\u0441")
-		t = replacetextEx(t, "\\xf2", "\\u0442")
-		t = replacetextEx(t, "\\xf3", "\\u0443")
-		t = replacetextEx(t, "\\xf4", "\\u0444")
-		t = replacetextEx(t, "\\xf5", "\\u0445")
-		t = replacetextEx(t, "\\xf6", "\\u0446")
-		t = replacetextEx(t, "\\xf7", "\\u0447")
-		t = replacetextEx(t, "\\xf8", "\\u0448")
-		t = replacetextEx(t, "\\xf9", "\\u0449")
-		t = replacetextEx(t, "\\xfa", "\\u044a")
-		t = replacetextEx(t, "\\xfb", "\\u044b")
-		t = replacetextEx(t, "\\xfc", "\\u044c")
-		t = replacetextEx(t, "\\xfd", "\\u044d")
-		t = replacetextEx(t, "\\xfe", "\\u044e")
+		for(var/s in GLOB.j1251_to_utf_table)
+			t = replacetext(t, "\\x[s]", "\\u[GLOB.j1251_to_utf_table[s]]")
 	else
-		// Спецсимволы
-		t = replacetextEx(t, "\\u0081", "\\u0403")//403h
-		t = replacetextEx(t, "\\u00aa", "\\u0404")//404h
-		t = replacetextEx(t, "\\u00af", "\\u0407")//407h
-		t = replacetextEx(t, "\\u0083", "\\u0453")//453h
-		t = replacetextEx(t, "\\u00ba", "\\u0454")//454h
-		t = replacetextEx(t, "\\u00bf", "\\u0457")//457h
-		t = replacetextEx(t, "\\u00a5", "\\u0490")//490h
-		t = replacetextEx(t, "\\u00b4", "\\u0491")//491h
-		t = replacetextEx(t, "\\u0095", "\\u2022")//2022h
-		t = replacetextEx(t, "\\u0096", "\\u2013")//2013h
-		t = replacetextEx(t, "\\u0097", "\\u2014")//2014h
-		t = replacetextEx(t, "\\u00b9", "\\u2116")//2116h
-		//Ё, ё
-		t = replacetextEx(t, "\\u00a8", "\\u0401")
-		t = replacetextEx(t, "\\u00b8", "\\u0451")
-		//А-П
-		t = replacetextEx(t, "\\u00c0", "\\u0410")
-		t = replacetextEx(t, "\\u00c1", "\\u0411")
-		t = replacetextEx(t, "\\u00c2", "\\u0412")
-		t = replacetextEx(t, "\\u00c3", "\\u0413")
-		t = replacetextEx(t, "\\u00c4", "\\u0414")
-		t = replacetextEx(t, "\\u00c5", "\\u0415")
-		t = replacetextEx(t, "\\u00c6", "\\u0416")
-		t = replacetextEx(t, "\\u00c7", "\\u0417")
-		t = replacetextEx(t, "\\u00c8", "\\u0418")
-		t = replacetextEx(t, "\\u00c9", "\\u0419")
-		t = replacetextEx(t, "\\u00ca", "\\u041a")
-		t = replacetextEx(t, "\\u00cb", "\\u041b")
-		t = replacetextEx(t, "\\u00cc", "\\u041c")
-		t = replacetextEx(t, "\\u00cd", "\\u041d")
-		t = replacetextEx(t, "\\u00ce", "\\u041e")
-		t = replacetextEx(t, "\\u00cf", "\\u041f")
-		//Р-Я
-		t = replacetextEx(t, "\\u00d0", "\\u0420")
-		t = replacetextEx(t, "\\u00d1", "\\u0421")
-		t = replacetextEx(t, "\\u00d2", "\\u0422")
-		t = replacetextEx(t, "\\u00d3", "\\u0423")
-		t = replacetextEx(t, "\\u00d4", "\\u0424")
-		t = replacetextEx(t, "\\u00d5", "\\u0425")
-		t = replacetextEx(t, "\\u00d6", "\\u0426")
-		t = replacetextEx(t, "\\u00d7", "\\u0427")
-		t = replacetextEx(t, "\\u00d8", "\\u0428")
-		t = replacetextEx(t, "\\u00d9", "\\u0429")
-		t = replacetextEx(t, "\\u00da", "\\u042a")
-		t = replacetextEx(t, "\\u00db", "\\u042b")
-		t = replacetextEx(t, "\\u00dc", "\\u042c")
-		t = replacetextEx(t, "\\u00dd", "\\u042d")
-		t = replacetextEx(t, "\\u00de", "\\u042e")
-		t = replacetextEx(t, "\\u00df", "\\u042f")
-		//а-п
-		t = replacetextEx(t, "\\u00e0", "\\u0430")
-		t = replacetextEx(t, "\\u00e1", "\\u0431")
-		t = replacetextEx(t, "\\u00e2", "\\u0432")
-		t = replacetextEx(t, "\\u00e3", "\\u0433")
-		t = replacetextEx(t, "\\u00e4", "\\u0434")
-		t = replacetextEx(t, "\\u00e5", "\\u0435")
-		t = replacetextEx(t, "\\u00e6", "\\u0436")
-		t = replacetextEx(t, "\\u00e7", "\\u0437")
-		t = replacetextEx(t, "\\u00e8", "\\u0438")
-		t = replacetextEx(t, "\\u00e9", "\\u0439")
-		t = replacetextEx(t, "\\u00ea", "\\u043a")
-		t = replacetextEx(t, "\\u00eb", "\\u043b")
-		t = replacetextEx(t, "\\u00ec", "\\u043c")
-		t = replacetextEx(t, "\\u00ed", "\\u043d")
-		t = replacetextEx(t, "\\u00ee", "\\u043e")
-		t = replacetextEx(t, "\\u00ef", "\\u043f")
-		//р-я
-		t = replacetextEx(t, "\\u00f0", "\\u0440")
-		t = replacetextEx(t, "\\u00f1", "\\u0441")
-		t = replacetextEx(t, "\\u00f2", "\\u0442")
-		t = replacetextEx(t, "\\u00f3", "\\u0443")
-		t = replacetextEx(t, "\\u00f4", "\\u0444")
-		t = replacetextEx(t, "\\u00f5", "\\u0445")
-		t = replacetextEx(t, "\\u00f6", "\\u0446")
-		t = replacetextEx(t, "\\u00f7", "\\u0447")
-		t = replacetextEx(t, "\\u00f8", "\\u0448")
-		t = replacetextEx(t, "\\u00f9", "\\u0449")
-		t = replacetextEx(t, "\\u00fa", "\\u044a")
-		t = replacetextEx(t, "\\u00fb", "\\u044b")
-		t = replacetextEx(t, "\\u00fc", "\\u044c")
-		t = replacetextEx(t, "\\u00fd", "\\u044d")
-		t = replacetextEx(t, "\\u00fe", "\\u044e")
-	t = replacetextEx(t, "&amp;#255;", "\\u044f")
-	t = replacetextEx(t, "&amp;#1103;", "\\u044f")
-	t = replacetextEx(t, "&#255;", "\\u044f")
-	t = replacetextEx(t, "&#1103;", "\\u044f")
+		for(var/s in GLOB.j1251_to_utf_table)
+			t = replacetext(t, "\\u00[s]", "\\u[GLOB.c1251_to_utf_table[s]]")
 	return t
 
 /proc/convert1251_to_utf(t)
-	// Спецсимволы
-	t = replacetextEx(t, "Ѓ", "&#1027;")//403h
-	t = replacetextEx(t, "Є", "&#1028;")//404h
-	t = replacetextEx(t, "Ї", "&#1031;")//407h
-	t = replacetextEx(t, "ѓ", "&#1107;")//453h
-	t = replacetextEx(t, "є", "&#1108;")//454h
-	t = replacetextEx(t, "ї", "&#1031;")//457h
-	t = replacetextEx(t, "Ґ", "&#1168;")//490h
-	t = replacetextEx(t, "ґ", "&#1169;")//491h
-	t = replacetextEx(t, "•", "&#8266;")//2022h
-	t = replacetextEx(t, "–", "&#8211;")//2013h
-	t = replacetextEx(t, "—", "&#8212;")//2014h
-	t = replacetextEx(t, "№", "&#8470;")//2116h
-	// Ё, ё
-	t = replacetextEx(t, "Ё", "&#1025;")
-	t = replacetextEx(t, "ё", "&#1105;")
-	// А-П
-	t = replacetextEx(t, "А", "&#1040;")
-	t = replacetextEx(t, "Б", "&#1041;")
-	t = replacetextEx(t, "В", "&#1042;")
-	t = replacetextEx(t, "Г", "&#1043;")
-	t = replacetextEx(t, "Д", "&#1044;")
-	t = replacetextEx(t, "Е", "&#1045;")
-	t = replacetextEx(t, "Ж", "&#1046;")
-	t = replacetextEx(t, "З", "&#1047;")
-	t = replacetextEx(t, "И", "&#1048;")
-	t = replacetextEx(t, "Й", "&#1049;")
-	t = replacetextEx(t, "К", "&#1050;")
-	t = replacetextEx(t, "Л", "&#1051;")
-	t = replacetextEx(t, "М", "&#1052;")
-	t = replacetextEx(t, "Н", "&#1053;")
-	t = replacetextEx(t, "О", "&#1054;")
-	t = replacetextEx(t, "П", "&#1055;")
-	// Р-Я
-	t = replacetextEx(t, "Р", "&#1056;")
-	t = replacetextEx(t, "С", "&#1057;")
-	t = replacetextEx(t, "Т", "&#1058;")
-	t = replacetextEx(t, "У", "&#1059;")
-	t = replacetextEx(t, "Ф", "&#1060;")
-	t = replacetextEx(t, "Х", "&#1061;")
-	t = replacetextEx(t, "Ц", "&#1062;")
-	t = replacetextEx(t, "Ч", "&#1063;")
-	t = replacetextEx(t, "Ш", "&#1064;")
-	t = replacetextEx(t, "Щ", "&#1065;")
-	t = replacetextEx(t, "Ъ", "&#1066;")
-	t = replacetextEx(t, "Ы", "&#1067;")
-	t = replacetextEx(t, "Ь", "&#1068;")
-	t = replacetextEx(t, "Э", "&#1069;")
-	t = replacetextEx(t, "Ю", "&#1070;")
-	t = replacetextEx(t, "Я", "&#1071;")
-	// а-п
-	t = replacetextEx(t, "а", "&#1072;")
-	t = replacetextEx(t, "б", "&#1073;")
-	t = replacetextEx(t, "в", "&#1074;")
-	t = replacetextEx(t, "г", "&#1075;")
-	t = replacetextEx(t, "д", "&#1076;")
-	t = replacetextEx(t, "е", "&#1077;")
-	t = replacetextEx(t, "ж", "&#1078;")
-	t = replacetextEx(t, "з", "&#1079;")
-	t = replacetextEx(t, "и", "&#1080;")
-	t = replacetextEx(t, "й", "&#1081;")
-	t = replacetextEx(t, "к", "&#1082;")
-	t = replacetextEx(t, "л", "&#1083;")
-	t = replacetextEx(t, "м", "&#1084;")
-	t = replacetextEx(t, "н", "&#1085;")
-	t = replacetextEx(t, "о", "&#1086;")
-	t = replacetextEx(t, "п", "&#1087;")
-	// р-я
-	t = replacetextEx(t, "р", "&#1088;")
-	t = replacetextEx(t, "с", "&#1089;")
-	t = replacetextEx(t, "т", "&#1090;")
-	t = replacetextEx(t, "у", "&#1091;")
-	t = replacetextEx(t, "ф", "&#1092;")
-	t = replacetextEx(t, "х", "&#1093;")
-	t = replacetextEx(t, "ц", "&#1094;")
-	t = replacetextEx(t, "ч", "&#1095;")
-	t = replacetextEx(t, "ш", "&#1096;")
-	t = replacetextEx(t, "щ", "&#1097;")
-	t = replacetextEx(t, "ъ", "&#1098;")
-	t = replacetextEx(t, "ы", "&#1099;")
-	t = replacetextEx(t, "ь", "&#1100;")
-	t = replacetextEx(t, "э", "&#1101;")
-	t = replacetextEx(t, "ю", "&#1102;")
-	t = replacetextEx(t, "я", "&#1103;")
-	t = replacetextEx(t, "&#255;", "&#1103;")
+	if(!t)
+		return
+
+	t = replacetext(t, "&#255;", "&#x044f")
+	t = replacetext(t, "&#1103;", "&#x044f")
+
+	for(var/s in GLOB.c1251_to_utf_table)
+		t = replacetext(t, s, "&#x[GLOB.c1251_to_utf_table[s]];")
 	return t
 
 /client/verb/fix_chat()
