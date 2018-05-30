@@ -2065,6 +2065,9 @@
 	name = "slice of... something"
 	var/whole_path // path for the item from which this slice comes
 	var/filled = FALSE // should the slice spawn with any reagents
+	New()
+		..()
+		Initialize()
 
 /**
  *  Spawn a new slice of food
@@ -2075,9 +2078,6 @@
  *  have performance implications.
  */
 
-/obj/item/weapon/reagent_containers/food/snacks/slice/New()
-	..()
-	Initialize()
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/Initialize()
 	. = ..()
