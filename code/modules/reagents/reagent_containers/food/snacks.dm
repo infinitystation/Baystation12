@@ -2084,7 +2084,7 @@
 			var/reagent_amount = whole.reagents.total_volume/whole.slices_num
 			whole.reagents.trans_to_obj(src, reagent_amount)
 
-		qdel(whole)
+		Destroy(whole)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/meatbread
 	name = "meatbread loaf"
