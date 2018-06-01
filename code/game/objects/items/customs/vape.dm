@@ -37,14 +37,15 @@
 	if (wape_status == "closed")
 		wape_status = "off"
 	else if (wape_status == "on")
-		to_chat(user, "<span class='notice'>You extend the plastic blade with a quick flick of your wrist.</span>")
+		to_chat(user, "<span class='notice'>Turn off the wape first.</span>")
 	else
 		wape_status = "closed"
 	update_icon()
 
 /obj/item/wape/attack(atom/A, mob/living/user, def_zone)
-	if(!isvaping)
+	if(!isvaping && wape_status == "on")
 		isvaping = !isvaping
 		if (A == user && do_after(user, 30, src))
-			to_chat(user, "<span class='notice'>You inhale some steam</span>")
+			to_chat(user, "<span class='notice'>You inhale some steam.</span>")
+			audible_message("<b>\The [user]</b> inhale some steam.")
 		isvaping = !isvaping
