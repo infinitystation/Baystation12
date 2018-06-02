@@ -152,6 +152,6 @@ ckey: chowny
 character_name: Heather Leslie
 item_path: /obj/item/device/guitar
 item_name: pink guitar
-item_desc: Black patch with two starfighters on it and Starclaymore logo. Fancy. Maybe.
+item_desc: It is a model of the famous guitar "Stratocaster" assembled in a pink case. The name is engraved on the fretboard - Heather Leslie.
 item_icon: pink_guitar
 }
