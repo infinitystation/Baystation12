@@ -254,9 +254,9 @@
 				if(copytext(lines[1],1,6) == "BPM: ")
 					tempo = 600 / text2num(copytext(lines[1],6))
 					lines.Cut(1,2)
-				if(lines.len > 200)
+				if(lines.len > 300)
 					to_chat(usr, "Too many lines!")
-					lines.Cut(201)
+					lines.Cut(301)
 				var/linenum = 1
 				for(var/l in lines)
 					if(lentext(l) > 50)
