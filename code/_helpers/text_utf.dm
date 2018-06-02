@@ -1,4 +1,4 @@
-/proc/extA2U_debug(t)
+/proc/extA2U(t)
 	if(!t)
 		return
 
@@ -9,7 +9,7 @@
 
 	return t
 
-/proc/convert1251_to_utf_debug(t)
+/proc/convert1251_to_utf(t)
 	if(!t)
 		return
 
