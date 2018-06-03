@@ -1,4 +1,4 @@
-/proc/extA2U(t)
+/proc/extA2U_dbg(t)
 	if(!t)
 		return
 
@@ -9,7 +9,7 @@
 
 	return t
 
-/proc/convert1251_to_utf(t)
+/proc/convert1251_to_utf_dbg(t)
 	if(!t)
 		return
 
@@ -108,7 +108,7 @@ GLOBAL_LIST_INIT(j1251_to_utf_table, list(
 	"97" = "2014", "b9" = "2116"
 ))
 
-/proc/extA2U_dbg(t)
+/proc/extA2U(t)
 	if(!t)
 		return
 
@@ -123,7 +123,7 @@ GLOBAL_LIST_INIT(j1251_to_utf_table, list(
 			t = replacetext(t, "\\u00[s]", "\\u[GLOB.j1251_to_utf_table[s]]")
 	return t
 
-/proc/convert1251_to_utf_dbg(t)
+/proc/convert1251_to_utf(t)
 	if(!t)
 		return
 
@@ -134,7 +134,7 @@ GLOBAL_LIST_INIT(j1251_to_utf_table, list(
 		t = replacetext(t, s, "&#x[GLOB.c1251_to_utf_table[s]];")
 	return t
 
-/mob/verb/json_conv_stress()
+/*/mob/verb/json_conv_stress()
 	set name = "JSON conv test"
 	set category = "Test"
 
@@ -174,4 +174,4 @@ GLOBAL_LIST_INIT(j1251_to_utf_table, list(
 	t = replacetext(t, "ÿ", "&#1103;")
 
 	for(var/i = 1 to 40000)
-		convert1251_to_utf_dbg(t)
+		convert1251_to_utf_dbg(t)*/
