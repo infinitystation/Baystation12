@@ -155,3 +155,11 @@ item_name: pink guitar
 item_desc: It is a model of the famous guitar "Stratocaster" assembled in a pink case. The name is engraved on the fretboard - Heather Leslie.
 item_icon: pink_guitar
 }
+{
+ckey: furrydog
+character_name: Mathor Ajurth Enai-Kaytam
+item_path: /obj/item/clothing/ring/seal/mason
+item_name: rainbow bracelet
+item_desc: It's a rainbow bracelet. Looks pretty good and stylish, special for gays.
+item_icon: rainbow_bracelet
+}
