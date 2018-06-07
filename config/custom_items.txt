@@ -150,10 +150,8 @@ item_path: /obj/item/device/pmp/personal
 {
 ckey: chowny
 character_name: Heather Leslie
-item_path: /obj/item/device/guitar
-item_name: pink guitar
+item_path: /obj/item/device/guitar/pink
 item_desc: It is a model of the famous guitar "Stratocaster" assembled in a pink case. The name is engraved on the fretboard - Heather Leslie.
-item_icon: pink_guitar
 }
 {
 ckey: furrydog

@@ -5,14 +5,21 @@
 	desc = "A wooden musical instrument with four strings and a bow. \"The devil went down to space, he was looking for an assistant to grief.\"."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "guitar"
-	icon_state = "guitar"
+	item_state = "guitar"
 	force = 13
 	w_class = ITEM_SIZE_LARGE
+	slot_flags = SLOT_BACK
 	var/datum/song/song
 	var/playing = 0
 	var/help = 0
 	var/edit = 1
 	var/repeat = 0
+
+/obj/item/device/guitar/pink
+	name = "pink guitar"
+	desc = "Pink edition"
+	icon_state = "pink_guitar"
+	item_state = "pink_guitar"
 
 /obj/item/device/guitar/proc/playnote(var/note as text)
 //	log_debug("Note: [note]")
