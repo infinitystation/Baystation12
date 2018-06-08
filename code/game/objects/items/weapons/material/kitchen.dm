@@ -95,12 +95,6 @@
 	applies_material_colour = 0
 	unbreakable = 1
 
-/obj/item/weapon/material/kitchen/utensil/knife/boot/karambit
-	name = "Karambit" 
-	desc = "A small knife with a curved blade."
-	icon_state = "karambit"
-	item_state = "karambit"
-
 /obj/item/weapon/material/kitchen/utensil/knife/attack(target as mob, mob/living/user as mob)
 	if ((CLUMSY in user.mutations) && prob(50))
 		to_chat(user, "<span class='warning'>You accidentally cut yourself with \the [src].</span>")

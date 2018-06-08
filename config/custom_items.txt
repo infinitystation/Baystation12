@@ -175,8 +175,3 @@ ckey: auesti
 character_name: Lin Fojuraus 
 item_path: /obj/item/vape
 }
-{
-ckey: courierr
-character_name: Mia Lee
-item_path: /obj/item/weapon/material/kitchen/utensil/knife/boot/karambit
-}
