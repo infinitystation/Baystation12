@@ -1,16 +1,15 @@
 /datum/species/unathi
 	name = SPECIES_UNATHI
 	name_plural = SPECIES_UNATHI
-	icon_template = 'icons/mob/human_races/r_template_tall.dmi'
-	icobase = 'icons/mob/human_races/r_lizard.dmi'
-	deform = 'icons/mob/human_races/r_def_lizard.dmi'
+	icobase = 'icons/mob/human_races/r_lizard_inf.dmi'
+	deform = 'icons/mob/human_races/r_def_lizard_inf.dmi'
 	tail = "sogtail"
-	tail_animation = 'icons/mob/species/unathi/tail.dmi'
+	tail_animation = 'icons/mob/species/unathi/tail_inf.dmi'
 	limb_blend = ICON_MULTIPLY
 	tail_blend = ICON_MULTIPLY
 
-	eye_icon = "eyes_lizard"
-	eye_icon_location = 'icons/mob/lizard_face.dmi'
+//	eye_icon = "eyes_lizard"
+//	eye_icon_location = 'icons/mob/lizard_face.dmi'
 
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/tail, /datum/unarmed_attack/claws, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite/sharp)
 	primitive_form = "Stok"
