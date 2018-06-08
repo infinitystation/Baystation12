@@ -140,5 +140,8 @@
 		/obj/item/device/holowarrant,
 		/obj/item/device/flashlight/maglight,
 		/obj/item/weapon/storage/belt/forensic,
+		/obj/item/weapon/storage/box/gloves,
+		/obj/item/weapon/storage/box/evidence,
+		/obj/item/clothing/mask/gas/half,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel_sec)),
 	)

@@ -75,4 +75,4 @@
 	to_chat(world, "<span class='adminooc'><font size=5>ВНИМАНИЕ! СЕРВЕР ОБНОВЛЯЕТСЯ ЧЕРЕЗ 10 СЕКУНД! СЕРВЕР НЕ БУДЕТ РАБОТАТЬ НЕСКОЛЬКО МИНУТ!</font><br>Обновление [ticker.update_waiting ? "в конце раунда запланировано" : "запущено"] сотрудником [ticker.updater_ckey]</span>.")
 	sound_to(world, sound('sound/effects/alarm.ogg', repeat = 0, wait = 0, volume = 100, channel = 1))
 	sleep(100)
-	shell("sudo sh ../update.sh [currentbuild.dmb_file] [currentbuild.folder] [world.port] [currentbuild.update]")
+	shell("..\\update.bat [currentbuild.dmb_file] [currentbuild.folder] [world.port] [currentbuild.update]")

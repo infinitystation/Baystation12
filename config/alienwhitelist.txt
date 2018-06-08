@@ -15,6 +15,7 @@ redknighthero - machine
 kotovsyndrome - machine
 s1334 - machine
 cre77 - machine
+mrnicolas - machine
 inubashirimomiji - skrell
 twinindifferent - skrell
 wheatley2013 - skrell
@@ -73,8 +74,10 @@ kirill1243 - unathi
 lunkydunk - unathi
 aragog94 - unathi
 hodovoy - unathi
+taushai - unathi
 wheatley2013 - unathi
 kribleykrabley - unathi
+taushai - unathi
 nicknam - tajaran
 ashtonfox - tajaran
 mrnicolas - tajaran
