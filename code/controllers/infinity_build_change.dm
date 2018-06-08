@@ -70,7 +70,7 @@ var/datum/server_build/currentbuild
 	return 1
 
 /proc/loadbuildname()
-	shell("..\dir.bat > ext.txt")
+	shell("..\\dir.bat > ext.txt")
 	var/ext
 	var/list/Lines = file2list("ext.txt")
 	if(Lines.len)
