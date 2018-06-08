@@ -144,7 +144,7 @@
 	var/list/ties = list()
 	for(var/obj/item/clothing/accessory/accessory in accessories)
 		if(accessory.high_visibility)
-			ties += "[icon2html(accessory, world)] \a [accessory]"
+			ties += "\a [accessory.get_examine_line()]"
 	if(ties.len)
 		.+= " with [english_list(ties)] attached"
 	if(accessories.len > ties.len)
@@ -267,7 +267,7 @@ BLIND     // can't see anything
 	body_parts_covered = HANDS
 	slot_flags = SLOT_GLOVES
 	attack_verb = list("challenged")
-	species_restricted = list("exclude",SPECIES_NABBER, SPECIES_UNATHI,SPECIES_TAJARA, SPECIES_VOX)
+	species_restricted = list("exclude",SPECIES_NABBER, SPECIES_UNATHI,SPECIES_VOX)
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/gloves.dmi',
 		SPECIES_NABBER = 'icons/mob/species/nabber/gloves.dmi',
@@ -326,7 +326,6 @@ BLIND     // can't see anything
 	desc = "[desc]<br>They have been modified to accommodate a different shape."
 	if("exclude" in species_restricted)
 		species_restricted -= SPECIES_UNATHI
-		species_restricted -= SPECIES_TAJARA
 	return
 
 /obj/item/clothing/gloves/mob_can_equip(mob/user)
@@ -600,6 +599,7 @@ BLIND     // can't see anything
 	if(usr.put_in_hands(holding))
 		usr.visible_message("<span class='warning'>\The [usr] pulls \the [holding] out of \the [src]!</span>", range = 1)
 		holding = null
+		playsound(get_turf(src), 'sound/effects/holster/sheathout.ogg', 25)
 	else
 		to_chat(usr, "<span class='warning'>Your need an empty, unbroken hand to do that.</span>")
 		holding.forceMove(src)
@@ -662,6 +662,7 @@ BLIND     // can't see anything
 		SPECIES_VOX = 'icons/mob/species/vox/suit.dmi',
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi',
+		SPECIES_NABBER = 'icons/mob/species/nabber/suit.dmi',
 		)
 
 /obj/item/clothing/suit/update_clothing_icon()

@@ -33,8 +33,6 @@
 			return global.Master;
 		if("OOClog")
 			return global.OOClog;
-		if("PDAs")
-			return global.PDAs;
 		if("SSair")
 			return global.SSair;
 		if("SSairflow")
@@ -49,6 +47,8 @@
 			return global.SSgarbage;
 		if("SSlegacy")
 			return global.SSlegacy;
+		if("SSlighting")
+			return global.SSlighting;
 		if("SSmachines")
 			return global.SSmachines;
 		if("SSmapping")
@@ -511,18 +511,6 @@
 			return global.light_overlay_cache;
 		if("lighting_overlays_initialised")
 			return global.lighting_overlays_initialised;
-		if("lighting_update_corners")
-			return global.lighting_update_corners;
-		if("lighting_update_corners_old")
-			return global.lighting_update_corners_old;
-		if("lighting_update_lights")
-			return global.lighting_update_lights;
-		if("lighting_update_lights_old")
-			return global.lighting_update_lights_old;
-		if("lighting_update_overlays")
-			return global.lighting_update_overlays;
-		if("lighting_update_overlays_old")
-			return global.lighting_update_overlays_old;
 		if("limb_icon_cache")
 			return global.limb_icon_cache;
 		if("loadout_categories")
@@ -547,8 +535,6 @@
 			return global.magazine_icondata_states;
 		if("maint_all_access")
 			return global.maint_all_access;
-		if("malf")
-			return global.malf;
 		if("mannequins_")
 			return global.mannequins_;
 		if("map_count")
@@ -695,8 +681,6 @@
 			return global.possible_cable_coil_colours;
 		if("possible_changeling_IDs")
 			return global.possible_changeling_IDs;
-		if("poster_designs")
-			return global.poster_designs;
 		if("power_alarm")
 			return global.power_alarm;
 		if("powerinstances")
@@ -819,8 +803,6 @@
 			return global.solars_list;
 		if("sortInstance")
 			return global.sortInstance;
-		if("sound_player")
-			return global.sound_player;
 		if("sounds_cache")
 			return global.sounds_cache;
 		if("spacevines_spawned")
@@ -1048,8 +1030,6 @@
 			global.Master=newval;
 		if("OOClog")
 			global.OOClog=newval;
-		if("PDAs")
-			global.PDAs=newval;
 		if("SSair")
 			global.SSair=newval;
 		if("SSairflow")
@@ -1064,6 +1044,8 @@
 			global.SSgarbage=newval;
 		if("SSlegacy")
 			global.SSlegacy=newval;
+		if("SSlighting")
+			global.SSlighting=newval;
 		if("SSmachines")
 			global.SSmachines=newval;
 		if("SSmapping")
@@ -1526,18 +1508,6 @@
 			global.light_overlay_cache=newval;
 		if("lighting_overlays_initialised")
 			global.lighting_overlays_initialised=newval;
-		if("lighting_update_corners")
-			global.lighting_update_corners=newval;
-		if("lighting_update_corners_old")
-			global.lighting_update_corners_old=newval;
-		if("lighting_update_lights")
-			global.lighting_update_lights=newval;
-		if("lighting_update_lights_old")
-			global.lighting_update_lights_old=newval;
-		if("lighting_update_overlays")
-			global.lighting_update_overlays=newval;
-		if("lighting_update_overlays_old")
-			global.lighting_update_overlays_old=newval;
 		if("limb_icon_cache")
 			global.limb_icon_cache=newval;
 		if("loadout_categories")
@@ -1562,8 +1532,6 @@
 			global.magazine_icondata_states=newval;
 		if("maint_all_access")
 			global.maint_all_access=newval;
-		if("malf")
-			global.malf=newval;
 		if("mannequins_")
 			global.mannequins_=newval;
 		if("map_count")
@@ -1710,8 +1678,6 @@
 			global.possible_cable_coil_colours=newval;
 		if("possible_changeling_IDs")
 			global.possible_changeling_IDs=newval;
-		if("poster_designs")
-			global.poster_designs=newval;
 		if("power_alarm")
 			global.power_alarm=newval;
 		if("powerinstances")
@@ -1834,8 +1800,6 @@
 			global.solars_list=newval;
 		if("sortInstance")
 			global.sortInstance=newval;
-		if("sound_player")
-			global.sound_player=newval;
 		if("sounds_cache")
 			global.sounds_cache=newval;
 		if("spacevines_spawned")
@@ -2046,7 +2010,6 @@
 	"LIGHTING_CORNER_DIAGONAL",
 	"Master",
 	"OOClog",
-	"PDAs",
 	"SSair",
 	"SSairflow",
 	"SSantags",
@@ -2054,6 +2017,7 @@
 	"SSfastprocess",
 	"SSgarbage",
 	"SSlegacy",
+	"SSlighting",
 	"SSmachines",
 	"SSmapping",
 	"SSmobs",
@@ -2285,12 +2249,6 @@
 	"last_tick_duration",
 	"light_overlay_cache",
 	"lighting_overlays_initialised",
-	"lighting_update_corners",
-	"lighting_update_corners_old",
-	"lighting_update_lights",
-	"lighting_update_lights_old",
-	"lighting_update_overlays",
-	"lighting_update_overlays_old",
 	"limb_icon_cache",
 	"loadout_categories",
 	"lobby_image",
@@ -2303,7 +2261,6 @@
 	"magazine_icondata_keys",
 	"magazine_icondata_states",
 	"maint_all_access",
-	"malf",
 	"mannequins_",
 	"map_count",
 	"map_sectors",
@@ -2377,7 +2334,6 @@
 	"point_source_descriptions",
 	"possible_cable_coil_colours",
 	"possible_changeling_IDs",
-	"poster_designs",
 	"power_alarm",
 	"powerinstances",
 	"powers",
@@ -2439,7 +2395,6 @@
 	"solar_gen_rate",
 	"solars_list",
 	"sortInstance",
-	"sound_player",
 	"sounds_cache",
 	"spacevines_spawned",
 	"sparring_attack_cache",

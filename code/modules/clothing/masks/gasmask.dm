@@ -146,6 +146,7 @@
 	body_parts_covered = 0
 	species_restricted = list(SPECIES_VOX)
 	filtered_gases = list("phoron", "sleeping_agent", "oxygen")
+	w_class = ITEM_SIZE_SMALL
 
 
 /obj/item/clothing/mask/gas/swat/vox
@@ -153,6 +154,6 @@
 	desc = "Clearly not designed for a human face."
 	icon_state = "voxswat"
 	item_state = "voxswat"
-	body_parts_covered = 0 //Hack to allow vox to eat while wearing this mask.
+	body_parts_covered = 0
 	species_restricted = list(SPECIES_VOX)
 	filtered_gases = list("phoron", "sleeping_agent", "oxygen")

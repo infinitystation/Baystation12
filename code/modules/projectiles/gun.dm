@@ -174,7 +174,10 @@
 	else
 		return ..() //Pistolwhippin'
 
-/obj/item/weapon/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
+/obj/item/weapon/gun/proc/modify_projectile(obj/item/projectile/p, var/list/params = list())
+	return p
+
+/obj/item/weapon/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, var/list/params = list())
 	if(!user || !target) return
 	if(target.z != user.z) return
 
@@ -199,6 +202,9 @@
 	var/turf/targloc = get_turf(target) //cache this in case target gets deleted during shooting, e.g. if it was a securitron that got destroyed.
 	for(var/i in 1 to burst)
 		var/obj/projectile = consume_next_projectile(user)
+
+		projectile = modify_projectile(projectile, params)
+
 		if(!projectile)
 			handle_click_empty(user)
 			break
@@ -314,7 +320,7 @@
 				max_mult = G.point_blank_mult()
 	P.damage *= max_mult
 
-/obj/item/weapon/gun/proc/process_accuracy(obj/projectile, mob/user, atom/target, var/burst, var/held_twohanded)
+/obj/item/weapon/gun/proc/process_accuracy(obj/projectile, mob/living/user, atom/target, var/burst, var/held_twohanded)
 	var/obj/item/projectile/P = projectile
 	if(!istype(P))
 		return //default behaviour only applies to true projectiles
@@ -337,6 +343,8 @@
 		//Kinda balanced by fact you need like 2 seconds to aim
 		//As opposed to no-delay pew pew
 		P.accuracy += 2
+
+	P.accuracy += user.ranged_accuracy_mods()
 
 //does the actual launching of the projectile
 /obj/item/weapon/gun/proc/process_projectile(obj/projectile, mob/user, atom/target, var/target_zone, var/params=null)
@@ -376,7 +384,7 @@
 //Suicide handling.
 /obj/item/weapon/gun/var/mouthshoot = 0 //To stop people from suiciding twice... >.>
 /obj/item/weapon/gun/proc/handle_suicide(mob/living/user)
-	if(!ishuman(user))
+	if(!ishuman(user) || (have_safety && safety))
 		return
 	var/mob/living/carbon/human/M = user
 

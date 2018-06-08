@@ -399,7 +399,7 @@ var/list/global/slot_flags_enumeration = list(
 				if(!disable_warning)
 					to_chat(usr, "<span class='warning'>You somehow have a suit with no defined allowed items for suit storage, stop that.</span>")
 				return 0
-			if( !(istype(src, /obj/item/device/pda) || istype(src, /obj/item/weapon/pen) || is_type_in_list(src, H.wear_suit.allowed)) )
+			if( !(istype(src, /obj/item/modular_computer/pda) || istype(src, /obj/item/weapon/pen) || is_type_in_list(src, H.wear_suit.allowed)) )
 				return 0
 		if(slot_handcuffed)
 			if(!istype(src, /obj/item/weapon/handcuffs))
@@ -778,3 +778,6 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		. = "<span class='warning'>\icon[src] [gender==PLURAL?"some":"a"] [(blood_color != SYNTH_BLOOD_COLOUR) ? "blood" : "oil"]-stained [src]</span>"
 	else
 		. = "[icon2html(src, world)] \a [src]"
+	var/ID = GetIdCard()
+	if(ID)
+		. += "  <a href='?src=\ref[ID];look_at_id=1'>\[Look at ID\]</a>"

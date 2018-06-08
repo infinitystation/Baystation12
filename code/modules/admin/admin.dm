@@ -61,6 +61,7 @@ var/global/floorIsLava = 0
 		<a href='?src=\ref[src];traitor=\ref[M]'>TP</a> -
 		<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a> -
 		<a href='?src=\ref[src];subtlemessage=\ref[M]'>SM</a> -
+		<a href='?src=\ref[src];show_skills=\ref[M]'>SS</a> -
 		[admin_jump_link(M, src)]\] <br/><br/>
 		<b>Client Information:</b><br>"}
 
@@ -906,7 +907,7 @@ var/global/floorIsLava = 0
 
 	config.dooc_allowed = !( config.dooc_allowed )
 	log_admin("[key_name(usr)] toggled Dead OOC.")
-	message_admins("[key_name_admin(usr)] [config.dooc_allowed ? "включил" : "выключил"] ООС дл&#255; мёртвых.", 1)
+	message_admins("[key_name_admin(usr)] [config.dooc_allowed ? "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" : "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"] пїЅпїЅпїЅ пїЅпїЅ&#255; пїЅпїЅпїЅпїЅпїЅпїЅ.", 1)
 	feedback_add_details("admin_verb","TDOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/togglehubvisibility()
@@ -1389,17 +1390,14 @@ var/global/floorIsLava = 0
 		to_chat(usr, "<b>No AIs located</b>")//Just so you know the thing is actually working and not just ignoring you.
 
 
-/datum/admins/proc/show_skills()
+/datum/admins/proc/show_skills(mob/living/carbon/human/M as mob in SSmobs.mob_list)
 	set category = "Admin"
 	set name = "Show Skills"
 
 	if (!istype(src,/datum/admins))
 		src = usr.client.holder
-	if (!istype(src,/datum/admins))
-		to_chat(usr, "Error: you are not an admin!")
-		return
 
-	var/mob/living/carbon/human/M = input("Select mob.", "Select mob.") as null|anything in GLOB.human_mob_list
+	//var/mob/living/carbon/human/M = input("Select mob.", "Select mob.") as null|anything in GLOB.human_mob_list
 	if(!M) return
 
 	show_skill_window(usr, M)

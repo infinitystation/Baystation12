@@ -18,7 +18,9 @@
 	autohiss_basic_map = list(
 			"s" = list("ss", "sss", "ssss"),
 
-			"ס" = list("ס", "סס", "ססס")
+			"ס" = list("ס", "סס", "ססס"),
+
+			"Ñ" = list("Ñ", "Ñס", "Ñסס")
 		)
 	autohiss_extra_map = list(
 			"x" = list("ks", "kss", "ksss"),
@@ -31,7 +33,17 @@
 
 			"ק" = list("ש", "שש", "ששש"),
 
-			"ז" = list("ר", "רר", "ררר")
+			"ז" = list("ר", "רר", "ררר"),
+
+			"Ê" = list("Õ"),
+
+			"Ã" = list("Õ"),
+
+			"Ç" = list("Ñ", "Ñס", "Ñסס"),
+
+			"×" = list("Ù", "Ùש", "Ùשש"),
+
+			"Æ" = list("Ø", "Øר", "Øרר")
 
 		)
 	autohiss_exempt = list(LANGUAGE_UNATHI)
@@ -40,18 +52,26 @@
 	autohiss_basic_map = list(
 			"r" = list("rr", "rrr", "rrrr"),
 
-			"נ" = list("ננ", "נננ", "ננננ")
+			"נ" = list("ננ", "נננ", "ננננ"),
+
+			"Ð" = list("Ðנ", "Ðננ", "Ðנננ")
 		)
 	autohiss_exempt = list(LANGUAGE_SIIK_MAAS)
 
 /datum/species/resomi
 	autohiss_basic_map = list(
-			"ח" = list("ס", "סס", "ססס")
+			"ח" = list("ס", "סס", "ססס"),
+
+			"Ç" = list("Ñ", "Ñס", "Ñסס")
 		)
 	autohiss_extra_map = list(
 			"ק" = list("ש", "שש"),
 
-			"ז" = list("ר", "רר", "ררר")
+			"ז" = list("ר", "רר", "ררר"),
+
+			"×" = list("Ù", "Ùש"),
+
+			"Æ" = list("Ø", "Øר", "Øרר")
 		)
 	autohiss_exempt = list(LANGUAGE_RESOMI)
 

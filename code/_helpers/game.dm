@@ -28,9 +28,10 @@
 
 /proc/living_observers_present(var/list/zlevels)
 	if(LAZYLEN(zlevels))
-		for(var/client/C in GLOB.clients) //if a tree ticks on the empty zlevel does it really tick
-			if(isliving(C.mob)) //(no it doesn't)
-				var/turf/T = get_turf(C.mob)
+		for(var/A in GLOB.player_list) //if a tree ticks on the empty zlevel does it really tick
+			var/mob/M = A
+			if(M.stat != DEAD) //(no it doesn't)
+				var/turf/T = get_turf(M)
 				if(T && (T.z in zlevels))
 					return TRUE
 	return FALSE
@@ -40,10 +41,10 @@
 	return loc ? loc.z : 0
 
 /proc/get_area(O)
-	var/turf/loc = get_turf(O)
-	if(loc)
-		var/area/res = loc.loc
-		.= res
+	if(isarea(O))
+		return O
+	var/turf/T = get_turf(O)
+	return T ? T.loc : null
 
 /proc/get_area_name(N) //get area by its name
 	for(var/area/A in world)

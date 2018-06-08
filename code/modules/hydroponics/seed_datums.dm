@@ -385,13 +385,15 @@
 
 /datum/seed/mushroom/plump/New()
 	..()
+	set_trait(TRAIT_HARVEST_REPEAT,1)
 	set_trait(TRAIT_MATURATION,8)
-	set_trait(TRAIT_YIELD,4)
-	set_trait(TRAIT_POTENCY,0)
+	set_trait(TRAIT_YIELD,2)
+	set_trait(TRAIT_POTENCY,2)
 	set_trait(TRAIT_PRODUCT_ICON,"mushroom10")
 	set_trait(TRAIT_PRODUCT_COLOUR,"#b57bb0")
 	set_trait(TRAIT_PLANT_COLOUR,"#9e4f9d")
 	set_trait(TRAIT_PLANT_ICON,"mushroom2")
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.35)
 
 /datum/seed/mushroom/plump/walking
 	name = "walkingmushroom"
@@ -865,7 +867,7 @@
 	set_trait(TRAIT_YIELD,5)
 	set_trait(TRAIT_POTENCY,10)
 	set_trait(TRAIT_PRODUCT_ICON,"carrot")
-	set_trait(TRAIT_PRODUCT_COLOUR,"#ffdb4a")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#ff9900")
 	set_trait(TRAIT_PLANT_ICON,"carrot")
 	set_trait(TRAIT_WATER_CONSUMPTION, 6)
 

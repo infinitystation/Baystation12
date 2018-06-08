@@ -6,7 +6,7 @@ Random item spawning
 	name = "random solgov equipment"
 	desc = "This is a random piece of solgov equipment or clothing."
 	icon = 'icons/obj/clothing/hats.dmi'
-	icon_state = "helmet_sol"
+	icon_state = "m_helmet"
 
 /obj/random/solgov/spawn_choices()
 	return list(/obj/item/clothing/head/solgov/utility/fleet = 4,
@@ -45,17 +45,15 @@ Random item spawning
 Torch specific items
 *******************/
 
-/obj/item/device/pda/explorer
-	icon_state = "pda-explorer"
+/obj/item/modular_computer/pda/explorer
+	icon_state = "pda-exp"
+	icon_state_unpowered = "pda-exp"
 
-/obj/item/device/pda/pathfinder
-	icon_state = "pda-pathfinder"
+/obj/item/modular_computer/pda/heads/hop
+	stored_pen = /obj/item/weapon/pen/multi/cmd/xo
 
-/obj/item/device/pda/heads/hop
-	pen = /obj/item/weapon/pen/multi/cmd/xo
-
-/obj/item/device/pda/captain
-	pen = /obj/item/weapon/pen/multi/cmd/co
+/obj/item/modular_computer/pda/captain
+	stored_pen = /obj/item/weapon/pen/multi/cmd/co
 
 /obj/item/weapon/storage/backpack/explorer
 	name = "explorer backpack"
@@ -116,10 +114,10 @@ Weapons
 ******/
 
 /obj/item/weapon/gun/projectile/revolver/webley/captain
-	name = "captain's autorevolver"
+	name = "\improper Final Argument"
 	icon = 'maps/torch/icons/obj/uniques.dmi'
 	icon_state = "mosley"
-	desc = "A shiny al-Maliki & Mosley Autococker automatic revolver, with black accents. Marketed as the 'Revolver for the Modern Era'. Uses .44 magnum rounds."
+	desc = "A shiny al-Maliki & Mosley Autococker automatic revolver, with black accents. Marketed as the 'Revolver for the Modern Era'. Uses .44 magnum rounds. This one has 'To the Captain of SEV Torch' engraved."
 	fire_delay = 5.7 //Autorevolver. Also synced with the animation
 	fire_anim = "mosley_fire"
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)

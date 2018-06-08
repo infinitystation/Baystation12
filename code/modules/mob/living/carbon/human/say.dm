@@ -16,7 +16,7 @@
 
 	message = sanitize(message)
 	var/obj/item/organ/internal/voicebox/vox = locate() in internal_organs
-	var/snowflake_speak = (speaking && (speaking.flags & NONVERBAL|SIGNLANG)) || (vox && vox.is_usable() && (speaking in vox.assists_languages))
+	var/snowflake_speak = (speaking && (speaking.flags & (NONVERBAL|SIGNLANG))) || (vox && vox.is_usable() && (speaking in vox.assists_languages))
 	if(!isSynthetic() && need_breathe() && failed_last_breath && !snowflake_speak)
 		var/obj/item/organ/internal/lungs/L = internal_organs_by_name[species.breathing_organ]
 		if(L.breath_fail_ratio > 0.9)
@@ -28,9 +28,11 @@
 			to_chat(src, "<span class='warning'>You don't have enough air in [L] to make a sound!</span>")
 			return
 		else if(L.breath_fail_ratio > 0.7)
-			whisper_say(length(message) > 5 ? stars(message) : message, speaking, alt_name)
+			return ..(length(message) > 5 ? stars(message) : message, alt_name = alt_name, speaking = speaking, whispering = 1)
 		else if(L.breath_fail_ratio > 0.4 && length(message) > 10)
-			whisper_say(message, speaking, alt_name)
+			return ..(message, alt_name = alt_name, speaking = speaking, whispering = 1)
+		else if(L.breath_fail_ratio > 0)
+			return ..(message, alt_name = alt_name, speaking = speaking, whispering = whispering)
 	else
 		return ..(message, alt_name = alt_name, speaking = speaking, whispering = whispering)
 

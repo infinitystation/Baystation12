@@ -180,6 +180,7 @@
 
 	playsound(target.loc,'sound/effects/Liquid_transfer_mono.ogg',50,1)
 	var/trans = reagents.trans_to(target, amount_per_transfer_from_this)
+	playsound(src, 'sound/effects/pour.ogg', 25, 1)
 	to_chat(user, "<span class='notice'>You transfer [trans] unit\s of the solution to \the [target].</span>")
 	return 1
 

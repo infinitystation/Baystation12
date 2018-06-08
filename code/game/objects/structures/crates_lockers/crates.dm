@@ -185,7 +185,7 @@ obj/structure/closet/crate
 
 
 /obj/structure/closet/crate/freezer/rations/WillContain()
-	return list(/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 4)
+	return list(/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 15, /obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 15)
 
 /obj/structure/closet/crate/freezer/nanoblood
 	name = "nanoblood freezer"
@@ -327,10 +327,18 @@ obj/structure/closet/crate
 	open_sound = 'sound/items/Deconstruct.ogg'
 	close_sound = 'sound/items/Deconstruct.ogg'
 	req_access = list(access_xenobiology)
-	storage_types = CLOSET_STORAGE_ITEMS|CLOSET_STORAGE_MOBS
+	
+	storage_capacity = 2 * MOB_LARGE
+	storage_types = CLOSET_STORAGE_ITEMS|CLOSET_STORAGE_MOBS|CLOSET_STORAGE_STRUCTURES
 
 /obj/structure/closet/crate/secure/biohazard/blanks/WillContain()
-	return list(/mob/living/carbon/human/blank, /obj/item/usedcryobag)
+	return list(/obj/structure/closet/body_bag/cryobag/blank)
+
+/obj/structure/closet/crate/secure/biohazard/blanks/can_close()
+	for(var/obj/structure/closet/closet in get_turf(src))
+		if(closet != src && !(istype(closet, /obj/structure/closet/body_bag/cryobag)))
+			return 0
+	return 1
 
 /obj/structure/closet/crate/paper_refill
 	name = "paper refill crate"

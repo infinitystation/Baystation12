@@ -39,13 +39,13 @@
 	var/spawn_object = null
 
 /obj/random/single/spawn_choices()
-	return list(ispath(spawn_object) ? spawn_object : text2path(spawn_object))
+	return list(spawn_object)
 
 /obj/random/tool
 	name = "random tool"
 	desc = "This is a random tool."
-	icon = 'icons/obj/items.dmi'
-	icon_state = "welder"
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "legacywelder"
 
 /obj/random/tool/spawn_choices()
 	return list(/obj/item/weapon/screwdriver,
@@ -621,11 +621,13 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/weapon/handcuffs,
 				/obj/item/weapon/camera_assembly,
 				/obj/item/device/camera,
-				/obj/item/device/pda,
+				/obj/item/modular_computer/pda,
 				/obj/item/weapon/card/emag_broken,
 				/obj/item/device/radio/headset,
-				/obj/item/device/flashlight/glowstick/yellow,
-				/obj/item/device/flashlight/glowstick/orange)
+				/obj/item/device/flashlight/flare/glowstick/yellow,
+				/obj/item/device/flashlight/flare/glowstick/orange,
+				/obj/item/weapon/grenade/light,
+				/obj/item/device/oxycandle)
 
 /obj/random/smokes
 	name = "random smokeable"

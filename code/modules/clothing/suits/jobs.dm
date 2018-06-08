@@ -2,7 +2,7 @@
  * Job related
  */
 
-//Botonist
+//Botanist
 /obj/item/clothing/suit/apron
 	name = "apron"
 	desc = "A basic blue apron."
@@ -10,6 +10,7 @@
 	item_state = "apron"
 	blood_overlay_type = "armor"
 	body_parts_covered = 0
+	species_restricted = null
 	allowed = list (/obj/item/weapon/reagent_containers/spray/plantbgone,/obj/item/device/analyzer/plant_analyzer,/obj/item/seeds,/obj/item/weapon/reagent_containers/glass/bottle,/obj/item/weapon/material/minihoe)
 
 //Captain
@@ -63,6 +64,7 @@
 	desc = "A basic, dull, white chef's apron."
 	icon_state = "apronchef"
 	item_state = "apronchef"
+	species_restricted = null
 	blood_overlay_type = "armor"
 	body_parts_covered = 0
 
@@ -100,9 +102,13 @@
 	allowed = list(/obj/item/weapon/tank/emergency,/obj/item/device/flashlight,/obj/item/weapon/gun/energy,/obj/item/weapon/gun/projectile,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/handcuffs,/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/flame/lighter,/obj/item/device/taperecorder)
 	armor = list(melee = 50, bullet = 10, laser = 25, energy = 10, bomb = 0, bio = 0, rad = 0)
 
-/obj/item/clothing/suit/storage/det_trench/ft/
+/obj/item/clothing/suit/storage/det_trench/ft
 	desc = "A rugged canvas trenchcoat, designed and created by TX Fabrication Corp. This one wouldn't block much of anything."
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+
+/obj/item/clothing/suit/storage/det_trench/ft/grey
+	name = "grey trenchcoat"
+	icon_state = "detective2"
 
 /obj/item/clothing/suit/storage/det_trench/grey
 	name = "grey trenchcoat"
@@ -134,6 +140,7 @@
 	icon_state = "hazard"
 	item_state = "hazard"
 	blood_overlay_type = "armor"
+	species_restricted = null
 	allowed = list (/obj/item/device/analyzer, /obj/item/device/flashlight, /obj/item/device/multitool, /obj/item/device/pipe_painter, /obj/item/device/radio, /obj/item/device/t_scanner, \
 	/obj/item/weapon/crowbar, /obj/item/weapon/screwdriver, /obj/item/weapon/weldingtool, /obj/item/weapon/wirecutters, /obj/item/weapon/wrench, /obj/item/weapon/tank/emergency, \
 	/obj/item/clothing/mask/gas, /obj/item/taperoll/engineering)
@@ -146,7 +153,7 @@
 
 /obj/item/clothing/suit/storage/hazardvest/white
 	name = "white hazard vest"
-	desc = "A high-visibility vest used in work zones. This one has a red cross!"
+	desc = "A high-visibility vest used in work zones. This one has a blue cross!"
 	icon_state = "hazard_w"
 
 /obj/item/clothing/suit/storage/hazardvest/green

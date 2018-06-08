@@ -99,7 +99,10 @@
 			return
 		to_chat(user, "<span class='notice'>You put \the [W] into \the [src]'s recycling slot.</span>")
 		qdel(W)
-	else if(istype(W, /obj/item/weapon/card/id) && !ID && user.unEquip(W, FALSE, src))
+//	else if(istype(W, /obj/item/modular_computer/pda)
+//		to_chat(user, "<span class='notice'>You cannot slide \the [W] into \the [src].</span>")
+//		return
+	else if(istype(W, /obj/item/weapon/card/id) && !ID && user.unEquip(W))
 		to_chat(user, "<span class='notice'>You slide \the [W] into \the [src]!</span>")
 		ID = W
 		user.drop_from_inventory(W, src)

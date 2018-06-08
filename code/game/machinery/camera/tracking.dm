@@ -25,7 +25,7 @@
 
 /mob/living/silicon/ai/proc/ai_camera_list(var/camera in get_camera_list())
 	set category = "Silicon Commands"
-	set name = "Show Camera List"
+	set name = "CAMERA: Show List"
 
 	if(check_unable())
 		return
@@ -40,7 +40,7 @@
 
 /mob/living/silicon/ai/proc/ai_store_location(loc as text)
 	set category = "Silicon Commands"
-	set name = "Store Camera Location"
+	set name = "CAMERA: Store Location"
 	set desc = "Stores your current camera location by the given name"
 
 	loc = sanitize(loc)
@@ -69,7 +69,7 @@
 
 /mob/living/silicon/ai/proc/ai_goto_location(loc in sorted_stored_locations())
 	set category = "Silicon Commands"
-	set name = "Goto Camera Location"
+	set name = "CAMERA: Goto Location"
 	set desc = "Returns to the selected camera location"
 
 	if (!(loc in stored_locations))
@@ -81,7 +81,7 @@
 
 /mob/living/silicon/ai/proc/ai_remove_location(loc in sorted_stored_locations())
 	set category = "Silicon Commands"
-	set name = "Delete Camera Location"
+	set name = "CAMERA: Delete Location"
 	set desc = "Deletes the selected camera location"
 
 	if (!(loc in stored_locations))
@@ -128,7 +128,7 @@
 
 /mob/living/silicon/ai/proc/ai_camera_track(var/target_name in trackable_mobs())
 	set category = "Silicon Commands"
-	set name = "Follow With Camera"
+	set name = "CAMERA: Follow"
 	set desc = "Select who you would like to track."
 
 	if(src.stat == 2)

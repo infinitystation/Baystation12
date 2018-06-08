@@ -49,7 +49,7 @@ var/global/datum/controller/gameticker/ticker
 				master_mode = tertiary_mode
 				tertiary_mode = null
 			else
-				master_mode = "extended"
+				master_mode = "secret"
 
 		to_chat(world, "<b>Trying to start [master_mode]...</b>")
 		to_chat(world, "<B><FONT color='blue'>Welcome to the pre-game lobby!</FONT></B>")

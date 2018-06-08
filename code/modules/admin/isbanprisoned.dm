@@ -41,7 +41,7 @@
 				var/expires
 
 				if(text2num(duration) > 0)
-					expires = "Это бан на [duration] минут, и он сниметс&#255; в [expiration] по серверному времени (МСК-2)."
+					expires = "Это бан на [duration] минут, и он сниметс&#255; в [expiration] по серверному времени."
 
 				src.banprisoned_reason = "Вы, или кто-то другой, кто использовал(а) ваш компьютер или соединение ([pckey]) были забанены бан-тюрьмой по причине: [reason]. Этот бан выдал(а) администратор [ackey], в [bantime]. [expires]\n"
 				return 1

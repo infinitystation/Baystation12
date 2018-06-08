@@ -915,6 +915,7 @@
 	},
 /obj/structure/table/rack,
 /obj/machinery/computer/general_air_control/large_tank_control{
+	dir = 8;
 	frequency = 1700;
 	input_tag = "fuel_in";
 	name = "Fuel Supply Control";
@@ -1539,6 +1540,7 @@
 	},
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/computer/general_air_control/large_tank_control{
+	dir = 8;
 	frequency = 1700;
 	input_tag = null;
 	name = "Fuel Nacelles Supply Control";
@@ -2163,7 +2165,9 @@
 /turf/simulated/floor/tiled/white,
 /area/ship/gunboat/medical)
 "dw" = (
-/obj/machinery/computer/operating,
+/obj/machinery/computer/operating{
+	dir = 1
+	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/alarm{
 	alarm_id = "misc_research";

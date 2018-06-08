@@ -21,48 +21,50 @@
 	/*BYOND loads resource files at compile time if they are ''. This means you can't really manipulate them dynamically.
 	Tried doing it dynamically at first but its more trouble than its worth. Would have saved many lines tho.*/
 	switch(note)
-		if("Fn3")	soundfile = 'sound/guitar/Fn3.ogg'
-		if("Gb3")	soundfile = 'sound/guitar/Gb3.ogg'
-		if("Gn3")	soundfile = 'sound/guitar/Gn3.ogg'
 		if("Ab3")	soundfile = 'sound/guitar/Ab3.ogg'
-		if("An3")	soundfile = 'sound/guitar/An3.ogg'
-		if("Bb3")	soundfile = 'sound/guitar/Bb3.ogg'
-		if("Bn3")	soundfile = 'sound/guitar/Bn3.ogg'
-		if("Cn4")	soundfile = 'sound/guitar/Cn4.ogg'
-		if("Db4")	soundfile = 'sound/guitar/Db4.ogg'
-		if("Dn4")	soundfile = 'sound/guitar/Dn4.ogg'
-		if("Eb4")	soundfile = 'sound/guitar/Eb4.ogg'
-		if("En4")	soundfile = 'sound/guitar/En4.ogg'
-		if("Fn4")	soundfile = 'sound/guitar/Fn4.ogg'
-		if("Gb4")	soundfile = 'sound/guitar/Gb4.ogg'
-		if("Gn4")	soundfile = 'sound/guitar/Gn4.ogg'
 		if("Ab4")	soundfile = 'sound/guitar/Ab4.ogg'
-		if("An4")	soundfile = 'sound/guitar/An4.ogg'
-		if("Bb4")	soundfile = 'sound/guitar/Bb4.ogg'
-		if("Bn4")	soundfile = 'sound/guitar/Bn4.ogg'
-		if("Cn5")	soundfile = 'sound/guitar/Cn5.ogg'
-		if("Db5")	soundfile = 'sound/guitar/Db5.ogg'
-		if("Dn5")	soundfile = 'sound/guitar/Dn5.ogg'
-		if("Eb5")	soundfile = 'sound/guitar/Eb5.ogg'
-		if("En5")	soundfile = 'sound/guitar/En5.ogg'
-		if("Fn5")	soundfile = 'sound/guitar/Fn5.ogg'
-		if("Gb5")	soundfile = 'sound/guitar/Gb5.ogg'
-		if("Gn5")	soundfile = 'sound/guitar/Gn5.ogg'
 		if("Ab5")	soundfile = 'sound/guitar/Ab5.ogg'
-		if("An5")	soundfile = 'sound/guitar/An5.ogg'
-		if("Bb5")	soundfile = 'sound/guitar/Bb5.ogg'
-		if("Bn5")	soundfile = 'sound/guitar/Bn5.ogg'
-		if("Cn6")	soundfile = 'sound/guitar/Cn6.ogg'
-		if("Db6")	soundfile = 'sound/guitar/Db6.ogg'
-		if("Eb6")	soundfile = 'sound/guitar/Eb6.ogg'
-		if("En6")	soundfile = 'sound/guitar/En6.ogg'
-		if("Fn6")	soundfile = 'sound/guitar/Fn6.ogg'
-		if("Gb6")	soundfile = 'sound/guitar/Gb6.ogg'
-		if("Gn6")	soundfile = 'sound/guitar/Gn6.ogg'
 		if("Ab6")	soundfile = 'sound/guitar/Ab6.ogg'
+		if("An3")	soundfile = 'sound/guitar/An3.ogg'
+		if("An4")	soundfile = 'sound/guitar/An4.ogg'
+		if("An5")	soundfile = 'sound/guitar/An5.ogg'
 		if("An6")	soundfile = 'sound/guitar/An6.ogg'
+		if("Bb3")	soundfile = 'sound/guitar/Bb3.ogg'
+		if("Bb4")	soundfile = 'sound/guitar/Bb4.ogg'
+		if("Bb5")	soundfile = 'sound/guitar/Bb5.ogg'
 		if("Bb6")	soundfile = 'sound/guitar/Bb6.ogg'
+		if("Bn3")	soundfile = 'sound/guitar/Bn3.ogg'
+		if("Bn4")	soundfile = 'sound/guitar/Bn4.ogg'
+		if("Bn5")	soundfile = 'sound/guitar/Bn5.ogg'
 		if("Bn6")	soundfile = 'sound/guitar/Bn6.ogg'
+		if("Cn4")	soundfile = 'sound/guitar/Cn4.ogg'
+		if("Cn5")	soundfile = 'sound/guitar/Cn5.ogg'
+		if("Cn6")	soundfile = 'sound/guitar/Cn6.ogg'
+		if("Dn4")	soundfile = 'sound/guitar/Dn4.ogg'
+		if("Dn5")	soundfile = 'sound/guitar/Dn5.ogg'
+		if("Dn6")	soundfile = 'sound/guitar/Dn6.ogg'
+		if("Db4")	soundfile = 'sound/guitar/Db4.ogg'
+		if("Db5")	soundfile = 'sound/guitar/Db5.ogg'
+		if("Db6")	soundfile = 'sound/guitar/Db6.ogg'
+		if("Eb4")	soundfile = 'sound/guitar/Eb4.ogg'
+		if("Eb5")	soundfile = 'sound/guitar/Eb5.ogg'
+		if("Eb6")	soundfile = 'sound/guitar/Eb6.ogg'
+		if("En3")	soundfile = 'sound/guitar/En3.ogg'
+		if("En4")	soundfile = 'sound/guitar/En4.ogg'
+		if("En5")	soundfile = 'sound/guitar/En5.ogg'
+		if("En6")	soundfile = 'sound/guitar/En6.ogg'
+		if("Fn3")	soundfile = 'sound/guitar/Fn3.ogg'
+		if("Fn4")	soundfile = 'sound/guitar/Fn4.ogg'
+		if("Fn5")	soundfile = 'sound/guitar/Fn5.ogg'
+		if("Fn6")	soundfile = 'sound/guitar/Fn6.ogg'
+		if("Gb3")	soundfile = 'sound/guitar/Gb3.ogg'
+		if("Gb4")	soundfile = 'sound/guitar/Gb4.ogg'
+		if("Gb5")	soundfile = 'sound/guitar/Gb5.ogg'
+		if("Gb6")	soundfile = 'sound/guitar/Gb6.ogg'
+		if("Gn3")	soundfile = 'sound/guitar/Gn3.ogg'
+		if("Gn4")	soundfile = 'sound/guitar/Gn4.ogg'
+		if("Gn5")	soundfile = 'sound/guitar/Gn5.ogg'
+		if("Gn6")	soundfile = 'sound/guitar/Gn6.ogg'
 		else		return
 
 	sound_to(hearers(15, get_turf(src)), sound(soundfile))
@@ -252,9 +254,9 @@
 				if(copytext(lines[1],1,6) == "BPM: ")
 					tempo = 600 / text2num(copytext(lines[1],6))
 					lines.Cut(1,2)
-				if(lines.len > 200)
+				if(lines.len > 300)
 					to_chat(usr, "Too many lines!")
-					lines.Cut(201)
+					lines.Cut(301)
 				var/linenum = 1
 				for(var/l in lines)
 					if(lentext(l) > 50)

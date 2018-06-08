@@ -29,6 +29,7 @@ GLOBAL_LIST_INIT(borer_reagent_types_by_name, setup_borer_reagents())
 	if(!host.stat)
 		to_chat(host, "An odd, uncomfortable pressure begins to build inside your skull, behind your ear...")
 
+	src.now_escaping = 1
 	spawn(100)
 
 		if(!host || !src) return
@@ -45,6 +46,7 @@ GLOBAL_LIST_INIT(borer_reagent_types_by_name, setup_borer_reagents())
 
 		detatch()
 		leave_host()
+		src.now_escaping = 0
 
 /mob/living/simple_animal/borer/verb/infest()
 	set category = "Abilities"
@@ -76,6 +78,10 @@ GLOBAL_LIST_INIT(borer_reagent_types_by_name, setup_borer_reagents())
 
 	if(M.has_brain_worms())
 		to_chat(src, "You cannot infest someone who is already infested!")
+		return
+
+	if(M.getBrainLoss() >= 100)
+		to_chat(src, sanitize_a0("У этой жертвы слишком поврежден мозг. Бесполезен."))
 		return
 
 	if(istype(M,/mob/living/carbon/human))

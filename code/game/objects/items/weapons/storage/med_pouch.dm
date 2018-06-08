@@ -186,7 +186,7 @@ Single Use Emergency Pouches
 	if(reagents.total_volume > 0)
 		icon_state = "[icon_colour]1"
 	else
-		icon_state = "[icon_colour]0"
+		icon_state = "[icon_colour]10"
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/inaprovaline
 	name = "emergency inaprovaline autoinjector"

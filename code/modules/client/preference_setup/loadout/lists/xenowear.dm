@@ -203,3 +203,83 @@
 	path = /obj/item/clothing/mask/gas/vox
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_VOX)
+	cost = 2
+
+/datum/gear/gloves/vox
+	display_name = "vox insulated gauntlets"
+	path = /obj/item/clothing/gloves/vox
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_VOX)
+	cost = 4
+
+/datum/gear/uniform/vox_cloth
+	display_name = "vox clothing"
+	path = /obj/item/clothing/under/vox/vox_casual
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_VOX)
+	cost = 0
+
+/datum/gear/uniform/vox_robe
+	display_name = "vox robe"
+	path = /obj/item/clothing/under/vox/vox_robes
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_VOX)
+	cost = 0
+
+	//////////
+	//RESOMI//
+	//////////
+
+/datum/gear/uniform/resomi
+	display_name = "smock, grey (Resomi)"
+	path = /obj/item/clothing/under/resomi
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_RESOMI)
+
+/datum/gear/uniform/resomi/dress
+	display_name = "small dress (Resomi)"
+	path = /obj/item/clothing/under/resomi/dress
+
+/datum/gear/uniform/resomi/uniform
+	display_name = "small uniform (Resomi)"
+	path = /obj/item/clothing/under/resomi/uniform
+
+/datum/gear/uniform/resomi/formal
+	display_name = "small formal uniform (Resomi)"
+	path = /obj/item/clothing/under/resomi/formal
+
+/datum/gear/uniform/resomi/rainbow
+	display_name = "smock, rainbow (Resomi)"
+	path = /obj/item/clothing/under/resomi/rainbow
+
+/datum/gear/uniform/resomi/white
+	display_name = "smock, colored (Resomi)"
+	path = /obj/item/clothing/under/resomi/white
+	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/uniform/resomi/eng
+	display_name = "uniform, Engineering (Resomi)"
+	path = /obj/item/clothing/under/resomi/yellow
+
+/datum/gear/uniform/resomi/eng/roboitcs
+	display_name = "uniform, Robotics (Resomi)"
+	path = /obj/item/clothing/under/resomi/robotics
+
+/datum/gear/uniform/resomi/sec
+	display_name = "uniform, Security (Resomi)"
+	path = /obj/item/clothing/under/resomi/red
+
+/datum/gear/uniform/resomi/med
+	display_name = "uniform, Medical (Resomi)"
+	path = /obj/item/clothing/under/resomi/medical
+
+/datum/gear/uniform/resomi/science
+	display_name = "uniform, Science (Resomi)"
+	path = /obj/item/clothing/under/resomi/science
+
+/datum/gear/suit/resomi
+	display_name = "small coat (Resomi)"
+	path = /obj/item/clothing/suit/storage/toggle/Resomicoat
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_RESOMI)
+	cost = 1

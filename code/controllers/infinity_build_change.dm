@@ -70,7 +70,7 @@ var/datum/server_build/currentbuild
 	return 1
 
 /proc/loadbuildname()
-	shell("sh ../dir.sh > ext.txt")
+	shell("..\\dir.bat > ext.txt")
 	var/ext
 	var/list/Lines = file2list("ext.txt")
 	if(Lines.len)
@@ -131,4 +131,4 @@ var/datum/server_build/currentbuild
 	sleep(100)
 
 	log_game("Changing build to [B.name]([B.friendlyname])")
-	. = shell("sudo sh ../change_build.sh [B.dmb_file] [B.folder] [world.port]")
+	. = shell("..\\change_build.bat [B.dmb_file] [B.folder] [world.port]")

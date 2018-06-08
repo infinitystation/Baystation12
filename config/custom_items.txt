@@ -128,15 +128,52 @@ paper_title: award certificate
 paper_stamp_type: /obj/item/weapon/stamp/solgov
 }
 {
-ckey: wheatley2013
-character_name: Nexus
-item_path: /obj/item/clothing/suit/officerdnavyjacket
-req_titles: Bridge Officer, Deck Officer, Physician, Senior Engineer
-}
-{
 ckey: vankoska
 character_name: Terill Qerr
 item_path: /obj/item/device/pmp/personal
-req_titles: Senior Researcher, Scientist
-req_access: 47
+}
+{
+ckey: korramy
+character_name: Quentin Willo
+item_path: /obj/item/device/pmp/personal
+}
+# {
+# ckey: quietproject 
+# character_name: Arias Creo 
+# item_path: /obj/item/clothing/mask/gas/creo
+# }
+# {
+# ckey: auesti
+# character_name: Quentin Willo
+# item_path: /obj/item/vape
+# }
+{
+ckey: chowny
+character_name: Heather Leslie
+item_path: /obj/item/device/guitar
+item_name: pink guitar
+item_desc: It is a model of the famous guitar "Stratocaster" assembled in a pink case. The name is engraved on the fretboard - Heather Leslie.
+item_icon: pink_guitar
+}
+{
+ckey: furrydog
+character_name: Mathor Ajurth Enai-Kaytam
+item_path: /obj/item/clothing/ring/seal/mason
+item_name: rainbow bracelet
+item_desc: It's a rainbow bracelet. Looks pretty good and stylish, special for gays.
+item_icon: rainbow_bracelet
+}
+ckey: s1334
+character_name: WP-316
+item_path: /obj/item/device/pmp/personal/csplayer
+}
+{
+ckey: s1334
+character_name: Remi-su
+item_path: /obj/item/device/pmp/personal/csplayer
+}
+{
+ckey: auesti 
+character_name: Lin Fojuraus 
+item_path: /obj/item/vape
 }

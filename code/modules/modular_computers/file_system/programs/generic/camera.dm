@@ -17,8 +17,6 @@
 			return access_mailsorting // Cargo office - all cargo staff should have access here.
 		if(NETWORK_RESEARCH)
 			return access_research
-		if(NETWORK_LANA)
-			return access_cent_creed
 		if(NETWORK_THUNDER)
 			return 0
 

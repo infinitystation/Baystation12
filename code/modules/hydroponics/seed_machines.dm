@@ -253,6 +253,7 @@
 // of destroying it based on the size/complexity of the plasmid.
 /obj/machinery/botany/editor
 	name = "bioballistic delivery system"
+	icon = 'icons/obj/traitgun.dmi'
 	icon_state = "traitgun"
 	disk_needs_genes = 1
 

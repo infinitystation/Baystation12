@@ -122,10 +122,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/m60/update_icon()
 	if(istype(ammo_magazine, /obj/item/ammo_magazine/box))
-		icon_state = "m60[cover_open ? "open" : "closed"]"
-		item_state = "m60"
-	else if(ammo_magazine)
-		icon_state = "m60[cover_open ? "open" : "closed"]"
+		icon_state = "m60[cover_open ? "open" : "closed"][round(ammo_magazine.stored_ammo.len, 100)]"
 		item_state = "m60"
 	else
 		icon_state = "m60[cover_open ? "open" : "closed"]-empty"

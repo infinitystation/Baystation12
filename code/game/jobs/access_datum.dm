@@ -297,7 +297,12 @@
 	desc = "Cargo Office"
 	region = ACCESS_REGION_SUPPLY
 
-// /var/const/free_access_id = 51
+/var/const/access_fist_mate = 51
+/datum/access/fist_mate
+	id = access_fist_mate
+	desc = "Fist Mate"
+	access_type = ACCESS_TYPE_NONE
+
 // /var/const/free_access_id = 52
 
 /var/const/access_heads_vault = 53

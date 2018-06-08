@@ -3,6 +3,7 @@
 	#include "torch_announcements.dm"
 	#include "torch_antagonism.dm"
 	#include "torch_areas.dm"
+	#include "torch_areas_extra.dm"
 	#include "torch_elevator.dm"
 	#include "torch_holodecks.dm"
 	#include "torch_lobby.dm"
@@ -76,7 +77,6 @@
 	#include "infinity_station_maps/torch-5.dmm"
 	#include "infinity_station_maps/torch-6.dmm"
 	#include "infinity_station_maps/torch-7.dmm"
-	#include "infinity_station_maps/torch-8.dmm"
 	#include "../away_inf/sentinel/sentinel.dm"
 	#include "../away_inf/gunboat/gunboat.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
@@ -90,14 +90,12 @@
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"
 	#include "../away/blueriver/blueriver.dm"
-//	#include "../away/slavers/slavers_base.dm"
 	#include "../away/hydro/hydro.dm"
 	#include "../away/mobius_rift/mobius_rift.dm"
 	#include "../away/icarus/icarus.dm"
-	#include "../away/errant_pisces/errant_pisces.dm"
+//	#include "../away/slavers/slavers_base.dm"
+//	#include "../away/errant_pisces/errant_pisces.dm"
 //	#include "../away/lar_maria/lar_maria.dm"
-	#include "../away_inf/smugglers/smugglers.dmm"
-	#include "../away/errant_pisces/errant_pisces.dmm"
 
 	#define using_map_DATUM /datum/map/torch
 

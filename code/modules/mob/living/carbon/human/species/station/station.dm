@@ -16,6 +16,7 @@
 	gluttonous = GLUT_TINY
 
 	speech_chance = 40
+	ambiguous_genders = 0
 
 	spawn_flags = SPECIES_CAN_JOIN
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_TONE_NORMAL | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
@@ -85,7 +86,7 @@
 	tail = "tajtail"
 	tail_animation = 'icons/mob/species/tajaran/tail.dmi'
 	default_h_style = "Tajaran Ears"
-	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/claws, /datum/unarmed_attack/bite/sharp)
+	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/claws, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite/sharp)
 	darksight_range = 8
 	darksight_tint = DARKTINT_GOOD
 	slowdown = -0.5
@@ -98,7 +99,6 @@
 	additional_langs = list(LANGUAGE_SIIK_MAAS)
 	name_language = LANGUAGE_SIIK_MAAS
 	health_hud_intensity = 1.75
-	ambiguous_genders = TRUE
 
 	min_age = 19
 	max_age = 140
@@ -163,7 +163,7 @@
 	secondary_langs = list(LANGUAGE_SKRELLIAN)
 	name_language = null
 	health_hud_intensity = 1.75
-	ambiguous_genders = TRUE
+
 
 	min_age = 19
 	max_age = 90
@@ -270,6 +270,10 @@
 		BP_R_FOOT = list("path" = /obj/item/organ/external/diona/foot/right)
 		)
 
+	base_auras = list(
+		/obj/aura/regenerating/human/diona
+		)
+
 	inherent_verbs = list(
 		/mob/living/carbon/human/proc/diona_split_nymph,
 		/mob/living/carbon/human/proc/diona_heal_toggle
@@ -342,48 +346,5 @@
 	return "sap"
 
 /datum/species/diona/handle_environment_special(var/mob/living/carbon/human/H)
-	if(H.InStasis() || H.stat == DEAD)
-		return
-	if(H.nutrition < 10)
+	if(!H.InStasis() && H.stat != DEAD && H.nutrition < 10)
 		H.take_overall_damage(2,0)
-	else if (H.innate_heal)
-		// Heals normal damage.
-		if(H.getBruteLoss())
-			H.adjustBruteLoss(-4)
-			H.nutrition -= 2
-		if(H.getFireLoss())
-			H.adjustFireLoss(-4)
-			H.nutrition -= 2
-
-		if(prob(10) && H.nutrition > 200 && !H.getBruteLoss() && !H.getFireLoss())
-			var/obj/item/organ/external/head/D = H.organs_by_name["head"]
-			if (D.disfigured)
-				D.disfigured = 0
-				H.nutrition -= 20
-
-		for(var/obj/item/organ/I in H.internal_organs)
-			if(I.damage > 0)
-				I.damage = max(I.damage - 2, 0)
-				H.nutrition -= 2
-				if (prob(5))
-					to_chat(H, "<span class='warning'>You sense your nymphs shifting internally to regenerate your [I.name]...</span>")
-
-		if (prob(10) && H.nutrition > 70)
-			for(var/limb_type in has_limbs)
-				var/obj/item/organ/external/E = H.organs_by_name[limb_type]
-				if(E && !E.is_usable())
-					E.removed()
-					qdel(E)
-					E = null
-				if(!E)
-					var/list/organ_data = has_limbs[limb_type]
-					var/limb_path = organ_data["path"]
-					var/obj/item/organ/O = new limb_path(H)
-					organ_data["descriptor"] = O.name
-					to_chat(H, "<span class='warning'>Some of your nymphs split and hurry to reform your [O.name].</span>")
-					H.nutrition -= 60
-					H.update_body()
-				else
-					for(var/datum/wound/W in E.wounds)
-						if (W.wound_damage() == 0 && prob(50))
-							E.wounds -= W

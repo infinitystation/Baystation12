@@ -5,6 +5,7 @@
 	utility_under = /obj/item/clothing/under/solgov/utility/fleet/command
 	utility_extra = list(/obj/item/clothing/head/beret/solgov/fleet/command, /obj/item/clothing/head/ushanka/solgov/fleet, /obj/item/clothing/suit/storage/hooded/wintercoat/solgov/fleet)
 
+	service_under = /obj/item/clothing/under/solgov/service/fleet/command
 	service_hat = /obj/item/clothing/head/solgov/dress/fleet/command
 
 	dress_over = /obj/item/clothing/suit/storage/toggle/dress/fleet/command

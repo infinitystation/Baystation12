@@ -8,3 +8,4 @@
 		ghost_image.appearance = src
 		ghost_image.appearance_flags = RESET_ALPHA
 	updateghostimages()
+	change_light_colour(DARKTINT_GOOD)

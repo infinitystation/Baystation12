@@ -40,6 +40,11 @@
 	caliber = "9mm"
 	projectile_type = /obj/item/projectile/bullet/pistol
 
+/obj/item/ammo_casing/c57
+	desc = "A 5.7mm bullet casing."
+	caliber = "57"
+	projectile_type = /obj/item/projectile/bullet/pistol/medium/fast
+
 /obj/item/ammo_casing/c9mm/flash
 	desc = "A 9mm flash shell casing."
 	projectile_type = /obj/item/projectile/energy/flash
@@ -264,3 +269,9 @@
 	spent_icon = "empshell-spent"
 	projectile_type  = /obj/item/projectile/ion
 	matter = list(DEFAULT_WALL_MATERIAL = 260, "uranium" = 200)
+
+/obj/item/ammo_casing/uni46x30mm
+	desc = "A 46x30 bullet casing."
+	caliber = "46x30mm"
+	projectile_type = /obj/item/projectile/bullet/smg/uni46x30mm
+

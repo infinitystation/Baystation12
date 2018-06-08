@@ -140,3 +140,18 @@
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
 	starting_pressure = list("nitrogen" = 10*ONE_ATMOSPHERE)
 	volume = 180
+
+/*
+ * Chlorine
+ */
+/obj/item/weapon/tank/chlorine
+	name = "strange tank"
+	desc = "A tank of chlorine... You guess."
+	icon_state = "chlorine"
+	sprite_sheets = list(
+		SPECIES_BOGANI = 'icons/mob/species/bogani/back.dmi'
+		)
+	distribute_pressure = ONE_ATMOSPHERE*0.30
+	starting_pressure = list("chlorine" = 30*ONE_ATMOSPHERE)
+	gauge_icon = null
+	volume = 360

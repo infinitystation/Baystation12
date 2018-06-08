@@ -334,7 +334,9 @@
 /turf/simulated/floor/plating,
 /area/ship/gunboat/command/bridge)
 "aO" = (
-/obj/machinery/computer/engines,
+/obj/machinery/computer/engines{
+	dir = 4
+	},
 /obj/effect/floor_decal/industrial/warning/corner{
 	icon_state = "warningcorner";
 	dir = 4
@@ -738,7 +740,9 @@
 /turf/simulated/floor/reinforced/airmix,
 /area/ship/gunboat/engine/upper)
 "bm" = (
-/obj/machinery/computer/helm,
+/obj/machinery/computer/helm{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/command/bridge)
 "bn" = (
@@ -916,7 +920,9 @@
 /turf/simulated/floor/reinforced/airmix,
 /area/ship/gunboat/engine/upper)
 "bH" = (
-/obj/machinery/computer/sensors,
+/obj/machinery/computer/sensors{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/command/bridge)
 "bI" = (
@@ -934,7 +940,9 @@
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/command/bridge)
 "bJ" = (
-/obj/machinery/computer/weapons,
+/obj/machinery/computer/weapons{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/command/bridge)
 "bK" = (
@@ -1047,6 +1055,7 @@
 	dir = 4
 	},
 /obj/machinery/computer/general_air_control/large_tank_control{
+	dir = 8;
 	frequency = 1700;
 	input_tag = "air_in";
 	name = "Air Supply Control";
@@ -1066,7 +1075,9 @@
 /turf/simulated/floor/reinforced/airmix,
 /area/ship/gunboat/engine/upper)
 "bW" = (
-/obj/machinery/computer/navigation,
+/obj/machinery/computer/navigation{
+	dir = 4
+	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/command/bridge)
@@ -1154,11 +1165,6 @@
 /obj/structure/sign/warning/pods{
 	pixel_y = -32
 	},
-/turf/simulated/floor/tiled,
-/area/ship/gunboat/hallway)
-"cf" = (
-/obj/structure/closet/firecloset/full,
-/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/hallway)
 "cg" = (
@@ -1265,6 +1271,12 @@
 	icon_state = "tube1";
 	dir = 1
 	},
+/obj/machinery/alarm{
+	dir = 0;
+	icon_state = "alarm0";
+	pixel_x = 0;
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/escape)
 "cs" = (
@@ -1289,12 +1301,6 @@
 /area/ship/gunboat/escape)
 "cu" = (
 /obj/effect/floor_decal/industrial/loading,
-/obj/machinery/alarm{
-	dir = 0;
-	icon_state = "alarm0";
-	pixel_x = 0;
-	pixel_y = 24
-	},
 /obj/machinery/firealarm{
 	dir = 4;
 	layer = 3.3;
@@ -1351,6 +1357,12 @@
 /obj/effect/overmap/ship/gunboat,
 /turf/space,
 /area/space)
+"fr" = (
+/obj/structure/closet/hydrant{
+	pixel_y = -28
+	},
+/turf/simulated/floor/tiled,
+/area/ship/gunboat/hallway)
 
 (1,1,1) = {"
 aa
@@ -6603,7 +6615,7 @@ aH
 ba
 bw
 by
-ce
+fr
 cl
 cs
 cz
@@ -6807,7 +6819,7 @@ aJ
 bc
 by
 by
-cf
+ce
 cl
 cu
 cA

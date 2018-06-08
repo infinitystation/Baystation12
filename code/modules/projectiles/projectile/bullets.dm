@@ -36,7 +36,7 @@
 	return ..()
 
 /obj/item/projectile/bullet/check_penetrate(var/atom/A)
-	if(!A || !A.density) return 1 //if whatever it was got destroyed when we hit it, then I guess we can just keep going
+	if(QDELETED(A) || !A.density) return 1 //if whatever it was got destroyed when we hit it, then I guess we can just keep going
 
 	if(istype(A, /obj/mecha))
 		return 1 //mecha have their own penetration handling
@@ -47,15 +47,9 @@
 		return 1
 
 	var/chance = damage
-	if(istype(A, /turf/simulated/wall))
-		var/turf/simulated/wall/W = A
-		chance = round(damage/W.material.integrity*180)
-	else if(istype(A, /obj/machinery/door))
-		var/obj/machinery/door/D = A
-		chance = round(damage/D.maxhealth*180)
-		if(D.glass) chance *= 2
-	else if(istype(A, /obj/structure/girder))
-		chance = 100
+	if(has_extension(A, /datum/extension/penetration))
+		var/datum/extension/penetration/P = get_extension(A, /datum/extension/penetration)
+		chance = P.PenetrationProbability(chance, damage, damage_type)
 
 	if(prob(chance))
 		if(A.opacity)
@@ -149,6 +143,11 @@
 	damage = 26.5 //.45, 7.63x25
 	armor_penetration = 14.5
 
+/obj/item/projectile/bullet/pistol/medium/fast
+	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	damage = 18 //4.6x30 mm, 5.7x28 mm
+	armor_penetration = 25
+
 /obj/item/projectile/bullet/pistol/medium/smg
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
 	damage = 28 //10mm
@@ -236,7 +235,8 @@
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
 	damage = 45 //12x55mm
 	armor_penetration = 50
-	penetration_modifier = 0.75
+	penetrating = 2
+	penetration_modifier = 1.1
 
 /obj/item/projectile/bullet/rifle/a127
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
@@ -259,14 +259,14 @@
 	damage = 80 //14,7x114
 	stun = 3
 	weaken = 3
-	penetrating = 5
+	penetrating = 4
 	armor_penetration = 80
 	hitscan = 1 //so the PTR isn't useless as a sniper weapon
 	penetration_modifier = 1.25
 
 /obj/item/projectile/bullet/rifle/a145/apds
 	damage = 75
-	penetrating = 6
+	penetrating = 5
 	armor_penetration = 95
 	penetration_modifier = 1.5
 
@@ -339,3 +339,11 @@
 	pixel_x = rand(-10,10)
 	pixel_y = rand(-10,10)
 	..()
+
+/obj/item/projectile/bullet/smg/uni46x30mm
+	damage = 20
+	armor_penetration = 5
+
+/obj/item/projectile/bullet/smg/uni46x30mm_charged
+	damage = 15
+	armor_penetration = 30
