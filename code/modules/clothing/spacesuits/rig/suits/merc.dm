@@ -27,7 +27,7 @@
 		)
 
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
+//		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
 		)
 
 //Has most of the modules removed
@@ -46,7 +46,7 @@
 	online_slowdown = 2
 
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
+//		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
 		)
 
 /obj/item/weapon/rig/merc/heavy/empty

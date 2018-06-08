@@ -20,7 +20,7 @@
 
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/rig_back.dmi',
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
+//		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
 		)
 
 /obj/item/clothing/suit/space/rig/light
@@ -28,6 +28,7 @@
 	breach_threshold = 18 //comparable to voidsuits
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',
+		SPECIES_UNATHI = 'icons/mob/species/unathi/suit.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit_if.dmi'
 		)
 
@@ -48,6 +49,7 @@
 
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
+		SPECIES_UNATHI = 'icons/mob/species/unathi/helmet.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
 
 	)
@@ -69,7 +71,7 @@
 	boot_type = /obj/item/clothing/shoes/lightrig/hacker
 
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
+//		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
 		)
 
 	initial_modules = list(
@@ -131,7 +133,7 @@
 
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/rig_back.dmi',
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
+//		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
 		)
 
 /obj/item/weapon/rig/light/ninja/verb/rename_suit()
@@ -169,17 +171,8 @@
 	name = "insulated gloves"
 	siemens_coefficient = 0
 
-	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/hands.dmi'
-	)
-
 /obj/item/clothing/suit/space/rig/light/ninja
 	breach_threshold = 38 //comparable to regular hardsuits
-
-	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit_if.dmi'
-	)
 
 /obj/item/weapon/rig/light/stealth
 	name = "stealth suit control module"
