@@ -131,4 +131,4 @@ var/datum/server_build/currentbuild
 	sleep(100)
 
 	log_game("Changing build to [B.name]([B.friendlyname])")
-	. = shell("sudo sh ../change_build.sh [B.dmb_file] [B.folder] [world.port]")
+	. = shell("..\\change_build.bat [B.dmb_file] [B.folder] [world.port]")
