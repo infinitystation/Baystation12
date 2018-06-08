@@ -1,4 +1,4 @@
-/proc/extA2U_dbg(t)
+/proc/extA2U(t)
 	if(!t)
 		return
 
@@ -9,7 +9,7 @@
 
 	return t
 
-/proc/convert1251_to_utf_dbg(t)
+/proc/convert1251_to_utf(t)
 	if(!t)
 		return
 
@@ -108,7 +108,7 @@ GLOBAL_LIST_INIT(j1251_to_utf_table, list(
 	"97" = "2014", "b9" = "2116"
 ))
 
-/proc/extA2U(t)
+/proc/extA2U_alt(t)
 	if(!t)
 		return
 
@@ -123,7 +123,7 @@ GLOBAL_LIST_INIT(j1251_to_utf_table, list(
 			t = replacetext(t, "\\u00[s]", "\\u[GLOB.j1251_to_utf_table[s]]")
 	return t
 
-/proc/convert1251_to_utf(t)
+/proc/convert1251_to_utf_alt(t)
 	if(!t)
 		return
 
@@ -133,45 +133,3 @@ GLOBAL_LIST_INIT(j1251_to_utf_table, list(
 	for(var/s in GLOB.c1251_to_utf_table)
 		t = replacetext(t, s, "&#x[GLOB.c1251_to_utf_table[s]];")
 	return t
-
-/*/mob/verb/json_conv_stress()
-	set name = "JSON conv test"
-	set category = "Test"
-
-	var/t = "—Џ≈Ў№ ∆≈ ≈ў≈ Ё“»’ ћя√ »’, ‘–јЌ÷”«— »’ Ѕ”Ћќ„≈ , ƒј ¬џѕ≈… „јё. —ъещь же еще этих м€гких, французских булочек да выпей чаю. 1234567890®!є;%:?*()_+ єєєєєєє"
-	t = replacetext(t, "€", "&#1103;")
-	t = json_encode(t)
-
-	for(var/i = 1 to 40000)
-		extA2U(t)
-
-/mob/verb/gchat_conv_stress()
-	set name = "GCHAT conv test"
-	set category = "Test"
-
-	var/t = "—Џ≈Ў№ ∆≈ ≈ў≈ Ё“»’ ћя√ »’, ‘–јЌ÷”«— »’ Ѕ”Ћќ„≈ , ƒј ¬џѕ≈… „јё. —ъещь же еще этих м€гких, французских булочек да выпей чаю. 1234567890®!є;%:?*()_+ єєєєєєє"
-	t = replacetext(t, "€", "&#1103;")
-
-	for(var/i = 1 to 40000)
-		convert1251_to_utf(t)
-
-/mob/verb/json_conv_stress_dbg()
-	set name = "JSON conv test ref"
-	set category = "Test"
-
-	var/t = "—Џ≈Ў№ ∆≈ ≈ў≈ Ё“»’ ћя√ »’, ‘–јЌ÷”«— »’ Ѕ”Ћќ„≈ , ƒј ¬џѕ≈… „јё. —ъещь же еще этих м€гких, французских булочек да выпей чаю. 1234567890®!є;%:?*()_+ єєєєєєє"
-	t = replacetext(t, "€", "&#1103;")
-	t = json_encode(t)
-
-	for(var/i = 1 to 40000)
-		extA2U_dbg(t)
-
-/mob/verb/gchat_conv_stress_dbg()
-	set name = "GCHAT conv test ref"
-	set category = "Test"
-
-	var/t = "—Џ≈Ў№ ∆≈ ≈ў≈ Ё“»’ ћя√ »’, ‘–јЌ÷”«— »’ Ѕ”Ћќ„≈ , ƒј ¬џѕ≈… „јё. —ъещь же еще этих м€гких, французских булочек да выпей чаю. 1234567890®!є;%:?*()_+ єєєєєєє"
-	t = replacetext(t, "€", "&#1103;")
-
-	for(var/i = 1 to 40000)
-		convert1251_to_utf_dbg(t)*/
