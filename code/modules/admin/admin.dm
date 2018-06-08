@@ -700,7 +700,7 @@ var/global/floorIsLava = 0
 	if(confirm == "Cancel")
 		return
 	if(confirm == "Yes")
-		to_world("<span class='danger'>Restarting world!</span> <span class='notice'>Initiated by [usr.key]!</span>")
+		to_chat(world, "<span class='danger'>Restarting world!</span> <span class='notice'>Initiated by [usr.key]!</span>")
 		log_admin("[key_name(usr)] initiated a reboot.")
 
 		feedback_set_details("end_error","admin reboot - by [usr.key]")
@@ -723,7 +723,7 @@ var/global/floorIsLava = 0
 	message = sanitize(message, 500, extra = 0)
 	if(message)
 		message = replacetext(message, "\n", "<br>") // required since we're putting it in a <p> tag
-		to_world("<span class=notice><b>[usr.key] Announces:</b><p style='text-indent: 50px'>[message]</p></span>")
+		to_chat(world, "<span class=notice><b>[usr.key] Announces:</b><p style='text-indent: 50px'>[message]</p></span>")
 		log_admin("Announce: [key_name(usr)] : [message]")
 	feedback_add_details("admin_verb","A") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -842,9 +842,9 @@ var/global/floorIsLava = 0
 
 	config.ooc_allowed = !(config.ooc_allowed)
 	if (config.ooc_allowed)
-		to_world("<B>The OOC channel has been globally enabled!</B>")
+		to_chat(world, "<B>The OOC channel has been globally enabled!</B>")
 	else
-		to_world("<B>The OOC channel has been globally disabled!</B>")
+		to_chat(world, "<B>The OOC channel has been globally disabled!</B>")
 	log_and_message_admins("toggled OOC.")
 	feedback_add_details("admin_verb","TOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -858,9 +858,9 @@ var/global/floorIsLava = 0
 
 	config.aooc_allowed = !(config.aooc_allowed)
 	if (config.aooc_allowed)
-		to_world("<B>The AOOC channel has been globally enabled!</B>")
+		to_chat(world, "<B>The AOOC channel has been globally enabled!</B>")
 	else
-		to_world("<B>The AOOC channel has been globally disabled!</B>")
+		to_chat(world, "<B>The AOOC channel has been globally disabled!</B>")
 	log_and_message_admins("toggled AOOC.")
 	feedback_add_details("admin_verb","TAOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -874,9 +874,9 @@ var/global/floorIsLava = 0
 
 	config.looc_allowed = !(config.looc_allowed)
 	if (config.looc_allowed)
-		to_world("<B>The LOOC channel has been globally enabled!</B>")
+		to_chat(world, "<B>The LOOC channel has been globally enabled!</B>")
 	else
-		to_world("<B>The LOOC channel has been globally disabled!</B>")
+		to_chat(world, "<B>The LOOC channel has been globally disabled!</B>")
 	log_and_message_admins("toggled LOOC.")
 	feedback_add_details("admin_verb","TLOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -891,9 +891,9 @@ var/global/floorIsLava = 0
 
 	config.dsay_allowed = !(config.dsay_allowed)
 	if (config.dsay_allowed)
-		to_world("<B>Deadchat has been globally enabled!</B>")
+		to_chat(world, "<B>Deadchat has been globally enabled!</B>")
 	else
-		to_world("<B>Deadchat has been globally disabled!</B>")
+		to_chat(world, "<B>Deadchat has been globally disabled!</B>")
 	log_and_message_admins("toggled deadchat.")
 	feedback_add_details("admin_verb","TDSAY") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc
 
@@ -968,7 +968,7 @@ var/global/floorIsLava = 0
 	if(confirm == "Cancel")
 		return
 	if(confirm == "Yes")
-		to_world("<span class='danger'>Game ending!</span> <span class='notice'>Initiated by [usr.key]!</span>")
+		to_chat(world, "<span class='danger'>Game ending!</span> <span class='notice'>Initiated by [usr.key]!</span>")
 		log_admin("[key_name(usr)] initiated a game ending.")
 		feedback_add_details("admin_verb","R") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -983,9 +983,9 @@ var/global/floorIsLava = 0
 	set name="Toggle Entering"
 	config.enter_allowed = !(config.enter_allowed)
 	if (!(config.enter_allowed))
-		to_world("<B>New players may no longer enter the game.</B>")
+		to_chat(world, "<B>New players may no longer enter the game.</B>")
 	else
-		to_world("<B>New players may now enter the game.</B>")
+		to_chat(world, "<B>New players may now enter the game.</B>")
 	log_and_message_admins("[key_name_admin(usr)] toggled new player game entering.")
 	world.update_status()
 	feedback_add_details("admin_verb","TE") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -996,9 +996,9 @@ var/global/floorIsLava = 0
 	set name="Toggle AI"
 	config.allow_ai = !( config.allow_ai )
 	if (!( config.allow_ai ))
-		to_world("<B>The AI job is no longer chooseable.</B>")
+		to_chat(world, "<B>The AI job is no longer chooseable.</B>")
 	else
-		to_world("<B>The AI job is chooseable now.</B>")
+		to_chat(world, "<B>The AI job is chooseable now.</B>")
 	log_admin("[key_name(usr)] toggled AI allowed.")
 	world.update_status()
 	feedback_add_details("admin_verb","TAI") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -1009,9 +1009,9 @@ var/global/floorIsLava = 0
 	set name="Toggle Respawn"
 	config.abandon_allowed = !(config.abandon_allowed)
 	if(config.abandon_allowed)
-		to_world("<B>You may now respawn.</B>")
+		to_chat(world, "<B>You may now respawn.</B>")
 	else
-		to_world("<B>You may no longer respawn :(</B>")
+		to_chat(world, "<B>You may no longer respawn :(</B>")
 	log_and_message_admins("toggled respawn to [config.abandon_allowed ? "On" : "Off"].")
 	world.update_status()
 	feedback_add_details("admin_verb","TR") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -1064,10 +1064,10 @@ var/global/floorIsLava = 0
 		return //alert("Round end delayed", null, null, null, null, null)
 	round_progressing = !round_progressing
 	if (!round_progressing)
-		to_world("<b>The game start has been delayed.</b>")
+		to_chat(world, "<b>The game start has been delayed.</b>")
 		log_admin("[key_name(usr)] delayed the game.")
 	else
-		to_world("<b>The game will start soon.</b>")
+		to_chat(world, "<b>The game will start soon.</b>")
 		log_admin("[key_name(usr)] removed the delay.")
 	feedback_add_details("admin_verb","DELAY") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -1102,7 +1102,7 @@ var/global/floorIsLava = 0
 	if(!usr.client.holder)	return
 	if( alert("Reboot server?",,"Yes","No") == "No")
 		return
-	to_world("<span class='danger'>Rebooting world!</span> <span class='notice'>Initiated by [usr.key]!</span>")
+	to_chat(world, "<span class='danger'>Rebooting world!</span> <span class='notice'>Initiated by [usr.key]!</span>")
 	log_admin("[key_name(usr)] initiated an immediate reboot.")
 
 	feedback_set_details("end_error","immediate admin reboot - by [usr.key]")
@@ -1349,9 +1349,9 @@ var/global/floorIsLava = 0
 	set name="Toggle tinted welding helmets."
 	config.welder_vision = !( config.welder_vision )
 	if (config.welder_vision)
-		to_world("<B>Reduced welder vision has been enabled!</B>")
+		to_chat(world, "<B>Reduced welder vision has been enabled!</B>")
 	else
-		to_world("<B>Reduced welder vision has been disabled!</B>")
+		to_chat(world, "<B>Reduced welder vision has been disabled!</B>")
 	log_and_message_admins("toggled welder vision.")
 	feedback_add_details("admin_verb","TTWH") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -1361,9 +1361,9 @@ var/global/floorIsLava = 0
 	set name="Toggle guests"
 	config.guests_allowed = !(config.guests_allowed)
 	if (!(config.guests_allowed))
-		to_world("<B>Guests may no longer enter the game.</B>")
+		to_chat(world, "<B>Guests may no longer enter the game.</B>")
 	else
-		to_world("<B>Guests may now enter the game.</B>")
+		to_chat(world, "<B>Guests may now enter the game.</B>")
 	log_admin("[key_name(usr)] toggled guests game entering [config.guests_allowed?"":"dis"]allowed.")
 	log_and_message_admins("toggled guests game entering [config.guests_allowed?"":"dis"]allowed.")
 	feedback_add_details("admin_verb","TGU") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
