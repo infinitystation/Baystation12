@@ -254,7 +254,7 @@ its easier to just keep the beam vertical.
 
 	if(!isobserver(user))
 		user.visible_message("<font size=1>[user.name] looks at [src].</font>")
-	to_chat(user, "[icon2html(src, user)] That's [f_name] [suffix]")
+	to_chat(user, "\icon[src] That's [f_name] [suffix]")
 	to_chat(user, desc)
 
 	return distance == -1 || (get_dist(src, user) <= distance)

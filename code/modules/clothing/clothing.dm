@@ -159,7 +159,7 @@
 		if(accessories.len)
 			var/list/ties = list()
 			for(var/accessory in accessories)
-				ties += "[icon2html(accessory, world)] \a [accessory]"
+				ties += "\icon[accessory] \a [accessory]"
 			to_chat(user, "Attached to \the [src] are [english_list(ties)].")
 		return TOPIC_HANDLED
 

@@ -110,7 +110,7 @@
 
 	if (!msg)
 		return
-	to_chat(world, msg)
+	to_world(msg)
 
 	log_and_message_admins(" - GlobalNarrate: [msg]")
 	feedback_add_details("admin_verb","GLN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -844,7 +844,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	message_admins("Admin [key_name_admin(usr)] has forced the players to have random appearances.", 1)
 
 	if(notifyplayers == "Yes")
-		to_chat(world, "<span class='notice'><b>Admin [usr.key] has forced the players to have completely random identities!</b></span>")
+		to_world("<span class='notice'><b>Admin [usr.key] has forced the players to have completely random identities!</b></span>")
 
 	to_chat(usr, "<i>Remember: you can always disable the randomness by using the verb again, assuming the round hasn't started yet</i>.")
 	ticker.random_players = 1

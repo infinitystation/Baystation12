@@ -51,9 +51,9 @@ var/global/datum/controller/gameticker/ticker
 			else
 				master_mode = "secret"
 
-		to_chat(world, "<b>Trying to start [master_mode]...</b>")
-		to_chat(world, "<B><FONT color='blue'>Welcome to the pre-game lobby!</FONT></B>")
-		to_chat(world, "Please, setup your character and select ready. Game will start in [pregame_timeleft] seconds")
+		to_world("<b>Trying to start [master_mode]...</b>")
+		to_world("<B><FONT color='blue'>Welcome to the pre-game lobby!</FONT></B>")
+		to_world("Please, setup your character and select ready. Game will start in [pregame_timeleft] seconds")
 
 		while(current_state == GAME_STATE_PREGAME)
 			for(var/i=0, i<10, i++)
@@ -88,7 +88,7 @@ var/global/datum/controller/gameticker/ticker
 		if(!runnable_modes.len)
 			current_state = GAME_STATE_PREGAME
 			Master.SetRunLevel(RUNLEVEL_LOBBY)
-			to_chat(world, "<B>Unable to choose playable game mode.</B> Reverting to pre-game lobby.")
+			to_world("<B>Unable to choose playable game mode.</B> Reverting to pre-game lobby.")
 
 			return 0
 		if(secret_force_mode != "secret")
@@ -104,7 +104,7 @@ var/global/datum/controller/gameticker/ticker
 	if(!src.mode)
 		current_state = GAME_STATE_PREGAME
 		Master.SetRunLevel(RUNLEVEL_LOBBY)
-		to_chat(world, "<span class='danger'>Serious error in mode setup!</span> Reverting to pre-game lobby.")
+		to_world("<span class='danger'>Serious error in mode setup!</span> Reverting to pre-game lobby.")
 
 		return 0
 
@@ -115,7 +115,7 @@ var/global/datum/controller/gameticker/ticker
 
 	var/t = src.mode.startRequirements()
 	if(t)
-		to_chat(world, "<B>Unable to start [mode.name].</B> [t] Reverting to pre-game lobby.")
+		to_world("<B>Unable to start [mode.name].</B> [t] Reverting to pre-game lobby.")
 
 		current_state = GAME_STATE_PREGAME
 		Master.SetRunLevel(RUNLEVEL_LOBBY)
@@ -125,7 +125,7 @@ var/global/datum/controller/gameticker/ticker
 		return 0
 
 	if(hide_mode)
-		to_chat(world, "<B>The current game mode is - Secret!</B>")
+		to_world("<B>The current game mode is - Secret!</B>")
 
 		if(runnable_modes.len)
 			var/list/tmpmodes = new
@@ -133,7 +133,7 @@ var/global/datum/controller/gameticker/ticker
 				tmpmodes+=M.name
 			tmpmodes = sortList(tmpmodes)
 			if(tmpmodes.len)
-				to_chat(world, "<B>Possibilities:</B> [english_list(tmpmodes)]")
+				to_world("<B>Possibilities:</B> [english_list(tmpmodes)]")
 
 	else
 		src.mode.announce()
@@ -155,7 +155,7 @@ var/global/datum/controller/gameticker/ticker
 
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup()
-		to_chat(world, "<FONT color='blue'><B>Enjoy the game!</B></FONT>")
+		to_world("<FONT color='blue'><B>Enjoy the game!</B></FONT>")
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
 
 		//Holiday Round-start stuff	~Carn
@@ -171,7 +171,7 @@ var/global/datum/controller/gameticker/ticker
 
 	if(config.ooc_allowed && !config.ooc_during_round)
 		config.ooc_allowed = 0
-		to_chat(world, "<B>The OOC channel has been globally disabled!</B>")
+		to_world("<B>The OOC channel has been globally disabled!</B>")
 
 	processScheduler.start()
 
@@ -338,7 +338,7 @@ var/global/datum/controller/gameticker/ticker
 			current_state = GAME_STATE_FINISHED
 			if(!config.ooc_allowed)
 				config.ooc_allowed = 1
-				to_chat(world, "<B>The OOC channel has been globally disabled!</B>")
+				to_world("<B>The OOC channel has been globally disabled!</B>")
 			declare_completion()
 			Master.SetRunLevel(RUNLEVEL_POSTGAME)
 
@@ -355,12 +355,12 @@ var/global/datum/controller/gameticker/ticker
 					else
 						feedback_set_details("end_proper","universe destroyed")
 					if(!delay_end)
-						to_chat(world, "<span class='notice'><b>Rebooting due to destruction of [station_name()] in [restart_timeout/10] seconds</b></span>")
+						to_world("<span class='notice'><b>Rebooting due to destruction of [station_name()] in [restart_timeout/10] seconds</b></span>")
 
 				else
 					feedback_set_details("end_proper","proper completion")
 					if(!delay_end && !update_waiting)
-						to_chat(world, "<span class='notice'><b>Restarting in [restart_timeout/10] seconds</b></span>")
+						to_world("<span class='notice'><b>Restarting in [restart_timeout/10] seconds</b></span>")
 
 				if(blackbox)
 					blackbox.save_all_data_to_sql()
@@ -383,7 +383,7 @@ var/global/datum/controller/gameticker/ticker
 						if(!delay_notified)
 							delay_notified = 1
 							message_staff("<span class='warning'><b>Automatically delaying restart due to active tickets.</b></span>")
-							to_chat(world, "<span class='notice'><b>An admin has delayed the round end</b></span>")
+							to_world("<span class='notice'><b>An admin has delayed the round end</b></span>")
 						sleep(15 SECONDS)
 					else if(delay_notified)
 						message_staff("<span class='warning'><b>No active tickets remaining, restarting in [restart_timeout/10] seconds if an admin has not delayed the round end.</b></span>")
@@ -394,9 +394,9 @@ var/global/datum/controller/gameticker/ticker
 					if(!delay_end)
 						world.Reboot()
 					else if(!delay_notified)
-						to_chat(world, "<span class='notice'><b>An admin has delayed the round end</b></span>")
+						to_world("<span class='notice'><b>An admin has delayed the round end</b></span>")
 				else if(!delay_notified)
-					to_chat(world, "<span class='notice'><b>An admin has delayed the round end</b></span>")
+					to_world("<span class='notice'><b>An admin has delayed the round end</b></span>")
 
 
 		else if (mode_finished)
@@ -413,7 +413,7 @@ var/global/datum/controller/gameticker/ticker
 		return 1
 
 /datum/controller/gameticker/proc/declare_completion()
-	to_chat(world, "<br><br><br><H1>A round of [mode.name] has ended!</H1>")
+	to_world("<br><br><br><H1>A round of [mode.name] has ended!</H1>")
 	for(var/client/C)
 		if(!C.credits)
 			C.RollCredits()
@@ -439,15 +439,15 @@ var/global/datum/controller/gameticker/ticker
 						to_chat(Player, "<font color='red'><b>You did not survive the events on [station_name()]...</b></font>")
 				else
 					to_chat(Player, "<font color='red'><b>You did not survive the events on [station_name()]...</b></font>")
-	to_chat(world, "<br>")
+	to_world("<br>")
 
 
 	for (var/mob/living/silicon/ai/aiPlayer in SSmobs.mob_list)
 		if (aiPlayer.stat != 2)
-			to_chat(world, "<b>[aiPlayer.name] (Played by: [aiPlayer.key])'s laws at the end of the round were:</b>")
+			to_world("<b>[aiPlayer.name] (Played by: [aiPlayer.key])'s laws at the end of the round were:</b>")
 
 		else
-			to_chat(world, "<b>[aiPlayer.name] (Played by: [aiPlayer.key])'s laws when it was deactivated were:</b>")
+			to_world("<b>[aiPlayer.name] (Played by: [aiPlayer.key])'s laws when it was deactivated were:</b>")
 
 		aiPlayer.show_laws(1)
 
@@ -455,7 +455,7 @@ var/global/datum/controller/gameticker/ticker
 			var/robolist = "<b>The AI's loyal minions were:</b> "
 			for(var/mob/living/silicon/robot/robo in aiPlayer.connected_robots)
 				robolist += "[robo.name][robo.stat?" (Deactivated) (Played by: [robo.key]), ":" (Played by: [robo.key]), "]"
-			to_chat(world, "[robolist]")
+			to_world("[robolist]")
 
 
 	var/dronecount = 0
@@ -468,17 +468,17 @@ var/global/datum/controller/gameticker/ticker
 
 		if (!robo.connected_ai)
 			if (robo.stat != 2)
-				to_chat(world, "<b>[robo.name] (Played by: [robo.key]) survived as an AI-less synthetic! Its laws were:</b>")
+				to_world("<b>[robo.name] (Played by: [robo.key]) survived as an AI-less synthetic! Its laws were:</b>")
 
 			else
-				to_chat(world, "<b>[robo.name] (Played by: [robo.key]) was unable to survive the rigors of being a synthetic without an AI. Its laws were:</b>")
+				to_world("<b>[robo.name] (Played by: [robo.key]) was unable to survive the rigors of being a synthetic without an AI. Its laws were:</b>")
 
 
 			if(robo) //How the hell do we lose robo between here and the world messages directly above this?
 				robo.laws.show_laws(world)
 
 	if(dronecount)
-		to_chat(world, "<b>There [dronecount>1 ? "were" : "was"] [dronecount] industrious maintenance [dronecount>1 ? "drones" : "drone"] at the end of this round.</b>")
+		to_world("<b>There [dronecount>1 ? "were" : "was"] [dronecount] industrious maintenance [dronecount>1 ? "drones" : "drone"] at the end of this round.</b>")
 
 	if(all_money_accounts.len)
 		var/datum/money_account/max_profit = all_money_accounts[1]
@@ -491,8 +491,8 @@ var/global/datum/controller/gameticker/ticker
 				max_profit = D
 			if(saldo <= max_loss.get_balance())
 				max_loss = D
-		to_chat(world, "<b>[max_profit.owner_name]</b> received most <font color='green'><B>PROFIT</B></font> today, with net profit of <b>T[max_profit.get_balance()]</b>.")
-		to_chat(world, "On the other hand, <b>[max_loss.owner_name]</b> had most <font color='red'><B>LOSS</B></font>, with total loss of <b>T[max_loss.get_balance()]</b>.")
+		to_world("<b>[max_profit.owner_name]</b> received most <font color='green'><B>PROFIT</B></font> today, with net profit of <b>T[max_profit.get_balance()]</b>.")
+		to_world("On the other hand, <b>[max_loss.owner_name]</b> had most <font color='red'><B>LOSS</B></font>, with total loss of <b>T[max_loss.get_balance()]</b>.")
 
 	mode.declare_completion()//To declare normal completion.
 
@@ -525,7 +525,7 @@ var/global/datum/controller/gameticker/ticker
 		if (needs_ghost)
 			looking_for_antags = 1
 			antag_pool.Cut()
-			to_chat(world, "<b>A ghost is needed to spawn \a [antag.role_text].</b>\nGhosts may enter the antag pool by making sure their [antag.role_text] preference is set to high, then using the toggle-add-antag-candidacy verb. You have 3 minutes to enter the pool.")
+			to_world("<b>A ghost is needed to spawn \a [antag.role_text].</b>\nGhosts may enter the antag pool by making sure their [antag.role_text] preference is set to high, then using the toggle-add-antag-candidacy verb. You have 3 minutes to enter the pool.")
 
 			sleep(3 MINUTES)
 			looking_for_antags = 0
@@ -549,15 +549,15 @@ var/global/datum/controller/gameticker/ticker
 			return 1
 		else
 			if(antag.initial_spawn_req > 1)
-				to_chat(world, "Failed to find enough [antag.role_text_plural].")
+				to_world("Failed to find enough [antag.role_text_plural].")
 
 			else
-				to_chat(world, "Failed to find a [antag.role_text].")
+				to_world("Failed to find a [antag.role_text].")
 
 			antag_choices -= antag
 			if(length(antag_choices))
 				antag = antag_choices[1]
 				if(antag)
-					to_chat(world, "Attempting to spawn [antag.role_text_plural].")
+					to_world("Attempting to spawn [antag.role_text_plural].")
 
 	return 0

@@ -777,7 +777,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	if(blood_DNA)
 		. = "<span class='warning'>\icon[src] [gender==PLURAL?"some":"a"] [(blood_color != SYNTH_BLOOD_COLOUR) ? "blood" : "oil"]-stained [src]</span>"
 	else
-		. = "[icon2html(src, world)] \a [src]"
+		. = "\icon[src] \a [src]"
 	var/ID = GetIdCard()
 	if(ID)
 		. += "  <a href='?src=\ref[ID];look_at_id=1'>\[Look at ID\]</a>"
