@@ -32,7 +32,7 @@
 	tint = TINT_HEAVY
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi',
+//		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
 		)
 

@@ -798,7 +798,7 @@
 /  =---------------------------=  /
 ///////////////////////////////////
 */
-
+/*
 /datum/sprite_accessory/hair
 	una_spines_long
 		name = "Long Unathi Spines"
@@ -844,7 +844,7 @@
 		name = "Unathi Side Frills"
 		icon_state = "unathi_sidefrills"
 		species_allowed = list(SPECIES_UNATHI)
-
+*/
 //Skrell 'hairstyles'
 	skr_tentacle_veryshort
 		name = "Skrell Very Short Tentacles"

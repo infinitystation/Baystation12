@@ -10,7 +10,7 @@
 	siemens_coefficient = 0.9
 	item_icons = list(slot_w_uniform_str = 'icons/mob/onmob/nanotrasen.dmi')
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/nanotrasen.dmi',
+//		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/nanotrasen.dmi',
 		)
 
 /obj/item/clothing/under/rank/scientist
@@ -24,7 +24,7 @@
 	item_icons = list(slot_w_uniform_str = 'icons/mob/onmob/nanotrasen.dmi')
 	starting_accessories = list(/obj/item/clothing/accessory/nt_tunic)
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/nanotrasen.dmi',
+//		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/nanotrasen.dmi',
 		)
 
 /obj/item/clothing/under/rank/scientist/executive
@@ -43,7 +43,7 @@
 	armor = list(melee = 5, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 5, rad = 0)
 	item_icons = list(slot_w_uniform_str = 'icons/mob/onmob/nanotrasen.dmi')
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/nanotrasen.dmi',
+//		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/nanotrasen.dmi',
 		)
 
 /obj/item/clothing/under/rank/ntpilot
@@ -54,7 +54,7 @@
 	worn_state = "ntpilot"
 	item_icons = list(slot_w_uniform_str = 'icons/mob/onmob/nanotrasen.dmi')
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/nanotrasen.dmi',
+//		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/nanotrasen.dmi',
 		)
 
 /obj/item/clothing/under/suit_jacket/nt
@@ -66,5 +66,5 @@
 	item_icons = list(slot_w_uniform_str = 'icons/mob/onmob/nanotrasen.dmi')
 	starting_accessories = list(/obj/item/clothing/accessory/toggleable/nanotrasen_jacket, /obj/item/clothing/accessory/nt)
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/nanotrasen.dmi',
+//		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/nanotrasen.dmi',
 		)
