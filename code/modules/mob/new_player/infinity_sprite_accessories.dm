@@ -99,6 +99,10 @@
 	name = "Spines Short"
 	icon_state = "spines_short"
 
+/datum/sprite_accessory/hair/una/frills_aqua
+	name = "Frills Aqua"
+	icon_state = "frills_aqua"
+
 /datum/sprite_accessory/hair/una/frills_long
 	name = "Frills Long"
 	icon_state = "frills_long"
@@ -118,6 +122,14 @@
 /datum/sprite_accessory/hair/una/smallhorns
 	name = "Horns Small"
 	icon_state = "horns_small"
+
+/datum/sprite_accessory/hair/una/shorthorns
+	name = "Horns Short"
+	icon_state = "horns_short"
+
+/datum/sprite_accessory/hair/una/curledhorns
+	name = "Horns Curled"
+	icon_state = "horns_curled"
 
 /datum/sprite_accessory/hair/una/ramhorns
 	name = "Horns Ram"
