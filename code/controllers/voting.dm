@@ -27,7 +27,7 @@
 			// No more change mode votes after the game has started.
 			// 3 is GAME_STATE_PLAYING, but that #define is undefined for some reason
 			if(mode == "gamemode" && ticker.current_state >= GAME_STATE_SETTING_UP)
-				to_world("<b>Voting aborted due to game start.</b>")
+				to_chat(world, "<b>Voting aborted due to game start.</b>")
 
 				src.reset()
 				return
@@ -108,7 +108,7 @@
 						else
 							factor = 1.4
 					choices["Initiate Crew Transfer"] = round(choices["Initiate Crew Transfer"] * factor)
-					to_world("<font color='purple'>Crew Transfer Factor: [factor]</font>")
+					to_chat(world, "<font color='purple'>Crew Transfer Factor: [factor]</font>")
 
 
 		for(var/option in choices)
@@ -184,7 +184,7 @@
 			if(mode == "add_antagonist")
 				antag_add_finished = 1
 		log_vote(text)
-		to_world("<font color='purple'>[text]</font>")
+		to_chat(world, "<font color='purple'>[text]</font>")
 
 		return list(firstChoice, secondChoice, thirdChoice)
 
@@ -221,7 +221,7 @@
 						for(var/i = 1, i <= length(.), i++)
 							if(.[i] == "Random")
 								.[i] = pick(choices)
-								to_world("The random antag in [i]\th place is [.[i]].")
+								to_chat(world, "The random antag in [i]\th place is [.[i]].")
 
 						var/antag_type = GLOB.antag_names_to_ids_[.[1]]
 						if(ticker.current_state < GAME_STATE_SETTING_UP)
@@ -236,7 +236,7 @@
 										// the buffer will already have half an hour added to it, so we'll give it one more
 										transfer_controller.timerbuffer = transfer_controller.timerbuffer + config.vote_autotransfer_interval
 								else
-									to_world("<b>No antags were added.</b>")
+									to_chat(world, "<b>No antags were added.</b>")
 
 									if(auto_add_antag)
 										auto_add_antag = 0
@@ -250,11 +250,11 @@
 		if(mode == "gamemode") //fire this even if the vote fails.
 			if(!round_progressing)
 				round_progressing = 1
-				to_world("<font color='red'><b>The round will start soon.</b></font>")
+				to_chat(world, "<font color='red'><b>The round will start soon.</b></font>")
 
 
 		if(restart)
-			to_world("World restarting due to vote...")
+			to_chat(world, "World restarting due to vote...")
 
 			feedback_set_details("end_error","restart vote")
 			if(blackbox)	blackbox.save_all_data_to_sql()
@@ -356,13 +356,13 @@
 				text += "\n[question]"
 
 			log_vote(text)
-			to_world("<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=\ref[src]'>here</a> to place your votes.\nYou have [config.vote_period/10] seconds to vote.</font>")
+			to_chat(world, "<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=\ref[src]'>here</a> to place your votes.\nYou have [config.vote_period/10] seconds to vote.</font>")
 
 			to_world(sound('sound/ambience/alarm4.ogg', repeat = 0, wait = 0, volume = 50, channel = 3))
 
 			if(mode == "gamemode" && round_progressing)
 				round_progressing = 0
-				to_world("<font color='red'><b>Round start has been delayed.</b></font>")
+				to_chat(world, "<font color='red'><b>Round start has been delayed.</b></font>")
 
 
 			time_remaining = round(config.vote_period/10)
