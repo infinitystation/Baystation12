@@ -13,7 +13,6 @@
 	if(!t)
 		return
 
-	t = replacetext(t, "ÿ", "&#x044f")
 	t = replacetext(t, "&#255;", "&#x044f")
 	t = replacetext(t, "&#1103;", "&#x044f")
 
