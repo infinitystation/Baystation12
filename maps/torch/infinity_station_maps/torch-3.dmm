@@ -12109,7 +12109,6 @@
 "wZ" = (
 /obj/structure/ladder,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "xa" = (
@@ -12928,10 +12927,9 @@
 /area/vacant/armory)
 "yJ" = (
 /obj/structure/largecrate,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
@@ -16581,6 +16579,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
+"He" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/foreport)
 "HQ" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -16612,24 +16619,31 @@
 /area/hallway/primary/seconddeck/center)
 "Ip" = (
 /obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	icon_state = "railing0";
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/foreport)
+"IB" = (
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 1;
-	icon_state = "pipe-c"
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/foreport)
-"IB" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "IW" = (
@@ -17025,9 +17039,15 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/compactor)
 "VY" = (
-/obj/structure/disposalpipe/down,
-/obj/structure/lattice,
-/turf/simulated/open,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "Wj" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -17084,11 +17104,12 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/effect/floor_decal/industrial/warning/corner{
-	icon_state = "warningcorner";
+/obj/structure/disposalpipe/down{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/obj/structure/lattice,
+/obj/machinery/light/small,
+/turf/simulated/open,
 /area/maintenance/seconddeck/foreport)
 "Yu" = (
 /obj/structure/cable/green{
@@ -30803,7 +30824,7 @@ rD
 rD
 wo
 tG
-tG
+He
 yJ
 zH
 AA
