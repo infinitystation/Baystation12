@@ -9,6 +9,7 @@
 	force = 13
 	w_class = ITEM_SIZE_LARGE
 	slot_flags = SLOT_BACK
+	item_icons = list(slot_back_str = 'icons/mob/infinity/misc.dmi')
 	var/datum/song/song
 	var/playing = 0
 	var/help = 0
