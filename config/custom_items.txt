@@ -86,7 +86,7 @@ item_path: /obj/item/weapon/storage/secure/briefcase/pink
 }
 {
 ckey: taushai
-character_name: Liru
+character_name: Itisha
 item_path: /obj/item/weapon/storage/secure/briefcase/pink
 }
 {
