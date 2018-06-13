@@ -389,7 +389,6 @@
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e9,
-		/datum/mil_rank/fleet/e9_alt1,
 		/datum/mil_rank/fleet/e8
 	)
 	min_skill = list(	/decl/hierarchy/skill/organizational/management	= SKILL_ADEPT,
