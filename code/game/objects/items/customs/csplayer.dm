@@ -1,8 +1,6 @@
 /obj/item/device/pmp/personal/csplayer
 	name = "cassett player"
 	desc = "An ordinary cassette player model FN-16, he looks old and worn in some places"
-	icon = 'icons/portable_media_player.dmi'
-	icon_state = "pmp"
 	item_state = "csplayer_empty"
 	var/icon_empty = "csplayer_empty"
 	var/icon_loaded = "csplayer_loaded"
