@@ -68,12 +68,32 @@ ckey: s1334
 character_name: Remi-su
 item_path: /obj/item/device/pmp/personal/csplayer
 }
+{
+ckey: kordvik
+character_name: Lyx Omaya
+item_path: /obj/item/device/pmp/personal/csplayer
+}
 #	SHORT ITEMS HERE (3-4)
 # {
 # ckey: quietproject 
 # character_name: Arias Creo 
 # item_path: /obj/item/clothing/mask/gas/creo
 # }
+{
+ckey: forrya
+character_name: Liru
+item_path: /obj/item/weapon/storage/secure/briefcase/pink
+}
+{
+ckey: taushai
+character_name: Liru
+item_path: /obj/item/weapon/storage/secure/briefcase/pink
+}
+{
+ckey: forrya
+character_name: Evee
+item_path: /obj/item/clothing/under/resomi/maid
+}
 {
 ckey: mrnicolas
 character_name: Cathrine Fund
@@ -97,6 +117,14 @@ character_name: Krieg Jaeger
 item_path: /obj/item/clothing/accessory/necklace/talisman
 item_name: beastslayer's bone talisman
 item_desc: Grim periapt made of sinew and fangs of unknown monstrosity. Most likely a trophy of a cunning beast-hunter.
+}
+{
+ckey: courierr
+character_name: Mia Lee
+item_path: /obj/item/weapon/material/kitchen/utensil/knife/boot
+item_name: karambit
+item_desc: A small knife with a curved blade.
+item_icon: karambit
 }
 {
 ckey: kosteg
