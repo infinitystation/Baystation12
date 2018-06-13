@@ -185,7 +185,7 @@ var/last_chew = 0
 /obj/item/weapon/handcuffs/plush
 	name = "plush handcuffs"
 	desc = "A pink plush handcuffs. How cute, owww...."
-	icon = 'icons/obj/bdsm.dmi'
+	icon = 'icons/obj/spectoys.dmi'
 	icon_state = "plushcuff"
 	obj_flags = null
 	throwforce = 0

@@ -1,14 +1,19 @@
 //Work tools
 
-/obj/item/weapon/bdsm
+/obj/item/weapon/spectoys
 	name = "beaded rod"
 	desc = "Just balls on a hard string. Happy new year, eh?"
-	icon = 'icons/obj/bdsm.dmi'
-	icon_state = "beads"
+	icon = 'icons/obj/spectoys.dmi'
+	icon_state = null //see New()
 	force = 0
 	throwforce = 0
 
-/obj/item/weapon/bdsm/vibrator
+/obj/item/weapon/spectoys/New() //don't make me cry, please ^^^
+	..()
+	icon_state = "beads"
+
+
+/obj/item/weapon/spectoys/vibrator
 	name = "vibrator"
 	desc = "Looks like a bullet. But rubber. Rubber bullet."
 	icon_state = "toy_off"
@@ -20,22 +25,22 @@
 	var/icon_on = "toy_on"
 	var/obj/item/weapon/cell/vcell = null
 
-/obj/item/weapon/bdsm/vibrator/New() //starts without a cell for rnd
+/obj/item/weapon/spectoys/vibrator/New() //starts without a cell for rnd
 	..()
 	vcell = new /obj/item/weapon/cell/apc(src)
 	update_icon()
 
-/obj/item/weapon/bdsm/vibrator/Destroy()
+/obj/item/weapon/spectoys/vibrator/Destroy()
 	. = ..()
 	QDEL_NULL(vcell)
 
-/obj/item/weapon/bdsm/vibrator/update_icon()
+/obj/item/weapon/spectoys/vibrator/update_icon()
 	if(on)
 		icon_state = icon_on
 	else
 		icon_state = icon_off
 
-/obj/item/weapon/bdsm/vibrator/attack_self(mob/user as mob)
+/obj/item/weapon/spectoys/vibrator/attack_self(mob/user as mob)
 	if(!on)
 		if(vcell && (vcell.charge > (20 * CELLRATE)))
 			turn_on(1)
@@ -48,7 +53,7 @@
 	else
 		to_chat(user, "Looks like the [src] is out of... Cell.")
 
-/obj/item/weapon/bdsm/vibrator/Process()
+/obj/item/weapon/spectoys/vibrator/Process()
 	if(!on)
 		return
 	if(!vcell || (vcell.charge < (20 * CELLRATE)))
@@ -56,7 +61,7 @@
 		return
 	vcell.use(20*CELLRATE)
 
-/obj/item/weapon/bdsm/vibrator/proc/turn_on()
+/obj/item/weapon/spectoys/vibrator/proc/turn_on()
 	if(!vcell)
 		return 0
 	if(vcell.charge < (20 * CELLRATE))
@@ -64,11 +69,11 @@
 	on = 1
 	update_icon()
 
-/obj/item/weapon/bdsm/vibrator/proc/turn_off()
+/obj/item/weapon/spectoys/vibrator/proc/turn_off()
 	on = 0
 	update_icon()
 
-/obj/item/weapon/bdsm/vibrator/attack_hand(mob/user as mob)
+/obj/item/weapon/spectoys/vibrator/attack_hand(mob/user as mob)
 	if(user.get_inactive_hand() == src)
 		if(vcell)
 			if(ishuman(user))
@@ -83,7 +88,7 @@
 			return
 	..()
 
-/obj/item/weapon/bdsm/vibrator/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/weapon/spectoys/vibrator/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/cell))
 		if(vcell)
 			to_chat(user, "There is a power cell already installed.")
@@ -94,14 +99,14 @@
 			to_chat(user, "You insert the power cell.")
 	update_icon()
 
-/obj/item/weapon/bdsm/stack
+/obj/item/weapon/spectoys/stack
 	name = "stack"
 	desc = "Rubber fly swatter. Yes, you hope it`s fly swatter."
 	icon_state = "stack"
 	item_state = "nullrod" //we realy need some sprite here
 	var/agonyforce = 5
 
-/obj/item/weapon/bdsm/stack/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
+/obj/item/weapon/spectoys/stack/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
 	if(isrobot(target))
 		return ..()
 
@@ -130,7 +135,7 @@
 /obj/item/weapon/reagent_containers/spray/lube
 	name = "pink lube dispenser"
 	desc = "A spray bottle, with an unscrewable top."
-	icon = 'icons/obj/bdsm.dmi'
+	icon = 'icons/obj/spectoys.dmi'
 	icon_state = "spray_lube"
 	amount_per_transfer_from_this = 5
 	possible_transfer_amounts = "1;2"
@@ -170,9 +175,9 @@
 	icon_state = "pink_case"
 	New()
 		..()
-		new /obj/item/weapon/bdsm(src)
-		new /obj/item/weapon/bdsm/stack(src)
-		new /obj/item/weapon/bdsm/vibrator(src)
+		new /obj/item/weapon/spectoys(src)
+		new /obj/item/weapon/spectoys/stack(src)
+		new /obj/item/weapon/spectoys/vibrator(src)
 		new /obj/item/weapon/handcuffs/plush(src)
 		new /obj/item/weapon/reagent_containers/spray/lube(src)
 		new /obj/item/clothing/mask/muzzle/gag(src)
