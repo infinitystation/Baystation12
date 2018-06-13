@@ -2,6 +2,7 @@
 	if(!t)
 		return
 
+	t = replacetext(t, "ÿ", "\\u044f")
 	t = replacetext(t, "&#255;", "\\u044f")
 	t = replacetext(t, "&#1103;", "\\u044f")
 
@@ -9,18 +10,19 @@
 
 	return t
 
-/proc/convert1251_to_utf(t)
-	if(!t)
-		return
+///proc/convert1251_to_utf(t)
+//	if(!t)
+//		return
 
-	t = replacetext(t, "&#255;", "&#x044f")
-	t = replacetext(t, "&#1103;", "&#x044f")
+//	t = replacetext(t, "ÿ", "&#x044f")
+//	t = replacetext(t, "&#255;", "&#x044f")
+//	t = replacetext(t, "&#1103;", "&#x044f")
 
-	t = call("pagefile_conv", "chat2utf")(t)
+//	t = call("pagefile_conv", "chat2utf")(t)
 
-	return t
+//	return t
 
-GLOBAL_LIST_INIT(c1251_to_utf_table, list(
+/*GLOBAL_LIST_INIT(c1251_to_utf_table, list(
 	"À" = "0410", "à" = "0430",
 	"Á" = "0411", "á" = "0431",
 	"Â" = "0412", "â" = "0432",
@@ -62,7 +64,7 @@ GLOBAL_LIST_INIT(c1251_to_utf_table, list(
 	"¥" = "0490", "´" = "0491",
 	"•" = "2022", "–" = "2013",
 	"—" = "2014", "¹" = "2116"
-))
+))*/
 
 GLOBAL_LIST_INIT(j1251_to_utf_table, list(
 	"c0" = "0410", "e0" = "0430",
@@ -100,12 +102,10 @@ GLOBAL_LIST_INIT(j1251_to_utf_table, list(
 
 	"a8" = "0401", "b8" = "0451",
 
-	"81" = "0403", "aa" = "0404",
-	"af" = "0407", "83" = "0453",
-	"ba" = "0454", "bf" = "0457",
-	"a5" = "0490", "b4" = "0491",
-	"95" = "2022", "96" = "2013",
-	"97" = "2014", "b9" = "2116"
+	"81" = "0403", "83" = "0453",
+	"95" = "2022", "96" = "2013", "97" = "2014",
+	"a5" = "0490", "aa" = "0404", "af" = "0407",
+	"b4" = "0491", "ba" = "0454", "b9" = "2116", "bf" = "0457"
 ))
 
 /proc/extA2U_alt(t)
@@ -123,13 +123,13 @@ GLOBAL_LIST_INIT(j1251_to_utf_table, list(
 			t = replacetext(t, "\\u00[s]", "\\u[GLOB.j1251_to_utf_table[s]]")
 	return t
 
-/proc/convert1251_to_utf_alt(t)
-	if(!t)
-		return
+///proc/convert1251_to_utf_alt(t)
+//	if(!t)
+//		return
 
-	t = replacetext(t, "&#255;", "&#x044f")
-	t = replacetext(t, "&#1103;", "&#x044f")
+//	t = replacetext(t, "&#255;", "&#x044f")
+//	t = replacetext(t, "&#1103;", "&#x044f")
 
-	for(var/s in GLOB.c1251_to_utf_table)
-		t = replacetext(t, s, "&#x[GLOB.c1251_to_utf_table[s]];")
-	return t
+//	for(var/s in GLOB.c1251_to_utf_table)
+//		t = replacetext(t, s, "&#x[GLOB.c1251_to_utf_table[s]];")
+//	return t
