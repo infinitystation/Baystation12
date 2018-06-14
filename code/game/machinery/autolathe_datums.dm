@@ -495,6 +495,12 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	hidden = 1
 	category = "Arms and Ammunition"
 
+/datum/autolathe/recipe/magazine_stetchkin_rubber
+	name = "ammunition (9mm, rubber)"
+	path = /obj/item/ammo_magazine/mc9mm/rubber
+	hidden = 1
+	category = "Arms and Ammunition"
+
 /datum/autolathe/recipe/magazine_stetchkin_flash
 	name = "ammunition (9mm, flash)"
 	path = /obj/item/ammo_magazine/mc9mm/flash
