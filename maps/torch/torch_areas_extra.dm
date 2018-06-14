@@ -56,3 +56,8 @@
 	name = "\improper Gravity Generator"
 	icon_state = "engine"
 	sound_env = SMALL_ENCLOSED
+
+/area/vacant/gambling
+	name = "\improper Gambling Room"
+	icon_state = "restrooms"
+	sound_env = MEDIUM_SOFTFLOOR
