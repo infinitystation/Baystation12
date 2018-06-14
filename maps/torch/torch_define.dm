@@ -39,10 +39,10 @@
 
 	default_law_type = /datum/ai_laws/solgov
 	use_overmap = 1
-	num_exoplanets = 0
+	num_exoplanets = 1
 	planet_size = list(129,129)
 
-	away_site_budget = 0
+	away_site_budget = 1
 
 	id_hud_icons = 'maps/torch/icons/assignment_hud.dmi'
 
@@ -56,9 +56,6 @@
 	to_chat(victim, "Вы находитесь на борту<b>[station_name]</b>, корабле Экспедиционного Корпуса, что принадлежит Правительству Солнечной Системы. Основная цель вашей экспедиции - поиск новых форм жизни и исследование объектов по пути.")
 	to_chat(victim, "Персонал корабля состоит из работников ПСС, наемных контрактников и сотрудников НаноТрейзен.")
 	to_chat(victim, "This area of space is uncharted, away from SCG territory. You might encounter remote outposts or drifting hulks, but no recognized government holds claim on this sector.")
-
-	to_chat(victim, "Вы находитесь за фронтиром - условной границей любого из известных государств, в отдалении от территории ПСС. Вы можете повстречать удаленный аванпосты или дрейфующие обломки космических судов, but no recognized government holds claim on this sector.")
-
 
 /datum/map/torch/send_welcome()
 	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Torch</b> Sensor Readings:</font><hr />"

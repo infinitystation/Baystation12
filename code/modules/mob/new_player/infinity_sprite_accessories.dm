@@ -75,7 +75,7 @@
 /datum/sprite_accessory/hair/infinity/long
 	name = "Long hair 4"
 	icon_state = "long"
-
+/*
 				//////////
 				//UNATHI//
 				//////////
@@ -171,7 +171,7 @@
 /datum/sprite_accessory/facial_hair/una/dorsalfrill
 	name = "Frill Dorsal"
 	icon_state = "facial_dorsalfrill"
-
+*/
 				//////////
 				//RESOMI//
 				//////////
