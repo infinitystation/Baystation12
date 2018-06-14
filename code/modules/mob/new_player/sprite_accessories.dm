@@ -898,7 +898,7 @@
 /  =---------------------------=  /
 ///////////////////////////////////
 */
-
+/*
 /datum/sprite_accessory/hair/una_spines_long
 	name = "Long Unathi Spines"
 	icon_state = "soghun_longspines"
@@ -942,7 +942,7 @@
 /datum/sprite_accessory/hair/una/fin_hawk
 	name = "Fin Hawk"
 	icon_state = "fin_hawk"
-
+*/
 /datum/sprite_accessory/hair/skr_tentacle_m
 	name = "Skrell Male Tentacles"
 	icon_state = "skrell_hair_m"
