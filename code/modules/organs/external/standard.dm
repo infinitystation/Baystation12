@@ -29,7 +29,10 @@
 		// Give them a new cell.
 		var/obj/item/organ/internal/cell/C = owner.internal_organs_by_name[BP_CELL]
 		if(!istype(C))
-			owner.internal_organs_by_name[BP_CELL] = new /obj/item/organ/internal/cell(owner,1)
+			if(owner.species.name_plural == "Terminators")
+				owner.internal_organs_by_name[BP_CELL] = new /obj/item/organ/internal/cell/terminator(owner,1)
+			else
+				owner.internal_organs_by_name[BP_CELL] = new /obj/item/organ/internal/cell(owner,1)
 
 /obj/item/organ/external/get_scan_results()
 	. = ..()

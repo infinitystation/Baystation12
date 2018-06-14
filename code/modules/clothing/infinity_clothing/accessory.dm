@@ -4,7 +4,7 @@
 	desc = "A hunter's talisman, some say the old gods smile on those who wear it."
 	icon = 'icons/infinity_custom_items_obj.dmi'
 	accessory_icons = list(slot_w_uniform_str = 'icons/infinity_custom_items_mob.dmi', slot_wear_suit_str = 'icons/infinity_custom_items_mob.dmi')
-	icon_state = "talisman"
+	icon_state = "talisman-4"
 
 	///////////
 	//COLLARS//

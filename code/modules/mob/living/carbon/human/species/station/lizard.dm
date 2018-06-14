@@ -12,7 +12,7 @@
 	eye_icon = "eyes_lizard"
 	eye_icon_location = 'icons/mob/lizard_face.dmi'
 
-	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/tail, /datum/unarmed_attack/claws, /datum/unarmed_attack/bite/sharp)
+	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/tail, /datum/unarmed_attack/claws, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite/sharp)
 	primitive_form = "Stok"
 	darksight_range = 3
 	darksight_tint = DARKTINT_MODERATE
@@ -27,7 +27,6 @@
 	name_language = LANGUAGE_UNATHI
 	health_hud_intensity = 2
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 3
-	ambiguous_genders = TRUE
 
 	min_age = 18
 	max_age = 260

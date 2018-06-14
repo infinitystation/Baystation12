@@ -8160,15 +8160,6 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 22
 	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -24
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 9;
 	icon_state = "borderfloor_white";
@@ -8705,6 +8696,7 @@
 /area/crew_quarters/safe_room/firstdeck)
 "anK" = (
 /obj/structure/fireaxecabinet{
+	dir = 1;
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -8985,11 +8977,6 @@
 	pixel_x = -12;
 	pixel_y = 2
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/alarm{
 	dir = 4;
 	icon_state = "alarm0";
@@ -9016,20 +9003,31 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/assembly/robotics_surgery)
 "aom" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/assembly/robotics_surgery)
 "aon" = (
 /obj/machinery/hologram/holopad,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/assembly/robotics_surgery)
 "aoo" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 24
-	},
 /obj/machinery/light{
 	icon_state = "tube1";
 	dir = 4
@@ -9054,6 +9052,15 @@
 	tag = "icon-bordercolorcorner2 (NORTHEAST)";
 	icon_state = "bordercolorcorner2";
 	dir = 5
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/assembly/robotics_surgery)
@@ -10354,6 +10361,10 @@
 	tag = "icon-bordercolorcorner2 (SOUTHEAST)";
 	icon_state = "bordercolorcorner2";
 	dir = 6
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/assembly/robotics_surgery)
@@ -17801,9 +17812,6 @@
 /obj/machinery/ai_status_display,
 /turf/simulated/wall,
 /area/hallway/primary/firstdeck/fore)
-"aAZ" = (
-/turf/simulated/wall,
-/area/command/pathfinder)
 "aBa" = (
 /obj/effect/wingrille_spawn/reinforced/polarized{
 	id = "pathfinder_office"
@@ -22749,7 +22757,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore)
 "aHN" = (
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall,
 /area/vacant/office)
 "aHO" = (
 /obj/effect/wingrille_spawn/reinforced/polarized{
@@ -22781,7 +22789,7 @@
 /turf/simulated/floor/plating,
 /area/crew_quarters/diplomat)
 "aHU" = (
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall,
 /area/crew_quarters/diplomat)
 "aHV" = (
 /obj/effect/wingrille_spawn/reinforced/polarized{
@@ -25872,8 +25880,8 @@
 /area/rnd/pilot)
 "aMP" = (
 /obj/structure/bed/chair/office/dark{
-	icon_state = "officechair_dark";
-	dir = 4
+	dir = 4;
+	icon_state = "officechair_dark_preview"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white,
@@ -33796,13 +33804,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore)
-"kqA" = (
-/obj/machinery/camera/network/first_deck{
-	c_tag = "First Deck - Unused Office";
-	dir = 1
-	},
-/turf/simulated/floor/lino,
-/area/vacant/office)
 "kEF" = (
 /obj/structure/sink{
 	icon_state = "sink";
@@ -34114,7 +34115,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "oaM" = (
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall,
 /area/command/pathfinder)
 "orU" = (
 /turf/simulated/floor/tiled/steel_grid,
@@ -34539,6 +34540,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
+"sad" = (
+/obj/machinery/camera/network/first_deck{
+	c_tag = "First Deck - Unused Office";
+	dir = 1
+	},
+/turf/simulated/floor/lino,
+/area/vacant/office)
 "sdF" = (
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
@@ -46911,7 +46919,7 @@ aKp
 aLz
 aMw
 oOw
-kqA
+sad
 aHN
 aDA
 aRK
@@ -49124,9 +49132,9 @@ azO
 aAY
 aCe
 aDu
-aAZ
-aAZ
-aAZ
+oaM
+oaM
+oaM
 oaM
 aJi
 aKA
@@ -49323,10 +49331,10 @@ awL
 axJ
 ayM
 azP
-aAZ
-aAZ
-aAZ
-aAZ
+oaM
+oaM
+oaM
+oaM
 aFS
 aHh
 oaM
@@ -49733,7 +49741,7 @@ aDw
 aEE
 aFU
 aHj
-aAZ
+oaM
 aJk
 aJk
 aJl
@@ -49935,7 +49943,7 @@ aDx
 aEF
 aFV
 aHk
-aAZ
+oaM
 aJl
 aJl
 aJl
@@ -50137,7 +50145,7 @@ aDy
 aEG
 aFW
 aHl
-aAZ
+oaM
 aJm
 aKC
 aLJ
@@ -50333,13 +50341,13 @@ awN
 sdF
 ayQ
 azU
-aAZ
-aAZ
-aAZ
-aAZ
-aAZ
-aAZ
-aAZ
+oaM
+oaM
+oaM
+oaM
+oaM
+oaM
+oaM
 aDA
 aKD
 aJl

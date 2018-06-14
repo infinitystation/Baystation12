@@ -42,13 +42,89 @@
 # kit_icon: salvage
 # }
 ##
-
+#	PMP HERE
+{
+ckey: billluxe
+character_name: Villyx
+item_path: /obj/item/device/pmp/personal
+}
+{
+ckey: vankoska
+character_name: Terill Qerr
+item_path: /obj/item/device/pmp/personal
+}
+{
+ckey: korramy
+character_name: Quentin Willo
+item_path: /obj/item/device/pmp/personal
+}
+{
+ckey: s1334
+character_name: WP-316
+item_path: /obj/item/device/pmp/personal/csplayer
+}
+{
+ckey: s1334
+character_name: Remi-su
+item_path: /obj/item/device/pmp/personal/csplayer
+}
+{
+ckey: kordvik
+character_name: Lyx Omaya
+item_path: /obj/item/device/pmp/personal/csplayer
+}
+#	SHORT ITEMS HERE (3-4)
+# {
+# ckey: quietproject 
+# character_name: Arias Creo 
+# item_path: /obj/item/clothing/mask/gas/creo
+# }
+{
+ckey: forrya
+character_name: Liru
+item_path: /obj/item/weapon/storage/secure/briefcase/pink
+}
+{
+ckey: taushai
+character_name: Itisha
+item_path: /obj/item/weapon/storage/secure/briefcase/pink
+}
+{
+ckey: forrya
+character_name: Evee
+item_path: /obj/item/clothing/under/resomi/maid
+}
+{
+ckey: mrnicolas
+character_name: Cathrine Fund
+item_path: /obj/item/clothing/glasses/material/hybrid/special
+}
+{
+ckey: auesti 
+character_name: Lin Fojuraus 
+item_path: /obj/item/vape
+}
+{
+ckey: chowny
+character_name: Heather Leslie
+item_path: /obj/item/device/guitar/pink
+item_desc: It is a model of the famous guitar "Stratocaster" assembled in a pink case. The name is engraved on the fretboard - Heather Leslie.
+}
+#	MEDIUM ITEMS HERE (5-6)
 {
 ckey: parasoul
 character_name: Krieg Jaeger
 item_path: /obj/item/clothing/accessory/necklace/talisman
 item_name: beastslayer's bone talisman
 item_desc: Grim periapt made of sinew and fangs of unknown monstrosity. Most likely a trophy of a cunning beast-hunter.
+}
+{
+ckey: courierr
+character_name: Mia Lee
+item_path: /obj/item/weapon/material/kitchen/utensil/knife/boot
+item_name: karambit
+item_desc: A small knife with a curved blade.
+item_icon: karambit
 }
 {
 ckey: kosteg
@@ -62,22 +138,22 @@ item_icon: beret_journey
 ckey: kosteg
 character_name: Valkyr
 item_path: /obj/item/weapon/reagent_containers/hypospray
-item_name: Modified Hypospray
-item_desc: Modified version of standart DeForest Medical Corporation hypospray. It's handle is inscribed with words 'A gift from S. Hughes to Valkyr. Don't you dare to forget me, you, tin can'.
+item_name: modified hypospray
+item_desc: A modified version of standart DeForest Medical Corporation hypospray. It's handle is inscribed with words 'A gift from S. Hughes to Valkyr. Don't you dare to forget me, you, tin can'.
 item_icon: hypospray_valkyr
 }
 {
 ckey: twinindifferent
 character_name: Atwii
 item_path: /obj/item/device/radio/headset/earset
-item_name: Pioneer's headphones
+item_name: pioneer headphones
 item_desc: Just a small pilot like headphones with micro. Engage!
 }
 {
 ckey: twinindifferent
 character_name: Atwii
 item_path: /obj/item/clothing/suit/storage/leather_jacket
-item_name: Pioneer's bloody jacket
+item_name: pioneer bloody jacket
 item_desc: That small jacket looks like someone want to make it cooler in "hot" days.
 item_icon: small_jacket_pioneer
 species_restricted: list(SPECIES_RESOMI)
@@ -86,14 +162,14 @@ species_restricted: list(SPECIES_RESOMI)
 ckey: twinindifferent
 character_name: Shattara
 item_path: /obj/item/device/radio/headset/earset
-item_name: Pioneer's headphones
+item_name: pioneer headphones
 item_desc: Just a small pilot like headphones with micro. Engage!
 }
 {
 ckey: twinindifferent
 character_name: Shattara
 item_path: /obj/item/clothing/suit/storage/leather_jacket
-item_name: Pioneer's bloody jacket
+item_name: pioneer bloody jacket
 item_desc: That small jacket looks like someone want to make it cooler in "hot" days.
 item_icon: small_jacket_pioneer
 species_restricted: list(SPECIES_RESOMI)
@@ -101,21 +177,35 @@ species_restricted: list(SPECIES_RESOMI)
 {
 ckey: twinindifferent
 character_name: Shattara
-item_path: /obj/item/clothing/accessory/solgov/torch_patch
-item_name: Starclaymore merc patch
-item_desc: Black patch with two starfighters on it and Starclaymore logo. Fancy. Maybe.
+item_path: /obj/item/clothing/accessory/shouldercape
+item_name: starclaymore patch
+item_desc: Black patch with two starfighters on it and Starclaymore mercenaries logo. Fancy. Maybe.
 item_icon: starclaymore_patch
 }
 {
-ckey: mrnicolas
-character_name: Cathrine Fund
-item_path: /obj/item/clothing/glasses/material/hybrid/special
+ckey: kotovsyndrome 
+character_name:  James Morisson
+item_path: /obj/item/clothing/accessory/shouldercape
+item_name: martian patch
+item_desc: You can see a patch with a picture of a man,  he has blue eyes and is wearing a black shirt and beret. He is standing on the orange earth with a sunset on a background. Every little detail gives off a sense of pride and pathos. At the right part of the chest he has a similar patch. At the bottom written "MARS IS ETERNAL".
+item_icon: mars_patch
 }
 {
-ckey: billluxe
-character_name: Villyx
-item_path: /obj/item/device/pmp/personal
+ckey: kotovsyndrome 
+character_name: Osr Issarik
+item_path: /obj/item/clothing/accessory/necklace/talisman
+item_desc: A talisman with teeths on a strong string. There is a five teeths on it: one looks like a cannine, three looks like a human, and the last one looks like a crocodile.
+item_icon: talisman-5
 }
+{
+ckey: furrydog
+character_name: Mathor Ajurth Enai-Kaytam
+item_path: /obj/item/clothing/ring/seal/mason
+item_name: rainbow bracelet
+item_desc: It's a rainbow bracelet. Looks pretty good and stylish, special for gays.
+item_icon: rainbow_bracelet
+}
+#	LONG ITEMS HERE (+7)
 {
 ckey: arhod
 character_name: Jason Marhod
@@ -126,20 +216,4 @@ req_access: 2
 paper_info: [center]Центральное Правительство Солнечной Системы[/center][solcrest][br]Данным сертификатом подтверждается награждение Джейсона Мархода медалью "Участник Боевых Действии" за нейтрализацию противника в опасных условиях.[br]Подпись: [sign]Oliver Stocker[/sign]
 paper_title: award certificate
 paper_stamp_type: /obj/item/weapon/stamp/solgov
-}
-{
-ckey: vankoska
-character_name: Terill Qerr
-item_path: /obj/item/device/pmp/personal
-}
-{
-ckey: korramy
-character_name: Quentin Willo
-item_path: /obj/item/device/pmp/personal
-}
-{
-ckey: quietproject 
-character_name: Arias Creo 
-item_path: /obj/item/clothing/mask/gas/swat 
-item_name: vo-coder mask
 }

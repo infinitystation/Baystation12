@@ -76,7 +76,8 @@
 					/obj/item/weapon/reagent_containers/hypospray/autoinjector = 1,
 					/obj/item/stack/medical/bruise_pack = 1,
 					/obj/item/device/flashlight/flare/glowstick = 1,
-					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
+					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1,
+					/obj/item/device/oxycandle = 1)
 
 /obj/item/weapon/storage/box/survival/troops
 	name = "field survival kit"
@@ -107,7 +108,8 @@
 					/obj/item/weapon/reagent_containers/hypospray/autoinjector/detox = 1,
 					/obj/item/stack/medical/bruise_pack = 1,
 					/obj/item/device/flashlight/flare/glowstick = 1,
-					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
+					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1,
+					/obj/item/device/oxycandle = 1)
 
 /obj/item/weapon/storage/box/gloves
 	name = "box of sterile gloves"
@@ -402,6 +404,12 @@
 	icon_state = "lighttube"
 	startswith = list(/obj/item/weapon/light/tube = 17,
 					/obj/item/weapon/light/tube/large = 4)
+
+/obj/item/weapon/storage/box/lights/tubes/random
+	name = "box of replacement tubes -- party pack"
+	icon_state = "lighttube"
+	startswith = list(/obj/item/weapon/light/tube/party = 17,
+					/obj/item/weapon/light/tube/large/party = 4)
 
 /obj/item/weapon/storage/box/lights/tubes/empty
 	startswith = null

@@ -141,6 +141,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 			"<span class='notice'>[user] insert a cassette into \the [src].</span>",
 			"<span class='notice'>You insert a cassette into \the [src].</span>")
 		playsound(src.loc, 'sound/weapons/TargetOn.ogg', 35, 1)
+		update_icon()
 		return
 
 	if(istype(I, /obj/item/weapon/cell/device))
@@ -190,6 +191,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 			eject(usr)
 		if("l_hand")
 			eject(usr)
+	update_icon()
 
 /obj/item/device/pmp/proc/eject(mob/user)
 	if(!cassette)

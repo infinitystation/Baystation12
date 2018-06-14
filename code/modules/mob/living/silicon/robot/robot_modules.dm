@@ -707,6 +707,20 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/borg/combat/shield(src)
 	src.modules += new /obj/item/borg/combat/mobility(src)
 	src.emag = new /obj/item/weapon/gun/energy/lasercannon/mounted(src)
+
+/obj/item/weapon/robot_module/security/combat/torch
+	hide_on_manifest = 0
+
+/obj/item/weapon/robot_module/security/combat/torch/New()
+	src.modules += new /obj/item/device/flash(src)
+	src.modules += new /obj/item/borg/sight/hud/sec(src)
+	src.modules += new /obj/item/weapon/melee/baton/robot(src)
+	src.modules += new /obj/item/weapon/handcuffs/cyborg(src)
+	src.modules += new /obj/item/weapon/gun/energy/secure/gun/mounted(src)
+	src.modules += new /obj/item/borg/combat/shield(src)
+	src.modules += new /obj/item/borg/combat/mobility(src)
+	src.modules += new /obj/item/device/holowarrant(src)
+	src.emag = new /obj/item/weapon/gun/energy/secure/laser/mounted(src)
 	..()
 
 /obj/item/weapon/robot_module/drone

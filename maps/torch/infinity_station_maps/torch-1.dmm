@@ -759,11 +759,8 @@
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/crew)
 "bV" = (
-/turf/simulated/wall/prepainted,
-/area/quartermaster/unused)
-"bW" = (
 /turf/simulated/wall,
-/area/maintenance/fourthdeck/aft)
+/area/quartermaster/unused)
 "bX" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/ladder/up,
@@ -2390,9 +2387,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/unused)
-"fq" = (
-/turf/simulated/wall,
-/area/maintenance/substation/fourthdeck)
 "fr" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -2601,9 +2595,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/suit_storage_unit/science,
 /turf/simulated/floor/tiled,
-/area/quartermaster/expedition/eva)
-"fQ" = (
-/turf/simulated/wall,
 /area/quartermaster/expedition/eva)
 "fR" = (
 /obj/machinery/suit_storage_unit/explorer,
@@ -4506,13 +4497,6 @@
 /obj/machinery/space_heater,
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/starboard)
-"jG" = (
-/turf/simulated/wall,
-/area/quartermaster/expedition)
-"jH" = (
-/obj/machinery/status_display,
-/turf/simulated/wall,
-/area/quartermaster/expedition)
 "jI" = (
 /obj/machinery/door/airlock/mining{
 	name = "Expedition EVA";
@@ -5790,7 +5774,7 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/laundry)
 "lR" = (
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall,
 /area/crew_quarters/laundry)
 "lS" = (
 /obj/structure/reagent_dispensers/fueltank,
@@ -7000,7 +6984,7 @@
 /obj/structure/sign/warning/pods{
 	dir = 1
 	},
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall,
 /area/crew_quarters/laundry)
 "oh" = (
 /obj/structure/bed/roller/ironingboard,
@@ -7858,7 +7842,7 @@
 /area/hallway/primary/fourthdeck/aft)
 "pC" = (
 /obj/structure/sign/warning/high_voltage,
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall,
 /area/quartermaster/expedition)
 "pD" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -10615,7 +10599,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/center)
 "tw" = (
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall,
 /area/quartermaster/expedition/eva)
 "tz" = (
 /obj/machinery/light,
@@ -13059,12 +13043,17 @@
 	icon_state = "steel_decals4";
 	dir = 10
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/fore)
 "xn" = (
 /obj/structure/bed/chair/office/dark{
-	icon_state = "officechair_dark";
-	dir = 8
+	dir = 8;
+	icon_state = "officechair_dark_preview"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/checkpoint2)
@@ -13208,7 +13197,7 @@
 /area/quartermaster/office)
 "xH" = (
 /obj/machinery/status_display,
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall,
 /area/quartermaster/expedition)
 "xI" = (
 /obj/machinery/hologram/holopad,
@@ -15994,6 +15983,7 @@
 /area/shuttle/escape_pod9/station)
 "Dt" = (
 /obj/effect/floor_decal/industrial/warning,
+/obj/structure/table/mag,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/escape_pod9/station)
 "Du" = (
@@ -18220,10 +18210,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/port)
 "Jg" = (
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall,
 /area/quartermaster/expedition)
 "Jh" = (
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall,
 /area/quartermaster/expedition/storage)
 "Jj" = (
 /obj/structure/table/rack,
@@ -18378,12 +18368,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
-"JV" = (
-/obj/item/modular_computer/console/preset/security{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark,
-/area/security/checkpoint2)
 "JX" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -18483,7 +18467,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/fourthdeck/fore)
 "Kg" = (
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall,
 /area/quartermaster/exploration)
 "Kh" = (
 /obj/structure/cable/green{
@@ -18746,14 +18730,12 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
 "Lw" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1;
-	layer = 2.4;
-	level = 2
-	},
 /obj/effect/floor_decal/industrial/warning/corner{
 	icon_state = "warningcorner";
 	dir = 8
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition/storage)
@@ -18805,7 +18787,7 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition/storage)
 "LM" = (
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall,
 /area/maintenance/fourthdeck/aft)
 "LP" = (
 /obj/structure/reagent_dispensers/watertank,
@@ -20099,6 +20081,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/deckofficer)
+"RM" = (
+/obj/structure/table/mag,
+/turf/simulated/floor/tiled,
+/area/shuttle/escape_pod9/station)
 "RO" = (
 /obj/machinery/power/apc{
 	dir = 2;
@@ -20666,6 +20652,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/shield/fourthdeck)
+"UP" = (
+/obj/item/modular_computer/console/preset/security{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/security/checkpoint2)
 "UR" = (
 /obj/structure/table/steel,
 /obj/random/junk,
@@ -21378,7 +21370,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/starboard)
 "Zn" = (
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall,
 /area/maintenance/substation/fourthdeck)
 "Zp" = (
 /obj/structure/cable/green{
@@ -35840,7 +35832,7 @@ tq
 uV
 vO
 xn
-JV
+UP
 uV
 uV
 uV
@@ -38070,9 +38062,9 @@ AZ
 BN
 CE
 Dt
-Ee
-Ee
-Ee
+RM
+RM
+RM
 Ee
 Ee
 GO
@@ -39257,17 +39249,17 @@ WA
 ED
 hw
 TU
-fQ
-fQ
-fQ
-fQ
-fQ
-jG
-jG
-jG
-jG
-jG
-jH
+tw
+tw
+tw
+tw
+tw
+Jg
+Jg
+Jg
+Jg
+Jg
+xH
 qE
 sd
 tG
@@ -39459,17 +39451,17 @@ RO
 ED
 Pf
 YW
-fQ
+tw
 Om
 Yn
 ID
 iE
-jG
+Jg
 VM
 lT
 Qf
 Pq
-jG
+Jg
 qF
 se
 Ow
@@ -39863,7 +39855,7 @@ EC
 ED
 Ty
 Kd
-fQ
+tw
 Zw
 KN
 Ng
@@ -40065,7 +40057,7 @@ GI
 LW
 bF
 Fc
-fQ
+tw
 fO
 gJ
 Wl
@@ -40075,7 +40067,7 @@ VS
 lW
 lW
 om
-jG
+Jg
 qI
 Rl
 tO
@@ -40267,7 +40259,7 @@ UN
 Tq
 Xs
 JZ
-fQ
+tw
 fP
 IL
 WK
@@ -40277,7 +40269,7 @@ QF
 lW
 KF
 on
-jG
+Jg
 Lv
 Rl
 tK
@@ -45934,9 +45926,9 @@ me
 iR
 oK
 ag
-bW
+LM
 sx
-bW
+LM
 ag
 ww
 iR
@@ -46936,12 +46928,12 @@ eL
 Zn
 Zn
 Zn
-fq
+Zn
 iU
-fq
+Zn
 kN
-bW
-bW
+LM
+LM
 ah
 ah
 ah
@@ -46955,12 +46947,12 @@ NE
 oa
 RV
 RV
-bW
-bW
-bW
+LM
+LM
+LM
 Fy
 FU
-bW
+LM
 cH
 HF
 ah
@@ -47157,12 +47149,12 @@ Wv
 FD
 Ts
 CV
-bW
+LM
 Cd
 EH
 Fz
 SO
-bW
+LM
 cH
 bX
 ah
@@ -47342,7 +47334,7 @@ gj
 hb
 if
 iW
-fq
+Zn
 kP
 mi
 mi
@@ -47359,12 +47351,12 @@ LA
 Vz
 Ky
 Vz
-bW
+LM
 Cd
 Zf
 DL
 ML
-bW
+LM
 Hf
 ah
 ah
@@ -47539,12 +47531,12 @@ ah
 ah
 dV
 eO
-fq
-fq
+Zn
+Zn
 hc
-fq
-fq
-fq
+Zn
+Zn
+Zn
 kQ
 mj
 dV
@@ -47561,7 +47553,7 @@ hz
 Rb
 Vz
 Si
-bW
+LM
 cH
 cH
 cH
@@ -47763,7 +47755,7 @@ Al
 OZ
 lz
 Hw
-bW
+LM
 Ak
 EX
 xT

@@ -652,7 +652,9 @@
 /datum/shuttle/autodock/overmap/aquila
 	name = "Aquila"
 	move_time = 60
-	shuttle_area = /area/aquila_hangar/start
+	shuttle_area = list(/area/aquila/cockpit, /area/aquila/engineering,
+	/area/aquila/storage, /area/aquila/medical, /area/aquila/troops,
+	/area/aquila/crew, /area/aquila/airlock)
 	current_location = "nav_hangar_aquila"
 	landmark_transition = "nav_transit_aquila"
 	dock_target = "aquila_shuttle"
@@ -692,4 +694,4 @@
 
 //Makes the deck management program use hangar access
 /datum/nano_module/deck_management
-	default_access = access_hangar
+	default_access = list(access_hangar, access_cargo, access_heads)

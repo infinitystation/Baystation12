@@ -78,6 +78,7 @@ Single Use Emergency Pouches
 	/obj/item/weapon/reagent_containers/pill/pouch_pill/inaprovaline,
 	/obj/item/weapon/reagent_containers/pill/pouch_pill/paracetamol,
 	/obj/item/stack/medical/bruise_pack = 2,
+	/obj/item/weapon/reagent_containers/pill/bicaridine = 1
 		)
 	instructions = {"
 	1) Tear open the emergency medical pack using the easy open tab at the top.\n\
@@ -99,7 +100,8 @@ Single Use Emergency Pouches
 	/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/deletrathol,
 	/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/adrenaline,
 	/obj/item/weapon/reagent_containers/pill/pouch_pill/paracetamol,
-	/obj/item/stack/medical/ointment = 2,
+	/obj/item/stack/medical/ointment = 1,
+	/obj/item/weapon/reagent_containers/pill/kelotane = 1
 		)
 	instructions = {"
 	1) Tear open the emergency medical pack using the easy open tab at the top.\n\

@@ -168,7 +168,7 @@
 
 				if(BLOOD_VOLUME_SAFE to INFINITY)
 					if(can_heal)
-						damage--
+						damage = max(damage-1, 0)
 				if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
 					if(prob(1))
 						to_chat(owner, "<span class='warning'>[pick("У вас кружитс&#255; голова","Вам т&#255;жело удержать равновесие","Вы чувствуете слабость")]...</span>")
