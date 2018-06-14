@@ -40,6 +40,7 @@
 /datum/uplink_item/item/ammo/c12m
 	name = "Automatic Shotgun Magazine"
 	item_cost = 10
+	antag_roles = list(MODE_MERCENARY)
 	antag_costs = list(MODE_MERCENARY = 10)
 	path = /obj/item/ammo_magazine/c12m
 
