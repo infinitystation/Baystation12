@@ -1,383 +1,386 @@
 /datum/map/sierra
 
 	base_floor_type = /turf/simulated/floor/reinforced/airless
-	base_floor_area = /area/maintenance/exterior
+	base_floor_area = /area/sierra/maintenance/exterior
 
 	post_round_safe_areas = list (
 		/area/centcom,
-		/area/shuttle/escape/centcom,
-		/area/shuttle/escape_pod6/station,
-		/area/shuttle/escape_pod7/station,
-		/area/shuttle/escape_pod8/station,
-		/area/shuttle/escape_pod9/station,
-		/area/shuttle/escape_pod10/station,
-		/area/shuttle/escape_pod11/station,
-		/area/shuttle/escape_pod12/station,
-		/area/shuttle/escape_pod13/station,
-		/area/shuttle/escape_pod14/station,
-		/area/shuttle/escape_pod15/station,
-		/area/shuttle/escape_pod16/station,
-		/area/shuttle/escape_pod17/station,
-		/area/shuttle/transport1/centcom,
-		/area/shuttle/administration/centcom,
-		/area/shuttle/specops/centcom,
+		/area/sierra/shuttle/escape/centcom,
+		/area/sierra/shuttle/escape_pod6/station,
+		/area/sierra/shuttle/escape_pod7/station,
+		/area/sierra/shuttle/escape_pod8/station,
+		/area/sierra/shuttle/escape_pod9/station,
+		/area/sierra/shuttle/escape_pod10/station,
+		/area/sierra/shuttle/escape_pod11/station,
+		/area/sierra/shuttle/escape_pod12/station,
+		/area/sierra/shuttle/escape_pod13/station,
+		/area/sierra/shuttle/escape_pod14/station,
+		/area/sierra/shuttle/escape_pod15/station,
+		/area/sierra/shuttle/escape_pod16/station,
+		/area/sierra/shuttle/escape_pod17/station,
+		/area/sierra/shuttle/transport1/centcom,
+		/area/sierra/shuttle/administration/centcom,
+		/area/sierra/shuttle/specops/centcom,
 	)
 /*
 //Fifth Deck (Z-1) Coming SoonTM
-/area/hallway/primary/fifthdeck/fore
+/area/sierra/hallway/primary/fifthdeck/fore
 	name = "\improper Fifth Deck Fore Hallway"
 	icon_state = "hallF"
 
-/area/hallway/primary/fifthdeck/center
+/area/sierra/hallway/primary/fifthdeck/center
 	name = "\improper Fifth Deck Central Hallway"
 	icon_state = "hallC3"
 
-/area/hallway/primary/fifthdeck/aft
+/area/sierra/hallway/primary/fifthdeck/aft
 	name = "\improper Fifth Deck Aft Hallway"
 	icon_state = "hallA"
 
-/area/maintenance/fifthdeck
+/area/sierra/maintenance/fifthdeck
 	name = "Fifth Deck Maintenance"
 	icon_state = "maintcentral"
 
-/area/maintenance/fifthdeck/aft
+/area/sierra/maintenance/fifthdeck/aft
 	name = "Fifth Deck Aft Maintenance"
 	icon_state = "amaint"
 
-/area/maintenance/fifthdeck/foreport
+/area/sierra/maintenance/fifthdeck/foreport
 	name = "Fifth Deck Fore Port Maintenance"
 	icon_state = "fpmaint"
 
-/area/maintenance/fifthdeck/forestarboard
+/area/sierra/maintenance/fifthdeck/forestarboard
 	name = "Fifth Deck Fore Starboard Maintenance"
 	icon_state = "fsmaint"
 
-/area/maintenance/fifthdeck/starboard
+/area/sierra/maintenance/fifthdeck/starboard
 	name = "Fifth Deck Starboard Maintenance"
 	icon_state = "smaint"
 
-/area/teleporter/fifthdeck
+/area/sierra/teleporter/fifthdeck
 	name = "\improper Fifth Deck Teleporter"
 	icon_state = "teleporter"
 
-/area/maintenance/substation/fifthdeck
+/area/sierra/maintenance/substation/fifthdeck
 	name = "Fifth Deck Substation"
 */
-//Fourth Deck (Z-1)
-/area/hallway/primary/fourthdeck/fore
+	///////////////
+	//FOURTH DECK//
+	///////////////
+
+/area/sierra/hallway/primary/fourthdeck/fore
 	name = "\improper Fourth Deck Fore Hallway"
 	icon_state = "hallF"
 
-/area/hallway/primary/fourthdeck/center
+/area/sierra/hallway/primary/fourthdeck/center
 	name = "\improper Fourth Deck Central Hallway"
 	icon_state = "hallC3"
 
-/area/hallway/primary/fourthdeck/aft
+/area/sierra/hallway/primary/fourthdeck/aft
 	name = "\improper Fourth Deck Aft Hallway"
 	icon_state = "hallA"
 
-/area/maintenance/fourthdeck
+/area/sierra/maintenance/fourthdeck
 	name = "Fourth Deck Maintenance"
 	icon_state = "maintcentral"
 
-/area/maintenance/fourthdeck/aft
+/area/sierra/maintenance/fourthdeck/aft
 	name = "Fourth Deck Aft Maintenance"
 	icon_state = "amaint"
 
-/area/maintenance/fourthdeck/foreport
+/area/sierra/maintenance/fourthdeck/foreport
 	name = "Fourth Deck Fore Port Maintenance"
 	icon_state = "fpmaint"
 
-/area/maintenance/fourthdeck/forestarboard
+/area/sierra/maintenance/fourthdeck/forestarboard
 	name = "Fourth Deck Fore Starboard Maintenance"
 	icon_state = "fsmaint"
 
-/area/maintenance/fourthdeck/starboard
+/area/sierra/maintenance/fourthdeck/starboard
 	name = "Fourth Deck Starboard Maintenance"
 	icon_state = "smaint"
 
-/area/maintenance/fourthdeck/port
+/area/sierra/maintenance/fourthdeck/port
 	name = "Fourth Deck Port Maintenance"
 	icon_state = "pmaint"
 
-/area/teleporter/fourthdeck
+/area/sierra/teleporter/fourthdeck
 	name = "\improper Fourth Deck Teleporter"
 	icon_state = "teleporter"
 
-/area/maintenance/substation/fourthdeck
+/area/sierra/maintenance/substation/fourthdeck
 	name = "Fourth Deck Substation"
 
 //Third Deck (Z-2)
-/area/hallway/primary/thirddeck/fore
+/area/sierra/hallway/primary/thirddeck/fore
 	name = "\improper Third Deck Fore Hallway"
 	icon_state = "hallF"
 
-/area/hallway/primary/thirddeck/center
+/area/sierra/hallway/primary/thirddeck/center
 	name = "\improper Third Deck Central Hallway"
 	icon_state = "hallC3"
 
-/area/hallway/primary/thirddeck/aft
+/area/sierra/hallway/primary/thirddeck/aft
 	name = "\improper Third Deck Aft Hallway"
 	icon_state = "hallA"
 
-/area/maintenance/thirddeck
+/area/sierra/maintenance/thirddeck
 	name = "Third Deck Maintenance"
 	icon_state = "maintcentral"
 
-/area/maintenance/thirddeck/foreport
+/area/sierra/maintenance/thirddeck/foreport
 	name = "Third Deck Fore Port Maintenance"
 	icon_state = "fpmaint"
 
-/area/maintenance/thirddeck/forestarboard
+/area/sierra/maintenance/thirddeck/forestarboard
 	name = "Third Deck Fore Starboard Maintenance"
 	icon_state = "fsmaint"
 
-/area/maintenance/thirddeck/starboard
+/area/sierra/maintenance/thirddeck/starboard
 	name = "Third Deck Starboard Maintenance"
 	icon_state = "smaint"
 
-/area/maintenance/thirddeck/port
+/area/sierra/maintenance/thirddeck/port
 	name = "Third Deck Port Maintenance"
 	icon_state = "pmaint"
 
-/area/maintenance/thirddeck/aftstarboard
+/area/sierra/maintenance/thirddeck/aftstarboard
 	name = "Third Deck Aft Starboard Maintenance"
 	icon_state = "asmaint"
 
-/area/maintenance/thirddeck/aftport
+/area/sierra/maintenance/thirddeck/aftport
 	name = "Third Deck Aft Port Maintenance"
 	icon_state = "apmaint"
 
-/area/teleporter/thirddeck
+/area/sierra/teleporter/thirddeck
 	name = "\improper Third Deck Teleporter"
 	icon_state = "teleporter"
 
-/area/maintenance/substation/thirddeck
+/area/sierra/maintenance/substation/thirddeck
 	name = "Third Deck Substation"
 
-/area/crew_quarters/safe_room/thirddeck
+/area/sierra/crew_quarters/safe_room/thirddeck
 	name = "\improper Third Deck Safe Room"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/crew_quarters/laundry
+/area/sierra/crew_quarters/laundry
 	name = "\improper Laundry Room"
 	icon_state = "Sleep"
 
 //Second Deck (Z-3)
-/area/maintenance/seconddeck
+/area/sierra/maintenance/seconddeck
 	name = "Second Deck Maintenance"
 	icon_state = "maintcentral"
 
-/area/maintenance/seconddeck/aftstarboard
+/area/sierra/maintenance/seconddeck/aftstarboard
 	name = "Second Deck Aft Starboard Maintenance"
 	icon_state = "asmaint"
 
-/area/maintenance/seconddeck/aftport
+/area/sierra/maintenance/seconddeck/aftport
 	name = "Second Deck Aft Port Maintenance"
 	icon_state = "apmaint"
 
-/area/maintenance/seconddeck/foreport
+/area/sierra/maintenance/seconddeck/foreport
 	name = "Second Deck Fore Port Maintenance"
 	icon_state = "fpmaint"
 
-/area/maintenance/seconddeck/forestarboard
+/area/sierra/maintenance/seconddeck/forestarboard
 	name = "Second Deck Fore Starboard Maintenance"
 	icon_state = "fsmaint"
 
-/area/maintenance/seconddeck/central
+/area/sierra/maintenance/seconddeck/central
 	name = "Second Deck Central Maintenance"
 	icon_state = "maintcentral"
 
-/area/maintenance/seconddeck/hallway
+/area/sierra/maintenance/seconddeck/hallway
 	name = "Second Deck Central Hallway"
 	icon_state = "hallC2"
 
-/area/teleporter/seconddeck
+/area/sierra/teleporter/seconddeck
 	name = "\improper Second Deck Teleporter"
 	icon_state = "teleporter"
 
-/area/hallway/primary/seconddeck/center
+/area/sierra/hallway/primary/seconddeck/center
 	name = "\improper Second Deck Central Stairwell"
 	icon_state = "hallC2"
 
-/area/maintenance/substation/seconddeck
+/area/sierra/maintenance/substation/seconddeck
 	name = "Second Deck Substation"
 
-/area/crew_quarters/safe_room/seconddeck
+/area/sierra/crew_quarters/safe_room/seconddeck
 	name = "\improper Second Deck Safe Room"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 
 //First Deck (Z-4)
-/area/maintenance/firstdeck
+/area/sierra/maintenance/firstdeck
 	name = "First Deck Maintenance"
 	icon_state = "maintcentral"
 
-/area/maintenance/firstdeck/aftstarboard
+/area/sierra/maintenance/firstdeck/aftstarboard
 	name = "First Deck Aft Starboard Maintenance"
 	icon_state = "asmaint"
 
-/area/maintenance/firstdeck/aftport
+/area/sierra/maintenance/firstdeck/aftport
 	name = "First Deck Aft Port Maintenance"
 	icon_state = "apmaint"
 
-/area/maintenance/firstdeck/forestarboard
+/area/sierra/maintenance/firstdeck/forestarboard
 	name = "First Deck Fore Starboard Maintenance"
 	icon_state = "fsmaint"
 
-/area/maintenance/firstdeck/foreport
+/area/sierra/maintenance/firstdeck/foreport
 	name = "First Deck Fore Port Maintenance"
 	icon_state = "fpmaint"
 
-/area/maintenance/firstdeck/centralstarboard
+/area/sierra/maintenance/firstdeck/centralstarboard
 	name = "First Deck Starboard Maintenance"
 	icon_state = "smaint"
 
-/area/maintenance/firstdeck/centralport
+/area/sierra/maintenance/firstdeck/centralport
 	name = "First Deck Port Maintenance"
 	icon_state = "pmaint"
 
-/area/teleporter/firstdeck
+/area/sierra/teleporter/firstdeck
 	name = "\improper First Deck Teleporter"
 	icon_state = "teleporter"
 
-/area/hallway/primary/firstdeck/fore
+/area/sierra/hallway/primary/firstdeck/fore
 	name = "\improper First Deck Fore Hallway"
 	icon_state = "hallF"
 
-/area/hallway/primary/firstdeck/center
+/area/sierra/hallway/primary/firstdeck/center
 	name = "\improper First Deck Central Hallway"
 	icon_state = "hallC1"
 
-/area/hallway/primary/firstdeck/aft
+/area/sierra/hallway/primary/firstdeck/aft
 	name = "\improper First Deck Aft Hallway"
 	icon_state = "hallA"
 
-/area/crew_quarters/safe_room/firstdeck
+/area/sierra/crew_quarters/safe_room/firstdeck
 	name = "\improper First Deck Safe Room"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/maintenance/substation/firstdeck // First Deck (Z-4)
+/area/sierra/maintenance/substation/firstdeck // First Deck (Z-4)
 	name = "First Deck Substation"
 
 //Bridge (Z-5)
-/area/maintenance/bridge
+/area/sierra/maintenance/bridge
 	name = "Bridge Maintenance"
 	icon_state = "maintcentral"
 
-/area/maintenance/bridge/aftstarboard
+/area/sierra/maintenance/bridge/aftstarboard
 	name = "Bridge Aft Starboard Maintenance"
 	icon_state = "asmaint"
 
-/area/maintenance/bridge/aftport
+/area/sierra/maintenance/bridge/aftport
 	name = "Bridge Aft Port Maintenance"
 	icon_state = "apmaint"
 
-/area/maintenance/bridge/forestarboard
+/area/sierra/maintenance/bridge/forestarboard
 	name = "Bridge Fore Starboard Maintenance"
 	icon_state = "fsmaint"
 
-/area/maintenance/bridge/foreport
+/area/sierra/maintenance/bridge/foreport
 	name = "Bridge Fore Port Maintenance"
 	icon_state = "fpmaint"
 
-/area/hallway/primary/bridge/fore
+/area/sierra/hallway/primary/bridge/fore
 	name = "\improper Bridge Fore Hallway"
 	icon_state = "hallF"
 
-/area/hallway/primary/bridge/aft
+/area/sierra/hallway/primary/bridge/aft
 	name = "\improper Bridge Aft Hallway"
 	icon_state = "hallA"
 
-/area/maintenance/substation/bridge // First Deck (Z-4)
+/area/sierra/maintenance/substation/bridge // First Deck (Z-4)
 	name = "Bridge Substation"
 
-/area/crew_quarters/safe_room/bridge
+/area/sierra/crew_quarters/safe_room/bridge
 	name = "\improper Bridge Safe Room"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/bridge/storage
+/area/sierra/bridge/storage
 	name = "\improper Bridge Storage Room"
 
 // Shuttles
-/area/shuttle/transport1/centcom
+/area/sierra/shuttle/transport1/centcom
 	icon_state = "shuttle"
 	name = "\improper Transport Shuttle Centcom"
 
 //sierra large pods
-/area/shuttle/escape_pod6/station
+/area/sierra/shuttle/escape_pod6/station
 	name = "Escape Pod One"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod7/station
+/area/sierra/shuttle/escape_pod7/station
 	name = "Escape Pod Two"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod8/station
+/area/sierra/shuttle/escape_pod8/station
 	name = "Escape Pod Three"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod9/station
+/area/sierra/shuttle/escape_pod9/station
 	name = "Escape Pod Four"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod10/station
+/area/sierra/shuttle/escape_pod10/station
 	name = "Escape Pod Five"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod11/station
+/area/sierra/shuttle/escape_pod11/station
 	name = "Escape Pod Six"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 //sierra small pods
-/area/shuttle/escape_pod12/station
+/area/sierra/shuttle/escape_pod12/station
 	name = "Escape Pod Seven"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod13/station
+/area/sierra/shuttle/escape_pod13/station
 	name = "Escape Pod Eight"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod14/station
+/area/sierra/shuttle/escape_pod14/station
 	name = "Escape Pod Nine"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod15/station
+/area/sierra/shuttle/escape_pod15/station
 	name = "Escape Pod Ten"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod16/station
+/area/sierra/shuttle/escape_pod16/station
 	name = "Escape Pod Eleven"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod17/station
+/area/sierra/shuttle/escape_pod17/station
 	name = "Escape Pod Twelve"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 //Charon
 
-/area/exploration_shuttle/
+/area/sierra/exploration_shuttle/
 	name = "\improper Charon"
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/plating
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/exploration_shuttle/cockpit
+/area/sierra/exploration_shuttle/cockpit
 	name = "\improper Charon - Cockpit"
-/area/exploration_shuttle/atmos
+/area/sierra/exploration_shuttle/atmos
 	name = "\improper Charon - Atmos Compartment"
-/area/exploration_shuttle/power
+/area/sierra/exploration_shuttle/power
 	name = "\improper Charon - Power Compartment"
-/area/exploration_shuttle/crew
+/area/sierra/exploration_shuttle/crew
 	name = "\improper Charon - Crew Compartment"
-/area/exploration_shuttle/cargo
+/area/sierra/exploration_shuttle/cargo
 	name = "\improper Charon - Cargo Bay"
-/area/exploration_shuttle/airlock
+/area/sierra/exploration_shuttle/airlock
 	name = "\improper Charon - Airlock Compartment"
 
 //Aquila
 
-/area/aquila_hangar/start
+/area/sierra/aquila_hangar/start
 	name = "\improper SEV Aquila"
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -387,7 +390,7 @@
 
 //Guppy
 
-/area/guppy_hangar/start
+/area/sierra/guppy_hangar/start
 	name = "\improper Guppy"
 	icon_state = "shuttlered"
 	requires_power = 1
@@ -397,93 +400,93 @@
 
 //Petrov
 
-/area/shuttle/petrov
+/area/sierra/shuttle/petrov
 	name = "\improper NSV Petrov"
 	requires_power = 1
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/petrov/ship
+/area/sierra/shuttle/petrov/ship
 	icon_state = "shuttlered"
 
-/area/shuttle/petrov/cell1
+/area/sierra/shuttle/petrov/cell1
 	name = "\improper NSV Petrov - Isolation Cell 1"
 	icon_state = "shuttle"
-/area/shuttle/petrov/cell2
+/area/sierra/shuttle/petrov/cell2
 	name = "\improper NSV Petrov - Isolation Cell 2"
 	icon_state = "shuttlegrn"
-/area/shuttle/petrov/cell3
+/area/sierra/shuttle/petrov/cell3
 	name = "\improper NSV Petrov - Isolation Cell 3"
 	icon_state = "shuttle"
 
 //Turbolift
-/area/turbolift
+/area/sierra/turbolift
 	name = "\improper Turbolift"
 	icon_state = "shuttle"
 	requires_power = 0
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/turbolift/start
+/area/sierra/turbolift/start
 	name = "\improper Turbolift Start"
 
-/area/turbolift/bridge
+/area/sierra/turbolift/bridge
 	name = "\improper bridge"
 	base_turf = /turf/simulated/open
 
-/area/turbolift/firstdeck
+/area/sierra/turbolift/firstdeck
 	name = "\improper first deck"
 	base_turf = /turf/simulated/open
 
-/area/turbolift/seconddeck
+/area/sierra/turbolift/seconddeck
 	name = "\improper second deck"
 	base_turf = /turf/simulated/open
 
-/area/turbolift/thirddeck
+/area/sierra/turbolift/thirddeck
 	name = "\improper third deck"
 	base_turf = /turf/simulated/open
 
-/area/turbolift/fourthdeck
+/area/sierra/turbolift/fourthdeck
 	name = "\improper fourth deck"
 	base_turf = /turf/simulated/floor/plating
 /*
-/area/turbolift/fifthdeck
+/area/sierra/turbolift/fifthdeck
 	name = "\improper Fifth Deck"
 	base_turf = /turf/simulated/floor/plating
 */
 
 // Ninja areas
-/area/ninja_dojo
+/area/sierra/ninja_dojo
 	name = "\improper Ninja Base"
 	icon_state = "green"
 	requires_power = 0
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/ninja_dojo/dojo
+/area/sierra/ninja_dojo/dojo
 	name = "\improper Clan Dojo"
 	dynamic_lighting = 0
 
-/area/ninja_dojo/start
+/area/sierra/ninja_dojo/start
 	name = "\improper Clan Dojo"
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/plating
 
 //Merchant
 
-/area/shuttle/merchant/home
+/area/sierra/shuttle/merchant/home
 	name = "\improper Merchant Vessel"
 	icon_state = "shuttlegrn"
 
 //Merc
 
-/area/syndicate_mothership
+/area/sierra/syndicate_mothership
 	name = "\improper Mercenary Base"
 	icon_state = "syndie-ship"
 	requires_power = 0
 	dynamic_lighting = 0
 
-/area/syndicate_station/start
+/area/sierra/syndicate_station/start
 	name = "\improper Mercenary Forward Operating Base"
 	icon_state = "yellow"
 	requires_power = 0
@@ -491,549 +494,560 @@
 
 //Skipjack
 
-/area/skipjack_station
+/area/sierra/skipjack_station
 	name = "Raider Outpost"
 	icon_state = "yellow"
 	requires_power = 0
 
 //NT rescue shuttle
 
-/area/rescue_base
+/area/sierra/rescue_base
 	name = "\improper Response Team Base"
 	icon_state = "yellow"
 	requires_power = 0
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/rescue_base/base
+/area/sierra/rescue_base/base
 	name = "\improper Barracks"
 	icon_state = "yellow"
 	dynamic_lighting = 0
 
-/area/rescue_base/start
+/area/sierra/rescue_base/start
 	name = "\improper Response Team Base"
 	icon_state = "shuttlered"
 	base_turf = /turf/unsimulated/floor/rescue_base
 
-// Elevator areas.
-/area/turbolift/sierra_top
-	name = "lift (bridge)"
+	////////////
+	//ELEVATOR//
+	////////////
+
+/area/sierra/turbolift/sierra_top
+	name = "lift (first deck)"
 	lift_floor_label = "Bridge"
 	lift_floor_name = "Bridge"
 	lift_announce_str = "Arriving at Command Deck: Bridge. Meeting Room. Command Offices. AI Core. Landing Area. Auxiliary EVA."
 
-/area/turbolift/sierra_third
-	name = "lift (upper deck)"
-	lift_floor_label = "Deck 1"
-	lift_floor_name = "Operations Deck"
-	lift_announce_str = "Arriving at Operations Deck: Infirmary. Research Wing. Auxiliary Cryogenic Storage. Emergency Armory. Diplomatic Quarters. Captain's Mess. Pathfinder's Office."
-
-/area/turbolift/sierra_second
-	name = "lift (maintenance)"
-	lift_floor_label = "Deck 2"
-	lift_floor_name = "Maintenance Deck"
-	lift_announce_str = "Arriving at Maintenance Deck: Engineering. Atmospherics. Sanitation. Storage."
-
-/area/turbolift/sierra_first
+/area/sierra/turbolift/sierra_middle
 	name = "lift (second deck)"
 	lift_floor_label = "Deck 3"
 	lift_floor_name = "Habitation Deck"
 	lift_announce_str = "Arriving at Habitation Deck: EVA. Security Wing. Telecommunications. Mess Hall. Hydroponics. Cryogenic Storage. Holodeck."
 
-/area/turbolift/sierra_ground
-	name = "lift (lower deck)"
+/area/sierra/turbolift/sierra_ground
+	name = "lift (third deck)"
 	lift_floor_label = "Deck 4"
-	lift_floor_name = "Hangar Deck"
+	lift_floor_name = "Maintenance deck Deck"
 	lift_announce_str = "Arriving at Hangar Deck: Shuttle Docks. Cargo Storage. Main Hangar. Supply Office. Expedition Preparation. Mineral Processing."
 	base_turf = /turf/simulated/floor
 
-// Command
-/area/command/conference
+	///////////
+	//COMMAND//
+	///////////
+
+/area/sierra/command/conference
 	name = "Conference Room"
 	icon_state = "head_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/command/captainmess
+/area/sierra/command/captainmess
 	name = "Captain's Mess"
 	icon_state = "bar"
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/command/pathfinder
+/area/sierra/command/pathfinder
 	name = "\improper Pathfinder's Office"
 	icon_state = "head_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/command/armoury
+/area/sierra/command/armoury
 	name = "\improper Emergency Armory"
 	icon_state = "Warden"
 
-/area/command/armoury/access
+/area/sierra/command/armoury/access
 	name = "\improper Emergency Armory - Access"
 
-/area/command/armoury/tactical
+/area/sierra/command/armoury/tactical
 	name = "\improper Emergency Armory - Tactical"
 	icon_state = "Tactical"
 
-/area/crew_quarters/heads
+/area/sierra/crew_quarters/heads
 	icon_state = "head_quarters"
 
-/area/crew_quarters/heads/cobed
+/area/sierra/crew_quarters/heads/cobed
 	name = "\improper Command - CO's Quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/crew_quarters/heads/office/co
+/area/sierra/crew_quarters/heads/office/co
 	name = "\improper Command - CO's Office"
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/crew_quarters/heads/office/xo
+/area/sierra/crew_quarters/heads/office/xo
 	name = "\improper Command - XO's Office"
 
-/area/crew_quarters/heads/office/rd
+/area/sierra/crew_quarters/heads/office/rd
 	name = "\improper Command - RD's Office"
 
-/area/crew_quarters/heads/office/cmo
+/area/sierra/crew_quarters/heads/office/cmo
 	name = "\improper Command - CMO's Office"
 
-/area/crew_quarters/heads/office/ce
+/area/sierra/crew_quarters/heads/office/ce
 	name = "\improper Engineering - CE's Office"
 
-/area/crew_quarters/heads/office/cos
+/area/sierra/crew_quarters/heads/office/cos
 	name = "\improper Command - CoS' Office"
 
-/area/crew_quarters/heads/office/cl
+/area/sierra/crew_quarters/heads/office/cl
 	name = "\improper Command - CL's Office"
 
-/area/crew_quarters/heads/office/sgr
+/area/sierra/crew_quarters/heads/office/sgr
 	name = "\improper Command - SCGR's Office"
 
-/area/crew_quarters/heads/office/sea
+/area/sierra/crew_quarters/heads/office/sea
 	name = "\improper Command - SEA's Office"
 
-// Engineering
+	///////////////
+	//Engineering//
+	///////////////
 
-/area/engineering/atmos/aux
+/area/sierra/engineering/atmos/aux
 	name = "\improper Auxiliary Atmospherics"
 	icon_state = "atmos"
 	sound_env = SMALL_ENCLOSED
 
-/area/engineering/auxpower
+/area/sierra/engineering/auxpower
 	name = "\improper Auxiliary Power Storage"
 	icon_state = "engine_smes"
 	sound_env = SMALL_ENCLOSED
 
-/area/engineering/hallway
+/area/sierra/engineering/hallway
 	name = "\improper Engineering Hallway"
 	icon_state = "engineering_workshop"
 
-/area/engineering/hardstorage
+/area/sierra/engineering/hardstorage
 	name = "\improper Engineering Hard Storage"
 	icon_state = "engineering_storage"
 	sound_env = SMALL_ENCLOSED
 
-/area/engineering/hardstorage/lower
+/area/sierra/engineering/hardstorage/lower
 	name = "\improper Lower Engineering Hard Storage"
 	icon_state = "engineering_storage"
 
-/area/engineering/hardstorage/aux
+/area/sierra/engineering/hardstorage/aux
 	name = "\improper Auxiliary Engineering Hard Storage"
 	icon_state = "engineering_storage"
 
-/area/engineering/gravity_gen
+/area/sierra/engineering/gravity_gen
 	name = "\improper Gravity Generator"
 	icon_state = "engine"
 	sound_env = SMALL_ENCLOSED
 
-//Vacant Areas
-/area/vacant
+	//////////
+	//VACANT//
+	//////////
+
+/area/sierra/vacant
 	name = "\improper Vacant Area"
 	icon_state = "construction"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/vacant/armory
+/area/sierra/vacant/armory
 	name = "\improper Marine Armory"
 	icon_state = "Tactical"
 
-/area/vacant/cabin
+/area/sierra/vacant/cabin
 	name = "\improper Vacant Cabins"
 	icon_state = "crew_quarters"
 
-/area/vacant/chapel
+/area/sierra/vacant/chapel
 	name = "\improper Unused Chapel"
 	icon_state = "chapel"
 
-/area/vacant/infirmary
+/area/sierra/vacant/infirmary
 	name = "\improper Auxiliary Infirmary"
 	icon_state = "medbay"
 
-/area/vacant/monitoring
+/area/sierra/vacant/monitoring
 	name = "\improper Auxiliary Monitoring Room"
 	icon_state = "engine_monitoring"
 
-/area/vacant/prototype/control
+/area/sierra/vacant/prototype/control
 	name = "\improper Prototype Fusion Reactor Control Room"
 	icon_state = "engine_monitoring"
 	area_flags = null
 
-/area/vacant/prototype/engine
+/area/sierra/vacant/prototype/engine
 	name = "\improper Prototype Fusion Reactor Chamber"
 	icon_state = "firingrange"
 
-
-/area/vacant/cargo
+/area/sierra/vacant/cargo
 	name = "\improper Requisitions Office"
 	icon_state = "quart"
 
-/area/vacant/mess
+/area/sierra/vacant/mess
 	name = "\improper Officer's Mess"
 	icon_state = "bar"
 
-/area/vacant/missile
+/area/sierra/vacant/missile
 	name = "\improper Third Deck Port Missile Pod"
 	icon_state = "firingrange"
 
-/area/vacant/brig
+/area/sierra/vacant/brig
 	name = "\improper Permanent Brig"
 	icon_state = "brig"
 
-/area/vacant/office
+/area/sierra/vacant/office
 	name = "\improper Unused Office"
 	icon_state = "conference"
 
-// Storage
-/area/storage/auxillary/port
+	/////////////
+	//STORAGES///
+	/////////////
+
+/area/sierra/storage/auxillary/port
 	name = "Port Auxillary Storage"
 	icon_state = "auxstorage"
 
-/area/storage/auxillary/starboard
+/area/sierra/storage/auxillary/starboard
 	name = "Starboard Auxillary Storage"
 	icon_state = "auxstorage"
 
-/area/storage/cargo
+/area/sierra/storage/cargo
 	name = "Cargo Storage"
 	icon_state = "quartstorage"
 	sound_env = SMALL_ENCLOSED
 
-/area/storage/expedition
+/area/sierra/storage/expedition
 	name = "Expedition Storage"
 	icon_state = "storage"
 	sound_env = SMALL_ENCLOSED
 
-/area/storage/medical
+/area/sierra/storage/medical
 	name = "Medical Storage"
 	icon_state = "medbay4"
 	sound_env = SMALL_ENCLOSED
 
-/area/storage/research
+/area/sierra/storage/research
 	name = "Research Storage"
 	icon_state = "toxstorage"
 	sound_env = SMALL_ENCLOSED
 
-// Supply
+	/////////
+	//CARGO//
+	/////////
 
-/area/quartermaster/deckofficer
+/area/sierra/quartermaster/deckofficer
 	name = "\improper Deck Officer"
 	icon_state = "quart"
 
-/area/quartermaster/expedition
+/area/sierra/quartermaster/expedition
 	name = "\improper Expedition Preparation"
 	icon_state = "mining"
 
-/area/quartermaster/expedition/eva
+/area/sierra/quartermaster/expedition/eva
 	name = "\improper Expedition EVA"
 	icon_state = "mining"
 
-/area/quartermaster/expedition/storage
+/area/sierra/quartermaster/expedition/storage
 	name = "\improper Expedition Storage"
 	icon_state = "mining"
 
-/area/quartermaster/exploration
+/area/sierra/quartermaster/exploration
 	name = "\improper Exploration Equipment"
 	icon_state = "exploration"
 
-/area/quartermaster/shuttlefuel
+/area/sierra/quartermaster/shuttlefuel
 	name = "\improper Shuttle Fuel Bay"
 	icon_state = "toxstorage"
 
-/area/quartermaster/quarantine
+/area/sierra/quartermaster/quarantine
 	name = "\improper Hangar Quarantine"
 	icon_state = "toxstorage"
 
-/area/quartermaster/hangar
+/area/sierra/quartermaster/hangar
 	name = "\improper Hangar Deck"
 	icon_state = "hangar"
 	sound_env = LARGE_ENCLOSED
 
-// Research
-/area/rnd/canister
+	////////////
+	//RESEARCH//
+	////////////
+
+/area/sierra/rnd/canister
 	name = "\improper Canister Storage"
 	icon_state = "toxstorage"
 
-/area/rnd/development
+/area/sierra/rnd/development
 	name = "\improper Fabricator Lab"
 	icon_state = "devlab"
 
-/area/rnd/entry
+/area/sierra/rnd/entry
 	name = "\improper Research and Development Access"
 	icon_state = "decontamination"
 
-/area/rnd/locker
+/area/sierra/rnd/locker
 	name = "\improper Research Locker Room"
 	icon_state = "locker"
 
-/area/rnd/xenobiology/entry
+/area/sierra/rnd/xenobiology/entry
 	name = "\improper Xenobiology Access"
 	icon_state = "xeno_lab"
 
-/area/rnd/checkpoint
+/area/sierra/rnd/checkpoint
 	name = "\improper Research Security Checkpoint"
 	icon_state = "checkpoint1"
 
-/area/rnd/blanks
+/area/sierra/rnd/blanks
 	name = "\improper Aux Custodial Supplies"
 	icon_state = "decontamination"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-// Crew areas
-/area/crew_quarters/bar
+	//////////////
+	//HABITATION//
+	//////////////
+
+/area/sierra/crew_quarters/bar
 	name = "\improper Bar"
 	icon_state = "bar"
 	sound_env = LARGE_SOFTFLOOR
 
-/area/crew_quarters/cryolocker
+/area/sierra/crew_quarters/cryolocker
 	name = "\improper Cryogenic Storage Wardrobe"
 	icon_state = "locker"
 
-/area/crew_quarters/head
+/area/sierra/crew_quarters/head
 	name = "\improper Head"
 	icon_state = "toilet"
 	sound_env = SMALL_ENCLOSED
 
-/area/crew_quarters/head/aux
+/area/sierra/crew_quarters/head/aux
 	name = "\improper Auxiliary Head"
 
-/area/crew_quarters/gym
+/area/sierra/crew_quarters/gym
 	name = "\improper Gym"
 	icon_state = "fitness"
 
-/area/crew_quarters/mess
+/area/sierra/crew_quarters/mess
 	name = "\improper Mess Hall"
 	icon_state = "cafeteria"
 
-/area/crew_quarters/galley
+/area/sierra/crew_quarters/galley
 	name = "\improper Galley"
 	icon_state = "kitchen"
 
-/area/crew_quarters/galleybackroom
+/area/sierra/crew_quarters/galleybackroom
 	name = "\improper Galley Cold Storage"
 	icon_state = "kitchen"
 
-/area/crew_quarters/lounge
+/area/sierra/crew_quarters/lounge
 	name = "\improper Lounge"
 	icon_state = "crew_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/crew_quarters/safe_room
+/area/sierra/crew_quarters/safe_room
 	name = "\improper Safe Room"
 	icon_state = "crew_quarters"
 	sound_env = SMALL_ENCLOSED
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/crew_quarters/sleep/bunk
+/area/sierra/crew_quarters/sleep/bunk
 	name = "\improper Bunk Room"
 	icon_state = "Sleep"
 	sound_env = SMALL_SOFTFLOOR
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/crew_quarters/sleep/cryo/aux
+/area/sierra/crew_quarters/sleep/cryo/aux
 	name = "\improper Auxiliary Cryogenic Storage"
 	icon_state = "Sleep"
 
-/area/crew_quarters/diplomat
+/area/sierra/crew_quarters/diplomat
 	name = "\improper Diplomatic Quarters"
 	icon_state = "Sleep"
 	sound_env = SMALL_SOFTFLOOR
 
-/area/holocontrol
+/area/sierra/holocontrol
 	name = "\improper Holodeck Control"
 	icon_state = "Holodeck"
 
-/area/hydroponics/storage
+/area/sierra/hydroponics/storage
 	name = "\improper Hydroponics Storage"
 
 // Tcomms
-/area/tcommsat/storage
+/area/sierra/tcommsat/storage
 	name = "\improper Telecoms Storage"
 	icon_state = "tcomsatstore"
 
-// Security
+	////////////
+	//SECURITY//
+	////////////
 
-/area/security/bo
+/area/sierra/security/bo
 	name = "\improper Security - Brig Officer"
 	icon_state = "Warden"
 
-/area/security/equipment
+/area/sierra/security/equipment
 	name = "\improper Security Equipment"
 	icon_state = "security"
 
-/area/security/evidence
+/area/sierra/security/evidence
 	name = "\improper Security Evidence Storage"
 	icon_state = "security"
 
-/area/security/processing
+/area/sierra/security/processing
 	name = "\improper Security Processing"
 	icon_state = "security"
 
-/area/security/wing
+/area/sierra/security/wing
 	name = "\improper Security Wing"
 	icon_state = "security"
 
-/area/security/bridgecheck
+/area/sierra/security/bridgecheck
 	name = "\improper Bridge Security Checkpoint"
 	icon_state = "checkpoint"
 
-/area/security/opscheck
+/area/sierra/security/opscheck
 	name = "\improper First Deck Security Office"
 	icon_state = "checkpoint"
 
 // AI
-/area/turret_protected/ai_foyer
+/area/sierra/turret_protected/ai_foyer
 	name = "\improper AI Chamber Foyer"
 	icon_state = "ai_foyer"
 	sound_env = SMALL_ENCLOSED
 
-/area/turret_protected/ai_outer_chamber
+/area/sierra/turret_protected/ai_outer_chamber
 	name = "\improper Outer AI Chamber"
 	icon_state = "ai_chamber"
 	sound_env = SMALL_ENCLOSED
 
 // Medbay
 
-/area/medical/equipstorage
+/area/sierra/medical/equipstorage
 	name = "\improper Equipment Storage"
 	icon_state = "medbay4"
 	ambience = list('sound/ambience/signal.ogg')
 
-/area/medical/infirmary
+/area/sierra/medical/infirmary
 	name = "\improper Infirmary Hallway"
 	icon_state = "medbay"
 
-/area/medical/infirmreception
+/area/sierra/medical/infirmreception
 	name = "\improper Infirmary Reception"
 	icon_state = "medbay2"
 	ambience = list('sound/ambience/signal.ogg')
 
-/area/medical/locker
+/area/sierra/medical/locker
 	name = "\improper Infirmary Locker Room"
 	icon_state = "locker"
 
-/area/medical/subacute
+/area/sierra/medical/subacute
 	name = "\improper Sub-Acute Ward"
 	icon_state = "patients"
 
-/area/medical/mentalhealth
+/area/sierra/medical/mentalhealth
 	name = "\improper Mental Health"
 	icon_state = "medbay3"
 	ambience = list('sound/ambience/signal.ogg')
 
 // Chapel
-/area/chapel/crematorium
+/area/sierra/chapel/crematorium
 	name = "\improper Crematorium"
 	icon_state = "chapel"
 	sound_env = SMALL_ENCLOSED
 
 // Shield Rooms
-/area/shield
+/area/sierra/shield
 	name = "\improper Shield Generator"
 	icon_state = "engineering"
 	sound_env = SMALL_ENCLOSED
 
-/area/shield/bridge
+/area/sierra/shield/bridge
 	name = "\improper Bridge Shield Generator"
 
-/area/shield/firstdeck
+/area/sierra/shield/firstdeck
 	name = "\improper First Deck Shield Generator"
 
-/area/shield/seconddeck
+/area/sierra/shield/seconddeck
 	name = "\improper Second Deck Shield Generator"
 
-/area/shield/thirddeck
+/area/sierra/shield/thirddeck
 	name = "\improper Third Deck Shield Generator"
 
-/area/shield/fourthdeck
+/area/sierra/shield/fourthdeck
 	name = "\improper Fourth Deck Shield Generator"
 /*
-/area/shield/fifthdeck
+/area/sierra/shield/fifthdeck
 	name = "\improper Fifth Deck Shield Generator"
 */
 // Misc
-/area/deity_spawn
+/area/sierra/deity_spawn
 	name = "\improper Deity Spawn"
 	icon_state = "yellow"
 	requires_power = 0
 	dynamic_lighting = 0
 
-/area/teleporter
+/area/sierra/teleporter
 	name = "\improper Teleporter"
 	icon_state = "teleporter"
 	sound_env = SMALL_ENCLOSED
 
-/area/maintenance/auxsolarbridge
+/area/sierra/maintenance/auxsolarbridge
 	name = "Solar Maintenance - Bridge"
 	icon_state = "SolarcontrolS"
 	sound_env = SMALL_ENCLOSED
 
-/area/solar/bridge
+/area/sierra/solar/bridge
 	name = "\improper Bridge Solar Array"
 	icon_state = "panelsS"
 
-/area/aux_eva
+/area/sierra/aux_eva
 	name = "\improper Command EVA Storage"
 	icon_state = "eva"
 
-/area/thruster
+/area/sierra/thruster
 	icon_state = "thruster"
 
-/area/thruster/d1port
+/area/sierra/thruster/d1port
 	name = "\improper First Deck Port Nacelle"
 
-/area/thruster/d1starboard
+/area/sierra/thruster/d1starboard
 	name = "\improper First Deck Starboard Nacelle"
 
-/area/thruster/d3port
+/area/sierra/thruster/d3port
 	name = "\improper Third Deck Port Nacelle"
 
-/area/thruster/d3starboard
+/area/sierra/thruster/d3starboard
 	name = "\improper Third Deck Starboard Nacelle"
 
-/area/engineering/fuelbay
+/area/sierra/engineering/fuelbay
 	name = "\improper Fuel Bay"
 	icon_state = "engineering"
 
 // Command
 
-/area/bridge
+/area/sierra/bridge
 	name = "\improper Bridge"
 	icon_state = "bridge"
 
-/area/bridge/meeting_room
+/area/sierra/bridge/meeting_room
 	name = "\improper Heads of Staff Meeting Room"
 	icon_state = "bridge"
 	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/bridge/disciplinary_board_room
+/area/sierra/bridge/disciplinary_board_room
 	name = "\improper Disciplinary Board Room"
 	sound_env = SMALL_ENCLOSED
 
-/area/crew_quarters/heads
+/area/sierra/crew_quarters/heads
 	icon_state = "head_quarters"
 
-/area/maintenance/substation
+/area/sierra/maintenance/substation
 	name = "Substation"
 	icon_state = "substation"
 	sound_env = SMALL_ENCLOSED
 
-/area/maintenance/exterior
+/area/sierra/maintenance/exterior
 	name = "\improper Exterior Reinforcements"
 	icon_state = "maint_security_starboard"
 	area_flags = AREA_FLAG_EXTERNAL
@@ -1042,260 +1056,260 @@
 
 // CentCom
 
-/area/centcom/control
+/area/sierra/centcom/control
 	name = "\improper Centcom Control"
 
-/area/centcom/creed
+/area/sierra/centcom/creed
 	name = "Creed's Office"
 
-/area/centcom/evac
+/area/sierra/centcom/evac
 	name = "\improper Centcom Emergency Shuttle"
 
-/area/centcom/ferry
+/area/sierra/centcom/ferry
 	name = "\improper Centcom Transport Shuttle"
 
-/area/centcom/living
+/area/sierra/centcom/living
 	name = "\improper Centcom Living Quarters"
 
-/area/centcom/suppy
+/area/sierra/centcom/suppy
 	name = "\improper Centcom Supply Shuttle"
 
-/area/centcom/test
+/area/sierra/centcom/test
 	name = "\improper Centcom Testing Facility"
 
 // Solars
-/area/maintenance/auxsolarport
+/area/sierra/maintenance/auxsolarport
 	name = "Solar Maintenance - Port"
 	icon_state = "SolarcontrolP"
 	sound_env = SMALL_ENCLOSED
 
-/area/maintenance/auxsolarstarboard
+/area/sierra/maintenance/auxsolarstarboard
 	name = "Solar Maintenance - Starboard"
 	icon_state = "SolarcontrolS"
 	sound_env = SMALL_ENCLOSED
 
-/area/solar
+/area/sierra/solar
 	area_flags = AREA_FLAG_EXTERNAL
 	requires_power = 1
 	always_unpowered = 1
 	has_gravity = FALSE
 	base_turf = /turf/space
 
-/area/solar/auxstarboard
+/area/sierra/solar/auxstarboard
 	name = "\improper Fore Starboard Solar Array"
 	icon_state = "panelsA"
 
-/area/solar/port
+/area/sierra/solar/port
 	name = "\improper Port Auxiliary Solar Array"
 	icon_state = "panelsP"
 
 // Maintenance
 
-/area/maintenance/disposal
+/area/sierra/maintenance/disposal
 	name = "Waste Disposal"
 	icon_state = "disposal"
 
-/area/maintenance/incinerator
+/area/sierra/maintenance/incinerator
 	name = "\improper Incinerator"
 	icon_state = "disposal"
 
 // Storage
 
-/area/storage/primary
+/area/sierra/storage/primary
 	name = "Primary Tool Storage"
 	icon_state = "primarystorage"
 
-/area/storage/tech
+/area/sierra/storage/tech
 	name = "Technical Storage"
 	icon_state = "storage"
 
-/area/storage/tools
+/area/sierra/storage/tools
 	name = "Auxiliary Tool Storage"
 	icon_state = "auxstorage"
 
 // Holodecks
 
-/area/holodeck
+/area/sierra/holodeck
 	name = "\improper Holodeck"
 	icon_state = "Holodeck"
 	dynamic_lighting = 0
 	sound_env = LARGE_ENCLOSED
 
-/area/holodeck/alphadeck
+/area/sierra/holodeck/alphadeck
 	name = "\improper Holodeck Alpha"
 
-/area/holodeck/source_plating
+/area/sierra/holodeck/source_plating
 	name = "\improper Holodeck - Off"
 
-/area/holodeck/source_emptycourt
+/area/sierra/holodeck/source_emptycourt
 	name = "\improper Holodeck - Empty Court"
 	sound_env = ARENA
 
-/area/holodeck/source_boxingcourt
+/area/sierra/holodeck/source_boxingcourt
 	name = "\improper Holodeck - Boxing Court"
 	sound_env = ARENA
 
-/area/holodeck/source_basketball
+/area/sierra/holodeck/source_basketball
 	name = "\improper Holodeck - Basketball Court"
 	sound_env = ARENA
 
-/area/holodeck/source_thunderdomecourt
+/area/sierra/holodeck/source_thunderdomecourt
 	name = "\improper Holodeck - Thunderdome Court"
 	sound_env = ARENA
 
-/area/holodeck/source_courtroom
+/area/sierra/holodeck/source_courtroom
 	name = "\improper Holodeck - Courtroom"
 	sound_env = AUDITORIUM
 
-/area/holodeck/source_beach
+/area/sierra/holodeck/source_beach
 	name = "\improper Holodeck - Beach"
 	sound_env = PLAIN
 
-/area/holodeck/source_wildlife
+/area/sierra/holodeck/source_wildlife
 	name = "\improper Holodeck - Wildlife Simulation"
 
-/area/holodeck/source_military
+/area/sierra/holodeck/source_military
 	name = "\improper Holodeck - Military Parade Ground"
 	sound_env = AUDITORIUM
 
-/area/holodeck/source_meetinghall
+/area/sierra/holodeck/source_meetinghall
 	name = "\improper Holodeck - Meeting Hall"
 	sound_env = AUDITORIUM
 
-/area/holodeck/source_theatre
+/area/sierra/holodeck/source_theatre
 	name = "\improper Holodeck - Theatre"
 	sound_env = CONCERT_HALL
 
-/area/holodeck/source_picnicarea
+/area/sierra/holodeck/source_picnicarea
 	name = "\improper Holodeck - Picnic Area"
 	sound_env = PLAIN
 
-/area/holodeck/source_snowfield
+/area/sierra/holodeck/source_snowfield
 	name = "\improper Holodeck - Snow Field"
 	sound_env = FOREST
 
-/area/holodeck/source_desert
+/area/sierra/holodeck/source_desert
 	name = "\improper Holodeck - Desert"
 	sound_env = PLAIN
 
-/area/holodeck/source_space
+/area/sierra/holodeck/source_space
 	name = "\improper Holodeck - Space"
 	has_gravity = 0
 	sound_env = SPACE
 
 // Engineering
 
-/area/engineering/atmos/storage
+/area/sierra/engineering/atmos/storage
 	name = "\improper Atmospherics Storage"
 	icon_state = "atmos_storage"
 	sound_env = SMALL_ENCLOSED
 
-/area/engineering/engine_room
+/area/sierra/engineering/engine_room
 	name = "\improper Engine Room"
 	icon_state = "engine"
 	sound_env = LARGE_ENCLOSED
 
-/area/engineering/drone_fabrication
+/area/sierra/engineering/drone_fabrication
 	name = "\improper Engineering Drone Fabrication"
 	icon_state = "drone_fab"
 	sound_env = SMALL_ENCLOSED
 
-/area/engineering/engine_eva
+/area/sierra/engineering/engine_eva
 	name = "\improper Engine EVA"
 	icon_state = "engine_eva"
 
-/area/engineering/engine_monitoring
+/area/sierra/engineering/engine_monitoring
 	name = "\improper Engine Monitoring Room"
 	icon_state = "engine_monitoring"
 
-/area/engineering/engine_smes
+/area/sierra/engineering/engine_smes
 	name = "\improper Engineering SMES"
 	icon_state = "engine_smes"
 	sound_env = SMALL_ENCLOSED
 
-/area/engineering/engineering_monitoring
+/area/sierra/engineering/engineering_monitoring
 	name = "\improper Engineering Monitoring Room"
 	icon_state = "engine_monitoring"
 
-/area/engineering/foyer
+/area/sierra/engineering/foyer
 	name = "\improper Engineering Foyer"
 	icon_state = "engineering_foyer"
 
-/area/engineering/locker_room
+/area/sierra/engineering/locker_room
 	name = "\improper Engineering Locker Room"
 	icon_state = "engineering_locker"
 
-/area/engineering/storage
+/area/sierra/engineering/storage
 	name = "\improper Engineering Storage"
 	icon_state = "engineering_storage"
 
-/area/engineering/atmos
+/area/sierra/engineering/atmos
  	name = "\improper Atmospherics"
  	icon_state = "atmos"
  	sound_env = LARGE_ENCLOSED
 
 // Medical
-/area/medical/chemistry
+/area/sierra/medical/chemistry
 	name = "\improper Chemistry"
 	icon_state = "chem"
 
-/area/medical/exam_room
+/area/sierra/medical/exam_room
 	name = "\improper Exam Room"
 	icon_state = "exam_room"
 
-/area/medical/morgue
+/area/sierra/medical/morgue
 	name = "\improper Morgue"
 	icon_state = "morgue"
 	ambience = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg','sound/music/main.ogg')
 
-/area/medical/sleeper
+/area/sierra/medical/sleeper
 	name = "\improper Emergency Treatment Centre"
 	icon_state = "exam_room"
 
-/area/medical/surgery
+/area/sierra/medical/surgery
 	name = "\improper Operating Theatre"
 	icon_state = "surgery"
 
 // Research
-/area/assembly/chargebay
+/area/sierra/assembly/chargebay
 	name = "\improper Mech Bay"
 	icon_state = "mechbay"
 
-/area/assembly/robotics
+/area/sierra/assembly/robotics
 	name = "\improper Robotics Lab"
 	icon_state = "robotics"
 
-/area/assembly/robotics_surgery
+/area/sierra/assembly/robotics_surgery
 	name = "\improper Robotics Operating Theatre"
 	icon_state = "robotics"
 
-/area/rnd/misc_lab
+/area/sierra/rnd/misc_lab
 	name = "\improper Miscellaneous Research"
 	icon_state = "misclab"
 
-/area/rnd/research
+/area/sierra/rnd/research
 	name = "\improper Research and Development"
 	icon_state = "research"
 
-/area/rnd/breakroom
+/area/sierra/rnd/breakroom
 	name = "\improper Research Break Room"
 	icon_state = "researchbreak"
 
-/area/rnd/pilot
+/area/sierra/rnd/pilot
 	name = "\improper NanoTrasen Pilot Office"
 	icon_state = "researchbreak"
 
-/area/alien
+/area/sierra/alien
 	name = "\improper Alien base"
 	icon_state = "yellow"
 	requires_power = 0
 
-/area/shuttle/alien/base
+/area/sierra/shuttle/alien/base
 	icon_state = "shuttle"
 	name = "\improper Alien Shuttle Base"
 	requires_power = 1
 
-/area/admin_prison
+/area/sierra/admin_prison
 	name = "\improper Admin Prison"
 	dynamic_lighting = 0
 	requires_power = 0
@@ -1306,112 +1320,112 @@
 	name = "\improper Administration Shuttle"
 	icon_state = "shuttlered"
 /*
-/area/shuttle/escape_pod1/centcom
+/area/sierra/shuttle/escape_pod1/centcom
 	icon_state = "shuttle"
 
-/area/shuttle/escape_pod2/centcom
+/area/sierra/shuttle/escape_pod2/centcom
 	icon_state = "shuttle"
 
-/area/shuttle/escape_pod3/centcom
+/area/sierra/shuttle/escape_pod3/centcom
 	icon_state = "shuttle"
 
-/area/shuttle/escape_pod5/centcom
+/area/sierra/shuttle/escape_pod5/centcom
 	icon_state = "shuttle"
 */
 
-/area/supply/dock
+/area/sierra/supply/dock
 	name = "Supply Shuttle"
 	icon_state = "shuttle3"
 	requires_power = 0
 
 // Security
 
-/area/prison/solitary
+/area/sierra/prison/solitary
 	name = "Solitary Confinement"
 	icon_state = "brig"
 
-/area/security/armoury
+/area/sierra/security/armoury
 	name = "\improper Security - Armory"
 	icon_state = "Warden"
 
-/area/security/checkpoint2
+/area/sierra/security/checkpoint2
 	name = "\improper Security - Checkpoint"
 	icon_state = "checkpoint1"
 
-/area/security/detectives_office
+/area/sierra/security/detectives_office
 	name = "\improper Security - Forensic Office"
 	icon_state = "detective"
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/security/nuke_storage
+/area/sierra/security/nuke_storage
 	name = "\improper Vault"
 	icon_state = "nuke_storage"
 
-/area/security/range
+/area/sierra/security/range
 	name = "\improper Security - Firing Range"
 	icon_state = "firingrange"
 
 // Cargo
-/area/quartermaster/office
+/area/sierra/quartermaster/office
 	name = "\improper Supply Office"
 	icon_state = "quartoffice"
 
-/area/quartermaster/storage
+/area/sierra/quartermaster/storage
 	name = "\improper Warehouse"
 	icon_state = "quartstorage"
 	sound_env = LARGE_ENCLOSED
 
 // Crew
 
-/area/crew_quarters/sleep/cryo
+/area/sierra/crew_quarters/sleep/cryo
 	name = "\improper Cryogenic Storage"
 	icon_state = "Sleep"
 
-/area/hydroponics
+/area/sierra/hydroponics
 	name = "\improper Hydroponics"
 	icon_state = "hydro"
 
-/area/janitor
+/area/sierra/janitor
 	name = "\improper Custodial Closet"
 	icon_state = "janitor"
 
 // Tcomm
-/area/tcommsat/
+/area/sierra/tcommsat/
 	ambience = list('sound/ambience/ambisin2.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/ambigen10.ogg')
 
-/area/tcommsat/chamber
+/area/sierra/tcommsat/chamber
 	name = "\improper Telecoms Central Compartment"
 	icon_state = "tcomsatcham"
 
-/area/tcommsat/computer
+/area/sierra/tcommsat/computer
 	name = "\improper Telecoms Control Room"
 	icon_state = "tcomsatcomp"
 
 // AI
 
-/area/ai_monitored
+/area/sierra/ai_monitored
 	name = "AI Monitored Area"
 
-/area/ai_monitored/storage/eva
+/area/sierra/ai_monitored/storage/eva
 	name = "\improper EVA Storage"
 	icon_state = "eva"
 
-/area/turret_protected/ai
+/area/sierra/turret_protected/ai
 	name = "\improper AI Chamber"
 	icon_state = "ai_chamber"
 	ambience = list('sound/ambience/ambimalf.ogg')
 
-/area/turret_protected/ai_cyborg_station
+/area/sierra/turret_protected/ai_cyborg_station
 	name = "\improper Cyborg Station"
 	icon_state = "ai_cyborg"
 	sound_env = SMALL_ENCLOSED
 
-/area/turret_protected/ai_upload
+/area/sierra/turret_protected/ai_upload
 	name = "\improper AI Upload Chamber"
 	icon_state = "ai_upload"
 	ambience = list('sound/ambience/ambimalf.ogg')
 
-/area/turret_protected/ai_upload_foyer
+/area/sierra/turret_protected/ai_upload_foyer
 	name = "\improper  AI Upload Access"
 	icon_state = "ai_foyer"
 	ambience = list('sound/ambience/ambimalf.ogg')
@@ -1419,7 +1433,7 @@
 
 // Chapel
 
-/area/chapel/main
+/area/sierra/chapel/main
 	name = "\improper Chapel"
 	icon_state = "chapel"
 	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg','sound/music/traitor.ogg')
@@ -1427,65 +1441,65 @@
 
 // Merchant
 
-/area/merchant_station
+/area/roles/merchant_station
 	name = "\improper Merchant Station"
 	icon_state = "LP"
 
 // Syndicate
 
-/area/syndicate_mothership/raider_base
+/area/roles/syndicate_mothership/raider_base
 	name = "\improper Raider Base"
 
 // ACTORS GUILD
-/area/acting
+/area/centcom/acting
 	name = "\improper Centcom Acting Guild"
 	icon_state = "red"
 	dynamic_lighting = 0
 	requires_power = 0
 
-/area/acting/backstage
+/area/centcom/acting/backstage
 	name = "\improper Backstage"
 
-/area/acting/stage
+/area/centcom/acting/stage
 	name = "\improper Stage"
 	dynamic_lighting = 1
 	icon_state = "yellow"
 
 // Thunderdome
 
-/area/tdome
+/area/centcome/tdome
 	name = "\improper Thunderdome"
 	icon_state = "thunder"
 	requires_power = 0
 	dynamic_lighting = 0
 	sound_env = ARENA
 
-/area/tdome/tdome1
+/area/centcom/tdome/tdome1
 	name = "\improper Thunderdome (Team 1)"
 	icon_state = "green"
 
-/area/tdome/tdome2
+/area/centcom/tdome/tdome2
 	name = "\improper Thunderdome (Team 2)"
 	icon_state = "yellow"
 
-/area/tdome/tdomeadmin
+/area/centcom/tdome/tdomeadmin
 	name = "\improper Thunderdome (Admin.)"
 	icon_state = "purple"
 
-/area/tdome/testing
+/area/centcom/tdome/testing
 	name = "\improper Thunderdome (TESTING AREA)"
 	icon_state = "purple"
 
-/area/tdome/testing/engineering
+/area/centcom/tdome/testing/engineering
 	name = "\improper Thunderdome"
 	requires_power = 0
 	dynamic_lighting = 1
 
-/area/tdome/testing/engineering/unpowered
+/area/centcom/tdome/testing/engineering/unpowered
 	name = "\improper Thunderdome"
 	requires_power = 1
 
-/area/tdome/tdomeobserve
+/area/centcom/tdome/tdomeobserve
 	name = "\improper Thunderdome (Observer.)"
 	icon_state = "purple"
 

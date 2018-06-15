@@ -52,9 +52,9 @@
 	minor_announcement = new(new_sound = sound('sound/AI/torch/commandreport.ogg', volume = 45))
 
 /datum/map/torch/map_info(victim)
-	to_chat(victim, "<h2>Current map information</h2>")
-	to_chat(victim, "You're aboard the <b>[station_name]</b>, an Expeditionary Corps vessel. Its primary mission is looking for undiscovered sapient alien species, and general exploration along the way.")
-	to_chat(victim, "The vessel is staffed with a mix of SCG government personnel, hired contractors and NanoTrasen employees.")
+	to_chat(victim, "<h2>Информация о карте</h2>")
+	to_chat(victim, "Вы находитесь на борту<b>[station_name]</b>, корабле Экспедиционного Корпуса, что принадлежит Правительству Солнечной Системы. Основная цель вашей экспедиции - поиск новых форм жизни и исследование объектов по пути.")
+	to_chat(victim, "Персонал корабля состоит из работников ПСС, наемных контрактников и сотрудников НаноТрейзен.")
 	to_chat(victim, "This area of space is uncharted, away from SCG territory. You might encounter remote outposts or drifting hulks, but no recognized government holds claim on this sector.")
 
 /datum/map/torch/send_welcome()

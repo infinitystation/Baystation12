@@ -15983,7 +15983,6 @@
 /area/shuttle/escape_pod9/station)
 "Dt" = (
 /obj/effect/floor_decal/industrial/warning,
-/obj/structure/table/mag,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/escape_pod9/station)
 "Du" = (
@@ -20081,10 +20080,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/deckofficer)
-"RM" = (
-/obj/structure/table/mag,
-/turf/simulated/floor/tiled,
-/area/shuttle/escape_pod9/station)
 "RO" = (
 /obj/machinery/power/apc{
 	dir = 2;
@@ -38062,9 +38057,9 @@ AZ
 BN
 CE
 Dt
-RM
-RM
-RM
+Ee
+Ee
+Ee
 Ee
 Ee
 GO

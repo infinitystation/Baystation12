@@ -4205,9 +4205,6 @@
 "je" = (
 /turf/simulated/wall,
 /area/engineering/storage)
-"jf" = (
-/turf/simulated/wall/r_wall,
-/area/engineering/storage)
 "jg" = (
 /turf/simulated/wall/r_wall,
 /area/engineering/hardstorage)
@@ -4528,14 +4525,17 @@
 /turf/simulated/floor/plating,
 /area/engineering/storage)
 "jN" = (
-/obj/machinery/portable_atmospherics/powered/pump/filled,
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/plating,
 /area/engineering/storage)
 "jO" = (
-/obj/machinery/portable_atmospherics/powered/scrubber,
+/obj/structure/table/rack{
+	dir = 8
+	},
+/obj/item/stack/material/plastic/fifty,
 /turf/simulated/floor/plating,
 /area/engineering/storage)
 "jP" = (
@@ -4964,7 +4964,6 @@
 	pixel_x = 6;
 	pixel_y = 27
 	},
-/obj/item/weapon/paper/reacengi,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/engineering/engineering_monitoring)
@@ -5354,14 +5353,14 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engineering_monitoring)
 "lk" = (
-/obj/machinery/computer/atmos_alert{
-	dir = 8
-	},
 /obj/machinery/newscaster{
 	pixel_x = 28;
 	pixel_y = 0
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/item/modular_computer/console/preset/engineering{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/engineering_monitoring)
 "ll" = (
@@ -6447,11 +6446,11 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engineering_monitoring)
 "ne" = (
-/obj/item/modular_computer/console/preset/engineering{
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/computer/atmos_alert{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/engineering_monitoring)
 "nf" = (
@@ -6468,10 +6467,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/item/modular_computer/console/preset/engineering{
 	dir = 8
 	},
-/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/engineering/engineering_monitoring)
 "nh" = (
@@ -7036,9 +7035,6 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled,
-/area/engineering/locker_room)
-"oh" = (
-/turf/simulated/wall/r_wall,
 /area/engineering/locker_room)
 "oi" = (
 /obj/machinery/door/airlock/engineering{
@@ -16579,15 +16575,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
-"He" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+"Hd" = (
+/obj/structure/table/rack{
+	dir = 8
 	},
-/obj/effect/floor_decal/industrial/warning/corner,
+/obj/item/stack/material/wood/fifty,
 /turf/simulated/floor/plating,
-/area/maintenance/seconddeck/foreport)
+/area/engineering/storage)
 "HQ" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -16633,6 +16627,15 @@
 	icon_state = "railing0";
 	dir = 8
 	},
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/foreport)
+"Iq" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "IB" = (
@@ -30824,7 +30827,7 @@ rD
 rD
 wo
 tG
-He
+Iq
 yJ
 zH
 AA
@@ -38081,7 +38084,7 @@ gH
 cc
 cc
 je
-jO
+Hd
 kz
 lm
 mg
@@ -38686,13 +38689,13 @@ fW
 gJ
 hx
 gJ
-jf
-jf
-jf
-jf
-jf
-jf
-oh
+jg
+jg
+jg
+jg
+jg
+jg
+jg
 pl
 qI
 rW
