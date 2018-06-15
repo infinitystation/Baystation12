@@ -4525,14 +4525,17 @@
 /turf/simulated/floor/plating,
 /area/engineering/storage)
 "jN" = (
-/obj/machinery/portable_atmospherics/powered/pump/filled,
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/plating,
 /area/engineering/storage)
 "jO" = (
-/obj/machinery/portable_atmospherics/powered/scrubber,
+/obj/structure/table/rack{
+	dir = 8
+	},
+/obj/item/stack/material/plastic/fifty,
 /turf/simulated/floor/plating,
 /area/engineering/storage)
 "jP" = (
@@ -16572,6 +16575,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
+"Hd" = (
+/obj/structure/table/rack{
+	dir = 8
+	},
+/obj/item/stack/material/wood/fifty,
+/turf/simulated/floor/plating,
+/area/engineering/storage)
 "HQ" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -38074,7 +38084,7 @@ gH
 cc
 cc
 je
-jO
+Hd
 kz
 lm
 mg
