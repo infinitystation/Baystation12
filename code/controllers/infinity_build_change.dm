@@ -90,10 +90,6 @@ var/datum/server_build/currentbuild
 	if(!holder)
 		return
 
-	if(ticker.update_waiting)
-		to_chat(usr, "Вы не можете сменить текущий билд так как активированна команда обновлени&#255; сервера.")
-		return
-
 	var/list/buildchoices = list()
 	for(var/build in config.buildlist)
 		var/datum/server_build/B = config.buildlist[build]
@@ -122,8 +118,6 @@ var/datum/server_build/currentbuild
 	if(!istype(B))
 		return
 	if(!B)
-		return
-	if(ticker.update_waiting)
 		return
 
 	to_chat(world, "<span class='adminooc'><FONT size=5>ВНИМАНИЕ! БИЛД МЕНЯЕТСЯ НА [B.friendlyname]! СЕРВЕР НЕ БУДЕТ РАБОТАТЬ НЕСКОЛЬКО МИНУТ!</FONT><br>Смена билда в конце раунда инициировано администратором [ticker.buildchanger_ckey]</span>.")
