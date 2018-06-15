@@ -13886,12 +13886,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
-"vV" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Dormitory Maintenance"
-	},
-/turf/simulated/wall/r_wall,
-/area/crew_quarters/sleep/bunk)
 "vW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -19798,12 +19792,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/sleep/bunk)
 "FX" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -19818,6 +19806,13 @@
 	tag = "icon-steel_decals4 (NORTHEAST)";
 	icon_state = "steel_decals4";
 	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	icon_state = "map-scrubbers";
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/sleep/bunk)
@@ -19844,6 +19839,11 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "Ga" = (
@@ -40277,7 +40277,7 @@ Wh
 Et
 ZG
 IS
-vV
+wN
 wN
 wN
 wN
