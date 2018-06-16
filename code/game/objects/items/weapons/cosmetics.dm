@@ -97,14 +97,17 @@
 		var/mob/living/carbon/human/H = A
 		var/cover = "hair"
 		switch(H.species.name)
-			if(SPECIES_VOX,SPECIES_RESOMI) cover = "feathers"
-			if(SPECIES_TAJARA)             cover = "fur"
-			if(SPECIES_UNATHI)             cover = "scale"
-			if(SPECIES_SKRELL)             cover = "skin"
-			if(SPECIES_IPC)                cover = "body"
-			if(SPECIES_DIONA)              cover = "foliage"
-		if(do_after(user, 10, H))
+			if(SPECIES_VOX)          cover = "quills"
+			if(SPECIES_RESOMI)       cover = "feathers"
+			if(SPECIES_TAJARA)       cover = "fur"
+			if(SPECIES_UNATHI)       cover = "scale"
+			if(SPECIES_SKRELL)       cover = "skin"
+			if(SPECIES_IPC)          cover = "body"
+			if(SPECIES_DIONA)        cover = "foliage"
+		if(do_after(user, 10, H) && user.a_intent != I_HURT)
 			user.visible_message("<span class='notice'>The [user] brushes [H]'s [cover] with \the [src].</span>")
+		if(do_after(user, 10, H) && user.a_intent == I_HURT && cover != "skin" && cover != "body")
+			user.visible_message("<span class='warning'>The [user] brushes [H]'s <b>against</b> [cover] with \the [src]!</span>")
 	brushing = FALSE
 
 /obj/item/weapon/haircomb/brush
