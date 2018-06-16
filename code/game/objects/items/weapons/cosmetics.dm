@@ -104,14 +104,15 @@
 			if(SPECIES_SKRELL)       cover = "skin"
 			if(SPECIES_IPC)          cover = "body"
 			if(SPECIES_DIONA)        cover = "foliage"
-		if(do_after(user, 10, H) && user.a_intent != I_HURT)
-			user.visible_message("<span class='notice'>The [user] brushes [H]'s [cover] with \the [src].</span>")
-			brushing = FALSE
-			return
-		if(do_after(user, 10, H) && user.a_intent == I_HURT && cover != "skin" && cover != "body")
-			user.visible_message("<span class='warning'>The [user] brushes [H]'s <b>against</b> [cover] with \the [src]!</span>")
-			brushing = FALSE
-			return
+
+		if(user.a_intent != I_HURT)
+			if(do_after(user, 10, H))
+				user.visible_message("<span class='notice'>The [user] brushes [H]'s [cover] with \the [src].</span>")
+
+		if(user.a_intent == I_HURT && cover != "skin" && cover != "body")
+			if(do_after(user, 10, H))
+				user.visible_message("<span class='warning'>The [user] brushes [H]'s <b>against</b> [cover] with \the [src]!</span>")
+
 	brushing = FALSE
 
 /obj/item/weapon/haircomb/brush
