@@ -96,7 +96,7 @@
 	if(ishuman(A))
 		var/mob/living/carbon/human/H = A
 		var/cover = "hair"
-		switch(H.species.name)
+		switch(H.get_species())
 			if(SPECIES_VOX)          cover = "quills"
 			if(SPECIES_RESOMI)       cover = "feathers"
 			if(SPECIES_TAJARA)       cover = "fur"
@@ -105,13 +105,11 @@
 			if(SPECIES_IPC)          cover = "body"
 			if(SPECIES_DIONA)        cover = "foliage"
 
-		if(user.a_intent != I_HURT)
-			if(do_after(user, 10, H))
-				user.visible_message("<span class='notice'>The [user] brushes [H]'s [cover] with \the [src].</span>")
-
-		if(user.a_intent == I_HURT && cover != "skin" && cover != "body")
-			if(do_after(user, 10, H))
+		if(do_after(user, 10, H))
+			if(user.a_intent == I_HURT && cover != "skin" && cover != "body")
 				user.visible_message("<span class='warning'>The [user] brushes [H]'s <b>against</b> [cover] with \the [src]!</span>")
+			else
+				user.visible_message("<span class='notice'>The [user] brushes [H]'s [cover] with \the [src].</span>")
 
 	brushing = FALSE
 
