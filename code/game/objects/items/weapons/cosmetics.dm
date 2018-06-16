@@ -89,6 +89,24 @@
 	if(!user.incapacitated())
 		user.visible_message("<span class='notice'>\The [user] uses \the [src] to comb their hair with incredible style and sophistication. What a [user.gender == FEMALE ? "lady" : "guy"].</span>")
 
+/obj/item/weapon/haircomb/brush/attack(atom/A, mob/user as mob)
+	if(brushing)
+		return
+	brushing = TRUE
+	if(ishuman(A))
+		var/mob/living/carbon/human/H = A
+		var/cover = "hair"
+		switch(H.species.name)
+			if(SPECIES_VOX,SPECIES_RESOMI) cover = "feathers"
+			if(SPECIES_TAJARA)             cover = "fur"
+			if(SPECIES_UNATHI)             cover = "scale"
+			if(SPECIES_SKRELL)             cover = "skin"
+			if(SPECIES_IPC)                cover = "body"
+			if(SPECIES_DIONA)              cover = "foliage"
+		if(do_after(user, 10, H))
+			user.visible_message("<span class='notice'>The [user] brushes [H]'s [cover] with \the [src].</span>")
+	brushing = FALSE
+
 /obj/item/weapon/haircomb/brush
 	name = "hairbrush"
 	desc = "A surprisingly decent hairbrush with a false wood handle and semi-soft bristles."
@@ -96,6 +114,7 @@
 	slot_flags = null
 	icon_state = "brush"
 	item_state = "brush"
+	var/brushing = FALSE
 
 /obj/item/weapon/haircomb/brush/attack_self(mob/living/carbon/human/user)
 	if(!user.incapacitated())
