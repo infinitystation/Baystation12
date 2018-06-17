@@ -16,6 +16,7 @@ mrnicolas - machine
 skonoplich - machine
 redknighthero - machine
 kotovsyndrome - machine
+taushai - machine
 inubashirimomiji - skrell
 twinindifferent - skrell
 wheatley2013 - skrell
@@ -88,3 +89,4 @@ logfol - tajaran
 denmag - tajaran
 solark - tajaran
 arhod - tajaran
+corporateoverlord - tajaran

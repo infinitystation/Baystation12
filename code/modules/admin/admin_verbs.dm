@@ -177,7 +177,6 @@ var/list/admin_verbs_server = list(
 	/client/proc/nanomapgen_DumpImage,
 	/client/proc/adminchangebuild,
 	/client/proc/update_server,
-	/client/proc/update_server_round_end,
 	/client/proc/cmd_toggle_admin_help,
 	/client/proc/observe_delay
 	)

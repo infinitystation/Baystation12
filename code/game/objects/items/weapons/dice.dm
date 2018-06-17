@@ -44,7 +44,7 @@
 	name = "d100"
 	desc = "A dice with ten sides. This one is for the tens digit."
 	icon_state = "d10010"
-	sides = 10
+	sides = 100
 
 /obj/item/weapon/dice/proc/roll_die()
 	var/result = rand(1, sides)
@@ -63,7 +63,10 @@
 	var/list/roll_result = roll_die()
 	var/result = roll_result[1]
 	var/comment = roll_result[2]
-	icon_state = "[name][result]"
+	if(sides != 100)
+		icon_state = "[name][result]"
+	else
+		icon_state = "[name][round(result, 10)]"
 	user.visible_message("<span class='notice'>[user] has thrown [src]. It lands on [result]. [comment]</span>", \
 						 "<span class='notice'>You throw [src]. It lands on a [result]. [comment]</span>", \
 						 "<span class='notice'>You hear [src] landing on a [result]. [comment]</span>")
@@ -73,5 +76,8 @@
 	var/list/roll_result = roll_die()
 	var/result = roll_result[1]
 	var/comment = roll_result[2]
-	icon_state = "[name][result]"
+	if(sides != 100)
+		icon_state = "[name][result]"
+	else
+		icon_state = "[name][round(result, 10)]"
 	src.visible_message("<span class='notice'>\The [src] lands on [result]. [comment]</span>")

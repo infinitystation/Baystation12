@@ -359,14 +359,14 @@ var/global/datum/controller/gameticker/ticker
 
 				else
 					feedback_set_details("end_proper","proper completion")
-					if(!delay_end && !update_waiting)
+					if(!delay_end)
 						to_world("<span class='notice'><b>Restarting in [restart_timeout/10] seconds</b></span>")
 
 				if(blackbox)
 					blackbox.save_all_data_to_sql()
 
-				if(update_waiting)
-					force_update_server()
+//				if(update_waiting)
+//					force_update_server()
 
 				if(buildchangechecked)
 					forcechangebuild(nextbuild)
