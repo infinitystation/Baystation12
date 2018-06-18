@@ -193,7 +193,6 @@ obj/item/weapon/gun/energy/retro
 		slot_r_hand_str = 'icons/mob/infinity/misc.dmi',
 		slot_l_hand_str = 'icons/mob/infinity/misctwo.dmi',
 		)
-	icon_rounder = 25
 	self_recharge = 1
 	charge_cost = 40
 	one_hand_penalty = 4

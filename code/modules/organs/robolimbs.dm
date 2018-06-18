@@ -95,7 +95,6 @@ var/datum/robolimb/basic_robolimb
 	company = "Xion"
 	desc = "This limb has a minimalist black and red casing."
 	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_main.dmi'
-	unavailable_at_fab = 1
 
 /datum/robolimb/xion/special
 	company = "Xion Special"
@@ -141,6 +140,11 @@ var/datum/robolimb/basic_robolimb
 	burn_mod = 1.5
 	speed_mod = -0.16
 
+/datum/robolimb/economy
+	company = "Ward-Takahashi Econ."
+	desc = "A simple robotic limb with retro design. Seems rather stiff."
+	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_economy.dmi'
+
 /datum/robolimb/wardtakahashi/alt
 	company = "Ward-Takahashi Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_alt.dmi'
@@ -163,6 +167,14 @@ var/datum/robolimb/basic_robolimb
 	use_eye_icon = "eyes_industry"
 	restricted_to = list()
 
+/datum/robolimb/mantis
+	company = "Morpheus Mantis"
+	desc = "This limb has a casing of sleek black metal and repulsive insectile design."
+	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_mantis.dmi'
+	unavailable_at_fab = 1
+	use_eye_icon = "blank_eyes"
+
+
 /datum/robolimb/morpheus/monitor
 	company = "Morpheus Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_monitor.dmi'
@@ -184,7 +196,6 @@ var/datum/robolimb/basic_robolimb
 	company = "Grayson"
 	desc = "This limb has a sturdy and heavy build to it."
 	icon = 'icons/mob/human_races/cyberlimbs/grayson/grayson_main.dmi'
-	unavailable_at_fab = 1
 
 /datum/robolimb/grayson/alt
 	company = "Grayson Alt."

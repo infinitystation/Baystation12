@@ -211,7 +211,6 @@
 /obj/structure/bed/chair/wood/wings
 	base_icon = "wooden_chair_wings"
 	icon_state = "wooden_chair_wings_preview"
-
 //INFINITY
 /obj/structure/bed/chair/comfy/shuttle
 	name = "shuttle chair"
@@ -224,8 +223,3 @@
 	icon_state = "rschair_preview"
 	base_icon = "rschair"
 	material_alteration = MATERIAL_ALTERATION_NONE
-
-/obj/structure/bed/chair/bogani
-	desc = "A strange chair, not from around here."
-	base_icon = "bogchair"
-	icon_state = "bogchair_preview"
