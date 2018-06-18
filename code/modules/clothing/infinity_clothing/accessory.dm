@@ -161,3 +161,12 @@
 		user << "<span class='notice'>You set the [name]'s tag to '[str]'.</span>"
 		name = initial(name) + " ([str])"
 		desc = initial(desc) + " The tag says \"[str]\"."
+
+
+//Resomi scarf
+/obj/item/clothing/accessory/scarf/resomi
+	name = "small mantle"
+	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "small_mantle"
+	species_restricted = list(SPECIES_RESOMI)

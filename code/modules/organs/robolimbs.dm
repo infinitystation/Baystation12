@@ -16,7 +16,7 @@ var/datum/robolimb/basic_robolimb
 	var/icon = 'icons/mob/human_races/robotic.dmi'       // Icon base to draw from.
 	var/unavailable_at_chargen                           // If set, not available at chargen.
 	var/unavailable_at_fab                               // If set, cannot be fabricated.
-	var/can_eat = 1
+	var/can_eat = 0
 	var/brute_mod = 1
 	var/speed_mod = 0
 	var/burn_mod = 1
@@ -32,11 +32,11 @@ var/datum/robolimb/basic_robolimb
 	desc = "This limb has a white polymer casing with blue holo-displays."
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_main.dmi'
 	unavailable_at_fab = 1
+	can_eat = 1
 
 /datum/robolimb/bishop/special
 	company = "Bishop Special"
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_special.dmi'
-	can_eat = null
 	use_eye_icon = "bishop_eyes"
 
 /datum/robolimb/bishop/alt
@@ -47,7 +47,6 @@ var/datum/robolimb/basic_robolimb
 /datum/robolimb/bishop/alt/monitor
 	company = "Bishop Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_monitor.dmi'
-	can_eat = null
 	restricted_to = list(SPECIES_IPC)
 
 /datum/robolimb/hephaestus
@@ -68,7 +67,6 @@ var/datum/robolimb/basic_robolimb
 /datum/robolimb/hephaestus/special_full
 	company = "Hephaestus Special Full"
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_special.dmi'
-	can_eat = null
 	use_eye_icon = "heph_eyes"
 	restricted_to = list(SPECIES_IPC)
 	brute_mod = 0.7
@@ -84,7 +82,6 @@ var/datum/robolimb/basic_robolimb
 	company = "Hephaestus Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_monitor.dmi'
 	restricted_to = list(SPECIES_IPC)
-	can_eat = null
 
 /datum/robolimb/zenghu
 	company = "Zeng-Hu"
@@ -103,7 +100,6 @@ var/datum/robolimb/basic_robolimb
 /datum/robolimb/xion/special
 	company = "Xion Special"
 	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_special.dmi'
-	can_eat = null
 	use_eye_icon = "xion_eyes"
 
 /datum/robolimb/xion/alt
@@ -115,7 +111,6 @@ var/datum/robolimb/basic_robolimb
 	company = "Xion Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_monitor.dmi'
 	restricted_to = list(SPECIES_IPC)
-	can_eat = null
 
 /datum/robolimb/nanotrasen
 	company = "NanoTrasen"
@@ -132,7 +127,6 @@ var/datum/robolimb/basic_robolimb
 /datum/robolimb/wardtakahashi/special
 	company = "Ward-Takahashi Special Upper"
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_special.dmi'
-	can_eat = 0
 	use_eye_icon = "zenghu_eyes"
 	applies_to_part = list(BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND, BP_HEAD, BP_CHEST, BP_GROIN)
 	brute_mod = 1.2
@@ -156,7 +150,6 @@ var/datum/robolimb/basic_robolimb
 	company = "Ward-Takahashi Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_monitor.dmi'
 	restricted_to = list(SPECIES_IPC)
-	can_eat = 0
 
 /datum/robolimb/morpheus
 	company = "Morpheus"
@@ -167,7 +160,6 @@ var/datum/robolimb/basic_robolimb
 /datum/robolimb/morpheus/special
 	company = "Morpheus Special"
 	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_special.dmi'
-	can_eat = 0
 	use_eye_icon = "eyes_industry"
 	restricted_to = list()
 
