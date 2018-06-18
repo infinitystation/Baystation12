@@ -35,6 +35,9 @@ var/global/floorIsLava = 0
 	set name = "Show Player Panel"
 	set desc="Edit player (respawn, ban, heal, etc)"
 
+	if(!check_rights(R_ADMIN))
+		return
+
 	if(!M)
 		to_chat(usr, "You seem to be selecting a mob that doesn't exist anymore.")
 		return
