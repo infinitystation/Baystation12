@@ -4118,6 +4118,44 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white,
 /area/space)
+"lS" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"mD" = (
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
+	dir = 4
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/obj/structure/cable,
+/obj/machinery/power/terminal{
+	icon_state = "term";
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"na" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/glass_engineering{
+	name = "SMES";
+	req_access = list(11)
+	},
+/turf/simulated/floor/plating,
+/area/space)
 "nc" = (
 /obj/effect/floor_decal/corner/lime{
 	tag = "icon-corner_white (NORTHWEST)";
@@ -4145,11 +4183,38 @@
 "pR" = (
 /turf/simulated/wall/titanium_r,
 /area/space)
+"qf" = (
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating,
+/area/space)
 "rx" = (
 /turf/simulated/floor/tiled/white,
 /area/space)
+"rW" = (
+/obj/machinery/power/smes/buildable/preset/torch/substation_full{
+	RCon_tag = "Substation - Engine"
+	},
+/turf/simulated/floor/plating,
+/area/space)
 "sz" = (
 /turf/simulated/wall/titanium,
+/area/space)
+"tc" = (
+/obj/structure/table/steel,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
 /area/space)
 "tD" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -4183,6 +4248,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/space)
+"xm" = (
+/obj/effect/wingrille_spawn/reinforced,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/space)
 "yu" = (
 /obj/machinery/space_heater,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -4192,6 +4266,35 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled,
+/area/space)
+"Cp" = (
+/obj/machinery/door/airlock/engineering{
+	name = "SMES Maintenance";
+	req_access = list(11)
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/power/sensor{
+	name = "Powernet Sensor - Master Grid";
+	name_tag = "Master"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4";
+	d2 = 4
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"DV" = (
+/obj/structure/table/steel,
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
 /area/space)
 "DY" = (
 /turf/simulated/floor/carpet,
@@ -4208,8 +4311,41 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/plating,
 /area/space)
+"GK" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/space)
 "Hn" = (
 /turf/simulated/floor/tiled/dark,
+/area/space)
+"IS" = (
+/obj/machinery/power/smes/buildable/preset/torch/engine_main{
+	RCon_tag = "Engine - Main"
+	},
+/obj/structure/cable,
+/turf/simulated/floor/plating,
+/area/space)
+"IV" = (
+/obj/machinery/power/smes/buildable/preset/torch/substation_full{
+	RCon_tag = "Substation - Atmospherics"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"JF" = (
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
 /area/space)
 "Kq" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -4219,14 +4355,6 @@
 "KE" = (
 /turf/simulated/floor/greengrid,
 /area/space)
-"Mi" = (
-/obj/structure/shuttle/engine/heater{
-	dir = 1;
-	icon_state = "heater";
-	pixel_y = -32
-	},
-/turf/simulated/floor/airless,
-/area/space)
 "NG" = (
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -4235,6 +4363,33 @@
 "OI" = (
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/plating,
+/area/space)
+"Qe" = (
+/obj/machinery/door/airlock/hatch{
+	icon_state = "door_locked";
+	id_tag = "engine_electrical_maintenance";
+	locked = 1;
+	name = "SMES Access";
+	req_access = list(10)
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/wall/r_wall,
+/area/space)
+"Qw" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/space)
 "Tg" = (
@@ -4258,6 +4413,21 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
+/area/space)
+"Vq" = (
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/terminal{
+	icon_state = "term";
+	dir = 4
+	},
+/turf/simulated/floor/plating,
 /area/space)
 "Vt" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -12893,13 +13063,13 @@ am
 am
 am
 am
-az
 am
 am
 am
 am
 am
-az
+am
+am
 am
 am
 am
@@ -13095,13 +13265,13 @@ am
 am
 am
 am
+ad
 am
 am
 am
 am
 am
-am
-am
+ad
 am
 am
 am
@@ -15529,7 +15699,7 @@ az
 az
 az
 az
-Mi
+oU
 pR
 dU
 ck
@@ -15731,7 +15901,7 @@ BY
 am
 cD
 az
-Mi
+oU
 pR
 ft
 rx
@@ -15933,7 +16103,7 @@ am
 am
 bA
 az
-Mi
+oU
 pR
 dW
 rx
@@ -24456,17 +24626,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+av
+ay
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+fV
+am
 aa
 aa
 aa
@@ -24658,17 +24828,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ac
+ac
+ac
+aM
+bc
+bc
+bc
+bn
+ac
+ac
+aZ
 aa
 aa
 aa
@@ -24860,17 +25030,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ad
+ad
+aB
+am
+am
+am
+am
+am
+cE
+am
+am
 aa
 aa
 aa
@@ -25062,17 +25232,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ad
+ad
+ac
+aN
+bG
+bG
+am
+am
+ac
+am
+am
 aa
 aa
 aa
@@ -25264,17 +25434,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ad
+ad
+ac
+ac
+ac
+az
+az
+ad
+az
+az
+am
 aa
 aa
 aa
@@ -25466,17 +25636,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ad
+ad
+ad
+ad
+ad
+az
+ad
+ad
+ad
+az
+am
 aa
 aa
 aa
@@ -25668,17 +25838,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ad
+ad
+ad
+ad
+ad
+az
+ad
+ad
+ad
+ad
+am
 aa
 aa
 aa
@@ -25870,17 +26040,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ad
+ad
+az
+az
+az
+az
+az
+ad
+az
+az
+ad
 aa
 aa
 aa
@@ -26072,17 +26242,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ad
+ad
+az
+cG
+ad
+ad
+ad
+ad
+ad
+az
+ad
 aa
 aa
 aa
@@ -26274,17 +26444,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ad
+ad
+GK
+Qw
+mD
+JF
+mD
+qf
+Vq
+Qe
+lS
 aa
 aa
 aa
@@ -26476,17 +26646,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ad
+ad
+az
+DV
+IV
+DV
+rW
+tc
+IS
+az
+ad
 aa
 aa
 aa
@@ -26678,17 +26848,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ad
+ad
+az
+az
+az
+az
+az
+bT
+az
+az
+az
 aa
 aa
 aa
@@ -27486,17 +27656,17 @@ aa
 aa
 aa
 aa
+az
+az
+Cp
+az
+az
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+az
+az
+ad
+az
+az
 aa
 aa
 aa
@@ -27688,17 +27858,17 @@ aa
 aa
 aa
 aa
+az
+bH
+cl
+cF
+na
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+az
+bH
+cl
+cF
+az
 aa
 aa
 aa
@@ -27890,17 +28060,17 @@ aa
 aa
 aa
 aa
+az
+bI
+cm
+cG
+xm
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+az
+bI
+cm
+cG
+ad
 aa
 aa
 aa
@@ -28092,17 +28262,17 @@ aa
 aa
 aa
 aa
+az
+bJ
+cn
+cH
+az
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+az
+bJ
+cn
+cH
+az
 aa
 aa
 aa
@@ -28294,17 +28464,17 @@ aa
 aa
 aa
 aa
+az
+bK
+co
+cI
+az
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+az
+bK
+co
+cI
+az
 aa
 aa
 aa
@@ -28496,17 +28666,17 @@ aa
 aa
 aa
 aa
+az
+bL
+cp
+cJ
+az
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+az
+bL
+cp
+cJ
+az
 aa
 aa
 aa
@@ -28698,17 +28868,17 @@ aa
 aa
 aa
 aa
+az
+bq
+bS
+ct
+az
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+az
+bq
+bS
+cK
+az
 aa
 aa
 aa
@@ -28900,17 +29070,17 @@ aa
 aa
 aa
 aa
+az
+az
+bT
+cu
+az
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+az
+az
+bT
+cu
+az
 aa
 aa
 aa
