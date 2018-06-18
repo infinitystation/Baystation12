@@ -31,8 +31,9 @@
 	heat_level_1 = SYNTH_HEAT_LEVEL_1
 	heat_level_2 = SYNTH_HEAT_LEVEL_2
 	heat_level_3 = SYNTH_HEAT_LEVEL_3
-	body_temperature = 50
-	passive_temp_gain = 0  // This should cause IPCs to stabilize at ~80 C in a 20 C environment.
+	body_temperature = null
+	passive_temp_gain = -5  
+	darksight_tint = DARKTINT_MODERATE
 	species_flags = SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_EMBED
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_LACE
 	appearance_flags = HAS_EYE_COLOR //IPCs can wear undies too :(
