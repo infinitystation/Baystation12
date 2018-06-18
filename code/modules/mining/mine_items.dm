@@ -31,10 +31,11 @@
 /******************************Lantern*******************************/
 
 /obj/item/device/flashlight/lantern
-	name = "lantern"
+   	/*name = "lantern"
 	icon_state = "lantern"
+	item_state = "lantern"
 	desc = "A mining lantern."
-	flashlight_outer_range = 5
+	flashlight_outer_range = 5*/
 /*****************************Pickaxe********************************/
 
 /obj/item/weapon/pickaxe
