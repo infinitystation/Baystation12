@@ -6,6 +6,6 @@
 	use_eye_icon = "blank_eyes"
 	restricted_to = list(SPECIES_BIONIC)
 	can_eat = 1
-	speed_mod = -0.8	
+	speed_mod = -0.5	
 	brute_mod = 1.3
 	burn_mod = 1.3
