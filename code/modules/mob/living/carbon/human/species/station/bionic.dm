@@ -1,6 +1,6 @@
 /datum/species/bionic
 	name = SPECIES_BIONIC
-	name_plural = "bionic"
+	name_plural = "Bionic"
 
 	blurb = "Бионическое шасси было впервые использовано в 2548 году, когда выдающемуся ученому корпорации NanoTrasen Дэниелу Озборну потребовалась операция по переносу мозга в сложнейший по своей структуре бионический каркас. \
 Данная технология кибернетического усиления позволяет преумножить как физические способности носителя, так и умственные, используя при этом человеческий мозг, чьи функции теменной и затылочной долей переходят напрямую к плазматронному ядру. \
@@ -47,7 +47,7 @@
 		)
 	vision_organ = BP_OPTICS
 	has_limbs = list(
-		BP_CHEST =  list("path" = /obj/item/organ/external/chest),
+		BP_CHEST =  list("path" = /obj/item/organ/external/chest/bionic),
 		BP_GROIN =  list("path" = /obj/item/organ/external/groin),
 		BP_HEAD =   list("path" = /obj/item/organ/external/head/no_eyes),
 		BP_L_ARM =  list("path" = /obj/item/organ/external/arm),
