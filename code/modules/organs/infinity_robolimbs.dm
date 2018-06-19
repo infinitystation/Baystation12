@@ -5,3 +5,7 @@
 	unavailable_at_fab = 1
 	use_eye_icon = "blank_eyes"
 	restricted_to = list(SPECIES_BIONIC)
+	can_eat = 1
+	speed_mod = -0.8	
+	brute_mod = 1.3
+	burn_mod = 1.3
