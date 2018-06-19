@@ -2,7 +2,9 @@
 	name = SPECIES_BIONIC
 	name_plural = "bionic"
 
-	blurb = "..."
+	blurb = "Бионическое шасси было впервые использовано в 2548 году, когда выдающемуся ученому корпорации NanoTrasen Дэниелу Озборну потребовалась операция по переносу мозга в сложнейший по своей структуре бионический каркас.
+Данная технология кибернетического усиления позволяет преумножить как физические способности носителя, так и умственные, используя при этом человеческий мозг, чьи функции теменной и затылочной долей переходят напрямую к плазматронному ядру.
+В настоящее время проект признан нестабильным и сверхдорогим в своей реализации, потому, вероятно, навсегда останется в единственном экземпляре под контролем Корпорации NanoTrasen"
 
 	icobase = 'icons/mob/human_races/r_bionic.dmi'
 	deform = 'icons/mob/human_races/r_bionic.dmi'
@@ -66,3 +68,49 @@
 		if(E.robotic < ORGAN_ROBOT)
 			E.robotize("Bionic")
 	return
+
+/datum/species/bionic/get_description()
+	var/list/damage_types = list(
+		"physical trauma" = brute_mod,
+		"burns" = burn_mod,
+		"lack of air" = oxy_mod,
+		"poison" = toxins_mod
+	)
+	var/dat = list()
+	dat += "<center><h2>[name] \[<a href='?src=\ref[src];show_species=1'>change</a>\]</h2></center><hr/>"
+	dat += "<table padding='8px'>"
+	dat += "<tr>"
+	dat += "<td width = 400>[blurb]</td>"
+	dat += "<td width = 200 align='center'>"
+	if("preview" in icon_states(get_icobase()))
+		usr << browse_rsc(icon(get_icobase(),"preview"), "species_preview_[name].png")
+		dat += "<img src='species_preview_[name].png' width='64px' height='64px'><br/><br/>"
+	dat += "<b>Language:</b> [language]<br/>"
+	dat += "<small>"
+	if(spawn_flags & SPECIES_CAN_JOIN)
+		dat += "</br><b>Often present among humans.</b>"
+	if(spawn_flags & SPECIES_IS_WHITELISTED)
+		dat += "</br><b>Whitelist restricted.</b>"
+	if(!has_organ[BP_HEART])
+		dat += "</br><b>Does not have blood.</b>"
+	if(!has_organ[breathing_organ])
+		dat += "</br><b>Does not breathe.</b>"
+	if(species_flags & SPECIES_FLAG_NO_SCAN)
+		dat += "</br><b>Does not have DNA.</b>"
+	if(species_flags & SPECIES_FLAG_NO_PAIN)
+		dat += "</br><b>Does not feel pain.</b>"
+	if(species_flags & SPECIES_FLAG_NO_SLIP)
+		dat += "</br><b>Has excellent traction.</b>"
+	if(species_flags & SPECIES_FLAG_NO_POISON)
+		dat += "</br><b>Immune to most poisons.</b>"
+	if(slowdown)
+		dat += "</br><b>Moves [slowdown > 0 ? "slower" : "faster"] than most.</b>"
+	for(var/kind in damage_types)
+		if(damage_types[kind] > 1)
+			dat += "</br><b>Vulnerable to [kind].</b>"
+		else if(damage_types[kind] < 1)
+			dat += "</br><b>Resistant to [kind].</b>"
+	dat += "</small></td>"
+	dat += "</tr>"
+	dat += "</table><hr/>"
+	return jointext(dat, null)
