@@ -6565,6 +6565,10 @@
 	dir = 4;
 	pixel_x = -22
 	},
+/obj/machinery/firealarm{
+	dir = 2;
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled/dark,
 /area/holocontrol)
 "mn" = (
@@ -7073,15 +7077,11 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -23
-	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -24
-	},
 /obj/machinery/light/spot,
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -23
+	},
 /turf/simulated/floor/tiled/dark,
 /area/holocontrol)
 "nf" = (
@@ -11021,10 +11021,6 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 24
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/turret_protected/ai_upload)
 "sH" = (
@@ -14466,8 +14462,10 @@
 	name = "Security Blast Door";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced/polarized/full,
 /obj/machinery/door/firedoor/border_only,
+/obj/effect/wallframe_spawn/reinforced/polarized/full{
+	id = "forensicswindow"
+	},
 /turf/simulated/floor/plating,
 /area/security/detectives_office)
 "xh" = (
@@ -14475,7 +14473,6 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/effect/wallframe_spawn/reinforced/polarized/full,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -14485,6 +14482,9 @@
 	opacity = 0
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/effect/wallframe_spawn/reinforced/polarized/full{
+	id = "forensicswindow"
+	},
 /turf/simulated/floor/plating,
 /area/security/detectives_office)
 "xi" = (
@@ -17660,18 +17660,7 @@
 	dir = 4;
 	pixel_x = -23
 	},
-/obj/machinery/light/spot{
-	dir = 8
-	},
 /obj/machinery/recharger,
-/turf/simulated/floor/tiled/techfloor,
-/area/crew_quarters/sleep/cryo)
-"Ca" = (
-/obj/structure/closet/secure_closet/personal,
-/obj/machinery/light/spot{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "Cb" = (
@@ -18040,6 +18029,9 @@
 "CL" = (
 /obj/structure/table/standard,
 /obj/random/plushie,
+/obj/machinery/light/spot{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "CM" = (
@@ -19510,6 +19502,10 @@
 	pixel_x = 0;
 	pixel_y = 24
 	},
+/obj/machinery/light/small{
+	icon_state = "bulb1";
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/shield/thirddeck)
 "FN" = (
@@ -20107,10 +20103,6 @@
 /turf/simulated/floor/plating,
 /area/shield/thirddeck)
 "GM" = (
-/obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 4
-	},
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 24
@@ -21573,9 +21565,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/foreport)
 "Kl" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/foreport)
 "Km" = (
@@ -23782,6 +23772,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
+"RF" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/light/spot{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/crew_quarters/sleep/cryo)
 "RG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -43169,8 +43167,8 @@ xX
 yZ
 Ah
 Bg
-Ca
 CM
+RF
 DE
 CM
 Fr
