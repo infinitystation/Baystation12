@@ -24,7 +24,7 @@
 	max_age = 200
 	brute_mod = 1.3
 	burn_mod = 1.3
-	slowdown = -0.8
+	slowdown = -0.5
 	warning_low_pressure = -1
 	hazard_low_pressure = -1
 	cold_level_1 = SYNTH_COLD_LEVEL_1
