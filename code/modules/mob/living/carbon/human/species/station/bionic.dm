@@ -2,9 +2,9 @@
 	name = SPECIES_BIONIC
 	name_plural = "bionic"
 
-	blurb = "Бионическое шасси было впервые использовано в 2548 году, когда выдающемуся ученому корпорации NanoTrasen Дэниелу Озборну потребовалась операция по переносу мозга в сложнейший по своей структуре бионический каркас.
-Данная технология кибернетического усиления позволяет преумножить как физические способности носителя, так и умственные, используя при этом человеческий мозг, чьи функции теменной и затылочной долей переходят напрямую к плазматронному ядру.
-В настоящее время проект признан нестабильным и сверхдорогим в своей реализации, потому, вероятно, навсегда останется в единственном экземпляре под контролем Корпорации NanoTrasen"
+	blurb = "Бионическое шасси было впервые использовано в 2548 году, когда выдающемуся ученому корпорации NanoTrasen Дэниелу Озборну потребовалась операция по переносу мозга в сложнейший по своей структуре бионический каркас. \
+Данная технология кибернетического усиления позволяет преумножить как физические способности носителя, так и умственные, используя при этом человеческий мозг, чьи функции теменной и затылочной долей переходят напрямую к плазматронному ядру. \
+В настоящее время проект признан нестабильным и сверхдорогим в своей реализации, потому, вероятно, навсегда останется в единственном экземпляре под контролем Корпорации NanoTrasen."
 
 	icobase = 'icons/mob/human_races/r_bionic.dmi'
 	deform = 'icons/mob/human_races/r_bionic.dmi'
@@ -21,11 +21,11 @@
 	strength = STR_HIGH
 	name_language = LANGUAGE_EAL
 	min_age = 30
-	max_age = 200 
-	brute_mod = 1.3 
-	burn_mod = 1.3  
+	max_age = 200
+	brute_mod = 1.3
+	burn_mod = 1.3
 	slowdown = -0.8
-	warning_low_pressure = -1 
+	warning_low_pressure = -1
 	hazard_low_pressure = -1
 	cold_level_1 = SYNTH_COLD_LEVEL_1
 	cold_level_2 = SYNTH_COLD_LEVEL_2
@@ -34,7 +34,7 @@
 	heat_level_2 = SYNTH_HEAT_LEVEL_2
 	heat_level_3 = SYNTH_HEAT_LEVEL_3
 	body_temperature = null
-	passive_temp_gain = -5  
+	passive_temp_gain = -5
 	species_flags = SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_EMBED
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_LACE
 	appearance_flags = HAS_EYE_COLOR //IPCs can wear undies too :(
@@ -42,7 +42,7 @@
 	flesh_color = "#000000"
 	virus_immune = 1
 	has_organ = list(
-		BP_BRAIN =    /obj/item/organ/internal/brain,	
+		BP_BRAIN =    /obj/item/organ/internal/brain,
 		BP_OPTICS = /obj/item/organ/internal/eyes/optics
 		)
 	vision_organ = BP_OPTICS
@@ -59,7 +59,7 @@
 		BP_L_FOOT = list("path" = /obj/item/organ/external/foot),
 		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right)
 		)
-	heat_discomfort_level = 600 
+	heat_discomfort_level = 600
 	genders = list(MALE)
 
 
