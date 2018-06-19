@@ -125,7 +125,7 @@
 	return
 
 /obj/structure/wall_frame/titanium
-	color = COLOR_TITANIUM
+	color = "#96a5a0"
 
 /obj/structure/wall_frame/hull
 	color = COLOR_HULL
