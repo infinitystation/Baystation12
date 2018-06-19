@@ -73,6 +73,11 @@ ckey: kordvik
 character_name: Lyx Omaya
 item_path: /obj/item/device/pmp/personal/csplayer
 }
+{
+ckey: redknighthero
+character_name: Daniel Osborne
+item_path: /obj/item/device/pmp/personal
+}
 #	SHORT ITEMS HERE (3-4)
 # {
 # ckey: quietproject 
@@ -103,6 +108,11 @@ item_path: /obj/item/clothing/glasses/material/hybrid/special
 ckey: auesti 
 character_name: Lin Fojuraus 
 item_path: /obj/item/vape
+}
+{
+ckey: redknighthero
+character_name: Daniel Osborne
+item_path: /obj/item/weapon/circuitboard/account_database  
 }
 {
 ckey: chowny
