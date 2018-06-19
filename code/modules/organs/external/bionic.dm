@@ -1,5 +1,7 @@
 /obj/item/organ/external/chest/bionic
-
+	name = "bionic chassis"
 
 /obj/item/organ/external/chest/bionic/robotize()
-	owner.internal_organs_by_name[BP_CELL] = new /obj/item/organ/internal/cell/bionic(owner,1)
+	..()
+	var/obj/item/organ/internal/cell/C = owner.internal_organs_by_name[BP_CELL]
+	owner.internal_organs_by_name[BP_CELL] = new /obj/item/organ/internal/cell/bluespace(owner,1)
