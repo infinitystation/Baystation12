@@ -1,4 +1,4 @@
-/obj/item/organ/external/chest
+/obj/item/organ/external/chest/bionic
 	name = "upper body"
 	organ_tag = BP_CHEST
 	icon_name = "torso"
@@ -18,7 +18,7 @@
 	artery_name = "aorta"
 	cavity_name = "thoracic"
 
-/obj/item/organ/external/chest/robotize()
+/obj/item/organ/external/chest/bionic/robotize()
 	..()
 	var/obj/item/organ/internal/cell/C = owner.internal_organs_by_name[BP_CELL]
 	owner.internal_organs_by_name[BP_CELL] = new /obj/item/organ/internal/cell/bionic(owner,1)
