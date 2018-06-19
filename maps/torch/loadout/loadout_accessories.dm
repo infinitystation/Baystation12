@@ -57,12 +57,7 @@
 	display_name = "fleet patch"
 	path = /obj/item/clothing/accessory/solgov/fleet_patch
 	flags = GEAR_HAS_TYPE_SELECTION
-	allowed_roles = MILITARY_ROLES
-
-/datum/gear/accessory/armband_mp
-	display_name = "military police brassard"
-	path = /obj/item/clothing/accessory/armband/solgov/mp
-	allowed_roles = SECURITY_ROLES
+	allowed_branches = list(/datum/mil_branch/fleet)
 
 /datum/gear/accessory/armband_ma
 	display_name = "master at arms brassard"
@@ -98,11 +93,7 @@
 	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/assistant)
 
 /datum/gear/accessory/armband_nt
-	allowed_roles = list(/datum/job/rd, /datum/job/liaison, /datum/job/senior_scientist, /datum/job/nt_pilot, /datum/job/scientist,
-						/datum/job/mining, /datum/job/guard, /datum/job/scientist_assistant,
-						/datum/job/roboticist, /datum/job/engineer_contractor,
-						/datum/job/psychiatrist, /datum/job/doctor_contractor, /datum/job/chemist,
-						/datum/job/cargo_contractor, /datum/job/janitor, /datum/job/chef, /datum/job/bartender)
+	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/accessory/ntaward
 	allowed_roles = NANOTRASEN_ROLES
@@ -143,16 +134,24 @@
 /datum/gear/tactical/armor_deco
 	allowed_roles = ARMORED_ROLES
 
+/datum/gear/tactical/press_tag
+	display_name = "Press tag"
+	path = /obj/item/clothing/accessory/armor/tag/press
+	allowed_roles = list(/datum/job/assistant)
+
 /datum/gear/tactical/helm_covers
 	allowed_roles = ARMORED_ROLES
 
 /datum/gear/clothing/hawaii
+	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/clothing/scarf
 
 /datum/gear/clothing/flannel
+	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/clothing/vest
+	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/clothing/suspenders
 

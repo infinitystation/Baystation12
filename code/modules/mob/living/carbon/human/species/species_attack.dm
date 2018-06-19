@@ -20,7 +20,7 @@
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	sharp = 1
 	edge = 1
-	
+
 /datum/unarmed_attack/claws/is_usable(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target, var/zone)
 	if(user.gloves)
 		var/obj/item/clothing/gloves/gloves = user.gloves
@@ -152,3 +152,10 @@
 	attack_noun = list("power fist")
 	damage = 12
 	attack_sound = 'sound/weapons/heavysmash.ogg'
+
+/datum/unarmed_attack/punch/starborn
+	attack_verb = list("scorched", "burned", "fried")
+	shredding = 1
+
+/datum/unarmed_attack/punc/starborn/get_damage_type()
+	return BURN

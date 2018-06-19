@@ -60,7 +60,7 @@
 /turf/simulated/open,
 /area/space)
 "ao" = (
-/obj/machinery/door/airlock/glass_external,
+/obj/machinery/door/airlock/external,
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "ap" = (
@@ -405,7 +405,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "bi" = (
-/obj/machinery/door/airlock/glass_external,
+/obj/machinery/door/airlock/external,
 /obj/structure/cable{
 	tag = "icon-1-8 (WEST)";
 	icon_state = "4-8";
@@ -698,7 +698,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/hatch/maintenance,
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "bH" = (
@@ -915,7 +915,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/hatch/maintenance,
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "cb" = (
@@ -1090,7 +1090,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "cs" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/hatch/maintenance,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;

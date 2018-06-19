@@ -82,7 +82,7 @@
 /datum/gear/mask/ipc_monitor
 
 /datum/gear/suit/lab_xyn_machine
-	allowed_roles = NON_MILITARY_ROLES
+	allowed_branches = CIVILIAN_BRANCHES
 
 // Misc clothing
 /datum/gear/uniform/harness

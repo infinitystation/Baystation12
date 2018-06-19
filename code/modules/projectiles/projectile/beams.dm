@@ -87,17 +87,6 @@
 		target.ex_act(2)
 	..()
 
-/obj/item/projectile/beam/pulse/bogani
-	name = "pulsar"
-	icon_state = "bogb"
-	fire_sound='sound/weapons/blaster.ogg'
-	damage = 20
-	armor_penetration = 15
-
-	muzzle_type = /obj/effect/projectile/laser/emitter/muzzle
-	tracer_type = /obj/effect/projectile/laser/emitter/tracer
-	impact_type = /obj/effect/projectile/laser/emitter/impact
-
 /obj/item/projectile/beam/emitter
 	name = "emitter beam"
 	icon_state = "emitter"

@@ -150,6 +150,7 @@
 	set_frequency(frequency)
 	if (!master_is_operating())
 		elect_master()
+	update_icon()
 
 /obj/machinery/alarm/Process()
 	if((stat & (NOPOWER|BROKEN)) || shorted || buildstage != 2)
@@ -306,6 +307,22 @@
 	return 0
 
 /obj/machinery/alarm/update_icon()
+	overlays.Cut()
+
+	pixel_x = 0
+	pixel_y = 0
+	var/walldir = (dir & (NORTH|SOUTH)) ? GLOB.reverse_dir[dir] : dir
+	var/turf/T = get_step(get_turf(src), walldir)
+	if(istype(T) && T.density)
+		if(dir == SOUTH)
+			pixel_y = 30
+		else if(dir == NORTH)
+			pixel_y = -20
+		else if(dir == EAST)
+			pixel_x = 23
+		else if(dir == WEST)
+			pixel_x = -23
+
 	if(wiresexposed)
 		icon_state = "alarmx"
 		set_light(0)
@@ -888,8 +905,26 @@ FIRE ALARM
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 	to_chat(user, "The current alert level is [security_state.current_security_level.name].")
 
+/obj/machinery/firealarm/Initialize()
+	. = ..()
+	update_icon()
+
 /obj/machinery/firealarm/update_icon()
 	overlays.Cut()
+
+	pixel_x = 0
+	pixel_y = 0
+	var/walldir = (dir & (NORTH|SOUTH)) ? GLOB.reverse_dir[dir] : dir
+	var/turf/T = get_step(get_turf(src), walldir)
+	if(istype(T) && T.density)
+		if(dir == SOUTH)
+			pixel_y = 23
+		else if(dir == NORTH)
+			pixel_y = -23
+		else if(dir == EAST)
+			pixel_x = 23
+		else if(dir == WEST)
+			pixel_x = -23
 
 	if(wiresexposed)
 		switch(buildstage)
