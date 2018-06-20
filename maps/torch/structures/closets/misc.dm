@@ -107,7 +107,7 @@
 	return list(/obj/item/weapon/gun/energy/laser = 2)
 
 /obj/structure/closet/secure_closet/guncabinet/sec_armory/secured_laser/WillContain()
-	return list(/obj/item/weapon/gun/energy/secure/laser = 2)
+	return list(/obj/item/weapon/gun/energy/laser/secure = 2)
 
 /obj/structure/closet/secure_closet/guncabinet/sec_armory/ion
 	name = "ion rifles cabinet"
