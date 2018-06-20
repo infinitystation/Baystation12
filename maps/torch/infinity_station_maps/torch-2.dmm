@@ -999,7 +999,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 20
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tcommsat/chamber)
@@ -1479,7 +1479,7 @@
 /obj/structure/table/rack,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tcommsat/storage)
@@ -2445,7 +2445,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/effect/floor_decal/borderfloor,
@@ -2653,7 +2653,7 @@
 	icon_state = "0-8"
 	},
 /obj/item/device/radio/intercom{
-	pixel_y = 22
+	pixel_y = 26
 	},
 /obj/machinery/power/smes/buildable/preset/torch/substation{
 	RCon_tag = "Substation - Third Deck"
@@ -3978,7 +3978,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
@@ -4348,7 +4348,7 @@
 	},
 /obj/item/device/radio/intercom/department/security{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /turf/simulated/floor/tiled,
 /area/security/brig)
@@ -4433,7 +4433,7 @@
 	},
 /obj/item/device/radio/intercom/entertainment{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 20
 	},
 /obj/item/weapon/book/manual/solgov_law,
 /turf/simulated/floor/tiled,
@@ -4839,7 +4839,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
@@ -5324,7 +5324,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 20
 	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos/aux)
@@ -5677,7 +5677,7 @@
 /obj/item/weapon/bedsheet/orange,
 /obj/item/device/radio/intercom/department/security{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
@@ -6044,7 +6044,7 @@
 /obj/item/weapon/stool/padded,
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 20
 	},
 /obj/item/modular_computer/telescreen/preset/generic{
 	pixel_y = 24
@@ -6563,7 +6563,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /obj/machinery/firealarm{
 	dir = 2;
@@ -6783,7 +6783,7 @@
 	},
 /obj/item/device/radio/intercom/department/security{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
@@ -7061,7 +7061,7 @@
 	},
 /obj/item/device/radio/intercom/entertainment{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 20
 	},
 /obj/item/weapon/stool/padded,
 /turf/simulated/floor/tiled/white,
@@ -7863,7 +7863,7 @@
 	},
 /obj/machinery/vending/cigarette,
 /obj/item/device/radio/intercom{
-	pixel_y = 22
+	pixel_y = 26
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/mess)
@@ -8126,7 +8126,7 @@
 	},
 /obj/item/device/radio/intercom/department/security{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
@@ -8516,7 +8516,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /turf/simulated/floor/tiled,
 /area/holocontrol)
@@ -8569,10 +8569,6 @@
 	},
 /obj/machinery/light{
 	dir = 8
-	},
-/obj/item/device/radio/intercom/department/security{
-	dir = 4;
-	pixel_x = -22
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
@@ -8963,7 +8959,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
@@ -9151,27 +9147,9 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/structure/sign/directions/engineering{
+/obj/machinery/light{
 	dir = 1;
-	pixel_x = -32;
-	pixel_y = 32;
-	pixel_z = -2
-	},
-/obj/structure/sign/directions/infirmary{
-	dir = 1;
-	pixel_x = -32;
-	pixel_y = 32;
-	pixel_z = 6
-	},
-/obj/structure/sign/directions/science{
-	dir = 1;
-	pixel_y = 32;
-	pixel_z = -2
-	},
-/obj/structure/sign/directions/bridge{
-	dir = 1;
-	pixel_y = 32;
-	pixel_z = 6
+	icon_state = "tube_map"
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
@@ -9199,7 +9177,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 20
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
@@ -9359,10 +9337,6 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/obj/item/device/radio/intercom{
-	dir = 4;
-	pixel_x = -22
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
 	icon_state = "borderfloor_white";
@@ -9372,6 +9346,10 @@
 	tag = "icon-bordercolor (WEST)";
 	icon_state = "bordercolor";
 	dir = 8
+	},
+/obj/item/device/radio/intercom/department/security{
+	dir = 4;
+	pixel_x = -20
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
@@ -9780,7 +9758,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 1
@@ -10073,7 +10051,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 20
 	},
 /obj/structure/table/steel,
 /obj/item/weapon/paper_bin,
@@ -10152,7 +10130,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 20
 	},
 /turf/simulated/floor/tiled,
 /area/security/wing)
@@ -10446,7 +10424,6 @@
 /turf/simulated/open,
 /area/hallway/primary/thirddeck/fore)
 "rO" = (
-/obj/machinery/light,
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 8
@@ -10457,16 +10434,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -23
-	},
-/obj/structure/sign/directions/evac{
-	dir = 2;
-	pixel_y = -32;
-	pixel_z = -7
-	},
-/obj/structure/sign/directions/supply{
-	dir = 2;
-	pixel_y = -32;
-	pixel_z = 1
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
@@ -10487,12 +10454,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
-	},
-/obj/structure/sign/directions/security{
-	dir = 4;
-	pixel_x = -32;
-	pixel_y = -32;
-	pixel_z = 6
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
@@ -11071,41 +11032,6 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/thirddeck/center)
 "sL" = (
-/obj/structure/sign/directions/supply{
-	dir = 2;
-	pixel_x = -32;
-	pixel_y = 32;
-	pixel_z = -6
-	},
-/obj/structure/sign/directions/evac{
-	dir = 2;
-	pixel_x = 0;
-	pixel_y = 32;
-	pixel_z = -6
-	},
-/obj/structure/sign/directions/engineering{
-	dir = 1;
-	pixel_x = 0;
-	pixel_y = 32;
-	pixel_z = 2
-	},
-/obj/structure/sign/directions/science{
-	dir = 1;
-	pixel_y = 32;
-	pixel_z = 10
-	},
-/obj/structure/sign/directions/bridge{
-	dir = 1;
-	pixel_x = -32;
-	pixel_y = 32;
-	pixel_z = 10
-	},
-/obj/structure/sign/directions/infirmary{
-	dir = 1;
-	pixel_x = -32;
-	pixel_y = 32;
-	pixel_z = 2
-	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
 	icon_state = "borderfloorcorner2_white";
@@ -11166,12 +11092,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
 "sO" = (
-/obj/structure/sign/directions/security{
-	dir = 4;
-	pixel_x = 32;
-	pixel_y = 32;
-	pixel_z = -5
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
 	icon_state = "borderfloor_white";
@@ -11196,7 +11116,7 @@
 /area/hallway/primary/thirddeck/center)
 "sP" = (
 /obj/item/device/radio/intercom{
-	pixel_y = 22
+	pixel_y = 26
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
@@ -11325,12 +11245,6 @@
 /obj/machinery/camera/network/third_deck{
 	c_tag = "Third Deck Hallway - Ladders"
 	},
-/obj/structure/sign/directions/security{
-	dir = 4;
-	pixel_x = 0;
-	pixel_y = 32;
-	pixel_z = -5
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
 	icon_state = "borderfloor_white";
@@ -11344,9 +11258,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
 "ta" = (
-/obj/item/device/radio/intercom{
-	pixel_y = 22
-	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -11460,9 +11371,6 @@
 "th" = (
 /obj/machinery/camera/network/third_deck{
 	c_tag = "Third Deck Hallway - Firing Range"
-	},
-/obj/item/device/radio/intercom{
-	pixel_y = 22
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
@@ -12192,7 +12100,7 @@
 /obj/machinery/light/small,
 /obj/item/device/radio/intercom/locked/ai_private{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/turret_protected/ai_upload)
@@ -12601,7 +12509,7 @@
 "uw" = (
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/sleep/bunk)
@@ -13320,7 +13228,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -20
+	pixel_y = -18
 	},
 /turf/simulated/floor,
 /area/ai_monitored/storage/eva)
@@ -13482,7 +13390,7 @@
 	},
 /obj/item/device/radio/intercom/locked/ai_private{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /obj/effect/floor_decal/techfloor{
 	tag = "icon-techfloor_edges (SOUTHWEST)";
@@ -13696,7 +13604,7 @@
 /obj/effect/floor_decal/corner/lime/border,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
@@ -13761,6 +13669,10 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/steeldecal/steel_decals_central6,
 /obj/effect/floor_decal/corner/red/border,
+/obj/item/device/radio/intercom{
+	dir = 1;
+	pixel_y = -18
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
 "vY" = (
@@ -14186,7 +14098,7 @@
 	},
 /obj/item/device/radio/intercom/locked/ai_private{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai_upload)
@@ -14962,28 +14874,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
 "xZ" = (
-/obj/structure/sign/directions/engineering{
-	dir = 1;
-	pixel_x = -32;
-	pixel_z = -6
-	},
-/obj/structure/sign/directions/infirmary{
-	dir = 1;
-	pixel_x = -32;
-	pixel_z = 2
-	},
-/obj/structure/sign/directions/science{
-	dir = 1;
-	pixel_x = -32;
-	pixel_y = 0;
-	pixel_z = 10
-	},
-/obj/structure/sign/directions/bridge{
-	dir = 1;
-	pixel_x = -32;
-	pixel_y = 0;
-	pixel_z = 18
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 9;
 	icon_state = "borderfloor_white";
@@ -15013,6 +14903,10 @@
 	tag = "icon-bordercolorcorner2 (SOUTHWEST)";
 	icon_state = "bordercolorcorner2";
 	dir = 10
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -23
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
@@ -15053,16 +14947,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
 "yd" = (
-/obj/structure/sign/directions/evac{
-	dir = 2;
-	pixel_x = 32;
-	pixel_z = -2
-	},
-/obj/structure/sign/directions/supply{
-	dir = 2;
-	pixel_x = 32;
-	pixel_z = 6
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 5;
 	icon_state = "borderfloor_white";
@@ -15094,6 +14978,10 @@
 	dir = 5
 	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/item/device/radio/intercom{
+	dir = 8;
+	pixel_x = 20
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
 "ye" = (
@@ -15119,7 +15007,7 @@
 	pixel_y = 0
 	},
 /obj/item/device/radio/intercom{
-	pixel_y = 22
+	pixel_y = 26
 	},
 /obj/machinery/light{
 	dir = 1
@@ -15270,7 +15158,7 @@
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 23;
-	pixel_y = 5
+	pixel_y = 15
 	},
 /obj/machinery/light{
 	dir = 1
@@ -15401,7 +15289,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 20
 	},
 /turf/simulated/floor/tiled,
 /area/security/processing)
@@ -15519,7 +15407,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
@@ -15877,13 +15765,6 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
-"zc" = (
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -23
-	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/thirddeck/center)
 "zd" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -16800,7 +16681,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /turf/simulated/floor/tiled,
 /area/security/equipment)
@@ -17257,7 +17138,7 @@
 /obj/item/weapon/pen/red,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /obj/machinery/alarm{
 	dir = 1;
@@ -17404,7 +17285,7 @@
 /obj/machinery/papershredder,
 /obj/item/device/radio/intercom/department/security{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/red/border,
@@ -18071,7 +17952,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/item/device/radio/intercom{
-	pixel_y = 22
+	pixel_y = 26
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/tools)
@@ -18188,7 +18069,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /turf/simulated/floor/tiled/white,
 /area/security/detectives_office)
@@ -18222,7 +18103,7 @@
 	dir = 1
 	},
 /obj/item/device/radio/intercom{
-	pixel_y = 22
+	pixel_y = 26
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/security/evidence)
@@ -18259,7 +18140,7 @@
 	},
 /obj/item/device/radio/intercom/department/security{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 20
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/security/evidence)
@@ -18328,7 +18209,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/teleporter/thirddeck)
@@ -18442,7 +18323,7 @@
 /obj/machinery/light/small,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
@@ -18764,7 +18645,7 @@
 /obj/structure/table/standard,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /obj/item/weapon/storage/box/cups{
 	pixel_x = 2;
@@ -18830,13 +18711,6 @@
 /area/crew_quarters/safe_room/thirddeck)
 "Eq" = (
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/safe_room/thirddeck)
-"Er" = (
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 22
-	},
-/turf/simulated/wall/r_wall,
 /area/crew_quarters/safe_room/thirddeck)
 "Et" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -19186,10 +19060,6 @@
 "Fe" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
-	},
-/obj/item/device/radio/intercom/entertainment{
-	dir = 4;
-	pixel_x = -22
 	},
 /obj/structure/bed/chair,
 /obj/machinery/camera/network/third_deck{
@@ -19752,7 +19622,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
@@ -20749,7 +20619,7 @@
 	dir = 10
 	},
 /obj/item/device/radio/intercom{
-	pixel_y = 22
+	pixel_y = 26
 	},
 /obj/machinery/computer/general_air_control/engines_flame/second,
 /turf/simulated/floor/reinforced,
@@ -20866,7 +20736,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/sleep/bunk)
@@ -21183,7 +21053,7 @@
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/item/device/radio/intercom{
-	pixel_y = 22
+	pixel_y = 26
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/cryolocker)
@@ -21818,7 +21688,7 @@
 "KK" = (
 /obj/item/device/radio/intercom/entertainment{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -18
 	},
 /obj/structure/table/steel,
 /obj/random/junk,
@@ -21839,7 +21709,7 @@
 "KN" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 20
 	},
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/sleep/bunk)
@@ -22235,7 +22105,7 @@
 	},
 /obj/item/device/radio/intercom/entertainment{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge)
@@ -22643,7 +22513,7 @@
 /area/vacant/missile)
 "MR" = (
 /obj/item/device/radio/intercom{
-	pixel_y = 22
+	pixel_y = 26
 	},
 /obj/machinery/alarm{
 	dir = 8;
@@ -23277,10 +23147,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2,
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 22
-	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
 "Pc" = (
@@ -23712,6 +23578,12 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/crew_quarters/bar)
+"Rg" = (
+/obj/item/device/radio/intercom{
+	pixel_y = 26
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/crew_quarters/safe_room/thirddeck)
 "Ri" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
@@ -23822,7 +23694,7 @@
 "RP" = (
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk)
@@ -24803,17 +24675,6 @@
 /obj/structure/sign/hydro,
 /turf/simulated/wall,
 /area/crew_quarters/galley)
-"Xh" = (
-/obj/structure/sign/directions/infirmary{
-	dir = 1;
-	pixel_z = -6
-	},
-/obj/structure/sign/directions/science{
-	dir = 1;
-	pixel_z = 6
-	},
-/turf/simulated/wall/r_wall,
-/area/hallway/primary/thirddeck/center)
 "Xj" = (
 /obj/structure/toilet{
 	pixel_y = 8
@@ -24871,7 +24732,7 @@
 "XU" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 20
 	},
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/sleep/bunk)
@@ -25209,7 +25070,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -20
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/sleep/bunk)
@@ -39130,8 +38991,8 @@ PB
 BW
 CH
 Zj
-Er
-Eq
+AU
+Rg
 FV
 Eq
 HG
@@ -40532,7 +40393,7 @@ mU
 mU
 mU
 mU
-Xh
+mU
 Wn
 uk
 vB
@@ -44376,7 +44237,7 @@ ut
 Ol
 wX
 xZ
-zc
+rS
 Al
 Ob
 Cc
