@@ -150,7 +150,7 @@
 	name = "SCG Marshal"
 	shoes = /obj/item/clothing/shoes/jackboots
 	uniform = /obj/item/clothing/under/rank/security/navyblue
-	suit = /obj/item/clothing/suit/armor/vest/solgov
+	suit = /obj/item/clothing/suit/armor/pcarrier/light/sol
 	l_ear = /obj/item/device/radio/headset/headset_sec
 	belt = /obj/item/weapon/storage/belt/security/marshal
 	l_pocket = /obj/item/clothing/accessory/holster/thigh

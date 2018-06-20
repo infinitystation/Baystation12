@@ -68,32 +68,3 @@
 
 /obj/item/weapon/gun/energy/pulse_rifle/destroyer/attack_self(mob/living/user as mob)
 	to_chat(user, "<span class='warning'>[src.name] has three settings, and they are all DESTROY.</span>")
-
-/obj/item/weapon/gun/energy/pulse_rifle/bogani
-	name = "pulsar cannon"
-	desc = "An alien weapon never before seen by the likes of your species."
-	slot_flags = SLOT_BELT|SLOT_BACK
-	icon = 'icons/obj/infinity_guns.dmi'
-	icon_state = "lightalienrifle"
-	item_state = "lightalienrifle"
-	wielded_item_state = "lightalienrifle-wielded"
-	item_icons = list(
-		slot_r_hand_str = 'icons/mob/infinity/misc.dmi',
-		slot_l_hand_str = 'icons/mob/infinity/misctwo.dmi',
-		)
-	w_class = ITEM_SIZE_HUGE
-	force = 10
-	self_recharge = 1
-	projectile_type = /obj/item/projectile/beam/pulse/bogani
-	one_hand_penalty = 1
-	burst = 1
-	move_delay = 1
-	burst_delay = 2
-	max_shots = 30
-	icon_rounder = 25
-
-	firemodes = list(
-		list(mode_name="semiauto",       projectile_type = /obj/item/projectile/beam/pulse/bogani, burst=1,    fire_delay=0,    move_delay=null, one_hand_penalty=1, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-pulse bursts", projectile_type = /obj/item/projectile/beam/pulse/bogani, burst=3,    fire_delay=null, move_delay=2,    one_hand_penalty=3, burst_accuracy=list(0,-1,-2), dispersion=list(0.0, 0.5, 0.8)),
-		list(mode_name="shock",          projectile_type = /obj/item/projectile/beam/stun,         burst=1,    fire_delay=6,    move_delay=null, one_hand_penalty=1, burst_accuracy=null, dispersion=null),
-		)

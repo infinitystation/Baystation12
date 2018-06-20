@@ -59,7 +59,6 @@
 							msg += " <A HREF='?_src_=holder;adminchecklaws=\ref[mob]'>(CL)</A>"
 						msg += "</b> "
 						continue
-		msg += "[original_word] "
 
 	return msg
 

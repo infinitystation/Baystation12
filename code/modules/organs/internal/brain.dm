@@ -117,11 +117,17 @@
 
 	return 1
 
+/obj/item/organ/internal/brain/can_recover()
+	return ~status & ORGAN_DEAD
+
 /obj/item/organ/internal/brain/slime
 	name = "slime core"
 	desc = "A complex, organic knot of jelly and crystalline particles."
 	icon = 'icons/mob/slimes.dmi'
 	icon_state = "green slime extract"
+
+/obj/item/organ/internal/brain/slime/can_recover()
+	return 0
 
 /obj/item/organ/internal/brain/golem
 	name = "chem"
@@ -129,6 +135,14 @@
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "scroll"
 
+/obj/item/organ/internal/brain/golem/can_recover()
+	return 0
+
+/obj/item/organ/internal/brain/starlight
+	name = "essence of fire"
+	desc = "A fancy name for ash. Still, it does look a bit different from the regular stuff."
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "ash"
 
 /obj/item/organ/internal/brain/proc/get_current_damage_threshold()
 	return round(damage / damage_threshold_value)
@@ -140,7 +154,12 @@
 	if(owner)
 		if(damage > max_damage / 2 && healed_threshold)
 			spawn()
-				alert(owner, "Ваш мозг серьезно поврежден! Вы не помните событий, из-за которых получили данную травму.", "Brain Damaged")
+				to_chat(owner, "<span class = 'notice' font size='10'><B>Where am I...?</B></span>")
+				sleep(5 SECONDS)
+				to_chat(owner, "<span class = 'notice' font size='10'><B>What's going on...?</B></span>")
+				sleep(10 SECONDS)
+				to_chat(owner, "<span class = 'notice' font size='10'><B>What happened...?</B></span>")
+				alert(owner, "You have taken massive brain damage! You will not be able to remember the events leading up to your injury.", "Brain Damaged")
 			healed_threshold = 0
 
 		if(damage < (max_damage / 4))
@@ -197,6 +216,23 @@
 					if(prob(damprob))
 						take_damage(1)
 	..()
+
+/obj/item/organ/internal/brain/take_damage(var/damage)
+	set waitfor = 0
+	..()
+	if(damage >= 10) //This probably won't be triggered by oxyloss or mercury. Probably.
+		var/damage_secondary = damage * 0.20
+		owner.flash_eyes()
+		owner.eye_blurry += damage_secondary
+		owner.confused += damage_secondary * 2
+		owner.Paralyse(damage_secondary)
+		owner.Weaken(round(damage, 1))
+		if(prob(30))
+			addtimer(CALLBACK(src, .proc/brain_damage_callback, damage), rand(6, 20) SECONDS, TIMER_UNIQUE)
+
+/obj/item/organ/internal/brain/proc/brain_damage_callback(var/damage) //Confuse them as a somewhat uncommon aftershock. Side note: Only here so a spawn isn't used. Also, for the sake of a unique timer.
+	to_chat(owner, "<span class = 'notice' font size='10'><B>I can't remember which way is forward...</B></span>")
+	owner.confused += damage
 
 /obj/item/organ/internal/brain/proc/handle_disabilities()
 	if(owner.stat)

@@ -652,9 +652,8 @@
 /datum/shuttle/autodock/overmap/aquila
 	name = "Aquila"
 	move_time = 60
-	shuttle_area = list(/area/aquila/cockpit, /area/aquila/engineering,
-	/area/aquila/storage, /area/aquila/medical, /area/aquila/troops,
-	/area/aquila/crew, /area/aquila/airlock)
+	shuttle_area = list(/area/aquila/cockpit, /area/aquila/maintenance, /area/aquila/engineering, /area/aquila/secure_storage, /area/aquila/passenger,
+	/area/aquila/mess, /area/aquila/storage, /area/aquila/medical, /area/aquila/troops, /area/aquila/head, /area/aquila/crew, /area/aquila/airlock)
 	current_location = "nav_hangar_aquila"
 	landmark_transition = "nav_transit_aquila"
 	dock_target = "aquila_shuttle"
