@@ -6,6 +6,7 @@ SUBSYSTEM_DEF(stickyban)
 	var/list/cache = list()
 
 /datum/controller/subsystem/stickyban/Initialize(timeofday)
+	..(timeofday)
 	var/list/bannedkeys = world.GetConfig("ban")
 	//sanitize the sticky ban list
 	for (var/bannedkey in bannedkeys)
