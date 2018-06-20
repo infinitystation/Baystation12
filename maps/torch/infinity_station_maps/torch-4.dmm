@@ -19073,6 +19073,9 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/effect/floor_decal/industrial/outline/grey,
+/obj/item/weapon/gun/energy/gun/secure,
+/obj/item/weapon/gun/energy/gun/secure,
+/obj/item/weapon/gun/energy/gun/secure,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/command/armoury/tactical)
 "aDi" = (
@@ -19100,9 +19103,9 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/weapon/gun/energy/secure/laser,
-/obj/item/weapon/gun/energy/secure/laser,
-/obj/item/weapon/gun/energy/secure/laser,
+/obj/item/weapon/gun/energy/laser/secure,
+/obj/item/weapon/gun/energy/laser/secure,
+/obj/item/weapon/gun/energy/laser/secure,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/command/armoury/tactical)
 "aDk" = (
