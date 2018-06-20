@@ -165,6 +165,28 @@
 	flashlight_max_bright = 0.5
 	flashlight_outer_range = 5
 
+/obj/item/device/flashlight/lantern
+    name = "lantern"
+    desc = "A mining lantern."
+    icon = 'icons/obj/lighting.dmi'
+    icon_state = "lantern"
+    item_icons = list(slot_l_hand_str = 'icons/mob/onmob/items/lantern_l.dmi', slot_r_hand_str = 'icons/mob/onmob/items/lantern_r.dmi')
+    item_state = "lantern"
+    force = 10
+    attack_verb = list ("bludgeoned", "bashed", "whack")
+    w_class = ITEM_SIZE_NORMAL
+    obj_flags = OBJ_FLAG_CONDUCTIBLE
+    slot_flags = SLOT_BELT
+    matter = list(DEFAULT_WALL_MATERIAL = 200,"glass" = 100)
+    flashlight_outer_range = 5
+
+/obj/item/device/flashlight/lantern/update_icon()
+    ..()
+    if(on)
+        item_state = "lantern-on"
+    else
+        item_state = "lantern"
+
 /obj/item/device/flashlight/drone
 	name = "low-power flashlight"
 	desc = "A miniature lamp, that might be used by small robots."
