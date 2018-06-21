@@ -59,6 +59,7 @@
 							msg += " <A HREF='?_src_=holder;adminchecklaws=\ref[mob]'>(CL)</A>"
 						msg += "</b> "
 						continue
+		msg += "[original_word] "
 
 	return msg
 
@@ -77,7 +78,7 @@
 	//clean the input msg
 	if(!msg)
 		return
-	msg = sanitize(msg)
+	msg = sanitize_a0(msg)
 	if(!msg)
 		return
 	var/original_msg = msg
