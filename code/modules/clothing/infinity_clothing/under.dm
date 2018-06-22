@@ -26,5 +26,6 @@
 	desc = "How... minimalist."
 	icon_state = "gear_harness"
 	worn_state = null 
+	icon_override = "invisible"
 	species_restricted = null
 	body_parts_covered = 0
