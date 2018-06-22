@@ -9,7 +9,7 @@
 	name = "pile ripper"
 	desc = "This machine rips everything in front of it apart."
 	icon = 'icons/obj/scrap/recycling.dmi'
-	icon_state = "grinder-b0"
+	icon_state = "grinder-o0"
 	layer = MOB_LAYER+1 // Overhead
 	anchored = 1
 	density = 1
@@ -17,7 +17,7 @@
 	idle_power_usage = 300
 
 	var/safety_mode = 0 // Temporality stops the machine if it detects a mob
-	var/icon_name = "grinder-b"
+	var/icon_name = "grinder-o"
 	var/blood = 0
 	var/rating = 1
 	var/last_ripped = 0

@@ -430,7 +430,7 @@ var/list/name_to_material
 	stack_origin_tech = list(TECH_MATERIAL = 4)
 	icon_base = "metal"
 	door_icon_base = "metal"
-	icon_colour = "#d1e6e3"
+	icon_colour = COLOR_TITANIUM
 	icon_reinf = "reinf_over"
 
 /material/plasteel/ocp

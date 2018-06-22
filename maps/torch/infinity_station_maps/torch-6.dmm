@@ -1128,6 +1128,29 @@
 	name = "carpet"
 	},
 /area/syndicate_mothership/raider_base)
+"acL" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1380;
+	icon_state = "closed";
+	id_tag = "admin_shuttle_hatch";
+	locked = 1;
+	name = "Shuttle Hatch";
+	req_access = list(13)
+	},
+/turf/simulated/floor/plating,
+/area/shuttle/administration/centcom)
+"acM" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1380;
+	icon_state = "closed";
+	id_tag = "admin_shuttle_hatch";
+	locked = 1;
+	name = "Shuttle Hatch";
+	req_access = list(13)
+	},
+/obj/effect/shuttle_landmark/admin/start,
+/turf/simulated/floor/plating,
+/area/shuttle/administration/centcom)
 "acN" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/floor{
@@ -2297,9 +2320,6 @@
 /area/shuttle/administration/centcom)
 "afr" = (
 /obj/machinery/optable,
-/obj/machinery/oxygen_pump/anesthetic{
-	pixel_y = -32
-	},
 /obj/effect/floor_decal/corner/pink/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/administration/centcom)
@@ -2444,26 +2464,29 @@
 "afJ" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1380;
-	icon_state = "door_locked";
-	id_tag = "admin_shuttle_hatch";
+	icon_state = "closed";
+	id_tag = "specops_shuttle_fore_hatch";
 	locked = 1;
-	name = "Shuttle Hatch";
+	name = "Forward Docking Hatch";
 	req_access = list(13)
 	},
-/turf/simulated/floor/plating,
-/area/shuttle/administration/centcom)
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/shuttle/specops/centcom)
 "afK" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1380;
-	icon_state = "door_locked";
-	id_tag = "admin_shuttle_hatch";
+	icon_state = "closed";
+	id_tag = "specops_shuttle_cent_berth_hatch";
 	locked = 1;
-	name = "Shuttle Hatch";
+	name = "Port Docking Hatch";
 	req_access = list(13)
 	},
-/obj/effect/shuttle_landmark/admin/start,
-/turf/simulated/floor/plating,
-/area/shuttle/administration/centcom)
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
 "afL" = (
 /obj/structure/bed,
 /obj/item/weapon/bedsheet,
@@ -2524,6 +2547,16 @@
 	name = "linoleum"
 	},
 /area/centcom/creed)
+"afS" = (
+/obj/machinery/door/airlock/external{
+	icon_state = "closed";
+	locked = 1
+	},
+/turf/unsimulated/floor{
+	icon_state = "plating";
+	name = "plating"
+	},
+/area/centcom/holding)
 "afT" = (
 /turf/unsimulated/floor{
 	icon_state = "lino";
@@ -3182,6 +3215,45 @@
 	icon_state = "diagonalWall3"
 	},
 /area/syndicate_station/start)
+"aho" = (
+/obj/effect/shuttle_landmark/specops/start,
+/obj/machinery/door/airlock/external{
+	frequency = 1380;
+	icon_state = "closed";
+	id_tag = "specops_shuttle_fore_hatch";
+	locked = 1;
+	name = "Forward Docking Hatch";
+	req_access = list(13)
+	},
+/turf/simulated/floor/airless,
+/area/shuttle/specops/centcom)
+"ahp" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1380;
+	glass = 1380;
+	icon_state = "closed";
+	id_tag = "centcom_shuttle_bay_door";
+	locked = 1;
+	name = "Transport Airlock"
+	},
+/turf/unsimulated/floor{
+	icon_state = "vault";
+	dir = 5
+	},
+/area/centcom/holding)
+"ahq" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/airlock/external{
+	frequency = 1380;
+	icon_state = "closed";
+	id_tag = "centcom_shuttle_hatch";
+	locked = 1;
+	name = "Shuttle Hatch";
+	req_access = list(13)
+	},
+/obj/effect/shuttle_landmark/ferry/start,
+/turf/simulated/floor/tiled,
+/area/shuttle/transport1/centcom)
 "ahr" = (
 /turf/space,
 /turf/simulated/shuttle/wall{
@@ -4687,6 +4759,17 @@
 	},
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
+"ako" = (
+/obj/effect/wallframe_spawn/reinforced/polarized/full,
+/obj/machinery/door/blast/regular{
+	density = 1;
+	icon_state = "pdoor1";
+	id = "ninjawindow";
+	name = "Blast Shutter";
+	opacity = 1
+	},
+/turf/simulated/floor/plating,
+/area/ninja_dojo/start)
 "akp" = (
 /obj/machinery/floodlight,
 /turf/simulated/floor/plating,
@@ -5038,6 +5121,17 @@
 	},
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
+"ala" = (
+/turf/simulated/floor/plating,
+/obj/structure/window/reinforced{
+	dir = 1;
+	health = 1e+006
+	},
+/turf/simulated/shuttle/wall{
+	dir = 1;
+	icon_state = "diagonalWall3"
+	},
+/area/supply/dock)
 "alb" = (
 /obj/structure/closet/crate/freezer/rations,
 /obj/item/clothing/mask/gas/cyborg,
@@ -5519,6 +5613,24 @@
 	icon_state = "steel"
 	},
 /area/centcom/control)
+"amb" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external{
+	frequency = 1380;
+	icon_state = "closed";
+	id_tag = "merchant_ship_interior";
+	locked = 1;
+	name = "Ship Exterior";
+	req_access = list(201)
+	},
+/obj/machinery/metal_detector{
+	on = 1;
+	req_access = list(201)
+	},
+/turf/simulated/floor/tiled,
+/area/shuttle/merchant/home)
 "amc" = (
 /obj/item/modular_computer/console/preset/medical{
 	dir = 8
@@ -5549,6 +5661,25 @@
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
+"amf" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1380;
+	icon_state = "closed";
+	id_tag = "merchant_ship_exterior";
+	locked = 1;
+	name = "Ship Exterior";
+	req_access = list(201)
+	},
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1380;
+	master_tag = "merchant_ship_dock";
+	pixel_x = -28;
+	pixel_y = 0
+	},
+/obj/effect/shuttle_landmark/merchant/start,
+/turf/simulated/floor/plating,
+/area/shuttle/merchant/home)
 "amg" = (
 /obj/item/device/radio/intercom/syndicate{
 	dir = 8;
@@ -5601,6 +5732,31 @@
 	dir = 8
 	},
 /area/syndicate_mothership)
+"amk" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1380;
+	icon_state = "closed";
+	id_tag = "merchant_station_exterior";
+	locked = 1;
+	name = "Station Exterior";
+	req_access = list(201)
+	},
+/turf/simulated/floor/plating,
+/area/merchant_station)
+"aml" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1380;
+	icon_state = "closed";
+	id_tag = "merchant_station_interior";
+	locked = 1;
+	name = "Station Exterior";
+	req_access = list(201)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/merchant_station)
 "amm" = (
 /obj/structure/table/rack,
 /obj/item/clothing/accessory/storage/brown_vest,
@@ -5654,8 +5810,16 @@
 /turf/simulated/floor/shuttle/white,
 /area/skipjack_station/start)
 "ams" = (
-/turf/simulated/floor/shuttle/white,
-/area/skipjack_station/start)
+/turf/simulated/floor/plating,
+/obj/structure/window/reinforced{
+	dir = 1;
+	health = 1e+006
+	},
+/turf/simulated/shuttle/wall{
+	dir = 8;
+	icon_state = "diagonalWall3"
+	},
+/area/supply/dock)
 "amt" = (
 /obj/structure/sink{
 	dir = 4;
@@ -6380,9 +6544,6 @@
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "anZ" = (
-/obj/machinery/oxygen_pump/anesthetic{
-	pixel_x = -32
-	},
 /turf/simulated/floor/shuttle/white,
 /area/skipjack_station/start)
 "aoa" = (
@@ -7387,7 +7548,7 @@
 	},
 /area/syndicate_mothership)
 "aqa" = (
-/obj/machinery/door/airlock/glass_engineering,
+/obj/machinery/door/airlock/glass/engineering,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -7409,7 +7570,7 @@
 	},
 /area/centcom/specops)
 "aqd" = (
-/obj/machinery/door/airlock/glass_command,
+/obj/machinery/door/airlock/glass/command,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -7476,7 +7637,7 @@
 	},
 /area/centcom/holding)
 "aql" = (
-/obj/machinery/door/airlock/glass_security{
+/obj/machinery/door/airlock/glass/security{
 	name = "Holding Cell";
 	req_access = list(2)
 	},
@@ -8081,7 +8242,7 @@
 	},
 /area/space)
 "arE" = (
-/obj/machinery/door/airlock/glass_security,
+/obj/machinery/door/airlock/glass/security,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -8272,32 +8433,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/specops/centcom)
-"arX" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
-	icon_state = "door_locked";
-	id_tag = "specops_shuttle_fore_hatch";
-	locked = 1;
-	name = "Forward Docking Hatch";
-	req_access = list(13)
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/shuttle/specops/centcom)
-"arY" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
-	icon_state = "door_locked";
-	id_tag = "specops_shuttle_cent_berth_hatch";
-	locked = 1;
-	name = "Port Docking Hatch";
-	req_access = list(13)
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom/specops)
 "arZ" = (
 /obj/structure/bed,
 /obj/item/weapon/bedsheet/orange,
@@ -8552,10 +8687,6 @@
 /area/centcom/holding)
 "asC" = (
 /obj/structure/table/standard,
-/obj/machinery/oxygen_pump/anesthetic{
-	pixel_x = -32;
-	pixel_y = 0
-	},
 /obj/item/stack/medical/advanced/bruise_pack,
 /obj/item/weapon/reagent_containers/syringe/antiviral,
 /obj/item/weapon/reagent_containers/syringe/antiviral,
@@ -8590,7 +8721,7 @@
 /turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "asI" = (
-/obj/machinery/door/airlock/glass_medical,
+/obj/machinery/door/airlock/glass/medical,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -8642,16 +8773,6 @@
 	},
 /turf/unsimulated/floor{
 	icon_state = "steel"
-	},
-/area/centcom/holding)
-"asM" = (
-/obj/machinery/door/airlock/external{
-	icon_state = "door_locked";
-	locked = 1
-	},
-/turf/unsimulated/floor{
-	icon_state = "plating";
-	name = "plating"
 	},
 /area/centcom/holding)
 "asN" = (
@@ -8790,18 +8911,6 @@
 	name = "Facility Access"
 	},
 /area/centcom/specops)
-"atc" = (
-/obj/effect/shuttle_landmark/specops/start,
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
-	icon_state = "door_locked";
-	id_tag = "specops_shuttle_fore_hatch";
-	locked = 1;
-	name = "Forward Docking Hatch";
-	req_access = list(13)
-	},
-/turf/simulated/floor/airless,
-/area/shuttle/specops/centcom)
 "atd" = (
 /obj/effect/floor_decal/carpet{
 	dir = 8
@@ -9220,7 +9329,7 @@
 /turf/unsimulated/wall,
 /area/centcom/holding)
 "atY" = (
-/obj/machinery/door/airlock/glass_medical{
+/obj/machinery/door/airlock/glass/medical{
 	name = "Arrivals Medbay"
 	},
 /turf/unsimulated/floor{
@@ -9230,20 +9339,6 @@
 "atZ" = (
 /obj/structure/sign/warning/airlock,
 /turf/unsimulated/wall,
-/area/centcom/holding)
-"aua" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
-	glass = 1380;
-	icon_state = "door_locked";
-	id_tag = "centcom_shuttle_bay_door";
-	locked = 1;
-	name = "Transport Airlock"
-	},
-/turf/unsimulated/floor{
-	icon_state = "vault";
-	dir = 5
-	},
 /area/centcom/holding)
 "aub" = (
 /obj/item/weapon/inflatable_duck,
@@ -9324,19 +9419,6 @@
 /turf/simulated/shuttle/wall{
 	icon_state = "wall3"
 	},
-/area/shuttle/transport1/centcom)
-"auk" = (
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
-	icon_state = "door_locked";
-	id_tag = "centcom_shuttle_hatch";
-	locked = 1;
-	name = "Shuttle Hatch";
-	req_access = list(13)
-	},
-/obj/effect/shuttle_landmark/ferry/start,
-/turf/simulated/floor/tiled,
 /area/shuttle/transport1/centcom)
 "aul" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -12878,60 +12960,6 @@
 	icon_state = "wood"
 	},
 /area/tdome/tdomeadmin)
-"aBP" = (
-/obj/machinery/door/blast/regular{
-	density = 1;
-	icon_state = "pdoor1";
-	id = "ninjawindow";
-	name = "Blast Shutter";
-	opacity = 1
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced/polarized/full,
-/obj/structure/window/reinforced/polarized,
-/obj/structure/window/reinforced/polarized{
-	dir = 1
-	},
-/obj/structure/window/reinforced/polarized{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/ninja_dojo/start)
-"aBQ" = (
-/obj/machinery/door/blast/regular{
-	density = 1;
-	icon_state = "pdoor1";
-	id = "ninjawindow";
-	name = "Blast Shutter";
-	opacity = 1
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced/polarized/full,
-/obj/structure/window/reinforced/polarized,
-/obj/structure/window/reinforced/polarized{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/ninja_dojo/start)
-"aBR" = (
-/obj/machinery/door/blast/regular{
-	density = 1;
-	icon_state = "pdoor1";
-	id = "ninjawindow";
-	name = "Blast Shutter";
-	opacity = 1
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced/polarized/full,
-/obj/structure/window/reinforced/polarized,
-/obj/structure/window/reinforced/polarized{
-	dir = 1
-	},
-/obj/structure/window/reinforced/polarized{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/ninja_dojo/start)
 "aBS" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 1
@@ -18671,10 +18699,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/oxygen_pump/anesthetic{
-	pixel_x = 32;
-	pixel_y = 0
-	},
 /turf/simulated/floor/shuttle/white,
 /area/rescue_base/start)
 "aOj" = (
@@ -19172,7 +19196,7 @@
 	},
 /area/shuttle/syndicate_elite/mothership)
 "aPw" = (
-/obj/machinery/door/airlock/glass_security{
+/obj/machinery/door/airlock/glass/security{
 	name = "Airlock";
 	req_access = list(150)
 	},
@@ -20252,17 +20276,6 @@
 "aRR" = (
 /turf/simulated/wall/r_wall,
 /area/merchant_station)
-"aRS" = (
-/turf/simulated/floor/plating,
-/obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
-	},
-/turf/simulated/shuttle/wall{
-	dir = 1;
-	icon_state = "diagonalWall3"
-	},
-/area/supply/dock)
 "aRT" = (
 /obj/structure/window/reinforced{
 	dir = 1;
@@ -20275,17 +20288,6 @@
 	},
 /obj/machinery/light/spot,
 /turf/simulated/floor/plating,
-/area/supply/dock)
-"aRU" = (
-/turf/simulated/floor/plating,
-/obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006
-	},
-/turf/simulated/shuttle/wall{
-	dir = 8;
-	icon_state = "diagonalWall3"
-	},
 /area/supply/dock)
 "aRV" = (
 /obj/machinery/computer/pod{
@@ -21560,7 +21562,7 @@
 /turf/simulated/floor/tiled,
 /area/merchant_station)
 "aUA" = (
-/obj/machinery/door/airlock/glass_command{
+/obj/machinery/door/airlock/glass/command{
 	name = "Office";
 	req_access = list(201)
 	},
@@ -23437,24 +23439,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/shuttle/merchant/home)
-"aYJ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
-	icon_state = "door_locked";
-	id_tag = "merchant_ship_interior";
-	locked = 1;
-	name = "Ship Exterior";
-	req_access = list(201)
-	},
-/obj/machinery/metal_detector{
-	on = 1;
-	req_access = list(201)
-	},
-/turf/simulated/floor/tiled,
-/area/shuttle/merchant/home)
 "aYK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
@@ -23922,25 +23906,6 @@
 /obj/item/weapon/hand_labeler,
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/merchant/home)
-"aZN" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
-	icon_state = "door_locked";
-	id_tag = "merchant_ship_exterior";
-	locked = 1;
-	name = "Ship Exterior";
-	req_access = list(201)
-	},
-/obj/machinery/access_button{
-	command = "cycle_exterior";
-	frequency = 1380;
-	master_tag = "merchant_ship_dock";
-	pixel_x = -28;
-	pixel_y = 0
-	},
-/obj/effect/shuttle_landmark/merchant/start,
-/turf/simulated/floor/plating,
-/area/shuttle/merchant/home)
 "aZO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -24098,17 +24063,6 @@
 	icon_state = "swall_c"
 	},
 /area/shuttle/merchant/home)
-"bah" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
-	icon_state = "door_locked";
-	id_tag = "merchant_station_exterior";
-	locked = 1;
-	name = "Station Exterior";
-	req_access = list(201)
-	},
-/turf/simulated/floor/plating,
-/area/merchant_station)
 "bai" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -24303,20 +24257,6 @@
 	dir = 4;
 	frequency = 1380;
 	id_tag = "merchant_station_vent"
-	},
-/turf/simulated/floor/plating,
-/area/merchant_station)
-"baG" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
-	icon_state = "door_locked";
-	id_tag = "merchant_station_interior";
-	locked = 1;
-	name = "Station Exterior";
-	req_access = list(201)
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/merchant_station)
@@ -32944,7 +32884,7 @@ akt
 agH
 alL
 amr
-ams
+anZ
 anw
 anZ
 aoz
@@ -33145,9 +33085,9 @@ ajA
 agH
 agH
 alM
-ams
+anZ
 amT
-ams
+anZ
 aoa
 aoA
 agH
@@ -33892,7 +33832,7 @@ aPq
 aPq
 aPq
 aPq
-aRS
+ala
 aOP
 aOG
 aOu
@@ -34296,7 +34236,7 @@ aPq
 aPq
 aPq
 aPq
-aRU
+ams
 aOP
 aOG
 aOu
@@ -38181,7 +38121,7 @@ aaV
 acR
 aeX
 aft
-afJ
+acL
 aan
 afV
 agd
@@ -38383,7 +38323,7 @@ aaV
 aaV
 aeX
 afu
-afK
+acM
 aan
 afV
 age
@@ -40637,7 +40577,7 @@ arq
 arq
 arq
 asR
-atc
+aho
 ath
 ath
 apj
@@ -41036,8 +40976,8 @@ aqG
 aqG
 aqG
 aqG
-arX
-arX
+afJ
+afJ
 aqG
 aqG
 asS
@@ -41238,8 +41178,8 @@ ajg
 ajg
 ajg
 afV
-arY
-arY
+afK
+afK
 afV
 afV
 aab
@@ -47705,7 +47645,7 @@ aab
 aab
 aab
 aab
-asM
+afS
 aph
 aph
 aqm
@@ -47713,8 +47653,8 @@ aab
 aqm
 aph
 aph
-aua
-auk
+ahp
+ahq
 auw
 auw
 auW
@@ -58866,7 +58806,7 @@ aBq
 aBq
 aBq
 aBE
-aBP
+ako
 azv
 aAm
 aaa
@@ -59068,7 +59008,7 @@ aBr
 aBq
 aBB
 aBF
-aBQ
+ako
 azv
 azv
 aaa
@@ -59270,7 +59210,7 @@ aBq
 aBq
 aBC
 aBG
-aBR
+ako
 azv
 azv
 aaa
@@ -62990,7 +62930,7 @@ aab
 aWP
 aXf
 aXm
-aYJ
+amb
 aXm
 aXf
 aWJ
@@ -63396,8 +63336,8 @@ aWK
 aYb
 aYL
 aZi
-aZN
-bah
+amf
+amk
 baE
 aSZ
 aVl
@@ -63802,7 +63742,7 @@ cYQ
 aYd
 aVQ
 aQc
-baG
+aml
 aQc
 aVl
 aQc

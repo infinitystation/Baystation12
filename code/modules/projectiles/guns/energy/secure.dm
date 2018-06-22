@@ -67,7 +67,7 @@
 	use_external_power = 1
 	one_hand_penalty = 0
 
-/obj/item/weapon/gun/energy/secure/laser/mounted/New()
+/obj/item/weapon/gun/energy/laser/secure/mounted/New()
 	var/mob/borg = get_holder_of_type(src, /mob/living/silicon/robot)
 	if(!borg)
 		CRASH("Invalid spawn location.")

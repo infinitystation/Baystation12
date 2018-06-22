@@ -16,7 +16,7 @@
 	if(dir & NORTH)
 		pixel_y = -32
 	else if(dir & SOUTH)
-		pixel_y = 32
+		pixel_y = 37
 	else if(dir & EAST)
 		pixel_x = -32
 	else if(dir & WEST)

@@ -105,7 +105,7 @@
 /turf/simulated/floor,
 /area/space)
 "aq" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/hatch/maintenance,
 /obj/machinery/door/blast/regular/open{
 	density = 0;
 	dir = 8;
@@ -247,7 +247,7 @@
 /turf/simulated/floor/tiled,
 /area/space)
 "aI" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/hatch/maintenance,
 /obj/machinery/door/blast/regular/open{
 	density = 0;
 	dir = 8;
@@ -1495,7 +1495,7 @@
 /turf/simulated/wall/r_wall,
 /area/space)
 "de" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/hatch/maintenance,
 /obj/machinery/door/blast/regular/open{
 	density = 0;
 	dir = 8;
@@ -1688,7 +1688,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/hatch/maintenance,
 /obj/machinery/door/blast/regular/open{
 	density = 0;
 	dir = 8;

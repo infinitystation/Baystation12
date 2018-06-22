@@ -12,7 +12,8 @@
 	density = 1
 	throwpass = 1
 	layer = TABLE_LAYER
-	color = COLOR_GUNMETAL
+	color = "#666666"
+//	color = COLOR_GUNMETAL //INFINITY: Because we aren't using it.
 
 	var/damage = 0
 	var/maxhealth = 10
@@ -124,10 +125,13 @@
 	return
 
 /obj/structure/wall_frame/titanium
-	color = COLOR_TITANIUM
+	color = "#96a5a0"
 
 /obj/structure/wall_frame/hull
 	color = COLOR_HULL
+
+/obj/structure/wall_frame/osmium
+	color = "#9bc6f2"
 
 /obj/structure/wall_frame/hull/Initialize()
 	. = ..()

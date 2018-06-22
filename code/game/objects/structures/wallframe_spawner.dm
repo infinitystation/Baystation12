@@ -111,6 +111,14 @@
 	icon_state = "pr-wingrille"
 	win_path = /obj/structure/window/phoronreinforced/full
 
+/obj/effect/wallframe_spawn/reinforced_phoron/titanium
+	name = "reinforced phoron titanium wall frame window spawner"
+	frame_path = /obj/structure/wall_frame/titanium
+
+/obj/effect/wallframe_spawn/reinforced_phoron/osmium
+	name = "reinforced phoron osmium wall frame window spawner"
+	frame_path = /obj/structure/wall_frame/osmium
+
 /obj/effect/wallframe_spawn/reinforced/polarized
 	name = "polarized wall frame window spawner"
 	color = "#444444"

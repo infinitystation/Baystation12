@@ -43,11 +43,13 @@ var/datum/robolimb/basic_robolimb
 	company = "Bishop Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_alt.dmi'
 	applies_to_part = list(BP_HEAD)
+	can_eat = 0
 
 /datum/robolimb/bishop/alt/monitor
 	company = "Bishop Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_monitor.dmi'
 	restricted_to = list(SPECIES_IPC)
+	can_eat = 0
 
 /datum/robolimb/hephaestus
 	company = "Hephaestus Industries"
@@ -131,6 +133,7 @@ var/datum/robolimb/basic_robolimb
 	brute_mod = 1.2
 	burn_mod = 1.2
 	speed_mod = -0.05
+	can_eat = 0
 
 /datum/robolimb/wardtakahashi/running
 	company = "Ward-Takahashi Running Prosthesis"
@@ -144,16 +147,19 @@ var/datum/robolimb/basic_robolimb
 	company = "Ward-Takahashi Econ."
 	desc = "A simple robotic limb with retro design. Seems rather stiff."
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_economy.dmi'
+	can_eat = 0
 
 /datum/robolimb/wardtakahashi/alt
 	company = "Ward-Takahashi Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_alt.dmi'
 	applies_to_part = list(BP_HEAD)
+	can_eat = 0
 
 /datum/robolimb/wardtakahashi/alt/monitor
 	company = "Ward-Takahashi Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_monitor.dmi'
 	restricted_to = list(SPECIES_IPC)
+	can_eat = 0
 
 /datum/robolimb/morpheus
 	company = "Morpheus"

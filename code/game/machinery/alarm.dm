@@ -306,6 +306,7 @@
 	return 0
 
 /obj/machinery/alarm/update_icon()
+
 	if(wiresexposed)
 		icon_state = "alarmx"
 		set_light(0)
