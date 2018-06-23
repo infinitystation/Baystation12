@@ -132,24 +132,30 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 				if(isMultimeter(I))
 					var/obj/item/device/multitool/multimeter/O = L.get_active_hand()
 					if(O.mode == METER_MESURING)
-						to_chat(L, "<span class='notice'>Закорачиваем контакты провода...</span>")
-						if(!do_after(L, 50, holder))
-							return
-						PulseColour(colour)
-						to_chat(L, "<span class='notice'>Провод закорочен (пропульсован).</span>")
+						if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
+							to_chat(L, "<span class='notice'>Подаем напряжение...</span>")
+							if(!do_after(L, 50, holder))
+								return
+							PulseColour(colour)
+							to_chat(L, "<span class='notice'>Провод пропульсован.</span>")
+						else
+							to_chat(L, "<span class='notice'>Вы не знаете с каким напряжением работает этот провод.</span>")
 					else
-						if(!do_after(L, 10, holder))
-							return
-						if(!IsColourCut(colour))
-							colour_function = unsolved_wires[colour]
-							solved_colour_function = SolveWireFunction(colour_function)
-							if(solved_colour_function != "")
-								to_chat(L, "the [colour] wire connected to [solved_colour_function]")
-								playsound(O.loc, 'sound/machines/mbeep.ogg', 30, 1)
+						if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
+							if(!do_after(L, 10, holder))
+								return
+							if(!IsColourCut(colour))
+								colour_function = unsolved_wires[colour]
+								solved_colour_function = SolveWireFunction(colour_function)
+								if(solved_colour_function != "")
+									to_chat(L, "the [colour] wire connected to [solved_colour_function]")
+									playsound(O.loc, 'sound/machines/mbeep.ogg', 30, 1)
+								else
+									to_chat(L, "the [colour] wire not connected")
 							else
 								to_chat(L, "the [colour] wire not connected")
-						else
-							to_chat(L, "the [colour] wire not connected")
+						else 
+							to_chat(L, "<span class='notice'>Вы не умеете подключать мультиметр.</span>")
 				else if(isMultitool(I))
 					PulseColour(colour)
 				else
@@ -174,7 +180,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 			else if(href_list["check"])
 				if(isMultimeter(I))
 					var/obj/item/device/multitool/multimeter/O = L.get_active_hand()
-					if (L.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
+					if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
 						if(O.mode == METER_CHECKING)
 							to_chat(L, "<span class='notice'>Перебираем провода...</span>")
 							var/name_by_type = name_by_type()
