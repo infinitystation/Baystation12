@@ -174,27 +174,30 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 			else if(href_list["check"])
 				if(isMultimeter(I))
 					var/obj/item/device/multitool/multimeter/O = L.get_active_hand()
-					if(O.mode == METER_CHECKING)
-						to_chat(L, "<span class='notice'>Перебираем провода...</span>")
-						var/name_by_type = name_by_type()
-						to_chat(L, "[name_by_type] wires:")
-						for(var/colour in src.wires)
-							if(unsolved_wires[colour])
-								if(!do_after(L, 10, holder))
-									return
-								if(!IsColourCut(colour))
-									colour_function = unsolved_wires[colour]
-									solved_colour_function = SolveWireFunction(colour_function)
-									if(solved_colour_function != "")
-										to_chat(L, "the [colour] wire connected to [solved_colour_function]")
-										playsound(O.loc, 'sound/machines/mbeep.ogg', 30, 1)
+					if (L.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
+						if(O.mode == METER_CHECKING)
+							to_chat(L, "<span class='notice'>Перебираем провода...</span>")
+							var/name_by_type = name_by_type()
+							to_chat(L, "[name_by_type] wires:")
+							for(var/colour in src.wires)
+								if(unsolved_wires[colour])
+									if(!do_after(L, 10, holder))
+										return
+									if(!IsColourCut(colour))
+										colour_function = unsolved_wires[colour]
+										solved_colour_function = SolveWireFunction(colour_function)
+										if(solved_colour_function != "")
+											to_chat(L, "the [colour] wire connected to [solved_colour_function]")
+											playsound(O.loc, 'sound/machines/mbeep.ogg', 30, 1)
+										else
+											to_chat(L, "the [colour] wire not connected")
 									else
 										to_chat(L, "the [colour] wire not connected")
-								else
-									to_chat(L, "the [colour] wire not connected")
-						//to_chat(L, "<span class='notice'>[all_solved_wires[holder_type]]</span>")
-					else
-						to_chat(L, "<span class='notice'>Переключите мультиметр в режим прозвонки.</span>")
+							//to_chat(L, "<span class='notice'>[all_solved_wires[holder_type]]</span>")
+						else
+							to_chat(L, "<span class='notice'>Переключите мультиметр в режим прозвонки.</span>")
+					else 
+						to_chat(L, "<span class='notice'>Вы не знаете как с этим работать.</span>")
 				else
 					to_chat(L, "<span class='warning'>Вам нужен мультиметр.</span>")
 
