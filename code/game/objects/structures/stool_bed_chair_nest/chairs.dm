@@ -223,3 +223,12 @@
 	icon_state = "rschair_preview"
 	base_icon = "rschair"
 	material_alteration = MATERIAL_ALTERATION_NONE
+
+/obj/structure/bed/chair/shuttle
+	name = "shuttle seat"
+	desc = "A comfortable, secure seat. It has a sturdy-looking buckling system for smoother flights."
+	base_icon = "shuttle_chair"
+	icon_state = "shuttle_chair_preview"
+
+/obj/structure/bed/chair/shuttle/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","black")

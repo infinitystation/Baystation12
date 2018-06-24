@@ -124,6 +124,16 @@
 	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/gun/projectile/shotgun/magazine
 
+/datum/uplink_item/item/visible_weapons/beretta
+	name = "9mm Pistol"
+	item_cost = 40
+	path = /obj/item/weapon/gun/projectile/beretta
+
+/datum/uplink_item/item/visible_weapons/detective_revolver
+	name = "Holdout Revolver"
+	item_cost = 38
+	path = /obj/item/weapon/gun/projectile/revolver/detective
+
 /datum/uplink_item/item/visible_weapons/pulserifle
 	name = "Pulse Rifle"
 	item_cost = 68
