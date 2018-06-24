@@ -6665,9 +6665,9 @@
 	dir = 4
 	},
 /obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -23;
-	pixel_y = 0
+	dir = 2;
+	pixel_x = 0;
+	pixel_y = 28
 	},
 /turf/simulated/floor/tiled,
 /area/security/brig)
@@ -14369,7 +14369,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/security{
 	id_tag = "Forensics";
-	name = "Evidence Storage";
+	name = "Forensics";
 	req_access = list(4);
 	secured_wires = 1
 	},
