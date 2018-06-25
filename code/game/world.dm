@@ -110,7 +110,7 @@
 
 	if(config.generate_map)
 		GLOB.using_map.perform_map_generation()
-	GLOB.using_map.build_exoplanets()
+
 
 	// Create robolimbs for chargen.
 	populate_robolimb_list()
@@ -121,11 +121,6 @@
 	processScheduler.deferSetupFor(/datum/controller/process/ticker)
 	processScheduler.setup()
 	Master.Initialize(10, FALSE)
-
-#ifdef UNIT_TEST
-	spawn(1)
-		initialize_unit_tests()
-#endif
 
 #undef RECOMMENDED_VERSION
 

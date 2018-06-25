@@ -20,3 +20,12 @@
 	icon_override = 'icons/infinity_work.dmi'
 	icon_state = "ce_female_shorts"
 	worn_state = "ce_female_shorts"
+
+/obj/item/clothing/under/harness/invisible
+	name = "gear harness"
+	desc = "How... minimalist."
+	icon_state = "gear_harness"
+	worn_state = null 
+	icon_override = "invisible"
+	species_restricted = null
+	body_parts_covered = 0

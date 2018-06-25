@@ -326,7 +326,10 @@
 			if(O.mode != METER_CHECKING)
 				to_chat(user, "<span class='notice'>Переключите мультиметр.</span>")
 			else
-				src.interact(usr)
+				if (user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
+					src.interact(usr)
+				else
+					to_chat(user, "<span class='notice'>Вы не умеете работать с этим замком.</span>")
 		else
 			src.togglelock(user, W)
 	else

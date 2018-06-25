@@ -173,10 +173,6 @@ var/list/name_to_material
 /material/proc/build_windows(var/mob/living/user, var/obj/item/stack/used_stack)
 	return 0
 
-// Weapons handle applying a divisor for this value locally.
-/material/proc/get_blunt_damage()
-	return weight //todo
-
 // Return the matter comprising this material.
 /material/proc/get_matter()
 	var/list/temp_matter = list()
@@ -187,9 +183,20 @@ var/list/name_to_material
 		temp_matter[name] = SHEET_MATERIAL_AMOUNT
 	return temp_matter
 
+// Weapons handle applying a divisor for this value locally.
+/material/proc/get_blunt_damage()
+	return weight //todo
+
 // As above.
 /material/proc/get_edge_damage()
 	return hardness //todo
+
+/material/proc/get_attack_cooldown()
+	if(weight < 19)
+		return FAST_WEAPON_COOLDOWN
+	if(weight > 23)
+		return SLOW_WEAPON_COOLDOWN
+	return DEFAULT_WEAPON_COOLDOWN
 
 // Snowflakey, only checked for alien doors at the moment.
 /material/proc/can_open_material_door(var/mob/living/user)
@@ -425,7 +432,7 @@ var/list/name_to_material
 	explosion_resistance = 20
 	melting_point = 3000
 	hardness = 90
-	weight = 28
+	weight = 18
 	stack_type = /obj/item/stack/material/titanium
 	stack_origin_tech = list(TECH_MATERIAL = 4)
 	icon_base = "metal"
@@ -830,7 +837,7 @@ var/list/name_to_material
 	sheet_plural_name = "chunks"
 
 /material/aliumium/New()
-	icon_base = pick("jaggy","curvy")
+	icon_base = "metal"
 	icon_colour = rgb(rand(10,150),rand(10,150),rand(10,150))
 	explosion_resistance = rand(25,40)
 	brute_armor = rand(10,20)

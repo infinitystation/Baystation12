@@ -405,6 +405,9 @@
 	icon_closed = "hoodie"
 	min_cold_protection_temperature = T0C - 20
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi'
+		)
 
 /obj/item/clothing/suit/storage/toggle/hoodie/cti
 	name = "\improper CTI hoodie"
