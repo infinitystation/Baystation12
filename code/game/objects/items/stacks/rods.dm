@@ -6,7 +6,7 @@
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	w_class = ITEM_SIZE_LARGE
 	force = 9.0
-	throwforce = 15.0
+	throwforce = 5
 	throw_speed = 5
 	throw_range = 20
 	matter = list(DEFAULT_WALL_MATERIAL = 1875)
