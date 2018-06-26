@@ -5456,11 +5456,9 @@
 	dir = 5
 	},
 /obj/item/modular_computer/console/preset/security,
-/obj/machinery/requests_console{
-	announcementConsole = 1;
-	department = "Bridge";
-	departmentType = 5;
-	name = "Bridge RC";
+/obj/machinery/status_display{
+	density = 0;
+	layer = 4;
 	pixel_x = 0;
 	pixel_y = 32
 	},
@@ -6537,11 +6535,6 @@
 	dir = 8
 	},
 /obj/item/weapon/storage/box/donut,
-/obj/machinery/status_display{
-	density = 0;
-	layer = 4;
-	pixel_x = -32
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
 "kg" = (
@@ -9786,11 +9779,6 @@
 	},
 /obj/item/weapon/storage/toolbox/emergency,
 /obj/item/device/flashlight,
-/obj/machinery/status_display{
-	density = 0;
-	layer = 4;
-	pixel_x = -32
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
 "oz" = (
@@ -10772,8 +10760,10 @@
 /obj/machinery/computer/robotics{
 	dir = 1
 	},
-/obj/structure/fireaxecabinet{
-	dir = 1;
+/obj/machinery/status_display{
+	density = 0;
+	layer = 4;
+	pixel_x = 0;
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -10855,9 +10845,9 @@
 /obj/item/weapon/pen,
 /obj/item/weapon/pen/blue,
 /obj/item/weapon/pen/red,
-/obj/item/device/radio/intercom{
+/obj/structure/fireaxecabinet{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
@@ -10873,6 +10863,14 @@
 	pixel_y = -18
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Bridge";
+	departmentType = 5;
+	name = "Bridge RC";
+	pixel_x = -28;
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge/meeting_room)
 "qr" = (

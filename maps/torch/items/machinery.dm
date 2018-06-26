@@ -48,7 +48,7 @@
 	model_text = "Exploration"
 	req_access = list(access_explorer)
 	departments = list("Exploration")
-	species = list(SPECIES_HUMAN,SPECIES_TAJARA,SPECIES_SKRELL,SPECIES_RESOMI)
+	species = list(SPECIES_HUMAN,SPECIES_TAJARA,SPECIES_SKRELL,SPECIES_RESOMI,SPECIES_UNATHI)
 
 /obj/machinery/suit_storage_unit/explorer
 	name = "Exploration Voidsuit Storage Unit"
