@@ -92,4 +92,5 @@ denmag - tajaran
 solark - tajaran
 arhod - tajaran
 corporateoverlord - tajaran
+taushai - tajaran
 redknighthero - bionic
