@@ -2992,6 +2992,34 @@
 /obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/forestarboard)
+"gz" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 1;
+	icon_state = "borderfloor_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	tag = "icon-bordercolor (NORTH)";
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 4;
+	icon_state = "borderfloorcorner2_white";
+	tag = ""
+	},
+/obj/effect/floor_decal/corner/lightgrey/bordercorner2{
+	tag = "icon-bordercolorcorner2 (EAST)";
+	icon_state = "bordercolorcorner2";
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet{
+	dir = 4;
+	pixel_x = 0;
+	pixel_y = 29
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/fourthdeck/aft)
 "gB" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -3420,6 +3448,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/forestarboard)
+"hv" = (
+/obj/machinery/status_display,
+/turf/simulated/wall,
+/area/crew_quarters/laundry)
 "hw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 6
@@ -6956,10 +6988,6 @@
 	c_tag = "Expedition - Prep";
 	dir = 1
 	},
-/obj/item/device/radio/intercom{
-	dir = 1;
-	pixel_y = -20
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
@@ -7509,7 +7537,7 @@
 /area/storage/primary)
 "pi" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/fourthdeck/fore)
 "pj" = (
 /obj/structure/stairs/east,
@@ -7666,15 +7694,12 @@
 /obj/machinery/disposal,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/disposalpipe/trunk,
-/obj/structure/closet/hydrant{
-	pixel_y = 32
+/obj/machinery/firealarm{
+	dir = 2;
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
-"pC" = (
-/obj/structure/sign/warning/high_voltage,
-/turf/simulated/wall,
-/area/quartermaster/expedition)
 "pD" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/pipe/tank/air{
@@ -8437,16 +8462,6 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	tag = ""
-	},
-/obj/effect/floor_decal/corner/lightgrey/bordercorner2{
-	tag = "icon-bordercolorcorner2 (EAST)";
-	icon_state = "bordercolorcorner2";
-	dir = 4
-	},
 /obj/structure/sign/ecplaque{
 	pixel_y = 30
 	},
@@ -8529,10 +8544,6 @@
 /area/hallway/primary/fourthdeck/aft)
 "qP" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/machinery/firealarm{
-	dir = 2;
-	pixel_y = 24
-	},
 /obj/structure/closet/emcloset,
 /obj/machinery/camera/network/fourth_deck{
 	c_tag = "Fourth Deck Hallway - Hangar Deck Observation";
@@ -9124,8 +9135,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/center)
 "rR" = (
 /obj/structure/cable/green{
@@ -9185,8 +9195,8 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/structure/catwalk/plated,
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/center)
 "rV" = (
 /obj/structure/table/rack{
@@ -9226,8 +9236,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/structure/catwalk/plated,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/center)
 "rX" = (
 /obj/structure/cable/green{
@@ -9261,8 +9270,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/structure/catwalk/plated,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/center)
 "rZ" = (
 /obj/structure/cable/green{
@@ -9359,8 +9367,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/structure/catwalk/plated,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
 "sf" = (
 /obj/structure/cable/green{
@@ -9394,24 +9401,7 @@
 /obj/structure/disposalpipe/junction{
 	dir = 8
 	},
-/obj/structure/catwalk/plated,
-/turf/simulated/floor/plating,
-/area/hallway/primary/fourthdeck/aft)
-"si" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/turf/simulated/floor/tiled/monotile,
+/turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
 "sj" = (
 /obj/structure/cable/green{
@@ -9429,7 +9419,6 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/fourthdeck/aft)
 "sk" = (
-/obj/item/device/radio/beacon,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -10507,36 +10496,23 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/catwalk/plated,
-/turf/simulated/floor/plating,
+/obj/item/device/radio/beacon,
+/turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
 "tK" = (
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_x = 0;
-	pixel_y = -24
-	},
 /obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/brown/border,
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	tag = ""
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner2{
-	tag = "icon-bordercolorcorner2 (NORTHWEST)";
-	icon_state = "bordercolorcorner2";
-	dir = 9
-	},
-/turf/simulated/floor/tiled,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/fourthdeck/aft)
 "tM" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/lightgrey/border,
-/obj/effect/floor_decal/borderfloor/corner2,
-/obj/effect/floor_decal/corner/lightgrey/bordercorner2,
-/obj/machinery/light,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
 "tN" = (
@@ -16400,6 +16376,14 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/storage)
+"EQ" = (
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/lightgrey/border,
+/obj/effect/floor_decal/borderfloor/corner2,
+/obj/effect/floor_decal/corner/lightgrey/bordercorner2,
+/obj/machinery/light,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/fourthdeck/aft)
 "ES" = (
 /turf/simulated/wall,
 /area/quartermaster/office)
@@ -18266,8 +18250,8 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/turf/simulated/floor/tiled,
+/obj/structure/catwalk/plated,
+/turf/simulated/floor/plating,
 /area/hallway/primary/fourthdeck/aft)
 "JZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -18385,6 +18369,20 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/deckofficer)
+"Ki" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/fourthdeck/aft)
 "Kj" = (
 /obj/structure/flora/pottedplant/minitree,
 /obj/structure/cable/green{
@@ -18642,34 +18640,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
-"Lv" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 1;
-	icon_state = "borderfloor_white";
-	tag = ""
-	},
-/obj/effect/floor_decal/corner/brown/border{
-	tag = "icon-bordercolor (NORTH)";
-	icon_state = "bordercolor";
-	dir = 1
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	tag = ""
-	},
-/obj/effect/floor_decal/corner/brown/bordercorner2{
-	tag = "icon-bordercolorcorner2 (NORTH)";
-	icon_state = "bordercolorcorner2";
-	dir = 1
-	},
-/obj/structure/extinguisher_cabinet{
-	dir = 4;
-	pixel_x = 0;
-	pixel_y = 29
-	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/fourthdeck/aft)
 "Lw" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -20364,6 +20334,22 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/quartermaster/hangar)
+"Sm" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
+/area/hallway/primary/fourthdeck/aft)
 "Sn" = (
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
@@ -20993,8 +20979,7 @@
 	name = "Security Checkpoint";
 	sortType = "Security Checkpoint"
 	},
-/obj/structure/catwalk/plated,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/center)
 "Vz" = (
 /turf/simulated/floor/plating,
@@ -21029,6 +21014,10 @@
 /obj/item/weapon/storage/ore,
 /obj/machinery/light/spot{
 	dir = 1
+	},
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -20
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/expedition)
@@ -21871,6 +21860,20 @@
 /obj/random/maintenance/solgov,
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/forestarboard)
+"ZW" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/fourthdeck/aft)
 "ZX" = (
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/expedition/eva)
@@ -38939,7 +38942,7 @@ lR
 lR
 na
 lR
-lR
+hv
 qu
 ZJ
 tD
@@ -40153,7 +40156,7 @@ ne
 oq
 NT
 qH
-Rl
+Ki
 tO
 ve
 wg
@@ -40556,8 +40559,8 @@ gX
 KF
 on
 Jg
-Lv
-Rl
+qK
+Sm
 tK
 ES
 wi
@@ -40757,10 +40760,10 @@ Jg
 Jg
 Jg
 Jg
-pC
-qK
-si
-qK
+Jg
+gz
+sj
+EQ
 Be
 Be
 wj
@@ -40961,7 +40964,7 @@ nc
 oo
 Kg
 qL
-sj
+ZW
 tM
 vh
 wk
