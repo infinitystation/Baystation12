@@ -18,3 +18,8 @@
 	..()
 	Scale(0.6, 0.6)
 	Translate(-6, -6)
+
+/obj/item/custkit/messith
+	name = "Messith customization kit"
+	input = /obj/item/weapon/gun/energy/gun/small/secure
+	output = /obj/item/weapon/gun/energy/gun/small/messith
