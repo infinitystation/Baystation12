@@ -22,6 +22,16 @@
 	animate(src, transform=turn(matrix(), intensity*shake_dir), pixel_x=init_px + 2*shake_dir, time=1)
 	animate(transform=null, pixel_x=init_px, time=6, easing=ELASTIC_EASING)
 
+/atom/proc/Scale(var/scale_x, var/scale_y)
+	var/matrix/M = matrix(transform)
+	M.Scale(scale_x, scale_y)             
+	animate(src, transform = M, time = 0)
+
+/atom/proc/Translate(var/scale_x, var/scale_y)
+	var/matrix/M = matrix(transform)
+	M.Translate(scale_x, scale_y)             
+	animate(src, transform = M, time = 0)
+
 //The X pixel offset of this matrix
 /matrix/proc/get_x_shift()
 	. = c
