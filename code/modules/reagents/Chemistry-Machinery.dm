@@ -511,7 +511,7 @@
 	if (!beaker || (beaker && beaker.reagents.total_volume >= beaker.reagents.maximum_volume))
 		return
 
-	hurt_hand(user)
+//	hurt_hand(user)
 	playsound(src.loc, 'sound/machines/blender.ogg', 50, 1)
 	inuse = 1
 
