@@ -116,6 +116,8 @@ var/list/spells = typesof(/spell) //needed for the badmin verb for now
 		if(!check_valid_targets(targets)) //make sure we HAVE something
 			break
 		if(cast_check(1,user, targets)) //we check again, otherwise you can choose a target and then wait for when you are no longer able to cast (I.E. Incapacitated) to use it.
+			if(!check_charge(skipcharge, user))
+				break
 			invocation(user, targets)
 			if(connected_god && !connected_god.take_charge(user, max(1, charge_max/10)))
 				break
