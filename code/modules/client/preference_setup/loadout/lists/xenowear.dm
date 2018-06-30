@@ -327,21 +327,23 @@
 	display_name = "(Resomi) sun lenses"
 	path = /obj/item/clothing/glasses/sunglasses/lenses
 	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_RESOMI)
 
 /datum/gear/eyes/resomi/lenses/sec
 	display_name = "(Resomi) sun sechud lenses"
 	path = /obj/item/clothing/glasses/sunglasses/sechud/lenses
-	sort_category = "Xenowear"
 
 /datum/gear/eyes/resomi/lenses/med
 	display_name = "(Resomi) sun medhud lenses"
 	path = /obj/item/clothing/glasses/hud/health/lenses
-	sort_category = "Xenowear"
 
 /datum/gear/accessory/resomi/mantle
 	display_name = "(Resomi) small mantle"
 	path = /obj/item/clothing/accessory/scarf/resomi
 	flags = GEAR_HAS_COLOR_SELECTION
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_RESOMI)
+
 
 /datum/gear/suit/resomi
 	display_name = "(Resomi) small coat"
