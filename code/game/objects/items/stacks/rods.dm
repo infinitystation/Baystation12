@@ -7,7 +7,7 @@
 	w_class = ITEM_SIZE_LARGE
 	force = 9.0
 	throwforce = 5
-	throw_speed = 5
+	throw_speed = 9
 	throw_range = 20
 	matter = list(DEFAULT_WALL_MATERIAL = 1875)
 	max_amount = 100

@@ -51,7 +51,7 @@
 		"cold"
 	)
 
-	blend_objects = list(/obj/machinery/door/firedoor, /obj/structure/wall_frame, /turf/unsimulated/wall, /obj/structure/window, /obj/machinery/door/firedoor, /obj/machinery/door/firedoor) // Objects which to blend with
+	blend_objects = list(/obj/machinery/door/firedoor, /obj/structure/wall_frame, /turf/simulated/wall, /obj/structure/window) // Objects which to blend with
 
 /obj/machinery/door/firedoor/Initialize()
 	. = ..()

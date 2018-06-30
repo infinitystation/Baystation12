@@ -170,3 +170,17 @@
 	sort_category = "Xenowear"
 	cost = 1
 	allowed_roles = list(ENG_ROLES, /datum/job/mining)
+
+/datum/gear/eyes/resomi/lenses/sec
+	display_name = "(Resomi) sun sechud lenses"
+	path = /obj/item/clothing/glasses/sunglasses/sechud/lenses
+	whitelisted = list(SPECIES_RESOMI)
+	sort_category = "Xenowear"
+	allowed_roles = list(SEC_ROLES)
+
+/datum/gear/eyes/resomi/lenses/med
+	display_name = "(Resomi) sun medhud lenses"
+	path = /obj/item/clothing/glasses/hud/health/lenses
+	whitelisted = list(SPECIES_RESOMI)
+	sort_category = "Xenowear"
+	allowed_roles = list(MED_ROLES)

@@ -26,24 +26,24 @@
 /obj/item/clothing/under/resomi/work_white
 	name = "small lightblue work smock"
 	desc = "A small white working suit of non-human proportions with colored lines on it and a white steel belt. On a small label reads: 'Twinne Corp. - feathers and style'. Really relaxing"
-	icon_state = "resomi_black_blue_worksuit"
+	icon_state = "resomi_white_blue_worksuit"
 
 /obj/item/clothing/under/resomi/work_white/red
 	name = "small lightred work smock"
 	desc = "A small white working suit of non-human proportions with colored lines on it and a white steel belt. On a small label reads: 'Twinne Corp. - feathers and style'. For maximum civilian security."
-	icon_state = "resomi_black_red_worksuit"
+	icon_state = "resomi_white_red_worksuit"
 
 /obj/item/clothing/under/resomi/work_white/purple
 	name = "small lightpurple work smock"
 	desc = "A small white working suit of non-human proportions with colored lines on it and a white steel belt. On a small label reads: 'Twinne Corp. - feathers and style'. So, where is your labcoat, assistant?"
-	icon_state = "resomi_black_purple_worksuit"
+	icon_state = "resomi_white_purple_worksuit"
 
 /obj/item/clothing/under/resomi/work_white/green
 	name = "small lightgreen work smock"
 	desc = "A small white working suit of non-human proportions with colored lines on it and a white steel belt. On a small label reads: 'Twinne Corp. - feathers and style'. Flowers will love you... You guess."
-	icon_state = "resomi_black_green_worksuit"
+	icon_state = "resomi_white_green_worksuit"
 
 /obj/item/clothing/under/resomi/work_white/orange
 	name = "small lightorange work smock"
 	desc = "A small white working suit of non-human proportions with colored lines on it and a white steel belt. On a small label reads: 'Twinne Corp. - feathers and style'. Don't forget about hardhat and gloves."
-	icon_state = "resomi_black_orange_worksuit"
+	icon_state = "resomi_white_orange_worksuit"

@@ -4,14 +4,9 @@
 	name = "beaded rod"
 	desc = "Just balls on a hard string. Happy new year, eh?"
 	icon = 'icons/obj/spectoys.dmi'
-	icon_state = null //see New()
+	icon_state = "beads"
 	force = 0
 	throwforce = 0
-
-/obj/item/weapon/spectoys/New() //don't make me cry, please ^^^
-	..()
-	icon_state = "beads"
-
 
 /obj/item/weapon/spectoys/vibrator
 	name = "vibrator"
@@ -104,7 +99,7 @@
 	desc = "Rubber fly swatter. Yes, you hope it`s fly swatter."
 	icon_state = "stack"
 	item_state = "nullrod" //we realy need some sprite here
-	var/agonyforce = 5
+	var/agonyforce = 1
 
 /obj/item/weapon/spectoys/stack/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
 	if(isrobot(target))
