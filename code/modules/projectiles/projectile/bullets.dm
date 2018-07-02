@@ -132,8 +132,8 @@
 
 /obj/item/projectile/bullet/pistol/tiny/fast
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 10 
-	armor_penetration = 20	
+	damage = 12 
+	armor_penetration = 25	
 
 /obj/item/projectile/bullet/smg/uni46x30mm
 	damage = 18
@@ -183,7 +183,7 @@
 
 /obj/item/projectile/bullet/pistol/strong/revolver
 	damage = 40 
-	armor_penetration = 20
+	armor_penetration = 25
 
 /obj/item/projectile/bullet/pistol/strong/revolver/rubber 
 	name = "rubber bullet"
@@ -199,7 +199,7 @@
 /obj/item/projectile/bullet/pistol/strong 
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
 	damage = 50 
-	armor_penetration = 25
+	armor_penetration = 30
 
 /* shotgun projectiles */
 
@@ -239,7 +239,10 @@
 
 /* "Rifle" rounds */
 
+// .45-70 Gov.
+
 /obj/item/projectile/bullet/rifle
+	damage = 45
 	armor_penetration = 25
 	penetrating = 1
 
@@ -248,27 +251,37 @@
 /obj/item/projectile/bullet/rifle/a556
 	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
 	damage = 30
+	armor_penetration = 30
 
+/obj/item/projectile/bullet/rifle/a556ap
+	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
+	damage = 30
+	armor_penetration = 38
 // 7.62x39mm
 
 /obj/item/projectile/bullet/rifle/a762
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
 	damage = 35
-	armor_penetration = 30
+	armor_penetration = 27
+
+/obj/item/projectile/bullet/rifle/a762ap
+	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
+	damage = 35
+	armor_penetration = 43
 
 // 7,62x54mm R
 
 /obj/item/projectile/bullet/rifle/a762r
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
 	damage = 36
-	armor_penetration = 40
+	armor_penetration = 55
 
 // 12,7x55mm
 
 /obj/item/projectile/bullet/rifle/a12755 //this one has 10 ammo in magazine.
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
 	damage = 45 //12x55mm
-	armor_penetration = 50
+	armor_penetration = 60
 	penetrating = 2
 	penetration_modifier = 1.1
 
