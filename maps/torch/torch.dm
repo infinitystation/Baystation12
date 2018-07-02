@@ -33,6 +33,7 @@
 	#include "items/stamps.dm"
 	#include "items/uniform_vendor.dm"
 	#include "items/rigs.dm"
+	#include "items/solbanner.dm"
 
 	#include "items/clothing/clothing.dm"
 	#include "items/clothing/solgov-infinity.dm"
@@ -90,7 +91,6 @@
 	#include "../away/empty.dmm"
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
-	#include "../away/marooned/marooned.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"
 	#include "../away/blueriver/blueriver.dm"

@@ -7014,7 +7014,7 @@
 	c_tag = "Engine - Control";
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/engine_monitoring)
 "ol" = (
@@ -8489,7 +8489,7 @@
 	icon_state = "pipe-j2";
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/foyer)
 "qy" = (
@@ -8532,7 +8532,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/foyer)
 "qA" = (
@@ -8601,7 +8601,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -23;
@@ -8646,7 +8646,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/locker_room)
 "qF" = (
@@ -8664,7 +8664,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/locker_room)
 "qG" = (
@@ -8703,7 +8703,7 @@
 	name = "Engineering Bay";
 	sortType = "Engineering Bay"
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/locker_room)
 "qI" = (
@@ -8746,7 +8746,7 @@
 /obj/structure/closet/medical_wall/filled/engineering{
 	pixel_y = -30
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/hallway)
 "qK" = (
@@ -8787,7 +8787,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/hallway)
 "qM" = (
@@ -8836,7 +8836,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/hallway)
 "qP" = (
@@ -8852,7 +8852,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/hallway)
 "qQ" = (
@@ -8910,7 +8910,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/engine_monitoring)
 "qT" = (
@@ -9474,7 +9474,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/foyer)
 "rO" = (
@@ -9613,7 +9613,7 @@
 	dir = 1;
 	icon_state = "map"
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/engineering/hallway)
 "sc" = (

@@ -185,6 +185,11 @@
 	icon_state = "black1"
 	starts_with = list(/datum/reagent/tramadol/oxycodone = 5)
 
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/antirad
+	name = "autoinjector (anti-rad)"
+	icon_state = "yellow"
+	starts_with = list(/datum/reagent/hyronalin = 5)
+
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/mindbreaker
 	name = "autoinjector"
 	icon_state = "black1"

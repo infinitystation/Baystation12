@@ -14732,7 +14732,7 @@
 	c_tag = "First Deck Hallway - Observation Bubble Entrance";
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "awp" = (
@@ -14973,7 +14973,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "awQ" = (
@@ -15245,7 +15245,7 @@
 	name = "xeno_spawn";
 	pixel_x = -1
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "axo" = (
@@ -16281,7 +16281,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "ayN" = (
@@ -16322,7 +16322,7 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "ayP" = (
@@ -16349,7 +16349,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "ayR" = (
@@ -16374,7 +16374,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "ayS" = (
@@ -16489,7 +16489,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/effect/landmark/overmap_target/torch/second/hallway,
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "ayY" = (
@@ -16532,7 +16532,7 @@
 	icon_state = "pipe-j1";
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "aza" = (
@@ -16625,7 +16625,7 @@
 	icon_state = "pipe-j1";
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "azf" = (
@@ -16683,7 +16683,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "azi" = (
@@ -16723,7 +16723,7 @@
 	name = "Medical Equipment";
 	sortType = "Medical Equipment"
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "azk" = (
@@ -16802,7 +16802,7 @@
 	name = "Chemistry";
 	sortType = "Chemistry"
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "azo" = (
@@ -16892,7 +16892,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "azs" = (
@@ -16931,7 +16931,7 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "azu" = (
@@ -17912,7 +17912,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "aBe" = (
@@ -17955,7 +17955,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "aBk" = (
@@ -18253,7 +18253,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "aBK" = (
@@ -19315,7 +19315,7 @@
 	dir = 4;
 	pixel_x = -20
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "aDd" = (
@@ -32970,7 +32970,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "bEk" = (
@@ -34774,7 +34774,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "mtc" = (
@@ -35121,7 +35121,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -35254,7 +35254,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "oSC" = (
@@ -35530,7 +35530,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "qAx" = (
@@ -35931,7 +35931,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/structure/catwalk/plated,
+/obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "srL" = (

@@ -683,8 +683,6 @@
 			return global.playable_species;
 		if("point_source_descriptions")
 			return global.point_source_descriptions;
-		if("possible_cable_coil_colours")
-			return global.possible_cable_coil_colours;
 		if("possible_changeling_IDs")
 			return global.possible_changeling_IDs;
 		if("power_alarm")
@@ -1684,8 +1682,6 @@
 			global.playable_species=newval;
 		if("point_source_descriptions")
 			global.point_source_descriptions=newval;
-		if("possible_cable_coil_colours")
-			global.possible_cable_coil_colours=newval;
 		if("possible_changeling_IDs")
 			global.possible_changeling_IDs=newval;
 		if("power_alarm")
@@ -2343,7 +2339,6 @@
 	"plant_seed_sprites",
 	"playable_species",
 	"point_source_descriptions",
-	"possible_cable_coil_colours",
 	"possible_changeling_IDs",
 	"power_alarm",
 	"powerinstances",
