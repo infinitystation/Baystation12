@@ -172,7 +172,7 @@
 	fire_sound = 'sound/weapons/Taser.ogg'
 	check_armour = "energy"
 	sharp = 0 //not a laser
-	agony = 40
+	agony = 25
 	damage_type = STUN
 
 	muzzle_type = /obj/effect/projectile/stun/muzzle
@@ -181,13 +181,13 @@
 
 /obj/item/projectile/beam/stun/heavy
 	name = "heavy stun beam"
-	agony = 60
+	agony = 40
 
 /obj/item/projectile/beam/stun/shock
 	name = "shock beam"
-	damage_type = ELECTROCUTE
-	damage = 10
-	agony  = 5
+	damage_type = STUN
+	damage = 2
+	agony  = 35
 	fire_sound='sound/weapons/pulse.ogg'
 
 /obj/item/projectile/beam/stun/shock/heavy

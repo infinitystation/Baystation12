@@ -62,7 +62,7 @@
 	icon_state = "spark"
 	fire_sound = 'sound/weapons/Taser.ogg'
 	nodamage = 1
-	agony = 50
+	agony = 40
 	damage_type = PAIN //Damage will be handled on the MOB side, to prevent window shattering.
 	step_delay = 0.7
 
@@ -72,7 +72,7 @@
 /obj/item/projectile/energy/electrode/stunshot
 	nodamage = 0
 	damage = 15
-	agony = 70
+	agony = 60
 	damage_type = BURN
 	armor_penetration = 10
 
