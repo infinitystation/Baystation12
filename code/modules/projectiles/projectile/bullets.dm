@@ -125,7 +125,6 @@
 /obj/item/projectile/bullet/pistol
 	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
 	damage = 25 //9mm, .38, etc
-	armor_penetration = 13.5
 
 /obj/item/projectile/bullet/pistol/tiny
 	damage = 8 //.22, etc
@@ -152,7 +151,7 @@
 /obj/item/projectile/bullet/pistol/medium/smg
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
 	damage = 28 //10mm
-	armor_penetration = 18
+	penetration_modifier = 0.8
 
 /obj/item/projectile/bullet/pistol/medium/revolver
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
@@ -174,7 +173,6 @@
 	agony = 30
 	embed = 0
 	sharp = 0
-	armor_penetration = 2.5
 
 /* shotgun projectiles */
 
@@ -191,6 +189,7 @@
 	agony = 60
 	embed = 0
 	sharp = 0
+	armor_penetration = 0
 
 //Should do about 80 damage at 1 tile distance (adjacent), and 50 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding

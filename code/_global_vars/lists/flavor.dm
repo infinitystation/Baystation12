@@ -111,7 +111,6 @@ GLOBAL_LIST_INIT(music_tracks, list(
 	"Treacherous Voyage " = /music_track/treacherous_voyage,
 	"Through the Times" = /music_track/chasing_time,
 	"Thunderdome" = /music_track/thunderdome,
-	"Wake" = /music_track/wake,
 	"Wonderful Lady" = /music_track/wonderful,
 	"When We Stand Together" = /music_track/together
 ))

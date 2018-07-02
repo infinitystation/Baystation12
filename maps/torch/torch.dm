@@ -10,6 +10,7 @@
 	#include "torch_npcs.dm"
 	#include "torch_overmap.dm"
 	#include "torch_presets.dm"
+	#include "torch_procs.dm"
 	#include "torch_ranks.dm"
 	#include "torch_security_state.dm"
 	#include "torch_shuttles.dm"
@@ -46,6 +47,8 @@
 	#include "job/jobs.dm"
 	#include "job/outfits.dm"
 	#include "job/infinity.dm"
+
+	#include "machinery/keycard authentication.dm"
 
 	#include "structures/closets.dm"
 	#include "structures/signs.dm"
