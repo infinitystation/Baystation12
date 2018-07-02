@@ -32,6 +32,7 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 150)
 	center_of_mass = "x=17;y=16"
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
+	safely = 1
 
 /obj/item/weapon/wrench/Initialize()
 	icon_state = "wrench[pick("","_red","_black")]"
@@ -86,6 +87,7 @@
 	center_of_mass = "x=16;y=7"
 	attack_verb = list("stabbed")
 	lock_picking_level = 5
+	safely = 1
 
 /obj/item/weapon/screwdriver/Initialize()
 	switch(pick("red","blue","purple","brown","green","cyan","yellow"))
@@ -178,6 +180,7 @@
 	attack_verb = list("pinched", "nipped")
 	sharp = 1
 	edge = 1
+	safely = 1
 
 /obj/item/weapon/wirecutters/Initialize()
 	if(prob(50))
@@ -267,6 +270,7 @@
 	var/deac_sound = 'sound/items/WelderDeactivate.ogg'
 
 	var/obj/item/weapon/welder_tank/tank = /obj/item/weapon/welder_tank // where the fuel is stored
+	safely = 1
 
 /obj/item/weapon/weldingtool/Initialize()
 	if(ispath(tank))
@@ -564,6 +568,7 @@
 	w_class = ITEM_SIZE_SMALL
 	var/max_fuel = 20
 	var/can_remove = 1
+	safely = 1
 
 /obj/item/weapon/welder_tank/Initialize()
 	create_reagents(max_fuel)
@@ -702,6 +707,7 @@
 	center_of_mass = "x=16;y=20"
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
 	hitsound = 'sound/weapons/crowbarhit.ogg'
+	safely = 1
 
 /obj/item/weapon/crowbar/red
 	icon_state = "red_crowbar"
@@ -774,6 +780,7 @@
 		)
 	var/list/tools = list()
 	var/current_tool = 1
+	safely = 1
 
 /obj/item/weapon/combitool/examine()
 	..()

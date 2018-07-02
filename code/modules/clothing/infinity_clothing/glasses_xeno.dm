@@ -4,6 +4,7 @@
 	item_icons = list(slot_glasses_str = 'icons/mob/onmob/Resomi/masks.dmi')
 	icon = 'icons/obj/clothing/infinity/glasses.dmi'
 	icon_state = "sun_lenses"
+	item_state = "sun_lenses"
 	species_restricted = list(SPECIES_RESOMI)
 	body_parts_covered = 0 //no real protection
 

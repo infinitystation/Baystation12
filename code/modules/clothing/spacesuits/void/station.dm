@@ -112,6 +112,14 @@
 	allowed = list(/obj/item/weapon/gun,/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/melee/baton)
 	siemens_coefficient = 0.7
 
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/species/unathi/helmet.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet_if.dmi',
+		SPECIES_SKRELL = 'icons/mob/species/skrell/helmet.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi'
+		)
+
+
 /obj/item/clothing/suit/space/void/security/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/security
 	boots = /obj/item/clothing/shoes/magboots
