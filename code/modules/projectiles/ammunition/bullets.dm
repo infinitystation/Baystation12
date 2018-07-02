@@ -1,18 +1,12 @@
 /obj/item/ammo_casing/a22lr
-	desc = "A .22LR bullet casing."
+	desc = "A .17 HMR bullet casing."
 	caliber = "22"
 	projectile_type = /obj/item/projectile/bullet/pistol/tiny
-
-/obj/item/ammo_casing/a22lr/rubber
-	desc = "A .22LR rubber bullet casing."
-	icon_state = "r-casing"
-	spent_icon = "r-casing-spent"
-	projectile_type = /obj/item/projectile/bullet/pistol/tiny/rubber
 
 /obj/item/ammo_casing/a357
 	desc = "A .357 bullet casing."
 	caliber = "357"
-	projectile_type = /obj/item/projectile/bullet/pistol/strong/revolver
+	projectile_type = /obj/item/projectile/bullet/pistol/medium/revolver
 
 /obj/item/ammo_casing/a50
 	desc = "A .50AE bullet casing."
@@ -69,22 +63,11 @@
 /obj/item/ammo_casing/c44
 	desc = "A .44 magnum bullet casing."
 	caliber = ".44"
-	projectile_type = /obj/item/projectile/bullet/pistol/medium/revolver
+	projectile_type = /obj/item/projectile/bullet/pistol/strong/revolver
 
 /obj/item/ammo_casing/c44/rubber
 	desc = "A .44 magnum rubber bullet casing."
-	projectile_type = /obj/item/projectile/bullet/pistol/rubber
-	icon_state = "r-casing"
-	spent_icon = "r-casing-spent"
-
-/obj/item/ammo_casing/c44
-	desc = "A .44 magnum bullet casing."
-	caliber = ".44"
-	projectile_type = /obj/item/projectile/bullet/pistol/medium/revolver
-
-/obj/item/ammo_casing/c44/rubber
-	desc = "A .44 magnum rubber bullet casing."
-	projectile_type = /obj/item/projectile/bullet/pistol/rubber
+	projectile_type = /obj/item/projectile/bullet/pistol/strong/revolver/rubber
 	icon_state = "r-casing"
 	spent_icon = "r-casing-spent"
 
@@ -179,8 +162,8 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 90, "glass" = 90)
 
 /obj/item/ammo_casing/shotgun/greande
-	name = "shotgun grenade"
-	desc = "A 12 gauge grenade."
+	name = "shotgun grenade shell"
+	desc = "A 12 gauge grenade shell."
 	icon_state = "gshell"
 	spent_icon = "gshell-spent"
 	projectile_type = /obj/item/projectile/bullet/explosion/shotgun
