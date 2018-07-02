@@ -16,8 +16,11 @@
 
 	var/armor = getarmor(def_zone, attack_flag)
 
-	if(armour_pen >= armor)
+	if(armour_pen > armor)
 		return 0 //effective_armor is going to be 0, fullblock is going to be 0, blocked is going to 0, let's save ourselves the trouble
+
+	if(armour_pen < armor)
+		return 100
 
 	var/effective_armor = (armor - armour_pen)/100
 	var/fullblock = (effective_armor*effective_armor) * ARMOR_BLOCK_CHANCE_MULT
