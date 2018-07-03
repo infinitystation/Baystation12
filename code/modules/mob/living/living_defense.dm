@@ -18,9 +18,14 @@
 
 	if(armour_pen > armor)
 		return 0 //effective_armor is going to be 0, fullblock is going to be 0, blocked is going to 0, let's save ourselves the trouble
+	if(attack_flag == "bullet" || attack_flag == "energy")
+		if(armour_pen < armor)
+			return 100
 
-	if(armour_pen < armor)
-		return 100
+	if(attack_flag == "melee")
+		if(armour_pen+15 < armor)
+			return 100
+
 
 	var/effective_armor = (armor - armour_pen)/100
 	var/fullblock = (effective_armor*effective_armor) * ARMOR_BLOCK_CHANCE_MULT
