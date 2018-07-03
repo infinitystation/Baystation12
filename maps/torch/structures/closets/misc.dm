@@ -159,7 +159,7 @@
 	name = "personal sidearm cabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sidearm/pbullet/WillContain()
-	return list(/obj/item/weapon/gun/projectile/military = 6, /obj/item/ammo_magazine/c45m = 12)
+	return list(/obj/item/weapon/gun/projectile/military = 6, /obj/item/ammo_magazine/c45mds = 12)
 
 /obj/structure/closet/secure_closet/guncabinet/sidearm/shotgun
 	name = "shotgun sidearm cabinet"
