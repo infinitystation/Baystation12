@@ -823,6 +823,7 @@
 #include "code\game\objects\items\toys.dm"
 #include "code\game\objects\items\trash.dm"
 #include "code\game\objects\items\customs\bdsm.dm"
+#include "code\game\objects\items\customs\chainsword.dm"
 #include "code\game\objects\items\customs\csplayer.dm"
 #include "code\game\objects\items\customs\custkit.dm"
 #include "code\game\objects\items\customs\messith.dm"
