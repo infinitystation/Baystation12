@@ -73,7 +73,8 @@
 		/area/icarus/vessel = NO_APC,
 		/area/icarus/open = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/map_template/hydrobase = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/map_template/hydrobase/station = NO_SCRUBBER
+		/area/map_template/hydrobase/station = NO_SCRUBBER,
+		/area/map_template/marooned = NO_SCRUBBER|NO_VENT|NO_APC
 	)
 
 	area_coherency_test_exempt_areas = list(
@@ -88,7 +89,6 @@
 		/area/exoplanet/grass,
 		/area/exoplanet/snow,
 		/area/exoplanet/garbage,
-		/area/marooned/marooned_snow,
 		/area/icarus/vessel,
 		/area/icarus/open,
 	)
@@ -125,19 +125,7 @@
 		/area/turbolift/seconddeck,
 		/area/turbolift/thirddeck,
 		/area/turbolift/fourthdeck,
-		/area/turbolift/startsent,
-		/area/turbolift/firstdecksent,
-		/area/turbolift/seconddecksenst,
-		/area/turbolift/sentinel_first,
-		/area/turbolift/sentinel_second,
-		/area/exoplanet,
-		/area/exoplanet/desert,
-		/area/exoplanet/grass,
-		/area/exoplanet/snow,
-		/area/exoplanet/garbage,
-		/area/template_noop,
-		/area/map_template,
-		/area/map_template/little_house
+		/area/template_noop
 	)
 
 	// not an away site? you probably want to be using area_usage_test_exempted_areas
@@ -146,7 +134,6 @@
 		/area/constructionsite,
 		/area/derelict,
 		/area/magshield,
-		/area/marooned,
 		/area/mine,
 		/area/ship,
 		/area/smugglers,
@@ -157,7 +144,8 @@
 		/area/icarus,
 //		/area/errant_pisces,
 //		/area/lar_maria,
-		/area/map_template/hydrobase
+		/area/map_template,
+		/area/exoplanet
 	)
 
 /datum/unit_test/zas_area_test/ai_chamber

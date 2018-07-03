@@ -125,6 +125,16 @@ ckey: redknighthero
 character_name: Daniel Osborne
 item_path: /obj/item/clothing/under/harness/invisible
 }
+{
+ckey: arhod
+character_name: Amr'in Battrral
+item_path: /obj/item/custkit/messith
+}
+{
+ckey: wolforbykot
+character_name: Toni Roar
+item_path: /obj/item/custkit/chainsword
+}
 
 #	MEDIUM ITEMS HERE (5-6)
 {

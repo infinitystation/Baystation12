@@ -10,6 +10,7 @@
 	#include "torch_npcs.dm"
 	#include "torch_overmap.dm"
 	#include "torch_presets.dm"
+	#include "torch_procs.dm"
 	#include "torch_ranks.dm"
 	#include "torch_security_state.dm"
 	#include "torch_shuttles.dm"
@@ -32,6 +33,7 @@
 	#include "items/stamps.dm"
 	#include "items/uniform_vendor.dm"
 	#include "items/rigs.dm"
+	#include "items/solbanner.dm"
 
 	#include "items/clothing/clothing.dm"
 	#include "items/clothing/solgov-infinity.dm"
@@ -46,6 +48,8 @@
 	#include "job/jobs.dm"
 	#include "job/outfits.dm"
 	#include "job/infinity.dm"
+
+	#include "machinery/keycard authentication.dm"
 
 	#include "structures/closets.dm"
 	#include "structures/signs.dm"
@@ -87,7 +91,6 @@
 	#include "../away/empty.dmm"
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
-	#include "../away/marooned/marooned.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"
 	#include "../away/blueriver/blueriver.dm"

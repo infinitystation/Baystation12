@@ -8,8 +8,7 @@
 	generally self-owned after being 'born' into servitude; they are reliable and dedicated workers, albeit more than slightly \
 	inhuman in outlook and perspective."
 
-	icobase = 'icons/mob/human_races/r_machine.dmi'
-	deform = 'icons/mob/human_races/r_machine.dmi'
+	preview_icon = 'icons/mob/human_races/species/ipc/preview.dmi'
 
 	eye_icon_location = 'icons/mob/infinity_human_face.dmi'
 	eye_icon = "blank_eyes"

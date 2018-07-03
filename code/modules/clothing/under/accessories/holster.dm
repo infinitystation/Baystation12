@@ -144,6 +144,6 @@
 	name = "machete sheath"
 	desc = "A handsome synthetic leather sheath with matching belt."
 	icon_state = "holster_machete"
-	can_hold = list(/obj/item/weapon/material/hatchet/machete)
+	can_hold = list(/obj/item/weapon/material/hatchet/machete, /obj/item/weapon/chainsword)
 	sound_in = 'sound/effects/holster/sheathin.ogg'
 	sound_out = 'sound/effects/holster/sheathout.ogg'
