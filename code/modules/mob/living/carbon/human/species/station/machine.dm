@@ -113,9 +113,9 @@
 	name_plural = "Terminators"
 	blurb = "\[REDACTED\]"
 
-	icobase = 'icons/mob/human_races/r_terminator.dmi'
-	deform = 'icons/mob/human_races/r_terminator.dmi'
+	preview_icon = 		'icons/mob/human_races/species/terminator/preview.dmi'
 
+	eye_icon_location = 'icons/mob/human_races/species/terminator/eyes.dmi'
 	eye_icon = "eyes_terminator"
 	has_floating_eyes = 1
 
