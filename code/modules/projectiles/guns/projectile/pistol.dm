@@ -11,7 +11,7 @@
 /obj/item/weapon/gun/projectile/military
 	name = "WT45 pistol"
 	desc = "The WT45 - a mass produced kinetic sidearm in widespread service with the SCGDF. Uses .45 rounds."
-	magazine_type = /obj/item/ammo_magazine/c45mds/flash
+	magazine_type = /obj/item/ammo_magazine/c45mds/rubber
 	allowed_magazines = /obj/item/ammo_magazine/c45mds
 	icon_state = "usp"
 	caliber = ".45"
@@ -123,7 +123,7 @@
 		icon_state = "gyropistol"
 
 /obj/item/weapon/gun/projectile/beretta
-	name = "9mm combat pistol"
+	name = "P9 Brigadier pistol"
 	desc = "The Lumoco Arms P9 Brigadier. A robust sidearm designed for military duty. Uses 9mm rounds."
 	magazine_type = /obj/item/ammo_magazine/mc9mmds
 	allowed_magazines = /obj/item/ammo_magazine/mc9mmds

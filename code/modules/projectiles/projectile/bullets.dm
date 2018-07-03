@@ -125,15 +125,15 @@
 // .17 HMR
 
 /obj/item/projectile/bullet/pistol/tiny
-	damage = 5 
+	damage = 5
 	armor_penetration = 10
 
 // 4.6x30 mm, 5.7x28 mm
 
 /obj/item/projectile/bullet/pistol/tiny/fast
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 12 
-	armor_penetration = 25	
+	damage = 12
+	armor_penetration = 25
 
 /obj/item/projectile/bullet/smg/uni46x30mm
 	damage = 18
@@ -147,7 +147,7 @@
 
 /obj/item/projectile/bullet/pistol
 	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
-	damage = 25 
+	damage = 25
 	armor_penetration = 13.5
 
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
@@ -157,12 +157,12 @@
 	agony = 30
 	embed = 0
 	sharp = 0
-	armor_penetration = 2.5
+	armor_penetration = 5
 
 // .45
 
 /obj/item/projectile/bullet/pistol/medium
-	damage = 26.5 
+	damage = 26.5
 	armor_penetration = 15
 
 
@@ -170,35 +170,35 @@
 
 /obj/item/projectile/bullet/pistol/medium/smg
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 28 
+	damage = 28
 	armor_penetration = 18
 
 // .357 magnum or something
 
 /obj/item/projectile/bullet/pistol/medium/revolver
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 30 
+	damage = 30
 
 // .44 Magnum
 
 /obj/item/projectile/bullet/pistol/strong/revolver
-	damage = 40 
+	damage = 40
 	armor_penetration = 25
 
-/obj/item/projectile/bullet/pistol/strong/revolver/rubber 
+/obj/item/projectile/bullet/pistol/strong/revolver/rubber
 	name = "rubber bullet"
 	check_armour = "melee"
 	damage = 7
 	agony = 50
 	embed = 0
 	sharp = 0
-	armor_penetration = 5
+	armor_penetration = 8
 
 // .50AE
 
-/obj/item/projectile/bullet/pistol/strong 
+/obj/item/projectile/bullet/pistol/strong
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 50 
+	damage = 50
 	armor_penetration = 30
 
 /* shotgun projectiles */
