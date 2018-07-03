@@ -18,6 +18,7 @@
 
 	if(armour_pen > armor)
 		return 0 //effective_armor is going to be 0, fullblock is going to be 0, blocked is going to 0, let's save ourselves the trouble
+	
 	if(attack_flag == "bullet" || attack_flag == "energy")
 		if(armour_pen < armor)
 			return 100
