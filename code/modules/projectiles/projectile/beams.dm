@@ -172,7 +172,8 @@
 	fire_sound = 'sound/weapons/Taser.ogg'
 	check_armour = "energy"
 	sharp = 0 //not a laser
-	agony = 40
+	stun = 5
+	armor_penetration = 15
 	damage_type = STUN
 
 	muzzle_type = /obj/effect/projectile/stun/muzzle
@@ -181,19 +182,21 @@
 
 /obj/item/projectile/beam/stun/heavy
 	name = "heavy stun beam"
-	agony = 60
+	stun = 10
+	armor_penetration = 15
 
 /obj/item/projectile/beam/stun/shock
 	name = "shock beam"
-	damage_type = ELECTROCUTE
-	damage = 10
-	agony  = 5
+	damage = 4
+	armor_penetration = 20
+	stun = 5
 	fire_sound='sound/weapons/pulse.ogg'
 
 /obj/item/projectile/beam/stun/shock/heavy
 	name = "heavy shock beam"
-	damage = 20
-	agony  = 10
+	damage = 8
+	armor_penetration = 25
+	stun = 10
 
 /obj/item/projectile/beam/plasmacutter
 	name = "plasma arc"
