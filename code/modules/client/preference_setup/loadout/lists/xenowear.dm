@@ -272,6 +272,11 @@
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_RESOMI)
 
+/datum/gear/uniform/resomi/white
+	display_name = "(Resomi) smock, colored"
+	path = /obj/item/clothing/under/resomi/white
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/uniform/resomi/dress
 	display_name = "(Resomi) small dress"
 	path = /obj/item/clothing/under/resomi/dress
@@ -288,16 +293,11 @@
 	display_name = "(Resomi) smock, rainbow"
 	path = /obj/item/clothing/under/resomi/rainbow
 
-/datum/gear/uniform/resomi/white
-	display_name = "(Resomi) smock, colored"
-	path = /obj/item/clothing/under/resomi/white
-	flags = GEAR_HAS_COLOR_SELECTION
-
 /datum/gear/uniform/resomi/eng
 	display_name = "(Resomi) uniform, Engineering"
 	path = /obj/item/clothing/under/resomi/yellow
 
-/datum/gear/uniform/resomi/eng/roboitcs
+/datum/gear/uniform/resomi/roboitcs
 	display_name = "(Resomi) uniform, Robotics"
 	path = /obj/item/clothing/under/resomi/robotics
 
@@ -337,13 +337,12 @@
 	display_name = "(Resomi) sun medhud lenses"
 	path = /obj/item/clothing/glasses/hud/health/lenses
 
-/datum/gear/accessory/resomi/mantle
+/datum/gear/accessory/resomi_mantle
 	display_name = "(Resomi) small mantle"
 	path = /obj/item/clothing/accessory/scarf/resomi
 	flags = GEAR_HAS_COLOR_SELECTION
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_RESOMI)
-
 
 /datum/gear/suit/resomi
 	display_name = "(Resomi) small coat"
