@@ -20135,14 +20135,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/fourthdeck/center)
-"Ry" = (
-/obj/effect/floor_decal/steeldecal/steel_decals10{
-	tag = "icon-steel_decals10 (NORTHWEST)";
-	icon_state = "steel_decals10";
-	dir = 9
-	},
-/turf/unsimulated/mask,
-/area/hallway/primary/fourthdeck/center)
 "RC" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -36515,7 +36507,7 @@ jy
 aW
 jw
 jw
-Ry
+jw
 jw
 jw
 po
