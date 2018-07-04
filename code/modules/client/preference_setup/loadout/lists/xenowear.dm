@@ -323,17 +323,17 @@
 	path = /obj/item/clothing/under/resomi/work_white
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/eyes/resomi/lenses
+/datum/gear/eyes/resomi
 	display_name = "(Resomi) sun lenses"
 	path = /obj/item/clothing/glasses/sunglasses/lenses
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_RESOMI)
 
-/datum/gear/eyes/resomi/lenses/sec
+/datum/gear/eyes/resomi/lenses_sec
 	display_name = "(Resomi) sun sechud lenses"
 	path = /obj/item/clothing/glasses/sunglasses/sechud/lenses
 
-/datum/gear/eyes/resomi/lenses/med
+/datum/gear/eyes/resomi/lenses_med
 	display_name = "(Resomi) sun medhud lenses"
 	path = /obj/item/clothing/glasses/hud/health/lenses
 

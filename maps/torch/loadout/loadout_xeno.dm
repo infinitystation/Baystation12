@@ -55,12 +55,12 @@
 /datum/gear/uniform/resomi/roboitcs
 	allowed_roles = list(/datum/job/roboticist)
 
-/datum/gear/eyes/resomi/lenses
+/datum/gear/eyes/resomi
 
-/datum/gear/eyes/resomi/lenses/sec
+/datum/gear/eyes/resomi/lenses_sec
 	allowed_roles = SECURITY_ROLES
 
-/datum/gear/eyes/resomi/lenses/med
+/datum/gear/eyes/resomi/lenses_med
 	allowed_roles = MEDICAL_ROLES
 
 /datum/gear/accessory/resomi_mantle
