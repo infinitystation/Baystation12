@@ -12924,7 +12924,6 @@
 /area/quartermaster/expedition)
 "xI" = (
 /obj/machinery/hologram/holopad,
-/obj/effect/landmark/test/safe_turf,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
 "xJ" = (
@@ -19510,6 +19509,11 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/office)
+"Pk" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/landmark/test/safe_turf,
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "Pp" = (
 /obj/machinery/door/airlock/mining{
 	id_tag = null;
@@ -42580,7 +42584,7 @@ aF
 aF
 aF
 Bj
-aH
+Pk
 aO
 aO
 aO
