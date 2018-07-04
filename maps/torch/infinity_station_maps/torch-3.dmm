@@ -17263,10 +17263,6 @@
 /obj/random/maintenance/solgov,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
-"OL" = (
-/obj/effect/floor_decal/borderfloor,
-/turf/space,
-/area/space)
 "OP" = (
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/foyer)
@@ -33231,7 +33227,7 @@ aa
 aa
 GL
 aa
-OL
+aa
 aa
 aa
 aa
