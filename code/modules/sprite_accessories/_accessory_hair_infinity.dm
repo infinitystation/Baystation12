@@ -1,7 +1,7 @@
 /datum/sprite_accessory/hair/infinity
-	name = "Angel hair"
+	name = "Angel"
 	icon = 'icons/mob/human_races/species/human/hair_infinity.dmi'
-	icon_state = "angel"
+	icon_state = "hair_angel"
 
 /datum/sprite_accessory/hair/infinity/shortcover
 	name = "Shortcover"
@@ -13,7 +13,7 @@
 
 /datum/sprite_accessory/hair/infinity/pais
 	name = "Pais"
-	icon_state = "hair_hairpais"
+	icon_state = "hair_pais"
 
 /datum/sprite_accessory/hair/infinity/new_ponytail
 	name = "Ponytail 7"
@@ -25,10 +25,10 @@
 
 /datum/sprite_accessory/hair/infinity/longemo_new
 	name = "Long Emo Alt"
-	icon_state = "lhair_ongemo_alt"
+	icon_state = "hair_longemo_alt"
 
 /datum/sprite_accessory/hair/infinity/harleyhair
-	name = "Harley Quinn Hair"
+	name = "Harley Quinn"
 	icon_state = "hair_harley"
 	gender = FEMALE
 
@@ -47,7 +47,7 @@
 	icon_state = "hair_encoder"
 
 /datum/sprite_accessory/hair/infinity/long_braided_hair
-	name = "Long braided hair"
+	name = "Long braided"
 	icon_state = "hair_long_braided"
 
 /datum/sprite_accessory/hair/infinity/hipstery
