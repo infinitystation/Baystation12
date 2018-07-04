@@ -187,7 +187,7 @@
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/antirad
 	name = "autoinjector (anti-rad)"
-	icon_state = "yellow"
+	icon_state = "yellow1"
 	starts_with = list(/datum/reagent/hyronalin = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/mindbreaker
