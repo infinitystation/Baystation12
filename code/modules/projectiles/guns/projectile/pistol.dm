@@ -235,8 +235,7 @@
 	item_state = "sawnshotgun"
 	handle_casings = CYCLE_CASINGS //player has to take the old casing out manually before reloading
 	load_method = SINGLE_CASING
-	max_shells = 1 //literally just a barrel
-	has_safety = FALSE
+	max_shells = 1 //literally just a barrel	
 
 	var/global/list/ammo_types = list(
 		/obj/item/ammo_casing/a357              = ".357",

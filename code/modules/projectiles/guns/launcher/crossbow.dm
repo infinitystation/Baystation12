@@ -56,8 +56,6 @@
 	fire_sound_text = "a solid thunk"
 	fire_delay = 25
 	slot_flags = SLOT_BACK
-	has_safety = FALSE
-
 	var/obj/item/bolt
 	var/tension = 0                         // Current draw on the bow.
 	var/max_tension = 3                     // Highest possible tension.
