@@ -384,6 +384,11 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	path = /obj/item/device/assembly/prox_sensor
 	category = "Devices and Components"
 
+/datum/autolathe/recipe/sensor_prox
+	name = "voice analyzer"
+	path = /obj/item/device/assembly/voice
+	category = "Devices and Components"
+
 /datum/autolathe/recipe/cable_coil
 	name = "cable coil"
 	path = /obj/item/stack/cable_coil/single
@@ -626,6 +631,12 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	path = /obj/item/weapon/handcuffs
 	hidden = 1
 	category = "General"
+
+/datum/autolathe/recipe/transfer_valve
+	name = "tank transfer valve"
+	path =	/obj/item/device/transfer_valve
+	hidden = 1
+	category = "Devices and Components"
 
 /datum/autolathe/recipe/cell_device
 	name = "device cell"
