@@ -69,11 +69,14 @@ proc/create_test_mob_with_mind(var/turf/mobloc = null, var/mobtype = /mob/living
 
 	if(isnull(mobloc))
 		if(!default_mobloc)
-			for(var/turf/simulated/floor/tiled/T in world)
+			for(var/obj/effect/landmark/test/safe_turf/safe in world)
+				default_mobloc = safe
+				break
+/*			for(var/turf/simulated/floor/tiled/T in world)
 				var/pressure = T.zone.air.return_pressure()
 				if(90 < pressure && pressure < 120) // Find a turf between 90 and 120
 					default_mobloc = T
-					break
+					break*/
 		mobloc = default_mobloc
 	if(!mobloc)
 		test_result["msg"] = "Unable to find a location to create test mob"

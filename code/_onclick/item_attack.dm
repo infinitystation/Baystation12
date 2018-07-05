@@ -65,7 +65,8 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		return 0
 	if(M == user && user.a_intent != I_HURT)
 		return 0
-
+	if (user.a_intent != I_HURT && safely)
+		return 0
 	/////////////////////////
 
 	if(!no_attack_log)

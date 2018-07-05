@@ -82,6 +82,8 @@
 	// Works similarly to worn sprite_sheets, except the alternate sprites are used when the clothing/refit_for_species() proc is called.
 	var/list/sprite_sheets_obj = list()
 
+	var/safely = 0 //Cant harm with != Hurt intent
+
 /obj/item/New()
 	..()
 	if(randpixel && (!pixel_x && !pixel_y) && isturf(loc)) //hopefully this will prevent us from messing with mapper-set pixel_x/y
@@ -805,3 +807,9 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	var/ID = GetIdCard()
 	if(ID)
 		. += "  <a href='?src=\ref[ID];look_at_id=1'>\[Look at ID\]</a>"
+
+/obj/item/is_burnable()
+	return simulated
+
+/obj/item/lava_act()
+	. = (!throwing) ? ..() : FALSE

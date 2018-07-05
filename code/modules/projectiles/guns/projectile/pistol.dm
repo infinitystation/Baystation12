@@ -235,8 +235,7 @@
 	item_state = "sawnshotgun"
 	handle_casings = CYCLE_CASINGS //player has to take the old casing out manually before reloading
 	load_method = SINGLE_CASING
-	max_shells = 1 //literally just a barrel
-	have_safety = 0
+	max_shells = 1 //literally just a barrel	
 
 	var/global/list/ammo_types = list(
 		/obj/item/ammo_casing/a357              = ".357",
@@ -251,6 +250,9 @@
 		/obj/item/ammo_casing/a762              = "7.62mm",
 		/obj/item/ammo_casing/a556              = "5.56mm"
 		)
+
+/obj/item/weapon/gun/projectile/pirate/toggle_safety(var/mob/user)
+	to_chat(user, "<span class='warning'>There's no safety on \the [src]!</span>")
 
 /obj/item/weapon/gun/projectile/pirate/New()
 	ammo_type = pick(ammo_types)

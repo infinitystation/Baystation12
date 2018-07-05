@@ -170,3 +170,38 @@
 	icon = 'icons/obj/clothing/infinity/ties.dmi'
 	icon_state = "small_mantle"
 	species_restricted = list(SPECIES_RESOMI)
+
+//Pins
+
+/obj/item/clothing/accessory/ntred
+	name = "NT pin"
+	desc = "A red Nanotrasen pin."
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "nt_r"
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
+	high_visibility = 1
+
+/obj/item/clothing/accessory/ntblue
+	name = "NT pin"
+	desc = "A blue Nanotrasen pin."
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
+	icon_state = "nt_b"
+	high_visibility = 1
+
+
+/obj/item/clothing/accessory/tccpin
+	name = "TCC pin"
+	desc = "A small TCC flag."
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "tcc"
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
+	high_visibility = 1
+
+/obj/item/clothing/accessory/scgpin
+	name = "CSG pin"
+	desc = "A small CSG flag."
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "csg"
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
+	high_visibility = 1

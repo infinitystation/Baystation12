@@ -29,6 +29,7 @@ vankoska - skrell
 lukecage - skrell
 hodovoy - skrell
 knayu - skrell
+mrnicolas - skrell
 redknighthero - giant armoured serpentid
 kirill1243 - giant armoured serpentid
 themaybat - giant armoured serpentid
@@ -71,6 +72,7 @@ sosiskoed - vox
 mrnicolas - vox
 rex127 - vox
 cre77 - vox
+taushai - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 kotovsyndrome - unathi

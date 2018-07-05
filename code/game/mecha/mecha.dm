@@ -711,6 +711,8 @@
 		src.check_for_internal_damage(list(MECHA_INT_FIRE, MECHA_INT_TEMP_CONTROL))
 	return
 
+/obj/mecha/is_burnable()
+	return TRUE
 
 //////////////////////
 ////// AttackBy //////
@@ -1888,3 +1890,7 @@
 */
 /obj/mecha/fall_damage()
 	return 550
+
+/obj/mecha/lava_act(datum/gas_mixture/air, temperature, pressure)
+	fire_act(air, temperature)
+	. = (health <= 0) ? ..() : FALSE
