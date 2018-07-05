@@ -133,7 +133,6 @@ GLOBAL_LIST_EMPTY(skills)
 						"Trained"			= "You have suffient strength and dexterity for even very strenuous tasks, and can work for a long time without tiring.",
 						"Experienced"		= "You have experience with heavy work in trying physical conditions, and are in excellent shape. You visit the gym frequently.",
 						"Master"		= "In addition to your excellent strength and endurance, you have a lot of experience with the specific physical demands of your job. You may have competitive experience with some form of athletics.")
-	difficulty = SKILL_AVERAGE
 
 /decl/hierarchy/skill/general/computer
 	ID = "computer"
@@ -188,7 +187,7 @@ GLOBAL_LIST_EMPTY(skills)
 		if(SKILL_EXPERT)
 			return 2*difficulty
 		if(SKILL_PROF)
-			return 2*difficulty
+			return 6*difficulty
 		else
 			return 0
 
