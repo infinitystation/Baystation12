@@ -133,6 +133,7 @@ GLOBAL_LIST_EMPTY(skills)
 						"Trained"			= "You have suffient strength and dexterity for even very strenuous tasks, and can work for a long time without tiring.",
 						"Experienced"		= "You have experience with heavy work in trying physical conditions, and are in excellent shape. You visit the gym frequently.",
 						"Master"		= "In addition to your excellent strength and endurance, you have a lot of experience with the specific physical demands of your job. You may have competitive experience with some form of athletics.")
+	difficulty = SKILL_HARD
 
 /decl/hierarchy/skill/general/computer
 	ID = "computer"
@@ -178,6 +179,19 @@ GLOBAL_LIST_EMPTY(skills)
 						"Experienced"		= "You're good at hand-to-hand combat. You've trained explicitly in a martial art or as a close combatant as part of a military or police unit. You can use weaponry competently and you can think strategically and quickly in a melee. You're in good shape and you spend time training.",
 						"Master"		= "You specialize in hand-to-hand combat. You're well-trained in a practical martial art, and in good shape. You spend a lot of time practicing. You can take on just about anyone, use just about any weapon, and usually come out on top. You may be a professional athlete or special forces member.")
 
+/decl/hierarchy/skill/security/combat/get_cost(var/level)
+	switch(level)
+		if(SKILL_BASIC)
+			return difficulty
+		if(SKILL_ADEPT)
+			return 2*difficulty
+		if(SKILL_EXPERT)
+			return 4*difficulty
+		if(SKILL_PROF)
+			return 6*difficulty
+		else
+			return 0
+
 /decl/hierarchy/skill/security/weapons
 	ID = "weapons"
 	name = "Weapons Expertise"
@@ -194,8 +208,10 @@ GLOBAL_LIST_EMPTY(skills)
 			return difficulty
 		if(SKILL_ADEPT)
 			return 2*difficulty
-		if(SKILL_EXPERT, SKILL_PROF)
+		if(SKILL_EXPERT)
 			return 4*difficulty
+		if(SKILL_PROF)
+			return 6*difficulty
 		else
 			return 0
 

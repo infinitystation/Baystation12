@@ -210,14 +210,6 @@ item_icon: starclaymore_patch
 }
 {
 ckey: kotovsyndrome 
-character_name:  James Morisson
-item_path: /obj/item/clothing/accessory/shouldercape
-item_name: martian patch
-item_desc: You can see a patch with a picture of a man,  he has blue eyes and is wearing a black shirt and beret. He is standing on the orange earth with a sunset on a background. Every little detail gives off a sense of pride and pathos. At the right part of the chest he has a similar patch. At the bottom written "MARS IS ETERNAL".
-item_icon: mars_patch
-}
-{
-ckey: kotovsyndrome 
 character_name: Osr Issarik
 item_path: /obj/item/clothing/accessory/necklace/talisman
 item_desc: A talisman with teeths on a strong string. There is a five teeths on it: one looks like a cannine, three looks like a human, and the last one looks like a crocodile.
