@@ -223,3 +223,17 @@
 		else
 			M.emitter_blasts_taken += 2
 	. = ..()
+
+
+/obj/item/projectile/beam/gray
+	name = "gamma ray beam"
+	icon_state = "bluelaser"
+	fire_sound = 'sound/weapons/laser3.ogg'
+	damage = 55
+	armor_penetration = 80
+	penetration_modifier = 1
+	irradiate = 50
+
+	muzzle_type = /obj/effect/projectile/laser/blue/muzzle
+	tracer_type = /obj/effect/projectile/laser/blue/tracer
+	impact_type = /obj/effect/projectile/laser/blue/impact
