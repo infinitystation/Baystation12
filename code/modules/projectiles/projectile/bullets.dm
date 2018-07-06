@@ -136,15 +136,11 @@
 	damage = 12
 	armor_penetration = 25
 
-/obj/item/projectile/bullet/smg/uni46x30mm
+/obj/item/projectile/bullet/pistol/smg
 	fire_sound = 'sound/weapons/gunshot/gunshot_pdw.ogg'
 	damage = 18
 	armor_penetration = 7
 
-/obj/item/projectile/bullet/smg/uni46x30mm_charged
-	fire_sound = 'sound/weapons/gunshot/gunshot_pdw.ogg'
-	damage = 12
-	armor_penetration = 25
 
 // 9mm, .38, etc
 
@@ -236,7 +232,7 @@
 
 /obj/item/projectile/bullet/explosion/shotgun/on_hit(var/atom/target, var/blocked = 0)
 	if(isturf(target))
-		explosion(target, -1, 1, 1)
+		explosion(target, -1, 1, 2)
 	..()
 
 
@@ -277,7 +273,7 @@
 /obj/item/projectile/bullet/rifle/a762r
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
 	damage = 36
-	armor_penetration = 55
+	armor_penetration = 50
 
 // 12,7x55mm
 
