@@ -25,9 +25,8 @@
 	use_power = 0
 	unacidable = 1
 
-	light_color = "#7de1e1"
-	light_power = 1
-	light_range = 8
+	light_outer_range = 8
+	light_color="#7de1e1"
 
 	var/sprite_number = 0
 
@@ -393,10 +392,10 @@
 					set_light(4,0.2,"#6496fa")
 				if(41 to 60)
 					overlay_state = "idle"
-					set_light(6,0.5,"#7D9BFF") //More of a washed out perywinkle than blue but shut up.
+					set_light(6,0.5,"#7d9bff") //More of a washed out perywinkle than blue but shut up.
 				if(61 to 80)
 					overlay_state = "activating"
-					set_light(6,0.8,"#7DC3FF")
+					set_light(6,0.8,"#7dc3ff")
 				if(81 to 100)
 					overlay_state = "activated"
 					set_light(8,1,"#7de1e1")

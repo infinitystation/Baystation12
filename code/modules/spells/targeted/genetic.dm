@@ -79,3 +79,38 @@ code\game\dna\genes\goon_powers.dm
 	cooldown_min = 300
 
 	hud_state = "wiz_hulk"
+	effect_state = "electricity_constant"
+	effect_duration = 5
+	effect_color = "#ff0000"
+
+/spell/targeted/genetic/blind/hysteria
+	name = "Hysteria"
+	desc = "A spell used to make someone look like a blind fool, and also makes them a blind fool."
+	feedback = "HY"
+	school = "illusion"
+	spell_flags = SELECTABLE
+	charge_max = 600
+	invocation_type = SpI_SHOUT
+	invocation = "Sty Di Kaly!"
+	amt_dizziness = 10
+	hud_state = "hysteria"
+
+/spell/targeted/genetic/blind/starburst
+	name = "Starburst"
+	desc = "Send a jolt of electricity through everyone's nerve center, blinding and stunning them."
+	feedback = "SB"
+	school = "transmutation"
+	invocation = "Tid Caeh Yor!"
+	spell_flags = NOFACTION
+	invocation_type = SpI_SHOUT
+	charge_max = 100
+	spell_flags = 0
+
+	amt_dizziness = 0
+	amt_eye_blurry = 0
+	amt_stunned = 10
+
+	effect_state = "electricity_constant"
+	effect_duration = 10
+
+	hud_state = "wiz_starburst"

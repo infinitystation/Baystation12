@@ -92,7 +92,7 @@
 			else
 				user.visible_message("<span class='notice'>[user] treats damage to [target]'s [I.name] with [tool_name].</span>", \
 				"<span class='notice'>You treat damage to [target]'s [I.name] with [tool_name].</span>" )
-			I.damage = 0
+			I.surgical_fix(user)
 
 /datum/surgery_step/internal/fix_organ/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 
@@ -371,6 +371,13 @@
 		return 0
 	if(organ_to_replace.parent_organ != affected.organ_tag)
 		to_chat(user, "<span class='warning'>You can't find anywhere to attach [organ_to_replace] to!</span>")
+		return SURGERY_FAILURE
+
+	var/o_a =  (organ_to_replace.gender == PLURAL) ? "" : "a "
+
+	var/obj/item/organ/internal/I = target.internal_organs_by_name[organ_to_replace.organ_tag]
+	if(I && (I.parent_organ == affected.organ_tag || istype(organ_to_replace, /obj/item/organ/internal/stack)))
+		to_chat(user, "<span class='warning'>\The [target] already has [o_a][organ_to_replace.name].</span>")
 		return SURGERY_FAILURE
 
 	target.op_stage.current_organ = organ_to_replace

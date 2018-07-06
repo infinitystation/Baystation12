@@ -8,6 +8,7 @@
 	min_broken_damage = 35
 	w_class = ITEM_SIZE_NORMAL
 	body_part = HEAD
+	can_heal_overkill = 1
 	parent_organ = BP_CHEST
 	joint = "jaw"
 	amputation_point = "neck"
@@ -18,7 +19,7 @@
 
 	var/can_intake_reagents = 1
 	var/eye_icon = "eyes_s"
-	var/eye_icon_location = 'icons/mob/human_face.dmi'
+	var/eye_icon_location = 'icons/mob/human_races/species/eyes.dmi'
 
 	var/has_lips = 1
 
@@ -120,7 +121,7 @@
 			overlays |= eyes_icon
 
 		if(owner.lip_style && robotic < ORGAN_ROBOT && (species && (species.appearance_flags & HAS_LIPS)))
-			var/icon/lip_icon = new/icon('icons/mob/human_face.dmi', "lips_[owner.lip_style]_s")
+			var/icon/lip_icon = new/icon('icons/mob/human_races/species/human/lips.dmi', "lips_[owner.lip_style]_s")
 			overlays |= lip_icon
 			mob_icon.Blend(lip_icon, ICON_OVERLAY)
 

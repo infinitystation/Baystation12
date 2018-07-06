@@ -28,3 +28,9 @@
 	instruments["violin"] = /obj/item/device/violin
 	instruments["guitar"] = /obj/item/device/guitar
 	gear_tweaks += new /datum/gear_tweak/path(instruments)
+
+/datum/gear/kittyears
+	display_name = "fake kitty ears"
+	path = /obj/item/clothing/head/kitty/fake
+	allowed_roles = list(/datum/job/assistant)
+	sort_category = "Earwear"

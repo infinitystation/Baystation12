@@ -21,16 +21,13 @@
 
 	var/list/climbers = list()
 
-	var/initialized = FALSE
-
 /atom/New(loc, ...)
-	//. = ..() //uncomment if you are dumb enough to add a /datum/New() proc
-
+	//atom creation method that preloads variables at creation
 	if(GLOB.use_preloader && (src.type == GLOB._preloader.target_path))//in case the instanciated atom is creating other atoms in New()
 		GLOB._preloader.load(src)
 
 	var/do_initialize = SSatoms.initialized
-	if(do_initialize > INITIALIZATION_INSSATOMS)
+	if(do_initialize != INITIALIZATION_INSSATOMS)
 		args[1] = do_initialize == INITIALIZATION_INNEW_MAPLOAD
 		if(SSatoms.InitAtom(src, args))
 			//we were deleted
@@ -54,11 +51,11 @@
 //Must return an Initialize hint. Defined in __DEFINES/subsystems.dm
 
 /atom/proc/Initialize(mapload, ...)
-	if(initialized)
+	if(atom_flags & ATOM_FLAG_INITIALIZED)
 		crash_with("Warning: [src]([type]) initialized multiple times!")
-	initialized = TRUE
+	atom_flags |= ATOM_FLAG_INITIALIZED
 
-	if(light_power && light_range)
+	if(light_max_bright && light_outer_range)
 		update_light()
 
 	return INITIALIZE_HINT_NORMAL
@@ -295,6 +292,12 @@ its easier to just keep the beam vertical.
 /atom/proc/melt()
 	return
 
+/atom/proc/lava_act()
+	visible_message("<span class='danger'>\The [src] sizzles and melts away, consumed by the lava!</span>")
+	playsound(src, 'sound/effects/flare.ogg', 100, 3)
+	qdel(src)
+	. = TRUE
+
 /atom/proc/hitby(atom/movable/AM as mob|obj)
 	if (density)
 		AM.throwing = 0
@@ -482,6 +485,7 @@ its easier to just keep the beam vertical.
 	if (!can_climb(user))
 		return
 
+	add_fingerprint(user)
 	user.visible_message("<span class='warning'>\The [user] starts climbing onto \the [src]!</span>")
 	climbers |= user
 
@@ -544,3 +548,6 @@ its easier to just keep the beam vertical.
 		do_climb(target)
 	else
 		return ..()
+
+/atom/proc/get_color()
+	return color

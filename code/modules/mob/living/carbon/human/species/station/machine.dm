@@ -8,13 +8,17 @@
 	generally self-owned after being 'born' into servitude; they are reliable and dedicated workers, albeit more than slightly \
 	inhuman in outlook and perspective."
 
-	icobase = 'icons/mob/human_races/r_machine.dmi'
-	deform = 'icons/mob/human_races/r_machine.dmi'
+	preview_icon = 'icons/mob/human_races/species/ipc/preview.dmi'
 
 	eye_icon_location = 'icons/mob/infinity_human_face.dmi'
 	eye_icon = "blank_eyes"
 
 	language = LANGUAGE_EAL
+	secondary_langs = list(LANGUAGE_SOL_COMMON, LANGUAGE_INDEPENDENT, "Gutter", LANGUAGE_SPACER, \
+		LANGUAGE_LUNAR, LANGUAGE_SIGN, LANGUAGE_UNATHI, LANGUAGE_SIIK_MAAS, \
+		LANGUAGE_RESOMI, LANGUAGE_SKRELLIAN, \
+		LANGUAGE_SIIK_TAJR, LANGUAGE_NABBER)
+	assisted_langs = list(LANGUAGE_SIIK_TAJR, LANGUAGE_NABBER)
 	unarmed_types = list(/datum/unarmed_attack/punch)
 	rarity_value = 2
 	num_alternate_languages = 2
@@ -106,15 +110,15 @@
 
 /datum/species/machine/terminator
 	name = "Terminator"
-
+	name_plural = "Terminators"
 	blurb = "\[REDACTED\]"
 
-	icobase = 'icons/mob/human_races/r_terminator.dmi'
-	deform = 'icons/mob/human_races/r_terminator.dmi'
+	preview_icon = 		'icons/mob/human_races/species/terminator/preview.dmi'
 
+	eye_icon_location = 'icons/mob/human_races/species/terminator/eyes.dmi'
 	eye_icon = "eyes_terminator"
 	has_floating_eyes = 1
-	appearance_flags = HAS_EYE_COLOR | HAS_UNDERWEAR
+
 	spawn_flags = SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_LACE
 
 	unarmed_types = list(/datum/unarmed_attack/terminator)
@@ -124,24 +128,23 @@
 	burn_mod = 0.5
 	flash_mod = 0
 	siemens_coefficient = 0
-	mob_size = 20
 
 	show_ssd = "laying inert, its activation glyph dark"
 	death_sound = 'sound/effects/bang.ogg'
 	death_message = "collapses to the ground with a CLUNK, and begins to beep ominously."
 
 	has_limbs = list(
-		BP_CHEST =  list("path" = /obj/item/organ/external/chest),
-		BP_GROIN =  list("path" = /obj/item/organ/external/groin),
-		BP_HEAD =   list("path" = /obj/item/organ/external/head),
-		BP_L_ARM =  list("path" = /obj/item/organ/external/arm),
-		BP_R_ARM =  list("path" = /obj/item/organ/external/arm/right),
-		BP_L_LEG =  list("path" = /obj/item/organ/external/leg),
-		BP_R_LEG =  list("path" = /obj/item/organ/external/leg/right),
-		BP_L_HAND = list("path" = /obj/item/organ/external/hand),
-		BP_R_HAND = list("path" = /obj/item/organ/external/hand/right),
-		BP_L_FOOT = list("path" = /obj/item/organ/external/foot),
-		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right)
+		BP_CHEST =  list("path" = /obj/item/organ/external/chest/terminator),
+		BP_GROIN =  list("path" = /obj/item/organ/external/groin/terminator),
+		BP_HEAD =   list("path" = /obj/item/organ/external/head/terminator),
+		BP_L_ARM =  list("path" = /obj/item/organ/external/arm/terminator),
+		BP_R_ARM =  list("path" = /obj/item/organ/external/arm/right/terminator),
+		BP_L_LEG =  list("path" = /obj/item/organ/external/leg/terminator),
+		BP_R_LEG =  list("path" = /obj/item/organ/external/leg/right/terminator),
+		BP_L_HAND = list("path" = /obj/item/organ/external/hand/terminator),
+		BP_R_HAND = list("path" = /obj/item/organ/external/hand/right/terminator),
+		BP_L_FOOT = list("path" = /obj/item/organ/external/foot/terminator),
+		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right/terminator)
 		)
 
 	heat_level_1 = 1500
@@ -150,22 +153,12 @@
 
 	passive_temp_gain = 20
 
-	inherent_verbs = list(
-		/mob/living/carbon/human/proc/self_destruct
-	)
-/*
 	has_organ = list(
-		"brain" = /obj/item/organ/mmi_holder/posibrain/terminator,
-		"shielded cell" = /obj/item/organ/cell/terminator,
-		"optics" = /obj/item/organ/eyes/optical_sensor/terminator,
-		"data core" = /obj/item/organ/data
-	)
-*/
+		BP_POSIBRAIN = /obj/item/organ/internal/posibrain/terminator,
+		BP_OPTICS = /obj/item/organ/internal/eyes/optics/terminator
+		)
 
 	heat_discomfort_level = 2000
-	heat_discomfort_strings = list(
-		"Your CPU temperature probes warn you that you are approaching critical heat levels!"
-		)
 	slowdown = 1
 
 /datum/species/machine/terminator/handle_death(var/mob/living/carbon/human/H)

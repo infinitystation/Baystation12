@@ -10,11 +10,6 @@
 	#include "bearcat-2.dmm"
 	#include "bearcat-3.dmm"
 	#include "bearcat-4.dmm"
-	#include "../away_inf/lost_supply_base/lost_supply_base.dm"
-	#include "../away_inf/smugglers/smugglers.dm"
-
-	#include "../../code/modules/lobby_music/businessend.dm"
-	#include "../../code/modules/lobby_music/salutjohn.dm"
 
 	#define using_map_DATUM /datum/map/overmap_example
 

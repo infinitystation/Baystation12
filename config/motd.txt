@@ -1,15 +1,15 @@
 <span class="main"><h1>Добро пожаловать на Infinity</h1>
 Используется стандартный билд BayStation12 с небольшими модификациями.<br>
-<a href=" https://infinity-ss13.ru/index.php?/topic/768-правила-игры-на-сервере/">Правила сервера</a>
-<a href=" https://infinity-ss13.ru">Форум сервера</a>
+<a href=" https://infinity-ss13.info/index.php?/topic/768-правила-игры-на-сервере/">Правила сервера</a>
+<a href=" https://infinity-ss13.info">Форум сервера</a>
 <a href=" https://wiki.baystation12.net/">BayStation12 Вики</a>
-<a href=" https://wiki.infinity-ss13.ru/">Наша Вики</a>
+<a href=" https://wiki.infinity-ss13.info/">Наша Вики</a>
 <a href=" http://gg.gg/Infinity_LOGS">Логи сервера</a>
 <a href=" https://github.com/infinitystation">Код сервера</a>
 <span style="color: #3399ff;">Emergency Help: </span>
-<a href=" https://wiki.infinity-ss13.ru/index.php?title=Starter_Guide">Как начать играть?</a>
-<a href=" https://wiki.infinity-ss13.ru/index.php?title=How_To_Military_Guide">Как играть за флот и экспедиционников?</a>
-<a href=" https://infinity-ss13.ru/index.php?/forum/35-квенты/">Я хочу играть за кого-то кроме людей.</a>
+<a href=" https://wiki.infinity-ss13.info/index.php?title=Starter_Guide">Как начать играть?</a>
+<a href=" https://wiki.infinity-ss13.info/index.php?title=How_To_Military_Guide">Как играть за флот и экспедиционников?</a>
+<a href=" https://infinity-ss13.info/index.php?/forum/35-квенты/">Я хочу играть за кого-то кроме людей.</a>
 <a href=" https://discord.gg/N4atUkH ">Я хочу попасть на сервер в дискорде! (прямая ссылка)</a>
 
 <span style="color: #cc0000;">Q: Как зайти в игру за кого-то кроме киборга и ИИ?</span>
@@ -19,7 +19,7 @@
 <span style="color: #009933;">A: Зайдите во вкладку настройки Вашего персонажа. Выберите раздел "Global". Выставьте "Client FPS" в диапозоне от 30 до 40. Желательно делать это в процессе игры (за персонажа), чтобы был наглядный результат.</span>
 
 <span style="color: #ff0000;">Внимание! У экипажа и работников корпораций имеется дресс-код.</span>
-<a href=" https://wiki.infinity-ss13.ru/index.php?title=Униформа_экипажа ">Форма экипажа описана здесь.</a>
+<a href=" https://wiki.infinity-ss13.info/index.php?title=Униформа_экипажа ">Форма экипажа описана здесь.</a>
 Для корпоративных работников главное, чтобы в рабочее время на Вас был виден комбинезон Вашего работодателя.
 Если Вы сомневаетесь, что вещь соответствует Вашему дресс-коду (в основном, относится к экипажу), то не берите её. Иначе будьте готовы оправдываться перед педантичным начальством.
 </span>

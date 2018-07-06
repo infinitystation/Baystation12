@@ -13,23 +13,22 @@
 	max_age = 45
 	health_hud_intensity = 3
 
-	blood_color = "#D514F7"
-	flesh_color = "#5F7BB0"
+	blood_color = "#d514f7"
+	flesh_color = "#5f7bb0"
 	base_color = "#001144"
 	tail = "resomitail"
 	tail_hair = "feathers"
 	strength = STR_HIGH
 	reagent_tag = IS_RESOMI
-	ambiguous_genders = TRUE
 
-	icobase = 'icons/mob/human_races/r_resomi.dmi'
-	deform = 'icons/mob/human_races/r_resomi.dmi'
-	damage_overlays = 'icons/mob/human_races/masks/dam_resomi.dmi'
-	damage_mask = 'icons/mob/human_races/masks/dam_mask_resomi.dmi'
-	blood_mask = 'icons/mob/human_races/masks/blood_resomi.dmi'
+	icobase = 			'icons/mob/human_races/species/resomi/body.dmi'
+	deform = 			'icons/mob/human_races/species/resomi/body.dmi'
+	damage_overlays = 	'icons/mob/human_races/species/resomi/damage_overlay.dmi'
+	damage_mask = 		'icons/mob/human_races/species/resomi/damage_mask.dmi'
+	blood_mask = 		'icons/mob/human_races/species/resomi/blood_mask.dmi'
+	eye_icon_location = 'icons/mob/human_races/species/resomi/eyes.dmi'
 
 	eye_icon = "eyes_resomi"
-	eye_icon_location = 'icons/mob/infinity_human_face.dmi'
 
 	slowdown = -0.8 //speed fix?
 	total_health = 150

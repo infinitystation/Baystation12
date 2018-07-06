@@ -15,12 +15,11 @@
 	var/damage_state = "00"            // Modifier used for generating the on-mob damage overlay for this limb.
 
 	// Damage vars.
-	var/brute_mod = 1                  // Multiplier for incoming brute damage.
-	var/burn_mod = 1                   // As above for burn.
 	var/brute_dam = 0                  // Actual current brute damage.
 	var/brute_ratio = 0                // Ratio of current brute damage to max damage.
 	var/burn_dam = 0                   // Actual current burn damage.
 	var/burn_ratio = 0                 // Ratio of current burn damage to max damage.
+	var/can_heal_overkill = 0          // Whether organ can be still healed once past max_damage in brute/burn.
 	var/last_dam = -1                  // used in healing/processing calculations.
 	var/pain = 0                       // How much the limb hurts.
 	var/pain_disability_threshold      // Point at which a limb becomes unusable due to pain.
@@ -142,7 +141,7 @@
 			burn_damage = 7
 		if (3)
 			burn_damage = 3
-	burn_damage *= robotic/burn_mod //ignore burn mod for EMP damage
+	burn_damage *= robotic/species.burn_mod //ignore burn mod for EMP damage
 
 	var/power = 4 - severity //stupid reverse severity
 	for(var/obj/item/I in implants)
@@ -445,7 +444,7 @@ This function completely restores a damaged organ to perfect condition.
 		switch(type)
 			if(BURN)  fluid_loss_severity = FLUIDLOSS_WIDE_BURN
 			if(LASER) fluid_loss_severity = FLUIDLOSS_CONC_BURN
-		var/fluid_loss = (damage/(owner.maxHealth - config.health_threshold_dead)) * owner.species.blood_volume * fluid_loss_severity
+		var/fluid_loss = (damage/(owner.maxHealth - config.health_threshold_dead)) * SPECIES_BLOOD_DEFAULT * fluid_loss_severity
 		owner.remove_blood(fluid_loss)
 
 	// first check whether we can widen an existing wound
@@ -475,7 +474,7 @@ This function completely restores a damaged organ to perfect condition.
 	var/wound_type = get_wound_type(type, damage)
 
 	if(wound_type)
-		var/datum/wound/W = new wound_type(damage)
+		var/datum/wound/W = new wound_type(damage, src)
 
 		//Check whether we can add the wound to an existing wound
 		if(surgical)
@@ -567,16 +566,17 @@ Note that amputating the affected organ does in fact remove the infection from t
 		handle_germ_effects()
 
 /obj/item/organ/external/proc/handle_germ_sync()
-	var/antibiotics = owner.reagents.get_reagent_amount(/datum/reagent/spaceacillin)
+	var/turf/simulated/T = get_turf(owner)
 	for(var/datum/wound/W in wounds)
 		//Open wounds can become infected
-		if (owner.germ_level > W.germ_level && W.infection_check())
+		if(max(istype(T) && T.dirt*10, 2*owner.germ_level) > W.germ_level && W.infection_check())
 			W.germ_level++
 
-	if (antibiotics < 5)
+	var/antibiotics = owner.chem_effects[CE_ANTIBIOTIC]
+	if (!antibiotics)
 		for(var/datum/wound/W in wounds)
 			//Infected wounds raise the organ's germ level
-			if (W.germ_level > germ_level)
+			if (W.germ_level > germ_level || prob(min(W.germ_level, 30)))
 				germ_level++
 				break	//limit increase to a maximum of one per second
 
@@ -801,6 +801,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(parent_organ)
 		var/datum/wound/lost_limb/W = new (src, disintegrate, clean)
 		if(clean)
+			W.parent_organ = parent_organ
 			parent_organ.wounds |= W
 			parent_organ.update_damages()
 		else
@@ -811,6 +812,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 			stump.add_pain(max_damage)
 			if(robotic >= ORGAN_ROBOT)
 				stump.robotize()
+			W.parent_organ = stump
 			stump.wounds |= W
 			victim.organs |= stump
 			if(disintegrate != DROPLIMB_BURN)
@@ -942,6 +944,13 @@ Note that amputating the affected organ does in fact remove the infection from t
 		if(W.clamped)
 			return 1
 
+obj/item/organ/external/proc/remove_clamps()
+	var/rval = 0
+	for(var/datum/wound/W in wounds)
+		rval |= W.clamped
+		W.clamped = 0
+	return rval
+
 // open incisions and expose implants
 // this is the retract step of surgery
 /obj/item/organ/external/proc/open_incision()
@@ -1027,13 +1036,13 @@ Note that amputating the affected organ does in fact remove the infection from t
 		 (R.restricted_to.len && !(species.name in R.restricted_to)) || \
 		 (R.applies_to_part.len && !(organ_tag in R.applies_to_part)))
 			R = basic_robolimb
-			brute_mod = R.brute_mod
-			burn_mod = R.burn_mod
+			species.brute_mod = R.brute_mod
+			species.burn_mod = R.burn_mod
 			speed_mod = R.speed_mod
 		else
 			speed_mod = R.speed_mod
-			brute_mod = R.brute_mod
-			burn_mod = R.burn_mod
+			species.brute_mod = R.brute_mod
+			species.burn_mod = R.burn_mod
 			model = company
 			force_icon = R.icon
 			name = "robotic [initial(name)]"

@@ -1,6 +1,7 @@
-Sladkoeshka - GameMaster
-Terror4000rus - GameMaster
-Logfol - HeadAdmin
-Bear1ake - Host
-KareTa - Host
-billluxe - Host
+sladkoeshka - GameMaster
+terror4000rus - GameMaster
+bear1ake - GameMaster
+kareta - GameMaster
+kuzyxd - GameMaster
+solark - GameMaster
+liners - GameMaster

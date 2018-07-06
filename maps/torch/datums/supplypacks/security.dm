@@ -55,14 +55,30 @@
 	containername = "\improper NanoTrasen light armor crate"
 	access = access_nanotrasen
 
+/decl/hierarchy/supply_pack/security/pistol
+	name = "Weapons - Ballistic sidearms"
+	contains = list(/obj/item/weapon/gun/projectile/military = 4)
+	cost = 40
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "\improper Ballistic sidearms crate"
+	access = access_armory
+	security_level = SUPPLY_SECURITY_ELEVATED
+
 /decl/hierarchy/supply_pack/security/laser
 	name = "Weapons - Laser carbines"
-	contains = list(/obj/item/weapon/gun/energy/laser = 4)
+	contains = list(/obj/item/weapon/gun/energy/laser/secure = 4)
 	cost = 60
 	containertype = /obj/structure/closet/crate/secure/weapon
 	containername = "\improper Laser carbines crate"
 	access = access_emergency_armory
 	security_level = SUPPLY_SECURITY_ELEVATED
+
+/decl/hierarchy/supply_pack/security/laser/shady
+	name = "Weapons - Laser carbines (For disposal)"
+	contains = list(/obj/item/weapon/gun/energy/laser = 4)
+	cost = 80
+	contraband = 1
+	security_level = null
 
 /decl/hierarchy/supply_pack/security/advancedlaser
 	name = "Weapons - Advanced Laser Weapons"
@@ -121,6 +137,31 @@
 	access = access_emergency_armory
 	security_level = SUPPLY_SECURITY_HIGH
 
+/decl/hierarchy/supply_pack/security/pistolammo
+	name = "Ammunition - .45 magazines"
+	contains = list(/obj/item/ammo_magazine/c45mds = 4)
+	cost = 30
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "\improper .45 ammunition crate"
+	access = access_security
+	security_level = SUPPLY_SECURITY_ELEVATED
+
+/decl/hierarchy/supply_pack/security/pistolammorubber
+	name = "Ammunition - .45 rubber"
+	contains = list(/obj/item/ammo_magazine/c45mds/rubber = 4)
+	cost = 20
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "\improper .45 rubber ammunition crate"
+	access = access_security
+
+/decl/hierarchy/supply_pack/security/pistolammopractice
+	name = "Ammunition - .45 practice"
+	contains = list(/obj/item/ammo_magazine/c45mds/practice = 8)
+	cost = 20
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "\improper .45 practice ammunition crate"
+	access = access_security
+
 /decl/hierarchy/supply_pack/security/holster
 	name = "Misc - Holster crate"
 	contains = list(/obj/item/clothing/accessory/holster/hip = 4)
@@ -131,8 +172,7 @@
 
 /decl/hierarchy/supply_pack/security/securityextragear
 	name = "Misc - Security equipment"
-	contains = list(/obj/item/weapon/cartridge/security = 2,
-					/obj/item/weapon/storage/belt/security = 2,
+	contains = list(/obj/item/weapon/storage/belt/security = 2,
 					/obj/item/device/radio/headset/headset_sec = 2,
 					/obj/item/clothing/glasses/sunglasses/sechud/goggles = 2,
 					/obj/item/taperoll/police = 2,
@@ -147,8 +187,7 @@
 
 /decl/hierarchy/supply_pack/security/cosextragear
 	name = "Misc - Chief of Security equipment"
-	contains = list(/obj/item/weapon/cartridge/hos,
-					/obj/item/device/radio/headset/heads/cos,
+	contains = list(/obj/item/device/radio/headset/heads/cos,
 					/obj/item/clothing/glasses/sunglasses/sechud/goggles,
 					/obj/item/taperoll/police,
 					/obj/item/weapon/storage/belt/security,
@@ -203,5 +242,14 @@
 	cost = 40
 	containertype = /obj/structure/closet/crate/secure/weapon
 	containername = "\improper .22LR ammunition crate"
+	access = access_heads
+	security_level = SUPPLY_SECURITY_ELEVATED
+
+/decl/hierarchy/supply_pack/security/barriers
+	name = "Portable Barriers (2)"
+	contains = list(/obj/item/weapon/barrier = 2)
+	cost = 30
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "\improper portable barriers crate"
 	access = access_heads
 	security_level = SUPPLY_SECURITY_ELEVATED

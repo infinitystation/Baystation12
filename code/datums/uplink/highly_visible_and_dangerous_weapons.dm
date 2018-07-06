@@ -124,6 +124,16 @@
 	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/gun/projectile/shotgun/magazine
 
+/datum/uplink_item/item/visible_weapons/beretta
+	name = "9mm Pistol"
+	item_cost = 40
+	path = /obj/item/weapon/gun/projectile/beretta
+
+/datum/uplink_item/item/visible_weapons/detective_revolver
+	name = "Holdout Revolver"
+	item_cost = 38
+	path = /obj/item/weapon/gun/projectile/revolver/detective
+
 /datum/uplink_item/item/visible_weapons/pulserifle
 	name = "Pulse Rifle"
 	item_cost = 68
@@ -144,14 +154,14 @@
 
 /datum/uplink_item/item/visible_weapons/railgun // Like a semi-auto AMR
 	name = "Railgun"
-	item_cost = 96
-	antag_costs = list(MODE_MERCENARY = 88)
+	item_cost = DEFAULT_TELECRYSTAL_AMOUNT
+	antag_costs = list(MODE_MERCENARY = DEFAULT_TELECRYSTAL_AMOUNT - (DEFAULT_TELECRYSTAL_AMOUNT - (DEFAULT_TELECRYSTAL_AMOUNT % 6)) / 6)
 	path = /obj/item/weapon/gun/magnetic/railgun
 
 /datum/uplink_item/item/visible_weapons/railguntcc // Only slightly better than the normal railgun; but cooler looking
 	name = "Advanced Railgun"
-	item_cost = 112 // This high price is to make it less common for normal tators, and make it "seem" scarier
-	antag_costs = list(MODE_MERCENARY = 96) // This, on the other hand, is to encourage usage specifically by mercs with high budgets.
+	item_cost = DEFAULT_TELECRYSTAL_AMOUNT + (DEFAULT_TELECRYSTAL_AMOUNT - (DEFAULT_TELECRYSTAL_AMOUNT % 6)) / 6// Only available to traitors if they share TCs.
+	antag_costs = list(MODE_MERCENARY = DEFAULT_TELECRYSTAL_AMOUNT) // This, on the other hand, is to encourage usage specifically by mercs with high budgets.
 	path = /obj/item/weapon/gun/magnetic/railgun/tcc
 
 /datum/uplink_item/item/visible_weapons/grenade_launcher

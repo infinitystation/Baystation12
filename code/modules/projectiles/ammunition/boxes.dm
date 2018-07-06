@@ -88,6 +88,31 @@
 	name = "magazine (.45, flash)"
 	ammo_type = /obj/item/ammo_casing/c45/flash
 
+/obj/item/ammo_magazine/c45mds
+	name = "double-stack magazine (.45)"
+	icon_state = "45ds"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/c45
+	matter = list(DEFAULT_WALL_MATERIAL = 900)
+	caliber = ".45"
+	max_ammo = 12
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/c45mds/empty
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/c45mds/rubber
+	name = "double-stack magazine (.45, rubber)"
+	ammo_type = /obj/item/ammo_casing/c45/rubber
+
+/obj/item/ammo_magazine/c45mds/practice
+	name = "double-stack magazine (.45, practice)"
+	ammo_type = /obj/item/ammo_casing/c45/practice
+
+/obj/item/ammo_magazine/c45mds/flash
+	name = "double-stack magazine (.45, flash)"
+	ammo_type = /obj/item/ammo_casing/c45/flash
+
 /obj/item/ammo_magazine/c45uzi
 	name = "stick magazine (.45)"
 	icon_state = "uzi45"
@@ -106,10 +131,10 @@
 	icon_state = "9x19p"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	matter = list(DEFAULT_WALL_MATERIAL = 600)
+	matter = list(DEFAULT_WALL_MATERIAL = 480)
 	caliber = "9mm"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	max_ammo = 10
+	max_ammo = 8
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/mc9mm/empty
@@ -117,6 +142,34 @@
 
 /obj/item/ammo_magazine/mc9mm/flash
 	name = "magazine (9mm, flash)"
+	ammo_type = /obj/item/ammo_casing/c9mm/flash
+
+/obj/item/ammo_magazine/mc9mm/rubber
+	name = "magazine (9mm, rubber)"
+
+/obj/item/ammo_magazine/mc9mmds
+	name = "double-stack magazine (9mm)"
+	icon_state = "9mmds"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/c9mm
+	matter = list(DEFAULT_WALL_MATERIAL = 900)
+	caliber = "9mm"
+	max_ammo = 15
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/mc9mmds/empty
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/mc9mmds/rubber
+	name = "double-stack magazine (9mm, rubber)"
+	ammo_type = /obj/item/ammo_casing/c9mm/rubber
+
+/obj/item/ammo_magazine/mc9mmds/practice
+	name = "double-stack magazine (9mm, practice)"
+	ammo_type = /obj/item/ammo_casing/c9mm/practice
+
+/obj/item/ammo_magazine/mc9mmds/flash
+	name = "double-stack magazine (9mm, flash)"
 	ammo_type = /obj/item/ammo_casing/c9mm/flash
 
 /obj/item/ammo_magazine/box/c9mm
@@ -327,4 +380,32 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/c12755/empty
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/mc57
+	name = "magazine (5.7mm)"
+	icon = 'icons/event/ammo.dmi'
+	icon_state = "smg"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/c57
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "57"
+	max_ammo = 30
+
+/obj/item/ammo_magazine/mc57/empty
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/uni46x30mm
+	name = "magazine (4.6x30mm universal)"
+	icon = 'icons/event/ammo.dmi'
+	icon_state = "smg"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = "46x30mm"
+	matter = list(DEFAULT_WALL_MATERIAL = 1500)
+	ammo_type = /obj/item/ammo_casing/uni46x30mm
+	max_ammo = 30
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/uni46x30mm/empty
 	initial_ammo = 0

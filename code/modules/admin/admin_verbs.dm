@@ -76,7 +76,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/cmd_admin_rejuvenate,
 	/client/proc/toggleghostwriters,
 	/client/proc/toggledrones,
-	/datum/admins/proc/show_skills,
+	///datum/admins/proc/show_skills,
 	/client/proc/check_customitem_activity,
 	/client/proc/man_up,
 	/client/proc/global_man_up,
@@ -177,7 +177,6 @@ var/list/admin_verbs_server = list(
 	/client/proc/nanomapgen_DumpImage,
 	/client/proc/adminchangebuild,
 	/client/proc/update_server,
-	/client/proc/update_server_round_end,
 	/client/proc/cmd_toggle_admin_help,
 	/client/proc/observe_delay
 	)
@@ -330,7 +329,7 @@ var/list/admin_verbs_mod = list(
 	/datum/admins/proc/show_player_info,
 	/client/proc/player_panel_new,
 	/client/proc/dsay,
-	/datum/admins/proc/show_skills,
+	///datum/admins/proc/show_skills,
 	/datum/admins/proc/show_player_panel,
 	/client/proc/check_antagonists,
 	/client/proc/cmd_admin_subtle_message, // send an message to somebody as a 'voice in their head',
@@ -345,6 +344,7 @@ var/list/admin_verbs_mentor = list(
 //	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,
 	/client/proc/cmd_mod_say,
+	/datum/admins/proc/show_skills
 //	/datum/admins/proc/show_player_info,
 //	/client/proc/dsay,
 //	/client/proc/cmd_admin_subtle_message

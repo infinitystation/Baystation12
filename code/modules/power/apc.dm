@@ -74,10 +74,13 @@
 	desc = "A control terminal for the area electrical systems."
 
 	icon_state = "apc0"
+	icon = 'icons/obj/apc.dmi'
+	plane = ABOVE_HUMAN_PLANE
 	anchored = 1
 	use_power = 0
 	req_access = list(access_engine_equip)
 	clicksound = "switch"
+	layer = ABOVE_WINDOW_LAYER
 	var/needs_powerdown_sound
 	var/area/area
 	var/areastring = null
@@ -117,7 +120,6 @@
 	var/list/update_overlay_chan		// Used to determine if there is a change in channels
 	var/is_critical = 0
 	var/global/status_overlays = 0
-	var/updating_icon = 0
 	var/failure_timer = 0
 	var/force_update = 0
 	var/emp_hardened = 0
@@ -166,13 +168,13 @@
 
 /obj/machinery/power/apc/Initialize(mapload, var/ndir, var/building=0)
 
-	// offset 24 pixels in direction of dir
+	// offset 22 pixels in direction of dir
 	// this allows the APC to be embedded in a wall, yet still inside an area
 	if (building)
 		set_dir(ndir)
 
-	pixel_x = (src.dir & 3)? 0 : (src.dir == 4 ? 24 : -24)
-	pixel_y = (src.dir & 3)? (src.dir ==1 ? 24 : -24) : 0
+	pixel_x = (src.dir & 3)? 0 : (src.dir == 4 ? 22 : -22)
+	pixel_y = (src.dir & 3)? (src.dir ==1 ? 22 : -22) : 0
 
 	if (building==0)
 		init_round_start()
@@ -221,6 +223,9 @@
 /obj/machinery/power/apc/proc/make_terminal()
 	// create a terminal object at the same position as original turf loc
 	// wires will attach to this
+	if(!wires)
+		wires = new(src)
+
 	terminal = new/obj/machinery/power/terminal(src.loc)
 	terminal.set_dir(dir)
 	terminal.master = src
@@ -294,27 +299,34 @@
 		status_overlays_charging[2] =  make_screen_overlay(icon, "apco3-1")
 		status_overlays_charging[3] =  make_screen_overlay(icon, "apco3-2")
 
-		status_overlays_equipment[POWERCHAN_OFF + 1] = make_screen_overlay(icon, "apco0-0")
-		status_overlays_equipment[POWERCHAN_OFF_TEMP + 1] = make_screen_overlay(icon, "apco0-1")
-		status_overlays_equipment[POWERCHAN_OFF_AUTO + 1] = make_screen_overlay(icon, "apco0-1")
-		status_overlays_equipment[POWERCHAN_ON + 1] = make_screen_overlay(icon, "apco0-2")
-		status_overlays_equipment[POWERCHAN_ON_AUTO + 1] = make_screen_overlay(icon, "apco0-3")
+		var/list/channel_overlays = list(status_overlays_equipment, status_overlays_lighting, status_overlays_environ)
+		var/channel = 0
+		for(var/list/channel_leds in channel_overlays)
+			channel_leds[POWERCHAN_OFF + 1] = overlay_image(icon,"apco[channel]",COLOR_RED)
+			channel_leds[POWERCHAN_OFF_TEMP + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE)
+			channel_leds[POWERCHAN_OFF_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE)
+			channel_leds[POWERCHAN_ON + 1] = overlay_image(icon,"apco[channel]",COLOR_LIME)
+			channel_leds[POWERCHAN_ON_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_BLUE)
+			channel++
 
-		status_overlays_lighting[POWERCHAN_OFF + 1] = make_screen_overlay(icon, "apco1-0")
-		status_overlays_lighting[POWERCHAN_OFF_TEMP + 1] = make_screen_overlay(icon, "apco1-1")
-		status_overlays_lighting[POWERCHAN_OFF_AUTO + 1] = make_screen_overlay(icon, "apco1-1")
-		status_overlays_lighting[POWERCHAN_ON + 1] = make_screen_overlay(icon, "apco1-2")
-		status_overlays_lighting[POWERCHAN_ON_AUTO + 1] = make_screen_overlay(icon, "apco1-3")
-
-		status_overlays_environ[POWERCHAN_OFF + 1] = make_screen_overlay(icon, "apco2-0")
-		status_overlays_environ[POWERCHAN_OFF_TEMP + 1] = make_screen_overlay(icon, "apco2-1")
-		status_overlays_environ[POWERCHAN_OFF_AUTO + 1] = make_screen_overlay(icon, "apco2-1")
-		status_overlays_environ[POWERCHAN_ON + 1] = make_screen_overlay(icon, "apco2-2")
-		status_overlays_environ[POWERCHAN_ON_AUTO + 1] = make_screen_overlay(icon, "apco2-3")
+	if(update_state < 0)
+		pixel_x = 0
+		pixel_y = 0
+		var/turf/T = get_step(get_turf(src), dir)
+		if(istype(T) && T.density)
+			if(dir == SOUTH)
+				pixel_y = -22
+			else if(dir == NORTH)
+				pixel_y = 22
+			else if(dir == EAST)
+				pixel_x = 22
+			else if(dir == WEST)
+				pixel_x = -22
 
 	var/update = check_updates() 		//returns 0 if no need to update icons.
 						// 1 if we need to update the icon_state
 						// 2 if we need to update the overlays
+
 	if(!update)
 		return
 
@@ -357,7 +369,7 @@
 		if(update_state & (UPDATE_OPENED1|UPDATE_OPENED2|UPDATE_BROKE))
 			set_light(0)
 		else if(update_state & UPDATE_BLUESCREEN)
-			set_light(l_range = 2, l_power = 0.5, l_color = "#0000ff")
+			set_light(0.3, 0.1, 1, 2, "0000ff")
 		else if(!(stat & (BROKEN|MAINT)) && update_state & UPDATE_ALLGOOD)
 			var/color
 			switch(charging)
@@ -367,7 +379,7 @@
 					color = "#a8b0f8"
 				if(2)
 					color = "#82ff4c"
-			set_light(l_range = 2, l_power = 0.5, l_color = color)
+			set_light(0.3, 0.1, 1, l_color = color)
 		else
 			set_light(0)
 
@@ -425,16 +437,6 @@
 	if(last_update_overlay != update_overlay || last_update_overlay_chan != update_overlay_chan)
 		results += 2
 	return results
-
-// Used in process so it doesn't update the icon too much
-/obj/machinery/power/apc/proc/queue_icon_update()
-
-	if(!updating_icon)
-		updating_icon = 1
-		// Start the update
-		spawn(APC_UPDATE_ICON_COOLDOWN)
-			update_icon()
-			updating_icon = 0
 
 //attack with an item - open/close cover, insert cell, or (un)lock interface
 
@@ -523,7 +525,7 @@
 
 			update_icon()
 
-	else if (istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/device/pda))			// trying to unlock the interface with an ID card
+	else if (istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/modular_computer))			// trying to unlock the interface with an ID card
 		if(emagged)
 			to_chat(user, "The interface is broken.")
 		else if(opened)
@@ -672,6 +674,20 @@
 			user.visible_message("<span class='danger'>The [src.name] has been hit with the [W.name] by [user.name]!</span>", \
 				"<span class='danger'>You hit the [src.name] with your [W.name]!</span>", \
 				"You hear a bang")
+			if(W.force >= 5 && W.w_class >= ITEM_SIZE_NORMAL && prob(W.force))
+				var/roulette = rand(1,100)
+				switch(roulette)
+					if(1 to 10)
+						locked = FALSE
+						to_chat(user, "<span class='notice'>You manage to disable the lock on \the [src]!</span>")
+					if(50 to 70)
+						to_chat(user, "<span class='notice'>You manage to bash the lid open!</span>")
+						opened = 1
+					if(90 to 100)
+						to_chat(user, "<span class='warning'>There's a nasty sound and \the [src] goes cold...</span>")
+						stat |= BROKEN
+				update_icon()
+		playsound(get_turf(src), 'sound/weapons/smash.ogg', 75, 1)
 
 // attack with hand - remove cell (if cover open) or interact with the APC
 

@@ -208,7 +208,7 @@
 
 	for(var/i = 0, i<numticks, i++)
 		sleep(delayfraction)
-		if(!src || !user || !user.canmove || !(user.loc == T))
+		if(!src || !user || user.is_physically_disabled() || !(user.loc == T))
 			return 0
 
 	return 1
@@ -711,6 +711,8 @@
 		src.check_for_internal_damage(list(MECHA_INT_FIRE, MECHA_INT_TEMP_CONTROL))
 	return
 
+/obj/mecha/is_burnable()
+	return TRUE
 
 //////////////////////
 ////// AttackBy //////
@@ -981,8 +983,8 @@
 	set popup_menu = 0
 	if(usr!=occupant)	return
 	lights = !lights
-	if(lights)	set_light(light_range + lights_power)
-	else		set_light(light_range - lights_power)
+	if(lights)	set_light(0.6, 1, 6)
+	else		set_light(0)
 	src.occupant_message("Toggled lights [lights?"on":"off"].")
 	log_message("Toggled lights [lights?"on":"off"].")
 	return
@@ -1160,7 +1162,6 @@
 			if(mmi.brainmob)
 				occupant.loc = mmi
 			mmi.mecha = null
-			src.occupant.canmove = 0
 			src.verbs += /obj/mecha/verb/eject
 		src.occupant = null
 		src.icon_state = src.reset_icon()+"-open"
@@ -1889,3 +1890,7 @@
 */
 /obj/mecha/fall_damage()
 	return 550
+
+/obj/mecha/lava_act(datum/gas_mixture/air, temperature, pressure)
+	fire_act(air, temperature)
+	. = (health <= 0) ? ..() : FALSE

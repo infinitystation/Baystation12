@@ -9,6 +9,8 @@
 	var/mob/living/pulling = null
 	var/bloodiness
 
+	movement_handlers = list(/datum/movement_handler/delay = list(2), /datum/movement_handler/move_relay_self)
+
 /obj/structure/bed/chair/wheelchair/update_icon()
 	return
 
@@ -144,11 +146,11 @@
 		if (pulling && (pulling.a_intent == I_HURT))
 			occupant.throw_at(A, 3, 3, pulling)
 		else if (propelled)
-			occupant.throw_at(A, 3, propelled)
+			occupant.throw_at(A, 3, 3, propelled)
 
 		var/def_zone = ran_zone()
 		var/blocked = occupant.run_armor_check(def_zone, "melee")
-		occupant.throw_at(A, 3, propelled)
+		occupant.throw_at(A, 3, 3, propelled)
 		occupant.apply_effect(6, STUN, blocked)
 		occupant.apply_effect(6, WEAKEN, blocked)
 		occupant.apply_effect(6, STUTTER, blocked)

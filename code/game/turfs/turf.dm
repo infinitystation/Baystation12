@@ -59,15 +59,6 @@
 
 /turf/attack_hand(mob/user)
 	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
-	var/area/A = src.loc
-	if (user.lying  && !user.anchored && !user.restrained() && ishuman(user) && A.has_gravity && !istype(src,/turf/space)) //Because do_after's aren't actually interrupted by most things unfortunately.
-		for (var/obj/item/grab/G in user.grabbed_by)
-			if(G.stop_move())
-				return
-
-		if(do_after(user, 25 + (user.weakened * 2) ,src, incapacitation_flags = ~INCAPACITATION_KNOCKDOWN))
-			step_towards(user, src)
-			user.visible_message("<font size=1><span class='warning'>[user] crawls on \the [src]</span></font>")
 
 	if(user.restrained())
 		return 0
@@ -75,14 +66,8 @@
 		return 0
 	if(user.pulling.loc != user.loc && get_dist(user, user.pulling) > 1)
 		return 0
-	if(ismob(user.pulling))
-		var/mob/M = user.pulling
-		var/atom/movable/t = M.pulling
-		M.stop_pulling()
-		step(user.pulling, get_dir(user.pulling.loc, src))
-		M.start_pulling(t)
-	else
-		step(user.pulling, get_dir(user.pulling.loc, src))
+	if(user.pulling)
+		do_pull_click(user, src)
 	return 1
 
 turf/attackby(obj/item/weapon/W as obj, mob/user as mob)
@@ -226,9 +211,6 @@ var/const/enterloopsanity = 100
 			if(!LinkBlocked(src, t) && !TurfBlockedNonWindow(t))
 				L.Add(t)
 	return L
-
-/turf/proc/process()
-	return PROCESS_KILL
 
 /turf/proc/contains_dense_objects()
 	if(density)

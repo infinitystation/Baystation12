@@ -63,7 +63,6 @@
 
 	// contained in a cage
 	var/in_stasis = 0
-
 /mob/living/simple_animal/Life()
 	..()
 	if(!living_observers_present(GetConnectedZlevels(z)))
@@ -100,14 +99,11 @@
 
 	//Movement
 	if(!client && !stop_automated_movement && wander && !anchored)
-		if(isturf(src.loc) && !resting && !buckled && canmove)		//This is so it only moves if it's not inside a closet, gentics machine, etc.
+		if(isturf(src.loc) && !resting)		//This is so it only moves if it's not inside a closet, gentics machine, etc.
 			turns_since_move++
 			if(turns_since_move >= turns_per_move)
-				if(!(stop_automated_movement_when_pulled && pulledby)) //Soma animals don't move when pulled
-					var/moving_to = 0 // otherwise it always picks 4, fuck if I know.   Did I mention fuck BYOND
-					moving_to = pick(GLOB.cardinal)
-					set_dir(moving_to)			//How about we turn them the direction they are moving, yay.
-					Move(get_step(src,moving_to))
+				if(!(stop_automated_movement_when_pulled && pulledby)) //Some animals don't move when pulled
+					SelfMove(pick(GLOB.cardinal))
 					turns_since_move = 0
 
 	//Speaking
@@ -138,7 +134,7 @@
 		return 1
 	var/datum/gas_mixture/environment = A.return_air()
 
-	if(environment)
+	if(!(SPACERES in mutations) && environment)
 		if( abs(environment.temperature - bodytemperature) > 40 )
 			bodytemperature += (environment.temperature - bodytemperature) / 5
 		if(min_gas)
@@ -190,6 +186,7 @@
 		damage = (Proj.damage / 8)
 
 	adjustBruteLoss(damage)
+	Proj.on_hit(src)
 	return 0
 
 /mob/living/simple_animal/attack_hand(mob/living/carbon/human/M as mob)
@@ -372,3 +369,6 @@
 	return
 /mob/living/simple_animal/ExtinguishMob()
 	return
+
+/mob/living/simple_animal/is_burnable()
+	return heat_damage_per_tick

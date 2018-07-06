@@ -35,10 +35,11 @@ var/list/gamemode_cache = list()
 	var/vote_delay = 6000				// minimum time between voting sessions (deciseconds, 10 minute default)
 	var/vote_period = 600				// length of voting period (deciseconds, default 1 minute)
 	var/vote_autotransfer_initial = 108000 // Length of time before the first autotransfer vote is called
-	var/vote_autotransfer_interval = 36000 // length of time before next sequential autotransfer vote
+	var/vote_autotransfer_interval = 18000 // length of time before next sequential autotransfer vote
 	var/vote_autogamemode_timeleft = 100 //Length of time before round start when autogamemode vote is called (in seconds, default 100).
 	var/vote_no_default = 0				// vote does not default to nochange/norestart (tbi)
 	var/vote_no_dead = 0				// dead people can't vote (tbi)
+	var/vote_no_dead_crew_transfer = 0	// dead people can't vote on crew transfer votes
 //	var/enable_authentication = 0		// goon authentication
 	var/del_new_on_log = 1				// del's new players if they log before they spawn in
 	var/feature_object_spell_system = 0 //spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard
@@ -82,7 +83,7 @@ var/list/gamemode_cache = list()
 
 	var/max_maint_drones = 5				//This many drones can spawn,
 	var/allow_drone_spawn = 1				//assuming the admin allow them to.
-	var/drone_build_time = 1200				//A drone will become available every X ticks since last drone spawn. Default is 2 minutes.
+	var/drone_build_time = 9000				//A drone will become available every X ticks since last drone spawn. Default is 2 minutes.
 
 	var/disable_player_mice = 0
 	var/uneducated_mice = 1 //Set to 1 to prevent newly-spawned mice from understanding human speech
@@ -227,7 +228,7 @@ var/list/gamemode_cache = list()
 	var/error_silence_time = 6000 // How long a unique error will be silenced for
 	var/error_msg_delay = 50 // How long to wait between messaging admins about occurrences of a unique error
 
-	var/max_gear_cost = 10 // Used in chargen for accessory loadout limit. 0 disables loadout, negative allows infinite points.
+	var/max_gear_cost = 15 // Used in chargen for accessory loadout limit. 0 disables loadout, negative allows infinite points.
 
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
@@ -387,6 +388,9 @@ var/list/gamemode_cache = list()
 
 				if ("no_dead_vote")
 					config.vote_no_dead = 1
+
+				if ("no_dead_vote_crew_transfer")
+					config.vote_no_dead_crew_transfer = 1
 
 				if ("default_no_vote")
 					config.vote_no_default = 1

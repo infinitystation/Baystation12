@@ -43,7 +43,8 @@
 	down_icon_state = "steriledown"
 	pull_mask = 1
 	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi'
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/masks.dmi'
 		)
 
 /obj/item/clothing/mask/fakemoustache

@@ -9,8 +9,7 @@ GLOBAL_LIST_EMPTY(ao_cache)
 	var/tmp/ao_neighbors = 0
 
 /turf/proc/regenerate_ao()
-	for (var/thing in trange(1, src))
-		var/turf/T = thing
+	for(var/turf/T in trange(1, src))
 		if(istype(T, /turf) && T.permit_ao)
 			T.update_ao()
 
@@ -73,3 +72,12 @@ GLOBAL_LIST_EMPTY(ao_cache)
 		overlays += ao_overlays
 
 #undef WALL_AO_ALPHA
+
+/mob/verb/listao()
+	set name = "AO list"
+	set category = "AO"
+	var/ao_count = 0
+	for(var/turf/T)
+		if(T.ao_overlays)
+			ao_count += T.ao_overlays.len
+	to_chat(usr, "[ao_count]")

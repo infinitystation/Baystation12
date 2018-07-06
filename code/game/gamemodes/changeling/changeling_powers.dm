@@ -81,7 +81,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	var/mob/living/carbon/human/H = src
 	if(istype(H))
-		var/datum/absorbed_dna/newDNA = new(H.real_name, H.dna, H.species.name, H.languages)
+		var/datum/absorbed_dna/newDNA = new(H.real_name, H.dna, H.species.name, H.languages, H.flavor_texts)
 		absorbDNA(newDNA)
 
 	return 1
@@ -208,7 +208,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	changeling_update_languages(changeling.absorbed_languages)
 
-	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages)
+	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages, T.flavor_texts)
 	absorbDNA(newDNA)
 	if(mind && T.mind)
 		mind.store_memory("[T.real_name]'s memories:")
@@ -308,6 +308,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 		H.set_species(newSpecies,1)
 		H.b_type = chosen_dna.dna.b_type
 		H.sync_organ_dna()
+		H.flavor_texts = chosen_dna.flavour_texts ? chosen_dna.flavour_texts.Copy() : null
 
 	domutcheck(src, null)
 	src.UpdateAppearance()
@@ -346,6 +347,9 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	var/datum/changeling/changeling = changeling_power(1,1,0)
 	if(!changeling)	return
+	
+	if(HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
+		return
 
 	var/list/names = list()
 	for(var/datum/dna/DNA in changeling.absorbed_dna)
@@ -369,8 +373,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	for (var/obj/item/weapon/implant/I in C) //Still preserving implants
 		implants += I
 
-	C.transforming = 1
-	C.canmove = 0
+	ADD_TRANSFORMATION_MOVEMENT_HANDLER(C)
 	C.icon = null
 	C.overlays.Cut()
 	C.set_invisibility(101)
@@ -432,7 +435,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 		return
 	to_chat(C, "<span class='notice'>We will attempt to regenerate our form.</span>")
 	C.status_flags |= FAKEDEATH		//play dead
-	C.update_canmove()
+	C.UpdateLyingBuckledAndVerbStatus()
 	C.remove_changeling_powers()
 
 	C.emote("gasp")
@@ -458,7 +461,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	// remove our fake death flag
 	C.status_flags &= ~(FAKEDEATH)
 	// let us move again
-	C.update_canmove()
+	C.UpdateLyingBuckledAndVerbStatus()
 	// re-add out changeling powers
 	C.make_changeling()
 	// sending display messages
@@ -499,7 +502,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	C.SetStunned(0)
 	C.SetWeakened(0)
 	C.lying = 0
-	C.update_canmove()
+	C.UpdateLyingBuckledAndVerbStatus()
 
 	src.verbs -= /mob/proc/changeling_unstun
 	spawn(5)	src.verbs += /mob/proc/changeling_unstun
@@ -814,7 +817,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 		to_chat(src, "<span class='notice'>That species must be absorbed directly.</span>")
 		return
 
-	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages)
+	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages, T.flavor_texts)
 	absorbDNA(newDNA)
 
 	feedback_add_details("changeling_powers","ED")

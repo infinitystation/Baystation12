@@ -12,7 +12,8 @@
 	density = 1
 	anchored = 1
 	animate_movement=1
-	light_range = 3
+	light_max_bright = 0.7
+	light_outer_range = 3
 
 	can_buckle = 1
 	buckle_movable = 1
@@ -172,7 +173,7 @@
 	if(powered && cell.charge < (charge_use * CELLRATE))
 		return 0
 	on = 1
-	set_light(initial(light_range))
+	set_light(initial(light_max_bright), 1, 5)
 	update_icon()
 	return 1
 
@@ -344,6 +345,7 @@
 		unbuckle_mob(load)
 
 	load = null
+	update_icon()
 
 	return 1
 

@@ -27,6 +27,9 @@
 		cigcell = new cell_type
 	ec_cartridge = new cartridge_type(src)
 
+/obj/item/clothing/mask/smokable/ecig/get_cell()
+	return cigcell
+
 /obj/item/clothing/mask/smokable/ecig/simple
 	name = "cheap electronic cigarette"
 	desc = "A cheap Lucky 1337 electronic cigarette, styled like a traditional cigarette."
@@ -129,7 +132,7 @@ obj/item/clothing/mask/smokable/ecig/util/examine(mob/user)
 	if (active)
 		item_state = icon_on
 		icon_state = icon_on
-		set_light(brightness_on)
+		set_light(0.6, 0.5, brightness_on)
 	else if (ec_cartridge)
 		set_light(0)
 		item_state = icon_off

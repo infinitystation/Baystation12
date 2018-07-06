@@ -12,6 +12,12 @@
 	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
 	item_state = "kitty_tailless"
 
+/obj/item/clothing/head/kitty/fake
+	name = "fake kitty ears"
+	desc = "The fur feels.....a bit too realistic."
+	icon_state = "kitty"
+	body_parts_covered = 0
+
 	update_icon(var/mob/living/carbon/human/user)
 		if(!istype(user)) return
 		var/icon/ears = new/icon("icon" = 'icons/mob/infinity/hats.dmi', "icon_state" = "kitty")

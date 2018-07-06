@@ -36,6 +36,8 @@
 	data["is_admin"] = is_admin
 	data["screen"] = screen
 	data["credits"] = "[supply_controller.points]"
+	data["currency"] = GLOB.using_map.supply_currency_name
+	data["currency_short"] = GLOB.using_map.supply_currency_name_short
 	switch(screen)
 		if(1)// Main ordering menu
 			data["categories"] = category_names
@@ -52,10 +54,12 @@
 			data["credits_paperwork"] = supply_controller.point_sources["manifest"] ? supply_controller.point_sources["manifest"] : 0
 			data["credits_virology"] = supply_controller.point_sources["virology"] ? supply_controller.point_sources["virology"] : 0
 			data["credits_refined_scrap"] = supply_controller.point_sources["refined_scrap"] ? supply_controller.point_sources["refined_scrap"] : 0
+			data["credits_gep"] = supply_controller.point_sources["gep"] ? supply_controller.point_sources["gep"] : 0
 			data["can_print"] = can_print()
 
 		if(3)// Shuttle monitoring and control
 			var/datum/shuttle/autodock/ferry/supply/shuttle = supply_controller.shuttle
+			data["shuttle_name"] = shuttle.name
 			if(istype(shuttle))
 				data["shuttle_location"] = shuttle.at_station() ? GLOB.using_map.name : "Remote location"
 			else

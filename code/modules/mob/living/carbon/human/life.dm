@@ -43,7 +43,7 @@
 	set invisibility = 0
 	set background = BACKGROUND_ENABLED
 
-	if (transforming)
+	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
 
 	fire_alert = 0 //Reset this here, because both breathe() and handle_environment() have a chance to set it.
@@ -204,7 +204,7 @@
 			set_light(0)
 	else
 		if(species.appearance_flags & RADIATION_GLOWS)
-			set_light(max(1,min(10,radiation/10)), max(1,min(20,radiation/20)), species.get_flesh_colour(src))
+			set_light(0.3, 0.1, max(1,min(20,radiation/20)), 2, species.get_flesh_colour(src))
 		// END DOGSHIT SNOWFLAKE
 
 		var/obj/item/organ/internal/diona/nutrients/rad_organ = locate() in internal_organs
@@ -257,8 +257,8 @@
 			damage = 8
 			radiation -= 4 * RADIATION_SPEED_COEFFICIENT
 
+		damage = Floor(damage * (isSynthetic() ? 0.5 : species.radiation_mod))
 		if(damage)
-			damage *= isSynthetic() ? 0.5 : species.radiation_mod
 			adjustToxLoss(damage * RADIATION_SPEED_COEFFICIENT)
 			updatehealth()
 			if(!isSynthetic() && organs.len)
@@ -319,7 +319,7 @@
 	return !failed_last_breath
 
 /mob/living/carbon/human/handle_environment(datum/gas_mixture/environment)
-	if(!environment)
+	if(!environment || (SPACERES in mutations))
 		return
 
 	//Stuff like the xenomorph's plasma regen happens here.
@@ -656,7 +656,6 @@
 
 /mob/living/carbon/human/handle_regular_hud_updates()
 	var/datum/gas_mixture/environment = loc.return_air()
-	var/loc_temp = environment.temperature
 	if(hud_updateflag) // update our mob's hud overlays, AKA what others see flaoting above our head
 		handle_hud_list()
 
@@ -792,16 +791,15 @@
 					if(280 to 295)			bodytemp.icon_state = "temp-2"
 					if(260 to 280)			bodytemp.icon_state = "temp-3"
 					else					bodytemp.icon_state = "temp-4"
-				switch(loc_temp) //292 = 20 cel
+				switch(environment.temperature) //292 = 20 cel
 					if(311 to INFINITY)		minsbodytemp.icon_state = "mintemp3" //+38
 					if(303 to 311)			minsbodytemp.icon_state = "mintemp2" //32 to 38
 					if(299 to 305)			minsbodytemp.icon_state = "mintemp1" //25 to 32
 					if(287 to 299)			minsbodytemp.icon_state = "mintemp0" // 14 to 25 cel 320fuck
-					if(281 to 287)			minsbodytemp.icon_state = "mintemp4-1" //8 to 14
-					if(273 to 281)			minsbodytemp.icon_state = "mintemp4-2" //0 to 8
-					if(266 to 273)			minsbodytemp.icon_state = "mintemp4-3" //-7 to 0
-					else
-
+					if(281 to 287)			minsbodytemp.icon_state = "mintemp-1" //8 to 14
+					if(273 to 281)			minsbodytemp.icon_state = "mintemp-2" //0 to 8
+					if(266 to 273)			minsbodytemp.icon_state = "mintemp-3" //-7 to 0
+					else					minsbodytemp.icon_state = "mintemp-4"
 			else
 				//TODO: precalculate all of this stuff when the species datum is created
 				var/base_temperature = species.body_temperature
@@ -845,34 +843,34 @@
 					middle_temp = middle_temp -= 10
 				if(middle_temp <= 253)
 					middle_temp = middle_temp += 10
-				if (loc_temp >= middle_temp)
+				if (environment.temperature >= middle_temp)
 					minitemp_step = (getSpeciesOrSynthTemp(HEAT_LEVEL_1) - middle_temp)/6
 
-					if (loc_temp >= getSpeciesOrSynthTemp(HEAT_LEVEL_1))
+					if (environment.temperature >= getSpeciesOrSynthTemp(HEAT_LEVEL_1))
 						minsbodytemp.icon_state = "mintemp5"
-					else if (loc_temp >= middle_temp + minitemp_step*4)
+					else if (environment.temperature >= middle_temp + minitemp_step*4)
 						minsbodytemp.icon_state = "mintemp4"
-					else if (loc_temp >= middle_temp + minitemp_step*3)
+					else if (environment.temperature >= middle_temp + minitemp_step*3)
 						minsbodytemp.icon_state = "mintemp3"
-					else if (loc_temp >= middle_temp + minitemp_step*2)
+					else if (environment.temperature >= middle_temp + minitemp_step*2)
 						minsbodytemp.icon_state = "mintemp2"
-					else if (loc_temp >= middle_temp + minitemp_step*1)
+					else if (environment.temperature >= middle_temp + minitemp_step*1)
 						minsbodytemp.icon_state = "mintemp1"
 					else
 						minsbodytemp.icon_state = "mintemp0"
 
-				else if (loc_temp <= middle_temp)
+				else if (environment.temperature <= middle_temp)
 					minitemp_step = (middle_temp - getSpeciesOrSynthTemp(COLD_LEVEL_1))/6
 
-					if (loc_temp <= getSpeciesOrSynthTemp(COLD_LEVEL_1))
+					if (environment.temperature <= getSpeciesOrSynthTemp(COLD_LEVEL_1))
 						minsbodytemp.icon_state = "mintemp-5"
-					else if (loc_temp <= middle_temp - minitemp_step*4)
+					else if (environment.temperature <= middle_temp - minitemp_step*4)
 						minsbodytemp.icon_state = "mintemp-4"
-					else if (loc_temp <= middle_temp - minitemp_step*3)
+					else if (environment.temperature <= middle_temp - minitemp_step*3)
 						minsbodytemp.icon_state = "mintemp-3"
-					else if (loc_temp <= middle_temp - minitemp_step*2)
+					else if (environment.temperature <= middle_temp - minitemp_step*2)
 						minsbodytemp.icon_state = "mintemp-2"
-					else if (loc_temp <= middle_temp - minitemp_step*1)
+					else if (environment.temperature <= middle_temp - minitemp_step*1)
 						minsbodytemp.icon_state = "mintemp-1"
 					else
 						minsbodytemp.icon_state = "mintemp0"
@@ -938,11 +936,11 @@
 		return
 
 	if(is_asystole())
-		shock_stage = max(shock_stage, 61)
+		shock_stage = max(shock_stage + 1, 61)
 	var/traumatic_shock = get_shock()
 	if(traumatic_shock >= max(30, 0.8*shock_stage))
 		shock_stage += 1
-	else
+	else if (!is_asystole())
 		shock_stage = min(shock_stage, 160)
 		var/recovery = 1
 		if(traumatic_shock < 0.5 * shock_stage) //lower shock faster if pain is gone completely
@@ -1077,7 +1075,7 @@
 			if(I)
 				perpname = I.registered_name
 
-		var/datum/computer_file/crew_record/E = get_crewmember_record(perpname)
+		var/datum/computer_file/report/crew_record/E = get_crewmember_record(perpname)
 		if(E)
 			switch(E.get_criminalStatus())
 				if("Arrest")

@@ -11,6 +11,8 @@
 	ammo_type = /obj/item/ammo_casing/c9mm
 	multi_aim = 1
 	burst_delay = 1.1
+	mag_insert_sound = 'sound/weapons/guns/interaction/smg_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/smg_magout.ogg'
 
 	//machine pistol, easier to one-hand with
 	firemodes = list(
@@ -93,6 +95,8 @@
 	allowed_magazines = /obj/item/ammo_magazine/c556
 	one_hand_penalty = 3
 	wielded_item_state = "arifle-wielded"
+	mag_insert_sound = 'sound/weapons/guns/interaction/ltrifle_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/ltrifle_magout.ogg'
 
 	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
 	firemodes = list(
@@ -157,6 +161,8 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	one_hand_penalty = 5
 	wielded_item_state = "z8carbine-wielded"
+	mag_insert_sound = 'sound/weapons/guns/interaction/batrifle_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/batrifle_magout.ogg'
 	//would have one_hand_penalty=4,5 but the added weight of a grenade launcher makes one-handing even harder
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, use_launcher=null, one_hand_penalty=5, burst_accuracy=null, dispersion=null),
@@ -227,6 +233,8 @@
 	allowed_magazines = list(/obj/item/ammo_magazine/box/a556, /obj/item/ammo_magazine/c556)
 	one_hand_penalty = 6
 	wielded_item_state = "gun_wielded"
+	mag_insert_sound = 'sound/weapons/guns/interaction/lmg_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/lmg_magout.ogg'
 
 
 	//LMG, better sustained fire accuracy than assault rifles (comparable to SMG), higer move delay and one-handing penalty
@@ -380,4 +388,34 @@
 
 /obj/item/weapon/gun/projectile/automatic/z9/update_icon()
 	icon_state = (ammo_magazine)? "bullpup" : "bullpup-e"
+	..()
+
+/obj/item/weapon/gun/projectile/automatic/bp15
+	name = "BP-15 PDW"
+	desc = "The BP-15 'Moloh' is a  personal defense weapon, produced by Aussec Armory for use by police spec ops or solders. Uses 5.7x28 mm rounds."
+	icon = 'icons/event/guns.dmi'
+	icon_state = "pdw"
+	item_state = "c20r"
+	item_icons = list(
+		slot_r_hand_str = 'icons/mob/onmob/items/righthand_guns.dmi',
+		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_guns.dmi',
+		)
+	w_class = ITEM_SIZE_NORMAL
+	caliber = "57"
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
+	slot_flags = SLOT_BELT
+	ammo_type = /obj/item/ammo_casing/c57
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/mc57
+	allowed_magazines = /obj/item/ammo_magazine/mc57
+
+	//machine pistol, like SMG but easier to one-hand with
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=0, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=2,    one_hand_penalty=1, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
+		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=2,    one_hand_penalty=2, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
+		)
+
+/obj/item/weapon/gun/projectile/automatic/bp15/update_icon()
+	icon_state = (ammo_magazine)? "pdw" : "pdw-empty"
 	..()

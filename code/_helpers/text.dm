@@ -136,6 +136,32 @@ proc/fix_html(var/t)
 
 	return output
 
+//Used to strip text of everything but letters and numbers, make letters lowercase, and turn spaces into .'s.
+//Make sure the text hasn't been encoded if using this.
+/proc/sanitize_for_email(text)
+	if(!text) return ""
+	var/list/dat = list()
+	var/last_was_space = 1
+	for(var/i=1, i<=length(text), i++)
+		var/ascii_char = text2ascii(text,i)
+		switch(ascii_char)
+			if(65 to 90)	//A-Z, make them lowercase
+				dat += ascii2text(ascii_char + 32)
+			if(97 to 122)	//a-z
+				dat += ascii2text(ascii_char)
+				last_was_space = 0
+			if(48 to 57)	//0-9
+				dat += ascii2text(ascii_char)
+				last_was_space = 0
+			if(32)			//space
+				if(last_was_space)
+					continue
+				dat += "."		//We turn these into ., but avoid repeats or . at start.
+				last_was_space = 1
+	if(dat[length(dat)] == ".")	//kill trailing .
+		dat.Cut(length(dat))
+	return jointext(dat, null)
+
 //Returns null if there is any bad text in the string
 /proc/reject_bad_text(var/text, var/max_length=512)
 	if(length(text) > max_length)	return			//message too long
@@ -382,154 +408,6 @@ proc/TextPreview(var/string,var/len=40)
 		t = replacetext(t, i, "")
 	return t
 var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z")
-/proc/extA2U(t)
-	if(DM_VERSION < 511)
-		//¨, ¸
-		t = replacetextEx(t, "\\xa8", "\\u0401")
-		t = replacetextEx(t, "\\xb8", "\\u0451")
-		//À-Ï
-		t = replacetextEx(t, "\\xc0", "\\u0410")
-		t = replacetextEx(t, "\\xc1", "\\u0411")
-		t = replacetextEx(t, "\\xc2", "\\u0412")
-		t = replacetextEx(t, "\\xc3", "\\u0413")
-		t = replacetextEx(t, "\\xc4", "\\u0414")
-		t = replacetextEx(t, "\\xc5", "\\u0415")
-		t = replacetextEx(t, "\\xc6", "\\u0416")
-		t = replacetextEx(t, "\\xc7", "\\u0417")
-		t = replacetextEx(t, "\\xc8", "\\u0418")
-		t = replacetextEx(t, "\\xc9", "\\u0419")
-		t = replacetextEx(t, "\\xca", "\\u041a")
-		t = replacetextEx(t, "\\xcb", "\\u041b")
-		t = replacetextEx(t, "\\xcc", "\\u041c")
-		t = replacetextEx(t, "\\xcd", "\\u041d")
-		t = replacetextEx(t, "\\xce", "\\u041e")
-		t = replacetextEx(t, "\\xcf", "\\u041f")
-		//Ð-ß
-		t = replacetextEx(t, "\\xd0", "\\u0420")
-		t = replacetextEx(t, "\\xd1", "\\u0421")
-		t = replacetextEx(t, "\\xd2", "\\u0422")
-		t = replacetextEx(t, "\\xd3", "\\u0423")
-		t = replacetextEx(t, "\\xd4", "\\u0424")
-		t = replacetextEx(t, "\\xd5", "\\u0425")
-		t = replacetextEx(t, "\\xd6", "\\u0426")
-		t = replacetextEx(t, "\\xd7", "\\u0427")
-		t = replacetextEx(t, "\\xd8", "\\u0428")
-		t = replacetextEx(t, "\\xd9", "\\u0429")
-		t = replacetextEx(t, "\\xda", "\\u042a")
-		t = replacetextEx(t, "\\xdb", "\\u042b")
-		t = replacetextEx(t, "\\xdc", "\\u042c")
-		t = replacetextEx(t, "\\xdd", "\\u042d")
-		t = replacetextEx(t, "\\xde", "\\u042e")
-		t = replacetextEx(t, "\\xdf", "\\u042f")
-		//à-ï
-		t = replacetextEx(t, "\\xe0", "\\u0430")
-		t = replacetextEx(t, "\\xe1", "\\u0431")
-		t = replacetextEx(t, "\\xe2", "\\u0432")
-		t = replacetextEx(t, "\\xe3", "\\u0433")
-		t = replacetextEx(t, "\\xe4", "\\u0434")
-		t = replacetextEx(t, "\\xe5", "\\u0435")
-		t = replacetextEx(t, "\\xe6", "\\u0436")
-		t = replacetextEx(t, "\\xe7", "\\u0437")
-		t = replacetextEx(t, "\\xe8", "\\u0438")
-		t = replacetextEx(t, "\\xe9", "\\u0439")
-		t = replacetextEx(t, "\\xea", "\\u043a")
-		t = replacetextEx(t, "\\xeb", "\\u043b")
-		t = replacetextEx(t, "\\xec", "\\u043c")
-		t = replacetextEx(t, "\\xed", "\\u043d")
-		t = replacetextEx(t, "\\xee", "\\u043e")
-		t = replacetextEx(t, "\\xef", "\\u043f")
-		//ð-ÿ
-		t = replacetextEx(t, "\\xf0", "\\u0440")
-		t = replacetextEx(t, "\\xf1", "\\u0441")
-		t = replacetextEx(t, "\\xf2", "\\u0442")
-		t = replacetextEx(t, "\\xf3", "\\u0443")
-		t = replacetextEx(t, "\\xf4", "\\u0444")
-		t = replacetextEx(t, "\\xf5", "\\u0445")
-		t = replacetextEx(t, "\\xf6", "\\u0446")
-		t = replacetextEx(t, "\\xf7", "\\u0447")
-		t = replacetextEx(t, "\\xf8", "\\u0448")
-		t = replacetextEx(t, "\\xf9", "\\u0449")
-		t = replacetextEx(t, "\\xfa", "\\u044a")
-		t = replacetextEx(t, "\\xfb", "\\u044b")
-		t = replacetextEx(t, "\\xfc", "\\u044c")
-		t = replacetextEx(t, "\\xfd", "\\u044d")
-		t = replacetextEx(t, "\\xfe", "\\u044e")
-	else
-		//¨, ¸
-		t = replacetextEx(t, "\\u00a8", "\\u0401")
-		t = replacetextEx(t, "\\u00b8", "\\u0451")
-		//À-Ï
-		t = replacetextEx(t, "\\u00c0", "\\u0410")
-		t = replacetextEx(t, "\\u00c1", "\\u0411")
-		t = replacetextEx(t, "\\u00c2", "\\u0412")
-		t = replacetextEx(t, "\\u00c3", "\\u0413")
-		t = replacetextEx(t, "\\u00c4", "\\u0414")
-		t = replacetextEx(t, "\\u00c5", "\\u0415")
-		t = replacetextEx(t, "\\u00c6", "\\u0416")
-		t = replacetextEx(t, "\\u00c7", "\\u0417")
-		t = replacetextEx(t, "\\u00c8", "\\u0418")
-		t = replacetextEx(t, "\\u00c9", "\\u0419")
-		t = replacetextEx(t, "\\u00ca", "\\u041a")
-		t = replacetextEx(t, "\\u00cb", "\\u041b")
-		t = replacetextEx(t, "\\u00cc", "\\u041c")
-		t = replacetextEx(t, "\\u00cd", "\\u041d")
-		t = replacetextEx(t, "\\u00ce", "\\u041e")
-		t = replacetextEx(t, "\\u00cf", "\\u041f")
-		//Ð-ß
-		t = replacetextEx(t, "\\u00d0", "\\u0420")
-		t = replacetextEx(t, "\\u00d1", "\\u0421")
-		t = replacetextEx(t, "\\u00d2", "\\u0422")
-		t = replacetextEx(t, "\\u00d3", "\\u0423")
-		t = replacetextEx(t, "\\u00d4", "\\u0424")
-		t = replacetextEx(t, "\\u00d5", "\\u0425")
-		t = replacetextEx(t, "\\u00d6", "\\u0426")
-		t = replacetextEx(t, "\\u00d7", "\\u0427")
-		t = replacetextEx(t, "\\u00d8", "\\u0428")
-		t = replacetextEx(t, "\\u00d9", "\\u0429")
-		t = replacetextEx(t, "\\u00da", "\\u042a")
-		t = replacetextEx(t, "\\u00db", "\\u042b")
-		t = replacetextEx(t, "\\u00dc", "\\u042c")
-		t = replacetextEx(t, "\\u00dd", "\\u042d")
-		t = replacetextEx(t, "\\u00de", "\\u042e")
-		t = replacetextEx(t, "\\u00df", "\\u042f")
-		//à-ï
-		t = replacetextEx(t, "\\u00e0", "\\u0430")
-		t = replacetextEx(t, "\\u00e1", "\\u0431")
-		t = replacetextEx(t, "\\u00e2", "\\u0432")
-		t = replacetextEx(t, "\\u00e3", "\\u0433")
-		t = replacetextEx(t, "\\u00e4", "\\u0434")
-		t = replacetextEx(t, "\\u00e5", "\\u0435")
-		t = replacetextEx(t, "\\u00e6", "\\u0436")
-		t = replacetextEx(t, "\\u00e7", "\\u0437")
-		t = replacetextEx(t, "\\u00e8", "\\u0438")
-		t = replacetextEx(t, "\\u00e9", "\\u0439")
-		t = replacetextEx(t, "\\u00ea", "\\u043a")
-		t = replacetextEx(t, "\\u00eb", "\\u043b")
-		t = replacetextEx(t, "\\u00ec", "\\u043c")
-		t = replacetextEx(t, "\\u00ed", "\\u043d")
-		t = replacetextEx(t, "\\u00ee", "\\u043e")
-		t = replacetextEx(t, "\\u00ef", "\\u043f")
-		//ð-ÿ
-		t = replacetextEx(t, "\\u00f0", "\\u0440")
-		t = replacetextEx(t, "\\u00f1", "\\u0441")
-		t = replacetextEx(t, "\\u00f2", "\\u0442")
-		t = replacetextEx(t, "\\u00f3", "\\u0443")
-		t = replacetextEx(t, "\\u00f4", "\\u0444")
-		t = replacetextEx(t, "\\u00f5", "\\u0445")
-		t = replacetextEx(t, "\\u00f6", "\\u0446")
-		t = replacetextEx(t, "\\u00f7", "\\u0447")
-		t = replacetextEx(t, "\\u00f8", "\\u0448")
-		t = replacetextEx(t, "\\u00f9", "\\u0449")
-		t = replacetextEx(t, "\\u00fa", "\\u044a")
-		t = replacetextEx(t, "\\u00fb", "\\u044b")
-		t = replacetextEx(t, "\\u00fc", "\\u044c")
-		t = replacetextEx(t, "\\u00fd", "\\u044d")
-		t = replacetextEx(t, "\\u00fe", "\\u044e")
-	t = replacetextEx(t, "&amp;#255;", "\\u044f")
-	t = replacetextEx(t, "&amp;#1103;", "\\u044f")
-	t = replacetextEx(t, "&#255;", "\\u044f")
-	t = replacetextEx(t, "&#1103;", "\\u044f")
-	return t
 
 /proc/generateRandomString(var/length)
 	. = list()
@@ -591,6 +469,40 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	t = replacetext(t, "\[editorbr\]", "")
 	t = replacetext(t, "\[img\]","<img src=\"")
 	t = replacetext(t, "\[/img\]", "\" />")
+	return t
+
+//Will kill most formatting; not recommended.
+/proc/html2pencode(t)
+	t = replacetext(t, "<BR>", "\[br\]")
+	t = replacetext(t, "<br>", "\[br\]")
+	t = replacetext(t, "<B>", "\[b\]")
+	t = replacetext(t, "</B>", "\[/b\]")
+	t = replacetext(t, "<I>", "\[i\]")
+	t = replacetext(t, "</I>", "\[/i\]")
+	t = replacetext(t, "<U>", "\[u\]")
+	t = replacetext(t, "</U>", "\[/u\]")
+	t = replacetext(t, "<center>", "\[center\]")
+	t = replacetext(t, "</center>", "\[/center\]")
+	t = replacetext(t, "<H1>", "\[h1\]")
+	t = replacetext(t, "</H1>", "\[/h1\]")
+	t = replacetext(t, "<H2>", "\[h2\]")
+	t = replacetext(t, "</H2>", "\[/h2\]")
+	t = replacetext(t, "<H3>", "\[h3\]")
+	t = replacetext(t, "</H3>", "\[/h3\]")
+	t = replacetext(t, "<li>", "\[*\]")
+	t = replacetext(t, "<HR>", "\[hr\]")
+	t = replacetext(t, "<ul>", "\[list\]")
+	t = replacetext(t, "</ul>", "\[/list\]")
+	t = replacetext(t, "<table>", "\[grid\]")
+	t = replacetext(t, "</table>", "\[/grid\]")
+	t = replacetext(t, "<tr>", "\[row\]")
+	t = replacetext(t, "<td>", "\[cell\]")
+	t = replacetext(t, "<img src = ntlogo.png>", "\[logo\]")
+	t = replacetext(t, "<img src = bluentlogo.png>", "\[bluelogo\]")
+	t = replacetext(t, "<img src = sollogo.png>", "\[solcrest\]")
+	t = replacetext(t, "<img src = terralogo.png>", "\[terraseal\]")
+	t = replacetext(t, "<span class=\"paper_field\"></span>", "\[field\]")
+	t = strip_html_properly(t)
 	return t
 
 // Random password generator
@@ -665,3 +577,9 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 		if (text2ascii(A, i) != text2ascii(B, i))
 			return FALSE
 	return TRUE
+
+// If char isn't part of the text the entire text is returned
+/proc/copytext_after_last(var/text, var/char)
+	var/regex/R = regex("(\[^[char]\]*)$")
+	R.Find(text)
+	return R.group[1]

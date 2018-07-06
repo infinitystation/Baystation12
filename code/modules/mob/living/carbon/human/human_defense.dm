@@ -97,7 +97,7 @@ meteor_act
 		def_zone = get_organ(check_zone(def_zone))
 	if(!def_zone)
 		return 0
-	var/protection = 0
+	var/protection = def_zone.species.natural_armour_values ? def_zone.species.natural_armour_values[type] : 0
 	var/list/protective_gear = list(head, wear_mask, wear_suit, w_uniform, gloves, shoes)
 	for(var/obj/item/clothing/gear in protective_gear)
 		if(gear.body_parts_covered & def_zone.body_part)
@@ -106,7 +106,7 @@ meteor_act
 			for(var/obj/item/clothing/accessory/bling in gear.accessories)
 				if(bling.body_parts_covered & def_zone.body_part)
 					protection = add_armor(protection, bling.armor[type])
-	return protection
+	return Clamp(protection,0,100)
 
 /mob/living/carbon/human/proc/check_head_coverage()
 
@@ -143,7 +143,10 @@ meteor_act
 	if(user == src) // Attacking yourself can't miss
 		return target_zone
 
-	var/hit_zone = get_zone_with_miss_chance(target_zone, src)
+	var/accuracy_penalty = user.melee_accuracy_mods()
+	accuracy_penalty += 10*get_skill_difference(SKILL_COMBAT, user)
+
+	var/hit_zone = get_zone_with_miss_chance(target_zone, src, accuracy_penalty)
 
 	if(!hit_zone)
 		visible_message("<span class='danger'>\The [user] misses [src] with \the [I]!</span>")
@@ -303,7 +306,7 @@ meteor_act
 		var/obj/O = AM
 
 		if(in_throw_mode && !get_active_hand() && speed <= THROWFORCE_SPEED_DIVISOR)	//empty active hand and we're in throw mode
-			if(canmove && !restrained())
+			if(!incapacitated())
 				if(isturf(O.loc))
 					put_in_active_hand(O)
 					visible_message("<span class='warning'>[src] catches [O]!</span>")

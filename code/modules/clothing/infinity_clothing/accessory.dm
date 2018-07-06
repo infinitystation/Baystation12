@@ -4,7 +4,7 @@
 	desc = "A hunter's talisman, some say the old gods smile on those who wear it."
 	icon = 'icons/infinity_custom_items_obj.dmi'
 	accessory_icons = list(slot_w_uniform_str = 'icons/infinity_custom_items_mob.dmi', slot_wear_suit_str = 'icons/infinity_custom_items_mob.dmi')
-	icon_state = "talisman"
+	icon_state = "talisman-4"
 
 	///////////
 	//COLLARS//
@@ -161,3 +161,47 @@
 		user << "<span class='notice'>You set the [name]'s tag to '[str]'.</span>"
 		name = initial(name) + " ([str])"
 		desc = initial(desc) + " The tag says \"[str]\"."
+
+
+//Resomi scarf
+/obj/item/clothing/accessory/scarf/resomi
+	name = "small mantle"
+	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "small_mantle"
+	species_restricted = list(SPECIES_RESOMI)
+
+//Pins
+
+/obj/item/clothing/accessory/ntred
+	name = "NT pin"
+	desc = "A red Nanotrasen pin."
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "nt_r"
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
+	high_visibility = 1
+
+/obj/item/clothing/accessory/ntblue
+	name = "NT pin"
+	desc = "A blue Nanotrasen pin."
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
+	icon_state = "nt_b"
+	high_visibility = 1
+
+
+/obj/item/clothing/accessory/tccpin
+	name = "TCC pin"
+	desc = "A small TCC flag."
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "tcc"
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
+	high_visibility = 1
+
+/obj/item/clothing/accessory/scgpin
+	name = "CSG pin"
+	desc = "A small CSG flag."
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "csg"
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
+	high_visibility = 1

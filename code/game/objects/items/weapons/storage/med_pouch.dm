@@ -78,6 +78,7 @@ Single Use Emergency Pouches
 	/obj/item/weapon/reagent_containers/pill/pouch_pill/inaprovaline,
 	/obj/item/weapon/reagent_containers/pill/pouch_pill/paracetamol,
 	/obj/item/stack/medical/bruise_pack = 2,
+	/obj/item/weapon/reagent_containers/pill/bicaridine = 1
 		)
 	instructions = {"
 	1) Tear open the emergency medical pack using the easy open tab at the top.\n\
@@ -99,7 +100,8 @@ Single Use Emergency Pouches
 	/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/deletrathol,
 	/obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/adrenaline,
 	/obj/item/weapon/reagent_containers/pill/pouch_pill/paracetamol,
-	/obj/item/stack/medical/ointment = 2,
+	/obj/item/stack/medical/ointment = 1,
+	/obj/item/weapon/reagent_containers/pill/kelotane = 1
 		)
 	instructions = {"
 	1) Tear open the emergency medical pack using the easy open tab at the top.\n\
@@ -153,6 +155,24 @@ Single Use Emergency Pouches
 	6) Stay in place once they respond.\
 		"}
 
+/obj/item/weapon/storage/med_pouch/radiation
+	name = "radiation pouch"
+	base_icon = "yellow"
+	injury_type = "radiation"
+
+	startswith = list(
+	/obj/item/weapon/reagent_containers/hypospray/autoinjector/antirad,
+	/obj/item/weapon/reagent_containers/pill/pouch_pill/dylovene,
+		)
+	instructions = {"
+	1) Tear open the emergency medical pack using the easy open tab at the top.\n\
+	\t2) Carefully remove all items from the pouch and discard the pouch.\n\
+	\t3) Apply all autoinjectors to the injured party.\n\
+	\t4) Force the injured party to swallow all pills.\n\
+	\t5) Contact the medical team with your location.
+	6) Stay in place once they respond.\
+		"}
+
 /obj/item/weapon/reagent_containers/pill/pouch_pill
 	name = "emergency pill"
 	desc = "An emergency pill from an emergency medical pouch"
@@ -186,7 +206,7 @@ Single Use Emergency Pouches
 	if(reagents.total_volume > 0)
 		icon_state = "[icon_colour]1"
 	else
-		icon_state = "[icon_colour]0"
+		icon_state = "[icon_colour]10"
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/pouch_auto/inaprovaline
 	name = "emergency inaprovaline autoinjector"

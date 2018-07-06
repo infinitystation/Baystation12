@@ -6,7 +6,7 @@
 	id_slot = slot_wear_id
 	id_type = /obj/item/weapon/card/id/merchant/leader
 	pda_slot = slot_r_store
-	pda_type = /obj/item/device/pda/chef //cause I like the look
+//	pda_type = /obj/item/modular_computer/pda/chef //cause I like the look
 	id_pda_assignment = "Merchant Leader"
 
 /decl/hierarchy/outfit/merchant/vox_leader

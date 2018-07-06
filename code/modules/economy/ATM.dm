@@ -278,7 +278,9 @@
 					//Below is to avoid a runtime
 					if(tried_account_num)
 						D = get_account(tried_account_num)
-						account_security_level = D.security_level
+
+						if(D)
+							account_security_level = D.security_level
 
 					authenticated_account = attempt_account_access(tried_account_num, tried_pin, held_card && login_card.associated_account_number == tried_account_num ? 2 : 1)
 
@@ -433,15 +435,9 @@
 
 /obj/machinery/atm/proc/scan_user(mob/living/carbon/human/human_user as mob)
 	if(!authenticated_account)
-		if(human_user.wear_id)
-			var/obj/item/weapon/card/id/I
-			if(istype(human_user.wear_id, /obj/item/weapon/card/id) )
-				I = human_user.wear_id
-			else if(istype(human_user.wear_id, /obj/item/device/pda) )
-				var/obj/item/device/pda/P = human_user.wear_id
-				I = P.id
-			if(I)
-				return I
+		var/obj/item/weapon/card/id/I = human_user.GetIdCard()
+		if(istype(I))
+			return I
 
 // put the currently held id on the ground or in the hand of the user
 /obj/machinery/atm/proc/release_held_id(mob/living/carbon/human/human_user as mob)

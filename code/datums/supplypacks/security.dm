@@ -141,12 +141,19 @@
 
 /decl/hierarchy/supply_pack/security/egun
 	name = "Weapons - Energy sidearms"
-	contains = list(/obj/item/weapon/gun/energy/gun = 4)
+	contains = list(/obj/item/weapon/gun/energy/gun/secure = 4)
 	cost = 40
 	containertype = /obj/structure/closet/crate/secure/weapon
 	containername = "\improper Energy sidearms crate"
 	access = access_armory
 	security_level = SUPPLY_SECURITY_ELEVATED
+
+/decl/hierarchy/supply_pack/security/egun/shady
+	name = "Weapons - Energy sidearms (For disposal)"
+	contains = list(/obj/item/weapon/gun/energy/gun = 4)
+	cost = 60
+	contraband = 1
+	security_level = null
 
 /decl/hierarchy/supply_pack/security/ion
 	name = "Weapons - Electromagnetic"
@@ -155,15 +162,6 @@
 	cost = 50
 	containertype = /obj/structure/closet/crate/secure/weapon
 	containername = "\improper Electromagnetic weapons crate"
-	access = access_armory
-	security_level = SUPPLY_SECURITY_ELEVATED
-
-/decl/hierarchy/supply_pack/security/pistol
-	name = "Weapons - Ballistic sidearms"
-	contains = list(/obj/item/weapon/gun/projectile/sec = 4)
-	cost = 40
-	containertype = /obj/structure/closet/crate/secure/weapon
-	containername = "\improper Ballistic sidearms crate"
 	access = access_armory
 	security_level = SUPPLY_SECURITY_ELEVATED
 
@@ -190,31 +188,6 @@
 	cost = 30
 	containertype = /obj/structure/closet/crate/secure/weapon
 	containername = "\improper Tear gas grenades crate"
-	access = access_security
-
-/decl/hierarchy/supply_pack/security/pistolammo
-	name = "Ammunition - .45 magazines"
-	contains = list(/obj/item/ammo_magazine/c45m = 4)
-	cost = 20
-	containertype = /obj/structure/closet/crate/secure/weapon
-	containername = "\improper .45 ammunition crate"
-	access = access_security
-	security_level = SUPPLY_SECURITY_ELEVATED
-
-/decl/hierarchy/supply_pack/security/pistolammorubber
-	name = "Ammunition - .45 rubber"
-	contains = list(/obj/item/ammo_magazine/c45m/rubber = 4)
-	cost = 15
-	containertype = /obj/structure/closet/crate/secure/weapon
-	containername = "\improper .45 rubber ammunition crate"
-	access = access_security
-
-/decl/hierarchy/supply_pack/security/pistolammopractice
-	name = "Ammunition - .45 practice"
-	contains = list(/obj/item/ammo_magazine/c45m/practice = 8)
-	cost = 15
-	containertype = /obj/structure/closet/crate/secure/weapon
-	containername = "\improper .45 practice ammunition crate"
 	access = access_security
 
 /decl/hierarchy/supply_pack/security/shotgunammo
@@ -289,7 +262,6 @@
 /decl/hierarchy/supply_pack/security/detectivegear
 	name = "Forensics - investigation equipment"
 	contains = list(/obj/item/weapon/storage/box/evidence = 2,
-					/obj/item/weapon/cartridge/detective,
 					/obj/item/device/radio/headset/headset_sec,
 					/obj/item/taperoll/police,
 					/obj/item/clothing/glasses/sunglasses,

@@ -154,6 +154,11 @@
 	"<span class='warning'>Your hand slips, slicing open [target]'s [affected.name] in the wrong place with \the [tool]!</span>")
 	affected.take_damage(10, 0, (DAM_SHARP|DAM_EDGE), used_weapon = tool)
 
+/datum/surgery_step/generic/cut_open/success_chance(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
+	. = ..()
+	if(user.skill_check(SKILL_FORENSICS, SKILL_ADEPT))
+		. += 10
+
 //////////////////////////////////////////////////////////////////
 //	 bleeder clamping surgery step
 //////////////////////////////////////////////////////////////////
@@ -283,6 +288,8 @@
 		W.close()
 	if(affected.is_stump())
 		affected.status &= ~ORGAN_ARTERY_CUT
+	if(affected.clamped())
+		affected.remove_clamps()
 
 /datum/surgery_step/generic/cauterize/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
@@ -318,7 +325,7 @@
 /datum/surgery_step/generic/amputate/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 	user.visible_message("[user] is beginning to amputate [target]'s [affected.name] with \the [tool]." , \
-	"You are beginning to cut through [target]'s [affected.amputation_point] with \the [tool].")
+	"<FONT size=3>You are beginning to cut through [target]'s [affected.amputation_point] with \the [tool].</FONT>")
 	target.custom_pain("Your [affected.amputation_point] is being ripped apart!",100,affecting = affected)
 	..()
 

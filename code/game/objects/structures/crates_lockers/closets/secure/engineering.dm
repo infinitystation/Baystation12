@@ -19,7 +19,6 @@
 		/obj/item/clothing/head/welding,
 		/obj/item/clothing/gloves/insulated,
 		/obj/item/clothing/shoes/brown,
-		/obj/item/weapon/cartridge/ce,
 		/obj/item/device/radio/headset/heads/ce,
 		/obj/item/weapon/storage/toolbox/mechanical,
 		/obj/item/clothing/suit/storage/hazardvest,
@@ -87,7 +86,6 @@
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/mask/gas,
 		/obj/item/clothing/glasses/meson,
-		/obj/item/weapon/cartridge/engineering,
 		/obj/item/taperoll/engineering,
 		/obj/item/weapon/ladder_mobile
 	)
@@ -112,6 +110,5 @@
 		/obj/item/device/radio/headset/headset_eng,
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/mask/gas,
-		/obj/item/weapon/cartridge/atmos,
 		/obj/item/taperoll/atmos
 	)

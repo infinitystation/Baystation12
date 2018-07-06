@@ -44,3 +44,18 @@ var/const/SHIELDGEN_WIRE_NOTHING = 16		// A blank wire that doesn't have any spe
 	. += "<BR>A green light labeled \"Power Connection\" is [S.input_cut ? "off" : "on"]."
 	. += "<BR>A blue light labeled \"Network Control\" is [S.ai_control_disabled ? "off" : "on"]."
 	. += "<BR>A yellow light labeled \"Interface Connection\" is [S.mode_changes_locked ? "off" : "on"].<BR>"
+
+/datum/wires/shield_generator/SolveWireFunction(var/function)
+	var/sf = ""
+	switch(function)
+		if(SHIELDGEN_WIRE_POWER)
+			sf = "Port A"
+		if(SHIELDGEN_WIRE_HACK)
+			sf = "Port B"
+		if(SHIELDGEN_WIRE_CONTROL)
+			sf = "Port C"
+		if(SHIELDGEN_WIRE_AICONTROL)
+			sf = "Port D"
+		if(SHIELDGEN_WIRE_NOTHING)
+			sf = "Port E"
+	return sf

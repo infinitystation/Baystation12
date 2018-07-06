@@ -15,6 +15,8 @@
 		"nav_cluster_7"
 	)
 	known = 0
+	start_x = 4
+	start_y = 5
 
 /datum/map_template/ruin/away_site/mining_asteroid
 	name = "Mining - Asteroid"
@@ -23,6 +25,7 @@
 	suffixes = list("mining/mining-asteroid.dmm")
 	cost = 0
 	accessibility_weight = 10
+	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
 
 /obj/effect/shuttle_landmark/cluster/nav1
 	name = "Asteroid Navpoint #1"
@@ -124,61 +127,57 @@
 		"nav_orb_7"
 	)
 	known = 0
-	start_x = 4
-	start_y = 5
-
-/datum/map_template/ruin/away_site/mine
+/*
+/datum/map_template/ruin/away_site/orb
 	name = "Mining - Orb"
 	id = "awaysite_mining_orb"
 	description = "A sort of circular asteroid with a bird."
 	suffixes = list("mining/mining-orb.dmm")
 	cost = 1
 	accessibility_weight = 10
-	spawn_guaranteed = TRUE
-
-/obj/effect/shuttle_landmark/orb
-	base_area = /area/mine/explored
-
+	base_turf_for_zs = /turf/simulated/floor/asteroid
+*/
 /obj/effect/shuttle_landmark/orb/nav1
-	name = "Landing zone #1"
+	name = "Anchor point A"
 	landmark_tag = "nav_orb_1"
 
 /obj/effect/shuttle_landmark/orb/nav2
-	name = "Landing zone #2"
+	name = "Anchor point B"
 	landmark_tag = "nav_orb_2"
 
 /obj/effect/shuttle_landmark/orb/nav3
-	name = "Landing zone #3"
+	name = "Anchor point C"
 	landmark_tag = "nav_orb_3"
 
 /obj/effect/shuttle_landmark/orb/nav4
-	name = "Landing zone #4"
+	name = "Anchor point D"
 	landmark_tag = "nav_orb_4"
 
 /obj/effect/shuttle_landmark/orb/nav5
-	name = "Landing zone #5"
+	name = "Anchor point E"
 	landmark_tag = "nav_orb_5"
 
 /obj/effect/shuttle_landmark/orb/nav6
-	name = "Landing zone #6"
+	name = "Anchor point F"
 	landmark_tag = "nav_orb_6"
 
 /obj/effect/shuttle_landmark/orb/nav7
-	name = "Landing zone #7"
+	name = "Landing zone A"
 	landmark_tag = "nav_orb_7"
+	base_area = /area/mine/explored
 
 /mob/living/simple_animal/parrot/space
-	name = "Simurgh"
+	name = "space parrot"
 	desc = "It could be some all-knowing being that, for reasons we could never hope to understand, is assuming the shape and general mannerisms of a parrot - or just a rather large bird."
-	icon = 'icons/mob/bigbird.dmi'
+	icon = 'icons/mob/parrot_grey.dmi'
 	gender = FEMALE
 	health = 750 //how sweet it is to be a god!
 	maxHealth = 750
 	mob_size = MOB_LARGE
 	speak_emote = list("professes","speaks unto you","elaborates","proclaims")
 	emote_hear = list("sings a song to herself", "preens herself")
-	melee_damage_lower = 15
-	melee_damage_upper = 30
+	melee_damage_lower = 20
+	melee_damage_upper = 40
 	attacktext = "pecked"
 	min_gas = null
 	max_gas = null
@@ -186,20 +185,42 @@
 	universal_understand = 1
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	see_in_dark = 7
-	default_pixel_x = -16 //for resetting after attack animations
-	default_pixel_y = -16
 	can_escape = 1
 
 /mob/living/simple_animal/parrot/space/Initialize()
 	. = ..()
-	color = get_random_colour(lower = 200)
-	pixel_x = -16
-	pixel_y = -16
+	name = pick("Simurgh", "Ziz", "Phoenix", "Fenghuang", "Roc of Ages")
+	var/matrix/M = new
+	M.Scale(2)
+	transform = M
+	color = get_random_colour(lower = 190)
 
-/obj/structure/showcase/totem
+
+/obj/structure/totem
 	name = "totem"
 	desc = "Some kind of post, pillar, plinth, column, or totem."
+	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "totem"
+	density = 1
+	anchored = 1
+	unacidable = 1
+	var/number
+
+/obj/structure/totem/Initialize()
+	. = ..()
+	number = rand(10,99)
+
+/obj/structure/totem/examine()
+	..()
+	to_chat(usr, "It's been engraved with the symbols '<font face='Shage'>RWH QaG [number]</font>'.") //i am not a linguist
+
 
 /obj/item/weapon/stool/stone/New(var/newloc)
 	..(newloc,"sandstone")
+
+/turf/simulated/floor/airless/stone
+	name = "temple floor"
+	desc = "You can only imagine what once took place in these halls."
+	icon = 'icons/turf/flooring/cult.dmi'
+	icon_state = "cult_g"
+	color = "#c9ae5e"

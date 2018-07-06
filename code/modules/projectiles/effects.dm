@@ -4,9 +4,9 @@
 	plane = EFFECTS_ABOVE_LIGHTING_PLANE
 	layer = BEAM_PROJECTILE_LAYER //Muzzle flashes would be above the lighting plane anyways.
 	//Standard compiletime light vars aren't working here, so we've made some of our own.
-	light_range = 2
-	light_power = 1
-	light_color = "#FF00DC"
+	light_outer_range = 2
+	light_max_bright = 1
+	light_color = "#ff00dc"
 
 	mouse_opacity = 0
 
@@ -78,7 +78,7 @@
 // Heavy laser beam
 //----------------------------
 /obj/effect/projectile/laser/heavy
-	light_power = 3
+	light_max_bright = 3
 
 /obj/effect/projectile/laser/heavy/tracer
 	icon_state = "beam_heavy"
@@ -93,7 +93,7 @@
 // Pulse laser beam
 //----------------------------
 /obj/effect/projectile/laser/pulse
-	light_power = 2
+	light_max_bright = 2
 	light_color = COLOR_DEEP_SKY_BLUE
 
 /obj/effect/projectile/laser/pulse/tracer
@@ -107,27 +107,11 @@
 	icon_state = "impact_u_laser"
 
 //----------------------------
-// Bogani Pulsar beam
-//----------------------------
-/obj/effect/projectile/laser/bogani/
-	light_power = 2
-	light_color = COLOR_VIOLET
-
-/obj/effect/projectile/laser/bogani/tracer
-	icon_state = "bogb"
-
-/obj/effect/projectile/laser/bogani/muzzle
-	icon_state = "muzzle_bogb"
-
-/obj/effect/projectile/laser/bogani/impact
-	icon_state = "impact_bogb"
-
-//----------------------------
 // Pulse muzzle effect only
 //----------------------------
 /obj/effect/projectile/pulse/muzzle
 	icon_state = "muzzle_pulse"
-	light_power = 2
+	light_max_bright = 2
 	light_color = COLOR_DEEP_SKY_BLUE
 
 //----------------------------
@@ -149,7 +133,7 @@
 // Emitter beam
 //----------------------------
 /obj/effect/projectile/laser/emitter/
-	light_power = 3
+	light_max_bright = 1
 	light_color = "#00cc00"
 
 /obj/effect/projectile/laser/emitter/tracer
@@ -181,6 +165,6 @@
 //----------------------------
 /obj/effect/projectile/bullet/muzzle
 	icon_state = "muzzle_bullet"
-	light_range = 5
-	light_power = 1
+	light_outer_range = 5
+	light_max_bright = 1
 	light_color = COLOR_MUZZLE_FLASH

@@ -141,6 +141,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 			"<span class='notice'>[user] insert a cassette into \the [src].</span>",
 			"<span class='notice'>You insert a cassette into \the [src].</span>")
 		playsound(src.loc, 'sound/weapons/TargetOn.ogg', 35, 1)
+		update_icon()
 		return
 
 	if(istype(I, /obj/item/weapon/cell/device))
@@ -190,6 +191,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 			eject(usr)
 		if("l_hand")
 			eject(usr)
+	update_icon()
 
 /obj/item/device/pmp/proc/eject(mob/user)
 	if(!cassette)
@@ -256,7 +258,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 		return
 
 	log_and_message_admins("launched a [src] <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> with the song \"[cassette.track.title]\".")
-	sound_token = sound_player.PlayLoopingSound(src, sound_id, cassette.track.GetTrack(), volume = volume, range = 7, falloff = 4, prefer_mute = TRUE)
+	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, cassette.track.GetTrack(), volume = volume, range = 7, falloff = 4, prefer_mute = TRUE)
 	playing = 1
 	START_PROCESSING(SSobj, src)
 	update_icon()

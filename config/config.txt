@@ -98,22 +98,24 @@ MOD_JOB_TEMPBAN_MAX 1440
 ##
 ## default probablity is 1, increase to make that mode more likely to be picked
 ## set to 0 to disable that mode
-PROBABILITY TRAITOR 5
-PROBABILITY CHANGELING 5
-PROBABILITY TRAITORLING 4
+PROBABILITY TRAITOR 3
+PROBABILITY CHANGELING 2
+PROBABILITY TRAITORLING 2
 
-PROBABILITY WIZARD 3
-PROBABILITY NINJA 3
-PROBABILITY REVOLUTION 0
-PROBABILITY EXTENDED 0
-
+PROBABILITY INTRUGIE 2
+PROBABILITY LIZARD 1
+PROBABILITY VISITORS 1
+PROBABILITY WIZARD 2
 PROBABILITY MALFUNCTION 1
-PROBABILITY MERCENARY 2
+
+PROBABILITY MERCENARY 3
 PROBABILITY CULT 2
 PROBABILITY HEIST 2
 
 PROBABILITY CROSSFIRE 1
-PROBABILITY BUGHUNT 1
+PROBABILITY BUGHUNT 0
+PROBABILITY REVOLUTION 0
+PROBABILITY EXTENDED 0
 
 ## Hash out to disable random events during the round.
 ALLOW_RANDOM_EVENTS
@@ -176,7 +178,7 @@ DEFAULT_NO_VOTE
 ANTAG_HUD_RESTRICTED
 
 ## allow AI job
-ALLOW_AI
+#ALLOW_AI
 
 
 ## disable abandon mob
@@ -206,16 +208,16 @@ GUEST_BAN
 #SERVERURL server.net:port
 
 ## forum address
-FORUMURL https://infinity-ss13.ru/
+FORUMURL https://infinity-ss13.info/
 
 ## Wiki address
-WIKIURL https://wiki.infinity-ss13.ru/
+WIKIURL https://wiki.infinity-ss13.info/
 
 ## GitHub address
 GITHUBURL https://github.com/infinitystation/Baystation12
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-BANAPPEALS https://infinity-ss13.ru/index.php?/forum/5-๑๓ไ/
+BANAPPEALS https://infinity-ss13.info/index.php?/forum/5-ััะด/
 
 ## In-game features
 ## spawns a spellbook which gives object-type spells instead of verb-type spells for the wizard
@@ -396,7 +398,7 @@ GENERATE_ASTEROID
 # AUTOSTEALTH 30
 
 ## How many loadout points are available. Use 0 to disable loadout, and any negative number to indicate infinite points.
-MAX_GEAR_COST 10
+MAX_GEAR_COST 15
 
 ## How much radiation levels self-reduce by each tick.
 RADIATION_DECAY_RATE 1

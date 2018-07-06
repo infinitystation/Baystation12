@@ -24,7 +24,7 @@
 	// Convert if/when you can easily get stacks of these.
 	var/carpeted = 0
 
-	var/list/connections = list("nw0", "ne0", "sw0", "se0")
+	connections = list("nw0", "ne0", "sw0", "se0")
 
 /obj/structure/table/New()
 	if(istext(material))
@@ -57,15 +57,6 @@
 	if(health <= 0)
 		visible_message("<span class='warning'>\The [src] breaks down!</span>")
 		return break_to_parts() // if we break and form shards, return them to the caller to do !FUN! things with
-
-/obj/structure/table/Crossed(var/mob/living/M as mob)
-	if(isliving(M))
-		if(!flipped)
-			M.pixel_y = 12
-
-/obj/structure/table/Uncrossed(var/mob/living/M as mob)
-	if(isliving(M))
-		M.pixel_y = 0
 
 /obj/structure/table/Initialize()
 	. = ..()
@@ -376,7 +367,7 @@
 	return TRUE
 
 // set propagate if you're updating a table that should update tables around it too, for example if it's a new table or something important has changed (like material).
-/obj/structure/table/proc/update_connections(propagate=0)
+/obj/structure/table/update_connections(propagate=0)
 	if(!material)
 		connections = list("0", "0", "0", "0")
 

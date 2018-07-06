@@ -38,6 +38,7 @@
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 0, bomb = 0, bio = 55, rad = 0)
 	sprite_sheets = list(
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/masks.dmi',
 		)
 
 //In scaling order of utility and seriousness
@@ -146,6 +147,7 @@
 	body_parts_covered = 0
 	species_restricted = list(SPECIES_VOX)
 	filtered_gases = list("phoron", "sleeping_agent", "oxygen")
+	w_class = ITEM_SIZE_SMALL
 
 
 /obj/item/clothing/mask/gas/swat/vox
@@ -153,6 +155,6 @@
 	desc = "Clearly not designed for a human face."
 	icon_state = "voxswat"
 	item_state = "voxswat"
-	body_parts_covered = 0 //Hack to allow vox to eat while wearing this mask.
+	body_parts_covered = 0
 	species_restricted = list(SPECIES_VOX)
 	filtered_gases = list("phoron", "sleeping_agent", "oxygen")

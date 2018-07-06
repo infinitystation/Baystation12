@@ -27,7 +27,7 @@
 	var/mutation_mod = 0       // Modifier to mutation chance
 	var/toxins = 0             // Toxicity in the tray?
 	var/mutation_level = 0     // When it hits 100, the plant mutates.
-	var/tray_light = 1         // Supplied lighting.
+	var/tray_light = 5         // Supplied lighting.
 
 	// Mechanical concerns.
 	var/health = 0             // Plant health.
@@ -80,9 +80,11 @@
 		/datum/reagent/adminordrazine = -5
 		)
 	var/global/list/pestkiller_reagents = list(
-		/datum/reagent/sugar =           2,
-		/datum/reagent/diethylamine =   -2,
-		/datum/reagent/adminordrazine = -5
+		/datum/reagent/sugar =                 2,
+		/datum/reagent/diethylamine =         -2,
+		/datum/reagent/toxin/bromide =        -2,
+		/datum/reagent/toxin/methyl_bromide = -4,
+		/datum/reagent/adminordrazine =       -5
 		)
 	var/global/list/water_reagents = list(
 		/datum/reagent/water =           1,
@@ -112,15 +114,15 @@
 		/datum/reagent/radium =         list( -1.5,  0,   0.2),
 		/datum/reagent/adminordrazine = list(  1,    1,   1  ),
 		/datum/reagent/toxin/fertilizer/robustharvest =  list(  0,    0.2, 0  ),
-		/datum/reagent/toxin/fertilizer/left4zed =       list(  0,    0,   0.2)
+		/datum/reagent/toxin/fertilizer/left4zed =       list(  0,    0,   0.5)
 		)
 
 	// Mutagen list specifies minimum value for the mutation to take place, rather
 	// than a bound as the lists above specify.
 	var/global/list/mutagenic_reagents = list(
 		/datum/reagent/radium =  8,
-		/datum/reagent/mutagen = 15
-		)
+		/datum/reagent/mutagen = 15,
+		/datum/reagent/toxin/fertilizer/left4zed = 30)
 
 /obj/machinery/portable_atmospherics/hydroponics/AltClick()
 	if(mechanical && !usr.incapacitated() && Adjacent(usr))
@@ -490,12 +492,16 @@
 			health = (istype(S, /obj/item/seeds/cutting) ? round(seed.get_trait(TRAIT_ENDURANCE)/rand(2,5)) : seed.get_trait(TRAIT_ENDURANCE))
 			lastcycle = world.time
 
+			var/needed_skill = seed.mysterious ? SKILL_ADEPT : SKILL_BASIC
+			if(prob(user.skill_fail_chance(SKILL_BOTANY, 40, needed_skill)))
+				dead = 1
+				health = 0
 			qdel(O)
 
 			check_health()
 
 		else
-			to_chat(user, "<span class='danger'>\The [src] already has seeds in it!</span>")
+			to_chat(user, "<span class='warning'>\The [src] already has seeds in it!</span>")
 
 	else if (istype(O, /obj/item/weapon/material/minihoe))  // The minihoe
 		if(closed_system)
@@ -503,11 +509,15 @@
 			return
 
 		if(weedlevel > 0)
-			user.visible_message("<span class='danger'>[user] starts uprooting the weeds.</span>", "<span class='danger'>You remove the weeds from the [src].</span>")
+			user.visible_message("<span class='notice'>[user] starts uprooting the weeds.</span>", "<span class='notice'>You remove the weeds from the [src].</span>")
 			weedlevel = 0
-			update_icon()
+			if(seed)
+				var/needed_skill = seed.mysterious ? SKILL_ADEPT : SKILL_BASIC
+				if(!user.skill_check(SKILL_BOTANY, needed_skill))
+					health -= rand(40,60)
+					check_health(1)
 		else
-			to_chat(user, "<span class='danger'>This plot is completely devoid of weeds. It doesn't need uprooting.</span>")
+			to_chat(user, "<span class='notice'>This plot is completely devoid of weeds. It doesn't need uprooting.</span>")
 
 	else if (istype(O, /obj/item/weapon/storage/plants))
 		if(closed_system)
@@ -588,15 +598,16 @@
 	to_chat(usr, "Water: [round(waterlevel,0.1)]/100")
 	to_chat(usr, "Nutrient: [round(nutrilevel,0.1)]/10")
 
-	if(weedlevel >= 5)
-		to_chat(usr, "\The [src] is <span class='danger'>infested with weeds</span>!")
-	if(pestlevel >= 5)
-		to_chat(usr, "\The [src] is <span class='danger'>infested with tiny worms</span>!")
+	if(usr.skill_check(SKILL_BOTANY, SKILL_BASIC))
+		if(weedlevel >= 5)
+			to_chat(usr, "\The [src] is <span class='danger'>infested with weeds</span>!")
+		if(pestlevel >= 5)
+			to_chat(usr, "\The [src] is <span class='danger'>infested with tiny worms</span>!")
 
-	if(dead)
-		to_chat(usr, "<span class='danger'>The plant is dead.</span>")
-	else if(health <= (seed.get_trait(TRAIT_ENDURANCE)/ 2))
-		to_chat(usr, "The plant looks <span class='danger'>unhealthy</span>.")
+		if(dead)
+			to_chat(usr, "<span class='danger'>The plant is dead.</span>")
+		else if(health <= (seed.get_trait(TRAIT_ENDURANCE)/ 2))
+			to_chat(usr, "The plant looks <span class='danger'>unhealthy</span>.")
 
 	if(mechanical)
 		var/turf/T = loc

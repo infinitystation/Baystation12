@@ -17,8 +17,8 @@
 	name = "ClothesTact"
 	products = list(/obj/item/clothing/mask/gas = 3, /obj/item/clothing/mask/gas/half = 3, /obj/item/clothing/mask/gas/syndicate = 3,
 					/obj/item/clothing/under/casual_pants/baggy/camo = 3, /obj/item/clothing/under/syndicate/combat = 3, /obj/item/clothing/under/tactical = 3,
-					/obj/item/clothing/mask/balaclava = 3, /obj/item/clothing/mask/balaclava/tactical = 3
-					)
+					/obj/item/clothing/mask/balaclava = 3, /obj/item/clothing/mask/balaclava/tactical = 3,
+					/obj/item/clothing/accessory/armband/engine = 3, /obj/item/clothing/accessory/armband/med = 3, /obj/item/clothing/accessory/armband = 3)
 
 /obj/machinery/vending/security_clothes
 	name = "Security clothes"

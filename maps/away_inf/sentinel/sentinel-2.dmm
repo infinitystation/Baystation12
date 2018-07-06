@@ -1534,7 +1534,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/door/airlock/glass_security{
+/obj/machinery/door/airlock/glass/security{
 	id_tag = "prisonentry";
 	name = "Brig Entry";
 	req_access = list(2)
@@ -2200,7 +2200,9 @@
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "es" = (
-/obj/item/modular_computer/console/preset/civilian,
+/obj/item/modular_computer/console/preset/civilian{
+	dir = 8
+	},
 /turf/simulated/floor/carpet/blue2,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "et" = (

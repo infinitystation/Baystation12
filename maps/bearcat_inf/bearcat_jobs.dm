@@ -51,13 +51,13 @@
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/chief_engineer
 
 /datum/job/doctor
-	title = "Doc"
+	title = "Doctor"
 	supervisors = "the Captain and your idea of Hippocratic Oath"
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/doc
 	alt_titles = list(
 		"Surgeon")
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	hud_icon = "hudmedicaldoctor"
 
 /datum/job/hop
@@ -65,7 +65,12 @@
 	supervisors = "the Captain and the Merchant Code"
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/mate
 	hud_icon = "hudheadofpersonnel"
-
+	access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers,
+			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
+			            access_all_personal_lockers, access_maint_tunnels, access_bar, access_janitor, access_construction, access_morgue,
+			            access_crematorium, access_kitchen, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_hydroponics, access_lawyer,
+			            access_chapel_office, access_library, access_research, access_mining, access_heads_vault, access_mining_station,
+			            access_hop, access_RC_announce, access_keycard_auth, access_gateway, access_fist_mate)
 /datum/job/bartender
 	title = "Bartender"
 	supervisors = "the Captain"
@@ -75,13 +80,13 @@
 
 /datum/job/assistant
 	title = "Deck Hand"
-	supervisors = "literally everyone, you bottom feeder"
+	supervisors = "Quartermaster, the Captain and the First Mate"
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/hand
 	alt_titles = list(
 		"Steward" = /decl/hierarchy/outfit/job/bearcat/hand/cook,
 		"Cargo Hand",
 		"Digger" = /decl/hierarchy/outfit/job/bearcat/hand/digger,
-		"Passenger")
+		)
 	hud_icon = "hudcargotechnician"
 
 /datum/job/engineer
@@ -102,14 +107,14 @@
 
 /datum/job/qm
 	title = "Quartermaster"
-	supervisors = "your greed and the Captain."
+	supervisors = "your greed, the Captain and the First Mate."
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/qm
 	total_positions = 1
 	spawn_positions = 1
 
 /datum/job/officer
-	title = "Security Guard"
-	supervisors = "the Captain and Your laws."
+	title = "Security"
+	supervisors = "the Captain and his laws."
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/security
 	total_positions = 1
 	spawn_positions = 1
@@ -139,7 +144,7 @@
 	name = BEARCAT_OUTFIT_JOB_NAME("Captain")
 	uniform = /obj/item/clothing/under/casual_pants/classicjeans
 	shoes = /obj/item/clothing/shoes/black
-	pda_type = /obj/item/device/pda/captain
+	pda_type = /obj/item/modular_computer/pda/captain
 	r_pocket = /obj/item/device/radio
 	id_type = /obj/item/weapon/card/id/gold
 
@@ -161,7 +166,7 @@
 	suit = /obj/item/clothing/suit/storage/hazardvest
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/workboots
-	pda_type = /obj/item/device/pda/heads/ce
+	pda_type = /obj/item/modular_computer/pda/heads/ce
 	l_hand = /obj/item/weapon/wrench
 	belt = /obj/item/weapon/storage/belt/utility/full
 	id_type = /obj/item/weapon/card/id/engineering/head
@@ -169,7 +174,7 @@
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/bearcat/doc
-	name = BEARCAT_OUTFIT_JOB_NAME("Ship's Doc")
+	name = BEARCAT_OUTFIT_JOB_NAME("Doctor")
 	uniform = /obj/item/clothing/under/det/black
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	glasses = /obj/item/clothing/glasses/hud/health
@@ -207,7 +212,7 @@
 	id_type = /obj/item/weapon/card/id/cargo/head
 
 /decl/hierarchy/outfit/job/bearcat/security
-	name = BEARCAT_OUTFIT_JOB_NAME("Security Guard")
+	name = BEARCAT_OUTFIT_JOB_NAME("Security")
 	uniform = /obj/item/clothing/under/syndicate
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/sunglasses/big

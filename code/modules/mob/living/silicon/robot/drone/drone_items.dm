@@ -24,7 +24,9 @@
 		/obj/item/weapon/circuitboard,
 		/obj/item/weapon/smes_coil,
 		/obj/item/weapon/computer_hardware,
-		/obj/item/weapon/fuel_assembly
+		/obj/item/weapon/fuel_assembly,
+		/obj/item/stack/material/deuterium,
+		/obj/item/stack/material/tritium
 		)
 
 	var/obj/item/wrapped = null // Item currently being held.
@@ -116,7 +118,8 @@
 
 	can_hold = list(
 	/obj/item/organ,
-	/obj/item/robot_parts
+	/obj/item/robot_parts,
+	/obj/item/weapon/reagent_containers/ivbag
 	)
 
 /obj/item/weapon/gripper/no_use //Used when you want to hold and put items in other things, but not able to 'use' the item
@@ -191,11 +194,6 @@
 		addtimer(CALLBACK(src, .proc/finish_using, target, user, params, force_holder, resolved), 0)
 
 	else if(istype(target,/obj/item)) //Check that we're not pocketing a mob.
-
-		//...and that the item is not in a container.
-		if(!isturf(target.loc))
-			return
-
 		var/obj/item/I = target
 
 		//Check if the item is blacklisted.
@@ -207,8 +205,16 @@
 
 		//We can grab the item, finally.
 		if(grab)
+			if(I == user.s_active)
+				var/obj/item/weapon/storage/storage = I
+				storage.close(user) //Closes the ui.
+			if(istype(I.loc, /obj/item/weapon/storage))
+				var/obj/item/weapon/storage/storage = I.loc
+				if(!storage.remove_from_storage(I, src))
+					return
+			else
+				I.forceMove(src)
 			to_chat(user, "<span class='notice'>You collect \the [I].</span>")
-			I.loc = src
 			wrapped = I
 			return
 		else

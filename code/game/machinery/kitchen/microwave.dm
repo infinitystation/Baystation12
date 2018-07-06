@@ -106,7 +106,7 @@
 			return 1
 		if(istype(O, /obj/item/stack)) // This is bad, but I can't think of how to change it
 			var/obj/item/stack/S = O
-			if(S.get_amount() > 1)
+			if(S.get_amount() >= 1)
 				new O.type (src)
 				S.use(1)
 				user.visible_message( \
@@ -169,6 +169,7 @@
 
 /obj/machinery/microwave/interact(mob/user as mob) // The microwave Menu
 	var/dat = list()
+	dat += "<b>Ingredients:</b><br>"
 	if(src.broken > 0)
 		dat += "<TT>Bzzzzttttt</TT>"
 	else if(src.operating)
@@ -217,10 +218,10 @@
 			dat += "<B>[display_name]:</B> [R.volume] unit\s"
 
 		if (items_counts.len==0 && reagents.reagent_list.len==0)
+			dat = ""
 			dat += "<B>The microwave is empty</B>"
 		else
-			dat += "<b>Ingredients:</b><br>[dat]"
-		dat += "<HR><BR><A href='?src=\ref[src];action=cook'>Turn on!<BR><A href='?src=\ref[src];action=dispose'>Eject ingredients!"
+			dat += "<HR><BR><A href='?src=\ref[src];action=cook'>Turn on!<BR><A href='?src=\ref[src];action=dispose'>Eject ingredients!"
 
 	show_browser(user, "<HEAD><TITLE>Microwave Controls</TITLE></HEAD><TT>[jointext(dat,"<br>")]</TT>", "window=microwave")
 	onclose(user, "microwave")

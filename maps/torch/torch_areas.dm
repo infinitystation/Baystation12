@@ -377,13 +377,32 @@
 
 //Aquila
 
-/area/aquila_hangar/start
+/area/aquila
 	name = "\improper SEV Aquila"
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/reinforced/airless
 	requires_power = 1
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/aquila/cockpit
+	name = "\improper SEV Aquila - Cockpit"
+/area/aquila/maintenance
+	name = "\improper SEV Aquila - Maintenance"
+/area/aquila/storage
+	name = "\improper SEV Aquila - Storage"
+/area/aquila/secure_storage
+	name = "\improper SEV Aquila - Secure Storage"
+/area/aquila/mess
+	name = "\improper SEV Aquila - Mess Hall"
+/area/aquila/passenger
+	name = "\improper SEV Aquila - Passenger Compartment"
+/area/aquila/medical
+	name = "\improper SEV Aquila - Medical"
+/area/aquila/head
+	name = "\improper SEV Aquila - Head"
+/area/aquila/airlock
+	name = "\improper SEV Aquila - Airlock Compartment"
 
 //Guppy
 
@@ -638,11 +657,6 @@
 	name = "\improper Auxiliary Engineering Hard Storage"
 	icon_state = "engineering_storage"
 
-/area/engineering/gravity_gen
-	name = "\improper Gravity Generator"
-	icon_state = "engine"
-	sound_env = SMALL_ENCLOSED
-
 //Vacant Areas
 /area/vacant
 	name = "\improper Vacant Area"
@@ -754,14 +768,14 @@
 	name = "\improper Shuttle Fuel Bay"
 	icon_state = "toxstorage"
 
-/area/quartermaster/quarantine
-	name = "\improper Hangar Quarantine"
-	icon_state = "toxstorage"
-
 /area/quartermaster/hangar
 	name = "\improper Hangar Deck"
 	icon_state = "hangar"
 	sound_env = LARGE_ENCLOSED
+
+/area/quartermaster/unused
+	name = "\improper Ready Room"
+	icon_state = "auxstorage"
 
 // Research
 /area/rnd/canister
@@ -839,7 +853,7 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/crew_quarters/sleep/bunk
-	name = "\improper Bunk Room"
+	name = "\improper Dormitory"
 	icon_state = "Sleep"
 	sound_env = SMALL_SOFTFLOOR
 	area_flags = AREA_FLAG_RAD_SHIELDED
@@ -1256,6 +1270,10 @@
 	name = "\improper Operating Theatre"
 	icon_state = "surgery"
 
+/area/medical/autopsy
+	name = "\improper Autopsy"
+	icon_state = "autopsy"
+
 // Research
 /area/assembly/chargebay
 	name = "\improper Mech Bay"
@@ -1279,10 +1297,6 @@
 
 /area/rnd/breakroom
 	name = "\improper Research Break Room"
-	icon_state = "researchbreak"
-
-/area/rnd/pilot
-	name = "\improper NanoTrasen Pilot Office"
 	icon_state = "researchbreak"
 
 /area/alien
@@ -1471,19 +1485,6 @@
 /area/tdome/tdomeadmin
 	name = "\improper Thunderdome (Admin.)"
 	icon_state = "purple"
-
-/area/tdome/testing
-	name = "\improper Thunderdome (TESTING AREA)"
-	icon_state = "purple"
-
-/area/tdome/testing/engineering
-	name = "\improper Thunderdome"
-	requires_power = 0
-	dynamic_lighting = 1
-
-/area/tdome/testing/engineering/unpowered
-	name = "\improper Thunderdome"
-	requires_power = 1
 
 /area/tdome/tdomeobserve
 	name = "\improper Thunderdome (Observer.)"

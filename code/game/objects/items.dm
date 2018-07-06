@@ -21,6 +21,7 @@
 	var/list/attack_verb = list("hit") //Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
 	var/lock_picking_level = 0 //used to determine whether something can pick a lock, and how well.
 	var/force = 0
+	var/attack_cooldown = DEFAULT_WEAPON_COOLDOWN
 
 	var/heat_protection = 0 //flags which determine which body parts are protected from heat. Use the HEAD, UPPER_TORSO, LOWER_TORSO, etc. flags. See setup.dm
 	var/cold_protection = 0 //flags which determine which body parts are protected from cold. Use the HEAD, UPPER_TORSO, LOWER_TORSO, etc. flags. See setup.dm
@@ -52,6 +53,7 @@
 	var/zoomdevicename = null //name used for message when binoculars/scope is used
 	var/zoom = 0 //1 if item is actively being used to zoom. For scoped guns and binoculars.
 
+	var/base_parry_chance	// Will allow weapon to parry melee attacks if non-zero
 	var/icon_override = null  //Used to override hardcoded clothing dmis in human clothing proc.
 
 	var/use_alt_layer = FALSE // Use the slot's alternative layer when rendering on a mob
@@ -79,6 +81,8 @@
 	// Species-specific sprite sheets for inventory sprites
 	// Works similarly to worn sprite_sheets, except the alternate sprites are used when the clothing/refit_for_species() proc is called.
 	var/list/sprite_sheets_obj = list()
+
+	var/safely = 0 //Cant harm with != Hurt intent
 
 /obj/item/New()
 	..()
@@ -267,8 +271,6 @@
 /obj/item/proc/dropped(mob/user as mob)
 	if(randpixel)
 		pixel_z = randpixel //an idea borrowed from some of the older pixel_y randomizations. Intended to make items appear to drop at a character
-	if(zoom)
-		zoom(user) //binoculars, scope, etc
 
 	update_twohanding()
 	if(user)
@@ -399,7 +401,7 @@ var/list/global/slot_flags_enumeration = list(
 				if(!disable_warning)
 					to_chat(usr, "<span class='warning'>You somehow have a suit with no defined allowed items for suit storage, stop that.</span>")
 				return 0
-			if( !(istype(src, /obj/item/device/pda) || istype(src, /obj/item/weapon/pen) || is_type_in_list(src, H.wear_suit.allowed)) )
+			if( !(istype(src, /obj/item/modular_computer/pda) || istype(src, /obj/item/weapon/pen) || is_type_in_list(src, H.wear_suit.allowed)) )
 				return 0
 		if(slot_handcuffed)
 			if(!istype(src, /obj/item/weapon/handcuffs))
@@ -450,7 +452,7 @@ var/list/global/slot_flags_enumeration = list(
 
 	if(!(usr)) //BS12 EDIT
 		return
-	if(!usr.canmove || usr.stat || usr.restrained() || !Adjacent(usr))
+	if(!CanPhysicallyInteract(usr))
 		return
 	if((!istype(usr, /mob/living/carbon)) || (istype(usr, /mob/living/carbon/brain)))//Is humanoid, and is not a brain
 		to_chat(usr, "<span class='warning'>You can't pick things up!</span>")
@@ -487,7 +489,15 @@ var/list/global/slot_flags_enumeration = list(
 //For non-projectile attacks this usually means the attack is blocked.
 //Otherwise should return 0 to indicate that the attack is not affected in any way.
 /obj/item/proc/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
+	if(get_parry_chance())
+		if(default_parry_check(user, attacker, damage_source) && prob(get_parry_chance()))
+			user.visible_message("<span class='danger'>\The [user] parries [attack_text] with \the [src]!</span>")
+			playsound(user.loc, 'sound/weapons/punchmiss.ogg', 50, 1)
+			return 1
 	return 0
+
+/obj/item/proc/get_parry_chance()
+	return base_parry_chance
 
 /obj/item/proc/get_loc_turf()
 	var/atom/L = loc
@@ -634,64 +644,80 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/proc/zoom(mob/user, var/tileoffset = 14,var/viewsize = 9) //tileoffset is client view offset in the direction the user is facing. viewsize is how far out this thing zooms. 7 is normal view
 	if(!user.client)
 		return
+	if(zoom)
+		return
 
-	var/devicename
-	if(zoomdevicename)
-		devicename = zoomdevicename
-	else
-		devicename = src.name
-
-	var/cannotzoom
+	var/devicename = zoomdevicename || name
 
 	var/mob/living/carbon/human/H = user
 	if(user.incapacitated(INCAPACITATION_DISABLED))
 		to_chat(user, "<span class='warning'>You are unable to focus through the [devicename].</span>")
-		cannotzoom = 1
+		return
 	else if(!zoom && istype(H) && H.equipment_tint_total >= TINT_MODERATE)
 		to_chat(user, "<span class='warning'>Your visor gets in the way of looking through the [devicename].</span>")
-		cannotzoom = 1
-	else if(!zoom && usr.get_active_hand() != src)
+		return
+	else if(!zoom && user.get_active_hand() != src)
 		to_chat(user, "<span class='warning'>You are too distracted to look through the [devicename], perhaps if it was in your active hand this might work better.</span>")
-		cannotzoom = 1
+		return
 
-	if(!zoom && !cannotzoom)
-		if(user.hud_used.hud_shown)
-			user.toggle_zoom_hud()	// If the user has already limited their HUD this avoids them having a HUD when they zoom in
-		user.client.view = viewsize
-		zoom = 1
+	if(user.hud_used.hud_shown)
+		user.toggle_zoom_hud()	// If the user has already limited their HUD this avoids them having a HUD when they zoom in
+	user.client.view = viewsize
+	zoom = 1
 
-		var/tilesize = 32
-		var/viewoffset = tilesize * tileoffset
+	var/viewoffset = WORLD_ICON_SIZE * tileoffset
+	switch(user.dir)
+		if (NORTH)
+			user.client.pixel_x = 0
+			user.client.pixel_y = viewoffset
+		if (SOUTH)
+			user.client.pixel_x = 0
+			user.client.pixel_y = -viewoffset
+		if (EAST)
+			user.client.pixel_x = viewoffset
+			user.client.pixel_y = 0
+		if (WEST)
+			user.client.pixel_x = -viewoffset
+			user.client.pixel_y = 0
 
-		switch(user.dir)
-			if (NORTH)
-				user.client.pixel_x = 0
-				user.client.pixel_y = viewoffset
-			if (SOUTH)
-				user.client.pixel_x = 0
-				user.client.pixel_y = -viewoffset
-			if (EAST)
-				user.client.pixel_x = viewoffset
-				user.client.pixel_y = 0
-			if (WEST)
-				user.client.pixel_x = -viewoffset
-				user.client.pixel_y = 0
+	user.visible_message("\The [user] peers through [zoomdevicename ? "the [zoomdevicename] of [src]" : "[src]"].")
 
-		user.visible_message("\The [user] peers through the [zoomdevicename ? "[zoomdevicename] of [src]" : "[src]"].")
+	GLOB.destroyed_event.register(src, src, /obj/item/proc/unzoom)
+	GLOB.moved_event.register(src, src, /obj/item/proc/unzoom)
+	GLOB.dir_set_event.register(src, src, /obj/item/proc/unzoom)
+	GLOB.item_unequipped_event.register(src, src, /obj/item/proc/zoom_drop)
+	GLOB.stat_set_event.register(user, src, /obj/item/proc/unzoom)
 
-	else
-		user.client.view = world.view
-		if(!user.hud_used.hud_shown)
-			user.toggle_zoom_hud()
-		zoom = 0
+/obj/item/proc/zoom_drop(var/obj/item/I, var/mob/user)
+	unzoom(user)
 
-		user.client.pixel_x = 0
-		user.client.pixel_y = 0
+/obj/item/proc/unzoom(var/mob/user)
+	if(!zoom)
+		return
+	zoom = 0
 
-		if(!cannotzoom)
-			user.visible_message("[zoomdevicename ? "\The [user] looks up from [src]" : "\The [user] lowers [src]"].")
+	GLOB.destroyed_event.unregister(src, src, /obj/item/proc/unzoom)
+	GLOB.moved_event.unregister(src, src, /obj/item/proc/unzoom)
+	GLOB.dir_set_event.unregister(src, src, /obj/item/proc/unzoom)
+	GLOB.item_unequipped_event.unregister(src, src, /obj/item/proc/zoom_drop)
 
-	return
+	user = user == src ? loc : (user || loc)
+	if(!istype(user))
+		crash_with("[log_info_line(src)]: Zoom user lost]")
+		return
+
+	GLOB.stat_set_event.unregister(user, src, /obj/item/proc/unzoom)
+
+	if(!user.client)
+		return
+
+	user.client.view = world.view
+	if(!user.hud_used.hud_shown)
+		user.toggle_zoom_hud()
+
+	user.client.pixel_x = 0
+	user.client.pixel_y = 0
+	user.visible_message("[zoomdevicename ? "\The [user] looks up from [src]" : "\The [user] lowers [src]"].")
 
 /obj/item/proc/pwr_drain()
 	return 0 // Process Kill
@@ -778,3 +804,12 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		. = "<span class='warning'>\icon[src] [gender==PLURAL?"some":"a"] [(blood_color != SYNTH_BLOOD_COLOUR) ? "blood" : "oil"]-stained [src]</span>"
 	else
 		. = "\icon[src] \a [src]"
+	var/ID = GetIdCard()
+	if(ID)
+		. += "  <a href='?src=\ref[ID];look_at_id=1'>\[Look at ID\]</a>"
+
+/obj/item/is_burnable()
+	return simulated
+
+/obj/item/lava_act()
+	. = (!throwing) ? ..() : FALSE

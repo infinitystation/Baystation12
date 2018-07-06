@@ -50,7 +50,7 @@
 	name = "holosign switch"
 	desc = "A remote control switch for holosign."
 	icon = 'icons/obj/power.dmi'
-	icon_state = "crema_switch"
+	icon_state = "light0"
 
 /obj/machinery/button/holosign/attack_hand(mob/user as mob)
 	if(..())
@@ -59,7 +59,6 @@
 	use_power(5)
 
 	active = !active
-	update_icon()
 
 	for(var/obj/machinery/holosign/M in SSmachines.machinery)
 		if (M.id == src.id)
@@ -71,4 +70,3 @@
 
 /obj/machinery/button/holosign/update_icon()
 	icon_state = "light[active]"
-	return

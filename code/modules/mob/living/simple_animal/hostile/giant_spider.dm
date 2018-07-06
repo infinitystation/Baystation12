@@ -13,16 +13,16 @@
 	icon_dead = "guard_dead"
 	speak_emote = list("chitters")
 	emote_hear = list("chitters")
-	speak_chance = 5
+	speak_chance = 0
 	turns_per_move = 5
-	see_in_dark = 10
+	see_in_dark = 7
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/xenomeat
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "pokes"
-	stop_automated_movement_when_pulled = 0
 	maxHealth = 200
 	health = 200
+	break_stuff_probability = 50
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	heat_damage_per_tick = 20
@@ -34,6 +34,8 @@
 	pass_flags = PASS_FLAG_TABLE
 	move_to_delay = 6
 	speed = 3
+	max_gas = list("phoron" = 1, "carbon_dioxide" = 5, "methyl_bromide" = 1)
+	mob_size = MOB_LARGE
 
 //nursemaids - these create webs and eggs
 /mob/living/simple_animal/hostile/giant_spider/nurse

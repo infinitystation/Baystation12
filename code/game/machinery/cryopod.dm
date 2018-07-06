@@ -154,9 +154,9 @@
 	anchored = 1
 	dir = WEST
 
-	light_color = "#00bf00"
-	light_power = 0.5
-	light_range = 2
+	light_max_bright = 0.25
+	light_outer_range = 2
+	light_color="#00bf00"
 
 	var/base_icon_state = "body_scanner_0"
 	var/occupied_icon_state = "body_scanner_1"
@@ -407,7 +407,7 @@
 			//current_mode.possible_traitors.Remove(occupant)
 
 	// Delete them from datacore.
-	var/datum/computer_file/crew_record/R = get_crewmember_record(occupant.real_name)
+	var/datum/computer_file/report/crew_record/R = get_crewmember_record(occupant.real_name)
 	if(R)
 		qdel(R)
 
@@ -490,7 +490,7 @@
 
 	icon_state = base_icon_state
 
-	light_range = 1
+	light_outer_range = 1
 
 	//Eject any items that aren't meant to be in the pod.
 	var/list/items = src.contents

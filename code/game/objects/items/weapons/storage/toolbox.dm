@@ -8,7 +8,8 @@
 	icon_state = "red"
 	item_state = "toolbox_red"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	force = 5
+	force = 20
+	attack_cooldown = 21
 	throwforce = 10
 	throw_speed = 1
 	throw_range = 7
@@ -17,6 +18,7 @@
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE //enough to hold all starting contents
 	origin_tech = list(TECH_COMBAT = 1)
 	attack_verb = list("robusted")
+	use_sound = 'sound/effects/storage/toolbox.ogg'
 
 /obj/item/weapon/storage/toolbox/emergency
 	name = "emergency toolbox"
@@ -24,7 +26,7 @@
 
 /obj/item/weapon/storage/toolbox/emergency/Initialize()
 	. = ..()
-	var/item = pick(list(/obj/item/device/flashlight, /obj/item/device/flashlight/flare,  /obj/item/device/flashlight/glowstick/red))
+	var/item = pick(list(/obj/item/device/flashlight, /obj/item/device/flashlight/flare,  /obj/item/device/flashlight/flare/glowstick/red))
 	new item(src)
 
 
@@ -53,9 +55,9 @@
 
 /obj/item/weapon/storage/toolbox/syndicate
 	name = "black and red toolbox"
-	desc = "A toolbox in black, with stylish red trim. This one feels particularly heavy."
+	desc = "A toolbox in black, with stylish red trim. This one feels particularly heavy, yet balanced."
 	icon_state = "syndicate"
 	item_state = "toolbox_syndi"
 	origin_tech = list(TECH_COMBAT = 1, TECH_ILLEGAL = 1)
-	force = 7.0
+	attack_cooldown = 10
 	startswith = list(/obj/item/clothing/gloves/insulated, /obj/item/weapon/screwdriver, /obj/item/weapon/wrench, /obj/item/weapon/weldingtool, /obj/item/weapon/crowbar, /obj/item/weapon/wirecutters, /obj/item/device/multitool)

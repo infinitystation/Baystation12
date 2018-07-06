@@ -4,7 +4,7 @@
 	name = "Small ship"
 	desc = "Sensor array is detecting a small vessel with unknown lifeforms on board"
 	name = "Yacht"
-	color = "#FFC966"
+	color = "#ffc966"
 	vessel_mass = 30
 	default_delay = 35 SECONDS
 	speed_mod = 10 SECONDS

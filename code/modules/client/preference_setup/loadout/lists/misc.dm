@@ -77,6 +77,12 @@
 	path = /obj/item/weapon/towel
 	flags = GEAR_HAS_COLOR_SELECTION
 
+/datum/gear/rolled_towel
+	display_name = "big towel"
+	description = "Collapsed big towel - looks like you can't use it as a normal one... Use it on the beach or gym."
+	path = /obj/item/rolled_towel
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/plush_toy
 	display_name = "plush toy"
 	description = "A plush toy."
@@ -114,6 +120,16 @@
 	path = /obj/item/weapon/haircomb
 	sort_category = "Cosmetics"
 	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/brush
+	display_name = "hairbrush"
+	path = /obj/item/weapon/haircomb/brush
+	sort_category = "Cosmetics"
+
+/datum/gear/deodorant
+	display_name = "deodorant"
+	path = /obj/item/weapon/reagent_containers/spray/cleaner/deodorant
+	sort_category = "Cosmetics"
 
 /datum/gear/mask
 	display_name = "sterile mask"

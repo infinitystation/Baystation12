@@ -124,7 +124,7 @@
 			raw_choice = sanitize(raw_choice, MAX_NAME_LEN * 2)
 			raw_choice = sanitize_a2u(raw_choice)
 			if(raw_choice)
-				pref.religion = sanitize(raw_choice)
+				pref.religion = raw_choice
 		else
 			pref.religion = choice
 		return TOPIC_REFRESH

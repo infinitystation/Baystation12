@@ -23,9 +23,9 @@ var/list/ticket_panels = list()
 	if(status == TICKET_ASSIGNED && !((closed_by.ckey in assigned_admin_ckeys()) || owner.ckey == closed_by.ckey) && alert(client_by_ckey(closed_by.ckey), "You are not assigned to this ticket. Are you sure you want to close it?",  "Close ticket?" , "Yes" , "No") != "Yes")
 		return
 
-	var/client/real_client = client_by_ckey(closed_by.ckey)
-	if(status == TICKET_ASSIGNED && (!real_client || !real_client.holder)) // non-admins can only close a ticket if no admin has taken it
-		return
+	//var/client/real_client = client_by_ckey(closed_by.ckey)
+	//if(status == TICKET_ASSIGNED && (!real_client || !real_client.holder)) // non-admins can only close a ticket if no admin has taken it
+		//return
 
 	src.status = TICKET_CLOSED
 	src.closed_by = closed_by

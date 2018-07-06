@@ -57,8 +57,7 @@
 		/datum/species/unathi = list(
 			/datum/mil_branch/expeditionary_corps = list(
 				/datum/mil_rank/ec/e3,
-				/datum/mil_rank/ec/e5,
-				/datum/mil_rank/ec/o1
+				/datum/mil_rank/ec/e5
 			)
 		),
 		/datum/species/skrell = list(
@@ -162,6 +161,9 @@
 
 	assistant_job = "Crewman"
 
+	min_skill = list(	SKILL_SCIENCE = SKILL_BASIC,
+						SKILL_EVA     = SKILL_BASIC)
+
 /datum/mil_branch/fleet
 	name = "Fleet"
 	name_short = "SCGF"
@@ -217,6 +219,9 @@
 	)
 
 	assistant_job = "Crewman"
+	min_skill = list(	SKILL_HAULING = SKILL_BASIC,
+						SKILL_WEAPONS = SKILL_BASIC,
+						SKILL_EVA     = SKILL_BASIC)
 
 /datum/mil_branch/civilian
 	name = "Civilian"
@@ -227,6 +232,7 @@
 		/datum/mil_rank/civ/civ,
 		/datum/mil_rank/civ/nt,
 		/datum/mil_rank/civ/contractor,
+		/datum/mil_rank/civ/offduty,
 		/datum/mil_rank/civ/marshal,
 		/datum/mil_rank/civ/synthetic
 	)
@@ -235,6 +241,7 @@
 		/datum/mil_rank/civ/civ,
 		/datum/mil_rank/civ/nt,
 		/datum/mil_rank/civ/contractor,
+		/datum/mil_rank/civ/offduty,
 		/datum/mil_rank/civ/marshal,
 		/datum/mil_rank/civ/synthetic
 	)

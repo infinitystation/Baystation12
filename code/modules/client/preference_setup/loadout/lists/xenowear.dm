@@ -118,6 +118,42 @@
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 
+/datum/gear/eyes/visors
+	display_name = "visor selection (Tajara)"
+	path = /obj/item/clothing/glasses/tajvisor
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_TAJARA)
+
+/datum/gear/eyes/visors/New()
+	..()
+	var/visors = list()
+	visors["visor type-A (Tajara)"] = /obj/item/clothing/glasses/tajvisor/a
+	visors["visor type-B (Tajara)"] = /obj/item/clothing/glasses/tajvisor/b
+	visors["visor type-C (Tajara)"] = /obj/item/clothing/glasses/tajvisor/c
+	visors["visor type-D (Tajara)"] = /obj/item/clothing/glasses/tajvisor/d
+	visors["visor type-E (Tajara)"] = /obj/item/clothing/glasses/tajvisor/e
+	visors["visor type-F (Tajara)"] = /obj/item/clothing/glasses/tajvisor/f
+	visors["visor type-G (Tajara)"] = /obj/item/clothing/glasses/tajvisor/g
+	gear_tweaks += new/datum/gear_tweak/path(visors)
+
+/datum/gear/eyes/medical/tajvisor
+	display_name = "MEDICAL visor (Tajara)"
+	path = /obj/item/clothing/glasses/hud/health/tajvisor
+	whitelisted = list(SPECIES_TAJARA)
+	sort_category = "Xenowear"
+
+/datum/gear/eyes/security/tajvisor
+	display_name = "SECURITY visor (Tajara)"
+	path = /obj/item/clothing/glasses/sunglasses/sechud/tajvisor
+	whitelisted = list(SPECIES_TAJARA)
+	sort_category = "Xenowear"
+
+/datum/gear/eyes/meson/tajvisor
+	display_name = "ENGINEERING visor (Tajara)"
+	path = /obj/item/clothing/glasses/meson/prescription/tajvisor
+	whitelisted = list(SPECIES_TAJARA)
+	sort_category = "Xenowear"
+
 /datum/gear/shoes/caligae
 	display_name = "caligae (Tajara)"
 	path = /obj/item/clothing/shoes/sandal/tajaran/caligae
@@ -203,3 +239,114 @@
 	path = /obj/item/clothing/mask/gas/vox
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_VOX)
+	cost = 2
+
+/datum/gear/gloves/vox
+	display_name = "vox insulated gauntlets"
+	path = /obj/item/clothing/gloves/vox
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_VOX)
+	cost = 4
+
+/datum/gear/uniform/vox_cloth
+	display_name = "vox clothing"
+	path = /obj/item/clothing/under/vox/vox_casual
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_VOX)
+	cost = 0
+
+/datum/gear/uniform/vox_robe
+	display_name = "vox robe"
+	path = /obj/item/clothing/under/vox/vox_robes
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_VOX)
+	cost = 0
+
+	//////////
+	//RESOMI//
+	//////////
+
+/datum/gear/uniform/resomi
+	display_name = "(Resomi) smock, grey"
+	path = /obj/item/clothing/under/resomi
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_RESOMI)
+
+/datum/gear/uniform/resomi/white
+	display_name = "(Resomi) smock, colored"
+	path = /obj/item/clothing/under/resomi/white
+	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/uniform/resomi/dress
+	display_name = "(Resomi) small dress"
+	path = /obj/item/clothing/under/resomi/dress
+
+/datum/gear/uniform/resomi/uniform
+	display_name = "(Resomi) small uniform"
+	path = /obj/item/clothing/under/resomi/uniform
+
+/datum/gear/uniform/resomi/formal
+	display_name = "(Resomi) small formal uniform"
+	path = /obj/item/clothing/under/resomi/formal
+
+/datum/gear/uniform/resomi/rainbow
+	display_name = "(Resomi) smock, rainbow"
+	path = /obj/item/clothing/under/resomi/rainbow
+
+/datum/gear/uniform/resomi/eng
+	display_name = "(Resomi) uniform, Engineering"
+	path = /obj/item/clothing/under/resomi/yellow
+
+/datum/gear/uniform/resomi/roboitcs
+	display_name = "(Resomi) uniform, Robotics"
+	path = /obj/item/clothing/under/resomi/robotics
+
+/datum/gear/uniform/resomi/sec
+	display_name = "(Resomi) uniform, Security"
+	path = /obj/item/clothing/under/resomi/red
+
+/datum/gear/uniform/resomi/med
+	display_name = "(Resomi) uniform, Medical"
+	path = /obj/item/clothing/under/resomi/medical
+
+/datum/gear/uniform/resomi/science
+	display_name = "(Resomi) uniform, Science"
+	path = /obj/item/clothing/under/resomi/science
+
+/datum/gear/uniform/resomi/dark_worksmock
+	display_name = "(Resomi) work smock, dark"
+	path = /obj/item/clothing/under/resomi/work_black
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/uniform/resomi/light_worksmock
+	display_name = "(Resomi) work smock, light"
+	path = /obj/item/clothing/under/resomi/work_white
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/eyes/resomi
+	display_name = "(Resomi) sun lenses"
+	path = /obj/item/clothing/glasses/sunglasses/lenses
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_RESOMI)
+
+/datum/gear/eyes/resomi/lenses_sec
+	display_name = "(Resomi) sun sechud lenses"
+	path = /obj/item/clothing/glasses/sunglasses/sechud/lenses
+
+/datum/gear/eyes/resomi/lenses_med
+	display_name = "(Resomi) sun medhud lenses"
+	path = /obj/item/clothing/glasses/hud/health/lenses
+
+/datum/gear/accessory/resomi_mantle
+	display_name = "(Resomi) small mantle"
+	path = /obj/item/clothing/accessory/scarf/resomi
+	flags = GEAR_HAS_COLOR_SELECTION
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_RESOMI)
+
+/datum/gear/suit/resomi
+	display_name = "(Resomi) small coat"
+	path = /obj/item/clothing/suit/storage/toggle/Resomicoat
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_RESOMI)
+	cost = 1

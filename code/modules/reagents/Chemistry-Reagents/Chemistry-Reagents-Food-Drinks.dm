@@ -85,6 +85,14 @@
 	taste_description = "egg"
 	color = "#ffffaa"
 
+//vegetamarian alternative that is safe for skrell to ingest//rewired it from its intended nutriment/protein/egg/softtofu because it would not actually work, going with plan B, more recipes.
+
+/datum/reagent/nutriment/softtofu
+	name = "plant protein"
+	description = "A gooey pale bean paste."
+	taste_description = "healthy sadness"
+	color = "#ffffff"
+
 /datum/reagent/nutriment/honey
 	name = "Honey"
 	description = "A golden yellow syrup, loaded with sugary sweetness."
@@ -1128,7 +1136,7 @@
 	strength = 50
 
 	glass_name = "ale"
-	glass_desc = "A freezing pint of delicious ale"
+	glass_desc = "A freezing container of delicious ale"
 
 /datum/reagent/ethanol/beer
 	name = "Beer"
@@ -1139,7 +1147,11 @@
 	nutriment_factor = 1
 
 	glass_name = "beer"
-	glass_desc = "A freezing pint of beer"
+	glass_desc = "A freezing container of beer"
+
+/datum/reagent/ethanol/beer/good
+
+	taste_description = "beer"
 
 /datum/reagent/ethanol/beer/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
@@ -1199,7 +1211,7 @@
 	name = "Champagne"
 	description = "Is this gold?"
 	taste_description = "bitter taste"
-	color = "#A89410"
+	color = "#a89410"
 	strength = 45
 
 	value = 0.15 // Cost

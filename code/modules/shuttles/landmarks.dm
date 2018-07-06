@@ -52,16 +52,16 @@
 		return FALSE
 	for(var/area/A in shuttle.shuttle_area)
 		var/list/translation = get_turf_translation(get_turf(shuttle.current_location), get_turf(src), A.contents)
-		if(check_collision(translation))
+		if(check_collision(base_area, list_values(translation)))
 			return FALSE
 	return TRUE
 
-/obj/effect/shuttle_landmark/proc/check_collision(var/list/turf_translation)
-	for(var/source in turf_translation)
-		var/turf/target = turf_translation[source]
+/proc/check_collision(area/target_area, list/target_turfs)
+	for(var/target_turf in target_turfs)
+		var/turf/target = target_turf
 		if(!target)
 			return TRUE //collides with edge of map
-		if(target.loc != base_area)
+		if(target.loc != target_area)
 			return TRUE //collides with another area
 		if(target.density)
 			return TRUE //dense turf
@@ -75,7 +75,7 @@
 	var/shuttle_restricted //name of the shuttle, null for generic waypoint
 
 /obj/effect/shuttle_landmark/automatic/Initialize()
-	tag = landmark_tag+"-[x]-[y]"
+	tag = landmark_tag+"-[x]-[y]-[z]"
 	. = ..()
 	base_area = get_area(src)
 	if(!GLOB.using_map.use_overmap)
@@ -102,8 +102,7 @@
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/effect/shuttle_landmark/automatic/clearing/LateInitialize()
-	var/list/victims = circlerangeturfs(get_turf(src),radius)
-	for(var/turf/T in victims)
+	for(var/turf/T in range(radius, src))
 		if(T.density)
 			T.ChangeTurf(get_base_turf_by_area(T))
 
@@ -136,4 +135,4 @@
 /obj/item/device/spaceflare/update_icon()
 	if(active)
 		icon_state = "bluflare_on"
-		set_light(l_range = 6, l_power = 3)
+		set_light(0.3, 0.1, 6, 2, "85d1ff")

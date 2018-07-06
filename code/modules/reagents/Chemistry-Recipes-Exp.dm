@@ -32,4 +32,4 @@
 	required_reagents |= list(pick(RANDOM_REAGENT) = random_amount)
 	result_amount += random_amount
 
-#undef RANDOM_REAGENT //place that in end of dm
+#undef RANDOM_REAGENT

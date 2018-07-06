@@ -4,6 +4,7 @@
 	icon_state = "grill_off"
 	cook_type = "grilled"
 	cook_time = 100
+	cooked_sound = "sound/machines/ding.ogg"
 	food_color = "#a34719"
 	on_icon = "grill_on"
 	off_icon = "grill_off"

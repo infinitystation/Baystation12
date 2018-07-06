@@ -87,6 +87,8 @@
 
 #define isMultitool(A) istype(A, /obj/item/device/multitool)
 
+#define isMultimeter(A) istype(A, /obj/item/device/multitool/multimeter)
+
 #define isCrowbar(A) istype(A, /obj/item/weapon/crowbar)
 
 #define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
@@ -103,6 +105,7 @@
 #define close_browser(target, browser_name)                 target << browse(null, browser_name)
 #define show_image(target, image)                           target << image
 #define send_rsc(target, rsc_content, rsc_name)             target << browse_rsc(rsc_content, rsc_name)
+#define open_link(target, url)             target << link(url)
 
 #define MAP_IMAGE_PATH "nano/images/[GLOB.using_map.path]/"
 
@@ -141,6 +144,8 @@
 #define LAZYREMOVE(L, I) if(L) { L -= I; if(!L.len) { L = null; } }
 // Adds I to L, initalizing L if necessary
 #define LAZYADD(L, I) if(!L) { L = list(); } L += I;
+// Insert I into L at position X, initalizing L if necessary
+#define LAZYINSERT(L, I, X) if(!L) { L = list(); } L.Insert(X, I);
 // Adds I to L, initalizing L if necessary, if I is not already in L
 #define LAZYDISTINCTADD(L, I) if(!L) { L = list(); } L |= I;
 // Sets L[A] to I, initalizing L if necessary
@@ -169,3 +174,5 @@
 #define FLAGS_EQUALS(flag, flags) ((flag & (flags)) == (flags))
 
 #define isopenturf(target) istype(target, /turf/simulated/open)
+
+#define JOINTEXT(X) jointext(X, null)

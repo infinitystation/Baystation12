@@ -33,14 +33,12 @@
 			return global.Master;
 		if("OOClog")
 			return global.OOClog;
-		if("PDAs")
-			return global.PDAs;
-		if("SKILLS")
-			return global.SKILLS;
 		if("SSair")
 			return global.SSair;
 		if("SSairflow")
 			return global.SSairflow;
+		if("SSalarm")
+			return global.SSalarm;
 		if("SSantags")
 			return global.SSantags;
 		if("SSatoms")
@@ -49,12 +47,18 @@
 			return global.SSfastprocess;
 		if("SSgarbage")
 			return global.SSgarbage;
+		if("SSicon_update")
+			return global.SSicon_update;
 		if("SSlegacy")
 			return global.SSlegacy;
+		if("SSlighting")
+			return global.SSlighting;
 		if("SSmachines")
 			return global.SSmachines;
 		if("SSmapping")
 			return global.SSmapping;
+		if("SSmisc_late")
+			return global.SSmisc_late;
 		if("SSmobs")
 			return global.SSmobs;
 		if("SSobj")
@@ -71,6 +75,8 @@
 			return global.SSsun;
 		if("SStimer")
 			return global.SStimer;
+		if("SSturf")
+			return global.SSturf;
 		if("SSvines")
 			return global.SSvines;
 		if("SSwireless")
@@ -151,8 +157,8 @@
 			return global.air_blocked;
 		if("air_processing_killed")
 			return global.air_processing_killed;
-		if("alarm_manager")
-			return global.alarm_manager;
+		if("airlock_overlays")
+			return global.airlock_overlays;
 		if("alien_whitelist")
 			return global.alien_whitelist;
 		if("allCasters")
@@ -305,8 +311,6 @@
 			return global.csrfz_check;
 		if("currentbuild")
 			return global.currentbuild;
-		if("currently_running_tests")
-			return global.currently_running_tests;
 		if("custom_event_msg")
 			return global.custom_event_msg;
 		if("custom_items")
@@ -455,8 +459,6 @@
 			return global.hadevent;
 		if("hazard_overlays")
 			return global.hazard_overlays;
-		if("hidden_skill_types")
-			return global.hidden_skill_types;
 		if("hivemind_bank")
 			return global.hivemind_bank;
 		if("holder_mob_icon_cache")
@@ -515,18 +517,6 @@
 			return global.light_overlay_cache;
 		if("lighting_overlays_initialised")
 			return global.lighting_overlays_initialised;
-		if("lighting_update_corners")
-			return global.lighting_update_corners;
-		if("lighting_update_corners_old")
-			return global.lighting_update_corners_old;
-		if("lighting_update_lights")
-			return global.lighting_update_lights;
-		if("lighting_update_lights_old")
-			return global.lighting_update_lights_old;
-		if("lighting_update_overlays")
-			return global.lighting_update_overlays;
-		if("lighting_update_overlays_old")
-			return global.lighting_update_overlays_old;
 		if("limb_icon_cache")
 			return global.limb_icon_cache;
 		if("loadout_categories")
@@ -551,8 +541,6 @@
 			return global.magazine_icondata_states;
 		if("maint_all_access")
 			return global.maint_all_access;
-		if("malf")
-			return global.malf;
 		if("mannequins_")
 			return global.mannequins_;
 		if("map_count")
@@ -695,12 +683,8 @@
 			return global.playable_species;
 		if("point_source_descriptions")
 			return global.point_source_descriptions;
-		if("possible_cable_coil_colours")
-			return global.possible_cable_coil_colours;
 		if("possible_changeling_IDs")
 			return global.possible_changeling_IDs;
-		if("poster_designs")
-			return global.poster_designs;
 		if("power_alarm")
 			return global.power_alarm;
 		if("powerinstances")
@@ -731,8 +715,6 @@
 			return global.priv_syndicate_access;
 		if("processScheduler")
 			return global.processScheduler;
-		if("processing_turfs")
-			return global.processing_turfs;
 		if("prometheans")
 			return global.prometheans;
 		if("protected_objects")
@@ -823,8 +805,6 @@
 			return global.solars_list;
 		if("sortInstance")
 			return global.sortInstance;
-		if("sound_player")
-			return global.sound_player;
 		if("sounds_cache")
 			return global.sounds_cache;
 		if("spacevines_spawned")
@@ -1052,14 +1032,12 @@
 			global.Master=newval;
 		if("OOClog")
 			global.OOClog=newval;
-		if("PDAs")
-			global.PDAs=newval;
-		if("SKILLS")
-			global.SKILLS=newval;
 		if("SSair")
 			global.SSair=newval;
 		if("SSairflow")
 			global.SSairflow=newval;
+		if("SSalarm")
+			global.SSalarm=newval;
 		if("SSantags")
 			global.SSantags=newval;
 		if("SSatoms")
@@ -1068,12 +1046,18 @@
 			global.SSfastprocess=newval;
 		if("SSgarbage")
 			global.SSgarbage=newval;
+		if("SSicon_update")
+			global.SSicon_update=newval;
 		if("SSlegacy")
 			global.SSlegacy=newval;
+		if("SSlighting")
+			global.SSlighting=newval;
 		if("SSmachines")
 			global.SSmachines=newval;
 		if("SSmapping")
 			global.SSmapping=newval;
+		if("SSmisc_late")
+			global.SSmisc_late=newval;
 		if("SSmobs")
 			global.SSmobs=newval;
 		if("SSobj")
@@ -1090,6 +1074,8 @@
 			global.SSsun=newval;
 		if("SStimer")
 			global.SStimer=newval;
+		if("SSturf")
+			global.SSturf=newval;
 		if("SSvines")
 			global.SSvines=newval;
 		if("SSwireless")
@@ -1170,8 +1156,8 @@
 			global.air_blocked=newval;
 		if("air_processing_killed")
 			global.air_processing_killed=newval;
-		if("alarm_manager")
-			global.alarm_manager=newval;
+		if("airlock_overlays")
+			global.airlock_overlays=newval;
 		if("alien_whitelist")
 			global.alien_whitelist=newval;
 		if("allCasters")
@@ -1324,8 +1310,6 @@
 			global.csrfz_check=newval;
 		if("currentbuild")
 			global.currentbuild=newval;
-		if("currently_running_tests")
-			global.currently_running_tests=newval;
 		if("custom_event_msg")
 			global.custom_event_msg=newval;
 		if("custom_items")
@@ -1474,8 +1458,6 @@
 			global.hadevent=newval;
 		if("hazard_overlays")
 			global.hazard_overlays=newval;
-		if("hidden_skill_types")
-			global.hidden_skill_types=newval;
 		if("hivemind_bank")
 			global.hivemind_bank=newval;
 		if("holder_mob_icon_cache")
@@ -1534,18 +1516,6 @@
 			global.light_overlay_cache=newval;
 		if("lighting_overlays_initialised")
 			global.lighting_overlays_initialised=newval;
-		if("lighting_update_corners")
-			global.lighting_update_corners=newval;
-		if("lighting_update_corners_old")
-			global.lighting_update_corners_old=newval;
-		if("lighting_update_lights")
-			global.lighting_update_lights=newval;
-		if("lighting_update_lights_old")
-			global.lighting_update_lights_old=newval;
-		if("lighting_update_overlays")
-			global.lighting_update_overlays=newval;
-		if("lighting_update_overlays_old")
-			global.lighting_update_overlays_old=newval;
 		if("limb_icon_cache")
 			global.limb_icon_cache=newval;
 		if("loadout_categories")
@@ -1570,8 +1540,6 @@
 			global.magazine_icondata_states=newval;
 		if("maint_all_access")
 			global.maint_all_access=newval;
-		if("malf")
-			global.malf=newval;
 		if("mannequins_")
 			global.mannequins_=newval;
 		if("map_count")
@@ -1714,12 +1682,8 @@
 			global.playable_species=newval;
 		if("point_source_descriptions")
 			global.point_source_descriptions=newval;
-		if("possible_cable_coil_colours")
-			global.possible_cable_coil_colours=newval;
 		if("possible_changeling_IDs")
 			global.possible_changeling_IDs=newval;
-		if("poster_designs")
-			global.poster_designs=newval;
 		if("power_alarm")
 			global.power_alarm=newval;
 		if("powerinstances")
@@ -1750,8 +1714,6 @@
 			global.priv_syndicate_access=newval;
 		if("processScheduler")
 			global.processScheduler=newval;
-		if("processing_turfs")
-			global.processing_turfs=newval;
 		if("prometheans")
 			global.prometheans=newval;
 		if("protected_objects")
@@ -1842,8 +1804,6 @@
 			global.solars_list=newval;
 		if("sortInstance")
 			global.sortInstance=newval;
-		if("sound_player")
-			global.sound_player=newval;
 		if("sounds_cache")
 			global.sounds_cache=newval;
 		if("spacevines_spawned")
@@ -2054,17 +2014,19 @@
 	"LIGHTING_CORNER_DIAGONAL",
 	"Master",
 	"OOClog",
-	"PDAs",
-	"SKILLS",
 	"SSair",
 	"SSairflow",
+	"SSalarm",
 	"SSantags",
 	"SSatoms",
 	"SSfastprocess",
 	"SSgarbage",
+	"SSicon_update",
 	"SSlegacy",
+	"SSlighting",
 	"SSmachines",
 	"SSmapping",
+	"SSmisc_late",
 	"SSmobs",
 	"SSobj",
 	"SSopen_space",
@@ -2073,6 +2035,7 @@
 	"SSstickyban",
 	"SSsun",
 	"SStimer",
+	"SSturf",
 	"SSvines",
 	"SSwireless",
 	"SSxenoarch",
@@ -2113,7 +2076,7 @@
 	"air_alarm_topic",
 	"air_blocked",
 	"air_processing_killed",
-	"alarm_manager",
+	"airlock_overlays",
 	"alien_whitelist",
 	"allCasters",
 	"allConsoles",
@@ -2190,7 +2153,6 @@
 	"crew_repository",
 	"csrfz_check",
 	"currentbuild",
-	"currently_running_tests",
 	"custom_event_msg",
 	"custom_items",
 	"damage_icon_parts",
@@ -2265,7 +2227,6 @@
 	"gzn_check",
 	"hadevent",
 	"hazard_overlays",
-	"hidden_skill_types",
 	"hivemind_bank",
 	"holder_mob_icon_cache",
 	"host",
@@ -2295,12 +2256,6 @@
 	"last_tick_duration",
 	"light_overlay_cache",
 	"lighting_overlays_initialised",
-	"lighting_update_corners",
-	"lighting_update_corners_old",
-	"lighting_update_lights",
-	"lighting_update_lights_old",
-	"lighting_update_overlays",
-	"lighting_update_overlays_old",
 	"limb_icon_cache",
 	"loadout_categories",
 	"lobby_image",
@@ -2313,7 +2268,6 @@
 	"magazine_icondata_keys",
 	"magazine_icondata_states",
 	"maint_all_access",
-	"malf",
 	"mannequins_",
 	"map_count",
 	"map_sectors",
@@ -2385,9 +2339,7 @@
 	"plant_seed_sprites",
 	"playable_species",
 	"point_source_descriptions",
-	"possible_cable_coil_colours",
 	"possible_changeling_IDs",
-	"poster_designs",
 	"power_alarm",
 	"powerinstances",
 	"powers",
@@ -2403,7 +2355,6 @@
 	"priv_station_access",
 	"priv_syndicate_access",
 	"processScheduler",
-	"processing_turfs",
 	"prometheans",
 	"protected_objects",
 	"rad_collectors",
@@ -2449,7 +2400,6 @@
 	"solar_gen_rate",
 	"solars_list",
 	"sortInstance",
-	"sound_player",
 	"sounds_cache",
 	"spacevines_spawned",
 	"sparring_attack_cache",
