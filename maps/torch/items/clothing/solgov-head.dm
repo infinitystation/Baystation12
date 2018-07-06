@@ -22,9 +22,13 @@
 	name = "\improper Expeditionary Corps cap"
 	desc = "It's a black ballcap bearing the Expeditonary Corps crest."
 	icon_state = "expeditionsoft"
+
 	sprite_sheets = list(
+		SPECIES_VOX = 'icons/mob/species/vox/head.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
 		)
+
 
 /obj/item/clothing/head/soft/solgov/expedition/co
 	name = "\improper Expeditionary Corps command cap"
@@ -82,6 +86,8 @@
 	desc = "A peaked grey uniform cap belonging to the SCG Expeditionary Corps."
 	icon_state = "greydresscap"
 	sprite_sheets = list(
+		SPECIES_VOX = 'icons/mob/species/vox/head.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
 		)
 
