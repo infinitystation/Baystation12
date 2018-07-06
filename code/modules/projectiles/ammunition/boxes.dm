@@ -12,9 +12,6 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/a22lr
-	//name = "ammo box (.357)"
-	//desc = "A box of .357 ammo"
-	//icon_state = "357"
 	name = "speed loader (.22LR)"
 	desc = "A speed loader for revolvers."
 	icon_state = "38"
@@ -377,7 +374,7 @@
 	icon = 'icons/event/ammo.dmi'
 	icon_state = "smg"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/c57
+	ammo_type = /obj/item/ammo_casing/a57
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "57"
 	max_ammo = 30
@@ -385,17 +382,27 @@
 /obj/item/ammo_magazine/mc57/empty
 	initial_ammo = 0
 
-/obj/item/ammo_magazine/uni46x30mm
-	name = "magazine (4.6x30mm universal)"
+/obj/item/ammo_magazine/uni46x20mm
+	name = "magazine (4.6x20mm universal)"
 	icon = 'icons/event/ammo.dmi'
 	icon_state = "smg"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = "46x30mm"
+	caliber = "46x20mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/uni46x30mm
+	ammo_type = /obj/item/ammo_casing/uni46x20mm
 	max_ammo = 30
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/uni46x30mm/empty
+/obj/item/ammo_magazine/uni46x20mm/empty
 	initial_ammo = 0
+
+/obj/item/ammo_magazine/a3006
+	name = "clip (.30-06)"
+	desc = "A clip for bolt rifles."
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "c762"
+	caliber = "3006"
+	ammo_type = /obj/item/ammo_casing/a3006
+	max_ammo = 5
+	multiple_sprites = 1
