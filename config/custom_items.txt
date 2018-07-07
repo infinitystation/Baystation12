@@ -79,11 +79,11 @@ character_name: Daniel Osborne
 item_path: /obj/item/device/pmp/personal
 }
 #	SHORT ITEMS HERE (3-4)
-# {
-# ckey: quietproject 
-# character_name: Arias Creo 
-# item_path: /obj/item/clothing/mask/gas/creo
-# }
+{
+ckey: quietproject 
+character_name: Arias Creo 
+item_path: /obj/item/clothing/mask/gas/creo
+}
 {
 ckey: forrya
 character_name: Liru
