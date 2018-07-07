@@ -96,4 +96,5 @@ solark - tajaran
 arhod - tajaran
 corporateoverlord - tajaran
 taushai - tajaran
+forrya - tajaran
 redknighthero - bionic
