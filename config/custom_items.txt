@@ -259,6 +259,33 @@ item_path: /obj/item/weapon/bikehorn
 item_name: shabby bike horn
 item_desc: A horn off of a bicycle. This one slightly loses its color.
 }
+{
+ckey: taushai
+character_name: Narii
+item_path: /obj/item/clothing/mask/gas
+item_name: explorer mask
+item_icon: explorer_mask
+item_desc: It looks like a tracker's mask.
+species_restricted: list(SPECIES_RESOMI)
+}
+{
+ckey: taushai
+character_name: Narii
+item_path: /obj/item/weapon/storage/backpack
+item_name: explorer backpack
+item_icon: explorer_backpack
+item_desc: A large backpack in which there are a lot of pockets.
+species_restricted: list(SPECIES_RESOMI)
+}
+{
+ckey: taushai
+character_name: Narii
+item_path: /obj/item/clothing/suit/storage/toggle/explorer
+item_name: explorer coat
+item_icon: explorer_coat
+item_desc: An ordinary leather jacket with two small iron plates with illegible text.
+species_restricted: list(SPECIES_RESOMI)
+}
 
 #	LONG ITEMS HERE (+7)
 {
