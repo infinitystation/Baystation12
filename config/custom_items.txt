@@ -231,6 +231,34 @@ item_name: Oliver Osborne ID Card
 item_desc: ... 
 item_icon: sciGold 
 }
+{
+ckey: sosiskoed
+character_name: Billy Rockish
+item_path: /obj/item/clothing/shoes/clown_shoes
+item_name: worn-out clown shoes
+item_desc: The prankster's standard-issue clowning shoes. Damn they're huge! And they smells disgusting.
+}
+{
+ckey: Sosiskoed
+character_name: Billy Rockish
+item_path: /obj/item/clothing/mask/gas/clown_hat
+item_name: old clown wig and mask
+item_desc: A true prankster's facial attire. A clown is incomplete without their wig and mask. Good at hiding your sadness.
+}
+{
+ckey: Sosiskoed
+character_name: Billy Rockish
+item_path: /obj/item/weapon/storage/backpack/clown
+item_name: Giggles von Honkerton
+item_desc: It's a backpack made by Honk! Co. At least it looks like it.
+}
+{
+ckey: Sosiskoed
+character_name: Billy Rockish
+item_path: /obj/item/weapon/bikehorn
+item_name: shabby bike horn
+item_desc: A horn off of a bicycle. This one slightly loses its color.
+}
 
 #	LONG ITEMS HERE (+7)
 {
