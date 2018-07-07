@@ -186,6 +186,10 @@
 
 /obj/structure/inflatable/door/proc/SwitchState()
 	if(state)
+		for(var/turf/turf in locs)
+			for(var/atom/movable/AM in turf)
+				if(AM.blocks_airlock())
+					return
 		Close()
 	else
 		Open()
@@ -204,9 +208,9 @@
 /obj/structure/inflatable/door/proc/Close()
 	isSwitchingStates = 1
 	flick("door_closing",src)
-	sleep(10)
 	set_density(1)
 	set_opacity(0)
+	sleep(10)
 	state = 0
 	update_icon()
 	isSwitchingStates = 0
