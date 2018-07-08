@@ -64,6 +64,11 @@
 	path = /obj/item/clothing/accessory/armband/solgov/ma
 	allowed_roles = SECURITY_ROLES
 
+/datum/gear/accessory/armband_mp
+	display_name = "military police brassard"
+	path = /obj/item/clothing/accessory/armband/solgov/mp
+	allowed_roles = SECURITY_ROLES
+
 /datum/gear/accessory/armband_solgov
 	display_name = "peacekeeper armband"
 	path = /obj/item/clothing/accessory/armband/bluegold
