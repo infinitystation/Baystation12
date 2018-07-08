@@ -286,6 +286,12 @@ item_icon: explorer_coat
 item_desc: An ordinary leather jacket with two small iron plates with illegible text.
 species_restricted: list(SPECIES_RESOMI)
 }
+{
+ckey: logfol
+character_name: Alias Victus
+item_path: /obj/item/clothing/head/beret/centcom/officer
+item_desc: A navy blue beret adorned with the named "Grom" crest of corporate asset protection. For asset protection agents that are more inclined towards style than safety.
+}
 
 #	LONG ITEMS HERE (+7)
 {
