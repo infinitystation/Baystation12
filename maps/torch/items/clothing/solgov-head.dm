@@ -23,6 +23,13 @@
 	desc = "It's a black ballcap bearing the Expeditonary Corps crest."
 	icon_state = "expeditionsoft"
 
+	sprite_sheets = list(
+		SPECIES_VOX = 'icons/mob/species/vox/head.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
+		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
+		)
+
+
 /obj/item/clothing/head/soft/solgov/expedition/co
 	name = "\improper Expeditionary Corps command cap"
 	desc = "It's a black ballcap bearing the Expeditonary Corps crest. The brim has gold trim."
@@ -78,6 +85,11 @@
 	name = "expedition peaked cap"
 	desc = "A peaked grey uniform cap belonging to the SCG Expeditionary Corps."
 	icon_state = "greydresscap"
+	sprite_sheets = list(
+		SPECIES_VOX = 'icons/mob/species/vox/head.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
+		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
+		)
 
 /obj/item/clothing/head/solgov/service/expedition/command
 	name = "expedition officer's peaked cap"
@@ -222,6 +234,9 @@
 	name = "expeditionary beret"
 	desc = "A black beret belonging to the SCG Expeditionary Corps. For personnel that are more inclined towards style than safety."
 	icon_state = "beret_black"
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
+		)
 
 /obj/item/clothing/head/beret/solgov/expedition/security
 	name = "expeditionary security beret"
@@ -348,6 +363,9 @@
 	icon = 'maps/torch/icons/obj/solgov-head.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
 	starting_accessories = null
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
+		)
 
 /obj/item/clothing/head/helmet/solgov/command
 	name = "command helmet"

@@ -8,9 +8,10 @@
 #define SKILL_MAX      5 // Max skill value selectable
 #define SKILL_DEFAULT  4 //most mobs will default to this
 
-#define SKILL_EASY     1
-#define SKILL_AVERAGE  2
-#define SKILL_HARD     4
+#define SKILL_EASY       1
+#define SKILL_AVERAGE    2
+#define SKILL_HARD       4
+#define SKILL_INCREDIBLE 6
 
 #define SKILL_BUREAUCRACY   /decl/hierarchy/skill/organizational/bureaucracy
 #define SKILL_FINANCE       /decl/hierarchy/skill/organizational/finance

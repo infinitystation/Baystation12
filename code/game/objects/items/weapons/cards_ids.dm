@@ -138,7 +138,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id/OnTopic(var/mob/user, var/list/href_list)
 	if(href_list["look_at_id"])
-		if(istype(user))
+		if(istype(user) && (get_dist(src, user) <= 2))
 			user.examinate(src)
 			return TOPIC_HANDLED
 

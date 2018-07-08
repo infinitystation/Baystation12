@@ -79,11 +79,11 @@ character_name: Daniel Osborne
 item_path: /obj/item/device/pmp/personal
 }
 #	SHORT ITEMS HERE (3-4)
-# {
-# ckey: quietproject 
-# character_name: Arias Creo 
-# item_path: /obj/item/clothing/mask/gas/creo
-# }
+{
+ckey: quietproject 
+character_name: Arias Creo 
+item_path: /obj/item/clothing/mask/gas/creo
+}
 {
 ckey: forrya
 character_name: Liru
@@ -129,6 +129,11 @@ item_path: /obj/item/clothing/under/harness/invisible
 ckey: arhod
 character_name: Amr'in Battrral
 item_path: /obj/item/custkit/messith
+}
+{
+ckey: wolforbykot
+character_name: Toni Roar
+item_path: /obj/item/custkit/chainsword
 }
 
 #	MEDIUM ITEMS HERE (5-6)
@@ -205,14 +210,6 @@ item_icon: starclaymore_patch
 }
 {
 ckey: kotovsyndrome 
-character_name:  James Morisson
-item_path: /obj/item/clothing/accessory/shouldercape
-item_name: martian patch
-item_desc: You can see a patch with a picture of a man,  he has blue eyes and is wearing a black shirt and beret. He is standing on the orange earth with a sunset on a background. Every little detail gives off a sense of pride and pathos. At the right part of the chest he has a similar patch. At the bottom written "MARS IS ETERNAL".
-item_icon: mars_patch
-}
-{
-ckey: kotovsyndrome 
 character_name: Osr Issarik
 item_path: /obj/item/clothing/accessory/necklace/talisman
 item_desc: A talisman with teeths on a strong string. There is a five teeths on it: one looks like a cannine, three looks like a human, and the last one looks like a crocodile.
@@ -233,6 +230,67 @@ item_path: /obj/item/weapon/card/id/torch/captains_spare
 item_name: Oliver Osborne ID Card 
 item_desc: ... 
 item_icon: sciGold 
+}
+{
+ckey: sosiskoed
+character_name: Billy Rockish
+item_path: /obj/item/clothing/shoes/clown_shoes
+item_name: worn-out clown shoes
+item_desc: The prankster's standard-issue clowning shoes. Damn they're huge! And they smells disgusting.
+}
+{
+ckey: Sosiskoed
+character_name: Billy Rockish
+item_path: /obj/item/clothing/mask/gas/clown_hat
+item_name: old clown wig and mask
+item_desc: A true prankster's facial attire. A clown is incomplete without their wig and mask. Good at hiding your sadness.
+}
+{
+ckey: Sosiskoed
+character_name: Billy Rockish
+item_path: /obj/item/weapon/storage/backpack/clown
+item_name: Giggles von Honkerton
+item_desc: It's a backpack made by Honk! Co. At least it looks like it.
+}
+{
+ckey: Sosiskoed
+character_name: Billy Rockish
+item_path: /obj/item/weapon/bikehorn
+item_name: shabby bike horn
+item_desc: A horn off of a bicycle. This one slightly loses its color.
+}
+{
+ckey: taushai
+character_name: Narii
+item_path: /obj/item/clothing/mask/gas
+item_name: explorer mask
+item_icon: explorer_mask
+item_desc: It looks like a tracker's mask.
+species_restricted: list(SPECIES_RESOMI)
+}
+{
+ckey: taushai
+character_name: Narii
+item_path: /obj/item/weapon/storage/backpack
+item_name: explorer backpack
+item_icon: explorer_backpack
+item_desc: A large backpack in which there are a lot of pockets.
+species_restricted: list(SPECIES_RESOMI)
+}
+{
+ckey: taushai
+character_name: Narii
+item_path: /obj/item/clothing/suit/storage/toggle/explorer
+item_name: explorer coat
+item_icon: explorer_coat
+item_desc: An ordinary leather jacket with two small iron plates with illegible text.
+species_restricted: list(SPECIES_RESOMI)
+}
+{
+ckey: logfol
+character_name: Alias Victus
+item_path: /obj/item/clothing/head/beret/centcom/officer
+item_desc: A navy blue beret adorned with the named "Grom" crest of corporate asset protection. For asset protection agents that are more inclined towards style than safety.
 }
 
 #	LONG ITEMS HERE (+7)

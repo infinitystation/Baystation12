@@ -24,12 +24,13 @@
 
 /datum/gear/ears/skrell/cloth/female
 
-
 	//////////
 	//RESOMI//
 	//////////
 
 /datum/gear/uniform/resomi
+
+/datum/gear/uniform/resomi/white
 
 /datum/gear/uniform/resomi/dress
 
@@ -39,12 +40,8 @@
 
 /datum/gear/uniform/resomi/rainbow
 
-/datum/gear/uniform/resomi/white
-
 /datum/gear/uniform/resomi/eng
 	allowed_roles = ENGINEERING_ROLES
-
-/datum/gear/uniform/resomi/eng/roboitcs
 
 /datum/gear/uniform/resomi/sec
 	allowed_roles = SECURITY_ROLES
@@ -54,6 +51,19 @@
 
 /datum/gear/uniform/resomi/science
 	allowed_roles = NANOTRASEN_ROLES
+
+/datum/gear/uniform/resomi/roboitcs
+	allowed_roles = list(/datum/job/roboticist)
+
+/datum/gear/eyes/resomi
+
+/datum/gear/eyes/resomi/lenses_sec
+	allowed_roles = SECURITY_ROLES
+
+/datum/gear/eyes/resomi/lenses_med
+	allowed_roles = MEDICAL_ROLES
+
+/datum/gear/accessory/resomi_mantle
 
 /datum/gear/uniform/resomi/expeditionary
 	display_name = "uniform, Expeditionary Utility (Resomi)"
