@@ -406,3 +406,17 @@
 	ammo_type = /obj/item/ammo_casing/a3006
 	max_ammo = 5
 	multiple_sprites = 1
+
+/obj/item/ammo_magazine/mc57mmt
+	name = "top mounted magazine (5.7x28 mm)"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "9mmt"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/a57
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "57"
+	max_ammo = 40
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/mc9mmt/empty
+	initial_ammo = 0
