@@ -1,6 +1,6 @@
-/obj/item/ammo_casing/a22lr
+/obj/item/ammo_casing/a17
 	desc = "A .17 HMR bullet casing."
-	caliber = "22"
+	caliber = "17"
 	projectile_type = /obj/item/projectile/bullet/pistol/tiny
 
 /obj/item/ammo_casing/a357
@@ -171,6 +171,10 @@
 	icon_state = "rifle-casing"
 	spent_icon = "rifle-casing-spent"
 
+/obj/item/ammo_casing/a556/ap
+	desc = "A 5.56x45mm AP bullet casing."
+	projectile_type = /obj/item/projectile/bullet/rifle/a556/ap
+
 /obj/item/ammo_casing/a12755
 	name = "bullet casing"
 	desc = "A 12.7x55mm bullet casing."
@@ -256,7 +260,7 @@
 
 /obj/item/ammo_casing/a57
 	desc = "A 5.7x28 mm bullet casing."
-	caliber = 57
+	caliber = "57"
 	projectile_type = /obj/item/projectile/bullet/pistol/tiny/fast
 
 /obj/item/ammo_casing/a3006
@@ -266,3 +270,11 @@
 	icon_state = "3006"
 	spent_icon = "3006old"
 	projectile_type = /obj/item/projectile/bullet/rifle/a762r
+
+/obj/item/ammo_casing/a4570
+	desc = "A .45-70 Government bullet casing."
+	caliber = "4570"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "3006"
+	spent_icon = "3006old"
+	projectile_type = /obj/item/projectile/bullet/rifle/a4570

@@ -16,7 +16,7 @@
 	desc = "A speed loader for revolvers."
 	icon_state = "38"
 	caliber = "22"
-	ammo_type = /obj/item/ammo_casing/a22lr
+	ammo_type = /obj/item/ammo_casing/a17
 	max_ammo = 10
 	multiple_sprites = 1
 
@@ -337,7 +337,7 @@
 	icon = 'icons/obj/infinity_ammo.dmi'
 	icon_state = "letal22"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/a22lr
+	ammo_type = /obj/item/ammo_casing/a17
 	matter = list(DEFAULT_WALL_MATERIAL = 525)
 	caliber = "22"
 	max_ammo = 15
@@ -408,7 +408,7 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/mc57mmt
-	name = "top mounted magazine (5.7x28 mm)"
+	name = "top mounted magazine (5.7x28mm)"
 	icon = 'icons/obj/infinity_ammo.dmi'
 	icon_state = "9mmt"
 	mag_type = MAGAZINE
