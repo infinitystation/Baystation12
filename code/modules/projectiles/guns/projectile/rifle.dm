@@ -18,8 +18,11 @@
 	ammo_type = /obj/item/ammo_casing/a3006
 	handle_casings = HOLD_CASINGS
 	one_hand_penalty = 2
-	var/recentbolt = 0 // to prevent spammage
+	allowed_magazines = list(/obj/item/ammo_magazine/a3006)
+
 	load_sound = 'sound/weapons/guns/interaction/rifle_load.ogg'
+
+	var/recentbolt = 0 // to prevent spammage
 
 /obj/item/weapon/gun/projectile/rifle/bolt/consume_next_projectile()
 	if(chambered)
@@ -48,15 +51,15 @@
 	update_icon()
 
 /obj/item/weapon/gun/projectile/rifle/bolt/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/ammo_magazine/a3006))
-		var/obj/item/ammo_magazine/a3006/M = W
-		while ((M.stored_ammo.len > 0) && (loaded.len < max_shells))
-			var/obj/item/ammo_casing/C = M.stored_ammo[M.stored_ammo.len]
-			M.stored_ammo -= C
-			loaded.Add(C)
-		update_icon()
-		M.update_icon()
-	
+	for (var/M in allowed_magazines)
+		if (istype(W, M))
+			var/obj/item/ammo_magazine/M = W
+			while ((M.stored_ammo.len > 0) && (loaded.len < max_shells))
+				var/obj/item/ammo_casing/C = M.stored_ammo[M.stored_ammo.len]
+				M.stored_ammo -= C
+				loaded.Add(C)
+			update_icon()
+			M.update_icon()	
 	..()
 
 /obj/item/weapon/gun/projectile/rifle/govt
@@ -77,6 +80,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	load_method = SINGLE_CASING
 	ammo_type = /obj/item/ammo_casing/a4570
+	allowed_magazines = list()
 	handle_casings = HOLD_CASINGS
 	one_hand_penalty = 2
 	var/recentbolt = 0 // to prevent spammage
