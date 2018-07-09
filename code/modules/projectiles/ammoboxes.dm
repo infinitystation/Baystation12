@@ -1,9 +1,9 @@
 /obj/item/ammobox
 	name = "ammobox"
-	desc = "Just big box... with ammo casings."
+	desc = "Just box with ammo casings."
 	icon = 'icons/obj/ammoboxes.dmi'
 	icon_state = "ammobox"
-
+	w_class = ITEM_SIZE_SMALL
 	var/caliber = "357"
 	var/ammo_type = /obj/item/ammo_casing/a357
 	var/max_ammo = 50
@@ -37,7 +37,7 @@
 					M.stored_ammo.Add(new ammo_type)
 					M.update_icon()
 					uses -= 1
-				else 
+				else
 					is_process = 0
 					return
 			if (uses == 0)
@@ -57,7 +57,7 @@
 					M.update_icon()
 				else
 					is_process = 0
-					return		
+					return
 			is_process = 0
 			return
 
@@ -90,3 +90,7 @@
 		status = !status
 	else
 		to_chat(user, "<span class='warning'>[src] is busy.</span>")
+
+/obj/item/ammobox/examine(mob/user)
+	. = ..()
+	to_chat(user, "There [(uses == 1)? "is" : "are"] [uses] round\s left!")

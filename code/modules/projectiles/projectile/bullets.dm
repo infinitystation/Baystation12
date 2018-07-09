@@ -238,9 +238,12 @@
 
 /* "Rifle" rounds */
 
+/obj/item/projectile/bullet/rifle
+	penetrating = 1
+
 // .45-70 Gov.
 
-/obj/item/projectile/bullet/rifle
+/obj/item/projectile/bullet/rifle/a4570
 	fire_sound = 'sound/weapons/gunshot/gunshot4.ogg'
 	damage = 45
 	armor_penetration = 25
