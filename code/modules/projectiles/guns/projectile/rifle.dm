@@ -14,12 +14,11 @@
 	slot_flags = SLOT_BACK
 	caliber = "3006"
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
-	load_method = SPEEDLOADER
+	load_method = SINGLE_CASING
 	ammo_type = /obj/item/ammo_casing/a3006
 	handle_casings = HOLD_CASINGS
 	one_hand_penalty = 2
-	var/recentpump = 0 // to prevent spammage
-	wielded_item_state = "gun_wielded"
+	var/recentbolt = 0 // to prevent spammage
 	load_sound = 'sound/weapons/guns/interaction/rifle_load.ogg'
 
 /obj/item/weapon/gun/projectile/rifle/bolt/consume_next_projectile()
@@ -28,9 +27,9 @@
 	return null
 
 /obj/item/weapon/gun/projectile/rifle/bolt/attack_self(mob/living/user as mob)
-	if(world.time >= recentpump + 10)
+	if(world.time >= recentbolt + 10)
 		bolt(user)
-		recentpump = world.time
+		recentbolt = world.time
 
 /obj/item/weapon/gun/projectile/rifle/bolt/proc/bolt(mob/M as mob)
 	playsound(M, 'sound/weapons/riflebolt.ogg', 60, 1)
@@ -47,3 +46,15 @@
 		chambered = AC
 
 	update_icon()
+
+/obj/item/weapon/gun/projectile/rifle/bolt/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/ammo_magazine/a3006))
+		var/obj/item/ammo_magazine/a3006/M = W
+		while ((M.stored_ammo.len > 0) && (loaded.len < max_shells))
+			var/obj/item/ammo_casing/C = M.stored_ammo[M.stored_ammo.len]
+			M.stored_ammo -= C
+			loaded.Add(C)
+		update_icon()
+		M.update_icon()
+	
+	..()

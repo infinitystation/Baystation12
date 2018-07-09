@@ -2302,6 +2302,7 @@
 #include "code\modules\projectiles\guns\projectile\detective.dm"
 #include "code\modules\projectiles\guns\projectile\pistol.dm"
 #include "code\modules\projectiles\guns\projectile\revolver.dm"
+#include "code\modules\projectiles\guns\projectile\rifle.dm"
 #include "code\modules\projectiles\guns\projectile\shotgun.dm"
 #include "code\modules\projectiles\guns\projectile\sniper.dm"
 #include "code\modules\projectiles\guns\projectile\vietnam.dm"
