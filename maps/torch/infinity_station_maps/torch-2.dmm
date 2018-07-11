@@ -338,8 +338,7 @@
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -355,8 +354,7 @@
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -368,8 +366,7 @@
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -388,8 +385,7 @@
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -698,8 +694,7 @@
 /obj/item/weapon/material/hatchet,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -716,8 +711,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -1045,8 +1039,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 9;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -1054,8 +1047,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -1066,8 +1058,7 @@
 "cG" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -1079,8 +1070,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -1088,8 +1078,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -1105,8 +1094,7 @@
 "cI" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -1114,8 +1102,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -1190,8 +1177,7 @@
 "cR" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -1199,8 +1185,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -2156,8 +2141,7 @@
 /obj/machinery/honey_extractor,
 /obj/effect/floor_decal/borderfloor{
 	dir = 10;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -2165,8 +2149,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -2180,8 +2163,7 @@
 /obj/effect/floor_decal/corner/green/border,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/machinery/firealarm{
 	dir = 1;
@@ -2209,8 +2191,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -2219,8 +2200,7 @@
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 6;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2,
 /obj/effect/floor_decal/corner/green/bordercorner2{
@@ -2238,8 +2218,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 10;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -2247,8 +2226,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -2306,8 +2284,7 @@
 /obj/effect/floor_decal/corner/green/border,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -2499,8 +2476,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -2508,8 +2484,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 6;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -4447,8 +4422,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -4466,8 +4440,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -4475,8 +4448,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -4501,8 +4473,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 9;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -4510,8 +4481,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -4531,8 +4501,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 5;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -5038,8 +5007,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -5104,8 +5072,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -5253,6 +5220,9 @@
 /obj/machinery/computer/telecomms/monitor{
 	dir = 4;
 	network = "tcommsat"
+	},
+/obj/structure/sign/warning/server_room{
+	pixel_y = 32
 	},
 /turf/simulated/floor/lino,
 /area/tcommsat/computer)
@@ -5615,8 +5585,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -5637,8 +5606,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -5646,8 +5614,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 6;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -5676,8 +5643,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -5685,8 +5651,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -5697,8 +5662,7 @@
 "kN" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -5706,8 +5670,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -5724,8 +5687,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -6078,8 +6040,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -6087,8 +6048,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -6144,8 +6104,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -6372,8 +6331,7 @@
 /obj/effect/floor_decal/corner/blue/bordercorner2,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -6699,8 +6657,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -6708,8 +6665,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 6;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -6729,8 +6685,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -6738,8 +6693,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -6762,8 +6716,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -7107,8 +7060,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -7116,8 +7068,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -7136,8 +7087,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -7145,8 +7095,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -7393,8 +7342,7 @@
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 9;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -7413,8 +7361,7 @@
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -7457,8 +7404,7 @@
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -7486,8 +7432,7 @@
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 5;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -7851,8 +7796,7 @@
 /obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -7883,8 +7827,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/black/border{
 	icon_state = "bordercolor";
@@ -7908,8 +7851,7 @@
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -7958,8 +7900,7 @@
 /obj/item/device/price_scanner,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -8000,8 +7941,7 @@
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -8009,8 +7949,7 @@
 	},
 /obj/effect/floor_decal/borderfloorblack/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -8039,8 +7978,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -8048,8 +7986,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -8072,8 +8009,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -8081,8 +8017,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 6;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -8177,8 +8112,7 @@
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -8186,8 +8120,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -8229,8 +8162,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -8238,8 +8170,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -8257,8 +8188,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 5;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -8266,8 +8196,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -8308,8 +8237,7 @@
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	icon_state = "bordercolor";
@@ -8317,8 +8245,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -8461,8 +8388,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -8494,8 +8420,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -8503,8 +8428,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -8541,8 +8465,7 @@
 "px" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -8550,8 +8473,7 @@
 	},
 /obj/effect/floor_decal/borderfloorblack/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -8848,8 +8770,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -8901,8 +8822,7 @@
 /obj/effect/floor_decal/corner/blue/border,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -9066,8 +8986,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	icon_state = "bordercolor";
@@ -9102,13 +9021,11 @@
 "qh" = (
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -9126,8 +9043,7 @@
 /obj/effect/floor_decal/corner/lime/border,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -9220,8 +9136,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -9300,8 +9215,7 @@
 /obj/structure/table/steel,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -9309,8 +9223,7 @@
 	},
 /obj/effect/floor_decal/borderfloorblack/corner2{
 	dir = 6;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -9330,8 +9243,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -9339,8 +9251,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -9358,8 +9269,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -9367,8 +9277,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 6;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -9497,8 +9406,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -9519,8 +9427,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -9583,8 +9490,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	icon_state = "bordercolor";
@@ -9815,8 +9721,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -9843,8 +9748,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -9852,8 +9756,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 6;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -9883,8 +9786,7 @@
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -9892,8 +9794,7 @@
 	},
 /obj/effect/floor_decal/borderfloorblack/corner2{
 	dir = 8;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -9917,8 +9818,7 @@
 /obj/item/weapon/pen,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -9939,8 +9839,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -9948,8 +9847,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -9964,8 +9862,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -9973,8 +9870,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -10174,8 +10070,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -10192,8 +10087,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -10307,8 +10201,7 @@
 "rR" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	icon_state = "bordercolor";
@@ -10316,8 +10209,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -10458,8 +10350,7 @@
 /obj/item/weapon/book/manual/solgov_law,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -10484,8 +10375,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -10519,8 +10409,7 @@
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 10;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -10543,8 +10432,7 @@
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/borderfloorblack/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -10562,8 +10450,7 @@
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -10756,8 +10643,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -10765,8 +10651,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -10784,8 +10669,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -10862,13 +10746,11 @@
 "sL" = (
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -10883,8 +10765,7 @@
 "sM" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	icon_state = "bordercolor";
@@ -10892,8 +10773,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -10904,8 +10784,7 @@
 "sN" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	icon_state = "bordercolor";
@@ -10917,8 +10796,7 @@
 "sO" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/black/border{
 	icon_state = "bordercolor";
@@ -10940,8 +10818,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	icon_state = "bordercolor";
@@ -10949,8 +10826,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -10969,8 +10845,7 @@
 "sV" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	icon_state = "bordercolor";
@@ -10991,8 +10866,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	icon_state = "bordercolor";
@@ -11000,8 +10874,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -11033,8 +10906,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	icon_state = "bordercolor";
@@ -11042,8 +10914,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -11054,8 +10925,7 @@
 "sZ" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	icon_state = "bordercolor";
@@ -11069,8 +10939,7 @@
 "tb" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -11078,8 +10947,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -11094,8 +10962,7 @@
 "td" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -11110,8 +10977,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -11125,8 +10991,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -11134,8 +10999,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -11167,8 +11031,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -11176,8 +11039,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -11191,8 +11053,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -11200,8 +11061,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -11219,8 +11079,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -11228,8 +11087,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -11241,8 +11099,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 1;
-	icon_state = "borderfloorcorner_white";
-	
+	icon_state = "borderfloorcorner_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
 	icon_state = "bordercolorcorner";
@@ -11254,8 +11111,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -11263,8 +11119,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -11327,8 +11182,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -11336,8 +11190,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -11355,8 +11208,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -11364,8 +11216,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -11380,8 +11231,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -11404,8 +11254,7 @@
 /obj/item/weapon/crowbar/prybar,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -11429,8 +11278,7 @@
 /obj/item/clothing/mask/gas/half,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -11438,8 +11286,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -11706,8 +11553,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -12601,8 +12447,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -12610,8 +12455,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -12664,8 +12508,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -12673,8 +12516,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -12707,8 +12549,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -12738,8 +12579,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 1;
-	icon_state = "borderfloorcorner_white";
-	
+	icon_state = "borderfloorcorner_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner{
 	icon_state = "bordercolorcorner";
@@ -13114,8 +12954,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -13204,8 +13043,7 @@
 /obj/effect/floor_decal/corner/lime/border,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -13229,8 +13067,7 @@
 /obj/effect/floor_decal/corner/lime/border,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -13262,7 +13099,7 @@
 	dir = 1
 	},
 /obj/structure/closet/hydrant{
-	pixel_y = -28
+	pixel_y = -24
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/lime/border,
@@ -13283,8 +13120,7 @@
 /obj/effect/floor_decal/corner/lime/border,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -13393,8 +13229,7 @@
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -13433,8 +13268,7 @@
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -13478,8 +13312,7 @@
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -13539,8 +13372,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -13609,8 +13441,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -13618,8 +13449,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 6;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -13631,8 +13461,7 @@
 /obj/structure/closet/secure_closet/security_torch,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -13640,8 +13469,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -13671,8 +13499,7 @@
 /obj/item/weapon/reagent_containers/spray/cleaner,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -13680,8 +13507,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 6;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -13853,8 +13679,7 @@
 "wF" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 9;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -13868,8 +13693,7 @@
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -13880,8 +13704,7 @@
 "wH" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -13901,8 +13724,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -13910,8 +13732,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -13941,8 +13762,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -13950,8 +13770,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 6;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -14231,8 +14050,7 @@
 /obj/structure/closet/secure_closet/security_torch,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -14256,8 +14074,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -14390,8 +14207,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -14412,8 +14228,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -14450,8 +14265,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -14459,8 +14273,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -14489,8 +14302,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -14594,8 +14406,7 @@
 "xZ" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 9;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -14603,13 +14414,11 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -14662,8 +14471,7 @@
 "yd" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 5;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -14671,13 +14479,11 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -14895,8 +14701,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 9;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -14904,8 +14709,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -14928,8 +14732,7 @@
 /obj/item/modular_computer/console/preset/security,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -14937,8 +14740,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -14956,8 +14758,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -14970,8 +14771,7 @@
 /obj/item/device/flashlight/lamp,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -14985,8 +14785,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 5;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -15005,8 +14804,7 @@
 /obj/structure/closet/secure_closet/security_torch,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -15043,8 +14841,7 @@
 /obj/item/weapon/book/manual/sol_sop,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -15114,8 +14911,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -15123,8 +14919,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -15145,8 +14940,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 4;
-	icon_state = "borderfloorcorner_white";
-	
+	icon_state = "borderfloorcorner_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	icon_state = "bordercolorcorner";
@@ -15183,8 +14977,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -15326,8 +15119,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -15335,8 +15127,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -15562,8 +15353,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -15571,8 +15361,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -15633,8 +15422,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -15649,8 +15437,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -15680,8 +15467,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -15757,8 +15543,7 @@
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/borderfloor{
 	dir = 10;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -15766,8 +15551,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -15798,8 +15582,7 @@
 /obj/effect/floor_decal/corner/green/border,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -15862,8 +15645,7 @@
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 8;
-	icon_state = "borderfloorcorner_white";
-	
+	icon_state = "borderfloorcorner_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner{
 	icon_state = "bordercolorcorner";
@@ -15968,8 +15750,7 @@
 /obj/effect/floor_decal/corner/blue/border,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -16267,8 +16048,7 @@
 /obj/machinery/photocopier,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -16282,8 +16062,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 10;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -16301,7 +16080,7 @@
 	dir = 1
 	},
 /obj/structure/closet/medical_wall/filled/security{
-	pixel_y = -28
+	pixel_y = -24
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/red/border,
@@ -16329,8 +16108,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -16843,8 +16621,7 @@
 /obj/machinery/light,
 /obj/effect/floor_decal/borderfloor{
 	dir = 10;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -16852,8 +16629,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -16867,8 +16643,7 @@
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -16921,8 +16696,7 @@
 /obj/machinery/light,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -16962,8 +16736,7 @@
 /obj/item/weapon/wrench,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -16978,8 +16751,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -16993,8 +16765,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -17002,8 +16773,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -17040,8 +16810,7 @@
 /obj/item/rolled_towel/fitness,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -17049,8 +16818,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -17370,8 +17138,7 @@
 /obj/machinery/vending/fitness,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -17387,8 +17154,7 @@
 /obj/structure/fitness/weightlifter,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -17777,8 +17543,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -17797,8 +17562,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -18220,11 +17984,6 @@
 	dir = 4
 	},
 /obj/item/weapon/soap,
-/obj/machinery/alarm{
-	frequency = 1439;
-	pixel_y = 30;
-	req_one_access = list(201)
-	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -18239,6 +17998,11 @@
 	icon_state = "shower";
 	pixel_x = 0;
 	pixel_y = 0
+	},
+/obj/machinery/alarm{
+	frequency = 1439;
+	pixel_y = 30;
+	req_one_access = list(201)
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/gym)
@@ -18255,8 +18019,7 @@
 /obj/item/weapon/storage/box/cups,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -18315,6 +18078,10 @@
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
 	dir = 1
+	},
+/obj/structure/closet/medical_wall/filled/regular{
+	pixel_x = 0;
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/thirddeck)
@@ -18631,8 +18398,7 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -18650,8 +18416,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -18915,8 +18680,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -18924,8 +18688,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -18950,8 +18713,7 @@
 /obj/structure/fitness/weightlifter,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -19060,9 +18822,6 @@
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube_map"
-	},
-/obj/structure/closet/medical_wall/filled/regular{
-	pixel_x = 25
 	},
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
@@ -19218,8 +18977,7 @@
 	dir = 4
 	},
 /obj/structure/closet/medical_wall/filled/regular{
-	pixel_x = 12;
-	pixel_y = -28
+	pixel_y = -23
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
@@ -19565,8 +19323,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -19574,8 +19331,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -19963,7 +19719,8 @@
 /area/crew_quarters/safe_room/thirddeck)
 "HG" = (
 /obj/structure/closet/hydrant{
-	pixel_x = 25
+	pixel_x = 25;
+	pixel_y = 4
 	},
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
@@ -20111,8 +19868,7 @@
 "HZ" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -20769,10 +20525,6 @@
 	pixel_x = 0;
 	pixel_y = 24
 	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/machinery/light_switch{
 	pixel_x = 0;
 	pixel_y = 35
@@ -20810,6 +20562,15 @@
 /obj/item/weapon/reagent_containers/food/drinks/coffeecup/SCG{
 	pixel_x = -1;
 	pixel_y = 1
+	},
+/obj/machinery/power/apc/super/critical{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/lounge)
@@ -21970,10 +21731,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
-"Mp" = (
-/obj/structure/sign/warning/secure_area,
-/turf/simulated/wall/r_wall,
-/area/maintenance/thirddeck/port)
 "Mq" = (
 /obj/machinery/light/small,
 /obj/random/toolbox,
@@ -21995,6 +21752,12 @@
 /obj/random/maintenance/solgov,
 /obj/random/maintenance/solgov,
 /obj/random/maintenance/solgov,
+/obj/structure/sign/warning/secure_area{
+	dir = 1;
+	icon_state = "securearea";
+	pixel_x = 0;
+	pixel_y = -32
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
 "Mt" = (
@@ -22322,10 +22085,6 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/vacant/missile)
-"Nj" = (
-/obj/structure/sign/warning/moving_parts,
-/turf/simulated/wall/r_wall,
-/area/vacant/missile)
 "Nk" = (
 /obj/machinery/conveyor_switch/oneway{
 	convdir = -1;
@@ -22334,6 +22093,11 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 8
+	},
+/obj/structure/sign/warning/moving_parts{
+	dir = 4;
+	icon_state = "movingparts";
+	pixel_x = -32
 	},
 /turf/simulated/floor/plating,
 /area/vacant/missile)
@@ -22495,8 +22259,10 @@
 /turf/simulated/floor/plating,
 /area/vacant/missile)
 "NC" = (
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 1
+/obj/structure/sign/warning/moving_parts{
+	dir = 4;
+	icon_state = "movingparts";
+	pixel_x = -32
 	},
 /turf/simulated/floor/plating,
 /area/vacant/missile)
@@ -22633,13 +22399,11 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -22671,8 +22435,7 @@
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2,
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2{
@@ -22795,8 +22558,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/corner/green/bordercorner2{
@@ -22964,8 +22726,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -22987,8 +22748,7 @@
 "Qg" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	icon_state = "bordercolor";
@@ -22996,8 +22756,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -23046,8 +22805,7 @@
 "Qo" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	icon_state = "bordercolor";
@@ -23084,8 +22842,7 @@
 "Qy" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	icon_state = "bordercolor";
@@ -23104,8 +22861,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
@@ -23113,8 +22869,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -23578,13 +23333,11 @@
 "SS" = (
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -23904,8 +23657,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	icon_state = "bordercolor";
@@ -24026,8 +23778,7 @@
 "Vn" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 1;
-	icon_state = "borderfloorcorner_white";
-	
+	icon_state = "borderfloorcorner_white"
 	},
 /obj/effect/floor_decal/corner/green/bordercorner{
 	icon_state = "bordercolorcorner";
@@ -24221,8 +23972,7 @@
 "Wn" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	icon_state = "bordercolor";
@@ -24230,8 +23980,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -24247,8 +23996,7 @@
 "Wq" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	icon_state = "bordercolor";
@@ -24256,8 +24004,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -24265,10 +24012,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
-"Ws" = (
-/obj/structure/sign/warning/server_room,
-/turf/simulated/wall,
-/area/tcommsat/computer)
 "Wu" = (
 /obj/effect/floor_decal/techfloor/corner{
 	icon_state = "techfloor_corners";
@@ -24349,6 +24092,11 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
+"WE" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/structure/sign/warning/moving_parts,
+/turf/simulated/floor/plating,
+/area/vacant/missile)
 "WF" = (
 /obj/structure/table/woodentable,
 /obj/item/stack/material/wood{
@@ -24505,8 +24253,7 @@
 "XW" = (
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -24514,8 +24261,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 6;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -24547,8 +24293,7 @@
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
@@ -24556,8 +24301,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -24708,8 +24452,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	icon_state = "bordercolor";
@@ -24730,8 +24473,7 @@
 "Zb" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	icon_state = "bordercolor";
@@ -24739,8 +24481,7 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1;
-	icon_state = "borderfloorcorner2_white";
-	
+	icon_state = "borderfloorcorner2_white"
 	},
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2{
 	icon_state = "bordercolorcorner2";
@@ -24757,8 +24498,7 @@
 "Zd" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
-	icon_state = "borderfloor_white";
-	
+	icon_state = "borderfloor_white"
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	icon_state = "bordercolor";
@@ -34880,7 +34620,7 @@ bF
 fH
 gz
 hR
-Ws
+fH
 kd
 kT
 lN
@@ -41979,7 +41719,7 @@ GV
 GV
 GX
 Jz
-Ky
+Kz
 Lt
 LR
 Mg
@@ -42585,7 +42325,7 @@ GX
 HN
 IF
 JB
-Kz
+Ky
 Lu
 LT
 Mg
@@ -45020,7 +44760,7 @@ aC
 MA
 MR
 Na
-Ni
+WE
 MI
 NB
 NF
@@ -45224,7 +44964,7 @@ MA
 Nb
 MA
 Ns
-Nj
+MA
 NG
 MA
 MA
@@ -45417,7 +45157,7 @@ Fx
 Fx
 LZ
 LY
-Mp
+xe
 MA
 MA
 MA
@@ -46226,15 +45966,15 @@ Fx
 Fx
 Mh
 Ms
-MD
+MA
 MK
 MN
 MA
 MA
 Ne
-Nj
+MA
 Nw
-Nj
+MA
 NG
 MA
 MA
