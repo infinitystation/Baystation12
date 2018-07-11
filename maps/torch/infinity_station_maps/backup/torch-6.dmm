@@ -20438,6 +20438,8 @@
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov/clean,
+/obj/item/modular_computer/pda/wrist,
+/obj/item/modular_computer/pda/wrist,
 /turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aSE" = (
@@ -20809,6 +20811,7 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov/clean,
+/obj/item/modular_computer/pda/wrist/engineering,
 /turf/simulated/floor/tiled/techfloor,
 /area/merchant_station)
 "aTq" = (

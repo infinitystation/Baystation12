@@ -15758,6 +15758,7 @@
 "Ez" = (
 /obj/structure/closet/crate,
 /obj/random/plushie,
+/obj/item/modular_computer/pda/wrist,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/auxillary/port)
 "EA" = (
