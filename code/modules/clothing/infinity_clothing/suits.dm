@@ -33,7 +33,7 @@
 	name = "long jacket"
 	desc = "A long gray jacket"
 	icon = 'icons/obj/clothing/infinity/suits.dmi'
-	icon_override = 'icons/mob/infinity/suits.dmi'
+	item_icons = list(slot_glasses_str = 'icons/mob/onmob/Resomi/eyes.dmi')
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_uniforms.dmi',
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_uniforms.dmi',

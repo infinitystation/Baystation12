@@ -59,6 +59,11 @@ character_name: Quentin Willo
 item_path: /obj/item/device/pmp/personal
 }
 {
+ckey: redknighthero
+character_name: Daniel Osborne
+item_path: /obj/item/device/pmp/personal
+}
+{
 ckey: s1334
 character_name: WP-316
 item_path: /obj/item/device/pmp/personal/csplayer
@@ -72,11 +77,6 @@ item_path: /obj/item/device/pmp/personal/csplayer
 ckey: kordvik
 character_name: Lyx Omaya
 item_path: /obj/item/device/pmp/personal/csplayer
-}
-{
-ckey: redknighthero
-character_name: Daniel Osborne
-item_path: /obj/item/device/pmp/personal
 }
 #	SHORT ITEMS HERE (3-4)
 {
@@ -110,7 +110,16 @@ ckey: redknighthero
 character_name: Daniel Osborne
 item_path: /obj/item/clothing/under/harness/invisible
 }
-
+{
+ckey: Sosiskoed
+character_name: Billy Rockish
+item_path: /obj/item/weapon/storage/backpack/clown/full
+}
+{
+ckey: taushai
+character_name: Narii
+item_path: /obj/item/weapon/storage/backpack/explorer_resomi/full
+}
 #	MEDIUM ITEMS HERE (5-6)
 {
 ckey: parasoul
@@ -205,61 +214,6 @@ item_path: /obj/item/weapon/card/id/torch/captains_spare
 item_name: Oliver Osborne ID Card 
 item_desc: ... 
 item_icon: sciGold 
-}
-{
-ckey: sosiskoed
-character_name: Billy Rockish
-item_path: /obj/item/clothing/shoes/clown_shoes
-item_name: worn-out clown shoes
-item_desc: The prankster's standard-issue clowning shoes. Damn they're huge! And they smells disgusting.
-}
-{
-ckey: Sosiskoed
-character_name: Billy Rockish
-item_path: /obj/item/clothing/mask/gas/clown_hat
-item_name: old clown wig and mask
-item_desc: A true prankster's facial attire. A clown is incomplete without their wig and mask. Good at hiding your sadness.
-}
-{
-ckey: Sosiskoed
-character_name: Billy Rockish
-item_path: /obj/item/weapon/storage/backpack/clown
-item_name: Giggles von Honkerton
-item_desc: It's a backpack made by Honk! Co. At least it looks like it.
-}
-{
-ckey: Sosiskoed
-character_name: Billy Rockish
-item_path: /obj/item/weapon/bikehorn
-item_name: shabby bike horn
-item_desc: A horn off of a bicycle. This one slightly loses its color.
-}
-{
-ckey: taushai
-character_name: Narii
-item_path: /obj/item/clothing/mask/gas
-item_name: explorer mask
-item_icon: explorer_mask
-item_desc: It looks like a tracker's mask.
-species_restricted: list(SPECIES_RESOMI)
-}
-{
-ckey: taushai
-character_name: Narii
-item_path: /obj/item/weapon/storage/backpack
-item_name: explorer backpack
-item_icon: explorer_backpack
-item_desc: A large backpack in which there are a lot of pockets.
-species_restricted: list(SPECIES_RESOMI)
-}
-{
-ckey: taushai
-character_name: Narii
-item_path: /obj/item/clothing/suit/storage/toggle/explorer
-item_name: explorer coat
-item_icon: explorer_coat
-item_desc: An ordinary leather jacket with two small iron plates with illegible text.
-species_restricted: list(SPECIES_RESOMI)
 }
 {
 ckey: logfol
