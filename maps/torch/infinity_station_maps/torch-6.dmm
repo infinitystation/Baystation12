@@ -2903,6 +2903,7 @@
 /turf/simulated/wall/voxshuttle,
 /area/skipjack_station/start)
 "agI" = (
+/obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 2;
@@ -2910,52 +2911,6 @@
 	id = "SkipjackShuttersNorth";
 	name = "Blast Doors";
 	opacity = 0
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/skipjack_station/start)
-"agJ" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 2;
-	icon_state = "pdoor0";
-	id = "SkipjackShuttersNorth";
-	name = "Blast Doors";
-	opacity = 0
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/skipjack_station/start)
-"agK" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 2;
-	icon_state = "pdoor0";
-	id = "SkipjackShuttersNorth";
-	name = "Blast Doors";
-	opacity = 0
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
@@ -4334,7 +4289,7 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "ajz" = (
-/obj/effect/wingrille_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "ajA" = (
@@ -4464,6 +4419,7 @@
 	},
 /area/syndicate_mothership)
 "ajN" = (
+/obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 4;
@@ -4471,17 +4427,6 @@
 	id = "SkipjackShuttersWest";
 	name = "Skipjack Shutters";
 	opacity = 0
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
@@ -4503,6 +4448,7 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "ajS" = (
+/obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 8;
@@ -4510,17 +4456,6 @@
 	id = "SkipjackShuttersEast";
 	name = "Skipjack Shutters";
 	opacity = 0
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
@@ -4740,25 +4675,6 @@
 	dir = 2
 	},
 /area/syndicate_mothership)
-"akn" = (
-/obj/machinery/door/blast/shutters{
-	density = 0;
-	dir = 4;
-	icon_state = "shutter0";
-	id = "SkipjackShuttersWest";
-	name = "Skipjack Shutters";
-	opacity = 0
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/skipjack_station/start)
 "ako" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/full,
 /obj/machinery/door/blast/regular{
@@ -4826,25 +4742,6 @@
 "akw" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/random/maintenance,
-/turf/simulated/floor/plating,
-/area/skipjack_station/start)
-"akx" = (
-/obj/machinery/door/blast/shutters{
-	density = 0;
-	dir = 8;
-	icon_state = "shutter0";
-	id = "SkipjackShuttersEast";
-	name = "Skipjack Shutters";
-	opacity = 0
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aky" = (
@@ -5101,26 +4998,6 @@
 	dir = 2
 	},
 /area/syndicate_mothership)
-"akZ" = (
-/obj/machinery/door/blast/shutters{
-	density = 0;
-	dir = 4;
-	icon_state = "shutter0";
-	id = "SkipjackShuttersWest";
-	name = "Skipjack Shutters";
-	opacity = 0
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/skipjack_station/start)
 "ala" = (
 /turf/simulated/floor/plating,
 /obj/structure/window/reinforced{
@@ -5193,26 +5070,6 @@
 "ali" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/item/weapon/crowbar,
-/turf/simulated/floor/plating,
-/area/skipjack_station/start)
-"alj" = (
-/obj/machinery/door/blast/shutters{
-	density = 0;
-	dir = 8;
-	icon_state = "shutter0";
-	id = "SkipjackShuttersEast";
-	name = "Skipjack Shutters";
-	opacity = 0
-	},
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "alk" = (
@@ -6283,7 +6140,7 @@
 	},
 /area/syndicate_mothership)
 "anu" = (
-/obj/effect/wingrille_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/shuttle/black,
 /area/skipjack_station/start)
 "anv" = (
@@ -6643,7 +6500,7 @@
 	},
 /area/centcom/control)
 "aoj" = (
-/obj/effect/wingrille_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "aok" = (
@@ -7410,7 +7267,7 @@
 	},
 /area/centcom/specops)
 "apM" = (
-/obj/effect/wingrille_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced,
 /turf/unsimulated/floor{
 	icon_state = "plating";
 	name = "plating"
@@ -13800,7 +13657,7 @@
 	},
 /area/rescue_base/base)
 "aDN" = (
-/obj/effect/wingrille_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced,
 /turf/unsimulated/floor{
 	icon_state = "plating";
 	name = "plating"
@@ -16916,12 +16773,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/admin_prison)
-"aJZ" = (
-/obj/effect/wingrille_spawn/reinforced,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/rescue_base/base)
 "aKa" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Combat Exosuit";
@@ -17811,7 +17662,7 @@
 /turf/simulated/floor/holofloor/beach/sand,
 /area/admin_prison)
 "aMe" = (
-/obj/effect/wingrille_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/rescue_base/start)
 "aMf" = (
@@ -21992,11 +21843,8 @@
 /turf/simulated/floor/tiled,
 /area/merchant_station)
 "aVq" = (
-/obj/machinery/door/airlock/hatch{
-	name = "Storage";
-	req_access = list(201)
-	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/hatch/maintenance,
 /turf/simulated/floor/tiled/techmaint,
 /area/merchant_station)
 "aVr" = (
@@ -22981,7 +22829,6 @@
 /turf/simulated/floor/tiled,
 /area/merchant_station)
 "aYf" = (
-/obj/machinery/door/firedoor,
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id = "merchantbase";
@@ -23253,7 +23100,6 @@
 /turf/simulated/floor/plating,
 /area/shuttle/merchant/home)
 "aYM" = (
-/obj/machinery/door/firedoor,
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id = "merchantbase";
@@ -23997,10 +23843,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
-	},
-/obj/machinery/door/airlock/multi_tile/maintenance{
-	dir = 4;
-	name = "Warehouse"
 	},
 /turf/simulated/floor/tiled,
 /area/merchant_station)
@@ -25915,10 +25757,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/merchant/home)
-"cYQ" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/tiled/steel_grid,
-/area/merchant_station)
 "dcT" = (
 /obj/structure/towel/yellow_stripped,
 /turf/simulated/floor/holofloor/beach/sand,
@@ -25931,6 +25769,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
+"dGs" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/multi_tile/glass/maintenance{
+	icon_state = "closed";
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/merchant_station)
 "dPT" = (
 /obj/structure/towel/red_stripped,
 /turf/unsimulated/beach/sand,
@@ -25948,6 +25794,23 @@
 	},
 /turf/simulated/floor/tiled,
 /area/merchant_station)
+"fbB" = (
+/obj/machinery/door/firedoor,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/door/airlock/multi_tile/glass/maintenance{
+	icon_state = "closed";
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/merchant_station)
 "gDM" = (
 /obj/structure/towel,
 /turf/unsimulated/beach/sand,
@@ -25956,13 +25819,6 @@
 /obj/structure/towel/black,
 /turf/simulated/floor/holofloor/beach/sand,
 /area/admin_prison)
-"hMj" = (
-/obj/machinery/door/airlock/multi_tile/maintenance{
-	dir = 4;
-	name = "Warehouse"
-	},
-/turf/simulated/floor/tiled,
-/area/merchant_station)
 "jNs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -29953,8 +29809,8 @@ agH
 agH
 agH
 ajN
-akn
-akZ
+ajN
+ajN
 agH
 agH
 amN
@@ -31966,7 +31822,7 @@ adh
 aab
 aab
 aab
-agJ
+agI
 agY
 ahE
 aio
@@ -32168,7 +32024,7 @@ adh
 aab
 aab
 aab
-agK
+agI
 agZ
 ahF
 ain
@@ -33993,8 +33849,8 @@ agH
 agH
 agH
 ajS
-akx
-alj
+ajS
+ajS
 agH
 agH
 amP
@@ -62780,7 +62636,7 @@ aIL
 aJe
 aCF
 aJP
-aJZ
+aDN
 aDk
 aDk
 aDk
@@ -62982,7 +62838,7 @@ aCF
 aCF
 aCF
 aJQ
-aJZ
+aDN
 aIM
 aIM
 aIM
@@ -63184,7 +63040,7 @@ aCF
 aCF
 aCF
 aJR
-aJZ
+aDN
 aIM
 aIM
 aIM
@@ -63238,7 +63094,7 @@ aWp
 aWp
 aWp
 aWp
-aSZ
+aQc
 baF
 aSZ
 baI
@@ -63436,9 +63292,9 @@ aVS
 aSZ
 aSZ
 aVQ
-aSZ
-cYQ
-aSZ
+aQc
+aQc
+aQc
 aVQ
 aQc
 aml
@@ -64040,7 +63896,7 @@ aRR
 aVp
 aVU
 aWt
-hMj
+aTR
 aQc
 aYf
 aYM
@@ -64242,14 +64098,14 @@ aRR
 aRR
 aQc
 aWu
-baj
+dGs
 aQc
 aYg
 aYN
 aZj
 aQc
 baj
-aWu
+fbB
 aQc
 aQc
 aRR
