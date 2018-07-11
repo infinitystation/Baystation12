@@ -25,3 +25,6 @@
 
 		var/icon/earbit = new/icon("icon" = 'icons/mob/onmob/head.dmi', "icon_state" = "kittyinner")
 		ears.Blend(earbit, ICON_OVERLAY)
+
+/obj/item/clothing/head/beret
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi')

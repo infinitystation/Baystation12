@@ -79,25 +79,10 @@ character_name: Daniel Osborne
 item_path: /obj/item/device/pmp/personal
 }
 #	SHORT ITEMS HERE (3-4)
-# {
-# ckey: quietproject 
-# character_name: Arias Creo 
-# item_path: /obj/item/clothing/mask/gas/creo
-# }
 {
-ckey: forrya
-character_name: Liru
-item_path: /obj/item/weapon/storage/secure/briefcase/pink
-}
-{
-ckey: taushai
-character_name: Itisha
-item_path: /obj/item/weapon/storage/secure/briefcase/pink
-}
-{
-ckey: forrya
-character_name: Evee
-item_path: /obj/item/clothing/under/resomi/maid
+ckey: quietproject 
+character_name: Arias Creo 
+item_path: /obj/item/clothing/mask/gas/creo
 }
 {
 ckey: mrnicolas
@@ -124,16 +109,6 @@ item_desc: It is a model of the famous guitar "Stratocaster" assembled in a pink
 ckey: redknighthero
 character_name: Daniel Osborne
 item_path: /obj/item/clothing/under/harness/invisible
-}
-{
-ckey: arhod
-character_name: Amr'in Battrral
-item_path: /obj/item/custkit/messith
-}
-{
-ckey: wolforbykot
-character_name: Toni Roar
-item_path: /obj/item/custkit/chainsword
 }
 
 #	MEDIUM ITEMS HERE (5-6)
@@ -230,6 +205,67 @@ item_path: /obj/item/weapon/card/id/torch/captains_spare
 item_name: Oliver Osborne ID Card 
 item_desc: ... 
 item_icon: sciGold 
+}
+{
+ckey: sosiskoed
+character_name: Billy Rockish
+item_path: /obj/item/clothing/shoes/clown_shoes
+item_name: worn-out clown shoes
+item_desc: The prankster's standard-issue clowning shoes. Damn they're huge! And they smells disgusting.
+}
+{
+ckey: Sosiskoed
+character_name: Billy Rockish
+item_path: /obj/item/clothing/mask/gas/clown_hat
+item_name: old clown wig and mask
+item_desc: A true prankster's facial attire. A clown is incomplete without their wig and mask. Good at hiding your sadness.
+}
+{
+ckey: Sosiskoed
+character_name: Billy Rockish
+item_path: /obj/item/weapon/storage/backpack/clown
+item_name: Giggles von Honkerton
+item_desc: It's a backpack made by Honk! Co. At least it looks like it.
+}
+{
+ckey: Sosiskoed
+character_name: Billy Rockish
+item_path: /obj/item/weapon/bikehorn
+item_name: shabby bike horn
+item_desc: A horn off of a bicycle. This one slightly loses its color.
+}
+{
+ckey: taushai
+character_name: Narii
+item_path: /obj/item/clothing/mask/gas
+item_name: explorer mask
+item_icon: explorer_mask
+item_desc: It looks like a tracker's mask.
+species_restricted: list(SPECIES_RESOMI)
+}
+{
+ckey: taushai
+character_name: Narii
+item_path: /obj/item/weapon/storage/backpack
+item_name: explorer backpack
+item_icon: explorer_backpack
+item_desc: A large backpack in which there are a lot of pockets.
+species_restricted: list(SPECIES_RESOMI)
+}
+{
+ckey: taushai
+character_name: Narii
+item_path: /obj/item/clothing/suit/storage/toggle/explorer
+item_name: explorer coat
+item_icon: explorer_coat
+item_desc: An ordinary leather jacket with two small iron plates with illegible text.
+species_restricted: list(SPECIES_RESOMI)
+}
+{
+ckey: logfol
+character_name: Alias Victus
+item_path: /obj/item/clothing/head/beret/centcom/officer
+item_desc: A navy blue beret adorned with the named "Grom" crest of corporate asset protection. For asset protection agents that are more inclined towards style than safety.
 }
 
 #	LONG ITEMS HERE (+7)
