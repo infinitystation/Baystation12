@@ -21,7 +21,6 @@
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/misc.dmi'
 		)
 
-
 /obj/item/clothing/accessory/necklace/collar/gold
 	name = "Golden tag collar"
 	desc = "A collar for your little pets... or the big ones."
@@ -31,6 +30,35 @@
 	name = "Bell collar"
 	desc = "A collar with a tiny bell hanging from it, purrfect furr kitties."
 	icon_state = "collar_bkbell"
+
+/obj/item/clothing/accessory/necklace/collar/spike
+	name = "Spiked collar"
+	desc = "A collar with spikes that look as sharp as your teeth."
+	icon_state = "collar_bkspike"
+
+/obj/item/clothing/accessory/necklace/collar/pink
+	name = "Pink collar"
+	desc = "This collar will make your pets look FA-BU-LOUS."
+	icon_state = "collar_pisilv"
+
+/obj/item/clothing/accessory/necklace/collar/holo
+	name = "Holo-collar"
+	desc = "An expensive holo-collar for the modern day pet."
+	icon_state = "collar_bkholo"
+
+/obj/item/clothing/accessory/necklace/collar/holo/attack_self(mob/user as mob)
+	user << "<span class='notice'>[name]'s interface is projected onto your hand.</span>"
+
+	var/str = copytext(reject_bad_text(input(user,"Tag text?","Set tag","")),1,MAX_NAME_LEN)
+
+	if(!str || !length(str))
+		user << "<span class='notice'>[name]'s tag set to be blank.</span>"
+		name = initial(name)
+		desc = initial(desc)
+	else
+		user << "<span class='notice'>You set the [name]'s tag to '[str]'.</span>"
+		name = initial(name) + " ([str])"
+		desc = initial(desc) + " The tag says \"[str]\"."
 
 /obj/item/clothing/accessory/necklace/collar/shock
 	name = "Shock collar"
@@ -133,36 +161,6 @@
 	onclose(user, "radio")
 	return
 
-/obj/item/clothing/accessory/necklace/collar/spike
-	name = "Spiked collar"
-	desc = "A collar with spikes that look as sharp as your teeth."
-	icon_state = "collar_bkspike"
-
-/obj/item/clothing/accessory/necklace/collar/pink
-	name = "Pink collar"
-	desc = "This collar will make your pets look FA-BU-LOUS."
-	icon_state = "collar_pisilv"
-
-/obj/item/clothing/accessory/necklace/collar/holo
-	name = "Holo-collar"
-	desc = "An expensive holo-collar for the modern day pet."
-	icon_state = "collar_bkholo"
-
-/obj/item/clothing/accessory/necklace/collar/holo/attack_self(mob/user as mob)
-	user << "<span class='notice'>[name]'s interface is projected onto your hand.</span>"
-
-	var/str = copytext(reject_bad_text(input(user,"Tag text?","Set tag","")),1,MAX_NAME_LEN)
-
-	if(!str || !length(str))
-		user << "<span class='notice'>[name]'s tag set to be blank.</span>"
-		name = initial(name)
-		desc = initial(desc)
-	else
-		user << "<span class='notice'>You set the [name]'s tag to '[str]'.</span>"
-		name = initial(name) + " ([str])"
-		desc = initial(desc) + " The tag says \"[str]\"."
-
-
 //Resomi scarf
 /obj/item/clothing/accessory/scarf/resomi
 	name = "small mantle"
@@ -173,7 +171,7 @@
 
 //Pins
 
-/obj/item/clothing/accessory/ntred
+/obj/item/clothing/accessory/inf_pin
 	name = "NT pin"
 	desc = "A red Nanotrasen pin."
 	icon = 'icons/obj/clothing/infinity/ties.dmi'
@@ -181,27 +179,17 @@
 	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
 	high_visibility = 1
 
-/obj/item/clothing/accessory/ntblue
+/obj/item/clothing/accessory/inf_pin/ntblue
 	name = "NT pin"
 	desc = "A blue Nanotrasen pin."
-	icon = 'icons/obj/clothing/infinity/ties.dmi'
-	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
 	icon_state = "nt_b"
-	high_visibility = 1
 
-
-/obj/item/clothing/accessory/tccpin
+/obj/item/clothing/accessory/inf_pin/tccpin
 	name = "TCC pin"
 	desc = "A small TCC flag."
-	icon = 'icons/obj/clothing/infinity/ties.dmi'
 	icon_state = "tcc"
-	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
-	high_visibility = 1
 
-/obj/item/clothing/accessory/scgpin
+/obj/item/clothing/accessory/inf_pin/scgpin
 	name = "CSG pin"
 	desc = "A small CSG flag."
-	icon = 'icons/obj/clothing/infinity/ties.dmi'
 	icon_state = "csg"
-	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
-	high_visibility = 1
