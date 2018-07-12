@@ -129,6 +129,13 @@ item_name: beastslayer's bone talisman
 item_desc: Grim periapt made of sinew and fangs of unknown monstrosity. Most likely a trophy of a cunning beast-hunter.
 }
 {
+ckey: coltrane97
+character_name: Terry Linton
+item_path: /obj/item/modular_computer/wrist
+item_name: grayson wrist PDA
+item_desc: A compact wrisp computer designed to keep its user always connected. That one has Grayson Manufactories Ltd's mark on back side.
+}
+{
 ckey: courierr
 character_name: Mia Lee
 item_path: /obj/item/weapon/material/kitchen/utensil/knife/boot
