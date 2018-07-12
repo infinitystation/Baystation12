@@ -22,7 +22,7 @@
 	name = "long jacket"
 	desc = "A long gray jacket"
 	icon = 'icons/obj/clothing/infinity/suits.dmi'
-	item_icons = list(slot_wear_suit_str = 'icons/mob/onmob/suits.dmi')
+	item_icons = list(slot_wear_suit_str = 'icons/mob/infinity/suits.dmi')
 	icon_state = "longjacket"
 	icon_open = "longjacket_open"
 	icon_closed = "longjacket"
