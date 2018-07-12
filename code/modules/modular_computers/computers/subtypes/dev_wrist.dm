@@ -2,6 +2,7 @@
 	name = "\improper wrist PDA"
 	desc = "A compact wrisp computer designed to keep its user always connected."
 	icon = 'icons/obj/modular_wrist.dmi'
+	description_fluff = "Morally obsolete and replaced by a more compact and perfect personal computer, the wrist PDA has been used to this day as a cheap replacement for more expensive equipment in some small corporations, and sometimes for the sake of aesthetic pleasure of it's owner."
 	item_icons = list(slot_wear_id_str = 'icons/mob/infinity/wristcomp.dmi')
 	item_state_slots = list(slot_wear_id_str = "wrist")
 	icon_state = "wrist"

@@ -3,6 +3,7 @@
 	name = "\improper wrist computer"
 	desc = "A portable wrist-mounted microcomputer, also known as a Personal Data Assistant."
 	icon = 'icons/wristcomp/wristcomp_obj.dmi'
+	description_fluff = "Morally obsolete and replaced by a more compact and perfect personal computer, the wrist PDA has been used to this day as a cheap replacement for more expensive equipment in some small corporations, and sometimes for the sake of aesthetic pleasure of it's owner."
 	item_icons = list(slot_wear_id_str = 'icons/wristcomp/wristcomp_mob.dmi')
 	icon_state = "wc"
 	item_state = "wc"
