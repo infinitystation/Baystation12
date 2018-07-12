@@ -808,7 +808,6 @@
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
-	pixel_y = 0
 	},
 /turf/simulated/floor/tiled,
 /area/shuttle/administration/centcom)
@@ -1008,7 +1007,6 @@
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
-	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/administration/centcom)
@@ -1041,7 +1039,6 @@
 	id_tag = "admin_shuttle_bay";
 	name = "shuttle bay controller";
 	pixel_x = 25;
-	pixel_y = 0;
 	tag_door = "admin_shuttle_bay_door"
 	},
 /turf/unsimulated/floor{
@@ -1095,7 +1092,6 @@
 	},
 /obj/item/weapon/storage/mirror/raider{
 	pixel_x = -28;
-	pixel_y = 0
 	},
 /turf/unsimulated/floor{
 	icon_state = "freezerfloor";
@@ -1269,7 +1265,6 @@
 /obj/item/weapon/storage/mirror{
 	dir = 4;
 	pixel_x = -28;
-	pixel_y = 0
 	},
 /turf/unsimulated/floor{
 	icon_state = "freezerfloor";
@@ -1992,7 +1987,6 @@
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
-	pixel_y = 0
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/freezer,
@@ -2121,7 +2115,6 @@
 "aeW" = (
 /obj/structure/closet/secure_closet/medical_wall{
 	pixel_x = 32;
-	pixel_y = 0;
 	req_access = list(150)
 	},
 /obj/structure/iv_drip,
@@ -2147,7 +2140,6 @@
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
-	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/administration/centcom)
@@ -2165,7 +2157,6 @@
 	dir = 8;
 	icon_state = "shower";
 	pixel_x = -7;
-	pixel_y = 0
 	},
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/freezer,
@@ -2336,7 +2327,6 @@
 	frequency = 1380;
 	id_tag = "admin_shuttle";
 	pixel_x = -25;
-	pixel_y = 0;
 	req_one_access = list(101);
 	tag_door = "admin_shuttle_hatch"
 	},
@@ -4202,7 +4192,6 @@
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
-	pixel_y = 0
 	},
 /obj/structure/table/reinforced,
 /obj/item/weapon/storage/box/sinpockets,
@@ -4654,7 +4643,6 @@
 	dir = 8;
 	icon_state = "shower";
 	pixel_x = -5;
-	pixel_y = 0
 	},
 /obj/item/weapon/soap/syndie,
 /obj/machinery/door/window/southright,
@@ -4888,7 +4876,6 @@
 "akO" = (
 /obj/structure/closet/secure_closet/medical_wall{
 	pixel_x = -32;
-	pixel_y = 0;
 	req_access = list(150)
 	},
 /obj/item/stack/medical/splint,
@@ -4988,7 +4975,6 @@
 /obj/machinery/button/remote/airlock{
 	id = "syndie_toilet";
 	name = "lock";
-	pixel_x = 0;
 	pixel_y = -26;
 	req_access = list(150);
 	specialfunctions = 4
@@ -5257,7 +5243,6 @@
 /obj/item/weapon/storage/mirror{
 	dir = 4;
 	pixel_x = -32;
-	pixel_y = 0
 	},
 /obj/structure/sink{
 	icon_state = "sink";
@@ -5514,7 +5499,6 @@
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
-	pixel_y = 0
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
@@ -5532,7 +5516,6 @@
 	frequency = 1380;
 	master_tag = "merchant_ship_dock";
 	pixel_x = -28;
-	pixel_y = 0
 	},
 /obj/effect/shuttle_landmark/merchant/start,
 /turf/simulated/floor/plating,
@@ -5682,7 +5665,6 @@
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
-	pixel_y = 0
 	},
 /turf/simulated/floor/shuttle/white,
 /area/skipjack_station/start)
@@ -6025,7 +6007,6 @@
 "anh" = (
 /obj/machinery/flasher{
 	id = "syndieflash";
-	pixel_x = 0;
 	pixel_y = 28
 	},
 /obj/machinery/light/small{
@@ -6297,7 +6278,6 @@
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
-	pixel_y = 0
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -6387,7 +6367,6 @@
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
-	pixel_y = 0
 	},
 /turf/simulated/floor/shuttle/black,
 /area/skipjack_station/start)
@@ -6519,7 +6498,6 @@
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
-	pixel_y = 0
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
@@ -6728,7 +6706,6 @@
 	id = "syndieflash";
 	name = "Flasher";
 	pixel_x = 27;
-	pixel_y = 0
 	},
 /obj/structure/bed/chair/comfy/shuttle/red{
 	icon_state = "rschair";
@@ -6870,7 +6847,6 @@
 /obj/item/weapon/bonesetter,
 /obj/item/weapon/scalpel,
 /obj/item/weapon/retractor{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /obj/item/weapon/hemostat{
@@ -7068,7 +7044,6 @@
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
-	pixel_y = 0
 	},
 /obj/structure/table/glass,
 /obj/item/weapon/material/hatchet/tacknife,
@@ -7582,7 +7557,6 @@
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
-	pixel_y = 0
 	},
 /obj/item/device/radio/intercom/syndicate{
 	dir = 4;
@@ -7605,7 +7579,6 @@
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
-	pixel_y = 0
 	},
 /obj/structure/table/steel,
 /obj/random/tech_supply,
@@ -7995,7 +7968,6 @@
 /obj/item/device/radio/intercom/specops{
 	dir = 8;
 	pixel_x = 22;
-	pixel_y = 0
 	},
 /obj/effect/floor_decal/corner/black{
 	icon_state = "corner_white";
@@ -8132,7 +8104,6 @@
 	id_tag = "specops_shuttle_cent";
 	name = "port docking hatch controller";
 	pixel_x = -26;
-	pixel_y = 0;
 	tag_door = "specops_shuttle_cent_berth_hatch"
 	},
 /turf/unsimulated/floor{
@@ -8199,7 +8170,6 @@
 /obj/machinery/chem_master,
 /obj/structure/closet/secure_closet/medical_wall{
 	pixel_x = 32;
-	pixel_y = 0;
 	req_access = list(150)
 	},
 /obj/item/bodybag/cryobag,
@@ -8220,7 +8190,6 @@
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
-	pixel_y = 0
 	},
 /obj/item/weapon/storage/backpack/dufflebag/syndie/ammo,
 /turf/simulated/floor/shuttle/darkred,
@@ -8234,7 +8203,6 @@
 /obj/machinery/button/remote/blast_door{
 	id = "syndieshutters_telebay";
 	name = "remote shutter control";
-	pixel_x = 0;
 	pixel_y = -25;
 	req_access = list(150)
 	},
@@ -8336,11 +8304,9 @@
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
-	pixel_y = 0
 	},
 /obj/structure/closet/secure_closet/medical_wall{
 	pixel_x = -32;
-	pixel_y = 0;
 	req_access = list(150)
 	},
 /obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
@@ -8374,7 +8340,6 @@
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
-	pixel_y = 0
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
@@ -8439,7 +8404,6 @@
 /obj/structure/iv_drip,
 /obj/structure/closet/secure_closet/medical_wall{
 	pixel_x = 32;
-	pixel_y = 0;
 	req_access = list(150)
 	},
 /obj/item/clothing/gloves/latex,
@@ -8503,7 +8467,6 @@
 "asx" = (
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 32;
-	pixel_y = 0
 	},
 /obj/effect/floor_decal/corner/black{
 	icon_state = "corner_white";
@@ -8588,7 +8551,6 @@
 	frequency = 1380;
 	id_tag = "specops_shuttle_fore";
 	name = "forward docking hatch controller";
-	pixel_x = 0;
 	pixel_y = -25;
 	tag_door = "specops_shuttle_fore_hatch"
 	},
@@ -8606,12 +8568,10 @@
 "asK" = (
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 32;
-	pixel_y = 0
 	},
 /obj/machinery/vending/wallmed1{
 	layer = 3.3;
 	name = "Emergency NanoMed";
-	pixel_x = 0;
 	pixel_y = -32
 	},
 /obj/effect/floor_decal/corner/black{
@@ -9030,7 +8990,6 @@
 	frequency = 1380;
 	id_tag = "centcom_shuttle_bay";
 	name = "shuttle bay controller";
-	pixel_x = 0;
 	pixel_y = 25;
 	tag_door = "centcom_shuttle_bay_door"
 	},
@@ -9252,7 +9211,6 @@
 /obj/structure/bed/roller,
 /obj/machinery/vending/wallmed1{
 	name = "Emergency NanoMed";
-	pixel_x = 0;
 	pixel_y = 29
 	},
 /turf/unsimulated/floor{
@@ -9473,8 +9431,6 @@
 	pixel_y = 5
 	},
 /obj/item/weapon/reagent_containers/glass/beaker/cryoxadone{
-	pixel_x = 0;
-	pixel_y = 0
 	},
 /obj/item/weapon/reagent_containers/glass/beaker/cryoxadone{
 	pixel_x = 7;
@@ -9532,7 +9488,6 @@
 /obj/machinery/recharger,
 /obj/structure/closet/hydrant{
 	pixel_x = -30;
-	pixel_y = 0
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light{
@@ -9545,7 +9500,6 @@
 /obj/machinery/recharger,
 /obj/machinery/vending/wallmed1{
 	pixel_x = 30;
-	pixel_y = 0
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light{
@@ -9676,7 +9630,6 @@
 "avg" = (
 /obj/structure/table/standard,
 /obj/item/weapon/retractor{
-	pixel_x = 0;
 	pixel_y = 6
 	},
 /obj/item/weapon/scalpel,
@@ -9830,7 +9783,6 @@
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
-	pixel_y = 0
 	},
 /obj/machinery/vending/wallmed1{
 	name = "Emergency NanoMed";
@@ -9851,8 +9803,6 @@
 	pixel_y = 4
 	},
 /obj/item/weapon/storage/box/masks{
-	pixel_x = 0;
-	pixel_y = 0
 	},
 /turf/unsimulated/floor{
 	icon_state = "white"
@@ -10177,7 +10127,6 @@
 	frequency = 1380;
 	id_tag = "centcom_shuttle";
 	pixel_x = -24;
-	pixel_y = 0;
 	tag_door = "centcom_shuttle_hatch"
 	},
 /obj/effect/floor_decal/industrial/warning/cee{
@@ -10299,8 +10248,6 @@
 /area/ninja_dojo/dojo)
 "awx" = (
 /obj/item/weapon/reagent_containers/glass/beaker/cryoxadone{
-	pixel_x = 0;
-	pixel_y = 0
 	},
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/dark,
@@ -11040,7 +10987,6 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_x = 0;
 	pixel_y = 24;
 	req_access = list(201)
 	},
@@ -12201,7 +12147,6 @@
 /obj/machinery/button/remote/blast_door{
 	id = "Thundernewblue";
 	pixel_x = 32;
-	pixel_y = 0
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -12211,7 +12156,6 @@
 /obj/machinery/button/remote/blast_door{
 	id = "Thundernewred";
 	pixel_x = -32;
-	pixel_y = 0
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -13376,7 +13320,6 @@
 /obj/effect/floor_decal/corner/blue/diagonal,
 /obj/item/weapon/reagent_containers/food/condiment/small/saltshaker{
 	pixel_x = -3;
-	pixel_y = 0
 	},
 /obj/item/weapon/reagent_containers/food/condiment/small/peppermill{
 	pixel_x = 3
@@ -14920,7 +14863,6 @@
 /obj/structure/table/woodentable,
 /obj/item/weapon/reagent_containers/food/condiment/small/saltshaker{
 	pixel_x = -3;
-	pixel_y = 0
 	},
 /obj/item/weapon/reagent_containers/food/condiment/small/peppermill{
 	pixel_x = 3
@@ -15003,14 +14945,12 @@
 /area/admin_prison)
 "aGj" = (
 /obj/item/weapon/storage/mirror{
-	pixel_x = 0;
 	pixel_y = 32
 	},
 /obj/structure/sink{
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
-	pixel_y = 0
 	},
 /turf/simulated/floor/carpet,
 /area/admin_prison)
@@ -15192,7 +15132,6 @@
 /obj/item/weapon/towel/random,
 /obj/machinery/newscaster{
 	pixel_x = -32;
-	pixel_y = 0
 	},
 /turf/simulated/floor/lino,
 /area/admin_prison)
@@ -16980,7 +16919,6 @@
 /obj/item/weapon/towel/random,
 /obj/machinery/newscaster{
 	pixel_x = 32;
-	pixel_y = 0
 	},
 /turf/simulated/floor/lino,
 /area/admin_prison)
@@ -17052,7 +16990,6 @@
 	pixel_y = 2
 	},
 /obj/item/weapon/storage/mirror{
-	pixel_x = 0;
 	pixel_y = -32
 	},
 /turf/simulated/floor/carpet,
@@ -17439,7 +17376,6 @@
 /obj/item/device/radio/intercom/specops{
 	dir = 8;
 	pixel_x = 22;
-	pixel_y = 0
 	},
 /turf/simulated/floor/shuttle/black,
 /area/rescue_base/start)
@@ -17561,7 +17497,6 @@
 /obj/item/device/radio/intercom/specops{
 	dir = 8;
 	pixel_x = 22;
-	pixel_y = 0
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 8;
@@ -17917,7 +17852,6 @@
 /obj/item/device/radio/intercom/specops{
 	dir = 8;
 	pixel_x = 22;
-	pixel_y = 0
 	},
 /obj/structure/closet/l3closet,
 /turf/simulated/floor/shuttle/black,
@@ -18053,7 +17987,6 @@
 	layer = 3.3;
 	name = "Emergency NanoMed";
 	pixel_x = 28;
-	pixel_y = 0;
 	req_access = newlist()
 	},
 /turf/simulated/floor/shuttle/darkred,
@@ -18095,7 +18028,6 @@
 "aNa" = (
 /obj/machinery/flasher{
 	id = "rescueflash";
-	pixel_x = 0;
 	pixel_y = 28
 	},
 /turf/simulated/floor/shuttle/black,
@@ -18304,7 +18236,6 @@
 /obj/item/device/radio/intercom/specops{
 	dir = 8;
 	pixel_x = 22;
-	pixel_y = 0
 	},
 /obj/machinery/sleeper{
 	dir = 8
@@ -18316,7 +18247,6 @@
 	id = "rescueflash";
 	name = "Flasher";
 	pixel_x = 27;
-	pixel_y = 0
 	},
 /obj/structure/bed/chair{
 	dir = 8
@@ -18458,7 +18388,6 @@
 /obj/item/device/radio/intercom/specops{
 	dir = 8;
 	pixel_x = 22;
-	pixel_y = 0
 	},
 /turf/simulated/floor/shuttle/red,
 /area/rescue_base/start)
@@ -18986,8 +18915,6 @@
 /obj/machinery/button/remote/blast_door{
 	id = "supply_shuttle";
 	name = "Supply Drone Shutter Control";
-	pixel_x = 0;
-	pixel_y = 0;
 	req_access = list(31)
 	},
 /turf/simulated/shuttle/wall{
@@ -20153,7 +20080,6 @@
 /obj/machinery/light/small,
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 32;
-	pixel_y = 0
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark,
@@ -20386,7 +20312,6 @@
 /obj/machinery/shower{
 	dir = 4;
 	icon_state = "shower";
-	pixel_x = 0
 	},
 /obj/structure/curtain/open/shower,
 /obj/structure/window/reinforced{
@@ -20861,7 +20786,6 @@
 	id = "syndicate_elite_mech_room";
 	name = "Mech Access";
 	pixel_x = 32;
-	pixel_y = 0;
 	req_access = list(150)
 	},
 /turf/unsimulated/floor{
@@ -21611,7 +21535,6 @@
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
-	pixel_y = 0
 	},
 /obj/item/weapon/storage/mirror{
 	pixel_x = 32
@@ -21753,7 +21676,6 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	pixel_y = 0;
 	req_one_access = list(201)
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -21834,7 +21756,6 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	pixel_y = 0;
 	req_one_access = list(201)
 	},
 /turf/simulated/floor/tiled,
@@ -22943,7 +22864,6 @@
 /obj/machinery/button/remote/blast_door{
 	id = "merchantshuttle";
 	name = "Merchant Window Shutters";
-	pixel_x = 0;
 	pixel_y = -28;
 	req_access = list(201)
 	},
@@ -23092,7 +23012,6 @@
 	frequency = 1380;
 	id_tag = "merchant_ship_sensor";
 	pixel_x = 28;
-	pixel_y = 0
 	},
 /turf/simulated/floor/plating,
 /area/shuttle/merchant/home)
@@ -23254,7 +23173,6 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	pixel_y = 0;
 	req_one_access = list(201)
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -23780,7 +23698,6 @@
 	frequency = 1380;
 	id_tag = "merchant_station_dock";
 	pixel_x = -28;
-	pixel_y = 0;
 	req_access = list(201);
 	tag_airpump = "merchant_station_vent";
 	tag_chamber_sensor = "merchant_station_sensor";
@@ -23972,7 +23889,6 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_x = 0;
 	pixel_y = 24;
 	req_access = list(201)
 	},
@@ -24019,7 +23935,6 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	pixel_y = 0;
 	req_one_access = list(201)
 	},
 /obj/structure/disposalpipe/trunk{
@@ -24128,7 +24043,6 @@
 "bbz" = (
 /obj/structure/table/holotable,
 /obj/machinery/readybutton{
-	pixel_y = 0
 	},
 /obj/effect/floor_decal/corner/red/three_quarters{
 	dir = 8
@@ -24201,7 +24115,6 @@
 /obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2";
-	pixel_y = 0
 	},
 /obj/machinery/power/solar,
 /obj/effect/floor_decal/solarpanel,
@@ -24491,7 +24404,6 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	pixel_y = 0;
 	req_one_access = list(201)
 	},
 /turf/simulated/floor/tiled,
@@ -25481,7 +25393,6 @@
 "bfl" = (
 /obj/structure/table/holotable,
 /obj/machinery/readybutton{
-	pixel_y = 0
 	},
 /obj/effect/floor_decal/corner/green/three_quarters{
 	dir = 4
@@ -25746,7 +25657,6 @@
 	frequency = 1380;
 	id_tag = "merchant_ship_dock";
 	pixel_x = -24;
-	pixel_y = 0;
 	tag_airpump = "merchant_ship_vent";
 	tag_chamber_sensor = "merchant_ship_sensor";
 	tag_exterior_door = "merchant_ship_exterior";
