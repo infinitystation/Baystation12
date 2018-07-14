@@ -199,8 +199,8 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/weapon/gun/projectile/spistol
-	name = "TH22 pistol"
-	desc = "The TH22. A small sidearm, with futuristic design. Uses .17HMR rounds."
+	name = "TH17 pistol"
+	desc = "The TH17. A small sidearm, with futuristic design. Uses .17HMR rounds."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "pistol0"
 	item_icons = list(
