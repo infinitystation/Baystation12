@@ -3,6 +3,7 @@
 	icon_state = "bullet"
 	fire_sound = "gunshot"
 	damage = 50
+	agony = 10
 	damage_type = BRUTE
 	nodamage = 0
 	check_armour = "bullet"
@@ -170,6 +171,7 @@
 /obj/item/projectile/bullet/pistol/medium/smg
 	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
 	damage = 28
+	agony = 20
 	armor_penetration = 18
 
 // .357 magnum or something
@@ -182,6 +184,7 @@
 
 /obj/item/projectile/bullet/pistol/strong/revolver
 	damage = 40
+	agony = 20
 	armor_penetration = 25
 
 /obj/item/projectile/bullet/pistol/strong/revolver/rubber
@@ -206,15 +209,17 @@
 	name = "slug"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
 	damage = 55
+	agony = 40
 	armor_penetration = 20
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
 	check_armour = "melee"
 	damage = 25
-	agony = 60
+	stun = 5
 	embed = 0
 	sharp = 0
+	armor_penetration = 15
 
 //Should do about 80 damage at 1 tile distance (adjacent), and 50 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
@@ -240,6 +245,7 @@
 
 /obj/item/projectile/bullet/rifle
 	penetrating = 1
+	agony = 20
 
 // .45-70 Gov.
 
@@ -248,6 +254,22 @@
 	damage = 45
 	armor_penetration = 25
 	penetrating = 1
+
+// .410
+
+/obj/item/projectile/bullet/rifle/a410
+	fire_sound = 'sound/weapons/gunshot/gunshot4.ogg'
+	name = "slug"
+	damage = 40
+	agony = 30
+	armor_penetration = 20
+
+/obj/item/projectile/bullet/pellet/a410/
+	name = "shrapnel"
+	damage = 7.5
+	pellets = 7
+	range_step = 0.7
+	spread_step = 7
 
 // 5,56x45mm
 

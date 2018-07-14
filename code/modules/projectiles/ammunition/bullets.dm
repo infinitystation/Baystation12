@@ -205,6 +205,10 @@
 	icon_state = "rifle-casing"
 	spent_icon = "rifle-casing-spent"
 
+/obj/item/ammo_casing/a762/ap
+	desc = "A 7.62x39mm AP bullet casing."
+	projectile_type = /obj/item/projectile/bullet/rifle/a762/ap
+
 /obj/item/ammo_casing/a762/practice
 	desc = "A 7.62x39mm practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/rifle/a762/practice
@@ -278,3 +282,27 @@
 	icon_state = "3006"
 	spent_icon = "3006old"
 	projectile_type = /obj/item/projectile/bullet/rifle/a4570
+
+/obj/item/ammo_casing/a410
+	desc = "A .410 slug."
+	caliber = "4570"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "bshell-live"
+	spent_icon = "bshell"
+	projectile_type = /obj/item/projectile/bullet/rifle/a410
+
+/obj/item/ammo_casing/a410/pellet
+	desc = "A .410 shell."
+	caliber = "4570"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "gshell-live"
+	spent_icon = "gshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/a410/
+
+/obj/item/ammo_casing/a410/stun
+	desc = "A .410 stun shell."
+	caliber = "4570"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "stunshell-live"
+	spent_icon = "stunshell"
+	projectile_type = /obj/item/projectile/energy/electrode
