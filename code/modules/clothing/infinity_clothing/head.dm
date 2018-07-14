@@ -1,4 +1,3 @@
-//Daft-Punk helm
 /obj/item/clothing/head/helmet/daft_punk //By KaReTa
 	name = "Daft Punk helm"
 	desc = "This fancy helm gives you the ability to see through clothes! Well, at least that's what rumors say.."
