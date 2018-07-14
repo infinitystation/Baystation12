@@ -424,6 +424,8 @@
 	frequency = 1380;
 	id_tag = "escape_pod_6";
 	name = "escape pod one controller";
+	pixel_x = 0;
+	pixel_y = 0;
 	tag_door = "escape_pod_6_hatch"
 	},
 /obj/effect/floor_decal/borderfloor,
@@ -462,6 +464,8 @@
 	frequency = 1380;
 	id_tag = "escape_pod_7";
 	name = "escape pod two controller";
+	pixel_x = 0;
+	pixel_y = 0;
 	tag_door = "escape_pod_7_hatch"
 	},
 /obj/effect/floor_decal/borderfloor,
@@ -617,6 +621,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24;
 	req_access = list(11)
 	},
@@ -672,7 +677,9 @@
 /area/exploration_shuttle/crew)
 "bU" = (
 /obj/structure/table/steel_reinforced,
-/obj/machinery/recharger,
+/obj/machinery/recharger{
+	pixel_y = 0
+	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -745,7 +752,7 @@
 /obj/item/clothing/mask/gas/half,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -22
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6;
@@ -777,8 +784,11 @@
 /obj/machinery/computer/cryopod{
 	pixel_x = -32
 	},
-/obj/effect/floor_decal/corner/grey/mono,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/grey/diagonal{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/grey/diagonal,
+/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod6/station)
 "cj" = (
 /obj/machinery/door/airlock/external{
@@ -804,8 +814,11 @@
 /obj/machinery/computer/cryopod{
 	pixel_x = 32
 	},
-/obj/effect/floor_decal/corner/grey/mono,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/grey/diagonal{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/grey/diagonal,
+/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod7/station)
 "cl" = (
 /obj/machinery/mining/brace{
@@ -1038,7 +1051,8 @@
 /obj/machinery/airlock_sensor{
 	frequency = 1380;
 	id_tag = "merchant_shuttle_station_sensor";
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = 0
 	},
 /obj/machinery/light/small{
 	dir = 4
@@ -1593,7 +1607,8 @@
 /obj/structure/closet/emcloset,
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube_map"
+	icon_state = "tube_map";
+	pixel_y = 0
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/floor_decal/industrial/warning/corner{
@@ -1784,6 +1799,7 @@
 	cycle_to_external_air = 1;
 	frequency = 1331;
 	id_tag = "calypso_shuttle";
+	pixel_x = 0;
 	pixel_y = 24;
 	req_access = list(88);
 	tag_exterior_sensor = "calypso_shuttle_sensor_external"
@@ -1817,6 +1833,7 @@
 /obj/machinery/airlock_sensor{
 	frequency = 1331;
 	id_tag = "calypso_shuttle_sensor";
+	pixel_x = 0;
 	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -1865,6 +1882,7 @@
 	dir = 8
 	},
 /obj/structure/sign/warning/nosmoking_1{
+	pixel_x = 0;
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled,
@@ -2133,7 +2151,8 @@
 	dir = 5
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 25;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod6/station)
@@ -2160,7 +2179,8 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_x = -22
+	pixel_x = -22;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod7/station)
@@ -2370,7 +2390,8 @@
 "fz" = (
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -23
+	pixel_x = -23;
+	pixel_y = 0
 	},
 /obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/borderfloor{
@@ -2641,7 +2662,7 @@
 /obj/machinery/light/small,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -22
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
@@ -2758,7 +2779,8 @@
 /obj/structure/cable{
 	d1 = 16;
 	d2 = 0;
-	icon_state = "16-0"
+	icon_state = "16-0";
+	pixel_y = 0
 	},
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/atmospherics/pipe/zpipe/up/scrubbers{
@@ -2921,6 +2943,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
+	pixel_x = 0;
 	pixel_y = 29
 	},
 /turf/simulated/floor/tiled,
@@ -3234,6 +3257,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24;
 	req_access = list(201)
 	},
@@ -3821,7 +3845,8 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/expedition/eva)
@@ -4013,7 +4038,9 @@
 /area/shuttle/petrov/ship)
 "iZ" = (
 /obj/structure/table/reinforced,
-/obj/machinery/recharger,
+/obj/machinery/recharger{
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "ja" = (
@@ -4137,7 +4164,8 @@
 "jl" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 25;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
@@ -4160,7 +4188,7 @@
 "jp" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -22
 	},
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
@@ -4197,6 +4225,7 @@
 /obj/random/maintenance/solgov/clean,
 /obj/machinery/firealarm{
 	dir = 1;
+	pixel_x = 0;
 	pixel_y = -24
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -4790,7 +4819,7 @@
 "kF" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -22
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -4952,7 +4981,8 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube_map"
+	icon_state = "tube_map";
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
@@ -5001,7 +5031,8 @@
 "lb" = (
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube_map"
+	icon_state = "tube_map";
+	pixel_y = 0
 	},
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
@@ -5390,7 +5421,8 @@
 	pixel_y = 26
 	},
 /obj/machinery/atm{
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/fore)
@@ -5456,6 +5488,7 @@
 	name = "plastic table frame"
 	},
 /obj/item/weapon/ironingiron{
+	pixel_x = 0;
 	pixel_y = 10
 	},
 /obj/item/weapon/ironingiron{
@@ -5739,7 +5772,8 @@
 /obj/item/weapon/anodevice,
 /obj/structure/table/standard,
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 25;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
@@ -5872,6 +5906,7 @@
 	dir = 4
 	},
 /obj/machinery/newscaster{
+	pixel_x = 0;
 	pixel_y = -28
 	},
 /obj/effect/floor_decal/borderfloor,
@@ -5915,6 +5950,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 1;
+	pixel_x = 0;
 	pixel_y = -24
 	},
 /obj/effect/floor_decal/borderfloor,
@@ -6108,7 +6144,8 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 25;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/fourthdeck/center)
@@ -6250,6 +6287,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24
 	},
 /turf/simulated/floor/plating,
@@ -6748,10 +6786,12 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
+	pixel_x = 0;
 	pixel_y = -21
 	},
 /obj/item/modular_computer/telescreen/preset/generic{
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/laundry)
@@ -7478,7 +7518,8 @@
 /area/exploration_shuttle/atmos)
 "pG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
+	dir = 9;
+	pixel_y = 0
 	},
 /obj/machinery/pipedispenser/orderable,
 /turf/simulated/floor/plating,
@@ -7707,6 +7748,7 @@
 /obj/machinery/airlock_sensor{
 	frequency = 1331;
 	id_tag = "nuke_shuttle_dock_sensor";
+	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
@@ -7727,6 +7769,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
+	pixel_x = 0;
 	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -7794,7 +7837,8 @@
 	dir = 8;
 	id = "teleport3";
 	name = "Third Deck Teleporter Access Shutter Control";
-	pixel_x = 24
+	pixel_x = 24;
+	pixel_y = 0
 	},
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
@@ -7854,7 +7898,8 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_x = -22
+	pixel_x = -22;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/fore)
@@ -8042,6 +8087,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/structure/cable/green{
@@ -8397,6 +8443,7 @@
 /obj/machinery/airlock_sensor{
 	frequency = 1380;
 	id_tag = "petrov_shuttle_sensor";
+	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/machinery/light{
@@ -9741,7 +9788,9 @@
 	pixel_x = 20
 	},
 /obj/structure/table/standard,
-/obj/machinery/recharger,
+/obj/machinery/recharger{
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/petrov/ship)
 "sX" = (
@@ -9851,7 +9900,8 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -9898,7 +9948,8 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled,
 /area/storage/primary)
@@ -9978,6 +10029,7 @@
 /obj/structure/sign/deck/fourth{
 	dir = 1;
 	icon_state = "deck-4";
+	pixel_x = 0;
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled,
@@ -10326,6 +10378,7 @@
 "uc" = (
 /obj/machinery/firealarm{
 	dir = 1;
+	pixel_x = 0;
 	pixel_y = -24
 	},
 /turf/simulated/floor/plating,
@@ -10362,6 +10415,7 @@
 /obj/structure/closet/emcloset,
 /obj/machinery/firealarm{
 	dir = 1;
+	pixel_x = 0;
 	pixel_y = -24
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -10378,7 +10432,8 @@
 /obj/machinery/airlock_sensor{
 	frequency = 1380;
 	id_tag = "petrov_shuttle_dock_sensor";
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = 0
 	},
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -10427,6 +10482,7 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	frequency = 1380;
 	id_tag = "petrov_shuttle_airlock";
+	pixel_x = 0;
 	pixel_y = -24;
 	req_one_access = list(74);
 	tag_airpump = "petrov_shuttle_pump";
@@ -10695,7 +10751,9 @@
 /area/teleporter/fourthdeck)
 "uK" = (
 /obj/structure/table/standard,
-/obj/machinery/recharger,
+/obj/machinery/recharger{
+	pixel_y = 0
+	},
 /obj/item/device/paicard,
 /obj/structure/cable/green{
 	d2 = 4;
@@ -11019,7 +11077,8 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
+	dir = 9;
+	pixel_y = 0
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11198,6 +11257,8 @@
 	display_name = "Fore Dock";
 	frequency = 1331;
 	id_tag = "nuke_shuttle_dock_airlock";
+	pixel_x = 0;
+	pixel_y = 0;
 	req_access = list(13);
 	req_one_access = newlist();
 	tag_airpump = "nuke_shuttle_dock_pump";
@@ -11366,6 +11427,7 @@
 /area/security/checkpoint2)
 "vQ" = (
 /obj/machinery/light_switch{
+	pixel_x = 0;
 	pixel_y = 28
 	},
 /obj/machinery/disposal,
@@ -11582,6 +11644,7 @@
 	pixel_y = -2
 	},
 /obj/structure/noticeboard{
+	pixel_x = 0;
 	pixel_y = 32
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -11599,6 +11662,7 @@
 /obj/machinery/button/remote/blast_door{
 	id = "sup_office";
 	name = "Desk Shutter Control";
+	pixel_x = 0;
 	pixel_y = 22;
 	req_access = list(31)
 	},
@@ -12061,6 +12125,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
+	pixel_x = 0;
 	pixel_y = 29
 	},
 /turf/simulated/floor/tiled,
@@ -12596,7 +12661,8 @@
 	dir = 9
 	},
 /obj/machinery/light/small{
-	dir = 4
+	dir = 4;
+	pixel_y = 0
 	},
 /obj/machinery/power/apc/hyper{
 	dir = 4;
@@ -12855,6 +12921,7 @@
 /obj/structure/table/standard,
 /obj/machinery/firealarm{
 	dir = 1;
+	pixel_x = 0;
 	pixel_y = -24
 	},
 /obj/machinery/light,
@@ -12866,7 +12933,7 @@
 /obj/effect/floor_decal/techfloor/corner,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/hallway/primary/fourthdeck/fore)
@@ -12987,7 +13054,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -22
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/blue/border,
@@ -13135,7 +13202,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -22
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6;
@@ -13522,7 +13589,8 @@
 /area/shuttle/petrov/cell1)
 "zv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
+	dir = 9;
+	pixel_y = 0
 	},
 /obj/effect/wallframe_spawn/reinforced_phoron/titanium,
 /turf/simulated/floor/reinforced,
@@ -13721,7 +13789,8 @@
 "zW" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
+	dir = 9;
+	pixel_y = 0
 	},
 /obj/structure/table/rack{
 	dir = 8
@@ -13785,7 +13854,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
@@ -13829,7 +13898,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -29
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
@@ -13862,7 +13931,8 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
+	dir = 9;
+	pixel_y = 0
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	icon_state = "steel_decals6";
@@ -14152,7 +14222,8 @@
 /area/hallway/primary/fourthdeck/fore)
 "AJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
+	dir = 9;
+	pixel_y = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden,
@@ -14262,6 +14333,7 @@
 	id = "qm_warehouse";
 	name = "Warehouse Shutters Control";
 	pixel_x = -24;
+	pixel_y = 0;
 	req_access = list(31)
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -14519,6 +14591,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/structure/cable/green{
@@ -15216,6 +15289,7 @@
 	id = "qm_warehouse";
 	name = "Warehouse Shutters Control";
 	pixel_x = 24;
+	pixel_y = 0;
 	req_access = list(31)
 	},
 /obj/effect/floor_decal/industrial/warning/corner,
@@ -15321,6 +15395,7 @@
 	dir = 1;
 	id = "guppy_hatch";
 	name = "Rear Hatch Control";
+	pixel_x = 0;
 	pixel_y = -24;
 	req_access = list(89)
 	},
@@ -15603,6 +15678,7 @@
 	cycle_to_external_air = 1;
 	frequency = 1431;
 	id_tag = "guppy_shuttle";
+	pixel_x = 0;
 	pixel_y = -24;
 	req_access = list(89);
 	tag_exterior_sensor = "guppy_shuttle_sensor_external"
@@ -15636,6 +15712,7 @@
 /obj/machinery/airlock_sensor{
 	frequency = 1431;
 	id_tag = "guppy_shuttle_sensor";
+	pixel_x = 0;
 	pixel_y = -24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
@@ -15657,6 +15734,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24
 	},
 /turf/simulated/floor/plating,
@@ -15680,6 +15758,7 @@
 "Ez" = (
 /obj/structure/closet/crate,
 /obj/random/plushie,
+/obj/item/modular_computer/pda/wrist,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/auxillary/port)
 "EA" = (
@@ -15771,7 +15850,8 @@
 	dir = 6
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 25;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod8/station)
@@ -15798,7 +15878,8 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_x = -22
+	pixel_x = -22;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod9/station)
@@ -15875,7 +15956,8 @@
 /obj/structure/closet/emcloset,
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube_map"
+	icon_state = "tube_map";
+	pixel_y = 0
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/floor_decal/industrial/warning/corner,
@@ -16376,7 +16458,8 @@
 /obj/machinery/airlock_sensor{
 	frequency = 1380;
 	id_tag = "skipjack_shuttle_dock_sensor";
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = 0
 	},
 /obj/machinery/light/small{
 	dir = 4
@@ -16659,8 +16742,11 @@
 /obj/machinery/computer/cryopod{
 	pixel_x = -32
 	},
-/obj/effect/floor_decal/corner/grey/mono,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/grey/diagonal,
+/obj/effect/floor_decal/corner/grey/diagonal{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod8/station)
 "GL" = (
 /obj/effect/catwalk_plated,
@@ -16692,8 +16778,11 @@
 	dir = 4;
 	pixel_x = -20
 	},
-/obj/effect/floor_decal/corner/grey/mono,
-/turf/simulated/floor/tiled/monotile,
+/obj/effect/floor_decal/corner/grey/diagonal,
+/obj/effect/floor_decal/corner/grey/diagonal{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod9/station)
 "GT" = (
 /obj/effect/floor_decal/industrial/warning/corner{
@@ -16819,7 +16908,8 @@
 /area/maintenance/fourthdeck/aft)
 "He" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
+	dir = 9;
+	pixel_y = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -16857,6 +16947,8 @@
 	frequency = 1380;
 	id_tag = "escape_pod_8";
 	name = "escape pod three controller";
+	pixel_x = 0;
+	pixel_y = 0;
 	tag_door = "escape_pod_8_hatch"
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -16901,6 +16993,8 @@
 	frequency = 1380;
 	id_tag = "escape_pod_9";
 	name = "escape pod four controller";
+	pixel_x = 0;
+	pixel_y = 0;
 	tag_door = "escape_pod_9_hatch"
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -17107,6 +17201,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/structure/cable/green{
@@ -17318,7 +17413,8 @@
 /area/quartermaster/hangar)
 "In" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
+	dir = 9;
+	pixel_y = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -17517,7 +17613,8 @@
 /area/quartermaster/hangar)
 "Jp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
+	dir = 9;
+	pixel_y = 0
 	},
 /obj/effect/floor_decal/techfloor,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -17675,7 +17772,8 @@
 /area/hallway/primary/fourthdeck/aft)
 "JZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
+	dir = 9;
+	pixel_y = 0
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -18537,7 +18635,8 @@
 /obj/random/junk,
 /obj/machinery/light{
 	dir = 8;
-	icon_state = "tube_map"
+	icon_state = "tube_map";
+	pixel_y = 0
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/office)
@@ -18643,6 +18742,7 @@
 /obj/machinery/suit_storage_unit/explorer,
 /obj/machinery/firealarm{
 	dir = 1;
+	pixel_x = 0;
 	pixel_y = -24
 	},
 /obj/effect/floor_decal/borderfloor/cee{
@@ -18730,6 +18830,7 @@
 /obj/machinery/requests_console{
 	department = "Cargo Bay";
 	departmentType = 2;
+	pixel_x = 0;
 	pixel_y = 27
 	},
 /turf/simulated/floor/tiled,
@@ -18948,7 +19049,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_x = -23
+	pixel_x = -23;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/expedition)
@@ -19735,7 +19837,8 @@
 /obj/machinery/airlock_sensor{
 	frequency = 1380;
 	id_tag = "centcom_shuttle_dock_sensor";
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = 0
 	},
 /obj/machinery/light/small{
 	dir = 4
@@ -20062,7 +20165,8 @@
 /obj/machinery/airlock_sensor{
 	frequency = 1380;
 	id_tag = "specops_dock_sensor";
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = 0
 	},
 /obj/machinery/light/small{
 	dir = 4
@@ -20634,6 +20738,7 @@
 /obj/machinery/requests_console{
 	department = "Tool Storage";
 	departmentType = 0;
+	pixel_x = 0;
 	pixel_y = 30
 	},
 /turf/simulated/floor/tiled,
@@ -21037,6 +21142,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/newscaster{
+	pixel_x = 0;
 	pixel_y = -28
 	},
 /obj/machinery/papershredder,
@@ -21147,7 +21253,8 @@
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/fore)
