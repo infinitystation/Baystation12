@@ -299,11 +299,13 @@
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
 	damage = 36
 	armor_penetration = 50
+	agony = 30
 
 // 12,7x55mm
 
 /obj/item/projectile/bullet/rifle/a12755 //this one has 10 ammo in magazine.
 	fire_sound = 'sound/weapons/gunshot/1255.ogg'
+	agony = 40
 	damage = 45 //12x55mm
 	armor_penetration = 60
 	penetrating = 2
@@ -313,6 +315,7 @@
 
 /obj/item/projectile/bullet/rifle/a127
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
+	agony = 60
 	damage = 70
 	stun = 1
 	weaken = 1
@@ -322,6 +325,7 @@
 	penetration_modifier = 1.25
 
 /obj/item/projectile/bullet/rifle/a127/apds
+	agony = 60
 	damage = 65
 	penetrating = 4
 	armor_penetration = 85
@@ -331,6 +335,7 @@
 
 /obj/item/projectile/bullet/rifle/a145
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
+	agony = 60
 	damage = 80 //14,7x114
 	stun = 3
 	weaken = 3
@@ -340,6 +345,7 @@
 	penetration_modifier = 1.25
 
 /obj/item/projectile/bullet/rifle/a145/apds
+	agony = 60
 	damage = 75
 	penetrating = 5
 	armor_penetration = 95

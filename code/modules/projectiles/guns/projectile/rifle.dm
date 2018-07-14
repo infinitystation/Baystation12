@@ -50,6 +50,12 @@
 
 	update_icon()
 
+/obj/item/weapon/gun/projectile/rifle/bolt/verb/scope()
+	set category = "Object"
+	set name = "Use Scope"
+	set popup_menu = 1
+	toggle_scope(usr, 1.3)
+
 /obj/item/weapon/gun/projectile/rifle/bolt/govt
 	name = "H010AW Henry rifle"
 	desc = "The Replica of the rifle of the 20th century. This expensive rifle was popular with hunters and sheriffs in the 20th century. Use .45-70 Govt. rounds."
