@@ -24,7 +24,7 @@
 			return 100
 
 	if(attack_flag == "melee")
-		if(armour_pen+15 < armor)
+		if(armour_pen + 20 < armor)
 			return 100
 
 
