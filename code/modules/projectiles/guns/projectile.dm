@@ -37,6 +37,8 @@
 
 	var/is_jammed = 0           //Whether this gun is jammed
 	var/jam_chance = 0          //Chance it jams on fire
+
+	var/force_mod = 1 			//Damage modificator	
 	//TODO generalize ammo icon states for guns
 	//var/magazine_states = 0
 	//var/list/icon_keys = list()		//keys
@@ -79,6 +81,8 @@
 			ammo_magazine.stored_ammo -= chambered
 
 	if (chambered)
+		chambered.BB.damage *= force_mod
+		chambered.BB.armor_penetration *= force_mod / 2
 		return chambered.BB
 	return null
 

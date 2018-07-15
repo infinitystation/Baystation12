@@ -12,14 +12,11 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/a22lr
-	//name = "ammo box (.357)"
-	//desc = "A box of .357 ammo"
-	//icon_state = "357"
-	name = "speed loader (.22LR)"
+	name = "speed loader (.17LR)"
 	desc = "A speed loader for revolvers."
 	icon_state = "38"
 	caliber = "22"
-	ammo_type = /obj/item/ammo_casing/a22lr
+	ammo_type = /obj/item/ammo_casing/a17
 	max_ammo = 10
 	multiple_sprites = 1
 
@@ -260,6 +257,17 @@
 	max_ammo = 15 //if we lived in a world where normal mags had 30 rounds, this would be a 20 round mag
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/a762/ap
+	name = "magazine (7.62mm AP)"
+	icon_state = "5.56"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = "a762"
+	matter = list(DEFAULT_WALL_MATERIAL = 1800)
+	ammo_type = /obj/item/ammo_casing/a762/ap
+	max_ammo = 15 //if we lived in a world where normal mags had 30 rounds, this would be a 20 round mag
+	multiple_sprites = 1
+
 /obj/item/ammo_magazine/a762/extended
 	name = "extended magazine (7.62mm)"
 	origin_tech = list(TECH_COMBAT = 3)
@@ -336,21 +344,11 @@
 
 
 /obj/item/ammo_magazine/c22m
-	name = "magazine (.22LR)"
+	name = "magazine (.17 HMR)"
 	icon = 'icons/obj/infinity_ammo.dmi'
 	icon_state = "letal22"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/a22lr
-	matter = list(DEFAULT_WALL_MATERIAL = 525)
-	caliber = "22"
-	max_ammo = 15
-
-/obj/item/ammo_magazine/c22m/rubber
-	name = "magazine (.22LR, rubber)"
-	icon = 'icons/obj/infinity_ammo.dmi'
-	icon_state = "ruber22"
-	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/a22lr/rubber
+	ammo_type = /obj/item/ammo_casing/a17
 	matter = list(DEFAULT_WALL_MATERIAL = 525)
 	caliber = "22"
 	max_ammo = 15
@@ -387,7 +385,7 @@
 	icon = 'icons/event/ammo.dmi'
 	icon_state = "smg"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/c57
+	ammo_type = /obj/item/ammo_casing/a57
 	matter = list(DEFAULT_WALL_MATERIAL = 1200)
 	caliber = "57"
 	max_ammo = 30
@@ -395,17 +393,54 @@
 /obj/item/ammo_magazine/mc57/empty
 	initial_ammo = 0
 
-/obj/item/ammo_magazine/uni46x30mm
-	name = "magazine (4.6x30mm universal)"
+/obj/item/ammo_magazine/uni46x20mm
+	name = "magazine (4.6x20mm universal)"
 	icon = 'icons/event/ammo.dmi'
 	icon_state = "smg"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
-	caliber = "46x30mm"
+	caliber = "46x20mm"
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	ammo_type = /obj/item/ammo_casing/uni46x30mm
+	ammo_type = /obj/item/ammo_casing/uni46x20mm
 	max_ammo = 30
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/uni46x30mm/empty
+/obj/item/ammo_magazine/uni46x20mm/empty
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/a3006
+	name = "clip (.30-06)"
+	desc = "A clip for bolt rifles."
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "c762"
+	caliber = "3006"
+	ammo_type = /obj/item/ammo_casing/a3006
+	max_ammo = 5
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/mc57mmt
+	name = "top mounted magazine (5.7x28mm)"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "9mmt"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/a57
+	matter = list(DEFAULT_WALL_MATERIAL = 1200)
+	caliber = "57"
+	max_ammo = 40
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/mc9mmt/empty
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/c3006
+	name = "magazine (.3006)"
+	icon_state = "5.56"
+	mag_type = MAGAZINE
+	caliber = "3006"
+	matter = list(DEFAULT_WALL_MATERIAL = 2300)
+	ammo_type = /obj/item/ammo_casing/a3006
+	max_ammo = 10
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/c3006/empty
 	initial_ammo = 0
