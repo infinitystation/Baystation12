@@ -61,3 +61,7 @@
 	name = "\improper Gambling Room"
 	icon_state = "restrooms"
 	sound_env = MEDIUM_SOFTFLOOR
+
+/area/hallway/primary/bridge/lobby
+	name = "\improper Bridge Lobby"
+	icon_state = "hallA"
