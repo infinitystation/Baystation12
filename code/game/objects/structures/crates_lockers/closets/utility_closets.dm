@@ -65,6 +65,17 @@
 			new /obj/item/clothing/head/helmet/space/emergency(src)
 			new /obj/item/device/oxycandle(src)
 
+obj/structure/closet/emcloset/full/New()
+	new /obj/item/weapon/storage/toolbox/emergency(src)
+	new /obj/item/weapon/tank/emergency/oxygen/engi(src)
+	new /obj/item/weapon/tank/emergency/oxygen/engi(src)
+	new /obj/item/clothing/mask/gas/half(src)
+	new /obj/item/clothing/mask/gas/half(src)
+	new /obj/item/clothing/suit/space/emergency(src)
+	new /obj/item/clothing/suit/space/emergency(src)
+	new /obj/item/clothing/head/helmet/space/emergency(src)
+	new /obj/item/clothing/head/helmet/space/emergency(src)
+
 /obj/structure/closet/emcloset/legacy/New()
 	new /obj/item/weapon/tank/oxygen(src)
 	new /obj/item/clothing/mask/gas(src)

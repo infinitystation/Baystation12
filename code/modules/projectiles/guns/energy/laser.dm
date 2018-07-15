@@ -181,8 +181,7 @@ obj/item/weapon/gun/energy/retro
 	projectile_type = /obj/item/projectile/beam/lastertag/red
 	required_vest = /obj/item/clothing/suit/redtag
 
-/////Bogani rifle ////
-/obj/item/weapon/gun/energy/laser/bogani
+/obj/item/weapon/gun/energy/laser/alien
 	name = "alien rifle"
 	desc = "An alien weapon never before seen by the likes of your species."
 	icon = 'icons/obj/infinity_guns.dmi'
