@@ -141,6 +141,8 @@ var/const/NO_EMAG_ACT = -50
 		if(istype(user) && (get_dist(src, user) <= 2))
 			user.examinate(src)
 			return TOPIC_HANDLED
+		else
+			to_chat(user, "<span class='notice'>You have to go closer if you want to read it.</span>")
 
 /obj/item/weapon/card/id/examine(mob/user)
 	..()

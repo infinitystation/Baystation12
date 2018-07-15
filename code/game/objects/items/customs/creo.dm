@@ -1,6 +1,7 @@
 /obj/item/clothing/mask/gas/creo
 	name = "heavy unit mask"
 	desc = "BFM \"Cyclops\" - A plasteel military facemask designed with intimidation in mind. Has an in-built voice amplifier and enchanced optics to assist it's wearer in combat situation assessment and control. Due to higher production value issued only to promising combat personnel."
+	icon = 'icons/obj/clothing/infinity/masks.dmi'
 	icon_override = 'icons/mob/infinity/masks.dmi'
 	icon_state = "creo"
 	item_state = "creo"
@@ -17,7 +18,7 @@
 	var/sound1 = 'sound/items/creo_1.ogg'
 	var/sound2 = 'sound/items/creo_2.ogg'
 	var/sound3 = 'sound/items/creo_3.ogg'
-	var/can_sound = FALSE
+	var/can_sound = TRUE
 
 /obj/item/clothing/mask/gas/creo/New()
 	last_time = world.time
@@ -38,18 +39,18 @@
 /obj/item/clothing/mask/gas/creo/CtrlClick(var/mob/user)
 	if (can_sound)
 		if (world.time > last_time + 5 SECONDS)
-			playsound(get_turf(user), sound1, 50, 1)
+			playsound(get_turf(user), sound1, 30, 1)
 			last_time = world.time
 	
 
 /obj/item/clothing/mask/gas/creo/AltClick(var/mob/user)
 	if (can_sound)
 		if (world.time > last_time + 5 SECONDS)
-			playsound(get_turf(user), sound2, 50, 1)
+			playsound(get_turf(user), sound2, 30, 1)
 			last_time = world.time
 
 /obj/item/clothing/mask/gas/creo/CtrlShiftClick(var/mob/user)
 	if (can_sound)
 		if (world.time > last_time + 5 SECONDS)
-			playsound(get_turf(user), sound3, 50, 1)
+			playsound(get_turf(user), sound3, 30, 1)
 			last_time = world.time
