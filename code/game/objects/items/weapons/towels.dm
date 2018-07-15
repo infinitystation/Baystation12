@@ -27,7 +27,7 @@
 
 /obj/item/rolled_towel
 	name = "rolled big towel"
-	desc = "Collapsed big towel - looks like you can't use it as a normal one... Using on the beach."
+	desc = "A collapsed big towel - looks like you can't use it as a normal one... Try it on a beach."
 	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "rolled_towel"
 	w_class = 2
@@ -126,7 +126,7 @@
 
 /obj/item/rolled_towel/fitness
 	name = "rolled fitness mat"
-	desc = "Fitness mat - place it in a gym for better training.."
+	desc = "A fitness mat - place it in a gym for better training.."
 	icon_state = "rolled_gym_beach"
 	beach_towel = /obj/structure/towel/fitness
 
@@ -136,14 +136,14 @@
 	rolled_towel = /obj/item/rolled_towel/fitness
 
 /obj/structure/towel/holo
-	name = "holographic big towel"
+	name = "big holographic towel"
 	icon = 'icons/obj/infinity_object.dmi'
 	icon_state = "beach_towel"
 	anchored = 1
 	rolled_towel = null
 
 /obj/structure/towel/holo/attack_hand(mob/living/user as mob)
-	..()
+	return
 
 /obj/structure/towel/holo/ilove
 	name = "*i <3 you* big towel"
