@@ -78,10 +78,20 @@ ckey: kordvik
 character_name: Lyx Omaya
 item_path: /obj/item/device/pmp/personal/csplayer
 }
+{
+ckey: wheatley2013
+character_name: Joshua
+item_path: /obj/item/device/pmp/personal
+}
 #	SHORT ITEMS HERE (3-4)
 {
 ckey: quietproject 
 character_name: Arias Creo 
+item_path: /obj/item/clothing/mask/gas/creo
+}
+{
+ckey: zakterar
+character_name: Maria Salazar
 item_path: /obj/item/clothing/mask/gas/creo
 }
 {

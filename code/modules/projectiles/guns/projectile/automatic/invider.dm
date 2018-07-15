@@ -7,12 +7,12 @@
 	w_class = ITEM_SIZE_LARGE
 	var/projetcile_type = 0
 	force = 10
-	caliber = "46x30mm"
+	caliber = "46x20mm"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 8)
 	slot_flags = SLOT_BELT|SLOT_BACK
 	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/uni46x30mm
-	allowed_magazines = /obj/item/ammo_magazine/uni46x30mm
+	magazine_type = /obj/item/ammo_magazine/uni46x20mm
+	allowed_magazines = /obj/item/ammo_magazine/uni46x20mm
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	one_hand_penalty = 0
@@ -25,7 +25,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/invider/modify_projectile(obj/item/projectile/p, var/list/params = list())
 	if (params["Charged"] == 1 && loaded.len)
-		p = new /obj/item/projectile/bullet/smg/uni46x30mm_charged
+		p = new /obj/item/projectile/bullet/pistol/tiny/fast
 	return p
 
 /obj/item/weapon/gun/projectile/automatic/invider/CtrlAltClick(mob/user)

@@ -94,11 +94,17 @@
 	antag_costs = list(MODE_MERCENARY = 40)
 	path = /obj/item/weapon/gun/energy/gun/nuclear
 
-/datum/uplink_item/item/visible_weapons/sniper
+/datum/uplink_item/item/visible_weapons/amrcarabine
 	name = "Sniper Carabine"
-	item_cost = 35
+	item_cost = 50
 	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/gun/projectile/automatic/amrcarabine
+
+/datum/uplink_item/item/visible_weapons/sniper
+	name = "Grandpa's hunting rifle"
+	item_cost = 30
+	antag_costs = list(MODE_MERCENARY = 15)
+	path = /obj/item/weapon/gun/projectile/rifle/bolt
 
 /datum/uplink_item/item/visible_weapons/heavysniper
 	name = "Anti-materiel Rifle"
