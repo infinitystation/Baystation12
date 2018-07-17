@@ -65,6 +65,7 @@
 	agony = 50
 	damage_type = PAIN //Damage will be handled on the MOB side, to prevent window shattering.
 	step_delay = 0.7
+	armor_penetration = 15
 
 /obj/item/projectile/energy/electrode/green
 	icon_state = "spark_green"
@@ -74,7 +75,7 @@
 	damage = 15
 	agony = 70
 	damage_type = BURN
-	armor_penetration = 20
+	armor_penetration = 26
 
 /obj/item/projectile/energy/declone
 	name = "decloner beam"
