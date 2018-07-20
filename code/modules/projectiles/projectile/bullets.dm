@@ -157,6 +157,7 @@
 	agony = 30
 	embed = 0
 	sharp = 0
+	penetration_modifier = 0.3
 	armor_penetration = 5
 
 // .45
@@ -164,7 +165,6 @@
 /obj/item/projectile/bullet/pistol/medium
 	damage = 26.5
 	armor_penetration = 15
-
 
 // 10mm Auto, 7,62x25mm
 
@@ -194,6 +194,7 @@
 	agony = 50
 	embed = 0
 	sharp = 0
+	penetration_modifier = 0.3
 	armor_penetration = 8
 
 // .50AE
@@ -226,6 +227,7 @@
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
+	agony = 15
 	damage = 7.5
 	pellets = 12
 	range_step = 1.2
