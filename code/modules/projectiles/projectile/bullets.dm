@@ -220,6 +220,7 @@
 	stun = 5
 	embed = 0
 	sharp = 0
+	penetration_modifier = 0.3
 	armor_penetration = 15
 
 //Should do about 80 damage at 1 tile distance (adjacent), and 50 damage at 3 tiles distance.
