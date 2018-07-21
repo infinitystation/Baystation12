@@ -18,4 +18,5 @@ Pen exclusive commands
 \[small\] - \[/small\] : Decreases the size of the text.
 \[list\] - \[/list\] : A list.
 \[*\] : A dot used for lists.
-\[hr\] : Adds a horizontal rule."}
+\[hr\] : Adds a horizontal rule.
+\[img\]http://url\[/img\] : Add an image."}

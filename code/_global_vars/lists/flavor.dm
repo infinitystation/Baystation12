@@ -79,3 +79,68 @@ GLOBAL_LIST_INIT(numbers_as_words, list("One", "Two", "Three", "Four",
 	"Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve",
 	"Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen",
 	"Eighteen", "Nineteen"))
+
+GLOBAL_LIST_INIT(music_tracks, list(
+	"A light in the Darkness" = /music_track/torch,
+	"Beyond" = /music_track/ambispace,
+	"Blues in Velvet Room" = /music_track/bluesinvelvetroom,
+	"Creep" = /music_track/creep,
+	"Clouds of Fire" = /music_track/clouds_of_fire,
+	"Comet Haley" = /music_track/comet_haley,
+	"D`Bert" = /music_track/dilbert,
+	"D`Fort" = /music_track/df_theme,
+	"Endless Space" = /music_track/endless_space,
+	"Elevator" = /music_track/elevator,
+	"Floating" = /music_track/floating,
+	"Maschine Klash" = /music_track/digit_one,
+	"Hurt" = /music_track/hurt,
+	"High Radiation" = /music_track/radiation,
+	"Humanity Stars" = /music_track/human,
+	"Lasers" = /music_track/lasers,
+	"Lone Digger" = /music_track/digger,
+	"Memories of Lysendraa" = /music_track/lysendraa,
+	"Make This Right" = /music_track/right,
+	"Marhaba" = /music_track/marhaba,
+	"Night Call" = /music_track/nightcall,
+	"Night City" = /music_track/miami,
+	"Fleet Party Theme" = /music_track/one_loop,
+	"Salute John" = /music_track/salutjohn,
+	"Space Oddity" = /music_track/space_oddity,
+	"Scratch" = /music_track/level3_mod,
+	"Trai`Tor" = /music_track/absconditus,
+	"Treacherous Voyage " = /music_track/treacherous_voyage,
+	"Through the Times" = /music_track/chasing_time,
+	"Thunderdome" = /music_track/thunderdome,
+	"Wonderful Lady" = /music_track/wonderful,
+	"When We Stand Together" = /music_track/together
+))
+
+/proc/setup_music_tracks(var/list/tracks)
+	. = list()
+	var/track_list = LAZYLEN(tracks) ? tracks : GLOB.music_tracks
+	for(var/track_name in track_list)
+		var/track_path = track_list[track_name]
+		. += new/datum/track(track_name, track_path)
+
+GLOBAL_LIST_INIT(possible_cable_colours, SetupCableColors())
+
+/proc/SetupCableColors()
+	. = list()
+
+	var/invalid_cable_coils = list(
+		/obj/item/stack/cable_coil/single,
+		/obj/item/stack/cable_coil/cut,
+		/obj/item/stack/cable_coil/cyborg,
+		/obj/item/stack/cable_coil/random
+	)
+
+	var/special_name_mappings = list(/obj/item/stack/cable_coil = "Red")
+
+	for(var/coil_type in (typesof(/obj/item/stack/cable_coil) - invalid_cable_coils))
+		var/name = special_name_mappings[coil_type] || capitalize(copytext_after_last("[coil_type]", "/"))
+
+		var/obj/item/stack/cable_coil/C = coil_type
+		var/color = initial(C.color)
+
+		.[name] = color
+	. = sortAssoc(.)

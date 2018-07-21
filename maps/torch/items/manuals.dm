@@ -13,7 +13,7 @@
 		</head>
 
 		<body>
-		<iframe width='100%' height='97%' src="https://wiki.infinity-ss13.ru/index.php?title=Закон_ЦПСС&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+		<iframe width='100%' height='97%' src="https://wiki.infinity-ss13.info/index.php?title=Закон_ЦПСС&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
 		</body>
 
 		</html>
@@ -36,7 +36,7 @@
 		</head>
 
 		<body>
-		<iframe width='100%' height='97%' src="https://wiki.infinity-ss13.ru/index.php?title=Военно-Юридический_Кодекс_ПСС&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+		<iframe width='100%' height='97%' src="https://wiki.infinity-ss13.info/index.php?title=Военно-Юридический_Кодекс_ПСС&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
 		</body>
 
 		</html>
@@ -58,7 +58,7 @@
 		</head>
 
 		<body>
-		<iframe width='100%' height='97%' src="https://wiki.infinity-ss13.ru/index.php?title=Стандартные_Процедуры_ЦПСС&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+		<iframe width='100%' height='97%' src="https://wiki.infinity-ss13.info/index.php?title=Стандартные_Процедуры_ЦПСС&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
 		</body>
 
 		</html>
@@ -92,6 +92,13 @@
 	They come in self-contained life support bags, with additional measures to make them easier to use for, let's say, more sensitive personnel. As our preliminary study showed, 75% more subjects were more willing to harm a (consenting) intern if their face was fully hidden.<br>
 	We are expecting great results from this program. Do not disappoint us.<br>
 	<i>H.B.</i></tt>
+	"}
+
+/obj/item/weapon/paper/liason_note
+	name = "note"
+	info = {"
+	<i>Pick your way out.<br>
+	H.B.</i>
 	"}
 
 /obj/item/weapon/folder/envelope/captain

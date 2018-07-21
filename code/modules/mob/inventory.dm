@@ -122,13 +122,13 @@ var/list/slot_equipment_priority = list( \
 
 //Puts the item into your l_hand if possible and calls all necessary triggers/updates. returns 1 on success.
 /mob/proc/put_in_l_hand(var/obj/item/W)
-	if(!istype(W))//lying ||
+	if(lying || !istype(W))
 		return 0
 	return 1
 
 //Puts the item into your r_hand if possible and calls all necessary triggers/updates. returns 1 on success.
 /mob/proc/put_in_r_hand(var/obj/item/W)
-	if(!istype(W))//lying ||
+	if(lying || !istype(W))
 		return 0
 	return 1
 
@@ -291,7 +291,3 @@ var/list/slot_equipment_priority = list( \
 		var/obj/item/I = entry
 		if(I.body_parts_covered & body_parts)
 			. += I
-
-/mob/proc/get_all_slots()
- 	return list(wear_mask, back, l_hand, r_hand)
-

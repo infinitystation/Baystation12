@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/colt
-	name = "vintage .45 pistol"
+	name = "colt pistol"
 	desc = "A cheap Martian knock-off of a Colt M1911. Uses .45 rounds."
 	magazine_type = /obj/item/ammo_magazine/c45m
 	allowed_magazines = /obj/item/ammo_magazine/c45m
@@ -8,14 +8,19 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	load_method = MAGAZINE
 
-/obj/item/weapon/gun/projectile/colt/officer
-	name = "military .45 pistol"
-	desc = "The WT45 - a mass produced kinetic sidearm well-known in films and entertainment programming for being the daily carry choice issued to officers of the Sol Central Government Defense Forces. Uses .45 rounds."
+/obj/item/weapon/gun/projectile/military
+	name = "WT45 pistol"
+	desc = "The WT45 - a mass produced kinetic sidearm in widespread service with the SCGDF. Uses .45 rounds."
+	magazine_type = /obj/item/ammo_magazine/c45mds/rubber
+	allowed_magazines = /obj/item/ammo_magazine/c45mds
 	icon_state = "usp"
+	caliber = ".45"
+	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)
+	load_method = MAGAZINE
 	accuracy = 0.35
 	fire_delay = 6.5
 
-/obj/item/weapon/gun/projectile/colt/officer/update_icon()
+/obj/item/weapon/gun/projectile/military/update_icon()
 	..()
 	if(ammo_magazine && ammo_magazine.stored_ammo.len)
 		icon_state = "usp"
@@ -23,10 +28,10 @@
 		icon_state = "usp-e"
 
 /obj/item/weapon/gun/projectile/sec
-	name = ".45 pistol"
+	name = "Mk58 pistol"
 	desc = "The NT Mk58 is a cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Found pretty much everywhere humans are. Uses .45 rounds."
 	icon_state = "secguncomp"
-	magazine_type = /obj/item/ammo_magazine/c45m/flash
+	magazine_type = null
 	allowed_magazines = /obj/item/ammo_magazine/c45m
 	caliber = ".45"
 	accuracy = -0.35
@@ -42,14 +47,14 @@
 		icon_state = "secguncomp-e"
 
 /obj/item/weapon/gun/projectile/sec/flash
-	name = ".45 signal pistol"
+	magazine_type = /obj/item/ammo_magazine/c45m/flash
 
 /obj/item/weapon/gun/projectile/sec/lethal
 	magazine_type = /obj/item/ammo_magazine/c45m
 
 /obj/item/weapon/gun/projectile/sec/wood
 	desc = "The NT Mk58 is a cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. This one has a sweet wooden grip, among other modifications. Uses .45 rounds."
-	name = "custom .45 Pistol"
+	name = "Mk58 custom pistol"
 	icon_state = "secgundark"
 	accuracy = 0
 
@@ -73,7 +78,7 @@
 	allowed_magazines = /obj/item/ammo_magazine/c45m
 
 /obj/item/weapon/gun/projectile/magnum_pistol
-	name = ".50 magnum pistol"
+	name = "'Magnus' pistol"
 	desc = "The HelTek Magnus, a robust terran handgun that uses .50 AE ammo."
 	icon_state = "magnum"
 	item_state = "revolver"
@@ -113,8 +118,26 @@
 	else
 		icon_state = "gyropistol"
 
+/obj/item/weapon/gun/projectile/beretta
+	name = "P9 Brigadier pistol"
+	desc = "The Lumoco Arms P9 Brigadier. A robust sidearm designed for military duty. Uses 9mm rounds."
+	magazine_type = /obj/item/ammo_magazine/mc9mmds
+	allowed_magazines = /obj/item/ammo_magazine/mc9mmds
+	icon_state = "92fs"
+	caliber = "9mm"
+	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)
+	load_method = MAGAZINE
+	accuracy = 0.35
+
+/obj/item/weapon/gun/projectile/beretta/update_icon()
+	..()
+	if(ammo_magazine && ammo_magazine.stored_ammo.len)
+		icon_state = "92fs"
+	else
+		icon_state = "92fs-e"
+
 /obj/item/weapon/gun/projectile/pistol
-	name = "holdout pistol"
+	name = "P3 pistol"
 	desc = "The Lumoco Arms P3 Whisper. A small, easily concealable gun. Uses 9mm rounds."
 	icon_state = "pistol"
 	item_state = null
@@ -176,8 +199,8 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/weapon/gun/projectile/spistol
-	name = ".22LR pistol"
-	desc = "The TH22. A small sidearm, with futuristic design. Uses .22LR rounds."
+	name = "TH17 pistol"
+	desc = "The TH17. A small sidearm, with futuristic design. Uses .17HMR rounds."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "pistol0"
 	item_icons = list(
@@ -186,7 +209,7 @@
 		)
 	item_state = "gun"
 	w_class = ITEM_SIZE_SMALL
-	caliber = "22"
+	caliber = "17"
 	fire_delay = 1
 	origin_tech = list(TECH_COMBAT = 2)
 	load_method = MAGAZINE
@@ -208,8 +231,7 @@
 	item_state = "sawnshotgun"
 	handle_casings = CYCLE_CASINGS //player has to take the old casing out manually before reloading
 	load_method = SINGLE_CASING
-	max_shells = 1 //literally just a barrel
-	have_safety = 0
+	max_shells = 1 //literally just a barrel	
 
 	var/global/list/ammo_types = list(
 		/obj/item/ammo_casing/a357              = ".357",
@@ -224,6 +246,9 @@
 		/obj/item/ammo_casing/a762              = "7.62mm",
 		/obj/item/ammo_casing/a556              = "5.56mm"
 		)
+
+/obj/item/weapon/gun/projectile/pirate/toggle_safety(var/mob/user)
+	to_chat(user, "<span class='warning'>There's no safety on \the [src]!</span>")
 
 /obj/item/weapon/gun/projectile/pirate/New()
 	ammo_type = pick(ammo_types)

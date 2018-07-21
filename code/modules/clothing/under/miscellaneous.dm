@@ -564,6 +564,9 @@
 	item_state = "jensensuit"
 	worn_state = "pcrc"
 
+/obj/item/clothing/under/pcrc/tactical
+	starting_accessories = list(/obj/item/clothing/accessory/ubac)
+
 /obj/item/clothing/under/grayson
 	name = "\improper Grayson overalls"
 	desc = "A set of overalls belonging to Grayson Manufactories, a manufacturing and mining company."
@@ -582,6 +585,18 @@
 	icon_state = "mbill"
 	worn_state = "mbill"
 
+/obj/item/clothing/under/morpheus
+	name = "\improper Morpheus Cyberkinetics uniform"
+	desc = "A pair of overalls belonging to Morpheus Cyberkinetics, an IPC manufacturing company. It doesn't look like it would be comfortable on a human."
+	icon_state = "morpheus"
+	worn_state = "morpheus"
+
+/obj/item/clothing/under/skinner
+	name = "\improper Skinner Catering uniform"
+	desc = "A uniform belonging to Skinner's Catering, a dining company."
+	icon_state = "skinner"
+	worn_state = "skinner"
+
 // Replace this with actual uniform when someone wants to sprite one
 /obj/item/clothing/under/confederacy
 	name = "\improper Confederate uniform"
@@ -594,6 +609,9 @@
 	desc = "A uniform belonging to Strategic Assault and Asset Retention Enterprises, a minor private military corporation."
 	icon_state = "saare"
 	worn_state = "saare"
+
+/obj/item/clothing/under/saare/tactical
+	starting_accessories = list(/obj/item/clothing/accessory/ubac/green)
 
 /obj/item/clothing/under/frontier
 	name = "frontier clothes"
@@ -681,3 +699,10 @@
 	worn_state = "sterile"
 	permeability_coefficient = 0.50
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 30, rad = 0)
+
+/obj/item/clothing/under/kimono
+	desc = "A traditional robe with remarkably long sleeves, mostly worn by women. <i>Sugoi.</i>"
+	name = "kimono"
+	icon_state = "kimono"
+	worn_state = "kimono"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS

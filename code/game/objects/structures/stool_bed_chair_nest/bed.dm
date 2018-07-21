@@ -138,6 +138,19 @@
 	else
 		..()
 
+/obj/structure/bed/Move()
+	. = ..()
+	if(buckled_mob)
+		buckled_mob.forceMove(src.loc)
+
+/obj/structure/bed/forceMove()
+	. = ..()
+	if(buckled_mob)
+		if(isturf(src.loc))
+			buckled_mob.forceMove(src.loc)
+		else
+			unbuckle_mob()
+
 /obj/structure/bed/proc/remove_padding()
 	if(padding_material)
 		padding_material.place_sheet(get_turf(src))
@@ -172,12 +185,6 @@
 /obj/structure/bed/alien/New(var/newloc)
 	..(newloc,"resin")
 
-/obj/structure/bed/bogani
-	name = "alien bed"
-	desc = "a strange looking bed, not from something you've seen before."
-	icon_state = "bogbed"
-
-
 /*
  * Roller beds
  */
@@ -187,27 +194,23 @@
 	icon_state = "down"
 	anchored = 0
 	buckle_pixel_shift = "x=0;y=6"
-
-	var/up_state ="up"
-	var/down_state = "down"
-	var/roller_type = /obj/item/roller
+	var/item_form_type = /obj/item/roller	//The folded-up object path.
 
 /obj/structure/bed/roller/update_icon()
-	return // Doesn't care about material or anything else.
+	if(density)
+		icon_state = "up"
+	else
+		icon_state = "down"
 
-/obj/structure/bed/roller/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(isWrench(W) || istype(W,/obj/item/stack) || isWirecutter(W))
-		return
-	else if(istype(W,/obj/item/roller_holder))
-		if(buckled_mob)
-			user_unbuckle_mob(user)
-		else
-			visible_message("[user] collapses \the [src.name].")
-			new/obj/item/roller(get_turf(src))
-			spawn(0)
-				qdel(src)
+/obj/structure/bed/roller/attackby(obj/item/I as obj, mob/user as mob)
+	if(isWrench(I) || istype(I, /obj/item/stack) || isWirecutter(I))
 		return
 	..()
+
+/obj/structure/bed/roller/proc/collapse()
+	visible_message("[usr] collapses [src].")
+	new item_form_type(get_turf(src))
+	qdel(src)
 
 /obj/item/roller
 	name = "roller bed"
@@ -217,159 +220,34 @@
 	item_state = "rbed"
 	slot_flags = SLOT_BACK
 	w_class = ITEM_SIZE_HUGE // Can't be put in backpacks. Oh well. For now.
-
-	var/bed_type = /obj/structure/bed/roller
+	var/structure_form_type = /obj/structure/bed/roller	//The deployed form path.
 
 /obj/item/roller/attack_self(mob/user)
-		var/obj/structure/bed/roller/R = new bed_type(user.loc)
-		R.add_fingerprint(user)
-		qdel(src)
-
-/obj/item/roller/attackby(obj/item/weapon/W as obj, mob/user as mob)
-
-	if(istype(W,/obj/item/roller_holder))
-		var/obj/item/roller_holder/RH = W
-		if(!RH.held)
-			to_chat(user, "<span class='notice'>You collect the roller bed.</span>")
-			src.forceMove(RH)
-			RH.held = src
-			return
-
-	..()
-
-/obj/item/roller_holder
-	name = "roller bed rack"
-	desc = "A rack for carrying a collapsed roller bed."
-	icon = 'icons/obj/rollerbed.dmi'
-	icon_state = "borgbed_stored"
-	var/obj/structure/bed/roller/borg/held
-
-/obj/item/roller_holder/update_icon()
-	icon_state = "borgbed_[held ? "stored" : "deployed"]"
-
-/obj/item/roller_holder/New()
-	..()
-	held = new(src)
-
-/obj/item/roller_holder/attack_self(mob/user as mob)
-
-	if(!held)
-		to_chat(user, "<span class='notice'>The [src.name] is empty.</span>")
-		return
-
-	to_chat(user, "<span class='notice'>You deploy \the [held].</span>")
-	held.add_fingerprint(user)
-	held.forceMove(get_turf(src))
-	held = null
-	update_icon()
-
-/obj/structure/bed/roller/proc/move_buckled()
-	if(buckled_mob)
-		if(buckled_mob.buckled == src)
-			buckled_mob.forceMove(src.loc)
-		else
-			buckled_mob = null
+	var/obj/structure/bed/roller/R = new structure_form_type(user.loc)
+	R.add_fingerprint(user)
+	qdel(src)
 
 /obj/structure/bed/roller/post_buckle_mob(mob/living/M as mob)
+	. = ..()
 	if(M == buckled_mob)
 		set_density(1)
-		icon_state = up_state
+		icon_state = "up"
 	else
 		set_density(0)
-		icon_state = down_state
-
-	return ..()
-
-/obj/structure/bed/roller/buckle_mob()
-	. = ..()
-	if(.)
-		GLOB.moved_event.register(src, src, /obj/structure/bed/roller/proc/move_buckled)
-
-/obj/structure/bed/roller/unbuckle_mob()
-	GLOB.moved_event.unregister(src, src)
-	return ..()
+		icon_state = "down"
 
 /obj/structure/bed/roller/MouseDrop(over_object, src_location, over_location)
 	..()
-	if((over_object == usr && (in_range(src, usr) || usr.contents.Find(src))))
-		if(!ishuman(usr))	return
-		if(buckled_mob)	return 0
-		visible_message("[usr] collapses \the [src.name].")
-		new roller_type(get_turf(src))
-		spawn(0)
-			qdel(src)
-		return
+	if(!CanMouseDrop(over_object))	return
+	if(!(ishuman(usr) || isrobot(usr)))	return
+	if(buckled_mob)	return
 
-/obj/item/roller_holder/Destroy()
-	if(held)
-		qdel(held)
-		held = null
-	..()
+	collapse()
 
-/obj/item/roller/borg
-	name = "hover roller bed"
-	desc = "A collapsed cyborg hover roller bed that can be carried around."
+/obj/item/robot_rack/roller
+	name = "roller bed rack"
+	desc = "A rack for carrying collapsed roller beds. Can also be used for carrying ironing boards."
 	icon = 'icons/obj/rollerbed.dmi'
-	icon_state = "borgbed_stored"
-	bed_type = /obj/structure/bed/roller/borg
-	w_class = ITEM_SIZE_NORMAL
-
-/obj/structure/bed/roller/borg
-	name = "hover roller bed"
-	icon = 'icons/obj/rollerbed.dmi'
-	icon_state = "borgbed_down"
-	up_state ="borgbed_up"
-	down_state = "borgbed_down"
-	roller_type = /obj/item/roller/borg
-	w_class = ITEM_SIZE_NORMAL
-
-/obj/structure/bed/sofa
-	name = "comfy sofa"
-	desc = "So lovely, uh."
-	icon_state = "sofa_right"
-	buckle_dir = 0
-	buckle_lying = 0
-	color = null
-
-/obj/structure/bed/sofa/left
-	icon_state = "sofa_left"
-
-/obj/structure/bed/sofa/New(var/newloc)
-	base_icon = icon_state
-	..(newloc,"plastic")
-
-/obj/structure/bed/sofa/update_icon()
-	..()
-	if(src.dir == NORTH)
-		src.layer = 5
-	else
-		src.layer = OBJ_LAYER
-
-/obj/structure/bed/sofa/black
-	icon_state = "couchblack_middle"
-
-/obj/structure/bed/sofa/black/left
-	icon_state = "couchblack_left"
-
-/obj/structure/bed/sofa/black/right
-	icon_state = "couchblack_right"
-
-
-/obj/structure/bed/sofa/beige
-	icon_state = "couchbeige_middle"
-
-/obj/structure/bed/sofa/beige/left
-	icon_state = "couchbeige_left"
-
-/obj/structure/bed/sofa/beige/right
-	icon_state = "couchbeige_right"
-
-
-/obj/structure/bed/sofa/brown
-	icon_state = "couchbrown_middle"
-
-/obj/structure/bed/sofa/brown/left
-	icon_state = "couchbrown_left"
-
-/obj/structure/bed/sofa/brown/right
-	icon_state = "couchbrown_right"
+	icon_state = "folded"
+	object_type = /obj/item/roller
+	interact_type = /obj/structure/bed/roller

@@ -372,6 +372,7 @@
 		eject_occupant(user)
 		return  // eject_occupant opens the door, so we need to return
 	isopen = !isopen
+	playsound(src, 'sound/machines/suitstorage_cycledoor.ogg', 50, 0)
 	return
 
 
@@ -388,6 +389,7 @@
 	if(isopen)
 		return
 	islocked = !islocked
+	playsound(src, 'sound/machines/suitstorage_lockdoor.ogg', 50, 0)
 	return
 
 

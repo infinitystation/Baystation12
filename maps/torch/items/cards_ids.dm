@@ -192,4 +192,3 @@
 	fingerprint_hash = md5(registered_name)
 	dna_hash = md5(fingerprint_hash)
 	blood_type = RANDOM_BLOOD_TYPE
-	update_name()

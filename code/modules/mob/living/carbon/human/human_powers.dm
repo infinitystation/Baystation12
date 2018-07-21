@@ -1,6 +1,44 @@
 	// These should all be procs, you can add them to humans/subspecies by
 // species.dm's inherent_verbs ~ Z
 
+/****************
+ true human verbs
+****************/
+/mob/living/carbon/human/proc/tie_hair()
+	set name = "Tie Hair"
+	set desc = "Style your hair."
+	set category = "IC"
+
+	if(incapacitated())
+		to_chat(src, "<span class='warning'>You can't mess with your hair right now!</span>")
+		return
+
+	if(h_style)
+		var/datum/sprite_accessory/hair/hair_style = GLOB.hair_styles_list[h_style]
+		var/selected_string
+		if(!(hair_style.flags & HAIR_TIEABLE))
+			to_chat(src, "<span class ='warning'>Your hair isn't long enough to tie.</span>")
+			return
+		else
+			var/list/datum/sprite_accessory/hair/valid_hairstyles = list()
+			for(var/hair_string in GLOB.hair_styles_list)
+				var/list/datum/sprite_accessory/hair/test = GLOB.hair_styles_list[hair_string]
+				if(test.flags & HAIR_TIEABLE)
+					valid_hairstyles.Add(hair_string)
+			selected_string = input("Select a new hairstyle", "Your hairstyle", hair_style) as null|anything in valid_hairstyles
+		if(incapacitated())
+			to_chat(src, "<span class='warning'>You can't mess with your hair right now!</span>")
+			return
+		else if(selected_string && h_style != selected_string)
+			h_style = selected_string
+			regenerate_icons()
+			visible_message("<span class='notice'>[src] pauses a moment to style their hair.</span>")
+		else
+			to_chat(src, "<span class ='notice'>You're already using that style.</span>")
+
+/****************
+ misc alien verbs
+****************/
 /mob/living/carbon/human/proc/tackle()
 	set category = "Abilities"
 	set name = "Tackle"
@@ -158,6 +196,20 @@
 		to_chat(src, "<span class='alium'>You channel a message: \"[msg]\" to [M]</span>")
 	return
 
+/mob/living/carbon/human/proc/darksight()
+	set name = "Night Vision"
+	set desc = "Turning on your natural ability."
+	set category = "Abilities"
+
+	var/obj/item/organ/internal/eyes/E = internal_organs_by_name[BP_EYES]
+	if(E.night_vision == 0)
+		E.night_vision = 1
+	else
+		E.night_vision = 0
+
+/***********
+ diona verbs
+***********/
 /mob/living/carbon/human/proc/diona_split_nymph()
 	set name = "Split"
 	set desc = "Split your humanoid form into its constituent nymphs."
@@ -217,6 +269,10 @@
 	visible_message("<span class='warning'>\The [src] quivers slightly, then splits apart with a wet slithering noise.</span>")
 	qdel(src)
 
+
+/************
+ nabber verbs
+************/
 /mob/living/carbon/human/proc/can_nab(var/mob/living/target)
 	if(QDELETED(src))
 		return FALSE
@@ -308,25 +364,36 @@
 	if(r_hand) unEquip(r_hand)
 
 	if(do_after(src, 30))
-		hidden = is_cloaked()
-		pulling_punches = !pulling_punches
-		nabbing = !pulling_punches
+		arm_swap()
+	else
+		to_chat(src, "<span class='notice'>You stop adjusting your arms and don't switch between them.</span>")
 
-		if(pulling_punches)
-			current_grab_type = all_grabobjects[GRAB_NORMAL]
+/mob/living/carbon/human/proc/arm_swap(var/forced = FALSE)
+	if(l_hand) unEquip(l_hand)
+	if(r_hand) unEquip(r_hand)
+	var/hidden = is_cloaked()
+	pulling_punches = !pulling_punches
+	nabbing = !pulling_punches
+
+	if(pulling_punches)
+		current_grab_type = all_grabobjects[GRAB_NORMAL]
+		if(forced)
+			to_chat(src, "<span class='notice'>You can't keep your hunting arms prepared and they drop, forcing you to use your manipulation arms.</span>")
+			if(!hidden)
+				visible_message("<span class='notice'>[src] falters, hunting arms failing.</span>")
+		else
 			to_chat(src, "<span class='notice'>You relax your hunting arms, lowering the pressure and folding them tight to your thorax.\
 			You reach out with your manipulation arms, ready to use complex items.</span>")
 			if(!hidden)
 				visible_message("<span class='notice'>[src] seems to relax as \he folds \his massive curved arms to \his thorax and reaches out \
 				with \his small handlike limbs.</span>")
-		else
-			current_grab_type = all_grabobjects[GRAB_NAB]
-			to_chat(src, "<span class='notice'>You pull in your manipulation arms, dropping any items and unfolding your massive hunting arms in preparation of grabbing prey.</span>")
-			if(!hidden)
-				visible_message("<span class='warning'>[src] tenses as \he brings \his smaller arms in close to \his body. \His two massive spiked arms reach \
-				out. \He looks ready to attack.</span>")
 	else
-		to_chat(src, "<span class='notice'>You stop adjusting your arms and don't switch between them.</span>")
+		current_grab_type = all_grabobjects[GRAB_NAB]
+		to_chat(src, "<span class='notice'>You pull in your manipulation arms, dropping any items and unfolding your massive hunting arms in preparation of grabbing prey.</span>")
+		if(!hidden)
+			visible_message("<span class='warning'>[src] tenses as \he brings \his smaller arms in close to \his body. \His two massive spiked arms reach \
+			out. \He looks ready to attack.</span>")
+
 
 /mob/living/carbon/human/proc/change_colour()
 	set category = "Abilities"
@@ -367,3 +434,24 @@
 			skin_state = SKIN_NORMAL
 	update_skin(1)
 
+
+//Aurora
+
+/mob/living/carbon/human/proc/self_destruct()
+	set category = "Abilities"
+	set name = "Engage Self-Destruct"
+	set desc = "When all else has failed, bite the bullet."
+
+	if(stat || paralysis || stunned || weakened || lying)
+		to_chat(src, "<span class='warning'>You cannot do that in your current state.</span>")
+		return
+
+	src.visible_message(
+	"<span class='danger'>\The [src] begins to beep ominously!</span>",
+	"<span class='danger'>WARNING: SELF-DESTRUCT ENGAGED. Unit termination finalized in three seconds!</span>"
+	)
+	sleep(10)
+	playsound(src, 'sound/items/countdown.ogg', 125, 1)
+	sleep(20)
+	explosion(src, -1, 1, 3)
+	src.gib()

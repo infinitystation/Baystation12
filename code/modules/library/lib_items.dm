@@ -55,7 +55,7 @@
 	if(contents.len)
 		var/obj/item/weapon/book/choice = input("Which book would you like to remove from the shelf?") as null|obj in contents
 		if(choice)
-			if(!usr.canmove || usr.stat || usr.restrained() || !in_range(loc, usr))
+			if(!CanPhysicallyInteract(user))
 				return
 			if(ishuman(user))
 				if(!user.get_active_hand())
@@ -163,6 +163,11 @@
 		message_admins("[key_name_admin(user)]<A HREF='?_src_=holder;adminmoreinfo=\ref[user]'>?</A> (<A HREF='?_src_=holder;adminplayerobservefollow=\ref[user]'>FLW</A>) прочитал(а) книгу [name]/[title].")
 		log_game("[user.ckey]/[user.real_name] прочитал(а) книгу [name]/[title].")
 		onclose(user, "book")
+		playsound(src.loc, pick('sound/items/BOOK_Turn_Page_1.ogg',\
+			'sound/items/BOOK_Turn_Page_2.ogg',\
+			'sound/items/BOOK_Turn_Page_3.ogg',\
+			'sound/items/BOOK_Turn_Page_4.ogg',\
+ 			), rand(40,80), 1)
 	else
 		to_chat(user, "This book is completely blank!")
 
@@ -234,3 +239,4 @@
 /obj/item/weapon/book/manual
 	icon = 'icons/obj/library.dmi'
 	unique = 1   // 0 - Normal book, 1 - Should not be treated as normal book, unable to be copied, unable to be modified
+	var/url // Full link to wiki-page

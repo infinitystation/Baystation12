@@ -30,7 +30,7 @@
 	icon_living = "evilcrab"
 	icon_dead = "evilcrab_dead"
 
-	speak_emote = list("chitters","щёлкает")
+	speak_emote = list("chitters","clicks")
 
 
 	health = 200
@@ -39,6 +39,7 @@
 	melee_damage_upper = 15
 	attacktext = "pinches"
 	resistance = 9
+	can_escape = 1 //snip snip
 
 /*familiar version of the Pike w/o all the other hostile/carp stuff getting in the way (namely life)
 */
@@ -53,12 +54,13 @@
 	icon_dead = "shark_dead"
 	pixel_x = -16
 
-	speak_emote = list("скрежещет")
+	speak_emote = list("gnashes")
 
 	health = 100
 	maxHealth = 100
 	melee_damage_lower = 10
 	melee_damage_upper = 10
+	can_escape = 1
 
 	min_gas = null
 
@@ -74,7 +76,7 @@
 	icon_state = "horror"
 	icon_living = "horror"
 
-	speak_emote = list("стонет", "говорит")
+	speak_emote = list("moans", "groans")
 
 	response_help = "thinks better of touching"
 
@@ -123,6 +125,8 @@
 		return
 	if(stat == UNCONSCIOUS || resting)
 		icon_state = icon_rest
+	else if(stat != DEAD)
+		icon_state = icon_living
 
 /mob/living/simple_animal/familiar/pet/mouse
 	name = "mouse"
@@ -132,7 +136,7 @@
 	icon_dead = "mouse_gray_dead"
 	icon_rest = "mouse_gray_sleep"
 
-	speak_emote = list("пищит")
+	speak_emote = list("squeeks")
 	holder_type = /obj/item/weapon/holder/mouse
 	pass_flags = PASS_FLAG_TABLE
 	mob_size = MOB_MINISCULE
@@ -143,6 +147,7 @@
 	maxHealth = 15
 	melee_damage_lower = 1
 	melee_damage_upper = 1
+	can_escape = 1
 	attacktext = "nibbles"
 
 	wizardy_spells = list(/spell/aoe_turf/smoke)
@@ -162,7 +167,7 @@
 	icon_rest = "cat3_rest"
 
 
-	speak_emote = list("meows", "мурлычит")
+	speak_emote = list("meows", "purrs")
 	holder_type = /obj/item/weapon/holder/cat
 	mob_size = MOB_SMALL
 

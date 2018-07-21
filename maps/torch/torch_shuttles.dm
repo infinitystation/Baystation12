@@ -186,6 +186,8 @@
 	dock_target = "petrov_shuttle_airlock"
 	waypoint_station = "nav_petrov_start"
 	waypoint_offsite = "nav_petrov_out"
+	logging_home_tag = "nav_petrov_start"
+	logging_access = access_petrov_helm
 
 /obj/effect/shuttle_landmark/petrov/start
 	name = "First Deck"
@@ -552,7 +554,7 @@
 	waypoint_station = "nav_cargo_station"
 
 /obj/effect/shuttle_landmark/supply/centcom
-	name = "Centcom"
+	name = "Offsite"
 	landmark_tag = "nav_cargo_start"
 
 /obj/effect/shuttle_landmark/supply/station
@@ -563,14 +565,15 @@
 
 /datum/shuttle/autodock/overmap/exploration_shuttle
 	name = "Charon"
-	move_time = 90 //1,5 minutes
+	move_time = 90
 	shuttle_area = list(/area/exploration_shuttle/cockpit, /area/exploration_shuttle/atmos, /area/exploration_shuttle/power, /area/exploration_shuttle/crew, /area/exploration_shuttle/cargo, /area/exploration_shuttle/airlock)
 	dock_target = "calypso_shuttle"
 	current_location = "nav_hangar_calypso"
 	landmark_transition = "nav_transit_calypso"
 	range = 1
 	fuel_consumption = 4
-	defer_initialisation = TRUE
+	logging_home_tag = "nav_hangar_calypso"
+	logging_access = access_expedition_shuttle_helm
 
 /obj/effect/shuttle_landmark/torch/hangar/exploration_shuttle
 	name = "Charon Hangar"
@@ -613,6 +616,8 @@
 	sound_takeoff = 'sound/effects/rocket.ogg'
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
 	fuel_consumption = 2
+	logging_home_tag = "nav_hangar_guppy"
+	logging_access = access_guppy_helm
 
 /obj/effect/shuttle_landmark/torch/hangar/guppy
 	name = "Guppy Hangar"
@@ -647,11 +652,14 @@
 /datum/shuttle/autodock/overmap/aquila
 	name = "Aquila"
 	move_time = 60
-	shuttle_area = /area/aquila_hangar/start
+	shuttle_area = list(/area/aquila/cockpit, /area/aquila/maintenance, /area/aquila/engineering, /area/aquila/secure_storage, /area/aquila/passenger,
+	/area/aquila/mess, /area/aquila/storage, /area/aquila/medical, /area/aquila/troops, /area/aquila/head, /area/aquila/crew, /area/aquila/airlock)
 	current_location = "nav_hangar_aquila"
 	landmark_transition = "nav_transit_aquila"
 	dock_target = "aquila_shuttle"
 	range = 2
+	logging_home_tag = "nav_hangar_aquila"
+	logging_access = access_aquila_helm
 
 /obj/effect/shuttle_landmark/torch/hangar/aquila
 	name = "Aquila Hangar"
@@ -682,3 +690,7 @@
 /obj/effect/shuttle_landmark/torch/transit/aquila
 	name = "In transit"
 	landmark_tag = "nav_transit_aquila"
+
+//Makes the deck management program use hangar access
+/datum/nano_module/deck_management
+	default_access = list(access_hangar, access_cargo, access_heads)

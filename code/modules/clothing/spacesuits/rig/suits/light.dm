@@ -27,6 +27,7 @@
 	name = "suit"
 	breach_threshold = 18 //comparable to voidsuits
 	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit_if.dmi'
 		)
 
@@ -46,7 +47,9 @@
 	name = "hood"
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi'
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
+
 	)
 
 /obj/item/weapon/rig/light/hacker
@@ -117,7 +120,7 @@
 		/obj/item/rig_module/vision,
 		/obj/item/rig_module/voice,
 		/obj/item/rig_module/fabricator/energy_net,
-		/obj/item/rig_module/chem_dispenser,
+		/obj/item/rig_module/chem_dispenser/combat,
 		/obj/item/rig_module/grenade_launcher/ninja,
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/power_sink,
@@ -130,8 +133,6 @@
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/rig_back.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
 		)
-
-	..()
 
 /obj/item/weapon/rig/light/ninja/verb/rename_suit()
 	set name = "Name Ninja Suit"

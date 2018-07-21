@@ -18,8 +18,8 @@
 		/obj/item/clothing/head/hardhat/white,
 		/obj/item/clothing/head/welding,
 		/obj/item/clothing/gloves/insulated,
-		/obj/item/weapon/cartridge/ce,
 		/obj/item/device/radio/headset/heads/ce,
+		/obj/item/device/radio/headset/heads/ce/alt,
 		/obj/item/weapon/storage/belt/utility/full,
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/mask/gas,
@@ -59,15 +59,15 @@
 		/obj/item/clothing/accessory/storage/brown_vest,
 		/obj/item/weapon/storage/belt/utility/full,
 		/obj/item/device/radio/headset/headset_eng,
+		/obj/item/device/radio/headset/headset_eng/alt,
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/mask/gas,
 		/obj/item/clothing/glasses/meson,
-		/obj/item/weapon/cartridge/engineering,
 		/obj/item/taperoll/engineering,
-		/obj/item/weapon/cartridge/atmos,
 		/obj/item/device/flashlight,
 		/obj/item/taperoll/atmos,
 		/obj/item/weapon/storage/firstaid/individual/all,
+		/obj/item/clothing/gloves/insulated,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
@@ -83,16 +83,18 @@
 
 /obj/structure/closet/secure_closet/engineering_contractor/WillContain()
 	return list(
+		/obj/item/clothing/head/soft/orange,
 		/obj/item/clothing/under/rank/engineer,
 		/obj/item/clothing/accessory/storage/webbing,
 		/obj/item/weapon/storage/belt/utility/full,
 		/obj/item/device/radio/headset/headset_eng,
+		/obj/item/device/radio/headset/headset_eng/alt,
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/mask/gas,
-		/obj/item/weapon/cartridge/engineering,
 		/obj/item/device/flashlight,
 		/obj/item/taperoll/engineering,
 		/obj/item/weapon/storage/firstaid/individual/all,
+		/obj/item/clothing/gloves/insulated,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
@@ -111,6 +113,7 @@
 		/obj/item/clothing/under/hazard,
 		/obj/item/clothing/accessory/storage/brown_vest,
 		/obj/item/device/radio/headset/headset_eng,
+		/obj/item/device/radio/headset/headset_eng/alt,
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/mask/gas,
 		/obj/item/weapon/storage/belt/utility/full,
@@ -119,10 +122,10 @@
 		/obj/item/taperoll/atmos,
 		/obj/item/clothing/glasses/welding/superior,
 		/obj/item/device/flash,
-		/obj/item/weapon/cartridge/ce,
 		/obj/item/device/flashlight,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/storage/firstaid/individual/all,
+		/obj/item/clothing/gloves/insulated,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
@@ -145,9 +148,9 @@
 		/obj/item/weapon/storage/belt/utility/full,
 		/obj/item/weapon/extinguisher,
 		/obj/item/device/radio/headset/headset_eng,
+		/obj/item/device/radio/headset/headset_eng/alt,
 		/obj/item/weapon/tank/emergency/oxygen/double,
 		/obj/item/clothing/mask/gas,
-		/obj/item/weapon/cartridge/atmos,
 		/obj/item/taperoll/atmos,
 		/obj/item/weapon/storage/firstaid/individual/all,
 		/obj/item/device/analyzer

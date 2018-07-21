@@ -1,5 +1,5 @@
 /mob/living/carbon/alien/say(var/message)
-	var/verb = "шипит"
+	var/verb = "says"
 	var/message_range = world.view
 
 	if(client)

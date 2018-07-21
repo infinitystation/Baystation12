@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/gun
-	name = "energy gun"
+	name = "LAEP90 'Perun' energy gun"
 	desc = "Another bestseller of Lawson Arms and the FTU, the LAEP90 Perun is a versatile energy based sidearm, capable of switching between low, medium and high power projectile settings. In other words: stun, shock or kill."
 	icon_state = "energystun100"
 	item_state = null	//so the human update icon uses the icon_state instead.
@@ -13,12 +13,12 @@
 	firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, modifystate="energystun"),
 		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock, modifystate="energyshock"),
-		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam, modifystate="energykill"),
+		list(mode_name="kill", projectile_type=/obj/item/projectile/beam, modifystate="energykill"),
 		)
 
 /obj/item/weapon/gun/energy/gun/small
-	name = "small energy gun"
-	desc = "A smaller model of the versatile LAEP90 Perun, packing considerable utility in a smaller package. Best used in situations where full-sized sidearms are inappropriate."
+	name = "LAEP90-C 'Perun' small energy gun"
+	desc = "A smaller model of the versatile LAEP90 Perun, the LAEP90-C packs considerable utility in a smaller package. Best used in situations where full-sized sidearms are inappropriate."
 	icon_state = "smallgunstun"
 	max_shots = 5
 	w_class = ITEM_SIZE_SMALL
@@ -28,7 +28,7 @@
 	firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, modifystate="smallgunstun"),
 		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock, modifystate="smallgunshock"),
-		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/smalllaser, modifystate="smallgunkill"),
+		list(mode_name="kill", projectile_type=/obj/item/projectile/beam/smalllaser, modifystate="smallgunkill"),
 		)
 
 /obj/item/weapon/gun/energy/gun/mounted
@@ -37,7 +37,7 @@
 	use_external_power = 1
 
 /obj/item/weapon/gun/energy/gun/nuclear
-	name = "advanced energy gun"
+	name = "experimental nuclear energy gun"
 	desc = "An energy gun with an experimental miniaturized reactor."
 	icon_state = "nucgun"
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 5, TECH_POWER = 3)
@@ -51,7 +51,7 @@
 	firemodes = list(
 		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun),
 		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock),
-		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam),
+		list(mode_name="kill", projectile_type=/obj/item/projectile/beam),
 		)
 
 	var/fail_counter = 0
@@ -90,7 +90,7 @@
 	var/datum/firemode/current_mode = firemodes[sel_mode]
 	switch(current_mode.name)
 		if("stun") return "nucgun-stun"
-		if("lethal") return "nucgun-kill"
+		if("kill") return "nucgun-kill"
 
 /obj/item/weapon/gun/energy/gun/nuclear/update_icon()
 	var/list/new_overlays = list()

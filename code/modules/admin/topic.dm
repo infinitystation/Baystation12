@@ -597,7 +597,7 @@
 		jobs += "<tr bgcolor='ffeeaa'><th colspan='10'><a href='?src=\ref[src];jobban3=Syndicate;jobban4=\ref[M]'>Antagonist Positions</a></th></tr><tr align='center'>"
 
 		// Antagonists.
-		var/list/all_antag_types = all_antag_types()
+		var/list/all_antag_types = GLOB.all_antag_types_
 		for(var/antag_type in all_antag_types)
 			var/datum/antagonist/antag = all_antag_types[antag_type]
 			if(!antag || !antag.id)
@@ -718,7 +718,7 @@
 					if(!temp) continue
 					joblist += temp.title
 			if("Syndicate")
-				var/list/all_antag_types = all_antag_types()
+				var/list/all_antag_types = GLOB.all_antag_types_
 				for(var/antagPos in all_antag_types)
 					if(!antagPos) continue
 					var/datum/antagonist/temp = all_antag_types[antagPos]
@@ -881,19 +881,18 @@
 				if(!reason)
 					return
 				AddBan(M.ckey, M.computer_id, reason, usr.ckey, 1, mins)
-				ban_unban_log_save("[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
-				add_note(M.ckey,"[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
-				to_chat(M, "<span class='danger'>You have been banned by [usr.client.ckey].\nReason: [reason].</span>")
-				to_chat(M, "<span class='warning'>This is a temporary ban, it will be removed in [mins] minutes.</span>")
+				ban_unban_log_save("[usr.client.ckey] has HARD banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
+				add_note(M.ckey,"[usr.client.ckey] has HARD banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
+				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [key_name(usr)].\nПричина: [reason]</BIG></span>")
+				to_chat(M, "<span class='warning'>Это временный бан, он истечет через [mins] минут.</span>")
 				feedback_inc("ban_tmp",1)
 				DB_ban_record(BANTYPE_TEMP, M, mins, reason)
 				feedback_inc("ban_tmp_mins",mins)
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>To try to resolve this matter head to [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				log_and_message_admins("has banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.")
-				to_world("<span class='notice'><b>BAN: Администратор [usr.client.ckey] заблокировал(а) игрока [M.ckey] на [mins] минут. Причина: [reason]</b></span>")
 
 				qdel(M.client)
 				//qdel(M)	// See no reason why to delete mob. Important stuff can be lost. And ban can be lifted before round ends.
@@ -908,16 +907,15 @@
 						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0, M.lastKnownIP)
 					if("No")
 						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0)
-				to_chat(M, "<span class='danger'>You have been banned by [usr.client.ckey].\nReason: [reason].</span>")
-				to_chat(M, "<span class='warning'>This is a permanent ban.</span>")
+				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [usr.client.ckey].\nПричина: [reason]</BIG></span>")
+				to_chat(M, "<span class='warning'>Это перманентный бан.</span>")
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>To try to resolve this matter head to [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
-				ban_unban_log_save("[usr.client.ckey] has permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.")
-				add_note(M.ckey,"[usr.client.ckey] has permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.", null, usr.ckey, 0)
+				ban_unban_log_save("[usr.client.ckey] has hard permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.")
+				add_note(M.ckey,"[usr.client.ckey] has hard permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.", null, usr.ckey, 0)
 				log_and_message_admins("has banned [M.ckey].\nReason: [reason]\nThis is a permanent ban.")
-				to_world("<span class='notice'><b>BAN: Администратор [usr.client.ckey] НАВСЕГДА заблокировал(а) игрока [M.ckey]. Причина: [reason]</b></span>")
 				feedback_inc("ban_perma",1)
 				DB_ban_record(BANTYPE_PERMA, M, -1, reason)
 
@@ -960,17 +958,17 @@
 						DB_ban_record(BANTYPE_SOFTBAN, M, mins, reason, bancid = M.computer_id)
 				ban_unban_log_save("[usr.client.ckey] has soft banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
 				add_note(M.ckey,"[usr.client.ckey] has soft banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
-				to_chat(M, "<span class='warning'><BIG><B>You have been soft banned by [usr.client.ckey].\nReason: [reason].</B></BIG></span>")
-				to_chat(M, "<span class='warning'>This is a soft temporary ban, it will be removed in [mins] minutes.</span>")
+				to_chat(M, "<span class='warning'><BIG>Администратор [usr.client.ckey] заблокировал вашу игру на сервере.\nПричина: [reason]</BIG></span>")
+				to_chat(M, "<span class='warning'>Это временна&#255; блокировка, она истечет через [mins] минут.</span>")
+				to_chat(M, "<span class='notice'>У вас есть доступ к игре на сервере в качестве заключенного.</span>")
 				feedback_inc("ban_tmp",1)
 				feedback_inc("ban_tmp_mins",mins)
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>To try to resolve this matter head to [config.banappeals].</span>")
+					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				log_admin("[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.")
 				message_admins("<span class='notice'>[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis will be removed in [mins] minutes.</span>")
-				to_world("<span class='notice'><b>BAN: Администратор [usr.client.ckey] заблокировал(а) игрока [M.ckey] на [mins] минут. Причина: [reason]</b></span>")
 
 				qdel(M.client)
 				M.ckey = null
@@ -986,17 +984,17 @@
 						DB_ban_record(BANTYPE_SOFTPERMA, M, -1, reason, bancid = M.computer_id, banip = M.lastKnownIP)
 					if("No")
 						DB_ban_record(BANTYPE_SOFTPERMA, M, -1, reason, bancid = M.computer_id)
-				to_chat(M, "<span class='warning'><BIG><B>You have been soft banned by [usr.client.ckey].\nReason: [reason].</B></BIG></span>")
-				to_chat(M, "<span class='warning'>This is a soft permanent ban.</span>")
+				to_chat(M, "<span class='warning'><BIG>Администратор [usr.client.ckey] заблокировал вашу игру на сервере.\nПричина: [reason]</BIG></span>")
+				to_chat(M, "<span class='warning'>Это перманентна&#255; блокировка.</span>")
+				to_chat(M, "<span class='notice'>У вас есть доступ к игре на сервере в качестве заключенного.</span>")
 				if(config.banappeals)
-					to_chat(M, "<span class='warning'>To try to resolve this matter head to [config.banappeals]</span>")
+					to_chat(M, "<span class='warning'>Чтобы оспорить решение администратора, перейдите сюда: [config.banappeals]</span>")
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				ban_unban_log_save("[usr.client.ckey] has soft permabanned [M.ckey]. - Reason: [reason] - This is a soft permanent ban.")
 				add_note(M.ckey,"[usr.client.ckey] has soft permabanned [M.ckey]. - Reason: [reason] - This is a soft permanent ban.", null, usr.ckey, 0)
 				log_admin("[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis is a soft permanent ban.")
 				message_admins("<span class='notice'>[usr.client.ckey] has soft banned [M.ckey].\nReason: [reason]\nThis is a soft permanent ban.</span>")
-				to_world("<span class='notice'><b>BAN: Администратор [usr.client.ckey] НАВСЕГДА заблокировал(а) игрока [M.ckey]. Причина: [reason]</b></span>")
 				feedback_inc("ban_perma",1)
 
 
@@ -1508,9 +1506,8 @@
 		message_admins("[key_name(M)] has been hit by Bluespace Artillery fired by [src.owner]")
 
 		var/obj/effect/stop/S
-		S = new /obj/effect/stop
+		S = new /obj/effect/stop(M.loc)
 		S.victim = M
-		S.loc = M.loc
 		spawn(20)
 			qdel(S)
 
@@ -2112,6 +2109,83 @@
 	if(href_list["stickyban"])
 		stickyban(href_list["stickyban"],href_list)
 
+	if(href_list["pmp_play"])
+		if(!check_rights(R_ADMIN|R_FUN, 0, usr))
+			return
+
+		var/obj/item/device/pmp/pmp = locate(href_list["pmp_play"])
+		if(!pmp)
+			return
+
+		pmp.attack_self(usr)
+		pmp_control_panel()
+		return
+
+	if(href_list["pmp_volume"])
+		if(!check_rights(R_ADMIN|R_FUN, 0, usr))
+			return
+
+		var/obj/item/device/pmp/pmp = locate(href_list["pmp_volume"])
+		if(!pmp)
+			return
+
+		var/vol = input(usr, "What volume would you like the sound to play at? (maximum number is 50)",, pmp.volume) as null|num
+		if(vol)
+			pmp.AdjustVolume(vol)
+		pmp_control_panel()
+		return
+
+	if(href_list["pmp_explode"])
+		if(!check_rights(R_ADMIN|R_FUN, 0, usr))
+			return
+
+		var/obj/item/device/pmp/pmp = locate(href_list["pmp_explode"])
+		if(!pmp)
+			return
+
+		switch(alert("Do you really want explode this?",,"Yes","No"))
+			if("Yes")
+				pmp.explode()
+				log_and_message_admins("launched self-destruction mechanism in [pmp] <a href='?_src_=holder;adminplayerobservefollow=\ref[pmp]'>#[pmp.serial_number]</a>.")
+		pmp_control_panel()
+		return
+
+	if(href_list["listensound"])
+		var/sound/S = sound(locate(href_list["listensound"]))
+		if(!S)
+			return
+		S.channel = 703
+		sound_to(usr, S)
+		to_chat(usr, "<B><A HREF='?_src_=holder;stoplistensound=1'>Stop listening</A></B>")
+
+	if(href_list["stoplistensound"])
+		var/sound/S = sound(null)
+		S.channel = 703
+		sound_to(usr, S)
+	if(href_list["show_skills"])
+		var/mob/living/carbon/human/M = locate(href_list["show_skills"])
+		show_skill_window(usr, M)
+	if(href_list["wipedata"])
+		var/obj/item/device/cassette/cassette = locate(href_list["wipedata"])
+		if(!cassette.track)
+			to_chat(usr, "This cassette have no data or already is wiped.")
+			return
+
+		if(alert("Wipe data written by [(cassette.uploader_ckey) ? cassette.uploader_ckey : "<b>*NULL*</b>"]?",,"Yes", "No") == "Yes")
+			if(istype(cassette.loc, /obj/machinery/media/jukebox))
+				var/obj/machinery/media/jukebox/J = cassette.loc
+				if(J.current_track && J.current_track == cassette.track)
+					J.StopPlaying()
+					J.current_track = null
+
+			if(istype(cassette.loc, /obj/item/device/pmp))
+				var/obj/item/device/pmp/pmp = cassette.loc
+				if(pmp.playing)
+					pmp.StopPlaying()
+
+			qdel(cassette.track)
+			cassette.ruin()
+			cassette.name = "burned cassette"
 
 mob/living/proc/can_centcom_reply()
 	return 0

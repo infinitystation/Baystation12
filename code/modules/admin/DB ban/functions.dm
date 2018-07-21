@@ -108,6 +108,7 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		else
 			adminwho += ", [C]"
 
+	var/reason_public = reason
 	reason = sql_sanitize_text(reason)
 
 	if(!computerid)
@@ -123,6 +124,15 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		to_chat(usr, "<span class='notice'>Ban saved to database.</span>")
 		setter = key_name_admin(usr)
 	message_admins("[setter] has added a [bantype_str] for [ckey] [(job)?"([job])":""] [(duration > 0)?"([duration] minutes)":""] with the reason: \"[reason]\" to the ban database.",1)
+	switch(bantype_str)
+		if("PERMABAN")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] ЖЕСТКО и НАВСЕГДА заблокировал(а) игрока [ckey]. Причина: [reason_public]</b></span>")
+		if("TEMPBAN")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] ЖЕСТКО заблокировал(а) игрока [ckey]. Причина: [reason_public] Срок - [duration] минут.</b></span>")
+		if("SOFT_PERMBAN")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] перманентно отправил(а) икрока [ckey] в бан-тюрьму. Причина: [reason_public]</b></span>")
+		if("SOFT_TEMPBAN")
+			to_chat(world, "<span class='notice'><b>BAN: Администратор [usr.client.ckey] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: [reason_public] Срок - [duration] минут.</b></span>")
 	return 1
 
 
@@ -351,7 +361,7 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 	for(var/j in GLOB.nonhuman_positions)
 		output += "<option value='[j]'>[j]</option>"
 	var/list/bantypes = list("traitor","changeling","operative","revolutionary","cultist","wizard") //For legacy bans.
-	var/list/all_antag_types = all_antag_types()
+	var/list/all_antag_types = GLOB.all_antag_types_
 	for(var/antag_type in all_antag_types) // Grab other bans.
 		var/datum/antagonist/antag = all_antag_types[antag_type]
 		bantypes |= antag.id
@@ -424,7 +434,7 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 				if(playerckey)
 					playersearch = "AND ckey = '[playerckey]' "
 				if(playerip)
-					ipsearch  = "AND ip = '[playerip]' "
+					ipsearch  = "AND ip = INET_ATON('[playerip]') "
 				if(playercid)
 					cidsearch  = "AND computerid = '[playercid]' "
 			else
@@ -433,7 +443,7 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 				if(playerckey && lentext(playerckey) >= 3)
 					playersearch = "AND ckey LIKE '[playerckey]%' "
 				if(playerip && lentext(playerip) >= 3)
-					ipsearch  = "AND ip LIKE '[playerip]%' "
+					ipsearch  = "AND INET_NTOA(ip) LIKE '[playerip]%' "
 				if(playercid && lentext(playercid) >= 7)
 					cidsearch  = "AND computerid LIKE '[playercid]%' "
 
@@ -454,7 +464,7 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 					else
 						bantypesearch += "'PERMABAN' "
 
-			var/DBQuery/select_query = dbcon.NewQuery("SELECT id, bantime, bantype, reason, job, duration, expiration_time, ckey, a_ckey, unbanned, unbanned_ckey, unbanned_datetime, edits, ip, computerid FROM erro_ban WHERE 1 [playersearch] [adminsearch] [ipsearch] [cidsearch] [bantypesearch] ORDER BY bantime DESC LIMIT 100")
+			var/DBQuery/select_query = dbcon.NewQuery("SELECT id, bantime, bantype, reason, job, duration, expiration_time, ckey, a_ckey, unbanned, unbanned_ckey, unbanned_datetime, edits, INET_NTOA(ip), computerid FROM erro_ban WHERE 1 [playersearch] [adminsearch] [ipsearch] [cidsearch] [bantypesearch] ORDER BY bantime DESC LIMIT 100")
 			select_query.Execute()
 
 			var/now = time2text(world.realtime, "YYYY-MM-DD hh:mm:ss") // MUST BE the same format as SQL gives us the dates in, and MUST be least to most specific (i.e. year, month, day not day, month, year)

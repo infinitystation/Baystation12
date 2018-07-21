@@ -44,6 +44,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	var/used_environ = 0
 
 	var/has_gravity = 1
+	var/alwaysgravity
+	var/nevergravity
+
 	var/obj/machinery/power/apc/apc = null
 	var/no_air = null
 //	var/list/lights				// list of all lights on this area
@@ -70,12 +73,13 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	power_equip = 0
 	power_environ = 0
 	has_gravity = 0
-	ambience = list('sound/ambience/ambispace.ogg','sound/music/title2.ogg','sound/music/space.ogg','sound/music/main.ogg','sound/music/traitor.ogg')
+	area_flags = AREA_FLAG_EXTERNAL
+	forced_ambience = list('sound/ambience/karlskar.ogg')
 
 /area/space/update_icon()
 	return
 
-area/space/atmosalert()
+/area/space/atmosalert()
 	return
 
 /area/space/fire_alert()
@@ -132,14 +136,15 @@ area/space/atmosalert()
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
 	turf_initializer = /decl/turf_initializer/maintenance
+	forced_ambience = list('sound/ambience/maintambience.ogg')
 
 /area/rnd/xenobiology
 	name = "\improper Xenobiology Lab"
 	icon_state = "xeno_lab"
-
+/*
 /area/rnd/xenobiology/lobby
 	name = "\improper Xenobiology Lobby"
-	icon_state = "xeno_lab"
+	icon_state = "xeno_lab"*/
 
 /area/rnd/xenobiology/xenoflora
 	name = "\improper Xenoflora Lab"

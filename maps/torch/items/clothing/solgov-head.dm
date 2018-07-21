@@ -23,6 +23,13 @@
 	desc = "It's a black ballcap bearing the Expeditonary Corps crest."
 	icon_state = "expeditionsoft"
 
+	sprite_sheets = list(
+		SPECIES_VOX = 'icons/mob/species/vox/head.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
+		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
+		)
+
+
 /obj/item/clothing/head/soft/solgov/expedition/co
 	name = "\improper Expeditionary Corps command cap"
 	desc = "It's a black ballcap bearing the Expeditonary Corps crest. The brim has gold trim."
@@ -30,7 +37,7 @@
 
 /obj/item/clothing/head/soft/solgov/fleet
 	name = "fleet cap"
-	desc = "It's a navy blue ballcap with the SCG Fleet crest."
+	desc = "It's a navy blue field cap with the SCG Fleet crest in a silver colour."
 	icon_state = "fleetsoft"
 
 /obj/item/clothing/head/solgov/utility
@@ -78,11 +85,30 @@
 	name = "expedition peaked cap"
 	desc = "A peaked grey uniform cap belonging to the SCG Expeditionary Corps."
 	icon_state = "greydresscap"
+	sprite_sheets = list(
+		SPECIES_VOX = 'icons/mob/species/vox/head.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
+		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
+		)
 
 /obj/item/clothing/head/solgov/service/expedition/command
 	name = "expedition officer's peaked cap"
 	desc = "A peaked grey uniform cap belonging to the SCG Expeditionary Corps. This one is trimmed in gold."
 	icon_state = "greydresscap_com"
+
+/obj/item/clothing/head/solgov/service/fleet
+	name = "fleet service garrison cap"
+	desc = "A peaked dark-blue cap belonging to the SCG Fleet Corps."
+	icon = 'icons/obj/clothing/infinity/hats.dmi'
+	icon_state = "navygarrisoncap"
+	item_icons = list(slot_head_str = 'icons/obj/clothing/infinity/hats_onmob.dmi')
+	item_state = "navygarrisoncap"
+
+/obj/item/clothing/head/solgov/service/fleet/command
+	name = "fleet officer's garrison cap"
+	desc = "A garrison khaki cap belonging to the SCG Fleet Corps. A common headwear of fleet officers."
+	icon_state = "khakipeakcap_com"
+	item_state = "khakipeakcap_com"
 
 /obj/item/clothing/head/solgov/service/marine
 	name = "marine wheel cover"
@@ -119,6 +145,11 @@
 		slot_l_hand_str = "helmet",
 		slot_r_hand_str = "helmet")
 	body_parts_covered = 0
+
+/obj/item/clothing/head/solgov/dress/fleet/garrison
+	name = "fleet garrison cap"
+	desc = "A white dress uniform cap. The classic sailor's choice."
+	icon_state = "whitegarrisoncap"
 
 /obj/item/clothing/head/solgov/dress/fleet
 	name = "fleet dress wheel cover"
@@ -203,6 +234,9 @@
 	name = "expeditionary beret"
 	desc = "A black beret belonging to the SCG Expeditionary Corps. For personnel that are more inclined towards style than safety."
 	icon_state = "beret_black"
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
+		)
 
 /obj/item/clothing/head/beret/solgov/expedition/security
 	name = "expeditionary security beret"
@@ -279,6 +313,16 @@
 	desc = "An SCG Fleet beret with a golden crest. For personnel that are more inclined towards style than safety."
 	icon_state = "beret_navy_command"
 
+/obj/item/clothing/head/beret/solgov/fleet/dress
+	name = "fleet dress beret"
+	desc = "A white SCG Fleet beret. For personnel that are more inclined towards style than safety."
+	icon_state = "beret_whiterim"
+
+/obj/item/clothing/head/beret/solgov/fleet/dress/command
+	name = "fleet command dress beret"
+	desc = "A white SCG Fleet beret with a golden crest. For personnel that are more inclined towards style than safety."
+	icon_state = "beret_whiterim_com"
+
 //ushanka
 
 /obj/item/clothing/head/ushanka/solgov
@@ -319,6 +363,9 @@
 	icon = 'maps/torch/icons/obj/solgov-head.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
 	starting_accessories = null
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
+		)
 
 /obj/item/clothing/head/helmet/solgov/command
 	name = "command helmet"

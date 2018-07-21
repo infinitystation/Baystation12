@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/ionrifle
-	name = "ion rifle"
+	name = "Mk60 ion rifle"
 	desc = "The NT Mk60 EW Halicon is a man portable anti-armor weapon designed to disable mechanical threats, produced by NT. Not the best of its type."
 	icon_state = "ionrifle"
 	item_state = "ionrifle"
@@ -19,7 +19,7 @@
 	..(max(severity, 2)) //so it doesn't EMP itself, I guess
 
 /obj/item/weapon/gun/energy/ionrifle/small
-	name = "ion pistol"
+	name = "Mk72 ion pistol"
 	desc = "The NT Mk72 EW Preston is a personal defense weapon designed to disable mechanical threats."
 	icon_state = "ionpistol"
 	item_state = "ionpistol"
@@ -110,7 +110,7 @@
 /obj/item/weapon/gun/energy/meteorgun/pen
 	name = "meteor pen"
 	desc = "The pen is mightier than the sword."
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "pen"
 	item_state = "pen"
 	w_class = ITEM_SIZE_TINY
@@ -153,7 +153,7 @@
 	have_safety = FALSE
 
 /obj/item/weapon/gun/energy/staff/special_check(var/mob/user)
-	if((user.mind && !wizards.is_antagonist(user.mind)))
+	if((user.mind && !GLOB.wizards.is_antagonist(user.mind)))
 		to_chat(usr, "<span class='warning'>You focus your mind on \the [src], but nothing happens!</span>")
 		return 0
 

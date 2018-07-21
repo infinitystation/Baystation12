@@ -1,5 +1,6 @@
 #if !defined(using_map_DATUM)
 
+	#include "exodus_announcements.dm"
 	#include "exodus_areas.dm"
 	#include "exodus_effects.dm"
 	#include "exodus_elevator.dm"
@@ -37,7 +38,7 @@
 	#include "../../code/modules/lobby_music/dilbert.dm"
 	#include "../../code/modules/lobby_music/space_oddity.dm"
 
-	#define using_map_DATUM /datum/map/exodus
+	#define using_map_DATUM /datum/map/exodus_infinity
 
 #elif !defined(MAP_OVERRIDE)
 

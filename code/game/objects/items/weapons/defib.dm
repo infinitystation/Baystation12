@@ -101,9 +101,9 @@
 	else
 		return ..()
 
-/obj/item/weapon/defibrillator/emag_act(mob/user)
+/obj/item/weapon/defibrillator/emag_act(var/uses, var/mob/user)
 	if(paddles)
-		return paddles.emag_act(user)
+		return paddles.emag_act(uses, user, src)
 	return NO_EMAG_ACT
 
 //Paddle stuff
@@ -320,13 +320,13 @@
 	return ..()
 
 // This proc is used so that we can return out of the revive process while ensuring that busy and update_icon() are handled
-/obj/item/weapon/shockpaddles/proc/do_revive(mob/living/carbon/human/H, mob/user)
+/obj/item/weapon/shockpaddles/proc/do_revive(mob/living/carbon/human/H, mob/living/user)
 	if(H.ssd_check())
 		to_chat(find_dead_player(H.ckey, 1), "<span class='notice'>Someone is attempting to resuscitate you. Re-enter your body if you want to be revived!</span>")
 
 	//beginning to place the paddles on patient's chest to allow some time for people to move away to stop the process
 	user.visible_message("<span class='warning'>\The [user] begins to place [src] on [H]'s chest.</span>", "<span class='warning'>You begin to place [src] on [H]'s chest...</span>")
-	if(!do_after(user, 30, H))
+	if(!user.do_skilled(3 SECONDS, SKILL_MEDICAL, H))
 		return
 	user.visible_message("<span class='notice'>\The [user] places [src] on [H]'s chest.</span>", "<span class='warning'>You place [src] on [H]'s chest.</span>")
 	playsound(get_turf(src), 'sound/machines/defib_charge.ogg', 50, 0)
@@ -360,7 +360,8 @@
 		make_announcement(error, "warning")
 		playsound(get_turf(src), 'sound/machines/defib_failed.ogg', 50, 0)
 		return
-
+	if(!user.skill_check(SKILL_MEDICAL, SKILL_BASIC) && !lowskill_revive(H, user))
+		return
 	H.apply_damage(burn_damage_amt, BURN, BP_CHEST)
 
 	//set oxyloss so that the patient is just barely in crit, if possible
@@ -373,6 +374,19 @@
 		C.give(chargecost)
 	log_and_message_admins("used \a [src] to revive [key_name(H)].")
 
+/obj/item/weapon/shockpaddles/proc/lowskill_revive(mob/living/carbon/human/H, mob/living/user)
+	if(prob(60))
+		playsound(get_turf(src), 'sound/machines/defib_zap.ogg', 100, 1, -1)
+		H.electrocute_act(burn_damage_amt*4, src, def_zone = BP_CHEST)	
+		user.visible_message("<span class='warning'><i>The paddles were misaligned! \The [user] shocks [H] with \the [src]!</i></span>", "<span class='warning'>The paddles were misaligned! You shock [H] with \the [src]!</span>")
+		return 0
+	if(prob(50))
+		playsound(get_turf(src), 'sound/machines/defib_zap.ogg', 100, 1, -1)
+		user.electrocute_act(burn_damage_amt*2, src, def_zone = BP_L_HAND)
+		user.electrocute_act(burn_damage_amt*2, src, def_zone = BP_R_HAND)
+		user.visible_message("<span class='warning'><i>\The [user] shocks themselves with \the [src]!</i></span>", "<span class='warning'>You forget to move your hands away and shock yourself with \the [src]!</span>")
+		return 0
+	return 1
 
 /obj/item/weapon/shockpaddles/proc/do_electrocute(mob/living/carbon/human/H, mob/user, var/target_zone)
 	var/obj/item/organ/external/affecting = H.get_organ(target_zone)
@@ -441,18 +455,24 @@
 /obj/item/weapon/shockpaddles/proc/make_announcement(var/message, var/msg_class)
 	audible_message("<b>\The [src]</b> [message]", "\The [src] vibrates slightly.")
 
-/obj/item/weapon/shockpaddles/emag_act(mob/user)
+/obj/item/weapon/shockpaddles/emag_act(var/uses, var/mob/user, var/obj/item/weapon/defibrillator/base)
+	if(istype(src, /obj/item/weapon/shockpaddles/linked))
+		var/obj/item/weapon/shockpaddles/linked/dfb = src
+		if(dfb.base_unit)
+			base = dfb.base_unit
+	if(!base)
+		return
 	if(safety)
 		safety = 0
 		to_chat(user, "<span class='warning'>You silently disable \the [src]'s safety protocols with the cryptographic sequencer.</span>")
 		burn_damage_amt *= 3
-		update_icon()
+		base.update_icon()
 		return 1
 	else
 		safety = 1
 		to_chat(user, "<span class='notice'>You silently enable \the [src]'s safety protocols with the cryptographic sequencer.</span>")
 		burn_damage_amt = initial(burn_damage_amt)
-		update_icon()
+		base.update_icon()
 		return 1
 
 /obj/item/weapon/shockpaddles/emp_act(severity)

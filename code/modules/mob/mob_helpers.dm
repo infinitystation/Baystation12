@@ -181,33 +181,44 @@ var/list/global/organ_rel_size = list(
 		return pick(base_miss_chance)
 	return zone
 
-
-/proc/stars(n, pr)
-	if (pr == null)
-		pr = 25
+//Replaces some of the characters with *, used in whispers. pr = probability of no star.
+//Will try to preserve HTML formatting. re_encode controls whether the returned text is HTML encoded outside tags.
+/proc/stars(n, pr = 25, re_encode = 1)
 	if (pr < 0)
 		return null
-	else
-		if (pr >= 100)
-			return n
-	var/te = n
-	var/t = ""
-	n = length(n)
-	var/p = null
-	p = 1
+	else if (pr >= 100)
+		return n
+
 	var/intag = 0
-	while(p <= n)
-		var/char = copytext(te, p, p + 1)
-		if (char == "<") //let's try to not break tags
-			intag = !intag
-		if (intag || char == " " || prob(pr))
-			t = text("[][]", t, char)
+	var/block = list()
+	. = list()
+	for(var/i = 1, i <= length(n), i++)
+		var/char = copytext(n, i, i+1)
+		if(!intag && (char == "<"))
+			intag = 1
+			. += stars_no_html(JOINTEXT(block), pr, re_encode) //stars added here
+			block = list()
+		block += char
+		if(intag && (char == ">"))
+			intag = 0
+			. += block //We don't mess up html tags with stars
+			block = list()
+	. += (intag ? block : stars_no_html(JOINTEXT(block), pr, re_encode))
+	. = JOINTEXT(.)
+
+//Ingnores the possibility of breaking tags.
+/proc/stars_no_html(text, pr, re_encode)
+	text = html_decode(text) //We don't want to screw up escaped characters
+	. = list()
+	for(var/i = 1, i <= length(text), i++)
+		var/char = copytext(text, i, i+1)
+		if(char == " " || prob(pr))
+			. += char
 		else
-			t = text("[]*", t)
-		if (char == ">")
-			intag = !intag
-		p++
-	return t
+			. += "*"
+	. = JOINTEXT(.)
+	if(re_encode)
+		. = html_encode(.)
 
 proc/slur(phrase)
 	phrase = html_decode(phrase)
@@ -218,6 +229,11 @@ proc/slur(phrase)
 	while(counter>=1)
 		newletter=copytext(phrase,(leng-counter)+1,(leng-counter)+2)
 		if(rand(1,3)==3)
+			if(lowertext(newletter)=="o")	newletter="u"
+			if(lowertext(newletter)=="s")	newletter="ch"
+			if(lowertext(newletter)=="a")	newletter="ah"
+			if(lowertext(newletter)=="c")	newletter="k"
+
 			if(lowertext(newletter)=="о")	newletter="у"
 			if(lowertext(newletter)=="с")	newletter="з"
 			if(lowertext(newletter)=="а")	newletter="ах"
@@ -241,7 +257,10 @@ proc/slur(phrase)
 	p = 1//1 is the start of any word
 	while(p <= n)//while P, which starts at 1 is less or equal to N which is the length.
 		var/n_letter = copytext(te, p, p + 1)//copies text from a certain distance. In this case, only one letter at a time.
-		if (prob(80) && (ckey(n_letter) in list("б","с","д","ф","г","ч","ж","к","л","т","н","р","т","в","х","у","з")))
+		var/list/letters_list = list(
+			"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z",
+			"б","с","д","ф","г","ч","ж","к","л","т","н","р","т","в","х","у","з")
+		if (prob(80) && (ckey(n_letter) in letters_list))
 			if (prob(10))
 				n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]")//replaces the current letter with this instead.
 			else
@@ -449,7 +468,7 @@ proc/is_blind(A)
 		communicate(/decl/communication_channel/dsay, C || O, message, /decl/dsay_communication/direct)
 
 /mob/proc/switch_to_camera(var/obj/machinery/camera/C)
-	if (!C.can_use() || stat || (get_dist(C, src) > 1 || machine != src || blinded || !canmove))
+	if (!C.can_use() || stat || (get_dist(C, src) > 1 || machine != src || blinded))
 		return 0
 	check_eye(src)
 	return 1
@@ -518,7 +537,7 @@ proc/is_blind(A)
 		if(id)
 			perpname = id.registered_name
 
-		var/datum/computer_file/crew_record/CR = get_crewmember_record(perpname)
+		var/datum/computer_file/report/crew_record/CR = get_crewmember_record(perpname)
 		if(check_records && !CR && !isMonkey())
 			threatcount += 4
 
@@ -615,3 +634,47 @@ proc/is_blind(A)
 			to_chat(src, "<span class='danger'>The jitters are killing you! You feel your heart beating out of your chest.</span>")
 			admin_victim_log(src, "has taken <i>minor heart damage</i> at jitteriness level [src.jitteriness].")
 	return 1
+
+/mob/proc/try_teleport(var/area/thearea)
+	if(!istype(thearea))
+		if(istype(thearea, /list))
+			thearea = thearea[1]
+	var/list/L = list()
+	for(var/turf/T in get_area_turfs(thearea))
+		if(!T.density)
+			var/clear = 1
+			for(var/obj/O in T)
+				if(O.density)
+					clear = 0
+					break
+			if(clear)
+				L+=T
+
+	if(buckled)
+		buckled = null
+
+	var/attempt = null
+	var/success = 0
+	var/turf/end
+	while(L.len)
+		attempt = pick(L)
+		success = Move(attempt)
+		if(!success)
+			L.Remove(attempt)
+		else
+			end = attempt
+			break
+
+	if(!success)
+		end = pick(L)
+		forceMove(end)
+
+	return end
+
+//Tries to find the mob's email.
+/proc/find_email(real_name)
+	for(var/mob/mob in GLOB.living_mob_list_)
+		if(mob.real_name == real_name)
+			if(!mob.mind)
+				return
+			return mob.mind.initial_email_login["login"]

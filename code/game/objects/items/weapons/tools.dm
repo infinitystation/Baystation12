@@ -32,6 +32,7 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 150)
 	center_of_mass = "x=17;y=16"
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
+	safely = 1
 
 /obj/item/weapon/wrench/Initialize()
 	icon_state = "wrench[pick("","_red","_black")]"
@@ -39,7 +40,7 @@
 /obj/item/weapon/wrench/power
 	name = "hand drill"
 	desc = "A simple powered hand drill. It's fitted with a bolt bit."
-	icon = 'icons/obj/tools.dmi'
+	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "drill_bolt"
 	item_state = "drill"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
@@ -61,8 +62,8 @@
 	user.put_in_active_hand(s_drill)
 
 /obj/item/weapon/wrench/power/Initialize()
-        . = ..()
-        icon_state = "drill_bolt"
+	. = ..()
+	icon_state = "drill_bolt"
 
 /*
  * Screwdriver
@@ -86,6 +87,7 @@
 	center_of_mass = "x=16;y=7"
 	attack_verb = list("stabbed")
 	lock_picking_level = 5
+	safely = 1
 
 /obj/item/weapon/screwdriver/Initialize()
 	switch(pick("red","blue","purple","brown","green","cyan","yellow"))
@@ -123,10 +125,11 @@
 	if((CLUMSY in user.mutations) && prob(50))
 		M = user
 	return eyestab(M,user)
+
 /obj/item/weapon/screwdriver/power
 	name = "hand drill"
 	desc = "A simple powered hand drill. It's fitted with a screw bit."
-	icon = 'icons/obj/tools.dmi'
+	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "drill_screw"
 	item_state = "drill"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
@@ -151,8 +154,8 @@
 	user.put_in_active_hand(b_drill)
 
 /obj/item/weapon/screwdriver/power/Initialize()
-        . = ..()
-        icon_state = "drill_screw"
+	. = ..()
+	icon_state = "drill_screw"
 
 /*
  * Wirecutters
@@ -177,6 +180,7 @@
 	attack_verb = list("pinched", "nipped")
 	sharp = 1
 	edge = 1
+	safely = 1
 
 /obj/item/weapon/wirecutters/Initialize()
 	if(prob(50))
@@ -185,7 +189,7 @@
 	. = ..()
 
 /obj/item/weapon/wirecutters/attack(mob/living/carbon/C as mob, mob/user as mob)
-	if(user.a_intent == I_HELP && (C.handcuffed) && (istype(C.handcuffed, /obj/item/weapon/handcuffs/cable)))
+	if(istype(C) && user.a_intent == I_HELP && (C.handcuffed) && (istype(C.handcuffed, /obj/item/weapon/handcuffs/cable)))
 		usr.visible_message("\The [usr] cuts \the [C]'s restraints with \the [src]!",\
 		"You cut \the [C]'s restraints with \the [src]!",\
 		"You hear cable being cut.")
@@ -200,7 +204,7 @@
 /obj/item/weapon/wirecutters/power
 	name = "jaws of life"
 	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a cutting head."
-	icon = 'icons/obj/tools.dmi'
+	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "jaws_cutter"
 	item_state = "jawsoflife"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
@@ -226,8 +230,8 @@
 	user.put_in_active_hand(pryjaws)
 
 /obj/item/weapon/wirecutters/power/Initialize()
-        . = ..()
-        icon_state = "jaws_cutter"
+	. = ..()
+	icon_state = "jaws_cutter"
 
 /*
  * Welding Tool
@@ -266,6 +270,7 @@
 	var/deac_sound = 'sound/items/WelderDeactivate.ogg'
 
 	var/obj/item/weapon/welder_tank/tank = /obj/item/weapon/welder_tank // where the fuel is stored
+	safely = 1
 
 /obj/item/weapon/weldingtool/Initialize()
 	if(ispath(tank))
@@ -522,6 +527,8 @@
 		var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[BP_EYES]
 		if(!E)
 			return
+		if(E.robotic >= ORGAN_ROBOT)
+			return
 		var/safety = H.eyecheck()
 		switch(safety)
 			if(FLASH_PROTECTION_MODERATE)
@@ -561,6 +568,7 @@
 	w_class = ITEM_SIZE_SMALL
 	var/max_fuel = 20
 	var/can_remove = 1
+	safely = 1
 
 /obj/item/weapon/welder_tank/Initialize()
 	create_reagents(max_fuel)
@@ -698,6 +706,8 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 140)
 	center_of_mass = "x=16;y=20"
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
+	hitsound = 'sound/weapons/crowbarhit.ogg'
+	safely = 1
 
 /obj/item/weapon/crowbar/red
 	icon_state = "red_crowbar"
@@ -721,7 +731,7 @@
 /obj/item/weapon/crowbar/power
 	name = "jaws of life"
 	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a prying head."
-	icon = 'icons/obj/tools.dmi'
+	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "jaws_pry"
 	item_state = "jawsoflife"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
@@ -745,8 +755,8 @@
 	user.put_in_active_hand(cutjaws)
 
 /obj/item/weapon/crowbar/power/Initialize()
-        . = ..()
-        icon_state = "jaws_pry"
+	. = ..()
+	icon_state = "jaws_pry"
 
 /*
  * Combitool
@@ -756,7 +766,7 @@
 /obj/item/weapon/combitool
 	name = "combi-tool"
 	desc = "It even has one of those nubbins for doing the thingy."
-	icon = 'icons/obj/items.dmi'
+	icon = 'icons/obj/tools.dmi'
 	icon_state = "combitool"
 	w_class = ITEM_SIZE_SMALL
 
@@ -770,6 +780,7 @@
 		)
 	var/list/tools = list()
 	var/current_tool = 1
+	safely = 1
 
 /obj/item/weapon/combitool/examine()
 	..()

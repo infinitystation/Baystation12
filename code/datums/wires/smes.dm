@@ -58,3 +58,18 @@ var/const/SMES_WIRE_FAILSAFES = 16	// Cut to disable failsafes, mend to reenable
 				S.safeties_enabled = 0
 				spawn(10)
 					S.safeties_enabled = 1
+
+/datum/wires/smes/SolveWireFunction(var/function)
+	var/sf = ""
+	switch(function)
+		if(SMES_WIRE_RCON)
+			sf = "Port A"
+		if(SMES_WIRE_INPUT)
+			sf = "Port B"
+		if(SMES_WIRE_OUTPUT)
+			sf = "Port C"
+		if(SMES_WIRE_GROUNDING)
+			sf = "Port D"
+		if(SMES_WIRE_FAILSAFES)
+			sf = "Port E"
+	return sf

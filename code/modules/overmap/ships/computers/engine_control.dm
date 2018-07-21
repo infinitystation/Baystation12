@@ -2,9 +2,9 @@
 
 /obj/machinery/computer/engines
 	name = "engine control console"
-	icon_state = "thick"
 	icon_keyboard = "tech_key"
 	icon_screen = "engines"
+	circuit = /obj/item/weapon/circuitboard/engine
 	var/state = "status"
 	var/obj/effect/overmap/ship/linked
 

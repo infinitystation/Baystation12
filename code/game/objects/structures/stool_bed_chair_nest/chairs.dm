@@ -149,12 +149,9 @@
 	..()
 
 /obj/structure/bed/chair/office/Move()
-	..()
+	. = ..()
 	if(buckled_mob)
 		var/mob/living/occupant = buckled_mob
-		occupant.buckled = null
-		occupant.Move(src.loc)
-		occupant.buckled = src
 		if (occupant && (src.loc != occupant.loc))
 			if (propelled)
 				for (var/mob/O in src.loc)
@@ -214,7 +211,6 @@
 /obj/structure/bed/chair/wood/wings
 	base_icon = "wooden_chair_wings"
 	icon_state = "wooden_chair_wings_preview"
-
 //INFINITY
 /obj/structure/bed/chair/comfy/shuttle
 	name = "shuttle chair"
@@ -228,7 +224,11 @@
 	base_icon = "rschair"
 	material_alteration = MATERIAL_ALTERATION_NONE
 
-/obj/structure/bed/chair/bogani
-	desc = "A strange chair, not from around here."
-	base_icon = "bogchair"
-	icon_state = "bogchair_preview"
+/obj/structure/bed/chair/shuttle
+	name = "shuttle seat"
+	desc = "A comfortable, secure seat. It has a sturdy-looking buckling system for smoother flights."
+	base_icon = "shuttle_chair"
+	icon_state = "shuttle_chair_preview"
+
+/obj/structure/bed/chair/shuttle/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","black")

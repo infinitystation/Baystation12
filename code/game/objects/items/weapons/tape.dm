@@ -1,7 +1,7 @@
 /obj/item/weapon/tape_roll
 	name = "duct tape"
 	desc = "A roll of sticky tape. Possibly for taping ducks... or was that ducts?"
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "taperoll"
 	w_class = ITEM_SIZE_SMALL
 
@@ -30,6 +30,7 @@
 			if(!H || !src || !H.organs_by_name[BP_HEAD] || !H.has_eyes() || H.glasses || (H.head && (H.head.body_parts_covered & FACE)))
 				return
 
+			playsound(src, 'sound/effects/tape.ogg',25)
 			user.visible_message("<span class='danger'>\The [user] has taped up \the [H]'s eyes!</span>")
 			H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/blindfold/tape(H), slot_glasses)
 
@@ -46,6 +47,7 @@
 			if(H.head && (H.head.body_parts_covered & FACE))
 				to_chat(user, "<span class='warning'>Remove their [H.head] first.</span>")
 				return
+			playsound(src, 'sound/effects/tape.ogg',25)
 			user.visible_message("<span class='danger'>\The [user] begins taping up \the [H]'s mouth!</span>")
 
 			if(!do_mob(user, H, 30))
@@ -54,15 +56,25 @@
 			// Repeat failure checks.
 			if(!H || !src || !H.organs_by_name[BP_HEAD] || !H.check_has_mouth() || H.wear_mask || (H.head && (H.head.body_parts_covered & FACE)))
 				return
-
+			playsound(src, 'sound/effects/tape.ogg',25)
 			user.visible_message("<span class='danger'>\The [user] has taped up \the [H]'s mouth!</span>")
 			H.equip_to_slot_or_del(new /obj/item/clothing/mask/muzzle/tape(H), slot_wear_mask)
 
 		else if(user.zone_sel.selecting == BP_R_HAND || user.zone_sel.selecting == BP_L_HAND)
+			playsound(src, 'sound/effects/tape.ogg',25)
 			var/obj/item/weapon/handcuffs/cable/tape/T = new(user)
 			if(!T.place_handcuffs(H, user))
 				user.unEquip(T)
 				qdel(T)
+
+		else if(user.zone_sel.selecting == BP_CHEST)
+			if(H.wear_suit && istype(H.wear_suit, /obj/item/clothing/suit/space))
+				if(H == user || do_mob(user, H, 10))	//Skip the time-check if patching your own suit, that's handled in attackby()
+					playsound(src, 'sound/effects/tape.ogg',25)
+					H.wear_suit.attackby(src, user)
+			else
+				to_chat(user, "<span class='warning'>\The [H] isn't wearing a spacesuit for you to reseal.</span>")
+
 		else
 			return ..()
 		return 1
@@ -78,14 +90,14 @@
 /obj/item/weapon/ducttape
 	name = "piece of tape"
 	desc = "A piece of sticky tape."
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "tape"
 	w_class = ITEM_SIZE_TINY
 	layer = ABOVE_OBJ_LAYER
 
 	var/obj/item/weapon/stuck = null
 
-/obj/item/solar_assembly/attack_hand(var/mob/user)
+/obj/item/weapon/ducttape/attack_hand(var/mob/user)
 	anchored = FALSE // Unattach it from whereever it's on, if anything.
 	return ..()
 
@@ -132,6 +144,7 @@
 			return											// reduce papers around corners issue.
 
 	user.drop_from_inventory(src)
+	playsound(src, 'sound/effects/tape.ogg',25)
 	forceMove(source_turf)
 
 	if(params)

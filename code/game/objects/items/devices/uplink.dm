@@ -88,7 +88,7 @@
 
 	return FALSE
 
-/obj/item/device/uplink/get_item_cost(var/item_type, var/item_cost)
+/obj/item/device/uplink/proc/get_item_cost(var/item_type, var/item_cost)
 	return item_type == discount_item ? max(1, round(item_cost*discount_amount)) : item_cost
 
 // Toggles the uplink on and off. Normally this will bypass the item's normal functions and go to the uplink menu, if activated.
@@ -185,40 +185,15 @@
 		nanoui_data["items"] = items
 	else if(nanoui_menu == 2)
 		var/permanentData[0]
-		for(var/datum/computer_file/crew_record/L in GLOB.all_crew_records)
+		for(var/datum/computer_file/report/crew_record/L in GLOB.all_crew_records)
 			permanentData[++permanentData.len] = list(Name = L.get_name(),"id" = L.uid, "exploit" = length(L.get_antagRecord()))
 		nanoui_data["exploit_records"] = permanentData
 	else if(nanoui_menu == 21)
 		nanoui_data["exploit_exists"] = 0
 
-		for(var/datum/computer_file/crew_record/L in GLOB.all_crew_records)
+		for(var/datum/computer_file/report/crew_record/L in GLOB.all_crew_records)
 			if(L.uid == exploit_id)
-				nanoui_data["exploit"] = list()  // Setting this to equal L.fields passes it's variables that are lists as reference instead of value.
-								 // We trade off being able to automatically add shit for more control over what gets passed to json
-								 // and if it's sanitized for html.
-				var/list/fields = list(
-					REC_FIELD(name),
-					REC_FIELD(sex),
-					REC_FIELD(age),
-					REC_FIELD(species),
-					REC_FIELD(rank),
-					REC_FIELD(homeSystem),
-					REC_FIELD(citizenship),
-					REC_FIELD(faction),
-					REC_FIELD(religion),
-					REC_FIELD(fingerprint),
-					REC_FIELD(antagRecord))
-				var/list/rec_fields = list()
-				for(var/field in fields)
-					var/record_field/F = locate(field) in L.fields
-					if(!F)
-						continue
-					rec_fields.Add(list(list(
-						"name" = html_encode(F.name), 
-						"val" = F.get_display_value()
-					)))
-				nanoui_data["exploit"]["fields"] =  rec_fields
-
+				nanoui_data["exploit"] = L.generate_nano_data()
 				nanoui_data["exploit_exists"] = 1
 				break
 

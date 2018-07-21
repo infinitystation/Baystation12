@@ -22,6 +22,7 @@
 	universal_understand = 1
 	holder_type = /obj/item/weapon/holder/borer
 	mob_size = MOB_SMALL
+	can_escape = 1
 
 	var/generation = 1
 	var/static/list/borer_names = list(
@@ -38,6 +39,7 @@
 	var/docile = 0                          // Sugar can stop borers from acting.
 	var/has_reproduced
 	var/roundstart
+	var/now_escaping = 0
 
 /mob/living/simple_animal/borer/roundstart
 	roundstart = 1
@@ -45,7 +47,7 @@
 /mob/living/simple_animal/borer/Login()
 	..()
 	if(mind)
-		borers.add_antagonist(mind)
+		GLOB.borers.add_antagonist(mind)
 
 /mob/living/simple_animal/borer/New(atom/newloc, var/gen=1)
 	..(newloc)
@@ -96,10 +98,13 @@
 				if(prob(host.getBrainLoss()/20))
 					host.say("*[pick(list("blink","blink_r","choke","aflap","drool","twitch","twitch_v","gasp"))]")
 
+		if(host.getBrainLoss() >= 100 && !src.now_escaping == 1)
+			to_chat(src, sanitize_a0("<span class='notice'>Мозг жертвы теряет былую функциональность. Нужно найти другого...</span>"))
+			src.release_host()
+
 /mob/living/simple_animal/borer/Stat()
 	. = ..()
 	statpanel("Status")
-
 	if(evacuation_controller)
 		var/eta_status = evacuation_controller.get_status_panel_eta()
 		if(eta_status)
@@ -164,7 +169,7 @@
 	if(!host) return
 
 	if(host.mind)
-		borers.remove_antagonist(host.mind)
+		GLOB.borers.remove_antagonist(host.mind)
 
 	src.loc = get_turf(host)
 

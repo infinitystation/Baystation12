@@ -1,13 +1,12 @@
 /mob/living/carbon/human/proc/monkeyize()
-	if (transforming)
+	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
 	for(var/obj/item/W in src)
 		if (W==w_uniform) // will be torn
 			continue
 		drop_from_inventory(W)
 	regenerate_icons()
-	transforming = 1
-	canmove = 0
+	ADD_TRANSFORMATION_MOVEMENT_HANDLER(src)
 	stunned = 1
 	icon = null
 	set_invisibility(101)
@@ -21,9 +20,9 @@
 	sleep(48)
 	//animation = null
 
-	transforming = 0
+	DEL_TRANSFORMATION_MOVEMENT_HANDLER(src)
 	stunned = 0
-	update_canmove()
+	UpdateLyingBuckledAndVerbStatus()
 	set_invisibility(initial(invisibility))
 
 	if(!species.primitive_form) //If the creature in question has no primitive set, this is going to be messy.
@@ -46,7 +45,7 @@
 	return ..()
 
 /mob/living/carbon/human/AIize(move=1) // 'move' argument needs defining here too because BYOND is dumb
-	if (transforming)
+	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
 	for(var/t in organs)
 		qdel(t)
@@ -54,12 +53,11 @@
 	return ..(move)
 
 /mob/living/carbon/AIize()
-	if (transforming)
+	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
 	for(var/obj/item/W in src)
 		drop_from_inventory(W)
-	transforming = 1
-	canmove = 0
+	ADD_TRANSFORMATION_MOVEMENT_HANDLER(src)
 	icon = null
 	set_invisibility(101)
 	return ..()
@@ -109,14 +107,13 @@
 
 //human -> robot
 /mob/living/carbon/human/proc/Robotize()
-	if (transforming)
+	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
 	QDEL_NULL_LIST(worn_underwear)
 	for(var/obj/item/W in src)
 		drop_from_inventory(W)
 	regenerate_icons()
-	transforming = 1
-	canmove = 0
+	ADD_TRANSFORMATION_MOVEMENT_HANDLER(src)
 	icon = null
 	set_invisibility(101)
 	for(var/t in organs)
@@ -129,7 +126,7 @@
 
 	if(mind)		//TODO
 		mind.transfer_to(O)
-		if(O.mind.assigned_role == "Cyborg")
+		if(O.mind.assigned_role == "Robot")
 			O.mind.original = O
 		else if(mind && mind.special_role)
 			O.mind.store_memory("In case you look at this after being borged, the objectives are only here until I find a way to make them not show up for you, as I can't simply delete them without screwing up round-end reporting. --NeoFite")
@@ -137,14 +134,14 @@
 		O.key = key
 
 	O.loc = loc
-	O.job = "Cyborg"
-	if(O.mind.assigned_role == "Cyborg")
-		if(O.mind.role_alt_title == "Android")
-			O.mmi = new /obj/item/organ/internal/posibrain(O)
-		else if(O.mind.role_alt_title == "Robot")
+	O.job = "Robot"
+	if(O.mind.assigned_role == "Robot")
+		if(O.mind.role_alt_title == "Drone")
 			O.mmi = new /obj/item/device/mmi/digital/robot(O)
-		else
+		else if(O.mind.role_alt_title == "Cyborg")
 			O.mmi = new /obj/item/device/mmi(O)
+		else
+			O.mmi = new /obj/item/organ/internal/posibrain(O)
 
 		O.mmi.transfer_identity(src)
 
@@ -156,13 +153,12 @@
 	return O
 
 /mob/living/carbon/human/proc/slimeize(adult as num, reproduce as num)
-	if (transforming)
+	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
 	for(var/obj/item/W in src)
 		drop_from_inventory(W)
 	regenerate_icons()
-	transforming = 1
-	canmove = 0
+	ADD_TRANSFORMATION_MOVEMENT_HANDLER(src)
 	icon = null
 	set_invisibility(101)
 	for(var/t in organs)
@@ -190,13 +186,12 @@
 	return
 
 /mob/living/carbon/human/proc/corgize()
-	if (transforming)
+	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
 	for(var/obj/item/W in src)
 		drop_from_inventory(W)
 	regenerate_icons()
-	transforming = 1
-	canmove = 0
+	ADD_TRANSFORMATION_MOVEMENT_HANDLER(src)
 	icon = null
 	set_invisibility(101)
 	for(var/t in organs)	//this really should not be necessary
@@ -219,14 +214,13 @@
 		to_chat(usr, "<span class='warning'>Sorry but this mob type is currently unavailable.</span>")
 		return
 
-	if(transforming)
+	if(HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
 	for(var/obj/item/W in src)
 		drop_from_inventory(W)
 
 	regenerate_icons()
-	transforming = 1
-	canmove = 0
+	ADD_TRANSFORMATION_MOVEMENT_HANDLER(src)
 	icon = null
 	set_invisibility(101)
 
@@ -313,22 +307,25 @@
 	return 0
 
 
-//This is barely a transformation but probably best file for it.
-/mob/living/carbon/human/proc/zombieze()
+/mob/living/carbon/human/proc/zombify()
 	ChangeToHusk()
-	mutations |= CLUMSY //cause zombie
-	src.visible_message("<span class='danger'>\The [src]'s flesh decays before your very eyes!</span>", "<span class='danger'>Your entire body is ripe with pain as it is consumed down to flesh and bones. You... hunger. Not only for flesh, but to spread your disease.</span>")
-	if(src.mind)
+	mutations |= CLUMSY
+	src.visible_message("<span class='danger'>\The [src]'s skin decays before your very eyes!</span>", "<span class='danger'>Your entire body is ripe with pain as it is consumed down to flesh and bones. You ... hunger. Not only for flesh, but to spread this gift.</span>")
+	if (src.mind)
+		if (src.mind.special_role == "Zombie")
+			return
 		src.mind.special_role = "Zombie"
 	log_admin("[key_name(src)] has transformed into a zombie!")
 	Weaken(5)
-	if(should_have_organ(BP_HEART))
-		vessel.add_reagent(/datum/reagent/blood,species.blood_volume-vessel.total_volume)
-	for(var/o in organs)
+	if (should_have_organ(BP_HEART))
+		vessel.add_reagent(/datum/reagent/blood, species.blood_volume - vessel.total_volume)
+	for (var/o in organs)
 		var/obj/item/organ/organ = o
 		organ.vital = 0
-		organ.rejuvenate(1)
-		organ.max_damage *= 5
-		organ.min_broken_damage *= 5
+		if (!organ.isrobotic())
+			organ.rejuvenate(1)
+			organ.max_damage *= 3
+			organ.min_broken_damage = Floor(organ.max_damage * 0.75)
 	verbs += /mob/living/proc/breath_death
 	verbs += /mob/living/proc/consume
+	playsound(get_turf(src), 'sound/hallucinations/wail.ogg', 20, 1)

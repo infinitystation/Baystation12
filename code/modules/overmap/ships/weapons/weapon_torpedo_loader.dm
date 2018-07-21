@@ -12,8 +12,8 @@
 	var/obj/machinery/power/ship_weapon/torpedo/launcher
 
 /obj/structure/torpedo_loader/Initialize()
+	. = ..()
 	find_launcher()
-	..()
 
 /obj/structure/torpedo_loader/MouseDrop_T(var/atom/movable/target, var/mob/user)
 	if(!user.incapacitated() && user.Adjacent(src))

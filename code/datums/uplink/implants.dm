@@ -7,16 +7,19 @@
 /datum/uplink_item/item/implants/imp_freedom
 	name = "Freedom Implant"
 	item_cost = 24
+	antag_costs = list(MODE_MERCENARY = 18)
 	path = /obj/item/weapon/storage/box/syndie_kit/imp_freedom
 
 /datum/uplink_item/item/implants/imp_compress
 	name = "Compressed Matter Implant"
 	item_cost = 32
+	antag_costs = list(MODE_MERCENARY = 24)
 	path = /obj/item/weapon/storage/box/syndie_kit/imp_compress
 
 /datum/uplink_item/item/implants/imp_explosive
 	name = "Explosive Implant (DANGER!)"
 	item_cost = 40
+	antag_costs = list(MODE_MERCENARY = 30)
 	path = /obj/item/weapon/storage/box/syndie_kit/imp_explosive
 
 /datum/uplink_item/item/implants/imp_uplink

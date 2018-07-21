@@ -21,6 +21,9 @@
 	name = "expeditionary jacket"
 	desc = "A uniform service jacket belonging to the SCG Expeditionary Corps."
 	icon_state = "ecservice_crew"
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/species/unathi/suit.dmi'
+		)
 
 /obj/item/clothing/suit/storage/solgov/service/expeditionary/medical
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/medical/service)
@@ -158,12 +161,21 @@
 	desc = "A silver and grey dress jacket belonging to the SCG Expeditionary Corps. Fashionable, for the 25th century at least."
 	icon_state = "greydress"
 	item_state = "greydress"
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/species/unathi/suit.dmi'
+		)
 
 /obj/item/clothing/suit/dress/solgov/expedition/command
 	name = "expeditionary officer's dress jacket"
 	desc = "A gold and grey dress jacket belonging to the SCG Expeditionary Corps. The height of fashion."
 	icon_state = "greydress_com"
 	item_state = "greydress_com"
+
+/obj/item/clothing/suit/dress/solgov/fleet/sailor
+	name = "fleet dress overwear"
+	desc = "A navy blue SCG Fleet dress suit. Almost looks like a school-girl outfit."
+	icon_state = "sailordress"
+	item_state = "whitedress"
 
 /obj/item/clothing/suit/storage/toggle/dress
 	name = "clasped dress jacket"
@@ -179,16 +191,36 @@
 
 /obj/item/clothing/suit/storage/toggle/dress/fleet
 	name = "fleet dress jacket"
-	desc = "A crisp white SCG Fleet dress jacket with blue and gold accents. Don't get near pasta sauce or vox."
+	desc = "A navy blue SCG Fleet dress jacket with silver accents. Don't get near pasta sauce or vox."
 
 /obj/item/clothing/suit/storage/toggle/dress/fleet/command
 	name = "fleet officer's dress jacket"
-	desc = "A crisp white SCG Fleet dress jacket dripping with gold accents. So bright it's blinding."
+	desc = "A navy blue SCG Fleet dress jacket dripping with gold accents."
 	icon_state = "whitedress_com"
 	//item_state = "labcoat"
 	icon_open = "whitedress_com_open"
 	icon_closed = "whitedress_com"
 	blood_overlay_type = "coat"
+
+/obj/item/clothing/suit/storage/toggle/dress/fleet2
+	name = "fleet white dress jacket"
+	desc = "A navy white SCG Fleet dress jacket with silver accents and golden trims."
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	icon_state = "whitedress"
+	icon_open = "whitedress_open"
+	icon_closed = "whitedress"
+	item_state = "whitedressh"
+	item_icons = list(slot_wear_suit_str = 'icons/obj/clothing/infinity/uniform.dmi')
+
+/obj/item/clothing/suit/storage/toggle/dress/fleet2/command
+	name = "fleet officer's white dress jacket"
+	desc = "A navy white SCG Fleet dress jacket dripping with gold accents and trims."
+	icon_state = "whitedress_com"
+	//item_state = "labcoat"
+	icon_open = "whitedress_com_open"
+	icon_closed = "whitedress_com"
+	item_state = "whitedressh_com"
+	//blood_overlay_type = "coat"
 
 /obj/item/clothing/suit/dress/solgov/marine
 	name = "marine dress jacket"

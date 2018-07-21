@@ -169,6 +169,17 @@
 	var/is_washing = 0
 	var/list/temperature_settings = list("normal" = 310, "boiling" = T0C+100, "freezing" = T0C)
 
+	var/sound_id
+	var/datum/sound_token/sound_token
+
+/obj/machinery/shower/Initialize()
+	. = ..()
+	sound_id = "[type]_[sequential_id(type)]"
+
+/obj/machinery/shower/Destroy()
+	QDEL_NULL(sound_token)
+	return ..()
+
 /obj/machinery/shower/New()
 	..()
 	create_reagents(50)
@@ -188,11 +199,17 @@
 	on = !on
 	update_icon()
 	if(on)
+		QDEL_NULL(sound_token)
+		playsound(src.loc, 'sound/machines/shower_start.ogg', 40)
+		sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, 'sound/machines/shower_mid3.ogg', volume = 20, range = 7, falloff = 4, prefer_mute = TRUE)
 		if (M.loc == loc)
 			wash(M)
 			process_heat(M)
 		for (var/atom/movable/G in src.loc)
 			G.clean_blood()
+	else
+		QDEL_NULL(sound_token)
+		playsound(src.loc, 'sound/machines/shower_end.ogg', 40)
 
 /obj/machinery/shower/attackby(obj/item/I as obj, mob/user as mob)
 	if(I.type == /obj/item/device/analyzer)
@@ -311,6 +328,11 @@
 				if(H.belt.clean_blood())
 					H.update_inv_belt(0)
 			H.clean_blood(washshoes)
+
+			var/obj/item/organ/external/head/head = H.organs_by_name[BP_HEAD]
+			if(istype(head))
+				head.forehead_graffiti = null
+				head.graffiti_style = null
 		else
 			if(M.wear_mask)						//if the mob is not human, it cleans the mask without asking for bitflags
 				if(M.wear_mask.clean_blood())
@@ -436,7 +458,7 @@
 		return
 
 	var/obj/item/weapon/reagent_containers/RG = O
-	if (istype(RG) && RG.is_open_container())
+	if (istype(RG) && RG.is_open_container() && !istype(RG, /obj/item/weapon/reagent_containers/food/snacks/grown))
 		RG.reagents.add_reagent(/datum/reagent/water, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
 		user.visible_message("<span class='notice'>[user] fills \the [RG] using \the [src].</span>","<span class='notice'>You fill \the [RG] using \the [src].</span>")
 		return 1
@@ -472,20 +494,27 @@
 
 	to_chat(usr, "<span class='notice'>You start washing \the [I].</span>")
 
-	busy = 1
-	sleep(40)
-	busy = 0
+	busy = TRUE
+	if(do_after(usr, 4 SECONDS, src, needhand = FALSE))
+		busy = FALSE
 
-	if(user.loc != location) return				//User has moved
-	if(!I) return 								//Item's been destroyed while washing
-	if(user.get_active_hand() != I) return		//Person has switched hands or the item in their hands
+		if(user.loc != location) return				//User has moved
+		if(!I) return 								//Item's been destroyed while washing
+		if(user.get_active_hand() != I) return		//Person has switched hands or the item in their hands
 
-	O.clean_blood()
-	user.visible_message( \
-		"<span class='notice'>[user] washes \a [I] using \the [src].</span>", \
-		"<span class='notice'>You wash \a [I] using \the [src].</span>")
+		O.clean_blood()
 
+		if(istype(O, /obj/item/organ/external/head))
+			var/obj/item/organ/external/head/head = O
+			head.forehead_graffiti = null
+			head.graffiti_style = null
 
+			user.visible_message( \
+			"<span class='notice'>[user] washes \A [I] using \The [src].</span>", \
+			"<span class='notice'>You wash \A [I] using \The [src].</span>")
+	else
+		busy = FALSE
+		to_chat(user, "<span class = 'notice'> You must stay still to wash \The [I]!</span>")
 /obj/structure/sink/kitchen
 	name = "kitchen sink"
 	icon_state = "sink_alt"

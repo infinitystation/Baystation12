@@ -45,3 +45,14 @@ var/const/SUIT_STORAGE_WIRE_LOCKED		= 4
 				S.electrified = 0
 			else
 				S.electrified = -1
+
+/datum/wires/suit_storage_unit/SolveWireFunction(var/function)
+	var/sf = ""
+	switch(function)
+		if(SUIT_STORAGE_WIRE_ELECTRIFY)
+			sf = "Port A"
+		if(SUIT_STORAGE_WIRE_SAFETY)
+			sf = "Port B"
+		if(SUIT_STORAGE_WIRE_LOCKED)
+			sf = "Port C"
+	return sf

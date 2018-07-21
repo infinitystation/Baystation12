@@ -6,10 +6,6 @@
 	post_round_safe_areas = list (
 		/area/centcom,
 		/area/shuttle/escape/centcom,
-		/area/shuttle/escape_pod1/centcom,
-		/area/shuttle/escape_pod2/centcom,
-		/area/shuttle/escape_pod3/centcom,
-		/area/shuttle/escape_pod5/centcom,
 		/area/shuttle/escape_pod6/station,
 		/area/shuttle/escape_pod7/station,
 		/area/shuttle/escape_pod8/station,
@@ -100,6 +96,10 @@
 	name = "Fourth Deck Starboard Maintenance"
 	icon_state = "smaint"
 
+/area/maintenance/fourthdeck/port
+	name = "Fourth Deck Port Maintenance"
+	icon_state = "pmaint"
+
 /area/teleporter/fourthdeck
 	name = "\improper Fourth Deck Teleporter"
 	icon_state = "teleporter"
@@ -159,6 +159,9 @@
 	name = "\improper Third Deck Safe Room"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/crew_quarters/laundry
+	name = "\improper Laundry Room"
+	icon_state = "Sleep"
 
 //Second Deck (Z-3)
 /area/maintenance/seconddeck
@@ -374,13 +377,32 @@
 
 //Aquila
 
-/area/aquila_hangar/start
+/area/aquila
 	name = "\improper SEV Aquila"
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/reinforced/airless
 	requires_power = 1
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/aquila/cockpit
+	name = "\improper SEV Aquila - Cockpit"
+/area/aquila/maintenance
+	name = "\improper SEV Aquila - Maintenance"
+/area/aquila/storage
+	name = "\improper SEV Aquila - Storage"
+/area/aquila/secure_storage
+	name = "\improper SEV Aquila - Secure Storage"
+/area/aquila/mess
+	name = "\improper SEV Aquila - Mess Hall"
+/area/aquila/passenger
+	name = "\improper SEV Aquila - Passenger Compartment"
+/area/aquila/medical
+	name = "\improper SEV Aquila - Medical"
+/area/aquila/head
+	name = "\improper SEV Aquila - Head"
+/area/aquila/airlock
+	name = "\improper SEV Aquila - Airlock Compartment"
 
 //Guppy
 
@@ -546,7 +568,7 @@
 
 // Command
 /area/command/conference
-	name = "Conference Room"
+	name = "Briefing Room"
 	icon_state = "head_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
@@ -639,6 +661,7 @@
 /area/vacant
 	name = "\improper Vacant Area"
 	icon_state = "construction"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/vacant/armory
 	name = "\improper Marine Armory"
@@ -663,6 +686,7 @@
 /area/vacant/prototype/control
 	name = "\improper Prototype Fusion Reactor Control Room"
 	icon_state = "engine_monitoring"
+	area_flags = null
 
 /area/vacant/prototype/engine
 	name = "\improper Prototype Fusion Reactor Chamber"
@@ -749,6 +773,10 @@
 	icon_state = "hangar"
 	sound_env = LARGE_ENCLOSED
 
+/area/quartermaster/unused
+	name = "\improper Ready Room"
+	icon_state = "auxstorage"
+
 // Research
 /area/rnd/canister
 	name = "\improper Canister Storage"
@@ -825,7 +853,7 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/crew_quarters/sleep/bunk
-	name = "\improper Bunk Room"
+	name = "\improper Dormitory"
 	icon_state = "Sleep"
 	sound_env = SMALL_SOFTFLOOR
 	area_flags = AREA_FLAG_RAD_SHIELDED
@@ -1006,6 +1034,10 @@
 	icon_state = "bridge"
 	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
+
+/area/bridge/disciplinary_board_room
+	name = "\improper Disciplinary Board Room"
+	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/heads
 	icon_state = "head_quarters"
@@ -1238,6 +1270,10 @@
 	name = "\improper Operating Theatre"
 	icon_state = "surgery"
 
+/area/medical/autopsy
+	name = "\improper Autopsy"
+	icon_state = "autopsy"
+
 // Research
 /area/assembly/chargebay
 	name = "\improper Mech Bay"
@@ -1263,10 +1299,6 @@
 	name = "\improper Research Break Room"
 	icon_state = "researchbreak"
 
-/area/rnd/pilot
-	name = "\improper NanoTrasen Pilot Office"
-	icon_state = "researchbreak"
-
 /area/alien
 	name = "\improper Alien base"
 	icon_state = "yellow"
@@ -1287,7 +1319,7 @@
 /area/shuttle/administration/centcom
 	name = "\improper Administration Shuttle"
 	icon_state = "shuttlered"
-
+/*
 /area/shuttle/escape_pod1/centcom
 	icon_state = "shuttle"
 
@@ -1299,6 +1331,7 @@
 
 /area/shuttle/escape_pod5/centcom
 	icon_state = "shuttle"
+*/
 
 /area/supply/dock
 	name = "Supply Shuttle"
@@ -1452,19 +1485,6 @@
 /area/tdome/tdomeadmin
 	name = "\improper Thunderdome (Admin.)"
 	icon_state = "purple"
-
-/area/tdome/testing
-	name = "\improper Thunderdome (TESTING AREA)"
-	icon_state = "purple"
-
-/area/tdome/testing/engineering
-	name = "\improper Thunderdome"
-	requires_power = 0
-	dynamic_lighting = 1
-
-/area/tdome/testing/engineering/unpowered
-	name = "\improper Thunderdome"
-	requires_power = 1
 
 /area/tdome/tdomeobserve
 	name = "\improper Thunderdome (Observer.)"

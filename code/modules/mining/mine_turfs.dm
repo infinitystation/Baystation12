@@ -43,10 +43,6 @@ var/list/mining_floors = list()
 	mining_walls["[src.z]"] += src
 	spawn(0)
 		MineralSpread()
-	if(ticker)
-		Initialize()
-
-/turf/simulated/mineral/Initialize()
 	spawn(2)
 		update_icon(1)
 
@@ -76,7 +72,7 @@ var/list/mining_floors = list()
 			var/turf/simulated/floor/asteroid/T = turf_to_check
 			T.updateMineralOverlays()
 		else if(istype(turf_to_check,/turf/space) || istype(turf_to_check,/turf/simulated/floor))
-			var/image/rock_side = image('icons/turf/walls.dmi', "rock_side", dir = turn(direction, 180))
+			var/image/rock_side = image(icon, "rock_side", dir = turn(direction, 180))
 			rock_side.turf_decal_layerise()
 			switch(direction)
 				if(NORTH)
@@ -553,7 +549,6 @@ var/list/mining_floors = list()
 				A = get_step(src, direction)
 				A.updateMineralOverlays()
 
-/*	We've got new collect method code for ore satchel. ~Quardbreak
 /turf/simulated/floor/asteroid/Entered(atom/movable/M as mob|obj)
 	..()
 	if(istype(M,/mob/living/silicon/robot))
@@ -566,4 +561,4 @@ var/list/mining_floors = list()
 			else if(istype(R.module_state_3,/obj/item/weapon/storage/ore))
 				attackby(R.module_state_3,R)
 			else
-				return */
+				return

@@ -25,24 +25,13 @@ meteor_act
 	var/obj/item/organ/external/organ = get_organ(def_zone)
 	var/armor = getarmor_organ(organ, P.check_armour)
 	var/penetrating_damage = ((P.damage + P.armor_penetration) * P.penetration_modifier) - armor
-
-	//Organ damage
-	if(organ.internal_organs.len && prob(35 + max(penetrating_damage, -12.5)))
-		var/damage_amt = min((P.damage * P.penetration_modifier), penetrating_damage) //So we don't factor in armor_penetration as additional damage
-		if(damage_amt > 0)
-		// Damage an internal organ
-			var/list/victims = list()
-			var/list/possible_victims = shuffle(organ.internal_organs.Copy())
-			for(var/obj/item/organ/internal/I in possible_victims)
-				if(I.damage < I.max_damage && (prob((I.relative_size) * (1 / max(1, victims.len)))))
-					victims += I
-			if(victims.len)
-				for(var/obj/item/organ/victim in victims)
-					damage_amt /= 2
-					victim.take_damage(damage_amt)
-
+	var/absorb = run_armor_check(def_zone, P.check_armour, P.armor_penetration)
 	//Embed or sever artery
-	if(P.can_embed() && !(species.species_flags & SPECIES_FLAG_NO_EMBED) && prob(22.5 + max(penetrating_damage, -10)) && !(prob(50) && (organ.sever_artery())))
+	var/safety = 0
+	if (istype(P, /obj/item/projectile/bullet))
+		var/obj/item/projectile/bullet/B = P
+		safety = B.safety
+	if((!safety) && (absorb != 100) && P.can_embed() && !(species.species_flags & SPECIES_FLAG_NO_EMBED) && prob(22.5 + max(penetrating_damage, -10)) && !(prob(50) && (organ.sever_artery())))
 		var/obj/item/weapon/material/shard/shrapnel/SP = new()
 		SP.SetName((P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel")
 		SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
@@ -112,7 +101,7 @@ meteor_act
 		def_zone = get_organ(check_zone(def_zone))
 	if(!def_zone)
 		return 0
-	var/protection = 0
+	var/protection = def_zone.species.natural_armour_values ? def_zone.species.natural_armour_values[type] : 0
 	var/list/protective_gear = list(head, wear_mask, wear_suit, w_uniform, gloves, shoes)
 	for(var/obj/item/clothing/gear in protective_gear)
 		if(gear.body_parts_covered & def_zone.body_part)
@@ -121,7 +110,7 @@ meteor_act
 			for(var/obj/item/clothing/accessory/bling in gear.accessories)
 				if(bling.body_parts_covered & def_zone.body_part)
 					protection = add_armor(protection, bling.armor[type])
-	return protection
+	return Clamp(protection,0,100)
 
 /mob/living/carbon/human/proc/check_head_coverage()
 
@@ -158,7 +147,10 @@ meteor_act
 	if(user == src) // Attacking yourself can't miss
 		return target_zone
 
-	var/hit_zone = get_zone_with_miss_chance(target_zone, src)
+	var/accuracy_penalty = user.melee_accuracy_mods()
+	accuracy_penalty += 10*get_skill_difference(SKILL_COMBAT, user)
+
+	var/hit_zone = get_zone_with_miss_chance(target_zone, src, accuracy_penalty)
 
 	if(!hit_zone)
 		visible_message("<span class='danger'>\The [user] misses [src] with \the [I]!</span>")
@@ -180,6 +172,7 @@ meteor_act
 		return //should be prevented by attacked_with_item() but for sanity.
 
 	visible_message("<span class='danger'>[src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"] in the [affecting.name] with [I.name] by [user]!</span>")
+	receive_damage()
 
 	var/blocked = run_armor_check(hit_zone, "melee", I.armor_penetration, "Your armor has protected your [affecting.name].", "Your armor has softened the blow to your [affecting.name].")
 	standard_weapon_hit_effects(I, user, effective_force, blocked, hit_zone)
@@ -210,13 +203,15 @@ meteor_act
 			if(headcheck(hit_zone))
 				//Harder to score a stun but if you do it lasts a bit longer
 				if(prob(effective_force))
-					visible_message("<span class='danger'>[src] [species.knockout_message]</span>")
 					apply_effect(20, PARALYZE, blocked)
+					if(lying)
+						visible_message("<span class='danger'>[src] [species.knockout_message]</span>")
 			else
 				//Easier to score a stun but lasts less time
 				if(prob(effective_force + 10))
-					visible_message("<span class='danger'>[src] has been knocked down!</span>")
 					apply_effect(6, WEAKEN, blocked)
+					if(lying)
+						visible_message("<span class='danger'>[src] has been knocked down!</span>")
 
 		//Apply blood
 		attack_bloody(I, user, effective_force, hit_zone)
@@ -315,7 +310,7 @@ meteor_act
 		var/obj/O = AM
 
 		if(in_throw_mode && !get_active_hand() && speed <= THROWFORCE_SPEED_DIVISOR)	//empty active hand and we're in throw mode
-			if(canmove && !restrained())
+			if(!incapacitated())
 				if(isturf(O.loc))
 					put_in_active_hand(O)
 					visible_message("<span class='warning'>[src] catches [O]!</span>")
@@ -452,8 +447,7 @@ meteor_act
 	if(!wear_suit) return
 	if(!istype(wear_suit,/obj/item/clothing/suit/space)) return
 	var/obj/item/clothing/suit/space/SS = wear_suit
-	var/penetrated_dam = max(0,(damage - SS.breach_threshold))
-	if(penetrated_dam) SS.create_breaches(damtype, penetrated_dam)
+	SS.create_breaches(damtype, damage)
 
 /mob/living/carbon/human/reagent_permeability()
 	var/perm = 0

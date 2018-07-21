@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/revolver
-	name = "revolver"
+	name = "HE 'Colt' revolver"
 	desc = "The Lumoco Arms HE Colt is a choice revolver for when you absolutely, positively need to put a hole in the other guy. Uses .357 ammo."
 	icon_state = "revolver"
 	item_state = "revolver"
@@ -11,6 +11,8 @@
 	ammo_type = /obj/item/ammo_casing/a357
 	var/chamber_offset = 0 //how many empty chambers in the cylinder until you hit a round
 	have_safety = 0
+	mag_insert_sound = 'sound/weapons/guns/interaction/rev_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/rev_magout.ogg'
 
 /obj/item/weapon/gun/projectile/revolver/AltClick()
 	if(CanPhysicallyInteract(usr))
@@ -44,7 +46,7 @@
 	return ..()
 
 /obj/item/weapon/gun/projectile/revolver/mateba
-	name = "mateba"
+	name = "Mateba"
 	icon_state = "mateba"
 	caliber = ".50"
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
@@ -121,7 +123,7 @@
 
 /obj/item/weapon/gun/projectile/revolver/webley
 	name = "service revolver"
-	desc = "A rugged top break revolver based on the Webley Mk. VI model, with modern improvements. Uses .44 magnum rounds."
+	desc = "The A&M W4. A rugged top break revolver produced by al-Maliki & Mosley. Based on the Webley model, with modern improvements. Uses .44 magnum rounds."
 	icon_state = "webley"
 	item_state = "webley"
 	max_shells = 6
@@ -130,18 +132,18 @@
 	ammo_type = /obj/item/ammo_casing/c44
 
 /obj/item/weapon/gun/projectile/revolver/lr22
-	name = ".22LR revolver"
-	desc = "A rugged revolver based on the Smith & Wesson 617 model, with modern improvements. Uses .22LR rounds."
+	name = "H-17 revolver"
+	desc = "A rugged revolver based on the Smith & Wesson 617 model, with modern improvements. Uses .17 HMR rounds."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "22lr_revolver"
 	item_state = "revolver"
 	max_shells = 10
 	caliber = "22"
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	ammo_type = /obj/item/ammo_casing/a22lr
+	ammo_type = /obj/item/ammo_casing/a17
 
 /obj/item/weapon/gun/projectile/revolver/shotgun
-	name = "shotgun revolver"
+	name = "RSH-12 shotgun-revolver"
 	desc = "The old RSH-12 shotgun revolder designer for spec ops. Useful for sweeping alleys."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "rsh-12"

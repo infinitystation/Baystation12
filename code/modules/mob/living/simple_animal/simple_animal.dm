@@ -33,6 +33,7 @@
 	var/response_disarm = "tries to disarm"
 	var/response_harm   = "tries to hurt"
 	var/harm_intent_damage = 3
+	var/can_escape = 0 // 'smart' simple animals such as human enemies, or things small, big, sharp or strong enough to power out of a net
 
 	//Temperature effect
 	var/minbodytemp = 250
@@ -62,7 +63,6 @@
 
 	// contained in a cage
 	var/in_stasis = 0
-
 /mob/living/simple_animal/Life()
 	..()
 	if(!living_observers_present(GetConnectedZlevels(z)))
@@ -76,7 +76,6 @@
 			set_density(1)
 		return 0
 
-
 	if(health <= 0)
 		death()
 		return
@@ -89,16 +88,22 @@
 	handle_paralysed()
 	handle_supernatural()
 
+	if(buckled && can_escape)
+		if(istype(buckled, /obj/effect/energy_net))
+			var/obj/effect/energy_net/Net = buckled
+			Net.escape_net(src)
+		else if(prob(50))
+			escape(src, buckled)
+		else if(prob(50))
+			visible_message("<span class='warning'>\The [src] struggles against \the [buckled]!</span>")
+
 	//Movement
 	if(!client && !stop_automated_movement && wander && !anchored)
-		if(isturf(src.loc) && !resting && !buckled && canmove)		//This is so it only moves if it's not inside a closet, gentics machine, etc.
+		if(isturf(src.loc) && !resting)		//This is so it only moves if it's not inside a closet, gentics machine, etc.
 			turns_since_move++
 			if(turns_since_move >= turns_per_move)
-				if(!(stop_automated_movement_when_pulled && pulledby)) //Soma animals don't move when pulled
-					var/moving_to = 0 // otherwise it always picks 4, fuck if I know.   Did I mention fuck BYOND
-					moving_to = pick(GLOB.cardinal)
-					set_dir(moving_to)			//How about we turn them the direction they are moving, yay.
-					Move(get_step(src,moving_to))
+				if(!(stop_automated_movement_when_pulled && pulledby)) //Some animals don't move when pulled
+					SelfMove(pick(GLOB.cardinal))
 					turns_since_move = 0
 
 	//Speaking
@@ -129,7 +134,7 @@
 		return 1
 	var/datum/gas_mixture/environment = A.return_air()
 
-	if(environment)
+	if(!(SPACERES in mutations) && environment)
 		if( abs(environment.temperature - bodytemperature) > 40 )
 			bodytemperature += (environment.temperature - bodytemperature) / 5
 		if(min_gas)
@@ -155,6 +160,10 @@
 		adjustBruteLoss(unsuitable_atoms_damage)
 	return 1
 
+/mob/living/simple_animal/proc/escape(mob/living/M, obj/O)
+	O.unbuckle_mob(M)
+	visible_message("<span class='danger'>\The [M] escapes from \the [O]!</span>")
+
 /mob/living/simple_animal/proc/handle_supernatural()
 	if(purge)
 		purge -= 1
@@ -177,6 +186,7 @@
 		damage = (Proj.damage / 8)
 
 	adjustBruteLoss(damage)
+	Proj.on_hit(src)
 	return 0
 
 /mob/living/simple_animal/attack_hand(mob/living/carbon/human/M as mob)
@@ -267,6 +277,7 @@
 
 /mob/living/simple_animal/death(gibbed, deathmessage = "dies!", show_dead_message)
 	icon_state = icon_dead
+	update_icon()
 	density = 0
 	adjustBruteLoss(maxHealth) //Make sure dey dead.
 	walk_to(src,0)
@@ -319,7 +330,7 @@
 	return 1
 
 /mob/living/simple_animal/say(var/message)
-	var/verb = "говорит"
+	var/verb = "says"
 	if(speak_emote.len)
 		verb = pick(speak_emote)
 
@@ -358,3 +369,6 @@
 	return
 /mob/living/simple_animal/ExtinguishMob()
 	return
+
+/mob/living/simple_animal/is_burnable()
+	return heat_damage_per_tick

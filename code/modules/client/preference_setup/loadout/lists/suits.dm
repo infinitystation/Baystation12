@@ -90,6 +90,7 @@
 	jackets += /obj/item/clothing/suit/storage/leather_jacket/nanotrasen
 	jackets += /obj/item/clothing/suit/storage/toggle/brown_jacket/nanotrasen
 	jackets += /obj/item/clothing/suit/storage/leather_jacket
+	jackets += /obj/item/clothing/suit/storage/toggle/longjacket
 	jackets += /obj/item/clothing/suit/storage/toggle/brown_jacket
 	jackets += /obj/item/clothing/suit/storage/mbill
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(jackets)
@@ -129,7 +130,7 @@
 /datum/gear/suit/trenchcoat/New()
 	..()
 	var/trenchcoats = list()
-	trenchcoats += /obj/item/clothing/suit/storage/det_trench
-	trenchcoats += /obj/item/clothing/suit/storage/det_trench/grey
+	trenchcoats += /obj/item/clothing/suit/storage/det_trench/ft
+	trenchcoats += /obj/item/clothing/suit/storage/det_trench/ft/grey
 	trenchcoats += /obj/item/clothing/suit/leathercoat
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(trenchcoats)

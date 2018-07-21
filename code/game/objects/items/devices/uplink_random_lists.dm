@@ -45,6 +45,9 @@ var/list/uplink_random_selections_
 /datum/uplink_random_selection/default/New()
 	..()
 
+	items += new/datum/uplink_random_item(/datum/uplink_item/item/armor/space_suit, 50, 10)
+	items += new/datum/uplink_random_item(/datum/uplink_item/item/armor/heavy_armor)
+
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/visible_weapons/g9mm)
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/visible_weapons/revolver)
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/visible_weapons/heavysniper, 15, 0)
@@ -54,7 +57,6 @@ var/list/uplink_random_selections_
 
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/stealthy_weapons/soap, 5, 100)
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/stealthy_weapons/concealed_cane, 50, 10)
-	items += new/datum/uplink_random_item(/datum/uplink_item/item/stealthy_weapons/detomatix, 20, 10)
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/stealthy_weapons/sleepy)
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/stealthy_weapons/cigarette_kit)
 
@@ -70,9 +72,7 @@ var/list/uplink_random_selections_
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/tools/encryptionkey_binary)
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/tools/emag, 100, 50)
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/tools/clerical)
-	items += new/datum/uplink_random_item(/datum/uplink_item/item/tools/space_suit, 50, 10)
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/tools/thermal)
-	items += new/datum/uplink_random_item(/datum/uplink_item/item/tools/heavy_armor)
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/tools/powersink, 10, 10)
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/tools/ai_module, 25, 0)
 	items += new/datum/uplink_random_item(/datum/uplink_item/item/tools/teleporter, 10, 0)
@@ -109,7 +109,6 @@ var/list/uplink_random_selections_
 			/datum/uplink_item/item/tools/teleporter,
 			/datum/uplink_item/item/tools/supply_beacon,
 			/datum/uplink_item/item/implants/imp_uplink,
-			/datum/uplink_item/deity
 		)
 
 /datum/uplink_random_selection/blacklist/New()
@@ -139,9 +138,8 @@ var/list/uplink_random_selections_
 
 #ifdef DEBUG
 /proc/debug_uplink_purchage_log()
-	var/list/all_antag_types = all_antag_types()
-	for(var/antag_type in all_antag_types)
-		var/datum/antagonist/A = all_antag_types[antag_type]
+	for(var/antag_type in GLOB.all_antag_types_)
+		var/datum/antagonist/A = GLOB.all_antag_types_[antag_type]
 		A.print_player_summary()
 
 /proc/debug_uplink_item_assoc_list()

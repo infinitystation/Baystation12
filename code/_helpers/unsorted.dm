@@ -312,8 +312,6 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 		fully_replace_character_name(newname)
 
-
-
 //Picks a string of symbols to display as the law number for hacked or ion laws
 /proc/ionnum()
 	return "[pick("1","2","3","4","5","6","7","8","9","0")][pick("!","@","#","$","%","^","&","*")][pick("!","@","#","$","%","^","&","*")][pick("!","@","#","$","%","^","&","*")]"
@@ -615,14 +613,16 @@ proc/GaussRandRound(var/sigma,var/roundto)
 		if(istype(N, areatype)) areas += N
 	return areas
 
-//Takes: Area type as text string or as typepath OR an instance of the area.
+//Takes: Area type as a typepath OR an instance of the area.
 //Returns: A list of all atoms	(objs, turfs, mobs) in areas of that type of that type in the world.
 /proc/get_area_all_atoms(var/areatype)
-	if(!areatype) return null
-	if(istext(areatype)) areatype = text2path(areatype)
+	if(!areatype)
+		return null
 	if(isarea(areatype))
 		var/area/areatemp = areatype
 		areatype = areatemp.type
+	if(!ispath(areatype, /area))
+		return null
 
 	var/list/atoms = new/list()
 	for(var/area/N in world)
@@ -1004,7 +1004,7 @@ var/list/WALLITEMS = list(
 	/obj/machinery/status_display, /obj/machinery/requests_console, /obj/machinery/light_switch, /obj/structure/sign,
 	/obj/machinery/newscaster, /obj/machinery/firealarm, /obj/structure/noticeboard,
 	/obj/item/weapon/storage/secure/safe, /obj/machinery/door_timer, /obj/machinery/flasher, /obj/machinery/keycard_auth,
-	/obj/structure/mirror, /obj/structure/fireaxecabinet, /obj/structure/filingcabinet/wallcabinet
+	/obj/item/weapon/storage/mirror, /obj/structure/fireaxecabinet, /obj/structure/filingcabinet/wallcabinet
 	)
 /proc/gotwallitem(loc, dir)
 	for(var/obj/O in loc)
@@ -1088,7 +1088,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 /atom/proc/get_light_and_color(var/atom/origin)
 	if(origin)
 		color = origin.color
-		set_light(origin.light_range, origin.light_power, origin.light_color)
+		set_light(origin.light_max_bright, origin.light_inner_range, origin.light_outer_range, origin.light_falloff_curve)
 
 /mob/dview/Initialize()
 	. = ..()
@@ -1101,3 +1101,59 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 /proc/pass()
 	return
+
+#define NOT_FLAG(flag) (!(flag & use_flags))
+#define HAS_FLAG(flag) (flag & use_flags)
+
+// Checks if user can use this object. Set use_flags to customize what checks are done.
+// Returns 0 if they can use it, a value representing why they can't if not.
+// Flags are in `code/__defines/misc.dm`
+/atom/proc/use_check(mob/user, use_flags = 0, show_messages = FALSE)
+	. = 0
+	if (NOT_FLAG(USE_ALLOW_NONLIVING) && !isliving(user))
+		// No message for ghosts.
+		return USE_FAIL_NONLIVING
+
+	if (NOT_FLAG(USE_ALLOW_NON_ADJACENT) && !Adjacent(user))
+		if (show_messages)
+			to_chat(user, "<span class='notice'>You're too far away from [src] to do that.</span>")
+		return USE_FAIL_NON_ADJACENT
+
+	if (NOT_FLAG(USE_ALLOW_DEAD) && user.stat == DEAD)
+		if (show_messages)
+			to_chat(user, "<span class='notice'>How do you expect to do that when you're dead?</span>")
+		return USE_FAIL_DEAD
+
+	if (NOT_FLAG(USE_ALLOW_INCAPACITATED) && (user.incapacitated()))
+		if (show_messages)
+			to_chat(user, "<span class='notice'>You cannot do that in your current state.</span>")
+		return USE_FAIL_INCAPACITATED
+
+	if (NOT_FLAG(USE_ALLOW_NON_ADV_TOOL_USR) && !user.IsAdvancedToolUser())
+		if (show_messages)
+			to_chat(user, "<span class='notice'>You don't know how to operate [src].</span>")
+		return USE_FAIL_NON_ADV_TOOL_USR
+
+	if (HAS_FLAG(USE_DISALLOW_SILICONS) && issilicon(user))
+		if (show_messages)
+			to_chat(user, "<span class='notice'>How do you propose doing that without hands?</span>")
+		return USE_FAIL_IS_SILICON
+
+	if (HAS_FLAG(USE_FORCE_SRC_IN_USER) && !(src in user))
+		if (show_messages)
+			to_chat(user, "<span class='notice'>You need to be holding [src] to do that.</span>")
+		return USE_FAIL_NOT_IN_USER
+
+#undef NOT_FLAG
+#undef HAS_FLAG
+
+//clicking to move pulled objects onto assignee's turf/loc
+/proc/do_pull_click(mob/user, atom/A)
+	if(ismob(user.pulling))
+		var/mob/M = user.pulling
+		var/atom/movable/t = M.pulling
+		M.stop_pulling()
+		step(user.pulling, get_dir(user.pulling.loc, A))
+		M.start_pulling(t)
+	else
+		step(user.pulling, get_dir(user.pulling.loc, A))

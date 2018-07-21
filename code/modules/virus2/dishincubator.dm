@@ -26,7 +26,7 @@
 
 		beaker = O
 		user.drop_item()
-		O.loc = src
+		O.forceMove(src)
 
 		user.visible_message("[user] adds \a [O] to \the [src]!", "You add \a [O] to \the [src]!")
 		GLOB.nanomanager.update_uis(src)
@@ -42,7 +42,7 @@
 
 		dish = O
 		user.drop_item()
-		O.loc = src
+		O.forceMove(src)
 
 		user.visible_message("[user] adds \a [O] to \the [src]!", "You add \a [O] to \the [src]!")
 		GLOB.nanomanager.update_uis(src)
@@ -98,6 +98,8 @@
 			on = 0
 			icon_state = "incubator"
 
+		var/threshold_mod = 0
+
 		if(foodsupply)
 			if(dish.growth + 3 >= 100 && dish.growth < 100)
 				ping("\The [src] pings, \"Sufficient viral growth density achieved.\"")
@@ -107,6 +109,7 @@
 			GLOB.nanomanager.update_uis(src)
 
 		if(radiation)
+			threshold_mod++
 			if(radiation > 50 & prob(5))
 				dish.virus2.majormutate()
 				if(dish.info)
@@ -125,22 +128,20 @@
 			dish.growth = 0
 			dish.virus2 = null
 			GLOB.nanomanager.update_uis(src)
+		infect_nearby(dish.virus2, 10 * 2**threshold_mod, SKILL_BASIC + threshold_mod)
 	else if(!dish)
 		on = 0
 		icon_state = "incubator"
 		GLOB.nanomanager.update_uis(src)
 
 	if(beaker)
-		if(foodsupply < 100 && foodsupply + 10 <= 100)
-			if(beaker.reagents.remove_reagent(/datum/reagent/nutriment/virus_food,5))
-				foodsupply += 10
-		else if (!(foodsupply + 10 <= 100))
-			if(beaker.reagents.remove_reagent(/datum/reagent/nutriment/virus_food,1))
-				if (!(foodsupply >= 100))
-					foodsupply += 1
-				else
-					foodsupply_storage += 2
-		GLOB.nanomanager.update_uis(src)
+		if (foodsupply < 100 && beaker.reagents.has_reagent(/datum/reagent/nutriment/virus_food))
+			var/food_needed = min(10, 100 - foodsupply) / 2
+			var/food_taken = min(food_needed, beaker.reagents.get_reagent_amount(/datum/reagent/nutriment/virus_food))
+
+			beaker.reagents.remove_reagent(/datum/reagent/nutriment/virus_food, food_taken)
+			foodsupply = min(100, foodsupply+(food_taken * 2))
+			GLOB.nanomanager.update_uis(src)
 
 		if (locate(/datum/reagent/toxin) in beaker.reagents.reagent_list && toxins < 100)
 			for(var/datum/reagent/toxin/T in beaker.reagents.reagent_list)
@@ -165,7 +166,8 @@
 				foodsupply_storage = 0
 				foodsupply += foodsupply_storage
 
-/obj/machinery/disease2/incubator/OnTopic(user, href_list)
+/obj/machinery/disease2/incubator/OnTopic(mob/user, href_list)
+	operator_skill = user.get_skill_value(core_skill)
 	if (href_list["close"])
 		GLOB.nanomanager.close_user_uis(user, src, "main")
 		return TOPIC_HANDLED

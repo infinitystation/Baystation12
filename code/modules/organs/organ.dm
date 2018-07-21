@@ -25,6 +25,7 @@ var/list/organ_cache = list()
 	var/min_broken_damage = 30     	  // Damage before becoming broken
 	var/max_damage                    // Damage cap
 	var/rejecting                     // Is this organ already being rejected?
+	var/emp_coeff = 1 //coefficient for damages taken by EMP, if the organ is robotic.
 
 	var/death_time
 
@@ -42,8 +43,11 @@ var/list/organ_cache = list()
 /obj/item/organ/proc/is_broken()
 	return (damage >= min_broken_damage || (status & ORGAN_CUT_AWAY) || (status & ORGAN_BROKEN))
 
-/obj/item/organ/New(var/mob/living/carbon/holder)
+//Second argument may be a dna datum; if null will be set to holder's dna.
+/obj/item/organ/New(var/mob/living/carbon/holder, var/datum/dna/given_dna)
 	..(holder)
+	if(!istype(given_dna))
+		given_dna = null
 
 	if(max_damage)
 		min_broken_damage = Floor(max_damage / 2)
@@ -53,18 +57,12 @@ var/list/organ_cache = list()
 	if(istype(holder))
 		owner = holder
 		w_class = max(w_class + mob_size_difference(holder.mob_size, MOB_MEDIUM), 1) //smaller mobs have smaller organs.
-
-		if(holder.dna)
-			dna = holder.dna.Clone()
-			species = all_species[dna.species]
+		if(!given_dna && holder.dna)
+			given_dna = holder.dna
 		else
-			species = all_species[SPECIES_HUMAN]
 			log_debug("[src] spawned in [holder] without a proper DNA.")
 
-	if(dna)
-		if(!blood_DNA)
-			blood_DNA = list()
-		blood_DNA[dna.unique_enzymes] = dna.b_type
+	given_dna ? set_dna(given_dna) : (species = all_species[SPECIES_HUMAN])
 
 	create_reagents(5 * (w_class-1)**2)
 	reagents.add_reagent(/datum/reagent/nutriment/protein, reagents.maximum_volume)
@@ -210,19 +208,22 @@ var/list/organ_cache = list()
 
 //Germs
 /obj/item/organ/proc/handle_antibiotics()
-	var/antibiotics = 0
-	if(owner)
-		antibiotics = owner.reagents.get_reagent_amount(/datum/reagent/spaceacillin)
+	if(!owner || !germ_level)
+		return
 
-	if (!germ_level || antibiotics < 5)
+	var/antibiotics = owner.chem_effects[CE_ANTIBIOTIC]
+	if (!antibiotics)
 		return
 
 	if (germ_level < INFECTION_LEVEL_ONE)
 		germ_level = 0	//cure instantly
 	else if (germ_level < INFECTION_LEVEL_TWO)
-		germ_level -= 6	//at germ_level == 500, this should cure the infection in a minute
-	else
-		germ_level -= 2 //at germ_level == 1000, this will cure the infection in 5 minutes
+		germ_level -= 5	//at germ_level == 500, this should cure the infection in 5 minutes
+	else 
+		germ_level -= 3 //at germ_level == 1000, this will cure the infection in 10 minutes
+	if(owner && owner.lying)
+		germ_level -= 2
+	germ_level = max(0, germ_level)
 
 //Note: external organs have their own version of this proc
 /obj/item/organ/proc/take_damage(amount, var/silent=0)
@@ -246,11 +247,11 @@ var/list/organ_cache = list()
 		return
 	switch (severity)
 		if (1)
-			take_damage(9)
+			take_damage(rand(8,12) * emp_coeff)
 		if (2)
-			take_damage(3)
+			take_damage(rand(3,8) * emp_coeff)
 		if (3)
-			take_damage(1)
+			take_damage(rand(3) * emp_coeff)
 
 /**
  *  Remove an organ
@@ -335,17 +336,17 @@ var/list/organ_cache = list()
 		else
 			. += "Necrotic"
 	switch (germ_level)
-		if (INFECTION_LEVEL_ONE to INFECTION_LEVEL_ONE + 200)
+		if (INFECTION_LEVEL_ONE to INFECTION_LEVEL_ONE + ((INFECTION_LEVEL_TWO - INFECTION_LEVEL_ONE) / 3))
 			. +=  "Mild Infection"
-		if (INFECTION_LEVEL_ONE + 200 to INFECTION_LEVEL_ONE + 300)
+		if (INFECTION_LEVEL_ONE + ((INFECTION_LEVEL_TWO - INFECTION_LEVEL_ONE) / 3) to INFECTION_LEVEL_ONE + (2 * (INFECTION_LEVEL_TWO - INFECTION_LEVEL_ONE) / 3))
 			. +=  "Mild Infection+"
-		if (INFECTION_LEVEL_ONE + 300 to INFECTION_LEVEL_ONE + 400)
+		if (INFECTION_LEVEL_ONE + (2 * (INFECTION_LEVEL_TWO - INFECTION_LEVEL_ONE) / 3) to INFECTION_LEVEL_TWO)
 			. +=  "Mild Infection++"
-		if (INFECTION_LEVEL_TWO to INFECTION_LEVEL_TWO + 200)
+		if (INFECTION_LEVEL_TWO to INFECTION_LEVEL_TWO + ((INFECTION_LEVEL_THREE - INFECTION_LEVEL_THREE) / 3))
 			. +=  "Acute Infection"
-		if (INFECTION_LEVEL_TWO + 200 to INFECTION_LEVEL_TWO + 300)
+		if (INFECTION_LEVEL_TWO + ((INFECTION_LEVEL_THREE - INFECTION_LEVEL_THREE) / 3) to INFECTION_LEVEL_TWO + (2 * (INFECTION_LEVEL_THREE - INFECTION_LEVEL_TWO) / 3))
 			. +=  "Acute Infection+"
-		if (INFECTION_LEVEL_TWO + 300 to INFECTION_LEVEL_TWO + 400)
+		if (INFECTION_LEVEL_TWO + (2 * (INFECTION_LEVEL_THREE - INFECTION_LEVEL_TWO) / 3) to INFECTION_LEVEL_THREE)
 			. +=  "Acute Infection++"
 		if (INFECTION_LEVEL_THREE to INFINITY)
 			. +=  "Septic"

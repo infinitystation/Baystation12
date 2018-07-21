@@ -24,14 +24,10 @@
 	item_cost = 8
 	path = /obj/item/weapon/storage/box/syndie_kit/toxin
 
-/datum/uplink_item/item/stealthy_weapons/detomatix
-	name = "Detomatix PDA Cartridge"
-	item_cost = 16
-	path = /obj/item/weapon/cartridge/syndicate
-	
 /datum/uplink_item/item/stealthy_weapons/sleepy
 	name = "Sleepy Pen"
 	item_cost = 20
+	antag_costs = list(MODE_MERCENARY = 10)
 	path = /obj/item/weapon/pen/reagent/sleepy
 
 /datum/uplink_item/item/stealthy_weapons/syringegun

@@ -6,6 +6,8 @@
 #define FOOTSTEP_GRASS 		"grass"
 #define FOOTSTEP_WATER		"water"
 #define FOOTSTEP_BLANK		"blank"
+#define FOOTSTEP_CATWALK	"catwalk"
+#define FOOTSTEP_LAVA		"lava"
 
 /turf/simulated/floor/var/global/list/footstep_sounds = list(
 	FOOTSTEP_WOOD = list(
@@ -48,6 +50,10 @@
 		'sound/effects/footstep/water2.ogg',
 		'sound/effects/footstep/water3.ogg',
 		'sound/effects/footstep/water4.ogg'),
+	FOOTSTEP_LAVA = list(
+		'sound/effects/footstep/lava1.ogg',
+		'sound/effects/footstep/lava2.ogg',
+		'sound/effects/footstep/lava3.ogg'),
 	FOOTSTEP_BLANK = list(
 		'sound/effects/footstep/blank.ogg')
 )
@@ -102,12 +108,15 @@
 	if(buckled || lying || throwing)
 		return //people flying, lying down or sitting do not step
 
-	if(m_intent == "run")
+	if(m_intent == M_RUN)
 		if(step_count % 2) //every other turf makes a sound
 			return
 
 	if(species.silent_steps)
 		return //species is silent
+
+	if(shoes && (shoes.item_flags & ITEM_FLAG_SILENT))
+		return // quiet shoes
 
 	if(!has_gravity(src))
 		if(step_count % 3) // don't need to step as often when you hop around
@@ -116,15 +125,20 @@
 	if(!has_organ(BP_L_FOOT) && !has_organ(BP_R_FOOT))
 		return //no feet no footsteps
 
-	var/S = T.get_footstep_sound()
-	if(S)
+	var/footsound
+	for(var/obj/structure/S in T)
+		footsound = S.get_footstep_sound()
+		if(footsound) break
+	if(!footsound)
+		footsound = T.get_footstep_sound()
+	if(footsound)
 		var/range = -(world.view - 2)
 		var/volume = 70
-		if(m_intent == "walk")
+		if(m_intent == M_WALK)
 			volume -= 45
 			range -= 0.333
 		if(!shoes)
 			volume -= 60
 			range -= 0.333
 
-		playsound(T, S, volume, 1, range)
+		playsound(T, footsound, volume, 1, range)

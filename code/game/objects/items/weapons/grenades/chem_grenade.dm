@@ -182,6 +182,13 @@
 		spawn(50)		   //To make sure all reagents can work
 			qdel(src)	   //correctly before deleting the grenade.
 
+/obj/item/weapon/grenade/chem_grenade/Crossed(atom/movable/AM)
+	if(detonator)
+		detonator.Crossed(AM)
+
+/obj/item/weapon/grenade/chem_grenade/on_found(mob/finder)
+	if(detonator)
+		detonator.on_found(finder)
 
 /obj/item/weapon/grenade/chem_grenade/large
 	name = "large chem grenade"

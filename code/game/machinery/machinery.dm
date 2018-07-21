@@ -115,6 +115,8 @@ Class Procs:
 	var/interact_offline = 0 // Can the machine be interacted with while de-powered.
 	var/clicksound			// sound played on succesful interface use by a carbon lifeform
 	var/clickvol = 40		// sound played on succesful interface use
+	var/core_skill = SKILL_DEVICES //The skill used for skill checks for this machine (mostly so subtypes can use different skills).
+	var/operator_skill      // Machines often do all operations on Process(). This caches the user's skill while the operations are running.
 
 /obj/machinery/Initialize(mapload, d=0)
 	. = ..()
@@ -331,6 +333,7 @@ Class Procs:
 			to_chat(user, "<span class='notice'>	[C.name]</span>")
 	if(shouldplaysound)
 		R.play_rped_sound()
+		display_parts(user)
 	return 1
 
 /obj/machinery/proc/dismantle()
@@ -361,3 +364,13 @@ Class Procs:
 	..()
 	if(clicksound && istype(user, /mob/living/carbon))
 		playsound(src, clicksound, clickvol)
+
+/obj/machinery/proc/display_parts(mob/user)
+	to_chat(user, "<span class='notice'>Following parts detected in the machine:</span>")
+	for(var/var/obj/item/C in component_parts)
+		to_chat(user, "<span class='notice'>	[C.name]</span>")
+
+/obj/machinery/examine(mob/user)
+	. = ..(user)
+	if(component_parts && hasHUD(user, HUD_SCIENCE))
+		display_parts(user)

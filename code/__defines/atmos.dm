@@ -15,10 +15,8 @@
 #define MIN_TOXIN_DAMAGE 1
 #define MAX_TOXIN_DAMAGE 10
 
-#define BREATH_VOLUME       0.5 // Liters in a normal breath.
-#define BREATH_MOLES        (ONE_ATMOSPHERE * BREATH_VOLUME / (T20C * R_IDEAL_GAS_EQUATION)) // Amount of air to take a from a tile
-#define BREATH_PERCENTAGE   (BREATH_VOLUME / CELL_VOLUME)                                    // Amount of air needed before pass out/suffocation commences.
-#define HUMAN_NEEDED_OXYGEN (MOLES_CELLSTANDARD * BREATH_PERCENTAGE * 0.16)
+#define STD_BREATH_VOLUME      12 // Liters in a normal breath.
+
 #define HUMAN_HEAT_CAPACITY 280000 //J/K For 80kg person
 
 #define SOUND_MINIMUM_PRESSURE 10
@@ -99,7 +97,6 @@
 #define ATMOSTANK_HYDROGEN      25000
 #define ATMOSTANK_HYDROGEN_FUEL 25000
 #define ATMOSTANK_NITROUSOXIDE  10000 // N2O doesn't have a real useful use, i guess it's on station just to allow refilling of sec's riot control canisters?
-#define ATMOSTANK_HYDROGEN      10000
 
 #define MAX_PUMP_PRESSURE		15000	// Maximal pressure setting for pumps and vents
 #define MAX_OMNI_PRESSURE		7500	// Maximal output(s) pressure for omni devices (filters/mixers)

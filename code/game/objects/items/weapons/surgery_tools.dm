@@ -16,6 +16,7 @@
 	desc = "Retracts stuff."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "retractor"
+	safely = 1
 	matter = list(DEFAULT_WALL_MATERIAL = 10000, "glass" = 5000)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	w_class = ITEM_SIZE_SMALL
@@ -29,6 +30,7 @@
 	desc = "You think you have seen this before."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "hemostat"
+	safely = 1
 	matter = list(DEFAULT_WALL_MATERIAL = 5000, "glass" = 2500)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	w_class = ITEM_SIZE_SMALL
@@ -43,6 +45,7 @@
 	desc = "This stops bleeding."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "cautery"
+	safely = 1
 	matter = list(DEFAULT_WALL_MATERIAL = 5000, "glass" = 2500)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	w_class = ITEM_SIZE_SMALL
@@ -58,6 +61,7 @@
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "drill"
 	hitsound = 'sound/weapons/circsawhit.ogg'
+	safely = 1
 	matter = list(DEFAULT_WALL_MATERIAL = 15000, "glass" = 10000)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	force = 15.0
@@ -73,6 +77,7 @@
 	desc = "Cut, cut, and once more cut."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "scalpel"
+	safely = 1
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	force = 10.0
 	sharp = 1
@@ -130,6 +135,7 @@
 	throwforce = 9.0
 	throw_speed = 3
 	throw_range = 5
+	safely = 1
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
 	matter = list(DEFAULT_WALL_MATERIAL = 20000,"glass" = 10000)
 	attack_verb = list("attacked", "slashed", "sawed", "cut")
@@ -142,6 +148,7 @@
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "bone-gel"
 	force = 0
+	safely = 1
 	w_class = ITEM_SIZE_SMALL
 	throwforce = 1.0
 
@@ -151,6 +158,7 @@
 	icon_state = "fixovein"
 	force = 0
 	throwforce = 1.0
+	safely = 1
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 3)
 	w_class = ITEM_SIZE_SMALL
 	var/usage_amount = 10
@@ -159,6 +167,7 @@
 	name = "bone setter"
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "bone setter"
+	safely = 1
 	force = 8.0
 	throwforce = 9.0
 	throw_speed = 3

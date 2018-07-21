@@ -106,23 +106,27 @@ proc/age2agedescription(age)
 		else				return "unknown"
 
 
-proc/ageAndGender2Desc(age, gender, var/synthetic_flag = 0)//Used for the radio
+proc/ageAndGender2Desc(age, gender, species_name = "", var/synthetic_flag = 0)//Used for the radio
 	if(synthetic_flag)
 		return "Mechanical Voice"
 	else
+		if(species_name == SPECIES_HUMAN)
+			species_name = ""
+
 		if(gender == FEMALE)
 			switch(age)
-				if(0 to 15)			return "Girl"
-				if(15 to 25)		return "Young Woman"
-				if(25 to 60)		return "Woman"
-				if(60 to INFINITY)	return "Old Woman"
+				if(0 to 15)			return "[species_name] Girl"
+				if(15 to 25)		return "Young [species_name] Woman"
+				if(25 to 60)		return "[species_name] Woman"
+				if(60 to INFINITY)	return "Old [species_name] Woman"
 				else				return "Unknown"
+
 		if(gender == MALE)
 			switch(age)
-				if(0 to 15)			return "Boy"
-				if(15 to 25)		return "Young Man"
-				if(25 to 60)		return "Man"
-				if(60 to INFINITY)	return "Old Man"
+				if(0 to 15)			return "[species_name] Boy"
+				if(15 to 25)		return "Young [species_name] Man"
+				if(25 to 60)		return "[species_name] Man"
+				if(60 to INFINITY)	return "Old [species_name] Man"
 				else				return "Unknown"
 	return
 
@@ -143,7 +147,7 @@ proc/ageAndGender2Desc(age, gender, var/synthetic_flag = 0)//Used for the radio
 /proc/get_exposed_defense_zone(var/atom/movable/target)
 	return pick(BP_HEAD, BP_L_HAND, BP_R_HAND, BP_L_FOOT, BP_R_FOOT, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_CHEST, BP_GROIN)
 
-/proc/do_mob(mob/user , mob/target, time = 30, target_zone = 0, uninterruptible = 0, progress = 1)
+/proc/do_mob(mob/user , mob/target, time = 30, target_zone = 0, uninterruptible = 0, progress = 1, var/incapacitation_flags = INCAPACITATION_DEFAULT)
 	if(!user || !target)
 		return 0
 	var/user_loc = user.loc
@@ -167,7 +171,7 @@ proc/ageAndGender2Desc(age, gender, var/synthetic_flag = 0)//Used for the radio
 		if(uninterruptible)
 			continue
 
-		if(!user || user.incapacitated(INCAPACITATION_STUNNED|INCAPACITATION_RESTRAINED|INCAPACITATION_KNOCKOUT) || user.loc != user_loc)
+		if(!user || user.incapacitated(incapacitation_flags) || user.loc != user_loc)
 			. = 0
 			break
 

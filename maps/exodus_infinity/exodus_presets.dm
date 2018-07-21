@@ -5,7 +5,7 @@ var/const/NETWORK_PRISON              = "Prison"
 var/const/NETWORK_RESEARCH_OUTPOST    = "Research Outpost"
 var/const/NETWORK_TELECOM             = "Tcomsat"
 
-/datum/map/exodus/get_network_access(var/network)
+/datum/map/exodus_infinity/get_network_access(var/network)
 	switch(network)
 		if(NETWORK_CIVILIAN_WEST)
 			return access_mailsorting
@@ -15,7 +15,7 @@ var/const/NETWORK_TELECOM             = "Tcomsat"
 			return access_heads
 	return get_shared_network_access(network) || ..()
 
-/datum/map/exodus
+/datum/map/exodus_infinity
 	station_networks = list(
 		NETWORK_CIVILIAN_EAST,
 		NETWORK_CIVILIAN_WEST,

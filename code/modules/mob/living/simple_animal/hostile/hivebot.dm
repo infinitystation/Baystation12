@@ -58,7 +58,8 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 	ranged = 1
-	rapid = 1
+	can_escape = 1
+
 	break_stuff_probability = 30
 	attack_delay = 7
 	speed = 3
@@ -75,7 +76,6 @@
 //mob/living/simple_animal/hostile/hivebot/strong/AttackingTarget(var/atom/target)
 //	if(istype(target, /obj/effect/decal/cleanable/blood/gibs/robot))
 //		qdel(target)
-
 
 /mob/living/simple_animal/hostile/hivebot/death()
 	..(null, "blows apart!")

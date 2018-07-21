@@ -41,21 +41,21 @@
 	name = "Spec Ops - Death commando"
 
 /decl/hierarchy/outfit/death_command/equip(var/mob/living/carbon/human/H)
-	deathsquad.equip(H)
+	GLOB.deathsquad.equip(H)
 	return 1
 
 /decl/hierarchy/outfit/syndicate_command
 	name = "Spec Ops - Syndicate commando"
 
 /decl/hierarchy/outfit/syndicate_command/equip(var/mob/living/carbon/human/H)
-	commandos.equip(H)
+	GLOB.commandos.equip(H)
 	return 1
 
 /decl/hierarchy/outfit/mercenary
 	name = "Spec Ops - Mercenary"
 	uniform = /obj/item/clothing/under/syndicate
 	shoes = /obj/item/clothing/shoes/combat
-	l_ear = /obj/item/device/radio/headset/syndicate
+	l_ear = /obj/item/device/radio/headset/syndicate/alt
 	belt = /obj/item/weapon/storage/belt/security
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = /obj/item/clothing/gloves/thick/swat

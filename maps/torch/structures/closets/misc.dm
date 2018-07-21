@@ -22,8 +22,10 @@
 		/obj/item/clothing/under/rank/internalaffairs/plain/nt,
 		/obj/item/clothing/suit/storage/toggle/suit/black,
 		/obj/item/clothing/glasses/sunglasses/big,
+		/obj/item/device/radio/headset/heads/torchntcommand/alt,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack, /obj/item/weapon/storage/backpack/satchel)),
-		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger, 50)
+		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger, 50),
+		/obj/item/weapon/storage/fakebook
 	)
 
 /obj/structure/closet/secure_closet/representative
@@ -47,6 +49,7 @@
 		/obj/item/device/tape/random = 3,
 		/obj/item/weapon/storage/secure/briefcase,
 		/obj/item/device/radio/headset/headset_com,
+		/obj/item/device/radio/headset/headset_com/alt,
 		/obj/item/clothing/shoes/laceup,
 		/obj/item/clothing/under/rank/internalaffairs/plain/solgov,
 		/obj/item/clothing/suit/storage/toggle/suit/black,
@@ -89,19 +92,31 @@
 	req_one_access = list(access_armory)
 
 /obj/structure/closet/secure_closet/guncabinet/sec_armory/egun
-	name = "energy gun cabinet"
+	name = "energy guns cabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sec_armory/egun/WillContain()
 	return list(/obj/item/weapon/gun/energy/gun = 4)
 
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/secured_egun/WillContain()
+	return list(/obj/item/weapon/gun/energy/gun/secure = 4)
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/laser
+	name = "lasers cabinet"
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/laser/WillContain()
+	return list(/obj/item/weapon/gun/energy/laser = 2)
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/secured_laser/WillContain()
+	return list(/obj/item/weapon/gun/energy/laser/secure = 2)
+
 /obj/structure/closet/secure_closet/guncabinet/sec_armory/ion
-	name = "ion rifle cabinet"
+	name = "ion rifles cabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sec_armory/ion/WillContain()
 	return list(/obj/item/weapon/gun/energy/ionrifle = 2)
 
 /obj/structure/closet/secure_closet/guncabinet/sec_armory/stun
-	name = "stun rifle cabinet"
+	name = "stun rifles cabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sec_armory/stun/WillContain()
 	return list(/obj/item/weapon/gun/energy/stunrevolver/rifle = 2)
@@ -120,31 +135,43 @@
 /obj/structure/closet/secure_closet/guncabinet/sidearm/WillContain()
 	return list(
 			/obj/item/clothing/accessory/holster/thigh = 3,
-			/obj/item/weapon/gun/energy/gun = 3,
+			/obj/item/weapon/gun/energy/gun/secure = 3,
 	)
 
 /obj/structure/closet/secure_closet/guncabinet/sidearm/small
 	name = "personal sidearm cabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sidearm/small/WillContain()
-	return list(/obj/item/weapon/gun/energy/gun/small = 4)
+	return list(/obj/item/weapon/gun/energy/gun/small/secure = 4)
 
 /obj/structure/closet/secure_closet/guncabinet/sidearm/combined
 	name = "combined sidearm cabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sidearm/combined/WillContain()
 	return list(
-		/obj/item/weapon/gun/energy/gun/small = 2,
+		/obj/item/weapon/gun/energy/gun/small/secure = 2,
 		/obj/item/clothing/accessory/holster/thigh = 2,
-		/obj/item/weapon/gun/energy/gun = 2,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/gun/energy/gun, /obj/item/weapon/gun/energy/gun/small))
+		/obj/item/weapon/gun/energy/gun/secure = 2,
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/gun/energy/gun/secure, /obj/item/weapon/gun/energy/gun/small/secure))
 	)
 
-/obj/structure/closet/secure_closet/guncabinet/sidearm/pbullet
-	name = "personal sidearm cabinet"
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/pbullet
+	name = "pistol guncabinet"
 
-/obj/structure/closet/secure_closet/guncabinet/sidearm/pbullet/WillContain()
-	return list(/obj/item/weapon/gun/projectile/colt/officer = 6, /obj/item/ammo_magazine/c45m = 12)
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/pbullet/WillContain()
+	return list(/obj/item/weapon/gun/projectile/beretta = 4, /obj/item/ammo_magazine/mc9mmds = 12)
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/smgbullet
+	name = "PDW guncabinet"
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/smgbullet/WillContain()
+	return list(/obj/item/weapon/gun/projectile/automatic/mp90 = 4, /obj/item/ammo_magazine/mc57mmt = 12)
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/rbullet
+	name = "Main guncabinet"
+
+/obj/structure/closet/secure_closet/guncabinet/sec_armory/rbullet/WillContain()
+	return list(/obj/item/weapon/gun/projectile/automatic/tr3 = 1, /obj/item/ammo_magazine/c3006 = 2, /obj/item/weapon/gun/projectile/automatic/z8 = 1, /obj/item/ammo_magazine/a762 = 2, /obj/item/ammo_magazine/a762/ap = 2, /obj/item/weapon/gun/projectile/shotgun/pump/combat = 2, /obj/item/weapon/storage/box/shotgunammo = 4, /obj/item/weapon/storage/box/shotgunshells = 4)
 
 /obj/structure/closet/secure_closet/guncabinet/sidearm/shotgun
 	name = "shotgun sidearm cabinet"

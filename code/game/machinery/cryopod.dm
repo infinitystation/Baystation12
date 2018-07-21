@@ -154,9 +154,9 @@
 	anchored = 1
 	dir = WEST
 
-	light_color = "#00bf00"
-	light_power = 0.5
-	light_range = 2
+	light_max_bright = 0.25
+	light_outer_range = 2
+	light_color="#00bf00"
 
 	var/base_icon_state = "body_scanner_0"
 	var/occupied_icon_state = "body_scanner_1"
@@ -210,6 +210,7 @@
 	name = "life pod"
 	desc = "A man-sized pod for entering suspended animation. Dubbed 'cryocoffin' by more cynical spacers, it is pretty barebone, counting on stasis system to keep the victim alive rather than packing extended supply of food or air. Can be ordered with symbols of common religious denominations to be used in space funerals too."
 	on_store_name = "Life Pod Oversight"
+	density = 0
 	time_till_despawn = 20 MINUTES
 	icon_state = "redpod0"
 	base_icon_state = "redpod0"
@@ -406,7 +407,7 @@
 			//current_mode.possible_traitors.Remove(occupant)
 
 	// Delete them from datacore.
-	var/datum/computer_file/crew_record/R = get_crewmember_record(occupant.real_name)
+	var/datum/computer_file/report/crew_record/R = get_crewmember_record(occupant.real_name)
 	if(R)
 		qdel(R)
 
@@ -426,7 +427,9 @@
 		control_computer._admin_logs += "[key_name(occupant)] ([role_alt_title]) at [stationtime2text()]"
 	log_and_message_admins("[key_name(occupant)] ([role_alt_title]) entered cryostorage.")
 
-	announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
+	var/leave_announce = occupant.mind.assigned_job ? occupant.mind.assigned_job.announced : null
+	if(leave_announce)
+		announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
 	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>", 3)
 
 	//This should guarantee that ghosts don't spawn.
@@ -487,7 +490,7 @@
 
 	icon_state = base_icon_state
 
-	light_range = 1
+	light_outer_range = 1
 
 	//Eject any items that aren't meant to be in the pod.
 	var/list/items = src.contents

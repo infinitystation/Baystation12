@@ -65,15 +65,15 @@ note dizziness decrements automatically in the mob's Life() proc.
 	is_jittery = 1
 	while(jitteriness > 100)
 		var/amplitude = min(4, jitteriness / 100)
-		pixel_x = default_pixel_x + rand(-amplitude, amplitude)
-		pixel_y = default_pixel_y + rand(-amplitude/3, amplitude/3)
-
+		do_jitter(amplitude)
 		sleep(1)
 	//endwhile - reset the pixel offsets to zero
 	is_jittery = 0
-	pixel_x = default_pixel_x
-	pixel_y = default_pixel_y
+	do_jitter(0)
 
+/mob/proc/do_jitter(amplitude)
+	pixel_x = default_pixel_x + rand(-amplitude, amplitude)
+	pixel_y = default_pixel_y + rand(-amplitude/3, amplitude/3)
 
 //handles up-down floaty effect in space and zero-gravity
 /mob/var/is_floating = 0
@@ -155,8 +155,8 @@ note dizziness decrements automatically in the mob's Life() proc.
 		default_pixel_x = mob.default_pixel_x
 		default_pixel_y = mob.default_pixel_y
 
-	animate(src, pixel_x = pixel_x + pixel_x_diff, pixel_y = pixel_y + pixel_y_diff, time = 2, easing = CUBIC_EASING)
-	animate(pixel_x = default_pixel_x, pixel_y = default_pixel_y, time = 2, easing = CUBIC_EASING)
+	animate(src, pixel_x = pixel_x + pixel_x_diff, pixel_y = pixel_y + pixel_y_diff, time = 2)
+	animate(pixel_x = default_pixel_x, pixel_y = default_pixel_y, time = 2)
 
 /mob/do_attack_animation(atom/A)
 	..()
@@ -196,7 +196,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 		I.pixel_z = 16
 
 	// And animate the attack!
-	animate(I, alpha = 175, pixel_x = 0, pixel_y = 0, pixel_z = 0, time = 3, easing = QUAD_EASING)
+	animate(I, alpha = 175, pixel_x = 0, pixel_y = 0, pixel_z = 0, time = 3)
 
 /mob/proc/spin(spintime, speed)
 	spawn()

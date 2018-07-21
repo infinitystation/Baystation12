@@ -5,11 +5,16 @@
 	plane = OBJ_PLANE
 	layer = BELOW_OBJ_LAYER
 	w_class = ITEM_SIZE_NO_CONTAINER
+	color = "#666666"
 	var/state = 0
 	var/health = 200
 	var/cover = 50 //how much cover the girder provides against projectiles.
 	var/material/reinf_material
 	var/reinforcing = 0
+
+/obj/structure/girder/Initialize()
+	set_extension(src, /datum/extension/penetration, /datum/extension/penetration/simple, 100)
+	. = ..()
 
 /obj/structure/girder/displaced
 	icon_state = "displaced"
@@ -50,6 +55,7 @@
 	health = min(health,initial(health))
 	state = 0
 	icon_state = initial(icon_state)
+	color = "#666666"
 	reinforcing = 0
 	if(reinf_material)
 		reinforce_girder()
@@ -100,8 +106,11 @@
 		if(do_after(user, 40,src))
 			if(!src) return
 			to_chat(user, "<span class='notice'>You removed the support struts!</span>")
-			reinf_material.place_dismantled_product(get_turf(src))
-			reinf_material = null
+
+			if(reinf_material)
+				reinf_material.place_dismantled_product(get_turf(src))
+				reinf_material = null
+
 			reset_girder()
 
 	else if(isCrowbar(W) && state == 0 && anchored)
@@ -191,6 +200,7 @@
 	health = 500
 	state = 2
 	icon_state = "reinforced"
+	color = "#777777"
 	reinforcing = 0
 
 /obj/structure/girder/proc/dismantle()
@@ -221,11 +231,16 @@
 		else
 	return
 
+/obj/structure/girder/reinforced
+	icon_state = "reinforced"
+	color = "#777777"
+
 /obj/structure/girder/cult
 	icon= 'icons/obj/cult.dmi'
 	icon_state= "cultgirder"
 	health = 250
 	cover = 70
+	color = null
 
 /obj/structure/girder/cult/dismantle()
 	qdel(src)

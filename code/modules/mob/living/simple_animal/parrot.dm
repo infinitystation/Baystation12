@@ -36,10 +36,12 @@
 	mob_size = MOB_SMALL
 
 	speak = list("Hi","Hello!","Cracker?","BAWWWWK george mellons griffing me")
-	speak_emote = list("squawks","говорит","yells")
+	speak_emote = list("squawks","says","yells")
 	emote_hear = list("squawks","bawks")
 	emote_see = list("flutters its wings")
 
+	melee_damage_lower = 5
+	melee_damage_upper = 10
 	speak_chance = 1//1% (1 in 100) chance every tick; So about once per 150 seconds, assuming an average tick is 1.5s
 	turns_per_move = 5
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/cracker/
@@ -76,7 +78,8 @@
 									/obj/machinery/computer,			/obj/machinery/telecomms, \
 									/obj/machinery/nuclearbomb,			/obj/machinery/particle_accelerator, \
 									/obj/machinery/recharge_station,	/obj/machinery/smartfridge, \
-									/obj/machinery/suit_storage_unit)
+									/obj/machinery/suit_storage_unit,	/obj/structure/showcase, \
+									/obj/item/modular_computer/console, /obj/structure/fountain)
 
 	//Parrots are kleptomaniacs. This variable ... stores the item a parrot is holding.
 	var/obj/item/held_item = null
@@ -128,10 +131,8 @@
 	onclose(user, "mob[real_name]")
 	return
 
-/mob/living/simple_animal/parrot/Topic(href, href_list)
-
-	//Can the usr physically do this?
-	if(!usr.canmove || usr.stat || usr.restrained() || !in_range(loc, usr))
+/mob/living/simple_animal/parrot/Topic(href, href_list, state = GLOB.physical_state)
+	if((. = ..()))
 		return
 
 	//Is the usr's mob type able to do this?
@@ -273,8 +274,8 @@
 	if(client || stat)
 		return //Lets not force players or dead/incap parrots to move
 
-	if(!isturf(src.loc) || !canmove || buckled)
-		return //If it can't move, dont let it move. (The buckled check probably isn't necessary thanks to canmove)
+	if(!isturf(src.loc))
+		return // Let's not bother in nullspace
 
 
 //-----SPEECH
@@ -352,7 +353,7 @@
 		//Wander around aimlessly. This will help keep the loops from searches down
 		//and possibly move the mob into a new are in view of something they can use
 		if(prob(90))
-			step(src, pick(GLOB.cardinal))
+			SelfMove(pick(GLOB.cardinal))
 			return
 
 		if(!held_item && !parrot_perch) //If we've got nothing to do.. look for something to do.
@@ -467,7 +468,7 @@
 				return
 
 			//Time for the hurt to begin!
-			var/damage = rand(5,10)
+			var/damage = rand(melee_damage_lower, melee_damage_upper)
 
 			if(ishuman(parrot_interest))
 				var/mob/living/carbon/human/H = parrot_interest
@@ -687,7 +688,7 @@
 	if(stat)
 		return
 
-	var/verb = "говорит"
+	var/verb = "says"
 	if(speak_emote.len)
 		verb = pick(speak_emote)
 
@@ -716,17 +717,17 @@
 	..(message)
 
 
-/mob/living/simple_animal/parrot/hear_say(var/message, var/verb = "говорит", var/datum/language/language = null, var/alt_name = "",var/italics = 0, var/mob/speaker = null)
+/mob/living/simple_animal/parrot/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "",var/italics = 0, var/mob/speaker = null)
 	if(prob(50))
 		parrot_hear(message)
-	..(message,verb,language,alt_name,italics,speaker)
+	..()
 
 
 
-/mob/living/simple_animal/parrot/hear_radio(var/message, var/verb="говорит", var/datum/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0)
+/mob/living/simple_animal/parrot/hear_radio(var/message, var/verb="says", var/datum/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0)
 	if(prob(50) && available_channels.len)
 		parrot_hear("[pick(available_channels)] [message]")
-	..(message,verb,language,part_a,part_b,speaker,hard_to_hear)
+	..()
 
 
 /mob/living/simple_animal/parrot/proc/parrot_hear(var/message="")

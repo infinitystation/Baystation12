@@ -41,7 +41,7 @@
 				var/expires
 
 				if(text2num(duration) > 0)
-					expires = "Это бан на [duration] минут, и он сниметс&#255; в [expiration] по серверному времени (МСК-2)."
+					expires = "Это бан на [duration] минут, и он сниметс&#255; в [expiration] по серверному времени."
 
 				src.banprisoned_reason = "Вы, или кто-то другой, кто использовал(а) ваш компьютер или соединение ([pckey]) были забанены бан-тюрьмой по причине: [reason]. Этот бан выдал(а) администратор [ackey], в [bantime]. [expires]\n"
 				return 1
@@ -54,13 +54,10 @@
 	output +="<hr>"
 	output += "<p><a href='byond://?src=\ref[src];show_preferences=1'>Setup Character</A></p>"
 
-	if(!ticker || ticker.current_state <= GAME_STATE_PREGAME)
-		output += "<p>ДОБРО ПОЖАЛОВАТЬ</p>"
-		output += "<p>ЗЭК В ЗАКОНЕ</p>"
+	output += "<p>ДОБРО ПОЖАЛОВАТЬ</p>"
+	output += "<p>ЗЭК В ЗАКОНЕ</p>"
 
-	else
-		output += "<p>ДОБРО ПОЖАЛОВАТЬ</p>"
-		output += "<p>ЗЭК В ЗАКОНЕ</p>"
+	if(ticker && (ticker.current_state > GAME_STATE_PREGAME) && GLOB.prisonwarp)
 		output += "<p><a href='byond://?src=\ref[src];spawn_prisoner=1'>Join as Prisoner</A></p>"
 
 	src << browse(output,"window=playersetup;size=210x280;can_close=0")

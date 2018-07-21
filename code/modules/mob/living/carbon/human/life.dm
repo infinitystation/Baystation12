@@ -43,7 +43,7 @@
 	set invisibility = 0
 	set background = BACKGROUND_ENABLED
 
-	if (transforming)
+	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
 
 	fire_alert = 0 //Reset this here, because both breathe() and handle_environment() have a chance to set it.
@@ -204,7 +204,7 @@
 			set_light(0)
 	else
 		if(species.appearance_flags & RADIATION_GLOWS)
-			set_light(max(1,min(10,radiation/10)), max(1,min(20,radiation/20)), species.get_flesh_colour(src))
+			set_light(0.3, 0.1, max(1,min(20,radiation/20)), 2, species.get_flesh_colour(src))
 		// END DOGSHIT SNOWFLAKE
 
 		var/obj/item/organ/internal/diona/nutrients/rad_organ = locate() in internal_organs
@@ -257,8 +257,8 @@
 			damage = 8
 			radiation -= 4 * RADIATION_SPEED_COEFFICIENT
 
+		damage = Floor(damage * (isSynthetic() ? 0.5 : species.radiation_mod))
 		if(damage)
-			damage *= isSynthetic() ? 0.5 : species.radiation_mod
 			adjustToxLoss(damage * RADIATION_SPEED_COEFFICIENT)
 			updatehealth()
 			if(!isSynthetic() && organs.len)
@@ -284,7 +284,7 @@
 			src.spread_disease_to(M)
 
 
-/mob/living/carbon/human/get_breath_from_internal(volume_needed=BREATH_VOLUME)
+/mob/living/carbon/human/get_breath_from_internal(volume_needed=STD_BREATH_VOLUME)
 	if(internal)
 
 		var/obj/item/weapon/tank/rig_supply
@@ -319,7 +319,7 @@
 	return !failed_last_breath
 
 /mob/living/carbon/human/handle_environment(datum/gas_mixture/environment)
-	if(!environment)
+	if(!environment || (SPACERES in mutations))
 		return
 
 	//Stuff like the xenomorph's plasma regen happens here.
@@ -373,7 +373,7 @@
 		fire_alert = max(fire_alert, 1)
 		if(status_flags & GODMODE)	return 1	//godmode
 		var/burn_dam = 0
-		if(bodytemperature < getSpeciesOrSynthTemp(HEAT_LEVEL_1))
+		if(bodytemperature < getSpeciesOrSynthTemp(HEAT_LEVEL_2))
 			burn_dam = HEAT_DAMAGE_LEVEL_1
 		else if(bodytemperature < getSpeciesOrSynthTemp(HEAT_LEVEL_3))
 			burn_dam = HEAT_DAMAGE_LEVEL_2
@@ -457,7 +457,7 @@
 //		log_debug("Hot. Difference = [body_temperature_difference]. Recovering [recovery_amt]")
 		bodytemperature += recovery_amt
 
-	//This proc returns a number made up of theobj_flags for body parts which you are protected on. (such as HEAD, UPPER_TORSO, LOWER_TORSO, etc. See setup.dm for the full list)
+	//This proc returns a number made up of the flags for body parts which you are protected on. (such as HEAD, UPPER_TORSO, LOWER_TORSO, etc. See setup.dm for the full list)
 /mob/living/carbon/human/proc/get_heat_protection_flags(temperature) //Temperature is the temperature you're being exposed to.
 	. = 0
 	//Handle normal clothing
@@ -578,7 +578,7 @@
 		if(get_shock() >= species.total_health)
 			if(!stat)
 				to_chat(src, "<span class='warning'>[species.halloss_message_self]</span>")
-				src.visible_message("<B>[src]</B> [species.halloss_message].")
+				src.visible_message("<B>[src]</B> [species.halloss_message]")
 			Paralyse(10)
 
 		if(paralysis || sleeping)
@@ -623,10 +623,12 @@
 		if (drowsyness > 0)
 			drowsyness = max(0, drowsyness-1)
 			eye_blurry = max(2, eye_blurry)
-			if (drowsyness > 10 && (prob(5) || drowsyness >= 60))
-				if(stat == CONSCIOUS)
-					to_chat(src, "<span class='notice'>You are about to fall asleep...</span>")
-				Sleeping(5)
+			if(drowsyness > 10)
+				var/zzzchance = min(5, 5*drowsyness/30)
+				if((prob(zzzchance) || drowsyness >= 60))
+					if(stat == CONSCIOUS)
+						to_chat(src, "<span class='notice'>You are about to fall asleep...</span>")
+					Sleeping(5)
 
 		confused = max(0, confused - 1)
 
@@ -645,7 +647,7 @@
 		if (nutrition > 0)
 			nutrition = max (0, nutrition - species.hunger_factor)
 
-		if(stasis_value > 1 && drowsyness < stasis_value * 5)
+		if(stasis_value > 1 && drowsyness < stasis_value * 4)
 			drowsyness += min(stasis_value, 3)
 			if(!stat && prob(1))
 				to_chat(src, "<span class='notice'>You feel slow and sluggish...</span>")
@@ -654,7 +656,6 @@
 
 /mob/living/carbon/human/handle_regular_hud_updates()
 	var/datum/gas_mixture/environment = loc.return_air()
-	var/loc_temp = environment.temperature
 	if(hud_updateflag) // update our mob's hud overlays, AKA what others see flaoting above our head
 		handle_hud_list()
 
@@ -790,16 +791,15 @@
 					if(280 to 295)			bodytemp.icon_state = "temp-2"
 					if(260 to 280)			bodytemp.icon_state = "temp-3"
 					else					bodytemp.icon_state = "temp-4"
-				switch(loc_temp) //292 = 20 cel
+				switch(environment.temperature) //292 = 20 cel
 					if(311 to INFINITY)		minsbodytemp.icon_state = "mintemp3" //+38
 					if(303 to 311)			minsbodytemp.icon_state = "mintemp2" //32 to 38
 					if(299 to 305)			minsbodytemp.icon_state = "mintemp1" //25 to 32
 					if(287 to 299)			minsbodytemp.icon_state = "mintemp0" // 14 to 25 cel 320fuck
-					if(281 to 287)			minsbodytemp.icon_state = "mintemp4-1" //8 to 14
-					if(273 to 281)			minsbodytemp.icon_state = "mintemp4-2" //0 to 8
-					if(266 to 273)			minsbodytemp.icon_state = "mintemp4-3" //-7 to 0
-					else
-
+					if(281 to 287)			minsbodytemp.icon_state = "mintemp-1" //8 to 14
+					if(273 to 281)			minsbodytemp.icon_state = "mintemp-2" //0 to 8
+					if(266 to 273)			minsbodytemp.icon_state = "mintemp-3" //-7 to 0
+					else					minsbodytemp.icon_state = "mintemp-4"
 			else
 				//TODO: precalculate all of this stuff when the species datum is created
 				var/base_temperature = species.body_temperature
@@ -838,39 +838,39 @@
 				var/minitemp_step
 				var/middle_temp = ((getSpeciesOrSynthTemp(HEAT_LEVEL_1) + getSpeciesOrSynthTemp(COLD_LEVEL_1)))/2
 				if(middle_temp >= 340)
-					middle_temp = middle_temp -= 56
+					middle_temp = middle_temp -= 35
 				if(middle_temp >= 330)
 					middle_temp = middle_temp -= 10
 				if(middle_temp <= 253)
 					middle_temp = middle_temp += 10
-				if (loc_temp >= middle_temp)
+				if (environment.temperature >= middle_temp)
 					minitemp_step = (getSpeciesOrSynthTemp(HEAT_LEVEL_1) - middle_temp)/6
 
-					if (loc_temp >= getSpeciesOrSynthTemp(HEAT_LEVEL_1))
+					if (environment.temperature >= getSpeciesOrSynthTemp(HEAT_LEVEL_1))
 						minsbodytemp.icon_state = "mintemp5"
-					else if (loc_temp >= middle_temp + minitemp_step*4)
+					else if (environment.temperature >= middle_temp + minitemp_step*4)
 						minsbodytemp.icon_state = "mintemp4"
-					else if (loc_temp >= middle_temp + minitemp_step*3)
+					else if (environment.temperature >= middle_temp + minitemp_step*3)
 						minsbodytemp.icon_state = "mintemp3"
-					else if (loc_temp >= middle_temp + minitemp_step*2)
+					else if (environment.temperature >= middle_temp + minitemp_step*2)
 						minsbodytemp.icon_state = "mintemp2"
-					else if (loc_temp >= middle_temp + minitemp_step*1)
+					else if (environment.temperature >= middle_temp + minitemp_step*1)
 						minsbodytemp.icon_state = "mintemp1"
 					else
 						minsbodytemp.icon_state = "mintemp0"
 
-				else if (loc_temp <= middle_temp)
+				else if (environment.temperature <= middle_temp)
 					minitemp_step = (middle_temp - getSpeciesOrSynthTemp(COLD_LEVEL_1))/6
 
-					if (loc_temp <= getSpeciesOrSynthTemp(COLD_LEVEL_1))
+					if (environment.temperature <= getSpeciesOrSynthTemp(COLD_LEVEL_1))
 						minsbodytemp.icon_state = "mintemp-5"
-					else if (loc_temp <= middle_temp - minitemp_step*4)
+					else if (environment.temperature <= middle_temp - minitemp_step*4)
 						minsbodytemp.icon_state = "mintemp-4"
-					else if (loc_temp <= middle_temp - minitemp_step*3)
+					else if (environment.temperature <= middle_temp - minitemp_step*3)
 						minsbodytemp.icon_state = "mintemp-3"
-					else if (loc_temp <= middle_temp - minitemp_step*2)
+					else if (environment.temperature <= middle_temp - minitemp_step*2)
 						minsbodytemp.icon_state = "mintemp-2"
-					else if (loc_temp <= middle_temp - minitemp_step*1)
+					else if (environment.temperature <= middle_temp - minitemp_step*1)
 						minsbodytemp.icon_state = "mintemp-1"
 					else
 						minsbodytemp.icon_state = "mintemp0"
@@ -936,11 +936,11 @@
 		return
 
 	if(is_asystole())
-		shock_stage = max(shock_stage, 61)
+		shock_stage = max(shock_stage + 1, 61)
 	var/traumatic_shock = get_shock()
 	if(traumatic_shock >= max(30, 0.8*shock_stage))
 		shock_stage += 1
-	else
+	else if (!is_asystole())
 		shock_stage = min(shock_stage, 160)
 		var/recovery = 1
 		if(traumatic_shock < 0.5 * shock_stage) //lower shock faster if pain is gone completely
@@ -967,7 +967,7 @@
 		custom_pain("[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!", 40, nohalloss = TRUE)
 		agony_moan(src)
 
-	if(shock_stage >= 60)
+	if (shock_stage >= 60)
 		if(shock_stage == 60) visible_message("<b>[src]</b>'s body becomes limp.")
 		if (prob(2))
 			custom_pain("[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!", shock_stage, nohalloss = TRUE)
@@ -977,10 +977,9 @@
 		if (prob(5))
 			custom_pain("[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!", shock_stage, nohalloss = TRUE)
 			Weaken(20)
-			flash_pain()
 
 	if(shock_stage >= 120)
-		if(prob(2))
+		if (prob(2))
 			custom_pain("[pick("You black out", "You feel like you could die any moment now", "You're about to lose consciousness")]!", shock_stage, nohalloss = TRUE)
 			Paralyse(5)
 
@@ -1076,7 +1075,7 @@
 			if(I)
 				perpname = I.registered_name
 
-		var/datum/computer_file/crew_record/E = get_crewmember_record(perpname)
+		var/datum/computer_file/report/crew_record/E = get_crewmember_record(perpname)
 		if(E)
 			switch(E.get_criminalStatus())
 				if("Arrest")

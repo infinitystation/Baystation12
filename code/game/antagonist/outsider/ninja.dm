@@ -1,4 +1,4 @@
-var/datum/antagonist/ninja/ninjas
+GLOBAL_DATUM_INIT(ninjas, /datum/antagonist/ninja, new)
 
 /datum/antagonist/ninja
 	id = MODE_NINJA
@@ -18,10 +18,6 @@ var/datum/antagonist/ninja/ninjas
 	id_type = /obj/item/weapon/card/id/syndicate
 
 	faction = "ninja"
-
-/datum/antagonist/ninja/New()
-	..()
-	ninjas = src
 
 /datum/antagonist/ninja/attempt_random_spawn()
 	if(config.ninjas_allowed) ..()
@@ -119,15 +115,10 @@ var/datum/antagonist/ninja/ninjas
 		if(rig.air_supply)
 			player.internal = rig.air_supply
 
-	var/obj/item/device/pda/ninja/U = new(get_turf(player))
-	var/pda_pass = "[rand(100,999)] [pick("Alpha","Bravo","Delta","Omega")]"
-	var/obj/item/device/uplink/T = new(U, player.mind)
-	U.hidden_uplink = T
-	U.lock_code = pda_pass
-	to_chat(player, "A portable information relay has been installed in your [U]. Simply enter the code \"[pda_pass]\" into the ringtone select to unlock its hidden features.")
-	player.mind.store_memory("<B>Uplink Passcode:</B> [pda_pass].")
-	U.hidden_uplink.uses = 0
+	var/obj/item/modular_computer/pda/syndicate/U = new
 	player.put_in_hands(U)
+	var/decl/uplink_source/pda/uplink_source = new
+	uplink_source.setup_uplink_source(player, 0)
 
 	spawn(10)
 		if(player.internal)
@@ -139,15 +130,15 @@ var/datum/antagonist/ninja/ninjas
 	var/directive = "[side=="face"?"[GLOB.using_map.company_name]":"A criminal syndicate"] is your employer. "//Let them know which side they're on.
 	switch(rand(1,19))
 		if(1)
-			directive += "The Spider Clan must not be linked to this operation. Remain hidden and covert when possible."
+			directive += "Клан Паука официально не причастен к этой операции. Действуйте скрытно и оставайтесь в тени."
 		if(2)
-			directive += "[GLOB.using_map.station_name] is financed by an enemy of the Spider Clan. Cause as much structural damage as desired."
+			directive += "[GLOB.using_map.station_name] финансировал врагов Клана Паука. Учините столько разрушений, насколько это возможно."
 		if(3)
-			directive += "A wealthy animal rights activist has made a request we cannot refuse. Prioritize saving animal lives whenever possible."
+			directive += "Богатые борцы за права животных сделали нам предложение, от которого нельзя отказаться. Спасайте животных тогда, когда это потребуется."
 		if(4)
-			directive += "The Spider Clan absolutely cannot be linked to this operation. Eliminate witnesses at your discretion."
+			directive += "Клан Паука официально не причастен к этой операции. Уничтожьте всех, кто узнает о вас."
 		if(5)
-			directive += "We are currently negotiating with [GLOB.using_map.company_name] [GLOB.using_map.boss_name]. Prioritize saving human lives over ending them."
+			directive += "На данный момент, мы сотрудничаем с [GLOB.using_map.company_name] [GLOB.using_map.boss_name]. Убийства допускаются лишь в крайнем случае."
 		if(6)
 			directive += "We are engaged in a legal dispute over [GLOB.using_map.station_name]. If a laywer is present on board, force their cooperation in the matter."
 		if(7)

@@ -1,27 +1,32 @@
 /obj/item/weapon/folder
 	name = "folder"
 	desc = "A folder."
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "folder"
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/weapon/folder/blue
+	name = "blue folder"
 	desc = "A blue folder."
 	icon_state = "folder_blue"
 
 /obj/item/weapon/folder/red
+	name = "red folder"
 	desc = "A red folder."
 	icon_state = "folder_red"
 
 /obj/item/weapon/folder/yellow
+	name = "yellow folder"
 	desc = "A yellow folder."
 	icon_state = "folder_yellow"
 
 /obj/item/weapon/folder/white
+	name = "white folder"
 	desc = "A white folder."
 	icon_state = "folder_white"
 
 /obj/item/weapon/folder/nt
+	name = "corporative folder"
 	desc = "A NanoTrasen folder."
 	icon_state = "folder_nt"
 
@@ -35,6 +40,7 @@
 	if(istype(W, /obj/item/weapon/paper) || istype(W, /obj/item/weapon/photo) || istype(W, /obj/item/weapon/paper_bundle))
 		user.drop_item()
 		W.loc = src
+		playsound(src,'sound/effects/Paper_Shake.ogg',40,1)
 		to_chat(user, "<span class='notice'>You put the [W] into \the [src].</span>")
 		update_icon()
 	else if(istype(W, /obj/item/weapon/pen))
@@ -68,10 +74,12 @@
 			var/obj/item/P = locate(href_list["remove"])
 			if(P && (P.loc == src) && istype(P))
 				P.loc = usr.loc
+				playsound(src,'sound/effects/Paper_Remove.ogg',40,1)
 				usr.put_in_hands(P)
 
 		else if(href_list["read"])
 			var/obj/item/weapon/paper/P = locate(href_list["read"])
+			playsound(src,'sound/effects/Paper_Shake.ogg',40,1)
 			if(P && (P.loc == src) && istype(P))
 				if(!(istype(usr, /mob/living/carbon/human) || isghost(usr) || istype(usr, /mob/living/silicon)))
 					usr << browse("<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[stars(P.info)][P.stamps]</BODY></HTML>", "window=[P.name]")

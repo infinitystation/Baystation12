@@ -324,6 +324,12 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	hidden = 1
 	category = "Arms and Ammunition"
 
+/datum/autolathe/recipe/magazine_rubber_45ds
+	name = "ammunition (.45, rubber) double-stack"
+	path = /obj/item/ammo_magazine/c45mds/rubber
+	hidden = 1
+	category = "Arms and Ammunition"
+
 /datum/autolathe/recipe/speedloader_44_rubber
 	name = "speed loader (.44 magnum, rubber)"
 	path = /obj/item/ammo_magazine/c44/rubber
@@ -333,6 +339,12 @@ var/const/EXTRA_COST_FACTOR = 1.25
 /datum/autolathe/recipe/magazine_flash
 	name = "ammunition (.45, flash)"
 	path = /obj/item/ammo_magazine/c45m/flash
+	hidden = 1
+	category = "Arms and Ammunition"
+
+/datum/autolathe/recipe/magazine_flash_45ds
+	name = "ammunition (.45, flash) double-stack"
+	path = /obj/item/ammo_magazine/c45mds/flash
 	hidden = 1
 	category = "Arms and Ammunition"
 
@@ -370,6 +382,11 @@ var/const/EXTRA_COST_FACTOR = 1.25
 /datum/autolathe/recipe/sensor_prox
 	name = "proximity sensor"
 	path = /obj/item/device/assembly/prox_sensor
+	category = "Devices and Components"
+
+/datum/autolathe/recipe/sensor_voice
+	name = "voice analyzer"
+	path = /obj/item/device/assembly/voice
 	category = "Devices and Components"
 
 /datum/autolathe/recipe/cable_coil
@@ -423,6 +440,11 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	path = /obj/item/weapon/pen/red
 	category = "General"
 
+/datum/autolathe/recipe/greenpen
+	name = "green ink pen"
+	path = /obj/item/weapon/pen/green
+	category = "General"
+
 /datum/autolathe/recipe/clipboard
 	name = "clipboard"
 	path = /obj/item/weapon/clipboard
@@ -466,6 +488,12 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	hidden = 1
 	category = "Arms and Ammunition"
 
+/datum/autolathe/recipe/magazine_45ds
+	name = "ammunition (.45) double-stack"
+	path = /obj/item/ammo_magazine/c45mds
+	hidden = 1
+	category = "Arms and Ammunition"
+
 /datum/autolathe/recipe/speedloader_44
 	name = "speed loader (.44 magnum)"
 	path = /obj/item/ammo_magazine/c44
@@ -490,9 +518,27 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	hidden = 1
 	category = "Arms and Ammunition"
 
+/datum/autolathe/recipe/magazine_stetchkin_rubber
+	name = "ammunition (9mm, rubber)"
+	path = /obj/item/ammo_magazine/mc9mm/rubber
+	hidden = 1
+	category = "Arms and Ammunition"
+
 /datum/autolathe/recipe/magazine_stetchkin_flash
 	name = "ammunition (9mm, flash)"
 	path = /obj/item/ammo_magazine/mc9mm/flash
+	hidden = 1
+	category = "Arms and Ammunition"
+
+/datum/autolathe/recipe/magazine_9mmds
+	name = "ammunition (9mm) double-stack"
+	path = /obj/item/ammo_magazine/mc9mmds
+	hidden = 1
+	category = "Arms and Ammunition"
+
+/datum/autolathe/recipe/magazine_stetchkin_flash
+	name = "ammunition (9mm, flash) double-stack"
+	path = /obj/item/ammo_magazine/mc9mmds/flash
 	hidden = 1
 	category = "Arms and Ammunition"
 
@@ -585,6 +631,12 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	path = /obj/item/weapon/handcuffs
 	hidden = 1
 	category = "General"
+
+/datum/autolathe/recipe/transfer_valve
+	name = "tank transfer valve"
+	path =	/obj/item/device/transfer_valve
+	hidden = 1
+	category = "Devices and Components"
 
 /datum/autolathe/recipe/cell_device
 	name = "device cell"

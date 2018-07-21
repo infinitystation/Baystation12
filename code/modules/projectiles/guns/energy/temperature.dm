@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/temperature
-	name = "temperature gun"
+	name = "expermental temperature gun"
 	icon_state = "freezegun"
 	item_state = "freezegun"
 	fire_sound = 'sound/weapons/pulse3.ogg'

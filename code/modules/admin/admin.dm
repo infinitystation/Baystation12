@@ -14,7 +14,7 @@ var/global/floorIsLava = 0
 	msg = "<span class=\"log_message\"><span class=\"prefix\">STAFF LOG:</span> <span class=\"message\">[msg]</span></span>"
 	log_adminwarn(msg)
 	for(var/client/C in GLOB.admins)
-		if(C.holder)
+		if(C && C.holder && (R_INVESTIGATE & C.holder.rights))
 			to_chat(C, msg)
 /proc/msg_admin_attack(var/text) //Toggleable Attack Messages
 	log_attack(text)
@@ -34,6 +34,9 @@ var/global/floorIsLava = 0
 	set category = "Admin"
 	set name = "Show Player Panel"
 	set desc="Edit player (respawn, ban, heal, etc)"
+
+	if(!check_rights(R_ADMIN))
+		return
 
 	if(!M)
 		to_chat(usr, "You seem to be selecting a mob that doesn't exist anymore.")
@@ -61,6 +64,7 @@ var/global/floorIsLava = 0
 		<a href='?src=\ref[src];traitor=\ref[M]'>TP</a> -
 		<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a> -
 		<a href='?src=\ref[src];subtlemessage=\ref[M]'>SM</a> -
+		<a href='?src=\ref[src];show_skills=\ref[M]'>SS</a> -
 		[admin_jump_link(M, src)]\] <br/><br/>
 		<b>Client Information:</b><br>"}
 
@@ -726,6 +730,111 @@ var/global/floorIsLava = 0
 		log_admin("Announce: [key_name(usr)] : [message]")
 	feedback_add_details("admin_verb","A") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+/datum/admins/proc/intercom()
+	set category = "Fun"
+	set name = "Intercom Msg"
+	set desc = "Send an intercom message, like an arrivals announcement."
+	if(!check_rights(0))	return
+
+	var/channel = input("Channel for message:","Channel", null) as null|anything in radiochannels
+
+	if(channel) //They picked a channel
+		var/sender = input("Name of sender (max 75):", "Announcement", "Announcement Computer") as null|text
+
+		if(sender) //They put a sender
+			sender = sanitize(sender, 75, extra = 0)
+			var/message = input("Message content (max 500):", "Contents", "This is a test of the announcement system.") as null|message
+
+			if(message) //They put a message
+				message = sanitize(message, 500, extra = 0)
+				GLOB.global_announcer.autosay("[message]", "[sender]", "[channel == "Common" ? null : channel]") //Common is a weird case, as it's not a "channel", it's just talking into a radio without a channel set.
+				log_admin("Intercom: [key_name(usr)] : [sender]:[message]")
+
+	feedback_add_details("admin_verb","IN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/datum/admins/proc/intercom_convo()
+	set category = "Fun"
+	set name = "Intercom Convo"
+	set desc = "Send an intercom conversation, like several uses of the Intercom Msg verb."
+	set waitfor = FALSE //Why bother? We have some sleeps. You can leave tho!
+	if(!check_rights(0))	return
+
+	var/channel = input("Channel for message:","Channel", null) as null|anything in radiochannels
+
+	if(!channel) //They picked a channel
+		return
+
+	to_chat(usr,"<span class='notice'><B>Intercom Convo Directions</B><br>Start the conversation with the sender, a pipe (|), and then the message on one line. Then hit enter to \
+		add another line, and type a (whole) number of seconds to pause between that message, and the next message, then repeat the message syntax up to 20 times. For example:<br>\
+		--- --- ---<br>\
+		Some Guy|Hello guys, what's up?<br>\
+		5<br>\
+		Other Guy|Hey, good to see you.<br>\
+		5<br>\
+		Some Guy|Yeah, you too.<br>\
+		--- --- ---<br>\
+		The above will result in those messages playing, with a 5 second gap between each. Maximum of 20 messages allowed.</span>")
+
+	var/list/decomposed
+	var/message = input(usr,"See your chat box for instructions. Keep a copy elsewhere in case it is rejected when you click OK.", "Input Conversation", "") as null|message
+
+	if(!message)
+		return
+
+	//Split on pipe or \n
+	decomposed = splittext(message,regex("\\||$","m"))
+	decomposed += "0" //Tack on a final 0 sleep to make 3-per-message evenly
+
+	//Time to find how they screwed up.
+	//Wasn't the right length
+	if((decomposed.len) % 3) //+1 to accomidate the lack of a wait time for the last message
+		to_chat(usr,"<span class='warning'>You passed [decomposed.len] segments (senders+messages+pauses). You must pass a multiple of 3, minus 1 (no pause after the last message). That means a sender and message on every other line (starting on the first), separated by a pipe character (|), and a number every other line that is a pause in seconds.</span>")
+		return
+
+	//Too long a conversation
+	if((decomposed.len / 3) > 20)
+		to_chat(usr,"<span class='warning'>This conversation is too long! 20 messages maximum, please.</span>")
+		return
+
+	//Missed some sleeps, or sanitized to nothing.
+	for(var/i = 1; i < decomposed.len; i++)
+
+		//Sanitize sender
+		var/clean_sender = sanitize(decomposed[i])
+		if(!clean_sender)
+			to_chat(usr,"<span class='warning'>One part of your conversation was not able to be sanitized. It was the sender of the [(i+2)/3]\th message.</span>")
+			return
+		decomposed[i] = clean_sender
+
+		//Sanitize message
+		var/clean_message = sanitize(decomposed[++i])
+		if(!clean_message)
+			to_chat(usr,"<span class='warning'>One part of your conversation was not able to be sanitized. It was the body of the [(i+2)/3]\th message.</span>")
+			return
+		decomposed[i] = clean_message
+
+		//Sanitize wait time
+		var/clean_time = text2num(decomposed[++i])
+		if(!isnum(clean_time))
+			to_chat(usr,"<span class='warning'>One part of your conversation was not able to be sanitized. It was the wait time after the [(i+2)/3]\th message.</span>")
+			return
+		if(clean_time > 60)
+			to_chat(usr,"<span class='warning'>Max 60 second wait time between messages for sanity's sake please.</span>")
+			return
+		decomposed[i] = clean_time
+
+	log_admin("Intercom convo started by: [key_name(usr)] : [sanitize(message)]")
+	feedback_add_details("admin_verb","IN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+	//Sanitized AND we still have a chance to send it? Wow!
+	if(LAZYLEN(decomposed))
+		for(var/i = 1; i < decomposed.len; i++)
+			var/this_sender = decomposed[i]
+			var/this_message = decomposed[++i]
+			var/this_wait = decomposed[++i]
+			GLOB.global_announcer.autosay("[this_message]", "[this_sender]", "[channel == "Common" ? null : channel]") //Common is a weird case, as it's not a "channel", it's just talking into a radio without a channel set.
+			sleep(this_wait SECONDS)
+
 /datum/admins/proc/toggleooc()
 	set category = "Server"
 	set desc="Globally Toggles OOC"
@@ -801,7 +910,7 @@ var/global/floorIsLava = 0
 
 	config.dooc_allowed = !( config.dooc_allowed )
 	log_admin("[key_name(usr)] toggled Dead OOC.")
-	message_admins("[key_name_admin(usr)] [config.dooc_allowed ? "включил" : "выключил"] ООС дл&#255; мёртвых.", 1)
+	message_admins("[key_name_admin(usr)] [config.dooc_allowed ? "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" : "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"] пїЅпїЅпїЅ пїЅпїЅ&#255; пїЅпїЅпїЅпїЅпїЅпїЅ.", 1)
 	feedback_add_details("admin_verb","TDOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/togglehubvisibility()
@@ -812,8 +921,11 @@ var/global/floorIsLava = 0
 	if(!check_rights(R_ADMIN))
 		return
 
-	world.visibility = !(world.visibility)
-	var/long_message = " toggled hub visibility.  The server is now [world.visibility ? "visible" : "invisible"] ([world.visibility])."
+	//BYOND hates actually changing world.visibility at runtime, so let's just change if we give it the hub password.
+	world.update_hub_visibility() //proc defined in hub.dm
+	var/long_message = "toggled hub visibility. The server is now [GLOB.visibility_pref ? "visible" : "invisible"] ([GLOB.visibility_pref])."
+	if (GLOB.visibility_pref && !world.reachable)
+		message_admins("WARNING: The server will not show up on the hub because byond is detecting that a firewall is blocking incoming connections.")
 
 	send2adminirc("[key_name(src)]" + long_message)
 	send2admindiscord("[key_name(src)]" + long_message)
@@ -1281,17 +1393,14 @@ var/global/floorIsLava = 0
 		to_chat(usr, "<b>No AIs located</b>")//Just so you know the thing is actually working and not just ignoring you.
 
 
-/datum/admins/proc/show_skills()
+/datum/admins/proc/show_skills(mob/living/carbon/human/M as mob in SSmobs.mob_list)
 	set category = "Admin"
 	set name = "Show Skills"
 
 	if (!istype(src,/datum/admins))
 		src = usr.client.holder
-	if (!istype(src,/datum/admins))
-		to_chat(usr, "Error: you are not an admin!")
-		return
 
-	var/mob/living/carbon/human/M = input("Select mob.", "Select mob.") as null|anything in GLOB.human_mob_list
+	//var/mob/living/carbon/human/M = input("Select mob.", "Select mob.") as null|anything in GLOB.human_mob_list
 	if(!M) return
 
 	show_skill_window(usr, M)
@@ -1427,7 +1536,7 @@ var/global/floorIsLava = 0
 		to_chat(usr, "Mode has not started.")
 		return
 
-	var/list/all_antag_types = all_antag_types()
+	var/list/all_antag_types = GLOB.all_antag_types_
 	var/antag_type = input("Choose a template.","Force Latespawn") as null|anything in all_antag_types
 	if(!antag_type || !all_antag_types[antag_type])
 		to_chat(usr, "Aborting.")
@@ -1518,7 +1627,7 @@ datum/admins/var/obj/item/weapon/paper/admin/faxreply // var to hold fax replies
 	if(shouldStamp)
 		P.stamps += "<hr><i>This paper has been stamped by the [P.origin] Quantum Relay.</i>"
 
-		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
+		var/image/stampoverlay = image('icons/obj/bureaucracy_inf.dmi')
 		var/{x; y;}
 		x = rand(-2, 0)
 		y = rand(-1, 2)

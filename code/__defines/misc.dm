@@ -56,8 +56,8 @@
 
 // Setting this much higher than 1024 could allow spammers to DOS the server easily.
 #define MAX_MESSAGE_LEN       1024
-#define MAX_PAPER_MESSAGE_LEN 3072
-#define MAX_BOOK_MESSAGE_LEN  9216
+#define MAX_PAPER_MESSAGE_LEN 6144
+#define MAX_BOOK_MESSAGE_LEN  18432
 #define MAX_LNAME_LEN         64
 #define MAX_NAME_LEN          26
 #define MAX_DESC_LEN          128
@@ -76,6 +76,12 @@
 //Area flags, possibly more to come
 #define AREA_FLAG_RAD_SHIELDED 1 // shielded from radiation, clearly
 #define AREA_FLAG_EXTERNAL     2 // External as in exposed to space, not outside in a nice, green, forest
+
+//Map template flags
+#define TEMPLATE_FLAG_ALLOW_DUPLICATES 1 // Lets multiple copies of the template to be spawned
+#define TEMPLATE_FLAG_SPAWN_GUARANTEED 2 // Makes it ignore away site budget and just spawn (only for away sites)
+#define TEMPLATE_FLAG_CLEAR_CONTENTS   4 // if it should destroy objects it spawns on top of
+#define TEMPLATE_FLAG_NO_RUINS         8 // if it should forbid ruins from spawning on top of it
 
 // Convoluted setup so defines can be supplied by Bay12 main server compile script.
 // Should still work fine for people jamming the icons into their repo.
@@ -124,11 +130,12 @@
 #define NTNETSPEED_DOS_AMPLIFICATION 5	// Multiplier for Denial of Service program. Resulting load on NTNet relay is this multiplied by NTNETSPEED of the device
 
 // Program bitflags
-#define PROGRAM_ALL 15
-#define PROGRAM_CONSOLE 1
-#define PROGRAM_LAPTOP 2
-#define PROGRAM_TABLET 4
-#define PROGRAM_TELESCREEN 8
+#define PROGRAM_ALL 		0x1F
+#define PROGRAM_CONSOLE 	0x1
+#define PROGRAM_LAPTOP 		0x2
+#define PROGRAM_TABLET 		0x4
+#define PROGRAM_TELESCREEN 	0x8
+#define PROGRAM_PDA 		0x10
 
 #define PROGRAM_STATE_KILLED 0
 #define PROGRAM_STATE_BACKGROUND 1
@@ -215,14 +222,91 @@
 
 #define RADIATION_THRESHOLD_CUTOFF 0.1	// Radiation will not affect a tile when below this value.
 
-#define LEGACY_RECORD_STRUCTURE(X, Y) GLOBAL_LIST_EMPTY(##X);/datum/computer_file/data/##Y/var/list/fields[0];/datum/computer_file/data/##Y/New(){..();GLOB.##X.Add(src);}/datum/computer_file/data/##Y/Destroy(){..();GLOB.##X.Remove(src);}
-
-#define EDIT_SHORTTEXT 1	// Short (single line) text input field
-#define EDIT_LONGTEXT 2		// Long (multi line, papercode tag formattable) text input field
-#define EDIT_NUMERIC 3		// Single-line number input field
-#define EDIT_LIST 4			// Option select dialog
-
-#define REC_FIELD(KEY) 		/record_field/##KEY
+#define LEGACY_RECORD_STRUCTURE(X, Y) GLOBAL_LIST_EMPTY(##X);/datum/computer_file/data/##Y/var/list/fields[0];/datum/computer_file/data/##Y/New(){..();GLOB.##X.Add(src);}/datum/computer_file/data/##Y/Destroy(){. = ..();GLOB.##X.Remove(src);}
 
 #define SUPPLY_SECURITY_ELEVATED 1
 #define SUPPLY_SECURITY_HIGH 2
+
+// secure gun authorization settings
+#define UNAUTHORIZED      0
+#define AUTHORIZED        1
+#define ALWAYS_AUTHORIZED 2
+
+// wrinkle states for clothes
+#define WRINKLES_DEFAULT	0
+#define WRINKLES_WRINKLY	1
+#define WRINKLES_NONE		2
+
+/*
+Define for getting a bitfield of adjacent turfs that meet a condition.
+ ORIGIN is the object to step from, VAR is the var to write the bitfield to
+ TVAR is the temporary turf variable to use, FUNC is the condition to check.
+ FUNC generally should reference TVAR.
+ example:
+	var/turf/T
+	var/result = 0
+	CALCULATE_NEIGHBORS(src, result, T, isopenturf(T))
+*/
+#define CALCULATE_NEIGHBORS(ORIGIN, VAR, TVAR, FUNC) \
+	for (var/_tdir in GLOB.cardinal) {               \
+		TVAR = get_step(ORIGIN, _tdir);              \
+		if ((TVAR) && (FUNC)) {                      \
+			VAR |= 1 << _tdir;                       \
+		}                                            \
+	}                                                \
+	if (VAR & N_NORTH) {                             \
+		if (VAR & N_WEST) {                          \
+			TVAR = get_step(ORIGIN, NORTHWEST);      \
+			if (FUNC) {                              \
+				VAR |= N_NORTHWEST;                  \
+			}                                        \
+		}                                            \
+		if (VAR & N_EAST) {                          \
+			TVAR = get_step(ORIGIN, NORTHEAST);      \
+			if (FUNC) {                              \
+				VAR |= N_NORTHEAST;                  \
+			}                                        \
+		}                                            \
+	}                                                \
+	if (VAR & N_SOUTH) {                             \
+		if (VAR & N_WEST) {                          \
+			TVAR = get_step(ORIGIN, SOUTHWEST);      \
+			if (FUNC) {                              \
+				VAR |= N_SOUTHWEST;                  \
+			}                                        \
+		}                                            \
+		if (VAR & N_EAST) {                          \
+			TVAR = get_step(ORIGIN, SOUTHEAST);      \
+			if (FUNC) {                              \
+				VAR |= N_SOUTHEAST;                  \
+			}                                        \
+		}                                            \
+}
+
+// /atom/proc/use_check flags.
+#define USE_ALLOW_NONLIVING 1
+#define USE_ALLOW_NON_ADV_TOOL_USR 2
+#define USE_ALLOW_DEAD 4
+#define USE_ALLOW_INCAPACITATED 8
+#define USE_ALLOW_NON_ADJACENT 16
+#define USE_FORCE_SRC_IN_USER 32
+#define USE_DISALLOW_SILICONS 64
+
+#define USE_SUCCESS 0
+#define USE_FAIL_NON_ADJACENT 1
+#define USE_FAIL_NONLIVING 2
+#define USE_FAIL_NON_ADV_TOOL_USR 3
+#define USE_FAIL_DEAD 4
+#define USE_FAIL_INCAPACITATED 5
+#define USE_FAIL_NOT_IN_USER 6
+#define USE_FAIL_IS_SILICON 7
+
+//Shuttle mission stages
+#define SHUTTLE_MISSION_PLANNED  1
+#define SHUTTLE_MISSION_STARTED  2
+#define SHUTTLE_MISSION_FINISHED 3
+#define SHUTTLE_MISSION_QUEUED   4
+
+//Built-in email accounts
+#define EMAIL_DOCUMENTS "document.server@internal-services.nt"
+#define EMAIL_BROADCAST "broadcast@internal-services.nt"

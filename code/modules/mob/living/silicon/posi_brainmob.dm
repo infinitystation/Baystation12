@@ -16,6 +16,7 @@
 	reagents = new/datum/reagents(1000, src)
 	if(istype(loc, /obj/item/organ/internal/posibrain))
 		container = loc
+	add_language("Robot Talk")
 	..()
 
 /mob/living/silicon/sil_brainmob/Destroy()
@@ -23,18 +24,13 @@
 		if(stat!=DEAD)	//If not dead.
 			death(1)	//Brains can die again. AND THEY SHOULD AHA HA HA HA HA HA
 		ghostize()		//Ghostize checks for key so nothing else is necessary.
-	..()
+	return ..()
 
-/mob/living/silicon/sil_brainmob/update_canmove()
+/mob/living/silicon/sil_brainmob/UpdateLyingBuckledAndVerbStatus()
 	if(in_contents_of(/obj/mecha))
-		canmove = 1
 		use_me = 1
 	else if(container && istype(container, /obj/item/organ/internal/posibrain) && istype(container.loc, /turf))
-		canmove = 1
 		use_me = 1
-	else
-		canmove = 0
-	return canmove
 
 /mob/living/silicon/sil_brainmob/isSynthetic()
 	return 1

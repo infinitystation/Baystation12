@@ -1,13 +1,12 @@
 FROM mloc6/byond:511
 
-COPY . /bs12
-RUN chown -R nobody:nogroup /bs12
+ARG BUILD_ARGS
 
-USER nobody
+COPY . /bs12
 
 WORKDIR /bs12
 
-RUN DreamMaker baystation12.dme
+RUN scripts/dm.sh $BUILD_ARGS baystation12.dme
 
 EXPOSE 8000
 VOLUME /bs12/data

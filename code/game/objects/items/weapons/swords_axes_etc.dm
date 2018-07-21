@@ -64,7 +64,7 @@
 
 	update_held_icon()
 
-	playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
+	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, 1)
 	add_fingerprint(user)
 
 	if(blood_overlay && blood_DNA && (blood_DNA.len >= 1)) //updates blood overlay, if any

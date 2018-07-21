@@ -35,6 +35,11 @@
 		if(istype(E)) E.internal_organs -= src
 	return ..()
 
+/obj/item/organ/internal/set_dna(var/datum/dna/new_dna)
+	..()
+	if(species && species.organs_icon)
+		icon = species.organs_icon
+
 //disconnected the organ from it's owner but does not remove it, instead it becomes an implant that can be removed with implant surgery
 //TODO move this to organ/internal once the FPB port comes through
 /obj/item/organ/proc/cut_away(var/mob/living/user)
@@ -115,6 +120,11 @@
 /obj/item/organ/internal/proc/is_bruised()
 	return damage >= min_bruised_damage
 
+/obj/item/organ/internal/proc/set_max_damage(var/ndamage)
+	max_damage = Floor(ndamage)
+	min_broken_damage = Floor(0.75 * max_damage)
+	min_bruised_damage = Floor(0.25 * max_damage)
+
 /obj/item/organ/internal/take_damage(amount, var/silent=0)
 	if(isrobotic())
 		damage = between(0, src.damage + (amount * 0.8), max_damage)
@@ -131,3 +141,48 @@
 				if(damage < 5)
 					degree = " a bit"
 				owner.custom_pain("Something inside your [parent.name] hurts[degree].", amount, affecting = parent)
+
+/obj/item/organ/internal/proc/get_visible_state()
+	if(damage > max_damage)
+		. = "bits and pieces of a destroyed "
+	else if(is_broken())
+		. = "broken "
+	else if(is_bruised())
+		. = "badly damaged "
+	else if(damage > 5)
+		. = "damaged "
+	if(status & ORGAN_DEAD)
+		if(can_recover())
+			. = "decaying [.]"
+		else
+			. = "necrotic [.]"
+	. = "[.][name]"
+
+/obj/item/organ/internal/Process()
+	..()
+	handle_regeneration()
+
+/obj/item/organ/internal/proc/handle_regeneration()
+	if(!damage || isrobotic() || !owner || owner.chem_effects[CE_TOXIN] || owner.is_asystole())
+		return
+	if(damage < 0.1*max_damage)
+		heal_damage(0.1)
+
+/obj/item/organ/internal/proc/surgical_fix(mob/user)
+	if(damage > min_broken_damage)
+		var/scarring = damage/max_damage
+		scarring = 1 - max(0.2, scarring*scarring)
+		var/new_max_dam = Floor(scarring * max_damage)
+		if(new_max_dam < max_damage)
+			to_chat(user, "<span class='warning'>Not every part of [src] could be saved, some dead tissue had to be removed, making it more suspectable to damage in the future.</span>")
+			set_max_damage(new_max_dam)
+	heal_damage(damage)
+
+/obj/item/organ/internal/proc/get_scarring_level()
+	. = (initial(max_damage) - max_damage)/initial(max_damage)
+
+/obj/item/organ/internal/get_scan_results()
+	. = ..()
+	var/scar_level = get_scarring_level()
+	if(scar_level > 0.01)
+		. += "[get_wound_severity(get_scarring_level())] scarring"

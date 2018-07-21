@@ -11,14 +11,7 @@
 	edge = 1
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-
-/obj/item/weapon/material/sword/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
-
-	if(default_parry_check(user, attacker, damage_source) && prob(50))
-		user.visible_message("<span class='danger'>\The [user] parries [attack_text] with \the [src]!</span>")
-		playsound(user.loc, 'sound/weapons/punchmiss.ogg', 50, 1)
-		return 1
-	return 0
+	base_parry_chance = 50
 
 /obj/item/weapon/material/sword/replica
 	edge = 0
@@ -29,8 +22,13 @@
 /obj/item/weapon/material/sword/katana
 	name = "katana"
 	desc = "Woefully underpowered in D20. This one looks pretty sharp."
+	item_icons = list(
+		slot_s_store_str = 'icons/mob/onmob/back.dmi'
+		)
 	icon_state = "katana"
 	item_state = "katana"
+	unbreakable = 1
+	default_material = "plasteel"
 	slot_flags = SLOT_BELT | SLOT_BACK
 
 /obj/item/weapon/material/sword/katana/replica

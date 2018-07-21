@@ -3,8 +3,6 @@
 	name = "blob"
 	icon = 'icons/mob/blob.dmi'
 	icon_state = "blob"
-	light_range = 2
-	light_color = "#b5ff5b"
 	desc = "Some blob creature thingy."
 	density = 1
 	opacity = 1
@@ -43,6 +41,8 @@
 			take_damage(rand(20, 60) / brute_resist)
 
 /obj/effect/blob/update_icon()
+	if(health > 0)
+		set_light(0.5, 1, 2, 2, "#b5ff5b")
 	if(health > maxHealth / 2)
 		icon_state = "blob"
 	else
@@ -61,7 +61,7 @@
 	update_icon()
 
 /obj/effect/blob/proc/expand(var/turf/T)
-	if(istype(T, /turf/unsimulated/) || istype(T, /turf/space) || (istype(T, /turf/simulated/mineral) && T.density))
+	if(istype(T, /turf/unsimulated/) || istype(T, /turf/space) ||  istype(T, /turf/simulated/open) || (istype(T, /turf/simulated/mineral) && T.density))
 		return
 	if(istype(T, /turf/simulated/wall))
 		var/turf/simulated/wall/SW = T

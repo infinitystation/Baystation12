@@ -12,7 +12,7 @@
 /obj/structure/filingcabinet
 	name = "filing cabinet"
 	desc = "A large cabinet with drawers."
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "filingcabinet"
 	density = 1
 	anchored = 1
@@ -23,7 +23,8 @@
 		/obj/item/weapon/folder,
 		/obj/item/weapon/photo,
 		/obj/item/weapon/paper_bundle,
-		/obj/item/weapon/sample)
+		/obj/item/weapon/sample,
+		/obj/item/weapon/card)
 
 /obj/structure/filingcabinet/chestdrawer
 	name = "chest drawer"

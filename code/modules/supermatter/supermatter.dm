@@ -47,8 +47,7 @@
 	icon_state = "darkmatter"
 	density = 1
 	anchored = 0
-	light_range = 4
-	light_power = 1
+	light_outer_range = 4
 
 	layer = ABOVE_OBJ_LAYER
 
@@ -251,9 +250,8 @@
 
 //Changes color and luminosity of the light to these values if they were not already set
 /obj/machinery/power/supermatter/proc/shift_light(var/lum, var/clr)
-	if(lum != light_range || abs(power - last_power) > 10 || clr != light_color)
-		set_light(lum, LIGHT_POWER_CALC, clr)
-		last_power = power
+	if(lum != light_outer_range || clr != light_color)
+		set_light(1, 0.1, lum, l_color = clr)
 
 /obj/machinery/power/supermatter/proc/get_integrity()
 	var/integrity = damage / explosion_point
@@ -283,8 +281,9 @@
 		GLOB.global_announcer.autosay(alert_msg, "Supermatter Monitor", "Engineering")
 		//Public alerts
 		if((damage > emergency_point) && !public_alert)
-			GLOB.global_announcer.autosay("WARNING: SUPERMATTER CRYSTAL DELAMINATION IMMINENT!", "Supermatter Monitor")
+			GLOB.global_announcer.autosay("WARNING: SUPERMATTER CRYSTAL DELAMINATION IMMINENT! SAFEROOMS UNBOLTED.", "Supermatter Monitor")
 			public_alert = 1
+			GLOB.using_map.unbolt_saferooms() // torch
 			for(var/mob/M in GLOB.player_list)
 				var/turf/T = get_turf(M)
 				if(T && (T.z in GLOB.using_map.station_levels) && !istype(M,/mob/new_player) && !isdeaf(M))

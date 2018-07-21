@@ -19,7 +19,6 @@
 		/obj/item/clothing/head/welding,
 		/obj/item/clothing/gloves/insulated,
 		/obj/item/clothing/shoes/brown,
-		/obj/item/weapon/cartridge/ce,
 		/obj/item/device/radio/headset/heads/ce,
 		/obj/item/weapon/storage/toolbox/mechanical,
 		/obj/item/clothing/suit/storage/hazardvest,
@@ -43,7 +42,7 @@
 /obj/structure/closet/secure_closet/engineering_electrical/WillContain()
 	return list(
 		/obj/item/clothing/gloves/nabber = 2,
-		/obj/item/clothing/gloves/insulated = 3,
+		/obj/item/clothing/gloves/insulated = 4,
 		/obj/item/weapon/storage/toolbox/electrical = 3,
 		/obj/item/weapon/module/power_control = 3,
 		/obj/item/device/multitool = 3,
@@ -87,7 +86,6 @@
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/mask/gas,
 		/obj/item/clothing/glasses/meson,
-		/obj/item/weapon/cartridge/engineering,
 		/obj/item/taperoll/engineering,
 		/obj/item/weapon/ladder_mobile
 	)
@@ -112,6 +110,5 @@
 		/obj/item/device/radio/headset/headset_eng,
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/mask/gas,
-		/obj/item/weapon/cartridge/atmos,
 		/obj/item/taperoll/atmos
 	)

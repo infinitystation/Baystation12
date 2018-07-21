@@ -9,10 +9,12 @@
 	var/id_tag
 	var/scan_range = 25
 
-/obj/machinery/computer/fusion_fuel_control/attack_ai(mob/user)
-	attack_hand(user)
+/obj/machinery/computer/fusion_fuel_control/attack_ai(mob/user as mob)
+	return src.attack_hand(user)
 
-/obj/machinery/computer/fusion_fuel_control/attack_hand(mob/user)
+/obj/machinery/computer/fusion_fuel_control/attack_hand(mob/user as mob)
+	if(..(user))
+		return
 	add_fingerprint(user)
 	interact(user)
 

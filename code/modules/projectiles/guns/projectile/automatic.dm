@@ -11,6 +11,8 @@
 	ammo_type = /obj/item/ammo_casing/c9mm
 	multi_aim = 1
 	burst_delay = 1.1
+	mag_insert_sound = 'sound/weapons/guns/interaction/smg_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/smg_magout.ogg'
 
 	//machine pistol, easier to one-hand with
 	firemodes = list(
@@ -20,7 +22,7 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/machine_pistol
-	name = "MP6 'Vesper' machine pistol"
+	name = "MP6 machine pistol"
 	desc = "The Lumoco Arms MP6 Vesper, A fairly common machine pistol. Sometimes refered to as an 'uzi' by the backwater spacers it is often associated with. Uses .45 rounds."
 	icon_state = "mpistolen"
 	item_state = "wt550"
@@ -49,6 +51,7 @@
 /obj/item/weapon/gun/projectile/automatic/c20r
 	name = "C-20r submachine gun"
 	desc = "The C-20r is a lightweight and rapid firing SMG, for when you REALLY need someone dead. Uses 10mm rounds. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
+	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "c20r"
 	item_state = "c20r"
 	w_class = ITEM_SIZE_LARGE
@@ -70,12 +73,46 @@
 		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=2,    one_hand_penalty=4, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
 		)
 
+/obj/item/weapon/gun/projectile/automatic/c20r/attack_hand(mob/user as mob)
+	if(user.get_inactive_hand() == src)
+		if(silenced)
+			if(user.l_hand != src && user.r_hand != src)
+				..()
+				return
+			to_chat(user, "<span class='notice'>You unscrew [silenced] from [src].</span>")
+			user.put_in_hands(silenced)
+			silenced = initial(silenced)
+			w_class = initial(w_class)
+			update_icon()
+			return
+	..()
+
+/obj/item/weapon/gun/projectile/automatic/c20r/attackby(obj/item/I as obj, mob/user as mob)
+	if(istype(I, /obj/item/weapon/silencer))
+		if(user.l_hand != src && user.r_hand != src)	//if we're not in his hands
+			to_chat(user, "<span class='notice'>You'll need [src] in your hands to do that.</span>")
+			return
+		user.drop_item()
+		to_chat(user, "<span class='notice'>You screw [I] onto [src].</span>")
+		silenced = I	//dodgy?
+		w_class = ITEM_SIZE_NORMAL
+		I.forceMove(src)		//put the silencer into the gun
+		update_icon()
+		return
+	..()
+
 /obj/item/weapon/gun/projectile/automatic/c20r/update_icon()
 	..()
-	if(ammo_magazine)
-		icon_state = "c20r-[round(ammo_magazine.stored_ammo.len,4)]"
+	if(silenced)
+		if(ammo_magazine)
+			icon_state = "c20r-[round(ammo_magazine.stored_ammo.len,4)]-suppressed"
+		else
+			icon_state = "c20r-suppressed"
 	else
-		icon_state = "c20r"
+		if(ammo_magazine)
+			icon_state = "c20r-[round(ammo_magazine.stored_ammo.len,4)]"
+		else
+			icon_state = "c20r"
 	return
 
 /obj/item/weapon/gun/projectile/automatic/sts35
@@ -93,6 +130,8 @@
 	allowed_magazines = /obj/item/ammo_magazine/c556
 	one_hand_penalty = 3
 	wielded_item_state = "arifle-wielded"
+	mag_insert_sound = 'sound/weapons/guns/interaction/batrifle_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/batrifle_magout.ogg'
 
 	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
 	firemodes = list(
@@ -107,7 +146,7 @@
 	..()
 
 /obj/item/weapon/gun/projectile/automatic/wt550
-	name = "WT-550 'Saber' submachine gun"
+	name = "WT-550 submachine gun"
 	desc = "The WT-550 Saber is a cheap self-defense weapon, mass-produced by Ward-Takahashi for paramilitary and private use. Uses 9mm rounds."
 	icon_state = "wt550"
 	item_state = "wt550"
@@ -119,7 +158,8 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/mc9mmt/rubber
 	allowed_magazines = /obj/item/ammo_magazine/mc9mmt
-
+	mag_insert_sound = 'sound/weapons/guns/interaction/msmg_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/msmg_magout.ogg'
 	//machine pistol, like SMG but easier to one-hand with
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=0, burst_accuracy=null, dispersion=null),
@@ -140,7 +180,7 @@
 	magazine_type = /obj/item/ammo_magazine/mc9mmt
 
 /obj/item/weapon/gun/projectile/automatic/z8
-	name = "Z8 'Bulldog' carabine"
+	name = "Z8 carabine"
 	desc = "The Z8 Bulldog is an older model bullpup carbine, made by the now defunct Zendai Foundries. Uses armor piercing 7.62mm rounds. Makes you feel like a space marine when you hold it."
 	icon_state = "carbine"
 	item_state = "z8carbine"
@@ -157,6 +197,8 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	one_hand_penalty = 5
 	wielded_item_state = "z8carbine-wielded"
+	mag_insert_sound = 'sound/weapons/guns/interaction/batrifle_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/batrifle_magout.ogg'
 	//would have one_hand_penalty=4,5 but the added weight of a grenade launcher makes one-handing even harder
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, use_launcher=null, one_hand_penalty=5, burst_accuracy=null, dispersion=null),
@@ -210,7 +252,7 @@
 		to_chat(user, "\The [launcher] is empty.")
 
 /obj/item/weapon/gun/projectile/automatic/l6_saw
-	name = "L6 'SAW' machine gun"
+	name = "L6 machine gun"
 	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. Has 'Aussec Armoury- 2531' engraved on the reciever." //probably should refluff this
 	icon_state = "l6closed100"
 	item_state = "l6closedmag"
@@ -227,6 +269,8 @@
 	allowed_magazines = list(/obj/item/ammo_magazine/box/a556, /obj/item/ammo_magazine/c556)
 	one_hand_penalty = 6
 	wielded_item_state = "gun_wielded"
+	mag_insert_sound = 'sound/weapons/guns/interaction/lmg_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/lmg_magout.ogg'
 
 
 	//LMG, better sustained fire accuracy than assault rifles (comparable to SMG), higer move delay and one-handing penalty
@@ -316,35 +360,35 @@
 	..()
 
 /obj/item/weapon/gun/projectile/automatic/amrcarabine/verb/scope()
-    set category = "Object"
-    set name = "Use Scope"
-    set popup_menu = 1
-    toggle_scope(usr, 1.5)
+	set category = "Object"
+	set name = "Use Scope"
+	set popup_menu = 1
+	toggle_scope(usr, 1.5)
 
 
 /obj/item/weapon/gun/projectile/automatic/z9
-	name = "Z9 'Viper' carabine"
+	name = "Z9 carabine"
 	desc = "The assault carabine Z9 'Viper' made by Aussec Armory from blueprints of Z8 'Bulldog' manufactured the now defunct Zendai Foundries. Old design was swapped with more futuristic one. 'Viper' conting as one of newest weapon on market, so you cannot buy it easy. You don't know who may hold that gun, but they should be pretty rich... Like governments special forces or famouse PMC companies like SAARE."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "bullpup"
 	item_state = "bullpup"
-	w_class = ITEM_SIZE_HUGE
 	item_icons = list(
 		slot_r_hand_str = 'icons/mob/infinity/misc.dmi',
 		slot_l_hand_str = 'icons/mob/infinity/misctwo.dmi',
 		)
+	wielded_item_state = "bullpup-wielded"
+	w_class = ITEM_SIZE_HUGE
 	force = 12
 	caliber = "a762"
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 4)
 	ammo_type = /obj/item/ammo_casing/a762
-	slot_flags = SLOT_BACK
+	slot_flags = SLOT_BELT|SLOT_BACK
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/a762/extended
 	allowed_magazines = /obj/item/ammo_magazine/a762
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	one_hand_penalty = 4
-	wielded_item_state = "z8carbine-wielded"
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, use_launcher=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
 		list(mode_name="3-round bursts", burst=3,    fire_delay=0,	  move_delay=null, use_launcher=null, one_hand_penalty=5, burst_accuracy=list(0,-0.6,-1.2), dispersion=list(0.4, 0.8, 1.2)),
@@ -381,3 +425,93 @@
 /obj/item/weapon/gun/projectile/automatic/z9/update_icon()
 	icon_state = (ammo_magazine)? "bullpup" : "bullpup-e"
 	..()
+
+/obj/item/weapon/gun/projectile/automatic/bp15
+	name = "BP-15 PDW"
+	desc = "The BP-15 'Moloh' is a  personal defense weapon, produced by Aussec Armory for use by police spec ops or solders. Uses 5.7x28 mm rounds."
+	icon = 'icons/event/guns.dmi'
+	icon_state = "pdw"
+	item_state = "c20r"
+	item_icons = list(
+		slot_r_hand_str = 'icons/mob/onmob/items/righthand_guns.dmi',
+		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_guns.dmi',
+		)
+	w_class = ITEM_SIZE_NORMAL
+	caliber = "57"
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
+	slot_flags = SLOT_BELT
+	ammo_type = /obj/item/ammo_casing/a57
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/mc57
+	allowed_magazines = /obj/item/ammo_magazine/mc57
+
+	//machine pistol, like SMG but easier to one-hand with
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=0, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=2,    one_hand_penalty=1, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
+		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=2,    one_hand_penalty=2, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
+		)
+
+/obj/item/weapon/gun/projectile/automatic/bp15/update_icon()
+	icon_state = (ammo_magazine)? "pdw" : "pdw-empty"
+	..()
+
+/obj/item/weapon/gun/projectile/automatic/mp90
+	name = "MP90 PDW"
+	desc = "The MP90 'Defender' is a personal defense weapon, produced by Scarborough Arms for use by police and army spec ops. Uses 5.7x28 mm rounds."
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "m90"
+	item_state = "c20r"
+	item_icons = list(
+		slot_r_hand_str = 'icons/mob/onmob/items/righthand_guns.dmi',
+		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_guns.dmi',
+		)
+	w_class = ITEM_SIZE_NORMAL
+	caliber = "57"
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
+	slot_flags = SLOT_BELT
+	ammo_type = /obj/item/ammo_casing/a57
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/mc57mmt
+	allowed_magazines = /obj/item/ammo_magazine/mc57mmt
+
+	//machine pistol, like SMG but easier to one-hand with
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=0, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=2,    one_hand_penalty=1, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0)),
+		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=2,    one_hand_penalty=2, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
+		)
+
+/obj/item/weapon/gun/projectile/automatic/mp90/update_icon()
+	icon_state = (ammo_magazine)? "m90" : "m90-e"
+	..()
+
+/obj/item/weapon/gun/projectile/automatic/tr3
+	name = "Messiatith-TR3 DMR"
+	desc = "Long Range DMR 'Messiatith-TR3' is a former Large Caliber Sniper Rifle 'Messira', caliber .30-06. Weapon was made by Fusozai family, Nazkiin and designed to shoot the armored target at 700m and unarmored target at 2km. Sniper Rifle is extremely popular among Tajarans PMC's. In comparison with its ancestor this gun is lighter and more accurate one. Therefore the shooter has to be experienced in gunfire. Like other guns made by Fusozai family there is seal by its side in the form of halfway closed cat's eye."
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "messiatith"
+	item_state = "gun"
+	item_icons = list(
+		slot_r_hand_str = 'icons/event/right1.dmi',
+		slot_l_hand_str = 'icons/event/left1.dmi',
+		)
+	w_class = ITEM_SIZE_NORMAL
+	caliber = "3006"
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
+	slot_flags = SLOT_BELT
+	ammo_type = /obj/item/ammo_casing/a3006
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/c3006
+	allowed_magazines = /obj/item/ammo_magazine/c3006
+	wielded_item_state = "messiatith-wielded"
+
+/obj/item/weapon/gun/projectile/automatic/tr3/update_icon()
+	icon_state = (ammo_magazine)? "messiatith" : "messiatith-e"
+	..()
+
+/obj/item/weapon/gun/projectile/automatic/tr3/verb/scope()
+	set category = "Object"
+	set name = "Use Scope"
+	set popup_menu = 1
+	toggle_scope(usr, 1.5)

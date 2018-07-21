@@ -91,9 +91,9 @@ var/list/solars_list = list()
 	..()
 	overlays.Cut()
 	if(stat & BROKEN)
-		overlays += image('icons/obj/power.dmi', icon_state = "solar_panel-b", layer = FLY_LAYER)
+		overlays += image('icons/obj/infinity_object.dmi', icon_state = "solar_panel-b", layer = FLY_LAYER)
 	else
-		overlays += image('icons/obj/power.dmi', icon_state = "solar_panel", layer = FLY_LAYER)
+		overlays += image('icons/obj/infinity_object.dmi', icon_state = "solar_panel", layer = FLY_LAYER)
 		src.set_dir(angle2dir(adir))
 	return
 

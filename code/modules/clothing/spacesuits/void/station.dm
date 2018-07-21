@@ -57,6 +57,7 @@
 
 /obj/item/clothing/suit/space/void/mining/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/mining
+	boots = /obj/item/clothing/shoes/magboots
 
 //Medical
 /obj/item/clothing/head/helmet/space/void/medical
@@ -98,6 +99,13 @@
 	armor = list(melee = 60, bullet = 10, laser = 30, energy = 5, bomb = 45, bio = 100, rad = 10)
 	siemens_coefficient = 0.7
 	light_overlay = "helmet_light_dual"
+
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/species/unathi/helmet.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet_if.dmi',
+		SPECIES_SKRELL = 'icons/mob/species/skrell/helmet.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi'
+		)
 
 /obj/item/clothing/suit/space/void/security
 	icon_state = "rig-sec"
@@ -186,6 +194,7 @@
 
 /obj/item/clothing/suit/space/void/mining/alt/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/mining/alt
+	boots = /obj/item/clothing/shoes/magboots
 
 //Medical
 /obj/item/clothing/head/helmet/space/void/medical/alt

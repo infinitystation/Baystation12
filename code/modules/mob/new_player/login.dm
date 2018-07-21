@@ -25,6 +25,7 @@
 	if(join_motd)
 		to_chat(src, "<div class=\"motd\">[join_motd]</div>")
 	to_chat(src, "<div class='info'>Game ID: <div class='danger'>[game_id]</div></div>")
+
 	if(!mind)
 		mind = new /datum/mind(key)
 		mind.active = 1
@@ -36,12 +37,12 @@
 	set_sight(sight|SEE_TURFS)
 	GLOB.player_list |= src
 
-	if(!client.banprisoned)
-		new_player_panel()
-	else
-		new_player_panel_prisoner()
-
 	if(client)
+		if(client.banprisoned)
+			new_player_panel_prisoner()
+		else
+			new_player_panel()
+
 		//handle_privacy_poll()
 		client.playtitlemusic()
 		maybe_send_staffwarns("connected as new player")

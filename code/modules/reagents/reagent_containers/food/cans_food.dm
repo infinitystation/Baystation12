@@ -58,12 +58,13 @@
 	icon_state = "can1_empty"
 
 /obj/item/trash/canfood/Initialize()
+	. = ..()
 	icon_state = "can[(rand(1,5))]_empty"
 
 /obj/item/weapon/material/canknife
 	name = "can-opener"
 	desc = "Simple can-opener"
-	icon = 'icons/obj/infinity_object.dmi'
+	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "opener"
 
 /obj/item/weapon/reagent_containers/food/snacks/can/attack_self(mob/user as mob)

@@ -6,7 +6,7 @@
 /obj/item/weapon/card/id/var/money = 2000
 
 /obj/machinery/atm
-	name = "Automatic Teller Machine"
+	name = "automatic teller machine"
 	desc = "For all your monetary needs!"
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "atm"
@@ -65,7 +65,7 @@
 
 		//display a message to the user
 		var/response = pick("Initiating withdraw. Have a nice day!", "CRITICAL ERROR: Activating cash chamber panic siphon.","PIN Code accepted! Emptying account balance.", "Jackpot!")
-		to_chat(user, "\icon[src] <span class='warning'>The [src] beeps: \"[response]\"</span>")
+		to_chat(user, "\icon[src] <span class='warning'>[src] beeps: \"[response]\"</span>")
 		return 1
 
 /obj/machinery/atm/attackby(obj/item/I as obj, mob/user as mob)
@@ -73,6 +73,9 @@
 		if(emagged > 0)
 			//prevent inserting id into an emagged ATM
 			to_chat(user, "\icon[src] <span class='warning'>CARD READER ERROR. This system has been compromised!</span>")
+			return
+		if(stat & NOPOWER)
+			to_chat(user, "You try to insert your card into [src], but nothing happens.")
 			return
 
 		var/obj/item/weapon/card/id/idcard = I
@@ -275,7 +278,9 @@
 					//Below is to avoid a runtime
 					if(tried_account_num)
 						D = get_account(tried_account_num)
-						account_security_level = D.security_level
+
+						if(D)
+							account_security_level = D.security_level
 
 					authenticated_account = attempt_account_access(tried_account_num, tried_pin, held_card && login_card.associated_account_number == tried_account_num ? 2 : 1)
 
@@ -354,7 +359,7 @@
 					R.info += "<i>Service terminal ID:</i> [machine_id]<br>"
 
 					//stamp the paper
-					var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
+					var/image/stampoverlay = image('icons/obj/bureaucracy_inf.dmi')
 					stampoverlay.icon_state = "paper_stamp-cent"
 					if(!R.stamped)
 						R.stamped = new
@@ -396,7 +401,7 @@
 					R.info += "</table>"
 
 					//stamp the paper
-					var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
+					var/image/stampoverlay = image('icons/obj/bureaucracy_inf.dmi')
 					stampoverlay.icon_state = "paper_stamp-cent"
 					if(!R.stamped)
 						R.stamped = new
@@ -430,15 +435,9 @@
 
 /obj/machinery/atm/proc/scan_user(mob/living/carbon/human/human_user as mob)
 	if(!authenticated_account)
-		if(human_user.wear_id)
-			var/obj/item/weapon/card/id/I
-			if(istype(human_user.wear_id, /obj/item/weapon/card/id) )
-				I = human_user.wear_id
-			else if(istype(human_user.wear_id, /obj/item/device/pda) )
-				var/obj/item/device/pda/P = human_user.wear_id
-				I = P.id
-			if(I)
-				return I
+		var/obj/item/weapon/card/id/I = human_user.GetIdCard()
+		if(istype(I))
+			return I
 
 // put the currently held id on the ground or in the hand of the user
 /obj/machinery/atm/proc/release_held_id(mob/living/carbon/human/human_user as mob)

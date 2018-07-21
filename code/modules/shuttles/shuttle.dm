@@ -20,6 +20,8 @@
 	var/knockdown = 1 //whether shuttle downs non-buckled people when it moves
 
 	var/defer_initialisation = FALSE //this shuttle will/won't be initialised by something after roundstart
+	var/logging_home_tag   //Whether in-game logs will be generated whenever the shuttle leaves/returns to the landmark with this landmark_tag.
+	var/logging_access     //Controls who has write access to log-related stuff; should correlate with pilot access.
 
 /datum/shuttle/New(_name, var/obj/effect/shuttle_landmark/initial_location)
 	..()
@@ -46,6 +48,8 @@
 	if(src.name in shuttle_controller.shuttles)
 		CRASH("A shuttle with the name '[name]' is already defined.")
 	shuttle_controller.shuttles[src.name] = src
+	if(logging_home_tag)
+		new /datum/shuttle_log(src)
 	if(flags & SHUTTLE_FLAGS_PROCESS)
 		shuttle_controller.process_shuttles += src
 	if(flags & SHUTTLE_FLAGS_SUPPLY)
@@ -58,6 +62,7 @@
 
 	shuttle_controller.shuttles -= src.name
 	shuttle_controller.process_shuttles -= src
+	shuttle_controller.shuttle_logs -= src
 	if(supply_controller.shuttle == src)
 		supply_controller.shuttle = null
 
@@ -162,20 +167,22 @@
 					TA.ChangeTurf(get_base_turf_by_area(TA), 1, 1)
 		if(knockdown)
 			for(var/mob/M in A)
-				if(M.client)
-					spawn(0)
+				spawn(0)
+					if(istype(M, /mob/living))
 						if(M.buckled)
 							to_chat(M, "<span class='warning'>Sudden acceleration presses you into your chair!</span>")
 							shake_camera(M, 3, 1)
 						else
 							to_chat(M, "<span class='warning'>The floor lurches beneath you!</span>")
 							shake_camera(M, 10, 1)
-				if(istype(M, /mob/living/carbon))
-					if(!M.buckled)
-						M.Weaken(3)
+							M.visible_message("<span class='warning'>[M.name] is tossed around by the sudden acceleration!</span>")	
+							M.throw_at_random(FALSE, 4, 0.5)
 
 		for(var/obj/structure/cable/C in A)
 			powernets |= C.powernet
+	if(logging_home_tag)
+		var/datum/shuttle_log/s_log = shuttle_controller.shuttle_logs[src]
+		s_log.handle_move(current_location, destination)
 
 	translate_turfs(turf_translation, current_location.base_area, current_location.base_turf)
 	current_location = destination

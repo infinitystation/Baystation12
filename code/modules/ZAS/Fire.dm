@@ -14,6 +14,11 @@ If it gains pressure too slowly, it may leak or just rupture instead of explodin
 atom/proc/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	return null
 
+/atom/movable/proc/is_burnable()
+	return FALSE
+
+/mob/is_burnable()
+	return simulated
 
 turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 
@@ -39,7 +44,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 /zone/proc/process_fire()
 	var/datum/gas_mixture/burn_gas = air.remove_ratio(vsc.fire_consuption_rate, fire_tiles.len)
 
-	var/firelevel = burn_gas.zburn(src, fire_tiles, force_burn = 1, no_check = 1)
+	var/firelevel = burn_gas.react(src, fire_tiles, force_burn = 1, no_check = 1)
 
 	air.merge(burn_gas)
 
@@ -135,13 +140,13 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 
 	if(firelevel > 6)
 		icon_state = "3"
-		set_light(7, 3)
+		set_light(1, 2, 7)
 	else if(firelevel > 2.5)
 		icon_state = "2"
-		set_light(5, 2)
+		set_light(0.7, 2, 5)
 	else
 		icon_state = "1"
-		set_light(3, 1)
+		set_light(0.5, 1, 3)
 
 	for(var/mob/living/L in loc)
 		L.FireBurn(firelevel, air_contents.temperature, air_contents.return_pressure())  //Burn the mobs!
@@ -192,7 +197,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 
 	var/datum/gas_mixture/air_contents = loc.return_air()
 	color = fire_color(air_contents.temperature)
-	set_light(3, 1, color)
+	set_light(0.5, 1, 3, l_color = color)
 
 	firelevel = fl
 	SSair.active_hotspots.Add(src)
@@ -222,7 +227,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 	fire_protection = world.time
 
 //Returns the firelevel
-/datum/gas_mixture/proc/zburn(zone/zone, force_burn, no_check = 0)
+/datum/gas_mixture/proc/react(zone/zone, force_burn, no_check = 0)
 	. = 0
 	if((temperature > PHORON_MINIMUM_BURN_TEMPERATURE || force_burn) && (no_check ||check_recombustability(zone? zone.fuel_objs : null)))
 
@@ -427,7 +432,7 @@ datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
 
 	//Always check these damage procs first if fire damage isn't working. They're probably what's wrong.
 
-	apply_damage(2.5*mx*head_exposure,  BURN, BP_HEAD,  0, 0, "Fire")
+	apply_damage(0.9*mx*head_exposure,  BURN, BP_HEAD,  0, 0, "Fire")
 	apply_damage(2.5*mx*chest_exposure, BURN, BP_CHEST, 0, 0, "Fire")
 	apply_damage(2.0*mx*groin_exposure, BURN, BP_GROIN, 0, 0, "Fire")
 	apply_damage(0.6*mx*legs_exposure,  BURN, BP_L_LEG, 0, 0, "Fire")

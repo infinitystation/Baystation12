@@ -2,9 +2,9 @@
 	var/difficulty = 20 // Percentage chance of missing.
 
 /obj/effect/landmark/overmap_target/Initialize()
+	. = ..()
 	var/obj/effect/overmap/ship/linked = map_sectors["[z]"]
 	if(istype(linked)) linked.targets |= src
-	..()
 
 /obj/effect/landmark/overmap_target/power_plant
 	name = "fusion core"
@@ -88,11 +88,11 @@
 /obj/effect/landmark/overmap_target/torch/third
 	name = "second deck"
 
-obj/effect/landmark/overmap_target/torch/third/supermatter
+/obj/effect/landmark/overmap_target/torch/third/supermatter
 	name = "supermatter reactor"
 	difficulty = 80
 
-obj/effect/landmark/overmap_target/torch/third/fussion
+/obj/effect/landmark/overmap_target/torch/third/fussion
 	name = "fussion reactor"
 	difficulty = 80
 

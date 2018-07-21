@@ -1,6 +1,7 @@
 /obj/item/clothing/accessory/locket
 	name = "silver locket"
 	desc = "A silver locket that seems to have space for a photo within."
+	description_info = "Also, you can write in locket with a pen."
 	icon_state = "locket"
 	item_state = "locket"
 	slot_flags = 0
@@ -9,6 +10,12 @@
 	var/base_icon
 	var/open
 	var/obj/item/held //Item inside locket.
+	var/message
+
+/obj/item/clothing/accessory/locket/examine(mob/user)
+	. = ..()
+	if(open && message)
+		to_chat(user, "<span class='notice'>[message]</span>")
 
 /obj/item/clothing/accessory/locket/attack_self(mob/user as mob)
 	if(!base_icon)
@@ -42,5 +49,13 @@
 			user.drop_item()
 			O.loc = src
 			src.held = O
+		return
+
+	if(istype(O,/obj/item/weapon/pen))
+		var/new_message = sanitize(input("Enter the text which you want write here (leave field blank to remove)") as text, MAX_DESC_LEN)
+		if(!new_message)
+			message = null
+		else
+			message = new_message
 		return
 	..()

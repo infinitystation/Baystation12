@@ -30,13 +30,6 @@ This saves us from having to call add_fingerprint() any time something is put in
 		qdel(W)
 	return null
 
-/mob/living/carbon/human/proc/is_in_hands(var/typepath)
-	if(istype(l_hand,typepath))
-		return l_hand
-	if(istype(r_hand,typepath))
-		return r_hand
-	return 0
-
 //Puts the item into our active hand if possible. returns 1 on success.
 /mob/living/carbon/human/put_in_active_hand(var/obj/item/W)
 	return (hand ? put_in_l_hand(W) : put_in_r_hand(W))
@@ -343,7 +336,8 @@ This saves us from having to call add_fingerprint() any time something is put in
 			W.forceMove(src.back)
 		if(slot_tie)
 			var/obj/item/clothing/under/uniform = src.w_uniform
-			uniform.attackby(W,src)
+			if(uniform)
+				uniform.attackby(W,src)
 		else
 			to_chat(src, "<span class='danger'>You are trying to eqip this item to an unsupported inventory slot. If possible, please write a ticket with steps to reproduce. Slot was: [slot]</span>")
 			return

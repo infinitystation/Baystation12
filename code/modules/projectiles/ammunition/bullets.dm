@@ -1,18 +1,12 @@
-/obj/item/ammo_casing/a22lr
-	desc = "A .22LR bullet casing."
-	caliber = "22"
+/obj/item/ammo_casing/a17
+	desc = "A .17 HMR bullet casing."
+	caliber = "17"
 	projectile_type = /obj/item/projectile/bullet/pistol/tiny
-
-/obj/item/ammo_casing/a22lr/rubber
-	desc = "A .22LR rubber bullet casing."
-	icon_state = "r-casing"
-	spent_icon = "r-casing-spent"
-	projectile_type = /obj/item/projectile/bullet/pistol/tiny/rubber
 
 /obj/item/ammo_casing/a357
 	desc = "A .357 bullet casing."
 	caliber = "357"
-	projectile_type = /obj/item/projectile/bullet/pistol/strong/revolver
+	projectile_type = /obj/item/projectile/bullet/pistol/medium/revolver
 
 /obj/item/ammo_casing/a50
 	desc = "A .50AE bullet casing."
@@ -20,7 +14,7 @@
 	projectile_type = /obj/item/projectile/bullet/pistol/strong
 
 /obj/item/ammo_casing/a75
-	desc = "A 20mm bullet casing."
+	desc = "A 20mm gyro shell."
 	caliber = "75"
 	projectile_type = /obj/item/projectile/bullet/gyro
 
@@ -36,22 +30,22 @@
 	spent_icon = "r-casing-spent"
 
 /obj/item/ammo_casing/c9mm
-	desc = "A 9mm bullet casing."
+	desc = "A 9x19mm bullet casing."
 	caliber = "9mm"
 	projectile_type = /obj/item/projectile/bullet/pistol
 
 /obj/item/ammo_casing/c9mm/flash
-	desc = "A 9mm flash shell casing."
+	desc = "A 9x19mm flash shell casing."
 	projectile_type = /obj/item/projectile/energy/flash
 
 /obj/item/ammo_casing/c9mm/rubber
-	desc = "A 9mm rubber bullet casing."
+	desc = "A 9x19mm rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/rubber
 	icon_state = "r-casing"
 	spent_icon = "r-casing-spent"
 
 /obj/item/ammo_casing/c9mm/practice
-	desc = "A 9mm practice bullet casing."
+	desc = "A 9x19mm practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/pistol/practice
 
 /obj/item/ammo_casing/c9mm/used/Initialize()
@@ -64,22 +58,11 @@
 /obj/item/ammo_casing/c44
 	desc = "A .44 magnum bullet casing."
 	caliber = ".44"
-	projectile_type = /obj/item/projectile/bullet/pistol/medium/revolver
+	projectile_type = /obj/item/projectile/bullet/pistol/strong/revolver
 
 /obj/item/ammo_casing/c44/rubber
 	desc = "A .44 magnum rubber bullet casing."
-	projectile_type = /obj/item/projectile/bullet/pistol/rubber
-	icon_state = "r-casing"
-	spent_icon = "r-casing-spent"
-
-/obj/item/ammo_casing/c44
-	desc = "A .44 magnum bullet casing."
-	caliber = ".44"
-	projectile_type = /obj/item/projectile/bullet/pistol/medium/revolver
-
-/obj/item/ammo_casing/c44/rubber
-	desc = "A .44 magnum rubber bullet casing."
-	projectile_type = /obj/item/projectile/bullet/pistol/rubber
+	projectile_type = /obj/item/projectile/bullet/pistol/strong/revolver/rubber
 	icon_state = "r-casing"
 	spent_icon = "r-casing-spent"
 
@@ -103,7 +86,7 @@
 	projectile_type = /obj/item/projectile/energy/flash
 
 /obj/item/ammo_casing/a10mm
-	desc = "A 10mm bullet casing."
+	desc = "A 10x25mm bullet casing."
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/smg
 
@@ -115,6 +98,7 @@
 	caliber = "shotgun"
 	projectile_type = /obj/item/projectile/bullet/shotgun
 	matter = list(DEFAULT_WALL_MATERIAL = 360)
+	fall_sounds = list('sound/weapons/guns/shotgun_fall.ogg')
 
 /obj/item/ammo_casing/shotgun/pellet
 	name = "shotgun shell"
@@ -173,19 +157,23 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 90, "glass" = 90)
 
 /obj/item/ammo_casing/shotgun/greande
-	name = "shotgun grenade"
-	desc = "A 12 gauge grenade."
+	name = "shotgun grenade shell"
+	desc = "A 12 gauge grenade shell."
 	icon_state = "gshell"
 	spent_icon = "gshell-spent"
 	projectile_type = /obj/item/projectile/bullet/explosion/shotgun
 	matter = list(DEFAULT_WALL_MATERIAL = 500)
 
 /obj/item/ammo_casing/a556
-	desc = "A 5.56mm bullet casing."
+	desc = "A 5.56x45mm bullet casing."
 	caliber = "a556"
 	projectile_type = /obj/item/projectile/bullet/rifle/a556
 	icon_state = "rifle-casing"
 	spent_icon = "rifle-casing-spent"
+
+/obj/item/ammo_casing/a556/ap
+	desc = "A 5.56x45mm AP bullet casing."
+	projectile_type = /obj/item/projectile/bullet/rifle/a556/ap
 
 /obj/item/ammo_casing/a12755
 	name = "bullet casing"
@@ -211,14 +199,18 @@
 	projectile_type = /obj/item/projectile/bullet/rifle/a145/apds
 
 /obj/item/ammo_casing/a762
-	desc = "A 7.62mm bullet casing."
+	desc = "A 7.62x39mm bullet casing."
 	caliber = "a762"
 	projectile_type = /obj/item/projectile/bullet/rifle/a762
 	icon_state = "rifle-casing"
 	spent_icon = "rifle-casing-spent"
 
+/obj/item/ammo_casing/a762/ap
+	desc = "A 7.62x39mm AP bullet casing."
+	projectile_type = /obj/item/projectile/bullet/rifle/a762/ap
+
 /obj/item/ammo_casing/a762/practice
-	desc = "A 7.62mm practice bullet casing."
+	desc = "A 7.62x39mm practice bullet casing."
 	projectile_type = /obj/item/projectile/bullet/rifle/a762/practice
 
 /obj/item/ammo_casing/rocket
@@ -264,3 +256,53 @@
 	spent_icon = "empshell-spent"
 	projectile_type  = /obj/item/projectile/ion
 	matter = list(DEFAULT_WALL_MATERIAL = 260, "uranium" = 200)
+
+/obj/item/ammo_casing/uni46x20mm
+	desc = "A 4.6x20 mm bullet casing."
+	caliber = "46x20mm"
+	projectile_type = /obj/item/projectile/bullet/pistol/smg
+
+/obj/item/ammo_casing/a57
+	desc = "A 5.7x28 mm bullet casing."
+	caliber = "57"
+	projectile_type = /obj/item/projectile/bullet/pistol/tiny/fast
+
+/obj/item/ammo_casing/a3006
+	desc = "A .30-06 bullet casing."
+	caliber = "3006"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "3006"
+	spent_icon = "3006old"
+	projectile_type = /obj/item/projectile/bullet/rifle/a762r
+
+/obj/item/ammo_casing/a4570
+	desc = "A .45-70 Government bullet casing."
+	caliber = "4570"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "3006"
+	spent_icon = "3006old"
+	projectile_type = /obj/item/projectile/bullet/rifle/a4570
+
+/obj/item/ammo_casing/a410
+	desc = "A .410 slug."
+	caliber = "4570"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "bshell-live"
+	spent_icon = "bshell"
+	projectile_type = /obj/item/projectile/bullet/rifle/a410
+
+/obj/item/ammo_casing/a410/pellet
+	desc = "A .410 shell."
+	caliber = "4570"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "gshell-live"
+	spent_icon = "gshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/a410/
+
+/obj/item/ammo_casing/a410/stun
+	desc = "A .410 stun shell."
+	caliber = "4570"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "stunshell-live"
+	spent_icon = "stunshell"
+	projectile_type = /obj/item/projectile/energy/electrode

@@ -47,8 +47,7 @@
 	//name = "\improper EVA gear pack"
 
 	startswith = list(
-		/obj/item/clothing/suit/space/void/merc,
-		/obj/item/clothing/head/helmet/space/void/merc,
+		/obj/item/clothing/suit/space/void/merc/prepared,
 		/obj/item/clothing/mask/gas/syndicate,
 		/obj/item/weapon/tank/emergency/oxygen/double,
 		)
@@ -78,7 +77,7 @@
 	name = "clerical kit"
 	desc = "Comes with all you need to fake paperwork. Assumes you have passed basic writing lessons."
 	startswith = list(
-		/obj/item/weapon/packageWrap,
+		/obj/item/stack/package_wrap/twenty_five,
 		/obj/item/weapon/hand_labeler,
 		/obj/item/weapon/stamp/chameleon,
 		/obj/item/weapon/pen/chameleon,

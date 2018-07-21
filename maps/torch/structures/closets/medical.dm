@@ -18,8 +18,8 @@
 		/obj/item/clothing/shoes/white,
 		/obj/item/clothing/suit/storage/toggle/labcoat/cmo,
 		/obj/item/clothing/suit/storage/toggle/labcoat/cmoalt,
-		/obj/item/weapon/cartridge/cmo,
 		/obj/item/device/radio/headset/heads/cmo,
+		/obj/item/device/radio/headset/heads/cmo/alt,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/reagent_containers/hypospray/vial,
@@ -50,10 +50,10 @@
 /obj/structure/closet/secure_closet/medical_torchsenior/WillContain()
 	return list(
 		/obj/item/clothing/under/sterile,
+		/obj/item/clothing/accessory/storage/white_vest,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/suit/surgicalapron,
 		/obj/item/clothing/shoes/white,
-		/obj/item/weapon/cartridge/cmo,
 		/obj/item/device/radio/headset/headset_med,
 		/obj/item/taperoll/medical,
 		/obj/item/weapon/storage/belt/medical,
@@ -86,7 +86,6 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/suit/storage/toggle/fr_jacket,
 		/obj/item/clothing/shoes/white,
-		/obj/item/weapon/cartridge/medical,
 		/obj/item/device/radio/headset/headset_med,
 		/obj/item/taperoll/medical,
 		/obj/item/weapon/storage/belt/medical/emt,
@@ -111,11 +110,11 @@
 
 /obj/structure/closet/secure_closet/medical_contractor/WillContain()
 	return list(
+		/obj/item/clothing/head/soft/mime,
 		/obj/item/clothing/under/rank/orderly,
 		/obj/item/clothing/accessory/storage/webbing,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
-		/obj/item/weapon/cartridge/medical,
 		/obj/item/device/radio/headset/headset_med,
 		/obj/item/taperoll/medical,
 		/obj/item/weapon/storage/belt/medical/emt,

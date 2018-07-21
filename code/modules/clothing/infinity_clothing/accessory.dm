@@ -1,10 +1,10 @@
 //Sprites from tgstation, specially for Parasoul's custom-item
 /obj/item/clothing/accessory/necklace/talisman
 	name = "bone talisman"
-	desc = "Grim periapt made of sinew and fangs of unknown monstrosity. Most likely a trophy of a cunning beast-hunter."
+	desc = "A hunter's talisman, some say the old gods smile on those who wear it."
 	icon = 'icons/infinity_custom_items_obj.dmi'
 	accessory_icons = list(slot_w_uniform_str = 'icons/infinity_custom_items_mob.dmi', slot_wear_suit_str = 'icons/infinity_custom_items_mob.dmi')
-	icon_state = "talisman"
+	icon_state = "talisman-4"
 
 	///////////
 	//COLLARS//
@@ -14,24 +14,57 @@
 	name = "Silver tag collar"
 	desc = "A collar for your little pets... or the big ones."
 	icon = 'icons/obj/clothing/infinity/ties.dmi'
-	icon_state = "collar_blk"
-	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_suit_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_mask = 'icons/mob/infinity/sprite_accessories.dmi')
+	icon_state = "collar_bksilv"
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_suit_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_mask_str  = 'icons/mob/infinity/sprite_accessories.dmi')
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/misc.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/misc.dmi'
+		)
 
 /obj/item/clothing/accessory/necklace/collar/gold
 	name = "Golden tag collar"
 	desc = "A collar for your little pets... or the big ones."
-	icon_state = "collar_gold"
+	icon_state = "collar_bkgold"
 
 /obj/item/clothing/accessory/necklace/collar/bell
 	name = "Bell collar"
 	desc = "A collar with a tiny bell hanging from it, purrfect furr kitties."
-	icon_state = "collar_bell"
+	icon_state = "collar_bkbell"
+
+/obj/item/clothing/accessory/necklace/collar/spike
+	name = "Spiked collar"
+	desc = "A collar with spikes that look as sharp as your teeth."
+	icon_state = "collar_bkspike"
+
+/obj/item/clothing/accessory/necklace/collar/pink
+	name = "Pink collar"
+	desc = "This collar will make your pets look FA-BU-LOUS."
+	icon_state = "collar_pisilv"
+
+/obj/item/clothing/accessory/necklace/collar/holo
+	name = "Holo-collar"
+	desc = "An expensive holo-collar for the modern day pet."
+	icon_state = "collar_bkholo"
+
+/obj/item/clothing/accessory/necklace/collar/holo/attack_self(mob/user as mob)
+	user << "<span class='notice'>[name]'s interface is projected onto your hand.</span>"
+
+	var/str = copytext(reject_bad_text(input(user,"Tag text?","Set tag","")),1,MAX_NAME_LEN)
+
+	if(!str || !length(str))
+		user << "<span class='notice'>[name]'s tag set to be blank.</span>"
+		name = initial(name)
+		desc = initial(desc)
+	else
+		user << "<span class='notice'>You set the [name]'s tag to '[str]'.</span>"
+		name = initial(name) + " ([str])"
+		desc = initial(desc) + " The tag says \"[str]\"."
 
 /obj/item/clothing/accessory/necklace/collar/shock
 	name = "Shock collar"
 	desc = "A collar used to ease hungry predators."
-	icon_state = "collar_shk0"
-	item_state = "collar_shk"
+	icon_state = "collar_bkshk0"
+	item_state = "collar_bkshk"
 	var/on = FALSE // 0 for off, 1 for on, starts off to encourage people to set non-default frequencies and codes.
 	var/frequency = 1449
 	var/code = 2
@@ -68,7 +101,7 @@
 			else
 				if(href_list["power"])
 					on = !( on )
-					icon_state = "collar_shk[on]" // And apparently this works, too?!
+					icon_state = "collar_bkshk[on]" // And apparently this works, too?!
 		if(!( master ))
 			if(istype(loc, /mob))
 				attack_self(loc)
@@ -128,31 +161,35 @@
 	onclose(user, "radio")
 	return
 
-/obj/item/clothing/accessory/necklace/collar/spike
-	name = "Spiked collar"
-	desc = "A collar with spikes that look as sharp as your teeth."
-	icon_state = "collar_spike"
+//Resomi scarf
+/obj/item/clothing/accessory/scarf/resomi
+	name = "small mantle"
+	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "small_mantle"
+	species_restricted = list(SPECIES_RESOMI)
 
-/obj/item/clothing/accessory/necklace/collar/pink
-	name = "Pink collar"
-	desc = "This collar will make your pets look FA-BU-LOUS."
-	icon_state = "collar_pink"
+//Pins
 
-/obj/item/clothing/accessory/necklace/collar/holo
-	name = "Holo-collar"
-	desc = "An expensive holo-collar for the modern day pet."
-	icon_state = "collar_holo"
+/obj/item/clothing/accessory/inf_pin
+	name = "NT pin"
+	desc = "A red Nanotrasen pin."
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "nt_r"
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
+	high_visibility = 1
 
-/obj/item/clothing/accessory/necklace/collar/holo/attack_self(mob/user as mob)
-	user << "<span class='notice'>[name]'s interface is projected onto your hand.</span>"
+/obj/item/clothing/accessory/inf_pin/ntblue
+	name = "NT pin"
+	desc = "A blue Nanotrasen pin."
+	icon_state = "nt_b"
 
-	var/str = copytext(reject_bad_text(input(user,"Tag text?","Set tag","")),1,MAX_NAME_LEN)
+/obj/item/clothing/accessory/inf_pin/tccpin
+	name = "TCC pin"
+	desc = "A small TCC flag."
+	icon_state = "tcc"
 
-	if(!str || !length(str))
-		user << "<span class='notice'>[name]'s tag set to be blank.</span>"
-		name = initial(name)
-		desc = initial(desc)
-	else
-		user << "<span class='notice'>You set the [name]'s tag to '[str]'.</span>"
-		name = initial(name) + " ([str])"
-		desc = initial(desc) + " The tag says \"[str]\"."
+/obj/item/clothing/accessory/inf_pin/scgpin
+	name = "CSG pin"
+	desc = "A small CSG flag."
+	icon_state = "csg"

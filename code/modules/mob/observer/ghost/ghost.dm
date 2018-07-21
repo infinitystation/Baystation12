@@ -7,10 +7,13 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "ghost"
 	appearance_flags = KEEP_TOGETHER
-	canmove = 0
 	blinded = 0
 	anchored = 1	//  don't get pushed around
 	universal_speak = 1
+
+	mob_flags = MOB_FLAG_HOLY_BAD
+	movement_handlers = list(/datum/movement_handler/mob/incorporeal)
+
 	var/is_manifest = FALSE
 	var/next_visibility_toggle = 0
 	var/can_reenter_corpse
@@ -28,8 +31,6 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	var/seedarkness = 1
 
 	var/obj/item/device/multitool/ghost_multitool
-	incorporeal_move = 1
-
 	var/list/hud_images // A list of hud images
 
 /mob/observer/ghost/New(mob/body)
@@ -65,8 +66,8 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 		name = capitalize(pick(GLOB.first_names_male)) + " " + capitalize(pick(GLOB.last_names))
 	real_name = name
 
-	if(cult)
-		cult.add_ghost_magic(src)
+	if(GLOB.cult)
+		GLOB.cult.add_ghost_magic(src)
 
 	ghost_multitool = new(src)
 
@@ -299,6 +300,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set desc = "Follow and haunt a mob."
 	if(client && client.banprisoned)
 		return
+
 	if(!fh.show_entry()) return
 	ManualFollow(fh.followed_instance)
 
@@ -344,7 +346,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/add_memory()
 	set hidden = 1
 	to_chat(src, "<span class='warning'>You are dead! You have no mind to store memory!</span>")
-/mob/observer/ghost/Post_Incorpmove()
+/mob/observer/ghost/PostIncorporealMovement()
 	stop_following()
 
 /mob/observer/ghost/verb/analyze_air()
@@ -352,6 +354,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "Ghost"
 	if(client && client.banprisoned)
 		return
+
 	var/turf/t = get_turf(src)
 	if(t)
 		print_atmos_analysis(src, atmosanalyzer_scan(t))
@@ -370,6 +373,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "Ghost"
 	if(client && client.banprisoned)
 		return
+
 	if(config.disable_player_mice)
 		to_chat(src, "<span class='warning'>Spawning as a mouse is currently disabled.</span>")
 		return
@@ -410,6 +414,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "Ghost"
 	if(client && client.banprisoned)
 		return
+
 	var/dat
 	dat += "<h4>Crew Manifest</h4>"
 	dat += html_crew_manifest()
@@ -444,7 +449,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/pointed(atom/A as mob|obj|turf in view())
 	if(!..())
 		return 0
-	usr.visible_message("<span class='deadsay'><b>[src]</b> указывает на [A]</span>")
+	usr.visible_message("<span class='deadsay'><b>[src]</b> points to [A]</span>")
 	return 1
 
 /mob/observer/ghost/proc/show_hud_icon(var/icon_state, var/make_visible)
@@ -460,32 +465,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	else
 		remove_client_image(hud_image)
 
-/mob/observer/ghost/proc/toggle_visibility()
-	set category = "Ghost"
-	set name = "Toggle Visibility"
-	set desc = "Allows you to turn (in)visible (almost) at will."
-	if(client && client.banprisoned)
-		return
-	if(invisibility && !(args.len && args[1]) && world.time < next_visibility_toggle)
-		to_chat(src, "You must gather strength before you can turn visible again...")
-		return
-
-	if(invisibility == 0)
-		next_visibility_toggle = world.time + 1 MINUTE
-		visible_message("<span class='emote'>It fades from sight...</span>", "<span class='info'>You are now invisible.</span>")
-		invisibility = INVISIBILITY_OBSERVER
-		show_hud_icon("cult", FALSE)
-	else
-		to_chat(src, "<span class='info'>You are now visible!</span>")
-		invisibility = 0
-		show_hud_icon("cult", TRUE) // Give the ghost a cult icon which should be visible only to itself
-
 /mob/observer/ghost/verb/toggle_anonsay()
 	set category = "Ghost"
 	set name = "Toggle Anonymous Chat"
 	set desc = "Toggles showing your key in dead chat."
 	if(client && client.banprisoned)
 		return
+
 	src.anonsay = !src.anonsay
 	if(anonsay)
 		to_chat(src, "<span class='info'>Your key won't be shown when you speak in dead chat.</span>")
@@ -510,6 +496,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	ghostvision = !(ghostvision)
 	updateghostsight()
 	to_chat(src, "You [(ghostvision?"now":"no longer")] have ghost vision.")
+
 /mob/observer/ghost/verb/toggle_darkness()
 	set name = "Toggle Darkness"
 	set category = "Ghost"
@@ -517,6 +504,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 	seedarkness = !(seedarkness)
 	updateghostsight()
+	to_chat(src, "You [(seedarkness?"now":"no longer")] see darkness.")
 
 /mob/observer/ghost/proc/updateghostsight()
 	if (!seedarkness)
@@ -588,6 +576,15 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	layer = pre_layer
 	set_invisibility(pre_invis)
 	transform = null	//make goast stand up
+
+/mob/observer/ghost/verb/set_ghost_alpha()
+	set name = "Set Ghost Alpha"
+	set desc = "Giving you option to enter value for custom ghost transparency"
+	set category = "Ghost"
+	var/input = input("New alpha value (maximum number is 127):",, alpha) as null|num
+	if(!input)
+		return
+	alpha = Clamp(input, 0, 127)
 
 /mob/observer/ghost/verb/respawn()
 	set name = "Respawn"

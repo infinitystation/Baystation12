@@ -3,15 +3,19 @@
 	icon_state = "bullet"
 	fire_sound = "gunshot"
 	damage = 50
+	agony = 10
 	damage_type = BRUTE
 	nodamage = 0
 	check_armour = "bullet"
 	embed = 1
 	sharp = 1
+	step_delay = 0.4
 	penetration_modifier = 1.0
 	var/mob_passthrough_check = 0
+	var/safety = 0 //For rubber bullets
 
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
+	miss_sounds = list('sound/weapons/guns/miss1.ogg','sound/weapons/guns/miss2.ogg','sound/weapons/guns/miss3.ogg','sound/weapons/guns/miss4.ogg')
 
 /obj/item/projectile/bullet/on_hit(var/atom/target, var/blocked = 0)
 	if (..(target, blocked))
@@ -35,7 +39,7 @@
 	return ..()
 
 /obj/item/projectile/bullet/check_penetrate(var/atom/A)
-	if(!A || !A.density) return 1 //if whatever it was got destroyed when we hit it, then I guess we can just keep going
+	if(QDELETED(A) || !A.density) return 1 //if whatever it was got destroyed when we hit it, then I guess we can just keep going
 
 	if(istype(A, /obj/mecha))
 		return 1 //mecha have their own penetration handling
@@ -46,15 +50,9 @@
 		return 1
 
 	var/chance = damage
-	if(istype(A, /turf/simulated/wall))
-		var/turf/simulated/wall/W = A
-		chance = round(damage/W.material.integrity*180)
-	else if(istype(A, /obj/machinery/door))
-		var/obj/machinery/door/D = A
-		chance = round(damage/D.maxhealth*180)
-		if(D.glass) chance *= 2
-	else if(istype(A, /obj/structure/girder))
-		chance = 100
+	if(has_extension(A, /datum/extension/penetration))
+		var/datum/extension/penetration/P = get_extension(A, /datum/extension/penetration)
+		chance = P.PenetrationProbability(chance, damage, damage_type)
 
 	if(prob(chance))
 		if(A.opacity)
@@ -126,54 +124,86 @@
 
 /* short-casing projectiles, like the kind used in pistols or SMGs */
 
-/obj/item/projectile/bullet/pistol
-	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
-	damage = 25 //9mm, .38, etc
-	armor_penetration = 13.5
+// .17 HMR
 
 /obj/item/projectile/bullet/pistol/tiny
-	damage = 8 //.22, etc
-	armor_penetration = 8
+	fire_sound = 'sound/weapons/gunshot/17.ogg'
+	damage = 5
+	armor_penetration = 10
 
-/obj/item/projectile/bullet/pistol/tiny/rubber
-	name = "rubber bullet tiny"
-	check_armour = "melee"
-	damage = 1
-	agony = 15
-	embed = 0
-	sharp = 0
-	armor_penetration = 1
+// 4.6x30 mm, 5.7x28 mm
 
-/obj/item/projectile/bullet/pistol/medium
-	damage = 26.5 //.45, 7.63x25
-	armor_penetration = 14.5
+/obj/item/projectile/bullet/pistol/tiny/fast
+	fire_sound = 'sound/weapons/gunshot/gunshot_pdw.ogg'
+	damage = 12
+	armor_penetration = 25
 
-/obj/item/projectile/bullet/pistol/medium/smg
-	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
-	damage = 28 //10mm
-	armor_penetration = 18
+/obj/item/projectile/bullet/pistol/smg
+	fire_sound = 'sound/weapons/gunshot/gunshot_pdw.ogg'
+	damage = 18
+	armor_penetration = 7
 
-/obj/item/projectile/bullet/pistol/medium/revolver
-	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 30 //.44 magnum or something
 
-/obj/item/projectile/bullet/pistol/strong //matebas
-	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
-	damage = 60 //.50AE
-	armor_penetration = 30
+// 9mm, .38, etc
 
-/obj/item/projectile/bullet/pistol/strong/revolver //revolvers
-	damage = 50 //Revolvers get snowflake bullets, to keep them relevant
-	armor_penetration = 20
+/obj/item/projectile/bullet/pistol
+	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'
+	damage = 25
+	armor_penetration = 13.5
 
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
 	name = "rubber bullet"
-	check_armour = "melee"
+	safety = 1
 	damage = 5
 	agony = 30
 	embed = 0
 	sharp = 0
-	armor_penetration = 2.5
+	penetration_modifier = 0.3
+	armor_penetration = 15
+
+// .45
+
+/obj/item/projectile/bullet/pistol/medium
+	damage = 26.5
+	armor_penetration = 15
+
+// 10mm Auto, 7,62x25mm
+
+/obj/item/projectile/bullet/pistol/medium/smg
+	fire_sound = 'sound/weapons/gunshot/gunshot_smg.ogg'
+	damage = 28
+	agony = 20
+	armor_penetration = 18
+
+// .357 magnum or something
+
+/obj/item/projectile/bullet/pistol/medium/revolver
+	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	damage = 30
+
+// .44 Magnum
+
+/obj/item/projectile/bullet/pistol/strong/revolver
+	damage = 40
+	agony = 20
+	armor_penetration = 25
+
+/obj/item/projectile/bullet/pistol/strong/revolver/rubber
+	name = "rubber bullet"
+	safety = 1
+	damage = 7
+	agony = 50
+	embed = 0
+	sharp = 0
+	penetration_modifier = 0.3
+	armor_penetration = 21
+
+// .50AE
+
+/obj/item/projectile/bullet/pistol/strong
+	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	damage = 50
+	armor_penetration = 30
 
 /* shotgun projectiles */
 
@@ -181,65 +211,116 @@
 	name = "slug"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
 	damage = 55
+	agony = 40
 	armor_penetration = 20
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
-	check_armour = "melee"
+	safety = 1
 	damage = 25
-	agony = 60
+	stun = 5
 	embed = 0
 	sharp = 0
+	penetration_modifier = 0.3
+	armor_penetration = 26
 
 //Should do about 80 damage at 1 tile distance (adjacent), and 50 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
-	damage = 15
-	pellets = 6
-	range_step = 1
-	spread_step = 10
+	agony = 15
+	damage = 7.5
+	pellets = 12
+	range_step = 1.2
+	spread_step = 12
 
 /obj/item/projectile/bullet/explosion/shotgun
 	name = "grenade"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
 
-/obj/item/projectile/bullet/gyro/on_hit(var/atom/target, var/blocked = 0)
+/obj/item/projectile/bullet/explosion/shotgun/on_hit(var/atom/target, var/blocked = 0)
 	if(isturf(target))
-		explosion(target, -1, 1, 1)
+		explosion(target, -1, 1, 2)
 	..()
 
 
 /* "Rifle" rounds */
 
 /obj/item/projectile/bullet/rifle
+	penetrating = 1
+	agony = 20
+
+// .45-70 Gov.
+
+/obj/item/projectile/bullet/rifle/a4570
+	fire_sound = 'sound/weapons/gunshot/gunshot4.ogg'
+	damage = 45
 	armor_penetration = 25
 	penetrating = 1
+
+// .410
+
+/obj/item/projectile/bullet/rifle/a410
+	fire_sound = 'sound/weapons/gunshot/gunshot4.ogg'
+	name = "slug"
+	damage = 40
+	agony = 30
+	armor_penetration = 20
+
+/obj/item/projectile/bullet/pellet/a410/
+	name = "shrapnel"
+	damage = 7.5
+	pellets = 7
+	range_step = 0.7
+	spread_step = 7
+
+// 5,56x45mm
 
 /obj/item/projectile/bullet/rifle/a556
 	fire_sound = 'sound/weapons/gunshot/gunshot3.ogg'
 	damage = 30
+	armor_penetration = 30
+
+/obj/item/projectile/bullet/rifle/a556/ap
+	damage = 30
+	armor_penetration = 38
+
+// 7.62x39mm
 
 /obj/item/projectile/bullet/rifle/a762
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
 	damage = 35
-	armor_penetration = 30
+	armor_penetration = 27
 
-/obj/item/projectile/bullet/rifle/a763r
+/obj/item/projectile/bullet/rifle/a762/ap
+	damage = 35
+	armor_penetration = 43
+
+// 7,62x54mm R
+
+/obj/item/projectile/bullet/rifle/a762r
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
 	damage = 36
-	armor_penetration = 40
+	armor_penetration = 50
+	agony = 30
+
+// 12,7x55mm
 
 /obj/item/projectile/bullet/rifle/a12755 //this one has 10 ammo in magazine.
-	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
+	fire_sound = 'sound/weapons/gunshot/1255.ogg'
+	agony = 40
 	damage = 45 //12x55mm
-	armor_penetration = 50
-	penetration_modifier = 0.75
+	armor_penetration = 60
+	penetrating = 2
+	penetration_modifier = 1.1
+
+// .50BMG
 
 /obj/item/projectile/bullet/rifle/a127
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
-	damage = 70 //.50BMG
+	agony = 60
+	damage = 70
 	stun = 1
 	weaken = 1
 	penetrating = 3
@@ -248,24 +329,29 @@
 	penetration_modifier = 1.25
 
 /obj/item/projectile/bullet/rifle/a127/apds
+	agony = 60
 	damage = 65
 	penetrating = 4
 	armor_penetration = 85
 	penetration_modifier = 1.5
 
+// 14,5x114mm
+
 /obj/item/projectile/bullet/rifle/a145
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
+	agony = 60
 	damage = 80 //14,7x114
 	stun = 3
 	weaken = 3
-	penetrating = 5
+	penetrating = 4
 	armor_penetration = 80
 	hitscan = 1 //so the PTR isn't useless as a sniper weapon
 	penetration_modifier = 1.25
 
 /obj/item/projectile/bullet/rifle/a145/apds
+	agony = 60
 	damage = 75
-	penetrating = 6
+	penetrating = 5
 	armor_penetration = 95
 	penetration_modifier = 1.5
 

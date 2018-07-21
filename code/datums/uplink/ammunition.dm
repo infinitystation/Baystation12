@@ -3,6 +3,7 @@
 *************/
 /datum/uplink_item/item/ammo
 	item_cost = 4
+	antag_costs = list(MODE_MERCENARY = 5)
 	category = /datum/uplink_category/ammunition
 
 /datum/uplink_item/item/ammo/c45m
@@ -11,15 +12,17 @@
 
 /datum/uplink_item/item/ammo/mc9mm
 	name = "9mm"
+	item_cost = 3
 	path = /obj/item/ammo_magazine/mc9mm
-
-/datum/uplink_item/item/ammo/a10mm
-	name = "10mm"
-	path = /obj/item/ammo_magazine/a10mm
 
 /datum/uplink_item/item/ammo/darts
 	name = "Darts"
 	path = /obj/item/ammo_magazine/chemdart
+
+/datum/uplink_item/item/ammo/mc9mmds
+	name = "9mm double-stack"
+	item_cost = 6
+	path = /obj/item/ammo_magazine/mc9mmds
 
 /datum/uplink_item/item/ammo/a357
 	name = ".357"
@@ -39,11 +42,14 @@
 /datum/uplink_item/item/ammo/c12m
 	name = "Automatic Shotgun Magazine"
 	item_cost = 10
+	antag_roles = list(MODE_MERCENARY)
+	antag_costs = list(MODE_MERCENARY = 10)
 	path = /obj/item/ammo_magazine/c12m
 
 /datum/uplink_item/item/ammo/sniperammo
 	name = "14.5mm"
 	item_cost = 8
+	antag_costs = list(MODE_MERCENARY = 8)
 	path = /obj/item/weapon/storage/box/sniperammo
 
 /datum/uplink_item/item/ammo/sniperammo/apds
@@ -66,6 +72,11 @@
 	item_cost = 8
 	path = /obj/item/ammo_magazine/c45uzi
 
+/datum/uplink_item/item/ammo/a10mm
+	name = "10mm SMG Magazine"
+	item_cost = 8
+	path = /obj/item/ammo_magazine/a10mm
+
 /datum/uplink_item/item/ammo/a50
 	name = ".50 AE magazine"
 	item_cost = 8
@@ -75,6 +86,16 @@
 	name = ".50 AE speedloader"
 	item_cost = 8
 	path = /obj/item/ammo_magazine/c50
+
+/datum/uplink_item/item/ammo/a3006
+	name = ".30-06 clip"
+	item_cost = 2
+	path = /obj/item/ammo_magazine/a3006
+
+/datum/uplink_item/item/ammo/ammobox3006
+	name = ".30-06 ammobox"
+	item_cost = 15
+	path = /datum/uplink_item/item/ammo/a3006
 
 /datum/uplink_item/item/ammo/c38
 	name = ".38 speedloader"

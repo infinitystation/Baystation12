@@ -13,8 +13,8 @@
 
 	density = 0
 	stat = DEAD
-	canmove = 0
 
+	movement_handlers = list()
 	anchored = 1	//  don't get pushed around
 
 	virtual_mob = null // Hear no evil, speak no evil
@@ -25,10 +25,11 @@
 
 /mob/new_player/verb/new_player_panel()
 	set src = usr
-	if(!client.banprisoned)
-		new_player_panel_proc()
-	else
-		new_player_panel_prisoner()
+	if(client)
+		if(client.banprisoned)
+			new_player_panel_prisoner()
+		else
+			new_player_panel_proc()
 
 /mob/new_player/proc/new_player_panel_proc()
 	var/output = "<div align='center'>"
@@ -106,7 +107,7 @@
 		return 1
 
 	if(href_list["ready"])
-		if(client.banprisoned)
+		if(client && client.banprisoned)
 			return
 		if(!ticker || ticker.current_state <= GAME_STATE_PREGAME) // Make sure we don't ready up after the round has started
 			ready = text2num(href_list["ready"])
@@ -115,13 +116,14 @@
 
 	if(href_list["refresh"])
 		panel.close()
-		if(!client.banprisoned)
-			new_player_panel_proc()
-		else
-			new_player_panel_prisoner()
+		if(client)
+			if(client.banprisoned)
+				new_player_panel_prisoner()
+			else
+				new_player_panel_proc()
 
 	if(href_list["observe"])
-		if(client.banprisoned)
+		if(client && client.banprisoned)
 			return
 
 		if(!(initialization_stage & INITIALIZATION_COMPLETE))
@@ -174,7 +176,7 @@
 		Spawn_Prisoner()
 
 	if(href_list["late_join"])
-		if(client.banprisoned)
+		if(client && client.banprisoned)
 			return
 
 		if(!ticker || ticker.current_state != GAME_STATE_PLAYING)
@@ -183,12 +185,12 @@
 		LateChoices() //show the latejoin job selection menu
 
 	if(href_list["manifest"])
-		if(client.banprisoned)
+		if(client && client.banprisoned)
 			return
 		ViewManifest()
 
 	if(href_list["SelectedJob"])
-		if(client.banprisoned)
+		if(client && client.banprisoned)
 			return
 		var/datum/job/job = job_master.GetJob(href_list["SelectedJob"])
 
@@ -211,7 +213,7 @@
 		return
 
 	if(href_list["privacy_poll"])
-		if(client.banprisoned)
+		if(client && client.banprisoned)
 			return
 		establish_db_connection()
 		if(!dbcon.IsConnected())
@@ -254,10 +256,11 @@
 		if(client)
 			client.prefs.process_link(src, href_list)
 	else if(!href_list["late_join"])
-		if(client.banprisoned)
-			new_player_panel_prisoner()
-		else
-			new_player_panel()
+		if(client)
+			if(client.banprisoned)
+				new_player_panel_prisoner()
+			else
+				new_player_panel()
 
 	if(href_list["showpoll"])
 
@@ -406,7 +409,7 @@
 	ticker.mode.handle_latejoin(character)
 	GLOB.universe.OnPlayerLatejoin(character)
 	if(job_master.ShouldCreateRecords(job.title))
-		if(character.mind.assigned_role != "Cyborg")
+		if(character.mind.assigned_role != "Robot")
 			CreateModularRecord(character)
 			ticker.minds += character.mind//Cyborgs and AIs handle this in the transform proc.	//TODO!!!!! ~Carn
 			AnnounceArrival(character, job, spawnpoint.msg)
@@ -423,7 +426,6 @@
 			rank = character.mind.role_alt_title
 		// can't use their name here, since cyborg namepicking is done post-spawn, so we'll just say "A new Cyborg has arrived"/"A new Android has arrived"/etc.
 		GLOB.global_announcer.autosay("A new[rank ? " [rank]" : " visitor" ] [join_message ? join_message : "has arrived"].", "Arrivals Announcement Computer")
-		log_and_message_admins("has joined the round as [character.mind.assigned_role].", character)
 
 /mob/new_player/proc/LateChoices()
 	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
@@ -587,10 +589,10 @@
 /mob/new_player/is_ready()
 	return ready && ..()
 
-/mob/new_player/hear_say(var/message, var/verb = "говорит", var/datum/language/language = null, var/alt_name = "",var/italics = 0, var/mob/speaker = null)
+/mob/new_player/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "",var/italics = 0, var/mob/speaker = null)
 	return
 
-/mob/new_player/hear_radio(var/message, var/verb="говорит", var/datum/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0)
+/mob/new_player/hear_radio(var/message, var/verb="says", var/datum/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0)
 	return
 
 /mob/new_player/show_message(msg, type, alt, alt_type)

@@ -30,10 +30,12 @@
 	var/list/offset_y[0] //usage by the photocopier
 	var/rigged = 0
 	var/spam_flag = 0
+	var/log = ""
 
 	var/const/deffont = "Verdana"
 	var/const/signfont = "Times New Roman"
 	var/const/crayonfont = "Comic Sans MS"
+	var/const/fancyfont = "Segoe Script"
 
 /obj/item/weapon/paper/New(loc, text,title)
 	..(loc)
@@ -43,6 +45,7 @@
 	if(title)
 		SetName(title)
 	info = html_encode(text)
+	text = preSign(text)
 	info = parsepencode(text)
 	update_icon()
 	update_space(info)
@@ -193,7 +196,7 @@
 		return P.get_signature(user)
 	return (user && user.real_name) ? user.real_name : "Anonymous"
 
-/obj/item/weapon/paper/proc/parsepencode(t, obj/item/weapon/pen/P, mob/user, iscrayon)
+/obj/item/weapon/paper/proc/parsepencode(t, obj/item/weapon/pen/P, mob/user, iscrayon, isfancy)
 	if(length(t) == 0)
 		return ""
 
@@ -213,8 +216,13 @@
 		t = replacetext(t, "\[cell\]", "")
 		t = replacetext(t, "\[logo\]", "")
 
+	if(!istype(src, /obj/item/weapon/paper/nano))
+		t = replacetext(t, "\[img\]", "")
+
 	if(iscrayon)
 		t = "<font face=\"[crayonfont]\" color=[P ? P.colour : "black"]><b>[t]</b></font>"
+	else if(isfancy)
+		t = "<font face=\"[fancyfont]\" color=[P ? P.colour : "black"]><i>[t]</i></font>"
 	else
 		t = "<font face=\"[deffont]\" color=[P ? P.colour : "black"]>[t]</font>"
 
@@ -275,8 +283,9 @@
 		if(!t)
 			return
 
-		var/obj/item/i = usr.get_active_hand() // Check to see if he still got that darn pen, also check if he's using a crayon or pen.
+		var/obj/item/i = usr.get_active_hand() // Check to see if he still got that darn pen, also check what type of pen
 		var/iscrayon = 0
+		var/isfancy = 0
 		if(!istype(i, /obj/item/weapon/pen))
 			if(usr.back && istype(usr.back,/obj/item/weapon/rig))
 				var/obj/item/weapon/rig/r = usr.back
@@ -291,14 +300,23 @@
 		if(istype(i, /obj/item/weapon/pen/crayon))
 			iscrayon = 1
 
+		if(istype(i, /obj/item/weapon/pen/fancy))
+			isfancy = 1
+
 
 		// if paper is not in usr, then it must be near them, or in a clipboard or folder, which must be in or near usr
 		if(src.loc != usr && !src.Adjacent(usr) && !((istype(src.loc, /obj/item/weapon/clipboard) || istype(src.loc, /obj/item/weapon/folder)) && (src.loc.loc == usr || src.loc.Adjacent(usr)) ) )
 			return
 
+		log += "<br />\[[time_stamp()]] [key_name(usr)] added: [t]"
+
+		if(istype(src, /obj/item/weapon/paper/nano))
+			if(findtext(t,"\[img]"))
+				message_admins("[key_name_admin(usr)] added an image to <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>[src]</a>.")
+
 		var/last_fields_value = fields
 
-		t = parsepencode(t, i, usr, iscrayon) // Encode everything from pencode to html
+		t = parsepencode(t, i, usr, iscrayon, isfancy) // Encode everything from pencode to html
 
 
 		if(fields > 50)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
@@ -312,10 +330,12 @@
 			info += t // Oh, he wants to edit to the end of the file, let him.
 			updateinfolinks()
 
+		playsound(src,'sound/effects/PEN_Ball_Point_Pen_Circling_01_mono.ogg',40,1)
 		update_space(t)
 
 		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]") // Update the window
 
+		playsound(src, pick('sound/effects/pen1.ogg','sound/effects/pen2.ogg'), 10)
 		update_icon()
 
 
@@ -371,9 +391,10 @@
 		if((!in_range(src, usr) && loc != user && !( istype(loc, /obj/item/weapon/clipboard) ) && loc.loc != user && user.get_active_hand() != P))
 			return
 
+		playsound(src,'sound/effects/Stamp2.ogg',40,1)
 		stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper has been stamped with the [P.name].</i>"
 
-		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
+		var/image/stampoverlay = image('icons/obj/bureaucracy_inf.dmi')
 		var/{x; y;}
 		if(istype(P, /obj/item/weapon/stamp/captain) || istype(P, /obj/item/weapon/stamp/centcomm))
 			x = rand(-2, 0)
@@ -401,6 +422,7 @@
 		stamped += P.type
 		overlays += stampoverlay
 
+		playsound(src, 'sound/effects/stamp2.ogg', 50, 1)
 		to_chat(user, "<span class='notice'>You stamp the paper with your [P.name].</span>")
 
 	else if(istype(P, /obj/item/weapon/flame))
@@ -413,6 +435,44 @@
 
 	add_fingerprint(user)
 	return
+
+/obj/item/weapon/paper/proc/preStampPaper(stamp_path)
+	var/obj/item/weapon/stamp/P = new stamp_path
+	stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper has been stamped with the [P.name].</i>"
+
+	var/image/stampoverlay = image('icons/obj/bureaucracy_inf.dmi')
+	var/{x; y;}
+	if(istype(P, /obj/item/weapon/stamp/captain) || istype(P, /obj/item/weapon/stamp/centcomm))
+		x = rand(-2, 0)
+		y = rand(-1, 2)
+	else
+		x = rand(-2, 2)
+		y = rand(-3, 2)
+	offset_x += x
+	offset_y += y
+	stampoverlay.pixel_x = x
+	stampoverlay.pixel_y = y
+
+	if(!ico)
+		ico = new
+	ico += "paper_[P.icon_state]"
+	stampoverlay.icon_state = "paper_[P.icon_state]"
+
+	if(!stamped)
+		stamped = new
+	stamped += P.type
+	overlays += stampoverlay
+
+	qdel(P)
+
+/obj/item/weapon/paper/proc/preSign(t)
+	t = replacetext(t, "\[sign\]", "<font face=\"[signfont]\"><i>")
+	t = replacetext(t, "\[/sign\]", "</i></font>")
+	return t
+
+/obj/item/weapon/paper/nano
+	name = "nano paper"
+	color = "#ccffff"
 
 /*
  * Premade paper
@@ -456,10 +516,23 @@
 	..()
 	icon_state = "workvisa" //Has to be here or it'll assume default paper sprites.
 
-/obj/item/weapon/paper/merchant
-	name = "sell permit"
-	info = "Мы учли жалобы сотрудников Торговой Федерации на неразбериху перед консолью покупок. Теперь, дл&#255; произведени&#255; манипул&#255;ций с консолью, требуетс&#255; доступ лидера торговой группы. При&#255;тных продаж."
-
 /obj/item/weapon/paper/reacengi
 	name = "reactive engines guide"
-	info = "<I>Смена #03-A, инженерный департамент произвел модификацию реактивных двигателей.</i> <br>Кратка&#255; инструкци&#255; по эксплуатации: <br>1) В начале Вашей смены нажмите на все кнопочки над консолью включени&#255;/отключени&#255; подачи топлива движков. Все должны гореть зеленым. <br>2) Всю смену нажимайте на запальник слева от указанных выше кнопок. <br>3) В случае ЧП, мы <b>не виноваты</b>."
+	info = "<I>Смена #03-A, инженерный департамент произвел модификацию реактивных двигателей. <br>Кратка&#255; инструкци&#255; по эксплуатации: <br>1) В начале Вашей смены нажмите на все кнопочки над консолью включени&#255;/отключени&#255; подачи топлива движков. Все должны гореть зеленым. <br>2) Всю смену нажимайте на запальник слева от указанных выше кнопок. <br>3) В случае ЧП, мы <b>не виноваты</b>.</i>"
+
+/obj/item/weapon/paper/compactor
+	name = "compactor guide"
+	info = "<I>Обслуживание гидравлического пресса <br>Кратка&#255; инструкци&#255; по эксплуатации: <br>1) Не помещайте крупные объекты в камеру - поршни выйдут из стро&#255;. <br>2) В случае поломки одного из поршей (лампочка будет гореть красным) - пройдите в секцию обслуживани&#255; поршней, отверткой открутите панель на неисправном поршне, с помощью гаечного ключа выпустите давление из главной камеры. Не забудьте поставить всё на место по завершению процедуры. <br>3) Оденьте рабочие перчатки и противогаз при обслуживании поршн&#255; - возможна утечка гор&#255;чего воздуха.</i>"
+
+/obj/item/weapon/paper/travelvisa
+	name = "Sol Travel Visa"
+	info = "<center><b><large>Travel Visa of the Sol Central Government</large></b></center><br><center><img src = sollogo.png><br><br><i><small>Issued on behalf of the Secretary-General.</small></i></center><hr><BR>This paper hereby permits the carrier to travel unhindered through Sol territories, colonies, and space for the purpose of pleasure and recreation."
+	desc = "A flimsy piece of laminated cardboard issued by the Sol Central Government."
+
+/obj/item/weapon/paper/travelvisa/New()
+	..()
+	icon_state = "travelvisa"
+
+/obj/item/weapon/paper/merchant
+	name = "novice help"
+	info = "<I><center><b>Помощь новичку</b></center><hr><h3>Вступление</h3>Торговцы бывают разными. В основном, самым важным критерием стоит то, насколько хорошо развито красноречие. В случае с вашим небольшим аванпостом, маловеро&#255;тно, что вам удастс&#255; кому-то угрожать - необходимо искать общий &#255;зык.<h3>Вежливые торговцы</h3>Как бы вы не презирали экипаж, запомните - ведите себ&#255; по-взрослому, в меру серьезно, без излишней фамиль&#255;рности, но дружелюбно. Не идите на конфликт со Службой Безопасности и тем более командованием, если не хотите провести неопределенный срок в ожидании нового судна в зоне действи&#255; сенсоров.<h3>Наценка</h3>Практически все товары, что наход&#255;тс&#255; на вашей базе достались вам путём купли-продажи. Цена, выдававема&#255; самим сканером, &#255;вл&#255;етс&#255; ценой на рынке в среднем. Никто не будет сильно злитьс&#255; из-за того, что вы накинете 20, 40 или даже 100 процентов к изначальной цене (особенно, если у покупател&#255; нет сканера) - прикидывайте, насколько экипажу нужна та или ина&#255; вещь и сколько они готовы отдать за неё.<h3>Закон</h3>Никто не имеет права обыскивать ваше судно. Никто не имеет права заходить на судно без вашего разрешени&#255;. Никто не имеет права задерживать вас за то, что вы подлетели к шлюзу - другое дело, если вы соверште незаконную стыковку (в лучшем случае, вас попрос&#255;т отстыковатьс&#255;).</I>"

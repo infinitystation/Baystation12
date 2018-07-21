@@ -22,6 +22,7 @@
 				S.remove_from_storage(O, src, 0)
 			else
 				S.remove_from_storage(O, src, 1) //This will move the item to this item's contents
+		S.finish_bulk_removal()
 		to_chat(user, "<span class='notice'>You empty the satchel into the box.</span>")
 
 	update_ore_count()

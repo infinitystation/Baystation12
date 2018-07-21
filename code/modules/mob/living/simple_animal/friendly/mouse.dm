@@ -29,6 +29,7 @@
 	holder_type = /obj/item/weapon/holder/mouse
 	mob_size = MOB_MINISCULE
 	possession_candidate = 1
+	can_escape = 1
 
 	can_pull_size = 0
 	can_pull_mobs = MOB_PULL_NONE

@@ -68,10 +68,6 @@
 			return
 
 	msg = sanitize(msg)
-	var/rawmsg = msg
-	msg = emoji_parse(msg)
-//	if(holder)
-//		msg = emoji_parse(msg)
 
 	var/datum/client_lite/receiver_lite = client_repository.get_lite_client(C)
 	var/datum/client_lite/sender_lite = client_repository.get_lite_client(src)
@@ -147,7 +143,7 @@
 	if(C.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
 		sound_to(C, 'sound/effects/adminhelp.ogg')
 
-	log_admin("PM: [key_name(src)]->[key_name(C)]: [rawmsg]")
+	log_admin("PM: [key_name(src)]->[key_name(C)]: [msg]")
 	adminmsg2adminirc(src, C, html_decode(msg))
 
 	ticket.msgs += new /datum/ticket_msg(src.ckey, C.ckey, msg)

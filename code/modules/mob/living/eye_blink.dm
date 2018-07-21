@@ -12,6 +12,10 @@
 	eye_green_back = g_eyes
 	eye_blue_back = b_eyes
 
+/mob/living/carbon/human/proc/eye_blink_spawn()
+	change_eye_color(eye_red_back, eye_green_back, eye_blue_back, 1)
+	eye_close_stat = 0
+
 /mob/living/carbon/human/eye_blink()
 	var/RED
 	var/GREEN
@@ -45,9 +49,7 @@
 			if(!eye_close_stat)
 				create_eye_blink()
 			change_eye_color(RED, GREEN, BLUE, 1)
-			spawn(1)
-				change_eye_color(eye_red_back, eye_green_back, eye_blue_back, 1)
-				eye_close_stat = 0
+			addtimer(CALLBACK(src, .proc/eye_blink_spawn), 1)
 		else if(eye_close_stat)
 			change_eye_color(eye_red_back, eye_green_back, eye_blue_back, 1)
 	else if(!eye_close_stat)

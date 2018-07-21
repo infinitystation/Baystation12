@@ -26,13 +26,13 @@
 		if(istype(below) && !istype(below,/turf/space))
 			N = below.density ? /turf/simulated/floor/airless : /turf/simulated/open
 
-	var/old_ao_neighbors = ao_neighbors
 	var/obj/fire/old_fire = fire
 	var/old_opacity = opacity
 	var/old_dynamic_lighting = dynamic_lighting
 	var/old_affecting_lights = affecting_lights
 	var/old_lighting_overlay = lighting_overlay
 	var/old_corners = corners
+	//var/old_ao_neighbors = ao_neighbors
 
 //	log_debug("Replacing [src.type] with [N]")
 
@@ -70,7 +70,7 @@
 
 	W.post_change()
 	. = W
-	W.ao_neighbors = old_ao_neighbors
+	//W.ao_neighbors = old_ao_neighbors
 
 	if(lighting_overlays_initialised)
 		lighting_overlay = old_lighting_overlay

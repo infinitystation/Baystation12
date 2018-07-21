@@ -68,7 +68,14 @@
 		dat += "Select an event to trigger:<ul>"
 
 		var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
-		dat += "<li><A href='?src=\ref[src];triggerevent=Red alert'>Engage [security_state.high_security_level.name]</A></li>"
+		if(security_state.current_security_level == security_state.severe_security_level)
+			dat += "<li>Cannot modify the alert level at this time: [security_state.severe_security_level.name] engaged.</li>"
+		else
+			if(security_state.current_security_level == security_state.high_security_level)
+				dat += "<li><A href='?src=\ref[src];triggerevent=Revert alert'>Disengage [security_state.high_security_level.name]</A></li>"
+			else
+				dat += "<li><A href='?src=\ref[src];triggerevent=Red alert'>Engage [security_state.high_security_level.name]</A></li>"
+
 		if(!config.ert_admin_call_only)
 			dat += "<li><A href='?src=\ref[src];triggerevent=Emergency Response Team'>Emergency Response Team</A></li>"
 
@@ -149,13 +156,18 @@
 	switch(event)
 		if("Red alert")
 			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
+			security_state.stored_security_level = security_state.current_security_level
 			security_state.set_security_level(security_state.high_security_level)
 			feedback_inc("alert_keycard_auth_red",1)
+		if("Revert alert")
+			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
+			security_state.set_security_level(security_state.stored_security_level)
+			feedback_inc("alert_keycard_revert_red",1)
 		if("Grant Emergency Maintenance Access")
-			make_maint_all_access()
+			GLOB.using_map.make_maint_all_access()
 			feedback_inc("alert_keycard_auth_maintGrant",1)
 		if("Revoke Emergency Maintenance Access")
-			revoke_maint_all_access()
+			GLOB.using_map.revoke_maint_all_access()
 			feedback_inc("alert_keycard_auth_maintRevoke",1)
 		if("Emergency Response Team")
 			if(is_ert_blocked())
@@ -177,16 +189,6 @@
 	return ticker.mode && ticker.mode.ert_disabled
 
 var/global/maint_all_access = 0
-
-/proc/make_maint_all_access()
-	maint_all_access = 1
-	to_world("<font size=4 color='red'>Attention!</font>")
-	to_world("<font color='red'>The maintenance access requirement has been revoked on all airlocks.</font>")
-
-/proc/revoke_maint_all_access()
-	maint_all_access = 0
-	to_world("<font size=4 color='red'>Attention!</font>")
-	to_world("<font color='red'>The maintenance access requirement has been readded on all maintenance airlocks.</font>")
 
 /obj/machinery/door/airlock/allowed(mob/M)
 	if(maint_all_access && src.check_access_list(list(access_maint_tunnels)))

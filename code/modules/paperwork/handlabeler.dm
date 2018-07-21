@@ -29,6 +29,7 @@
 		var/datum/extension/labels/L = get_extension(A, /datum/extension/labels)
 		if(!L.CanAttachLabel(user, label))
 			return
+	playsound(src,'sound/effects/FOLEY_Gaffer_Tape_Tear_mono.ogg',100,1)
 	A.attach_label(user, src, label)
 
 /atom/proc/attach_label(var/user, var/atom/labeler, var/label_text)

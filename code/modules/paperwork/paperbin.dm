@@ -1,6 +1,6 @@
 /obj/item/weapon/paper_bin
 	name = "paper bin"
-	icon = 'icons/obj/bureaucracy.dmi'
+	icon = 'icons/obj/bureaucracy_inf.dmi'
 	icon_state = "paper_bin1"
 	item_state = "sheet-metal"
 	randpixel = 0

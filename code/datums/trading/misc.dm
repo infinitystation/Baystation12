@@ -2,6 +2,7 @@
 	name = "Pet Shop Owner"
 	name_language = LANGUAGE_SKRELLIAN
 	origin = "Pet Shop"
+	margin = 5
 	trade_flags = TRADER_GOODS|TRADER_MONEY|TRADER_WANTED_ONLY
 	possible_origins = list("Paws-Out", "Pets-R-Smart", "Tentacle Companions", "Xeno-Pets and Assorted Goods", "Barks and Drools")
 	speech = list("hail_generic"    = "Welcome to my xeno-pet shop! Here you will find many wonderful companions. Some a bit more... aggressive than others. But companions none the less. I also buy pets, or trade them.",
@@ -95,8 +96,6 @@
 								/obj/item/clothing/mask/gas/mime        = TRADER_THIS_TYPE,
 								/obj/item/clothing/shoes/clown_shoes    = TRADER_THIS_TYPE,
 								/obj/item/clothing/under/rank/clown     = TRADER_THIS_TYPE,
-								/obj/item/device/pda/clown              = TRADER_THIS_TYPE,
-								/obj/item/weapon/cartridge/clown        = TRADER_THIS_TYPE,
 								/obj/item/weapon/stamp/clown            = TRADER_THIS_TYPE,
 								/obj/item/weapon/storage/backpack/clown = TRADER_THIS_TYPE,
 								/obj/item/weapon/bananapeel             = TRADER_THIS_TYPE,

@@ -2,6 +2,16 @@
 	name = "lush exoplanet"
 	desc = "Planet with abundant flora and fauna."
 	color = "#538224"
+	possible_features = list(/datum/map_template/ruin/exoplanet/monolith,
+									  /datum/map_template/ruin/exoplanet/hydrobase,
+									  /datum/map_template/ruin/exoplanet/marooned)
+
+	possible_features = list(/datum/map_template/ruin/exoplanet/monolith,
+							 /datum/map_template/ruin/exoplanet/oasis,
+							 /datum/map_template/ruin/exoplanet/oasis/oasis2,
+							 /datum/map_template/ruin/exoplanet/oasis/oasis3,
+							 /datum/map_template/ruin/exoplanet/fountain,
+							 /datum/map_template/ruin/exoplanet/lodge)
 
 /obj/effect/overmap/sector/exoplanet/grass/generate_map()
 	if(prob(40))
@@ -59,16 +69,30 @@
 	flora_diversity = 6
 	fauna_types = list(/mob/living/simple_animal/yithian, /mob/living/simple_animal/tindalos, /mob/living/simple_animal/hostile/jelly)
 
+	var/grass_color
+
+/datum/random_map/noise/exoplanet/grass/New()
+	var/list/colors = plantcolors.Copy()
+	colors -= "RANDOM"
+	grass_color = pick(colors)
+	..()
+
 /datum/random_map/noise/exoplanet/grass/spawn_fauna(var/turf/T, value)
 	if(prob(5))
 		new/mob/living/simple_animal/hostile/giant_spider/nurse(T)
 	else
 		..()
 
+/datum/random_map/noise/exoplanet/grass/get_additional_spawns(var/value, var/turf/T)
+	..()
+	if(istype(T,/turf/simulated/floor/exoplanet/grass))
+		T.color = grass_color
+
 /turf/simulated/floor/exoplanet/grass
 	name = "grass"
 	icon = 'icons/turf/jungle.dmi'
-	icon_state = "grass2"
+	icon_state = "greygrass"
+	color = "#799c4b"
 	mudpit = 1
 
 /turf/simulated/floor/exoplanet/grass/Initialize()
@@ -83,6 +107,7 @@
 		resources["diamond"] = 1
 
 /turf/simulated/floor/exoplanet/grass/fire_act(datum/gas_mixture/air, temperature, volume)
-	if((temperature > T0C + 200 && prob(5)) || temperature > T0C + 1000) 
+	if((temperature > T0C + 200 && prob(5)) || temperature > T0C + 1000)
 		SetName("scorched ground")
 		icon_state = "scorched"
+		color = null

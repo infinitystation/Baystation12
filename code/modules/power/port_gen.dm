@@ -427,7 +427,7 @@
 		I.blend_mode = BLEND_ADD
 		I.alpha = round(255*power_output/max_power_output)
 		overlays += I
-		set_light(rad_power + power_output - max_safe_output,1,"#3b97ca")
+		set_light(0.7, 0.1, rad_power + power_output - max_safe_output, 2, "#3b97ca")
 	else
 		set_light(0)
 
@@ -442,14 +442,14 @@
 
 /obj/machinery/power/port_gen/pacman/super/potato
 	name = "nuclear reactor"
-	desc = "PTTO-3, an industrial all-in-one nuclear power plant by Neo-Chernobyl GmbH. It uses uranium and vodka as a fuel source. Rated for 150 kW max safe output."
-	power_gen = 30000			//Watts output per power_output level
+	desc = "PTTO-3, an industrial all-in-one nuclear power plant by Neo-Chernobyl GmbH. It uses uranium and vodka as a fuel source, but water will reduce reactor's temperature gain. Rated for 140 kW max safe output."
+	power_gen = 35000			//Watts output per power_output level
 	icon_state = "potato"
 	max_safe_output = 4
 	max_power_output = 8	//The maximum power setting without emagging.
 	temperature_gain = 80	//how much the temperature increases per power output level, in degrees per level
 	max_temperature = 450
-	time_per_sheet = 400
+	time_per_sheet = 550
 	rad_power = 6
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 	board_path = /obj/item/weapon/circuitboard/pacman/super/potato
@@ -469,7 +469,12 @@
 		temperature_gain = 60
 		reagents.remove_any(1)
 		if(prob(2))
-			audible_message("<span class='notice'>[src] churns happily</span>")
+			audible_message("<span class='notice'>[src] churns happily!</span>")
+	else if(reagents.has_reagent("water"))
+		temperature_gain = -10
+		reagents.remove_any(1)
+		if(prob(2))
+			audible_message("<span class='notice'>[src] churns unhappily...</span>")
 	else
 		rad_power = initial(rad_power)
 		temperature_gain = initial(temperature_gain)

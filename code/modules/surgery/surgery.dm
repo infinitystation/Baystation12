@@ -19,6 +19,7 @@
 	var/blood_level = 0
 	var/shock_level = 0	//what shock level will this step put patient on
 	var/delicate = 0  //if this step NEEDS stable optable or can be done on any valid surface with no penalty
+	var/core_skill = SKILL_ANATOMY //The skill that's checked for speed modifiers.
 
 //returns how well tool is suited for this step
 /datum/surgery_step/proc/tool_quality(obj/item/tool)
@@ -74,8 +75,19 @@
 
 /datum/surgery_step/proc/success_chance(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
 	. = tool_quality(tool)
+	if(target.can_feel_pain() && target.wear_suit != /obj/item/clothing/suit/straight_jacket || target.stat == UNCONSCIOUS)
+		for(var/organ_name in target.organs)
+			var/obj/item/organ/external/E = target.get_organ(organ_name)
+			. -= E.pain
 	if(user == target)
 		. -= 10
+
+	if(!user.skill_check(SKILL_ANATOMY, SKILL_ADEPT + delicate))
+		. -= 10 * (SKILL_ADEPT + delicate - user.get_skill_value(SKILL_ANATOMY))
+
+	if(user.skill_check(SKILL_ANATOMY, SKILL_PROF))
+		. += 20
+
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		. -= round(H.shock_stage * 0.5)
@@ -127,7 +139,8 @@
 				M.op_stage.in_progress += zone
 				S.begin_step(user, M, zone, src)		//start on it
 				//We had proper tools! (or RNG smiled.) and user did not move or change hands.
-				if(prob(S.success_chance(user, M, src)) &&  do_mob(user, M, rand(S.min_duration, S.max_duration)))
+				var/duration = user.skill_delay_mult(S.core_skill) * rand(S.min_duration, S.max_duration)
+				if(prob(S.success_chance(user, M, src)) &&  do_mob(user, M, duration))
 					S.end_step(user, M, zone, src)		//finish successfully
 				else if ((src in user.contents) && user.Adjacent(M))			//or
 					S.fail_step(user, M, zone, src)		//malpractice~

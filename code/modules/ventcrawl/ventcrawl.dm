@@ -9,7 +9,12 @@ var/list/ventcrawl_machinery = list(
 	/obj/item/device/radio/borg,
 	/obj/item/weapon/holder,
 	/obj/machinery/camera,
-	/mob/living/simple_animal/borer
+	/mob/living/simple_animal/borer,
+	/obj/item/clothing/head/culthood,
+	/obj/item/clothing/suit/cultrobes,
+	/obj/item/weapon/book/tome,
+	/obj/item/weapon/paper/,
+	/obj/item/weapon/melee/cultblade
 	)
 
 /mob/living/var/list/icon/pipes_shown = list()
@@ -92,7 +97,7 @@ var/list/ventcrawl_machinery = list(
 		pipe = pipes[1]
 	else
 		pipe = input("Crawl Through Vent", "Pick a pipe") as null|anything in pipes
-	if(canmove && pipe)
+	if(!is_physically_disabled() && pipe)
 		return pipe
 
 /mob/living/carbon/alien/ventcrawl_carry()

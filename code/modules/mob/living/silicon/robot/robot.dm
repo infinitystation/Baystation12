@@ -5,8 +5,8 @@
 	real_name = "Cyborg"
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "robot"
-	maxHealth = 200
-	health = 200
+	maxHealth = 300
+	health = 300
 
 	mob_bump_flag = ROBOT
 	mob_swap_flags = ROBOT|MONKEY|SLIME|SIMPLE_ANIMAL
@@ -19,7 +19,7 @@
 	var/custom_sprite = 0 //Due to all the sprites involved, a var for our custom borgs may be best
 	var/crisis //Admin-settable for combat module use.
 	var/crisis_override = 0
-	var/integrated_light_power = 6
+	var/integrated_light_max_bright = 0.75
 	var/datum/wires/robot/wires
 
 //Icon stuff
@@ -53,14 +53,12 @@
 	var/obj/item/weapon/cell/cell = /obj/item/weapon/cell/high
 	var/obj/machinery/camera/camera = null
 
-	var/cell_emp_mult = 2
+	var/cell_emp_mult = 2.5
 
 	// Components are basically robot organs.
 	var/list/components = list()
 
 	var/obj/item/device/mmi/mmi = null
-
-	var/obj/item/device/pda/ai/rbPDA = null
 
 	var/obj/item/weapon/stock_parts/matter_bin/storage = null
 
@@ -154,6 +152,10 @@
 	hud_list[IMPTRACK_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 	hud_list[SPECIALROLE_HUD] = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 
+/mob/living/silicon/robot/Initialize()
+	. = ..()
+	AddMovementHandler(/datum/movement_handler/robot/use_power, /datum/movement_handler/mob/space)
+
 /mob/living/silicon/robot/proc/recalculate_synth_capacities()
 	if(!module || !module.synths)
 		return
@@ -204,12 +206,6 @@
 		return amount
 	return 0
 
-// setup the PDA and its name
-/mob/living/silicon/robot/proc/setup_PDA()
-	if (!rbPDA)
-		rbPDA = new/obj/item/device/pda/ai(src)
-	rbPDA.set_name_and_job(custom_name,"[modtype] [braintype]")
-
 //If there's an MMI in the robot, have it ejected when the mob goes away. --NEO
 //Improved /N
 /mob/living/silicon/robot/Destroy()
@@ -248,8 +244,10 @@
 				to_chat(src, "<span class='warning'>Custom Sprite Sheet does not contain a valid icon_state for [ckey]-[modtype]</span>")
 		else
 			icontype = module_sprites[1]
-		icon_state = module_sprites[icontype]
-	update_icon()
+		var/icon_state_robo = module_sprites[icontype]
+		for(var/obj/item/weapon/robot_module/module in contents)
+			if(module.do_transform_animation(icon_state_robo))
+				update_icon()
 	return module_sprites
 
 /mob/living/silicon/robot/proc/pick_module()
@@ -283,9 +281,9 @@
 		modtype = prefix
 
 	if(istype(mmi, /obj/item/organ/internal/posibrain))
-		braintype = "Android"
-	else if(istype(mmi, /obj/item/device/mmi/digital/robot))
 		braintype = "Robot"
+	else if(istype(mmi, /obj/item/device/mmi/digital/robot))
+		braintype = "Drone"
 	else
 		braintype = "Cyborg"
 
@@ -297,13 +295,11 @@
 	else
 		changed_name = "[modtype] [braintype]-[num2text(ident)]"
 
+	create_or_rename_email(changed_name, "root.rt")
 	real_name = changed_name
 	name = real_name
 	if(mind)
 		mind.name = changed_name
-
-	// if we've changed our name, we also need to update the display name for our PDA
-	setup_PDA()
 
 	//We also need to update name of internal camera.
 	if (camera)
@@ -327,12 +323,19 @@
 
 	spawn(0)
 		var/newname
-		newname = sanitizeSafe(input(src,"You are a robot. Enter a name, or leave blank for the default name.", "Name change","") as text, MAX_NAME_LEN)
+		newname = sanitizeName(input(src,"You are a robot. Enter a name, or leave blank for the default name.", "Name change","") as text, MAX_NAME_LEN, allow_numbers = 1)
 		if (newname)
 			custom_name = newname
 
 		updatename()
 		update_icon()
+
+/mob/living/silicon/robot/verb/toggle_panel_lock()
+	set name = "Toggle Panel Lock"
+	set category = "Silicon Commands"
+	if(!opened && has_power && do_after(usr, 60) && !opened && has_power)
+		to_chat(src, "You [locked ? "un" : ""]lock your panel.")
+		locked = !locked
 
 // this verb lets cyborgs see the stations manifest
 /mob/living/silicon/robot/verb/cmd_station_manifest()
@@ -404,9 +407,9 @@
 /mob/living/silicon/robot/proc/update_robot_light()
 	if(lights_on)
 		if(intenselight)
-			set_light(integrated_light_power * 2, integrated_light_power)
+			set_light(1, 2, 6)
 		else
-			set_light(integrated_light_power)
+			set_light(0.75, 1, 4)
 	else
 		set_light(0)
 
@@ -571,6 +574,7 @@
 					opened = 1
 					update_icon()
 
+	// If the robot is having something inserted which will remain inside it, self-inserting must be handled before exiting to avoid logic errors. Use the handle_selfinsert proc.
 	else if (istype(W, /obj/item/weapon/stock_parts/matter_bin) && opened) // Installing/swapping a matter bin
 		if(storage)
 			to_chat(user, "You replace \the [storage] with \the [W]")
@@ -581,6 +585,7 @@
 		user.drop_item()
 		storage = W
 		W.forceMove(src)
+		handle_selfinsert(W, user)
 		recalculate_synth_capacities()
 
 	else if (istype(W, /obj/item/weapon/cell) && opened)	// trying to put a cell inside
@@ -595,6 +600,7 @@
 			user.drop_item()
 			W.loc = src
 			cell = W
+			handle_selfinsert(W, user) //Just in case.
 			to_chat(user, "You insert the power cell.")
 			C.installed = 1
 			C.wrapped = W
@@ -625,7 +631,7 @@
 			silicon_radio.attackby(W,user)//GTFO, you have your own procs
 		else
 			to_chat(user, "Unable to locate a radio.")
-	else if (istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/device/pda)||istype(W, /obj/item/weapon/card/robot))			// trying to unlock the interface with an ID card
+	else if (istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/modular_computer)||istype(W, /obj/item/weapon/card/robot))			// trying to unlock the interface with an ID card
 		if(emagged)//still allow them to open the cover
 			to_chat(user, "The interface seems slightly damaged")
 		if(opened)
@@ -650,6 +656,7 @@
 				to_chat(usr, "You apply the upgrade to [src]!")
 				usr.drop_item()
 				U.loc = src
+				handle_selfinsert(W, user)
 			else
 				to_chat(usr, "Upgrade error!")
 
@@ -657,6 +664,14 @@
 		if( !(istype(W, /obj/item/device/robotanalyzer) || istype(W, /obj/item/device/healthanalyzer)) )
 			spark_system.start()
 		return ..()
+
+/mob/living/silicon/robot/proc/handle_selfinsert(obj/item/W, mob/user)
+	if ((user == src) && istype(get_active_hand(),/obj/item/weapon/gripper))
+		var/obj/item/weapon/gripper/H = get_active_hand()
+		if (W.loc == H) //if this triggers something has gone very wrong, and it's safest to abort
+			return
+		else if (H.wrapped == W)
+			H.wrapped = null
 
 /mob/living/silicon/robot/attack_hand(mob/user)
 
@@ -912,7 +927,6 @@
 	disconnect_from_ai()
 	lawupdate = 0
 	lockcharge = 0
-	canmove = 1
 	scrambledcodes = 1
 	//Disconnect it's camera so it's not so easily tracked.
 	if(src.camera)
@@ -940,7 +954,7 @@
 
 	if(lockcharge != state)
 		lockcharge = state
-		update_canmove()
+		UpdateLyingBuckledAndVerbStatus()
 		return 1
 	return 0
 
@@ -967,8 +981,10 @@
 			icontype = module_sprites[1]
 	else
 		icontype = input("Select an icon! [triesleft ? "You have [triesleft] more chance\s." : "This is your last try."]", "Robot Icon", icontype, null) in module_sprites
-	icon_state = module_sprites[icontype]
-	update_icon()
+	var/icon_state_robo = module_sprites[icontype]
+	for(var/obj/item/weapon/robot_module/module in contents)
+		if(module.do_transform_animation(icon_state_robo))
+			update_icon()
 
 	if (module_sprites.len > 1 && triesleft >= 1 && client)
 		icon_selection_tries--
@@ -1106,3 +1122,10 @@
 				to_chat(src, "Hack attempt detected.")
 			return 1
 		return
+
+/mob/living/silicon/robot/incapacitated(var/incapacitation_flags = INCAPACITATION_DEFAULT)
+	if ((incapacitation_flags & INCAPACITATION_FORCELYING) && (lockcharge || !is_component_functioning("actuator")))
+		return 1
+	if ((incapacitation_flags & INCAPACITATION_KNOCKOUT) && !is_component_functioning("actuator"))
+		return 1
+	return ..()

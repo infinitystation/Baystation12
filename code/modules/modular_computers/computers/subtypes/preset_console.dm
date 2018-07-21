@@ -4,6 +4,7 @@
 	tesla_link = new/obj/item/weapon/computer_hardware/tesla_link(src)
 	hard_drive = new/obj/item/weapon/computer_hardware/hard_drive/super(src)
 	network_card = new/obj/item/weapon/computer_hardware/network_card/wired(src)
+	scanner = new /obj/item/weapon/computer_hardware/scanner/paper(src)
 
 // Engineering
 /obj/item/modular_computer/console/preset/engineering/install_default_programs()
@@ -24,14 +25,6 @@
 	hard_drive.store_file(new/datum/computer_file/program/records())
 	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
 	set_autorun("sensormonitor")
-
-// Detectives
-/obj/item/modular_computer/console/preset/medical/detective/install_default_programs()
-	..()
-	hard_drive.store_file(new/datum/computer_file/program/camera_monitor())
-	hard_drive.store_file(new/datum/computer_file/program/records())
-	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
-	set_autorun("records")
 
 // Research
 /obj/item/modular_computer/console/preset/research/install_default_hardware()
@@ -87,8 +80,14 @@
 	..()
 	hard_drive.store_file(new/datum/computer_file/program/camera_monitor())
 	hard_drive.store_file(new/datum/computer_file/program/digitalwarrant())
+	hard_drive.store_file(new/datum/computer_file/program/forceauthorization())
 	hard_drive.store_file(new/datum/computer_file/program/records())
 	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
+
+// Detective
+/obj/item/modular_computer/console/preset/security/detective/install_default_programs()
+	..()
+	nano_printer = new/obj/item/weapon/computer_hardware/nano_printer(src)
 
 // Civilian
 /obj/item/modular_computer/console/preset/civilian/install_default_programs()

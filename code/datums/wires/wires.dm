@@ -25,7 +25,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 	var/table_options = " align='center'"
 	var/row_options1 = " width='80px'"
 	var/row_options2 = " width='260px'"
-	var/window_x = 370
+	var/window_x = 470
 	var/window_y = 470
 
 /datum/wires/New(var/atom/holder)
@@ -99,7 +99,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 		html += "<td[row_options1]><font color='[colour]'>&#9724;</font>[capitalize(colour)]</td>"
 		html += "<td[row_options2]>"
 		html += "<A href='?src=\ref[src];action=1;cut=[colour]'>[IsColourCut(colour) ? "Mend" :  "Cut"]</A>"
-		html += " <A href='?src=\ref[src];action=1;pulse=[colour]'>Pulse</A>"
+		html += " <A href='?src=\ref[src];action=1;pulse=[colour]'>Pulse/Check</A>"
 		html += " <A href='?src=\ref[src];action=1;attach=[colour]'>[IsAttached(colour) ? "Detach" : "Attach"] Signaller</A></td></tr>"
 	html += "</table>"
 	html += "<br /><A href='?src=\ref[src];action=1;check=1'>Check Wiring</A>"
@@ -128,20 +128,35 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 				else
 					to_chat(L, "<span class='error'>You need wirecutters!</span>")
 			else if(href_list["pulse"])
-				if(istype(I, /obj/item/device/multitool/multimeter))
+				var/colour = href_list["pulse"]
+				if(isMultimeter(I))
 					var/obj/item/device/multitool/multimeter/O = L.get_active_hand()
 					if(O.mode == METER_MESURING)
-						to_chat(L, "<span class='notice'>Закорачиваем контакты провода...</span>")
-						if(do_after(L, 50, holder))
-							var/colour = href_list["pulse"]
+						if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
+							to_chat(L, "<span class='notice'>Подаем напряжение...</span>")
+							if(!do_after(L, 50, holder))
+								return
 							PulseColour(colour)
-							to_chat(L, "<span class='notice'>Провод закорочен (пропульсован).</span>")
+							to_chat(L, "<span class='notice'>Провод пропульсован.</span>")
 						else
-							return 0
+							to_chat(L, "<span class='notice'>Вы не знаете с каким напряжением работает этот провод.</span>")
 					else
-						to_chat(L, "<span class='notice'>Переведите мультиметр в режим измерен&#255;.</span>")
+						if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
+							if(!do_after(L, 10, holder))
+								return
+							if(!IsColourCut(colour))
+								colour_function = unsolved_wires[colour]
+								solved_colour_function = SolveWireFunction(colour_function)
+								if(solved_colour_function != "")
+									to_chat(L, "the [colour] wire connected to [solved_colour_function]")
+									playsound(O.loc, 'sound/machines/mbeep.ogg', 30, 1)
+								else
+									to_chat(L, "the [colour] wire not connected")
+							else
+								to_chat(L, "the [colour] wire not connected")
+						else 
+							to_chat(L, "<span class='notice'>Вы не умеете подключать мультиметр.</span>")
 				else if(isMultitool(I))
-					var/colour = href_list["pulse"]
 					PulseColour(colour)
 				else
 					to_chat(L, "<span class='error'>You need a multitool!</span>")
@@ -163,28 +178,32 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 
 			//multimeter stuff
 			else if(href_list["check"])
-				if(istype(I, /obj/item/device/multitool/multimeter))
+				if(isMultimeter(I))
 					var/obj/item/device/multitool/multimeter/O = L.get_active_hand()
-					if(O.mode == METER_CHECKING)
-						to_chat(L, "<span class='notice'>Перебираем провода...</span>")
-						var/name_by_type = name_by_type()
-						to_chat(L, "[name_by_type] wires:")
-						for(var/colour in src.wires)
-							if(unsolved_wires[colour]) //unsolved_wires[red]
-								if(do_after(L, 10, holder))
+					if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
+						if(O.mode == METER_CHECKING)
+							to_chat(L, "<span class='notice'>Перебираем провода...</span>")
+							var/name_by_type = name_by_type()
+							to_chat(L, "[name_by_type] wires:")
+							for(var/colour in src.wires)
+								if(unsolved_wires[colour])
+									if(!do_after(L, 10, holder))
+										return
 									if(!IsColourCut(colour))
-										colour_function = unsolved_wires[colour] //unsolved_wires[red] = 1 so colour_index = 1
-										solved_colour_function = SolveWireFunction(colour_function) //unsolved_wires[red] = 1, 1 = AIRLOCK_WIRE_IDSCAN
-										to_chat(L, "the [colour] wire connected to [solved_colour_function]") //the red wire is the ID wire
-										playsound(O.loc, 'sound/machines/ping.ogg', 30, 1)
+										colour_function = unsolved_wires[colour]
+										solved_colour_function = SolveWireFunction(colour_function)
+										if(solved_colour_function != "")
+											to_chat(L, "the [colour] wire connected to [solved_colour_function]")
+											playsound(O.loc, 'sound/machines/mbeep.ogg', 30, 1)
+										else
+											to_chat(L, "the [colour] wire not connected")
 									else
 										to_chat(L, "the [colour] wire not connected")
-								else
-									return 0
-
 							//to_chat(L, "<span class='notice'>[all_solved_wires[holder_type]]</span>")
-					else
-						to_chat(L, "<span class='notice'>Переключите мультиметр в режим прозвонки.</span>")
+						else
+							to_chat(L, "<span class='notice'>Переключите мультиметр в режим прозвонки.</span>")
+					else 
+						to_chat(L, "<span class='notice'>Вы не знаете как с этим работать.</span>")
 				else
 					to_chat(L, "<span class='warning'>Вам нужен мультиметр.</span>")
 
@@ -374,8 +393,8 @@ var/const/POWER = 8
 		name_by_type = "Camera"
 	if(istype(src, /datum/wires/explosive))
 		name_by_type = "C4 Bomb"
-	if(istype(src, /datum/wires/mulebot))
-		name_by_type = "Mulebot"
+	if(istype(src, /datum/wires/nuclearbomb))
+		name_by_type = "Nuclear Bomb"
 	if(istype(src, /datum/wires/particle_acc))
 		name_by_type = "Particle Accelerator"
 	if(istype(src, /datum/wires/radio))

@@ -67,7 +67,7 @@
 		var/mob/living/L = against
 		L.IgniteMob()
 
-	playsound(src, "shatter", 70, 1)
+	playsound(src,'sound/effects/GLASS_Rattle_Many_Fragments_01_stereo.ogg',100,1)
 	src.transfer_fingerprints_to(B)
 
 	qdel(src)
@@ -113,7 +113,7 @@
 	if(rag)
 		var/underlay_image = image(icon='icons/obj/drinks.dmi', icon_state=rag.on_fire? "[rag_underlay]_lit" : rag_underlay)
 		underlays += underlay_image
-		set_light(rag.light_range, rag.light_power, rag.light_color)
+		set_light(rag.light_max_bright, 0.1, rag.light_outer_range, 2, rag.light_color)
 	else
 		set_light(0)
 
@@ -512,3 +512,15 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/ale/New()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/ethanol/ale, 30)
+
+//Probably not the right place for it, but no idea where else to put it without making a brand new DM and slogging through making vars from scratch.
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/oiljug
+	name = "oil jug"
+	desc = "A plastic jug of engine oil. Not for human consumption."
+	icon_state = "oil"
+	isGlass = 0
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/oiljug/New()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/lube/oil, 100)

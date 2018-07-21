@@ -1,6 +1,6 @@
 // At minimum every mob has a hear_say proc.
 
-/mob/proc/hear_say(var/message, var/verb = "говорит", var/datum/language/language = null, var/alt_name = "",var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol)
+/mob/proc/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "",var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol)
 	if(!client)
 		return
 
@@ -68,7 +68,19 @@
 				to_chat(src, "<span class='name'>[speaker_name]</span>[alt_name] talks but you cannot hear \him.")
 	else
 		if(language)
-			on_hear_say("<span class='game say'><span class='name'>[speaker_name]</span>[alt_name] [track][language.format_message(message, verb)]</span>")
+			var/nverb = null
+			if(!say_understands(speaker,language) || language.name == LANGUAGE_GALCOM) //Check to see if we can understand what the speaker is saying. If so, add the name of the language after the verb. Don't do this for Galactic Common.
+				on_hear_say("<span class='game say'><span class='name'>[speaker_name]</span>[alt_name] [track][language.format_message(message, verb)]</span>")
+			else //Check if the client WANTS to see language names.
+				switch(src.get_preference_value(/datum/client_preference/language_display))
+					if(GLOB.PREF_FULL) // Full language name
+						nverb = "[verb] in [language.name]"
+					if(GLOB.PREF_SHORTHAND) //Shorthand codes
+						nverb = "[verb] ([language.shorthand])"
+					if(GLOB.PREF_OFF)//Regular output
+						nverb = verb
+				on_hear_say("<span class='game say'><span class='name'>[speaker_name]</span>[alt_name] [track][language.format_message(message, nverb)]</span>")
+
 		else
 			on_hear_say("<span class='game say'><span class='name'>[speaker_name]</span>[alt_name] [track][verb], <span class='message'><span class='body'>\"[message]\"</span></span></span>")
 		if (speech_sound && (get_dist(speaker, src) <= world.view && src.z == speaker.z))
@@ -82,17 +94,20 @@
 	var/time = say_timestamp()
 	to_chat(src, "[time] [message]")
 
-/mob/proc/hear_radio(var/message, var/verb="говорит", var/datum/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0, var/vname ="")
+/mob/proc/hear_radio(var/message, var/verb="says", var/datum/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0, var/vname ="")
 
 	if(!client)
 		return
+	
+	if(last_radio_sound + 0.5 SECOND > world.time)
+		playsound(loc, 'sound/effects/radio_chatter.ogg', 10, 0, -1, falloff = -3)
+		last_radio_sound = world.time
 
 	if(sleeping || stat==1) //If unconscious or sleeping
 		hear_sleep(message)
 		return
 
 	var/track = null
-	var/jobname // the mob's "job"
 
 	//non-verbal languages are garbled if you can't see the speaker. Yes, this includes if they are inside a closet.
 	if (language && (language.flags & NONVERBAL))
@@ -126,27 +141,13 @@
 		if(H.voice)
 			speaker_name = H.voice
 
-
-		/*if(H.age && H.gender)//If they have an age and gender
-			var/ageAndGender
-			jobname = H.get_assignment()
-
-			if(H.get_assignment() == "No id")//If they don't have an ID then we don't know their job.
-				jobname = "Unknown"
-
-			if(H.isSynthetic())
-				ageAndGender = ageAndGender2Desc(H.age, H.gender, synthetic_flag = 1)//Get their age and gender
-			else
-				ageAndGender = ageAndGender2Desc(H.age, H.gender)
-
-			speaker_name += " \[" + "[jobname] " + "[ageAndGender]" + "]"*/ //Print it out.
-
 	if(hard_to_hear)
 		speaker_name = "unknown"
 
 	var/changed_voice
 
 	if(istype(src, /mob/living/silicon/ai) && !hard_to_hear)
+		var/jobname // the mob's "job"
 		var/mob/living/carbon/human/impersonating //The crew member being impersonated, if any.
 
 		if (ishuman(speaker))
@@ -174,12 +175,23 @@
 			else
 				jobname = H.get_assignment()
 
+			/* Later
+			if(H.age && H.gender && H.species)
+				var/ageAndGender
+
+				if(H.isSynthetic())
+					ageAndGender = ageAndGender2Desc(H.age, H.gender, H.species.name, synthetic_flag = 1)//Get their age and gender
+				else
+					ageAndGender = ageAndGender2Desc(H.age, H.gender, H.species.name)
+
+				speaker_name += " \[" + "[jobname] " + "[ageAndGender]" + "]" */
+
 		else if (iscarbon(speaker)) // Nonhuman carbon mob
 			jobname = "No id"
 		else if (isAI(speaker))
 			jobname = "AI"
 		else if (isrobot(speaker))
-			jobname = "Cyborg"
+			jobname = "Robot"
 		else if (istype(speaker, /mob/living/silicon/pai))
 			jobname = "Personal AI"
 		else
@@ -198,11 +210,23 @@
 			speaker_name = "[speaker.real_name] ([speaker_name])"
 		track = "[speaker_name] ([ghost_follow_link(speaker, src)])"
 	else
-		playsound(loc, 'sound/effects/radio_chatter.ogg', 25, 0, -1)
+		var/radio_sound = list('sound/effects/radio1.ogg', 'sound/effects/radio2.ogg', 'sound/effects/radio3.ogg', 'sound/effects/radio4.ogg')
+		playsound(loc, pick(radio_sound), 15, 0, -1)
 
 	var/formatted
 	if(language)
-		formatted = language.format_message_radio(message, verb)
+		if(!say_understands(speaker,language) || language.name == LANGUAGE_GALCOM) //Check if we understand the message. If so, add the language name after the verb. Don't do this for Galactic Common.
+			formatted = language.format_message_radio(message, verb)
+		else
+			var/nverb = null
+			switch(src.get_preference_value(/datum/client_preference/language_display))
+				if(GLOB.PREF_FULL) // Full language name
+					nverb = "[verb] in [language.name]"
+				if(GLOB.PREF_SHORTHAND) //Shorthand codes
+					nverb = "[verb] ([language.shorthand])"
+				if(GLOB.PREF_OFF)//Regular output
+					nverb = verb
+			formatted = language.format_message_radio(message, nverb)
 	else
 		formatted = "[verb], <span class=\"body\">\"[message]\"</span>"
 	if(sdisabilities & DEAF || ear_deaf)
@@ -237,7 +261,15 @@
 		return 0
 
 	if(say_understands(speaker, language))
-		message = "<B>[speaker]</B> [verb], \"[message]\""
+		var/nverb = null
+		switch(src.get_preference_value(/datum/client_preference/language_display))
+			if(GLOB.PREF_FULL) // Full language name
+				nverb = "[verb] in [language.name]"
+			if(GLOB.PREF_SHORTHAND) //Shorthand codes
+				nverb = "[verb] ([language.shorthand])"
+			if(GLOB.PREF_OFF)//Regular output
+				nverb = verb
+		message = "<B>[speaker]</B> [nverb], \"[message]\""
 	else
 		var/adverb
 		var/length = length(message) * pick(0.8, 0.9, 1.0, 1.1, 1.2)	//Inserts a little fuzziness.

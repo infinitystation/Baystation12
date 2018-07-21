@@ -4,6 +4,8 @@
 	vessel_mass = 300
 	default_delay = 20 SECONDS
 	speed_mod = 5 SECONDS
+	start_x = 4
+	start_y = 5
 
 	restricted_waypoints = list(
 		"Charon" = list("nav_hangar_calypso"), 	//can't have random shuttles popping inside the ship
@@ -46,7 +48,7 @@
 	req_access = list(access_aquila_helm)
 
 /obj/machinery/computer/shuttle_control/explore/exploration_shuttle
-	name = "shuttle control console"
+	name = "charon control console"
 	shuttle_tag = "Charon"
 	req_access = list(access_expedition_shuttle_helm)
 

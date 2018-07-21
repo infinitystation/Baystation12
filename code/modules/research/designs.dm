@@ -675,26 +675,12 @@ other types of metals and chemistry for reagents).
 	build_path = /obj/item/weapon/gun/launcher/grenade
 	sort_string = "TAGAA"
 
-/datum/design/item/weapon/pneumatic
-	id = "pneumatic"
-	req_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3)
-	materials = list(DEFAULT_WALL_MATERIAL = 5000, "glass" = 2000, "silver" = 500)
-	build_path = /obj/item/weapon/gun/launcher/pneumatic
-	sort_string = "TAGAB"
-
-/datum/design/item/weapon/railgun
-	id = "railgun"
-	req_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 4, TECH_MAGNET = 4)
-	materials = list(DEFAULT_WALL_MATERIAL = 6000, "gold" = 2000, "silver" = 2000)
-	build_path = /obj/item/weapon/gun/magnetic/railgun
-	sort_string = "TAHAA"
-
 /datum/design/item/weapon/flechette
 	id = "flechette"
 	req_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 4, TECH_MAGNET = 4)
 	materials = list(DEFAULT_WALL_MATERIAL = 8000, "gold" = 4000, "silver" = 4000, "diamond" = 2000)
 	build_path = /obj/item/weapon/gun/magnetic/railgun/flechette
-	sort_string = "TAHAB"
+	sort_string = "TAHAA"
 
 /datum/design/item/weapon/phoronpistol
 	id = "ppistol"
@@ -1011,6 +997,16 @@ other types of metals and chemistry for reagents).
 	build_path = /obj/item/weapon/shield_diffuser
 	sort_string = "VAGAH"
 
+/datum/design/item/tool/oxycandle
+	name = "oxycandle"
+	desc = "a device which, via a chemical reaction, can pressurise small areas."
+	id="oxycandle"
+	req_tech = list(TECH_ENGINEERING = 2)
+	materials = list(DEFAULT_WALL_MATERIAL = 3000)
+	chemicals = list(/datum/reagent/sodiumchloride = 20, /datum/reagent/acetone = 20)
+	build_path = /obj/item/device/oxycandle
+	sort_string = "VAGAI"
+
 /datum/design/item/encryptionkey/AssembleDesignName()
 	..()
 	name = "Encryption key design ([item_name])"
@@ -1243,6 +1239,43 @@ other types of metals and chemistry for reagents).
 	build_path = /obj/item/weapon/computer_hardware/tesla_link
 	sort_string = "VBADD"
 
+//Scanners
+/datum/design/item/modularcomponent/accessory/reagent_scanner
+	name = "reagent scanner module"
+	id = "scan_reagent"
+	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2, TECH_BIO = 2, TECH_MAGNET = 2)
+	build_type = PROTOLATHE
+	materials = list(DEFAULT_WALL_MATERIAL = 600, "glass" = 200)
+	build_path = /obj/item/weapon/computer_hardware/scanner/reagent
+	sort_string = "VBADE"
+
+/datum/design/item/modularcomponent/accessory/paper_scanner
+	name = "paper scanner module"
+	id = "scan_paper"
+	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
+	build_type = PROTOLATHE
+	materials = list(DEFAULT_WALL_MATERIAL = 600, "glass" = 200)
+	build_path = /obj/item/weapon/computer_hardware/scanner/paper
+	sort_string = "VBADF"
+
+/datum/design/item/modularcomponent/accessory/atmos_scanner
+	name = "atmospheric scanner module"
+	id = "scan_atmos"
+	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2, TECH_MAGNET = 2)
+	build_type = PROTOLATHE
+	materials = list(DEFAULT_WALL_MATERIAL = 600, "glass" = 200)
+	build_path = /obj/item/weapon/computer_hardware/scanner/atmos
+	sort_string = "VBADG"
+
+/datum/design/item/modularcomponent/accessory/medical_scanner
+	name = "medical scanner module"
+	id = "scan_medical"
+	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2, TECH_MAGNET = 2, TECH_BIO = 2)
+	build_type = PROTOLATHE
+	materials = list(DEFAULT_WALL_MATERIAL = 600, "glass" = 200)
+	build_path = /obj/item/weapon/computer_hardware/scanner/medical
+	sort_string = "VBADH"
+
 // Batteries
 /datum/design/item/modularcomponent/battery/AssembleDesignName()
 	..()
@@ -1346,99 +1379,6 @@ other types of metals and chemistry for reagents).
 	chemicals = list(/datum/reagent/acid = 20)
 	build_path = /obj/item/weapon/computer_hardware/processor_unit/photonic/small
 	sort_string = "VBAFD"
-
-// PDA and cartridges
-/datum/design/item/pda
-	name = "PDA design"
-	desc = "Cheaper than whiny non-digital assistants."
-	id = "pda"
-	req_tech = list(TECH_ENGINEERING = 2, TECH_POWER = 3)
-	materials = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 50)
-	build_path = /obj/item/device/pda
-	sort_string = "VCAAA"
-
-/datum/design/item/pda_cartridge
-	req_tech = list(TECH_ENGINEERING = 2, TECH_POWER = 3)
-	materials = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 50)
-
-/datum/design/item/pda_cartridge/AssembleDesignName()
-	..()
-	name = "PDA accessory ([item_name])"
-
-/datum/design/item/pda_cartridge/cart_basic
-	id = "cart_basic"
-	build_path = /obj/item/weapon/cartridge
-	sort_string = "VCBAA"
-
-/datum/design/item/pda_cartridge/engineering
-	id = "cart_engineering"
-	build_path = /obj/item/weapon/cartridge/engineering
-	sort_string = "VCBAB"
-
-/datum/design/item/pda_cartridge/atmos
-	id = "cart_atmos"
-	build_path = /obj/item/weapon/cartridge/atmos
-	sort_string = "VCBAC"
-
-/datum/design/item/pda_cartridge/medical
-	id = "cart_medical"
-	build_path = /obj/item/weapon/cartridge/medical
-	sort_string = "VCBAD"
-
-/datum/design/item/pda_cartridge/chemistry
-	id = "cart_chemistry"
-	build_path = /obj/item/weapon/cartridge/chemistry
-	sort_string = "VCBAE"
-
-/datum/design/item/pda_cartridge/security
-	id = "cart_security"
-	build_path = /obj/item/weapon/cartridge/security
-	sort_string = "VCBAF"
-
-/datum/design/item/pda_cartridge/janitor
-	id = "cart_janitor"
-	build_path = /obj/item/weapon/cartridge/janitor
-	sort_string = "VCBAG"
-
-/datum/design/item/pda_cartridge/science
-	id = "cart_science"
-	build_path = /obj/item/weapon/cartridge/signal/science
-	sort_string = "VCBAH"
-
-/datum/design/item/pda_cartridge/quartermaster
-	id = "cart_quartermaster"
-	build_path = /obj/item/weapon/cartridge/quartermaster
-	sort_string = "VCBAI"
-
-/datum/design/item/pda_cartridge/hop
-	id = "cart_hop"
-	build_path = /obj/item/weapon/cartridge/hop
-	sort_string = "VCBAJ"
-
-/datum/design/item/pda_cartridge/hos
-	id = "cart_hos"
-	build_path = /obj/item/weapon/cartridge/hos
-	sort_string = "VCBAK"
-
-/datum/design/item/pda_cartridge/ce
-	id = "cart_ce"
-	build_path = /obj/item/weapon/cartridge/ce
-	sort_string = "VCBAL"
-
-/datum/design/item/pda_cartridge/cmo
-	id = "cart_cmo"
-	build_path = /obj/item/weapon/cartridge/cmo
-	sort_string = "VCBAM"
-
-/datum/design/item/pda_cartridge/rd
-	id = "cart_rd"
-	build_path = /obj/item/weapon/cartridge/rd
-	sort_string = "VCBAN"
-
-/datum/design/item/pda_cartridge/captain
-	id = "cart_captain"
-	build_path = /obj/item/weapon/cartridge/captain
-	sort_string = "VCBAO"
 
 //RIG Modules
 //Sidenote; Try to keep a requirement of 5 engineering for each, but keep the rest as similiar to it's original as possible.
@@ -2159,6 +2099,13 @@ CIRCUITS BELOW
 	build_path = /obj/item/weapon/circuitboard/replicator
 	sort_string = "WAAAR"
 
+/datum/design/circuit/crusher_base
+	name = "trash compactor"
+	id = "crusher_base"
+	req_tech = list(TECH_ENGINEERING = 3, TECH_DATA = 1, TECH_MAGNET = 1, TECH_MATERIALS = 3)
+	build_path = /obj/item/weapon/circuitboard/crusher
+	sort_string = "WAAAB"
+
 /datum/design/circuit/aicore
 	name = "AI core"
 	id = "aicore"
@@ -2280,3 +2227,13 @@ CIRCUITS BELOW
 	req_tech = list(TECH_DATA = 4, TECH_ILLEGAL = 2, TECH_MATERIAL = 6)
 	build_path = /obj/item/weapon/aiModule/tyrant
 	sort_string = "XACAD"
+
+// Infinity's designs list
+
+/datum/design/item/optical/material
+	name = "advanced material glasses"
+	id = "hybrid_mw"
+	req_tech = list(TECH_MAGNET = 4, TECH_ENGINEERING = 5)
+	materials = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 50, "silver" = 100)
+	build_path = /obj/item/clothing/glasses/material/hybrid
+	sort_string = "GAAAD"

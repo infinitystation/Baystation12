@@ -1,5 +1,5 @@
 /mob/living/simple_animal/lizard
-	name = "Lizard"
+	name = "lizard"
 	desc = "A cute tiny lizard."
 	icon = 'icons/mob/critter.dmi'
 	icon_state = "lizard"
@@ -15,6 +15,7 @@
 	response_disarm = "shoos"
 	response_harm   = "stomps on"
 	mob_size = MOB_MINISCULE
+	can_escape = 1
 	possession_candidate = 1
 	holder_type = /obj/item/weapon/holder/lizard
 
@@ -50,3 +51,4 @@
 		jaunting = FALSE
 
 	#undef liquify_anim_duration
+

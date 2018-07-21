@@ -68,17 +68,10 @@
 	cost = 1
 
 /datum/gear/accessory/pda
-	display_name = "PDA selection"
+	display_name = "PDA"
 	sort_category = "Utility"
-	path = /obj/item/device/pda
+	path = /obj/item/modular_computer/pda
 	cost = 2
-
-/datum/gear/accessory/pda/New()
-	..()
-	var/pda = list()
-	pda["micro computer"] = /obj/item/device/pda
-	pda["wrist computer"] = /obj/item/device/pda/wrist
-	gear_tweaks += new/datum/gear_tweak/path(pda)
 
 
 ///////////
@@ -330,12 +323,23 @@
 	display_name = "bandana selection"
 	path = /obj/item/clothing/head
 
+/datum/gear/head/bandana
+	display_name = "bandana selection"
+	path = /obj/item/clothing/mask/bandana
+
 /datum/gear/head/bandana/New()
 	..()
 	var/bandanas = list()
-	bandanas["green bandana"] = /obj/item/clothing/head/greenbandana
-	bandanas["orange bandana"] = /obj/item/clothing/head/orangebandana
-	bandanas["pirate bandana"] = /obj/item/clothing/head/bandana
+	bandanas["black bandana"] = /obj/item/clothing/mask/bandana
+	bandanas["blue bandana"] = /obj/item/clothing/mask/bandana/blue
+	bandanas["botany bandana"] = /obj/item/clothing/mask/bandana/botany
+	bandanas["camo bandana"] = /obj/item/clothing/mask/bandana/camo
+	bandanas["gold bandana"] = /obj/item/clothing/mask/bandana/gold
+	bandanas["green bandana"] = /obj/item/clothing/mask/bandana/green
+	bandanas["orange bandana"] = /obj/item/clothing/mask/bandana/orange
+	bandanas["purple bandana"] = /obj/item/clothing/mask/bandana/purple
+	bandanas["red bandana"] = /obj/item/clothing/mask/bandana/red
+	bandanas["scull bandana"] = /obj/item/clothing/mask/bandana/skull
 	gear_tweaks += new/datum/gear_tweak/path(bandanas)
 
 /datum/gear/head/bow

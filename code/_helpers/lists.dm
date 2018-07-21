@@ -10,7 +10,7 @@
  */
 
 //Returns a list in plain english as a string
-/proc/english_list(var/list/input, nothing_text = "nothing", and_text = " and ", comma_text = ", ", final_comma_text = "" )
+/proc/english_list(var/list/input, nothing_text = "nothing", and_text = " and ", comma_text = ", ", final_comma_text = "," )
 	switch(input.len)
 		if(0) return nothing_text
 		if(1) return "[input[1]]"
@@ -89,6 +89,29 @@ proc/listclearnulls(list/list)
 		result = first - second
 	return result
 
+/*
+Two lists may be different (A!=B) even if they have the same elements.
+This actually tests if they have the same entries and values.
+*/
+/proc/same_entries(var/list/first, var/list/second)
+	if(!islist(first) || !islist(second))
+		return 0
+	if(length(first) != length(second))
+		return 0
+	for(var/entry in first)
+		if(!(entry in second) || (first[entry] != second[entry]))
+			return 0
+	return 1
+/*
+Checks if a list has the same entries and values as an element of big.
+*/
+/proc/in_as_list(var/list/little, var/list/big)
+	if(!islist(big))
+		return 0
+	for(var/element in big)
+		if(same_entries(little, element))
+			return 1
+	return 0
 /*
  * Returns list containing entries that are in either list but not both.
  * If skipref = 1, repeated elements are treated as one.
@@ -722,3 +745,38 @@ proc/dd_sortedTextList(list/incoming)
 			.[i] = .(.[i])
 
 #define IS_VALID_INDEX(list, index) (list.len && index > 0 && index <= list.len)
+
+//Like typesof() or subtypesof(), but returns a typecache instead of a list
+/proc/typecacheof(path, ignore_root_path, only_root_path = FALSE)
+	if(ispath(path))
+		var/list/types = list()
+		if(only_root_path)
+			types = list(path)
+		else
+			types = ignore_root_path ? subtypesof(path) : typesof(path)
+		var/list/L = list()
+		for(var/T in types)
+			L[T] = TRUE
+		return L
+	else if(islist(path))
+		var/list/pathlist = path
+		var/list/L = list()
+		if(ignore_root_path)
+			for(var/P in pathlist)
+				for(var/T in subtypesof(P))
+					L[T] = TRUE
+		else
+			for(var/P in pathlist)
+				if(only_root_path)
+					L[P] = TRUE
+				else
+					for(var/T in typesof(P))
+						L[T] = TRUE
+		return L
+
+//Checks for specific types in specifically structured (Assoc "type" = TRUE) lists ('typecaches')
+/proc/is_type_in_typecache(atom/A, list/L)
+	if(!L || !L.len || !A)
+
+		return 0
+	return L[A.type]

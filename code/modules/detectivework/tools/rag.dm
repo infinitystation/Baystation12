@@ -100,9 +100,13 @@
 		user.visible_message("\The [user] starts to wipe down [A] with [src]!")
 		reagents.splash(A, 1) //get a small amount of liquid on the thing we're wiping.
 		update_name()
-		if(do_after(user,30, progress = 0))
+		if(do_after(user,30, progress = 1))
 			user.visible_message("\The [user] finishes wiping off the [A]!")
-			A.clean_blood()
+			if(isturf(A))
+				var/turf/T = A
+				T.clean(src, user)
+			else
+				A.clean_blood()
 
 /obj/item/weapon/reagent_containers/glass/rag/attack(atom/target as obj|turf|area, mob/user as mob , flag)
 	if(isliving(target))
@@ -179,7 +183,7 @@
 		return
 
 	START_PROCESSING(SSobj, src)
-	set_light(2, null, "#e38f46")
+	set_light(0.5, 0.1, 2, 2, "#e38f46")
 	on_fire = 1
 	update_name()
 	update_icon()

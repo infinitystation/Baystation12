@@ -53,7 +53,7 @@ var/global/photo_count = 0
 
 	tiny = image(img.icon)
 	tiny.transform *= 0.5*scale
-	tiny.underlays += image('icons/obj/bureaucracy.dmi',"photo")
+	tiny.underlays += image('icons/obj/bureaucracy_inf.dmi',"photo")
 	tiny.pixel_x = -32*(photo_size-1)/2 - 3
 	tiny.pixel_y = -32*(photo_size-1)/2 + 3
 
@@ -65,6 +65,8 @@ var/global/photo_count = 0
 	..()
 
 /obj/item/weapon/photo/examine(mob/user)
+	if(!img)
+		return
 	if(in_range(user, src))
 		show(user)
 		to_chat(user, desc)

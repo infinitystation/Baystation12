@@ -18,6 +18,12 @@
 	desc = "Randomly selects a ballon for you!"
 	path = /obj/item/toy/balloon
 
+/datum/uplink_item/item/badassery/money_cannon
+	name = "Modified Money Cannon"
+	item_cost = 48
+	path = /obj/item/weapon/gun/launcher/money/hacked
+	desc = "Too much money? Not enough screaming? Try the Money Cannon."
+
 /datum/uplink_item/item/badassery/balloon/random/get_goods(var/obj/item/device/uplink/U, var/loc)
 	var/balloon_type = pick(typesof(path))
 	var/obj/item/I = new balloon_type(loc)

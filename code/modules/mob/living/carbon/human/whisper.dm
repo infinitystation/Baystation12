@@ -1,6 +1,6 @@
 //Lallander was here
 /mob/living/carbon/human/whisper(message as text)
-//	message = sanitize(message)
+	//message = sanitize(message, encode = 0)
 
 	if (src.client)
 		if (src.client.prefs.muted & MUTE_IC)
@@ -24,5 +24,5 @@
 
 
 //This is used by both the whisper verb and human/say() to handle whispering
-/mob/living/carbon/human/proc/whisper_say(var/message, var/datum/language/speaking = null, var/alt_name="", var/verb="шепчет")
+/mob/living/carbon/human/proc/whisper_say(var/message, var/datum/language/speaking = null, var/alt_name="", var/verb="whispers")
 	say(message, speaking, verb, alt_name, whispering = 1)

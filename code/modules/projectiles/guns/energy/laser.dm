@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/laser
-	name = "laser carbine"
+	name = "G40E laser carbine"
 	desc = "A Hephaestus Industries G40E carbine, designed to kill with concentrated energy blasts."
 	icon_state = "laser"
 	item_state = "laser"
@@ -48,7 +48,7 @@
 			projectile_type = null
 
 obj/item/weapon/gun/energy/retro
-	name = "retro laser"
+	name = "G21E laser pistol"
 	icon_state = "retro"
 	item_state = "retro"
 	desc = "An older model of the basic lasergun. Nevertheless, it is still quite deadly and easy to maintain, making it a favorite amongst pirates and other outlaws."
@@ -72,7 +72,7 @@ obj/item/weapon/gun/energy/retro
 	self_recharge = 1
 
 /obj/item/weapon/gun/energy/lasercannon
-	name = "laser cannon"
+	name = "expermental laser cannon"
 	desc = "With the laser cannon, the lasing medium is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core. This incredible technology may help YOU achieve high excitation rates with small laser volumes!"
 	icon_state = "lasercannon"
 	item_state = null
@@ -96,7 +96,7 @@ obj/item/weapon/gun/energy/retro
 	one_hand_penalty = 0
 
 /obj/item/weapon/gun/energy/xray
-	name = "x-ray laser carbine"
+	name = "G56E x-ray carbine"
 	desc = "A high-power laser gun capable of emitting concentrated x-ray blasts, that are able to penetrate laser-resistant armor much more readily than standard photonic beams."
 	icon_state = "xray"
 	item_state = "xray"
@@ -111,7 +111,7 @@ obj/item/weapon/gun/energy/retro
 	combustion = 0
 
 /obj/item/weapon/gun/energy/xray/pistol
-	name = "x-ray laser gun"
+	name = "G56E-s x-ray pistol"
 	icon_state = "oldxray"
 	item_state = "oldxray"
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
@@ -122,7 +122,7 @@ obj/item/weapon/gun/energy/retro
 	fire_delay = 10
 
 /obj/item/weapon/gun/energy/sniperrifle
-	name = "marksman energy rifle"
+	name = "9E marksman energy rifle"
 	desc = "The HI DMR 9E is an older design of Hephaestus Industries. A designated marksman rifle capable of shooting powerful ionized beams, this is a weapon to kill from a distance."
 	icon_state = "sniper"
 	item_state = "laser"
@@ -180,3 +180,52 @@ obj/item/weapon/gun/energy/retro
 	item_state = "redtag"
 	projectile_type = /obj/item/projectile/beam/lastertag/red
 	required_vest = /obj/item/clothing/suit/redtag
+
+/obj/item/weapon/gun/energy/laser/alien
+	name = "alien rifle"
+	desc = "An alien weapon never before seen by the likes of your species."
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "alienrifle"
+	item_state = "alienrifle"
+	wielded_item_state = "alienrifle-wielded"
+	item_icons = list(
+		slot_r_hand_str = 'icons/mob/infinity/misc.dmi',
+		slot_l_hand_str = 'icons/mob/infinity/misctwo.dmi',
+		)
+	self_recharge = 1
+	charge_cost = 40
+	one_hand_penalty = 4
+	max_shots = 4
+	fire_delay = 16 // heavy rifle
+	accuracy = 1
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 6, TECH_MAGNET = 5, TECH_POWER = 7)
+	matter = list(DEFAULT_WALL_MATERIAL = 2800)
+	projectile_type = /obj/item/projectile/beam/heavylaser/bogani
+
+	firemodes = list(
+		list(mode_name="semiauto",       projectile_type = /obj/item/projectile/beam/heavylaser/bogani, burst=1,    fire_delay=16,    move_delay=null, one_hand_penalty=4, burst_accuracy=null, dispersion=null),
+		list(mode_name="shock",          projectile_type = /obj/item/projectile/beam/stun/heavy,        burst=1,    fire_delay=12,    move_delay=null, one_hand_penalty=4, burst_accuracy=null, dispersion=null),
+		)
+///Gamma rifle///
+
+/obj/item/weapon/gun/energy/gray
+	name = "G78E6 high-frequency emitter rifle"
+	desc = "A high-power laser gun capable of emitting concentrated x-ray and gamma blasts, that are able to penetrate laser-resistant armor much more readily than standard photonic beams."
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "eriflexray"
+	item_state = "xray"
+	slot_flags = SLOT_BELT|SLOT_BACK
+	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 5, TECH_MAGNET = 5)
+	projectile_type = /obj/item/projectile/beam/xray/midlaser
+	one_hand_penalty = 2
+	w_class = ITEM_SIZE_LARGE
+	charge_cost = 15
+	max_shots = 10
+	wielded_item_state = "gun_wielded"
+	combustion = 0
+	fire_delay = 8
+
+	firemodes = list(
+		list(mode_name="x-ray",     projectile_type = /obj/item/projectile/beam/xray/midlaser,     modifystate = "eriflexray",  charge_cost = 30, max_shots = 14),
+		list(mode_name="gamma ray", projectile_type = /obj/item/projectile/beam/gray,              modifystate = "eriflegamma", charge_cost = 60, max_shots = 7),
+		)

@@ -1,57 +1,87 @@
+s1334 - machine
+cre77 - machine
 rucat - machine
+forrya - machine
+rex127 - machine
+logfol - machine
 kosteg - machine
-netreson - machine
-rockyfail - machine
-parasoul - machine
 hodovoy - machine
+mishele - machine
+parasoul - machine
+netreson - machine
+billluxe - machine
+rockyfail - machine
 nikita588 - machine
-quardbreak - machine
+mrnicolas - machine
+skonoplich - machine
+wheatley2013 - machine
 redknighthero - machine
 kotovsyndrome - machine
-knayu - skrell
+taushai - machine
+lunkydunk - machine
+inubashirimomiji - skrell
+twinindifferent - skrell
+wheatley2013 - skrell
+kirill1243 - skrell	
+themaybat - skrell
+salyvador - skrell
+hellpony - skrell
+vankoska - skrell
 lukecage - skrell
 hodovoy - skrell
-kirill1243 - skrell
-wheatley2013 - skrell
-vankoska - skrell
-inubashirimomiji - skrell	
-themaybat - skrell
-twinindifferent - skrell
-hellpony - skrell
-salyvador - skrell
+knayu - skrell
+mrnicolas - skrell
+taushai - skrell
 redknighthero - giant armoured serpentid
+kirill1243 - giant armoured serpentid
 themaybat - giant armoured serpentid
 sosiskoed - giant armoured serpentid
-kirill1243 - giant armoured serpentid
+diesiege - giant armoured serpentid
 hodovoy - giant armoured serpentid
 sarumyn - giant armoured serpentid
-diesiege - giant armoured serpentid
 rex127 - giant armoured serpentid
 portos - giant armoured serpentid
-twinindifferent - resomi
-wheatley2013 - resomi
-themaybat - resomi
-netreson - resomi
-kirill1243 - resomi
-cre77 - resomi
-vankoska - diona
-sosiskoed - diona
-maxi2000 - diona
-bartstarter - diona
+taushai - giant armoured serpentid
+ted201 - giant armoured serpentid
+s1334 - giant armoured serpentid
+coldmantis13 - giant armoured serpentid
+coltrane97 - giant armoured serpentid
 inubashirimomiji - diona
-cre77 - vox
-rex127 - vox
-sosiskoed - vox
+bartstarter - diona
+wolforbykot - diona
+sosiskoed - diona
+gumboldty - diona
+vankoska - diona
+maxi2000 - diona
+wheatley2013 - vox
 wolforbykot - vox
+sosiskoed - vox
+mrnicolas - vox
+rex127 - vox
+cre77 - vox
+taushai - vox
+darkscarletblood - unathi
+kribleykrabley - unathi
 kotovsyndrome - unathi
+wheatley2013 - unathi
 wolforbykot - unathi
-hodovoy - unathi
 kirill1243 - unathi
+lunkydunk - unathi
 aragog94 - unathi
 hodovoy - unathi
+taushai - unathi
+ashtonfox - tajaran
+mrnicolas - tajaran
+furrydog - tajaran
+korramy - tajaran
+moonmen - tajaran
+nicknam - tajaran
+selles - tajaran
+logfol - tajaran
 denmag - tajaran
 solark - tajaran
-logfol - tajaran
-furrydog - tajaran
 arhod - tajaran
-wheatley2013 - vox
+corporateoverlord - tajaran
+taushai - tajaran
+forrya - tajaran
+redknighthero - bionic

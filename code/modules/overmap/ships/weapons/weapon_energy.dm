@@ -12,13 +12,13 @@
 	var/max_draw_per_tick = 10000
 
 /obj/machinery/power/ship_weapon/maser/Initialize()
-	..()
+	. = ..()
 	connect_to_network()
 
 /obj/machinery/power/ship_weapon/maser/update_icon()
 	..()
 	if(powered())
-		set_light(2,10, "#3333FF")
+		set_light(1, 2, 10, l_color = "#3333ff")
 	else
 		set_light(0)
 

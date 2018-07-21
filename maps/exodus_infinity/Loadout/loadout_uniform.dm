@@ -18,17 +18,13 @@
 	path = /obj/item/clothing/under/blackjumpskirt
 
 /datum/gear/uniform/shortjumpskirt
-    display_name = "short jumpskirt"
-    path = /obj/item/clothing/under/shortjumpskirt
-    flags = GEAR_HAS_COLOR_SELECTION
+	display_name = "short jumpskirt"
+	path = /obj/item/clothing/under/shortjumpskirt
+	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/uniform/jumpsuit
 	display_name = "generic jumpsuits"
 	path = /obj/item/clothing/under/color/grey
-
-/datum/gear/uniform/jumpsuit/New()
-	..()
-	gear_tweaks += new/datum/gear_tweak/path(/obj/item/clothing/under/color)
 
 /datum/gear/uniform/roboticist_skirt
 	display_name = "skirt, roboticist"

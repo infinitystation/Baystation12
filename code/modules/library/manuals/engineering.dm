@@ -3,20 +3,23 @@
 	icon_state ="bookEngineering2"
 	author = "Engineering Encyclopedia"
 	title = "Engineering Textbook"
+	url = "https://wiki.infinity-ss13.info/index.php?title=Guide_to_Engineering"
 
-/obj/item/weapon/book/manual/engineering_guide/New()
+/obj/item/weapon/book/manual/New()
 	..()
-	dat = {"
+	if(url)
+		dat = {"
 
-		<html><head>
-		</head>
+			<html><head>
+			</head>
 
-		<body>
-		<iframe width='100%' height='100%' src="[config.wikiurl]Guide_to_Engineering&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>		</body>
+			<body>
+			<iframe width='100%' height='100%' src="[url]&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+			</body>
 
-		</html>
+			</html>
 
-		"}
+			"}
 
 /obj/item/weapon/book/manual/robotics_cyborgs
 	name = "Cyborgs for Dummies"
@@ -65,15 +68,34 @@
 
 
 				<h2><a name="Modules">Cyborg Modules</h2>
-				When a cyborg is created it picks out of an array of modules to designate its purpose. There are 6 different cyborg modules.
+				When a cyborg is created it picks out of an array of modules to designate its purpose. There are 11 different cyborg modules.<br>
+				All cyborg modules carry a flash.
 
 				<h3>Standard Cyborg</h3>
 				The standard cyborg module is a multi-purpose cyborg. It is equipped with various modules, allowing it to do basic tasks.<br>A Standard Cyborg comes with:
 				<ul>
 				  <li>Crowbar</li>
+				  <li>Wrench</li>
 				  <li>Stun Baton</li>
 				  <li>Health Analyzer</li>
 				  <li>Fire Extinguisher</li>
+				</ul>
+
+				<h3>Research Cyborg</h3>
+				The research cyborg module is an effective researching machine. It is equipped with tools to effectively run RnD.<be>A Research Cyborg comes with:
+				<ul>
+				  <li>Portable Destructive Analyzer</li>
+				  <li>Research Gripper</li>
+				  <li>Sheet Loader</li>
+				  <li>Robot Analyzer</li>
+				  <li>Robot Card</li>
+				  <li>Set of Engineering Tools</li>
+				  <li>Laser Scalpel</li>
+				  <li>Circular Saw</li>
+				  <li>Fire Extinguisher</li>
+				  <li>Syringe</li>
+				  <li>Chemistry Gripper</li>
+				  <li>Nanopaste</li>
 				</ul>
 
 				<h3>Engineering Cyborg</h3>
@@ -81,28 +103,34 @@
 				<ul>
 				  <li>A basic set of engineering tools</li>
 				  <li>Metal Synthesizer</li>
+				  <li>Plasteel Synthesizer</li>
 				  <li>Reinforced Glass Synthesizer</li>
-				  <li>An RCD</li>
 				  <li>Wire Synthesizer</li>
 				  <li>Fire Extinguisher</li>
+				  <li>Roll of Tape</li>
 				  <li>Built-in Optical Meson Scanners</li>
 				</ul>
 
 				<h3>Mining Cyborg</h3>
 				The Mining Cyborg module comes equipped with the latest in mining equipment. They are efficient at mining due to no need for oxygen, but their power cells limit their time in the mines.<br>A Mining Cyborg comes with:
 				<ul>
-				  <li>Jackhammer</li>
-				  <li>Shovel</li>
-				  <li>Mining Satchel</li>
-				  <li>Built-in Optical Meson Scanners</li>
+				  <li>Wrench</li>
+				  <li>Scredriver</li>
+				  <li>Crowbar</li>
+				  <li>Ore Satchel</li>
+				  <li>Borg Drill</li>
+				  <li>Mining Gripper</li>
+				  <li>Ore Scanner</li>
 				</ul>
 
 				<h3>Security Cyborg</h3>
-				The Security Cyborg module is equipped with effective security measures used to apprehend and arrest criminals without harming them a bit.<br>A Security Cyborg comes with:
+				The Security Cyborg module is equipped with effective security measures used to apprehend and arrest criminals.<br>A Security Cyborg comes with:
 				<ul>
 				  <li>Stun Baton</li>
 				  <li>Handcuffs</li>
-				  <li>Taser</li>
+				  <li>Energy Gun</li>
+				  <li>Megaphone</li>
+				  <li>Roll of Tape</li>
 				</ul>
 
 				<h3>Janitor Cyborg</h3>
@@ -111,18 +139,71 @@
 				  <li>Mop</li>
 				  <li>Hand Bucket</li>
 				  <li>Cleaning Spray Synthesizer and Spray Nozzle</li>
+				  <li>Light Replacer</li>
+				  <li>Trash Bag</li>
 				</ul>
 
 				<h3>Service Cyborg</h3>
 				The service cyborg module comes ready to serve your human needs. It includes various entertainment and refreshment devices. Occasionally some service cyborgs may have been referred to as "Bros."<br>A Service Cyborg comes with:
 				<ul>
-				  <li>Shaker</li>
-				  <li>Industrial Dropper</li>
-				  <li>Platter</li>
-				  <li>Beer Synthesizer</li>
+				  <li>Service Gripper</li>
+				  <li>Bucket</li>
+				  <li>Hoe</li>
+				  <li>Hatchet</li>
 				  <li>Zippo Lighter</li>
 				  <li>Rapid-Service-Fabricator (Produces various entertainment and refreshment objects)</li>
+				  <li>Plant Analyzer</li>
+				  <li>Robot Harvester</li>
+				  <li>Rolling Pin</li>
+				  <li>Knife</li>
+				</ul>
+
+				<h3>Clerical Cyborg</h3>
+				The clerical cyborg module is prepared to run the supply department, including a vareity of stamps.<br>A clerical cyborg comes with:
+				<ul>
 				  <li>Pen</li>
+				  <li>Paper Dispenser</li>
+				  <li>Clerical Gripper</li>
+				  <li>Hand Labeler</li>
+				  <li>Generic Stamp</li>
+				  <li>Denied Stamp</li>
+				  <li>Package Wrapper</li>
+				  <li>Destination Tagger</li>
+				</ul>
+				
+				<h3>Crisis Cyborg</h3>
+				The crisis cyborg module is prepared to handle a variety of non-surgical medical emergencies.<br>A medical cyborg comes with:
+				<ul>
+				  <li>Crowbar</li>
+				  <li>Health Analyzer</li>
+				  <li>Reagent Scanner</li>
+				  <li>Roller Bed Rack</li>
+				  <li>Body Bag Rack</li>
+				  <li>Hypospray</li>
+				  <li>Automatic Defibrillator</li>
+				  <li>Industrial Dropper</li>
+				  <li>Syringe</li>
+				  <li>Chemistry Gripper</li>
+				  <li>Fire Extinguisher</li>
+				  <li>Inflatables Dispenser</li>
+				  <li>Roll of Tape</li>
+				</ul>
+
+				<h3>Surgeon Cyborg</h3>
+				The surgeon cyborg modules is prepared to handle a variety of surgical medical emergencies.<br>A medical cyborg comes with:
+				<ul>
+				  <li>Set of Surgery Tools</li>
+				  <li>Health Analyzer</li>
+				  <li>Roller Bed Rack</li>
+				  <li>Body Bag Rack</li>
+				  <li>Hypospray</li>
+				  <li>Automatic Defibrillator</li>
+				  <li>Industrial Dropper</li>
+				  <li>Syringe</li>
+				  <li>Chemistry Gripper</li>
+				  <li>Fire Extinguisher</li>
+				  <li>Inflatables Dispenser</li>
+				  <li>Roll of Tape</li>
 				</ul>
 
 				<h2><a name="Construction">Cyborg Construction</h2>
@@ -227,21 +308,7 @@
 	icon_state ="bookEngineering"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Repairs and Construction"
-
-/obj/item/weapon/book/manual/engineering_construction/New()
-	..()
-	dat = {"
-
-		<html><head>
-		</head>
-
-		<body>
-		<iframe width='100%' height='97%' src="[config.wikiurl]Guide_to_construction&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
-		</body>
-
-		</html>
-
-		"}
+	url = "https://wiki.infinity-ss13.info/index.php?title=Руководство_по_Конструированию"
 
 /obj/item/weapon/book/manual/engineering_particle_accelerator
 	name = "Particle Accelerator User's Guide"
@@ -332,9 +399,11 @@
 				<br>
 				<h2>STARTUP PROCEDURE</h2>
 				<ol>
-				<li>Fill reactor loop and radiator loop with two (2) standard canisters of nitrogen gas each.</li>
+				<li>Fill reactor loop and radiator loop with two (2) standard canisters of carbon dioxide gas each.</li>
 				<li>Ensure that pumps and filters are on and operating at maximum power.</li>
-				<li>Fire <del>5</del> <del>15</del> <del>2</del> <del>UNKNOWN</del> 8-12 pulses from emitter at supermatter crystal. Reactor blast doors must be open for this procedure.</li>
+				<li><i>IMPORTANT: </i>Ensure the filters are configured for carbon dioxide instead of hydrogen.
+				<li>Ensure the pump to the phoron canister is set to max.</li>
+				<li>Fire <del>5</del> <del>15</del> <del>2</del> <del>UNKNOWN</del> 12-16 pulses from emitter at supermatter crystal, or until the EER reaches about 200. Reactor blast doors must be open for this procedure.</li>
 				</ol>
 				<br>
 				<h2>OPERATION AND MAINTENANCE</h2>
@@ -343,14 +412,14 @@
 				<li>Ensure that reactor and radiator loops are undamaged and unobstructed.</li>
 				<li>Ensure that phoron and oxygen gas exhaust from filters is properly contained or disposed. Do not allow exhaust pressure to exceed 4500 kPa.</li>
 				<li>Ensure that engine room Area Power Controller (APC) and engine Superconducting Magnetic Energy Storage unit (SMES) are properly charged.</li>
-				<li>Ensure that reactor temperature does not exceed 5000K. In event of reactor temperature exceeding 5000K, see EMERGENCY COOLING PROCEDURE.</li>
+				<li>Ensure that reactor temperature does not exceed 5000K. In event of reactor temperature exceeding 5000K, either pump in more gas to cool the engine, or see EMERGENCY COOLING PROCEDURE.</li>
 				<li>In event of imminent and/or unavoidable delamination, see EJECTION PROCEDURE.</li>
 				</ol>
 				<br>
 				<h2>EMERGENCY COOLING PROCEDURE</h2>
 				<ol>
-				<li>Open Emergency Cooling Valve 1 and Emergency Cooling Valve 2.</li>
-				<li>When reactor temperature returns to safe operating levels, close Emergency Cooling Valve 1 and Emergency Cooling Valve 2.</li>
+				<li>Open the Emergency Cooling Valve and the TEG bypass valve.</li>
+				<li>When reactor temperature returns to safe operating levels, close the Emergency Cooling Valve and TEG Bypass Valve.</li>
 				<li>If reactor temperature does not return to safe operating levels, see EJECTION PROCEDURE.</li>
 				</ol>
 				<br>
@@ -424,22 +493,7 @@
 	icon_state ="bookHacking"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Hacking"
-
-/obj/item/weapon/book/manual/engineering_hacking/New()
-	..()
-	dat = {"
-
-		<html><head>
-		</head>
-
-		<body>
-		<iframe width='100%' height='97%' src="[config.wikiurl]Hacking&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
-		</body>
-
-		</html>
-
-		"}
-
+	url = "https://wiki.infinity-ss13.info/index.php?title=Руководство_по_Взлому"
 
 /obj/item/weapon/book/manual/engineering_singularity_safety
 	name = "Singularity Safety in Special Circumstances"
@@ -759,6 +813,114 @@
 
 				If you don't have any further issues, go out and do whatever is necessary.
 
+				</body>
+			</html>
+			"}
+
+/obj/item/weapon/book/manual/gravitygenerator
+	name = "Gravity Generator Operation Manual"
+	icon_state ="bookEngineering2"
+	author = "Gravity Generator CO."
+	title = "Gravity Generator Operation Manual"
+
+	dat = {"<html>
+				<head>
+				<style>
+				h1 {font-size: 21px; margin: 15px 0px 5px;}
+				h2 {font-size: 15px; margin: 15px 0px 5px;}
+				li {margin: 2px 0px 2px 15px;}
+				ul {margin: 5px; padding: 0px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				body {font-size: 13px; font-family: Verdana;}
+				</style>
+				</head>
+				<body>
+				<a name="Foreword"><h1>Gravity Generation for dummies!</h1></a>
+				Thank you for your purchase of the newest model of the SA Grade Gravity Generator! This operation manual will cover the basics required for safely operating and maintaing your gravity generation system.<br><br>
+				<h2><a name="Contents">Contents</a></h2>
+				<ol>
+					<li><a href="#Saftey">Basic Saftey</a></li>
+					<li><a href="#StartUp">Starting The System</a></li>
+					<li><a href="#ShutDown">Shutting Down The System</a></li>
+					<li><a href="#p8549">Procedure 8549 (Repairing Physical Damage)</a></li>
+					<li><a href="#MiscProcedures">Other Maintence Procedures</a></li>
+				</ol>
+				<br>
+
+				<a name="Saftey"><h2>Basic Saftey</h2><br></a>
+				Before starting any maintence protocols a basic set of safety instructions are to be followed to ensure safe operation of the system. They are as follows:
+				<ul>
+					<li>Gather all proper radiation equipment including: A Class A full body radiation suit, proper eye protection (such as meson goggles), and a geiger counter if available.</li>
+					<li>Announce over a station wide intercom that the gravity generator is going under maintence.</li>
+					<li>Ensure there are no gas or chemical leaks inside the chamber before entering.</li>
+					<li>Ensure all proper gear is gathered prior to entering which includes: radiation equipment, first aid equipment, and fire saftey equipment.<br></li>
+					<b>Note</b>:If there is a fire in the chamber read: <a href="#p8548">Procedure 8548</a>
+				</ul><br><br>
+
+				<a name="StartUp"><h2>Starting The System</h2><br></a>
+				<ul>
+					<li>Ensure all steps in basic saftey are completed.</li>
+					<li>Do a complete inspection of the system and insure there are no physical defects.</li>
+					<li>Locate the control panel on the gravity generator. This is located on the bottom most part of the generator.</li>
+					<li>Locate the main beaker switch and switch it to the ON position.</li>
+					<li>Wait for the charge to raise to 100 percent before proceeding.<br></li>
+					<li>Ensure that the gravity systems are working. If not, examine the generator for any physical damage.<br></li>
+					<b>Note</b>:If the startup procedure fails due to physical damage, read: <a href="#p8549">Procedure 8549</a>
+				</ul><br><br>
+				<a name="StartUp"><h2>Shutting Down The System</h2><br></a>
+				<ul>
+					<li>Ensure all steps in basic saftey are completed.</li><br>
+					<li>Locate the control panel on the gravity generator. This is located on the bottom most part of the generator.</li><br>
+					<li>Locate the main beaker switch and switch it to the OFF position.</li><br>
+					<li>Wait for the charge to drop to 0 percent before leaving.<br></li>
+					<li>Ensure that there is no longer garvity.</a><br></li>
+					<b>Note</b>:If the shutdown procedure fails, read: <a href="#p9142">Procedure 9142</a>
+				</ul><br><br>
+
+				<a name="p8549"><h2>Procedure 8549 (Repairing Physical Damage)</h2><br></a>
+				In the case of physical damage to your gravity generation systems, follow the following steps:<br>
+				<b>Note</b>:In the case of total destruction of the system, read:<a href="#p2482">Procedure 2482</a>
+				<ul>
+					<li>Ensure all steps in basic saftey are completed.</li><br>
+					<li>Follow: <a href="#ShutDown">Shutdown Procedure</a><br>
+					<li>Ensure the framework is properly secured with a screwdriver.<br></li>
+					<li>If the framework is damage, weld the damaged plating.<br></li>
+					<li>Apply plasteel plating to the welded damaged plating.<br></li>
+					<li>Secure the plasteel to the plating with a wrench.<br></li>
+					<li>Follow the <a href="#StartUp">Startup procedure</a></li>
+				</ul><br>
+				<a name="MiscProcedures"><h2>Other Procedures</h2><br></a>
+				The following procedures cover special cases that may come up. If your issue is not found below, please follow the shutdown procedure and contact Gravity Generator CO.<br>
+				<a name="p2482">Procedure 2482 (Total system destruction)<br></a>
+				<ul>
+					<li>Ensure all steps in basic saftey are completed.</li><br>
+					<li>If there are any remaining parts of the generator, ensure they are no longer powered.</li><br>
+					<li>Announce that the gravity generator is destroyed and gravity will be out.</a></li><br>
+					<li>Contact Gravity Generator CO for a replacement.</li><br>
+					<b>Note</b>:Due to the complexity of the generator systems, no on-site replacement can be done.
+				</ul><br><br>
+				<a name="p8548">Procedure 8548 (Fire in the chamber)<br></a>
+				In the event of a fire in the gravity generator chamber, complete the following steps.
+				<ul>
+					<li>Ensure all steps in basic saftey are completed.</li><br>
+					<li>Gather fire saftey equipment.</li><br>
+					<li>If the generator is on, enter the chamber and follow:<a href="#p9142">Procedure 9142</a></li><br>
+					<li>Extinguish the fire in a safe manner.</li><br>
+					<li>Regulate the pressure in the chamber and ensure no gas leaks or chemical leaks are present.<br></li>
+					<li>Follow <a href="#p8549">Procedure 8549</a><br></li>
+					<li>Follow <a href="#StartUp">Startup procedure</a></li>
+				</ul><br><br>
+				<a name="p9142">Procedure 9142 (Emergency Shutdown)<br></a>
+				The following procedure is only to be used in case of an emergency. Use of it otherwise could lead to injury, death, malfunction of the systems, an explosion, or a massive release of radiation.
+				<ul>
+					<li>Ensure all steps in basic saftey are completed.</li><br>
+					<li>Locate the control panel on the gravity generator. This is located on the bottom most part of the generator.</li><br>
+					<li>Pry open the electrical panel with a crowbar.</a></li><br>
+					<li>Press the red button.</li><br>
+					<li>Replace the panel with a crowbar.<br></li>
+					<li>If the generator does not shut down, immediately cut the power to the room to prevent the risk of death.</li><br>
+					<li>Follow the appropriate maintence procedure.</li>
+				</ul><br><br>
 				</body>
 			</html>
 			"}

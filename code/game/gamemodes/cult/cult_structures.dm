@@ -19,8 +19,9 @@
 	desc = "A floating crystal that hums with an unearthly energy."
 	icon_state = "pylon"
 	var/isbroken = 0
-	light_power = 2
-	light_range = 13
+	light_max_bright = 0.5
+	light_inner_range = 1
+	light_outer_range = 13
 	light_color = "#3e0000"
 	var/obj/item/wepon = null
 
@@ -72,9 +73,9 @@
 	name = "Desk"
 	desc = "A desk covered in arcane manuscripts and tomes in unknown languages. Looking at the text makes your skin crawl."
 	icon_state = "tomealtar"
-	light_color = "#ED9200"
-	light_power = 1
-	light_range = 3
+	light_color = "#ed9200"
+	light_outer_range = 3
+	light_color= "ed9200"
 
 //sprites for this no longer exist	-Pete
 //(they were stolen from another game anyway)
@@ -96,18 +97,8 @@
 	anchored = 1.0
 	var/spawnable = null
 
-/obj/effect/gateway/Bumped(mob/M as mob|obj)
-	spawn(0)
-		return
-	return
-
-/obj/effect/gateway/Crossed(AM as mob|obj)
-	spawn(0)
-		return
-	return
-
 /obj/effect/gateway/active
-	light_range=5
+	light_outer_range=5
 	light_color="#ff0000"
 	spawnable=list(
 		/mob/living/simple_animal/hostile/scarybat,
@@ -116,7 +107,7 @@
 	)
 
 /obj/effect/gateway/active/cult
-	light_range=5
+	light_outer_range=5
 	light_color="#ff0000"
 	spawnable=list(
 		/mob/living/simple_animal/hostile/scarybat/cult,
@@ -125,10 +116,14 @@
 	)
 
 /obj/effect/gateway/active/New()
-	spawn(rand(30,60) SECONDS)
-		var/t = pick(spawnable)
-		new t(src.loc)
-		qdel(src)
+	..()
+	addtimer(CALLBACK(src, .proc/create_and_delete), rand(30,60) SECONDS)
+
+
+/obj/effect/gateway/active/proc/create_and_delete()
+	var/t = pick(spawnable)
+	new t(src.loc)
+	qdel(src)
 
 /obj/effect/gateway/active/Crossed(var/atom/A)
 	if(!istype(A, /mob/living))
@@ -137,7 +132,7 @@
 	var/mob/living/M = A
 
 	if(M.stat != DEAD)
-		if(M.transforming)
+		if(M.HasMovementHandler(/datum/movement_handler/mob/transformation))
 			return
 		if(M.has_brain_worms())
 			return //Borer stuff - RR
@@ -145,8 +140,7 @@
 		if(iscultist(M)) return
 		if(!ishuman(M) && !isrobot(M)) return
 
-		M.transforming = 1
-		M.canmove = 0
+		M.AddMovementHandler(/datum/movement_handler/mob/transformation)
 		M.icon = null
 		M.overlays.len = 0
 		M.set_invisibility(101)

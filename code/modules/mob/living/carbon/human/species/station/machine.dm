@@ -8,10 +8,17 @@
 	generally self-owned after being 'born' into servitude; they are reliable and dedicated workers, albeit more than slightly \
 	inhuman in outlook and perspective."
 
-	icobase = 'icons/mob/human_races/r_machine.dmi'
-	deform = 'icons/mob/human_races/r_machine.dmi'
+	preview_icon = 'icons/mob/human_races/species/ipc/preview.dmi'
+
+	eye_icon_location = 'icons/mob/infinity_human_face.dmi'
+	eye_icon = "blank_eyes"
 
 	language = LANGUAGE_EAL
+	secondary_langs = list(LANGUAGE_SOL_COMMON, LANGUAGE_INDEPENDENT, "Gutter", LANGUAGE_SPACER, \
+		LANGUAGE_LUNAR, LANGUAGE_SIGN, LANGUAGE_UNATHI, LANGUAGE_SIIK_MAAS, \
+		LANGUAGE_RESOMI, LANGUAGE_SKRELLIAN, \
+		LANGUAGE_SIIK_TAJR, LANGUAGE_NABBER)
+	assisted_langs = list(LANGUAGE_SIIK_TAJR, LANGUAGE_NABBER)
 	unarmed_types = list(/datum/unarmed_attack/punch)
 	rarity_value = 2
 	num_alternate_languages = 2
@@ -38,9 +45,9 @@
 	body_temperature = null
 	passive_temp_gain = 5  // This should cause IPCs to stabilize at ~80 C in a 20 C environment.
 
-	species_flags = SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_POISON
+	species_flags = SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_EMBED
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_LACE
-	appearance_flags = HAS_UNDERWEAR //IPCs can wear undies too :(
+	appearance_flags = HAS_UNDERWEAR | HAS_EYE_COLOR //IPCs can wear undies too :(
 
 	blood_color = "#1f181f"
 	flesh_color = "#575757"
@@ -100,3 +107,69 @@
 /datum/species/machine/disfigure_msg(var/mob/living/carbon/human/H)
 	var/datum/gender/T = gender_datums[H.get_gender()]
 	return "<span class='danger'>[T.His] monitor is completely busted!</span>\n"
+
+/datum/species/machine/terminator
+	name = "Terminator"
+	name_plural = "Terminators"
+	blurb = "\[REDACTED\]"
+
+	preview_icon = 		'icons/mob/human_races/species/terminator/preview.dmi'
+
+	eye_icon_location = 'icons/mob/human_races/species/terminator/eyes.dmi'
+	eye_icon = "eyes_terminator"
+	has_floating_eyes = 1
+
+	spawn_flags = SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_LACE
+
+	unarmed_types = list(/datum/unarmed_attack/terminator)
+	rarity_value = 20
+	strength = STR_VHIGH
+	brute_mod = 0.3
+	burn_mod = 0.5
+	flash_mod = 0
+	siemens_coefficient = 0
+
+	show_ssd = "laying inert, its activation glyph dark"
+	death_sound = 'sound/effects/bang.ogg'
+	death_message = "collapses to the ground with a CLUNK, and begins to beep ominously."
+
+	has_limbs = list(
+		BP_CHEST =  list("path" = /obj/item/organ/external/chest/terminator),
+		BP_GROIN =  list("path" = /obj/item/organ/external/groin/terminator),
+		BP_HEAD =   list("path" = /obj/item/organ/external/head/terminator),
+		BP_L_ARM =  list("path" = /obj/item/organ/external/arm/terminator),
+		BP_R_ARM =  list("path" = /obj/item/organ/external/arm/right/terminator),
+		BP_L_LEG =  list("path" = /obj/item/organ/external/leg/terminator),
+		BP_R_LEG =  list("path" = /obj/item/organ/external/leg/right/terminator),
+		BP_L_HAND = list("path" = /obj/item/organ/external/hand/terminator),
+		BP_R_HAND = list("path" = /obj/item/organ/external/hand/right/terminator),
+		BP_L_FOOT = list("path" = /obj/item/organ/external/foot/terminator),
+		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right/terminator)
+		)
+
+	heat_level_1 = 1500
+	heat_level_2 = 2000
+	heat_level_3 = 5000
+
+	passive_temp_gain = 20
+
+	has_organ = list(
+		BP_POSIBRAIN = /obj/item/organ/internal/posibrain/terminator,
+		BP_OPTICS = /obj/item/organ/internal/eyes/optics/terminator
+		)
+
+	heat_discomfort_level = 2000
+	slowdown = 1
+
+/datum/species/machine/terminator/handle_death(var/mob/living/carbon/human/H)
+	..()
+	playsound(H.loc, 'sound/items/countdown.ogg', 125, 1)
+	spawn(15)
+		explosion(H.loc, -1, 1, 3)
+		H.gib()
+
+/datum/species/machine/terminator/handle_limbs_setup(var/mob/living/carbon/human/H)
+	for(var/obj/item/organ/external/E in H.organs)
+		if(E.robotic < ORGAN_ROBOT)
+			E.robotize("Terminator")
+	return

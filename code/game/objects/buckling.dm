@@ -40,7 +40,7 @@
 	M.buckled = src
 	M.facing_dir = null
 	M.set_dir(buckle_dir ? buckle_dir : dir)
-	M.update_canmove()
+	M.UpdateLyingBuckledAndVerbStatus()
 	M.update_floating()
 	buckled_mob = M
 
@@ -52,7 +52,7 @@
 		. = buckled_mob
 		buckled_mob.buckled = null
 		buckled_mob.anchored = initial(buckled_mob.anchored)
-		buckled_mob.update_canmove()
+		buckled_mob.UpdateLyingBuckledAndVerbStatus()
 		buckled_mob.update_floating()
 		buckled_mob = null
 
@@ -75,7 +75,7 @@
 	if(M == buckled_mob)
 		return 0
 	if(istype(M, /mob/living/carbon/slime))
-		to_chat(user, "<span class='warning'>The [M] is too squishy to buckle in.</span>")
+		to_chat(user, "<span class='warning'>\The [M] is too squishy to buckle in.</span>")
 		return 0
 
 	add_fingerprint(user)
@@ -89,13 +89,13 @@
 	if(.)
 		if(M == user)
 			M.visible_message(\
-				"<span class='notice'>[M.name] buckles themselves to [src].</span>",\
-				"<span class='notice'>You buckle yourself to [src].</span>",\
+				"<span class='notice'>\The [M.name] buckles themselves to \the [src].</span>",\
+				"<span class='notice'>You buckle yourself to \the [src].</span>",\
 				"<span class='notice'>You hear metal clanking.</span>")
 		else
 			M.visible_message(\
-				"<span class='danger'>[M.name] is buckled to [src] by [user.name]!</span>",\
-				"<span class='danger'>You are buckled to [src] by [user.name]!</span>",\
+				"<span class='danger'>\The [M.name] is buckled to \the [src] by \the [user.name]!</span>",\
+				"<span class='danger'>You are buckled to \the [src] by \the [user.name]!</span>",\
 				"<span class='notice'>You hear metal clanking.</span>")
 
 /obj/proc/user_unbuckle_mob(mob/user)
@@ -103,13 +103,13 @@
 	if(M)
 		if(M != user)
 			M.visible_message(\
-				"<span class='notice'>[M.name] was unbuckled by [user.name]!</span>",\
-				"<span class='notice'>You were unbuckled from [src] by [user.name].</span>",\
+				"<span class='notice'>\The [M.name] was unbuckled by \the [user.name]!</span>",\
+				"<span class='notice'>You were unbuckled from \the [src] by \the [user.name].</span>",\
 				"<span class='notice'>You hear metal clanking.</span>")
 		else
 			M.visible_message(\
-				"<span class='notice'>[M.name] unbuckled themselves!</span>",\
-				"<span class='notice'>You unbuckle yourself from [src].</span>",\
+				"<span class='notice'>\The [M.name] unbuckled themselves!</span>",\
+				"<span class='notice'>You unbuckle yourself from \the [src].</span>",\
 				"<span class='notice'>You hear metal clanking.</span>")
 		add_fingerprint(user)
 	return M

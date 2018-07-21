@@ -10,6 +10,8 @@
 	var/heal_brute = 0
 	var/heal_burn = 0
 	var/animal_heal = 3
+	var/apply_sounds
+	var/used = 0
 
 /obj/item/stack/medical/attack(mob/living/carbon/M as mob, mob/user as mob)
 	if (!istype(M))
@@ -61,6 +63,29 @@
 	icon_state = "brutepack"
 	origin_tech = list(TECH_BIO = 1)
 	animal_heal = 5
+	apply_sounds = list('sound/effects/rip1.ogg','sound/effects/rip2.ogg')
+	amount = 10
+
+/obj/item/stack/medical/bruise_pack/proc/apply_pack(obj/item/organ/external/affecting, datum/wound/W, mob/living/carbon/human/H, mob/user)
+	if(W.bandaged)
+		return
+	if(used == amount)
+		return
+	if(!do_mob(user, H, W.damage/5))
+		to_chat(user, "<span class='notice'>You must stand still to bandage wounds.</span>")
+		return
+	if (W.current_stage <= W.max_bleeding_stage)
+		user.visible_message("<span class='notice'>\The [user] bandages \a [W.desc] on [H]'s [affecting.name].</span>", \
+			                        "<span class='notice'>You bandage \a [W.desc] on [H]'s [affecting.name].</span>" )
+	else if (W.damage_type == BRUISE)
+		user.visible_message("<span class='notice'>\The [user] places a bruise patch over \a [W.desc] on [H]'s [affecting.name].</span>", \
+		                            "<span class='notice'>You place a bruise patch over \a [W.desc] on [H]'s [affecting.name].</span>" )
+	else
+		user.visible_message("<span class='notice'>\The [user] places a bandaid over \a [W.desc] on [H]'s [affecting.name].</span>", \
+		                            "<span class='notice'>You place a bandaid over \a [W.desc] on [H]'s [affecting.name].</span>" )
+	W.bandage()
+	playsound(src, pick(apply_sounds), 25)
+	used++
 
 /obj/item/stack/medical/bruise_pack/attack(mob/living/carbon/M as mob, mob/user as mob)
 	if(..())
@@ -76,28 +101,13 @@
 		else
 			user.visible_message("<span class='notice'>\The [user] starts treating [M]'s [affecting.name].</span>", \
 					             "<span class='notice'>You start treating [M]'s [affecting.name].</span>" )
-			var/used = 0
+			used = 0
 			for (var/datum/wound/W in affecting.wounds)
-				if(W.bandaged)
-					continue
-				if(used == amount)
-					break
-				if(!do_mob(user, M, W.damage/5))
-					to_chat(user, "<span class='notice'>You must stand still to bandage wounds.</span>")
-					break
-
-				if (W.current_stage <= W.max_bleeding_stage)
-					user.visible_message("<span class='notice'>\The [user] bandages \a [W.desc] on [M]'s [affecting.name].</span>", \
-					                              "<span class='notice'>You bandage \a [W.desc] on [M]'s [affecting.name].</span>" )
-					//H.add_side_effect("Itch")
-				else if (W.damage_type == BRUISE)
-					user.visible_message("<span class='notice'>\The [user] places a bruise patch over \a [W.desc] on [M]'s [affecting.name].</span>", \
-					                              "<span class='notice'>You place a bruise patch over \a [W.desc] on [M]'s [affecting.name].</span>" )
-				else
-					user.visible_message("<span class='notice'>\The [user] places a bandaid over \a [W.desc] on [M]'s [affecting.name].</span>", \
-					                              "<span class='notice'>You place a bandaid over \a [W.desc] on [M]'s [affecting.name].</span>" )
-				W.bandage()
-				used++
+				if (istype(W, /datum/wound/cut) && (used != amount))
+					apply_pack(affecting, W, H, user)
+			for (var/datum/wound/W in affecting.wounds)
+				if (used != amount)
+					apply_pack(affecting, W, H, user)
 			affecting.update_damages()
 			if(used == amount)
 				if(affecting.is_bandaged())
@@ -115,6 +125,7 @@
 	heal_burn = 1
 	origin_tech = list(TECH_BIO = 1)
 	animal_heal = 4
+	apply_sounds = list('sound/effects/ointment.ogg')
 
 /obj/item/stack/medical/ointment/attack(mob/living/carbon/M as mob, mob/user as mob)
 	if(..())
@@ -130,6 +141,7 @@
 		else
 			user.visible_message("<span class='notice'>\The [user] starts salving wounds on [M]'s [affecting.name].</span>", \
 					             "<span class='notice'>You start salving the wounds on [M]'s [affecting.name].</span>" )
+			playsound(src, pick(apply_sounds), 25)
 			if(!do_mob(user, M, 10))
 				to_chat(user, "<span class='notice'>You must stand still to salve wounds.</span>")
 				return 1
@@ -137,6 +149,7 @@
 			                         "<span class='notice'>You salved wounds on [M]'s [affecting.name].</span>" )
 			use(1)
 			affecting.salve()
+			affecting.disinfect()
 
 /obj/item/stack/medical/advanced/bruise_pack
 	name = "advanced trauma kit"
@@ -146,6 +159,8 @@
 	heal_brute = 0
 	origin_tech = list(TECH_BIO = 1)
 	animal_heal = 12
+	apply_sounds = list('sound/effects/rip1.ogg','sound/effects/rip2.ogg','sound/effects/tape.ogg')
+	amount = 10
 
 /obj/item/stack/medical/advanced/bruise_pack/attack(mob/living/carbon/M as mob, mob/user as mob)
 	if(..())
@@ -178,6 +193,7 @@
 				else
 					user.visible_message("<span class='notice'>\The [user] smears some bioglue over \a [W.desc] on [M]'s [affecting.name].</span>", \
 					                              "<span class='notice'>You smear some bioglue over \a [W.desc] on [M]'s [affecting.name].</span>" )
+				playsound(src, pick(apply_sounds), 25)
 				W.bandage()
 				W.disinfect()
 				W.heal_damage(heal_brute)
@@ -195,9 +211,10 @@
 	singular_name = "advanced burn kit"
 	desc = "An advanced treatment kit for severe burns."
 	icon_state = "burnkit"
-	heal_burn = 0
+	heal_burn = 5
 	origin_tech = list(TECH_BIO = 1)
 	animal_heal = 7
+	apply_sounds = list('sound/effects/ointment.ogg')
 
 
 /obj/item/stack/medical/advanced/ointment/attack(mob/living/carbon/M as mob, mob/user as mob)
@@ -214,6 +231,7 @@
 		else
 			user.visible_message("<span class='notice'>\The [user] starts salving wounds on [M]'s [affecting.name].</span>", \
 					             "<span class='notice'>You start salving the wounds on [M]'s [affecting.name].</span>" )
+			playsound(src, pick(apply_sounds), 25)
 			if(!do_mob(user, M, 10))
 				to_chat(user, "<span class='notice'>You must stand still to salve wounds.</span>")
 				return 1
@@ -222,6 +240,7 @@
 			affecting.heal_damage(0,heal_burn)
 			use(1)
 			affecting.salve()
+			affecting.disinfect()
 
 /obj/item/stack/medical/splint
 	name = "medical splints"
@@ -255,11 +274,11 @@
 				to_chat(user, "<span class='danger'>You can't apply a splint to the arm you're using!</span>")
 				return
 			user.visible_message("<span class='danger'>[user] starts to apply \the [src] to their [limb].</span>", "<span class='danger'>You start to apply \the [src] to your [limb].</span>", "<span class='danger'>You hear something being wrapped.</span>")
-		if(do_after(user, 50, M))
-			if(M == user && prob(75))
+		if(user.do_skilled(5 SECONDS, SKILL_MEDICAL, M))
+			if((M == user && prob(75)) || prob(user.skill_fail_chance(SKILL_MEDICAL,50, SKILL_ADEPT)))
 				user.visible_message("<span class='danger'>\The [user] fumbles [src].</span>", "<span class='danger'>You fumble [src].</span>", "<span class='danger'>You hear something being wrapped.</span>")
 				return
-			var/obj/item/stack/medical/splint/S = split(1)
+			var/obj/item/stack/medical/splint/S = split(1, TRUE)
 			if(S)
 				if(affecting.apply_splint(S))
 					S.forceMove(affecting)

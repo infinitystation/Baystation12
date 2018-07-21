@@ -4,7 +4,7 @@
 	set invisibility = 0
 	set background = 1
 
-	if (transforming)	return
+	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))	return
 	if(!loc)			return
 
 	..()
@@ -18,7 +18,10 @@
 	update_icons()
 
 /mob/living/carbon/alien/proc/can_progress()
-	return 1
+	if(src.auto_progress == 1)
+		return 1
+	else
+		return 0
 
 
 /mob/living/carbon/alien/handle_mutations_and_radiation()

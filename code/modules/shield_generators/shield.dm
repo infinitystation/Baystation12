@@ -1,23 +1,9 @@
-/obj/effect/shield_impact
-	name = "shield impact"
-	icon = 'icons/obj/machines/shielding.dmi'
-	icon_state = "shield_impact"
-	anchored = 1
-	plane = ABOVE_HUMAN_PLANE
-	layer = ABOVE_HUMAN_LAYER
-	density = 0
-
-
-/obj/effect/shield_impact/New()
-	spawn(2 SECONDS)
-		qdel(src)
-
-
 /obj/effect/shield
 	name = "energy shield"
 	desc = "An impenetrable field of energy, capable of blocking anything as long as it's active."
 	icon = 'icons/obj/machines/shielding.dmi'
 	icon_state = "shield_normal"
+	alpha = 100
 	anchored = 1
 	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER
@@ -142,7 +128,8 @@
 
 	damage = round(damage)
 
-	new/obj/effect/shield_impact(get_turf(src))
+	new /obj/effect/temporary(get_turf(src), 2 SECONDS,'icons/obj/machines/shielding.dmi',"shield_impact")
+	impact_effect(round(abs(damage * 2)))
 
 	var/list/field_segments = gen.field_segments
 	switch(gen.take_damage(damage, damtype))
@@ -237,6 +224,7 @@
 	if(!gen)
 		qdel(src)
 		return 0
+	impact_effect(2)
 	mover.shield_impact(src)
 	return ..()
 
@@ -264,6 +252,8 @@
 	else
 		explosion_resistance = 0
 
+/obj/effect/shield/get_explosion_resistance()
+	return explosion_resistance
 
 // Shield collision checks below
 
@@ -315,3 +305,25 @@
 	visible_message("<span class='danger'>\The [src] breaks into dust!</span>")
 	make_debris()
 	qdel(src)
+
+// Small visual effect, makes the shield tiles brighten up by becoming more opaque for a moment, and spreads to nearby shields.
+/obj/effect/shield/proc/impact_effect(var/i, var/list/affected_shields = list())
+	i = between(1, i, 10)
+	alpha = 255
+	animate(src, alpha = initial(alpha), time = 1 SECOND)
+	affected_shields |= src
+	i--
+	if(i)
+		addtimer(CALLBACK(src, .proc/spread_impact_effect, i, affected_shields), 2)
+
+/obj/effect/shield/proc/spread_impact_effect(var/i, var/list/affected_shields = list())
+	for(var/direction in GLOB.cardinal)
+		var/turf/T = get_step(src, direction)
+		if(T) // Incase we somehow stepped off the map.
+			for(var/obj/effect/shield/F in T)
+				if(!(F in affected_shields))
+					F.impact_effect(i, affected_shields) // Spread the effect to them
+
+/obj/effect/shield/attack_hand(var/mob/living/user)
+	impact_effect(3) // Harmless, but still produces the 'impact' effect.
+	..()

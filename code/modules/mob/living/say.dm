@@ -70,6 +70,23 @@ var/list/department_radio_keys = list(
 	  ":З" = "AI Private",	".З" = "AI Private",
 	  ":Я" = "Entertainment",".Я" = "Entertainment",
 	  ":Н" = "Exploration",		".Н" = "Exploration",
+
+	  /*
+	  //kinda localization -- rastaf0
+	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
+	  ":ГЄ" = "right ear",	".ГЄ" = "right ear",
+	  ":Г¤" = "left ear",	".Г¤" = "left ear",
+	  ":Гё" = "intercom",	".Гё" = "intercom",
+	  ":Г°" = "department",	".Г°" = "department",
+	  ":Г±" = "Command",		".Г±" = "Command",
+	  ":ГІ" = "Science",		".ГІ" = "Science",
+	  ":Гј" = "Medical",		".Гј" = "Medical",
+	  ":Гі" = "Engineering",	".Гі" = "Engineering",
+	  ":Г»" = "Security",	".Г»" = "Security",
+	  ":Г¶" = "whisper",		".Г¶" = "whisper",
+	  ":ГҐ" = "Mercenary",	".ГҐ" = "Mercenary",
+	  ":Г©" = "Supply",		".Г©" = "Supply",
+	  */
 )
 
 
@@ -124,13 +141,17 @@ proc/get_radio_key_from_channel(var/channel)
 		verb = pick("yells","roars","hollers")
 		message_data[3] = 0
 		. = 1
-	if(slurring)
+	else if(slurring)
 		message = slur(message)
 		verb = pick("slobbers","slurs")
 		. = 1
-	if(stuttering)
-		message = stutter(message)
+	else if(stuttering)
+		message = NewStutter(message)
 		verb = pick("stammers","stutters")
+		. = 1
+	else if(has_chem_effect(CE_SQUEAKY, 1))
+		message = "<font face = 'Comic Sans MS'>[message]</font>"
+		verb = "squeaks"
 		. = 1
 
 	message_data[1] = message
@@ -150,12 +171,10 @@ proc/get_radio_key_from_channel(var/channel)
 	return returns
 
 /mob/living/proc/get_speech_ending(verb, var/ending)
-	if(copytext(ending, length(ending) - 1) == "!!")
-		verb = pick("кричит", "вопит")
-	else if(ending == "!")
-		verb = "восклицает"
-	else if(ending == "?")
-		verb = "спрашивает"
+	if(ending=="!")
+		return pick("exclaims","shouts","yells")
+	if(ending=="?")
+		return "asks"
 	return verb
 
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="", whispering)
@@ -201,7 +220,7 @@ proc/get_radio_key_from_channel(var/channel)
 		speaking.broadcast(src,trim(message))
 		return 1
 
-	if(is_muzzled())
+	if((is_muzzled()) && !(speaking && (speaking.flags & SIGNLANG)))
 		to_chat(src, "<span class='danger'>You're muzzled and cannot speak!</span>")
 		return
 

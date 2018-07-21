@@ -6,6 +6,7 @@ var/list/admin_verbs_default = list(
 	/client/proc/getserverlog,			//allows us to fetch server logs (diary) for other days,
 	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
 //	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
+//	/client/proc/watched_variables,
 //	/client/proc/debug_global_variables,//as above but for global variables,
 //	/client/proc/check_antagonists,		//shows all antags,
 //	/client/proc/deadchat				//toggles deadchat on/off,
@@ -75,7 +76,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/cmd_admin_rejuvenate,
 	/client/proc/toggleghostwriters,
 	/client/proc/toggledrones,
-	/datum/admins/proc/show_skills,
+	///datum/admins/proc/show_skills,
 	/client/proc/check_customitem_activity,
 	/client/proc/man_up,
 	/client/proc/global_man_up,
@@ -134,7 +135,9 @@ var/list/admin_verbs_fun = list(
 	/datum/admins/proc/call_supply_drop,
 	/datum/admins/proc/call_drop_pod,
 	/client/proc/create_dungeon,
-	/datum/admins/proc/ai_hologram_set
+	/datum/admins/proc/ai_hologram_set,
+	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
+	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
 	)
 
 var/list/admin_verbs_spawn = list(
@@ -174,7 +177,6 @@ var/list/admin_verbs_server = list(
 	/client/proc/nanomapgen_DumpImage,
 	/client/proc/adminchangebuild,
 	/client/proc/update_server,
-	/client/proc/update_server_round_end,
 	/client/proc/cmd_toggle_admin_help,
 	/client/proc/observe_delay
 	)
@@ -313,12 +315,13 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/enable_debug_verbs,
 	/client/proc/roll_dices,
 	/proc/possess,
-	/proc/release
+	/proc/release,
 	)
 var/list/admin_verbs_mod = list(
 	/client/proc/cmd_admin_pm_context,	// right-click adminPM interface,
 	/client/proc/cmd_admin_pm_panel,	// admin-pm list,
 	/client/proc/debug_variables,		// allows us to -see- the variables of any instance in the game.,
+	/client/proc/watched_variables,
 	/client/proc/debug_global_variables,// as above but for global variables,
 	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,			// allows us to ghost/reenter body at will,
@@ -326,7 +329,7 @@ var/list/admin_verbs_mod = list(
 	/datum/admins/proc/show_player_info,
 	/client/proc/player_panel_new,
 	/client/proc/dsay,
-	/datum/admins/proc/show_skills,
+	///datum/admins/proc/show_skills,
 	/datum/admins/proc/show_player_panel,
 	/client/proc/check_antagonists,
 	/client/proc/cmd_admin_subtle_message, // send an message to somebody as a 'voice in their head',
@@ -341,6 +344,7 @@ var/list/admin_verbs_mentor = list(
 //	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,
 	/client/proc/cmd_mod_say,
+	/datum/admins/proc/show_skills
 //	/datum/admins/proc/show_player_info,
 //	/client/proc/dsay,
 //	/client/proc/cmd_admin_subtle_message

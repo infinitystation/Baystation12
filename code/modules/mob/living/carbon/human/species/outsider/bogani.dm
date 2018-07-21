@@ -8,15 +8,17 @@
 	default_language = SPECIES_BOGANI
 	unarmed_types = list(/datum/unarmed_attack/punch)
 	blurb = "An unknown species of Slavers and Conquerors from distant stars yet discovered by the known species, the Bogani are a force to be reckoned with."
-	blood_color = "#FFF5EE"
+	blood_color = "#fff5ee"
 
-	darksight = 7
+	darksight_range = 7
+	darksight_tint = DARKTINT_GOOD
 
 	total_health = 150
 	blood_volume = 840
 
-	brute_mod = 0.5                    // Physical damage multiplier.
-	burn_mod = 0.5                    // Burn damage multiplier.
+	natural_armour_values = list(melee = 20, bullet = 10, laser = 5, energy = 15, bomb = 30, bio = 25, rad = 75)
+	brute_mod = 0.8                    // Physical damage multiplier.
+	burn_mod = 0.7                    // Burn damage multiplier.
 	oxy_mod = 1.8                    // Oxyloss modifier
 	toxins_mod = 1.3                    // Toxloss modifier
 	radiation_mod = 0.75                    // Radiation modifier
@@ -59,9 +61,11 @@
 	default_language = SPECIES_BOGANI
 	unarmed_types = list(/datum/unarmed_attack/punch)
 	blurb = "An unknown species of Slavers and Conquerors from distant stars yet discovered by the known species, the Bogani are a force to be reckoned with."
-	blood_color = "#FFF5EE"
+	blood_color = "#fff5ee"
 
-	darksight = 5
+	darksight_range = 5
+	darksight_tint = DARKTINT_MODERATE
+
 
 	total_health = 90
 	blood_volume = 540

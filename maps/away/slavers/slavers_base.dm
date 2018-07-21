@@ -159,6 +159,7 @@
 	harm_intent_damage = 5
 	melee_damage_lower = 30
 	melee_damage_upper = 30
+	can_escape = 1
 	unsuitable_atoms_damage = 15
 	var/corpse = /obj/effect/landmark/corpse/abolitionist
 	var/weapon = /obj/item/weapon/gun/energy/laser

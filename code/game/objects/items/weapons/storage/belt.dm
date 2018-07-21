@@ -5,6 +5,7 @@
 	icon_state = "utilitybelt"
 	item_state = "utility"
 	storage_slots = 7
+	item_flags = ITEM_FLAG_IS_BELT
 	max_w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BELT
 	attack_verb = list("whipped", "lashed", "disciplined")
@@ -155,12 +156,13 @@
 		/obj/item/ammo_magazine,
 		/obj/item/weapon/reagent_containers/food/snacks/donut/,
 		/obj/item/weapon/melee/baton,
+		/obj/item/weapon/gun/energy/gun/small,
 		/obj/item/weapon/gun/energy/taser,
 		/obj/item/weapon/gun/energy/stunrevolver,
 		/obj/item/weapon/flame/lighter,
 		/obj/item/clothing/glasses/hud/security,
 		/obj/item/device/flashlight,
-		/obj/item/device/pda,
+		/obj/item/modular_computer/pda,
 		/obj/item/device/radio/headset,
 		/obj/item/device/hailer,
 		/obj/item/device/megaphone,
@@ -170,6 +172,30 @@
 		/obj/item/device/holowarrant,
 		/obj/item/weapon/magnetic_ammo
 		)
+
+/obj/item/weapon/storage/belt/forensic
+	name = "forensic belt"
+	desc = "Can hold forensic gear like fingerprint powder and luminol."
+	icon_state = "swatbelt"
+	item_state = "swatbelt"
+	can_hold = list(
+		/obj/item/weapon/reagent_containers/spray/luminol,
+		/obj/item/device/uv_light,
+		/obj/item/weapon/reagent_containers/syringe,
+		/obj/item/weapon/forensics/swab,
+		/obj/item/weapon/sample/print,
+		/obj/item/weapon/sample/fibers,
+		/obj/item/device/taperecorder,
+		/obj/item/device/tape,
+		/obj/item/clothing/gloves/latex,
+		/obj/item/clothing/gloves/forensic,
+		/obj/item/weapon/folder,
+		/obj/item/weapon/paper,
+		/obj/item/weapon/forensics/sample_kit
+		)
+
+/obj/item/weapon/storage/belt/security/marshal
+	storage_slots = 7
 
 /obj/item/weapon/storage/belt/security/marshal/New()
 	..()
@@ -190,6 +216,15 @@
 	new /obj/item/ammo_magazine/mc9mmt(src)
 	new /obj/item/ammo_magazine/mc9mmt(src)
 	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/weapon/gun/projectile/sec/lethal(src)
+	new /obj/item/ammo_magazine/c45m(src)
+
+/obj/item/weapon/storage/belt/security/troops_sts/New()
+	..()
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/ammo_magazine/c556(src)
 	new /obj/item/weapon/gun/projectile/sec/lethal(src)
 	new /obj/item/ammo_magazine/c45m(src)
 

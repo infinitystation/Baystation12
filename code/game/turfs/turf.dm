@@ -32,8 +32,8 @@
 /turf/Initialize()
 	. = ..()
 	update_icon(1)
-	regenerate_ao()
-*/
+	regenerate_ao()*/
+
 /turf/New()
 	..()
 	for(var/atom/movable/AM as mob|obj in src)
@@ -58,22 +58,16 @@
 	return 1
 
 /turf/attack_hand(mob/user)
-	if(!(user.canmove) || user.restrained() || !(user.pulling))
+	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+
+	if(user.restrained())
 		return 0
-	if(user.pulling.anchored || !isturf(user.pulling.loc))
+	if(isnull(user.pulling) || user.pulling.anchored || !isturf(user.pulling.loc))
 		return 0
 	if(user.pulling.loc != user.loc && get_dist(user, user.pulling) > 1)
 		return 0
-
-	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
-	if(ismob(user.pulling))
-		var/mob/M = user.pulling
-		var/atom/movable/t = M.pulling
-		M.stop_pulling()
-		step(user.pulling, get_dir(user.pulling.loc, src))
-		M.start_pulling(t)
-	else
-		step(user.pulling, get_dir(user.pulling.loc, src))
+	if(user.pulling)
+		do_pull_click(user, src)
 	return 1
 
 turf/attackby(obj/item/weapon/W as obj, mob/user as mob)
@@ -83,24 +77,6 @@ turf/attackby(obj/item/weapon/W as obj, mob/user as mob)
 			S.gather_all(src, user)
 	return ..()
 
-/turf/MouseDrop_T(atom/movable/O as mob|obj, mob/user as mob)
-	var/turf/T = get_turf(user)
-	var/area/A = T.loc
-	if((istype(A) && !(A.has_gravity)) || (istype(T,/turf/space)))
-		return
-	if(istype(O, /obj/screen))
-		return
-	if((!(istype(O, /atom/movable)) || O.anchored || !Adjacent(user) || !Adjacent(O) || !user.Adjacent(O)))
-		return
-	if(!isturf(O.loc) || !isturf(user.loc))
-		return
-	if(isanimal(user) && O != user)
-		return
-	for (var/obj/item/grab/G in user.grabbed_by)
-		if(G.stop_move())
-			return
-	if (do_after(user, 25 + (5 * user.weakened), incapacitation_flags = ~INCAPACITATION_FORCELYING))
-		step_towards(O, src)
 
 /turf/Enter(atom/movable/mover as mob|obj, atom/forget as mob|obj|turf|area)
 
@@ -235,9 +211,6 @@ var/const/enterloopsanity = 100
 			if(!LinkBlocked(src, t) && !TurfBlockedNonWindow(t))
 				L.Add(t)
 	return L
-
-/turf/proc/process()
-	return PROCESS_KILL
 
 /turf/proc/contains_dense_objects()
 	if(density)

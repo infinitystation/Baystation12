@@ -20,15 +20,6 @@
 	var/obj/screen/using
 	var/obj/screen/inventory/inv_box
 
-	mymob.fade = new /obj/screen()
-	mymob.fade.icon = 'icons/mob/fullscreen2.dmi'
-	mymob.fade.icon_state = "fade"
-	mymob.fade.name = " "
-	mymob.fade.screen_loc = "WEST,SOUTH to EAST,NORTH"
-	mymob.fade.plane = BASE_AREA_LAYER
-	mymob.fade.mouse_opacity = 0
-	hud_elements |= mymob.fade
-
 	// Draw the various inventory equipment slots.
 	var/has_hidden_gear
 	for(var/gear_slot in hud_data.gear)
@@ -76,7 +67,7 @@
 		using = new /obj/screen()
 		using.SetName("mov_intent")
 		using.icon = ui_style
-		using.icon_state = (mymob.m_intent == "run" ? "running" : "walking")
+		using.icon_state = (mymob.m_intent == M_RUN ? "running" : "walking")
 		using.screen_loc = ui_movi
 		using.color = ui_color
 		using.alpha = ui_alpha
@@ -254,17 +245,8 @@
 		mymob.nutrition_icon.screen_loc = ui_nutrition
 		hud_elements |= mymob.nutrition_icon
 
-	/*
-	mymob.noise1 = new /obj/screen()
-	mymob.noise1.icon = 'icons/mob/noise.dmi'
-	mymob.noise1.icon_state = pick("1", "2", "3")
-	mymob.noise1.name = " "
-	mymob.noise1.screen_loc = "1,1 to 15,15"
-	mymob.noise1.mouse_opacity = 0
-	hud_elements |= mymob.noise1 */
-
 	mymob.fixeye = new /obj/screen()
-	mymob.fixeye.icon = 'icons/mob/screen/fixed_eye.dmi'
+	mymob.fixeye.icon = 'icons/mob/screen/infinity.dmi'
 	mymob.fixeye.icon_state = "fixeye"
 	mymob.fixeye.name = "fixeye"
 	mymob.fixeye.screen_loc = ui_fixeye

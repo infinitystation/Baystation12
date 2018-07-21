@@ -60,10 +60,10 @@ var/const/VENDING_WIRE_IDSCAN = 8
 		if(VENDING_WIRE_THROW)
 			sf = "A"
 		if(VENDING_WIRE_CONTRABAND)
-			sf = "D"
-		if(VENDING_WIRE_ELECTRIFY)
 			sf = "B"
+		if(VENDING_WIRE_ELECTRIFY)
+			sf = "C"
 		if(VENDING_WIRE_IDSCAN)
-			sf = "E"
+			sf = "D"
 
 	return sf

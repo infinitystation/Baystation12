@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/heavysniper
-	name = "anti-materiel rifle"
+	name = "PTR-7 anti-materiel rifle"
 	desc = "A portable anti-armour rifle fitted with a scope, the HI PTR-7 Rifle was originally designed to used against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease. Fires armor piercing 14.5mm shells."
 	icon_state = "heavysniper"
 	item_state = "heavysniper" //sort of placeholder
@@ -18,6 +18,7 @@
 	scoped_accuracy = 5 //increased accuracy over the LWAP because only one shot
 	var/bolt_open = 0
 	wielded_item_state = "heavysniper-wielded" //sort of placeholder
+	load_sound = 'sound/weapons/guns/interaction/rifle_load.ogg'
 
 /obj/item/weapon/gun/projectile/heavysniper/update_icon()
 	..()
@@ -26,19 +27,32 @@
 	else
 		icon_state = "heavysniper"
 
+/obj/item/weapon/gun/projectile/heavysniper/handle_post_fire(mob/user, atom/target, var/pointblank=0, var/reflex=0)
+	..()
+	if(user && user.skill_check(SKILL_WEAPONS, SKILL_PROF))
+		to_chat(user, "<span class='notice'>You work the bolt open with a reflexive motion, ejecting [chambered]!</span>")
+		unload_shell()
+
+/obj/item/weapon/gun/projectile/heavysniper/proc/unload_shell()
+	if(chambered)
+		if(!bolt_open)
+			playsound(src.loc, 'sound/weapons/guns/interaction/rifle_boltback.ogg', 50, 1)
+			bolt_open = 1
+		chambered.dropInto(src.loc)
+		loaded -= chambered
+		chambered = null
+
 /obj/item/weapon/gun/projectile/heavysniper/attack_self(mob/user as mob)
-	playsound(src.loc, 'sound/weapons/flipblade.ogg', 50, 1)
 	bolt_open = !bolt_open
 	if(bolt_open)
 		if(chambered)
 			to_chat(user, "<span class='notice'>You work the bolt open, ejecting [chambered]!</span>")
-			chambered.loc = get_turf(src)
-			loaded -= chambered
-			chambered = null
+			unload_shell()
 		else
 			to_chat(user, "<span class='notice'>You work the bolt open.</span>")
 	else
 		to_chat(user, "<span class='notice'>You work the bolt closed.</span>")
+		playsound(src.loc, 'sound/weapons/guns/interaction/rifle_boltforward.ogg', 50, 1)
 		bolt_open = 0
 	add_fingerprint(user)
 	update_icon()

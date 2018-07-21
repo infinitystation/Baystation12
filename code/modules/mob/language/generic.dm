@@ -22,17 +22,18 @@
 /datum/language/common
 	name = LANGUAGE_GALCOM
 	desc = "The common galactic tongue."
-	speech_verb = "говорит"
-	whisper_verb = "шепчет"
+	speech_verb = "says"
+	whisper_verb = "whispers"
 	key = "0"
 	flags = RESTRICTED
 	syllables = list("blah","blah","blah","bleh","meh","neh","nah","wah")
+	shorthand = "GC"
 
 //TODO flag certain languages to use the mob-type specific say_quote and then get rid of these.
 /datum/language/common/get_spoken_verb(var/msg_end)
 	switch(msg_end)
 		if("!")
-			return pick("восклицает","кричит","вопит") //TODO: make the basic proc handle lists of verbs.
+			return pick("exclaims","shouts","yells") //TODO: make the basic proc handle lists of verbs.
 		if("?")
 			return ask_verb
 	return speech_verb
@@ -53,6 +54,7 @@
 					 "voluptate", "velit", "esse", "cillum", "dolore", "eu", "fugiat", "nulla",
 					 "pariatur", "excepteur", "sint", "occaecat", "cupidatat", "non", "proident", "sunt",
 					 "in", "culpa", "qui", "officia", "deserunt", "mollit", "anim", "id", "est", "laborum")
+	shorthand = "SL"
 
 // Criminal language.
 /datum/language/gutter
@@ -62,6 +64,7 @@
 	colour = "rough"
 	key = "3"
 	syllables = list ("gra","ba","ba","breh","bra","rah","dur","ra","ro","gro","go","ber","bar","geh","heh", "gra")
+	shorthand = "GT"
 
 /datum/language/sign
 	name = LANGUAGE_SIGN
@@ -70,3 +73,4 @@
 	colour = "say_quote"
 	key = "s"
 	flags = SIGNLANG | NO_STUTTER | NONVERBAL
+	shorthand = "HS"

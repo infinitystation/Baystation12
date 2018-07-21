@@ -25,7 +25,7 @@
 	if(!hasorgans(target))
 		return 0
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
-	return affected && (affected.status & ORGAN_TENDON_CUT) && affected.open() >= SURGERY_RETRACTED
+	return affected && (affected.status & ORGAN_TENDON_CUT) && affected.how_open() >= SURGERY_RETRACTED
 
 /datum/surgery_step/fix_tendon/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
@@ -70,7 +70,7 @@
 		return 0
 
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
-	return affected && (affected.status & ORGAN_ARTERY_CUT) && affected.open() >= SURGERY_RETRACTED
+	return affected && (affected.status & ORGAN_ARTERY_CUT) && affected.how_open() >= SURGERY_RETRACTED
 
 /datum/surgery_step/fix_vein/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
@@ -106,6 +106,7 @@
 	priority = 3
 	can_infect = 0
 	blood_level = 0
+	core_skill = SKILL_EVA
 
 	min_duration = 120
 	max_duration = 180
@@ -205,6 +206,7 @@
 	if (trans > 0)
 		user.visible_message("<span class='notice'>[user] rubs [target]'s [affected.name] down with \the [tool]'s contents</span>.", \
 			"<span class='notice'>You rub [target]'s [affected.name] down with \the [tool]'s contents.</span>")
+	affected.disinfect()
 	qdel(temp_reagents)
 	qdel(temp_holder)
 

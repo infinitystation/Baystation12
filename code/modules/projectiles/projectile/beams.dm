@@ -10,27 +10,24 @@
 	eyeblur = 4
 	hitscan = 1
 	invisibility = 101	//beam projectiles are invisible as they are rendered by the effect engine
+	penetration_modifier = 0.3
 
 	muzzle_type = /obj/effect/projectile/laser/muzzle
 	tracer_type = /obj/effect/projectile/laser/tracer
 	impact_type = /obj/effect/projectile/laser/impact
 
 /obj/item/projectile/beam/practice
-	name = "laser"
-	icon_state = "laser"
 	fire_sound = 'sound/weapons/Taser.ogg'
-	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GLASS | PASS_FLAG_GRILLE
 	damage = 2
-	damage_type = BURN
-	check_armour = "laser"
 	eyeblur = 2
 
 /obj/item/projectile/beam/smalllaser
 	damage = 25
+	armor_penetration = 10
 
 /obj/item/projectile/beam/midlaser
 	damage = 50
-	armor_penetration = 10
+	armor_penetration = 20
 
 /obj/item/projectile/beam/heavylaser
 	name = "heavy laser"
@@ -42,6 +39,13 @@
 	muzzle_type = /obj/effect/projectile/laser/heavy/muzzle
 	tracer_type = /obj/effect/projectile/laser/heavy/tracer
 	impact_type = /obj/effect/projectile/laser/heavy/impact
+
+/obj/item/projectile/beam/heavylaser/bogani
+	name = "alien laser"
+	fire_sound = 'sound/weapons/marauder.ogg'
+	damage = 40
+	armor_penetration = 50
+	penetration_modifier = 1
 
 /obj/item/projectile/beam/xray
 	name = "x-ray beam"
@@ -84,16 +88,6 @@
 	if(isturf(target))
 		target.ex_act(2)
 	..()
-
-/obj/item/projectile/beam/pulse/bogani
-	name = "pulsar"
-	icon_state = "bogb"
-	fire_sound='sound/weapons/blaster.ogg'
-	damage = 30
-
-	muzzle_type = /obj/effect/projectile/laser/bogani/muzzle
-	tracer_type = /obj/effect/projectile/laser/bogani/tracer
-	impact_type = /obj/effect/projectile/laser/bogani/impact
 
 /obj/item/projectile/beam/emitter
 	name = "emitter beam"
@@ -180,7 +174,8 @@
 	fire_sound = 'sound/weapons/Taser.ogg'
 	check_armour = "energy"
 	sharp = 0 //not a laser
-	agony = 40
+	stun = 3
+	armor_penetration = 15
 	damage_type = STUN
 
 	muzzle_type = /obj/effect/projectile/stun/muzzle
@@ -189,19 +184,21 @@
 
 /obj/item/projectile/beam/stun/heavy
 	name = "heavy stun beam"
-	agony = 60
+	stun = 6
+	armor_penetration = 15
 
 /obj/item/projectile/beam/stun/shock
 	name = "shock beam"
-	damage_type = ELECTROCUTE
-	damage = 10
-	agony  = 5
+	damage = 4
+	armor_penetration = 26
+	stun = 3
 	fire_sound='sound/weapons/pulse.ogg'
 
 /obj/item/projectile/beam/stun/shock/heavy
 	name = "heavy shock beam"
-	damage = 20
-	agony  = 10
+	damage = 8
+	armor_penetration = 26
+	stun = 6
 
 /obj/item/projectile/beam/plasmacutter
 	name = "plasma arc"
@@ -228,3 +225,17 @@
 		else
 			M.emitter_blasts_taken += 2
 	. = ..()
+
+
+/obj/item/projectile/beam/gray
+	name = "gamma ray beam"
+	icon_state = "bluelaser"
+	fire_sound = 'sound/weapons/laser3.ogg'
+	damage = 55
+	armor_penetration = 80
+	penetration_modifier = 1
+	irradiate = 50
+
+	muzzle_type = /obj/effect/projectile/laser/blue/muzzle
+	tracer_type = /obj/effect/projectile/laser/blue/tracer
+	impact_type = /obj/effect/projectile/laser/blue/impact

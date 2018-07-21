@@ -6,8 +6,6 @@
 
 	load_legacy_saves = TRUE
 
-	lobby_icon = 'maps/torch/icons/lobby.dmi'
-
 	station_levels = list(1,2,3,4,5)
 	contact_levels = list(1,2,3,4,5)
 	player_levels = list(1,2,3,4,5,8)
@@ -15,7 +13,7 @@
 	empty_levels = list(8)
 	accessible_z_levels = list("1"=1,"2"=1,"3"=1,"4"=1,"5"=1,"8"=30)
 	overmap_size = 35
-	overmap_event_areas = 22
+	overmap_event_areas = 34
 	usable_email_tlds = list("torch.ec.scg", "torch.fleet.mil", "torch.marine.mil", "freemail.nt")
 
 	allowed_spawns = list("Cryogenic Storage", "Cyborg Storage")
@@ -44,17 +42,84 @@
 	num_exoplanets = 1
 	planet_size = list(129,129)
 
-	away_site_budget = 3
+	away_site_budget = 1
+
+	citizenship_choices = list(
+		"Earth",
+		"Luna",
+		"Mars",
+		"Terra",
+		"Gaia",
+		"Moghes",
+		"Ahdomai",
+		"Qerrbalak",
+		"Tersten",
+		"Avalon",
+		"Yuklid",
+		"Venus",
+		"Cinu",
+		"Tau-Wilo",
+		"Ceres",
+		"Galilei"
+	)
+
+	home_system_choices = list(
+		"Sol",
+		"Nyx",
+		"Tau Ceti",
+		"Epsilon Ursae Minoris",
+		"Zamsiin-lr",
+		"Gilgamesh",
+		"Gavil",
+		"Uuoea-Esa",
+		"Kernel",
+		"Gessshire",
+		"Galilei"
+		)
+
+	faction_choices = list(
+		"Sol Central Government",
+		"Terran Colonial Confederation",
+		"Vey Med",
+		"Einstein Engines",
+		"Free Trade Union",
+		"NanoTrasen",
+		"Ward-Takahashi GMB",
+		"Gilthari Exports",
+		"Grayson Manufactories Ltd.",
+		"Aether Atmospherics",
+		"Zeng-Hu Pharmaceuticals",
+		"Hephaestus Industries",
+		"Commonwealth of Ahdomai",
+		"Xynergy",
+		"Positronic Union"
+		)
+
+	religion_choices = list(
+		"Jewish",
+		"Hinduism",
+		"Buddhist",
+		"Islamic",
+		"Christian",
+		"Agnostic",
+		"Deist",
+		"Athiest",
+		"Thelema",
+		"Spiritualist"
+		)
 
 	id_hud_icons = 'maps/torch/icons/assignment_hud.dmi'
-	lobby_screens = list("title","title2")
-
-	num_exoplanets = 1
 
 /datum/map/torch/setup_map()
 	..()
 	system_name = generate_system_name()
 	minor_announcement = new(new_sound = sound('sound/AI/torch/commandreport.ogg', volume = 45))
+
+/datum/map/torch/map_info(victim)
+	to_chat(victim, "<h2>Информаци&#255; о карте</h2>")
+	to_chat(victim, "Вы находитесь на борту <b>[station_name]</b>, корабле Экспедиционного Корпуса, что принадлежит Правительству Солнечной Системы. Основна&#255; цель вашей экспедиции - поиск новых форм жизни и исследование объектов по пути.")
+	to_chat(victim, "Персонал корабл&#255; состоит из работников ПСС, наемных контрактников и сотрудников НаноТрейзен.")
+	to_chat(victim, "This area of space is uncharted, away from SCG territory. You might encounter remote outposts or drifting hulks, but no recognized government holds claim on this sector.")
 
 /datum/map/torch/send_welcome()
 	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Torch</b> Sensor Readings:</font><hr />"
@@ -71,7 +136,7 @@
 		if(O.name == torch.name)
 			continue
 		space_things |= O
-	
+
 	for(var/obj/effect/overmap/O in space_things)
 		var/location_desc = " at present co-ordinates."
 		if (O.loc != torch.loc)
@@ -84,3 +149,15 @@
 
 	post_comm_message("SEV Torch Sensor Readings", welcome_text)
 	minor_announcement.Announce(message = "New [GLOB.using_map.company_name] Update available at all communication consoles.")
+
+/turf/simulated/wall //landlubbers go home
+	name = "bulkhead"
+
+/turf/simulated/floor
+	name = "bare deck"
+
+/turf/simulated/floor/tiled
+	name = "deck"
+
+/decl/flooring/tiling
+	name = "deck"

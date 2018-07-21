@@ -456,11 +456,8 @@
 /datum/reagent/nicotine
 	value = 2
 
-/datum/reagent/nicotine/solid
-	value = 2.5
-
-/datum/reagent/nicotine/solid/fine
-	value = 3.5
+/datum/reagent/tobacco
+	value = 3
 
 /datum/reagent/rezadone
 	value = 5
@@ -517,6 +514,12 @@
 
 /datum/reagent/toxin
 	value = 2
+
+/datum/reagent/toxin/bromide
+	value = 2
+
+/datum/reagent/toxin/methyl_bromide
+	value = 3
 
 /datum/reagent/toxin/plasticide
 	value = 2.1
@@ -598,3 +601,15 @@
 
 /datum/reagent/xenomicrobes
 	value = 5
+
+/datum/reagent/experimental
+	value = 30
+
+/datum/reagent/rsh4
+	value = 20
+
+/datum/reagent/rsh3
+	value = 25
+
+/datum/reagent/rsh2
+	value = 35

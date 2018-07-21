@@ -9,10 +9,10 @@
 	var/datum/console_program/fire_control/control_system = /datum/console_program/fire_control
 
 /obj/machinery/computer/weapons/Initialize()
+	. = ..()
 	linked = map_sectors["[z]"]
 	if(ispath(control_system))
 		control_system = new control_system(src)
-	. = ..()
 
 /obj/machinery/computer/weapons/attack_hand(user as mob)
 	if(..(user))

@@ -147,6 +147,10 @@
 	var/ui_color = mymob.client.prefs.UI_style_color
 	var/ui_alpha = mymob.client.prefs.UI_style_alpha
 
+	if(istype(mymob, /mob/living))
+		mymob.overlay_fullscreen("fade",/obj/screen/fullscreen/fade)
+		spawn(3 SECONDS)
+			mymob.clear_fullscreen("fade", animated = 10)
 
 	FinalizeInstantiation(ui_style, ui_color, ui_alpha)
 

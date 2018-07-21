@@ -1,7 +1,7 @@
 /obj/machinery/vending/clothing
 	name = "ClothesMate" //renamed to make the slogan rhyme
-	icon = 'icons/obj/vending_inf.dmi'
-	desc = "A vending machine for clothing."
+	icon = 'icons/obj/infinity_vend.dmi'
+	desc = "A clothing vending machine"
 	icon_state = "clothes"
 	product_slogans = "Dress for success!;Prepare to look swagalicious!;Look at all this free swag!;Why leave style up to fate? Use the ClothesMate!"
 	vend_delay = 15
@@ -13,10 +13,17 @@
 					/obj/item/clothing/under/cheongsam = 1, /obj/item/clothing/mask/gas/plaguedoctor = 1, /obj/item/clothing/suit/bio_suit/plaguedoctorsuit = 1
 					)
 
+/obj/machinery/vending/clothing/tact
+	name = "ClothesTact"
+	products = list(/obj/item/clothing/mask/gas = 3, /obj/item/clothing/mask/gas/half = 3, /obj/item/clothing/mask/gas/syndicate = 3,
+					/obj/item/clothing/under/casual_pants/baggy/camo = 3, /obj/item/clothing/under/syndicate/combat = 3, /obj/item/clothing/under/tactical = 3,
+					/obj/item/clothing/mask/balaclava = 3, /obj/item/clothing/mask/balaclava/tactical = 3,
+					/obj/item/clothing/accessory/armband/engine = 3, /obj/item/clothing/accessory/armband/med = 3, /obj/item/clothing/accessory/armband = 3)
+
 /obj/machinery/vending/security_clothes
 	name = "Security clothes"
 	desc = "All our clothes - it is your clothes!"
-	icon = 'icons/obj/vending_inf.dmi'
+	icon = 'icons/obj/infinity_vend.dmi'
 	icon_state = "sec"
 	icon_deny = "sec-deny"
 	vend_delay = 15
@@ -47,7 +54,7 @@
 	name = "Robust Softdrinks"
 	desc = "A softdrink vendor provided by Robust Industries, LLC."
 	density = 0
-	icon = 'icons/obj/vending_inf.dmi'
+	icon = 'icons/obj/infinity_vend.dmi'
 	icon_state = "Cola_Machine_small"
 	icon_vend = "Cola_Machine_small-vend"
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 5,/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 5,
@@ -64,7 +71,7 @@
 	name = "Hot Drinks machine"
 	desc = "A vending machine which dispenses hot drinks."
 	density = 0
-	icon = 'icons/obj/vending_inf.dmi'
+	icon = 'icons/obj/infinity_vend.dmi'
 	icon_state = "Covfefe_Machine_small"
 	icon_vend = "Covfefe_Machine_small-vend"
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 5,/obj/item/weapon/reagent_containers/food/drinks/tea = 5,/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 5)
@@ -76,7 +83,7 @@
 	desc = "A specialized vending machine designed to contribute to your slow and uncomfortable death."
 	vend_delay = 21
 	density = 0
-	icon = 'icons/obj/vending_inf.dmi'
+	icon = 'icons/obj/infinity_vend.dmi'
 	icon_state = "Cigs_Machine_small"
 	icon_vend = "Cigs_Machine_small-vend"
 	products = list(/obj/item/weapon/storage/fancy/cigarettes = 2,
@@ -103,7 +110,7 @@
 /obj/machinery/vending/thundervend
 	name = "Violence-o-Mate"
 	desc = "That's a guns and ammo vendor."
-	icon = 'icons/obj/vending_inf.dmi'
+	icon = 'icons/obj/infinity_vend.dmi'
 	density = 0
 	ads_list = list(
 		"ULTRAVIOLENCE!",
@@ -122,7 +129,7 @@
 		/obj/item/weapon/grenade/empgrenade = 15,
 		/obj/item/weapon/gun/energy/xray = 10,
 		/obj/item/weapon/gun/projectile/automatic/sts35 = 10,
-		/obj/item/ammo_magazine/a762 = 30,
+		/obj/item/ammo_magazine/c556 = 30,
 		/obj/item/weapon/gun/energy/ionrifle = 3,
 		/obj/item/weapon/gun/energy/sniperrifle = 1,
 		/obj/item/weapon/gun/projectile/heavysniper = 1,
@@ -130,3 +137,29 @@
 	)
 	vend_delay = 10
 	density = 1
+
+/obj/machinery/vending/parts
+	name = "Denitz-Spares Vendor"
+	desc = "All what you need to build a new microwave or teleporter."
+	icon_state = "robotics"
+	icon_deny = "robotics-deny"
+	req_access = list(access_engine)
+	products = list(/obj/item/weapon/airlock_electronics = 4,/obj/item/weapon/airlock_electronics/secure = 2,
+					/obj/item/weapon/module/power_control = 4,
+					/obj/item/weapon/airalarm_electronics = 4, /obj/item/weapon/firealarm_electronics = 4,
+					/obj/item/weapon/cell = 4, /obj/item/weapon/light/tube = 10, /obj/item/weapon/light/bulb = 10, /obj/item/weapon/light/tube/large = 4,
+					/obj/item/weapon/stock_parts/scanning_module = 5,/obj/item/weapon/stock_parts/micro_laser = 5,
+					/obj/item/weapon/stock_parts/matter_bin = 5,/obj/item/weapon/stock_parts/manipulator = 5,
+					/obj/item/weapon/stock_parts/console_screen = 5,/obj/item/weapon/stock_parts/capacitor = 5)
+	contraband = list(/obj/item/device/flash = 2, /obj/item/weapon/airlock_brace = 2)
+	premium = list(/obj/item/weapon/partyalarm_electronics = 1, /obj/item/weapon/cell/high = 2)
+
+/obj/machinery/vending/parts/research
+	name = "Wolfor-Spares Vendor"
+	req_access = list(access_engine,access_tox)
+	products = list(/obj/item/weapon/cell = 5,
+					/obj/item/weapon/stock_parts/capacitor = 8,/obj/item/weapon/stock_parts/scanning_module = 8,
+					/obj/item/weapon/stock_parts/micro_laser = 8,/obj/item/weapon/stock_parts/matter_bin = 8,
+					/obj/item/weapon/stock_parts/manipulator = 8,/obj/item/weapon/stock_parts/console_screen = 8)
+	contraband = list(/obj/item/device/flash = 2,/obj/item/weapon/airlock_brace = 2,/obj/item/weapon/crowbar/brace_jack = 1)
+	premium = list(/obj/item/weapon/partyalarm_electronics = 1)
