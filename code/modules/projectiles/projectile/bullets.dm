@@ -159,7 +159,7 @@
 	embed = 0
 	sharp = 0
 	penetration_modifier = 0.3
-	armor_penetration = 5
+	armor_penetration = 15
 
 // .45
 
@@ -196,7 +196,7 @@
 	embed = 0
 	sharp = 0
 	penetration_modifier = 0.3
-	armor_penetration = 8
+	armor_penetration = 21
 
 // .50AE
 
@@ -222,7 +222,7 @@
 	embed = 0
 	sharp = 0
 	penetration_modifier = 0.3
-	armor_penetration = 15
+	armor_penetration = 26
 
 //Should do about 80 damage at 1 tile distance (adjacent), and 50 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
