@@ -12,6 +12,7 @@
 	step_delay = 0.4
 	penetration_modifier = 1.0
 	var/mob_passthrough_check = 0
+	var/safety = 0 //For rubber bullets
 
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
 	miss_sounds = list('sound/weapons/guns/miss1.ogg','sound/weapons/guns/miss2.ogg','sound/weapons/guns/miss3.ogg','sound/weapons/guns/miss4.ogg')
@@ -152,7 +153,7 @@
 
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
 	name = "rubber bullet"
-	check_armour = "melee"
+	safety = 1
 	damage = 5
 	agony = 30
 	embed = 0
@@ -189,7 +190,7 @@
 
 /obj/item/projectile/bullet/pistol/strong/revolver/rubber
 	name = "rubber bullet"
-	check_armour = "melee"
+	safety = 1
 	damage = 7
 	agony = 50
 	embed = 0
@@ -215,7 +216,7 @@
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
-	check_armour = "melee"
+	safety = 1
 	damage = 25
 	stun = 5
 	embed = 0
