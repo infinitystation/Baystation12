@@ -24,7 +24,6 @@
 
 /obj/item/ammobox/a44
 	name = "ammobox (.44 Magnum)"
-	icon = 'icons/obj/ammoboxes.dmi'
 	icon_state = "44"
 	caliber = ".44"
 	ammo_type = /obj/item/ammo_casing/a556
@@ -38,7 +37,7 @@
 	max_ammo = 60
 	uses = 60
 
-/obj/item/ammobox/c9mm	
+/obj/item/ammobox/c9mm
 	name = "ammobox (9x19mm)"
 	icon_state = "9mm"
 	caliber = "9mm"

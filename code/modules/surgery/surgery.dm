@@ -75,9 +75,8 @@
 
 /datum/surgery_step/proc/success_chance(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
 	. = tool_quality(tool)
-	if(target.can_feel_pain() && target.wear_suit != /obj/item/clothing/suit/straight_jacket || target.stat == UNCONSCIOUS)
-		for(var/organ_name in target.organs)
-			var/obj/item/organ/external/E = target.get_organ(organ_name)
+	if(target.can_feel_pain() && (target.wear_suit != /obj/item/clothing/suit/straight_jacket || target.stat == UNCONSCIOUS))
+		for(var/obj/item/organ/external/E in target.organs)
 			. -= E.pain
 	if(user == target)
 		. -= 10

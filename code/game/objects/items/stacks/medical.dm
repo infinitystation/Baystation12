@@ -11,6 +11,7 @@
 	var/heal_burn = 0
 	var/animal_heal = 3
 	var/apply_sounds
+	var/used = 0
 
 /obj/item/stack/medical/attack(mob/living/carbon/M as mob, mob/user as mob)
 	if (!istype(M))
@@ -65,6 +66,27 @@
 	apply_sounds = list('sound/effects/rip1.ogg','sound/effects/rip2.ogg')
 	amount = 10
 
+/obj/item/stack/medical/bruise_pack/proc/apply_pack(obj/item/organ/external/affecting, datum/wound/W, mob/living/carbon/human/H, mob/user)
+	if(W.bandaged)
+		return
+	if(used == amount)
+		return
+	if(!do_mob(user, H, W.damage/5))
+		to_chat(user, "<span class='notice'>You must stand still to bandage wounds.</span>")
+		return
+	if (W.current_stage <= W.max_bleeding_stage)
+		user.visible_message("<span class='notice'>\The [user] bandages \a [W.desc] on [H]'s [affecting.name].</span>", \
+			                        "<span class='notice'>You bandage \a [W.desc] on [H]'s [affecting.name].</span>" )
+	else if (W.damage_type == BRUISE)
+		user.visible_message("<span class='notice'>\The [user] places a bruise patch over \a [W.desc] on [H]'s [affecting.name].</span>", \
+		                            "<span class='notice'>You place a bruise patch over \a [W.desc] on [H]'s [affecting.name].</span>" )
+	else
+		user.visible_message("<span class='notice'>\The [user] places a bandaid over \a [W.desc] on [H]'s [affecting.name].</span>", \
+		                            "<span class='notice'>You place a bandaid over \a [W.desc] on [H]'s [affecting.name].</span>" )
+	W.bandage()
+	playsound(src, pick(apply_sounds), 25)
+	used++
+
 /obj/item/stack/medical/bruise_pack/attack(mob/living/carbon/M as mob, mob/user as mob)
 	if(..())
 		return 1
@@ -79,29 +101,13 @@
 		else
 			user.visible_message("<span class='notice'>\The [user] starts treating [M]'s [affecting.name].</span>", \
 					             "<span class='notice'>You start treating [M]'s [affecting.name].</span>" )
-			var/used = 0
+			used = 0
 			for (var/datum/wound/W in affecting.wounds)
-				if(W.bandaged)
-					continue
-				if(used == amount)
-					break
-				if(!do_mob(user, M, W.damage/5))
-					to_chat(user, "<span class='notice'>You must stand still to bandage wounds.</span>")
-					break
-
-				if (W.current_stage <= W.max_bleeding_stage)
-					user.visible_message("<span class='notice'>\The [user] bandages \a [W.desc] on [M]'s [affecting.name].</span>", \
-					                              "<span class='notice'>You bandage \a [W.desc] on [M]'s [affecting.name].</span>" )
-					//H.add_side_effect("Itch")
-				else if (W.damage_type == BRUISE)
-					user.visible_message("<span class='notice'>\The [user] places a bruise patch over \a [W.desc] on [M]'s [affecting.name].</span>", \
-					                              "<span class='notice'>You place a bruise patch over \a [W.desc] on [M]'s [affecting.name].</span>" )
-				else
-					user.visible_message("<span class='notice'>\The [user] places a bandaid over \a [W.desc] on [M]'s [affecting.name].</span>", \
-					                              "<span class='notice'>You place a bandaid over \a [W.desc] on [M]'s [affecting.name].</span>" )
-				W.bandage()
-				playsound(src, pick(apply_sounds), 25)
-				used++
+				if (istype(W, /datum/wound/cut) && (used != amount))
+					apply_pack(affecting, W, H, user)
+			for (var/datum/wound/W in affecting.wounds)
+				if (used != amount)
+					apply_pack(affecting, W, H, user)
 			affecting.update_damages()
 			if(used == amount)
 				if(affecting.is_bandaged())

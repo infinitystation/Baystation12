@@ -27,7 +27,11 @@ meteor_act
 	var/penetrating_damage = ((P.damage + P.armor_penetration) * P.penetration_modifier) - armor
 	var/absorb = run_armor_check(def_zone, P.check_armour, P.armor_penetration)
 	//Embed or sever artery
-	if((absorb != 100) && P.can_embed() && !(species.species_flags & SPECIES_FLAG_NO_EMBED) && prob(22.5 + max(penetrating_damage, -10)) && !(prob(50) && (organ.sever_artery())))
+	var/safety = 0
+	if (istype(P, /obj/item/projectile/bullet))
+		var/obj/item/projectile/bullet/B = P
+		safety = B.safety
+	if((!safety) && (absorb != 100) && P.can_embed() && !(species.species_flags & SPECIES_FLAG_NO_EMBED) && prob(22.5 + max(penetrating_damage, -10)) && !(prob(50) && (organ.sever_artery())))
 		var/obj/item/weapon/material/shard/shrapnel/SP = new()
 		SP.SetName((P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel")
 		SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
