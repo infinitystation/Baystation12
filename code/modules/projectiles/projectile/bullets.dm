@@ -12,6 +12,7 @@
 	step_delay = 0.4
 	penetration_modifier = 1.0
 	var/mob_passthrough_check = 0
+	var/safety = 0 //For rubber bullets
 
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
 	miss_sounds = list('sound/weapons/guns/miss1.ogg','sound/weapons/guns/miss2.ogg','sound/weapons/guns/miss3.ogg','sound/weapons/guns/miss4.ogg')
@@ -152,19 +153,19 @@
 
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
 	name = "rubber bullet"
-	check_armour = "melee"
+	safety = 1
 	damage = 5
 	agony = 30
 	embed = 0
 	sharp = 0
-	armor_penetration = 5
+	penetration_modifier = 0.3
+	armor_penetration = 15
 
 // .45
 
 /obj/item/projectile/bullet/pistol/medium
 	damage = 26.5
 	armor_penetration = 15
-
 
 // 10mm Auto, 7,62x25mm
 
@@ -189,12 +190,13 @@
 
 /obj/item/projectile/bullet/pistol/strong/revolver/rubber
 	name = "rubber bullet"
-	check_armour = "melee"
+	safety = 1
 	damage = 7
 	agony = 50
 	embed = 0
 	sharp = 0
-	armor_penetration = 8
+	penetration_modifier = 0.3
+	armor_penetration = 21
 
 // .50AE
 
@@ -214,18 +216,20 @@
 
 /obj/item/projectile/bullet/shotgun/beanbag		//because beanbags are not bullets
 	name = "beanbag"
-	check_armour = "melee"
+	safety = 1
 	damage = 25
 	stun = 5
 	embed = 0
 	sharp = 0
-	armor_penetration = 15
+	penetration_modifier = 0.3
+	armor_penetration = 26
 
 //Should do about 80 damage at 1 tile distance (adjacent), and 50 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	fire_sound = 'sound/weapons/gunshot/shotgun.ogg'
+	agony = 15
 	damage = 7.5
 	pellets = 12
 	range_step = 1.2

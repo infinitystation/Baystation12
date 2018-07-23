@@ -5,6 +5,7 @@
 	light_color = COLOR_ORANGE
 	idle_power_usage = 250
 	active_power_usage = 500
+	circuit = /obj/item/weapon/circuitboard/fusion_fuel_control
 
 	var/id_tag
 	var/scan_range = 25

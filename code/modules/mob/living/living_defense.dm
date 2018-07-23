@@ -23,11 +23,6 @@
 		if(armour_pen < armor)
 			return 100
 
-	if(attack_flag == "melee")
-		if(armour_pen + 20 < armor)
-			return 100
-
-
 	var/effective_armor = (armor - armour_pen)/100
 	var/fullblock = (effective_armor*effective_armor) * ARMOR_BLOCK_CHANCE_MULT
 
