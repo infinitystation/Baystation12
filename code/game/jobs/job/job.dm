@@ -76,14 +76,14 @@
 	if(!account_allowed || (H.mind && H.mind.initial_account))
 		return
 
-	var/loyalty = 1
+	var/income = 1
 	if(H.client)
-		switch(H.client.prefs.nanotrasen_relation)
-			if(COMPANY_LOYAL)		loyalty = 1.30
-			if(COMPANY_SUPPORTATIVE)loyalty = 1.15
-			if(COMPANY_NEUTRAL)		loyalty = 1
-			if(COMPANY_SKEPTICAL)	loyalty = 0.85
-			if(COMPANY_OPPOSED)		loyalty = 0.70
+		switch(H.client.prefs.economic_status)
+			if(CLASS_UPPER)		income = 1.30
+			if(CLASS_UPMID)		income = 1.15
+			if(CLASS_MIDDLE)	income = 1
+			if(CLASS_LOWMID)	income = 0.75
+			if(CLASS_LOWER)		income = 0.50
 
 	//give them an account in the station database
 	if(!(H.species && (H.species.type in economic_species_modifier)))
@@ -91,7 +91,7 @@
 
 	var/species_modifier = economic_species_modifier[H.species.type]
 
-	var/money_amount = (rand(5,50) + rand(5, 50)) * loyalty * economic_modifier * species_modifier * GLOB.using_map.salary_modifier
+	var/money_amount = (rand(5,50) + rand(5, 50)) * income * economic_modifier * species_modifier * GLOB.using_map.salary_modifier
 	money_amount *= 1 + 2 * H.get_skill_value(SKILL_FINANCE)/(SKILL_MAX - SKILL_MIN)
 	money_amount = round(money_amount)
 	var/datum/money_account/M = create_account(H.real_name, money_amount, null)
