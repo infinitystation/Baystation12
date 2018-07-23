@@ -410,6 +410,8 @@
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/pain,
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/detox,
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/inaprovaline,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/antirad,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/dexalin,
 		/obj/item/stack/medical/bruise_pack,
 		/obj/item/stack/medical/ointment
 		)
