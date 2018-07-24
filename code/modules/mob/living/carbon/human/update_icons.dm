@@ -152,8 +152,6 @@ Please contact me on #coderbus IRC. ~Carn x
 	update_hud()		//TODO: remove the need for this
 	overlays.Cut()
 
-	var/list/overlays_to_apply = list()
-
 	if (icon_update)
 		var/list/visible_overlays
 		if(is_cloaked())
