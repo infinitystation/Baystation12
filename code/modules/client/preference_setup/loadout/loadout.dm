@@ -173,7 +173,7 @@ var/list/gear_datums = list()
 		var/allowed = 1
 		if(G.allowed_branches && pref.char_branch)
 			var/datum/mil_branch/player_branch = mil_branches.get_branch(pref.char_branch)
-			if(!player_branch))
+			if(!player_branch)
 				allowed = 0
 			if(!(player_branch.type in G.allowed_branches))
 				entry += "<br><i><font color=cc5555>[player_branch.name]</font></i>"
