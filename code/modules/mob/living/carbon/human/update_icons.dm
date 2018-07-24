@@ -152,7 +152,7 @@ Please contact me on #coderbus IRC. ~Carn x
 	update_hud()		//TODO: remove the need for this
 	overlays.Cut()
 
-    var/list/visible_overlays = overlays_standing
+	var/list/visible_overlays = overlays_standing
 
 	if (icon_update)
 		if(is_cloaked())
