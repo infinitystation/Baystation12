@@ -1,0 +1,4 @@
+author: First Tea
+delete-after: True
+changes: 
+  - rscadd: "Теперь ноутбуки можно вращать."
