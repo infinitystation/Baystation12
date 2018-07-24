@@ -180,6 +180,11 @@
 	icon_state = "blue1"
 	starts_with = list(/datum/reagent/inaprovaline = 5)
 
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/dexalin
+	name = "autoinjector (dexalin)"
+	icon_state = "blue1"
+	starts_with = list(/datum/reagent/dexalin = 5)
+
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/combatpain
 	name = "autoinjector (combat paikiller)"
 	icon_state = "black1"
