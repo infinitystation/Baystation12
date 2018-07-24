@@ -45,11 +45,13 @@
 	item_state = "drill"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
-	matter = list(DEFAULT_WALL_MATERIAL = 5000, "silver" = 2000)
-	force = 8.0 //might or might not be too high, subject to change
+	force = 8.0
+	throwforce = 8.0
+	throw_speed = 2
+	throw_range = 3
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 3)
-	throwforce = 8.0
+	matter = list(DEFAULT_WALL_MATERIAL = 5000, "silver" = 2000)
 	center_of_mass = "x=17;y=16"
 	attack_verb = list("drilled", "screwed", "jabbed")
 	//usesound = 'sound/items/drill_use.ogg'
@@ -134,13 +136,13 @@
 	item_state = "drill"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
-	origin_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 3)
-	matter = list(DEFAULT_WALL_MATERIAL = 5000, "silver" = 2000)
-	force = 8 //might or might not be too high, subject to change
-	w_class = ITEM_SIZE_NORMAL
+	force = 8
 	throwforce = 8
 	throw_speed = 2
-	throw_range = 3 //it's heavier than a screw driver/wrench, so it does more damage, but can't be thrown as far
+	throw_range = 3
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 3)
+	matter = list(DEFAULT_WALL_MATERIAL = 5000, "silver" = 2000)
 	center_of_mass = "x=16;y=7"
 	attack_verb = list("drilled", "screwed", "jabbed","whacked")
 	hitsound = 'sound/items/drill_hit.ogg'
