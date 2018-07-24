@@ -19,14 +19,12 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 50000)
 	var/wait = 0
 
-
 /obj/item/weapon/rpd/Initialize()
 	. = ..()
 
 /obj/item/weapon/rpd/attack_self(mob/user)
 	if(..())
 		return
-///// Z-Level stuff
 	var/dat = {"
     <b>Regular pipes:</b><BR>
     <A href='?src=\ref[src];make=0;dir=1'>Pipe</A><BR>
@@ -86,11 +84,7 @@
     <A href='?src=\ref[src];make=3;dir=5'>Bent Pipe</A><BR>
     <A href='?src=\ref[src];make=6;dir=1'>Junction</A><BR>
     <A href='?src=\ref[src];make=17;dir=1'>Heat Exchanger</A><BR>
-
     "}
-///// Z-Level stuff
-//What number the make points to is in the define # at the top of construction.dm in same folder
-
 	user << browse("<HEAD><TITLE>[src]</TITLE></HEAD><TT>[dat]</TT>", "window=pipedispenser")
 	onclose(user, "pipedispenser")
 	return
