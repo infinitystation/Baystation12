@@ -152,9 +152,8 @@ Please contact me on #coderbus IRC. ~Carn x
 	update_hud()		//TODO: remove the need for this
 	overlays.Cut()
 
-	var/list/visible_overlays = overlays_standing
-
 	if (icon_update)
+		var/list/visible_overlays
 		if(is_cloaked())
 			visible_overlays = list(visible_overlays[R_HAND_LAYER], visible_overlays[L_HAND_LAYER])
 			if(species.reagent_tag == IS_NABBER)

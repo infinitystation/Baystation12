@@ -297,10 +297,10 @@ var/list/mob/living/forced_ambiance_list = new
 
 	play_ambience(L)
 	L.lastarea = newarea
-	
+
 /area/proc/play_ambience(var/mob/living/L)
 	// Ambience goes down here -- make sure to list each area seperately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch
-	if(!(L && L.get_preference_value(/datum/client_preference/play_ambiance) == GLOB.PREF_YES))	return
+	if(!(L && L.client && L.get_preference_value(/datum/client_preference/play_ambiance) == GLOB.PREF_YES))	return
 
 	var/turf/T = get_turf(L)
 	var/hum = 0
@@ -317,7 +317,7 @@ var/list/mob/living/forced_ambiance_list = new
 		if(L.client.ambience_playing)
 			L.client.ambience_playing = 0
 			sound_to(L, sound(null, channel = 2))
-	
+
 	if(L.lastarea != src)
 		if(LAZYLEN(forced_ambience))
 			forced_ambiance_list |= L
