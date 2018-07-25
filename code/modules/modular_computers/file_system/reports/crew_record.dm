@@ -10,7 +10,6 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 /datum/computer_file/report/crew_record
 	filetype = "CDB"
 	size = 9999 // last chance. No one should launch it.
-	var/available_on_ntnet = 0
 	var/icon/photo_front = null
 	var/icon/photo_side = null
 	//More variables below.
