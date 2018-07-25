@@ -2769,6 +2769,8 @@
 #include "maps\random_ruins\exoplanet_ruins\monoliths\monoliths.dm"
 #include "maps\random_ruins\exoplanet_ruins\oasis\oasis.dm"
 #include "maps\random_ruins\space_ruins\space_ruins.dm"
+#include "maps\sierra\sierra_antagonism.dm"
+#include "maps\sierra\structures\closets\armory.dm"
 #include "maps\torch\torch.dm"
 #include "maps\torch\torch_define.dm"
 #include "maps\~mapsystem\map_preferences.dm"

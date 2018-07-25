@@ -24,7 +24,6 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 
 /datum/computer_file/report/crew_record/proc/load_from_mob(var/mob/living/carbon/human/H)
 	if(istype(H))
-		sleep(15)
 		photo_front = getFlatIcon(H, SOUTH, always_use_defdir = 1)
 		photo_side = getFlatIcon(H, WEST, always_use_defdir = 1)
 	else
@@ -66,7 +65,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 			var/level = H.get_skill_value(S.type)
 			if(level > SKILL_NONE)
 				skills += "[S.name], [S.levels[level]]"
-			
+
 		set_skillset(jointext(skills,"\n"))
 
 	// Antag record

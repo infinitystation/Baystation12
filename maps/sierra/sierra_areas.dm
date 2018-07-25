@@ -1431,6 +1431,76 @@
 	ambience = list('sound/ambience/ambimalf.ogg')
 	sound_env = SMALL_ENCLOSED
 
+// Security
+
+/area/sierra/security/cells
+	name = "Security - Cells"
+	icon_state = "brig"
+
+/area/sierra/security/permabrig
+	name = "Security - Long Term Chamber"
+	icon_state = "sec_prison"
+
+/area/sierra/security/hallway
+	name = "Security - Fore Hallway"
+	icon_state = "brig"
+
+/area/sierra/security/hallway/aft
+	name = "Security - Aft Hallway"
+	icon_state = "brig"
+
+/area/sierra/security/hallway/port
+	name = "Security - Port Hallway"
+	icon_state = "brig"
+
+/area/sierra/security/sergeant
+	name = "Security - Security Sergeant"
+	icon_state = "brig"
+
+/area/sierra/security/marshal
+	name = "Security - Colonial Marshal"
+	icon_state = "brig"
+
+/area/sierra/security/armory
+	name = "Security - Armory"
+	icon_state = "brig"
+
+/area/sierra/security/armory/lobby
+	name = "Security - Armory - Lobby"
+	icon_state = "brig"
+
+/area/sierra/security/safe_room
+	name = "Security - Safe Room"
+	icon_state = "brig"
+
+/area/sierra/security/hos
+	name = "Security - Head Of Security"
+	icon_state = "brig"
+
+/area/sierra/security/hos/restroom
+	name = "Security - HOS - Restroom"
+	icon_state = "brig"
+
+/area/sierra/security/forensic
+	name = "Security - Forensic"
+	icon_state = "brig"
+
+/area/sierra/security/forensic/lab
+	name = "Security - Forensic - Laboratory"
+	icon_state = "brig"
+
+/area/sierra/security/equipment
+	name = "Security - Equipment storage"
+	icon_state = "brig"
+
+/area/sierra/security/interrogation
+	name = "Security - Interrogation"
+	icon_state = "brig"
+
+/area/sierra/security/evidence
+	name = "Security - Evidence Storage"
+	icon_state = "brig"
+
 // Chapel
 
 /area/sierra/chapel/main
@@ -1502,4 +1572,3 @@
 /area/centcom/tdome/tdomeobserve
 	name = "\improper Thunderdome (Observer.)"
 	icon_state = "purple"
-

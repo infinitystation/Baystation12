@@ -2,7 +2,7 @@
 	var/unique_name
 	var/datum/detective_gun_skin/unique_reskin
 	var/static/list/gun_options
-	magazine_type = /obj/item/ammo_magazine/c45m/flash
+	magazine_type = /obj/item/ammo_magazine/c45m/rubber
 
 /obj/item/weapon/gun/projectile/colt/detective/New()
 	..()
