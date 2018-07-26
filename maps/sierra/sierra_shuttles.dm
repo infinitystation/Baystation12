@@ -43,7 +43,7 @@
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod6
 	warmup_time = 10
-	shuttle_area = /area/shuttle/escape_pod6/station
+	shuttle_area = /area/shuttle/sierra/escape_pod6/station
 	number = 6
 /obj/effect/shuttle_landmark/escape_pod/start/pod6
 	number = 6
@@ -54,7 +54,7 @@
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod7
 	warmup_time = 10
-	shuttle_area = /area/shuttle/escape_pod7/station
+	shuttle_area = /area/shuttle/sierra/escape_pod7/station
 	number = 7
 /obj/effect/shuttle_landmark/escape_pod/start/pod7
 	number = 7
@@ -65,7 +65,7 @@
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod8
 	warmup_time = 10
-	shuttle_area = /area/shuttle/escape_pod8/station
+	shuttle_area = /area/shuttle/sierra/escape_pod8/station
 	number = 8
 /obj/effect/shuttle_landmark/escape_pod/start/pod8
 	number = 8
@@ -76,7 +76,7 @@
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod9
 	warmup_time = 10
-	shuttle_area = /area/shuttle/escape_pod9/station
+	shuttle_area = /area/shuttle/sierra/escape_pod9/station
 	number = 9
 /obj/effect/shuttle_landmark/escape_pod/start/pod9
 	number = 9
@@ -87,7 +87,7 @@
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod10
 	warmup_time = 10
-	shuttle_area = /area/shuttle/escape_pod10/station
+	shuttle_area = /area/shuttle/sierra/escape_pod10/station
 	number = 10
 /obj/effect/shuttle_landmark/escape_pod/start/pod10
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -99,7 +99,7 @@
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod11
 	warmup_time = 10
-	shuttle_area = /area/shuttle/escape_pod11/station
+	shuttle_area = /area/shuttle/sierra/escape_pod11/station
 	number = 11
 /obj/effect/shuttle_landmark/escape_pod/start/pod11
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -112,7 +112,7 @@
 //Smoll pods
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod12
-	shuttle_area = /area/shuttle/escape_pod12/station
+	shuttle_area = /area/shuttle/sierra/escape_pod12/station
 	number = 12
 /obj/effect/shuttle_landmark/escape_pod/start/pod12
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -123,7 +123,7 @@
 	number = 12
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod13
-	shuttle_area = /area/shuttle/escape_pod13/station
+	shuttle_area = /area/shuttle/sierra/escape_pod13/station
 	number = 13
 /obj/effect/shuttle_landmark/escape_pod/start/pod13
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -134,7 +134,7 @@
 	number = 13
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod14
-	shuttle_area = /area/shuttle/escape_pod14/station
+	shuttle_area = /area/shuttle/sierra/escape_pod14/station
 	number = 14
 /obj/effect/shuttle_landmark/escape_pod/start/pod14
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -145,7 +145,7 @@
 	number = 14
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod15
-	shuttle_area = /area/shuttle/escape_pod15/station
+	shuttle_area = /area/shuttle/sierra/escape_pod15/station
 	number = 15
 /obj/effect/shuttle_landmark/escape_pod/start/pod15
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -156,7 +156,7 @@
 	number = 15
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod116
-	shuttle_area = /area/shuttle/escape_pod16/station
+	shuttle_area = /area/shuttle/sierra/escape_pod16/station
 	number = 16
 /obj/effect/shuttle_landmark/escape_pod/start/pod16
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -167,7 +167,7 @@
 	number = 16
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod17
-	shuttle_area = /area/shuttle/escape_pod17/station
+	shuttle_area = /area/shuttle/sierra/escape_pod17/station
 	number = 17
 /obj/effect/shuttle_landmark/escape_pod/start/pod17
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -177,25 +177,7 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod17
 	number = 17
 
-//Petrov
-
-/datum/shuttle/autodock/ferry/petrov
-	name = "Petrov"
-	warmup_time = 10
-	shuttle_area = list(/area/shuttle/petrov/ship,/area/shuttle/petrov/cell1,/area/shuttle/petrov/cell2,/area/shuttle/petrov/cell3)
-	dock_target = "petrov_shuttle_airlock"
-	waypoint_station = "nav_petrov_start"
-	waypoint_offsite = "nav_petrov_out"
-
-/obj/effect/shuttle_landmark/petrov/start
-	name = "First Deck"
-	landmark_tag = "nav_petrov_start"
-	docking_controller = "petrov_shuttle_dock_airlock"
-
-/obj/effect/shuttle_landmark/petrov/out
-	name = "Space near the ship"
-	landmark_tag = "nav_petrov_out"
-
+//Ninja Shuttle.
 //Ninja Shuttle.
 /datum/shuttle/autodock/multi/antag/ninja
 	name = "Ninja"
@@ -481,7 +463,7 @@
 	current_location = "nav_ert_start"
 	landmark_transition = "nav_ert_transition"
 	home_waypoint = "nav_ert_start"
-	announcer = "SEV Sierra Sensor Array"
+	announcer = "SEV Sieera Sensor Array"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
 
@@ -521,7 +503,7 @@
 
 //SCGMC Assault Pod
 
-/datum/shuttle/autodock/ferry/specops/scg
+/datum/shuttle/autodock/ferry/specops/black_ops
 	name = "Special Operations"
 	warmup_time = 10
 	location = 1
@@ -552,19 +534,21 @@
 	waypoint_station = "nav_cargo_station"
 
 /obj/effect/shuttle_landmark/supply/centcom
-	name = "Centcom"
+	name = "Offsite"
 	landmark_tag = "nav_cargo_start"
 
 /obj/effect/shuttle_landmark/supply/station
 	name = "Hangar"
 	landmark_tag = "nav_cargo_station"
-	base_area = /area/quartermaster/hangar
+	base_area = /area/sierra/quartermaster/hangar
 	base_turf = /turf/simulated/floor/plating
+
+//Charon
 
 /datum/shuttle/autodock/overmap/exploration_shuttle
 	name = "Charon"
 	move_time = 90
-	shuttle_area = list(/area/exploration_shuttle/cockpit, /area/exploration_shuttle/atmos, /area/exploration_shuttle/power, /area/exploration_shuttle/crew, /area/exploration_shuttle/cargo, /area/exploration_shuttle/airlock)
+	shuttle_area = list(/area/shuttle/sierra/exploration/cockpit, /area/shuttle/sierra/exploration/atmos, /area/shuttle/sierra/exploration/power, /area/shuttle/sierra/exploration/crew, /area/shuttle/sierra/exploration/cargo, /area/shuttle/sierra/exploration/airlock)
 	dock_target = "calypso_shuttle"
 	current_location = "nav_hangar_calypso"
 	landmark_transition = "nav_transit_calypso"
@@ -574,7 +558,7 @@
 /obj/effect/shuttle_landmark/sierra/hangar/exploration_shuttle
 	name = "Charon Hangar"
 	landmark_tag = "nav_hangar_calypso"
-	base_area = /area/quartermaster/hangar
+	base_area = /area/sierra/quartermaster/hangar
 	base_turf = /turf/simulated/floor/plating
 
 /obj/effect/shuttle_landmark/sierra/deck1/exploration_shuttle
@@ -605,7 +589,7 @@
 	name = "Guppy"
 	warmup_time = 5
 	move_time = 30
-	shuttle_area = /area/guppy_hangar/start
+	shuttle_area = /area/shuttle/sierra/guppy
 	dock_target ="guppy_shuttle"
 	current_location = "nav_hangar_guppy"
 	landmark_transition = "nav_transit_guppy"
@@ -616,7 +600,7 @@
 /obj/effect/shuttle_landmark/sierra/hangar/guppy
 	name = "Guppy Hangar"
 	landmark_tag = "nav_hangar_guppy"
-	base_area = /area/quartermaster/hangar
+	base_area = /area/sierra/quartermaster/hangar
 	base_turf = /turf/simulated/floor/plating
 
 /obj/effect/shuttle_landmark/sierra/deck1/guppy
@@ -643,41 +627,21 @@
 	name = "In transit"
 	landmark_tag = "nav_transit_guppy"
 
-/datum/shuttle/autodock/overmap/aquila
-	name = "Aquila"
-	move_time = 60
-	shuttle_area = /area/aquila_hangar/start
-	current_location = "nav_hangar_aquila"
-	landmark_transition = "nav_transit_aquila"
-	dock_target = "aquila_shuttle"
-	range = 2
+//Petrov
 
-/obj/effect/shuttle_landmark/sierra/hangar/aquila
-	name = "Aquila Hangar"
-	landmark_tag = "nav_hangar_aquila"
-	docking_controller = "aquila_shuttle_dock_airlock"
-	base_turf = /turf/simulated/floor/reinforced/airless
+/datum/shuttle/autodock/ferry/petrov
+	name = "Petrov"
+	warmup_time = 10
+	shuttle_area = list(/area/shuttle/sierra/petrov,/area/shuttle/sierra/petrov/cell1,/area/shuttle/sierra/petrov/cell2,/area/shuttle/sierra/petrov/cell3)
+	dock_target = "petrov_shuttle_airlock"
+	waypoint_station = "nav_petrov_start"
+	waypoint_offsite = "nav_petrov_out"
 
-/obj/effect/shuttle_landmark/sierra/deck1/aquila
-	name = "Space near Fourth Deck"
-	landmark_tag = "nav_deck1_aquila"
+/obj/effect/shuttle_landmark/petrov/start
+	name = "First Deck"
+	landmark_tag = "nav_petrov_start"
+	docking_controller = "petrov_shuttle_dock_airlock"
 
-/obj/effect/shuttle_landmark/sierra/deck2/aquila
-	name = "Space near Third Deck"
-	landmark_tag = "nav_deck2_aquila"
-
-/obj/effect/shuttle_landmark/sierra/deck3/aquila
-	name = "Space near Second Deck"
-	landmark_tag = "nav_deck3_aquila"
-
-/obj/effect/shuttle_landmark/sierra/deck4/aquila
-	name = "Space near First Deck"
-	landmark_tag = "nav_deck4_aquila"
-
-/obj/effect/shuttle_landmark/sierra/deck5/aquila
-	name = "Space near Bridge"
-	landmark_tag = "nav_bridge_aquila"
-
-/obj/effect/shuttle_landmark/sierra/transit/aquila
-	name = "In transit"
-	landmark_tag = "nav_transit_aquila"
+/obj/effect/shuttle_landmark/petrov/out
+	name = "Space near the ship"
+	landmark_tag = "nav_petrov_out"

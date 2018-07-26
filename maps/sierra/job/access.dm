@@ -31,9 +31,9 @@
 	desc = "Charon Helm"
 	region = ACCESS_REGION_GENERAL
 
-/var/const/access_ias = 78
-/datum/access/ias
-	id = access_liaison
+/var/const/access_iaa = 78
+/datum/access/iaa
+	id = access_iaa
 	desc = "Internal Affairs Agent"
 	region = ACCESS_REGION_COMMAND
 	access_type = ACCESS_TYPE_NONE //Ruler of their own domain, CO and RD cannot enter
@@ -47,9 +47,10 @@
 
 /var/const/access_colonial_marshal = 80
 /datum/access/marshal
-	id = access_marshal
+	id = access_colonial_marshal
 	desc = "Colonial Marshal"
 	region = ACCESS_REGION_SECURITY
+	access_type = ACCESS_TYPE_NONE
 
 /var/const/access_gun = 81
 /datum/access/gun

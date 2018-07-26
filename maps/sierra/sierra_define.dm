@@ -47,7 +47,7 @@
 /datum/map/sierra/setup_map()
 	..()
 	system_name = generate_system_name()
-	minor_announcement = new(new_sound = sound('sound/AI/sierra/commandreport.ogg', volume = 45))
+	minor_announcement = new(new_sound = sound('sound/AI/torch/commandreport.ogg', volume = 45))
 
 /datum/map/sierra/send_welcome()
 	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Sierra</b> Sensor Readings:</font><hr />"

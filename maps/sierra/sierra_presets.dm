@@ -5,7 +5,6 @@ var/const/NETWORK_FIRST_DECK  = "First Deck"
 var/const/NETWORK_SECOND_DECK = "Second Deck"
 var/const/NETWORK_THIRD_DECK  = "Third Deck"
 var/const/NETWORK_POD         = "Mining Pod"
-var/const/NETWORK_SECOND_DECK = "Second Deck"
 var/const/NETWORK_SUPPLY      = "Supply"
 var/const/NETWORK_HANGAR      = "Hangar"
 
@@ -21,7 +20,7 @@ var/const/NETWORK_HANGAR      = "Hangar"
 			return access_mailsorting
 		if(NETWORK_HANGAR)
 			return access_hangar
-		if(NETWORK_EXPLO)
+		if(NETWORK_EXPEDITION)
 			return access_explorer
 	return get_shared_network_access(network) || ..()
 

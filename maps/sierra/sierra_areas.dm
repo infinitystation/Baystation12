@@ -5,22 +5,21 @@
 
 	post_round_safe_areas = list (
 		/area/centcom,
-		/area/sierra/shuttle/escape/centcom,
-		/area/sierra/shuttle/escape_pod6/station,
-		/area/sierra/shuttle/escape_pod7/station,
-		/area/sierra/shuttle/escape_pod8/station,
-		/area/sierra/shuttle/escape_pod9/station,
-		/area/sierra/shuttle/escape_pod10/station,
-		/area/sierra/shuttle/escape_pod11/station,
-		/area/sierra/shuttle/escape_pod12/station,
-		/area/sierra/shuttle/escape_pod13/station,
-		/area/sierra/shuttle/escape_pod14/station,
-		/area/sierra/shuttle/escape_pod15/station,
-		/area/sierra/shuttle/escape_pod16/station,
-		/area/sierra/shuttle/escape_pod17/station,
-		/area/sierra/shuttle/transport1/centcom,
-		/area/sierra/shuttle/administration/centcom,
-		/area/sierra/shuttle/specops/centcom,
+		/area/shuttle/sierra/escape_pod6/station,
+		/area/shuttle/sierra/escape_pod7/station,
+		/area/shuttle/sierra/escape_pod8/station,
+		/area/shuttle/sierra/escape_pod9/station,
+		/area/shuttle/sierra/escape_pod10/station,
+		/area/shuttle/sierra/escape_pod11/station,
+		/area/shuttle/sierra/escape_pod12/station,
+		/area/shuttle/sierra/escape_pod13/station,
+		/area/shuttle/sierra/escape_pod14/station,
+		/area/shuttle/sierra/escape_pod15/station,
+		/area/shuttle/sierra/escape_pod16/station,
+		/area/shuttle/sierra/escape_pod17/station,
+		/area/shuttle/transport1/centcom,
+		/area/shuttle/administration/centcom,
+		/area/shuttle/specops/centcom,
 	)
 /*
 //Fifth Deck (Z-1) Coming SoonTM
@@ -302,95 +301,72 @@
 /area/sierra/bridge/storage
 	name = "\improper Bridge Storage Room"
 
-// Shuttles
-/area/sierra/shuttle/transport1/centcom
-	icon_state = "shuttle"
-	name = "\improper Transport Shuttle Centcom"
+		//////////////
+		// SHUTTLES //
+		//////////////
 
 //sierra large pods
-/area/sierra/shuttle/escape_pod6/station
+/area/shuttle/sierra/escape_pod6/station
 	name = "Escape Pod One"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/sierra/shuttle/escape_pod7/station
+/area/shuttle/sierra/escape_pod7/station
 	name = "Escape Pod Two"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/sierra/shuttle/escape_pod8/station
+/area/shuttle/sierra/escape_pod8/station
 	name = "Escape Pod Three"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/sierra/shuttle/escape_pod9/station
+/area/shuttle/sierra/escape_pod9/station
 	name = "Escape Pod Four"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/sierra/shuttle/escape_pod10/station
+/area/shuttle/sierra/escape_pod10/station
 	name = "Escape Pod Five"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/sierra/shuttle/escape_pod11/station
+/area/shuttle/sierra/escape_pod11/station
 	name = "Escape Pod Six"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
 //sierra small pods
-/area/sierra/shuttle/escape_pod12/station
+/area/shuttle/sierra/escape_pod12/station
 	name = "Escape Pod Seven"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/sierra/shuttle/escape_pod13/station
+/area/shuttle/sierra/escape_pod13/station
 	name = "Escape Pod Eight"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/sierra/shuttle/escape_pod14/station
+/area/shuttle/sierra/escape_pod14/station
 	name = "Escape Pod Nine"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/sierra/shuttle/escape_pod15/station
+/area/shuttle/sierra/escape_pod15/station
 	name = "Escape Pod Ten"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/sierra/shuttle/escape_pod16/station
+/area/shuttle/sierra/escape_pod16/station
 	name = "Escape Pod Eleven"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/sierra/shuttle/escape_pod17/station
+/area/shuttle/sierra/escape_pod17/station
 	name = "Escape Pod Twelve"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
 //Charon
 
-/area/sierra/exploration_shuttle/
+/area/shuttle/sierra/exploration
 	name = "\improper Charon"
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/plating
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/sierra/exploration_shuttle/cockpit
+/area/shuttle/sierra/exploration/cockpit
 	name = "\improper Charon - Cockpit"
-/area/sierra/exploration_shuttle/atmos
+/area/shuttle/sierra/exploration/atmos
 	name = "\improper Charon - Atmos Compartment"
-/area/sierra/exploration_shuttle/power
+/area/shuttle/sierra/exploration/power
 	name = "\improper Charon - Power Compartment"
-/area/sierra/exploration_shuttle/crew
+/area/shuttle/sierra/exploration/crew
 	name = "\improper Charon - Crew Compartment"
-/area/sierra/exploration_shuttle/cargo
+/area/shuttle/sierra/exploration/cargo
 	name = "\improper Charon - Cargo Bay"
-/area/sierra/exploration_shuttle/airlock
+/area/shuttle/sierra/exploration/airlock
 	name = "\improper Charon - Airlock Compartment"
-
-//Aquila
-
-/area/sierra/aquila_hangar/start
-	name = "\improper SEV Aquila"
-	icon_state = "shuttlered"
-	base_turf = /turf/simulated/floor/reinforced/airless
-	requires_power = 1
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
 //Guppy
 
-/area/sierra/guppy_hangar/start
+/area/shuttle/sierra/guppy
 	name = "\improper Guppy"
 	icon_state = "shuttlered"
 	requires_power = 1
@@ -400,141 +376,75 @@
 
 //Petrov
 
-/area/sierra/shuttle/petrov
+/area/shuttle/sierra/petrov
 	name = "\improper NSV Petrov"
 	requires_power = 1
 	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/sierra/shuttle/petrov/ship
-	icon_state = "shuttlered"
-
-/area/sierra/shuttle/petrov/cell1
+/area/shuttle/sierra/petrov/cell1
 	name = "\improper NSV Petrov - Isolation Cell 1"
 	icon_state = "shuttle"
-/area/sierra/shuttle/petrov/cell2
+/area/shuttle/sierra/petrov/cell2
 	name = "\improper NSV Petrov - Isolation Cell 2"
 	icon_state = "shuttlegrn"
-/area/sierra/shuttle/petrov/cell3
+/area/shuttle/sierra/petrov/cell3
 	name = "\improper NSV Petrov - Isolation Cell 3"
 	icon_state = "shuttle"
 
+
 //Turbolift
-/area/sierra/turbolift
+/area/turbolift
 	name = "\improper Turbolift"
 	icon_state = "shuttle"
 	requires_power = 0
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/sierra/turbolift/start
+/area/turbolift/start
 	name = "\improper Turbolift Start"
 
-/area/sierra/turbolift/bridge
+/area/turbolift/bridge
 	name = "\improper bridge"
 	base_turf = /turf/simulated/open
 
-/area/sierra/turbolift/firstdeck
+/area/turbolift/firstdeck
 	name = "\improper first deck"
 	base_turf = /turf/simulated/open
 
-/area/sierra/turbolift/seconddeck
+/area/turbolift/seconddeck
 	name = "\improper second deck"
 	base_turf = /turf/simulated/open
 
-/area/sierra/turbolift/thirddeck
+/area/turbolift/thirddeck
 	name = "\improper third deck"
 	base_turf = /turf/simulated/open
 
-/area/sierra/turbolift/fourthdeck
+/area/turbolift/fourthdeck
 	name = "\improper fourth deck"
 	base_turf = /turf/simulated/floor/plating
 /*
-/area/sierra/turbolift/fifthdeck
+/area/turbolift/fifthdeck
 	name = "\improper Fifth Deck"
 	base_turf = /turf/simulated/floor/plating
 */
-
-// Ninja areas
-/area/sierra/ninja_dojo
-	name = "\improper Ninja Base"
-	icon_state = "green"
-	requires_power = 0
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/sierra/ninja_dojo/dojo
-	name = "\improper Clan Dojo"
-	dynamic_lighting = 0
-
-/area/sierra/ninja_dojo/start
-	name = "\improper Clan Dojo"
-	icon_state = "shuttlered"
-	base_turf = /turf/simulated/floor/plating
-
-//Merchant
-
-/area/sierra/shuttle/merchant/home
-	name = "\improper Merchant Vessel"
-	icon_state = "shuttlegrn"
-
-//Merc
-
-/area/sierra/syndicate_mothership
-	name = "\improper Mercenary Base"
-	icon_state = "syndie-ship"
-	requires_power = 0
-	dynamic_lighting = 0
-
-/area/sierra/syndicate_station/start
-	name = "\improper Mercenary Forward Operating Base"
-	icon_state = "yellow"
-	requires_power = 0
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-//Skipjack
-
-/area/sierra/skipjack_station
-	name = "Raider Outpost"
-	icon_state = "yellow"
-	requires_power = 0
-
-//NT rescue shuttle
-
-/area/sierra/rescue_base
-	name = "\improper Response Team Base"
-	icon_state = "yellow"
-	requires_power = 0
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/sierra/rescue_base/base
-	name = "\improper Barracks"
-	icon_state = "yellow"
-	dynamic_lighting = 0
-
-/area/sierra/rescue_base/start
-	name = "\improper Response Team Base"
-	icon_state = "shuttlered"
-	base_turf = /turf/unsimulated/floor/rescue_base
 
 	////////////
 	//ELEVATOR//
 	////////////
 
-/area/sierra/turbolift/sierra_top
+/area/turbolift/sierra_top
 	name = "lift (first deck)"
 	lift_floor_label = "Bridge"
 	lift_floor_name = "Bridge"
 	lift_announce_str = "Arriving at Command Deck: Bridge. Meeting Room. Command Offices. AI Core. Landing Area. Auxiliary EVA."
 
-/area/sierra/turbolift/sierra_middle
+/area/turbolift/sierra_middle
 	name = "lift (second deck)"
 	lift_floor_label = "Deck 3"
 	lift_floor_name = "Habitation Deck"
 	lift_announce_str = "Arriving at Habitation Deck: EVA. Security Wing. Telecommunications. Mess Hall. Hydroponics. Cryogenic Storage. Holodeck."
 
-/area/sierra/turbolift/sierra_ground
+/area/turbolift/sierra_ground
 	name = "lift (third deck)"
 	lift_floor_label = "Deck 4"
 	lift_floor_name = "Maintenance deck Deck"
@@ -559,17 +469,6 @@
 	name = "\improper Pathfinder's Office"
 	icon_state = "head_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
-
-/area/sierra/command/armoury
-	name = "\improper Emergency Armory"
-	icon_state = "Warden"
-
-/area/sierra/command/armoury/access
-	name = "\improper Emergency Armory - Access"
-
-/area/sierra/command/armoury/tactical
-	name = "\improper Emergency Armory - Tactical"
-	icon_state = "Tactical"
 
 /area/sierra/crew_quarters/heads
 	icon_state = "head_quarters"
@@ -1054,29 +953,6 @@
 	has_gravity = FALSE
 	turf_initializer = /decl/turf_initializer/maintenance/space
 
-// CentCom
-
-/area/sierra/centcom/control
-	name = "\improper Centcom Control"
-
-/area/sierra/centcom/creed
-	name = "Creed's Office"
-
-/area/sierra/centcom/evac
-	name = "\improper Centcom Emergency Shuttle"
-
-/area/sierra/centcom/ferry
-	name = "\improper Centcom Transport Shuttle"
-
-/area/sierra/centcom/living
-	name = "\improper Centcom Living Quarters"
-
-/area/sierra/centcom/suppy
-	name = "\improper Centcom Supply Shuttle"
-
-/area/sierra/centcom/test
-	name = "\improper Centcom Testing Facility"
-
 // Solars
 /area/sierra/maintenance/auxsolarport
 	name = "Solar Maintenance - Port"
@@ -1129,70 +1005,70 @@
 
 // Holodecks
 
-/area/sierra/holodeck
+/area/holodeck
 	name = "\improper Holodeck"
 	icon_state = "Holodeck"
 	dynamic_lighting = 0
 	sound_env = LARGE_ENCLOSED
 
-/area/sierra/holodeck/alphadeck
+/area/holodeck/alphadeck
 	name = "\improper Holodeck Alpha"
 
-/area/sierra/holodeck/source_plating
+/area/holodeck/source_plating
 	name = "\improper Holodeck - Off"
 
-/area/sierra/holodeck/source_emptycourt
+/area/holodeck/source_emptycourt
 	name = "\improper Holodeck - Empty Court"
 	sound_env = ARENA
 
-/area/sierra/holodeck/source_boxingcourt
+/area/holodeck/source_boxingcourt
 	name = "\improper Holodeck - Boxing Court"
 	sound_env = ARENA
 
-/area/sierra/holodeck/source_basketball
+/area/holodeck/source_basketball
 	name = "\improper Holodeck - Basketball Court"
 	sound_env = ARENA
 
-/area/sierra/holodeck/source_thunderdomecourt
+/area/holodeck/source_thunderdomecourt
 	name = "\improper Holodeck - Thunderdome Court"
 	sound_env = ARENA
 
-/area/sierra/holodeck/source_courtroom
+/area/holodeck/source_courtroom
 	name = "\improper Holodeck - Courtroom"
 	sound_env = AUDITORIUM
 
-/area/sierra/holodeck/source_beach
+/area/holodeck/source_beach
 	name = "\improper Holodeck - Beach"
 	sound_env = PLAIN
 
-/area/sierra/holodeck/source_wildlife
+/area/holodeck/source_wildlife
 	name = "\improper Holodeck - Wildlife Simulation"
 
-/area/sierra/holodeck/source_military
+/area/holodeck/source_military
 	name = "\improper Holodeck - Military Parade Ground"
 	sound_env = AUDITORIUM
 
-/area/sierra/holodeck/source_meetinghall
+/area/holodeck/source_meetinghall
 	name = "\improper Holodeck - Meeting Hall"
 	sound_env = AUDITORIUM
 
-/area/sierra/holodeck/source_theatre
+/area/holodeck/source_theatre
 	name = "\improper Holodeck - Theatre"
 	sound_env = CONCERT_HALL
 
-/area/sierra/holodeck/source_picnicarea
+/area/holodeck/source_picnicarea
 	name = "\improper Holodeck - Picnic Area"
 	sound_env = PLAIN
 
-/area/sierra/holodeck/source_snowfield
+/area/holodeck/source_snowfield
 	name = "\improper Holodeck - Snow Field"
 	sound_env = FOREST
 
-/area/sierra/holodeck/source_desert
+/area/holodeck/source_desert
 	name = "\improper Holodeck - Desert"
 	sound_env = PLAIN
 
-/area/sierra/holodeck/source_space
+/area/holodeck/source_space
 	name = "\improper Holodeck - Space"
 	has_gravity = 0
 	sound_env = SPACE
@@ -1299,44 +1175,16 @@
 	name = "\improper NanoTrasen Pilot Office"
 	icon_state = "researchbreak"
 
-/area/sierra/alien
-	name = "\improper Alien base"
-	icon_state = "yellow"
-	requires_power = 0
-
-/area/sierra/shuttle/alien/base
-	icon_state = "shuttle"
-	name = "\improper Alien Shuttle Base"
-	requires_power = 1
-
-/area/sierra/admin_prison
-	name = "\improper Admin Prison"
-	dynamic_lighting = 0
-	requires_power = 0
-
-
 // Shuttles
 /area/shuttle/administration/centcom
 	name = "\improper Administration Shuttle"
 	icon_state = "shuttlered"
-/*
-/area/sierra/shuttle/escape_pod1/centcom
-	icon_state = "shuttle"
 
-/area/sierra/shuttle/escape_pod2/centcom
-	icon_state = "shuttle"
-
-/area/sierra/shuttle/escape_pod3/centcom
-	icon_state = "shuttle"
-
-/area/sierra/shuttle/escape_pod5/centcom
-	icon_state = "shuttle"
-*/
-
-/area/sierra/supply/dock
+/area/supply/dock
 	name = "Supply Shuttle"
 	icon_state = "shuttle3"
 	requires_power = 0
+
 
 // Security
 
@@ -1509,16 +1357,6 @@
 	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg','sound/music/traitor.ogg')
 	sound_env = LARGE_ENCLOSED
 
-// Merchant
-
-/area/roles/merchant_station
-	name = "\improper Merchant Station"
-	icon_state = "LP"
-
-// Syndicate
-
-/area/roles/syndicate_mothership/raider_base
-	name = "\improper Raider Base"
 
 // ACTORS GUILD
 /area/centcom/acting
@@ -1537,7 +1375,7 @@
 
 // Thunderdome
 
-/area/centcome/tdome
+/area/centcom/tdome
 	name = "\improper Thunderdome"
 	icon_state = "thunder"
 	requires_power = 0
@@ -1572,3 +1410,101 @@
 /area/centcom/tdome/tdomeobserve
 	name = "\improper Thunderdome (Observer.)"
 	icon_state = "purple"
+
+// CentCom
+
+/area/centcom/control
+	name = "\improper Centcom Control"
+
+/area/centcom/creed
+	name = "Creed's Office"
+
+/area/centcom/evac
+	name = "\improper Centcom Emergency Shuttle"
+
+/area/centcom/ferry
+	name = "\improper Centcom Transport Shuttle"
+
+/area/centcom/living
+	name = "\improper Centcom Living Quarters"
+
+/area/centcom/suppy
+	name = "\improper Centcom Supply Shuttle"
+
+/area/centcom/test
+	name = "\improper Centcom Testing Facility"
+
+//////
+
+// Shuttles
+/area/shuttle/transport1/centcom
+	icon_state = "shuttle"
+	name = "\improper Transport Shuttle Centcom"
+
+// Ninja areas
+/area/ninja_dojo
+	name = "\improper Ninja Base"
+	icon_state = "green"
+	requires_power = 0
+	dynamic_lighting = 1
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/ninja_dojo/dojo
+	name = "\improper Clan Dojo"
+	dynamic_lighting = 0
+
+/area/ninja_dojo/start
+	name = "\improper Clan Dojo"
+	icon_state = "shuttlered"
+	base_turf = /turf/simulated/floor/plating
+
+//Merchant
+
+/area/shuttle/merchant/home
+	name = "\improper Merchant Vessel"
+	icon_state = "shuttlegrn"
+
+//Merc
+
+/area/syndicate_mothership
+	name = "\improper Mercenary Base"
+	icon_state = "syndie-ship"
+	requires_power = 0
+	dynamic_lighting = 0
+
+/area/syndicate_station/start
+	name = "\improper Mercenary Forward Operating Base"
+	icon_state = "yellow"
+	requires_power = 0
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+//Skipjack
+
+/area/skipjack_station
+	name = "Raider Outpost"
+	icon_state = "yellow"
+	requires_power = 0
+
+//NT rescue shuttle
+
+/area/rescue_base
+	name = "\improper Response Team Base"
+	icon_state = "yellow"
+	requires_power = 0
+	dynamic_lighting = 1
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/rescue_base/base
+	name = "\improper Barracks"
+	icon_state = "yellow"
+	dynamic_lighting = 0
+
+/area/rescue_base/start
+	name = "\improper Response Team Base"
+	icon_state = "shuttlered"
+	base_turf = /turf/unsimulated/floor/rescue_base
+
+/area/sierra_roles/admin_prison
+	name = "\improper Admin Prison"
+	dynamic_lighting = 0
+	requires_power = 0

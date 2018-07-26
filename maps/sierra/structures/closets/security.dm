@@ -19,7 +19,7 @@
 		/obj/item/weapon/reagent_containers/spray/pepper,
 		/obj/item/weapon/grenade/chem_grenade/teargas,
 		/obj/item/weapon/melee/baton/loaded,
-		/obj/item/clothing/glasses/sunglasses/sechud/sechud,
+		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
 		/obj/item/taperoll/police,
 		/obj/item/device/hailer,
 		/obj/item/clothing/accessory/storage/black_vest,
@@ -47,7 +47,6 @@
 		/obj/item/clothing/head/beret/sec/corporate/hos,
 		/obj/item/clothing/head/helmet,
 		/obj/item/clothing/head/HoS/dermal,
-		/obj/item/weapon/cartridge/hos,
 		/obj/item/device/radio/headset/heads/cos,
 		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
 		/obj/item/taperoll/police,
@@ -68,7 +67,7 @@
 	)
 
 
-/obj/structure/closet/secure_closet/warden/secserg
+/obj/structure/closet/secure_closet/secserg/secserg
 	name = "security sergeant's locker"
 
 /obj/structure/closet/secure_closet/secserg/WillContain()
@@ -77,7 +76,6 @@
 		/obj/item/clothing/head/helmet,
 		/obj/item/clothing/head/beret/sec/corporate/warden,
 		/obj/item/clothing/under/rank/warden/corp,
-		/obj/item/weapon/cartridge/hos,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,
 		/obj/item/clothing/glasses/sunglasses,
@@ -152,7 +150,7 @@
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,
 		/obj/item/clothing/head/soft/solgov,
-		/obj/item/clothing/under/rank/security/navyblue
+		/obj/item/clothing/under/rank/security/navyblue,
 		/obj/item/weapon/storage/belt/security,
 		/obj/item/device/flash,
 		/obj/item/weapon/melee/baton/loaded,

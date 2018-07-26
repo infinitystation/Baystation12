@@ -3,8 +3,6 @@
 /obj/item/weapon/rig/hazard/guard
 	name = "hazard hardsuit control module"
 
-	req_access = list(access_sec_guard)
-
 /obj/item/clothing/head/helmet/space/rig/hazard/guard
 	camera = /obj/machinery/camera/network/research
 
