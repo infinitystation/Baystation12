@@ -4,7 +4,7 @@
 /obj/item/weapon/rig/command
 	name = "command HCM"
 	suit_type = "command hardsuit"
-	icon = 'maps/torch/icons/obj/uniques.dmi'
+	icon = 'maps/sierra/icons/obj/uniques.dmi'
 	desc = "A specialized hardsuit rig control module issued to command staff of the Expeditionary Corps and their peers."
 	icon_state = "command_rig"
 	armor = list(melee = 25, bullet = 25, laser = 15, energy = 25, bomb = 40, bio = 100, rad = 40)
@@ -22,24 +22,24 @@
 
 /obj/item/clothing/head/helmet/space/rig/command
 	light_overlay = "helmet_light_dual"
-	icon = 'maps/torch/icons/obj/solgov-head.dmi'
-	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
+	icon = 'maps/sierra/icons/obj/solgov-head.dmi'
+	item_icons = list(slot_head_str = 'maps/sierra/icons/mob/solgov-head.dmi')
 	camera = /obj/machinery/camera/network/security
 	species_restricted = list(SPECIES_HUMAN) //no available icons for aliens
 
 /obj/item/clothing/suit/space/rig/command
-	icon = 'maps/torch/icons/obj/solgov-suit.dmi'
-	item_icons = list(slot_wear_suit_str = 'maps/torch/icons/mob/solgov-suit.dmi')
+	icon = 'maps/sierra/icons/obj/solgov-suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'maps/sierra/icons/mob/solgov-suit.dmi')
 	species_restricted = list(SPECIES_HUMAN)
 
 /obj/item/clothing/shoes/magboots/rig/command
-	icon = 'maps/torch/icons/obj/solgov-feet.dmi'
-	item_icons = list(slot_shoes_str = 'maps/torch/icons/mob/solgov-feet.dmi')
+	icon = 'maps/sierra/icons/obj/solgov-feet.dmi'
+	item_icons = list(slot_shoes_str = 'maps/sierra/icons/mob/solgov-feet.dmi')
 	species_restricted = list(SPECIES_HUMAN)
 
 /obj/item/clothing/gloves/rig/command
-	icon = 'maps/torch/icons/obj/solgov-hands.dmi'
-	item_icons = list(slot_gloves_str = 'maps/torch/icons/mob/solgov-hands.dmi')
+	icon = 'maps/sierra/icons/obj/solgov-hands.dmi'
+	item_icons = list(slot_gloves_str = 'maps/sierra/icons/mob/solgov-hands.dmi')
 	species_restricted = list(SPECIES_HUMAN)
 
 

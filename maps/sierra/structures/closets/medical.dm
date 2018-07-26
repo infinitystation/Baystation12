@@ -1,8 +1,8 @@
 /*
- * Torch Medical
+ * Sierra Medical
  */
 
-/obj/structure/closet/secure_closet/CMO_torch
+/obj/structure/closet/secure_closet/CMO_sierra
 	name = "chief medical officer's locker"
 	req_access = list(access_cmo)
 	icon_state = "cmosecure1"
@@ -11,7 +11,7 @@
 	icon_opened = "cmosecureopen"
 	icon_off = "cmosecureoff"
 
-/obj/structure/closet/secure_closet/CMO_torch/WillContain()
+/obj/structure/closet/secure_closet/CMO_sierra/WillContain()
 	return list(
 		/obj/item/clothing/suit/bio_suit/cmo,
 		/obj/item/clothing/head/bio_hood/cmo,
@@ -38,7 +38,7 @@
 		RANDOM_SCRUBS
 	)
 
-/obj/structure/closet/secure_closet/medical_torchsenior
+/obj/structure/closet/secure_closet/medical_sierrasenior
 	name = "physician's locker"
 	req_access = list(access_senmed)
 	icon_state = "securesenmed1"
@@ -47,7 +47,7 @@
 	icon_opened = "securesenmedopen"
 	icon_off = "securesenmedoff"
 
-/obj/structure/closet/secure_closet/medical_torchsenior/WillContain()
+/obj/structure/closet/secure_closet/medical_sierrasenior/WillContain()
 	return list(
 		/obj/item/clothing/under/sterile,
 		/obj/item/clothing/accessory/storage/white_vest,
@@ -70,7 +70,7 @@
 		RANDOM_SCRUBS = 2
 	)
 
-/obj/structure/closet/secure_closet/medical_torch
+/obj/structure/closet/secure_closet/medical_sierra
 	name = "corpsman's locker"
 	req_access = list(access_medical_equip)
 	icon_state = "securemed1"
@@ -79,7 +79,7 @@
 	icon_opened = "securemedopen"
 	icon_off = "securemedoff"
 
-/obj/structure/closet/secure_closet/medical_torch/WillContain()
+/obj/structure/closet/secure_closet/medical_sierra/WillContain()
 	return list(
 		/obj/item/clothing/under/sterile,
 		/obj/item/clothing/accessory/storage/white_vest,
@@ -125,12 +125,12 @@
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/med, /obj/item/weapon/storage/backpack/messenger/med))
 	)
 
-/obj/structure/closet/wardrobe/medic_torch
+/obj/structure/closet/wardrobe/medic_sierra
 	name = "medical wardrobe"
 	icon_state = "white"
 	icon_closed = "white"
 
-/obj/structure/closet/wardrobe/medic_torch/WillContain()
+/obj/structure/closet/wardrobe/medic_sierra/WillContain()
 	return list(
 		/obj/item/clothing/under/sterile = 2,
 		RANDOM_SCRUBS = 4,

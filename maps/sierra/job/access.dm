@@ -1,5 +1,5 @@
 /************
-* SEV Torch *
+* SEV sierra *
 ************/
 /var/const/access_hangar = 73
 /datum/access/hangar
@@ -96,7 +96,7 @@
 
 
 /************
-* SEV Torch *
+* SEV sierra *
 ************/
 
 /datum/access/robotics

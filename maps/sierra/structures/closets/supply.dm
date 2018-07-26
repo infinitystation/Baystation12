@@ -1,5 +1,5 @@
 /*
- * Torch Supply
+ * Sierra Supply
  */
 
 /obj/structure/closet/secure_closet/decktech

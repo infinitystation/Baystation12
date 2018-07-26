@@ -43,7 +43,7 @@
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod6
 	warmup_time = 10
-	shuttle_area = /area/shuttle/sierra/escape_pod6/station
+	shuttle_area = /area/shuttle/escape_pod6/station
 	number = 6
 /obj/effect/shuttle_landmark/escape_pod/start/pod6
 	number = 6
@@ -54,7 +54,7 @@
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod7
 	warmup_time = 10
-	shuttle_area = /area/shuttle/sierra/escape_pod7/station
+	shuttle_area = /area/shuttle/escape_pod7/station
 	number = 7
 /obj/effect/shuttle_landmark/escape_pod/start/pod7
 	number = 7
@@ -65,7 +65,7 @@
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod8
 	warmup_time = 10
-	shuttle_area = /area/shuttle/sierra/escape_pod8/station
+	shuttle_area = /area/shuttle/escape_pod8/station
 	number = 8
 /obj/effect/shuttle_landmark/escape_pod/start/pod8
 	number = 8
@@ -76,7 +76,7 @@
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod9
 	warmup_time = 10
-	shuttle_area = /area/shuttle/sierra/escape_pod9/station
+	shuttle_area = /area/shuttle/escape_pod9/station
 	number = 9
 /obj/effect/shuttle_landmark/escape_pod/start/pod9
 	number = 9
@@ -87,7 +87,7 @@
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod10
 	warmup_time = 10
-	shuttle_area = /area/shuttle/sierra/escape_pod10/station
+	shuttle_area = /area/shuttle/escape_pod10/station
 	number = 10
 /obj/effect/shuttle_landmark/escape_pod/start/pod10
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -99,7 +99,7 @@
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod11
 	warmup_time = 10
-	shuttle_area = /area/shuttle/sierra/escape_pod11/station
+	shuttle_area = /area/shuttle/escape_pod11/station
 	number = 11
 /obj/effect/shuttle_landmark/escape_pod/start/pod11
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -112,7 +112,7 @@
 //Smoll pods
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod12
-	shuttle_area = /area/shuttle/sierra/escape_pod12/station
+	shuttle_area = /area/shuttle/escape_pod12/station
 	number = 12
 /obj/effect/shuttle_landmark/escape_pod/start/pod12
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -123,7 +123,7 @@
 	number = 12
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod13
-	shuttle_area = /area/shuttle/sierra/escape_pod13/station
+	shuttle_area = /area/shuttle/escape_pod13/station
 	number = 13
 /obj/effect/shuttle_landmark/escape_pod/start/pod13
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -134,7 +134,7 @@
 	number = 13
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod14
-	shuttle_area = /area/shuttle/sierra/escape_pod14/station
+	shuttle_area = /area/shuttle/escape_pod14/station
 	number = 14
 /obj/effect/shuttle_landmark/escape_pod/start/pod14
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -145,7 +145,7 @@
 	number = 14
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod15
-	shuttle_area = /area/shuttle/sierra/escape_pod15/station
+	shuttle_area = /area/shuttle/escape_pod15/station
 	number = 15
 /obj/effect/shuttle_landmark/escape_pod/start/pod15
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -156,7 +156,7 @@
 	number = 15
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod116
-	shuttle_area = /area/shuttle/sierra/escape_pod16/station
+	shuttle_area = /area/shuttle/escape_pod16/station
 	number = 16
 /obj/effect/shuttle_landmark/escape_pod/start/pod16
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -167,7 +167,7 @@
 	number = 16
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod17
-	shuttle_area = /area/shuttle/sierra/escape_pod17/station
+	shuttle_area = /area/shuttle/escape_pod17/station
 	number = 17
 /obj/effect/shuttle_landmark/escape_pod/start/pod17
 	base_turf = /turf/simulated/floor/reinforced/airless
@@ -177,7 +177,27 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod17
 	number = 17
 
-//Ninja Shuttle.
+//Petrov
+
+/datum/shuttle/autodock/ferry/petrov
+	name = "Petrov"
+	warmup_time = 10
+	shuttle_area = list(/area/shuttle/petrov/ship,/area/shuttle/petrov/cell1,/area/shuttle/petrov/cell2,/area/shuttle/petrov/cell3)
+	dock_target = "petrov_shuttle_airlock"
+	waypoint_station = "nav_petrov_start"
+	waypoint_offsite = "nav_petrov_out"
+	logging_home_tag = "nav_petrov_start"
+	logging_access = access_petrov_helm
+
+/obj/effect/shuttle_landmark/petrov/start
+	name = "First Deck"
+	landmark_tag = "nav_petrov_start"
+	docking_controller = "petrov_shuttle_dock_airlock"
+
+/obj/effect/shuttle_landmark/petrov/out
+	name = "Space near the ship"
+	landmark_tag = "nav_petrov_out"
+
 //Ninja Shuttle.
 /datum/shuttle/autodock/multi/antag/ninja
 	name = "Ninja"
@@ -204,7 +224,7 @@
 	shuttle_area = /area/ninja_dojo/start
 	current_location = "nav_ninja_start"
 	landmark_transition = "nav_ninja_transition"
-	announcer = "SEV Sierra Sensor Array"
+	announcer = "SEV sierra Sensor Array"
 	arrival_message = "Attention, anomalous sensor reading detected entering vessel proximity."
 	departure_message = "Attention, anomalous sensor reading detected leaving vessel proximity."
 
@@ -328,7 +348,7 @@
 	dock_target = "merc_shuttle"
 	current_location = "nav_merc_start"
 	landmark_transition = "nav_merc_transition"
-	announcer = "SEV Sierra Sensor Array"
+	announcer = "SEV sierra Sensor Array"
 	home_waypoint = "nav_merc_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
@@ -395,7 +415,7 @@
 	dock_target = "skipjack_shuttle"
 	current_location = "nav_skipjack_start"
 	landmark_transition = "nav_skipjack_transition"
-	announcer = "SEV Sierra Sensor Array"
+	announcer = "SEV sierra Sensor Array"
 	home_waypoint = "nav_skipjack_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
@@ -463,7 +483,7 @@
 	current_location = "nav_ert_start"
 	landmark_transition = "nav_ert_transition"
 	home_waypoint = "nav_ert_start"
-	announcer = "SEV Sieera Sensor Array"
+	announcer = "SEV sierra Sensor Array"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
 
@@ -503,7 +523,7 @@
 
 //SCGMC Assault Pod
 
-/datum/shuttle/autodock/ferry/specops/black_ops
+/datum/shuttle/autodock/ferry/specops/scg
 	name = "Special Operations"
 	warmup_time = 10
 	location = 1
@@ -540,25 +560,25 @@
 /obj/effect/shuttle_landmark/supply/station
 	name = "Hangar"
 	landmark_tag = "nav_cargo_station"
-	base_area = /area/sierra/quartermaster/hangar
+	base_area = /area/quartermaster/hangar
 	base_turf = /turf/simulated/floor/plating
-
-//Charon
 
 /datum/shuttle/autodock/overmap/exploration_shuttle
 	name = "Charon"
 	move_time = 90
-	shuttle_area = list(/area/shuttle/sierra/exploration/cockpit, /area/shuttle/sierra/exploration/atmos, /area/shuttle/sierra/exploration/power, /area/shuttle/sierra/exploration/crew, /area/shuttle/sierra/exploration/cargo, /area/shuttle/sierra/exploration/airlock)
+	shuttle_area = list(/area/exploration_shuttle/cockpit, /area/exploration_shuttle/atmos, /area/exploration_shuttle/power, /area/exploration_shuttle/crew, /area/exploration_shuttle/cargo, /area/exploration_shuttle/airlock)
 	dock_target = "calypso_shuttle"
 	current_location = "nav_hangar_calypso"
 	landmark_transition = "nav_transit_calypso"
 	range = 1
 	fuel_consumption = 4
+	logging_home_tag = "nav_hangar_calypso"
+	logging_access = access_expedition_shuttle_helm
 
 /obj/effect/shuttle_landmark/sierra/hangar/exploration_shuttle
 	name = "Charon Hangar"
 	landmark_tag = "nav_hangar_calypso"
-	base_area = /area/sierra/quartermaster/hangar
+	base_area = /area/quartermaster/hangar
 	base_turf = /turf/simulated/floor/plating
 
 /obj/effect/shuttle_landmark/sierra/deck1/exploration_shuttle
@@ -589,18 +609,20 @@
 	name = "Guppy"
 	warmup_time = 5
 	move_time = 30
-	shuttle_area = /area/shuttle/sierra/guppy
+	shuttle_area = /area/guppy_hangar/start
 	dock_target ="guppy_shuttle"
 	current_location = "nav_hangar_guppy"
 	landmark_transition = "nav_transit_guppy"
 	sound_takeoff = 'sound/effects/rocket.ogg'
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
 	fuel_consumption = 2
+	logging_home_tag = "nav_hangar_guppy"
+	logging_access = access_guppy_helm
 
 /obj/effect/shuttle_landmark/sierra/hangar/guppy
 	name = "Guppy Hangar"
 	landmark_tag = "nav_hangar_guppy"
-	base_area = /area/sierra/quartermaster/hangar
+	base_area = /area/quartermaster/hangar
 	base_turf = /turf/simulated/floor/plating
 
 /obj/effect/shuttle_landmark/sierra/deck1/guppy
@@ -627,21 +649,6 @@
 	name = "In transit"
 	landmark_tag = "nav_transit_guppy"
 
-//Petrov
-
-/datum/shuttle/autodock/ferry/petrov
-	name = "Petrov"
-	warmup_time = 10
-	shuttle_area = list(/area/shuttle/sierra/petrov,/area/shuttle/sierra/petrov/cell1,/area/shuttle/sierra/petrov/cell2,/area/shuttle/sierra/petrov/cell3)
-	dock_target = "petrov_shuttle_airlock"
-	waypoint_station = "nav_petrov_start"
-	waypoint_offsite = "nav_petrov_out"
-
-/obj/effect/shuttle_landmark/petrov/start
-	name = "First Deck"
-	landmark_tag = "nav_petrov_start"
-	docking_controller = "petrov_shuttle_dock_airlock"
-
-/obj/effect/shuttle_landmark/petrov/out
-	name = "Space near the ship"
-	landmark_tag = "nav_petrov_out"
+//Makes the deck management program use hangar access
+/datum/nano_module/deck_management
+	default_access = list(access_hangar, access_cargo, access_heads)

@@ -1,6 +1,6 @@
 /obj/structure/solbanner
 	name = "\improper SCG banner"
-	icon = 'maps/torch/icons/obj/solbanner.dmi'
+	icon = 'maps/sierra/icons/obj/solbanner.dmi'
 	icon_state = "wood"
 	desc = "A wooden pole bearing a banner of Sol Central Government. Ave."
 	anchored = 1
@@ -13,7 +13,7 @@
 	icon_state = "steel"
 	obj_flags = 0
 	var/plantedby
-	
+
 /obj/structure/solbanner/exo/Initialize()
 	. = ..()
 	flick("deploy",src)
@@ -26,7 +26,7 @@
 /obj/item/solbanner
 	name = "\improper SCG banner capsule"
 	desc = "SCG banner packed in a rapid deployment capsule. Used for staking claims on new worlds in the name of Sol Central Government."
-	icon = 'maps/torch/icons/obj/uniques.dmi'
+	icon = 'maps/sierra/icons/obj/uniques.dmi'
 	icon_state = "banner_stowed"
 	w_class = ITEM_SIZE_HUGE
 	req_access = list(access_pathfinder)

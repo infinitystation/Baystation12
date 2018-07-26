@@ -1,5 +1,5 @@
 /*
- * Torch Command
+ * sierra Command
  */
 
 
@@ -16,10 +16,10 @@
 	return list(
 		/obj/item/clothing/suit/armor/pcarrier/medium/command,
 		/obj/item/clothing/head/helmet/solgov/command,
-		/obj/item/device/radio/headset/heads/torchcaptain,
+		/obj/item/device/radio/headset/heads/sierracaptain,
 		/obj/item/clothing/glasses/sunglasses,
 		/obj/item/weapon/gun/energy/gun/secure,
-		/obj/item/device/radio/headset/heads/torchcaptain/alt,
+		/obj/item/device/radio/headset/heads/sierracaptain/alt,
 		/obj/item/clothing/accessory/holster/thigh,
 		/obj/item/weapon/melee/telebaton,
 		/obj/item/device/flash,
@@ -46,7 +46,7 @@
 		/obj/item/clothing/glasses/sunglasses,
 		/obj/item/clothing/suit/armor/pcarrier/medium/command,
 		/obj/item/clothing/head/helmet/solgov/command,
-		/obj/item/device/radio/headset/heads/torchxo,
+		/obj/item/device/radio/headset/heads/sierraxo,
 		/obj/item/ammo_magazine/c44/rubber,
 		/obj/item/clothing/accessory/holster/thigh,
 		/obj/item/weapon/gun/energy/gun/secure,
@@ -54,7 +54,7 @@
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/storage/box/headset,
-		/obj/item/device/radio/headset/heads/torchxo/alt,
+		/obj/item/device/radio/headset/heads/sierraxo/alt,
 		/obj/item/weapon/storage/box/radiokeys,
 		/obj/item/weapon/storage/box/large/ids,
 		/obj/item/weapon/storage/box/PDAs,

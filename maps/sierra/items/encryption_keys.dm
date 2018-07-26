@@ -1,24 +1,24 @@
-/obj/item/device/encryptionkey/heads/torchcaptain
+/obj/item/device/encryptionkey/heads/sierracaptain
 	name = "commanding officer's encryption key"
 	icon_state = "cap_cypherkey"
 	channels = list("Command" = 1, "Security" = 1, "Engineering" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "Exploration" = 1)
 
-/obj/item/device/encryptionkey/heads/torchxo
+/obj/item/device/encryptionkey/heads/sierraxo
 	name = "executive officer's encryption key"
 	icon_state = "hop_cypherkey"
 	channels = list("Command" = 1, "Security" = 1, "Engineering" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "Exploration" = 1)
 
-/obj/item/device/encryptionkey/headset_torchnt
+/obj/item/device/encryptionkey/headset_sierrant
 	name = "nanotrasen radio encryption key"
 	icon_state = "nt_cypherkey"
 	channels = list("Science" = 1)
 
-/obj/item/device/encryptionkey/headset_torchrd
+/obj/item/device/encryptionkey/headset_sierrard
 	name = "nanotrasen command radio encryption key"
 	icon_state = "nt_cypherkey"
 	channels = list("Science" = 1, "Command" = 1)
 
-/obj/item/device/encryptionkey/headset_torchroboticist
+/obj/item/device/encryptionkey/headset_sierraroboticist
 	name = "roboticist's encryption key"
 	icon_state = "eng_cypherkey"
 	channels = list("Engineering" = 1, "Medical" = 1)

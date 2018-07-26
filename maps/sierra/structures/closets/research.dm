@@ -1,8 +1,8 @@
 /*
- * Torch Science
+ * Sierra Science
  */
 
-/obj/structure/closet/secure_closet/RD_torch
+/obj/structure/closet/secure_closet/RD_sierra
 	name = "research director's locker"
 	req_access = list(access_rd)
 	icon_state = "rdsecure1"
@@ -11,7 +11,7 @@
 	icon_opened = "rdsecureopen"
 	icon_off = "rdsecureoff"
 
-/obj/structure/closet/secure_closet/RD_torch/WillContain()
+/obj/structure/closet/secure_closet/RD_sierra/WillContain()
 	return list(
 		/obj/item/clothing/suit/bio_suit/scientist,
 		/obj/item/clothing/head/bio_hood/scientist,
@@ -25,8 +25,8 @@
 		/obj/item/clothing/shoes/white,
 		/obj/item/clothing/gloves/latex,
 		/obj/item/clothing/glasses/science,
-		/obj/item/device/radio/headset/heads/torchntcommand,
-		/obj/item/device/radio/headset/heads/torchntcommand/alt,
+		/obj/item/device/radio/headset/heads/sierrantcommand,
+		/obj/item/device/radio/headset/heads/sierrantcommand/alt,
 		/obj/item/weapon/tank/emergency/oxygen/engi,
 		/obj/item/clothing/mask/gas,
 		/obj/item/device/flash,
@@ -44,7 +44,7 @@
 		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger/tox, 50)
 	)
 
-/obj/structure/closet/secure_closet/secure_closet/xenoarchaeologist_torch
+/obj/structure/closet/secure_closet/secure_closet/xenoarchaeologist_sierra
 	name = "xenoarchaeologist's locker"
 	req_access = list(access_xenoarch)
 	icon_state = "secureres1"
@@ -53,13 +53,13 @@
 	icon_opened = "secureresopen"
 	icon_off = "secureresoff"
 
-/obj/structure/closet/secure_closet/secure_closet/xenoarchaeologist_torch/WillContain()
+/obj/structure/closet/secure_closet/secure_closet/xenoarchaeologist_sierra/WillContain()
 	return list(
 		/obj/item/clothing/under/rank/scientist,
 		/obj/item/clothing/suit/storage/toggle/labcoat/science,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
-		/obj/item/device/radio/headset/torchnanotrasen,
+		/obj/item/device/radio/headset/sierrananotrasen,
 		/obj/item/clothing/mask/gas,
 		/obj/item/weapon/clipboard,
 		/obj/item/weapon/folder,
@@ -77,7 +77,7 @@
 		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/dufflebag, 50)
 	)
 
-/obj/structure/closet/secure_closet/scientist_torch
+/obj/structure/closet/secure_closet/scientist_sierra
 	name = "researcher's locker"
 	req_one_access = list(access_research)
 	icon_state = "secureres1"
@@ -86,13 +86,13 @@
 	icon_opened = "secureresopen"
 	icon_off = "secureresoff"
 
-/obj/structure/closet/secure_closet/scientist_torch/WillContain()
+/obj/structure/closet/secure_closet/scientist_sierra/WillContain()
 	return list(
 		/obj/item/clothing/under/rank/scientist,
 		/obj/item/clothing/suit/storage/toggle/labcoat/science,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
-		/obj/item/device/radio/headset/torchnanotrasen,
+		/obj/item/device/radio/headset/sierrananotrasen,
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/weapon/tank/emergency/oxygen/engi,
 		/obj/item/weapon/clipboard,
@@ -119,7 +119,7 @@
 
 /obj/structure/closet/secure_closet/prospector/WillContain()
 	return list(
-		/obj/item/device/radio/headset/torchnanotrasen,
+		/obj/item/device/radio/headset/sierrananotrasen,
 		/obj/item/clothing/under/rank/miner,
 		/obj/item/clothing/accessory/storage/webbing,
 		/obj/item/clothing/gloves/thick,

@@ -1,12 +1,17 @@
+var/const/NETWORK_AQUILA      = "Aquila"
 var/const/NETWORK_BRIDGE      = "Bridge"
 var/const/NETWORK_CALYPSO     = "Charon"
 var/const/NETWORK_EXPEDITION  = "Expedition"
 var/const/NETWORK_FIRST_DECK  = "First Deck"
+var/const/NETWORK_FOURTH_DECK = "Fourth Deck"
+var/const/NETWORK_POD         = "General Utility Pod"
 var/const/NETWORK_SECOND_DECK = "Second Deck"
-var/const/NETWORK_THIRD_DECK  = "Third Deck"
-var/const/NETWORK_POD         = "Mining Pod"
 var/const/NETWORK_SUPPLY      = "Supply"
 var/const/NETWORK_HANGAR      = "Hangar"
+var/const/NETWORK_MISSILE     = "Missile Pod"
+var/const/NETWORK_EXPLO       = "Exploration"
+var/const/NETWORK_THIRD_DECK  = "Third Deck"
+var/const/NETWORK_PETROV      = "Petrov"
 
 /datum/map/sierra/get_network_access(var/network)
 	switch(network)
@@ -20,7 +25,9 @@ var/const/NETWORK_HANGAR      = "Hangar"
 			return access_mailsorting
 		if(NETWORK_HANGAR)
 			return access_hangar
-		if(NETWORK_EXPEDITION)
+		if(NETWORK_PETROV)
+			return access_petrov
+		if(NETWORK_EXPLO)
 			return access_explorer
 	return get_shared_network_access(network) || ..()
 
@@ -31,16 +38,22 @@ var/const/NETWORK_HANGAR      = "Hangar"
 		NETWORK_FIRST_DECK,
 		NETWORK_SECOND_DECK,
 		NETWORK_THIRD_DECK,
+		NETWORK_FOURTH_DECK,
+		NETWORK_BRIDGE,
 		NETWORK_COMMAND,
 		NETWORK_ENGINEERING,
 		NETWORK_ENGINE,
 		NETWORK_MEDICAL,
+		NETWORK_MISSILE,
 		NETWORK_RESEARCH,
 		NETWORK_SECURITY,
 		NETWORK_SUPPLY,
 		NETWORK_EXPEDITION,
+		NETWORK_EXPLO,
 		NETWORK_HANGAR,
+		NETWORK_AQUILA,
 		NETWORK_CALYPSO,
+		NETWORK_PETROV,
 		NETWORK_POD,
 		NETWORK_ALARM_ATMOS,
 		NETWORK_ALARM_CAMERA,
@@ -55,6 +68,9 @@ var/const/NETWORK_HANGAR      = "Hangar"
 //
 
 // Networks
+/obj/machinery/camera/network/aquila
+	network = list(NETWORK_AQUILA)
+
 /obj/machinery/camera/network/bridge
 	network = list(NETWORK_BRIDGE)
 
@@ -67,8 +83,14 @@ var/const/NETWORK_HANGAR      = "Hangar"
 /obj/machinery/camera/network/first_deck
 	network = list(NETWORK_FIRST_DECK)
 
+/obj/machinery/camera/network/fourth_deck
+	network = list(NETWORK_FOURTH_DECK)
+
 /obj/machinery/camera/network/pod
 	network = list(NETWORK_POD)
+
+/obj/machinery/camera/network/petrov
+	network = list(NETWORK_PETROV)
 
 /obj/machinery/camera/network/second_deck
 	network = list(NETWORK_SECOND_DECK)
@@ -78,6 +100,9 @@ var/const/NETWORK_HANGAR      = "Hangar"
 
 /obj/machinery/camera/network/hangar
 	network = list(NETWORK_HANGAR)
+
+/obj/machinery/camera/network/exploration
+	network = list(NETWORK_EXPLO)
 
 /obj/machinery/camera/network/third_deck
 	network = list(NETWORK_THIRD_DECK)
@@ -91,8 +116,15 @@ var/const/NETWORK_HANGAR      = "Hangar"
 /obj/machinery/camera/network/engine
 	network = list(NETWORK_ENGINE)
 
+/obj/machinery/camera/network/missile
+	network = list(NETWORK_MISSILE)
+
+/obj/machinery/camera/network/engineering_outpost
+	network = list(NETWORK_ENGINEERING_OUTPOST)
 
 // Motion
+/obj/machinery/camera/motion/engineering_outpost
+	network = list(NETWORK_ENGINEERING_OUTPOST)
 
 // All Upgrades
 /obj/machinery/camera/all/command
@@ -102,8 +134,18 @@ var/const/NETWORK_HANGAR      = "Hangar"
 // T-Coms
 //
 
+/obj/machinery/telecomms/relay/preset/shuttle
+	id = "Charon Relay"
+	toggled = 0
+	autolinkers = list("s_relay")
+
 /obj/machinery/telecomms/relay/preset/exploration_shuttle
 	id = "Charon Relay"
+	toggled = 0
+	autolinkers = list("s_relay")
+
+/obj/machinery/telecomms/relay/preset/aquila
+	id = "Aquila Relay"
 	toggled = 0
 	autolinkers = list("s_relay")
 
@@ -161,12 +203,13 @@ var/const/NETWORK_HANGAR      = "Hangar"
 
 var/const/NETWORK_COMMAND = "Command"
 var/const/NETWORK_ENGINE  = "Engine"
+var/const/NETWORK_ENGINEERING_OUTPOST = "Engineering Outpost"
 
 /datum/map/proc/get_shared_network_access(var/network)
 	switch(network)
 		if(NETWORK_COMMAND)
 			return access_heads
-		if(NETWORK_ENGINE)
+		if(NETWORK_ENGINE, NETWORK_ENGINEERING_OUTPOST)
 			return access_engine
 
 /datum/map/sierra/default_internal_channels()

@@ -1,4 +1,4 @@
-/datum/map/torch
+/datum/map/sierra
 	species_to_job_whitelist = list(
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/chemist,
 		/datum/job/roboticist, /datum/job/cargo_contractor, /datum/job/chef, /datum/job/engineer_contractor, /datum/job/doctor_contractor, /datum/job/bartender),
@@ -32,7 +32,7 @@
 						)
 
 
-/datum/map/torch/setup_map()
+/datum/map/sierra/setup_map()
 	..()
 	for(var/job_type in GLOB.using_map.allowed_jobs)
 		var/datum/job/job = decls_repository.get_decl(job_type)
@@ -55,7 +55,7 @@
 	minimal_player_age = 21
 	economic_modifier = 15
 	ideal_character_age = 50
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/CO
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/CO
 	total_positions = 1
 	spawn_positions = 1
 	req_admin_notify = 1
@@ -90,10 +90,10 @@
 	minimal_player_age = 21
 	economic_modifier = 10
 	ideal_character_age = 45
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/XO
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/XO
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/XO/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/command/XO/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/o5,
@@ -145,7 +145,7 @@
 	economic_modifier = 20
 	minimal_player_age = 14
 	ideal_character_age = 60
-	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/research/rd
+	outfit_type = /decl/hierarchy/outfit/job/sierra/passenger/research/rd
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_ADEPT,
@@ -183,10 +183,10 @@
 	economic_modifier = 10
 	minimal_player_age = 21
 	ideal_character_age = 48
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/cmo
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/cmo
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/cmo/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/command/cmo/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/o4,
@@ -228,10 +228,10 @@
 	economic_modifier = 9
 	ideal_character_age = 40
 	minimal_player_age = 21
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/chief_engineer
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/chief_engineer
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/chief_engineer/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/command/chief_engineer/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/o3,
@@ -284,10 +284,10 @@
 	economic_modifier = 8
 	minimal_player_age = 21
 	ideal_character_age = 35
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/cos
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/cos
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/cos/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/command/cos/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/o3,
@@ -330,7 +330,7 @@
 		"NanoTrasen Representative",
 		"NanoTrasen Executive"
 		)
-	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/research/cl
+	outfit_type = /decl/hierarchy/outfit/job/sierra/passenger/research/cl
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(	SKILL_BUREAUCRACY	= SKILL_EXPERT,
@@ -361,7 +361,7 @@
 		"Inspector General",
 		"SolGov Ombudsman"
 		)
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/representative
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/representative
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_EXPERT,
@@ -387,7 +387,7 @@
 	minimal_player_age = 21
 	economic_modifier = 8
 	ideal_character_age = 45
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/sea/fleet
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/sea/fleet
 	allowed_branches = list(
 		/datum/mil_branch/fleet
 	)
@@ -423,10 +423,10 @@
 	minimal_player_age = 18
 	economic_modifier = 7
 	ideal_character_age = 24
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/bridgeofficer
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/bridgeofficer
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/command/bridgeofficer/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/command/bridgeofficer/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/o1,
@@ -453,7 +453,7 @@
 							 /datum/computer_file/program/deck_management)
 
 /datum/job/bridgeofficer/get_description_blurb()
-	return "You are a Bridge Officer. You are a very junior officer. You do not give orders of your own. You are subordinate to all of command. You handle matters on the bridge and report directly to the CO and XO. You take the Torch's helm and pilot the Aquila if needed. You monitor bridge computer programs and communications and report relevant information to command."
+	return "You are a Bridge Officer. You are a very junior officer. You do not give orders of your own. You are subordinate to all of command. You handle matters on the bridge and report directly to the CO and XO. You take the sierra's helm and pilot the Aquila if needed. You monitor bridge computer programs and communications and report relevant information to command."
 
 /datum/job/pathfinder
 	title = "Pathfinder"
@@ -467,7 +467,7 @@
 	minimal_player_age = 7
 	economic_modifier = 7
 	ideal_character_age = 35
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/exploration/pathfinder
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/pathfinder
 	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/o3,
@@ -496,7 +496,7 @@
 	supervisors = "the Commanding Officer, Executive Officer, and Pathfinder"
 	selection_color = "#68099e"
 	ideal_character_age = 20
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/exploration/explorer
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/explorer
 	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
 
 	allowed_ranks = list(
@@ -523,10 +523,10 @@
 	economic_modifier = 6
 	minimal_player_age = 14
 	ideal_character_age = 40
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/engineering/senior_engineer
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/senior_engineer
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/engineering/senior_engineer/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/engineering/senior_engineer/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e8,
@@ -577,10 +577,10 @@
 		"Electrician",
 		"Atmospheric Technician",
 		)
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e5,
@@ -630,7 +630,7 @@
 		"Information Systems Technician",
 		"Reactor Technician",
 		"Life Support Systems Specialist")
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/engineering/contractor
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/contractor
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
 	min_skill = list(	SKILL_COMPUTER      = SKILL_BASIC,
@@ -667,10 +667,10 @@
 	selection_color = "#5b4d20"
 	ideal_character_age = 20
 
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
@@ -717,7 +717,7 @@
 	alt_titles = list(
 		"Biomechanical Engineer",
 		"Mechsuit Technician")
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/engineering/roboticist
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/roboticist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
 	min_skill = list(	SKILL_COMPUTER		= SKILL_ADEPT,
@@ -740,10 +740,10 @@
 	economic_modifier = 5
 	minimal_player_age = 14
 	ideal_character_age = 35
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/security/brig_officer
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/brig_officer
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/security/brig_officer/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/security/brig_officer/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e8,
@@ -782,10 +782,10 @@
 	alt_titles = list(
 		"Criminal Investigator"
 	)
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/forensic_tech
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech/fleet,
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/security/forensic_tech/fleet,
 		/datum/mil_branch/civilian
 	)
 	allowed_ranks = list(
@@ -794,8 +794,8 @@
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/fleet/e4,
 		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/civ/contractor = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech/contractor,
-		/datum/mil_rank/civ/marshal = /decl/hierarchy/outfit/job/torch/crew/security/forensic_tech/marshal
+		/datum/mil_rank/civ/contractor = /decl/hierarchy/outfit/job/sierra/crew/security/forensic_tech/contractor,
+		/datum/mil_rank/civ/marshal = /decl/hierarchy/outfit/job/sierra/crew/security/forensic_tech/marshal
 	)
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
 						SKILL_COMPUTER    = SKILL_BASIC,
@@ -823,10 +823,10 @@
 	economic_modifier = 4
 	minimal_player_age = 10
 	ideal_character_age = 25
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/security/maa
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/maa
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/security/maa/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/security/maa/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
@@ -863,10 +863,10 @@
 	alt_titles = list(
 		"Surgeon",
 		"Trauma Surgeon")
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/senior
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/senior
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/medical/senior/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/medical/senior/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/o1,
@@ -898,12 +898,12 @@
 	economic_modifier = 7
 	ideal_character_age = 40
 	alt_titles = list(
-		"Field Medic" = /decl/hierarchy/outfit/job/torch/crew/medical/doctor/medic,
+		"Field Medic" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/medic,
 		"Medical Technician",
 		"Nurse")
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/doctor/fleet
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/fleet
 	allowed_branches = list(
-		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/torch/crew/medical/doctor,
+		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor,
 		/datum/mil_branch/fleet
 	)
 	allowed_ranks = list(
@@ -937,11 +937,11 @@
 	economic_modifier = 3
 	ideal_character_age = 30
 	alt_titles = list(
-		"Orderly" = /decl/hierarchy/outfit/job/torch/crew/medical/contractor/orderly,
-		"Virologist" = /decl/hierarchy/outfit/job/torch/crew/medical/contractor/virologist,
-		"Xenosurgeon" = /decl/hierarchy/outfit/job/torch/crew/medical/contractor/xenosurgeon,
-		"Paramedic" = /decl/hierarchy/outfit/job/torch/crew/medical/contractor/paramedic)
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/contractor
+		"Orderly" = /decl/hierarchy/outfit/job/sierra/crew/medical/contractor/orderly,
+		"Virologist" = /decl/hierarchy/outfit/job/sierra/crew/medical/contractor/virologist,
+		"Xenosurgeon" = /decl/hierarchy/outfit/job/sierra/crew/medical/contractor/xenosurgeon,
+		"Paramedic" = /decl/hierarchy/outfit/job/sierra/crew/medical/contractor/paramedic)
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/contractor
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
 	min_skill = list(	SKILL_EVA     = SKILL_BASIC,
@@ -966,10 +966,10 @@
 	selection_color = "#013d3b"
 	ideal_character_age = 20
 
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/doctor
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/medical/doctor/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
@@ -1004,7 +1004,7 @@
 	selection_color = "#013d3b"
 	economic_modifier = 4
 	ideal_character_age = 30
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/contractor/chemist
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/contractor/chemist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
 	min_skill = list(	SKILL_MEDICAL   = SKILL_BASIC,
@@ -1025,14 +1025,14 @@
 	economic_modifier = 5
 	supervisors = "the Chief Medical Officer"
 	alt_titles = list(
-		"Psychiatrist" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/psychiatrist,
-		"Chaplain" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/chaplain,
+		"Psychiatrist" = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/psychiatrist,
+		"Chaplain" = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/chaplain,
 	)
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/counselor
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor
 	allowed_branches = list(
 		/datum/mil_branch/civilian,
-		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/ec,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/fleet)
+		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/ec,
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/fleet)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/contractor,
 		/datum/mil_rank/fleet/o2,
@@ -1057,13 +1057,13 @@
 	economic_modifier = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/supply/deckofficer
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/deckofficer
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/supply/deckofficer/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/supply/deckofficer/fleet
 	)
 	allowed_ranks = list(
-		/datum/mil_rank/ec/o1 = /decl/hierarchy/outfit/job/torch/crew/supply/deckofficer/commissioned,
+		/datum/mil_rank/ec/o1 = /decl/hierarchy/outfit/job/sierra/crew/supply/deckofficer/commissioned,
 		/datum/mil_rank/fleet/o1,
 		/datum/mil_rank/fleet/o2,
 		/datum/mil_rank/fleet/e5,
@@ -1096,10 +1096,10 @@
 	spawn_positions = 2
 	supervisors = "the Deck Officer and Executive Officer"
 	ideal_character_age = 24
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/supply/tech
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/tech
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/supply/tech/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/supply/tech/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e2,
@@ -1130,7 +1130,7 @@
 	supervisors = "the Deck Officer and Supply Personnel"
 	ideal_character_age = 20
 	selection_color = "#515151"
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/supply/contractor
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/contractor
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -1154,11 +1154,11 @@
 	ideal_character_age = 20
 	alt_titles = list(
 		"Janitor")
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/janitor
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/janitor
 	allowed_branches = list(
 		/datum/mil_branch/civilian,
-		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/torch/crew/service/janitor/ec,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/service/janitor/fleet
+		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/sierra/crew/service/janitor/ec,
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/service/janitor/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/contractor,
@@ -1183,11 +1183,11 @@
 		"Chef",
 		"Culinary Specialist"
 		)
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/cook
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/cook
 	allowed_branches = list(
 		/datum/mil_branch/civilian,
-		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/torch/crew/service/cook/ec,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/service/cook/fleet
+		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/sierra/crew/service/cook/ec,
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/service/cook/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/contractor,
@@ -1209,7 +1209,7 @@
 	supervisors = "the Executive Officer"
 	ideal_character_age = 30
 	selection_color = "#515151"
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/bartender
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/bartender
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
 
@@ -1228,10 +1228,10 @@
 	supervisors = "the Executive Officer and SolGov Personnel"
 	selection_color = "#515151"
 	ideal_character_age = 20
-	outfit_type = /decl/hierarchy/outfit/job/torch/crew/service/crewman
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/crewman
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/torch/crew/service/crewman/fleet
+		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/service/crewman/fleet
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/ec/e3,
@@ -1257,7 +1257,7 @@
 	ideal_character_age = 50
 	alt_titles = list(
 		"Research Supervisor")
-	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/research/senior_scientist
+	outfit_type = /decl/hierarchy/outfit/job/sierra/passenger/research/senior_scientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
@@ -1286,7 +1286,7 @@
 	economic_modifier = 10
 	minimal_player_age = 5
 	ideal_character_age = 40
-	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/research/nt_pilot
+	outfit_type = /decl/hierarchy/outfit/job/sierra/passenger/research/nt_pilot
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
@@ -1311,13 +1311,13 @@
 		"Researcher",
 		"Xenobiologist",
 		"Xenobotanist",
-		"Psychologist" = /decl/hierarchy/outfit/job/torch/passenger/research/scientist/psych)
+		"Psychologist" = /decl/hierarchy/outfit/job/sierra/passenger/research/scientist/psych)
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
 						SKILL_COMPUTER    = SKILL_BASIC,
 						SKILL_DEVICES     = SKILL_BASIC,
 						SKILL_SCIENCE     = SKILL_ADEPT)
 
-	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/research/scientist
+	outfit_type = /decl/hierarchy/outfit/job/sierra/passenger/research/scientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
@@ -1346,7 +1346,7 @@
 						SKILL_HAULING = SKILL_ADEPT,
 						SKILL_EVA     = SKILL_BASIC)
 
-	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/research/prospector
+	outfit_type = /decl/hierarchy/outfit/job/sierra/passenger/research/prospector
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
@@ -1367,7 +1367,7 @@
 	economic_modifier = 6
 	minimal_player_age = 3
 	ideal_character_age = 25
-	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/research/guard
+	outfit_type = /decl/hierarchy/outfit/job/sierra/passenger/research/guard
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 	min_skill = list(	SKILL_COMBAT  = SKILL_BASIC,
@@ -1389,14 +1389,14 @@
 	economic_modifier = 3
 	ideal_character_age = 30
 	alt_titles = list(
-		"Custodian" = /decl/hierarchy/outfit/job/torch/passenger/research/assist/janitor,
-		"Testing Assistant" = /decl/hierarchy/outfit/job/torch/passenger/research/assist/testsubject,
+		"Custodian" = /decl/hierarchy/outfit/job/sierra/passenger/research/assist/janitor,
+		"Testing Assistant" = /decl/hierarchy/outfit/job/sierra/passenger/research/assist/testsubject,
 		"Laboratory Technician",
 		"Intern",
 		"Clerk",
 		"Field Assistant")
 
-	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/research/assist
+	outfit_type = /decl/hierarchy/outfit/job/sierra/passenger/research/assist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
@@ -1414,10 +1414,10 @@
 	economic_modifier = 6
 	announced = FALSE
 	alt_titles = list(
-		"Journalist" = /decl/hierarchy/outfit/job/torch/passenger/passenger/journalist,
+		"Journalist" = /decl/hierarchy/outfit/job/sierra/passenger/passenger/journalist,
 		"Historian",
 		"Botanist",
-		"Investor" = /decl/hierarchy/outfit/job/torch/passenger/passenger/investor,
+		"Investor" = /decl/hierarchy/outfit/job/sierra/passenger/passenger/investor,
 		"Naturalist",
 		"Ecologist",
 		"Entertainer",
@@ -1425,7 +1425,7 @@
 		"Sociologist",
 		"Off-Duty",
 		"Trainer")
-	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/passenger
+	outfit_type = /decl/hierarchy/outfit/job/sierra/passenger/passenger
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/civ,
@@ -1451,7 +1451,7 @@
 	ideal_character_age = 30
 	minimal_player_age = 7
 	create_record = 0
-	outfit_type = /decl/hierarchy/outfit/job/torch/merchant
+	outfit_type = /decl/hierarchy/outfit/job/sierra/merchant
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	latejoin_at_spawnpoints = 1
@@ -1474,7 +1474,7 @@
 	minimal_player_age = 7
 	create_record = 0
 	account_allowed = 0
-	outfit_type = /decl/hierarchy/outfit/job/torch/stowaway
+	outfit_type = /decl/hierarchy/outfit/job/sierra/stowaway
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	latejoin_at_spawnpoints = 1

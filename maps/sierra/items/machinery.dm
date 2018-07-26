@@ -1,17 +1,17 @@
-//Shouldn't be a lot in here, only torch versions of existing machines that need a different access req or something along those lines.
+//Shouldn't be a lot in here, only sierra versions of existing machines that need a different access req or something along those lines.
 
-/obj/machinery/vending/medical/torch
+/obj/machinery/vending/medical/sierra
 	req_access = list(access_medical)
 
-/obj/machinery/drone_fabricator/torch
-	fabricator_tag = "SEV Torch Maintenance"
+/obj/machinery/drone_fabricator/sierra
+	fabricator_tag = "NES Sierra Maintenance"
 
-/obj/machinery/drone_fabricator/torch/adv
+/obj/machinery/drone_fabricator/sierra/adv
 	name = "advanced drone fabricator"
 	fabricator_tag = "SFV Arrow Maintenance"
 	drone_type = /mob/living/silicon/robot/drone/construction
 
-//telecommunications gubbins for torch-specific networks
+//telecommunications gubbins for sierra-specific networks
 
 /obj/machinery/telecomms/hub/preset
 	id = "Hub"

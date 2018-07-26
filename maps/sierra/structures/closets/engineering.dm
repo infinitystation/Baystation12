@@ -1,8 +1,8 @@
 /*
- * Torch Engineering
+ * Sierra Engineering
  */
 
-/obj/structure/closet/secure_closet/engineering_chief_torch
+/obj/structure/closet/secure_closet/engineering_chief_sierra
 	name = "chief engineer's locker"
 	req_access = list(access_ce)
 	icon_state = "securece1"
@@ -11,7 +11,7 @@
 	icon_opened = "secureceopen"
 	icon_off = "secureceoff"
 
-/obj/structure/closet/secure_closet/engineering_chief_torch/WillContain()
+/obj/structure/closet/secure_closet/engineering_chief_sierra/WillContain()
 	return list(
 		/obj/item/clothing/accessory/storage/brown_vest,
 		/obj/item/blueprints,
@@ -44,7 +44,7 @@
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
 
-/obj/structure/closet/secure_closet/engineering_torch
+/obj/structure/closet/secure_closet/engineering_sierra
 	name = "engineer's locker"
 	req_access = list(access_engine_equip)
 	icon_state = "secureeng1"
@@ -53,7 +53,7 @@
 	icon_opened = "secureengopen"
 	icon_off = "secureengoff"
 
-/obj/structure/closet/secure_closet/engineering_torch/WillContain()
+/obj/structure/closet/secure_closet/engineering_sierra/WillContain()
 	return list(
 		/obj/item/clothing/under/hazard,
 		/obj/item/clothing/accessory/storage/brown_vest,
@@ -130,7 +130,7 @@
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
 
-/obj/structure/closet/secure_closet/atmos_torch
+/obj/structure/closet/secure_closet/atmos_sierra
 	name = "atmospherics equipment locker"
 	req_access = list(access_atmospherics)
 	icon_state = "secureatm1"
@@ -139,7 +139,7 @@
 	icon_opened = "secureatmopen"
 	icon_off = "secureatmoff"
 
-/obj/structure/closet/secure_closet/atmos_torch/WillContain()
+/obj/structure/closet/secure_closet/atmos_sierra/WillContain()
 	return list(
 		/obj/item/clothing/under/hazard,
 		/obj/item/clothing/suit/fire/firefighter,

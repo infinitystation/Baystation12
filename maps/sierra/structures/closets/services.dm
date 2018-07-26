@@ -2,13 +2,13 @@
  * Torch Service
  */
 
-/obj/structure/closet/chefcloset_torch
+/obj/structure/closet/chefcloset_sierra
 	name = "chef's closet"
 	desc = "It's a storage unit for foodservice equipment."
 	icon_state = "black"
 	icon_closed = "black"
 
-/obj/structure/closet/chefcloset_torch/WillContain()
+/obj/structure/closet/chefcloset_sierra/WillContain()
 	return list(
 		/obj/item/clothing/head/soft/mime,
 		/obj/item/device/radio/headset/headset_service,
@@ -18,7 +18,7 @@
 		/obj/item/clothing/suit/chef/classic
 	)
 
-/obj/structure/closet/secure_closet/hydroponics_torch //done so that it has no access reqs
+/obj/structure/closet/secure_closet/hydroponics_sierra //done so that it has no access reqs
 	name = "hydroponics locker"
 	req_access = list()
 	icon_state = "hydrosecure1"
@@ -27,7 +27,7 @@
 	icon_opened = "hydrosecureopen"
 	icon_off = "hydrosecureoff"
 
-/obj/structure/closet/secure_closet/hydroponics_torch/WillContain()
+/obj/structure/closet/secure_closet/hydroponics_sierra/WillContain()
 	return list(
 		/obj/item/clothing/head/soft/green,
 		/obj/item/weapon/storage/plants,
@@ -42,13 +42,13 @@
 		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger/hyd, 50)
 	)
 
-/obj/structure/closet/jcloset_torch
+/obj/structure/closet/jcloset_sierra
 	name = "custodial closet"
 	desc = "It's a storage unit for janitorial equipment."
 	icon_state = "mixed"
 	icon_closed = "mixed"
 
-/obj/structure/closet/jcloset_torch/WillContain()
+/obj/structure/closet/jcloset_sierra/WillContain()
 	return list(
 		/obj/item/clothing/head/soft/purple,
 		/obj/item/device/radio/headset/headset_service,
@@ -62,12 +62,12 @@
 		/obj/item/weapon/soap
 	)
 
-/obj/structure/closet/secure_closet/bar_torch
+/obj/structure/closet/secure_closet/bar_sierra
 	name = "bar locker"
 	desc = "It's a storage unit for bar equipment."
 	req_access = list(access_bar)
 
-/obj/structure/closet/secure_closet/bar_torch/WillContain()
+/obj/structure/closet/secure_closet/bar_sierra/WillContain()
 	return list(
 		/obj/item/clothing/head/soft/black,
 		/obj/item/device/radio/headset/headset_service,

@@ -1,5 +1,5 @@
 /*
- * Torch Exploration
+ * Sierra Exploration
  */
 
 

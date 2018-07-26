@@ -248,7 +248,7 @@
 	head = /obj/item/clothing/head/beret/solgov/fleet
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id = 1
-	id_type = /obj/item/weapon/card/id/torch/crew
+	id_type = /obj/item/weapon/card/id/sierra/crew
 	id_desc = "Crewman"
 	id_slot = slot_wear_id
 
@@ -259,7 +259,7 @@
 	head = /obj/item/clothing/head/beret/solgov/fleet/command
 	shoes = /obj/item/clothing/shoes/dutyboots
 	back = /obj/item/weapon/storage/backpack/satchel/pocketbook/navy
-	id_type = /obj/item/weapon/card/id/torch/crew
+	id_type = /obj/item/weapon/card/id/sierra/crew
 	id_desc = "Bridge Officer"
 	id_slot = slot_wear_id
 

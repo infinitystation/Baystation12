@@ -1,6 +1,6 @@
-/obj/machinery/keycard_auth/torch
+/obj/machinery/keycard_auth/sierra
 
-/obj/machinery/keycard_auth/torch/attack_hand(mob/user as mob)
+/obj/machinery/keycard_auth/sierra/attack_hand(mob/user as mob)
 	if(stat & (NOPOWER|BROKEN))
 		to_chat(user, "This device is not powered.")
 		return
@@ -45,7 +45,7 @@
 		user << browse(dat, "window=keycard_auth;size=500x250")
 	return
 
-/obj/machinery/keycard_auth/torch/trigger_event()
+/obj/machinery/keycard_auth/sierra/trigger_event()
 	switch(event)
 		if("Red alert")
 			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)

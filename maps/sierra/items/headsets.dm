@@ -1,42 +1,42 @@
-/obj/item/device/radio/headset/torchnanotrasen
+/obj/item/device/radio/headset/sierrananotrasen
 	name = "nanotrasen headset"
 	desc = "A headset for corporate drones."
 	icon_state = "nt_headset"
 	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/headset_torchnt
+	ks1type = /obj/item/device/encryptionkey/headset_sierrant
 
-/obj/item/device/radio/headset/heads/torchcaptain
+/obj/item/device/radio/headset/heads/sierracaptain
 	name = "commanding officer's headset"
 	desc = "The skipper's headset."
 	icon_state = "com_headset"
 	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/heads/torchcaptain
+	ks1type = /obj/item/device/encryptionkey/heads/sierracaptain
 
-/obj/item/device/radio/headset/heads/torchcaptain/alt
+/obj/item/device/radio/headset/heads/sierracaptain/alt
 	name = "commanding officer's bowman headset"
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 
-/obj/item/device/radio/headset/heads/torchxo
+/obj/item/device/radio/headset/heads/sierraxo
 	name = "executive officer's headset"
 	desc = "The headset of the guy who will one day be CO."
 	icon_state = "com_headset"
 	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/heads/torchxo
+	ks1type = /obj/item/device/encryptionkey/heads/sierraxo
 
-/obj/item/device/radio/headset/heads/torchxo/alt
+/obj/item/device/radio/headset/heads/sierraxo/alt
 	name = "executive officer's bowman headset"
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 
-/obj/item/device/radio/headset/heads/torchntcommand
+/obj/item/device/radio/headset/heads/sierrantcommand
 	name = "nanotrasen command headset"
 	desc = "Headset of the corporate overlords."
 	icon_state = "nt_headset"
 	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/headset_torchrd
+	ks1type = /obj/item/device/encryptionkey/headset_sierrard
 
-/obj/item/device/radio/headset/heads/torchntcommand/alt
+/obj/item/device/radio/headset/heads/sierrantcommand/alt
 	name = "nanotrasen command bowman headset"
 	icon_state = "nt_headset_alt"
 	item_state = "nt_headset_alt"
@@ -104,12 +104,12 @@
 	icon_state = "exp_headset_alt"
 	item_state = "exp_headset_alt"
 
-/obj/item/device/radio/headset/torchroboticist
+/obj/item/device/radio/headset/sierraroboticist
 	name = "roboticist's headset"
 	desc = "A headset with access to the engineering and medical channels."
 	icon_state = "eng_headset"
 	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/headset_torchroboticist
+	ks1type = /obj/item/device/encryptionkey/headset_sierraroboticist
 
 /obj/item/device/radio/headset/headset_cargo
 	desc = "A headset used by the Deck Officer and his slaves."
