@@ -6,7 +6,6 @@
 	cost = 120
 	containername = "\improper Excavation voidsuit crate"
 	containertype = /obj/structure/closet/crate/secure/large
-	access = access_nanotrasen
 
 /decl/hierarchy/supply_pack/science/voidsuit_mining
 	name = "Mining voidsuit"
@@ -16,7 +15,6 @@
 	cost = 120
 	containername = "\improper Mining voidsuit crate"
 	containertype = /obj/structure/closet/crate/secure/large
-	access = access_nanotrasen
 
 /decl/hierarchy/supply_pack/science/voidsuit_pilot
 	name = "Pilot voidsuit"
@@ -26,7 +24,6 @@
 	cost = 120
 	containername = "\improper Pilot voidsuit crate"
 	containertype = /obj/structure/closet/crate/secure/large
-	access = access_nanotrasen
 
 /decl/hierarchy/supply_pack/science/voidsuit_exploration
 	name = "Exploration voidsuit"

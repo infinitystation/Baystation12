@@ -243,6 +243,8 @@
 	name = "brig locker"
 	req_access = list(access_brig)
 	anchored = 1
+	locked = 0
+	icon_state = "secure"
 	var/id = null
 
 /obj/structure/closet/secure_closet/brig/WillContain()

@@ -167,6 +167,7 @@ Please contact me on #coderbus IRC. ~Carn x
 		else
 			icon = stand_icon
 			icon_state = null
+			visible_overlays = overlays_standing
 
 		var/matrix/M = matrix()
 		if(lying && (species.prone_overlay_offset[1] || species.prone_overlay_offset[2]))

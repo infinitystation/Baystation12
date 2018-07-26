@@ -40,11 +40,6 @@
 		"nav_bridge_aquila"
 	)
 
-/obj/machinery/computer/shuttle_control/explore/aquila
-	name = "aquila control console"
-	shuttle_tag = "Aquila"
-	req_access = list(access_aquila_helm)
-
 /obj/machinery/computer/shuttle_control/explore/exploration_shuttle
 	name = "charon control console"
 	shuttle_tag = "Charon"
