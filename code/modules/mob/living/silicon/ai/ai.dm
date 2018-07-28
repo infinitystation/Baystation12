@@ -462,9 +462,9 @@ var/list/ai_verbs_default = list(
 
 	return 1
 
-/mob/living/silicon/ai/cancel_camera()
+/mob/living/silicon/ai/verb/cancel_camera_ai()
+	set name = "CAMERA: Cancel View"
 	set category = "Silicon Commands"
-	name = "CAMERA: Cancel View"
 
 	//src.cameraFollow = null
 	src.view_core()
