@@ -828,6 +828,7 @@
 #include "code\game\objects\items\customs\csplayer.dm"
 #include "code\game\objects\items\customs\custkit.dm"
 #include "code\game\objects\items\customs\explorer.dm"
+#include "code\game\objects\items\customs\guitar_pink.dm"
 #include "code\game\objects\items\customs\hybrid_opt.dm"
 #include "code\game\objects\items\customs\messith.dm"
 #include "code\game\objects\items\customs\vape.dm"
