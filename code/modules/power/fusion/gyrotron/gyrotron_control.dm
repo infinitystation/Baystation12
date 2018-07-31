@@ -5,6 +5,7 @@
 	light_color = COLOR_BLUE
 	idle_power_usage = 250
 	active_power_usage = 500
+	circuit = /obj/item/weapon/circuitboard/gyrotron_control
 
 	var/id_tag
 	var/scan_range = 25
