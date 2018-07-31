@@ -428,6 +428,10 @@ Buildable meters
 /obj/item/pipe/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
 	..()
 	//*
+	if(istype(W, /obj/item/weapon/rpd))
+		to_chat(usr, "<span class='notice'>You put \the [W] back into \the [src].</span>")
+		qdel(src)
+		return
 	if(!isWrench(W))
 		return ..()
 	if (!isturf(src.loc))

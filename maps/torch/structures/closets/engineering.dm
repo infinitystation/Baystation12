@@ -153,5 +153,6 @@
 		/obj/item/clothing/mask/gas,
 		/obj/item/taperoll/atmos,
 		/obj/item/weapon/storage/firstaid/individual/all,
-		/obj/item/device/analyzer
+		/obj/item/device/analyzer,
+		/obj/item/weapon/rpd
 	)
