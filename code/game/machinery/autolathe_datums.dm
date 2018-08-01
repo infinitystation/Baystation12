@@ -384,7 +384,7 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	path = /obj/item/device/assembly/prox_sensor
 	category = "Devices and Components"
 
-/datum/autolathe/recipe/sensor_prox
+/datum/autolathe/recipe/sensor_voice
 	name = "voice analyzer"
 	path = /obj/item/device/assembly/voice
 	category = "Devices and Components"
