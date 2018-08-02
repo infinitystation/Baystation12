@@ -3924,12 +3924,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
 "gH" = (
-/obj/machinery/door/airlock/glass/command{
-	id_tag = "starboardbridgeaccess";
-	name = "Bridge Access";
-	req_one_access = list(19,80);
-	secured_wires = 1
-	},
 /obj/machinery/door/blast/regular/open{
 	density = 0;
 	dir = 4;
@@ -4484,15 +4478,16 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/bridge)
-"hq" = (
-/obj/machinery/door/airlock/glass/command{
+/obj/machinery/door/airlock/multi_tile/glass/command{
+	dir = 4;
 	id_tag = "starboardbridgeaccess";
 	name = "Bridge Access";
 	req_one_access = list(19,80);
 	secured_wires = 1
 	},
+/turf/simulated/floor/tiled/techfloor,
+/area/bridge)
+"hq" = (
 /obj/machinery/door/blast/regular/open{
 	density = 0;
 	dir = 4;
@@ -5982,6 +5977,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/structure/railing/mapped{
+	icon_state = "railing0";
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/fore)
@@ -11493,12 +11492,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
 "rV" = (
-/obj/machinery/door/airlock/glass/command{
-	id_tag = "portbridgeaccess";
-	name = "Bridge Access";
-	req_one_access = list(19,80);
-	secured_wires = 1
-	},
 /obj/machinery/door/blast/regular/open{
 	density = 0;
 	dir = 4;
@@ -12306,15 +12299,16 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/bridge)
-"sQ" = (
-/obj/machinery/door/airlock/glass/command{
+/obj/machinery/door/airlock/multi_tile/glass/command{
+	dir = 4;
 	id_tag = "portbridgeaccess";
 	name = "Bridge Access";
 	req_one_access = list(19,80);
 	secured_wires = 1
 	},
+/turf/simulated/floor/tiled/techfloor,
+/area/bridge)
+"sQ" = (
 /obj/machinery/door/blast/regular/open{
 	density = 0;
 	dir = 4;

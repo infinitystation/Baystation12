@@ -1745,6 +1745,28 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/expedition/storage)
+"eq" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4;
+	icon_state = "intact"
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1;
+	icon_state = "borderfloor_white"
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
+/area/hallway/primary/fourthdeck/fore)
 "es" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 2;
@@ -6495,6 +6517,7 @@
 /area/storage/primary)
 "nS" = (
 /obj/effect/floor_decal/industrial/warning,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/fore)
 "nT" = (
@@ -7832,7 +7855,7 @@
 	dir = 2;
 	pixel_y = 24
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/fourthdeck/center)
 "qs" = (
 /obj/effect/floor_decal/borderfloor{
@@ -7870,7 +7893,7 @@
 	icon_state = "steel_decals10";
 	dir = 9
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/fourthdeck/center)
 "qu" = (
 /obj/machinery/door/firedoor/border_only,
@@ -7894,7 +7917,7 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/fourthdeck/center)
 "qy" = (
 /obj/effect/floor_decal/borderfloor{
@@ -8720,24 +8743,6 @@
 /obj/machinery/door/airlock/glass,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/fourthdeck/center)
-"rO" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/catwalk_plated,
-/turf/simulated/floor/plating,
-/area/hallway/primary/fourthdeck/center)
 "rQ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -8753,7 +8758,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/hallway/primary/fourthdeck/center)
 "rR" = (
 /obj/structure/cable/green{
@@ -8814,7 +8820,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/fourthdeck/center)
 "rV" = (
 /obj/structure/table/rack{
@@ -9922,7 +9928,7 @@
 	icon_state = "deck-4";
 	pixel_y = -32
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/fourthdeck/center)
 "tr" = (
 /obj/structure/cable/green{
@@ -10030,7 +10036,7 @@
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/lime/border,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/fourthdeck/center)
 "tC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -10041,7 +10047,7 @@
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/lime/border,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/fourthdeck/center)
 "tD" = (
 /obj/structure/disposalpipe/segment{
@@ -12137,7 +12143,8 @@
 	dir = 1;
 	icon_state = "tube_map"
 	},
-/turf/simulated/floor/tiled,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/hallway/primary/fourthdeck/fore)
 "xh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -12161,7 +12168,8 @@
 /obj/machinery/alarm{
 	pixel_y = 30
 	},
-/turf/simulated/floor/tiled,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/hallway/primary/fourthdeck/fore)
 "xi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -12182,7 +12190,8 @@
 	dir = 1;
 	icon_state = "map"
 	},
-/turf/simulated/floor/tiled,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/hallway/primary/fourthdeck/fore)
 "xj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -12232,7 +12241,8 @@
 	dir = 2;
 	pixel_y = 24
 	},
-/turf/simulated/floor/tiled,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/hallway/primary/fourthdeck/fore)
 "xl" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
@@ -12257,7 +12267,8 @@
 	icon_state = "bordercolorcorner";
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/hallway/primary/fourthdeck/fore)
 "xm" = (
 /obj/structure/cable/green{
@@ -12435,6 +12446,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
+/obj/structure/railing/mapped{
+	icon_state = "railing0";
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
 "xK" = (
@@ -13331,6 +13346,10 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
+/obj/structure/railing/mapped{
+	icon_state = "railing0";
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fourthdeck/aft)
 "zd" = (
@@ -18074,8 +18093,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/effect/catwalk_plated,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/fourthdeck/center)
 "LT" = (
 /obj/machinery/atmospherics/binary/pump{
@@ -18535,7 +18553,7 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/fourthdeck/center)
 "NK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -18833,7 +18851,7 @@
 	icon_state = "bordercolorcorner2";
 	dir = 9
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/fourthdeck/center)
 "OF" = (
 /obj/vehicle/train/cargo/trolley,
@@ -20348,7 +20366,8 @@
 	name = "Security Checkpoint";
 	sortType = "Security Checkpoint"
 	},
-/turf/simulated/floor/tiled,
+/obj/effect/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/hallway/primary/fourthdeck/center)
 "Vz" = (
 /turf/simulated/floor/plating,
@@ -34528,7 +34547,7 @@ Xh
 tj
 uR
 nO
-xj
+eq
 LX
 kp
 fB
@@ -35534,7 +35553,7 @@ jw
 nX
 aW
 qr
-rO
+MX
 tq
 uV
 vO
