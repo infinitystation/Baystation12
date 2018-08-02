@@ -1,5 +1,5 @@
 /*
- * Torch Command
+ * sierra Command
  */
 
 
@@ -10,20 +10,16 @@
 	icon_closed = "capsecure"
 	icon_locked = "capsecure1"
 	icon_opened = "capsecureopen"
-	icon_broken = "capsecurebroken"
 	icon_off = "capsecureoff"
 
 /obj/structure/closet/secure_closet/CO/WillContain()
 	return list(
 		/obj/item/clothing/suit/armor/pcarrier/medium/command,
-		/obj/item/weapon/cartridge/captain,
 		/obj/item/clothing/head/helmet/solgov/command,
-		/obj/item/device/radio/headset/heads/torchcaptain,
+		/obj/item/device/radio/headset/heads/sierracaptain,
 		/obj/item/clothing/glasses/sunglasses,
-		/obj/item/weapon/gun/projectile/revolver/webley/captain,
-		/obj/item/ammo_magazine/c44,
-		/obj/item/ammo_magazine/c44,
-		/obj/item/ammo_magazine/c44/rubber,
+		/obj/item/weapon/gun/energy/gun/secure,
+		/obj/item/device/radio/headset/heads/sierracaptain/alt,
 		/obj/item/clothing/accessory/holster/thigh,
 		/obj/item/weapon/melee/telebaton,
 		/obj/item/device/flash,
@@ -43,26 +39,23 @@
 	icon_closed = "twosolsecure"
 	icon_locked = "twosolsecure1"
 	icon_opened = "twosolsecureopen"
-	icon_broken = "twosolsecurebroken"
 	icon_off = "twosolsecureoff"
 
 /obj/structure/closet/secure_closet/XO/WillContain()
 	return list(
 		/obj/item/clothing/glasses/sunglasses,
-		/obj/item/weapon/cartridge/hop,
 		/obj/item/clothing/suit/armor/pcarrier/medium/command,
 		/obj/item/clothing/head/helmet/solgov/command,
-		/obj/item/device/radio/headset/heads/torchxo,
-		/obj/item/weapon/gun/projectile/revolver/webley,
-		/obj/item/ammo_magazine/c44,
-		/obj/item/ammo_magazine/c44,
+		/obj/item/device/radio/headset/heads/sierraxo,
 		/obj/item/ammo_magazine/c44/rubber,
 		/obj/item/clothing/accessory/holster/thigh,
+		/obj/item/weapon/gun/energy/gun/secure,
 		/obj/item/weapon/melee/telebaton,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/storage/box/headset,
-		/obj/item/weapon/storage/box/headset/torchxo,
+		/obj/item/device/radio/headset/heads/sierraxo/alt,
+		/obj/item/weapon/storage/box/radiokeys,
 		/obj/item/weapon/storage/box/large/ids,
 		/obj/item/weapon/storage/box/PDAs,
 		/obj/item/weapon/clipboard,
@@ -73,35 +66,6 @@
 		/obj/item/weapon/storage/box/imprinting
 	)
 
-/obj/structure/closet/secure_closet/sea
-	name = "senior enlisted advisor's locker"
-	req_access = list(access_senadv)
-	icon_state = "sol1"
-	icon_closed = "sol"
-	icon_locked = "sol1"
-	icon_opened = "solopen"
-	icon_broken = "solbroken"
-	icon_off = "soloff"
-
-/obj/structure/closet/secure_closet/sea/WillContain()
-	return list(
-		/obj/item/clothing/glasses/sunglasses,
-		/obj/item/weapon/cartridge/hop,
-		/obj/item/clothing/suit/armor/pcarrier/medium/command,
-		/obj/item/clothing/head/helmet/solgov/command,
-		/obj/item/device/radio/headset/heads/torchxo,
-		/obj/item/weapon/gun/energy/gun,
-		/obj/item/clothing/accessory/holster/thigh,
-		/obj/item/weapon/melee/telebaton,
-		/obj/item/device/flash,
-		/obj/item/device/megaphone,
-		/obj/item/weapon/clipboard,
-		/obj/item/device/holowarrant,
-		/obj/item/weapon/folder/blue,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack, /obj/item/weapon/storage/backpack/satchel_norm)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag, /obj/item/weapon/storage/backpack/messenger))
-	)
-
 /obj/structure/closet/secure_closet/bridgeofficer
 	name = "bridge officer's locker"
 	req_access = list(access_heads)
@@ -109,7 +73,6 @@
 	icon_closed = "sol"
 	icon_locked = "sol1"
 	icon_opened = "solopen"
-	icon_broken = "solbroken"
 	icon_off = "soloff"
 
 /obj/structure/closet/secure_closet/bridgeofficer/WillContain()
@@ -118,14 +81,16 @@
 		/obj/item/weapon/pen,
 		/obj/item/device/tape/random,
 		/obj/item/clothing/suit/armor/pcarrier/medium/command,
+		/obj/item/clothing/head/helmet/solgov/command,
 		/obj/item/device/taperecorder,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/clipboard,
 		/obj/item/weapon/folder/blue,
-		/obj/item/modular_computer/tablet/preset/custom_loadout/standard,
-		/obj/item/device/radio/headset/headset_com,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack, /obj/item/weapon/storage/backpack/satchel_norm)),
+		/obj/item/modular_computer/tablet/lease/preset/command,
+		/obj/item/device/radio/headset/bridgeofficer,
+		/obj/item/device/radio/headset/bridgeofficer/alt,
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack, /obj/item/weapon/storage/backpack/satchel/grey)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag, /obj/item/weapon/storage/backpack/messenger)),
-		new /datum/atom_creator/weighted(list(/obj/item/device/flashlight, /obj/item/device/flashlight/flare, /obj/item/device/flashlight/glowstick/random))
+		new /datum/atom_creator/weighted(list(/obj/item/device/flashlight, /obj/item/device/flashlight/flare, /obj/item/device/flashlight/flare/glowstick/random))
 	)

@@ -1,17 +1,17 @@
-//Shouldn't be a lot in here, only torch versions of existing machines that need a different access req or something along those lines.
+//Shouldn't be a lot in here, only sierra versions of existing machines that need a different access req or something along those lines.
 
-/obj/machinery/vending/medical/torch
+/obj/machinery/vending/medical/sierra
 	req_access = list(access_medical)
 
-/obj/machinery/drone_fabricator/torch
-	fabricator_tag = "SEV Torch Maintenance"
+/obj/machinery/drone_fabricator/sierra
+	fabricator_tag = "NES Sierra Maintenance"
 
-/obj/machinery/drone_fabricator/torch/adv
+/obj/machinery/drone_fabricator/sierra/adv
 	name = "advanced drone fabricator"
 	fabricator_tag = "SFV Arrow Maintenance"
 	drone_type = /mob/living/silicon/robot/drone/construction
 
-//telecommunications gubbins for torch-specific networks
+//telecommunications gubbins for sierra-specific networks
 
 /obj/machinery/telecomms/hub/preset
 	id = "Hub"
@@ -30,11 +30,16 @@
 /obj/machinery/telecomms/server/presets/service
 	id = "Service and Exploration Server"
 	freq_listening = list(SRV_FREQ, EXP_FREQ)
+	channel_tags = list(
+		list(SRV_FREQ, "Service", COMMS_COLOR_SERVICE),
+		list(EXP_FREQ, "Exploration", COMMS_COLOR_EXPLORER)
+	)
 	autolinkers = list("service", "exploration")
 
 /obj/machinery/telecomms/server/presets/exploration
 	id = "Utility Server"
 	freq_listening = list(EXP_FREQ)
+	channel_tags = list(list(EXP_FREQ, "Exploration", COMMS_COLOR_EXPLORER))
 	autolinkers = list("Exploration")
 
 // Suit cyclers and storage
@@ -43,15 +48,15 @@
 	model_text = "Exploration"
 	req_access = list(access_explorer)
 	departments = list("Exploration")
-	species = list(SPECIES_HUMAN,SPECIES_TAJARA,SPECIES_SKRELL)
+	species = list(SPECIES_HUMAN,SPECIES_TAJARA,SPECIES_SKRELL,SPECIES_RESOMI,SPECIES_UNATHI)
 
 /obj/machinery/suit_storage_unit/explorer
 	name = "Exploration Voidsuit Storage Unit"
-	SUIT_TYPE = /obj/item/clothing/suit/space/void/exploration
-	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/exploration
-	BOOTS_TYPE = /obj/item/clothing/shoes/magboots
-	TANK_TYPE = /obj/item/weapon/tank/oxygen
-	MASK_TYPE = /obj/item/clothing/mask/breath
+	suit_type = /obj/item/clothing/suit/space/void/exploration
+	helmet_type = /obj/item/clothing/head/helmet/space/void/exploration
+	boots_type = /obj/item/clothing/shoes/magboots
+	tank_type = /obj/item/weapon/tank/oxygen
+	mask_type = /obj/item/clothing/mask/breath
 	req_access = list(access_explorer)
 	islocked = 1
 
