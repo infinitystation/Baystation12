@@ -11310,11 +11310,6 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 9
 	},
-/obj/machinery/door/airlock/multi_tile/command{
-	dir = 4;
-	name = "Conference Room";
-	req_access = list(80)
-	},
 /turf/simulated/floor/tiled/techmaint,
 /area/command/conference)
 "ase" = (
@@ -11324,6 +11319,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/machinery/door/airlock/multi_tile/command{
+	dir = 8;
+	name = "Conference Room";
+	req_access = list(80)
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/command/conference)
