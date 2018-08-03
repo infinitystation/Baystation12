@@ -742,6 +742,13 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/spline/fancy/wood/three_quarters
 	icon_state = "spline_fancy_full"
 
+/obj/effect/floor_decal/industrial/danger
+	name = "danger stripes"
+	icon_state = "danger"
+
+/obj/effect/floor_decal/industrial/danger/corner
+	icon_state = "dangercorner"
+
 /obj/effect/floor_decal/industrial/warning
 	name = "hazard stripes"
 	icon_state = "warning"
