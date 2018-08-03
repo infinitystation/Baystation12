@@ -153,7 +153,7 @@
 		if (radiation < 100)
 			if (beaker.reagents.remove_reagent(/datum/reagent/radium, 1))
 				radiation_storage += 4
-			GLOB.nanomanager.update_uis(src)
+			SSnano.update_uis(src)
 
 	if (foodsupply_storage)
 		if (!(foodsupply == 100))

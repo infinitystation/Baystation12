@@ -163,27 +163,27 @@
 							update_desc()
 						else
 							if(istype(P, /obj/item))
-							for(var/I in req_components)
-								if(istype(P, I) && (req_components[I] > 0))
-									if(isCoil(P))
-										var/obj/item/stack/cable_coil/CP = P
-										if(CP.get_amount() > 1)
-											var/camt = min(CP.amount, req_components[I]) // amount of cable to take, idealy amount required, but limited by amount provided
-											var/obj/item/stack/cable_coil/CC = new /obj/item/stack/cable_coil(src)
-											CC.amount = camt
-											CC.update_icon()
-											CP.use(camt)
-											components += CC
-											req_components[I] -= camt
-											update_desc()
-											break
-									if(!user.unEquip(P, src))
-										return
-									components += P
-									req_components[I]--
-									update_desc()
-									break
-							playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
-							to_chat(user, desc)
-							if(P && P.loc != src && !istype(P, /obj/item/stack/cable_coil))
-								to_chat(user, "<span class='warning'>You cannot add that component to the machine!</span>")
+								for(var/I in req_components)
+									if(istype(P, I) && (req_components[I] > 0))
+										if(isCoil(P))
+											var/obj/item/stack/cable_coil/CP = P
+											if(CP.get_amount() > 1)
+												var/camt = min(CP.amount, req_components[I]) // amount of cable to take, idealy amount required, but limited by amount provided
+												var/obj/item/stack/cable_coil/CC = new /obj/item/stack/cable_coil(src)
+												CC.amount = camt
+												CC.update_icon()
+												CP.use(camt)
+												components += CC
+												req_components[I] -= camt
+												update_desc()
+												break
+										if(!user.unEquip(P, src))
+											return
+										components += P
+										req_components[I]--
+										update_desc()
+										break
+								playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+								to_chat(user, desc)
+								if(P && P.loc != src && !istype(P, /obj/item/stack/cable_coil))
+									to_chat(user, "<span class='warning'>You cannot add that component to the machine!</span>")

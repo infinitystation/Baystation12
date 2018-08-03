@@ -3388,10 +3388,6 @@
 	pixel_x = 32;
 	req_access = list(79)
 	},
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
-	dir = 1
-	},
 /obj/machinery/button/remote/blast_door{
 	id = "aquila_windows";
 	name = "Aquila Windows Shutter";
@@ -3404,6 +3400,10 @@
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/structure/bed/chair/shuttle/black{
+	icon_state = "shuttle_chair_preview";
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -3759,10 +3759,6 @@
 /turf/simulated/wall/r_wall,
 /area/hallway/primary/bridge/aft)
 "gt" = (
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8;
 	icon_state = "borderfloor_white"
@@ -3773,6 +3769,10 @@
 	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/structure/bed/chair/shuttle/blue{
+	icon_state = "shuttle_chair_preview";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/aquila/cockpit)
@@ -3788,10 +3788,6 @@
 	c_tag = "Aquila - Cockpit";
 	dir = 8
 	},
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4;
 	icon_state = "borderfloor_white"
@@ -3799,6 +3795,10 @@
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
 	dir = 4
+	},
+/obj/structure/bed/chair/shuttle/blue{
+	icon_state = "shuttle_chair_preview";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/aquila/cockpit)
@@ -4478,13 +4478,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/door/airlock/multi_tile/glass/command{
-	dir = 4;
-	id_tag = "starboardbridgeaccess";
-	name = "Bridge Access";
-	req_one_access = list(19,80);
-	secured_wires = 1
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
 "hq" = (
@@ -4502,6 +4495,13 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/machinery/door/airlock/multi_tile/glass/command{
+	dir = 8;
+	id_tag = "starboardbridgeaccess";
+	name = "Bridge Access";
+	req_one_access = list(19,80);
+	secured_wires = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
@@ -5148,7 +5148,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/aquila/crew)
 "it" = (
-/obj/structure/bed/chair/comfy/shuttle,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 5;
 	icon_state = "borderfloor_white"
@@ -5165,6 +5164,7 @@
 	icon_state = "bordercolorcorner";
 	dir = 1
 	},
+/obj/structure/bed/chair/shuttle/blue,
 /turf/simulated/floor/tiled/dark,
 /area/aquila/crew)
 "iu" = (
@@ -5668,8 +5668,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/aquila/crew)
 "je" = (
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
+/obj/structure/bed/chair/shuttle/blue{
+	icon_state = "shuttle_chair_preview";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -6142,8 +6142,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
+/obj/structure/bed/chair/shuttle/blue{
+	icon_state = "shuttle_chair_preview";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -6170,10 +6170,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/aquila/crew)
 "jW" = (
-/obj/structure/bed/chair/comfy/shuttle/red{
-	icon_state = "rschair_preview";
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 9;
 	icon_state = "borderfloor_white"
@@ -6191,13 +6187,13 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/structure/bed/chair/shuttle/black{
+	icon_state = "shuttle_chair_preview";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/aquila/troops)
 "jX" = (
-/obj/structure/bed/chair/comfy/shuttle/red{
-	icon_state = "rschair_preview";
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 5;
 	icon_state = "borderfloor_white"
@@ -6210,6 +6206,10 @@
 	pixel_x = 32
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
+/obj/structure/bed/chair/shuttle/black{
+	icon_state = "shuttle_chair_preview";
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -6675,10 +6675,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/aquila/crew)
 "kU" = (
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
-	dir = 1
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6;
 	icon_state = "borderfloor_white"
@@ -6692,13 +6688,13 @@
 	layer = 3.3;
 	pixel_x = 26
 	},
+/obj/structure/bed/chair/shuttle/blue{
+	icon_state = "shuttle_chair_preview";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/aquila/crew)
 "kV" = (
-/obj/structure/bed/chair/comfy/shuttle/red{
-	icon_state = "rschair_preview";
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8;
 	icon_state = "borderfloor_white"
@@ -6712,13 +6708,13 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/bed/chair/shuttle/black{
+	icon_state = "shuttle_chair_preview";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/aquila/troops)
 "kW" = (
-/obj/structure/bed/chair/comfy/shuttle/red{
-	icon_state = "rschair_preview";
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4;
 	icon_state = "borderfloor_white"
@@ -6726,6 +6722,10 @@
 /obj/effect/floor_decal/corner/red/border{
 	icon_state = "bordercolor";
 	dir = 4
+	},
+/obj/structure/bed/chair/shuttle/black{
+	icon_state = "shuttle_chair_preview";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/aquila/troops)
@@ -8111,10 +8111,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/aquila/troops)
 "mW" = (
-/obj/structure/bed/chair/comfy/shuttle/red{
-	icon_state = "rschair_preview";
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4;
 	icon_state = "borderfloor_white"
@@ -8127,6 +8123,10 @@
 	pixel_x = 32
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
+/obj/structure/bed/chair/shuttle/black{
+	icon_state = "shuttle_chair_preview";
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -9057,10 +9057,6 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 22
 	},
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4;
 	icon_state = "borderfloor_white"
@@ -9077,13 +9073,13 @@
 	icon_state = "bordercolorcorner2";
 	dir = 6
 	},
+/obj/structure/bed/chair/shuttle/blue{
+	icon_state = "shuttle_chair_preview";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/aquila/airlock)
 "oi" = (
-/obj/structure/bed/chair/comfy/shuttle/red{
-	icon_state = "rschair_preview";
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 10;
 	icon_state = "borderfloor_white"
@@ -9113,13 +9109,13 @@
 	icon_state = "bordercolorcorner2";
 	dir = 8
 	},
+/obj/structure/bed/chair/shuttle/black{
+	icon_state = "shuttle_chair_preview";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/aquila/troops)
 "oj" = (
-/obj/structure/bed/chair/comfy/shuttle/red{
-	icon_state = "rschair_preview";
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6;
 	icon_state = "borderfloor_white"
@@ -9133,6 +9129,10 @@
 	},
 /obj/effect/floor_decal/borderfloorblack/corner2,
 /obj/effect/floor_decal/corner/red/bordercorner2,
+/obj/structure/bed/chair/shuttle/black{
+	icon_state = "shuttle_chair_preview";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/aquila/troops)
 "ok" = (
@@ -10115,10 +10115,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/aquila/airlock)
 "pY" = (
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4;
 	icon_state = "borderfloor_white"
@@ -10134,6 +10130,10 @@
 /obj/effect/floor_decal/corner/grey/bordercorner2{
 	icon_state = "bordercolorcorner2";
 	dir = 5
+	},
+/obj/structure/bed/chair/shuttle/blue{
+	icon_state = "shuttle_chair_preview";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/aquila/airlock)
@@ -12299,13 +12299,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/door/airlock/multi_tile/glass/command{
-	dir = 4;
-	id_tag = "portbridgeaccess";
-	name = "Bridge Access";
-	req_one_access = list(19,80);
-	secured_wires = 1
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
 "sQ" = (
@@ -12325,6 +12318,13 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/door/airlock/multi_tile/glass/command{
+	dir = 8;
+	id_tag = "portbridgeaccess";
+	name = "Bridge Access";
+	req_one_access = list(19,80);
+	secured_wires = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
@@ -16623,10 +16623,6 @@
 /turf/simulated/floor/plating,
 /area/security/bridgecheck)
 "zN" = (
-/obj/structure/bed/chair/comfy/shuttle/red{
-	icon_state = "rschair_preview";
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8;
 	icon_state = "borderfloor_white"
@@ -16651,6 +16647,10 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/bed/chair/shuttle/black{
+	icon_state = "shuttle_chair_preview";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/aquila/troops)
@@ -17909,10 +17909,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/bridge/aft)
 "Wq" = (
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4;
 	icon_state = "borderfloor_white"
@@ -17923,6 +17919,10 @@
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/structure/bed/chair/shuttle/blue{
+	icon_state = "shuttle_chair_preview";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/aquila/airlock)

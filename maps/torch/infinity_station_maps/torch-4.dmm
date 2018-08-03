@@ -1846,16 +1846,16 @@
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "adx" = (
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
-	dir = 1
-	},
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
 /obj/machinery/light/small/emergency{
 	icon_state = "bulb_map";
 	dir = 8
+	},
+/obj/structure/bed/chair/shuttle{
+	dir = 1;
+	icon_state = "shuttle_chair_preview"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod12/station)
@@ -1863,27 +1863,27 @@
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
-	dir = 1
-	},
 /obj/machinery/light/small/emergency{
 	icon_state = "bulb_map";
 	dir = 8
 	},
+/obj/structure/bed/chair/shuttle{
+	dir = 1;
+	icon_state = "shuttle_chair_preview"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod13/station)
 "adz" = (
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
-	dir = 1
-	},
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
 /obj/machinery/light/small/emergency{
 	icon_state = "bulb_map";
 	dir = 8
+	},
+/obj/structure/bed/chair/shuttle{
+	dir = 1;
+	icon_state = "shuttle_chair_preview"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod14/station)
@@ -2370,9 +2370,9 @@
 	pixel_x = -24;
 	tag_door = "escape_pod_12_hatch"
 	},
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
-	dir = 1
+/obj/structure/bed/chair/shuttle{
+	dir = 1;
+	icon_state = "shuttle_chair_preview"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod12/station)
@@ -2388,9 +2388,9 @@
 	pixel_x = -24;
 	tag_door = "escape_pod_13_hatch"
 	},
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
-	dir = 1
+/obj/structure/bed/chair/shuttle{
+	dir = 1;
+	icon_state = "shuttle_chair_preview"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod13/station)
@@ -2406,9 +2406,9 @@
 	pixel_x = -24;
 	tag_door = "escape_pod_14_hatch"
 	},
-/obj/structure/bed/chair/comfy/shuttle{
-	icon_state = "bschair_preview";
-	dir = 1
+/obj/structure/bed/chair/shuttle{
+	dir = 1;
+	icon_state = "shuttle_chair_preview"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod14/station)
@@ -20037,7 +20037,7 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/table/rack,
 /obj/item/clothing/shoes/dutyboots,
-/obj/item/clothing/accessory/holster/thigh,
+/obj/item/clothing/accessory/storage/holster/thigh,
 /obj/item/clothing/glasses/tacgoggles,
 /obj/structure/window/reinforced{
 	dir = 8
@@ -20065,7 +20065,7 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/table/rack,
 /obj/item/clothing/shoes/dutyboots,
-/obj/item/clothing/accessory/holster/thigh,
+/obj/item/clothing/accessory/storage/holster/thigh,
 /obj/item/clothing/glasses/tacgoggles,
 /obj/item/clothing/suit/armor/pcarrier/blue/sol,
 /obj/item/clothing/head/helmet/solgov,
@@ -21092,7 +21092,7 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/table/rack,
 /obj/item/clothing/shoes/dutyboots,
-/obj/item/clothing/accessory/holster/thigh,
+/obj/item/clothing/accessory/storage/holster/thigh,
 /obj/item/clothing/glasses/tacgoggles,
 /obj/structure/window/reinforced{
 	dir = 8
@@ -21724,7 +21724,7 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/table/rack,
 /obj/item/clothing/shoes/dutyboots,
-/obj/item/clothing/accessory/holster/thigh,
+/obj/item/clothing/accessory/storage/holster/thigh,
 /obj/item/clothing/glasses/tacgoggles,
 /obj/item/clothing/suit/armor/pcarrier/blue/sol,
 /obj/structure/window/reinforced{
@@ -28863,7 +28863,7 @@
 	pixel_x = 24;
 	tag_door = "escape_pod_15_hatch"
 	},
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod15/station)
 "aTY" = (
@@ -28881,7 +28881,7 @@
 	pixel_x = 24;
 	tag_door = "escape_pod_16_hatch"
 	},
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod16/station)
 "aUa" = (
@@ -28899,7 +28899,7 @@
 	pixel_x = 24;
 	tag_door = "escape_pod_17_hatch"
 	},
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod17/station)
 "aUc" = (
@@ -29192,7 +29192,7 @@
 	icon_state = "bulb_map";
 	dir = 4
 	},
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod15/station)
 "aUB" = (
@@ -29203,7 +29203,7 @@
 	icon_state = "bulb_map";
 	dir = 4
 	},
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod16/station)
 "aUC" = (
@@ -29214,7 +29214,7 @@
 	icon_state = "bulb_map";
 	dir = 4
 	},
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod17/station)
 "aUD" = (

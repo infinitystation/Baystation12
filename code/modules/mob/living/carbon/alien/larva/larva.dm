@@ -6,13 +6,12 @@
 	icon_state = "larva"
 	language = "Hivemind"
 	maxHealth = 25
-	max_grown = 80
 	health = 25
 	auto_progress = 0
 
 	var/adult_form = /mob/living/carbon/human
 	var/amount_grown = 0
-	var/max_grown = 200
+	var/max_grown = 80
 	var/time_of_birth
 	var/can_namepick_as_adult = 0
 	var/adult_name

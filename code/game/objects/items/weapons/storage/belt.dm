@@ -431,10 +431,7 @@
 	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
 	new /obj/item/weapon/storage/pill_bottle/kelotane(src)
 
-/obj/item/weapon/storage/belt/security/marshal
-	storage_slots = 7
-
-/obj/item/weapon/storage/belt/security/marshal/New()
+/obj/item/weapon/storage/belt/holster/security/ocei/New()
 	..()
 	new /obj/item/taperoll/police(src)
 	new /obj/item/weapon/melee/baton/loaded(src)
@@ -444,3 +441,24 @@
 	new /obj/item/ammo_magazine/c45m(src)
 	new /obj/item/weapon/gun/projectile/sec/lethal(src)
 
+/obj/item/weapon/storage/belt/holster/security/troops/New()
+	..()
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/ammo_magazine/mc9mmt(src)
+	new /obj/item/weapon/gun/projectile/sec/lethal(src)
+	new /obj/item/ammo_magazine/c45m(src)
+
+/obj/item/weapon/storage/belt/holster/security/troops_sts/New()
+	..()
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/ammo_magazine/c556(src)
+	new /obj/item/weapon/gun/projectile/sec/lethal(src)
+	new /obj/item/ammo_magazine/c45m(src)

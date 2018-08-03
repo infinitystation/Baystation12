@@ -205,4 +205,4 @@
 	name = "mounted plasma cutter"
 	use_external_power = 1
 	max_shots = 4
-	has_safety = FALSE
+	have_safety = FALSE

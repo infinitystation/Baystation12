@@ -11,9 +11,6 @@
 
 	preview_icon = 'icons/mob/human_races/species/ipc/preview.dmi'
 
-	eye_icon_location = 'icons/mob/infinity_human_face.dmi'
-	eye_icon = "blank_eyes"
-
 	language = LANGUAGE_EAL
 	secondary_langs = list(LANGUAGE_SOL_COMMON, LANGUAGE_INDEPENDENT, "Gutter", LANGUAGE_SPACER, \
 		LANGUAGE_LUNAR, LANGUAGE_SIGN, LANGUAGE_UNATHI, LANGUAGE_SIIK_MAAS, \
@@ -104,10 +101,6 @@
 
 	preview_icon = 		'icons/mob/human_races/species/terminator/preview.dmi'
 
-	eye_icon_location = 'icons/mob/human_races/species/terminator/eyes.dmi'
-	eye_icon = "eyes_terminator"
-	has_floating_eyes = 1
-
 	spawn_flags = SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_LACE
 
 	unarmed_types = list(/datum/unarmed_attack/terminator)
@@ -159,6 +152,6 @@
 
 /datum/species/machine/terminator/handle_limbs_setup(var/mob/living/carbon/human/H)
 	for(var/obj/item/organ/external/E in H.organs)
-		if(E.robotic < ORGAN_ROBOT)
+		if(!BP_IS_ROBOTIC(E))
 			E.robotize("Terminator")
 	return

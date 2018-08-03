@@ -41,7 +41,7 @@
 					/obj/item/clothing/accessory/armband = 7,
 					/obj/item/clothing/accessory/badge/holo = 5,
 					/obj/item/clothing/accessory/badge/holo/cord = 5,
-					/obj/item/clothing/accessory/holster/thigh = 5,
+					/obj/item/clothing/accessory/storage/holster/thigh = 5,
 					/obj/item/clothing/accessory/storage/black_vest = 5,
 					/obj/item/clothing/shoes/jackboots = 5,
 					/obj/item/clothing/shoes/jackboots/unathi = 3)

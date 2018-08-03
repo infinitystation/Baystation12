@@ -235,7 +235,7 @@
 	handle_casings = CYCLE_CASINGS //player has to take the old casing out manually before reloading
 	load_method = SINGLE_CASING
 	max_shells = 1 //literally just a barrel
-	has_safety = FALSE
+	have_safety = FALSE
 	w_class = ITEM_SIZE_NORMAL
 
 	var/global/list/ammo_types = list(

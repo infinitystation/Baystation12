@@ -839,15 +839,6 @@ Note that amputating the affected organ does in fact remove the infection from t
 			"<span class='moderate'><b>[organ_msgs[2]]</b></span>", \
 			"<span class='danger'>[organ_msgs[3]]</span>")
 
-			if(owner.can_feel_pain() && prob(50))
-				agony_scream(owner)
-
-
-			playsound(owner, 'sound/effects/gore/chop6.ogg', 100 , 0)//Splat.
-
-			if(owner.can_feel_pain() && prob(50))
-				agony_scream(owner)
-
 	var/mob/living/carbon/human/victim = owner //Keep a reference for post-removed().
 	var/obj/item/organ/external/parent_organ = parent
 

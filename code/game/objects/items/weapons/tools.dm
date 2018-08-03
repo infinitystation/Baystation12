@@ -518,7 +518,7 @@
 		var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[BP_EYES]
 		if(!E)
 			return
-		if(E.robotic >= ORGAN_ROBOT)
+		if(!BP_IS_ROBOTIC(E))
 			return
 		var/safety = H.eyecheck()
 		switch(safety)

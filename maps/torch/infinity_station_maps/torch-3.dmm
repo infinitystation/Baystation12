@@ -3043,7 +3043,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod11/station)
 "gZ" = (
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
 	icon_state = "borderfloor_white"
@@ -3059,7 +3059,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod11/station)
 "ha" = (
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
 	icon_state = "borderfloor_white"
@@ -3456,7 +3456,7 @@
 	dir = 1;
 	pixel_y = -29
 	},
-/obj/structure/bed/chair/comfy/shuttle{
+/obj/structure/bed/chair/shuttle{
 	icon_state = "bschair_preview";
 	dir = 8
 	},
@@ -3994,26 +3994,34 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod11/station)
 "iM" = (
-/obj/structure/bed/chair/comfy/shuttle{
+/obj/structure/bed/chair/shuttle{
 	icon_state = "bschair_preview";
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/grey/border,
 /obj/machinery/light/small/emergency,
+/obj/structure/bed/chair/shuttle{
+	dir = 1;
+	icon_state = "shuttle_chair_preview"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod11/station)
 "iN" = (
-/obj/structure/bed/chair/comfy/shuttle{
+/obj/structure/bed/chair/shuttle{
 	icon_state = "bschair_preview";
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/grey/border,
+/obj/structure/bed/chair/shuttle{
+	dir = 1;
+	icon_state = "shuttle_chair_preview"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod11/station)
 "iO" = (
-/obj/structure/bed/chair/comfy/shuttle{
+/obj/structure/bed/chair/shuttle{
 	icon_state = "bschair_preview";
 	dir = 1
 	},
@@ -4030,6 +4038,10 @@
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
 	pixel_y = -22
+	},
+/obj/structure/bed/chair/shuttle{
+	dir = 1;
+	icon_state = "shuttle_chair_preview"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod11/station)
@@ -12519,7 +12531,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
 "xF" = (
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /obj/machinery/light/small/emergency{
 	icon_state = "bulb_map";
 	dir = 1
@@ -12535,7 +12547,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
 "xG" = (
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
 	icon_state = "borderfloor_white"
@@ -12547,7 +12559,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
 "xH" = (
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
 	icon_state = "borderfloor_white"
@@ -12994,7 +13006,7 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 26
 	},
-/obj/structure/bed/chair/comfy/shuttle{
+/obj/structure/bed/chair/shuttle{
 	icon_state = "bschair_preview";
 	dir = 8
 	},
@@ -13396,22 +13408,30 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
 "zx" = (
-/obj/structure/bed/chair/comfy/shuttle{
+/obj/structure/bed/chair/shuttle{
 	icon_state = "bschair_preview";
 	dir = 1
 	},
 /obj/machinery/light/small/emergency,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/grey/border,
+/obj/structure/bed/chair/shuttle{
+	dir = 1;
+	icon_state = "shuttle_chair_preview"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
 "zy" = (
-/obj/structure/bed/chair/comfy/shuttle{
+/obj/structure/bed/chair/shuttle{
 	icon_state = "bschair_preview";
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/grey/border,
+/obj/structure/bed/chair/shuttle{
+	dir = 1;
+	icon_state = "shuttle_chair_preview"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
 "zz" = (
@@ -16963,7 +16983,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/central)
 "KK" = (
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
 	icon_state = "borderfloor_white"
@@ -17217,7 +17237,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/foyer)
 "Qo" = (
-/obj/structure/bed/chair/comfy/shuttle{
+/obj/structure/bed/chair/shuttle{
 	icon_state = "bschair_preview";
 	dir = 1
 	},
@@ -17231,10 +17251,14 @@
 	icon_state = "bordercolorcorner2";
 	dir = 9
 	},
+/obj/structure/bed/chair/shuttle{
+	dir = 1;
+	icon_state = "shuttle_chair_preview"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
 "QK" = (
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
 	icon_state = "borderfloor_white"
@@ -17489,7 +17513,7 @@
 /turf/simulated/wall,
 /area/maintenance/seconddeck/foreport)
 "Xb" = (
-/obj/structure/bed/chair/comfy/shuttle{
+/obj/structure/bed/chair/shuttle{
 	icon_state = "bschair_preview";
 	dir = 1
 	},
@@ -17497,6 +17521,10 @@
 /obj/effect/floor_decal/corner/grey/border,
 /obj/machinery/status_display{
 	pixel_y = -32
+	},
+/obj/structure/bed/chair/shuttle{
+	dir = 1;
+	icon_state = "shuttle_chair_preview"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)

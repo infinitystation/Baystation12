@@ -611,7 +611,7 @@
 /turf/simulated/floor/tiled,
 /area/space)
 "bt" = (
-/obj/structure/bed/chair/comfy/shuttle{
+/obj/structure/bed/chair/shuttle{
 	tag = "icon-bschair_preview (WEST)";
 	icon_state = "bschair_preview";
 	dir = 8

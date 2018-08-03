@@ -1,5 +1,3 @@
-//IPC subspecies
-
 /obj/item/organ/internal/posibrain/terminator
 	name = "advanced positronic brain"
 	desc = "A cube of shining metal, four inches to a side and covered in shallow grooves. Equipped with a Faraday shield."

@@ -69,9 +69,6 @@
 	icon = 'icons/turf/wall_masks.dmi'
 	icon_state = "cult"
 
-/turf/simulated/wall/wood
-	icon = 'icons/turf/wall_wood.dmi'
-
 /turf/simulated/wall/iron/New(var/newloc)
 	..(newloc,"iron")
 
