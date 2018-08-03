@@ -30,6 +30,7 @@
 	response_harm   = "swats"
 	stop_automated_movement = TRUE
 	universal_speak = TRUE
+	pass_flags = PASS_FLAG_TABLE
 
 	var/obj/item/weapon/storage/messenger/messenger_bag
 	var/obj/item/weapon/card/id/access_card
@@ -106,8 +107,8 @@
 					access_card = equipping
 				if("back")
 					messenger_bag = equipping
-			usr.drop_from_inventory(equipping)
-			equipping.forceMove(src)
+			if(!usr.unEquip(equipping, src))
+				return 0
 			visible_message("<span class='notice'>\The [usr] places \the [equipping] on to \the [src]'s [href_list["add_inv"]].</span>")
 			update_icon()
 			show_inv(usr)

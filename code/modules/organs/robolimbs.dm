@@ -20,7 +20,7 @@ var/datum/robolimb/basic_robolimb
 	var/brute_mod = 1
 	var/speed_mod = 0
 	var/burn_mod = 1
-	var/use_eye_icon = "eyes_s"
+	var/has_eyes = TRUE
 	var/can_feel_pain
 	var/skintone
 	var/list/species_cannot_use = list(SPECIES_RESOMI)
@@ -50,6 +50,7 @@ var/datum/robolimb/basic_robolimb
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_monitor.dmi'
 	restricted_to = list(SPECIES_IPC)
 	can_eat = 0
+	has_eyes = FALSE
 
 /datum/robolimb/hephaestus
 	company = "Hephaestus Industries"
@@ -84,6 +85,7 @@ var/datum/robolimb/basic_robolimb
 	company = "Hephaestus Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_monitor.dmi'
 	restricted_to = list(SPECIES_IPC)
+	has_eyes = FALSE
 
 /datum/robolimb/zenghu
 	company = "Zeng-Hu"
@@ -112,6 +114,7 @@ var/datum/robolimb/basic_robolimb
 	company = "Xion Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_monitor.dmi'
 	restricted_to = list(SPECIES_IPC)
+	has_eyes = FALSE
 
 /datum/robolimb/nanotrasen
 	company = "NanoTrasen"
@@ -160,6 +163,7 @@ var/datum/robolimb/basic_robolimb
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_monitor.dmi'
 	restricted_to = list(SPECIES_IPC)
 	can_eat = 0
+	has_eyes = FALSE
 
 /datum/robolimb/morpheus
 	company = "Morpheus"
@@ -178,15 +182,14 @@ var/datum/robolimb/basic_robolimb
 	desc = "This limb has a casing of sleek black metal and repulsive insectile design."
 	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_mantis.dmi'
 	unavailable_at_fab = 1
-	use_eye_icon = "blank_eyes"
-
+	has_eyes = FALSE
 
 /datum/robolimb/morpheus/monitor
 	company = "Morpheus Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_monitor.dmi'
 	applies_to_part = list(BP_HEAD)
 	unavailable_at_fab = 1
-	use_eye_icon = "blank_eyes"
+	has_eyes = FALSE
 	restricted_to = list(SPECIES_IPC)
 
 /datum/robolimb/veymed
@@ -215,6 +218,7 @@ var/datum/robolimb/basic_robolimb
 	applies_to_part = list(BP_HEAD)
 	unavailable_at_fab = 1
 	restricted_to = list(SPECIES_IPC)
+	has_eyes = FALSE
 
 /datum/robolimb/resomi
 	company = "Small prosthetic"

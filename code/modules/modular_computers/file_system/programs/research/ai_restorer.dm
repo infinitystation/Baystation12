@@ -7,7 +7,7 @@
 	extended_desc = "This program is capable of reconstructing damaged AI systems. It can also be used to upload basic laws to the AI. Requires direct AI connection via inteliCard slot."
 	size = 12
 	requires_ntnet = 0
-	required_access = access_heads
+	required_access = access_bridge
 	requires_access_to_run = 0
 	available_on_ntnet = 1
 	nanomodule_path = /datum/nano_module/program/computer_aidiag/
@@ -109,7 +109,7 @@
 
 		data["ai_laws"] = all_laws
 
-	ui = GLOB.nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "aidiag.tmpl", "AI Maintenance Utility", 600, 400, state = state)
 		if(host.update_layout())

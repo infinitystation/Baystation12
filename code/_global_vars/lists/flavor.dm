@@ -92,6 +92,7 @@ GLOBAL_LIST_INIT(music_tracks, list(
 	"Endless Space" = /music_track/endless_space,
 	"Elevator" = /music_track/elevator,
 	"Floating" = /music_track/floating,
+	"Every light is blinking at once" = /music_track/elibao,
 	"Maschine Klash" = /music_track/digit_one,
 	"Hurt" = /music_track/hurt,
 	"High Radiation" = /music_track/radiation,
@@ -112,7 +113,9 @@ GLOBAL_LIST_INIT(music_tracks, list(
 	"Through the Times" = /music_track/chasing_time,
 	"Thunderdome" = /music_track/thunderdome,
 	"Wonderful Lady" = /music_track/wonderful,
-	"When We Stand Together" = /music_track/together
+	"When We Stand Together" = /music_track/together,
+	"Wake" = /music_track/wake,
+	"Phoron will make us Rich" = /music_track/pwmur,
 ))
 
 /proc/setup_music_tracks(var/list/tracks)

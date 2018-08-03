@@ -1,6 +1,6 @@
 GLOBAL_LIST_EMPTY(all_crew_records)
 GLOBAL_LIST_INIT(blood_types, list("A-", "A+", "B-", "B+", "AB-", "AB+", "O-", "O+"))
-GLOBAL_LIST_INIT(physical_statuses, list("Active", "Disabled", "SSD", "Deceased"))
+GLOBAL_LIST_INIT(physical_statuses, list("Active", "Disabled", "SSD", "Deceased", "MIA"))
 GLOBAL_VAR_INIT(default_physical_status, "Active")
 GLOBAL_LIST_INIT(security_statuses, list("None", "Released", "Parolled", "Incarcerated", "Arrest"))
 GLOBAL_VAR_INIT(default_security_status, "None")
@@ -66,7 +66,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 			var/level = H.get_skill_value(S.type)
 			if(level > SKILL_NONE)
 				skills += "[S.name], [S.levels[level]]"
-			
+
 		set_skillset(jointext(skills,"\n"))
 
 	// Antag record
@@ -126,7 +126,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 /datum/computer_file/report/crew_record/proc/set_##KEY(given_value){var/datum/report_field/F = locate(/datum/report_field/##PATH/##KEY) in fields; if(F) F.set_value(given_value)}
 #define SETUP_FIELD(NAME, KEY, PATH, ACCESS, ACCESS_EDIT) GETTER_SETTER(PATH, KEY); /datum/report_field/##PATH/##KEY;\
 /datum/computer_file/report/crew_record/generate_fields(){..(); var/datum/report_field/##KEY = add_field(/datum/report_field/##PATH/##KEY, ##NAME);\
-KEY.set_access(ACCESS, ACCESS_EDIT || ACCESS || access_heads)}
+KEY.set_access(ACCESS, ACCESS_EDIT || ACCESS || access_bridge)}
 
 // Fear not the preprocessor, for it is a friend. To add a field, use one of these, depending on value type and if you need special access to see it.
 // It will also create getter/setter procs for record datum, named like /get_[key here]() /set_[key_here](value) e.g. get_name() set_name(value)
@@ -152,6 +152,7 @@ FIELD_LIST("Rank", rank, record_ranks(), null)
 // MEDICAL RECORDS
 FIELD_LIST("Blood Type", bloodtype, GLOB.blood_types, null)
 FIELD_LONG("Medical Record", medRecord, access_medical)
+FIELD_SHORT("Religion", religion, access_medical)
 
 // SECURITY RECORDS
 FIELD_LIST("Criminal Status", criminalStatus, GLOB.security_statuses, access_security)
@@ -160,12 +161,11 @@ FIELD_SHORT("DNA", dna, access_security)
 FIELD_SHORT("Fingerprint", fingerprint, access_security)
 
 // EMPLOYMENT RECORDS
-FIELD_LONG("Employment Record", emplRecord, access_heads)
-FIELD_SHORT("Home System", homeSystem, access_heads)
-FIELD_SHORT("Citizenship", citizenship, access_heads)
-FIELD_SHORT("Faction", faction, access_heads)
-FIELD_SHORT("Religion", religion, access_heads)
-FIELD_LONG("Qualifications", skillset, access_heads)
+FIELD_LONG("Employment Record", emplRecord, access_bridge)
+FIELD_SHORT("Home System", homeSystem, access_bridge)
+FIELD_SHORT("Citizenship", citizenship, access_bridge)
+FIELD_SHORT("Faction", faction, access_bridge)
+FIELD_LONG("Qualifications", skillset, access_bridge)
 
 // ANTAG RECORDS
 FIELD_LONG("Exploitable Information", antagRecord, access_syndicate)

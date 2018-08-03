@@ -18,6 +18,7 @@
 	can_escape = 1
 	possession_candidate = 1
 	holder_type = /obj/item/weapon/holder/lizard
+	pass_flags = PASS_FLAG_TABLE
 
 /mob/living/simple_animal/lizard/wizard
 	name = "Wizard"

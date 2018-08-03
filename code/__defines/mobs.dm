@@ -63,10 +63,6 @@
 #define I_GRAB		"grab"
 #define I_HURT		"harm"
 
-// Movement flags
-#define M_RUN  "run"
-#define M_WALK "walk"
-
 //These are used Bump() code for living mobs, in the mob_bump_flag, mob_swap_flags, and mob_push_flags vars to determine whom can bump/swap with whom.
 #define HUMAN 1
 #define MONKEY 2
@@ -204,7 +200,8 @@
 #define BP_VOICE		"vocal synthesiser"
 #define BP_STACK		"stack"
 #define BP_OPTICS		"optics"
-
+#define BP_FLOAT		"floatation disc"
+#define BP_JETS			"maneuvering jets"
 // Limbs.
 #define BP_L_FOOT "l_foot"
 #define BP_R_FOOT "r_foot"
@@ -219,6 +216,12 @@
 #define BP_GROIN  "groin"
 #define BP_ALL_LIMBS list(BP_CHEST, BP_GROIN, BP_HEAD, BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND, BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT)
 #define BP_BY_DEPTH list(BP_HEAD, BP_L_HAND, BP_R_HAND, BP_L_ARM, BP_R_ARM, BP_L_FOOT, BP_R_FOOT, BP_L_LEG, BP_R_LEG, BP_GROIN, BP_CHEST)
+
+// Prosthetic helpers.
+#define BP_IS_ROBOTIC(org)  (org.status & ORGAN_ROBOTIC)
+#define BP_IS_ASSISTED(org) (org.status & ORGAN_ASSISTED)
+#define BP_IS_BRITTLE(org)  (org.status & ORGAN_BRITTLE)
+#define BP_IS_CRYSTAL(org)  (org.status & ORGAN_CRYSTAL)
 
 #define SYNTH_BLOOD_COLOUR "#030303"
 #define SYNTH_FLESH_COLOUR "#575757"
@@ -270,6 +273,7 @@
 #define SPECIES_XENO        "Xenophage"
 #define SPECIES_RESOMI      "Resomi"
 #define SPECIES_ALIEN       "Humanoid"
+#define SPECIES_ADHERENT    "Adherent"
 
 #define SURGERY_CLOSED 0
 #define SURGERY_OPEN 1

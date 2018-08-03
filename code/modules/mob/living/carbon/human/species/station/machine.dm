@@ -7,6 +7,7 @@
 	to corporate operations. IPCs (Integrated Positronic Chassis) are a loose category of self-willed robots with a humanoid form, \
 	generally self-owned after being 'born' into servitude; they are reliable and dedicated workers, albeit more than slightly \
 	inhuman in outlook and perspective."
+	cyborg_noun = null
 
 	preview_icon = 'icons/mob/human_races/species/ipc/preview.dmi'
 
@@ -60,19 +61,7 @@
 
 	vision_organ = BP_OPTICS
 
-	has_limbs = list(
-		BP_CHEST =  list("path" = /obj/item/organ/external/chest),
-		BP_GROIN =  list("path" = /obj/item/organ/external/groin),
-		BP_HEAD =   list("path" = /obj/item/organ/external/head/no_eyes),
-		BP_L_ARM =  list("path" = /obj/item/organ/external/arm),
-		BP_R_ARM =  list("path" = /obj/item/organ/external/arm/right),
-		BP_L_LEG =  list("path" = /obj/item/organ/external/leg),
-		BP_R_LEG =  list("path" = /obj/item/organ/external/leg/right),
-		BP_L_HAND = list("path" = /obj/item/organ/external/hand),
-		BP_R_HAND = list("path" = /obj/item/organ/external/hand/right),
-		BP_L_FOOT = list("path" = /obj/item/organ/external/foot),
-		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right)
-		)
+	override_limb_types = list(BP_HEAD = /obj/item/organ/external/head/no_eyes)
 
 	heat_discomfort_level = 373.15
 	heat_discomfort_strings = list(
@@ -97,7 +86,7 @@
 
 /datum/species/machine/handle_limbs_setup(var/mob/living/carbon/human/H)
 	for(var/obj/item/organ/external/E in H.organs)
-		if(E.robotic < ORGAN_ROBOT)
+		if(!BP_IS_ROBOTIC(E))
 			E.robotize("Morpheus")
 	return
 

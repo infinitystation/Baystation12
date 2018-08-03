@@ -176,3 +176,7 @@
 #define isopenturf(target) istype(target, /turf/simulated/open)
 
 #define JOINTEXT(X) jointext(X, null)
+
+#define SPAN_NOTICE(X) "<span class='notice'>[X]</span>"
+
+#define SPAN_WARNING(X) "<span class='warning'>[X]</span>"

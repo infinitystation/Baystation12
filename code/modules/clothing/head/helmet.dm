@@ -184,3 +184,8 @@
 	name = "bundeforz tactical helmet"
 	desc = "A light grey helmet made from advanced ceramic. Comfortable and robust."
 	icon_state = "m_helmet"
+
+/obj/item/clothing/head/helmet/nt/pilot
+	name = "nanotrasen pilot's helmet"
+	desc = "A nanotrasen pilot's helmet for operating the cockpit in style. This one is worn by members of Nanotrasen."
+	icon_state = "pilotnt"

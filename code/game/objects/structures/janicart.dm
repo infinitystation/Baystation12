@@ -27,9 +27,9 @@
 
 /obj/structure/janitorialcart/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/weapon/storage/bag/trash) && !mybag)
-		user.drop_item()
+		if(!user.unEquip(I, src))
+			return
 		mybag = I
-		I.loc = src
 		update_icon()
 		updateUsrDialog()
 		to_chat(user, "<span class='notice'>You put [I] into [src].</span>")
@@ -46,33 +46,33 @@
 		if(!mymop)
 			if (istype(user, /mob/living/silicon/robot))
 				return 0
-			user.drop_item()
+			if(!user.unEquip(I, src))
+				return
 			mymop = I
-			I.loc = src
 			update_icon()
 			updateUsrDialog()
 			to_chat(user, "<span class='notice'>You put [I] into [src].</span>")
 
 	else if(istype(I, /obj/item/weapon/reagent_containers/spray) && !myspray)
-		user.drop_item()
+		if(!user.unEquip(I, src))
+			return
 		myspray = I
-		I.loc = src
 		update_icon()
 		updateUsrDialog()
 		to_chat(user, "<span class='notice'>You put [I] into [src].</span>")
 
 	else if(istype(I, /obj/item/device/lightreplacer) && !myreplacer)
-		user.drop_item()
+		if(!user.unEquip(I, src))
+			return
 		myreplacer = I
-		I.loc = src
 		update_icon()
 		updateUsrDialog()
 		to_chat(user, "<span class='notice'>You put [I] into [src].</span>")
 
 	else if(istype(I, /obj/item/weapon/caution))
 		if(signs < 4)
-			user.drop_item()
-			I.loc = src
+			if(!user.unEquip(I, src))
+				return
 			signs++
 			update_icon()
 			updateUsrDialog()
@@ -100,7 +100,7 @@
 	data["replacer"] = myreplacer ? capitalize(myreplacer.name) : null
 	data["signs"] = signs ? "[signs] sign\s" : null
 
-	ui = GLOB.nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
 		ui = new(user, src, ui_key, "janitorcart.tmpl", "Janitorial cart", 240, 160)
 		ui.set_initial_data(data)
@@ -202,9 +202,9 @@
 	else if(istype(I, /obj/item/key))
 		to_chat(user, "Hold [I] in one of your hands while you drive this [callme].")
 	else if(istype(I, /obj/item/weapon/storage/bag/trash))
+		if(!user.unEquip(I, src))
+			return
 		to_chat(user, "<span class='notice'>You hook the trashbag onto the [callme].</span>")
-		user.drop_item()
-		I.loc = src
 		mybag = I
 
 

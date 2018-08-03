@@ -14,7 +14,7 @@
 	var/night_vision = 0
 
 /obj/item/organ/internal/eyes/optics
-	robotic = ORGAN_ROBOT
+	status = ORGAN_ROBOTIC
 	organ_tag = BP_OPTICS
 
 /obj/item/organ/internal/eyes/optics/New()
@@ -55,7 +55,7 @@
 		owner.b_eyes ? owner.b_eyes : 0
 		)
 
-/obj/item/organ/internal/eyes/take_damage(amount, var/silent=0)
+/obj/item/organ/internal/eyes/take_internal_damage(amount, var/silent=0)
 	var/oldbroken = is_broken()
 	. = ..()
 	if(is_broken() && !oldbroken && owner && !owner.stat)

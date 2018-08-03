@@ -9,6 +9,7 @@
 	virtual_mob = /mob/observer/virtual/mob
 
 	movement_handlers = list(
+		/datum/movement_handler/mob/relayed_movement,
 		/datum/movement_handler/mob/death,
 		/datum/movement_handler/mob/conscious,
 		/datum/movement_handler/mob/eye,
@@ -108,7 +109,10 @@
 
 	var/shakecamera = 0
 	var/a_intent = I_HELP//Living
-	var/m_intent = M_RUN//Living
+
+	var/decl/move_intent/move_intent = /decl/move_intent/run
+	var/move_intents = list(/decl/move_intent/run, /decl/move_intent/walk)
+
 	var/obj/buckled = null//Living
 	var/obj/item/l_hand = null//Living
 	var/obj/item/r_hand = null//Living
@@ -176,8 +180,6 @@
 
 	var/memory = ""
 	var/flavor_text = ""
-
-	var/nabbing = 0  // Whether a creature with a CAN_NAB tag is grabbing normally or in nab mode.
 
 	var/list/progressbars = null //for stacking do_after bars
 	var/datum/skillset/skillset = /datum/skillset

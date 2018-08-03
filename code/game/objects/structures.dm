@@ -55,6 +55,12 @@
 	spawn(1) qdel(src)
 	return 1
 
+/obj/structure/proc/can_visually_connect()
+	return anchored
+
+/obj/structure/proc/can_visually_connect_to(var/obj/structure/S)
+	return istype(S, src)
+
 /obj/structure/proc/neighbor_turf_passable()
 	var/turf/T = get_step(src, src.dir)
 	if(!T || !istype(T))
@@ -77,8 +83,8 @@
 		return
 
 	for(var/obj/structure/S in orange(src, 1))
-		if(istype(S, src))
-			if(S.anchored)
+		if(can_visually_connect_to(S))
+			if(S.can_visually_connect())
 				if(propagate)
 					S.update_connections()
 					S.update_icon()
