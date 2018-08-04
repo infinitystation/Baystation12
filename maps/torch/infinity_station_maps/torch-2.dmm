@@ -11260,22 +11260,6 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/maintenance/thirddeck/aftstarboard)
-"tB" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 8;
-	external_pressure_bound = 0;
-	external_pressure_bound_default = 0;
-	icon_state = "map_vent_in";
-	initialize_directions = 1;
-	internal_pressure_bound = 4000;
-	internal_pressure_bound_default = 4000;
-	pressure_checks = 2;
-	pressure_checks_default = 2;
-	pump_direction = 0;
-	use_power = 1
-	},
-/turf/simulated/floor/reinforced,
-/area/maintenance/thirddeck/aftstarboard)
 "tC" = (
 /obj/machinery/light/small{
 	icon_state = "bulb1";
@@ -14328,6 +14312,7 @@
 	icon_state = "steel_decals6";
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/center)
 "yb" = (
@@ -16316,6 +16301,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/center)
 "Bn" = (
@@ -22703,6 +22689,7 @@
 	icon_state = "railing0";
 	dir = 8
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/center)
 "Qy" = (
@@ -51688,7 +51675,7 @@ aW
 aW
 aW
 aW
-tB
+wu
 vd
 wu
 aW

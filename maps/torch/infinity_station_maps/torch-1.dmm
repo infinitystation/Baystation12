@@ -40,7 +40,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/space)
+/area/shuttle/petrov/ship)
 "ak" = (
 /turf/simulated/wall/r_wall,
 /area/maintenance/fourthdeck/starboard)
@@ -6634,7 +6634,7 @@
 	dir = 4
 	},
 /turf/simulated/wall/titanium,
-/area/space)
+/area/shuttle/petrov/ship)
 "oh" = (
 /obj/structure/bed/roller/ironingboard,
 /obj/effect/floor_decal/corner/blue{
@@ -20406,7 +20406,7 @@
 	dir = 6
 	},
 /turf/simulated/wall/titanium,
-/area/space)
+/area/shuttle/petrov/ship)
 "VM" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/belt/archaeology,
