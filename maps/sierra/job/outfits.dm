@@ -267,7 +267,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/crew/security/forensic_tech/marshal
 	name = OUTFIT_JOB_NAME("Forensic Technician - Colonial Marshal")
 	uniform = /obj/item/clothing/under/det/grey
-	suit = /obj/item/clothing/suit/storage/toggle/marshal_jacket
+	suit = /obj/item/clothing/suit/storage/toggle/agent_jacket
 	shoes = /obj/item/clothing/shoes/dress
 
 /decl/hierarchy/outfit/job/sierra/crew/security/maa
