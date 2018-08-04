@@ -239,6 +239,12 @@ ARMCHAIR(yellow)
 	req_amount = 5
 	time = 15
 
+/datum/stack_recipe/furniture/wooden_altar
+	title = "wooden altar"
+	result_type = /obj/structure/table/rack/wooden
+	req_amount = 3
+	time = 15
+
 /datum/stack_recipe/furniture/bookcase
 	title = "book shelf"
 	result_type = /obj/structure/bookcase

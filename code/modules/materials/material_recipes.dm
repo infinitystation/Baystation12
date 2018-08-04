@@ -95,10 +95,10 @@
 	recipes += new/datum/stack_recipe/beehive_assembly(src)
 	recipes += new/datum/stack_recipe/beehive_frame(src)
 	recipes += new/datum/stack_recipe/furniture/bookcase(src)
+	recipes += new/datum/stack_recipe/furniture/wooden_altar(src)
 	recipes += new/datum/stack_recipe/zipgunframe(src)
 	recipes += new/datum/stack_recipe/coilgun(src)
 	recipes += new/datum/stack_recipe/stick(src)
-	recipes += new/datum/stack_recipe("wooden altar", /obj/structure/table/rack/wooden, 3, time = 15, one_per_turf = 1, on_floor = 1)
 
 /material/cardboard/generate_recipes()
 	..()
