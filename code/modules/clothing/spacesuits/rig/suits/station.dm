@@ -11,8 +11,7 @@
 
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/storage/briefcase, /obj/item/weapon/storage/secure/briefcase)
 
-	req_access = list()
-	req_one_access = list()
+	req_access = list(access_lawyer)
 
 	glove_type = null
 	helm_type = null
@@ -21,9 +20,6 @@
 	hides_uniform = 0
 
 /obj/item/weapon/rig/light/internalaffairs/equipped
-
-	req_access = list(access_lawyer)
-
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/device/flash,
@@ -59,9 +55,6 @@
 	glove_type = /obj/item/clothing/gloves/rig/industrial
 
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/stack/flag,/obj/item/weapon/storage/ore,/obj/item/device/t_scanner,/obj/item/weapon/pickaxe, /obj/item/weapon/rcd)
-
-	req_access = list()
-	req_one_access = list()
 
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
@@ -122,8 +115,8 @@
 
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/storage/toolbox,/obj/item/weapon/storage/briefcase/inflatable,/obj/item/weapon/inflatable_dispenser,/obj/item/device/t_scanner,/obj/item/weapon/rcd)
 
-	req_access = list()
-	req_one_access = list()
+	req_access = list(access_engine_equip)
+
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
 		)
@@ -160,8 +153,6 @@
 
 /obj/item/weapon/rig/eva/equipped
 
-	req_access = list(access_engine_equip)
-
 	initial_modules = list(
 		/obj/item/rig_module/mounted/plasmacutter,
 		/obj/item/rig_module/maneuvering_jets,
@@ -191,12 +182,9 @@
 
 	allowed = list(/obj/item/weapon/gun,/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/storage/ore,/obj/item/weapon/storage/toolbox,/obj/item/weapon/storage/briefcase/inflatable,/obj/item/weapon/inflatable_dispenser,/obj/item/device/t_scanner,/obj/item/weapon/pickaxe,/obj/item/weapon/rcd)
 
-	req_access = list()
-	req_one_access = list()
+	req_access = list(access_ce)
 
 /obj/item/weapon/rig/ce/equipped
-
-	req_access = list(access_ce)
 
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
@@ -232,8 +220,7 @@
 
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/stack/flag,/obj/item/weapon/storage/excavation,/obj/item/weapon/pickaxe,/obj/item/device/healthanalyzer,/obj/item/device/measuring_tape,/obj/item/device/ano_scanner,/obj/item/device/depth_scanner,/obj/item/device/core_sampler,/obj/item/device/gps,/obj/item/weapon/pinpointer/radio,/obj/item/device/radio/beacon,/obj/item/weapon/pickaxe/xeno,/obj/item/weapon/storage/bag/fossils)
 
-	req_access = list()
-	req_one_access = list()
+	req_access = list(access_tox)
 
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
@@ -267,8 +254,6 @@
 
 /obj/item/weapon/rig/hazmat/equipped
 
-	req_access = list(access_rd)
-
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
@@ -293,8 +278,7 @@
 
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/storage/firstaid,/obj/item/device/healthanalyzer,/obj/item/stack/medical,/obj/item/roller )
 
-	req_access = list()
-	req_one_access = list()
+	req_access = list(access_medical_equip)
 
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
@@ -332,8 +316,6 @@
 
 /obj/item/weapon/rig/medical/equipped
 
-	req_access = list(access_medical_equip)
-
 	initial_modules = list(
 		/obj/item/rig_module/chem_dispenser/injector,
 		/obj/item/rig_module/maneuvering_jets,
@@ -358,9 +340,6 @@
 	glove_type = /obj/item/clothing/gloves/rig/hazard
 
 	allowed = list(/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/handcuffs,/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/melee/baton)
-
-	req_access = list()
-	req_one_access = list()
 
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
