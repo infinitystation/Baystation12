@@ -11,7 +11,7 @@
 
 	req_access = list(access_cent_specops)
 
-	armor = list(melee = 60, bullet = 50, laser = 50,energy = 15, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 60, bullet = 50, laser = 50, energy = 35, bomb = 30, bio = 100, rad = 100)
 	allowed = list(/obj/item/device/flashlight, /obj/item/weapon/tank,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/handcuffs, /obj/item/device/t_scanner, /obj/item/weapon/rcd, /obj/item/weapon/crowbar, \
 	/obj/item/weapon/screwdriver, /obj/item/weapon/weldingtool, /obj/item/weapon/wirecutters, /obj/item/weapon/wrench, /obj/item/device/multitool, \
 	/obj/item/device/radio, /obj/item/device/analyzer,/obj/item/weapon/storage/briefcase/inflatable, /obj/item/weapon/melee/baton, /obj/item/weapon/gun, \
@@ -44,7 +44,7 @@
 	desc = "A hardsuit used by many corporate and private asset protection forces. Has orange highlights. Armoured and space ready."
 	suit_type = "Asset Protection engineer"
 	icon_state = "ert_engineer_rig"
-	armor = list(melee = 60, bullet = 50, laser = 50,energy = 15, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 60, bullet = 50, laser = 50, energy = 35, bomb = 30, bio = 100, rad = 100)
 
 	glove_type = /obj/item/clothing/gloves/rig/ert/engineer
 
@@ -64,7 +64,7 @@
 	desc = "A hardsuit used by many corporate and private asset protection forces. Has purple highlights. Armoured and space ready."
 	suit_type = "Asset Protection sanitation"
 	icon_state = "ert_janitor_rig"
-	armor = list(melee = 60, bullet = 50, laser = 50,energy = 40, bomb = 40, bio = 100, rad = 100)
+	armor = list(melee = 60, bullet = 50, laser = 50, energy = 40, bomb = 40, bio = 100, rad = 100)
 
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
@@ -108,7 +108,7 @@
 	desc = "A heavy, modified version of a common asset protection hardsuit. Has blood red highlights.  Armoured and space ready."
 	suit_type = "heavy asset protection"
 	icon_state = "asset_protection_rig"
-	armor = list(melee = 60, bullet = 50, laser = 50,energy = 40, bomb = 40, bio = 100, rad = 100)
+	armor = list(melee = 60, bullet = 60, laser = 55,energy = 40, bomb = 40, bio = 100, rad = 100)
 
 	glove_type = /obj/item/clothing/gloves/rig/ert/assetprotection
 

@@ -16,11 +16,22 @@
 
 	var/armor = getarmor(def_zone, attack_flag)
 
-	if(armour_pen > armor)
-		return 0 //effective_armor is going to be 0, fullblock is going to be 0, blocked is going to 0, let's save ourselves the trouble
-	
-	if(attack_flag == "bullet" || attack_flag == "energy")
-		if(armour_pen < armor)
+	if(armour_pen >= armor)
+		if(attack_flag == "energy")
+			return 0
+		else
+			var/reduse = armour_pen - armor
+			var/m = 80 - reduse
+			return m
+
+	if(armour_pen < armor)
+		if(attack_flag == "bullet")
+			var/reduse = armor - armour_pen
+			var/x = 90 - reduse
+			return x
+
+	if(attack_flag == "energy")
+		if(armour_pen+15 < armor)
 			return 100
 
 	var/effective_armor = (armor - armour_pen)/100

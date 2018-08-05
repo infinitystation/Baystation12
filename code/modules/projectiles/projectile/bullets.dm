@@ -284,7 +284,7 @@
 
 /obj/item/projectile/bullet/rifle/a556/ap
 	damage = 30
-	armor_penetration = 38
+	armor_penetration = 40
 
 // 7.62x39mm
 
