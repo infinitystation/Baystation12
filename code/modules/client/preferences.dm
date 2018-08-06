@@ -191,7 +191,6 @@ datum/preferences
 		if(!O)
 			continue
 		O.status = 0
-		O.robotic = 0
 		O.model = null
 		if(status == "amputated")
 			character.organs_by_name[O.organ_tag] = null
@@ -200,15 +199,18 @@ datum/preferences
 				for(var/obj/item/organ/external/child in O.children)
 					character.organs_by_name[child.organ_tag] = null
 					character.organs -= child
+					qdel(child)
+			qdel(O)
 		else if(status == "cyborg")
 			if(rlimb_data[name])
 				O.robotize(rlimb_data[name])
 			else
 				O.robotize()
 		else //normal organ
-			O.force_icon = null
+			O.force_icon = initial(O.force_icon)
 			O.SetName(initial(O.name))
 			O.desc = initial(O.desc)
+
 	//For species that don't care about your silly prefs
 	character.species.handle_limbs_setup(character)
 	if(!is_preview_copy)
@@ -287,10 +289,12 @@ datum/preferences
 	character.personal_faction = faction
 	character.religion = religion
 
+	if(LAZYLEN(character.descriptors))
+		for(var/entry in body_descriptors)
+			character.descriptors[entry] = body_descriptors[entry]
+
 	if(!character.isSynthetic())
 		character.nutrition = rand(140,360)
-
-	return
 
 
 /datum/preferences/proc/open_load_dialog(mob/user)
@@ -317,5 +321,7 @@ datum/preferences
 	panel.open()
 
 /datum/preferences/proc/close_load_dialog(mob/user)
+	if(panel)
+		panel.close()
+		panel = null
 	user << browse(null, "window=saves")
-	panel.close()

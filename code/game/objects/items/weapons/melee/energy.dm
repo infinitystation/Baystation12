@@ -77,6 +77,7 @@
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	sharp = 1
 	edge = 1
+	melee_accuracy_bonus = 15
 
 /obj/item/weapon/melee/energy/axe/activate(mob/living/user)
 	..()
@@ -151,8 +152,8 @@
 		spark_system.start()
 		playsound(user.loc, 'sound/weapons/blade1.ogg', 50, 1)
 
-/obj/item/weapon/melee/energy/sword/get_parry_chance()
-	return active ? base_parry_chance : 0
+/obj/item/weapon/melee/energy/sword/get_parry_chance(mob/user)
+	return active ? ..() : 0
 
 /obj/item/weapon/melee/energy/sword/pirate
 	name = "energy cutlass"
@@ -205,7 +206,6 @@
 
 /obj/item/weapon/melee/energy/blade/attack_self(mob/user as mob)
 	user.drop_from_inventory(src)
-	spawn(1) if(src) qdel(src)
 
 /obj/item/weapon/melee/energy/blade/dropped()
 	..()

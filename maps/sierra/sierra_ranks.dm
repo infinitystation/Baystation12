@@ -502,7 +502,7 @@
 /datum/mil_rank/civ/marshal
 	name = "Colonial Marshal"
 	name_short = "CMar"
-	accessory = list(/obj/item/clothing/accessory/badge/marshal)
+	accessory = list(/obj/item/clothing/accessory/badge/ocieagent)
 
 /datum/mil_rank/civ/synthetic
 	name = "Synthetic"

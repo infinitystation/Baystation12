@@ -8,7 +8,7 @@
 		var/mob/living/carbon/human/S = loc
 		var/obj/item/organ/internal/eyes/N = S.internal_organs_by_name[BP_EYES]
 		if(on)
-			if (!N.robotic)
+			if (!BP_IS_ROBOTIC(N))
 				if (N.damage <= N.min_broken_damage)
 					to_chat(S, "<span class='warning'>Your eyes sting a little.</span>")
 					N.damage += rand(1, 2)

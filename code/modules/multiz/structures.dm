@@ -27,10 +27,9 @@
 			if(L.allowed_directions & UP)
 				target_down = L
 				L.target_up = src
-
-				L.update_icon()
-				break
-
+				var/turf/T = get_turf(src)
+				T.ReplaceWithLattice()
+				return
 	update_icon()
 
 /obj/structure/ladder/Destroy()
@@ -95,7 +94,7 @@
 	instant_climb(M)
 
 /obj/structure/ladder/proc/getTargetLadder(var/mob/M)
-	if((!target_up && !target_down) || (target_up && !istype(target_up.loc, /turf) || (target_down && !istype(target_down.loc,/turf))))
+	if((!target_up && !target_down) || (target_up && !istype(target_up.loc, /turf/simulated/open) || (target_down && !istype(target_down.loc, /turf))))
 		to_chat(M, "<span class='notice'>\The [src] is incomplete and can't be climbed.</span>")
 		return
 	if(target_down && target_up)
@@ -183,7 +182,7 @@
 			above.ChangeTurf(/turf/simulated/open)
 	. = ..()
 
-/obj/structure/stairs/Uncross(atom/movable/A)
+/obj/structure/stairs/Exit(atom/movable/A)
 	if(A.dir == dir && upperStep(A.loc))
 		// This is hackish but whatever.
 		var/turf/target = get_step(GetAbove(A), dir)

@@ -8,6 +8,7 @@
 	var/name                                             // Species name.
 	var/name_plural                                      // Pluralized name (since "[name]s" is not always valid)
 	var/blurb = "A completely nondescript species."      // A brief lore summary for use in the chargen screen.
+	var/cyborg_noun = "Cyborg"
 
 	// Icon/appearance vars.
 	var/icobase =      'icons/mob/human_races/species/human/body.dmi'          // Normal icon set.
@@ -19,9 +20,6 @@
 	var/damage_overlays = 'icons/mob/human_races/species/human/damage_overlay.dmi'
 	var/damage_mask =     'icons/mob/human_races/species/human/damage_mask.dmi'
 	var/blood_mask =      'icons/mob/human_races/species/human/blood_mask.dmi'
-
-	var/prone_icon                            // If set, draws this from icobase when mob is prone.
-	var/has_floating_eyes                     // Eyes will overlay over darkness (glow)
 
 	var/blood_color = COLOR_BLOOD_HUMAN               // Red.
 	var/flesh_color = "#ffc896"               // Pink.
@@ -35,9 +33,6 @@
 
 	var/list/hair_styles
 	var/list/facial_hair_styles
-
-	var/eye_icon = "eyes_s"
-	var/eye_icon_location = 'icons/mob/human_races/species/eyes.dmi'
 
 	var/organs_icon		//species specific internal organs icons
 
@@ -108,6 +103,7 @@
 	var/halloss_message = "slumps over, too weak to continue fighting..."
 	var/halloss_message_self = "The pain is too severe for you to keep going..."
 
+	var/limbs_are_nonsolid
 	var/spawns_with_stack = 0
 	// Environment tolerance/life processes vars.
 	var/reagent_tag                                             // Used for metabolizing reagents.
@@ -196,6 +192,8 @@
 		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right)
 		)
 
+	var/list/override_limb_types // Used for species that only need to change one or two entries in has_limbs.
+
 	// The list for the bioprinter to print based on species
 	var/list/bioprint_products = list(
 		BP_HEART    = list(/obj/item/organ/internal/heart,      25),
@@ -237,6 +235,11 @@
 	var/list/prone_overlay_offset = list(0, 0) // amount to shift overlays when lying
 	var/job_skill_buffs = list()				// A list containing jobs (/datum/job), with values the extra points that job recieves.
 
+	var/list/descriptors = list(
+		/datum/mob_descriptor/height,
+		/datum/mob_descriptor/build
+	)
+
 /*
 These are all the things that can be adjusted for equipping stuff and
 each one can be in the NORTH, SOUTH, EAST, and WEST direction. Specify
@@ -256,14 +259,19 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	you use the _str version of the slot.
 */
 
-/datum/species/proc/get_eyes(var/mob/living/carbon/human/H)
-	return
-
 /datum/species/New()
+
 	if(hud_type)
 		hud = new hud_type()
 	else
 		hud = new()
+
+	if(LAZYLEN(descriptors))
+		var/list/descriptor_datums = list()
+		for(var/desctype in descriptors)
+			var/datum/mob_descriptor/descriptor = new desctype
+			descriptor_datums[descriptor.name] = descriptor
+		descriptors = descriptor_datums
 
 	//If the species has eyes, they are the default vision organ
 	if(!vision_organ && has_organ[BP_EYES])
@@ -275,6 +283,11 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	unarmed_attacks = list()
 	for(var/u_type in unarmed_types)
 		unarmed_attacks += new u_type()
+
+	// Modify organ lists if necessary.
+	if(islist(override_limb_types))
+		for(var/ltag in override_limb_types)
+			has_limbs[ltag] = list("path" = override_limb_types[ltag])
 
 	//Build organ descriptors
 	for(var/limb_type in has_limbs)
@@ -331,6 +344,7 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 
 	for(var/obj/item/organ/O in (H.organs|H.internal_organs))
 		O.owner = H
+		post_organ_rejuvenate(O, H)
 
 	H.sync_organ_dna()
 
@@ -399,6 +413,7 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	H.mob_swap_flags = swap_flags
 	H.mob_push_flags = push_flags
 	H.pass_flags = pass_flags
+	handle_limbs_setup(H)
 
 /datum/species/proc/handle_pre_spawn(var/mob/living/carbon/human/H)
 	return
@@ -532,7 +547,8 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 
 //Mostly for toasters
 /datum/species/proc/handle_limbs_setup(var/mob/living/carbon/human/H)
-	return FALSE
+	for(var/thing in H.organs)
+		post_organ_rejuvenate(thing, H)
 
 // Impliments different trails for species depending on if they're wearing shoes.
 /datum/species/proc/get_move_trail(var/mob/living/carbon/human/H)
@@ -587,8 +603,7 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 
 		//Actually disarm them
 		for(var/obj/item/I in holding)
-			if(I)
-				target.drop_from_inventory(I)
+			if(I && target.unEquip(I))
 				target.visible_message("<span class='danger'>[attacker] has disarmed [target]!</span>")
 				playsound(target.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 				return
@@ -716,3 +731,6 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 		if(23 to 30) 	. = 0
 		if(31 to 45)	. = 4
 		else			. = 8
+
+/datum/species/proc/post_organ_rejuvenate(var/obj/item/organ/org, var/mob/living/carbon/human/H)
+	return

@@ -302,7 +302,7 @@ Buildable meters
 /obj/item/pipe/afterattack(turf/simulated/floor/target, mob/user, proximity)
 	if(!proximity) return
 	if(istype(target))
-		user.drop_from_inventory(src, target)
+		user.unEquip(src, target)
 	else
 		return ..()
 
@@ -428,6 +428,10 @@ Buildable meters
 /obj/item/pipe/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
 	..()
 	//*
+	if(istype(W, /obj/item/weapon/rpd))
+		to_chat(usr, "<span class='notice'>You put \the [W] back into \the [src].</span>")
+		qdel(src)
+		return
 	if(!isWrench(W))
 		return ..()
 	if (!isturf(src.loc))

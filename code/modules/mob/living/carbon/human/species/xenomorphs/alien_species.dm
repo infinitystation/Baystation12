@@ -11,15 +11,9 @@
 	health_hud_intensity = 1
 	blood_volume = 1400
 
-	eye_icon = "eyes"
-	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
-
 	natural_armour_values = list(melee = 30, bullet = 15, laser = 25, energy = 30, bomb = 30, bio = 100, rad = 100)
 
 	icon_template = 'icons/mob/human_races/species/xenos/template.dmi'
-	eye_icon_location = 'icons/mob/human_races/species/xenos/eyes.dmi'
-
-	has_floating_eyes = TRUE
 
 	// temp until someone who isn't me makes some for this icon set
 	damage_overlays = null
@@ -221,9 +215,6 @@
 	icobase = 'icons/mob/human_races/species/xenos/body_drone.dmi'
 	deform =  'icons/mob/human_races/species/xenos/body_drone.dmi'
 
-	eye_icon = "eyes"
-	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_drone.dmi'
-
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
 		BP_HEART =    /obj/item/organ/internal/heart/open,
@@ -261,11 +252,8 @@
 	total_health = 300
 //	base_color = "#001a33"
 
-	eye_icon = "eyes"
-	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_hunter.dmi'
 	icobase = 'icons/mob/human_races/species/xenos/body_hunter.dmi'
 	deform =  'icons/mob/human_races/species/xenos/body_hunter.dmi'
-
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
@@ -295,10 +283,6 @@
 	icobase = 'icons/mob/human_races/species/xenos/body_sentinel.dmi'
 	deform =  'icons/mob/human_races/species/xenos/body_sentinel.dmi'
 
-	eye_icon = "eyes"
-	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_sentinel.dmi'
-
-
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
 		BP_HEART =    /obj/item/organ/internal/heart/open,
@@ -327,9 +311,6 @@
 	caste_name = "queen"
 	slowdown = 1
 	rarity_value = 10
-
-	eye_icon = "eyes"
-	eye_icon_location = 'icons/mob/human_races/xenos/r_xenos_queen.dmi'
 
 	icobase = 'icons/mob/human_races/species/xenos/body_queen.dmi'
 	deform =  'icons/mob/human_races/species/xenos/body_queen.dmi'

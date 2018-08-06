@@ -32,5 +32,5 @@
 /datum/gear/kittyears
 	display_name = "fake kitty ears"
 	path = /obj/item/clothing/head/kitty/fake
-	allowed_roles = list(/datum/job/assistant)
+	allowed_roles = RESTRICTED_ROLES
 	sort_category = "Earwear"

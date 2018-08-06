@@ -9,8 +9,8 @@
 
 	..()
 
-	if (stat != DEAD && can_progress())
-		update_progression()
+//	if (stat != DEAD && can_progress())
+//		update_progression()
 
 	blinded = null
 
@@ -95,7 +95,7 @@
 /mob/living/carbon/alien/handle_regular_hud_updates()
 	update_sight()
 	if (healths)
-		if (stat != 2)
+		if(stat != DEAD)
 			switch(health)
 				if(100 to INFINITY)
 					healths.icon_state = "health0"

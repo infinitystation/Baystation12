@@ -127,8 +127,8 @@
 					to_chat(user, "<span class='warning'>[src] already has a magazine loaded.</span>")//already a magazine here
 
 					return
-				user.remove_from_mob(AM)
-				AM.forceMove(src)
+				if(!user.unEquip(AM, src))
+					return
 				ammo_magazine = AM
 				user.visible_message("[user] inserts [AM] into [src].", "<span class='notice'>You insert [AM] into [src].</span>")
 				playsound(loc, mag_insert_sound, 50, 1)
@@ -156,9 +156,8 @@
 		if(loaded.len >= max_shells)
 			to_chat(user, "<span class='warning'>[src] is full.</span>")
 			return
-
-		user.remove_from_mob(C)
-		C.forceMove(src)
+		if(!user.unEquip(C, src))
+			return
 		loaded.Insert(1, C) //add to the head of the list
 		user.visible_message("[user] inserts \a [C] into [src].", "<span class='notice'>You insert \a [C] into [src].</span>")
 		playsound(loc, load_sound, 50, 1)

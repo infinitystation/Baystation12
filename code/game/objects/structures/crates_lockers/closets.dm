@@ -292,8 +292,7 @@
 								 "<span class='notice'>You hear rustling of clothes.</span>")
 			return
 
-		if(usr.drop_item())
-			W.forceMove(loc)
+		if(user.unEquip(W, loc))
 			W.pixel_x = 0
 			W.pixel_y = 0
 			W.pixel_z = 0
@@ -515,6 +514,9 @@
 		return FALSE
 
 	add_fingerprint(user)
+
+	if(!id_card)
+		id_card = user.GetIdCard()
 
 	if(!user.IsAdvancedToolUser())
 		to_chat(user, FEEDBACK_YOU_LACK_DEXTERITY)

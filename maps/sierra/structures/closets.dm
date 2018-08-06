@@ -1,5 +1,5 @@
 /*
- * Torch Excavation
+ * Sierra Excavation
  */
 
 /obj/structure/closet/toolcloset/excavation
@@ -18,13 +18,11 @@
 		/obj/item/device/depth_scanner,
 		/obj/item/device/core_sampler,
 		/obj/item/device/gps,
-		/obj/item/device/beacon_locator,
 		/obj/item/device/radio/beacon,
 		/obj/item/clothing/glasses/meson,
 		/obj/item/clothing/glasses/science,
 		/obj/item/weapon/pickaxe,
 		/obj/item/device/measuring_tape,
-		/obj/item/weapon/pickaxe/hand,
 		/obj/item/weapon/storage/bag/fossils,
 		/obj/item/weapon/hand_labeler,
 		/obj/item/taperoll/research,
@@ -42,18 +40,17 @@
 		/obj/item/clothing/shoes/white = 2,
 		/obj/item/clothing/shoes/black = 2)
 
-/obj/random/torchcloset //Random closets taking into account torch-specific ones
+/obj/random/sierracloset //Random closets taking into account sierra-specific ones
 	name = "random closet"
 	desc = "This is a random closet."
 	icon = 'icons/obj/closet.dmi'
 	icon_state = "syndicate1"
 
-/obj/random/torchcloset/spawn_choices()
+/obj/random/sierracloset/spawn_choices()
 	return list(/obj/structure/closet,
 				/obj/structure/closet/firecloset,
-				/obj/structure/closet/firecloset/full,
 				/obj/structure/closet/emcloset,
-				/obj/structure/closet/jcloset_torch,
+				/obj/structure/closet/jcloset_sierra,
 				/obj/structure/closet/athletic_mixed,
 				/obj/structure/closet/toolcloset,
 				/obj/structure/closet/toolcloset/excavation,

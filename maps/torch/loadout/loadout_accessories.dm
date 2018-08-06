@@ -1,15 +1,9 @@
-/datum/gear/tactical/ubac
-	display_name = "ubac selection"
-	path = /obj/item/clothing/accessory/ubac
-	allowed_roles = MILITARY_ROLES
-	flags = GEAR_HAS_TYPE_SELECTION
-
 /datum/gear/accessory/solawardmajor
 	display_name = "SolGov major award selection"
 	description = "A medal or ribbon awarded to SolGov personnel for significant accomplishments."
 	path = /obj/item/clothing/accessory
 	cost = 8
-	allowed_roles = SOLGOV_ROLES
+	allowed_branches = UNIFORMED_BRANCHES
 
 /datum/gear/accessory/solawardmajor/New()
 	..()
@@ -29,7 +23,7 @@
 	description = "A medal or ribbon awarded to SolGov personnel for minor accomplishments."
 	path = /obj/item/clothing/accessory
 	cost = 5
-	allowed_roles = SOLGOV_ROLES
+	allowed_branches = UNIFORMED_BRANCHES
 
 /datum/gear/accessory/solawardminor/New()
 	..()
@@ -51,7 +45,7 @@
 /datum/gear/accessory/pilot_pin
 	display_name = "pilot's qualification pin"
 	path = /obj/item/clothing/accessory/solgov/speciality/pilot
-	allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/bridgeofficer, /datum/job/pathfinder)
+	allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/bridgeofficer, /datum/job/pathfinder, /datum/job/nt_pilot)
 
 /datum/gear/accessory/fleetpatch
 	display_name = "fleet patch"
@@ -133,9 +127,6 @@
 /datum/gear/tactical/holster
 	allowed_roles = ARMED_ROLES
 
-/datum/gear/tactical/large_pouches
-	allowed_roles = ARMORED_ROLES
-
 /datum/gear/tactical/armor_deco
 	allowed_roles = ARMORED_ROLES
 
@@ -179,6 +170,76 @@
 /datum/gear/accessory/bowtie
 
 /datum/gear/accessory/ftupin
-	allowed_roles = list(/datum/job/scientist, /datum/job/mining, /datum/job/guard, /datum/job/scientist_assistant,
-						/datum/job/scientist_assistant, /datum/job/engineer_contractor, /datum/job/roboticist, /datum/job/doctor_contractor,
-						/datum/job/psychiatrist, /datum/job/cargo_contractor, /datum/job/bartender, /datum/job/merchant, /datum/job/assistant)
+	allowed_branches = CIVILIAN_BRANCHES
+
+/*********************
+ tactical accessories
+*********************/
+/datum/gear/tactical/ubac
+	display_name = "black UBAC shirt"
+	path = /obj/item/clothing/accessory/ubac
+	allowed_roles = ARMORED_ROLES
+	allowed_branches = list(/datum/mil_branch/expeditionary_corps, /datum/mil_branch/civilian)
+
+/datum/gear/tactical/ubac/blue
+	display_name = "navy blue UBAC shirt"
+	path = /obj/item/clothing/accessory/ubac/blue
+	allowed_branches = list(/datum/mil_branch/fleet)
+
+/datum/gear/tactical/ubac/misc
+	display_name = "miscellaneous UBAC shirt selection"
+	path = /obj/item/clothing/accessory/ubac
+	allowed_branches = CIVILIAN_BRANCHES
+
+/datum/gear/tactical/ubac/misc/New()
+	..()
+	var/shirts = list()
+	shirts["green UBAC shirt"] = /obj/item/clothing/accessory/ubac/green
+	shirts["tan UBAC shirt"] = /obj/item/clothing/accessory/ubac/tan
+	gear_tweaks += new/datum/gear_tweak/path(shirts)
+
+/datum/gear/tactical/armor_pouches
+	display_name = "black armor pouches"
+	path = /obj/item/clothing/accessory/storage/pouches
+	cost = 2
+	allowed_roles = ARMORED_ROLES
+
+/datum/gear/tactical/armor_pouches/navy
+	display_name = "navy armor pouches"
+	path = /obj/item/clothing/accessory/storage/pouches/navy
+	allowed_branches = list(/datum/mil_branch/fleet, /datum/mil_branch/civilian)
+
+/datum/gear/tactical/armor_pouches/misc
+	display_name = "miscellaneous armor pouches selection"
+	path = /obj/item/clothing/accessory/storage/pouches
+	allowed_branches = CIVILIAN_BRANCHES
+
+/datum/gear/tactical/armor_pouches/misc/New()
+	..()
+	var/pouches = list()
+	pouches["green armor pouches"] = /obj/item/clothing/accessory/storage/pouches/green
+	pouches["tan armor pouches"] = /obj/item/clothing/accessory/storage/pouches/tan
+	gear_tweaks += new/datum/gear_tweak/path(pouches)
+
+/datum/gear/tactical/large_pouches
+	display_name = "black large armor pouches"
+	path = /obj/item/clothing/accessory/storage/pouches/large
+	cost = 5
+	allowed_roles = ARMORED_ROLES
+
+/datum/gear/tactical/large_pouches/navy
+	display_name = "navy large armor pouches"
+	path = /obj/item/clothing/accessory/storage/pouches/large/navy
+	allowed_branches = list(/datum/mil_branch/fleet, /datum/mil_branch/civilian)
+
+/datum/gear/tactical/large_pouches/misc
+	display_name = "miscellaneous large armor pouches selection"
+	path = /obj/item/clothing/accessory/storage/pouches
+	allowed_branches = CIVILIAN_BRANCHES
+
+/datum/gear/tactical/large_pouches/misc/New()
+	..()
+	var/pouches = list()
+	pouches["green large armor pouches"] = /obj/item/clothing/accessory/storage/pouches/large/green
+	pouches["tan large armor pouches"] = /obj/item/clothing/accessory/storage/pouches/large/tan
+	gear_tweaks += new/datum/gear_tweak/path(pouches)

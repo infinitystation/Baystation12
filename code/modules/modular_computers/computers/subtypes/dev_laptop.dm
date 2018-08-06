@@ -4,7 +4,7 @@
 	desc = "A portable computer."
 	hardware_flag = PROGRAM_LAPTOP
 	icon_state_unpowered = "laptop-open"
-	icon = 'icons/obj/modular_laptop.dmi'
+	icon = 'icons/obj/modular_laptop_inf.dmi'
 	icon_state = "laptop-open"
 	base_idle_power_usage = 25
 	base_active_power_usage = 200
@@ -36,3 +36,14 @@
 
 /obj/item/modular_computer/laptop/preset
 	anchored = FALSE
+
+/obj/item/modular_computer/laptop/verb/rotatelaptop()
+	set name = "Rotate laptop"
+	set category = "Object"
+	set src in view(1)
+
+	src.set_dir(turn(src.dir, -90))
+
+/obj/item/modular_computer/laptop/update_verbs()
+	..()
+	verbs |= /obj/item/modular_computer/laptop/verb/rotatelaptop

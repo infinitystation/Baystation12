@@ -50,8 +50,8 @@
 
 /obj/item/device/radio/headset/heads/cos/alt
 	name = "chief of security's bowman headset"
-	icon_state = "sec_headset_alt"
-	item_state = "sec_headset_alt"
+	icon_state = "com_headset_alt"
+	item_state = "com_headset_alt"
 
 /obj/item/device/radio/headset/headset_deckofficer
 	name = "deck officer's radio headset"
@@ -129,9 +129,14 @@
 	icon_state = "par_headset_alt"
 	item_state = "par_headset_alt"
 
-/obj/item/device/radio/headset/headset_pilot/
-	name = "pilot bowman headset"
+/obj/item/device/radio/headset/headset_pilot
+	name = "pilot headset"
 	desc = "A headset for cool-tempered smugglers, cocky flyboys, and bus-drivers like you. It has an inbuilt subspace antenna for better reception."
+	icon_state = "pilot_headset"
+	item_state = "pilot_headset"
+	ks1type = /obj/item/device/encryptionkey/headset_pilot
+
+/obj/item/device/radio/headset/headset_pilot/alt
+	name = "pilot bowman headset"
 	icon_state = "pilot_headset_alt"
 	item_state = "pilot_headset_alt"
-	ks1type = /obj/item/device/encryptionkey/headset_sci

@@ -40,6 +40,8 @@
 	pass_flags = PASS_FLAG_TABLE
 	speak_emote = list("beeps","clicks","chirps")
 
+	pass_flags = PASS_FLAG_TABLE
+
 /mob/living/simple_animal/spiderbot/New()
 	..()
 	add_language(LANGUAGE_GALCOM)
@@ -81,17 +83,16 @@
 		if(jobban_isbanned(B, "Robot"))
 			to_chat(user, "<span class='warning'>\The [O] does not seem to fit.</span>")
 			return
-
+		if(!user.unEquip(O, src))
+			return
 		to_chat(user, "<span class='notice'>You install \the [O] in \the [src]!</span>")
 		if(istype(O, /obj/item/organ/internal/posibrain))
 			positronic = 1
 			add_language("Robot Talk")
 
-		user.drop_item()
 		src.mmi = O
 		src.transfer_personality(O)
 
-		O.loc = src
 		src.update_icon()
 		return 1
 

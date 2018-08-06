@@ -18,13 +18,13 @@
 	glove_type = /obj/item/clothing/gloves/rig/command
 
 	allowed = list(/obj/item/weapon/gun, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit)
-	req_access = list(access_heads) //bridge
+	req_access = list(access_bridge)
 
 /obj/item/clothing/head/helmet/space/rig/command
 	light_overlay = "helmet_light_dual"
 	icon = 'maps/torch/icons/obj/solgov-head.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
-	camera = /obj/machinery/camera/network/security
+	camera = /obj/machinery/camera/network/command
 	species_restricted = list(SPECIES_HUMAN) //no available icons for aliens
 
 /obj/item/clothing/suit/space/rig/command
@@ -214,3 +214,27 @@
 		/obj/item/rig_module/device/anomaly_scanner,
 		/obj/item/rig_module/grenade_launcher/light,
 		/obj/item/rig_module/cooling_unit)
+
+/*
+ Overrides for standard mapset rig items
+ */
+
+/obj/item/clothing/head/helmet/space/rig/industrial
+	camera = /obj/machinery/camera/network/supply
+
+
+/obj/item/weapon/rig/hazard/guard
+	name = "hazard hardsuit control module"
+
+	req_access = list(access_sec_guard)
+
+/obj/item/clothing/head/helmet/space/rig/hazard/guard
+	camera = /obj/machinery/camera/network/research
+
+/obj/item/weapon/rig/hazard/guard
+
+	initial_modules = list(
+		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/ai_container,
+		/obj/item/rig_module/mounted/taser
+		)

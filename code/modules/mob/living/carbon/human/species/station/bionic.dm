@@ -8,9 +8,6 @@
 
 	preview_icon = 'icons/mob/human_races/species/bionic/preview.dmi'
 
-	eye_icon_location = 'icons/mob/infinity_human_face.dmi'
-	eye_icon = "blank_eyes"
-
 	language = LANGUAGE_EAL
 	secondary_langs = list(LANGUAGE_SOL_COMMON, LANGUAGE_INDEPENDENT, LANGUAGE_SPACER, \
 		LANGUAGE_LUNAR, LANGUAGE_SIGN)
@@ -64,7 +61,7 @@
 
 /datum/species/bionic/handle_limbs_setup(var/mob/living/carbon/human/H)
 	for(var/obj/item/organ/external/E in H.organs)
-		if(E.robotic < ORGAN_ROBOT)
+		if(!BP_IS_ROBOTIC(E))
 			E.robotize("Bionic")
 	return
 

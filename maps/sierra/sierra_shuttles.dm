@@ -186,6 +186,8 @@
 	dock_target = "petrov_shuttle_airlock"
 	waypoint_station = "nav_petrov_start"
 	waypoint_offsite = "nav_petrov_out"
+	logging_home_tag = "nav_petrov_start"
+	logging_access = access_petrov_helm
 
 /obj/effect/shuttle_landmark/petrov/start
 	name = "First Deck"
@@ -222,7 +224,7 @@
 	shuttle_area = /area/ninja_dojo/start
 	current_location = "nav_ninja_start"
 	landmark_transition = "nav_ninja_transition"
-	announcer = "SEV Sierra Sensor Array"
+	announcer = "SEV sierra Sensor Array"
 	arrival_message = "Attention, anomalous sensor reading detected entering vessel proximity."
 	departure_message = "Attention, anomalous sensor reading detected leaving vessel proximity."
 
@@ -346,7 +348,7 @@
 	dock_target = "merc_shuttle"
 	current_location = "nav_merc_start"
 	landmark_transition = "nav_merc_transition"
-	announcer = "SEV Sierra Sensor Array"
+	announcer = "SEV sierra Sensor Array"
 	home_waypoint = "nav_merc_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
@@ -413,7 +415,7 @@
 	dock_target = "skipjack_shuttle"
 	current_location = "nav_skipjack_start"
 	landmark_transition = "nav_skipjack_transition"
-	announcer = "SEV Sierra Sensor Array"
+	announcer = "SEV sierra Sensor Array"
 	home_waypoint = "nav_skipjack_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
@@ -481,7 +483,7 @@
 	current_location = "nav_ert_start"
 	landmark_transition = "nav_ert_transition"
 	home_waypoint = "nav_ert_start"
-	announcer = "SEV Sierra Sensor Array"
+	announcer = "SEV sierra Sensor Array"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
 
@@ -552,7 +554,7 @@
 	waypoint_station = "nav_cargo_station"
 
 /obj/effect/shuttle_landmark/supply/centcom
-	name = "Centcom"
+	name = "Offsite"
 	landmark_tag = "nav_cargo_start"
 
 /obj/effect/shuttle_landmark/supply/station
@@ -570,6 +572,8 @@
 	landmark_transition = "nav_transit_calypso"
 	range = 1
 	fuel_consumption = 4
+	logging_home_tag = "nav_hangar_calypso"
+	logging_access = access_expedition_shuttle_helm
 
 /obj/effect/shuttle_landmark/sierra/hangar/exploration_shuttle
 	name = "Charon Hangar"
@@ -612,6 +616,8 @@
 	sound_takeoff = 'sound/effects/rocket.ogg'
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
 	fuel_consumption = 2
+	logging_home_tag = "nav_hangar_guppy"
+	logging_access = access_guppy_helm
 
 /obj/effect/shuttle_landmark/sierra/hangar/guppy
 	name = "Guppy Hangar"
@@ -643,41 +649,6 @@
 	name = "In transit"
 	landmark_tag = "nav_transit_guppy"
 
-/datum/shuttle/autodock/overmap/aquila
-	name = "Aquila"
-	move_time = 60
-	shuttle_area = /area/aquila_hangar/start
-	current_location = "nav_hangar_aquila"
-	landmark_transition = "nav_transit_aquila"
-	dock_target = "aquila_shuttle"
-	range = 2
-
-/obj/effect/shuttle_landmark/sierra/hangar/aquila
-	name = "Aquila Hangar"
-	landmark_tag = "nav_hangar_aquila"
-	docking_controller = "aquila_shuttle_dock_airlock"
-	base_turf = /turf/simulated/floor/reinforced/airless
-
-/obj/effect/shuttle_landmark/sierra/deck1/aquila
-	name = "Space near Fourth Deck"
-	landmark_tag = "nav_deck1_aquila"
-
-/obj/effect/shuttle_landmark/sierra/deck2/aquila
-	name = "Space near Third Deck"
-	landmark_tag = "nav_deck2_aquila"
-
-/obj/effect/shuttle_landmark/sierra/deck3/aquila
-	name = "Space near Second Deck"
-	landmark_tag = "nav_deck3_aquila"
-
-/obj/effect/shuttle_landmark/sierra/deck4/aquila
-	name = "Space near First Deck"
-	landmark_tag = "nav_deck4_aquila"
-
-/obj/effect/shuttle_landmark/sierra/deck5/aquila
-	name = "Space near Bridge"
-	landmark_tag = "nav_bridge_aquila"
-
-/obj/effect/shuttle_landmark/sierra/transit/aquila
-	name = "In transit"
-	landmark_tag = "nav_transit_aquila"
+//Makes the deck management program use hangar access
+/datum/nano_module/deck_management
+	default_access = list(access_hangar, access_cargo, access_heads)

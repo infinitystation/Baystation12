@@ -742,6 +742,13 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/spline/fancy/wood/three_quarters
 	icon_state = "spline_fancy_full"
 
+/obj/effect/floor_decal/industrial/danger
+	name = "danger stripes"
+	icon_state = "danger"
+
+/obj/effect/floor_decal/industrial/danger/corner
+	icon_state = "dangercorner"
+
 /obj/effect/floor_decal/industrial/warning
 	name = "hazard stripes"
 	icon_state = "warning"
@@ -836,6 +843,14 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/asteroid
 	name = "random asteroid rubble"
 	icon_state = "asteroid0"
+
+/obj/effect/floor_decal/beach
+	name = "sandy border"
+	icon = 'icons/misc/beach.dmi'
+	icon_state = "beachborder"
+
+/obj/effect/floor_decal/beach/corner
+	icon_state = "beachbordercorner"
 
 /obj/effect/floor_decal/asteroid/New()
 	icon_state = "asteroid[rand(0,9)]"

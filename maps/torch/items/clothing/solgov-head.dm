@@ -235,6 +235,8 @@
 	desc = "A black beret belonging to the SCG Expeditionary Corps. For personnel that are more inclined towards style than safety."
 	icon_state = "beret_black"
 	sprite_sheets = list(
+		SPECIES_VOX = 'icons/mob/species/vox/head.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
 		)
 
@@ -364,6 +366,8 @@
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
 	starting_accessories = null
 	sprite_sheets = list(
+		SPECIES_VOX = 'icons/mob/species/vox/head.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
 		)
 
@@ -371,6 +375,20 @@
 	name = "command helmet"
 	desc = "A helmet with 'SOL CENTRAL GOVERNMENT' printed on the back in gold lettering."
 	icon_state = "helmet_command"
+	icon = 'maps/torch/icons/obj/solgov-head.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
+	starting_accessories = null
+
+/obj/item/clothing/head/helmet/solgov/pilot
+	name = "pilot's helmet"
+	desc = "A pilot's helmet for operating the cockpit in style. For when you want to protect your noggin AND look stylish."
+	icon_state = "pilotgov"
+	starting_accessories = null
+
+/obj/item/clothing/head/helmet/solgov/pilot/fleet
+	name = "fleet pilot's helmet"
+	desc = "A pilot's helmet for operating the cockpit in style. This one is worn by members of the SCG Fleet."
+	icon_state = "pilotfleet"
 	icon = 'maps/torch/icons/obj/solgov-head.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
 	starting_accessories = null

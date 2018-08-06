@@ -37,7 +37,7 @@
 		if(stage > 1 && !active && clown_check(user))
 			to_chat(user, "<span class='warning'>You prime \the [name]!</span>")
 
-			msg_admin_attack("[user.name] ([user.ckey]) primed \a [src]. (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[user.x];Y=[user.y];Z=[user.z]'>JMP</a>)")
+			log_and_message_admins("has primed \a [src].")
 
 			activate()
 			add_fingerprint(user)
@@ -55,11 +55,12 @@
 			if(!det.secured)
 				to_chat(user, "<span class='warning'>Assembly must be secured with screwdriver.</span>")
 				return
+			if(!user.unEquip(det, src))
+				return
 			path = 1
+			log_and_message_admins("has attached \a [W] to \the [src].")
 			to_chat(user, "<span class='notice'>You add [W] to the metal casing.</span>")
 			playsound(src.loc, 'sound/items/Screwdriver2.ogg', 25, -3)
-			user.remove_from_mob(det)
-			det.loc = src
 			detonator = det
 			if(istimer(detonator.a_left))
 				var/obj/item/device/assembly/timer/T = detonator.a_left
@@ -102,9 +103,9 @@
 				return
 			else
 				if(W.reagents.total_volume)
+					if(!user.unEquip(W, src))
+						return
 					to_chat(user, "<span class='notice'>You add \the [W] to the assembly.</span>")
-					user.drop_item()
-					W.loc = src
 					beakers += W
 					stage = 1
 					SetName("unsecured grenade with [beakers.len] containers[detonator?" and detonator":""]")
@@ -130,7 +131,7 @@
 			icon_state = initial(icon_state) + "_active"
 
 			if(user)
-				msg_admin_attack("[user.name] ([user.ckey]) primed \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[user.x];Y=[user.y];Z=[user.z]'>JMP</a>)")
+				log_and_message_admins("has primed \a [src].")
 
 		return
 

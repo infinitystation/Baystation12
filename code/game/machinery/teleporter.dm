@@ -46,11 +46,11 @@
 		to_chat(user, "<span class='notice'>The console is locked on to \[[T.loc.name]\].</span>")
 
 
-/obj/machinery/computer/teleporter/attackby(I as obj, mob/living/user as mob)
+/obj/machinery/computer/teleporter/attackby(var/obj/I, var/mob/living/user)
 	if(istype(I, /obj/item/weapon/card/data/))
 		var/obj/item/weapon/card/data/C = I
 		if(stat & (NOPOWER|BROKEN) & (C.function != "teleporter"))
-			src.attack_hand()
+			attack_hand(user)
 
 		var/obj/L = null
 
@@ -65,9 +65,10 @@
 
 
 		if(istype(L, /obj/effect/landmark/) && istype(L.loc, /turf))
+			if(!user.unEquip(I))
+				return
 			to_chat(usr, "You insert the coordinates into the machine.")
 			to_chat(usr, "A message flashes across the screen reminding the traveller that the nuclear authentication disk is to remain on the [station_name()] at all times.")
-			user.drop_item()
 			qdel(I)
 
 			if(C.data == "Clown Land")
@@ -92,10 +93,10 @@
 
 	return
 
-/obj/machinery/teleport/station/attack_ai()
-	src.attack_hand()
+/obj/machinery/teleport/station/attack_ai(var/mob/user)
+	attack_hand(user)
 
-/obj/machinery/computer/teleporter/attack_hand(user as mob)
+/obj/machinery/computer/teleporter/attack_hand(var/mob/user)
 	if(..()) return
 
 	/* Ghosts can't use this one because it's a direct selection */
@@ -246,13 +247,13 @@
 	overlays.Cut()
 	overlays += image('icons/obj/stationobjs.dmi', icon_state = "controller-wires")
 
-/obj/machinery/teleport/station/attackby(var/obj/item/weapon/W)
-	src.attack_hand()
+/obj/machinery/teleport/station/attackby(var/obj/item/weapon/W, var/mob/user)
+	attack_hand(user)
 
-/obj/machinery/teleport/station/attack_ai()
-	src.attack_hand()
+/obj/machinery/teleport/station/attack_ai(var/mob/user)
+	attack_hand(user)
 
-/obj/machinery/teleport/station/attack_hand()
+/obj/machinery/teleport/station/attack_hand(var/mob/user)
 	. = ..()
 	if(engaged)
 		src.disengage()

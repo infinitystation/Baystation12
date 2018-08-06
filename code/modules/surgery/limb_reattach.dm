@@ -35,7 +35,7 @@
 		return 0
 	if(target.isSynthetic())
 		var/obj/item/organ/external/using = tool
-		if(using.robotic < ORGAN_ROBOT)
+		if(!BP_IS_ROBOTIC(using))
 			to_chat(user, "<span class='danger'>You cannot attach a flesh part to a robotic body.</span>")
 			return SURGERY_FAILURE
 	return 1
@@ -46,10 +46,11 @@
 	"You start attaching [E.name] to [target]'s [E.amputation_point].")
 
 /datum/surgery_step/limb/attach/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
+	if(!user.unEquip(tool))
+		return
 	var/obj/item/organ/external/E = tool
 	user.visible_message("<span class='notice'>[user] has attached [target]'s [E.name] to the [E.amputation_point].</span>",	\
 	"<span class='notice'>You have attached [target]'s [E.name] to the [E.amputation_point].</span>")
-	user.drop_from_inventory(E)
 	E.replaced(target)
 	target.update_body()
 	target.updatehealth()
@@ -140,7 +141,7 @@
 			var/obj/item/organ/external/new_limb = new new_limb_type(target)
 			new_limb.robotize(L.model_info)
 			if(L.sabotaged)
-				new_limb.sabotaged = 1
+				new_limb.status |= ORGAN_SABOTAGED
 
 	target.update_body()
 	target.updatehealth()

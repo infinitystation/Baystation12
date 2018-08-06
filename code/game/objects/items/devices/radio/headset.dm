@@ -20,7 +20,11 @@
 	var/ks1type = /obj/item/device/encryptionkey
 	var/ks2type = null
 
-	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/onmob/Resomi/ears.dmi')
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/ears.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/ears.dmi'
+		)
+
 
 /obj/item/device/radio/headset/Initialize()
 	. = ..()
@@ -277,7 +281,7 @@
 	desc = "Headset used by dwarves. It has an inbuilt subspace antenna for better reception."
 	icon_state = "mine_headset"
 	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/headset_sci
+	ks1type = /obj/item/device/encryptionkey/headset_mining
 
 /obj/item/device/radio/headset/headset_mining/alt
 	name = "mining bowman radio headset"

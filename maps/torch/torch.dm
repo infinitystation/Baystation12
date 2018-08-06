@@ -35,7 +35,6 @@
 	#include "items/rigs.dm"
 	#include "items/solbanner.dm"
 
-	#include "items/clothing/clothing.dm"
 	#include "items/clothing/solgov-infinity.dm"
 	#include "items/clothing/solgov-accessory.dm"
 	#include "items/clothing/solgov-armor.dm"
