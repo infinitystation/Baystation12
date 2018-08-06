@@ -14,7 +14,11 @@
 		/obj/item/device/radio/headset/headset_sec/alt,
 		/obj/item/clothing/head/soft/sec/corp,
 		/obj/item/clothing/under/rank/security/corp,
+<<<<<<< HEAD
 		/obj/item/weapon/storage/belt/security,
+=======
+		/obj/item/weapon/storage/belt/holster/security,
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 		/obj/item/device/flash,
 		/obj/item/weapon/reagent_containers/spray/pepper,
 		/obj/item/weapon/grenade/chem_grenade/teargas,
@@ -28,7 +32,7 @@
 		/obj/item/ammo_magazine/c45mds/rubber,
 		/obj/item/device/megaphone,
 		/obj/item/clothing/gloves/thick,
-		/obj/item/clothing/accessory/holster/thigh,
+		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/device/holowarrant,
 		/obj/item/device/flashlight/maglight,
 		/obj/item/weapon/storage/firstaid/individual/military,
@@ -51,12 +55,12 @@
 		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
 		/obj/item/taperoll/police,
 		/obj/item/weapon/handcuffs,
-		/obj/item/weapon/storage/belt/security,
+		/obj/item/weapon/storage/belt/holster/security,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/melee/baton/loaded,
 		/obj/item/weapon/gun/energy/gun,
-		/obj/item/clothing/accessory/holster/thigh,
+		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/weapon/melee/telebaton,
 		/obj/item/weapon/reagent_containers/spray/pepper,
 		/obj/item/clothing/accessory/storage/black_vest,
@@ -80,11 +84,11 @@
 		/obj/item/device/radio/headset/headset_sec/alt,
 		/obj/item/clothing/glasses/sunglasses,
 		/obj/item/taperoll/police,
-		/obj/item/weapon/storage/belt/security,
+		/obj/item/weapon/storage/belt/holster/security,
 		/obj/item/weapon/reagent_containers/spray/pepper,
 		/obj/item/weapon/melee/baton/loaded,
 		/obj/item/weapon/gun/energy/gun,
-		/obj/item/clothing/accessory/holster/thigh,
+		/obj/item/clothing/accessory/storage/holster/thigh,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/weapon/gun/energy/taser,
 		/obj/item/weapon/handcuffs,
@@ -111,9 +115,15 @@
 	return list(
 		/obj/item/clothing/gloves/forensic,
 		/obj/item/clothing/head/helmet,
+<<<<<<< HEAD
 		/obj/item/clothing/accessory/holster/thigh,
 		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
 		/obj/item/weapon/storage/belt/security,
+=======
+		/obj/item/clothing/accessory/storage/holster/thigh,
+		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
+		/obj/item/weapon/storage/belt/holster/security,
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,
 		/obj/item/clothing/suit/armor/pcarrier/medium,
@@ -151,7 +161,11 @@
 		/obj/item/device/radio/headset/headset_sec/alt,
 		/obj/item/clothing/head/soft/solgov,
 		/obj/item/clothing/under/rank/security/navyblue,
+<<<<<<< HEAD
 		/obj/item/weapon/storage/belt/security,
+=======
+		/obj/item/weapon/storage/belt/holster/security,
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 		/obj/item/device/flash,
 		/obj/item/weapon/melee/baton/loaded,
 		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
@@ -164,7 +178,11 @@
 		/obj/item/device/tape/random = 3,
 		/obj/item/device/megaphone,
 		/obj/item/clothing/gloves/thick,
+<<<<<<< HEAD
 		/obj/item/clothing/accessory/holster/thigh,
+=======
+		/obj/item/clothing/accessory/storage/holster/thigh,
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 		/obj/item/device/holowarrant,
 		/obj/item/device/flashlight/maglight,
 		/obj/item/weapon/storage/firstaid/individual/military,

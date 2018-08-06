@@ -214,7 +214,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	S.file = 'sound/ambience/shore.ogg'
 	S.repeat = 1
 	S.wait = 0
-	S.channel = 123
+	S.channel = GLOB.sound_channels.RequestChannel(/area/beach)
 	S.volume = 100
 	S.priority = 255
 	S.status = SOUND_UPDATE

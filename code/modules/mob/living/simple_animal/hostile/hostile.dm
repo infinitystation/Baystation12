@@ -19,9 +19,6 @@
 	var/shuttletarget = null
 	var/enroute = 0
 
-	var/damtype = BRUTE
-	var/defense = "melee" //what armor protects against its attacks
-
 /mob/living/simple_animal/hostile/proc/FindTarget()
 	if(!faction) //No faction, no reason to attack anybody.
 		return null
@@ -104,7 +101,7 @@
 		return
 	if(isliving(target_mob))
 		var/mob/living/L = target_mob
-		L.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext,damtype,defense)
+		L.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext,environment_smash,damtype,defense)
 		return L
 	if(istype(target_mob,/obj/mecha))
 		var/obj/mecha/M = target_mob
@@ -236,4 +233,14 @@
 					return
 			var/obj/structure/obstacle = locate(/obj/structure, get_step(src, dir))
 			if(istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/closet) || istype(obstacle, /obj/structure/table) || istype(obstacle, /obj/structure/grille))
+				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+				return
+			if(istype(obstacle, /obj/structure/wall_frame))
+				var/turf/T = get_turf(obstacle)
+				var/obj/structure/struct = locate(/obj/structure/window) in T
+				if(!struct)
+					struct = locate(/obj/structure/grille) in T
+				if(struct)
+					struct.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
 				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)

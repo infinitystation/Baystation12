@@ -8,7 +8,7 @@
 
 /obj/structure/closet/secure_closet/guncabinet/patrol/energy/WillContain()
 	return list(
-		/obj/item/clothing/accessory/holster/thigh = 6,
+		/obj/item/clothing/accessory/storage/holster/thigh = 6,
 		/obj/item/weapon/gun/energy/gun = 6
 	)
 

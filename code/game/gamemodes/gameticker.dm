@@ -151,8 +151,6 @@ var/global/datum/controller/gameticker/ticker
 
 	callHook("roundstart")
 
-	shuttle_controller.initialize_shuttles()
-
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup()
 		to_world("<FONT color='blue'><B>Enjoy the game!</B></FONT>")
@@ -497,7 +495,7 @@ var/global/datum/controller/gameticker/ticker
 	mode.declare_completion()//To declare normal completion.
 
 	//Ask the event manager to print round end information
-	GLOB.event_manager.RoundEnd()
+	SSevent.RoundEnd()
 
 	//Print a list of antagonists to the server log
 	var/list/total_antagonists = list()

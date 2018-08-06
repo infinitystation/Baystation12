@@ -171,7 +171,7 @@
 
 	//Override will make checks from different location used for prediction
 	if(location_override)
-		if(locate(/obj/structure/lattice, location_override) || locate(/obj/structure/catwalk, location_override))
+		if(locate(/obj/structure/lattice, location_override) || locate(/obj/structure/catwalk, location_override) || locate(/obj/structure/ladder, location_override))
 			return FALSE
 
 		below = GetBelow(location_override)

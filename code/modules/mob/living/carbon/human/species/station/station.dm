@@ -10,6 +10,7 @@
 	worlds tumultous at best."
 	num_alternate_languages = 2
 	secondary_langs = list(LANGUAGE_SOL_COMMON)
+	assisted_langs = list(LANGUAGE_NABBER)
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 17
 	max_age = 100
@@ -68,7 +69,7 @@
 				H.custom_emote("rubs [T.his] [damaged_organ.name] carefully.")
 
 		for(var/obj/item/organ/I in H.internal_organs)
-			if((I.status & ORGAN_DEAD) || I.robotic >= ORGAN_ROBOT) continue
+			if((I.status & ORGAN_DEAD) || BP_IS_ROBOTIC(I)) continue
 			if(I.damage > 2) if(prob(2))
 				var/obj/item/organ/external/parent = H.get_organ(I.parent_organ)
 				H.custom_emote("clutches [T.his] [parent.name]!")
@@ -98,6 +99,7 @@
 	num_alternate_languages = 1
 	language = LANGUAGE_SIIK_MAAS
 	additional_langs = list(LANGUAGE_SIIK_TAJR)
+	assisted_langs = list(LANGUAGE_NABBER)
 	//secondary_langs =
 	name_language = LANGUAGE_SIIK_MAAS
 	health_hud_intensity = 1.75
@@ -154,7 +156,6 @@
 	icobase = 'icons/mob/human_races/species/skrell/body.dmi'
 	deform = 'icons/mob/human_races/species/skrell/deformed_body.dmi'
 	preview_icon = 'icons/mob/human_races/species/skrell/preview.dmi'
-	eye_icon = "skrell_eyes_s"
 	primitive_form = "Neaera"
 	unarmed_types = list(/datum/unarmed_attack/punch)
 	blurb = "An amphibious species, Skrell come from the star system known as Qerr'Vallis, which translates to 'Star of \
@@ -164,6 +165,7 @@
 	the secrets of their empire to their allies."
 	num_alternate_languages = 2
 	secondary_langs = list(LANGUAGE_SKRELLIAN)
+	assisted_langs = list(LANGUAGE_NABBER)
 	name_language = null
 	health_hud_intensity = 1.75
 
@@ -204,19 +206,7 @@
 
 	reagent_tag = IS_SKRELL
 
-	has_limbs = list(
-		BP_CHEST =  list("path" = /obj/item/organ/external/chest),
-		BP_GROIN =  list("path" = /obj/item/organ/external/groin),
-		BP_HEAD =   list("path" = /obj/item/organ/external/head),
-		BP_L_ARM =  list("path" = /obj/item/organ/external/arm),
-		BP_R_ARM =  list("path" = /obj/item/organ/external/arm/right),
-		BP_L_LEG =  list("path" = /obj/item/organ/external/leg),
-		BP_R_LEG =  list("path" = /obj/item/organ/external/leg/right),
-		BP_L_HAND = list("path" = /obj/item/organ/external/hand),
-		BP_R_HAND = list("path" = /obj/item/organ/external/hand/right),
-		BP_L_FOOT = list("path" = /obj/item/organ/external/foot),
-		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right)
-		)
+	override_limb_types = list(BP_HEAD = /obj/item/organ/external/head/skrell)
 
 /datum/species/diona
 	name = SPECIES_DIONA
@@ -224,7 +214,6 @@
 	icobase = 'icons/mob/human_races/species/diona/body.dmi'
 	deform = 'icons/mob/human_races/species/diona/deformed_body.dmi'
 	preview_icon = 'icons/mob/human_races/species/diona/preview.dmi'
-	eye_icon_location = 'icons/mob/human_races/species/diona/eyes.dmi'
 
 	language = LANGUAGE_ROOTLOCAL
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/diona)
@@ -237,6 +226,7 @@
 	num_alternate_languages = 2
 	strength = STR_VHIGH
 	secondary_langs = list(LANGUAGE_ROOTGLOBAL)
+	assisted_langs = list(LANGUAGE_NABBER)
 	name_language = LANGUAGE_ROOTLOCAL
 	spawns_with_stack = 0
 	health_hud_intensity = 2
@@ -265,7 +255,7 @@
 	has_limbs = list(
 		BP_CHEST =  list("path" = /obj/item/organ/external/diona/chest),
 		BP_GROIN =  list("path" = /obj/item/organ/external/diona/groin),
-		BP_HEAD =   list("path" = /obj/item/organ/external/head/no_eyes/diona),
+		BP_HEAD =   list("path" = /obj/item/organ/external/head/diona),
 		BP_L_ARM =  list("path" = /obj/item/organ/external/diona/arm),
 		BP_R_ARM =  list("path" = /obj/item/organ/external/diona/arm/right),
 		BP_L_LEG =  list("path" = /obj/item/organ/external/diona/leg),
@@ -281,7 +271,6 @@
 		)
 
 	inherent_verbs = list(
-		/mob/living/carbon/human/proc/diona_split_nymph,
 		/mob/living/carbon/human/proc/diona_heal_toggle
 		)
 
@@ -308,6 +297,25 @@
 	reagent_tag = IS_DIONA
 	genders = list(PLURAL)
 
+/proc/spawn_diona_nymph(var/turf/target)
+	if(!istype(target))
+		return 0
+
+	//This is a terrible hack and I should be ashamed.
+	var/datum/seed/diona = plant_controller.seeds["diona"]
+	if(!diona)
+		return 0
+
+	spawn(1) // So it has time to be thrown about by the gib() proc.
+		var/mob/living/carbon/alien/diona/D = new(target)
+		var/datum/ghosttrap/plant/P = get_ghost_trap("living plant")
+		P.request_player(D, "A diona nymph has split off from its gestalt. ")
+		spawn(60)
+			if(D)
+				if(!D.ckey || !D.client)
+					D.death()
+		return 1
+
 #define DIONA_LIMB_DEATH_COUNT 9
 /datum/species/diona/handle_death_check(var/mob/living/carbon/human/H)
 	var/lost_limb_count = has_limbs.len - H.organs.len
@@ -332,9 +340,25 @@
 	else
 		H.equip_to_slot_or_del(new /obj/item/device/flashlight/flare(H), slot_r_hand)
 
+// Dionaea spawned by hand or by joining will not have any
+// nymphs passed to them. This should take care of that.
 /datum/species/diona/handle_post_spawn(var/mob/living/carbon/human/H)
 	H.gender = NEUTER
-	return ..()
+	. = ..()
+	addtimer(CALLBACK(src, .proc/fill_with_nymphs, H), 0)
+
+/datum/species/diona/proc/fill_with_nymphs(var/mob/living/carbon/human/H)
+
+	if(!H || H.species.name != name) return
+
+	var/nymph_count = 0
+	for(var/mob/living/carbon/alien/diona/nymph in H)
+		nymph_count++
+		if(nymph_count >= 3) return
+
+	while(nymph_count < 3)
+		new /mob/living/carbon/alien/diona/sterile(H)
+		nymph_count++
 
 /datum/species/diona/handle_death(var/mob/living/carbon/human/H)
 
@@ -346,7 +370,7 @@
 		H.visible_message("<span class='danger'>\The [H] collapses into parts, revealing a solitary diona nymph at the core.</span>")
 		return
 	else
-		H.diona_split_nymph()
+		split_into_nymphs(H)
 
 /datum/species/diona/get_blood_name()
 	return "sap"

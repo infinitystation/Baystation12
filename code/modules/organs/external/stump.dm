@@ -13,15 +13,10 @@
 	..(holder, internal)
 	if(istype(limb))
 		max_damage = limb.max_damage
-		if((limb.robotic >= ORGAN_ROBOT) && (!parent || (parent.robotic >= ORGAN_ROBOT)))
+		if(BP_IS_ROBOTIC(limb) && (!parent || BP_IS_ROBOTIC(parent)))
 			robotize() //if both limb and the parent are robotic, the stump is robotic too
+		if(BP_IS_CRYSTAL(limb) && (!parent || BP_IS_CRYSTAL(parent)))
+			status |= ORGAN_CRYSTAL // Likewise with crystalline limbs.
 
 /obj/item/organ/external/stump/is_stump()
 	return 1
-
-/obj/item/organ/external/stump/removed()
-	..()
-	qdel(src)
-
-/obj/item/organ/external/stump/is_usable()
-	return 0

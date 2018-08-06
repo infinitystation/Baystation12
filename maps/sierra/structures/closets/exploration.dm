@@ -21,7 +21,11 @@
 		/obj/item/device/radio/beacon,
 		/obj/item/taperoll/research,
 		/obj/item/weapon/material/hatchet/machete/deluxe,
+<<<<<<< HEAD
 		/obj/item/clothing/accessory/holster/machete,
+=======
+		/obj/item/clothing/accessory/storage/holster/machete,
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 		/obj/item/device/spaceflare,
 		/obj/item/clothing/accessory/storage/webbing_large,
 		/obj/item/device/taperecorder,
@@ -51,7 +55,11 @@
 		/obj/item/device/radio,
 		/obj/item/device/gps,
 		/obj/item/taperoll/research,
+<<<<<<< HEAD
 		/obj/item/clothing/accessory/holster/machete,
+=======
+		/obj/item/clothing/accessory/storage/holster/machete,
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 		/obj/item/device/spaceflare,
 		/obj/item/clothing/accessory/storage/webbing_large,
 		/obj/item/device/analyzer,

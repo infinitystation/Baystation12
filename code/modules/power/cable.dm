@@ -524,8 +524,12 @@ obj/structure/cable/proc/cableColor(var/colorC)
 		var/obj/item/organ/external/S = H.organs_by_name[user.zone_sel.selecting]
 
 		if (!S) return
-		if(S.robotic < ORGAN_ROBOT || user.a_intent != I_HELP)
+		if(!BP_IS_ROBOTIC(S) || user.a_intent != I_HELP)
 			return ..()
+
+		if(BP_IS_BRITTLE(S))
+			to_chat(user, "<span class='warning'>\The [H]'s [S.name] is hard and brittle - \the [src] cannot repair it.</span>")
+			return 1
 
 		var/use_amt = min(src.amount, ceil(S.burn_dam/3), 5)
 		if(can_use(use_amt))
@@ -615,7 +619,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 /obj/item/stack/cable_coil/transfer_to(obj/item/stack/cable_coil/S)
 	if(!istype(S))
 		return
-	if(!can_merge(S))
+	if(!(can_merge(S) || S.can_merge(src)))
 		return
 
 	..()

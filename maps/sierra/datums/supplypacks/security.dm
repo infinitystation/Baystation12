@@ -145,14 +145,18 @@
 
 /decl/hierarchy/supply_pack/security/holster
 	name = "Misc - Holster crate"
-	contains = list(/obj/item/clothing/accessory/holster/hip = 4)
+	contains = list(/obj/item/clothing/accessory/storage/holster/hip = 4)
 	cost = 20
 	containertype = /obj/structure/closet/crate/secure
 	containername = "\improper Holster crate"
 
 /decl/hierarchy/supply_pack/security/securityextragear
 	name = "Misc - Security equipment"
+<<<<<<< HEAD
 	contains = list(/obj/item/weapon/storage/belt/security = 2,
+=======
+	contains = list(/obj/item/weapon/storage/belt/holster/security = 2,
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 					/obj/item/device/radio/headset/headset_sec = 2,
 					/obj/item/clothing/glasses/sunglasses/sechud/goggles = 2,
 					/obj/item/taperoll/police = 2,
@@ -170,7 +174,7 @@
 	contains = list(/obj/item/device/radio/headset/heads/cos,
 					/obj/item/clothing/glasses/sunglasses/sechud/goggles,
 					/obj/item/taperoll/police,
-					/obj/item/weapon/storage/belt/security,
+					/obj/item/weapon/storage/belt/holster/security,
 					/obj/item/device/hailer,
 					/obj/item/device/holowarrant,
 					/obj/item/clothing/gloves/thick,

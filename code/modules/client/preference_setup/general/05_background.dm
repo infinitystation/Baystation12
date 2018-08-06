@@ -68,7 +68,11 @@
 
 /datum/category_item/player_setup_item/general/background/OnTopic(var/href,var/list/href_list, var/mob/user)
 	if(href_list["nt_relation"])
+<<<<<<< HEAD
 		var/new_class = input(user, "Choose your character's personal financial wealth. Note that it is character's real wealth, not far-fetched by the one.", CHARACTER_PREFERENCE_INPUT_TITLE, pref.economic_status)  as null|anything in ECONOMIC_CLASS
+=======
+		var/new_class = input(user, "Choose your relation to [GLOB.using_map.company_name]. Note that this represents what others can find out about your character by researching your background, not what your character actually thinks.", CHARACTER_PREFERENCE_INPUT_TITLE, pref.economic_status)  as null|anything in ECONOMIC_CLASS
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 		if(new_class && CanUseTopic(user))
 			pref.economic_status = new_class
 			return TOPIC_REFRESH

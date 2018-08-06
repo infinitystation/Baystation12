@@ -11,9 +11,6 @@
 	limb_blend = ICON_MULTIPLY
 	tail_blend = ICON_MULTIPLY
 
-	eye_icon = "eyes_lizard"
-	eye_icon_location = 'icons/mob/human_races/species/unathi/eyes.dmi'
-
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/tail, /datum/unarmed_attack/claws, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite/sharp)
 	primitive_form = "Stok"
 	darksight_range = 3
@@ -27,6 +24,7 @@
 	num_alternate_languages = 2
 	secondary_langs = list(LANGUAGE_UNATHI)
 	name_language = LANGUAGE_UNATHI
+	assisted_langs = list(LANGUAGE_NABBER)
 	health_hud_intensity = 2
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 3
 
@@ -85,6 +83,8 @@
 		)
 
 	prone_overlay_offset = list(-4, -4)
+
+	override_limb_types = list(BP_HEAD = /obj/item/organ/external/head/unathi)
 
 /datum/species/unathi/equip_survival_gear(var/mob/living/carbon/human/H)
 	..()

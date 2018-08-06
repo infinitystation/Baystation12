@@ -16,10 +16,14 @@ nikita588 - machine
 mrnicolas - machine
 lunkydunk - machine
 skonoplich - machine
+coltrane97 - machine
 wheatley2013 - machine
 redknighthero - machine
 kotovsyndrome - machine
+<<<<<<< HEAD
 coltrane97 - machine
+=======
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 inubashirimomiji - skrell
 twinindifferent - skrell
 wheatley2013 - skrell
@@ -33,6 +37,13 @@ lukecage - skrell
 hodovoy - skrell
 taushai - skrell
 knayu - skrell
+<<<<<<< HEAD
+=======
+taushai - resomi
+netreson - resomi
+kirill1243 - resomi
+coldmantis13 - resomi
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
@@ -54,6 +65,7 @@ sosiskoed - diona
 gumboldty - diona
 vankoska - diona
 maxi2000 - diona
+sfd - diona
 wheatley2013 - vox
 wolforbykot - vox
 sosiskoed - vox
@@ -83,6 +95,9 @@ selles - tajaran
 logfol - tajaran
 denmag - tajaran
 solark - tajaran
+<<<<<<< HEAD
 forrya - tajaran
+=======
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 arhod - tajaran
 redknighthero - bionic

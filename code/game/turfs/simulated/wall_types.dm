@@ -69,9 +69,6 @@
 	icon = 'icons/turf/wall_masks.dmi'
 	icon_state = "cult"
 
-/turf/simulated/wall/wood
-	icon = 'icons/turf/wall_wood.dmi'
-
 /turf/simulated/wall/iron/New(var/newloc)
 	..(newloc,"iron")
 
@@ -128,9 +125,12 @@
 	list/blend_objects = newlist()
 
 /turf/simulated/wall/alium/New(var/newloc)
-	..(newloc,"alien alloy")
+	..(newloc,"aliumium")
 
 /turf/simulated/wall/alium/ex_act(severity)
 	if(prob(explosion_resistance))
 		return
 	..()
+
+/turf/simulated/wall/crystal/New(var/newloc)
+	..(newloc,"crystal")

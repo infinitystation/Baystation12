@@ -163,8 +163,8 @@
 	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	var/damage = rand(melee_damage_lower, melee_damage_upper)
 	if(istype(A,/mob/living/carbon))
-		if(A.attack_generic(src,damage,attacktext) && loc && attack_sound)
+		if(A.attack_generic(src, damage, attacktext) && loc && attack_sound)
 			playsound(loc, attack_sound, 50, 1, 1)
 	else
-		if(A.attack_generic(src,damage,attacktext,environment_smash) && loc && attack_sound)
+		if(A.attack_generic(src, damage, attacktext, environment_smash, damtype, defense) && loc && attack_sound)
 			playsound(loc, attack_sound, 50, 1, 1)

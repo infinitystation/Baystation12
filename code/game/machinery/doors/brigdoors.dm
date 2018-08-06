@@ -68,7 +68,7 @@
 
 
 		if(world.timeofday > src.releasetime)
-			src.timer_end() // open doors, reset timer, clear status screen
+			src.timer_end(TRUE) // open doors, reset timer, clear status screen, broadcast to sec HUDs
 			src.timing = 0
 
 		src.update_icon()
@@ -107,7 +107,7 @@
 
 
 // Opens and unlocks doors, power check
-/obj/machinery/door_timer/proc/timer_end()
+/obj/machinery/door_timer/proc/timer_end(var/broadcast_to_huds = 0)
 	if(stat & (NOPOWER|BROKEN))	return 0
 
 	// Reset releasetime
@@ -115,6 +115,9 @@
 
 	//reset timing
 	timing = 0
+
+	if (broadcast_to_huds)
+		broadcast_security_hud_message("The timer for [id] has expired.", src)
 
 	for(var/obj/machinery/door/window/brigdoor/door in targets)
 		if(!door.density)	continue
@@ -200,7 +203,7 @@
 
 
 /obj/machinery/door_timer/tg_ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = 0, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
-	ui = tgui_process.try_update_ui(user, src, ui_key, ui, force_open)
+	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
 		ui = new(user, src, ui_key, "brig_timer", name , 300, 150, master_ui, state)
 		ui.open()

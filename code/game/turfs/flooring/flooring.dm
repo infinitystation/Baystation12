@@ -274,13 +274,13 @@ var/list/flooring_types
 /decl/flooring/reinforced/shuttle/black
 	icon_base = "floor7"
 
-/decl/flooring/diona
-	name = "biomass"
-	desc = "a mass of small intertwined aliens forming a floor... Creepy."
-	icon = 'icons/turf/floors.dmi'
-	icon_base = "diona"
-	flags = TURF_ACID_IMMUNE | TURF_REMOVE_SHOVEL
-
 /decl/flooring/tiling/asteroid
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "asteroidfloor"
+
+/decl/flooring/crystal
+	name = "crystal floor"
+	icon = 'icons/turf/flooring/crystal.dmi'
+	build_type = null
+	flags = TURF_ACID_IMMUNE | TURF_CAN_BREAK | TURF_REMOVE_CROWBAR
+	color = "#00ffe1"

@@ -207,3 +207,8 @@
 
 /obj/effect/overmap/ship/get_fore_dir()
 	return fore_dir
+
+/obj/effect/overmap/ship/proc/get_helm_skill()
+	. = SKILL_MIN
+	if(nav_control)
+		. = nav_control.operator_skill || .

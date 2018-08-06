@@ -36,6 +36,7 @@
 	speed = 3
 	max_gas = list("phoron" = 1, "carbon_dioxide" = 5, "methyl_bromide" = 1)
 	mob_size = MOB_LARGE
+	pass_flags = PASS_FLAG_TABLE
 
 //nursemaids - these create webs and eggs
 /mob/living/simple_animal/hostile/giant_spider/nurse
@@ -85,7 +86,7 @@
 		var/mob/living/carbon/human/H = .
 		if(prob(poison_per_bite))
 			var/obj/item/organ/external/O = pick(H.organs)
-			if(!(O.robotic >= ORGAN_ROBOT))
+			if(!BP_IS_ROBOTIC(O))
 				var/eggs = new /obj/effect/spider/eggcluster(O, src)
 				O.implants += eggs
 

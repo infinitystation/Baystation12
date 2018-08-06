@@ -19,6 +19,7 @@
 	max_heat_protection_temperature = HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.7
 	w_class = ITEM_SIZE_NORMAL
+	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_ADHERENT)
 
 /obj/item/clothing/head/helmet/nt
 	name = "\improper corporate security helmet"
@@ -184,3 +185,8 @@
 	name = "bundeforz tactical helmet"
 	desc = "A light grey helmet made from advanced ceramic. Comfortable and robust."
 	icon_state = "m_helmet"
+
+/obj/item/clothing/head/helmet/nt/pilot
+	name = "nanotrasen pilot's helmet"
+	desc = "A nanotrasen pilot's helmet for operating the cockpit in style. This one is worn by members of Nanotrasen."
+	icon_state = "pilotnt"

@@ -35,6 +35,7 @@
 	name = "mounted energy gun"
 	self_recharge = 1
 	use_external_power = 1
+	have_safety = FALSE
 
 /obj/item/weapon/gun/energy/gun/nuclear
 	name = "experimental nuclear energy gun"
@@ -59,7 +60,7 @@
 //override for failcheck behaviour
 /obj/item/weapon/gun/energy/gun/nuclear/Process()
 	if(fail_counter > 0)
-		radiation_repository.radiate(src, fail_counter--)
+		SSradiation.radiate(src, fail_counter--)
 
 	return ..()
 

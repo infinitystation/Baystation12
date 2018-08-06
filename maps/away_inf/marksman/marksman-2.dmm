@@ -1011,7 +1011,7 @@
 /turf/simulated/floor,
 /area/ship/marksman/maintenance/upper/pods)
 "cm" = (
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -22
@@ -1019,11 +1019,11 @@
 /turf/simulated/floor/tiled,
 /area/ship/marksman/maintenance/upper/pods)
 "cn" = (
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /turf/simulated/floor/tiled,
 /area/ship/marksman/maintenance/upper/pods)
 "co" = (
-/obj/structure/bed/chair/comfy/shuttle,
+/obj/structure/bed/chair/shuttle,
 /obj/machinery/light{
 	icon_state = "tube1";
 	dir = 1
@@ -1598,7 +1598,7 @@
 /turf/simulated/floor,
 /area/ship/marksman/maintenance/upper/pods)
 "dh" = (
-/obj/structure/bed/chair/comfy/shuttle{
+/obj/structure/bed/chair/shuttle{
 	icon_state = "bschair_preview";
 	dir = 1
 	},
@@ -2903,7 +2903,7 @@
 /turf/simulated/floor,
 /area/ship/marksman/maintenance/upper/pods)
 "fE" = (
-/obj/structure/bed/chair/comfy/shuttle{
+/obj/structure/bed/chair/shuttle{
 	icon_state = "bschair_preview";
 	dir = 1
 	},

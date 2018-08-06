@@ -11,7 +11,7 @@
 	var/atom/movable/AM = host.loc
 	if(!istype(AM))
 		return
-	. = AM.DoMove(direction, mover)
+	. = AM.DoMove(direction, mover, FALSE)
 	if(!(. & MOVEMENT_HANDLED))
 		. = MOVEMENT_HANDLED
 		AM.relaymove(mover, direction)

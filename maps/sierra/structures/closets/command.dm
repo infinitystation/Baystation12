@@ -20,7 +20,11 @@
 		/obj/item/clothing/glasses/sunglasses,
 		/obj/item/weapon/gun/energy/gun/secure,
 		/obj/item/device/radio/headset/heads/sierracaptain/alt,
+<<<<<<< HEAD
 		/obj/item/clothing/accessory/holster/thigh,
+=======
+		/obj/item/clothing/accessory/storage/holster/thigh,
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 		/obj/item/weapon/melee/telebaton,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
@@ -48,7 +52,11 @@
 		/obj/item/clothing/head/helmet/solgov/command,
 		/obj/item/device/radio/headset/heads/sierraxo,
 		/obj/item/ammo_magazine/c44/rubber,
+<<<<<<< HEAD
 		/obj/item/clothing/accessory/holster/thigh,
+=======
+		/obj/item/clothing/accessory/storage/holster/thigh,
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 		/obj/item/weapon/gun/energy/gun/secure,
 		/obj/item/weapon/melee/telebaton,
 		/obj/item/device/flash,

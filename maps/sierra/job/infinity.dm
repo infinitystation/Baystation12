@@ -10,7 +10,11 @@
 	suit = /obj/item/clothing/suit/armor/pcarrier/troops/heavy
 	suit_store = /obj/item/weapon/gun/projectile/automatic/wt550/lethal
 	gloves = /obj/item/clothing/gloves/thick/combat/marine
+<<<<<<< HEAD
 	belt = /obj/item/weapon/storage/belt/security/troops
+=======
+	belt = /obj/item/weapon/storage/belt/holster/security/troops
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 	uniform = /obj/item/clothing/under/solgov/utility/marine/urban
 	l_pocket = /obj/item/device/flashlight/maglight
 	shoes = /obj/item/clothing/shoes/combat/marine
@@ -147,11 +151,16 @@
 		/obj/item/weapon/combitool)
 
 /decl/hierarchy/outfit/marshal
+<<<<<<< HEAD
 	name = "SCG Marshal"
+=======
+	name = "OCIE officer"
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 	shoes = /obj/item/clothing/shoes/jackboots
 	uniform = /obj/item/clothing/under/rank/security/navyblue
 	suit = /obj/item/clothing/suit/armor/pcarrier/light/sol
 	l_ear = /obj/item/device/radio/headset/headset_sec
+<<<<<<< HEAD
 	belt = /obj/item/weapon/storage/belt/security/marshal
 	l_pocket = /obj/item/clothing/accessory/holster/thigh
 	r_pocket = /obj/item/clothing/accessory/solgov/rank/marine/enlisted/e4
@@ -161,6 +170,16 @@
 	id_type = /obj/item/weapon/card/id/security
 	id_desc = "An ID of SCG police marshals."
 	id_pda_assignment = "Colonial Bureau Officer"
+=======
+	belt = /obj/item/weapon/storage/belt/holster/security/ocei
+	r_pocket = /obj/item/clothing/accessory/solgov/rank/marine/enlisted/e4
+	r_hand = /obj/item/clothing/accessory/badge/ocieagent
+	l_hand = /obj/item/weapon/gun/energy/taser
+	id_slot = slot_wear_id
+	id_type = /obj/item/weapon/card/id/security
+	id_desc = "An ID of SCG OCEI officer."
+	id_pda_assignment = "OCEI Officer"
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 
 
 /decl/hierarchy/outfit/pmc
@@ -185,7 +204,11 @@
 	mask = /obj/item/clothing/mask/gas/half
 	suit = /obj/item/clothing/suit/armor/pcarrier/troops/heavy_pcrc
 	head = /obj/item/clothing/head/helmet/pcrc
+<<<<<<< HEAD
 	belt = /obj/item/weapon/storage/belt/security/troops
+=======
+	belt = /obj/item/weapon/storage/belt/holster/security/troops
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 	r_hand = /obj/item/weapon/gun/projectile/automatic/wt550/lethal
 	id_pda_assignment = "PCRC PMC"
 
@@ -196,7 +219,11 @@
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/heavy_saare
 	head = /obj/item/clothing/head/helmet/saare/cover
+<<<<<<< HEAD
 	belt = /obj/item/weapon/storage/belt/security/troops_sts
+=======
+	belt = /obj/item/weapon/storage/belt/holster/security/troops_sts
+>>>>>>> 1d134c975d63c37d3b2ab5d2b4874f33d3794904
 	r_hand = /obj/item/weapon/gun/projectile/automatic/sts35
 	id_pda_assignment = "SAARE PMC"
 	back = /obj/item/weapon/storage/backpack/satchel/pocketbook/khaki
