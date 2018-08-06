@@ -46,7 +46,7 @@
 	return ..()
 
 /obj/item/weapon/gun/projectile/revolver/mateba
-	name = "Mateba"
+	name = "mateba"
 	icon_state = "mateba"
 	caliber = ".50"
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
@@ -132,15 +132,15 @@
 	ammo_type = /obj/item/ammo_casing/c44
 
 /obj/item/weapon/gun/projectile/revolver/lr22
-	name = "H-17 revolver"
-	desc = "A rugged revolver based on the Smith & Wesson 617 model, with modern improvements. Uses .17 HMR rounds."
+	name = ".22LR revolver"
+	desc = "A rugged revolver based on the Smith & Wesson 617 model, with modern improvements. Uses .22LR rounds."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "22lr_revolver"
 	item_state = "revolver"
 	max_shells = 10
 	caliber = "22"
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
-	ammo_type = /obj/item/ammo_casing/a17
+	ammo_type = /obj/item/ammo_casing/a22lr
 
 /obj/item/weapon/gun/projectile/revolver/shotgun
 	name = "RSH-12 shotgun-revolver"

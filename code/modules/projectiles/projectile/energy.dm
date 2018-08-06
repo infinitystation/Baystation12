@@ -74,7 +74,7 @@
 	damage = 15
 	agony = 70
 	damage_type = BURN
-	armor_penetration = 20
+	armor_penetration = 10
 
 /obj/item/projectile/energy/declone
 	name = "decloner beam"

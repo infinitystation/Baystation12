@@ -11,7 +11,7 @@
 /obj/item/weapon/gun/projectile/military
 	name = "WT45 pistol"
 	desc = "The WT45 - a mass produced kinetic sidearm in widespread service with the SCGDF. Uses .45 rounds."
-	magazine_type = /obj/item/ammo_magazine/c45mds/rubber
+	magazine_type = /obj/item/ammo_magazine/c45mds/flash
 	allowed_magazines = /obj/item/ammo_magazine/c45mds
 	icon_state = "usp"
 	caliber = ".45"
@@ -89,6 +89,8 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/a50
 	allowed_magazines = /obj/item/ammo_magazine/a50
+	mag_insert_sound = 'sound/weapons/guns/interaction/hpistol_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/hpistol_magout.ogg'
 
 /obj/item/weapon/gun/projectile/magnum_pistol/update_icon()
 	..()
@@ -110,6 +112,8 @@
 	fire_delay = 25
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
+	mag_insert_sound = 'sound/weapons/guns/interaction/hpistol_magin.ogg'
+	mag_remove_sound = 'sound/weapons/guns/interaction/hpistol_magout.ogg'
 
 /obj/item/weapon/gun/projectile/gyropistol/update_icon()
 	..()
@@ -119,7 +123,7 @@
 		icon_state = "gyropistol"
 
 /obj/item/weapon/gun/projectile/beretta
-	name = "P9 Brigadier pistol"
+	name = "9mm combat pistol"
 	desc = "The Lumoco Arms P9 Brigadier. A robust sidearm designed for military duty. Uses 9mm rounds."
 	magazine_type = /obj/item/ammo_magazine/mc9mmds
 	allowed_magazines = /obj/item/ammo_magazine/mc9mmds
@@ -199,8 +203,8 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/weapon/gun/projectile/spistol
-	name = "TH17 pistol"
-	desc = "The TH17. A small sidearm, with futuristic design. Uses .17HMR rounds."
+	name = "TH22 pistol"
+	desc = "The TH22. A small sidearm, with futuristic design. Uses .22LR rounds."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "pistol0"
 	item_icons = list(
@@ -209,7 +213,7 @@
 		)
 	item_state = "gun"
 	w_class = ITEM_SIZE_SMALL
-	caliber = "17"
+	caliber = "22"
 	fire_delay = 1
 	origin_tech = list(TECH_COMBAT = 2)
 	load_method = MAGAZINE

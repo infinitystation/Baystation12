@@ -52,11 +52,11 @@
 //Armor plates
 /obj/item/clothing/accessory/armorplate
 	name = "light armor plate"
-	desc = "A basic armor plate made of synthetic fibers. Attaches to a plate carrier. 2 class of deffence"
+	desc = "A basic armor plate made of steel-reinforced synthetic fibers. Attaches to a plate carrier."
 	icon = 'icons/obj/clothing/modular_armor.dmi'
 	icon_state = "armor_light"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
-	armor = list(melee = 25, bullet = 20, laser = 30, energy = 10, bomb = 25, bio = 0, rad = 0)
+	armor = list(melee = 25, bullet = 30, laser = 30, energy = 10, bomb = 25, bio = 0, rad = 0)
 	slot = ACCESSORY_SLOT_ARMOR_C
 
 /obj/item/clothing/accessory/armorplate/get_fibers()
@@ -64,19 +64,19 @@
 
 /obj/item/clothing/accessory/armorplate/medium
 	name = "medium armor plate"
-	desc = "A steel-reinforced armor plate, providing good protection with attached trauma plates. Attaches to a plate carrier. 3 class of deffence."
+	desc = "A plasteel-reinforced synthetic armor plate, providing good protection. Attaches to a plate carrier."
 	icon_state = "armor_medium"
 	armor = list(melee = 40, bullet = 40, laser = 40, energy = 25, bomb = 30, bio = 0, rad = 0)
 
 /obj/item/clothing/accessory/armorplate/tactical
 	name = "tactical armor plate"
-	desc = "A medium armor plate with additional layer of plasteel. Attaches to a plate carrier. 3a class of deffence."
+	desc = "A medium armor plate with additional ablative coating. Attaches to a plate carrier."
 	icon_state = "armor_tactical"
-	armor = list(melee = 40, bullet = 50, laser = 50, energy = 35, bomb = 30, bio = 0, rad = 0)
+	armor = list(melee = 40, bullet = 40, laser = 60, energy = 35, bomb = 30, bio = 0, rad = 0)
 
 /obj/item/clothing/accessory/armorplate/merc
 	name = "heavy armor plate"
-	desc = "A ceramics-reinforced armor plate with additional layer of synthetic fibers, providing state of of the art protection. Attaches to a plate carrier. 4 class of deffence."
+	desc = "A ceramics-reinforced synthetic armor plate, providing state of of the art protection. Attaches to a plate carrier."
 	icon_state = "armor_merc"
 	armor = list(melee = 60, bullet = 60, laser = 60, energy = 40, bomb = 40, bio = 0, rad = 0)
 	slowdown = 0.5
@@ -91,7 +91,7 @@
 	icon_state = "armguards"
 	gender = PLURAL
 	body_parts_covered = ARMS
-	armor = list(melee = 40, bullet = 20, laser = 20, energy = 25, bomb = 30, bio = 0, rad = 0)
+	armor = list(melee = 40, bullet = 40, laser = 40, energy = 25, bomb = 30, bio = 0, rad = 0)
 	slot = ACCESSORY_SLOT_ARMOR_A
 
 /obj/item/clothing/accessory/armguards/blue
@@ -127,7 +127,7 @@
 	name = "ballistic arm guards"
 	desc = "A pair of armored arm pads with heavy plates to protect against ballistic projectiles."
 	icon_state = "armguards_ballistic"
-	armor = list(melee = 42, bullet = 40, laser = 25, energy = 10, bomb = 25, bio = 0, rad = 0)
+	armor = list(melee = 42, bullet = 75, laser = 42, energy = 10, bomb = 25, bio = 0, rad = 0)
 	siemens_coefficient = 0.7
 
 /obj/item/clothing/accessory/armguards/ablative
@@ -147,7 +147,7 @@
 	icon_state = "legguards"
 	gender = PLURAL
 	body_parts_covered = LEGS
-	armor = list(melee = 40, bullet = 20, laser = 20, energy = 25, bomb = 30, bio = 0, rad = 0)
+	armor = list(melee = 40, bullet = 40, laser = 40, energy = 25, bomb = 30, bio = 0, rad = 0)
 	slot = ACCESSORY_SLOT_ARMOR_L
 
 /obj/item/clothing/accessory/legguards/blue
@@ -184,7 +184,7 @@
 	name = "ballistic leg guards"
 	desc = "A pair of armored leg pads with heavy plates to protect against ballistic projectiles. Looks like they might impair movement."
 	icon_state = "legguards_ballistic"
-	armor = list(melee = 42, bullet = 40, laser = 25, energy = 10, bomb = 25, bio = 0, rad = 0)
+	armor = list(melee = 42, bullet = 75, laser = 42, energy = 10, bomb = 25, bio = 0, rad = 0)
 	siemens_coefficient = 0.7
 	slowdown = 1
 
