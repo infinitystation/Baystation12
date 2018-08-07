@@ -71,16 +71,12 @@
 	caliber = ".44"
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/revolver
 
-/obj/item/ammo_casing/c44/rubber
-	desc = "A .44 magnum rubber bullet casing."
-	projectile_type = /obj/item/projectile/bullet/pistol/rubber
-	icon_state = "r-casing"
-	spent_icon = "r-casing-spent"
-
-/obj/item/ammo_casing/c44
-	desc = "A .44 magnum bullet casing."
+/obj/item/ammo_casing/c44/emp
+	desc = "A .44 magnum haywire round."
 	caliber = ".44"
-	projectile_type = /obj/item/projectile/bullet/pistol/medium/revolver
+	icon_state = "empcasing"
+	projectile_type = /obj/item/projectile/ion/small
+	matter = list(DEFAULT_WALL_MATERIAL = 130, "uranium" = 100)
 
 /obj/item/ammo_casing/c44/rubber
 	desc = "A .44 magnum rubber bullet casing."
