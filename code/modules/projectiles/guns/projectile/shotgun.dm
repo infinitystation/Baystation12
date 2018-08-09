@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/shotgun/pump
-	name = "pump shotgun"
+	name = "Remmington 29x pump shotgun"
 	desc = "The mass-produced W-T Remmington 29x shotgun is a favourite of police and security forces on many worlds. Useful for sweeping alleys."
 	icon_state = "shotgun"
 	item_state = "shotgun"
@@ -56,6 +56,14 @@
 
 /obj/item/weapon/gun/projectile/shotgun/pump/combat/lethal
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+
+/obj/item/weapon/gun/projectile/shotgun/pump/combat/short
+	name = "KS-40S combat shotgun"
+	desc = " Shot version of KS-40"
+	icon = 'icons/obj/infinity_guns.dmi'
+	w_class = ITEM_SIZE_NORMAL
+	slot_flags = null
+	one_hand_penalty = 5
 
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel
 	name = "double-barreled shotgun"
