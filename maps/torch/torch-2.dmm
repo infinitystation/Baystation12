@@ -3834,10 +3834,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
-"iZ" = (
-/obj/structure/noticeboard,
-/turf/simulated/wall/prepainted,
-/area/crew_quarters/galley)
 "ja" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/cable/green{
@@ -4333,9 +4329,6 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/machinery/camera/network/third_deck{
-	c_tag = "Holodeck - Center"
-	},
 /obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -21
@@ -4593,19 +4586,15 @@
 /turf/simulated/wall/prepainted,
 /area/crew_quarters/bar)
 "kW" = (
-/obj/structure/table/standard,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
-	},
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -22
 	},
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -24
 	},
 /obj/machinery/light/spot,
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark,
 /area/holocontrol)
 "kY" = (
@@ -5151,6 +5140,7 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
+/obj/item/weapon/paper_bin,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/mess)
 "mr" = (
@@ -5212,6 +5202,10 @@
 	},
 /obj/machinery/alarm{
 	pixel_y = 24
+	},
+/obj/machinery/camera/network/third_deck{
+	c_tag = "Holodeck Control";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/holocontrol)
@@ -5473,6 +5467,9 @@
 	dir = 1;
 	pixel_y = -22
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
 "nh" = (
@@ -5527,6 +5524,10 @@
 "nl" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled,
 /area/holocontrol)
@@ -5910,6 +5911,9 @@
 	},
 /obj/item/weapon/storage/mirror{
 	pixel_x = 28
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
@@ -6417,17 +6421,8 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_x = 0;
-	pixel_y = -24
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
-	},
-/obj/machinery/camera/network/third_deck{
-	c_tag = "Holodeck - Control Room";
-	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/holocontrol)
@@ -6757,9 +6752,6 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/mess)
 "pY" = (
-/obj/effect/floor_decal/corner/blue/diagonal{
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -6768,8 +6760,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/plating,
+/obj/structure/noticeboard,
+/turf/simulated/wall/prepainted,
 /area/crew_quarters/mess)
 "pZ" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
@@ -6790,17 +6782,16 @@
 /turf/simulated/floor/plating,
 /area/crew_quarters/mess)
 "qc" = (
+/obj/machinery/door/airlock/multi_tile/glass/civilian{
+	name = "Holodeck"
+	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/airlock/civilian{
-	name = "Holodeck"
-	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/holocontrol)
 "qd" = (
@@ -6848,20 +6839,6 @@
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/disposal,
 /turf/simulated/floor/tiled/monotile,
-/area/hallway/primary/thirddeck/aft)
-"qk" = (
-/obj/effect/floor_decal/corner/green{
-	icon_state = "corner_white";
-	dir = 1
-	},
-/obj/machinery/firealarm{
-	dir = 2;
-	pixel_y = 24
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
 "qo" = (
 /obj/machinery/firealarm{
@@ -7267,9 +7244,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
 "rr" = (
-/obj/effect/floor_decal/corner/green{
-	dir = 5
-	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -7280,17 +7254,21 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/effect/floor_decal/corner/green{
+	icon_state = "corner_white";
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
 "rt" = (
-/obj/effect/floor_decal/corner/green/half{
-	icon_state = "bordercolorhalf";
-	dir = 1
-	},
 /obj/machinery/camera/network/third_deck{
 	c_tag = "Third Deck Hallway - Aft"
 	},
 /obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/green/half{
+	icon_state = "bordercolorhalf";
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -7304,6 +7282,19 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
+"rv" = (
+/obj/machinery/hologram/holopad,
+/obj/machinery/camera/network/third_deck{
+	c_tag = "Holodeck - Center"
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -23;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/dark,
+/area/holocontrol)
 "rw" = (
 /obj/effect/floor_decal/corner/green{
 	dir = 5
@@ -9480,6 +9471,7 @@
 	pixel_x = -23;
 	pixel_y = 0
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
 "vZ" = (
@@ -9686,6 +9678,16 @@
 /obj/structure/disposalpipe/trunk,
 /turf/simulated/floor/lino,
 /area/crew_quarters/diplomat)
+"wB" = (
+/obj/machinery/firealarm{
+	dir = 2;
+	pixel_y = 24
+	},
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/thirddeck/aft)
 "wD" = (
 /obj/machinery/door/airlock/command{
 	name = "Officer's Mess";
@@ -9979,6 +9981,7 @@
 /obj/machinery/door/airlock/civilian{
 	name = "Stall"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
 "xc" = (
@@ -10069,6 +10072,7 @@
 /area/hydroponics)
 "xo" = (
 /obj/structure/table/standard,
+/obj/item/weapon/material/bell,
 /turf/simulated/floor/lino,
 /area/vacant/office)
 "xp" = (
@@ -10580,10 +10584,12 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/crew_quarters/sleep/cryo)
 "yi" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -24
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
@@ -10982,9 +10988,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
 "zd" = (
@@ -11002,6 +11006,9 @@
 	pixel_y = 0
 	},
 /obj/machinery/light/small,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
 "zf" = (
@@ -11744,6 +11751,16 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/commissary)
+"Bg" = (
+/obj/effect/floor_decal/corner/green{
+	dir = 5
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/thirddeck/aft)
 "Bi" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -13075,6 +13092,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/safe_room/thirddeck)
+"Er" = (
+/obj/machinery/newscaster{
+	pixel_x = -32
+	},
+/turf/simulated/floor/lino,
+/area/vacant/office)
 "Es" = (
 /obj/random/closet,
 /turf/simulated/floor/plating,
@@ -15086,6 +15109,16 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
+"JN" = (
+/obj/structure/table/marble,
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id = "shop_shutters";
+	name = "Bar Shutters"
+	},
+/obj/item/weapon/material/bell,
+/turf/simulated/floor/tiled/monotile,
+/area/crew_quarters/commissary)
 "JO" = (
 /obj/effect/catwalk_plated,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -15815,6 +15848,9 @@
 	pixel_y = 32
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
 "Lw" = (
@@ -16286,6 +16322,11 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
+"MZ" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/paper_bin,
+/turf/simulated/floor/carpet,
+/area/crew_quarters/lounge)
 "Na" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -17959,6 +18000,7 @@
 /area/vacant/office)
 "SM" = (
 /obj/structure/table/marble,
+/obj/item/weapon/material/bell,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/command/captainmess)
 "SN" = (
@@ -18489,7 +18531,7 @@
 "Uz" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/corner/green{
-	dir = 5
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
@@ -19022,6 +19064,7 @@
 	dir = 4
 	},
 /obj/machinery/smartfridge/foods,
+/obj/item/weapon/material/bell,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
 "Wu" = (
@@ -29972,7 +30015,7 @@ zB
 zB
 Ao
 NL
-Md
+JN
 Md
 NL
 Se
@@ -36416,7 +36459,7 @@ Qg
 fp
 RO
 Tg
-iZ
+ev
 Ug
 Vg
 Vg
@@ -38667,7 +38710,7 @@ Vy
 xk
 Ok
 Hb
-Sk
+MZ
 HA
 aI
 aa
@@ -42493,7 +42536,7 @@ xp
 Og
 yq
 zn
-wp
+Er
 AP
 Mr
 vh
@@ -42888,8 +42931,8 @@ my
 nt
 ol
 pk
-gE
-qk
+om
+lc
 sF
 je
 vg
@@ -43082,7 +43125,7 @@ ve
 gE
 gE
 gE
-gE
+rv
 kd
 kW
 gE
@@ -43103,7 +43146,7 @@ wp
 mB
 AS
 vh
-SW
+Ba
 CU
 Dn
 Fj
@@ -43293,7 +43336,7 @@ hA
 hA
 hA
 gE
-lJ
+Bg
 AR
 ua
 vh
@@ -43697,7 +43740,7 @@ hA
 hA
 hA
 gE
-lc
+wB
 sJ
 uc
 vl

@@ -4598,7 +4598,6 @@
 	dir = 2
 	},
 /obj/structure/lattice,
-/obj/structure/catwalk,
 /turf/simulated/open,
 /area/maintenance/substation/firstdeck)
 "ali" = (
@@ -7173,6 +7172,7 @@
 	opacity = 0
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/item/weapon/material/bell,
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "awz" = (
@@ -9357,6 +9357,7 @@
 	id = "bo_pshutters";
 	name = "Privacy Shutters"
 	},
+/obj/item/weapon/material/bell,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/bo)
 "aDK" = (
@@ -9751,6 +9752,7 @@
 	dir = 8;
 	name = "Fabricator Lab Desk"
 	},
+/obj/item/weapon/material/bell,
 /turf/simulated/floor/tiled/white,
 /area/rnd/development)
 "aFd" = (
@@ -10200,10 +10202,8 @@
 /turf/simulated/floor/tiled/freezer,
 /area/security/brig)
 "aGY" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Auxiliary Engineering Hard Storage";
-	req_access = list(11);
-	secured_wires = 1
+/obj/machinery/door/airlock/hatch/maintenance{
+	req_access = list(12)
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/hallway/primary/firstdeck/fore)
@@ -21547,7 +21547,8 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/multi_tile/glass/research{
 	id_tag = "researchdoor_interior";
-	name = "Research Division"
+	name = "Research Division";
+	req_one_access = list(47,81)
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/entry)
@@ -26862,6 +26863,11 @@
 /obj/machinery/door/airlock/engineering{
 	name = "First Deck Shield Generator";
 	req_access = list(11)
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/shield/firstdeck)
