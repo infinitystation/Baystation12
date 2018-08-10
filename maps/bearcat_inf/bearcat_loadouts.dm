@@ -46,12 +46,12 @@
 /datum/gear/accessory/holster
 	display_name = "holster selection"
 	sort_category = "Utility"
-	path = /obj/item/clothing/accessory/holster
+	path = /obj/item/clothing/accessory/storage/holster
 	cost = 1
 
 /datum/gear/accessory/holster/New()
 	..()
-	gear_tweaks += new/datum/gear_tweak/path(/obj/item/clothing/accessory/holster)
+	gear_tweaks += new/datum/gear_tweak/path(/obj/item/clothing/accessory/storage/holster)
 
 /obj/item/stack/medical/bruise_pack
 
@@ -180,7 +180,7 @@
 
 /datum/gear/accessory/holster
 	display_name = "holster selection"
-	path = /obj/item/clothing/accessory/holster
+	path = /obj/item/clothing/accessory/storage/holster
 	cost = 2
 	flags = GEAR_HAS_TYPE_SELECTION
 

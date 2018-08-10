@@ -99,6 +99,7 @@
 	icon_state = "magusred"
 	item_state = "magusred"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|HANDS|LEGS|FEET
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
 
 /obj/item/clothing/suit/wizrobe/psypurple
 	name = "purple robes"
@@ -112,7 +113,7 @@
 	icon_state = "gentlecoat"
 	item_state = "gentlecoat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	flags_inv = HIDEJUMPSUIT
+	flags_inv = null
 
 /obj/item/clothing/suit/wizrobe/fake
 	name = "wizard robe"

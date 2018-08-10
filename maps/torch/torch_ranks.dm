@@ -6,13 +6,15 @@
 	branch_types = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet,
-		/datum/mil_branch/civilian
+		/datum/mil_branch/civilian,
+		/datum/mil_branch/solgov
 	)
 
 	spawn_branch_types = list(
 		/datum/mil_branch/expeditionary_corps,
 		/datum/mil_branch/fleet,
-		/datum/mil_branch/civilian
+		/datum/mil_branch/civilian,
+		/datum/mil_branch/solgov
 	)
 
 	species_to_branch_whitelist = list(
@@ -26,13 +28,13 @@
 	)
 
 	species_to_branch_blacklist = list(
-		/datum/species/diona   = list(/datum/mil_branch/fleet, /datum/mil_branch/expeditionary_corps),
-		/datum/species/nabber  = list(/datum/mil_branch/fleet, /datum/mil_branch/expeditionary_corps),
-		/datum/species/tajaran = list(/datum/mil_branch/fleet),
-		/datum/species/skrell  = list(/datum/mil_branch/fleet),
-		/datum/species/unathi  = list(/datum/mil_branch/fleet),
-		/datum/species/vox     = list(/datum/mil_branch/fleet, /datum/mil_branch/expeditionary_corps),
-		/datum/species/resomi  = list(/datum/mil_branch/fleet)
+		/datum/species/diona   = list(/datum/mil_branch/fleet, /datum/mil_branch/expeditionary_corps, /datum/mil_branch/solgov),
+		/datum/species/nabber  = list(/datum/mil_branch/fleet, /datum/mil_branch/expeditionary_corps, /datum/mil_branch/solgov),
+		/datum/species/tajaran = list(/datum/mil_branch/fleet, /datum/mil_branch/solgov),
+		/datum/species/skrell  = list(/datum/mil_branch/fleet, /datum/mil_branch/solgov),
+		/datum/species/unathi  = list(/datum/mil_branch/fleet, /datum/mil_branch/solgov),
+		/datum/species/vox     = list(/datum/mil_branch/fleet, /datum/mil_branch/expeditionary_corps, /datum/mil_branch/solgov),
+		/datum/species/resomi  = list(/datum/mil_branch/fleet, /datum/mil_branch/solgov)
 	)
 	species_to_rank_whitelist = list(
 		/datum/species/machine = list(
@@ -49,6 +51,9 @@
 				/datum/mil_rank/fleet/e6,
 				/datum/mil_rank/fleet/o1,
 				/datum/mil_rank/fleet/o2
+			),
+			/datum/mil_branch/solgov = list(
+				/datum/mil_rank/sol/agent
 			)
 		),
 		/datum/species/tajaran = list(
@@ -98,6 +103,9 @@
 				/datum/mil_rank/fleet/o4,
 				/datum/mil_rank/fleet/o5,
 				/datum/mil_rank/fleet/o6
+			),
+			/datum/mil_branch/solgov = list(
+				/datum/mil_rank/sol/gov
 			)
 		),
 		/datum/species/tajaran = list(
@@ -237,7 +245,6 @@
 		/datum/mil_rank/civ/nt,
 		/datum/mil_rank/civ/contractor,
 		/datum/mil_rank/civ/offduty,
-		/datum/mil_rank/civ/agent,
 		/datum/mil_rank/civ/synthetic
 	)
 
@@ -246,11 +253,25 @@
 		/datum/mil_rank/civ/nt,
 		/datum/mil_rank/civ/contractor,
 		/datum/mil_rank/civ/offduty,
-		/datum/mil_rank/civ/agent,
 		/datum/mil_rank/civ/synthetic
 	)
 
 	assistant_job = "Passenger"
+
+/datum/mil_branch/solgov
+	name = "SolGov Employee"
+	name_short = "SCG"
+	email_domain = "torch.scg"
+
+	rank_types = list(
+		/datum/mil_rank/sol/gov,
+		/datum/mil_rank/sol/agent
+	)
+
+	spawn_rank_types = list(
+		/datum/mil_rank/sol/gov,
+		/datum/mil_rank/sol/agent
+	)
 
 /datum/mil_rank/grade()
 	. = ..()
@@ -510,10 +531,19 @@
 /datum/mil_rank/civ/offduty
 	name = "Off-Duty Personnel"
 
-/datum/mil_rank/civ/agent
+/datum/mil_rank/civ/synthetic
+	name = "Synthetic"
+
+/*
+ *  SolGov Employees
+ *  ====== =========
+ */
+
+/datum/mil_rank/sol/gov
+	name = "SolGov Representative"
+	accessory = list(/obj/item/clothing/accessory/badge/solgov/representative)
+
+/datum/mil_rank/sol/agent
 	name = "OCIE Agent"
 	name_short = "AGT"
 	accessory = list(/obj/item/clothing/accessory/badge/ocieagent)
-
-/datum/mil_rank/civ/synthetic
-	name = "Synthetic"

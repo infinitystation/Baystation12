@@ -441,7 +441,7 @@
 	new /obj/item/ammo_magazine/c45m(src)
 	new /obj/item/weapon/gun/projectile/sec/lethal(src)
 
-/obj/item/weapon/storage/belt/holster/security/troops/New()
+/obj/item/weapon/storage/belt/holster/security/tactical/troops/New()
 	..()
 	new /obj/item/ammo_magazine/mc9mmt(src)
 	new /obj/item/ammo_magazine/mc9mmt(src)
@@ -452,7 +452,7 @@
 	new /obj/item/weapon/gun/projectile/sec/lethal(src)
 	new /obj/item/ammo_magazine/c45m(src)
 
-/obj/item/weapon/storage/belt/holster/security/troops_sts/New()
+/obj/item/weapon/storage/belt/holster/security/tactical/troops_sts/New()
 	..()
 	new /obj/item/ammo_magazine/c556(src)
 	new /obj/item/ammo_magazine/c556(src)
