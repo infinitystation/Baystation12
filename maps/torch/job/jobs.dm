@@ -608,6 +608,8 @@
 		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/fleet/e7,
 		/datum/mil_rank/fleet/e6,
+		/datum/mil_rank/fleet/e5,
+		/datum/mil_rank/ec/e5
 	)
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
 	                    SKILL_EVA          = SKILL_ADEPT,
@@ -852,6 +854,8 @@
 		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/fleet/e7,
 		/datum/mil_rank/fleet/e6,
+		/datum/mil_rank/ec/e5,
+		/datum/mil_rank/fleet/e5
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
 	                    SKILL_EVA         = SKILL_BASIC,
@@ -1207,6 +1211,8 @@
 		/datum/mil_rank/fleet/e6,
 		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/fleet/e7,
+		/datum/mil_rank/fleet/e5,
+		/datum/mil_rank/ec/e5,
 		/datum/mil_rank/fleet/e8
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,

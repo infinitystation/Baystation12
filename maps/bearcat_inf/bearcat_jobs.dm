@@ -239,7 +239,7 @@
 		new/datum/atom_creator/simple(/obj/item/weapon/storage/backpack/dufflebag/sec, 50),
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/weapon/handcuffs,
-		/obj/item/weapon/storage/belt/security,
+		/obj/item/weapon/storage/belt/holster/security,
 		/obj/item/device/flash,
 		/obj/item/device/radio/off,
 		/obj/item/taperoll/police,
