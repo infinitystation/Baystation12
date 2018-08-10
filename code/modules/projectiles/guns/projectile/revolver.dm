@@ -46,7 +46,7 @@
 	return ..()
 
 /obj/item/weapon/gun/projectile/revolver/mateba
-	name = "Mateba Model 6 Unica"
+	name = "Mateba Model 6-Unica"
 	icon_state = "mateba"
 	desc = "A curious specimen of rare automatic revolver occasionaly used in special forces and mostly known as a weapon of choice of any hardboiled detective in noir movies. Use .50AE rounds."
 	caliber = ".50"
@@ -125,7 +125,7 @@
 	return 1
 
 /obj/item/weapon/gun/projectile/revolver/webley
-	name = "service revolver"
+	name = "A&M W4"
 	desc = "The A&M W4. A rugged top break revolver produced by al-Maliki & Mosley. Based on the Webley model, with modern improvements. Uses .44 magnum rounds."
 	icon_state = "webley"
 	item_state = "webley"

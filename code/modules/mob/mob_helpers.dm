@@ -95,10 +95,10 @@ var/list/global/base_miss_chance = list(
 	BP_R_LEG = 50,
 	BP_L_ARM = 30,
 	BP_R_ARM = 30,
-	BP_L_HAND = 50,
-	BP_R_HAND = 50,
-	BP_L_FOOT = 60,
-	BP_R_FOOT = 60,
+	BP_L_HAND = 75,
+	BP_R_HAND = 75,
+	BP_L_FOOT = 80,
+	BP_R_FOOT = 80,
 )
 
 //Used to weight organs when an organ is hit randomly (i.e. not a directed, aimed attack).
@@ -113,8 +113,8 @@ var/list/global/organ_rel_size = list(
 	BP_R_ARM = 25,
 	BP_L_HAND = 10,
 	BP_R_HAND = 10,
-	BP_L_FOOT = 10,
-	BP_R_FOOT = 10,
+	BP_L_FOOT = 5,
+	BP_R_FOOT = 5,
 )
 
 /proc/check_zone(zone)

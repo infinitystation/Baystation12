@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/colt
-	name = "colt pistol"
+	name = "Сolt М1911 pistol"
 	desc = "A cheap Martian knock-off of a Colt M1911. Uses .45 rounds."
 	magazine_type = /obj/item/ammo_magazine/c45m
 	allowed_magazines = /obj/item/ammo_magazine/c45m
@@ -126,7 +126,7 @@
 		icon_state = "gyropistol"
 
 /obj/item/weapon/gun/projectile/beretta
-	name = "9mm combat pistol"
+	name = "P9 pistol"
 	desc = "The Lumoco Arms P9 Brigadier. A robust sidearm designed for military duty. Uses 9mm rounds."
 	magazine_type = /obj/item/ammo_magazine/mc9mmds
 	allowed_magazines = /obj/item/ammo_magazine/mc9mmds
