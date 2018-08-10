@@ -113,8 +113,8 @@
 		/area/shuttle/escape/centcom,
 		/area/shuttle/alien,
 		/area/shuttle/alien/base,
-		/area/albatros_hangar/start,
-		/area/albatros_hangar,
+/*		/area/albatros_hangar/start,
+		/area/albatros_hangar,*/
 		/area/rnd/xenobiology/xenoflora_storage,
 		/area/prison/solitary,
 		/area/turret_protected/ai_upload_foyer,

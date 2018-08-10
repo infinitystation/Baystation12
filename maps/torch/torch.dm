@@ -73,7 +73,7 @@
 	#include "loadout/loadout_uniform.dm"
 	#include "loadout/loadout_xeno.dm"
 	#include "loadout/~defines.dm"
-
+/*
 	#include "infinity_station_maps/torch-1.dmm"
 	#include "infinity_station_maps/torch-2.dmm"
 	#include "infinity_station_maps/torch-3.dmm"
@@ -82,11 +82,19 @@
 	#include "infinity_station_maps/torch-6.dmm"
 	#include "infinity_station_maps/torch-7.dmm"
 	#include "../away_inf/sentinel/sentinel.dm"
+*/
+	#include "torch-1.dmm"
+	#include "torch-2.dmm"
+	#include "torch-3.dmm"
+	#include "torch-4.dmm"
+	#include "torch-5.dmm"
+	#include "infinity_station_maps/torch-6.dmm"
+	#include "infinity_station_maps/torch-7.dmm"
 	#include "../away_inf/gunboat/gunboat.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/bearcat/bearcat.dm"
 	#include "../away_inf/yacht/yacht.dm"
-	#include "../away_inf/slavers/slavers_base.dm"
+//	#include "../away_inf/slavers/slavers_base.dm"
 	#include "../away/empty.dmm"
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
@@ -95,7 +103,7 @@
 	#include "../away/blueriver/blueriver.dm"
 	#include "../away/mobius_rift/mobius_rift.dm"
 	#include "../away/icarus/icarus.dm"
-//	#include "../away/slavers/slavers_base.dm"
+	#include "../away/slavers/slavers_base.dm"
 //	#include "../away/errant_pisces/errant_pisces.dm"
 //	#include "../away/lar_maria/lar_maria.dm"
 

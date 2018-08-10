@@ -205,10 +205,6 @@
 	icon_state = "black"
 	},
 /area/space)
-"aA" = (
-/obj/effect/shuttle_landmark/albatross/transit,
-/turf/space/transit/east,
-/area/space)
 "aB" = (
 /obj/effect/step_trigger/teleporter/random{
 	affect_ghosts = 0;
@@ -30475,7 +30471,7 @@ at
 at
 at
 at
-aA
+at
 at
 av
 av
