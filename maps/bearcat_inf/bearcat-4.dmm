@@ -579,9 +579,6 @@
 /area/pirats/shuttle)
 "bu" = (
 /obj/machinery/optable,
-/obj/machinery/oxygen_pump/anesthetic{
-	pixel_y = 32
-	},
 /turf/simulated/floor/shuttle/white,
 /area/pirats/shuttle)
 "bv" = (
