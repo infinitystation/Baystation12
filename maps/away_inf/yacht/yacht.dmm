@@ -1251,7 +1251,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/glass_external/bolted{
+/obj/machinery/door/airlock/external/glass/bolted{
 	frequency = 1698;
 	id_tag = "solar_yacht_outer"
 	},
@@ -1292,7 +1292,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/glass_external/bolted{
+/obj/machinery/door/airlock/external/glass/bolted{
 	frequency = 1698;
 	id_tag = "solar_yacht_inner"
 	},
@@ -1404,7 +1404,7 @@
 /area/yacht/engine)
 "cZ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/glass_external/bolted{
+/obj/machinery/door/airlock/external/glass/bolted{
 	frequency = 1699;
 	id_tag = "yacht_inner"
 	},
@@ -1447,7 +1447,7 @@
 /area/yacht/engine)
 "dd" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/glass_external/bolted{
+/obj/machinery/door/airlock/external/glass/bolted{
 	frequency = 1699;
 	id_tag = "yacht_outer"
 	},

@@ -7,7 +7,7 @@
 
 /obj/effect/overmap/ship/marksman
 	name = "Cobra-Class Craft"
-	desc = "A drifting military ship. Visible external damage on hull."
+	desc = "A drifting SCG military ship. Visible external damage on blue hull."
 	color = "#990000"
 	fore_dir = WEST
 	vessel_mass = 100
@@ -41,7 +41,7 @@
 	description = "A broken, drifting ship. They had a mission to save SEV Torch's crew."
 	prefix = "maps/away_inf/"
 	suffixes = list("marksman/marksman-1.dmm", "marksman/marksman-2.dmm")
-	cost = 1
+	cost = 1000
 
 /obj/effect/shuttle_landmark/marksman/nav1
 	name = "Drifting Ship Fore"
