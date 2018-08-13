@@ -214,7 +214,7 @@
 /datum/stack_recipe/beehive_frame
 	title = "beehive frame"
 	result_type = /obj/item/honey_frame
-
+/* Because Travis doesn't like them.
 /datum/stack_recipe/cardborg_suit
 	title = "cardborg suit"
 	result_type = /obj/item/clothing/suit/cardborg
@@ -223,7 +223,7 @@
 /datum/stack_recipe/cardborg_helmet
 	title = "cardborg helmet"
 	result_type = /obj/item/clothing/head/cardborg
-
+*/
 /datum/stack_recipe/candle
 	title = "candle"
 	result_type = /obj/item/weapon/flame/candle
