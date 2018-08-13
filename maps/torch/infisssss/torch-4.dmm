@@ -305,7 +305,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -313,7 +313,7 @@
 /turf/simulated/floor/plating,
 /area/medical/virology)
 "aaE" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
@@ -447,7 +447,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/virology)
 "aaO" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
@@ -468,7 +468,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -637,7 +637,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "abc" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -665,7 +665,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -691,7 +691,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "abf" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -717,7 +717,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -755,7 +755,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -780,7 +780,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "abl" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -824,7 +824,7 @@
 /area/medical/virology)
 "abn" = (
 /obj/structure/cable/green,
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/medical/virology)
@@ -875,7 +875,7 @@
 /area/medical/virology)
 "abr" = (
 /obj/structure/cable/green,
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -990,7 +990,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/medical/virology)
@@ -1051,7 +1051,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/medical/virology)
@@ -2893,7 +2893,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/surgery)
 "agg" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "surgery_windows"
 	},
 /turf/simulated/floor/plating,
@@ -3257,7 +3257,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 4
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1starboard)
 "ahC" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
@@ -5258,7 +5258,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
 "anH" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "exam_windows"
 	},
 /turf/simulated/floor/plating,
@@ -5269,11 +5269,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/medical/sleeper)
 "anM" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/medical/sleeper)
 "anN" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "recov_windows"
 	},
 /turf/simulated/floor/plating,
@@ -5539,7 +5539,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/medical/mentalhealth)
 "apR" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "counsel_windows"
 	},
 /turf/simulated/floor/plating,
@@ -5716,7 +5716,7 @@
 /turf/simulated/wall/prepainted,
 /area/medical/equipstorage)
 "aqP" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/medical/equipstorage)
 "aqQ" = (
@@ -5745,7 +5745,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "aqT" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/medical/chemistry)
 "aqU" = (
@@ -5763,7 +5763,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/evidence)
 "ark" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "forensicswindow"
 	},
 /obj/machinery/door/blast/regular{
@@ -5939,7 +5939,7 @@
 /turf/simulated/wall/prepainted,
 /area/medical/infirmreception)
 "arL" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
@@ -6091,7 +6091,7 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/fore)
 "asv" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 1;
@@ -6169,7 +6169,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
 "asL" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/assembly/chargebay)
 "asZ" = (
@@ -6532,7 +6532,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/hallway/primary/firstdeck/aft)
 "auv" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "forensicswindow"
 	},
 /obj/structure/cable/green,
@@ -7056,7 +7056,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
 "awg" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/assembly/robotics)
 "awn" = (
@@ -7097,7 +7097,7 @@
 	name = "Infirmary Emergency Quarantine Shutters";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/medical/equipstorage)
 "awu" = (
@@ -7105,7 +7105,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/medical/chemistry)
 "awv" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
@@ -7122,7 +7122,7 @@
 /turf/simulated/floor/plating,
 /area/medical/chemistry)
 "aww" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
@@ -7169,11 +7169,11 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/chapel/main)
 "awB" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/chapel/main)
 "awC" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/chapel/main)
@@ -7215,7 +7215,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/firstdeck/aft)
 "awJ" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "awL" = (
@@ -7378,7 +7378,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "axu" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "bo_windows"
 	},
 /obj/structure/cable/green{
@@ -7615,7 +7615,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "aya" = (
@@ -7809,7 +7809,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/center)
 "ayv" = (
@@ -8034,7 +8034,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/firstdeck/aft)
 "ayK" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/blast/regular/open{
 	density = 1;
@@ -8344,7 +8344,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/crew_quarters/sleep/cryo/aux)
 "aAt" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/crew_quarters/sleep/cryo/aux)
 "aAu" = (
@@ -8363,10 +8363,10 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/crew_quarters/sleep/cryo/aux)
 "aAw" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "aAx" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -8379,7 +8379,7 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/monotile,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "aAD" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/rnd/checkpoint)
@@ -8390,7 +8390,7 @@
 /turf/simulated/floor/tiled/white,
 /area/security/detectives_office)
 "aAJ" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -8413,7 +8413,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -8440,7 +8440,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -8455,7 +8455,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -8642,7 +8642,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/command/armoury/tactical)
 "aBd" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
@@ -8872,7 +8872,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "aBN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -8889,7 +8889,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "aBO" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 5;
@@ -8914,7 +8914,7 @@
 	pixel_x = 26
 	},
 /turf/simulated/floor/tiled,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "aBP" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/rnd/entry)
@@ -9037,7 +9037,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/security/equipment)
 "aCv" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/security/equipment)
 "aCw" = (
@@ -9233,7 +9233,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "aDb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -9245,7 +9245,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "aDs" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -9342,7 +9342,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/security/bo)
 "aDF" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "bo_windows"
 	},
 /obj/structure/cable/green{
@@ -9357,7 +9357,7 @@
 /turf/simulated/floor/plating,
 /area/security/bo)
 "aDG" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "bo_windows"
 	},
 /obj/structure/cable/green{
@@ -9492,7 +9492,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "aEc" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9501,7 +9501,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "aEs" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/window/reinforced{
@@ -9557,10 +9557,6 @@
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
-"aEF" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/tiled,
-/area/security/equipment)
 "aEG" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/table/rack,
@@ -9583,7 +9579,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/security/wing)
 "aEI" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "bo_windows"
 	},
 /obj/structure/cable/green{
@@ -9887,7 +9883,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "aFn" = (
 /obj/machinery/light,
 /obj/structure/disposalpipe/segment{
@@ -9899,7 +9895,7 @@
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/corner/green/bordercorner2,
 /turf/simulated/floor/tiled,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "aFo" = (
 /obj/machinery/camera/network/first_deck{
 	c_tag = "First Deck - Ladders";
@@ -9923,7 +9919,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "aFB" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9994,7 +9990,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/security/wing)
 "aFQ" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "bo_windows"
 	},
 /obj/structure/cable/green,
@@ -10193,7 +10189,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aGE" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/rnd/development)
 "aGG" = (
@@ -10201,7 +10197,7 @@
 /area/rnd/breakroom)
 "aGI" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/rnd/breakroom)
 "aGJ" = (
@@ -11026,7 +11022,7 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/security/wing)
 "aKE" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "bo_windows"
 	},
 /obj/structure/cable/green{
@@ -12564,13 +12560,13 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 4
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1port)
 "aQo" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 10
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1port)
 "aQp" = (
 /obj/structure/table/rack,
@@ -14513,7 +14509,7 @@
 /area/rnd/xenobiology)
 "aVg" = (
 /obj/structure/cable/green,
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -14573,7 +14569,7 @@
 /area/rnd/xenobiology)
 "aVp" = (
 /obj/structure/cable/green,
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-c"
@@ -14666,7 +14662,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -14699,7 +14695,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -14722,7 +14718,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -14801,7 +14797,7 @@
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -14819,7 +14815,7 @@
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
@@ -14866,7 +14862,7 @@
 	opacity = 0
 	},
 /obj/structure/cable/green,
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology)
 "aWa" = (
@@ -14878,7 +14874,7 @@
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology)
 "aWb" = (
@@ -15089,7 +15085,7 @@
 /turf/simulated/floor/reinforced/airless,
 /area/thruster/d1starboard)
 "bhv" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "processwindow"
 	},
 /turf/simulated/floor/plating,
@@ -15109,7 +15105,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/security/brig)
 "bib" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "rcheckinner_windows"
 	},
 /turf/simulated/floor/plating,
@@ -15209,7 +15205,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/security/detectives_office)
 "bmb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology/xenoflora)
 "bmB" = (
@@ -15380,9 +15376,6 @@
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/thruster/d1port)
-"buS" = (
-/turf/simulated/wall/r_wall,
-/area/space)
 "buY" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 10
@@ -15786,7 +15779,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod14/station)
 "bSz" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 1;
@@ -15953,7 +15946,7 @@
 /area/shuttle/escape_pod16/station)
 "cdV" = (
 /obj/structure/sign/warning/hot_exhaust,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1starboard)
 "ceb" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod17,
@@ -17881,7 +17874,7 @@
 /area/medical/sleeper)
 "etm" = (
 /obj/structure/sign/warning/hot_exhaust,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1port)
 "etI" = (
 /obj/structure/table/rack,
@@ -18626,7 +18619,7 @@
 /area/medical/autopsy)
 "fmW" = (
 /turf/simulated/open,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "fnb" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/extinguisher_cabinet{
@@ -18961,7 +18954,7 @@
 /area/security/brig)
 "fHl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/red,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1port)
 "fIb" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -19226,7 +19219,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/teleporter/firstdeck)
 "fVC" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "processwindow"
 	},
 /turf/simulated/floor/plating,
@@ -20026,7 +20019,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "gUb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
@@ -20079,7 +20072,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/command/conference)
 "gWb" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "exam_windows"
 	},
 /obj/machinery/door/blast/shutters{
@@ -20389,7 +20382,7 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
 "hpb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
@@ -20415,7 +20408,7 @@
 /turf/simulated/floor/plating,
 /area/rnd/checkpoint)
 "hqb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
@@ -20442,7 +20435,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/firstdeck)
 "hrb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
@@ -20478,7 +20471,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/rnd/checkpoint)
 "htb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/rnd/entry)
 "htK" = (
@@ -20530,7 +20523,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/rnd/development)
 "hxb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -20546,7 +20539,7 @@
 /turf/simulated/floor/plating,
 /area/rnd/development)
 "hyb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -20596,7 +20589,7 @@
 /obj/machinery/atmospherics/unary/engine{
 	dir = 8
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1starboard)
 "hzb" = (
 /obj/structure/cable/green{
@@ -20664,7 +20657,7 @@
 	name = "Research Checkpoint Shutters";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
@@ -20754,7 +20747,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmary)
 "hIb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
@@ -20984,7 +20977,7 @@
 	name = "Research Checkpoint Shutters";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -21069,7 +21062,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/aft)
 "hZb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
@@ -21312,7 +21305,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/entry)
 "imK" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "conference_window"
 	},
 /turf/simulated/floor/plating,
@@ -21520,6 +21513,9 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/assembly/robotics)
+"iyg" = (
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d1starboard)
 "iyy" = (
 /obj/machinery/power/apc/high/critical{
 	dir = 1;
@@ -21626,7 +21622,7 @@
 	name = "Research Checkpoint Shutters";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green,
 /turf/simulated/floor/plating,
 /area/rnd/checkpoint)
@@ -21678,13 +21674,13 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard)
 "iGb" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "robotics_windows"
 	},
 /turf/simulated/floor/plating,
 /area/assembly/robotics_surgery)
 "iHb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
@@ -22791,7 +22787,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "jZb" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "misc_lab"
 	},
 /turf/simulated/floor/plating,
@@ -24337,7 +24333,7 @@
 	icon_state = "intact";
 	dir = 4
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1starboard)
 "lIb" = (
 /obj/machinery/disposal,
@@ -25034,7 +25030,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/security/processing)
 "mEb" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "processwindow"
 	},
 /obj/structure/cable/green{
@@ -25746,7 +25742,7 @@
 	icon_state = "intact";
 	dir = 6
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1starboard)
 "nvX" = (
 /obj/structure/reagent_dispensers/fueltank,
@@ -25828,7 +25824,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 9
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1starboard)
 "nBb" = (
 /obj/structure/table/standard,
@@ -26004,7 +26000,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/entry)
 "nJo" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
@@ -26315,7 +26311,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/entry)
 "oby" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
@@ -26592,7 +26588,7 @@
 /area/medical/infirmreception)
 "oqP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/red,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1starboard)
 "orb" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -26606,6 +26602,9 @@
 /obj/machinery/self_destruct,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/nuke_storage)
+"osQ" = (
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d1port)
 "otb" = (
 /obj/machinery/light{
 	dir = 1
@@ -26835,7 +26834,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "oIb" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "forensicswindow"
 	},
 /obj/structure/cable/green{
@@ -27079,7 +27078,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
 "oVb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
@@ -27674,7 +27673,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
 "pBb" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "misc_lab"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
@@ -27916,7 +27915,7 @@
 	icon_state = "intact";
 	dir = 4
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1port)
 "pUb" = (
 /obj/structure/closet/toolcloset,
@@ -28217,7 +28216,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "qmw" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
@@ -28264,7 +28263,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
 "qtb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/xenoflora)
 "qvb" = (
@@ -28285,7 +28284,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "qxb" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/plating,
@@ -28363,7 +28362,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/armoury)
 "qzb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/machinery/meter,
 /turf/simulated/floor/reinforced,
@@ -28456,7 +28455,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
 "qEq" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green,
 /obj/structure/cable/green{
 	d2 = 8;
@@ -28468,7 +28467,7 @@
 /obj/machinery/atmospherics/unary/engine{
 	dir = 8
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1port)
 "qFb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -28868,7 +28867,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/xenobiology/xenoflora)
 "rdb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	icon_state = "intact";
 	dir = 4
@@ -30772,11 +30771,6 @@
 /mob/living/carbon/slime,
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology)
-"tjB" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/turf/simulated/floor/tiled/monotile,
-/area/space)
 "tkb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -31173,7 +31167,7 @@
 /area/command/armoury)
 "uDI" = (
 /obj/structure/lattice,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1starboard)
 "uEv" = (
 /turf/simulated/wall/r_wall,
@@ -31758,7 +31752,7 @@
 /turf/simulated/floor/plating,
 /area/security/wing)
 "wnb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 4;
@@ -31849,7 +31843,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore)
 "wzY" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "forensicswindow"
 	},
 /obj/machinery/door/blast/regular{
@@ -31944,7 +31938,7 @@
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/corner/green/bordercorner2,
 /turf/simulated/floor/tiled,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "wMh" = (
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/orange,
@@ -32068,7 +32062,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/space)
+/area/hallway/primary/firstdeck/center)
 "xhX" = (
 /obj/structure/table/steel,
 /obj/item/weapon/clipboard,
@@ -32101,7 +32095,7 @@
 /turf/simulated/floor/reinforced,
 /area/thruster/d1starboard)
 "xoo" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 1;
@@ -32207,7 +32201,7 @@
 /turf/simulated/floor/reinforced,
 /area/thruster/d1starboard)
 "xIF" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "forensicswindow"
 	},
 /obj/machinery/door/blast/regular{
@@ -32261,7 +32255,7 @@
 	},
 /area/thruster/d1port)
 "xRh" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "processwindow"
 	},
 /obj/structure/cable/green,
@@ -32377,7 +32371,7 @@
 	dir = 5;
 	icon_state = "intact"
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d1port)
 "yfH" = (
 /obj/structure/curtain/open/bed,
@@ -41392,7 +41386,7 @@ nkb
 hGs
 aCv
 aCv
-aEF
+aCv
 hGs
 tiQ
 tiQ
@@ -51488,12 +51482,12 @@ leb
 umI
 ayg
 azm
-buS
-buS
-buS
-buS
-buS
-buS
+apj
+apj
+apj
+apj
+apj
+apj
 jEb
 sMb
 pob
@@ -51695,7 +51689,7 @@ aBM
 aDa
 aEb
 aFm
-buS
+apj
 jFb
 sMb
 ppb
@@ -51897,7 +51891,7 @@ aBN
 aDb
 aEc
 aFn
-buS
+apj
 jGb
 sNb
 pqb
@@ -52094,12 +52088,12 @@ gUb
 gZb
 heb
 umI
-tjB
+axe
 qwt
 xhD
 xhD
 aFo
-buS
+apj
 jHb
 jub
 prb
@@ -52301,7 +52295,7 @@ aBO
 fmW
 fmW
 wHE
-buS
+apj
 jIb
 oRb
 psb
@@ -52498,12 +52492,12 @@ arK
 axa
 ayp
 axa
-buS
-buS
-buS
-buS
-buS
-buS
+apj
+apj
+apj
+apj
+apj
+apj
 aHn
 aIG
 aHn
@@ -57163,7 +57157,7 @@ aHQ
 aHQ
 aHQ
 aTf
-aDB
+bDK
 bDK
 bDK
 bDK
@@ -57365,7 +57359,7 @@ aRd
 aSd
 aSM
 aTg
-aDB
+bDK
 bDK
 bDK
 bDK
@@ -57567,7 +57561,7 @@ aRe
 aSe
 aLu
 aDB
-aDB
+bDK
 bDK
 bDK
 bDK
@@ -57769,10 +57763,10 @@ aRf
 aSf
 aDB
 aDB
-aDB
 bDK
 bDK
-sRc
+bDK
+aaa
 aaa
 aaa
 aaa
@@ -57929,7 +57923,7 @@ aaa
 aaa
 mpy
 mpy
-abL
+mpy
 abL
 abL
 abL
@@ -57971,10 +57965,10 @@ aNy
 aDB
 aDB
 aDB
-aDB
 bDK
 bDK
-sRc
+bDK
+aaa
 aaa
 aaa
 aaa
@@ -58131,7 +58125,7 @@ aaa
 aaa
 mpy
 mpy
-lwB
+mpy
 xMT
 xDC
 uGU
@@ -58173,10 +58167,10 @@ tAN
 qLt
 oZu
 ycq
-aDB
 bDK
 bDK
-mBP
+bDK
+aaa
 aaa
 aaa
 aaa
@@ -58330,10 +58324,10 @@ aaa
 aaa
 aaa
 aaa
-lwB
-lwB
-lwB
-lwB
+mpy
+mpy
+mpy
+mpy
 qfJ
 lwB
 lwB
@@ -58375,11 +58369,11 @@ pWT
 ooU
 mBP
 rPz
-aDB
 bDK
 bDK
-mBP
-mBP
+bDK
+bDK
+sRc
 aaa
 aaa
 aaa
@@ -58531,11 +58525,11 @@ aaa
 aaa
 aaa
 aaa
-lwB
-lwB
-lwB
-lwB
-lwB
+mpy
+mpy
+mpy
+mpy
+mpy
 xZp
 lwB
 lwB
@@ -58577,11 +58571,11 @@ aNz
 mBP
 mBP
 bPX
-mBP
 bDK
 bDK
-mBP
-mBP
+bDK
+bDK
+bDK
 aaa
 aaa
 aaa
@@ -58732,19 +58726,19 @@ aaa
 aaa
 aaa
 aaa
-tuw
-tuw
-tuw
-tuw
-tuw
-tuw
+iyg
+iyg
+iyg
+iyg
+iyg
+iyg
 baz
 tuw
 tuw
 tuw
 lwB
 lwB
-mpy
+lwB
 nsF
 alR
 alR
@@ -58773,18 +58767,18 @@ pUb
 aMy
 aNA
 bDK
-mBP
+bDK
 mBP
 mBP
 lcB
 lcB
 doP
-lcB
-lcB
-lcB
-lcB
-lcB
-lcB
+osQ
+osQ
+osQ
+osQ
+osQ
+osQ
 aae
 aaa
 aaa
@@ -58934,11 +58928,11 @@ aaa
 aaa
 aaa
 aaa
-tuw
-tuw
-tuw
-tuw
-tuw
+iyg
+iyg
+iyg
+iyg
+iyg
 iyy
 sUP
 pyf
@@ -58975,18 +58969,18 @@ bDK
 bDK
 bDK
 bDK
-lcB
+osQ
 lcB
 lcB
 lcB
 phk
 gLi
 vsX
-lcB
-lcB
-lcB
-lcB
-lcB
+osQ
+osQ
+osQ
+osQ
+osQ
 aaa
 aaa
 aaa
@@ -59136,8 +59130,8 @@ aaa
 aaa
 aaa
 aaa
-tuw
-tuw
+iyg
+iyg
 abN
 abW
 acl
@@ -59147,7 +59141,7 @@ buY
 kiq
 nIN
 vSK
-tuw
+iyg
 abU
 abU
 mpy
@@ -59177,7 +59171,7 @@ bDK
 bDK
 aNB
 aNB
-lcB
+osQ
 bVc
 nos
 oJh
@@ -59187,8 +59181,8 @@ aTR
 aUi
 aUv
 cUj
-lcB
-lcB
+osQ
+osQ
 aaa
 aaa
 aaa
@@ -59338,8 +59332,8 @@ aaa
 aaa
 aaa
 aaa
-tuw
-tuw
+iyg
+iyg
 xZq
 ftA
 krG
@@ -59349,7 +59343,7 @@ leC
 cxq
 jhy
 gHc
-tuw
+iyg
 abU
 abU
 mpy
@@ -59379,7 +59373,7 @@ bDK
 bDK
 aNB
 aNB
-lcB
+osQ
 nGT
 noZ
 cjV
@@ -59389,8 +59383,8 @@ aTS
 onf
 tCV
 jgu
-lcB
-lcB
+osQ
+osQ
 aaa
 aaa
 aaa
@@ -59540,8 +59534,8 @@ aaa
 aaa
 aaa
 aaa
-tuw
-tuw
+iyg
+iyg
 oFv
 wzK
 nFo
@@ -59551,7 +59545,7 @@ bab
 kiq
 wZt
 egG
-tuw
+iyg
 abU
 abU
 mpy
@@ -59581,7 +59575,7 @@ bDK
 bDK
 aNB
 aNB
-lcB
+osQ
 lgA
 svO
 oJh
@@ -59591,8 +59585,8 @@ aTT
 qxM
 fui
 tGq
-lcB
-lcB
+osQ
+osQ
 aaa
 aaa
 aaa
@@ -59742,8 +59736,8 @@ aaa
 aaa
 aaa
 aaa
-tuw
-tuw
+iyg
+iyg
 tuw
 tuw
 plB
@@ -59793,8 +59787,8 @@ aTU
 lLW
 lcB
 lcB
-lcB
-lcB
+osQ
+osQ
 aaa
 aaa
 aaa
@@ -59944,8 +59938,8 @@ aaa
 aaa
 aaa
 aaa
-tuw
-tuw
+iyg
+iyg
 pCS
 jJA
 acn
@@ -59995,8 +59989,8 @@ aTV
 aUk
 ybq
 hSC
-lcB
-lcB
+osQ
+osQ
 aaa
 aaa
 aaa
@@ -60146,8 +60140,8 @@ aaa
 aaa
 aaa
 aaa
-tuw
-tuw
+iyg
+iyg
 oPm
 iYa
 xFy
@@ -60197,8 +60191,8 @@ aTW
 lrT
 eEW
 vGg
-lcB
-lcB
+osQ
+osQ
 aaa
 aaa
 aaa
@@ -60348,8 +60342,8 @@ aaa
 aaa
 aaa
 aaa
-tuw
-tuw
+iyg
+iyg
 jFX
 abX
 acl
@@ -60399,8 +60393,8 @@ yeP
 aUi
 aUw
 xmf
-lcB
-lcB
+osQ
+osQ
 aaa
 aaa
 aaa
@@ -60550,8 +60544,8 @@ aaa
 aaa
 aaa
 aaa
-tuw
-tuw
+iyg
+iyg
 tuw
 tuw
 tuw
@@ -60600,9 +60594,9 @@ aTo
 aTX
 lcB
 lcB
-lcB
-lcB
-lcB
+osQ
+osQ
+osQ
 aaa
 aaa
 aaa
@@ -60752,7 +60746,7 @@ aaa
 aaa
 aaa
 aaa
-tuw
+iyg
 nvc
 oqP
 ueN
@@ -60763,7 +60757,7 @@ adJ
 afA
 wZN
 ahB
-tuw
+iyg
 aaa
 aaa
 acd
@@ -60793,7 +60787,7 @@ acd
 acd
 aaa
 aaa
-lcB
+osQ
 aQn
 aRk
 aSl
@@ -60804,7 +60798,7 @@ oZM
 iwJ
 fHl
 yfv
-lcB
+osQ
 aaa
 aaa
 aaa
@@ -60956,7 +60950,7 @@ aaa
 aaa
 aaa
 lHJ
-tuw
+iyg
 abZ
 aca
 xnJ
@@ -60965,7 +60959,7 @@ xnJ
 aca
 sIQ
 nAL
-tuw
+iyg
 aaa
 aaa
 acd
@@ -60995,7 +60989,7 @@ acd
 acd
 aaa
 aaa
-lcB
+osQ
 aQo
 kDA
 nwv
@@ -61004,7 +60998,7 @@ arJ
 vbA
 nwv
 aUy
-lcB
+osQ
 pUa
 aaa
 aaa
@@ -61158,7 +61152,7 @@ aaa
 aaa
 aaa
 fUD
-tuw
+iyg
 hyN
 hyN
 hyN
@@ -61166,7 +61160,7 @@ cdV
 hyN
 hyN
 hyN
-tuw
+iyg
 aaa
 aaa
 aaa
@@ -61198,7 +61192,7 @@ acd
 aaa
 aaa
 aaa
-lcB
+osQ
 qEA
 qEA
 qEA
@@ -61206,7 +61200,7 @@ etm
 qEA
 qEA
 qEA
-lcB
+osQ
 byo
 aaa
 aaa

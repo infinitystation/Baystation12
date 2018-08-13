@@ -695,7 +695,7 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/maintenance/disposal)
 "bu" = (
@@ -1049,7 +1049,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
 "ce" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/forestarboard)
 "cf" = (
@@ -1536,7 +1536,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/disposal)
 "dh" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/maintenance/disposal)
 "di" = (
@@ -4301,7 +4301,7 @@
 /area/maintenance/seconddeck/forestarboard)
 "iu" = (
 /obj/structure/barricade,
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/vacant/chapel)
 "iv" = (
@@ -4851,7 +4851,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/central)
 "jw" = (
-/turf/simulated/wall,
+/turf/simulated/wall/prepainted,
 /area/engineering/engineering_monitoring)
 "jy" = (
 /turf/simulated/wall/prepainted,
@@ -5289,7 +5289,7 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/engineering/engine_smes)
 "kq" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
@@ -6692,7 +6692,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/engineering/hardstorage)
 "nu" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -6798,7 +6798,7 @@
 	name = "Engine Monitoring Room Blast Doors";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/engineering/engine_monitoring)
 "nE" = (
@@ -6982,7 +6982,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/foyer)
 "od" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/engineering/storage)
 "oe" = (
@@ -7535,7 +7535,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/locker_room)
 "pC" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
@@ -7563,12 +7563,12 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "pE" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/sign/warning/radioactive{
 	icon_state = "radiation";
 	dir = 8
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/plating,
 /area/engineering/locker_room)
 "pF" = (
 /obj/machinery/power/apc{
@@ -7793,7 +7793,7 @@
 	name = "Engine Monitoring Room Blast Doors";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -7960,7 +7960,7 @@
 /turf/simulated/floor/reinforced/airless,
 /area/vacant/prototype/engine)
 "qi" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/vacant/prototype/control)
 "qj" = (
@@ -8680,7 +8680,7 @@
 /turf/simulated/floor/reinforced,
 /area/maintenance/bluespace)
 "rQ" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/engineering/foyer)
 "rS" = (
 /obj/machinery/door/firedoor/border_only,
@@ -8734,7 +8734,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/locker_room)
 "rZ" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/engineering/engine_eva)
 "sa" = (
@@ -9653,7 +9653,7 @@
 /area/crew_quarters/safe_room/seconddeck)
 "uk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "um" = (
@@ -12898,7 +12898,7 @@
 /area/vacant/cargo)
 "Cs" = (
 /obj/structure/barricade,
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/vacant/cargo)
 "Ct" = (
@@ -14999,7 +14999,7 @@
 	id = "ThrusterVents";
 	name = "Thruster Blast Door"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
 "Ih" = (
@@ -15030,7 +15030,7 @@
 /turf/simulated/floor/tiled,
 /area/vacant/prototype/control)
 "Ik" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
 	d2 = 4;
@@ -15393,7 +15393,7 @@
 /turf/simulated/floor/plating,
 /area/vacant/prototype/engine)
 "Kk" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/green,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -17879,7 +17879,7 @@
 	id = "ThrusterVents";
 	name = "Thruster Blast Door"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
 "Wl" = (
@@ -18311,9 +18311,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/atmos)
-"YJ" = (
-/turf/simulated/wall/r_wall,
-/area/teleporter/seconddeck)
 "YL" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
 	icon_state = "intact";
@@ -18345,7 +18342,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/bluespace)
 "YT" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
@@ -37518,7 +37515,7 @@ rQ
 rQ
 rQ
 rQ
-YJ
+qu
 qu
 kj
 qu
@@ -37720,7 +37717,7 @@ tv
 Py
 Py
 EO
-YJ
+qu
 jX
 kk
 kE
@@ -37922,7 +37919,7 @@ oc
 tw
 TI
 jP
-YJ
+qu
 jZ
 km
 kF
@@ -38326,7 +38323,7 @@ Uv
 ty
 UH
 jS
-YJ
+qu
 kf
 kz
 kM
@@ -38528,7 +38525,7 @@ sQ
 ll
 KH
 Jp
-YJ
+qu
 kh
 kB
 FV
@@ -38730,7 +38727,7 @@ rQ
 rQ
 rQ
 rQ
-YJ
+qu
 qu
 kC
 qu

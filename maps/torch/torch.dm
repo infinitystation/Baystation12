@@ -81,12 +81,19 @@
 	#include "infinity_station_maps/torch-5.dmm"
 	#include "infinity_station_maps/torch-6.dmm"
 	#include "infinity_station_maps/torch-7.dmm"
-*/
+
 	#include "torch-1.dmm"
 	#include "torch-2.dmm"
 	#include "torch-3.dmm"
 	#include "torch-4.dmm"
 	#include "torch-5.dmm"
+*/
+	#include "infisssss/torch-1.dmm"
+	#include "infisssss/torch-2.dmm"
+	#include "infisssss/torch-3.dmm"
+	#include "infisssss/torch-4.dmm"
+	#include "infisssss/torch-5.dmm"
+
 	#include "infinity_station_maps/torch-6.dmm"
 	#include "infinity_station_maps/torch-7.dmm"
 	#include "../away/empty.dmm"

@@ -120,7 +120,7 @@
 /turf/simulated/floor/plating,
 /area/vacant/brig)
 "av" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/vacant/brig)
 "aw" = (
@@ -302,7 +302,7 @@
 	icon_state = "intact";
 	dir = 6
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3starboard)
 "be" = (
 /obj/effect/wallframe_spawn/reinforced/hull,
@@ -1900,7 +1900,7 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/crew_quarters/galley)
 "ey" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/crew_quarters/galley)
@@ -2084,7 +2084,7 @@
 /turf/simulated/floor/bluegrid,
 /area/tcommsat/chamber)
 "eX" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/tcommsat/computer)
 "eY" = (
@@ -3301,7 +3301,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/tcommsat/computer)
 "hX" = (
@@ -3604,7 +3604,7 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
 "iu" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
@@ -3706,7 +3706,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/tcommsat/computer)
 "iK" = (
@@ -3958,7 +3958,7 @@
 /area/crew_quarters/mess)
 "jo" = (
 /obj/structure/sign/warning/secure_area,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/vacant/missile)
 "ju" = (
 /obj/structure/catwalk,
@@ -4039,7 +4039,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/tcommsat/computer)
 "jC" = (
@@ -4470,7 +4470,7 @@
 /area/tcommsat/chamber)
 "ky" = (
 /obj/structure/cable/green,
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/tcommsat/computer)
 "kz" = (
@@ -4661,7 +4661,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/thirddeck/aftport)
+/area/thruster/d3port)
 "kW" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -5262,7 +5262,7 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/mess)
 "mr" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "offmess_windows"
 	},
 /turf/simulated/floor/plating,
@@ -5661,7 +5661,7 @@
 /turf/simulated/floor/carpet/blue2,
 /area/command/captainmess)
 "nn" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/holocontrol)
 "no" = (
@@ -5696,7 +5696,7 @@
 /area/maintenance/substation/thirddeck)
 "ns" = (
 /obj/structure/sign/warning/bomb_range,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/vacant/missile)
 "nt" = (
 /obj/effect/floor_decal/industrial/warning/corner,
@@ -5737,7 +5737,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 10
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3port)
 "nG" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -5792,7 +5792,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/ai_monitored/storage/eva)
 "nM" = (
@@ -5805,7 +5805,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/ai_monitored/storage/eva)
 "nN" = (
@@ -5832,7 +5832,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/ai_monitored/storage/eva)
 "nP" = (
@@ -6797,7 +6797,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/ai_monitored/storage/eva)
 "pF" = (
@@ -6914,7 +6914,7 @@
 	dir = 5;
 	icon_state = "intact"
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3port)
 "pR" = (
 /obj/machinery/meter,
@@ -6958,7 +6958,7 @@
 	id = "bar";
 	name = "Bar Shutters"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/crew_quarters/bar)
 "pW" = (
@@ -7003,7 +7003,7 @@
 /turf/simulated/wall/prepainted,
 /area/crew_quarters/mess)
 "qb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/crew_quarters/mess)
 "qc" = (
@@ -7207,7 +7207,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/ai_monitored/storage/eva)
 "qF" = (
@@ -7610,7 +7610,7 @@
 /area/vacant/cabin)
 "rz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/red,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3starboard)
 "rA" = (
 /obj/structure/cable/green{
@@ -7643,7 +7643,7 @@
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
 "rG" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/crew_quarters/commissary)
 "rI" = (
@@ -8064,7 +8064,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
 "sj" = (
@@ -8312,7 +8312,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/aft)
 "sw" = (
@@ -8649,9 +8649,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
-"sZ" = (
-/turf/simulated/wall/r_wall,
-/area/hallway/primary/thirddeck/center)
 "tc" = (
 /obj/structure/sign/warning/airlock{
 	icon_state = "doors";
@@ -8740,7 +8737,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green,
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/ai_monitored/storage/eva)
 "tl" = (
@@ -9216,7 +9213,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
 "up" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 4;
@@ -9283,7 +9280,7 @@
 /area/ai_monitored/storage/eva)
 "uw" = (
 /obj/structure/cable/green,
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/ai_monitored/storage/eva)
 "ux" = (
@@ -9438,7 +9435,7 @@
 	dir = 4;
 	icon_state = "pipe-c"
 	},
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/crew_quarters/sleep/cryo)
 "uS" = (
@@ -9460,7 +9457,7 @@
 /turf/simulated/wall/prepainted,
 /area/crew_quarters/head)
 "uW" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
@@ -9485,7 +9482,7 @@
 /turf/simulated/wall/prepainted,
 /area/security/range)
 "va" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/security/range)
 "vb" = (
@@ -9534,7 +9531,7 @@
 /turf/simulated/floor/reinforced/hydrogen/fuel,
 /area/thruster/d3port)
 "vg" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "vacantoffice_windows"
 	},
 /turf/simulated/floor/plating,
@@ -9914,7 +9911,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
 "vZ" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/crew_quarters/head)
 "wa" = (
 /obj/effect/floor_decal/borderfloor{
@@ -10146,7 +10143,7 @@
 /turf/simulated/floor/lino,
 /area/vacant/office)
 "ws" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "vacantoffice_windows"
 	},
 /obj/structure/disposalpipe/segment{
@@ -11002,7 +10999,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "xU" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 4;
@@ -11200,7 +11197,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/security/range)
 "yo" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
@@ -11903,7 +11900,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head)
 "zX" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/storage/tools)
 "zY" = (
 /obj/machinery/door/firedoor/border_only,
@@ -13151,7 +13148,7 @@
 /area/maintenance/thirddeck/aftport)
 "CV" = (
 /obj/structure/lattice,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3starboard)
 "CW" = (
 /obj/machinery/air_sensor/nacelle/second/plasma,
@@ -14039,6 +14036,9 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/sleep/cryo)
+"Fa" = (
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d3starboard)
 "Fb" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -14420,7 +14420,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/lounge)
 "Ge" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/crew_quarters/lounge)
 "Gf" = (
@@ -15242,11 +15242,11 @@
 /turf/simulated/floor/plating,
 /area/vacant/missile)
 "Ic" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/vacant/missile)
 "Id" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/structure/sign/warning/moving_parts,
 /turf/simulated/floor/plating,
 /area/vacant/missile)
@@ -15327,7 +15327,7 @@
 	icon_state = "torpedo";
 	dir = 8
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/vacant/missile)
 "In" = (
 /obj/structure/torpedo_loader{
@@ -15707,6 +15707,11 @@
 	icon_state = "pipe-c"
 	},
 /obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aftstarboard)
 "Jr" = (
@@ -15909,7 +15914,7 @@
 	icon_state = "intact";
 	dir = 4
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3starboard)
 "JN" = (
 /obj/structure/table/marble,
@@ -16200,12 +16205,15 @@
 /obj/machinery/atmospherics/unary/engine{
 	dir = 8
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3starboard)
 "KH" = (
 /obj/structure/sign/warning/nosmoking_2,
 /turf/simulated/wall/r_wall,
 /area/thruster/d3starboard)
+"KJ" = (
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d3port)
 "KL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/green{
 	icon_state = "intact";
@@ -16287,7 +16295,7 @@
 /area/security/habcheck)
 "KT" = (
 /obj/structure/sign/warning/hot_exhaust,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3starboard)
 "KU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/green{
@@ -16356,7 +16364,7 @@
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
 "Lb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/blast/shutters{
 	dir = 4;
@@ -16367,7 +16375,7 @@
 /area/crew_quarters/galley)
 "Lc" = (
 /obj/structure/sign/warning/hot_exhaust,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3port)
 "Ld" = (
 /obj/effect/floor_decal/corner/red{
@@ -16424,7 +16432,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 4
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3port)
 "Lj" = (
 /obj/structure/table/reinforced,
@@ -16655,7 +16663,7 @@
 /turf/simulated/wall/r_wall,
 /area/thruster/d3starboard)
 "LV" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
@@ -16952,7 +16960,7 @@
 /turf/simulated/wall/r_wall/hull,
 /area/hallway/primary/thirddeck/aft)
 "MN" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/storage/tools)
@@ -17463,7 +17471,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/thirddeck/aftport)
+/area/thruster/d3port)
 "OF" = (
 /turf/simulated/floor/tiled,
 /area/crew_quarters/commissary)
@@ -18447,7 +18455,7 @@
 /obj/machinery/atmospherics/unary/engine{
 	dir = 8
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3port)
 "Ry" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/green{
@@ -18669,7 +18677,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 4
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3starboard)
 "Sh" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -18763,7 +18771,7 @@
 /turf/simulated/floor/tiled,
 /area/hydroponics)
 "Su" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/aft)
 "Sv" = (
@@ -18801,7 +18809,7 @@
 	icon_state = "intact";
 	dir = 4
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3port)
 "SA" = (
 /obj/structure/cable/green{
@@ -19213,7 +19221,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
 "TO" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "offmess_windows"
 	},
 /obj/structure/disposalpipe/segment,
@@ -19464,7 +19472,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
 "UA" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
@@ -19540,7 +19548,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/floor/plating,
 /area/thruster/d3starboard)
 "UI" = (
 /obj/structure/table/steel,
@@ -20104,7 +20112,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/thirddeck/aftport)
+/area/thruster/d3port)
 "Wy" = (
 /obj/effect/floor_decal/corner/yellow{
 	dir = 1
@@ -20154,7 +20162,7 @@
 /area/command/captainmess)
 "WG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/red,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3port)
 "WH" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
@@ -20578,7 +20586,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
 "XY" = (
-/obj/effect/wallframe_spawn/reinforced/polarized{
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "diplo2_windows"
 	},
 /turf/simulated/floor/plating,
@@ -20904,7 +20912,7 @@
 /turf/simulated/floor/reinforced/airless,
 /area/thruster/d3starboard)
 "Zb" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/crew_quarters/gym)
 "Zc" = (
@@ -20940,7 +20948,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 9
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/hull,
 /area/thruster/d3starboard)
 "Zg" = (
 /obj/structure/cable/green,
@@ -21036,7 +21044,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/starboard)
 "Zt" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/hydroponics)
 "Zx" = (
@@ -40486,11 +40494,11 @@ aa
 aa
 aa
 aa
-HI
-HI
+Qq
+Qq
 Ti
-HI
-HI
+Qq
+Qq
 aa
 aa
 aa
@@ -40688,11 +40696,11 @@ bb
 bb
 bb
 bb
-HI
-HI
+Qq
+Qq
 Im
-HI
-HI
+Qq
+Qq
 aa
 aa
 aa
@@ -40889,13 +40897,13 @@ bb
 aa
 bb
 aa
-HI
-HI
-HI
+Qq
+Qq
+Qq
 In
 ns
-HI
-HI
+Qq
+Qq
 aa
 aa
 aa
@@ -41090,15 +41098,15 @@ Hf
 aI
 bb
 bb
-HI
-HI
+Qq
+Qq
 HY
 Ic
 Io
 lO
 Ix
-HI
-HI
+Qq
+Qq
 aa
 aa
 aa
@@ -41269,11 +41277,11 @@ Wb
 re
 sv
 Az
-sZ
-sZ
-sZ
-sZ
-sZ
+kK
+kK
+kK
+kK
+kK
 zX
 AN
 BE
@@ -41292,15 +41300,15 @@ Hf
 Hf
 aI
 bb
-HI
+Qq
 HT
 HZ
 Id
 XD
 MV
 Fb
-HI
-HI
+Qq
+Qq
 aa
 aa
 aa
@@ -41494,15 +41502,15 @@ Hf
 Hf
 aI
 bb
-HI
+Qq
 HI
 Ia
 HI
 Ui
 HI
 Iy
-HI
-HI
+Qq
+Qq
 aa
 aa
 aa
@@ -41694,9 +41702,9 @@ Hy
 Hx
 Hf
 Qq
-HI
-HI
-HI
+Qq
+Qq
+Qq
 HU
 HM
 Ic
@@ -41704,7 +41712,7 @@ Ir
 Ic
 HM
 IA
-HI
+Qq
 aa
 aa
 aa
@@ -41895,7 +41903,7 @@ Dn
 Dn
 HD
 HE
-HI
+Qq
 HL
 HP
 jo
@@ -41906,7 +41914,7 @@ Ir
 Ic
 HM
 IB
-HI
+Qq
 aa
 aa
 aa
@@ -42108,7 +42116,7 @@ xW
 HI
 Ei
 IC
-HI
+Qq
 aa
 aa
 aa
@@ -42310,7 +42318,7 @@ XG
 HI
 HM
 NH
-HI
+Qq
 aa
 aa
 aa
@@ -42501,18 +42509,18 @@ Dn
 Dn
 UZ
 HG
-HI
+Qq
 HO
 HR
-HI
+Qq
 HI
 Ib
 HI
 Is
 HI
 Iy
-HI
-HI
+Qq
+Qq
 aa
 aa
 aa
@@ -42704,17 +42712,17 @@ UZ
 UZ
 Hf
 Qq
-HI
-HI
-HI
+Qq
+Qq
+Qq
 HW
 OR
 Ig
 It
 Iu
 HM
-HI
-HI
+Qq
+Qq
 aa
 aa
 aa
@@ -42908,15 +42916,15 @@ Hf
 Hf
 aI
 bb
-HI
+Qq
 HX
 OR
 HM
 HM
 HM
 Ix
-HI
-HI
+Qq
+Qq
 aa
 aa
 aa
@@ -43110,15 +43118,15 @@ Hf
 Hf
 aI
 bb
-HI
+Qq
 NH
 Pr
 Zg
 HM
 sN
 Zi
-HI
-HI
+Qq
+Qq
 aa
 aa
 aa
@@ -43312,15 +43320,15 @@ Hf
 Hf
 aI
 bb
-HI
-HI
-xz
+Qq
+Qq
+Qq
 xz
 lh
 xz
-xz
-HI
-HI
+Qq
+Qq
+Qq
 aa
 aa
 aa
@@ -43515,13 +43523,13 @@ jZ
 aI
 bb
 bb
-HI
-HI
+Qq
+Qq
 Ih
 HM
 Ih
-HI
-HI
+Qq
+Qq
 aa
 aa
 aa
@@ -43718,11 +43726,11 @@ aI
 aa
 bb
 aa
-HI
+Qq
 Ii
 iq
 Ih
-HI
+Qq
 aa
 aa
 aa
@@ -43920,11 +43928,11 @@ aI
 bb
 bb
 bb
-HI
-HI
-HI
-HI
-HI
+Qq
+Qq
+Qq
+Qq
+Qq
 aa
 aa
 aa
@@ -46701,9 +46709,9 @@ aa
 aa
 aa
 aI
-aV
-aV
-aV
+aT
+aT
+aT
 dn
 ef
 US
@@ -46739,9 +46747,9 @@ Fo
 QL
 Eq
 GR
-We
-We
-We
+jZ
+jZ
+jZ
 aI
 aa
 aa
@@ -46903,9 +46911,9 @@ aa
 aa
 aa
 aa
-aV
-aV
-aV
+aT
+aT
+aT
 cq
 eg
 eR
@@ -46939,11 +46947,11 @@ Ed
 EG
 We
 vd
-We
-We
-We
-We
-We
+DY
+DY
+KJ
+jZ
+jZ
 aa
 aa
 aa
@@ -47104,10 +47112,10 @@ aa
 aa
 aa
 aa
-aV
-aV
-aV
-ez
+aT
+aT
+aT
+Fa
 ez
 ez
 lS
@@ -47143,10 +47151,10 @@ We
 ro
 Wx
 OD
-We
-We
-We
-We
+KJ
+jZ
+jZ
+jZ
 aa
 aa
 aa
@@ -47305,11 +47313,11 @@ aa
 aa
 aa
 aa
-aV
-aV
-aV
-aV
-ez
+aT
+aT
+aT
+aT
+Fa
 MK
 UH
 tY
@@ -47343,13 +47351,13 @@ Ee
 Ba
 We
 We
-We
+DY
 kV
-We
-We
-We
-We
-We
+KJ
+jZ
+jZ
+jZ
+jZ
 aa
 aa
 aa
@@ -47506,18 +47514,18 @@ aa
 aa
 aa
 aa
-ez
-ez
-ez
-ez
-ez
-ez
+Fa
+Fa
+Fa
+Fa
+Fa
+Fa
 rA
 ez
 ez
 aV
 aV
-aV
+aT
 aT
 aT
 aT
@@ -47541,18 +47549,18 @@ jZ
 jZ
 jZ
 jZ
-We
+jZ
 We
 We
 DY
 DY
 li
-DY
-DY
-DY
-DY
-DY
-DY
+KJ
+KJ
+KJ
+KJ
+KJ
+KJ
 aa
 aa
 aa
@@ -47708,11 +47716,11 @@ aa
 aa
 aa
 aa
-ez
-ez
-ez
-ez
-ez
+Fa
+Fa
+Fa
+Fa
+Fa
 vm
 rE
 Mp
@@ -47743,18 +47751,18 @@ jZ
 jZ
 jZ
 jZ
-DY
+KJ
 DY
 DY
 DY
 Nc
 yD
 wx
-DY
-DY
-DY
-DY
-DY
+KJ
+KJ
+KJ
+KJ
+KJ
 aa
 aa
 aa
@@ -47910,8 +47918,8 @@ aa
 aa
 aa
 aa
-ez
-ez
+Fa
+Fa
 TB
 PW
 Pd
@@ -47921,7 +47929,7 @@ kr
 LT
 cv
 UY
-ez
+Fa
 aT
 aT
 aT
@@ -47945,7 +47953,7 @@ aI
 jZ
 jZ
 jZ
-DY
+KJ
 EH
 RZ
 BZ
@@ -47955,8 +47963,8 @@ sT
 WJ
 RH
 Jm
-DY
-DY
+KJ
+KJ
 aa
 aa
 aa
@@ -48112,8 +48120,8 @@ aa
 aa
 aa
 aa
-ez
-ez
+Fa
+Fa
 LE
 gV
 Ua
@@ -48123,7 +48131,7 @@ Nl
 lg
 kg
 py
-ez
+Fa
 aT
 aT
 aa
@@ -48147,7 +48155,7 @@ aa
 aa
 jZ
 jZ
-DY
+KJ
 Nq
 OY
 Qo
@@ -48157,8 +48165,8 @@ oq
 OG
 Kv
 Wu
-DY
-DY
+KJ
+KJ
 aa
 aa
 aa
@@ -48314,8 +48322,8 @@ aa
 aa
 aa
 aa
-ez
-ez
+Fa
+Fa
 bO
 iA
 pR
@@ -48325,7 +48333,7 @@ WI
 LT
 ui
 Ae
-ez
+Fa
 aT
 aa
 aa
@@ -48349,7 +48357,7 @@ aa
 aa
 aa
 jZ
-DY
+KJ
 Aw
 nv
 BZ
@@ -48359,8 +48367,8 @@ Fy
 iZ
 PM
 KA
-DY
-DY
+KJ
+KJ
 aa
 aa
 aa
@@ -48516,8 +48524,8 @@ aa
 aa
 aa
 aa
-ez
-ez
+Fa
+Fa
 ez
 ez
 KH
@@ -48561,8 +48569,8 @@ Xe
 Lq
 DY
 DY
-DY
-DY
+KJ
+KJ
 aa
 aa
 aa
@@ -48718,8 +48726,8 @@ aa
 aa
 aa
 aa
-ez
-ez
+Fa
+Fa
 ze
 CH
 zx
@@ -48763,8 +48771,8 @@ Km
 Kp
 Ak
 EL
-DY
-DY
+KJ
+KJ
 aa
 aa
 aa
@@ -48920,8 +48928,8 @@ aa
 aa
 aa
 aa
-ez
-ez
+Fa
+Fa
 OJ
 YE
 Zc
@@ -48965,8 +48973,8 @@ ZF
 OS
 CW
 ov
-DY
-DY
+KJ
+KJ
 aa
 aa
 aa
@@ -49122,8 +49130,8 @@ aa
 aa
 aa
 aa
-ez
-ez
+Fa
+Fa
 NS
 AH
 Pd
@@ -49167,8 +49175,8 @@ Ll
 WJ
 vf
 vp
-DY
-DY
+KJ
+KJ
 aa
 aa
 aa
@@ -49324,9 +49332,9 @@ aa
 aa
 aa
 aa
-ez
-ez
-ez
+Fa
+Fa
+Fa
 ez
 ez
 KM
@@ -49368,9 +49376,9 @@ Ri
 Lm
 DY
 DY
-DY
-DY
-DY
+KJ
+KJ
+KJ
 aa
 aa
 aa
@@ -49526,7 +49534,7 @@ aa
 aa
 aa
 aa
-ez
+Fa
 bd
 rz
 Lf
@@ -49537,7 +49545,7 @@ LP
 PY
 PL
 Sg
-ez
+Fa
 aa
 aI
 aI
@@ -49561,7 +49569,7 @@ aI
 aI
 aa
 aa
-DY
+KJ
 Li
 ZI
 Sb
@@ -49572,7 +49580,7 @@ Si
 PP
 WG
 pQ
-DY
+KJ
 aa
 aa
 aa
@@ -49730,7 +49738,7 @@ aa
 aa
 aa
 JM
-ez
+Fa
 ee
 JQ
 KO
@@ -49739,7 +49747,7 @@ KO
 JQ
 Rg
 Zf
-ez
+Fa
 aa
 aI
 aI
@@ -49763,7 +49771,7 @@ aI
 aI
 aa
 aa
-DY
+KJ
 nA
 Mi
 Ni
@@ -49772,7 +49780,7 @@ La
 Oi
 Ni
 KE
-DY
+KJ
 Sz
 aa
 aa
@@ -49932,7 +49940,7 @@ aa
 aa
 aa
 Ve
-ez
+Fa
 KG
 KG
 KG
@@ -49940,7 +49948,7 @@ KT
 KG
 KG
 KG
-ez
+Fa
 aa
 aa
 aI
@@ -49966,7 +49974,7 @@ aI
 aa
 aa
 aa
-DY
+KJ
 Rv
 Rv
 Rv
@@ -49974,7 +49982,7 @@ Lc
 Rv
 Rv
 Rv
-DY
+KJ
 Tv
 aa
 aa

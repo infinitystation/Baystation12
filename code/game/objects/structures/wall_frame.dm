@@ -142,6 +142,9 @@
 /obj/structure/wall_frame/osmium
 	color = "#9bc6f2"
 
+/obj/structure/wall_frame/prepainted
+	color = "#545c68"
+
 /obj/structure/wall_frame/hull/Initialize()
 	. = ..()
 	if(prob(40))
