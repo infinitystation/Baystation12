@@ -91,6 +91,19 @@
 			/mob/living/carbon/human/proc/sonar_ping,
 			//mob/living/proc/toggle_pass_table
 			)
+			
+	descriptors = list(
+		/datum/mob_descriptor/height/resomi,
+		/datum/mob_descriptor/build/resomi
+		)
+
+
+
+/datum/mob_descriptor/height/resomi
+	comparison_offset = -8
+
+/datum/mob_descriptor/build/resomi
+	comparison_offset = -8
 
 /mob/living/proc/toggle_pass_table()
 	set name = "Toggle Agility" //Dunno a better name for this. You have to be pretty agile to hop over stuff!!!
