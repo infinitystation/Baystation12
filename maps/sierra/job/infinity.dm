@@ -10,7 +10,7 @@
 	suit = /obj/item/clothing/suit/armor/pcarrier/troops/heavy
 	suit_store = /obj/item/weapon/gun/projectile/automatic/wt550/lethal
 	gloves = /obj/item/clothing/gloves/thick/combat/marine
-	belt = /obj/item/weapon/storage/belt/holster/security/troops
+	belt = /obj/item/weapon/storage/belt/holster/security/tactical/troops
 	uniform = /obj/item/clothing/under/solgov/utility/marine/urban
 	l_pocket = /obj/item/device/flashlight/maglight
 	shoes = /obj/item/clothing/shoes/combat/marine
@@ -184,7 +184,7 @@
 	mask = /obj/item/clothing/mask/gas/half
 	suit = /obj/item/clothing/suit/armor/pcarrier/troops/heavy_pcrc
 	head = /obj/item/clothing/head/helmet/pcrc
-	belt = /obj/item/weapon/storage/belt/holster/security/troops
+	belt = /obj/item/weapon/storage/belt/holster/security/tactical/troops
 	r_hand = /obj/item/weapon/gun/projectile/automatic/wt550/lethal
 	id_pda_assignment = "PCRC PMC"
 
@@ -195,7 +195,7 @@
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/heavy_saare
 	head = /obj/item/clothing/head/helmet/saare/cover
-	belt = /obj/item/weapon/storage/belt/holster/security/troops_sts
+	belt = /obj/item/weapon/storage/belt/holster/security/tactical/troops_sts
 	r_hand = /obj/item/weapon/gun/projectile/automatic/sts35
 	id_pda_assignment = "SAARE PMC"
 	back = /obj/item/weapon/storage/backpack/satchel/pocketbook/khaki

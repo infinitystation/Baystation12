@@ -8,16 +8,14 @@
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/smg/WillContain()
 	return list(/obj/item/weapon/gun/projectile/automatic/wt550/lethal = 3,
-				/obj/item/ammo_magazine/mc9mmt = 9,
-				/obj/item/ammobox/c9mm = 3)
+				/obj/item/ammo_magazine/mc9mmt = 9)
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/shotgun
 	name = "shotgun guncabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/shotgun/WillContain()
 	return list(/obj/item/weapon/gun/projectile/shotgun/pump/combat = 2,
-				/obj/item/clothing/accessory/storage/bandolier = 2,
-				/obj/item/ammobox/shotgun/pellet = 2)
+				/obj/item/clothing/accessory/storage/bandolier = 2)
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/laser
 	name = "laser guncabinet"
