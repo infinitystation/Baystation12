@@ -104,6 +104,6 @@
 /material/cardboard/generate_recipes()
 	..()
 	recipes += create_recipe_list(/datum/stack_recipe/box)
-	recipes += new/datum/stack_recipe/cardborg_suit(src)
-	recipes += new/datum/stack_recipe/cardborg_helmet(src)
+/*	recipes += new/datum/stack_recipe/cardborg_suit(src)
+	recipes += new/datum/stack_recipe/cardborg_helmet(src)*/
 	recipes += new/datum/stack_recipe_list("folders", create_recipe_list(/datum/stack_recipe/folder))

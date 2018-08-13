@@ -116,7 +116,7 @@
 		/area/shuttle/alien/base,
 /*		/area/albatros_hangar/start,
 		/area/albatros_hangar,*/
-		/area/rnd/xenobiology/xenoflora_storage,
+		/area/rnd/xenobiology/xenoflora,
 		/area/prison/solitary,
 		/area/turret_protected/ai_upload_foyer,
 		/area/vacant/mess,
