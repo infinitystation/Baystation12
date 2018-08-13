@@ -45,11 +45,6 @@
 /obj/item/stack/rods,
 /turf/space,
 /area/space)
-"ai" = (
-/obj/structure/lattice,
-/obj/structure/grille,
-/turf/space,
-/area/space)
 "aj" = (
 /obj/structure/lattice,
 /turf/space,
@@ -97,12 +92,8 @@
 /obj/structure/grille/broken,
 /turf/space,
 /area/space)
-"as" = (
-/obj/random/trash/space,
-/turf/space,
-/area/space)
 "at" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/scrap/top/den)
 "au" = (
 /obj/machinery/vending/boozeomat,
@@ -133,16 +124,13 @@
 /turf/simulated/floor/wood,
 /area/ship/scrap/top/den)
 "az" = (
-/turf/simulated/wall,
+/turf/simulated/wall/prepainted,
 /area/ship/scrap/top/den)
-"aA" = (
-/turf/space,
-/area/ship/scrap/top/hallway/port)
 "aB" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/scrap/top/hallway/port)
 "aC" = (
-/turf/simulated/wall,
+/turf/simulated/wall/prepainted,
 /area/ship/scrap/top/hallway/port)
 "aD" = (
 /obj/machinery/door/airlock/autoname{
@@ -178,7 +166,7 @@
 /turf/simulated/floor/wood,
 /area/ship/scrap/top/den)
 "aH" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/scrap/top/hallway/starbound)
 "aI" = (
 /obj/machinery/door/airlock/autoname{
@@ -188,16 +176,8 @@
 /turf/simulated/floor/plating,
 /area/ship/scrap/top/hallway/starbound)
 "aJ" = (
-/turf/simulated/wall,
+/turf/simulated/wall/prepainted,
 /area/ship/scrap/top/hallway/starbound)
-"aK" = (
-/obj/structure/lattice,
-/turf/space,
-/area/ship/scrap/top/hallway/starbound)
-"aL" = (
-/obj/structure/lattice,
-/turf/space,
-/area/ship/scrap/top/hallway/port)
 "aM" = (
 /obj/structure/bed/padded,
 /obj/item/weapon/bedsheet/blue,
@@ -281,7 +261,7 @@
 /turf/simulated/floor/wood,
 /area/ship/scrap/top/hallway/port)
 "aZ" = (
-/obj/machinery/door/airlock/maintenance_hatch{
+/obj/machinery/door/airlock/hatch/maintenance{
 	id_tag = "dorms_2";
 	name = "Dorms 2";
 	normalspeed = 0
@@ -337,7 +317,7 @@
 /turf/simulated/floor/tiled,
 /area/ship/scrap/top/hallway/starbound)
 "bh" = (
-/obj/machinery/door/airlock/maintenance_hatch{
+/obj/machinery/door/airlock/hatch/maintenance{
 	id_tag = "dorms_3";
 	name = "Dorms 3";
 	normalspeed = 0
@@ -352,10 +332,6 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/wood,
-/area/ship/scrap/top/hallway/starbound)
-"bk" = (
-/obj/random/trash/space,
-/turf/space,
 /area/ship/scrap/top/hallway/starbound)
 "bl" = (
 /obj/machinery/alarm{
@@ -447,7 +423,7 @@
 /turf/simulated/floor/wood,
 /area/ship/scrap/top/hallway/port)
 "bw" = (
-/obj/machinery/door/airlock/maintenance_hatch{
+/obj/machinery/door/airlock/hatch/maintenance{
 	id_tag = "dorms_1";
 	name = "Dorms 1";
 	normalspeed = 0
@@ -527,7 +503,7 @@
 /turf/simulated/floor/tiled,
 /area/ship/scrap/top/hallway/starbound)
 "bF" = (
-/obj/machinery/door/airlock/maintenance_hatch{
+/obj/machinery/door/airlock/hatch/maintenance{
 	id_tag = "dorms_4";
 	name = "Dorms 4";
 	normalspeed = 0
@@ -644,9 +620,6 @@
 /obj/item/weapon/bedsheet/brown,
 /turf/simulated/floor/carpet,
 /area/ship/scrap/top/hallway/starbound)
-"bS" = (
-/turf/space,
-/area/ship/scrap/top/hallway/starbound)
 "bT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -680,15 +653,10 @@
 /turf/simulated/floor/tiled,
 /area/ship/scrap/top/hallway/starbound)
 "bW" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/scrap/top/escape/starbound)
 "bX" = (
-/turf/simulated/wall,
-/area/ship/scrap/top/escape/starbound)
-"bY" = (
-/obj/structure/lattice,
-/obj/random/trash/space,
-/turf/space,
+/turf/simulated/wall/prepainted,
 /area/ship/scrap/top/escape/starbound)
 "bZ" = (
 /obj/machinery/door/blast/regular{
@@ -1049,10 +1017,10 @@
 /turf/simulated/floor/tiled,
 /area/ship/scrap/top/escape/starbound)
 "cI" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/scrap/top/research)
 "cJ" = (
-/turf/simulated/wall,
+/turf/simulated/wall/prepainted,
 /area/ship/scrap/top/research)
 "cK" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1234,7 +1202,7 @@
 /turf/simulated/floor/plating,
 /area/ship/scrap/top/research)
 "db" = (
-/turf/simulated/wall,
+/turf/simulated/wall/prepainted,
 /area/ship/scrap/top/hallway/aft)
 "dc" = (
 /obj/machinery/door/airlock/autoname,
@@ -1250,7 +1218,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/wall,
+/turf/simulated/wall/prepainted,
 /area/ship/scrap/top/hallway/aft)
 "de" = (
 /obj/structure/cable{
@@ -1259,10 +1227,11 @@
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/wall,
+/turf/simulated/wall/prepainted,
 /area/ship/scrap/top/hallway/aft)
 "df" = (
-/turf/simulated/wall,
+/obj/effect/paint/brown,
+/turf/simulated/wall/r_wall/hull,
 /area/ship/scrap/top/robotics)
 "dg" = (
 /obj/machinery/constructable_frame/machine_frame,
@@ -1352,7 +1321,7 @@
 /turf/simulated/floor/tiled,
 /area/ship/scrap/top/robotics)
 "dq" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/scrap/top/robotics)
 "dr" = (
 /obj/machinery/light_construct{
@@ -1948,7 +1917,7 @@
 /turf/simulated/floor/plating,
 /area/ship/scrap/top/robotics)
 "ep" = (
-/turf/simulated/wall,
+/turf/simulated/wall/prepainted,
 /area/ship/scrap/top/aft_solars/control)
 "eq" = (
 /obj/structure/cable{
@@ -1967,7 +1936,7 @@
 /turf/simulated/floor/plating,
 /area/ship/scrap/top/hallway/aft)
 "es" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/scrap/top/hallway/aft)
 "et" = (
 /obj/structure/girder,
@@ -2202,7 +2171,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
-/turf/simulated/wall,
+/turf/simulated/wall/prepainted,
 /area/ship/scrap/top/aft_solars/control)
 "eP" = (
 /obj/machinery/atmospherics/portables_connector{
@@ -2231,7 +2200,7 @@
 /turf/simulated/floor/airless,
 /area/ship/scrap/top/aft_solars)
 "eU" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/scrap/top/aft_solars/control)
 "eV" = (
 /obj/structure/ladder,
@@ -2488,6 +2457,21 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/ship/scrap/top/hallway/starbound)
+"kM" = (
+/turf/simulated/wall/prepainted,
+/area/ship/scrap/top/robotics)
+"nh" = (
+/obj/effect/paint/brown,
+/turf/simulated/wall/r_wall/hull,
+/area/ship/scrap/top/hallway/aft)
+"uV" = (
+/obj/effect/paint/brown,
+/turf/simulated/wall/r_wall/hull,
+/area/ship/scrap/top/hallway/starbound)
+"vi" = (
+/obj/effect/paint/brown,
+/turf/simulated/wall/r_wall/hull,
+/area/space)
 "zv" = (
 /obj/structure/lattice,
 /turf/simulated/open,
@@ -2496,6 +2480,10 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/ship/scrap/top/hallway/port)
+"Uh" = (
+/obj/effect/paint/brown,
+/turf/simulated/wall/r_wall/hull,
+/area/ship/scrap/top/escape/starbound)
 "WI" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
@@ -4768,13 +4756,13 @@ aa
 aa
 aa
 aa
-ai
-ai
-aj
-aj
-aj
-ai
-ai
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -4838,26 +4826,26 @@ aa
 aa
 aa
 aa
-ai
-ai
-ai
 aj
-aa
-ai
-ai
-ai
 aj
 aj
 aj
 aa
 aj
-aa
-aa
 aj
-aa
-aa
 aj
+aj
+aj
+aj
+vi
+vi
+aj
+vi
 aa
+vi
+aj
+vi
+vi
 aj
 aj
 eS
@@ -4920,14 +4908,14 @@ aa
 aa
 aa
 ag
-aj
-aA
-aL
-aA
-aA
-aL
-aA
-aA
+vi
+vi
+vi
+vi
+vi
+vi
+vi
+vi
 aj
 aa
 aj
@@ -5002,7 +4990,7 @@ aa
 aa
 aa
 ah
-as
+vi
 aB
 aC
 aB
@@ -5083,8 +5071,8 @@ aa
 aa
 aa
 aa
-ai
 aj
+vi
 aC
 PP
 aM
@@ -5166,7 +5154,7 @@ aa
 aa
 aa
 aj
-aa
+vi
 aC
 aN
 aY
@@ -6243,9 +6231,9 @@ aJ
 aJ
 cw
 aJ
-aJ
-aJ
-db
+uV
+uV
+nh
 db
 dA
 db
@@ -6314,7 +6302,7 @@ aa
 aa
 aa
 ar
-aa
+vi
 aJ
 aV
 bi
@@ -6325,7 +6313,7 @@ bW
 cj
 cx
 cH
-bX
+Uh
 aj
 df
 dn
@@ -6333,9 +6321,9 @@ dB
 dM
 dW
 em
-df
-aa
-eS
+kM
+vi
+ev
 ev
 ev
 ev
@@ -6395,8 +6383,8 @@ aa
 aa
 aa
 aa
-ai
-aa
+aj
+vi
 aJ
 hQ
 aW
@@ -6407,7 +6395,7 @@ bX
 ck
 ck
 ck
-bX
+Uh
 aa
 df
 do
@@ -6416,7 +6404,7 @@ dN
 dX
 en
 dq
-aj
+vi
 eE
 et
 eZ
@@ -6477,8 +6465,8 @@ aa
 aa
 aa
 aa
-ai
 aj
+vi
 aH
 aJ
 aH
@@ -6489,7 +6477,7 @@ bW
 cl
 cl
 cl
-bX
+Uh
 aj
 df
 dp
@@ -6498,7 +6486,7 @@ dO
 dY
 eo
 dq
-aa
+vi
 aa
 aa
 aa
@@ -6560,18 +6548,18 @@ aa
 aa
 aa
 aa
-aj
-aK
-aK
-bk
-aK
-aK
-bS
-bY
+vi
+vi
+vi
+vi
+vi
+vi
+vi
+vi
 aj
 aa
 aj
-bW
+Uh
 aj
 df
 dq
@@ -6580,7 +6568,7 @@ dq
 dE
 dq
 dq
-aa
+vi
 aa
 aa
 aa
@@ -6644,25 +6632,25 @@ aa
 aa
 aa
 aa
-ai
-ai
-ai
 aj
-ai
-ai
-aa
-aa
-aa
-aa
-aa
 aj
-aa
-aa
-aa
-aa
+aj
+aj
 aj
 aj
 aa
+aa
+aa
+aa
+aa
+vi
+vi
+aj
+vi
+aj
+vi
+vi
+vi
 aa
 aa
 aa
@@ -6737,12 +6725,12 @@ aa
 aa
 aa
 aa
-ai
-ai
-ag
-ai
-ai
-ai
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
