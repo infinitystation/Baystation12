@@ -38,7 +38,6 @@
 		/area/rnd,
 		/area/rnd/xenobiology,
 		/area/rnd/xenobiology/xenoflora,
-		/area/rnd/xenobiology/xenoflora_storage,
 		/area/security,
 		/area/security/prison,
 		/area/security/brig,

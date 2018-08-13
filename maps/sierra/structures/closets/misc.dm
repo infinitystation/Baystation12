@@ -159,18 +159,6 @@
 /obj/structure/closet/secure_closet/guncabinet/sec_armory/pbullet/WillContain()
 	return list(/obj/item/weapon/gun/projectile/beretta = 4, /obj/item/ammo_magazine/mc9mmds = 12)
 
-/obj/structure/closet/secure_closet/guncabinet/sec_armory/smgbullet
-	name = "PDW guncabinet"
-
-/obj/structure/closet/secure_closet/guncabinet/sec_armory/smgbullet/WillContain()
-	return list(/obj/item/weapon/gun/projectile/automatic/mp90 = 4, /obj/item/ammo_magazine/mc57mmt = 12)
-
-/obj/structure/closet/secure_closet/guncabinet/sec_armory/rbullet
-	name = "Main guncabinet"
-
-/obj/structure/closet/secure_closet/guncabinet/sec_armory/rbullet/WillContain()
-	return list(/obj/item/weapon/gun/projectile/automatic/tr3 = 1, /obj/item/ammo_magazine/c3006 = 2, /obj/item/weapon/gun/projectile/automatic/z8 = 1, /obj/item/ammo_magazine/a762 = 2, /obj/item/ammo_magazine/a762/ap = 2, /obj/item/weapon/gun/projectile/shotgun/pump/combat = 2, /obj/item/weapon/storage/box/shotgunammo = 4, /obj/item/weapon/storage/box/shotgunshells = 4)
-
 /obj/structure/closet/secure_closet/guncabinet/sidearm/shotgun
 	name = "shotgun sidearm cabinet"
 
