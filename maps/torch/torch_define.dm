@@ -126,7 +126,7 @@
 	to_chat(victim, "<h2>Информаци&#255; о карте</h2>")
 	to_chat(victim, "Вы находитесь на борту <b>[station_name]</b>, корабле Экспедиционного Корпуса, что принадлежит Правительству Солнечной Системы. Основна&#255; цель вашей экспедиции - поиск новых форм жизни и исследование объектов по пути.")
 	to_chat(victim, "Персонал корабл&#255; состоит из работников ПСС, наемных контрактников и сотрудников НаноТрейзен.")
-	to_chat(victim, "This area of space is uncharted, away from SCG territory. You might encounter remote outposts or drifting hulks, but no recognized government holds claim on this sector.")
+	to_chat(victim, "Эта часть космоса не &#255;вл&#255;етс&#255; территорией ПСС и еще не нанесена на карты. Вы можете встретить здесь небольшие аванпосты, брошенные или редкие функионирующие частные корабли, но не более. Этот сектор, насколько вам известно, пока вне зоны интереса какого либо государства.")
 
 /datum/map/torch/send_welcome()
 	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Torch</b> Sensor Readings:</font><hr />"

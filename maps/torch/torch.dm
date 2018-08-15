@@ -112,6 +112,7 @@
 	#include "../away/slavers/slavers_base.dm"
 	#include "../away/errant_pisces/errant_pisces.dm"
 	#include "../away/lar_maria/lar_maria.dm"
+	#include "../away/unishi/unishi.dm"
 
 	#define using_map_DATUM /datum/map/torch
 

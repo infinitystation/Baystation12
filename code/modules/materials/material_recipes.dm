@@ -14,6 +14,7 @@
 	// If is_brittle() returns true, these are only good for a single strike.
 	recipes += new/datum/stack_recipe/baseball_bat(src)
 	recipes += new/datum/stack_recipe/ashtray(src)
+	recipes += new/datum/stack_recipe/coin(src)
 	recipes += new/datum/stack_recipe/spoon(src)
 	recipes += new/datum/stack_recipe/ring(src)
 
@@ -104,6 +105,6 @@
 /material/cardboard/generate_recipes()
 	..()
 	recipes += create_recipe_list(/datum/stack_recipe/box)
-/*	recipes += new/datum/stack_recipe/cardborg_suit(src)
-	recipes += new/datum/stack_recipe/cardborg_helmet(src)*/
+	recipes += new/datum/stack_recipe/cardborg_suit(src)
+	recipes += new/datum/stack_recipe/cardborg_helmet(src)
 	recipes += new/datum/stack_recipe_list("folders", create_recipe_list(/datum/stack_recipe/folder))

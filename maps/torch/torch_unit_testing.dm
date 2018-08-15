@@ -119,7 +119,6 @@
 		/area/rnd/xenobiology/xenoflora,
 		/area/prison/solitary,
 		/area/turret_protected/ai_upload_foyer,
-		/area/vacant/mess,
 		/area/engineering/gravity_gen,
 		/area/turbolift,
 		/area/turbolift/start,
@@ -148,6 +147,7 @@
 //		/area/errant_pisces,
 //		/area/lar_maria,
 		/area/map_template,
+		/area/unishi,
 		/area/exoplanet
 	)
 

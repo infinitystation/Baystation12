@@ -63,6 +63,8 @@
 			return global.SSmachines;
 		if("SSmapping")
 			return global.SSmapping;
+		if("SSmaterials")
+			return global.SSmaterials;
 		if("SSmisc_late")
 			return global.SSmisc_late;
 		if("SSmobs")
@@ -623,8 +625,6 @@
 			return global.moving_levels;
 		if("multi_point_spawns")
 			return global.multi_point_spawns;
-		if("name_to_material")
-			return global.name_to_material;
 		if("narsie_behaviour")
 			return global.narsie_behaviour;
 		if("narsie_cometh")
@@ -661,10 +661,6 @@
 			return global.nuke_disks;
 		if("num_financial_terminals")
 			return global.num_financial_terminals;
-		if("ore_data")
-			return global.ore_data;
-		if("ores_by_type")
-			return global.ores_by_type;
 		if("organ_cache")
 			return global.organ_cache;
 		if("organ_rel_size")
@@ -783,8 +779,6 @@
 			return global.runtime_diary;
 		if("same_wires")
 			return global.same_wires;
-		if("scrap_recipes")
-			return global.scrap_recipes;
 		if("secondary_mode")
 			return global.secondary_mode;
 		if("secret_force_mode")
@@ -1003,7 +997,7 @@
 			return global.z_levels;
 		if("zone_blocked")
 			return global.zone_blocked;
-		
+
 /proc/writeglobal(which, newval)
 	switch(which)
 		if("ALL_ANTIGENS")
@@ -1068,6 +1062,8 @@
 			global.SSmachines=newval;
 		if("SSmapping")
 			global.SSmapping=newval;
+		if("SSmaterials")
+			global.SSmaterials=newval;
 		if("SSmisc_late")
 			global.SSmisc_late=newval;
 		if("SSmobs")
@@ -1628,8 +1624,6 @@
 			global.moving_levels=newval;
 		if("multi_point_spawns")
 			global.multi_point_spawns=newval;
-		if("name_to_material")
-			global.name_to_material=newval;
 		if("narsie_behaviour")
 			global.narsie_behaviour=newval;
 		if("narsie_cometh")
@@ -1666,10 +1660,6 @@
 			global.nuke_disks=newval;
 		if("num_financial_terminals")
 			global.num_financial_terminals=newval;
-		if("ore_data")
-			global.ore_data=newval;
-		if("ores_by_type")
-			global.ores_by_type=newval;
 		if("organ_cache")
 			global.organ_cache=newval;
 		if("organ_rel_size")
@@ -1788,8 +1778,6 @@
 			global.runtime_diary=newval;
 		if("same_wires")
 			global.same_wires=newval;
-		if("scrap_recipes")
-			global.scrap_recipes=newval;
 		if("secondary_mode")
 			global.secondary_mode=newval;
 		if("secret_force_mode")
@@ -2008,7 +1996,7 @@
 			global.z_levels=newval;
 		if("zone_blocked")
 			global.zone_blocked=newval;
-		
+
 /var/list/_all_globals=list(
 	"ALL_ANTIGENS",
 	"ANTAG_FREQS",
@@ -2041,6 +2029,7 @@
 	"SSlighting",
 	"SSmachines",
 	"SSmapping",
+	"SSmaterials",
 	"SSmisc_late",
 	"SSmobs",
 	"SSnano",
@@ -2321,7 +2310,6 @@
 	"motion_alarm",
 	"moving_levels",
 	"multi_point_spawns",
-	"name_to_material",
 	"narsie_behaviour",
 	"narsie_cometh",
 	"narsie_list",
@@ -2340,8 +2328,6 @@
 	"nttransfer_uid",
 	"nuke_disks",
 	"num_financial_terminals",
-	"ore_data",
-	"ores_by_type",
 	"organ_cache",
 	"organ_rel_size",
 	"outfits_decls_",

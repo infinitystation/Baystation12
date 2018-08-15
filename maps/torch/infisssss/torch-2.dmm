@@ -816,6 +816,12 @@
 /obj/effect/floor_decal/corner/green{
 	dir = 6
 	},
+/obj/structure/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 22;
+	pixel_y = 5
+	},
 /turf/simulated/floor/tiled,
 /area/hydroponics)
 "cj" = (
@@ -2736,10 +2742,6 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/galleybackroom)
-"gt" = (
-/obj/structure/sink/kitchen,
-/turf/simulated/wall/prepainted,
-/area/crew_quarters/galleybackroom)
 "gu" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -3586,10 +3588,6 @@
 	dir = 8;
 	icon_state = "pipe-c"
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 24
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
@@ -3600,6 +3598,12 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/structure/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 22;
+	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
@@ -7065,6 +7069,31 @@
 /obj/machinery/disposal,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
+"qi" = (
+/obj/effect/floor_decal/corner/grey/diagonal{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = -24
+	},
+/turf/simulated/floor/tiled/white,
+/area/crew_quarters/galley)
 "qo" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -8833,7 +8862,7 @@
 /obj/random/maintenance/solgov,
 /obj/random/maintenance/solgov,
 /turf/simulated/floor/plating,
-/area/vacant/mess)
+/area/maintenance/thirddeck/starboard)
 "tv" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 10
@@ -14036,9 +14065,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/sleep/cryo)
-"Fa" = (
-/turf/simulated/wall/r_wall/hull,
-/area/thruster/d3starboard)
 "Fb" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -16211,9 +16237,6 @@
 /obj/structure/sign/warning/nosmoking_2,
 /turf/simulated/wall/r_wall,
 /area/thruster/d3starboard)
-"KJ" = (
-/turf/simulated/wall/r_wall/hull,
-/area/thruster/d3port)
 "KL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/green{
 	icon_state = "intact";
@@ -16848,6 +16871,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/maintenance/thirddeck/aftstarboard)
+"Mt" = (
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d3port)
 "Mu" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -18076,6 +18102,9 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hydroponics/storage)
+"Qf" = (
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d3starboard)
 "Qg" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
@@ -18797,7 +18826,7 @@
 /obj/random/maintenance/solgov,
 /obj/random/maintenance/solgov,
 /turf/simulated/floor/plating,
-/area/vacant/mess)
+/area/maintenance/thirddeck/starboard)
 "Sy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -18885,6 +18914,7 @@
 /area/command/captainmess)
 "SP" = (
 /obj/structure/table/standard,
+/obj/machinery/chemical_dispenser/bar_coffee/full,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
 "SS" = (
@@ -19193,9 +19223,6 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
-"TE" = (
-/turf/simulated/wall/prepainted,
-/area/vacant/mess)
 "TH" = (
 /obj/structure/table/marble,
 /obj/machinery/door/blast/shutters{
@@ -19461,9 +19488,6 @@
 	},
 /turf/simulated/floor/lino,
 /area/vacant/office)
-"Ux" = (
-/turf/simulated/floor/plating,
-/area/vacant/mess)
 "Uz" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/corner/green{
@@ -36417,7 +36441,7 @@ dy
 dy
 dy
 IR
-gt
+dy
 dy
 kK
 kK
@@ -37628,7 +37652,7 @@ Rq
 Qg
 fp
 RO
-Tg
+qi
 ev
 Ug
 Vg
@@ -40050,7 +40074,7 @@ cY
 dN
 bA
 fF
-Ux
+aY
 Ot
 Ot
 VD
@@ -40252,7 +40276,7 @@ cZ
 bA
 bA
 fG
-TE
+cl
 Ot
 SO
 Vv
@@ -40858,7 +40882,7 @@ da
 cl
 cl
 cl
-TE
+cl
 Ot
 Ot
 Ay
@@ -46949,7 +46973,7 @@ We
 vd
 DY
 DY
-KJ
+Mt
 jZ
 jZ
 aa
@@ -47115,7 +47139,7 @@ aa
 aT
 aT
 aT
-Fa
+Qf
 ez
 ez
 lS
@@ -47151,7 +47175,7 @@ We
 ro
 Wx
 OD
-KJ
+Mt
 jZ
 jZ
 jZ
@@ -47317,7 +47341,7 @@ aT
 aT
 aT
 aT
-Fa
+Qf
 MK
 UH
 tY
@@ -47353,7 +47377,7 @@ We
 We
 DY
 kV
-KJ
+Mt
 jZ
 jZ
 jZ
@@ -47514,12 +47538,12 @@ aa
 aa
 aa
 aa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
+Qf
+Qf
+Qf
+Qf
+Qf
+Qf
 rA
 ez
 ez
@@ -47555,12 +47579,12 @@ We
 DY
 DY
 li
-KJ
-KJ
-KJ
-KJ
-KJ
-KJ
+Mt
+Mt
+Mt
+Mt
+Mt
+Mt
 aa
 aa
 aa
@@ -47716,11 +47740,11 @@ aa
 aa
 aa
 aa
-Fa
-Fa
-Fa
-Fa
-Fa
+Qf
+Qf
+Qf
+Qf
+Qf
 vm
 rE
 Mp
@@ -47751,18 +47775,18 @@ jZ
 jZ
 jZ
 jZ
-KJ
+Mt
 DY
 DY
 DY
 Nc
 yD
 wx
-KJ
-KJ
-KJ
-KJ
-KJ
+Mt
+Mt
+Mt
+Mt
+Mt
 aa
 aa
 aa
@@ -47918,8 +47942,8 @@ aa
 aa
 aa
 aa
-Fa
-Fa
+Qf
+Qf
 TB
 PW
 Pd
@@ -47929,7 +47953,7 @@ kr
 LT
 cv
 UY
-Fa
+Qf
 aT
 aT
 aT
@@ -47953,7 +47977,7 @@ aI
 jZ
 jZ
 jZ
-KJ
+Mt
 EH
 RZ
 BZ
@@ -47963,8 +47987,8 @@ sT
 WJ
 RH
 Jm
-KJ
-KJ
+Mt
+Mt
 aa
 aa
 aa
@@ -48120,8 +48144,8 @@ aa
 aa
 aa
 aa
-Fa
-Fa
+Qf
+Qf
 LE
 gV
 Ua
@@ -48131,7 +48155,7 @@ Nl
 lg
 kg
 py
-Fa
+Qf
 aT
 aT
 aa
@@ -48155,7 +48179,7 @@ aa
 aa
 jZ
 jZ
-KJ
+Mt
 Nq
 OY
 Qo
@@ -48165,8 +48189,8 @@ oq
 OG
 Kv
 Wu
-KJ
-KJ
+Mt
+Mt
 aa
 aa
 aa
@@ -48322,8 +48346,8 @@ aa
 aa
 aa
 aa
-Fa
-Fa
+Qf
+Qf
 bO
 iA
 pR
@@ -48333,7 +48357,7 @@ WI
 LT
 ui
 Ae
-Fa
+Qf
 aT
 aa
 aa
@@ -48357,7 +48381,7 @@ aa
 aa
 aa
 jZ
-KJ
+Mt
 Aw
 nv
 BZ
@@ -48367,8 +48391,8 @@ Fy
 iZ
 PM
 KA
-KJ
-KJ
+Mt
+Mt
 aa
 aa
 aa
@@ -48524,8 +48548,8 @@ aa
 aa
 aa
 aa
-Fa
-Fa
+Qf
+Qf
 ez
 ez
 KH
@@ -48569,8 +48593,8 @@ Xe
 Lq
 DY
 DY
-KJ
-KJ
+Mt
+Mt
 aa
 aa
 aa
@@ -48726,8 +48750,8 @@ aa
 aa
 aa
 aa
-Fa
-Fa
+Qf
+Qf
 ze
 CH
 zx
@@ -48771,8 +48795,8 @@ Km
 Kp
 Ak
 EL
-KJ
-KJ
+Mt
+Mt
 aa
 aa
 aa
@@ -48928,8 +48952,8 @@ aa
 aa
 aa
 aa
-Fa
-Fa
+Qf
+Qf
 OJ
 YE
 Zc
@@ -48973,8 +48997,8 @@ ZF
 OS
 CW
 ov
-KJ
-KJ
+Mt
+Mt
 aa
 aa
 aa
@@ -49130,8 +49154,8 @@ aa
 aa
 aa
 aa
-Fa
-Fa
+Qf
+Qf
 NS
 AH
 Pd
@@ -49175,8 +49199,8 @@ Ll
 WJ
 vf
 vp
-KJ
-KJ
+Mt
+Mt
 aa
 aa
 aa
@@ -49332,9 +49356,9 @@ aa
 aa
 aa
 aa
-Fa
-Fa
-Fa
+Qf
+Qf
+Qf
 ez
 ez
 KM
@@ -49376,9 +49400,9 @@ Ri
 Lm
 DY
 DY
-KJ
-KJ
-KJ
+Mt
+Mt
+Mt
 aa
 aa
 aa
@@ -49534,7 +49558,7 @@ aa
 aa
 aa
 aa
-Fa
+Qf
 bd
 rz
 Lf
@@ -49545,7 +49569,7 @@ LP
 PY
 PL
 Sg
-Fa
+Qf
 aa
 aI
 aI
@@ -49569,7 +49593,7 @@ aI
 aI
 aa
 aa
-KJ
+Mt
 Li
 ZI
 Sb
@@ -49580,7 +49604,7 @@ Si
 PP
 WG
 pQ
-KJ
+Mt
 aa
 aa
 aa
@@ -49738,7 +49762,7 @@ aa
 aa
 aa
 JM
-Fa
+Qf
 ee
 JQ
 KO
@@ -49747,7 +49771,7 @@ KO
 JQ
 Rg
 Zf
-Fa
+Qf
 aa
 aI
 aI
@@ -49771,7 +49795,7 @@ aI
 aI
 aa
 aa
-KJ
+Mt
 nA
 Mi
 Ni
@@ -49780,7 +49804,7 @@ La
 Oi
 Ni
 KE
-KJ
+Mt
 Sz
 aa
 aa
@@ -49940,7 +49964,7 @@ aa
 aa
 aa
 Ve
-Fa
+Qf
 KG
 KG
 KG
@@ -49948,7 +49972,7 @@ KT
 KG
 KG
 KG
-Fa
+Qf
 aa
 aa
 aI
@@ -49974,7 +49998,7 @@ aI
 aa
 aa
 aa
-KJ
+Mt
 Rv
 Rv
 Rv
@@ -49982,7 +50006,7 @@ Lc
 Rv
 Rv
 Rv
-KJ
+Mt
 Tv
 aa
 aa

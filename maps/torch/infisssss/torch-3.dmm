@@ -2972,9 +2972,11 @@
 /turf/simulated/wall/r_wall/hull,
 /area/space)
 "fU" = (
+/obj/effect/paint/hull,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod11/station)
 "fW" = (
+/obj/effect/paint/red,
 /turf/simulated/wall/titanium,
 /area/shuttle/escape_pod11/station)
 "fX" = (
@@ -6519,6 +6521,9 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
+"mT" = (
+/turf/simulated/wall/ocp_wall,
+/area/maintenance/seconddeck/foreport)
 "mX" = (
 /obj/machinery/light/small,
 /obj/effect/floor_decal/corner/yellow/half{
@@ -10229,6 +10234,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
 "vt" = (
+/obj/effect/paint/hull,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod10/station)
 "vv" = (
@@ -10243,6 +10249,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod10/station)
 "vw" = (
+/obj/effect/paint/red,
 /turf/simulated/wall/titanium,
 /area/shuttle/escape_pod10/station)
 "vx" = (
@@ -13319,7 +13326,7 @@
 "Dp" = (
 /obj/structure/sign/warning/fire,
 /turf/simulated/wall/r_wall/hull,
-/area/maintenance/incinerator)
+/area/maintenance/seconddeck/foreport)
 "Dq" = (
 /obj/structure/computerframe,
 /turf/simulated/floor/plating,
@@ -13660,7 +13667,7 @@
 "Ef" = (
 /obj/structure/sign/warning/vent_port,
 /turf/simulated/wall/r_wall/hull,
-/area/maintenance/incinerator)
+/area/maintenance/seconddeck/foreport)
 "Eg" = (
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	frequency = 1379;
@@ -16201,6 +16208,7 @@
 "Og" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod11,
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod11/station)
 "Oh" = (
@@ -16323,9 +16331,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/foyer)
-"OM" = (
-/turf/simulated/wall/r_wall/hull,
-/area/maintenance/incinerator)
 "OW" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -17885,6 +17890,7 @@
 "Wl" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod10,
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod10/station)
 "Wm" = (
@@ -32476,8 +32482,8 @@ EU
 EU
 EU
 EU
-EU
-OM
+mT
+Wp
 Ef
 aa
 aa
@@ -33284,9 +33290,9 @@ EU
 EU
 EU
 EU
-EU
-OM
-OM
+mT
+Wp
+Wp
 Dp
 aa
 aa
@@ -34903,7 +34909,7 @@ Cs
 Bk
 DR
 Wp
-fT
+Wp
 aa
 ag
 aa
@@ -35105,7 +35111,7 @@ CW
 Bk
 pi
 Wp
-fT
+Wp
 aa
 EA
 EC
@@ -35307,7 +35313,7 @@ CX
 Bk
 pi
 Wp
-fT
+Wp
 ag
 EA
 ED

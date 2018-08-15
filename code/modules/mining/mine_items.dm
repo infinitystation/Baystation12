@@ -139,7 +139,6 @@
 	attack_verb = list("bashed", "bludgeoned", "thrashed", "whacked")
 	sharp = 0
 	edge = 1
-	var/digspeed = 40
 
 /obj/item/weapon/shovel/spade
 	name = "spade"

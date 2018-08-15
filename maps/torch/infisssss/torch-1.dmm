@@ -87,11 +87,13 @@
 /turf/simulated/wall/r_wall/hull,
 /area/maintenance/fourthdeck/starboard)
 "ar" = (
+/obj/effect/paint/hull,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod6/station)
 "as" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod6,
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod6/station)
 "au" = (
@@ -123,11 +125,13 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/fourthdeck/center)
 "aw" = (
+/obj/effect/paint/hull,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod7/station)
 "ax" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod7,
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod7/station)
 "az" = (
@@ -3948,6 +3952,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/forestarboard)
 "ia" = (
+/obj/effect/paint/red,
 /turf/simulated/wall/titanium,
 /area/shuttle/escape_pod6/station)
 "ib" = (
@@ -3982,6 +3987,7 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/fourthdeck/center)
 "if" = (
+/obj/effect/paint/red,
 /turf/simulated/wall/titanium,
 /area/shuttle/escape_pod7/station)
 "ig" = (
@@ -4614,7 +4620,7 @@
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
 "jE" = (
-/obj/effect/wallframe_spawn/reinforced/prepainted,
+/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
 "jF" = (
@@ -5123,14 +5129,6 @@
 /obj/machinery/camera/network/hangar,
 /turf/simulated/floor/tiled,
 /area/quartermaster/hangar)
-"kF" = (
-/obj/machinery/conveyor{
-	dir = 1;
-	id = "mining_internal_mint"
-	},
-/obj/machinery/mineral/output,
-/turf/simulated/floor/plating,
-/area/quartermaster/hangar)
 "kG" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5611,7 +5609,6 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/hangar)
 "lD" = (
-/obj/machinery/mineral/mint,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
@@ -6317,14 +6314,6 @@
 /obj/structure/closet/crate,
 /obj/random/coin,
 /turf/simulated/floor/tiled,
-/area/quartermaster/hangar)
-"mR" = (
-/obj/machinery/conveyor{
-	dir = 1;
-	id = "mining_internal_mint"
-	},
-/obj/machinery/mineral/input,
-/turf/simulated/floor/plating,
 /area/quartermaster/hangar)
 "mS" = (
 /obj/structure/cable/green{
@@ -7788,7 +7777,6 @@
 /obj/effect/floor_decal/industrial/loading{
 	dir = 4
 	},
-/obj/machinery/mineral/input,
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "pu" = (
@@ -7796,14 +7784,6 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled,
-/area/quartermaster/hangar)
-"pv" = (
-/obj/machinery/mineral/output,
-/obj/machinery/conveyor{
-	dir = 4;
-	id = "mining_internal_mint"
-	},
-/turf/simulated/floor/plating,
 /area/quartermaster/hangar)
 "pw" = (
 /obj/machinery/conveyor{
@@ -12278,21 +12258,6 @@
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
-"xp" = (
-/obj/machinery/mineral/input,
-/obj/effect/floor_decal/industrial/loading{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/quartermaster/hangar)
-"xq" = (
-/obj/machinery/conveyor{
-	dir = 4;
-	id = "mining_internal"
-	},
-/obj/machinery/mineral/output,
-/turf/simulated/floor,
-/area/quartermaster/hangar)
 "xr" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -13782,7 +13747,6 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/hangar)
 "Af" = (
-/obj/machinery/mineral/input,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor,
 /area/quartermaster/hangar)
@@ -14445,7 +14409,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "Bo" = (
-/obj/machinery/mineral/processing_unit_console,
+/obj/machinery/computer/mining,
 /turf/simulated/wall/r_wall/prepainted,
 /area/quartermaster/hangar)
 "Bp" = (
@@ -14781,6 +14745,10 @@
 /obj/structure/ladder/up,
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/foreport)
+"Cb" = (
+/obj/effect/wallframe_spawn/reinforced/prepainted,
+/turf/simulated/floor/plating,
+/area/quartermaster/hangar)
 "Cd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -14960,14 +14928,6 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/quartermaster/hangar)
-"Cy" = (
-/obj/machinery/conveyor{
-	dir = 2;
-	id = "mining_internal"
-	},
-/obj/machinery/mineral/output,
-/turf/simulated/floor,
 /area/quartermaster/hangar)
 "Cz" = (
 /obj/structure/sign/bluecross_2,
@@ -15393,10 +15353,6 @@
 /obj/machinery/status_display,
 /turf/simulated/wall/r_wall/prepainted,
 /area/quartermaster/hangar)
-"Dx" = (
-/obj/machinery/mineral/stacking_unit_console,
-/turf/simulated/wall/r_wall/prepainted,
-/area/quartermaster/hangar)
 "Dy" = (
 /obj/structure/table/standard,
 /obj/machinery/reagentgrinder,
@@ -15616,6 +15572,7 @@
 /turf/simulated/wall/r_wall/hull,
 /area/maintenance/fourthdeck/foreport)
 "DU" = (
+/obj/effect/paint/red,
 /turf/simulated/wall/titanium,
 /area/shuttle/escape_pod8/station)
 "DV" = (
@@ -15630,6 +15587,7 @@
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod8/station)
 "DX" = (
+/obj/effect/paint/red,
 /turf/simulated/wall/titanium,
 /area/shuttle/escape_pod9/station)
 "DY" = (
@@ -15862,7 +15820,6 @@
 	dir = 8;
 	id = "mining_internal"
 	},
-/obj/machinery/mineral/output,
 /turf/simulated/floor,
 /area/quartermaster/hangar)
 "Eu" = (
@@ -16041,9 +15998,11 @@
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/foreport)
 "EN" = (
+/obj/effect/paint/hull,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod8/station)
 "EP" = (
+/obj/effect/paint/hull,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod9/station)
 "ER" = (
@@ -16487,7 +16446,7 @@
 	health = 1e+006
 	},
 /obj/structure/closet/secure_closet/decktech,
-/obj/item/weapon/coin/silver{
+/obj/machinery/door/airlock/silver{
 	pixel_x = -3;
 	pixel_y = 3
 	},
@@ -16496,7 +16455,7 @@
 /area/quartermaster/office)
 "FF" = (
 /obj/structure/closet/secure_closet/decktech,
-/obj/item/weapon/coin/silver{
+/obj/machinery/door/airlock/silver{
 	pixel_x = -3;
 	pixel_y = 3
 	},
@@ -18648,6 +18607,10 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/machinery/camera/network/supply{
+	c_tag = "Supply - Fuel Section";
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/shuttlefuel)
 "JT" = (
@@ -18657,6 +18620,7 @@
 "JU" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod8,
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod8/station)
 "JV" = (
@@ -18689,6 +18653,7 @@
 "JX" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod9,
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod9/station)
 "Ka" = (
@@ -19117,6 +19082,10 @@
 "MS" = (
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/storage)
+"MZ" = (
+/obj/effect/paint/silver,
+/turf/simulated/wall/titanium_r,
+/area/shuttle/petrov/ship)
 "Nc" = (
 /obj/machinery/status_display/supply_display,
 /turf/simulated/wall/prepainted,
@@ -20275,10 +20244,6 @@
 "Yg" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod9/station)
-"Yl" = (
-/obj/effect/paint/silver,
-/turf/simulated/wall/titanium_r,
-/area/shuttle/petrov/ship)
 "Yn" = (
 /obj/machinery/camera/network/hangar{
 	icon_state = "camera";
@@ -44372,7 +44337,7 @@ UH
 ti
 UH
 wh
-xp
+pt
 yK
 UH
 UH
@@ -44765,23 +44730,23 @@ fP
 gL
 ag
 iG
-jE
+Cb
 kD
 kD
 mQ
-jE
-pv
+Cb
+pw
 ag
 cr
 tj
 cr
 ag
-xq
+xr
 jE
 Ae
 kD
 kD
-Dx
+Bo
 Et
 Fk
 FS
@@ -44968,9 +44933,9 @@ da
 ag
 iG
 ag
-jE
+Cb
 lC
-jE
+Cb
 ag
 pw
 ag
@@ -45170,9 +45135,9 @@ WL
 ag
 iG
 jF
-kF
+jF
 lD
-mR
+jF
 jF
 jF
 ag
@@ -45184,7 +45149,7 @@ xs
 yL
 Af
 Bp
-Cy
+yL
 yL
 Af
 Fk
@@ -47195,11 +47160,11 @@ Vr
 Vr
 Vr
 Vr
-Yl
-Yl
+MZ
+MZ
 tv
 cb
-Yl
+MZ
 Ty
 Ty
 Ty
@@ -47592,11 +47557,11 @@ aa
 aa
 aa
 aa
-Yl
+MZ
 hH
 hH
 hH
-Yl
+MZ
 aa
 aa
 bA
@@ -47604,10 +47569,10 @@ rS
 tx
 uV
 bA
-Yl
-Yl
-Yl
-Yl
+MZ
+MZ
+MZ
+MZ
 aa
 aa
 aa
@@ -47809,8 +47774,8 @@ bA
 xw
 yR
 Al
-Yl
-Yl
+MZ
+MZ
 aa
 aa
 aa
@@ -48002,17 +47967,17 @@ kJ
 lL
 hH
 aa
-Yl
-Yl
+MZ
+MZ
 bd
 tz
 bd
-Yl
+MZ
 xx
 yS
 Am
 Bv
-Yl
+MZ
 aa
 aa
 aa
@@ -48198,13 +48163,13 @@ aa
 aa
 aa
 aa
-Yl
+MZ
 jN
 kK
 lM
-Yl
-Yl
-Yl
+MZ
+MZ
+MZ
 qE
 rU
 tA
@@ -48214,7 +48179,7 @@ xy
 yT
 An
 Bw
-Yl
+MZ
 aa
 aa
 aa
@@ -48399,8 +48364,8 @@ aa
 aa
 aa
 aa
-Yl
-Yl
+MZ
+MZ
 bd
 kL
 bd
@@ -48416,7 +48381,7 @@ xz
 yU
 Ao
 Bx
-Yl
+MZ
 aa
 aa
 aa
@@ -48601,7 +48566,7 @@ aa
 aa
 aa
 aa
-Yl
+MZ
 iL
 jO
 kM
@@ -48618,7 +48583,7 @@ xA
 yV
 Ap
 By
-Yl
+MZ
 bd
 aa
 aa
@@ -48818,9 +48783,9 @@ va
 bd
 bd
 bd
-Yl
-Yl
-Yl
+MZ
+MZ
+MZ
 db
 db
 aa
@@ -49409,7 +49374,7 @@ aa
 aa
 aa
 gR
-Yl
+MZ
 iP
 jQ
 kP
@@ -49611,7 +49576,7 @@ aa
 aa
 af
 bh
-Yl
+MZ
 bd
 bd
 kQ
@@ -51225,8 +51190,8 @@ aa
 aa
 aa
 aa
-Yl
-Yl
+MZ
+MZ
 bd
 iW
 jX
@@ -51428,8 +51393,8 @@ aa
 aa
 aa
 aa
-Yl
-Yl
+MZ
+MZ
 iX
 jY
 kY
@@ -51838,12 +51803,12 @@ iY
 iY
 iY
 bA
-Yl
+MZ
 hH
 hH
 hH
 hH
-Yl
+MZ
 hH
 hH
 hH

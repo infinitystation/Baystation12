@@ -1372,12 +1372,15 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "act" = (
+/obj/effect/paint/hull,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod12/station)
 "acw" = (
+/obj/effect/paint/hull,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod13/station)
 "acz" = (
+/obj/effect/paint/hull,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod14/station)
 "acA" = (
@@ -2484,6 +2487,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "burst_s"
 	},
+/obj/effect/paint/red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod12/station)
 "aeT" = (
@@ -2501,6 +2505,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "burst_s"
 	},
+/obj/effect/paint/red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod13/station)
 "aeV" = (
@@ -2518,6 +2523,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "burst_s"
 	},
+/obj/effect/paint/red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod14/station)
 "aeX" = (
@@ -5426,6 +5432,10 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
+/obj/item/device/radio/intercom/department/security{
+	dir = 8;
+	pixel_x = 21
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/security/detectives_office)
 "apf" = (
@@ -5556,10 +5566,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/command/conference)
 "apW" = (
-/obj/item/device/radio/intercom/department/security{
-	dir = 8;
-	pixel_x = 21
-	},
 /obj/structure/table/steel,
 /obj/item/weapon/paper_bin{
 	pixel_x = -3;
@@ -12090,6 +12096,9 @@
 /area/maintenance/firstdeck/centralport)
 "aOR" = (
 /obj/structure/closet/crate/secure/biohazard/blanks,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/rnd/blanks)
 "aOS" = (
@@ -12097,7 +12106,10 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/dark,
 /area/rnd/blanks)
 "aOU" = (
@@ -12497,12 +12509,10 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled/dark,
 /area/rnd/blanks)
 "aPX" = (
@@ -13106,6 +13116,7 @@
 	icon_state = "burst_s";
 	dir = 1
 	},
+/obj/effect/paint/red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod15/station)
 "aRC" = (
@@ -13124,6 +13135,7 @@
 	icon_state = "burst_s";
 	dir = 1
 	},
+/obj/effect/paint/red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod16/station)
 "aRE" = (
@@ -13142,6 +13154,7 @@
 	icon_state = "burst_s";
 	dir = 1
 	},
+/obj/effect/paint/red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod17/station)
 "aRG" = (
@@ -13466,12 +13479,15 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport)
 "aSx" = (
+/obj/effect/paint/hull,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod15/station)
 "aSz" = (
+/obj/effect/paint/hull,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod16/station)
 "aSB" = (
+/obj/effect/paint/hull,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod17/station)
 "aSD" = (
@@ -15365,6 +15381,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
+/obj/machinery/camera/network/security{
+	c_tag = "Brig - Forensic Office";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/security/detectives_office)
 "bub" = (
@@ -15591,16 +15611,19 @@
 "bHb" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod12,
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod12/station)
 "bIb" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod13,
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod13/station)
 "bJb" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod14,
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod14/station)
 "bKb" = (
@@ -15937,11 +15960,13 @@
 "ccb" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod15,
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod15/station)
 "cdb" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod16,
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod16/station)
 "cdV" = (
@@ -15951,6 +15976,7 @@
 "ceb" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod17,
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod17/station)
 "cef" = (
@@ -16866,6 +16892,9 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery)
+"djz" = (
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d1starboard)
 "dkb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -21513,9 +21542,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/assembly/robotics)
-"iyg" = (
-/turf/simulated/wall/r_wall/hull,
-/area/thruster/d1starboard)
 "iyy" = (
 /obj/machinery/power/apc/high/critical{
 	dir = 1;
@@ -23773,6 +23799,9 @@
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/assembly/robotics)
+"ldi" = (
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d1port)
 "ldP" = (
 /obj/structure/table/rack,
 /obj/random/maintenance/solgov,
@@ -24806,6 +24835,10 @@
 	dir = 4;
 	layer = 2.4;
 	level = 2
+	},
+/obj/machinery/camera/network/security{
+	c_tag = "Brig - Evidence Storage";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/evidence)
@@ -25844,9 +25877,10 @@
 /area/medical/equipstorage)
 "nBK" = (
 /obj/structure/closet/crate/secure/biohazard/blanks,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
 /area/rnd/blanks)
 "nCb" = (
@@ -26602,9 +26636,6 @@
 /obj/machinery/self_destruct,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/nuke_storage)
-"osQ" = (
-/turf/simulated/wall/r_wall/hull,
-/area/thruster/d1port)
 "otb" = (
 /obj/machinery/light{
 	dir = 1
@@ -28173,7 +28204,7 @@
 /obj/structure/sink{
 	dir = 4;
 	icon_state = "sink";
-	pixel_x = 11;
+	pixel_x = 22;
 	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/white,
@@ -30475,9 +30506,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology)
-"sRc" = (
-/turf/space,
-/area/maintenance/firstdeck/aftport)
 "sRV" = (
 /turf/simulated/wall/r_wall/hull,
 /area/rnd/xenobiology)
@@ -58373,7 +58401,7 @@ bDK
 bDK
 bDK
 bDK
-sRc
+aaa
 aaa
 aaa
 aaa
@@ -58726,12 +58754,12 @@ aaa
 aaa
 aaa
 aaa
-iyg
-iyg
-iyg
-iyg
-iyg
-iyg
+djz
+djz
+djz
+djz
+djz
+djz
 baz
 tuw
 tuw
@@ -58773,12 +58801,12 @@ mBP
 lcB
 lcB
 doP
-osQ
-osQ
-osQ
-osQ
-osQ
-osQ
+ldi
+ldi
+ldi
+ldi
+ldi
+ldi
 aae
 aaa
 aaa
@@ -58928,11 +58956,11 @@ aaa
 aaa
 aaa
 aaa
-iyg
-iyg
-iyg
-iyg
-iyg
+djz
+djz
+djz
+djz
+djz
 iyy
 sUP
 pyf
@@ -58969,18 +58997,18 @@ bDK
 bDK
 bDK
 bDK
-osQ
+ldi
 lcB
 lcB
 lcB
 phk
 gLi
 vsX
-osQ
-osQ
-osQ
-osQ
-osQ
+ldi
+ldi
+ldi
+ldi
+ldi
 aaa
 aaa
 aaa
@@ -59130,8 +59158,8 @@ aaa
 aaa
 aaa
 aaa
-iyg
-iyg
+djz
+djz
 abN
 abW
 acl
@@ -59141,7 +59169,7 @@ buY
 kiq
 nIN
 vSK
-iyg
+djz
 abU
 abU
 mpy
@@ -59171,7 +59199,7 @@ bDK
 bDK
 aNB
 aNB
-osQ
+ldi
 bVc
 nos
 oJh
@@ -59181,8 +59209,8 @@ aTR
 aUi
 aUv
 cUj
-osQ
-osQ
+ldi
+ldi
 aaa
 aaa
 aaa
@@ -59332,8 +59360,8 @@ aaa
 aaa
 aaa
 aaa
-iyg
-iyg
+djz
+djz
 xZq
 ftA
 krG
@@ -59343,7 +59371,7 @@ leC
 cxq
 jhy
 gHc
-iyg
+djz
 abU
 abU
 mpy
@@ -59373,7 +59401,7 @@ bDK
 bDK
 aNB
 aNB
-osQ
+ldi
 nGT
 noZ
 cjV
@@ -59383,8 +59411,8 @@ aTS
 onf
 tCV
 jgu
-osQ
-osQ
+ldi
+ldi
 aaa
 aaa
 aaa
@@ -59534,8 +59562,8 @@ aaa
 aaa
 aaa
 aaa
-iyg
-iyg
+djz
+djz
 oFv
 wzK
 nFo
@@ -59545,7 +59573,7 @@ bab
 kiq
 wZt
 egG
-iyg
+djz
 abU
 abU
 mpy
@@ -59575,7 +59603,7 @@ bDK
 bDK
 aNB
 aNB
-osQ
+ldi
 lgA
 svO
 oJh
@@ -59585,8 +59613,8 @@ aTT
 qxM
 fui
 tGq
-osQ
-osQ
+ldi
+ldi
 aaa
 aaa
 aaa
@@ -59736,8 +59764,8 @@ aaa
 aaa
 aaa
 aaa
-iyg
-iyg
+djz
+djz
 tuw
 tuw
 plB
@@ -59787,8 +59815,8 @@ aTU
 lLW
 lcB
 lcB
-osQ
-osQ
+ldi
+ldi
 aaa
 aaa
 aaa
@@ -59938,8 +59966,8 @@ aaa
 aaa
 aaa
 aaa
-iyg
-iyg
+djz
+djz
 pCS
 jJA
 acn
@@ -59989,8 +60017,8 @@ aTV
 aUk
 ybq
 hSC
-osQ
-osQ
+ldi
+ldi
 aaa
 aaa
 aaa
@@ -60140,8 +60168,8 @@ aaa
 aaa
 aaa
 aaa
-iyg
-iyg
+djz
+djz
 oPm
 iYa
 xFy
@@ -60191,8 +60219,8 @@ aTW
 lrT
 eEW
 vGg
-osQ
-osQ
+ldi
+ldi
 aaa
 aaa
 aaa
@@ -60342,8 +60370,8 @@ aaa
 aaa
 aaa
 aaa
-iyg
-iyg
+djz
+djz
 jFX
 abX
 acl
@@ -60393,8 +60421,8 @@ yeP
 aUi
 aUw
 xmf
-osQ
-osQ
+ldi
+ldi
 aaa
 aaa
 aaa
@@ -60544,8 +60572,8 @@ aaa
 aaa
 aaa
 aaa
-iyg
-iyg
+djz
+djz
 tuw
 tuw
 tuw
@@ -60594,9 +60622,9 @@ aTo
 aTX
 lcB
 lcB
-osQ
-osQ
-osQ
+ldi
+ldi
+ldi
 aaa
 aaa
 aaa
@@ -60746,7 +60774,7 @@ aaa
 aaa
 aaa
 aaa
-iyg
+djz
 nvc
 oqP
 ueN
@@ -60757,7 +60785,7 @@ adJ
 afA
 wZN
 ahB
-iyg
+djz
 aaa
 aaa
 acd
@@ -60787,7 +60815,7 @@ acd
 acd
 aaa
 aaa
-osQ
+ldi
 aQn
 aRk
 aSl
@@ -60798,7 +60826,7 @@ oZM
 iwJ
 fHl
 yfv
-osQ
+ldi
 aaa
 aaa
 aaa
@@ -60950,7 +60978,7 @@ aaa
 aaa
 aaa
 lHJ
-iyg
+djz
 abZ
 aca
 xnJ
@@ -60959,7 +60987,7 @@ xnJ
 aca
 sIQ
 nAL
-iyg
+djz
 aaa
 aaa
 acd
@@ -60989,7 +61017,7 @@ acd
 acd
 aaa
 aaa
-osQ
+ldi
 aQo
 kDA
 nwv
@@ -60998,7 +61026,7 @@ arJ
 vbA
 nwv
 aUy
-osQ
+ldi
 pUa
 aaa
 aaa
@@ -61152,7 +61180,7 @@ aaa
 aaa
 aaa
 fUD
-iyg
+djz
 hyN
 hyN
 hyN
@@ -61160,7 +61188,7 @@ cdV
 hyN
 hyN
 hyN
-iyg
+djz
 aaa
 aaa
 aaa
@@ -61192,7 +61220,7 @@ acd
 aaa
 aaa
 aaa
-osQ
+ldi
 qEA
 qEA
 qEA
@@ -61200,7 +61228,7 @@ etm
 qEA
 qEA
 qEA
-osQ
+ldi
 byo
 aaa
 aaa
