@@ -406,7 +406,8 @@
 	min_cold_protection_temperature = T0C - 20
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi'
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi'
 		)
 
 /obj/item/clothing/suit/storage/toggle/hoodie/cti
