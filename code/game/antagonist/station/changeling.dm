@@ -10,6 +10,7 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 	welcome_text = "Use say \"#g message\" to communicate with your fellow changelings. Remember: you get all of their absorbed DNA if you absorb them."
 	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE
 	antaghud_indicator = "hudchangeling"
+	skill_setter = /datum/antag_skill_setter/station
 
 	faction = "changeling"
 
