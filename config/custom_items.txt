@@ -105,6 +105,11 @@ character_name: Lin Fojuraus
 item_path: /obj/item/vape
 }
 {
+ckey: lunkydunk 
+character_name: Lunk Dunks
+item_path: /obj/item/clothing/suit/moghes_coat
+}
+{
 ckey: redknighthero
 character_name: Daniel Osborne
 item_path: /obj/item/weapon/circuitboard/account_database  
