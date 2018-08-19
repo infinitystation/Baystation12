@@ -351,7 +351,7 @@
 
 /obj/item/stack/material/glass/phoronrglass/ten
 	amount = 10
-	
+
 /obj/item/stack/material/aliumium
 	name = "aliumium chunks"
 	icon_state = "sheet-torn"

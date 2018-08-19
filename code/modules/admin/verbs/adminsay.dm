@@ -2,12 +2,10 @@
 	set category = "Special Verbs"
 	set name = "Asay" //Gave this shit a shorter name so you only have to time out "asay" rather than "admin say" to use it --NeoFite
 	set hidden = 1
-	if(!check_rights(R_ADMIN|R_MENTOR)) //admins or those bastards with +mentor now can communicate
-		return
+	if(!check_rights(R_ADMIN))	return
 
 	msg = sanitize(msg)
-	if(!msg)
-		return
+	if(!msg)	return
 
 	log_admin("ADMIN: [key_name(src)] : [msg]")
 
@@ -23,8 +21,7 @@
 	set name = "Msay"
 	set hidden = 1
 
-	if(!check_rights(R_ADMIN|R_MOD|R_MENTOR))
-		return
+	if(!check_rights(R_ADMIN|R_MOD|R_MENTOR))	return
 
 	msg = sanitize(msg)
 	log_admin("MOD: [key_name(src)] : [msg]")

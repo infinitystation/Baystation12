@@ -24,6 +24,7 @@
 /obj/effect/blob/New(loc)
 	health = maxHealth
 	update_icon()
+	set_light(0.5, 1, 2, 2, "#b5ff5b")
 	return ..(loc)
 
 /obj/effect/blob/CanPass(var/atom/movable/mover, vra/turf/target, var/height = 0, var/air_group = 0)
@@ -41,8 +42,6 @@
 			take_damage(rand(20, 60) / brute_resist)
 
 /obj/effect/blob/update_icon()
-	if(health > 0)
-		set_light(0.5, 1, 2, 2, "#b5ff5b")
 	if(health > maxHealth / 2)
 		icon_state = "blob"
 	else
@@ -50,11 +49,11 @@
 
 /obj/effect/blob/proc/take_damage(var/damage)
 	health -= damage
+	update_icon()
 	if(health < 0)
 		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+		set_light(0)
 		qdel(src)
-	else
-		update_icon()
 
 /obj/effect/blob/proc/regen()
 	health = min(health + regen_rate, maxHealth)

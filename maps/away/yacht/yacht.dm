@@ -1,9 +1,8 @@
 #include "yacht_areas.dm"
 
 /obj/effect/overmap/ship/yacht
-	name = "Small ship"
+	name = "private yacht"
 	desc = "Sensor array is detecting a small vessel with unknown lifeforms on board"
-	name = "Yacht"
 	color = "#ffc966"
 	vessel_mass = 30
 	default_delay = 35 SECONDS
@@ -14,9 +13,10 @@
 		"nav_yacht_3",
 		"nav_yacht_antag"
 	)
-	restricted_waypoints = list(
-		"Aquila" = list("nav_yacht_aquila")
-	)
+
+/obj/effect/overmap/ship/yacht/New(nloc, max_x, max_y)
+	name = "IPV [pick("Razorshark", "Aurora", "Lighting", "Pequod", "Anansi")], \a [name]"
+	..()
 
 /datum/map_template/ruin/away_site/yacht
 	name = "Yacht"
@@ -36,10 +36,6 @@
 /obj/effect/shuttle_landmark/nav_yacht/nav3
 	name = "Small Yacht Navpoint #3"
 	landmark_tag = "nav_yacht_3"
-
-/obj/effect/shuttle_landmark/nav_yacht/aquila
-	name = "Small Yacht Navpoint Aquila Dock"
-	landmark_tag = "nav_yacht_aquila"
 
 /obj/effect/shuttle_landmark/nav_yacht/nav4
 	name = "Small Yacht Navpoint #4"
