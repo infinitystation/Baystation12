@@ -66,12 +66,6 @@
 	icon_state = "com_cypherkey"
 	channels = list("Command" = 1)
 
-//delete this below as soon as possible - IT'S FUCKIN' TRASH
-/obj/item/device/encryptionkey/pilot //only for infinity_torch, there are still pilots key left behind.
-	name = "pilot's encryption key"
-	icon_state = "com_cypherkey"
-	channels = list( "Command" = 1, "Engineering" = 1)
-
 /obj/item/device/encryptionkey/heads/captain
 	name = "captain's encryption key"
 	icon_state = "cap_cypherkey"

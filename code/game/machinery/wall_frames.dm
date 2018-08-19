@@ -57,7 +57,6 @@
 	name = "air alarm frame"
 	icon_state = "alarm_bitem"
 	desc = "Used for building air alarms."
-	icon_state = "alarm_bitem"
 	build_machine_type = /obj/machinery/alarm
 
 /obj/item/frame/light

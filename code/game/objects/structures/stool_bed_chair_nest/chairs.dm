@@ -333,18 +333,6 @@
 	name = "winged chair"
 	base_icon = "wooden_chair_wings"
 	icon_state = "wooden_chair_wings_preview"
-//INFINITY
-/obj/structure/bed/chair/comfy/shuttle
-	name = "shuttle chair"
-	icon_state = "bschair_preview"
-	base_icon = "bschair"
-	color = null
-	material_alteration = MATERIAL_ALTERATION_NONE
-
-/obj/structure/bed/chair/comfy/shuttle/red
-	icon_state = "rschair_preview"
-	base_icon = "rschair"
-	material_alteration = MATERIAL_ALTERATION_NONE
 
 /obj/structure/bed/chair/shuttle
 	name = "shuttle seat"

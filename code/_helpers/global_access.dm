@@ -163,6 +163,8 @@
 			return global.admin_verbs_sounds;
 		if("admin_verbs_spawn")
 			return global.admin_verbs_spawn;
+		if("adminhelp_ignored_words")
+			return global.adminhelp_ignored_words;
 		if("adminlog")
 			return global.adminlog;
 		if("ai_list")
@@ -1162,6 +1164,8 @@
 			global.admin_verbs_sounds=newval;
 		if("admin_verbs_spawn")
 			global.admin_verbs_spawn=newval;
+		if("adminhelp_ignored_words")
+			global.adminhelp_ignored_words=newval;
 		if("adminlog")
 			global.adminlog=newval;
 		if("ai_list")
@@ -2079,6 +2083,7 @@
 	"admin_verbs_server",
 	"admin_verbs_sounds",
 	"admin_verbs_spawn",
+	"adminhelp_ignored_words",
 	"adminlog",
 	"ai_list",
 	"ai_status_emotions",
@@ -2387,7 +2392,6 @@
 	"rune_list",
 	"runtime_diary",
 	"same_wires",
-	"scrap_recipes",
 	"secondary_mode",
 	"secret_force_mode",
 	"send_emergency_team",

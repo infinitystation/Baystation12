@@ -45,34 +45,34 @@
 
 	var/base_color = paint_color ? paint_color : material.icon_colour
 	if(!density)
-		I = image(src.icon, "[material.icon_base]fwall_open")
+		I = image('icons/turf/wall_masks.dmi', "[material.icon_base]fwall_open")
 		I.color = base_color
 		overlays += I
 		return
 
 	for(var/i = 1 to 4)
 		if(other_connections[i] != "0")
-			I = image(src.icon, "[material.icon_base]_other[wall_connections[i]]", dir = 1<<(i-1))
+			I = image('icons/turf/wall_masks.dmi', "[material.icon_base]_other[wall_connections[i]]", dir = 1<<(i-1))
 		else
-			I = image(src.icon, "[material.icon_base][wall_connections[i]]", dir = 1<<(i-1))
+			I = image('icons/turf/wall_masks.dmi', "[material.icon_base][wall_connections[i]]", dir = 1<<(i-1))
 		I.color = base_color
 		overlays += I
 
 	if(reinf_material)
 		var/reinf_color = paint_color ? paint_color : reinf_material.icon_colour
 		if(construction_stage != null && construction_stage < 6)
-			I = image(src.icon, "reinf_construct-[construction_stage]")
+			I = image('icons/turf/wall_masks.dmi', "reinf_construct-[construction_stage]")
 			I.color = reinf_color
 			overlays += I
 		else
 			if("[reinf_material.icon_reinf]0" in icon_states('icons/turf/wall_masks.dmi'))
 				// Directional icon
 				for(var/i = 1 to 4)
-					I = image(src.icon, "[reinf_material.icon_reinf][wall_connections[i]]", dir = 1<<(i-1))
+					I = image('icons/turf/wall_masks.dmi', "[reinf_material.icon_reinf][wall_connections[i]]", dir = 1<<(i-1))
 					I.color = reinf_color
 					overlays += I
 			else
-				I = image(src.icon, reinf_material.icon_reinf)
+				I = image('icons/turf/wall_masks.dmi', reinf_material.icon_reinf)
 				I.color = reinf_color
 				overlays += I
 
