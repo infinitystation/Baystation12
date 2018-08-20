@@ -17,7 +17,6 @@
 /turf/simulated/floor/plating,
 /area/space)
 "ae" = (
-/obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -27,6 +26,7 @@
 	name = "External Blast Doors";
 	opacity = 0
 	},
+/obj/effect/wallframe_spawn/reinforced/hull,
 /turf/simulated/floor/plating,
 /area/ship/scrap/top/den)
 "af" = (
@@ -628,7 +628,7 @@
 /turf/simulated/floor/tiled,
 /area/ship/scrap/top/hallway/port)
 "bU" = (
-/obj/effect/wingrille_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 2;
@@ -1176,7 +1176,6 @@
 /turf/simulated/open,
 /area/ship/scrap/top/hallway/starbound)
 "cX" = (
-/obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -1186,6 +1185,7 @@
 	name = "External Blast Doors";
 	opacity = 0
 	},
+/obj/effect/wallframe_spawn/reinforced/hull,
 /turf/simulated/floor/plating,
 /area/ship/scrap/top/research)
 "cY" = (
@@ -1230,7 +1230,6 @@
 /turf/simulated/wall/prepainted,
 /area/ship/scrap/top/hallway/aft)
 "df" = (
-/obj/effect/paint/brown,
 /turf/simulated/wall/r_wall/hull,
 /area/ship/scrap/top/robotics)
 "dg" = (
@@ -1319,9 +1318,6 @@
 "dp" = (
 /obj/machinery/organ_printer/robot/mapped,
 /turf/simulated/floor/tiled,
-/area/ship/scrap/top/robotics)
-"dq" = (
-/turf/simulated/wall/r_wall/prepainted,
 /area/ship/scrap/top/robotics)
 "dr" = (
 /obj/machinery/light_construct{
@@ -1509,7 +1505,6 @@
 /turf/simulated/floor/tiled,
 /area/ship/scrap/top/robotics)
 "dE" = (
-/obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -1519,6 +1514,7 @@
 	name = "External Blast Doors";
 	opacity = 0
 	},
+/obj/effect/wallframe_spawn/reinforced/hull,
 /turf/simulated/floor/plating,
 /area/ship/scrap/top/robotics)
 "dF" = (
@@ -1935,9 +1931,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating,
 /area/ship/scrap/top/hallway/aft)
-"es" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/ship/scrap/top/hallway/aft)
 "et" = (
 /obj/structure/girder,
 /turf/simulated/floor/airless,
@@ -2199,9 +2192,6 @@
 	},
 /turf/simulated/floor/airless,
 /area/ship/scrap/top/aft_solars)
-"eU" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/ship/scrap/top/aft_solars/control)
 "eV" = (
 /obj/structure/ladder,
 /turf/simulated/floor/plating,
@@ -2215,7 +2205,6 @@
 /turf/simulated/floor/airless,
 /area/space)
 "eY" = (
-/obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -2225,6 +2214,7 @@
 	name = "External Blast Doors";
 	opacity = 0
 	},
+/obj/effect/wallframe_spawn/reinforced/hull,
 /turf/simulated/floor/airless,
 /area/ship/scrap/top/aft_solars/control)
 "eZ" = (
@@ -2453,37 +2443,39 @@
 /obj/item/weapon/material/shard,
 /turf/simulated/floor/airless,
 /area/ship/scrap/top/aft_solars)
+"hd" = (
+/turf/simulated/wall/r_wall/hull,
+/area/ship/scrap/top/escape/starbound)
 "hQ" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/ship/scrap/top/hallway/starbound)
-"kM" = (
-/turf/simulated/wall/prepainted,
-/area/ship/scrap/top/robotics)
 "nh" = (
-/obj/effect/paint/brown,
 /turf/simulated/wall/r_wall/hull,
 /area/ship/scrap/top/hallway/aft)
-"uV" = (
-/obj/effect/paint/brown,
+"ov" = (
 /turf/simulated/wall/r_wall/hull,
 /area/ship/scrap/top/hallway/starbound)
-"vi" = (
-/obj/effect/paint/brown,
+"pq" = (
 /turf/simulated/wall/r_wall/hull,
-/area/space)
+/area/ship/scrap/top/aft_solars/control)
+"vi" = (
+/turf/simulated/wall/r_wall/hull,
+/area/ship/scrap/top/hallway/port)
 "zv" = (
 /obj/structure/lattice,
 /turf/simulated/open,
 /area/ship/scrap/top/hallway/port)
+"Hn" = (
+/turf/simulated/wall/r_wall/hull,
+/area/ship/scrap/top/den)
+"KD" = (
+/turf/simulated/wall/r_wall/hull,
+/area/ship/scrap/top/research)
 "PP" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/ship/scrap/top/hallway/port)
-"Uh" = (
-/obj/effect/paint/brown,
-/turf/simulated/wall/r_wall/hull,
-/area/ship/scrap/top/escape/starbound)
 "WI" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
@@ -4837,15 +4829,15 @@ aj
 aj
 aj
 aj
-vi
-vi
+KD
+KD
 aj
-vi
+KD
 aa
-vi
+KD
 aj
-vi
-vi
+KD
+KD
 aj
 aj
 eS
@@ -4919,15 +4911,15 @@ vi
 aj
 aa
 aj
-cI
-cI
+KD
+KD
 WI
-cI
+KD
 WI
-cI
+KD
 cX
-cI
-cJ
+KD
+KD
 et
 eE
 eS
@@ -4991,17 +4983,17 @@ aa
 aa
 ah
 vi
-aB
-aC
-aB
-aC
-aC
-aB
-aB
+vi
+vi
+vi
+vi
+vi
+vi
+vi
 bZ
 bZ
 bZ
-cJ
+KD
 cQ
 cY
 dg
@@ -5009,7 +5001,7 @@ dr
 dF
 dP
 dZ
-cJ
+KD
 eu
 eF
 eT
@@ -5073,7 +5065,7 @@ aa
 aa
 aj
 vi
-aC
+vi
 PP
 aM
 aC
@@ -5091,7 +5083,7 @@ ds
 dG
 dQ
 ea
-cI
+KD
 ev
 eG
 ev
@@ -5155,7 +5147,7 @@ aa
 aa
 aj
 vi
-aC
+vi
 aN
 aY
 aC
@@ -5173,7 +5165,7 @@ dt
 dH
 dR
 eb
-cI
+KD
 ev
 eH
 ev
@@ -5237,7 +5229,7 @@ aa
 ad
 af
 ad
-aB
+vi
 aC
 aZ
 aC
@@ -5255,7 +5247,7 @@ du
 db
 db
 db
-db
+nh
 ev
 eH
 ev
@@ -5337,10 +5329,10 @@ dv
 dI
 dS
 ec
-ep
-ep
+pq
+pq
 eI
-ep
+pq
 ev
 ev
 fc
@@ -5401,7 +5393,7 @@ aa
 aa
 al
 ap
-aC
+vi
 aP
 bb
 bm
@@ -5422,7 +5414,7 @@ ed
 ep
 ew
 eJ
-eU
+pq
 ev
 ev
 fa
@@ -5482,8 +5474,8 @@ aa
 aa
 aa
 ae
-at
-az
+Hn
+Hn
 az
 az
 bn
@@ -5504,7 +5496,7 @@ ee
 ep
 ep
 eK
-eU
+pq
 eX
 ev
 fa
@@ -5586,8 +5578,8 @@ ef
 ep
 ex
 eL
-ep
-ep
+pq
+pq
 ev
 fc
 fj
@@ -5750,8 +5742,8 @@ eh
 ep
 ez
 eN
-ep
-ep
+pq
+pq
 ev
 fc
 fh
@@ -5832,7 +5824,7 @@ ei
 ep
 ep
 eO
-eU
+pq
 eu
 ev
 fa
@@ -5914,7 +5906,7 @@ ef
 db
 eA
 eP
-es
+nh
 ev
 ev
 fc
@@ -5974,8 +5966,8 @@ aa
 aa
 aa
 ae
-az
-az
+Hn
+Hn
 az
 az
 br
@@ -5996,7 +5988,7 @@ ej
 db
 eB
 eQ
-es
+nh
 ev
 ev
 fc
@@ -6057,7 +6049,7 @@ aa
 aa
 ap
 af
-aH
+ov
 aT
 bf
 bs
@@ -6078,7 +6070,7 @@ ek
 er
 eC
 eR
-db
+nh
 ev
 ev
 fa
@@ -6160,7 +6152,7 @@ el
 db
 eD
 eA
-es
+nh
 ev
 ev
 fd
@@ -6221,7 +6213,7 @@ aa
 af
 ad
 ad
-aJ
+ov
 aJ
 bh
 aJ
@@ -6231,18 +6223,18 @@ aJ
 aJ
 cw
 aJ
-uV
-uV
+ov
+ov
 nh
 db
 dA
 db
 db
 db
-es
-db
-db
-db
+nh
+nh
+nh
+nh
 eX
 ev
 fe
@@ -6302,8 +6294,8 @@ aa
 aa
 aa
 ar
-vi
-aJ
+ov
+ov
 aV
 bi
 aJ
@@ -6313,7 +6305,7 @@ bW
 cj
 cx
 cH
-Uh
+hd
 aj
 df
 dn
@@ -6321,8 +6313,8 @@ dB
 dM
 dW
 em
-kM
-vi
+df
+df
 ev
 ev
 ev
@@ -6384,8 +6376,8 @@ aa
 aa
 aa
 aj
-vi
-aJ
+ov
+ov
 hQ
 aW
 aJ
@@ -6395,7 +6387,7 @@ bX
 ck
 ck
 ck
-Uh
+hd
 aa
 df
 do
@@ -6403,8 +6395,8 @@ dC
 dN
 dX
 en
-dq
-vi
+df
+df
 eE
 et
 eZ
@@ -6466,18 +6458,18 @@ aa
 aa
 aa
 aj
-vi
-aH
-aJ
-aH
-aJ
-aH
-aJ
-bW
+ov
+ov
+ov
+ov
+ov
+ov
+ov
+hd
 cl
 cl
 cl
-Uh
+hd
 aj
 df
 dp
@@ -6485,8 +6477,8 @@ dD
 dO
 dY
 eo
-dq
-vi
+df
+df
 aa
 aa
 aa
@@ -6548,27 +6540,27 @@ aa
 aa
 aa
 aa
-vi
-vi
-vi
-vi
-vi
-vi
-vi
-vi
+ov
+ov
+ov
+ov
+ov
+ov
+ov
+hd
 aj
 aa
 aj
-Uh
+hd
 aj
 df
-dq
+df
 dE
-dq
+df
 dE
-dq
-dq
-vi
+df
+df
+df
 aa
 aa
 aa
@@ -6643,14 +6635,14 @@ aa
 aa
 aa
 aa
-vi
-vi
+df
+df
 aj
-vi
+df
 aj
-vi
-vi
-vi
+df
+df
+df
 aa
 aa
 aa

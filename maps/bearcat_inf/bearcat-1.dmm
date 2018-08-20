@@ -47,19 +47,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/cargo/lower)
-"ai" = (
-/turf/simulated/wall/prepainted,
-/area/ship/scrap/escape_port)
 "aj" = (
 /obj/machinery/door/blast/regular{
 	dir = 2
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/escape_port)
-"ak" = (
-/obj/effect/paint/brown,
-/turf/simulated/wall/r_wall/hull,
-/area/ship/scrap/cargo/lower)
 "al" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	frequency = 1379;
@@ -106,12 +99,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/escape_star)
-"ar" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/ship/scrap/escape_star)
-"as" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/ship/scrap/escape_port)
 "at" = (
 /obj/machinery/cryopod/lifepod{
 	tag = "icon-redpod0 (NORTH)";
@@ -425,9 +412,6 @@
 "aX" = (
 /turf/simulated/wall/prepainted,
 /area/ship/scrap/crew/dorms1)
-"aY" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/ship/scrap/crew/dorms1)
 "aZ" = (
 /obj/machinery/conveyor{
 	dir = 10;
@@ -439,7 +423,8 @@
 /obj/structure/plasticflaps,
 /obj/machinery/conveyor{
 	dir = 8;
-	id = "mining_internal"
+	id = "mining_internal";
+	movedir = 8
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/ore_melting)
@@ -625,10 +610,6 @@
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/ship/scrap/ore_melting)
-"br" = (
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/turf/simulated/floor/plating,
-/area/ship/scrap/ore_melting)
 "bs" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -676,6 +657,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/mining/drill,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/cargo/lower)
 "bw" = (
@@ -683,6 +665,7 @@
 	icon_state = "6-8"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/mining/brace,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/cargo/lower)
 "bx" = (
@@ -802,7 +785,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/ship/scrap/crew/dorms1)
 "bH" = (
-/obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
@@ -811,14 +793,12 @@
 	name = "External Blast Doors";
 	opacity = 0
 	},
+/obj/effect/wallframe_spawn/reinforced/hull,
 /turf/simulated/floor/plating,
 /area/ship/scrap/crew/dorms1)
 "bI" = (
 /obj/machinery/mineral/processing_unit,
 /turf/simulated/floor/plating,
-/area/ship/scrap/ore_melting)
-"bJ" = (
-/turf/simulated/wall/prepainted,
 /area/ship/scrap/ore_melting)
 "bK" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -1128,16 +1108,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/maintenance/lower)
-"cn" = (
-/obj/machinery/conveyor{
-	dir = 1;
-	id = "mining_internal"
-	},
-/turf/simulated/floor/plating,
-/area/ship/scrap/ore_melting)
-"co" = (
-/turf/simulated/wall/prepainted,
-/area/ship/scrap/ore_melting)
 "cp" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/power/apc{
@@ -1285,17 +1255,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/ship/scrap/crew/dorms2)
 "cB" = (
-/turf/simulated/wall/r_wall/prepainted,
+/turf/simulated/wall/r_wall/hull,
 /area/ship/scrap/crew/dorms2)
 "cC" = (
 /obj/machinery/conveyor{
 	dir = 6;
 	id = "mining_internal"
 	},
-/turf/simulated/floor/plating,
-/area/ship/scrap/ore_melting)
-"cD" = (
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
 /area/ship/scrap/ore_melting)
 "cE" = (
@@ -1444,7 +1410,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/ship/scrap/crew/dorms2)
 "cT" = (
-/obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
@@ -1453,6 +1418,7 @@
 	name = "External Blast Doors";
 	opacity = 0
 	},
+/obj/effect/wallframe_spawn/reinforced/hull,
 /turf/simulated/floor/plating,
 /area/ship/scrap/crew/dorms2)
 "cU" = (
@@ -1808,7 +1774,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/ship/scrap/crew/wash)
 "dC" = (
-/obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
@@ -1817,6 +1782,7 @@
 	name = "External Blast Doors";
 	opacity = 0
 	},
+/obj/effect/wallframe_spawn/reinforced/hull,
 /turf/simulated/floor/plating,
 /area/ship/scrap/security)
 "dD" = (
@@ -2023,7 +1989,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/ship/scrap/crew/wash)
 "dT" = (
-/obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
@@ -2032,6 +1997,7 @@
 	name = "External Blast Doors";
 	opacity = 0
 	},
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/ship/scrap/crew/wash)
 "dU" = (
@@ -2281,9 +2247,6 @@
 /obj/item/weapon/mop,
 /turf/simulated/floor/plating,
 /area/ship/scrap/maintenance/lower)
-"eq" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/ship/scrap/maintenance/techstorage)
 "er" = (
 /obj/item/weapon/stock_parts/console_screen,
 /obj/item/weapon/stock_parts/console_screen,
@@ -2329,7 +2292,6 @@
 /turf/simulated/wall/prepainted,
 /area/ship/scrap/maintenance/eva)
 "ex" = (
-/obj/effect/paint/brown,
 /turf/simulated/wall/r_wall/hull,
 /area/ship/scrap/maintenance/eva)
 "ey" = (
@@ -2977,10 +2939,9 @@
 /turf/simulated/floor/tiled,
 /area/ship/scrap/maintenance/eva)
 "fC" = (
-/turf/simulated/wall/r_wall/prepainted,
+/turf/simulated/wall/r_wall/hull,
 /area/ship/scrap/maintenance/storage)
 "fD" = (
-/obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 2;
@@ -2989,6 +2950,7 @@
 	name = "External Blast Doors";
 	opacity = 0
 	},
+/obj/effect/wallframe_spawn/reinforced/hull,
 /turf/simulated/floor,
 /area/ship/scrap/maintenance/storage)
 "fE" = (
@@ -2999,21 +2961,35 @@
 /turf/simulated/wall/prepainted,
 /area/ship/scrap/cargo/lower)
 "iV" = (
-/obj/effect/paint/brown,
 /turf/simulated/wall/r_wall/hull,
-/area/space)
-"ou" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/ship/scrap/maintenance/eva)
-"Et" = (
-/obj/effect/paint/brown,
+/area/ship/scrap/escape_port)
+"nL" = (
 /turf/simulated/wall/r_wall/hull,
-/area/ship/scrap/crew/wash)
+/area/ship/scrap/maintenance/techstorage)
+"yD" = (
+/obj/machinery/computer/mining,
+/turf/simulated/wall/prepainted,
+/area/ship/scrap/ore_melting)
+"AQ" = (
+/turf/simulated/wall/r_wall/hull,
+/area/ship/scrap/ore_melting)
 "SF" = (
 /turf/simulated/wall/prepainted,
 /area/ship/scrap/escape_star)
+"Tb" = (
+/turf/simulated/wall/r_wall/hull,
+/area/ship/scrap/crew/dorms1)
+"Tu" = (
+/turf/simulated/wall/r_wall/hull,
+/area/ship/scrap/cargo/lower)
+"WF" = (
+/turf/simulated/wall/r_wall/hull,
+/area/ship/scrap/escape_star)
+"XB" = (
+/turf/simulated/wall/r_wall/hull,
+/area/ship/scrap/security)
 "ZW" = (
-/turf/simulated/wall/r_wall/prepainted,
+/turf/simulated/wall/r_wall/hull,
 /area/ship/scrap/crew/wash)
 
 (1,1,1) = {"
@@ -5269,21 +5245,21 @@ aa
 aa
 aa
 aa
-iV
-iV
-iV
-iV
-iV
-iV
-iV
-iV
-iV
-iV
-iV
+AQ
+AQ
+AQ
+AQ
+AQ
+AQ
+AQ
+AQ
+XB
+XB
+XB
 aa
-iV
-iV
-iV
+XB
+XB
+nL
 aa
 aa
 aa
@@ -5351,21 +5327,21 @@ aa
 aa
 aa
 aa
-iV
-aO
-aO
-aO
-aO
-aO
-aO
-aO
-cU
-cU
-cU
+AQ
+AQ
+AQ
+AQ
+AQ
+AQ
+AQ
+AQ
+XB
+XB
+XB
 dC
-cU
-cU
-iV
+XB
+XB
+nL
 aa
 aa
 aa
@@ -5433,26 +5409,26 @@ aa
 iV
 iV
 iV
-iV
-aO
+AQ
+AQ
 aZ
 bp
 bI
 ca
-cn
+ca
 cC
 cU
 dc
 dn
 dD
 dU
-cU
-iV
-iV
-iV
-iV
-iV
-iV
+XB
+nL
+nL
+nL
+nL
+nL
+nL
 aa
 aa
 aa
@@ -5513,28 +5489,28 @@ aa
 aa
 aa
 iV
-ai
-as
-ai
-aO
+iV
+iV
+iV
+AQ
 ba
 bq
-bJ
+yD
 bq
 bq
-cD
+bp
 cU
 dd
 do
 dE
 dV
-cU
-eq
-eq
-eq
-eq
-eq
-iV
+XB
+nL
+nL
+nL
+nL
+nL
+nL
 aa
 aa
 aa
@@ -5603,7 +5579,7 @@ bb
 bq
 bK
 cb
-co
+yD
 cE
 cU
 de
@@ -5615,8 +5591,8 @@ er
 ey
 eL
 fd
-eq
-iV
+nL
+nL
 aa
 aa
 aa
@@ -5682,7 +5658,7 @@ at
 aC
 aO
 bc
-br
+bp
 bL
 cc
 cp
@@ -5697,8 +5673,8 @@ es
 ez
 eM
 fe
-eq
-iV
+nL
+nL
 aa
 aa
 aa
@@ -5779,9 +5755,9 @@ et
 eA
 eN
 ff
-eq
-iV
-iV
+nL
+nL
+nL
 aa
 aa
 aa
@@ -5861,9 +5837,9 @@ et
 et
 eO
 et
-eq
-fC
-iV
+nL
+nL
+nL
 aa
 aa
 aa
@@ -5922,9 +5898,9 @@ aa
 aa
 aa
 aa
-iV
-ak
-ak
+Tu
+Tu
+Tu
 an
 hK
 hK
@@ -5945,7 +5921,7 @@ eP
 fg
 ft
 fC
-iV
+fC
 aa
 aa
 aa
@@ -6027,7 +6003,7 @@ eQ
 fh
 fu
 fC
-iV
+fC
 aa
 aa
 aa
@@ -6191,7 +6167,7 @@ eS
 fj
 fw
 fC
-iV
+fC
 aa
 aa
 aa
@@ -6251,8 +6227,8 @@ aa
 aa
 ag
 ag
-ak
-an
+Tu
+Tu
 an
 aU
 bh
@@ -6273,7 +6249,7 @@ eT
 fk
 fx
 fC
-iV
+fC
 aa
 aa
 aa
@@ -6354,8 +6330,8 @@ ew
 eU
 ew
 ew
-ew
-iV
+ex
+ex
 aa
 aa
 aa
@@ -6436,8 +6412,8 @@ eG
 eV
 fl
 fy
-ew
-iV
+ex
+ex
 aa
 aa
 aa
@@ -6496,9 +6472,9 @@ aa
 aa
 aa
 aa
-iV
-ak
-hK
+Tu
+Tu
+Tu
 hK
 hK
 hK
@@ -6518,8 +6494,8 @@ eH
 eW
 fm
 fz
-ou
-iV
+ex
+ex
 aa
 aa
 aa
@@ -6600,8 +6576,8 @@ eI
 eX
 fn
 fA
-ou
-iV
+ex
+ex
 aa
 aa
 aa
@@ -6682,8 +6658,8 @@ eJ
 eY
 fo
 fB
-ou
-iV
+ex
+ex
 aa
 aa
 aa
@@ -6758,14 +6734,14 @@ cx
 dy
 dP
 dy
-Et
+ZW
 ex
 ex
 eZ
 fp
-ew
-ou
-iV
+ex
+ex
+ex
 aa
 aa
 aa
@@ -6840,14 +6816,14 @@ cx
 dz
 dQ
 eb
-Et
+ZW
 aa
 ex
 fa
 fq
-ou
-iV
-iV
+ex
+ex
+ex
 aa
 aa
 aa
@@ -6906,11 +6882,11 @@ aa
 aa
 aa
 aa
-iV
-ar
-ar
-ar
-aX
+WF
+WF
+WF
+WF
+Tb
 bn
 bF
 bY
@@ -6922,13 +6898,13 @@ cx
 dA
 dR
 ec
-Et
+ZW
 aa
 ex
 fb
 fr
-ew
-iV
+ex
+ex
 aa
 aa
 aa
@@ -6988,11 +6964,11 @@ aa
 aa
 aa
 aa
-iV
-iV
-iV
-iV
-aY
+WF
+WF
+WF
+WF
+Tb
 bo
 bG
 bZ
@@ -7004,13 +6980,13 @@ cx
 dB
 dS
 ed
-Et
+ZW
 aa
 ex
 fc
 fs
-ew
-iV
+ex
+ex
 aa
 aa
 aa
@@ -7073,12 +7049,12 @@ aa
 aa
 aa
 aa
-iV
-aY
-aY
+Tb
+Tb
+Tb
 bH
-aX
-aY
+Tb
+Tb
 cB
 cT
 cB
@@ -7086,7 +7062,7 @@ cB
 ZW
 dT
 ZW
-Et
+ZW
 aa
 eK
 aa
@@ -7155,20 +7131,20 @@ aa
 aa
 aa
 aa
-iV
-iV
-iV
+Tb
+Tb
+Tb
 aa
-iV
-iV
-iV
+Tb
+Tb
+cB
 aa
-iV
-iV
-iV
+cB
+cB
+ZW
 aa
-iV
-iV
+ZW
+ZW
 aa
 aa
 aa
