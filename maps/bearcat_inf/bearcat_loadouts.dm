@@ -78,39 +78,11 @@
 //Weapons//
 ///////////
 
-
-/datum/gear/accessory/guns
-	display_name = "guns"
-	sort_category = "Utility"
-	cost = 5
-	path = /obj/item/weapon/gun/projectile/
-
-/datum/gear/accessory/guns/New()
-	..()
-	var/guns = list()
-	guns["holdout pistol"] = /obj/item/weapon/gun/projectile/pistol
-	guns[".45 pistol"] = /obj/item/weapon/gun/projectile/sec/lethal
-	gear_tweaks += new/datum/gear_tweak/path(guns)
-
-/datum/gear/accessory/ammo
-	display_name = "guns ammo"
-	sort_category = "Utility"
-	cost = 2
-	path = /obj/item/ammo_magazine
-
-/datum/gear/accessory/ammo/New()
-	..()
-	var/ammo = list()
-	ammo["holdout pistol ammo"] = /obj/item/ammo_magazine/mc9mm
-	ammo[".45 pistol ammo"] = /obj/item/ammo_magazine/c45m
-	gear_tweaks += new/datum/gear_tweak/path(ammo)
-
 /datum/gear/accessory/boot_knife
 	display_name = "boot knife"
 	sort_category = "Utility"
 	path = /obj/item/weapon/material/kitchen/utensil/knife/boot
 	cost = 3
-
 
 /datum/gear/accessory
 	display_name = "locket"
