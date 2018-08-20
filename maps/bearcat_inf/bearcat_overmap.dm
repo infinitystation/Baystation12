@@ -1,49 +1,28 @@
-/datum/map/bearcat
-	name = "Bearcat"
-	full_name = "Bearcat"
-	path = "bearcat_inf"
+/obj/effect/overmap/ship/bearcat
+	name = "FTV Bearcat"
+	color = "#00ffff"
+	start_x = 4
+	start_y = 4
+	base = 1
+	vessel_mass = 60
+	default_delay = 2 MINUTES
+	speed_mod = 0.25 MINUTE
+	burn_delay = 10 SECONDS
 
-	station_name  = "FTV Bearcat"
-	station_short = "Bearcat"
+	initial_generic_waypoints = list(
+		"nav_bearcat_below_bow",
+		"bearcat_starboard_dock",
+		"bearcat_dock_port",
+		"nav_bearcat_starboard_dock_pod",
+		"nav_bearcat_port_dock_shuttle",
+		"nav_bearcat_below_starboardastern",
+		"nav_skipjack_deck1",
+		"nav_skipjack_deck2",
+		"nav_skipjack_deck3",
+		"nav_skipjack_dock"
+		)
 
-	dock_name     = "FTS Capitalist's Rest"
-	boss_name     = "FTU Merchant Navy"
-	boss_short    = "Merchant Admiral"
-	company_name  = "Legit Cargo Ltd."
-	company_short = "LC"
-	overmap_event_areas = 11
-/*
-	station_levels = list(1,2,3)
-	contact_levels = list(1,2,3)
-	admin_levels = list(6)
-*/
-	evac_controller_type = /datum/evacuation_controller/lifepods
-	lobby_icon = 'maps/bearcat_inf/bearcat_lobby.dmi'
-	lobby_screens = list("spess","aesthetic")
-
-	allowed_spawns = list("Cryogenic Storage")
-	default_spawn = "Cryogenic Storage"
-	use_overmap = 1
-	num_exoplanets = 2
-	away_site_budget = 2
-	welcome_sound = 'sound/effects/cowboysting.ogg'
-
-	emergency_shuttle_leaving_dock = "Внимание всему экипажу: спасательные капсулы запущены, до удаления на безопасную дистанцию осталось %ETA%."
-
-	emergency_shuttle_called_message = "Внимание всему экипажу: начата аварийная эвакуация судна. Спасательные капсулы будут готовы к отбытию через %ETA%."
-	emergency_shuttle_called_sound = sound('sound/AI/torch/abandonship.ogg', volume = 45)
-
-	emergency_shuttle_recall_message = "Внимание всему экипажу: аварийная эвакуация судна отменена. Возвращайтесь к работе."
-
-	starting_money = 5000
-	department_money = 0
-	salary_modifier = 0.2
-
-/datum/map/bearcat/map_info(victim)
-	to_chat(victim, "Вы находитесь на борту <b>[station_name]</b>, независимого дочернего судна Свободного Торгового Союза на границе исследованного космоса. На насто&#255;щий момент, межзвездные корпорации и государства не включили в свою зону вли&#255;ни&#255; планеты и астероиды в данном секторе, так что, исследуйте и наживайтесь сколько влезет - добывайте минералы; истребл&#255;йте экзотическую флору и фауну; присваивайте себе всё, что плохо лежит. И постарайтесь, чтобы местные пираты (или что похуже) не наживилась на вас.")
-
-/datum/map/bearcat/setup_map()
-	..()
-	SStrade.traders += new /datum/trader/xeno_shop
-	SStrade.traders += new /datum/trader/medical
-	SStrade.traders += new /datum/trader/mining
+	initial_restricted_waypoints = list(
+		"Exploration Pod" = list("nav_bearcat_starboard_dock_pod"),
+		"Exploration Shuttle" = list("nav_bearcat_port_dock_shuttle")
+		)
