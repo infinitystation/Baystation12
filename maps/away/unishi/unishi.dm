@@ -31,8 +31,7 @@
 	id = "awaysite_unishi"
 	description = "CTI research ship.."
 	suffixes = list("unishi/unish-1.dmm", "unishi/unish-2.dmm", "unishi/unish-3.dmm")
-	cost = 2
-
+	cost = 1
 
 /obj/effect/shuttle_landmark/nav_unishi/nav1
 	name = "CTI Research Vessel Deck 1 Port"

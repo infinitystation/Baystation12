@@ -41,7 +41,7 @@ obj/effect/icarus/irradiate/Destroy()
 	id = "awaysite_icarus"
 	description = "The crashlanding site of the SEV Icarus."
 	suffixes = list("icarus/icarus-1.dmm", "icarus/icarus-2.dmm")
-	cost = 2
+	cost = 1
 
 /obj/effect/shuttle_landmark/nav_icarus/nav1
 	name = "Planetary Navpoint #1"

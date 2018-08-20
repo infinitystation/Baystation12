@@ -23,7 +23,7 @@
 	id = "awaysite_yach"
 	description = "Tiny movable ship with spiders."
 	suffixes = list("yacht/yacht.dmm")
-	cost = 0.5
+	cost = 1
 
 /obj/effect/shuttle_landmark/nav_yacht/nav1
 	name = "Small Yacht Navpoint #1"

@@ -18,7 +18,7 @@
 	description = "Yarr."
 	prefix = "maps/away_inf/"
 	suffixes = list("smugglers/smugglers.dmm")
-	cost = 0.5
+	cost = 1
 
 /obj/effect/shuttle_landmark/nav_asteroid_base/nav1
 	name = "Abandoned Asteroid Base Navpoint #1"
