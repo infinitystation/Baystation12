@@ -253,9 +253,9 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	pda_type = /obj/item/modular_computer/pda/heads/ce
 	l_hand = /obj/item/device/radio
+	r_hand = /obj/item/weapon/gun/projectile/sec/lethal
 	belt = /obj/item/weapon/storage/belt/utility/full
 	id_type = /obj/item/weapon/card/id/engineering/head
-	r_pocket = /obj/item/weapon/gun/projectile/sec/lethal
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/bearcat/doc
@@ -271,7 +271,7 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/silver
 	glasses = /obj/item/clothing/glasses/sunglasses/big
-	r_pocket = /obj/item/weapon/gun/projectile/sec/lethal
+	r_hand = /obj/item/weapon/gun/projectile/sec/lethal
 	l_hand = /obj/item/weapon/clipboard
 
 /decl/hierarchy/outfit/job/bearcat/roboticist
@@ -295,7 +295,7 @@
 	shoes = /obj/item/clothing/shoes/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_hand = /obj/item/weapon/clipboard
-	r_pocket = /obj/item/weapon/gun/projectile/sec/lethal
+	r_hand = /obj/item/weapon/gun/projectile/sec/lethal
 	id_type = /obj/item/weapon/card/id/cargo/head
 
 /decl/hierarchy/outfit/job/bearcat/security
@@ -307,7 +307,7 @@
 	head = /obj/item/clothing/head/warden
 	id_type = /obj/item/weapon/card/id/security
 	r_hand = /obj/item/device/radio
-	r_pocket = /obj/item/weapon/gun/projectile/sec/lethal
+	l_hand = /obj/item/weapon/gun/projectile/sec/lethal
 	suit = /obj/item/clothing/suit/armor/pcarrier/medium
 	gloves = /obj/item/clothing/gloves/thick
 
