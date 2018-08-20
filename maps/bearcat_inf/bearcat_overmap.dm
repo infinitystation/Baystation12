@@ -1,7 +1,7 @@
-/datum/map/overmap_example
+/datum/map/bearcat
 	name = "Bearcat"
 	full_name = "Bearcat"
-	path = "overmap_example"
+	path = "bearcat_inf"
 
 	station_name  = "FTV Bearcat"
 	station_short = "Bearcat"
@@ -24,24 +24,25 @@
 	allowed_spawns = list("Cryogenic Storage")
 	default_spawn = "Cryogenic Storage"
 	use_overmap = 1
-	num_exoplanets = 0
+	num_exoplanets = 2
+	away_site_budget = 2
 	welcome_sound = 'sound/effects/cowboysting.ogg'
 
-	emergency_shuttle_leaving_dock = "Attention all hands: the escape pods have been launched, maintaining burn for %ETA%."
+	emergency_shuttle_leaving_dock = "Внимание всему экипажу: спасательные капсулы запущены, до удаления на безопасную дистанцию осталось %ETA%."
 
-	emergency_shuttle_called_message = "Attention all hands: emergency evacuation procedures are now in effect. Escape pods will launch in %ETA%"
+	emergency_shuttle_called_message = "Внимание всему экипажу: начата аварийная эвакуация судна. Спасательные капсулы будут готовы к отбытию через %ETA%."
 	emergency_shuttle_called_sound = sound('sound/AI/torch/abandonship.ogg', volume = 45)
 
-	emergency_shuttle_recall_message = "Attention all hands: emergency evacuation sequence aborted. Return to normal operating conditions."
+	emergency_shuttle_recall_message = "Внимание всему экипажу: аварийная эвакуация судна отменена. Возвращайтесь к работе."
 
 	starting_money = 5000
 	department_money = 0
 	salary_modifier = 0.2
 
-/datum/map/overmap_example/map_info(victim)
-	to_chat(victim, "You're aboard the <b>[station_name],</b> an independent vessel affiliated with Free Trade Union, on a SPACE FRONTIER. No major corporation or government has laid claim on the planets in this sector, so their exploitation is entirely up to you - mine, poach and deforest all you want.")
+/datum/map/bearcat/map_info(victim)
+	to_chat(victim, "Вы находитесь на борту <b>[station_name]</b>, независимого дочернего судна Свободного Торгового Союза на границе исследованного космоса. На насто&#255;щий момент, межзвездные корпорации и государства не включили в свою зону вли&#255;ни&#255; планеты и астероиды в данном секторе, так что, исследуйте и наживайтесь сколько влезет - добывайте минералы; истребл&#255;йте экзотическую флору и фауну; присваивайте себе всё, что плохо лежит. И постарайтесь, чтобы местные пираты (или что похуже) не наживилась на вас.")
 
-/datum/map/overmap_example/setup_map()
+/datum/map/bearcat/setup_map()
 	..()
 	SStrade.traders += new /datum/trader/xeno_shop
 	SStrade.traders += new /datum/trader/medical
