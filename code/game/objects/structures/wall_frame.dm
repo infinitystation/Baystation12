@@ -142,6 +142,9 @@
 /obj/structure/wall_frame/osmium
 	color = "#9bc6f2"
 
+/obj/structure/wall_frame/voxalloy
+	color = "#6c7364"
+
 /obj/structure/wall_frame/prepainted
 	color = "#545c68"
 
