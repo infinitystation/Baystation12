@@ -47,6 +47,7 @@
 	display_name = "holster selection"
 	sort_category = "Utility"
 	path = /obj/item/clothing/accessory/storage/holster
+	allowed_roles = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/hop, /datum/job/officer, /datum/job/qm)
 	cost = 1
 
 /datum/gear/accessory/holster/New()
@@ -107,11 +108,6 @@
 	path = /obj/item/clothing/accessory/toggleable/zhongshan
 	flags = GEAR_HAS_COLOR_SELECTION
 
-/datum/gear/accessory/dashiki
-	display_name = "dashiki selection"
-	path = /obj/item/clothing/accessory/dashiki
-	flags = GEAR_HAS_TYPE_SELECTION
-
 /datum/gear/accessory/thawb
 	display_name = "thawb"
 	path = /obj/item/clothing/accessory/thawb
@@ -149,12 +145,6 @@
 	display_name = "bowtie, colored"
 	path = /obj/item/clothing/accessory/bowtie/color
 	flags = GEAR_HAS_COLOR_SELECTION
-
-/datum/gear/accessory/holster
-	display_name = "holster selection"
-	path = /obj/item/clothing/accessory/storage/holster
-	cost = 2
-	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/tie
 	display_name = "tie selection"
@@ -395,7 +385,6 @@
 	var/boots = list()
 	boots["jackboots"] = /obj/item/clothing/shoes/jackboots
 	boots["workboots"] = /obj/item/clothing/shoes/workboots
-	boots["duty boots"] = /obj/item/clothing/shoes/dutyboots
 	boots["jungle boots"] = /obj/item/clothing/shoes/jungleboots
 	boots["desert boots"] = /obj/item/clothing/shoes/desertboots
 	gear_tweaks += new/datum/gear_tweak/path(boots)
@@ -419,7 +408,7 @@
 	shoes["red shoes"] = /obj/item/clothing/shoes/red
 	shoes["white shoes"] = /obj/item/clothing/shoes/white
 	shoes["yellow shoes"] = /obj/item/clothing/shoes/yellow
-	gear_tweaks += new/datum/gear_tweak/path(shoes)
+	gear_tweaks += new/datum/gear_tweak/path(shoes_color)
 
 /datum/gear/shoes/flats
 	display_name = "flats"
