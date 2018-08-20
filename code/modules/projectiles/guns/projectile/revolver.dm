@@ -50,7 +50,7 @@
 	icon_state = "mateba"
 	desc = "A curious specimen of rare automatic revolver occasionaly used in special forces and mostly known as a weapon of choice of any hardboiled detective in noir movies. Use .50AE rounds."
 	caliber = ".50"
-	fire_delay = 5.0 
+	fire_delay = 5.0
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/a50
 
@@ -161,3 +161,21 @@
 	caliber = "shotgun"
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/shotgun
+
+/obj/item/weapon/gun/projectile/revolver/revrifle
+	name = "pfeifer zeliska"
+	desc = "\"One shot\" revolver.  "
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "revrifle"
+	item_icons = list(
+		slot_l_hand_str = 'icons/mob/onmob/items/infinity_items/lefthand_revrifle.dmi',
+		slot_r_hand_str = 'icons/mob/onmob/items/infinity_items/righthand_revrifle.dmi',
+		)
+	item_state = "revrifle"
+	max_shells = 5
+	fire_delay = 7
+	force = 10
+	caliber = "nitro600"
+	w_class = ITEM_SIZE_LARGE
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
+	ammo_type = /obj/item/ammo_casing/nitro600
