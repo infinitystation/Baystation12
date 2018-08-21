@@ -46,3 +46,31 @@
 	var/transit_state = (world.maxx - src.x + y_shift)%15 + 1
 
 	icon_state = "speedspace_ew_[transit_state]"
+
+/turf/space/transit/west // moving to the west
+	pushdirection = EAST
+	var/static/list/phase_shift_by_y
+
+/turf/space/transit/west/New()
+	..()
+	if(!phase_shift_by_y)
+		phase_shift_by_y = get_cross_shift_list(15)
+
+	var/y_shift = phase_shift_by_y[src.y % (phase_shift_by_y.len - 1) + 1]
+	var/transit_state = (world.maxx - src.x + y_shift)%15 - 1
+
+	icon_state = "speedspace_ww_[transit_state]"
+
+/turf/space/transit/south // moving to the north
+	pushdirection = NORTH  // south because the space tile is scrolling south
+	var/static/list/phase_shift_by_x
+
+/turf/space/transit/south/Initialize()
+	. = ..()
+	if(!phase_shift_by_x)
+		phase_shift_by_x = get_cross_shift_list(15)
+
+	var/x_shift = phase_shift_by_x[src.x % (phase_shift_by_x.len - 1) + 1]
+	var/transit_state = (world.maxy - src.y + x_shift)%15 - 1
+
+	icon_state = "speedspace_ss_[transit_state]"
