@@ -1,7 +1,7 @@
 /datum/map/sierra
 	species_to_job_whitelist = list(
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/chemist,
-		/datum/job/roboticist, /datum/job/cargo_contractor, /datum/job/chef, /datum/job/engineer_contractor, /datum/job/doctor_contractor, /datum/job/bartender),
+		/datum/job/roboticist, /datum/job/cargo, /datum/job/chef, /datum/job/engineer, /datum/job/doctor, /datum/job/bartender),
 		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/stowaway)
 	)
 
@@ -11,23 +11,23 @@
 		/datum/species/skrell  = list(HUMAN_ONLY_JOBS),
 		/datum/species/tajaran = list(HUMAN_ONLY_JOBS),
 		/datum/species/machine = list(HUMAN_ONLY_JOBS),
-		/datum/species/resomi  = list(HUMAN_ONLY_JOBS, /datum/job/liaison, /datum/job/officer, /datum/job/guard),
-		/datum/species/diona   = list(HUMAN_ONLY_JOBS, /datum/job/guard, /datum/job/officer),	//Other jobs unavailable via branch restrictions,
+		/datum/species/resomi  = list(HUMAN_ONLY_JOBS, /datum/job/liaison, /datum/job/officer),
+		/datum/species/diona   = list(HUMAN_ONLY_JOBS, /datum/job/officer),	//Other jobs unavailable via branch restrictions,
 	)
 #undef HUMAN_ONLY_JOBS
 
 	allowed_jobs = list(/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,
-						/datum/job/liaison, /datum/job/representative, /datum/job/sea,
-						/datum/job/bridgeofficer, /datum/job/pathfinder, /datum/job/explorer,
-						/datum/job/senior_engineer, /datum/job/engineer, /datum/job/engineer_contractor, /datum/job/roboticist, /datum/job/engineer_trainee,
+						/datum/job/liaison, /datum/job/representative
+						/datum/job/pathfinder, /datum/job/explorer,
+						/datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/engineer_trainee,
 						/datum/job/officer, /datum/job/warden, /datum/job/detective,
-						/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_contractor,/datum/job/chemist, /datum/job/medical_trainee,
+						/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_contractor,/datum/job/chemist,
 						/datum/job/psychiatrist,
-						/datum/job/qm, /datum/job/cargo_tech, /datum/job/cargo_contractor,
+						/datum/job/qm, /datum/job/cargo_tech, /datum/job/cargo_assistant,
 						/datum/job/janitor, /datum/job/chef, /datum/job/bartender,
-						/datum/job/senior_scientist, /datum/job/nt_pilot, /datum/job/scientist, /datum/job/mining, /datum/job/guard, /datum/job/scientist_assistant,
+						/datum/job/senior_scientist, /datum/job/nt_pilot, /datum/job/scientist, /datum/job/mining, /datum/job/scientist_assistant,
 						/datum/job/ai, /datum/job/cyborg,
-						/datum/job/crew, /datum/job/assistant,
+						/datum/job/assistant,
 						/datum/job/merchant, /datum/job/stowaway
 						)
 
@@ -47,7 +47,7 @@
 				species_blacklist |= job.type
 
 /datum/job/captain
-	title = "Commanding Officer"
+	title = "Captain"
 	department = "Command"
 	supervisors = "the Sol Central Government and the Sol Code of Military Justice"
 	department_flag = COM
@@ -76,11 +76,11 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/captain/get_description_blurb()
-	return "You are the Commanding Officer. You are the top dog. You are an experienced professional officer in control of an entire ship, and ultimately responsible for all that happens onboard. Your job is to make sure [GLOB.using_map.full_name] fulfils its space exploration mission. Delegate to your Executive Officer, your department heads, and your Senior Enlisted Advisor to effectively manage the ship, and listen to and trust their expertise."
+	return "You are the Captain. You are the top dog. You are an experienced professional officer in control of an entire ship, and ultimately responsible for all that happens onboard. Your job is to make sure [GLOB.using_map.full_name] fulfils its space exploration mission. Delegate to your Personnel Manager, your department heads, and your Senior Enlisted Advisor to effectively manage the ship, and listen to and trust their expertise."
 
 /datum/job/hop
-	title = "Executive Officer"
-	supervisors = "the Commanding Officer"
+	title = "Personnel Manager"
+	supervisors = "the Captain"
 	department = "Command"
 	department_flag = COM
 	head_position = 1
@@ -131,11 +131,11 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/hop/get_description_blurb()
-	return "You are the Executive Officer. You are an experienced senior officer, second in command of the ship, and are responsible for the smooth operation of the ship under your Commanding Officer. In his absence, you are expected to take his place. Your primary duty is directly managing department heads and all those outside a department heading. You are also responsible for the contractors and passengers aboard the ship. Consider the Senior Enlisted Advisor and Bridge Officers tools at your disposal."
+	return "You are the Personnel Manager. You are an experienced senior officer, second in command of the ship, and are responsible for the smooth operation of the ship under your Captain. In his absence, you are expected to take his place. Your primary duty is directly managing department heads and all those outside a department heading. You are also responsible for the contractors and passengers aboard the ship. Consider the Senior Enlisted Advisor and Bridge Officers tools at your disposal."
 
 /datum/job/rd
 	title = "Research Director"
-	supervisors = "NanoTrasen and the Commanding Officer"
+	supervisors = "NanoTrasen and the Captain"
 	department = "Science"
 	department_flag = SCI|COM
 	head_position = 1
@@ -173,7 +173,7 @@
 
 /datum/job/cmo
 	title = "Chief Medical Officer"
-	supervisors = "the Commanding Officer and the Executive Officer"
+	supervisors = "the Captain and the Personnel Manager"
 	head_position = 1
 	department = "Medical"
 	department_flag = MED|COM
@@ -218,7 +218,7 @@
 
 /datum/job/chief_engineer
 	title = "Chief Engineer"
-	supervisors = "the Commanding Officer and the Executive Officer"
+	supervisors = "the Captain and the Personnel Manager"
 	head_position = 1
 	department = "Engineering"
 	department_flag = ENG|COM
@@ -273,8 +273,8 @@
 	return "You are the Chief Engineer. You manage the Engineering Department. You are responsible for the Senior engineer, who is your right hand and (should be) an experienced, skilled engineer. Delegate to and listen to them. Manage your engineers, ensure vessel power stays on, breaches are patched and problems are fixed. Advise the CO on engineering matters. You are also responsible for the maintenance and control of any vessel synthetics. You are an experienced engineer with a wealth of theoretical knowledge. You should also know vessel regulations to a reasonable degree."
 
 /datum/job/hos
-	title = "Chief of Security"
-	supervisors = "the Commanding Officer and the Executive Officer"
+	title = "Head of Security"
+	supervisors = "the Captain and the Personnel Manager"
 	head_position = 1
 	department = "Security"
 	department_flag = SEC|COM
@@ -314,7 +314,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/hos/get_description_blurb()
-	return "You are the Chief of Security. You manage ship security. The Masters at Arms and the Military Police, as well as the Brig Officer and the Forensic Technician. You keep the vessel safe. You handle both internal and external security matters. You are the law. You are subordinate to the CO and the XO. You are expected to know the SCMJ and Sol law and Alert Procedure to a very high degree along with general regulations."
+	return "You are the Head of Security. You manage ship security. The Masters at Arms and the Military Police, as well as the Brig Officer and the Forensic Technician. You keep the vessel safe. You handle both internal and external security matters. You are the law. You are subordinate to the CO and the XO. You are expected to know the SCMJ and Sol law and Alert Procedure to a very high degree along with general regulations."
 
 /datum/job/liaison
 	title = "NanoTrasen Liaison"
@@ -374,51 +374,15 @@
 	software_on_spawn = list(/datum/computer_file/program/reports)
 
 /datum/job/representative/get_description_blurb()
-	return "You are the Sol Gov Representative. You are a civilian assigned as both a diplomatic liaison for first contact and foreign affair situations on board. You are also responsible for monitoring for any serious missteps of justice, sol law or other ethical or legal issues aboard and informing and advising the Commanding Officer of them. You are a mid-level bureaucrat. You liaise between the crew and Nanotrasen interests on board. Send faxes back to Sol on mission progress and important events."
+	return "You are the Sol Gov Representative. You are a civilian assigned as both a diplomatic liaison for first contact and foreign affair situations on board. You are also responsible for monitoring for any serious missteps of justice, sol law or other ethical or legal issues aboard and informing and advising the Captain of them. You are a mid-level bureaucrat. You liaise between the crew and Nanotrasen interests on board. Send faxes back to Sol on mission progress and important events."
 
-/datum/job/sea
-	title = "Senior Enlisted Advisor"
-	department = "Support"
-	department_flag = SPT
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "the Commanding Officer and the Executive Officer"
-	selection_color = "#2f2f7f"
-	minimal_player_age = 21
-	economic_modifier = 8
-	ideal_character_age = 45
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/sea/fleet
-	allowed_branches = list(
-		/datum/mil_branch/fleet
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/fleet/e9,
-		/datum/mil_rank/fleet/e8
-	)
-	min_skill = list(	SKILL_EVA        = SKILL_BASIC,
-						SKILL_COMBAT     = SKILL_BASIC,
-						SKILL_WEAPONS    = SKILL_ADEPT)
-	skill_points = 24
-
-
-	access = list(access_security, access_medical, access_engine, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_teleporter, access_eva, access_heads, access_all_personal_lockers, access_janitor,
-			            access_kitchen, access_cargo, access_RC_announce, access_keycard_auth, access_guppy_helm,
-			            access_gun, access_expedition_shuttle, access_guppy, access_hangar)
-
-	software_on_spawn = list(/datum/computer_file/program/camera_monitor,
-							 /datum/computer_file/program/reports)
-
-/datum/job/sea/get_description_blurb()
-	return "You are the Senior Enlisted Advisor. You are the highest enlisted person on the ship. You are directly subordinate to the CO. You advise them on enlisted concerns and provide expertise and advice to officers. You are responsible for ensuring discipline and good conduct among enlisted, as well as notifying officers of any issues and “advising” them on mistakes they make. You also handle various duties on behalf of the CO and XO. You are an experienced enlisted person, very likely equal only in experience to the CO and XO. You know the regulations better than anyone."
-
-/datum/job/bridgeofficer
-	title = "Bridge Officer"
+/datum/job/adjutant
+	title = "Adjutant"
 	department = "Support"
 	department_flag = SPT
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Commanding Officer and heads of staff"
+	supervisors = "the Captain and heads of staff"
 	selection_color = "#2f2f7f"
 	minimal_player_age = 18
 	economic_modifier = 7
@@ -462,7 +426,7 @@
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Commanding Officer and the Executive Officer"
+	supervisors = "the Captain and the Personnel Manager"
 	selection_color = "#68099e"
 	minimal_player_age = 7
 	economic_modifier = 7
@@ -493,7 +457,7 @@
 	department_flag = EXP
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Commanding Officer, Executive Officer, and Pathfinder"
+	supervisors = "the Captain, Personnel Manager, and Pathfinder"
 	selection_color = "#68099e"
 	ideal_character_age = 20
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/explorer
@@ -614,13 +578,13 @@
 	return "You are an Engineer. You operate under one of many titles and may be highly specialised in a specific area of engineering. You probably have at least a general familiarity with most other areas though this is not expected. You are subordinate to the Senior Engineer and the Chief Engineer and are expected to follow them."
 
 /datum/job/engineer_contractor
-	title = "Engineering Contractor"
+	title = "Engineer"
 	department = "Engineering"
 	department_flag = ENG
 
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Engineer and Engineering Personnel"
+	supervisors = "the Chief Engineer"
 	minimal_player_age = 7
 	selection_color = "#5b4d20"
 	alt_titles = list(
@@ -630,15 +594,26 @@
 		"Information Systems Technician",
 		"Reactor Technician",
 		"Life Support Systems Specialist")
+
+	alt_titles = list(
+		"Maintenance Technician",
+		"Engine Technician",
+		"Damage Control Technician",
+		"EVA Technician",
+		"Electrician",
+		"Atmospheric Technician",
+		)
+
+
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/contractor
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
-	min_skill = list(	SKILL_COMPUTER      = SKILL_BASIC,
-						SKILL_EVA           = SKILL_BASIC,
-						SKILL_CONSTRUCTION	= SKILL_BASIC,
-						SKILL_ELECTRICAL    = SKILL_BASIC,
-						SKILL_ATMOS         = SKILL_BASIC,
-						SKILL_ENGINES       = SKILL_BASIC)
+	min_skill = list(	SKILL_COMPUTER     = SKILL_BASIC,
+						SKILL_EVA          = SKILL_BASIC,
+						SKILL_CONSTRUCTION = SKILL_ADEPT,
+						SKILL_ELECTRICAL   = SKILL_BASIC,
+						SKILL_ATMOS        = SKILL_BASIC,
+						SKILL_ENGINES      = SKILL_BASIC)
 	skill_points = 20
 
 	access = list(access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
@@ -654,7 +629,7 @@
 							 /datum/computer_file/program/shields_monitor)
 
 /datum/job/engineer_contractor/get_description_blurb()
-	return "You are an Engineering Contractor. Hired for either general maintenance duties or because of your specialist training and knowledge in a specific area of engineering you are either highly skilled or intermediate in your knowledge of engineering tasks related to your profession. You are subordinate to the rest of the engineering team."
+	return "You are an Engineer. You operate under one of many titles and may be highly specialised in a specific area of engineering. You probably have at least a general familiarity with most other areas though this is not expected. You are subordinate to the Senior Engineer and the Chief Engineer and are expected to follow them."
 
 /datum/job/engineer_trainee
 	title = "Engineer Trainee"
@@ -731,7 +706,7 @@
 	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics as well as the repair of all synthetic crew on board. You are also responsible for placing brains into MMI’s and giving them bodies and the production of exosuits(mechs) for various departments. You answer to the Chief Engineer."
 
 /datum/job/warden
-	title = "Brig Officer"
+	title = "Warden"
 	department = "Security"
 	department_flag = SEC
 	total_positions = 1
@@ -740,19 +715,9 @@
 	economic_modifier = 5
 	minimal_player_age = 14
 	ideal_character_age = 35
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/brig_officer
-	allowed_branches = list(
-		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/security/brig_officer/fleet
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/fleet/e8,
-		/datum/mil_rank/ec/e7,
-		/datum/mil_rank/ec/e5,
-		/datum/mil_rank/fleet/e7,
-		/datum/mil_rank/fleet/e6,
-		/datum/mil_rank/fleet/e5
-	)
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/warden
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_ADEPT,
 						SKILL_EVA         = SKILL_BASIC,
 						SKILL_COMBAT      = SKILL_BASIC,
@@ -814,7 +779,7 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/officer
-	title = "Master at Arms"
+	title = "Security Guard"
 	department = "Security"
 	department_flag = SEC
 	total_positions = 4
@@ -955,43 +920,9 @@
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
 
-/datum/job/medical_trainee
-	title = "Corpsman Trainee"
-	department = "Medical"
-	department_flag = MED
-
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "the Chief Medical Officer and Medical Personnel"
-	selection_color = "#013d3b"
-	ideal_character_age = 20
-
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor
-	allowed_branches = list(
-		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/fleet
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/ec/e3,
-		/datum/mil_rank/fleet/e2
-	)
-
-	skill_points = 4
-	no_skill_buffs = TRUE
-
-	min_skill = list(	SKILL_EVA     = SKILL_ADEPT,
-						SKILL_HAULING = SKILL_ADEPT,
-						SKILL_MEDICAL = SKILL_EXPERT,
-						SKILL_ANATOMY = SKILL_BASIC)
-
-	access = list(access_medical, access_morgue, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_surgery, access_medical_equip)
-
-	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
-							 /datum/computer_file/program/camera_monitor)
-
 /datum/job/medical_trainee/get_description_blurb()
 	return "You are a Corpsman Trainee. You are learning how to treat and recover wounded crew from the more experienced medical personnel aboard. You are subordinate to the rest of the medical team."
+
 
 /datum/job/chemist
 	title = "Chemist"
@@ -1005,8 +936,11 @@
 	economic_modifier = 4
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/contractor/chemist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/contractor)
+		allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(
+		/datum/mil_rank/civ/contractor,
+		/datum/mil_rank/civ/nt
+		)
 	min_skill = list(	SKILL_MEDICAL   = SKILL_BASIC,
 						SKILL_CHEMISTRY = SKILL_ADEPT)
 	skill_points = 26
@@ -1029,15 +963,11 @@
 		"Chaplain" = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/chaplain,
 	)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor
-	allowed_branches = list(
-		/datum/mil_branch/civilian,
-		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/ec,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/fleet)
+	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/contractor,
-		/datum/mil_rank/fleet/o2,
-		/datum/mil_rank/fleet/o1,
-		/datum/mil_rank/ec/o1)
+		/datum/mil_rank/civ/nt
+		)
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
 						SKILL_MEDICAL     = SKILL_BASIC)
 
@@ -1053,25 +983,14 @@
 	department_flag = SUP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Executive Officer"
+	supervisors = "the Personnel Manager"
 	economic_modifier = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/deckofficer
-	allowed_branches = list(
-		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/supply/deckofficer/fleet
-	)
+	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
-		/datum/mil_rank/ec/o1 = /decl/hierarchy/outfit/job/sierra/crew/supply/deckofficer/commissioned,
-		/datum/mil_rank/fleet/o1,
-		/datum/mil_rank/fleet/o2,
-		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/fleet/e6,
-		/datum/mil_rank/ec/e7,
-		/datum/mil_rank/ec/e5,
-		/datum/mil_rank/fleet/e7,
-		/datum/mil_rank/fleet/e8
+		/datum/mil_rank/civ/nt
 	)
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_ADEPT,
 						SKILL_FINANCE     = SKILL_BASIC,
@@ -1094,18 +1013,12 @@
 	department_flag = SUP
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Deck Officer and Executive Officer"
+	supervisors = "the Deck Officer and Personnel Manager"
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/tech
-	allowed_branches = list(
-		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/supply/tech/fleet
-	)
+	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
-		/datum/mil_rank/fleet/e2,
-		/datum/mil_rank/ec/e3,
-		/datum/mil_rank/fleet/e3,
-		/datum/mil_rank/fleet/e4
+		/datum/mil_rank/civ/nt
 	)
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
 						SKILL_FINANCE     = SKILL_BASIC,
@@ -1131,8 +1044,11 @@
 	ideal_character_age = 20
 	selection_color = "#515151"
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/contractor
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/contractor)
+		allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(
+		/datum/mil_rank/civ/contractor,
+		/datum/mil_rank/civ/nt
+		)
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
 						SKILL_FINANCE     = SKILL_BASIC,
 						SKILL_HAULING     = SKILL_BASIC)
@@ -1150,23 +1066,16 @@
 
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Executive Officer"
+	supervisors = "the Personnel Manager"
 	ideal_character_age = 20
 	alt_titles = list(
 		"Janitor")
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/janitor
-	allowed_branches = list(
-		/datum/mil_branch/civilian,
-		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/sierra/crew/service/janitor/ec,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/service/janitor/fleet
-	)
+	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/contractor,
-		/datum/mil_rank/fleet/e2,
-		/datum/mil_rank/ec/e3,
-		/datum/mil_rank/fleet/e3,
-		/datum/mil_rank/fleet/e4
-	)
+		/datum/mil_rank/civ/nt
+		)
 	min_skill = list(	SKILL_HAULING = SKILL_BASIC)
 
 	access = list(access_maint_tunnels, access_emergency_storage, access_janitor)
@@ -1178,24 +1087,16 @@
 	department_flag = SRV
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Executive Officer"
+	supervisors = "the Personnel Manager"
 	alt_titles = list(
 		"Chef",
 		"Culinary Specialist"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/cook
-	allowed_branches = list(
-		/datum/mil_branch/civilian,
-		/datum/mil_branch/expeditionary_corps = /decl/hierarchy/outfit/job/sierra/crew/service/cook/ec,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/service/cook/fleet
-	)
+	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/contractor,
-		/datum/mil_rank/ec/e3,
-		/datum/mil_rank/fleet/e2,
-		/datum/mil_rank/fleet/e3,
-		/datum/mil_rank/fleet/e4
-	)
+		/datum/mil_rank/civ/nt
 	min_skill = list(	SKILL_COOKING   = SKILL_ADEPT,
 						SKILL_BOTANY    = SKILL_BASIC,
 						SKILL_CHEMISTRY = SKILL_BASIC)
@@ -1203,15 +1104,20 @@
 	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_bar)
 	minimal_access = list()
 
+
 /datum/job/bartender
 	department = "Service"
 	department_flag = SRV
-	supervisors = "the Executive Officer"
+	supervisors = "the Personnel Manager"
 	ideal_character_age = 30
 	selection_color = "#515151"
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/bartender
 	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/contractor)
+	allowed_ranks = list(
+		/datum/mil_rank/civ/contractor,
+		/datum/mil_rank/civ/nt
+		)
+
 
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	minimal_access = list()
@@ -1219,29 +1125,6 @@
 						SKILL_BOTANY    = SKILL_BASIC,
 						SKILL_CHEMISTRY = SKILL_BASIC)
 
-/datum/job/crew
-	title = "Crewman"
-	department = "Service"
-	department_flag = SRV
-	total_positions = 5
-	spawn_positions = 5
-	supervisors = "the Executive Officer and SolGov Personnel"
-	selection_color = "#515151"
-	ideal_character_age = 20
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/crewman
-	allowed_branches = list(
-		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/fleet = /decl/hierarchy/outfit/job/sierra/crew/service/crewman/fleet
-	)
-	allowed_ranks = list(
-		/datum/mil_rank/ec/e3,
-		/datum/mil_rank/fleet/e2,
-		/datum/mil_rank/fleet/e3,
-		/datum/mil_rank/fleet/e4
-	)
-
-
-	access = list(access_maint_tunnels, access_emergency_storage)
 
 /datum/job/senior_scientist
 	title = "Senior Researcher"
@@ -1355,28 +1238,6 @@
 	minimal_access = list()
 
 
-/datum/job/guard
-	title = "Security Guard"
-	department = "Science"
-	department_flag = SCI
-
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "the Research Director and NanoTrasen Personnel"
-	selection_color = "#633d63"
-	economic_modifier = 6
-	minimal_player_age = 3
-	ideal_character_age = 25
-	outfit_type = /decl/hierarchy/outfit/job/sierra/passenger/research/guard
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
-	min_skill = list(	SKILL_COMBAT  = SKILL_BASIC,
-						SKILL_WEAPONS = SKILL_BASIC)
-
-	access = list(access_tox, access_tox_storage,access_research, access_mining, access_mining_office, access_mining_station, access_xenobiology,
-						access_xenoarch, access_hangar, access_petrov, access_expedition_shuttle, access_guppy)
-
-
 /datum/job/scientist_assistant
 	title = "Research Assistant"
 	department = "Science"
@@ -1409,7 +1270,7 @@
 	spawn_positions = 12
 	department = "Civilian"
 	department_flag = CIV
-	supervisors = "the Executive Officer"
+	supervisors = "the Personnel Manager"
 	selection_color = "#515151"
 	economic_modifier = 6
 	announced = FALSE
@@ -1417,11 +1278,9 @@
 		"Journalist" = /decl/hierarchy/outfit/job/sierra/passenger/passenger/journalist,
 		"Historian",
 		"Botanist",
-		"Investor" = /decl/hierarchy/outfit/job/sierra/passenger/passenger/investor,
 		"Naturalist",
 		"Ecologist",
 		"Entertainer",
-		"Independent Observer",
 		"Sociologist",
 		"Off-Duty",
 		"Trainer")

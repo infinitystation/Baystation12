@@ -97,18 +97,6 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod10
 	number = 10
 
-/datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod11
-	warmup_time = 10
-	shuttle_area = /area/shuttle/escape_pod11/station
-	number = 11
-/obj/effect/shuttle_landmark/escape_pod/start/pod11
-	base_turf = /turf/simulated/floor/reinforced/airless
-	number = 11
-/obj/effect/shuttle_landmark/escape_pod/out/pod11
-	number = 11
-/obj/effect/shuttle_landmark/escape_pod/transit/pod11
-	number = 11
-
 //Smoll pods
 
 /datum/shuttle/autodock/ferry/escape_pod/sierrapod/escape_pod12

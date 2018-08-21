@@ -124,7 +124,7 @@
 /obj/item/weapon/card/id/sierra/crew/sea
 	job_access_type = /datum/job/sea
 
-/obj/item/weapon/card/id/sierra/crew/bridgeofficer
+/obj/item/weapon/card/id/sierra/crew/warden
 	job_access_type = /datum/job/bridgeofficer
 
 /obj/item/weapon/card/id/sierra/crew/pathfinder

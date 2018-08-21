@@ -6,7 +6,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 */
 
 /decl/hierarchy/outfit/job/sierra
-	name = OUTFIT_JOB_NAME("sierra Outfit")
+	name = OUTFIT_JOB_NAME("Sierra Outfit")
 	hierarchy_type = /decl/hierarchy/outfit/job/sierra
 	uniform = /obj/item/clothing/under/color/grey
 	l_ear = /obj/item/device/radio/headset
@@ -15,25 +15,25 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	pda_slot = slot_l_store
 
 /decl/hierarchy/outfit/job/sierra/crew
-	name = OUTFIT_JOB_NAME("sierra Crew Outfit")
+	name = OUTFIT_JOB_NAME("Sierra Crew Outfit")
 	hierarchy_type = /decl/hierarchy/outfit/job/sierra/crew
 	uniform = /obj/item/clothing/under/solgov/utility/expeditionary
 	shoes = /obj/item/clothing/shoes/dutyboots
 
 /decl/hierarchy/outfit/job/sierra/crew/fleet
-	name = OUTFIT_JOB_NAME("sierra Fleet Outfit")
+	name = OUTFIT_JOB_NAME("Sierra Fleet Outfit")
 	hierarchy_type = /decl/hierarchy/outfit/job/sierra/crew/fleet
 	uniform = /obj/item/clothing/under/solgov/utility/fleet
 	shoes = /obj/item/clothing/shoes/dutyboots
 
 /decl/hierarchy/outfit/job/sierra/passenger
-	name = OUTFIT_JOB_NAME("sierra Passenger")
+	name = OUTFIT_JOB_NAME("Sierra Passenger")
 	hierarchy_type = /decl/hierarchy/outfit/job/sierra/passenger
 	uniform = /obj/item/clothing/under/solgov/utility
 
 //Command Outfits
 /decl/hierarchy/outfit/job/sierra/crew/command
-	name = OUTFIT_JOB_NAME("sierra Command Outfit")
+	name = OUTFIT_JOB_NAME("Sierra Command Outfit")
 	hierarchy_type = /decl/hierarchy/outfit/job/sierra/crew/command
 	l_ear = /obj/item/device/radio/headset/headset_com
 
@@ -67,7 +67,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/dutyboots
 
 /decl/hierarchy/outfit/job/sierra/passenger/research/rd
-	name = OUTFIT_JOB_NAME("Research Director - sierra")
+	name = OUTFIT_JOB_NAME("Research Director - Sierra")
 	l_ear = /obj/item/device/radio/headset/heads/sierrantcommand
 	uniform = /obj/item/clothing/under/rank/research_director
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
@@ -76,7 +76,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	pda_type = /obj/item/modular_computer/pda/heads/rd
 
 /decl/hierarchy/outfit/job/sierra/crew/command/cmo
-	name = OUTFIT_JOB_NAME("Chief Medical Officer - sierra")
+	name = OUTFIT_JOB_NAME("Chief Medical Officer - Sierra")
 	l_ear  =/obj/item/device/radio/headset/heads/cmo
 	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/officer/medical
 	shoes = /obj/item/clothing/shoes/dutyboots
@@ -94,7 +94,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/dutyboots
 
 /decl/hierarchy/outfit/job/sierra/crew/command/chief_engineer
-	name = OUTFIT_JOB_NAME("Chief Engineer - sierra")
+	name = OUTFIT_JOB_NAME("Chief Engineer - Sierra")
 	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/officer/engineering
 	shoes = /obj/item/clothing/shoes/dutyboots
 	l_ear = /obj/item/device/radio/headset/heads/ce
@@ -189,23 +189,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	id_type = /obj/item/weapon/card/id/sierra/crew/engineering/senior
 	pda_type = /obj/item/modular_computer/pda/heads/ce
 
-/decl/hierarchy/outfit/job/sierra/crew/engineering/senior_engineer/fleet
-	name = OUTFIT_JOB_NAME("Senior Engineer - Fleet")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
-	shoes = /obj/item/clothing/shoes/dutyboots
-
-/decl/hierarchy/outfit/job/sierra/crew/engineering/engineer
-	name = OUTFIT_JOB_NAME("Engineer - sierra")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/engineering
-	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/weapon/card/id/sierra/crew/engineering
-	pda_type = /obj/item/modular_computer/pda/engineering
-
-/decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/fleet
-	name = OUTFIT_JOB_NAME("Engineer - Fleet")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering
-	shoes = /obj/item/clothing/shoes/dutyboots
-
 /decl/hierarchy/outfit/job/sierra/crew/engineering/contractor
 	name = OUTFIT_JOB_NAME("Engineering Assistant")
 	uniform = /obj/item/clothing/under/rank/engineer
@@ -214,7 +197,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	pda_type = /obj/item/modular_computer/pda/engineering
 
 /decl/hierarchy/outfit/job/sierra/crew/engineering/roboticist
-	name = OUTFIT_JOB_NAME("Roboticist - sierra")
+	name = OUTFIT_JOB_NAME("Roboticist - Sierra")
 	uniform = /obj/item/clothing/under/rank/roboticist
 	shoes = /obj/item/clothing/shoes/black
 	l_ear = /obj/item/device/radio/headset/sierraroboticist
@@ -232,55 +215,20 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	..()
 	BACKPACK_OVERRIDE_SECURITY
 
-/decl/hierarchy/outfit/job/sierra/crew/security/brig_officer
-	name = OUTFIT_JOB_NAME("Brig Officer")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/security
+/decl/hierarchy/outfit/job/sierra/crew/security/Warden
+	name = OUTFIT_JOB_NAME("Warden")
+	uniform = /obj/item/clothing/under/rank/warden/corp
 	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/weapon/card/id/sierra/crew/security/brigofficer
+	id_type = /obj/item/weapon/card/id/sierra/crew/warden
 	pda_type = /obj/item/modular_computer/pda/security
 
-/decl/hierarchy/outfit/job/sierra/crew/security/brig_officer/fleet
-	name = OUTFIT_JOB_NAME("Brig Officer - Fleet")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat/security
-	shoes = /obj/item/clothing/shoes/dutyboots
-
-/decl/hierarchy/outfit/job/sierra/crew/security/forensic_tech
-	name = OUTFIT_JOB_NAME("Forensic Technician - sierra")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/security
-	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/weapon/card/id/sierra/crew/security/forensic
-	pda_type = /obj/item/modular_computer/pda/forensics
-
-/decl/hierarchy/outfit/job/sierra/crew/security/forensic_tech/contractor
-	name = OUTFIT_JOB_NAME("Forensic Technician - Contractor")
+/decl/hierarchy/outfit/job/sierra/crew/security/detective
+	name = OUTFIT_JOB_NAME("Detective")
 	head = /obj/item/clothing/head/det
 	uniform = /obj/item/clothing/under/det
 	suit = /obj/item/clothing/suit/storage/det_trench/ft
 	shoes = /obj/item/clothing/shoes/laceup
 	backpack_contents = list(/obj/item/clothing/accessory/badge/PI = 1)
-
-/decl/hierarchy/outfit/job/sierra/crew/security/forensic_tech/fleet
-	name = OUTFIT_JOB_NAME("Forensic Technician - Fleet")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat/security
-	shoes = /obj/item/clothing/shoes/dutyboots
-
-/decl/hierarchy/outfit/job/sierra/crew/security/forensic_tech/marshal
-	name = OUTFIT_JOB_NAME("Forensic Technician - Colonial Marshal")
-	uniform = /obj/item/clothing/under/det/grey
-	suit = /obj/item/clothing/suit/storage/toggle/agent_jacket
-	shoes = /obj/item/clothing/shoes/dress
-
-/decl/hierarchy/outfit/job/sierra/crew/security/maa
-	name = OUTFIT_JOB_NAME("Master at Arms")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/security
-	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/weapon/card/id/sierra/crew/security
-	pda_type = /obj/item/modular_computer/pda/security
-
-/decl/hierarchy/outfit/job/sierra/crew/security/maa/fleet
-	name = OUTFIT_JOB_NAME("Master at Arms - Fleet")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat/security
-	shoes = /obj/item/clothing/shoes/dutyboots
 
 //Medical Outfits
 
@@ -300,26 +248,8 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/weapon/card/id/sierra/crew/medical/senior
 
-/decl/hierarchy/outfit/job/sierra/crew/medical/senior/fleet
-	name = OUTFIT_JOB_NAME("Physician - Fleet")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/medical
-	shoes = /obj/item/clothing/shoes/dutyboots
-
-/decl/hierarchy/outfit/job/sierra/crew/medical/doctor
-	name = OUTFIT_JOB_NAME("Corpsman")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/medical
-	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/weapon/card/id/sierra/crew/medical
-	l_ear = /obj/item/device/radio/headset/headset_corpsman
-
-/decl/hierarchy/outfit/job/sierra/crew/medical/doctor/fleet
-	name = OUTFIT_JOB_NAME("Corpsman - Fleet")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/medical
-	shoes = /obj/item/clothing/shoes/dutyboots
-	l_ear = /obj/item/device/radio/headset/headset_corpsman
-
 /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/medic
-	name = OUTFIT_JOB_NAME("Corpsman - Medic")
+	name = OUTFIT_JOB_NAME("Field Medic")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/combat/medical
 	shoes = /obj/item/clothing/shoes/dutyboots
 	l_ear = /obj/item/device/radio/headset/headset_corpsman
@@ -347,7 +277,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/black
 
 /decl/hierarchy/outfit/job/sierra/crew/medical/contractor/virologist
-	name = OUTFIT_JOB_NAME("Virologist - sierra")
+	name = OUTFIT_JOB_NAME("Virologist - Sierra")
 	uniform = /obj/item/clothing/under/rank/virologist
 
 /decl/hierarchy/outfit/job/sierra/crew/medical/contractor/virologist/New()
@@ -355,7 +285,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	BACKPACK_OVERRIDE_VIROLOGY
 
 /decl/hierarchy/outfit/job/sierra/crew/medical/contractor/paramedic
-	name = OUTFIT_JOB_NAME("Paramedic - sierra")
+	name = OUTFIT_JOB_NAME("Paramedic - Sierra")
 	uniform = /obj/item/clothing/under/rank/medical/paramedic
 	suit = /obj/item/clothing/suit/storage/toggle/fr_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -364,7 +294,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/sierra/crew/medical/contractor/chemist
-	name = OUTFIT_JOB_NAME("Chemist - sierra")
+	name = OUTFIT_JOB_NAME("Chemist - Sierra")
 	uniform = /obj/item/clothing/under/rank/chemist
 	shoes = /obj/item/clothing/shoes/white
 	pda_type = /obj/item/modular_computer/pda/chemistry
@@ -381,23 +311,13 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	id_type = /obj/item/weapon/card/id/sierra/contractor/medical/counselor
 
 /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/psychiatrist
-	name = OUTFIT_JOB_NAME("Psychiatrist - sierra")
+	name = OUTFIT_JOB_NAME("Psychiatrist - Sierra")
 	uniform = /obj/item/clothing/under/rank/psych
 
 /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/chaplain
-	name = OUTFIT_JOB_NAME("Chaplain - sierra")
+	name = OUTFIT_JOB_NAME("Chaplain - Sierra")
 	uniform = /obj/item/clothing/under/rank/chaplain
 	l_hand = /obj/item/weapon/storage/bible
-
-/decl/hierarchy/outfit/job/sierra/crew/medical/counselor/ec
-	name = OUTFIT_JOB_NAME("Counselor - Expeditionary Corps")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/officer/medical
-	shoes = /obj/item/clothing/shoes/dutyboots
-
-/decl/hierarchy/outfit/job/sierra/crew/medical/counselor/fleet
-	name = OUTFIT_JOB_NAME("Counselor - Fleet")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/medical
-	shoes = /obj/item/clothing/shoes/dutyboots
 
 //Supply Outfits
 
@@ -412,19 +332,10 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/crew/supply/deckofficer
 	name = OUTFIT_JOB_NAME("Deck Officer")
 	l_ear = /obj/item/device/radio/headset/headset_deckofficer
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/supply
+	uniform = /obj/item/clothing/under/rank/cargo
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/weapon/card/id/sierra/crew/supply/deckofficer
 	pda_type = /obj/item/modular_computer/pda/cargo
-
-/decl/hierarchy/outfit/job/sierra/crew/supply/deckofficer/commissioned
-	name = OUTFIT_JOB_NAME("Deck Officer - EC Officer")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/officer/supply
-
-/decl/hierarchy/outfit/job/sierra/crew/supply/deckofficer/fleet
-	name = OUTFIT_JOB_NAME("Deck Officer - Fleet")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/supply
-	shoes = /obj/item/clothing/shoes/dutyboots
 
 /decl/hierarchy/outfit/job/sierra/crew/supply/tech
 	name = OUTFIT_JOB_NAME("Deck Technician")
@@ -432,11 +343,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/dutyboots
 	id_type = /obj/item/weapon/card/id/sierra/crew/supply
 	pda_type = /obj/item/modular_computer/pda/cargo
-
-/decl/hierarchy/outfit/job/sierra/crew/supply/tech/fleet
-	name = OUTFIT_JOB_NAME("Deck Technician - Fleet")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/supply
-	shoes = /obj/item/clothing/shoes/dutyboots
 
 /decl/hierarchy/outfit/job/sierra/crew/supply/contractor
 	name = OUTFIT_JOB_NAME("Supply Assistant")
@@ -453,62 +359,26 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	hierarchy_type = /decl/hierarchy/outfit/job/sierra/crew/service
 
 /decl/hierarchy/outfit/job/sierra/crew/service/janitor
-	name = OUTFIT_JOB_NAME("Sanitation Technician - sierra")
+	name = OUTFIT_JOB_NAME("Sanitation Technician - Sierra")
 	uniform = /obj/item/clothing/under/rank/janitor
 	shoes = /obj/item/clothing/shoes/black
 	id_type = /obj/item/weapon/card/id/sierra/crew/service/janitor
 	pda_type = /obj/item/modular_computer/pda
 
-/decl/hierarchy/outfit/job/sierra/crew/service/janitor/ec
-	name = OUTFIT_JOB_NAME("Sanitation Technician - Expeditionary Corps")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/service
-	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/weapon/card/id/sierra/crew/service/janitor
-	pda_type = /obj/item/modular_computer/pda
-
-/decl/hierarchy/outfit/job/sierra/crew/service/janitor/fleet
-	name = OUTFIT_JOB_NAME("Sanitation Technician - Fleet")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/service
-	shoes = /obj/item/clothing/shoes/dutyboots
-
 /decl/hierarchy/outfit/job/sierra/crew/service/cook
-	name = OUTFIT_JOB_NAME("Cook - sierra")
+	name = OUTFIT_JOB_NAME("Cook - Sierra")
 	uniform = /obj/item/clothing/under/rank/chef
 	shoes = /obj/item/clothing/shoes/black
 	id_type = /obj/item/weapon/card/id/sierra/crew/service/chef
 	pda_type = /obj/item/modular_computer/pda
 
-/decl/hierarchy/outfit/job/sierra/crew/service/cook/ec
-	name = OUTFIT_JOB_NAME("Cook - Expeditionary Corps")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/service
-	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/weapon/card/id/sierra/crew/service/chef
-	pda_type = /obj/item/modular_computer/pda
-
-/decl/hierarchy/outfit/job/sierra/crew/service/cook/fleet
-	name = OUTFIT_JOB_NAME("Cook - Fleet")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet/service
-	shoes = /obj/item/clothing/shoes/dutyboots
-
 /decl/hierarchy/outfit/job/sierra/crew/service/bartender
-	name = OUTFIT_JOB_NAME("Bartender - sierra")
+	name = OUTFIT_JOB_NAME("Bartender - Sierra")
 	uniform = /obj/item/clothing/under/rank/bartender
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/sierra/contractor/service/bartender
 	l_pocket = /obj/item/device/cassette/custom
 	pda_type = /obj/item/modular_computer/pda
-
-/decl/hierarchy/outfit/job/sierra/crew/service/crewman
-	name = OUTFIT_JOB_NAME("Crewman")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary
-	shoes = /obj/item/clothing/shoes/dutyboots
-	id_type = /obj/item/weapon/card/id/sierra/crew
-	pda_type = /obj/item/modular_computer/pda
-
-/decl/hierarchy/outfit/job/sierra/crew/service/crewman/fleet
-	name = OUTFIT_JOB_NAME("Crewman - Fleet")
-	uniform = /obj/item/clothing/under/solgov/utility/fleet
-	shoes = /obj/item/clothing/shoes/dutyboots
 
 //Exploration Outfits
 /decl/hierarchy/outfit/job/sierra/crew/exploration/New()
@@ -552,7 +422,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	BACKPACK_OVERRIDE_RESEARCH
 
 /decl/hierarchy/outfit/job/sierra/passenger/research/nt_pilot //pending better uniform
-	name = OUTFIT_JOB_NAME("NanoTrasen Pilot")
+	name = OUTFIT_JOB_NAME("Pilot")
 	uniform = /obj/item/clothing/under/rank/ntpilot
 	suit = /obj/item/clothing/suit/storage/toggle/brown_jacket/nanotrasen
 	shoes = /obj/item/clothing/shoes/workboots
@@ -560,7 +430,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	l_ear = /obj/item/device/radio/headset/headset_pilot/
 
 /decl/hierarchy/outfit/job/sierra/passenger/research/scientist
-	name = OUTFIT_JOB_NAME("Scientist - sierra")
+	name = OUTFIT_JOB_NAME("Scientist - Sierra")
 	uniform = /obj/item/clothing/under/rank/scientist
 	shoes = /obj/item/clothing/shoes/white
 	pda_type = /obj/item/modular_computer/pda/science
@@ -571,7 +441,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	BACKPACK_OVERRIDE_RESEARCH
 
 /decl/hierarchy/outfit/job/sierra/passenger/research/scientist/psych
-	name = OUTFIT_JOB_NAME("Psychologist - sierra")
+	name = OUTFIT_JOB_NAME("Psychologist - Sierra")
 	uniform = /obj/item/clothing/under/rank/psych
 
 /decl/hierarchy/outfit/job/sierra/passenger/research/prospector
@@ -587,26 +457,15 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	..()
 	BACKPACK_OVERRIDE_ENGINEERING
 
-/decl/hierarchy/outfit/job/sierra/passenger/research/guard
-	name = OUTFIT_JOB_NAME("Security Guard")
-	uniform = /obj/item/clothing/under/rank/guard
-	shoes = /obj/item/clothing/shoes/jackboots
-	id_type = /obj/item/weapon/card/id/sierra/passenger/research/guard
-	pda_type = /obj/item/modular_computer/pda/security
-
-/decl/hierarchy/outfit/job/sierra/passenger/research/guard/New()
-	..()
-	BACKPACK_OVERRIDE_SECURITY
-
 /decl/hierarchy/outfit/job/sierra/passenger/research/assist
-	name = OUTFIT_JOB_NAME("Research Assistant - sierra")
+	name = OUTFIT_JOB_NAME("Research Assistant - Sierra")
 	uniform = /obj/item/clothing/under/rank/scientist
 	shoes = /obj/item/clothing/shoes/white
 	pda_type = /obj/item/modular_computer/pda/science
 	id_type = /obj/item/weapon/card/id/sierra/passenger/research
 
 /decl/hierarchy/outfit/job/sierra/passenger/research/assist/janitor
-	name = OUTFIT_JOB_NAME("Custodian - sierra")
+	name = OUTFIT_JOB_NAME("Custodian - Sierra")
 	uniform = /obj/item/clothing/under/rank/janitor
 
 /decl/hierarchy/outfit/job/sierra/passenger/research/assist/testsubject
@@ -614,7 +473,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/rank/ntwork
 
 /decl/hierarchy/outfit/job/sierra/passenger/passenger
-	name = OUTFIT_JOB_NAME("Passenger - sierra")
+	name = OUTFIT_JOB_NAME("Passenger - Sierra")
 	uniform = /obj/item/clothing/under/color/grey
 	l_ear = /obj/item/device/radio/headset
 	shoes = /obj/item/clothing/shoes/black
@@ -622,20 +481,12 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	id_type = /obj/item/weapon/card/id/sierra/passenger
 
 /decl/hierarchy/outfit/job/sierra/passenger/passenger/journalist
-	name = OUTFIT_JOB_NAME("Journalist - sierra")
+	name = OUTFIT_JOB_NAME("Journalist - Sierra")
 	backpack_contents = list(/obj/item/device/tvcamera = 1,
 	/obj/item/clothing/accessory/badge/press = 1)
 
-/decl/hierarchy/outfit/job/sierra/passenger/passenger/investor
-	name = OUTFIT_JOB_NAME("Investor - sierra")
-
-/decl/hierarchy/outfit/job/sierra/passenger/passenger/investor/post_equip(var/mob/living/carbon/human/H)
-	..()
-	var/obj/item/weapon/storage/secure/briefcase/money/case = new(H.loc)
-	H.put_in_hands(case)
-
 /decl/hierarchy/outfit/job/sierra/merchant
-	name = OUTFIT_JOB_NAME("Merchant - sierra")
+	name = OUTFIT_JOB_NAME("Merchant - Sierra")
 	uniform = /obj/item/clothing/under/color/black
 	l_ear = null
 	shoes = /obj/item/clothing/shoes/black
@@ -643,7 +494,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	id_type = /obj/item/weapon/card/id/sierra/merchant
 
 /decl/hierarchy/outfit/job/sierra/stowaway
-	name = OUTFIT_JOB_NAME("Stowaway - sierra")
+	name = OUTFIT_JOB_NAME("Stowaway - Sierra")
 	id_type = null
 	pda_type = null
 	l_ear = null

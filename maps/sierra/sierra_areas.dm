@@ -11,7 +11,6 @@
 		/area/shuttle/escape_pod8/station,
 		/area/shuttle/escape_pod9/station,
 		/area/shuttle/escape_pod10/station,
-		/area/shuttle/escape_pod11/station,
 		/area/shuttle/escape_pod12/station,
 		/area/shuttle/escape_pod13/station,
 		/area/shuttle/escape_pod14/station,
@@ -329,10 +328,6 @@
 	name = "Escape Pod Five"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/shuttle/escape_pod11/station
-	name = "Escape Pod Six"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 //sierra small pods
 /area/shuttle/escape_pod12/station
 	name = "Escape Pod Seven"
@@ -574,30 +569,19 @@
 	icon_state = "head_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/command/armoury
-	name = "\improper Emergency Armory"
-	icon_state = "Warden"
-
-/area/command/armoury/access
-	name = "\improper Emergency Armory - Access"
-
-/area/command/armoury/tactical
-	name = "\improper Emergency Armory - Tactical"
-	icon_state = "Tactical"
-
 /area/crew_quarters/heads
 	icon_state = "head_quarters"
 
 /area/crew_quarters/heads/cobed
-	name = "\improper Command - CO's Quarters"
+	name = "\improper Command - Captain's Quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/crew_quarters/heads/office/co
-	name = "\improper Command - CO's Office"
+/area/crew_quarters/heads/office/captain
+	name = "\improper Command - Captain's Office"
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/crew_quarters/heads/office/xo
-	name = "\improper Command - XO's Office"
+/area/crew_quarters/heads/office/hop
+	name = "\improper Command - HoP's Office"
 
 /area/crew_quarters/heads/office/rd
 	name = "\improper Command - RD's Office"
@@ -608,17 +592,14 @@
 /area/crew_quarters/heads/office/ce
 	name = "\improper Engineering - CE's Office"
 
-/area/crew_quarters/heads/office/cos
-	name = "\improper Command - CoS' Office"
+/area/crew_quarters/heads/office/hos
+	name = "\improper Command - HoS' Office"
 
 /area/crew_quarters/heads/office/cl
 	name = "\improper Command - CL's Office"
 
 /area/crew_quarters/heads/office/sgr
 	name = "\improper Command - SCGR's Office"
-
-/area/crew_quarters/heads/office/sea
-	name = "\improper Command - SEA's Office"
 
 // Engineering
 
@@ -648,6 +629,11 @@
 /area/engineering/hardstorage/aux
 	name = "\improper Auxiliary Engineering Hard Storage"
 	icon_state = "engineering_storage"
+
+/area/engineering/gravity_gen
+	name = "\improper Gravity Generator"
+	icon_state = "engine"
+	sound_env = SMALL_ENCLOSED
 
 //Vacant Areas
 /area/vacant
@@ -994,24 +980,15 @@
 	icon_state = "engineering"
 	sound_env = SMALL_ENCLOSED
 
-/area/shield/bridge
-	name = "\improper Bridge Shield Generator"
-
 /area/shield/firstdeck
 	name = "\improper First Deck Shield Generator"
-
-/area/shield/seconddeck
-	name = "\improper Second Deck Shield Generator"
 
 /area/shield/thirddeck
 	name = "\improper Third Deck Shield Generator"
 
 /area/shield/fourthdeck
 	name = "\improper Fourth Deck Shield Generator"
-/*
-/area/shield/fifthdeck
-	name = "\improper Fifth Deck Shield Generator"
-*/
+
 // Misc
 /area/deity_spawn
 	name = "\improper Deity Spawn"
@@ -1146,6 +1123,11 @@
 	name = "\improper Incinerator"
 	icon_state = "disposal"
 
+/area/maintenance/compactor
+	name = "\improper Compactor"
+	icon_state = "disposal"
+	sound_env = LARGE_ENCLOSED
+
 // Storage
 
 /area/storage/primary
@@ -1229,6 +1211,15 @@
 	name = "\improper Holodeck - Space"
 	has_gravity = 0
 	sound_env = SPACE
+
+/area/holodeck/source_cafe
+	name = "\improper Holodeck - Cafe"
+	sound_env = PLAIN
+
+/area/holodeck/source_volleyball
+	name = "\improper Holodeck - Volleyball"
+	sound_env = PLAIN
+
 
 // Engineering
 
@@ -1523,3 +1514,13 @@
 	name = "\improper Thunderdome (Observer.)"
 	icon_state = "purple"
 
+/area/tdome/testing
+	name = "\improper Thunderdome (TESTING AREA)"
+	icon_state = "purple"
+
+/area/tdome/testing/engineering
+	requires_power = 0
+	dynamic_lighting = 1
+
+/area/tdome/testing/engineering/unpowered
+	requires_power = 1
