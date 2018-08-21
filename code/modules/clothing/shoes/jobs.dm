@@ -39,12 +39,6 @@
 	siemens_coefficient = 0.7
 	can_hold_knife = 1
 
-/obj/item/clothing/shoes/workboots/alt
-	icon_state = "workboots"
-	item_state = "workboots"
-	icon = 'icons/obj/clothing/infinity/shoes.dmi'
-	icon_override = 'icons/mob/infinity/shoes.dmi'
-
 /obj/item/clothing/shoes/workboots/toeless
 	name = "toe-less workboots"
 	desc = "A pair of toeless work boots designed for use in industrial settings. Modified for species whose toes have claws."
