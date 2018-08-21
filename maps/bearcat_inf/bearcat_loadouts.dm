@@ -408,7 +408,7 @@
 	shoes["red shoes"] = /obj/item/clothing/shoes/red
 	shoes["white shoes"] = /obj/item/clothing/shoes/white
 	shoes["yellow shoes"] = /obj/item/clothing/shoes/yellow
-	gear_tweaks += new/datum/gear_tweak/path(shoes_color)
+	gear_tweaks += new/datum/gear_tweak/path(shoes)
 
 /datum/gear/shoes/flats
 	display_name = "flats"

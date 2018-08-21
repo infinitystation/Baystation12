@@ -81,13 +81,13 @@
 	recalc_coils()
 
 	component_parts = list()
-	component_parts += new /obj/item/stack/cable_coil/weak(src,30)
+	component_parts += new /obj/item/stack/cable_coil(src,30)
 	component_parts += new /obj/item/weapon/circuitboard/smes(src)
 	src.wires = new /datum/wires/smes(src)
 
 	// Allows for mapped-in SMESs with larger capacity/IO
 	if(cur_coils)
 		for(var/i = 1, i <= cur_coils, i++)
-			component_parts += new /obj/item/weapon/smes_coil(src)
+			component_parts += new /obj/item/weapon/smes_coil/weak(src)
 		recalc_coils()
 	..()
