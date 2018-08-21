@@ -5,3 +5,4 @@ kareta - GameMaster
 kuzyxd - GameMaster
 solark - GameMaster
 liners - GameMaster
+netreson - GameMaster
