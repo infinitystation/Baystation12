@@ -272,8 +272,9 @@
 
 /obj/item/projectile/bullet/rifle/nitro600
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
-	damage = 70
-	armor_penetration = 65
+	damage = 75
+	stun = 3
+	armor_penetration = 55
 
 /* Miscellaneous */
 

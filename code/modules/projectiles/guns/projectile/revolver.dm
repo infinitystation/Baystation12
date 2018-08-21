@@ -163,8 +163,8 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 
 /obj/item/weapon/gun/projectile/revolver/revrifle
-	name = "pfeifer zeliska"
-	desc = "Thats realy long hunting revolver with 3.68mm rifle bullets. Almost a carbine"
+	name = "\improper Pfeifer Zeliska revolver"
+	desc = "Huge long barrel hunting revolver for rifle bullets. Almost a carbine"
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "revrifle"
 	item_icons = list(
@@ -172,8 +172,11 @@
 		slot_r_hand_str = 'icons/mob/onmob/items/infinity_items/righthand_revrifle.dmi',
 		)
 	item_state = "revrifle"
+	wielded_item_state = "revrifle-wielded"
 	max_shells = 5
-	fire_delay = 7
+	fire_delay = 8
+	one_hand_penalty = 5
+	screen_shake = 2
 	force = 10
 	caliber = "nitro600"
 	w_class = ITEM_SIZE_LARGE
