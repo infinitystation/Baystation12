@@ -164,7 +164,7 @@
 
 /obj/item/weapon/gun/projectile/revolver/revrifle
 	name = "pfeifer zeliska"
-	desc = "\"One shot\" revolver.  "
+	desc = "Thats realy long hunting revolver with 3.68mm rifle bullets. Almost a carbine"
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "revrifle"
 	item_icons = list(
