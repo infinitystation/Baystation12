@@ -86,6 +86,16 @@
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/exploration
 
+/obj/item/device/radio/headset/exploration/medic
+	name = "field medic's headset"
+	desc = "A headset for real tools, with access to an exploration channel and a medical one. It has an inbuilt subspace antenna for better reception."
+	ks2type = /obj/item/device/encryptionkey/headset_med
+
+/obj/item/device/radio/headset/exploration/engineer
+	name = "field engineer's headset"
+	desc = "A headset for real tools, with access to an exploration channel and an engineering one. It has an inbuilt subspace antenna for better reception."
+	ks2type = /obj/item/device/encryptionkey/headset_eng
+
 /obj/item/device/radio/headset/exploration/alt
 	name = "exploration bowman headset"
 	desc = "A headset for real tools, with access to the exploration channel. It has an inbuilt subspace antenna for better reception."

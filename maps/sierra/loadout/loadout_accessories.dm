@@ -1,7 +1,7 @@
 /datum/gear/tactical/ubac
 	display_name = "ubac selection"
 	path = /obj/item/clothing/accessory/ubac
-	allowed_roles = MILITARY_ROLES
+	allowed_roles = list(SOLGOV_ROLES, SECURITY_ROLES) //camo + tactical
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/solawardmajor
@@ -41,33 +41,18 @@
 	gear_tweaks += new/datum/gear_tweak/path(solminors)
 
 /datum/gear/accessory/tags
-	display_name = "dog tags"
+	display_name = "SCG dog tags"
 	path = /obj/item/clothing/accessory/badge/solgov/tags
+	allowed_roles = SOLGOV_ROLES
 
-/datum/gear/accessory/torch_patch
-	display_name = "Torch mission patch"
-	path = /obj/item/clothing/accessory/solgov/torch_patch
+/datum/gear/accessory/tags
+	display_name = "non-SCG dog tags"
+	path = /obj/item/clothing/accessory/badge/tags
 
 /datum/gear/accessory/pilot_pin
 	display_name = "pilot's qualification pin"
 	path = /obj/item/clothing/accessory/solgov/speciality/pilot
-	allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/bridgeofficer, /datum/job/pathfinder)
-
-/datum/gear/accessory/fleetpatch
-	display_name = "fleet patch"
-	path = /obj/item/clothing/accessory/solgov/fleet_patch
-	flags = GEAR_HAS_TYPE_SELECTION
-	allowed_branches = list(/datum/mil_branch/fleet)
-
-/datum/gear/accessory/armband_ma
-	display_name = "master at arms brassard"
-	path = /obj/item/clothing/accessory/armband/solgov/ma
-	allowed_roles = SECURITY_ROLES
-
-/datum/gear/accessory/armband_mp
-	display_name = "military police brassard"
-	path = /obj/item/clothing/accessory/armband/solgov/mp
-	allowed_roles = SECURITY_ROLES
+	allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/adjutant, /datum/job/pathfinder)
 
 /datum/gear/accessory/armband_solgov
 	display_name = "peacekeeper armband"
@@ -84,12 +69,7 @@
 	allowed_roles = MEDICAL_ROLES
 
 /datum/gear/accessory/armband_emt
-	allowed_roles = list(/datum/job/doctor, /datum/job/doctor_contractor)
-
-/datum/gear/accessory/armband_corpsman
-	display_name = "medical corps armband"
-	path = /obj/item/clothing/accessory/armband/medblue
-	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor)
+	allowed_roles = list(/datum/job/doctor, /datum/job/doctor_trainee, /datum/job/explorer_medic)
 
 /datum/gear/accessory/armband_engineering
 	allowed_roles = ENGINEERING_ROLES
@@ -103,6 +83,9 @@
 /datum/gear/accessory/ntaward
 	allowed_roles = NANOTRASEN_ROLES
 
+/datum/gear/accessory/ntaward_sci
+	allowed_roles = NANOTRASEN_ROLES
+
 /datum/gear/accessory/tie
 
 /datum/gear/accessory/tie_color
@@ -111,24 +94,24 @@
 	allowed_roles = STERILE_ROLES
 
 /datum/gear/storage/brown_vest
-	allowed_roles = list(/datum/job/chief_engineer, /datum/job/senior_engineer, /datum/job/engineer, /datum/job/engineer_contractor, /datum/job/roboticist, /datum/job/qm, /datum/job/cargo_tech,
-						/datum/job/cargo_contractor, /datum/job/mining, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/merchant, /datum/job/nt_pilot)
+	allowed_roles = list(/datum/job/chief_engineer, /datum/job/senior_engineer, /datum/job/engineer, /datum/job/engineer_trainee, /datum/job/explorer_engineer, /datum/job/roboticist, /datum/job/qm, /datum/job/cargo_tech,
+						/datum/job/cargo_assistant, /datum/job/mining, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/merchant, /datum/job/nt_pilot)
 
 /datum/gear/storage/black_vest
-	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/guard, /datum/job/merchant)
+	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/merchant)
 
 /datum/gear/storage/white_vest
-	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_contractor, /datum/job/roboticist, /datum/job/merchant)
+	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/explorer_medic, /datum/job/roboticist, /datum/job/merchant)
 
 /datum/gear/storage/brown_drop_pouches
-	allowed_roles = list(/datum/job/chief_engineer, /datum/job/senior_engineer, /datum/job/engineer, /datum/job/engineer_contractor, /datum/job/roboticist, /datum/job/qm, /datum/job/cargo_tech,
-						/datum/job/cargo_contractor, /datum/job/mining, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/merchant)
+	allowed_roles = list(/datum/job/chief_engineer, /datum/job/senior_engineer, /datum/job/engineer, /datum/job/engineer_trainee, /datum/job/roboticist, /datum/job/qm, /datum/job/cargo_tech,
+						/datum/job/cargo_assistant, /datum/job/mining, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/merchant)
 
 /datum/gear/storage/black_drop_pouches
-	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/guard, /datum/job/merchant)
+	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/merchant)
 
 /datum/gear/storage/white_drop_pouches
-	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_contractor, /datum/job/roboticist, /datum/job/merchant)
+	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/explorer_medic, /datum/job/roboticist, /datum/job/merchant)
 
 /datum/gear/tactical/holster
 	allowed_roles = ARMED_ROLES
@@ -178,7 +161,15 @@
 
 /datum/gear/accessory/bowtie
 
+/datum/gear/accessory/talisman
+
+/datum/gear/accessory/collar
+
+/datum/gear/music
+	allowed_roles = RESTRICTED_ROLES
+
+/datum/gear/head/kittyears
+	allowed_roles = RESTRICTED_ROLES
+
 /datum/gear/accessory/ftupin
-	allowed_roles = list(/datum/job/scientist, /datum/job/mining, /datum/job/guard, /datum/job/scientist_assistant,
-						/datum/job/scientist_assistant, /datum/job/engineer_contractor, /datum/job/roboticist, /datum/job/doctor_contractor,
-						/datum/job/psychiatrist, /datum/job/cargo_contractor, /datum/job/bartender, /datum/job/merchant, /datum/job/assistant)
+	allowed_roles = list(/datum/job/merchant, /datum/job/assistant)

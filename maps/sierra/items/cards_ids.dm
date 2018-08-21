@@ -19,91 +19,107 @@
 	item_state = "gold_id"
 	job_access_type = /datum/job/captain
 
-/obj/item/weapon/card/id/sierra/captains_spare
-	name = "commanding officer's spare ID"
-	desc = "The skipper's spare ID."
-	icon_state = "gold"
-	item_state = "gold_id"
-	registered_name = "Commanding Officer"
-	assignment = "Commanding Officer"
-/obj/item/weapon/card/id/sierra/captains_spare/New()
-	access = get_all_station_access()
-	..()
+// SolGov Crew, NanoTrasen Personnel and Passengers
+/obj/item/weapon/card/id/sierra/passenger
+	desc = "An identification card issued to passengers aboard the NES Sierra."
+	icon_state = "id"
+	job_access_type = /datum/job/assistant
 
-
-// SolGov Crew and Contractors
 /obj/item/weapon/card/id/sierra/crew
+	desc = "An identification card issued to NanoTrasen crewmembers aboard the NES Sierra."
+	icon_state = "id"
+	job_access_type = /datum/job/assistant
+
+/obj/item/weapon/card/id/sierra/solgov
 	desc = "An identification card issued to SolGov crewmembers aboard the NES Sierra."
 	icon_state = "solgov"
-	job_access_type = /datum/job/crew
-
-
-/obj/item/weapon/card/id/sierra/contractor
-	desc = "An identification card issued to private contractors aboard the NES Sierra."
-	icon_state = "civ"
 	job_access_type = /datum/job/assistant
 
 
-/obj/item/weapon/card/id/sierra/silver/medical
-	job_access_type = /datum/job/cmo
 
 /obj/item/weapon/card/id/sierra/crew/medical
+	desc = "An identification card issued to medical crewmembers aboard the NES Sierra."
+	icon_state = "med"
 	job_access_type = /datum/job/doctor
+
+/obj/item/weapon/card/id/sierra/silver/medical
+	icon_state = "medGold"
+	job_access_type = /datum/job/cmo
 
 /obj/item/weapon/card/id/sierra/crew/medical/senior
 	job_access_type = /datum/job/senior_doctor
 
-/obj/item/weapon/card/id/sierra/contractor/medical
-	job_access_type = /datum/job/doctor_contractor
+/obj/item/weapon/card/id/sierra/crew/medical/trainee
+	job_access_type = /datum/job/doctor_trainee
 
-/obj/item/weapon/card/id/sierra/contractor/chemist
+/obj/item/weapon/card/id/sierra/crew/medical/chemist
 	job_access_type = /datum/job/chemist
 
-/obj/item/weapon/card/id/sierra/contractor/medical/counselor
+/obj/item/weapon/card/id/sierra/crew/medical/counselor
 	job_access_type = /datum/job/psychiatrist
 
 
+
 /obj/item/weapon/card/id/sierra/silver/security
+	icon_state = "secGold"
 	job_access_type = /datum/job/hos
 
 /obj/item/weapon/card/id/sierra/crew/security
+	desc = "An identification card issued to asset protection depatment's personnel aboard the NES Sierra."
+	icon_state = "sec"
 	job_access_type = /datum/job/officer
 
-/obj/item/weapon/card/id/sierra/crew/security/brigofficer
+/obj/item/weapon/card/id/sierra/crew/security/warden
 	job_access_type = /datum/job/warden
 
 /obj/item/weapon/card/id/sierra/crew/security/forensic
 	job_access_type = /datum/job/detective
 
 
+
 /obj/item/weapon/card/id/sierra/silver/engineering
+	icon_state = "engGold"
 	job_access_type = /datum/job/chief_engineer
 
 /obj/item/weapon/card/id/sierra/crew/engineering
+	desc = "An identification card issued to engineering personnel aboard the NES Sierra."
+	icon_state = "eng"
 	job_access_type = /datum/job/engineer
 
 /obj/item/weapon/card/id/sierra/crew/engineering/senior
 	job_access_type = /datum/job/senior_engineer
 
-/obj/item/weapon/card/id/sierra/contractor/engineering
-	job_access_type = /datum/job/engineer_contractor
+/obj/item/weapon/card/id/sierra/crew/engineering/trainee
+	job_access_type = /datum/job/engineer_trainee
 
-/obj/item/weapon/card/id/sierra/contractor/engineering/roboticist
+/obj/item/weapon/card/id/sierra/crew/engineering/comms/New()
+	.=..()
+	access |= list(access_network, access_tcomsat)
+
+/obj/item/weapon/card/id/sierra/crew/engineering/roboticist
 	job_access_type = /datum/job/roboticist
 
 
-/obj/item/weapon/card/id/sierra/crew/supply/deckofficer
+
+/obj/item/weapon/card/id/sierra/crew/supply/quartermaster
+	icon_state = "cargoGold"
 	job_access_type = /datum/job/qm
 
 /obj/item/weapon/card/id/sierra/crew/supply
+	icon_state = "cargo"
 	job_access_type = /datum/job/cargo_tech
 
-/obj/item/weapon/card/id/sierra/contractor/supply
-	job_access_type = /datum/job/cargo_contractor
+/obj/item/weapon/card/id/sierra/crew/supply/mining
+	job_access_type = /datum/job/mining
+
+/obj/item/weapon/card/id/sierra/crew/supply/assistant
+	job_access_type = /datum/job/cargo_assistant
+
 
 
 /obj/item/weapon/card/id/sierra/crew/service //unused
-	job_access_type = /datum/job/assistant
+	desc = "An identification card issued to service personnel aboard the NES Sierra."
+	icon_state = "civ"
 
 /obj/item/weapon/card/id/sierra/crew/service/janitor
 	job_access_type = /datum/job/janitor
@@ -111,59 +127,53 @@
 /obj/item/weapon/card/id/sierra/crew/service/chef
 	job_access_type = /datum/job/chef
 
-/obj/item/weapon/card/id/sierra/contractor/service //unused
+/obj/item/weapon/card/id/sierra/crew/service //unused
 	job_access_type = /datum/job/assistant
 
-/obj/item/weapon/card/id/sierra/contractor/service/bartender
+/obj/item/weapon/card/id/sierra/crew/service/bartender
 	job_access_type = /datum/job/bartender
 
 
-/obj/item/weapon/card/id/sierra/crew/representative
+
+/obj/item/weapon/card/id/sierra/solgov/representative
 	job_access_type = /datum/job/representative
 
-/obj/item/weapon/card/id/sierra/crew/sea
-	job_access_type = /datum/job/sea
-
-/obj/item/weapon/card/id/sierra/crew/warden
-	job_access_type = /datum/job/bridgeofficer
-
-/obj/item/weapon/card/id/sierra/crew/pathfinder
+/obj/item/weapon/card/id/sierra/solgov/pathfinder
 	job_access_type = /datum/job/pathfinder
 
-/obj/item/weapon/card/id/sierra/crew/explorer
+/obj/item/weapon/card/id/sierra/solgov/explorer
 	job_access_type = /datum/job/explorer
 
-//NanoTrasen and Passengers
+/obj/item/weapon/card/id/sierra/solgov/pilot
+	job_access_type = /datum/job/explorer
 
-/obj/item/weapon/card/id/sierra/passenger
-	desc = "A card issued to passengers and off-duty personnel aboard the NES Sierra."
-	icon_state = "id"
-	job_access_type = /datum/job/assistant
+/obj/item/weapon/card/id/sierra/solgov/field_medic
+	job_access_type = /datum/job/explorer
 
-/obj/item/weapon/card/id/sierra/passenger/research
-	desc = "A card issued to NanoTrasen personnel aboard the NES Sierra."
-	icon_state = "corporate"
+/obj/item/weapon/card/id/sierra/solgov/field_engineer
+	job_access_type = /datum/job/explorer
+
+
+
+/obj/item/weapon/card/id/sierra/crew/research
+	desc = "A card issued to research personnel aboard the NES Sierra."
+	icon_state = "sci"
 	job_access_type = /datum/job/scientist_assistant
 
 /obj/item/weapon/card/id/sierra/silver/research
+	icon_state = "sciGold"
 	job_access_type = /datum/job/rd
 
-/obj/item/weapon/card/id/sierra/passenger/research/senior_scientist
+/obj/item/weapon/card/id/sierra/crew/research/senior_scientist
 	job_access_type = /datum/job/senior_scientist
 
-/obj/item/weapon/card/id/sierra/passenger/research/nt_pilot
-	job_access_type = /datum/job/nt_pilot
-
-/obj/item/weapon/card/id/sierra/passenger/research/scientist
+/obj/item/weapon/card/id/sierra/crew/research/scientist
 	job_access_type = /datum/job/scientist
 
-/obj/item/weapon/card/id/sierra/passenger/research/mining
-	job_access_type = /datum/job/mining
+/obj/item/weapon/card/id/sierra/crew/research/nt_pilot
+	job_access_type = /datum/job/nt_pilot
 
-/obj/item/weapon/card/id/sierra/passenger/research/guard
-	job_access_type = /datum/job/guard
-
-/obj/item/weapon/card/id/sierra/passenger/research/liaison
+/obj/item/weapon/card/id/sierra/crew/research/liaison
 	job_access_type = /datum/job/liaison
 
 
@@ -177,7 +187,7 @@
 /obj/item/weapon/card/id/sierra/stowaway
 	desc = "An identification card issued to personnel aboard the NES Sierra. Looks like the photo fell off this one."
 	icon_state = "id"
-	job_access_type = /datum/job/crew
+	job_access_type = /datum/job/assistant
 
 /obj/item/weapon/card/id/sierra/stowaway/New()
 	..()

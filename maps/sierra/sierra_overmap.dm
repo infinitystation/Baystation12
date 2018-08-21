@@ -1,5 +1,5 @@
 /obj/effect/overmap/ship/sierra
-	name = "SEV Sierra"
+	name = "NSV Sierra"
 	fore_dir = WEST
 	vessel_mass = 300
 	default_delay = 20 SECONDS

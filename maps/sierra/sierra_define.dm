@@ -1,6 +1,6 @@
 /datum/map/sierra
 	name = "Sierra"
-	full_name = "SEV Sierra"
+	full_name = "NSV Sierra"
 	path = "sierra"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 
@@ -12,7 +12,7 @@
 	accessible_z_levels = list("1"=1,"2"=1,"3"=1,"6"=30)
 	overmap_size = 35
 	overmap_event_areas = 34
-	usable_email_tlds = list("torch.ec.scg","freemail.nt")
+	usable_email_tlds = list("sierra.ec.scg","freemail.nt","sierra.scg")
 
 	allowed_spawns = list("Cryogenic Storage", "Cyborg Storage")
 	default_spawn = "Cryogenic Storage"
@@ -35,7 +35,7 @@
 
 	evac_controller_type = /datum/evacuation_controller/starship
 
-	default_law_type = /datum/ai_laws/solgov
+	default_law_type = /datum/ai_laws/nanotrasen
 	use_overmap = 1
 	num_exoplanets = 0
 	planet_size = list(129,129)
@@ -119,6 +119,13 @@
 	..()
 	system_name = generate_system_name()
 	minor_announcement = new(new_sound = sound('sound/AI/torch/commandreport.ogg', volume = 45))
+
+/datum/map/sierra/map_info(victim)
+	to_chat(victim, "<h2>Информаци&#255; о карте</h2>")
+	to_chat(victim, "Вы находитесь на борту <b>[station_name]</b>, исследовательского судна корпорации НаноТрейзен. Основна&#255; мисси&#255; вашего объекта - проведение проведение исследований за границей известного космоса.с целью нахождени&#255; новых залеж форона, космических объектов, артефактов и останков инопланетных цивилизаций.")
+	to_chat(victim, "Помимо персонала НаноТрейзен, на судне также присутствуют исследователи от Правительства Солнечной Системы, занимающиес&#255; более детальным изучением космических объектов и их официальным документированием.")
+	to_chat(victim, "Охрана судна укомплектована корпоративными сотрудника из Департамента по Защите Активов НаноТрайзен и сотрудниками частных предпри&#255;тий осуществл&#255;ющих безопасность активов - охрану судна и его персонала, поддержани&#255; пор&#255;дка в удалении от цивилизации.")
+
 
 /datum/map/sierra/send_welcome()
 	var/welcome_text = "<center><img src = ntlogo.png /><br /><font size = 3><b>SEV Sierra</b> Sensor Readings:</font><hr />"

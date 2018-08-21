@@ -5,7 +5,7 @@
 /datum/map/sierra
 	branch_types = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/nanotrasen,
+		/datum/mil_branch/civilian,
 		/datum/mil_branch/solgov
 	)
 
@@ -62,7 +62,6 @@
 			/datum/mil_branch/expeditionary_corps = list(
 				/datum/mil_rank/ec/e3,
 				/datum/mil_rank/ec/e5,
-				/datum/mil_rank/ec/e7,
 				/datum/mil_rank/ec/o1
 			)
 		),
@@ -78,10 +77,7 @@
 	species_to_rank_blacklist = list(
 		/datum/species/machine = list(
 			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/e7,
 				/datum/mil_rank/ec/o3,
-				/datum/mil_rank/ec/o5,
-				/datum/mil_rank/ec/o6
 			),
 			/datum/mil_branch/solgov = list(
 				/datum/mil_rank/sol/gov
@@ -89,33 +85,22 @@
 		),
 		/datum/species/tajaran = list(
 			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/e7,
 				/datum/mil_rank/ec/o3,
-				/datum/mil_rank/ec/o5,
-				/datum/mil_rank/ec/o6
 			)
 		),
 		/datum/species/unathi = list(
 			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/e7,
 				/datum/mil_rank/ec/o3,
-				/datum/mil_rank/ec/o5,
-				/datum/mil_rank/ec/o6
 			)
 		),
 		/datum/species/resomi = list(
 			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/e7,
 				/datum/mil_rank/ec/o3,
-				/datum/mil_rank/ec/o5,
-				/datum/mil_rank/ec/o6
 			)
 		),
 		/datum/species/skrell = list(
 			/datum/mil_branch/expeditionary_corps = list(
 				/datum/mil_rank/ec/o3,
-				/datum/mil_rank/ec/o5,
-				/datum/mil_rank/ec/o6
 			)
 		)
 	)
@@ -143,11 +128,8 @@
 	spawn_rank_types = list(
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5,
-		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/ec/o1,
 		/datum/mil_rank/ec/o3,
-		/datum/mil_rank/ec/o5,
-		/datum/mil_rank/ec/o6
 	)
 
 	assistant_job = "Crewman"
@@ -163,7 +145,6 @@
 	rank_types = list(
 		/datum/mil_rank/civ/civ,
 		/datum/mil_rank/civ/nt,
-		/datum/mil_rank/civ/contractor,
 		/datum/mil_rank/civ/offduty,
 		/datum/mil_rank/civ/synthetic
 	)
@@ -171,7 +152,6 @@
 	spawn_rank_types = list(
 		/datum/mil_rank/civ/civ,
 		/datum/mil_rank/civ/nt,
-		/datum/mil_rank/civ/contractor,
 		/datum/mil_rank/civ/offduty,
 		/datum/mil_rank/civ/synthetic
 	)
@@ -270,9 +250,6 @@
 
 /datum/mil_rank/civ/nt
 	name = "NanoTrasen Employee"
-
-/datum/mil_rank/civ/contractor
-	name = "Contractor"
 
 /datum/mil_rank/civ/offduty
 	name = "Off-Duty Personnel"

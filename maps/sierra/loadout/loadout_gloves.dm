@@ -17,8 +17,8 @@
 	display_name = "gloves, dress"
 	path = /obj/item/clothing/gloves/color/white
 
-/datum/gear/gloves/duty
-	display_name = "gloves, duty"
+/datum/gear/gloves/work
+	display_name = "gloves, work"
 	path = /obj/item/clothing/gloves/duty
-	cost = 3
-	allowed_roles = MILITARY_ROLES
+	cost = 2
+	allowed_roles = TECHNICAL_ROLES
