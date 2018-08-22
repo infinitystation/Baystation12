@@ -274,7 +274,7 @@
 	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
 	damage = 75
 	stun = 3
-	armor_penetration = 55
+	armor_penetration = 35
 
 /* Miscellaneous */
 
