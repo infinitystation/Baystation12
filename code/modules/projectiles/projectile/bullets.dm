@@ -270,6 +270,12 @@
 	armor_penetration = 95
 	penetration_modifier = 1.5
 
+/obj/item/projectile/bullet/rifle/nitro600
+	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
+	damage = 75
+	stun = 3
+	armor_penetration = 35
+
 /* Miscellaneous */
 
 /obj/item/projectile/bullet/suffocationbullet//How does this even work?

@@ -272,3 +272,10 @@
 	caliber = "46x30mm"
 	projectile_type = /obj/item/projectile/bullet/smg/uni46x30mm
 
+/obj/item/ammo_casing/nitro600
+	desc = "A \"Nitro Express\" bullet casing."
+	caliber = "nitro600"
+	icon = 'icons/obj/infinity_ammo.dmi'
+	icon_state = "nitro600"
+	spent_icon = "nitro600-spent"
+	projectile_type = /obj/item/projectile/bullet/rifle/nitro600
