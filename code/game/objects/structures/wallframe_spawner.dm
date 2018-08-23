@@ -128,6 +128,10 @@
 	name = "reinforced phoron osmium wall frame window spawner"
 	frame_path = /obj/structure/wall_frame/osmium
 
+/obj/effect/wallframe_spawn/reinforced_phoron/hull
+	name = "reinforced phoron hull wall frame window spawner"
+	frame_path = /obj/structure/wall_frame/hull
+
 /obj/effect/wallframe_spawn/reinforced/polarized
 	name = "polarized wall frame window spawner"
 	color = "#444444"
