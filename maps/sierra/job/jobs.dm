@@ -743,8 +743,8 @@
 	selection_color = "#013d3b"
 	economic_modifier = 8
 	alt_titles = list(
-		"Xeno Surgeon",
-		"Trauma Surgeon")
+		"Xeno Surgeon" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/xenosurgeon,
+		"Trauma Surgeon" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/traumasurgeon)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/senior
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
@@ -782,8 +782,10 @@
 	min_skill = list(	SKILL_EVA     = SKILL_BASIC,
 						SKILL_MEDICAL = SKILL_BASIC,
 						SKILL_ANATOMY = SKILL_BASIC)
-	access = list(access_medical, access_morgue, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_eva, access_surgery, access_medical_equip, access_hangar)
+	access = list(	access_medical, access_morgue, access_virology, access_maint_tunnels, access_external_airlocks,
+					access_emergency_storage,
+			        access_eva, access_surgery, access_medical_equip, access_hangar)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
@@ -803,7 +805,7 @@
 	ideal_character_age = 30
 	alt_titles = list(
 		"Orderly" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/orderly,
-		"Nurse")
+		"Nurse" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/nurse)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
@@ -812,14 +814,18 @@
 						SKILL_ANATOMY = SKILL_BASIC)
 	skill_points = 32
 
-	access = list(access_medical, access_morgue, access_crematorium, access_virology, access_surgery, access_medical_equip,
-		            access_eva, access_maint_tunnels, access_emergency_storage, access_external_airlocks, access_hangar)
+	access = list(	access_medical, access_morgue, access_surgery,
+					access_medical_equip,
+		            access_maint_tunnels, access_emergency_storage,
+		            access_external_airlocks, access_hangar)
+
+	access = list(access_medical, access_morgue, access_maint_tunnels, access_external_airlocks, access_emergency_storage, access_eva, access_surgery, access_medical_equip, access_hangar)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/doctor_trainee/get_description_blurb()
-	return "You are a Corpsman Trainee. You are learning how to treat and recover wounded crew from the more experienced medical personnel aboard. You are subordinate to the rest of the medical team."
+	return "You are an Intern. You are learning how to treat and recover wounded crew from the more experienced medical personnel aboard. You are subordinate to the rest of the medical team."
 
 
 /datum/job/chemist

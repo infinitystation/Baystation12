@@ -529,6 +529,12 @@
 	name = "\improper Unused Office"
 	icon_state = "conference"
 
+/area/vacant/gambling
+	name = "\improper Gambling Room"
+	icon_state = "restrooms"
+	sound_env = MEDIUM_SOFTFLOOR
+
+
 // Storage
 /area/storage/auxillary/port
 	name = "Port Auxillary Storage"

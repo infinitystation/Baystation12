@@ -70,7 +70,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/crew/command/cmo
 	name = OUTFIT_JOB_NAME("Chief Medical Officer - Sierra")
 	l_ear  =/obj/item/device/radio/headset/heads/cmo
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/officer/medical
+	uniform = /obj/item/clothing/under/rank/chief_medical_officer
 	shoes = /obj/item/clothing/shoes/brown
 	id_type = /obj/item/weapon/card/id/sierra/silver/medical
 	pda_type = /obj/item/modular_computer/pda/heads/cmo
@@ -79,11 +79,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/crew/command/cmo/New()
 	..()
 	BACKPACK_OVERRIDE_MEDICAL
-
-/decl/hierarchy/outfit/job/sierra/crew/command/cmo/fleet
-	name = OUTFIT_JOB_NAME("Chief Medical Officer - Fleet")
-	uniform = /obj/item/clothing/under/rank/chief_medical_officer
-	shoes = /obj/item/clothing/shoes/dutyboots
 
 /decl/hierarchy/outfit/job/sierra/crew/command/chief_engineer
 	name = OUTFIT_JOB_NAME("Chief Engineer - Sierra")
@@ -123,7 +118,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/crew/command/adjutant
 	name = OUTFIT_JOB_NAME("Adjutant")
-	uniform = /obj/item/clothing/under/rank/guard
+	uniform = /obj/item/clothing/under/rank/security2/adjutant
 	shoes = /obj/item/clothing/shoes/brown
 
 	///////////////
@@ -239,6 +234,10 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	name = OUTFIT_JOB_NAME("Orderly")
 	uniform = /obj/item/clothing/under/rank/orderly
 
+/decl/hierarchy/outfit/job/sierra/crew/medical/doctor/traumasurgeon
+	name = OUTFIT_JOB_NAME("Trauma Surgeon")
+	uniform = /obj/item/clothing/under/rank/medical/scrubs/blue
+
 /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/xenosurgeon
 	name = OUTFIT_JOB_NAME("Xenosurgeon")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/purple
@@ -250,6 +249,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/virologist
 	name = OUTFIT_JOB_NAME("Virologist - Sierra")
 	uniform = /obj/item/clothing/under/rank/virologist
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/virologist
 
 /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/virologist/New()
 	..()
@@ -263,6 +263,23 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	l_hand = /obj/item/weapon/storage/firstaid/adv
 	belt = /obj/item/weapon/storage/belt/medical/emt
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
+
+/decl/hierarchy/outfit/job/sierra/crew/medical/doctor/nurse
+	name = OUTFIT_JOB_NAME("Nurse")
+	suit = null
+
+/decl/hierarchy/outfit/job/sierra/crew/medical/doctor/nurse/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(H.gender == FEMALE)
+		if(prob(50))
+			uniform = /obj/item/clothing/under/rank/nursesuit
+		else
+			uniform = /obj/item/clothing/under/rank/nurse
+		head = /obj/item/clothing/head/nursehat
+	else
+		uniform = /obj/item/clothing/under/rank/medical/scrubs/purple
+		head = null
+
 
 /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/chemist
 	name = OUTFIT_JOB_NAME("Chemist - Sierra")

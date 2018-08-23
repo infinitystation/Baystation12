@@ -141,13 +141,13 @@
 	job_access_type = /datum/job/explorer
 
 /obj/item/weapon/card/id/sierra/solgov/pilot
-	job_access_type = /datum/job/explorer
+	job_access_type = /datum/job/explorer_pilot
 
 /obj/item/weapon/card/id/sierra/solgov/field_medic
-	job_access_type = /datum/job/explorer
+	job_access_type = /datum/job/explorer_medic
 
 /obj/item/weapon/card/id/sierra/solgov/field_engineer
-	job_access_type = /datum/job/explorer
+	job_access_type = /datum/job/explorer_engineer
 
 
 
