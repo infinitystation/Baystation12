@@ -1,4 +1,3 @@
-var/const/NETWORK_AQUILA      = "Aquila"
 var/const/NETWORK_BRIDGE      = "Bridge"
 var/const/NETWORK_CALYPSO     = "Charon"
 var/const/NETWORK_EXPEDITION  = "Expedition"
@@ -51,7 +50,6 @@ var/const/NETWORK_PETROV      = "Petrov"
 		NETWORK_EXPEDITION,
 		NETWORK_EXPLO,
 		NETWORK_HANGAR,
-		NETWORK_AQUILA,
 		NETWORK_CALYPSO,
 		NETWORK_PETROV,
 		NETWORK_POD,
@@ -68,8 +66,6 @@ var/const/NETWORK_PETROV      = "Petrov"
 //
 
 // Networks
-/obj/machinery/camera/network/aquila
-	network = list(NETWORK_AQUILA)
 
 /obj/machinery/camera/network/bridge
 	network = list(NETWORK_BRIDGE)

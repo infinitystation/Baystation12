@@ -1,15 +1,15 @@
 //The following is a list of defs to be used for the Torch loadout.
 
-//For all SolGov personnel (but no representative included)
+//For all SolGov personnel
 #define SOLGOV_ROLES list(\
 	/datum/job/pathfinder, /datum/job/explorer, /datum/job/explorer_pilot,\
 	/datum/job/explorer_medic, /datum/job/explorer_engineer)
 
 //For jobs that allow for decorative or ceremonial clothing
 #define FORMAL_ROLES list(\
-	/datum/job/liaison, /datum/job/rd, /datum/job/senior_scientist,\
+	/datum/job/iaa, /datum/job/rd, /datum/job/senior_scientist,\
 	/datum/job/scientist, /datum/job/scientist_assistant,\
-	/datum/job/psychiatrist, /datum/job/representative,\
+	/datum/job/psychiatrist, ,\
 	/datum/job/assistant, /datum/job/bartender, /datum/job/merchant,\
 	/datum/job/stowaway, /datum/job/detective)
 
@@ -24,14 +24,14 @@
 #define SEMIANDFORMAL_ROLES list(\
 	/datum/job/assistant,/datum/job/mining, /datum/job/scientist_assistant,\
 	/datum/job/psychiatrist, /datum/job/bartender, /datum/job/merchant,\
-	/datum/job/nt_pilot, /datum/job/liaison, /datum/job/rd,\
+	/datum/job/nt_pilot, /datum/job/iaa, /datum/job/rd,\
 	/datum/job/senior_scientist, /datum/job/scientist,\
-	 /datum/job/representative,/datum/job/stowaway, /datum/job/detective)
+	 ,/datum/job/stowaway, /datum/job/detective)
 
 //For NanoTrasen employees
 #define NANOTRASEN_ROLES list(\
 	/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,\
-	/datum/job/liaison, /datum/job/representative,\
+	/datum/job/iaa, ,\
 	/datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/engineer_trainee,\
 	/datum/job/officer, /datum/job/warden, /datum/job/detective,\
 	/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee,/datum/job/chemist,\
@@ -43,8 +43,7 @@
 
 
 //For corporate or government representatives
-#define REPRESENTATIVE_ROLES list(\
-	/datum/job/representative, /datum/job/liaison)
+#define REPRESENTATIVE_ROLES list(/datum/job/iaa)
 
 //For roles with no uniform or formal clothing requirements
 #define RESTRICTED_ROLES list(\
@@ -97,7 +96,7 @@
 
 //For members of the research department and jobs that are scientific
 #define RESEARCH_ROLES list(\
-	/datum/job/rd, /datum/job/liaison, /datum/job/scientist,\
+	/datum/job/rd, /datum/job/iaa, /datum/job/scientist,\
 	/datum/job/scientist_assistant, /datum/job/assistant, /datum/job/nt_pilot,\
 	/datum/job/senior_scientist, /datum/job/roboticist)
 

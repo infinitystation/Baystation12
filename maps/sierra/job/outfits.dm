@@ -121,16 +121,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	pda_type = /obj/item/modular_computer/pda/heads/paperpusher
 	backpack_contents = list(/obj/item/clothing/accessory/badge/nanotrasen = 1)
 
-/decl/hierarchy/outfit/job/sierra/crew/representative
-	name = OUTFIT_JOB_NAME("SolGov Representative")
-	l_ear = /obj/item/device/radio/headset/headset_com
-	uniform = /obj/item/clothing/under/rank/internalaffairs/plain/solgov
-	suit = /obj/item/clothing/suit/storage/toggle/suit/black
-	shoes = /obj/item/clothing/shoes/laceup
-	id_type = /obj/item/weapon/card/id/sierra/solgov/representative
-	pda_type = /obj/item/modular_computer/pda/heads/paperpusher
-	backpack_contents = list(/obj/item/clothing/accessory/badge/solgov/representative = 1)
-
 /decl/hierarchy/outfit/job/sierra/crew/command/adjutant
 	name = OUTFIT_JOB_NAME("Adjutant")
 	uniform = /obj/item/clothing/under/rank/guard
@@ -168,9 +158,14 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	name = OUTFIT_JOB_NAME("Engineer (Atmos) - Sierra")
 	uniform = /obj/item/clothing/under/rank/atmospheric_technician
 
-/decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/atmos
+/decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/maints
+	name = OUTFIT_JOB_NAME("Engineer (Maints) - Sierra")
+	uniform = /obj/item/clothing/under/hazard
+
+/decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/tcomms
 	name = OUTFIT_JOB_NAME("Engineer (Tcomms) - Sierra")
-	uniform = /obj/item/clothing/under/rank/engineer
+	uniform = /obj/item/clothing/under/rank/dispatch
+	shoes = /obj/item/clothing/shoes/brown
 	id_type = /obj/item/weapon/card/id/sierra/crew/engineering/comms
 
 /decl/hierarchy/outfit/job/sierra/crew/engineering/roboticist

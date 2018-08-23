@@ -17,7 +17,7 @@
 	allowed_spawns = list("Cryogenic Storage", "Cyborg Storage")
 	default_spawn = "Cryogenic Storage"
 
-	station_name  = "SEV Sierra"
+	station_name  = "NSV Sierra"
 	station_short = "Sierra"
 	dock_name     = "TBD"
 	boss_name     = "Central Command"
@@ -128,7 +128,7 @@
 
 
 /datum/map/sierra/send_welcome()
-	var/welcome_text = "<center><img src = ntlogo.png /><br /><font size = 3><b>SEV Sierra</b> Sensor Readings:</font><hr />"
+	var/welcome_text = "<center><img src = ntlogo.png /><br /><font size = 3><b>NSV Sierra</b> Sensor Readings:</font><hr />"
 	welcome_text += "Report generated on [stationdate2text()] at [stationtime2text()]</center><br /><br />"
 	welcome_text += "Current system:<br /><b>[system_name()]</b><br />"
 	welcome_text += "Next system targeted for jump:<br /><b>[generate_system_name()]</b><br />"
@@ -153,7 +153,7 @@
 		welcome_text += "<li>\A <b>[O.name]</b>[location_desc]</li>"
 	welcome_text += "<br>No distress calls logged.<br />"
 
-	post_comm_message("SEV Sierra Sensor Readings", welcome_text)
+	post_comm_message("NSV Sierra Sensor Readings", welcome_text)
 	minor_announcement.Announce(message = "New [GLOB.using_map.company_name] Update available at all communication consoles.")
 
 /turf/simulated/wall //landlubbers go home

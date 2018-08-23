@@ -134,10 +134,6 @@
 	job_access_type = /datum/job/bartender
 
 
-
-/obj/item/weapon/card/id/sierra/solgov/representative
-	job_access_type = /datum/job/representative
-
 /obj/item/weapon/card/id/sierra/solgov/pathfinder
 	job_access_type = /datum/job/pathfinder
 
@@ -174,7 +170,7 @@
 	job_access_type = /datum/job/nt_pilot
 
 /obj/item/weapon/card/id/sierra/crew/research/liaison
-	job_access_type = /datum/job/liaison
+	job_access_type = /datum/job/iaa
 
 
 //Merchant

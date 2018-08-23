@@ -5,26 +5,26 @@
 		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/stowaway)
 	)
 
-#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos, /datum/job/representative, /datum/job/pathfinder, /datum/job/warden
+#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos, /datum/job/pathfinder, /datum/job/warden
 	species_to_job_blacklist = list(
-		/datum/species/unathi  = list(HUMAN_ONLY_JOBS, /datum/job/liaison), //Other jobs unavailable via branch restrictions,
+		/datum/species/unathi  = list(HUMAN_ONLY_JOBS, /datum/job/iaa), //Other jobs unavailable via branch restrictions,
 		/datum/species/skrell  = list(HUMAN_ONLY_JOBS),
 		/datum/species/tajaran = list(HUMAN_ONLY_JOBS),
 		/datum/species/machine = list(HUMAN_ONLY_JOBS),
-		/datum/species/resomi  = list(HUMAN_ONLY_JOBS, /datum/job/liaison, /datum/job/officer),
+		/datum/species/resomi  = list(HUMAN_ONLY_JOBS, /datum/job/iaa, /datum/job/officer),
 		/datum/species/diona   = list(HUMAN_ONLY_JOBS, /datum/job/officer),	//Other jobs unavailable via branch restrictions,
 	)
 #undef HUMAN_ONLY_JOBS
 
 	allowed_jobs = list(/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,
-						/datum/job/iaa, /datum/job/representative, adjutant,
+						/datum/job/iaa, /datum/job/adjutant,
 						/datum/job/pathfinder, /datum/job/explorer, /datum/job/explorer_pilot, /datum/job/explorer_medic, /datum/job/explorer_engineer,
-						/datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/engineer_trainee,
+						/datum/job/senior_engineer, /datum/job/engineer, /datum/job/engineer_trainee,
 						/datum/job/officer, /datum/job/warden, /datum/job/detective,
 						/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee,/datum/job/chemist, /datum/job/psychiatrist,
 						/datum/job/qm, /datum/job/cargo_tech,  /datum/job/cargo_assistant, /datum/job/mining,
 						/datum/job/janitor, /datum/job/chef, /datum/job/bartender,
-						/datum/job/senior_scientist, /datum/job/nt_pilot, /datum/job/scientist,/datum/job/scientist_assistant,
+						/datum/job/senior_scientist, /datum/job/scientist, /datum/job/roboticist, /datum/job/nt_pilot, /datum/job/scientist_assistant,
 						/datum/job/ai, /datum/job/cyborg,
 						/datum/job/assistant,
 						/datum/job/merchant, /datum/job/stowaway
@@ -47,7 +47,7 @@
 /datum/job/captain
 	title = "Captain"
 	department = "Command"
-	supervisors = "the Sol Central Government and the Sol Code of Military Justice"
+	supervisors = "the NanoTrasen"
 	department_flag = COM
 	head_position = 1
 	minimal_player_age = 21
@@ -156,7 +156,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/rd/get_description_blurb()
-	return "You are the Research Director. You are responsible for the research department. You handle both the science part of the mission but are also responsible for ensuring Nanotrasen's interests along with your Nanotrasen Liaison. Make sure science gets done, do some yourself, and get your prospectors and scientists on away missions to find things to benefit NT. Don’t put NT’s position on board in jeopardy.  Advise the CO on science matters."
+	return "You are the Research Director. You are responsible for the research department. You handle both the science part of the mission but are also responsible for ensuring Nanotrasen's interests along with your Nanotrasen iaa. Make sure science gets done, do some yourself, and get your prospectors and scientists on away missions to find things to benefit NT. Don’t put NT’s position on board in jeopardy.  Advise the CO on science matters."
 
 /datum/job/cmo
 	title = "Chief Medical Officer"
@@ -305,33 +305,8 @@
 
 	software_on_spawn = list(/datum/computer_file/program/reports)
 
-/datum/job/liaison/get_description_blurb()
-	return "You are the Nanotrasen Liaison. You are a civilian employee of Nanotrasen assigned to the vessel to promote, protect and ensure the interests of the corporation on board. You are not internal affairs. You assume command of the Research Department in the absence of the RD and the Senior Researcher. You advise the RD on NT matters and try to push NT interests on the CO. Maximise profit. Be the rich corporate lawyer you always wanted to be."
-
-/datum/job/representative
-	title = "SolGov Representative"
-	department = "Support"
-	department_flag = SPT
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "the Sol Central Government and the SCG Charter"
-	selection_color = "#2f2f7f"
-	economic_modifier = 15
-	minimal_player_age = 10
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/representative
-	allowed_branches = list(/datum/mil_branch/solgov)
-	allowed_ranks = list(/datum/mil_rank/sol/gov)
-	min_skill = list(   SKILL_BUREAUCRACY = SKILL_EXPERT,
-	                    SKILL_FINANCE     = SKILL_BASIC)
-	skill_points = 20
-
-	access = list(access_representative, access_security, access_medical,
-			            access_bridge, access_cargo, access_hangar)
-
-	software_on_spawn = list(/datum/computer_file/program/reports)
-
-/datum/job/representative/get_description_blurb()
-	return "You are the Sol Gov Representative. You are a civilian assigned as both a diplomatic liaison for first contact and foreign affair situations on board. You are also responsible for monitoring for any serious missteps of justice, sol law or other ethical or legal issues aboard and informing and advising the Commanding Officer of them. You are a mid-level bureaucrat. You liaise between the crew and Nanotrasen interests on board. Send faxes back to Sol on mission progress and important events."
+/datum/job/iaa/get_description_blurb()
+	return "You are the Nanotrasen iaa. You are a civilian employee of Nanotrasen assigned to the vessel to promote, protect and ensure the interests of the corporation on board. You are not internal affairs. You assume command of the Research Department in the absence of the RD and the Senior Researcher. You advise the RD on NT matters and try to push NT interests on the CO. Maximise profit. Be the rich corporate lawyer you always wanted to be."
 
 /datum/job/adjutant
 	title = "Adjutant"
@@ -367,8 +342,8 @@
 							 /datum/computer_file/program/reports,
 							 /datum/computer_file/program/deck_management)
 
-/datum/job/warden/get_description_blurb()
-	return "You are a Bridge Officer. You are a very junior officer. You do not give orders of your own. You are subordinate to all of command. You handle matters on the bridge and report directly to the CO and XO. You take the sierra's helm and pilot the Aquila if needed. You monitor bridge computer programs and communications and report relevant information to command."
+/datum/job/adjutant/get_description_blurb()
+	return "You are an Adjutant. You do not give orders of your own. You are subordinate to all of command. You handle matters on the bridge and report directly to the Captain and Head of Personnel. You take the sierra's helm. You monitor bridge computer programs and communications and report relevant information to command. Sometimes you can also give support for vessel's departments - you have radio keys in bridge's storage for that purpose.."
 
 /datum/job/pathfinder
 	title = "Pathfinder"
@@ -377,7 +352,7 @@
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Captain"
+	supervisors = "the Captain and the Sol Central Government"
 	selection_color = "#68099e"
 	minimal_player_age = 7
 	economic_modifier = 7
@@ -400,7 +375,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/pathfinder/get_description_blurb()
-	return "You are the Pathfinder. Your duty is to organize and lead the expeditions to away sites, carrying out the EC’s Primary Mission. You command Explorers. You make sure that expedition has the supplies and personnel it needs. You can pilot Charon if NT doesn’t provide their pilot. Once on the away mission, your duty is to ensure that anything of scientific interest is brought back to the ship and passed to the relevant research lab."
+	return "You are the Pathfinder. Your duty is to organize and lead the expeditions to away sites. You command Explorers. You make sure that expedition has the supplies and personnel it needs. You can pilot Charon if you'll not have your pilot and NT doesn't provide their one. Once on the away mission, your duty is to ensure that anything of scientific interest is brought back to the ship and passed to the relevant research lab."
 
 /datum/job/explorer
 	title = "Explorer"
@@ -434,7 +409,7 @@
 	spawn_positions = 1
 	supervisors = "the Captain and the Pathfinder"
 	selection_color = "#68099e"
-	ideal_character_age = 20
+	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/pilot
 	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
 	allowed_ranks = list(
@@ -444,7 +419,8 @@
 	min_skill = list(	SKILL_EVA	= SKILL_BASIC,
 						SKILL_PILOT	= SKILL_ADEPT)
 
-	access = list(access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_cent_creed)
+	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm,
+					access_expedition_shuttle, access_guppy, access_hangar, access_expedition_shuttle_helm)
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
@@ -470,7 +446,10 @@
 						SKILL_MEDICAL = SKILL_BASIC,
 						SKILL_HAULING = SKILL_BASIC)
 
-	access = list(access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_cent_creed)
+	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
+					access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar,
+					access_medical)
+
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
@@ -498,7 +477,10 @@
 						SKILL_HAULING		= SKILL_BASIC,
 						SKILL_COMPUTER		= SKILL_BASIC)
 
-	access = list(access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_cent_creed)
+	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
+	 				access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_engine)
+
+
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
@@ -528,9 +510,9 @@
 						SKILL_ENGINES      = SKILL_ADEPT)
 	skill_points = 24
 
-	access = list(access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor, access_construction,
-			            access_tcomsat, access_seneng, access_hangar)
+	access = list(	access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
+			        access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor, access_construction,
+			        access_tcomsat, access_seneng, access_hangar)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,
@@ -554,12 +536,12 @@
 	minimal_player_age = 7
 	selection_color = "#5b4d20"
 	alt_titles = list(
-		"Maintenance Technician",
-		"Structural Integrity Specialist",
+		"Maintenance Technician" = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/maints,
+		"Structural Integrity Specialist" = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/maints,
 		"Electrician",
-		"Information Systems Technician",
-		"Reactor Technician",
-		"Atmospheric Technician")
+		"Information Systems Technician" = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/tcomms,
+		"Reactor Technician" = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/maints,,
+		"Atmospheric Technician" = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/atmos)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
@@ -571,9 +553,9 @@
 						SKILL_ENGINES      = SKILL_BASIC)
 	skill_points = 20
 
-	access = list(access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor, access_construction,
-			            access_hangar)
+	access = list(	access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
+			       	access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor, access_construction,
+			        access_hangar)
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,
@@ -1185,6 +1167,9 @@
 	spawn_positions = 3
 	supervisors = "your laws"
 
+/datum/job/ai
+	total_positions = 0
+	spawn_positions = 0
 
 /datum/job/merchant
 	title = "Merchant"

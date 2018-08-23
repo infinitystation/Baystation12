@@ -41,12 +41,7 @@
 	gear_tweaks += new/datum/gear_tweak/path(solminors)
 
 /datum/gear/accessory/tags
-	display_name = "SCG dog tags"
-	path = /obj/item/clothing/accessory/badge/solgov/tags
-	allowed_roles = SOLGOV_ROLES
-
-/datum/gear/accessory/tags
-	display_name = "non-SCG dog tags"
+	display_name = "dog tags"
 	path = /obj/item/clothing/accessory/badge/tags
 
 /datum/gear/accessory/pilot_pin

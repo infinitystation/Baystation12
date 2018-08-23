@@ -212,7 +212,7 @@
 	shuttle_area = /area/ninja_dojo/start
 	current_location = "nav_ninja_start"
 	landmark_transition = "nav_ninja_transition"
-	announcer = "SEV sierra Sensor Array"
+	announcer = "NSV sierra Sensor Array"
 	arrival_message = "Attention, anomalous sensor reading detected entering vessel proximity."
 	departure_message = "Attention, anomalous sensor reading detected leaving vessel proximity."
 
@@ -336,7 +336,7 @@
 	dock_target = "merc_shuttle"
 	current_location = "nav_merc_start"
 	landmark_transition = "nav_merc_transition"
-	announcer = "SEV sierra Sensor Array"
+	announcer = "NSV sierra Sensor Array"
 	home_waypoint = "nav_merc_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
@@ -403,7 +403,7 @@
 	dock_target = "skipjack_shuttle"
 	current_location = "nav_skipjack_start"
 	landmark_transition = "nav_skipjack_transition"
-	announcer = "SEV sierra Sensor Array"
+	announcer = "NSV sierra Sensor Array"
 	home_waypoint = "nav_skipjack_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
