@@ -85,7 +85,7 @@
 	update_nearby_tiles()
 	src.update_icon()
 	src.set_opacity(0)
-	sleep(15)
+	sleep(8)
 	src.layer = open_layer
 	src.operating = 0
 
@@ -101,7 +101,7 @@
 	update_nearby_tiles()
 	src.update_icon()
 	src.set_opacity(1)
-	sleep(15)
+	sleep(8)
 	src.operating = 0
 
 // Proc: force_toggle()
@@ -244,3 +244,16 @@
 
 /obj/machinery/door/blast/regular/admin/take_damage()
 	return
+
+/obj/machinery/door/blast/regular/evacshield
+
+/obj/machinery/door/blast/regular/evacshield/proc/force_open()
+	src.operating = 1
+	playsound(src.loc, open_sound, 100, 1)
+	flick(icon_state_opening, src)
+	src.set_density(0)
+	update_nearby_tiles()
+	src.update_icon()
+	src.set_opacity(0)
+	src.layer = open_layer
+	src.operating = 0

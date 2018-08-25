@@ -35,6 +35,9 @@
 
 	state = EVAC_IN_TRANSIT
 
+	for(var/obj/machinery/door/blast/regular/evacshield/ES in world)
+		ES.force_open()
+
 	if (emergency_evacuation)
 		// Abondon Ship
 		for (var/datum/shuttle/autodock/ferry/escape_pod/pod in escape_pods) // Launch the pods!
