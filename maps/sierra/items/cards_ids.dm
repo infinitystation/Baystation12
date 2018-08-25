@@ -2,7 +2,7 @@
 
 /obj/item/weapon/card/id/sierra
 	name = "identification card"
-	desc = "An identification card issued to personnel aboard the NES Sierra."
+	desc = "An identification card issued to personnel aboard the NSV Sierra."
 	icon_state = "id"
 	item_state = "card-id"
 	job_access_type = /datum/job/assistant
@@ -14,31 +14,31 @@
 	job_access_type = /datum/job/hop
 
 /obj/item/weapon/card/id/sierra/gold
-	desc = "A golden identification card belonging to the Commanding Officer."
+	desc = "A golden identification card belonging to the Captain."
 	icon_state = "gold"
 	item_state = "gold_id"
 	job_access_type = /datum/job/captain
 
 // SolGov Crew, NanoTrasen Personnel and Passengers
 /obj/item/weapon/card/id/sierra/passenger
-	desc = "An identification card issued to passengers aboard the NES Sierra."
+	desc = "An identification card issued to passengers aboard the NSV Sierra."
 	icon_state = "id"
 	job_access_type = /datum/job/assistant
 
 /obj/item/weapon/card/id/sierra/crew
-	desc = "An identification card issued to NanoTrasen crewmembers aboard the NES Sierra."
+	desc = "An identification card issued to NanoTrasen crewmembers aboard the NSV Sierra."
 	icon_state = "id"
 	job_access_type = /datum/job/assistant
 
 /obj/item/weapon/card/id/sierra/solgov
-	desc = "An identification card issued to SolGov crewmembers aboard the NES Sierra."
+	desc = "An identification card issued to SolGov crewmembers aboard the NSV Sierra."
 	icon_state = "solgov"
 	job_access_type = /datum/job/assistant
 
 
 
 /obj/item/weapon/card/id/sierra/crew/medical
-	desc = "An identification card issued to medical crewmembers aboard the NES Sierra."
+	desc = "An identification card issued to medical crewmembers aboard the NSV Sierra."
 	icon_state = "med"
 	job_access_type = /datum/job/doctor
 
@@ -65,7 +65,7 @@
 	job_access_type = /datum/job/hos
 
 /obj/item/weapon/card/id/sierra/crew/security
-	desc = "An identification card issued to asset protection depatment's personnel aboard the NES Sierra."
+	desc = "An identification card issued to asset protection depatment's personnel aboard the NSV Sierra."
 	icon_state = "sec"
 	job_access_type = /datum/job/officer
 
@@ -82,7 +82,7 @@
 	job_access_type = /datum/job/chief_engineer
 
 /obj/item/weapon/card/id/sierra/crew/engineering
-	desc = "An identification card issued to engineering personnel aboard the NES Sierra."
+	desc = "An identification card issued to engineering personnel aboard the NSV Sierra."
 	icon_state = "eng"
 	job_access_type = /datum/job/engineer
 
@@ -118,7 +118,7 @@
 
 
 /obj/item/weapon/card/id/sierra/crew/service //unused
-	desc = "An identification card issued to service personnel aboard the NES Sierra."
+	desc = "An identification card issued to service personnel aboard the NSV Sierra."
 	icon_state = "civ"
 
 /obj/item/weapon/card/id/sierra/crew/service/janitor
@@ -152,7 +152,7 @@
 
 
 /obj/item/weapon/card/id/sierra/crew/research
-	desc = "A card issued to research personnel aboard the NES Sierra."
+	desc = "A card issued to research personnel aboard the NSV Sierra."
 	icon_state = "sci"
 	job_access_type = /datum/job/scientist_assistant
 
@@ -169,9 +169,15 @@
 /obj/item/weapon/card/id/sierra/crew/research/nt_pilot
 	job_access_type = /datum/job/nt_pilot
 
-/obj/item/weapon/card/id/sierra/crew/research/liaison
+/obj/item/weapon/card/id/sierra/crew/liaison
+	desc = "A card issued to corporate represenatives aboard the NSV Sierra."
+	icon_state = "corporate"
 	job_access_type = /datum/job/iaa
 
+/obj/item/weapon/card/id/sierra/crew/adjutant
+	desc = "A card issued to command's support personnel aboard the NSV Sierra."
+	icon_state = "centcomNew"
+	job_access_type = /datum/job/adjutant
 
 //Merchant
 /obj/item/weapon/card/id/sierra/merchant
@@ -181,7 +187,7 @@
 
 //Stowaway
 /obj/item/weapon/card/id/sierra/stowaway
-	desc = "An identification card issued to personnel aboard the NES Sierra. Looks like the photo fell off this one."
+	desc = "An identification card issued to personnel aboard the NSV Sierra. Looks like the photo fell off this one."
 	icon_state = "id"
 	job_access_type = /datum/job/assistant
 

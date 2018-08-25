@@ -35,6 +35,10 @@
 	name = "\improper Third Deck Aft Hallway"
 	icon_state = "hallA"
 
+/area/hallway/primary/thirddeck/central_stairwell
+	name = "\improper Third Deck Central Stairwell"
+	icon_state = "hallC2"
+
 /area/maintenance/thirddeck
 	name = "Third Deck Maintenance"
 	icon_state = "maintcentral"
@@ -82,6 +86,14 @@
 /area/hallway/primary/seconddeck/aft
 	name = "\improper Second Deck Aft Hallway"
 	icon_state = "hallA"
+
+/area/hallway/primary/seconddeck/central_stairwell
+	name = "\improper Second Deck Central Stairwell"
+	icon_state = "hallC2"
+
+/area/hallway/primary/seconddeck/fore_stairwell
+	name = "\improper Second Deck Fore Stairwell"
+	icon_state = "hallC2"
 
 /area/maintenance/seconddeck
 	name = "Second Deck Maintenance"
@@ -167,6 +179,10 @@
 	name = "\improper First Deck Fore Hallway"
 	icon_state = "hallF"
 
+/area/hallway/primary/firstdeck/foreport
+	name = "\improper First Deck Fore Hallway"
+	icon_state = "hallF"
+
 /area/hallway/primary/firstdeck/center
 	name = "\improper First Deck Central Hallway"
 	icon_state = "hallC1"
@@ -174,6 +190,14 @@
 /area/hallway/primary/firstdeck/aft
 	name = "\improper First Deck Aft Hallway"
 	icon_state = "hallA"
+
+/area/hallway/primary/firstdeck/central_stairwell
+	name = "\improper First Deck Central Stairwell"
+	icon_state = "hallC2"
+
+/area/hallway/primary/firstdeck/fore_stairwell
+	name = "\improper First Deck Fore Stairwell"
+	icon_state = "hallC2"
 
 /area/crew_quarters/safe_room/firstdeck
 	name = "\improper First Deck Safe Room"
@@ -478,10 +502,6 @@
 	name = "\improper Vacant Area"
 	icon_state = "construction"
 	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/vacant/armory
-	name = "\improper Marine Armory"
-	icon_state = "Tactical"
 
 /area/vacant/cabin
 	name = "\improper Vacant Cabins"
@@ -855,14 +875,6 @@
 	icon_state = "SolarcontrolS"
 	sound_env = SMALL_ENCLOSED
 
-/area/solar/bridge
-	name = "\improper Bridge Solar Array"
-	icon_state = "panelsS"
-
-/area/aux_eva
-	name = "\improper Command EVA Storage"
-	icon_state = "eva"
-
 /area/thruster
 	icon_state = "thruster"
 
@@ -954,12 +966,12 @@
 	has_gravity = FALSE
 	base_turf = /turf/space
 
-/area/solar/auxstarboard
-	name = "\improper Fore Starboard Solar Array"
+/area/solar/starboard
+	name = "\improper Starboard Solar Array"
 	icon_state = "panelsA"
 
 /area/solar/port
-	name = "\improper Port Auxiliary Solar Array"
+	name = "\improper Port Solar Array"
 	icon_state = "panelsP"
 
 // Maintenance

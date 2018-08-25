@@ -59,9 +59,12 @@
 	req_admin_notify = 1
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
-						SKILL_SCIENCE     = SKILL_ADEPT,
+	min_skill = list(	SKILL_BUREAUCRACY = SKILL_ADEPT,
 						SKILL_PILOT       = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
+
+
 	skill_points = 36
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -88,11 +91,13 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_ADEPT,
-						SKILL_COMPUTER    = SKILL_BASIC,
 						SKILL_PILOT       = SKILL_BASIC)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
+
 	skill_points = 36
 
-	access = list(access_security, access_brig, access_armory, access_forensics_lockers,
+	access = list(access_security, access_bridge, access_brig, access_armory, access_forensics_lockers,
 			            access_medical, access_morgue, access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_change_ids, access_ai_upload, access_teleporter, access_eva, access_heads,
 			            access_all_personal_lockers, access_chapel_office, access_tech_storage, access_atmospherics, access_bar, access_janitor, access_crematorium, access_robotics,
@@ -135,13 +140,17 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/rd
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_ADEPT,
-						SKILL_COMPUTER    = SKILL_BASIC,
-						SKILL_FINANCE     = SKILL_ADEPT,
-						SKILL_BOTANY      = SKILL_BASIC,
-						SKILL_ANATOMY     = SKILL_BASIC,
-						SKILL_DEVICES     = SKILL_BASIC,
-						SKILL_SCIENCE     = SKILL_ADEPT)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_FINANCE     = SKILL_ADEPT,
+	                    SKILL_BOTANY      = SKILL_BASIC,
+	                    SKILL_ANATOMY     = SKILL_BASIC,
+	                    SKILL_DEVICES     = SKILL_BASIC,
+	                    SKILL_SCIENCE     = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_ANATOMY     = SKILL_MAX,
+	                    SKILL_DEVICES     = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
 	skill_points = 36
 
 	access = list(access_tox, access_tox_storage, access_emergency_storage, access_teleporter, access_heads, access_rd,
@@ -173,11 +182,16 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/cmo
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
-						SKILL_MEDICAL     = SKILL_ADEPT,
-						SKILL_ANATOMY     = SKILL_EXPERT,
-						SKILL_CHEMISTRY   = SKILL_BASIC,
-						SKILL_VIROLOGY    = SKILL_BASIC)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_MEDICAL     = SKILL_ADEPT,
+	                    SKILL_ANATOMY     = SKILL_EXPERT,
+	                    SKILL_CHEMISTRY   = SKILL_BASIC,
+	                    SKILL_VIROLOGY    = SKILL_BASIC)
+
+	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+	                    SKILL_ANATOMY     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX,
+	                    SKILL_VIROLOGY    = SKILL_MAX)
 	skill_points = 36
 
 	access = list(access_medical, access_morgue, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
@@ -210,13 +224,18 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/chief_engineer
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY  = SKILL_BASIC,
-						SKILL_COMPUTER     = SKILL_ADEPT,
-						SKILL_EVA          = SKILL_ADEPT,
-						SKILL_CONSTRUCTION = SKILL_ADEPT,
-						SKILL_ELECTRICAL   = SKILL_ADEPT,
-						SKILL_ATMOS        = SKILL_ADEPT,
-						SKILL_ENGINES      = SKILL_EXPERT)
+	min_skill = list(   SKILL_BUREAUCRACY  = SKILL_BASIC,
+	                    SKILL_COMPUTER     = SKILL_ADEPT,
+	                    SKILL_EVA          = SKILL_ADEPT,
+	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
+	                    SKILL_ELECTRICAL   = SKILL_ADEPT,
+	                    SKILL_ATMOS        = SKILL_ADEPT,
+	                    SKILL_ENGINES      = SKILL_EXPERT)
+
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
+	                    SKILL_ELECTRICAL   = SKILL_MAX,
+	                    SKILL_ATMOS        = SKILL_MAX,
+	                    SKILL_ENGINES      = SKILL_MAX)
 	skill_points = 30
 
 	access = list(access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
@@ -259,16 +278,20 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/hos
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_ADEPT,
-						SKILL_EVA         = SKILL_BASIC,
-						SKILL_COMBAT      = SKILL_BASIC,
-						SKILL_WEAPONS     = SKILL_ADEPT,
-						SKILL_FORENSICS   = SKILL_BASIC)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_WEAPONS     = SKILL_ADEPT,
+	                    SKILL_FORENSICS   = SKILL_BASIC)
+
+	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
+	                    SKILL_WEAPONS     = SKILL_MAX,
+	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 28
 
-	access = list(access_security, access_brig, access_armory, access_forensics_lockers,
+	access = list(		access_security, access_brig, access_armory, access_forensics_lockers,
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_teleporter, access_eva, access_heads,
+			            access_teleporter, access_eva, access_heads, access_hangar,
 			            access_hos, access_RC_announce, access_keycard_auth, access_sec_doors,
 			            access_gun)
 	minimal_access = list()
@@ -295,11 +318,12 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(	SKILL_BUREAUCRACY	= SKILL_EXPERT,
+						SKILL_FORENSICS 	= SKILL_BASIC,
 						SKILL_FINANCE		= SKILL_BASIC)
 	skill_points = 20
 
 	access = list(access_iaa, access_tox, access_tox_storage, access_heads, access_research,
-						access_mining, access_mining_office, access_mining_station, access_xenobiology,
+						access_xenobiology,
 						access_xenoarch,
 						access_hangar, access_petrov, access_petrov_helm)
 
@@ -324,13 +348,16 @@
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
 						SKILL_PILOT       = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
+
 	skill_points = 20
 
 
-	access = list(access_security, access_medical, access_engine, access_maint_tunnels, access_emergency_storage,
-			            access_heads, access_janitor, access_kitchen, access_cargo, access_RC_announce, access_keycard_auth,
-			            access_guppy, access_guppy_helm, access_external_airlocks,
-			            access_eva, access_hangar, access_cent_creed, access_explorer)
+	access = list(	access_security, access_medical, access_engine, access_maint_tunnels, access_emergency_storage,
+					access_heads, access_bridge, access_janitor, access_kitchen, access_cargo, access_RC_announce, access_keycard_auth,
+					access_guppy, access_guppy_helm, access_external_airlocks, access_bridge,
+					access_eva, access_hangar, access_explorer)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/suit_sensors,
@@ -343,7 +370,7 @@
 							 /datum/computer_file/program/deck_management)
 
 /datum/job/adjutant/get_description_blurb()
-	return "You are an Adjutant. You do not give orders of your own. You are subordinate to all of command. You handle matters on the bridge and report directly to the Captain and Head of Personnel. You take the sierra's helm. You monitor bridge computer programs and communications and report relevant information to command. Sometimes you can also give support for vessel's departments - you have radio keys in bridge's storage for that purpose.."
+	return "You are an Adjutant. You do not give orders of your own. You are subordinate to all of command. You handle matters on the bridge and report directly to the Captain and Head of Personnel. You take the sierra's helm. You monitor bridge computer programs and communications and report relevant information to command. Sometimes you can also give support for vessel's departments - you have radio keys in bridge's storage for that purpose."
 
 /datum/job/pathfinder
 	title = "Pathfinder"
@@ -363,10 +390,15 @@
 		/datum/mil_rank/ec/o3,
 		/datum/mil_rank/ec/o1
 		)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
-						SKILL_EVA         = SKILL_ADEPT,
-						SKILL_SCIENCE     = SKILL_ADEPT,
-						SKILL_PILOT       = SKILL_BASIC)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_ADEPT,
+	                    SKILL_SCIENCE     = SKILL_ADEPT,
+	                    SKILL_PILOT       = SKILL_BASIC)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX,
+	                    SKILL_COMBAT      = SKILL_EXPERT,
+	                    SKILL_WEAPONS     = SKILL_EXPERT)
 	skill_points = 22
 
 	access = list(access_pathfinder, access_explorer, access_eva, access_maint_tunnels, access_heads, access_emergency_storage, access_tech_storage, access_guppy_helm, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy, access_hangar, access_cent_creed)
@@ -392,7 +424,12 @@
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5
 		)
-	min_skill = list(	SKILL_EVA = SKILL_BASIC)
+	min_skill = list(   SKILL_EVA 		= SKILL_BASIC,
+						SKILL_SCIENCE  	= SKILL_BASIC)
+
+	max_skill = list(	SKILL_SCIENCE     = SKILL_MAX,
+	                    SKILL_COMBAT      = SKILL_EXPERT,
+	                    SKILL_WEAPONS     = SKILL_EXPERT)
 
 	access = list(access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_cent_creed)
 
@@ -416,8 +453,15 @@
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5
 		)
-	min_skill = list(	SKILL_EVA	= SKILL_BASIC,
-						SKILL_PILOT	= SKILL_ADEPT)
+	min_skill = list(   SKILL_EVA	= SKILL_BASIC,
+						SKILL_SCIENCE  	= SKILL_BASIC,
+						SKILL_PILOT = SKILL_ADEPT)
+
+	max_skill = list(	SKILL_SCIENCE     = SKILL_MAX,
+						SKILL_PILOT		  = SKILL_MAX,
+	                    SKILL_COMBAT      = SKILL_EXPERT,
+	                    SKILL_WEAPONS     = SKILL_EXPERT)
+
 
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm,
 					access_expedition_shuttle, access_guppy, access_hangar, access_expedition_shuttle_helm)
@@ -444,7 +488,16 @@
 		)
 	min_skill = list(	SKILL_EVA	= SKILL_BASIC,
 						SKILL_MEDICAL = SKILL_BASIC,
-						SKILL_HAULING = SKILL_BASIC)
+						SKILL_HAULING = SKILL_BASIC,
+						SKILL_SCIENCE = SKILL_BASIC,
+						SKILL_ANATOMY = SKILL_BASIC)
+
+	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+						SKILL_SCIENCE     = SKILL_MAX,
+		                SKILL_COMBAT      = SKILL_EXPERT,
+	                    SKILL_WEAPONS     = SKILL_EXPERT)
+
+
 
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
 					access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar,
@@ -475,7 +528,16 @@
 						SKILL_CONSTRUCTION	= SKILL_BASIC,
 						SKILL_ELECTRICAL	= SKILL_BASIC,
 						SKILL_HAULING		= SKILL_BASIC,
+						SKILL_ATMOS         = SKILL_BASIC,
+						SKILL_SCIENCE  		= SKILL_BASIC,
 						SKILL_COMPUTER		= SKILL_BASIC)
+
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
+	                    SKILL_ELECTRICAL   = SKILL_MAX,
+	                    SKILL_SCIENCE      = SKILL_MAX,
+	                    SKILL_COMBAT       = SKILL_EXPERT,
+	                    SKILL_WEAPONS      = SKILL_EXPERT)
+
 
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
 	 				access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_engine)
@@ -502,12 +564,18 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/senior_engineer
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_COMPUTER     = SKILL_BASIC,
-						SKILL_EVA          = SKILL_ADEPT,
-						SKILL_CONSTRUCTION = SKILL_ADEPT,
-						SKILL_ELECTRICAL   = SKILL_ADEPT,
-						SKILL_ATMOS        = SKILL_BASIC,
-						SKILL_ENGINES      = SKILL_ADEPT)
+	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
+	                    SKILL_EVA          = SKILL_ADEPT,
+	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
+	                    SKILL_ELECTRICAL   = SKILL_ADEPT,
+	                    SKILL_ATMOS        = SKILL_BASIC,
+	                    SKILL_ENGINES      = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
+						SKILL_COMPUTER     = SKILL_MAX,
+	                    SKILL_ELECTRICAL   = SKILL_MAX,
+	                    SKILL_ATMOS        = SKILL_MAX,
+	                    SKILL_ENGINES      = SKILL_MAX)
 	skill_points = 24
 
 	access = list(	access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
@@ -545,12 +613,18 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_COMPUTER     = SKILL_BASIC,
-						SKILL_EVA          = SKILL_BASIC,
-						SKILL_CONSTRUCTION = SKILL_ADEPT,
-						SKILL_ELECTRICAL   = SKILL_BASIC,
-						SKILL_ATMOS        = SKILL_BASIC,
-						SKILL_ENGINES      = SKILL_BASIC)
+	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
+	                    SKILL_EVA          = SKILL_BASIC,
+	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
+	                    SKILL_ELECTRICAL   = SKILL_BASIC,
+	                    SKILL_ATMOS        = SKILL_BASIC,
+	                    SKILL_ENGINES      = SKILL_BASIC)
+
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
+	                    SKILL_ELECTRICAL   = SKILL_MAX,
+	                    SKILL_COMPUTER	   = SKILL_MAX,
+	                    SKILL_ATMOS        = SKILL_MAX,
+	                    SKILL_ENGINES      = SKILL_MAX)
 	skill_points = 20
 
 	access = list(	access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
@@ -585,13 +659,18 @@
 	skill_points = 4
 	no_skill_buffs = TRUE
 
-	min_skill = list(	SKILL_COMPUTER     = SKILL_BASIC,
-						SKILL_HAULING      = SKILL_ADEPT,
-						SKILL_EVA          = SKILL_ADEPT,
-						SKILL_CONSTRUCTION = SKILL_ADEPT,
-						SKILL_ELECTRICAL   = SKILL_ADEPT,
-						SKILL_ATMOS        = SKILL_ADEPT,
-						SKILL_ENGINES      = SKILL_ADEPT)
+	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
+	                    SKILL_HAULING      = SKILL_ADEPT,
+	                    SKILL_EVA          = SKILL_ADEPT,
+	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
+	                    SKILL_ELECTRICAL   = SKILL_ADEPT,
+	                    SKILL_ATMOS        = SKILL_ADEPT,
+	                    SKILL_ENGINES      = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
+	                    SKILL_ELECTRICAL   = SKILL_MAX,
+	                    SKILL_ATMOS        = SKILL_MAX,
+	                    SKILL_ENGINES      = SKILL_MAX)
 
 	access = list(access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_eva, access_tech_storage, access_janitor, access_construction,
@@ -616,7 +695,7 @@
 
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Engineer and the Chief Medical Officer"
+	supervisors = "the Research Director and the Chief Medical Officer"
 	selection_color = "#5b4d20"
 	economic_modifier = 6
 	alt_titles = list(
@@ -625,18 +704,24 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/roboticist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_COMPUTER		= SKILL_ADEPT,
-						SKILL_MECH = SKILL_ADEPT,
-						SKILL_DEVICES		= SKILL_ADEPT)
+	min_skill = list(   SKILL_COMPUTER		= SKILL_ADEPT,
+	                    SKILL_MECH          = SKILL_ADEPT,
+	                    SKILL_DEVICES		= SKILL_ADEPT)
 
-	access = list(access_robotics, access_tech_storage, access_morgue, access_medical)
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
+						SKILL_COMPUTER	   = SKILL_MAX,
+						SKILL_MECH		   = SKILL_MAX,
+	                    SKILL_DEVICES      = SKILL_MAX,
+	                    SKILL_MEDICAL      = SKILL_MAX)
+
+	access = list(access_robotics, access_research, access_tech_storage, access_morgue, access_medical)
 	minimal_access = list()
 
 /datum/job/roboticist/get_description_blurb()
 	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics as well as the repair of all synthetic crew on board. You are also responsible for placing brains into MMI’s and giving them bodies and the production of exosuits(mechs) for various departments. You answer to the Chief Engineer."
 
 /datum/job/warden
-	title = "Security Sergeant"
+	title = "Warden"
 	department = "Security"
 	department_flag = SEC
 	total_positions = 1
@@ -646,16 +731,20 @@
 	minimal_player_age = 14
 	ideal_character_age = 35
 	alt_titles = list(
-		"Warden",
+		"Security Sergeant",
 		)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/warden
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_ADEPT,
-						SKILL_EVA         = SKILL_BASIC,
-						SKILL_COMBAT      = SKILL_BASIC,
-						SKILL_WEAPONS     = SKILL_BASIC,
-						SKILL_FORENSICS   = SKILL_BASIC)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_WEAPONS     = SKILL_ADEPT,
+	                    SKILL_FORENSICS   = SKILL_BASIC)
+
+	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
+	                    SKILL_WEAPONS     = SKILL_MAX,
+	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 20
 
 	access = list(access_security, access_brig, access_armory, access_forensics_lockers,
@@ -684,12 +773,16 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/detective
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
-						SKILL_COMPUTER    = SKILL_BASIC,
-						SKILL_EVA         = SKILL_BASIC,
-						SKILL_COMBAT      = SKILL_BASIC,
-						SKILL_WEAPONS     = SKILL_BASIC,
-						SKILL_FORENSICS   = SKILL_ADEPT)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_WEAPONS     = SKILL_BASIC,
+	                    SKILL_FORENSICS   = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
+	                    SKILL_WEAPONS     = SKILL_MAX,
+	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 20
 
 	access = list(access_security, access_brig, access_forensics_lockers,
@@ -701,7 +794,7 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/officer
-	title = "Security Operator"
+	title = "Security Officer"
 	department = "Security"
 	department_flag = SEC
 	total_positions = 4
@@ -711,16 +804,18 @@
 	minimal_player_age = 10
 	ideal_character_age = 25
 	alt_titles = list(
-		"Security Officer",
 		"Junior Officer")
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/officer
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
-						SKILL_EVA         = SKILL_BASIC,
-						SKILL_COMBAT      = SKILL_BASIC,
-						SKILL_WEAPONS     = SKILL_ADEPT,
-						SKILL_FORENSICS   = SKILL_BASIC)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_WEAPONS     = SKILL_ADEPT,
+	                    SKILL_FORENSICS   = SKILL_BASIC)
+
+	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
+	                    SKILL_WEAPONS     = SKILL_MAX)
 
 	access = list(access_security, access_brig, access_maint_tunnels,
 						access_external_airlocks, access_emergency_storage,
@@ -748,16 +843,19 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/senior
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
-						SKILL_MEDICAL     = SKILL_ADEPT,
-						SKILL_ANATOMY     = SKILL_EXPERT,
-						SKILL_CHEMISTRY   = SKILL_BASIC,
-						SKILL_VIROLOGY    = SKILL_BASIC)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_MEDICAL     = SKILL_ADEPT,
+	                    SKILL_ANATOMY     = SKILL_EXPERT,
+	                    SKILL_CHEMISTRY   = SKILL_BASIC,
+	                    SKILL_VIROLOGY    = SKILL_BASIC)
+
+	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+	                    SKILL_ANATOMY     = SKILL_MAX)
 	skill_points = 32
 
 	access = list(access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
 			            access_crematorium, access_chemistry, access_surgery, access_eva,
-			            access_medical_equip, access_senmed)
+			            access_medical_equip, access_senmed, access_hangar)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
@@ -779,9 +877,12 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_EVA     = SKILL_BASIC,
-						SKILL_MEDICAL = SKILL_BASIC,
-						SKILL_ANATOMY = SKILL_BASIC)
+	min_skill = list(   SKILL_EVA     = SKILL_BASIC,
+	                    SKILL_MEDICAL = SKILL_BASIC,
+	                    SKILL_ANATOMY = SKILL_BASIC)
+
+	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+	                    SKILL_VIROLOGY    = SKILL_MAX)
 	access = list(	access_medical, access_morgue, access_virology, access_maint_tunnels, access_external_airlocks,
 					access_emergency_storage,
 			        access_eva, access_surgery, access_medical_equip, access_hangar)
@@ -809,17 +910,16 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_EVA     = SKILL_BASIC,
-						SKILL_MEDICAL = SKILL_BASIC,
-						SKILL_ANATOMY = SKILL_BASIC)
+	min_skill = list(   SKILL_EVA     = SKILL_BASIC,
+	                    SKILL_MEDICAL = SKILL_BASIC)
+
+	max_skill = list(   SKILL_MEDICAL	= SKILL_MAX)
 	skill_points = 32
 
 	access = list(	access_medical, access_morgue, access_surgery,
 					access_medical_equip,
 		            access_maint_tunnels, access_emergency_storage,
 		            access_external_airlocks, access_hangar)
-
-	access = list(access_medical, access_morgue, access_maint_tunnels, access_external_airlocks, access_emergency_storage, access_eva, access_surgery, access_medical_equip, access_hangar)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
@@ -842,8 +942,11 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/chemist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_MEDICAL   = SKILL_BASIC,
-						SKILL_CHEMISTRY = SKILL_ADEPT)
+	min_skill = list(   SKILL_MEDICAL   = SKILL_BASIC,
+	                    SKILL_CHEMISTRY = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX)
 	skill_points = 26
 
 	access = list(access_medical, access_maint_tunnels, access_emergency_storage, access_medical_equip, access_chemistry)
@@ -866,8 +969,10 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
-						SKILL_MEDICAL     = SKILL_BASIC)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_MEDICAL     = SKILL_BASIC)
+
+	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX)
 
 	access = list(access_medical, access_morgue, access_chapel_office, access_crematorium, access_psychiatrist)
 	minimal_access = list()
@@ -888,12 +993,12 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/quartermaster
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_ADEPT,
-						SKILL_FINANCE     = SKILL_BASIC,
-						SKILL_HAULING     = SKILL_BASIC,
-						SKILL_EVA         = SKILL_BASIC,
-						SKILL_PILOT       = SKILL_BASIC)
-	skill_points = 18
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_FINANCE     = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_BASIC)
+
+	skill_points = 20
 
 	access = list(access_maint_tunnels, access_heads, access_emergency_storage, access_tech_storage,  access_cargo, access_guppy_helm,
 						access_cargo_bot, access_qm, access_mailsorting, access_expedition_shuttle, access_guppy, access_hangar)
@@ -914,12 +1019,12 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/tech
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
-						SKILL_FINANCE     = SKILL_BASIC,
-						SKILL_HAULING     = SKILL_BASIC)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_FINANCE     = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_BASIC)
 
 	access = list(access_maint_tunnels, access_emergency_storage, access_cargo, access_guppy_helm,
-						access_cargo_bot, access_mailsorting, access_expedition_shuttle, access_guppy, access_hangar)
+						access_cargo_bot, access_mining_office, access_mailsorting, access_expedition_shuttle, access_guppy, access_hangar)
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
@@ -940,9 +1045,11 @@
 		"Drill Technician",
 		"Shaft Miner",
 		"Salvage Technician")
-	min_skill = list(	SKILL_MECH    = SKILL_BASIC,
-						SKILL_HAULING = SKILL_ADEPT,
-						SKILL_EVA     = SKILL_BASIC)
+	min_skill = list(   SKILL_MECH    = SKILL_BASIC,
+	                    SKILL_HAULING = SKILL_ADEPT,
+	                    SKILL_EVA     = SKILL_BASIC)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/prospector
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -971,7 +1078,7 @@
 						SKILL_FINANCE     = SKILL_BASIC,
 						SKILL_HAULING     = SKILL_BASIC)
 
-	access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mailsorting, access_hangar, access_guppy, access_guppy_helm)
+	access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mining_office, access_mailsorting, access_hangar, access_guppy, access_guppy_helm)
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							 /datum/computer_file/program/deck_management,
@@ -1054,13 +1161,16 @@
 	access = list(access_tox, access_tox_storage, access_research, access_mining, access_mining_office,
 						access_mining_station, access_xenobiology, access_xenoarch,
 						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_petrov_helm, access_guppy_helm)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
-						SKILL_COMPUTER    = SKILL_BASIC,
-						SKILL_FINANCE     = SKILL_BASIC,
-						SKILL_BOTANY      = SKILL_BASIC,
-						SKILL_ANATOMY     = SKILL_BASIC,
-						SKILL_DEVICES     = SKILL_ADEPT,
-						SKILL_SCIENCE     = SKILL_ADEPT)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_FINANCE     = SKILL_BASIC,
+	                    SKILL_BOTANY      = SKILL_BASIC,
+	                    SKILL_ANATOMY     = SKILL_BASIC,
+	                    SKILL_DEVICES     = SKILL_ADEPT,
+	                    SKILL_SCIENCE     = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_DEVICES     = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
 	skill_points = 20
 
 /datum/job/nt_pilot
@@ -1085,6 +1195,9 @@
 	min_skill = list(	SKILL_EVA   = SKILL_BASIC,
 						SKILL_PILOT = SKILL_ADEPT)
 
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
+
 /datum/job/scientist
 	title = "Scientist"
 	department = "Science"
@@ -1101,10 +1214,13 @@
 		"Xenobiologist",
 		"Xenobotanist",
 		"Psychologist" = /decl/hierarchy/outfit/job/sierra/crew/research/scientist/psych)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
-						SKILL_COMPUTER    = SKILL_BASIC,
-						SKILL_DEVICES     = SKILL_BASIC,
-						SKILL_SCIENCE     = SKILL_ADEPT)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_DEVICES     = SKILL_BASIC,
+	                    SKILL_SCIENCE     = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_DEVICES     = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
 
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/scientist
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -1133,6 +1249,10 @@
 		"Clerk",
 		"Field Assistant")
 
+	max_skill = list(   SKILL_DEVICES     = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
+
+
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/assist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
@@ -1151,7 +1271,7 @@
 	economic_modifier = 6
 	announced = FALSE
 	alt_titles = list(
-		"Journalist" = /decl/hierarchy/outfit/job/sierra/passenger/journalist,
+		"Journalist" = /decl/hierarchy/outfit/job/sierra/passenger/passenger/journalist,
 		"Historian",
 		"Botanist",
 		"Naturalist",
@@ -1160,7 +1280,7 @@
 		"Sociologist",
 		"Off-Duty",
 		"Trainer")
-	outfit_type = /decl/hierarchy/outfit/job/sierra/passenger
+	outfit_type = /decl/hierarchy/outfit/job/sierra/passenger/passenger
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/civ,

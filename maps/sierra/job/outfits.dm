@@ -17,13 +17,17 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/crew
 	name = OUTFIT_JOB_NAME("Sierra Crew Outfit")
 	hierarchy_type = /decl/hierarchy/outfit/job/sierra/crew
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary
+	uniform = /obj/item/clothing/under/solgov/utility
 	shoes = /obj/item/clothing/shoes/dutyboots
 
 /decl/hierarchy/outfit/job/sierra/passenger
 	name = OUTFIT_JOB_NAME("Sierra Passenger")
 	hierarchy_type = /decl/hierarchy/outfit/job/sierra/passenger
 	uniform = /obj/item/clothing/under/color/grey
+	l_ear = /obj/item/device/radio/headset
+	shoes = /obj/item/clothing/shoes/black
+	id_type = /obj/item/weapon/card/id/sierra/passenger
+
 
 	///////////
 	//COMMAND//
@@ -33,12 +37,13 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	name = OUTFIT_JOB_NAME("Sierra Command Outfit")
 	hierarchy_type = /decl/hierarchy/outfit/job/sierra/crew/command
 	l_ear = /obj/item/device/radio/headset/headset_com
+	pda_type = /obj/item/modular_computer/pda/heads
 
 /decl/hierarchy/outfit/job/sierra/crew/command/captain
 	name = OUTFIT_JOB_NAME("Captain - Sierra")
 	glasses = /obj/item/clothing/glasses/sunglasses
 	uniform = /obj/item/clothing/under/rank/captain
-	l_ear = /obj/item/device/radio/headset/heads/sierracaptain
+	l_ear = /obj/item/device/radio/headset/heads/sierra_captain
 	shoes = /obj/item/clothing/shoes/brown
 	head = /obj/item/clothing/head/caphat
 	id_type = /obj/item/weapon/card/id/sierra/gold
@@ -53,24 +58,29 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/crew/command/hop
 	name = OUTFIT_JOB_NAME("Head of Personnel")
 	uniform = /obj/item/clothing/under/rank/head_of_personnel
-	l_ear = /obj/item/device/radio/headset/heads/sierraxo
+	l_ear = /obj/item/device/radio/headset/heads/hop
 	shoes = /obj/item/clothing/shoes/brown
 	id_type = /obj/item/weapon/card/id/sierra/silver
 	pda_type = /obj/item/modular_computer/pda/heads/hop
 
 /decl/hierarchy/outfit/job/sierra/crew/research/rd
 	name = OUTFIT_JOB_NAME("Research Director - Sierra")
-	l_ear = /obj/item/device/radio/headset/heads/sierrantcommand
+	l_ear = /obj/item/device/radio/headset/heads/rd
 	uniform = /obj/item/clothing/under/rank/research_director
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	shoes = /obj/item/clothing/shoes/brown
 	id_type = /obj/item/weapon/card/id/sierra/silver/research
 	pda_type = /obj/item/modular_computer/pda/heads/rd
 
+/decl/hierarchy/outfit/job/sierra/crew/command/rd/New()
+	..()
+	BACKPACK_OVERRIDE_RESEARCH
+
 /decl/hierarchy/outfit/job/sierra/crew/command/cmo
 	name = OUTFIT_JOB_NAME("Chief Medical Officer - Sierra")
 	l_ear  =/obj/item/device/radio/headset/heads/cmo
 	uniform = /obj/item/clothing/under/rank/chief_medical_officer
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/cmo
 	shoes = /obj/item/clothing/shoes/brown
 	id_type = /obj/item/weapon/card/id/sierra/silver/medical
 	pda_type = /obj/item/modular_computer/pda/heads/cmo
@@ -96,7 +106,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/crew/command/hos
 	name = OUTFIT_JOB_NAME("Head of Security")
-	l_ear = /obj/item/device/radio/headset/heads/cos
+	l_ear = /obj/item/device/radio/headset/heads/hos
 	uniform = /obj/item/clothing/under/rank/head_of_security/corp
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/sierra/silver/security
@@ -108,11 +118,11 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/crew/research/iaa
 	name = OUTFIT_JOB_NAME("Internal Affairs Agent - Sierra")
-	l_ear = /obj/item/device/radio/headset/heads/sierrantcommand
+	l_ear = /obj/item/device/radio/headset/heads
 	uniform = /obj/item/clothing/under/rank/internalaffairs/plain/nt
 	suit = /obj/item/clothing/suit/storage/toggle/suit/black
 	shoes = /obj/item/clothing/shoes/laceup
-	id_type = /obj/item/weapon/card/id/sierra/crew/research/liaison
+	id_type = /obj/item/weapon/card/id/sierra/crew/liaison
 	pda_type = /obj/item/modular_computer/pda/heads/paperpusher
 	backpack_contents = list(/obj/item/clothing/accessory/badge/nanotrasen = 1)
 
@@ -120,6 +130,8 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	name = OUTFIT_JOB_NAME("Adjutant")
 	uniform = /obj/item/clothing/under/rank/security2/adjutant
 	shoes = /obj/item/clothing/shoes/brown
+	l_ear = /obj/item/device/radio/headset/adjutant
+	id_type = /obj/item/weapon/card/id/sierra/crew/adjutant
 
 	///////////////
 	//ENGINEERING//
@@ -128,6 +140,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/crew/engineering
 	hierarchy_type = /decl/hierarchy/outfit/job/sierra/crew/engineering
 	l_ear = /obj/item/device/radio/headset/headset_eng
+	pda_type = /obj/item/modular_computer/pda/engineering
 	pda_slot = slot_l_store
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
@@ -147,7 +160,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/rank/engineer
 	shoes = /obj/item/clothing/shoes/workboots/alt
 	id_type = /obj/item/weapon/card/id/sierra/crew/engineering
-	pda_type = /obj/item/modular_computer/pda/engineering
 
 /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/atmos
 	name = OUTFIT_JOB_NAME("Engineer (Atmos) - Sierra")
@@ -167,7 +179,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	name = OUTFIT_JOB_NAME("Roboticist - Sierra")
 	uniform = /obj/item/clothing/under/rank/roboticist
 	shoes = /obj/item/clothing/shoes/black
-	l_ear = /obj/item/device/radio/headset/sierraroboticist
+	l_ear = /obj/item/device/radio/headset/sierra_roboticist
 	id_type = /obj/item/weapon/card/id/sierra/crew/engineering/roboticist
 	pda_type = /obj/item/modular_computer/pda/roboticist
 
@@ -178,6 +190,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/crew/security
 	hierarchy_type = /decl/hierarchy/outfit/job/sierra/crew/security
 	l_ear = /obj/item/device/radio/headset/headset_sec
+	pda_type = /obj/item/modular_computer/pda/security
 	pda_slot = slot_l_store
 
 /decl/hierarchy/outfit/job/sierra/crew/security/New()
@@ -189,7 +202,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/rank/warden/corp
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/sierra/crew/security/warden
-	pda_type = /obj/item/modular_computer/pda/security
 
 /decl/hierarchy/outfit/job/sierra/crew/security/detective
 	name = OUTFIT_JOB_NAME("Detective")
@@ -197,13 +209,13 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/det
 	suit = /obj/item/clothing/suit/storage/det_trench/ft
 	shoes = /obj/item/clothing/shoes/laceup
+	pda_type = /obj/item/modular_computer/pda/forensics
 
 /decl/hierarchy/outfit/job/sierra/crew/security/officer
 	name = OUTFIT_JOB_NAME("Security Officer")
 	uniform = /obj/item/clothing/under/rank/security/corp
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/sierra/crew/security
-	pda_type = /obj/item/modular_computer/pda/security
 
 	///////////
 	//MEDICAL//
@@ -321,7 +333,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/crew/supply/quartermaster
 	name = OUTFIT_JOB_NAME("Quartermaster")
-	l_ear = /obj/item/device/radio/headset/headset_deckofficer
+	l_ear = /obj/item/device/radio/headset/sierra_quartermaster
 	uniform = /obj/item/clothing/under/rank/cargo
 	id_type = /obj/item/weapon/card/id/sierra/crew/supply/quartermaster
 
@@ -424,7 +436,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/crew/research
 	hierarchy_type = /decl/hierarchy/outfit/job/sierra/crew/research
 	pda_type = /obj/item/modular_computer/pda/science
-	l_ear = /obj/item/device/radio/headset/sierrananotrasen
+	l_ear = /obj/item/device/radio/headset/headset_sci
 
 /decl/hierarchy/outfit/job/sierra/crew/research/senior_scientist
 	name = OUTFIT_JOB_NAME("Senior Researcher")
@@ -474,14 +486,15 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	//PASSENGERS//
 	//////////////
 
-/decl/hierarchy/outfit/job/sierra/passenger
+/decl/hierarchy/outfit/job/sierra/passenger/passenger
 	name = OUTFIT_JOB_NAME("Passenger - Sierra")
 	uniform = /obj/item/clothing/under/color/grey
 	l_ear = /obj/item/device/radio/headset
 	shoes = /obj/item/clothing/shoes/black
+	pda_type = /obj/item/modular_computer/pda
 	id_type = /obj/item/weapon/card/id/sierra/passenger
 
-/decl/hierarchy/outfit/job/sierra/passenger/journalist
+/decl/hierarchy/outfit/job/sierra/passenger/passenger/journalist
 	name = OUTFIT_JOB_NAME("Journalist - Sierra")
 	backpack_contents = list(/obj/item/device/tvcamera = 1,
 	/obj/item/clothing/accessory/badge/press = 1)

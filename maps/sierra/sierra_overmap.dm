@@ -49,3 +49,86 @@
 	name = "guppy control console"
 	shuttle_tag = "Guppy"
 	req_access = list(access_guppy_helm)
+
+				//////////////////////
+				//NSV Sierra targets//
+				//////////////////////
+
+
+/obj/effect/landmark/overmap_target/sierra
+	name = "sierra"
+	difficulty = 5
+
+/obj/effect/landmark/overmap_target/sierra/first
+	name = "first deck"
+
+/obj/effect/landmark/overmap_target/sierra/first/bridge
+	name = "bridge"
+	difficulty = 60
+
+/obj/effect/landmark/overmap_target/sierra/second/brig
+	name = "brig"
+	difficulty = 60
+
+/obj/effect/landmark/overmap_target/sierra/first/medical
+	name = "medical bay"
+	difficulty = 30
+
+/obj/effect/landmark/overmap_target/sierra/first/rnd
+	name = "research"
+	difficulty = 30
+
+/obj/effect/landmark/overmap_target/sierra/first/vault
+	name = "vault"
+	difficulty = 30
+
+/obj/effect/landmark/overmap_target/sierra/first/hallway
+	name = "middle hallway"
+	difficulty = 30
+
+/obj/effect/landmark/overmap_target/sierra/first/portnacelle
+	name = "first deck port nacelle"
+	difficulty = 60
+
+/obj/effect/landmark/overmap_target/sierra/first/starbnacelle
+	name = "first deck starboard nacelle"
+	difficulty = 60
+
+/obj/effect/landmark/overmap_target/sierra/second
+	name = "third deck"
+
+/obj/effect/landmark/overmap_target/sierra/second/center
+	name = "center mass"
+	difficulty = 10
+
+/obj/effect/landmark/overmap_target/sierra/second/supermatter
+	name = "supermatter reactor"
+	difficulty = 80
+
+/obj/effect/landmark/overmap_target/sierra/second/upload
+	name = "AI upload"
+	difficulty = 70
+
+/obj/effect/landmark/overmap_target/sierra/third
+	name = "fourth deck"
+
+/obj/effect/landmark/overmap_target/sierra/third/hangar
+	name = "hangar"
+	difficulty = 50
+
+/obj/effect/landmark/overmap_target/sierra/third/dockC
+	name = "dock ports C"
+	difficulty = 40
+
+/obj/effect/landmark/overmap_target/sierra/third/dockB
+	name = "dock ports B"
+	difficulty = 40
+
+/obj/effect/landmark/overmap_target/sierra/third/portnacelle
+	name = "third deck port nacelle"
+	difficulty = 60
+
+/obj/effect/landmark/overmap_target/sierra/third/starbnacelle
+	name = "third deck starboard nacelle"
+	difficulty = 60
+

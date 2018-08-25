@@ -25,8 +25,7 @@
 		/obj/item/clothing/shoes/white,
 		/obj/item/clothing/gloves/latex,
 		/obj/item/clothing/glasses/science,
-		/obj/item/device/radio/headset/heads/sierrantcommand,
-		/obj/item/device/radio/headset/heads/sierrantcommand/alt,
+		/obj/item/device/radio/headset/heads/rd,
 		/obj/item/weapon/tank/emergency/oxygen/engi,
 		/obj/item/clothing/mask/gas,
 		/obj/item/device/flash,
@@ -59,7 +58,7 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat/science,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
-		/obj/item/device/radio/headset/sierrananotrasen,
+		/obj/item/device/radio/headset/headset_sci,
 		/obj/item/clothing/mask/gas,
 		/obj/item/weapon/clipboard,
 		/obj/item/weapon/folder,
@@ -92,7 +91,7 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat/science,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
-		/obj/item/device/radio/headset/sierrananotrasen,
+		/obj/item/device/radio/headset/headset_sci,
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/weapon/tank/emergency/oxygen/engi,
 		/obj/item/weapon/clipboard,
@@ -119,7 +118,7 @@
 
 /obj/structure/closet/secure_closet/prospector/WillContain()
 	return list(
-		/obj/item/device/radio/headset/sierrananotrasen,
+		/obj/item/device/radio/headset/headset_sci,
 		/obj/item/clothing/under/rank/miner,
 		/obj/item/clothing/accessory/storage/webbing,
 		/obj/item/clothing/gloves/thick,
