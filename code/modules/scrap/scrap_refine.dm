@@ -44,10 +44,5 @@
 	pixel_x = rand(0, 16) - 8
 	pixel_y = rand(0, 8) - 8
 
-var/global/list/datum/stack_recipe/scrap_recipes = list ( \
-	new/datum/stack_recipe("cardborg suit", /obj/item/clothing/suit/cardborg, 3), \
-	new/datum/stack_recipe("cardborg helmet", /obj/item/clothing/head/cardborg), \
-)
-
 /obj/item/weapon/scrap_lump/crush_act()
 	return

@@ -1,4 +1,7 @@
 
+//This is a list of words which are ignored by the parser when comparing message contents for names. MUST BE IN LOWER CASE!
+var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","alien","as")
+
 /proc/generate_ahelp_key_words(var/mob/mob, var/msg)
 	var/list/surnames = list()
 	var/list/forenames = list()
@@ -13,8 +16,7 @@
 
 	for(var/mob/M in SSmobs.mob_list)
 		var/list/indexing = list(M.real_name, M.name)
-		if(M.mind)
-			indexing += M.mind.name
+		if(M.mind)	indexing += M.mind.name
 
 		for(var/string in indexing)
 			var/list/L = splittext(string, " ")
@@ -40,25 +42,26 @@
 	for(var/original_word in msglist)
 		var/word = ckey(original_word)
 		if(word)
-			if(word == "ai" && !ai_found)
-				ai_found = 1
-				msg += "<b>[original_word] <A HREF='?_src_=holder;adminchecklaws=\ref[mob]'>(CL)</A></b> "
-				continue
-			else
-				var/mob/found = ckeys[word]
-				if(!found)
-					found = surnames[word]
+			if(!(word in adminhelp_ignored_words))
+				if(word == "ai" && !ai_found)
+					ai_found = 1
+					msg += "<b>[original_word] <A HREF='?_src_=holder;adminchecklaws=\ref[mob]'>(CL)</A></b> "
+					continue
+				else
+					var/mob/found = ckeys[word]
 					if(!found)
-						found = forenames[word]
-				if(found)
-					if(!(found in mobs_found))
-						mobs_found += found
-						msg += "<b>[original_word] <A HREF='?_src_=holder;adminmoreinfo=\ref[found]'>(?)</A>"
-						if(!ai_found && isAI(found))
-							ai_found = 1
-							msg += " <A HREF='?_src_=holder;adminchecklaws=\ref[mob]'>(CL)</A>"
-						msg += "</b> "
-						continue
+						found = surnames[word]
+						if(!found)
+							found = forenames[word]
+					if(found)
+						if(!(found in mobs_found))
+							mobs_found += found
+							msg += "<b>[original_word] <A HREF='?_src_=holder;adminmoreinfo=\ref[found]'>(?)</A>"
+							if(!ai_found && isAI(found))
+								ai_found = 1
+								msg += " <A HREF='?_src_=holder;adminchecklaws=\ref[mob]'>(CL)</A>"
+							msg += "</b> "
+							continue
 		msg += "[original_word] "
 
 	return msg

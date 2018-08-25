@@ -1,7 +1,6 @@
 /datum/map/torch
 	// Unit test exemptions
 	apc_test_exempt_areas = list(
-		/area/aquila/maintenance = NO_SCRUBBER|NO_VENT,
 		/area/engineering/atmos/storage = NO_SCRUBBER|NO_VENT,
 		/area/engineering/auxpower = NO_SCRUBBER|NO_VENT,
 		/area/engineering/drone_fabrication = NO_SCRUBBER|NO_VENT,
@@ -16,12 +15,12 @@
 		/area/maintenance/exterior = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/maintenance/firstdeck/foreport = NO_SCRUBBER,
 		/area/maintenance/firstdeck/forestarboard = NO_SCRUBBER,
-		/area/maintenance/fourthdeck/aft = 0,
+		/area/maintenance/thirddeck/aft = 0,
 		/area/maintenance/incinerator = NO_SCRUBBER,
 		/area/maintenance/disposal = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/maintenance/seconddeck/aftport = NO_SCRUBBER,
 		/area/maintenance/seconddeck/forestarboard = NO_SCRUBBER,
-		/area/maintenance/thirddeck/aftstarboard = NO_SCRUBBER,
+		/area/maintenance/seconddeck/aftstarboard = NO_SCRUBBER,
 		/area/janitor = NO_SCRUBBER|NO_VENT,
 		/area/mine/explored = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/mine/unexplored = NO_SCRUBBER|NO_VENT|NO_APC,
@@ -76,7 +75,6 @@
 	)
 
 	area_coherency_test_exempt_areas = list(
-		/area/aquila/airlock,
 		/area/space,
 		/area/mine/explored,
 		/area/mine/unexplored,
@@ -115,11 +113,9 @@
 		/area/vacant/mess,
 		/area/turbolift,
 		/area/turbolift/start,
-		/area/turbolift/bridge,
 		/area/turbolift/firstdeck,
 		/area/turbolift/seconddeck,
 		/area/turbolift/thirddeck,
-		/area/turbolift/fourthdeck,
 		/area/template_noop
 	)
 

@@ -1,22 +1,17 @@
-var/const/NETWORK_AQUILA      = "Aquila"
-var/const/NETWORK_BRIDGE      = "Bridge"
 var/const/NETWORK_CALYPSO     = "Charon"
 var/const/NETWORK_EXPEDITION  = "Expedition"
-var/const/NETWORK_FIRST_DECK  = "First Deck"
-var/const/NETWORK_FOURTH_DECK = "Fourth Deck"
 var/const/NETWORK_POD         = "General Utility Pod"
+var/const/NETWORK_FIRST_DECK  = "First Deck"
 var/const/NETWORK_SECOND_DECK = "Second Deck"
+var/const/NETWORK_THIRD_DECK  = "Third Deck"
 var/const/NETWORK_SUPPLY      = "Supply"
 var/const/NETWORK_HANGAR      = "Hangar"
 var/const/NETWORK_MISSILE     = "Missile Pod"
 var/const/NETWORK_EXPLO       = "Exploration"
-var/const/NETWORK_THIRD_DECK  = "Third Deck"
 var/const/NETWORK_PETROV      = "Petrov"
 
 /datum/map/sierra/get_network_access(var/network)
 	switch(network)
-		if(NETWORK_BRIDGE)
-			return access_heads
 		if(NETWORK_CALYPSO)
 			return access_expedition_shuttle
 		if(NETWORK_POD)
@@ -38,20 +33,16 @@ var/const/NETWORK_PETROV      = "Petrov"
 		NETWORK_FIRST_DECK,
 		NETWORK_SECOND_DECK,
 		NETWORK_THIRD_DECK,
-		NETWORK_FOURTH_DECK,
-		NETWORK_BRIDGE,
 		NETWORK_COMMAND,
 		NETWORK_ENGINEERING,
 		NETWORK_ENGINE,
 		NETWORK_MEDICAL,
-		NETWORK_MISSILE,
 		NETWORK_RESEARCH,
 		NETWORK_SECURITY,
 		NETWORK_SUPPLY,
 		NETWORK_EXPEDITION,
 		NETWORK_EXPLO,
 		NETWORK_HANGAR,
-		NETWORK_AQUILA,
 		NETWORK_CALYPSO,
 		NETWORK_PETROV,
 		NETWORK_POD,
@@ -68,11 +59,6 @@ var/const/NETWORK_PETROV      = "Petrov"
 //
 
 // Networks
-/obj/machinery/camera/network/aquila
-	network = list(NETWORK_AQUILA)
-
-/obj/machinery/camera/network/bridge
-	network = list(NETWORK_BRIDGE)
 
 /obj/machinery/camera/network/exploration_shuttle
 	network = list(NETWORK_CALYPSO)
@@ -83,17 +69,17 @@ var/const/NETWORK_PETROV      = "Petrov"
 /obj/machinery/camera/network/first_deck
 	network = list(NETWORK_FIRST_DECK)
 
-/obj/machinery/camera/network/fourth_deck
-	network = list(NETWORK_FOURTH_DECK)
+/obj/machinery/camera/network/second_deck
+	network = list(NETWORK_SECOND_DECK)
+
+/obj/machinery/camera/network/third_deck
+	network = list(NETWORK_THIRD_DECK)
 
 /obj/machinery/camera/network/pod
 	network = list(NETWORK_POD)
 
 /obj/machinery/camera/network/petrov
 	network = list(NETWORK_PETROV)
-
-/obj/machinery/camera/network/second_deck
-	network = list(NETWORK_SECOND_DECK)
 
 /obj/machinery/camera/network/supply
 	network = list(NETWORK_SUPPLY)
@@ -103,9 +89,6 @@ var/const/NETWORK_PETROV      = "Petrov"
 
 /obj/machinery/camera/network/exploration
 	network = list(NETWORK_EXPLO)
-
-/obj/machinery/camera/network/third_deck
-	network = list(NETWORK_THIRD_DECK)
 
 /obj/machinery/camera/network/command
 	network = list(NETWORK_COMMAND)

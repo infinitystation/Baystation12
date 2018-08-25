@@ -101,6 +101,15 @@
 /obj/item/clothing/under/solgov/utility/expeditionary/exploration
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/exploration)
 
+/obj/item/clothing/under/solgov/utility/expeditionary/exploration/pilot
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/exploration, /obj/item/clothing/accessory/solgov/speciality/pilot)
+
+/obj/item/clothing/under/solgov/utility/expeditionary/exploration/field_medic
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/exploration, /obj/item/clothing/accessory/armband/medblue)
+
+/obj/item/clothing/under/solgov/utility/expeditionary/exploration/field_engineer
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/exploration, /obj/item/clothing/accessory/armband/engine)
+
 /obj/item/clothing/under/solgov/utility/expeditionary/officer
 	name = "expeditionary officer's uniform"
 	desc = "The utility uniform of the SCG Expeditionary Corps, made from biohazard resistant material. This one has gold trim."

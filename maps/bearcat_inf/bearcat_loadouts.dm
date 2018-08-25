@@ -47,6 +47,7 @@
 	display_name = "holster selection"
 	sort_category = "Utility"
 	path = /obj/item/clothing/accessory/storage/holster
+	allowed_roles = list(/datum/job/captain, /datum/job/chief_engineer, /datum/job/hop, /datum/job/officer, /datum/job/qm)
 	cost = 1
 
 /datum/gear/accessory/holster/New()
@@ -78,39 +79,11 @@
 //Weapons//
 ///////////
 
-
-/datum/gear/accessory/guns
-	display_name = "guns"
-	sort_category = "Utility"
-	cost = 5
-	path = /obj/item/weapon/gun/projectile/
-
-/datum/gear/accessory/guns/New()
-	..()
-	var/guns = list()
-	guns["holdout pistol"] = /obj/item/weapon/gun/projectile/pistol
-	guns[".45 pistol"] = /obj/item/weapon/gun/projectile/sec/lethal
-	gear_tweaks += new/datum/gear_tweak/path(guns)
-
-/datum/gear/accessory/ammo
-	display_name = "guns ammo"
-	sort_category = "Utility"
-	cost = 2
-	path = /obj/item/ammo_magazine
-
-/datum/gear/accessory/ammo/New()
-	..()
-	var/ammo = list()
-	ammo["holdout pistol ammo"] = /obj/item/ammo_magazine/mc9mm
-	ammo[".45 pistol ammo"] = /obj/item/ammo_magazine/c45m
-	gear_tweaks += new/datum/gear_tweak/path(ammo)
-
 /datum/gear/accessory/boot_knife
 	display_name = "boot knife"
 	sort_category = "Utility"
 	path = /obj/item/weapon/material/kitchen/utensil/knife/boot
 	cost = 3
-
 
 /datum/gear/accessory
 	display_name = "locket"
@@ -134,11 +107,6 @@
 	display_name = "zhongshan jacket"
 	path = /obj/item/clothing/accessory/toggleable/zhongshan
 	flags = GEAR_HAS_COLOR_SELECTION
-
-/datum/gear/accessory/dashiki
-	display_name = "dashiki selection"
-	path = /obj/item/clothing/accessory/dashiki
-	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/thawb
 	display_name = "thawb"
@@ -177,12 +145,6 @@
 	display_name = "bowtie, colored"
 	path = /obj/item/clothing/accessory/bowtie/color
 	flags = GEAR_HAS_COLOR_SELECTION
-
-/datum/gear/accessory/holster
-	display_name = "holster selection"
-	path = /obj/item/clothing/accessory/storage/holster
-	cost = 2
-	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/tie
 	display_name = "tie selection"
@@ -423,7 +385,6 @@
 	var/boots = list()
 	boots["jackboots"] = /obj/item/clothing/shoes/jackboots
 	boots["workboots"] = /obj/item/clothing/shoes/workboots
-	boots["duty boots"] = /obj/item/clothing/shoes/dutyboots
 	boots["jungle boots"] = /obj/item/clothing/shoes/jungleboots
 	boots["desert boots"] = /obj/item/clothing/shoes/desertboots
 	gear_tweaks += new/datum/gear_tweak/path(boots)

@@ -410,3 +410,14 @@
 
 /obj/item/ammo_magazine/uni46x30mm/empty
 	initial_ammo = 0
+
+/obj/item/ammo_magazine/n10mm
+	name = "magazine (10mm)"
+	icon_state = "10mm"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/a10mm
+	matter = list(DEFAULT_WALL_MATERIAL = 1500)
+	caliber = "10mm"
+	max_ammo = 22
+	multiple_sprites = 1
+

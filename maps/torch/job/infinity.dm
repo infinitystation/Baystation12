@@ -147,14 +147,13 @@
 		/obj/item/weapon/combitool)
 
 /decl/hierarchy/outfit/marshal
-	name = "OCIE officer"
+	name = "OCIE hunter"
 	shoes = /obj/item/clothing/shoes/jackboots
 	uniform = /obj/item/clothing/under/rank/security/navyblue
 	suit = /obj/item/clothing/suit/armor/pcarrier/light/sol
 	l_ear = /obj/item/device/radio/headset/headset_sec
 	belt = /obj/item/weapon/storage/belt/holster/security/ocei
-	r_pocket = /obj/item/clothing/accessory/solgov/rank/marine/enlisted/e4
-	r_hand = /obj/item/clothing/accessory/badge/ocieagent
+	r_hand = /obj/item/clothing/accessory/badge/tracker
 	l_hand = /obj/item/weapon/gun/energy/taser
 	id_slot = slot_wear_id
 	id_type = /obj/item/weapon/card/id/security

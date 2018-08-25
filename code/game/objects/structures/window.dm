@@ -24,7 +24,7 @@
 	var/on_frame = FALSE
 	var/material_color
 	blend_objects = list(/obj/machinery/door, /turf/simulated/wall) // Objects which to blend with
-	noblend_objects = list(/obj/machinery/door/window)
+	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield) //Objects to avoid blending with (such as children of listed blend objects.
 
 	atmos_canpass = CANPASS_PROC
 

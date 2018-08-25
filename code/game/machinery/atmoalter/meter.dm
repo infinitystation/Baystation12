@@ -8,6 +8,7 @@
 	power_channel = ENVIRON
 	var/frequency = 0
 	var/id
+	layer = 8.1
 	use_power = 1
 	idle_power_usage = 15
 
@@ -24,7 +25,7 @@
 /obj/machinery/meter/proc/clear_target()
 	if(target)
 		GLOB.destroyed_event.unregister(target, src)
-		target = null	
+		target = null
 
 /obj/machinery/meter/Destroy()
 	clear_target()

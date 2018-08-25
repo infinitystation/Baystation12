@@ -115,7 +115,7 @@
 
 	New()
 		..()
-		desc += " Can hold up to [volume] units."
+		desc += " It can hold up to [volume] units."
 
 	on_reagent_change()
 		update_icon()

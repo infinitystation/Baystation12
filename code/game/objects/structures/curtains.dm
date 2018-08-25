@@ -58,6 +58,10 @@
 	name = "privacy curtain"
 	color = "#b8f5e3"
 
+/obj/structure/curtain/open/canteen
+	name = "privacy curtain"
+	color = COLOR_BLUE_GRAY
+
 /obj/structure/curtain/open/shower
 	name = "shower curtain"
 	color = "#acd1e9"

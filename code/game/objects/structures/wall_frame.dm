@@ -21,7 +21,7 @@
 	var/stripe_color
 
 	blend_objects = list(/obj/machinery/door, /turf/simulated/wall) // Objects which to blend with
-	noblend_objects = list(/obj/machinery/door/window)
+	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield)
 
 /obj/structure/wall_frame/New(var/new_loc)
 	..(new_loc)
@@ -77,7 +77,7 @@
 					return
 
 			var/wtype = ST.material.created_window
-			if (ST.use(1))
+			if (ST.use(4))
 				var/obj/structure/window/WD = new wtype(loc, 5, 1)
 				to_chat(user, "<span class='notice'>You place the [WD] on [src].</span>")
 				WD.update_connections(1)
@@ -141,6 +141,12 @@
 
 /obj/structure/wall_frame/osmium
 	color = "#9bc6f2"
+
+/obj/structure/wall_frame/voxalloy
+	color = "#6c7364"
+
+/obj/structure/wall_frame/prepainted
+	color = "#545c68"
 
 /obj/structure/wall_frame/hull/Initialize()
 	. = ..()

@@ -1,6 +1,15 @@
 /decl/hierarchy/supply_pack/miscellaneous
 	name = "Miscellaneous"
 
+/decl/hierarchy/supply_pack/miscellaneous/flamps
+	num_contained = 6
+	contains = list(/obj/item/device/flashlight/lamp/floodlamp,
+					/obj/item/device/flashlight/lamp/floodlamp/green)
+	name = "Flood lamps"
+	cost = 20
+	containername = "\improper Flood lamp crate"
+	supply_method = /decl/supply_method/randomized
+
 /decl/hierarchy/supply_pack/miscellaneous/llamps
 	num_contained = 3
 	contains = list(/obj/item/device/flashlight/lamp/lava,
@@ -317,13 +326,6 @@
 	name = "\improper Pest Control Crate"
 	cost = 10
 	containername = "\improper Pest Control Crate"
-
-/decl/hierarchy/supply_pack/miscellaneous/mairbags
-	name = "Personal airbags"
-	contains = list(/obj/item/airbag,
-					/obj/item/airbag)
-	cost = 25
-	containername = "airbag crate"
 
 /decl/hierarchy/supply_pack/miscellaneous/illuminate
 	name = "Illumination grenades"

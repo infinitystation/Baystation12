@@ -9,8 +9,14 @@
 	throw_speed = 1
 	throw_range = 3
 	force = 15
-	var/list/potentials = list(SPECIES_RESOMI = /spell/aoe_turf/conjure/summon/resomi, SPECIES_HUMAN = /obj/item/weapon/storage/bag/cash/infinite, SPECIES_VOX = /spell/targeted/shapeshift/true_form,
-		SPECIES_TAJARA = /spell/messa_shroud, SPECIES_UNATHI = /spell/moghes_blessing, SPECIES_DIONA = /spell/aoe_turf/conjure/grove/gestalt, SPECIES_SKRELL = /obj/item/weapon/contract/apprentice/skrell,
+	var/list/potentials = list(
+		SPECIES_HUMAN = /obj/item/weapon/storage/bag/cash/infinite,
+		SPECIES_VOX = /spell/targeted/shapeshift/true_form,
+		SPECIES_TAJARA = /spell/messa_shroud,
+		SPECIES_RESOMI = /spell/aoe_turf/conjure/summon/resomi,
+		SPECIES_UNATHI = /spell/moghes_blessing,
+		SPECIES_DIONA = /spell/aoe_turf/conjure/grove/gestalt,
+		SPECIES_SKRELL = /obj/item/weapon/contract/apprentice/skrell,
 		SPECIES_IPC = /spell/camera_connection)
 
 /obj/item/weapon/magic_rock/attack_self(mob/user)

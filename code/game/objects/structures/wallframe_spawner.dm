@@ -93,9 +93,18 @@
 	icon_state = "r-wingrille"
 	win_path = /obj/structure/window/reinforced/full
 
+/obj/effect/wallframe_spawn/reinforced/prepainted
+	name = "reinforced wall frame window spawner"
+	icon_state = "r-wingrille"
+	frame_path = /obj/structure/wall_frame/prepainted
+
 /obj/effect/wallframe_spawn/reinforced/titanium
 	name = "reinforced titanium wall frame window spawner"
 	frame_path = /obj/structure/wall_frame/titanium
+
+/obj/effect/wallframe_spawn/reinforced/voxalloy
+	name = "reinforced voxalloy wall frame window spawner"
+	frame_path = /obj/structure/wall_frame/voxalloy
 
 /obj/effect/wallframe_spawn/reinforced/hull
 	name = "reinforced hull wall frame window spawner"
@@ -119,11 +128,19 @@
 	name = "reinforced phoron osmium wall frame window spawner"
 	frame_path = /obj/structure/wall_frame/osmium
 
+/obj/effect/wallframe_spawn/reinforced_phoron/hull
+	name = "reinforced phoron hull wall frame window spawner"
+	frame_path = /obj/structure/wall_frame/hull
+
 /obj/effect/wallframe_spawn/reinforced/polarized
 	name = "polarized wall frame window spawner"
 	color = "#444444"
 	win_path = /obj/structure/window/reinforced/polarized/full
 	var/id
+
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted
+	name = "polarized wall frame window spawner - prepainted"
+	frame_path = /obj/structure/wall_frame/prepainted
 
 /obj/effect/wallframe_spawn/reinforced/polarized/full
 	name = "polarized wall frame window spawner - full tile"

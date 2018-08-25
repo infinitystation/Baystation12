@@ -13,7 +13,10 @@
 	slot_flags = SLOT_BELT
 	var/overlay_flags
 	attack_verb = list("whipped", "lashed", "disciplined")
-	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/onmob/Resomi/belt.dmi')
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/belt.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/belt.dmi'
+		)
 
 /obj/item/weapon/storage/belt/verb/toggle_layer()
 	set name = "Switch Belt Layer"
@@ -128,7 +131,8 @@
 		/obj/item/taperoll,
 		/obj/item/weapon/extinguisher/mini,
 		/obj/item/weapon/marshalling_wand,
-		/obj/item/weapon/hand_labeler
+		/obj/item/weapon/hand_labeler,
+		/obj/item/clothing/gloves
 		)
 
 
@@ -142,14 +146,6 @@
 	new /obj/item/stack/cable_coil(src,30,pick("red","yellow","orange"))
 	update_icon()
 
-/obj/item/weapon/storage/belt/utility/full_buy/New()
-	..()
-	new /obj/item/weapon/screwdriver(src)
-	new /obj/item/weapon/wrench(src)
-	new /obj/item/weapon/weldingtool(src)
-	new /obj/item/weapon/crowbar(src)
-	new /obj/item/weapon/wirecutters(src)
-	new /obj/item/device/multitool(src)
 
 /obj/item/weapon/storage/belt/utility/atmostech/New()
 	..()
@@ -190,7 +186,8 @@
 		/obj/item/taperoll,
 		/obj/item/weapon/extinguisher/mini,
 		/obj/item/weapon/storage/med_pouch,
-		/obj/item/bodybag
+		/obj/item/bodybag,
+		/obj/item/clothing/gloves
 		)
 
 /obj/item/weapon/storage/belt/medical/emt
@@ -220,7 +217,6 @@
 		/obj/item/weapon/melee/baton,
 		/obj/item/weapon/melee/telebaton,
 		/obj/item/weapon/flame/lighter,
-		/obj/item/clothing/glasses/hud/security,
 		/obj/item/device/flashlight,
 		/obj/item/modular_computer/pda,
 		/obj/item/device/radio/headset,
@@ -230,7 +226,8 @@
 		/obj/item/taperoll,
 		/obj/item/device/holowarrant,
 		/obj/item/weapon/magnetic_ammo,
-		/obj/item/device/binoculars
+		/obj/item/device/binoculars,
+		/obj/item/clothing/gloves
 		)
 
 /obj/item/weapon/storage/belt/general
@@ -241,14 +238,12 @@
 	overlay_flags = BELT_OVERLAY_ITEMS
 	can_hold = list(
 		/obj/item/device/flash,
-		/obj/item/weapon/melee/baton,
 		/obj/item/weapon/melee/telebaton,
 		/obj/item/device/taperecorder,
 		/obj/item/weapon/folder,
 		/obj/item/weapon/paper,
 		/obj/item/weapon/clipboard,
 		/obj/item/modular_computer/tablet,
-		/obj/item/device/flash,
 		/obj/item/device/flashlight,
 		/obj/item/modular_computer/pda,
 		/obj/item/device/radio/headset,
@@ -264,7 +259,12 @@
 		/obj/item/weapon/marshalling_wand,
 		/obj/item/device/camera,
 		/obj/item/weapon/hand_labeler,
-		/obj/item/device/destTagger
+		/obj/item/device/destTagger,
+		/obj/item/clothing/glasses,
+		/obj/item/clothing/head/soft,
+		/obj/item/weapon/hand_labeler,
+		/obj/item/clothing/gloves,
+		/obj/item/weapon/crowbar/prybar
 		)
 
 /obj/item/weapon/storage/belt/holster/general
@@ -297,7 +297,12 @@
 		/obj/item/device/binoculars,
 		/obj/item/weapon/marshalling_wand,
 		/obj/item/device/camera,
-		/obj/item/device/destTagger
+		/obj/item/device/destTagger,
+		/obj/item/clothing/glasses,
+		/obj/item/clothing/head/soft,
+		/obj/item/weapon/hand_labeler,
+		/obj/item/clothing/gloves,
+		/obj/item/weapon/crowbar/prybar
 		)
 
 /obj/item/weapon/storage/belt/holster/forensic
@@ -323,7 +328,7 @@
 		/obj/item/weapon/forensics/sample_kit,
 		/obj/item/device/camera,
 		/obj/item/device/taperecorder,
-		/obj/item/device/tape,
+		/obj/item/device/tape
 		)
 
 /obj/item/weapon/storage/belt/holster/machete
@@ -417,48 +422,3 @@
 /obj/item/weapon/storage/belt/waistpack/big/New()
 	..()
 	slowdown_per_slot[slot_belt] = 3
-
-/obj/item/weapon/storage/belt/medical/emt/combat
-	name = "combat medical belt"
-
-/obj/item/weapon/storage/belt/medical/emt/combat/New()
-	..()
-	new /obj/item/weapon/storage/pill_bottle/dylovene(src)
-	new /obj/item/weapon/storage/pill_bottle/dexalin(src)
-	new /obj/item/weapon/storage/pill_bottle/spaceacillin(src)
-	new /obj/item/weapon/storage/pill_bottle/bicaridine(src)
-	new /obj/item/weapon/storage/pill_bottle/inaprovaline(src)
-	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
-	new /obj/item/weapon/storage/pill_bottle/kelotane(src)
-
-/obj/item/weapon/storage/belt/holster/security/ocei/New()
-	..()
-	new /obj/item/taperoll/police(src)
-	new /obj/item/weapon/melee/baton/loaded(src)
-	new /obj/item/device/flashlight/maglight(src)
-	new /obj/item/weapon/handcuffs(src)
-	new /obj/item/ammo_magazine/c45m(src)
-	new /obj/item/ammo_magazine/c45m(src)
-	new /obj/item/weapon/gun/projectile/sec/lethal(src)
-
-/obj/item/weapon/storage/belt/holster/security/tactical/troops/New()
-	..()
-	new /obj/item/ammo_magazine/mc9mmt(src)
-	new /obj/item/ammo_magazine/mc9mmt(src)
-	new /obj/item/ammo_magazine/mc9mmt(src)
-	new /obj/item/ammo_magazine/mc9mmt(src)
-	new /obj/item/ammo_magazine/mc9mmt(src)
-	new /obj/item/ammo_magazine/mc9mmt(src)
-	new /obj/item/weapon/gun/projectile/sec/lethal(src)
-	new /obj/item/ammo_magazine/c45m(src)
-
-/obj/item/weapon/storage/belt/holster/security/tactical/troops_sts/New()
-	..()
-	new /obj/item/ammo_magazine/c556(src)
-	new /obj/item/ammo_magazine/c556(src)
-	new /obj/item/ammo_magazine/c556(src)
-	new /obj/item/ammo_magazine/c556(src)
-	new /obj/item/ammo_magazine/c556(src)
-	new /obj/item/ammo_magazine/c556(src)
-	new /obj/item/weapon/gun/projectile/sec/lethal(src)
-	new /obj/item/ammo_magazine/c45m(src)

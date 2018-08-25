@@ -46,6 +46,8 @@
 
 	#include "structures/closets.dm"
 	#include "structures/signs.dm"
+	#include "structures/thrusters.dm"
+
 	#include "structures/closets/armory.dm"
 	#include "structures/closets/command.dm"
 	#include "structures/closets/engineering.dm"
@@ -62,7 +64,6 @@
 	#include "loadout/loadout_eyes.dm"
 	#include "loadout/loadout_gloves.dm"
 	#include "loadout/loadout_head.dm"
-	#include "loadout/loadout_infinity.dm"
 	#include "loadout/loadout_shoes.dm"
 	#include "loadout/loadout_suit.dm"
 	#include "loadout/loadout_uniform.dm"
@@ -71,8 +72,11 @@
 
 	#include "sierra-1.dmm"
 	#include "sierra-2.dmm"
+	#include "sierra-3.dmm"
 	#include "sierra-4.dmm"
+	#include "sierra-5.dmm"
 	#include "../away/empty.dmm"
+
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/yacht/yacht.dm"
 	#include "../away/bearcat/bearcat.dm"

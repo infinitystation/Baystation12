@@ -83,6 +83,7 @@
 	density = 0
 	anchored = 1
 	can_buckle = 1
+	buckle_dir = SOUTH
 	var/exposed = 0
 	var/busy
 
@@ -142,6 +143,7 @@
 	icon_state = "open"
 	overlays.Cut()
 	if(buckled_mob)
+		overlays += buckled_mob
 		var/image/I = image(icon,icon_state="overlay")
 		I.plane = ABOVE_HUMAN_PLANE
 		I.layer = ABOVE_HUMAN_LAYER

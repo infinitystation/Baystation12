@@ -116,6 +116,8 @@
 
 /turf/simulated/wall/titanium_r
 	icon_state = "rgeneric"
+	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield) //Objects to avoid blending with (such as children of listed blend objects.
+
 /turf/simulated/wall/titanium_r/New(var/newloc)
 	..(newloc,"titanium","titanium")
 

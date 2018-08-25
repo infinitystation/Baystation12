@@ -50,7 +50,7 @@
 	allowed_roles = MEDICAL_ROLES
 
 /datum/gear/uniform/resomi/science
-	allowed_roles = NANOTRASEN_ROLES
+	allowed_roles = RESEARCH_ROLES
 
 /datum/gear/uniform/resomi/roboitcs
 	allowed_roles = list(/datum/job/roboticist)
@@ -90,9 +90,6 @@
 		///////
 
 /datum/gear/mask/ipc_monitor
-
-/datum/gear/suit/lab_xyn_machine
-	allowed_branches = CIVILIAN_BRANCHES
 
 // Misc clothing
 /datum/gear/uniform/harness

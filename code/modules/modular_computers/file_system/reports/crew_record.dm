@@ -24,7 +24,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 
 /datum/computer_file/report/crew_record/proc/load_from_mob(var/mob/living/carbon/human/H)
 	if(istype(H))
-		sleep(5)
+		sleep(10)
 		photo_front = getFlatIcon(H, SOUTH, always_use_defdir = 1)
 		photo_side = getFlatIcon(H, WEST, always_use_defdir = 1)
 	else
@@ -161,11 +161,11 @@ FIELD_SHORT("DNA", dna, access_security)
 FIELD_SHORT("Fingerprint", fingerprint, access_security)
 
 // EMPLOYMENT RECORDS
-FIELD_LONG("Employment Record", emplRecord, access_bridge)
-FIELD_SHORT("Home System", homeSystem, access_bridge)
-FIELD_SHORT("Citizenship", citizenship, access_bridge)
-FIELD_SHORT("Faction", faction, access_bridge)
-FIELD_LONG("Qualifications", skillset, access_bridge)
+FIELD_LONG("Employment Record", emplRecord, access_heads)
+FIELD_SHORT("Home System", homeSystem, access_heads)
+FIELD_SHORT("Citizenship", citizenship, access_heads)
+FIELD_SHORT("Faction", faction, access_heads)
+FIELD_LONG("Qualifications", skillset, access_heads)
 
 // ANTAG RECORDS
 FIELD_LONG("Exploitable Information", antagRecord, access_syndicate)

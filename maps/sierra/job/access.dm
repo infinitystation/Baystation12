@@ -31,6 +31,18 @@
 	desc = "Charon Helm"
 	region = ACCESS_REGION_GENERAL
 
+/var/const/access_nanotrasen = 81
+/datum/access/nanotrasen
+	id = access_nanotrasen
+	desc = "NanoTrasen Personnel"
+	region = ACCESS_REGION_RESEARCH
+
+/var/const/access_robotics_engineering = 82 //two accesses so that you can give access to the lab without giving access to the borgs
+/datum/access/robotics_engineering
+	id = access_robotics_engineering
+	desc = "Biomechanical Engineering"
+	region = ACCESS_REGION_ENGINEERING
+
 /var/const/access_iaa = 78
 /datum/access/iaa
 	id = access_iaa
@@ -38,61 +50,59 @@
 	region = ACCESS_REGION_COMMAND
 	access_type = ACCESS_TYPE_NONE //Ruler of their own domain, CO and RD cannot enter
 
-/var/const/access_representative = 79
-/datum/access/representative
-	id = access_representative
-	desc = "SolGov Representative"
-	region = ACCESS_REGION_COMMAND
-	access_type = ACCESS_TYPE_NONE //Ruler of their own domain, CO cannot enter
-
-/var/const/access_colonial_marshal = 80
-/datum/access/marshal
-	id = access_colonial_marshal
-	desc = "Colonial Marshal"
-	region = ACCESS_REGION_SECURITY
-	access_type = ACCESS_TYPE_NONE
-
-/var/const/access_gun = 81
+/var/const/access_gun = 87
 /datum/access/gun
 	id = access_gun
 	desc = "Gunnery"
 	region = ACCESS_REGION_COMMAND
 
-/var/const/access_expedition_shuttle = 82
+/var/const/access_expedition_shuttle = 88
 /datum/access/exploration_shuttle
 	id = access_expedition_shuttle
 	desc = "Charon"
 	region = ACCESS_REGION_GENERAL
 
-/var/const/access_guppy = 83
+/var/const/access_guppy = 89
 /datum/access/guppy
 	id = access_guppy
 	desc = "General Utility Pod"
 	region = ACCESS_REGION_GENERAL
 
-/var/const/access_seneng = 84
+/var/const/access_seneng = 90
 /datum/access/seneng
 	id = access_seneng
 	desc = "Senior Engineer"
 	region = ACCESS_REGION_ENGINEERING
 
-/var/const/access_senmed = 85
+/var/const/access_senmed = 91
 /datum/access/senmed
 	id = access_senmed
 	desc = "Physician"
 	region = ACCESS_REGION_MEDBAY
 
-/var/const/access_explorer = 86
+/var/const/access_senadv = 92
+/datum/access/senadv
+	id = access_senadv
+	desc = "Senior Enlisted Advisor"
+	region = ACCESS_REGION_COMMAND
+
+/var/const/access_explorer = 93
 /datum/access/explorer
 	id = access_explorer
 	desc = "Explorer"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_pathfinder = 87
+/var/const/access_pathfinder = 94
 /datum/access/pathfinder
 	id = access_pathfinder
 	desc = "Pathfinder"
 	region = ACCESS_REGION_RESEARCH
+
+/var/const/access_commissary = 96
+/datum/access/commissary
+	id = access_commissary
+	desc = "Commissary"
+	region = ACCESS_REGION_GENERAL
 
 
 /************

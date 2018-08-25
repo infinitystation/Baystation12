@@ -22,7 +22,8 @@ var/list/global/tank_gauge_cache = list()
 
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/back.dmi'
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/back.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/back.dmi'
 		)
 
 	var/datum/gas_mixture/air_contents = null

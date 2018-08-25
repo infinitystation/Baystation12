@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/gun/small/secure
-	name = "compact smartgun"
+	name = "PAEP90-CS smartgun"
 	desc = "Combining the two LAEP90 variants, the secure and compact LAEP90-CS is the next best thing to keeping your security forces on a literal leash."
 	icon = 'icons/obj/gun_secure.dmi'
 	item_icons = list(
@@ -10,7 +10,7 @@
 	authorized_modes = list(ALWAYS_AUTHORIZED, AUTHORIZED)
 
 /obj/item/weapon/gun/energy/stunrevolver/secure
-	name = "smart stun revolver"
+	name = "A&M X6 stun revolver"
 	desc = "This A&M X6 is fitted with an NT1019 chip which allows remote authorization of weapon functionality. It has an SCG emblem on the grip."
 	icon = 'icons/obj/gun_secure.dmi'
 	icon_state = "revolverstun"
@@ -27,7 +27,7 @@
 	projectile_type = /obj/item/projectile/energy/electrode/green
 
 /obj/item/weapon/gun/energy/gun/secure
-	name = "smartgun"
+	name = "LAEP90 smartgun"
 	desc = "A more secure LAEP90, the LAEP90-S is designed to please paranoid constituents. Body cam not included."
 	icon = 'icons/obj/gun_secure.dmi'
 	item_icons = list(
@@ -55,7 +55,7 @@
 	..()
 
 /obj/item/weapon/gun/energy/laser/secure
-	name = "laser carbine"
+	name = "G40E laser carbine"
 	desc = "A Hephaestus Industries G40E carbine, designed to kill with concentrated energy blasts. Fitted with an NT1019 chip to make sure killcount is tracked appropriately."
 	icon = 'icons/obj/gun_secure.dmi'
 	icon_state = "lasersec"

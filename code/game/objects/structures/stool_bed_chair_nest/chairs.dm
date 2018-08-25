@@ -61,7 +61,8 @@
 		overlays |= stool_cache[padding_cache_key]
 
 	if(buckled_mob)
-		cache_key = "[base_icon]-armrest-[padding_material.name]"
+		if(padding_material)
+			cache_key = "[base_icon]-armrest-[padding_material.name]"
 		if(isnull(stool_cache[cache_key]))
 			var/image/I = image(icon, "[base_icon]_armrest")
 			I.plane = ABOVE_HUMAN_PLANE
@@ -332,18 +333,6 @@
 	name = "winged chair"
 	base_icon = "wooden_chair_wings"
 	icon_state = "wooden_chair_wings_preview"
-//INFINITY
-/obj/structure/bed/chair/comfy/shuttle
-	name = "shuttle chair"
-	icon_state = "bschair_preview"
-	base_icon = "bschair"
-	color = null
-	material_alteration = MATERIAL_ALTERATION_NONE
-
-/obj/structure/bed/chair/comfy/shuttle/red
-	icon_state = "rschair_preview"
-	base_icon = "rschair"
-	material_alteration = MATERIAL_ALTERATION_NONE
 
 /obj/structure/bed/chair/shuttle
 	name = "shuttle seat"
@@ -370,6 +359,9 @@
 
 /obj/structure/bed/chair/shuttle/blue/New(var/newloc,var/newmaterial)
 	..(newloc,"steel","blue")
+
+/obj/structure/bed/chair/shuttle/red/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","red")
 
 /obj/structure/bed/chair/shuttle/black/New(var/newloc,var/newmaterial)
 	..(newloc,"steel","black")

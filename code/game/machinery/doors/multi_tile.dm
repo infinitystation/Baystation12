@@ -172,6 +172,7 @@
 
 /obj/machinery/door/airlock/multi_tile/glass
 	name = "Glass Airlock"
+	opacity = 0
 	glass = 1
 
 /obj/machinery/door/airlock/multi_tile/glass/command

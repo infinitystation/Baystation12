@@ -1,6 +1,6 @@
 
 /datum/gear/uniform/utility
-	display_name = "Contractor Utility Uniform"
+	display_name = "Utility Uniform"
 	path = /obj/item/clothing/under/solgov/utility
 
 /datum/gear/uniform/jumpsuit
@@ -45,18 +45,15 @@
 /datum/gear/uniform/turtleneck
 
 /datum/gear/tactical/tacticool
-
+/*
 /datum/gear/uniform/corporate
 	allowed_branches = CIVILIAN_BRANCHES
-
+*/
 /datum/gear/uniform/sterile
-	allowed_roles = MEDICAL_ROLES
+	allowed_roles = STERILE_ROLES
 
 /datum/gear/uniform/hazard
-	allowed_roles = ENGINEERING_ROLES
-
-/datum/gear/uniform/utility
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_roles = TECHNICAL_ROLES
 
 /datum/gear/uniform/frontier
 	allowed_branches = CIVILIAN_BRANCHES

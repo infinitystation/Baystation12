@@ -18,8 +18,10 @@
 		slot_r_hand_str = "backpack",
 		)
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/back.dmi'
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/back.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/back.dmi'
 		)
+
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	max_w_class = ITEM_SIZE_LARGE
@@ -144,6 +146,7 @@
 	desc = "A sturdy military-grade backpack with low-profile straps. Designed to work well with armor."
 	icon_state = "rucksack"
 	item_state_slots = list(slot_l_hand_str = "rucksack", slot_r_hand_str = "rucksack",)
+	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/onmob/Resomi/back.dmi')
 
 /obj/item/weapon/storage/backpack/rucksack/blue
 	name = "blue rucksack"
@@ -276,14 +279,6 @@
 /obj/item/weapon/storage/backpack/satchel/pocketbook/brown
 	name = "brown pocketbook"
 	color = "#3d2711"
-
-/obj/item/weapon/storage/backpack/satchel/pocketbook/navy
-	name = "brown pocketbook"
-	color = "#1c2133"
-
-/obj/item/weapon/storage/backpack/satchel/pocketbook/khaki
-	name = "khaki leather satchel"
-	color = "#baa481"
 
 /obj/item/weapon/storage/backpack/satchel/pocketbook/reddish
 	name = "auburn pocketbook"

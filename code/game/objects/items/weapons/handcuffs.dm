@@ -17,9 +17,10 @@
 	var/breakouttime = 1200 //Deciseconds = 120s = 2 minutes
 	var/cuff_sound = 'sound/weapons/handcuffs.ogg'
 	var/cuff_type = "handcuffs"
-	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/onmob/Resomi/misc.dmi')
-
-
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/misc.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/misc.dmi'
+		)
 
 /obj/item/weapon/handcuffs/get_icon_state(mob/user_mob, slot)
 	if(slot == slot_handcuffed_str)

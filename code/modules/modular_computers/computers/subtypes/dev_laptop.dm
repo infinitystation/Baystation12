@@ -1,19 +1,19 @@
 /obj/item/modular_computer/laptop
-	anchored = TRUE
 	name = "laptop computer"
-	desc = "A portable computer."
-	hardware_flag = PROGRAM_LAPTOP
-	icon_state_unpowered = "laptop-open"
+	desc = "A portable clamshell computer."
 	icon = 'icons/obj/modular_laptop_inf.dmi'
 	icon_state = "laptop-open"
+	icon_state_unpowered = "laptop-open"
+	var/icon_state_closed = "laptop-closed"
+	anchored = 0
+	w_class = ITEM_SIZE_NORMAL
 	base_idle_power_usage = 25
 	base_active_power_usage = 200
-	max_hardware_size = 2
 	light_strength = 3
 	max_damage = 200
 	broken_damage = 100
-	w_class = ITEM_SIZE_NORMAL
-	var/icon_state_closed = "laptop-closed"
+	max_hardware_size = 2
+	hardware_flag = PROGRAM_LAPTOP
 
 /obj/item/modular_computer/laptop/AltClick(var/mob/user)
 // Prevents carrying of open laptops inhand.
@@ -33,9 +33,6 @@
 	else
 		overlays.Cut()
 		icon_state = icon_state_closed
-
-/obj/item/modular_computer/laptop/preset
-	anchored = FALSE
 
 /obj/item/modular_computer/laptop/verb/rotatelaptop()
 	set name = "Rotate laptop"

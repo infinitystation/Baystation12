@@ -23,9 +23,9 @@
 	id = "awaysite_mining_asteroid"
 	description = "A medium-sized asteroid full of minerals."
 	suffixes = list("mining/mining-asteroid.dmm")
-	cost = 0
+	cost = 10
 	accessibility_weight = 10
-	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
+///	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
 
 /obj/effect/shuttle_landmark/cluster/nav1
 	name = "Asteroid Navpoint #1"
@@ -127,16 +127,16 @@
 		"nav_orb_7"
 	)
 	known = 0
-/*
+
 /datum/map_template/ruin/away_site/orb
 	name = "Mining - Orb"
 	id = "awaysite_mining_orb"
 	description = "A sort of circular asteroid with a bird."
 	suffixes = list("mining/mining-orb.dmm")
-	cost = 1
+	cost = 10
 	accessibility_weight = 10
 	base_turf_for_zs = /turf/simulated/floor/asteroid
-*/
+
 /obj/effect/shuttle_landmark/orb/nav1
 	name = "Anchor point A"
 	landmark_tag = "nav_orb_1"

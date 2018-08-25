@@ -38,7 +38,8 @@
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 0, bomb = 0, bio = 55, rad = 0)
 	sprite_sheets = list(
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/masks.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/mask.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/masks.dmi'
 		)
 
 //In scaling order of utility and seriousness

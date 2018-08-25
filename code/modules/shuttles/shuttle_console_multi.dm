@@ -19,6 +19,7 @@
 			shuttle.set_destination(dest_key, usr)
 		return TOPIC_REFRESH
 
+
 /obj/machinery/computer/shuttle_control/multi/antag
 	ui_template = "shuttle_control_console_antag.tmpl"
 

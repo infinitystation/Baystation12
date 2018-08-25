@@ -1659,12 +1659,33 @@ CIRCUITS BELOW
 	build_path = /obj/item/weapon/circuitboard/operating
 	sort_string = "FACAA"
 
+/datum/design/circuit/resleever
+	name = "neural lace resleever"
+	id = "resleever"
+	req_tech = list(TECH_DATA = 3, TECH_BIO = 3)
+	build_path = /obj/item/weapon/circuitboard/resleever
+	sort_string = "FAGAH"
+
 /datum/design/circuit/crewconsole
 	name = "crew monitoring console"
 	id = "crewconsole"
 	req_tech = list(TECH_DATA = 3, TECH_MAGNET = 2, TECH_BIO = 2)
 	build_path = /obj/item/weapon/circuitboard/crew
 	sort_string = "FAGAI"
+
+/datum/design/circuit/bioprinter
+	name = "bioprinter"
+	id = "bioprinter"
+	req_tech = list(TECH_ENGINEERING = 1, TECH_BIO = 3, TECH_DATA = 3)
+	build_path = /obj/item/weapon/circuitboard/bioprinter
+	sort_string = "FAGAK"
+
+/datum/design/circuit/roboprinter
+	name = "prosthetic organ fabricator"
+	id = "roboprinter"
+	req_tech = list(TECH_ENGINEERING = 2, TECH_DATA = 3)
+	build_path = /obj/item/weapon/circuitboard/roboprinter
+	sort_string = "FAGAM"
 
 /datum/design/circuit/teleconsole
 	name = "teleporter control console"
@@ -1763,6 +1784,34 @@ CIRCUITS BELOW
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/weapon/circuitboard/autolathe
 	sort_string = "HABAD"
+
+/datum/design/circuit/mining_console
+	name = "mining console board"
+	id = "mining_console"
+	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
+	build_path = /obj/item/weapon/circuitboard/mineral_processing
+	sort_string = "HABAE"
+
+/datum/design/circuit/mining_processor
+	name = "mining processor board"
+	id = "mining_processor"
+	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
+	build_path = /obj/item/weapon/circuitboard/mining_processor
+	sort_string = "HABAF"
+
+/datum/design/circuit/mining_unloader
+	name = "ore unloader board"
+	id = "mining_unloader"
+	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
+	build_path = /obj/item/weapon/circuitboard/mining_unloader
+	sort_string = "HABAG"
+
+/datum/design/circuit/mining_stacker
+	name = "sheet stacker board"
+	id = "mining_stacker"
+	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
+	build_path = /obj/item/weapon/circuitboard/mining_stacker
+	sort_string = "HABAH"
 
 /datum/design/circuit/rdservercontrol
 	name = "R&D server control console"

@@ -1,80 +1,47 @@
-/obj/item/device/radio/headset/sierrananotrasen
-	name = "nanotrasen headset"
-	desc = "A headset for corporate drones."
-	icon_state = "nt_headset"
-	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/headset_sierrant
-
-/obj/item/device/radio/headset/heads/sierracaptain
-	name = "commanding officer's headset"
+/obj/item/device/radio/headset/heads/sierra_captain
+	name = "captain's headset"
 	desc = "The skipper's headset."
 	icon_state = "com_headset"
 	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/heads/sierracaptain
+	ks1type = /obj/item/device/encryptionkey/heads/sierra_captain
 
-/obj/item/device/radio/headset/heads/sierracaptain/alt
-	name = "commanding officer's bowman headset"
+/obj/item/device/radio/headset/heads/sierra_captain/alt
+	name = "captain's bowman headset"
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 
-/obj/item/device/radio/headset/heads/sierraxo
-	name = "executive officer's headset"
-	desc = "The headset of the guy who will one day be CO."
-	icon_state = "com_headset"
-	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/heads/sierraxo
-
-/obj/item/device/radio/headset/heads/sierraxo/alt
-	name = "executive officer's bowman headset"
+/obj/item/device/radio/headset/heads/hop/alt
+	name = "head of personnel's bowman headset"
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 
-/obj/item/device/radio/headset/heads/sierrantcommand
-	name = "nanotrasen command headset"
-	desc = "Headset of the corporate overlords."
-	icon_state = "nt_headset"
-	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/headset_sierrard
+/obj/item/device/radio/headset/heads/hos/alt
+	name = "head of security's bowman headset"
+	icon_state = "com_headset_alt"
+	item_state = "com_headset_alt"
 
-/obj/item/device/radio/headset/heads/sierrantcommand/alt
-	name = "nanotrasen command bowman headset"
-	icon_state = "nt_headset_alt"
-	item_state = "nt_headset_alt"
-
-/obj/item/device/radio/headset/heads/cos
-	name = "chief of security's headset"
-	desc = "The headset of the man who protects your worthless lives."
-	icon_state = "com_headset"
-	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/heads/hos
-
-/obj/item/device/radio/headset/heads/cos/alt
-	name = "chief of security's bowman headset"
-	icon_state = "sec_headset_alt"
-	item_state = "sec_headset_alt"
-
-/obj/item/device/radio/headset/headset_deckofficer
-	name = "deck officer's radio headset"
+/obj/item/device/radio/headset/sierra_quartermaster
+	name = "quartermaster's radio headset"
 	desc = "The headset of the chief box pusher."
 	icon_state = "cargo_headset"
 	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/headset_deckofficer
+	ks1type = /obj/item/device/encryptionkey/sierra_quartermaster
 
-/obj/item/device/radio/headset/headset_deckofficer/alt
-	name = "deck officer's bowman headset"
+/obj/item/device/radio/headset/sierra_quartermaster/alt
+	name = "quartermaster's bowman headset"
 	item_state = "cargo_headset_alt"
 	icon_state = "cargo_headset_alt"
 	max_keys = 3
 
-/obj/item/device/radio/headset/bridgeofficer
-	name = "bridge officer's headset"
+/obj/item/device/radio/headset/adjutant
+	name = "adjutant's headset"
 	desc = "A headset with access to the command, engineering and exploration channels."
 	icon_state = "com_headset"
 	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/bridgeofficer
+	ks1type = /obj/item/device/encryptionkey/sierra_adjutant
 
-/obj/item/device/radio/headset/bridgeofficer/alt
-	name = "bridge officer's bowman headset"
+/obj/item/device/radio/headset/adjutant/alt
+	name = "adjutant's bowman headset"
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 	max_keys = 4
@@ -84,7 +51,15 @@
 	desc = "A headset for real tools, with access to the exploration channel. It has an inbuilt subspace antenna for better reception."
 	icon_state = "exp_headset"
 	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/exploration
+	ks1type = /obj/item/device/encryptionkey/sierra_exploration
+
+/obj/item/device/radio/headset/exploration/medic
+	name = "field medic's headset"
+	ks2type = /obj/item/device/encryptionkey/headset_med
+
+/obj/item/device/radio/headset/exploration/engineer
+	name = "field engineer's headset"
+	ks2type = /obj/item/device/encryptionkey/headset_eng
 
 /obj/item/device/radio/headset/exploration/alt
 	name = "exploration bowman headset"
@@ -97,41 +72,28 @@
 	desc = "A headset with access to the command and exploration channels. It has an inbuilt subspace antenna for better reception."
 	icon_state = "exp_headset"
 	item_state = "exp_headset"
-	ks1type = /obj/item/device/encryptionkey/pathfinder
+	ks1type = /obj/item/device/encryptionkey/sierra_pathfinder
 
 /obj/item/device/radio/headset/pathfinder/alt
 	name = "pathfinder's bowman headset"
 	icon_state = "exp_headset_alt"
 	item_state = "exp_headset_alt"
 
-/obj/item/device/radio/headset/sierraroboticist
+/obj/item/device/radio/headset/sierra_roboticist
 	name = "roboticist's headset"
-	desc = "A headset with access to the engineering and medical channels."
+	desc = "A headset with access to the science and medical channels."
 	icon_state = "eng_headset"
 	item_state = "headset"
-	ks1type = /obj/item/device/encryptionkey/headset_sierraroboticist
+	ks1type = /obj/item/device/encryptionkey/sierra_roboticist
 
-/obj/item/device/radio/headset/headset_cargo
-	desc = "A headset used by the Deck Officer and his slaves."
-
-/obj/item/device/radio/headset/headset_cargo/alt
-	desc = "A bowman headset used by the Deck Officer and his slaves."
-
-/obj/item/device/radio/headset/headset_corpsman
-	name = "corpsman headset"
-	desc = "A headset to yell into while patching open wounds. It has an inbuilt subspace antenna for better reception."
-	icon_state = "par_headset"
-	item_state = "par_headset"
-	ks1type = /obj/item/device/encryptionkey/headset_med
-
-/obj/item/device/radio/headset/headset_corpsman/alt
-	name = "corpsman bowman headset"
-	icon_state = "par_headset_alt"
-	item_state = "par_headset_alt"
-
-/obj/item/device/radio/headset/headset_pilot/
-	name = "pilot bowman headset"
+/obj/item/device/radio/headset/headset_pilot
+	name = "pilot headset"
 	desc = "A headset for cool-tempered smugglers, cocky flyboys, and bus-drivers like you. It has an inbuilt subspace antenna for better reception."
+	icon_state = "pilot_headset"
+	item_state = "pilot_headset"
+	ks1type = /obj/item/device/encryptionkey/sierra_headset_pilot
+
+/obj/item/device/radio/headset/headset_pilot/alt
+	name = "pilot bowman headset"
 	icon_state = "pilot_headset_alt"
 	item_state = "pilot_headset_alt"
-	ks1type = /obj/item/device/encryptionkey/headset_sci

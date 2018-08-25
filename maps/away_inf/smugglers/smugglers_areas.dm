@@ -1,3 +1,6 @@
+/area/smugglers
+	turf_initializer = /decl/turf_initializer/maintenance/heavy
+
 /area/smugglers/base
 	name = "\improper Asteroid Base"
 	icon_state = "smgl_base"

@@ -11,10 +11,26 @@
 	#include "bearcat-3.dmm"
 	#include "bearcat-4.dmm"
 
-	#define using_map_DATUM /datum/map/overmap_example
+	#include "../away_inf/yacht/yacht.dm"
+	#include "../away/mining/mining.dm"
+	#include "../away/derelict/derelict.dm"
+	#include "../away/magshield/magshield.dm"
+	#include "../away/casino/casino.dm"
+	#include "../away/blueriver/blueriver.dm"
+	#include "../away/mobius_rift/mobius_rift.dm"
+	#include "../away/icarus/icarus.dm"
+	#include "../away/errant_pisces/errant_pisces.dm"
+	#include "../away/lar_maria/lar_maria.dm"
+	#include "../away/unishi/unishi.dm"
+	#include "../away_inf/smugglers/smugglers.dm"
+	#include "../away/slavers/slavers_base.dm"
+
+
+
+	#define using_map_DATUM /datum/map/bearcat
 
 #elif !defined(MAP_OVERRIDE)
 
-	#warn A map has already been included, ignoring Overmap Example
+	#warn A map has already been included, ignoring Bearcat
 
 #endif

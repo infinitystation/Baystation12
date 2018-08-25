@@ -12,7 +12,6 @@
 							/obj/item/weapon/stock_parts/scanning_module = 1,
 							/obj/item/weapon/stock_parts/manipulator = 3,
 							/obj/item/weapon/stock_parts/console_screen = 1)
-
 /obj/item/weapon/circuitboard/bioprinter
 	name = T_BOARD("bioprinter")
 	build_path = /obj/machinery/organ_printer/flesh

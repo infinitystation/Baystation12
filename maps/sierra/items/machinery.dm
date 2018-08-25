@@ -56,7 +56,7 @@
 	helmet_type = /obj/item/clothing/head/helmet/space/void/exploration
 	boots_type = /obj/item/clothing/shoes/magboots
 	tank_type = /obj/item/weapon/tank/oxygen
-	mask_type = /obj/item/clothing/mask/breath
+	mask_type = /obj/item/clothing/mask/gas/half
 	req_access = list(access_explorer)
 	islocked = 1
 

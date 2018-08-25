@@ -72,8 +72,7 @@
 			var/obj/item/weapon/pickaxe/P = I
 			digspeed = P.digspeed
 		if (istype(I, /obj/item/weapon/shovel))
-			var/obj/item/weapon/shovel/S = I
-			digspeed = S.digspeed
+			digspeed = 70
 
 		visible_message("[user] starts clearing away \the [src].")
 		if(do_after(user, digspeed, src))
