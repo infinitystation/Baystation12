@@ -19,7 +19,7 @@
 					/obj/item/clothing/under/casual_pants/baggy/camo = 3, /obj/item/clothing/under/syndicate/combat = 3, /obj/item/clothing/under/tactical = 3,
 					/obj/item/clothing/mask/balaclava = 3, /obj/item/clothing/mask/balaclava/tactical = 3,
 					/obj/item/clothing/accessory/armband/engine = 3, /obj/item/clothing/accessory/armband/med = 3, /obj/item/clothing/accessory/armband = 3)
-
+/*
 /obj/machinery/vending/security_clothes
 	name = "Security clothes"
 	desc = "All our clothes - it is your clothes!"
@@ -49,7 +49,7 @@
 					/obj/item/clothing/under/rank/guard = 1,
 					/obj/item/clothing/under/rank/security = 1,
 					/obj/item/clothing/glasses/hud/security = 1)
-
+*/
 /obj/machinery/vending/cola/small
 	name = "Robust Softdrinks"
 	desc = "A softdrink vendor provided by Robust Industries, LLC."
