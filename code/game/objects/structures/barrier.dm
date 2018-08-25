@@ -237,7 +237,6 @@
 	health = 200
 
 /obj/item/weapon/barrier/proc/turf_check(mob/user as mob)
-	var/i = 0
 	for(var/obj/structure/barrier/D in user.loc.contents)
 		if((D.dir == user.dir))
 			to_chat(user, "<span class='warning'>There is no more space.</span>")

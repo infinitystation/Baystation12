@@ -36,7 +36,7 @@
 	state = EVAC_IN_TRANSIT
 
 	for(var/obj/machinery/door/blast/regular/evacshield/ES in world)
-		ES.force_open()
+		ES.evacuation()
 
 	if (emergency_evacuation)
 		// Abondon Ship

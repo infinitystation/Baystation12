@@ -247,7 +247,7 @@
 
 /obj/machinery/door/blast/regular/evacshield
 
-/obj/machinery/door/blast/regular/evacshield/proc/force_open()
+/obj/machinery/door/blast/regular/evacshield/proc/evacuation() //Literally shitcode of force_open but without sleep(8)
 	src.operating = 1
 	playsound(src.loc, open_sound, 100, 1)
 	flick(icon_state_opening, src)
