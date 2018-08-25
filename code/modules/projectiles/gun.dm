@@ -86,7 +86,7 @@
 	var/tmp/last_safety_check = -INFINITY
 	var/safety_state = 0
 	var/have_safety = FALSE
-	
+
 /obj/item/weapon/gun/New()
 	..()
 	for(var/i in 1 to firemodes.len)
@@ -432,7 +432,8 @@
 			return
 
 		in_chamber.on_hit(M)
-		if (in_chamber.damage_type != PAIN)
+
+		if (in_chamber.damage_type != PAIN || in_chamber.damage > 4)
 			log_and_message_admins("[key_name(user)] commited suicide using \a [src]")
 			user.apply_damage(in_chamber.damage*2.5, in_chamber.damage_type, BP_HEAD, 0, in_chamber.damage_flags(), used_weapon = "Point blank shot in the mouth with \a [in_chamber]")
 			user.death()
