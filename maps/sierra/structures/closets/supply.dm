@@ -3,7 +3,7 @@
  */
 
 /obj/structure/closet/secure_closet/decktech
-	name = "deck technician's locker"
+	name = "cargo technician's locker"
 	req_access = list(access_cargo)
 	icon_state = "securecargo1"
 	icon_closed = "securecargo"
@@ -29,8 +29,8 @@
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/messenger = 75, /obj/item/weapon/storage/backpack/dufflebag = 25))
 	)
 
-/obj/structure/closet/secure_closet/deckofficer
-	name = "deck officer's locker"
+/obj/structure/closet/secure_closet/quartermaster_sierra
+	name = "quartermaster's locker"
 	req_access = list(access_qm)
 	icon_state = "secureqm1"
 	icon_closed = "secureqm"
@@ -38,7 +38,7 @@
 	icon_opened = "secureqmopen"
 	icon_off = "secureqmoff"
 
-/obj/structure/closet/secure_closet/deckofficer/WillContain()
+/obj/structure/closet/secure_closet/quartermaster_sierra/WillContain()
 	return list(
 		/obj/item/device/radio/headset/sierra_quartermaster,
 		/obj/item/device/radio/headset/sierra_quartermaster/alt,

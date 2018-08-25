@@ -50,10 +50,10 @@ sierra specific items
 	icon_state_unpowered = "pda-exp"
 
 /obj/item/modular_computer/pda/heads/hop
-	stored_pen = /obj/item/weapon/pen/multi/cmd/xo
+	stored_pen = /obj/item/weapon/pen/multi/cmd/hop
 
 /obj/item/modular_computer/pda/captain
-	stored_pen = /obj/item/weapon/pen/multi/cmd/co
+	stored_pen = /obj/item/weapon/pen/multi/cmd/captain
 
 /obj/item/weapon/storage/backpack/explorer
 	name = "explorer backpack"
@@ -74,16 +74,16 @@ sierra specific items
 Unique items
 ***********/
 
-/obj/item/weapon/pen/multi/cmd/xo
-	name = "executive officer's pen"
+/obj/item/weapon/pen/multi/cmd/hop
+	name = "head of personnel's pen"
 	icon = 'maps/sierra/icons/obj/uniques.dmi'
-	icon_state = "pen_xo"
+	icon_state = "pen_hop"
 	desc = "A slightly bulky pen with a silvery case. Twisting the top allows you to switch the nib for different colors."
 
-/obj/item/weapon/pen/multi/cmd/co
-	name = "commanding officer's pen"
+/obj/item/weapon/pen/multi/cmd/captain
+	name = "captain's pen"
 	icon = 'maps/sierra/icons/obj/uniques.dmi'
-	icon_state = "pen_co"
+	icon_state = "pen_cap"
 	desc = "A slightly bulky pen with a golden case. Twisting the top allows you to switch the nib for different colors."
 
 /obj/item/weapon/pen/multi/cmd/attack_self(mob/user)
@@ -117,7 +117,7 @@ Weapons
 	name = "\improper Final Argument"
 	icon = 'maps/sierra/icons/obj/uniques.dmi'
 	icon_state = "mosley"
-	desc = "A shiny al-Maliki & Mosley Autococker automatic revolver, with black accents. Marketed as the 'Revolver for the Modern Era'. Uses .44 magnum rounds. This one has 'To the Captain of NES Sierra' engraved."
+	desc = "A shiny al-Maliki & Mosley Autococker automatic revolver, with black accents. Marketed as the 'Revolver for the Modern Era'. Uses .44 magnum rounds. This one has 'To the Captain of NSV Sierra' engraved."
 	fire_delay = 5.7 //Autorevolver. Also synced with the animation
 	fire_anim = "mosley_fire"
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)

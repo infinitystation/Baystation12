@@ -112,6 +112,6 @@
 	/datum/job/warden, /datum/job/officer, /datum/job/warden,\
 	/datum/job/detective, /datum/job/merchant)
 
-#define CIVILIAN_BRANCHES list(/datum/mil_branch/civilian, /datum/mil_branch/solgov)
+#define CIVILIAN_BRANCHES list(/datum/mil_branch/civilian)
 
-#define SOLGOV_BRANCHES list(/datum/mil_branch/expeditionary_corps, /datum/mil_branch/solgov)
+#define SOLGOV_BRANCHES list(/datum/mil_branch/expeditionary_corps)

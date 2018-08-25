@@ -42,7 +42,7 @@
 
 
 /obj/structure/closet/secure_closet/hop_sierra
-	name = "Head of Personnel's locker"
+	name = "head of personnel's locker"
 	req_access = list(access_hop)
 	icon_state = "twosolsecure1"
 	icon_closed = "twosolsecure"

@@ -2,34 +2,6 @@
  * Sierra Security
  */
 
-/obj/structure/closet/secure_closet/security/sierra
-	name = "security guard's locker"
-//	req_access = list(access_brig) //Already in /security, for future (?)
-
-/obj/structure/closet/secure_closet/security/sierra/WillContain()
-	return list(
-		/obj/item/clothing/suit/armor/pcarrier/medium,
-		/obj/item/clothing/head/helmet/nt,
-		/obj/item/device/radio/headset/headset_sec,
-		/obj/item/device/radio/headset/headset_sec/alt,
-		/obj/item/clothing/head/beret/sec/corporate/officer,
-		/obj/item/clothing/under/rank/security/corp,
-		/obj/item/weapon/storage/belt/holster/security,
-		/obj/item/device/flash,
-		/obj/item/weapon/reagent_containers/spray/pepper,
-		/obj/item/weapon/grenade/chem_grenade/teargas,
-		/obj/item/weapon/melee/baton/loaded,
-		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
-		/obj/item/taperoll/police,
-		/obj/item/device/hailer,
-		/obj/item/clothing/accessory/storage/black_vest,
-		/obj/item/weapon/gun/energy/gun/small/secure,
-		/obj/item/device/megaphone,
-		/obj/item/clothing/gloves/thick,
-		/obj/item/device/holowarrant,
-		/obj/item/device/flashlight/maglight,
-	)
-
 /obj/structure/closet/secure_closet/hos/sierra
 	name = "head of security's locker"
 
@@ -117,6 +89,33 @@
 		/obj/item/weapon/storage/box/gloves,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
+		/obj/item/device/holowarrant,
+		/obj/item/device/flashlight/maglight,
+	)
+
+/obj/structure/closet/secure_closet/security/sierra
+	name = "security guard's locker"
+
+/obj/structure/closet/secure_closet/security/sierra/WillContain()
+	return list(
+		/obj/item/clothing/suit/armor/pcarrier/medium,
+		/obj/item/clothing/head/helmet/nt,
+		/obj/item/device/radio/headset/headset_sec,
+		/obj/item/device/radio/headset/headset_sec/alt,
+		/obj/item/clothing/head/beret/sec/corporate/officer,
+		/obj/item/clothing/under/rank/security/corp,
+		/obj/item/weapon/storage/belt/holster/security,
+		/obj/item/device/flash,
+		/obj/item/weapon/reagent_containers/spray/pepper,
+		/obj/item/weapon/grenade/chem_grenade/teargas,
+		/obj/item/weapon/melee/baton/loaded,
+		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
+		/obj/item/taperoll/police,
+		/obj/item/device/hailer,
+		/obj/item/clothing/accessory/storage/black_vest,
+		/obj/item/weapon/gun/energy/gun/small/secure,
+		/obj/item/device/megaphone,
+		/obj/item/clothing/gloves/thick,
 		/obj/item/device/holowarrant,
 		/obj/item/device/flashlight/maglight,
 	)

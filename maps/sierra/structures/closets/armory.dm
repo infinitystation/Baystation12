@@ -40,3 +40,9 @@
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/egun/WillContain()
 	return list(/obj/item/weapon/gun/energy/gun/secure = 4)
+
+/obj/structure/closet/secure_closet/guncabinet/sierra_emergency
+	name = "emergency smartgun guncabinet"
+
+/obj/structure/closet/secure_closet/guncabinet/sierra_emergency/WillContain()
+	return list(/obj/item/weapon/gun/energy/gun/small/secure = 4)

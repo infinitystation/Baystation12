@@ -5,14 +5,12 @@
 /datum/map/sierra
 	branch_types = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/civilian,
-		/datum/mil_branch/solgov
+		/datum/mil_branch/civilian
 	)
 
 	spawn_branch_types = list(
 		/datum/mil_branch/expeditionary_corps,
-		/datum/mil_branch/civilian,
-		/datum/mil_branch/solgov
+		/datum/mil_branch/civilian
 	)
 
 	species_to_branch_whitelist = list(
@@ -26,13 +24,13 @@
 	)
 
 	species_to_branch_blacklist = list(
-		/datum/species/diona   = list(/datum/mil_branch/expeditionary_corps, /datum/mil_branch/solgov),
-		/datum/species/nabber  = list(/datum/mil_branch/expeditionary_corps, /datum/mil_branch/solgov),
-		/datum/species/tajaran = list(/datum/mil_branch/solgov),
-		/datum/species/skrell  = list(/datum/mil_branch/solgov),
-		/datum/species/unathi  = list(/datum/mil_branch/solgov),
-		/datum/species/vox     = list(/datum/mil_branch/expeditionary_corps, /datum/mil_branch/solgov),
-		/datum/species/resomi  = list(/datum/mil_branch/solgov)
+		/datum/species/diona   = list(/datum/mil_branch/expeditionary_corps),
+		/datum/species/nabber  = list(/datum/mil_branch/expeditionary_corps),
+		/datum/species/tajaran = list(),
+		/datum/species/skrell  = list(),
+		/datum/species/unathi  = list(),
+		/datum/species/vox     = list(/datum/mil_branch/expeditionary_corps),
+		/datum/species/resomi  = list()
 	)
 	species_to_rank_whitelist = list(
 		/datum/species/machine = list(
@@ -40,9 +38,6 @@
 				/datum/mil_rank/ec/e3,
 				/datum/mil_rank/ec/e5,
 				/datum/mil_rank/ec/o1
-			),
-			/datum/mil_branch/solgov = list(
-				/datum/mil_rank/sol/agent
 			)
 		),
 		/datum/species/tajaran = list(
@@ -68,8 +63,7 @@
 		/datum/species/resomi = list(
 			/datum/mil_branch/expeditionary_corps = list(
 				/datum/mil_rank/ec/e3,
-				/datum/mil_rank/ec/e5,
-				/datum/mil_rank/ec/o1
+				/datum/mil_rank/ec/e5
 			)
 		)
 	)
@@ -78,9 +72,6 @@
 		/datum/species/machine = list(
 			/datum/mil_branch/expeditionary_corps = list(
 				/datum/mil_rank/ec/o3,
-			),
-			/datum/mil_branch/solgov = list(
-				/datum/mil_rank/sol/gov
 			)
 		),
 		/datum/species/tajaran = list(
@@ -91,11 +82,13 @@
 		/datum/species/unathi = list(
 			/datum/mil_branch/expeditionary_corps = list(
 				/datum/mil_rank/ec/o3,
+				/datum/mil_rank/ec/o1,
 			)
 		),
 		/datum/species/resomi = list(
 			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/o3,
+				/datum/mil_rank/ec/o1,
+				/datum/mil_rank/ec/o3
 			)
 		),
 		/datum/species/skrell = list(
@@ -157,21 +150,6 @@
 	)
 
 	assistant_job = "Passenger"
-
-/datum/mil_branch/solgov
-	name = "SolGov Employee"
-	name_short = "SCG"
-	email_domain = "torch.scg"
-
-	rank_types = list(
-		/datum/mil_rank/sol/gov,
-		/datum/mil_rank/sol/agent
-	)
-
-	spawn_rank_types = list(
-		/datum/mil_rank/sol/gov,
-		/datum/mil_rank/sol/agent
-	)
 
 /datum/mil_rank/grade()
 	. = ..()
@@ -256,17 +234,3 @@
 
 /datum/mil_rank/civ/synthetic
 	name = "Synthetic"
-
-/*
- *  SolGov Employees
- *  ====== =========
- */
-
-/datum/mil_rank/sol/gov
-	name = "SolGov Representative"
-	accessory = list(/obj/item/clothing/accessory/badge/solgov/representative)
-
-/datum/mil_rank/sol/agent
-	name = "OCIE Agent"
-	name_short = "AGT"
-	accessory = list(/obj/item/clothing/accessory/badge/ocieagent)

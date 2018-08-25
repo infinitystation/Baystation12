@@ -39,7 +39,7 @@
 	)
 
 /obj/structure/closet/secure_closet/medical_sierrasenior
-	name = "physician's locker"
+	name = "surgeon's locker"
 	req_access = list(access_senmed)
 	icon_state = "securesenmed1"
 	icon_closed = "securesenmed"
@@ -71,7 +71,7 @@
 	)
 
 /obj/structure/closet/secure_closet/medical_sierra
-	name = "corpsman's locker"
+	name = "doctor's locker"
 	req_access = list(access_medical_equip)
 	icon_state = "securemed1"
 	icon_closed = "securemed"
@@ -100,7 +100,7 @@
 	)
 
 /obj/structure/closet/secure_closet/medical_contractor
-	name = "medical contractor's locker"
+	name = "intern's locker"
 	req_access = list(access_medical)
 	icon_state = "securemed1"
 	icon_closed = "securemed"

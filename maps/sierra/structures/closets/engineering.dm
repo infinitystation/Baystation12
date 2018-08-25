@@ -66,38 +66,11 @@
 		/obj/item/taperoll/engineering,
 		/obj/item/device/flashlight,
 		/obj/item/taperoll/atmos,
-		/obj/item/weapon/storage/firstaid/individual/all,
 		/obj/item/clothing/gloves/insulated,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
 
-/obj/structure/closet/secure_closet/engineering_contractor
-	name = "engineering contractor's locker"
-	req_access = list(access_engine)
-	icon_state = "secureeng1"
-	icon_closed = "secureeng"
-	icon_locked = "secureeng1"
-	icon_opened = "secureengopen"
-	icon_off = "secureengoff"
-
-/obj/structure/closet/secure_closet/engineering_contractor/WillContain()
-	return list(
-		/obj/item/clothing/head/soft/orange,
-		/obj/item/clothing/under/rank/engineer,
-		/obj/item/clothing/accessory/storage/webbing,
-		/obj/item/weapon/storage/belt/utility/full,
-		/obj/item/device/radio/headset/headset_eng,
-		/obj/item/device/radio/headset/headset_eng/alt,
-		/obj/item/clothing/suit/storage/hazardvest,
-		/obj/item/clothing/mask/gas,
-		/obj/item/device/flashlight,
-		/obj/item/taperoll/engineering,
-		/obj/item/weapon/storage/firstaid/individual/all,
-		/obj/item/clothing/gloves/insulated,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
-	)
 
 /obj/structure/closet/secure_closet/engineering_senior
 	name = "senior engineer's locker"
@@ -124,7 +97,6 @@
 		/obj/item/device/flash,
 		/obj/item/device/flashlight,
 		/obj/item/device/megaphone,
-		/obj/item/weapon/storage/firstaid/individual/all,
 		/obj/item/clothing/gloves/insulated,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
@@ -152,6 +124,5 @@
 		/obj/item/weapon/tank/emergency/oxygen/double,
 		/obj/item/clothing/mask/gas,
 		/obj/item/taperoll/atmos,
-		/obj/item/weapon/storage/firstaid/individual/all,
 		/obj/item/device/analyzer
 	)

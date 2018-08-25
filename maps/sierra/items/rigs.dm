@@ -5,7 +5,7 @@
 	name = "command HCM"
 	suit_type = "command hardsuit"
 	icon = 'maps/sierra/icons/obj/uniques.dmi'
-	desc = "A specialized hardsuit rig control module issued to command staff of the Expeditionary Corps and their peers."
+	desc = "A specialized hardsuit rig control module issued to command staff of the NanoTrasen and their peers."
 	icon_state = "command_rig"
 	armor = list(melee = 25, bullet = 25, laser = 15, energy = 25, bomb = 40, bio = 100, rad = 40)
 	online_slowdown = 0.50
@@ -52,12 +52,12 @@
 		)
 
 /*
- * EXECUTIVE OFFICER
+ * HEAD OF PERSONELL
  */
-/obj/item/weapon/rig/command/xo
-	name = "officer's command HCM"
+/obj/item/weapon/rig/command/hop
+	name = "'s command HCM"
 	suit_type = "advanced command hardsuit"
-	desc = "A specialized hardsuit rig control module issued to high ranking officers of the Expeditionary Corps and their peers."
+	desc = "A specialized hardsuit rig control module issued to ranking personnel command staff of the NanoTrasen and their peers."
 	icon_state = "command_XO_rig"
 	armor = list(melee = 45, bullet = 35, laser = 30, energy = 15, bomb = 35, bio = 100, rad = 50)
 
@@ -87,10 +87,10 @@
 /*
  * COMMANDING OFFICER
  */
-/obj/item/weapon/rig/command/co
-	name = "commanding officer's command HCM"
+/obj/item/weapon/rig/command/captain
+	name = "captain's HCM"
 	suit_type = "advanced command hardsuit"
-	desc = "A specialized hardsuit rig control module issued to commanding officers of the Expeditionary Corps."
+	desc = "A specialized hardsuit rig control module issued to captains of the NanoTrasen."
 	icon_state = "command_CO_rig"
 	armor = list(melee = 50, bullet = 40, laser = 30, energy = 20, bomb = 40, bio = 100, rad = 50)
 
@@ -122,10 +122,10 @@
 /*
  * CHIEF MEDICAL OFFICER
  */
-/obj/item/weapon/rig/command/medical
+/obj/item/weapon/rig/command/cmo
 	name = "medical command HCM"
 	suit_type = "medical command hardsuit"
-	desc = "A specialized hardsuit rig control module issued to ranking medical officers of the Expeditionary Corps and their peers."
+	desc = "A specialized hardsuit rig control module issued to ranking medical command staff of the NanoTrasen and their peers."
 	icon_state = "command_med_rig"
 	armor = list(melee = 35, bullet = 25, laser = 25, energy = 25, bomb = 40, bio = 100, rad = 100)
 
@@ -156,10 +156,10 @@
 /*
 * CHIEF OF SECURITY
 */
-/obj/item/weapon/rig/command/security
+/obj/item/weapon/rig/command/hos
 	name = "security command HCM"
 	suit_type = "security command hardsuit"
-	desc = "A specialized hardsuit rig control module issued to ranking security officers of the Expeditionary Corps and their peers."
+	desc = "A specialized hardsuit rig control module issued to ranking security command staff of the NanoTrasen and their peers."
 	icon_state = "command_sec_rig"
 	armor = list(melee = 45, bullet = 35, laser = 30, energy = 15, bomb = 35, bio = 100, rad = 40)
 
@@ -186,8 +186,8 @@
 		/obj/item/rig_module/cooling_unit)
 
 //PATHFINDER
-/obj/item/weapon/rig/command/exploration
-	name = "exploration command HCM"
+/obj/item/weapon/rig/command/pf
+	name = "pathfinder's HCM"
 	suit_type = "exploration command hardsuit"
 	desc = "A specialized hardsuit rig control module issued to Pathfinders of the Expeditionary Corps."
 	icon_state = "command_exp_rig"

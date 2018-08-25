@@ -906,8 +906,8 @@
 	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/bridge/disciplinary_board_room
-	name = "\improper Disciplinary Board Room"
+/area/bridge/lobby
+	name = "\improper Bridge Lobby"
 	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/heads
