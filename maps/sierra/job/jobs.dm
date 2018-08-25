@@ -65,7 +65,7 @@
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 
 
-	skill_points = 36
+	skill_points = 25
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/card_mod,
@@ -95,7 +95,7 @@
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 
-	skill_points = 36
+	skill_points = 20
 
 	access = list(access_security, access_bridge, access_brig, access_armory, access_forensics_lockers,
 			            access_medical, access_morgue, access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
@@ -486,6 +486,10 @@
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5
 		)
+
+	skill_points = 26
+
+
 	min_skill = list(	SKILL_EVA	= SKILL_BASIC,
 						SKILL_MEDICAL = SKILL_BASIC,
 						SKILL_HAULING = SKILL_BASIC,
@@ -524,6 +528,10 @@
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5
 		)
+
+	skill_points = 20
+
+
 	min_skill = list(	SKILL_EVA			= SKILL_BASIC,
 						SKILL_CONSTRUCTION	= SKILL_BASIC,
 						SKILL_ELECTRICAL	= SKILL_BASIC,
@@ -1171,7 +1179,7 @@
 
 	max_skill = list(   SKILL_DEVICES     = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX)
-	skill_points = 20
+	skill_points = 30
 
 /datum/job/nt_pilot
 	title = "NanoTrasen Pilot"
@@ -1229,7 +1237,7 @@
 						access_mining_office, access_mining_station, access_xenobiology, access_guppy_helm,
 						access_xenoarch, access_expedition_shuttle, access_guppy, access_hangar)
 	minimal_access = list()
-	skill_points = 20
+	skill_points = 22
 
 /datum/job/scientist_assistant
 	title = "Research Assistant"

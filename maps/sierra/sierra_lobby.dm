@@ -7,5 +7,6 @@
 		/music_track/marhaba,
 		/music_track/treacherous_voyage,
 		/music_track/comet_haley,
+		/music_track/rising,
 		/music_track/bluesinvelvetroom,
 		/music_track/lysendraa)
