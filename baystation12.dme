@@ -307,6 +307,7 @@
 #include "code\datums\music_tracks\infinity\night.dm"
 #include "code\datums\music_tracks\infinity\radiation.dm"
 #include "code\datums\music_tracks\infinity\right.dm"
+#include "code\datums\music_tracks\infinity\rising.dm"
 #include "code\datums\music_tracks\infinity\together.dm"
 #include "code\datums\music_tracks\infinity\wonderful.dm"
 #include "code\datums\observation\_defines.dm"
