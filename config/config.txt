@@ -382,7 +382,7 @@ GENERATE_ASTEROID
 #DEFAULT_BRAIN_HEALTH 400
 
 ## Uncomment this line to announce shuttle dock announcements to the main IRC channel, if MAIN_IRC has also been setup.
-# ANNOUNCE_SHUTTLE_DOCK_TO_IRC
+ANNOUNCE_SHUTTLE_DOCK_TO_IRC
 
 ## Uncomment to enable map voting; you'll need to use the script at tools/server.sh or an equivalent for it to take effect
 ## You'll also likely need to enable WAIT_FOR_SIGUSR1 below
@@ -398,7 +398,7 @@ GENERATE_ASTEROID
 # AUTOSTEALTH 30
 
 ## How many loadout points are available. Use 0 to disable loadout, and any negative number to indicate infinite points.
-MAX_GEAR_COST 15
+MAX_GEAR_COST -1
 
 ## How much radiation levels self-reduce by each tick.
 RADIATION_DECAY_RATE 1
