@@ -5,7 +5,7 @@
 var/list/default_material_composition = list("steel" = 0, "glass" = 0, "gold" = 0, "silver" = 0, "phoron" = 0, "uranium" = 0, "diamond" = 0)
 /obj/machinery/r_n_d
 	name = "R&D Device"
-	icon = 'icons/obj/machines/research.dmi'
+	icon = 'icons/obj/machines/research_infinity.dmi'
 	density = 1
 	anchored = 1
 	use_power = 1
