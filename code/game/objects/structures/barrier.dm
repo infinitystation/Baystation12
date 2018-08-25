@@ -228,7 +228,7 @@
 
 /obj/item/weapon/barrier
 	name = "portable barrier"
-	desc = "A portable barrier — usually, you can see it on defensive positions or in storages in important areas. \
+	desc = "A portable barrier — usually, you can see it on defensive positions or in storages at important areas. \
 	You can deploy it with a screwdriver for maximum protection, or keep it in mobile position. \
 	Also, demontage can be done with a crowbar.In case of structural damage, can be repaired with welding tool."
 	icon = 'icons/obj/items_inf.dmi'
@@ -238,9 +238,8 @@
 
 /obj/item/weapon/barrier/proc/turf_check(mob/user as mob)
 	var/i = 0
-	for(var/obj/structure/barrier in user.loc.contents)
-		++i
-		if((src.dir == user.dir) || i > 1)
+	for(var/obj/structure/barrier/D in user.loc.contents)
+		if((D.dir == user.dir))
 			to_chat(user, "<span class='warning'>There is no more space.</span>")
 			return 1
 	return 0
@@ -252,7 +251,7 @@
 	if(turf_check(user))
 		return
 
-	var/obj/structure/barrier/B = new(user.loc)//new (user.loc)
+	var/obj/structure/barrier/B = new(user.loc)
 	B.set_dir(user.dir)
 	B.health = health
 	user.drop_item()
