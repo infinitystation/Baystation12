@@ -31,6 +31,13 @@
 	desc = "Charon Helm"
 	region = ACCESS_REGION_GENERAL
 
+/var/const/access_iaa = 78
+/datum/access/iaa
+	id = access_iaa
+	desc = "Internal Affairs Agent"
+	region = ACCESS_REGION_COMMAND
+	access_type = ACCESS_TYPE_NONE //Ruler of their own domain, CO and RD cannot enter
+
 /var/const/access_nanotrasen = 81
 /datum/access/nanotrasen
 	id = access_nanotrasen
@@ -42,13 +49,6 @@
 	id = access_robotics_engineering
 	desc = "Biomechanical Engineering"
 	region = ACCESS_REGION_ENGINEERING
-
-/var/const/access_iaa = 78
-/datum/access/iaa
-	id = access_iaa
-	desc = "Internal Affairs Agent"
-	region = ACCESS_REGION_COMMAND
-	access_type = ACCESS_TYPE_NONE //Ruler of their own domain, CO and RD cannot enter
 
 /var/const/access_gun = 87
 /datum/access/gun
@@ -79,12 +79,6 @@
 	id = access_senmed
 	desc = "Physician"
 	region = ACCESS_REGION_MEDBAY
-
-/var/const/access_senadv = 92
-/datum/access/senadv
-	id = access_senadv
-	desc = "Senior Enlisted Advisor"
-	region = ACCESS_REGION_COMMAND
 
 /var/const/access_explorer = 93
 /datum/access/explorer

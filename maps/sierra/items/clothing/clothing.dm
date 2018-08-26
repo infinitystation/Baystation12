@@ -1,4 +1,4 @@
-//Try to keep this limited. I don't want unique solgov or NT items in here, it should only be things that require the torch map datums like access.
+//Try to keep this limited. I don't want unique solgov or NT items in here, it should only be things that require the sierra map datums like access.
 
 /obj/item/weapon/rig/hazard/guard
 	name = "hazard hardsuit control module"

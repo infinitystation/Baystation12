@@ -397,20 +397,20 @@
 
 // Elevator areas.
 /area/turbolift/sierra_top
-	name = "lift (bridge)"
-	lift_floor_label = "Bridge"
-	lift_floor_name = "Bridge"
-	lift_announce_str = "Arriving at Command Deck: Bridge. Meeting Room. Command Offices. AI Core. Landing Area. Auxiliary EVA."
+	name = "lift (first deck)"
+	lift_floor_label = "Deck 1"
+	lift_floor_name = "Main Deck"
+	lift_announce_str = "Arriving at Command Deck: Bridge. Meeting Room. Infirmary. AI Core. Landing Area. Auxiliary EVA."
 
 /area/turbolift/sierra_middle
-	name = "lift (upper deck)"
-	lift_floor_label = "Deck 1"
-	lift_floor_name = "Operations Deck"
-	lift_announce_str = "Arriving at Operations Deck: Infirmary. Research Wing. Auxiliary Cryogenic Storage. Emergency Armory. Diplomatic Quarters. Captain's Mess. Pathfinder's Office."
+	name = "lift (second deck)"
+	lift_floor_label = "Deck 2"
+	lift_floor_name = "Living Deck"
+	lift_announce_str = "Arriving at Operations Deck: Research Wing. Auxiliary Cryogenic Storage. Emergency Armory. Diplomatic Quarters. Captain's Mess. Pathfinder's Office."
 
 /area/turbolift/sierra_ground
-	name = "lift (lower deck)"
-	lift_floor_label = "Deck 4"
+	name = "lift (third deck)"
+	lift_floor_label = "Deck 3"
 	lift_floor_name = "Hangar Deck"
 	lift_announce_str = "Arriving at Hangar Deck: Shuttle Docks. Cargo Storage. Main Hangar. Supply Office. Expedition Preparation. Mineral Processing."
 	base_turf = /turf/simulated/floor

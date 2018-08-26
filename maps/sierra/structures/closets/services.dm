@@ -1,5 +1,5 @@
 /*
- * Torch Service
+ * Sierra Service
  */
 
 /obj/structure/closet/chefcloset_sierra

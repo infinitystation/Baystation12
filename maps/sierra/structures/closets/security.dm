@@ -2,12 +2,9 @@
  * Sierra Security
  */
 
-/obj/structure/closet/secure_closet/hos/sierra
-	name = "head of security's locker"
-
 /obj/structure/closet/secure_closet/hos/sierra/WillContain()
 	return list(
-		/obj/item/clothing/suit/armor/pcarrier/medium,
+		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
 		/obj/item/clothing/under/rank/head_of_security/jensen,
 		/obj/item/clothing/under/rank/head_of_security/corp,
 		/obj/item/clothing/suit/armor/hos/jensen,
@@ -36,7 +33,7 @@
 
 /obj/structure/closet/secure_closet/warden/sierra/WillContain()
 	return list(
-		/obj/item/clothing/suit/armor/pcarrier/medium,
+		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
 		/obj/item/clothing/head/helmet/nt,
 		/obj/item/clothing/head/beret/sec/corporate/warden,
 		/obj/item/clothing/under/rank/warden/corp,
@@ -78,7 +75,7 @@
 		/obj/item/weapon/storage/belt/holster/security,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,
-		/obj/item/clothing/suit/armor/pcarrier/medium,
+		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
 		/obj/item/weapon/gun/energy/gun/small/secure,
 		/obj/item/device/flash,
 		/obj/item/weapon/melee/baton/loaded,
@@ -98,7 +95,7 @@
 
 /obj/structure/closet/secure_closet/security/sierra/WillContain()
 	return list(
-		/obj/item/clothing/suit/armor/pcarrier/medium,
+		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
 		/obj/item/clothing/head/helmet/nt,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,

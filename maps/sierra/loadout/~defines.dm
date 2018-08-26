@@ -1,4 +1,4 @@
-//The following is the list of undefs for the Torch loadout.
+//The following is the list of undefs for the Sierra loadout.
 
 #undef FORMAL_ROLES
 

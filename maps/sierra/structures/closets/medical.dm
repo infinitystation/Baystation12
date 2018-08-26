@@ -23,16 +23,12 @@
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/reagent_containers/hypospray/vial,
-		/obj/item/weapon/storage/fancy/vials,
-		/obj/item/device/healthanalyzer,
-		/obj/item/clothing/accessory/stethoscope,
 		/obj/item/device/flashlight/pen,
 		/obj/item/clothing/glasses/hud/health,
-		/obj/item/clothing/suit/armor/pcarrier/medium/command,
-		/obj/item/clothing/head/helmet/solgov/command,
-		/obj/item/device/holowarrant,
+		/obj/item/clothing/suit/armor/pcarrier/medium,
+		/obj/item/clothing/head/helmet,
+		/obj/item/clothing/glasses/hud/health,
 		/obj/item/weapon/storage/firstaid/adv,
-		/obj/item/weapon/storage/box/armband/med,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel_med)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/med, /obj/item/weapon/storage/backpack/messenger/med)),
 		RANDOM_SCRUBS
@@ -58,12 +54,8 @@
 		/obj/item/taperoll/medical,
 		/obj/item/weapon/storage/belt/medical,
 		/obj/item/clothing/mask/surgical,
-		/obj/item/device/healthanalyzer,
-		/obj/item/clothing/accessory/stethoscope,
 		/obj/item/device/flashlight/pen,
 		/obj/item/clothing/glasses/hud/health,
-		/obj/item/device/flash,
-		/obj/item/device/megaphone,
 		/obj/item/weapon/storage/firstaid/adv,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel_med)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/med, /obj/item/weapon/storage/backpack/messenger/med)),
@@ -92,32 +84,6 @@
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/weapon/tank/emergency/oxygen/engi,
 		/obj/item/weapon/storage/box/autoinjectors,
-		/obj/item/device/healthanalyzer,
-		/obj/item/clothing/glasses/hud/health,
-		/obj/item/weapon/storage/firstaid/adv,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel_med)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/med, /obj/item/weapon/storage/backpack/messenger/med))
-	)
-
-/obj/structure/closet/secure_closet/medical_contractor
-	name = "intern's locker"
-	req_access = list(access_medical)
-	icon_state = "securemed1"
-	icon_closed = "securemed"
-	icon_locked = "securemed1"
-	icon_opened = "securemedopen"
-	icon_off = "securemedoff"
-
-/obj/structure/closet/secure_closet/medical_contractor/WillContain()
-	return list(
-		/obj/item/clothing/head/soft/mime,
-		/obj/item/clothing/under/rank/orderly,
-		/obj/item/clothing/accessory/storage/webbing,
-		/obj/item/clothing/suit/storage/toggle/labcoat,
-		/obj/item/clothing/shoes/white,
-		/obj/item/device/radio/headset/headset_med,
-		/obj/item/taperoll/medical,
-		/obj/item/weapon/storage/belt/medical/emt,
 		/obj/item/device/healthanalyzer,
 		/obj/item/clothing/glasses/hud/health,
 		/obj/item/weapon/storage/firstaid/adv,

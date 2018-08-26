@@ -1,8 +1,8 @@
 /obj/effect/overmap/ship/sierra
 	name = "NSV Sierra"
 	fore_dir = WEST
-	vessel_mass = 300
-	default_delay = 20 SECONDS
+	vessel_mass = 190
+	default_delay = 25 SECONDS
 	speed_mod = 5 SECONDS
 
 	initial_restricted_waypoints = list(

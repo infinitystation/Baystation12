@@ -72,7 +72,7 @@
 /obj/item/weapon/card/id/sierra/crew/security/warden
 	job_access_type = /datum/job/warden
 
-/obj/item/weapon/card/id/sierra/crew/security/forensic
+/obj/item/weapon/card/id/sierra/crew/security/detective
 	job_access_type = /datum/job/detective
 
 
@@ -95,9 +95,6 @@
 /obj/item/weapon/card/id/sierra/crew/engineering/comms/New()
 	.=..()
 	access |= list(access_network, access_tcomsat)
-
-/obj/item/weapon/card/id/sierra/crew/engineering/roboticist
-	job_access_type = /datum/job/roboticist
 
 
 
@@ -169,6 +166,9 @@
 /obj/item/weapon/card/id/sierra/crew/research/nt_pilot
 	job_access_type = /datum/job/nt_pilot
 
+/obj/item/weapon/card/id/sierra/crew/research/roboticist
+	job_access_type = /datum/job/roboticist
+
 /obj/item/weapon/card/id/sierra/crew/liaison
 	desc = "A card issued to corporate represenatives aboard the NSV Sierra."
 	icon_state = "corporate"
@@ -189,7 +189,7 @@
 /obj/item/weapon/card/id/sierra/stowaway
 	desc = "An identification card issued to personnel aboard the NSV Sierra. Looks like the photo fell off this one."
 	icon_state = "id"
-	job_access_type = /datum/job/assistant
+	job_access_type = /datum/job/stowaway
 
 /obj/item/weapon/card/id/sierra/stowaway/New()
 	..()

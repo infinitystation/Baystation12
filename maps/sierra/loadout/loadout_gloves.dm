@@ -22,3 +22,16 @@
 	path = /obj/item/clothing/gloves/duty
 	cost = 2
 	allowed_roles = TECHNICAL_ROLES
+
+/datum/gear/gloves/insulated
+	display_name = "insulated gloves selection"
+	path = /obj/item/clothing/gloves/insulated
+	allowed_roles = ENGINEERING_ROLES
+	cost = 3
+
+/datum/gear/gloves/insulated/New()
+	..()
+	var/glovtype = list()
+	glovtype["yellow insulated"] = /obj/item/clothing/gloves/insulated
+	glovtype["black insulated"] = /obj/item/clothing/gloves/insulated/black
+	gear_tweaks += new/datum/gear_tweak/path(glovtype)

@@ -1,4 +1,4 @@
-//The following is a list of defs to be used for the Torch loadout.
+//The following is a list of defs to be used for the Sierra loadout.
 
 //For all SolGov personnel
 #define SOLGOV_ROLES list(\

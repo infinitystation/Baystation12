@@ -97,7 +97,7 @@
 
 	skill_points = 20
 
-	access = list(access_security, access_bridge, access_brig, access_armory, access_forensics_lockers,
+	access = list(		access_security, access_bridge, access_brig, access_armory, access_forensics_lockers,
 			            access_medical, access_morgue, access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_change_ids, access_ai_upload, access_teleporter, access_eva, access_heads,
 			            access_all_personal_lockers, access_chapel_office, access_tech_storage, access_atmospherics, access_bar, access_janitor, access_crematorium, access_robotics,
@@ -280,7 +280,7 @@
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_ADEPT,
 	                    SKILL_WEAPONS     = SKILL_ADEPT,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
 
@@ -322,10 +322,12 @@
 						SKILL_FINANCE		= SKILL_BASIC)
 	skill_points = 20
 
-	access = list(access_iaa, access_tox, access_tox_storage, access_heads, access_research,
+	access = list(		access_iaa, access_tox, access_tox_storage, access_heads, access_research,
 						access_xenobiology,
 						access_xenoarch,
 						access_hangar, access_petrov, access_petrov_helm)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/reports)
 
@@ -358,6 +360,8 @@
 					access_heads, access_bridge, access_janitor, access_kitchen, access_cargo, access_RC_announce, access_keycard_auth,
 					access_guppy, access_guppy_helm, access_external_airlocks, access_bridge,
 					access_eva, access_hangar, access_explorer)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/suit_sensors,
@@ -403,6 +407,8 @@
 
 	access = list(access_pathfinder, access_explorer, access_eva, access_maint_tunnels, access_heads, access_emergency_storage, access_tech_storage, access_guppy_helm, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy, access_hangar, access_cent_creed)
 
+	minimal_access = list()
+
 	software_on_spawn = list(/datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
 
@@ -433,6 +439,8 @@
 
 	access = list(access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_cent_creed)
 
+	minimal_access = list()
+
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
 /datum/job/explorer/get_description_blurb()
@@ -453,18 +461,20 @@
 		/datum/mil_rank/ec/e3,
 		/datum/mil_rank/ec/e5
 		)
-	min_skill = list(   SKILL_EVA	= SKILL_BASIC,
-						SKILL_SCIENCE  	= SKILL_BASIC,
-						SKILL_PILOT = SKILL_ADEPT)
+	min_skill = list(   SKILL_EVA			= SKILL_BASIC,
+						SKILL_SCIENCE		= SKILL_BASIC,
+						SKILL_PILOT			= SKILL_ADEPT)
 
-	max_skill = list(	SKILL_SCIENCE     = SKILL_MAX,
-						SKILL_PILOT		  = SKILL_MAX,
-	                    SKILL_COMBAT      = SKILL_EXPERT,
-	                    SKILL_WEAPONS     = SKILL_EXPERT)
+	max_skill = list(	SKILL_SCIENCE		= SKILL_MAX,
+						SKILL_PILOT			= SKILL_MAX,
+	                    SKILL_COMBAT		= SKILL_EXPERT,
+	                    SKILL_WEAPONS 		= SKILL_EXPERT)
 
 
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm,
 					access_expedition_shuttle, access_guppy, access_hangar, access_expedition_shuttle_helm)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
@@ -507,6 +517,7 @@
 					access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar,
 					access_medical)
 
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
@@ -550,7 +561,7 @@
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
 	 				access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_engine)
 
-
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
@@ -590,6 +601,8 @@
 			        access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor, access_construction,
 			        access_tcomsat, access_seneng, access_hangar)
 
+	minimal_access = list()
+
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,
 							 /datum/computer_file/program/alarm_monitor,
@@ -618,15 +631,15 @@
 		"Information Systems Technician" = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/tcomms,
 		"Reactor Technician" = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/maints,,
 		"Atmospheric Technician" = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/atmos)
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_EVA          = SKILL_BASIC,
+	                    SKILL_EVA          = SKILL_ADEPT,
 	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
-	                    SKILL_ELECTRICAL   = SKILL_BASIC,
-	                    SKILL_ATMOS        = SKILL_BASIC,
-	                    SKILL_ENGINES      = SKILL_BASIC)
+	                    SKILL_ELECTRICAL   = SKILL_ADEPT,
+	                    SKILL_ATMOS        = SKILL_ADEPT,
+	                    SKILL_ENGINES      = SKILL_ADEPT)
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
@@ -635,9 +648,11 @@
 	                    SKILL_ENGINES      = SKILL_MAX)
 	skill_points = 20
 
-	access = list(	access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			       	access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor, access_construction,
-			        access_hangar)
+	access = list(	access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks,
+			       	access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor,
+			        access_construction, access_hangar, access_emergency_storage)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,
@@ -661,28 +676,29 @@
 	selection_color = "#5b4d20"
 	ideal_character_age = 20
 
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/maints
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	skill_points = 4
+	skill_points = 16
 	no_skill_buffs = TRUE
 
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_HAULING      = SKILL_ADEPT,
-	                    SKILL_EVA          = SKILL_ADEPT,
-	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
-	                    SKILL_ELECTRICAL   = SKILL_ADEPT,
-	                    SKILL_ATMOS        = SKILL_ADEPT,
-	                    SKILL_ENGINES      = SKILL_ADEPT)
+	                    SKILL_EVA          = SKILL_BASIC,
+	                    SKILL_CONSTRUCTION = SKILL_BASIC,
+	                    SKILL_ELECTRICAL   = SKILL_BASIC,
+	                    SKILL_ATMOS        = SKILL_BASIC,
+	                    SKILL_ENGINES      = SKILL_BASIC)
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
 	                    SKILL_ATMOS        = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX)
 
-	access = list(access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
+	access = list(		access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_eva, access_tech_storage, access_janitor, access_construction,
 			            access_hangar)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,
@@ -699,7 +715,7 @@
 /datum/job/roboticist
 	title = "Roboticist"
 	department = "Engineering"
-	department_flag = ENG|MED
+	department_flag = SCI|MED
 
 	total_positions = 2
 	spawn_positions = 2
@@ -709,7 +725,7 @@
 	alt_titles = list(
 		"Biomechanical Engineer",
 		"Mechsuit Technician")
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/roboticist
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/roboticist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_COMPUTER		= SKILL_ADEPT,
@@ -723,6 +739,7 @@
 	                    SKILL_MEDICAL      = SKILL_MAX)
 
 	access = list(access_robotics, access_research, access_tech_storage, access_morgue, access_medical)
+
 	minimal_access = list()
 
 /datum/job/roboticist/get_description_blurb()
@@ -757,7 +774,8 @@
 
 	access = list(access_security, access_brig, access_armory, access_forensics_lockers,
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_eva, access_sec_doors, access_gun)
+			            access_eva, access_sec_doors, access_gun, access_hangar)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
@@ -795,7 +813,8 @@
 
 	access = list(access_security, access_brig, access_forensics_lockers,
 			            access_maint_tunnels, access_emergency_storage,
-			            access_sec_doors, access_morgue)
+			            access_sec_doors, access_morgue, access_hangar)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
@@ -827,7 +846,8 @@
 
 	access = list(access_security, access_brig, access_maint_tunnels,
 						access_external_airlocks, access_emergency_storage,
-			            access_eva, access_sec_doors)
+			            access_eva, access_sec_doors, access_hangar)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
@@ -864,6 +884,8 @@
 	access = list(access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
 			            access_crematorium, access_chemistry, access_surgery, access_eva,
 			            access_medical_equip, access_senmed, access_hangar)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
@@ -929,6 +951,8 @@
 		            access_maint_tunnels, access_emergency_storage,
 		            access_external_airlocks, access_hangar)
 
+	minimal_access = list()
+
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
 
@@ -958,6 +982,7 @@
 	skill_points = 26
 
 	access = list(access_medical, access_maint_tunnels, access_emergency_storage, access_medical_equip, access_chemistry)
+
 	minimal_access = list()
 
 /datum/job/psychiatrist
@@ -983,6 +1008,7 @@
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX)
 
 	access = list(access_medical, access_morgue, access_chapel_office, access_crematorium, access_psychiatrist)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
@@ -1010,6 +1036,7 @@
 
 	access = list(access_maint_tunnels, access_heads, access_emergency_storage, access_tech_storage,  access_cargo, access_guppy_helm,
 						access_cargo_bot, access_qm, access_mailsorting, access_expedition_shuttle, access_guppy, access_hangar)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
@@ -1033,6 +1060,7 @@
 
 	access = list(access_maint_tunnels, access_emergency_storage, access_cargo, access_guppy_helm,
 						access_cargo_bot, access_mining_office, access_mailsorting, access_expedition_shuttle, access_guppy, access_hangar)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
@@ -1059,12 +1087,13 @@
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/prospector
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/prospector
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
 	access = list(access_research, access_mining, access_mining_office, access_mining_station,
 						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_guppy_helm)
+
 	minimal_access = list()
 
 
@@ -1088,6 +1117,8 @@
 
 	access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mining_office, access_mailsorting, access_hangar, access_guppy, access_guppy_helm)
 
+	minimal_access = list()
+
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							 /datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
@@ -1109,6 +1140,7 @@
 	min_skill = list(	SKILL_HAULING = SKILL_BASIC)
 
 	access = list(access_maint_tunnels, access_emergency_storage, access_janitor)
+
 	minimal_access = list()
 
 /datum/job/chef
@@ -1130,6 +1162,7 @@
 						SKILL_CHEMISTRY = SKILL_BASIC)
 
 	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_bar)
+
 	minimal_access = list()
 
 
@@ -1142,7 +1175,9 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/bartender
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
 	access = list(access_hydroponics, access_bar, access_kitchen)
+
 	minimal_access = list()
 	min_skill = list(	SKILL_COOKING   = SKILL_BASIC,
 						SKILL_BOTANY    = SKILL_BASIC,
@@ -1166,9 +1201,13 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/senior_scientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
 	access = list(access_tox, access_tox_storage, access_research, access_mining, access_mining_office,
 						access_mining_station, access_xenobiology, access_xenoarch,
 						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_petrov_helm, access_guppy_helm)
+
+	minimal_access = list()
+
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_FINANCE     = SKILL_BASIC,
@@ -1200,6 +1239,9 @@
 	access = list(access_research, access_mining_office,
 						access_mining_station, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy,
 						access_hangar, access_petrov, access_petrov_helm, access_guppy_helm, access_mining)
+
+	minimal_access = list()
+
 	min_skill = list(	SKILL_EVA   = SKILL_BASIC,
 						SKILL_PILOT = SKILL_ADEPT)
 
@@ -1233,9 +1275,11 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/scientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
 	access = list(access_tox, access_tox_storage, access_research, access_petrov, access_petrov_helm,
 						access_mining_office, access_mining_station, access_xenobiology, access_guppy_helm,
 						access_xenoarch, access_expedition_shuttle, access_guppy, access_hangar)
+
 	minimal_access = list()
 	skill_points = 22
 
@@ -1267,6 +1311,7 @@
 
 	access = list(access_research, access_mining_office, access_petrov, access_expedition_shuttle, access_guppy, access_hangar)
 
+	minimal_access = list()
 
 /datum/job/assistant
 	title = "Passenger"
@@ -1321,7 +1366,10 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	latejoin_at_spawnpoints = 1
+
 	access = list(access_merchant)
+	minimal_access = list()
+
 	announced = FALSE
 	min_skill = list(	SKILL_FINANCE = SKILL_ADEPT,
 						SKILL_PILOT	  = SKILL_BASIC)
@@ -1345,3 +1393,6 @@
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	latejoin_at_spawnpoints = 1
 	announced = FALSE
+
+	access = list(access_maint_tunnels, access_emergency_storage)
+	minimal_access = list()

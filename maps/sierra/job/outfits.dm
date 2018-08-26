@@ -175,14 +175,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/brown
 	id_type = /obj/item/weapon/card/id/sierra/crew/engineering/comms
 
-/decl/hierarchy/outfit/job/sierra/crew/engineering/roboticist
-	name = OUTFIT_JOB_NAME("Roboticist - Sierra")
-	uniform = /obj/item/clothing/under/rank/roboticist
-	shoes = /obj/item/clothing/shoes/black
-	l_ear = /obj/item/device/radio/headset/sierra_roboticist
-	id_type = /obj/item/weapon/card/id/sierra/crew/engineering/roboticist
-	pda_type = /obj/item/modular_computer/pda/roboticist
-
 	////////////
 	//SECURITY//
 	////////////
@@ -209,6 +201,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/det
 	suit = /obj/item/clothing/suit/storage/det_trench/ft
 	shoes = /obj/item/clothing/shoes/laceup
+	id_type = /obj/item/weapon/card/id/sierra/crew/security/detective
 	pda_type = /obj/item/modular_computer/pda/forensics
 
 /decl/hierarchy/outfit/job/sierra/crew/security/officer
@@ -350,10 +343,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	l_ear = /obj/item/device/radio/headset/headset_mining
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
-/decl/hierarchy/outfit/job/sierra/crew/research/prospector/New()
-	..()
-	BACKPACK_OVERRIDE_ENGINEERING
-
 /decl/hierarchy/outfit/job/sierra/crew/supply/assistant
 	name = OUTFIT_JOB_NAME("Cargo Assistant")
 	uniform = /obj/item/clothing/under/rank/cargotech
@@ -438,6 +427,10 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	pda_type = /obj/item/modular_computer/pda/science
 	l_ear = /obj/item/device/radio/headset/headset_sci
 
+/decl/hierarchy/outfit/job/sierra/crew/research/New()
+	..()
+	BACKPACK_OVERRIDE_RESEARCH
+
 /decl/hierarchy/outfit/job/sierra/crew/research/senior_scientist
 	name = OUTFIT_JOB_NAME("Senior Researcher")
 	uniform = /obj/item/clothing/under/rank/scientist/executive
@@ -446,9 +439,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	pda_type = /obj/item/modular_computer/pda/heads/rd
 	id_type = /obj/item/weapon/card/id/sierra/crew/research/senior_scientist
 
-/decl/hierarchy/outfit/job/sierra/crew/research/senior_scientist/New()
-	..()
-	BACKPACK_OVERRIDE_RESEARCH
 
 /decl/hierarchy/outfit/job/sierra/crew/research/nt_pilot //pending better uniform
 	name = OUTFIT_JOB_NAME("Pilot")
@@ -464,9 +454,13 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/white
 	id_type = /obj/item/weapon/card/id/sierra/crew/research/scientist
 
-/decl/hierarchy/outfit/job/sierra/crew/research/scientist/New()
-	..()
-	BACKPACK_OVERRIDE_RESEARCH
+/decl/hierarchy/outfit/job/sierra/crew/research/roboticist
+	name = OUTFIT_JOB_NAME("Roboticist - Sierra")
+	uniform = /obj/item/clothing/under/rank/roboticist
+	shoes = /obj/item/clothing/shoes/black
+	l_ear = /obj/item/device/radio/headset/sierra_roboticist
+	id_type = /obj/item/weapon/card/id/sierra/crew/research/roboticist
+	pda_type = /obj/item/modular_computer/pda/roboticist
 
 /decl/hierarchy/outfit/job/sierra/crew/research/scientist/psych
 	name = OUTFIT_JOB_NAME("Psychologist - Sierra")

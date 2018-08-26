@@ -106,33 +106,3 @@
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/toxins, /obj/item/weapon/storage/backpack/satchel_tox)),
 		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger/tox, 50)
 	)
-
-/obj/structure/closet/secure_closet/prospector
-	name = "prospector's locker"
-	req_access = list(access_mining)
-	icon_state = "miningsec1"
-	icon_closed = "miningsec"
-	icon_locked = "miningsec1"
-	icon_opened = "miningsecopen"
-	icon_off = "miningsecoff"
-
-/obj/structure/closet/secure_closet/prospector/WillContain()
-	return list(
-		/obj/item/device/radio/headset/headset_sci,
-		/obj/item/clothing/under/rank/miner,
-		/obj/item/clothing/accessory/storage/webbing,
-		/obj/item/clothing/gloves/thick,
-		/obj/item/clothing/shoes/workboots,
-		/obj/item/device/analyzer,
-		/obj/item/weapon/storage/ore,
-		/obj/item/device/radio/headset/headset_mining,
-		/obj/item/device/radio/headset/headset_mining/alt,
-		/obj/item/device/flashlight/lantern,
-		/obj/item/weapon/shovel,
-		/obj/item/weapon/pickaxe,
-		/obj/item/weapon/crowbar,
-		/obj/item/clothing/glasses/material,
-		/obj/item/clothing/glasses/meson,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
-	)
