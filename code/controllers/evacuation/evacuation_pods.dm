@@ -53,9 +53,6 @@
 
 /datum/evacuation_controller/starship/finish_evacuation()
 	..()
-	if(config.announce_shuttle_dock_to_irc)
-		send2mainirc("Раунд [ticker.mode.name] завершен за [roundduration2text()]. @Roundwaiter.")
-		send2maindiscord("Раунд [ticker.mode.name] завершен за [roundduration2text()]. @Roundwaiter.")
 
 	if(!emergency_evacuation) //bluespace jump
 		SetUniversalState(/datum/universal_state) //clear jump state

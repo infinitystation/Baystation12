@@ -9,7 +9,7 @@ var/global/datum/controller/gameticker/ticker
 	var/post_game = 0
 	var/event_time = null
 	var/event = 0
-	var/admin_ending = 0 //Are you bad man or developer?
+	var/admin_ending = 0 //Are you badmin or developer?
 
 	var/list/datum/mind/minds = list()//The people in the game. Used for objective tracking.
 
@@ -336,7 +336,11 @@ var/global/datum/controller/gameticker/ticker
 			current_state = GAME_STATE_FINISHED
 			if(!config.ooc_allowed)
 				config.ooc_allowed = 1
-				to_world("<B>The OOC channel has been globally disabled!</B>")
+				to_world("<B>The OOC channel has been globally enabled!</B>")
+			if(config.announce_shuttle_dock_to_irc)
+				send2mainirc("Раунд [ticker.mode.name] завершен за [roundduration2text()]. @Roundwaiter.")
+				send2maindiscord("Раунд [ticker.mode.name] завершен за [roundduration2text()]. @Roundwaiter.")
+
 			declare_completion()
 			Master.SetRunLevel(RUNLEVEL_POSTGAME)
 
