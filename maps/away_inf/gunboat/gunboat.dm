@@ -13,7 +13,7 @@
 	speed_mod = 5 SECONDS
 	start_x = 5
 	start_y = 5
-	generic_waypoints = list(
+	initial_generic_waypoints = list(
 		"nav_gunboat_1",
 		"nav_gunboat_2",
 		"nav_gunboat_3",
