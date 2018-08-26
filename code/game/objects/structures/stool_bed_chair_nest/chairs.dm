@@ -363,6 +363,9 @@
 /obj/structure/bed/chair/shuttle/red/New(var/newloc,var/newmaterial)
 	..(newloc,"steel","red")
 
+/obj/structure/bed/chair/shuttle/green/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","green")
+
 /obj/structure/bed/chair/shuttle/black/New(var/newloc,var/newmaterial)
 	..(newloc,"steel","black")
 
