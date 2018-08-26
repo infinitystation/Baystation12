@@ -275,6 +275,21 @@
 /obj/structure/bed/chair/office/light/New(var/newloc,var/newmaterial)
 	..(newloc,"steel","cotton")
 
+/obj/structure/bed/chair/office/yellow/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","yellow")
+
+/obj/structure/bed/chair/office/teal/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","teal")
+
+/obj/structure/bed/chair/office/red/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","carpet")
+
+/obj/structure/bed/chair/office/blue/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","blue")
+
+/obj/structure/bed/chair/office/purple/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","purple")
+
 /obj/structure/bed/chair/office/dark/New(var/newloc,var/newmaterial)
 	..(newloc,"steel","black")
 
