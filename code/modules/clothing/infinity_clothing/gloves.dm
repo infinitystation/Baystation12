@@ -5,3 +5,10 @@
 	icon_override = 'icons/mob/infinity/gloves.dmi'
 	icon_state = "daft_gloves"
 	item_state = null
+
+/obj/item/clothing/gloves/insulated/black
+	name = "black insulated gloves"
+	desc = "These gloves will protect the wearer from electric shocks. A great choice for stylish hackers."
+	color = null
+	icon_state = "black"
+	item_state = "bgloves"

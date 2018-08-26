@@ -82,7 +82,7 @@
 	icon_state = "ntholobadge"
 	color = COLOR_WHITE
 	badge_string = "NanoTrasen Security"
-	badge_access = access_research
+	badge_access = access_security
 
 /obj/item/clothing/accessory/badge/holo/cord
 	name = "neck holobadge"
