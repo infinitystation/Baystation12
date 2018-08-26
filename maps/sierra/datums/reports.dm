@@ -1,80 +1,80 @@
 //Report datums for use with the report editor and other programs.
 
 /datum/computer_file/report/recipient/crew_transfer
-	form_name = "CTA-SGF-01"
-	title = "За&#255;вка на изменение должности &#255; Я &#255;корь"
-	logo = "\[ntcrest\]\[logo\]"
+	form_name = "CTA-NTF-01"
+	title = "За&#255;вление на перевод"
+	logo = "\[logo\]"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/crew_transfer/generate_fields()
 	..()
 	var/list/hop_fields = list()
-	add_field(/datum/report_field/instruction, "НСН Сиерра - Офис Глава Персонала")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; (ГП)")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; (Подающий)", required = 1)
-	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/time, "Местное врем&#255;")
-	add_field(/datum/report_field/simple_text, "Должность")
-	add_field(/datum/report_field/simple_text, "Requested position")
-	add_field(/datum/report_field/pencode_text, "Причина")
-	add_field(/datum/report_field/instruction, "The following fields render the document invalid if not signed clearly.")
-	add_field(/datum/report_field/signature, "Подпись подающего")
-	hop_fields += add_field(/datum/report_field/signature, "Глава Персонала's signature")
-	hop_fields += add_field(/datum/report_field/number, "Number of personnel in present/previous position")
-	hop_fields += add_field(/datum/report_field/number, "Number of personnel in requested position")
-	hop_fields += add_field(/datum/report_field/options/yes_no, "Подтверждение")
+	add_field(/datum/report_field/instruction, "НСН Сиерра - Офис Главы Персонала")
+	add_field(/datum/report_field/people/from_manifest, "Им&#255; (ИО)")
+	add_field(/datum/report_field/people/from_manifest, "Им&#255; (за&#255;витель)", required = 1)
+	add_field(/datum/report_field/date, "Дата заполнени&#255;")
+	add_field(/datum/report_field/time, "Врем&#255; заполнени&#255;")
+	add_field(/datum/report_field/simple_text, "Текуща&#255; должность")
+	add_field(/datum/report_field/simple_text, "Запрашиваема&#255; должность")
+	add_field(/datum/report_field/pencode_text, "Причина перевода")
+	add_field(/datum/report_field/instruction, "Докупент признаётс&#255; недействительным в случае некорректного заполнени&#255; следующих полей.")
+	add_field(/datum/report_field/signature, "Подпись за&#255;вител&#255;")
+	hop_fields += add_field(/datum/report_field/signature, "Подпись Главы Персонала")
+	hop_fields += add_field(/datum/report_field/number, "Количество персонала на текущей должности")
+	hop_fields += add_field(/datum/report_field/number, "Количество персонала на запрашиваемой должности")
+	hop_fields += add_field(/datum/report_field/options/yes_no, "Одобрено")
 	for(var/datum/report_field/field in hop_fields)
 		field.set_access(access_edit = access_hop)
 
 /datum/computer_file/report/recipient/access_modification
-	form_name = "AMA-SGF-02"
-	title = "Crew Access Modification Application"
-	logo = "\[ntcrest\]\[logo\]"
+	form_name = "AMA-NTF-02"
+	title = "За&#255;вление на изменение доступа"
+	logo = "\[logo\]"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/access_modification/generate_fields()
 	..()
 	var/list/hop_fields = list()
-	add_field(/datum/report_field/instruction, "НСН Сиерра - Офис Глава Персонала")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; (ГП)")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; (Подающий)", required = 1)
-	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/time, "Местное врем&#255;")
-	add_field(/datum/report_field/simple_text, "Должность")
+	add_field(/datum/report_field/instruction, "НСН Сиерра - Офис Главы Персонала")
+	add_field(/datum/report_field/people/from_manifest, "Им&#255; (ИО)")
+	add_field(/datum/report_field/people/from_manifest, "Им&#255; (за&#255;витель)", required = 1)
+	add_field(/datum/report_field/date, "Дата заполнени&#255;")
+	add_field(/datum/report_field/time, "Врем&#255; заполнени&#255;")
+	add_field(/datum/report_field/simple_text, "Текуща&#255; должность")
 	add_field(/datum/report_field/simple_text, "Запрашиваемый доступ")
-	add_field(/datum/report_field/pencode_text, "Причина")
-	add_field(/datum/report_field/simple_text, "Врем&#255; расширени&#255; доступа")
-	add_field(/datum/report_field/instruction, "The following fields render the document invalid if not signed clearly.")
-	add_field(/datum/report_field/signature, "Подпись подающего")
-	hop_fields += add_field(/datum/report_field/signature, "Подпись Главы персонала")
-	hop_fields += add_field(/datum/report_field/number, "Number of personnel in relevant position")
-	hop_fields += add_field(/datum/report_field/options/yes_no, "Подтверждение")
+	add_field(/datum/report_field/pencode_text, "Причина расширени&#255; доступа")
+	add_field(/datum/report_field/simple_text, "Срок расширени&#255; доступа")
+	add_field(/datum/report_field/instruction, "Докупент признаётс&#255; недействительным в случае некорректного заполнени&#255; следующих полей.")
+	add_field(/datum/report_field/signature, "Подпись за&#255;вител&#255;")
+	hop_fields += add_field(/datum/report_field/signature, "Подпись Главы Персонала")
+	hop_fields += add_field(/datum/report_field/number, "Количество персонала на соответствующей должности")
+	hop_fields += add_field(/datum/report_field/options/yes_no, "Одобрено")
 	for(var/datum/report_field/field in hop_fields)
 		field.set_access(access_edit = access_hop)
 
 /datum/computer_file/report/recipient/borging
-	form_name = "CC-SGF-09"
-	title = "Cyborgification Contract"
-	logo = "\[ntcrest\]"
+	form_name = "CC-NTF-09"
+	title = "Контракт на киборгинизацию"
+	logo = "\[logo\]"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/borging/generate_fields()
 	..()
 	var/list/hop_fields = list()
-	add_field(/datum/report_field/instruction, "НСН Сиерра - Офис Глава Персонала")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; (ГП)")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; (Субеъкт)", required = 1)
-	add_field(/datum/report_field/date, "Дата")
-	add_field(/datum/report_field/time, "Местное врем&#255;")
-	add_field(/datum/report_field/instruction, "I, undersigned, hereby agree to willingly undergo a Regulation Lobotimization with intention of cyborgification or AI assimilation, and I am aware of all the consequences of such act. I also understand that this operation may be irreversible, and that my employment contract will be terminated.")
-	add_field(/datum/report_field/signature, "Subject's signature")
-	hop_fields += add_field(/datum/report_field/signature, "Глава Персонала's signature")
-	hop_fields += add_field(/datum/report_field/options/yes_no, "Подтверждение")
+	add_field(/datum/report_field/instruction, "НСН Сиерра - Офис Главы Персонала")
+	add_field(/datum/report_field/people/from_manifest, "Им&#255; (ИО)")
+	add_field(/datum/report_field/people/from_manifest, "Им&#255; (субъект)", required = 1)
+	add_field(/datum/report_field/date, "Дата заполнени&#255;")
+	add_field(/datum/report_field/time, "Врем&#255; заполнени&#255;")
+	add_field(/datum/report_field/instruction, "Я, нижеподписавшийс&#255;, насто&#255;щим соглашаюсь на прохождение Полной Лоботомии с целью киборгинизации или ассимил&#255;ции с ИИ. Я осведомлён обо всех рисках такого действи&#255;. Я также понимаю, что эта операци&#255; может быть необратимой, а трудовой контракт будет аннулирован.")
+	add_field(/datum/report_field/signature, "Подпись субъекта")
+	hop_fields += add_field(/datum/report_field/signature, "Подпись Главы Персонала")
+	hop_fields += add_field(/datum/report_field/options/yes_no, "Одобрено")
 	for(var/datum/report_field/field in hop_fields)
 		field.set_access(access_edit = access_hop)
 
 /datum/computer_file/report/recipient/sec
-	logo = "\[ntcrest\]"
+	logo = "\[logo\]"
 
 /datum/computer_file/report/recipient/sec/New()
 	..()
@@ -82,69 +82,69 @@
 	set_access(access_heads, override = 0)
 
 /datum/computer_file/report/recipient/sec/investigation
-	form_name = "SCG-SEC-43"
-	title = "Investigation Report"
+	form_name = "NT-SEC-43"
+	title = "Доклад о расследовании"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/investigation/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "НСН Сиерра Департамент Охраны")
-	add_field(/datum/report_field/instruction, "For internal use only.")
+	add_field(/datum/report_field/instruction, "Департамент охраны НСН Сиерра")
+	add_field(/datum/report_field/instruction, "Только дл&#255; внутреннего использовани&#255;.")
 	add_field(/datum/report_field/people/from_manifest, "Им&#255;")
-	add_field(/datum/report_field/date, "Date")
-	add_field(/datum/report_field/time, "Time")
-	add_field(/datum/report_field/simple_text, "Case name")
-	add_field(/datum/report_field/pencode_text, "Summary")
-	add_field(/datum/report_field/pencode_text, "Observations")
-	add_field(/datum/report_field/signature, "Signature")
+	add_field(/datum/report_field/date, "Дата")
+	add_field(/datum/report_field/time, "Врем&#255;")
+	add_field(/datum/report_field/simple_text, "Название дела")
+	add_field(/datum/report_field/pencode_text, "Заключение")
+	add_field(/datum/report_field/pencode_text, "Наблюдени&#255;")
+	add_field(/datum/report_field/signature, "Подпись")
 	set_access(access_edit = access_security)
 
 /datum/computer_file/report/recipient/sec/incident
-	form_name = "SCG-SEC-12"
-	title = "Security Incident Report"
+	form_name = "NT-SEC-12"
+	title = "Доклад об инциденте"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/incident/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "НСН Сиерра Департамент Охраны")
-	add_field(/datum/report_field/instruction, "To be filled out by Officer on duty responding to the Incident. Report must be signed and submitted before the end of the shift!")
-	add_field(/datum/report_field/people/from_manifest, "Reporting Officer")
-	add_field(/datum/report_field/simple_text, "Offense/Incident Type")
-	add_field(/datum/report_field/date, "Date")
-	add_field(/datum/report_field/time, "Time of incident")
-	add_field(/datum/report_field/people/list_from_manifest, "Assisting Officer(s)")
+	add_field(/datum/report_field/instruction, "Департамент охраны НСН Сиерра")
+	add_field(/datum/report_field/instruction, "Заполн&#255;етс&#255; офицером при исполнении, реагировавшим на инцидент. Должно быть заполнено и зарегистрировано до конца смены!")
+	add_field(/datum/report_field/people/from_manifest, "Докладывающий офицер")
+	add_field(/datum/report_field/simple_text, "Тип инциденте/Преступлени&#255;")
+	add_field(/datum/report_field/date, "Дата")
+	add_field(/datum/report_field/time, "Врем&#255; инцидента")
+	add_field(/datum/report_field/people/list_from_manifest, "Офицер(ы), провод&#255;щие арест")
 	add_field(/datum/report_field/simple_text, "Location")
-	add_field(/datum/report_field/pencode_text, "Personnel involved in Incident", "\[small\]\[i\](V-Victim, S-Suspect, W-Witness, M-Missing, A-Arrested, RP-Reporting Person, D-Deceased)\[/i\]\[/small\]")
-	add_field(/datum/report_field/pencode_text, "Description of Items/Property", "\[small\]\[i\](D-Damaged, E-Evidence, L-Lost, R-Recovered, S-Stolen)\[/i\]\[/small\]")
-	add_field(/datum/report_field/pencode_text, "Narrative")
-	add_field(/datum/report_field/signature, "Reporting Officer's signature")
+	add_field(/datum/report_field/pencode_text, "Персонал вовлечённый в инцидент", "\[small\]\[i\](Ж-Жертва, Под-Подозреваемый, С-Свидетель, ПБВ-Пропавший без вести, А-Арестованный, Д-Докладывающий, Пог-Погибший)\[/i\]\[/small\]")
+	add_field(/datum/report_field/pencode_text, "Описание предметов/собственности", "\[small\]\[i\](Пов-Повреждено, Д-Докатательство, Пот-Потер&#255;но, Н-Найдено, У-Украдено)\[/i\]\[/small\]")
+	add_field(/datum/report_field/pencode_text, "Изложение фактов")
+	add_field(/datum/report_field/signature, "Подпись докладывающего офицера")
 	set_access(access_edit = access_security)
 
 /datum/computer_file/report/recipient/sec/evidence
-	form_name = "SCG-SEC-02b"
-	title = "Evidence and Property Form"
+	form_name = "NT-SEC-02b"
+	title = "Форма Доказательств и Собственности"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/evidence/generate_fields()
 	..()
 	var/datum/report_field/temp_field
-	add_field(/datum/report_field/instruction, "НСН Сиерра Департамент Охраны")
-	add_field(/datum/report_field/date, "Date")
-	add_field(/datum/report_field/time, "Time")
-	add_field(/datum/report_field/people/from_manifest, "Confiscated from")
-	add_field(/datum/report_field/pencode_text, "List of items in custody/evidence lockup")
+	add_field(/datum/report_field/instruction, "Департамент охраны НСН Сиерра")
+	add_field(/datum/report_field/date, "Дата")
+	add_field(/datum/report_field/time, "Врем&#255;")
+	add_field(/datum/report_field/people/from_manifest, "Конфисковано у")
+	add_field(/datum/report_field/pencode_text, "Список предметов, вз&#255;тых на хранение")
 	set_access(access_edit = access_security)
-	temp_field = add_field(/datum/report_field/signature, "Warden's signature")
+	temp_field = add_field(/datum/report_field/signature, "Подпись сержанта/надзирателя")
 	temp_field.set_access(access_edit = list(access_security, access_armory))
-	temp_field = add_field(/datum/report_field/signature, "Forensic Technician's signature")
+	temp_field = add_field(/datum/report_field/signature, "Подпись детектива")
 	temp_field.set_access(access_edit = list(access_security, access_forensics_lockers))
 
 //Supply and Exploration; these are not shown in deck manager.
 
 /datum/computer_file/report/recipient/docked
-	logo = "\[ntcrest\]"
-	form_name = "SCG-SUP-12"
-	title = "Docked Vessel Report"
+	logo = "\[logo\]"
+	form_name = "NT-SUP-12"
+	title = "Доклад о стыковке"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/docked/New()
@@ -154,29 +154,29 @@
 
 /datum/computer_file/report/recipient/docked/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "НСН Сиерра Supply and Hangar Management Department")
-	add_field(/datum/report_field/instruction, "General Info")
-	add_field(/datum/report_field/date, "Date")
-	add_field(/datum/report_field/simple_text, "Vessel Им&#255;")
-	add_field(/datum/report_field/simple_text, "Vessel Pilot/Owner")
-	add_field(/datum/report_field/simple_text, "Vessel Intended Purpose")
-	add_field(/datum/report_field/people/from_manifest, "Docking Authorized by")
-	add_field(/datum/report_field/instruction, "General Cargo Info")
-	add_field(/datum/report_field/pencode_text, "List the types of cargo onboard the vessel")
-	add_field(/datum/report_field/instruction, "Hazardous Cargo Info")
-	add_field(/datum/report_field/options/yes_no, "Weaponry")
-	add_field(/datum/report_field/options/yes_no, "Live Cargo")
-	add_field(/datum/report_field/options/yes_no, "Biohazardous material")
-	add_field(/datum/report_field/options/yes_no, "Chemical or radiation hazard")
-	add_field(/datum/report_field/signature, "To indicate authorization for vessel entry, sign here")
-	add_field(/datum/report_field/instruction, "Undocking and Departure")
-	add_field(/datum/report_field/time, "Undocking Time")
-	add_field(/datum/report_field/pencode_text, "Additional Undocking Comments")
+	add_field(/datum/report_field/instruction, "Департамент снабжени&#255; и мененджемента ангара НСН Сиерра")
+	add_field(/datum/report_field/instruction, "Обща&#255; информаци&#255;")
+	add_field(/datum/report_field/date, "Дата")
+	add_field(/datum/report_field/simple_text, "Название судна")
+	add_field(/datum/report_field/simple_text, "Пилот/владелец судна")
+	add_field(/datum/report_field/simple_text, "Род де&#255;тельности судна")
+	add_field(/datum/report_field/people/from_manifest, "Стыковка авторизована")
+	add_field(/datum/report_field/instruction, "Обща&#255; информаци&#255; о грузе")
+	add_field(/datum/report_field/pencode_text, "Список типов груза на борту")
+	add_field(/datum/report_field/instruction, "Информаци&#255; об опасном грузе")
+	add_field(/datum/report_field/options/yes_no, "Оружие")
+	add_field(/datum/report_field/options/yes_no, "Живой груз")
+	add_field(/datum/report_field/options/yes_no, "Биологически опасные материалы")
+	add_field(/datum/report_field/options/yes_no, "Химическа&#255; или радиоактивна&#255; опасность")
+	add_field(/datum/report_field/signature, "Авторизаци&#255; входа на судно")
+	add_field(/datum/report_field/instruction, "Отстыковка и отправление")
+	add_field(/datum/report_field/time, "Врем&#255; отстыковки")
+	add_field(/datum/report_field/pencode_text, "Дополнительные комментарии по отстыковке")
 
 /datum/computer_file/report/recipient/fauna
-	logo = "\[ntcrest\]"
+	logo = "\[solcrest\]"
 	form_name = "SCG-EXP-19f"
-	title = "Alien Fauna Report"
+	title = "Доклад об инопланетной фауне"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/docked/New()
@@ -186,20 +186,20 @@
 
 /datum/computer_file/report/recipient/fauna/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "НСН Сиерра Expeditions")
-	add_field(/datum/report_field/instruction, "The following is to be filled out by members of a Expedition team after discovery and study of new alien life forms.")
-	add_field(/datum/report_field/date, "Date")
-	add_field(/datum/report_field/people/list_from_manifest, "Personnel Involved")
-	add_field(/datum/report_field/pencode_text, "Anatomy/Appearance")
-	add_field(/datum/report_field/pencode_text, "Locomotion")
-	add_field(/datum/report_field/pencode_text, "Diet")
-	add_field(/datum/report_field/pencode_text, "Habitat")
-	add_field(/datum/report_field/simple_text, "Homeworld")
-	add_field(/datum/report_field/pencode_text, "Behavior")
-	add_field(/datum/report_field/pencode_text, "Defense/Offense")
-	add_field(/datum/report_field/pencode_text, "Special Characteristic(s)")
-	add_field(/datum/report_field/pencode_text, "Classification")
-	add_field(/datum/report_field/instruction, "On completion of this form and form approval, the Research Director should fax the form to both the NanoTrasen Liaison and the Commanding Officer, as well as keep a copy on file in their Office alongside other mission reports.")
+	add_field(/datum/report_field/instruction, "Экспедиционный департамент НСН Сиерра")
+	add_field(/datum/report_field/instruction, "Следующа&#255; форма должна быть заполнена членами экспедиционной команды после открыти&#255; и изучени&#255; новой формы инопланетной жизни.")
+	add_field(/datum/report_field/date, "Дата")
+	add_field(/datum/report_field/people/list_from_manifest, "Вовлечённый персонал")
+	add_field(/datum/report_field/pencode_text, "Анатоми&#255;/внешность")
+	add_field(/datum/report_field/pencode_text, "Способ передвижени&#255;")
+	add_field(/datum/report_field/pencode_text, "Рацион")
+	add_field(/datum/report_field/pencode_text, "Ареал")
+	add_field(/datum/report_field/simple_text, "Планета происхождени&#255;")
+	add_field(/datum/report_field/pencode_text, "Поведение")
+	add_field(/datum/report_field/pencode_text, "Привычки нападени&#255;/обороны")
+	add_field(/datum/report_field/pencode_text, "Особые характеристики")
+	add_field(/datum/report_field/pencode_text, "Классификаци&#255;")
+	add_field(/datum/report_field/instruction, "По заполнению и одобрению данной формы, Директор Исследований должен отправить её по факсу и Агенту Внутренних Дел, и Капитану, а также сохранить копию в своём офисе наравне с другими докладами об экспедици&#255;х.")
 
 //NT reports, mostly for liason but can be used by any NT personnel.
 
@@ -207,14 +207,14 @@
 	logo = "\[logo\]"
 
 /datum/computer_file/report/recipient/nt/proc/add_header()
-	add_field(/datum/report_field/simple_text, "Vessel", "НСН Сиерра")
-	add_field(/datum/report_field/date, "Date")
-	add_field(/datum/report_field/time, "Time")
-	add_field(/datum/report_field/simple_text, "Index")
+	add_field(/datum/report_field/simple_text, "Судно", "НСН Сиерра")
+	add_field(/datum/report_field/date, "Дата")
+	add_field(/datum/report_field/time, "Врем&#255;")
+	add_field(/datum/report_field/simple_text, "Номер")
 
 /datum/computer_file/report/recipient/nt/anomaly
 	form_name = "NT-1546"
-	title = "Anomalistic Object Report"
+	title = "Отчёт об объекте аномалистики"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/anomaly/New()
@@ -224,17 +224,17 @@
 /datum/computer_file/report/recipient/nt/anomaly/generate_fields()
 	..()
 	add_header()
-	add_field(/datum/report_field/simple_text, "AO Codename")
-	add_field(/datum/report_field/people/from_manifest, "Reporting Scientist")
-	add_field(/datum/report_field/people/from_manifest, "Overviewing Research Director")
-	add_field(/datum/report_field/pencode_text, "Containment Procedures")
-	add_field(/datum/report_field/pencode_text, "Generalized Overview")
-	add_field(/datum/report_field/simple_text, "Approximate Age of AO")
-	add_field(/datum/report_field/simple_text, "Threat Level of AO")
+	add_field(/datum/report_field/simple_text, "Кодовое название объекта")
+	add_field(/datum/report_field/people/from_manifest, "Отчитывающийс&#255; учёный")
+	add_field(/datum/report_field/people/from_manifest, "Провер&#255;ющий Директор Исследований")
+	add_field(/datum/report_field/pencode_text, "Процедуры содержани&#255;")
+	add_field(/datum/report_field/pencode_text, "Общее описание")
+	add_field(/datum/report_field/simple_text, "Примерный возраст объекта")
+	add_field(/datum/report_field/simple_text, "Уровень опасности объекта")
 
 /datum/computer_file/report/recipient/nt/fire
 	form_name = "NT-0102"
-	title = "NT Employment Termination Form"
+	title = "Форма прекращени&#255; трудового контракта NT"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/fire/New()
@@ -245,13 +245,13 @@
 /datum/computer_file/report/recipient/nt/fire/generate_fields()
 	..()
 	add_header()
-	add_field(/datum/report_field/instruction, "Notice of Termination of Employment")
+	add_field(/datum/report_field/instruction, "Запись о прекращении трудового контакта")
 	add_field(/datum/report_field/people/from_manifest, "Им&#255;")
-	add_field(/datum/report_field/number, "Age")
-	add_field(/datum/report_field/simple_text, "Position")
-	add_field(/datum/report_field/pencode_text, "Reason for Termination")
-	add_field(/datum/report_field/signature, "Authorized by")
-	add_field(/datum/report_field/instruction, "Please attach employment records alongside notice of termination.")
+	add_field(/datum/report_field/number, "Возраст")
+	add_field(/datum/report_field/simple_text, "Должность")
+	add_field(/datum/report_field/pencode_text, "Причина увольнени&#255;")
+	add_field(/datum/report_field/signature, "Авторизовано")
+	add_field(/datum/report_field/instruction, "Пожалуйста, прикрепите личное дело сотрудника к этой записи о прекращении трудового контракта.")
 
 /datum/computer_file/report/recipient/nt/incident/New()
 	..()
@@ -260,107 +260,107 @@
 /datum/computer_file/report/recipient/nt/incident/generate_fields()
 	..()
 	add_header()
-	add_field(/datum/report_field/pencode_text, "Summary of Incident")
-	add_field(/datum/report_field/pencode_text, "Details of Incident")
+	add_field(/datum/report_field/pencode_text, "Резюме по инциденту")
+	add_field(/datum/report_field/pencode_text, "Подробности инцидента")
 
 /datum/computer_file/report/recipient/nt/incident/proc/add_signatures()
-	add_field(/datum/report_field/signature, "Signature")
-	add_field(/datum/report_field/signature, "Witness Signature")
-	add_field(/datum/report_field/options/yes_no, "Подтверждение")
+	add_field(/datum/report_field/signature, "Подпись")
+	add_field(/datum/report_field/signature, "Подпись свидетел&#255;")
+	add_field(/datum/report_field/options/yes_no, "Одобрено")
 
 /datum/computer_file/report/recipient/nt/incident/ship
 	form_name = "NT-3203"
-	title = "NanoTrasen Ship Incident Report"
+	title = "Доклад об инциденте на судне NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/ship/generate_fields()
 	..()
-	add_field(/datum/report_field/pencode_text, "Departments Involved")
+	add_field(/datum/report_field/pencode_text, "Вовлечённые департаменты")
 	add_signatures()
 
 
 /datum/computer_file/report/recipient/nt/incident/personnel
 	form_name = "NT-3205"
-	title = "NanoTrasen Personnel Incident Report"
+	title = "Доклад об инциденте с персоналом NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/personnel/generate_fields()
 	..()
-	add_field(/datum/report_field/people/list_from_manifest, "Employee(s) Involved")
+	add_field(/datum/report_field/people/list_from_manifest, "Вовлечённый персонал")
 	add_signatures()
 
 /datum/computer_file/report/recipient/nt/incident/asset
 	form_name = "NT-3201"
-	title = "NanoTrasen Asset Incident Report"
+	title = "Доклад об инциденте с активами NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/asset/generate_fields()
 	..()
-	add_field(/datum/report_field/pencode_text, "NanoTrasen Employee Injuries")
-	add_field(/datum/report_field/pencode_text, "NanoTrasen Assets Lost")
+	add_field(/datum/report_field/pencode_text, "Травмы сотрудников NanoTrasen")
+	add_field(/datum/report_field/pencode_text, "Потери активов NanoTrasen")
 	add_signatures()
 
 /datum/computer_file/report/recipient/nt/incident/xeno
 	form_name = "NT-3213"
-	title = "NanoTrasen Non-Human Employee Incident Report"
+	title = "Доклад об инциденте с персоналом-не-людьми NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/xeno/generate_fields()
-	add_field(/datum/report_field/instruction, "If non-human employee lacks a valid work visa, use form NT-3213A instead.")
+	add_field(/datum/report_field/instruction, "Если у сотрудника не-человека отсутствует рабоча&#255; виза, используйте форму NT-3213A.")
 	..()
-	add_field(/datum/report_field/people/list_from_manifest, "Non-Human Employee(s) Involved")
+	add_field(/datum/report_field/people/list_from_manifest, "Вовлечённый персонал-не-люди")
 	add_signatures()
 
 /datum/computer_file/report/recipient/nt/incident/xeno_no_visa/
 	form_name = "NT-3213A"
-	title = "NanoTrasen Non-Human Employee Incident Report: Without Visa"
+	title = "Доклад об инциденте с персоналом-не-людьми NanoTrasen: Отсутствие визы"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/xeno_no_visa/generate_fields()
-	add_field(/datum/report_field/instruction, "If non-human employee has a valid work visa, use form NT-3213 instead.")
+	add_field(/datum/report_field/instruction, "Если рабоча&#255; виза сотрудника не-человека валидна, используйте NT-3213.")
 	..()
-	add_field(/datum/report_field/people/list_from_manifest, "Non-Human Employee(s) Involved")
+	add_field(/datum/report_field/people/list_from_manifest, "Вовлечённый персонал-не-люди")
 	add_signatures()
 
 /datum/computer_file/report/recipient/nt/incident/synth
 	form_name = "NT-3213X"
-	title = "NanoTrasen Synthetic Employee Incident Report"
+	title = "Доклад об инциденте с персоналом-синтетиками NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/synth/generate_fields()
 	..()
-	add_field(/datum/report_field/people/list_from_manifest, "Synthetic Employee(s) Involved")
+	add_field(/datum/report_field/people/list_from_manifest, "Вовлечённый персонал-синтетики")
 	add_signatures()
 
 /datum/computer_file/report/recipient/nt/incident/crew
 	form_name = "NT-3241"
-	title = "NanoTrasen Ship Crew/Employee Incident Report"
+	title = "Доклад об инциденте с судном и персоналом NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/crew/generate_fields()
-	add_field(/datum/report_field/instruction, "For multi-party incidents involving both ship crew and company employees.")
+	add_field(/datum/report_field/instruction, "Дл&#255; несколькосторонних инцидентов, включающих в себ&#255; и корабль, и экипаж/сотрудников.")
 	..()
-	add_field(/datum/report_field/people/list_from_manifest, "Crew Member(s) Involved")
-	add_field(/datum/report_field/people/list_from_manifest, "Employee(s) Involved")
+	add_field(/datum/report_field/people/list_from_manifest, "Вовлечённые члены экипажа")
+	add_field(/datum/report_field/people/list_from_manifest, "Вовлечённый персонал")
 	add_signatures()
 
 /datum/computer_file/report/recipient/nt/volunteer
 	form_name = "NT-1443"
-	title = "NanoTrasen Test Subject Volunteer Form"
+	title = "Форма подопытного-волонтёра NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/volunteer/generate_fields()
 	..()
 	var/list/temp_fields = list()
 	add_header()
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; of Volunteer")
-	add_field(/datum/report_field/simple_text, "Intended Procedure(s)")
-	add_field(/datum/report_field/simple_text, "Compensation for Volunteer: (if any)")
-	add_field(/datum/report_field/people/list_from_manifest, "Handling Researcher(s)")
-	add_field(/datum/report_field/instruction, "By signing, the \"Volunteer\" agrees to absolve the NanoTrasen Corporation, and its employees, of any liability or responsibility for injuries, damages, property loss or side-effects that may result from the intended procedure. If signed by an authorized representative of the NanoTrasen Corporation, such as a Research Director or NanoTrasen Executive - this form is deemed reviewed, but is only approved if so marked.")
-	add_field(/datum/report_field/signature, "Volunteer's Signature:")
-	temp_fields += add_field(/datum/report_field/signature, "NanoTrasen Representative's Signature")
-	temp_fields += add_field(/datum/report_field/options/yes_no, "Подтверждение")
+	add_field(/datum/report_field/people/from_manifest, "Им&#255; волонтёра")
+	add_field(/datum/report_field/simple_text, "Планируемые процедуры")
+	add_field(/datum/report_field/simple_text, "Компенсаци&#255; дл&#255; волонтёра: (если есть)")
+	add_field(/datum/report_field/people/list_from_manifest, "Ответственные исследователи")
+	add_field(/datum/report_field/instruction, "Подписыва&#255; форму, \"Волонтёр\" даёт согласие на отказ от ответственности NanoTrasen и её сотрудников за любые травмы, ранени&#255;, потери собственности или подобные эффекты, которые могут стать результатом назначенной процедуры. В случае подписани&#255; представителем NanoTrasen, таким как Директор Исследований, форма считаетс&#255; проверенной. Одобренной форма считаетс&#255; только если это указано.")
+	add_field(/datum/report_field/signature, "Подпись волонтёра")
+	temp_fields += add_field(/datum/report_field/signature, "Подпись представител&#255; NanoTrasen")
+	temp_fields += add_field(/datum/report_field/options/yes_no, "Одобрено")
 	for(var/datum/report_field/temp_field in temp_fields)
 		temp_field.set_access(access_edit = access_nanotrasen)
 
@@ -372,28 +372,29 @@
 /datum/computer_file/report/recipient/nt/deny/generate_fields()
 	..()
 	add_header()
-	add_field(/datum/report_field/instruction, "Dear Sir/Madam, we regret to inform you that your volunteer application for service as a test Субеъкт with the NanoTrasen Corporation has been rejected. We thank you for your interest in our company and the progression of research. Attached, you will find a copy of your original volunteer form for your records. Regards,")
-	add_field(/datum/report_field/signature, "NanoTrasen Representative's Signature")
-	add_field(/datum/report_field/people/from_manifest, "Им&#255; of Volunteer")
-	add_field(/datum/report_field/instruction, "Reason for Rejection")
-	add_field(/datum/report_field/options/yes_no, "Physically Unfit")
-	add_field(/datum/report_field/options/yes_no, "Mentally Unfit")
-	add_field(/datum/report_field/options/yes_no, "Project Cancellation")
-	add_field(/datum/report_field/simple_text, "Other")
-	add_field(/datum/report_field/options/yes_no, "Report Подтверждение")
+	add_field(/datum/report_field/instruction, "Dear Sir/Madam, we regret to inform you that your volunteer application for service as a test subject with the NanoTrasen Corporation has been rejected. We thank you for your interest in our company and the progression of research. Attached, you will find a copy of your original volunteer form for your records. Regards,")
+	add_field(/datum/report_field/instruction, "Уважаемый за&#255;витель, с сожалением сообщаем Вам, что Ваше за&#255;вление на волонтёрство в качестве подопытного в корпорации NanoTrasen было отвергнуто. Мы благодарим Вас за интерес, про&#255;вленный к компании и научному прогрессу. В приложении Вы найдёте оригинал Вашего за&#255;влени&#255;. С уважением,")
+	add_field(/datum/report_field/signature, "Подпись представител&#255; NanoTrasen")
+	add_field(/datum/report_field/people/from_manifest, "Им&#255; волонтёра")
+	add_field(/datum/report_field/instruction, "Причина отказа")
+	add_field(/datum/report_field/options/yes_no, "Физическа&#255; непригодность")
+	add_field(/datum/report_field/options/yes_no, "Психологическа&#255; непригодность")
+	add_field(/datum/report_field/options/yes_no, "Отмена проекта")
+	add_field(/datum/report_field/simple_text, "Другое")
+	add_field(/datum/report_field/options/yes_no, "Отчёт одобрен")
 	set_access(access_edit = access_nanotrasen)
 
 /datum/computer_file/report/recipient/nt/memo/generate_fields()
 	..()
 	add_header()
-	add_field(/datum/report_field/simple_text, "Subject")
-	add_field(/datum/report_field/pencode_text, "Body")
-	add_field(/datum/report_field/signature, "Authorizing Signature")
-	add_field(/datum/report_field/options/yes_no, "Подтверждение")
+	add_field(/datum/report_field/simple_text, "Тема")
+	add_field(/datum/report_field/pencode_text, "Текст")
+	add_field(/datum/report_field/signature, "Авторизовано")
+	add_field(/datum/report_field/options/yes_no, "Одобрено")
 
 /datum/computer_file/report/recipient/nt/memo/internal
 	form_name = "NT-0003"
-	title = "Internal Memorandum"
+	title = "Внутренн&#255;&#255; записка"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/memo/internal/New()
@@ -402,7 +403,7 @@
 
 /datum/computer_file/report/recipient/nt/memo/external
 	form_name = "NT-0005"
-	title = "External Memorandum"
+	title = "Внешн&#255;&#255; записка"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/memo/external/New()
@@ -412,106 +413,81 @@
 //No access restrictions for easier use.
 /datum/computer_file/report/recipient/nt/sales
 	form_name = "NT-2192"
-	title = "NanoTrasen Sales Contract and Receipt"
+	title = "Торговый контракт и квитанци&#255; NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/sales/generate_fields()
 	..()
 	add_header()
-	add_field(/datum/report_field/instruction, "Product Information")
-	add_field(/datum/report_field/simple_text, "Product Им&#255;")
-	add_field(/datum/report_field/simple_text, "Product Type")
-	add_field(/datum/report_field/number, "Product Unit Cost (T)")
-	add_field(/datum/report_field/number, "Product Units Requested")
-	add_field(/datum/report_field/number, "Total Cost (T)")
-	add_field(/datum/report_field/instruction, "Seller Information")
-	add_field(/datum/report_field/instruction, "The 'Purchaser' may not return any sold product units for re-compensation in thalers, but may return the item for an identical item, or item of equal material (not thaler) value. The 'Seller' agrees to make their best effort to repair, or replace any items that fail to accomplish their designed purpose, due to malfunction or manufacturing error - but not user-caused damage.")
+	add_field(/datum/report_field/instruction, "Информаци&#255; о продукте")
+	add_field(/datum/report_field/simple_text, "Название продукта")
+	add_field(/datum/report_field/simple_text, "Тип продукта")
+	add_field(/datum/report_field/number, "Стоимость одной единицы продукта (Т)")
+	add_field(/datum/report_field/number, "Запрошенное количество продукта")
+	add_field(/datum/report_field/number, "Обща&#255; стоимость (Т)")
+	add_field(/datum/report_field/instruction, "Информаци&#255; о продавце")
+	add_field(/datum/report_field/instruction, "Покупатель не имеет права на возврат купленных единиц продукта в обмен на компенсацию в талерах, но может обмен&#255;ть предмет на такой же предмет, или равную стоимость в предметах (не таллрах). Продавец соглашаетс&#255; сделать всё от него завис&#255;щее дл&#255; ремонта или замены предметов, св&#255;занных с производственным браком или некорректной работой, но не урона, причинённого при использовании, с целью выполнени&#255; их предполагаемой задачи.")
 	add_field(/datum/report_field/people/from_manifest, "Им&#255;")
-	add_field(/datum/report_field/signature, "Signature")
-	add_field(/datum/report_field/options/yes_no, "Подтверждение")
+	add_field(/datum/report_field/signature, "Подпись")
+	add_field(/datum/report_field/options/yes_no, "Одобрено")
 
 /datum/computer_file/report/recipient/nt/visa
 	form_name = "NT-0952"
-	title = "NanoTrasen Sol Central Government Work Visa Request Form"
+	title = "Форма запроса визы Центрального Правительства Солнечной Системы NanoTrasen"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/visa/generate_fields()
 	..()
 	add_header()
 	var/datum/report_field/temp_field
-	add_field(/datum/report_field/people/from_manifest, "Intended Recipient of Visa")
-	add_field(/datum/report_field/pencode_text, "Reason for Request")
-	add_field(/datum/report_field/signature, "Applicant's Signature")
-	temp_field = add_field(/datum/report_field/signature, "Request Issuer's Signature")
+	add_field(/datum/report_field/people/from_manifest, "Получатель визы")
+	add_field(/datum/report_field/pencode_text, "Причина запроса")
+	add_field(/datum/report_field/signature, "Подпись получател&#255; визы")
+	temp_field = add_field(/datum/report_field/signature, "Подпись составител&#255;")
 	temp_field.set_access(access_edit = access_nanotrasen)
-	temp_field = add_field(/datum/report_field/options/yes_no, "Request Подтверждение by Issuer")
+	temp_field = add_field(/datum/report_field/options/yes_no, "Одобрено составителем")
 	temp_field.set_access(access_edit = access_nanotrasen)
-	temp_field = add_field(/datum/report_field/signature, "Issuing Authority's Signature (acknowledging reciept)")
+	temp_field = add_field(/datum/report_field/signature, "Подпись органа власти, подтверждающа&#255; получение")
 	temp_field.set_access(access_edit = access_iaa)
 
 /datum/computer_file/report/recipient/nt/payout
 	form_name = "NT-3310"
-	title = "Next of Kin Payout Authorization"
+	title = "Авторизаци&#255; выплаты ближайшему родственнику"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/payout/generate_fields()
 	..()
 	add_header()
-	add_field(/datum/report_field/people/from_manifest, "This document hereby authorizes the payout of the remaining salary of")
-	add_field(/datum/report_field/pencode_text, "As well as the net-worth of any remaining personal assets: (Asset, Thaler Amount)")
-	add_field(/datum/report_field/pencode_text, "Including personal effects")
-	add_field(/datum/report_field/instruction, "To be shipped and delivered directly to the employee's next of kin without delay.")
-	add_field(/datum/report_field/signature, "Signature")
-	add_field(/datum/report_field/options/yes_no, "Подтверждение")
+	add_field(/datum/report_field/people/from_manifest, "Насто&#255;щий документ авторизует выплату оставшейс&#255; части зарплаты,")
+	add_field(/datum/report_field/pencode_text, "а также стоимость личного имущества: (имущество, количество талеров),")
+	add_field(/datum/report_field/pencode_text, "включа&#255; личные вещи")
+	add_field(/datum/report_field/instruction, "Отправить и доставить ближайшему родственнику сотрудника без задержек.")
+	add_field(/datum/report_field/signature, "Подпись")
+	add_field(/datum/report_field/options/yes_no, "Одобрено")
 	set_access(access_edit = access_nanotrasen)
 
-//Solgov reports, mostly for the SGR
+//Solgov reports, mostly for the NR
 /datum/computer_file/report/recipient/sol
-	logo = "\[ntcrest\]"
-	form_name = "SCG-REP-00"
+	logo = "\[logo\]"
+	form_name = "NT-REP-00"
 
 /datum/computer_file/report/recipient/sol/audit
-	form_name = "SCG-REP-12"
-	title = "НСН Сиерра Department Audit"
+	form_name = "NT-REP-12"
+	title = "Аудит департамента НСН Сиерра"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sol/audit/generate_fields()
-	add_field(/datum/report_field/date, "Date")
-	add_field(/datum/report_field/time, "Time")
-	add_field(/datum/report_field/simple_text, "Им&#255; of Department")
-	add_field(/datum/report_field/pencode_text, "Positive Observations")
-	add_field(/datum/report_field/pencode_text, "Negative Observations")
-	add_field(/datum/report_field/pencode_text, "Other Notes")
-	add_field(/datum/report_field/signature, "Signature")
-	add_field(/datum/report_field/options/yes_no, "Подтверждение")
+	add_field(/datum/report_field/date, "Дата")
+	add_field(/datum/report_field/time, "Врем&#255;")
+	add_field(/datum/report_field/simple_text, "Глава департамента")
+	add_field(/datum/report_field/pencode_text, "Положительные наблюдени&#255;")
+	add_field(/datum/report_field/pencode_text, "Отрицательные наблюдени&#255;")
+	add_field(/datum/report_field/pencode_text, "Прочие заметки")
+	add_field(/datum/report_field/signature, "Подпись")
+	add_field(/datum/report_field/options/yes_no, "Одобрено")
 	set_access(access_edit = access_iaa)
 
 /datum/computer_file/report/recipient/sol/audit
-	form_name = "SCG-REP-4"
-	title = "Crewman Incident Report"
+	form_name = "NT-REP-4"
+	title = "Отчёт об инциденте"
 	available_on_ntnet = 1
-
-/datum/computer_file/report/recipient/sol/audit/generate_fields()
-	add_field(/datum/report_field/date, "Date")
-	add_field(/datum/report_field/time, "Time")
-	add_field(/datum/report_field/people/from_manifest, "Crewman Involved in Incident")
-	add_field(/datum/report_field/simple_text, "Nature of Incident")
-	add_field(/datum/report_field/pencode_text, "Description of incident")
-	add_field(/datum/report_field/signature, "Signature")
-	add_field(/datum/report_field/options/yes_no, "Подтверждение")
-
-/datum/computer_file/report/recipient/sol/audit
-	form_name = "SCG-REP-03b"
-	title = "Work Visa Issuing Form"
-	available_on_ntnet = 1
-
-/datum/computer_file/report/recipient/sol/audit/generate_fields()
-	var/datum/report_field/temp_field
-	add_field(/datum/report_field/date, "Date")
-	add_field(/datum/report_field/time, "Time")
-	add_field(/datum/report_field/people/from_manifest, "Recipient of Work Visa")
-	add_field(/datum/report_field/simple_text, "Species of Recipient")
-	temp_field = add_field(/datum/report_field/signature, "Issuer of Work Visa Signature")
-	add_field(/datum/report_field/signature, "Recipient of Work Visa Signature")
-	add_field(/datum/report_field/options/yes_no, "Подтверждение")
-	temp_field.set_access(access_edit = access_iaa)

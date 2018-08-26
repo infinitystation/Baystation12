@@ -34,8 +34,6 @@
 		/obj/item/clothing/head/helmet,
 		/obj/item/weapon/clipboard,
 		/obj/item/device/flashlight,
-		/obj/item/device/holowarrant,
-		/obj/item/weapon/folder/yellow,
 		/obj/item/weapon/storage/box/armband/engine,
 		/obj/item/device/multitool/multimeter,
 		/obj/item/weapon/storage/box/secret_project_disks,

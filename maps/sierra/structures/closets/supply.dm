@@ -54,7 +54,6 @@
 		/obj/item/stack/package_wrap/twenty_five,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
-		/obj/item/device/holowarrant,
 		/obj/item/clothing/suit/armor/pcarrier/light,
 		/obj/item/device/binoculars,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack = 75, /obj/item/weapon/storage/backpack/satchel/grey = 25)),
@@ -72,7 +71,6 @@
 
 /obj/structure/closet/secure_closet/prospector/WillContain()
 	return list(
-		/obj/item/device/radio/headset/headset_sci,
 		/obj/item/clothing/under/rank/miner,
 		/obj/item/clothing/accessory/storage/webbing,
 		/obj/item/clothing/gloves/thick,

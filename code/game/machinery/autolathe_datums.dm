@@ -557,6 +557,12 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	hidden = 1
 	category = "Arms and Ammunition"
 
+/datum/autolathe/recipe/magazine_nt41
+	name = "NT41 ammunition (10mm)"
+	path = /obj/item/ammo_magazine/n10mm
+	hidden = 1
+	category = "Arms and Ammunition"
+
 /datum/autolathe/recipe/magazine_arifle
 	name = "ammunition (5.56mm)"
 	path = /obj/item/ammo_magazine/c556
