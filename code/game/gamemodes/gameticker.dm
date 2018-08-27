@@ -337,9 +337,6 @@ var/global/datum/controller/gameticker/ticker
 			if(!config.ooc_allowed)
 				config.ooc_allowed = 1
 				to_world("<B>The OOC channel has been globally enabled!</B>")
-			if(config.announce_shuttle_dock_to_irc)
-				send2mainirc("Раунд [ticker.mode.name] завершен за [roundduration2text()]. @Roundwaiter.")
-				send2maindiscord("Раунд [ticker.mode.name] завершен за [roundduration2text()]. @Roundwaiter.")
 
 			declare_completion()
 			Master.SetRunLevel(RUNLEVEL_POSTGAME)

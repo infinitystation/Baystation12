@@ -361,8 +361,8 @@ var/global/list/additional_antag_types = list()
 	if(escaped_total > 0)
 		feedback_set("escaped_total",escaped_total)
 
-	send2mainirc("A round of [src.name] has ended - [surviving_total] survivor\s, [ghosts] ghost\s, duration: [roundduration2text()].")
-	send2maindiscord("A round of **[src.name]** has ended - **[surviving_total]** survivors, **[ghosts]** ghosts.")
+	send2mainirc("Раунд с режимом [src.name] завершен. Выживших: [surviving_total]; призраков: [ghosts]; продолжительность: [roundduration2text()].")
+	send2maindiscord("Раунд с режимом **[src.name]** завершен. Выживших: **[surviving_total]**; призраков:  **[ghosts]**; продолжительность: [roundduration2text()].")
 
 	return 0
 
