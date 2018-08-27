@@ -4,6 +4,7 @@
 	#include "bearcat_define.dm"
 	#include "bearcat_jobs.dm"
 	#include "bearcat_loadouts.dm"
+	#include "bearcat_misc.dm"
 	#include "bearcat_unit_testing.dm"
 	#include "bearcat_shuttles.dm"
 	#include "bearcat-1.dmm"
