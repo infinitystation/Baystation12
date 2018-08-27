@@ -155,6 +155,13 @@
 		/obj/item/weapon/storage/pill_bottle
 	)
 
+/obj/item/clothing/accessory/storage/bandolier/armory/Initialize()
+	. = ..()
+
+	for(var/i = 0, i < slots, i++)
+		new /obj/item/ammo_casing/shotgun/pellet(hold)
+
+
 /obj/item/clothing/accessory/storage/bandolier/safari/Initialize()
 	. = ..()
 

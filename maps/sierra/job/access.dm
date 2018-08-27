@@ -103,8 +103,5 @@
 * SEV sierra *
 ************/
 
-/datum/access/robotics
-	region = ACCESS_REGION_ENGINEERING
-
 /datum/access/network
 	region = ACCESS_REGION_COMMAND

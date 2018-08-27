@@ -7,21 +7,21 @@
 	name = "submachine gun guncabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/smg/WillContain()
-	return list(/obj/item/weapon/gun/projectile/automatic/nt41 = 3,
-				/obj/item/ammo_magazine/n10mm = 9)
+	return list(/obj/item/weapon/gun/projectile/automatic/nt41 = 2,
+				/obj/item/ammo_magazine/n10mm = 6)
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/shotgun
 	name = "shotgun guncabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/shotgun/WillContain()
 	return list(/obj/item/weapon/gun/projectile/shotgun/pump/combat = 2,
-				/obj/item/clothing/accessory/storage/bandolier = 2)
+				/obj/item/clothing/accessory/storage/bandolier/armory = 2)
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/laser
 	name = "laser guncabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/laser/WillContain()
-	return list(/obj/item/weapon/gun/energy/laser = 3)
+	return list(/obj/item/weapon/gun/energy/laser = 2)
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/stun
 	name = "stun guncabinet"

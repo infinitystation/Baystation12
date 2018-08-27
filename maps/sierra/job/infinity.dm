@@ -147,7 +147,7 @@
 		/obj/item/weapon/combitool)
 
 /decl/hierarchy/outfit/marshal
-	name = "OCIE hunter"
+	name = "OCIE tracker"
 	shoes = /obj/item/clothing/shoes/jackboots
 	uniform = /obj/item/clothing/under/rank/security/navyblue
 	suit = /obj/item/clothing/suit/armor/pcarrier/light/sol
@@ -157,8 +157,8 @@
 	l_hand = /obj/item/weapon/gun/energy/taser
 	id_slot = slot_wear_id
 	id_type = /obj/item/weapon/card/id/security
-	id_desc = "An ID of SCG OCEI hunter."
-	id_pda_assignment = "OCEI hunter"
+	id_desc = "An ID of SCG OCEI tracker."
+	id_pda_assignment = "OCEI tracker"
 
 
 /decl/hierarchy/outfit/pmc

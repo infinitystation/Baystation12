@@ -107,6 +107,8 @@
 		/area/shuttle/escape/centcom,
 		/area/shuttle/alien,
 		/area/shuttle/alien/base,
+		/area/rnd/xenobiology,
+		/area/rnd/xenobiology/xenoflora,
 		/area/rnd/xenobiology/xenoflora_storage,
 		/area/prison/solitary,
 		/area/turret_protected/ai_upload_foyer,
