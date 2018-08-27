@@ -2826,6 +2826,8 @@
 #include "interface\skin.dmf"
 #include "maps\_map_include.dm"
 #include "maps\away\away_sites.dm"
+#include "maps\away_inf\white_star\white_star.dm"
+#include "maps\away_inf\white_star\white_star_areas.dm"
 #include "maps\away_sites_testing\away_sites_testing_define.dm"
 #include "maps\example\example_define.dm"
 #include "maps\exodus_infinity\exodus_define.dm"

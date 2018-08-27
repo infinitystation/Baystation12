@@ -169,9 +169,10 @@ var/list/holder_mob_icon_cache = list()
 	return H
 
 /mob/living/MouseDrop(var/mob/living/carbon/human/over_object)
-	if(istype(over_object) && Adjacent(over_object) && (usr == src || usr == over_object) && over_object.a_intent == I_GRAB)
+	if(istype(over_object) && Adjacent(over_object) && (usr == src || usr == over_object) && over_object.a_intent == I_HELP)
 		if(scoop_check(over_object))
 			get_scooped(over_object, (usr == src))
+			over_object.update_icon()
 			return
 	return ..()
 
@@ -179,7 +180,7 @@ var/list/holder_mob_icon_cache = list()
 	return 1
 
 /mob/living/carbon/human/scoop_check(var/mob/living/scooper)
-	return (scooper.mob_size > src.mob_size && a_intent == I_HELP)
+	return (scooper.mob_size > src.mob_size && (a_intent == I_HELP || src.incapacitated()))
 
 /obj/item/weapon/holder/human
 	icon = 'icons/mob/holder_complex.dmi'
