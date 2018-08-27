@@ -27,3 +27,31 @@
 	icon_override = "invisible"
 	species_restricted = null
 	body_parts_covered = 0
+
+/obj/item/clothing/under/rank/engineer/senior
+	name = "senior engineer's jumpsuit"
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
+	icon_state = "engine_senior"
+	item_state = "eng_senior" //YEAH, YEAH.
+	worn_state = "eng_senior"
+
+/obj/item/clothing/under/rank/captain/whitefleet
+	name = "white captain's uniform"
+	desc = "It's a white uniform with some gold markings denoting the rank of \"Captain\"."
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
+	icon_state = "wfleetcommander"
+	item_state = "wfleetcommander"
+	worn_state = "wfleetcommander"
+	displays_id = 0
+
+/obj/item/clothing/under/rank/captain/bluefleet
+	name = "darkblue captain's uniform"
+	desc = "It's a darkblue uniform with some gold markings denoting the rank of \"Captain\"."
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
+	icon_state = "fleet_com"
+	item_state = "fleet_com"
+	worn_state = "fleet_com"
+	displays_id = 0

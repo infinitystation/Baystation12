@@ -19,6 +19,8 @@
 		/obj/item/clothing/suit/captunic,
 		/obj/item/clothing/suit/captunic/capjacket,
 		/obj/item/clothing/gloves/captain,
+		/obj/item/clothing/under/rank/captain/whitefleet,
+		/obj/item/clothing/under/rank/captain/bluefleet,
 		/obj/item/clothing/under/rank/captain,
 		/obj/item/clothing/under/dress/dress_cap,
 		/obj/item/clothing/under/captainformal,
