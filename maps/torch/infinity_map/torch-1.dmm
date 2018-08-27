@@ -13734,6 +13734,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/effect/landmark/test/safe_turf,
 /turf/simulated/floor/tiled,
 /area/quartermaster/hangar)
 "Ad" = (
