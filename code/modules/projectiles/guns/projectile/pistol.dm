@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/colt
-	name = "Сolt М1911 pistol"
+	name = "Colt M1911 pistol"
 	desc = "A cheap Martian knock-off of a Colt M1911. Uses .45 rounds."
 	magazine_type = /obj/item/ammo_magazine/c45m
 	allowed_magazines = /obj/item/ammo_magazine/c45m
@@ -10,7 +10,7 @@
 
 /obj/item/weapon/gun/projectile/military
 	name = "WT45 pistol"
-	desc = "The WT45 - a mass produced kinetic sidearm in widespread service with the SCGDF. Uses .45 rounds."
+	desc = "The WT45 - a mass produced by Ward-Takahashi kinetic sidearm in widespread service with the SCGDF. Uses .45 rounds."
 	magazine_type = /obj/item/ammo_magazine/c45mds/flash
 	allowed_magazines = /obj/item/ammo_magazine/c45mds
 	icon_state = "usp"
