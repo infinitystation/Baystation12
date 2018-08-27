@@ -179,7 +179,7 @@ var/list/holder_mob_icon_cache = list()
 	return 1
 
 /mob/living/carbon/human/scoop_check(var/mob/living/scooper)
-	return (scooper.mob_size > src.mob_size && a_intent == I_HELP)
+	return (scooper.mob_size > src.mob_size && (a_intent == I_HELP || src.incapacitated()))
 
 /obj/item/weapon/holder/human
 	icon = 'icons/mob/holder_complex.dmi'
