@@ -1,4 +1,3 @@
-
 /datum/map/sierra
 
 	holodeck_programs = list(

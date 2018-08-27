@@ -677,7 +677,7 @@
 	icon_state = "fitness"
 
 /area/crew_quarters/mess
-	name = "\improper Mess Hall"
+	name = "\improper Canteen"
 	icon_state = "cafeteria"
 
 /area/crew_quarters/galley
@@ -899,6 +899,10 @@
 /area/bridge
 	name = "\improper Bridge"
 	icon_state = "bridge"
+
+/area/bridge/canteen
+	name = "\improper Command Canteen"
+	icon_state = "bar"
 
 /area/bridge/meeting_room
 	name = "\improper Heads of Staff Meeting Room"

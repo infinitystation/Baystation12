@@ -1,6 +1,6 @@
 /datum/map/sierra
 	name = "Sierra"
-	full_name = "NSV Sierra"
+	full_name = "ֽֽׁ ׁüוננא"
 	path = "sierra"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 
@@ -31,10 +31,10 @@
 
 	default_law_type = /datum/ai_laws/nanotrasen
 	use_overmap = 1
-	num_exoplanets = 0
+	num_exoplanets = 1
 	planet_size = list(129,129)
 
-	away_site_budget = 0
+	away_site_budget = 2
 
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 
