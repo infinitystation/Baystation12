@@ -73,3 +73,27 @@
 /obj/effect/landmark/overmap_target/yacht/fore_port
 	name = "fore port hull"
 	difficulty = 30
+
+				    //////////////
+					//White star//
+					//////////////
+
+obj/effect/landmark/overmap_target/white_star/section_1
+	name = "weapon section"
+	difficulty = 65
+
+obj/effect/landmark/overmap_target/white_star/section_2
+	name = "residential section"
+	difficulty = 60
+
+obj/effect/landmark/overmap_target/white_star/section_3
+	name = "engineering section"
+	difficulty = 70
+
+/obj/effect/landmark/overmap_target/white_star/miss
+	name = "miss"
+	difficulty = 35
+
+/obj/effect/landmark/overmap_target/white_star/miss2
+	name = "miss"
+	difficulty = 35
