@@ -315,10 +315,8 @@
 						SKILL_FINANCE		= SKILL_BASIC)
 	skill_points = 20
 
-	access = list(		access_iaa, access_tox, access_tox_storage, access_heads, access_research,
-						access_xenobiology,
-						access_xenoarch,
-						access_hangar, access_petrov, access_petrov_helm)
+	access = list(		access_iaa, access_research, access_xenoarch, access_heads, access_bridge,
+						access_hangar, access_petrov)
 
 	minimal_access = list()
 
