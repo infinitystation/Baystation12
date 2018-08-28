@@ -63,6 +63,7 @@
 /obj/structure/closet/secure_closet/hop2/WillContain()
 	return list(
 		/obj/item/clothing/under/rank/head_of_personnel,
+		/obj/item/clothing/under/rank/head_of_personnel/manager,
 		/obj/item/clothing/under/dress/dress_hop,
 		/obj/item/clothing/under/dress/dress_hr,
 		/obj/item/clothing/under/lawyer/female,
