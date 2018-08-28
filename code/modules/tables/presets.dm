@@ -3,13 +3,33 @@
 	color = COLOR_OFF_WHITE
 	material = DEFAULT_TABLE_MATERIAL
 
+/obj/structure/table/standard_wallf
+	icon = 'icons/obj/tables_inf.dmi'
+	icon_state = "wallf_regular"
+	color = COLOR_OFF_WHITE
+	material = DEFAULT_TABLE_MATERIAL
+	reinforced = DEFAULT_WALL_MATERIAL
+
 /obj/structure/table/steel
 	icon_state = "plain_preview"
 	color = COLOR_GRAY40
 	material = DEFAULT_WALL_MATERIAL
 
+/obj/structure/table/steel_wallf
+	icon = 'icons/obj/tables_inf.dmi'
+	icon_state = "wallf_regular"
+	color = COLOR_GRAY40
+	material = DEFAULT_WALL_MATERIAL
+	reinforced = DEFAULT_WALL_MATERIAL
+
 /obj/structure/table/marble
 	icon_state = "stone_preview"
+	color = COLOR_GRAY80
+	material = "marble"
+
+/obj/structure/table/marble_wallf
+	icon = 'icons/obj/tables_inf.dmi'
+	icon_state = "wallf_marble"
 	color = COLOR_GRAY80
 	material = "marble"
 
