@@ -3,7 +3,7 @@
 /turf/unsimulated/mineral,
 /area/space)
 "ab" = (
-/turf/unsimulated/mask,
+/turf/simulated/mineral/random,
 /area/mine/unexplored)
 "ac" = (
 /turf/simulated/floor/exoplanet/grass,
@@ -2651,7 +2651,6 @@
 /turf/simulated/floor/exoplanet/grass,
 /area/icarus/open)
 "iq" = (
-/obj/effect/landmark/random_gen/asteroid,
 /turf/unsimulated/mineral,
 /area/space)
 "jb" = (

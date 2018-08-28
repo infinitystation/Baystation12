@@ -6,7 +6,7 @@
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
 "ac" = (
-/turf/unsimulated/mask,
+/turf/simulated/mineral/random,
 /area/mine/unexplored)
 "ad" = (
 /obj/effect/overmap/sector/smugglers,
@@ -54,7 +54,7 @@
 /turf/simulated/floor,
 /area/smugglers/base)
 "ah" = (
-/turf/unsimulated/mask,
+/turf/simulated/mineral/random,
 /area/mine/explored)
 "ai" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
@@ -1202,10 +1202,6 @@
 /turf/space,
 /area/space)
 "cQ" = (
-/obj/effect/landmark/random_gen/asteroid{
-	generation_height = 50;
-	generation_width = 50
-	},
 /turf/space,
 /area/space)
 

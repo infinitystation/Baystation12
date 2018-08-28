@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/turf/unsimulated/mask,
+/turf/simulated/mineral/random,
 /area/mine/unexplored)
 "ab" = (
 /turf/simulated/floor/asteroid,
@@ -91,7 +91,7 @@
 /turf/simulated/floor/tiled,
 /area/outpost/abandoned)
 "av" = (
-/turf/unsimulated/mask,
+/turf/simulated/mineral/random,
 /area/outpost/abandoned)
 "aw" = (
 /obj/structure/table/glass,
@@ -2492,7 +2492,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/unsimulated/mask,
+/turf/simulated/mineral/random,
 /area/outpost/abandoned)
 "hz" = (
 /obj/structure/cable/orange{
@@ -2504,7 +2504,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/unsimulated/mask,
+/turf/simulated/mineral/random,
 /area/outpost/abandoned)
 "hA" = (
 /obj/structure/cable/orange{
@@ -2516,14 +2516,14 @@
 	icon_state = "1-4";
 	dir = 4
 	},
-/turf/unsimulated/mask,
+/turf/simulated/mineral/random,
 /area/outpost/abandoned)
 "hB" = (
 /obj/structure/cable/orange{
 	icon_state = "1-4";
 	dir = 4
 	},
-/turf/unsimulated/mask,
+/turf/simulated/mineral/random,
 /area/outpost/abandoned)
 "hC" = (
 /obj/structure/table/rack,
@@ -2671,11 +2671,7 @@
 /turf/simulated/floor/carpet/blue,
 /area/outpost/abandoned)
 "xb" = (
-/obj/effect/landmark/random_gen/asteroid{
-	generation_height = 200;
-	generation_width = 200
-	},
-/turf/unsimulated/mask,
+/turf/simulated/mineral/random,
 /area/mine/unexplored)
 "yb" = (
 /obj/item/weapon/storage/mirror{
