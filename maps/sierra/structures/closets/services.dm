@@ -42,15 +42,13 @@
 		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger/hyd, 50)
 	)
 
-/obj/structure/closet/jcloset_sierra
-	name = "custodial closet"
-	desc = "It's a storage unit for janitorial equipment."
-	icon_state = "mixed"
-	icon_closed = "mixed"
-
-/obj/structure/closet/jcloset_sierra/WillContain()
+/obj/structure/closet/jcloset/sierra/WillContain()
 	return list(
+		/obj/item/clothing/head/beret/purple,
 		/obj/item/clothing/head/soft/purple,
+		/obj/item/clothing/under/rank/janitor,,
+		/obj/item/clothing/head/soft/darkred,
+		/obj/item/clothing/under/rank/janitor/white,
 		/obj/item/device/radio/headset/headset_service,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/device/flashlight,
@@ -59,7 +57,7 @@
 		/obj/item/weapon/storage/bag/trash,
 		/obj/item/clothing/shoes/galoshes,
 		/obj/item/weapon/storage/box/detergent,
-		/obj/item/weapon/soap
+		/obj/item/weapon/soap/nanotrasen
 	)
 
 /obj/structure/closet/secure_closet/bar_sierra
