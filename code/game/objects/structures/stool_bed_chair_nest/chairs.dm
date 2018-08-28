@@ -278,6 +278,9 @@
 /obj/structure/bed/chair/office/yellow/New(var/newloc,var/newmaterial)
 	..(newloc,"steel","yellow")
 
+/obj/structure/bed/chair/office/brown/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","brown")
+
 /obj/structure/bed/chair/office/teal/New(var/newloc,var/newmaterial)
 	..(newloc,"steel","teal")
 
