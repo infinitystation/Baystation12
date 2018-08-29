@@ -172,7 +172,7 @@ var/list/holder_mob_icon_cache = list()
 	if(istype(over_object) && Adjacent(over_object) && (usr == src || usr == over_object) && over_object.a_intent == I_HELP)
 		if(scoop_check(over_object))
 			get_scooped(over_object, (usr == src))
-			over_object.update_icon()
+			over_object.regenerate_icons()
 			return
 	return ..()
 
