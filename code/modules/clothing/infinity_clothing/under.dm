@@ -65,8 +65,9 @@
 	worn_state = "janitor_uniform"
 	displays_id = 0
 
-/obj/item/clothing/under/rank/head_of_personnel/manager
+/obj/item/clothing/under/manager
 	name = "manager's uniform"
+	desc = "A generic suit for office's middle managar. Our usual worker (who'll know?)."
 	icon = 'icons/obj/clothing/infinity/uniform.dmi'
 	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
 	icon_state = "middle_manager"

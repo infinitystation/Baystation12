@@ -55,6 +55,7 @@
 	suits += /obj/item/clothing/under/blazer
 	suits += /obj/item/clothing/under/blackjumpskirt
 	suits += /obj/item/clothing/under/kilt
+	suits += /obj/item/clothing/under/manager
 	suits += /obj/item/clothing/under/dress/dress_hr
 	suits += /obj/item/clothing/under/det
 	suits += /obj/item/clothing/under/det/black
