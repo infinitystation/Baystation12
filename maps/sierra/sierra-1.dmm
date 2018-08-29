@@ -317,14 +317,6 @@
 /obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod7/station)
-"aU" = (
-/obj/machinery/light/spot{
-	pixel_y = 32
-	},
-/obj/effect/paint/nt_white,
-/obj/effect/paint_stripe/nt_red,
-/turf/simulated/wall/r_wall/prepainted,
-/area/exploration_shuttle/cockpit)
 "aV" = (
 /obj/machinery/door/blast/regular/open{
 	density = 0;
@@ -524,6 +516,7 @@
 /area/quartermaster/hangar)
 "bn" = (
 /obj/machinery/light/small,
+/obj/structure/bed/padded,
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
 "bo" = (
@@ -867,7 +860,6 @@
 	pixel_y = 24;
 	req_access = list(11)
 	},
-/obj/structure/bed/chair/shuttle,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9;
 	icon_state = "borderfloor_white"
@@ -884,6 +876,7 @@
 	icon_state = "bordercolorcorner2";
 	dir = 10
 	},
+/obj/structure/bed/chair/shuttle/green,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/crew)
 "bS" = (
@@ -894,7 +887,6 @@
 /obj/structure/sign/ecplaque{
 	pixel_y = 30
 	},
-/obj/structure/bed/chair/shuttle,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
 	icon_state = "borderfloor_white"
@@ -903,10 +895,10 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
+/obj/structure/bed/chair/shuttle/green,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/crew)
 "bT" = (
-/obj/structure/bed/chair/shuttle,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1;
 	icon_state = "borderfloor_white"
@@ -915,6 +907,7 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
+/obj/structure/bed/chair/shuttle/green,
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/crew)
 "bU" = (
@@ -1180,7 +1173,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/bed/chair/shuttle{
+/obj/structure/bed/chair/shuttle/blue{
 	icon_state = "shuttle_chair_preview";
 	dir = 1
 	},
@@ -1561,7 +1554,7 @@
 	icon_state = "camera";
 	dir = 1
 	},
-/obj/structure/bed/chair/shuttle{
+/obj/structure/bed/chair/shuttle/blue{
 	icon_state = "shuttle_chair_preview";
 	dir = 1
 	},
@@ -2400,7 +2393,7 @@
 /obj/structure/sign/warning/nosmoking_burned{
 	pixel_y = 32
 	},
-/obj/structure/bed/chair/shuttle{
+/obj/structure/bed/chair/shuttle/green{
 	icon_state = "shuttle_chair_preview";
 	dir = 8
 	},
@@ -2833,7 +2826,7 @@
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
 "fk" = (
-/obj/structure/bed/chair/shuttle{
+/obj/structure/bed/chair/shuttle/green{
 	icon_state = "shuttle_chair_preview";
 	dir = 8
 	},
@@ -3149,8 +3142,8 @@
 	name = "pathfinder suit storage";
 	req_access = list(94)
 	},
-/obj/item/weapon/rig/command/exploration/equipped,
 /obj/item/clothing/mask/gas/half,
+/obj/item/weapon/rig/command/pf/equipped,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
 "fT" = (
@@ -3262,7 +3255,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/bed/chair/shuttle{
+/obj/structure/bed/chair/shuttle/green{
 	icon_state = "shuttle_chair_preview";
 	dir = 8
 	},
@@ -17220,6 +17213,7 @@
 /obj/effect/shuttle_landmark/escape_pod/start/pod9,
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod9/station)
 "CN" = (
@@ -44503,7 +44497,7 @@ ag
 ag
 an
 aH
-aU
+aZ
 bf
 bf
 bf

@@ -56,7 +56,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	backpack_overrides[/decl/backpack_outfit/messenger_bag] = /obj/item/weapon/storage/backpack/messenger/com
 
 /decl/hierarchy/outfit/job/sierra/crew/command/hop
-	name = OUTFIT_JOB_NAME("Head of Personnel")
+	name = OUTFIT_JOB_NAME("Head of Personnel - Sierra")
 	uniform = /obj/item/clothing/under/rank/head_of_personnel
 	l_ear = /obj/item/device/radio/headset/heads/hop
 	shoes = /obj/item/clothing/shoes/brown
@@ -105,7 +105,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	BACKPACK_OVERRIDE_ENGINEERING
 
 /decl/hierarchy/outfit/job/sierra/crew/command/hos
-	name = OUTFIT_JOB_NAME("Head of Security")
+	name = OUTFIT_JOB_NAME("Head of Security - Sierra")
 	l_ear = /obj/item/device/radio/headset/heads/hos
 	uniform = /obj/item/clothing/under/rank/head_of_security/corp
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -190,13 +190,13 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	BACKPACK_OVERRIDE_SECURITY
 
 /decl/hierarchy/outfit/job/sierra/crew/security/warden
-	name = OUTFIT_JOB_NAME("Warden")
+	name = OUTFIT_JOB_NAME("Warden - Sierra")
 	uniform = /obj/item/clothing/under/rank/warden/corp
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/sierra/crew/security/warden
 
 /decl/hierarchy/outfit/job/sierra/crew/security/detective
-	name = OUTFIT_JOB_NAME("Detective")
+	name = OUTFIT_JOB_NAME("Detective - Sierra")
 	head = /obj/item/clothing/head/det
 	uniform = /obj/item/clothing/under/det
 	suit = /obj/item/clothing/suit/storage/det_trench/ft
@@ -205,7 +205,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	pda_type = /obj/item/modular_computer/pda/forensics
 
 /decl/hierarchy/outfit/job/sierra/crew/security/officer
-	name = OUTFIT_JOB_NAME("Security Officer")
+	name = OUTFIT_JOB_NAME("Security Officer - Sierra")
 	uniform = /obj/item/clothing/under/rank/security/corp
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/sierra/crew/security
@@ -226,7 +226,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	BACKPACK_OVERRIDE_MEDICAL
 
 /decl/hierarchy/outfit/job/sierra/crew/medical/senior
-	name = OUTFIT_JOB_NAME("Surgeon")
+	name = OUTFIT_JOB_NAME("Surgeon - Sierra")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs
 	id_type = /obj/item/weapon/card/id/sierra/crew/medical/senior
 
@@ -270,7 +270,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/nurse
-	name = OUTFIT_JOB_NAME("Nurse")
+	name = OUTFIT_JOB_NAME("Nurse - Sierra")
 	suit = null
 
 /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/nurse/pre_equip(mob/living/carbon/human/H)

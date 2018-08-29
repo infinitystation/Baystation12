@@ -1,6 +1,6 @@
 /datum/map/sierra
 	name = "Sierra"
-	full_name = "ֽֽׁ ׁüוננא"
+	full_name = "NSV Sierra"
 	path = "sierra"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 
