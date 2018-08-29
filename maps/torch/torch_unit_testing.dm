@@ -6,7 +6,7 @@
 		/area/engineering/auxpower = NO_SCRUBBER|NO_VENT,
 		/area/engineering/drone_fabrication = NO_SCRUBBER|NO_VENT,
 		/area/engineering/engine_smes = NO_SCRUBBER|NO_VENT,
-		/area/engineering/fuelbay = NO_SCRUBBER,
+		/area/engineering/fuelbay = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/holodeck = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/maintenance = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/disposal = NO_SCRUBBER|NO_VENT|NO_APC,
@@ -18,7 +18,7 @@
 		/area/maintenance/firstdeck/forestarboard = NO_SCRUBBER,
 		/area/maintenance/fourthdeck/aft = 0,
 		/area/maintenance/incinerator = NO_SCRUBBER,
-		/area/maintenance/disposal = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/maintenance/disposal = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/seconddeck/aftport = NO_SCRUBBER,
 		/area/maintenance/seconddeck/forestarboard = NO_SCRUBBER,
 		/area/maintenance/seconddeck/hallway = NO_SCRUBBER|NO_VENT,
@@ -114,11 +114,6 @@
 		/area/shuttle/escape/centcom,
 		/area/shuttle/alien,
 		/area/shuttle/alien/base,
-/*		/area/albatros_hangar/start,
-		/area/albatros_hangar,*/
-		/area/rnd/xenobiology,
-		/area/rnd/xenobiology/xenoflora,
-		/area/rnd/xenobiology/xenoflora_storage,
 		/area/prison/solitary,
 		/area/turret_protected/ai_upload_foyer,
 		/area/engineering/gravity_gen,
@@ -141,13 +136,13 @@
 		/area/mine,
 		/area/ship,
 		/area/smugglers,
-//		/area/slavers_base,
+		/area/slavers_base,
 		/area/yacht,
 		/area/bluespaceriver,
 		/area/mobius_rift,
 		/area/icarus,
-//		/area/errant_pisces,
-//		/area/lar_maria,
+		/area/errant_pisces,
+		/area/lar_maria,
 		/area/map_template,
 		/area/unishi,
 		/area/exoplanet
@@ -168,7 +163,3 @@ datum/unit_test/zas_area_test/supply_centcomm
 datum/unit_test/zas_area_test/virology
 	name = "ZAS: Virology"
 	area_path = /area/medical/virology
-
-datum/unit_test/zas_area_test/xenobio
-	name = "ZAS: Xenobiology"
-	area_path = /area/rnd/xenobiology
