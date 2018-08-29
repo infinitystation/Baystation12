@@ -46,7 +46,7 @@
 	return list(
 		/obj/item/clothing/head/beret/purple,
 		/obj/item/clothing/head/soft/purple,
-		/obj/item/clothing/under/rank/janitor,,
+		/obj/item/clothing/under/rank/janitor,
 		/obj/item/clothing/head/soft/darkred,
 		/obj/item/clothing/under/rank/janitor/white,
 		/obj/item/device/radio/headset/headset_service,
