@@ -159,12 +159,9 @@ Please contact me on #coderbus IRC. ~Carn x
 		if(is_cloaked())
 			visible_overlays = list(visible_overlays[R_HAND_LAYER], visible_overlays[L_HAND_LAYER])
 			if(species.reagent_tag == IS_NABBER)
-				icon = 'icons/mob/infinity_mob_nabber.dmi'
-				icon_state = "cloak_full"
+				alpha = 25
 			else
-				icon = 'icons/mob/infinity_mob.dmi'
-				icon_state = "cloak_full"
-
+				alpha = 40
 		else
 			icon = stand_icon
 			icon_state = null
