@@ -1,6 +1,6 @@
 /datum/map/bearcat
 	name = "Bearcat"
-	full_name = "Bearcat"
+	full_name = "FTV Bearcat"
 	path = "bearcat_inf"
 
 	station_name  = "FTV Bearcat"
@@ -25,7 +25,7 @@
 	allowed_spawns = list("Cryogenic Storage")
 	default_spawn = "Cryogenic Storage"
 	use_overmap = 1
-	num_exoplanets = 2
+	num_exoplanets = 0
 	away_site_budget = 2
 	welcome_sound = 'sound/effects/cowboysting.ogg'
 
