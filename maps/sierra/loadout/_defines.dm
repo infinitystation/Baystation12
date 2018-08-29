@@ -82,7 +82,7 @@
 	/datum/job/senior_scientist, /datum/job/scientist, /datum/job/chief_engineer,\
 	/datum/job/engineer_trainee, /datum/job/explorer_engineer)
 
-//For members of the security department (asset protection)
+//For members of the security department
 #define SECURITY_ROLES list(\
 	/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer)
 
