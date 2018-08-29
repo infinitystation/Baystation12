@@ -13147,13 +13147,14 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/bed/chair/office/dark{
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/structure/bed/chair/office/comfy/brown{
+	icon_state = "comfyofficechair_preview";
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/deckofficer)
@@ -13300,7 +13301,7 @@
 	name = "Supply Desk Shutters"
 	},
 /obj/structure/wall_frame/prepainted,
-/obj/structure/table/standard_wallf,
+/obj/structure/table/wallf,
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/office)
 "wk" = (
@@ -14315,7 +14316,8 @@
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
 "xF" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/bed/chair/office/brown{
+	icon_state = "officechair_preview";
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -17809,7 +17811,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 1
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/guppy_hangar/start)
 "DF" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -17828,7 +17830,7 @@
 	frequency = 1431;
 	id_tag = "guppy_shuttle_pump"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/guppy_hangar/start)
 "DG" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -17839,7 +17841,7 @@
 	frequency = 1431;
 	id_tag = "guppy_shuttle_pump_out_internal"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/guppy_hangar/start)
 "DH" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -18226,7 +18228,7 @@
 	frequency = 1431;
 	id_tag = "guppy_shuttle_pump_out_internal"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/guppy_hangar/start)
 "Er" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -18238,7 +18240,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 8
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/guppy_hangar/start)
 "Es" = (
 /obj/machinery/light/small{
@@ -18257,7 +18259,7 @@
 	frequency = 1431;
 	id_tag = "guppy_shuttle_pump"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techmaint,
 /area/guppy_hangar/start)
 "Et" = (
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
@@ -23012,7 +23014,10 @@
 	name = "DO Office Shutters"
 	},
 /obj/structure/wall_frame/prepainted,
-/obj/structure/table/standard_wallf,
+/obj/structure/table/wallf{
+	icon_state = "wallf_regular";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/deckofficer)
 "Wp" = (
@@ -23329,7 +23334,8 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/obj/structure/bed/chair/office/dark{
+/obj/structure/bed/chair/office/brown{
+	icon_state = "officechair_preview";
 	dir = 4
 	},
 /turf/simulated/floor/tiled,

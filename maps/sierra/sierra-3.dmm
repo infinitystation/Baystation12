@@ -6511,7 +6511,9 @@
 /obj/item/weapon/pen,
 /obj/structure/disposalpipe/segment,
 /obj/structure/wall_frame/prepainted,
-/obj/structure/table/standard_wallf,
+/obj/structure/table/wallf{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
 "akU" = (
@@ -8983,7 +8985,9 @@
 	name = "HoP Desk's Shutters";
 	opacity = 0
 	},
-/obj/structure/table/standard_wallf,
+/obj/structure/table/wallf{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/office/hop)
 "aoi" = (
@@ -15339,7 +15343,9 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/wall_frame/prepainted,
-/obj/structure/table/standard_wallf,
+/obj/structure/table/wallf{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/chemistry)
 "axg" = (
@@ -15871,7 +15877,6 @@
 /area/security/sierra/armory/lobby)
 "axP" = (
 /obj/machinery/door/firedoor,
-/obj/structure/table/steel_reinforced,
 /obj/machinery/door/window/northright{
 	name = "Armory Desk";
 	req_access = list(3)
@@ -15883,6 +15888,11 @@
 	id = "armory_shutters";
 	name = "Armory Desk";
 	opacity = 1
+	},
+/obj/structure/wall_frame/prepainted,
+/obj/structure/table/wallf/steel{
+	icon_state = "wallf_regular";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/sierra/armory/lobby)
@@ -18815,7 +18825,7 @@
 	opacity = 1
 	},
 /obj/structure/wall_frame/prepainted,
-/obj/structure/table/steel_wallf,
+/obj/structure/table/wallf/steel,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/sierra/sergeant)
 "aBH" = (
@@ -19731,15 +19741,23 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/purple/border,
 /obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	icon_state = "steel_decals4";
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	icon_state = "steel_decals4";
+	dir = 5
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aCW" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/purple/border,
 /obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/borderfloor/corner2,
+/obj/effect/floor_decal/corner/purple/bordercorner2,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aCX" = (
@@ -22075,7 +22093,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/wall_frame/prepainted,
-/obj/structure/table/standard_wallf,
+/obj/structure/table/wallf,
 /turf/simulated/floor/tiled/techfloor,
 /area/rnd/development)
 "aGl" = (
@@ -22404,8 +22422,6 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
 "aGD" = (
-/obj/machinery/cell_charger,
-/obj/item/weapon/cell/high,
 /obj/effect/floor_decal/corner/purple/half{
 	icon_state = "bordercolorhalf";
 	dir = 1
@@ -22415,7 +22431,10 @@
 	dir = 1
 	},
 /obj/structure/disposalpipe/segment,
-/obj/structure/table/standard,
+/obj/machinery/computer/rdconsole/robotics{
+	icon_state = "computer";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
 "aGE" = (
@@ -23863,7 +23882,7 @@
 	req_access = list(2)
 	},
 /obj/structure/wall_frame/prepainted,
-/obj/structure/table/steel_wallf,
+/obj/structure/table/wallf/steel,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/sierra/permabrig)
 "aIx" = (
@@ -23895,6 +23914,9 @@
 	pixel_x = -24;
 	pixel_y = 0
 	},
+/obj/structure/table/standard,
+/obj/machinery/cell_charger,
+/obj/item/weapon/cell/high,
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
 "aIz" = (
@@ -30583,6 +30605,14 @@
 /obj/structure/noticeboard{
 	dir = 1;
 	pixel_y = -26
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 9;
+	icon_state = "borderfloorcorner2_white"
+	},
+/obj/effect/floor_decal/corner/purple/bordercorner2{
+	icon_state = "bordercolorcorner2";
+	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
