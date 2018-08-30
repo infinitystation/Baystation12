@@ -157,13 +157,13 @@ Please contact me on #coderbus IRC. ~Carn x
 
 		var/list/visible_overlays
 		if(is_cloaked())
-			icon = 'icons/mob/human.dmi'
-			icon_state = "blank"
-			visible_overlays = list(visible_overlays[R_HAND_LAYER], visible_overlays[L_HAND_LAYER])
+			alpha = 25
+//			icon_state = "blank"
+//			visible_overlays = list(visible_overlays[R_HAND_LAYER], visible_overlays[L_HAND_LAYER])
 		else
-			icon = stand_icon
-			icon_state = null
-			visible_overlays = overlays_standing
+			alpha = 255
+//			icon_state = null
+//			visible_overlays = overlays_standing
 
 		var/matrix/M = matrix()
 		if(lying && (species.prone_overlay_offset[1] || species.prone_overlay_offset[2]))
