@@ -219,6 +219,7 @@
 	announcer = "NSV sierra Sensor Array"
 	arrival_message = "Attention, anomalous sensor reading detected entering vessel proximity."
 	departure_message = "Attention, anomalous sensor reading detected leaving vessel proximity."
+	base_turf = /turf/simulated/floor/plating
 
 
 /obj/effect/shuttle_landmark/ninja/start
