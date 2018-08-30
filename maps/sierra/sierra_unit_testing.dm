@@ -9,19 +9,13 @@
 		/area/holodeck = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/security/nuke_storage = NO_SCRUBBER|NO_VENT,
 		/area/maintenance = NO_SCRUBBER|NO_VENT,
-		/area/maintenance/auxsolarbridge = NO_SCRUBBER,
 		/area/maintenance/auxsolarport = NO_SCRUBBER,
 		/area/maintenance/auxsolarstarboard = NO_SCRUBBER,
 		/area/maintenance/exterior = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/maintenance/firstdeck/foreport = NO_SCRUBBER,
-		/area/maintenance/firstdeck/forestarboard = NO_SCRUBBER,
-		/area/maintenance/thirddeck/aft = 0,
+		/area/maintenance/compactor = 0,
 		/area/maintenance/incinerator = NO_SCRUBBER,
 		/area/maintenance/disposal = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/maintenance/seconddeck/aftport = NO_SCRUBBER,
-		/area/maintenance/seconddeck/forestarboard = NO_SCRUBBER,
-		/area/maintenance/seconddeck/aftstarboard = NO_SCRUBBER,
-		/area/janitor = NO_SCRUBBER|NO_VENT,
+		/area/storage/bridge = 0,
 		/area/mine/explored = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/mine/unexplored = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/ninja_dojo = NO_SCRUBBER |NO_VENT | NO_APC,
@@ -50,6 +44,7 @@
 		/area/vacant/brig = NO_SCRUBBER|NO_VENT,
 		/area/vacant/prototype/control = 0,
 		/area/vacant/prototype/engine = 0,
+		/area/vacant/gambling = 0,
 		/area/vacant/cargo = NO_SCRUBBER|NO_VENT,
 		/area/vacant/infirmary = NO_SCRUBBER|NO_VENT,
 		/area/vacant/missile = NO_SCRUBBER|NO_VENT,
@@ -107,9 +102,6 @@
 		/area/shuttle/escape/centcom,
 		/area/shuttle/alien,
 		/area/shuttle/alien/base,
-		/area/rnd/xenobiology,
-		/area/rnd/xenobiology/xenoflora,
-		/area/rnd/xenobiology/xenoflora_storage,
 		/area/prison/solitary,
 		/area/turret_protected/ai_upload_foyer,
 		/area/vacant/mess,
@@ -130,20 +122,16 @@
 		/area/mine,
 		/area/ship,
 		/area/smugglers,
-//		/area/slavers_base,
+		/area/slavers_base,
 		/area/yacht,
 		/area/bluespaceriver,
 		/area/mobius_rift,
 		/area/icarus,
-//		/area/errant_pisces,
-//		/area/lar_maria,
+		/area/errant_pisces,
+		/area/lar_maria,
 		/area/map_template,
 		/area/exoplanet
 	)
-
-/datum/unit_test/zas_area_test/ai_chamber
-	name = "ZAS: AI Chamber"
-	area_path = /area/turret_protected/ai
 
 /datum/unit_test/zas_area_test/cargo_bay
 	name = "ZAS: Cargo Bay"
@@ -156,7 +144,3 @@ datum/unit_test/zas_area_test/supply_centcomm
 datum/unit_test/zas_area_test/virology
 	name = "ZAS: Virology"
 	area_path = /area/medical/virology
-
-datum/unit_test/zas_area_test/xenobio
-	name = "ZAS: Xenobiology"
-	area_path = /area/rnd/xenobiology

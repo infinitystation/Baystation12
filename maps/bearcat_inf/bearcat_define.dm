@@ -1,6 +1,6 @@
 /datum/map/bearcat
 	name = "Bearcat"
-	full_name = "Bearcat"
+	full_name = "FTV Bearcat"
 	path = "bearcat_inf"
 
 	station_name  = "FTV Bearcat"
@@ -25,7 +25,7 @@
 	allowed_spawns = list("Cryogenic Storage")
 	default_spawn = "Cryogenic Storage"
 	use_overmap = 1
-	num_exoplanets = 2
+	num_exoplanets = 0
 	away_site_budget = 2
 	welcome_sound = 'sound/effects/cowboysting.ogg'
 
@@ -43,7 +43,7 @@
 	salary_modifier = 0.2
 
 /datum/map/bearcat/map_info(victim)
-	to_chat(victim, "Вы находитесь на борту <b>[station_name]</b>, независимого дочернего судна Свободного Торгового Союза на границе исследованного космоса.")
+	to_chat(victim, "Вы находитесь на борту <b>[station_name]</b>, независимого дочернего судна Вольного Торгового Союза на границе исследованного космоса.")
 	to_chat(victim, "На насто&#255;щий момент, межзвездные корпорации и государства не включили в свою зону вли&#255;ни&#255; планеты и астероиды в данном секторе, так что, исследуйте и наживайтесь сколько влезет - добывайте минералы; истребл&#255;йте экзотическую флору и фауну; присваивайте себе всё, что плохо лежит. И постарайтесь, чтобы местные пираты (или что похуже) не наживилась на вас.")
 
 /datum/map/bearcat/setup_map()

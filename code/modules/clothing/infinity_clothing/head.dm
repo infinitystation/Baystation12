@@ -5,6 +5,13 @@
 	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
 	icon_state = "daft_helmet"
 
+/obj/item/clothing/head/soft/darkred
+	name = "darkred cap"
+	desc = "It's a peaked hat in a tasteless darkred color."
+	icon = 'icons/obj/clothing/infinity/hats.dmi'
+	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
+	icon_state = "darkred_cap"
+
 /obj/item/clothing/head/kitty/tailless
 	name = "tailless kitty ears"
 	desc = "The fur feels.....a little bit realistic."

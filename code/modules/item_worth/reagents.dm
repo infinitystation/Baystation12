@@ -40,7 +40,7 @@
 	value = 0.01
 
 /datum/reagent/lithium
-	value = 6
+	value = 0.05
 
 /datum/reagent/mercury
 	value = 0.02
@@ -49,10 +49,10 @@
 	value = 0.4
 
 /datum/reagent/potassium
-	value = 1
+	value = 0.2
 
 /datum/reagent/radium
-	value = 50 //Radium is crazy expensive, like 100k+ per gram. So probably a bit less expensive in the future.
+	value = 0.23
 
 /datum/reagent/acid
 	value = 0.2
@@ -370,28 +370,28 @@
 	value = 0.3
 
 /datum/reagent/inaprovaline
-	value = 3.5
+	value = 0.3
 
 /datum/reagent/bicaridine
-	value = 4.9
+	value = 0.5
 
 /datum/reagent/kelotane
-	value = 2.9
+	value = 0.5
 
 /datum/reagent/dermaline
-	value = 3.9
+	value = 0.8
 
 /datum/reagent/dylovene
-	value = 2.1
+	value = 0.4
 
 /datum/reagent/dexalin
-	value = 2.4
+	value = 0.5
 
 /datum/reagent/dexalinp
-	value = 3.6
+	value = 0.9
 
 /datum/reagent/tricordrazine
-	value = 6
+	value = 0.6
 
 /datum/reagent/cryoxadone
 	value = 3.9
@@ -403,64 +403,64 @@
 	value = 3.3
 
 /datum/reagent/tramadol
-	value = 3.1
+	value = 0.6
 
 /datum/reagent/tramadol/oxycodone
-	value = 3.3
+	value = 1
 
 /datum/reagent/synaptizine
-	value = 4.6
+	value = 0.7
 
 /datum/reagent/alkysine
-	value = 5.9
+	value = 1.5
 
 /datum/reagent/imidazoline
-	value = 4.2
+	value = 0.7
 
 /datum/reagent/peridaxon
-	value = 6
-
-/datum/reagent/ryetalyn
-	value = 3.6
-
-/datum/reagent/hyperzine
-	value = 3.9
-
-/datum/reagent/ethylredoxrazine
-	value = 3.1
-
-/datum/reagent/hyronalin
-	value = 2.3
-
-/datum/reagent/arithrazine
-	value = 2.7
-
-/datum/reagent/spaceacillin
-	value = 2.5
-
-/datum/reagent/sterilizine
-	value = 2.2
-
-/datum/reagent/leporazine
-	value = 2
-
-/datum/reagent/methylphenidate
-	value = 6
-
-/datum/reagent/citalopram
-	value = 6
-
-/datum/reagent/paroxetine
-	value = 3.5
-
-/datum/reagent/nicotine
-	value = 2
-
-/datum/reagent/tobacco
 	value = 3
 
+/datum/reagent/ryetalyn
+	value = 2.4
+
+/datum/reagent/hyperzine
+	value = 1.5
+
+/datum/reagent/ethylredoxrazine
+	value = 0.9
+
+/datum/reagent/hyronalin
+	value = 0.6
+
+/datum/reagent/arithrazine
+	value = 0.6
+
+/datum/reagent/spaceacillin
+	value = 0.8
+
+/datum/reagent/sterilizine
+	value = 0.3
+
+/datum/reagent/leporazine
+	value = 1.6
+
+/datum/reagent/methylphenidate
+	value = 4
+
+/datum/reagent/citalopram
+	value = 0.3
+
+/datum/reagent/paroxetine
+	value = 1.6
+
+/datum/reagent/nicotine
+	value = 0.15
+
+/datum/reagent/tobacco
+	value = 0.35
+
 /datum/reagent/rezadone
-	value = 5
+	value = 0.8
 
 /datum/reagent/crayon_dust
 	value = 0.001
@@ -478,15 +478,13 @@
 	value = 9
 
 /datum/reagent/adrenaline
-	value = 2
-
+	value = 1.4
 
 /datum/reagent/diethylamine
 	value = 0.9
 
 /datum/reagent/surfactant
 	value = 0.05
-
 
 /datum/reagent/thermite
 	value = 6
@@ -498,10 +496,10 @@
 	value = 0.6
 
 /datum/reagent/glycerol
-	value = 8
+	value = 0.5
 
 /datum/reagent/nitroglycerin
-	value = 9
+	value = 0.3
 
 /datum/reagent/coolant
 	value = 0.8
@@ -558,7 +556,7 @@
 	value = 2.4
 
 /datum/reagent/mutagen
-	value = 3.1
+	value = 0.9
 
 /datum/reagent/slimejelly
 	value = 1.2
@@ -585,7 +583,7 @@
 	value = 1.8
 
 /datum/reagent/mindbreaker
-	value = 0.6
+	value = 4.5
 
 /datum/reagent/psilocybin
 	value = 0.7

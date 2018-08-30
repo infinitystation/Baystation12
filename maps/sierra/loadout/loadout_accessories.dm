@@ -1,9 +1,3 @@
-/datum/gear/tactical/ubac
-	display_name = "ubac selection"
-	path = /obj/item/clothing/accessory/ubac
-	allowed_roles = list(SOLGOV_ROLES, SECURITY_ROLES) //camo + tactical
-	flags = GEAR_HAS_TYPE_SELECTION
-
 /datum/gear/accessory/solawardmajor
 	display_name = "SolGov major award selection"
 	description = "A medal or ribbon awarded to SolGov personnel for significant accomplishments."
@@ -107,23 +101,6 @@
 
 /datum/gear/storage/white_drop_pouches
 	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/explorer_medic, /datum/job/roboticist, /datum/job/merchant)
-
-/datum/gear/tactical/holster
-	allowed_roles = ARMED_ROLES
-
-/datum/gear/tactical/large_pouches
-	allowed_roles = ARMORED_ROLES
-
-/datum/gear/tactical/armor_deco
-	allowed_roles = ARMORED_ROLES
-
-/datum/gear/tactical/press_tag
-	display_name = "Press tag"
-	path = /obj/item/clothing/accessory/armor/tag/press
-	allowed_roles = list(/datum/job/assistant)
-
-/datum/gear/tactical/helm_covers
-	allowed_roles = ARMORED_ROLES
 
 /datum/gear/clothing/hawaii
 	allowed_branches = CIVILIAN_BRANCHES

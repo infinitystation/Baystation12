@@ -148,7 +148,7 @@
 	skill_points = 36
 
 	access = list(access_tox, access_tox_storage, access_emergency_storage, access_teleporter, access_bridge, access_rd,
-						access_research, access_mining, access_mining_office, access_mining_station, access_xenobiology,
+						access_research, access_robotics, access_mining, access_mining_office, access_mining_station, access_xenobiology,
 						access_RC_announce, access_keycard_auth, access_xenoarch, access_nanotrasen, access_heads,
 						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_petrov_helm, access_guppy_helm)
 
@@ -236,7 +236,7 @@
 
 	access = list(access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_ai_upload, access_teleporter, access_eva, access_bridge, access_heads,
-			            access_tech_storage, access_robotics, access_atmospherics, access_janitor, access_construction,
+			            access_tech_storage, access_atmospherics, access_janitor, access_construction,
 			            access_network, access_ce, access_RC_announce, access_keycard_auth, access_tcomsat,
 			            access_robotics_engineering, access_seneng, access_hangar, access_robotics)
 
@@ -315,10 +315,8 @@
 						SKILL_FINANCE		= SKILL_BASIC)
 	skill_points = 20
 
-	access = list(		access_iaa, access_tox, access_tox_storage, access_heads, access_research,
-						access_xenobiology,
-						access_xenoarch,
-						access_hangar, access_petrov, access_petrov_helm)
+	access = list(		access_iaa, access_research, access_xenoarch, access_heads, access_bridge,
+						access_hangar, access_petrov)
 
 	minimal_access = list()
 
@@ -736,7 +734,7 @@
 	minimal_access = list()
 
 /datum/job/roboticist/get_description_blurb()
-	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics as well as the repair of all synthetic crew on board. You are also responsible for placing brains into MMI’s and giving them bodies and the production of exosuits(mechs) for various departments. You answer to the Chief Engineer."
+	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics as well as the repair of all synthetic crew on board. You are also responsible for placing brains into MMI's and giving them bodies and the production of exosuits(mechs) for various departments. You answer to the Chief Engineer."
 
 /datum/job/warden
 	title = "Warden"
@@ -763,7 +761,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_MAX)
-	skill_points = 20
+	skill_points = 25
 
 	access = list(access_security, access_brig, access_armory, access_forensics_lockers,
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
@@ -802,7 +800,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_MAX)
-	skill_points = 20
+	skill_points = 22
 
 	access = list(access_security, access_brig, access_forensics_lockers,
 			            access_maint_tunnels, access_emergency_storage,
@@ -825,6 +823,9 @@
 	ideal_character_age = 25
 	alt_titles = list(
 		"Junior Officer")
+
+	skill_points = 20
+
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/officer
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
@@ -872,7 +873,7 @@
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
 	                    SKILL_ANATOMY     = SKILL_MAX)
-	skill_points = 32
+	skill_points = 26
 
 	access = list(access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
 			            access_crematorium, access_chemistry, access_surgery, access_eva,
@@ -914,7 +915,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
-	skill_points = 26
+	skill_points = 22
 
 /datum/job/doctor_trainee
 	title = "Intern"
@@ -937,7 +938,7 @@
 	                    SKILL_MEDICAL = SKILL_BASIC)
 
 	max_skill = list(   SKILL_MEDICAL	= SKILL_MAX)
-	skill_points = 32
+	skill_points = 18
 
 	access = list(	access_medical, access_morgue, access_surgery,
 					access_medical_equip,
@@ -972,7 +973,7 @@
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
-	skill_points = 26
+	skill_points = 20
 
 	access = list(access_medical, access_maint_tunnels, access_emergency_storage, access_medical_equip, access_chemistry)
 

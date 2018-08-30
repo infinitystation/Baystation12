@@ -266,7 +266,7 @@
 /turf/simulated/floor/reinforced/airless,
 /area/thruster/d3starboard)
 "aV" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/maintenance/thirddeck/aftstarboard)
 "aW" = (
 /turf/simulated/wall/r_wall/hull,
@@ -588,7 +588,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/thirddeck/aftstarboard)
 "bL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -857,7 +857,7 @@
 	locked = 1;
 	name = "Old Mess"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/thirddeck/aftstarboard)
 "co" = (
 /obj/structure/cable/green{
@@ -1055,7 +1055,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hydroponics/storage)
 "cM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -1134,7 +1134,7 @@
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Hydroponics Storage"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hydroponics)
 "cQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -1269,7 +1269,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hydroponics)
 "da" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -1719,7 +1719,7 @@
 	name = "Third Deck Substation";
 	req_access = list(11)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/substation/thirddeck)
 "eb" = (
 /obj/structure/cable/green{
@@ -1851,7 +1851,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/tcommsat/computer)
 "ep" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -1903,7 +1903,7 @@
 	name = "Galley";
 	req_access = list(28)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/galley)
 "ey" = (
 /obj/effect/wallframe_spawn/reinforced/prepainted,
@@ -1911,7 +1911,7 @@
 /turf/simulated/floor/plating,
 /area/crew_quarters/galley)
 "ez" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3starboard)
 "eA" = (
 /obj/random/trash,
@@ -2020,7 +2020,7 @@
 	icon_state = "warningcorner";
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/substation/thirddeck)
 "eN" = (
 /obj/structure/cable{
@@ -2415,7 +2415,7 @@
 	req_access = list(12);
 	req_one_access = list(48,65)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/thirddeck/starboard)
 "fK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -2814,7 +2814,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hydroponics)
 "gC" = (
 /obj/structure/disposalpipe/up{
@@ -3042,9 +3042,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/thirddeck)
-"hl" = (
-/turf/simulated/wall,
-/area/vacant/cabin)
 "hm" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -3625,7 +3622,7 @@
 	name = "Hydroponics Bay"
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hydroponics)
 "iA" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -3851,7 +3848,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
 	dir = 10
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3port)
 "ja" = (
 /obj/machinery/door/firedoor/border_only,
@@ -3863,7 +3860,7 @@
 /obj/machinery/door/airlock/hatch/maintenance{
 	req_access = list(12)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
 "jb" = (
 /obj/structure/disposalpipe/segment{
@@ -3942,7 +3939,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/safe_room/thirddeck)
 "ji" = (
 /obj/effect/floor_decal/corner/green/half,
@@ -4731,7 +4728,7 @@
 	req_access = list(14)
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/thirddeck/aftstarboard)
 "ll" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -4790,7 +4787,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/engineering/atmos/aux)
 "ls" = (
 /obj/structure/iv_drip,
@@ -5070,7 +5067,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/tcommsat/computer)
 "me" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -5192,7 +5189,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
 "ml" = (
 /obj/structure/table/standard,
@@ -5829,7 +5826,7 @@
 	name = "E.V.A. Storage";
 	req_one_access = list(18)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/ai_monitored/storage/eva)
 "nO" = (
 /obj/structure/cable/green{
@@ -5937,7 +5934,7 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
 "nU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -5992,7 +5989,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/thirddeck/forestarboard)
 "nX" = (
 /obj/structure/cable/green{
@@ -6138,7 +6135,7 @@
 /turf/simulated/floor/tiled,
 /area/holocontrol)
 "om" = (
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/holocontrol)
 "on" = (
 /obj/machinery/disposal/deliveryChute{
@@ -6251,7 +6248,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/ai_monitored/storage/eva)
 "oH" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
@@ -6348,7 +6345,7 @@
 	name = "Emergency Storage";
 	req_access = list(14)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
 "oT" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -6926,7 +6923,7 @@
 	icon_state = "intact";
 	dir = 9
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3starboard)
 "pS" = (
 /obj/structure/sign/directions/evac{
@@ -6939,9 +6936,6 @@
 	pixel_z = 0
 	},
 /turf/simulated/wall/r_wall/prepainted,
-/area/hallway/primary/thirddeck/center)
-"pT" = (
-/turf/simulated/floor/tiled/steel_ridged,
 /area/hallway/primary/thirddeck/center)
 "pU" = (
 /obj/structure/sign/directions/infirmary{
@@ -7021,7 +7015,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/holocontrol)
 "qd" = (
 /obj/machinery/ai_status_display,
@@ -7043,7 +7037,7 @@
 	req_access = list(12)
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
 "qg" = (
 /obj/machinery/door/airlock/engineering{
@@ -7174,7 +7168,7 @@
 	name = "Galley";
 	req_access = list(28)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/galley)
 "qz" = (
 /obj/structure/table/rack{
@@ -7410,7 +7404,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
 "ra" = (
 /obj/effect/floor_decal/corner/blue/half{
@@ -7456,7 +7450,7 @@
 /area/hallway/primary/thirddeck/center)
 "re" = (
 /obj/machinery/door/airlock/glass/civilian,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
 "rf" = (
 /obj/effect/floor_decal/corner/green{
@@ -7777,7 +7771,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/ai_monitored/storage/eva)
 "rR" = (
 /obj/structure/cable/green{
@@ -8565,7 +8559,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/gym)
 "sJ" = (
 /obj/effect/catwalk_plated,
@@ -8854,7 +8848,7 @@
 "tt" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/glass/civilian,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/center)
 "tu" = (
 /obj/structure/table/rack,
@@ -9034,7 +9028,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/commissary)
 "tS" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -9417,7 +9411,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/center)
 "uM" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -9436,7 +9430,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/habcheck)
 "uO" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -9450,7 +9444,7 @@
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Cryogenic Storage"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/sleep/cryo)
 "uR" = (
 /obj/structure/cable/green{
@@ -9476,7 +9470,7 @@
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Cryogenic Storage"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/sleep/cryo)
 "uT" = (
 /obj/machinery/status_display,
@@ -9527,7 +9521,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/range)
 "vd" = (
 /obj/structure/sign/warning/hot_exhaust{
@@ -9711,7 +9705,7 @@
 	name = "E.V.A. Miscellaneous Suit Storage";
 	req_one_access = list(18)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/ai_monitored/storage/eva)
 "vB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -10139,7 +10133,7 @@
 	req_access = list(12)
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
 "wn" = (
 /obj/structure/disposalpipe/segment{
@@ -10263,7 +10257,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/command/captainmess)
 "wE" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -10310,7 +10304,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/ai_monitored/storage/eva)
 "wI" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -10583,7 +10577,7 @@
 	req_access = list(12,80)
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/range)
 "xg" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -10813,7 +10807,7 @@
 /turf/simulated/floor/lino,
 /area/crew_quarters/diplomat)
 "xz" = (
-/turf/simulated/wall,
+/turf/simulated/wall/prepainted,
 /area/vacant/missile)
 "xB" = (
 /obj/machinery/alarm{
@@ -11438,7 +11432,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/teleporter/thirddeck)
 "yQ" = (
 /obj/structure/table/woodentable,
@@ -11785,7 +11779,7 @@
 	icon_state = "intact";
 	dir = 5
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3starboard)
 "zz" = (
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -11874,7 +11868,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
 "zR" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -12109,7 +12103,7 @@
 /obj/machinery/door/airlock/civilian{
 	name = "Vacant Office"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/vacant/office)
 "At" = (
 /obj/effect/floor_decal/techfloor{
@@ -12166,7 +12160,7 @@
 "Az" = (
 /obj/machinery/light,
 /obj/machinery/door/airlock/glass/civilian,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
 "AA" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
@@ -12644,7 +12638,7 @@
 	icon_state = "techfloor_corners";
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/storage/tools)
 "BF" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -12771,7 +12765,7 @@
 "BZ" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3port)
 "Ca" = (
 /obj/structure/bed/chair/comfy/beige{
@@ -13652,7 +13646,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aftport)
 "DY" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3port)
 "DZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -13983,7 +13977,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/shield/thirddeck)
 "EN" = (
 /obj/machinery/atmospherics/portables_connector{
@@ -14101,7 +14095,7 @@
 	req_access = list(12,31)
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/thirddeck/port)
 "Fg" = (
 /obj/structure/cable/green{
@@ -14178,7 +14172,7 @@
 	dir = 8;
 	name = "Holodeck"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/holocontrol)
 "Fs" = (
 /obj/structure/disposalpipe/segment,
@@ -14277,7 +14271,7 @@
 /obj/machinery/door/airlock/civilian{
 	name = "Cryogenic Storage Wardrobe"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/sleep/cryo)
 "FD" = (
 /obj/machinery/door/firedoor/border_only,
@@ -14618,7 +14612,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/cryolocker)
 "Gy" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -14681,7 +14675,7 @@
 /obj/machinery/door/airlock/civilian{
 	name = "Cryogenic Storage Wardrobe"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/cryolocker)
 "GC" = (
 /obj/effect/floor_decal/corner/green{
@@ -14747,7 +14741,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/lounge)
 "GH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -15040,7 +15034,7 @@
 /obj/machinery/door/airlock/maintenance{
 	req_access = list(12)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/thirddeck/aftport)
 "HA" = (
 /obj/effect/wallframe_spawn/reinforced/hull,
@@ -15082,7 +15076,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
 "HI" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/vacant/missile)
 "HJ" = (
 /obj/machinery/door/airlock/highsecurity{
@@ -15926,7 +15920,7 @@
 /obj/machinery/door/airlock/maintenance{
 	req_access = list(12)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
 "JK" = (
 /obj/effect/floor_decal/corner/lime/mono,
@@ -16188,7 +16182,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 6
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3port)
 "Kt" = (
 /obj/effect/floor_decal/corner/lime,
@@ -16235,7 +16229,7 @@
 /area/thruster/d3starboard)
 "KH" = (
 /obj/structure/sign/warning/nosmoking_2,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3starboard)
 "KL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/green{
@@ -16537,7 +16531,7 @@
 /area/thruster/d3port)
 "Lq" = (
 /obj/structure/sign/warning/nosmoking_2,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3port)
 "Lr" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -16640,7 +16634,7 @@
 	name = "Diplomatic Quarters Maintenance";
 	req_access = list(12)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/diplomat)
 "LN" = (
 /obj/effect/shuttle_landmark/skipjack/deck3,
@@ -16683,7 +16677,7 @@
 "LT" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3starboard)
 "LV" = (
 /obj/effect/wallframe_spawn/reinforced/prepainted,
@@ -16791,7 +16785,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/diplomat)
 "Mk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -17687,7 +17681,7 @@
 "Pd" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/hidden/green,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3starboard)
 "Pe" = (
 /obj/structure/undies_wardrobe,
@@ -18696,7 +18690,7 @@
 	name = "Commissary Counter";
 	req_one_access = list(67,96)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/commissary)
 "Sf" = (
 /obj/structure/fitness/punchingbag,
@@ -19896,7 +19890,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
 "VI" = (
 /obj/structure/ladder,
@@ -20038,14 +20032,14 @@
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
 "We" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/maintenance/thirddeck/aftport)
 "Wg" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Holodeck Maintenance";
 	req_access = list(12)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/holocontrol)
 "Wh" = (
 /obj/structure/disposalpipe/segment{
@@ -20222,7 +20216,7 @@
 "WJ" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/hidden/green,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3port)
 "WL" = (
 /obj/structure/displaycase,
@@ -20966,7 +20960,7 @@
 	req_access = list(12)
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/commissary)
 "Zf" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
@@ -35641,7 +35635,7 @@ lu
 lu
 lu
 lu
-pT
+xc
 Xn
 sj
 tv
@@ -35843,7 +35837,7 @@ lu
 lu
 lu
 lu
-pT
+xc
 qQ
 sk
 tw
@@ -36045,7 +36039,7 @@ lu
 lu
 lu
 lu
-pT
+xc
 Xn
 sj
 tx
@@ -43539,7 +43533,7 @@ Fg
 Xx
 EC
 GM
-hl
+Dn
 Hz
 jZ
 jZ
@@ -43938,12 +43932,12 @@ AQ
 vh
 CU
 Dn
-hl
-hl
-hl
+Dn
+Dn
+Dn
 Gn
-hl
-hl
+Dn
+Dn
 Yy
 jZ
 jZ
@@ -44140,12 +44134,12 @@ Uw
 vh
 CG
 DX
-hl
+Dn
 Fi
 do
 xS
 WL
-hl
+Dn
 Yy
 jZ
 jZ
@@ -44342,12 +44336,12 @@ AS
 vh
 Ba
 CU
-hl
+Dn
 PB
 PB
 Go
 GN
-hl
+Dn
 Yy
 jZ
 jZ
@@ -44544,12 +44538,12 @@ WV
 vh
 Do
 DZ
-hl
+Dn
 Fk
 IH
 YB
 GO
-hl
+Dn
 Yy
 jZ
 jZ
@@ -44746,12 +44740,12 @@ vg
 vh
 wl
 CU
-hl
+Dn
 Ca
 Ca
 Mx
 GP
-hl
+Dn
 Yy
 jZ
 jZ
@@ -44948,12 +44942,12 @@ BO
 CI
 zP
 Lr
-hl
+Dn
 Wl
 Pp
 Gp
-hl
-hl
+Dn
+Dn
 Yy
 jZ
 jZ
@@ -45150,11 +45144,11 @@ BP
 CJ
 wl
 CU
-hl
+Dn
 Pe
 QI
 ZT
-hl
+Dn
 Ba
 Yy
 jZ
@@ -45352,11 +45346,11 @@ vn
 Bc
 Bc
 CU
-hl
-hl
-hl
-hl
-hl
+Dn
+Dn
+Dn
+Dn
+Dn
 Ba
 Yy
 jZ

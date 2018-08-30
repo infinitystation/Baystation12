@@ -12,7 +12,7 @@
 	allowed_roles = MEDICAL_ROLES
 
 /datum/gear/eyes/meson
-	allowed_roles = TECHNICAL_ROLES
+	allowed_roles = list(TECHNICAL_ROLES, SOLGOV_ROLES)
 
 /datum/gear/eyes/material
 	allowed_roles = TECHNICAL_ROLES

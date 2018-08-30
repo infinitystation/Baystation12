@@ -1335,7 +1335,7 @@
 "acl" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/hidden/green,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d1starboard)
 "acm" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
@@ -1349,7 +1349,7 @@
 	icon_state = "intact";
 	dir = 5
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d1starboard)
 "acq" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red,
@@ -2213,7 +2213,7 @@
 /obj/item/weapon/airlock_brace{
 	req_access = list(53)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/nuke_storage)
 "aeA" = (
 /obj/structure/curtain/open/bed,
@@ -2727,7 +2727,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/fore)
 "afL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -3129,7 +3129,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/substation/firstdeck)
 "agP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -3387,7 +3387,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/firstdeck/centralstarboard)
 "ahP" = (
 /obj/structure/cable/green{
@@ -4129,7 +4129,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/safe_room/firstdeck)
 "ajU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -4279,7 +4279,7 @@
 	icon_state = "warningcorner";
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/substation/firstdeck)
 "akh" = (
 /obj/structure/cable{
@@ -4942,7 +4942,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/substation/firstdeck)
 "amr" = (
 /obj/structure/cable{
@@ -4976,7 +4976,7 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/engineering/auxpower)
 "amu" = (
 /obj/structure/cable{
@@ -5463,7 +5463,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/fore)
 "apj" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -6330,7 +6330,7 @@
 	name = "Security Processing";
 	req_access = list(4)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/processing)
 "atu" = (
 /obj/structure/cable/green{
@@ -6529,7 +6529,7 @@
 	req_access = list(12)
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/aft)
 "auk" = (
 /turf/simulated/wall/prepainted,
@@ -6565,7 +6565,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/detectives_office)
 "aux" = (
 /obj/machinery/status_display,
@@ -6733,7 +6733,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
 "auM" = (
 /obj/structure/sign/warning/pods/south,
@@ -7026,7 +7026,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/hallway/primary/firstdeck/center)
 "awa" = (
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
 "awb" = (
 /obj/structure/sign/directions/infirmary{
@@ -7185,7 +7185,7 @@
 /area/chapel/main)
 "awE" = (
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/chapel/main)
 "awF" = (
 /obj/machinery/ai_status_display,
@@ -7313,7 +7313,7 @@
 "axa" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/glass/civilian,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
 "axc" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
@@ -8106,7 +8106,7 @@
 	dir = 5
 	},
 /obj/machinery/door/airlock/glass/civilian,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
 "azi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -8366,7 +8366,7 @@
 /obj/machinery/door/airlock/glass/civilian{
 	name = "Auxiliary Cryogenic Storage"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/sleep/cryo/aux)
 "aAw" = (
 /obj/effect/wallframe_spawn/reinforced/prepainted,
@@ -8492,7 +8492,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/opscheck)
 "aAT" = (
 /obj/machinery/ai_status_display,
@@ -8679,7 +8679,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
 "aBx" = (
 /obj/structure/sign/warning/pods/south{
@@ -8846,7 +8846,7 @@
 	req_access = list(12)
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
 "aBK" = (
 /obj/structure/sign/warning/pods,
@@ -9322,7 +9322,7 @@
 	req_access = list(12)
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/aft)
 "aDB" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -10260,7 +10260,7 @@
 /obj/machinery/door/airlock/hatch/maintenance{
 	req_access = list(12)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/fore)
 "aGZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -10850,7 +10850,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/brig)
 "aJE" = (
 /obj/effect/floor_decal/corner/red/diagonal,
@@ -11014,7 +11014,7 @@
 	name = "Brig Wing";
 	req_access = list(2)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/wing)
 "aKB" = (
 /obj/structure/cable/green{
@@ -11025,7 +11025,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/wing)
 "aKE" = (
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
@@ -11591,7 +11591,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/brig)
 "aMN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -12721,7 +12721,7 @@
 /obj/machinery/door/airlock/maintenance{
 	req_access = list(12)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/firstdeck/foreport)
 "aQG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -13986,7 +13986,7 @@
 "aUi" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/hidden/green,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d1port)
 "aUj" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
@@ -13999,7 +13999,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 6
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d1port)
 "aUo" = (
 /obj/machinery/access_button{
@@ -14207,7 +14207,7 @@
 /area/rnd/xenobiology)
 "aUH" = (
 /obj/structure/sign/warning/deathsposal,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/rnd/xenobiology)
 "aUI" = (
 /obj/structure/table/standard,
@@ -16994,7 +16994,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/development)
 "doC" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/maintenance/firstdeck/centralstarboard)
 "doP" = (
 /obj/structure/cable/green{
@@ -18467,7 +18467,7 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/brig)
 "fcb" = (
 /obj/effect/floor_decal/corner/paleblue{
@@ -20195,7 +20195,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/armoury)
 "hcb" = (
 /obj/structure/disposalpipe/segment,
@@ -21467,7 +21467,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/teleporter/firstdeck)
 "iuB" = (
 /obj/machinery/light,
@@ -22122,7 +22122,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/command/armoury)
 "jnH" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/medical/virology)
 "job" = (
 /obj/machinery/alarm{
@@ -22919,7 +22919,7 @@
 "kiq" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d1starboard)
 "kiR" = (
 /obj/structure/table/steel,
@@ -23375,7 +23375,7 @@
 	name = "Robotics Maintenance";
 	req_access = list(82)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/assembly/robotics)
 "kDA" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/fuel{
@@ -23444,7 +23444,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/assembly/chargebay)
 "kIb" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -23739,9 +23739,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/assembly/chargebay)
-"lbn" = (
-/turf/simulated/wall/r_wall,
-/area/rnd/misc_lab)
 "lcb" = (
 /obj/machinery/recharge_station,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -23753,7 +23750,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/assembly/chargebay)
 "lcB" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d1port)
 "lcL" = (
 /obj/machinery/door/window/brigdoor/westleft{
@@ -23797,7 +23794,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/assembly/robotics)
 "ldi" = (
 /turf/simulated/wall/r_wall/hull,
@@ -24150,9 +24147,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/security/detectives_office)
-"lwB" = (
-/turf/simulated/wall/r_wall,
-/area/maintenance/firstdeck/aftstarboard)
 "lxb" = (
 /obj/structure/table/steel,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
@@ -24276,7 +24270,7 @@
 	req_access = list(11);
 	secured_wires = 1
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/engineering/hardstorage/aux)
 "lDV" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
@@ -24398,7 +24392,7 @@
 /area/maintenance/firstdeck/aftport)
 "lLW" = (
 /obj/structure/sign/warning/nosmoking_2,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d1port)
 "lMb" = (
 /obj/structure/cable/green{
@@ -24468,7 +24462,7 @@
 	req_access = list(14)
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/firstdeck/centralstarboard)
 "lSb" = (
 /obj/structure/bed/chair/comfy/brown{
@@ -25009,9 +25003,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/security/processing)
-"mBP" = (
-/turf/simulated/wall/r_wall,
-/area/maintenance/firstdeck/aftport)
 "mCb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -25228,7 +25219,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/processing)
 "mQb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -25399,7 +25390,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/wing)
 "nbl" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -25549,7 +25540,7 @@
 	req_access = list(11);
 	secured_wires = 1
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/engineering/hardstorage/aux)
 "njV" = (
 /obj/structure/cable/green{
@@ -25586,7 +25577,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/equipment)
 "nkh" = (
 /obj/structure/closet/secure_closet/brig{
@@ -25655,7 +25646,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/wing)
 "nnb" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -25955,7 +25946,7 @@
 	icon_state = "intact";
 	dir = 9
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d1starboard)
 "nGT" = (
 /turf/simulated/floor/reinforced/carbon_dioxide,
@@ -26598,7 +26589,7 @@
 	icon_state = "fire";
 	dir = 1
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/maintenance/firstdeck/aftport)
 "opb" = (
 /obj/structure/cable/green{
@@ -26893,7 +26884,7 @@
 "oJh" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d1port)
 "oKb" = (
 /obj/structure/table/standard,
@@ -27419,7 +27410,7 @@
 /area/rnd/research)
 "plB" = (
 /obj/structure/sign/warning/nosmoking_2,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d1starboard)
 "pmb" = (
 /obj/structure/cable/green{
@@ -27560,7 +27551,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/shield/firstdeck)
 "puL" = (
 /obj/machinery/power/apc{
@@ -27681,7 +27672,7 @@
 	name = "Brig Entry";
 	req_access = list(2)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/brig)
 "pzb" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -28068,7 +28059,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/wing)
 "qab" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume,
@@ -28325,7 +28316,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
 	dir = 10
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d1port)
 "qxQ" = (
 /obj/machinery/flasher{
@@ -30261,7 +30252,7 @@
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
 	name = "Chapel"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/chapel/main)
 "sKb" = (
 /obj/structure/cable/green{
@@ -30752,7 +30743,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/bo)
 "thb" = (
 /obj/machinery/atmospherics/binary/pump,
@@ -30905,7 +30896,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/rnd/xenobiology)
 "ttb" = (
 /obj/machinery/alarm{
@@ -30928,7 +30919,7 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology)
 "tuw" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d1starboard)
 "tvb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -31197,9 +31188,6 @@
 /obj/structure/lattice,
 /turf/simulated/wall/r_wall/hull,
 /area/thruster/d1starboard)
-"uEv" = (
-/turf/simulated/wall/r_wall,
-/area/maintenance/firstdeck/centralport)
 "uGU" = (
 /obj/machinery/door/airlock/hatch/maintenance{
 	req_access = list(10)
@@ -31319,7 +31307,7 @@
 /obj/machinery/door/airlock/hatch/maintenance{
 	req_access = list(12)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/firstdeck/centralstarboard)
 "uUC" = (
 /obj/machinery/flasher{
@@ -31375,7 +31363,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/processing)
 "vbA" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/fuel{
@@ -31586,7 +31574,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "vIf" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/rnd/xenobiology)
 "vIi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -31815,7 +31803,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/evidence)
 "wvG" = (
 /obj/structure/disposalpipe/segment{
@@ -53146,7 +53134,7 @@ rPb
 jcO
 aTa
 aJS
-uEv
+aQH
 aUq
 aUA
 vIf
@@ -53708,7 +53696,7 @@ abA
 jnH
 abK
 abT
-lwB
+abL
 acL
 ads
 aen
@@ -53752,7 +53740,7 @@ aSK
 aSK
 aTd
 aTK
-mBP
+aDB
 aUt
 aUD
 aUH
@@ -58190,7 +58178,7 @@ qvb
 qDb
 qWb
 rpb
-lbn
+aHQ
 tAN
 qLt
 oZu
@@ -58357,9 +58345,9 @@ mpy
 mpy
 mpy
 qfJ
-lwB
-lwB
-lwB
+abL
+abL
+abL
 ahx
 aiG
 ajH
@@ -58391,11 +58379,11 @@ aHQ
 aHQ
 aHQ
 aHQ
-lbn
-lbn
+aHQ
+aHQ
 pWT
 ooU
-mBP
+aDB
 rPz
 bDK
 bDK
@@ -58559,11 +58547,11 @@ mpy
 mpy
 mpy
 xZp
-lwB
-lwB
-lwB
-lwB
-lwB
+abL
+abL
+abL
+abL
+abL
 ajI
 akM
 acL
@@ -58596,8 +58584,8 @@ aOC
 rqb
 qdi
 aNz
-mBP
-mBP
+aDB
+aDB
 bPX
 bDK
 bDK
@@ -58764,9 +58752,9 @@ baz
 tuw
 tuw
 tuw
-lwB
-lwB
-lwB
+abL
+abL
+abL
 nsF
 alR
 alR
@@ -58796,8 +58784,8 @@ aMy
 aNA
 bDK
 bDK
-mBP
-mBP
+aDB
+aDB
 lcB
 lcB
 doP

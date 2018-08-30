@@ -67,7 +67,7 @@
 			else		to_chat(src, "<span class='warning'>Error: Private-Message: Client not found. They may have lost connection, so try using an adminhelp!</span>")
 			return
 
-	msg = sanitize(msg)
+	msg = sanitize_a0(msg)
 
 	var/datum/client_lite/receiver_lite = client_repository.get_lite_client(C)
 	var/datum/client_lite/sender_lite = client_repository.get_lite_client(src)
@@ -112,7 +112,7 @@
 			spawn(0)	//so we don't hold the caller proc up
 				var/sender = src
 				var/sendername = key
-				var/reply = sanitize(input(C, msg,"[recieve_pm_type] PM from [sendername]", "") as text|null)		//show message and await a reply
+				var/reply = sanitize_a0(input(C, msg,"[recieve_pm_type] PM from [sendername]", "") as text|null)		//show message and await a reply
 				if(C && reply)
 					if(sender)
 						C.cmd_admin_pm(sender,reply)										//sender is still about, let's reply to them

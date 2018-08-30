@@ -157,18 +157,13 @@ Please contact me on #coderbus IRC. ~Carn x
 
 		var/list/visible_overlays
 		if(is_cloaked())
-			visible_overlays = list(visible_overlays[R_HAND_LAYER], visible_overlays[L_HAND_LAYER])
-			if(species.reagent_tag == IS_NABBER)
-				icon = 'icons/mob/infinity_mob_nabber.dmi'
-				icon_state = "cloak_full"
-			else
-				icon = 'icons/mob/infinity_mob.dmi'
-				icon_state = "cloak_full"
-
+			alpha = 25
+//			icon_state = "blank"
+//			visible_overlays = list(visible_overlays[R_HAND_LAYER], visible_overlays[L_HAND_LAYER])
 		else
-			icon = stand_icon
-			icon_state = null
-			visible_overlays = overlays_standing
+			alpha = 255
+//			icon_state = null
+//			visible_overlays = overlays_standing
 
 		var/matrix/M = matrix()
 		if(lying && (species.prone_overlay_offset[1] || species.prone_overlay_offset[2]))

@@ -110,6 +110,8 @@ What is the naming convention for planes or layers?
 	#define BLOOD_LAYER                 9
 	#define MOUSETRAP_LAYER             10
 	#define PLANT_LAYER                 11
+	#define FLY_LAYER                   12
+
 
 #define HIDING_MOB_PLANE              -16 // for hiding mobs like MoMMIs or spiders or whatever, under most objects but over pipes & such.
 

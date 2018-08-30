@@ -351,7 +351,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/bridge/forestarboard)
 "aO" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -608,7 +608,7 @@
 /obj/machinery/door/airlock/maintenance{
 	req_access = list(12)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/bridge/forestarboard)
 "bj" = (
 /obj/structure/table/woodentable_reinforced,
@@ -1003,7 +1003,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/substation/bridge)
 "cK" = (
 /obj/structure/cable/green{
@@ -1286,7 +1286,7 @@
 	req_access = list(57);
 	secured_wires = 1
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/heads/office/xo)
 "dh" = (
 /obj/effect/floor_decal/scglogo,
@@ -1759,7 +1759,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/heads/office/co)
 "ex" = (
 /obj/structure/cable/green{
@@ -2119,7 +2119,7 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
-/obj/structure/bed/chair/shuttle/black{
+/obj/structure/bed/chair/shuttle/blue{
 	icon_state = "shuttle_chair_preview";
 	dir = 1
 	},
@@ -3228,7 +3228,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/heads/office/ce)
 "hz" = (
 /obj/structure/cable/green{
@@ -3772,7 +3772,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/structure/bed/chair/shuttle/black{
+/obj/structure/bed/chair/shuttle/red{
 	icon_state = "shuttle_chair_preview";
 	dir = 8
 	},
@@ -4069,15 +4069,25 @@
 /turf/simulated/floor/plating,
 /area/hallway/primary/bridge/aft)
 "je" = (
-/obj/machinery/firealarm{
+/obj/machinery/power/apc{
 	dir = 8;
+	name = "west bump";
 	pixel_x = -24
+	},
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/aquila/head)
 "jf" = (
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/aquila/head)
@@ -4087,6 +4097,11 @@
 	dir = 8;
 	icon_state = "alarm0";
 	pixel_x = 23
+	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/aquila/head)
@@ -4170,7 +4185,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/structure/bed/chair/shuttle/black{
+/obj/structure/bed/chair/shuttle/red{
 	icon_state = "shuttle_chair_preview";
 	dir = 4
 	},
@@ -4431,7 +4446,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/catwalk,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/bridge/aftstarboard)
 "jY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
@@ -4477,6 +4492,16 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = -24
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/aquila/head)
 "kd" = (
@@ -4500,6 +4525,11 @@
 	name = "south bump";
 	operating = 1;
 	pixel_y = -24
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /obj/structure/cable/cyan{
 	d2 = 4;
@@ -4574,7 +4604,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/bed/chair/shuttle/black{
+/obj/structure/bed/chair/shuttle/red{
 	icon_state = "shuttle_chair_preview";
 	dir = 4
 	},
@@ -4815,7 +4845,7 @@
 "kL" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/glass/civilian,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/bridge/fore)
 "kM" = (
 /obj/effect/floor_decal/corner/blue/half{
@@ -4935,7 +4965,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/bed/chair/shuttle/black{
+/obj/structure/bed/chair/shuttle/red{
 	icon_state = "shuttle_chair_preview";
 	dir = 4
 	},
@@ -5352,7 +5382,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/bridge/aft)
 "lR" = (
 /obj/machinery/airlock_sensor{
@@ -5698,7 +5728,7 @@
 	req_access = list(1);
 	secured_wires = 1
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/security/bridgecheck)
 "mD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -5895,7 +5925,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/glass/civilian,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/bridge/fore)
 "mS" = (
 /obj/structure/cable/green{
@@ -6065,7 +6095,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/bridge)
 "nh" = (
 /obj/effect/floor_decal/scglogo{
@@ -6212,7 +6242,7 @@
 	icon_state = "bordercolorcorner2";
 	dir = 8
 	},
-/obj/structure/bed/chair/shuttle/black{
+/obj/structure/bed/chair/shuttle/red{
 	icon_state = "shuttle_chair_preview";
 	dir = 4
 	},
@@ -6232,7 +6262,7 @@
 	},
 /obj/effect/floor_decal/borderfloorblack/corner2,
 /obj/effect/floor_decal/corner/red/bordercorner2,
-/obj/structure/bed/chair/shuttle/black{
+/obj/structure/bed/chair/shuttle/red{
 	icon_state = "shuttle_chair_preview";
 	dir = 8
 	},
@@ -6640,7 +6670,7 @@
 	req_access = list(12)
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/bridge/aftport)
 "oj" = (
 /obj/effect/floor_decal/scglogo{
@@ -6861,7 +6891,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/bridge/aftport)
 "oU" = (
-/obj/effect/wallframe_spawn/reinforced,
+/obj/effect/wallframe_spawn/reinforced/prepainted,
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/aquila/medical)
@@ -7348,6 +7378,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/aquila/storage)
 "pU" = (
@@ -7356,6 +7391,11 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/aquila/storage)
@@ -7529,7 +7569,7 @@
 	name = "Bridge Access";
 	req_one_access = list(19,80)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/bridge)
 "qh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -7797,6 +7837,11 @@
 "qE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/aquila/storage)
 "qF" = (
@@ -8817,7 +8862,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techmaint,
 /area/aquila/secure_storage)
 "so" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
@@ -9006,7 +9056,7 @@
 	req_access = list(84);
 	secured_wires = 1
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/heads/office/cl)
 "sJ" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -9035,7 +9085,7 @@
 	req_access = list(85);
 	secured_wires = 1
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/heads/office/sgr)
 "sN" = (
 /obj/structure/cable/green{
@@ -9112,7 +9162,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/heads/office/rd)
 "sT" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -9121,11 +9171,17 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/machinery/alarm{
 	pixel_y = 30
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
+	},
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/aquila/secure_storage)
@@ -9135,6 +9191,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/aquila/secure_storage)
@@ -9547,6 +9608,7 @@
 "tJ" = (
 /obj/structure/table/rack,
 /obj/random/solgov,
+/obj/machinery/light/small,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/aquila/secure_storage)
 "tK" = (
@@ -10803,7 +10865,7 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/auxsolarbridge)
 "wn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
@@ -11349,7 +11411,7 @@
 /obj/machinery/door/airlock/maintenance{
 	req_access = list(12)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/bridge/foreport)
 "xl" = (
 /obj/structure/cable/green{
@@ -11427,7 +11489,7 @@
 	req_access = list(12)
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/maintenance/bridge/foreport)
 "xq" = (
 /obj/structure/cable/green{
@@ -12533,6 +12595,11 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/aquila/head)
 "Dc" = (
@@ -12632,7 +12699,7 @@
 	name = "Disciplinary Board Room Maintenance Access";
 	req_access = list(12,19)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/bridge/disciplinary_board_room)
 "Dl" = (
 /obj/effect/floor_decal/borderfloorwhite/corner{
@@ -14317,7 +14384,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/structure/bed/chair/shuttle/black{
+/obj/structure/bed/chair/shuttle/red{
 	icon_state = "shuttle_chair_preview";
 	dir = 8
 	},
@@ -14658,7 +14725,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/shield/bridge)
 "Nj" = (
 /obj/effect/floor_decal/corner/blue{
@@ -14757,7 +14824,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/bridge)
 "Oh" = (
 /obj/machinery/disposal,
@@ -14923,7 +14990,7 @@
 	name = "Bridge Access";
 	req_one_access = list(19,80)
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/bridge)
 "Pi" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -14986,7 +15053,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/simulated/floor/tiled/monotile,
 /area/aux_eva)
 "Qd" = (
 /obj/machinery/firealarm{
@@ -15251,6 +15318,11 @@
 	dir = 2;
 	name = "south bump";
 	pixel_y = -24
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /obj/structure/cable/cyan{
 	d2 = 4;
@@ -16219,7 +16291,7 @@
 	icon_state = "bordercolor";
 	dir = 4
 	},
-/obj/structure/bed/chair/shuttle/black{
+/obj/structure/bed/chair/shuttle/red{
 	icon_state = "shuttle_chair_preview";
 	dir = 8
 	},

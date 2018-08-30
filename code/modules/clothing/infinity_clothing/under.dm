@@ -33,7 +33,7 @@
 	icon = 'icons/obj/clothing/infinity/uniform.dmi'
 	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
 	icon_state = "engine_senior"
-	item_state = "eng_senior" //YEAH, YEAH.
+	item_state = "eng_senior"
 	worn_state = "eng_senior"
 
 /obj/item/clothing/under/rank/captain/whitefleet
@@ -54,4 +54,23 @@
 	icon_state = "fleet_com"
 	item_state = "fleet_com"
 	worn_state = "fleet_com"
+	displays_id = 0
+
+/obj/item/clothing/under/rank/janitor/white
+	name = "janitor's utility uniform"
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
+	icon_state = "janitor_uniform"
+	item_state = "janitor_uniform"
+	worn_state = "janitor_uniform"
+	displays_id = 0
+
+/obj/item/clothing/under/manager
+	name = "manager's uniform"
+	desc = "A generic suit for office's middle managar. Our usual worker (who'll know?)."
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
+	icon_state = "middle_manager"
+	item_state = "middle_manager"
+	worn_state = "middle_manager"
 	displays_id = 0

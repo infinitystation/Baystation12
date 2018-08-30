@@ -497,6 +497,10 @@
 /area/shuttle/merchant/home
 	name = "\improper Merchant Vessel"
 	icon_state = "shuttlegrn"
+	requires_power = 1
+	dynamic_lighting = 1
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 
 //Merc
 

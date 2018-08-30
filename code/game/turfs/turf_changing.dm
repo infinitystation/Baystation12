@@ -113,6 +113,7 @@
 	if(!..())
 		return 0
 	paint_color = other.paint_color
+	stripe_color = other.stripe_color
 	return 1
 
 //No idea why resetting the base appearence from New() isn't enough, but without this it doesn't work

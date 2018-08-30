@@ -5,7 +5,7 @@
 	},
 /area/bluespaceriver/ground)
 "ab" = (
-/turf/unsimulated/mask{
+/turf/simulated/mineral/random{
 	temperature = 230
 	},
 /area/bluespaceriver/ground)
@@ -837,10 +837,6 @@
 "cD" = (
 /obj/effect/landmark/map_data{
 	height = 2
-	},
-/obj/effect/landmark/random_gen/asteroid{
-	generation_height = 100;
-	generation_width = 100
 	},
 /turf/unsimulated/mineral{
 	temperature = 233

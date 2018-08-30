@@ -5,8 +5,11 @@
 	default_delay = 25 SECONDS
 	speed_mod = 5 SECONDS
 
+	color = "#eeeeee"
+	icon = 'icons/obj/overmap_inf.dmi'
+
 	initial_restricted_waypoints = list(
-		"Charon" = list("nav_hangar_calypso"), 	//can't have random shuttles popping inside the ship
+		"Charon" = list("nav_hangar_calypso"),
 		"Guppy" = list("nav_hangar_guppy"),
 		"Albatross" = list("nav_albatross_dock")
 	)

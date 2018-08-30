@@ -11,7 +11,7 @@
 /turf/space,
 /area/space)
 "ad" = (
-/turf/unsimulated/mask,
+/turf/simulated/mineral/random,
 /area/mine/unexplored)
 "ae" = (
 /turf/simulated/floor/asteroid,
@@ -212,7 +212,7 @@
 /turf/simulated/floor/exoplanet/water/shallow,
 /area/mine/explored)
 "be" = (
-/turf/unsimulated/mask,
+/turf/simulated/mineral/random,
 /area/mine/explored)
 "bf" = (
 /obj/effect/shuttle_landmark/orb/nav2,
@@ -223,7 +223,6 @@
 /turf/space,
 /area/space)
 "bi" = (
-/obj/effect/landmark/random_gen/asteroid,
 /turf/space,
 /area/space)
 "cf" = (

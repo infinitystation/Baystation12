@@ -44,8 +44,6 @@
 
 /datum/gear/uniform/turtleneck
 
-/datum/gear/tactical/tacticool
-
 /datum/gear/uniform/corporate
 	allowed_branches = CIVILIAN_BRANCHES
 

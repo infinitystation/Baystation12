@@ -9,7 +9,7 @@
 /datum/computer_file/report/recipient/crew_transfer/generate_fields()
 	..()
 	var/list/hop_fields = list()
-	add_field(/datum/report_field/instruction, "НСН Сьерра - Офис Главы Персонала")
+	add_field(/datum/report_field/instruction, "ИСН Сьерра - Офис Главы Персонала")
 	add_field(/datum/report_field/people/from_manifest, "Им&#255; (ИО)")
 	add_field(/datum/report_field/people/from_manifest, "Им&#255; (за&#255;витель)", required = 1)
 	add_field(/datum/report_field/date, "Дата заполнени&#255;")
@@ -35,7 +35,7 @@
 /datum/computer_file/report/recipient/access_modification/generate_fields()
 	..()
 	var/list/hop_fields = list()
-	add_field(/datum/report_field/instruction, "НСН Сьерра - Офис Главы Персонала")
+	add_field(/datum/report_field/instruction, "ИСН Сьерра - Офис Главы Персонала")
 	add_field(/datum/report_field/people/from_manifest, "Им&#255; (ИО)")
 	add_field(/datum/report_field/people/from_manifest, "Им&#255; (за&#255;витель)", required = 1)
 	add_field(/datum/report_field/date, "Дата заполнени&#255;")
@@ -61,7 +61,7 @@
 /datum/computer_file/report/recipient/borging/generate_fields()
 	..()
 	var/list/hop_fields = list()
-	add_field(/datum/report_field/instruction, "НСН Сьерра - Офис Главы Персонала")
+	add_field(/datum/report_field/instruction, "ИСН Сьерра - Офис Главы Персонала")
 	add_field(/datum/report_field/people/from_manifest, "Им&#255; (ИО)")
 	add_field(/datum/report_field/people/from_manifest, "Им&#255; (субъект)", required = 1)
 	add_field(/datum/report_field/date, "Дата заполнени&#255;")
@@ -88,7 +88,7 @@
 
 /datum/computer_file/report/recipient/sec/investigation/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "Департамент охраны НСН Сьерра")
+	add_field(/datum/report_field/instruction, "Департамент охраны ИСН Сьерра")
 	add_field(/datum/report_field/instruction, "Только дл&#255; внутреннего использовани&#255;.")
 	add_field(/datum/report_field/people/from_manifest, "Им&#255;")
 	add_field(/datum/report_field/date, "Дата")
@@ -106,7 +106,7 @@
 
 /datum/computer_file/report/recipient/sec/incident/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "Департамент охраны НСН Сьерра")
+	add_field(/datum/report_field/instruction, "Департамент охраны ИСН Сьерра")
 	add_field(/datum/report_field/instruction, "Заполн&#255;етс&#255; офицером при исполнении, реагировавшим на инцидент. Должно быть заполнено и зарегистрировано до конца смены!")
 	add_field(/datum/report_field/people/from_manifest, "Докладывающий офицер")
 	add_field(/datum/report_field/simple_text, "Тип инциденте/Преступлени&#255;")
@@ -128,7 +128,7 @@
 /datum/computer_file/report/recipient/sec/evidence/generate_fields()
 	..()
 	var/datum/report_field/temp_field
-	add_field(/datum/report_field/instruction, "Департамент охраны НСН Сьерра")
+	add_field(/datum/report_field/instruction, "Департамент охраны ИСН Сьерра")
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/time, "Врем&#255;")
 	add_field(/datum/report_field/people/from_manifest, "Конфисковано у")
@@ -154,7 +154,7 @@
 
 /datum/computer_file/report/recipient/docked/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "Департамент снабжени&#255; и мененджемента ангара НСН Сьерра")
+	add_field(/datum/report_field/instruction, "Департамент снабжени&#255; и мененджемента ангара ИСН Сьерра")
 	add_field(/datum/report_field/instruction, "Обща&#255; информаци&#255;")
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/simple_text, "Название судна")
@@ -186,7 +186,7 @@
 
 /datum/computer_file/report/recipient/fauna/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "Экспедиционный департамент НСН Сьерра")
+	add_field(/datum/report_field/instruction, "Экспедиционный департамент ИСН Сьерра")
 	add_field(/datum/report_field/instruction, "Следующа&#255; форма должна быть заполнена членами экспедиционной команды после открыти&#255; и изучени&#255; новой формы инопланетной жизни.")
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/people/list_from_manifest, "Вовлеченный персонал")
@@ -207,7 +207,7 @@
 	logo = "\[logo\]"
 
 /datum/computer_file/report/recipient/nt/proc/add_header()
-	add_field(/datum/report_field/simple_text, "Судно", "НСН Сьерра")
+	add_field(/datum/report_field/simple_text, "Судно", "ИСН Сьерра")
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/time, "Врем&#255;")
 	add_field(/datum/report_field/simple_text, "Номер")
@@ -473,7 +473,7 @@
 
 /datum/computer_file/report/recipient/sol/audit
 	form_name = "NT-REP-12"
-	title = "Аудит департамента НСН Сьерра"
+	title = "Аудит департамента ИСН Сьерра"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sol/audit/generate_fields()
