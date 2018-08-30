@@ -157,11 +157,9 @@ Please contact me on #coderbus IRC. ~Carn x
 
 		var/list/visible_overlays
 		if(is_cloaked())
+			icon = 'icons/mob/human.dmi'
+			icon_state = "blank"
 			visible_overlays = list(visible_overlays[R_HAND_LAYER], visible_overlays[L_HAND_LAYER])
-			if(species.reagent_tag == IS_NABBER)
-				alpha = 25
-			else
-				alpha = 40
 		else
 			icon = stand_icon
 			icon_state = null
