@@ -71,12 +71,12 @@
 
 //We lied - it's pills all the way down
 /obj/item/weapon/reagent_containers/pill/antitox
-	name = "Dylovene (25u)"
+	name = "Dylovene (15u)"
 	desc = "Neutralizes many common toxins."
 	icon_state = "pill1"
 /obj/item/weapon/reagent_containers/pill/antitox/New()
 	..()
-	reagents.add_reagent(/datum/reagent/dylovene, 25)
+	reagents.add_reagent(/datum/reagent/dylovene, 15)
 	color = reagents.get_color()
 
 
@@ -149,23 +149,23 @@
 
 
 /obj/item/weapon/reagent_containers/pill/inaprovaline
-	name = "Inaprovaline (30u)"
+	name = "Inaprovaline (20u)"
 	desc = "Used to stabilize patients."
 	icon_state = "pill1"
 /obj/item/weapon/reagent_containers/pill/inaprovaline/New()
 	..()
-	reagents.add_reagent(/datum/reagent/inaprovaline, 30)
+	reagents.add_reagent(/datum/reagent/inaprovaline, 20)
 	color = reagents.get_color()
 
 /obj/item/weapon/reagent_containers/pill/nanoblood
 	name = "Nanoblood (5u)"
 	desc = "Used to stabilize blood level."
 	icon_state = "pill8"
+
 /obj/item/weapon/reagent_containers/pill/nanoblood/New()
 	..()
-	reagents.add_reagent(/datum/reagent/nanoblood, 30)
+	reagents.add_reagent(/datum/reagent/nanoblood, 5)
 	color = reagents.get_color()
-
 
 /obj/item/weapon/reagent_containers/pill/dexalin
 	name = "Dexalin (15u)"
@@ -216,12 +216,12 @@
 
 
 /obj/item/weapon/reagent_containers/pill/bicaridine
-	name = "Bicaridine (20u)"
+	name = "Bicaridine (15u)"
 	desc = "Used to treat physical injuries."
 	icon_state = "pill2"
 /obj/item/weapon/reagent_containers/pill/bicaridine/New()
 	..()
-	reagents.add_reagent(/datum/reagent/bicaridine, 20)
+	reagents.add_reagent(/datum/reagent/bicaridine, 15)
 	color = reagents.get_color()
 
 
