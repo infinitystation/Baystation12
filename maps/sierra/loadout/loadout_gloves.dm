@@ -35,3 +35,8 @@
 	glovtype["yellow insulated"] = /obj/item/clothing/gloves/insulated
 	glovtype["black insulated"] = /obj/item/clothing/gloves/insulated/black
 	gear_tweaks += new/datum/gear_tweak/path(glovtype)
+
+/datum/gear/gloves/duty
+	display_name = "gloves, duty"
+	path = /obj/item/clothing/gloves/duty
+	cost = 2

@@ -19,9 +19,6 @@
 	cost = 5
 	allowed_roles = ARMORED_ROLES
 
-/datum/gear/tactical/holster
-	allowed_roles = ARMED_ROLES
-
 /datum/gear/tactical/large_pouches
 	allowed_roles = ARMORED_ROLES
 
@@ -33,12 +30,10 @@
 
 /datum/gear/tactical/tacticool
 
-/datum/gear/tactical/press_tag
-	display_name = "Press tag"
-	path = /obj/item/clothing/accessory/armor/tag/press
-	allowed_roles = list("Journalist")
+/datum/gear/tactical/holster
+	allowed_roles = ARMED_ROLES
 
-/datum/gear/tactical/pcarrier/navy
+/datum/gear/tactical/pcarrier_press
 	display_name = "journalist's navy plate carrier"
 	path = /obj/item/clothing/suit/armor/pcarrier/light/press
 	allowed_roles = list("Journalist")
@@ -52,11 +47,11 @@
 
 /datum/gear/tactical/pcarrier/New()
 	..()
-	var/cool_armors = list()
-	cool_armors["black plate carrier"] = /obj/item/clothing/suit/armor/pcarrier
-	cool_armors["blue plate carrier"] = /obj/item/clothing/suit/armor/pcarrier/blue
-	cool_armors["navy plate carrier"] = /obj/item/clothing/suit/armor/pcarrier/navy
-	cool_armors["green plate carrier"] = /obj/item/clothing/suit/armor/pcarrier/green
-	cool_armors["tan plate carrier"] = /obj/item/clothing/suit/armor/pcarrier/tan
-	gear_tweaks += new/datum/gear_tweak/path(cool_armors)
+	var/armor = list()
+	armor["black plate carrier"]	= /obj/item/clothing/suit/armor/pcarrier
+	armor["blue plate carrier"] 	= /obj/item/clothing/suit/armor/pcarrier/blue
+	armor["navy plate carrier"] 	= /obj/item/clothing/suit/armor/pcarrier/navy
+	armor["green plate carrier"] 	= /obj/item/clothing/suit/armor/pcarrier/green
+	armor["tan plate carrier"] 		= /obj/item/clothing/suit/armor/pcarrier/tan
+	gear_tweaks += new/datum/gear_tweak/path(armor)
 

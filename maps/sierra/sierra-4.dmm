@@ -25622,10 +25622,6 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/structure/cable/blue{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/merchant/home)
 "sOH" = (

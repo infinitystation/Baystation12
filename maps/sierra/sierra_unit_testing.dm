@@ -15,7 +15,7 @@
 		/area/maintenance/compactor = 0,
 		/area/maintenance/incinerator = NO_SCRUBBER,
 		/area/maintenance/disposal = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/storage/bridge = 0,
+		/area/maintenance/thirddeck/aft = 0,
 		/area/mine/explored = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/mine/unexplored = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/ninja_dojo = NO_SCRUBBER |NO_VENT | NO_APC,
