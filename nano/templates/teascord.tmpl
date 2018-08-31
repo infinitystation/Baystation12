@@ -1,0 +1,25 @@
+<div class='Menu'>
+	{{:helper.link('Contacts', null, {'contacts' : 1}, data.screen_state == 2 ? 'selected' : null)}}
+	{{:helper.link('Settings', null, {'settings' : 1}, data.screen_state == 1 ? 'selected' : null)}}
+	<br>
+	<hr>
+</div>
+{{if data.screen_state == 1}}<!--Settings-->
+<div class="item">
+	<div class="itemLabel">
+		<b>Settings</b>:
+	</div>
+	<div class="itemContent">
+		(WIP)
+	</div>
+</div>
+{{else data.screen_state == 2}}<!--Contacts-->
+<div class="item">
+	<div class="itemLabel">
+		<b>Contacts</b>:
+	</div>
+	<div class="itemContent">
+		(WIP)
+	</div>
+</div>
+{{/if}}
