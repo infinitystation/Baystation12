@@ -232,7 +232,7 @@
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
 			var/obj/structure/obstacle = locate(/obj/structure, get_step(src, dir))
-			if(istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/closet) || istype(obstacle, /obj/structure/table) || istype(obstacle, /obj/structure/grille))
+			if(istype(obstacle, /obj/structure/window) || istype(obstacle, /obj/structure/closet) || istype(obstacle, /obj/structure/table) || istype(obstacle, /obj/structure/grille || istype(obstacle, /obj/structure/wall_frame) || istype(obstacle, /obj/structure/sandbag) || istype(obstacle, /obj/structure/barrier) || istype(obstacle, /obj/structure/handrail) || istype(obstacle, /obj/structure/door_assembly) || istype(obstacle, /obj/machinery/door) || istype(obstacle, /obj/item/tape) || istype(obstacle, /obj/machinery/deployable/barrier) || istype(obstacle, /obj/structure/barricade) || istype(obstacle, /obj/structure/girder) || istype(obstacle, /obj/structure/inflatable))
 				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 				return
 			if(istype(obstacle, /obj/structure/wall_frame))
