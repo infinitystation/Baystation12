@@ -208,26 +208,6 @@
 	icon_state = "blackdress"
 	item_state = "blackdress"
 
-/obj/item/clothing/suit/storage/toggle/dress/army
-	name = "army white dress jacket"
-	desc = "A navy white SCG Army dress jacket with silver accents and golden trims."
-	icon = 'icons/obj/clothing/infinity/uniform.dmi'
-	icon_state = "whitedress"
-	icon_open = "whitedress_open"
-	icon_closed = "whitedress"
-	item_state = "whitedressh"
-	item_icons = list(slot_wear_suit_str = 'icons/obj/clothing/infinity/uniform.dmi')
-
-/obj/item/clothing/suit/storage/toggle/dress/army/command
-	name = "army officer's white dress jacket"
-	desc = "A navy white SCG Army dress jacket dripping with gold accents and trims."
-	icon_state = "whitedress_com"
-	//item_state = "labcoat"
-	icon_open = "whitedress_com_open"
-	icon_closed = "whitedress_com"
-	item_state = "whitedressh_com"
-	//blood_overlay_type = "coat"
-
 /obj/item/clothing/suit/dress/solgov/army/command
 	name = "army officer's dress jacket"
 	desc = "A tailored black SCG Army dress jacket with gold trim. Smells like ceremony."

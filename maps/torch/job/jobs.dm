@@ -49,17 +49,11 @@
 
 /datum/job/captain
 	title = "Commanding Officer"
-	department = "Command"
 	supervisors = "the Sol Central Government and the Sol Code of Military Justice"
-	department_flag = COM
-	head_position = 1
 	minimal_player_age = 7
 	economic_power = 15
 	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/CO
-	total_positions = 1
-	spawn_positions = 1
-	req_admin_notify = 1
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps
 	)
@@ -318,6 +312,7 @@
 	title = "NanoTrasen Liaison"
 	department = "Support"
 	department_flag = SPT
+
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "NanoTrasen and Corporate Regulations"
@@ -349,6 +344,7 @@
 	title = "SolGov Representative"
 	department = "Support"
 	department_flag = SPT
+
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Sol Central Government and the SCG Charter"
@@ -374,6 +370,7 @@
 	title = "Senior Enlisted Advisor"
 	department = "Support"
 	department_flag = SPT
+
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Commanding Officer and the Executive Officer"
@@ -418,6 +415,7 @@
 	title = "Bridge Officer"
 	department = "Support"
 	department_flag = SPT
+
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Commanding Officer and heads of staff"
@@ -534,8 +532,8 @@
 	title = "Explorer"
 	department = "Exploration"
 	department_flag = EXP
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Commanding Officer, Executive Officer, and Pathfinder"
 	selection_color = "#68099e"
 	ideal_character_age = 20
@@ -564,6 +562,7 @@
 	title = "Senior Engineer"
 	department = "Engineering"
 	department_flag = ENG
+
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Chief Engineer"
@@ -614,8 +613,6 @@
 
 /datum/job/engineer
 	title = "Engineer"
-	department = "Engineering"
-	department_flag = ENG
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "the Chief Engineer"
@@ -810,8 +807,6 @@
 
 /datum/job/warden
 	title = "Brig Officer"
-	department = "Security"
-	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Chief of Security"
@@ -902,14 +897,13 @@
 
 /datum/job/officer
 	title = "Master at Arms"
-	department = "Security"
-	department_flag = SEC
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "the Chief of Security"
 	economic_power = 4
 	minimal_player_age = 7
 	ideal_character_age = 25
+	alt_titles = list()
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/security/maa
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
@@ -1133,9 +1127,6 @@
 
 /datum/job/psychiatrist
 	title = "Counselor"
-	department = "Medical"
-	department_flag = MED
-
 	total_positions = 1
 	spawn_positions = 1
 	ideal_character_age = 40
@@ -1380,6 +1371,7 @@
 	title = "Crewman"
 	department = "Service"
 	department_flag = SRV
+
 	total_positions = 5
 	spawn_positions = 5
 	supervisors = "the Executive Officer and SolGov Personnel"
@@ -1436,8 +1428,6 @@
 
 /datum/job/scientist
 	title = "Scientist"
-	department = "Science"
-	department_flag = SCI
 	total_positions = 6
 	spawn_positions = 6
 	supervisors = "the Research Director"
@@ -1531,8 +1521,6 @@
 	title = "Passenger"
 	total_positions = 12
 	spawn_positions = 12
-	department = "Civilian"
-	department_flag = CIV
 	supervisors = "the Executive Officer"
 	selection_color = "#515151"
 	economic_power = 6

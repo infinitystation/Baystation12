@@ -23,3 +23,7 @@
 	item_state = "workboots"
 	icon = 'icons/obj/clothing/infinity/shoes.dmi'
 	item_icons = list(slot_shoes_str = 'icons/mob/infinity/shoes.dmi')
+
+/obj/item/clothing/shoes/combat/marine
+	icon_state = "swat"
+	armor = list(melee = 50, bullet = 50, laser = 30,energy = 25, bomb = 50, bio = 10, rad = 0)

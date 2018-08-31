@@ -1,6 +1,3 @@
-//obj/item/clothing/shoes/handle_movement() //this was made to rewrite clown shoes squeaking
-//	playsound(src, 'sound/effects/step.ogg', 45, 1)
-
 /obj/item/clothing/shoes/syndigaloshes
 	desc = "A pair of brown shoes. They seem to have extra grip."
 	name = "brown shoes"
@@ -41,10 +38,6 @@
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
 	heat_protection = FEET
 	max_heat_protection_temperature = SHOE_MAX_HEAT_PROTECTION_TEMPERATURE
-
-/obj/item/clothing/shoes/combat/marine
-	icon_state = "swat"
-	armor = list(melee = 50, bullet = 50, laser = 30,energy = 25, bomb = 50, bio = 10, rad = 0)
 
 /obj/item/clothing/shoes/jungleboots
 	name = "jungle boots"

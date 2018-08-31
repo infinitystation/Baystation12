@@ -263,19 +263,17 @@
 
 /obj/item/clothing/under/solgov/service/fleet
 	name = "fleet service uniform"
-	desc = "The service uniform of the SCG Fleet."
-	icon = 'icons/obj/clothing/infinity/uniform.dmi'
-	icon_state = "blackservice"
-	item_icons = list(slot_w_uniform_str = 'icons/obj/clothing/infinity/uniform.dmi')
-	item_state = "blackservice"
-	worn_state = "blackservice"
+	desc = "The service uniform of the SCG Fleet, made from immaculate white fabric."
+	icon_state = "whiteservice"
+	item_state = "nursesuit"
+	worn_state = "whiteservice"
+	starting_accessories = list(/obj/item/clothing/accessory/black)
 
-/obj/item/clothing/under/solgov/service/fleet/command
-	name = "fleet officer's service uniform"
-	desc = "The service uniform of the SCG Fleet officer."
-	icon_state = "blackserviceof"
-	item_state = "blackserviceof"
-	worn_state = "blackserviceof"
+/obj/item/clothing/under/solgov/service/fleet/skirt
+	name = "fleet service skirt"
+	desc = "The service uniform skirt of the SCG Fleet, made from immaculate white fabric."
+	icon_state = "whiteservicefem"
+	worn_state = "whiteservicefem"
 
 /obj/item/clothing/under/solgov/service/army
 	name = "army service uniform"

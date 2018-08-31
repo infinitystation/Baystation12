@@ -22,13 +22,11 @@
 	name = "\improper Expeditionary Corps cap"
 	desc = "It's a black ballcap bearing the Expeditonary Corps crest."
 	icon_state = "expeditionsoft"
-
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/head.dmi',
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
 		)
-
 
 /obj/item/clothing/head/soft/solgov/expedition/co
 	name = "\improper Expeditionary Corps command cap"
@@ -110,21 +108,7 @@
 	name = "army garrison cap"
 	desc = "A green garrison cap belonging to the SCG Army."
 	icon_state = "greengarrisoncap"
-/*
-/obj/item/clothing/head/solgov/service/fleet
-	name = "fleet service garrison cap"
-	desc = "A peaked dark-blue cap belonging to the SCG Fleet Corps."
-	icon = 'icons/obj/clothing/infinity/hats.dmi'
-	icon_state = "navygarrisoncap"
-	item_icons = list(slot_head_str = 'icons/obj/clothing/infinity/hats_onmob.dmi')
-	item_state = "navygarrisoncap"
 
-/obj/item/clothing/head/solgov/service/fleet/command
-	name = "fleet officer's garrison cap"
-	desc = "A garrison khaki cap belonging to the SCG Fleet Corps. A common headwear of fleet officers."
-	icon_state = "khakipeakcap_com"
-	item_state = "khakipeakcap_com"
-*/
 /obj/item/clothing/head/solgov/service/army/garrison/command
 	name = "army officer's garrison cap"
 	desc = "A green garrison cap belonging to the SCG Army. This one has a gold pin."

@@ -207,3 +207,4 @@
 	dress_over = /obj/item/clothing/suit/storage/toggle/dress/fleet/command
 	dress_hat = /obj/item/clothing/head/solgov/dress/fleet/command
 	dress_extra = list(/obj/item/weapon/material/sword/replica/officersword, /obj/item/clothing/head/beret/solgov/fleet/dress/command)
+

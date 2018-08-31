@@ -12,3 +12,17 @@
 	color = null
 	icon_state = "black"
 	item_state = "bgloves"
+
+/obj/item/clothing/gloves/thick/combat/marine
+	desc = "These combat gloves are somewhat fire and impact resistant."
+	name = "combat gloves"
+	icon_state = "black"
+	item_state = "swat_gl"
+	armor = list(melee = 30, bullet = 30, laser = 30,energy = 15, bomb = 20, bio = 0, rad = 0)
+
+/obj/item/clothing/gloves/insulated/combat
+	name = "combat insulated gloves"
+	color = "#80868e"
+	icon_state = "black"
+	item_state = "bgloves"
+	armor = list(melee = 20, bullet = 20, laser = 30,energy = 25, bomb = 20, bio = 0, rad = 0)

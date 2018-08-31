@@ -1,4 +1,4 @@
-///Job Outfits
+//Job Outfits
 
 /*
 TORCH OUTFITS
@@ -385,7 +385,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/torch/crew/medical/counselor/chaplain
 	name = OUTFIT_JOB_NAME("Chaplain - Torch")
 	uniform = /obj/item/clothing/under/rank/chaplain
-	l_hand = /obj/item/weapon/storage/bible
 
 /decl/hierarchy/outfit/job/torch/crew/medical/counselor/ec
 	name = OUTFIT_JOB_NAME("Counselor - Expeditionary Corps")

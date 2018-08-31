@@ -22,4 +22,8 @@
 //			badge_string = user.personal_faction
 //		to_chat(user, "<span class='notice'>[src]'s faction now is '[badge_string]'.</span>")
 
+/obj/item/clothing/accessory/storage/bandolier/armory/Initialize()
+	. = ..()
 
+	for(var/i = 0, i < slots, i++)
+		new /obj/item/ammo_casing/shotgun/pellet(hold)
