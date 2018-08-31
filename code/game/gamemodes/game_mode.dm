@@ -498,16 +498,6 @@ proc/display_roundstart_logout_report()
 	for(var/mob/M in SSmobs.mob_list)
 		if(M.client && M.client.holder)
 			to_chat(M, msg)
-proc/get_nt_opposed()
-	var/list/dudes = list()
-	for(var/mob/living/carbon/human/man in GLOB.player_list)
-		if(man.client)
-			if(man.client.prefs.economic_status == CLASS_LOWER)
-				dudes += man
-			else if(man.client.prefs.economic_status == CLASS_LOWMID && prob(50))
-				dudes += man
-	if(dudes.len == 0) return null
-	return pick(dudes)
 
 /proc/show_objectives(var/datum/mind/player)
 

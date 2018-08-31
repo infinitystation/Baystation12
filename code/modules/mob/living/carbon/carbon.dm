@@ -123,6 +123,8 @@
 		if(31 to INFINITY)
 			Weaken(10) //This should work for now, more is really silly and makes you lay there forever
 
+	make_jittery(min(shock_damage*5, 200))
+
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 	s.set_up(5, 1, loc)
 	s.start()
@@ -408,10 +410,6 @@
 /mob/living/carbon/get_default_language()
 	if(default_language && can_speak(default_language))
 		return default_language
-
-	if(!species)
-		return null
-	return species.default_language ? all_languages[species.default_language] : null
 
 /mob/living/carbon/show_inv(mob/user as mob)
 	user.set_machine(src)

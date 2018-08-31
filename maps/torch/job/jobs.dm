@@ -1,5 +1,6 @@
 /datum/map/torch
 	species_to_job_whitelist = list(
+		/datum/species/adherent = list(/datum/job/assistant),
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/chemist,
 		/datum/job/roboticist, /datum/job/cargo_contractor, /datum/job/chef, /datum/job/engineer_contractor, /datum/job/doctor_contractor, /datum/job/bartender),
 		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/stowaway)
@@ -52,8 +53,8 @@
 	supervisors = "the Sol Central Government and the Sol Code of Military Justice"
 	department_flag = COM
 	head_position = 1
-	minimal_player_age = 21
-	economic_modifier = 15
+	minimal_player_age = 7
+	economic_power = 15
 	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/CO
 	total_positions = 1
@@ -86,12 +87,8 @@
 	supervisors = "the Commanding Officer"
 	department = "Command"
 	department_flag = COM
-	head_position = 1
-	total_positions = 1
-	spawn_positions = 1
-	req_admin_notify = 1
-	minimal_player_age = 21
-	economic_modifier = 10
+	minimal_player_age = 7
+	economic_power = 10
 	ideal_character_age = 45
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/XO
 	allowed_branches = list(
@@ -143,14 +140,8 @@
 /datum/job/rd
 	title = "Research Director"
 	supervisors = "NanoTrasen and the Commanding Officer"
-	department = "Science"
-	department_flag = SCI|COM
-	head_position = 1
-	total_positions = 1
-	spawn_positions = 1
-	req_admin_notify = 1
-	economic_modifier = 20
-	minimal_player_age = 14
+	economic_power = 20
+	minimal_player_age = 7
 	ideal_character_age = 60
 	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/research/rd
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -185,14 +176,8 @@
 /datum/job/cmo
 	title = "Chief Medical Officer"
 	supervisors = "the Commanding Officer and the Executive Officer"
-	head_position = 1
-	department = "Medical"
-	department_flag = MED|COM
-	total_positions = 1
-	spawn_positions = 1
-	req_admin_notify = 1
-	economic_modifier = 10
-	minimal_player_age = 21
+	economic_power = 10
+	minimal_player_age = 7
 	ideal_character_age = 48
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/cmo
 	allowed_branches = list(
@@ -235,15 +220,9 @@
 /datum/job/chief_engineer
 	title = "Chief Engineer"
 	supervisors = "the Commanding Officer and the Executive Officer"
-	head_position = 1
-	department = "Engineering"
-	department_flag = ENG|COM
-	total_positions = 1
-	spawn_positions = 1
-	req_admin_notify = 1
-	economic_modifier = 9
+	economic_power = 9
 	ideal_character_age = 40
-	minimal_player_age = 21
+	minimal_player_age = 7
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/chief_engineer
 	allowed_branches = list(
 		/datum/mil_branch/expeditionary_corps,
@@ -296,14 +275,8 @@
 /datum/job/hos
 	title = "Chief of Security"
 	supervisors = "the Commanding Officer and the Executive Officer"
-	head_position = 1
-	department = "Security"
-	department_flag = SEC|COM
-	total_positions = 1
-	spawn_positions = 1
-	req_admin_notify = 1
-	economic_modifier = 8
-	minimal_player_age = 21
+	economic_power = 8
+	minimal_player_age = 7
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/cos
 	allowed_branches = list(
@@ -349,8 +322,8 @@
 	spawn_positions = 1
 	supervisors = "NanoTrasen and Corporate Regulations"
 	selection_color = "#2f2f7f"
-	economic_modifier = 15
-	minimal_player_age = 10
+	economic_power = 15
+	minimal_player_age = 0
 	alt_titles = list(
 		"NanoTrasen Representative",
 		"NanoTrasen Executive"
@@ -380,8 +353,8 @@
 	spawn_positions = 1
 	supervisors = "the Sol Central Government and the SCG Charter"
 	selection_color = "#2f2f7f"
-	economic_modifier = 15
-	minimal_player_age = 10
+	economic_power = 15
+	minimal_player_age = 0
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/representative
 	allowed_branches = list(/datum/mil_branch/solgov)
 	allowed_ranks = list(/datum/mil_rank/sol/gov)
@@ -405,8 +378,8 @@
 	spawn_positions = 1
 	supervisors = "the Commanding Officer and the Executive Officer"
 	selection_color = "#2f2f7f"
-	minimal_player_age = 21
-	economic_modifier = 8
+	minimal_player_age = 7
+	economic_power = 8
 	ideal_character_age = 45
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/sea/fleet
 	allowed_branches = list(
@@ -449,8 +422,8 @@
 	spawn_positions = 2
 	supervisors = "the Commanding Officer and heads of staff"
 	selection_color = "#2f2f7f"
-	minimal_player_age = 18
-	economic_modifier = 7
+	minimal_player_age = 0
+	economic_power = 7
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/command/bridgeofficer
 	allowed_branches = list(
@@ -495,8 +468,8 @@
 	spawn_positions = 1
 	supervisors = "the Commanding Officer and the Executive Officer"
 	selection_color = "#68099e"
-	minimal_player_age = 7
-	economic_modifier = 7
+	minimal_player_age = 1
+	economic_power = 7
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/exploration/pathfinder
 	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
@@ -531,8 +504,8 @@
 	total_positions = 1
 	spawn_positions = 1
 	selection_color = "#68099e"
-	economic_modifier = 10
-	minimal_player_age = 4
+	economic_power = 10
+	minimal_player_age = 0
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/pilot
 	allowed_branches = list(
@@ -595,8 +568,8 @@
 	spawn_positions = 1
 	supervisors = "the Chief Engineer"
 	selection_color = "#5b4d20"
-	economic_modifier = 6
-	minimal_player_age = 14
+	economic_power = 6
+	minimal_player_age = 3
 	ideal_character_age = 40
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/engineering/senior_engineer
 	allowed_branches = list(
@@ -646,8 +619,8 @@
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "the Chief Engineer"
-	economic_modifier = 5
-	minimal_player_age = 7
+	economic_power = 5
+	minimal_player_age = 0
 	ideal_character_age = 30
 	alt_titles = list(
 		"Maintenance Technician",
@@ -707,7 +680,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Chief Engineer and Engineering Personnel"
-	minimal_player_age = 7
+	minimal_player_age = 0
 	selection_color = "#5b4d20"
 	alt_titles = list(
 		"Maintenance Assistant",
@@ -807,9 +780,10 @@
 
 	total_positions = 2
 	spawn_positions = 2
+	minimal_player_age = 0
 	supervisors = "the Chief Engineer and the Chief Medical Officer"
 	selection_color = "#5b4d20"
-	economic_modifier = 6
+	economic_power = 6
 	alt_titles = list(
 		"Biomechanical Engineer",
 		"Mechsuit Technician")
@@ -841,8 +815,8 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Chief of Security"
-	economic_modifier = 5
-	minimal_player_age = 14
+	economic_power = 5
+	minimal_player_age = 7
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/security/brig_officer
 	allowed_branches = list(
@@ -883,7 +857,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Chief of Security"
-	economic_modifier = 5
+	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
 	skill_points = 14
@@ -933,8 +907,8 @@
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "the Chief of Security"
-	economic_modifier = 4
-	minimal_player_age = 10
+	economic_power = 4
+	minimal_player_age = 7
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/security/maa
 	allowed_branches = list(
@@ -970,13 +944,13 @@
 	department = "Medical"
 	department_flag = MED
 
-	minimal_player_age = 14
+	minimal_player_age = 2
 	ideal_character_age = 45
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Chief Medical Officer"
 	selection_color = "#013d3b"
-	economic_modifier = 8
+	economic_power = 8
 	alt_titles = list(
 		"Surgeon",
 		"Trauma Surgeon")
@@ -1017,8 +991,9 @@
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the Chief Medical Officer"
-	economic_modifier = 7
+	economic_power = 7
 	ideal_character_age = 40
+	minimal_player_age = 0
 	alt_titles = list(
 		"Field Medic" = /decl/hierarchy/outfit/job/torch/crew/medical/doctor/medic,
 		"Medical Technician",
@@ -1062,7 +1037,7 @@
 	spawn_positions = 2
 	supervisors = "the Chief Medical Officer and Medical Personnel"
 	selection_color = "#013d3b"
-	economic_modifier = 3
+	economic_power = 3
 	ideal_character_age = 30
 	alt_titles = list(
 		"Orderly" = /decl/hierarchy/outfit/job/torch/crew/medical/contractor/orderly,
@@ -1140,8 +1115,9 @@
 	spawn_positions = 1
 	supervisors = "the Chief Medical Officer and Medical Personnel"
 	selection_color = "#013d3b"
-	economic_modifier = 4
+	economic_power = 4
 	ideal_character_age = 30
+	minimal_player_age = 0
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/contractor/chemist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
@@ -1163,7 +1139,8 @@
 	total_positions = 1
 	spawn_positions = 1
 	ideal_character_age = 40
-	economic_modifier = 5
+	economic_power = 5
+	minimal_player_age = 0
 	supervisors = "the Chief Medical Officer"
 	alt_titles = list(
 		"Psychiatrist" = /decl/hierarchy/outfit/job/torch/crew/medical/counselor/psychiatrist,
@@ -1197,8 +1174,8 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Executive Officer"
-	economic_modifier = 5
-	minimal_player_age = 7
+	economic_power = 5
+	minimal_player_age = 0
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/supply/deckofficer
 	allowed_branches = list(
@@ -1300,7 +1277,7 @@
 	spawn_positions = 4
 	supervisors = "the Deck Officer and Executive Officer"
 	selection_color = "#515151"
-	economic_modifier = 7
+	economic_power = 7
 	ideal_character_age = 25
 	alt_titles = list(
 		"Drill Technician",
@@ -1432,8 +1409,8 @@
 	spawn_positions = 1
 	supervisors = "the Research Director"
 	selection_color = "#633d63"
-	economic_modifier = 12
-	minimal_player_age = 10
+	economic_power = 12
+	minimal_player_age = 3
 	ideal_character_age = 50
 	alt_titles = list(
 		"Research Supervisor")
@@ -1464,8 +1441,9 @@
 	total_positions = 6
 	spawn_positions = 6
 	supervisors = "the Research Director"
-	economic_modifier = 10
+	economic_power = 10
 	ideal_character_age = 45
+	minimal_player_age = 0
 	alt_titles = list(
 		"Xenoarcheologist",
 		"Anomalist",
@@ -1501,8 +1479,8 @@
 	spawn_positions = 2
 	supervisors = "the Research Director and NanoTrasen Personnel"
 	selection_color = "#633d63"
-	economic_modifier = 6
-	minimal_player_age = 3
+	economic_power = 6
+	minimal_player_age = 0
 	ideal_character_age = 25
 	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/research/guard
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -1528,7 +1506,7 @@
 	spawn_positions = 4
 	supervisors = "the Research Director and NanoTrasen Personnel"
 	selection_color = "#633d63"
-	economic_modifier = 3
+	economic_power = 3
 	ideal_character_age = 30
 	alt_titles = list(
 		"Custodian" = /decl/hierarchy/outfit/job/torch/passenger/research/assist/janitor,
@@ -1557,7 +1535,7 @@
 	department_flag = CIV
 	supervisors = "the Executive Officer"
 	selection_color = "#515151"
-	economic_modifier = 6
+	economic_power = 6
 	announced = FALSE
 	alt_titles = list(
 		"Journalist" = /decl/hierarchy/outfit/job/torch/passenger/passenger/journalist,
@@ -1569,13 +1547,11 @@
 		"Entertainer",
 		"Independent Observer",
 		"Sociologist",
-		"Off-Duty",
 		"Trainer")
 	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/passenger
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(
 		/datum/mil_rank/civ/civ,
-		/datum/mil_rank/civ/offduty,
 		/datum/mil_rank/civ/nt
 	)
 
@@ -1583,7 +1559,10 @@
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "your laws"
+	minimal_player_age = 0
 
+/datum/job/ai
+	minimal_player_age = 3
 
 /datum/job/merchant
 	title = "Merchant"
@@ -1595,7 +1574,7 @@
 	supervisors = "the invisible hand of the market"
 	selection_color = "#515151"
 	ideal_character_age = 30
-	minimal_player_age = 7
+	minimal_player_age = 0
 	create_record = 0
 	outfit_type = /decl/hierarchy/outfit/job/torch/merchant
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -1619,7 +1598,7 @@
 	supervisors = "yourself"
 	selection_color = "#515151"
 	ideal_character_age = 30
-	minimal_player_age = 7
+	minimal_player_age = 0
 	create_record = 0
 	account_allowed = 0
 	outfit_type = /decl/hierarchy/outfit/job/torch/stowaway

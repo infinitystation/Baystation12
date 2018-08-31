@@ -37,79 +37,7 @@
 	planet_size = list(129,129)
 
 	away_site_budget = 2
-
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
-
-	citizenship_choices = list(
-		"Earth",
-		"Luna",
-		"Mars",
-		"Pluto",
-		"Ceti Epsilon",
-		"Eos",
-		"Tiamat",
-		"Terra",
-		"Novaya Zemlya",
-		"Gaia",
-		"Moghes",
-		"Ahdomai",
-		"Qerrbalak",
-		"Tau-Wilo",
-		"Avalon",
-		"Tersten",
-		"Magnitka",
-		"Yuklid V",
-		"Cinu"
-		)
-
-	home_system_choices = list(
-		"Sol",
-		"Tau Ceti",
-		"Helios",
-		"Alpha Centuri",
-		"Gilgamesh",
-		"Galilei",
-		"Uuoea-Esa",
-		"Zamsiin-lr",
-		"Qerr'Valis",
-		"XX-168",
-		"Klaudof",
-		"Gavil",
-		"Ursa",
-		"Yuklid",
-		"Lucinaer"
-		)
-
-	faction_choices = list(
-		"Sol Central Government",
-		"Terran Colonial Confederation",
-		"NanoTrasen",
-		"Xynergy",
-		"Vey Med",
-		"Einstein Engines",
-		"Ward-Takahashi GMB",
-		"Gilthari Exports",
-		"Grayson Manufactories Ltd.",
-		"Aether Atmospherics",
-		"Zeng-Hu Pharmaceuticals",
-		"Hephaestus Industries",
-		"Free Trade Union",
-		"Commonwealth of Ahdomai",
-		"Positronic Union"
-		)
-
-	religion_choices = list(
-		"Jewish",
-		"Hinduism",
-		"Buddhist",
-		"Islamic",
-		"Christian",
-		"Agnostic",
-		"Deist",
-		"Athiest",
-		"Thelema",
-		"Spiritualist"
-		)
 
 /datum/map/sierra/setup_map()
 	..()

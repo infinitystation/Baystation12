@@ -46,6 +46,7 @@
 /decl/emote/visible/hiss
 	key ="hiss_"
 	emote_message_3p = "USER м&#255;гко шипит..."
+	emote_message_3p_target = "USER м&#255;гко шипит на TARGET..."
 
 /decl/emote/visible/shiver
 	key ="shiver"
@@ -169,6 +170,7 @@
 /decl/emote/visible/smile
 	key = "smile"
 	emote_message_3p = "USER улыбаетс&#255;."
+	emote_message_3p_target = "USER улыбаетс&#255; TARGET."
 
 /decl/emote/visible/pale
 	key = "pale"
@@ -181,18 +183,19 @@
 /decl/emote/visible/wink
 	key = "wink"
 	emote_message_3p = "USER подмигивает."
+	emote_message_3p_target = "USER подмигивает TARGET."
 
 /decl/emote/visible/hug
 	key = "hug"
 	check_restraints = TRUE
-	emote_message_3p = "USER hugs USER_THEMself."
 	emote_message_3p_target = "USER hugs TARGET."
+	emote_message_3p = "USER hugs USER_THEMself."
 
 /decl/emote/visible/dap
 	key = "dap"
 	check_restraints = TRUE
-	emote_message_3p = "USER sadly can't find anybody to give daps to, and daps USER_THEMself."
 	emote_message_3p_target = "USER gives daps to TARGET."
+	emote_message_3p = "USER sadly can't find anybody to give daps to, and daps USER_THEMself."
 
 /decl/emote/visible/signal
 	key = "signal"
@@ -225,19 +228,19 @@
 /decl/emote/visible/handshake
 	key = "handshake"
 	check_restraints = TRUE
-	emote_message_3p = "USER shakes hands with USER_THEMself."
 	emote_message_3p_target = "USER shakes hands with TARGET."
+	emote_message_3p = "USER shakes hands with USER_THEMself."
 	message_type = VISIBLE_MESSAGE
 
 /decl/emote/visible/handshake/get_emote_message_3p(var/atom/user, var/atom/target, var/extra_params)
 	if(target && !user.Adjacent(target))
-		return "USER holds out USER_HIS hand out to TARGET."
+		return "USER holds out USER_THEIR hand out to TARGET."
 	return ..()
 
 /decl/emote/visible/signal
 	key = "signal"
-	emote_message_3p = "USER signals."
 	emote_message_3p_target = "USER signals at TARGET."
+	emote_message_3p = "USER signals."
 	message_type = VISIBLE_MESSAGE
 
 /decl/emote/visible/signal/get_emote_message_3p(var/mob/user, var/atom/target, var/extra_params)

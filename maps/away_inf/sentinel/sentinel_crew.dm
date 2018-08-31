@@ -170,7 +170,7 @@
 	species_can_only_use = list(SPECIES_HUMAN)
 
 /obj/cryo_spawner/patrol_craft/marine/equip_character(mob/living/carbon/human/H, is_admin)
-	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/marine/urban(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/army/urban(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/headset/rescue(H), slot_l_ear)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/ert/security(H), slot_back)
@@ -188,7 +188,7 @@
 	..()
 	var/obj/item/clothing/under/uniform = H.w_uniform
 	if(uniform)
-		var/obj/item/clothing/accessory/solgov/rank/marine/enlisted/e2/marine = new()
+		var/obj/item/clothing/accessory/solgov/rank/army/enlisted/e2/marine = new()
 		if(uniform.can_attach_accessory(marine))
 			uniform.attach_accessory(null, marine)
 		else
@@ -199,7 +199,7 @@
 	species_can_only_use = list(SPECIES_HUMAN)
 
 /obj/cryo_spawner/patrol_craft/marine_eng/equip_character(mob/living/carbon/human/H, is_admin)
-	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/marine/urban(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/army/urban(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/headset/rescue(H), slot_l_ear)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/ert/engineer(H), slot_back)
@@ -217,7 +217,7 @@
 	..()
 	var/obj/item/clothing/under/uniform = H.w_uniform
 	if(uniform)
-		var/obj/item/clothing/accessory/solgov/rank/marine/enlisted/e3/ceng = new()
+		var/obj/item/clothing/accessory/solgov/rank/army/enlisted/e3/ceng = new()
 		if(uniform.can_attach_accessory(ceng))
 			uniform.attach_accessory(null, ceng)
 		else
@@ -228,7 +228,7 @@
 	species_can_only_use = list(SPECIES_HUMAN)
 
 /obj/cryo_spawner/patrol_craft/marine_med/equip_character(mob/living/carbon/human/H, is_admin)
-	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/marine/urban(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/army/urban(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/headset/rescue(H), slot_l_ear)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/ert/medical(H), slot_back)
@@ -246,7 +246,7 @@
 	..()
 	var/obj/item/clothing/under/uniform = H.w_uniform
 	if(uniform)
-		var/obj/item/clothing/accessory/solgov/rank/marine/enlisted/e3/medic = new()
+		var/obj/item/clothing/accessory/solgov/rank/army/enlisted/e3/medic = new()
 		if(uniform.can_attach_accessory(medic))
 			uniform.attach_accessory(null, medic)
 		else
@@ -257,7 +257,7 @@
 	species_can_only_use = list(SPECIES_HUMAN)
 
 /obj/cryo_spawner/patrol_craft/marine_lead/equip_character(mob/living/carbon/human/H, is_admin)
-	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/marine/urban(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/army/urban(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/headset/rescue/leader(H), slot_l_ear)
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/ert/commander(H), slot_back)
@@ -275,7 +275,7 @@
 	..()
 	var/obj/item/clothing/under/uniform = H.w_uniform
 	if(uniform)
-		var/obj/item/clothing/accessory/solgov/rank/marine/enlisted/e5/leader = new()
+		var/obj/item/clothing/accessory/solgov/rank/army/enlisted/e5/leader = new()
 		if(uniform.can_attach_accessory(leader))
 			uniform.attach_accessory(null, leader)
 		else

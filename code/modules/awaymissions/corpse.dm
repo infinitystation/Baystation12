@@ -26,7 +26,7 @@
 	var/corpse_outfits = list(/decl/hierarchy/outfit) // List of outfits to pick from. Uses pickweight()
 	var/spawn_flags = (~0)
 
-	var/skin_colors_per_species   = list() // Custom skin colors, per species -type-, if any. For example if you want dead Tajaran to always have brown fur, or similar
+	var/skin_colors_per_species   = list() // Custom skin colors, per species -type-, if any. For example if you want dead Skrell to always have blue headtails, or similar
 	var/skin_tones_per_species    = list() // Custom skin tones, per species -type-, if any. See above as to why.
 	var/eye_colors_per_species    = list() // Custom eye colors, per species -type-, if any. See above as to why.
 	var/hair_colors_per_species   = list() // Custom hair colors, per species -type-, if any. See above as to why.
@@ -99,7 +99,11 @@
 		else
 			M.randomize_eye_color()
 
-	M.SetName((CORPSE_SPAWNER_RANDOM_NAME & spawn_flags) ? M.species.get_random_name(M.gender) : name)
+	var/decl/cultural_info/culture = M.get_cultural_value(TAG_CULTURE)
+	if(culture && CORPSE_SPAWNER_RANDOM_NAME & spawn_flags)
+		M.SetName(culture.get_random_name(M.gender))
+	else
+		M.SetName(name)
 	M.real_name = M.name
 
 #undef HEX_COLOR_TO_RGB_ARGS

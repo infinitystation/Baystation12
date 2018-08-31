@@ -18,7 +18,8 @@
 				return
 			badge_string = choice
 		if(confirm == "Yes")
-			badge_string = user.personal_faction
-		to_chat(user, "<span class='notice'>[src]'s faction now is '[badge_string]'.</span>")
+			return
+//			badge_string = user.personal_faction
+//		to_chat(user, "<span class='notice'>[src]'s faction now is '[badge_string]'.</span>")
 
 

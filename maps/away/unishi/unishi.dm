@@ -12,13 +12,14 @@
 		/datum/job/submap/unishi_crew,
 		/datum/job/submap/unishi_researcher
 	)
+	whitelisted_species = list(SPECIES_HUMAN)
 
 /obj/effect/overmap/ship/unishi
 	name = "SRV Verne"
 	desc = "Sensor array detects unknown class medium size vessel. The vessel appears unarmed.\
 	A small amount of radiation has been detected at the aft of the ship"
-	vessel_mass = 300
-	default_delay = 35 SECONDS
+	vessel_mass = 80
+	default_delay = 15 SECONDS
 	speed_mod = 10 SECONDS
 	initial_generic_waypoints = list(
 		"nav_unishi_1",
@@ -30,8 +31,9 @@
 	name = "University Ship"
 	id = "awaysite_unishi"
 	description = "CTI research ship.."
-	suffixes = list("unishi/unish-1.dmm", "unishi/unish-2.dmm", "unishi/unish-3.dmm")
-	cost = 1
+	suffixes = list("unishi/unishi-1.dmm", "unishi/unishi-2.dmm", "unishi/unishi-3.dmm")
+	cost = 2
+
 
 /obj/effect/shuttle_landmark/nav_unishi/nav1
 	name = "CTI Research Vessel Deck 1 Port"
@@ -73,17 +75,17 @@
 	thermal_release_modifier = 0 //Basically inert
 	phoron_release_modifier = 100000000000
 	oxygen_release_modifier = 100000000000
-	radiation_release_modifier = 3.5
+	radiation_release_modifier = 1
 
 /obj/machinery/power/emitter/anchored/on
 	active = 1
 	powered = 1
 
-/obj/structure/closet/crate/secure/phoron/experimentalsm
+/obj/structure/closet/crate/secure/large/phoron/experimentalsm
 	name = "experimental SM crate"
 	desc = "Are you sure you want to open this?"
 
-/obj/structure/closet/crate/secure/phoron/experimentalsm/WillContain()
+/obj/structure/closet/crate/secure/large/phoron/experimentalsm/WillContain()
 	return list(/obj/machinery/power/supermatter/randomsample)
 
 obj/item/weapon/paper/prof1
@@ -101,8 +103,8 @@ obj/item/weapon/paper/prof2
 	var/logtype
 	var/used = 0
 
-/obj/machinery/computer/log_printer/attack_hand(mob/user as mob)
-	if(!used)
+/obj/machinery/computer/log_printer/attack_hand(mob/living/user as mob)
+	if(!used && !isghost(usr))
 		to_chat(usr, "Default Boot Device File Integrity Damaged. Startup aborted. Error log printing.")
 		new logtype(loc)
 		used = 1

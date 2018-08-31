@@ -181,6 +181,11 @@
 	path = /obj/item/clothing/mask/smokable/ecig/deluxe
 	cost = 2
 
+/datum/gear/bible
+	display_name = "bible"
+	path = /obj/item/weapon/storage/bible
+	cost = 2
+
 /datum/gear/mind_healer
 	display_name = "Methylphenidate, pill bottle"
 	path = /obj/item/weapon/storage/pill_bottle/methylphenidate

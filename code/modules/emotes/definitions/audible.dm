@@ -275,6 +275,7 @@
 /decl/emote/audible/laugh
 	key = "laugh"
 	emote_message_3p = "USER смеетс&#255;."
+	emote_message_3p_target = "USER смеетс&#255; над TARGET."
 
 /decl/emote/audible/laugh/do_extra(var/mob/M)
 	if(M.stat)//No dead or unconcious people screaming pls.
@@ -362,6 +363,7 @@
 
 /decl/emote/audible/bug_hiss
 	key ="hiss"
+	emote_message_3p_target = "USER шипит на TARGET."
 	emote_message_3p = "USER шипит."
 	emote_sound = 'sound/voice/BugHiss.ogg'
 
