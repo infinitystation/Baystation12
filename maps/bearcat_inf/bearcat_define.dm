@@ -1,6 +1,6 @@
 /datum/map/bearcat
 	name = "Bearcat"
-	full_name = "Bearcat"
+	full_name = "FTV Bearcat"
 	path = "bearcat_inf"
 
 	station_name  = "FTV Bearcat"
@@ -31,7 +31,7 @@
 	allowed_spawns = list("Cryogenic Storage")
 	default_spawn = "Cryogenic Storage"
 	use_overmap = 1
-	num_exoplanets = 2
+	num_exoplanets = 0
 	away_site_budget = 2
 	welcome_sound = 'sound/effects/cowboysting.ogg'
 
@@ -48,20 +48,8 @@
 	department_money = 0
 	salary_modifier = 0.2
 
-/turf/simulated/wall
-	name = "bulkhead"
-
-/turf/simulated/floor
-	name = "bare deck"
-
-/turf/simulated/floor/tiled
-	name = "deck"
-
-/decl/flooring/tiling
-	name = "deck"
-
 /datum/map/bearcat/map_info(victim)
-	to_chat(victim, "Вы находитесь на борту <b>[station_name]</b>, независимого дочернего судна Свободного Торгового Союза на границе исследованного космоса.")
+	to_chat(victim, "Вы находитесь на борту <b>[station_name]</b>, независимого дочернего судна Вольного Торгового Союза на границе исследованного космоса.")
 	to_chat(victim, "На насто&#255;щий момент, межзвездные корпорации и государства не включили в свою зону вли&#255;ни&#255; планеты и астероиды в данном секторе, так что, исследуйте и наживайтесь сколько влезет - добывайте минералы; истребл&#255;йте экзотическую флору и фауну; присваивайте себе всё, что плохо лежит. И постарайтесь, чтобы местные пираты (или что похуже) не наживилась на вас.")
 
 /datum/map/bearcat/setup_map()
@@ -69,31 +57,3 @@
 	SStrade.traders += new /datum/trader/xeno_shop
 	SStrade.traders += new /datum/trader/medical
 	SStrade.traders += new /datum/trader/mining
-
-//wild capitalism (no)
-/datum/computer_file/program/merchant
-	required_access = 57
-
-/obj/machinery/door/airlock/autoname/command
-	icon = 'icons/obj/doors/Doorhatchele.dmi'
-	req_access = list(access_heads)
-
-/obj/machinery/door/airlock/autoname/engineering
-	req_access = list(access_engine)
-
-/obj/machinery/power/smes/buildable/explor_shuttle/New()
-	..(0)
-	component_parts += new /obj/item/weapon/smes_coil/weak(src)
-	recalc_coils()
-
-	component_parts = list()
-	component_parts += new /obj/item/stack/cable_coil(src,30)
-	component_parts += new /obj/item/weapon/circuitboard/smes(src)
-	src.wires = new /datum/wires/smes(src)
-
-	// Allows for mapped-in SMESs with larger capacity/IO
-	if(cur_coils)
-		for(var/i = 1, i <= cur_coils, i++)
-			component_parts += new /obj/item/weapon/smes_coil/weak(src)
-		recalc_coils()
-	..()
