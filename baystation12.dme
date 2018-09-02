@@ -2700,6 +2700,7 @@
 #include "code\modules\sprite_accessories\accessory_resomi.dm"
 #include "code\modules\sprite_accessories\accessory_resomi_markings.dm"
 #include "code\modules\sprite_accessories\accessory_skrell.dm"
+#include "code\modules\sprite_accessories\accessory_tajara.dm"
 #include "code\modules\sprite_accessories\accessory_unathi_facial.dm"
 #include "code\modules\sprite_accessories\accessory_unathi_infinity.dm"
 #include "code\modules\sprite_accessories\accessory_vox.dm"
