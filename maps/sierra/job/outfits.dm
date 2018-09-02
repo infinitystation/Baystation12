@@ -517,3 +517,19 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	..()
 	var/obj/item/weapon/card/id/sierra/stowaway/ID = new(H.loc)
 	H.put_in_hands(ID)
+
+/decl/hierarchy/outfit/job/sierra/ert
+	name = OUTFIT_JOB_NAME("ERT - Sierra")
+	uniform = /obj/item/clothing/under/ert
+	head = /obj/item/clothing/head/beret/centcom/officer
+	gloves = /obj/item/clothing/gloves/thick/combat/marine
+	id_type = /obj/item/weapon/card/id/centcom/ERT
+	pda_type = /obj/item/modular_computer/pda/ert
+	l_ear = /obj/item/device/radio/headset/ert
+	shoes = /obj/item/clothing/shoes/combat/marine
+
+/decl/hierarchy/outfit/job/sierra/ert/leader
+	name = OUTFIT_JOB_NAME("ERT Leader - Sierra")
+	uniform = /obj/item/clothing/under/ert
+	head = /obj/item/clothing/head/beret/centcom/captain
+

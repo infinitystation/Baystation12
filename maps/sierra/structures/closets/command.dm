@@ -24,6 +24,8 @@
 		/obj/item/clothing/under/rank/captain,
 		/obj/item/clothing/under/dress/dress_cap,
 		/obj/item/clothing/under/captainformal,
+		/obj/item/weapon/storage/box/PDAs,
+		/obj/item/weapon/storage/box/ids,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/captain, /obj/item/weapon/storage/backpack/satchel_cap)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/captain, /obj/item/weapon/storage/backpack/messenger/com))
 	)

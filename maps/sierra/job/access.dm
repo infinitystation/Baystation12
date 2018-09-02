@@ -96,7 +96,7 @@
 /datum/access/pilot
 	id = access_pilot
 	desc = "NT Pilot"
-	region = ACCESS_REGION_COMMAND
+	region = ACCESS_REGION_GENERAL
 
 /var/const/access_commissary = 96
 /datum/access/commissary
