@@ -10292,10 +10292,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/turf/unsimulated/floor{
-	dir = 2;
-	icon_state = "dark"
-	},
+/turf/simulated/floor/tiled/dark,
 /area/ninja_dojo/dojo)
 "awR" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -10305,10 +10302,7 @@
 	dir = 8;
 	pixel_x = 22
 	},
-/turf/unsimulated/floor{
-	dir = 2;
-	icon_state = "dark"
-	},
+/turf/simulated/floor/tiled/dark,
 /area/ninja_dojo/dojo)
 "awS" = (
 /obj/effect/landmark{
@@ -10461,10 +10455,7 @@
 	dir = 2;
 	name = "Teleporter"
 	},
-/turf/unsimulated/floor{
-	dir = 2;
-	icon_state = "dark"
-	},
+/turf/simulated/floor/tiled/dark,
 /area/ninja_dojo/dojo)
 "axw" = (
 /turf/unsimulated/floor{
@@ -24632,11 +24623,6 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/merchant/home)
-"cBn" = (
-/obj/effect/wallframe_spawn/reinforced/wood,
-/obj/structure/window/reinforced/full,
-/turf/simulated/floor/plating,
-/area/ninja_dojo/dojo)
 "cFL" = (
 /obj/structure/bed/chair/wood{
 	dir = 1;
@@ -25172,10 +25158,6 @@
 "kXy" = (
 /turf/simulated/floor/holofloor/concrete,
 /area/holodeck/source_cafe)
-"lke" = (
-/obj/effect/wallframe_spawn/reinforced/wood,
-/turf/simulated/floor/plating,
-/area/ninja_dojo/dojo)
 "lnk" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -61921,7 +61903,7 @@ avo
 awk
 awJ
 awL
-cBn
+awy
 awL
 awL
 awy
@@ -62528,7 +62510,7 @@ awk
 awk
 awk
 awk
-lke
+awy
 axQ
 awk
 awk
@@ -62935,7 +62917,7 @@ awU
 awU
 awU
 awL
-cBn
+awy
 axD
 awL
 awL
