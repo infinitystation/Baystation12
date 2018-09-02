@@ -5,7 +5,7 @@
 	},
 /area/bluespaceriver/ground)
 "ab" = (
-/turf/simulated/mineral/random{
+/turf/simulated/mineral{
 	temperature = 230
 	},
 /area/bluespaceriver/ground)

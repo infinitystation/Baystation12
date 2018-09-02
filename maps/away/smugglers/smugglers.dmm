@@ -6,7 +6,7 @@
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
 "ac" = (
-/turf/simulated/mineral/random,
+/turf/simulated/mineral,
 /area/mine/unexplored)
 "ad" = (
 /obj/random/shoes,
@@ -71,7 +71,7 @@
 /turf/simulated/floor,
 /area/smugglers/base)
 "an" = (
-/turf/simulated/mineral/random,
+/turf/simulated/mineral,
 /area/mine/explored)
 "ao" = (
 /turf/space,

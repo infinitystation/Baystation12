@@ -11,7 +11,7 @@
 /turf/space,
 /area/space)
 "ad" = (
-/turf/simulated/mineral/random,
+/turf/simulated/mineral,
 /area/mine/unexplored)
 "ae" = (
 /obj/effect/shuttle_landmark/nav_slavers_base/nav1,

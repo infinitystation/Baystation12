@@ -3,7 +3,7 @@
 /turf/unsimulated/mineral,
 /area/space)
 "ab" = (
-/turf/simulated/mineral/random,
+/turf/simulated/mineral,
 /area/mine/unexplored)
 "ac" = (
 /turf/simulated/floor/exoplanet/grass,

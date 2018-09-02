@@ -11,7 +11,7 @@
 /turf/space,
 /area/space)
 "ad" = (
-/turf/simulated/mineral/random,
+/turf/simulated/mineral,
 /area/mine/unexplored)
 "ae" = (
 /turf/simulated/floor/asteroid,
@@ -20,10 +20,10 @@
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
 "ag" = (
-/turf/simulated/mineral/random/high_chance,
+/turf/simulated/mineral/high_chance,
 /area/mine/unexplored)
 "ah" = (
-/turf/simulated/mineral/random,
+/turf/simulated/mineral,
 /area/mine/unexplored)
 "ai" = (
 /turf/simulated/wall/sandstone,
@@ -212,7 +212,7 @@
 /turf/simulated/floor/exoplanet/water/shallow,
 /area/mine/explored)
 "be" = (
-/turf/simulated/mineral/random,
+/turf/simulated/mineral,
 /area/mine/explored)
 "bf" = (
 /obj/effect/shuttle_landmark/orb/nav2,

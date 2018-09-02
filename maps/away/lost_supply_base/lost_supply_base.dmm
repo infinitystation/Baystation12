@@ -2346,7 +2346,7 @@
 /turf/space,
 /area/space)
 "gt" = (
-/turf/simulated/mineral/random,
+/turf/simulated/mineral,
 /area/mine/unexplored)
 "gu" = (
 /turf/simulated/floor/asteroid,
