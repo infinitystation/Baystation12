@@ -8375,15 +8375,6 @@
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/petrov/ship)
-"qO" = (
-/obj/structure/table/standard,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/item/weapon/storage/toolbox/mechanical,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/shuttle/petrov/ship)
 "qP" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -19577,6 +19568,15 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/forestarboard)
+"QZ" = (
+/obj/structure/table/standard,
+/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/shuttle/petrov/ship)
 "Rc" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	icon_state = "intact";
@@ -51600,8 +51600,8 @@ bA
 bA
 bd
 or
+QZ
 pI
-qO
 si
 YU
 vi
