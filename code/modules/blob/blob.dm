@@ -91,7 +91,10 @@
 	if(I)
 		I.deflate(1)
 		return
-
+	var/obj/machinery/camera/CA = locate() in T
+	if(CA)
+		qdel(CA)
+		return
 	var/obj/vehicle/V = locate() in T
 	if(V)
 		V.ex_act(2)
@@ -100,10 +103,6 @@
 	if(M)
 		M.visible_message("<span class='danger'>The blob attacks \the [M]!</span>")
 		M.take_damage(40)
-		return
-	var/obj/machinery/camera/CA = locate() in T
-	if(CA)
-		CA.take_damage(30)
 		return
 
 	// Above things, we destroy completely and thus can use locate. Mobs are different.

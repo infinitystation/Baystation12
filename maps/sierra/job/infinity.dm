@@ -11,7 +11,7 @@
 	suit_store = /obj/item/weapon/gun/projectile/automatic/wt550/lethal
 	gloves = /obj/item/clothing/gloves/thick/combat/marine
 	belt = /obj/item/weapon/storage/belt/holster/security/tactical/troops
-	uniform = /obj/item/clothing/under/solgov/utility/marine/urban
+	uniform = /obj/item/clothing/under/solgov/utility/army/urban
 	l_pocket = /obj/item/device/flashlight/maglight
 	shoes = /obj/item/clothing/shoes/combat/marine
 	id_slot = slot_wear_id
@@ -44,7 +44,7 @@
 	..()
 	var/obj/item/clothing/uniform = H.w_uniform
 	if(uniform)
-		var/obj/item/clothing/accessory/solgov/rank/marine/enlisted/e2/rank = new()
+		var/obj/item/clothing/accessory/solgov/rank/army/enlisted/e2/rank = new()
 		if(uniform.can_attach_accessory(rank))
 			uniform.attach_accessory(null, rank)
 		else
@@ -70,7 +70,7 @@
 	..()
 	var/obj/item/clothing/uniform = H.w_uniform
 	if(uniform)
-		var/obj/item/clothing/accessory/solgov/rank/marine/enlisted/e3/rank = new()
+		var/obj/item/clothing/accessory/solgov/rank/army/enlisted/e3/rank = new()
 		if(uniform.can_attach_accessory(rank))
 			uniform.attach_accessory(null, rank)
 		else
@@ -98,7 +98,7 @@
 	..()
 	var/obj/item/clothing/uniform = H.w_uniform
 	if(uniform)
-		var/obj/item/clothing/accessory/solgov/rank/marine/enlisted/e4/rank = new()
+		var/obj/item/clothing/accessory/solgov/rank/army/enlisted/e4/rank = new()
 		if(uniform.can_attach_accessory(rank))
 			uniform.attach_accessory(null, rank)
 		else
@@ -123,7 +123,7 @@
 	..()
 	var/obj/item/clothing/uniform = H.w_uniform
 	if(uniform)
-		var/obj/item/clothing/accessory/solgov/rank/marine/enlisted/e5/rank = new()
+		var/obj/item/clothing/accessory/solgov/rank/army/enlisted/e5/rank = new()
 		if(uniform.can_attach_accessory(rank))
 			uniform.attach_accessory(null, rank)
 		else
@@ -139,7 +139,7 @@
 /obj/structure/closet/gimmick/marine/WillContain()
 	return list(
 		/obj/item/clothing/glasses/sunglasses/sechud,
-		/obj/item/clothing/under/solgov/utility/marine/urban,
+		/obj/item/clothing/under/solgov/utility/army/urban,
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/device/radio/headset/specops,

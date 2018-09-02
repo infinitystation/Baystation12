@@ -51,7 +51,7 @@
 	department_flag = COM
 	head_position = 1
 	minimal_player_age = 21
-	economic_modifier = 15
+	economic_power = 15
 	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/captain
 	total_positions = 1
@@ -85,7 +85,7 @@
 	spawn_positions = 1
 	req_admin_notify = 1
 	minimal_player_age = 21
-	economic_modifier = 10
+	economic_power = 10
 	ideal_character_age = 45
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/hop
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -128,7 +128,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	req_admin_notify = 1
-	economic_modifier = 20
+	economic_power = 20
 	minimal_player_age = 14
 	ideal_character_age = 60
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/rd
@@ -150,6 +150,7 @@
 	access = list(access_tox, access_tox_storage, access_emergency_storage, access_teleporter, access_bridge, access_rd,
 						access_research, access_robotics, access_mining, access_mining_office, access_mining_station, access_xenobiology,
 						access_RC_announce, access_keycard_auth, access_xenoarch, access_nanotrasen, access_heads,
+						access_sec_doors, access_medical,
 						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_petrov_helm, access_guppy_helm)
 
 	minimal_access = list()
@@ -171,7 +172,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	req_admin_notify = 1
-	economic_modifier = 10
+	economic_power = 10
 	minimal_player_age = 21
 	ideal_character_age = 48
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/cmo
@@ -191,6 +192,7 @@
 
 	access = list(access_medical, access_morgue, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_teleporter, access_eva, access_bridge, access_heads,
+			            access_sec_doors,
 			            access_chapel_office, access_crematorium, access_chemistry, access_virology,
 			            access_cmo, access_surgery, access_RC_announce, access_keycard_auth, access_psychiatrist,
 			            access_medical_equip, access_senmed, access_hangar)
@@ -214,7 +216,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	req_admin_notify = 1
-	economic_modifier = 9
+	economic_power = 9
 	ideal_character_age = 40
 	minimal_player_age = 21
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/chief_engineer
@@ -237,6 +239,7 @@
 	access = list(access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_ai_upload, access_teleporter, access_eva, access_bridge, access_heads,
 			            access_tech_storage, access_atmospherics, access_janitor, access_construction,
+			            access_sec_doors, access_medical,
 			            access_network, access_ce, access_RC_announce, access_keycard_auth, access_tcomsat,
 			            access_robotics_engineering, access_seneng, access_hangar, access_robotics)
 
@@ -265,7 +268,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	req_admin_notify = 1
-	economic_modifier = 8
+	economic_power = 8
 	minimal_player_age = 21
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/hos
@@ -282,7 +285,7 @@
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 28
 
-	access = list(	access_security, access_brig, access_armory, access_forensics_lockers,
+	access = list(	access_security, access_medical, access_brig, access_armory, access_forensics_lockers,
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_teleporter, access_eva, access_bridge, access_heads,
 			            access_hos, access_RC_announce, access_keycard_auth, access_sec_doors,
@@ -305,7 +308,7 @@
 	spawn_positions = 1
 	supervisors = "NanoTrasen and Corporate Regulations"
 	selection_color = "#2f2f7f"
-	economic_modifier = 15
+	economic_power = 15
 	minimal_player_age = 10
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/iaa
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -315,7 +318,7 @@
 						SKILL_FINANCE		= SKILL_BASIC)
 	skill_points = 20
 
-	access = list(		access_iaa, access_research, access_xenoarch, access_heads, access_bridge,
+	access = list(		access_security, access_sec_doors, access_medical, access_iaa, access_research, access_xenoarch, access_heads, access_bridge,
 						access_hangar, access_petrov)
 
 	minimal_access = list()
@@ -334,7 +337,7 @@
 	supervisors = "the Captain and heads of staff"
 	selection_color = "#2f2f7f"
 	minimal_player_age = 18
-	economic_modifier = 7
+	economic_power = 7
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/adjutant
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -377,7 +380,7 @@
 	supervisors = "the Captain and the Sol Central Government"
 	selection_color = "#68099e"
 	minimal_player_age = 7
-	economic_modifier = 7
+	economic_power = 7
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/pathfinder
 	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
@@ -568,7 +571,7 @@
 	spawn_positions = 1
 	supervisors = "the Chief Engineer"
 	selection_color = "#5b4d20"
-	economic_modifier = 6
+	economic_power = 6
 	minimal_player_age = 14
 	ideal_character_age = 40
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/senior_engineer
@@ -712,7 +715,7 @@
 	spawn_positions = 2
 	supervisors = "the Research Director and the Chief Medical Officer"
 	selection_color = "#5b4d20"
-	economic_modifier = 6
+	economic_power = 6
 	alt_titles = list(
 		"Biomechanical Engineer",
 		"Mechsuit Technician")
@@ -743,7 +746,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Head of Security"
-	economic_modifier = 5
+	economic_power = 5
 	minimal_player_age = 14
 	ideal_character_age = 35
 	alt_titles = list(
@@ -754,6 +757,7 @@
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
 	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_HAULING	  = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_BASIC,
 	                    SKILL_WEAPONS     = SKILL_ADEPT,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
@@ -779,7 +783,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Head of Security"
-	economic_modifier = 5
+	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
 	skill_points = 14
@@ -812,17 +816,17 @@
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/officer
-	title = "Security Officer"
+	title = "Security Guard"
 	department = "Security"
 	department_flag = SEC
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "the Head of Security"
-	economic_modifier = 4
+	economic_power = 4
 	minimal_player_age = 10
 	ideal_character_age = 25
 	alt_titles = list(
-		"Junior Officer")
+		"Junior Guard")
 
 	skill_points = 20
 
@@ -832,6 +836,7 @@
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_BASIC,
 	                    SKILL_WEAPONS     = SKILL_ADEPT,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
 
@@ -858,7 +863,7 @@
 	spawn_positions = 2
 	supervisors = "the Chief Medical Officer"
 	selection_color = "#013d3b"
-	economic_modifier = 8
+	economic_power = 8
 	alt_titles = list(
 		"Xeno Surgeon" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/xenosurgeon,
 		"Trauma Surgeon" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/traumasurgeon)
@@ -892,7 +897,7 @@
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the Chief Medical Officer"
-	economic_modifier = 7
+	economic_power = 7
 	ideal_character_age = 40
 	alt_titles = list(
 		"Paramedic" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/paramedic,
@@ -926,7 +931,7 @@
 	spawn_positions = 2
 	supervisors = "the Chief Medical Officer and Medical Personnel"
 	selection_color = "#013d3b"
-	economic_modifier = 3
+	economic_power = 3
 	ideal_character_age = 30
 	alt_titles = list(
 		"Orderly" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/orderly,
@@ -963,7 +968,7 @@
 	spawn_positions = 1
 	supervisors = "the Chief Medical Officer and Medical Personnel"
 	selection_color = "#013d3b"
-	economic_modifier = 4
+	economic_power = 4
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/chemist
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -987,7 +992,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	ideal_character_age = 40
-	economic_modifier = 5
+	economic_power = 5
 	supervisors = "the Chief Medical Officer"
 	alt_titles = list(
 		"Psychiatrist" = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/psychiatrist,
@@ -1015,7 +1020,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Head of Personnel"
-	economic_modifier = 5
+	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/quartermaster
@@ -1069,7 +1074,7 @@
 	spawn_positions = 4
 	supervisors = "the Quartermaster and Head of Personnel"
 	selection_color = "#515151"
-	economic_modifier = 7
+	economic_power = 7
 	ideal_character_age = 25
 	alt_titles = list(
 		"Drill Technician",
@@ -1187,7 +1192,7 @@
 	spawn_positions = 1
 	supervisors = "the Research Director"
 	selection_color = "#633d63"
-	economic_modifier = 12
+	economic_power = 12
 	minimal_player_age = 10
 	ideal_character_age = 50
 	alt_titles = list(
@@ -1224,7 +1229,7 @@
 	spawn_positions = 1
 	supervisors = "the Research Director and NanoTrasen Personnel"
 	selection_color = "#633d63"
-	economic_modifier = 10
+	economic_power = 10
 	minimal_player_age = 5
 	ideal_character_age = 40
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/nt_pilot
@@ -1249,7 +1254,7 @@
 	total_positions = 6
 	spawn_positions = 6
 	supervisors = "the Research Director"
-	economic_modifier = 10
+	economic_power = 10
 	ideal_character_age = 45
 	alt_titles = list(
 		"Xenoarcheologist",
@@ -1286,7 +1291,7 @@
 	spawn_positions = 4
 	supervisors = "the Research Director and NanoTrasen Personnel"
 	selection_color = "#633d63"
-	economic_modifier = 3
+	economic_power = 3
 	ideal_character_age = 30
 	alt_titles = list(
 		"Testing Assistant" = /decl/hierarchy/outfit/job/sierra/crew/research/assist/testsubject,
@@ -1315,7 +1320,7 @@
 	department_flag = CIV
 	supervisors = "the Head of Personnel"
 	selection_color = "#515151"
-	economic_modifier = 6
+	economic_power = 6
 	announced = FALSE
 	alt_titles = list(
 		"Journalist" = /decl/hierarchy/outfit/job/sierra/passenger/passenger/journalist,

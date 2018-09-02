@@ -19159,7 +19159,6 @@
 	},
 /obj/structure/table/holotable,
 /obj/item/toy/bosunwhistle,
-/obj/item/clothing/head/solgov/service/marine/campaign,
 /turf/simulated/floor/exoplanet/concrete,
 /area/holodeck/source_military)
 "aSg" = (
@@ -23171,6 +23170,7 @@
 "bbL" = (
 /obj/structure/table/steel,
 /obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/weapon/storage/belt/utility/full,
 /turf/simulated/floor/tiled,
 /area/merchant_station)
 "bbM" = (

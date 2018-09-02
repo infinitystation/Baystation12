@@ -21,7 +21,6 @@
 	display_name = "gloves, work"
 	path = /obj/item/clothing/gloves/duty
 	cost = 2
-	allowed_roles = list(TECHNICAL_ROLES, SOLGOV_ROLES)
 
 /datum/gear/gloves/insulated
 	display_name = "insulated gloves selection"

@@ -3039,7 +3039,7 @@
 	req_access = list(13)
 	},
 /obj/machinery/shield_diffuser,
-/turf/simulated/wall/r_wall/hull,
+/turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/center)
 "fK" = (
 /obj/effect/floor_decal/borderfloorblack{
@@ -5051,7 +5051,7 @@
 /area/hallway/primary/thirddeck/center)
 "jx" = (
 /obj/effect/paint/red,
-/obj/effect/paint_stripe/nt_red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/shuttle/escape_pod6/station)
 "jy" = (
@@ -5108,7 +5108,7 @@
 /area/hallway/primary/thirddeck/center)
 "jC" = (
 /obj/effect/paint/red,
-/obj/effect/paint_stripe/nt_red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/shuttle/escape_pod7/station)
 "jD" = (
@@ -6623,7 +6623,7 @@
 /area/exploration_shuttle/power)
 "md" = (
 /obj/effect/paint/red,
-/obj/effect/paint_stripe/nt_red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
 /area/exploration_shuttle/atmos)
 "me" = (
@@ -6633,7 +6633,7 @@
 /area/quartermaster/hangar)
 "mf" = (
 /obj/effect/paint/red,
-/obj/effect/paint_stripe/nt_red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
 /area/exploration_shuttle/cargo)
 "mg" = (
@@ -7115,7 +7115,7 @@
 "mS" = (
 /obj/structure/fuel_port,
 /obj/effect/paint/red,
-/obj/effect/paint_stripe/nt_red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/prepainted,
 /area/exploration_shuttle/power)
 "mT" = (
@@ -13456,7 +13456,7 @@
 /area/thruster/d3port)
 "ww" = (
 /obj/effect/paint/red,
-/obj/effect/paint_stripe/nt_red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/guppy_hangar/start)
 "wx" = (
@@ -15311,7 +15311,7 @@
 "zg" = (
 /obj/structure/fuel_port,
 /obj/effect/paint/red,
-/obj/effect/paint_stripe/nt_red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/guppy_hangar/start)
 "zh" = (
@@ -16251,7 +16251,7 @@
 /area/thruster/d3starboard)
 "AT" = (
 /obj/effect/paint/red,
-/obj/effect/paint_stripe/nt_red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/shuttle/escape_pod8/station)
 "AU" = (
@@ -16318,7 +16318,7 @@
 /area/thruster/d3starboard)
 "AY" = (
 /obj/effect/paint/red,
-/obj/effect/paint_stripe/nt_red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium,
 /area/shuttle/escape_pod9/station)
 "AZ" = (

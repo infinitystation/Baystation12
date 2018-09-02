@@ -12,6 +12,7 @@
 		/obj/item/clothing/head/beret/sec/corporate/hos,
 		/obj/item/clothing/head/helmet/nt,
 		/obj/item/clothing/head/HoS/dermal,
+		/obj/item/clothing/head/HoS,
 		/obj/item/device/radio/headset/heads/hos,
 		/obj/item/device/radio/headset/heads/hos/alt,
 		/obj/item/clothing/glasses/sunglasses/sechud/toggle,

@@ -7,9 +7,8 @@
 	hud_type = /datum/hud_data/alien
 	rarity_value = 3
 	health_hud_intensity = 1
-	blood_volume = 1400
 
-	natural_armour_values = list(melee = 30, bullet = 15, laser = 25, energy = 30, bomb = 30, bio = 100, rad = 100)
+	natural_armour_values = list(melee = 35, bullet = 25, laser = 30, energy = 30, bomb = 30, bio = 100, rad = 100)
 
 	icon_template = 'icons/mob/human_races/species/xenos/template.dmi'
 
@@ -21,12 +20,12 @@
 
 	pixel_offset_x = -16
 	has_fine_manipulation = 0
-	siemens_coefficient = 0.2
+	siemens_coefficient = 0.3
 	gluttonous = GLUT_SMALLER
 	stomach_capacity = MOB_MEDIUM
 
-	brute_mod =     0.75 // Hardened carapace.
-	burn_mod =      0.75 // ~~Weak to fire.~~ scratch that, we :original_character: now
+//	brute_mod =     0.75 // Hardened carapace.
+//	burn_mod =      0.75 // ~~Weak to fire.~~ scratch that, we :original_character: now
 	radiation_mod = 0    // No feasible way of curing radiation.
 	flash_mod =     0    // Denied.
 	stun_mod =      0.5  // Halved stun times.
@@ -35,6 +34,7 @@
 
 	warning_low_pressure = 50
 	hazard_low_pressure = -1
+
 	darksight_range = 8
 	darksight_tint = DARKTINT_GOOD
 
@@ -50,8 +50,8 @@
 	reagent_tag = IS_XENOS
 
 	blood_color = "#05ee05"
-//	flesh_color = "#00060c"
-//	base_color =  "#00060c"
+	flesh_color = "#282846"
+	base_color =  "#00060c"
 
 	gibbed_anim = "gibbed-a"
 	dusted_anim = "dust-a"
@@ -63,7 +63,6 @@
 
 	breath_type = null
 	poison_types = null
-
 
 	vision_flags = SEE_SELF|SEE_MOBS
 
@@ -107,9 +106,6 @@
 		TAG_FACTION =   FACTION_XENOPHAGE,
 		TAG_RELIGION =  RELIGION_OTHER
 	)
-
-/datum/species/xenos/handle_post_spawn(var/mob/living/carbon/human/H)
-	..(H)
 
 /datum/species/xenos/get_bodytype(var/mob/living/carbon/H)
 	return "Xenophage"
@@ -162,6 +158,7 @@
 	if (!H.lying)
 		heal_rate = weeds_heal_rate / 4
 		mend_prob = 1
+
 	if(!H.resting || !started_healing["\ref[H]"])
 		started_healing["\ref[H]"] = world.time
 	if(world.time - started_healing["\ref[H]"] > accelerated_healing_threshold)
@@ -169,7 +166,9 @@
 		mend_prob *= 5
 
 	//next internal organs and blood
-	H.restore_blood()
+//	H.restore_blood()
+	if(H.vessel.total_volume < H.species.blood_volume)
+		H.vessel.add_reagent(/datum/reagent/blood, 10)
 	for(var/obj/item/organ/I in H.internal_organs)
 		if(I.damage > 0)
 			I.damage = max(I.damage - heal_rate, 0)
@@ -206,12 +205,11 @@
 	name = "Xenophage Drone"
 	weeds_plasma_rate = 15
 	slowdown = 0
-
-	brute_mod =     0.6
-	burn_mod =      0.6
+//	brute_mod =     0.6
+//	burn_mod =      0.6
 
 	rarity_value = 5
-//	base_color = "#000d1a"
+	base_color = "#000d1a"
 	icobase = 'icons/mob/human_races/species/xenos/body_drone.dmi'
 	deform =  'icons/mob/human_races/species/xenos/body_drone.dmi'
 
@@ -227,6 +225,7 @@
 
 	inherent_verbs = list(
 		/mob/living/proc/ventcrawl,
+		/mob/living/carbon/human/proc/pry_open,
 		/mob/living/carbon/human/proc/regurgitate,
 		/mob/living/carbon/human/proc/plant,
 		/mob/living/carbon/human/proc/transfer_plasma,
@@ -299,6 +298,7 @@
 
 	inherent_verbs = list(
 		/mob/living/proc/ventcrawl,
+		/mob/living/carbon/human/proc/pry_open,
 		/mob/living/carbon/human/proc/tackle,
 		/mob/living/carbon/human/proc/regurgitate,
 		/mob/living/carbon/human/proc/transfer_plasma,
@@ -339,6 +339,7 @@
 
 	inherent_verbs = list(
 		/mob/living/proc/ventcrawl,
+		/mob/living/carbon/human/proc/pry_open,
 		/mob/living/carbon/human/proc/psychic_whisper,
 		/mob/living/carbon/human/proc/regurgitate,
 		/mob/living/carbon/human/proc/lay_egg,

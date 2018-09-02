@@ -193,3 +193,48 @@
 	name = "CSG pin"
 	desc = "A small CSG flag."
 	icon_state = "csg"
+
+/obj/item/clothing/accessory/badge/tags // non-solgov variant
+	name = "dog tags"
+	desc = "Plain identification tags made from a durable metal. They are stamped with a variety of informational details."
+	gender = PLURAL
+	icon = 'maps/torch/icons/obj/solgov-accessory.dmi'
+	accessory_icons = list(slot_w_uniform_str = 'maps/torch/icons/mob/solgov-accessory.dmi', slot_wear_suit_str = 'maps/torch/icons/mob/solgov-accessory.dmi')
+	icon_state = "tags"
+	badge_string = null
+	slot_flags = SLOT_MASK | SLOT_TIE
+
+/obj/item/clothing/accessory/badge/tags/Initialize()
+	. = ..()
+	var/mob/living/carbon/human/H
+	H = get_holder_of_type(src, /mob/living/carbon/human)
+	if(H)
+		set_name(H.real_name)
+		set_desc(H)
+
+/obj/item/clothing/accessory/badge/tags/attack_self(mob/living/carbon/human/user as mob)
+	.=..()
+	if(!badge_string)
+		var/confirm = alert("Set badges's faction as your own faction?", "Badge Choice", "Yes", "No")
+		if(confirm == "No")
+			var/choice = input(usr,"Choose your badge's faction","Badge Choice","") as text|null
+			if(!choice)
+				return
+			badge_string = choice
+		if(confirm == "Yes")
+			var/decl/cultural_info/faction = user.get_cultural_value(TAG_FACTION)
+			badge_string = faction
+		to_chat(user, "<span class='notice'>[src]'s faction now is '[badge_string]'.</span>")
+
+/obj/item/clothing/accessory/badge/tags/set_desc(var/mob/living/carbon/human/H)
+	if(!istype(H))
+		return
+	var/decl/cultural_info/culture = H.get_cultural_value(TAG_RELIGION)
+	var/religion = culture ? culture.name : "Unset"
+	desc = "[initial(desc)]\nName: [H.real_name] ([H.get_species()])[H.char_branch ? "\nBranch: [H.char_branch.name]" : ""]\nReligion: [religion]\nBlood type: [H.b_type]"
+
+/obj/item/clothing/accessory/storage/bandolier/armory/Initialize()
+	. = ..()
+
+	for(var/i = 0, i < slots, i++)
+		new /obj/item/ammo_casing/shotgun/pellet(hold)

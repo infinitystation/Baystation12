@@ -118,7 +118,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/crew/research/iaa
 	name = OUTFIT_JOB_NAME("Internal Affairs Agent - Sierra")
-	l_ear = /obj/item/device/radio/headset/heads
+	l_ear = /obj/item/device/radio/headset/ia
 	uniform = /obj/item/clothing/under/rank/internalaffairs/plain/nt
 	suit = /obj/item/clothing/suit/storage/toggle/suit/black
 	shoes = /obj/item/clothing/shoes/laceup
@@ -490,7 +490,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/passenger/passenger/journalist
 	name = OUTFIT_JOB_NAME("Journalist - Sierra")
-	backpack_contents = list(/obj/item/device/tvcamera = 1,
+	backpack_contents = list(/obj/item/device/camera/tvcamera = 1,
 	/obj/item/clothing/accessory/badge/press = 1)
 
 	/////////

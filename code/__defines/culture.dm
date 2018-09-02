@@ -123,19 +123,21 @@
 
 // Resomi cultures.
 
-#define CULTURE_RESOMI_REFUGE  "Refuge"
+#define CULTURE_RESOMI_REFUGE     "Refugee Child"
+#define CULTURE_RESOMI_NEWREFUGE  "Empire Child"
 
-#define FACTION_RESOMI_REFUGE  "Empire Refuge"
+#define FACTION_RESOMI_REFUGE     "Empire Refuge"
 
-#define HOME_SYSTEM_TIAMATH    "Tiamath"
+#define HOME_SYSTEM_TIAMATH       "Tiamath"
+#define HOME_SYSTEM_KUIH          "Kuih"
 
 // Tajaran cultures.
 
-#define CULTURE_TAJARAN    "CMA Citizen"
+#define CULTURE_TAJARAN          "CMA Citizen"
 
 #define FACTION_TAJARAN_HADII    "Hadii Family"
 #define FACTION_TAJARAN_KAYTAM   "Kaytam Family"
-#define FACTION_TAJARAN_NAZKIIN  "Nazkiin'im Family"
+#define FACTION_TAJARAN_NAZKIIN  "Nazkiin Family"
 #define FACTION_TAJARAN_OTHER    "Other Family"
 
 #define HOME_SYSTEM_AHDOMAI      "Ahdomai"

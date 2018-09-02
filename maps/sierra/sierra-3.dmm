@@ -1436,12 +1436,14 @@
 /area/medical/virologyaccess)
 "acq" = (
 /obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod12/station)
 "acr" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod12,
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod12/station)
 "acs" = (
@@ -1450,12 +1452,14 @@
 /area/maintenance/firstdeck/aftstarboard)
 "act" = (
 /obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod13/station)
 "acu" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod13,
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod13/station)
 "acv" = (
@@ -1464,12 +1468,14 @@
 /area/maintenance/firstdeck/centralstarboard)
 "acw" = (
 /obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod14/station)
 "acx" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod14,
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod14/station)
 "acy" = (
@@ -3059,6 +3065,7 @@
 	icon_state = "burst_s"
 	},
 /obj/effect/paint/red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod12/station)
 "afq" = (
@@ -3077,6 +3084,7 @@
 	icon_state = "burst_s"
 	},
 /obj/effect/paint/red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod13/station)
 "afs" = (
@@ -3095,6 +3103,7 @@
 	icon_state = "burst_s"
 	},
 /obj/effect/paint/red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod14/station)
 "afu" = (
@@ -6511,6 +6520,13 @@
 /obj/structure/table/wallf{
 	dir = 4
 	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "Biohazard";
+	name = "Biohazard Shutter";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
 "akU" = (
@@ -7223,6 +7239,13 @@
 /obj/machinery/door/airlock/research{
 	name = "Robotics Laboratory";
 	req_access = list(29)
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "Biohazard";
+	name = "Biohazard Shutter";
+	opacity = 0
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
@@ -9176,6 +9199,14 @@
 	name = "Mech Bay";
 	req_access = list(29)
 	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "Biohazard";
+	name = "Biohazard Shutter";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
 "aow" = (
@@ -9628,7 +9659,7 @@
 	dir = 4;
 	pixel_x = -20
 	},
-/obj/item/weapon/stamp/co,
+/obj/item/weapon/stamp/captain,
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/heads/cobed)
 "api" = (
@@ -9709,6 +9740,7 @@
 	operating = 1;
 	pixel_y = -24
 	},
+/mob/living/simple_animal/corgi/Ian,
 /turf/simulated/floor/tiled/steel_grid,
 /area/crew_quarters/heads/office/hop)
 "apo" = (
@@ -10434,6 +10466,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/item/weapon/stamp/hop,
 /turf/simulated/floor/tiled/steel_grid,
 /area/crew_quarters/heads/office/hop)
 "aqf" = (
@@ -11601,6 +11634,7 @@
 /area/chapel/main)
 "arS" = (
 /obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod15/station)
 "arT" = (
@@ -11806,24 +11840,28 @@
 /area/storage/bridge)
 "asm" = (
 /obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod17/station)
 "asn" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod15,
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod15/station)
 "aso" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod16,
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod16/station)
 "asp" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod17,
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod17/station)
 "asq" = (
@@ -14440,6 +14478,7 @@
 	icon_state = "bordercolorcorner2";
 	dir = 10
 	},
+/obj/item/weapon/stool/padded,
 /turf/simulated/floor/tiled/white,
 /area/medical/equipstorage)
 "awa" = (
@@ -18803,6 +18842,14 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "robotics_windows"
 	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "Biohazard";
+	name = "Biohazard Shutter";
+	opacity = 0
+	},
 /turf/simulated/floor/plating,
 /area/assembly/robotics)
 "aBG" = (
@@ -21459,6 +21506,13 @@
 	id = "robotics_windows"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "Biohazard";
+	name = "Biohazard Shutter";
+	opacity = 0
+	},
 /turf/simulated/floor/plating,
 /area/assembly/robotics)
 "aFm" = (
@@ -22190,6 +22244,14 @@
 /obj/machinery/door/firedoor,
 /obj/structure/wall_frame/prepainted,
 /obj/structure/table/wallf,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "Biohazard";
+	name = "Biohazard Shutter";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/rnd/development)
 "aGl" = (
@@ -22237,7 +22299,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/rnd/development)
 "aGo" = (
-/obj/machinery/integrated_circuit_printer,
 /obj/item/device/integrated_electronics/wirer,
 /obj/item/device/integrated_electronics/debugger,
 /obj/machinery/light,
@@ -22449,6 +22510,7 @@
 	dir = 1;
 	pixel_y = -29
 	},
+/obj/item/weapon/stamp/rd,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/rd)
 "aGA" = (
@@ -26724,7 +26786,6 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/integrated_circuit_printer,
 /obj/item/device/integrated_electronics/debugger{
 	pixel_x = -5
 	},
@@ -30831,6 +30892,7 @@
 	dir = 1
 	},
 /obj/effect/paint/red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod15/station)
 "aSZ" = (
@@ -30850,6 +30912,7 @@
 	dir = 1
 	},
 /obj/effect/paint/red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod16/station)
 "aTb" = (
@@ -30869,6 +30932,7 @@
 	dir = 1
 	},
 /obj/effect/paint/red,
+/obj/effect/paint_stripe/red,
 /turf/simulated/wall/titanium_r,
 /area/shuttle/escape_pod17/station)
 "aTd" = (
@@ -35904,6 +35968,11 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
+"pBl" = (
+/obj/effect/paint/nt_white,
+/obj/effect/paint_stripe/nt_red,
+/turf/simulated/wall/titanium_r,
+/area/shuttle/escape_pod16/station)
 "pDI" = (
 /obj/structure/closet/crate/secure/biohazard/blanks,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -53966,10 +54035,10 @@ ddQ
 aIM
 aRU
 aTa
-asj
-asj
-asj
-asj
+pBl
+pBl
+pBl
+pBl
 aHt
 aYw
 aYw
@@ -54370,10 +54439,10 @@ kGb
 aJk
 aRU
 aTa
+pBl
+pBl
 asj
-asj
-asj
-asj
+pBl
 aHt
 aYw
 aYw
@@ -60620,7 +60689,7 @@ alV
 aEl
 aFk
 aSN
-aBC
+aDa
 aIB
 aJQ
 aBC
@@ -61428,7 +61497,7 @@ aCY
 aEo
 aFn
 aGG
-aBC
+aDa
 aJL
 aJU
 aBC
@@ -61828,10 +61897,10 @@ pqA
 azq
 aSV
 aBC
-aDa
+aBC
 aBF
 aov
-aDa
+aBC
 aBC
 aIE
 aJW

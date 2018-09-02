@@ -92,6 +92,12 @@
 	desc = "Pathfinder"
 	region = ACCESS_REGION_RESEARCH
 
+/var/const/access_pilot = 95
+/datum/access/pilot
+	id = access_pilot
+	desc = "NT Pilot"
+	region = ACCESS_REGION_COMMAND
+
 /var/const/access_commissary = 96
 /datum/access/commissary
 	id = access_commissary

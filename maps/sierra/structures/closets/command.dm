@@ -40,6 +40,8 @@
 		/obj/item/weapon/melee/telebaton,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
+		/obj/item/weapon/storage/box/PDAs,
+		/obj/item/weapon/storage/box/ids,
 	)
 
 /obj/structure/closet/secure_closet/adjutant

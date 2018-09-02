@@ -77,13 +77,13 @@ Unique items
 /obj/item/weapon/pen/multi/cmd/hop
 	name = "head of personnel's pen"
 	icon = 'maps/sierra/icons/obj/uniques.dmi'
-	icon_state = "pen_hop"
+	icon_state = "pen_xo"
 	desc = "A slightly bulky pen with a silvery case. Twisting the top allows you to switch the nib for different colors."
 
 /obj/item/weapon/pen/multi/cmd/captain
 	name = "captain's pen"
 	icon = 'maps/sierra/icons/obj/uniques.dmi'
-	icon_state = "pen_cap"
+	icon_state = "pen_co"
 	desc = "A slightly bulky pen with a golden case. Twisting the top allows you to switch the nib for different colors."
 
 /obj/item/weapon/pen/multi/cmd/attack_self(mob/user)
