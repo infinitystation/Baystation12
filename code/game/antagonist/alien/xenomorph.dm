@@ -15,6 +15,7 @@ GLOBAL_DATUM_INIT(xenomorphs, /datum/antagonist/xenos, new)
 		a thrall to the queen and her brood. Obey their instructions without question. Serve the hive."
 	faction = "xenophage"
 	faction_indicator = "hudalien"
+	skill_setter = /datum/antag_skill_setter/alien
 
 	hard_cap = 5
 	hard_cap_round = 8

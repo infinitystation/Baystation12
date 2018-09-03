@@ -74,6 +74,7 @@
 /obj/item/organ/internal/eyes/xeno
 	night_vision = 1
 	phoron_guard = 1
+	innate_flash_protection = FLASH_PROTECTION_MODERATE
 
 /obj/item/organ/internal/eyes/xeno/update_colour()
 	if(!owner)

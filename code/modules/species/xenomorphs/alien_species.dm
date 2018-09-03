@@ -20,8 +20,8 @@
 
 	pixel_offset_x = -16
 	has_fine_manipulation = 0
-	siemens_coefficient = 0.3
 	gluttonous = GLUT_SMALLER
+	strength = STR_VHIGH
 	stomach_capacity = MOB_MEDIUM
 
 //	brute_mod =     0.75 // Hardened carapace.
@@ -36,7 +36,7 @@
 	hazard_low_pressure = -1
 
 	darksight_range = 8
-	darksight_tint = DARKTINT_GOOD
+	darksight_tint = DARKTINT_GREAT
 
 	cold_level_1 = 50
 	cold_level_2 = -1
@@ -51,7 +51,6 @@
 
 	blood_color = "#05ee05"
 	flesh_color = "#282846"
-	base_color =  "#00060c"
 
 	gibbed_anim = "gibbed-a"
 	dusted_anim = "dust-a"
@@ -78,17 +77,17 @@
 	var/accelerated_healing_threshold = 10 SECONDS
 
 	has_limbs = list(
-		"chest" =  list("path" = /obj/item/organ/external/chest/unbreakable/xeno),
-		"groin" =  list("path" = /obj/item/organ/external/groin/unbreakable/xeno),
-		"head" =   list("path" = /obj/item/organ/external/head/unbreakable/xeno),
-		"l_arm" =  list("path" = /obj/item/organ/external/arm/unbreakable/xeno),
-		"r_arm" =  list("path" = /obj/item/organ/external/arm/right/unbreakable/xeno),
-		"l_leg" =  list("path" = /obj/item/organ/external/leg/unbreakable/xeno),
-		"r_leg" =  list("path" = /obj/item/organ/external/leg/right/unbreakable/xeno),
-		"l_hand" = list("path" = /obj/item/organ/external/hand/unbreakable/xeno),
-		"r_hand" = list("path" = /obj/item/organ/external/hand/right/unbreakable/xeno),
-		"l_foot" = list("path" = /obj/item/organ/external/foot/unbreakable/xeno),
-		"r_foot" = list("path" = /obj/item/organ/external/foot/right/unbreakable/xeno)
+		"chest" =  list("path" = /obj/item/organ/external/chest/xeno),
+		"groin" =  list("path" = /obj/item/organ/external/groin/xeno),
+		"head" =   list("path" = /obj/item/organ/external/head/xeno),
+		"l_arm" =  list("path" = /obj/item/organ/external/arm/xeno),
+		"r_arm" =  list("path" = /obj/item/organ/external/arm/right/xeno),
+		"l_leg" =  list("path" = /obj/item/organ/external/leg/xeno),
+		"r_leg" =  list("path" = /obj/item/organ/external/leg/right/xeno),
+		"l_hand" = list("path" = /obj/item/organ/external/hand/xeno),
+		"r_hand" = list("path" = /obj/item/organ/external/hand/right/xeno),
+		"l_foot" = list("path" = /obj/item/organ/external/foot/xeno),
+		"r_foot" = list("path" = /obj/item/organ/external/foot/right/xeno)
 		)
 
 	bump_flag = ALIEN
@@ -194,9 +193,8 @@
 	//next mend broken bones, approx 10 ticks each
 	for(var/obj/item/organ/external/E in H.bad_external_organs)
 		if (E.status & ORGAN_BROKEN)
-			if (prob(mend_prob))
-				if (E.mend_fracture())
-					to_chat(H, "<span class='alium'>You feel something mend itself inside your [E.name].</span>")
+			if(E.mend_fracture())
+				to_chat(H, "<span class='alium'>You feel something mend itself inside your [E.name].</span>")
 			return 1
 
 	return 0
@@ -209,9 +207,8 @@
 //	burn_mod =      0.6
 
 	rarity_value = 5
-	base_color = "#000d1a"
-	icobase = 'icons/mob/human_races/species/xenos/body_drone.dmi'
-	deform =  'icons/mob/human_races/species/xenos/body_drone.dmi'
+	icobase = 'icons/mob/human_races/species/xenos/r_xenos_drone.dmi'
+	deform =  'icons/mob/human_races/species/xenos/r_xenos_drone.dmi'
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
@@ -232,7 +229,8 @@
 		/mob/living/carbon/human/proc/evolve,
 		/mob/living/carbon/human/proc/resin,
 		/mob/living/carbon/human/proc/corrosive_acid,
-		/mob/living/carbon/human/proc/darksight
+		/mob/living/carbon/human/proc/darksight,
+		/mob/living/carbon/human/proc/scan_target
 		)
 
 /datum/species/xenos/drone/handle_post_spawn(var/mob/living/carbon/human/H)
@@ -243,15 +241,13 @@
 	..()
 
 /datum/species/xenos/hunter
-
 	name = "Xenophage Hunter"
 	weeds_plasma_rate = 5
 	slowdown = -0.5
 	total_health = 300
-	base_color = "#001a33"
 
-	icobase = 'icons/mob/human_races/species/xenos/body_hunter.dmi'
-	deform =  'icons/mob/human_races/species/xenos/body_hunter.dmi'
+	icobase = 'icons/mob/human_races/species/xenos/r_xenos_hunter.dmi'
+	deform =  'icons/mob/human_races/species/xenos/r_xenos_hunter.dmi'
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
@@ -268,7 +264,8 @@
 		/mob/living/carbon/human/proc/leap,
 		/mob/living/carbon/human/proc/psychic_whisper,
 		/mob/living/carbon/human/proc/regurgitate,
-		/mob/living/carbon/human/proc/darksight
+		/mob/living/carbon/human/proc/darksight,
+		/mob/living/carbon/human/proc/scan_target
 		)
 
 	force_cultural_info = list(
@@ -282,10 +279,9 @@
 	name = "Xenophage Sentinel"
 	weeds_plasma_rate = 10
 	slowdown = 0
-	base_color = "#00284d"
 	total_health = 250
-	icobase = 'icons/mob/human_races/species/xenos/body_sentinel.dmi'
-	deform =  'icons/mob/human_races/species/xenos/body_sentinel.dmi'
+	icobase = 'icons/mob/human_races/species/xenos/r_xenos_sentinel.dmi'
+	deform =  'icons/mob/human_races/species/xenos/r_xenos_sentinel.dmi'
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
@@ -304,7 +300,8 @@
 		/mob/living/carbon/human/proc/transfer_plasma,
 		/mob/living/carbon/human/proc/corrosive_acid,
 		/mob/living/carbon/human/proc/neurotoxin,
-		/mob/living/carbon/human/proc/darksight
+		/mob/living/carbon/human/proc/darksight,
+		/mob/living/carbon/human/proc/scan_target
 		)
 
 	force_cultural_info = list(
@@ -323,8 +320,8 @@
 	slowdown = 1
 	rarity_value = 10
 
-	icobase = 'icons/mob/human_races/species/xenos/body_queen.dmi'
-	deform =  'icons/mob/human_races/species/xenos/body_queen.dmi'
+	icobase = 'icons/mob/human_races/species/xenos/r_xenos_queen.dmi'
+	deform =  'icons/mob/human_races/species/xenos/r_xenos_queen.dmi'
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
@@ -349,7 +346,8 @@
 		/mob/living/carbon/human/proc/neurotoxin,
 		/mob/living/carbon/human/proc/resin,
 		/mob/living/carbon/human/proc/xeno_infest,
-		/mob/living/carbon/human/proc/darksight
+		/mob/living/carbon/human/proc/darksight,
+		/mob/living/carbon/human/proc/scan_target
 		)
 
 	genders = list(FEMALE)

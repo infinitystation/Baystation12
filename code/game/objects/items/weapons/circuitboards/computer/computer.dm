@@ -145,7 +145,3 @@
 /obj/item/weapon/circuitboard/account_database
 	name = T_BOARD("accounts uplink terminal")
 	build_path = /obj/machinery/computer/account_database
-
-/obj/item/weapon/circuitboard/ship_weapon
-	name = T_BOARD("weapon control console")
-	build_path = /obj/machinery/computer/weapons
