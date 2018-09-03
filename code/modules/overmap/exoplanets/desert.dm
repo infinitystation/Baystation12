@@ -126,9 +126,6 @@
 			to_chat(user, "<span class='warning'>You slip and fail to get out!</span>")
 			return
 
-		busy = FALSE
-		return
-
 /obj/structure/quicksand/unbuckle_mob()
 	..()
 	update_icon()

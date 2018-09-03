@@ -106,12 +106,3 @@ obj/effect/overmap/proc/add_landmark(obj/effect/shuttle_landmark/landmark, shutt
 
 	testing("Overmap build complete.")
 	return 1
-
-/obj/effect/overmap/proc/projectile_left_map_edge(var/obj/item/projectile/ship_munition/proj)
-	qdel(proj)
-
-/obj/effect/overmap/proc/get_fore_dir()
-	return NORTH
-
-/obj/effect/overmap/proc/get_overmap_munition_target(var/obj/effect/overmap_munition/munition)
-	return locate(rand(50,world.maxx-50),rand(50,world.maxy-50),pick(map_z))
