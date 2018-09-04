@@ -3,7 +3,7 @@
 /turf/space,
 /area/space)
 "ab" = (
-/turf/simulated/mineral,
+/turf/unsimulated/mask,
 /area/mine/unexplored)
 "af" = (
 /turf/simulated/floor/asteroid,
@@ -434,6 +434,10 @@
 /turf/simulated/floor/airless,
 /area/djstation)
 "Fb" = (
+/obj/effect/landmark/random_gen/asteroid{
+	generation_height = 200;
+	generation_width = 200
+	},
 /turf/space,
 /area/space)
 

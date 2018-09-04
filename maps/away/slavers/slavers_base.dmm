@@ -11,7 +11,7 @@
 /turf/space,
 /area/space)
 "ad" = (
-/turf/simulated/mineral,
+/turf/unsimulated/mask,
 /area/mine/unexplored)
 "ae" = (
 /obj/effect/shuttle_landmark/nav_slavers_base/nav1,
@@ -4325,6 +4325,7 @@
 /turf/space,
 /area/space)
 "kZ" = (
+/obj/effect/landmark/random_gen/asteroid,
 /turf/space,
 /area/space)
 "lb" = (

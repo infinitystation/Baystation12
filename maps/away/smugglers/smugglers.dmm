@@ -6,7 +6,7 @@
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
 "ac" = (
-/turf/simulated/mineral,
+/turf/unsimulated/mask,
 /area/mine/unexplored)
 "ad" = (
 /obj/random/shoes,
@@ -71,7 +71,7 @@
 /turf/simulated/floor,
 /area/smugglers/base)
 "an" = (
-/turf/simulated/mineral,
+/turf/unsimulated/mask,
 /area/mine/explored)
 "ao" = (
 /turf/space,
@@ -1039,6 +1039,10 @@
 /turf/space,
 /area/space)
 "cD" = (
+/obj/effect/landmark/random_gen/asteroid{
+	generation_height = 50;
+	generation_width = 50
+	},
 /turf/space,
 /area/space)
 "cE" = (

@@ -35,9 +35,8 @@
 	id = "awaysite_bearcat_wreck"
 	description = "A wrecked light freighter."
 	suffixes = list("bearcat/bearcat-1.dmm", "bearcat/bearcat-2.dmm")
-	cost = 0
+	cost = 1
 	shuttles_to_initialise = list(/datum/shuttle/autodock/ferry/lift)
-	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
 
 /datum/shuttle/autodock/ferry/lift
 	name = "Cargo Lift"
