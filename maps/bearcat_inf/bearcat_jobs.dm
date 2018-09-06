@@ -88,7 +88,7 @@
 	                    SKILL_CHEMISTRY   = SKILL_MAX,
 	                    SKILL_VIROLOGY    = SKILL_MAX)
 	skill_points = 32
-
+	access = list(access_medical_equip, access_kitchen)
 
 /datum/job/hop
 	title = "First Mate"
@@ -264,6 +264,7 @@
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	glasses = /obj/item/clothing/glasses/hud/health
 	shoes = /obj/item/clothing/shoes/laceup
+	id_type = /obj/item/weapon/card/id/medical
 
 /decl/hierarchy/outfit/job/bearcat/mate
 	name = BEARCAT_OUTFIT_JOB_NAME("First Mate")
