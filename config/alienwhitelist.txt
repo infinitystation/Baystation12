@@ -34,12 +34,11 @@ hodovoy - skrell
 taushai - skrell
 knayu - skrell
 cre77 - resomi
+solark - resomi
 taushai - resomi
 netreson - resomi
 kirill1243 - resomi
-coltrane97 - resomi
 coldmantis13 - resomi
-solark - resomi
 wheatley2013 - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
@@ -69,8 +68,8 @@ sosiskoed - vox
 mrnicolas - vox
 taushai - vox
 rex127 - vox
-cre77 - vox
 ss1334 - vox
+cre77 - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 kotovsyndrome - unathi
@@ -93,6 +92,7 @@ selles - tajaran
 logfol - tajaran
 denmag - tajaran
 solark - tajaran
-arhod - tajaran
 forrya - tajaran
+arhod - tajaran
+farwa - tajaran
 redknighthero - bionic
