@@ -6,3 +6,4 @@
 	capital = "Kuih"
 	ruling_body = "\\FILL THIS FIELD PLEASE\\."
 	distance = "\\FILL THIS FIELD PLEASE\\."
+	secondary_langs = list(LANGUAGE_SPACER, LANGUAGE_INDEPENDENT, LANGUAGE_SIGN, LANGUAGE_GUTTER, LANGUAGE_SOL_COMMON)

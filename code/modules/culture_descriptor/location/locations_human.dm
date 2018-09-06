@@ -13,7 +13,8 @@
 	capital = "Olympus"
 	economic_power = 1.1
 	language = LANGUAGE_SOL_COMMON
-	secondary_langs = list(LANGUAGE_SIGN, LANGUAGE_GALCOM)
+	secondary_langs = list(LANGUAGE_SIGN, LANGUAGE_SPACER, LANGUAGE_GUTTER, LANGUAGE_INDEPENDENT)
+
 
 /decl/cultural_info/location/human/earth
 	name = HOME_SYSTEM_EARTH
@@ -24,10 +25,11 @@
 	Earth are among the wealthier humans on average, though they are still comparable with those of Mars. Remarkably average, the people of Earth are \
 	much as they have been for hundreds of years, and are generally content with their lot in life. From a variety of ancient cultures, the people of \
 	Earth are as diverse as they have always been."
-	secondary_langs = list(LANGUAGE_SIGN, LANGUAGE_LUNAR)
+	secondary_langs = list(LANGUAGE_SIGN, LANGUAGE_SPACER, LANGUAGE_GUTTER, LANGUAGE_INDEPENDENT)
 	distance = "1AU"
 	capital = "Geneva"
 	economic_power = 1.2
+
 
 /decl/cultural_info/location/human/luna
 	name = HOME_SYSTEM_LUNA
@@ -47,7 +49,7 @@
 	capital = "Selene"
 	economic_power = 1.3
 	language = LANGUAGE_LUNAR
-	secondary_langs = list(LANGUAGE_SIGN,LANGUAGE_SOL_COMMON)
+	secondary_langs = list(LANGUAGE_SIGN,LANGUAGE_SOL_COMMON, LANGUAGE_SPACER)
 
 /decl/cultural_info/location/human/venus
 	name = HOME_SYSTEM_VENUS
@@ -65,6 +67,7 @@
 	surface. These surfacers often resent and are at odds with their rich, carefree employers."
 	capital = "Central Administration Zone"
 	economic_power = 1.4
+	secondary_langs = list(LANGUAGE_SIGN, LANGUAGE_SPACER, LANGUAGE_GUTTER, LANGUAGE_INDEPENDENT)
 
 /decl/cultural_info/location/human/ceres
 	name = HOME_SYSTEM_CERES
@@ -110,3 +113,4 @@
 	the cutting edge, most Episoloners are tech-savvy, at the very least and are usually well educated, with a focus on the sciences. The people \
 	of Ceti Episilon have developed a reputation for being some of the best and brightest that Sol has to offer."
 	capital = "Verlize"
+	secondary_langs = list(LANGUAGE_SIGN, LANGUAGE_SPACER, LANGUAGE_GUTTER, LANGUAGE_INDEPENDENT)
