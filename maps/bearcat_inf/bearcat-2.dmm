@@ -45,7 +45,7 @@
 "aS" = (/obj/structure/table/woodentable,/obj/random_multi/single_item/captains_spare_id,/obj/random_multi/single_item/captains_spare_id,/obj/item/modular_computer/telescreen/preset/generic{pixel_y = 26},/obj/item/weapon/reagent_containers/food/drinks/coffeecup/one,/obj/item/device/radio/intercom{dir = 8; pixel_x = 22},/turf/simulated/floor/wood,/area/ship/scrap/command/captain)
 "aT" = (/obj/structure/shuttle/engine/propulsion/burst/left{dir = 1},/turf/simulated/floor/airless,/area/ship/scrap/shuttle/outgoing)
 "aU" = (/obj/structure/window/reinforced{dir = 1},/obj/structure/window/reinforced{dir = 4},/obj/machinery/atmospherics/pipe/manifold4w/hidden/fuel,/obj/structure/catwalk,/obj/random/tool,/turf/simulated/floor/airless,/area/ship/scrap/maintenance/engine/starboard)
-"aV" = (/obj/structure/catwalk,/obj/random/junk,/turf/simulated/floor,/area/ship/scrap/crew/hallway/port)
+"aV" = (/obj/structure/catwalk,/obj/random/junk,/obj/structure/sign/poster{pixel_y = 32},/turf/simulated/floor,/area/ship/scrap/crew/hallway/port)
 "aW" = (/obj/structure/window/reinforced,/obj/machinery/atmospherics/pipe/manifold/hidden/fuel{icon_state = "map"; dir = 1},/obj/structure/catwalk,/obj/random/tool,/turf/simulated/floor/airless,/area/ship/scrap/maintenance/engine/port)
 "aX" = (/obj/structure/shuttle/engine/propulsion/burst/right{dir = 1},/turf/simulated/floor/airless,/area/ship/scrap/shuttle/outgoing)
 "aY" = (/obj/structure/bed/padded,/obj/item/weapon/bedsheet/captain,/turf/simulated/floor/wood,/area/ship/scrap/command/captain)
@@ -722,7 +722,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabwaaaaaaaalGrgrgigihiiijikfIiliniofL
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabwaaaaaaaalGrgrgixiMjchxjdikhIjkjljpjrjthIikjdhEjvjwjDAhAhlGaaaaaaaabwaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHJHJHJiyiyiyiyiziziAiBiAiCiAiAiAiDiDiEiFVlAhAhAhlGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaemHJHJiGdYiHdXiJdoiziLbIiNfMiPiQhtiDiSiwiTVlVlAhAhbwaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHJHJHJiIiWiXiYkFgcjajbfOeujejfjfjgjhjijjfXVlVlaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHJHJHJiIiWiXiYkFgcjajbfOeujejfjfjgjhjijjfXVlVlaaaabwaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHJHJenjmjnjokHiZkQiygbjsbEjuhAhLjxiDjyjzjAjBlGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHJHJkZlajFjGjHlbkCiyjJjKjKiOjKjKjKiEjMjNjOVlVlaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabDjQjRjSjTjUjVjqkDiycpjYjZkakbdnkdiDkekfkgVlVlaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
