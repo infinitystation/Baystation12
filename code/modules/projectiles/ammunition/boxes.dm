@@ -419,5 +419,5 @@
 	ammo_type = /obj/item/ammo_casing/a10mm
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
 	caliber = "10mm"
-	max_ammo = 24
+	max_ammo = 20
 	multiple_sprites = 1
