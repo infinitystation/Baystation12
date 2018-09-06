@@ -145,7 +145,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/nt41
 	name = "NT41 submachine gun"
-	desc = "The NT41 Enforcer is a self-defense weapon made on bullpup system. Produced by NanoTrasen for it's Security Force. Looks cool and stylish, but sometimes too uncomfortably to run with it. Uses 10mm rounds."
+	desc = "The NT41 Enforcer is a self-defense weapon made on bullpup system. Produced by NanoTrasen for it's Security Force. Looks cool and stylish, but sometimes too uncomfortably to run with it. Uses 57x28mm rounds."
 	icon_state = "nt41"
 	item_state = "nt41"
 	icon = 'icons/obj/infinity_guns.dmi'
@@ -156,10 +156,10 @@
 		)
 
 	w_class = ITEM_SIZE_NORMAL
-	caliber = "10mm"
+	caliber = "57x28mm"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 3)
 	slot_flags = SLOT_BELT
-	ammo_type = /obj/item/ammo_casing/57x28mm
+	ammo_type = /obj/item/ammo_casing/57mm
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/n10mm
 	allowed_magazines = /obj/item/ammo_magazine/n10mm
