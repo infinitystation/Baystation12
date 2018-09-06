@@ -15,7 +15,7 @@
 	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/iaa)
 
 /datum/antagonist/traitor
-	blacklisted_jobs = list(/datum/job/merchant, /datum/job/captain, /datum/job/hop, /datum/job/iaa)
+	blacklisted_jobs = list(/datum/job/merchant, /datum/job/captain, /datum/job/iaa)
 
 /datum/antagonist/ert/equip(var/mob/living/carbon/human/player)
 	if(!..())
