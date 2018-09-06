@@ -223,7 +223,7 @@
 			badge_string = choice
 		if(confirm == "Yes")
 			var/decl/cultural_info/faction = user.get_cultural_value(TAG_FACTION)
-			badge_string = faction
+			badge_string = faction.name
 		to_chat(user, "<span class='notice'>[src]'s faction now is '[badge_string]'.</span>")
 
 /obj/item/clothing/accessory/badge/tags/set_desc(var/mob/living/carbon/human/H)
@@ -231,7 +231,7 @@
 		return
 	var/decl/cultural_info/culture = H.get_cultural_value(TAG_RELIGION)
 	var/religion = culture ? culture.name : "Unset"
-	desc = "[initial(desc)]\nName: [H.real_name] ([H.get_species()])[H.char_branch ? "\nBranch: [H.char_branch.name]" : ""]\nReligion: [religion]\nBlood type: [H.b_type]"
+	desc = "[initial(desc)]\nName: [H.real_name] ([H.get_species()])\nReligion: [religion]\nBlood type: [H.b_type]"
 
 /obj/item/clothing/accessory/storage/bandolier/armory/Initialize()
 	. = ..()
