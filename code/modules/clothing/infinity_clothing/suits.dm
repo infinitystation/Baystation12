@@ -33,3 +33,10 @@
 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "officerdnavyjacket"
 	body_parts_covered = UPPER_TORSO
+
+/obj/item/clothing/suit/storage/hoscoat
+	name = "armored trenchcoat"
+	desc = "A trenchcoat augmented with a special alloy for some protection and style."
+	icon_state = "hostrench"
+	item_state = "hostrench"
+	armor = list(melee = 65, bullet = 30, laser = 50, energy = 10, bomb = 25, bio = 0, rad = 0)
