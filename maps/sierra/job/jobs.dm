@@ -613,8 +613,8 @@
 	department = "Engineering"
 	department_flag = ENG
 
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 4
+	spawn_positions = 4
 	supervisors = "the Chief Engineer"
 	minimal_player_age = 7
 	selection_color = "#5b4d20"
