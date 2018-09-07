@@ -734,10 +734,12 @@
 /area/security/sierra/cells
 	name = "Security - Cells"
 	icon_state = "brig"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/security/sierra/permabrig
 	name = "Security - Long Term Chamber"
 	icon_state = "sec_prison"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/security/sierra/hallway
 	name = "Security - Fore Hallway"
@@ -755,10 +757,6 @@
 	name = "Security - Security Sergeant"
 	icon_state = "brig"
 
-/area/security/sierra/marshal
-	name = "Security - Colonial Marshal"
-	icon_state = "brig"
-
 /area/security/sierra/armory
 	name = "Security - Armory"
 	icon_state = "brig"
@@ -769,6 +767,14 @@
 
 /area/security/sierra/safe_room
 	name = "Security - Safe Room"
+	icon_state = "brig"
+
+/area/security/sierra/suits
+	name = "Security - Suits Storage"
+	icon_state = "brig"
+
+/area/security/sierra/breakroom
+	name = "Security - Break Room"
 	icon_state = "brig"
 
 /area/security/sierra/hos
