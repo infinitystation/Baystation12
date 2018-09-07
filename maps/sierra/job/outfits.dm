@@ -184,6 +184,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	l_ear = /obj/item/device/radio/headset/headset_sec
 	pda_type = /obj/item/modular_computer/pda/security
 	pda_slot = slot_l_store
+	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/sierra/crew/security/New()
 	..()
