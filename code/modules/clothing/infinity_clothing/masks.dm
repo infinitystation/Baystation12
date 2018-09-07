@@ -4,4 +4,4 @@
 	item_icons = list(slot_wear_mask_str = 'icons/mob/infinity/masks.dmi')
 	icon_state = "gas_alt"
 	item_state = "gas_alt"
-	flags_inv = HIDEEARS|HIDEFACE
+	flags_inv = HIDEEARS

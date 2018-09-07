@@ -116,4 +116,6 @@
 		/obj/item/clothing/gloves/thick,
 		/obj/item/device/holowarrant,
 		/obj/item/device/flashlight/maglight,
+		/obj/item/weapon/crowbar/prybar,
+		/obj/item/device/radio/off,
 	)
