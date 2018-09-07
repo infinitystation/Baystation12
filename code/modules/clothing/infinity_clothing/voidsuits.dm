@@ -44,6 +44,24 @@
 		res.overlays += ind
 	return res
 
+/obj/item/clothing/suit/space/void/military
+	name = "\improper military voidsuit"
+	desc = "A heavily armored suit for heavy infantry. Used in SCG Marine Corps."
+	icon_state = "rig-secTG"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS
+	allowed = list(/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/handcuffs,/obj/item/weapon/tank)
+	armor = list(melee = 30, bullet = 50, laser = 50,energy = 30, bomb = 60, bio = 100, rad = 40)
+	flags_inv = HIDESHOES|HIDEJUMPSUIT
+	siemens_coefficient = 0.6
+
+/obj/item/clothing/suit/space/void/military/New()
+	..()
+	slowdown_per_slot[slot_wear_suit] = 1
+
+/obj/item/clothing/suit/space/void/military/prepared
+	helmet = /obj/item/clothing/head/helmet/space/void/military
+	boots = /obj/item/clothing/shoes/magboots
+
 /obj/item/clothing/head/helmet/space/void/military
 	name = "military voidsuit helmet"
 	desc = "A somewhat tacky voidsuit helmet, a fact mitigated by heavy armor plating."
@@ -55,5 +73,35 @@
 		slot_r_hand_str = "sec_helm",
 		)
 	siemens_coefficient = 0.6
+	light_overlay = "helmet_light_dual"
+
+/obj/item/clothing/suit/space/void/sapper
+	name = "\improper sapper voidsuit"
+	desc = "A specially produced heavy suit for sapper units on space facilities. Usually, uses as emergency spacesuit."
+	icon_state = "rig-secTG"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+	armor = list(melee = 40, bullet = 15, laser = 25,energy = 50, bomb = 90, bio = 100, rad = 10)
+	flags_inv = HIDESHOES|HIDEJUMPSUIT|HIDEGLOVES
+	siemens_coefficient = 0
+
+/obj/item/clothing/suit/space/void/sapper/New()
+	..()
+	slowdown_per_slot[slot_wear_suit] = 2
+
+/obj/item/clothing/suit/space/void/sapper/prepared
+	helmet = /obj/item/clothing/head/helmet/space/void/sapper
+	boots = /obj/item/clothing/shoes/magboots
+
+/obj/item/clothing/head/helmet/space/void/sapper
+	name = "sapper voidsuit helmet"
+	desc = "A specially produced heavy helmet for sapper units on space facilities."
+	icon_state = "rig0-secTG"
+	item_state = "rig0-secTG"
+	armor = list(melee = 30, bullet =20, laser = 25, energy = 50, bomb = 90, bio = 100, rad = 10)
+	item_state_slots = list(
+		slot_l_hand_str = "sec_helm",
+		slot_r_hand_str = "sec_helm",
+		)
+	siemens_coefficient = 0
 	light_overlay = "helmet_light_dual"
 
