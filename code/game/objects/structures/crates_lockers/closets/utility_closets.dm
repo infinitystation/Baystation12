@@ -272,7 +272,7 @@ obj/structure/closet/emcloset/full/New()
 		/obj/item/weapon/storage/pill_bottle/kelotane,
 		/obj/item/weapon/storage/pill_bottle/bicaridine,
 		/obj/item/stack/medical/splint,
-		/obj/item/bodybag/cryobag = 1,
+		/obj/item/bodybag/cryobag = 2,
 		/obj/random/medical/lite = 4)
 
 /obj/structure/closet/medical_wall/filled/shuttle/WillContain()
