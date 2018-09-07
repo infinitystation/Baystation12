@@ -91,7 +91,7 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
 		/obj/item/device/radio/headset/headset_sci,
-		/obj/item/clothing/mask/gas/alt/half,
+		/obj/item/clothing/mask/gas/half,
 		/obj/item/weapon/tank/emergency/oxygen/engi,
 		/obj/item/weapon/clipboard,
 		/obj/item/weapon/folder,
