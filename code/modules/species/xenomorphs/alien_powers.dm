@@ -268,7 +268,7 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 
 	A.do_animate("spark")
 	sleep(6)
-	var/check = A.open(1)
+	A.open(3)
 
 /mob/living/carbon/human/proc/scan_target()
 	set name = "See My Health"

@@ -72,7 +72,7 @@
 	parent_organ = BP_CHEST
 	icon_state = "xgibmid2"
 	organ_tag = BP_HIVE
-	var/painkiller = 2000
+	var/painkiller = 1000
 
 /obj/item/organ/internal/xeno/hivenode/Process() //hivemind makes you powerful. And dumb.
 	if(owner)
