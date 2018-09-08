@@ -30,6 +30,9 @@
 		/obj/item/device/holowarrant,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/device/flashlight/maglight,
+		/obj/item/weapon/crowbar/prybar,
+		/obj/item/device/radio/off,
+		/obj/item/clothing/mask/gas/half,
 	)
 
 /obj/structure/closet/secure_closet/warden/sierra/WillContain()
@@ -56,6 +59,9 @@
 		/obj/item/device/holowarrant,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/device/flashlight/maglight,
+		/obj/item/weapon/crowbar/prybar,
+		/obj/item/device/radio/off,
+		/obj/item/clothing/mask/gas/half,
 	)
 
 /obj/structure/closet/secure_closet/forensics
@@ -89,6 +95,9 @@
 		/obj/item/device/tape/random = 3,
 		/obj/item/device/holowarrant,
 		/obj/item/device/flashlight/maglight,
+		/obj/item/weapon/crowbar/prybar,
+		/obj/item/device/radio/off,
+		/obj/item/clothing/mask/gas/half,
 	)
 
 /obj/structure/closet/secure_closet/security/sierra
@@ -118,4 +127,5 @@
 		/obj/item/device/flashlight/maglight,
 		/obj/item/weapon/crowbar/prybar,
 		/obj/item/device/radio/off,
+		/obj/item/clothing/mask/gas/half,
 	)
