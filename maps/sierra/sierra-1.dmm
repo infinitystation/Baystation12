@@ -3296,12 +3296,12 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/machinery/power/emitter,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube_map"
 	},
+/obj/machinery/power/emitter/anchored,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "gh" = (
@@ -19985,11 +19985,13 @@
 "Hi" = (
 /obj/effect/floor_decal/corner/mauve/mono,
 /obj/machinery/button/windowtint{
+	dir = 4;
 	id = "pathfinder_office";
 	pixel_x = -24;
 	pixel_y = 6
 	},
 /obj/machinery/light_switch{
+	dir = 4;
 	pixel_x = -24;
 	pixel_y = -6
 	},
@@ -20111,8 +20113,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
 "Hw" = (
-/obj/structure/computerframe,
-/obj/item/weapon/material/shard,
+/obj/structure/computerframe{
+	icon_state = "0";
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/vacant/infirmary)
 "Hy" = (
@@ -21910,7 +21914,8 @@
 "Qk" = (
 /obj/machinery/door/airlock/research{
 	name = "Canister Storage";
-	req_access = list(49)
+	req_access = newlist();
+	req_one_access = list(73,74)
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/cable/green{
@@ -22743,6 +22748,13 @@
 "UR" = (
 /obj/structure/table/steel,
 /obj/random/junk,
+/turf/simulated/floor/plating,
+/area/vacant/monitoring)
+"UW" = (
+/obj/structure/computerframe{
+	icon_state = "0";
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/vacant/monitoring)
 "UZ" = (
@@ -40833,7 +40845,7 @@ EC
 Ly
 Xy
 FG
-Fa
+UW
 ED
 nb
 fa

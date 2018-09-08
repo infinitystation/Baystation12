@@ -13399,10 +13399,8 @@
 /area/rescue_base/base)
 "aEE" = (
 /obj/structure/table/rack,
-/obj/item/clothing/mask/gas/alt,
-/obj/item/clothing/mask/gas/alt,
-/obj/item/clothing/glasses/night,
-/obj/item/clothing/glasses/night,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
 /obj/item/clothing/glasses/tacgoggles,
 /obj/item/clothing/glasses/tacgoggles,
 /turf/unsimulated/floor{
@@ -13471,13 +13469,13 @@
 /area/rescue_base/base)
 "aEK" = (
 /obj/structure/table/rack,
-/obj/item/clothing/mask/gas/alt,
-/obj/item/clothing/mask/gas/alt,
 /obj/item/clothing/glasses/hud/health,
 /obj/item/clothing/glasses/hud/health,
 /obj/item/weapon/storage/box/gloves,
 /obj/item/weapon/storage/box/gloves,
 /obj/item/weapon/storage/box/masks,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -15458,7 +15456,7 @@
 /area/rescue_base/base)
 "aIZ" = (
 /obj/structure/table/rack,
-/obj/item/clothing/mask/gas/alt,
+/obj/item/clothing/mask/gas,
 /obj/item/clothing/glasses/tacgoggles,
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -15775,12 +15773,12 @@
 /area/rescue_base/base)
 "aJM" = (
 /obj/structure/table/rack,
-/obj/item/clothing/mask/gas/alt,
-/obj/item/clothing/mask/gas/alt,
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/meson,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
 /obj/item/clothing/glasses/welding/superior,
 /obj/item/clothing/glasses/welding/superior,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/meson,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 1
@@ -18323,11 +18321,10 @@
 /area/deity_spawn)
 "aQh" = (
 /obj/machinery/door/blast/shutters{
-	dir = 2;
+	dir = 4;
 	id = "supply_shuttle";
 	name = "Supply Drone Shutters"
 	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
 /area/supply/dock)
 "aQi" = (
@@ -25199,6 +25196,15 @@
 /obj/structure/holostool,
 /turf/simulated/floor/holofloor/concrete,
 /area/holodeck/source_volleyball)
+"lDb" = (
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id = "supply_shuttle";
+	name = "Supply Drone Shutters"
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/plating,
+/area/supply/dock)
 "lJo" = (
 /obj/structure/towel/pink_stripped,
 /turf/simulated/floor/holofloor/beach/sand,
@@ -25477,6 +25483,23 @@
 /obj/item/clothing/glasses/sunglasses,
 /turf/simulated/floor/holofloor/beach/sand,
 /area/admin_prison)
+"pXQ" = (
+/obj/structure/table/rack,
+/obj/item/weapon/gun/projectile/automatic/nt41,
+/obj/item/weapon/gun/projectile/automatic/nt41,
+/obj/item/ammo_magazine/n10mm,
+/obj/item/ammo_magazine/n10mm,
+/obj/item/ammo_magazine/n10mm,
+/obj/item/ammo_magazine/n10mm,
+/obj/item/ammo_magazine/n10mm,
+/obj/item/ammo_magazine/n10mm,
+/obj/item/ammo_magazine/n10mm,
+/obj/item/ammo_magazine/n10mm,
+/turf/unsimulated/floor{
+	icon_state = "vault";
+	dir = 8
+	},
+/area/rescue_base/base)
 "pYQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -32915,7 +32938,7 @@ aOO
 aPn
 aQh
 aQh
-aQh
+lDb
 aPn
 aPr
 aOG
@@ -60336,7 +60359,7 @@ anJ
 aED
 aGI
 aGI
-aGI
+pXQ
 anJ
 kbf
 aGI
