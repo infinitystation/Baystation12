@@ -4,8 +4,6 @@
 	extended_desc = "Application to Control the Crusher"
 	program_icon_state = "piston"
 	size = 8
-	requires_ntnet = 0
-	available_on_ntnet = 0
 	required_access = access_cargo
 	usage_flags = PROGRAM_TELESCREEN
 	nanomodule_path = /datum/nano_module/program/crushercontrol/
