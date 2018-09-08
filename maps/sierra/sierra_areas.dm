@@ -711,6 +711,7 @@
 /area/crew_quarters/sleep/cryo/aux
 	name = "\improper Auxiliary Cryogenic Storage"
 	icon_state = "Sleep"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/crew_quarters/diplomat
 	name = "\improper Diplomatic Quarters"
