@@ -271,6 +271,10 @@
 
 	if(src.operating) return
 
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.pry_open(src)
+
 	if(src.allowed(user) && operable())
 		if(src.density)
 			open()
