@@ -21,7 +21,7 @@
 	name = "laser guncabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/laser/WillContain()
-	return list(/obj/item/weapon/gun/energy/laser = 2)
+	return list(/obj/item/weapon/gun/energy/laser/secure = 2)
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/stun
 	name = "stun guncabinet"
