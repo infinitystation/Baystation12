@@ -216,6 +216,7 @@
 	explosion_resistance = 10
 
 /obj/machinery/door/blast/shutters/open
+	icon_state = "shutter0"
 	begins_closed = FALSE
 
 //It's doesn't using right now, but i think we should store it for better days

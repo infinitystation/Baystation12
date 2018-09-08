@@ -183,9 +183,15 @@
 	door_color = COLOR_NT_RED
 	stripe_color = COLOR_ORANGE
 
+/obj/machinery/door/airlock/multi_tile/glass/security/no_stripe
+	stripe_color = null
+
 /obj/machinery/door/airlock/multi_tile/glass/engineering
 	door_color = COLOR_AMBER
 	stripe_color = COLOR_RED
+
+/obj/machinery/door/airlock/multi_tile/glass/engineering/no_stripe
+	stripe_color = null
 
 /obj/machinery/door/airlock/multi_tile/glass/medical
 	door_color = COLOR_WHITE
