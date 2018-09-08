@@ -259,17 +259,16 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 
 	src.visible_message("\The [src] begins to pry open \the [A]!")
 
-	if(!do_after(src,120,A))
-		return
+	if(A.stat != NOPOWER)
+		if(!do_after(src,40,A))
+			return
 
 	if(!A.density)
 		return
 
 	A.do_animate("spark")
 	sleep(6)
-	A.stat |= BROKEN
 	var/check = A.open(1)
-	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")
 
 /mob/living/carbon/human/proc/scan_target()
 	set name = "See My Health"

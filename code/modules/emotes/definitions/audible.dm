@@ -354,6 +354,12 @@
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/scream_female_[rand(1,2)].ogg"
 
+		if(H.species.reagent_tag == IS_XENOS)
+			emote_sound = "sound/voice/alien_pain.ogg"
+
+		if(H.species.reagent_tag == IS_RESOMI)
+			emote_sound = "sound/voice/resomisneeze.ogg"
+
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)
 

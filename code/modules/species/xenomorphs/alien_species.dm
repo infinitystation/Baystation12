@@ -8,7 +8,7 @@
 	rarity_value = 3
 	health_hud_intensity = 1
 
-	natural_armour_values = list(melee = 35, bullet = 25, laser = 30, energy = 30, bomb = 30, bio = 100, rad = 100)
+	natural_armour_values = list(melee = 40, bullet = 25, laser = 30, energy = 30, bomb = 30, bio = 100, rad = 100)
 
 	icon_template = 'icons/mob/human_races/species/xenos/template.dmi'
 
@@ -42,7 +42,7 @@
 	cold_level_2 = -1
 	cold_level_3 = -1
 
-	species_flags = SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_MINOR_CUT | SPECIES_FLAG_NO_EMBED | SPECIES_FLAG_NO_TANGLE
+	species_flags = SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_MINOR_CUT | SPECIES_FLAG_NO_EMBED | SPECIES_FLAG_NO_TANGLE
 	appearance_flags = HAS_EYE_COLOR | HAS_SKIN_COLOR
 
 	spawn_flags = SPECIES_IS_RESTRICTED
@@ -64,6 +64,8 @@
 	poison_types = null
 
 	vision_flags = SEE_SELF|SEE_MOBS
+
+	breathing_sound = 'sound/voice/lizard.ogg'
 
 	has_organ = list(
 		BP_EYES =     /obj/item/organ/internal/eyes/xeno,
@@ -109,6 +111,12 @@
 /datum/species/xenos/get_bodytype(var/mob/living/carbon/H)
 	return "Xenophage"
 
+/datum/species/xenos/can_shred(var/mob/living/carbon/human/H, var/ignore_intent, var/ignore_antag)
+	if((!ignore_intent && H.a_intent != I_HURT) || H.pulling_punches)
+		return 0
+
+	return 1
+
 /datum/species/xenos/can_understand(var/mob/other)
 
 	if(istype(other,/mob/living/carbon/alien/larva))
@@ -151,7 +159,7 @@
 	..()
 
 /datum/species/xenos/proc/regenerate(var/mob/living/carbon/human/H)
-
+	H.add_chemical_effect(CE_ANTIBIOTIC, 1)
 	var/heal_rate = weeds_heal_rate
 	var/mend_prob = 10
 	if (!H.lying)
@@ -167,9 +175,10 @@
 	//next internal organs and blood
 //	H.restore_blood()
 	if(H.vessel.total_volume < H.species.blood_volume)
-		H.vessel.add_reagent(/datum/reagent/blood, 10)
+		H.vessel.add_reagent(/datum/reagent/blood, 4)
 	for(var/obj/item/organ/I in H.internal_organs)
 		if(I.damage > 0)
+			H.adjustBruteLoss(-heal_rate/2)
 			I.damage = max(I.damage - heal_rate, 0)
 			if (prob(5))
 				to_chat(H, "<span class='alium'>You feel a soothing sensation within your [I.parent_organ]...</span>")
@@ -202,7 +211,10 @@
 /datum/species/xenos/drone
 	name = "Xenophage Drone"
 	weeds_plasma_rate = 15
-	slowdown = 0
+	slowdown = -0.2
+
+	natural_armour_values = list(melee = 20, bullet = 15, laser = 20, energy = 20, bomb = 20, bio = 100, rad = 100)
+
 //	brute_mod =     0.6
 //	burn_mod =      0.6
 
@@ -278,8 +290,11 @@
 /datum/species/xenos/sentinel
 	name = "Xenophage Sentinel"
 	weeds_plasma_rate = 10
-	slowdown = 0
+	slowdown = 0.2
 	total_health = 250
+
+	natural_armour_values = list(melee = 50, bullet = 30, laser = 35, energy = 35, bomb = 40, bio = 100, rad = 100)
+
 	icobase = 'icons/mob/human_races/species/xenos/r_xenos_sentinel.dmi'
 	deform =  'icons/mob/human_races/species/xenos/r_xenos_sentinel.dmi'
 
@@ -319,6 +334,8 @@
 	weeds_plasma_rate = 20
 	slowdown = 1
 	rarity_value = 10
+
+	natural_armour_values = list(melee = 50, bullet = 40, laser = 40, energy = 40, bomb = 60, bio = 100, rad = 100)
 
 	icobase = 'icons/mob/human_races/species/xenos/r_xenos_queen.dmi'
 	deform =  'icons/mob/human_races/species/xenos/r_xenos_queen.dmi'

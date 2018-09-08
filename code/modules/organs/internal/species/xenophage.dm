@@ -4,6 +4,15 @@
 	icon = 'icons/mob/alien.dmi'
 	icon_state = "chitin"
 
+/obj/item/organ/internal/brain/xeno/take_internal_damage(var/damage, var/silent)
+	set waitfor = 0
+	..()
+	if(damage >= 50) //This probably won't be triggered by oxyloss or mercury. Probably.
+		var/damage_secondary = damage * 0.10
+		owner.flash_eyes()
+		owner.eye_blurry += damage_secondary
+		owner.Paralyse(damage_secondary)
+
 //XENOMORPH ORGANS
 /obj/item/organ/internal/xeno
 	name = "xeno organ"
@@ -63,6 +72,17 @@
 	parent_organ = BP_CHEST
 	icon_state = "xgibmid2"
 	organ_tag = BP_HIVE
+	var/painkiller = 2000
+
+/obj/item/organ/internal/xeno/hivenode/Process() //hivemind makes you powerful. And dumb.
+	if(owner)
+		var/profit = painkiller
+		if(is_broken())
+			profit *= 0.4
+		else if(is_bruised())
+			profit *= 0.7
+		owner.add_chemical_effect(CE_PAINKILLER, profit)
+	..()
 
 /obj/item/organ/internal/xeno/resinspinner
 	name = "resin spinner"
@@ -75,6 +95,7 @@
 	night_vision = 1
 	phoron_guard = 1
 	innate_flash_protection = FLASH_PROTECTION_MODERATE
+	min_bruised_damage = 20
 
 /obj/item/organ/internal/eyes/xeno/update_colour()
 	if(!owner)
