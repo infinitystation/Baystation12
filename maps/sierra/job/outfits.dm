@@ -59,7 +59,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	name = OUTFIT_JOB_NAME("Head of Personnel - Sierra")
 	uniform = /obj/item/clothing/under/rank/head_of_personnel
 	l_ear = /obj/item/device/radio/headset/heads/hop
-	shoes = /obj/item/clothing/shoes/brown
+	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/sierra/silver
 	pda_type = /obj/item/modular_computer/pda/heads/hop
 
@@ -128,8 +128,8 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/crew/command/adjutant
 	name = OUTFIT_JOB_NAME("Adjutant")
-	uniform = /obj/item/clothing/under/rank/security2/adjutant
-	shoes = /obj/item/clothing/shoes/brown
+	uniform = /obj/item/clothing/under/rank/adjutant
+	shoes = /obj/item/clothing/shoes/black
 	l_ear = /obj/item/device/radio/headset/adjutant
 	id_type = /obj/item/weapon/card/id/sierra/crew/adjutant
 
@@ -521,7 +521,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/ert
 	name = OUTFIT_JOB_NAME("ERT - Sierra")
-	uniform = /obj/item/clothing/under/ert
+	uniform = /obj/item/clothing/under/ert_outfit
 	head = /obj/item/clothing/head/beret/centcom/officer
 	gloves = /obj/item/clothing/gloves/thick/combat/marine
 	id_type = /obj/item/weapon/card/id/centcom/ERT
@@ -531,6 +531,5 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/ert/leader
 	name = OUTFIT_JOB_NAME("ERT Leader - Sierra")
-	uniform = /obj/item/clothing/under/ert
 	head = /obj/item/clothing/head/beret/centcom/captain
 

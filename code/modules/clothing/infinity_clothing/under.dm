@@ -74,3 +74,23 @@
 	item_state = "middle_manager"
 	worn_state = "middle_manager"
 	displays_id = 0
+
+/obj/item/clothing/under/ert_outfit
+	name = "asset protection uniform"
+	desc = "A black camouflage uniform for NT Security Force's asset protection."
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
+	icon_state = "ass_protection"
+	item_state = "ass_protection"
+	worn_state = "ass_protection"
+	armor = list(melee = 10, bullet = 10, laser = 10,energy = 0, bomb = 0, bio = 0, rad = 0)
+	siemens_coefficient = 0.8
+
+/obj/item/clothing/under/rank/adjutant
+	name = "adjutant's uniform"
+	desc = "It's made of a special fiber that gives protection against strong language."
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
+	icon_state = "adjutant"
+	item_state = "adjutant"
+	worn_state = "adjutant"
