@@ -273,7 +273,8 @@
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		H.pry_open(src)
+		if(H.species.reagent_tag == IS_XENOS)
+			H.pry_open(src)
 
 	if(src.allowed(user) && operable())
 		if(src.density)
