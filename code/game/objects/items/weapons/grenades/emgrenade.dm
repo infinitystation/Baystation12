@@ -6,7 +6,7 @@
 
 	detonate()
 		..()
-		if(empulse(src, 4, 10))
+		if(empulse(src, 3, 6))
 			qdel(src)
 		return
 
@@ -19,6 +19,6 @@
 
 	detonate()
 		..()
-		if(empulse(src, 4, 1))
+		if(empulse(src, 2, 4))
 			qdel(src)
 		return
