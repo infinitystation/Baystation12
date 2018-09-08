@@ -166,9 +166,9 @@
 	var/allow_occupant_types = list(/mob/living/carbon/human)
 	var/disallow_occupant_types = list()
 
-	var/mob/occupant = null       // Person waiting to be despawned.
-	var/time_till_despawn = 9000  // Down to 15 minutes //30 minutes-ish is too long
-	var/time_entered = 0          // Used to keep track of the safe period.
+	var/mob/occupant = null            // Person waiting to be despawned.
+	var/time_till_despawn = 5 MINUTES  // Down to 5 minutes  // Down to 15 minutes //30 minutes-ish is too long
+	var/time_entered = 0               // Used to keep track of the safe period.
 	var/obj/item/device/radio/intercom/announce //
 
 	var/obj/machinery/computer/cryopod/control_computer
@@ -211,7 +211,7 @@
 	desc = "A man-sized pod for entering suspended animation. Dubbed 'cryocoffin' by more cynical spacers, it is pretty barebone, counting on stasis system to keep the victim alive rather than packing extended supply of food or air. Can be ordered with symbols of common religious denominations to be used in space funerals too."
 	on_store_name = "Life Pod Oversight"
 	density = 0
-	time_till_despawn = 20 MINUTES
+	time_till_despawn = 2 MINUTES
 	icon_state = "redpod0"
 	base_icon_state = "redpod0"
 	occupied_icon_state = "redpod1"
