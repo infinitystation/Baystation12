@@ -412,7 +412,7 @@
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/n10mm
-	name = "NT41 magazine (10mm)"
+	name = "NT41 magazine (5.7x28mm)"
 	icon = 'icons/obj/infinity_ammo.dmi'
 	icon_state = "10mm"
 	mag_type = MAGAZINE
