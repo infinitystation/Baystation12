@@ -51,7 +51,7 @@
 		/obj/item/clothing/under/rank/janitor/white,
 		/obj/item/device/radio/headset/headset_service,
 		/obj/item/clothing/gloves/thick,
-		/obj/item/device/flashlight,
+		/obj/item/device/flashlight/upgraded,
 		/obj/item/weapon/caution = 4,
 		/obj/item/device/lightreplacer,
 		/obj/item/weapon/storage/bag/trash,
