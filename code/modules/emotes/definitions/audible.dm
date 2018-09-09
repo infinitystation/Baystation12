@@ -204,6 +204,9 @@
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/cough_female.ogg"
 
+		if(H.species.reagent_tag == IS_RESOMI)
+			emote_sound = "sound/voice/resomicoughb.ogg"
+
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)
 
@@ -291,6 +294,9 @@
 
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/laugh_female_[rand(1,3)].ogg"
+
+		if(H.species.reagent_tag == IS_RESOMI)
+			emote_sound = "sound/voice/resomicougha.ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)
