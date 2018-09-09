@@ -106,7 +106,7 @@ Any-Mode: (hotkey doesn't need to be on)
 \tCtrl + Click = drag
 \tShift + Click = examine
 \tAlt + Click = show entities on turf
-\tCtrl + Alt + Click = interact with certain items
+\tCtrl + Alt + Click = point to smh
 </font>"}
 
 	var/robot_hotkey_mode = {"<font color='purple'>
