@@ -1,5 +1,6 @@
 /obj/machinery/chemical_dispenser
 	name = "chemical dispenser"
+	layer = BELOW_OBJ_LAYER
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "dispenser"
 	clicksound = "button"
