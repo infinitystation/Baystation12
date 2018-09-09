@@ -1129,6 +1129,7 @@
 /area/engineering/engineering_monitoring
 	name = "\improper Engineering Monitoring Room"
 	icon_state = "engine_monitoring"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/engineering/foyer
 	name = "\improper Engineering Foyer"

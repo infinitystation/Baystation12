@@ -47,6 +47,7 @@
 
 	#include "structures/closets.dm"
 	#include "structures/signs.dm"
+	#include "structures/other.dm"
 	#include "structures/thrusters.dm"
 
 	#include "structures/closets/armory.dm"
