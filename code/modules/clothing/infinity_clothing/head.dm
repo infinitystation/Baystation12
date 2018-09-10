@@ -21,7 +21,7 @@
 /obj/item/clothing/head/kitty/fake
 	name = "fake kitty ears"
 	desc = "The fur feels.....a bit too realistic."
-	icon_state = "kitty"
+	icon_state = "kitty_tailless"
 	body_parts_covered = 0
 
 	update_icon(var/mob/living/carbon/human/user)
