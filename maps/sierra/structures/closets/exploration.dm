@@ -21,7 +21,7 @@
 		/obj/item/device/radio/beacon,
 		/obj/item/taperoll/research,
 		/obj/item/weapon/material/hatchet/machete/deluxe,
-		/obj/item/clothing/accessory/storage/holster/machete,
+		/obj/item/weapon/storage/belt/holster/machete,
 		/obj/item/device/spaceflare,
 		/obj/item/clothing/accessory/storage/webbing_large,
 		/obj/item/device/taperecorder,

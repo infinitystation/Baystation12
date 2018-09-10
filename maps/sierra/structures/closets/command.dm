@@ -10,7 +10,7 @@
 		/obj/item/weapon/gun/energy/gun/secure,
 		/obj/item/device/radio/headset/heads/sierra_captain,
 		/obj/item/device/radio/headset/heads/sierra_captain/alt,
-		/obj/item/clothing/accessory/storage/holster/thigh,
+		/obj/item/weapon/storage/belt/holster/general,
 		/obj/item/weapon/melee/telebaton,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
