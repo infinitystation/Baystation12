@@ -3,7 +3,6 @@
 	icon_state ="bookEngineering2"
 	author = "Engineering Encyclopedia"
 	title = "Engineering Textbook"
-	url = "https://wiki.infinity-ss13.info/index.php?title=Guide_to_Engineering"
 
 /obj/item/weapon/book/manual/New()
 	..()
@@ -14,7 +13,7 @@
 			</head>
 
 			<body>
-			<iframe width='100%' height='100%' src="[url]&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+			<iframe width='100%' height='100%' src="[config.wikiurl]index.php?title=Guide_to_Engineering&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
 			</body>
 
 			</html>
@@ -170,7 +169,7 @@
 				  <li>Package Wrapper</li>
 				  <li>Destination Tagger</li>
 				</ul>
-				
+
 				<h3>Crisis Cyborg</h3>
 				The crisis cyborg module is prepared to handle a variety of non-surgical medical emergencies.<br>A medical cyborg comes with:
 				<ul>
