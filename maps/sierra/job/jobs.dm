@@ -51,7 +51,7 @@
 	department_flag = COM
 	head_position = 1
 	minimal_player_age = 21
-	economic_power = 15
+	economic_power = 20
 	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/captain
 	total_positions = 1
@@ -85,7 +85,7 @@
 	spawn_positions = 1
 	req_admin_notify = 1
 	minimal_player_age = 21
-	economic_power = 10
+	economic_power = 12
 	ideal_character_age = 45
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/hop
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -161,7 +161,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/rd/get_description_blurb()
-	return "You are the Research Director. You are responsible for the research department. You handle both the science part of the mission but are also responsible for ensuring Nanotrasen's interests along with your Nanotrasen iaa. Make sure science gets done, do some yourself, and get your prospectors and scientists on away missions to find things to benefit NT. Don’t put NT’s position on board in jeopardy.  Advise the CO on science matters."
+	return "You are the Research Director. You are responsible for the research department. You handle both the science part of the mission but are also responsible for ensuring Nanotrasen's interests along with your Nanotrasen iaa. Make sure science gets done, do some yourself, and get your prospectors and scientists on away missions to find things to benefit NT. Don't put NT's position on board in jeopardy.  Advise the Captain on science matters."
 
 /datum/job/cmo
 	title = "Chief Medical Officer"
@@ -216,7 +216,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	req_admin_notify = 1
-	economic_power = 9
+	economic_power = 10
 	ideal_character_age = 40
 	minimal_player_age = 21
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/chief_engineer
@@ -257,7 +257,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/chief_engineer/get_description_blurb()
-	return "You are the Chief Engineer. You manage the Engineering Department. You are responsible for the Senior engineer, who is your right hand and (should be) an experienced, skilled engineer. Delegate to and listen to them. Manage your engineers, ensure vessel power stays on, breaches are patched and problems are fixed. Advise the CO on engineering matters. You are also responsible for the maintenance and control of any vessel synthetics. You are an experienced engineer with a wealth of theoretical knowledge. You should also know vessel regulations to a reasonable degree."
+	return "You are the Chief Engineer. You manage the Engineering Department. You are responsible for the Senior engineer, who is your right hand and (should be) an experienced, skilled engineer. Delegate to and listen to them. Manage your engineers, ensure vessel power stays on, breaches are patched and problems are fixed. Advise the Captain on engineering matters. You are also responsible for the maintenance and control of any vessel synthetics. You are an experienced engineer with a wealth of theoretical knowledge. You should also know vessel regulations to a reasonable degree."
 
 /datum/job/hos
 	title = "Head of Security"
@@ -268,7 +268,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	req_admin_notify = 1
-	economic_power = 8
+	economic_power = 10
 	minimal_player_age = 21
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/hos
@@ -298,7 +298,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/hos/get_description_blurb()
-	return "You are the Head of Security. You manage ship security. The Masters at Arms and the Military Police, as well as the Brig Officer and the Forensic Technician. You keep the vessel safe. You handle both internal and external security matters. You are the law. You are subordinate to the CO and the XO. You are expected to know the SCMJ and Sol law and Alert Procedure to a very high degree along with general regulations."
+	return "You are the Head of Security. You manage ship security. The Masters at Arms and the Military Police, as well as the Brig Officer and the Forensic Technician. You keep the vessel safe. You handle both internal and external security matters. You are the law. You are subordinate to the Captain and the HOP. You are expected to know the SCMJ and Sol law and Alert Procedure to a very high degree along with general regulations."
 
 /datum/job/iaa
 	title = "Internal Affairs Agent"
@@ -326,7 +326,7 @@
 	software_on_spawn = list(/datum/computer_file/program/reports)
 
 /datum/job/iaa/get_description_blurb()
-	return "You are the Nanotrasen iaa. You are a civilian employee of Nanotrasen assigned to the vessel to promote, protect and ensure the interests of the corporation on board. You are not internal affairs. You assume command of the Research Department in the absence of the RD and the Senior Researcher. You advise the RD on NT matters and try to push NT interests on the CO. Maximise profit. Be the rich corporate lawyer you always wanted to be."
+	return "You are the Nanotrasen iaa. You are a civilian employee of Nanotrasen assigned to the vessel to promote, protect and ensure the interests of the corporation on board. You are not internal affairs. You assume command of the Research Department in the absence of the RD and the Senior Researcher. You advise the RD on NT matters and try to push NT interests on the Captain. Maximise profit. Be the rich corporate lawyer you always wanted to be."
 
 /datum/job/adjutant
 	title = "Adjutant"
@@ -418,6 +418,7 @@
 	supervisors = "the Captain and the Pathfinder"
 	selection_color = "#68099e"
 	ideal_character_age = 20
+	economic_power = 3
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/explorer
 	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
 	allowed_ranks = list(
@@ -449,6 +450,7 @@
 	supervisors = "the Captain and the Pathfinder"
 	selection_color = "#68099e"
 	ideal_character_age = 24
+	economic_power = 4
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/pilot
 	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
 	allowed_ranks = list(
@@ -492,6 +494,7 @@
 		)
 
 	skill_points = 26
+	economic_power = 4
 
 
 	min_skill = list(	SKILL_EVA	= SKILL_BASIC,
@@ -527,6 +530,7 @@
 	supervisors = "the Captain and the Pathfinder"
 	selection_color = "#68099e"
 	ideal_character_age = 28
+	economic_power = 4
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/engineer
 	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
 	allowed_ranks = list(
@@ -571,7 +575,7 @@
 	spawn_positions = 1
 	supervisors = "the Chief Engineer"
 	selection_color = "#5b4d20"
-	economic_power = 6
+	economic_power = 7
 	minimal_player_age = 14
 	ideal_character_age = 40
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/senior_engineer
@@ -628,6 +632,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	economic_power = 6
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
 	                    SKILL_EVA          = SKILL_ADEPT,
 	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
@@ -669,6 +674,7 @@
 	supervisors = "the Chief Engineer and Engineering Personnel"
 	selection_color = "#5b4d20"
 	ideal_character_age = 20
+	economic_power = 3
 
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/maints
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -705,40 +711,6 @@
 /datum/job/engineer_trainee/get_description_blurb()
 	return "You are an Engineer Trainee. You are learning how to operate the various onboard engineering systems from senior engineering staff. You are subordinate to all of the other engineers aboard."
 
-
-/datum/job/roboticist
-	title = "Roboticist"
-	department = "Engineering"
-	department_flag = SCI|MED
-
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "the Research Director and the Chief Medical Officer"
-	selection_color = "#5b4d20"
-	economic_power = 6
-	alt_titles = list(
-		"Biomechanical Engineer",
-		"Mechsuit Technician")
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/roboticist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(   SKILL_COMPUTER		= SKILL_ADEPT,
-	                    SKILL_MECH          = SKILL_ADEPT,
-	                    SKILL_DEVICES		= SKILL_ADEPT)
-
-	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
-						SKILL_COMPUTER	   = SKILL_MAX,
-						SKILL_MECH		   = SKILL_MAX,
-	                    SKILL_DEVICES      = SKILL_MAX,
-	                    SKILL_MEDICAL      = SKILL_MAX)
-
-	access = list(access_robotics, access_research, access_tech_storage, access_morgue, access_medical)
-
-	minimal_access = list()
-
-/datum/job/roboticist/get_description_blurb()
-	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics as well as the repair of all synthetic crew on board. You are also responsible for placing brains into MMI's and giving them bodies and the production of exosuits(mechs) for various departments. You answer to the Chief Engineer."
-
 /datum/job/warden
 	title = "Warden"
 	department = "Security"
@@ -746,7 +718,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Head of Security"
-	economic_power = 5
+	economic_power = 8
 	minimal_player_age = 14
 	ideal_character_age = 35
 	alt_titles = list(
@@ -822,7 +794,7 @@
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "the Head of Security"
-	economic_power = 4
+	economic_power = 6
 	minimal_player_age = 10
 	ideal_character_age = 25
 	alt_titles = list(
@@ -968,7 +940,7 @@
 	spawn_positions = 1
 	supervisors = "the Chief Medical Officer and Medical Personnel"
 	selection_color = "#013d3b"
-	economic_power = 4
+	economic_power = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/chemist
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -978,7 +950,7 @@
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
-	skill_points = 20
+	skill_points = 18
 
 	access = list(access_medical, access_maint_tunnels, access_emergency_storage, access_medical_equip, access_chemistry)
 
@@ -1020,7 +992,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Head of Personnel"
-	economic_power = 5
+	economic_power = 8
 	minimal_player_age = 7
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/quartermaster
@@ -1219,34 +1191,6 @@
 	                    SKILL_SCIENCE     = SKILL_MAX)
 	skill_points = 30
 
-/datum/job/nt_pilot
-	title = "NanoTrasen Pilot"
-	supervisors = "the Research Director"
-	department = "Science"
-	department_flag = SCI
-
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "the Research Director and NanoTrasen Personnel"
-	selection_color = "#633d63"
-	economic_power = 10
-	minimal_player_age = 5
-	ideal_character_age = 40
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/nt_pilot
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	access = list(access_research, access_mining_office,
-						access_mining_station, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy,
-						access_hangar, access_petrov, access_petrov_helm, access_guppy_helm, access_mining)
-
-	minimal_access = list()
-
-	min_skill = list(	SKILL_EVA   = SKILL_BASIC,
-						SKILL_PILOT = SKILL_ADEPT)
-
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
-
 /datum/job/scientist
 	title = "Scientist"
 	department = "Science"
@@ -1281,6 +1225,68 @@
 
 	minimal_access = list()
 	skill_points = 22
+
+
+/datum/job/roboticist
+	title = "Roboticist"
+	department = "Engineering"
+	department_flag = SCI|MED
+
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the Research Director and the Chief Medical Officer"
+	selection_color = "#633d63"
+	economic_power = 6
+	alt_titles = list(
+		"Biomechanical Engineer",
+		"Mechsuit Technician")
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/roboticist
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	min_skill = list(   SKILL_COMPUTER		= SKILL_ADEPT,
+	                    SKILL_MECH          = SKILL_ADEPT,
+	                    SKILL_DEVICES		= SKILL_ADEPT)
+
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
+						SKILL_COMPUTER	   = SKILL_MAX,
+						SKILL_MECH		   = SKILL_MAX,
+	                    SKILL_DEVICES      = SKILL_MAX,
+	                    SKILL_MEDICAL      = SKILL_MAX)
+
+	access = list(access_robotics, access_research, access_tech_storage, access_morgue, access_medical)
+
+	minimal_access = list()
+
+/datum/job/roboticist/get_description_blurb()
+	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics as well as the repair of all synthetic crew on board. You are also responsible for placing brains into MMI's and giving them bodies and the production of exosuits(mechs) for various departments. You answer to the Chief Engineer."
+
+/datum/job/nt_pilot
+	title = "NanoTrasen Pilot"
+	supervisors = "the Research Director"
+	department = "Science"
+	department_flag = SCI
+
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Research Director and NanoTrasen Personnel"
+	selection_color = "#633d63"
+	economic_power = 10
+	minimal_player_age = 5
+	ideal_character_age = 40
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/nt_pilot
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	access = list(access_research, access_mining_office,
+						access_mining_station, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy,
+						access_hangar, access_petrov, access_petrov_helm, access_guppy_helm, access_mining)
+
+	minimal_access = list()
+
+	min_skill = list(	SKILL_EVA   = SKILL_BASIC,
+						SKILL_PILOT = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
 
 /datum/job/scientist_assistant
 	title = "Research Assistant"
