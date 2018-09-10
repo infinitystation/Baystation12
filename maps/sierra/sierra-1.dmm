@@ -3004,10 +3004,6 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 24
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shield/thirddeck)
 "fI" = (
@@ -8743,6 +8739,7 @@
 /area/exploration_shuttle/atmos)
 "pE" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan,
+/obj/random_multi/single_item/space_rabbit,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/atmos)
 "pF" = (
@@ -12501,7 +12498,7 @@
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -23;
-	pixel_y = 4
+	pixel_y = 6
 	},
 /obj/machinery/camera/network/hangar{
 	icon_state = "camera";
@@ -13004,7 +13001,6 @@
 	name = "plastic table frame"
 	},
 /obj/item/weapon/clipboard,
-/obj/item/weapon/stamp/deckoff,
 /obj/machinery/button/remote/blast_door{
 	id = "do_office";
 	name = "DO Shutter Control";
@@ -13033,6 +13029,7 @@
 	icon_state = "bordercolorcorner2";
 	dir = 1
 	},
+/obj/item/weapon/stamp/qm,
 /turf/simulated/floor/tiled,
 /area/quartermaster/deckofficer)
 "vX" = (
@@ -13169,7 +13166,6 @@
 	name = "plastic table frame"
 	},
 /obj/item/weapon/folder/yellow,
-/obj/item/weapon/stamp/supply,
 /obj/item/weapon/stamp/denied{
 	pixel_x = 4;
 	pixel_y = -2
@@ -14147,9 +14143,6 @@
 	pixel_y = -6;
 	req_access = list(41)
 	},
-/obj/item/device/eftpos{
-	eftpos_name = "Quartermaster EFTPOS scanner"
-	},
 /obj/item/device/megaphone,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
@@ -15099,6 +15092,9 @@
 /obj/effect/floor_decal/corner/brown/bordercorner2{
 	icon_state = "bordercolorcorner2";
 	dir = 6
+	},
+/obj/item/weapon/stamp/cargo{
+	name = "supply rubber stamp"
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
@@ -21105,6 +21101,9 @@
 /obj/effect/floor_decal/corner/lightgrey/border{
 	icon_state = "bordercolor";
 	dir = 8
+	},
+/obj/item/device/eftpos{
+	eftpos_name = "Quartermaster EFTPOS scanner"
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/deckofficer)

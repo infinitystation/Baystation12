@@ -880,11 +880,6 @@
 	icon_state = "teleporter"
 	sound_env = SMALL_ENCLOSED
 
-/area/maintenance/auxsolarbridge
-	name = "Solar Maintenance - Bridge"
-	icon_state = "SolarcontrolS"
-	sound_env = SMALL_ENCLOSED
-
 /area/thruster
 	icon_state = "thruster"
 
@@ -963,13 +958,13 @@
 	name = "\improper Centcom Testing Facility"
 
 // Solars
-/area/maintenance/auxsolarport
-	name = "Solar Maintenance - Port"
+/area/maintenance/solar
+	name = "Solar Maintenance - Aft Port"
 	icon_state = "SolarcontrolP"
 	sound_env = SMALL_ENCLOSED
 
-/area/maintenance/auxsolarstarboard
-	name = "Solar Maintenance - Starboard"
+/area/maintenance/solar/starboard
+	name = "Solar Maintenance - Aft Starboard"
 	icon_state = "SolarcontrolS"
 	sound_env = SMALL_ENCLOSED
 
@@ -981,11 +976,11 @@
 	base_turf = /turf/space
 
 /area/solar/starboard
-	name = "\improper Starboard Solar Array"
-	icon_state = "panelsA"
+	name = "\improper Aft Starboard Solar Array"
+	icon_state = "panelsS"
 
 /area/solar/port
-	name = "\improper Port Solar Array"
+	name = "\improper Aft Port Solar Array"
 	icon_state = "panelsP"
 
 // Maintenance
