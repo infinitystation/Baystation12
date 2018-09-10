@@ -109,8 +109,8 @@
 #define ARMORED_ROLES list(\
 	/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo,\
 	/datum/job/chief_engineer, /datum/job/hos, /datum/job/qm,\
-	/datum/job/warden, /datum/job/officer, /datum/job/warden,\
-	/datum/job/detective, /datum/job/merchant)
+	/datum/job/warden, /datum/job/detective, /datum/job/officer, \
+	/datum/job/merchant)
 
 #define CIVILIAN_BRANCHES list(/datum/mil_branch/civilian)
 
