@@ -21,7 +21,8 @@
 /obj/item/clothing/head/kitty/fake
 	name = "fake kitty ears"
 	desc = "The fur feels.....a bit too realistic."
-	icon_state = "kitty_tailless"
+	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
+	item_state = "kitty_tailless"
 	body_parts_covered = 0
 
 	update_icon(var/mob/living/carbon/human/user)
