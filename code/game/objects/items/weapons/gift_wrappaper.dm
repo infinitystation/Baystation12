@@ -120,6 +120,7 @@
 		/obj/item/device/paicard,
 		/obj/item/device/violin,
 		/obj/item/device/guitar,
+		/obj/item/device/synthesized_instrument/violin,
 		/obj/item/weapon/storage/belt/utility/full,
 		/obj/item/clothing/accessory/horrible)
 

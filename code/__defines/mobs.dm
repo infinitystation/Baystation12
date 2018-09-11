@@ -103,8 +103,6 @@
 #define MIN_SUPPLIED_LAW_NUMBER 15
 #define MAX_SUPPLIED_LAW_NUMBER 50
 
-#define MAX_SUPPLIED_LAW_NUMBER 50
-
 // Character's economic class
 #define CLASS_UPPER 		"Wealthy"
 #define CLASS_UPMID			"Well-off"

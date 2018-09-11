@@ -232,8 +232,6 @@
 		S.add(transfer)
 		if (prob(transfer/orig_amount * 100))
 			transfer_fingerprints_to(S)
-			if(blood_DNA)
-				S.blood_DNA |= blood_DNA
 		return transfer
 	return 0
 
@@ -253,8 +251,6 @@
 		newstack.amount = tamount
 		if (prob(transfer/orig_amount * 100))
 			transfer_fingerprints_to(newstack)
-			if(blood_DNA)
-				newstack.blood_DNA |= blood_DNA
 		return newstack
 	return null
 

@@ -10,6 +10,7 @@
 	opacity = 1
 	density = 1
 	layer = CLOSED_DOOR_LAYER
+
 	var/open_layer = OPEN_DOOR_LAYER
 	var/closed_layer = CLOSED_DOOR_LAYER
 
@@ -530,3 +531,5 @@
 			dirs |= direction
 	connections = dirs
 
+/obj/machinery/door/CanFluidPass(var/coming_from)
+	return !density

@@ -49,6 +49,7 @@
 	origin_tech = list(TECH_COMBAT = 1)
 	attack_verb = list("struck", "hit", "bashed")
 	zoomdevicename = "scope"
+	waterproof = FALSE
 
 	//drawsound = 'sound/items/unholster.ogg' Maybe one day, cowboy
 
@@ -191,7 +192,7 @@
 
 	add_fingerprint(user)
 
-	if(!special_check(user))
+	if((!waterproof && submerged()) || !special_check(user))
 		return
 
 	if(safety())
