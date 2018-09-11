@@ -409,7 +409,7 @@
 	name = "lift (second deck)"
 	lift_floor_label = "Deck 2"
 	lift_floor_name = "Living Deck"
-	lift_announce_str = "Arriving at Operations Deck: Research Wing. Auxiliary Cryogenic Storage. Emergency Armory. Diplomatic Quarters. Captain's Mess. Pathfinder's Office."
+	lift_announce_str = "Arriving at Operations Deck: Research Wing. Auxiliary Cryogenic Storage. Emergency Armory. Diplomatic Quarters. Captain's Mess. Exploration Leader's Office."
 
 /area/turbolift/sierra_ground
 	name = "lift (third deck)"
@@ -424,13 +424,8 @@
 	icon_state = "head_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/command/captainmess
-	name = "Captain's Mess"
-	icon_state = "bar"
-	sound_env = MEDIUM_SOFTFLOOR
-
-/area/command/pathfinder
-	name = "\improper Pathfinder's Office"
+/area/command/exploration_leader
+	name = "\improper Exploration Leader's Office"
 	icon_state = "head_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
@@ -455,16 +450,13 @@
 	name = "\improper Command - CMO's Office"
 
 /area/crew_quarters/heads/office/ce
-	name = "\improper Engineering - CE's Office"
+	name = "\improper Command - CE's Office"
 
 /area/crew_quarters/heads/office/hos
 	name = "\improper Command - HoS' Office"
 
 /area/crew_quarters/heads/office/iaa
 	name = "\improper Command - IAA's Office"
-
-/area/crew_quarters/heads/office/sgr
-	name = "\improper Command - SCGR's Office"
 
 // Engineering
 
