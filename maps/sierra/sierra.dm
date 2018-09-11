@@ -15,7 +15,6 @@
 	#include "sierra_unit_testing.dm"
 
 	#include "datums/uniforms.dm"
-	#include "datums/uniforms_expedition.dm"
 	#include "datums/reports.dm"
 	#include "datums/shackle_law_sets.dm"
 	#include "datums/supplypacks/security.dm"
@@ -31,6 +30,7 @@
 	#include "items/rigs.dm"
 
 	#include "items/clothing/clothing.dm"
+	#include "items/clothing/exploration.dm"
 	#include "items/clothing/solgov-infinity.dm"
 	#include "items/clothing/solgov-accessory.dm"
 	#include "items/clothing/solgov-armor.dm"

@@ -169,24 +169,24 @@
 		/obj/item/rig_module/vision/sechud,
 		/obj/item/rig_module/cooling_unit)
 
-//PATHFINDER
-/obj/item/weapon/rig/command/pf
-	name = "pathfinder's HCM"
+//Exploration Leader
+/obj/item/weapon/rig/command/el
+	name = "exploration leader's HCM"
 	suit_type = "exploration command hardsuit"
-	desc = "A specialized hardsuit rig control module issued to Pathfinders of the Expeditionary Corps."
+	desc = "A specialized hardsuit rig control module issued to Exploration Leaders of the NanoTrasen."
 	icon_state = "command_exp_rig"
 	armor = list(melee = 35, bullet = 25, laser = 25, energy = 35, bomb = 15, bio = 100, rad = 100)
 
-	chest_type = /obj/item/clothing/suit/space/rig/command/pf
-	helm_type = /obj/item/clothing/head/helmet/space/rig/command/pf
+	chest_type = /obj/item/clothing/suit/space/rig/command/el
+	helm_type = /obj/item/clothing/head/helmet/space/rig/command/el
 
 	allowed = list(/obj/item/weapon/gun, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit)
 
-	req_access = list(access_pathfinder)
+	req_access = list(access_el)
 
-/obj/item/clothing/head/helmet/space/rig/command/pf
+/obj/item/clothing/head/helmet/space/rig/command/el
 	icon_state = "command_exp_rig"
-/obj/item/clothing/suit/space/rig/command/pf
+/obj/item/clothing/suit/space/rig/command/el
 	icon_state = "command_exp_rig"
 
 /obj/item/weapon/rig/command/pf/equipped

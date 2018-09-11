@@ -86,10 +86,10 @@
 	desc = "Explorer"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_pathfinder = 94
-/datum/access/pathfinder
-	id = access_pathfinder
-	desc = "Pathfinder"
+/var/const/access_el = 94
+/datum/access/el
+	id = access_el
+	desc = "Exploration Leader"
 	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_pilot = 95

@@ -67,15 +67,15 @@
 	icon_state = "exp_headset_alt"
 	item_state = "exp_headset_alt"
 
-/obj/item/device/radio/headset/pathfinder
-	name = "pathfinder's headset"
+/obj/item/device/radio/headset/exploration_leader
+	name = "exploration_leader's headset"
 	desc = "A headset with access to the command and exploration channels. It has an inbuilt subspace antenna for better reception."
 	icon_state = "exp_headset"
 	item_state = "exp_headset"
-	ks1type = /obj/item/device/encryptionkey/sierra_pathfinder
+	ks1type = /obj/item/device/encryptionkey/sierra_el
 
-/obj/item/device/radio/headset/pathfinder/alt
-	name = "pathfinder's bowman headset"
+/obj/item/device/radio/headset/exploration_leader/alt
+	name = "exploration_leader's bowman headset"
 	icon_state = "exp_headset_alt"
 	item_state = "exp_headset_alt"
 

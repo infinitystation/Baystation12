@@ -45,7 +45,7 @@
 /datum/gear/uniform/turtleneck
 
 /datum/gear/uniform/corporate
-	allowed_branches = CIVILIAN_BRANCHES
+	allowed_branches = /datum/job/assistant
 
 /datum/gear/uniform/sterile
 	allowed_roles = STERILE_ROLES
@@ -54,4 +54,3 @@
 	allowed_roles = TECHNICAL_ROLES
 
 /datum/gear/uniform/frontier
-	allowed_branches = CIVILIAN_BRANCHES

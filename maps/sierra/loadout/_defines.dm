@@ -1,8 +1,8 @@
 //The following is a list of defs to be used for the Sierra loadout.
 
-//For all SolGov personnel
-#define SOLGOV_ROLES list(\
-	/datum/job/pathfinder, /datum/job/explorer, /datum/job/explorer_pilot,\
+//For all exploration crew
+#define EXPLORATION_ROLES list(\
+	/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot,\
 	/datum/job/explorer_medic, /datum/job/explorer_engineer)
 
 //For jobs that allow for decorative or ceremonial clothing
@@ -40,10 +40,6 @@
 	/datum/job/janitor, /datum/job/chef, /datum/job/bartender,\
 	/datum/job/senior_scientist, /datum/job/nt_pilot, /datum/job/scientist, /datum/job/mining,\
 	/datum/job/scientist_assistant)
-
-
-//For corporate or government representatives
-#define REPRESENTATIVE_ROLES list(/datum/job/iaa)
 
 //For roles with no uniform or formal clothing requirements
 #define RESTRICTED_ROLES list(\
@@ -111,7 +107,3 @@
 	/datum/job/chief_engineer, /datum/job/hos, /datum/job/qm,\
 	/datum/job/warden, /datum/job/detective, /datum/job/officer, \
 	/datum/job/merchant)
-
-#define CIVILIAN_BRANCHES list(/datum/mil_branch/civilian)
-
-#define SOLGOV_BRANCHES list(/datum/mil_branch/expeditionary_corps)

@@ -46,7 +46,7 @@
 /datum/gear/suit/wintercoat/engineering
 	display_name = "expeditionary winter coat"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat/solgov
-	allowed_roles = SOLGOV_ROLES
+	allowed_roles = EXPLORATION_ROLES
 
 /datum/gear/suit/wintercoat/engineering
 	display_name = "engineering winter coat"

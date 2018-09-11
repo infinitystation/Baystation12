@@ -391,32 +391,32 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/weapon/storage/backpack/satchel_explorer
 	backpack_overrides[/decl/backpack_outfit/messenger_bag] = /obj/item/weapon/storage/backpack/messenger/explorer
 
-/decl/hierarchy/outfit/job/sierra/crew/exploration/pathfinder
-	name = OUTFIT_JOB_NAME("Pathfinder")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/officer/exploration
-	id_type = /obj/item/weapon/card/id/sierra/solgov/pathfinder
-	l_ear = /obj/item/device/radio/headset/pathfinder
+/decl/hierarchy/outfit/job/sierra/crew/exploration/el
+	name = OUTFIT_JOB_NAME("Exploration Leader")
+	uniform = /obj/item/clothing/under/rank/field
+	id_type = /obj/item/weapon/card/id/sierra/crew/exploration_leader
+	l_ear = /obj/item/device/radio/headset/exploration_leader
 
 /decl/hierarchy/outfit/job/sierra/crew/exploration/explorer
 	name = OUTFIT_JOB_NAME("Explorer")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/exploration
-	id_type = /obj/item/weapon/card/id/sierra/solgov/explorer
+	uniform = /obj/item/clothing/under/rank/field
+	id_type = /obj/item/weapon/card/id/sierra/crew/explorer
 
 /decl/hierarchy/outfit/job/sierra/crew/exploration/pilot
 	name = OUTFIT_JOB_NAME("Expeditionary Pilot")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/exploration/pilot
-	id_type = /obj/item/weapon/card/id/sierra/solgov/pilot
+	uniform = /obj/item/clothing/under/rank/field
+	id_type = /obj/item/weapon/card/id/sierra/crew/pilot
 
 /decl/hierarchy/outfit/job/sierra/crew/exploration/medic
 	name = OUTFIT_JOB_NAME("Field Medic")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/exploration/field_medic
-	id_type = /obj/item/weapon/card/id/sierra/solgov/field_medic
+	uniform = /obj/item/clothing/under/rank/field
+	id_type = /obj/item/weapon/card/id/sierra/crew/field_medic
 	l_ear = /obj/item/device/radio/headset/exploration/medic
 
 /decl/hierarchy/outfit/job/sierra/crew/exploration/engineer
 	name = OUTFIT_JOB_NAME("Field Engineer")
-	uniform = /obj/item/clothing/under/solgov/utility/expeditionary/exploration/field_engineer
-	id_type = /obj/item/weapon/card/id/sierra/solgov/field_engineer
+	uniform = /obj/item/clothing/under/rank/field
+	id_type = /obj/item/weapon/card/id/sierra/crew/field_engineer
 	l_ear = /obj/item/device/radio/headset/exploration/engineer
 
 	////////////
