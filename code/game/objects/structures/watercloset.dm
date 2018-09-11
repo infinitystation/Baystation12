@@ -191,7 +191,7 @@
 		to_chat(user, "<span class='notice'>You carefully place \the [I] into the cistern.</span>")
 		return
 
-/obj/structure/toilet/proc/can_place(var/mob/target, var/mob/user)
+/obj/structure/hygiene/toilet/proc/can_place(var/mob/target, var/mob/user)
 	for(var/obj/item/grab/G in target.grabbed_by)
 		if (G.force_danger())
 			return 1
@@ -242,11 +242,11 @@
 	. = ..()
 	sound_id = "[type]_[sequential_id(type)]"
 
-/obj/machinery/shower/Destroy()
+/obj/structure/hygiene/shower/Destroy()
 	QDEL_NULL(sound_token)
 	return ..()
 
-/obj/machinery/shower/New()
+/obj/structure/hygiene/shower/New()
 	..()
 	create_reagents(50)
 	START_PROCESSING(SSprocessing, src)

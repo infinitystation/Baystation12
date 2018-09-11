@@ -30,8 +30,8 @@
 "aE" = (/obj/structure/disposalpipe/segment{dir = 4},/turf/simulated/wall/wood,/area/yacht/living)
 "aF" = (/obj/structure/disposalpipe/segment{dir = 4},/turf/simulated/wall/titanium,/area/yacht/living)
 "aG" = (/obj/structure/disposalpipe/segment{dir = 8; icon_state = "pipe-c"},/turf/simulated/wall/titanium,/area/yacht/living)
-"aH" = (/obj/machinery/light/small{dir = 8},/obj/item/weapon/storage/mirror{pixel_y = 28},/obj/structure/sink{pixel_y = 20},/obj/item/weapon/bikehorn/rubberducky,/obj/effect/decal/cleanable/dirt,/obj/random/soap,/turf/simulated/floor/tiled/freezer,/area/yacht/living)
-"aI" = (/obj/machinery/shower{pixel_y = 20},/obj/effect/decal/cleanable/dirt,/obj/structure/curtain/open/shower,/turf/simulated/floor/tiled/freezer,/area/yacht/living)
+"aH" = (/obj/machinery/light/small{dir = 8},/obj/item/weapon/storage/mirror{pixel_y = 28},/obj/structure/hygiene/sink{pixel_y = 20},/obj/item/weapon/bikehorn/rubberducky,/obj/effect/decal/cleanable/dirt,/obj/random/soap,/turf/simulated/floor/tiled/freezer,/area/yacht/living)
+"aI" = (/obj/structure/hygiene/shower{pixel_y = 20},/obj/effect/decal/cleanable/dirt,/obj/structure/curtain/open/shower,/turf/simulated/floor/tiled/freezer,/area/yacht/living)
 "aJ" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/decal/cleanable/dirt,/obj/machinery/vending/wallmed1{pixel_x = -24},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/wood,/area/yacht/living)
 "aK" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light{dir = 1},/turf/simulated/floor/wood,/area/yacht/living)
 "aL" = (/obj/structure/table/marble,/obj/machinery/media/jukebox{pixel_y = 15},/turf/simulated/floor/wood,/area/yacht/living)
@@ -40,7 +40,7 @@
 "aO" = (/obj/structure/girder,/obj/random/trash/space,/turf/simulated/floor/airless,/area/yacht/living)
 "aP" = (/obj/structure/table/standard,/obj/item/weapon/towel/random,/turf/simulated/floor/tiled/freezer,/area/yacht/living)
 "aQ" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/freezer,/area/yacht/living)
-"aR" = (/obj/structure/toilet{dir = 8},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/cobweb2{tag = "icon-cobweb2 (WEST)"; icon_state = "cobweb2"; dir = 8},/turf/simulated/floor/tiled/freezer,/area/yacht/living)
+"aR" = (/obj/structure/hygiene/toilet{dir = 8},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/cobweb2{tag = "icon-cobweb2 (WEST)"; icon_state = "cobweb2"; dir = 8},/turf/simulated/floor/tiled/freezer,/area/yacht/living)
 "aS" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/wood,/area/yacht/living)
 "aT" = (/obj/effect/decal/cleanable/dirt,/obj/structure/bed/chair/wood/wings{dir = 4},/turf/simulated/floor/wood,/area/yacht/living)
 "aU" = (/obj/structure/table/marble,/obj/item/pizzabox/vegetable,/obj/item/weapon/reagent_containers/glass/rag,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/wood,/area/yacht/living)
@@ -152,7 +152,6 @@
 "cY" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 5; icon_state = "intact"},/obj/machinery/access_button/airlock_interior{frequency = 1699; master_tag = "yacht_airlock"; pixel_x = 23; pixel_y = 25},/turf/simulated/floor/plating,/area/yacht/engine)
 "cZ" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/door/airlock/external/glass/bolted{frequency = 1699; id_tag = "yacht_inner"},/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4; icon_state = "intact"},/turf/simulated/floor/plating,/area/yacht/engine)
 "da" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 8; frequency = 1699; id_tag = "yacht_pump"},/turf/simulated/floor/plating,/area/yacht/engine)
-"db" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/yacht/engine)
 "dc" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/airlock_sensor{frequency = 1699; id_tag = "yacht_sensor"; pixel_y = -25},/obj/machinery/embedded_controller/radio/airlock/docking_port_multi{frequency = 1699; id_tag = "yacht_airlock"; pixel_y = 28; tag_airpump = "yacht_pump"; tag_chamber_sensor = "yacht_sensor"; tag_exterior_door = "yacht_outer"; tag_interior_door = "yacht_inner"},/turf/simulated/floor/plating,/area/yacht/engine)
 "dd" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/door/airlock/external/glass/bolted{frequency = 1699; id_tag = "yacht_outer"},/obj/machinery/access_button/airlock_exterior{frequency = 1699; master_tag = "yacht_airlock"; pixel_x = 9; pixel_y = 23},/turf/simulated/floor/plating,/area/yacht/engine)
 "de" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/random/trash/space,/turf/simulated/floor/airless,/area/yacht/engine)
@@ -188,7 +187,7 @@
 "dJ" = (/obj/machinery/vending/tool,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/cobweb,/turf/simulated/floor/plating,/area/yacht/engine)
 "dK" = (/obj/structure/table/steel,/obj/effect/decal/cleanable/dirt,/obj/random/bomb_supply,/obj/random/bomb_supply,/obj/item/stack/cable_coil/random,/turf/simulated/floor/plating,/area/yacht/engine)
 "dL" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/item/weapon/caution/cone,/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/plating,/area/yacht/engine)
-"dM" = (/obj/effect/decal/cleanable/dirt,/obj/random/torchcloset,/turf/simulated/floor/plating,/area/yacht/engine)
+"dM" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating,/area/yacht/engine)
 "dN" = (/obj/machinery/portable_atmospherics/hydroponics,/obj/effect/decal/cleanable/dirt,/obj/effect/spider/stickyweb,/turf/simulated/floor/wood,/area/yacht/living)
 "dO" = (/obj/machinery/light,/obj/structure/reagent_dispensers/beerkeg,/obj/effect/decal/cleanable/dirt,/obj/effect/spider/stickyweb,/turf/simulated/floor/wood,/area/yacht/living)
 "dP" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/turf/simulated/floor/plating,/area/yacht/engine)
@@ -206,7 +205,7 @@
 "eb" = (/obj/effect/decal/cleanable/dirt,/obj/structure/window/reinforced{dir = 8; health = 1e+006},/obj/machinery/atmospherics/portables_connector,/obj/machinery/portable_atmospherics/canister/empty,/turf/simulated/floor/plating,/area/yacht/engine)
 "ec" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/tank/air{dir = 4; start_pressure = 740.5},/turf/simulated/floor/plating,/area/yacht/engine)
 "ed" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/binary/pump{dir = 4},/obj/machinery/space_heater,/turf/simulated/floor/plating,/area/yacht/engine)
-"ee" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{dir = 1; icon_state = "map"},/obj/random/torchcloset,/turf/simulated/floor/plating,/area/yacht/engine)
+"ee" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{dir = 1; icon_state = "map"},/turf/simulated/floor/plating,/area/yacht/engine)
 "ef" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/alarm{pixel_w = 0; pixel_x = 0; pixel_y = 25},/obj/machinery/atmospherics/binary/pump{dir = 8},/obj/structure/closet/wardrobe/suit,/turf/simulated/floor/plating,/area/yacht/engine)
 "eg" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/portables_connector{dir = 8},/obj/structure/window/reinforced{dir = 4},/obj/structure/closet/wardrobe/pjs,/turf/simulated/floor/plating,/area/yacht/engine)
 "eh" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/plating,/area/yacht/engine)
@@ -312,15 +311,15 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacccdbwbwbwbwbwbwcebwbwbwcfbwbwcdcgaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaachaaaaaaaaaaaaaaaaaacgcdcicjckclbwcmaSbpcnbwcocpcqcdcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacrcsctcuctctcvctctctcwcdcdcdcxcyczcAcBcCcDcEcFbwcGcdcHcdcdcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacIcJdHdHdHcLdHdHdHcMdHcNcOcPcQcRcScTcUbwcVcWbpcXbwcYcZdadbdcddaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacIcJdHdHdHcLdHdHdHcMdHcNcOcPcQcRcScTcUbwcVcWbpcXbwcYcZdadMdcddaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadedfdgdgdgdgdgdhdgdgdgdidjcdcddkdldmdnbwdodpdqdrbwdscdcHcdcddjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadtctctctctctctctctctctdicwcdcdcdcdducdbwdvdwdqdxbwdydzdAcdcdaaaaaaaaaaaaaaaadBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadCdDdEdFdHdHcMdHdHcJdHdHdIcwcdcddJdKdLdMbwdNdqdqdObwdPdQdRcdcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadtdSdSdSdSdSdSdSdSdSdSdTcwcdcddUdbdmdMbwbwbwbwbwbwdVdWdXcdcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadtdSdSdSdSdSdSdSdSdSdSdTcwcdcddUdMdmdMbwbwbwbwbwbwdVdWdXcdcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadtctctctctctctctctctctdicwcdcddYdZeadQebecedeeefegeheiejcdcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaekdHdHdHdHdHcMdHdHdHdHelemcdcdcdeneodbepeqereseteuevewcdcdcgaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaekdHdHdHdHdHcMdHdHdHdHelemcdcdcdeneodMepeqereseteuevewcdcdcgaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadSexdSdSdSdSdSexdSdScwcweyezezeAeBeCeDeEeFeGeHeIeJeKcdcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeLcdcdcddbeMcdeNeOePcdeQeRcdcdcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeLcdcdcddMeMcdeNeOePcdeQeRcdcdcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacdcdeSeTeUeVeWeXeUeYeZcdcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacdcdfafbcdfdfdfdcdfeffcdcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacdcdfgfhcdfifificdfjfkcdcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

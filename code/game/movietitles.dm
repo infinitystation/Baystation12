@@ -26,7 +26,7 @@ client
 		if(mob.get_preference_value(/datum/client_preference/play_lobby_music) == GLOB.PREF_YES)
 			sound_to(mob, sound(null, channel = GLOB.lobby_sound_channel))
 			if(GLOB.end_credits_song == null)
-				sound_to(mob, sound('sound/music/THUNDERDOME.ogg', wait = 0, volume = 40, channel = GLOB.lobby_sound_channel))
+				sound_to(mob, sound('sound/music/infinity/roundEnd.ogg', wait = 0, volume = 40, channel = GLOB.lobby_sound_channel))
 			else if(get_preference_value(/datum/client_preference/play_admin_midis) == GLOB.PREF_YES)
 				sound_to(mob, sound(GLOB.end_credits_song, wait = 0, volume = 40, channel = GLOB.lobby_sound_channel))
 	sleep(50)

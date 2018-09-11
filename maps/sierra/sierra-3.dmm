@@ -764,7 +764,7 @@
 /turf/simulated/floor/plating,
 /area/medical/virology)
 "abl" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11
@@ -1121,7 +1121,7 @@
 /turf/simulated/wall/r_wall/hull,
 /area/medical/virologyaccess)
 "abN" = (
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	icon_state = "shower";
 	dir = 4
 	},
@@ -1234,7 +1234,7 @@
 /turf/simulated/wall/r_wall/hull,
 /area/maintenance/firstdeck/centralstarboard)
 "acb" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	icon_state = "sink";
 	dir = 8;
 	pixel_x = -12;
@@ -3211,7 +3211,7 @@
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 10
 	},
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	icon_state = "shower";
 	dir = 4
 	},
@@ -4767,7 +4767,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery)
 "ahW" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11
@@ -13557,7 +13557,7 @@
 	icon_state = "bordercolorcorner2";
 	dir = 10
 	},
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	icon_state = "sink";
 	dir = 8;
 	pixel_x = -12;
@@ -26587,7 +26587,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11
@@ -26808,7 +26808,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/cells)
 "aMI" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -27054,7 +27054,7 @@
 /area/rnd/xenobiology/xenoflora)
 "aNf" = (
 /obj/effect/floor_decal/industrial/warning,
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
@@ -27165,7 +27165,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/permabrig)
 "aNu" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	icon_state = "sink";
 	dir = 8;
 	pixel_x = -12;
@@ -27185,7 +27185,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/security/sierra/permabrig)
 "aNw" = (
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	dir = 8;
 	icon_state = "shower";
 	pixel_x = -6
@@ -27292,7 +27292,7 @@
 /turf/simulated/floor/tiled,
 /area/security/sierra/permabrig)
 "aNG" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	icon_state = "sink";
 	dir = 8;
 	pixel_x = -12;
@@ -27309,7 +27309,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/security/sierra/permabrig)
 "aNI" = (
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	dir = 8;
 	icon_state = "shower";
 	pixel_x = -6
@@ -27473,7 +27473,7 @@
 /turf/simulated/floor/tiled,
 /area/security/sierra/permabrig)
 "aOb" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/freezer,
@@ -27495,7 +27495,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11
@@ -29857,7 +29857,7 @@
 	icon_state = "bordercolorcorner2";
 	dir = 8
 	},
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	icon_state = "sink";
 	dir = 8;
 	pixel_x = -12;
@@ -30056,7 +30056,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 1;
 	pixel_y = 16
 	},
@@ -31885,7 +31885,7 @@
 /turf/simulated/wall/r_wall/hull,
 /area/rnd/xenobiology/entry)
 "aWf" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	icon_state = "sink";
 	dir = 8;
 	pixel_x = -12;
@@ -32032,7 +32032,7 @@
 	tag_exterior_door = "xeno_airlock_exterior";
 	tag_interior_door = "xeno_airlock_interior"
 	},
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	icon_state = "shower";
 	dir = 4
 	},
@@ -35157,13 +35157,13 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
 "kyL" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	dir = 4
 	},
 /obj/item/weapon/storage/mirror{
 	pixel_y = 32
 	},
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	pixel_y = 24
 	},
 /obj/machinery/light/small{
@@ -35179,7 +35179,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard)
 "kEF" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	icon_state = "sink";
 	dir = 8;
 	pixel_x = -12;
@@ -36455,7 +36455,7 @@
 /obj/structure/curtain/open/shower,
 /obj/item/weapon/soap/deluxe,
 /obj/item/weapon/bikehorn/rubberducky,
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	dir = 4;
 	icon_state = "shower";
 	pixel_x = 6
