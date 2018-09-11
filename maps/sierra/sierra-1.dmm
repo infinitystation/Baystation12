@@ -773,7 +773,7 @@
 /obj/item/weapon/cell/high,
 /obj/random/powercell,
 /obj/machinery/alarm{
-	alarm_id = "xenobio4_alarm";
+	alarm_id = null;
 	pixel_y = 30
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -25476,7 +25476,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -26883,7 +26883,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -27718,7 +27718,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -29558,7 +29558,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -30324,33 +30324,33 @@ Is
 Is
 Is
 Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
+Is
 ab
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
-Is
 Is
 Is
 Is
@@ -30567,7 +30567,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -30737,7 +30737,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -31341,7 +31341,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -32586,7 +32586,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -33138,7 +33138,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -33955,7 +33955,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -35758,7 +35758,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -36430,7 +36430,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -36781,7 +36781,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -37381,7 +37381,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -37441,7 +37441,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -40406,7 +40406,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -40475,7 +40475,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -41077,7 +41077,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -41218,7 +41218,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -43042,7 +43042,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -43437,7 +43437,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -43909,7 +43909,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -44515,7 +44515,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -45862,7 +45862,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -46663,7 +46663,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -46739,7 +46739,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -47082,7 +47082,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -48347,7 +48347,7 @@ ah
 ah
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -48757,7 +48757,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -48898,7 +48898,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -49699,7 +49699,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -50372,7 +50372,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
@@ -53397,7 +53397,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -54754,7 +54754,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -55609,7 +55609,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -55976,7 +55976,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -57200,7 +57200,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -57616,7 +57616,7 @@ Is
 Is
 Is
 Is
-Is
+ab
 Is
 Is
 Is
@@ -57991,7 +57991,7 @@ Is
 Is
 Is
 Is
-ab
+Is
 Is
 Is
 Is
