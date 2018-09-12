@@ -155,3 +155,6 @@
 
 /datum/gear/uniform/vox_robe
 	allowed_roles = list(/datum/job/merchant, /datum/job/stowaway)
+
+/datum/gear/suit/unathi/savage_hunter
+	allowed_branches = CIVILIAN_BRANCHES

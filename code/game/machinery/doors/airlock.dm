@@ -120,9 +120,15 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock/security
 	door_color = COLOR_NT_RED
 
+/obj/machinery/door/airlock/security/striped
+	stripe_color = COLOR_ORANGE
+
 /obj/machinery/door/airlock/engineering
 	name = "Maintenance Hatch"
 	door_color = COLOR_AMBER
+
+/obj/machinery/door/airlock/engineering/striped
+	stripe_color = COLOR_RED
 
 /obj/machinery/door/airlock/medical
 	door_color = COLOR_WHITE
@@ -176,23 +182,34 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock/centcom
 	name = "Airlock"
 	icon = 'icons/obj/doors/Doorele.dmi'
-	opacity = 1 // Was 0, are you sry?
 
 /obj/machinery/door/airlock/glass/command
 	door_color = COLOR_COMMAND_BLUE
 	stripe_color = COLOR_SKY_BLUE
 
+/obj/machinery/door/airlock/glass/command/no_stripe
+	stripe_color = null
+
 /obj/machinery/door/airlock/glass/security
 	door_color = COLOR_NT_RED
 	stripe_color = COLOR_ORANGE
+
+/obj/machinery/door/airlock/glass/security/no_stripe
+	stripe_color = null
 
 /obj/machinery/door/airlock/glass/engineering
 	door_color = COLOR_AMBER
 	stripe_color = COLOR_RED
 
+/obj/machinery/door/airlock/glass/engineering/no_stripe
+	stripe_color = null
+
 /obj/machinery/door/airlock/glass/medical
 	door_color = COLOR_WHITE
 	stripe_color = COLOR_DEEP_SKY_BLUE
+
+/obj/machinery/door/airlock/glass/medical/no_stripe
+	stripe_color = null
 
 /obj/machinery/door/airlock/glass/virology
 	door_color = COLOR_WHITE

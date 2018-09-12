@@ -6,7 +6,6 @@
 
 /obj/structure/closet/wardrobe/red
 	name = "security wardrobe"
-	icon = 'icons/blue_brig/obj/closetsec.dmi'
 	icon_state = "red"
 	icon_closed = "red"
 
@@ -147,8 +146,8 @@
 
 /obj/structure/closet/wardrobe/yellow
 	name = "yellow wardrobe"
-	icon_state = "wardrobe-y"
-	icon_closed = "wardrobe-y"
+	icon_state = "yellow"
+	icon_closed = "yellow"
 
 /obj/structure/closet/wardrobe/yellow/New()
 	..()

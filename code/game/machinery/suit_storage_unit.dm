@@ -125,16 +125,18 @@
 	name = "Security Voidsuit Storage Unit"
 	suit_type = /obj/item/clothing/suit/space/void/security/prepared
 	tank_type = /obj/item/weapon/tank/oxygen
-	mask_type = /obj/item/clothing/mask/breath
+	mask_type = /obj/item/clothing/mask/gas/half
 	req_access = list(access_security)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/security/alt
 	suit_type = /obj/item/clothing/suit/space/void/security/alt
 	helmet_type = /obj/item/clothing/head/helmet/space/void/security/alt
-	tank_type = /obj/item/weapon/tank/oxygen
 	boots_type = /obj/item/clothing/shoes/magboots
-	mask_type = /obj/item/clothing/mask/breath
+
+/obj/machinery/suit_storage_unit/security/sapper
+	name = "Sapper Voidsuit Storage Unit"
+	suit_type = /obj/item/clothing/suit/space/void/sapper/prepared
 
 /obj/machinery/suit_storage_unit/merc
 	name = "Nonstandard Voidsuit Storage Unit"

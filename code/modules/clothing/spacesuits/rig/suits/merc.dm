@@ -13,6 +13,7 @@
 	offline_vision_restriction = TINT_HEAVY
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/merc
+	glove_type = /obj/item/clothing/gloves/rig/merc
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/melee/energy/sword,/obj/item/weapon/handcuffs)
 
 	initial_modules = list(
@@ -29,6 +30,9 @@
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
 		)
+
+/obj/item/clothing/gloves/rig/merc
+	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_NOCUFFS
 
 //Has most of the modules removed
 /obj/item/weapon/rig/merc/empty

@@ -9,7 +9,7 @@ var/global/datum/controller/gameticker/ticker
 	var/post_game = 0
 	var/event_time = null
 	var/event = 0
-	var/admin_ending = 0 //Are you bad man or developer?
+	var/admin_ending = 0 //Are you badmin or developer?
 
 	var/list/datum/mind/minds = list()//The people in the game. Used for objective tracking.
 
@@ -70,8 +70,14 @@ var/global/datum/controller/gameticker/ticker
 							sleep(1)
 							vote.process()
 			if(pregame_timeleft <= 0 || ((initialization_stage & INITIALIZATION_NOW_AND_COMPLETE) == INITIALIZATION_NOW_AND_COMPLETE))
-				current_state = GAME_STATE_SETTING_UP
-				Master.SetRunLevel(RUNLEVEL_SETUP)
+				if (Master.current_runlevel >= RUNLEVEL_LOBBY)
+					current_state = GAME_STATE_SETTING_UP
+					Master.SetRunLevel(RUNLEVEL_SETUP)
+				else
+					var/additional_time = 20
+					to_world("<B><FONT color='blue'>Waiting an additional [additional_time] seconds for initializations to complete...</FONT></B>")
+					log_world("Master initializations were not complete by the time the round was due to start! Waiting an additional [additional_time] seconds...")
+					pregame_timeleft += additional_time // yeah, this will repeat, but it's not good to go into a round with stuff not initialized!
 
 	while (!setup())
 
@@ -144,10 +150,6 @@ var/global/datum/controller/gameticker/ticker
 	create_characters() //Create player characters and transfer them
 	collect_minds()
 	equip_characters()
-	for(var/mob/living/carbon/human/H in GLOB.player_list)
-		if(!H.mind || player_is_antag(H.mind, only_offstation_roles = 1) || !job_master.ShouldCreateRecords(H.mind.assigned_role))
-			continue
-		CreateModularRecord(H)
 
 	callHook("roundstart")
 
@@ -155,6 +157,12 @@ var/global/datum/controller/gameticker/ticker
 		mode.post_setup()
 		to_world("<FONT color='blue'><B>Enjoy the game!</B></FONT>")
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
+
+		for(var/mob/living/carbon/human/H in GLOB.player_list)
+			if(!H.mind || player_is_antag(H.mind, only_offstation_roles = 1) || !job_master.ShouldCreateRecords(H.mind.assigned_role))
+				continue
+			CreateModularRecord(H)
+
 
 		//Holiday Round-start stuff	~Carn
 		Holiday_Game_Start()
@@ -336,7 +344,8 @@ var/global/datum/controller/gameticker/ticker
 			current_state = GAME_STATE_FINISHED
 			if(!config.ooc_allowed)
 				config.ooc_allowed = 1
-				to_world("<B>The OOC channel has been globally disabled!</B>")
+				to_world("<B>The OOC channel has been globally enabled!</B>")
+
 			declare_completion()
 			Master.SetRunLevel(RUNLEVEL_POSTGAME)
 

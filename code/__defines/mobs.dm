@@ -103,8 +103,6 @@
 #define MIN_SUPPLIED_LAW_NUMBER 15
 #define MAX_SUPPLIED_LAW_NUMBER 50
 
-#define MAX_SUPPLIED_LAW_NUMBER 50
-
 // Character's economic class
 #define CLASS_UPPER 		"Wealthy"
 #define CLASS_UPMID			"Well-off"
@@ -295,3 +293,10 @@
 #define AURA_TYPE_LIFE   "Life"
 
 #define SPECIES_BLOOD_DEFAULT 560
+
+#define SLIME_EVOLUTION_THRESHOLD 10
+
+//Used in mob/proc/get_input
+#define MOB_INPUT_TEXT "text"
+#define MOB_INPUT_MESSAGE "message"
+#define MOB_INPUT_NUM "num"

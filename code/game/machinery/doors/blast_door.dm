@@ -216,6 +216,7 @@
 	explosion_resistance = 10
 
 /obj/machinery/door/blast/shutters/open
+	icon_state = "shutter0"
 	begins_closed = FALSE
 
 //It's doesn't using right now, but i think we should store it for better days
@@ -247,7 +248,7 @@
 
 /obj/machinery/door/blast/regular/evacshield
 
-/obj/machinery/door/blast/regular/evacshield/proc/force_open()
+/obj/machinery/door/blast/regular/evacshield/proc/evacuation() //Literally shitcode of force_open but without sleep(8)
 	src.operating = 1
 	playsound(src.loc, open_sound, 100, 1)
 	flick(icon_state_opening, src)

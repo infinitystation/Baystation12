@@ -138,6 +138,9 @@
 /obj/structure/bed/chair/padded/yellow/New(var/newloc,var/newmaterial)
 	..(newloc,"steel","yellow")
 
+/obj/structure/bed/chair/padded/light/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","cotton")
+
 // Leaving this in for the sake of compilation.
 /obj/structure/bed/chair/comfy
 	name = "comfy chair"
@@ -275,6 +278,24 @@
 /obj/structure/bed/chair/office/light/New(var/newloc,var/newmaterial)
 	..(newloc,"steel","cotton")
 
+/obj/structure/bed/chair/office/yellow/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","yellow")
+
+/obj/structure/bed/chair/office/brown/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","leather")
+
+/obj/structure/bed/chair/office/teal/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","teal")
+
+/obj/structure/bed/chair/office/red/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","carpet")
+
+/obj/structure/bed/chair/office/blue/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","blue")
+
+/obj/structure/bed/chair/office/purple/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","purple")
+
 /obj/structure/bed/chair/office/dark/New(var/newloc,var/newmaterial)
 	..(newloc,"steel","black")
 
@@ -361,7 +382,10 @@
 	..(newloc,"steel","blue")
 
 /obj/structure/bed/chair/shuttle/red/New(var/newloc,var/newmaterial)
-	..(newloc,"steel","red")
+	..(newloc,"steel","carpet")
+
+/obj/structure/bed/chair/shuttle/green/New(var/newloc,var/newmaterial)
+	..(newloc,"steel","green")
 
 /obj/structure/bed/chair/shuttle/black/New(var/newloc,var/newmaterial)
 	..(newloc,"steel","black")

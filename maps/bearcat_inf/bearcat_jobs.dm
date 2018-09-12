@@ -88,7 +88,7 @@
 	                    SKILL_CHEMISTRY   = SKILL_MAX,
 	                    SKILL_VIROLOGY    = SKILL_MAX)
 	skill_points = 32
-
+	access = list(access_medical_equip, access_kitchen)
 
 /datum/job/hop
 	title = "First Mate"
@@ -191,7 +191,7 @@
 	supervisors = "the Captain and his laws."
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/security
 	total_positions = 1
-	spawn_positions = 1
+	spawn_positions = 2
 	alt_titles = list(
 		"Sheriff")
 	hud_icon = "hudsecurityofficer"
@@ -200,12 +200,12 @@
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_BASIC,
 	                    SKILL_WEAPONS     = SKILL_BASIC,
-	                    SKILL_FORENSICS   = SKILL_ADEPT)
+	                    SKILL_FORENSICS   = SKILL_BASIC)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_MAX)
-	skill_points = 20
+	skill_points = 18
 
 /datum/job/cyborg
 	supervisors = "your laws and the Captain"
@@ -264,6 +264,7 @@
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	glasses = /obj/item/clothing/glasses/hud/health
 	shoes = /obj/item/clothing/shoes/laceup
+	id_type = /obj/item/weapon/card/id/medical
 
 /decl/hierarchy/outfit/job/bearcat/mate
 	name = BEARCAT_OUTFIT_JOB_NAME("First Mate")

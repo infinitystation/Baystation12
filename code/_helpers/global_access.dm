@@ -43,12 +43,18 @@
 			return global.SSantags;
 		if("SSatoms")
 			return global.SSatoms;
+		if("SScircuit")
+			return global.SScircuit;
+		if("SSculture")
+			return global.SSculture;
 		if("SSevac")
 			return global.SSevac;
 		if("SSevent")
 			return global.SSevent;
 		if("SSfastprocess")
 			return global.SSfastprocess;
+		if("SSfluids")
+			return global.SSfluids;
 		if("SSgarbage")
 			return global.SSgarbage;
 		if("SSicon_update")
@@ -75,6 +81,8 @@
 			return global.SSobj;
 		if("SSopen_space")
 			return global.SSopen_space;
+		if("SSpersistence")
+			return global.SSpersistence;
 		if("SSprocessing")
 			return global.SSprocessing;
 		if("SSradiation")
@@ -377,8 +385,6 @@
 			return global.dreams;
 		if("dummy_lighting_corner")
 			return global.dummy_lighting_corner;
-		if("economic_species_modifier")
-			return global.economic_species_modifier;
 		if("emojis")
 			return global.emojis;
 		if("empty_playable_ai_cores")
@@ -503,8 +509,6 @@
 			return global.init;
 		if("initialization_stage")
 			return global.initialization_stage;
-		if("integrated_circuit_blacklist")
-			return global.integrated_circuit_blacklist;
 		if("intents")
 			return global.intents;
 		if("intercom_range_display_status")
@@ -1044,12 +1048,18 @@
 			global.SSantags=newval;
 		if("SSatoms")
 			global.SSatoms=newval;
+		if("SScircuit")
+			global.SScircuit=newval;
+		if("SSculture")
+			global.SSculture=newval;
 		if("SSevac")
 			global.SSevac=newval;
 		if("SSevent")
 			global.SSevent=newval;
 		if("SSfastprocess")
 			global.SSfastprocess=newval;
+		if("SSfluids")
+			global.SSfluids=newval;
 		if("SSgarbage")
 			global.SSgarbage=newval;
 		if("SSicon_update")
@@ -1076,6 +1086,8 @@
 			global.SSobj=newval;
 		if("SSopen_space")
 			global.SSopen_space=newval;
+		if("SSpersistence")
+			global.SSpersistence=newval;
 		if("SSprocessing")
 			global.SSprocessing=newval;
 		if("SSradiation")
@@ -1378,8 +1390,6 @@
 			global.dreams=newval;
 		if("dummy_lighting_corner")
 			global.dummy_lighting_corner=newval;
-		if("economic_species_modifier")
-			global.economic_species_modifier=newval;
 		if("emojis")
 			global.emojis=newval;
 		if("empty_playable_ai_cores")
@@ -1504,8 +1514,6 @@
 			global.init=newval;
 		if("initialization_stage")
 			global.initialization_stage=newval;
-		if("integrated_circuit_blacklist")
-			global.integrated_circuit_blacklist=newval;
 		if("intents")
 			global.intents=newval;
 		if("intercom_range_display_status")
@@ -2023,9 +2031,12 @@
 	"SSalarm",
 	"SSantags",
 	"SSatoms",
+	"SScircuit",
+	"SSculture",
 	"SSevac",
 	"SSevent",
 	"SSfastprocess",
+	"SSfluids",
 	"SSgarbage",
 	"SSicon_update",
 	"SSinactivity",
@@ -2039,6 +2050,7 @@
 	"SSnano",
 	"SSobj",
 	"SSopen_space",
+	"SSpersistence",
 	"SSprocessing",
 	"SSradiation",
 	"SSshuttle",
@@ -2190,7 +2202,6 @@
 	"doppler_arrays",
 	"dreams",
 	"dummy_lighting_corner",
-	"economic_species_modifier",
 	"emojis",
 	"empty_playable_ai_cores",
 	"endgame_exits",
@@ -2253,7 +2264,6 @@
 	"inf_changelog_hash",
 	"init",
 	"initialization_stage",
-	"integrated_circuit_blacklist",
 	"intents",
 	"intercom_range_display_status",
 	"invalid_zone",

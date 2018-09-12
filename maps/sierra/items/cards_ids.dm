@@ -30,13 +30,6 @@
 	icon_state = "id"
 	job_access_type = /datum/job/assistant
 
-/obj/item/weapon/card/id/sierra/solgov
-	desc = "An identification card issued to SolGov crewmembers aboard the NSV Sierra."
-	icon_state = "solgov"
-	job_access_type = /datum/job/assistant
-
-
-
 /obj/item/weapon/card/id/sierra/crew/medical
 	desc = "An identification card issued to medical crewmembers aboard the NSV Sierra."
 	icon_state = "med"
@@ -72,7 +65,7 @@
 /obj/item/weapon/card/id/sierra/crew/security/warden
 	job_access_type = /datum/job/warden
 
-/obj/item/weapon/card/id/sierra/crew/security/forensic
+/obj/item/weapon/card/id/sierra/crew/security/detective
 	job_access_type = /datum/job/detective
 
 
@@ -95,9 +88,6 @@
 /obj/item/weapon/card/id/sierra/crew/engineering/comms/New()
 	.=..()
 	access |= list(access_network, access_tcomsat)
-
-/obj/item/weapon/card/id/sierra/crew/engineering/roboticist
-	job_access_type = /datum/job/roboticist
 
 
 
@@ -133,20 +123,19 @@
 /obj/item/weapon/card/id/sierra/crew/service/bartender
 	job_access_type = /datum/job/bartender
 
+/obj/item/weapon/card/id/sierra/crew/exploration_leader
+	job_access_type = /datum/job/exploration_leader
 
-/obj/item/weapon/card/id/sierra/solgov/pathfinder
-	job_access_type = /datum/job/pathfinder
-
-/obj/item/weapon/card/id/sierra/solgov/explorer
+/obj/item/weapon/card/id/sierra/crew/explorer
 	job_access_type = /datum/job/explorer
 
-/obj/item/weapon/card/id/sierra/solgov/pilot
+/obj/item/weapon/card/id/sierra/crew/pilot
 	job_access_type = /datum/job/explorer_pilot
 
-/obj/item/weapon/card/id/sierra/solgov/field_medic
+/obj/item/weapon/card/id/sierra/crew/field_medic
 	job_access_type = /datum/job/explorer_medic
 
-/obj/item/weapon/card/id/sierra/solgov/field_engineer
+/obj/item/weapon/card/id/sierra/crew/field_engineer
 	job_access_type = /datum/job/explorer_engineer
 
 
@@ -169,6 +158,9 @@
 /obj/item/weapon/card/id/sierra/crew/research/nt_pilot
 	job_access_type = /datum/job/nt_pilot
 
+/obj/item/weapon/card/id/sierra/crew/research/roboticist
+	job_access_type = /datum/job/roboticist
+
 /obj/item/weapon/card/id/sierra/crew/liaison
 	desc = "A card issued to corporate represenatives aboard the NSV Sierra."
 	icon_state = "corporate"
@@ -189,7 +181,7 @@
 /obj/item/weapon/card/id/sierra/stowaway
 	desc = "An identification card issued to personnel aboard the NSV Sierra. Looks like the photo fell off this one."
 	icon_state = "id"
-	job_access_type = /datum/job/assistant
+	job_access_type = /datum/job/stowaway
 
 /obj/item/weapon/card/id/sierra/stowaway/New()
 	..()
@@ -197,8 +189,10 @@
 	if(prob(10))
 		species = pick(SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_IPC)
 	var/datum/species/S = all_species[species]
+	var/decl/cultural_info/culture/C = SSculture.get_culture(S.default_cultural_info[TAG_CULTURE])
 	var/gender = pick(MALE,FEMALE)
-	registered_name = S.get_random_name(gender)
+	assignment = "Passenger"
+	registered_name = C.get_random_name(gender)
 	sex = capitalize(gender)
 	age = rand(19,25)
 	fingerprint_hash = md5(registered_name)

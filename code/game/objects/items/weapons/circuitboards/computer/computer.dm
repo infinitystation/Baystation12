@@ -20,7 +20,7 @@
 /obj/item/weapon/circuitboard/teleporter
 	name = T_BOARD("teleporter control console")
 	build_path = /obj/machinery/computer/teleporter
-	origin_tech = list(TECH_DATA = 2, TECH_BLUESPACE = 2)
+	origin_tech = list(TECH_DATA = 2, TECH_BLUESPACE = 4)
 
 /obj/item/weapon/circuitboard/atmos_alert
 	name = T_BOARD("atmospheric alert console")
@@ -145,7 +145,3 @@
 /obj/item/weapon/circuitboard/account_database
 	name = T_BOARD("accounts uplink terminal")
 	build_path = /obj/machinery/computer/account_database
-
-/obj/item/weapon/circuitboard/ship_weapon
-	name = T_BOARD("weapon control console")
-	build_path = /obj/machinery/computer/weapons

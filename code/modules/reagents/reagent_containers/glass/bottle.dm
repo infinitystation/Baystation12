@@ -262,3 +262,25 @@
 	..()
 	reagents.add_reagent(/datum/reagent/hyronalin, 60)
 	update_icon()
+
+/obj/item/weapon/reagent_containers/glass/bottle/peridaxon
+	name = "peridaxon bottle"
+	desc = "A small bottle. Peridaxon - used to treat organs."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "bottle-2"
+
+/obj/item/weapon/reagent_containers/glass/bottle/peridaxon/New()
+	..()
+	reagents.add_reagent(/datum/reagent/peridaxon, 60)
+	update_icon()
+
+/obj/item/weapon/reagent_containers/glass/bottle/tricordrazine
+	name = "tricordrazine bottle"
+	desc = "A small bottle. Heals both brute and burn damage, albeit slowly."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "bottle-2"
+
+/obj/item/weapon/reagent_containers/glass/bottle/tricordrazine/New()
+	..()
+	reagents.add_reagent(/datum/reagent/tricordrazine, 60)
+	update_icon()

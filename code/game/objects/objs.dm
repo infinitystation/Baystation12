@@ -159,5 +159,5 @@
 		add_fingerprint(user)
 	..()
 
-/obj/proc/get_cell()
-	return
+/obj/is_fluid_pushable(var/amt)
+	return ..() && w_class <= round(amt/20)

@@ -98,6 +98,11 @@
 	icon_state = "r-wingrille"
 	frame_path = /obj/structure/wall_frame/prepainted
 
+/obj/effect/wallframe_spawn/reinforced/wood
+	name = "reinforced wooden wall frame window spawner"
+	icon_state = "r-wingrille"
+	frame_path = /obj/structure/wall_frame/wood
+
 /obj/effect/wallframe_spawn/reinforced/titanium
 	name = "reinforced titanium wall frame window spawner"
 	frame_path = /obj/structure/wall_frame/titanium
@@ -131,6 +136,10 @@
 /obj/effect/wallframe_spawn/reinforced_phoron/hull
 	name = "reinforced phoron hull wall frame window spawner"
 	frame_path = /obj/structure/wall_frame/hull
+
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted
+	name = "reinforced phoron prepainted wall frame window spawner"
+	frame_path = /obj/structure/wall_frame/prepainted
 
 /obj/effect/wallframe_spawn/reinforced/polarized
 	name = "polarized wall frame window spawner"

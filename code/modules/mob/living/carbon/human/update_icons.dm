@@ -157,14 +157,9 @@ Please contact me on #coderbus IRC. ~Carn x
 
 		var/list/visible_overlays
 		if(is_cloaked())
+			icon = 'icons/mob/human.dmi'
+			icon_state = "blank"
 			visible_overlays = list(visible_overlays[R_HAND_LAYER], visible_overlays[L_HAND_LAYER])
-			if(species.reagent_tag == IS_NABBER)
-				icon = 'icons/mob/infinity_mob_nabber.dmi'
-				icon_state = "cloak_full"
-			else
-				icon = 'icons/mob/infinity_mob.dmi'
-				icon_state = "cloak_full"
-
 		else
 			icon = stand_icon
 			icon_state = null
@@ -788,8 +783,12 @@ var/global/list/damage_icon_parts = list()
 	var/image/total = new
 	for(var/obj/item/organ/external/E in organs)
 		if(!BP_IS_ROBOTIC(E) && E.how_open())
-			var/image/I = image("icon"='icons/mob/surgery.dmi', "icon_state"="[E.icon_name][round(E.how_open())]", "layer"=-SURGERY_LEVEL)
-			total.overlays += I
+			if(E.owner.species.reagent_tag != IS_RESOMI)
+				var/image/I = image("icon"='icons/mob/surgery.dmi', "icon_state"="[E.icon_name][round(E.how_open())]", "layer"=-SURGERY_LEVEL)
+				total.overlays += I
+			else
+				var/image/I = image("icon"='icons/mob/human_races/species/resomi/surgery.dmi', "icon_state"="[E.icon_name][round(E.how_open())]", "layer"=-SURGERY_LEVEL)
+				total.overlays += I
 	total.appearance_flags = RESET_COLOR
 	overlays_standing[SURGERY_LEVEL] = total
 	if(update_icons)

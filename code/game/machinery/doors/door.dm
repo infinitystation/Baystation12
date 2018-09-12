@@ -10,6 +10,7 @@
 	opacity = 1
 	density = 1
 	layer = CLOSED_DOOR_LAYER
+
 	var/open_layer = OPEN_DOOR_LAYER
 	var/closed_layer = CLOSED_DOOR_LAYER
 
@@ -271,6 +272,11 @@
 
 	if(src.operating) return
 
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.species.reagent_tag == IS_XENOS)
+			H.pry_open(src)
+
 	if(src.allowed(user) && operable())
 		if(src.density)
 			open()
@@ -525,3 +531,5 @@
 			dirs |= direction
 	connections = dirs
 
+/obj/machinery/door/CanFluidPass(var/coming_from)
+	return !density

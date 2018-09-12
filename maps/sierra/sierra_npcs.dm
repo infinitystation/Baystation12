@@ -12,3 +12,13 @@
 	equip_to_appropriate_slot(C)
 	put_in_hands(new /obj/item/weapon/reagent_containers/food/drinks/coffeecup/punitelli)
 	equip_to_appropriate_slot(new /obj/item/clothing/mask/smokable/cigarette/jerichos)
+
+/obj/random_multi/single_item/space_rabbit
+	name = "Multi Point - White Space Rabbit"
+	id = "Rabbit"
+	item_path = /mob/living/simple_animal/rabbit/space/sierra
+
+/mob/living/simple_animal/rabbit/space/sierra
+	name = "\improper Edwin"
+	desc = "The hippiest hop around. On it's back you can see a small black letters: Aldrin."
+	emote_see = list("hops around","bounces up and down","says something in imaginated headset")

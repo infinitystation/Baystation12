@@ -1,6 +1,6 @@
 /obj/structure/solbanner
 	name = "\improper SCG banner"
-	icon = 'maps/sierra/icons/obj/solbanner.dmi'
+	icon = 'maps/torch/icons/obj/solbanner.dmi'
 	icon_state = "wood"
 	desc = "A wooden pole bearing a banner of Sol Central Government. Ave."
 	anchored = 1
@@ -26,10 +26,10 @@
 /obj/item/solbanner
 	name = "\improper SCG banner capsule"
 	desc = "SCG banner packed in a rapid deployment capsule. Used for staking claims on new worlds in the name of Sol Central Government."
-	icon = 'maps/sierra/icons/obj/uniques.dmi'
+	icon = 'maps/torch/icons/obj/uniques.dmi'
 	icon_state = "banner_stowed"
 	w_class = ITEM_SIZE_HUGE
-	req_access = list(access_pathfinder)
+	req_access = list(access_el)
 
 /obj/item/solbanner/attack_self(mob/living/carbon/human/user)
 	..()

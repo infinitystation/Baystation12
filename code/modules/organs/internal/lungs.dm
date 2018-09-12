@@ -11,7 +11,7 @@
 	relative_size = 60
 
 	var/active_breathing = 1
-
+	var/has_gills = FALSE
 	var/breath_type
 	var/exhale_type
 	var/list/poison_types
@@ -29,6 +29,9 @@
 	var/breathing = 0
 	var/last_failed_breath
 	var/breath_fail_ratio // How badly they failed a breath. Higher is worse.
+
+/obj/item/organ/internal/lungs/proc/can_drown()
+	return (is_broken() || !has_gills)
 
 /obj/item/organ/internal/lungs/proc/remove_oxygen_deprivation(var/amount)
 	var/last_suffocation = oxygen_deprivation
@@ -160,7 +163,10 @@
 	// Not enough to breathe
 	if(inhale_efficiency < 1)
 		if(prob(20) && active_breathing)
-			owner.emote("gasp")
+			if(inhale_efficiency < 0.8)
+				owner.emote("gasp")
+			else if(prob(20))
+				to_chat(owner, SPAN_WARNING("It's hard to breathe..."))
 		breath_fail_ratio = 1 - inhale_efficiency
 		failed_inhale = 1
 	else

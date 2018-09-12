@@ -38,6 +38,25 @@
 	req_one_access = list(access_brig, access_bridge)
 	authorized_modes = list(ALWAYS_AUTHORIZED, AUTHORIZED)
 
+/obj/item/weapon/gun/energy/revolver/secure
+	name = "smart service revolver"
+	desc = "The LAER680-S, a standard issue service revolver commonly used by higher ranking offcers among the SCG. Fitted with an NT1019 chip which allows remote authorization of the weapon's functionality."
+	icon = 'icons/obj/gun_secure.dmi'
+	icon_state = "energyrevolverstun100"
+	item_icons = list(
+		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_guns_secure.dmi',
+		slot_r_hand_str = 'icons/mob/onmob/items/righthand_guns_secure.dmi',
+		)
+	modifystate = "energyrevolverstun"
+	item_state = null
+	firemodes = list(
+		list(mode_name="stun", projectile_type=/obj/item/projectile/beam/stun, modifystate="energyrevolverstun"),
+		list(mode_name="shock", projectile_type=/obj/item/projectile/beam/stun/shock, modifystate="energyrevolvershock"),
+		list(mode_name="kill", projectile_type=/obj/item/projectile/beam, modifystate="energyrevolverkill"),
+		)
+	req_one_access = list(access_brig, access_heads)
+	authorized_modes = list(ALWAYS_AUTHORIZED, AUTHORIZED)
+
 /obj/item/weapon/gun/energy/gun/secure/mounted
 	name = "robot energy gun"
 	desc = "A robot-mounted equivalent of the LAEP90-S, which is always registered to its owner."

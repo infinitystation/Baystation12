@@ -5,7 +5,7 @@
 	name = "command HCM"
 	suit_type = "command hardsuit"
 	icon = 'maps/sierra/icons/obj/uniques.dmi'
-	desc = "A specialized hardsuit rig control module issued to command staff of the Expeditionary Corps and their peers."
+	desc = "A specialized hardsuit rig control module issued to command staff of the NanoTrasen and their peers."
 	icon_state = "command_rig"
 	armor = list(melee = 25, bullet = 25, laser = 15, energy = 25, bomb = 40, bio = 100, rad = 40)
 	online_slowdown = 0.50
@@ -52,32 +52,27 @@
 		)
 
 /*
- * EXECUTIVE OFFICER
+ * HEAD OF PERSONELL
  */
-/obj/item/weapon/rig/command/xo
-	name = "officer's command HCM"
+/obj/item/weapon/rig/command/hop
+	name = "HoP's HCM"
 	suit_type = "advanced command hardsuit"
-	desc = "A specialized hardsuit rig control module issued to high ranking officers of the Expeditionary Corps and their peers."
+	desc = "A specialized hardsuit rig control module issued to ranking personnel command staff of the NanoTrasen and their peers."
 	icon_state = "command_XO_rig"
 	armor = list(melee = 45, bullet = 35, laser = 30, energy = 15, bomb = 35, bio = 100, rad = 50)
 
-	chest_type = /obj/item/clothing/suit/space/rig/command/xo
-	helm_type = /obj/item/clothing/head/helmet/space/rig/command/xo
-	boot_type = /obj/item/clothing/shoes/magboots/rig/command
-	glove_type = /obj/item/clothing/gloves/rig/command
+	chest_type = /obj/item/clothing/suit/space/rig/command/hop
+	helm_type = /obj/item/clothing/head/helmet/space/rig/command/hop
 
 	allowed = list(/obj/item/weapon/gun, /obj/item/ammo_magazine, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit, /obj/item/weapon/storage/secure/briefcase)
 	req_access = list(access_hop)
 
-/obj/item/clothing/head/helmet/space/rig/command/xo
+/obj/item/clothing/head/helmet/space/rig/command/hop
 	icon_state = "command_XO_rig"
-/obj/item/clothing/suit/space/rig/command/xo
+/obj/item/clothing/suit/space/rig/command/hop
 	icon_state = "command_XO_rig"
-/obj/item/clothing/shoes/magboots/rig/command/xo
-/obj/item/clothing/gloves/rig/command/xo
 
-
-/obj/item/weapon/rig/command/xo/equipped
+/obj/item/weapon/rig/command/hop/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash/advanced,
@@ -87,31 +82,25 @@
 /*
  * COMMANDING OFFICER
  */
-/obj/item/weapon/rig/command/co
-	name = "commanding officer's command HCM"
+/obj/item/weapon/rig/command/captain
+	name = "captain's HCM"
 	suit_type = "advanced command hardsuit"
-	desc = "A specialized hardsuit rig control module issued to commanding officers of the Expeditionary Corps."
+	desc = "A specialized hardsuit rig control module issued to captains of the NanoTrasen."
 	icon_state = "command_CO_rig"
 	armor = list(melee = 50, bullet = 40, laser = 30, energy = 20, bomb = 40, bio = 100, rad = 50)
 
-	chest_type = /obj/item/clothing/suit/space/rig/command/co
-	helm_type = /obj/item/clothing/head/helmet/space/rig/command/co
-	boot_type = /obj/item/clothing/shoes/magboots/rig/command
-	glove_type = /obj/item/clothing/gloves/rig/command
-
+	chest_type = /obj/item/clothing/suit/space/rig/command/captain
+	helm_type = /obj/item/clothing/head/helmet/space/rig/command/captain
 	allowed = list(/obj/item/weapon/gun, /obj/item/ammo_magazine, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit, /obj/item/weapon/storage/secure/briefcase)
 
 	req_access = list(access_captain)
 
-/obj/item/clothing/head/helmet/space/rig/command/co
+/obj/item/clothing/head/helmet/space/rig/command/captain
 	icon_state = "command_CO_rig"
-/obj/item/clothing/suit/space/rig/command/co
+/obj/item/clothing/suit/space/rig/command/captain
 	icon_state = "command_CO_rig"
-/obj/item/clothing/shoes/magboots/rig/command/co
-/obj/item/clothing/gloves/rig/command/co
 
-
-/obj/item/weapon/rig/command/co/equipped
+/obj/item/weapon/rig/command/captain/equipped
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
@@ -122,29 +111,27 @@
 /*
  * CHIEF MEDICAL OFFICER
  */
-/obj/item/weapon/rig/command/medical
-	name = "medical command HCM"
+/obj/item/weapon/rig/command/cmo
+	name = "CMO's HCM"
 	suit_type = "medical command hardsuit"
-	desc = "A specialized hardsuit rig control module issued to ranking medical officers of the Expeditionary Corps and their peers."
+	desc = "A specialized hardsuit rig control module issued to ranking medical command staff of the NanoTrasen and their peers."
 	icon_state = "command_med_rig"
 	armor = list(melee = 35, bullet = 25, laser = 25, energy = 25, bomb = 40, bio = 100, rad = 100)
 
-	chest_type = /obj/item/clothing/suit/space/rig/command/medical
-	helm_type = /obj/item/clothing/head/helmet/space/rig/command/medical
+	chest_type = /obj/item/clothing/suit/space/rig/command/cmo
+	helm_type = /obj/item/clothing/head/helmet/space/rig/command/cmo
 
 	allowed = list(/obj/item/weapon/gun, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit, /obj/item/weapon/storage/firstaid, /obj/item/device/healthanalyzer, /obj/item/stack/medical, /obj/item/roller)
 
 	req_access = list(access_cmo)
 
-/obj/item/clothing/head/helmet/space/rig/command/medical
+/obj/item/clothing/head/helmet/space/rig/command/cmo
 	icon_state = "command_med_rig"
-/obj/item/clothing/suit/space/rig/command/medical
+/obj/item/clothing/suit/space/rig/command/cmo
 	icon_state = "command_med_rig"
-/obj/item/clothing/shoes/magboots/rig/command/medical
-/obj/item/clothing/gloves/rig/command/medical
 
 
-/obj/item/weapon/rig/command/medical/equipped
+/obj/item/weapon/rig/command/cmo/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash,
@@ -156,58 +143,53 @@
 /*
 * CHIEF OF SECURITY
 */
-/obj/item/weapon/rig/command/security
-	name = "security command HCM"
+/obj/item/weapon/rig/command/hos
+	name = "HoS' HCM"
 	suit_type = "security command hardsuit"
-	desc = "A specialized hardsuit rig control module issued to ranking security officers of the Expeditionary Corps and their peers."
+	desc = "A specialized hardsuit rig control module issued to ranking security command staff of the NanoTrasen and their peers."
 	icon_state = "command_sec_rig"
 	armor = list(melee = 45, bullet = 35, laser = 30, energy = 15, bomb = 35, bio = 100, rad = 40)
 
-	chest_type = /obj/item/clothing/suit/space/rig/command/security
-	helm_type = /obj/item/clothing/head/helmet/space/rig/command/security
+	chest_type = /obj/item/clothing/suit/space/rig/command/hos
+	helm_type = /obj/item/clothing/head/helmet/space/rig/command/hos
 
 	allowed = list(/obj/item/weapon/gun, /obj/item/ammo_magazine, /obj/item/ammo_casing, /obj/item/weapon/handcuffs, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit, /obj/item/weapon/melee/baton)
 
 	req_access = list(access_hos)
 
-/obj/item/clothing/head/helmet/space/rig/command/security
+/obj/item/clothing/head/helmet/space/rig/command/hos
 	icon_state = "command_sec_rig"
-/obj/item/clothing/suit/space/rig/command/security
+/obj/item/clothing/suit/space/rig/command/hos
 	icon_state = "command_sec_rig"
-/obj/item/clothing/shoes/magboots/rig/command/security
-/obj/item/clothing/gloves/rig/command/security
 
-
-/obj/item/weapon/rig/command/security/equipped
+/obj/item/weapon/rig/command/hos/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/vision/sechud,
 		/obj/item/rig_module/cooling_unit)
 
-//PATHFINDER
-/obj/item/weapon/rig/command/exploration
-	name = "exploration command HCM"
+//Exploration Leader
+/obj/item/weapon/rig/command/el
+	name = "exploration leader's HCM"
 	suit_type = "exploration command hardsuit"
-	desc = "A specialized hardsuit rig control module issued to Pathfinders of the Expeditionary Corps."
+	desc = "A specialized hardsuit rig control module issued to Exploration Leaders of the NanoTrasen."
 	icon_state = "command_exp_rig"
 	armor = list(melee = 35, bullet = 25, laser = 25, energy = 35, bomb = 15, bio = 100, rad = 100)
 
-	chest_type = /obj/item/clothing/suit/space/rig/command/exploration
-	helm_type = /obj/item/clothing/head/helmet/space/rig/command/exploration
+	chest_type = /obj/item/clothing/suit/space/rig/command/el
+	helm_type = /obj/item/clothing/head/helmet/space/rig/command/el
 
 	allowed = list(/obj/item/weapon/gun, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit)
 
-	req_access = list(access_pathfinder)
+	req_access = list(access_el)
 
-/obj/item/clothing/head/helmet/space/rig/command/exploration
+/obj/item/clothing/head/helmet/space/rig/command/el
 	icon_state = "command_exp_rig"
-/obj/item/clothing/suit/space/rig/command/exploration
+/obj/item/clothing/suit/space/rig/command/el
 	icon_state = "command_exp_rig"
-/obj/item/clothing/shoes/magboots/rig/command/exploration
-/obj/item/clothing/gloves/rig/command/exploration
 
-/obj/item/weapon/rig/command/exploration/equipped
+/obj/item/weapon/rig/command/pf/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash,

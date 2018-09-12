@@ -109,7 +109,7 @@
 	//if someone wants to implement inspecting robot eyes here would be the place to do it.
 
 /obj/item/device/flashlight/upgraded
-	name = "\improper LED flashlight"
+	name = "\improper duty flashlight"
 	desc = "An energy efficient flashlight."
 	icon_state = "biglight"
 	item_state = "biglight"
@@ -162,8 +162,8 @@
 	attack_verb = list ("smacked", "thwacked", "thunked")
 	matter = list(DEFAULT_WALL_MATERIAL = 200,"glass" = 50)
 	hitsound = "swing_hit"
-	flashlight_max_bright = 0.5
-	flashlight_outer_range = 5
+	flashlight_max_bright = 0.6
+	flashlight_outer_range = 4
 /******************************Lantern*******************************/
 /obj/item/device/flashlight/lantern
 	name = "lantern"
@@ -406,10 +406,11 @@
 
 /obj/item/device/flashlight/lamp/floodlamp
 	name = "flood lamp"
-	desc = "A portable emergency flood light with a ultra-bright LED."
+	desc = "A portable flood light with a ultra-bright LED."
 	icon = 'icons/obj/machines/floodlight.dmi'
 	icon_state = "floodlamp"
 	item_state = "lamp"
+	on = 0
 	w_class = ITEM_SIZE_LARGE
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
@@ -418,7 +419,7 @@
 	flashlight_outer_range = 7
 
 
-/obj/item/device/flashlight/floodlamp/verb/rotate()
+/obj/item/device/flashlight/lamp/floodlamp/verb/rotate()
 	set name = "Rotate Light"
 	set category = "Object"
 	set src in oview(1)
@@ -436,7 +437,7 @@
 	src.set_dir(turn(src.dir, 90))
 	return
 
-/obj/item/device/flashlight/floodlamp/AltClick()
+/obj/item/device/flashlight/lamp/floodlamp/AltClick()
 	rotate()
 
 /obj/item/device/flashlight/lamp/floodlamp/green

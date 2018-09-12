@@ -204,6 +204,9 @@
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/cough_female.ogg"
 
+		if(H.species.reagent_tag == IS_RESOMI)
+			emote_sound = "sound/voice/resomicoughb.ogg"
+
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)
 
@@ -275,6 +278,7 @@
 /decl/emote/audible/laugh
 	key = "laugh"
 	emote_message_3p = "USER смеетс&#255;."
+	emote_message_3p_target = "USER смеетс&#255; над TARGET."
 
 /decl/emote/audible/laugh/do_extra(var/mob/M)
 	if(M.stat)//No dead or unconcious people screaming pls.
@@ -290,6 +294,9 @@
 
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/laugh_female_[rand(1,3)].ogg"
+
+		if(H.species.reagent_tag == IS_RESOMI)
+			emote_sound = "sound/voice/resomicougha.ogg"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)
@@ -353,6 +360,12 @@
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/scream_female_[rand(1,2)].ogg"
 
+		if(H.species.reagent_tag == IS_XENOS)
+			emote_sound = "sound/voice/alien_pain.ogg"
+
+		if(H.species.reagent_tag == IS_RESOMI)
+			emote_sound = "sound/voice/resomisneeze.ogg"
+
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)
 
@@ -362,6 +375,7 @@
 
 /decl/emote/audible/bug_hiss
 	key ="hiss"
+	emote_message_3p_target = "USER шипит на TARGET."
 	emote_message_3p = "USER шипит."
 	emote_sound = 'sound/voice/BugHiss.ogg'
 

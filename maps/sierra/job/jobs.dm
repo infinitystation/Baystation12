@@ -5,7 +5,7 @@
 		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/stowaway)
 	)
 
-#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos, /datum/job/pathfinder, /datum/job/warden
+#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos, /datum/job/exploration_leader, /datum/job/warden
 	species_to_job_blacklist = list(
 		/datum/species/unathi  = list(HUMAN_ONLY_JOBS, /datum/job/iaa), //Other jobs unavailable via branch restrictions,
 		/datum/species/skrell  = list(HUMAN_ONLY_JOBS),
@@ -18,7 +18,7 @@
 
 	allowed_jobs = list(/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,
 						/datum/job/iaa, /datum/job/adjutant,
-						/datum/job/pathfinder, /datum/job/explorer, /datum/job/explorer_pilot, /datum/job/explorer_medic, /datum/job/explorer_engineer,
+						/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, /datum/job/explorer_medic, /datum/job/explorer_engineer,
 						/datum/job/senior_engineer, /datum/job/engineer, /datum/job/engineer_trainee,
 						/datum/job/officer, /datum/job/warden, /datum/job/detective,
 						/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee,/datum/job/chemist, /datum/job/psychiatrist,
@@ -51,7 +51,7 @@
 	department_flag = COM
 	head_position = 1
 	minimal_player_age = 21
-	economic_modifier = 15
+	economic_power = 20
 	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/captain
 	total_positions = 1
@@ -65,7 +65,7 @@
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 
 
-	skill_points = 36
+	skill_points = 25
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/card_mod,
@@ -85,7 +85,7 @@
 	spawn_positions = 1
 	req_admin_notify = 1
 	minimal_player_age = 21
-	economic_modifier = 10
+	economic_power = 12
 	ideal_character_age = 45
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/hop
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -95,27 +95,21 @@
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 
-	skill_points = 36
+	skill_points = 20
 
-	access = list(access_security, access_bridge, access_brig, access_armory, access_forensics_lockers,
+	access = list(		access_security, access_brig, access_armory, access_forensics_lockers, access_heads,
 			            access_medical, access_morgue, access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_change_ids, access_ai_upload, access_teleporter, access_eva, access_heads,
+			            access_change_ids, access_ai_upload, access_teleporter, access_eva, access_bridge,
 			            access_all_personal_lockers, access_chapel_office, access_tech_storage, access_atmospherics, access_bar, access_janitor, access_crematorium, access_robotics,
 			            access_kitchen, access_cargo, access_construction, access_chemistry, access_cargo_bot, access_hydroponics, access_library, access_virology,
 			            access_cmo, access_qm, access_network, access_surgery, access_mailsorting, access_heads_vault, access_ce,
 			            access_hop, access_hos, access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_sec_doors, access_psychiatrist,
-			            access_medical_equip, access_gun, access_expedition_shuttle, access_guppy,
-			            access_seneng, access_senmed, access_hangar, access_guppy_helm, access_expedition_shuttle_helm, access_explorer, access_pathfinder)
-	minimal_access = list(access_security, access_brig, access_armory, access_forensics_lockers,
-			            access_medical, access_morgue, access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_change_ids, access_ai_upload, access_teleporter, access_eva, access_heads,
-			            access_all_personal_lockers, access_chapel_office, access_tech_storage, access_atmospherics, access_bar, access_janitor, access_crematorium,
-			            access_kitchen, access_cargo, access_construction, access_chemistry, access_cargo_bot, access_hydroponics, access_library, access_virology,
-			            access_cmo, access_qm, access_network, access_surgery, access_mailsorting, access_heads_vault, access_ce,
-			            access_hop, access_hos, access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_sec_doors, access_psychiatrist,
-			            access_medical_equip, access_gun, access_expedition_shuttle, access_guppy,
-			            access_seneng, access_senmed, access_hangar, access_guppy_helm, access_explorer, access_pathfinder,
-			            access_expedition_shuttle_helm)
+			            access_medical_equip, access_robotics_engineering, access_gun, access_expedition_shuttle, access_guppy,
+			            access_seneng, access_senmed, access_hangar, access_guppy_helm, access_expedition_shuttle_helm, access_explorer, access_el,
+						access_tox, access_tox_storage, access_research, access_mining, access_mining_office, access_mining_station, access_xenobiology, access_xenoarch,
+						access_petrov, access_petrov_helm)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/card_mod,
@@ -134,7 +128,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	req_admin_notify = 1
-	economic_modifier = 20
+	economic_power = 20
 	minimal_player_age = 14
 	ideal_character_age = 60
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/rd
@@ -153,10 +147,12 @@
 	                    SKILL_SCIENCE     = SKILL_MAX)
 	skill_points = 36
 
-	access = list(access_tox, access_tox_storage, access_emergency_storage, access_teleporter, access_heads, access_rd,
-						access_research, access_mining, access_mining_office, access_mining_station, access_xenobiology,
-						access_RC_announce, access_keycard_auth, access_xenoarch,
+	access = list(access_tox, access_tox_storage, access_emergency_storage, access_teleporter, access_bridge, access_rd,
+						access_research, access_robotics, access_mining, access_mining_office, access_mining_station, access_xenobiology,
+						access_RC_announce, access_keycard_auth, access_xenoarch, access_nanotrasen, access_heads,
+						access_sec_doors, access_medical, access_network,
 						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_petrov_helm, access_guppy_helm)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -165,7 +161,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/rd/get_description_blurb()
-	return "You are the Research Director. You are responsible for the research department. You handle both the science part of the mission but are also responsible for ensuring Nanotrasen's interests along with your Nanotrasen iaa. Make sure science gets done, do some yourself, and get your prospectors and scientists on away missions to find things to benefit NT. Don’t put NT’s position on board in jeopardy.  Advise the CO on science matters."
+	return "You are the Research Director. You are responsible for the research department. You handle both the science part of the mission but are also responsible for ensuring Nanotrasen's interests along with your Nanotrasen iaa. Make sure science gets done, do some yourself, and get your prospectors and scientists on away missions to find things to benefit NT. Don't put NT's position on board in jeopardy.  Advise the Captain on science matters."
 
 /datum/job/cmo
 	title = "Chief Medical Officer"
@@ -176,7 +172,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	req_admin_notify = 1
-	economic_modifier = 10
+	economic_power = 10
 	minimal_player_age = 21
 	ideal_character_age = 48
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/cmo
@@ -195,10 +191,12 @@
 	skill_points = 36
 
 	access = list(access_medical, access_morgue, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_teleporter, access_eva, access_heads,
+			            access_teleporter, access_eva, access_bridge, access_heads,
+			            access_sec_doors,
 			            access_chapel_office, access_crematorium, access_chemistry, access_virology,
 			            access_cmo, access_surgery, access_RC_announce, access_keycard_auth, access_psychiatrist,
 			            access_medical_equip, access_senmed, access_hangar)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -218,7 +216,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	req_admin_notify = 1
-	economic_modifier = 9
+	economic_power = 10
 	ideal_character_age = 40
 	minimal_player_age = 21
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/chief_engineer
@@ -239,15 +237,13 @@
 	skill_points = 30
 
 	access = list(access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_ai_upload, access_teleporter, access_eva, access_heads,
-			            access_tech_storage, access_robotics, access_atmospherics, access_janitor, access_construction,
-			            access_network, access_ce, access_RC_announce, access_keycard_auth, access_tcomsat,
-			            access_seneng, access_hangar, access_robotics)
-	minimal_access = list(access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_ai_upload, access_teleporter, access_eva, access_heads,
+			            access_ai_upload, access_teleporter, access_eva, access_bridge, access_heads,
 			            access_tech_storage, access_atmospherics, access_janitor, access_construction,
+			            access_sec_doors, access_medical,
 			            access_network, access_ce, access_RC_announce, access_keycard_auth, access_tcomsat,
-			            access_seneng, access_hangar, access_robotics)
+			            access_robotics_engineering, access_seneng, access_hangar, access_robotics)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/ntnetmonitor,
@@ -261,7 +257,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/chief_engineer/get_description_blurb()
-	return "You are the Chief Engineer. You manage the Engineering Department. You are responsible for the Senior engineer, who is your right hand and (should be) an experienced, skilled engineer. Delegate to and listen to them. Manage your engineers, ensure vessel power stays on, breaches are patched and problems are fixed. Advise the CO on engineering matters. You are also responsible for the maintenance and control of any vessel synthetics. You are an experienced engineer with a wealth of theoretical knowledge. You should also know vessel regulations to a reasonable degree."
+	return "You are the Chief Engineer. You manage the Engineering Department. You are responsible for the Senior engineer, who is your right hand and (should be) an experienced, skilled engineer. Delegate to and listen to them. Manage your engineers, ensure vessel power stays on, breaches are patched and problems are fixed. Advise the Captain on engineering matters. You are also responsible for the maintenance and control of any vessel synthetics. You are an experienced engineer with a wealth of theoretical knowledge. You should also know vessel regulations to a reasonable degree."
 
 /datum/job/hos
 	title = "Head of Security"
@@ -272,7 +268,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	req_admin_notify = 1
-	economic_modifier = 8
+	economic_power = 10
 	minimal_player_age = 21
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/hos
@@ -280,7 +276,7 @@
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_ADEPT,
 	                    SKILL_WEAPONS     = SKILL_ADEPT,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
 
@@ -289,11 +285,11 @@
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 28
 
-	access = list(		access_security, access_brig, access_armory, access_forensics_lockers,
+	access = list(	access_security, access_medical, access_brig, access_armory, access_forensics_lockers,
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_teleporter, access_eva, access_heads, access_hangar,
+			            access_teleporter, access_eva, access_bridge, access_heads,
 			            access_hos, access_RC_announce, access_keycard_auth, access_sec_doors,
-			            access_gun)
+			            access_hangar, access_gun)
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -302,7 +298,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/hos/get_description_blurb()
-	return "You are the Head of Security. You manage ship security. The Masters at Arms and the Military Police, as well as the Brig Officer and the Forensic Technician. You keep the vessel safe. You handle both internal and external security matters. You are the law. You are subordinate to the CO and the XO. You are expected to know the SCMJ and Sol law and Alert Procedure to a very high degree along with general regulations."
+	return "You are the Head of Security. You manage ship security. The Masters at Arms and the Military Police, as well as the Brig Officer and the Forensic Technician. You keep the vessel safe. You handle both internal and external security matters. You are the law. You are subordinate to the Captain and the HOP. You are expected to know the SCMJ and Sol law and Alert Procedure to a very high degree along with general regulations."
 
 /datum/job/iaa
 	title = "Internal Affairs Agent"
@@ -312,7 +308,7 @@
 	spawn_positions = 1
 	supervisors = "NanoTrasen and Corporate Regulations"
 	selection_color = "#2f2f7f"
-	economic_modifier = 15
+	economic_power = 15
 	minimal_player_age = 10
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/iaa
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -322,15 +318,15 @@
 						SKILL_FINANCE		= SKILL_BASIC)
 	skill_points = 20
 
-	access = list(access_iaa, access_tox, access_tox_storage, access_heads, access_research,
-						access_xenobiology,
-						access_xenoarch,
-						access_hangar, access_petrov, access_petrov_helm)
+	access = list(		access_security, access_sec_doors, access_medical, access_iaa, access_research, access_xenoarch, access_heads, access_bridge,
+						access_hangar, access_petrov)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/reports)
 
 /datum/job/iaa/get_description_blurb()
-	return "You are the Nanotrasen iaa. You are a civilian employee of Nanotrasen assigned to the vessel to promote, protect and ensure the interests of the corporation on board. You are not internal affairs. You assume command of the Research Department in the absence of the RD and the Senior Researcher. You advise the RD on NT matters and try to push NT interests on the CO. Maximise profit. Be the rich corporate lawyer you always wanted to be."
+	return "You are the Nanotrasen iaa. You are a civilian employee of Nanotrasen assigned to the vessel to promote, protect and ensure the interests of the corporation on board. You are not internal affairs. You assume command of the Research Department in the absence of the RD and the Senior Researcher. You advise the RD on NT matters and try to push NT interests on the Captain. Maximise profit. Be the rich corporate lawyer you always wanted to be."
 
 /datum/job/adjutant
 	title = "Adjutant"
@@ -341,7 +337,7 @@
 	supervisors = "the Captain and heads of staff"
 	selection_color = "#2f2f7f"
 	minimal_player_age = 18
-	economic_modifier = 7
+	economic_power = 7
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/adjutant
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -356,8 +352,10 @@
 
 	access = list(	access_security, access_medical, access_engine, access_maint_tunnels, access_emergency_storage,
 					access_heads, access_bridge, access_janitor, access_kitchen, access_cargo, access_RC_announce, access_keycard_auth,
-					access_guppy, access_guppy_helm, access_external_airlocks, access_bridge,
+					access_guppy, access_guppy_helm, access_external_airlocks,
 					access_eva, access_hangar, access_explorer)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/suit_sensors,
@@ -372,24 +370,21 @@
 /datum/job/adjutant/get_description_blurb()
 	return "You are an Adjutant. You do not give orders of your own. You are subordinate to all of command. You handle matters on the bridge and report directly to the Captain and Head of Personnel. You take the sierra's helm. You monitor bridge computer programs and communications and report relevant information to command. Sometimes you can also give support for vessel's departments - you have radio keys in bridge's storage for that purpose."
 
-/datum/job/pathfinder
-	title = "Pathfinder"
+/datum/job/exploration_leader
+	title = "Exploration Leader"
 	department = "Exploration"
 	department_flag = EXP
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Captain and the Sol Central Government"
+	supervisors = "the Captain"
 	selection_color = "#68099e"
 	minimal_player_age = 7
-	economic_modifier = 7
+	economic_power = 7
 	ideal_character_age = 35
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/pathfinder
-	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
-	allowed_ranks = list(
-		/datum/mil_rank/ec/o3,
-		/datum/mil_rank/ec/o1
-		)
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/el
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_ADEPT,
 	                    SKILL_SCIENCE     = SKILL_ADEPT,
@@ -401,13 +396,15 @@
 	                    SKILL_WEAPONS     = SKILL_EXPERT)
 	skill_points = 22
 
-	access = list(access_pathfinder, access_explorer, access_eva, access_maint_tunnels, access_heads, access_emergency_storage, access_tech_storage, access_guppy_helm, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy, access_hangar, access_cent_creed)
+	access = list(access_el, access_explorer, access_eva, access_maint_tunnels, access_bridge, access_heads, access_emergency_storage, access_tech_storage, access_guppy_helm, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy, access_hangar)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
 
-/datum/job/pathfinder/get_description_blurb()
-	return "You are the Pathfinder. Your duty is to organize and lead the expeditions to away sites. You command Explorers. You make sure that expedition has the supplies and personnel it needs. You can pilot Charon if you'll not have your pilot and NT doesn't provide their one. Once on the away mission, your duty is to ensure that anything of scientific interest is brought back to the ship and passed to the relevant research lab."
+/datum/job/exploration_leader/get_description_blurb()
+	return "You are the Exploration Leader. Your duty is to organize and lead the expeditions to away sites. You command Explorers. You make sure that expedition has the supplies and personnel it needs. You can pilot Charon if you'll not have your pilot and NT doesn't provide their one. Once on the away mission, your duty is to ensure that anything of scientific interest is brought back to the ship and passed to the relevant research lab."
 
 /datum/job/explorer
 	title = "Explorer"
@@ -415,15 +412,13 @@
 	department_flag = EXP
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Captain and the Pathfinder"
+	supervisors = "the Captain and the Exploration Leader"
 	selection_color = "#68099e"
 	ideal_character_age = 20
+	economic_power = 3
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/explorer
-	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
-	allowed_ranks = list(
-		/datum/mil_rank/ec/e3,
-		/datum/mil_rank/ec/e5
-		)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_EVA 		= SKILL_BASIC,
 						SKILL_SCIENCE  	= SKILL_BASIC)
 
@@ -433,10 +428,12 @@
 
 	access = list(access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_cent_creed)
 
+	minimal_access = list()
+
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
 /datum/job/explorer/get_description_blurb()
-	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Pathfinder is your team leader. You are to look for anything of economic or scientific interest to the SCG - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
+	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the SCG - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
 
 /datum/job/explorer_pilot
 	title = "Expeditionary Pilot"
@@ -444,32 +441,32 @@
 	department_flag = EXP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Captain and the Pathfinder"
+	supervisors = "the Captain and the Exploration Leader"
 	selection_color = "#68099e"
 	ideal_character_age = 24
+	economic_power = 4
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/pilot
-	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
-	allowed_ranks = list(
-		/datum/mil_rank/ec/e3,
-		/datum/mil_rank/ec/e5
-		)
-	min_skill = list(   SKILL_EVA	= SKILL_BASIC,
-						SKILL_SCIENCE  	= SKILL_BASIC,
-						SKILL_PILOT = SKILL_ADEPT)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	min_skill = list(   SKILL_EVA			= SKILL_BASIC,
+						SKILL_SCIENCE		= SKILL_BASIC,
+						SKILL_PILOT			= SKILL_ADEPT)
 
-	max_skill = list(	SKILL_SCIENCE     = SKILL_MAX,
-						SKILL_PILOT		  = SKILL_MAX,
-	                    SKILL_COMBAT      = SKILL_EXPERT,
-	                    SKILL_WEAPONS     = SKILL_EXPERT)
+	max_skill = list(	SKILL_SCIENCE		= SKILL_MAX,
+						SKILL_PILOT			= SKILL_MAX,
+	                    SKILL_COMBAT		= SKILL_EXPERT,
+	                    SKILL_WEAPONS 		= SKILL_EXPERT)
 
 
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm,
 					access_expedition_shuttle, access_guppy, access_hangar, access_expedition_shuttle_helm)
 
+	minimal_access = list()
+
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
 /datum/job/explorer_pilot/get_description_blurb()
-	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Pathfinder is your team leader. You are to look for anything of economic or scientific interest to the SCG - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
+	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the SCG - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
 
 /datum/job/explorer_medic
 	title = "Field Medic"
@@ -477,15 +474,17 @@
 	department_flag = EXP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Captain and the Pathfinder"
+	supervisors = "the Captain and the Exploration Leader"
 	selection_color = "#68099e"
 	ideal_character_age = 34
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/medic
-	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
-	allowed_ranks = list(
-		/datum/mil_rank/ec/e3,
-		/datum/mil_rank/ec/e5
-		)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
+	skill_points = 26
+	economic_power = 4
+
+
 	min_skill = list(	SKILL_EVA	= SKILL_BASIC,
 						SKILL_MEDICAL = SKILL_BASIC,
 						SKILL_HAULING = SKILL_BASIC,
@@ -503,11 +502,12 @@
 					access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar,
 					access_medical)
 
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
 /datum/job/explorer_medic/get_description_blurb()
-	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Pathfinder is your team leader. You are to look for anything of economic or scientific interest to the SCG - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
+	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the SCG - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
 
 /datum/job/explorer_engineer
 	title = "Field Engineer"
@@ -515,15 +515,17 @@
 	department_flag = EXP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Captain and the Pathfinder"
+	supervisors = "the Captain and the Exploration Leader"
 	selection_color = "#68099e"
 	ideal_character_age = 28
+	economic_power = 4
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/engineer
-	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
-	allowed_ranks = list(
-		/datum/mil_rank/ec/e3,
-		/datum/mil_rank/ec/e5
-		)
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
+	skill_points = 20
+
+
 	min_skill = list(	SKILL_EVA			= SKILL_BASIC,
 						SKILL_CONSTRUCTION	= SKILL_BASIC,
 						SKILL_ELECTRICAL	= SKILL_BASIC,
@@ -542,12 +544,12 @@
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
 	 				access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_engine)
 
-
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 
 /datum/job/explorer_engineer/get_description_blurb()
-	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Pathfinder is your team leader. You are to look for anything of economic or scientific interest to the SCG - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
+	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the SCG - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
 
 
 /datum/job/senior_engineer
@@ -558,7 +560,7 @@
 	spawn_positions = 1
 	supervisors = "the Chief Engineer"
 	selection_color = "#5b4d20"
-	economic_modifier = 6
+	economic_power = 7
 	minimal_player_age = 14
 	ideal_character_age = 40
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/senior_engineer
@@ -582,6 +584,8 @@
 			        access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor, access_construction,
 			        access_tcomsat, access_seneng, access_hangar)
 
+	minimal_access = list()
+
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,
 							 /datum/computer_file/program/alarm_monitor,
@@ -598,8 +602,8 @@
 	department = "Engineering"
 	department_flag = ENG
 
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 4
+	spawn_positions = 4
 	supervisors = "the Chief Engineer"
 	minimal_player_age = 7
 	selection_color = "#5b4d20"
@@ -610,15 +614,16 @@
 		"Information Systems Technician" = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/tcomms,
 		"Reactor Technician" = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/maints,,
 		"Atmospheric Technician" = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/atmos)
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	economic_power = 6
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_EVA          = SKILL_BASIC,
+	                    SKILL_EVA          = SKILL_ADEPT,
 	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
-	                    SKILL_ELECTRICAL   = SKILL_BASIC,
-	                    SKILL_ATMOS        = SKILL_BASIC,
-	                    SKILL_ENGINES      = SKILL_BASIC)
+	                    SKILL_ELECTRICAL   = SKILL_ADEPT,
+	                    SKILL_ATMOS        = SKILL_ADEPT,
+	                    SKILL_ENGINES      = SKILL_ADEPT)
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
@@ -627,9 +632,11 @@
 	                    SKILL_ENGINES      = SKILL_MAX)
 	skill_points = 20
 
-	access = list(	access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			       	access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor, access_construction,
-			        access_hangar)
+	access = list(	access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks,
+			       	access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor,
+			        access_construction, access_hangar, access_emergency_storage)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,
@@ -652,29 +659,31 @@
 	supervisors = "the Chief Engineer and Engineering Personnel"
 	selection_color = "#5b4d20"
 	ideal_character_age = 20
+	economic_power = 3
 
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/maints
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	skill_points = 4
+	skill_points = 16
 	no_skill_buffs = TRUE
 
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_HAULING      = SKILL_ADEPT,
-	                    SKILL_EVA          = SKILL_ADEPT,
-	                    SKILL_CONSTRUCTION = SKILL_ADEPT,
-	                    SKILL_ELECTRICAL   = SKILL_ADEPT,
-	                    SKILL_ATMOS        = SKILL_ADEPT,
-	                    SKILL_ENGINES      = SKILL_ADEPT)
+	                    SKILL_EVA          = SKILL_BASIC,
+	                    SKILL_CONSTRUCTION = SKILL_BASIC,
+	                    SKILL_ELECTRICAL   = SKILL_BASIC,
+	                    SKILL_ATMOS        = SKILL_BASIC,
+	                    SKILL_ENGINES      = SKILL_BASIC)
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
 	                    SKILL_ATMOS        = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX)
 
-	access = list(access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
+	access = list(		access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_eva, access_tech_storage, access_janitor, access_construction,
 			            access_hangar)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/power_monitor,
 							 /datum/computer_file/program/supermatter_monitor,
@@ -687,39 +696,6 @@
 /datum/job/engineer_trainee/get_description_blurb()
 	return "You are an Engineer Trainee. You are learning how to operate the various onboard engineering systems from senior engineering staff. You are subordinate to all of the other engineers aboard."
 
-
-/datum/job/roboticist
-	title = "Roboticist"
-	department = "Engineering"
-	department_flag = ENG|MED
-
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "the Research Director and the Chief Medical Officer"
-	selection_color = "#5b4d20"
-	economic_modifier = 6
-	alt_titles = list(
-		"Biomechanical Engineer",
-		"Mechsuit Technician")
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/roboticist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(   SKILL_COMPUTER		= SKILL_ADEPT,
-	                    SKILL_MECH          = SKILL_ADEPT,
-	                    SKILL_DEVICES		= SKILL_ADEPT)
-
-	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
-						SKILL_COMPUTER	   = SKILL_MAX,
-						SKILL_MECH		   = SKILL_MAX,
-	                    SKILL_DEVICES      = SKILL_MAX,
-	                    SKILL_MEDICAL      = SKILL_MAX)
-
-	access = list(access_robotics, access_research, access_tech_storage, access_morgue, access_medical)
-	minimal_access = list()
-
-/datum/job/roboticist/get_description_blurb()
-	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics as well as the repair of all synthetic crew on board. You are also responsible for placing brains into MMI’s and giving them bodies and the production of exosuits(mechs) for various departments. You answer to the Chief Engineer."
-
 /datum/job/warden
 	title = "Warden"
 	department = "Security"
@@ -727,7 +703,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Head of Security"
-	economic_modifier = 5
+	economic_power = 8
 	minimal_player_age = 14
 	ideal_character_age = 35
 	alt_titles = list(
@@ -738,6 +714,7 @@
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
 	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_HAULING	  = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_BASIC,
 	                    SKILL_WEAPONS     = SKILL_ADEPT,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
@@ -745,11 +722,12 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_MAX)
-	skill_points = 20
+	skill_points = 25
 
 	access = list(access_security, access_brig, access_armory, access_forensics_lockers,
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_eva, access_sec_doors, access_gun)
+			            access_eva, access_sec_doors, access_gun, access_hangar)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
@@ -762,7 +740,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Head of Security"
-	economic_modifier = 5
+	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
 	skill_points = 14
@@ -783,34 +761,39 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_MAX)
-	skill_points = 20
+	skill_points = 22
 
 	access = list(access_security, access_brig, access_forensics_lockers,
 			            access_maint_tunnels, access_emergency_storage,
-			            access_sec_doors, access_morgue)
+			            access_sec_doors, access_morgue, access_hangar)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
 /datum/job/officer
-	title = "Security Officer"
+	title = "Security Guard"
 	department = "Security"
 	department_flag = SEC
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "the Head of Security"
-	economic_modifier = 4
+	economic_power = 6
 	minimal_player_age = 10
 	ideal_character_age = 25
 	alt_titles = list(
-		"Junior Officer")
+		"Junior Guard")
+
+	skill_points = 20
+
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/officer
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_BASIC,
 	                    SKILL_WEAPONS     = SKILL_ADEPT,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
 
@@ -819,7 +802,8 @@
 
 	access = list(access_security, access_brig, access_maint_tunnels,
 						access_external_airlocks, access_emergency_storage,
-			            access_eva, access_sec_doors)
+			            access_eva, access_sec_doors, access_hangar)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
@@ -836,7 +820,7 @@
 	spawn_positions = 2
 	supervisors = "the Chief Medical Officer"
 	selection_color = "#013d3b"
-	economic_modifier = 8
+	economic_power = 8
 	alt_titles = list(
 		"Xeno Surgeon" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/xenosurgeon,
 		"Trauma Surgeon" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/traumasurgeon)
@@ -851,11 +835,13 @@
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
 	                    SKILL_ANATOMY     = SKILL_MAX)
-	skill_points = 32
+	skill_points = 26
 
 	access = list(access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
 			            access_crematorium, access_chemistry, access_surgery, access_eva,
 			            access_medical_equip, access_senmed, access_hangar)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
@@ -868,7 +854,7 @@
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the Chief Medical Officer"
-	economic_modifier = 7
+	economic_power = 7
 	ideal_character_age = 40
 	alt_titles = list(
 		"Paramedic" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/paramedic,
@@ -891,7 +877,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
-	skill_points = 26
+	skill_points = 22
 
 /datum/job/doctor_trainee
 	title = "Intern"
@@ -902,7 +888,7 @@
 	spawn_positions = 2
 	supervisors = "the Chief Medical Officer and Medical Personnel"
 	selection_color = "#013d3b"
-	economic_modifier = 3
+	economic_power = 3
 	ideal_character_age = 30
 	alt_titles = list(
 		"Orderly" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/orderly,
@@ -914,12 +900,14 @@
 	                    SKILL_MEDICAL = SKILL_BASIC)
 
 	max_skill = list(   SKILL_MEDICAL	= SKILL_MAX)
-	skill_points = 32
+	skill_points = 18
 
 	access = list(	access_medical, access_morgue, access_surgery,
 					access_medical_equip,
 		            access_maint_tunnels, access_emergency_storage,
 		            access_external_airlocks, access_hangar)
+
+	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
@@ -937,7 +925,7 @@
 	spawn_positions = 1
 	supervisors = "the Chief Medical Officer and Medical Personnel"
 	selection_color = "#013d3b"
-	economic_modifier = 4
+	economic_power = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/chemist
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -947,9 +935,10 @@
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
-	skill_points = 26
+	skill_points = 18
 
 	access = list(access_medical, access_maint_tunnels, access_emergency_storage, access_medical_equip, access_chemistry)
+
 	minimal_access = list()
 
 /datum/job/psychiatrist
@@ -960,7 +949,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	ideal_character_age = 40
-	economic_modifier = 5
+	economic_power = 5
 	supervisors = "the Chief Medical Officer"
 	alt_titles = list(
 		"Psychiatrist" = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/psychiatrist,
@@ -975,6 +964,7 @@
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX)
 
 	access = list(access_medical, access_morgue, access_chapel_office, access_crematorium, access_psychiatrist)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
@@ -987,7 +977,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Head of Personnel"
-	economic_modifier = 5
+	economic_power = 8
 	minimal_player_age = 7
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/quartermaster
@@ -1000,8 +990,9 @@
 
 	skill_points = 20
 
-	access = list(access_maint_tunnels, access_heads, access_emergency_storage, access_tech_storage,  access_cargo, access_guppy_helm,
+	access = list(		access_maint_tunnels, access_emergency_storage, access_tech_storage,  access_cargo, access_guppy_helm,
 						access_cargo_bot, access_qm, access_mailsorting, access_expedition_shuttle, access_guppy, access_hangar)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
@@ -1025,6 +1016,7 @@
 
 	access = list(access_maint_tunnels, access_emergency_storage, access_cargo, access_guppy_helm,
 						access_cargo_bot, access_mining_office, access_mailsorting, access_expedition_shuttle, access_guppy, access_hangar)
+
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/supply,
@@ -1039,7 +1031,7 @@
 	spawn_positions = 4
 	supervisors = "the Quartermaster and Head of Personnel"
 	selection_color = "#515151"
-	economic_modifier = 7
+	economic_power = 7
 	ideal_character_age = 25
 	alt_titles = list(
 		"Drill Technician",
@@ -1051,12 +1043,13 @@
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/prospector
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/prospector
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
 	access = list(access_research, access_mining, access_mining_office, access_mining_station,
 						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_guppy_helm)
+
 	minimal_access = list()
 
 
@@ -1080,6 +1073,8 @@
 
 	access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mining_office, access_mailsorting, access_hangar, access_guppy, access_guppy_helm)
 
+	minimal_access = list()
+
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							 /datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
@@ -1101,6 +1096,7 @@
 	min_skill = list(	SKILL_HAULING = SKILL_BASIC)
 
 	access = list(access_maint_tunnels, access_emergency_storage, access_janitor)
+
 	minimal_access = list()
 
 /datum/job/chef
@@ -1122,6 +1118,7 @@
 						SKILL_CHEMISTRY = SKILL_BASIC)
 
 	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_bar)
+
 	minimal_access = list()
 
 
@@ -1134,7 +1131,9 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/bartender
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
 	access = list(access_hydroponics, access_bar, access_kitchen)
+
 	minimal_access = list()
 	min_skill = list(	SKILL_COOKING   = SKILL_BASIC,
 						SKILL_BOTANY    = SKILL_BASIC,
@@ -1150,7 +1149,7 @@
 	spawn_positions = 1
 	supervisors = "the Research Director"
 	selection_color = "#633d63"
-	economic_modifier = 12
+	economic_power = 12
 	minimal_player_age = 10
 	ideal_character_age = 50
 	alt_titles = list(
@@ -1158,9 +1157,13 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/senior_scientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
 	access = list(access_tox, access_tox_storage, access_research, access_mining, access_mining_office,
-						access_mining_station, access_xenobiology, access_xenoarch,
+						access_mining_station, access_xenobiology, access_xenoarch, access_robotics,
 						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_petrov_helm, access_guppy_helm)
+
+	minimal_access = list()
+
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
 	                    SKILL_FINANCE     = SKILL_BASIC,
@@ -1171,32 +1174,7 @@
 
 	max_skill = list(   SKILL_DEVICES     = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX)
-	skill_points = 20
-
-/datum/job/nt_pilot
-	title = "NanoTrasen Pilot"
-	supervisors = "the Research Director"
-	department = "Science"
-	department_flag = SCI
-
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "the Research Director and NanoTrasen Personnel"
-	selection_color = "#633d63"
-	economic_modifier = 10
-	minimal_player_age = 5
-	ideal_character_age = 40
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/nt_pilot
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	access = list(access_research, access_mining_office,
-						access_mining_station, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy,
-						access_hangar, access_petrov, access_petrov_helm, access_guppy_helm, access_mining)
-	min_skill = list(	SKILL_EVA   = SKILL_BASIC,
-						SKILL_PILOT = SKILL_ADEPT)
-
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
+	skill_points = 30
 
 /datum/job/scientist
 	title = "Scientist"
@@ -1205,7 +1183,7 @@
 	total_positions = 6
 	spawn_positions = 6
 	supervisors = "the Research Director"
-	economic_modifier = 10
+	economic_power = 10
 	ideal_character_age = 45
 	alt_titles = list(
 		"Xenoarcheologist",
@@ -1225,11 +1203,75 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/scientist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
 	access = list(access_tox, access_tox_storage, access_research, access_petrov, access_petrov_helm,
 						access_mining_office, access_mining_station, access_xenobiology, access_guppy_helm,
 						access_xenoarch, access_expedition_shuttle, access_guppy, access_hangar)
+
 	minimal_access = list()
-	skill_points = 20
+	skill_points = 22
+
+
+/datum/job/roboticist
+	title = "Roboticist"
+	department = "Engineering"
+	department_flag = SCI|MED
+
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the Research Director and the Chief Medical Officer"
+	selection_color = "#633d63"
+	economic_power = 6
+	alt_titles = list(
+		"Biomechanical Engineer",
+		"Mechsuit Technician")
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/roboticist
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	min_skill = list(   SKILL_COMPUTER		= SKILL_ADEPT,
+	                    SKILL_MECH          = SKILL_ADEPT,
+	                    SKILL_DEVICES		= SKILL_ADEPT)
+
+	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
+						SKILL_COMPUTER	   = SKILL_MAX,
+						SKILL_MECH		   = SKILL_MAX,
+	                    SKILL_DEVICES      = SKILL_MAX,
+	                    SKILL_MEDICAL      = SKILL_MAX)
+
+	access = list(access_robotics, access_research, access_tech_storage, access_morgue, access_medical)
+
+	minimal_access = list()
+
+/datum/job/roboticist/get_description_blurb()
+	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics as well as the repair of all synthetic crew on board. You are also responsible for placing brains into MMI's and giving them bodies and the production of exosuits(mechs) for various departments. You answer to the Chief Engineer."
+
+/datum/job/nt_pilot
+	title = "NanoTrasen Pilot"
+	supervisors = "the Research Director"
+	department = "Science"
+	department_flag = SCI
+
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Research Director and NanoTrasen Personnel"
+	selection_color = "#633d63"
+	economic_power = 10
+	minimal_player_age = 5
+	ideal_character_age = 40
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/nt_pilot
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	access = list(access_research, access_mining_office,
+						access_mining_station, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy,
+						access_hangar, access_petrov, access_petrov_helm, access_guppy_helm, access_mining)
+
+	minimal_access = list()
+
+	min_skill = list(	SKILL_EVA   = SKILL_BASIC,
+						SKILL_PILOT = SKILL_ADEPT)
+
+	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
+	                    SKILL_SCIENCE     = SKILL_MAX)
 
 /datum/job/scientist_assistant
 	title = "Research Assistant"
@@ -1240,7 +1282,7 @@
 	spawn_positions = 4
 	supervisors = "the Research Director and NanoTrasen Personnel"
 	selection_color = "#633d63"
-	economic_modifier = 3
+	economic_power = 3
 	ideal_character_age = 30
 	alt_titles = list(
 		"Testing Assistant" = /decl/hierarchy/outfit/job/sierra/crew/research/assist/testsubject,
@@ -1259,6 +1301,7 @@
 
 	access = list(access_research, access_mining_office, access_petrov, access_expedition_shuttle, access_guppy, access_hangar)
 
+	minimal_access = list()
 
 /datum/job/assistant
 	title = "Passenger"
@@ -1268,7 +1311,7 @@
 	department_flag = CIV
 	supervisors = "the Head of Personnel"
 	selection_color = "#515151"
-	economic_modifier = 6
+	economic_power = 6
 	announced = FALSE
 	alt_titles = list(
 		"Journalist" = /decl/hierarchy/outfit/job/sierra/passenger/passenger/journalist,
@@ -1293,10 +1336,6 @@
 	spawn_positions = 3
 	supervisors = "your laws"
 
-/datum/job/ai
-	total_positions = 0
-	spawn_positions = 0
-
 /datum/job/merchant
 	title = "Merchant"
 	department = "Civilian"
@@ -1313,7 +1352,10 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	latejoin_at_spawnpoints = 1
+
 	access = list(access_merchant)
+	minimal_access = list()
+
 	announced = FALSE
 	min_skill = list(	SKILL_FINANCE = SKILL_ADEPT,
 						SKILL_PILOT	  = SKILL_BASIC)
@@ -1337,3 +1379,6 @@
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	latejoin_at_spawnpoints = 1
 	announced = FALSE
+
+	access = list(access_maint_tunnels, access_emergency_storage)
+	minimal_access = list()

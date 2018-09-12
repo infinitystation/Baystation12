@@ -82,7 +82,7 @@
 	name = "Lar Maria hostile mob"
 	desc = "You shouldn't see me!"
 	icon = 'maps/away/lar_maria/lar_maria_sprites.dmi'
-	unsuitable_atoms_damage = 15
+	unsuitable_atmos_damage = 15
 	environment_smash = 1
 	faction = "lar_maria"
 	status_flags = CANPUSH
@@ -295,7 +295,7 @@
 	name = "paper note"
 	info = {"<center><b><font color='green'>Zeng-Hu Pharmaceuticals</font></b></center>
 			<center><font color='red'><small>CONFIDENTIAL USE ONLY</small></font></center>
-			<i>Can we get some more diversity in test subjects? I know we're mostly working off SCG undesirables, but martians and frontier colonists aren't exactly the most varied bunch. We could majorly benefit from having some tajaran or Skrell test subjects, for example. Oooh, or one of those GAS things Xynergy's got a monopoly on.</i>
+			<i>Can we get some more diversity in test subjects? I know we're mostly working off SCG undesirables, but martians and frontier colonists aren't exactly the most varied bunch. We could majorly benefit from having some Skrell test subjects, for example. Oooh, or one of those GAS things Xynergy's got a monopoly on.</i>
 			"}
 
 /obj/item/weapon/paper/lar_maria/note_8

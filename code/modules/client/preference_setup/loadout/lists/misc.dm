@@ -99,11 +99,6 @@
 	plushes["farwa plush"] = /obj/item/toy/plushie/farwa
 	gear_tweaks += new /datum/gear_tweak/path(plushes)
 
-/datum/gear/workvisa
-	display_name = "work visa"
-	description = "A work visa issued by the Sol Central Government for the purpose of work."
-	path = /obj/item/weapon/paper/workvisa
-
 /datum/gear/mirror
 	display_name = "handheld mirror"
 	sort_category = "Cosmetics"
@@ -184,6 +179,11 @@
 /datum/gear/ecig/deluxe
 	display_name = "electronic cigarette, deluxe"
 	path = /obj/item/clothing/mask/smokable/ecig/deluxe
+	cost = 2
+
+/datum/gear/bible
+	display_name = "bible"
+	path = /obj/item/weapon/storage/bible
 	cost = 2
 
 /datum/gear/mind_healer

@@ -6,7 +6,7 @@
 /turf/simulated/floor/asteroid,
 /area/mine/explored)
 "ac" = (
-/turf/unsimulated/mask,
+/turf/simulated/mineral,
 /area/mine/unexplored)
 "ad" = (
 /obj/effect/overmap/sector/smugglers,
@@ -54,7 +54,7 @@
 /turf/simulated/floor,
 /area/smugglers/base)
 "ah" = (
-/turf/unsimulated/mask,
+/turf/simulated/mineral,
 /area/mine/explored)
 "ai" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
@@ -953,7 +953,7 @@
 /turf/simulated/floor/tiled,
 /area/smugglers/dorms)
 "ci" = (
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	dir = 4;
 	icon_state = "shower";
 	pixel_x = 0
@@ -965,7 +965,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	pixel_y = 15
 	},
 /obj/item/weapon/storage/mirror{
@@ -1131,7 +1131,7 @@
 /turf/simulated/floor,
 /area/smugglers/dorms)
 "cD" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	dir = 8
 	},
 /obj/random/trash,
@@ -1202,10 +1202,6 @@
 /turf/space,
 /area/space)
 "cQ" = (
-/obj/effect/landmark/random_gen/asteroid{
-	generation_height = 50;
-	generation_width = 50
-	},
 /turf/space,
 /area/space)
 

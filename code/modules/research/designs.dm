@@ -970,6 +970,14 @@ other types of metals and chemistry for reagents).
 	build_path = /obj/item/clamp
 	sort_string = "VAGAE"
 
+/datum/design/item/tool/inducer
+	name = "inducer"
+	desc = "An electromagnetic inducer that can transfer power from one cell into another."
+	id = "inducer"
+	req_tech = list(TECH_POWER = 6, TECH_ENGINEERING = 4)
+	materials = list(DEFAULT_WALL_MATERIAL = 2000, "glass" = 100)
+	build_path = /obj/item/inducer
+
 /datum/design/item/tool/price_scanner
 	name = "price scanner"
 	desc = "Using an up-to-date database of various costs and prices, this device estimates the market price of an item up to 0.001% accuracy."
@@ -1567,45 +1575,32 @@ other types of metals and chemistry for reagents).
 	build_path = /obj/item/rig_module/cooling_unit
 	sort_string = "WCLAB"
 
+/datum/design/item/integrated_printer
+	name = "Integrated Circuit Printer"
+	desc = "This machine provides all the necessary things for circuitry."
+	id = "icprinter"
+	req_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 1)
+	materials = list(DEFAULT_WALL_MATERIAL = 10000, "glass" = 5000)
+	build_path = /obj/item/device/integrated_circuit_printer
+	sort_string = "WCLAC"
 
-/datum/design/prefab
-	name = "Device"
-	desc = "A blueprint made from a design built here."
-	materials = list(DEFAULT_WALL_MATERIAL = 200)
-	id = "prefab"
-	build_type = PROTOLATHE
-	sort_string = "ZAAAA"
-	var/decl/prefab/ic_assembly/fabrication
-	var/global/count = 0
+/datum/design/item/integrated_printer_upgrade_advanced
+	name = "Integrated Circuit Printer Upgrade Disk"
+	desc = "This disk allows for integrated circuit printers to print advanced circuitry designs."
+	id = "icupgradv"
+	req_tech = list(TECH_MATERIAL = 3, TECH_ENGINEERING = 3)
+	materials = list(DEFAULT_WALL_MATERIAL = 10000, "glass" = 10000)
+	build_path = /obj/item/disk/integrated_circuit/upgrade/advanced
+	sort_string = "WCLAD"
 
-/datum/design/prefab/New(var/research, var/fab)
-	if(fab)
-		fabrication = fab
-		materials = list(DEFAULT_WALL_MATERIAL = fabrication.metal_amount)
-		build_path = /obj/item/device/electronic_assembly //put this here so that the default made one doesn't show up in protolathe list
-		id = "prefab[++count]"
-	sort_string = "Z"
-	var/cur_count = count
-	while(cur_count > 25)
-		sort_string += ascii2text(cur_count%25+65)
-		cur_count = (cur_count - cur_count%25)/25
-	sort_string += ascii2text(cur_count + 65)
-	while(length(sort_string) < 5)
-		sort_string += "A"
-	..()
-
-/datum/design/prefab/AssembleDesignName()
-	..()
-	if(fabrication)
-		name = "Device ([fabrication.assembly_name])"
-
-/datum/design/prefab/Fabricate(var/newloc)
-	if(!fabrication)
-		return
-	var/obj/O = fabrication.create(newloc)
-	for(var/obj/item/integrated_circuit/circ in O.contents)
-		circ.removable = 0
-	return O
+/datum/design/item/integrated_printer_upgrade_clone
+	name = "Integrated Circuit Printer Clone Disk"
+	desc = "This disk allows for integrated circuit printers to copy and clone designs instantaneously."
+	id = "icupclo"
+	req_tech = list(TECH_DATA = 3, TECH_MATERIAL = 5)
+	materials = list(DEFAULT_WALL_MATERIAL = 10000, "glass" = 10000)
+	build_path = /obj/item/disk/integrated_circuit/upgrade/clone
+	sort_string = "WCLAE"
 
 /*
 CIRCUITS BELOW
@@ -1659,6 +1654,41 @@ CIRCUITS BELOW
 	build_path = /obj/item/weapon/circuitboard/operating
 	sort_string = "FACAA"
 
+/datum/design/circuit/optable
+	name = "operating table"
+	id = "optable"
+	req_tech = list(TECH_ENGINEERING = 1, TECH_BIO = 3, TECH_DATA = 3)
+	build_path = /obj/item/weapon/circuitboard/optable
+	sort_string = "FACAB"
+
+/datum/design/circuit/bodyscanner
+	name = "body scanner"
+	id = "bodyscanner"
+	req_tech = list(TECH_ENGINEERING = 2, TECH_BIO = 4, TECH_DATA = 4)
+	build_path = /obj/item/weapon/circuitboard/bodyscanner
+	sort_string = "FACAC"
+
+/datum/design/circuit/body_scanconsole
+	name = "body scanner console"
+	id = "bodyscannerconsole"
+	req_tech = list(TECH_ENGINEERING = 2, TECH_BIO = 4, TECH_DATA = 4)
+	build_path = /obj/item/weapon/circuitboard/body_scanconsole
+	sort_string = "FACAD"
+
+/datum/design/circuit/sleeper
+	name = "sleeper"
+	id = "sleeper"
+	req_tech = list(TECH_ENGINEERING = 3, TECH_BIO = 5, TECH_DATA = 3)
+	build_path = /obj/item/weapon/circuitboard/sleeper
+	sort_string = "FACAE"
+
+/datum/design/circuit/cryo_cell
+	name = "cryo cell"
+	id = "cryo_cell"
+	req_tech = list(TECH_ENGINEERING = 3, TECH_BIO = 5, TECH_DATA = 3)
+	build_path = /obj/item/weapon/circuitboard/cryo_cell
+	sort_string = "FACAF"
+
 /datum/design/circuit/resleever
 	name = "neural lace resleever"
 	id = "resleever"
@@ -1690,7 +1720,7 @@ CIRCUITS BELOW
 /datum/design/circuit/teleconsole
 	name = "teleporter control console"
 	id = "teleconsole"
-	req_tech = list(TECH_DATA = 3, TECH_BLUESPACE = 2)
+	req_tech = list(TECH_DATA = 3, TECH_BLUESPACE = 5)
 	build_path = /obj/item/weapon/circuitboard/teleporter
 	sort_string = "HAAAA"
 
@@ -1936,6 +1966,13 @@ CIRCUITS BELOW
 	build_path = /obj/item/weapon/circuitboard/unary_atmos/cooler
 	sort_string = "JCAAB"
 
+/datum/design/circuit/oxyregenerator
+	name = "oxygen regenerator"
+	id = "oxyregen"
+	req_tech = list(TECH_MAGNET = 2, TECH_ENGINEERING = 2)
+	build_path = /obj/item/weapon/circuitboard/oxyregenerator
+	sort_string = "JCAAC"
+
 /datum/design/circuit/secure_airlock
 	name = "secure airlock electronics"
 	desc =  "Allows for the construction of a tamper-resistant airlock electronics."
@@ -1976,12 +2013,14 @@ CIRCUITS BELOW
 /datum/design/circuit/mecha/ripley_main
 	name = "APLU 'Ripley' central control"
 	id = "ripley_main"
+	req_tech = list(TECH_DATA = 1)
 	build_path = /obj/item/weapon/circuitboard/mecha/ripley/main
 	sort_string = "NAAAA"
 
 /datum/design/circuit/mecha/ripley_peri
 	name = "APLU 'Ripley' peripherals control"
 	id = "ripley_peri"
+	req_tech = list(TECH_DATA = 1)
 	build_path = /obj/item/weapon/circuitboard/mecha/ripley/peripherals
 	sort_string = "NAAAB"
 
@@ -2160,13 +2199,6 @@ CIRCUITS BELOW
 	req_tech = list(TECH_DATA = 4, TECH_BIO = 3)
 	build_path = /obj/item/weapon/circuitboard/aicore
 	sort_string = "XAAAA"
-
-/datum/design/circuit/integrated
-	name = "integrated circuit"
-	id = "integrated"
-	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
-	build_path = /obj/item/weapon/circuitboard/integrated_printer
-	sort_string = "WAAAS"
 
 /datum/design/aimodule
 	build_type = IMPRINTER

@@ -16,7 +16,7 @@
 	start_x = 2
 	start_y = 2
 
-	generic_waypoints = list(
+	initial_generic_waypoints = list(
 		"nav_marksman_1",
 		"nav_marksman_2",
 		"nav_marksman_3",
@@ -24,7 +24,7 @@
 		"nav_marksman_albatross"
 		)
 
-	restricted_waypoints = list(
+	initial_restricted_waypoints = list(
 	"Albatross" = list("nav_marksman_albatross")
 		)
 

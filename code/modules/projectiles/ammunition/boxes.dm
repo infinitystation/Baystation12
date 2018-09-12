@@ -412,12 +412,12 @@
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/n10mm
-	name = "magazine (10mm)"
+	name = "NT41 magazine (5.7x28mm)"
+	icon = 'icons/obj/infinity_ammo.dmi'
 	icon_state = "10mm"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/a10mm
+	ammo_type = /obj/item/ammo_casing/nt28mm
 	matter = list(DEFAULT_WALL_MATERIAL = 1500)
-	caliber = "10mm"
-	max_ammo = 22
+	caliber = "57x28mm"
+	max_ammo = 20
 	multiple_sprites = 1
-

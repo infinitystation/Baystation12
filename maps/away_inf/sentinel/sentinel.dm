@@ -5,7 +5,6 @@
 #include "sentinel_presets.dm"
 #include "sentinel_shuttle.dm"
 #include "sentinel_structures.dm"
-#include "sentinel_targets.dm"
 #include "sentinel_turbolift.dm"
 
 	///////////
@@ -22,7 +21,7 @@
 	start_x = 2
 	start_y = 2
 
-	generic_waypoints = list(
+	initial_generic_waypoints = list(
 		"nav_patrol_1",
 		"nav_patrol_2",
 		"nav_patrol_3",
@@ -30,7 +29,7 @@
 		"nav_hangar_albatross"
 		)
 
-	restricted_waypoints = list(
+	initial_restricted_waypoints = list(
 	"Albatross" = list("nav_hangar_albatross")
 		)
 

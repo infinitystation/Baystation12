@@ -31,6 +31,13 @@
 	desc = "Charon Helm"
 	region = ACCESS_REGION_GENERAL
 
+/var/const/access_iaa = 78
+/datum/access/iaa
+	id = access_iaa
+	desc = "Internal Affairs Agent"
+	region = ACCESS_REGION_COMMAND
+	access_type = ACCESS_TYPE_NONE //Ruler of their own domain, CO and RD cannot enter
+
 /var/const/access_nanotrasen = 81
 /datum/access/nanotrasen
 	id = access_nanotrasen
@@ -42,13 +49,6 @@
 	id = access_robotics_engineering
 	desc = "Biomechanical Engineering"
 	region = ACCESS_REGION_ENGINEERING
-
-/var/const/access_iaa = 78
-/datum/access/iaa
-	id = access_iaa
-	desc = "Internal Affairs Agent"
-	region = ACCESS_REGION_COMMAND
-	access_type = ACCESS_TYPE_NONE //Ruler of their own domain, CO and RD cannot enter
 
 /var/const/access_gun = 87
 /datum/access/gun
@@ -80,23 +80,23 @@
 	desc = "Physician"
 	region = ACCESS_REGION_MEDBAY
 
-/var/const/access_senadv = 92
-/datum/access/senadv
-	id = access_senadv
-	desc = "Senior Enlisted Advisor"
-	region = ACCESS_REGION_COMMAND
-
 /var/const/access_explorer = 93
 /datum/access/explorer
 	id = access_explorer
 	desc = "Explorer"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_pathfinder = 94
-/datum/access/pathfinder
-	id = access_pathfinder
-	desc = "Pathfinder"
+/var/const/access_el = 94
+/datum/access/el
+	id = access_el
+	desc = "Exploration Leader"
 	region = ACCESS_REGION_RESEARCH
+
+/var/const/access_pilot = 95
+/datum/access/pilot
+	id = access_pilot
+	desc = "NT Pilot"
+	region = ACCESS_REGION_GENERAL
 
 /var/const/access_commissary = 96
 /datum/access/commissary
@@ -108,9 +108,6 @@
 /************
 * SEV sierra *
 ************/
-
-/datum/access/robotics
-	region = ACCESS_REGION_ENGINEERING
 
 /datum/access/network
 	region = ACCESS_REGION_COMMAND

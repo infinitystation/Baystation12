@@ -99,10 +99,11 @@
 
 	New()
 		..()
-		new /obj/item/weapon/book/manual/medical_cloning(src)
 		new /obj/item/weapon/book/manual/medical_diagnostics_manual(src)
 		new /obj/item/weapon/book/manual/medical_diagnostics_manual(src)
 		new /obj/item/weapon/book/manual/medical_diagnostics_manual(src)
+		new /obj/item/weapon/book/manual/materials_chemistry_analysis(src)
+		new /obj/item/weapon/book/manual/stasis(src)
 		update_icon()
 
 
@@ -118,6 +119,9 @@
 		new /obj/item/weapon/book/manual/atmospipes(src)
 		new /obj/item/weapon/book/manual/engineering_singularity_safety(src)
 		new /obj/item/weapon/book/manual/evaguide(src)
+		new /obj/item/weapon/book/manual/gravitygenerator(src)
+		new /obj/item/weapon/book/manual/supermatter_engine(src)
+		new /obj/item/weapon/book/manual/rust_engine(src)
 		update_icon()
 
 /obj/structure/bookcase/manuals/research_and_development
@@ -125,9 +129,16 @@
 
 	New()
 		..()
+		new /obj/item/weapon/book/manual/anomaly_spectroscopy(src)
+		new /obj/item/weapon/book/manual/anomaly_testing(src)
+		new /obj/item/weapon/book/manual/hydroponics_pod_people(src)
+		new /obj/item/weapon/book/manual/mass_spectrometry(src)
+		new /obj/item/weapon/book/manual/materials_chemistry_analysis(src)
+		new /obj/item/weapon/book/manual/stasis(src)
 		new /obj/item/weapon/book/manual/research_and_development(src)
+		new /obj/item/weapon/book/manual/ripley_build_and_repair(src)
+		new /obj/item/weapon/book/manual/robotics_cyborgs(src)
 		update_icon()
-
 
 /*
  * Book

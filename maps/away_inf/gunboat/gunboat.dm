@@ -1,7 +1,6 @@
 #include "gunboat_areas.dm"
 #include "gunboat_crew.dm"
 #include "gunboat_define.dm"
-#include "gunboat_targets.dm"
 
 /obj/effect/overmap/ship/gunboat
 	name = "gunboat"
@@ -13,7 +12,7 @@
 	speed_mod = 5 SECONDS
 	start_x = 5
 	start_y = 5
-	generic_waypoints = list(
+	initial_generic_waypoints = list(
 		"nav_gunboat_1",
 		"nav_gunboat_2",
 		"nav_gunboat_3",

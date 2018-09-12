@@ -294,6 +294,8 @@
 	return
 
 /atom/proc/CtrlAltClick(var/mob/user)
+	if(user.client && user.client.eye == user)
+		user.pointed(src)
 	return
 
 /*

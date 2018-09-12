@@ -148,6 +148,9 @@
 /obj/structure/wall_frame/prepainted
 	color = "#545c68"
 
+/obj/structure/wall_frame/wood
+	color = "#824b28"
+
 /obj/structure/wall_frame/hull/Initialize()
 	. = ..()
 	if(prob(40))

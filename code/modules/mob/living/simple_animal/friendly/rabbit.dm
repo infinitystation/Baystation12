@@ -34,7 +34,6 @@
 	max_gas = list("phoron" = 0, "carbon_dioxide" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1500
-	unsuitable_atoms_damage = 0 //This damage is taken when atmos doesn't fit all the requirements above
 
 /mob/living/simple_animal/rabbit/space/brown
 	icon_state = "s_rabbit_brown"

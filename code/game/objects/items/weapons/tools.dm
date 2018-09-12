@@ -90,6 +90,7 @@
 	attack_verb = list("stabbed")
 	lock_picking_level = 5
 	safely = 1
+	sharp = TRUE
 
 /obj/item/weapon/screwdriver/Initialize()
 	switch(pick("red","blue","purple","brown","green","cyan","yellow"))
@@ -250,7 +251,7 @@
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 	center_of_mass = "x=14;y=15"
-	var/welding_resource = "welding fuel"
+	waterproof = FALSE
 
 	//Amount of OUCH when it's thrown
 	force = 3.0
@@ -268,7 +269,7 @@
 	//Welding tool specific stuff
 	var/welding = 0 	//Whether or not the welding tool is off(0), on(1) or currently welding(2)
 	var/status = 1 		//Whether the welder is secured or unsecured (able to attach rods to it to make a flamethrower)
-
+	var/welding_resource = "welding fuel"
 	var/acti_sound = 'sound/items/WelderActivate.ogg'
 	var/deac_sound = 'sound/items/WelderDeactivate.ogg'
 
@@ -377,10 +378,13 @@
 	else
 		..()
 
+/obj/item/weapon/weldingtool/water_act()
+	if(welding && !waterproof)
+		setWelding(0)
 
 /obj/item/weapon/weldingtool/Process()
 	if(welding)
-		if(!remove_fuel(0.05))
+		if((!waterproof && submerged()) || !remove_fuel(0.05))
 			setWelding(0)
 
 /obj/item/weapon/weldingtool/afterattack(obj/O as obj, mob/user as mob, proximity)
@@ -402,7 +406,6 @@
 		if (istype(location, /turf))
 			location.hotspot_expose(700, 50, 1)
 	return
-
 
 /obj/item/weapon/weldingtool/attack_self(mob/user as mob)
 	setWelding(!welding, usr)
@@ -480,6 +483,11 @@
 //so that the welding tool updates accordingly
 /obj/item/weapon/weldingtool/proc/setWelding(var/set_welding, var/mob/M)
 	if(!status)	return
+
+	if(!welding && !waterproof && submerged())
+		if(M)
+			to_chat(M, "<span class='warning'>You cannot light \the [src] underwater.</span>")
+		return
 
 	var/turf/T = get_turf(src)
 	//If we're turning it on

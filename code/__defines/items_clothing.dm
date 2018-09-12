@@ -90,11 +90,9 @@
 #define slot_r_ear_str      "slot_r_ear"
 #define slot_belt_str       "slot_belt"
 #define slot_shoes_str      "slot_shoes"
-#define slot_head_str      	"slot_head"
 #define slot_wear_mask_str 	"slot_wear_mask"
 #define slot_handcuffed_str "slot_handcuffed"
 #define slot_legcuffed_str "slot_legcuffed"
-#define slot_wear_mask_str 	"slot_wear_mask"
 #define slot_wear_id_str  	"slot_wear_id"
 #define slot_gloves_str  	"slot_gloves"
 #define slot_glasses_str  	"slot_glasses"
@@ -189,8 +187,7 @@
 
 // Hair Flags
 #define VERY_SHORT 0x1
-#define HAIR_TRIPPABLE 0x2
-#define HAIR_TIEABLE 0x4
+#define HAIR_TIEABLE 0x2
 
 //flags to determine if an eyepiece is a hud.
 #define HUD_SCIENCE 0x1

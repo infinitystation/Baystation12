@@ -70,3 +70,9 @@
 		jones = TRUE
 	else
 		..()
+/obj/structure/closet/fridge
+	name = "fridge"
+	icon = 'icons/obj/closets_inf.dmi'
+	icon_state = "fridge"
+	icon_closed = "fridge"
+	icon_opened = "fridgeopen"

@@ -11,7 +11,7 @@
 	suit_store = /obj/item/weapon/gun/projectile/automatic/wt550/lethal
 	gloves = /obj/item/clothing/gloves/thick/combat/marine
 	belt = /obj/item/weapon/storage/belt/holster/security/tactical/troops
-	uniform = /obj/item/clothing/under/solgov/utility/marine/urban
+	uniform = /obj/item/clothing/under/solgov/utility/army/urban
 	l_pocket = /obj/item/device/flashlight/maglight
 	shoes = /obj/item/clothing/shoes/combat/marine
 	id_slot = slot_wear_id
@@ -44,7 +44,7 @@
 	..()
 	var/obj/item/clothing/uniform = H.w_uniform
 	if(uniform)
-		var/obj/item/clothing/accessory/solgov/rank/marine/enlisted/e2/rank = new()
+		var/obj/item/clothing/accessory/solgov/rank/army/enlisted/e2/rank = new()
 		if(uniform.can_attach_accessory(rank))
 			uniform.attach_accessory(null, rank)
 		else
@@ -70,7 +70,7 @@
 	..()
 	var/obj/item/clothing/uniform = H.w_uniform
 	if(uniform)
-		var/obj/item/clothing/accessory/solgov/rank/marine/enlisted/e3/rank = new()
+		var/obj/item/clothing/accessory/solgov/rank/army/enlisted/e3/rank = new()
 		if(uniform.can_attach_accessory(rank))
 			uniform.attach_accessory(null, rank)
 		else
@@ -98,7 +98,7 @@
 	..()
 	var/obj/item/clothing/uniform = H.w_uniform
 	if(uniform)
-		var/obj/item/clothing/accessory/solgov/rank/marine/enlisted/e4/rank = new()
+		var/obj/item/clothing/accessory/solgov/rank/army/enlisted/e4/rank = new()
 		if(uniform.can_attach_accessory(rank))
 			uniform.attach_accessory(null, rank)
 		else
@@ -123,7 +123,7 @@
 	..()
 	var/obj/item/clothing/uniform = H.w_uniform
 	if(uniform)
-		var/obj/item/clothing/accessory/solgov/rank/marine/enlisted/e5/rank = new()
+		var/obj/item/clothing/accessory/solgov/rank/army/enlisted/e5/rank = new()
 		if(uniform.can_attach_accessory(rank))
 			uniform.attach_accessory(null, rank)
 		else
@@ -139,7 +139,7 @@
 /obj/structure/closet/gimmick/marine/WillContain()
 	return list(
 		/obj/item/clothing/glasses/sunglasses/sechud,
-		/obj/item/clothing/under/solgov/utility/marine/urban,
+		/obj/item/clothing/under/solgov/utility/army/urban,
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/device/radio/headset/specops,
@@ -147,19 +147,18 @@
 		/obj/item/weapon/combitool)
 
 /decl/hierarchy/outfit/marshal
-	name = "OCIE officer"
+	name = "OCIE tracker"
 	shoes = /obj/item/clothing/shoes/jackboots
 	uniform = /obj/item/clothing/under/rank/security/navyblue
 	suit = /obj/item/clothing/suit/armor/pcarrier/light/sol
 	l_ear = /obj/item/device/radio/headset/headset_sec
 	belt = /obj/item/weapon/storage/belt/holster/security/ocei
-	r_pocket = /obj/item/clothing/accessory/solgov/rank/marine/enlisted/e4
-	r_hand = /obj/item/clothing/accessory/badge/ocieagent
+	r_hand = /obj/item/clothing/accessory/badge/tracker
 	l_hand = /obj/item/weapon/gun/energy/taser
 	id_slot = slot_wear_id
 	id_type = /obj/item/weapon/card/id/security
-	id_desc = "An ID of SCG OCEI officer."
-	id_pda_assignment = "OCEI Officer"
+	id_desc = "An ID of SCG OCEI tracker."
+	id_pda_assignment = "OCEI tracker"
 
 
 /decl/hierarchy/outfit/pmc

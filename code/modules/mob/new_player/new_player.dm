@@ -488,13 +488,6 @@
 
 	new_character.lastarea = get_area(spawn_turf)
 
-	for(var/lang in client.prefs.alternate_languages)
-		var/datum/language/chosen_language = all_languages[lang]
-		if(chosen_language)
-			var/is_species_lang = (chosen_language.name in new_character.species.secondary_langs)
-			if(is_species_lang || ((!(chosen_language.flags & RESTRICTED) || has_admin_rights()) && is_alien_whitelisted(src, chosen_language)))
-				new_character.add_language(lang)
-
 	if(ticker.random_players)
 		new_character.gender = pick(MALE, FEMALE)
 		client.prefs.real_name = random_name(new_character.gender)
@@ -505,7 +498,7 @@
 	sound_to(src, sound(null, repeat = 0, wait = 0, volume = 85, channel = GLOB.lobby_sound_channel))// MAD JAMS cant last forever yo
 
 	if(mind)
-		mind.active = 0					//we wish to transfer the key manually
+		mind.active = 0 //we wish to transfer the key manually
 		mind.original = new_character
 		if(client.prefs.memory)
 			mind.store_memory(client.prefs.memory)
@@ -554,11 +547,8 @@
 	src << browse(null, "window=latechoices") //closes late choices window
 	panel.close()
 
-/mob/new_player/proc/has_admin_rights()
-	return check_rights(R_ADMIN, 0, src)
-
 /mob/new_player/proc/check_species_allowed(datum/species/S, var/show_alert=1)
-	if(!(S.spawn_flags & SPECIES_CAN_JOIN) && !has_admin_rights())
+	if(!S.is_available_for_join() && !has_admin_rights())
 		if(show_alert)
 			to_chat(src, alert("Your current species, [client.prefs.species], is not available for play."))
 		return 0

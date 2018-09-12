@@ -105,4 +105,4 @@
 		return 0
 	. = get_thrust()
 	stored_power = max(0, stored_power - round(use_power_per_thrust * thrust_limit))
-	//TODO: ion trail
+//TODO: ion trail

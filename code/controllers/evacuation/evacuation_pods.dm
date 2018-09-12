@@ -35,11 +35,10 @@
 
 	state = EVAC_IN_TRANSIT
 
-	for(var/obj/machinery/door/blast/regular/evacshield/ES in world)
-		ES.force_open()
+	if (emergency_evacuation) // Abondon Ship
 
-	if (emergency_evacuation)
-		// Abondon Ship
+		for(var/obj/machinery/door/blast/regular/evacshield/ES in world)
+			ES.evacuation()
 		for (var/datum/shuttle/autodock/ferry/escape_pod/pod in escape_pods) // Launch the pods!
 			if (!pod.arming_controller || pod.arming_controller.armed)
 				pod.move_time = (evac_transit_delay/10)
@@ -53,6 +52,7 @@
 
 /datum/evacuation_controller/starship/finish_evacuation()
 	..()
+
 	if(!emergency_evacuation) //bluespace jump
 		SetUniversalState(/datum/universal_state) //clear jump state
 

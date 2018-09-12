@@ -8,11 +8,11 @@
 	default_delay = 35 SECONDS
 	speed_mod = 8 SECONDS
 /*
-	restricted_waypoints = list(
+	initial_restricted_waypoints = list(
 		"Aquila" = list("nav_merchant_aquila")
 	)
 
-	generic_waypoints = list(
+	initial_generic_waypoints = list(
 		"nav_merchant_1",
 		"nav_merchant_2",
 		"nav_merchant_3",

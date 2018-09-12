@@ -67,7 +67,7 @@
 		isbroken = 0
 		set_density(1)
 		icon_state = "pylon"
-		set_light(5)
+		set_light(light_max_bright, light_inner_range, light_outer_range, light_color)
 
 /obj/structure/cult/tome
 	name = "Desk"
@@ -107,8 +107,10 @@
 	)
 
 /obj/effect/gateway/active/cult
-	light_outer_range=5
-	light_color="#ff0000"
+	light_max_bright	= 0.5
+	light_inner_range	= 2
+	light_outer_range	= 5
+	light_color			= "#ff0000"
 	spawnable=list(
 		/mob/living/simple_animal/hostile/scarybat/cult,
 		/mob/living/simple_animal/hostile/creature/cult,

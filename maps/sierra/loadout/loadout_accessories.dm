@@ -1,15 +1,9 @@
-/datum/gear/tactical/ubac
-	display_name = "ubac selection"
-	path = /obj/item/clothing/accessory/ubac
-	allowed_roles = list(SOLGOV_ROLES, SECURITY_ROLES) //camo + tactical
-	flags = GEAR_HAS_TYPE_SELECTION
-
 /datum/gear/accessory/solawardmajor
 	display_name = "SolGov major award selection"
 	description = "A medal or ribbon awarded to SolGov personnel for significant accomplishments."
 	path = /obj/item/clothing/accessory
 	cost = 8
-	allowed_roles = SOLGOV_ROLES
+	allowed_roles = /datum/job/assistant
 
 /datum/gear/accessory/solawardmajor/New()
 	..()
@@ -29,7 +23,7 @@
 	description = "A medal or ribbon awarded to SolGov personnel for minor accomplishments."
 	path = /obj/item/clothing/accessory
 	cost = 5
-	allowed_roles = SOLGOV_ROLES
+	allowed_roles = /datum/job/assistant
 
 /datum/gear/accessory/solawardminor/New()
 	..()
@@ -47,12 +41,7 @@
 /datum/gear/accessory/pilot_pin
 	display_name = "pilot's qualification pin"
 	path = /obj/item/clothing/accessory/solgov/speciality/pilot
-	allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/adjutant, /datum/job/pathfinder)
-
-/datum/gear/accessory/armband_solgov
-	display_name = "peacekeeper armband"
-	path = /obj/item/clothing/accessory/armband/bluegold
-	allowed_roles = SOLGOV_ROLES
+	allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/adjutant, /datum/job/exploration_leader)
 
 /datum/gear/accessory/armband_security
 	allowed_roles = SECURITY_ROLES
@@ -73,7 +62,6 @@
 	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/assistant)
 
 /datum/gear/accessory/armband_nt
-	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/accessory/ntaward
 	allowed_roles = NANOTRASEN_ROLES
@@ -108,33 +96,13 @@
 /datum/gear/storage/white_drop_pouches
 	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/explorer_medic, /datum/job/roboticist, /datum/job/merchant)
 
-/datum/gear/tactical/holster
-	allowed_roles = ARMED_ROLES
-
-/datum/gear/tactical/large_pouches
-	allowed_roles = ARMORED_ROLES
-
-/datum/gear/tactical/armor_deco
-	allowed_roles = ARMORED_ROLES
-
-/datum/gear/tactical/press_tag
-	display_name = "Press tag"
-	path = /obj/item/clothing/accessory/armor/tag/press
-	allowed_roles = list(/datum/job/assistant)
-
-/datum/gear/tactical/helm_covers
-	allowed_roles = ARMORED_ROLES
-
 /datum/gear/clothing/hawaii
-	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/clothing/scarf
 
 /datum/gear/clothing/flannel
-	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/clothing/vest
-	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/clothing/suspenders
 
@@ -159,9 +127,6 @@
 /datum/gear/accessory/talisman
 
 /datum/gear/accessory/collar
-
-/datum/gear/music
-	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/head/kittyears
 	allowed_roles = RESTRICTED_ROLES

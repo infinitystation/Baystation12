@@ -46,6 +46,7 @@
 	shuttle_area = /area/shuttle/escape_pod6/station
 	number = 6
 /obj/effect/shuttle_landmark/escape_pod/start/pod6
+	base_turf = /turf/simulated/floor/reinforced/airless
 	number = 6
 /obj/effect/shuttle_landmark/escape_pod/out/pod6
 	number = 6
@@ -57,6 +58,7 @@
 	shuttle_area = /area/shuttle/escape_pod7/station
 	number = 7
 /obj/effect/shuttle_landmark/escape_pod/start/pod7
+	base_turf = /turf/simulated/floor/reinforced/airless
 	number = 7
 /obj/effect/shuttle_landmark/escape_pod/out/pod7
 	number = 7
@@ -68,6 +70,7 @@
 	shuttle_area = /area/shuttle/escape_pod8/station
 	number = 8
 /obj/effect/shuttle_landmark/escape_pod/start/pod8
+	base_turf = /turf/simulated/floor/reinforced/airless
 	number = 8
 /obj/effect/shuttle_landmark/escape_pod/out/pod8
 	number = 8
@@ -79,6 +82,7 @@
 	shuttle_area = /area/shuttle/escape_pod9/station
 	number = 9
 /obj/effect/shuttle_landmark/escape_pod/start/pod9
+	base_turf = /turf/simulated/floor/reinforced/airless
 	number = 9
 /obj/effect/shuttle_landmark/escape_pod/out/pod9
 	number = 9
@@ -216,10 +220,10 @@
 	arrival_message = "Attention, anomalous sensor reading detected entering vessel proximity."
 	departure_message = "Attention, anomalous sensor reading detected leaving vessel proximity."
 
-
 /obj/effect/shuttle_landmark/ninja/start
 	name = "Clan Dojo"
 	landmark_tag = "nav_ninja_start"
+	base_turf = /turf/simulated/floor/plating
 
 /obj/effect/shuttle_landmark/ninja/internim
 	name = "In transit"
@@ -478,6 +482,7 @@
 /obj/effect/shuttle_landmark/ert/start
 	name = "Response Team Base"
 	landmark_tag = "nav_ert_start"
+	base_turf = /turf/unsimulated/floor/rescue_base
 	docking_controller = "rescue_base"
 
 /obj/effect/shuttle_landmark/ert/internim
@@ -488,6 +493,10 @@
 	name = "Docking Port"
 	landmark_tag = "nav_ert_dock"
 	docking_controller = "rescue_shuttle_dock_airlock"
+
+/obj/effect/shuttle_landmark/ert/merchant
+	name = "Local Merchant Station"
+	landmark_tag = "nav_ert_merchant"
 
 /obj/effect/shuttle_landmark/ert/deck1
 	name =  "Southwest of Fourth deck"

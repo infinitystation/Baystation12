@@ -27,7 +27,7 @@
 		/obj/item/clothing/glasses/science,
 		/obj/item/device/radio/headset/heads/rd,
 		/obj/item/weapon/tank/emergency/oxygen/engi,
-		/obj/item/clothing/mask/gas,
+		/obj/item/clothing/mask/gas/alt,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/folder,
@@ -36,7 +36,6 @@
 		/obj/item/device/camera,
 		/obj/item/taperoll/research,
 		/obj/item/clothing/glasses/welding/superior,
-		/obj/item/device/holowarrant,
 		/obj/item/clothing/suit/armor/pcarrier/light,
 		/obj/item/weapon/storage/box/secret_project_disks/science,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/toxins, /obj/item/weapon/storage/backpack/satchel_tox)),
@@ -59,7 +58,7 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
 		/obj/item/device/radio/headset/headset_sci,
-		/obj/item/clothing/mask/gas,
+		/obj/item/clothing/mask/gas/alt,
 		/obj/item/weapon/clipboard,
 		/obj/item/weapon/folder,
 		/obj/item/device/taperecorder,
@@ -105,34 +104,4 @@
 		/obj/item/clothing/glasses/science,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/toxins, /obj/item/weapon/storage/backpack/satchel_tox)),
 		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger/tox, 50)
-	)
-
-/obj/structure/closet/secure_closet/prospector
-	name = "prospector's locker"
-	req_access = list(access_mining)
-	icon_state = "miningsec1"
-	icon_closed = "miningsec"
-	icon_locked = "miningsec1"
-	icon_opened = "miningsecopen"
-	icon_off = "miningsecoff"
-
-/obj/structure/closet/secure_closet/prospector/WillContain()
-	return list(
-		/obj/item/device/radio/headset/headset_sci,
-		/obj/item/clothing/under/rank/miner,
-		/obj/item/clothing/accessory/storage/webbing,
-		/obj/item/clothing/gloves/thick,
-		/obj/item/clothing/shoes/workboots,
-		/obj/item/device/analyzer,
-		/obj/item/weapon/storage/ore,
-		/obj/item/device/radio/headset/headset_mining,
-		/obj/item/device/radio/headset/headset_mining/alt,
-		/obj/item/device/flashlight/lantern,
-		/obj/item/weapon/shovel,
-		/obj/item/weapon/pickaxe,
-		/obj/item/weapon/crowbar,
-		/obj/item/clothing/glasses/material,
-		/obj/item/clothing/glasses/meson,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)

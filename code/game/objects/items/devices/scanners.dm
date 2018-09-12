@@ -516,15 +516,55 @@ proc/get_wound_severity(var/damage_ratio, var/can_heal_overkill = 0)
 	throwforce = 0
 	throw_speed = 3
 	throw_range = 3
-	matter = list(DEFAULT_WALL_MATERIAL = 25, "glass" = 25)
+	matter = list(DEFAULT_WALL_MATERIAL = 75, "glass" = 25)
+	var/mode = 0
+	var/price_up = 0
 
-/obj/item/device/price_scanner/afterattack(atom/movable/target, mob/user as mob, proximity)
-	if(!proximity)
+/obj/item/device/price_scanner/attack()
+	return 0
+
+/obj/item/device/price_scanner/afterattack(atom/A, mob/user as mob, proximity)
+	if(!proximity) return
+	if(A == loc) return
+
+	var/value = get_value(A)
+	if(!value)
+		to_chat(user, "<span class = 'notice'>The [A] is priceless.</span>")
 		return
 
-	var/value = get_value(target)
-	user.visible_message("\The [user] scans \the [target] with \the [src]")
-	user.show_message("Price estimation of \the [target]: [value ? value : "N/A"] Thalers")
+	if(!mode)
+		user.visible_message("\The [user] scans \the [A]\  with \the [src]")
+		user.show_message("Price estimation of \the [A]: [value ? value : "N/A"] Thalers")
+		return
+	if(mode)
+		if(!price_up)
+			to_chat(user, "<span class='notice'>No price modificator set.</span>")
+			return
+		var/final_price = value/100*price_up
+		if(has_extension(A, /datum/extension/labels))
+			var/datum/extension/labels/L = get_extension(A, /datum/extension/labels)
+			if(!L.CanAttachLabel(user, "[final_price]"))
+				return
+		user.visible_message("\The [user] labeled \the [A]\  price with [src]")
+		playsound(src,'sound/effects/FOLEY_Gaffer_Tape_Tear_mono.ogg',100,1)
+		A.attach_label(user, src, "[final_price]")
+
+/obj/item/device/price_scanner/attack_self(mob/user as mob)
+	mode = !mode
+	if(mode)
+		to_chat(user, "<span class = 'notice'>You swtich \the [src]\  to Price Set mode.</span>")
+		var/price_up = input(usr,"Choose [src]'s price modificator") as num|null
+		if(!price_up)
+			to_chat(user, "<span class='notice'>Invalid number.</span>")
+			mode = !mode
+			return
+		if(price_up > 1001)
+			price_up = 1000
+		to_chat(user, "<span class = 'notice'>[src]'s modificator now is [price_up]%.</span>")
+		src.price_up = 100 + price_up
+	else
+		to_chat(user, "<span class = 'notice'>You switch \the [src]\  to Price Check mode.</span>")
+		src.price_up = 0
 
 /obj/item/device/slime_scanner
 	name = "xenolife scanner"

@@ -53,10 +53,10 @@
 
 
 /obj/item/device/spy_monitor
-	name = "\improper PDA"
+	name = "\improper personal AI device"
 	desc = "A portable microcomputer by Thinktronic Systems, LTD. Functionality determined by a preprogrammed ROM cartridge."
 	icon = 'icons/obj/pda.dmi'
-	icon_state = "pda"
+	icon_state = "pai"
 	item_state = "electronic"
 
 	w_class = ITEM_SIZE_SMALL

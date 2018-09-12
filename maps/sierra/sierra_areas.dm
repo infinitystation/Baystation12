@@ -354,6 +354,9 @@
 /area/shuttle/merchant/home
 	name = "\improper Merchant Vessel"
 	icon_state = "shuttlegrn"
+	requires_power = 1
+	dynamic_lighting = 1
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 //Merc
 
@@ -397,20 +400,20 @@
 
 // Elevator areas.
 /area/turbolift/sierra_top
-	name = "lift (bridge)"
-	lift_floor_label = "Bridge"
-	lift_floor_name = "Bridge"
-	lift_announce_str = "Arriving at Command Deck: Bridge. Meeting Room. Command Offices. AI Core. Landing Area. Auxiliary EVA."
+	name = "lift (first deck)"
+	lift_floor_label = "Deck 1"
+	lift_floor_name = "Main Deck"
+	lift_announce_str = "Arriving at Command Deck: Bridge. Meeting Room. Infirmary. AI Core. Landing Area. Auxiliary EVA."
 
 /area/turbolift/sierra_middle
-	name = "lift (upper deck)"
-	lift_floor_label = "Deck 1"
-	lift_floor_name = "Operations Deck"
-	lift_announce_str = "Arriving at Operations Deck: Infirmary. Research Wing. Auxiliary Cryogenic Storage. Emergency Armory. Diplomatic Quarters. Captain's Mess. Pathfinder's Office."
+	name = "lift (second deck)"
+	lift_floor_label = "Deck 2"
+	lift_floor_name = "Living Deck"
+	lift_announce_str = "Arriving at Operations Deck: Research Wing. Auxiliary Cryogenic Storage. Emergency Armory. Diplomatic Quarters. Captain's Mess. Exploration Leader's Office."
 
 /area/turbolift/sierra_ground
-	name = "lift (lower deck)"
-	lift_floor_label = "Deck 4"
+	name = "lift (third deck)"
+	lift_floor_label = "Deck 3"
 	lift_floor_name = "Hangar Deck"
 	lift_announce_str = "Arriving at Hangar Deck: Shuttle Docks. Cargo Storage. Main Hangar. Supply Office. Expedition Preparation. Mineral Processing."
 	base_turf = /turf/simulated/floor
@@ -421,13 +424,8 @@
 	icon_state = "head_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/command/captainmess
-	name = "Captain's Mess"
-	icon_state = "bar"
-	sound_env = MEDIUM_SOFTFLOOR
-
-/area/command/pathfinder
-	name = "\improper Pathfinder's Office"
+/area/command/exploration_leader
+	name = "\improper Exploration Leader's Office"
 	icon_state = "head_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
@@ -452,16 +450,13 @@
 	name = "\improper Command - CMO's Office"
 
 /area/crew_quarters/heads/office/ce
-	name = "\improper Engineering - CE's Office"
+	name = "\improper Command - CE's Office"
 
 /area/crew_quarters/heads/office/hos
 	name = "\improper Command - HoS' Office"
 
 /area/crew_quarters/heads/office/iaa
 	name = "\improper Command - IAA's Office"
-
-/area/crew_quarters/heads/office/sgr
-	name = "\improper Command - SCGR's Office"
 
 // Engineering
 
@@ -677,7 +672,7 @@
 	icon_state = "fitness"
 
 /area/crew_quarters/mess
-	name = "\improper Mess Hall"
+	name = "\improper Canteen"
 	icon_state = "cafeteria"
 
 /area/crew_quarters/galley
@@ -708,6 +703,7 @@
 /area/crew_quarters/sleep/cryo/aux
 	name = "\improper Auxiliary Cryogenic Storage"
 	icon_state = "Sleep"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/crew_quarters/diplomat
 	name = "\improper Diplomatic Quarters"
@@ -731,10 +727,12 @@
 /area/security/sierra/cells
 	name = "Security - Cells"
 	icon_state = "brig"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/security/sierra/permabrig
 	name = "Security - Long Term Chamber"
 	icon_state = "sec_prison"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/security/sierra/hallway
 	name = "Security - Fore Hallway"
@@ -752,10 +750,6 @@
 	name = "Security - Security Sergeant"
 	icon_state = "brig"
 
-/area/security/sierra/marshal
-	name = "Security - Colonial Marshal"
-	icon_state = "brig"
-
 /area/security/sierra/armory
 	name = "Security - Armory"
 	icon_state = "brig"
@@ -766,6 +760,14 @@
 
 /area/security/sierra/safe_room
 	name = "Security - Safe Room"
+	icon_state = "brig"
+
+/area/security/sierra/suits
+	name = "Security - Suits Storage"
+	icon_state = "brig"
+
+/area/security/sierra/breakroom
+	name = "Security - Break Room"
 	icon_state = "brig"
 
 /area/security/sierra/hos
@@ -870,11 +872,6 @@
 	icon_state = "teleporter"
 	sound_env = SMALL_ENCLOSED
 
-/area/maintenance/auxsolarbridge
-	name = "Solar Maintenance - Bridge"
-	icon_state = "SolarcontrolS"
-	sound_env = SMALL_ENCLOSED
-
 /area/thruster
 	icon_state = "thruster"
 
@@ -900,14 +897,18 @@
 	name = "\improper Bridge"
 	icon_state = "bridge"
 
+/area/bridge/canteen
+	name = "\improper Command Canteen"
+	icon_state = "bar"
+
 /area/bridge/meeting_room
 	name = "\improper Heads of Staff Meeting Room"
 	icon_state = "bridge"
 	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
 
-/area/bridge/disciplinary_board_room
-	name = "\improper Disciplinary Board Room"
+/area/bridge/lobby
+	name = "\improper Bridge Lobby"
 	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/heads
@@ -949,13 +950,13 @@
 	name = "\improper Centcom Testing Facility"
 
 // Solars
-/area/maintenance/auxsolarport
-	name = "Solar Maintenance - Port"
+/area/maintenance/solar
+	name = "Solar Maintenance - Aft Port"
 	icon_state = "SolarcontrolP"
 	sound_env = SMALL_ENCLOSED
 
-/area/maintenance/auxsolarstarboard
-	name = "Solar Maintenance - Starboard"
+/area/maintenance/solar/starboard
+	name = "Solar Maintenance - Aft Starboard"
 	icon_state = "SolarcontrolS"
 	sound_env = SMALL_ENCLOSED
 
@@ -967,11 +968,11 @@
 	base_turf = /turf/space
 
 /area/solar/starboard
-	name = "\improper Starboard Solar Array"
-	icon_state = "panelsA"
+	name = "\improper Aft Starboard Solar Array"
+	icon_state = "panelsS"
 
 /area/solar/port
-	name = "\improper Port Solar Array"
+	name = "\improper Aft Port Solar Array"
 	icon_state = "panelsP"
 
 // Maintenance
@@ -1115,6 +1116,7 @@
 /area/engineering/engineering_monitoring
 	name = "\improper Engineering Monitoring Room"
 	icon_state = "engine_monitoring"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/engineering/foyer
 	name = "\improper Engineering Foyer"
@@ -1204,19 +1206,6 @@
 /area/shuttle/administration/centcom
 	name = "\improper Administration Shuttle"
 	icon_state = "shuttlered"
-/*
-/area/shuttle/escape_pod1/centcom
-	icon_state = "shuttle"
-
-/area/shuttle/escape_pod2/centcom
-	icon_state = "shuttle"
-
-/area/shuttle/escape_pod3/centcom
-	icon_state = "shuttle"
-
-/area/shuttle/escape_pod5/centcom
-	icon_state = "shuttle"
-*/
 
 /area/supply/dock
 	name = "Supply Shuttle"

@@ -51,6 +51,9 @@
 		else
 			to_chat(user, "<span class='notice'>There is a thick layer of silicate covering it.</span>")
 
+/obj/structure/window/CanFluidPass(var/coming_from)
+	return (!is_full_window() && coming_from != dir)
+
 /obj/structure/window/proc/take_damage(var/damage = 0,  var/sound_effect = 1)
 	var/initialhealth = health
 
@@ -256,6 +259,9 @@
 			P.set_dir(dir)
 			P.health = health
 			P.state = state
+			P.icon_state = icon_state
+			P.basestate = basestate
+			P.update_icon()
 			qdel(src)
 	else
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -543,6 +549,8 @@
 /obj/structure/window/reinforced/polarized/attackby(obj/item/W as obj, mob/user as mob)
 	if(isMultitool(W))
 		var/t = sanitizeSafe(input(user, "Enter the ID for the window.", src.name, null), MAX_NAME_LEN)
+		if(user.incapacitated() && !user.Adjacent(src))
+			return
 		if (user.get_active_hand() != W)
 			return
 		if (!in_range(src, user) && src.loc != user)
@@ -609,8 +617,21 @@
 
 /obj/machinery/button/windowtint/attackby(obj/item/device/W as obj, mob/user as mob)
 	if(isMultitool(W))
-		to_chat(user, "<span class='notice'>The ID of the button: [id]</span>")
+		var/t = sanitizeSafe(input(user, "Enter the ID for the button.", src.name, id), MAX_NAME_LEN)
+		if(user.incapacitated() && !user.Adjacent(src))
+			return
+		if (user.get_active_hand() != W)
+			return
+		if (!in_range(src, user) && src.loc != user)
+			return
+		t = sanitizeSafe(t, MAX_NAME_LEN)
+		if (t)
+			src.id = t
+			to_chat(user, "<span class='notice'>The new ID of the button is [id]</span>")
 		return
+	if(istype(W, /obj/item/weapon/screwdriver))
+		new /obj/item/frame/light_switch/windowtint(user.loc, 1)
+		qdel(src)
 
 /obj/machinery/button/windowtint/proc/toggle_tint()
 	use_power(5)

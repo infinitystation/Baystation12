@@ -1,4 +1,3 @@
-
 /datum/map/sierra
 
 	holodeck_programs = list(
@@ -39,6 +38,8 @@
 		"theatre"          = new/datum/holodeck_program(/area/holodeck/source_theatre),
 		"meetinghall"      = new/datum/holodeck_program(/area/holodeck/source_meetinghall),
 		"courtroom"        = new/datum/holodeck_program(/area/holodeck/source_courtroom, list('sound/music/traitor.ogg')),
+		"voleyball"        = new/datum/holodeck_program(/area/holodeck/source_volleyball, list('sound/music/THUNDERDOME.ogg')),
+		"cafe"             = new/datum/holodeck_program(/area/holodeck/source_cafe),
 		"wildlifecarp"     = new/datum/holodeck_program(/area/holodeck/source_wildlife, list()),
 		"paradeground"     = new/datum/holodeck_program(/area/holodeck/source_military, list()),
 		"turnoff"          = new/datum/holodeck_program(/area/holodeck/source_plating, list())
@@ -47,19 +48,21 @@
 	holodeck_supported_programs = list(
 
 		"SierraMainPrograms" = list(
-			"Empty Court"       = "emptycourt",
 			"Basketball Court"  = "basketball",
-			"Thunderdome Court" = "thunderdomecourt",
-			"Boxing Ring"       = "boxingcourt",
 			"Beach"             = "beach",
+			"Boxing Ring"       = "boxingcourt",
+			"Cafe"              = "cafe",
+			"Courtroom"         = "courtroom",
 			"Desert"            = "desert",
-			"Parade Ground"            = "paradeground",
-			"Space"             = "space",
+			"Parade Ground"     = "paradeground",
+			"Empty Court"       = "emptycourt",
+			"Meeting Hall"      = "meetinghall",
 			"Picnic Area"       = "picnicarea",
 			"Snow Field"        = "snowfield",
+			"Space"             = "space",
 			"Theatre"           = "theatre",
-			"Meeting Hall"      = "meetinghall",
-			"Courtroom"         = "courtroom"
+			"Thunderdome Court" = "thunderdomecourt",
+			"Voleyball Court"   = "voleyball"
 		)
 
 	)

@@ -39,11 +39,7 @@
 
 	var/datum/backpack_setup/backpack_setup
 
-	// General information
-	var/home_system = ""
-	var/citizenship = ""
-	var/personal_faction = ""
-	var/religion = ""
+	var/list/cultural_info = list()
 
 	//Equipment slots
 	var/obj/item/wear_suit = null
@@ -65,8 +61,6 @@
 
 	var/voice = ""	//Instead of new say code calling GetVoice() over and over and over, we're just going to ask this variable, which gets updated in Life()
 
-	var/special_voice = "" // For changing our voice. Used by a symptom.
-
 	var/last_dam = -1	//Used for determining if we need to process all organs or just some or even none.
 	var/list/bad_external_organs = list()// organs we check until they are good.
 
@@ -76,7 +70,6 @@
 	var/hand_blood_color
 
 	var/list/flavor_texts = list()
-	var/gunshot_residue
 	var/pulling_punches    // Are you trying not to hurt your opponent?
 	var/full_prosthetic    // We are a robutt.
 	var/robolimb_count = 0 // Number of robot limbs.

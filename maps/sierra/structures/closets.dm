@@ -50,7 +50,7 @@
 	return list(/obj/structure/closet,
 				/obj/structure/closet/firecloset,
 				/obj/structure/closet/emcloset,
-				/obj/structure/closet/jcloset_sierra,
+				/obj/structure/closet/jcloset/sierra,
 				/obj/structure/closet/athletic_mixed,
 				/obj/structure/closet/toolcloset,
 				/obj/structure/closet/toolcloset/excavation,

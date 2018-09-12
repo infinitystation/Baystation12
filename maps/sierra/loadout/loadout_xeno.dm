@@ -66,22 +66,9 @@
 /datum/gear/accessory/resomi_mantle
 
 /datum/gear/uniform/resomi/expeditionary
-	display_name = "uniform, Expeditionary Utility (Resomi)"
+	display_name = "uniform, Expeditionary Uniform (Resomi)"
 	path = /obj/item/clothing/under/solgov/utility/expeditionary/resomi
-	allowed_roles = SOLGOV_ROLES
-	cost = 0 //Because it's work uniform
-
-/datum/gear/uniform/resomi/expeditionary/pt
-	display_name = "uniform, Expeditionary PT (Resomi)"
-	path = /obj/item/clothing/under/solgov/pt/expeditionary/resomi
-
-/datum/gear/uniform/resomi/expeditionary/command
-	display_name = "uniform, Expeditionary Command Utility (Resomi)"
-	path = /obj/item/clothing/under/solgov/utility/expeditionary/officer/resomi
-
-/datum/gear/uniform/resomi/expeditionary/mildress
-	display_name = "uniform, Expeditionary Mildress (Resomi)"
-	path = /obj/item/clothing/under/solgov/mildress/expeditionary/resomi
+	allowed_roles = EXPLORATION_ROLES
 
 /datum/gear/suit/resomi
 

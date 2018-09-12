@@ -363,8 +363,8 @@ var/list/solars_list = list()
 		return
 	icon_state = "solar"
 	overlays.Cut()
-	if(cdir > -1)
-		overlays += image('icons/obj/computer.dmi', "solcon-o", FLY_LAYER, angle2dir(cdir))
+//	if(cdir > -1)
+//		overlays += image('icons/obj/computer.dmi', "solcon-o", FLY_LAYER, angle2dir(cdir))
 	return
 
 /obj/machinery/power/solar_control/attack_hand(mob/user)

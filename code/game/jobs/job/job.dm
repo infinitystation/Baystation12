@@ -24,7 +24,7 @@
 	var/create_record = 1                 // Do we announce/make records for people who spawn on this job?
 
 	var/account_allowed = 1               // Does this job type come with a station account?
-	var/economic_modifier = 2             // With how much does this job modify the initial account amount?
+	var/economic_power = 2             // With how much does this job modify the initial account amount?
 
 	var/outfit_type                       // The outfit the employee will be dressed in, if any
 
@@ -76,24 +76,30 @@
 	if(!account_allowed || (H.mind && H.mind.initial_account))
 		return
 
-	var/income = 1
-	if(H.client)
-		switch(H.client.prefs.economic_status)
-			if(CLASS_UPPER)		income = 1.30
-			if(CLASS_UPMID)		income = 1.15
-			if(CLASS_MIDDLE)	income = 1
-			if(CLASS_LOWMID)	income = 0.75
-			if(CLASS_LOWER)		income = 0.50
+	// Calculate our pay and apply all relevant modifiers.
+	var/money_amount = rand(75, 100) * economic_power
 
-	//give them an account in the station database
-	if(!(H.species && (H.species.type in economic_species_modifier)))
-		return //some bizarre species like shadow, slime, or monkey? You don't get an account.
+	// Get an average economic power for our cultures.
+	var/culture_mod =   0
+	var/culture_count = 0
+	for(var/token in H.cultural_info)
+		var/decl/cultural_info/culture = H.get_cultural_value(token)
+		if(culture && !isnull(culture.economic_power))
+			culture_count++
+			culture_mod += culture.economic_power
+	if(culture_count)
+		culture_mod /= culture_count
+	money_amount *= culture_mod
 
-	var/species_modifier = economic_species_modifier[H.species.type]
-
-	var/money_amount = (rand(5,50) + rand(5, 50)) * income * economic_modifier * species_modifier * GLOB.using_map.salary_modifier
+	// Apply other mods.
+	money_amount *= GLOB.using_map.salary_modifier
 	money_amount *= 1 + 2 * H.get_skill_value(SKILL_FINANCE)/(SKILL_MAX - SKILL_MIN)
 	money_amount = round(money_amount)
+
+	if(money_amount <= 0)
+		return // You are too poor for an account.
+
+	//give them an account in the station database
 	var/datum/money_account/M = create_account(H.real_name, money_amount, null)
 	if(H.mind)
 		var/remembered_info = ""

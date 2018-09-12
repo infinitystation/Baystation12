@@ -5,6 +5,13 @@
 	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
 	icon_state = "daft_helmet"
 
+/obj/item/clothing/head/soft/darkred
+	name = "darkred cap"
+	desc = "It's a peaked hat in a tasteless darkred color."
+	icon = 'icons/obj/clothing/infinity/hats.dmi'
+	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
+	icon_state = "darkred_cap"
+
 /obj/item/clothing/head/kitty/tailless
 	name = "tailless kitty ears"
 	desc = "The fur feels.....a little bit realistic."
@@ -14,7 +21,8 @@
 /obj/item/clothing/head/kitty/fake
 	name = "fake kitty ears"
 	desc = "The fur feels.....a bit too realistic."
-	icon_state = "kitty"
+	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
+	item_state = "kitty_tailless"
 	body_parts_covered = 0
 
 	update_icon(var/mob/living/carbon/human/user)
@@ -24,3 +32,14 @@
 
 		var/icon/earbit = new/icon("icon" = 'icons/mob/onmob/head.dmi', "icon_state" = "kittyinner")
 		ears.Blend(earbit, ICON_OVERLAY)
+
+/obj/item/clothing/head/helmet/pcrc/cover
+	starting_accessories = list(/obj/item/clothing/accessory/armor/helmcover/pcrc)
+
+/obj/item/clothing/head/helmet/saare/cover
+	starting_accessories = list(/obj/item/clothing/accessory/armor/helmcover/saare)
+
+/obj/item/clothing/head/helmet/marine
+	name = "\improper combat helmet"
+	desc = "A helmet with 'MARINE CORPS' printed on the back in red lettering."
+	icon_state = "helmet_nt"

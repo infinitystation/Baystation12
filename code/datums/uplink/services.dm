@@ -216,7 +216,6 @@
 			if(I.military_rank)
 				new_record.set_rank(I.military_rank.name)
 	if(random_record)
-		COPY_VALUE(citizenship)
 		COPY_VALUE(faction)
 		COPY_VALUE(religion)
 		COPY_VALUE(homeSystem)
@@ -235,7 +234,7 @@
 		new_record.set_skillset(jointext(skills,"\n"))
 
 	if(istype(job) && job.announced)
-		AnnounceArrivalSimple(new_record.get_name(), new_record.get_job(), get_announcement_frequency(job))
+		AnnounceArrivalSimple(new_record.get_name(), new_record.get_job()/*, get_announcement_frequency(job)*/)
 	. = ..()
 
 #undef COPY_VALUE

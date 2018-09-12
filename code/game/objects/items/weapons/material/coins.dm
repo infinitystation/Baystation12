@@ -50,8 +50,8 @@
 			return FALSE//do not flip the coin
 		coinflip = pick(sideslist)
 		cooldown = world.time + 15
-		flick("coin_[default_material]_flip", src)
-		icon_state = "coin_[default_material]_[coinflip]"
+//		flick("coin_[default_material]_flip", src)
+//		icon_state = "coin_[default_material]_[coinflip]"
 		playsound(user.loc, 'sound/items/coinflip.ogg', 50, 1)
 		var/oldloc = loc
 		sleep(15)

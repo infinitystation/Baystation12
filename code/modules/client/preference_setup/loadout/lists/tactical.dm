@@ -1,6 +1,7 @@
 /datum/gear/tactical/
 	sort_category = "Tactical Equipment"
 	category = /datum/gear/tactical/
+	cost = 0
 	slot = slot_tie
 
 /datum/gear/tactical/armor_deco
