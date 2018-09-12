@@ -202,6 +202,12 @@ var/list/_client_preferences_by_type
 	description ="Play instruments"
 	key = "SOUND_INSTRUMENTS"
 
+/datum/client_preference/anon_say
+	description ="Anonymous Chat"
+	key = "CHAT_ANONSAY"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_NO
+
 /********************
 * General Staff Preferences *
 ********************/
