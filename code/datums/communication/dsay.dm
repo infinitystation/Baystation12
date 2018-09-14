@@ -79,10 +79,11 @@
 	var/mob/observer/ghost/DM
 	if(isghost(C.mob))
 		DM = C.mob
+	var/anonsay_pref = (DM.client.get_preference_value(/datum/client_preference/anon_say) == GLOB.PREF_YES)
 	if(M.client.holder) 							// What admins see
-		lname = "[keyname][(DM && DM.anonsay) ? "*" : (DM ? "" : "^")] ([name])"
+		lname = "[keyname][(DM && anonsay_pref) ? "*" : (DM ? "" : "^")] ([name])"
 	else
-		if(DM && DM.anonsay)						// If the person is actually observer they have the option to be anonymous
+		if(DM && anonsay_pref)						// If the person is actually observer they have the option to be anonymous
 			lname = "Ghost of [name]"
 		else if(DM)									// Non-anons
 			lname = "[keyname] ([name])"
