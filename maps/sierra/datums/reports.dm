@@ -174,8 +174,8 @@
 	add_field(/datum/report_field/pencode_text, "Дополнительные комментарии по отстыковке")
 
 /datum/computer_file/report/recipient/fauna
-	logo = "\[solcrest\]"
-	form_name = "SCG-EXP-19f"
+	logo = "\[logo\]"
+	form_name = "NT-EXP-19f"
 	title = "Доклад об инопланетной фауне"
 	available_on_ntnet = 1
 
