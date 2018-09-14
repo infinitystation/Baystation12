@@ -3,7 +3,6 @@
 	#include "torch_announcements.dm"
 	#include "torch_antagonism.dm"
 	#include "torch_areas.dm"
-	#include "torch_areas_extra.dm"
 	#include "torch_elevator.dm"
 	#include "torch_holodecks.dm"
 	#include "torch_lobby.dm"
@@ -52,8 +51,6 @@
 
 	#include "structures/closets.dm"
 	#include "structures/signs.dm"
-	#include "structures/thrusters.dm"
-
 	#include "structures/closets/command.dm"
 	#include "structures/closets/engineering.dm"
 	#include "structures/closets/medical.dm"
@@ -76,32 +73,33 @@
 	#include "loadout/loadout_xeno.dm"
 	#include "loadout/~defines.dm"
 
-	#include "infinity_map/torch-1.dmm"
-	#include "infinity_map/torch-2.dmm"
-	#include "infinity_map/torch-3.dmm"
-	#include "infinity_map/torch-4.dmm"
-	#include "infinity_map/torch-5.dmm"
-	#include "infinity_map/torch-6.dmm"
-	#include "infinity_map/torch-7.dmm"
+	#include "torch-1.dmm"
+	#include "torch-2.dmm"
+	#include "torch-3.dmm"
+	#include "torch-4.dmm"
+	#include "torch-5.dmm"
+	#include "torch-6.dmm"
+	#include "torch-7.dmm"
 	#include "../away/empty.dmm"
-
 	#include "../away_inf/gunboat/gunboat.dm"
 	#include "../away_inf/sentinel/sentinel.dm"
 	#include "../away_inf/yacht/yacht.dm"
-	#include "../away/bearcat/bearcat.dm"
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
+	#include "../away/bearcat/bearcat.dm"
+	#include "../away/lost_supply_base/lost_supply_base.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"
 	#include "../away/blueriver/blueriver.dm"
+	#include "../away/slavers/slavers_base.dm"
+	#include "../away/mobius_rift/mobius_rift.dm"
 	#include "../away/icarus/icarus.dm"
 	#include "../away/errant_pisces/errant_pisces.dm"
 	#include "../away/lar_maria/lar_maria.dm"
 	#include "../away/unishi/unishi.dm"
 
 	#include "../away_inf/smugglers/smugglers.dm"
-	#include "../away/slavers/slavers_base.dm"
-
+	#include "../../code/datums/music_tracks/chasing_time.dm"
 
 	#define using_map_DATUM /datum/map/torch
 

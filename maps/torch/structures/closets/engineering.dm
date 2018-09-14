@@ -39,7 +39,6 @@
 		/obj/item/weapon/folder/yellow,
 		/obj/item/weapon/storage/box/armband/engine,
 		/obj/item/device/multitool/multimeter,
-		/obj/item/weapon/storage/firstaid/individual/all,
 		/obj/item/weapon/storage/box/secret_project_disks,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
@@ -67,7 +66,6 @@
 		/obj/item/taperoll/engineering,
 		/obj/item/device/flashlight,
 		/obj/item/taperoll/atmos,
-		/obj/item/weapon/storage/firstaid/individual/all,
 		/obj/item/clothing/gloves/insulated,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
@@ -94,7 +92,6 @@
 		/obj/item/clothing/mask/gas,
 		/obj/item/device/flashlight,
 		/obj/item/taperoll/engineering,
-		/obj/item/weapon/storage/firstaid/individual/all,
 		/obj/item/clothing/gloves/insulated,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
@@ -125,7 +122,6 @@
 		/obj/item/device/flash,
 		/obj/item/device/flashlight,
 		/obj/item/device/megaphone,
-		/obj/item/weapon/storage/firstaid/individual/all,
 		/obj/item/clothing/gloves/insulated,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
@@ -153,7 +149,6 @@
 		/obj/item/weapon/tank/emergency/oxygen/double,
 		/obj/item/clothing/mask/gas,
 		/obj/item/taperoll/atmos,
-		/obj/item/weapon/storage/firstaid/individual/all,
 		/obj/item/device/analyzer,
 		/obj/item/weapon/rpd
 	)

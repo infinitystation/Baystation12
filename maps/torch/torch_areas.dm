@@ -498,10 +498,6 @@
 /area/shuttle/merchant/home
 	name = "\improper Merchant Vessel"
 	icon_state = "shuttlegrn"
-	requires_power = 1
-	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 
 //Merc
 
@@ -670,7 +666,6 @@
 /area/vacant
 	name = "\improper Vacant Area"
 	icon_state = "construction"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/vacant/armory
 	name = "\improper Marine Armory"
@@ -699,7 +694,6 @@
 /area/vacant/prototype/control
 	name = "\improper Prototype Fusion Reactor Control Room"
 	icon_state = "engine_monitoring"
-	area_flags = null
 
 /area/vacant/prototype/engine
 	name = "\improper Prototype Fusion Reactor Chamber"
@@ -865,7 +859,7 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/crew_quarters/sleep/bunk
-	name = "\improper Dormitory"
+	name = "\improper Bunk Room"
 	icon_state = "Sleep"
 	sound_env = SMALL_SOFTFLOOR
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
@@ -1188,10 +1182,6 @@
 /area/holodeck/source_wildlife
 	name = "\improper Holodeck - Wildlife Simulation"
 
-/area/holodeck/source_military
-	name = "\improper Holodeck - Military Parade Ground"
-	sound_env = AUDITORIUM
-
 /area/holodeck/source_meetinghall
 	name = "\improper Holodeck - Meeting Hall"
 	sound_env = AUDITORIUM
@@ -1337,17 +1327,11 @@
 	name = "\improper Alien Shuttle Base"
 	requires_power = 1
 
-/area/admin_prison
-	name = "\improper Admin Prison"
-	dynamic_lighting = 0
-	requires_power = 0
-
-
 // Shuttles
 /area/shuttle/administration/centcom
 	name = "\improper Administration Shuttle"
 	icon_state = "shuttlered"
-/*
+
 /area/shuttle/escape_pod1/centcom
 	icon_state = "shuttle"
 
@@ -1359,7 +1343,6 @@
 
 /area/shuttle/escape_pod5/centcom
 	icon_state = "shuttle"
-*/
 
 /area/supply/dock
 	name = "Supply Shuttle"

@@ -42,7 +42,6 @@
 		"voleyball"        = new/datum/holodeck_program(/area/holodeck/source_volleyball, list('sound/music/THUNDERDOME.ogg')),
 		"cafe"             = new/datum/holodeck_program(/area/holodeck/source_cafe),
 		"wildlifecarp"     = new/datum/holodeck_program(/area/holodeck/source_wildlife, list()),
-		"paradeground"     = new/datum/holodeck_program(/area/holodeck/source_military, list()),
 		"turnoff"          = new/datum/holodeck_program(/area/holodeck/source_plating, list())
 	)
 
@@ -55,7 +54,6 @@
 			"Cafe"              = "cafe",
 			"Courtroom"         = "courtroom",
 			"Desert"            = "desert",
-			"Parade Ground"     = "paradeground",
 			"Empty Court"       = "emptycourt",
 			"Meeting Hall"      = "meetinghall",
 			"Picnic Area"       = "picnicarea",

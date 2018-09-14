@@ -6,10 +6,10 @@
 		/area/engineering/auxpower = NO_SCRUBBER|NO_VENT,
 		/area/engineering/drone_fabrication = NO_SCRUBBER|NO_VENT,
 		/area/engineering/engine_smes = NO_SCRUBBER|NO_VENT,
-		/area/engineering/fuelbay = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/engineering/fuelbay = NO_SCRUBBER,
+		/area/hallway/primary/seconddeck/center = NO_SCRUBBER|NO_VENT,
 		/area/holodeck = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/maintenance = NO_SCRUBBER|NO_VENT,
-		/area/maintenance/disposal = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/maintenance/auxsolarbridge = NO_SCRUBBER,
 		/area/maintenance/auxsolarport = NO_SCRUBBER,
 		/area/maintenance/auxsolarstarboard = NO_SCRUBBER,
@@ -18,11 +18,9 @@
 		/area/maintenance/firstdeck/forestarboard = NO_SCRUBBER,
 		/area/maintenance/fourthdeck/aft = 0,
 		/area/maintenance/incinerator = NO_SCRUBBER,
-		/area/maintenance/disposal = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/seconddeck/aftport = NO_SCRUBBER,
 		/area/maintenance/seconddeck/forestarboard = NO_SCRUBBER,
 		/area/maintenance/seconddeck/hallway = NO_SCRUBBER|NO_VENT,
-		/area/hallway/primary/seconddeck/center = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/thirddeck/aftstarboard = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/bluespace = NO_SCRUBBER,
 		/area/janitor = NO_SCRUBBER|NO_VENT,
@@ -35,7 +33,6 @@
 		/area/shuttle = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/shuttle/merchant = NO_SCRUBBER|NO_APC,
 		/area/shuttle/petrov = 0,
-		/area/aquila/engineering = NO_SCRUBBER|NO_VENT,
 		/area/skipjack_station = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/solar = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/space = NO_SCRUBBER|NO_VENT|NO_APC,
@@ -52,7 +49,6 @@
 		/area/turret_protected/ai = NO_SCRUBBER|NO_VENT,
 		/area/turret_protected/ai_outer_chamber = NO_SCRUBBER|NO_VENT,
 		/area/vacant = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/vacant/gambling = 0,
 		/area/vacant/brig = NO_SCRUBBER|NO_VENT,
 		/area/vacant/prototype/control = 0,
 		/area/vacant/prototype/engine = 0,
@@ -73,6 +69,7 @@
 		/area/bluespaceriver/underground = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/bluespaceriver/ground = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/casino/casino_cutter = NO_SCRUBBER|NO_VENT,
+		/area/mobius_rift = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/icarus/vessel = NO_APC,
 		/area/icarus/open = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/map_template/hydrobase = NO_SCRUBBER|NO_VENT|NO_APC,
@@ -99,8 +96,6 @@
 	area_coherency_test_subarea_count = list()
 
 	area_usage_test_exempted_areas = list(
-		/area/prison,
-		/area/alien,
 		/area/AIsattele,
 		/area/djstation,
 		/area/outpost,
@@ -108,15 +103,10 @@
 		/area/overmap,
 		/area/shuttle/escape/centcom,
 		/area/shuttle/escape,
-		/area/centcom/evac,
 		/area/security/prison,
 		/area/shuttle/syndicate_elite/station,
 		/area/shuttle/escape/centcom,
-		/area/shuttle/alien,
-		/area/shuttle/alien/base,
-		/area/prison/solitary,
-		/area/turret_protected/ai_upload_foyer,
-		/area/engineering/gravity_gen,
+		/area/rnd/xenobiology/xenoflora_storage,
 		/area/turbolift,
 		/area/turbolift/start,
 		/area/turbolift/bridge,
@@ -132,6 +122,7 @@
 		/area/casino,
 		/area/constructionsite,
 		/area/derelict,
+		/area/lost_supply_base,
 		/area/magshield,
 		/area/mine,
 		/area/ship,
@@ -139,6 +130,7 @@
 		/area/slavers_base,
 		/area/yacht,
 		/area/bluespaceriver,
+		/area/mobius_rift,
 		/area/icarus,
 		/area/errant_pisces,
 		/area/lar_maria,
@@ -162,3 +154,7 @@ datum/unit_test/zas_area_test/supply_centcomm
 datum/unit_test/zas_area_test/virology
 	name = "ZAS: Virology"
 	area_path = /area/medical/virology
+
+datum/unit_test/zas_area_test/xenobio
+	name = "ZAS: Xenobiology"
+	area_path = /area/rnd/xenobiology
