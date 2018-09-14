@@ -408,7 +408,6 @@
 	name = "\improper SEV Aquila - Head"
 /area/aquila/airlock
 	name = "\improper SEV Aquila - Airlock Compartment"
-/area/aquila/engineering
 
 //Guppy
 
