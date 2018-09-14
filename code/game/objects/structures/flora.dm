@@ -62,7 +62,6 @@
 	..()
 	icon_state = "snowgrassall[rand(1, 3)]"
 
-
 //bushes
 /obj/structure/flora/bush
 	name = "bush"
@@ -198,6 +197,28 @@
 	..()
 	icon_state = "fullgrass_[rand(1, 3)]"
 
+//underwater plants and algae
+
+/obj/structure/flora/ausbushes/algae
+	..()
+	icon_state = "seaweed"
+
+/obj/structure/flora/ausbushes/algae/glowing
+	..()
+	icon_state = "glowweed1"
+
+/obj/structure/flora/ausbushes/algae/glowing/New()
+	..()
+	icon_state = "glowweed[rand(1, 3)]"
+	set_light(1)
+
+/obj/structure/flora/ausbushes/algae/random
+	..()
+	icon_state = "lichen"
+
+/obj/structire/flora/ausbushes/algae/random/New()
+	..()
+	icon_state = pick("lichen", "seaweed", "grassybush_[rand(1, 4)]", "sparsegrass_[rand(1, 3)]", "fullgrass_[rand(1, 3)]")
 
 //potted plants credit: Flashkirby
 //potted plants 27-30: Cajoes

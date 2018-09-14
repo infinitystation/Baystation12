@@ -14,6 +14,10 @@
 	..(newloc, "rglass", "steel")
 	icon_state = "rgeneric"
 
+/turf/simulated/wall/r_wall/crystal/New(var/newloc)
+	..(newloc, "crystal", "crystal")
+	icon_state = "rgeneric"
+
 /turf/simulated/wall/r_wall/hull
 	name = "hull"
 	color = COLOR_HULL
