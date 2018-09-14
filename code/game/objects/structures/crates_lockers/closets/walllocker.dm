@@ -4,12 +4,12 @@
 /obj/structure/closet/walllocker
 	desc = "A wall mounted storage locker."
 	name = "Wall Locker"
-	icon = 'icons/obj/walllocker.dmi'
-	icon_state = "wall-locker"
+	icon = 'icons/obj/closet.dmi'
+	icon_state = "wall_general"
 	density = 0
 	anchored = 1
-	icon_closed = "wall-locker"
-	icon_opened = "wall-lockeropen"
+	icon_closed = "wall_general"
+	icon_opened = "wall_general_open"
 	storage_types = CLOSET_STORAGE_ITEMS
 	setup = 0
 	wall_mounted = 1
@@ -19,6 +19,7 @@
 /obj/structure/closet/walllocker/emerglocker
 	name = "emergency locker"
 	desc = "A wall mounted locker with emergency supplies."
+	icon = 'icons/obj/walllocker.dmi'
 	var/list/spawnitems = list(/obj/item/weapon/tank/emergency/oxygen,/obj/item/clothing/mask/breath)
 	var/amount = 2 // spawns each items X times.
 	icon_state = "emerg"
