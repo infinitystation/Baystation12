@@ -542,11 +542,11 @@
 	var/rigged = 0		// true if rigged to explode
 	var/broken_chance = 2
 
-	var/b_max_bright = 0.9 // Террор настаивает на 0.7, но на время путь будет так ~bear1ake
+	var/b_max_bright = 0.9
 	var/b_inner_range = 1
 	var/b_outer_range = 5
 	var/b_curve = 2
-	var/b_colour = "#fffee0"
+	var/b_colour = LIGHT_COLOR_HALOGEN
 	var/list/lighting_modes = list()
 	var/sound_on
 
@@ -558,9 +558,8 @@
 	item_state = "c_tube"
 	matter = list("glass" = 100)
 
-	b_max_bright = 0.7
-	b_outer_range = 6
-	b_colour = "#ffffff"
+	b_outer_range = 5
+//	b_colour = "#fffee0"
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_outer_range = 4, l_max_bright = 1, l_color = "#da0205"),
 		)
@@ -573,8 +572,7 @@
 /obj/item/weapon/light/tube/large
 	w_class = ITEM_SIZE_SMALL
 	name = "large light tube"
-	b_max_bright = 0.7
-	b_max_bright = 0.95 // Террор настаивает на отсутствии этого значения, но на время путь будет так ~bear1ake
+	b_max_bright = 0.95
 	b_inner_range = 2
 	b_outer_range = 8
 	b_curve = 2.5
@@ -592,11 +590,11 @@
 	broken_chance = 3
 	matter = list("glass" = 100)
 
-	b_max_bright = 0.6 // Террор настаивает на 0.7, но на время путь будет так ~bear1ake
+	b_max_bright = 0.6
 	b_inner_range = 0.1
 	b_outer_range = 4
 	b_curve = 3
-	b_colour = "#fae1af"
+	b_colour = LIGHT_COLOR_TUNGSTEN
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_outer_range = 3, l_max_bright = 1, l_color = "#da0205"),
 		)
