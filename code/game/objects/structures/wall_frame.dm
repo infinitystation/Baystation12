@@ -151,6 +151,9 @@
 /obj/structure/wall_frame/wood
 	color = "#824b28"
 
+/obj/structure/wall_frame/crystal
+	color = "#EEEEEE"
+
 /obj/structure/wall_frame/hull/Initialize()
 	. = ..()
 	if(prob(40))

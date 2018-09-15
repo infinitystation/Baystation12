@@ -111,6 +111,10 @@
 	name = "reinforced voxalloy wall frame window spawner"
 	frame_path = /obj/structure/wall_frame/voxalloy
 
+/obj/effect/wallframe_spawn/reinforced/crystal
+	name = "reinforced crystal wall frame window spawner"
+	frame_path =  /obj/structure/wall_frame/crystal
+
 /obj/effect/wallframe_spawn/reinforced/hull
 	name = "reinforced hull wall frame window spawner"
 	frame_path = /obj/structure/wall_frame/hull

@@ -23,6 +23,7 @@
 
 /material/diamond/crystal
 	name = "crystal"
+	icon_colour = "#EEEEEE"
 	hardness = 80
 	stack_type = null
 	ore_compresses_to = null
