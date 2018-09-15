@@ -1,0 +1,446 @@
+"aa" = (/obj/effect/fluid_mapped,/turf/simulated/floor/bluegrid,/area/adherent_base/underwater)
+"ab" = (/obj/machinery/constructable_frame/machine_frame,/obj/effect/fluid_mapped,/turf/simulated/floor/bluegrid,/area/adherent_base/underwater)
+"ac" = (/obj/effect/fluid_mapped,/turf/simulated/open,/area/adherent_base/underwater)
+"ad" = (/obj/structure/computerframe,/obj/effect/fluid_mapped,/turf/simulated/floor/bluegrid,/area/adherent_base/underwater)
+"ae" = (/turf/simulated/wall/r_wall/crystal,/area/adherent_base/underwater)
+"af" = (/obj/machinery/atmospherics/pipe/cap/hidden/scrubbers{icon_state = "cap"},/obj/machinery/atmospherics/pipe/cap/hidden/supply{icon_state = "cap"},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"ag" = (/obj/structure/adherent_pylon,/obj/effect/fluid_mapped,/turf/simulated/floor/bluegrid,/area/adherent_base/underwater)
+"ah" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/door/airlock/silver{name = "Strange Airlock"},/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"ai" = (/obj/effect/fluid_mapped,/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"aj" = (/obj/machinery/constructable_frame/machine_frame,/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"ak" = (/obj/effect/fluid_mapped,/turf/simulated/ocean,/area/adherent_base/underwater)
+"al" = (/obj/structure/computerframe,/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"am" = (/obj/effect/floor_decal/industrial/hatch/blue,/obj/machinery/shield{shield_generate_power = 0; shield_idle_power = 0},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"an" = (/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"ao" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/hostile/retaliate/aquatic/carp,/turf/simulated/ocean,/area/adherent_base/underwater)
+"ap" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish/judge,/turf/simulated/open,/area/adherent_base/underwater)
+"aq" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish/judge,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"ar" = (/obj/structure/computerframe{icon_state = "0"; dir = 8},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"as" = (/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/machinery/computer{icon = 'icons/obj/machines/ghost_drone.dmi'; icon_keyboard = null; icon_screen = null; icon_state = "factory21"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"at" = (/obj/effect/gibspawner/robot,/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"au" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/turf/simulated/ocean,/area/adherent_base/underwater)
+"av" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish,/turf/simulated/open,/area/adherent_base/underwater)
+"aw" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"ax" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"ay" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/mob/living/bot/cleanbot/adherent,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"az" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"aA" = (/obj/structure/magshield/nav_light{icon_state = "nav_light_green"; dir = 4},/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"aB" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish/grump,/turf/simulated/open,/area/adherent_base/underwater)
+"aC" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish,/turf/simulated/ocean,/area/adherent_base/underwater)
+"aD" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/turf/simulated/ocean/algae,/area/adherent_base/underwater)
+"aE" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/cap/hidden/scrubbers{icon_state = "cap"; dir = 8},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"aF" = (/obj/machinery/atmospherics/pipe/cap/hidden/supply{icon_state = "cap"; dir = 8},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"aG" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"aH" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply,/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"aI" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/hostile/retaliate/aquatic/carp,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"aJ" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"aK" = (/obj/effect/fluid_mapped,/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"aL" = (/obj/machinery/computer{icon_state = "computer"; dir = 4},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"aM" = (/obj/structure/table/glass,/obj/item/weapon/paper_bin,/obj/item/weapon/pen,/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"aN" = (/obj/machinery/door/airlock/external{frequency = 1381; id_tag = "adherent_solar_outer"; locked = 1},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"aO" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/obj/structure/flora/ausbushes/algae/glowing,/turf/simulated/ocean/algae,/area/adherent_base/underwater)
+"aP" = (/turf/simulated/floor/bluegrid,/area/adherent_base/base)
+"aQ" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/shield{shield_generate_power = 0; shield_idle_power = 0},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"aR" = (/obj/machinery/airlock_sensor{frequency = 1381; id_tag = "adherent_solar_sensor"; pixel_x = -24; pixel_y = 24},/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"aS" = (/obj/machinery/door/airlock/external{frequency = 1381; id_tag = "adherent_solar_inner"; locked = 1},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"aT" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"aU" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/turf/simulated/floor/bluegrid,/area/adherent_base/base)
+"aV" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"aW" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/turf/simulated/floor/bluegrid,/area/adherent_base/base)
+"aX" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish/judge,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"aY" = (/obj/effect/wallframe_spawn/reinforced/crystal,/obj/machinery/door/firedoor,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"aZ" = (/obj/machinery/embedded_controller/radio/airlock/docking_port{display_name = "Adherent Main Dock"; frequency = 1380; id_tag = "adherent_shuttle_dock_airlock"; pixel_y = 28; tag_airpump = "adherent_shuttle_dock_pump"; tag_chamber_sensor = "adherent_shuttle_dock_sensor"; tag_exterior_door = "adherent_shuttle_dock_outer"; tag_interior_door = "adherent_shuttle_door_inner"; tag_interior_sensor = "adherent_shuttle_dock_sensor"},/obj/machinery/atmospherics/unary/vent_pump/high_volume{frequency = 1380; id_tag = "adherent_shuttle_dock_pump"},/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"ba" = (/obj/machinery/airlock_sensor{frequency = 1380; id_tag = "adherent_shuttle_dock_sensor"; pixel_x = -8; pixel_y = 24},/obj/machinery/atmospherics/unary/vent_pump/high_volume{frequency = 1380; id_tag = "adherent_shuttle_dock_pump"},/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"bb" = (/obj/effect/decal/remains,/obj/effect/fluid_mapped,/turf/simulated/ocean,/area/adherent_base/underwater)
+"bc" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bd" = (/obj/machinery/door/airlock/external{frequency = 1380; id_tag = "adherent_shuttle_dock_inner"; locked = 1; name = "Docking Port"},/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4; icon_state = "intact"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"be" = (/obj/machinery/atmospherics/pipe/manifold4w/hidden,/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"bf" = (/obj/machinery/atmospherics/pipe/manifold/hidden{dir = 4; icon_state = "map"},/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"bg" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/mob/living/simple_animal/aquatic/fish,/turf/simulated/ocean,/area/adherent_base/underwater)
+"bh" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/mob/living/simple_animal/aquatic/fish/grump,/turf/simulated/ocean,/area/adherent_base/underwater)
+"bi" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish/grump,/turf/simulated/ocean,/area/adherent_base/underwater)
+"bj" = (/obj/machinery/door/airlock/external{frequency = 1380; id_tag = "adherent_shuttle_dock_outer"; locked = 1; name = "Docking Port"},/obj/machinery/shield_diffuser,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"bk" = (/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 1; frequency = 1380; id_tag = "adherent_shuttle_dock_pump"},/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"bl" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 8},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"bm" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 1},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,/obj/machinery/navbeacon/AftH,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bn" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish/judge,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"bo" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/machinery/shield{shield_generate_power = 0; shield_idle_power = 0},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bp" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/door/airlock/silver{name = "Strange Airlock"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bq" = (/obj/machinery/door/airlock/silver{name = "Strange Airlock"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"br" = (/obj/structure/sign/science_1,/turf/simulated/wall/r_wall/crystal,/area/adherent_base/base)
+"bs" = (/obj/machinery/shieldwallgen{req_one_access = list()},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"bt" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/door/firedoor,/obj/machinery/door/airlock/silver{name = "Strange Airlock"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bu" = (/obj/structure/sign/warning/high_voltage,/turf/simulated/wall/r_wall/crystal,/area/adherent_base/base)
+"bv" = (/obj/effect/floor_decal/industrial/hatch/blue,/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"bw" = (/obj/structure/adherent_pylon,/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"bx" = (/obj/machinery/vending/parts/research,/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"by" = (/obj/item/remains/robot,/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"bz" = (/obj/structure/adherent_pylon,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bA" = (/obj/machinery/power/smes/buildable/max_cap_in_out{charge = 5e+006},/obj/structure/cable{icon_state = "0-4"; d2 = 4},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bB" = (/obj/machinery/power/smes/buildable/max_cap_in_out{charge = 5e+006},/obj/structure/cable{icon_state = "0-4"; d2 = 4},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bC" = (/obj/effect/decal/cleanable/blood/oil,/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"bD" = (/obj/item/weapon/caution/cone,/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"bE" = (/obj/structure/plasticflaps,/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"bF" = (/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bG" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock/silver{name = "Strange Airlock"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bH" = (/obj/effect/decal/cleanable/blood/oil,/obj/effect/decal/cleanable/blood/gibs/robot,/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"bI" = (/obj/machinery/shield{shield_generate_power = 0; shield_idle_power = 0},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bJ" = (/obj/item/usedcryobag,/obj/item/weapon/firealarm_electronics,/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"bK" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/cap/hidden/scrubbers{icon_state = "cap"; dir = 1},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"bL" = (/obj/item/weapon/crowbar/crystal,/obj/effect/decal/cleanable/blood/oil,/obj/effect/fluid_mapped,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"bM" = (/obj/effect/fluid_mapped,/turf/simulated/wall/r_wall/crystal,/area/adherent_base/underwater)
+"bN" = (/obj/effect/floor_decal/industrial/hatch/blue,/obj/structure/cable/blue{d2 = 2; icon_state = "0-2"},/obj/machinery/power/terminal{icon_state = "term"; dir = 1},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bO" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bP" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bQ" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bR" = (/obj/effect/floor_decal/industrial/hatch/blue,/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"bS" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/door/firedoor,/obj/machinery/door/airlock/silver{name = "Strange Airlock"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bT" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"bU" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"bV" = (/obj/machinery/atmospherics/pipe/cap/hidden/supply{icon_state = "cap"; dir = 1},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"bW" = (/obj/effect/gibspawner/robot,/obj/machinery/atmospherics/pipe/cap/hidden/supply{icon_state = "cap"; dir = 1},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"bX" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,/obj/machinery/navbeacon/AIE,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bY" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 1},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 1},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"bZ" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/shield{shield_generate_power = 0; shield_idle_power = 0},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"ca" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish/grump,/turf/simulated/floor/bluegrid,/area/adherent_base/underwater)
+"cb" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish/grump,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"cc" = (/obj/effect/gibspawner/robot,/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish/judge,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"cd" = (/obj/machinery/atmospherics/pipe/simple/hidden/red,/turf/simulated/wall/r_wall/crystal,/area/adherent_base/base)
+"ce" = (/turf/simulated/wall/crystal,/area/adherent_base/underwater)
+"cj" = (/obj/structure/cable/blue{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/structure/cable/blue{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"ck" = (/obj/structure/cable/blue{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable/blue{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cl" = (/obj/structure/cable/blue{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cm" = (/obj/structure/table/rack,/obj/item/device/debugger,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cn" = (/obj/structure/table/rack,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cs" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock/silver{locked = 1; name = "Strange Airlock"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"ct" = (/turf/simulated/wall/crystal,/area/adherent_base/base)
+"cu" = (/obj/structure/sign/science_1,/turf/simulated/wall/crystal,/area/adherent_base/base)
+"cz" = (/obj/structure/cable/blue{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cA" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/obj/structure/drain,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cB" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cC" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cD" = (/obj/structure/table/rack,/obj/item/weapon/circuitboard/autolathe,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cE" = (/obj/effect/floor_decal/industrial/hatch/blue,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cF" = (/obj/machinery/computer/sensors{icon_state = "computer"; dir = 8},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cG" = (/obj/effect/wallframe_spawn/reinforced/crystal,/obj/machinery/door/firedoor,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"cH" = (/obj/structure/flora/pottedplant/crystal,/obj/structure/drain,/obj/effect/decal/cleanable/cobweb,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cI" = (/obj/machinery/constructable_frame,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cJ" = (/obj/structure/table/glass,/obj/item/weapon/crowbar/crystal,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cK" = (/obj/structure/table/glass,/obj/machinery/recharger,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cL" = (/obj/machinery/vending/robotics,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cM" = (/obj/machinery/power/smes/batteryrack,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cN" = (/obj/structure/reagent_dispensers/fueltank,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"cO" = (/obj/structure/ore_box,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"cP" = (/obj/structure/largecrate/hoverpod,/obj/item/inflatable/wall,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"cQ" = (/obj/structure/largecrate,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"cR" = (/obj/structure/stasis_cage,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"cS" = (/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"cT" = (/obj/structure/closet/crate/plastic,/obj/item/weapon/crowbar/crystal,/obj/item/weapon/rcd_ammo/large,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"cU" = (/obj/structure/closet/crate/plastic,/obj/item/weapon/stock_parts/subspace/crystal,/obj/item/weapon/stock_parts/subspace/crystal,/obj/item/weapon/stock_parts/subspace/crystal,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"cW" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/obj/structure/flora/ausbushes/algae/random,/turf/simulated/ocean/algae,/area/adherent_base/underwater)
+"cX" = (/obj/structure/table/rack,/obj/item/device/lightreplacer,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cY" = (/obj/structure/table/rack,/obj/item/weapon/mop,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"cZ" = (/obj/machinery/navbeacon/ToolStorage,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"da" = (/obj/structure/table/rack,/obj/item/weapon/crowbar/brace_jack,/obj/item/device/flashlight/upgraded,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"db" = (/obj/structure/flora/pottedplant/crystal,/obj/machinery/atmospherics/unary/vent_scrubber/on,/obj/structure/drain,/obj/effect/decal/cleanable/cobweb,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dc" = (/obj/machinery/computer{icon = 'icons/obj/machines/ghost_drone.dmi'; icon_keyboard = null; icon_screen = null; icon_state = "factory21"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dd" = (/obj/structure/ladder/up,/obj/effect/decal/cleanable/cobweb2,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"de" = (/mob/living/bot/adherent,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"df" = (/obj/machinery/computer/telecomms/monitor{icon_state = "computer"; dir = 8},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dg" = (/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dh" = (/obj/structure/closet/crate/plastic,/obj/item/weapon/weldingtool/crystal,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"di" = (/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dl" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/mob/living/simple_animal/aquatic/fish,/turf/simulated/ocean/algae,/area/adherent_base/underwater)
+"dm" = (/turf/simulated/wall/r_wall/crystal,/area/adherent_base/base)
+"dn" = (/obj/structure/cable/blue{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/door/firedoor,/obj/machinery/door/airlock/silver{name = "Strange Airlock"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"do" = (/obj/structure/cable,/obj/machinery/power/apc/hyper{dir = 8; icon_state = "apc0"; pixel_x = -16},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dp" = (/obj/structure/table/rack,/obj/item/weapon/circuitboard/engine,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dq" = (/obj/structure/table/rack,/obj/item/weapon/cell,/obj/item/weapon/cell,/obj/item/device/analyzer,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dr" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"ds" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dt" = (/obj/machinery/autolathe{icon = 'icons/obj/machines/ghost_drone.dmi'; icon_state = "factory11"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"du" = (/obj/machinery/organ_printer/robot/mapped,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dv" = (/obj/machinery/robotic_fabricator{icon = 'icons/obj/machines/ghost_drone.dmi'; icon_state = "factory30"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dw" = (/obj/machinery/robotic_fabricator{icon = 'icons/obj/machines/ghost_drone.dmi'; icon_state = "factory31"},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dx" = (/obj/machinery/button/remote/blast_door{id = "adherent_storage_left"; name = "Storage Shutters"; pixel_y = 24},/obj/machinery/door/blast/shutters{dir = 8; id = "adherent_storage_left"; name = "Storage Shutters"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dy" = (/obj/structure/closet/crate/plastic,/obj/item/device/multitool/crystal,/obj/item/weapon/pickaxe/diamonddrill,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dz" = (/obj/machinery/shield{shield_generate_power = 0; shield_idle_power = 0},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dA" = (/obj/machinery/button/remote/blast_door{id = "adherent_storage_right"; name = "Storage Shutters"; pixel_y = 24},/obj/machinery/door/blast/shutters{dir = 4; id = "adherent_storage_right"; name = "Storage Shutters"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dB" = (/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"dD" = (/obj/machinery/embedded_controller/radio/airlock/docking_port{display_name = "Adherent Main Dock"; frequency = 1380; id_tag = "adherent_shuttle_dock_airlock"; pixel_y = 28; tag_airpump = "adherent_shuttle_dock_pump"; tag_chamber_sensor = "adherent_shuttle_dock_sensor"; tag_exterior_door = "adherent_shuttle_dock_outer"; tag_interior_door = "adherent_shuttle_door_inner"; tag_interior_sensor = "adherent_shuttle_dock_sensor"},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"dH" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/obj/structure/flora/ausbushes/algae/glowing,/mob/living/simple_animal/aquatic/fish,/turf/simulated/ocean/algae,/area/adherent_base/underwater)
+"dI" = (/obj/machinery/power/rad_collector,/obj/structure/cable/blue{d2 = 4; icon_state = "0-4"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dJ" = (/obj/structure/cable/blue{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable/blue{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable/blue{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dK" = (/obj/machinery/power/rad_collector,/obj/structure/cable/blue{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dL" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 8},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dM" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 1},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dN" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/navbeacon/AIW,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dO" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dP" = (/obj/machinery/door/blast/shutters{dir = 8; id = "adherent_storage_left"; name = "Storage Shutters"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dQ" = (/obj/machinery/giga_drill,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dR" = (/obj/structure/anomaly_container,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dS" = (/obj/machinery/space_heater,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dT" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dU" = (/obj/machinery/door/blast/shutters{dir = 4; id = "adherent_storage_right"; name = "Storage Shutters"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"dV" = (/obj/machinery/atmospherics/pipe/simple/hidden{dir = 6},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"ea" = (/obj/machinery/vending/tool,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"eb" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"ec" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 8},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"ed" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/power/port_gen/pacman,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"ee" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,/obj/machinery/navbeacon/Research,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"ef" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/door/blast/shutters{dir = 8; id = "adherent_storage_left"; name = "Storage Shutters"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eg" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eh" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/navbeacon/QM,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"ei" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"ej" = (/obj/machinery/atmospherics/pipe/cap/hidden/supply{icon_state = "cap"; dir = 8},/obj/machinery/atmospherics/pipe/cap/hidden/scrubbers{icon_state = "cap"; dir = 8},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"ek" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/shield{shield_generate_power = 0; shield_idle_power = 0},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"el" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/door/blast/shutters{dir = 4; id = "adherent_storage_right"; name = "Storage Shutters"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"em" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"en" = (/obj/structure/flora/pottedplant/unusual,/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"eo" = (/obj/machinery/atmospherics/portables_connector{dir = 1},/obj/machinery/portable_atmospherics/canister/air/airlock,/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"es" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock/silver{name = "Strange Airlock"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"et" = (/obj/structure/adherent_bath,/turf/simulated/floor/bluegrid,/area/adherent_base/base)
+"eu" = (/obj/machinery/computer/operating{icon_state = "computer"; dir = 8},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"ev" = (/obj/machinery/optable,/obj/item/weapon/scalpel/laser3,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"ew" = (/obj/structure/table/glass,/obj/item/weapon/weldingtool/crystal,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"ex" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/structure/drain,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"ey" = (/obj/item/inflatable/wall,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"ez" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/fluid_mapped,/turf/simulated/floor/crystal,/area/adherent_base/underwater)
+"eA" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/glowing,/obj/structure/flora/ausbushes/algae/random,/turf/simulated/ocean/algae,/area/adherent_base/underwater)
+"eB" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/mob/living/simple_animal/aquatic/fish/judge,/turf/simulated/ocean/algae,/area/adherent_base/underwater)
+"eC" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 2; layer = 2.4; level = 2},/obj/structure/drain,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eD" = (/obj/structure/cable/blue{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eE" = (/obj/machinery/power/emitter,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eF" = (/obj/structure/closet/crate/uranium,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eG" = (/obj/machinery/field_generator,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eH" = (/obj/item/device/robotanalyzer,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"eI" = (/obj/structure/table/glass,/obj/item/weapon/tape_roll,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"eJ" = (/obj/machinery/portable_atmospherics/canister/air,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eK" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/obj/structure/cable/blue{d2 = 4; icon_state = "0-4"},/obj/machinery/power/debug_items/infinite_generator/adherent,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eL" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/cable/blue{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable/blue{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eM" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/door/firedoor,/obj/machinery/door/airlock/silver{name = "Strange Airlock"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eN" = (/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"eO" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eP" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8},/obj/structure/drain,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eQ" = (/obj/item/weapon/farmbot_arm_assembly,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"eR" = (/obj/machinery/space_heater,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"eS" = (/obj/structure/closet/crate/plastic,/obj/item/weapon/crowbar/crystal,/obj/item/weapon/crowbar/crystal,/obj/item/weapon/wirecutters/crystal,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eT" = (/obj/structure/closet/crate/plastic,/obj/item/weapon/tape_roll,/obj/item/weapon/locator,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eV" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/mob/living/simple_animal/aquatic/fish/grump,/turf/simulated/ocean/algae,/area/adherent_base/underwater)
+"eW" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/mob/living/simple_animal/aquatic/fish/judge,/turf/simulated/ocean,/area/adherent_base/underwater)
+"eX" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 1},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eY" = (/obj/item/weapon/weldingtool/crystal,/obj/structure/closet/crate/plastic,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"eZ" = (/obj/structure/closet/crate/radiation_gear,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"fa" = (/obj/structure/largecrate,/obj/item/weapon/crowbar/crystal,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"fb" = (/obj/structure/cable/blue{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/cable/blue{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable/blue{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"fc" = (/obj/machinery/portable_atmospherics/canister/nitrogen,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"fd" = (/obj/item/weapon/tank/hydrogen,/obj/structure/closet/crate,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"fe" = (/obj/machinery/navbeacon/CHE,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"ff" = (/obj/item/stack/nanopaste,/obj/structure/closet/crate,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"fg" = (/obj/structure/flora/pottedplant/mysterious,/obj/effect/decal/cleanable/cobweb2,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"fj" = (/obj/item/weapon/wrench/crystal,/obj/item/weapon/smes_coil/super_capacity,/obj/structure/closet/crate/plastic,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"fk" = (/obj/item/weapon/tank/phoron,/obj/item/weapon/tank/phoron,/obj/structure/closet/crate,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"fl" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"fn" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/cap/hidden/supply{icon_state = "cap"; dir = 8},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"fo" = (/obj/machinery/atmospherics/pipe/cap/hidden/scrubbers{icon_state = "cap"; dir = 8},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"fs" = (/obj/effect/fluid_mapped,/obj/machinery/constructable_frame/machine_frame,/obj/item/stack/cable_coil/cut,/obj/effect/decal/cleanable/greenglow,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"ft" = (/obj/effect/fluid_mapped,/obj/item/stack/cable_coil/cut,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"fu" = (/obj/structure/cable/blue{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/cable/blue{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"fv" = (/obj/item/weapon/tank/oxygen,/obj/structure/closet/crate,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"fw" = (/obj/item/weapon/tank/phoron,/obj/structure/closet/crate/plastic,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"fx" = (/obj/structure/flora/pottedplant/crystal,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"fy" = (/mob/living/bot/cleanbot/adherent,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"fD" = (/obj/effect/fluid_mapped,/obj/item/integrated_circuit/input/sensor/ranged,/turf/simulated/ocean,/area/adherent_base/underwater)
+"fG" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/door/firedoor,/obj/machinery/door/airlock/silver{name = "Strange Airlock"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"fH" = (/obj/item/weapon/tank/nitrogen,/obj/item/weapon/rpd,/obj/structure/closet/crate,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"fN" = (/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"fZ" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"ga" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/visible/supply,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gh" = (/obj/machinery/door/airlock/silver{name = "Strange Airlock"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"gn" = (/obj/machinery/atmospherics/pipe/tank/air,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"go" = (/obj/machinery/navbeacon/Engineering,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gv" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish/grump,/mob/living/simple_animal/aquatic/fish/judge,/turf/simulated/ocean,/area/adherent_base/underwater)
+"gw" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/visible/supply{icon_state = "intact-supply"; dir = 5},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gx" = (/obj/machinery/atmospherics/pipe/manifold/visible/supply,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gy" = (/obj/machinery/atmospherics/pipe/simple/visible/supply{icon_state = "intact-supply"; dir = 4},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gz" = (/obj/machinery/atmospherics/pipe/simple/visible/supply{icon_state = "intact-supply"; dir = 10},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gC" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gD" = (/obj/machinery/atmospherics/pipe/manifold/visible/supply{icon_state = "map-supply"; dir = 4},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gF" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/obj/structure/flora/ausbushes/algae/glowing,/mob/living/simple_animal/aquatic/fish/grump,/turf/simulated/ocean/algae,/area/adherent_base/underwater)
+"gH" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/mob/living/simple_animal/aquatic/fish,/mob/living/simple_animal/aquatic/fish/grump,/turf/simulated/ocean/algae,/area/adherent_base/underwater)
+"gI" = (/obj/machinery/atmospherics/pipe/simple/visible/supply,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gL" = (/obj/effect/wallframe_spawn/reinforced/crystal,/obj/machinery/door/firedoor,/obj/machinery/atmospherics/pipe/simple/visible/supply,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"gO" = (/obj/machinery/atmospherics/trinary/filter/m_filter,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gP" = (/obj/machinery/atmospherics/pipe/simple/visible/blue{icon_state = "intact"; dir = 4},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gQ" = (/obj/effect/wallframe_spawn/reinforced/crystal,/obj/machinery/door/firedoor,/obj/machinery/atmospherics/pipe/simple/visible/blue{icon_state = "intact"; dir = 4},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/base)
+"gR" = (/obj/machinery/atmospherics/unary/outlet_injector{dir = 8; use_power = 1},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gS" = (/obj/machinery/atmospherics/unary/vent_pump{dir = 1; external_pressure_bound = 0; external_pressure_bound_default = 0; frequency = 1439; icon_state = "map_vent_in"; id_tag = null; initialize_directions = 1; internal_pressure_bound = 4000; internal_pressure_bound_default = 4000; pressure_checks = 2; pressure_checks_default = 2; pump_direction = 0; use_power = 1},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gT" = (/obj/machinery/atmospherics/pipe/simple/visible/red{icon_state = "intact"; dir = 4},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gU" = (/obj/machinery/atmospherics/binary/oxyregenerator{icon_state = "off"; dir = 4},/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gX" = (/obj/machinery/atmospherics/unary/outlet_injector{dir = 1; use_power = 1},/obj/effect/fluid_mapped,/turf/simulated/floor/plating,/area/adherent_base/underwater)
+"gZ" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/mob/living/simple_animal/aquatic/fish,/mob/living/simple_animal/aquatic/fish/judge,/turf/simulated/ocean/algae,/area/adherent_base/underwater)
+"ha" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/glowing,/obj/structure/flora/ausbushes/algae/random,/mob/living/simple_animal/aquatic/fish,/turf/simulated/ocean/algae,/area/adherent_base/underwater)
+"hb" = (/obj/effect/fluid_mapped,/obj/structure/pit/closed/grave,/turf/simulated/ocean,/area/adherent_base/underwater)
+"hc" = (/obj/effect/fluid_mapped,/obj/item/weapon/shovel,/turf/simulated/ocean,/area/adherent_base/underwater)
+"hd" = (/obj/effect/fluid_mapped,/obj/structure/pit/closed{name = "grave"},/obj/structure/gravemarker/random,/turf/simulated/ocean,/area/adherent_base/underwater)
+"hf" = (/obj/effect/fluid_mapped,/obj/structure/magshield/nav_light/red,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"hg" = (/obj/effect/fluid_mapped,/obj/effect/decal/cleanable/generic,/turf/simulated/ocean,/area/adherent_base/underwater)
+"hh" = (/obj/effect/fluid_mapped,/obj/structure/magshield/rad_sensor,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"hi" = (/obj/effect/fluid_mapped,/obj/effect/decal/cleanable/generic,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi'; icon_state = "snowplating"},/area/adherent_base/underwater)
+"hj" = (/obj/effect/fluid_mapped,/obj/effect/decal/cleanable/generic,/obj/structure/flora/ausbushes/algae/random,/turf/simulated/ocean,/area/adherent_base/underwater)
+"hl" = (/turf/simulated/mineral,/area/adherent_base/underwater)
+"hm" = (/turf/unsimulated/mineral,/area/adherent_base/underwater)
+"hn" = (/obj/effect/overlay/wallrot,/obj/effect/paint/hull,/turf/simulated/wall/titanium_r,/area/adherent_base/underwater)
+"ho" = (/obj/effect/fluid_mapped,/obj/structure/wall_frame/titanium,/turf/simulated/floor/plating,/area/adherent_base/underwater)
+"hp" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/aquatic/fish/judge,/turf/simulated/ocean,/area/adherent_base/underwater)
+"hq" = (/obj/effect/overlay/wallrot,/obj/effect/overlay/wallrot,/obj/effect/paint/hull,/turf/simulated/wall/titanium_r,/area/adherent_base/underwater)
+"hr" = (/obj/structure/inflatable/wall,/turf/simulated/floor/tiled/steel_grid,/area/adherent_base/underwater)
+"hs" = (/obj/effect/decal/cleanable/ash,/obj/structure/table,/turf/simulated/floor/tiled/steel_grid,/area/adherent_base/underwater)
+"ht" = (/obj/effect/fluid_mapped,/turf/simulated/floor/plating,/area/adherent_base/underwater)
+"hu" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/glowing,/obj/structure/flora/ausbushes/algae/random,/mob/living/simple_animal/aquatic/fish/grump,/turf/simulated/ocean/algae,/area/adherent_base/underwater)
+"hv" = (/obj/effect/decal/cleanable/greenglow,/obj/structure/sign/adh_base/solgov{pixel_x = -32},/obj/structure/adh_base/broken_cryo{icon_state = "broken_cryo"; dir = 4},/turf/simulated/floor/tiled/steel_grid,/area/adherent_base/underwater)
+"hw" = (/obj/item/weapon/paper/crumpled/bloody{info = "Радиоотчет #721, date: 02.02.02?2<br>><i>Черт подери... Господи... Приземление было жестким... Мы потерпели крушение. Чертовы двигатели отказали еще в атмосфере, и мы грохнулись прЯмо в море. Корпус порвало как бумагу, и Я еле-еле успел закрыть пробоины резиновыми стенами, прежде чем мы пошли на дно. Мы... Ох черт! Тут за окном здоровенный осьминог! Здоровенный, мать его, железный осьминог! Господи, оно смотрит на менЯ, но кажетсЯ не спешит лезть внутрь... Ладно, Я не должен обращать внимание... Надо остановить кровотечение...</i>"},/turf/simulated/floor/tiled/steel_grid,/area/adherent_base/underwater)
+"hx" = (/obj/structure/inflatable/wall,/turf/simulated/floor/plating,/area/adherent_base/underwater)
+"hy" = (/obj/effect/fluid_mapped,/obj/structure/girder/reinforced,/turf/simulated/floor/plating,/area/adherent_base/underwater)
+"hz" = (/turf/simulated/floor/plating,/area/adherent_base/underwater)
+"hA" = (/obj/effect/decal/cleanable/vomit,/obj/effect/decal/remains,/turf/simulated/floor/tiled/steel_grid,/area/adherent_base/underwater)
+"hB" = (/obj/item/weapon/ladder_mobile,/turf/simulated/floor/tiled/steel_grid,/area/adherent_base/underwater)
+"hC" = (/obj/effect/fluid_mapped,/obj/structure/girder/displaced,/turf/simulated/ocean,/area/adherent_base/underwater)
+"hD" = (/obj/effect/decal/cleanable/generic,/obj/effect/decal/cleanable/vomit,/obj/structure/bed/chair/shuttle{icon_state = "shuttle_chair_preview"; dir = 4},/turf/simulated/floor/tiled/steel_grid,/area/adherent_base/underwater)
+"hE" = (/obj/effect/fluid_mapped,/mob/living/simple_animal/hostile/aquatic/shark,/turf/simulated/ocean,/area/adherent_base/underwater)
+"hF" = (/obj/structure/inflatable/door,/turf/simulated/floor/tiled/steel_grid,/area/adherent_base/underwater)
+"hG" = (/obj/effect/fluid_mapped,/obj/structure/door_assembly/door_assembly_ext,/turf/simulated/floor/plating,/area/adherent_base/underwater)
+"hH" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/random,/mob/living/simple_animal/aquatic/fish/grump,/mob/living/simple_animal/aquatic/fish/judge,/turf/simulated/ocean,/area/adherent_base/underwater)
+"hI" = (/obj/effect/fluid_mapped,/obj/effect/overlay/wallrot,/turf/simulated/wall/titanium_r,/area/adherent_base/underwater)
+"hJ" = (/obj/effect/fluid_mapped,/obj/effect/decal/cleanable/generic,/turf/simulated/floor/plating,/area/adherent_base/underwater)
+"hK" = (/obj/effect/fluid_mapped,/obj/effect/overlay/wallrot,/obj/effect/overlay/wallrot,/turf/simulated/wall/titanium_r,/area/adherent_base/underwater)
+"hL" = (/obj/effect/fluid_mapped,/turf/simulated/floor/tiled/monotile,/area/adherent_base/underwater)
+"hM" = (/obj/effect/fluid_mapped,/obj/structure/girder,/turf/simulated/ocean,/area/adherent_base/underwater)
+"hN" = (/turf/simulated/floor/tiled/steel_grid,/area/adherent_base/underwater)
+"hO" = (/obj/effect/fluid_mapped,/obj/effect/decal/cleanable/generic,/mob/living/simple_animal/hostile/aquatic/shark,/turf/simulated/ocean,/area/adherent_base/underwater)
+"hP" = (/obj/effect/fluid_mapped,/obj/structure/girder,/turf/simulated/floor/plating,/area/adherent_base/underwater)
+"hQ" = (/obj/effect/fluid_mapped,/obj/effect/overlay/wallrot,/obj/effect/paint/hull,/turf/simulated/wall/titanium_r,/area/adherent_base/underwater)
+"hR" = (/obj/effect/fluid_mapped,/obj/item/weapon/ladder_mobile,/turf/simulated/floor/tiled/steel_grid,/area/adherent_base/underwater)
+"hS" = (/obj/effect/fluid_mapped,/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 8},/obj/effect/decal/cleanable/generic,/turf/simulated/floor/tiled/monotile,/area/adherent_base/underwater)
+"hT" = (/obj/effect/fluid_mapped,/turf/simulated/floor/tiled/steel_grid,/area/adherent_base/underwater)
+"hU" = (/obj/effect/fluid_mapped,/obj/effect/decal/cleanable/generic,/turf/simulated/floor/tiled/monotile,/area/adherent_base/underwater)
+"hV" = (/obj/effect/fluid_mapped,/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 8},/turf/simulated/floor/tiled/monotile,/area/adherent_base/underwater)
+"hW" = (/obj/effect/fluid_mapped,/obj/effect/decal/cleanable/greenglow,/obj/structure/adh_base/broken_cryo{icon_state = "broken_cryo"; dir = 1},/turf/simulated/floor/tiled/monotile,/area/adherent_base/underwater)
+"hX" = (/obj/effect/fluid_mapped,/obj/structure/flora/ausbushes/algae/glowing,/turf/simulated/ocean/algae,/area/adherent_base/underwater)
+
+(1,1,1) = {"
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaaacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacdBdBaaaaaadBacacacacacacacacacacacacacacacacacacacacacacacacakakakakacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaaaaaaaaabaaaaacacacacacacacacacacacacacacacacacacacacacacacakakakanaoakacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacacacapacacacacacacdBdBdBaaadaadBacacacacacacacacacacacacacacacacacacacacacakakakaoauauakakacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacapacacacacavavavavacacacaeaeaaaaaadBaaaaaaaeacacacacacacacacacacacacacacacacacacacakakakanaAauauakakakacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacaBacacacavaCakauaDaeabaadBafdBaaagaeacacacavavavacapacacacacacacacacacacacakakakaIauauaDaDauakakakacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacaBacacacakakauauaDaDaeaedmdmahdmdmaeaeaDauacacacavavavacaBaBacacacaDauakakakakakanaoakaoauaDaDauakakacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacacacakauauaDaDaDaOaDaudmaPaQaPdmaDaDaDauauacapacacacaBaBacacacauaDaOaDaDauaCaCakakakakakaDaDaDaDakakacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacavavacacacacacaeaianananaeaDaOaDaDaDauakdmaUaVaWdmaDaDaOaDauauauakakacacauaDaDaDaeaeanananaeakaCaCakakakaDaDaDaDauakakakacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacavavacacacacacacacaeajdBaldBaeaDdmdmdzdmdmbbdmaPbcaPdmaDaDaDaDaDauaeanananaeaDaOaDaDaedBdBdBdBaeaeaubgaCakakbhbiauaDauakakakacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacavacacacdmdmdmdmdmdmbIbIbIamdmdmdmbFdsbzdmdmdmdmbtbudmdmdmdmdmdmdmaedBaldBaeaeaeaeaeaedBaqdBdBaraeaeauauaDaDakaubhauauaDauakacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacaBacacacacacacdmbzbAbBbBasbFbFbFbFbFbFbGbFdrbFbFbFbFbFbcbFbFbFbFbFbFbFbIdBdBatdBdBdBdBdBdBdBdBdBdBdBdBdBanakakaDaDaDaDaDaDaDaDakakakacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacaBacacacakakacacdmdmbFbNbNbNbObPbQbQbQbQbQbSbQawaxbQbQbQaybXbQbQbQbYbQbQbQbZazazazazazazaEaFdBaGaHazaJaKdBdBanakauauaDaDaDaDaDaDauauakakakacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacaBacacakakaeandmbIbFcjckclbObcbFcmcnbFbFctaLcEaMctcsctctctctctbGbtcuctctctctctctctctctctctctctctdBezdBatdBanauauaDaDaOaDaDaDaDaDaDauakakacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacakakakakakanaNaRaSbIbFczbFcAcBaVcCcncDbFbFctctctctctbFcEcFcGcHcIbFbcbFcJcKcLcMctcNcOcPcQcRcScTcUctdBaTdBdBdBaeauaDaDcWaDaDaDaDaDaDauakakacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacakakakaDaDaDauakandmbIbFczcXcYbObccZdacnbFbFctdbdcddctdecEdfcGbFbFbFbcbFbFbFbFbFctdgdgdgdgdgdgdhdictdBezdBaeaeaeaeaeaeaeauaDaDaDaDauakakakacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacakakauaDdldlakakakaudmdmdmdndmdmdobcdedpdqbFbFctdrcEbFctcGcGcGctdsdtdubcdvbFdwbFbFdxdgdgcQdydgdgdgdzdAdBaXdBdBdBdDaYaZbaanauaDdHbgauakakakacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacakakauaDaDaDdlbgakakauaudmdIdJdKdmbFdLbQbQbQbQbQbSdMdNbYbSbQbQbQbQdOcEcEbccEbFcEbFbFdPdgdgdQdRdSdTdgdzdUdBdBdBdBdBdVbdbebfbjakaudlakakakakacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacakauaDaDaDaDaDdlbgakauaDdmdIdJdKdmbFbcbFbFbFcIeactebbFbcbGbFbFbFbFecbQedeebQbQbQbQbQefegegegehegeiejekelazemdBendBeoaYbkbkanakakbgakakakacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacakakakauaDaDaDdlbgaDaDdmdIdJdKdmbFbcctctesctctctctbFbccuetaPaPetebeuevbFdwbFdwbFewctdgdgdgexdgeydgdgctdBezdBaeaeaeaeaeaeaeakakakauakakacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacakauauaDeAeBaDaDaDdmeCeDdgdmbFbccteEdgeFeGeGctbFbcctetaPaPetbFbFbFeHcEbFcEbFeIctcUdgeJcRdgdgdgcQctdBezdBaeaDaDaDaDauakakakakauakacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacakauauauaDaDaDaDaDdmeKeLegeMbQeNeMegeOePdgdgctbFbcctetaPaPeteQbFdebFbFbFbFeRbzcteSdgcQeTdgdgcSdRctdBezdBaeananaOaDaDeVaDauauaDakacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacakakauakakbhaDeWaDaDdmeXeDdgdmbFbcctdgeXdgeYeZctbFbcctctctctctctcGcGcGcGcGcGcGctctcQdgfacQcOdgcRdRctdBezdBdBdBanaDaDaDaDeVbheVaDakakacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacakakanakakakakbiauaDdmdIfbdKdmbFbcctfcfdfedgffctbFbcbFbFbFbFbFbFbFbFdsbFbFbFbFfgctctctctctctctctctctdBbldBdBatanauakaDaDaDaueVeVeVakacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacakaoakakakakakakbiakaudmdIfbdKdmbFbcctfjdgdgdgfkctbFflbQbQbQbYbQbQbQbQbmbQbQbQbQbQbYfnfobZaGazazazazazazbndBaKdBanakauaDaDaDaDaDaDcWakakacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacakfsftakakanbgbgakakakdmdIfudKdmbFbcctfvdgdgfwdictfxfybFbFbFaQbIbFbFbIbobIbIbIbFbFaQbIbFbIdBdBdBdBdBaKdBdBdBaeananauaDaDaDaDaOaDaDaDauakacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacaoakakanfDaobgaCauakakakdmdmdmdmdmesfGctfvdgfHeJeJdmdmdmdmdmdmbpbqbrdmananaYanaYdmdmbpbqdmdmaeaeaeaeaeaedBdBdBaeakakakaudlbgaDaDaDaDaDaDakakakacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacakaoakakaCbgauaDeAakauaDaDaDaDdmbFbcctctesctctctdmfNfNfNaebsezdBbvanajdBajdBdBaYdBezdBbwbxdBaebybCbDbEdBdBdBaeakakakaCbgakakaDaDaDakauakakakacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacakakauaCfZakauauaDaDaDaDaDaDaDdmbFgabFbFbFbFbFbzdmfNfNfNaYdBezdBbvanbvdBaldBbvandBezdBdBbvbvaeanbHbJaedBdBdBaeakakakbgaDaDaDaDaDauaDauakakacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacakauauauakakakakaDaDaDaDaDaDdmbFgabFbFbFbFbFbFdmfNfNfNghdBbKdBbvaYdBatdBdBajandBbKaKdBdBdBbEbLanaeaedBaedBakakakakaDaDaDaDaDaDaDaDauakacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacakakauauauakakaDakaDaDaDaDaDdmbFgagngngobFbFbFdmfNfNfNaYdBezdBdBbMbRbTbUatbvaedBbVaqdBdBdBaeaeaeaedBdBdBakakgvakakakauaDaDaDaOaDaDakakacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacakakauaDauakaDaDaDaDaDaDaDaDdmbFgwgxgxgygygygzdmaeaeaeaedBbWdBdBdBdBbTbTdBdBdBdBdBdBdBdBdBdBaeaKdBdBauaubibiauakakakakakaDaDauaDakakacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacakakaDauaDaDdldlaCaDaDaDaDaDaDdmbFgCcCbFdebFcAgDdmanananandBdBdBakdBdBdBbTgFaDaDaDdBbTbTdBdBdBaeakakakauaDeVauaDaDakakakakakauauakakacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacakakauaDaDaDaDaDaDdldlgHeAaDaDdmbFdrbFbFbFbFbFgIdmanananandBaCakauaaaadBcacbaDaDaDdBdBdBdBdBdBakakakakauauaDaDaDaOaDauakakakakauakakacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacakakakauaDaDaDcWeVcWaDdlaDaDdmbFdrbFbFbFcGcGgLdmananananbTakakauauakcbaadBaDaDaOaudBdBdBccdBauakakakbgbgdldlaDaDauauauakakakakakacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacakaDaDaDakauakaDaDaDaDaDdmbFgOgPgPgPgQgRgSdmanananakaCakauauakakdBaaauauaDaDaudBdBauakakauaDakakakaDaOaDaDauakakakakakakakacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacakaDauauakakbiakauaDaDdmdmgOgTgUgPgQgRbFdmaeaeaeakakakaDaDauauakakauaDaDauauakakaDaDaDaDaDakakakakaDauauakakakakakacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacakakauauauakakakauauaDakdmcddmdmdmdmdmdmdmdBauauakakauauaDaDaDaDakakauakaDakakaDauakaDaDakakakakakakakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacakakakaDaDeBauakaDauakakakgXaDaDaDaDaDcedBaDaDauauakauaDaDaDaDaDaDaDaDauauakakakakakakakakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacakakakaDaDaDaDaDeVakakakakakaDaDeAaDanaDaDaDeVbhbibiaDaDaDaDaOaDaDauauakakakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacakakakakaDeVaDdlakakakakakauaDaDbhaDaDaDaudlaDaDakakauaDaDaDaDaDauauakakakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacakakakaCgZdlhadlaDaDakakauauauaDauauaDakakbgbgauakakauauaDaDaDauakakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacakakakauaDaDaDaDauakakakauakakauakakakakakaCauauauauakakaDakakakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacakaDaDaDauauauauakhbakakhbakakakhcakakauauauauakakakakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacakakaDaDakakakakakakakakakakakakakakauauaDauauakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacakakaDaDakauauakhbakakhdakakauakakauaDaDakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacakakakauaDauauauakakakakakauauauaDaDaDakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacakaDaDakauanakakakanakakakauauaDeAaDakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakakakacacacacacacacacacacacacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacakakaDaDakakakakananakakakakaDaDaDakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakauaoakakakakacacacacacakakaDakacachlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacakakaDakakakakhfakakakakauaDaDaDakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakakakauaIauauauaDakakakacacauaDaDaDaDaDakhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacakaDaDauauakakakakakanakauaDaDaDakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakauakhgakauhhhiauauaDakakakauakaDaDaDaDaDaDhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacakaDaDaDauakakauakanakakakaDakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakakakakaDaDauakaoauauakhjauakeWaDauakaDaDaDaDeAaDaDhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacakakakaDaDaDakauauakakakakakakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakauakaDaDaDaDakhjauhiauaoauaIakaDaDaDaDaDdlaDaDaDakauhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacakakaDaDaDaDaDaDauakakakakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakakakauaDaDaDaDaDeAauauauakauanauaDaDaDaDeAdldlaDauakauakhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacachnhohnacacacacacacakakakaDakauaDaDauakakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakakauaDaDdlhadlaDaDaDakauauakakhpakbibhaDaDaDaDakauakakakhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacachqhrhnacacacacacacakakakakakakakakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakakakauauaDaDaDaDaDaDaDaDaDakauauakakakakakbibhaDakauakakakakhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacachnhnhshqhnakacacacacacacakakhthtakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakakhpakakhuaDaDeAauauaDaDauakakakakhlhlhlakakakakakakakakhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacakauhqhvhwhxhyakakakacacacacachththtacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakaCaCbgaDakakbiaDaDauakakauakakakakhlhlhlhlhlhlakakakakhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacakauauhxhzhAhBhqauakakakakacachththtacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakaCdlakaDaDaDbiauauauakakakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacachCauhnhDhzhrhnauauhEakakakhthththtacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakakakaDaDaDaDaDbhauauakauauakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacauauhqhrhFhrauauhjaDakauakhthtauakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakaDaDaDaDaDhuaDakakaDaDakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacakauhGhjauakauauauaDaDauauakauauakakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakauaDaDeAaDaDaDakakakaDakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacakhEauauauakakhgakaDaDaDakaDaDaDauakauakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakakaDaDaDaDauauakakakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacavaCakaDbhhHbhauakakaCdldlaDeAaDaDaDauaDauakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakauaDaDakauakakakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacakaCaDaDauauauauauakauauaDaDaDakakaDaDaDauakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakauakakakakauauakakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacakakaCdlaDauauakakakauauauakaDakakakauaDaDakakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakakhIhJakhgauaDauakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacakaudlaDaDakakakakakauakakauauauakaDaDaDakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakakhKhyakakakauaDakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacakaDauakakakauhEakauauakakeWauaDaDdldlauakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakakakhIhLakakakaDakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacakakakakakaDaDauauauakakakhMbhauaDdlaDaDakacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakaCaCakhIhgakhpauaDakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacakhJakakauaDeAauauakakakakbibhaDdlaDaDakacacacacacacacacacacacacacacacacacacacacacacacacacacacakakakakakakaCakakakakakauaDakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacachIhthtakakauaDaDauauhthtauauhEakaDaDaDakakacacacacacacacacacacacacacacacacacacacacacakakakakhpakakauaDakauauakauakakauakakakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacachIhthtakhjeVbhauakakauhJhNhKakakauaDeAauakacacacacacacacacacacacacacacacacacacacakakakakaDakakakauaDaDaDakauaDauakakakakakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacachJacakakauhMakakhjhNhtauakakakaDaDaDakakakacacacacacacacacacacacacacacacacacakakakakauaDakakaDaDaDaDeAaDaDaDaDakauakakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacakauauauakauakhthtauhgauauauaDaDaDakakakakacacacacacacacacacacakacacakakakauaDeAaDaDakauaDaDaDaDaDaDaDaDauauauakakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacakaudlbgakhOhtauakakhCauakakaDauaDakakakakacacacacacacacacakakakakakakauauauaDakakakakauhueVeVaDaDaDaDaDaDakakakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacakaDaDdlaCakakakakakakbhakakakauakauauakakakakacacacacakakakakakakakakaDakhpauauakakakakakaDbheVaDeAaDaDaDaDauakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacakauaDaDaDakakakaDakakauauauakakakakauakakakauakakakakakakauauauauakaDaDauauauauauhPhQakhgauauakauaDaDauaDakakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacakakakakauaDakakauaDaDauaDakakbgauauakaDauauauakakauauakakauaDakaDaDaDaDaDauauakakakhRhSaoauhgakakaDaDaDaDaDakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacakakakakaDaDakaDaDaDaDakbgbgaCdldlaDaDaDauauakakauaDakaDaDaDaDaDeAaDaDauakaoakhThthUhQhtaoauauaDaDeAauakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacakakaDakaDaDaDaDauakakakauaDaDeAaDaDauauauauakakauaDaDaDaDaDaDaDaDaDauauakauhthVhWhQhtauauauauaDauakakakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacakakauauaDaDauauakakauaDaDaDaDauakakauakakakauakeAaDaDaDaDaDaDaDaDaDaDauauaohyhQhQhQauauauakakakakakakakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacakakakakakakauakauauauaDauauauakakakakakauauaDaDaDaDaDaDaDaDaDaDaDauauauakakaoakakakauakakakauaDakakakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacakakakakakakakakauakauakakhthIakakakaDaDaDaDaDaDaDaDaDaDauauauauakakakakakakakauauauhXaDaDauakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlacacacacacacacacacacacacacacacacacacacacacacacacacacacacakakakhthIakakakakauaDauaDakakauaDaDaDauauakauakakakakakakakakaDaDaDaDauakakhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+hmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhm
+"}

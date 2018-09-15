@@ -304,7 +304,7 @@
 	icon_state = "sand"
 
 /turf/simulated/floor/beach/sand/desert
-	icon_state = "desert"
+	icon_state = "desert0"
 	has_resources = 1
 
 /turf/simulated/floor/beach/sand/desert/New()

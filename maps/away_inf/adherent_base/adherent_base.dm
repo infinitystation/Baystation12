@@ -1,4 +1,6 @@
-#include "adherent_base.dm"
+#include "adherent_base_areas.dm"
+#include "adherent_base_preset.dm"
+
 
 /obj/effect/overmap/sector/adherent_base
 	name = "orbital station"
@@ -12,8 +14,9 @@
 	name = "Aquatic planet"
 	id = "awaysite_adherent_planet"
 	description = "There is faint \"Mayday\" signal incoming from the water surface. Decyphering codes are very old."
-	suffixes = list("adherent_base/adherent_base.dmm")
-	cost = 1000 											//event only
+	prefix = "maps/away_inf/"
+	suffixes = list("adherent_base/adherent_base_1.dmm", "adherent_base/adherent_base_2.dmm", "adherent_base/adherent_base_3.dmm")
+	cost = 1000	//event only
 
 /obj/effect/shuttle_landmark/adherent_base/nav1
 	name = "ISquatic Planet Island Navpoint"
