@@ -178,11 +178,11 @@
 
 	if(powered(EQUIP))
 		if(blocked == 1)
-			overlays += make_screen_overlay(icon, "[asmtype]-overlay-red")
+			overlays += overlay_image(icon, "[asmtype]-overlay-red", COLOR_RED, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
 		else if(action != "idle")
-			overlays += make_screen_overlay(icon, "[asmtype]-overlay-orange")
+			overlays += overlay_image(icon, "[asmtype]-overlay-orange", COLOR_ORANGE, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
 		else
-			overlays += make_screen_overlay(icon, "[asmtype]-overlay-green")
+			overlays += overlay_image(icon, "[asmtype]-overlay-green", COLOR_GREEN, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
 	if(panel_open)
 		overlays += image(icon, "[asmtype]-hatch")
 
@@ -556,13 +556,14 @@
 		qdel(src)//Just as a failsafe
 
 /obj/item/crush_act()
-	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
-	for(var/i in 1, i < w_class, i++)
-		new /obj/item/weapon/scrap_lump(src.loc)
-	for(var/obj/item/I in contents)
-		I.forceMove(src.loc)
-		I.crush_act()
-	qdel(src)
+	if(!istype(src, /obj/item/organ)) // prevent gaining scrap from organs
+		playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+		for(var/i in 1, i < w_class, i++)
+			new /obj/item/weapon/scrap_lump(loc)
+		for(var/obj/item/I in contents)
+			I.forceMove(loc)
+			I.crush_act()
+	..()
 
 #undef PISTON_MOVE_DAMAGE
 #undef PISTON_MOVE_DIVISOR
