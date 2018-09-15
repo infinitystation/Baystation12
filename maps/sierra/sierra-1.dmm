@@ -18744,7 +18744,7 @@
 	pixel_y = 30;
 	req_one_access = list(201)
 	},
-/obj/machinery/stasis{
+/obj/machinery/sleeper/survival_pod{
 	icon_state = "stasis_0";
 	dir = 8
 	},
@@ -18842,7 +18842,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/foreport)
 "FD" = (
-/obj/machinery/stasis{
+/obj/machinery/sleeper/survival_pod{
 	icon_state = "stasis_0";
 	dir = 1
 	},
@@ -23035,7 +23035,7 @@
 /area/quartermaster/office)
 "WS" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/stasis{
+/obj/machinery/sleeper/survival_pod{
 	icon_state = "stasis_0";
 	dir = 8
 	},
