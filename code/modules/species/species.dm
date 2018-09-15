@@ -86,6 +86,8 @@
 
 	var/vision_flags = SEE_SELF               // Same flags as glasses.
 
+	var/vision_restruction = TRUE
+
 	// Death vars.
 	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
 	var/remains_type = /obj/item/remains/xeno
@@ -439,6 +441,7 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	H.mob_push_flags = push_flags
 	H.pass_flags = pass_flags
 	handle_limbs_setup(H)
+	H.vision_restruction = vision_restruction
 
 /datum/species/proc/handle_pre_spawn(var/mob/living/carbon/human/H)
 	return

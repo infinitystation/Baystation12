@@ -1852,6 +1852,7 @@
 #include "code\modules\mob\living\login.dm"
 #include "code\modules\mob\living\logout.dm"
 #include "code\modules\mob\living\say.dm"
+#include "code\modules\mob\living\vision_cone.dm"
 #include "code\modules\mob\living\ancient_beings\ancient_beings_defines.dm"
 #include "code\modules\mob\living\ancient_beings\space_whale\space_whale_defines.dm"
 #include "code\modules\mob\living\ancient_beings\space_whale\space_whale_movement.dm"

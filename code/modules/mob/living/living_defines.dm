@@ -48,6 +48,9 @@
 	var/stuttering = null	//Carbon
 	var/slurring = null		//Carbon
 
+	var/obj/screen/viscone_overlay = null
+	var/vision_restruction = FALSE
+
 	var/job = null//Living
 	var/list/obj/aura/auras = null //Basically a catch-all aura/force-field thing.
 
