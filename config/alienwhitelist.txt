@@ -8,7 +8,6 @@ kosteg - machine
 hodovoy - machine
 mishele - machine
 taushai - machine
-warfoxy - machine
 parasoul - machine
 netreson - machine
 billluxe - machine
@@ -94,6 +93,7 @@ selles - tajaran
 logfol - tajaran
 denmag - tajaran
 solark - tajaran
+forrya - tajaran
 arhod - tajaran
 redknighthero - bionic
 wheatley2013 - adherent
