@@ -81,10 +81,7 @@
 	#include "torch-6.dmm"
 	#include "torch-7.dmm"
 	#include "../away/empty.dmm"
-	#include "../away_inf/adherent_base/adherent_base.dm"
-	#include "../away_inf/adherent_base/adherent_base_1.dmm"
-	#include "../away_inf/adherent_base/adherent_base_1.dmm"
-	#include "../away_inf/adherent_base/adherent_base_1.dmm"
+
 	#include "../away_inf/gunboat/gunboat.dm"
 	#include "../away_inf/sentinel/sentinel.dm"
 	#include "../away_inf/yacht/yacht.dm"
