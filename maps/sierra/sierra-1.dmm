@@ -6781,6 +6781,9 @@
 	icon_state = "bordercolorcorner2";
 	dir = 10
 	},
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "my" = (
@@ -8330,9 +8333,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
@@ -8384,7 +8384,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/teleporter/thirddeck)
 "pd" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -8395,7 +8394,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/thirddeck)
 "pe" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/thirddeck)
 "pf" = (
@@ -9289,8 +9287,12 @@
 	icon_state = "bordercolor";
 	dir = 1
 	},
-/obj/machinery/alarm{
-	pixel_y = 30
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/camera/network/third_deck{
+	c_tag = "Third Deck Hallway - Security Checkpoint";
+	dir = 2
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
@@ -9311,10 +9313,6 @@
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
 	dir = 1
-	},
-/obj/machinery/camera/network/third_deck{
-	c_tag = "Third Deck Hallway - Security Checkpoint";
-	dir = 2
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
@@ -9488,6 +9486,9 @@
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	icon_state = "bordercolor";
+	dir = 1
+	},
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
@@ -9946,14 +9947,6 @@
 "rA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 26
-	},
-/obj/machinery/camera/network/third_deck{
-	c_tag = "Third Deck Hallway - Primary Docking Port";
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
 	icon_state = "borderfloor_white"
@@ -9961,6 +9954,10 @@
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
 	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube_map"
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
@@ -11132,6 +11129,10 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner,
 /obj/effect/floor_decal/industrial/danger/corner,
+/obj/machinery/camera/network/third_deck{
+	c_tag = "Third Deck Hallway - Primary Docking Port";
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "te" = (
@@ -11270,7 +11271,6 @@
 /turf/simulated/wall/titanium_r,
 /area/shuttle/petrov/cell3)
 "tq" = (
-/obj/machinery/light,
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
@@ -11280,6 +11280,14 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	icon_state = "bordercolorcorner2";
 	dir = 9
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -20
+	},
+/obj/machinery/camera/network/third_deck{
+	c_tag = "Third Deck Hallway - Lift";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/center)
@@ -11306,18 +11314,11 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/machinery/camera/network/third_deck{
-	c_tag = "Third Deck Hallway - Lift";
-	dir = 1
-	},
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -20
-	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/corner/red/bordercorner2,
+/obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
 "tt" = (
@@ -11389,7 +11390,6 @@
 /turf/simulated/floor/reinforced/airless,
 /area/thruster/d3port)
 "tz" = (
-/obj/machinery/light,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9;
 	icon_state = "borderfloorcorner2_white"
@@ -11400,10 +11400,9 @@
 	icon_state = "bordercolorcorner2";
 	dir = 9
 	},
-/obj/structure/sign/warning/high_voltage{
+/obj/machinery/alarm{
 	dir = 1;
-	icon_state = "shock";
-	pixel_y = -32
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/center)
@@ -12058,9 +12057,6 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
@@ -12079,6 +12075,10 @@
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
 	dir = 10
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
@@ -13628,10 +13628,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -23
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8;
 	icon_state = "borderfloor_white"
@@ -13646,6 +13642,9 @@
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	icon_state = "bordercolorcorner2";
+	dir = 8
+	},
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -14590,6 +14589,10 @@
 /obj/effect/floor_decal/corner/blue/border{
 	icon_state = "bordercolor";
 	dir = 10
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -23
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
@@ -18388,7 +18391,6 @@
 /obj/effect/floor_decal/corner/lightgrey/border,
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2,
-/obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
 "ER" = (
