@@ -6037,9 +6037,6 @@
 	dir = 4;
 	pixel_x = -20
 	},
-/obj/machinery/light{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/heads/office/hop)
 "ajY" = (
@@ -15846,8 +15843,8 @@
 	icon_state = "bordercolorcorner2";
 	dir = 1
 	},
-/obj/machinery/light{
-	dir = 1
+/obj/machinery/alarm{
+	pixel_y = 30
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
@@ -17159,10 +17156,7 @@
 /obj/machinery/atmospherics/valve/shutoff{
 	dir = 4
 	},
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -23
-	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/center)
 "azp" = (
@@ -18165,7 +18159,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway/port)
 "aAI" = (
-/obj/item/device/radio,
+/obj/item/device/radio/off,
 /obj/item/weapon/crowbar/prybar,
 /obj/item/device/price_scanner,
 /obj/effect/floor_decal/borderfloorblack{
@@ -19840,13 +19834,11 @@
 /turf/simulated/wall/prepainted,
 /area/assembly/robotics)
 "aDb" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -24
 	},
+/obj/structure/adherent_bath,
 /turf/simulated/floor/tiled,
 /area/assembly/chargebay)
 "aDc" = (
@@ -21212,7 +21204,24 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/assembly/robotics)
 "aFa" = (
-/obj/structure/bed/chair{
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8;
+	icon_state = "borderfloorcorner2_white"
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 10;
+	icon_state = "borderfloorcorner2_white"
+	},
+/obj/effect/floor_decal/corner/purple/bordercorner2{
+	icon_state = "bordercolorcorner2";
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/purple/bordercorner2{
+	icon_state = "bordercolorcorner2";
+	dir = 10
+	},
+/obj/structure/bed/chair/padded/purple{
+	icon_state = "chair_preview";
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -34489,6 +34498,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
+"fHi" = (
+/obj/machinery/floodlight{
+	icon_state = "flood00";
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/foreport)
 "fMx" = (
 /obj/structure/closet/secure_closet/personal/patient,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -45685,7 +45701,7 @@ aYw
 aYw
 aYw
 aYw
-adu
+aYw
 adu
 adu
 adu
@@ -45888,7 +45904,7 @@ aYw
 aYw
 aYw
 adu
-aYw
+adu
 aYw
 aYw
 aYw
@@ -51580,7 +51596,7 @@ aEw
 aEH
 aLa
 aij
-aDA
+fHi
 tPd
 uYf
 uYf

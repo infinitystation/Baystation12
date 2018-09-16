@@ -1513,7 +1513,7 @@
 /area/quartermaster/expedition/storage)
 "dc" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/device/radio,
+/obj/item/device/radio/off,
 /obj/effect/floor_decal/corner/blue/three_quarters,
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
@@ -2388,15 +2388,15 @@
 	pixel_x = 20
 	},
 /obj/structure/table/rack,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/radio,
 /obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/alarm{
 	pixel_y = 30
 	},
+/obj/item/device/radio/off,
+/obj/item/device/radio/off,
+/obj/item/device/radio/off,
 /turf/simulated/floor/tiled/dark,
 /area/exploration_shuttle/airlock)
 "eD" = (
@@ -2980,7 +2980,7 @@
 /area/shuttle/petrov/ship)
 "fG" = (
 /obj/structure/table/reinforced,
-/obj/item/device/radio,
+/obj/item/device/radio/off,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "fH" = (
@@ -3145,14 +3145,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
-"fV" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/aft)
 "fW" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -4774,7 +4766,7 @@
 /obj/structure/table/rack,
 /obj/item/weapon/crowbar,
 /obj/item/device/flashlight,
-/obj/item/device/radio,
+/obj/item/device/radio/off,
 /obj/random_multi/single_item/boombox,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/petrov/ship)
@@ -8766,7 +8758,7 @@
 /obj/random/maintenance/clean,
 /obj/random/maintenance/clean,
 /obj/random/maintenance/clean,
-/obj/item/device/radio,
+/obj/item/device/radio/off,
 /obj/structure/closet,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
@@ -8835,7 +8827,6 @@
 "pO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/random/maintenance/solgov,
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -16649,7 +16640,7 @@
 /obj/random/tech_supply,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
-/obj/item/device/radio,
+/obj/item/device/radio/off,
 /obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -20
@@ -17853,6 +17844,9 @@
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -23
+	},
+/obj/structure/bed/chair/office/dark{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aft)
@@ -20053,7 +20047,7 @@
 	dir = 8
 	},
 /obj/machinery/cell_charger,
-/obj/item/device/radio,
+/obj/item/device/radio/off,
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
 "HB" = (
@@ -21038,6 +21032,11 @@
 /obj/effect/floor_decal/corner/lightgrey/border,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
+"LY" = (
+/obj/structure/table/rack,
+/obj/random/maintenance/solgov,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aft)
 "LZ" = (
 /obj/random/closet,
 /obj/random/maintenance/solgov,
@@ -49117,7 +49116,7 @@ ah
 ah
 QY
 DU
-cH
+LY
 iT
 fr
 gi
@@ -49317,7 +49316,7 @@ ah
 cI
 UI
 Pl
-fV
+GS
 GS
 GS
 iV
@@ -49519,9 +49518,9 @@ ah
 cI
 Jz
 DB
-cH
-cH
 dV
+cH
+cH
 iW
 Zn
 Zn
@@ -49721,9 +49720,9 @@ ah
 cI
 vy
 DB
-cH
-cH
-cH
+LY
+LY
+mi
 iX
 jS
 kO
