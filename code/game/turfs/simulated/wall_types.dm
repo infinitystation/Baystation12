@@ -139,4 +139,6 @@
 	..()
 
 /turf/simulated/wall/crystal/New(var/newloc)
-	..(newloc,"crystal")
+	..(newloc,"crystal", "crystal")
+/turf/simulated/wall/crystal/attackby()
+	return
