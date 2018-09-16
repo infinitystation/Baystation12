@@ -104,7 +104,7 @@
 	desc = "A light rig for repairs and maintenance to the outside of habitats and vessels."
 	icon_state = "eva_rig"
 	armor = list(melee = 30, bullet = 10, laser = 20,energy = 25, bomb = 20, bio = 100, rad = 100)
-	online_slowdown = 0
+	online_slowdown = 0.25
 	offline_slowdown = 1
 	offline_vision_restriction = TINT_HEAVY
 
@@ -125,6 +125,7 @@
 	light_overlay = "helmet_light_dual"
 	camera = /obj/machinery/camera/network/engineering
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI,SPECIES_TAJARA)
+	slowdown_general = 0.2
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
@@ -133,6 +134,7 @@
 
 /obj/item/clothing/suit/space/rig/eva
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI,SPECIES_TAJARA)
+	slowdown_general = 0.5
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit_if.dmi'
@@ -140,6 +142,7 @@
 
 /obj/item/clothing/shoes/magboots/rig/eva
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI,SPECIES_TAJARA)
+	slowdown_general = 0.25
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/feet.dmi'
 		)
@@ -147,6 +150,7 @@
 /obj/item/clothing/gloves/rig/eva
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI,SPECIES_TAJARA)
 	siemens_coefficient = 0
+	slowdown_general = 0.3
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/hands.dmi'
 		)
@@ -162,14 +166,13 @@
 		)
 
 /obj/item/weapon/rig/ce
-
 	name = "advanced engineering hardsuit control module"
 	suit_type = "engineering hardsuit"
 	desc = "An advanced hardsuit that protects against hazardous, low pressure environments. Shines with a high polish. Appears compatible with the physiology of most species."
 	icon_state = "ce_rig"
 	armor = list(melee = 40, bullet = 25, laser = 30, energy = 25, bomb = 40, bio = 100, rad = 100)
-	online_slowdown = 0
-	offline_slowdown = 0
+	online_slowdown = 0.25
+	offline_slowdown = 1
 	offline_vision_restriction = TINT_HEAVY
 
 	sprite_sheets = list(
@@ -178,7 +181,9 @@
 		)
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/ce
+	chest_type = /obj/item/clothing/suit/space/rig/ce
 	glove_type = /obj/item/clothing/gloves/rig/ce
+	boot_type = /obj/item/clothing/shoes/magboots/rig/ce
 
 	allowed = list(/obj/item/weapon/gun,/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/storage/ore,/obj/item/weapon/storage/toolbox,/obj/item/weapon/storage/briefcase/inflatable,/obj/item/weapon/inflatable_dispenser,/obj/item/device/t_scanner,/obj/item/weapon/pickaxe,/obj/item/weapon/rcd)
 
@@ -199,9 +204,17 @@
 
 /obj/item/clothing/head/helmet/space/rig/ce
 	camera = /obj/machinery/camera/network/engineering
+	slowdown_general = 0.1
+
+/obj/item/clothing/suit/space/rig/ce
+	slowdown_general = 0.3
 
 /obj/item/clothing/gloves/rig/ce
 	siemens_coefficient = 0
+	slowdown_general = 0.1
+
+/obj/item/clothing/shoes/magboots/rig/ce
+	slowdown_general = 0.2
 
 /obj/item/weapon/rig/hazmat
 
@@ -281,37 +294,42 @@
 	req_access = list(access_medical_equip)
 
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/rig_back.dmi'
 		)
 
 /obj/item/clothing/head/helmet/space/rig/medical
 	camera = /obj/machinery/camera/network/medbay
-	species_restricted = list(SPECIES_HUMAN, SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_SKRELL)
+	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_RESOMI)
 	sprite_sheets = list(
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi',
-		SPECIES_SKRELL = 'icons/mob/species/skrell/helmet.dmi'
+		SPECIES_SKRELL = 'icons/mob/species/skrell/helmet.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi'
 		)
 
 /obj/item/clothing/suit/space/rig/medical
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_RESOMI)
 	sprite_sheets = list(
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi'
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi'
 		)
 
 /obj/item/clothing/shoes/magboots/rig/medical
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_RESOMI)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/feet.dmi',
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/feet.dmi'
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/feet.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/feet.dmi'
 		)
 
 /obj/item/clothing/gloves/rig/medical
-	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_UNATHI)
+	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_RESOMI)
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/hands.dmi',
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/hands.dmi'
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/hands.dmi',
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/hands.dmi'
 		)
 
 /obj/item/weapon/rig/medical/equipped
