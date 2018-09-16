@@ -68,7 +68,7 @@ wolforbykot - vox
 sosiskoed - vox
 mrnicolas - vox
 taushai - vox
-ss1334 - vox
+s1334 - vox
 rex127 - vox
 cre77 - vox
 darkscarletblood - unathi
@@ -98,4 +98,4 @@ arhod - tajaran
 redknighthero - bionic
 wheatley2013 - adherent
 sosiskoed - adherent
-ss1334 - adherent
+s1334 - adherent
