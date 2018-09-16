@@ -65,11 +65,6 @@
 
 /datum/gear/accessory/resomi_mantle
 
-/datum/gear/uniform/resomi/expeditionary
-	display_name = "uniform, Expeditionary Uniform (Resomi)"
-	path = /obj/item/clothing/under/solgov/utility/expeditionary/resomi
-	allowed_roles = EXPLORATION_ROLES
-
 /datum/gear/suit/resomi
 
 		///////
