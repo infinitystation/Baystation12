@@ -1,8 +1,8 @@
 /datum/map/sierra
 	species_to_job_whitelist = list(
-		/datum/species/adherent = list(/datum/job/assistant, /datum/job/engineer_trainee),
+		/datum/species/adherent = list(/datum/job/ai, /datum/job/cyborg, /datum/job/assistant, /datum/job/engineer_trainee),
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/chemist,
-		/datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef, /datum/job/engineer, /datum/job/doctor, /datum/job/bartender),
+		/datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef, /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender),
 		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/stowaway)
 	)
 
@@ -823,8 +823,8 @@
 	selection_color = "#013d3b"
 	economic_power = 8
 	alt_titles = list(
-		"Xeno Surgeon" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/xenosurgeon,
-		"Trauma Surgeon" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/traumasurgeon)
+		"Xenosurgeon" = /decl/hierarchy/outfit/job/sierra/crew/medical/senior/xenosurgeon,
+		"Trauma Surgeon" = /decl/hierarchy/outfit/job/sierra/crew/medical/senior/traumasurgeon)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/senior
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)

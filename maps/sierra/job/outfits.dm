@@ -231,6 +231,14 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/rank/medical/scrubs
 	id_type = /obj/item/weapon/card/id/sierra/crew/medical/senior
 
+/decl/hierarchy/outfit/job/sierra/crew/medical/senior/traumasurgeon
+	name = OUTFIT_JOB_NAME("Trauma Surgeon")
+	uniform = /obj/item/clothing/under/rank/medical/scrubs/blue
+
+/decl/hierarchy/outfit/job/sierra/crew/medical/senior/xenosurgeon
+	name = OUTFIT_JOB_NAME("Xenosurgeon")
+	uniform = /obj/item/clothing/under/rank/medical/scrubs/purple
+
 /decl/hierarchy/outfit/job/sierra/crew/medical/doctor
 	name = OUTFIT_JOB_NAME("Doctor")
 	uniform = /obj/item/clothing/under/rank/medical
@@ -239,14 +247,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/orderly
 	name = OUTFIT_JOB_NAME("Orderly")
 	uniform = /obj/item/clothing/under/rank/orderly
-
-/decl/hierarchy/outfit/job/sierra/crew/medical/doctor/traumasurgeon
-	name = OUTFIT_JOB_NAME("Trauma Surgeon")
-	uniform = /obj/item/clothing/under/rank/medical/scrubs/blue
-
-/decl/hierarchy/outfit/job/sierra/crew/medical/doctor/xenosurgeon
-	name = OUTFIT_JOB_NAME("Xenosurgeon")
-	uniform = /obj/item/clothing/under/rank/medical/scrubs/purple
 
 /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/mortus
 	name = OUTFIT_JOB_NAME("Mortician")
