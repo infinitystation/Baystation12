@@ -747,7 +747,7 @@
 	icon_state = "brig"
 
 /area/security/sierra/sergeant
-	name = "Security - Security Sergeant"
+	name = "Security - Warden"
 	icon_state = "brig"
 
 /area/security/sierra/armory
