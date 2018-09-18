@@ -47,17 +47,20 @@
 /datum/map/sierra/map_info(victim)
 	to_chat(victim, "<h2>Информаци&#255; о карте</h2>")
 	to_chat(victim, "Вы находитесь на борту <b>[station_name]</b>, исследовательского судна корпорации НаноТрейзен. Основна&#255; мисси&#255; вашего объекта - проведение исследований на нейтральной территории, как правило, на известной границе космоса с целью нахождени&#255; новых залеж форона, космических объектов, артефактов и останков инопланетных цивилизаций.")
-	to_chat(victim, "Охрана судна укомплектована сотрудниками Службы Безопасности НаноТрайзен и частных предпри&#255;тий. На судне действуют Корпоративные регуляции НаноТрейзен (https://wiki.infinity-ss13.info/index.php?title=Корпоративные_законы), коды угроз НТ (https://wiki.infinity-ss13.info/index.php?title=Коды_угрозы_НТ) и стандартные процедуры НТ (https://wiki.infinity-ss13.info/index.php?title=Стандартные_процедуры_НТ).")
+	to_chat(victim, "Охрана судна укомплектована сотрудниками Службы Безопасности НаноТрайзен и частных предпри&#255;тий. На судне действуют:")
+	to_chat(victim, "Процедуры НТ (https://wiki.infinity-ss13.info/index.php?title=Стандартные_процедуры_НТ).")
+	to_chat(victim, "Регул&#255;ции НТ (https://wiki.infinity-ss13.info/index.php?title=Корпоративные_законы),")
+	to_chat(victim, "Коды угроз НТ (https://wiki.infinity-ss13.info/index.php?title=Коды_угрозы_НТ),")
 
 
 /datum/map/sierra/send_welcome()
-	var/welcome_text = "<center><img src = ntlogo.png /><br /><font size = 3><b>NSV Sierra</b> Sensor Readings:</font><hr />"
-	welcome_text += "Report generated on [stationdate2text()] at [stationtime2text()]</center><br /><br />"
-	welcome_text += "Current system:<br /><b>[system_name()]</b><br />"
-	welcome_text += "Next system targeted for jump:<br /><b>[generate_system_name()]</b><br />"
-	welcome_text += "Travel time to Sol:<br /><b>[rand(15,45)] days</b><br />"
-	welcome_text += "Time since last port visit:<br /><b>[rand(60,180)] days</b><br />"
-	welcome_text += "Scan results show the following points of interest:<br />"
+	var/welcome_text = "<center><img src = ntlogo.png /><br /><font size = 3><b>NSV Sierra</b> Показани&#255; Сенсоров:</font><hr />"
+	welcome_text += "Отчет сгенерирован [stationdate2text()] в [stationtime2text()]</center><br /><br />"
+	welcome_text += "Текуща&#255;&#255; система:<br /><b>[system_name()]</b><br />"
+	welcome_text += "Следу&#255;ща&#255; система дл&#255; прыжка:<br /><b>[generate_system_name()]</b><br />"
+	welcome_text += "Дней до Солнечной Системы:<br /><b>[rand(15,45)]</b><br />"
+	welcome_text += "Дней с последнего визита в порт:<br /><b>[rand(60,180)]</b><br />"
+	welcome_text += "Результаты сканировани&#255; показали следующие потенциальные объекты дл&#255; исседовани&#255;:<br />"
 	var/list/space_things = list()
 	var/obj/effect/overmap/sierra = map_sectors["1"]
 	for(var/zlevel in map_sectors)
@@ -67,14 +70,14 @@
 		space_things |= O
 
 	for(var/obj/effect/overmap/O in space_things)
-		var/location_desc = " at present co-ordinates."
+		var/location_desc = " по координатам."
 		if (O.loc != sierra.loc)
 			var/bearing = round(90 - Atan2(O.x - sierra.x, O.y - sierra.y),5) //fucking triangles how do they work
 			if(bearing < 0)
 				bearing += 360
-			location_desc = ", bearing [bearing]."
+			location_desc = ", по бейрингу [bearing]."
 		welcome_text += "<li>\A <b>[O.name]</b>[location_desc]</li>"
-	welcome_text += "<br>No distress calls logged.<br />"
+	welcome_text += "<br>Сигналов бедствия не обнаружено.<br />"
 
 	post_comm_message("NSV Sierra Sensor Readings", welcome_text)
 	minor_announcement.Announce(message = "New [GLOB.using_map.company_name] Update available at all communication consoles.")
