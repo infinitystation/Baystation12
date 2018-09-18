@@ -23,8 +23,9 @@
 
 /material/diamond/crystal
 	name = "crystal"
-	icon_colour = COLOR_OFF_WHITE
+	icon_colour = COLOR_PALE_BLUE_GRAY
 	hardness = 80
+	icon_reinf = "reinf_over"
 	stack_type = null
 	ore_compresses_to = null
 	sale_price = null
