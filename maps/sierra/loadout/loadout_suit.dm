@@ -1,11 +1,5 @@
-/datum/gear/suit/blueapron
-
-/datum/gear/suit/overalls
-
 /datum/gear/suit/medcoat
 	allowed_roles = MEDICAL_ROLES
-
-/datum/gear/suit/trenchcoat
 
 /datum/gear/suit/poncho
 	display_name = "poncho selection"
@@ -25,23 +19,6 @@
 
 /datum/gear/suit/cargo_poncho
 	allowed_roles = list(/datum/job/qm, /datum/job/cargo_tech, /datum/job/cargo_assistant, /datum/job/merchant)
-
-/datum/gear/suit/suit_jacket
-
-/datum/gear/suit/custom_suit_jacket
-
-/datum/gear/suit/hoodie
-
-/datum/gear/suit/hoodie_sel
-
-/datum/gear/suit/labcoat
-	allowed_roles = STERILE_ROLES
-
-/datum/gear/suit/coat
-
-/datum/gear/suit/leather
-
-/datum/gear/suit/wintercoat
 
 /datum/gear/suit/wintercoat/engineering
 	display_name = "expeditionary winter coat"
@@ -72,5 +49,3 @@
 	display_name = "science winter coat"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat/science
 	allowed_roles = RESEARCH_ROLES
-
-/datum/gear/suit/track

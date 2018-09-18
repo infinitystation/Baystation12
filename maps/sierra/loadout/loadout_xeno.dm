@@ -1,44 +1,8 @@
-// Alien clothing.
-
 // Unathi clothing
-/datum/gear/suit/unathi/mantle
 
-/datum/gear/suit/unathi/robe
+// Skrell clothing
 
-/datum/gear/suit/unathi/knifeharness
-
-//Skrell Chains
-/datum/gear/ears/skrell/chains
-
-/datum/gear/ears/skrell/colored/chain
-
-//Skrell Bands
-/datum/gear/ears/skrell/bands
-
-/datum/gear/ears/skrell/colored/band
-
-//Skrell Cloth
-/datum/gear/ears/skrell/cloth/male
-
-/datum/gear/ears/skrell/cloth/male/New()
-
-/datum/gear/ears/skrell/cloth/female
-
-	//////////
-	//RESOMI//
-	//////////
-
-/datum/gear/uniform/resomi
-
-/datum/gear/uniform/resomi/white
-
-/datum/gear/uniform/resomi/dress
-
-/datum/gear/uniform/resomi/uniform
-
-/datum/gear/uniform/resomi/formal
-
-/datum/gear/uniform/resomi/rainbow
+// Resomi clothing
 
 /datum/gear/uniform/resomi/eng
 	allowed_roles = ENGINEERING_ROLES
@@ -55,58 +19,19 @@
 /datum/gear/uniform/resomi/roboitcs
 	allowed_roles = list(/datum/job/roboticist)
 
-/datum/gear/eyes/resomi
-
 /datum/gear/eyes/resomi/lenses_sec
 	allowed_roles = SECURITY_ROLES
 
 /datum/gear/eyes/resomi/lenses_med
 	allowed_roles = MEDICAL_ROLES
 
-/datum/gear/accessory/resomi_mantle
-
-/datum/gear/suit/resomi
-
-		///////
-		//IPC//
-		///////
-
-/datum/gear/mask/ipc_monitor
+// IPC clothing
 
 // Misc clothing
-/datum/gear/uniform/harness
-	whitelisted = null
 
-/datum/gear/shoes/toeless
-
-/datum/gear/shoes/wrk_toeless
-
-// Taj clothing
-/datum/gear/eyes/medical/tajblind
-
-/datum/gear/eyes/meson/tajblind
-
-/datum/gear/eyes/security/tajblind
-
-/datum/gear/head/zhan_scarf
-
-/datum/gear/shoes/caligae
-
-/datum/gear/accessory/capes
+// Tajaran clothing
 
 // Pre-modified gloves
-
-/datum/gear/gloves/colored/modified
-
-/datum/gear/gloves/latex/modified
-
-/datum/gear/gloves/nitrile/modified
-
-/datum/gear/gloves/rainbow/modified
-
-/datum/gear/gloves/evening/modified
-
-/datum/gear/gloves/botany/modified
 
 /datum/gear/gloves/dress/modified
 	display_name = "modified gloves, dress"
@@ -120,9 +45,8 @@
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI)
 
-/datum/gear/gloves/work/modified
-
 // Vox clothing
+
 /datum/gear/mask/gas/vox
 	allowed_roles = list(/datum/job/merchant, /datum/job/stowaway)
 

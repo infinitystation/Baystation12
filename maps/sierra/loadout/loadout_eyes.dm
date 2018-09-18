@@ -1,7 +1,3 @@
-/datum/gear/eyes/eyepatch
-
-/datum/gear/eyes/fashionglasses
-
 /datum/gear/eyes/sciencegoggles
 	allowed_roles = STERILE_ROLES
 

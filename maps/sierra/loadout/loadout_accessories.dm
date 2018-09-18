@@ -61,17 +61,11 @@
 /datum/gear/accessory/armband_hydro
 	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/assistant)
 
-/datum/gear/accessory/armband_nt
-
 /datum/gear/accessory/ntaward
 	allowed_roles = NANOTRASEN_ROLES
 
 /datum/gear/accessory/ntaward_sci
 	allowed_roles = NANOTRASEN_ROLES
-
-/datum/gear/accessory/tie
-
-/datum/gear/accessory/tie_color
 
 /datum/gear/accessory/stethoscope
 	allowed_roles = STERILE_ROLES
@@ -95,38 +89,6 @@
 
 /datum/gear/storage/white_drop_pouches
 	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/explorer_medic, /datum/job/roboticist, /datum/job/merchant)
-
-/datum/gear/clothing/hawaii
-
-/datum/gear/clothing/scarf
-
-/datum/gear/clothing/flannel
-
-/datum/gear/clothing/vest
-
-/datum/gear/clothing/suspenders
-
-/datum/gear/clothing/wcoat
-
-/datum/gear/clothing/zhongshan
-
-/datum/gear/clothing/dashiki
-
-/datum/gear/clothing/thawb
-
-/datum/gear/clothing/sherwani
-
-/datum/gear/clothing/qipao
-
-/datum/gear/clothing/sweater
-
-/datum/gear/clothing/tangzhuang
-
-/datum/gear/accessory/bowtie
-
-/datum/gear/accessory/talisman
-
-/datum/gear/accessory/collar
 
 /datum/gear/head/kittyears
 	allowed_roles = RESTRICTED_ROLES
