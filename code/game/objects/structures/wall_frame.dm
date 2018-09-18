@@ -152,7 +152,7 @@
 	color = "#824b28"
 
 /obj/structure/wall_frame/crystal
-	color = "#EEEEEE"
+	color = COLOR_OFF_WHITE
 
 /obj/structure/wall_frame/hull/Initialize()
 	. = ..()
