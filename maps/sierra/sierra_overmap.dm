@@ -5,7 +5,7 @@
 	default_delay = 25 SECONDS
 	speed_mod = 5 SECONDS
 
-	color = LIGHT_COLOR_HALOGEN
+	color = LIGHT_COLOR_PURPLE
 	icon = 'icons/obj/overmap_inf.dmi'
 
 	initial_restricted_waypoints = list(
