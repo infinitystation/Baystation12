@@ -146,13 +146,13 @@
 	color = "#6c7364"
 
 /obj/structure/wall_frame/prepainted
-	color = "#545c68"
+	color = COLOR_GUNMETAL
 
 /obj/structure/wall_frame/wood
 	color = "#824b28"
 
 /obj/structure/wall_frame/crystal
-	color = COLOR_OFF_WHITE
+	color = COLOR_PALE_BLUE_GRAY
 
 /obj/structure/wall_frame/hull/Initialize()
 	. = ..()
