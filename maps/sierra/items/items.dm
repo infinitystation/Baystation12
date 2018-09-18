@@ -135,6 +135,3 @@ Weapons
 
 /obj/effect/paint/hull
 	color = COLOR_HULL
-
-/obj/effect/paint/expeditionary
-	color = "#68099e"
