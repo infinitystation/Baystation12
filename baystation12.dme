@@ -859,6 +859,7 @@
 #include "code\game\objects\items\customs\moghes.dm"
 #include "code\game\objects\items\customs\pink_guitar.dm"
 #include "code\game\objects\items\customs\vape.dm"
+#include "code\game\objects\items\customs\wd_sack.dm"
 #include "code\game\objects\items\devices\aicard.dm"
 #include "code\game\objects\items\devices\binoculars.dm"
 #include "code\game\objects\items\devices\boombox.dm"
