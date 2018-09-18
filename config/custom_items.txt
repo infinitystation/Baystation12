@@ -126,7 +126,7 @@ character_name: Daniel Osborne
 item_path: /obj/item/clothing/under/harness/invisible
 }
 {
-ckey: Sosiskoed
+ckey: sosiskoed
 character_name: Billy Rockish
 item_path: /obj/item/weapon/storage/backpack/clown/full
 }
@@ -134,6 +134,11 @@ item_path: /obj/item/weapon/storage/backpack/clown/full
 ckey: taushai
 character_name: Narii
 item_path: /obj/item/weapon/storage/backpack/explorer_resomi/full
+}
+{
+ckey: sosiskoed
+character_name: se-r 2785
+item_path: /obj/item/weapon/storage/belt/utility/vigil
 }
 #	MEDIUM ITEMS HERE (5-6)
 {
