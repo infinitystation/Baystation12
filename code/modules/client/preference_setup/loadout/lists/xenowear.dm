@@ -277,31 +277,33 @@
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/uniform/resomi/dress
-	display_name = "(Resomi) small dress"
+	display_name = "(Resomi) dresses selection"
 	path = /obj/item/clothing/under/resomi/dress
+	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/uniform/resomi/uniform
-	display_name = "(Resomi) small uniform"
-	path = /obj/item/clothing/under/resomi/uniform
+/datum/gear/uniform/resomi/utility
+	display_name = "(Resomi) uniform selection"
+	path = /obj/item/clothing/under/resomi/utility
+	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/uniform/resomi/formal
-	display_name = "(Resomi) small formal uniform"
-	path = /obj/item/clothing/under/resomi/formal
+/datum/gear/uniform/resomi/sport
+	display_name = "(Resomi) uniform, Sport"
+	path = /obj/item/clothing/under/resomi/sport
 
 /datum/gear/uniform/resomi/rainbow
 	display_name = "(Resomi) smock, rainbow"
 	path = /obj/item/clothing/under/resomi/rainbow
 
 /datum/gear/uniform/resomi/eng
-	display_name = "(Resomi) uniform, Engineering"
+	display_name = "(Resomi) smock, Engineering"
 	path = /obj/item/clothing/under/resomi/yellow
 
 /datum/gear/uniform/resomi/roboitcs
-	display_name = "(Resomi) uniform, Robotics"
+	display_name = "(Resomi) smock, Robotics"
 	path = /obj/item/clothing/under/resomi/robotics
 
 /datum/gear/uniform/resomi/sec
-	display_name = "(Resomi) uniform, Security"
+	display_name = "(Resomi) smock, Security"
 	path = /obj/item/clothing/under/resomi/red
 
 /datum/gear/uniform/resomi/med
@@ -313,12 +315,12 @@
 	path = /obj/item/clothing/under/resomi/science
 
 /datum/gear/uniform/resomi/dark_worksmock
-	display_name = "(Resomi) work smock, dark"
+	display_name = "(Resomi) work uniform, dark"
 	path = /obj/item/clothing/under/resomi/work_black
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/resomi/light_worksmock
-	display_name = "(Resomi) work smock, light"
+	display_name = "(Resomi) work uniform, light"
 	path = /obj/item/clothing/under/resomi/work_white
 	flags = GEAR_HAS_TYPE_SELECTION
 
