@@ -49,3 +49,4 @@
 	blatch["AB+ blood patch"] = /obj/item/clothing/accessory/armor/tag/abpos
 	blatch["AB- blood patch"] = /obj/item/clothing/accessory/armor/tag/abneg
 	blatch += new/datum/gear_tweak/path(blatch)
+

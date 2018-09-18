@@ -31,7 +31,6 @@
 /datum/gear/ring
 	display_name = "ring"
 	path = /obj/item/clothing/ring
-	cost = 2
 
 /datum/gear/ring/New()
 	..()

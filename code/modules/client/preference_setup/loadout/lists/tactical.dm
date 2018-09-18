@@ -1,7 +1,6 @@
 /datum/gear/tactical/
 	sort_category = "Tactical Equipment"
 	category = /datum/gear/tactical/
-	cost = 0
 	slot = slot_tie
 
 /datum/gear/tactical/armor_deco
@@ -21,7 +20,7 @@
 /datum/gear/tactical/holster
 	display_name = "holster selection"
 	path = /obj/item/clothing/accessory/storage/holster
-	cost = 3
+	cost = 4
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/tactical/tacticool

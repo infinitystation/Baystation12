@@ -159,7 +159,6 @@
 /datum/gear/cigars
 	display_name = "fancy cigar case"
 	path = /obj/item/weapon/storage/fancy/cigar
-	cost = 2
 
 /datum/gear/cigar
 	display_name = "fancy cigar"
@@ -179,14 +178,11 @@
 /datum/gear/ecig/deluxe
 	display_name = "electronic cigarette, deluxe"
 	path = /obj/item/clothing/mask/smokable/ecig/deluxe
-	cost = 2
 
 /datum/gear/bible
 	display_name = "bible"
 	path = /obj/item/weapon/storage/bible
-	cost = 2
 
 /datum/gear/mind_healer
 	display_name = "Methylphenidate, pill bottle"
 	path = /obj/item/weapon/storage/pill_bottle/methylphenidate
-	cost = 2

@@ -53,7 +53,6 @@
 /datum/gear/utility/pen
 	display_name = "Multicolored Pen"
 	path = /obj/item/weapon/pen/multi
-	cost = 2
 
 /datum/gear/utility/hand_labeler
 	display_name = "hand labeler"
