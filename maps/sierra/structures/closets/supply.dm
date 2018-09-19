@@ -53,6 +53,7 @@
 		/obj/item/weapon/folder/yellow,
 		/obj/item/stack/package_wrap/twenty_five,
 		/obj/item/device/flash,
+		/obj/item/weapon/door_remote/quartermaster,
 		/obj/item/device/megaphone,
 		/obj/item/clothing/suit/armor/pcarrier/light,
 		/obj/item/device/binoculars,

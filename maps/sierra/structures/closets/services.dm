@@ -55,6 +55,9 @@
 		/obj/item/weapon/caution = 4,
 		/obj/item/device/lightreplacer,
 		/obj/item/weapon/storage/bag/trash,
+		/obj/item/clothing/shoes/dutyboots,
+		/obj/item/weapon/grenade/chem_grenade/cleaner = 2,
+		/obj/item/weapon/reagent_containers/spray/cleaner,
 		/obj/item/clothing/shoes/galoshes,
 		/obj/item/weapon/storage/box/detergent,
 		/obj/item/weapon/soap/nanotrasen

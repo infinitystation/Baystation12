@@ -26,6 +26,7 @@
 		/obj/item/weapon/melee/telebaton,
 		/obj/item/weapon/reagent_containers/spray/pepper,
 		/obj/item/clothing/accessory/storage/black_vest,
+		/obj/item/weapon/door_remote/head_of_security,
 		/obj/item/device/hailer,
 		/obj/item/device/holowarrant,
 		/obj/item/clothing/gloves/thick,
