@@ -19,7 +19,7 @@
 
 /obj/MouseDrop_T(mob/living/M, mob/living/user)
 	. = ..()
-	if(can_buckle && istype(M))
+	if(can_buckle && istype(M) && (istype(src, /obj/structure/bed) && M.loc == loc))
 		user_buckle_mob(M, user)
 
 /obj/Destroy()
