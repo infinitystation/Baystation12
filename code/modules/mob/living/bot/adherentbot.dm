@@ -101,7 +101,8 @@
 
 /mob/living/bot/cleanbot/adherent/New()
 	..()
-	name = regex("\[A-Z\]{2}-\[A-Z\]{1} \[0-9\]{4}")
+	var/number = regex("\[A-Z\]{2}-\[A-Z\]{1} \[0-9\]{4}")
+	name = number
 
 /mob/living/bot/cleanbot/adherent/explode()		//In death Adherent-bot will loose other parts.
 	on = 0

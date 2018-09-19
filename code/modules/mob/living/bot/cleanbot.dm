@@ -17,11 +17,13 @@
 
 /mob/living/bot/cleanbot/New()
 	..()
+	playsound(src, 'sound/machines/boop2.ogg', 30)
 	get_targets()
 
 /mob/living/bot/cleanbot/handleIdle()
 	if(!screwloose && !oddbutton && prob(5))
 		visible_message("\The [src] makes an excited beeping booping sound!")
+		playsound(src, 'sound/machines/boop1.ogg', 30)
 
 	if(screwloose && prob(5)) // Make a mess
 		if(istype(loc, /turf/simulated))
@@ -40,7 +42,6 @@
 	for(var/obj/effect/decal/cleanable/D in view(world.view + 1, src))
 		if(confirmTarget(D))
 			target = D
-			playsound(src, 'sound/machines/boop1.ogg', 30)
 			return
 
 /mob/living/bot/cleanbot/confirmTarget(var/obj/effect/decal/cleanable/D)
@@ -78,7 +79,6 @@
 		qdel(D)
 		if(D == target)
 			target = null
-	playsound(src, 'sound/machines/boop2.ogg', 30)
 	busy = 0
 	update_icons()
 
@@ -138,7 +138,8 @@
 	. = ..()
 	if(!screwloose || !oddbutton)
 		if(user)
-			to_chat(user, "<span class='notice'>The [src] buzzes and beeps.</span>")
+			to_chat(user, "<span class='notice'>The [src] screechs and beeps.</span>")
+			playsound(src, 'sound/effects/screech.ogg', 30)
 		oddbutton = 1
 		screwloose = 1
 		return 1
@@ -153,6 +154,14 @@
 	target_types += /obj/effect/decal/cleanable/mucus
 	target_types += /obj/effect/decal/cleanable/dirt
 	target_types += /obj/effect/decal/cleanable/champagne
+	target_types += /obj/effect/decal/cleanable/filth
+	target_types += /obj/effect/decal/cleanable/greenglow
+	target_types += /obj/effect/decal/cleanable/spiderling_remains
+	target_types += /obj/effect/decal/cleanable/molten_item
+	target_types += /obj/effect/decal/cleanable/generic
+	target_types += /obj/effect/decal/cleanable/fruit_smudge
+	target_types += /obj/effect/decal/cleanable/egg_smudge
+	target_types += /obj/effect/decal/cleanable/ash
 
 	if(blood)
 		target_types += /obj/effect/decal/cleanable/blood
