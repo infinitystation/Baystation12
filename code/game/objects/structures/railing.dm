@@ -9,6 +9,7 @@
 	atom_flags = ATOM_FLAG_CHECKS_BORDER | ATOM_FLAG_CLIMBABLE
 	icon_state = "railing0"
 	can_buckle = 1
+	buckle_require_restraints = 1
 
 	var/material/material
 	var/broken =    FALSE
@@ -17,12 +18,12 @@
 	var/neighbor_status = 0
 
 /obj/structure/railing/mapped
-	color = COLOR_GUNMETAL
+	color = "#c96a00"
 	anchored = TRUE
 
 /obj/structure/railing/mapped/Initialize()
 	. = ..()
-	color = COLOR_GUNMETAL // They're not painted!
+	color = "#c96a00" // They're painted!
 
 /obj/structure/railing/New(var/newloc, var/material_key = "steel")
 	material = material_key // Converted to datum in initialize().
@@ -57,6 +58,8 @@
 	if(anchored)
 		update_icon(FALSE)
 
+	set_dir()
+
 /obj/structure/railing/Destroy()
 	anchored = FALSE
 	atom_flags = 0
@@ -84,6 +87,15 @@
 				to_chat(user, "<span class='warning'>It looks damaged!</span>")
 			if(0.5 to 1.0)
 				to_chat(user, "<span class='notice'>It has a few scrapes and dents.</span>")
+
+/obj/structure/railing/set_dir()
+	. = ..()
+	if(.)
+		switch(dir)
+			if(SOUTH)
+				plane = -11
+			else
+				plane = initial(plane)
 
 /obj/structure/railing/proc/take_damage(amount)
 	health -= amount

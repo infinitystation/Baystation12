@@ -161,3 +161,12 @@
 
 /obj/is_fluid_pushable(var/amt)
 	return ..() && w_class <= round(amt/20)
+
+// Called when turf is hit by a thrown object
+/obj/hitby(atom/movable/AM as mob|obj, var/speed)
+	if(src.density)
+		spawn(2)
+			step(AM, turn(AM.last_move, 180))
+		if(isliving(AM))
+			var/mob/living/M = AM
+			M.object_collision(src, speed)
