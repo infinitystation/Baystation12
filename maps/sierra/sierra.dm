@@ -25,6 +25,7 @@
 	#include "items/headsets.dm"
 	#include "items/items.dm"
 	#include "items/machinery.dm"
+	#include "items/navbeacons.dm"
 	#include "items/manuals.dm"
 	#include "items/uniform_vendor.dm"
 	#include "items/rigs.dm"
