@@ -63,6 +63,9 @@
 	update_layers()
 
 /obj/structure/barrier/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+	if(!density)
+		return 1
+
 	if(istype(mover, /obj/item/projectile))
 		var/obj/item/projectile/proj = mover
 
@@ -103,8 +106,9 @@
 	return 1
 
 /obj/structure/barrier/attack_hand(mob/living/carbon/human/user as mob)
-//	if(user.species.reagent_tag == IS_XENOS) //TODO = MAKE_DAMAGE()
-//		..()
+	if(user.species.can_shred(user) || user.species.reagent_tag == IS_XENOS)
+		take_damage(user.species.)
+		return
 	if(deployed)
 		to_chat(user, "<span class='notice'>[src] is already deployed. You can't move it.</span>")
 	else
