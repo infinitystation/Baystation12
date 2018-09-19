@@ -3,21 +3,21 @@
 
 
 /obj/effect/overmap/sector/adherent_base
-	name = "orbital station"
-	desc = "Sensors detect an orbital station above the exoplanet. Sporadic magentic impulses are registred inside it. Planet landing is impossible due to lower orbits being cluttered with chaotically moving metal chunks."
-	icon_state = "object"
+	name = "aquatic planet"
+	desc = "There is faint \"S.O.S.\" signal incoming from the water surface. Decyphering codes are very old."
+ 	color = COLOR_OCEAN
+	icon_state = "globe"
+	initial_generic_waypoints = list("nav_adherent_base_1")
 	known = 0
-
-	initial_generic_waypoints = list("adherent_base_1")
 
 /datum/map_template/ruin/away_site/adherent_base
 	name = "Aquatic planet"
 	id = "awaysite_adherent_planet"
-	description = "There is faint \"Mayday\" signal incoming from the water surface. Decyphering codes are very old."
+	description = "There is faint \"S.O.S.\" signal incoming from the water surface. Decyphering codes are very old."
 	prefix = "maps/away_inf/"
 	suffixes = list("adherent_base/adherent_base_1.dmm", "adherent_base/adherent_base_2.dmm", "adherent_base/adherent_base_3.dmm")
 	cost = 1000	//event only
 
 /obj/effect/shuttle_landmark/adherent_base/nav1
-	name = "ISquatic Planet Island Navpoint"
+	name = "Aquatic Planet Island Navpoint"
 	landmark_tag = "nav_adherent_base_1"
