@@ -56,10 +56,10 @@
 /datum/map/sierra/send_welcome()
 	var/welcome_text = "<center><img src = ntlogo.png /><br /><font size = 3><b>NSV Sierra</b> Показани&#255; Сенсоров:</font><hr />"
 	welcome_text += "Отчет сгенерирован [stationdate2text()] в [stationtime2text()]</center><br /><br />"
-	welcome_text += "Текуща&#255;&#255; система:<br /><b>[system_name()]</b><br />"
-	welcome_text += "Следу&#255;ща&#255; система дл&#255; прыжка:<br /><b>[generate_system_name()]</b><br />"
-	welcome_text += "Дней до Солнечной Системы:<br /><b>[rand(15,45)]</b><br />"
-	welcome_text += "Дней с последнего визита в порт:<br /><b>[rand(60,180)]</b><br />"
+	welcome_text += "Текуща&#255;&#255; система: <b>[system_name()]</b><br />"
+	welcome_text += "Следу&#255;ща&#255; система дл&#255; прыжка: <b>[generate_system_name()]</b><br />"
+	welcome_text += "Дней до Солнечной Системы: <b>[rand(15,45)]</b><br />"
+	welcome_text += "Дней с последнего визита в порт: <b>[rand(60,180)]</b><br />"
 	welcome_text += "Результаты сканировани&#255; показали следующие потенциальные объекты дл&#255; исседовани&#255;:<br />"
 	var/list/space_things = list()
 	var/obj/effect/overmap/sierra = map_sectors["1"]
@@ -70,12 +70,12 @@
 		space_things |= O
 
 	for(var/obj/effect/overmap/O in space_things)
-		var/location_desc = " по координатам."
+		var/location_desc = " на текущем квадрате."
 		if (O.loc != sierra.loc)
 			var/bearing = round(90 - Atan2(O.x - sierra.x, O.y - sierra.y),5) //fucking triangles how do they work
 			if(bearing < 0)
 				bearing += 360
-			location_desc = ", по бейрингу [bearing]."
+			location_desc = ", на азимуте [bearing]."
 		welcome_text += "<li>\A <b>[O.name]</b>[location_desc]</li>"
 	welcome_text += "<br>Сигналов бедствия не обнаружено.<br />"
 
