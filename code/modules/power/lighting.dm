@@ -176,6 +176,9 @@
 	desc = "A more robust socket for light tubes that demand more power."
 	light_type = /obj/item/weapon/light/tube/large
 
+/obj/machinery/light/tungsten
+	light_type = /obj/item/weapon/light/tube/tungsten
+
 // create a new lighting fixture
 /obj/machinery/light/New(atom/newloc, obj/machinery/light_construct/construct = null)
 	..(newloc)
@@ -559,7 +562,6 @@
 	matter = list("glass" = 100)
 
 	b_outer_range = 5
-//	b_colour = "#fffee0"
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_outer_range = 4, l_max_bright = 1, l_color = "#da0205"),
 		)
@@ -568,6 +570,11 @@
 /obj/item/weapon/light/tube/party/Initialize() //Randomly colored light tubes. Mostly for testing, but maybe someone will find a use for them.
 	. = ..()
 	b_colour = rgb(pick(0,255), pick(0,255), pick(0,255))
+
+/obj/item/weapon/light/tube/tungsten
+	name = "tungsten light tube"
+	color = LIGHT_COLOR_TUNGSTEN //visual icon
+	b_colour = LIGHT_COLOR_TUNGSTEN
 
 /obj/item/weapon/light/tube/large
 	w_class = ITEM_SIZE_SMALL
