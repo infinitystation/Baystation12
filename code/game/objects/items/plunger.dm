@@ -9,4 +9,4 @@
 	w_class = 3
 	slot_flags = SLOT_HEAD | SLOT_MASK
 	hitsound = 'sound/effects/plunger.ogg'
-	matter = list(MATERIAL_STEEL = 5000)
+	matter = list(DEFAULT_WALL_MATERIAL = 2000, DEFAULT_TABLE_MATERIAL = 2400)
