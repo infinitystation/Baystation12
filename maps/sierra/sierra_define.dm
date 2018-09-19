@@ -36,7 +36,7 @@
 	num_exoplanets = 0
 	planet_size = list(129,129)
 
-	away_site_budget = 0
+	away_site_budget = 2
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 
 /datum/map/sierra/setup_map()
