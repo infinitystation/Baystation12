@@ -18,12 +18,12 @@
 	var/neighbor_status = 0
 
 /obj/structure/railing/mapped
-	color = "#c96a00"
+	color = COLOR_GUNMETAL
 	anchored = TRUE
 
 /obj/structure/railing/mapped/Initialize()
 	. = ..()
-	color = "#c96a00" // They're painted!
+	color = COLOR_GUNMETAL // They're painted! // For wall's colour.
 
 /obj/structure/railing/New(var/newloc, var/material_key = "steel")
 	material = material_key // Converted to datum in initialize().
