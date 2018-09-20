@@ -22,7 +22,7 @@
 "av" = (/obj/effect/decal/cleanable/dirt,/obj/random/junk,/turf/simulated/floor/wood,/area/ship/scrap/top/den)
 "aw" = (/obj/effect/landmark/start{name = "Bartender"},/turf/simulated/floor/wood,/area/ship/scrap/top/den)
 "ax" = (/turf/simulated/floor/wood,/area/ship/scrap/top/den)
-"ay" = (/obj/structure/sink{dir = 4; icon_state = "sink"; pixel_x = 11; pixel_y = 0},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/wood,/area/ship/scrap/top/den)
+"ay" = (/obj/structure/hygiene/sink{dir = 4; icon_state = "sink"; pixel_x = 11; pixel_y = 0},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/wood,/area/ship/scrap/top/den)
 "az" = (/turf/simulated/wall/prepainted,/area/ship/scrap/top/den)
 "aA" = (/turf/simulated/floor/plating,/obj/structure/ladder,/obj/structure/catwalk,/obj/structure/lattice,/turf/simulated/open,/area/ship/scrap/top/hallway/starbound)
 "aB" = (/turf/simulated/wall/r_wall/prepainted,/area/ship/scrap/top/hallway/port)
