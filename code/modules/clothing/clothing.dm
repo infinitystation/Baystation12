@@ -194,10 +194,16 @@
 /obj/item/clothing/ears/earmuffs/headphones
 	name = "headphones"
 	desc = "It's probably not in accordance with corporate policy to listen to music on the job... but fuck it."
+
 	var/headphones_on = 0
-	icon_state = "headphones_off"
-	item_state = "headphones_off"
+	var/state_on = "headphones_on"
+	var/state_off = "headphones_off"
+
 	slot_flags = SLOT_EARS | SLOT_TWOEARS
+
+/obj/item/clothing/ears/earmuffs/headphones/New()
+	icon_state = state_off
+	item_state = state_off
 
 /obj/item/clothing/ears/earmuffs/headphones/verb/togglemusic()
 	set name = "Toggle Headphone Music"
@@ -207,13 +213,13 @@
 	if(usr.incapacitated()) return
 
 	if(headphones_on)
-		icon_state = "headphones_off"
-		item_state = "headphones_off"
+		icon_state = state_off
+		item_state = state_off
 		headphones_on = 0
 		to_chat(usr, "<span class='notice'>You turn the music off.</span>")
 	else
-		icon_state = "headphones_on"
-		item_state = "headphones_on"
+		icon_state = state_on
+		item_state = state_on
 		headphones_on = 1
 		to_chat(usr, "<span class='notice'>You turn the music on.</span>")
 
