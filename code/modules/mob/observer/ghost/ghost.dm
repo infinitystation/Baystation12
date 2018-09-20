@@ -480,7 +480,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/verb/toggle_anonsay()
 	set category = "Ghost"
 	set name = "Toggle Anonymous Chat"
-    set desc = "Toggles showing your key in dead chat."
+	set desc = "Toggles showing your key in dead chat."
 	if(client && client.banprisoned)
 		return
 
