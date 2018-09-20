@@ -273,6 +273,10 @@
 	name = "\improper Charon - Power Compartment"
 /area/exploration_shuttle/crew
 	name = "\improper Charon - Crew Compartment"
+/area/exploration_shuttle/medical
+	name = "\improper Charon - Medical Compartment"
+/area/exploration_shuttle/surgery
+	name = "\improper Charon - Surgery Compartment"
 /area/exploration_shuttle/cargo
 	name = "\improper Charon - Cargo Bay"
 /area/exploration_shuttle/airlock
