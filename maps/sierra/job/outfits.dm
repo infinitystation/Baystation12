@@ -200,7 +200,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	name = OUTFIT_JOB_NAME("Detective - Sierra")
 	head = /obj/item/clothing/head/det
 	uniform = /obj/item/clothing/under/det
-	suit = /obj/item/clothing/suit/storage/det_trench/ft
+	suit = /obj/item/clothing/suit/storage/det_trench
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/sierra/crew/security/detective
 	pda_type = /obj/item/modular_computer/pda/forensics
