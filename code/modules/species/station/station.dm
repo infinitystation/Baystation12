@@ -11,6 +11,7 @@
 	assisted_langs = list(LANGUAGE_NABBER)
 	min_age = 17
 	max_age = 100
+	hidden_from_codex = FALSE
 
 	gluttonous = GLUT_TINY
 
@@ -200,6 +201,7 @@
 	health_hud_intensity = 1.75
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/fish/octopus
 	genders = list(PLURAL)
+	hidden_from_codex = FALSE
 
 
 	min_age = 19
@@ -247,7 +249,7 @@
 	)
 
 	available_cultural_info = list(
-		TAG_CULTURE =   list(
+		TAG_CULTURE = list(
 			CULTURE_SKRELL_QERR,
 			CULTURE_SKRELL_MALISH,
 			CULTURE_SKRELL_KANIN,
@@ -259,16 +261,24 @@
 		),
 		TAG_FACTION = list(
 			FACTION_EXPEDITIONARY,
+			FACTION_TORCH_LLC,
 			FACTION_NANOTRASEN,
 			FACTION_PCRC,
 			FACTION_HEPHAESTUS,
 			FACTION_OTHER
 		),
-		TAG_RELIGION =  list(
+		TAG_RELIGION = list(
 			RELIGION_OTHER,
 			RELIGION_ATHEISM,
 			RELIGION_DEISM,
 			RELIGION_AGNOSTICISM
+		),
+		TAG_EDUCATION = list(
+			EDUCATION_SKRELL_FAILURE,
+			EDUCATION_SKRELL_BASIC,
+			EDUCATION_SKRELL_FULL,
+			EDUCATION_SKRELL_FULL_SCIENCE,
+			EDUCATION_SKRELL_FULL_DOCTOR
 		)
 	)
 
@@ -280,6 +290,9 @@
 		BP_BRAIN =    /obj/item/organ/internal/brain,
 		BP_EYES =     /obj/item/organ/internal/eyes
 		)
+
+/datum/species/skrell/get_sex(var/mob/living/carbon/H)
+	return descriptors["headtail length"] == 1 ? MALE : FEMALE
 
 /datum/species/skrell/water_act(var/mob/living/carbon/human/H, var/depth)
 	..()
@@ -295,6 +308,7 @@
 	icobase = 'icons/mob/human_races/species/diona/body.dmi'
 	deform = 'icons/mob/human_races/species/diona/deformed_body.dmi'
 	preview_icon = 'icons/mob/human_races/species/diona/preview.dmi'
+	hidden_from_codex = FALSE
 
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/diona)
 	//primitive_form = "Nymph"

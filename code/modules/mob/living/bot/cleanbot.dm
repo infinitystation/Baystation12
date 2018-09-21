@@ -153,10 +153,10 @@
 	target_types += /obj/effect/decal/cleanable/liquid_fuel
 	target_types += /obj/effect/decal/cleanable/mucus
 	target_types += /obj/effect/decal/cleanable/dirt
-	target_types += /obj/effect/decal/cleanable/champagne
 	target_types += /obj/effect/decal/cleanable/filth
-	target_types += /obj/effect/decal/cleanable/greenglow
 	target_types += /obj/effect/decal/cleanable/spiderling_remains
+	target_types += /obj/effect/decal/cleanable/champagne
+	target_types += /obj/effect/decal/cleanable/greenglow
 	target_types += /obj/effect/decal/cleanable/molten_item
 	target_types += /obj/effect/decal/cleanable/generic
 	target_types += /obj/effect/decal/cleanable/fruit_smudge

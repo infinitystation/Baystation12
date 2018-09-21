@@ -25,7 +25,7 @@
 	. = ..()
 	color = COLOR_GUNMETAL // They're painted! // For wall's colour.
 
-/obj/structure/railing/New(var/newloc, var/material_key = "steel")
+/obj/structure/railing/New(var/newloc, var/material_key = MATERIAL_STEEL)
 	material = material_key // Converted to datum in initialize().
 	..(newloc)
 
@@ -310,15 +310,13 @@
 		climbers -= user
 		return
 
-	if(!turf_is_crowded())
+	var/turf/T = (get_turf(user) == get_turf(src)) ? get_step(src, src.dir) : get_turf(src)
+	if(T.turf_is_crowded(user))
 		to_chat(user, "<span class='warning'>You can't climb there, the way is blocked.</span>")
 		climbers -= user
 		return
 
-	if(get_turf(user) == get_turf(src))
-		user.forceMove(get_step(src, src.dir))
-	else
-		user.forceMove(get_turf(src))
+	user.forceMove(T)
 
 	user.visible_message("<span class='danger'>\The [user] climbed over \the [src]!</span>")
 	if(!anchored || material.is_brittle())

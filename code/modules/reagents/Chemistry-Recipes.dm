@@ -4,12 +4,20 @@
 // chemical_reaction_list[/datum/reagent/toxin/phoron] is a list of all reactions relating to phoron
 // Note that entries in the list are NOT duplicated. So if a reaction pertains to
 // more than one chemical it will still only appear in only one of the sublists.
+
+GLOBAL_LIST_INIT(chemical_products_list, new)
 /proc/initialize_chemical_reactions()
 	var/paths = typesof(/datum/chemical_reaction) - /datum/chemical_reaction
 	chemical_reactions_list = list()
 
 	for(var/path in paths)
 		var/datum/chemical_reaction/D = new path()
+
+		if(D.result)
+			if(!GLOB.chemical_products_list[D.result])
+				GLOB.chemical_products_list[D.result] = list()
+			GLOB.chemical_products_list[D.result] += D
+
 		if(D.required_reagents && D.required_reagents.len)
 			var/reagent_id = D.required_reagents[1]
 			if(!chemical_reactions_list[reagent_id])
@@ -23,6 +31,7 @@
 	var/list/catalysts = list()
 	var/list/inhibitors = list()
 	var/result_amount = 0
+	var/hidden_from_codex
 
 	var/mix_message = "The solution begins to bubble."
 	var/reaction_sound = 'sound/effects/bubbles.ogg'
@@ -422,7 +431,6 @@
 	result = /datum/reagent/citalopram
 	required_reagents = list(/datum/reagent/mindbreaker = 1, /datum/reagent/carbon = 1)
 	result_amount = 3
-
 
 /datum/chemical_reaction/paroxetine
 	name = "Paroxetine"
@@ -853,6 +861,7 @@
 /* Slime cores */
 
 /datum/chemical_reaction/slime
+	hidden_from_codex = TRUE
 	var/required = null
 
 /datum/chemical_reaction/slime/can_happen(var/datum/reagents/holder)
@@ -1306,6 +1315,12 @@
 /datum/chemical_reaction/soysauce
 	name = "Soy Sauce"
 	result = /datum/reagent/nutriment/soysauce
+	required_reagents = list(/datum/reagent/drink/milk/soymilk = 5, /datum/reagent/nutriment/vinegar = 5)
+	result_amount = 10
+
+/datum/chemical_reaction/soysauce_acid
+	name = "Bitey Soy Sauce"
+	result = /datum/reagent/nutriment/soysauce
 	required_reagents = list(/datum/reagent/drink/milk/soymilk = 4, /datum/reagent/acid = 1)
 	result_amount = 5
 
@@ -1426,7 +1441,7 @@
 /datum/chemical_reaction/patron
 	name = "Patron"
 	result = /datum/reagent/ethanol/patron
-	required_reagents = list(/datum/reagent/ethanol/tequilla = 10, "silver" = 1)
+	required_reagents = list(/datum/reagent/ethanol/tequilla = 10, /datum/reagent/silver = 1)
 	result_amount = 10
 
 /datum/chemical_reaction/bilk
@@ -2007,3 +2022,59 @@
 	result = /datum/reagent/nanoblood
 	required_reagents = list(/datum/reagent/dexalinp = 1, /datum/reagent/iron = 1, /datum/reagent/blood = 1)
 	result_amount = 3
+
+/datum/chemical_reaction/vinegar
+	name = "Apple Vinegar"
+	result = /datum/reagent/nutriment/vinegar
+	required_reagents = list(/datum/reagent/drink/juice/apple = 10)
+	catalysts = list(/datum/reagent/enzyme = 5)
+	result_amount = 10
+
+/datum/chemical_reaction/vinegar2
+	name = "Clear Vinegar"
+	result = /datum/reagent/nutriment/vinegar
+	required_reagents = list(/datum/reagent/ethanol = 10)
+	catalysts = list(/datum/reagent/enzyme = 5)
+	result_amount = 10
+
+/datum/chemical_reaction/mayo
+	name = "Vinegar Mayo"
+	result = /datum/reagent/nutriment/mayo
+	required_reagents = list(/datum/reagent/nutriment/vinegar = 5, /datum/reagent/nutriment/protein/egg = 5)
+	result_amount = 10
+
+/datum/chemical_reaction/mayo2
+	name = "Lemon Mayo"
+	result = /datum/reagent/nutriment/mayo
+	required_reagents = list(/datum/reagent/drink/juice/lemon = 5, /datum/reagent/nutriment/protein/egg = 5)
+	result_amount = 10
+
+/datum/chemical_reaction/anfo
+	name = "EZ-ANFO"
+	result = /datum/reagent/anfo
+	required_reagents = list(/datum/reagent/toxin/fertilizer/eznutrient=20, /datum/reagent/fuel=10)
+	result_amount = 15
+
+/datum/chemical_reaction/anfo2
+	name = "Left 4 ANFO"
+	result = /datum/reagent/anfo
+	required_reagents = list(/datum/reagent/toxin/fertilizer/left4zed=10, /datum/reagent/fuel=5)
+	result_amount = 10
+
+/datum/chemical_reaction/anfo3
+	name = "Robust ANFO"
+	result = /datum/reagent/anfo
+	required_reagents = list(/datum/reagent/toxin/fertilizer/robustharvest=15, /datum/reagent/fuel=5)
+	result_amount = 10
+
+/datum/chemical_reaction/anfo4
+	name = "Chemlab ANFO"
+	result = /datum/reagent/anfo
+	required_reagents = list(/datum/reagent/ammonia=10, /datum/reagent/fuel=5)
+	result_amount = 15
+
+/datum/chemical_reaction/anfo_plus
+	name = "ANFO+"
+	result = /datum/reagent/anfo/plus
+	required_reagents = list(/datum/reagent/anfo=15, /datum/reagent/aluminum=5)
+	result_amount = 20

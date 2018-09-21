@@ -2,6 +2,9 @@
 	name = "Monkey"
 	name_plural = "Monkeys"
 	description = "Ook."
+	codex_description = "Monkeys and other similar creatures tend to be found on science stations and vessels as \
+	cheap and disposable test subjects. This, naturally, infuriates animal rights groups."
+	hidden_from_codex = FALSE
 
 	icobase =         'icons/mob/human_races/species/monkey/monkey_body.dmi'
 	deform =          'icons/mob/human_races/species/monkey/monkey_body.dmi'
@@ -55,6 +58,22 @@
 		return
 	if(prob(33) && isturf(H.loc) && !H.pulledby) //won't move if being pulled
 		H.SelfMove(pick(GLOB.cardinal))
+
+	var/obj/held = H.get_active_hand()
+	if(held && prob(1))
+		var/turf/T = get_random_turf_in_range(H, 7, 2)
+		if(T)
+			H.throw_item(T)
+		else
+			H.unequip_item()
+	if(!held && !H.restrained() && prob(5))
+		var/list/touchables = list()
+		for(var/obj/O in range(1,H))
+			if(O.simulated && O.Adjacent(H))
+				touchables += O
+		var/obj/touchy = pick(touchables)
+		touchy.attack_hand(H)
+	
 	if(prob(1))
 		H.emote(pick("scratch","jump","roll","tail"))
 
