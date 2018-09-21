@@ -1239,7 +1239,7 @@
 	                    SKILL_DEVICES      = SKILL_MAX,
 	                    SKILL_MEDICAL      = SKILL_MAX)
 
-	access = list(access_robotics, access_research, access_tech_storage, access_morgue, access_medical)
+	access = list(access_robotics, access_research, access_tech_storage)
 
 	minimal_access = list()
 
