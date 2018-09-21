@@ -4,6 +4,7 @@
 	gender = PLURAL
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "shards"
+	persistent = TRUE
 
 /obj/effect/decal/cleanable/ash
 	name = "ashes"
@@ -62,8 +63,6 @@
 	desc = "It looks like a melted... something."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "molten"
-	persistent = TRUE
-	generic_filth = TRUE
 
 /obj/effect/decal/cleanable/cobweb2
 	name = "cobweb"
