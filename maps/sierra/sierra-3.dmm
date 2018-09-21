@@ -1594,7 +1594,6 @@
 	icon_state = "railing0";
 	dir = 1
 	},
-/obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "acL" = (
@@ -4680,7 +4679,6 @@
 "ahw" = (
 /obj/structure/closet/crate/trashcart,
 /obj/random/material,
-/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
 "ahx" = (
@@ -6779,7 +6777,6 @@
 	icon_state = "bordercolor";
 	dir = 4
 	},
-/obj/item/weapon/book/manual/chemistry,
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "akI" = (
@@ -10102,6 +10099,7 @@
 "apl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/table/standard,
+/obj/item/weapon/folder/blue,
 /obj/item/modular_computer/tablet/lease/preset/command,
 /turf/simulated/floor/tiled/steel_grid,
 /area/crew_quarters/heads/office/hop)
@@ -19237,7 +19235,7 @@
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "detdoor";
 	name = "Suits Storage";
-	req_access = list(1,18)
+	req_access = list(1)
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/firedoor,
@@ -27259,7 +27257,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport)
 "aNr" = (
@@ -27572,7 +27569,6 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
-/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport)
 "aNX" = (
@@ -31155,7 +31151,6 @@
 	icon_state = "alarm0";
 	pixel_y = -20
 	},
-/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport)
 "aUf" = (
@@ -34020,8 +34015,6 @@
 	icon_state = "cobweb2";
 	dir = 8
 	},
-/obj/random/junk,
-/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard)
 "cDg" = (
@@ -34287,7 +34280,6 @@
 /area/hallway/primary/firstdeck/center)
 "dUp" = (
 /obj/item/weapon/reagent_containers/syringe,
-/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard)
 "dYG" = (
@@ -36088,7 +36080,6 @@
 /area/crew_quarters/heads/cobed)
 "pfG" = (
 /obj/structure/closet/crate/trashcart,
-/obj/random/junk,
 /obj/effect/decal/cleanable/cobweb2,
 /obj/item/weapon/handcuffs/cable/tape,
 /turf/simulated/floor/plating,
@@ -36841,7 +36832,6 @@
 /area/rnd/blanks)
 "tmM" = (
 /obj/item/weapon/stool,
-/obj/effect/decal/cleanable/vomit,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
 "tmO" = (
@@ -47655,7 +47645,7 @@ abJ
 abJ
 abJ
 aed
-wKv
+aed
 aSW
 xnR
 jUt
@@ -47858,7 +47848,7 @@ abJ
 abJ
 dPd
 hHg
-bAX
+aSW
 pgj
 jUt
 xnR
@@ -48059,7 +48049,7 @@ abJ
 abJ
 abJ
 aed
-oAD
+aed
 aed
 kAz
 jUt
@@ -48666,7 +48656,7 @@ abJ
 abJ
 uJv
 aed
-wKv
+aed
 wSl
 jUt
 aed
@@ -49271,7 +49261,7 @@ abJ
 abJ
 abJ
 acK
-oAD
+aed
 aed
 lJP
 jUt
@@ -50081,7 +50071,7 @@ aca
 aca
 skE
 aex
-jJh
+aex
 myq
 aky
 acA
@@ -55335,7 +55325,7 @@ acw
 acw
 aft
 aca
-ahI
+ahG
 aTx
 ajO
 akN
@@ -60219,7 +60209,7 @@ aSk
 aTs
 aKU
 aOY
-aVs
+aVr
 aEr
 aEr
 aEr
@@ -64042,13 +64032,13 @@ aBL
 avg
 xXS
 aGL
-plI
+aVr
 aVu
 aVu
 huL
 aVu
 aVu
-rYl
+aVr
 hHc
 eMm
 aQn
@@ -64228,7 +64218,7 @@ jpA
 evW
 ada
 qPX
-lQC
+agU
 iuJ
 ada
 iuJ
@@ -64250,7 +64240,7 @@ aMh
 aVr
 aVu
 qFV
-plI
+aVr
 hHc
 eMm
 aQn
@@ -64427,7 +64417,7 @@ agZ
 aih
 nwB
 jpA
-lQC
+agU
 ada
 agU
 agU
@@ -64453,7 +64443,7 @@ aEr
 aEr
 aVr
 aVr
-plI
+aVr
 eMm
 aQn
 aRt
@@ -64653,7 +64643,7 @@ aEr
 aEr
 aEr
 aEr
-uEB
+rYl
 jbP
 qFV
 eMm
