@@ -150,6 +150,10 @@ var/global/datum/controller/gameticker/ticker
 	create_characters() //Create player characters and transfer them
 	collect_minds()
 	equip_characters()
+	for(var/mob/living/carbon/human/H in GLOB.player_list)
+		if(!H.mind || player_is_antag(H.mind, only_offstation_roles = 1) || !job_master.ShouldCreateRecords(H.mind.assigned_role))
+			continue
+		CreateModularRecord(H)
 
 	callHook("roundstart")
 
@@ -157,12 +161,6 @@ var/global/datum/controller/gameticker/ticker
 		mode.post_setup()
 		to_world("<FONT color='blue'><B>Enjoy the game!</B></FONT>")
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
-
-		for(var/mob/living/carbon/human/H in GLOB.player_list)
-			if(!H.mind || player_is_antag(H.mind, only_offstation_roles = 1) || !job_master.ShouldCreateRecords(H.mind.assigned_role))
-				continue
-			CreateModularRecord(H)
-
 
 		//Holiday Round-start stuff	~Carn
 		Holiday_Game_Start()

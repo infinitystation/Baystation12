@@ -136,26 +136,3 @@
 			</html>
 
 		"}
-
-/obj/item/weapon/book/manual/chemistry
-	name = "Chemistry Recipes Manual"
-	desc = "A recipes manual for your colleagues (and for you). Or for traitors."
-	icon = 'icons/obj/library_inf.dmi'
-	icon_state = "chemistrybook"
-	author = "Chemistry Association manual, volume 2"
-	title = "Chemistry Recipes Manual"
-
-/obj/item/weapon/book/manual/nt_regs/New()
-	..()
-	dat = {"
-
-		<html><head>
-		</head>
-
-		<body>
-		<iframe width='100%' height='97%' src="[config.wikiurl]index.php?title=Руководство_для_химиков&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
-		</body>
-
-		</html>
-
-		"}

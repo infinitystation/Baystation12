@@ -1070,6 +1070,7 @@
 	name = "Virology Interior Airlock";
 	req_access = list(39)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/virology)
 "abE" = (
@@ -1081,6 +1082,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/virology)
 "abF" = (
@@ -1435,6 +1437,7 @@
 	name = "Virology Exterior Airlock";
 	req_access = list(39)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/virologyaccess)
 "acq" = (
@@ -1501,6 +1504,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/virologyaccess)
 "acA" = (
@@ -1590,7 +1594,6 @@
 	icon_state = "railing0";
 	dir = 1
 	},
-/obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "acL" = (
@@ -3198,7 +3201,8 @@
 	name = "Escape Pod Seven Hatch";
 	req_access = list(13)
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod12/station)
 "afr" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -3217,7 +3221,8 @@
 	name = "Escape Pod Eight Hatch";
 	req_access = list(13)
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod13/station)
 "aft" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -3236,7 +3241,8 @@
 	name = "Escape Pod Nine Hatch";
 	req_access = list(13)
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod14/station)
 "afv" = (
 /obj/structure/bed/chair/office/comfy/blue{
@@ -4673,7 +4679,6 @@
 "ahw" = (
 /obj/structure/closet/crate/trashcart,
 /obj/random/material,
-/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
 "ahx" = (
@@ -5437,7 +5442,8 @@
 	req_access = list(13)
 	},
 /obj/machinery/shield_diffuser,
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/security/sierra/hallway/port)
 "aiI" = (
 /obj/machinery/light/small{
@@ -6290,6 +6296,7 @@
 	},
 /obj/machinery/holosign/surgery,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/subacute)
 "ajW" = (
@@ -6639,6 +6646,7 @@
 	name = "Janitor Closet Maintenance";
 	req_access = list(26)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/janitor)
 "aky" = (
@@ -6769,7 +6777,6 @@
 	icon_state = "bordercolor";
 	dir = 4
 	},
-/obj/item/weapon/book/manual/chemistry,
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "akI" = (
@@ -7526,6 +7533,7 @@
 	req_access = list(26)
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/janitor)
 "alG" = (
@@ -8141,6 +8149,7 @@
 	dir = 4;
 	icon_state = "intact"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/safe_room)
 "amE" = (
@@ -8280,6 +8289,7 @@
 	id_tag = "panicbunker";
 	name = "Civilian Safe Room"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/safe_room)
 "amM" = (
@@ -9898,6 +9908,7 @@
 	name = "Evidence Storage";
 	req_access = list(4)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techmaint,
 /area/security/sierra/forensic/lab)
 "aoU" = (
@@ -10088,6 +10099,7 @@
 "apl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/table/standard,
+/obj/item/weapon/folder/blue,
 /obj/item/modular_computer/tablet/lease/preset/command,
 /turf/simulated/floor/tiled/steel_grid,
 /area/crew_quarters/heads/office/hop)
@@ -12050,7 +12062,8 @@
 	name = "Escape Pod Five Hatch";
 	req_access = list(13)
 	},
-/turf/simulated/floor/tiled/steel_grid,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod10/station)
 "asa" = (
 /obj/effect/paint/red,
@@ -12171,6 +12184,10 @@
 /obj/machinery/camera/network/security{
 	c_tag = "Security - Detectives - Lab";
 	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/security/sierra/forensic/lab)
@@ -12927,6 +12944,7 @@
 /area/security/sierra/hos)
 "atm" = (
 /obj/effect/wallframe_spawn/reinforced/prepainted,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/security/sierra/forensic/lab)
 "atn" = (
@@ -13029,6 +13047,7 @@
 	name = "Evidence Storage";
 	req_access = list(1)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techmaint,
 /area/security/sierra/evidence)
 "att" = (
@@ -14425,6 +14444,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/bridge)
 "avE" = (
@@ -14525,9 +14545,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
 	},
 /obj/effect/catwalk_plated,
 /obj/structure/disposalpipe/segment{
@@ -14728,6 +14745,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/office/cmo)
 "avY" = (
@@ -15201,6 +15219,10 @@
 	pixel_x = -24
 	},
 /obj/structure/flora/pottedplant/stoutbush,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -20
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/forensic)
 "awF" = (
@@ -15437,6 +15459,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/hallway/aft)
 "awS" = (
@@ -15838,6 +15861,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/hallway/aft)
 "axx" = (
@@ -15894,7 +15918,7 @@
 	},
 /obj/machinery/button/windowtint{
 	dir = 1;
-	id = "processwindow";
+	id = "forensicswindow";
 	pixel_x = 6;
 	pixel_y = -21
 	},
@@ -16214,6 +16238,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/security/sierra/forensic)
 "axR" = (
@@ -16225,6 +16250,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/security/sierra/forensic)
 "axS" = (
@@ -16473,6 +16499,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/security/sierra/interrogation)
 "ayi" = (
@@ -16559,6 +16586,7 @@
 	icon_state = "0-8"
 	},
 /obj/structure/cable/green,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/security/sierra/interrogation)
 "ayn" = (
@@ -16873,6 +16901,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/security/sierra/hos)
 "ayL" = (
@@ -17049,6 +17078,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/sierra/hos)
 "ayU" = (
@@ -17579,6 +17609,7 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "ge_windows"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/security/sierra/equipment)
 "azB" = (
@@ -17600,6 +17631,7 @@
 	name = "Guards' Equipment";
 	req_access = list(1)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/equipment)
 "azC" = (
@@ -17632,6 +17664,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/security/sierra/sergeant)
 "azG" = (
@@ -17646,6 +17679,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/security/sierra/sergeant)
 "azH" = (
@@ -17653,6 +17687,7 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "bo_windows"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/security/sierra/sergeant)
 "azI" = (
@@ -17789,6 +17824,7 @@
 	req_access = list(63);
 	id_tag = "security_entry_airlock_exit"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/hallway/aft)
 "azO" = (
@@ -18008,6 +18044,7 @@
 	name = "Security Entry";
 	req_access = list(63)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/hallway/aft)
 "aAd" = (
@@ -19198,7 +19235,7 @@
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "detdoor";
 	name = "Suits Storage";
-	req_access = list(1,18)
+	req_access = list(1)
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/firedoor,
@@ -20665,7 +20702,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/assembly/chargebay)
 "aEd" = (
-/obj/machinery/computer/sensors{
+/obj/machinery/computer/ship/sensors{
 	icon_state = "computer";
 	dir = 1
 	},
@@ -22009,6 +22046,7 @@
 	secured_wires = 1;
 	stripe_color = "#9d2300"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/sierra/hos)
 "aFV" = (
@@ -23096,6 +23134,7 @@
 	name = "Break Room";
 	req_access = list(63)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/wood,
 /area/security/sierra/breakroom)
 "aHw" = (
@@ -23335,6 +23374,7 @@
 	name = "Guards' Equipment";
 	req_access = list(1)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/monotile,
 /area/security/sierra/equipment)
 "aHO" = (
@@ -23934,6 +23974,7 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "robotics_windows"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/assembly/robotics)
 "aIC" = (
@@ -24161,6 +24202,7 @@
 	req_access = list(58);
 	secured_wires = 1
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/security/sierra/hos/restroom)
 "aIV" = (
@@ -24354,6 +24396,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/security/sierra/breakroom)
 "aJh" = (
@@ -27214,7 +27257,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport)
 "aNr" = (
@@ -27527,7 +27569,6 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
-/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport)
 "aNX" = (
@@ -27929,6 +27970,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/security/sierra/hallway/aft)
 "aOJ" = (
@@ -30525,7 +30567,8 @@
 	name = "Escape Pod Ten Hatch";
 	req_access = list(13)
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod15/station)
 "aTa" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -30545,7 +30588,8 @@
 	name = "Escape Pod Eleven Hatch";
 	req_access = list(13)
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod16/station)
 "aTc" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -30565,7 +30609,8 @@
 	name = "Escape Pod Twelve Hatch";
 	req_access = list(13)
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/shuttle/escape_pod17/station)
 "aTf" = (
 /obj/structure/catwalk,
@@ -31106,7 +31151,6 @@
 	icon_state = "alarm0";
 	pixel_y = -20
 	},
-/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport)
 "aUf" = (
@@ -31893,6 +31937,7 @@
 	name = "Xenobiology External Airlock";
 	req_access = list(55)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/entry)
 "aVW" = (
@@ -31904,6 +31949,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/entry)
 "aVX" = (
@@ -32183,6 +32229,7 @@
 	name = "Xenobiology Internal Airlock";
 	req_access = list(55)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology)
 "aWF" = (
@@ -32194,6 +32241,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology)
 "aWG" = (
@@ -33631,6 +33679,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/security/sierra/hos)
 "byB" = (
@@ -33966,8 +34015,6 @@
 	icon_state = "cobweb2";
 	dir = 8
 	},
-/obj/random/junk,
-/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard)
 "cDg" = (
@@ -34233,7 +34280,6 @@
 /area/hallway/primary/firstdeck/center)
 "dUp" = (
 /obj/item/weapon/reagent_containers/syringe,
-/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard)
 "dYG" = (
@@ -34422,6 +34468,7 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
 	id = "hop_windows"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/office/hop)
 "eMm" = (
@@ -35699,7 +35746,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/hologram/holopad,
-/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/steel_grid,
 /area/crew_quarters/heads/office/hop)
 "nbe" = (
@@ -35931,7 +35977,7 @@
 /turf/simulated/wall/prepainted,
 /area/crew_quarters/heads/office/hop)
 "oNw" = (
-/obj/machinery/computer/engines{
+/obj/machinery/computer/ship/engines{
 	icon_state = "computer";
 	dir = 1
 	},
@@ -36034,7 +36080,6 @@
 /area/crew_quarters/heads/cobed)
 "pfG" = (
 /obj/structure/closet/crate/trashcart,
-/obj/random/junk,
 /obj/effect/decal/cleanable/cobweb2,
 /obj/item/weapon/handcuffs/cable/tape,
 /turf/simulated/floor/plating,
@@ -36195,7 +36240,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmary)
 "pKV" = (
-/obj/machinery/computer/helm{
+/obj/machinery/computer/ship/helm{
 	icon_state = "computer";
 	dir = 1
 	},
@@ -36218,6 +36263,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/office/cmo)
 "pSJ" = (
@@ -36786,7 +36832,6 @@
 /area/rnd/blanks)
 "tmM" = (
 /obj/item/weapon/stool,
-/obj/effect/decal/cleanable/vomit,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
 "tmO" = (
@@ -37312,6 +37357,7 @@
 	req_access = list(1);
 	secured_wires = 0
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
 "xQK" = (
@@ -47599,7 +47645,7 @@ abJ
 abJ
 abJ
 aed
-wKv
+aed
 aSW
 xnR
 jUt
@@ -47802,7 +47848,7 @@ abJ
 abJ
 dPd
 hHg
-bAX
+aSW
 pgj
 jUt
 xnR
@@ -48003,7 +48049,7 @@ abJ
 abJ
 abJ
 aed
-oAD
+aed
 aed
 kAz
 jUt
@@ -48610,7 +48656,7 @@ abJ
 abJ
 uJv
 aed
-wKv
+aed
 wSl
 jUt
 aed
@@ -49215,7 +49261,7 @@ abJ
 abJ
 abJ
 acK
-oAD
+aed
 aed
 lJP
 jUt
@@ -50025,7 +50071,7 @@ aca
 aca
 skE
 aex
-jJh
+aex
 myq
 aky
 acA
@@ -55279,7 +55325,7 @@ acw
 acw
 aft
 aca
-ahI
+ahG
 aTx
 ajO
 akN
@@ -60163,7 +60209,7 @@ aSk
 aTs
 aKU
 aOY
-aVs
+aVr
 aEr
 aEr
 aEr
@@ -61549,7 +61595,7 @@ anz
 aeH
 apL
 aqL
-arN
+atU
 asX
 atY
 auY
@@ -61751,7 +61797,7 @@ anA
 aeH
 apM
 aqM
-arN
+atU
 akH
 atZ
 auZ
@@ -63986,13 +64032,13 @@ aBL
 avg
 xXS
 aGL
-plI
+aVr
 aVu
 aVu
 huL
 aVu
 aVu
-rYl
+aVr
 hHc
 eMm
 aQn
@@ -64172,7 +64218,7 @@ jpA
 evW
 ada
 qPX
-lQC
+agU
 iuJ
 ada
 iuJ
@@ -64194,7 +64240,7 @@ aMh
 aVr
 aVu
 qFV
-plI
+aVr
 hHc
 eMm
 aQn
@@ -64371,7 +64417,7 @@ agZ
 aih
 nwB
 jpA
-lQC
+agU
 ada
 agU
 agU
@@ -64397,7 +64443,7 @@ aEr
 aEr
 aVr
 aVr
-plI
+aVr
 eMm
 aQn
 aRt
@@ -64597,7 +64643,7 @@ aEr
 aEr
 aEr
 aEr
-uEB
+rYl
 jbP
 qFV
 eMm

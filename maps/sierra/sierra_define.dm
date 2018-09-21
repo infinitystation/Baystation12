@@ -77,7 +77,7 @@
 				bearing += 360
 			location_desc = ", на азимуте [bearing]."
 		welcome_text += "<li>\A <b>[O.name]</b>[location_desc]</li>"
-	welcome_text += "<br>Сигналов бедствия не обнаружено.<br />"
+	welcome_text += "<br>Сигналов бедстви&#255; не обнаружено.<br />"
 
 	post_comm_message("NSV Sierra Sensor Readings", welcome_text)
 	minor_announcement.Announce(message = "New [GLOB.using_map.company_name] Update available at all communication consoles.")

@@ -24,25 +24,13 @@
 	body_parts_covered = 0
 
 /obj/item/clothing/under/rank/security
-	name = "security officer's jumpsuit"
+	name = "security guard's jumpsuit"
 	desc = "It's made of a slightly sturdier material than standard jumpsuits, to allow for robust protection."
 	icon_state = "security"
 	item_state = "r_suit"
 	worn_state = "secred"
 	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
-
-
-/obj/item/clothing/under/rank/security/blue
-	icon = 'icons/blue_brig/obj/clothing/uniform.dmi'
-	icon_state = "security"
-	item_state = null
-	worn_state = "security"
-	icon_override = 'icons/blue_brig/mob/uniform.dmi'
-	item_icons = list(
-		icon_l_hand = 'icons/blue_brig/mob/clothing-lefthand.dmi',
-		icon_r_hand = 'icons/blue_brig/mob/clothing-righthand.dmi',
-		)
 
 /obj/item/clothing/under/rank/dispatch
 	name = "dispatcher's uniform"
@@ -55,7 +43,7 @@
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/rank/security2
-	name = "security officer's uniform"
+	name = "security guard's uniform"
 	desc = "It's made of a slightly sturdier material, to allow for robust protection."
 	icon_state = "redshirt2"
 	item_state = "r_suit"
@@ -68,28 +56,10 @@
 	//item_state = "sec_corporate"
 	worn_state = "sec_corporate"
 
-/obj/item/clothing/under/rank/security/corp/alt
-	icon_override = 'icons/blue_brig/mob/uniform.dmi'
-	icon = 'icons/blue_brig/obj/clothing/uniform.dmi'
-	item_state = null
-	item_icons = list(
-		icon_l_hand = 'icons/blue_brig/mob/clothing-lefthand.dmi',
-		icon_r_hand = 'icons/blue_brig/mob/clothing-righthand.dmi',
-		)
-
 /obj/item/clothing/under/rank/warden/corp
 	icon_state = "warden_corporate"
 	//item_state = "warden_corporate"
 	worn_state = "warden_corporate"
-
-/obj/item/clothing/under/rank/warden/corp/alt
-	icon_override = 'icons/blue_brig/mob/uniform.dmi'
-	icon = 'icons/blue_brig/obj/clothing/uniform.dmi'
-	item_state = null
-	item_icons = list(
-		icon_l_hand = 'icons/blue_brig/mob/clothing-lefthand.dmi',
-		icon_r_hand = 'icons/blue_brig/mob/clothing-righthand.dmi',
-		)
 
 /obj/item/clothing/under/tactical
 	name = "tactical jumpsuit"
@@ -165,15 +135,6 @@
 	//item_state = "hos_corporate"
 	worn_state = "hos_corporate"
 
-/obj/item/clothing/under/rank/head_of_security/corp/alt
-	icon_override = 'icons/blue_brig/mob/uniform.dmi'
-	icon = 'icons/blue_brig/obj/clothing/uniform.dmi'
-	item_state = null
-	item_icons = list(
-		icon_l_hand = 'icons/blue_brig/mob/clothing-lefthand.dmi',
-		icon_r_hand = 'icons/blue_brig/mob/clothing-righthand.dmi',
-		)
-
 /obj/item/clothing/head/HoS
 	name = "Head of Security Hat"
 	desc = "The hat of the Head of Security. For showing the officers who's in charge."
@@ -220,7 +181,7 @@
  */
 
 /obj/item/clothing/under/rank/security/navyblue
-	name = "security officer's uniform"
+	name = "security guard's uniform"
 	desc = "The latest in fashionable security outfits."
 	icon_state = "officerblueclothes"
 	item_state = "ba_suit"

@@ -135,7 +135,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/maintenance
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
-	turf_initializer = /decl/turf_initializer/maintenance
+//	turf_initializer = /decl/turf_initializer/maintenance
 	forced_ambience = list('sound/ambience/maintambience.ogg')
 
 /area/rnd/xenobiology

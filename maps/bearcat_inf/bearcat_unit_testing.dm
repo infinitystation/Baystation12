@@ -11,7 +11,4 @@
 		/area/ship/scrap/escape_star = NO_SCRUBBER|NO_VENT,
 		/area/ship/scrap/top/escape = NO_SCRUBBER|NO_VENT,
 		/area/ship/scrap/maintenance/atmos = NO_SCRUBBER
-		/area/map_template/hydrobase = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/map_template/hydrobase/station = NO_SCRUBBER,
-		/area/map_template/marooned = NO_SCRUBBER|NO_VENT|NO_APC
 	)
