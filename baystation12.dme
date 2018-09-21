@@ -1454,6 +1454,7 @@
 #include "code\modules\clothing\infinity_clothing\suits.dm"
 #include "code\modules\clothing\infinity_clothing\suits_xeno.dm"
 #include "code\modules\clothing\infinity_clothing\under.dm"
+#include "code\modules\clothing\infinity_clothing\under_bluebrig.dm"
 #include "code\modules\clothing\infinity_clothing\under_xenos.dm"
 #include "code\modules\clothing\infinity_clothing\voidsuits.dm"
 #include "code\modules\clothing\infinity_clothing\xenos.dm"
