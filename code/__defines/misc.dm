@@ -99,21 +99,6 @@
 #define WALL_CAN_OPEN 1
 #define WALL_OPENING 2
 
-#define DEFAULT_TABLE_MATERIAL "plastic"
-#define DEFAULT_WALL_MATERIAL "steel"
-
-#define SHARD_SHARD "shard"
-#define SHARD_SHRAPNEL "shrapnel"
-#define SHARD_STONE_PIECE "piece"
-#define SHARD_SPLINTER "splinters"
-#define SHARD_NONE ""
-
-#define MATERIAL_UNMELTABLE 0x1
-#define MATERIAL_BRITTLE    0x2
-#define MATERIAL_PADDING    0x4
-
-#define TABLE_BRITTLE_MATERIAL_MULTIPLIER 4 // Amount table damage is multiplied by if it is made of a brittle material (e.g. glass)
-
 #define BOMBCAP_DVSTN_RADIUS (GLOB.max_explosion_range/4)
 #define BOMBCAP_HEAVY_RADIUS (GLOB.max_explosion_range/2)
 #define BOMBCAP_LIGHT_RADIUS GLOB.max_explosion_range
@@ -218,8 +203,8 @@
 #define DOOR_CRUSH_DAMAGE 15
 
 // Multimeter defines
-#define METER_MESURING "Измерение" // Measuring
-#define METER_CHECKING "Прозвонка" // Checking
+#define METER_MESURING "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" // Measuring
+#define METER_CHECKING "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" // Checking
 
 #define RADIATION_THRESHOLD_CUTOFF 0.1	// Radiation will not affect a tile when below this value.
 
@@ -302,6 +287,11 @@ Define for getting a bitfield of adjacent turfs that meet a condition.
 #define USE_FAIL_NOT_IN_USER 6
 #define USE_FAIL_IS_SILICON 7
 
+//detergent states for clothes
+#define SMELL_DEFAULT	0
+#define SMELL_CLEAN		1
+#define SMELL_STINKY	2
+
 //Shuttle mission stages
 #define SHUTTLE_MISSION_PLANNED  1
 #define SHUTTLE_MISSION_STARTED  2
@@ -309,5 +299,5 @@ Define for getting a bitfield of adjacent turfs that meet a condition.
 #define SHUTTLE_MISSION_QUEUED   4
 
 //Built-in email accounts
-#define EMAIL_DOCUMENTS "document.server@internal-services.nt"
-#define EMAIL_BROADCAST "broadcast@internal-services.nt"
+#define EMAIL_DOCUMENTS "document.server@internal-services.net"
+#define EMAIL_BROADCAST "broadcast@internal-services.net"

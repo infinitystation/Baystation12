@@ -45,6 +45,8 @@
 			return global.SSatoms;
 		if("SScircuit")
 			return global.SScircuit;
+		if("SScodex")
+			return global.SScodex;
 		if("SSculture")
 			return global.SSculture;
 		if("SSevac")
@@ -283,10 +285,6 @@
 			return global.can_call_ert;
 		if("captain_announcement")
 			return global.captain_announcement;
-		if("cargo_supply_pack_root")
-			return global.cargo_supply_pack_root;
-		if("cargo_supply_packs")
-			return global.cargo_supply_packs;
 		if("changelog_hash")
 			return global.changelog_hash;
 		if("channel_color_presets")
@@ -371,8 +369,6 @@
 			return global.department_accounts;
 		if("department_radio_keys")
 			return global.department_radio_keys;
-		if("description_icons")
-			return global.description_icons;
 		if("diary")
 			return global.diary;
 		if("dna_activity_bounds")
@@ -1050,6 +1046,8 @@
 			global.SSatoms=newval;
 		if("SScircuit")
 			global.SScircuit=newval;
+		if("SScodex")
+			global.SScodex=newval;
 		if("SSculture")
 			global.SSculture=newval;
 		if("SSevac")
@@ -1288,10 +1286,6 @@
 			global.can_call_ert=newval;
 		if("captain_announcement")
 			global.captain_announcement=newval;
-		if("cargo_supply_pack_root")
-			global.cargo_supply_pack_root=newval;
-		if("cargo_supply_packs")
-			global.cargo_supply_packs=newval;
 		if("changelog_hash")
 			global.changelog_hash=newval;
 		if("channel_color_presets")
@@ -1376,8 +1370,6 @@
 			global.department_accounts=newval;
 		if("department_radio_keys")
 			global.department_radio_keys=newval;
-		if("description_icons")
-			global.description_icons=newval;
 		if("diary")
 			global.diary=newval;
 		if("dna_activity_bounds")
@@ -2032,6 +2024,7 @@
 	"SSantags",
 	"SSatoms",
 	"SScircuit",
+	"SScodex",
 	"SSculture",
 	"SSevac",
 	"SSevent",
@@ -2151,8 +2144,6 @@
 	"cameranet",
 	"can_call_ert",
 	"captain_announcement",
-	"cargo_supply_pack_root",
-	"cargo_supply_packs",
 	"changelog_hash",
 	"channel_color_presets",
 	"channel_to_radio_key",
@@ -2195,7 +2186,6 @@
 	"delta_index",
 	"department_accounts",
 	"department_radio_keys",
-	"description_icons",
 	"diary",
 	"dna_activity_bounds",
 	"dna_genes",

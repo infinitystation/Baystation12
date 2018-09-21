@@ -66,7 +66,7 @@
 	var/speed_mod = 0
 
 	// Surgery vars.
-	var/cavity_max_w_class = 0
+	var/cavity_max_w_class = ITEM_SIZE_TINY //this is increased if bigger organs spawn by default inside
 	var/hatch_state = 0
 	var/stage = 0
 	var/cavity = 0
@@ -886,7 +886,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		if(DROPLIMB_BLUNT)
 			var/obj/gore
 			if(BP_IS_CRYSTAL(src))
-				gore = new /obj/item/weapon/material/shard(get_turf(victim), "crystal")
+				gore = new /obj/item/weapon/material/shard(get_turf(victim), MATERIAL_CRYSTAL)
 			else if(BP_IS_ROBOTIC(src))
 				gore = new /obj/effect/decal/cleanable/blood/gibs/robot(get_turf(victim))
 			else

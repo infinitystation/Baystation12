@@ -27,7 +27,7 @@
 
 /obj/item/weapon/folder/nt
 	name = "corporative folder"
-	desc = "A NanoTrasen folder."
+	desc = "A corporate folder."
 	icon_state = "folder_nt"
 
 /obj/item/weapon/folder/update_icon()

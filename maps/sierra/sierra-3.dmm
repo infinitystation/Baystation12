@@ -20702,7 +20702,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/assembly/chargebay)
 "aEd" = (
-/obj/machinery/computer/sensors{
+/obj/machinery/computer/ship/sensors{
 	icon_state = "computer";
 	dir = 1
 	},
@@ -35977,7 +35977,7 @@
 /turf/simulated/wall/prepainted,
 /area/crew_quarters/heads/office/hop)
 "oNw" = (
-/obj/machinery/computer/engines{
+/obj/machinery/computer/ship/engines{
 	icon_state = "computer";
 	dir = 1
 	},
@@ -36240,7 +36240,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmary)
 "pKV" = (
-/obj/machinery/computer/helm{
+/obj/machinery/computer/ship/helm{
 	icon_state = "computer";
 	dir = 1
 	},

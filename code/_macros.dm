@@ -91,6 +91,8 @@
 
 #define isCrowbar(A) istype(A, /obj/item/weapon/crowbar)
 
+#define isPlunger(A) istype(A, /obj/item/clothing/mask/plunger) || istype(A, /obj/item/device/plunger/robot)
+
 #define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
 
 #define random_id(key,min_id,max_id) uniqueness_repository.Generate(/datum/uniqueness_generator/id_random, key, min_id, max_id)
@@ -180,3 +182,5 @@
 #define SPAN_NOTICE(X) "<span class='notice'>[X]</span>"
 
 #define SPAN_WARNING(X) "<span class='warning'>[X]</span>"
+
+#define SPAN_DANGER(X) "<span class='danger'>[X]</span>"
