@@ -187,10 +187,6 @@ FIELD_SHORT("DNA", dna, access_security, access_security)
 FIELD_SHORT("Fingerprint", fingerprint, access_security, access_security)
 
 // EMPLOYMENT RECORDS
-FIELD_LONG("Employment Record", emplRecord, access_heads)
-FIELD_SHORT("Home System", homeSystem, access_heads)
-FIELD_SHORT("Faction", faction, access_heads)
-FIELD_LONG("Qualifications", skillset, access_heads)
 FIELD_LONG("Employment Record", emplRecord, access_bridge, access_bridge)
 FIELD_SHORT("Home System", homeSystem, access_bridge, access_change_ids)
 FIELD_SHORT("Faction", faction, access_bridge, access_bridge)
