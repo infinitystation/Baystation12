@@ -25,7 +25,7 @@
 		/obj/item/clothing/under/rank/captain,
 		/obj/item/clothing/under/dress/dress_cap,
 		/obj/item/clothing/under/captainformal,
-		/obj/item/weapon/door_remote/captain,
+		/obj/item/weapon/door_remote/omni,
 		/obj/item/ammo_magazine/c44,
 		/obj/item/weapon/storage/box/PDAs,
 		/obj/item/weapon/storage/box/ids,
