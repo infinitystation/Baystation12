@@ -13,9 +13,10 @@
 	path = /obj/item/clothing/gloves/latex
 	cost = 2
 
-/datum/gear/gloves/latex/nitrile
+/datum/gear/gloves/nitrile
 	display_name = "gloves, nitrile"
 	path = /obj/item/clothing/gloves/latex/nitrile
+	cost = 2
 
 /datum/gear/gloves/rainbow
 	display_name = "gloves, rainbow"
