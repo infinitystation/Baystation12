@@ -194,7 +194,6 @@
 	desc = "A small CSG flag."
 	icon_state = "csg"
 
-<<<<<<< HEAD
 /obj/item/clothing/accessory/badge/tags // non-solgov variant
 	name = "dog tags"
 	desc = "Plain identification tags made from a durable metal. They are stamped with a variety of informational details."
@@ -239,11 +238,9 @@
 
 	for(var/i = 0, i < slots, i++)
 		new /obj/item/ammo_casing/shotgun/pellet(hold)
-=======
+
 /obj/item/clothing/accessory/scarf/red
 	name = "red striped scarf"
-	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	icon = 'icons/obj/clothing/infinity/TG_copy/neck.dmi'
 	icon_state = "stripedredscarf"
 	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_suit_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_mask_str  = 'icons/mob/infinity/sprite_accessories.dmi')
->>>>>>> ee7f88b291... Красный шарф для The_Hero13
