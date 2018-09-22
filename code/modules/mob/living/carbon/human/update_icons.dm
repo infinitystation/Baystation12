@@ -8,10 +8,25 @@ var/global/list/human_icon_cache = list()
 var/global/list/tail_icon_cache = list() //key is [species.race_key][r_skin][g_skin][b_skin]
 var/global/list/light_overlay_cache = list()
 
-/proc/overlay_image(icon,icon_state,color,flags)
+/proc/overlay_image(icon,icon_state,color,flags,plane,layer)
 	var/image/ret = image(icon,icon_state)
 	ret.color = color
 	ret.appearance_flags = flags
+
+	if(plane)
+		ret.plane = plane
+	if(layer)
+		ret.layer = layer
+
+	/* Some unused code. You can use it for computer screen or anything else if you would
+	if(brightness_factor)
+		overlay.color = list(
+			brightness_factor, 0, 0, 0,
+			0, brightness_factor, 0, 0,
+			0, 0, brightness_factor, 0,
+			0, 0, 0, 1
+		) */
+
 	return ret
 
 	///////////////////////

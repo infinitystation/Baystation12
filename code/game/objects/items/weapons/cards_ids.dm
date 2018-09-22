@@ -171,7 +171,6 @@ var/const/NO_EMAG_ACT = -50
 		. += ", [assignment]"
 
 /obj/item/weapon/card/id/proc/set_id_photo(var/mob/M)
-	sleep(10)
 	front = getFlatIcon(M, SOUTH, always_use_defdir = 1)
 	side = getFlatIcon(M, WEST, always_use_defdir = 1)
 
