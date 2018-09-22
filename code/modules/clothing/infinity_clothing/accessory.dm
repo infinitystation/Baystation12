@@ -238,3 +238,9 @@
 
 	for(var/i = 0, i < slots, i++)
 		new /obj/item/ammo_casing/shotgun/pellet(hold)
+
+/obj/item/clothing/accessory/scarf/red
+	name = "red striped scarf"
+	icon = 'icons/obj/clothing/infinity/TG_copy/neck.dmi'
+	icon_state = "stripedredscarf"
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_suit_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_mask_str  = 'icons/mob/infinity/sprite_accessories.dmi')
