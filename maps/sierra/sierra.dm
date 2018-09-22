@@ -10,6 +10,7 @@
 	#include "sierra_overmap.dm"
 	#include "sierra_presets.dm"
 	#include "sierra_ranks.dm"
+	#include "sierra_renames.dm"
 	#include "sierra_security_state.dm"
 	#include "sierra_shuttles.dm"
 	#include "sierra_unit_testing.dm"
