@@ -3,6 +3,3 @@
 
 /datum/gear/eyes/medical
 	allowed_roles = list(/datum/job/doctor)
-
-/datum/gear/eyes/medpatch
-	allowed_roles = list(/datum/job/doctor)

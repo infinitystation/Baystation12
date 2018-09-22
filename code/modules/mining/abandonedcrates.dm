@@ -7,13 +7,14 @@
 	var/list/code = list()
 	var/list/lastattempt = list()
 	var/attempts = 10
+	var/passwordlen = 4
 	locked = 1
 
 /obj/structure/closet/crate/secure/loot/New()
 	..()
 	var/list/digits = list("1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
 
-	for(var/i in 1 to codelen)
+	for(var/i in 1 to passwordlen)
 		code += pick(digits)
 		digits -= code[code.len]
 
@@ -146,11 +147,11 @@
 		return
 
 	to_chat(user, "<span class='notice'>The crate is locked with a Deca-code lock.</span>")
-	var/input = input(user, "Enter [codelen] digits.", "Deca-Code Lock", "") as text
+	var/input = input(user, "Enter [passwordlen] digits.", "Deca-Code Lock", "") as text
 	if(!Adjacent(user))
 		return
 
-	if(input == null || length(input) != codelen)
+	if(input == null || length(input) != passwordlen)
 		to_chat(user, "<span class='notice'>You leave the crate alone.</span>")
 	else if(check_input(input) && locked)
 		to_chat(user, "<span class='notice'>The crate unlocks!</span>")
@@ -171,12 +172,12 @@
 		locked = 0
 
 /obj/structure/closet/crate/secure/loot/proc/check_input(var/input)
-	if(length(input) != codelen)
+	if(length(input) != passwordlen)
 		return 0
 
 	. = 1
 	lastattempt.Cut()
-	for(var/i in 1 to codelen)
+	for(var/i in 1 to passwordlen)
 		var/guesschar = copytext(input, i, i+1)
 		lastattempt += guesschar
 		if(guesschar != code[i])
@@ -195,7 +196,7 @@
 				var/cows = 0
 
 				var/list/code_contents = code.Copy()
-				for(var/i in 1 to codelen)
+				for(var/i in 1 to passwordlen)
 					if(lastattempt[i] == code[i])
 						++bulls
 					else if(lastattempt[i] in code_contents)

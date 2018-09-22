@@ -35,7 +35,7 @@
 
 /datum/gear/tactical/bloodpatch
 	display_name = "blood patch selection"
-	path = /obj/item/clothing/accessory/armor/tag/opos
+	path = /obj/item/clothing/accessory/armor/tag
 
 /datum/gear/tactical/bloodpatch/New()
 	..()

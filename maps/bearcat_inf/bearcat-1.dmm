@@ -225,13 +225,11 @@
 "eq" = (/obj/machinery/door/blast/shutters{dir = 4; id = "melt_shut"; name = "Cargo Shutters"},/obj/effect/floor_decal/industrial/hatch/yellow,/turf/simulated/floor/plating,/area/ship/scrap/cargo/lower)
 "er" = (/obj/effect/floor_decal/corner/beige{icon_state = "corner_white"; dir = 9},/turf/simulated/floor/tiled,/area/ship/scrap/cargo/lower)
 "es" = (/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled,/area/ship/scrap/cargo/lower)
-"et" = (/obj/effect/landmark/test/safe_turf,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled,/area/ship/scrap/cargo/lower)
 "eu" = (/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/item/weapon/stool,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled/freezer,/area/ship/scrap/crew/wash)
 "ev" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/obj/structure/cable{d1 = 2; d2 = 4; dir = 2; icon_state = "2-4"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled,/area/ship/scrap/maintenance/storage)
 "ew" = (/turf/simulated/wall/prepainted,/area/ship/scrap/maintenance/eva)
 "ex" = (/turf/simulated/wall/r_wall/hull,/area/ship/scrap/maintenance/eva)
 "ey" = (/obj/effect/floor_decal/corner/beige{icon_state = "corner_white"; dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/obj/machinery/alarm{dir = 8; icon_state = "alarm0"; pixel_x = 24},/turf/simulated/floor/tiled,/area/ship/scrap/cargo/lower)
-"ez" = (/obj/structure/catwalk,/obj/structure/catwalk,/turf/simulated/floor/plating,/area/ship/scrap/maintenance/lower)
 "eA" = (/obj/structure/table/standard,/obj/item/device/flashlight/lamp,/obj/item/weapon/paper_bin,/obj/item/weapon/stamp/cargo,/obj/item/weapon/stamp/denied,/obj/item/weapon/clipboard,/obj/item/device/radio,/obj/item/device/radio/intercom{dir = 8; pixel_x = 22},/turf/simulated/floor/tiled,/area/ship/scrap/cargo/lower)
 "eB" = (/obj/structure/window/reinforced{dir = 8},/turf/space,/area/space)
 "eC" = (/obj/machinery/door/airlock/autoname,/obj/machinery/door/firedoor,/obj/structure/catwalk,/turf/simulated/floor/plating,/area/ship/scrap/maintenance/lower)
@@ -412,7 +410,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAQAQAQiVeEeFeGeHeIeJbzbFeI
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAQAQAQAQagagbUalaQeUeVeWeXeXeYaQeZcvamamamTbTbTbTbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAQAQcRdtdudvbUckaQdYdZeaebecedaQcrcsbWamfNfOfPTbTbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAQAQdwdxdxdwbUcCbJeheiavekelembPcDcFcFcjfSfTfUczclaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAQAQdydzdAdBdCcGeqeresetbfbgeyaQcHcsdWamfVfWfXTbTbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAQAQdydzdAdBdCcGeqeresesbfbgeyaQcHcsdWamfVfWfXTbTbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAQAQfydxdEdFcAbIaQahanaoaqatcIaQfGcscyamamamamTbTbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAQAQdDdxdzdHbUcJaQawaxayayazaBaQcKcscOgagbgcgdcBcBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAQAQdIdwdJdKbUcMcEaCaDaEaFaGaBcEdXcFeecLghgjgkdGclaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -422,7 +420,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaXBXBcbcccdcecaeoaQaNaOaPaQ
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaablXBcfcgchciendbcEcmcncocpcncqcEfocFgfdsdLeueTgqclaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaXBXBcVbXdjdlcxcJaQfIaQaQaQaQfJaQdqfBjZgKgLgYgTZWZWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaXBXBctcudOcwcafqdPfrdQdTepdUdrdVejfCZWgMgNegfaZWZWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaXBXBcacacacxcaezeCeLeMfbfcfdcseCcsfzZWZWgOZWZWZWZWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaXBXBcacacacxcacseCeLeMfbfcfdcseCcsfzZWZWgOZWZWZWZWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabrbrbrbtbKbMbNcWbqcXaTaTaTgAaTewewewewZWgPgQgRgSZWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabrbrbrcYcZdadddedidkaTauarasbRewaVaWaXZWgUZWZWZWZWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabrbrdpdRdSddfeffcZcZaTbEbBaUbHewaZbbbcbubvexexaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
