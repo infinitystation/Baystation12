@@ -375,40 +375,6 @@
 		..()
 		reagents.add_reagent(/datum/reagent/ethanol/pwine, 100)
 
-/obj/item/weapon/reagent_containers/food/drinks/bottle/champagne //Bottle
-	name = "Champagne bottle"
-	desc = "A champagne bottle."
-	icon = 'icons/infinity_custom_items_obj.dmi' //redefine - true or not ? dunno
-	icon_state = "champagnebottle"
-	volume = 100
-	center_of_mass = "x=12;y=5"
-
-	obj_flags = 0 // starts closed
-
-/obj/item/weapon/reagent_containers/food/drinks/bottle/champagne/New() //it's all here writen wrong with short proc name's, not as contributing guide says, so it's done as it's had to be
-	..()
-	reagents.add_reagent("champagne", 100)
-
-/obj/item/weapon/reagent_containers/food/drinks/bottle/champagne/attack_self(mob/user as mob)
-	if(!is_open_container())
-		open(user)
-	..()
-
-/obj/item/weapon/reagent_containers/food/drinks/bottle/champagne/open(mob/user)
-	if(do_after(user, 10, src))
-		playsound(loc,'sound/effects/open.ogg', 100, 1)
-		var/chance = rand(0,10)
-		if (chance<2)
-			playsound(loc,'sound/effects/psh.ogg', 100)
-			user.visible_message("<span class='notice'>\The [user] unsuccessfully opens \the [src]</span>")
-			new /obj/effect/decal/cleanable/champagne(usr.loc)
-		else
-			user.visible_message("<span class='notice'>\The [user] professional opens \the [src]</span>")
-		obj_flags |= ATOM_FLAG_OPEN_CONTAINER
-/*
-опх дюкэмеиьел днкаюбкемхх мюохрйнб ме асдэре лмни - окчире мю йнмрпхаэчрхмц х охьхре йнлюоюйрмн х ашярпн
-онкмше хлемю опнйнб дкъ янгдюмхъ асршкн асукю ме мсфмш.
-*/
 //////////////////////////PREMIUM ALCOHOL ///////////////////////
 /obj/item/weapon/reagent_containers/food/drinks/bottle/premiumvodka
 	name = "Four Stripes Quadruple Distilled"
