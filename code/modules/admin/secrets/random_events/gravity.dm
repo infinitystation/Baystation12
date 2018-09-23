@@ -17,9 +17,13 @@
 
 	var/choice = input(user, "Make Command Report?") in list("Yes", "No")
 	gravity_is_on = !gravity_is_on
-	for(var/A in SSmachines.gravity_generators)
-		var/obj/machinery/gravity_generator/main/B = A
-		B.eventshutofftoggle()
+	if(!SSmachines.gravity_generators)
+		for(var/area/A in world)
+			A.gravitychange(gravity_is_on)
+	else
+		for(var/A in SSmachines.gravity_generators)
+			var/obj/machinery/gravity_generator/main/B = A
+			B.eventshutofftoggle()
 
 	feedback_inc("admin_secrets_fun_used",1)
 	feedback_add_details("admin_secrets_fun_used","Grav")

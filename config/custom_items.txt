@@ -115,6 +115,11 @@ character_name: Daniel Osborne
 item_path: /obj/item/weapon/circuitboard/account_database  
 }
 {
+ckey: thehero13
+character_name: Jake Pater
+item_path: /obj/item/clothing/accessory/scarf/red
+}
+{
 ckey: chowny
 character_name: Heather Leslie
 item_path: /obj/item/device/synthesized_instrument/guitar/pink
