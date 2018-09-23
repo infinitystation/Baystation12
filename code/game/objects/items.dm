@@ -101,6 +101,15 @@
 		src.loc = null
 	return ..()
 
+/obj/item/crush_act()
+	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+	for(var/i in 1, i < w_class, i++)
+		new /obj/item/weapon/scrap_lump(loc)
+	for(var/obj/item/I in contents)
+		I.forceMove(loc)
+		I.crush_act()
+	..()
+
 /obj/item/device
 	icon = 'icons/obj/device.dmi'
 

@@ -37,6 +37,11 @@ var/list/organ_cache = list()
 
 	return ..()
 
+/obj/item/organ/crush_act() // prevent gaining scrap from organs
+	ex_act(1)
+	if(!QDELETED(src))
+		qdel(src)
+
 /obj/item/organ/proc/refresh_action_button()
 	return action
 
