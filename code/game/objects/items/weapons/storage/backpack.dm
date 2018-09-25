@@ -54,7 +54,7 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = 56
 	item_icons = list(
-		slot_l_hand_str = 'icons/mob/infinity/lefthand.dmi.',
+		slot_l_hand_str = 'icons/mob/infinity/lefthand.dmi',
 		slot_r_hand_str = 'icons/mob/infinity/righthand.dmi',
 		)
 	New()
