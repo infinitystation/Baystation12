@@ -7,6 +7,7 @@
 	blend_mode = BLEND_MULTIPLY
 	color = "#000000"
 	alpha = 120
+	anchored = 1
 
 	var/message
 	var/graffiti_age = 0
