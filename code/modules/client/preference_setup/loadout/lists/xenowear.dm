@@ -350,3 +350,12 @@
 	path = /obj/item/clothing/suit/storage/toggle/Resomicoat
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_RESOMI)
+
+// Adherent
+
+/datum/gear/storage/adherent_harness
+	display_name = "(Adherent) tools harness"
+	path = /obj/item/weapon/storage/belt/utility/vigil
+	slot = slot_belt
+	cost = 4
+	whitelisted = list(SPECIES_ADHERENT)
