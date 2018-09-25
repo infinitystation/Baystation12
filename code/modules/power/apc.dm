@@ -296,8 +296,8 @@
 		status_overlays_lighting.len = 5
 		status_overlays_environ.len = 5
 
-		status_overlays_lock[1] = image(icon, "apcox-0")    // 0=blue 1=red
-		status_overlays_lock[2] = image(icon, "apcox-1")
+		status_overlays_lock[1] = overlay_image(icon, "apcox-0", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)    // 0=blue 1=red
+		status_overlays_lock[2] = overlay_image(icon, "apcox-1", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
 
 		status_overlays_charging[1] = overlay_image(icon, "apco3-0", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
 		status_overlays_charging[2] = overlay_image(icon, "apco3-1", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
