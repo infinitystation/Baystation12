@@ -249,7 +249,7 @@ its easier to just keep the beam vertical.
 			f_name += "oil-stained [name][infix]."
 
 	if(!isobserver(user))
-		user.visible_message("<font size=1>[user.name] looks at [src].</font>")
+		user.visible_message("<font size=1><i>[user.name] looks at [src].</i></font>")
 	to_chat(user, "\icon[src] That's [f_name] [suffix]")
 	to_chat(user, desc)
 
