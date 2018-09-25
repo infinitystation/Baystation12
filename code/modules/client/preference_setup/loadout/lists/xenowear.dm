@@ -356,6 +356,7 @@
 /datum/gear/storage/adherent_harness
 	display_name = "(Adherent) tools harness"
 	path = /obj/item/weapon/storage/belt/utility/vigil
+	sort_category = "Xenowear"
 	slot = slot_belt
 	cost = 4
 	whitelisted = list(SPECIES_ADHERENT)
