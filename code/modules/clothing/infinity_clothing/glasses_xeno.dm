@@ -6,7 +6,7 @@
 	icon_state = "sun_lenses"
 	item_state = null
 	species_restricted = list(SPECIES_RESOMI)
-	darkness_view = -1
+	flash_protection = FLASH_PROTECTION_MODERATE
 	body_parts_covered = 0
 
 /obj/item/clothing/glasses/sunglasses/sechud/lenses
@@ -17,7 +17,7 @@
 	icon_state = "sec_lenses"
 	item_state = null
 	species_restricted = list(SPECIES_RESOMI)
-	darkness_view = -1
+	flash_protection = FLASH_PROTECTION_MODERATE
 
 /obj/item/clothing/glasses/hud/health/lenses
 	name = "small medhud lenses"
@@ -26,5 +26,5 @@
 	icon = 'icons/obj/clothing/infinity/glasses.dmi'
 	icon_state = "med_lenses"
 	item_state = null
-	darkness_view = -1
+	flash_protection = FLASH_PROTECTION_MODERATE
 	species_restricted = list(SPECIES_RESOMI)
