@@ -25,9 +25,13 @@
 /obj/machinery/atmospherics/proc/ventcrawl_to(var/mob/living/user, var/obj/machinery/atmospherics/target_move, var/direction)
 	if(target_move)
 		if(is_type_in_list(target_move, ventcrawl_machinery) && target_move.can_crawl_through())
-			user.remove_ventcrawl()
-			user.forceMove(target_move.loc) //handles entering and so on
-			user.visible_message("You hear something squeezing through the ducts.", "You climb out the ventilation system.")
+			if(world.time > user.next_play_vent)
+				user.next_play_vent = world.time+10
+				user.visible_message("<span class='danger'>You hear something squeezing through the ducts!</span>", "You are climbing out the ventilation system...")
+				if(!do_after(user, 25))
+					return
+				user.remove_ventcrawl()
+				user.forceMove(target_move.loc) //handles entering and so on
 		else if(target_move.can_crawl_through())
 			if(target_move.return_network(target_move) != return_network(src))
 				user.remove_ventcrawl()
@@ -36,13 +40,13 @@
 			user.client.eye = target_move //if we don't do this, Byond only updates the eye every tick - required for smooth movement
 			if(world.time > user.next_play_vent)
 				user.next_play_vent = world.time+30
-				playsound(src, 'sound/machines/ventcrawl.ogg', 50, 1, -3)
+				playsound(src, 'sound/machines/ventcrawl.ogg', 60, 1, 2)
 	else
 		if((direction & initialize_directions) || is_type_in_list(src, ventcrawl_machinery) && src.can_crawl_through()) //if we move in a way the pipe can connect, but doesn't - or we're in a vent
 			user.remove_ventcrawl()
 			user.forceMove(src.loc)
-			user.visible_message("You hear something squeezing through the pipes.", "You climb out the ventilation system.")
-	user.SetMoveCooldown(user.movement_delay())
+			user.visible_message("<span class='danger'>You hear something squeezing through the pipes!</span>", "You climb out the ventilation system.")
+	user.SetMoveCooldown(user.movement_delay()+1)
 
 /obj/machinery/atmospherics/proc/can_crawl_through()
 	return 1
