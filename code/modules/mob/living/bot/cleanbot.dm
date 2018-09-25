@@ -39,7 +39,7 @@
 			ignore_list -= g
 
 /mob/living/bot/cleanbot/lookForTargets()
-	for(var/obj/effect/decal/cleanable/D in view(world.view + 1, src))
+	for(var/obj/effect/decal/cleanable/D in view(7, src))
 		if(confirmTarget(D))
 			target = D
 			return
