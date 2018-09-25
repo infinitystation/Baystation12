@@ -6,6 +6,16 @@
 	anchored = 1
 	density = 0
 
+/obj/effect/decal/cleanable/New()
+	..()
+	var/turf/space/sp = get_turf(src)
+	if(istype(sp))
+		visible_message("<span class='notice'><i>[src] vanishes in void.</i></span>")
+		qdel(src)
+		return
+	if(src.loc.density)
+		qdel(src)
+		return
 
 /obj/effect/decal/cleanable/Initialize(var/ml, var/_age)
 	if(!isnull(_age))
