@@ -240,7 +240,6 @@
 /datum/computer_file/report/recipient/nt/fire/New()
 	..()
 	set_access(access_heads, access_heads)
-	set_access(access_nanotrasen, override = 0)
 
 /datum/computer_file/report/recipient/nt/fire/generate_fields()
 	..()
@@ -338,9 +337,8 @@
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/nt/incident/crew/generate_fields()
-	add_field(/datum/report_field/instruction, "Дл&#255; несколькосторонних инцидентов, включающих в себ&#255; и корабль, и экипаж/сотрудников.")
+	add_field(/datum/report_field/instruction, "Дл&#255; несколькосторонних инцидентов, включающих в себ&#255; и корабль, и персонал.")
 	..()
-	add_field(/datum/report_field/people/list_from_manifest, "Вовлеченные члены экипажа")
 	add_field(/datum/report_field/people/list_from_manifest, "Вовлеченный персонал")
 	add_signatures()
 
@@ -362,7 +360,7 @@
 	temp_fields += add_field(/datum/report_field/signature, "Подпись представител&#255; NanoTrasen")
 	temp_fields += add_field(/datum/report_field/options/yes_no, "Одобрено")
 	for(var/datum/report_field/temp_field in temp_fields)
-		temp_field.set_access(access_edit = access_nanotrasen)
+		temp_field.set_access(access_edit = access_iaa)
 
 /datum/computer_file/report/recipient/nt/deny
 	form_name = "NT-1443D"
@@ -381,7 +379,7 @@
 	add_field(/datum/report_field/options/yes_no, "Отмена проекта")
 	add_field(/datum/report_field/simple_text, "Другое")
 	add_field(/datum/report_field/options/yes_no, "Отчет одобрен")
-	set_access(access_edit = access_nanotrasen)
+	set_access(access_edit = access_iaa)
 
 /datum/computer_file/report/recipient/nt/memo/generate_fields()
 	..()
@@ -393,21 +391,8 @@
 
 /datum/computer_file/report/recipient/nt/memo/internal
 	form_name = "NT-0003"
-	title = "Внутренн&#255;&#255; записка"
+	title = "Записка"
 	available_on_ntnet = 1
-
-/datum/computer_file/report/recipient/nt/memo/internal/New()
-	..()
-	set_access(access_nanotrasen, access_nanotrasen)
-
-/datum/computer_file/report/recipient/nt/memo/external
-	form_name = "NT-0005"
-	title = "Внешн&#255;&#255; записка"
-	available_on_ntnet = 1
-
-/datum/computer_file/report/recipient/nt/memo/external/New()
-	..()
-	set_access(access_edit = access_nanotrasen)
 
 //No access restrictions for easier use.
 /datum/computer_file/report/recipient/nt/sales
@@ -430,25 +415,6 @@
 	add_field(/datum/report_field/signature, "Подпись")
 	add_field(/datum/report_field/options/yes_no, "Одобрено")
 
-/datum/computer_file/report/recipient/nt/visa
-	form_name = "NT-0952"
-	title = "Форма запроса визы Центрального Правительства Солнечной Системы NanoTrasen"
-	available_on_ntnet = 1
-
-/datum/computer_file/report/recipient/nt/visa/generate_fields()
-	..()
-	add_header()
-	var/datum/report_field/temp_field
-	add_field(/datum/report_field/people/from_manifest, "Получатель визы")
-	add_field(/datum/report_field/pencode_text, "Причина запроса")
-	add_field(/datum/report_field/signature, "Подпись получател&#255; визы")
-	temp_field = add_field(/datum/report_field/signature, "Подпись составител&#255;")
-	temp_field.set_access(access_edit = access_nanotrasen)
-	temp_field = add_field(/datum/report_field/options/yes_no, "Одобрено составителем")
-	temp_field.set_access(access_edit = access_nanotrasen)
-	temp_field = add_field(/datum/report_field/signature, "Подпись органа власти, подтверждающа&#255; получение")
-	temp_field.set_access(access_edit = access_iaa)
-
 /datum/computer_file/report/recipient/nt/payout
 	form_name = "NT-3310"
 	title = "Авторизаци&#255; выплаты ближайшему родственнику"
@@ -463,19 +429,14 @@
 	add_field(/datum/report_field/instruction, "Отправить и доставить ближайшему родственнику сотрудника без задержек.")
 	add_field(/datum/report_field/signature, "Подпись")
 	add_field(/datum/report_field/options/yes_no, "Одобрено")
-	set_access(access_edit = access_nanotrasen)
+	set_access(access_edit = access_iaa)
 
-//Solgov reports, mostly for the NR
-/datum/computer_file/report/recipient/sol
-	logo = "\[logo\]"
-	form_name = "NT-REP-00"
-
-/datum/computer_file/report/recipient/sol/audit
-	form_name = "NT-REP-12"
+/datum/computer_file/report/recipient/nt/audit
+	form_name = "NT-IAA-12"
 	title = "Аудит департамента ИСН Сьерра"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/sol/audit/generate_fields()
+/datum/computer_file/report/recipient/nt/audit/generate_fields()
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/time, "Врем&#255;")
 	add_field(/datum/report_field/simple_text, "Глава департамента")
@@ -486,7 +447,6 @@
 	add_field(/datum/report_field/options/yes_no, "Одобрено")
 	set_access(access_edit = access_iaa)
 
-/datum/computer_file/report/recipient/sol/audit
-	form_name = "NT-REP-4"
-	title = "Отчет об инциденте"
-	available_on_ntnet = 1
+/datum/computer_file/report/recipient/nt/anomaly/New()
+	..()
+	set_access(access_iaa, access_iaa)
