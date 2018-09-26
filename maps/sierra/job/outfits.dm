@@ -184,7 +184,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	l_ear = /obj/item/device/radio/headset/headset_sec
 	pda_type = /obj/item/modular_computer/pda/security
 	pda_slot = slot_l_store
-	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
 /decl/hierarchy/outfit/job/sierra/crew/security/New()
 	..()
@@ -439,15 +438,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/white
 	pda_type = /obj/item/modular_computer/pda/heads/rd
 	id_type = /obj/item/weapon/card/id/sierra/crew/research/senior_scientist
-
-
-/decl/hierarchy/outfit/job/sierra/crew/research/nt_pilot //pending better uniform
-	name = OUTFIT_JOB_NAME("Pilot")
-	uniform = /obj/item/clothing/under/rank/ntpilot
-	suit = /obj/item/clothing/suit/storage/toggle/brown_jacket/nanotrasen
-	shoes = /obj/item/clothing/shoes/workboots
-	id_type = /obj/item/weapon/card/id/sierra/crew/research/nt_pilot
-	l_ear = /obj/item/device/radio/headset/headset_pilot/
 
 /decl/hierarchy/outfit/job/sierra/crew/research/scientist
 	name = OUTFIT_JOB_NAME("Scientist - Sierra")

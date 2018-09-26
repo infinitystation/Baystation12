@@ -25,7 +25,7 @@
 						/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee,/datum/job/chemist, /datum/job/psychiatrist,
 						/datum/job/qm, /datum/job/cargo_tech,  /datum/job/cargo_assistant, /datum/job/mining,
 						/datum/job/janitor, /datum/job/chef, /datum/job/bartender,
-						/datum/job/senior_scientist, /datum/job/scientist, /datum/job/roboticist, /datum/job/nt_pilot, /datum/job/scientist_assistant,
+						/datum/job/senior_scientist, /datum/job/scientist, /datum/job/roboticist, /datum/job/scientist_assistant,
 						/datum/job/ai, /datum/job/cyborg,
 						/datum/job/assistant,
 						/datum/job/merchant, /datum/job/stowaway
@@ -105,7 +105,7 @@
 			            access_kitchen, access_cargo, access_construction, access_chemistry, access_cargo_bot, access_hydroponics, access_library, access_virology,
 			            access_cmo, access_qm, access_network, access_surgery, access_mailsorting, access_heads_vault, access_ce,
 			            access_hop, access_hos, access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_sec_doors, access_psychiatrist,
-			            access_medical_equip, access_robotics_engineering, access_gun, access_expedition_shuttle, access_guppy,
+			            access_medical_equip, access_gun, access_expedition_shuttle, access_guppy,
 			            access_seneng, access_senmed, access_hangar, access_guppy_helm, access_expedition_shuttle_helm, access_explorer, access_el,
 						access_tox, access_tox_storage, access_research, access_mining, access_mining_office, access_mining_station, access_xenobiology, access_xenoarch,
 						access_petrov, access_petrov_helm)
@@ -150,7 +150,7 @@
 
 	access = list(access_tox, access_tox_storage, access_emergency_storage, access_teleporter, access_bridge, access_rd,
 						access_research, access_robotics, access_mining, access_mining_office, access_mining_station, access_xenobiology,
-						access_RC_announce, access_keycard_auth, access_xenoarch, access_nanotrasen, access_heads,
+						access_RC_announce, access_keycard_auth, access_xenoarch, access_heads,
 						access_sec_doors, access_medical, access_network,
 						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_petrov_helm, access_guppy_helm)
 
@@ -242,7 +242,7 @@
 			            access_tech_storage, access_atmospherics, access_janitor, access_construction,
 			            access_sec_doors, access_medical,
 			            access_network, access_ce, access_RC_announce, access_keycard_auth, access_tcomsat,
-			            access_robotics_engineering, access_seneng, access_hangar, access_robotics)
+			            access_seneng, access_hangar)
 
 	minimal_access = list()
 
@@ -353,8 +353,8 @@
 
 	access = list(	access_security, access_medical, access_engine, access_maint_tunnels, access_emergency_storage,
 					access_heads, access_bridge, access_janitor, access_kitchen, access_cargo, access_RC_announce, access_keycard_auth,
-					access_guppy, access_guppy_helm, access_external_airlocks,
-					access_eva, access_hangar, access_explorer)
+					access_guppy, access_guppy_helm, access_external_airlocks, access_expedition_shuttle,
+					access_eva, access_hangar, access_explorer, access_expedition_shuttle_helm)
 
 	minimal_access = list()
 
@@ -924,7 +924,7 @@
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Chief Medical Officer and Medical Personnel"
+	supervisors = "the Chief Medical Officer"
 	selection_color = "#013d3b"
 	economic_power = 5
 	ideal_character_age = 30
@@ -992,7 +992,8 @@
 	skill_points = 20
 
 	access = list(		access_maint_tunnels, access_emergency_storage, access_tech_storage,  access_cargo, access_guppy_helm,
-						access_cargo_bot, access_qm, access_mailsorting, access_expedition_shuttle, access_guppy, access_hangar)
+						access_cargo_bot, access_qm, access_mailsorting, access_expedition_shuttle, access_guppy, access_hangar,
+						access_mining, access_mining_office, access_mining_station,)
 
 	minimal_access = list()
 
@@ -1049,7 +1050,7 @@
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
 	access = list(access_research, access_mining, access_mining_office, access_mining_station,
-						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_guppy_helm)
+						access_expedition_shuttle, access_guppy, access_hangar, access_guppy_helm)
 
 	minimal_access = list()
 
@@ -1215,12 +1216,12 @@
 
 /datum/job/roboticist
 	title = "Roboticist"
-	department = "Engineering"
-	department_flag = SCI|MED
+	department = "Science"
+	department_flag = SCI
 
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "the Research Director and the Chief Medical Officer"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Research Director"
 	selection_color = "#633d63"
 	economic_power = 6
 	alt_titles = list(
@@ -1244,35 +1245,7 @@
 	minimal_access = list()
 
 /datum/job/roboticist/get_description_blurb()
-	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics as well as the repair of all synthetic crew on board. You are also responsible for placing brains into MMI's and giving them bodies and the production of exosuits(mechs) for various departments. You answer to the Chief Engineer."
-
-/datum/job/nt_pilot
-	title = "NanoTrasen Pilot"
-	supervisors = "the Research Director"
-	department = "Science"
-	department_flag = SCI
-
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "the Research Director and NanoTrasen Personnel"
-	selection_color = "#633d63"
-	economic_power = 10
-	minimal_player_age = 5
-	ideal_character_age = 40
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/nt_pilot
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	access = list(access_research, access_mining_office,
-						access_mining_station, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy,
-						access_hangar, access_petrov, access_petrov_helm, access_guppy_helm, access_mining)
-
-	minimal_access = list()
-
-	min_skill = list(	SKILL_EVA   = SKILL_BASIC,
-						SKILL_PILOT = SKILL_ADEPT)
-
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
+	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics as well as the repair of all synthetic crew on board. You are also responsible for placing brains into MMI's and giving them bodies and the production of exosuits(mechs) for various departments. You answer to the Research Director."
 
 /datum/job/scientist_assistant
 	title = "Research Assistant"
@@ -1281,7 +1254,7 @@
 
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Research Director and NanoTrasen Personnel"
+	supervisors = "the Research Director and Science Personnel"
 	selection_color = "#633d63"
 	economic_power = 3
 	ideal_character_age = 30

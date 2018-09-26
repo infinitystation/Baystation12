@@ -155,9 +155,6 @@
 /obj/item/weapon/card/id/sierra/crew/research/scientist
 	job_access_type = /datum/job/scientist
 
-/obj/item/weapon/card/id/sierra/crew/research/nt_pilot
-	job_access_type = /datum/job/nt_pilot
-
 /obj/item/weapon/card/id/sierra/crew/research/roboticist
 	job_access_type = /datum/job/roboticist
 

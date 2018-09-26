@@ -17,14 +17,14 @@
 #define SEMIFORMAL_ROLES list(\
 	/datum/job/assistant,/datum/job/mining, /datum/job/scientist_assistant,\
 	/datum/job/psychiatrist, /datum/job/bartender, /datum/job/merchant,\
-	/datum/job/nt_pilot, /datum/job/stowaway, /datum/job/scientist,\
+	/datum/job/stowaway, /datum/job/scientist,\
 	/datum/job/senior_scientist, /datum/job/detective)
 
 //For civilian jobs that may have a strict uniform.
 #define SEMIANDFORMAL_ROLES list(\
 	/datum/job/assistant,/datum/job/mining, /datum/job/scientist_assistant,\
 	/datum/job/psychiatrist, /datum/job/bartender, /datum/job/merchant,\
-	/datum/job/nt_pilot, /datum/job/iaa, /datum/job/rd,\
+	/datum/job/iaa, /datum/job/rd,\
 	/datum/job/senior_scientist, /datum/job/scientist,\
 	 ,/datum/job/stowaway, /datum/job/detective)
 
@@ -38,7 +38,7 @@
 	/datum/job/psychiatrist,\
 	/datum/job/qm, /datum/job/cargo_tech, /datum/job/cargo_assistant,\
 	/datum/job/janitor, /datum/job/chef, /datum/job/bartender,\
-	/datum/job/senior_scientist, /datum/job/nt_pilot, /datum/job/scientist, /datum/job/mining,\
+	/datum/job/senior_scientist, /datum/job/scientist, /datum/job/mining,\
 	/datum/job/scientist_assistant)
 
 //For roles with no uniform or formal clothing requirements
@@ -93,7 +93,7 @@
 //For members of the research department and jobs that are scientific
 #define RESEARCH_ROLES list(\
 	/datum/job/rd, /datum/job/iaa, /datum/job/scientist,\
-	/datum/job/scientist_assistant, /datum/job/assistant, /datum/job/nt_pilot,\
+	/datum/job/scientist_assistant, /datum/job/assistant,\
 	/datum/job/senior_scientist, /datum/job/roboticist)
 
 //For jobs that spawn with weapons in their lockers
