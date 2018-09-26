@@ -75,7 +75,7 @@
 			var/bearing = round(90 - Atan2(O.x - sierra.x, O.y - sierra.y),5) //fucking triangles how do they work
 			if(bearing < 0)
 				bearing += 360
-			location_desc = ", на азимуте [bearing]."
+			location_desc = ", по азимуту [bearing]."
 		welcome_text += "<li>\A <b>[O.name]</b>[location_desc]</li>"
 	welcome_text += "<br>Сигналов бедстви&#255; не обнаружено.<br />"
 
