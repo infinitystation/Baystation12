@@ -13,9 +13,10 @@
 		visible_message("<span class='notice'><i>[src] vanishes in void.</i></span>")
 		qdel(src)
 		return
-	if(src.loc.density)
-		qdel(src)
-		return
+	if(src.loc) // It's stupid but it makes no runtimes
+		if(src.loc.density)
+			qdel(src)
+			return
 
 /obj/effect/decal/cleanable/Initialize(var/ml, var/_age)
 	if(!isnull(_age))
