@@ -6,8 +6,6 @@ var/const/NETWORK_SECOND_DECK = "Second Deck"
 var/const/NETWORK_THIRD_DECK  = "Third Deck"
 var/const/NETWORK_SUPPLY      = "Supply"
 var/const/NETWORK_HANGAR      = "Hangar"
-var/const/NETWORK_MISSILE     = "Missile Pod"
-var/const/NETWORK_EXPLO       = "Exploration"
 var/const/NETWORK_PETROV      = "Petrov"
 
 /datum/map/sierra/get_network_access(var/network)
@@ -22,8 +20,8 @@ var/const/NETWORK_PETROV      = "Petrov"
 			return access_hangar
 		if(NETWORK_PETROV)
 			return access_petrov
-		if(NETWORK_EXPLO)
-			return access_explorer
+		if(NETWORK_EXPEDITION)
+			return access_expedition_shuttle
 	return get_shared_network_access(network) || ..()
 
 /datum/map/sierra
@@ -41,7 +39,6 @@ var/const/NETWORK_PETROV      = "Petrov"
 		NETWORK_SECURITY,
 		NETWORK_SUPPLY,
 		NETWORK_EXPEDITION,
-		NETWORK_EXPLO,
 		NETWORK_HANGAR,
 		NETWORK_CALYPSO,
 		NETWORK_PETROV,
@@ -87,9 +84,6 @@ var/const/NETWORK_PETROV      = "Petrov"
 /obj/machinery/camera/network/hangar
 	network = list(NETWORK_HANGAR)
 
-/obj/machinery/camera/network/exploration
-	network = list(NETWORK_EXPLO)
-
 /obj/machinery/camera/network/command
 	network = list(NETWORK_COMMAND)
 
@@ -98,9 +92,6 @@ var/const/NETWORK_PETROV      = "Petrov"
 
 /obj/machinery/camera/network/engine
 	network = list(NETWORK_ENGINE)
-
-/obj/machinery/camera/network/missile
-	network = list(NETWORK_MISSILE)
 
 /obj/machinery/camera/network/engineering_outpost
 	network = list(NETWORK_ENGINEERING_OUTPOST)
