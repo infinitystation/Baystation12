@@ -31,7 +31,7 @@
 	desc = "A collection of black pouches that can be attached to a plate carrier. Carries up to four items."
 	icon_state = "lpouches"
 	slots = 4
-	slowdown = 1
+	slowdown = 0.6
 
 /obj/item/clothing/accessory/storage/pouches/large/blue
 	desc = "A collection of blue pouches that can be attached to a plate carrier. Carries up to four items."
@@ -178,7 +178,7 @@
 	icon_state = "legguards_riot"
 	armor = list(melee = 75, bullet = 33, laser = 50, energy = 10, bomb = 25, bio = 0, rad = 0)
 	siemens_coefficient = 0.5
-	slowdown = 1
+	slowdown = 0.5
 
 /obj/item/clothing/accessory/legguards/ballistic
 	name = "ballistic leg guards"
@@ -186,7 +186,7 @@
 	icon_state = "legguards_ballistic"
 	armor = list(melee = 42, bullet = 75, laser = 42, energy = 10, bomb = 25, bio = 0, rad = 0)
 	siemens_coefficient = 0.7
-	slowdown = 1
+	slowdown = 0.5
 
 /obj/item/clothing/accessory/legguards/ablative
 	name = "ablative leg guards"
@@ -194,7 +194,7 @@
 	icon_state = "legguards_ablative"
 	armor = list(melee = 35, bullet = 35, laser = 75, energy = 50, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
-	slowdown = 1
+	slowdown = 0.5
 
 
 //Decorative attachments
