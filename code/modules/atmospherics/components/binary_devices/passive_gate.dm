@@ -4,7 +4,7 @@
 
 /obj/machinery/atmospherics/binary/passive_gate
 	icon = 'icons/atmos/passive_gate.dmi'
-	icon_state = "map_off"
+	icon_state = "map"
 	level = 1
 
 	name = "pressure regulator"
@@ -26,7 +26,7 @@
 
 /obj/machinery/atmospherics/binary/passive_gate/on
 	unlocked = 1
-	icon_state = "map_on"
+	icon_state = "on"
 
 /obj/machinery/atmospherics/binary/passive_gate/New()
 	..()
