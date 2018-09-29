@@ -49,3 +49,16 @@
 	display_name = "science winter coat"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat/science
 	allowed_roles = RESEARCH_ROLES
+
+/datum/gear/suit/bomberjacket
+	display_name = "bomber jacket"
+	description = "A leather bomber jacket."
+	path = /obj/item/clothing/suit
+	cost = 1
+
+/datum/gear/suit/bomberjacket/New()
+	..()
+	var/bomberjacket = list()
+	bomberjacket["modern"] = /obj/item/clothing/suit/tgbomber
+	bomberjacket["old"] = /obj/item/clothing/suit/storage/toggle/bomber
+	gear_tweaks += new/datum/gear_tweak/path(bomberjacket)
