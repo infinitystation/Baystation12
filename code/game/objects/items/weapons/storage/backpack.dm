@@ -27,7 +27,7 @@
 	max_w_class = ITEM_SIZE_LARGE
 	max_storage_space = DEFAULT_BACKPACK_STORAGE
 
-	var/hold_to_open = TRUE
+	var/worn_access = FALSE
 
 /obj/item/weapon/storage/backpack/equipped()
 	if(!has_extension(src, /datum/extension/appearance))
@@ -35,44 +35,35 @@
 	..()
 
 /obj/item/weapon/storage/backpack/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(H.back == src && hold_to_open)
-			to_chat(user, "<span class='warning'>You need take off \the [src] before you can use it!</span>")
-			return
-	if (src.use_sound)
-		playsound(src.loc, src.use_sound, 50, 1, -5)
-	return ..()
+	if (!worn_check(user))
+		return
+	..()
+
+/obj/item/weapon/storage/backpack/attack_hand(mob/user as mob)
+	if (!worn_check(user))
+		return
+	..()
 
 /obj/item/weapon/storage/backpack/equipped(var/mob/user, var/slot)
 	if (slot == slot_back && src.use_sound)
 		playsound(src.loc, src.use_sound, 50, 1, -5)
 	..(user, slot)
+	if(!worn_access && user.back == src) //currently looking into the backpack
+		close(user)
 
-/obj/item/weapon/storage/backpack/can_be_inserted(obj/item/W, mob/user, stop_messages = 0)
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(H.back == src && hold_to_open)
-			if(!stop_messages)
-				to_chat(user, "<span class='warning'>You need take off \the [src] before you can use it!</span>")
-			return 0
-	return ..()
+/obj/item/weapon/storage/backpack/open(mob/user)
+	if (!worn_check(user))
+		return
+	..()
 
-/obj/item/weapon/storage/backpack/attack_hand(mob/user as mob)
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(H.back == src && hold_to_open)
-			to_chat(H, "<span class='warning'>You need take off \the [src] before you can use it!</span>")
-			return
-	return ..()
-
-/obj/item/weapon/storage/backpack/remove_from_storage(obj/item/W as obj, atom/new_location, var/NoUpdate = 0)
-	if(ishuman(usr))
-		var/mob/living/carbon/human/H = usr
-		if(H.back == src && hold_to_open)
-			to_chat(H, "<span class='warning'>You need take off \the [src] before you can use it!</span>")
-			return
-	return ..()
+/obj/item/weapon/storage/backpack/proc/worn_check(var/mob/L)
+	if(!worn_access && L.back == src)
+		if (istype(L))
+			to_chat(L, "<span class='warning'>You need take off \the [src] before you can use it!</span>")
+		if (use_sound)
+			playsound(loc, use_sound, 50, 1, -5)
+		return FALSE
+ 	return TRUE
 
 /*
  * Backpack Types
@@ -268,7 +259,7 @@
 	name = "satchel"
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
-	hold_to_open = FALSE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel/grey
 	name = "grey satchel"
@@ -328,7 +319,7 @@
 		slot_l_hand_str = "engiepack",
 		slot_r_hand_str = "engiepack",
 		)
-	hold_to_open = FALSE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_med
 	name = "medical satchel"
@@ -338,31 +329,31 @@
 		slot_l_hand_str = "medicalpack",
 		slot_r_hand_str = "medicalpack",
 		)
-	hold_to_open = FALSE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_vir
 	name = "virologist satchel"
 	desc = "A sterile satchel with virologist colours."
 	icon_state = "satchel-vir"
-	hold_to_open = FALSE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_chem
 	name = "chemist satchel"
 	desc = "A sterile satchel with chemist colours."
 	icon_state = "satchel-chem"
-	hold_to_open = FALSE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_gen
 	name = "geneticist satchel"
 	desc = "A sterile satchel with geneticist colours."
 	icon_state = "satchel-gen"
-	hold_to_open = FALSE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_tox
 	name = "\improper NanoTrasen satchel"
 	desc = "Useful for holding research materials. The colors on it denote it as a NanoTrasen bag."
 	icon_state = "satchel-nt"
-	hold_to_open = FALSE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_sec
 	name = "security satchel"
@@ -372,13 +363,13 @@
 		slot_l_hand_str = "securitypack",
 		slot_r_hand_str = "securitypack",
 		)
-	hold_to_open = FALSE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_hyd
 	name = "hydroponics satchel"
 	desc = "A green satchel for plant related work."
 	icon_state = "satchel_hyd"
-	hold_to_open = FALSE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_cap
 	name = "captain's satchel"
@@ -388,7 +379,7 @@
 		slot_l_hand_str = "satchel-cap",
 		slot_r_hand_str = "satchel-cap",
 		)
-	hold_to_open = FALSE
+	worn_access = TRUE
 
 //ERT backpacks.
 /obj/item/weapon/storage/backpack/ert
@@ -431,7 +422,7 @@
 	name = "messenger bag"
 	desc = "A sturdy backpack worn over one shoulder."
 	icon_state = "courierbag"
-	hold_to_open = FALSE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/messenger/chem
 	name = "chemistry messenger bag"
