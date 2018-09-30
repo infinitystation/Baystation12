@@ -31,6 +31,17 @@
 						/datum/job/merchant, /datum/job/stowaway
 						)
 
+	access_modify_region = list(
+		ACCESS_REGION_SECURITY = list(access_change_ids),
+		ACCESS_REGION_MEDBAY = list(access_change_ids),
+		ACCESS_REGION_RESEARCH = list(access_rd, access_change_ids),
+		ACCESS_REGION_ENGINEERING = list(access_change_ids),
+		ACCESS_REGION_COMMAND = list(access_change_ids),
+		ACCESS_REGION_GENERAL = list(access_change_ids),
+		ACCESS_REGION_SUPPLY = list(access_change_ids),
+	)
+
+
 /datum/map/sierra/setup_map()
 	..()
 	for(var/job_type in GLOB.using_map.allowed_jobs)
@@ -72,6 +83,8 @@
 							 /datum/computer_file/program/card_mod,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	required_education = EDUCATION_TIER_BACHELOR
+
 
 /datum/job/captain/get_description_blurb()
 	return "You are the Captain. You are the top dog. You are an experienced professional officer in control of an entire ship, and ultimately responsible for all that happens onboard. Your job is to make sure [GLOB.using_map.full_name] fulfils its space exploration mission. Delegate to your Head of Personnel, your department heads, and your Senior Enlisted Advisor to effectively manage the ship, and listen to and trust their expertise."
@@ -116,6 +129,7 @@
 							 /datum/computer_file/program/card_mod,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	required_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/hop/get_description_blurb()
 	return "You are the Head of Personnel. You are an experienced senior officer, second in command of the ship, and are responsible for the smooth operation of the ship under your Captain. In his absence, you are expected to take his place. Your primary duty is directly managing department heads and all those outside a department heading. You are also responsible for the contractors and passengers aboard the ship. Consider the Senior Enlisted Advisor and Bridge Officers tools at your disposal."
@@ -160,6 +174,7 @@
 							 /datum/computer_file/program/aidiag,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	required_education = EDUCATION_TIER_DOCTORATE
 
 /datum/job/rd/get_description_blurb()
 	return "You are the Research Director. You are responsible for the research department. You handle both the science part of the mission but are also responsible for ensuring Nanotrasen's interests along with your Nanotrasen iaa. Make sure science gets done, do some yourself, and get your prospectors and scientists on away missions to find things to benefit NT. Don't put NT's position on board in jeopardy.  Advise the Captain on science matters."
@@ -204,6 +219,7 @@
 							 /datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	required_education = EDUCATION_TIER_MEDSCHOOL
 
 /datum/job/cmo/get_description_blurb()
 	return "You are the Chief Medical Officer. You manage the medical department. You ensure all members of medical are skilled, tasked and handling their duties. Ensure your doctors are staffing your infirmary and your corpsman/paramedics are ready for response. Act as a second surgeon or backup chemist in the absence of either. You are expected to know medical very well, along with general regulations."
@@ -256,6 +272,7 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor,
 							 /datum/computer_file/program/reports)
+	required_education = EDUCATION_TIER_MASTERS
 
 /datum/job/chief_engineer/get_description_blurb()
 	return "You are the Chief Engineer. You manage the Engineering Department. You are responsible for the Senior engineer, who is your right hand and (should be) an experienced, skilled engineer. Delegate to and listen to them. Manage your engineers, ensure vessel power stays on, breaches are patched and problems are fixed. Advise the Captain on engineering matters. You are also responsible for the maintenance and control of any vessel synthetics. You are an experienced engineer with a wealth of theoretical knowledge. You should also know vessel regulations to a reasonable degree."
@@ -297,6 +314,7 @@
 							 /datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+	required_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/hos/get_description_blurb()
 	return "You are the Head of Security. You manage ship security. The Masters at Arms and the Military Police, as well as the Brig Officer and the Forensic Technician. You keep the vessel safe. You handle both internal and external security matters. You are the law. You are subordinate to the Captain and the HOP. You are expected to know the SCMJ and Sol law and Alert Procedure to a very high degree along with general regulations."
@@ -325,6 +343,7 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/reports)
+	required_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/iaa/get_description_blurb()
 	return "You are the Nanotrasen iaa. You are a civilian employee of Nanotrasen assigned to the vessel to promote, protect and ensure the interests of the corporation on board. You are not internal affairs. You assume command of the Research Department in the absence of the RD and the Senior Researcher. You advise the RD on NT matters and try to push NT interests on the Captain. Maximise profit. Be the rich corporate lawyer you always wanted to be."
@@ -367,6 +386,7 @@
 							 /datum/computer_file/program/shields_monitor,
 							 /datum/computer_file/program/reports,
 							 /datum/computer_file/program/deck_management)
+	required_education = EDUCATION_TIER_BASIC
 
 /datum/job/adjutant/get_description_blurb()
 	return "You are an Adjutant. You do not give orders of your own. You are subordinate to all of command. You handle matters on the bridge and report directly to the Captain and Head of Personnel. You take the sierra's helm. You monitor bridge computer programs and communications and report relevant information to command. Sometimes you can also give support for vessel's departments - you have radio keys in bridge's storage for that purpose."
@@ -403,6 +423,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
+	required_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/exploration_leader/get_description_blurb()
 	return "You are the Exploration Leader. Your duty is to organize and lead the expeditions to away sites. You command Explorers. You make sure that expedition has the supplies and personnel it needs. You can pilot Charon if you'll not have your pilot and NT doesn't provide their one. Once on the away mission, your duty is to ensure that anything of scientific interest is brought back to the ship and passed to the relevant research lab."
@@ -432,6 +453,8 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
+	required_education = EDUCATION_TIER_BASIC
+
 
 /datum/job/explorer/get_description_blurb()
 	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the NT - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
@@ -465,6 +488,7 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
+	required_education = EDUCATION_TIER_BASIC
 
 /datum/job/explorer_pilot/get_description_blurb()
 	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the NT - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
@@ -506,6 +530,7 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
+	required_education = EDUCATION_TIER_MEDSCHOOL
 
 /datum/job/explorer_medic/get_description_blurb()
 	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the NT - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
@@ -548,6 +573,7 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
+	required_education = EDUCATION_TIER_TRADE
 
 /datum/job/explorer_engineer/get_description_blurb()
 	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the NT - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
@@ -594,6 +620,7 @@
 							 /datum/computer_file/program/rcon_console,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor)
+	required_education = EDUCATION_TIER_TRADE
 
 /datum/job/senior_engineer/get_description_blurb()
 	return "You are the Senior Engineer. You are a veteran SNCO. You are subordinate to the Chief Engineer though you may have many years more experience than them and your subordinates are the rest of engineering. You should be an expert in practically every engineering area and familiar and possess leadership skills. Coordinate the team and ensure the smooth running of the department along with the Chief Engineer."
@@ -646,6 +673,7 @@
 							 /datum/computer_file/program/rcon_console,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor)
+	required_education = EDUCATION_TIER_TRADE
 
 /datum/job/engineer/get_description_blurb()
 	return "You are an Engineer. You operate under one of many titles and may be highly specialised in a specific area of engineering. You probably have at least a general familiarity with most other areas though this is not expected. You are subordinate to the Senior Engineer and the Chief Engineer and are expected to follow them."
@@ -693,6 +721,7 @@
 							 /datum/computer_file/program/rcon_console,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor)
+	required_education = EDUCATION_TIER_BASIC
 
 /datum/job/engineer_trainee/get_description_blurb()
 	return "You are an Engineer Trainee. You are learning how to operate the various onboard engineering systems from senior engineering staff. You are subordinate to all of the other engineers aboard."
@@ -733,6 +762,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+	required_education = EDUCATION_TIER_BASIC
 
 /datum/job/detective
 	title = "Detective"
@@ -772,6 +802,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+	required_education = EDUCATION_TIER_TRADE
 
 /datum/job/officer
 	title = "Security Guard"
@@ -809,6 +840,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+	required_education = EDUCATION_TIER_BASIC
 
 /datum/job/senior_doctor
 	title = "Surgeon"
@@ -846,6 +878,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
+	required_education = EDUCATION_TIER_MEDSCHOOL
 
 /datum/job/doctor
 	title = "Doctor"
@@ -879,6 +912,7 @@
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
 	skill_points = 22
+	required_education = EDUCATION_TIER_TRADE
 
 /datum/job/doctor_trainee
 	title = "Intern"
@@ -912,10 +946,10 @@
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
+	required_education = EDUCATION_TIER_BASIC
 
 /datum/job/doctor_trainee/get_description_blurb()
 	return "You are an Intern. You are learning how to treat and recover wounded crew from the more experienced medical personnel aboard. You are subordinate to the rest of the medical team."
-
 
 /datum/job/chemist
 	title = "Chemist"
@@ -941,6 +975,7 @@
 	access = list(access_medical, access_maint_tunnels, access_emergency_storage, access_medical_equip, access_chemistry)
 
 	minimal_access = list()
+	required_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/psychiatrist
 	title = "Counselor"
@@ -970,6 +1005,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
+	required_education = EDUCATION_TIER_BASIC
 
 /datum/job/qm
 	title = "Quartermaster"
@@ -1000,6 +1036,7 @@
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							 /datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
+	required_education = EDUCATION_TIER_BASIC
 
 /datum/job/cargo_tech
 	title = "Cargo Technician"
@@ -1024,6 +1061,7 @@
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							 /datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
+	required_education = EDUCATION_TIER_BASIC
 
 /datum/job/mining
 	title = "Prospector"
@@ -1053,7 +1091,7 @@
 						access_expedition_shuttle, access_guppy, access_hangar, access_guppy_helm)
 
 	minimal_access = list()
-
+	required_education = EDUCATION_TIER_DROPOUT
 
 
 /datum/job/cargo_assistant
@@ -1080,6 +1118,7 @@
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							 /datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
+	required_education = EDUCATION_TIER_DROPOUT
 
 /datum/job/janitor
 	title = "Janitor"
@@ -1100,6 +1139,7 @@
 	access = list(access_maint_tunnels, access_emergency_storage, access_janitor)
 
 	minimal_access = list()
+	required_education = EDUCATION_TIER_DROPOUT
 
 /datum/job/chef
 	title = "Chef"
@@ -1122,7 +1162,7 @@
 	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_bar)
 
 	minimal_access = list()
-
+	required_education = EDUCATION_TIER_TRADE
 
 /datum/job/bartender
 	department = "Service"
@@ -1140,6 +1180,7 @@
 	min_skill = list(	SKILL_COOKING   = SKILL_BASIC,
 						SKILL_BOTANY    = SKILL_BASIC,
 						SKILL_CHEMISTRY = SKILL_BASIC)
+	required_education = EDUCATION_TIER_DROPOUT
 
 
 /datum/job/senior_scientist
@@ -1177,6 +1218,7 @@
 	max_skill = list(   SKILL_DEVICES     = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX)
 	skill_points = 30
+	required_education = EDUCATION_TIER_DOCTORATE
 
 /datum/job/scientist
 	title = "Scientist"
@@ -1212,7 +1254,7 @@
 
 	minimal_access = list()
 	skill_points = 22
-
+	required_education = EDUCATION_TIER_MASTERS
 
 /datum/job/roboticist
 	title = "Roboticist"
@@ -1243,6 +1285,7 @@
 	access = list(access_robotics, access_research, access_tech_storage)
 
 	minimal_access = list()
+	required_education = EDUCATION_TIER_TRADE
 
 /datum/job/roboticist/get_description_blurb()
 	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics as well as the repair of all synthetic crew on board. You are also responsible for placing brains into MMI's and giving them bodies and the production of exosuits(mechs) for various departments. You answer to the Research Director."
@@ -1276,6 +1319,7 @@
 	access = list(access_research, access_mining_office, access_petrov, access_expedition_shuttle, access_guppy, access_hangar)
 
 	minimal_access = list()
+	required_education = EDUCATION_TIER_DROPOUT
 
 /datum/job/assistant
 	title = "Passenger"
@@ -1304,6 +1348,8 @@
 		/datum/mil_rank/civ/offduty,
 		/datum/mil_rank/civ/nt
 	)
+
+	required_education = EDUCATION_TIER_NONE
 
 /datum/job/cyborg
 	total_positions = 3

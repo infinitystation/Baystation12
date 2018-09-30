@@ -1,8 +1,10 @@
 /obj/effect/decal/cleanable
+	waterproof = FALSE
 	var/persistent = FALSE
 	var/generic_filth = FALSE
 	var/age = 0
 	var/list/random_icon_states
+	var/image/hud_overlay/hud_overlay
 	anchored = 1
 	density = 0
 
@@ -25,6 +27,8 @@
 		src.icon_state = pick(src.random_icon_states)
 	SSpersistence.track_value(src, /datum/persistent/filth)
 	. = ..()
+	hud_overlay = new /image/hud_overlay('icons/obj/hud_tile.dmi', src, "caution")
+	hud_overlay.plane = EFFECTS_ABOVE_LIGHTING_PLANE
 
 /obj/effect/decal/cleanable/Destroy()
 	SSpersistence.forget_value(src, /datum/persistent/filth)

@@ -50,7 +50,7 @@
 	allowed_roles = MEDICAL_ROLES
 
 /datum/gear/uniform/resomi/science
-	allowed_roles = NANOTRASEN_ROLES
+	allowed_roles = RESEARCH_ROLES
 
 /datum/gear/uniform/resomi/roboitcs
 	allowed_roles = list(/datum/job/roboticist)

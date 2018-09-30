@@ -40,7 +40,7 @@
 	item_state = "gun"
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-	matter = list(DEFAULT_WALL_MATERIAL = 2000)
+	matter = list(MATERIAL_STEEL = 2000)
 	w_class = ITEM_SIZE_NORMAL
 	throwforce = 5
 	throw_speed = 4
@@ -324,14 +324,15 @@
 		return //default behaviour only applies to true projectiles
 
 	//default point blank multiplier
-	var/max_mult = 1.3
+	var/max_mult = 1
 
 	//determine multiplier due to the target being grabbed
-	if(ishuman(target))
-		var/mob/living/carbon/human/H = target
-		for(var/obj/item/grab/G in H.grabbed_by)
-			if(G.point_blank_mult() > max_mult)
-				max_mult = G.point_blank_mult()
+	if(isliving(target))
+		var/mob/living/L = target
+		if(L.incapacitated())
+			max_mult = 1.2
+		for(var/obj/item/grab/G in L.grabbed_by)
+			max_mult = max(max_mult, G.point_blank_mult())
 	P.damage *= max_mult
 
 /obj/item/weapon/gun/proc/process_accuracy(obj/projectile, mob/living/user, atom/target, var/burst, var/held_twohanded)

@@ -129,7 +129,7 @@
 
 /area/crew_quarters/safe_room/seconddeck
 	name = "Second Deck Safe Room"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/maintenance/substation/seconddeck
 	name = "Second Deck Substation"
@@ -214,48 +214,48 @@
 //sierra large pods
 /area/shuttle/escape_pod6/station
 	name = "Escape Pod One"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/shuttle/escape_pod7/station
 	name = "Escape Pod Two"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/shuttle/escape_pod8/station
 	name = "Escape Pod Three"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/shuttle/escape_pod9/station
 	name = "Escape Pod Four"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/shuttle/escape_pod10/station
 	name = "Escape Pod Five"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 //sierra small pods
 /area/shuttle/escape_pod12/station
 	name = "Escape Pod Seven"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/shuttle/escape_pod13/station
 	name = "Escape Pod Eight"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/shuttle/escape_pod14/station
 	name = "Escape Pod Nine"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/shuttle/escape_pod15/station
 	name = "Escape Pod Ten"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/shuttle/escape_pod16/station
 	name = "Escape Pod Eleven"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/shuttle/escape_pod17/station
 	name = "Escape Pod Twelve"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 //Charon
 
@@ -263,7 +263,7 @@
 	name = "Charon"
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/plating
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/exploration_shuttle/cockpit
 	name = "Charon - Cockpit"
@@ -289,7 +289,7 @@
 	icon_state = "shuttlered"
 	requires_power = 1
 	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 
 //Petrov
@@ -298,7 +298,7 @@
 	name = "NSV Petrov"
 	requires_power = 1
 	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/shuttle/petrov/ship
 	icon_state = "shuttlered"
@@ -319,7 +319,7 @@
 	icon_state = "shuttle"
 	requires_power = 0
 	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/turbolift/start
 	name = "Turbolift Start"
@@ -342,7 +342,7 @@
 	icon_state = "green"
 	requires_power = 0
 	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/ninja_dojo/dojo
 	name = "Clan Dojo"
@@ -360,7 +360,7 @@
 	icon_state = "shuttlegrn"
 	requires_power = 1
 	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 //Merc
 
@@ -374,7 +374,7 @@
 	name = "Mercenary Forward Operating Base"
 	icon_state = "yellow"
 	requires_power = 0
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 //Skipjack
 
@@ -390,7 +390,7 @@
 	icon_state = "yellow"
 	requires_power = 0
 	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/rescue_base/base
 	name = "Barracks"
@@ -696,18 +696,18 @@
 	name = "Safe Room"
 	icon_state = "crew_quarters"
 	sound_env = SMALL_ENCLOSED
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/crew_quarters/sleep/bunk
 	name = "Dormitory"
 	icon_state = "Sleep"
 	sound_env = SMALL_SOFTFLOOR
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/crew_quarters/sleep/cryo/aux
 	name = "Auxiliary Cryogenic Storage"
 	icon_state = "Sleep"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/crew_quarters/diplomat
 	name = "Diplomatic Quarters"

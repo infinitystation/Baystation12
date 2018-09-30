@@ -30,6 +30,8 @@
 	var/list/offset_y[0] //usage by the photocopier
 	var/rigged = 0
 	var/spam_flag = 0
+	var/last_modified_ckey
+	var/age = 0
 	var/log = ""
 
 	var/const/deffont = "Verdana"
@@ -328,6 +330,9 @@
 			updateinfolinks()
 
 		playsound(src,'sound/effects/PEN_Ball_Point_Pen_Circling_01_mono.ogg',40,1)
+
+		last_modified_ckey = usr.ckey
+
 		update_space(t)
 
 		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]") // Update the window

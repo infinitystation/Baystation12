@@ -1,0 +1,135 @@
+*** Begin Log: Sun Sep 30 16:39:45 2018 ***
+Sun Sep 30 16:39:48 2018
+World opened on network port 53776.
+Welcome BYOND! (5.0 Beta Version 512.1442)
+295 global variables
+295 global init procs
+Running revision:
+master
+2018-09-30
+a4c18d065a9186bbf651fa52039233762878ca98
+## ERROR: File not found (ext.txt)
+
+Your server failed to establish a connection with the feedback database.
+
+Your server failed to establish a connection with the SQL database.
+
+## ERROR: Failed to connect to database in load_admins(). Reverting to legacy system.
+
+## ERROR: Database connection failed. Reverting to the legacy ban system.
+Initializing subsystems...
+
+Initialized Chemistry subsystem within 0 seconds!
+
+Initialized Materials subsystem within 0 seconds!
+
+Initialized Antags subsystem within 0 seconds!
+
+Initialized Culture subsystem within 0 seconds!
+
+Initialized Space skybox subsystem within 0 seconds!
+Loading away sites...
+Loaded away site Mining - Planetoid!
+Loaded away site Yacht!
+Finished loading away sites, remaining budget 0, remaining sites 13
+
+Initialized Mapping subsystem within 10.6 seconds!
+
+Initialized Circuit subsystem within 0 seconds!
+## TESTING: Building overmap...
+## TESTING: Overmap build complete.
+## TESTING: Located sector "NSV Sierra" at 18,2, containing Z 3, 2, and 1
+## TESTING: Located sector "faint signal from an asteroid" at 5,14, containing Z 7
+## TESTING: Located sector "IPV Pequod, a private yacht" at 6,15, containing Z 8
+Initialized 413837 atoms
+Late initialized 1126 atoms
+
+Initialized Atoms subsystem within 37.4 seconds!
+
+Initialized Icon Updates subsystem within 0 seconds!
+Initializing atmos machinery
+Initializing pipe networks
+
+Initialized Machines subsystem within 1.8 seconds!
+
+Initialized Evacuation subsystem within 0 seconds!
+
+Initialized Event Manager subsystem within 0 seconds!
+
+Initialized Supply subsystem within 0 seconds!
+
+Initialized tgui subsystem within 0 seconds!
+
+Initialized Trade subsystem within 0 seconds!
+Processing Geometry...
+Total Simulated Turfs: 65436
+Total Zones: 733
+Total Edges: 175
+Total Active Edges: <span class='danger'>1</span>
+Total Unsimulated Turfs: 294564
+
+Geometry processing completed in 4.5 seconds!
+Settling air...
+Air settling completed in 1.3 seconds!
+
+Initialized Air subsystem within 5.9 seconds!
+
+Initialized Late Initialization subsystem within 0 seconds!
+
+Initialized Codex subsystem within 0.2 seconds!
+
+Initialized Persistence subsystem within 0 seconds!
+
+Initialized Alarm subsystem within 0 seconds!
+
+Initialized Shuttle subsystem within 0 seconds!
+
+Initialized Lighting subsystem within 6.8 seconds!
+
+Initialized Sticky Ban subsystem within 0 seconds!
+
+Initialized Xenoarch subsystem within 1.3 seconds!
+
+Initialized Open Space subsystem within 0 seconds!
+Initializing overmap events
+Initializing lathe recipes
+Initializations complete
+
+Initialized Legacy subsystem within 0.2 seconds!
+Initializations complete within 64.4 seconds!
+
+Initializations complete within 64.4 seconds!
+MC: Runlevel changed from NULL to 1
+Master starting processing
+
+
+
+
+
+
+[19:00:00] Runtime in unsorted.dm,1100: GC: -- [0x21003b30] | /datum/reagents was unable to be GC'd --
+  proc name: crash with (/proc/crash_with)
+  src: null
+  call stack:
+  crash with("GC: -- \[0x21003b30] | /datum/...")
+  Garbage (/datum/controller/subsystem/garbage): HandleQueue(2)
+  Garbage (/datum/controller/subsystem/garbage): fire(0)
+  Garbage (/datum/controller/subsystem/garbage): ignite(0)
+  Master (/datum/controller/master): RunQueue()
+  Master (/datum/controller/master): Loop()
+  Master (/datum/controller/master): StartProcessing(0)
+[19:00:00] Runtime in unsorted.dm,1100: GC: -- [0x20081bd] | /obj/effect/gateway/active/cult was unable to be GC'd --
+  proc name: crash with (/proc/crash_with)
+  src: null
+  call stack:
+  crash with("GC: -- \[0x20081bd] | /obj/eff...")
+  Garbage (/datum/controller/subsystem/garbage): HandleQueue(2)
+  Garbage (/datum/controller/subsystem/garbage): fire(0)
+  Garbage (/datum/controller/subsystem/garbage): ignite(0)
+  Master (/datum/controller/master): RunQueue()
+  Master (/datum/controller/master): Loop()
+  Master (/datum/controller/master): StartProcessing(0)
+Stopped server.
+
+*** End Log: Sun Sep 30 16:45:32 2018 ***
+

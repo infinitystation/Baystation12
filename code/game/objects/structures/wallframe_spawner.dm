@@ -145,6 +145,12 @@
 	name = "reinforced phoron prepainted wall frame window spawner"
 	frame_path = /obj/structure/wall_frame/prepainted
 
+/obj/effect/wallframe_spawn/reinforced_phoron/titanium
+	frame_path = /obj/structure/wall_frame/titanium
+
+/obj/effect/wallframe_spawn/reinforced_phoron/hull
+	frame_path = /obj/structure/wall_frame/hull
+
 /obj/effect/wallframe_spawn/reinforced/polarized
 	name = "polarized wall frame window spawner"
 	color = "#444444"
