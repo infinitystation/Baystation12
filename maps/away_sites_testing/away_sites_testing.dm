@@ -20,6 +20,10 @@
 	#include "../away/lar_maria/lar_maria.dm"
 	#include "../away/unishi/unishi.dm"
 
+	#include "../away_inf/adherent_base/adherent_base.dm"
+	#include "../away_inf/yacht/yacht.dm"
+	#include "../away_inf/smugglers/smugglers.dm"
+
 	#define using_map_DATUM /datum/map/away_sites_testing
 
 #elif !defined(MAP_OVERRIDE)

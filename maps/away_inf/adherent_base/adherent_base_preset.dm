@@ -37,7 +37,7 @@ obj/structure/adh_base/broken_cryo/attack_hand(mob/user)
 			closed = 0
 			busy = 0
 			icon_state = "broken_cryo_open"
-			var/obj/dead = new /obj/item/icarus/dead_personnel(loc)
+			var/obj/dead = new /obj/item/adh_base/dead_personnel(loc)
 			dead.dir = src.dir//skeleton is oriented as cryo
 	else
 		to_chat(user, "<span class='notice'>The glass cover is already open.</span>")

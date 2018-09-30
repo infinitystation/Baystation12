@@ -5,13 +5,13 @@
 /obj/effect/overmap/sector/adherent_base
 	name = "aquatic planet"
 	desc = "There is faint \"S.O.S.\" signal incoming from the water surface. Decyphering codes are very old."
- 	color = COLOR_OCEAN
+	color = COLOR_OCEAN
 	icon_state = "globe"
 	initial_generic_waypoints = list("nav_adherent_base_1")
 	known = 0
 
 /datum/map_template/ruin/away_site/adherent_base
-	name = "Aquatic planet"
+	name = "aquatic planet"
 	id = "awaysite_adherent_planet"
 	description = "There is faint \"S.O.S.\" signal incoming from the water surface. Decyphering codes are very old."
 	prefix = "maps/away_inf/"
