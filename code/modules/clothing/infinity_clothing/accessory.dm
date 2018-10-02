@@ -244,3 +244,20 @@
 	icon = 'icons/obj/clothing/infinity/TG_copy/neck.dmi'
 	icon_state = "stripedredscarf"
 	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_suit_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_mask_str  = 'icons/mob/infinity/sprite_accessories.dmi')
+
+/obj/item/clothing/accessory/armor/helmcover/scp_cover
+	name = "SCP cover"
+	desc = "A fabric cover for armored helmets. This one has SCP's colors."
+	icon_override = 'icons/mob/infinity/ties.dmi'
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "scp_cover"
+	accessory_icons = list(slot_tie_str = 'icons/mob/infinity/ties.dmi', slot_head_str = 'icons/mob/infinity/ties.dmi')
+
+/obj/item/clothing/accessory/armor/tag/scp
+	name = "SCP tag"
+	desc = "An armor tag with the words SECURITY CORPORATE PERSONAL printed in red lettering on it."
+	icon_override = 'icons/mob/infinity/ties.dmi'
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "scp_tag"
+	accessory_icons = list(slot_tie_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
+
