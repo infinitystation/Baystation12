@@ -869,6 +869,7 @@
 #include "code\game\objects\items\customs\scp_carrier.dm"
 #include "code\game\objects\items\customs\vape.dm"
 #include "code\game\objects\items\customs\wd_sack.dm"
+#include "code\game\objects\items\customs\zpci_uniform.dm"
 #include "code\game\objects\items\devices\aicard.dm"
 #include "code\game\objects\items\devices\binoculars.dm"
 #include "code\game\objects\items\devices\boombox.dm"
