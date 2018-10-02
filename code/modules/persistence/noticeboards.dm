@@ -126,7 +126,7 @@
 	..()
 
 /obj/structure/noticeboard/attack_ai(var/mob/user)
-	examine(user)
+	to_chat(user, SPAN_NOTICE("You cant see notices."))
 
 /obj/structure/noticeboard/attack_hand(var/mob/user)
 	examine(user)
