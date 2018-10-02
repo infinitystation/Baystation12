@@ -83,6 +83,21 @@ ckey: wheatley2013
 character_name: Joshua
 item_path: /obj/item/device/pmp/personal
 }
+{
+ckey: coltrane97
+character_name: TA-Il-S
+item_path: /obj/item/device/pmp/personal
+}
+{
+ckey: coltrane97
+character_name: Kayden-200
+item_path: /obj/item/device/pmp/personal
+}
+{
+ckey: coltrane97
+character_name: Miguel Blackburn
+item_path: /obj/item/device/pmp/personal
+}
 #	SHORT ITEMS HERE (3-4)
 {
 ckey: quietproject 
