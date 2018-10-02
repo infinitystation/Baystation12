@@ -189,13 +189,13 @@
 	name = "shock beam"
 	damage_type = ELECTROCUTE
 	damage = 10
-	agony  = 5
+	agony  = 15
 	fire_sound='sound/weapons/pulse.ogg'
 
 /obj/item/projectile/beam/stun/shock/heavy
 	name = "heavy shock beam"
 	damage = 20
-	agony  = 10
+	agony  = 25
 
 /obj/item/projectile/beam/plasmacutter
 	name = "plasma arc"
