@@ -30,6 +30,14 @@
 	display_name = "clothes selection"
 	path = /obj/item/clothing/under
 
+/datum/gear/uniform/gray_camo
+	display_name = "gray camo"
+	path = /obj/item/clothing/under/gray_camo
+
+/datum/gear/uniform/scp_uniform
+	display_name = "SCP uniform"
+	path = /obj/item/clothing/under/scp_uniform
+
 /datum/gear/uniform/suit/New()
 	..()
 	var/suits = list()
