@@ -114,11 +114,7 @@
 		)
 
 	switch(shock_damage)
-		if(16 to 20)
-			Stun(2)
-		if(21 to 25)
-			Weaken(2)
-		if(26 to 25)
+		if(25 to 30)
 			Weaken(5)
 		if(31 to INFINITY)
 			Weaken(10) //This should work for now, more is really silly and makes you lay there forever
