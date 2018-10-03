@@ -321,3 +321,5 @@ Define for getting a bitfield of adjacent turfs that meet a condition.
 #define SMELL_DEFAULT	0
 #define SMELL_CLEAN		1
 #define SMELL_STINKY	2
+
+#define GET_ANNOUNCEMENT_FREQ(X) GLOB.using_map.use_job_frequency_announcement ? get_announcement_frequency(X) : "Common"

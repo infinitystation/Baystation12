@@ -28,6 +28,9 @@
 
 	var/xenomorph_spawn_sound = 'sound/AI/aliens.ogg'
 
+	var/use_job_frequency_announcement = TRUE
+	var/use_radio_announcement = TRUE
+
 /datum/map/proc/emergency_shuttle_called_announcement()
 	evacuation_controller.evac_called.Announce(replacetext(emergency_shuttle_called_message, "%ETA%", "[round(evacuation_controller.get_eta()/60)] minute\s."), new_sound = emergency_shuttle_called_sound)
 
