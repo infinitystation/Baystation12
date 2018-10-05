@@ -1198,29 +1198,6 @@
 	glass_name = "gin"
 	glass_desc = "A crystal clear glass of Griffeater gin."
 
-/datum/reagent/ethanol/champagne
-	name = "Champagne"
-	description = "Is this gold?"
-	taste_description = "bitter taste"
-	color = "#a89410"
-	strength = 45
-
-	value = 0.15 // Cost
-
-	glass_name = "champagne"
-	glass_desc = "Wow, it's bubbling!"
-	glass_special = list(DRINK_FIZZ)
-
-/obj/effect/decal/cleanable/champagne //dunno where it beter to be placed.
-	name = "champagne"
-	desc = "Is this gold?"
-	gender = PLURAL
-	density = 0
-	anchored = 1
-	icon = 'icons/effects/infinity/champagne.dmi'
-	icon_state = "fchampagne1"
-	random_icon_states = list("fchampagne1", "fchampagne2", "fchampagne3", "fchampagne4")
-
 //Base type for alchoholic drinks containing coffee
 /datum/reagent/ethanol/coffee
 	overdose = 45
