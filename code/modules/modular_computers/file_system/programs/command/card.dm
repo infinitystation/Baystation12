@@ -6,6 +6,7 @@
 	program_key_state = "id_key"
 	program_menu_icon = "key"
 	extended_desc = "Program for programming crew ID cards."
+	required_access = access_change_ids
 	requires_ntnet = 0
 	size = 8
 
@@ -264,7 +265,7 @@
 	id_card.access |= accesses
 
 /datum/computer_file/program/card_mod/proc/authorized(var/obj/item/weapon/card/id/id_card)
-	if(!(access_change_ids in id_card.access))
+	if(access_change_ids in id_card.access)
 		return 1
 	else
 		return 0
