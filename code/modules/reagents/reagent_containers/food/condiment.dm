@@ -27,7 +27,8 @@
 		/datum/reagent/nutriment/cornoil = /obj/item/weapon/reagent_containers/food/condiment/cornoil,
 		/datum/reagent/sugar = /obj/item/weapon/reagent_containers/food/condiment/sugar,
 		/datum/reagent/nutriment/mayo = /obj/item/weapon/reagent_containers/food/condiment/mayo,
-		/datum/reagent/nutriment/vinegar = /obj/item/weapon/reagent_containers/food/condiment/vinegar
+		/datum/reagent/nutriment/vinegar = /obj/item/weapon/reagent_containers/food/condiment/vinegar,
+		/datum/reagent/nutriment/szechuan = /obj/item/weapon/reagent_containers/food/condiment/szechuan
 		)
 
 /obj/item/weapon/reagent_containers/food/condiment/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
@@ -239,4 +240,7 @@
 /obj/item/weapon/reagent_containers/food/condiment/szechuan
 	name = "szechuan sauce"
 	desc = "A long forgotten sauce of Earth, recently re-discovered. Its taste is said to be stuff of legends."
+	icon = 'icons/obj/food_alt.dmi'
+	icon_state = "szechuan"
+	center_of_mass = "x=16;y=6"
 	starting_reagents = list(/datum/reagent/nutriment/szechuan = 50)

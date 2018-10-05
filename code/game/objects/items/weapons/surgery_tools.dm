@@ -16,11 +16,11 @@
 	desc = "Retracts stuff."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "retractor"
-	safely = 1
 	matter = list(MATERIAL_STEEL = 10000, MATERIAL_GLASS = 5000)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
+	safely = 1
 
 /*
  * Hemostat
@@ -30,12 +30,12 @@
 	desc = "You think you have seen this before."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "hemostat"
-	safely = 1
 	matter = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 2500)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
 	attack_verb = list("attacked", "pinched")
+	safely = 1
 
 /*
  * Cautery
@@ -45,12 +45,12 @@
 	desc = "This stops bleeding."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "cautery"
-	safely = 1
 	matter = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 2500)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
 	attack_verb = list("burnt")
+	safely = 1
 
 /*
  * Surgical Drill
@@ -61,13 +61,13 @@
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "drill"
 	hitsound = 'sound/weapons/circsawhit.ogg'
-	safely = 1
 	matter = list(MATERIAL_STEEL = 15000, MATERIAL_GLASS = 10000)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	force = 15.0
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
 	attack_verb = list("drilled")
+	safely = 1
 
 /*
  * Scalpel
@@ -77,7 +77,6 @@
 	desc = "Cut, cut, and once more cut."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "scalpel"
-	safely = 1
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	force = 10.0
 	sharp = 1
@@ -90,6 +89,7 @@
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
 	matter = list(MATERIAL_STEEL = 10000, MATERIAL_GLASS = 5000)
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	safely = 1
 
 /*
  * Researchable Scalpels
