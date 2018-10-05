@@ -5,7 +5,7 @@
 	icon_state = "full"
 	density = 1
 	req_one_access = list(999)	//You should never unlock him.
-	botcard_access = null
+	botcard_access = list(999)
 	RequiresAccessToToggle = 1
 	will_patrol = 1
 	health = 40
