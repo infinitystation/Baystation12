@@ -176,8 +176,8 @@
 	desc = "A more robust socket for light tubes that demand more power."
 	light_type = /obj/item/weapon/light/tube/large
 
-/obj/machinery/light/tungsten
-	light_type = /obj/item/weapon/light/tube/tungsten
+/obj/machinery/light/halogen
+	light_type = /obj/item/weapon/light/tube/halogen
 
 // create a new lighting fixture
 /obj/machinery/light/New(atom/newloc, obj/machinery/light_construct/construct = null)
@@ -549,7 +549,7 @@
 	var/b_inner_range = 1
 	var/b_outer_range = 5
 	var/b_curve = 2
-	var/b_colour = LIGHT_COLOR_HALOGEN
+	var/b_colour = "#fffee0"
 	var/list/lighting_modes = list()
 	var/sound_on
 
@@ -562,6 +562,7 @@
 	matter = list(MATERIAL_GLASS = 100)
 
 	b_outer_range = 5
+	b_colour = "#fffee0"
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_outer_range = 4, l_max_bright = 1, l_color = "#da0205"),
 		)
@@ -571,10 +572,10 @@
 	. = ..()
 	b_colour = rgb(pick(0,255), pick(0,255), pick(0,255))
 
-/obj/item/weapon/light/tube/tungsten
-	name = "tungsten light tube"
-	color = LIGHT_COLOR_TUNGSTEN //visual icon
-	b_colour = LIGHT_COLOR_TUNGSTEN
+/obj/item/weapon/light/tube/halogen
+	name = "halogen light tube"
+	color = LIGHT_COLOR_HALOGEN //visual icon
+	b_colour = LIGHT_COLOR_HALOGEN
 
 /obj/item/weapon/light/tube/large
 	w_class = ITEM_SIZE_SMALL
