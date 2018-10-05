@@ -259,6 +259,7 @@
 	name = "satchel"
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel/grey
@@ -319,6 +320,7 @@
 		slot_l_hand_str = "engiepack",
 		slot_r_hand_str = "engiepack",
 		)
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_med
@@ -329,30 +331,35 @@
 		slot_l_hand_str = "medicalpack",
 		slot_r_hand_str = "medicalpack",
 		)
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_vir
 	name = "virologist satchel"
 	desc = "A sterile satchel with virologist colours."
 	icon_state = "satchel-vir"
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_chem
 	name = "chemist satchel"
 	desc = "A sterile satchel with chemist colours."
 	icon_state = "satchel-chem"
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_gen
 	name = "geneticist satchel"
 	desc = "A sterile satchel with geneticist colours."
 	icon_state = "satchel-gen"
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_tox
 	name = "\improper NanoTrasen satchel"
 	desc = "Useful for holding research materials. The colors on it denote it as a NanoTrasen bag."
 	icon_state = "satchel-nt"
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_sec
@@ -363,12 +370,14 @@
 		slot_l_hand_str = "securitypack",
 		slot_r_hand_str = "securitypack",
 		)
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_hyd
 	name = "hydroponics satchel"
 	desc = "A green satchel for plant related work."
 	icon_state = "satchel_hyd"
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_cap
@@ -379,6 +388,7 @@
 		slot_l_hand_str = "satchel-cap",
 		slot_r_hand_str = "satchel-cap",
 		)
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	worn_access = TRUE
 
 //ERT backpacks.
@@ -422,6 +432,7 @@
 	name = "messenger bag"
 	desc = "A sturdy backpack worn over one shoulder."
 	icon_state = "courierbag"
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/messenger/chem
