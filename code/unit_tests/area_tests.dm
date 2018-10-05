@@ -88,7 +88,7 @@
 			unused_areas++
 
 	if(unused_areas)
-		pass("Found [unused_areas] unused area\s.")
+		skip("Found [unused_areas] unused area\s.")
 	else
 		pass("All areas are used.")
 	return 1
