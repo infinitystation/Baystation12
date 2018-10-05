@@ -10,3 +10,9 @@
 
 /datum/gear/uniform/hazard
 	allowed_roles = TECHNICAL_ROLES
+
+/datum/gear/uniform/gray_camo
+	allowed_roles = ARMORED_ROLES
+
+/datum/gear/uniform/scp_uniform
+	allowed_roles = ARMORED_ROLES

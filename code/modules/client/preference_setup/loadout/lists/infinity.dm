@@ -90,4 +90,5 @@
 	atags["NT security force tag"] = /obj/item/clothing/accessory/armor/tag/nt
 	atags["PCRC tag"] = /obj/item/clothing/accessory/armor/tag/pcrc
 	atags["SAARE tag"] = /obj/item/clothing/accessory/armor/tag/saare
+	atags["SCP tag"] = /obj/item/clothing/accessory/armor/tag/scp
 	gear_tweaks += new/datum/gear_tweak/path(atags)
