@@ -1,6 +1,6 @@
 #include "adherent_base_areas.dm"
 #include "adherent_base_preset.dm"
-
+#include "adherent_base_turfs.dm"
 
 /obj/effect/overmap/sector/adherent_base
 	name = "aquatic planet"
@@ -19,5 +19,5 @@
 	cost = 1000	//event only
 
 /obj/effect/shuttle_landmark/adherent_base/nav1
-	name = "Aquatic Planet Island Navpoint"
+	name = "Aquatic Planet - Island Landing Area"
 	landmark_tag = "nav_adherent_base_1"

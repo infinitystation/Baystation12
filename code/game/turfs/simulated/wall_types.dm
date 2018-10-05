@@ -14,10 +14,6 @@
 	..(newloc, MATERIAL_REINFORCED_GLASS, MATERIAL_STEEL)
 	icon_state = "rgeneric"
 
-/turf/simulated/wall/r_wall/crystal/New(var/newloc)
-	..(newloc, MATERIAL_CRYSTAL, MATERIAL_CRYSTAL)
-	icon_state = "rgeneric"
-
 /turf/simulated/wall/r_wall/hull
 	name = "hull"
 	color = COLOR_HULL
@@ -142,3 +138,9 @@
 
 /turf/simulated/wall/crystal/attackby()
 	return
+
+/turf/simulated/wall/crystal/r_wall
+	icon_state = "rgeneric"
+
+/turf/simulated/wall/crystal/r_wall/New(var/newloc)
+	..(newloc, MATERIAL_CRYSTAL, MATERIAL_CRYSTAL)

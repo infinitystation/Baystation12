@@ -1,6 +1,6 @@
 /mob/living/bot/adherent
 	name = "standart adherent bot"
-	desc = "¬ы никогда не видели подобного. ќно, кажется, очень занято и игнорирует ваше присутствие."
+	desc = "It looks like a robot and you never saw anything the same before. Better don't mess with it."
 	icon = 'icons/mob/human_races/species/adherent/body.dmi'
 	icon_state = "full"
 	density = 1
@@ -88,12 +88,12 @@
 
 /mob/living/bot/cleanbot/adherent
 	name = "adherent cleanbot"
-	desc = "¬ы никогда не видели подобного. ќно, кажется, очень занято и игнорирует ваше присутствие."
+	desc = "It looks like a robot and you never saw anything the same before. Better don't mess with it."
 	icon = 'icons/mob/human_races/species/adherent/body.dmi'
 	icon_state = "full"
 	density = 1
 	req_one_access = list(999)	//You should never unlock him.
-	botcard_access = null
+	botcard_access = list(999)
 	RequiresAccessToToggle = 1
 	will_patrol = 1
 	health = 40

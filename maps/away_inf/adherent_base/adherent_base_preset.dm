@@ -48,3 +48,14 @@ obj/structure/adh_base/broken_cryo/attack_hand(mob/user)
 	icon = 'maps/away/icarus/icarus_sprites.dmi'
 	icon_state = "dead_personnel"
 	w_class = ITEM_SIZE_LARGE//pile of bones
+
+/obj/item/device/flashlight/lamp/floodlamp/pseudosun
+	name = ""
+	desc = ""
+	icon_state = null
+	item_state = null
+	on = 1
+
+	flashlight_max_bright = 0.95 //sunlight
+	flashlight_inner_range = 30
+	flashlight_outer_range = 30
