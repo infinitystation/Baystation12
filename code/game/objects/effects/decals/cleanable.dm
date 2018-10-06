@@ -8,18 +8,6 @@
 	anchored = 1
 	density = 0
 
-/obj/effect/decal/cleanable/New()
-	..()
-	var/turf/space/sp = get_turf(src)
-	if(istype(sp))
-		visible_message("<span class='notice'><i>[src] vanishes in void.</i></span>")
-		qdel(src)
-		return
-	if(src.loc) // It's stupid but it makes no runtimes
-		if(src.loc.density)
-			qdel(src)
-			return
-
 /obj/effect/decal/cleanable/Initialize(var/ml, var/_age)
 	if(!isnull(_age))
 		age = _age
@@ -29,6 +17,12 @@
 	. = ..()
 	hud_overlay = new /image/hud_overlay('icons/obj/hud_tile.dmi', src, "caution")
 	hud_overlay.plane = EFFECTS_ABOVE_LIGHTING_PLANE
+
+	var/turf/space/S = get_turf(src)
+	if(istype(S))
+		animate(src, alpha = 0, time = 5 SECONDS)
+		visible_message("<span class='notice'><i>\The [src] vanishes in the void...</i></span>")
+		addtimer(CALLBACK(src, /datum/proc/qdel_self), 5 SECONDS)
 
 /obj/effect/decal/cleanable/Destroy()
 	SSpersistence.forget_value(src, /datum/persistent/filth)

@@ -276,7 +276,7 @@ var/const/enterloopsanity = 100
 
 /turf/proc/try_graffiti(var/mob/vandal, var/obj/item/tool)
 
-	if(!tool.sharp || !can_engrave() || vandal.a_intent != I_DISARM) //because you aren't slashing someone when trying to disarm him
+	if(!tool.sharp || !can_engrave() || vandal.a_intent != I_HELP) //because you aren't slashing someone when trying to disarm him
 		return FALSE
 
 	if(jobban_isbanned(vandal, "Graffiti"))
