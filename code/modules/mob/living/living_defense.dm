@@ -241,14 +241,6 @@
 		shake_camera(src, 7, 1)
 	src.take_organ_damage(speed*5)
 
-//This is called when the mob is thrown into a dense object
-/mob/living/proc/object_collision(var/obj/O, var/speed)
-	visible_message("<span class='danger'>[src] slams into \the [O]!</span>")
-	playsound(loc, pick(GLOB.smash_sound), 50, 1, -1)
-	if(src.client)
-		shake_camera(src, 7, 1)
-	src.take_organ_damage(speed*5)
-
 /mob/living/proc/near_wall(var/direction,var/distance=1)
 	var/turf/T = get_step(get_turf(src),direction)
 	var/turf/last_turf = src.loc
