@@ -50,3 +50,19 @@
 	armor["tan plate carrier"] 		= /obj/item/clothing/suit/armor/pcarrier/tan
 	gear_tweaks += new/datum/gear_tweak/path(armor)
 
+/datum/gear/tactical/security_uniforms
+	display_name = "security uniform"
+	allowed_roles = ARMORED_ROLES
+	path = /obj/item/clothing/under
+	slot = slot_w_uniform
+
+/datum/gear/tactical/security_uniforms/New()
+	..()
+	var/uniforms = list()
+	uniforms +=	/obj/item/clothing/under/rank/security/corp/alt
+	uniforms +=	/obj/item/clothing/under/rank/security/navyblue
+	uniforms +=	/obj/item/clothing/under/rank/security/navyblue/alt
+	uniforms += /obj/item/clothing/under/scp_uniform
+	uniforms += /obj/item/clothing/under/gray_camo
+	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(uniforms)
+

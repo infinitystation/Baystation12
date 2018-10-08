@@ -98,6 +98,8 @@
 	icon_state = "scp_uniform"
 	item_state = "scp_uniform"
 	worn_state = "scp_uniform"
+	armor = list(melee = 10, bullet = 5, laser = 5,energy = 0, bomb = 0, bio = 0, rad = 0)
+	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/gray_camo
 	name = "grey camo uniform"
@@ -107,3 +109,5 @@
 	icon_state = "gray_camo"
 	item_state = "gray_camo"
 	worn_state = "gray_camo"
+	armor = list(melee = 10, bullet = 5, laser = 5,energy = 0, bomb = 0, bio = 0, rad = 0)
+	siemens_coefficient = 0.9
