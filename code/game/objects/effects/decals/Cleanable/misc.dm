@@ -49,6 +49,7 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "greenglow"
 	persistent = TRUE
+	generic_filth = TRUE
 
 /obj/effect/decal/cleanable/cobweb
 	name = "cobweb"
@@ -63,6 +64,8 @@
 	desc = "It looks like a melted... something."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "molten"
+	persistent = TRUE
+	generic_filth = TRUE
 
 /obj/effect/decal/cleanable/cobweb2
 	name = "cobweb"
