@@ -209,3 +209,14 @@ var/global/list/image/fluidtrack_cache=list()
 	gender = PLURAL
 	random_icon_states = null
 	amount = 0
+
+/obj/effect/decal/cleanable/blood/tracks/trail
+	name = "wet trail"
+	dryname = "dried trail"
+	desc = "They look like still wet trail left by crawler."
+	drydesc = "They look like dried trail left by crawler."
+	icon = 'icons/effects/fluidtracks_crawl.dmi'
+	coming_state = "trail1"
+	going_state  = "trail2"
+	random_icon_states = null
+	amount = 0
