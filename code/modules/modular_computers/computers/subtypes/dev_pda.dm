@@ -7,6 +7,8 @@
 	hardware_flag = PROGRAM_PDA
 	max_hardware_size = 1
 	w_class = ITEM_SIZE_SMALL
+	base_active_power_usage = 10
+	base_idle_power_usage = 2
 	light_strength = 2
 	slot_flags = SLOT_ID | SLOT_BELT
 	stores_pen = TRUE

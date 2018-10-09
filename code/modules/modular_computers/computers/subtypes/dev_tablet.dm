@@ -4,6 +4,8 @@
 	icon = 'icons/obj/modular_tablet.dmi'
 	icon_state = "tablet"
 	icon_state_unpowered = "tablet"
+	base_active_power_usage = 25
+	base_idle_power_usage = 5
 
 	icon_state_menu = "menu"
 	hardware_flag = PROGRAM_TABLET
