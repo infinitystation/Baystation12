@@ -14,7 +14,7 @@
 
 /obj/item/modular_computer/pda/Initialize()
 	. = ..()
-	enable_computer()
+	//enable_computer()
 
 /obj/item/modular_computer/pda/AltClick(var/mob/user)
 	if(!CanPhysicallyInteract(user))
