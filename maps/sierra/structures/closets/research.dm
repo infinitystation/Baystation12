@@ -30,7 +30,7 @@
 		/obj/item/clothing/mask/gas/alt,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
-		/obj/item/weapon/door_remote/research_director,
+		/obj/item/device/remote_device/research_director,
 		/obj/item/weapon/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
