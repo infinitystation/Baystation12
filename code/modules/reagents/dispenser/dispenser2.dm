@@ -35,6 +35,10 @@
 	. = ..()
 	to_chat(user, "It has [cartridges.len] cartridges installed, and has space for [DISPENSER_MAX_CARTRIDGES - cartridges.len] more.")
 
+/obj/machinery/chemical_dispenser/MouseDrop(var/obj/structure/table/T)
+	if(istype(T) && Adjacent(T) && CanMouseDrop(T, usr) && !T.flipped && !can_contaminate)
+		src.forceMove(get_turf(T))
+
 /obj/machinery/chemical_dispenser/proc/add_cartridge(obj/item/weapon/reagent_containers/chem_disp_cartridge/C, mob/user)
 	if(!istype(C))
 		if(user)
