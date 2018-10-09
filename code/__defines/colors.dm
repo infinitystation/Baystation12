@@ -121,6 +121,7 @@
 #define LIGHT_COLOR_CYAN       "#7de1e1" //Diluted cyan. rgb(125, 225, 225)
 #define LIGHT_COLOR_PINK       "#e17de1" //Diluted, mid-warmth pink. rgb(225, 125, 225)
 #define LIGHT_COLOR_YELLOW     "#e1e17d" //Dimmed yellow, leaning kaki. rgb(225, 225, 125)
+#define LIGHT_COLOR_LYELLOW    "#fffee0" //Mostly used today in regular lamps. rgb(255, 254, 224)
 #define LIGHT_COLOR_BROWN      "#966432" //Clear brown, mostly dim. rgb(150, 100, 50)
 #define LIGHT_COLOR_ORANGE     "#fa9632" //Mostly pure orange. rgb(250, 150, 50)
 #define LIGHT_COLOR_PURPLE     "#a97faa" //Soft purple. rgb(169, 127, 170)
