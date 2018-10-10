@@ -1099,7 +1099,7 @@ obj/item/clothing/mask/chewable/Destroy()
 
 /obj/item/weapon/flame/lighter/zippo/infinity
 	name = "\improper Engraved Zippo lighter"
-	icon = 'icons/obj/items_inf.dmi'
+	icon = 'icons/obj/items_inf_lighters.dmi'
 	icon_state = "engraved"
 
 /obj/item/weapon/flame/lighter/zippo/infinity/gold
