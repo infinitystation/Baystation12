@@ -107,24 +107,28 @@
 	path = /obj/item/clothing/glasses/hud/health/tajblind
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
+	cost = 1
 
 /datum/gear/eyes/meson/tajblind
 	display_name = "(Tajara) veil, industrial"
 	path = /obj/item/clothing/glasses/meson/prescription/tajblind
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
+	cost = 1
 
 /datum/gear/eyes/security/tajblind
 	display_name = "(Tajara) veil, sleek"
 	path = /obj/item/clothing/glasses/sunglasses/sechud/tajblind
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
+	cost = 1
 
 /datum/gear/eyes/visors
 	display_name = "(Tajara) visor selection"
 	path = /obj/item/clothing/glasses/tajvisor
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_TAJARA)
+	cost = 1
 
 /datum/gear/eyes/visors/New()
 	..()
@@ -143,18 +147,21 @@
 	path = /obj/item/clothing/glasses/hud/health/tajvisor
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
+	cost = 1
 
 /datum/gear/eyes/security/tajvisor
 	display_name = "(Tajara) visor, security"
 	path = /obj/item/clothing/glasses/sunglasses/sechud/tajvisor
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
+	cost = 1
 
 /datum/gear/eyes/meson/tajvisor
 	display_name = "(Tajara) visor, industrial"
 	path = /obj/item/clothing/glasses/meson/prescription/tajvisor
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
+	cost = 1
 
 /datum/gear/shoes/caligae
 	display_name = "(Tajara) caligae"
