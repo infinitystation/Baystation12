@@ -52,7 +52,7 @@
 
 /datum/gear/tactical/security_uniforms
 	display_name = "security uniform"
-	allowed_roles = ARMORED_ROLES
+	allowed_roles = SECURITY_ROLES
 	path = /obj/item/clothing/under
 	slot = slot_w_uniform
 
