@@ -9,8 +9,8 @@
 	icon_state_unpowered = "wrist"
 	hardware_flag = PROGRAM_PDA
 	max_hardware_size = 1
-	base_active_power_usage = 6
-	base_idle_power_usage = 1
+	base_active_power_usage = 2
+	base_idle_power_usage = 0
 	w_class = ITEM_SIZE_SMALL
 	light_strength = 2
 	slot_flags = SLOT_ID

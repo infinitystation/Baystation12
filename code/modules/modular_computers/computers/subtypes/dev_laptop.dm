@@ -7,8 +7,8 @@
 	var/icon_state_closed = "laptop-closed"
 	anchored = 0
 	w_class = ITEM_SIZE_NORMAL
-	base_idle_power_usage = 10
-	base_active_power_usage = 150
+	base_idle_power_usage = 5
+	base_active_power_usage = 50
 	light_strength = 3
 	max_damage = 200
 	broken_damage = 100
