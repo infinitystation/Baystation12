@@ -475,7 +475,7 @@
 	current_location = "nav_ert_start"
 	landmark_transition = "nav_ert_transition"
 	home_waypoint = "nav_ert_start"
-	announcer = "SEV sierra Sensor Array"
+	announcer = "NSV sierra Sensor Array"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
 
