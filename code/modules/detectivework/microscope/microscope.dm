@@ -60,18 +60,17 @@
 
 	var/list/evidence = list()
 	var/scaned_object = sample.name
-	if(istype(sample, /obj/item/weapon/forensics))
-		if(istype(sample, /obj/item/weapon/forensics/swab))
-			var/obj/item/weapon/forensics/swab/swab = sample
-			evidence["gsr"] = swab.gsr
-		else if(istype(sample, /obj/item/weapon/sample/fibers))
-			var/obj/item/weapon/sample/fibers/fibers = sample
-			scaned_object = fibers.object
-			evidence["fibers"] = fibers.evidence.Copy()
-		else if(istype(sample, /obj/item/weapon/sample/print))
-			var/obj/item/weapon/sample/print/card = sample
-			scaned_object = card.object ? card.object : card.name
-			evidence["prints"] = card.evidence.Copy()
+	if(istype(sample, /obj/item/weapon/forensics/swab))
+		var/obj/item/weapon/forensics/swab/swab = sample
+		evidence["gsr"] = swab.gsr
+	else if(istype(sample, /obj/item/weapon/sample/fibers))
+		var/obj/item/weapon/sample/fibers/fibers = sample
+		scaned_object = fibers.object
+		evidence["fibers"] = fibers.evidence.Copy()
+	else if(istype(sample, /obj/item/weapon/sample/print))
+		var/obj/item/weapon/sample/print/card = sample
+		scaned_object = card.object ? card.object : card.name
+		evidence["prints"] = card.evidence.Copy()
 	else
 		evidence["prints"] = sample.fingerprints.Copy()
 		evidence["fibers"] = sample.suit_fibers.Copy()
