@@ -36,6 +36,10 @@
 	if(!canremove)
 		return
 
+	var/turf/T = get_turf(src)
+	if(level == 1 && isturf(T) && !T.is_plating())
+		return
+
 	if ((ishuman(usr) || isrobot(usr) || issmall(usr)) && !usr.incapacitated())
 		if(over_object == usr && Adjacent(usr)) // this must come before the screen objects only block
 			src.open(usr)
@@ -314,6 +318,9 @@
 	set category = "Object"
 
 	if((!ishuman(usr) && (src.loc != usr)) || usr.stat || usr.restrained())
+		return
+
+	if((slot_flags & SLOT_BACK) && usr.back == src)
 		return
 
 	var/turf/T = get_turf(src)

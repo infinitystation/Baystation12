@@ -27,20 +27,43 @@
 	max_w_class = ITEM_SIZE_LARGE
 	max_storage_space = DEFAULT_BACKPACK_STORAGE
 
+	var/worn_access = FALSE
+
 /obj/item/weapon/storage/backpack/equipped()
 	if(!has_extension(src, /datum/extension/appearance))
 		set_extension(src, /datum/extension/appearance, /datum/extension/appearance/cardborg)
 	..()
 
 /obj/item/weapon/storage/backpack/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if (src.use_sound)
-		playsound(src.loc, src.use_sound, 50, 1, -5)
-	return ..()
+	if (!worn_check(user))
+		return
+	..()
+
+/obj/item/weapon/storage/backpack/attack_hand(mob/user as mob)
+	if (!worn_check(user))
+		return
+	..()
 
 /obj/item/weapon/storage/backpack/equipped(var/mob/user, var/slot)
 	if (slot == slot_back && src.use_sound)
 		playsound(src.loc, src.use_sound, 50, 1, -5)
 	..(user, slot)
+	if(!worn_access && user.back == src) //currently looking into the backpack
+		close(user)
+
+/obj/item/weapon/storage/backpack/open(mob/user)
+	if (!worn_check(user))
+		return
+	..()
+
+/obj/item/weapon/storage/backpack/proc/worn_check(var/mob/L)
+	if(!worn_access && L.back == src)
+		if (istype(L))
+			to_chat(L, "<span class='warning'>You need take off \the [src] before you can use it!</span>")
+		if (use_sound)
+			playsound(loc, use_sound, 50, 1, -5)
+		return FALSE
+ 	return TRUE
 
 /*
  * Backpack Types
@@ -236,6 +259,8 @@
 	name = "satchel"
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel/grey
 	name = "grey satchel"
@@ -295,6 +320,8 @@
 		slot_l_hand_str = "engiepack",
 		slot_r_hand_str = "engiepack",
 		)
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_med
 	name = "medical satchel"
@@ -304,26 +331,36 @@
 		slot_l_hand_str = "medicalpack",
 		slot_r_hand_str = "medicalpack",
 		)
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_vir
 	name = "virologist satchel"
 	desc = "A sterile satchel with virologist colours."
 	icon_state = "satchel-vir"
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_chem
 	name = "chemist satchel"
 	desc = "A sterile satchel with chemist colours."
 	icon_state = "satchel-chem"
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_gen
 	name = "geneticist satchel"
 	desc = "A sterile satchel with geneticist colours."
 	icon_state = "satchel-gen"
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_tox
 	name = "corporate satchel"
 	desc = "Useful for holding research materials. The colors on it denote it as a corporate bag."
 	icon_state = "satchel-nt"
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_sec
 	name = "security satchel"
@@ -333,11 +370,15 @@
 		slot_l_hand_str = "securitypack",
 		slot_r_hand_str = "securitypack",
 		)
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_hyd
 	name = "hydroponics satchel"
 	desc = "A green satchel for plant related work."
 	icon_state = "satchel_hyd"
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/satchel_cap
 	name = "captain's satchel"
@@ -347,6 +388,8 @@
 		slot_l_hand_str = "satchel-cap",
 		slot_r_hand_str = "satchel-cap",
 		)
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	worn_access = TRUE
 
 //ERT backpacks.
 /obj/item/weapon/storage/backpack/ert
@@ -389,6 +432,8 @@
 	name = "messenger bag"
 	desc = "A sturdy backpack worn over one shoulder."
 	icon_state = "courierbag"
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	worn_access = TRUE
 
 /obj/item/weapon/storage/backpack/messenger/chem
 	name = "chemistry messenger bag"
@@ -429,3 +474,34 @@
 	name = "security messenger bag"
 	desc = "A tactical backpack worn over one shoulder. This one is in Security colors."
 	icon_state = "courierbagsec"
+
+/obj/item/weapon/storage/backpack/satchel/flat
+	name = "smuggler's satchel"
+	desc = "A very slim satchel that can easily fit into tight spaces."
+	icon = 'icons/obj/clothing/infinity/misc.dmi'
+	icon_state = "satchel-flat"
+	item_state = "satchel-norm"
+	level = 1
+	w_class = ITEM_SIZE_NORMAL //Can fit in backpacks itself.
+	storage_slots = 5
+	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = 15
+	cant_hold = list(/obj/item/weapon/storage/backpack/satchel/flat) //muh recursive backpacks
+	startswith = list(
+		/obj/item/stack/tile/floor,
+		/obj/item/weapon/crowbar
+		)
+
+/obj/item/weapon/storage/backpack/satchel/flat/hide(var/i)
+	if(istype(loc, /turf/simulated))
+		set_invisibility(i ? 101 : 0)
+		anchored = i ? TRUE : FALSE
+		icon_state = "[initial(icon_state)][i ? "2" : ""]"
+		update_icon()
+
+/obj/item/weapon/storage/backpack/satchel/flat/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	var/turf/T = src.loc
+	if (level == 1 && isturf(T) && !T.is_plating())
+		to_chat(user, "<span class='warning'>You must remove the plating first.</span>")
+		return 1
+	return ..()
