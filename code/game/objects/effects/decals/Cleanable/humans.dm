@@ -148,8 +148,6 @@ var/global/list/image/splatter_cache=list()
 	icon_state = "1"
 	random_icon_states = list("1","2","3","4","5")
 	amount = 0
-	persistent = FALSE
-	generic_filth = FALSE
 	var/list/drips
 
 /obj/effect/decal/cleanable/blood/drip/Initialize()
