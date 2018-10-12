@@ -451,12 +451,11 @@ datum/objective/steal
 	var/target_name
 
 	var/global/possible_items[] = list(
-		"the captain's antique laser gun" = /obj/item/weapon/gun/energy/captain,
-		"a bluespace rift generator" = /obj/item/integrated_circuit/manipulation/bluespace_rift,
+		"the captain's personal revolver" = /obj/item/weapon/gun/projectile/revolver/webley/captain,
 		"an RCD" = /obj/item/weapon/rcd,
 		"a jetpack" = /obj/item/weapon/tank/jetpack,
 		"a functional AI" = /obj/item/weapon/aicard,
-		"a Exploration Leader's deluxe machete"	 = /obj/item/weapon/material/hatchet/machete/deluxe,
+		"an Exploration Leader's deluxe machete"	 = /obj/item/weapon/material/hatchet/machete/deluxe,
 		"a pair of magboots" = /obj/item/clothing/shoes/magboots,
 		"the [station_name()] blueprints" = /obj/item/blueprints,
 		"28 moles of phoron (full tank)" = /obj/item/weapon/tank,
@@ -466,13 +465,14 @@ datum/objective/steal
 		"a Formal Outfit of NT Internal Affairis Agent" = /obj/item/clothing/under/rank/internalaffairs/,
 		"a Tactical Goggles" = /obj/item/clothing/glasses/tacgoggles,
 		"the hypospray" = /obj/item/weapon/reagent_containers/hypospray,
-		"the captain's pinpointer" = /obj/item/weapon/pinpointer,
-		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
-		"a ballistic armor vest" =  /obj/item/clothing/suit/armor/bulletproof/vest,
+		"a pinpointer" = /obj/item/weapon/pinpointer,
+		"an ablative armor kit" = /obj/item/clothing/suit/armor/laserproof,
+		"a ballistic armor kit" =  /obj/item/clothing/suit/armor/bulletproof,
 	)
 
 	var/global/possible_items_special[] = list(
 		/*"nuclear authentication disk" = /obj/item/weapon/disk/nuclear,*///Broken with the change to nuke disk making it respawn on z level change.
+		"a bluespace rift generator" = /obj/item/integrated_circuit/manipulation/bluespace_rift,
 		"nuclear gun" = /obj/item/weapon/gun/energy/gun/nuclear,
 		"diamond drill" = /obj/item/weapon/pickaxe/diamonddrill,
 		"bag of holding" = /obj/item/weapon/storage/backpack/holding,
@@ -536,6 +536,18 @@ datum/objective/steal
 					var/turf/T = get_turf(ai)
 					if(owner.current.contains(ai) || (T && is_type_in_list(T.loc, GLOB.using_map.post_round_safe_areas)))
 						return 1
+
+			if("an ablative armor kit")
+				for(var/obj/item/clothing/suit/armor/laserproof/I in all_items) //Check for kit
+					if(istype(I, steal_target))
+						if(I.accessories == list(/obj/item/clothing/accessory/armguards/ablative, /obj/item/clothing/accessory/legguards/ablative))
+							return 1
+			if("a ballistic armor kit")
+				for(var/obj/item/clothing/suit/armor/bulletproof/I in all_items) //Check for kit
+					if(istype(I, steal_target))
+						if(I.accessories == list(/obj/item/clothing/accessory/armguards/ballistic, /obj/item/clothing/accessory/legguards/ballistic))
+							return 1
+
 			else
 
 				for(var/obj/I in all_items) //Check for items
@@ -681,17 +693,17 @@ datum/objective/heist/loot
 		var/loot = "an object"
 		switch(rand(1,8))
 			if(1)
-				target = /obj/structure/particle_accelerator
-				target_amount = 6
-				loot = "a complete particle accelerator"
-			if(2)
-				target = /obj/machinery/the_singularitygen
+				target = /obj/item/weapon/gun/projectile/revolver/webley/captain
 				target_amount = 1
-				loot = "a gravitational generator"
+				loot = "a captain's revolver"
+			if(2)
+				target = /obj/machinery/media/jukebox
+				target_amount = 1
+				loot = "a mediatronic jukebox"
 			if(3)
 				target = /obj/machinery/power/emitter
-				target_amount = 4
-				loot = "four emitters"
+				target_amount = 2
+				loot = "two emitters"
 			if(4)
 				target = /obj/machinery/nuclearbomb
 				target_amount = 1
@@ -703,11 +715,11 @@ datum/objective/heist/loot
 			if(6)
 				target = /obj/item/weapon/gun/energy
 				target_amount = 4
-				loot = "four energy guns"
+				loot = "four LAEP90 energy guns"
 			if(7)
 				target = /obj/item/weapon/gun/energy/laser
 				target_amount = 2
-				loot = "two laser guns"
+				loot = "two G40E lasers"
 			if(8)
 				target = /obj/item/weapon/gun/energy/ionrifle
 				target_amount = 1
