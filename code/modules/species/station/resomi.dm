@@ -17,6 +17,8 @@
 	tail_hair = "feathers"
 	strength = STR_HIGH
 	reagent_tag = IS_RESOMI
+	
+	move_trail = /obj/effect/decal/cleanable/blood/tracks/paw
 
 	icobase = 			'icons/mob/human_races/species/resomi/body.dmi'
 	deform = 			'icons/mob/human_races/species/resomi/body.dmi'
