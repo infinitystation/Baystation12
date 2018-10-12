@@ -416,3 +416,9 @@
 				usr.update_inv_l_hand(0)
 				usr.update_inv_r_hand(0)
 	return 1
+
+/obj/screen/health
+		
+/obj/screen/health/Click(var/location, var/control, var/params)
+	usr.Click(usr, params)
+
