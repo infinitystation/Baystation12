@@ -16,6 +16,7 @@
 	hard_drive.store_file(new/datum/computer_file/program/rcon_console())
 	hard_drive.store_file(new/datum/computer_file/program/camera_monitor())
 	hard_drive.store_file(new/datum/computer_file/program/shields_monitor())
+	hard_drive.store_file(new/datum/computer_file/program/reports())
 
 // Medical
 /obj/item/modular_computer/console/preset/medical/install_default_hardware()
@@ -28,6 +29,7 @@
 	hard_drive.store_file(new/datum/computer_file/program/camera_monitor())
 	hard_drive.store_file(new/datum/computer_file/program/records())
 	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
+	hard_drive.store_file(new/datum/computer_file/program/reports())
 	set_autorun("sensormonitor")
 
 // Research
@@ -44,6 +46,7 @@
 	hard_drive.store_file(new/datum/computer_file/program/aidiag())
 	hard_drive.store_file(new/datum/computer_file/program/email_client())
 	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
+	hard_drive.store_file(new/datum/computer_file/program/reports())
 
 // Administrator
 /obj/item/modular_computer/console/preset/sysadmin/install_default_hardware()
@@ -78,6 +81,7 @@
 	hard_drive.store_file(new/datum/computer_file/program/records())
 	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
 	hard_drive.store_file(new/datum/computer_file/program/docking())
+	hard_drive.store_file(new/datum/computer_file/program/reports())
 
 // Security
 /obj/item/modular_computer/console/preset/security/install_default_hardware()
@@ -91,6 +95,7 @@
 	hard_drive.store_file(new/datum/computer_file/program/forceauthorization())
 	hard_drive.store_file(new/datum/computer_file/program/records())
 	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
+	hard_drive.store_file(new/datum/computer_file/program/reports())
 
 // Detective
 /obj/item/modular_computer/console/preset/security/detective/install_default_programs()
@@ -126,6 +131,7 @@
 	hard_drive.store_file(new/datum/computer_file/program/supply())
 	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
 	hard_drive.store_file(new/datum/computer_file/program/docking())
+	hard_drive.store_file(new/datum/computer_file/program/reports())
 
 // Crew-facing supply ordering computer
 /obj/item/modular_computer/console/preset/supply/install_default_hardware()
