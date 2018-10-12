@@ -68,28 +68,28 @@
 
 
 /obj/machinery/computer/general_air_control/engines_tanks
-	name = "Reactive Engines Tank Monitoring"
+	name = "Nacelles Tank Monitoring"
 	frequency = 1439
-	sensors = list("ReacEngPlasma1" = "First Engine Hydrogen",
-				"ReacEngPlasma2" = "Second Engine Hydrogen",
-				"ReacEngPlasma3" = "Third Engine Hydrogen",
-				"ReacEngPlasma4" = "Fourth Engine Hydrogen",
-				"ReacEngOxygen1" = "First Engine Oxygen",
-				"ReacEngOxygen2" = "Second Engine Oxygen",
-				"ReacEngOxygen3" = "Third Engine Oxygen",
-				"ReacEngOxygen4" = "Fourth Engine Oxygen",
-				"ReacEngCO21" = "First Engine CO2",
-				"ReacEngCO22" = "Second Engine CO2",
-				"ReacEngCO23" = "Third Engine CO2",
-				"ReacEngCO24" = "Fourth Engine CO2")
+	sensors = list("ReacEngPlasma1" = "Third Deck Starboard H2",
+				"ReacEngPlasma2" = "Third Deck Port H2",
+				"ReacEngPlasma3" = "First Deck Starboard H2",
+				"ReacEngPlasma4" = "First Deck Port H2",
+				"ReacEngOxygen1" = "Third Deck Starboard O2",
+				"ReacEngOxygen2" = "Third Deck Port O2",
+				"ReacEngOxygen3" = "First Deck Starboard O2",
+				"ReacEngOxygen4" = "First Deck Port O2",
+				"ReacEngCO21" = "Third Deck Starboard CO2",
+				"ReacEngCO22" = "Third Deck Port CO2",
+				"ReacEngCO23" = "First Deck Starboard CO2",
+				"ReacEngCO24" = "First Deck Port CO2")
 
 /obj/machinery/computer/general_air_control/engines_flame
-	name = "Reactive Engines Chamber Monitoring"
+	name = "Nacelles Chamber Monitoring"
 	frequency = 1439
-	sensors = list("ReacEng1" = "First Chamber",
- 				"ReacEng2" = "Second Chamber",
-				"ReacEng3" = "Third Chamber",
-				"ReacEng4" = "Fourth Chamber")
+	sensors = list("ReacEng1" = "Third Deck Starboard Chamber",
+ 				"ReacEng2" = "Third Deck Port Chamber",
+				"ReacEng3" = "First Deck Starboard Chamber",
+				"ReacEng4" = "First Deck Port Chamber")
 
 /obj/machinery/computer/general_air_control/engines_flame/first
 	sensors = list("ReacEng1" = "Chamber")
