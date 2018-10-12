@@ -98,6 +98,11 @@ ckey: coltrane97
 character_name: Miguel Blackburn
 item_path: /obj/item/device/pmp/personal
 }
+{
+ckey: Ka6a4ok
+character_name: Mike Sound
+item_path: /obj/item/device/pmp/personal
+}
 #	SHORT ITEMS HERE (3-4)
 {
 ckey: quietproject 
@@ -180,6 +185,12 @@ ckey: logfol
 character_name: Dragan Harambashic
 item_path: /obj/item/clothing/suit/armor/pcarrier/scp_carrier
 }
+{
+ckey: Gumboldty
+character_name: Lucuis Gumboldt
+item_path: /obj/item/weapon/reagent_containers/pill/strange_pill
+}
+
 #	MEDIUM ITEMS HERE (5-6)
 {
 ckey: parasoul
