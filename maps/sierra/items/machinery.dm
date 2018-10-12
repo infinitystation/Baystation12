@@ -82,3 +82,15 @@
 	products = list(/obj/item/weapon/handcuffs = 8,/obj/item/weapon/grenade/flashbang = 8,/obj/item/weapon/grenade/chem_grenade/teargas = 4,/obj/item/device/flash = 5,
 					/obj/item/bodybag = 4,/obj/item/weapon/storage/box/evidence = 6, /obj/item/clothing/accessory/badge/holo/NT = 4, /obj/item/clothing/accessory/badge/holo/NT/cord = 4)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,/obj/item/weapon/storage/box/donut = 2)
+
+/obj/machinery/button/toggle/valve/nacelle/first
+	name = "Third Deck Starboard Nacelle Fuel Control"
+
+/obj/machinery/button/toggle/valve/nacelle/second
+	name = "Third Deck Port Nacelle Fuel Control"
+
+/obj/machinery/button/toggle/valve/nacelle/third
+	name = "First Deck Starboard Nacelle Fuel Control"
+
+/obj/machinery/button/toggle/valve/nacelle/fourth
+	name = "First Deck Port Nacelle Fuel Control"

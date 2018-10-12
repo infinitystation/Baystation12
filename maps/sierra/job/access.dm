@@ -1,5 +1,5 @@
 /************
-* SEV sierra *
+* NSV sierra *
 ************/
 /var/const/access_hangar = 73
 /datum/access/hangar
@@ -88,7 +88,7 @@
 
 
 /************
-* SEV sierra *
+* NSV sierra *
 ************/
 
 /datum/access/network
