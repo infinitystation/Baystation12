@@ -102,6 +102,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "centcom"
 	requires_power = 0
 	dynamic_lighting = 0
+	area_flags = AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/centcom/holding
 	name = "\improper Holding Facility"

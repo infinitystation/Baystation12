@@ -201,7 +201,7 @@
 
 /area/crew_quarters/safe_room/firstdeck
 	name = "First Deck Safe Room"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/maintenance/substation/firstdeck // First Deck (Z-4)
 	name = "First Deck Substation"
@@ -210,6 +210,7 @@
 /area/shuttle/transport1/centcom
 	icon_state = "shuttle"
 	name = "Transport Shuttle Centcom"
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 //sierra large pods
 /area/shuttle/escape_pod6/station
@@ -342,7 +343,7 @@
 	icon_state = "green"
 	requires_power = 0
 	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/ninja_dojo/dojo
 	name = "Clan Dojo"
@@ -360,7 +361,7 @@
 	icon_state = "shuttlegrn"
 	requires_power = 1
 	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 //Merc
 
@@ -369,12 +370,12 @@
 	icon_state = "syndie-ship"
 	requires_power = 0
 	dynamic_lighting = 0
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/syndicate_station/start
 	name = "Mercenary Forward Operating Base"
 	icon_state = "yellow"
 	requires_power = 0
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 //Skipjack
 
@@ -382,6 +383,7 @@
 	name = "Raider Outpost"
 	icon_state = "yellow"
 	requires_power = 0
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 //NT rescue shuttle
 
@@ -390,7 +392,7 @@
 	icon_state = "yellow"
 	requires_power = 0
 	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/rescue_base/base
 	name = "Barracks"
@@ -765,7 +767,7 @@
 /area/security/sierra/safe_room
 	name = "Security - Safe Room"
 	icon_state = "brig"
-	area_flags = AREA_FLAG_RAD_SHIELDED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/security/sierra/suits
 	name = "Security - Suits Storage"
