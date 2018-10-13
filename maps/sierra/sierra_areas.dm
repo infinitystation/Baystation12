@@ -127,6 +127,10 @@
 	name = "Second Deck Teleporter"
 	icon_state = "teleporter"
 
+/area/maintenance/bluespace
+	name = "Bluespace Drive"
+	icon_state = "engineering"
+
 /area/crew_quarters/safe_room/seconddeck
 	name = "Second Deck Safe Room"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
@@ -260,7 +264,7 @@
 
 //Charon
 
-/area/exploration_shuttle/
+/area/exploration_shuttle
 	name = "Charon"
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/plating
@@ -272,12 +276,8 @@
 	name = "Charon - Atmos Compartment"
 /area/exploration_shuttle/power
 	name = "Charon - Power Compartment"
-/area/exploration_shuttle/crew
-	name = "Charon - Crew Compartment"
 /area/exploration_shuttle/medical
 	name = "Charon - Medical Compartment"
-/area/exploration_shuttle/surgery
-	name = "Charon - Surgery Compartment"
 /area/exploration_shuttle/cargo
 	name = "Charon - Cargo Bay"
 /area/exploration_shuttle/airlock
