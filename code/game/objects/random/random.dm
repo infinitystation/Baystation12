@@ -744,17 +744,11 @@ obj/random/obstruction/spawn_choices()
 /obj/random/shoes/spawn_choices()
 	return list(/obj/item/clothing/shoes/workboots = 3,
 				/obj/item/clothing/shoes/jackboots = 3,
-				/obj/item/clothing/shoes/swat = 1,
-				/obj/item/clothing/shoes/combat = 1,
 				/obj/item/clothing/shoes/galoshes = 2,
-				/obj/item/clothing/shoes/syndigaloshes = 1,
 				/obj/item/clothing/shoes/magboots = 1,
 				/obj/item/clothing/shoes/laceup = 4,
 				/obj/item/clothing/shoes/black = 4,
-				/obj/item/clothing/shoes/jungleboots = 3,
-				/obj/item/clothing/shoes/desertboots = 3,
 				/obj/item/clothing/shoes/dutyboots = 3,
-				/obj/item/clothing/shoes/tactical = 1,
 				/obj/item/clothing/shoes/dress = 3,
 				/obj/item/clothing/shoes/dress/white = 3,
 				/obj/item/clothing/shoes/sandal = 3,
@@ -772,7 +766,6 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/clothing/shoes/jackboots = 1,
 				/obj/item/clothing/shoes/laceup = 2,
 				/obj/item/clothing/shoes/black = 4,
-				/obj/item/clothing/shoes/jungleboots = 1,
 				/obj/item/clothing/shoes/dutyboots = 1,
 				/obj/item/clothing/shoes/sandal = 2,
 				/obj/item/clothing/shoes/brown = 4,
@@ -787,17 +780,15 @@ obj/random/obstruction/spawn_choices()
 	icon_state = "rainbow"
 
 /obj/random/gloves/spawn_choices()
-	return list(/obj/item/clothing/gloves/insulated = 3,
-				/obj/item/clothing/gloves/thick = 6,
+	return list(/obj/item/clothing/gloves/insulated = 2,
+				/obj/item/clothing/gloves/thick = 3,
+				/obj/item/clothing/gloves/thick/modified = 1,
 				/obj/item/clothing/gloves/thick/botany = 5,
+				/obj/item/clothing/gloves/duty = 3,
 				/obj/item/clothing/gloves/latex = 4,
-				/obj/item/clothing/gloves/thick/swat = 3,
-				/obj/item/clothing/gloves/thick/combat = 3,
+				/obj/item/clothing/gloves/latex/modified = 1,
 				/obj/item/clothing/gloves/white = 5,
 				/obj/item/clothing/gloves/rainbow = 1,
-				/obj/item/clothing/gloves/duty = 5,
-				/obj/item/clothing/gloves/guards = 3,
-				/obj/item/clothing/gloves/tactical = 3,
 				/obj/item/clothing/gloves/insulated/cheap = 7)
 
 /obj/random/gloves/poor
@@ -819,21 +810,21 @@ obj/random/obstruction/spawn_choices()
 	icon_state = "leforge"
 
 /obj/random/glasses/spawn_choices()
-	return list(/obj/item/clothing/glasses/sunglasses = 3,
-				/obj/item/clothing/glasses/regular = 7,
-				/obj/item/clothing/glasses/meson = 5,
-				/obj/item/clothing/glasses/meson/prescription = 4,
-				/obj/item/clothing/glasses/science = 6,
-				/obj/item/clothing/glasses/material = 5,
-				/obj/item/clothing/glasses/welding = 3,
-				/obj/item/clothing/glasses/hud/health = 4,
-				/obj/item/clothing/glasses/hud/health/prescription = 3,
-				/obj/item/clothing/glasses/hud/security = 4,
-				/obj/item/clothing/glasses/hud/security/prescription = 3,
-				/obj/item/clothing/glasses/sunglasses/sechud = 2,
-				/obj/item/clothing/glasses/sunglasses/sechud/toggle = 3,
-				/obj/item/clothing/glasses/sunglasses/sechud/goggles = 1,
-				/obj/item/clothing/glasses/tacgoggles = 1)
+	return list(/obj/item/clothing/glasses/eyepatch = 2,
+				/obj/item/clothing/glasses/gglasses = 4,
+				/obj/item/clothing/glasses/regular = 3,
+				/obj/item/clothing/glasses/sunglasses = 5,
+				/obj/item/clothing/glasses/sunglasses/big = 2,
+				/obj/item/clothing/glasses/sunglasses/blindfold = 1,
+				/obj/item/clothing/glasses/sunglasses/sechud = 1,
+				/obj/item/clothing/glasses/hud/health = 2,
+				/obj/item/clothing/glasses/hud/janitor = 1,
+				/obj/item/clothing/glasses/material = 1,
+				/obj/item/clothing/glasses/meson = 2,
+				/obj/item/clothing/glasses/science = 1,
+				/obj/item/clothing/glasses/welding = 1,
+				/obj/item/clothing/glasses/threedglasses = 1,
+				/obj/item/clothing/glasses/monocle = 1)
 
 /obj/random/hat
 	name = "random headgear"
@@ -843,7 +834,6 @@ obj/random/obstruction/spawn_choices()
 
 /obj/random/hat/spawn_choices()
 	return list(/obj/item/clothing/head/helmet = 2,
-				/obj/item/clothing/head/helmet/tactical = 1,
 				/obj/item/clothing/head/helmet/space/emergency = 1,
 				/obj/item/clothing/head/bio_hood/general = 1,
 				/obj/item/clothing/head/hardhat = 4,
@@ -851,7 +841,19 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/clothing/head/hardhat/red = 4,
 				/obj/item/clothing/head/hardhat/dblue = 4,
 				/obj/item/clothing/head/ushanka = 3,
-				/obj/item/clothing/head/welding = 2)
+				/obj/item/clothing/head/welding = 2,
+				/obj/item/clothing/head/bandana = 2,
+				/obj/item/clothing/head/boaterhat = 1,
+				/obj/item/clothing/head/bowler = 2,
+				/obj/item/clothing/head/bowlerhat = 1,
+				/obj/item/clothing/head/cardborg = 2,
+				/obj/item/clothing/head/chefhat = 1,
+				/obj/item/clothing/head/cowboy_hat = 1,
+				/obj/item/clothing/head/fedora = 2,
+				/obj/item/clothing/head/festive = 1,
+				/obj/item/clothing/head/flatcap = 2,
+				/obj/item/clothing/head/mailman = 1,
+				/obj/item/clothing/head/welding = 1,)
 
 /obj/random/hat/poor
 	name = "random poor headgear"
@@ -880,9 +882,7 @@ obj/random/obstruction/spawn_choices()
 	return list(/obj/item/clothing/suit/storage/hazardvest = 4,
 				/obj/item/clothing/suit/storage/toggle/labcoat = 4,
 				/obj/item/clothing/suit/space/emergency = 1,
-				/obj/item/clothing/suit/armor/vest = 4,
-				/obj/item/clothing/suit/storage/vest/tactical = 1,
-				/obj/item/clothing/suit/storage/vest = 3,
+				/obj/item/clothing/suit/armor/pcarrier/light = 2,
 				/obj/item/clothing/suit/storage/toggle/bomber = 3,
 				/obj/item/clothing/suit/chef/classic = 3,
 				/obj/item/clothing/suit/surgicalapron = 2,
@@ -910,7 +910,9 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/clothing/under/rank/medical/paramedic = 2,
 				/obj/item/clothing/under/overalls = 2,
 				/obj/item/clothing/ears/earmuffs = 2,
-				/obj/item/clothing/under/tactical = 1)
+				/obj/item/clothing/under/tactical = 1,
+				/obj/item/clothing/under/waiter = 1,
+				)
 
 /obj/random/accessory
 	name = "random accessory"
@@ -1116,8 +1118,7 @@ something, make sure it's not in one of the other lists.*/
 				/obj/item/weapon/rig/light/hacker,
 				/obj/item/weapon/rig/light/stealth,
 				/obj/item/weapon/rig/light,
-				/obj/item/weapon/rig/unathi,
-				/obj/item/weapon/rig/unathi/fancy)
+				/obj/item/weapon/rig/unathi)
 
 /obj/random/hostile
 	name = "Random Hostile Mob"
