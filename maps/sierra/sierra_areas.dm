@@ -70,6 +70,10 @@
 /area/maintenance/substation/thirddeck
 	name = "Third Deck Substation"
 
+/area/maintenance/waterstore
+	name = "\improper Cistern"
+	icon_state = "disposal"
+
 /area/crew_quarters/laundry
 	name = "Laundry Room"
 	icon_state = "Sleep"
