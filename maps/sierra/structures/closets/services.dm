@@ -61,6 +61,8 @@
 		/obj/item/weapon/reagent_containers/spray/cleaner,
 		/obj/item/clothing/shoes/galoshes,
 		/obj/item/weapon/storage/box/detergent,
+		/obj/item/holosign_creator,
+		/obj/item/clothing/glasses/hud/janitor,
 		/obj/item/weapon/soap/nanotrasen
 	)
 
