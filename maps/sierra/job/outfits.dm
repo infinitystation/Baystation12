@@ -489,12 +489,24 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	/////////
 
 /decl/hierarchy/outfit/job/sierra/merchant
-	name = OUTFIT_JOB_NAME("Merchant - Sierra")
-	uniform = /obj/item/clothing/under/suit_jacket/charcoal
+	name = OUTFIT_JOB_NAME("Merchant Assistant")
+	uniform = /obj/item/clothing/under/suit_jacket/tan
 	l_ear = null
-	shoes = /obj/item/clothing/shoes/black
+	shoes = /obj/item/clothing/shoes/brown
 	pda_type = /obj/item/modular_computer/pda
 	id_type = /obj/item/weapon/card/id/sierra/merchant
+
+/decl/hierarchy/outfit/job/sierra/merchant/security
+	name = OUTFIT_JOB_NAME("Merchant Security")
+	uniform = /obj/item/clothing/under/syndicate/tacticool
+	suit = /obj/item/clothing/suit/armor/pcarrier/light
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/decl/hierarchy/outfit/job/sierra/merchant/leader
+	name = OUTFIT_JOB_NAME("Merchant Leader - Sierra")
+	uniform = /obj/item/clothing/under/suit_jacket/charcoal
+	shoes = /obj/item/clothing/shoes/laceup
+	id_type = /obj/item/weapon/card/id/sierra/merchant/leader
 
 /decl/hierarchy/outfit/job/sierra/stowaway
 	name = OUTFIT_JOB_NAME("Stowaway - Sierra")

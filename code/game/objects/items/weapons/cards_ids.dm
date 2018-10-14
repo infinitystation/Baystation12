@@ -496,9 +496,10 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id/merchant
 	name = "identification card"
-	desc = "A card issued to Merchants, indicating their right to sell and buy goods."
+	desc = "A card issued to Merchants."
 	icon_state = "trader"
 	access = list(access_merchant)
+
 /obj/item/weapon/card/id/merchant/leader
-	desc = "A card issued to Merchants Leader, indicating their right to sell and buy goods."
+	desc = "A card issued to Merchant Leaders, indicating their right to sell and buy goods."
 	access = list(access_merchant, access_merchant_leader)

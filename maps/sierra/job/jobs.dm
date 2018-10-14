@@ -3,7 +3,7 @@
 		/datum/species/adherent = list(/datum/job/ai, /datum/job/cyborg, /datum/job/assistant, /datum/job/engineer_trainee, /datum/job/cargo_assistant, /datum/job/janitor),
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/chemist,
 		/datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef, /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender),
-		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/stowaway)
+		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/stowaway)
 	)
 
 #define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos
@@ -28,7 +28,7 @@
 						/datum/job/senior_scientist, /datum/job/scientist, /datum/job/roboticist, /datum/job/scientist_assistant,
 						/datum/job/ai, /datum/job/cyborg,
 						/datum/job/assistant,
-						/datum/job/merchant, /datum/job/stowaway
+						/datum/job/merchant, /datum/job/merchant_trainee, /datum/job/stowaway
 						)
 
 	access_modify_region = list(
@@ -338,7 +338,7 @@
 	skill_points = 20
 
 	access = list(		access_security, access_sec_doors, access_medical, access_iaa, access_research, access_xenoarch, access_heads, access_bridge,
-						access_hangar, access_petrov)
+						access_hangar, access_petrov, access_commissary)
 
 	minimal_access = list()
 
@@ -1029,7 +1029,7 @@
 
 	access = list(		access_maint_tunnels, access_emergency_storage, access_tech_storage,  access_cargo, access_guppy_helm,
 						access_cargo_bot, access_qm, access_mailsorting, access_expedition_shuttle, access_guppy, access_hangar,
-						access_mining, access_mining_office, access_mining_station,)
+						access_mining, access_mining_office, access_mining_station, access_commissary)
 
 	minimal_access = list()
 
@@ -1053,7 +1053,7 @@
 	                    SKILL_FINANCE     = SKILL_BASIC,
 	                    SKILL_HAULING     = SKILL_BASIC)
 
-	access = list(access_maint_tunnels, access_emergency_storage, access_cargo, access_guppy_helm,
+	access = list(access_maint_tunnels, access_emergency_storage, access_cargo, access_guppy_helm, access_commissary,
 						access_cargo_bot, access_mining_office, access_mailsorting, access_expedition_shuttle, access_guppy, access_hangar)
 
 	minimal_access = list()
@@ -1111,7 +1111,7 @@
 						SKILL_FINANCE     = SKILL_BASIC,
 						SKILL_HAULING     = SKILL_BASIC)
 
-	access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mining_office, access_mailsorting, access_hangar, access_guppy, access_guppy_helm)
+	access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mining_office, access_mailsorting, access_hangar, access_guppy, access_guppy_helm, access_commissary)
 
 	minimal_access = list()
 
@@ -1159,7 +1159,7 @@
 						SKILL_BOTANY    = SKILL_BASIC,
 						SKILL_CHEMISTRY = SKILL_BASIC)
 
-	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_bar)
+	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_bar, access_commissary)
 
 	minimal_access = list()
 	required_education = EDUCATION_TIER_TRADE
@@ -1174,7 +1174,7 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
-	access = list(access_hydroponics, access_bar, access_kitchen)
+	access = list(access_hydroponics, access_bar, access_kitchen, access_commissary)
 
 	minimal_access = list()
 	min_skill = list(	SKILL_COOKING   = SKILL_BASIC,
@@ -1361,25 +1361,54 @@
 	department = "Civilian"
 	department_flag = CIV
 
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the invisible hand of the market"
 	selection_color = "#515151"
 	ideal_character_age = 30
 	minimal_player_age = 7
 	create_record = 0
-	outfit_type = /decl/hierarchy/outfit/job/sierra/merchant
+	outfit_type = /decl/hierarchy/outfit/job/sierra/merchant/leader
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	latejoin_at_spawnpoints = 1
 
-	access = list(access_merchant)
+	access = list(access_merchant, access_merchant_leader)
 	minimal_access = list()
 
 	announced = FALSE
 	min_skill = list(	SKILL_FINANCE = SKILL_ADEPT,
 						SKILL_PILOT	  = SKILL_BASIC)
 	skill_points = 24
+
+/datum/job/merchant_trainee
+	title = "Merchant Assistant"
+	department = "Civilian"
+	department_flag = CIV
+
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Merchant"
+	selection_color = "#515151"
+	ideal_character_age = 20
+	minimal_player_age = 0
+	create_record = 0
+	alt_titles = list(
+		"Merchant Assistant",
+		"Merchant Security" = /decl/hierarchy/outfit/job/sierra/merchant/security)
+	outfit_type = /decl/hierarchy/outfit/job/sierra/merchant
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/civ)
+	latejoin_at_spawnpoints = 1
+	access = list(access_merchant)
+	announced = FALSE
+	min_skill = list(   SKILL_FINANCE = SKILL_BASIC)
+
+	max_skill = list(   SKILL_COMBAT  = SKILL_MAX,
+	                    SKILL_WEAPONS = SKILL_MAX)
+
+	skill_points = 24
+
 
 /datum/job/stowaway
 	title = "Stowaway"
