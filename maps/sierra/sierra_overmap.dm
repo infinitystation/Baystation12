@@ -48,6 +48,11 @@
 	shuttle = "Charon"
 	fore_dir = NORTH
 
+/obj/effect/overmap/ship/landable/guppy
+	name = "Guppy"
+	shuttle = "Guppy"
+	fore_dir = SOUTH
+
 /obj/machinery/computer/shuttle_control/explore/exploration_shuttle
 	name = "charon control console"
 	shuttle_tag = "Charon"
