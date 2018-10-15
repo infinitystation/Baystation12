@@ -10,8 +10,7 @@
 
 	initial_restricted_waypoints = list(
 		"Charon" = list("nav_hangar_calypso"), 	//can't have random shuttles popping inside the ship
-		"Guppy" = list("nav_hangar_guppy"),
-		"Albatross" = list("nav_albatross_dock")
+		"Guppy" = list("nav_hangar_guppy")
 	)
 
 	initial_generic_waypoints = list(

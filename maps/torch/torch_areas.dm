@@ -6,18 +6,10 @@
 	post_round_safe_areas = list (
 		/area/centcom,
 		/area/shuttle/escape/centcom,
-		/area/shuttle/escape_pod6/station,
-		/area/shuttle/escape_pod7/station,
-		/area/shuttle/escape_pod8/station,
-		/area/shuttle/escape_pod9/station,
-		/area/shuttle/escape_pod10/station,
-		/area/shuttle/escape_pod11/station,
-		/area/shuttle/escape_pod12/station,
-		/area/shuttle/escape_pod13/station,
-		/area/shuttle/escape_pod14/station,
-		/area/shuttle/escape_pod15/station,
-		/area/shuttle/escape_pod16/station,
-		/area/shuttle/escape_pod17/station,
+		/area/shuttle/escape_pod1/centcom,
+		/area/shuttle/escape_pod2/centcom,
+		/area/shuttle/escape_pod3/centcom,
+		/area/shuttle/escape_pod5/centcom,
 		/area/shuttle/transport1/centcom,
 		/area/shuttle/administration/centcom,
 		/area/shuttle/specops/centcom,
@@ -50,9 +42,6 @@
 
 /area/maintenance/substation/fifthdeck
 	name = "Fifth Deck Substation"
-
-/area/crew_quarters/safe_room/fifthdeck
-	name = "\improper Fifth Deck Safe Room"
 
 //Fourth Deck (Z-1)
 /area/hallway/primary/fourthdeck/fore
@@ -97,6 +86,9 @@
 
 /area/maintenance/substation/fourthdeck
 	name = "Fourth Deck Substation"
+
+/area/crew_quarters/safe_room/fourthdeck
+	name = "\improper Fourth Deck Safe Room"
 
 //Third Deck (Z-2)
 /area/hallway/primary/thirddeck/fore
@@ -591,16 +583,14 @@
 	lift_announce_str = "Arriving at Operations Deck: Infirmary. Security Wing. Research Wing. Auxiliary Cryogenic Storage. Emergency Armory."
 
 /area/turbolift/torch_third
-	name = "lift (maintenance deck)"
+	name = "lift (second deck)"
 	lift_floor_label = "Deck 2"
 	lift_floor_name = "Maintenance Deck"
-	lift_floor_name = "Habitation Deck"
 	lift_announce_str = "Arriving at Maintenance Deck: Engineering. Atmospherics. Sanitation. Storage."
 
 /area/turbolift/torch_second
 	name = "lift (third deck)"
 	lift_floor_label = "Deck 3"
-	lift_floor_name = "Maintenance Deck"
 	lift_floor_name = "Habitation Deck"
 	lift_announce_str = "Arriving at Habitation Deck: EVA. Telecommunications. Mess Hall. Officer's Mess. Lounge. Diplomatic Quarters. Hydroponics. Cryogenic Storage. Holodeck. Gym."
 
@@ -1338,7 +1328,11 @@
 	icon_state = "exam_room"
 
 /area/medical/surgery
-	name = "\improper Operating Theatre"
+	name = "\improper Operating Theatre 1"
+	icon_state = "surgery"
+
+/area/medical/surgery2
+	name = "\improper Operating Theatre 2"
 	icon_state = "surgery"
 
 /area/medical/autopsy
