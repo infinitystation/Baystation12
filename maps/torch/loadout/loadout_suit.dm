@@ -1,15 +1,17 @@
 /datum/gear/suit/blueapron
+	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/overalls
+	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/medcoat
 	allowed_roles = MEDICAL_ROLES
 
 /datum/gear/suit/trenchcoat
+	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/suit/poncho
-	display_name = "poncho selection"
-	path = /obj/item/clothing/suit/poncho/colored
+	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/suit/security_poncho
 	allowed_roles = list(/datum/job/guard, /datum/job/merchant)
@@ -21,54 +23,56 @@
 	allowed_roles = list(/datum/job/engineer_contractor, /datum/job/roboticist, /datum/job/merchant)
 
 /datum/gear/suit/science_poncho
+	allowed_roles = list(/datum/job/scientist, /datum/job/scientist_assistant)
+
+/datum/gear/suit/nanotrasen_poncho
 	allowed_roles = list(/datum/job/scientist, /datum/job/scientist_assistant, /datum/job/merchant)
 
 /datum/gear/suit/cargo_poncho
 	allowed_roles = list(/datum/job/cargo_contractor, /datum/job/merchant)
 
 /datum/gear/suit/suit_jacket
+	allowed_roles = FORMAL_ROLES
 
 /datum/gear/suit/custom_suit_jacket
+	allowed_roles = FORMAL_ROLES
 
 /datum/gear/suit/hoodie
+	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/suit/hoodie_sel
+	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/suit/labcoat
 	allowed_roles = STERILE_ROLES
 
+/datum/gear/suit/labcoat_nanotrasen
+	display_name = "labcoat, NanoTrasen"
+	allowed_roles = list(/datum/job/scientist, /datum/job/scientist_assistant)
+
+/datum/gear/suit/labcoat_dais
+	display_name = "labcoat, DAIS"
+	allowed_roles = list(/datum/job/engineer_contractor, /datum/job/scientist, /datum/job/rd)
+
+/datum/gear/suit/wintercoat_dais
+	display_name = "winter coat, DAIS"
+	allowed_roles = list(/datum/job/engineer_contractor, /datum/job/scientist, /datum/job/rd)
+
+/datum/gear/suit/labcoat_nanotrasen_rd
+	display_name = "labcoat, NanoTrasen, Research Director"
+	allowed_roles = list(/datum/job/rd)
+
 /datum/gear/suit/coat
+	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/leather
+	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/suit/wintercoat
-
-/datum/gear/suit/wintercoat/engineering
-	display_name = "engineering winter coat"
-	path = /obj/item/clothing/suit/storage/hooded/wintercoat/engineering
-	allowed_roles = ENGINEERING_ROLES
-
-/datum/gear/suit/wintercoat/cargo
-	display_name = "cargo winter coat"
-	path = /obj/item/clothing/suit/storage/hooded/wintercoat/cargo
-	allowed_roles = SUPPLY_ROLES
-
-/datum/gear/suit/wintercoat/medical
-	display_name = "medical winter coat"
-	path = /obj/item/clothing/suit/storage/hooded/wintercoat/medical
-	allowed_roles = MEDICAL_ROLES
-
-/datum/gear/suit/wintercoat/security
-	display_name = "security winter coat"
-	path = /obj/item/clothing/suit/storage/hooded/wintercoat/security
-	allowed_roles = SECURITY_ROLES
-
-/datum/gear/suit/wintercoat/research
-	display_name = "science winter coat"
-	path = /obj/item/clothing/suit/storage/hooded/wintercoat/science
-	allowed_roles = RESEARCH_ROLES
+	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/suit/track
+	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/tactical/pcarrier
 	display_name = "black plate carrier"

@@ -1,8 +1,9 @@
 /datum/map/torch
 	species_to_job_whitelist = list(
-		/datum/species/adherent = list(/datum/job/assistant),
+		/datum/species/adherent = list(/datum/job/ai, /datum/job/cyborg, /datum/job/assistant, /datum/job/janitor, /datum/job/chef, /datum/job/bartender, /datum/job/cargo_contractor,
+										/datum/job/engineer_contractor, /datum/job/roboticist, /datum/job/chemist, /datum/job/scientist_assistant, /datum/job/scientist),
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/chemist,
-		/datum/job/roboticist, /datum/job/cargo_contractor, /datum/job/chef, /datum/job/engineer_contractor, /datum/job/doctor_contractor, /datum/job/bartender),
+									 /datum/job/roboticist, /datum/job/biomech, /datum/job/cargo_contractor, /datum/job/chef, /datum/job/engineer_contractor, /datum/job/doctor_contractor, /datum/job/bartender),
 		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/stowaway)
 	)
 
@@ -10,9 +11,7 @@
 	species_to_job_blacklist = list(
 		/datum/species/unathi  = list(HUMAN_ONLY_JOBS, /datum/job/liaison, /datum/job/warden), //Other jobs unavailable via branch restrictions,
 		/datum/species/skrell  = list(HUMAN_ONLY_JOBS),
-		/datum/species/tajaran = list(HUMAN_ONLY_JOBS, /datum/job/warden),
 		/datum/species/machine = list(HUMAN_ONLY_JOBS),
-		/datum/species/resomi  = list(HUMAN_ONLY_JOBS, /datum/job/liaison, /datum/job/officer, /datum/job/guard, /datum/job/warden),
 		/datum/species/diona   = list(HUMAN_ONLY_JOBS, /datum/job/guard, /datum/job/officer, /datum/job/rd, /datum/job/liaison, /datum/job/warden),	//Other jobs unavailable via branch restrictions,
 	)
 #undef HUMAN_ONLY_JOBS
@@ -22,7 +21,7 @@
 						/datum/job/bridgeofficer, /datum/job/pathfinder, /datum/job/nt_pilot, /datum/job/explorer,
 						/datum/job/senior_engineer, /datum/job/engineer, /datum/job/engineer_contractor, /datum/job/roboticist, /datum/job/engineer_trainee,
 						/datum/job/officer, /datum/job/warden, /datum/job/detective,
-						/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_contractor,/datum/job/chemist, /datum/job/medical_trainee,
+						/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_contractor,/datum/job/biomech, /datum/job/chemist, /datum/job/medical_trainee,
 						/datum/job/psychiatrist,
 						/datum/job/qm, /datum/job/cargo_tech, /datum/job/cargo_contractor, /datum/job/mining,
 						/datum/job/janitor, /datum/job/chef, /datum/job/bartender,
@@ -49,7 +48,7 @@
 		var/datum/job/job = decls_repository.get_decl(job_type)
 		// Most species are restricted from SCG security and command roles
 		if((job.department_flag & (COM)) && job.allowed_branches.len && !(/datum/mil_branch/civilian in job.allowed_branches))
-			for(var/species_name in list(SPECIES_IPC, SPECIES_TAJARA, SPECIES_SKRELL, SPECIES_UNATHI))
+			for(var/species_name in list(SPECIES_IPC, SPECIES_SKRELL, SPECIES_UNATHI))
 				var/datum/species/S = all_species[species_name]
 				var/species_blacklist = species_to_job_blacklist[S.type]
 				if(!species_blacklist)
@@ -179,7 +178,7 @@
 	required_education = EDUCATION_TIER_DOCTORATE
 
 /datum/job/rd/get_description_blurb()
-	return "You are the Research Director. You are responsible for the research department. You handle both the science part of the mission but are also responsible for ensuring the corporate interests of Torch LLC are fulfilled, along with your Corporate Liaison. Make sure science gets done, do some yourself, and get your scientists on away missions to find things to benefit your employer. Don’t put Torch LLC or your employer’s position on board in jeopardy.  Advise the CO on science matters."
+	return "You are the Research Director. You are responsible for the research department. You handle both the science part of the mission but are also responsible for ensuring the corporate interests of Torch Ltd are fulfilled, along with your Corporate Liaison. Make sure science gets done, do some yourself, and get your scientists on away missions to find things to benefit your employer. Don't put Torch Ltd's, or your employer's, position onboard in jeopardy.  Advise the CO on science matters."
 
 /datum/job/cmo
 	title = "Chief Medical Officer"
@@ -331,7 +330,7 @@
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Corporate Regulations, the Union Charter, and Torch LLC"
+	supervisors = "Corporate Regulations, the Union Charter, and Torch, Ltd"
 	selection_color = "#2f2f7f"
 	economic_power = 15
 	minimal_player_age = 0
@@ -355,10 +354,10 @@
 						access_janitor, access_hydroponics, access_kitchen, access_bar, access_commissary)
 
 	software_on_spawn = list(/datum/computer_file/program/reports)
-	required_education = EDUCATION_TIER_BACHELOR
+	required_education = EDUCATION_TIER_BASIC
 
 /datum/job/liaison/get_description_blurb()
-	return "You are the Workplace Liaison. You are a civilian employee of Torch LLC, the corporate conglomerate partially funding the Torch, assigned to the vessel to promote corporate interests and protect the rights of the contractors on board. You are not internal affairs. You assume command of the Research Department in the absence of the RD and the Senior Researcher. You advise the RD on corporate matters and try to push corporate interests on the CO, and speak for the workers where required. Maximise profit. Be the shady corporate shill you always wanted to be."
+	return "You are the Workplace Liaison. You are a civilian employee of Torch Ltd, the corporate conglomerate partially funding the Torch, assigned to the vessel to promote corporate interests and protect the rights of the contractors on board. You are not internal affairs. You assume command of the Research Department in the absence of the RD and the Senior Researcher. You advise the RD on corporate matters and try to push corporate interests on the CO, and speak for the workers where required. Maximise profit. Be the shady corporate shill you always wanted to be."
 
 /datum/job/representative
 	title = "SolGov Representative"
@@ -405,6 +404,7 @@
 	)
 	allowed_ranks = list(
 		/datum/mil_rank/fleet/e9,
+		/datum/mil_rank/fleet/e9_alt1,
 		/datum/mil_rank/fleet/e8
 	)
 	min_skill = list(   SKILL_EVA        = SKILL_BASIC,
@@ -544,7 +544,7 @@
 
 	access = list(access_mining_office,
 						access_mining_station, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy,
-						access_hangar, access_guppy_helm, access_mining, access_pilot, access_solgov_crew, access_eva)
+						access_hangar, access_guppy_helm, access_mining, access_pilot, access_solgov_crew, access_eva, access_explorer)
 	min_skill = list(	SKILL_EVA   = SKILL_BASIC,
 						SKILL_PILOT = SKILL_ADEPT)
 
@@ -605,8 +605,6 @@
 		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/fleet/e7,
 		/datum/mil_rank/fleet/e6,
-		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/ec/e5
 	)
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
 	                    SKILL_EVA          = SKILL_ADEPT,
@@ -801,16 +799,15 @@
 /datum/job/roboticist
 	title = "Roboticist"
 	department = "Engineering"
-	department_flag = ENG|MED
+	department_flag = ENG
 
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	minimal_player_age = 0
-	supervisors = "the Chief Engineer, the Corporate Liaison and the Chief Medical Officer"
+	supervisors = "the Chief Engineer and the Corporate Liaison."
 	selection_color = "#5b4d20"
 	economic_power = 6
 	alt_titles = list(
-		"Biomechanical Engineer",
 		"Mechsuit Technician")
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/engineering/roboticist
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -821,18 +818,19 @@
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
-	                    SKILL_ATMOS        = SKILL_MAX,
-	                    SKILL_ENGINES      = SKILL_MAX,
+	                    SKILL_ATMOS        = SKILL_EXPERT,
+	                    SKILL_ENGINES      = SKILL_EXPERT,
 	                    SKILL_DEVICES      = SKILL_MAX,
-	                    SKILL_ANATOMY      = SKILL_MAX,
-	                    SKILL_MEDICAL      = SKILL_MAX)
+	                    SKILL_ANATOMY      = SKILL_EXPERT,
+	                    SKILL_MEDICAL      = SKILL_EXPERT)
+	skill_points = 20
 
 	access = list(access_robotics, access_robotics_engineering, access_tech_storage, access_morgue, access_medical, access_robotics_engineering, access_solgov_crew)
 	minimal_access = list()
 	required_education = EDUCATION_TIER_TRADE
 
 /datum/job/roboticist/get_description_blurb()
-	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics as well as the repair of all synthetic crew on board. You are also responsible for placing brains into MMI’s and giving them bodies and the production of exosuits(mechs) for various departments. You answer to the Corporate Liaison and the Chief Engineer."
+	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics (like robots). You are also responsible for the production of exosuits(mechs) and bots for various departments. You answer to the Corporate Liaison and the Chief Engineer."
 
 /datum/job/warden
 	title = "Brig Officer"
@@ -852,8 +850,6 @@
 		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/fleet/e7,
 		/datum/mil_rank/fleet/e6,
-		/datum/mil_rank/ec/e5,
-		/datum/mil_rank/fleet/e5
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
 	                    SKILL_EVA         = SKILL_BASIC,
@@ -877,10 +873,8 @@
 
 /datum/job/detective
 	title = "Forensic Technician"
-	department = "Security"
-	department_flag = SEC
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the Chief of Security"
 	economic_power = 5
 	minimal_player_age = 7
@@ -1003,8 +997,8 @@
 	skill_points = 32
 
 	access = list(access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
-			            access_crematorium, access_chemistry, access_surgery, access_eva,
-			            access_medical_equip, access_solgov_crew, access_hangar, access_senmed)
+			            access_crematorium, access_chemistry, access_surgery,
+			            access_medical_equip, access_solgov_crew, access_senmed)
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
@@ -1012,9 +1006,6 @@
 
 /datum/job/doctor
 	title = "Corpsman"
-	department = "Medical"
-	department_flag = MED
-
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the Chief Medical Officer"
@@ -1091,6 +1082,39 @@
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
 	required_education = EDUCATION_TIER_TRADE
+
+/datum/job/biomech
+	title = "Biomechanical Engineer"
+	department = "Medical"
+	department_flag = MED
+
+	minimal_player_age = 0
+	ideal_character_age = 45
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Chief Medical Officer and the Corporate Liaison"
+	selection_color = "#013d3b"
+	economic_power = 6
+	alt_titles = list()
+	outfit_type = /decl/hierarchy/outfit/job/torch/crew/medical/biomech
+	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_ranks = list(/datum/mil_rank/civ/contractor)
+	min_skill = list(   SKILL_ANATOMY		= SKILL_ADEPT,
+		                SKILL_MEDICAL       = SKILL_ADEPT,
+	                    SKILL_DEVICES		= SKILL_ADEPT)
+
+	max_skill = list(   SKILL_MEDICAL     	= SKILL_MAX,
+	                    SKILL_ANATOMY    	= SKILL_MAX,
+	                    SKILL_DEVICES       = SKILL_MAX,
+	                    SKILL_COMPUTER      = SKILL_MAX,
+	                    SKILL_CONSTRUCTION 	= SKILL_EXPERT,
+	                    SKILL_ELECTRICAL 	= SKILL_EXPERT)
+	skill_points = 24
+	access = list(access_robotics, access_robotics_engineering, access_tech_storage, access_morgue, access_medical, access_robotics_engineering, access_solgov_crew)
+	minimal_access = list()
+	required_education = EDUCATION_TIER_MEDSCHOOL
+/datum/job/biomech/get_description_blurb()
+	return "You are the Biomechanical Engineer. You are responsible for repairing, upgrading and handling all bio-synthetic crew (like FBPs) on board. You are also responsible for placing brains into MMI�s and anything involving augments. You answer to the Chief Medical Officer and the Corporate Liaison."
 
 /datum/job/medical_trainee
 	title = "Corpsman Trainee"
@@ -1215,8 +1239,6 @@
 		/datum/mil_rank/fleet/e6,
 		/datum/mil_rank/ec/e7,
 		/datum/mil_rank/fleet/e7,
-		/datum/mil_rank/fleet/e5,
-		/datum/mil_rank/ec/e5,
 		/datum/mil_rank/fleet/e8
 	)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
@@ -1626,10 +1648,10 @@
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "your laws"
-	minimal_player_age = 0
+	minimal_player_age = 3
 
 /datum/job/ai
-	minimal_player_age = 3
+	minimal_player_age = 7
 
 /datum/job/merchant
 	title = "Merchant"
@@ -1638,6 +1660,7 @@
 
 	total_positions = 2
 	spawn_positions = 2
+	availablity_chance = 30
 	supervisors = "the invisible hand of the market"
 	selection_color = "#515151"
 	ideal_character_age = 30
@@ -1662,6 +1685,7 @@
 
 	total_positions = 1
 	spawn_positions = 1
+	availablity_chance = 20
 	supervisors = "yourself"
 	selection_color = "#515151"
 	ideal_character_age = 30
