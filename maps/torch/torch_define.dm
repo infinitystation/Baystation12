@@ -4,9 +4,9 @@
 	path = "torch"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 
-	admin_levels = list(6,7)
-	empty_levels = list(8)
-	accessible_z_levels = list("0"=1,"1"=1,"2"=1,"3"=1,"4"=1,"5"=1,"8"=30)
+	admin_levels = list(7,8)
+	empty_levels = list(9)
+	accessible_z_levels = list("1"=1,"2"=3,"3"=1,"4"=1,"5"=1,"6"=1,"9"=30)
 	overmap_size = 35
 	overmap_event_areas = 34
 	usable_email_tlds = list("torch.ec.scg", "torch.fleet.mil", "freemail.net", "torch.scg")
@@ -103,3 +103,9 @@
 /obj/machinery/computer/rdconsole/petrov
 	name = "petrov fabricator console"
 	id = 3
+
+/turf/simulated/floor/shuttle_ceiling/torch
+	color = COLOR_HULL
+
+/turf/simulated/floor/shuttle_ceiling/torch/air
+	initial_gas = list("oxygen" = MOLES_O2STANDARD, "nitrogen" = MOLES_N2STANDARD)

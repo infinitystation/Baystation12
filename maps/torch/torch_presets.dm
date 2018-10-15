@@ -40,6 +40,7 @@ var/const/NETWORK_FIFTH_DECK  = "Fifth Deck"
 		NETWORK_SECOND_DECK,
 		NETWORK_THIRD_DECK,
 		NETWORK_FOURTH_DECK,
+		NETWORK_FIFTH_DECK,
 		NETWORK_BRIDGE,
 		NETWORK_COMMAND,
 		NETWORK_ENGINEERING,
@@ -54,6 +55,7 @@ var/const/NETWORK_FIFTH_DECK  = "Fifth Deck"
 		NETWORK_AQUILA,
 		NETWORK_CALYPSO,
 		NETWORK_POD,
+		NETWORK_NANOTRASEN,
 		NETWORK_ALARM_ATMOS,
 		NETWORK_ALARM_CAMERA,
 		NETWORK_ALARM_FIRE,
@@ -117,6 +119,9 @@ var/const/NETWORK_FIFTH_DECK  = "Fifth Deck"
 
 /obj/machinery/camera/network/engineering_outpost
 	network = list(NETWORK_ENGINEERING_OUTPOST)
+
+/obj/machinery/camera/network/nanotrasen
+	network = list(NETWORK_NANOTRASEN)
 
 // Motion
 /obj/machinery/camera/motion/engineering_outpost

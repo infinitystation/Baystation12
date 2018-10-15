@@ -132,7 +132,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/torch/passenger/research/cl
 	name = OUTFIT_JOB_NAME("Workplace Liaison")
 	l_ear = /obj/item/device/radio/headset/heads/torchntcommand
-	uniform = /obj/item/clothing/under/suit_jacket/nt
+	uniform = /obj/item/clothing/under/rank/internalaffairs
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/torch/passenger/research/liaison
 	pda_type = /obj/item/modular_computer/pda/heads/paperpusher
@@ -349,6 +349,14 @@ decl/hierarchy/outfit/job/torch/passenger/research/cl/union
 	name = OUTFIT_JOB_NAME("Mortician")
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/black
 
+/decl/hierarchy/outfit/job/torch/crew/medical/biomech
+	name = OUTFIT_JOB_NAME("Biomechanical Engineer")
+	uniform = /obj/item/clothing/under/rank/medical/scrubs/black
+	shoes = /obj/item/clothing/shoes/black
+	l_ear = /obj/item/device/radio/headset/torchroboticist
+	id_type = /obj/item/weapon/card/id/torch/contractor/biomech
+	pda_type = /obj/item/modular_computer/pda/roboticist
+
 /decl/hierarchy/outfit/job/torch/crew/medical/contractor/virologist
 	name = OUTFIT_JOB_NAME("Virologist - Torch")
 	uniform = /obj/item/clothing/under/rank/virologist
@@ -493,7 +501,6 @@ decl/hierarchy/outfit/job/torch/passenger/research/cl/union
 	uniform = /obj/item/clothing/under/rank/bartender
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/torch/contractor/service/bartender
-	l_pocket = /obj/item/device/cassette/custom
 	pda_type = /obj/item/modular_computer/pda
 
 /decl/hierarchy/outfit/job/torch/crew/service/crewman
@@ -512,7 +519,7 @@ decl/hierarchy/outfit/job/torch/passenger/research/cl/union
 /decl/hierarchy/outfit/job/torch/crew/exploration/New()
 	..()
 	backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/weapon/storage/backpack/explorer
-	backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/weapon/storage/backpack/satchel_explorer
+	backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/weapon/storage/backpack/satchel/explorer
 	backpack_overrides[/decl/backpack_outfit/messenger_bag] = /obj/item/weapon/storage/backpack/messenger/explorer
 
 /decl/hierarchy/outfit/job/torch/crew/exploration/pathfinder
@@ -685,7 +692,7 @@ decl/hierarchy/outfit/job/torch/passenger/research/cl/union
 	pda_type = null
 	l_ear = null
 	l_pocket = /obj/item/weapon/wrench
-	r_pocket = /obj/item/weapon/crowbar/prybar
+	r_pocket = /obj/item/weapon/crowbar
 
 /decl/hierarchy/outfit/job/torch/stowaway/post_equip(var/mob/living/carbon/human/H)
 	..()

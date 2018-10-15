@@ -20,7 +20,6 @@
 	icon_state = "expeditionpt"
 	worn_state = "expeditionpt"
 	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/uniform.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/uniform.dmi'
 		)
 
@@ -46,7 +45,6 @@
 	item_state = "bl_suit"
 	worn_state = "blackutility"
 	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/uniform.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/uniform.dmi'
 		)
 
@@ -56,7 +54,6 @@
 	icon_state = "blackutility_crew"
 	worn_state = "blackutility_crew"
 	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/uniform.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/uniform.dmi'
 		)
 
@@ -66,7 +63,6 @@
 	icon_state = "blackservicef"
 	worn_state = "blackservicef"
 	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/uniform.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/uniform.dmi'
 		)
 
@@ -75,10 +71,6 @@
 	desc = "A black turtleneck and skirt, the elusive ladies' uniform of the Expeditionary Corps. This one has gold trim."
 	icon_state = "blackservicef_com"
 	worn_state = "blackservicef_com"
-	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/uniform.dmi',
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/infinity.dmi'
-		)
 
 /obj/item/clothing/under/solgov/utility/expeditionary/command
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/command)
@@ -109,10 +101,6 @@
 	desc = "The utility uniform of the SCG Expeditionary Corps, made from biohazard resistant material. This one has gold trim."
 	icon_state = "blackutility_com"
 	worn_state = "blackutility_com"
-	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/uniform.dmi',
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/infinity.dmi'
-		)
 
 /obj/item/clothing/under/solgov/utility/expeditionary/officer/command
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/command)
@@ -245,7 +233,6 @@
 	icon_state = "greydress"
 	worn_state = "greydress"
 	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/uniform.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/uniform.dmi'
 		)
 
@@ -273,7 +260,7 @@
 	icon_state = "whiteservice"
 	item_state = "nursesuit"
 	worn_state = "whiteservice"
-	starting_accessories = list(/obj/item/clothing/accessory/black)
+	starting_accessories = list(/obj/item/clothing/accessory/navy)
 
 /obj/item/clothing/under/solgov/service/fleet/skirt
 	name = "fleet service skirt"

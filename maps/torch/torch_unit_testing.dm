@@ -1,3 +1,5 @@
+/datum/unit_test/station_wires_shall_be_connected
+
 /datum/map/torch
 	// Unit test exemptions
 	apc_test_exempt_areas = list(
