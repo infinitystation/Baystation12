@@ -61,14 +61,17 @@
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/pilot
-	name = "Pilot Voidsuit Storage Unit"
+	name = "Expeditionary Pilot Voidsuit Storage Unit"
 	suit_type = /obj/item/clothing/suit/space/void/pilot
 	helmet_type = /obj/item/clothing/head/helmet/space/void/pilot
 	boots_type = /obj/item/clothing/shoes/magboots
 	tank_type = /obj/item/weapon/tank/oxygen
 	mask_type = /obj/item/clothing/mask/breath
-	req_access = list(access_research)
+	req_access = list(access_explorer, access_expedition_shuttle_helm)
 	islocked = 1
+
+/obj/machinery/suit_cycler/pilot
+	req_access = list(access_explorer, access_expedition_shuttle_helm)
 
 /obj/machinery/vending/security
 	name = "SecTech"
