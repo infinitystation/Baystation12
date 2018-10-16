@@ -165,7 +165,7 @@
 	access = list(access_tox, access_tox_storage, access_emergency_storage, access_teleporter, access_bridge, access_rd,
 						access_research, access_robotics, access_mining, access_mining_office, access_mining_station, access_xenobiology,
 						access_RC_announce, access_keycard_auth, access_xenoarch, access_heads,
-						access_sec_doors, access_medical, access_network,
+						access_sec_doors, access_medical, access_network, access_maint_tunnels,
 						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_petrov_helm, access_guppy_helm)
 
 	minimal_access = list()
@@ -338,7 +338,7 @@
 	skill_points = 20
 
 	access = list(		access_security, access_sec_doors, access_medical, access_iaa, access_research, access_xenoarch, access_heads, access_bridge,
-						access_hangar, access_petrov, access_commissary)
+						access_hangar, access_petrov, access_commissary, access_maint_tunnels)
 
 	minimal_access = list()
 
@@ -530,7 +530,7 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
-	required_education = EDUCATION_TIER_MEDSCHOOL
+	required_education = EDUCATION_TIER_TRADE
 
 /datum/job/explorer_medic/get_description_blurb()
 	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the NT - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
