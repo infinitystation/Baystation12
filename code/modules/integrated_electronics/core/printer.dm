@@ -105,6 +105,19 @@
 			playsound(src, 'sound/items/electronic_assembly_empty.ogg', 50, TRUE)
 			recycling = FALSE
 			return TRUE
+	if (istype(O, /obj/item/integrated_circuit))
+		if(recycling)
+			return
+		var/obj/item/integrated_circuit/IC = O
+		if(IC.matter[MATERIAL_STEEL] && metal + IC.matter[MATERIAL_STEEL] > metal_max)
+			to_chat(user, "<span class='notice'>[src] can't hold any more materials!</span>")
+			return
+		metal += IC.matter[MATERIAL_STEEL]
+		playsound(src, 'sound/items/electronic_assembly_empty.ogg', 50, TRUE)
+		user.drop_from_inventory(O)		
+		qdel(IC)
+		interact(usr)
+		
 
 	return ..()
 
