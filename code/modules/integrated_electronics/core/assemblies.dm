@@ -107,7 +107,7 @@
 		..()
 
 /obj/item/device/electronic_assembly/interact(mob/user)
-	if(!check_interactivity(user))
+	if(!check_interactivity(user) || !Adjacent(user))
 		return
 
 	if(opened)
@@ -279,6 +279,8 @@
 
 /obj/item/device/electronic_assembly/examine(mob/user)
 	..()
+	if (!Adjacent(user))
+		return
 	for(var/I in assembly_components)
 		var/obj/item/integrated_circuit/IC = I
 		IC.external_examine(user)
