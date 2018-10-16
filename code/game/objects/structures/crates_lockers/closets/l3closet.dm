@@ -110,7 +110,7 @@
 	return list(
 		/obj/item/clothing/suit/bio_suit/anomaly,
 		/obj/item/clothing/head/bio_hood/anomaly,
-		/obj/item/clothing/mask/breath,
+		/obj/item/clothing/mask/gas/half,
 		/obj/item/clothing/glasses/science,
 		/obj/item/clothing/gloves/latex
 	)
