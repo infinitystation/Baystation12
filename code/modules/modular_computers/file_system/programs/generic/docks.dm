@@ -85,5 +85,5 @@
 	if(href_list["undock"])
 		var/datum/computer/file/embedded_program/docking/P = locate(href_list["undock"])
 		if(P)
-			P.receive_user_command("undock")
+			P.initiate_undocking()
 		return 1
