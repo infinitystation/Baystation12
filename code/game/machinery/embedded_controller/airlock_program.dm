@@ -152,7 +152,7 @@
 			if(memory["purge"])
 				close_doors()
 				state = STATE_PREPARE
-				target_state = TARGET_NONE
+				target_state = TARGET_OUTOPEN
 
 		if("secure")
 			memory["secure"] = !memory["secure"]
