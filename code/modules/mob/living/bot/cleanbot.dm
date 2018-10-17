@@ -5,6 +5,8 @@
 	icon_state = "cleanbot0"
 	req_one_access = list(access_janitor, access_robotics)
 	botcard_access = list(access_janitor, access_maint_tunnels)
+	pass_flags = PASS_FLAG_TABLE
+	mob_size = MOB_SMALL
 
 	wait_if_pulled = 1
 	min_target_dist = 0
