@@ -1,5 +1,6 @@
-//The following is a list of defs to be used for the Sierra loadout.
-
+//The following is a list of defs and blacklist to be used (or not) for the Sierra loadout.
+/datum/map/sierra
+	loadout_blacklist = list(/datum/gear/union_card)
 //For all exploration crew
 #define EXPLORATION_ROLES list(\
 	/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot,\

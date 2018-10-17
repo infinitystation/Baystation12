@@ -1,39 +1,3 @@
-/datum/gear/accessory/solawardmajor
-	display_name = "SolGov major award selection"
-	description = "A medal or ribbon awarded to SolGov personnel for significant accomplishments."
-	path = /obj/item/clothing/accessory
-	cost = 8
-	allowed_roles = /datum/job/assistant
-
-/datum/gear/accessory/solawardmajor/New()
-	..()
-	var/solmajors = list()
-	solmajors["iron star"] = /obj/item/clothing/accessory/medal/solgov/iron/star
-	solmajors["bronze heart"] = /obj/item/clothing/accessory/medal/solgov/bronze/heart
-	solmajors["silver sword"] = /obj/item/clothing/accessory/medal/solgov/silver/sword
-	solmajors["medical heart"] = /obj/item/clothing/accessory/medal/solgov/heart
-	solmajors["valor medal"] = /obj/item/clothing/accessory/medal/solgov/silver/sol
-	solmajors["sapienterian medal"] = /obj/item/clothing/accessory/medal/solgov/gold/sol
-	solmajors["peacekeeper ribbon"] = /obj/item/clothing/accessory/ribbon/solgov/peace
-	solmajors["marksman ribbon"] = /obj/item/clothing/accessory/ribbon/solgov/marksman
-	gear_tweaks += new/datum/gear_tweak/path(solmajors)
-
-/datum/gear/accessory/solawardminor
-	display_name = "SolGov minor award selection"
-	description = "A medal or ribbon awarded to SolGov personnel for minor accomplishments."
-	path = /obj/item/clothing/accessory
-	cost = 5
-	allowed_roles = /datum/job/assistant
-
-/datum/gear/accessory/solawardminor/New()
-	..()
-	var/solminors = list()
-	solminors["expeditionary medal"] = /obj/item/clothing/accessory/medal/solgov/iron/sol
-	solminors["operations medal"] = /obj/item/clothing/accessory/medal/solgov/bronze/sol
-	solminors["frontier ribbon"] = /obj/item/clothing/accessory/ribbon/solgov/frontier
-	solminors["instructor ribbon"] = /obj/item/clothing/accessory/ribbon/solgov/instructor
-	gear_tweaks += new/datum/gear_tweak/path(solminors)
-
 /datum/gear/accessory/tags
 	display_name = "dog tags"
 	path = /obj/item/clothing/accessory/badge/tags
