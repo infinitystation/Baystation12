@@ -203,3 +203,9 @@ var/const/NETWORK_ENGINEERING_OUTPOST = "Engineering Outpost"
 		num2text(SRV_FREQ)   = list(access_janitor, access_hydroponics),
 		num2text(EXP_FREQ)   = list(access_explorer)
 	)
+
+/datum/computer_file/program/merchant
+	required_access = access_merchant_leader
+
+/obj/machinery/computer/shuttle_control/merchant
+	req_access = list(access_merchant_leader)
