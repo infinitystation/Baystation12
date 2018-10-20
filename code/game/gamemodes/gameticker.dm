@@ -157,9 +157,18 @@ var/global/datum/controller/gameticker/ticker
 
 	callHook("roundstart")
 
+	var/clients = 0
+
+	for(var/mob/M in GLOB.player_list)
+		if(M.client)
+			clients++
+
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup()
 		to_world("<FONT color='blue'><B>Enjoy the game!</B></FONT>")
+		send2maindiscord("Раунд с режимом [hide_mode ? "Secret" : "[mode.name]"] начался. Игроков: [clients].")
+		send2mainirc("Раунд с режимом [hide_mode ? "Secret" : "[mode.name]"] начался. Игроков: [clients].")
+
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
 
 		//Holiday Round-start stuff	~Carn
