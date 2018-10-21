@@ -380,6 +380,7 @@
 	name = "Mercenary Forward Operating Base"
 	icon_state = "yellow"
 	requires_power = 0
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 //Skipjack
 
@@ -1329,11 +1330,13 @@
 /area/merchant_station
 	name = "Merchant Station"
 	icon_state = "LP"
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 // Syndicate
 
 /area/syndicate_mothership/raider_base
 	name = "Raider Base"
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 // ACTORS GUILD
 /area/acting
