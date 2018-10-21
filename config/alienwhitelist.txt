@@ -2,7 +2,6 @@ s1334 - machine
 cre77 - machine
 rucat - machine
 forrya - machine
-rex127 - machine
 logfol - machine
 kosteg - machine
 hodovoy - machine
@@ -11,6 +10,7 @@ taushai - machine
 parasoul - machine
 netreson - machine
 billluxe - machine
+he11d1ver - machine
 rockyfail - machine
 nikita588 - machine
 mrnicolas - machine
@@ -47,10 +47,10 @@ kirill1243 - giant armoured serpentid
 coltrane97 - giant armoured serpentid
 themaybat - giant armoured serpentid
 sosiskoed - giant armoured serpentid
+he11d1ver - giant armoured serpentid
 diesiege - giant armoured serpentid
 hodovoy - giant armoured serpentid
 sarumyn - giant armoured serpentid
-rex127 - giant armoured serpentid
 portos - giant armoured serpentid
 taushai - giant armoured serpentid
 ted201 - giant armoured serpentid
@@ -67,9 +67,9 @@ wheatley2013 - vox
 wolforbykot - vox
 sosiskoed - vox
 mrnicolas - vox
+he11d1ver - vox
 taushai - vox
 s1334 - vox
-rex127 - vox
 cre77 - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
