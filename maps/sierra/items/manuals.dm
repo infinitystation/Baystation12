@@ -44,7 +44,7 @@
 		"}
 
 /obj/item/weapon/book/manual/sol_sop
-	name = "Standard Operating Procedure"
+	name = "Standard Operating Procedures"
 	desc = "SOP aboard the NES Sierra."
 	icon_state = "booksolregs"
 	author = "The Sol Central Government"
@@ -59,6 +59,52 @@
 
 		<body>
 		<iframe width='100%' height='97%' src="[config.wikiurl]index.php?title=Стандартные_Процедуры_ЦПСС&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+		</body>
+
+		</html>
+
+		"}
+
+/obj/item/weapon/book/manual/nt_sop
+	name = "NT Standard Operating Procedures"
+	desc = "SOP aboard the NSV Sierra."
+	icon = 'icons/obj/library_inf.dmi'
+	icon_state = "bookNTsop"
+	author = "Employee Materials"
+	title = "Standard Operating Procedure"
+
+/obj/item/weapon/book/manual/nt_sop/Initialize()
+	. = ..()
+	dat = {"
+
+		<html><head>
+		</head>
+
+		<body>
+		<iframe width='100%' height='97%' src="[config.wikiurl]index.php?title=Стандартные_процедуры_НТ&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+		</body>
+
+		</html>
+
+		"}
+
+/obj/item/weapon/book/manual/nt_tc
+	name = "NT Threat Codes"
+	desc = "TC aboard the NSV Sierra."
+	icon = 'icons/obj/library_inf.dmi'
+	icon_state = "bookNTtc"
+	author = "Ship Rule Materials"
+	title = "Threat Codes"
+
+/obj/item/weapon/book/manual/nt_tc/Initialize()
+	. = ..()
+	dat = {"
+
+		<html><head>
+		</head>
+
+		<body>
+		<iframe width='100%' height='97%' src="[config.wikiurl]index.php?title=Коды_угрозы_НТ&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
 		</body>
 
 		</html>

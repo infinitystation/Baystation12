@@ -1,7 +1,8 @@
 /obj/item/weapon/book/manual/nt_regs
 	name = "Corporate Regulations"
 	desc = "A set of corporate guidelines for employees of a megacorporation."
-	icon_state = "booknanoregs"
+	icon = 'icons/obj/library_inf.dmi'
+	icon_state = "bookNTLaw"
 	author = "Employee Materials"
 	title = "Corporate Regulations"
 
