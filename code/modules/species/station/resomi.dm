@@ -17,6 +17,7 @@
 	tail_hair = "feathers"
 	strength = STR_HIGH
 	reagent_tag = IS_RESOMI
+	breath_pressure = 12
 	
 	move_trail = /obj/effect/decal/cleanable/blood/tracks/paw
 
