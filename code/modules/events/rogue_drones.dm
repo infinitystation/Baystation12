@@ -19,17 +19,17 @@
 		var/mob/living/simple_animal/hostile/retaliate/malf_drone/D = new(get_turf(pick(possible_spawns)))
 		drones_list.Add(D)
 		if(prob(25))
-			D.disabled = rand(15, 60)
+			D.disabled = rand(15, 60) &#255;
 
 /datum/event/rogue_drone/announce()
 	var/msg
 	if(prob(33))
-		msg = "Attention: unidentified patrol drones detected within proximity to the [location_name()]"
+		msg = "Внимание: неавторизованные патрульные дроны обнаружены в космическом пространстве [location_name()]"
 	else if(prob(50))
-		msg = "Unidentified Unmanned Drones approaching the [location_name()]. All hands take notice."
+		msg = "Неавторизованные патрульные дроны замечены в космическом пространстве [location_name()]. Всему экипажу быть на чеку."
 	else
-		msg = "Class II Laser Fire detected nearby the [location_name()]."
-	command_announcement.Announce(msg, "[location_name()] Sensor Array", zlevels = affecting_z)
+		msg = "Множество маломощных энергетических источников обнаружено в космическом пространстве [location_name()]."
+	command_announcement.Announce(msg, "Сенсоры [location_name()]", zlevels = affecting_z)
 
 /datum/event/rogue_drone/end()
 	var/num_recovered = 0
