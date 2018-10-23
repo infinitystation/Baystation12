@@ -19,7 +19,7 @@
 		var/mob/living/simple_animal/hostile/retaliate/malf_drone/D = new(get_turf(pick(possible_spawns)))
 		drones_list.Add(D)
 		if(prob(25))
-			D.disabled = rand(15, 60) &#255;
+			D.disabled = rand(15, 60)
 
 /datum/event/rogue_drone/announce()
 	var/msg
