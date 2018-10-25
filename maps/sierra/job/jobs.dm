@@ -1387,8 +1387,8 @@
 	department = "Civilian"
 	department_flag = CIV
 
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the Merchant"
 	selection_color = "#515151"
 	ideal_character_age = 20
