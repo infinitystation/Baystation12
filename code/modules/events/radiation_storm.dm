@@ -9,14 +9,14 @@
 	var/postStartTicks 		= 0
 
 /datum/event/radiation_storm/announce()
-	command_announcement.Announce("Зафиксировано повышение уровн&#255; радиации поблизости [location_name()]. Всему персоналу насто&#255;тельно рекомендуетс&#255; пройти в экранированные отсеки до покидани&#255; зоны повышенной радиоактивности. Экранированные отсеки - технические тоннели, челноки, камеры охраны, экстренные убежища, лифт, дормиторий.", "Сенсоры [location_name()]", new_sound = GLOB.using_map.radiation_detected_sound, zlevels = affecting_z)
+	command_announcement.Announce("Зафиксировано повышение уровня радиации поблизости [location_name()]. Всему персоналу настоятельно рекомендуется пройти в экранированные отсеки до покидания зоны повышенной радиоактивности. Экранированные отсеки - технические тоннели, челноки, камеры охраны, экстренные убежища, лифт, дормиторий.", "Сенсоры [location_name()]", new_sound = GLOB.using_map.radiation_detected_sound, zlevels = affecting_z)
 
 /datum/event/radiation_storm/start()
 	GLOB.using_map.make_maint_all_access(1)
 
 /datum/event/radiation_storm/tick()
 	if(activeFor == enterBelt)
-		command_announcement.Announce("Возростание радиационного фона прекращено. Насто&#255;тельно рекомендуетс&#255; оставатьс&#255; в экранированных помещени&#255;х до снижени&#255; уровн&#255; фона.", "Сенсоры [location_name()]", zlevels = affecting_z)
+		command_announcement.Announce("Возростание радиационного фона прекращено. Настоятельно рекомендуется оставаться в экранированных помещениях до снижения уровня фона.", "Сенсоры [location_name()]", zlevels = affecting_z)
 		radiate()
 
 	if(activeFor >= enterBelt && activeFor <= leaveBelt)
@@ -27,7 +27,7 @@
 		radiate()
 
 	else if(activeFor == leaveBelt)
-		command_announcement.Announce("Зафиксировано снижение радиационного фона. Насто&#255;тельно рекомендуетс&#255; подождать минуту до окончательного спада радиационного осадка. Обратитесь в лазарет при обнаружении признаков радиационного заражени&#255;. Доступ в технические помещени&#255; будет возвращен в ближайшее врем&#255;.", "Сенсоры [location_name()]", zlevels = affecting_z)
+		command_announcement.Announce("Зафиксировано снижение радиационного фона. Настоятельно рекомендуется подождать минуту до окончательного спада радиационного осадка. Обратитесь в лазарет при обнаружении признаков радиационного заражения. Доступ в технические помещения будет возвращен в ближайшее время.", "Сенсоры [location_name()]", zlevels = affecting_z)
 
 /datum/event/radiation_storm/proc/radiate()
 	var/radiation_level = rand(15, 35)

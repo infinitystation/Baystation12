@@ -11,7 +11,7 @@
 	endWhen = startWhen + rand(30,90) + rand(30,90) //2-6 minute duration
 
 /datum/event/solar_storm/announce()
-	command_announcement.Announce("Обнаружен всплеск энергии звезды системы [system_name()], объект [location_name()] находитс&#255; на пути всплеска. Насто&#255;тельно рекомендуетс&#255; прекратить всю де&#255;тельность на обшивке и вернутьс&#255; внутрь.", "Сенсоры [location_name()]", zlevels = affecting_z)
+	command_announcement.Announce("Обнаружен всплеск энергии звезды системы [system_name()], объект [location_name()] находится на пути всплеска. Настоятельно рекомендуется прекратить всю деятельность на обшивке и вернуться внутрь.", "Сенсоры [location_name()]", zlevels = affecting_z)
 	adjust_solar_output(1.5)
 
 /datum/event/solar_storm/proc/adjust_solar_output(var/mult = 1)
@@ -20,7 +20,7 @@
 
 
 /datum/event/solar_storm/start()
-	command_announcement.Announce("Энергетический всплеск достиг космического пространства [location_name()]. Насто&#255;тельно рекомендуетс&#255; воздержатьс&#255; от любой де&#255;тельности на обшивке до окончани&#255; всплеска.", "Сенсоры [location_name()]", zlevels = affecting_z)
+	command_announcement.Announce("Энергетический всплеск достиг космического пространства [location_name()]. Настоятельно рекомендуется воздержаться от любой деятельности на обшивке до окончания всплеска.", "Сенсоры [location_name()]", zlevels = affecting_z)
 	adjust_solar_output(5)
 
 
@@ -46,7 +46,7 @@
 
 
 /datum/event/solar_storm/end()
-	command_announcement.Announce("The solar storm has passed the [location_name()]. It is now safe to resume EVA activities. ", "[location_name()] Sensor Array", zlevels = affecting_z)
+	command_announcement.Announce("The solar storm has passed the [location_name()]. It is now safe to resume EVA activities. ", "Сенсоры [location_name()]", zlevels = affecting_z)
 	adjust_solar_output()
 
 

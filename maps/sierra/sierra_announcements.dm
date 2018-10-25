@@ -37,11 +37,31 @@
 	electrical_storm_major_sound = sound('sound/AI/torch/electricalstormmajor.ogg', volume = 45)
 
 	use_job_frequency_announcement = FALSE
-	use_radio_announcement = FALSE
+	use_radio_announcement = TRUE
 
-/datum/map/sierra/level_x_biohazard_sound(var/bio_level)
+/datum/map/sierra/level_x_biohazard_announcement(var/bio_level)
+	if(!isnum(bio_level))
+		CRASH("Expected a number, was: [log_info_line(bio_level)]")
+	if(bio_level < 1 || bio_level > 9)
+		CRASH("Expected a number between 1 and 9, was: [log_info_line(bio_level)]")
+
+	var/msg
 	switch(bio_level)
-		if(7)
-			return sound('sound/AI/torch/outbreak7.ogg', volume = 45)
-		else
-			return sound('sound/AI/torch/outbreak5.ogg', volume = 45)
+		if(9)
+			msg = "неопознанна€ форма жизни. –екомендуетс€ изолировать неизвестное. Ёто максимальный уровень потенциальной угрозы"
+		if(8)
+			msg = "враждебные коррозийные организмы. «афиксировано нарушение структурной целостности переборок"
+		if(6)
+			msg = "опасные вредители"
+		if(5)
+			msg = "космические карпы. Ќасто€тельно рекомендуетс€ временно прервать всю внекорабельную де€тельность"
+		if(4)
+			msg = "быстрорастущие растени€. “очное определение степени описаности невозможно из-за активных мутаций"
+		if(3)
+			msg = "вредоносные патогены"
+		if(2)
+			msg = "коррозийные грибы. »меетс€ опасность поражени€ переборок"
+		if(1)
+			msg = "мелкие вредители"
+
+	priority_announcement.Announce("ѕодтверждено наличие объекта [bio_level] уровн€ биологической опасности на борту [station_name()] - [msg]. ќтветственному экипажу требуетс€ предприн€ть меры по устранению угрозы.", "Ѕиологическа€ ”гроза")

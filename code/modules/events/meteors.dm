@@ -20,9 +20,9 @@
 /datum/event/meteor_wave/announce()
 	switch(severity)
 		if(EVENT_LEVEL_MAJOR)
-			command_announcement.Announce(replacetext(GLOB.using_map.meteor_detected_message, "%STATION_NAME%", location_name()), "[location_name()] Sensor Array", new_sound = GLOB.using_map.meteor_detected_sound, zlevels = affecting_z)
+			command_announcement.Announce(replacetext(GLOB.using_map.meteor_detected_message, "%STATION_NAME%", location_name()), "Сенсоры [location_name()]", new_sound = GLOB.using_map.meteor_detected_sound, zlevels = affecting_z)
 		else
-			command_announcement.Announce("The [location_name()] is now in a meteor shower.", "[location_name()] Sensor Array", zlevels = affecting_z)
+			command_announcement.Announce("The [location_name()] is now in a meteor shower.", "Сенсоры [location_name()]", zlevels = affecting_z)
 
 /datum/event/meteor_wave/tick()
 	// Begin sending the alarm signals to shield diffusers so the field is already regenerated (if it exists) by the time actual meteors start flying around.
@@ -50,9 +50,9 @@
 /datum/event/meteor_wave/end()
 	switch(severity)
 		if(EVENT_LEVEL_MAJOR)
-			command_announcement.Announce("The [location_name()] has cleared the meteor storm.", "[location_name()] Sensor Array", zlevels = affecting_z)
+			command_announcement.Announce("The [location_name()] has cleared the meteor storm.", "Сенсоры [location_name()]", zlevels = affecting_z)
 		else
-			command_announcement.Announce("The [location_name()] has cleared the meteor shower", "[location_name()] Sensor Array", zlevels = affecting_z)
+			command_announcement.Announce("The [location_name()] has cleared the meteor shower", "Сенсоры [location_name()]", zlevels = affecting_z)
 
 /datum/event/meteor_wave/proc/get_meteors()
 	switch(severity)

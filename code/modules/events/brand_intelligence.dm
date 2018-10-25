@@ -8,7 +8,8 @@
 
 
 /datum/event/brand_intelligence/announce()
-	command_announcement.Announce("Rampant brand intelligence has been detected aboard the [location_name()]. The origin is believed to be \a \"[initial(originMachine.name)]\" type. Fix it, before it spreads to other vending machines.", "Machine Learning Alert", zlevels = affecting_z)
+//	command_announcement.Announce("Rampant brand intelligence has been detected aboard the [location_name()]. The origin is believed to be \a \"[initial(originMachine.name)]\" type. Fix it, before it spreads to other vending machines.", "Machine Learning Alert", zlevels = affecting_z)
+	command_announcement.Announce("Аномальное развитие искусственного интеллекта автоматов [initial(originMachine.name)] было обнаружено на [location_name()]. Требуется устранить угрозу от сбойных машин до распространения ошибки на другие аппараты.", "Аномалия", zlevels = affecting_z)
 
 
 /datum/event/brand_intelligence/start()
