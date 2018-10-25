@@ -398,7 +398,7 @@ datum/objective/harm
 
 
 datum/objective/nuclear
-	explanation_text = "Cause mass destruction with a nuclear device."
+	explanation_text = "Уничтожьте объект с помощью ядерного заряда."
 
 datum/objective/terrorists
 	proc/choose_target()
@@ -406,10 +406,7 @@ datum/objective/terrorists
 
 datum/objective/terrorists/kidnap
 	choose_target()
-		var/list/roles = list("Commanding Officer","Executive Officer","Chief Engineer",
-		"NanoTrasen Liaison","SolGov Representative",
-		"Senior Researcher","Research Supervisor","Research Director",
-		"Journalist","Investor","Independent Observer",)
+		var/list/roles = list("Captain", "Internal Affairs Agent", "Chief Engineer", "Research Director", "Engineer", "Passenger")
 		var/list/possible_targets = list()
 		var/list/priority_targets = list()
 
