@@ -259,7 +259,7 @@ GATEWAY_DELAY 18000
 #CONTINUOUS_ROUNDS
 
 ## Uncomment to restrict non-admins from using humanoid alien races
-USEALIENWHITELIST
+#USEALIENWHITELIST
 ## Uncomment to use the alien whitelist system with SQL instead. (requires the above uncommented aswell)
 #USEALIENWHITELIST_SQL
 
