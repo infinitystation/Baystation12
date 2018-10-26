@@ -1,5 +1,5 @@
 /obj/item/device/synthesized_instrument/guitar/multi/eguitar
-	name = "Electroguitar"
+	name = "electroguitar"
 	desc = "This is a regular electric guitar"
 	icon = 'icons/infinity_custom_items_obj.dmi'
 	icon_state = "eguitar"
