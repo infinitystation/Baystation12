@@ -379,7 +379,8 @@
 
 /obj/structure/hygiene/sink
 	name = "sink"
-	icon = 'icons/obj/watercloset.dmi'
+//	icon = 'icons/obj/watercloset.dmi'
+	icon = 'icons/obj/watercloset_inf.dmi'
 	icon_state = "sink"
 	desc = "A sink used for washing one's hands and face."
 	anchored = 1
@@ -496,10 +497,12 @@
 
 /obj/structure/hygiene/sink/kitchen
 	name = "kitchen sink"
+	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "sink_alt"
 
 /obj/structure/hygiene/sink/puddle	//splishy splashy ^_^
 	name = "puddle"
+	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "puddle"
 	clogged = -1 // how do you clog a puddle
 
