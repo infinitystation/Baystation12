@@ -120,7 +120,7 @@ item_path: /obj/item/device/pmp/personal
 }
 {
 ckey: forrya
-character_name: evjgrhrjakra Sharjskrjmsh
+character_name: Mevjgrhrjakra Sharjskrjmsh
 item_path: /obj/item/device/pmp/personal
 }
 {
