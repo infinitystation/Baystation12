@@ -232,6 +232,11 @@ ckey: kosteg
 character_name: Emilia Florian
 item_path: /obj/item/weapon/storage/briefcase/kosteg
 }
+{
+ckey: courierr
+character_name: Mia Lee
+item_path: /obj/item/modular_computer/wrist/advanced 
+}
 
 #	MEDIUM ITEMS HERE (5-6)
 

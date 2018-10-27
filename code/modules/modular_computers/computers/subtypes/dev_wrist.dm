@@ -1,6 +1,6 @@
 /obj/item/modular_computer/wrist
 	name = "\improper wrist PDA"
-	desc = "A compact wrisp computer designed to keep its user always connected."
+	desc = "A compact wrist computer designed to keep its user always connected."
 	icon = 'icons/obj/modular_wrist.dmi'
 	item_icons = list(slot_wear_id_str = 'icons/mob/infinity/wristcomp.dmi')
 	item_state_slots = list(slot_wear_id_str = "wrist")
