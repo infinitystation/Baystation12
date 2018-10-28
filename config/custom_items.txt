@@ -114,24 +114,14 @@ character_name: Mike Sound
 item_path: /obj/item/device/pmp/personal
 }
 {
-ckey: forrya
-character_name: Claus Zeltcman
-item_path: /obj/item/device/pmp/personal
-}
-{
-ckey: forrya
-character_name: Mevjgrhrjakra Sharjskrjmsh
-item_path: /obj/item/device/pmp/personal
-}
-{
-ckey: forrya
-character_name: Niyarkszherch Kchrashchjrj
-item_path: /obj/item/device/pmp/personal
-}
-{
 ckey: Byxloy
 character_name: Phoenix Ann
 item_path: /obj/item/device/pmp/personal
+}
+{
+ckey: m1am1
+character_name: Edward Paige
+item_path: /obj/item/device/pmp/personal/csplayer
 }
 
 #	SHORT ITEMS HERE (3-4)
