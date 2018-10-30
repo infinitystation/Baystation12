@@ -4,6 +4,8 @@
 	vessel_mass = 190
 	default_delay = 25 SECONDS
 	speed_mod = 5 SECONDS
+	start_x = 4
+	start_y = 5
 	base = TRUE
 	color = LIGHT_COLOR_PURPLE
 	icon = 'icons/obj/overmap_inf.dmi'
