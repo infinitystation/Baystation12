@@ -250,6 +250,10 @@ var/list/admin_verbs_permissions = list(
 var/list/admin_verbs_rejuv = list(
 	/client/proc/respawn_character
 	)
+var/list/admin_verbs_judge = list(
+	/client/proc/respawn_character,
+	/datum/admins/proc/PlayerNotes
+	)
 
 //verbs which can be hidden - needs work
 var/list/admin_verbs_hideable = list(
@@ -361,13 +365,13 @@ var/list/admin_verbs_mentor = list(
 		if(holder.rights & R_BUILDMODE)		verbs += /client/proc/togglebuildmodeself
 		if(holder.rights & R_ADMIN)			verbs += admin_verbs_admin
 		if(holder.rights & R_BAN)			verbs += admin_verbs_ban
-		if(holder.rights & R_FUN)			verbs += admin_verbs_fun
+		if(holder.rights & R_FUN)			verbs += list(admin_verbs_fun, admin_verbs_possess)
 		if(holder.rights & R_SERVER)		verbs += admin_verbs_server
 		if(holder.rights & R_DEBUG)
 			verbs += admin_verbs_debug
 			if(config.debugparanoid && !(holder.rights & R_ADMIN))
 				verbs.Remove(admin_verbs_paranoid_debug)			//Right now it's just callproc but we can easily add others later on.
-		if(holder.rights & R_POSSESS)		verbs += admin_verbs_possess
+		if(holder.rights & R_JUDGE)	     	verbs += admin_verbs_judge
 		if(holder.rights & R_PERMISSIONS)	verbs += admin_verbs_permissions
 		if(holder.rights & R_STEALTH)		verbs += /client/proc/stealth
 		if(holder.rights & R_REJUVINATE)	verbs += admin_verbs_rejuv
