@@ -6,6 +6,7 @@ logfol - machine
 kosteg - machine
 hodovoy - machine
 mishele - machine
+kordvik - machine
 taushai - machine
 parasoul - machine
 netreson - machine
