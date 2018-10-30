@@ -12,7 +12,7 @@ The "dust" will damage the hull of the station causin minor hull breaches.
 
 /datum/event/dust/announce()
 //	command_announcement.Announce("The [location_name()] is now passing through a belt of space dust.", "Сенсоры [location_name()]", zlevels = affecting_z)
-	command_announcement.Announce("Объект [location_name()] проходит через скопление космической пыли.", "Сенсоры [location_name()]", zlevels = affecting_z)
+	priority_announcement.Announce("Объект [location_name()] покинул зону скопления космической пыли.", "Сенсоры [location_name()]", zlevels = affecting_z)
 
 
 /datum/event/dust/tick()
@@ -21,7 +21,7 @@ The "dust" will damage the hull of the station causin minor hull breaches.
 
 /datum/event/dust/end()
 //	command_announcement.Announce("The [location_name()] has now passed through the belt of space dust.", "Сенсоры [location_name()]", zlevels = affecting_z)
-	command_announcement.Announce("Объект [location_name()] прошел через скопление комической пыли.", "Сенсоры [location_name()]", zlevels = affecting_z)
+	priority_announcement.Announce("Объект [location_name()] покинул зону скопления космической пыли.", "Сенсоры [location_name()]", zlevels = affecting_z)
 
 /proc/dust_swarm(var/strength = EVENT_LEVEL_MUNDANE, var/list/zlevels = GLOB.using_map.station_levels)
 	var/numbers = rand(strength * 10, strength * 15)
