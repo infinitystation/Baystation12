@@ -138,7 +138,9 @@ var/list/admin_verbs_fun = list(
 	/datum/admins/proc/ai_hologram_set,
 	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
 	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
-	/datum/admins/proc/pmp_control_panel
+	/datum/admins/proc/pmp_control_panel,
+	/proc/possess,
+	/proc/release
 	)
 
 var/list/admin_verbs_spawn = list(
@@ -251,7 +253,6 @@ var/list/admin_verbs_rejuv = list(
 	/client/proc/respawn_character
 	)
 var/list/admin_verbs_judge = list(
-	/client/proc/respawn_character,
 	/datum/admins/proc/PlayerNotes
 	)
 
@@ -365,7 +366,7 @@ var/list/admin_verbs_mentor = list(
 		if(holder.rights & R_BUILDMODE)		verbs += /client/proc/togglebuildmodeself
 		if(holder.rights & R_ADMIN)			verbs += admin_verbs_admin
 		if(holder.rights & R_BAN)			verbs += admin_verbs_ban
-		if(holder.rights & R_FUN)			verbs += list(admin_verbs_fun, admin_verbs_possess)
+		if(holder.rights & R_FUN)			verbs += admin_verbs_fun
 		if(holder.rights & R_SERVER)		verbs += admin_verbs_server
 		if(holder.rights & R_DEBUG)
 			verbs += admin_verbs_debug
