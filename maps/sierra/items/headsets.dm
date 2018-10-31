@@ -68,7 +68,7 @@
 	item_state = "exp_headset_alt"
 
 /obj/item/device/radio/headset/exploration_leader
-	name = "exploration_leader's headset"
+	name = "exploration leader's headset"
 	desc = "A headset with access to the command and exploration channels. It has an inbuilt subspace antenna for better reception."
 	icon_state = "exp_headset"
 	item_state = "exp_headset"
