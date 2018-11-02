@@ -39,3 +39,9 @@
 	item_cost = 32
 	antag_costs = list(MODE_MERCENARY = 22)
 	path = /obj/item/device/chameleon
+
+/datum/uplink_item/item/stealth_items/smuggler_satchel
+	name = "Smuggler's Satchel"
+	desc = "This satchel is thin enough to be hidden in the gap between plating and tiling, great for stashing your stolen goods. Comes with a crowbar and a floor tile inside."
+	item_cost = 20
+	path = /obj/item/weapon/storage/backpack/satchel/flat
