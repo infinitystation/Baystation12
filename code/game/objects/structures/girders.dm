@@ -25,9 +25,13 @@
 /obj/structure/girder/attack_generic(var/mob/user, var/damage, var/attack_message = "smashes apart", var/wallbreaker)
 	if(!damage || !wallbreaker)
 		return 0
+	health -= damage
 	attack_animation(user)
-	visible_message("<span class='danger'>[user] [attack_message] the [src]!</span>")
-	spawn(1) dismantle()
+	if(health <= 0)
+		user.visible_message("<span class='danger'>[user] [attack_message] \the [src] apart!</span>")
+		spawn(1) dismantle()
+	else
+		user.visible_message("<span class='danger'>[user] [attack_message] \the [src]!</span>")
 	return 1
 
 /obj/structure/girder/bullet_act(var/obj/item/projectile/Proj)

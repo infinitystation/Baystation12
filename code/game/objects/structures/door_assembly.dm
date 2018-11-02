@@ -243,3 +243,14 @@
 	SetName(final_name)
 	overlays += filling_overlay
 	overlays += panel_overlay
+
+/obj/structure/door_assembly/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
+	if(!breakable || !damage || !wallbreaker)
+		return 0
+	visible_message("<span class='danger'>[user] [attack_verb] the [src]!</span>")
+	attack_animation(user)
+	spawn(1)
+	if(prob(30))
+		visible_message("<span class='danger'>[user] [attack_verb] the [src] apart!</span>")
+		qdel(src)
+	return 1
