@@ -60,6 +60,16 @@
 
 	set_dir()
 
+/obj/structure/railing/attack_generic(var/mob/user, var/damage, var/attack_verb)
+	health -= damage
+	attack_animation(user)
+	if(health <= 0)
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src] in parts!</span>")
+		spawn(1) Destroy()
+	else
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src]!</span>")
+	return 1
+
 /obj/structure/railing/Destroy()
 	anchored = FALSE
 	atom_flags = 0
