@@ -2,6 +2,16 @@
 	display_name = "cane"
 	path = /obj/item/weapon/cane
 
+/datum/gear/union_card
+	display_name = "union membership"
+	path = /obj/item/weapon/card/union
+
+/datum/gear/union_card/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
+	. = ..()
+	if(.)
+		var/obj/item/weapon/card/union/card = .
+		card.signed_by = H.real_name
+
 /datum/gear/dice
 	display_name = "dice pack"
 	path = /obj/item/weapon/storage/pill_bottle/dice
@@ -129,7 +139,6 @@
 /datum/gear/mask
 	display_name = "sterile mask"
 	path = /obj/item/clothing/mask/surgical
-	cost = 2
 
 /datum/gear/smokingpipe
 	display_name = "pipe, smoking"
@@ -159,7 +168,6 @@
 /datum/gear/cigars
 	display_name = "fancy cigar case"
 	path = /obj/item/weapon/storage/fancy/cigar
-	cost = 2
 
 /datum/gear/cigar
 	display_name = "fancy cigar"
@@ -179,14 +187,11 @@
 /datum/gear/ecig/deluxe
 	display_name = "electronic cigarette, deluxe"
 	path = /obj/item/clothing/mask/smokable/ecig/deluxe
-	cost = 2
 
 /datum/gear/bible
 	display_name = "bible"
 	path = /obj/item/weapon/storage/bible
-	cost = 2
 
 /datum/gear/mind_healer
 	display_name = "Methylphenidate, pill bottle"
 	path = /obj/item/weapon/storage/pill_bottle/methylphenidate
-	cost = 2

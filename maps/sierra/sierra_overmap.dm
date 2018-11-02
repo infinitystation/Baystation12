@@ -4,8 +4,10 @@
 	vessel_mass = 190
 	default_delay = 25 SECONDS
 	speed_mod = 5 SECONDS
-
-	color = "#eeeeee"
+	start_x = 4
+	start_y = 5
+	base = TRUE
+	color = LIGHT_COLOR_PURPLE
 	icon = 'icons/obj/overmap_inf.dmi'
 
 	initial_restricted_waypoints = list(
@@ -42,6 +44,16 @@
 		"nav_deck4_aquila",
 		"nav_bridge_aquila"
 	)
+
+/obj/effect/overmap/ship/landable/exploration_shuttle
+	name = "Charon"
+	shuttle = "Charon"
+	fore_dir = NORTH
+
+/obj/effect/overmap/ship/landable/guppy
+	name = "Guppy"
+	shuttle = "Guppy"
+	fore_dir = SOUTH
 
 /obj/machinery/computer/shuttle_control/explore/exploration_shuttle
 	name = "charon control console"

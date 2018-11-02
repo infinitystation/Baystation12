@@ -53,13 +53,16 @@
 	icon_state = "holdingpack"
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = 56
-
+	item_icons = list(
+		slot_l_hand_str = 'icons/mob/infinity/lefthand.dmi',
+		slot_r_hand_str = 'icons/mob/infinity/righthand.dmi',
+		)
 	New()
 		..()
 		return
 
 	attackby(obj/item/weapon/W as obj, mob/user as mob)
-		if(istype(W, /obj/item/weapon/storage/backpack/holding))
+		if(istype(W, /obj/item/weapon/storage/backpack/holding) || istype(W, /obj/item/weapon/storage/bag/trash/bluespace))
 			to_chat(user, "<span class='warning'>The Bluespace interfaces of the two devices conflict and malfunction.</span>")
 			qdel(W)
 			return 1
@@ -117,8 +120,8 @@
 	item_state_slots = null
 
 /obj/item/weapon/storage/backpack/toxins
-	name = "\improper NanoTrasen backpack"
-	desc = "It's a light backpack modeled for use in laboratories and other scientific institutions. The colors on it denote it as a NanoTrasen backpack."
+	name = "science backpack"
+	desc = "It's a stain-resistant light backpack modeled for use in laboratories and other scientific institutions."
 	icon_state = "ntpack"
 
 /obj/item/weapon/storage/backpack/hydroponics
@@ -318,8 +321,8 @@
 	icon_state = "satchel-gen"
 
 /obj/item/weapon/storage/backpack/satchel_tox
-	name = "\improper NanoTrasen satchel"
-	desc = "Useful for holding research materials. The colors on it denote it as a NanoTrasen bag."
+	name = "corporate satchel"
+	desc = "Useful for holding research materials. The colors on it denote it as a corporate bag."
 	icon_state = "satchel-nt"
 
 /obj/item/weapon/storage/backpack/satchel_sec
@@ -403,8 +406,8 @@
 	icon_state = "courierbagviro"
 
 /obj/item/weapon/storage/backpack/messenger/tox
-	name = "\improper NanoTrasen messenger bag"
-	desc = "A backpack worn over one shoulder.  Useful for holding science materials. The colors on it denote it as a NanoTrasen bag."
+	name = "corporate messenger bag"
+	desc = "A backpack worn over one shoulder.  Useful for holding science materials. The colors on it denote it as a corporate bag."
 	icon_state = "courierbagnt"
 
 /obj/item/weapon/storage/backpack/messenger/com

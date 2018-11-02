@@ -10,16 +10,11 @@
 	var/germ_level = GERM_LEVEL_AMBIENT // The higher the germ level, the more germ on the atom.
 	var/simulated = 1 //filter for actions - used by lighting overlays
 	var/fluorescent // Shows up under a UV light.
-	var/allow_spin = 0
 
 	///Chemistry.
 	var/datum/reagents/reagents = null
 
-	//var/chem_is_open_container = 0
-	// replaced by OPENCONTAINER flags and atom/proc/is_open_container()
-	///Chemistry.
-
-	var/list/climbers = list()
+	var/list/climbers
 
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
@@ -250,7 +245,7 @@ its easier to just keep the beam vertical.
 			f_name += "oil-stained [name][infix]."
 
 	if(!isobserver(user))
-		user.visible_message("<font size=1>[user.name] looks at [src].</font>")
+		user.visible_message("<span class='notice'><font size=1><i>[user] looks at [src].</i></font></span>")
 	to_chat(user, "\icon[src] That's [f_name] [suffix]")
 	to_chat(user, desc)
 
@@ -286,7 +281,7 @@ its easier to just keep the beam vertical.
 /atom/proc/emag_act(var/remaining_charges, var/mob/user, var/emag_source)
 	return NO_EMAG_ACT
 
-/atom/proc/fire_act()
+/atom/proc/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	return
 
 /atom/proc/melt()
@@ -427,7 +422,7 @@ its easier to just keep the beam vertical.
 
 /atom/attack_hand(mob/user)
 	..()
-	if(climbers.len && !(user in climbers))
+	if(LAZYLEN(climbers) && !(user in climbers))
 		user.visible_message("<span class='warning'>[user.name] shakes \the [src].</span>", \
 					"<span class='notice'>You shake \the [src].</span>")
 		object_shaken()
@@ -442,14 +437,14 @@ its easier to just keep the beam vertical.
 	do_climb(usr)
 
 /atom/proc/can_climb(var/mob/living/user, post_climb_check=0)
-	if (!(atom_flags & ATOM_FLAG_CLIMBABLE) || !can_touch(user) || (!post_climb_check && (user in climbers)))
+	if (!(atom_flags & ATOM_FLAG_CLIMBABLE) || !can_touch(user) || (!post_climb_check && climbers && (user in climbers)))
 		return 0
 
 	if (!user.Adjacent(src))
 		to_chat(user, "<span class='danger'>You can't climb there, the way is blocked.</span>")
 		return 0
 
-	var/obj/occupied = turf_is_crowded()
+	var/obj/occupied = turf_is_crowded(user)
 	if(occupied)
 		to_chat(user, "<span class='danger'>There's \a [occupied] in the way.</span>")
 		return 0
@@ -470,11 +465,13 @@ its easier to just keep the beam vertical.
 		return 0
 	return 1
 
-/atom/proc/turf_is_crowded()
+/atom/proc/turf_is_crowded(var/atom/ignore)
 	var/turf/T = get_turf(src)
 	if(!T || !istype(T))
 		return 0
 	for(var/atom/A in T.contents)
+		if(ignore && ignore == A)
+			continue
 		if(A.atom_flags & ATOM_FLAG_CLIMBABLE)
 			continue
 		if(A.density && !(A.atom_flags & ATOM_FLAG_CHECKS_BORDER)) //ON_BORDER structures are handled by the Adjacent() check.
@@ -483,25 +480,26 @@ its easier to just keep the beam vertical.
 
 /atom/proc/do_climb(var/mob/living/user)
 	if (!can_climb(user))
-		return
+		return 0
 
 	add_fingerprint(user)
 	user.visible_message("<span class='warning'>\The [user] starts climbing onto \the [src]!</span>")
-	climbers |= user
+	LAZYDISTINCTADD(climbers,user)
 
 	if(!do_after(user,(issmall(user) ? 30 : 50), src))
-		climbers -= user
-		return
+		LAZYREMOVE(climbers,user)
+		return 0
 
-	if (!can_climb(user, post_climb_check=1))
-		climbers -= user
-		return
+	if(!can_climb(user, post_climb_check=1))
+		LAZYREMOVE(climbers,user)
+		return 0
 
 	user.forceMove(get_turf(src))
 
 	if (get_turf(user) == get_turf(src))
 		user.visible_message("<span class='warning'>\The [user] climbs onto \the [src]!</span>")
-	climbers -= user
+	LAZYREMOVE(climbers,user)
+	return 1
 
 /atom/proc/object_shaken()
 	for(var/mob/living/M in climbers)

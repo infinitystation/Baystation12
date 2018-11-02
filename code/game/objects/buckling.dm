@@ -5,6 +5,7 @@
 	var/buckle_lying = -1 //bed-like behavior, forces mob.lying = buckle_lying if != -1
 	var/buckle_pixel_shift = "x=0;y=0" //where the buckled mob should be pixel shifted to, or null for no pixel shift control
 	var/buckle_require_restraints = 0 //require people to be handcuffed before being able to buckle. eg: pipes
+	var/buckle_require_be_on_same_tile = 0 //require people to be on same turf as src
 	var/mob/living/buckled_mob = null
 
 /obj/attack_hand(mob/living/user)
@@ -20,6 +21,7 @@
 /obj/MouseDrop_T(mob/living/M, mob/living/user)
 	. = ..()
 	if(can_buckle && istype(M))
+		if(buckle_require_be_on_same_tile && M.loc != loc) return
 		user_buckle_mob(M, user)
 
 /obj/Destroy()

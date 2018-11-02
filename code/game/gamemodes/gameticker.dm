@@ -150,19 +150,26 @@ var/global/datum/controller/gameticker/ticker
 	create_characters() //Create player characters and transfer them
 	collect_minds()
 	equip_characters()
+	for(var/mob/living/carbon/human/H in GLOB.player_list)
+		if(!H.mind || player_is_antag(H.mind, only_offstation_roles = 1) || !job_master.ShouldCreateRecords(H.mind.assigned_role))
+			continue
+		CreateModularRecord(H)
 
 	callHook("roundstart")
+
+	var/clients = 0
+
+	for(var/mob/M in GLOB.player_list)
+		if(M.client)
+			clients++
 
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup()
 		to_world("<FONT color='blue'><B>Enjoy the game!</B></FONT>")
+		send2maindiscord("Раунд с режимом [hide_mode ? "Secret" : "[mode.name]"] начался. Игроков: [clients].")
+		send2mainirc("Раунд с режимом [hide_mode ? "Secret" : "[mode.name]"] начался. Игроков: [clients].")
+
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
-
-		for(var/mob/living/carbon/human/H in GLOB.player_list)
-			if(!H.mind || player_is_antag(H.mind, only_offstation_roles = 1) || !job_master.ShouldCreateRecords(H.mind.assigned_role))
-				continue
-			CreateModularRecord(H)
-
 
 		//Holiday Round-start stuff	~Carn
 		Holiday_Game_Start()

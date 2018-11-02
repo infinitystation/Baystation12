@@ -1055,7 +1055,7 @@
 		"target" = IC_PINTYPE_REF
 		)
 	outputs = list(
-		"Metal"				 	= IC_PINTYPE_NUMBER,
+		"Steel"				 	= IC_PINTYPE_NUMBER,
 		"Glass"					= IC_PINTYPE_NUMBER,
 		"Silver"				= IC_PINTYPE_NUMBER,
 		"Gold"					= IC_PINTYPE_NUMBER,
@@ -1074,8 +1074,7 @@
 		)
 	spawn_flags = IC_SPAWN_RESEARCH
 	power_draw_per_use = 40
-	var/list/mtypes = list(DEFAULT_WALL_MATERIAL, "glass", "silver", "gold", "diamond", "phoron", "uranium", "plasteel", "titanium", "glass", "plastic")
-
+	var/list/mtypes = list("steel", "glass", "silver", "gold", "diamond", "phoron", "uranium", "plasteel", "titanium", "glass", "plastic")
 
 /obj/item/integrated_circuit/input/matscan/do_work()
 	var/obj/O = get_pin_data_as_type(IC_INPUT, 1, /obj)
@@ -1179,9 +1178,9 @@
 	)
 
 /obj/item/integrated_circuit/input/data_card_reader/attackby_react(obj/item/I, mob/living/user, intent)
-	var/obj/item/weapon/card/data/card = I.GetIdCard()
+	var/obj/item/weapon/card/data/card = I
 	var/write_mode = get_pin_data(IC_INPUT, 3)
-	if(card)
+	if(istype(card))
 		if(write_mode == TRUE)
 			card.function = get_pin_data(IC_INPUT, 1)
 			card.data = get_pin_data(IC_INPUT, 2)

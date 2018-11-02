@@ -13,7 +13,6 @@ env:
     - TEST=CODE
     - TEST=WEB
     - TEST=MAP MAP_PATH=example
-    - TEST=MAP MAP_PATH=torch
     - TEST=MAP MAP_PATH=bearcat_inf
     - TEST=MAP MAP_PATH=sierra
     - TEST=MAP MAP_PATH=away_sites_testing

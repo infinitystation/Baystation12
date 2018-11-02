@@ -50,13 +50,19 @@
 		/obj/item/clothing/head/soft/darkred,
 		/obj/item/clothing/under/rank/janitor/white,
 		/obj/item/device/radio/headset/headset_service,
+		/obj/item/clothing/suit/storage/janjacket,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/device/flashlight/upgraded,
 		/obj/item/weapon/caution = 4,
 		/obj/item/device/lightreplacer,
 		/obj/item/weapon/storage/bag/trash,
+		/obj/item/clothing/shoes/dutyboots,
+		/obj/item/weapon/grenade/chem_grenade/cleaner = 2,
+		/obj/item/weapon/reagent_containers/spray/cleaner,
 		/obj/item/clothing/shoes/galoshes,
 		/obj/item/weapon/storage/box/detergent,
+		/obj/item/holosign_creator,
+		/obj/item/clothing/glasses/hud/janitor,
 		/obj/item/weapon/soap/nanotrasen
 	)
 

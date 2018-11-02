@@ -29,7 +29,6 @@
 	name = "corporative folder"
 	desc = "A NanoTrasen folder."
 	icon_state = "folder_nt"
-
 /obj/item/weapon/folder/update_icon()
 	overlays.Cut()
 	if(contents.len)

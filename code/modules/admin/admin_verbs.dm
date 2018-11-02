@@ -138,6 +138,9 @@ var/list/admin_verbs_fun = list(
 	/datum/admins/proc/ai_hologram_set,
 	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
 	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
+	/datum/admins/proc/pmp_control_panel,
+	/proc/possess,
+	/proc/release
 	)
 
 var/list/admin_verbs_spawn = list(
@@ -249,6 +252,9 @@ var/list/admin_verbs_permissions = list(
 var/list/admin_verbs_rejuv = list(
 	/client/proc/respawn_character
 	)
+var/list/admin_verbs_judge = list(
+	/datum/admins/proc/PlayerNotes
+	)
 
 //verbs which can be hidden - needs work
 var/list/admin_verbs_hideable = list(
@@ -338,8 +344,8 @@ var/list/admin_verbs_mod = list(
 	/client/proc/cmd_admin_subtle_message, // send an message to somebody as a 'voice in their head',
 	/client/proc/aooc,
 	/datum/admins/proc/sendFax,
-	/datum/admins/proc/paralyze_mob
-
+	/datum/admins/proc/paralyze_mob,
+	/datum/admins/proc/view_persistent_data
 )
 
 var/list/admin_verbs_mentor = list(
@@ -366,7 +372,7 @@ var/list/admin_verbs_mentor = list(
 			verbs += admin_verbs_debug
 			if(config.debugparanoid && !(holder.rights & R_ADMIN))
 				verbs.Remove(admin_verbs_paranoid_debug)			//Right now it's just callproc but we can easily add others later on.
-		if(holder.rights & R_POSSESS)		verbs += admin_verbs_possess
+		if(holder.rights & R_JUDGE)	     	verbs += admin_verbs_judge
 		if(holder.rights & R_PERMISSIONS)	verbs += admin_verbs_permissions
 		if(holder.rights & R_STEALTH)		verbs += /client/proc/stealth
 		if(holder.rights & R_REJUVINATE)	verbs += admin_verbs_rejuv

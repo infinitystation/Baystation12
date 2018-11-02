@@ -3,7 +3,6 @@
 	icon = 'icons/obj/items.dmi'
 	w_class = ITEM_SIZE_NORMAL
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
-	allow_spin = 1
 
 	var/image/blood_overlay = null //this saves our blood splatter overlay, which will be processed not to go over the edges of the sprite
 	var/randpixel = 6
@@ -101,6 +100,15 @@
 		m.update_inv_l_hand()
 		src.loc = null
 	return ..()
+
+/obj/item/crush_act()
+	playsound(src.loc, 'sound/items/Welder.ogg', 50, 1)
+	for(var/i in 1, i < w_class, i++)
+		new /obj/item/weapon/scrap_lump(loc)
+	for(var/obj/item/I in contents)
+		I.forceMove(loc)
+		I.crush_act()
+	..()
 
 /obj/item/device
 	icon = 'icons/obj/device.dmi'

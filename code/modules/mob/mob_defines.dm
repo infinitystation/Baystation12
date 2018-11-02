@@ -23,6 +23,8 @@
 		/datum/movement_handler/mob/movement
 	)
 
+	does_spin = FALSE //because it's looks awful on mobs. You can remove it anytime if you want.
+
 	var/mob_flags
 
 	var/list/client_images = list() // List of images applied to/removed from the client on login/logout

@@ -189,7 +189,7 @@
 /obj/item/clothing/suit/space/rig/command/el
 	icon_state = "command_exp_rig"
 
-/obj/item/weapon/rig/command/pf/equipped
+/obj/item/weapon/rig/command/el/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash,

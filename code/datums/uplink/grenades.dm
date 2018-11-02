@@ -44,14 +44,12 @@
 	name = "1xFragmentation Shell"
 	desc = "Weaker than standard fragmentation grenades, these devices can be fired from a grenade launcher."
 	item_cost = 10
-	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/grenade/frag/shell
 
 /datum/uplink_item/item/grenades/fragshells
 	name = "5xFragmentation Shells"
 	desc = "Weaker than standard fragmentation grenades, these devices can be fired from a grenade launcher."
 	item_cost = 40
-	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/storage/box/fragshells
 
 /datum/uplink_item/item/grenades/frag

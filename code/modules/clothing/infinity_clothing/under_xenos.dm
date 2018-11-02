@@ -41,15 +41,20 @@
 	icon_state = "resomi_dress_cap"
 	item_state = "resomi_dress_cap"
 
-/obj/item/clothing/under/resomi/uniform
-	name = "small uniform"
+/obj/item/clothing/under/resomi/dress/formal
+	name = "small formal dress"
 	icon_state = "resomi_captain"
 	item_state = "resomi_captain"
 
-/obj/item/clothing/under/resomi/formal
-	name = "small formal uniform"
+/obj/item/clothing/under/resomi/dress/stylish
+	name = "small stylish dress"
 	icon_state = "resomi_captain_formal"
 	item_state = "resomi_captain_formal"
+
+/obj/item/clothing/under/resomi/dress/white
+	name = "small black dress"
+	icon_state = "resomi_blackutility_com"
+	worn_state = "resomi_blackutility_com"
 
 /obj/item/clothing/under/resomi/robotics
 	name = "small robotics uniform"
@@ -105,3 +110,18 @@
 	name = "small lightorange work smock"
 	desc = "A small white working suit of non-human proportions with colored lines on it and a white steel belt. On a small label reads: 'Twinne Corp. - feathers and style'. Don't forget about hardhat and gloves."
 	icon_state = "resomi_white_orange_worksuit"
+
+/obj/item/clothing/under/resomi/sport
+	name = "small sport uniform"
+	icon_state = "resomi_expeditionpt"
+	worn_state = "resomi_expeditionpt"
+
+/obj/item/clothing/under/resomi/utility
+	name = "small black utility uniform"
+	icon_state = "resomi_blackutility"
+	worn_state = "resomi_blackutility"
+
+/obj/item/clothing/under/resomi/utility/black
+	name = "small grey utility uniform"
+	icon_state = "resomi_greydress"
+	worn_state = "resomi_greydress"

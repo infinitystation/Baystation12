@@ -51,11 +51,11 @@
 /obj/structure/closet/secure_closet/medical_torchsenior/WillContain()
 	return list(
 		/obj/item/clothing/under/sterile,
-		/obj/item/clothing/accessory/storage/white_vest,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/suit/surgicalapron,
 		/obj/item/clothing/shoes/white,
 		/obj/item/device/radio/headset/headset_med,
+		/obj/item/device/radio/headset/headset_med/alt,
 		/obj/item/taperoll/medical,
 		/obj/item/weapon/storage/belt/medical,
 		/obj/item/clothing/mask/surgical,
@@ -88,6 +88,7 @@
 		/obj/item/clothing/suit/storage/toggle/fr_jacket,
 		/obj/item/clothing/shoes/white,
 		/obj/item/device/radio/headset/headset_med,
+		/obj/item/device/radio/headset/headset_corpsman/alt,
 		/obj/item/taperoll/medical,
 		/obj/item/weapon/storage/belt/medical/emt,
 		/obj/item/clothing/mask/gas/half,
@@ -119,6 +120,7 @@
 		/obj/item/clothing/suit/storage/toggle/fr_jacket,
 		/obj/item/clothing/shoes/white,
 		/obj/item/device/radio/headset/headset_med,
+		/obj/item/device/radio/headset/headset_med/alt,
 		/obj/item/taperoll/medical,
 		/obj/item/weapon/storage/belt/medical/emt,
 		/obj/item/clothing/mask/gas/half,

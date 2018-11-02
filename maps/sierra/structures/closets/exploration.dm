@@ -85,7 +85,7 @@
 		/obj/item/device/binoculars,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/clothing/suit/storage/toggle/track,
-		/obj/item/clothing/head/helmet/solgov/pilot,
+		/obj/item/clothing/head/helmet/nt/pilot,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack, /obj/item/weapon/storage/backpack/satchel/grey)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag, /obj/item/weapon/storage/backpack/messenger)),
 		new /datum/atom_creator/weighted(list(/obj/item/device/flashlight, /obj/item/device/flashlight/flare, /obj/item/device/flashlight/flare/glowstick/random))

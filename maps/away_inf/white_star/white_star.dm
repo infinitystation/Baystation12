@@ -7,4 +7,19 @@
 	vessel_mass = 35
 	default_delay = 20 SECONDS
 	speed_mod = 10 SECONDS
-//	icon_state = "malf_ship"
+	//	icon_state = "malf_ship"
+
+/datum/map_template/ruin/away_site/white_star
+ 	name = "White_star"
+ 	id = "white_star"
+ 	prefix = "maps/away_inf/"
+ 	suffixes = list("white_star/white_star.dmm")
+ 	cost = 1000
+
+/*obj/effect/overmap/ship/white_star_alt
+	name = "Unidentified ship"
+	desc = "Error. Scanning is impossible."
+	color = "#c6d8eb"
+	vessel_mass = 45
+	default_delay = 25 SECONDS
+	speed_mod = 10 SECONDS*/

@@ -70,7 +70,7 @@ for reference:
 /obj/structure/barricade/New(var/newloc, var/material_name)
 	..(newloc)
 	if(!material_name)
-		material_name = "wood"
+		material_name = MATERIAL_WOOD
 	material = SSmaterials.get_material_by_name("[material_name]")
 	if(!material)
 		qdel(src)
@@ -140,6 +140,16 @@ for reference:
 		return 1
 	else
 		return 0
+
+/obj/structure/barricade/attack_generic(var/mob/user, var/damage, var/attack_verb)
+	health -= damage
+	attack_animation(user)
+	if(health <= 0)
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src] apart!</span>")
+		spawn(1) dismantle()
+	else
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src]!</span>")
+	return 1
 
 //Actual Deployable machinery stuff
 /obj/machinery/deployable
@@ -269,3 +279,13 @@ for reference:
 		s.start()
 		visible_message("<span class='warning'>BZZzZZzZZzZT</span>")
 		return 1
+
+/obj/machinery/deployable/barrier/attack_generic(var/mob/user, var/damage, var/attack_verb)
+	src.health -= damage
+	attack_animation(user)
+	if(src.health <= 0)
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src] completely!</span>")
+		spawn(1) src.explode()
+	else
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src]!</span>")
+	return 1

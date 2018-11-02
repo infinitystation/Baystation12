@@ -82,7 +82,7 @@
 /obj/item/device/electronic_assembly/Initialize()
 	.=..()
 	START_PROCESSING(SScircuit, src)
-	matter[DEFAULT_WALL_MATERIAL] = round((max_complexity + max_components) / 4) * SScircuit.cost_multiplier
+	matter[MATERIAL_STEEL] = round((max_complexity + max_components) / 4) * SScircuit.cost_multiplier
 
 /obj/item/device/electronic_assembly/Destroy()
 	STOP_PROCESSING(SScircuit, src)
@@ -107,7 +107,7 @@
 		..()
 
 /obj/item/device/electronic_assembly/interact(mob/user)
-	if(!check_interactivity(user))
+	if(!check_interactivity(user) || !Adjacent(user))
 		return
 
 	if(opened)
@@ -279,6 +279,8 @@
 
 /obj/item/device/electronic_assembly/examine(mob/user)
 	..()
+	if (!Adjacent(user))
+		return
 	for(var/I in assembly_components)
 		var/obj/item/integrated_circuit/IC = I
 		IC.external_examine(user)
@@ -512,6 +514,12 @@
 	name = "type-f electronic assembly"
 	icon_state = "setup_small_pda"
 	desc = "It's a case, for building small electronics with. This one resembles a PDA."
+
+/obj/item/device/electronic_assembly/augment
+	name = "augment electronic assembly"
+	icon_state = "setup_augment"
+	desc = "It's a case, for building small electronics with. This one is designed to go inside a cybernetic augment."
+	circuit_flags = IC_FLAG_CAN_FIRE
 
 /obj/item/device/electronic_assembly/medium
 	name = "electronic mechanism"

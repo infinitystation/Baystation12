@@ -34,7 +34,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/list/map_levels              // Z-levels available to various consoles, such as the crew monitor. Defaults to station_levels if unset.
 
 	var/list/base_turf_by_z = list() // Custom base turf by Z-level. Defaults to world.turf for unlisted Z-levels
-	var/list/usable_email_tlds = list("freemail.nt")
+	var/list/usable_email_tlds = list("freemail.net")
 	var/base_floor_type = /turf/simulated/floor/airless // The turf type used when generating floors between Z-levels at startup.
 	var/base_floor_area                                 // Replacement area, if a base_floor_type is generated. Leave blank to skip.
 
@@ -134,6 +134,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		TAG_FACTION = list(
 			FACTION_SOL_CENTRAL,
 			FACTION_TERRAN_CONFED,
+			FACTION_TORCH_LLC,
 			FACTION_NANOTRASEN,
 			FACTION_FREETRADE,
 			FACTION_XYNERGY,
@@ -173,6 +174,16 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			RELIGION_ATHEISM,
 			RELIGION_THELEMA,
 			RELIGION_SPIRITUALISM
+		),
+		TAG_EDUCATION = list(
+			EDUCATION_NONE,
+			EDUCATION_DROPOUT,
+			EDUCATION_HIGH_SCHOOL,
+			EDUCATION_TRADE_SCHOOL,
+			EDUCATION_UNDERGRAD,
+			EDUCATION_MASTERS,
+			EDUCATION_DOCTORATE,
+			EDUCATION_MEDSCHOOL
 		)
 	)
 
@@ -180,14 +191,29 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		TAG_HOMEWORLD = HOME_SYSTEM_MARS,
 		TAG_FACTION =   FACTION_SOL_CENTRAL,
 		TAG_CULTURE =   CULTURE_HUMAN_MARTIAN,
-		TAG_RELIGION =  RELIGION_AGNOSTICISM
+		TAG_RELIGION =  RELIGION_AGNOSTICISM,
+		TAG_EDUCATION = EDUCATION_HIGH_SCHOOL
+	)
+
+	var/access_modify_region = list(
+		ACCESS_REGION_SECURITY = list(access_hos, access_change_ids),
+		ACCESS_REGION_MEDBAY = list(access_cmo, access_change_ids),
+		ACCESS_REGION_RESEARCH = list(access_rd, access_change_ids),
+		ACCESS_REGION_ENGINEERING = list(access_ce, access_change_ids),
+		ACCESS_REGION_COMMAND = list(access_change_ids),
+		ACCESS_REGION_GENERAL = list(access_change_ids),
+		ACCESS_REGION_SUPPLY = list(access_change_ids)
 	)
 
 /datum/map/New()
 	if(!map_levels)
 		map_levels = station_levels.Copy()
 	if(!allowed_jobs)
-		allowed_jobs = subtypesof(/datum/job)
+		allowed_jobs = list()
+		for(var/jtype in subtypesof(/datum/job))
+			var/datum/job/job = jtype
+			if(initial(job.available_by_default))
+				allowed_jobs += jtype
 	if(!planet_size)
 		planet_size = list(world.maxx, world.maxy)
 

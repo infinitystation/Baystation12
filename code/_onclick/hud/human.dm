@@ -204,7 +204,7 @@
 		mymob.fire.screen_loc = ui_fire
 		hud_elements |= mymob.fire
 
-		mymob.healths = new /obj/screen()
+		mymob.healths = new /obj/screen/health()
 		mymob.healths.icon = ui_style
 		mymob.healths.icon_state = "health0"
 		mymob.healths.SetName("health")

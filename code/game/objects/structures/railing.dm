@@ -9,6 +9,7 @@
 	atom_flags = ATOM_FLAG_CHECKS_BORDER | ATOM_FLAG_CLIMBABLE
 	icon_state = "railing0"
 	can_buckle = 1
+	buckle_require_restraints = 1
 
 	var/material/material
 	var/broken =    FALSE
@@ -22,9 +23,9 @@
 
 /obj/structure/railing/mapped/Initialize()
 	. = ..()
-	color = COLOR_GUNMETAL // They're not painted!
+	color = COLOR_GUNMETAL // They're painted! // For wall's colour.
 
-/obj/structure/railing/New(var/newloc, var/material_key = "steel")
+/obj/structure/railing/New(var/newloc, var/material_key = MATERIAL_STEEL)
 	material = material_key // Converted to datum in initialize().
 	..(newloc)
 
@@ -57,6 +58,18 @@
 	if(anchored)
 		update_icon(FALSE)
 
+	set_dir()
+
+/obj/structure/railing/attack_generic(var/mob/user, var/damage, var/attack_verb)
+	health -= damage
+	attack_animation(user)
+	if(health <= 0)
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src] in parts!</span>")
+		spawn(1) Destroy()
+	else
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src]!</span>")
+	return 1
+
 /obj/structure/railing/Destroy()
 	anchored = FALSE
 	atom_flags = 0
@@ -84,6 +97,15 @@
 				to_chat(user, "<span class='warning'>It looks damaged!</span>")
 			if(0.5 to 1.0)
 				to_chat(user, "<span class='notice'>It has a few scrapes and dents.</span>")
+
+/obj/structure/railing/set_dir()
+	. = ..()
+	if(.)
+		switch(dir)
+			if(SOUTH)
+				plane = -11
+			else
+				plane = initial(plane)
 
 /obj/structure/railing/proc/take_damage(amount)
 	health -= amount
@@ -283,32 +305,16 @@
 /obj/structure/railing/ex_act(severity)
 	qdel(src)
 
+/obj/structure/railing/can_climb(var/mob/living/user, post_climb_check=0)
+	. = ..()
+	if(. && get_turf(user) == get_turf(src))
+		var/turf/T = get_step(src, src.dir)
+		if(T.turf_is_crowded(user))
+			to_chat(user, "<span class='warning'>You can't climb there, the way is blocked.</span>")
+			return 0
+
 /obj/structure/railing/do_climb(var/mob/living/user)
-	if(!can_climb(user))
-		return
-
-	user.visible_message("<span class='warning'>\The [user] starts climbing onto \the [src]!</span>")
-	climbers |= user
-
-	if(!do_after(user,(issmall(user) ? 20 : 34)))
-		climbers -= user
-		return
-
-	if(!can_climb(user, post_climb_check=1))
-		climbers -= user
-		return
-
-	if(!turf_is_crowded())
-		to_chat(user, "<span class='warning'>You can't climb there, the way is blocked.</span>")
-		climbers -= user
-		return
-
-	if(get_turf(user) == get_turf(src))
-		user.forceMove(get_step(src, src.dir))
-	else
-		user.forceMove(get_turf(src))
-
-	user.visible_message("<span class='danger'>\The [user] climbed over \the [src]!</span>")
-	if(!anchored || material.is_brittle())
-		take_damage(maxhealth) // Fatboy
-	climbers -= user
+	. = ..()
+	if(.)
+		if(!anchored || material.is_brittle())
+			take_damage(maxhealth) // Fatboy

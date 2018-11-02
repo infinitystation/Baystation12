@@ -111,6 +111,10 @@
 	name = "reinforced voxalloy wall frame window spawner"
 	frame_path = /obj/structure/wall_frame/voxalloy
 
+/obj/effect/wallframe_spawn/reinforced/crystal
+	name = "reinforced crystal wall frame window spawner"
+	frame_path =  /obj/structure/wall_frame/crystal
+
 /obj/effect/wallframe_spawn/reinforced/hull
 	name = "reinforced hull wall frame window spawner"
 	frame_path = /obj/structure/wall_frame/hull
@@ -141,6 +145,12 @@
 	name = "reinforced phoron prepainted wall frame window spawner"
 	frame_path = /obj/structure/wall_frame/prepainted
 
+/obj/effect/wallframe_spawn/reinforced_phoron/titanium
+	frame_path = /obj/structure/wall_frame/titanium
+
+/obj/effect/wallframe_spawn/reinforced_phoron/hull
+	frame_path = /obj/structure/wall_frame/hull
+
 /obj/effect/wallframe_spawn/reinforced/polarized
 	name = "polarized wall frame window spawner"
 	color = "#444444"
@@ -150,6 +160,10 @@
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted
 	name = "polarized wall frame window spawner - prepainted"
 	frame_path = /obj/structure/wall_frame/prepainted
+
+/obj/effect/wallframe_spawn/reinforced/polarized/titanium
+	name = "polarized wall frame window spawner - titanium"
+	frame_path = /obj/structure/wall_frame/titanium
 
 /obj/effect/wallframe_spawn/reinforced/polarized/full
 	name = "polarized wall frame window spawner - full tile"

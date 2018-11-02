@@ -91,7 +91,7 @@
 /obj/item/weapon/reagent_containers/hypospray/vial/attackby(obj/item/weapon/W, mob/user as mob)
 	if(istype(W, /obj/item/weapon/reagent_containers/glass/beaker/vial))
 		if(!loaded_vial)
-			if(!do_after(user,10) || loaded_vial || !(W in user))
+			if(!do_after(user,4) || loaded_vial || !(W in user))
 				return 0
 			if(!user.unEquip(W, src))
 				return
@@ -112,6 +112,7 @@
 /obj/item/weapon/reagent_containers/hypospray/autoinjector
 	name = "autoinjector"
 	desc = "A rapid and safe way to administer small amounts of drugs by untrained or trained personnel."
+	icon = 'icons/obj/syringe_inf.dmi'
 	icon_state = "blue1"
 	item_state = "autoinjector"
 	amount_per_transfer_from_this = 5
@@ -160,14 +161,12 @@
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/brute
 	name = "autoinjector (anti-injury)"
-	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "red1"
 	starts_with = list(/datum/reagent/bicaridine = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/burn
 	name = "autoinjector (anti-burn)"
-	icon = 'icons/obj/items_inf.dmi'
-	icon_state = "yellow1"
+	icon_state = "orange1"
 	starts_with = list(/datum/reagent/kelotane = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/rad

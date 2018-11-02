@@ -9,8 +9,8 @@
 	anchored = TRUE
 	density = 1
 	w_class = ITEM_SIZE_GARGANTUAN
-	base_idle_power_usage = 100
-	base_active_power_usage = 500
+	base_idle_power_usage = 40
+	base_active_power_usage = 200
 	max_hardware_size = 3
 	steel_sheet_cost = 20
 	light_strength = 4

@@ -47,7 +47,7 @@
 		set_opacity(0)
 		layer = open_layer
 
-	implicit_material = SSmaterials.get_material_by_name("plasteel")
+	implicit_material = SSmaterials.get_material_by_name(MATERIAL_PLASTEEL)
 
 /obj/machinery/door/airlock/Destroy()
 	qdel(wifi_receiver)
@@ -128,7 +128,7 @@
 		else
 			to_chat(usr, "<span class='notice'>[src]'s motors resist your effort.</span>")
 		return
-	if(istype(C, /obj/item/stack/material) && C.get_material_name() == "plasteel")
+	if(istype(C, /obj/item/stack/material) && C.get_material_name() == MATERIAL_PLASTEEL)
 		var/amt = Ceiling((maxhealth - health)/150)
 		if(!amt)
 			to_chat(usr, "<span class='notice'>\The [src] is already fully repaired.</span>")
@@ -203,6 +203,7 @@
 // SUBTYPE: Shutters
 // Nicer looking, and also weaker, shutters. Found in kitchen and similar areas.
 /obj/machinery/door/blast/shutters
+	name = "shutters"
 	desc = "A set of mechanized shutters made of a pretty sturdy material."
 	icon_state_open = "shutter0"
 	icon_state_opening = "shutterc0"

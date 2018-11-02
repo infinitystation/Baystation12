@@ -34,7 +34,6 @@
 	#include "items/rigs.dm"
 	#include "items/solbanner.dm"
 
-	#include "items/clothing/solgov-infinity.dm"
 	#include "items/clothing/solgov-accessory.dm"
 	#include "items/clothing/solgov-armor.dm"
 	#include "items/clothing/solgov-feet.dm"
@@ -45,7 +44,6 @@
 	#include "job/access.dm"
 	#include "job/jobs.dm"
 	#include "job/outfits.dm"
-	#include "job/infinity.dm"
 
 	#include "machinery/keycard authentication.dm"
 
@@ -66,13 +64,13 @@
 	#include "loadout/loadout_eyes.dm"
 	#include "loadout/loadout_gloves.dm"
 	#include "loadout/loadout_head.dm"
-	#include "loadout/loadout_infinity.dm"
 	#include "loadout/loadout_shoes.dm"
 	#include "loadout/loadout_suit.dm"
 	#include "loadout/loadout_uniform.dm"
 	#include "loadout/loadout_xeno.dm"
 	#include "loadout/~defines.dm"
 
+	#include "torch-0.dmm"
 	#include "torch-1.dmm"
 	#include "torch-2.dmm"
 	#include "torch-3.dmm"
@@ -81,15 +79,14 @@
 	#include "torch-6.dmm"
 	#include "torch-7.dmm"
 	#include "../away/empty.dmm"
-	#include "../away_inf/gunboat/gunboat.dm"
-	#include "../away_inf/sentinel/sentinel.dm"
-	#include "../away_inf/yacht/yacht.dm"
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/bearcat/bearcat.dm"
 	#include "../away/lost_supply_base/lost_supply_base.dm"
+	#include "../away/smugglers/smugglers.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"
+	#include "../away/yacht/yacht.dm"
 	#include "../away/blueriver/blueriver.dm"
 	#include "../away/slavers/slavers_base.dm"
 	#include "../away/mobius_rift/mobius_rift.dm"
@@ -98,7 +95,6 @@
 	#include "../away/lar_maria/lar_maria.dm"
 	#include "../away/unishi/unishi.dm"
 
-	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../../code/datums/music_tracks/chasing_time.dm"
 
 	#define using_map_DATUM /datum/map/torch

@@ -7,6 +7,7 @@
 	those who have not met them before and are rarely trusted by the \
 	average person. Even so, they do their jobs well and are thriving in this \
 	new environment."
+	hidden_from_codex = FALSE
 
 	antaghud_offset_y = 8
 
@@ -60,7 +61,8 @@
 
 	species_flags = SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_BLOCK | SPECIES_FLAG_NO_MINOR_CUT | SPECIES_FLAG_NEED_DIRECT_ABSORB
 	appearance_flags = HAS_SKIN_COLOR | HAS_EYE_COLOR | HAS_SKIN_TONE_NORMAL | HAS_BASE_SKIN_COLOURS
-	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN | SPECIES_NO_LACE
+//	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN | SPECIES_NO_LACE
+	spawn_flags = SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN | SPECIES_NO_LACE
 
 	vision_restruction = FALSE
 
@@ -144,6 +146,17 @@
 		),
 		TAG_RELIGION =  list(
 			RELIGION_OTHER
+		),
+		TAG_EDUCATION = list(
+			EDUCATION_NABBER_CMINUS,
+			EDUCATION_NABBER_C,
+			EDUCATION_NABBER_CPLUS,
+			EDUCATION_NABBER_BMINUS,
+			EDUCATION_NABBER_B,
+			EDUCATION_NABBER_BPLUS,
+			EDUCATION_NABBER_AMINUS,
+			EDUCATION_NABBER_A,
+			EDUCATION_NABBER_APLUS
 		)
 	)
 
@@ -375,3 +388,7 @@
 		if(!hidden)
 			H.visible_message("<span class='warning'>[H] tenses as \he brings \his smaller arms in close to \his body. \His two massive spiked arms reach \
 			out. \He looks ready to attack.</span>")
+
+/datum/species/nabber/check_background(var/datum/job/job, var/datum/preferences/prefs)
+	var/decl/cultural_info/education/nabber/grade = SSculture.get_culture(prefs.cultural_info[TAG_EDUCATION])
+	. = istype(grade) ? (job.type in grade.valid_jobs) : ..()

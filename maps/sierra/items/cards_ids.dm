@@ -155,9 +155,6 @@
 /obj/item/weapon/card/id/sierra/crew/research/scientist
 	job_access_type = /datum/job/scientist
 
-/obj/item/weapon/card/id/sierra/crew/research/nt_pilot
-	job_access_type = /datum/job/nt_pilot
-
 /obj/item/weapon/card/id/sierra/crew/research/roboticist
 	job_access_type = /datum/job/roboticist
 
@@ -173,8 +170,12 @@
 
 //Merchant
 /obj/item/weapon/card/id/sierra/merchant
-	desc = "An identification card issued to Merchants, indicating their right to sell and buy goods."
+	desc = "An identification card issued to Merchants."
 	icon_state = "trader"
+	job_access_type = /datum/job/merchant_trainee
+
+/obj/item/weapon/card/id/sierra/merchant/leader
+	desc = "An identification card issued to Merchant Leaders, indicating their right to sell and buy goods."
 	job_access_type = /datum/job/merchant
 
 //Stowaway

@@ -46,7 +46,10 @@
 			"ֶ" = list("״", "״ר", "״רר")
 
 		)
-	autohiss_exempt = list(LANGUAGE_UNATHI)
+	autohiss_exempt = list(
+					LANGUAGE_UNATHI,
+					LANGUAGE_YEOSA
+	)
 
 /datum/species/tajaran
 	autohiss_basic_map = list(

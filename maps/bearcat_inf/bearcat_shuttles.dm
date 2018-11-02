@@ -73,7 +73,7 @@
 		"nav_lost_supply_base_antag",
 		"nav_smugglers_antag"
 		)
-	shuttle_area =  /area/pirats/shuttle
+	shuttle_area =  /area/skipjack_station/start
 	dock_target = "skipjack_shuttle"
 	current_location = "nav_skipjack_start"
 	landmark_transition = "nav_skipjack_transition"

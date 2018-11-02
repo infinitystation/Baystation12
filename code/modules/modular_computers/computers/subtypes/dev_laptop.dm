@@ -7,13 +7,21 @@
 	var/icon_state_closed = "laptop-closed"
 	anchored = 0
 	w_class = ITEM_SIZE_NORMAL
-	base_idle_power_usage = 25
-	base_active_power_usage = 200
+	base_idle_power_usage = 5
+	base_active_power_usage = 50
 	light_strength = 3
 	max_damage = 200
 	broken_damage = 100
 	max_hardware_size = 2
 	hardware_flag = PROGRAM_LAPTOP
+
+/obj/item/modular_computer/laptop/CouldUseTopic(var/mob/user)
+	..()
+	if(istype(user, /mob/living/carbon))
+		if(prob(50))
+			playsound(src, "keyboard", 20)
+		else
+			playsound(src, "keystroke", 20)
 
 /obj/item/modular_computer/laptop/AltClick(var/mob/user)
 // Prevents carrying of open laptops inhand.

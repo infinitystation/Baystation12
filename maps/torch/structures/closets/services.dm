@@ -33,7 +33,6 @@
 		/obj/item/weapon/storage/plants,
 		/obj/item/device/analyzer/plant_analyzer,
 		/obj/item/weapon/material/minihoe,
-		/obj/item/clothing/gloves/thick/botany,
 		/obj/item/weapon/material/hatchet,
 		/obj/item/weapon/wirecutters/clippers,
 		/obj/item/weapon/reagent_containers/spray/plantbgone,
@@ -59,7 +58,9 @@
 		/obj/item/weapon/storage/bag/trash,
 		/obj/item/clothing/shoes/galoshes,
 		/obj/item/weapon/storage/box/detergent,
-		/obj/item/weapon/soap
+		/obj/item/weapon/soap,
+		/obj/item/weapon/storage/belt/janitor,
+		/obj/item/clothing/glasses/hud/janitor
 	)
 
 /obj/structure/closet/secure_closet/bar_torch

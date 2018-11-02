@@ -9,14 +9,14 @@
 	var/postStartTicks 		= 0
 
 /datum/event/radiation_storm/announce()
-	command_announcement.Announce("High levels of radiation detected in proximity of the [location_name()]. Please evacuate into one of the shielded maintenance tunnels.", "[location_name()] Sensor Array", new_sound = GLOB.using_map.radiation_detected_sound, zlevels = affecting_z)
+	priority_announcement.Announce("«афиксировано повышение уровн€ радиации поблизости [location_name()]. ¬сему персоналу насто€тельно рекомендуетс€ пройти в экранированные отсеки до покидани€ зоны повышенной радиоактивности. Ёкранированные отсеки - технические тоннели, челноки, камеры охраны, экстренные убежища, лифт, дормиторий.", "—енсоры [location_name()]", new_sound = GLOB.using_map.radiation_detected_sound, zlevels = affecting_z)
 
 /datum/event/radiation_storm/start()
 	GLOB.using_map.make_maint_all_access(1)
 
 /datum/event/radiation_storm/tick()
 	if(activeFor == enterBelt)
-		command_announcement.Announce("The [location_name()] has entered the radiation belt. Please remain in a sheltered area until we have passed the radiation belt.", "[location_name()] Sensor Array", zlevels = affecting_z)
+		priority_announcement.Announce("¬озростание радиационного фона прекращено. Ќасто€тельно рекомендуетс€ оставатьс€ в экранированных помещени€х до снижени€ уровн€ фона.", "—енсоры [location_name()]", zlevels = affecting_z)
 		radiate()
 
 	if(activeFor >= enterBelt && activeFor <= leaveBelt)
@@ -27,7 +27,7 @@
 		radiate()
 
 	else if(activeFor == leaveBelt)
-		command_announcement.Announce("The [location_name()] has passed the radiation belt. Please allow for up to one minute while radiation levels dissipate, and report to the infirmary if you experience any unusual symptoms. Maintenance will lose all access again shortly.", "[location_name()] Sensor Array", zlevels = affecting_z)
+		priority_announcement.Announce("«афиксировано снижение радиационного фона. Ќасто€тельно рекомендуетс€ подождать минуту до окончательного спада радиационного осадка. ќбратитесь в лазарет при обнаружении признаков радиационного заражени€. ƒоступ в технические помещени€ будет возвращен в ближайшее врем€.", "—енсоры [location_name()]", zlevels = affecting_z)
 
 /datum/event/radiation_storm/proc/radiate()
 	var/radiation_level = rand(15, 35)

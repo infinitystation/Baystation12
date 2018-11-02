@@ -28,6 +28,7 @@
 		/obj/item/taperoll/engineering,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/crowbar/brace_jack,
+		/obj/item/device/remote_device/chief_engineer,
 		/obj/item/clothing/glasses/meson,
 		/obj/item/clothing/glasses/welding/superior,
 		/obj/item/clothing/suit/armor/pcarrier/medium,

@@ -25,6 +25,7 @@
 		/obj/item/weapon/reagent_containers/hypospray/vial,
 		/obj/item/device/flashlight/pen,
 		/obj/item/clothing/glasses/hud/health,
+		/obj/item/device/remote_device/chief_medical_officer,
 		/obj/item/clothing/suit/armor/pcarrier/medium,
 		/obj/item/clothing/head/helmet,
 		/obj/item/clothing/glasses/hud/health,

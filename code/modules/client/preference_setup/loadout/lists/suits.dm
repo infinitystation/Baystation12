@@ -6,7 +6,6 @@
 /datum/gear/suit/poncho
 	display_name = "poncho selection"
 	path = /obj/item/clothing/suit/poncho/colored
-	cost = 1
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/suit/security_poncho
@@ -86,6 +85,7 @@
 /datum/gear/suit/leather/New()
 	..()
 	var/jackets = list()
+	jackets += /obj/item/clothing/suit/storage/tgbomber
 	jackets += /obj/item/clothing/suit/storage/toggle/bomber
 	jackets += /obj/item/clothing/suit/storage/leather_jacket/nanotrasen
 	jackets += /obj/item/clothing/suit/storage/toggle/brown_jacket/nanotrasen
@@ -107,12 +107,10 @@
 /datum/gear/suit/blueapron
 	display_name = "apron, blue"
 	path = /obj/item/clothing/suit/apron
-	cost = 1
 
 /datum/gear/suit/overalls
 	display_name = "apron, overalls"
 	path = /obj/item/clothing/suit/apron/overalls
-	cost = 1
 
 /datum/gear/suit/medcoat
 	display_name = "medical suit selection"
@@ -120,12 +118,11 @@
 
 /datum/gear/suit/medcoat/New()
 	..()
-	gear_tweaks += new/datum/gear_tweak/path/specified_types_args(/obj/item/clothing/suit/storage/toggle/fr_jacket, /obj/item/clothing/suit/storage/toggle/labcoat/blue, /obj/item/clothing/suit/surgicalapron)
+	gear_tweaks += new/datum/gear_tweak/path/specified_types_args(/obj/item/clothing/suit/storage/toggle/fr_jacket, /obj/item/clothing/suit/storage/toggle/fr_jacket/ems, /obj/item/clothing/suit/storage/toggle/labcoat/blue, /obj/item/clothing/suit/surgicalapron)
 
 /datum/gear/suit/trenchcoat
 	display_name = "trenchcoat selection"
 	path = /obj/item/clothing/suit
-	cost = 3
 
 /datum/gear/suit/trenchcoat/New()
 	..()
