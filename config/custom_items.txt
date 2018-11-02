@@ -123,6 +123,11 @@ ckey: m1am1
 character_name: Edward Paige
 item_path: /obj/item/device/pmp/personal/csplayer
 }
+{
+ckey: redknighthero
+character_name: Robert Witter
+item_path: /obj/item/device/pmp/personal
+}
 
 #	SHORT ITEMS HERE (3-4)
 
