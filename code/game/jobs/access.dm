@@ -166,6 +166,8 @@
 			return "Supply"
 		if(ACCESS_REGION_NT) //nt
 			return "Nanotrasen"
+		if(ACCESS_REGION_EXP) //exploration
+			return "Exploration"
 
 /proc/get_access_desc(id)
 	var/list/AS = priv_all_access_datums_id || get_all_access_datums_by_id()

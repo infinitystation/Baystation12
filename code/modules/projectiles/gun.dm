@@ -435,13 +435,17 @@
 
 		in_chamber.on_hit(M)
 
-		if (in_chamber.damage_type != PAIN || in_chamber.damage > 4)
+		if (in_chamber.damage > 4)
 			log_and_message_admins("[key_name(user)] commited suicide using \a [src]")
 			user.apply_damage(in_chamber.damage*2.5, in_chamber.damage_type, BP_HEAD, 0, in_chamber.damage_flags(), used_weapon = "Point blank shot in the mouth with \a [in_chamber]")
 			user.death()
 		else
 			to_chat(user, "<span class = 'notice'>Ow...</span>")
 			user.apply_effect(110,PAIN,0)
+			user.adjustBrainLoss(in_chamber.damage*30) //usually damage is 2-3
+			user.flash_eyes()
+			user.eye_blurry += 10
+			user.confused += 10
 		qdel(in_chamber)
 		mouthshoot = 0
 		return

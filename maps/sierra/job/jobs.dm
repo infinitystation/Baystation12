@@ -39,6 +39,7 @@
 		ACCESS_REGION_COMMAND = list(access_change_ids),
 		ACCESS_REGION_GENERAL = list(access_hop, access_change_ids),
 		ACCESS_REGION_SUPPLY = list(access_qm, access_change_ids),
+		ACCESS_REGION_EXP = list(access_el, access_change_ids),
 	)
 
 

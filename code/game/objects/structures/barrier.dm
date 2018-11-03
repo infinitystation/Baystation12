@@ -30,7 +30,6 @@
 	if(health<80)
 		to_chat(user, "<span class='danger'>It will break apart soon!</span>")
 
-
 /obj/structure/barrier/Destroy()
 	if(health <= 0)
 		visible_message("<span class='danger'>[src] was destroyed!</span>")
@@ -175,6 +174,15 @@
 /obj/structure/barrier/bullet_act(var/obj/item/projectile/P)
 	..()
 	take_damage(P.get_structure_damage())
+
+/obj/structure/barrier/attack_generic(var/mob/user, var/damage, var/attack_verb)
+	take_damage(damage)
+	attack_animation(user)
+	if(damage >=1)
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src]!</span>")
+	else
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src] harmlessly!</span>")
+	return 1
 
 /obj/structure/barrier/proc/take_damage(damage)
 	health -= damage * 0.5

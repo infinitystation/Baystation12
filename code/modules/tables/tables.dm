@@ -269,6 +269,16 @@
 //     if(S) shards += S
 // is to avoid filling the list with nulls, as place_shard won't place shards of certain materials (holo-wood, holo-steel)
 
+/obj/structure/table/attack_generic(var/mob/user, var/damage, var/attack_verb)
+	health -= damage
+	attack_animation(user)
+	if(health <= 0)
+		user.visible_message("<span class='danger'>[user] [attack_verb] crushes [src]!</span>")
+		spawn(1) break_to_parts()
+	else
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src]!</span>")
+	return 1
+
 /obj/structure/table/proc/break_to_parts(full_return = 0)
 	var/list/shards = list()
 	var/obj/item/weapon/material/shard/S = null

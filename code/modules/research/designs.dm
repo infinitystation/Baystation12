@@ -1617,7 +1617,7 @@ other types of metals and chemistry for reagents).
 	desc = "This disk allows for integrated circuit printers to print advanced circuitry designs."
 	id = "icupgradv"
 	req_tech = list(TECH_MATERIAL = 3, TECH_ENGINEERING = 3)
-	materials = list(MATERIAL_STEEL = 10000, MATERIAL_GLASS = 10000)
+	materials = list(MATERIAL_STEEL = 500, MATERIAL_GLASS = 500)
 	build_path = /obj/item/disk/integrated_circuit/upgrade/advanced
 	sort_string = "WCLAD"
 
@@ -1626,7 +1626,7 @@ other types of metals and chemistry for reagents).
 	desc = "This disk allows for integrated circuit printers to copy and clone designs instantaneously."
 	id = "icupclo"
 	req_tech = list(TECH_DATA = 3, TECH_MATERIAL = 5)
-	materials = list(MATERIAL_STEEL = 10000, MATERIAL_GLASS = 10000)
+	materials = list(MATERIAL_STEEL = 500, MATERIAL_GLASS = 500)
 	build_path = /obj/item/disk/integrated_circuit/upgrade/clone
 	sort_string = "WCLAE"
 
