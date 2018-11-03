@@ -11,25 +11,25 @@
 /datum/access/petrov
 	id = access_petrov
 	desc = "Petrov"
-	region = ACCESS_REGION_GENERAL
+	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_petrov_helm = 75
 /datum/access/petrov_helm
 	id = access_petrov_helm
 	desc = "Petrov Helm"
-	region = ACCESS_REGION_GENERAL
+	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_guppy_helm = 76
 /datum/access/guppy_helm
 	id = access_guppy_helm
 	desc = "General Utility Pod Helm"
-	region = ACCESS_REGION_GENERAL
+	region = ACCESS_REGION_EXP
 
 /var/const/access_expedition_shuttle_helm = 77
 /datum/access/exploration_shuttle_helm
 	id = access_expedition_shuttle_helm
 	desc = "Charon Helm"
-	region = ACCESS_REGION_GENERAL
+	region = ACCESS_REGION_EXP
 
 /var/const/access_iaa = 78
 /datum/access/iaa
@@ -48,13 +48,13 @@
 /datum/access/exploration_shuttle
 	id = access_expedition_shuttle
 	desc = "Charon"
-	region = ACCESS_REGION_GENERAL
+	region = ACCESS_REGION_EXP
 
 /var/const/access_guppy = 89
 /datum/access/guppy
 	id = access_guppy
 	desc = "General Utility Pod"
-	region = ACCESS_REGION_GENERAL
+	region = ACCESS_REGION_EXP
 
 /var/const/access_seneng = 90
 /datum/access/seneng
@@ -72,13 +72,13 @@
 /datum/access/explorer
 	id = access_explorer
 	desc = "Explorer"
-	region = ACCESS_REGION_RESEARCH
+	region = ACCESS_REGION_EXP
 
 /var/const/access_el = 94
 /datum/access/el
 	id = access_el
 	desc = "Exploration Leader"
-	region = ACCESS_REGION_RESEARCH
+	region = ACCESS_REGION_EXP
 
 /var/const/access_commissary = 96
 /datum/access/commissary
