@@ -323,3 +323,8 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
 	flash_protection = FLASH_PROTECTION_MAJOR
+
+/obj/item/clothing/head/peakedcap
+	name = "peaked cap"
+	desc = "It's a peaked cap, designed and created by TX Fabrication Corp."
+	icon_state = "peakedcap"

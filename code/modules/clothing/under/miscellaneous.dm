@@ -712,3 +712,9 @@
 	icon_state = "kimono"
 	worn_state = "kimono"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+
+/obj/item/clothing/under/gentelmansuit
+	desc = "A gentleman suit, designed and created by TX Fabrication Corp."
+	name = "gentelman suit"
+	icon_state = "gentelmansuit"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS

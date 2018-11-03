@@ -232,6 +232,21 @@ ckey: courierr
 character_name: Mia Lee
 item_path: /obj/item/modular_computer/wrist/advanced 
 }
+{
+ckey: bigrage
+character_name: Jonathon Neely
+item_path: /obj/item/clothing/suit/storage/det_trench/ft/black
+}
+{
+ckey: bigrage
+character_name: Jonathon Neely
+item_path: /obj/item/clothing/head/peakedcap
+}
+{
+ckey: bigrage
+character_name: Jonathon Neely
+item_path: /obj/item/clothing/under/gentelmansuit
+}
 
 #	MEDIUM ITEMS HERE (5-6)
 

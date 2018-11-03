@@ -115,6 +115,9 @@
 	name = "grey trenchcoat"
 	icon_state = "detective2"
 
+/obj/item/clothing/suit/storage/det_trench/ft/black
+	name = "black trenchcoat"
+	icon_state = "detective3"
 
 //Forensics
 /obj/item/clothing/suit/storage/forensics
