@@ -48,13 +48,13 @@
 /datum/access/exploration_shuttle
 	id = access_expedition_shuttle
 	desc = "Charon"
-	region = ACCESS_REGION_EXP
+	region = ACCESS_REGION_GENERAL
 
 /var/const/access_guppy = 89
 /datum/access/guppy
 	id = access_guppy
 	desc = "General Utility Pod"
-	region = ACCESS_REGION_EXP
+	region = ACCESS_REGION_GENERAL
 
 /var/const/access_seneng = 90
 /datum/access/seneng
@@ -72,13 +72,13 @@
 /datum/access/explorer
 	id = access_explorer
 	desc = "Explorer"
-	region = ACCESS_REGION_EXP
+	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_el = 94
 /datum/access/el
 	id = access_el
 	desc = "Exploration Leader"
-	region = ACCESS_REGION_EXP
+	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_commissary = 96
 /datum/access/commissary
