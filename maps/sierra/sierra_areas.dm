@@ -825,9 +825,12 @@
 // Medbay
 
 /area/medical/equipstorage
-	name = "Equipment Storage"
+	name = "Infirmary Storage"
 	icon_state = "medbay4"
-	ambience = list('sound/ambience/signal.ogg')
+
+/area/medical/maintenance_equipstorage
+	name = "Infirmary Maintenance Storage"
+	icon_state = "medbay4"
 
 /area/medical/infirmary
 	name = "Infirmary Hallway"
@@ -836,7 +839,6 @@
 /area/medical/infirmreception
 	name = "Infirmary Reception"
 	icon_state = "medbay2"
-	ambience = list('sound/ambience/signal.ogg')
 
 /area/medical/locker
 	name = "Infirmary Locker Room"
@@ -1106,6 +1108,8 @@
 	name = "Engine Room"
 	icon_state = "engine"
 	sound_env = LARGE_ENCLOSED
+	area_flags = AREA_FLAG_ION_SHIELDED
+
 
 /area/engineering/drone_fabrication
 	name = "Engineering Drone Fabrication"

@@ -68,6 +68,12 @@ Single Use Emergency Pouches
 	else
 		to_chat(user, "<span class='notice'>[src] needs to be opened before use.</span>")
 
+/obj/item/weapon/storage/med_pouch/handle_item_insertion(mob/user as mob)
+	if(opened)
+		. = ..()
+	to_chat(user, "<span class='notice'>[src] needs to be opened before you can put something in it.</span>")
+	return
+
 /obj/item/weapon/storage/med_pouch/trauma
 	name = "trauma pouch"
 	base_icon = "red"
