@@ -29,7 +29,7 @@
 	allowed_roles = NANOTRASEN_ROLES
 
 /datum/gear/accessory/ntaward_sci
-	allowed_roles = NANOTRASEN_ROLES
+	allowed_roles = RESEARCH_ROLES
 
 /datum/gear/accessory/stethoscope
 	allowed_roles = STERILE_ROLES

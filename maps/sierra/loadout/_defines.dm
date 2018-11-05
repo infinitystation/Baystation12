@@ -1,42 +1,42 @@
 //The following is a list of defs and blacklist to be used (or not) for the Sierra loadout.
 /datum/map/sierra
-	loadout_blacklist = list(/datum/gear/union_card)
+	loadout_blacklist = list(/datum/gear/union_card, /datum/gear/eyes/security/aviators)
 //For all exploration crew
 #define EXPLORATION_ROLES list(\
-	/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot,\
+	/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, \
 	/datum/job/explorer_medic, /datum/job/explorer_engineer)
 
 //For jobs that allow for decorative or ceremonial clothing
 #define FORMAL_ROLES list(\
-	/datum/job/iaa, /datum/job/rd, /datum/job/senior_scientist,\
-	/datum/job/scientist, /datum/job/scientist_assistant,\
-	/datum/job/psychiatrist, ,\
-	/datum/job/assistant, /datum/job/bartender, /datum/job/merchant, /datum/job/merchant_trainee,\
+	/datum/job/iaa, /datum/job/rd, /datum/job/senior_scientist, \
+	/datum/job/scientist, /datum/job/scientist_assistant, \
+	/datum/job/psychiatrist, \
+	/datum/job/assistant, /datum/job/bartender, /datum/job/merchant, /datum/job/merchant_trainee, \
 	/datum/job/stowaway, /datum/job/detective)
 
 //For civilian jobs that may have a uniform, but not a strict one
 #define SEMIFORMAL_ROLES list(\
-	/datum/job/assistant,/datum/job/mining, /datum/job/scientist_assistant,\
-	/datum/job/psychiatrist, /datum/job/bartender, /datum/job/merchant, /datum/job/merchant_trainee,\
-	/datum/job/stowaway, /datum/job/scientist,\
+	/datum/job/assistant,/datum/job/mining, /datum/job/scientist_assistant, \
+	/datum/job/psychiatrist, /datum/job/bartender, /datum/job/merchant, /datum/job/merchant_trainee, \
+	/datum/job/stowaway, /datum/job/scientist, \
 	/datum/job/senior_scientist, /datum/job/detective)
 
 //For civilian jobs that may have a strict uniform.
 #define SEMIANDFORMAL_ROLES list(\
-	/datum/job/assistant,/datum/job/mining, /datum/job/scientist_assistant,\
-	/datum/job/psychiatrist, /datum/job/bartender, /datum/job/merchant, /datum/job/merchant_trainee,\
-	/datum/job/iaa, /datum/job/rd,\
-	/datum/job/senior_scientist, /datum/job/scientist,\
+	/datum/job/assistant,/datum/job/mining, /datum/job/scientist_assistant, \
+	/datum/job/psychiatrist, /datum/job/bartender, /datum/job/merchant, /datum/job/merchant_trainee, \
+	/datum/job/iaa, /datum/job/rd, \
+	/datum/job/senior_scientist, /datum/job/scientist, \
 	 ,/datum/job/stowaway, /datum/job/detective)
 
 //For NanoTrasen employees
 #define NANOTRASEN_ROLES list(\
-	/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,\
-	/datum/job/iaa, ,\
-	/datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/engineer_trainee,\
-	/datum/job/officer, /datum/job/warden, /datum/job/detective,\
-	/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee,/datum/job/chemist,\
-	/datum/job/psychiatrist,\
+	/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos, \
+	/datum/job/iaa, \
+	/datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/engineer_trainee, \
+	/datum/job/officer, /datum/job/warden, /datum/job/detective, \
+	/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee,/datum/job/chemist, \
+	/datum/job/psychiatrist, \
 	/datum/job/qm, /datum/job/cargo_tech, /datum/job/cargo_assistant,\
 	/datum/job/janitor, /datum/job/chef, /datum/job/bartender,\
 	/datum/job/senior_scientist, /datum/job/scientist, /datum/job/mining,\
@@ -73,7 +73,7 @@
 
 //For members of Engineering, Cargo, and Research
 #define TECHNICAL_ROLES list(\
-	/datum/job/senior_engineer, /datum/job/engineer, , /datum/job/roboticist, /datum/job/qm,\
+	/datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/qm,\
 	/datum/job/cargo_tech, /datum/job/cargo_assistant,/datum/job/mining,\
 	/datum/job/scientist_assistant, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/rd,\
 	/datum/job/senior_scientist, /datum/job/scientist, /datum/job/chief_engineer,\
