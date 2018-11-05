@@ -48,7 +48,7 @@
 		/obj/item/clothing/under/rank/warden/navyblue/alt,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,
-		/obj/item/clothing/glasses/sunglasses,
+		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
 		/obj/item/taperoll/police,
 		/obj/item/weapon/storage/belt/holster/security,
 		/obj/item/weapon/reagent_containers/spray/pepper,
