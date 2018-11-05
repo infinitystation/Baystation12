@@ -160,6 +160,7 @@ item_path: /obj/item/clothing/suit/moghes_coat
 ckey: thehero13
 character_name: Jake Pater
 item_path: /obj/item/clothing/accessory/scarf/red
+item_desc: A perfect conductor of Hamon.
 }
 {
 ckey: chowny
