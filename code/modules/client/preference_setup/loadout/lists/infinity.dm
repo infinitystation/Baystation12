@@ -92,3 +92,7 @@
 	atags["SAARE tag"] = /obj/item/clothing/accessory/armor/tag/saare
 	atags["SCP tag"] = /obj/item/clothing/accessory/armor/tag/scp
 	gear_tweaks += new/datum/gear_tweak/path(atags)
+
+/datum/gear/eyes/security/goggles
+	display_name = "Security HUD goggles"
+	path = /obj/item/clothing/glasses/sunglasses/sechud/goggles
