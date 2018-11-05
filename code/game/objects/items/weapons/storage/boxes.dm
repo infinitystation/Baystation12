@@ -233,7 +233,7 @@
 /obj/item/weapon/storage/box/supermatters
 	name = "box of supermatter grenades"
 	desc = "A box containing 5 highly experimental supermatter grenades."
-	icon_state = "radbox"
+	icon_state = "box_of_doom"
 	startswith = list(/obj/item/weapon/grenade/supermatter = 5)
 
 /obj/item/weapon/storage/box/trackimp

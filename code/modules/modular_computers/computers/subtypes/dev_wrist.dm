@@ -51,6 +51,5 @@
 /obj/item/weapon/storage/box/wPDAs
 	name = "box of spare wrist PDAs"
 	desc = "A box of spare wrist PDA microcomputers."
-	icon = 'icons/obj/pda.dmi'
-	icon_state = "pdabox"
+	icon_state = "pda"
 	startswith = list(/obj/item/modular_computer/wrist = 5)
