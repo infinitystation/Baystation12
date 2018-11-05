@@ -71,6 +71,10 @@
 	icon = 'icons/obj/mobile_ladders.dmi'
 	base_icon = "mobile_ladder"
 
+/obj/structure/ladder/mobile/New()
+	..()
+	update_icon()
+
 /obj/structure/ladder/mobile/verb/fold()
 	set name = "Fold Ladder"
 	set category = "Object"
