@@ -35,13 +35,14 @@ hodovoy - skrell
 taushai - skrell
 knayu - skrell
 cre77 - resomi
+s1334 - resomi
 solark - resomi
 taushai - resomi
 netreson - resomi
+hardstuck - resomi
 kirill1243 - resomi
 coldmantis13 - resomi
 wheatley2013 - resomi
-s1334 - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
@@ -100,7 +101,7 @@ denmag - tajaran
 solark - tajaran
 forrya - tajaran
 arhod - tajaran
-redknighthero - bionic
 wheatley2013 - adherent
 sosiskoed - adherent
 s1334 - adherent
+redknighthero - bionic
