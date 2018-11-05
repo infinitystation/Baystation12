@@ -4,21 +4,22 @@
 	icon = 'icons/obj/coatrack.dmi'
 	icon_state = "coatrack0"
 	var/obj/item/clothing/suit/coat
-	var/list/allowed = list(/obj/item/clothing/suit/storage/toggle/labcoat, /obj/item/clothing/suit/storage/det_trench)
+	var/list/allowed = list(/obj/item/clothing/suit/storage/toggle/labcoat, /obj/item/clothing/suit/storage/det_trench, /obj/item/clothing/suit/storage/hoscoat)
 
 /obj/structure/coatrack/attack_hand(mob/user as mob)
-	user.visible_message("[user] takes [coat] off \the [src].", "You take [coat] off the \the [src]")
-	if(!user.put_in_active_hand(coat))
-		coat.loc = get_turf(user)
-	coat = null
-	update_icon()
+	if(coat)
+		user.visible_message("[user] takes [coat] off \the [src].", "You take [coat] off the \the [src]")
+		if(!user.put_in_active_hand(coat))
+			coat.loc = get_turf(user)
+		coat = null
+		update_icon()
 
 /obj/structure/coatrack/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	var/can_hang = 0
 	for (var/T in allowed)
 		if(istype(W,T))
 			can_hang = 1
-	if (can_hang && !coat && user.unEquip(coat, src))
+	if (can_hang && !coat && user.unEquip(W, src))
 		user.visible_message("[user] hangs [W] on \the [src].", "You hang [W] on the \the [src]")
 		coat = W
 		update_icon()
@@ -49,3 +50,5 @@
 		overlays += image(icon, icon_state = "coat_cmo")
 	if (istype(coat, /obj/item/clothing/suit/storage/det_trench))
 		overlays += image(icon, icon_state = "coat_det")
+	if (istype(coat, /obj/item/clothing/suit/storage/hoscoat))
+		overlays += image(icon, icon_state = "coat_hos")
