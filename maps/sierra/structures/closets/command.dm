@@ -29,7 +29,7 @@
 		/obj/item/ammo_magazine/c44,
 		/obj/item/weapon/storage/box/PDAs,
 		/obj/item/weapon/storage/box/ids,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/captain, /obj/item/weapon/storage/backpack/satchel_cap)),
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/captain, /obj/item/weapon/storage/backpack/satchel/cap)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/captain, /obj/item/weapon/storage/backpack/messenger/com))
 	)
 

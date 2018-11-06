@@ -25,7 +25,7 @@
 /obj/cryo_spawner/attack_ghost(mob/user)
 	var/client/C = user.client
 
-	if(!ticker || ticker.current_state != GAME_STATE_PLAYING)
+	if(GAME_STATE != RUNLEVEL_GAME)
 		return
 
 	if(rights_required)

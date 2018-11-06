@@ -71,4 +71,4 @@
 
 /datum/event/electrical_storm/end()
 	..()
-	priority_announcement.Announce("The [location_name()] has cleared the electrical storm. Please repair any electrical overloads.", "Electrical Storm Alert")
+	priority_announcement.Announce("The [location_name()] has cleared the electrical storm. Please repair any electrical overloads.", "Electrical Storm Alert", zlevels = affecting_z)

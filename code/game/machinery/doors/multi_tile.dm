@@ -47,7 +47,7 @@
 		bound_height = width * world.icon_size
 
 
-/obj/machinery/door/airlock/multi_tile/update_icon(state=0, override=0)
+/obj/machinery/door/airlock/multi_tile/on_update_icon(state=0, override=0)
 	..()
 	if(connections in list(NORTH, SOUTH, NORTH|SOUTH))
 		if(connections in list(WEST, EAST, EAST|WEST))
@@ -150,7 +150,7 @@
 
 /obj/machinery/door/airlock/multi_tile/research
 	door_color = COLOR_WHITE
-	stripe_color = COLOR_NT_RED
+	stripe_color = COLOR_BOTTLE_GREEN
 
 /obj/machinery/door/airlock/multi_tile/science
 	door_color = COLOR_WHITE
@@ -211,7 +211,7 @@
 
 /obj/machinery/door/airlock/multi_tile/glass/research
 	door_color = COLOR_WHITE
-	stripe_color = COLOR_NT_RED
+	stripe_color = COLOR_BOTTLE_GREEN
 
 /obj/machinery/door/airlock/multi_tile/glass/science
 	door_color = COLOR_WHITE

@@ -167,17 +167,15 @@
 				sleep(600)
 
 	//preferences datum - also holds some persistant data for the client (because we may as well keep these datums to a minimum)
-	prefs = preferences_datums[ckey]
+	prefs = SScharacter_setup.preferences_datums[ckey]
 	if(!prefs)
 		prefs = new /datum/preferences(src)
-		preferences_datums[ckey] = prefs
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
 	prisoner_init()
 	apply_fps(prefs.clientfps)
 
 	. = ..()	//calls mob.Login()
-	prefs.sanitize_preferences()
 
 	GLOB.using_map.map_info(src)
 
@@ -228,12 +226,12 @@
 		src.control_freak = 0 //Devs need 0 for profiler access
 
 /client/proc/handle_staff_login()
-	if(admin_datums[ckey] && ticker)
+	if(admin_datums[ckey] && SSticker)
 		var/datum/admins/holder = admin_datums[ckey]
 		message_staff("[key_name(src)] ([holder.rank]) logged.")
 
 /client/proc/handle_staff_logout()
-	if(admin_datums[ckey] && ticker)
+	if(admin_datums[ckey] && SSticker)
 		var/datum/admins/holder = admin_datums[ckey]
 		message_staff("[key_name(src)] ([holder.rank]) logout.")
 		if(!GLOB.admins.len) //Apparently the admin logging out is no longer an admin at this point, so we have to check this towards 0 and not towards 1. Awell.

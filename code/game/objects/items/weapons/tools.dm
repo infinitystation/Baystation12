@@ -22,7 +22,7 @@
 	item_state = "wrench"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
-	force = 5.0
+	force = 7
 	throwforce = 7.0
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
@@ -32,7 +32,7 @@
 	safely = 1
 
 /obj/item/weapon/wrench/Initialize()
-	icon_state = "wrench[pick("","_red","_black")]"
+	icon_state = "wrench[pick("","_red","_black","_green","_blue")]"
 	. = ..()
 /obj/item/weapon/wrench/power
 	name = "hand drill"
@@ -177,9 +177,22 @@
 	safely = 1
 
 /obj/item/weapon/wirecutters/Initialize()
-	if(prob(50))
-		icon_state = "cutters-y"
-		item_state = "cutters_yellow"
+	switch(pick("red","yellow","green","blue","black"))
+		if ("red")
+			icon_state = "cutters"
+			item_state = "cutters"
+		if ("yellow")
+			icon_state = "cutters_yellow"
+			item_state = "cutters_yellow"
+		if ("green")
+			icon_state = "cutters_green"
+			item_state = "cutters_green"
+		if ("blue")
+			icon_state = "cutters_blue"
+			item_state = "cutters_blue"
+		if ("black")
+			icon_state = "cutters_black"
+			item_state = "cutters_black"
 	. = ..()
 
 /obj/item/weapon/wirecutters/attack(mob/living/carbon/C as mob, mob/user as mob)
@@ -375,22 +388,27 @@
 		if((!waterproof && submerged()) || !remove_fuel(0.05))
 			setWelding(0)
 
-/obj/item/weapon/weldingtool/afterattack(obj/O as obj, mob/user as mob, proximity)
-	if(!proximity) return
-	if (istype(O, /obj/structure/reagent_dispensers/fueltank) && get_dist(src,O) <= 1 && !src.welding)
+/obj/item/weapon/weldingtool/afterattack(var/obj/O, var/mob/user, proximity)
+	if(!proximity)
+		return
+
+	if(istype(O, /obj/structure/reagent_dispensers/fueltank) && get_dist(src,O) <= 1 && !welding)
 		if(!tank)
-			to_chat(user, "\The [src] has no tank attached!")
+			to_chat(user, SPAN_WARNING("\The [src] has no tank attached!"))
 			return
 		O.reagents.trans_to_obj(tank, tank.max_fuel)
-		to_chat(user, "<span class='notice'>You refuel \the [tank].</span>")
+		to_chat(user, SPAN_NOTICE("You refuel \the [tank]."))
 		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
 		return
-	if (src.welding)
+
+	if(welding)
 		remove_fuel(1)
 		var/turf/location = get_turf(user)
 		if(isliving(O))
 			var/mob/living/L = O
 			L.IgniteMob()
+		else if(istype(O))
+			O.HandleObjectHeating(src, user, 700)
 		if (istype(location, /turf))
 			location.hotspot_expose(700, 50, 1)
 	return
@@ -449,7 +467,7 @@
 		return ITEM_SIZE_NO_CONTAINER
 	return ..()
 
-/obj/item/weapon/weldingtool/update_icon()
+/obj/item/weapon/weldingtool/on_update_icon()
 	..()
 
 	var/datum/extension/base_icon_state/bis = get_extension(src, /datum/extension/base_icon_state)
@@ -538,11 +556,7 @@
 		if(safety<FLASH_PROTECTION_MAJOR)
 			if(E.damage > 10)
 				to_chat(user, "<span class='warning'>Your eyes are really starting to hurt. This can't be good for you!</span>")
-
-			if (E.damage >= E.min_broken_damage)
-				to_chat(H, "<span class='danger'>You go blind!</span>")
-				H.sdisabilities |= BLIND
-			else if (E.damage >= E.min_bruised_damage)
+			if (E.damage >= E.min_bruised_damage)
 				to_chat(H, "<span class='danger'>You go blind!</span>")
 				H.eye_blind = 5
 				H.eye_blurry = 5
@@ -688,7 +702,9 @@
 	icon_state = "crowbar"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
-	force = 7.0
+	force = 14
+	attack_cooldown = 2*DEFAULT_WEAPON_COOLDOWN
+	melee_accuracy_bonus = -20
 	throwforce = 7.0
 	throw_range = 3
 	item_state = "crowbar"

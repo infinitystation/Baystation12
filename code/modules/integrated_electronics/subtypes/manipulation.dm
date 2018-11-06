@@ -263,7 +263,7 @@
 				for(var/i in 1 to length(harvest_output))
 					harvest_output[i] = weakref(harvest_output[i])
 
-				if(harvest_output.len)
+				if(length(harvest_output))
 					set_pin_data(IC_OUTPUT, 1, harvest_output)
 					push_data()
 			if(1)
@@ -319,9 +319,11 @@
 	var/list/seed_output = list()
 	for(var/i in 1 to rand(1,4))
 		var/obj/item/seeds/seeds = new(get_turf(O))
-		seeds.seed_type = plant_controller.seeds[O.seed.name]
+		seeds.seed = SSplants.seeds[O.plantname]
+		seeds.seed_type = SSplants.seeds[O.seed.name]
 		seeds.update_seed()
 		seed_output += weakref(seeds)
+	qdel(O)
 
 	if(seed_output.len)
 		set_pin_data(IC_OUTPUT, 1, seed_output)

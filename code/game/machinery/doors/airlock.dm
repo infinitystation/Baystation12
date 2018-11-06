@@ -123,6 +123,10 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock/security/striped
 	stripe_color = COLOR_ORANGE
 
+/obj/machinery/door/airlock/security/research
+	door_color = COLOR_WHITE
+	stripe_color = COLOR_NT_RED
+
 /obj/machinery/door/airlock/engineering
 	name = "Maintenance Hatch"
 	door_color = COLOR_AMBER
@@ -149,7 +153,7 @@ var/list/airlock_overlays = list()
 
 /obj/machinery/door/airlock/research
 	door_color = COLOR_WHITE
-	stripe_color = COLOR_NT_RED
+	stripe_color = COLOR_BOTTLE_GREEN
 
 /obj/machinery/door/airlock/science
 	door_color = COLOR_WHITE
@@ -238,7 +242,7 @@ var/list/airlock_overlays = list()
 
 /obj/machinery/door/airlock/glass/research
 	door_color = COLOR_WHITE
-	stripe_color = COLOR_NT_RED
+	stripe_color = COLOR_BOTTLE_GREEN
 
 /obj/machinery/door/airlock/glass/science
 	door_color = COLOR_WHITE
@@ -617,7 +621,7 @@ About the new airlock wires panel:
 		return 0
 
 
-/obj/machinery/door/airlock/update_icon(state=0, override=0)
+/obj/machinery/door/airlock/on_update_icon(state=0, override=0)
 	if(connections in list(NORTH, SOUTH, NORTH|SOUTH))
 		if(connections in list(WEST, EAST, EAST|WEST))
 			set_dir(SOUTH)

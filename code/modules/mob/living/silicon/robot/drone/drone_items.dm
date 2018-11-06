@@ -25,7 +25,8 @@
 		/obj/item/weapon/computer_hardware,
 		/obj/item/weapon/fuel_assembly,
 		/obj/item/stack/material/deuterium,
-		/obj/item/stack/material/tritium
+		/obj/item/stack/material/tritium,
+		/obj/item/stack/tile
 		)
 
 	var/obj/item/wrapped = null // Item currently being held.
@@ -164,7 +165,7 @@
 	to_chat(src.loc, "<span class='warning'>You drop \the [wrapped].</span>")
 	wrapped.loc = get_turf(src)
 	wrapped = null
-	//update_icon()
+	//on_update_icon()
 
 /obj/item/weapon/gripper/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	// Don't fall through and smack people with gripper, instead just no-op
@@ -240,16 +241,14 @@
 		var/mob/living/silicon/robot/A = target
 		if(A.opened)
 			if(A.cell)
-
 				wrapped = A.cell
-
 				A.cell.add_fingerprint(user)
 				A.cell.update_icon()
 				A.update_icon()
-				A.cell.loc = src
+				A.cell.forceMove(src)
 				A.cell = null
-
 				user.visible_message("<span class='danger'>[user] removes the power cell from [A]!</span>", "You remove the power cell.")
+				A.power_down()
 
 /obj/item/weapon/gripper/proc/finish_using(var/atom/target, var/mob/living/user, params, force_holder, resolved)
 

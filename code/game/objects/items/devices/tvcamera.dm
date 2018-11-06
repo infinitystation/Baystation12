@@ -26,6 +26,7 @@
 	radio = new(src)
 	radio.listening = FALSE
 	radio.set_frequency(ENT_FREQ)
+	radio.power_usage = 0
 	. = ..()
 
 /obj/item/device/camera/tvcamera/examine()
@@ -77,7 +78,7 @@
 	if(!href_list["close"])
 		attack_self(usr)
 
-/obj/item/device/camera/tvcamera/update_icon()
+/obj/item/device/camera/tvcamera/on_update_icon()
 	..()
 	if(camera.status)
 		icon_state = "camcorder_on"

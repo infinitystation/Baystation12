@@ -70,8 +70,8 @@
 
 //Not that it should ever get deleted but just in case
 /obj/effect/overmap/sector/exoplanet/Destroy()
-		. = ..()
-		STOP_PROCESSING(SSobj, src)
+	. = ..()
+	STOP_PROCESSING(SSobj, src)
 
 /obj/effect/overmap/sector/exoplanet/Process()
 	if(animals.len < 0.5*max_animal_count && !repopulating)
@@ -221,6 +221,7 @@
 			newgases -= "phoron"
 		if(prob(50)) //alium gas should be slightly less common than mundane shit
 			newgases -= "aliether"
+		newgases -= "watervapor"
 
 		var/sanity = prob(99.9)
 
@@ -380,8 +381,9 @@
 	for(var/i = 1 to flora_diversity)
 		var/datum/seed/S = new()
 		S.randomize()
-		S.set_trait(TRAIT_PRODUCT_ICON,"alien[rand(1,5)]")
-		S.set_trait(TRAIT_PLANT_ICON,"alien[rand(1,4)]")
+		var/planticon = "alien[rand(1,4)]"
+		S.set_trait(TRAIT_PRODUCT_ICON,planticon)
+		S.set_trait(TRAIT_PLANT_ICON,planticon)
 		var/color = pick(plantcolors)
 		if(color == "RANDOM")
 			color = get_random_colour(0,75,190)

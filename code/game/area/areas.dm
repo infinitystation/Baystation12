@@ -171,7 +171,7 @@
 	return
 
 #define DO_PARTY(COLOR) animate(color = COLOR, time = 0.5 SECONDS, easing = QUAD_EASING)
-/area/update_icon()
+/area/on_update_icon()
 	if((atmosalm || fire || eject || party) && (!requires_power||power_environ) && !istype(src, /area/space))//If it doesn't require power, can still activate this proc.
 		if(fire && !atmosalm && !eject && !party) // FIRE
 			color = "#ff9292"

@@ -2,8 +2,7 @@
 	name = "NSV Sierra"
 	fore_dir = WEST
 	vessel_mass = 190
-	default_delay = 25 SECONDS
-	speed_mod = 5 SECONDS
+	vessel_mass = 40000 // Масса Факела, надо будет - смените ~bear1ake
 	start_x = 4
 	start_y = 5
 	base = TRUE

@@ -262,7 +262,7 @@
 		),
 		TAG_FACTION = list(
 			FACTION_EXPEDITIONARY,
-			FACTION_TORCH_LLC,
+			FACTION_CORPORATE,
 			FACTION_NANOTRASEN,
 			FACTION_PCRC,
 			FACTION_HEPHAESTUS,
@@ -393,7 +393,7 @@
 		return 0
 
 	//This is a terrible hack and I should be ashamed.
-	var/datum/seed/diona = plant_controller.seeds["diona"]
+	var/datum/seed/diona = SSplants.seeds["diona"]
 	if(!diona)
 		return 0
 

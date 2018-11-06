@@ -21,6 +21,14 @@
 	glass_name = "tomato juice"
 	glass_desc = "Are you sure this is tomato juice?"
 
+	chilling_products = list(/datum/reagent/coagulated_blood)
+	chilling_point = 249
+	chilling_message = "coagulates and clumps together."
+
+	heating_products = list(/datum/reagent/coagulated_blood)
+	heating_point = 318
+	heating_message = "coagulates and clumps together."
+
 /datum/reagent/blood/initialize_data(var/newdata)
 	..()
 	if(data && data["blood_colour"])
@@ -68,10 +76,11 @@
 	var/weakref/W = data["donor"]
 	if (!W)
 		blood_splatter(T, src, 1)
+		return
 	W = W.resolve()
-	if(istype(W, /mob/living/carbon/human))
+	if(ishuman(W))
 		blood_splatter(T, src, 1)
-	else if(istype(W, /mob/living/carbon/alien))
+	else if(isalien(W))
 		var/obj/effect/decal/cleanable/blood/B = blood_splatter(T, src, 1)
 		if(B)
 			B.blood_DNA["UNKNOWN DNA STRUCTURE"] = "X*"
@@ -122,6 +131,7 @@
 		M.antibodies |= src.data["antibodies"]
 	..()
 
+// Water!
 #define WATER_LATENT_HEAT 9500 // How much heat is removed when applied to a hot turf, in J/unit (9500 makes 120 u of water roughly equivalent to 2L
 /datum/reagent/water
 	name = "Water"
@@ -132,6 +142,11 @@
 	taste_description = "water"
 	glass_name = "water"
 	glass_desc = "The father of all refreshments."
+	chilling_products = list(/datum/reagent/drink/ice)
+	chilling_point = T0C
+	heating_products = list(/datum/reagent/water/boiling)
+	heating_point = T100C
+	heating_message = "starts to boil."
 
 /datum/reagent/water/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(!istype(M, /mob/living/carbon/slime) && alien != IS_SLIME)
@@ -168,7 +183,6 @@
 		var/turf/simulated/S = T
 		S.wet_floor(8, TRUE)
 
-
 /datum/reagent/water/touch_obj(var/obj/O)
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/monkeycube))
 		var/obj/item/weapon/reagent_containers/food/snacks/monkeycube/cube = O
@@ -200,6 +214,33 @@
 		M.visible_message("<span class='warning'>[S]'s flesh sizzles where the water touches it!</span>", "<span class='danger'>Your flesh burns in the water!</span>")
 		M.confused = max(M.confused, 2)
 
+/datum/reagent/water/boiling
+	name = "Boiling water"
+	chilling_products = list(/datum/reagent/water)
+	chilling_point =   99 CELCIUS
+	chilling_message = "stops boiling."
+	heating_products =  list(null)
+	heating_point =    null
+
+// Ice is a drink for some reason.
+/datum/reagent/drink/ice
+	name = "Ice"
+	description = "Frozen water, your dentist wouldn't like you chewing this."
+	taste_description = "ice"
+	taste_mult = 1.5
+	reagent_state = SOLID
+	color = "#619494"
+	adj_temp = -5
+
+	glass_name = "ice"
+	glass_desc = "Generally, you're supposed to put something else in there too..."
+	glass_icon = DRINK_ICON_NOISY
+
+	heating_message = "cracks and melts."
+	heating_products = list(/datum/reagent/water)
+	heating_point = 299 // This is about 26C, higher than the actual melting point of ice but allows drinks to be made properly without weird workarounds.
+
+// Fuel.
 /datum/reagent/fuel
 	name = "Welding fuel"
 	description = "A stable hydrazine-based compound whose exact manufacturing specifications are a closely-guarded secret. One of the most common fuels in human space. Extremely flammable."
@@ -235,3 +276,11 @@
 		explosion(T,-1,1,2)
 	remove_self(volume)
 
+/datum/reagent/coagulated_blood
+	name = "Coagulated Blood"
+	color = "#aa0000"
+	taste_description = "chewy iron"
+	taste_mult = 1.5
+	description = "When exposed to unsuitable conditions, such as the floor or an oven, blood becomes coagulated and useless for transfusions. It's great for making blood pudding, though."
+	glass_name = "tomato salsa"
+	glass_desc = "Are you sure this is tomato salsa?"

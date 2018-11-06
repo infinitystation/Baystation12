@@ -13,7 +13,7 @@
 	user.set_machine(src)
 
 	var/list/dat = list()
-
+	
 	dat += "<h1>Keycard Authentication Device</h1>"
 
 	dat += "This device is used to trigger some high security events. It requires the simultaneous swipe of two high-level ID cards."
@@ -37,16 +37,17 @@
 		dat += "<A href='?src=\ref[src];triggerevent=Grant Emergency Maintenance Access'>Grant Emergency Maintenance Access</A><br>"
 		dat += "<A href='?src=\ref[src];triggerevent=Revoke Emergency Maintenance Access'>Revoke Emergency Maintenance Access</A><br>"
 		dat += "<A href='?src=\ref[src];triggerevent=Grant Nuclear Authorization Code'>Grant Nuclear Authorization Code</A><br>"
+		dat += "<a href='?src=\ref[src];triggerevent=Evacuate'>Initiate Evacuation Procedures</a><br>"
 	if(screen == 2)
 		dat += "Please swipe your card to authorize the following event: <b>[event]</b>"
 		dat += "<p><A href='?src=\ref[src];reset=1'>Back</A>"
-
+	
 	var/datum/browser/popup = new(user, "kad_window", "Keycard Authentication Device", 500, 250)
 	popup.set_content(JOINTEXT(dat))
 	popup.open()
 	return
 
-/obj/machinery/keycard_auth/torch/trigger_event()
+/obj/machinery/keycard_auth/torch/trigger_event()	
 	switch(event)
 		if("Red alert")
 			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
@@ -83,3 +84,11 @@
 		if("Unbolt All Saferooms")
 			GLOB.using_map.unbolt_saferooms()
 			feedback_inc("unbolted_saferoom",1)
+		if("Evacuate")
+			if(!evacuation_controller)
+				to_chat(usr, "<span class='danger'>Unable to initiate evacuation!</span>")
+				return
+			for (var/datum/evacuation_option/EO in evacuation_controller.available_evac_options())
+				if(EO.abandon_ship)
+					evacuation_controller.handle_evac_option(EO.option_target, usr)
+					return

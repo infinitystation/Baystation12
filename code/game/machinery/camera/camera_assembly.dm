@@ -112,6 +112,7 @@
 					if(i != 0)
 						var/confirm = alert(user, "Is this what you want? Chances Remaining: [i]", "Confirmation", "Yes", "No")
 						if(confirm == "Yes")
+							C.update_icon()
 							break
 				return
 
@@ -141,7 +142,7 @@
 
 	..()
 
-/obj/item/weapon/camera_assembly/update_icon()
+/obj/item/weapon/camera_assembly/on_update_icon()
 	if(anchored)
 		icon_state = "camera1"
 	else

@@ -571,7 +571,7 @@
 	fuel_consumption = 4
 	logging_home_tag = "nav_hangar_calypso"
 	logging_access = access_expedition_shuttle_helm
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling/airless
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 
 /obj/effect/shuttle_landmark/sierra/hangar/exploration_shuttle
 	name = "Charon Hangar"
@@ -616,7 +616,7 @@
 	fuel_consumption = 2
 	logging_home_tag = "nav_hangar_guppy"
 	logging_access = access_guppy_helm
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling/airless
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 
 /obj/effect/shuttle_landmark/sierra/hangar/guppy
 	name = "Guppy Hangar"

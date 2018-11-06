@@ -38,7 +38,7 @@
 		/obj/item/weapon/storage/box/armband/engine,
 		/obj/item/device/multitool/multimeter,
 		/obj/item/weapon/storage/box/secret_project_disks,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel/eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
 
@@ -68,7 +68,7 @@
 		/obj/item/device/flashlight/upgraded,
 		/obj/item/device/megaphone,
 		/obj/item/clothing/gloves/insulated,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel/eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
 
@@ -95,7 +95,7 @@
 		/obj/item/device/flashlight/upgraded,
 		/obj/item/taperoll/atmos,
 		/obj/item/clothing/gloves/insulated,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel/eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)
 

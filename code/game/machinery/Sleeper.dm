@@ -62,7 +62,7 @@
 	if(iscarbon(occupant) && stasis > 1)
 		occupant.SetStasis(stasis)
 
-/obj/machinery/sleeper/update_icon()
+/obj/machinery/sleeper/on_update_icon()
 	icon_state = "[base_icon]_[occupant ? "1" : "0"]"
 
 /obj/machinery/sleeper/attack_hand(var/mob/user)

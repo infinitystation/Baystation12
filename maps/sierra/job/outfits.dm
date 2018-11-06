@@ -52,7 +52,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/crew/command/captain/New()
 	..()
 	backpack_overrides[/decl/backpack_outfit/backpack] = /obj/item/weapon/storage/backpack/captain
-	backpack_overrides[/decl/backpack_outfit/satchel] = /obj/item/weapon/storage/backpack/satchel_cap
+	backpack_overrides[/decl/backpack_outfit/satchel] = /obj/item/weapon/storage/backpack/satchel/cap
 	backpack_overrides[/decl/backpack_outfit/messenger_bag] = /obj/item/weapon/storage/backpack/messenger/com
 
 /decl/hierarchy/outfit/job/sierra/crew/command/hop

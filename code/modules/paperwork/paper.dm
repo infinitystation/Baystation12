@@ -33,15 +33,19 @@
 	var/last_modified_ckey
 	var/age = 0
 	var/log = ""
+	var/list/metadata
 
 	var/const/deffont = "Verdana"
 	var/const/signfont = "Times New Roman"
 	var/const/crayonfont = "Comic Sans MS"
 	var/const/fancyfont = "Segoe Script"
 
-/obj/item/weapon/paper/New(loc, text,title)
+	var/scan_file_type = /datum/computer_file/data/text
+
+/obj/item/weapon/paper/New(loc, text, title, list/md = null)
 	..(loc)
 	set_content(text ? text : info, title)
+	metadata = md
 
 /obj/item/weapon/paper/proc/set_content(text,title)
 	if(title)
@@ -53,7 +57,7 @@
 	update_space(info)
 	updateinfolinks()
 
-/obj/item/weapon/paper/update_icon()
+/obj/item/weapon/paper/on_update_icon()
 	if(icon_state == "paper_talisman")
 		return
 	else if(info)
@@ -353,6 +357,11 @@
 		return
 
 	if(istype(P, /obj/item/weapon/paper) || istype(P, /obj/item/weapon/photo))
+		if(!can_bundle())
+			return
+		var/obj/item/weapon/paper/other = P
+		if(istype(other) && !other.can_bundle())
+			return
 		if (istype(P, /obj/item/weapon/paper/carbon))
 			var/obj/item/weapon/paper/carbon/C = P
 			if (!C.iscopy && !C.copied)
@@ -429,12 +438,13 @@
 		burnpaper(P, user)
 
 	else if(istype(P, /obj/item/weapon/paper_bundle))
+		if(!can_bundle())
+			return
 		var/obj/item/weapon/paper_bundle/attacking_bundle = P
 		attacking_bundle.insert_sheet_at(user, (attacking_bundle.pages.len)+1, src)
 		attacking_bundle.update_icon()
 
 	add_fingerprint(user)
-	return
 
 /obj/item/weapon/paper/proc/preStampPaper(stamp_path)
 	var/obj/item/weapon/stamp/P = new stamp_path
@@ -474,6 +484,12 @@
 	name = "nano paper"
 	color = "#ccffff"
 
+/obj/item/weapon/paper/proc/can_bundle()
+	return TRUE
+
+/obj/item/weapon/paper/proc/show_info(var/mob/user)
+	return info
+
 //For supply.
 /obj/item/weapon/paper/manifest
 	name = "supply manifest"
@@ -489,7 +505,7 @@
 	name = "paper scrap"
 	icon_state = "scrap"
 
-/obj/item/weapon/paper/crumpled/update_icon()
+/obj/item/weapon/paper/crumpled/on_update_icon()
 	return
 
 /obj/item/weapon/paper/crumpled/bloody

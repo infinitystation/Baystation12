@@ -33,7 +33,7 @@
 		/obj/item/weapon/storage/firstaid/adv,
 		/obj/item/clothing/accessory/stethoscope,
 		/obj/item/weapon/storage/fancy/vials,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel_med)),
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel/med)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/med, /obj/item/weapon/storage/backpack/messenger/med)),
 		RANDOM_SCRUBS
 	)
@@ -62,7 +62,7 @@
 		/obj/item/clothing/accessory/stethoscope,
 		/obj/item/clothing/glasses/hud/health,
 		/obj/item/weapon/storage/firstaid/adv,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel_med)),
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel/med)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/med, /obj/item/weapon/storage/backpack/messenger/med)),
 		RANDOM_SCRUBS = 2
 	)
@@ -93,7 +93,7 @@
 		/obj/item/clothing/accessory/stethoscope,
 		/obj/item/clothing/glasses/hud/health,
 		/obj/item/weapon/storage/firstaid/adv,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel_med)),
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel/med)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/med, /obj/item/weapon/storage/backpack/messenger/med))
 	)
 

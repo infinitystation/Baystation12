@@ -102,6 +102,7 @@ var/list/gamemode_cache = list()
 	var/wikiurl
 	var/forumurl
 	var/githuburl
+	var/issuereporturl
 
 	var/forbid_singulo_possession = 0
 
@@ -451,6 +452,9 @@ var/list/gamemode_cache = list()
 
 				if ("githuburl")
 					config.githuburl = value
+
+				if ("issuereporturl")
+					config.issuereporturl = value
 
 				if ("ghosts_can_possess_animals")
 					config.ghosts_can_possess_animals = value
@@ -876,14 +880,13 @@ var/list/gamemode_cache = list()
 		var/datum/game_mode/M = gamemode_cache[game_mode]
 		if (M.config_tag && M.config_tag == mode_name)
 			return M
-	return gamemode_cache["extended"]
 
 /datum/configuration/proc/get_runnable_modes()
 	var/list/runnable_modes = list()
 	for(var/game_mode in gamemode_cache)
 		var/datum/game_mode/M = gamemode_cache[game_mode]
 		if(M && !M.startRequirements() && !isnull(config.probabilities[M.config_tag]) && config.probabilities[M.config_tag] > 0)
-			runnable_modes |= M
+			runnable_modes[M.config_tag] = config.probabilities[M.config_tag]
 	return runnable_modes
 
 /datum/configuration/proc/load_event(filename)

@@ -51,7 +51,8 @@
 		"command blue" = 	COLOR_COMMAND_BLUE,
 		"cyan" =        	COLOR_CYAN,
 		"green" =      		COLOR_GREEN,
-		"corporate red" =	COLOR_NT_RED,
+		"bottle green" =	COLOR_PALE_BTL_GREEN,
+		"nanotrasen red" =  COLOR_NT_RED,
 		"orange" = 			COLOR_ORANGE,
 		"pale orange" =   	COLOR_PALE_ORANGE,
 		"red" = 			COLOR_RED,
@@ -109,7 +110,7 @@
 		return
 
 	var/turf/simulated/floor/F = A
-	if(!istype(F))
+	if(!istype(F) || !F.flooring)
 		to_chat(user, "<span class='warning'>\The [src] can only be used on floors, walls or certain airlocks.</span>")
 		return
 

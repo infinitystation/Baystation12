@@ -47,11 +47,6 @@
 			ret.overlays |= A.get_mob_overlay(user_mob, slot)
 	return ret
 
-// Aurora forensics port.
-/obj/item/clothing/clean_blood()
-	. = ..()
-	gunshot_residue = null
-
 /obj/item/clothing/proc/change_smell(smell = SMELL_DEFAULT)
 	smell_state = smell
 
@@ -487,7 +482,7 @@ BLIND     // can't see anything
 		to_chat(user, "<span class='notice'>You crawl under \the [src].</span>")
 	return 1
 
-/obj/item/clothing/head/update_icon(var/mob/user)
+/obj/item/clothing/head/on_update_icon(var/mob/user)
 
 	overlays.Cut()
 	if(on)
@@ -653,7 +648,7 @@ BLIND     // can't see anything
 	else
 		return ..()
 
-/obj/item/clothing/shoes/update_icon()
+/obj/item/clothing/shoes/on_update_icon()
 	overlays.Cut()
 	if(holding)
 		overlays += image(icon, "[icon_state]_knife")

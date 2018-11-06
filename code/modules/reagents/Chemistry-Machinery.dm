@@ -341,12 +341,16 @@
 	var/obj/item/weapon/reagent_containers/beaker = null
 	var/limit = 10
 	var/list/holdingitems = list()
+	var/list/bag_whitelist = list(
+		/obj/item/weapon/storage/pill_bottle,
+		/obj/item/weapon/storage/plants
+	) // These bags will fast-empty into the grinder.
 
 /obj/machinery/reagentgrinder/New()
 	..()
 	beaker = new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
 
-/obj/machinery/reagentgrinder/update_icon()
+/obj/machinery/reagentgrinder/on_update_icon()
 	icon_state = "juicer"+num2text(!isnull(beaker))
 
 /obj/machinery/reagentgrinder/attackby(var/obj/item/O as obj, var/mob/user as mob)
@@ -372,21 +376,22 @@
 	if(!istype(O))
 		return
 
-	if(istype(O,/obj/item/weapon/storage/plants))
-		var/obj/item/weapon/storage/plants/bag = O
+	if(is_type_in_list(O, bag_whitelist))
+		var/obj/item/weapon/storage/bag = O
 		var/failed = 1
-		for(var/obj/item/G in O.contents)
+		for(var/obj/item/G in O)
 			if(!G.reagents || !G.reagents.total_volume)
 				continue
 			failed = 0
-			bag.remove_from_storage(G, src)
+			bag.remove_from_storage(G, src, 1)
 			holdingitems += G
 			if(holdingitems && holdingitems.len >= limit)
 				break
 
 		if(failed)
-			to_chat(user, "Nothing in the plant bag is usable.")
+			to_chat(user, "Nothing in \the [O] is usable.")
 			return 1
+		bag.finish_bulk_removal()
 
 		if(!O.contents.len)
 			to_chat(user, "You empty \the [O] into \the [src].")
@@ -399,7 +404,7 @@
 	if(istype(O,/obj/item/stack/material))
 		var/obj/item/stack/material/stack = O
 		var/material/material = stack.material
-		if(!material.chem_products.len)
+		if(!length(material.chem_products))
 			to_chat(user, "\The [material.name] is unable to produce any usable reagents.")
 			return 1
 

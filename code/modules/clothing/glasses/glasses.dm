@@ -381,7 +381,7 @@
 		user.update_inv_glasses()
 		user.update_action_buttons()
 
-/obj/item/clothing/glasses/sunglasses/sechud/toggle/update_icon()
+/obj/item/clothing/glasses/sunglasses/sechud/toggle/on_update_icon()
 	if(on)
 		icon_state = initial(icon_state)
 	else
@@ -455,7 +455,7 @@
 	..()
 	update_icon()
 
-/obj/item/clothing/glasses/eyepatch/hud/update_icon()
+/obj/item/clothing/glasses/eyepatch/hud/on_update_icon()
 	overlays.Cut()
 	if(active)
 		var/image/eye = overlay_image(icon, "[icon_state]_eye", flags=RESET_COLOR)

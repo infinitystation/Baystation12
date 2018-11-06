@@ -36,6 +36,10 @@
 			skillset.obtain_from_client(job, my_client, 1)
 	skillset.open_ui()
 
+//This will obtain skills from the job selection before giving additional buffs.
+/datum/antag_skill_setter/station/offstation
+	nm_type = /datum/nano_module/skill_ui/antag/station/offstation
+
 //Placeholder for ai; defaults to experienced in everything like usual.
 /datum/antag_skill_setter/ai
 

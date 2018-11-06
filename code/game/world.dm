@@ -64,14 +64,14 @@
 
 	return match
 
-#define RECOMMENDED_VERSION 511
+#define RECOMMENDED_VERSION 512
 /world/New()
 	//set window title
 	name = "[server_name] - [GLOB.using_map.full_name]"
 
 	//logs
 	SetupLogs()
-	var/date_string = time2text(world.realtime, "YYYY/MM-Month/DD-Day")
+	var/date_string = time2text(world.realtime, "YYYY/MM/DD")
 	href_logfile = file("data/logs/[date_string] hrefs.htm")
 	diary = file("data/logs/[date_string].log")
 	diary << "[log_end]\n[log_end]\nStarting up. (ID: [game_id]) [time2text(world.timeofday, "hh:mm.ss")][log_end]\n---------------------[log_end]"
@@ -101,21 +101,6 @@
 	log_unit_test("Unit Tests Enabled. This will destroy the world when testing is complete.")
 	load_unit_test_changes()
 #endif
-
-	// Set up roundstart seed list.
-	plant_controller = new()
-
-	if(config.generate_map)
-		GLOB.using_map.perform_map_generation()
-
-	// Create robolimbs for chargen.
-	populate_robolimb_list()
-
-	processScheduler = new
-	master_controller = new /datum/controller/game_controller()
-
-	processScheduler.deferSetupFor(/datum/controller/process/ticker)
-	processScheduler.setup()
 	Master.Initialize(10, FALSE)
 
 #undef RECOMMENDED_VERSION
@@ -472,7 +457,6 @@ var/world_topic_spam_protect_time = world.timeofday
 		*/
 
 	Master.Shutdown()
-	processScheduler.stop()
 
 	if(config.server)	//if you set a server location in config.txt, it sends you there instead of trying to reconnect to the same world address. -- NeoFite
 		for(var/client/C in GLOB.clients)
@@ -500,8 +484,8 @@ var/world_topic_spam_protect_time = world.timeofday
 	var/list/Lines = file2list("data/mode.txt")
 	if(Lines.len)
 		if(Lines[1])
-			master_mode = Lines[1]
-			log_misc("Saved mode is '[master_mode]'")
+			SSticker.master_mode = Lines[1]
+			log_misc("Saved mode is '[SSticker.master_mode]'")
 
 /world/proc/save_mode(var/the_mode)
 	var/F = file("data/mode.txt")
@@ -586,9 +570,8 @@ var/world_topic_spam_protect_time = world.timeofday
 
 	var/list/features = list()
 
-	if(ticker)
-		if(master_mode)
-			features += master_mode
+	if(SSticker.master_mode)
+		features += SSticker.master_mode
 	else
 		features += "<b>STARTING</b>"
 

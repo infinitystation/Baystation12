@@ -34,7 +34,7 @@ AI MODULES
 			to_chat(usr, "You haven't selected an AI to transmit laws to!")
 			return
 
-		if(ticker && ticker.mode && ticker.mode.name == "blob")
+		if(SSticker.mode && SSticker.mode.name == "blob")
 			to_chat(usr, "Law uploads have been disabled by [GLOB.using_map.company_name]!")
 			return
 
@@ -409,3 +409,11 @@ obj/item/weapon/aiModule/solgov_aggressive
 	desc = "An 'Antimov' Core AI Module: 'Reconfigures the AI's core laws.'."
 	origin_tech = list(TECH_DATA = 4)
 	laws = new/datum/ai_laws/antimov()
+
+/******************** DAIS ********************/
+
+/obj/item/weapon/aiModule/dais
+	name = "\improper 'DAIS Experimental' core AI module"
+	desc = "A 'DAIS Experimental' Core AI Module: 'Reconfigures the AI's core laws.'."
+	origin_tech = list(TECH_DATA = 4)
+	laws = new/datum/ai_laws/dais()

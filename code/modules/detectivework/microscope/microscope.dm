@@ -62,7 +62,7 @@
 	var/scaned_object = sample.name
 	if(istype(sample, /obj/item/weapon/forensics/swab))
 		var/obj/item/weapon/forensics/swab/swab = sample
-		evidence["gsr"] = swab.gsr
+		evidence["gunshot_residue"] = swab.gunshot_residue_sample.Copy()
 	else if(istype(sample, /obj/item/weapon/sample/fibers))
 		var/obj/item/weapon/sample/fibers/fibers = sample
 		scaned_object = fibers.object
@@ -72,18 +72,19 @@
 		scaned_object = card.object ? card.object : card.name
 		evidence["prints"] = card.evidence.Copy()
 	else
-		evidence["prints"] = sample.fingerprints.Copy()
-		evidence["fibers"] = sample.suit_fibers.Copy()
-		if(istype(sample,/obj/item/clothing))
-			var/obj/item/clothing/C = sample
-			evidence["gsr"] = C.gunshot_residue
+		if(sample.fingerprints)
+			evidence["prints"] = sample.fingerprints.Copy()
+		if(sample.suit_fibers)
+			evidence["fibers"] = sample.suit_fibers.Copy()
+		if(sample.gunshot_residue)
+			evidence["gunshot_residue"] = sample.gunshot_residue.Copy()
 
 	report.SetName("Forensic report #[++report_num]: [sample.name]")
 	report.info = "<b>Scanned item:</b><br>[scaned_object]<br><br>"
-	if("gsr" in evidence)
+	if("gunshot_residue" in evidence)
 		report.info += "<b>Gunpowder residue analysis report #[report_num]</b>: [scaned_object]<br>"
-		if(evidence["gsr"])
-			report.info += "Residue from a [evidence["gsr"]] bullet detected."
+		if(evidence["gunshot_residue"])
+			report.info += "Residue from a [evidence["gunshot_residue"]] bullet detected."
 		else
 			report.info += "No gunpowder residue found."
 	if("fibers" in evidence)
@@ -134,7 +135,7 @@
 	else
 		return ..()
 
-/obj/machinery/microscope/update_icon()
+/obj/machinery/microscope/on_update_icon()
 	icon_state = "microscope"
 	if(sample)
 		icon_state += "slide"

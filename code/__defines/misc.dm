@@ -84,9 +84,16 @@
 #define TEMPLATE_FLAG_SPAWN_GUARANTEED 2 // Makes it ignore away site budget and just spawn (only for away sites)
 #define TEMPLATE_FLAG_CLEAR_CONTENTS   4 // if it should destroy objects it spawns on top of
 #define TEMPLATE_FLAG_NO_RUINS         8 // if it should forbid ruins from spawning on top of it
+#define TEMPLATE_FLAG_NO_RADS          16// Removes all radiation from the template after spawning.
 
 // Convoluted setup so defines can be supplied by Bay12 main server compile script.
 // Should still work fine for people jamming the icons into their repo.
+#ifndef CUSTOM_ITEM_CONFIG
+#define CUSTOM_ITEM_CONFIG "config/custom_items.txt"
+#endif
+#ifndef CUSTOM_ITEM_SYNTH_CONFIG
+#define CUSTOM_ITEM_SYNTH_CONFIG "config/custom_sprites.txt"
+#endif
 #ifndef CUSTOM_ITEM_OBJ
 #define CUSTOM_ITEM_OBJ 'icons/infinity_custom_items_obj.dmi'
 #endif
@@ -313,6 +320,9 @@ Define for getting a bitfield of adjacent turfs that meet a condition.
 #define EMAIL_DOCUMENTS "document.server@internal-services.net"
 #define EMAIL_SYSADMIN  "admin@internal-services.net"
 #define EMAIL_BROADCAST "broadcast@internal-services.net"
+
+//Number of slots a modular computer has which can be tweaked via gear tweaks.
+#define TWEAKABLE_COMPUTER_PART_SLOTS 7
 
 //Lying animation
 #define ANIM_LYING_TIME 2

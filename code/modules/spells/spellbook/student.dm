@@ -21,3 +21,9 @@
 				/obj/item/weapon/gun/energy/staff/focus = 		2,
 				/obj/item/weapon/contract/wizard/xray = 		2
 				)
+
+/datum/spellbook/student/apprentice
+	book_flags = CAN_MAKE_CONTRACTS|INVESTABLE|NOREVERT|NO_LOCKING
+
+/obj/item/weapon/spellbook/apprentice
+	spellbook_type = /datum/spellbook/student/apprentice

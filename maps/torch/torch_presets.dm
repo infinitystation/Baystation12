@@ -11,6 +11,7 @@ var/const/NETWORK_HANGAR      = "Hangar"
 var/const/NETWORK_EXPLO       = "Exploration"
 var/const/NETWORK_THIRD_DECK  = "Third Deck"
 var/const/NETWORK_FIFTH_DECK  = "Fifth Deck"
+var/const/NETWORK_NANOTRASEN  = "Petrov"
 
 /datum/map/torch/get_network_access(var/network)
 	switch(network)

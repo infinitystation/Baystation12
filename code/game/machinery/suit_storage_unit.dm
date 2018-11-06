@@ -162,7 +162,7 @@
 		mask = new mask_type(src)
 	update_icon()
 
-/obj/machinery/suit_storage_unit/update_icon()
+/obj/machinery/suit_storage_unit/on_update_icon()
 	overlays.Cut()
 	if(panelopen)
 		overlays += ("panel")
@@ -692,7 +692,7 @@
 	name = "Security suit cycler"
 	model_text = "Security"
 	req_access = list(access_security)
-	departments = list("Security")
+	departments = list("Security","Security, Alt")
 	species = list(SPECIES_HUMAN,SPECIES_TAJARA,SPECIES_SKRELL,SPECIES_UNATHI,SPECIES_RESOMI)
 
 /obj/machinery/suit_cycler/medical
@@ -1096,6 +1096,18 @@
 			if(suit)
 				suit.SetName("security voidsuit")
 				suit.icon_state = "rig-sec"
+				suit.item_state_slots = list(
+					slot_l_hand_str = "sec_voidsuit",
+					slot_r_hand_str = "sec_voidsuit",
+				)
+		if("Security, Alt")
+			if(helmet)
+				helmet.SetName("security voidsuit helmet")
+				helmet.icon_state = "rig0-secalt"
+				helmet.item_state = "secalt_helm"
+			if(suit)
+				suit.SetName("security voidsuit")
+				suit.icon_state = "rig-secalt"
 				suit.item_state_slots = list(
 					slot_l_hand_str = "sec_voidsuit",
 					slot_r_hand_str = "sec_voidsuit",

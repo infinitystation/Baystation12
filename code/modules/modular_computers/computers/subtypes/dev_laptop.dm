@@ -35,7 +35,7 @@
 	screen_on = anchored
 	update_icon()
 
-/obj/item/modular_computer/laptop/update_icon()
+/obj/item/modular_computer/laptop/on_update_icon()
 	if(anchored)
 		..()
 	else
