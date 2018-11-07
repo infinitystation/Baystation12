@@ -111,7 +111,7 @@
 		playsound(src.loc, "sparks", 75, 1, -1)
 		to_chat(user, "<span class='notice'>You use the cryptographic sequencer on the [src.name].</span>")
 
-/obj/machinery/pile_ripper/update_icon()
+/obj/machinery/pile_ripper/on_update_icon()
 	..()
 	var/is_powered = !(stat & (BROKEN|NOPOWER))
 	if(safety_mode)

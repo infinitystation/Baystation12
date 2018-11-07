@@ -49,7 +49,7 @@
 
 	if(light_max_bright && light_outer_range)
 		update_light()
-		
+
 	if(opacity)
 		updateVisibility(src)
 		var/turf/T = loc

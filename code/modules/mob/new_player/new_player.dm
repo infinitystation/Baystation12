@@ -25,7 +25,8 @@
 
 /mob/new_player/proc/new_player_panel(force = FALSE)
 	if(!SScharacter_setup.initialized && !force)
-		return // Not ready yet.?	if(client)
+		return // Not ready yet.
+	if(client)
 		if(client.banprisoned)
 			new_player_panel_prisoner()
 		else

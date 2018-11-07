@@ -18,7 +18,7 @@
 
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BELT
-	
+
 	attack_verb = list("ripped", "slashed", "torn")
 
 	hitsound = 'sound/items/chainsword_attack.ogg'
@@ -43,8 +43,8 @@
 		update_icon()
 		return
 	to_chat(user, "<span class='notice'>You need more fuel for this.</span>")
-	
-/obj/item/weapon/chainsword/update_icon()
+
+/obj/item/weapon/chainsword/on_update_icon()
 	if (status)
 		icon_state = icon_state_on
 	else
@@ -66,7 +66,7 @@
 		if (fuel <= 0)
 			fuel = 0
 			set_status(!status, user)
-			to_chat(user, "<span class='notice'>Out of fuel.</span>")		
+			to_chat(user, "<span class='notice'>Out of fuel.</span>")
 	..()
 
 /obj/item/custkit/chainsword

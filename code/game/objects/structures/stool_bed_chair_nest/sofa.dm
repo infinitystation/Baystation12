@@ -13,7 +13,7 @@
 	base_icon = icon_state
 	..(newloc,"plastic")
 
-/obj/structure/bed/sofa/update_icon()
+/obj/structure/bed/sofa/on_update_icon()
 	..()
 	if(src.dir == NORTH)
 		src.layer = 5

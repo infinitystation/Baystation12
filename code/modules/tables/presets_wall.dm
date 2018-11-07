@@ -6,7 +6,7 @@
 /obj/structure/table/wallf/can_connect()
 	return FALSE
 
-/obj/structure/table/wallf/update_icon()
+/obj/structure/table/wallf/on_update_icon()
 	if(material)
 		if(material.icon_colour)
 			src.color = material.icon_colour

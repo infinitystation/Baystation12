@@ -5,8 +5,7 @@
 	start_y = 4
 	base = 1
 	vessel_mass = 60
-	default_delay = 2 MINUTES
-	speed_mod = 0.25 MINUTE
+	max_speed = 1/(10 SECONDS)
 	burn_delay = 10 SECONDS
 
 	initial_generic_waypoints = list(

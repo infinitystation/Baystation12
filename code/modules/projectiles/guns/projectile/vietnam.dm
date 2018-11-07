@@ -52,7 +52,7 @@
 	else
 		..()
 
-/obj/item/weapon/gun/projectile/automatic/m16/update_icon()
+/obj/item/weapon/gun/projectile/automatic/m16/on_update_icon()
 	icon_state = (ammo_magazine)? "m16a1gl" : "m16a1gl-empty"
 	item_state = (ammo_magazine)? "m16gl" : "m16gl-empty"
 	wielded_item_state = (ammo_magazine)? "m16gl-wielded" : "m16gl-wielded-empty"
@@ -120,7 +120,7 @@
 	else
 		return ..() //once open, behave like normal
 
-/obj/item/weapon/gun/projectile/automatic/m60/update_icon()
+/obj/item/weapon/gun/projectile/automatic/m60/on_update_icon()
 	if(istype(ammo_magazine, /obj/item/ammo_magazine/box))
 		icon_state = "m60[cover_open ? "open" : "closed"][round(ammo_magazine.stored_ammo.len, 100)]"
 		item_state = "m60"
@@ -173,7 +173,7 @@
 		list(mode_name="long bursts",   burst=5, fire_delay=null, move_delay=null,    one_hand_penalty=6, burst_accuracy=list(0,-1,-2,-3,-3), dispersion=list(1.0, 1.0, 1.2, 1.2, 1.5)),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/m14/update_icon()
+/obj/item/weapon/gun/projectile/automatic/m14/on_update_icon()
 	if(scoped)
 		icon_state = (ammo_magazine)? "m14scoped" : "m14scoped-empty"
 	else

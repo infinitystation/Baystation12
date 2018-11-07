@@ -32,7 +32,7 @@
 		attack_verb = initial(attack_verb)
 	update_icon()
 
-/obj/item/weapon/material/butterfly/update_icon()
+/obj/item/weapon/material/butterfly/on_update_icon()
 	if(active)
 		icon_state += "_open"
 		item_state = "butterflyknife_open"

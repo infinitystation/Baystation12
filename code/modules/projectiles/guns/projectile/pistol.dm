@@ -225,7 +225,7 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 
-/obj/item/weapon/gun/projectile/spistol/update_icon()
+/obj/item/weapon/gun/projectile/spistol/on_update_icon()
 	if(ammo_magazine)
 		icon_state = "pistol0"
 	else

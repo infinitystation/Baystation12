@@ -49,7 +49,7 @@
 		layer = initial(layer) + 0.1
 		plane = initial(plane)
 
-/obj/structure/barrier/update_icon()
+/obj/structure/barrier/on_update_icon()
 	if(density && !deployed)
 		icon_state = "barrier_rised"
 	if(!density && !deployed)

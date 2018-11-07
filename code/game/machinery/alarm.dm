@@ -1350,7 +1350,7 @@ Just a object used in constructing party alarms
 	if(. == TOPIC_REFRESH)
 		attack_hand(user)
 
-/obj/machinery/partyalarm/update_icon()
+/obj/machinery/partyalarm/on_update_icon()
 	overlays.Cut()
 
 	if(wiresexposed)

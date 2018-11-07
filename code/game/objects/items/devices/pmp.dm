@@ -108,7 +108,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 		else
 			cell.use(0.0833333333)
 
-/obj/item/device/pmp/update_icon()
+/obj/item/device/pmp/on_update_icon()
 	overlays.Cut()
 	if(playing)
 		overlays += image(icon, "[icon_state]_play")
@@ -446,7 +446,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 	if(random_color)
 		icon_state = "tape_[pick("white", "blue", "red", "yellow", "purple")]"
 
-/obj/item/device/cassette/update_icon()
+/obj/item/device/cassette/on_update_icon()
 	overlays.Cut()
 	if(ruined)
 		overlays += "ribbonoverlay"

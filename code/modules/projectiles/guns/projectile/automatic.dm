@@ -347,7 +347,7 @@
 		list(mode_name="2-round bursts", burst=2,    fire_delay=6, move_delay=1, one_hand_penalty=15, burst_accuracy=list(0,-0.8), dispersion=list(0.0, 0.4)),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/amrcarabine/update_icon()
+/obj/item/weapon/gun/projectile/automatic/amrcarabine/on_update_icon()
 	icon_state = (ammo_magazine)? "amrcarabine" : "amrcarabine-e"
 	..()
 
@@ -414,7 +414,7 @@
 	else
 		..()
 
-/obj/item/weapon/gun/projectile/automatic/z9/update_icon()
+/obj/item/weapon/gun/projectile/automatic/z9/on_update_icon()
 	icon_state = (ammo_magazine)? "bullpup" : "bullpup-e"
 	..()
 
@@ -444,6 +444,6 @@
 		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=2,    one_hand_penalty=2, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/bp15/update_icon()
+/obj/item/weapon/gun/projectile/automatic/bp15/on_update_icon()
 	icon_state = (ammo_magazine)? "pdw" : "pdw-empty"
 	..()

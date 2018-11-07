@@ -362,7 +362,7 @@
 		..()
 		update_icon()
 
-/obj/item/weapon/reagent_containers/glass/jug/update_icon()
+/obj/item/weapon/reagent_containers/glass/jug/on_update_icon()
 	overlays.Cut()
 
 	if(reagents.total_volume)

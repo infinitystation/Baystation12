@@ -152,7 +152,7 @@
 	if(right)
 		right.update_icon()
 
-/obj/machinery/crusher_base/update_icon()
+/obj/machinery/crusher_base/on_update_icon()
 	overlays.Cut()
 	var/obj/machinery/crusher_base/left = locate(/obj/machinery/crusher_base, get_step(src, WEST))
 	var/obj/machinery/crusher_base/right = locate(/obj/machinery/crusher_base, get_step(src, EAST))

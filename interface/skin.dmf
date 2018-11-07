@@ -1291,7 +1291,7 @@ window "rpane"
 		is-vert = false
 	elem "github"
 		type = BUTTON
-		pos = 476,0
+		pos = 505,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
@@ -1301,7 +1301,7 @@ window "rpane"
 		command = "GitHub"
 	elem "BugReport"
 		type = BUTTON
-		pos = 536,0
+		pos = 565,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
@@ -1322,7 +1322,7 @@ window "rpane"
 		group = "rpanemode"
 	elem "changelog"
 		type = BUTTON
-		pos = 416,0
+		pos = 208,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
@@ -1333,8 +1333,8 @@ window "rpane"
 		group = "rpanemode"
 	elem "changelog_infinity"
 		type = BUTTON
-		pos = 208,0
-		size = 60x15
+		pos = 400,0
+		size = 105x15
 		anchor1 = none
 		anchor2 = none
 		background-color = none
