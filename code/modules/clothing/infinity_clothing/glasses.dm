@@ -2,7 +2,7 @@
 	name = "advanced optical material scanner"
 	desc = "Prototype hybrid glasses with toggleable welding shielding"
 	icon = 'icons/obj/clothing/infinity/glasses.dmi'
-	icon_state = "hybrid_off"
+	icon_state = "hybrid"
 	item_state = "glasses"
 	item_icons = list(slot_glasses_str = 'icons/mob/infinity/glasses.dmi')
 	vision_flags = null
@@ -15,27 +15,32 @@
 			flash_protection = FLASH_PROTECTION_MAJOR
 			vision_flags = null
 			tint = TINT_HEAVY
-			icon_state = "hybrid_weld"
+			icon_state = "[initial(icon_state)]_weld"
 			on = !on
 			to_chat(user, "You switch \the [src] to welding protection mode.")
-			goto hybr_loop
+			update_state(user)
+			return
 		if(on && !mode)
 			flash_protection = FLASH_PROTECTION_NONE
 			vision_flags = SEE_OBJS
 			tint = TINT_NONE
-			icon_state = "hybrid_mat"
+			icon_state = "[initial(icon_state)]_mat"
 			mode = !mode
 			to_chat(user, "You switch \the [src] to material mode.")
-			goto hybr_loop
+			update_state(user)
+			return
 		if(on && mode)
 			flash_protection = FLASH_PROTECTION_NONE
 			vision_flags = null
-			icon_state = "hybrid_off"
+			icon_state = "[initial(icon_state)]"
 			mode = !mode
 			on = !on
 			to_chat(user, "You switch off \the [src].")
-		hybr_loop:
-		update_icon()
-		sound_to(user, activation_sound)
-		user.update_inv_glasses()
-		user.update_action_buttons()
+			update_state(user)
+			return
+
+/obj/item/clothing/glasses/material/hybrid/proc/update_state(mob/user)
+	update_icon()
+	sound_to(user, activation_sound)
+	user.update_inv_glasses()
+	user.update_action_buttons()
