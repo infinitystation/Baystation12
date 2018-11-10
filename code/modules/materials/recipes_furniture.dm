@@ -217,9 +217,16 @@ ARMCHAIR(yellow)
 	title = "emergency shutter"
 	result_type = /obj/structure/firedoor_assembly
 
+/datum/stack_recipe/furniture/door_assembly/firedoor/border_only
+	title = "unidirectional emergency shutter"
+	result_type = /obj/structure/firedoor_assembly/border_only
+	req_amount = 2
+
 /datum/stack_recipe/furniture/door_assembly/multi_tile
 	title = "multi-tile airlock assembly"
 	result_type = /obj/structure/door_assembly/multi_tile
+	req_amount = 8
+	time = 10 SECONDS
 
 /datum/stack_recipe/furniture/crate
 	title = "crate"
