@@ -91,13 +91,17 @@
 		rag = R
 		rag.forceMove(src)
 		atom_flags &= ~ATOM_FLAG_OPEN_CONTAINER
+		verbs -= /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
 		update_icon()
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/proc/remove_rag(mob/user)
 	if(!rag) return
 	user.put_in_hands(rag)
 	rag = null
-	atom_flags |= ATOM_FLAG_OPEN_CONTAINER
+	var/is_open_container = initial(atom_flags) & ATOM_FLAG_OPEN_CONTAINER
+	if(is_open_container)
+		atom_flags |= ATOM_FLAG_OPEN_CONTAINER
+		verbs += /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
 	update_icon()
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/open(mob/user)
