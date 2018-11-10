@@ -790,13 +790,15 @@ About the new airlock wires panel:
 			if(density && src.arePowerSystemsOn())
 				set_airlock_overlays(AIRLOCK_DENY)
 				flick("deny", src)
-				if(secured_wires)
-					playsound(src.loc, open_failure_access_denied, 50, 0)
+				//if(secured_wires)
+				playsound(src.loc, open_failure_access_denied, 50, 0)
 				update_icon(AIRLOCK_CLOSED)
 		if("emag")
 			if(density && src.arePowerSystemsOn())
 				set_airlock_overlays(AIRLOCK_EMAG)
 				flick("deny", src)
+				//if(secured_wires)
+				playsound(src.loc, open_failure_access_denied, 50, 0)
 		else
 			update_icon()
 	return
