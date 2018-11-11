@@ -39,6 +39,7 @@
 	burn_mod =  1.1
 	darksight_range = 6
 	darksight_tint = DARKTINT_MODERATE
+	light_sensitive = 1
 
 	descriptors = list(
 		/datum/mob_descriptor/height,
