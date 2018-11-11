@@ -735,27 +735,17 @@
 
 // Security
 
-/area/security/sierra/cells
-	name = "Security - Cells"
-	icon_state = "brig"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/security/sierra/permabrig
-	name = "Security - Long Term Chamber"
-	icon_state = "sec_prison"
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
 /area/security/sierra/hallway
 	name = "Security - Fore Hallway"
-	icon_state = "brig"
+	icon_state = "security"
 
 /area/security/sierra/hallway/aft
 	name = "Security - Aft Hallway"
-	icon_state = "brig"
+	icon_state = "security"
 
 /area/security/sierra/hallway/port
 	name = "Security - Port Hallway"
-	icon_state = "brig"
+	icon_state = "security"
 
 /area/security/sierra/sergeant
 	name = "Security - Warden"
@@ -763,53 +753,64 @@
 
 /area/security/sierra/armory
 	name = "Security - Armory"
-	icon_state = "brig"
+	icon_state = "armory"
 
 /area/security/sierra/armory/lobby
 	name = "Security - Armory - Lobby"
-	icon_state = "brig"
+	icon_state = "armory"
 
 /area/security/sierra/safe_room
 	name = "Security - Safe Room"
-	icon_state = "brig"
+	icon_state = "security"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/security/sierra/suits
 	name = "Security - Suits Storage"
-	icon_state = "brig"
+	icon_state = "security"
 
 /area/security/sierra/breakroom
 	name = "Security - Break Room"
-	icon_state = "brig"
+	icon_state = "security"
 
 /area/security/sierra/hos
 	name = "Security - Head Of Security"
-	icon_state = "brig"
+	icon_state = "sec_hos"
 
-/area/security/sierra/hos/restroom
-	name = "Security - HOS - Restroom"
-	icon_state = "brig"
+/area/security/sierra/hos/bedroom
+	name = "Security - HOS - Bedroom"
+	icon_state = "sec_hos"
 
 /area/security/sierra/forensic
 	name = "Security - Forensic"
-	icon_state = "brig"
+	icon_state = "detective"
 
 /area/security/sierra/forensic/lab
 	name = "Security - Forensic - Laboratory"
-	icon_state = "brig"
+	icon_state = "detective"
 
 /area/security/sierra/equipment
 	name = "Security - Equipment storage"
-	icon_state = "brig"
+	icon_state = "security"
 
 /area/security/sierra/interrogation
 	name = "Security - Interrogation"
-	icon_state = "brig"
+	icon_state = "detective"
 
 /area/security/sierra/evidence
 	name = "Security - Evidence Storage"
-	icon_state = "brig"
+	icon_state = "detective"
 
+/area/security/range
+	name = "Security - Firing Range"
+	icon_state = "firingrange"
+
+/area/security/nuke_storage
+	name = "Vault"
+	icon_state = "nuke_storage"
+
+/area/security/sierra/dockcheck
+	name = "Security - Fore Docks Checkpoint"
+	icon_state = "checkpoint1"
 
 // AI
 /area/turret_protected/ai_foyer
@@ -916,7 +917,7 @@
 	icon_state = "bar"
 
 /area/bridge/meeting_room
-	name = "Heads of Staff Meeting Room"
+	name = "Meeting Room"
 	icon_state = "bridge"
 	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
@@ -997,6 +998,10 @@
 
 /area/maintenance/incinerator
 	name = "Incinerator"
+	icon_state = "disposal"
+
+/area/maintenance/waterstore
+	name = "\improper Cistern"
 	icon_state = "disposal"
 
 /area/maintenance/compactor
@@ -1227,33 +1232,6 @@
 	name = "Supply Shuttle"
 	icon_state = "shuttle3"
 	requires_power = 0
-
-// Security
-
-/area/prison/solitary
-	name = "Solitary Confinement"
-	icon_state = "brig"
-
-/area/security/armoury
-	name = "Security - Armory"
-	icon_state = "Warden"
-
-/area/security/checkpoint2
-	name = "Security - Checkpoint"
-	icon_state = "checkpoint1"
-
-/area/security/detectives_office
-	name = "Security - Forensic Office"
-	icon_state = "detective"
-	sound_env = MEDIUM_SOFTFLOOR
-
-/area/security/nuke_storage
-	name = "Vault"
-	icon_state = "nuke_storage"
-
-/area/security/range
-	name = "Security - Firing Range"
-	icon_state = "firingrange"
 
 // Cargo
 /area/quartermaster/office
