@@ -690,7 +690,7 @@
 	var/phrase = "I don't want to exist anymore!"
 
 /obj/structure/plushie/attack_hand(mob/user)
-	playsound(src.loc, 'sound/effects/rustle1.ogg', 100, 1)
+	playsound(src, 'sound/effects/rustle1.ogg', 100, 1)
 	if(user.a_intent == I_HELP)
 		user.visible_message("<span class='notice'><b>\The [user]</b> hugs [src]!</span>","<span class='notice'>You hug [src]!</span>")
 	else if (user.a_intent == I_HURT)
@@ -700,7 +700,6 @@
 	else
 		user.visible_message("<span class='notice'><b>\The [user]</b> pokes the [src].</span>","<span class='notice'>You poke the [src].</span>")
 		visible_message("[src] says, \"[phrase]\"")
-		playsound(src.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 
 /obj/structure/plushie/ian
 	name = "plush corgi"
@@ -734,6 +733,7 @@
 	icon_state = "nymphplushie"
 
 /obj/item/toy/plushie/attack_self(mob/user as mob)
+	playsound(src, 'sound/weapons/thudswoosh.ogg', 100, 1)
 	if(user.a_intent == I_HELP)
 		user.visible_message("<span class='notice'><b>\The [user]</b> hugs [src]!</span>","<span class='notice'>You hug [src]!</span>")
 	else if (user.a_intent == I_HURT)
