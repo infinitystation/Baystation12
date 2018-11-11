@@ -28,13 +28,26 @@
 	return
 
 /obj/machinery/power/port_gen/proc/handleInactive()
+	playsound(src, 'sound/machines/generator/generator_end.ogg', 50, 1)
+	STOP_PROCESSING(SSmachines, src)
 	return
 
+/obj/machinery/power/port_gen/Initialize()
+	. = ..()
+	START_PROCESSING(SSmachines, src)
+
+/obj/machinery/power/port_gen/Destroy()
+	STOP_PROCESSING(SSmachines, src)
+	. = ..()
+
 /obj/machinery/power/port_gen/Process()
+	if(!active) return PROCESS_KILL
 	if(active && HasFuel() && !IsBroken() && anchored && powernet)
 		add_avail(power_gen * power_output)
 		UseFuel()
 		src.updateDialog()
+		if(prob(40))
+			playsound(src, "generator_sound", 60, 2)
 	else
 		active = 0
 		handleInactive()
@@ -122,8 +135,6 @@
 	if(anchored)
 		connect_to_network()
 
-/obj/machinery/power/port_gen/pacman/New()
-	..()
 	component_parts = list()
 	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
 	component_parts += new /obj/item/weapon/stock_parts/micro_laser(src)
@@ -239,6 +250,7 @@
 
 	if(overheating)
 		overheating--
+	..()
 
 /obj/machinery/power/port_gen/pacman/proc/overheat()
 	overheating++
@@ -394,10 +406,13 @@
 			if(!active && HasFuel() && !IsBroken())
 				active = 1
 				update_icon()
+				playsound(loc, 'sound/machines/generator/generator_start.ogg', 50, 1)
+				START_PROCESSING(SSmachines, src)
 		if(href_list["action"] == "disable")
 			if (active)
 				active = 0
 				update_icon()
+				handleInactive()
 		if(href_list["action"] == "eject")
 			if(!active)
 				DropFuel()
