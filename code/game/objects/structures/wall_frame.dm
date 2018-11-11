@@ -200,3 +200,15 @@
 	if(damage >= 150)
 		dismantle()
 	return
+
+/obj/structure/wall_frame/attack_generic(var/mob/user, var/damage, var/attack_verb)
+	if(!damage)
+		return
+	health -= damage
+	attack_animation(user)
+	if(health <= 0)
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src] completely!</span>")
+		spawn(1) dismantle()
+	else
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src]!</span>")
+	return 1
