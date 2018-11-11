@@ -700,6 +700,7 @@
 	else
 		user.visible_message("<span class='notice'><b>\The [user]</b> pokes the [src].</span>","<span class='notice'>You poke the [src].</span>")
 		visible_message("[src] says, \"[phrase]\"")
+		playsound(src.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 
 /obj/structure/plushie/ian
 	name = "plush corgi"
