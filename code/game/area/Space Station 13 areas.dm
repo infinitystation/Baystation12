@@ -125,10 +125,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/security/brig
 	name = "\improper Security - Brig"
 	icon_state = "brig"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/security/prison
 	name = "\improper Security - Prison Wing"
 	icon_state = "sec_prison"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/maintenance
 	area_flags = AREA_FLAG_RAD_SHIELDED
