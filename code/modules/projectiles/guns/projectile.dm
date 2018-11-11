@@ -17,6 +17,7 @@
 	var/handle_casings = EJECT_CASINGS	//determines how spent casings should be handled
 	var/load_method = SINGLE_CASING|SPEEDLOADER //1 = Single shells, 2 = box or quick loader, 3 = magazine
 	var/obj/item/ammo_casing/chambered = null
+	var/ejection_dir = EAST
 
 	//For SINGLE_CASING or SPEEDLOADER guns
 	var/max_shells = 0			//the number of casings that will fit inside
@@ -107,7 +108,8 @@
 
 	switch(handle_casings)
 		if(EJECT_CASINGS) //eject casing onto ground.
-			chambered.forceMove(get_turf(src))
+			// chambered.forceMove(get_turf(src))
+			handle_ejection(chambered, 2, 2)
 			if(LAZYLEN(chambered.fall_sounds))
 				playsound(loc, pick(chambered.fall_sounds), 50, 1)
 		if(CYCLE_CASINGS) //cycle the casing back to the end.
@@ -192,10 +194,12 @@
 		//presumably, if it can be speed-loaded, it can be speed-unloaded.
 		if(allow_dump && (load_method & SPEEDLOADER))
 			var/count = 0
-			var/turf/T = get_turf(user)
+			var/turf/T = get_turf(src)
 			if(T)
 				for(var/obj/item/ammo_casing/C in loaded)
-					C.loc = T
+					//So there's some slight delay rather than all the sounds playing at once. This is technically a perfect random operation due to how floats behave as sleeps.
+					sleep(rand(0, 0.2))
+					handle_ejection(C, range = 2, speed = 1)
 					count++
 				loaded.Cut()
 			if(count)
@@ -210,6 +214,15 @@
 	else
 		to_chat(user, "<span class='warning'>[src] is empty.</span>")
 	update_icon()
+
+/obj/item/weapon/gun/projectile/proc/handle_ejection(var/atom/movable/AM, var/range, var/speed)
+	var/ejection_target
+	if(!isnull(ejection_dir))
+		ejection_target = get_step(get_turf(loc), turn(loc.dir, -dir2angle(ejection_dir)))
+	else
+		ejection_target = get_turf(src)
+	AM.dropInto(loc)
+	AM.throw_at(ejection_target, range, speed)
 
 /obj/item/weapon/gun/projectile/attackby(var/obj/item/A as obj, mob/user as mob)
 	load_ammo(A, user)

@@ -4,6 +4,7 @@
 	icon_state = "revolver"
 	item_state = "revolver"
 	caliber = "357"
+	ejection_dir = null
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	handle_casings = CYCLE_CASINGS
 	max_shells = 6
@@ -50,7 +51,7 @@
 	icon_state = "mateba"
 	desc = "A curious specimen of rare automatic revolver occasionaly used in special forces and mostly known as a weapon of choice of any hardboiled detective in noir movies. Use .50AE rounds."
 	caliber = ".50"
-	fire_delay = 5.0 
+	fire_delay = 5.0
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/a50
 
