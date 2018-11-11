@@ -192,4 +192,5 @@ var/const/FALLOFF_SOUNDS = 0.5
 			if ("gunshot") soundin = pick(GLOB.gun_sound)
 			if ("chop") soundin = pick(GLOB.chop_sound)
 			if ("unarmed") soundin = pick(GLOB.unarmed_attack_sound)
+			if ("generator_sound") soundin = pick(GLOB.generator_sound)
 	return soundin
