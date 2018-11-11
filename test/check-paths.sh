@@ -34,7 +34,7 @@ exactly 44 "world.log<< uses" 'world.log<<|world.log[[:space:]]<<'
 exactly 647 "<< uses" '(?<!<)<<(?!<)' -P
 exactly 0 "incorrect indentations" '^( {4,})' -P
 exactly 28 "text2path uses" 'text2path'
-exactly 1 "update_icon() override" '/update_icon\((.*)\)'  -P
+exactly 2 "update_icon() override" '/update_icon\((.*)\)'  -P
 exactly 0 "goto uses" 'goto '
 # With the potential exception of << if you increase any of these numbers you're probably doing it wrong
 
