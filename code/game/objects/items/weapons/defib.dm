@@ -351,7 +351,7 @@
 		return
 
 	H.visible_message("<span class='warning'>\The [H]'s body convulses a bit.</span>")
-	playsound(get_turf(src), "bodyfall", 50, 1)
+	playsound(get_turf(H), "bodyfall", 50, 1)
 	playsound(get_turf(src), 'sound/machines/defib_zap.ogg', 50, 1, -1)
 	set_cooldown(cooldowntime)
 
@@ -377,7 +377,7 @@
 /obj/item/weapon/shockpaddles/proc/lowskill_revive(mob/living/carbon/human/H, mob/living/user)
 	if(prob(60))
 		playsound(get_turf(src), 'sound/machines/defib_zap.ogg', 100, 1, -1)
-		H.electrocute_act(burn_damage_amt*4, src, def_zone = BP_CHEST)	
+		H.electrocute_act(burn_damage_amt*4, src, def_zone = BP_CHEST)
 		user.visible_message("<span class='warning'><i>The paddles were misaligned! \The [user] shocks [H] with \the [src]!</i></span>", "<span class='warning'>The paddles were misaligned! You shock [H] with \the [src]!</span>")
 		return 0
 	if(prob(50))
