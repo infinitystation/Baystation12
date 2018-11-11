@@ -1920,6 +1920,7 @@
 #include "code\modules\mob\living\ancient_beings\space_whale\space_whale_movement.dm"
 #include "code\modules\mob\living\bot\adherentbot.dm"
 #include "code\modules\mob\living\bot\bot.dm"
+#include "code\modules\mob\living\bot\bot_damage.dm"
 #include "code\modules\mob\living\bot\cleanbot.dm"
 #include "code\modules\mob\living\bot\ed209bot.dm"
 #include "code\modules\mob\living\bot\farmbot.dm"

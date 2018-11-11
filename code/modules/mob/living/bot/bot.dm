@@ -63,6 +63,9 @@
 	if(health <= 0)
 		death()
 		return
+
+	updatehealth()
+
 	weakened = 0
 	stunned = 0
 	paralysis = 0
@@ -71,16 +74,8 @@
 		spawn(0)
 			handleAI()
 
-/mob/living/bot/updatehealth()
-	if(status_flags & GODMODE)
-		health = maxHealth
-		set_stat(CONSCIOUS)
-	else
-		health = maxHealth - getFireLoss() - getBruteLoss()
-	setOxyLoss(0)
-	setToxLoss(0)
-
 /mob/living/bot/death()
+	..(null, "blows apart!")
 	explode()
 
 /mob/living/bot/attackby(var/obj/item/O, var/mob/user)
@@ -363,7 +358,12 @@
 	update_icons()
 
 /mob/living/bot/proc/explode()
+	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
+	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+	s.set_up(3, 1, src)
+	s.start()
 	qdel(src)
+	return
 
 /******************************************************************/
 // Navigation procs
