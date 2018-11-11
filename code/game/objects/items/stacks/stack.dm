@@ -21,12 +21,14 @@
 	var/uses_charge = 0
 	var/list/charge_costs = null
 	var/list/datum/matter_synth/synths = null
+	var/multiple_sprites //Used by material stacks. Go to matstacks.dmi to get an idea of the naming scheme.
 
 /obj/item/stack/New(var/loc, var/amount=null)
 	if (!stacktype)
 		stacktype = type
 	if (amount >= 1)
 		src.amount = amount
+	update_icon()
 	..()
 
 /obj/item/stack/Destroy()
@@ -186,6 +188,7 @@
 		amount -= used
 		if (amount <= 0)
 			qdel(src) //should be safe to qdel immediately since if someone is still using this stack it will persist for a little while longer
+		update_icon()
 		return 1
 	else
 		if(get_amount() < used)
@@ -193,6 +196,7 @@
 		for(var/i = 1 to charge_costs.len)
 			var/datum/matter_synth/S = synths[i]
 			S.use_charge(charge_costs[i] * used) // Doesn't need to be deleted
+		update_icon()
 		return 1
 	return 0
 
@@ -202,6 +206,7 @@
 			return 0
 		else
 			amount += extra
+		update_icon()
 		return 1
 	else if(!synths || synths.len < uses_charge)
 		return 0
@@ -209,6 +214,17 @@
 		for(var/i = 1 to uses_charge)
 			var/datum/matter_synth/S = synths[i]
 			S.add_charge(charge_costs[i] * extra)
+
+/obj/item/stack/on_update_icon()
+	if(multiple_sprites)
+		if(get_amount() <= (get_max_amount()* 0.33))
+			icon_state = initial(icon_state)
+			return
+		else if(get_amount() <= (get_max_amount()* 0.66))
+			icon_state = "[initial(icon_state)]_2"
+			return
+		else
+			icon_state = "[initial(icon_state)]_3"
 
 /*
 	The transfer and split procs work differently than use() and add().
