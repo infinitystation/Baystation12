@@ -17,7 +17,7 @@
 	var/handle_casings = EJECT_CASINGS	//determines how spent casings should be handled
 	var/load_method = SINGLE_CASING|SPEEDLOADER //1 = Single shells, 2 = box or quick loader, 3 = magazine
 	var/obj/item/ammo_casing/chambered = null
-	var/ejection_dir = EAST
+	var/ejection_dir = SOUTH
 
 	//For SINGLE_CASING or SPEEDLOADER guns
 	var/max_shells = 0			//the number of casings that will fit inside
@@ -217,10 +217,13 @@
 
 /obj/item/weapon/gun/projectile/proc/handle_ejection(var/atom/movable/AM, var/range, var/speed)
 	var/ejection_target
-	if(!isnull(ejection_dir))
-		ejection_target = get_step(get_turf(loc), turn(loc.dir, -dir2angle(ejection_dir)))
+	var/mob/living/L = loc
+	if((!isnull(ejection_dir)) && istype(L))
+		world << "hoomancheck 1"
+		ejection_target = get_step(get_turf(loc), turn(L.dir, dir2angle(ejection_dir)))
 	else
 		ejection_target = get_turf(src)
+		world << "hoomancheck 0"
 	AM.dropInto(loc)
 	AM.throw_at(ejection_target, range, speed)
 
