@@ -148,6 +148,7 @@
 
 	var/on = 0					// 1 if on, 0 if off
 	var/flickering = 0
+	var/defective = 0
 	var/light_type = /obj/item/weapon/light/tube		// the type of light item
 	var/construct_type = /obj/machinery/light_construct
 
@@ -193,6 +194,8 @@
 		lightbulb = new light_type(src)
 		if(prob(lightbulb.broken_chance))
 			broken(1)
+		if(prob(lightbulb.defective_chance))
+			cause_defect()
 
 	on = powered()
 	update_icon(0)
@@ -489,6 +492,21 @@
 	on = 1
 	update_icon()
 
+/obj/machinery/light/proc/cause_defect()
+	// Defective lights flicker randomly, there's a small chance this will be called on any given light
+	if(!src)
+		return
+
+	src.defective = 1
+	while (src.defective == 1)
+		if(!src)
+			break
+		src.flicker(rand(1,5))
+		sleep(rand(10,300)) // Don't constantly flicker, wait a bit
+
+/obj/machinery/light/proc/fix_defect()
+	src.defective = 0
+
 // explosion effect
 // destroy the whole light fixture or just shatter it
 
@@ -544,6 +562,7 @@
 	matter = list(MATERIAL_STEEL = 60)
 	var/rigged = 0		// true if rigged to explode
 	var/broken_chance = 2
+	var/defective_chance = 3
 
 	var/b_max_bright = 0.9
 	var/b_inner_range = 1
@@ -570,6 +589,12 @@
 /obj/item/weapon/light/tube/party/Initialize() //Randomly colored light tubes. Mostly for testing, but maybe someone will find a use for them.
 	. = ..()
 	b_colour = rgb(pick(0,255), pick(0,255), pick(0,255))
+
+/obj/item/weapon/light/tube/old
+	defective_chance = 50
+
+/obj/item/weapon/light/defective
+	defective_chance = 100
 
 /obj/item/weapon/light/tube/large
 	w_class = ITEM_SIZE_SMALL
