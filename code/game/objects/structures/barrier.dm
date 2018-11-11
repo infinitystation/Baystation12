@@ -105,7 +105,7 @@
 	return 1
 
 /obj/structure/barrier/attack_hand(mob/living/carbon/human/user as mob)
-	if(user.species.can_shred(user) || user.species.reagent_tag == IS_XENOS)
+	if(user.species.can_shred(user) || user.get_species() == SPECIES_XENO)
 		take_damage(user.species.)
 		return
 	if(deployed)
