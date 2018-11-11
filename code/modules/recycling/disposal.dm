@@ -572,7 +572,7 @@
 		active = 0
 	if(!active)
 		return PROCESS_KILL
-	
+
 	var/obj/structure/disposalpipe/last
 
 	if(hasmob && prob(3))
@@ -674,6 +674,8 @@
 	var/base_icon_state	// initial icon state on map
 	var/sortType = ""
 	var/subtype = 0
+
+	obj_flags = OBJ_FLAG_TRIPPABLE
 	// new pipe, set the icon_state as on map
 	New()
 		..()
@@ -969,6 +971,14 @@
 
 /obj/structure/disposalpipe/hides_under_flooring()
 	return 1
+
+/obj/structure/disposalpipe/trip_check(mob/user as mob)
+	var/turf/T = src.loc
+	if(!T.is_plating())
+		return FALSE
+	if(dpdir & user.dir)
+		return FALSE
+	. = ..()
 
 // *** TEST verb
 //client/verb/dispstop()

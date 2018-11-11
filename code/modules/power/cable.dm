@@ -39,6 +39,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	color = COLOR_MAROON
 	var/obj/machinery/power/breakerbox/breaker_box
 
+	obj_flags = OBJ_FLAG_TRIPPABLE
 
 /obj/structure/cable/drain_power(var/drain_check, var/surge, var/amount = 0)
 
@@ -247,6 +248,14 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	if(colorC)
 		color_n = colorC
 	color = color_n
+
+/obj/structure/cable/trip_check(mob/user as mob)
+	var/turf/T = src.loc
+	if(!T.is_plating())
+		return FALSE
+	if((user.dir == d1 || user.dir == d2))
+		return FALSE
+	. = ..()
 
 /////////////////////////////////////////////////
 // Cable laying helpers
