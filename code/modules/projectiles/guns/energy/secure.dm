@@ -63,7 +63,7 @@
 	self_recharge = 1
 	use_external_power = 1
 	one_hand_penalty = 0
-	have_safety = FALSE
+	has_safety = FALSE
 
 /obj/item/weapon/gun/energy/gun/secure/mounted/Initialize()
 	var/mob/borg = get_holder_of_type(src, /mob/living/silicon/robot)

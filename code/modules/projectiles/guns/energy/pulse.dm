@@ -57,7 +57,7 @@
 /obj/item/weapon/gun/energy/pulse_rifle/mounted
 	self_recharge = 1
 	use_external_power = 1
-	have_safety = FALSE
+	has_safety = FALSE
 
 /obj/item/weapon/gun/energy/pulse_rifle/destroyer
 	name = "pulse destroyer"

@@ -41,7 +41,7 @@
 	//TODO generalize ammo icon states for guns
 	//var/magazine_states = 0
 	//var/list/icon_keys = list()		//keys
-	//var/list/ammo_states = list()	//values?	have_safety = TRUE
+	//var/list/ammo_states = list()	//values
 
 /obj/item/weapon/gun/projectile/Initialize()
 	. = ..()

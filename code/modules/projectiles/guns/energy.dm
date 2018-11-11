@@ -22,7 +22,7 @@ GLOBAL_LIST_INIT(registered_cyborg_weapons, list())
 	var/recharge_time = 4
 	var/charge_tick = 0
 
-	have_safety = TRUE
+	has_safety = TRUE
 
 /obj/item/weapon/gun/energy/switch_firemodes()
 	. = ..()

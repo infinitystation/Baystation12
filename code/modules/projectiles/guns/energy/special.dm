@@ -156,7 +156,7 @@
 	self_recharge = 1
 	charge_meter = 0
 	var/required_antag_type = MODE_WIZARD
-	have_safety = FALSE
+	has_safety = FALSE
 
 /obj/item/weapon/gun/energy/staff/special_check(var/mob/user)
 	if(required_antag_type)
@@ -210,4 +210,4 @@
 	name = "mounted plasma cutter"
 	use_external_power = 1
 	max_shots = 4
-	have_safety = FALSE
+	has_safety = FALSE

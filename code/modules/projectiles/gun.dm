@@ -51,8 +51,6 @@
 	zoomdevicename = "scope"
 	waterproof = FALSE
 
-	//drawsound = 'sound/items/unholster.ogg' Maybe one day, cowboy
-
 	var/burst = 1
 	var/fire_delay = 6 	//delay after shooting before the gun can be used again
 	var/burst_delay = 2	//delay between shots, if firing in bursts
@@ -86,7 +84,7 @@
 	var/tmp/lock_time = -100
 	var/tmp/last_safety_check = -INFINITY
 	var/safety_state = 1
-	var/have_safety = FALSE
+	var/has_safety = TRUE
 
 /obj/item/weapon/gun/Initialize()
 	. = ..()
@@ -95,6 +93,9 @@
 
 	if(isnull(scoped_accuracy))
 		scoped_accuracy = accuracy
+
+	if(!has_safety)
+		verbs -= /obj/item/weapon/gun/verb/toggle_safety_verb
 
 /obj/item/weapon/gun/update_twohanding()
 	if(one_hand_penalty)
@@ -146,7 +147,6 @@
 		else
 			handle_click_empty(user)
 		return 0
-
 	return 1
 
 /obj/item/weapon/gun/emp_act(severity)
@@ -434,7 +434,6 @@
 			return
 
 		in_chamber.on_hit(M)
-
 		if (in_chamber.damage > 4)
 			log_and_message_admins("[key_name(user)] commited suicide using \a [src]")
 			user.apply_damage(in_chamber.damage*2.5, in_chamber.damage_type, BP_HEAD, 0, in_chamber.damage_flags(), used_weapon = "Point blank shot in the mouth with \a [in_chamber]")
@@ -486,7 +485,7 @@
 		if(firemodes.len > 1)
 			var/datum/firemode/current_mode = firemodes[sel_mode]
 			to_chat(user, "The fire selector is set to [current_mode.name].")
-	if (have_safety)
+	if(has_safety)
 		to_chat(user, "The safety is [safety() ? "on" : "off"].")
 	last_safety_check = world.time
 
@@ -517,13 +516,13 @@
 		to_chat(user, "<span class='notice'>\The [src] is now set to [new_mode.name].</span>")
 
 /obj/item/weapon/gun/proc/toggle_safety(var/mob/user)
-	if (have_safety)
-		safety_state = !safety_state
-		update_icon()
-		if(user)
-			to_chat(user, "<span class='notice'>You switch the safety [safety_state ? "on" : "off"] on [src].</span>")
-			last_safety_check = world.time
-			playsound(src, 'sound/weapons/flipblade.ogg', 30, 1)
+	if(!has_safety) return
+	safety_state = !safety_state
+	update_icon()
+	if(user)
+		to_chat(user, "<span class='notice'>You switch the safety [safety_state ? "on" : "off"] on [src].</span>")
+		last_safety_check = world.time
+		playsound(src, 'sound/weapons/selector.ogg', 30, 1)
 
 /obj/item/weapon/gun/verb/toggle_safety_verb()
 	set src in usr
@@ -539,7 +538,7 @@
 		..()
 
 /obj/item/weapon/gun/proc/safety()
-	return have_safety && safety_state
+	return has_safety && safety_state
 
 /obj/item/weapon/gun/attack_hand()
 	..()
