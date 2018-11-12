@@ -148,7 +148,6 @@
 
 	var/on = 0					// 1 if on, 0 if off
 	var/flickering = 0
-	var/defective = 0
 	var/light_type = /obj/item/weapon/light/tube		// the type of light item
 	var/construct_type = /obj/machinery/light_construct
 
@@ -194,8 +193,7 @@
 		lightbulb = new light_type(src)
 		if(prob(lightbulb.broken_chance))
 			broken(1)
-		if(prob(lightbulb.defective_chance))
-			cause_defect()
+		cause_defect()
 
 	on = powered()
 	update_icon(0)
@@ -496,16 +494,23 @@
 	// Defective lights flicker randomly, there's a small chance this will be called on any given light
 	if(!src)
 		return
-
-	src.defective = 1
-	while (src.defective == 1)
+	if(!lightbulb.defective)									//If not defective, check the chanse of becoming defective one
+		if(on)													//Lights that turned off does not trigger this check
+			if(prob(lightbulb.defective_chance))
+				lightbulb.defective = 1
+			else if(prob(100 - lightbulb.defective_chance))		//If they are not became defective, check the chanse of increasing degective_chanse for this bulb
+				lightbulb.defective_chance += rand(1,3)
+			sleep(3000)											//Sleep for 5 minutes before flicking or checking for defection again
+	while (lightbulb.defective == 1)							//If defective, start flicking. If not, start cycle again
 		if(!src)
 			break
 		src.flicker(rand(1,5))
-		sleep(rand(10,300)) // Don't constantly flicker, wait a bit
+		sleep(rand(10,300))										//Don't constantly flicker, wait a bit
+	cause_defect()												//As said, start cycle again
 
 /obj/machinery/light/proc/fix_defect()
-	src.defective = 0
+	lightbulb.defective = 0
+	lightbulb.defective_chance = 0
 
 // explosion effect
 // destroy the whole light fixture or just shatter it
@@ -562,7 +567,8 @@
 	matter = list(MATERIAL_STEEL = 60)
 	var/rigged = 0		// true if rigged to explode
 	var/broken_chance = 2
-	var/defective_chance = 3
+	var/defective = 0			//Bulbs and tubes will be checked for defection
+	var/defective_chance = 1	//Chanse of becoming defective
 
 	var/b_max_bright = 0.9
 	var/b_inner_range = 1
@@ -592,9 +598,12 @@
 
 /obj/item/weapon/light/tube/old
 	defective_chance = 50
+	desc = "A replacement light tube. This one looks old."
 
 /obj/item/weapon/light/defective
+	defective = 1
 	defective_chance = 100
+	desc = "A replacement light tube. This one looks used."
 
 /obj/item/weapon/light/tube/large
 	w_class = ITEM_SIZE_SMALL
