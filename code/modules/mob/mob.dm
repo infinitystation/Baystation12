@@ -793,8 +793,8 @@
 	else if( lying != lying_prev )
 		update_icons()
 
-	if(lying && !resting && incapacitated(INCAPACITATION_DISABLED)) //Play our knockdown sound.
-		playsound(get_turf(src), "bodyfall", 50, 1)
+//	if(lying && !resting && incapacitated(INCAPACITATION_KNOCKDOWN)) //Play our knockdown sound.
+//		playsound(get_turf(src), "bodyfall", 50, 1)
 
 /mob/proc/reset_layer()
 	if(lying)
