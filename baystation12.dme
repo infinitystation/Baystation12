@@ -875,6 +875,7 @@
 #include "code\game\objects\items\customs\clown.dm"
 #include "code\game\objects\items\customs\creo.dm"
 #include "code\game\objects\items\customs\csplayer.dm"
+#include "code\game\objects\items\customs\cust_zippo.dm"
 #include "code\game\objects\items\customs\custkit.dm"
 #include "code\game\objects\items\customs\dakimakura.dm"
 #include "code\game\objects\items\customs\darkred_headphones.dm"

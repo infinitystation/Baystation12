@@ -88,7 +88,7 @@
 	area_coherency_test_subarea_count = list()
 
 	area_usage_test_exempted_areas = list(
-		/area/prison,
+		/area/security/prison,
 		/area/alien,
 		/area/AIsattele,
 		/area/djstation,
@@ -103,7 +103,6 @@
 		/area/shuttle/escape/centcom,
 		/area/shuttle/alien,
 		/area/shuttle/alien/base,
-		/area/prison/solitary,
 		/area/turret_protected/ai_upload_foyer,
 		/area/vacant/mess,
 		/area/turbolift,

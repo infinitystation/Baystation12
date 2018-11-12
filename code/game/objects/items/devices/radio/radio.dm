@@ -762,7 +762,6 @@
 
 /obj/item/device/radio/off
 	listening = 0
-	on = 0
 
 /obj/item/device/radio/announcer
 	invisibility = 101
