@@ -204,7 +204,7 @@
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/cough_female.ogg"
 
-		if(H.species.reagent_tag == IS_RESOMI)
+		if(H.get_species() == SPECIES_RESOMI)
 			emote_sound = "sound/voice/resomicoughb.ogg"
 
 		if(emote_sound)
@@ -295,7 +295,7 @@
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/laugh_female_[rand(1,3)].ogg"
 
-		if(H.species.reagent_tag == IS_RESOMI)
+		if(H.get_species() == SPECIES_RESOMI)
 			emote_sound = "sound/voice/resomicougha.ogg"
 
 		if(emote_sound)
@@ -360,10 +360,10 @@
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/scream_female_[rand(1,2)].ogg"
 
-		if(H.species.reagent_tag == IS_XENOS)
+		if(H.get_species() == SPECIES_XENO)
 			emote_sound = "sound/voice/alien_pain.ogg"
 
-		if(H.species.reagent_tag == IS_RESOMI)
+		if(H.get_species() == SPECIES_RESOMI)
 			emote_sound = "sound/voice/resomisneeze.ogg"
 
 		if(emote_sound)

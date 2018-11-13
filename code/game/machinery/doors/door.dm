@@ -274,7 +274,7 @@
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if(H.species.reagent_tag == IS_XENOS)
+		if(H.get_species() == SPECIES_XENO)
 			H.pry_open(src)
 
 	if(src.allowed(user) && operable())
