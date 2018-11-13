@@ -195,7 +195,7 @@ datum/track/proc/GetTrack()
 		power_change()
 		return
 
-	if(istype(W, /obj/item/device/cassette))
+	else if(istype(W, /obj/item/device/cassette))
 		var/obj/item/device/cassette/D = W
 		if(cassette)
 			to_chat(user, "<span class='notice'>There is already a cassette inside.</span>")
@@ -210,7 +210,17 @@ datum/track/proc/GetTrack()
 		D.forceMove(src)
 		cassette = D
 		tracks += cassette.track
-		//current_track = cassette.track
+		SSnano.update_uis(src)
+		return
+
+	else if(istype(W, /obj/item/weapon/material/coin))
+		user.drop_item()
+		W.forceMove(src)
+		to_chat(user, "<span class='notice'>You insert \the [W] into \the [src].</span>")
+		var/newtitle = input("Type a title of the new track", "Track title", "Track") as text
+		var/sound/S = input("Select a sound", "Sound", 'sound/effects/ghost.ogg') as sound
+		tracks += new/datum/track(newtitle, S)
+		SSnano.update_uis(src)
 		return
 
 	return ..()
@@ -236,7 +246,7 @@ datum/track/proc/GetTrack()
 		return
 
 	// Jukeboxes cheat massively and actually don't share id. This is only done because it's music rather than ambient noise.
-	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, current_track.GetTrack(), volume = volume, range = 7, falloff = 3, prefer_mute = TRUE)
+	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, current_track.GetTrack(), volume = volume, range = 7, falloff = 3, prefer_mute = TRUE, stream = TRUE)
 
 	playing = 1
 	update_use_power(2)

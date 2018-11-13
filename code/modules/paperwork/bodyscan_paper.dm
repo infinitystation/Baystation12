@@ -1,5 +1,6 @@
 /obj/item/weapon/paper/bodyscan
-	color = COLOR_OFF_WHITE
+	color = COLOR_YELLOW
+//	color = COLOR_OFF_WHITE
 	scan_file_type = /datum/computer_file/data/bodyscan
 
 /obj/item/weapon/paper/bodyscan/examine(mob/user)

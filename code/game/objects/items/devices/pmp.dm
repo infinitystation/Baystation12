@@ -399,7 +399,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 
 	log_and_message_admins("launched a [src] <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> with the song \"[cassette.track.title]\".")
 	QDEL_NULL(sound_token)
-	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, cassette.track.GetTrack(), volume = volume, frequency = frequency, range = 7, falloff = 4, prefer_mute = TRUE)
+	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, cassette.track.GetTrack(), volume = volume, frequency = frequency, range = 7, falloff = 4, prefer_mute = TRUE, stream = TRUE)
 	playing = 1
 	update_icon()
 	START_PROCESSING(SSobj, src)

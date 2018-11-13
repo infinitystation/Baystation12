@@ -23,11 +23,11 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 
 
 //This can be called if either we're doing whole sound setup ourselves or it will be as part of from-file sound setup
-/decl/sound_player/proc/PlaySoundDatum(var/atom/source, var/sound_id, var/sound/sound, var/range, var/prefer_mute)
+/decl/sound_player/proc/PlaySoundDatum(var/atom/source, var/sound_id, var/sound/sound, var/range, var/prefer_mute, var/stream)
 	var/token_type = isnum(sound.environment) ? /datum/sound_token : /datum/sound_token/static_environment
-	return new token_type(source, sound_id, sound, range, prefer_mute)
+	return new token_type(source, sound_id, sound, range, prefer_mute, stream)
 
-/decl/sound_player/proc/PlayLoopingSound(var/atom/source, var/sound_id, var/sound, var/volume, var/range, var/falloff = 1, var/echo, var/frequency, var/prefer_mute)
+/decl/sound_player/proc/PlayLoopingSound(var/atom/source, var/sound_id, var/sound, var/volume, var/range, var/falloff = 1, var/echo, var/frequency, var/prefer_mute, var/stream)
 	var/sound/S = istype(sound, /sound) ? sound : new(sound)
 	S.environment = 0 // Ensures a 3D effect even if x/y offset happens to be 0 the first time it's played
 	S.volume  = volume
@@ -36,7 +36,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	S.frequency = frequency
 	S.repeat = TRUE
 
-	return PlaySoundDatum(source, sound_id, S, range, prefer_mute)
+	return PlaySoundDatum(source, sound_id, S, range, prefer_mute, stream)
 
 /decl/sound_player/proc/PrivStopSound(var/datum/sound_token/sound_token)
 	var/channel = sound_token.sound.channel
@@ -78,6 +78,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	var/list/listeners // Assoc: Atoms hearing this sound, and their sound datum
 	var/range          // How many turfs away the sound will stop playing completely
 	var/prefer_mute    // If sound should be muted instead of stopped when mob moves out of range. In the general case this should be avoided because listeners will remain tracked.
+	var/stream         // Stream variable for SOUND_STREAM. SOUND_STREAM is special flag for sounds, which make sound's data compressed before send.
 	var/sound/sound    // Sound datum, holds most sound relevant data
 	var/sound_id       // The associated sound id, used for cleanup
 	var/status = 0     // Paused, muted, running? Global for all listeners
@@ -87,7 +88,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	var/datum/proximity_trigger/square/proxy_listener
 	var/list/can_be_heard_from
 
-/datum/sound_token/New(var/atom/source, var/sound_id, var/sound/sound, var/range = 4, var/prefer_mute = FALSE)
+/datum/sound_token/New(var/atom/source, var/sound_id, var/sound/sound, var/range = 4, var/prefer_mute = FALSE, var/stream = FALSE)
 	..()
 	if(!istype(source))
 		CRASH("Invalid sound source: [log_info_line(source)]")
@@ -103,6 +104,10 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	src.source      = source
 	src.sound       = sound
 	src.sound_id    = sound_id
+
+	src.stream      = stream
+	if(stream)
+		src.status |= SOUND_STREAM
 
 	if(sound.repeat) // Non-looping sounds may not reserve a sound channel due to the risk of not hearing when someone forgets to stop the token
 		var/channel = GLOB.sound_player.PrivGetChannel(src) //Attempt to find a channel
@@ -241,6 +246,7 @@ datum/sound_token/proc/PrivAddListener(var/atom/listener)
 /datum/sound_token/proc/PrivUpdateListener(var/listener)
 	sound.environment = PrivGetEnvironment(listener)
 	sound.status = status|listener_status[listener]|SOUND_UPDATE
+	if(stream) src.status |= SOUND_STREAM
 	sound_to(listener, sound)
 
 /datum/sound_token/proc/PrivGetEnvironment(var/listener)
