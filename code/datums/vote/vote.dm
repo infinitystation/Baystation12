@@ -15,14 +15,14 @@
 
 	var/list/result                // The results; format is list(choice = votes).
 	var/results_length = 3         // How many choices to show in the result. Setting to -1 will show all choices.
-//	var/list/weights = list(3,2,1) // Controls how many things a person can vote for and how they will be weighed.
-	var/list/weights = list(1)     // Ќам не нужно взвешенное голосование ~bear1ake@inf-dev
+	var/list/weights = list(3,2,1) // Controls how many things a person can vote for and how they will be weighed.
 	var/list/voted = list()        // Format is list(ckey = list(a, b, ...)); a, b, ... are ordered by order of preference and are numbers, referring to the index in choices
 
 	var/win_x = 450
 	var/win_y = 740                // Vote window size.
 
 	var/manual_allowed = 1         // Whether humans can start it.
+//	var/not_weighted = 1           // ¬звешенные голосовани€, чаще всего, не нужны, но это на будущее ~bear1ake@inf-dev
 
 //Expected to be run immediately after creation; a false return means that the vote could not be run and the datum will be deleted.
 /datum/vote/proc/setup(mob/creator, automatic)
