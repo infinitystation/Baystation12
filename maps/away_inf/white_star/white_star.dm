@@ -4,9 +4,8 @@
 	name = "Unidentified ship"
 	desc = "Error. Scanning is impossible."
 	color = "#c6d8eb"
-	vessel_mass = 35
-	default_delay = 20 SECONDS
-	speed_mod = 10 SECONDS
+	vessel_mass = 3500
+	max_speed = 1/(2 SECONDS)
 	//	icon_state = "malf_ship"
 
 /datum/map_template/ruin/away_site/white_star
@@ -20,6 +19,5 @@
 	name = "Unidentified ship"
 	desc = "Error. Scanning is impossible."
 	color = "#c6d8eb"
-	vessel_mass = 45
-	default_delay = 25 SECONDS
-	speed_mod = 10 SECONDS*/
+	vessel_mass = 4000
+	max_speed = 1/(2 SECONDS)*/
