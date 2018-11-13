@@ -28,7 +28,7 @@ https://github.com/infinitystation/Baystation12.git
 ## УСТАНОВКА
 0. Убедитесь, что у вас есть BYOND. Скачать можно здесь: http://www.byond.com/.  
 1. Откройте файл baystation12.dme с помощью Dream Maker.
-2. Нажмите Build -> Compile или нажмите Ctrl + K.
+2. Нажмите Build, затем на Compile или нажмите Ctrl + K.
 3. Дождитесь сообщения:  
 ```
 ...
@@ -43,7 +43,7 @@ https://discord.gg/N4atUkH
 
 ## ЗАПУСК
 0. Убедитесь, что у вас есть BYOND. Скачать можно здесь: http://www.byond.com/.  
-1. Нажмите на Menu (Шестеренка) -> Start Dream Daemon. Или нажмите Ctrl + D.
+1. Откройте BYOND и нажмите на Menu (Шестеренка), затем на Start Dream Daemon. Или нажмите Ctrl + D.
 2. Выберите с файл с помощью кнопки [...].
 3. Напишите порт и нажмите кнопку [GO].
 4. Как только появится строка "Initializations Complete" нажмите кнопку входа, которая обозначена стрелкой.
