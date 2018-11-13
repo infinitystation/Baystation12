@@ -761,6 +761,7 @@
 	return
 
 /obj/item/device/radio/off
+	broadcasting = 0
 	listening = 0
 
 /obj/item/device/radio/announcer
