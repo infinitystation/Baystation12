@@ -64,8 +64,10 @@
 	if(danger_level != atmosalm)
 		if (danger_level < 1 && atmosalm >= 1)
 			//closing the doors on red and opening on green provides a bit of hysteresis that will hopefully prevent fire doors from opening and closing repeatedly due to noise
+			set_emergency_lighting(0)
 			air_doors_open()
 		else if (danger_level >= 2 && atmosalm < 2)
+			set_emergency_lighting(1)
 			air_doors_close()
 
 		atmosalm = danger_level
