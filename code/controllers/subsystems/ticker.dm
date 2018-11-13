@@ -22,6 +22,8 @@ SUBSYSTEM_DEF(ticker)
 	var/delay_notified = 0          //Spam prevention.
 	var/restart_timeout = 1 MINUTE
 
+	var/admin_ending = 0 //Are you badmin or developer?
+
 	var/list/minds = list()         //Minds of everyone in the game.
 	var/list/antag_pool = list()
 	var/looking_for_antags = 0
@@ -100,6 +102,10 @@ SUBSYSTEM_DEF(ticker)
 	if(!length(GLOB.admins))
 		send2adminirc("Round has started with no admins online.")
 
+	if(config.ooc_allowed && !config.ooc_during_round)
+		config.ooc_allowed = 0
+		to_world("<B>The OOC channel has been globally disabled!</B>")
+
 	if(config.sql_enabled)
 		statistic_cycle() // Polls population totals regularly and stores them in an SQL DB -- TLE
 
@@ -107,7 +113,11 @@ SUBSYSTEM_DEF(ticker)
 	mode.process()
 	var/mode_finished = mode_finished()
 
-	if(mode_finished && game_finished())
+	if(mode_finished && game_finished() || admin_ending)
+		if(!config.ooc_allowed)
+			config.ooc_allowed = 1
+			to_world("<B>The OOC channel has been globally enabled!</B>")
+
 		Master.SetRunLevel(RUNLEVEL_POSTGAME)
 		end_game_state = END_GAME_READY_TO_END
 		INVOKE_ASYNC(src, .proc/declare_completion)
