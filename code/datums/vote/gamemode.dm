@@ -19,6 +19,10 @@
 
 /datum/vote/gamemode/setup_vote(mob/creator, automatic)
 	..()
+	if(SSticker.round_progressing)
+		SSticker.round_progressing = 0
+		to_world("<font color='red'><b>Round start has been delayed.</b></font>")
+
 	choices += config.votable_modes
 	for (var/F in choices)
 		var/datum/game_mode/M = gamemode_cache[F]
