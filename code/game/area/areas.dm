@@ -9,9 +9,8 @@
 	var/area_flags
 
 /area/New()
-	icon_state = "white"
+	icon_state = ""
 	uid = ++global_uid
-	blend_mode = BLEND_MULTIPLY
 
 	if(!requires_power)
 		power_light = 0
@@ -73,10 +72,7 @@
 		for (var/obj/machinery/alarm/AA in src)
 			AA.update_icon()
 
-		update_icon()
-
 		return 1
-
 	return 0
 
 /area/proc/air_doors_close()
@@ -170,44 +166,21 @@
 					D.open()
 	return
 
-#define DO_PARTY(COLOR) animate(color = COLOR, time = 0.5 SECONDS, easing = QUAD_EASING)
 /area/on_update_icon()
-	if((atmosalm || fire || eject || party) && (!requires_power||power_environ) && !istype(src, /area/space))//If it doesn't require power, can still activate this proc.
-		if(fire && !atmosalm && !eject && !party) // FIRE
-			color = "#ff9292"
-			animate(src)	// stop any current animations.
-			animate(src, color = "#ffa5b2", time = 1 SECOND, loop = -1, easing = SINE_EASING)
-			animate(color = "#ff9292", time = 1 SECOND, easing = SINE_EASING)
-		else if(atmosalm && !fire && !eject && !party) // ATMOS
-			color = "#b3dfff"
-			animate(src)
-			animate(src, color = "#78dfff", time = 3 SECOND, loop = -1, easing = SINE_EASING)
-			animate(color = "#b3dfff", time = 3 SECOND, easing = SINE_EASING)
-		else if(eject && !atmosalm && !fire && !party) // EJECT
-			color = "#ff9292"
-			animate(src)
-			animate(src, color = "#bc8a81", time = 1 SECOND, loop = -1, easing = EASE_IN|CUBIC_EASING)
-			animate(color = "#ff9292", time = 0.5 SECOND, easing = EASE_OUT|CUBIC_EASING)
-		else if(party && !atmosalm && !fire && !eject) // PARTY
-			color = "#ff728e"
-			animate(src)
-			animate(src, color = "#7272ff", time = 0.5 SECONDS, loop = -1, easing = QUAD_EASING)
-			DO_PARTY("#72aaff")
-			DO_PARTY("#ffc68e")
-			DO_PARTY("#72c6ff")
-			DO_PARTY("#ff72e2")
-			DO_PARTY("#72ff8e")
-			DO_PARTY("#ffff8e")
-			DO_PARTY("#ff728e")
+	if ((fire || eject || party) && (!requires_power||power_environ))//If it doesn't require power, can still activate this proc.
+		if(fire && !eject && !party)
+			icon_state = "blue"
+		/*else if(atmosalm && !fire && !eject && !party)
+			icon_state = "bluenew"*/
+		else if(!fire && eject && !party)
+			icon_state = "red"
+		else if(party && !fire && !eject)
+			icon_state = "party"
 		else
-			color = "#ffb2b2"
-			animate(src)
-			animate(src, color = "#b3dfff", time = 0.5 SECOND, loop = -1, easing = SINE_EASING)
-			animate(color = "#ffb2b2", time = 0.5 SECOND, loop = -1, easing = SINE_EASING)
+			icon_state = "blue-red"
 	else
-		animate(src, color = "#ffffff", time = 0.5 SECONDS, easing = QUAD_EASING)	// Stop the animation.
-
-#undef DO_PARTY
+	//	new lighting behaviour with obj lights
+		icon_state = null
 
 /*
 #define EQUIP 1
@@ -235,7 +208,7 @@
 /area/proc/power_change()
 	for(var/obj/machinery/M in src)	// for each machine in the area
 		M.power_change()			// reverify power status (to update icons etc.)
-	if (atmosalm || fire || eject || party)
+	if (fire || eject || party)
 		update_icon()
 
 /area/proc/usage(var/chan)
@@ -321,10 +294,7 @@ var/list/mob/living/forced_ambiance_list = new
 	if(L.lastarea != src)
 		if(LAZYLEN(forced_ambience))
 			forced_ambiance_list |= L
-			var/volume = 25
-			if(istype(src, /area/space))
-				volume = 100
-			L.playsound_local(T,sound(pick(forced_ambience), repeat = 1, wait = 0, volume = volume, channel = GLOB.lobby_sound_channel))
+			L.playsound_local(T,sound(pick(forced_ambience), repeat = 1, wait = 0, volume = 25, channel = GLOB.lobby_sound_channel))
 		else	//stop any old area's forced ambience, and try to play our non-forced ones
 			sound_to(L, sound(null, channel = 1))
 			forced_ambiance_list -= L
