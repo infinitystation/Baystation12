@@ -430,6 +430,7 @@ var/world_topic_spam_protect_time = world.timeofday
 			return "Save failed"
 		ban_unban_log_save("[input["id"]] has permabanned [C.ckey]. - Reason: [input["reason"]] - This is a ban until appeal.")
 		notes_add(target,"[input["id"]] has permabanned [C.ckey]. - Reason: [input["reason"]] - This is a ban until appeal.",input["id"])
+		send2adminirc("[input["id"]] has permabanned [C.ckey]. - Reason: [input["reason"]] - This is a ban until appeal.")
 		qdel(C)
 
 	else if(copytext(T,1,19) == "prometheus_metrics")
