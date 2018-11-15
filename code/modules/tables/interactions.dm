@@ -91,6 +91,7 @@
 			if(G.force_danger())
 				G.affecting.forceMove(src.loc)
 				visible_message("<span class='danger'>[G.assailant] puts [G.affecting] on \the [src].</span>")
+				item_placed(G.affecting)
 				qdel(W)
 			else
 				to_chat(user, "<span class='danger'>You need a better grip to do that!</span>")
@@ -119,6 +120,7 @@
 
 	// Placing stuff on tables
 	if(user.unEquip(W, src.loc))
+		item_placed(W)
 		auto_align(W, click_params)
 		return 1
 
