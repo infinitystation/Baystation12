@@ -3,24 +3,25 @@
 	set category = "Object"
 	var/mob/M = usr
 
-	if(ishuman(M) && !M.restrained() && !M.stat && !M.paralysis && ! M.stunned)
-		if(!istype(usr.loc,/turf)) return
-		if(!(locate(/obj/item/weapon/stool) in usr.loc) && !(locate(/obj/structure/bed) in usr.loc) && !(locate(/obj/structure/table) in usr.loc) && !(locate(/obj/structure/hygiene/toilet) in usr.loc))
+	if(ishuman(M) && M.incapacitated())
+		if(!isturf(usr.loc))
+			return FALSE
+		if(!(locate(/obj/item/weapon/stool) in get_turf(usr)) && !(locate(/obj/structure/bed) in get_turf(usr)) && !(locate(/obj/structure/table) in get_turf(usr)) && !(locate(/obj/structure/hygiene/toilet) in get_turf(usr)))
 			to_chat(usr, "<span class='warning'>You have to be standing on top of a chair/table/bed to make a noose!</span>")
-			return 0
+			return FALSE
 		var/turf/above = GetAbove(get_turf(src))
 		if(above && isopenspace(above))
 			to_chat(usr, "<span class='warning'>There no roof above us, we can't make noose without surface.</span>")
-			return
+			return FALSE
 		if(src.amount <= 24)
 			to_chat(usr, "<span class='warning'> You need at least 25 lengths to make a noose!</span>")
-			return
-		new /obj/structure/noose(usr.loc)
+			return FALSE
+		new /obj/structure/noose(get_turf(usr))
 		to_chat(usr, "<span class='notice'>You wind some cable together to make a noose, tying it to the ceiling.</span>")
 		src.use(25)
 	else
 		to_chat(usr, "<span class='notice'>You cannot do that.</span>")
-	..()
+	return
 
 /obj/structure/noose // From Aurora
 	name = "noose"
@@ -35,7 +36,7 @@
 	var/ticks = 0
 
 /obj/structure/noose/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/weapon/wirecutters))
+	if(is_sharp(W))
 		user.visible_message("[user] cuts the noose.", "<span class='notice'>You cut the noose.</span>")
 		if(buckled_mob)
 			buckled_mob.visible_message("<span class='danger'>[buckled_mob] falls over and hits the ground!</span>",\
@@ -48,8 +49,8 @@
 		return
 	..()
 
-/obj/structure/noose/New()
-	..()
+/obj/structure/noose/Initialize()
+	. = ..()
 	pixel_y += 16 //Noose looks like it's "hanging" in the air
 	over = image(icon, "noose_overlay")
 	over.layer = MOB_LAYER + 0.1
@@ -104,16 +105,17 @@
 
 /obj/structure/noose/user_buckle_mob(mob/living/carbon/human/M, mob/user)
 	if(!in_range(user, src) || user.stat || user.restrained() || !istype(M))
-		return 0
+		return FALSE
 
 	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/external/affecting = H.get_organ("head")
+		var/obj/item/organ/external/affecting = H.get_organ(BP_HEAD)
 		if(!affecting)
 			to_chat(user, "<span class='danger'>They don't have a head.</span>")
 			return
 
-	if(M.loc != src.loc) return 0 //Can only noose someone if they're on the same tile as noose
+	if(M.loc != src.loc)
+		return FALSE //Can only noose someone if they're on the same tile as noose
 
 	add_fingerprint(user)
 
@@ -121,8 +123,8 @@
 		M.visible_message(\
 			"<span class='warning'>[M] ties \the [src] over their neck!</span>",\
 			"<span class='warning'>You tie \the [src] over your neck!</span>")
-		playsound(user.loc, 'sound/effects/noosed.ogg', 50, 1, -1)
-		return 1
+		playsound(src, 'sound/effects/noosed.ogg', 50, 1, -1)
+		return TRUE
 	else
 		M.visible_message(\
 			"<span class='danger'>[user] attempts to tie \the [src] over [M]'s neck!</span>",\
@@ -134,24 +136,23 @@
 					"<span class='danger'>[user] ties \the [src] over [M]'s neck!</span>",\
 					"<span class='userdanger'>[user] ties \the [src] over your neck!</span>")
 				playsound(user.loc, 'sound/effects/noosed.ogg', 50, 1, -1)
-				return 1
+				return TRUE
 			else
 				user.visible_message(\
 					"<span class='warning'>[user] fails to tie \the [src] over [M]'s neck!</span>",\
 					"<span class='warning'>You fail to tie \the [src] over [M]'s neck!</span>")
-				return 0
+				return FALSE
 		else
 			user.visible_message(\
 				"<span class='warning'>[user] fails to tie \the [src] over [M]'s neck!</span>",\
 				"<span class='warning'>You fail to tie \the [src] over [M]'s neck!</span>")
-			return 0
+			return FALSE
 
 /obj/structure/noose/Process(mob/living/carbon/human/M, mob/user)
 	if(!buckled_mob)
-		STOP_PROCESSING(SSobj, src)
 		buckled_mob.pixel_x = initial(buckled_mob.pixel_x)
 		pixel_x = initial(pixel_x)
-		return
+		return PROCESS_KILL
 
 	ticks++
 	switch(ticks)
@@ -167,7 +168,7 @@
 			if(buckled_mob)
 				if (ishuman(buckled_mob))
 					var/mob/living/carbon/human/H = buckled_mob
-					if (!H.can_feel_pain() || H.isSynthetic())
+					if(!H.can_feel_pain() || H.isSynthetic())
 						return
 				if(prob(15))
 					var/flavor_text = list("<span class='warning'>[buckled_mob]'s legs flail for anything to stand on.</span>",\
@@ -186,7 +187,7 @@
 	if(buckled_mob)
 		if (ishuman(buckled_mob))
 			var/mob/living/carbon/human/H = buckled_mob
-			if (!H.can_feel_pain() || H.isSynthetic())
+			if(!H.can_feel_pain() || H.isSynthetic())
 				return
 		buckled_mob.adjustOxyLoss(5)
 		buckled_mob.adjustBrainLoss(1)
