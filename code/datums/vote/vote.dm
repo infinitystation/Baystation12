@@ -7,22 +7,22 @@
 	var/list/display_choices = list() // What's actually shown to the users.
 	var/list/additional_text = list() // Stuff for UI formatting.
 	var/additional_header
-	var/list/priorities = list("First", "Second", "Third") // Should have the same length as weights below.
+	var/list/priorities = list("Vote") // Should have the same length as weights below. // "First", "Second", "Third"
 
 	var/start_time
 	var/time_remaining
 	var/status = VOTE_STATUS_PREVOTE
 
 	var/list/result                // The results; format is list(choice = votes).
-	var/results_length = 3         // How many choices to show in the result. Setting to -1 will show all choices.
-	var/list/weights = list(3,2,1) // Controls how many things a person can vote for and how they will be weighed.
+	var/results_length = INFINITY  // How many choices to show in the result. Setting to INFINITY will show all choices.
+	var/list/weights = list(1)     // Controls how many things a person can vote for and how they will be weighed.
 	var/list/voted = list()        // Format is list(ckey = list(a, b, ...)); a, b, ... are ordered by order of preference and are numbers, referring to the index in choices
 
 	var/win_x = 450
 	var/win_y = 740                // Vote window size.
 
 	var/manual_allowed = 1         // Whether humans can start it.
-//	var/not_weighted = 1           // Взвешенные голосования, чаще всего, не нужны, но это на будущее ~bear1ake@inf-dev
+	var/percent_votes = FALSE      // Total votes in current choose. If FALSE - shows total num of voted people for this choose.
 
 //Expected to be run immediately after creation; a false return means that the vote could not be run and the datum will be deleted.
 /datum/vote/proc/setup(mob/creator, automatic)
@@ -154,7 +154,8 @@
 	else
 		. += "<h2>Vote: [capitalize(name)]</h2>"
 	. += "Time Left: [time_remaining] s<hr>"
-	. += "<table width = '100%'><tr><td align = 'center'><b>Choices</b></td><td colspan='3' align = 'center'><b>Votex</b></td><td align = 'center'><b>Votes</b></td>"
+	. += "<div class='statusDisplay'>"
+	. += "<table width = '100%'><tr><td align = 'center'><b>Choices</b></td><td colspan='1' align = 'center'><b>Votex</b></td><td align = 'center'><b>Votes</b></td>"
 	. += additional_header
 
 	var/totalvotes = 0
@@ -166,24 +167,24 @@
 		var/number_of_votes = choices[choice] || 0
 		var/votepercent = 0
 		if(totalvotes)
-			votepercent = round((number_of_votes/totalvotes)*100)
+			votepercent = percent_votes ? "[round((number_of_votes/totalvotes)*100)]%" : number_of_votes
 
-		. += "<tr><td>"
+		. += "<tr><td align = 'center'>"
 		. += "[display_choices[choice]]"
 		. += "</td>"
 
 		for(var/i = 1, i <= length(priorities), i++)
-			. += "<td>"
+			. += "<td align = 'center'>"
 			if(voted[user.ckey] && (voted[user.ckey][i] == j)) //We have this jth choice chosen at priority i.
 				. += "<b><a href='?src=\ref[src];choice=[j];priority=[i]'>[priorities[i]]</a></b>"
 			else
 				. += "<a href='?src=\ref[src];choice=[j];priority=[i]'>[priorities[i]]</a>"
 			. += "</td>"
-		. += "</td><td align = 'center'>[votepercent]%</td>"
+		. += "</td><td align = 'center'>[votepercent]</td>"
 		if (additional_text[choice])
 			. += "[additional_text[choice]]" //Note lack of cell wrapper, to allow for dynamic formatting.
 		. += "</tr>"
-	. += "</table><hr>"
+	. += "</table></div><hr>"
 
 /datum/vote/Topic(href, href_list, hsrc)
 	var/mob/user = usr
