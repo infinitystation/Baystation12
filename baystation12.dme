@@ -885,6 +885,7 @@
 #include "code\game\objects\items\customs\kosteg_kit.dm"
 #include "code\game\objects\items\customs\messith.dm"
 #include "code\game\objects\items\customs\moghes.dm"
+#include "code\game\objects\items\customs\naris.dm"
 #include "code\game\objects\items\customs\pink_guitar.dm"
 #include "code\game\objects\items\customs\scp_carrier.dm"
 #include "code\game\objects\items\customs\stange_pill.dm"
