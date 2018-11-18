@@ -475,7 +475,7 @@
 	current_location = "nav_ert_start"
 	landmark_transition = "nav_ert_transition"
 	home_waypoint = "nav_ert_start"
-	announcer = "SEV sierra Sensor Array"
+	announcer = "NSV sierra Sensor Array"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
 
@@ -563,7 +563,7 @@
 /datum/shuttle/autodock/overmap/exploration_shuttle
 	name = "Charon"
 	move_time = 90
-	shuttle_area = list(/area/exploration_shuttle/cockpit, /area/exploration_shuttle/atmos, /area/exploration_shuttle/power, /area/exploration_shuttle/crew, /area/exploration_shuttle/cargo, /area/exploration_shuttle/airlock)
+	shuttle_area = list(/area/exploration_shuttle/cockpit, /area/exploration_shuttle/atmos, /area/exploration_shuttle/medical, /area/exploration_shuttle/power, /area/exploration_shuttle/cargo, /area/exploration_shuttle/airlock)
 	dock_target = "calypso_shuttle"
 	current_location = "nav_hangar_calypso"
 	landmark_transition = "nav_transit_calypso"
@@ -571,6 +571,7 @@
 	fuel_consumption = 4
 	logging_home_tag = "nav_hangar_calypso"
 	logging_access = access_expedition_shuttle_helm
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 
 /obj/effect/shuttle_landmark/sierra/hangar/exploration_shuttle
 	name = "Charon Hangar"
@@ -615,6 +616,7 @@
 	fuel_consumption = 2
 	logging_home_tag = "nav_hangar_guppy"
 	logging_access = access_guppy_helm
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 
 /obj/effect/shuttle_landmark/sierra/hangar/guppy
 	name = "Guppy Hangar"

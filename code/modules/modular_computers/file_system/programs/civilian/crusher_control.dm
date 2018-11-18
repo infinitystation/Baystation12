@@ -5,7 +5,7 @@
 	program_icon_state = "piston"
 	size = 8
 	required_access = access_cargo
-	usage_flags = PROGRAM_TELESCREEN
+	usage_flags = PROGRAM_TELESCREEN | PROGRAM_CONSOLE
 	nanomodule_path = /datum/nano_module/program/crushercontrol/
 
 /datum/nano_module/program/crushercontrol/

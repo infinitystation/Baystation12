@@ -62,6 +62,11 @@
 		list(mode_name="induce specific mutations", projectile_type=/obj/item/projectile/energy/floramut/gene, modifystate="floramut"),
 		)
 
+/obj/item/weapon/gun/energy/floragun/resolve_attackby(atom/A)
+	if(istype(A,/obj/machinery/portable_atmospherics/hydroponics))
+		return FALSE // do afterattack, i.e. fire, at pointblank at trays.
+	return ..()
+
 /obj/item/weapon/gun/energy/floragun/afterattack(obj/target, mob/user, adjacent_flag)
 	//allow shooting into adjacent hydrotrays regardless of intent
 	if(adjacent_flag && istype(target,/obj/machinery/portable_atmospherics/hydroponics))
@@ -75,12 +80,12 @@
 	set category = "Object"
 	set src in view(1)
 
-	var/genemask = input("Choose a gene to modify.") as null|anything in plant_controller.plant_gene_datums
+	var/genemask = input("Choose a gene to modify.") as null|anything in SSplants.plant_gene_datums
 
 	if(!genemask)
 		return
 
-	gene = plant_controller.plant_gene_datums[genemask]
+	gene = SSplants.plant_gene_datums[genemask]
 
 	to_chat(usr, "<span class='info'>You set the [src]'s targeted genetic area to [genemask].</span>")
 
@@ -196,7 +201,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	force = 8
 	origin_tech = list(TECH_MATERIAL = 4, TECH_PHORON = 4, TECH_ENGINEERING = 6, TECH_COMBAT = 3)
-	matter = list(DEFAULT_WALL_MATERIAL = 4000)
+	matter = list(MATERIAL_STEEL = 4000)
 	projectile_type = /obj/item/projectile/beam/plasmacutter
 	max_shots = 10
 	self_recharge = 1

@@ -1,0 +1,84 @@
+/mob/living/simple_animal/hostile/aquatic/shark
+	name = "shark"
+	desc = "A ferocious fish with many, many teeth."
+	icon_state = "shark"
+	icon_living = "shark"
+	icon_dead = "shark_dead"
+	maxHealth = 150
+	health = 150
+	meat_amount = 5
+	harm_intent_damage = 8
+	melee_damage_lower = 15
+	melee_damage_upper = 30
+	break_stuff_probability = 15
+	faction = "sharks"
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/fish/shark
+
+/mob/living/simple_animal/hostile/aquatic/shark/huge
+	name = "gigacretoxyrhina"
+	desc = "That is a lot of shark."
+	icon = 'icons/mob/spaceshark.dmi'
+	icon_state = "shark"
+	icon_living = "shark"
+	icon_dead = "shark_dead"
+	meat_amount = 10
+	turns_per_move = 2
+	move_to_delay = 2
+	attack_same = 1
+	speed = 0
+	mob_size = MOB_LARGE
+	pixel_x = -16
+	health = 400
+	maxHealth = 400
+	harm_intent_damage = 5
+	melee_damage_lower = 30
+	melee_damage_upper = 50
+	break_stuff_probability = 35
+
+/mob/living/simple_animal/hostile/aquatic/megacarp
+	name = "megacarp"
+	desc = "Legends says that those monsters live in the deepest and darkest caverns."
+	icon = 'icons/mob/megacarp.dmi'
+	icon_state = "megacarp"
+	icon_living = "megacarp"
+	icon_dead = "megacarp_dead"
+	faction = list("shark", "fishes")
+	meat_amount = 15
+	maxHealth = 500
+	health = 500
+	harm_intent_damage = 5
+	melee_damage_lower = 40
+	melee_damage_upper = 60
+	turns_per_move = 2
+	move_to_delay = 2
+	attack_same = 1
+	speed = 0
+	pixel_x = -16
+	pixel_y = -16
+	mob_size = MOB_LARGE
+	break_stuff_probability = 50
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/fish/carp
+
+/mob/living/simple_animal/hostile/aquatic/deathsquid
+	name = "giant squid"
+	desc = "RELEASE THE KRAKEN!"
+	icon = 'icons/mob/deathsquid_large.dmi'
+	icon_state = "deathsquid"
+	icon_living = "deathsquid"
+	icon_dead = "deathsquiddead"
+	faction = list("shark", "fishes")
+	meat_amount = 30
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/fish
+	maxHealth = 1500
+	health = 1500
+	harm_intent_damage = 5
+	melee_damage_lower = 40
+	melee_damage_upper = 80
+	turns_per_move = 3
+	move_to_delay = 1
+	attack_same = 0
+	speed = 1
+	pixel_x = -32
+	pixel_y = -32
+	mob_size = MOB_LARGE
+	break_stuff_probability = 80

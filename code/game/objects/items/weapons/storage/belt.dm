@@ -25,7 +25,7 @@
 	use_alt_layer = !use_alt_layer
 	update_icon()
 
-/obj/item/weapon/storage/belt/update_icon()
+/obj/item/weapon/storage/belt/on_update_icon()
 	if (ismob(src.loc))
 		var/mob/M = src.loc
 		M.update_inv_belt()
@@ -87,7 +87,7 @@
 	var/datum/extension/holster/H = get_extension(src, /datum/extension/holster)
 	H.examine_holster(user)
 
-/obj/item/weapon/storage/belt/holster/update_icon()
+/obj/item/weapon/storage/belt/holster/on_update_icon()
 	if (ismob(src.loc))
 		var/mob/M = src.loc
 		M.update_inv_belt()
@@ -105,9 +105,6 @@
 /obj/item/weapon/storage/belt/utility
 	name = "tool belt"
 	desc = "A belt of durable leather, festooned with hooks, slots, and pouches."
-	description_info = "The tool-belt has enough slots to carry a full engineer's toolset: screwdriver, crowbar, wrench, welder, cable coil, and multitool. Simply click the belt to move a tool to one of its slots."
-	description_fluff = "Good hide is hard to come by in certain regions of the galaxy. When they can't come across it, most TSCs will outfit their crews with toolbelts made of synthesized leather."
-	description_antag = "Only amateurs skip grabbing a tool-belt."
 	icon_state = "utilitybelt"
 	item_state = "utility"
 	overlay_flags = BELT_OVERLAY_ITEMS
@@ -266,6 +263,25 @@
 		/obj/item/weapon/hand_labeler,
 		/obj/item/clothing/gloves,
 		/obj/item/weapon/crowbar/prybar
+		)
+
+/obj/item/weapon/storage/belt/janitor
+	name = "janibelt"
+	desc = "A belt used to hold most janitorial supplies."
+	icon_state = "janibelt"
+	item_state = "janibelt"
+	storage_slots = 6
+	can_hold = list(
+		/obj/item/weapon/grenade/chem_grenade,
+		/obj/item/device/lightreplacer,
+		/obj/item/device/flashlight,
+		/obj/item/weapon/reagent_containers/spray/cleaner,
+		/obj/item/weapon/soap,
+		/obj/item/holosign_creator,
+		/obj/item/clothing/gloves,
+		/obj/item/device/assembly/mousetrap,
+		/obj/item/weapon/crowbar/prybar,
+		/obj/item/clothing/mask/plunger
 		)
 
 /obj/item/weapon/storage/belt/holster/general

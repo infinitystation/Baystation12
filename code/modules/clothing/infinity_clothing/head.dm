@@ -21,7 +21,8 @@
 /obj/item/clothing/head/kitty/fake
 	name = "fake kitty ears"
 	desc = "The fur feels.....a bit too realistic."
-	icon_state = "kitty"
+	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
+	item_state = "kitty_tailless"
 	body_parts_covered = 0
 
 	update_icon(var/mob/living/carbon/human/user)
@@ -42,3 +43,10 @@
 	name = "\improper combat helmet"
 	desc = "A helmet with 'MARINE CORPS' printed on the back in red lettering."
 	icon_state = "helmet_nt"
+
+/obj/item/clothing/head/soft/scp_cap
+	name = "SCP guard cap"
+	desc = "A simple security dark grey cap.\nThis one has SCP tag, terran organization of NT asset protection"
+	icon = 'icons/obj/clothing/infinity/hats.dmi'
+	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
+	icon_state = "scp_cap"

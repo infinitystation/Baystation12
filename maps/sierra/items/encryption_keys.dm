@@ -44,8 +44,8 @@
 	desc = "A box full of exploration department radio keys."
 	startswith = list(/obj/item/weapon/screwdriver, /obj/item/device/encryptionkey/sierra_exploration = 5)
 
-/obj/item/device/encryptionkey/sierra_pathfinder
-	name = "pathfinder's encryption key"
+/obj/item/device/encryptionkey/sierra_el
+	name = "exploration_leader's encryption key"
 	icon_state = "com_cypherkey"
 	channels = list("Exploration" = 1, "Command" = 1)
 

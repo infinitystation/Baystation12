@@ -224,7 +224,7 @@
 	icon_state = "welding-g"
 	item_state = "welding-g"
 	action_button_name = "Flip Welding Goggles"
-	matter = list(DEFAULT_WALL_MATERIAL = 1500, "glass" = 1000)
+	matter = list(MATERIAL_STEEL = 1500, MATERIAL_GLASS = 1000)
 	use_alt_layer = TRUE
 	var/up = FALSE
 	flash_protection = FLASH_PROTECTION_MAJOR
@@ -270,18 +270,57 @@
 /obj/item/clothing/glasses/sunglasses/blindfold
 	name = "blindfold"
 	desc = "Covers the eyes, preventing sight."
+	action_button_name = "Adjust Blindfold"
 	icon_state = "blindfold"
 	item_state = "blindfold"
 	tint = TINT_BLIND
 	flash_protection = FLASH_PROTECTION_MAJOR
+	var/up = FALSE
+
+/obj/item/clothing/glasses/sunglasses/blindfold/attack_self()
+	toggle()
+
+
+/obj/item/clothing/glasses/sunglasses/blindfold/verb/toggle()
+	set category = "Object"
+	set name = "Adjust blindfold"
+	set src in usr
+
+	if(!usr.incapacitated())
+		if(src.up)
+			src.up = !src.up
+			flags_inv |= HIDEEYES
+			body_parts_covered |= EYES
+			icon_state = initial(icon_state)
+			flash_protection = initial(flash_protection)
+			tint = initial(tint)
+			to_chat(usr, "You flip \the [src] down to blind yourself.")
+		else
+			src.up = !src.up
+			flags_inv &= ~HIDEEYES
+			body_parts_covered &= ~EYES
+			icon_state = "[initial(icon_state)]up"
+			flash_protection = FLASH_PROTECTION_NONE
+			tint = TINT_NONE
+			to_chat(usr, "You push \the [src] up out of your face.")
+		update_clothing_icon()
+		update_vision()
+		usr.update_action_buttons()
 
 /obj/item/clothing/glasses/sunglasses/blindfold/tape
 	name = "length of tape"
 	desc = "It's a robust DIY blindfold!"
 	icon = 'icons/obj/bureaucracy_inf.dmi'
+	action_button_name = null
 	icon_state = "tape_cross"
 	item_state = null
 	w_class = ITEM_SIZE_TINY
+
+/obj/item/clothing/glasses/sunglasses/blindfold/tape/toggle()
+	to_chat(usr, SPAN_WARNING("You can't adjust \the [src]!"))
+	return
+
+
 
 /obj/item/clothing/glasses/sunglasses/prescription
 	name = "prescription sunglasses"
@@ -342,7 +381,7 @@
 		user.update_inv_glasses()
 		user.update_action_buttons()
 
-/obj/item/clothing/glasses/sunglasses/sechud/toggle/update_icon()
+/obj/item/clothing/glasses/sunglasses/sechud/toggle/on_update_icon()
 	if(on)
 		icon_state = initial(icon_state)
 	else
@@ -416,7 +455,7 @@
 	..()
 	update_icon()
 
-/obj/item/clothing/glasses/eyepatch/hud/update_icon()
+/obj/item/clothing/glasses/eyepatch/hud/on_update_icon()
 	overlays.Cut()
 	if(active)
 		var/image/eye = overlay_image(icon, "[icon_state]_eye", flags=RESET_COLOR)

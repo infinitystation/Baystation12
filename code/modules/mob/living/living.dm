@@ -150,15 +150,14 @@ default behaviour is:
 					if(istype(tmob.buckled, /obj/structure/bed))
 						if(!tmob.buckled.anchored)
 							step(tmob.buckled, t)
-				if(ishuman(AM) && AM:grabbed_by)
-					for(var/obj/item/grab/G in AM:grabbed_by)
-						step(G:assailant, get_dir(G:assailant, AM))
+				if(ishuman(AM))
+					var/mob/living/carbon/human/M = AM
+					for(var/obj/item/grab/G in M.grabbed_by)
+						step(G.assailant, get_dir(G.assailant, AM))
 						G.adjust_position()
 				if(saved_dir)
 					AM.set_dir(saved_dir)
 				now_pushing = 0
-			return
-	return
 
 /proc/swap_density_check(var/mob/swapper, var/mob/swapee)
 	var/turf/T = get_turf(swapper)
@@ -213,25 +212,25 @@ default behaviour is:
 	take_overall_damage(0, burn_amount)
 
 /mob/living/proc/adjustBodyTemp(actual, desired, incrementboost)
-	var/temperature = actual
+	var/btemperature = actual
 	var/difference = abs(actual-desired)	//get difference
 	var/increments = difference/10 //find how many increments apart they are
 	var/change = increments*incrementboost	// Get the amount to change by (x per increment)
 
 	// Too cold
 	if(actual < desired)
-		temperature += change
+		btemperature += change
 		if(actual > desired)
-			temperature = desired
+			btemperature = desired
 	// Too hot
 	if(actual > desired)
-		temperature -= change
+		btemperature -= change
 		if(actual < desired)
-			temperature = desired
+			btemperature = desired
 //	if(istype(src, /mob/living/carbon/human))
 //		log_debug("[src] ~ [src.bodytemperature] ~ [temperature]")
 
-	return temperature
+	return btemperature
 
 /mob/living/proc/getBruteLoss()
 	return maxHealth - health
@@ -395,7 +394,7 @@ default behaviour is:
 	return
 
 /mob/living/update_gravity(has_gravity)
-	if(!(ticker.current_state >= GAME_STATE_PLAYING))
+	if(!(GAME_STATE >= RUNLEVEL_GAME))
 		return
 	if(has_gravity)
 		stop_floating()
@@ -819,3 +818,24 @@ default behaviour is:
 		. -= 1
 	if(CLUMSY in mutations)
 		. -= 3
+
+/mob/living/can_drown()
+	return TRUE
+
+/mob/living/handle_drowning()
+	if(!can_drown() || !loc.is_flooded(lying))
+		return FALSE
+	if(prob(5))
+		to_chat(src, "<span class='danger'>You choke and splutter as you inhale water!</span>")
+	var/turf/T = get_turf(src)
+	T.show_bubbles()
+	return TRUE // Presumably chemical smoke can't be breathed while you're underwater.
+
+/mob/living/water_act(var/depth)
+	..()
+	wash_mob(src)
+	for(var/thing in get_equipped_items(TRUE))
+		if(isnull(thing)) continue
+		var/atom/movable/A = thing
+		if(A.simulated && !A.waterproof)
+			A.water_act(depth)

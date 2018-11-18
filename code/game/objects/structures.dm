@@ -1,7 +1,7 @@
 /obj/structure
 	icon = 'icons/obj/structures.dmi'
 	w_class = ITEM_SIZE_NO_CONTAINER
-
+	layer = STRUCTURE_LAYER
 	var/breakable
 	var/parts
 
@@ -16,9 +16,23 @@
 	if(LAZYLEN(footstep_sounds)) return pick(footstep_sounds)
 
 /obj/structure/Destroy()
-	if(parts)
-		new parts(loc)
+	var/turf/T = get_turf(src)
+	if(T && parts)
+		new parts(T)
 	. = ..()
+	if(istype(T))
+		T.fluid_update()
+
+/obj/structure/Initialize()
+	. = ..()
+	if(!CanFluidPass())
+		fluid_update()
+
+/obj/structure/Move()
+	. = ..()
+	if(. && !CanFluidPass())
+		fluid_update()
+
 
 /obj/structure/attack_hand(mob/user)
 	..()

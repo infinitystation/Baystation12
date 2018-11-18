@@ -1,7 +1,11 @@
 /obj/item/clothing/glasses/material/hybrid/special //special glasses for spacial MrNicolas
 	name = "hybrid optical scanner"
 	desc = "This scanner has several buttons on one side and the TCC logo on the other. Under the logo engraving 'Thoughts are material.' On the inside there is a pair of connectors. It seems that this thing is not for ordinary eyes."
-	icon_state = "hybrids_off"
+	icon_state = "hybrids"
+
+/obj/item/clothing/glasses/material/hybrid/special/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
 
 /obj/item/clothing/glasses/material/hybrid/special/Process()
 	if(ishuman(loc))
@@ -21,40 +25,5 @@
 		START_PROCESSING(SSobj, src)
 
 /obj/item/clothing/glasses/material/hybrid/special/dropped()
-	STOP_PROCESSING(SSobj, src)
-	. = ..()
-
-/obj/item/clothing/glasses/material/hybrid/special/attack_self(mob/user)
-	if(toggleable && !user.incapacitated())
-		if(!on && !mode)
-			flash_protection = FLASH_PROTECTION_MAJOR
-			vision_flags = null
-			tint = TINT_MODERATE
-			icon_state = "hybrids_weld"
-			on = !on
-			to_chat(user, "You switch \the [src] to welding protection mode.")
-			goto hybr_loop
-		if(on && !mode)
-			flash_protection = FLASH_PROTECTION_NONE
-			vision_flags = SEE_OBJS
-			tint = TINT_NONE
-			icon_state = "hybrids_mat"
-			mode = !mode
-			to_chat(user, "You switch \the [src] to material mode.")
-			goto hybr_loop
-		if(on && mode)
-			flash_protection = FLASH_PROTECTION_NONE
-			vision_flags = null
-			icon_state = "hybrids_off"
-			mode = !mode
-			on = !on
-			to_chat(user, "You switch off \the [src].")
-		hybr_loop:
-		update_icon()
-		sound_to(user, activation_sound)
-		user.update_inv_glasses()
-		user.update_action_buttons()
-
-/obj/item/clothing/glasses/material/hybrid/special/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	. = ..()

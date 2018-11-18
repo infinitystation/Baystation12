@@ -320,10 +320,11 @@ meteor_act
 		var/dtype = O.damtype
 		var/throw_damage = O.throwforce*(speed/THROWFORCE_SPEED_DIVISOR)
 
-		var/zone
+		var/zone = BP_CHEST
 		if (istype(O.thrower, /mob/living))
 			var/mob/living/L = O.thrower
-			zone = check_zone(L.zone_sel.selecting)
+			if(L.zone_sel)
+				zone = check_zone(L.zone_sel.selecting)
 		else
 			zone = ran_zone(BP_CHEST,75)	//Hits a random part of the body, geared towards the chest
 
@@ -369,7 +370,7 @@ meteor_act
 		if(dtype == BRUTE && istype(O,/obj/item))
 			var/obj/item/I = O
 			if (!is_robot_module(I))
-				var/sharp = is_sharp(I)
+				var/sharp = I.can_embed()
 				var/damage = throw_damage //the effective damage used for embedding purposes, no actual damage is dealt here
 				if (armor)
 					damage *= blocked_mult(armor)

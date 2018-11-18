@@ -5,6 +5,7 @@
 	icon = 'icons/mob/human.dmi'
 	icon_state = "body_m_s"
 	throw_range = 3 //NO TILSON
+	throw_speed = 0.5
 
 	var/list/hud_list[10]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
@@ -368,7 +369,10 @@
 	var/total_damage = 0
 
 	for(var/obj/item/organ/external/E in to_shock)
-		total_damage += ..(shock_damage, E.organ_tag, base_siemens_coeff * get_siemens_coefficient_organ(E))
+		if (BP_IS_ROBOTIC(E))
+			total_damage += ..(shock_damage, E.organ_tag, base_siemens_coeff * get_siemens_coefficient_organ(E) * 4)
+		else
+			total_damage += ..(shock_damage, E.organ_tag, base_siemens_coeff * get_siemens_coefficient_organ(E))
 	return total_damage
 
 /mob/living/carbon/human/proc/trace_shock(var/obj/item/organ/external/init, var/obj/item/organ/external/floor)
@@ -520,13 +524,18 @@
 		if(M)
 			src.examinate(M)
 
+	if(href_list["show_relations"])
+		var/mob/living/M = usr
+		if(istype(M))
+			M.see_relationship_info_with(src)
+
 	if (href_list["flavor_change"])
 		switch(href_list["flavor_change"])
 			if("done")
 				src << browse(null, "window=flavor_changes")
 				return
 			if("general")
-				var/msg = sanitize(input(usr,"Update the general description of your character. This will be shown regardless of clothing, and may include OOC notes and preferences.","Flavor Text",html_decode(flavor_texts[href_list["flavor_change"]])) as message, extra = 0)
+				var/msg = sanitize(input(usr,"Update the general description of your character. This will be shown regardless of clothing. Do not include OOC information here.","Flavor Text",html_decode(flavor_texts[href_list["flavor_change"]])) as message, extra = 0)
 				msg = sanitize_a2u(msg)
 				flavor_texts[href_list["flavor_change"]] = msg
 				return
@@ -872,7 +881,10 @@
 
 /mob/living/carbon/human/clean_blood(var/clean_feet)
 	.=..()
-	gunshot_residue = null
+	for(var/obj/item/organ/external/organ in organs)
+		if(clean_feet || (organ.organ_tag in list(BP_L_HAND,BP_R_HAND)))
+			organ.gunshot_residue = null
+
 	if(clean_feet && !shoes)
 		feet_blood_color = null
 		feet_blood_DNA = null
@@ -909,7 +921,7 @@
 			if(O.edge || O.sharp)
 				if(prob(1))
 					stomach_contents.Remove(O)
-					if(can_feel_pain())
+					if(can_feel_pain() && O.can_embed())
 						to_chat(src, "<span class='danger'>You feel something rip out of your stomach!</span>")
 						groin.embed(O)
 				else if(prob(5))
@@ -1585,6 +1597,34 @@
 		. += 1
 	if(skill_check(SKILL_WEAPONS, SKILL_PROF))
 		. += 2
+
+/mob/living/carbon/human/can_drown()
+	if(!internal && (!istype(wear_mask) || !wear_mask.filters_water()))
+		var/obj/item/organ/internal/lungs/L = locate() in internal_organs
+		return (!L || L.can_drown())
+	return FALSE
+
+/mob/living/carbon/human/get_breath_from_environment(var/volume_needed = STD_BREATH_VOLUME)
+	var/datum/gas_mixture/breath = ..(volume_needed)
+	var/turf/T = get_turf(src)
+	if(istype(T) && T.is_flooded(lying) && should_have_organ(BP_LUNGS))
+		var/can_breathe_water = (istype(wear_mask) && wear_mask.filters_water()) ? TRUE : FALSE
+		if(!can_breathe_water)
+			var/obj/item/organ/internal/lungs/lungs = internal_organs_by_name[BP_LUNGS]
+			if(lungs && lungs.can_drown())
+				can_breathe_water = TRUE
+		if(can_breathe_water)
+			if(!breath)
+				breath = new
+				breath.volume = volume_needed
+				breath.temperature = T.temperature
+			breath.adjust_gas("oxygen", ONE_ATMOSPHERE*volume_needed/(R_IDEAL_GAS_EQUATION*T20C))
+			T.show_bubbles()
+	return breath
+
+/mob/living/carbon/human/water_act(var/depth)
+	species.water_act(src, depth)
+	..(depth)
 
 /mob/living/carbon/human/proc/set_cultural_value(var/token, var/decl/cultural_info/_culture, var/defer_language_update)
 	if(!istype(_culture))

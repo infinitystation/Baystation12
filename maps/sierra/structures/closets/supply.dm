@@ -53,6 +53,7 @@
 		/obj/item/weapon/folder/yellow,
 		/obj/item/stack/package_wrap/twenty_five,
 		/obj/item/device/flash,
+		/obj/item/device/remote_device/quartermaster,
 		/obj/item/device/megaphone,
 		/obj/item/clothing/suit/armor/pcarrier/light,
 		/obj/item/device/binoculars,
@@ -85,6 +86,6 @@
 		/obj/item/weapon/crowbar,
 		/obj/item/clothing/glasses/material,
 		/obj/item/clothing/glasses/meson,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel_eng)),
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/industrial, /obj/item/weapon/storage/backpack/satchel/eng)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/eng, /obj/item/weapon/storage/backpack/messenger/engi))
 	)

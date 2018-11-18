@@ -128,7 +128,7 @@ obj/item/clothing/mask/smokable/ecig/util/examine(mob/user)
 				return
 			ec_cartridge.reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.4) // Most of it is not inhaled... balance reasons.
 
-/obj/item/clothing/mask/smokable/ecig/update_icon()
+/obj/item/clothing/mask/smokable/ecig/on_update_icon()
 	if (active)
 		item_state = icon_on
 		icon_state = icon_on
@@ -216,9 +216,9 @@ obj/item/clothing/mask/smokable/ecig/util/examine(mob/user)
 	w_class = ITEM_SIZE_TINY
 	icon = 'icons/obj/ecig.dmi'
 	icon_state = "ecartridge"
-	matter = list("metal" = 50, "glass" = 10)
+	matter = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 10)
 	volume = 20
-	atom_flags = ATOM_FLAG_OPEN_CONTAINER
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_OPEN_CONTAINER
 
 /obj/item/weapon/reagent_containers/ecig_cartridge/New()
 	create_reagents(volume)

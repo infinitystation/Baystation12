@@ -182,12 +182,16 @@
 /datum/shuttle/autodock/ferry/petrov
 	name = "Petrov"
 	warmup_time = 10
-	shuttle_area = list(/area/shuttle/petrov/ship,/area/shuttle/petrov/cell1,/area/shuttle/petrov/cell2,/area/shuttle/petrov/cell3)
 	dock_target = "petrov_shuttle_airlock"
 	waypoint_station = "nav_petrov_start"
 	waypoint_offsite = "nav_petrov_out"
 	logging_home_tag = "nav_petrov_start"
 	logging_access = access_petrov_helm
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+
+/datum/shuttle/autodock/ferry/petrov/New(_name, var/obj/effect/shuttle_landmark/initial_location)
+	shuttle_area = subtypesof(/area/shuttle/petrov)
+	..()
 
 /obj/effect/shuttle_landmark/petrov/start
 	name = "First Deck"
@@ -215,7 +219,6 @@
 		"nav_lost_supply_base_antag",
 		"nav_marooned_antag",
 		"nav_smugglers_antag",
-		"nav_bearcat_antag",
 		"nav_magshield_antag",
 		"nav_casino_antag",
 		"nav_yacht_antag",
@@ -238,19 +241,19 @@
 	landmark_tag = "nav_ninja_transition"
 
 /obj/effect/shuttle_landmark/ninja/deck1
-	name = "West of Fourth Deck"
+	name = "South of First Deck"
 	landmark_tag = "nav_ninja_deck1"
 
 /obj/effect/shuttle_landmark/ninja/deck2
-	name = "East of Third Deck"
+	name = "Northeast of Second Deck"
 	landmark_tag = "nav_ninja_deck2"
 
 /obj/effect/shuttle_landmark/ninja/deck3
-	name = "Northeast of Second Deck"
+	name = "East of Third Deck"
 	landmark_tag = "nav_ninja_deck3"
 
 /obj/effect/shuttle_landmark/ninja/deck4
-	name = "South of First Deck"
+	name = "West of Fourth Deck"
 	landmark_tag = "nav_ninja_deck4"
 
 /obj/effect/shuttle_landmark/ninja/deck5
@@ -368,19 +371,19 @@
 	docking_controller = "nuke_shuttle_dock_airlock"
 
 /obj/effect/shuttle_landmark/merc/deck1
-	name = "Northwest of Fourth Deck"
+	name = "Northeast of First Deck"
 	landmark_tag = "nav_merc_deck1"
 
 /obj/effect/shuttle_landmark/merc/deck2
-	name = "South of Third deck"
+	name = "Southeast of the Second deck"
 	landmark_tag = "nav_merc_deck2"
 
 /obj/effect/shuttle_landmark/merc/deck3
-	name = "Southeast of the Second deck"
+	name = "South of Third deck"
 	landmark_tag = "nav_merc_deck3"
 
 /obj/effect/shuttle_landmark/merc/deck4
-	name = "Northeast of First Deck"
+	name = "Northwest of Fourth Deck"
 	landmark_tag = "nav_merc_deck4"
 
 /obj/effect/shuttle_landmark/merc/deck5
@@ -435,19 +438,19 @@
 	docking_controller = "skipjack_shuttle_dock_airlock"
 
 /obj/effect/shuttle_landmark/skipjack/deck1
-	name = "Northeast of Fourth Deck"
+	name = "Northwest of First Deck"
 	landmark_tag = "nav_skipjack_deck1"
 
 /obj/effect/shuttle_landmark/skipjack/deck2
-	name = "Southeast of Third deck"
+	name = "Southwest of the Second deck"
 	landmark_tag = "nav_skipjack_deck2"
 
 /obj/effect/shuttle_landmark/skipjack/deck3
-	name = "Southwest of Second deck"
+	name = "Southeast of Third deck"
 	landmark_tag = "nav_skipjack_deck3"
 
 /obj/effect/shuttle_landmark/skipjack/deck4
-	name = "Northwest of First Deck"
+	name = "Northwest of Fourth Deck"
 	landmark_tag = "nav_skipjack_deck4"
 
 /obj/effect/shuttle_landmark/skipjack/deck5
@@ -523,20 +526,18 @@
 
 //SCGMC Assault Pod
 
-/datum/shuttle/autodock/ferry/specops/scg
+/datum/shuttle/autodock/ferry/specops/ert
 	name = "Special Operations"
 	warmup_time = 10
-	location = 1
 	shuttle_area = /area/shuttle/specops/centcom
 	dock_target = "specops_shuttle_fore"
-	waypoint_station = "nav_specops_out"
-	waypoint_offsite = "nav_specops_start"
-	current_location = "nav_specops_start"
+	waypoint_station = "nav_specops_start"
+	waypoint_offsite = "nav_specops_out"
 
 /obj/effect/shuttle_landmark/specops/start
 	name = "Centcom"
 	landmark_tag = "nav_specops_start"
-	docking_controller = "specops_shuttle_cent"
+	docking_controller = "specops_shuttle_port"
 
 /obj/effect/shuttle_landmark/specops/out
 	name = "Docking Bay"
@@ -574,6 +575,7 @@
 	fuel_consumption = 4
 	logging_home_tag = "nav_hangar_calypso"
 	logging_access = access_expedition_shuttle_helm
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
 
 /obj/effect/shuttle_landmark/torch/hangar/exploration_shuttle
 	name = "Charon Hangar"
@@ -582,26 +584,26 @@
 	base_turf = /turf/simulated/floor/plating
 
 /obj/effect/shuttle_landmark/torch/deck1/exploration_shuttle
-	name = "Space near Fourth Deck"
+	name = "Space near Deck Four"
 	landmark_tag = "nav_deck1_calypso"
 
 /obj/effect/shuttle_landmark/torch/deck2/exploration_shuttle
-	name = "Space near Third Deck"
+	name = "Space near Deck Three"
 	landmark_tag = "nav_deck2_calypso"
 
 /obj/effect/shuttle_landmark/torch/deck3/exploration_shuttle
-	name = "Space near Second Deck"
+	name = "Space near Deck Two"
 	landmark_tag = "nav_deck3_calypso"
 
 /obj/effect/shuttle_landmark/torch/deck4/exploration_shuttle
-	name = "Space near First Deck"
+	name = "Space near Deck One"
 	landmark_tag = "nav_deck4_calypso"
 
 /obj/effect/shuttle_landmark/torch/deck5/exploration_shuttle
 	name = "Space near Bridge"
 	landmark_tag = "nav_bridge_calypso"
 
-/obj/effect/shuttle_landmark/torch/transit/exploration_shuttle
+/obj/effect/shuttle_landmark/transit/torch/exploration_shuttle
 	name = "In transit"
 	landmark_tag = "nav_transit_calypso"
 
@@ -619,6 +621,7 @@
 	logging_home_tag = "nav_hangar_guppy"
 	logging_access = access_guppy_helm
 	skill_needed = SKILL_NONE
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
 
 /obj/effect/shuttle_landmark/torch/hangar/guppy
 	name = "Guppy Hangar"
@@ -627,40 +630,40 @@
 	base_turf = /turf/simulated/floor/plating
 
 /obj/effect/shuttle_landmark/torch/deck1/guppy
-	name = "Space near Fourth Deck"
+	name = "Space near Deck Four"
 	landmark_tag = "nav_deck1_guppy"
 
 /obj/effect/shuttle_landmark/torch/deck2/guppy
-	name = "Space near Third Deck"
+	name = "Space near Deck Three"
 	landmark_tag = "nav_deck2_guppy"
 
 /obj/effect/shuttle_landmark/torch/deck3/guppy
-	name = "Space near Second Deck"
+	name = "Space near Deck Two"
 	landmark_tag = "nav_deck3_guppy"
 
 /obj/effect/shuttle_landmark/torch/deck4/guppy
-	name = "Space near First Deck"
+	name = "Space near Deck One"
 	landmark_tag = "nav_deck4_guppy"
 
 /obj/effect/shuttle_landmark/torch/deck5/guppy
 	name = "Space near Bridge"
 	landmark_tag = "nav_bridge_guppy"
 
-/obj/effect/shuttle_landmark/torch/transit/guppy
+/obj/effect/shuttle_landmark/transit/torch/guppy
 	name = "In transit"
 	landmark_tag = "nav_transit_guppy"
 
 /datum/shuttle/autodock/overmap/aquila
 	name = "Aquila"
 	move_time = 60
-	shuttle_area = list(/area/aquila/cockpit, /area/aquila/maintenance, /area/aquila/engineering, /area/aquila/secure_storage, /area/aquila/passenger,
-	/area/aquila/mess, /area/aquila/storage, /area/aquila/medical, /area/aquila/troops, /area/aquila/head, /area/aquila/crew, /area/aquila/airlock)
+	shuttle_area = list(/area/aquila/cockpit, /area/aquila/maintenance, /area/aquila/storage, /area/aquila/secure_storage, /area/aquila/mess, /area/aquila/passenger, /area/aquila/medical, /area/aquila/head, /area/aquila/airlock)
 	current_location = "nav_hangar_aquila"
 	landmark_transition = "nav_transit_aquila"
 	dock_target = "aquila_shuttle"
 	range = 2
 	logging_home_tag = "nav_hangar_aquila"
 	logging_access = access_aquila_helm
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
 
 /obj/effect/shuttle_landmark/torch/hangar/aquila
 	name = "Aquila Hangar"
@@ -669,26 +672,26 @@
 	base_turf = /turf/simulated/floor/reinforced/airless
 
 /obj/effect/shuttle_landmark/torch/deck1/aquila
-	name = "Space near Fourth Deck"
+	name = "Space near Deck Four"
 	landmark_tag = "nav_deck1_aquila"
 
 /obj/effect/shuttle_landmark/torch/deck2/aquila
-	name = "Space near Third Deck"
+	name = "Space near Deck Three"
 	landmark_tag = "nav_deck2_aquila"
 
 /obj/effect/shuttle_landmark/torch/deck3/aquila
-	name = "Space near Second Deck"
+	name = "Space near Deck Two"
 	landmark_tag = "nav_deck3_aquila"
 
 /obj/effect/shuttle_landmark/torch/deck4/aquila
-	name = "Space near First Deck"
+	name = "Space near Deck One"
 	landmark_tag = "nav_deck4_aquila"
 
 /obj/effect/shuttle_landmark/torch/deck5/aquila
 	name = "Space near Bridge"
 	landmark_tag = "nav_bridge_aquila"
 
-/obj/effect/shuttle_landmark/torch/transit/aquila
+/obj/effect/shuttle_landmark/transit/torch/aquila
 	name = "In transit"
 	landmark_tag = "nav_transit_aquila"
 

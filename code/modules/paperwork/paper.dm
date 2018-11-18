@@ -18,6 +18,9 @@
 	slot_flags = SLOT_HEAD
 	body_parts_covered = HEAD
 	attack_verb = list("bapped")
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi'
+		)
 
 	var/info		//What's actually written on the paper.
 	var/info_links	//A different version of the paper which includes html links at fields and EOF
@@ -30,16 +33,22 @@
 	var/list/offset_y[0] //usage by the photocopier
 	var/rigged = 0
 	var/spam_flag = 0
+	var/last_modified_ckey
+	var/age = 0
 	var/log = ""
+	var/list/metadata
 
 	var/const/deffont = "Verdana"
 	var/const/signfont = "Times New Roman"
 	var/const/crayonfont = "Comic Sans MS"
 	var/const/fancyfont = "Segoe Script"
 
-/obj/item/weapon/paper/New(loc, text,title)
+	var/scan_file_type = /datum/computer_file/data/text
+
+/obj/item/weapon/paper/New(loc, text, title, list/md = null)
 	..(loc)
 	set_content(text ? text : info, title)
+	metadata = md
 
 /obj/item/weapon/paper/proc/set_content(text,title)
 	if(title)
@@ -51,7 +60,7 @@
 	update_space(info)
 	updateinfolinks()
 
-/obj/item/weapon/paper/update_icon()
+/obj/item/weapon/paper/on_update_icon()
 	if(icon_state == "paper_talisman")
 		return
 	else if(info)
@@ -328,6 +337,9 @@
 			updateinfolinks()
 
 		playsound(src,'sound/effects/PEN_Ball_Point_Pen_Circling_01_mono.ogg',40,1)
+
+		last_modified_ckey = usr.ckey
+
 		update_space(t)
 
 		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]") // Update the window
@@ -348,6 +360,11 @@
 		return
 
 	if(istype(P, /obj/item/weapon/paper) || istype(P, /obj/item/weapon/photo))
+		if(!can_bundle())
+			return
+		var/obj/item/weapon/paper/other = P
+		if(istype(other) && !other.can_bundle())
+			return
 		if (istype(P, /obj/item/weapon/paper/carbon))
 			var/obj/item/weapon/paper/carbon/C = P
 			if (!C.iscopy && !C.copied)
@@ -424,12 +441,13 @@
 		burnpaper(P, user)
 
 	else if(istype(P, /obj/item/weapon/paper_bundle))
+		if(!can_bundle())
+			return
 		var/obj/item/weapon/paper_bundle/attacking_bundle = P
 		attacking_bundle.insert_sheet_at(user, (attacking_bundle.pages.len)+1, src)
 		attacking_bundle.update_icon()
 
 	add_fingerprint(user)
-	return
 
 /obj/item/weapon/paper/proc/preStampPaper(stamp_path)
 	var/obj/item/weapon/stamp/P = new stamp_path
@@ -469,6 +487,12 @@
 	name = "nano paper"
 	color = "#ccffff"
 
+/obj/item/weapon/paper/proc/can_bundle()
+	return TRUE
+
+/obj/item/weapon/paper/proc/show_info(var/mob/user)
+	return info
+
 //For supply.
 /obj/item/weapon/paper/manifest
 	name = "supply manifest"
@@ -484,7 +508,7 @@
 	name = "paper scrap"
 	icon_state = "scrap"
 
-/obj/item/weapon/paper/crumpled/update_icon()
+/obj/item/weapon/paper/crumpled/on_update_icon()
 	return
 
 /obj/item/weapon/paper/crumpled/bloody
@@ -534,4 +558,4 @@
 
 /obj/item/weapon/paper/merchant
 	name = "novice help"
-	info = "<I><center><b>Помощь новичку</b></center><hr><h3>Вступление</h3>Торговцы бывают разными. В основном, самым важным критерием стоит то, насколько хорошо развито красноречие. В случае с вашим небольшим аванпостом, маловеро&#255;тно, что вам удастс&#255; кому-то угрожать - необходимо искать общий &#255;зык.<h3>Вежливые торговцы</h3>Как бы вы не презирали экипаж, запомните - ведите себ&#255; по-взрослому, в меру серьезно, без излишней фамиль&#255;рности, но дружелюбно. Не идите на конфликт со Службой Безопасности и тем более командованием, если не хотите провести неопределенный срок в ожидании нового судна в зоне действи&#255; сенсоров.<h3>Наценка</h3>Практически все товары, что наход&#255;тс&#255; на вашей базе достались вам путём купли-продажи. Цена, выдававема&#255; самим сканером, &#255;вл&#255;етс&#255; ценой на рынке в среднем. Никто не будет сильно злитьс&#255; из-за того, что вы накинете 20, 40 или даже 100 процентов к изначальной цене (особенно, если у покупател&#255; нет сканера) - прикидывайте, насколько экипажу нужна та или ина&#255; вещь и сколько они готовы отдать за неё.<h3>Закон</h3>Никто не имеет права обыскивать ваше судно. Никто не имеет права заходить на судно без вашего разрешени&#255;. Никто не имеет права задерживать вас за то, что вы подлетели к шлюзу - другое дело, если вы соверште незаконную стыковку (в лучшем случае, вас попрос&#255;т отстыковатьс&#255;).</I>"
+	info = "<I><center><b>Помощь новичку</b></center><hr><h3>Вступление</h3>Торговцы бывают разными. В основном, самым важным критерием стоит то, насколько хорошо развито красноречие. В случае с вашим небольшим аванпостом, маловеро&#255;тно, что вам удастс&#255; кому-то угрожать - необходимо искать общий &#255;зык.<h3>Вежливые торговцы</h3>Как бы вы не презирали экипаж, запомните - ведите себ&#255; по-взрослому, в меру серьезно, без излишней фамиль&#255;рности, но дружелюбно. Не идите на конфликт со Службой Безопасности и тем более командованием, если не хотите провести неопределенный срок в ожидании нового судна в зоне действи&#255; сенсоров.<h3>Наценка</h3>Практически все товары, что наход&#255;тс&#255; на вашей базе достались вам путём купли-продажи. Цена, выдававема&#255; самим сканером, &#255;вл&#255;етс&#255; ценой на рынке в среднем. Никто не будет сильно злитьс&#255; из-за того, что вы накинете 20, 40 или даже 100 процентов к изначальной цене (особенно, если у покупател&#255; нет сканера) - прикидывайте, насколько экипажу нужна та или ина&#255; вещь и сколько они готовы отдать за неё.<h3>Закон</h3>Никто не имеет права обыскивать ваше судно. Никто не имеет права заходить на судно без вашего разрешени&#255;. Никто не имеет права задерживать вас за то, что вы подлетели к шлюзу - другое дело, если вы соверште незаконную стыковку (в лучшем случае, вас попрос&#255;т отстыковатьс&#255;).<h3>Проникновение</h3> Чужой экипаж не имеет права проникать на ваш корабль без вашего разрешения. Вы не имеете права проникать на корабль без разрешения экипажа - помните, что если вы торгуете с крупным судном, то на нём, скорее всего, есть вооруженная охрана, которая может расстрелять вас за взлом внешнего шлюза.</I>"

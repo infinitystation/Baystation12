@@ -7,7 +7,7 @@
 
 	layer = SIDE_WINDOW_LAYER
 	anchored = 1.0
-	atom_flags = ATOM_FLAG_CHECKS_BORDER
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CHECKS_BORDER
 	alpha = 180
 	var/maxhealth = 14.0
 	var/maximal_heat = T0C + 100 		// Maximal heat before this window begins taking damage from fire
@@ -50,6 +50,9 @@
 			to_chat(user, "<span class='notice'>It is covered in silicate.</span>")
 		else
 			to_chat(user, "<span class='notice'>There is a thick layer of silicate covering it.</span>")
+
+/obj/structure/window/CanFluidPass(var/coming_from)
+	return (!is_full_window() && coming_from != dir)
 
 /obj/structure/window/proc/take_damage(var/damage = 0,  var/sound_effect = 1)
 	var/initialhealth = health
@@ -177,22 +180,22 @@
 		user.do_attack_animation(src)
 		shatter()
 
-	else if (usr.a_intent == I_HURT)
+	else if (user.a_intent && user.a_intent == I_HURT)
 
-		if (istype(usr,/mob/living/carbon/human))
-			var/mob/living/carbon/human/H = usr
+		if (istype(user,/mob/living/carbon/human))
+			var/mob/living/carbon/human/H = user
 			if(H.species.can_shred(H))
 				attack_generic(H,25)
 				return
 
 		playsound(src.loc, 'sound/effects/glassknock.ogg', 80, 1)
 		user.do_attack_animation(src)
-		usr.visible_message("<span class='danger'>\The [usr] bangs against \the [src]!</span>",
+		user.visible_message("<span class='danger'>\The [user] bangs against \the [src]!</span>",
 							"<span class='danger'>You bang against \the [src]!</span>",
 							"You hear a banging sound.")
 	else
 		playsound(src.loc, 'sound/effects/glassknock.ogg', 80, 1)
-		usr.visible_message("[usr.name] knocks on the [src.name].",
+		user.visible_message("[user.name] knocks on the [src.name].",
 							"You knock on the [src.name].",
 							"You hear a knocking sound.")
 	return
@@ -395,7 +398,7 @@
 	return istype(S, /obj/structure/window)
 
 //merges adjacent full-tile windows into one (blatant ripoff from game/smoothwall.dm)
-/obj/structure/window/update_icon()
+/obj/structure/window/on_update_icon()
 	//A little cludge here, since I don't know how it will work with slim windows. Most likely VERY wrong.
 	//this way it will only update full-tile ones
 	overlays.Cut()
@@ -647,5 +650,5 @@
 	if(active && !powered(power_channel))
 		toggle_tint()
 
-/obj/machinery/button/windowtint/update_icon()
+/obj/machinery/button/windowtint/on_update_icon()
 	icon_state = "light[active]"

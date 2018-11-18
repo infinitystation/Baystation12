@@ -9,7 +9,7 @@
 
 
 /*
- * DATA CARDS - Used for the teleporter
+ * DATA CARDS - Used for the IC data card reader
  */
 /obj/item/weapon/card
 	name = "card"
@@ -17,31 +17,60 @@
 	icon = 'icons/obj/card.dmi'
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS
-	var/associated_account_number = 0
-	var/list/associated_email_login = list("login" = "", "password" = "")
 
-	var/list/files = list(  )
+/obj/item/weapon/card/union
+	name = "union card"
+	desc = "A card showing membership in the local worker's union."
+	icon_state = "union"
+	slot_flags = SLOT_ID
+	var/signed_by
+
+/obj/item/weapon/card/union/examine(var/mob/user)
+	. = ..()
+	if(.)
+		if(signed_by)
+			to_chat(user, "It has been signed by [signed_by].")
+		else
+			to_chat(user, "It has a blank space for a signature.")
+
+/obj/item/weapon/card/union/attackby(var/obj/item/thing, var/mob/user)
+	if(istype(thing, /obj/item/weapon/pen))
+		if(signed_by)
+			to_chat(user, SPAN_WARNING("\The [src] has already been signed."))
+		else
+			var/signature = sanitizeSafe(input("What do you want to sign the card as?", "Union Card") as text, MAX_NAME_LEN)
+			if(signature && !signed_by && !user.incapacitated() && Adjacent(user))
+				signed_by = signature
+				user.visible_message(SPAN_NOTICE("\The [user] signs \the [src] with a flourish."))
+		return
+	..()
 
 /obj/item/weapon/card/data
-	name = "data disk"
-	desc = "A disk of data."
-	icon_state = "data"
+	name = "data card"
+	desc = "A plastic magstripe card for simple and speedy data storage and transfer. This one has a stripe running down the middle."
+	icon_state = "data_1"
+	var/detail_color = COLOR_ASSEMBLY_ORANGE
 	var/function = "storage"
 	var/data = "null"
 	var/special = null
-	item_state = "card-id"
+	var/list/files = list(  )
 
-/obj/item/weapon/card/data/verb/label(t as text)
-	set name = "Label Disk"
-	set category = "Object"
-	set src in usr
+/obj/item/weapon/card/data/Initialize()
+	.=..()
+	update_icon()
 
-	if (t)
-		src.SetName(text("data disk- '[]'", t))
-	else
-		src.SetName("data disk")
-	src.add_fingerprint(usr)
-	return
+/obj/item/weapon/card/data/on_update_icon()
+	overlays.Cut()
+	var/image/detail_overlay = image('icons/obj/card.dmi', src,"[icon_state]-color")
+	detail_overlay.color = detail_color
+	overlays += detail_overlay
+
+/obj/item/weapon/card/data/attackby(obj/item/I, mob/living/user)
+	if(istype(I, /obj/item/device/integrated_electronics/detailer))
+		var/obj/item/device/integrated_electronics/detailer/D = I
+		detail_color = D.detail_color
+		update_icon()
+	return ..()
 
 /obj/item/weapon/card/data/clown
 	name = "\proper the coordinates to clown planet"
@@ -51,6 +80,14 @@
 	desc = "This card contains coordinates to the fabled Clown Planet. Handle with care."
 	function = "teleporter"
 	data = "Clown Land"
+
+/obj/item/weapon/card/data/full_color
+	desc = "A plastic magstripe card for simple and speedy data storage and transfer. This one has the entire card colored."
+	icon_state = "data_2"
+
+/obj/item/weapon/card/data/disk
+	desc = "A plastic magstripe card for simple and speedy data storage and transfer. This one inexplicibly looks like a floppy disk."
+	icon_state = "data_3"
 
 /*
  * ID CARDS
@@ -95,6 +132,7 @@ var/const/NO_EMAG_ACT = -50
 	desc = "A card used to provide ID and determine access."
 	icon_state = "id"
 	item_state = "card-id"
+	slot_flags = SLOT_ID
 
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/id.dmi',
@@ -103,7 +141,8 @@ var/const/NO_EMAG_ACT = -50
 
 	var/access = list()
 	var/registered_name = "Unknown" // The name registered_name on the card
-	slot_flags = SLOT_ID
+	var/associated_account_number = 0
+	var/list/associated_email_login = list("login" = "", "password" = "")
 
 	var/age = "\[UNSET\]"
 	var/blood_type = "\[UNSET\]"
@@ -123,6 +162,9 @@ var/const/NO_EMAG_ACT = -50
 	var/datum/mil_branch/military_branch = null //Vars for tracking branches and ranks on multi-crewtype maps
 	var/datum/mil_rank/military_rank = null
 
+	var/formal_name_prefix
+	var/formal_name_suffix
+
 /obj/item/weapon/card/id/New()
 	..()
 	if(job_access_type)
@@ -138,7 +180,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id/OnTopic(var/mob/user, var/list/href_list)
 	if(href_list["look_at_id"])
-		if(istype(user) && (get_dist(src, user) <= 2))
+		if((!isliving(user)) || (istype(user) && (get_dist(src, user) <= 2)))
 			user.examinate(src)
 			return TOPIC_HANDLED
 		else
@@ -166,19 +208,33 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/proc/get_display_name()
 	. = registered_name
 	if(military_rank && military_rank.name_short)
-		. = military_rank.name_short + " " + .
+		. ="[military_rank.name_short] [.][formal_name_suffix]"
+	else if(formal_name_prefix || formal_name_suffix)
+		. = "[formal_name_prefix][.][formal_name_suffix]"
 	if(assignment)
 		. += ", [assignment]"
 
 /obj/item/weapon/card/id/proc/set_id_photo(var/mob/M)
-//	sleep(10)
+	set waitfor = FALSE
+	sleep(10)
 	front = getFlatIcon(M, SOUTH, always_use_defdir = 1)
 	side = getFlatIcon(M, WEST, always_use_defdir = 1)
 
 /mob/proc/set_id_info(var/obj/item/weapon/card/id/id_card)
 	id_card.age = 0
-	id_card.registered_name		= real_name
-	id_card.sex 				= capitalize(gender)
+
+	id_card.formal_name_prefix = initial(id_card.formal_name_prefix)
+	id_card.formal_name_suffix = initial(id_card.formal_name_suffix)
+	if(client && client.prefs)
+		for(var/culturetag in client.prefs.cultural_info)
+			var/decl/cultural_info/culture = SSculture.get_culture(client.prefs.cultural_info[culturetag])
+			if(culture)
+				id_card.formal_name_prefix = "[culture.get_formal_name_prefix()][id_card.formal_name_prefix]"
+				id_card.formal_name_suffix = "[id_card.formal_name_suffix][culture.get_formal_name_suffix()]"
+
+	id_card.registered_name = real_name
+
+	id_card.sex = capitalize(get_sex())
 	id_card.set_id_photo(src)
 
 	if(dna)
@@ -189,16 +245,14 @@ var/const/NO_EMAG_ACT = -50
 /mob/living/carbon/human/set_id_info(var/obj/item/weapon/card/id/id_card)
 	..()
 	id_card.age = age
-
 	if(GLOB.using_map.flags & MAP_HAS_BRANCH)
 		id_card.military_branch = char_branch
-
 	if(GLOB.using_map.flags & MAP_HAS_RANK)
 		id_card.military_rank = char_rank
 
 /obj/item/weapon/card/id/proc/dat()
 	var/list/dat = list("<table><tr><td>")
-	dat += text("Name: []</A><BR>", registered_name)
+	dat += text("Name: []</A><BR>", "[formal_name_prefix][registered_name][formal_name_suffix]")
 	dat += text("Sex: []</A><BR>\n", sex)
 	dat += text("Age: []</A><BR>\n", age)
 
@@ -442,9 +496,10 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id/merchant
 	name = "identification card"
-	desc = "A card issued to Merchants, indicating their right to sell and buy goods."
+	desc = "A card issued to Merchants."
 	icon_state = "trader"
 	access = list(access_merchant)
+
 /obj/item/weapon/card/id/merchant/leader
-	desc = "A card issued to Merchants Leader, indicating their right to sell and buy goods."
+	desc = "A card issued to Merchant Leaders, indicating their right to sell and buy goods."
 	access = list(access_merchant, access_merchant_leader)

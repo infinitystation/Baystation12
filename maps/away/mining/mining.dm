@@ -14,7 +14,7 @@
 		"nav_cluster_6",
 		"nav_cluster_7"
 	)
-	known = 0
+	known = 1
 	start_x = 4
 	start_y = 5
 
@@ -23,9 +23,9 @@
 	id = "awaysite_mining_asteroid"
 	description = "A medium-sized asteroid full of minerals."
 	suffixes = list("mining/mining-asteroid.dmm")
-	cost = 10
+	cost = 1
 	accessibility_weight = 10
-///	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
+	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
 
 /obj/effect/shuttle_landmark/cluster/nav1
 	name = "Asteroid Navpoint #1"

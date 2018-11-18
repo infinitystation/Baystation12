@@ -1,54 +1,51 @@
-//The following is a list of defs to be used for the Sierra loadout.
-
-//For all SolGov personnel
-#define SOLGOV_ROLES list(\
-	/datum/job/pathfinder, /datum/job/explorer, /datum/job/explorer_pilot,\
+//The following is a list of defs and blacklist to be used (or not) for the Sierra loadout.
+/datum/map/sierra
+	loadout_blacklist = list(/datum/gear/union_card, /datum/gear/eyes/security/aviators)
+//For all exploration crew
+#define EXPLORATION_ROLES list(\
+	/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, \
 	/datum/job/explorer_medic, /datum/job/explorer_engineer)
 
 //For jobs that allow for decorative or ceremonial clothing
 #define FORMAL_ROLES list(\
-	/datum/job/iaa, /datum/job/rd, /datum/job/senior_scientist,\
-	/datum/job/scientist, /datum/job/scientist_assistant,\
-	/datum/job/psychiatrist, ,\
-	/datum/job/assistant, /datum/job/bartender, /datum/job/merchant,\
+	/datum/job/iaa, /datum/job/rd, /datum/job/senior_scientist, \
+	/datum/job/scientist, /datum/job/scientist_assistant, \
+	/datum/job/psychiatrist, \
+	/datum/job/assistant, /datum/job/bartender, /datum/job/merchant, /datum/job/merchant_trainee, \
 	/datum/job/stowaway, /datum/job/detective)
 
 //For civilian jobs that may have a uniform, but not a strict one
 #define SEMIFORMAL_ROLES list(\
-	/datum/job/assistant,/datum/job/mining, /datum/job/scientist_assistant,\
-	/datum/job/psychiatrist, /datum/job/bartender, /datum/job/merchant,\
-	/datum/job/nt_pilot, /datum/job/stowaway, /datum/job/scientist,\
+	/datum/job/assistant,/datum/job/mining, /datum/job/scientist_assistant, \
+	/datum/job/psychiatrist, /datum/job/bartender, /datum/job/merchant, /datum/job/merchant_trainee, \
+	/datum/job/stowaway, /datum/job/scientist, \
 	/datum/job/senior_scientist, /datum/job/detective)
 
 //For civilian jobs that may have a strict uniform.
 #define SEMIANDFORMAL_ROLES list(\
-	/datum/job/assistant,/datum/job/mining, /datum/job/scientist_assistant,\
-	/datum/job/psychiatrist, /datum/job/bartender, /datum/job/merchant,\
-	/datum/job/nt_pilot, /datum/job/iaa, /datum/job/rd,\
-	/datum/job/senior_scientist, /datum/job/scientist,\
+	/datum/job/assistant,/datum/job/mining, /datum/job/scientist_assistant, \
+	/datum/job/psychiatrist, /datum/job/bartender, /datum/job/merchant, /datum/job/merchant_trainee, \
+	/datum/job/iaa, /datum/job/rd, \
+	/datum/job/senior_scientist, /datum/job/scientist, \
 	 ,/datum/job/stowaway, /datum/job/detective)
 
 //For NanoTrasen employees
 #define NANOTRASEN_ROLES list(\
-	/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,\
-	/datum/job/iaa, ,\
-	/datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/engineer_trainee,\
-	/datum/job/officer, /datum/job/warden, /datum/job/detective,\
-	/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee,/datum/job/chemist,\
-	/datum/job/psychiatrist,\
+	/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos, \
+	/datum/job/iaa, \
+	/datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/engineer_trainee, \
+	/datum/job/officer, /datum/job/warden, /datum/job/detective, \
+	/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee,/datum/job/chemist, \
+	/datum/job/psychiatrist, \
 	/datum/job/qm, /datum/job/cargo_tech, /datum/job/cargo_assistant,\
 	/datum/job/janitor, /datum/job/chef, /datum/job/bartender,\
-	/datum/job/senior_scientist, /datum/job/nt_pilot, /datum/job/scientist, /datum/job/mining,\
+	/datum/job/senior_scientist, /datum/job/scientist, /datum/job/mining,\
 	/datum/job/scientist_assistant)
-
-
-//For corporate or government representatives
-#define REPRESENTATIVE_ROLES list(/datum/job/iaa)
 
 //For roles with no uniform or formal clothing requirements
 #define RESTRICTED_ROLES list(\
 	/datum/job/assistant, /datum/job/bartender,\
-	/datum/job/merchant, /datum/job/stowaway)
+	/datum/job/merchant, /datum/job/merchant_trainee, /datum/job/stowaway)
 
 //For members of the command department
 #define COMMAND_ROLES list(\
@@ -76,9 +73,9 @@
 
 //For members of Engineering, Cargo, and Research
 #define TECHNICAL_ROLES list(\
-	/datum/job/senior_engineer, /datum/job/engineer, , /datum/job/roboticist, /datum/job/qm,\
+	/datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/qm,\
 	/datum/job/cargo_tech, /datum/job/cargo_assistant,/datum/job/mining,\
-	/datum/job/scientist_assistant, /datum/job/merchant, /datum/job/rd,\
+	/datum/job/scientist_assistant, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/rd,\
 	/datum/job/senior_scientist, /datum/job/scientist, /datum/job/chief_engineer,\
 	/datum/job/engineer_trainee, /datum/job/explorer_engineer)
 
@@ -97,21 +94,17 @@
 //For members of the research department and jobs that are scientific
 #define RESEARCH_ROLES list(\
 	/datum/job/rd, /datum/job/iaa, /datum/job/scientist,\
-	/datum/job/scientist_assistant, /datum/job/assistant, /datum/job/nt_pilot,\
+	/datum/job/scientist_assistant, /datum/job/assistant,\
 	/datum/job/senior_scientist, /datum/job/roboticist)
 
 //For jobs that spawn with weapons in their lockers
 #define ARMED_ROLES list(\
 	/datum/job/captain, /datum/job/hop, /datum/job/hos,\
-	/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/merchant)
+	/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/merchant, /datum/job/merchant_trainee)
 
 //For jobs that spawn with armor in their lockers
 #define ARMORED_ROLES list(\
 	/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo,\
 	/datum/job/chief_engineer, /datum/job/hos, /datum/job/qm,\
-	/datum/job/warden, /datum/job/officer, /datum/job/warden,\
-	/datum/job/detective, /datum/job/merchant)
-
-#define CIVILIAN_BRANCHES list(/datum/mil_branch/civilian)
-
-#define SOLGOV_BRANCHES list(/datum/mil_branch/expeditionary_corps)
+	/datum/job/warden, /datum/job/detective, /datum/job/officer, \
+	/datum/job/merchant, /datum/job/merchant_trainee)

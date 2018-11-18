@@ -30,7 +30,6 @@
 	if(health<80)
 		to_chat(user, "<span class='danger'>It will break apart soon!</span>")
 
-
 /obj/structure/barrier/Destroy()
 	if(health <= 0)
 		visible_message("<span class='danger'>[src] was destroyed!</span>")
@@ -50,7 +49,7 @@
 		layer = initial(layer) + 0.1
 		plane = initial(plane)
 
-/obj/structure/barrier/update_icon()
+/obj/structure/barrier/on_update_icon()
 	if(density && !deployed)
 		icon_state = "barrier_rised"
 	if(!density && !deployed)
@@ -63,6 +62,9 @@
 	update_layers()
 
 /obj/structure/barrier/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+	if(!density)
+		return 1
+
 	if(istype(mover, /obj/item/projectile))
 		var/obj/item/projectile/proj = mover
 
@@ -103,8 +105,9 @@
 	return 1
 
 /obj/structure/barrier/attack_hand(mob/living/carbon/human/user as mob)
-//	if(user.species.reagent_tag == IS_XENOS) //TODO = MAKE_DAMAGE()
-//		..()
+	if(user.species.can_shred(user) || user.get_species() == SPECIES_XENO)
+		take_damage(user.species.)
+		return
 	if(deployed)
 		to_chat(user, "<span class='notice'>[src] is already deployed. You can't move it.</span>")
 	else
@@ -171,6 +174,15 @@
 /obj/structure/barrier/bullet_act(var/obj/item/projectile/P)
 	..()
 	take_damage(P.get_structure_damage())
+
+/obj/structure/barrier/attack_generic(var/mob/user, var/damage, var/attack_verb)
+	take_damage(damage)
+	attack_animation(user)
+	if(damage >=1)
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src]!</span>")
+	else
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src] harmlessly!</span>")
+	return 1
 
 /obj/structure/barrier/proc/take_damage(damage)
 	health -= damage * 0.5

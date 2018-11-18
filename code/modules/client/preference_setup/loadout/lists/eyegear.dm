@@ -27,13 +27,16 @@
 /datum/gear/eyes/sciencegoggles
 	display_name = "Science Goggles"
 	path = /obj/item/clothing/glasses/science
+	cost = 2
 
 /datum/gear/eyes/sciencegoggles/prescription
 	display_name = "Science Goggles, prescription"
 	path = /obj/item/clothing/glasses/science/prescription
+
 /datum/gear/eyes/security
 	display_name = "Security HUD"
 	path = /obj/item/clothing/glasses/hud/security
+	cost = 3
 
 /datum/gear/eyes/security/prescription
 	display_name = "Security HUD, prescription"
@@ -50,11 +53,11 @@
 /datum/gear/eyes/security/ipatch
 	display_name = "HUDpatch, Security"
 	path = /obj/item/clothing/glasses/eyepatch/hud/security
-	cost = 2
 
 /datum/gear/eyes/medical
 	display_name = "Medical HUD"
 	path = /obj/item/clothing/glasses/hud/health
+	cost = 3
 
 /datum/gear/eyes/medical/prescription
 	display_name = "Medical HUD, prescription"
@@ -63,17 +66,16 @@
 /datum/gear/eyes/medical/visor
 	display_name = "Medical HUD, Visor"
 	path = /obj/item/clothing/glasses/hud/health/visor
-	cost = 2
 
 /datum/gear/eyes/medical/ipatch
 	display_name = "HUDpatch, Medical"
 	path = /obj/item/clothing/glasses/eyepatch/hud/medical
-	cost = 2
 
 /datum/gear/eyes/meson
 	display_name = "Meson Goggles"
 	path = /obj/item/clothing/glasses/meson
 	allowed_roles = list(/datum/job/chief_engineer, /datum/job/engineer, /datum/job/mining, /datum/job/scientist, /datum/job/rd)
+	cost = 3
 
 /datum/gear/eyes/meson/prescription
 	display_name = "Meson Goggles, prescription"
@@ -82,28 +84,41 @@
 /datum/gear/eyes/meson/ipatch
 	display_name = "HUDpatch, Meson"
 	path = /obj/item/clothing/glasses/eyepatch/hud/meson
-	cost = 2
 
 /datum/gear/eyes/material
 	display_name = "Material Goggles"
 	path = /obj/item/clothing/glasses/material
 	allowed_roles = list(/datum/job/chief_engineer, /datum/job/engineer, /datum/job/mining)
+	cost = 4
 
-/datum/gear/eyes/shades/
+/datum/gear/eyes/shades
 	display_name = "sunglasses"
 	path = /obj/item/clothing/glasses/sunglasses
-	cost = 3
+	cost = 2
 
 /datum/gear/eyes/shades/sunglasses
 	display_name = "sunglasses, fat"
 	path = /obj/item/clothing/glasses/sunglasses/big
-	cost = 3
 
 /datum/gear/eyes/shades/prescriptionsun
 	display_name = "sunglasses, presciption"
 	path = /obj/item/clothing/glasses/sunglasses/prescription
-	cost = 3
 
 /datum/gear/eyes/hudpatch
 	display_name = "iPatch"
 	path = /obj/item/clothing/glasses/eyepatch/hud
+
+/datum/gear/eyes/blindfold
+	display_name = "blindfold"
+	path = /obj/item/clothing/glasses/sunglasses/blindfold
+	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/eyes/janitor
+	display_name = "JaniHUD"
+	path = /obj/item/clothing/glasses/hud/janitor
+	cost = 2
+	allowed_roles = list(/datum/job/janitor)
+
+/datum/gear/eyes/janitor/prescription
+	display_name = "JaniHUD, prescription"
+	path = /obj/item/clothing/glasses/hud/janitor/prescription

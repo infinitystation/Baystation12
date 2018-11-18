@@ -8,10 +8,10 @@ var/const/NETWORK_POD         = "General Utility Pod"
 var/const/NETWORK_SECOND_DECK = "Second Deck"
 var/const/NETWORK_SUPPLY      = "Supply"
 var/const/NETWORK_HANGAR      = "Hangar"
-var/const/NETWORK_MISSILE     = "Missile Pod"
 var/const/NETWORK_EXPLO       = "Exploration"
 var/const/NETWORK_THIRD_DECK  = "Third Deck"
-var/const/NETWORK_PETROV      = "Petrov"
+var/const/NETWORK_FIFTH_DECK  = "Fifth Deck"
+var/const/NETWORK_NANOTRASEN  = "Petrov"
 
 /datum/map/torch/get_network_access(var/network)
 	switch(network)
@@ -27,10 +27,10 @@ var/const/NETWORK_PETROV      = "Petrov"
 			return access_mailsorting
 		if(NETWORK_HANGAR)
 			return access_hangar
-		if(NETWORK_PETROV)
-			return access_petrov
 		if(NETWORK_EXPLO)
 			return access_explorer
+		if(NETWORK_NANOTRASEN)
+			return access_petrov_security
 	return get_shared_network_access(network) || ..()
 
 /datum/map/torch
@@ -41,12 +41,12 @@ var/const/NETWORK_PETROV      = "Petrov"
 		NETWORK_SECOND_DECK,
 		NETWORK_THIRD_DECK,
 		NETWORK_FOURTH_DECK,
+		NETWORK_FIFTH_DECK,
 		NETWORK_BRIDGE,
 		NETWORK_COMMAND,
 		NETWORK_ENGINEERING,
 		NETWORK_ENGINE,
 		NETWORK_MEDICAL,
-		NETWORK_MISSILE,
 		NETWORK_RESEARCH,
 		NETWORK_SECURITY,
 		NETWORK_SUPPLY,
@@ -55,8 +55,8 @@ var/const/NETWORK_PETROV      = "Petrov"
 		NETWORK_HANGAR,
 		NETWORK_AQUILA,
 		NETWORK_CALYPSO,
-		NETWORK_PETROV,
 		NETWORK_POD,
+		NETWORK_NANOTRASEN,
 		NETWORK_ALARM_ATMOS,
 		NETWORK_ALARM_CAMERA,
 		NETWORK_ALARM_FIRE,
@@ -88,11 +88,11 @@ var/const/NETWORK_PETROV      = "Petrov"
 /obj/machinery/camera/network/fourth_deck
 	network = list(NETWORK_FOURTH_DECK)
 
+/obj/machinery/camera/network/fifth_deck
+	network = list(NETWORK_FIFTH_DECK)
+
 /obj/machinery/camera/network/pod
 	network = list(NETWORK_POD)
-
-/obj/machinery/camera/network/petrov
-	network = list(NETWORK_PETROV)
 
 /obj/machinery/camera/network/second_deck
 	network = list(NETWORK_SECOND_DECK)
@@ -118,11 +118,11 @@ var/const/NETWORK_PETROV      = "Petrov"
 /obj/machinery/camera/network/engine
 	network = list(NETWORK_ENGINE)
 
-/obj/machinery/camera/network/missile
-	network = list(NETWORK_MISSILE)
-
 /obj/machinery/camera/network/engineering_outpost
 	network = list(NETWORK_ENGINEERING_OUTPOST)
+
+/obj/machinery/camera/network/nanotrasen
+	network = list(NETWORK_NANOTRASEN)
 
 // Motion
 /obj/machinery/camera/motion/engineering_outpost

@@ -159,7 +159,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 50, SKILL_BASIC)))
 						wires = shuffle(wires) //Leaves them in a different order for anyone else.
 						to_chat(L, "<span class='danger'>You get the wires all tangled up!</span>")
-				if(isMultimeter(I))
+				else if(isMultimeter(I))
 					var/obj/item/device/multitool/multimeter/O = L.get_active_hand()
 					if(O.mode == METER_MESURING)
 						if (L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
@@ -179,7 +179,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 								solved_colour_function = SolveWireFunction(colour_function)
 								if(solved_colour_function != "")
 									to_chat(L, "the [colour] wire connected to [solved_colour_function]")
-									playsound(O.loc, 'sound/machines/mbeep.ogg', 30, 1)
+									playsound(O.loc, 'sound/machines/mbeep.ogg', 20, 1)
 								else
 									to_chat(L, "the [colour] wire not connected")
 							else
@@ -226,7 +226,7 @@ var/global/all_solved_wires = list() //Solved wire associative list, eg; all_sol
 										solved_colour_function = SolveWireFunction(colour_function)
 										if(solved_colour_function != "")
 											to_chat(L, "the [colour] wire connected to [solved_colour_function]")
-											playsound(O.loc, 'sound/machines/mbeep.ogg', 30, 1)
+											playsound(O.loc, 'sound/machines/mbeep.ogg', 20, 1)
 										else
 											to_chat(L, "the [colour] wire not connected")
 									else
@@ -312,7 +312,7 @@ var/const/POWER = 8
 /datum/wires/proc/PulseIndex(var/index)
 	if(IsIndexCut(index))
 		return
-	playsound(holder.loc, 'sound/items/multitool_pulse.ogg', 100, 1)
+	playsound(holder.loc, 'sound/items/multitool_pulse.ogg', 20, 1)
 	UpdatePulsed(index)
 
 /datum/wires/proc/GetIndex(var/colour)

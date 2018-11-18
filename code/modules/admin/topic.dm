@@ -6,7 +6,7 @@
 		message_admins("[usr.key] has attempted to override the admin panel!")
 		return
 
-	if(ticker.mode && ticker.mode.check_antagonists_topic(href, href_list))
+	if(SSticker.mode && SSticker.mode.check_antagonists_topic(href, href_list))
 		check_antagonists()
 		return
 
@@ -192,10 +192,10 @@
 
 		if(!check_rights(R_ADMIN))	return
 
-		if (!ticker || !evacuation_controller)
+		if(!SSticker.mode || !evacuation_controller)
 			return
 
-		if( ticker.mode.name == "blob" )
+		if(SSticker.mode.name == "blob")
 			alert("You can't call the shuttle during blob!")
 			return
 
@@ -212,8 +212,8 @@
 	else if(href_list["delay_round_end"])
 		if(!check_rights(R_SERVER))	return
 
-		ticker.delay_end = !ticker.delay_end
-		log_and_message_admins("[ticker.delay_end ? "delayed the round end" : "has made the round end normally"].")
+		SSticker.delay_end = !SSticker.delay_end
+		log_and_message_admins("[SSticker.delay_end ? "delayed the round end" : "has made the round end normally"].")
 		href_list["secretsadmin"] = "check_antagonist"
 
 	else if(href_list["simplemake"])
@@ -609,14 +609,15 @@
 
 		jobs += "</tr></table>"
 
-		//Other races  (BLUE, because I have no idea what other color to make this)
+		var/list/misc_roles = list("Dionaea", "Graffiti")
+		//Other roles  (BLUE, because I have no idea what other color to make this)
 		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='ccccff'><th colspan='1'>Other Races</th></tr><tr align='center'>"
-
-		if(jobban_isbanned(M, "Dionaea"))
-			jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=Dionaea;jobban4=\ref[M]'><font color=red>Dionaea</font></a></td>"
-		else
-			jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=Dionaea;jobban4=\ref[M]'>Dionaea</a></td>"
+		jobs += "<tr bgcolor='ccccff'><th colspan='[LAZYLEN(misc_roles)]'>Other Roles</th></tr><tr align='center'>"
+		for(var/entry in misc_roles)
+			if(jobban_isbanned(M, entry))
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[entry];jobban4=\ref[M]'><font color=red>[entry]</font></a></td>"
+			else
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[entry];jobban4=\ref[M]'>[entry]</a></td>"
 		jobs += "</tr></table>"
 
 	// Channels
@@ -752,7 +753,7 @@
 			switch(alert("Temporary Ban?",,"Yes","No", "Cancel"))
 				if("Yes")
 					if(!check_rights(R_MOD,0) && !check_rights(R_BAN, 0))
-						to_chat(usr, "<span class='warning'> You Cannot issue temporary job-bans!</span>")
+						to_chat(usr, "<span class='warning'> You cannot issue temporary job-bans!</span>")
 						return
 					if(config.ban_legacy_system)
 						to_chat(usr, "<span class='warning'>Your server is using the legacy banning system, which does not support temporary job bans. Consider upgrading. Aborting ban.</span>")
@@ -1034,22 +1035,22 @@
 	else if(href_list["c_mode"])
 		if(!check_rights(R_ADMIN))	return
 
-		if(ticker && ticker.mode)
+		if(SSticker.mode)
 			return alert(usr, "The game has already started.", null, null, null, null)
 		var/dat = {"<B>What mode do you wish to play?</B><HR>"}
 		for(var/mode in config.modes)
 			dat += {"<A href='?src=\ref[src];c_mode2=[mode]'>[config.mode_names[mode]]</A><br>"}
 		dat += {"<A href='?src=\ref[src];c_mode2=secret'>Secret</A><br>"}
 		dat += {"<A href='?src=\ref[src];c_mode2=random'>Random</A><br>"}
-		dat += {"Now: [master_mode]"}
+		dat += {"Now: [SSticker.master_mode]"}
 		usr << browse(dat, "window=c_mode")
 
 	else if(href_list["f_secret"])
 		if(!check_rights(R_ADMIN))	return
 
-		if(ticker && ticker.mode)
+		if(SSticker.mode)
 			return alert(usr, "The game has already started.", null, null, null, null)
-		if(master_mode != "secret")
+		if(SSticker.master_mode != "secret")
 			return alert(usr, "The game mode has to be secret!", null, null, null, null)
 		var/dat = {"<B>What game mode do you want to force secret to be? Use this if you want to change the game mode, but want the players to believe it's secret. This will only work if the current game mode is secret.</B><HR>"}
 		for(var/mode in config.modes)
@@ -1061,21 +1062,22 @@
 	else if(href_list["c_mode2"])
 		if(!check_rights(R_ADMIN|R_SERVER))	return
 
-		if (ticker && ticker.mode)
+		if (SSticker.mode)
 			return alert(usr, "The game has already started.", null, null, null, null)
-		master_mode = href_list["c_mode2"]
-		log_and_message_admins("set the mode as [master_mode].")
-		to_world("<span class='notice'><b>The mode is now: [master_mode]</b></span>")
+		SSticker.master_mode = href_list["c_mode2"]
+		SSticker.bypass_gamemode_vote = 1
+		log_and_message_admins("set the mode as [SSticker.master_mode].")
+		to_world("<span class='notice'><b>The mode is now: [SSticker.master_mode]</b></span>")
 		Game() // updates the main game menu
-		world.save_mode(master_mode)
+		world.save_mode(SSticker.master_mode)
 		.(href, list("c_mode"=1))
 
 	else if(href_list["f_secret2"])
 		if(!check_rights(R_ADMIN|R_SERVER))	return
 
-		if(ticker && ticker.mode)
+		if(SSticker.mode)
 			return alert(usr, "The game has already started.", null, null, null, null)
-		if(master_mode != "secret")
+		if(SSticker.master_mode != "secret")
 			return alert(usr, "The game mode has to be secret!", null, null, null, null)
 		secret_force_mode = href_list["f_secret2"]
 		log_and_message_admins("set the forced secret mode as [secret_force_mode].")
@@ -1662,7 +1664,7 @@
 	else if(href_list["traitor"])
 		if(!check_rights(R_ADMIN|R_MOD))	return
 
-		if(!ticker || !ticker.mode)
+		if(GAME_STATE < RUNLEVEL_GAME)
 			alert("The game hasn't started yet!")
 			return
 
@@ -1676,7 +1678,7 @@
 		if(!check_rights(R_INVESTIGATE))
 			return
 
-		if(!ticker || !ticker.mode)
+		if(GAME_STATE < RUNLEVEL_GAME)
 			alert("The game hasn't started yet!")
 			return
 

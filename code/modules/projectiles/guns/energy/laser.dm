@@ -9,7 +9,7 @@
 	one_hand_penalty = 2
 	accuracy = 2
 	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
-	matter = list(DEFAULT_WALL_MATERIAL = 2000)
+	matter = list(MATERIAL_STEEL = 2000)
 	projectile_type = /obj/item/projectile/beam/midlaser
 	wielded_item_state = "laser-wielded"
 
@@ -141,7 +141,7 @@ obj/item/weapon/gun/energy/retro
 	scoped_accuracy = 0
 	wielded_item_state = "gun_wielded"
 
-/obj/item/weapon/gun/energy/sniperrifle/update_icon()
+/obj/item/weapon/gun/energy/sniperrifle/on_update_icon()
 	..()
 	item_state_slots[slot_back_str] = icon_state //so that the on-back overlay uses the different charged states
 
@@ -160,7 +160,7 @@ obj/item/weapon/gun/energy/retro
 	desc = "Standard issue weapon of the Imperial Guard."
 	origin_tech = list(TECH_COMBAT = 1, TECH_MAGNET = 2)
 	self_recharge = 1
-	matter = list(DEFAULT_WALL_MATERIAL = 2000)
+	matter = list(MATERIAL_STEEL = 2000)
 	projectile_type = /obj/item/projectile/beam/lastertag/blue
 	var/required_vest
 

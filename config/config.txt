@@ -1,6 +1,9 @@
 ﻿## Server name: This appears at the top of the screen in-game. In this case it will read "tgstation: station_name" where station_name is the randomly generated name of the station for the round. Remove the # infront of SERVERNAME and replace 'tgstation' with the name of your choice
 SERVERNAME Infinity RU
 
+## Hub visibility: If you want to be visible on the hub, uncomment the below line and be sure that Dream Daemon is set to "Visible." This can be changed in-round as well with toggle-hub-visibility if Dream Daemon is set correctly.
+HUB
+
 ## Add a # infront of this if you want to use the SQL based admin system, the legacy system uses admins.txt. You need to set up your database to use the SQL based system.
 #ADMIN_LEGACY_SYSTEM
 
@@ -168,6 +171,9 @@ VOTE_AUTOGAMEMODE_TIMELEFT 100
 ## prevents dead players from voting or starting votes
 #NO_DEAD_VOTE
 
+## Prevents players not in-round from voting on crew transfer votes.
+#NO_DEAD_VOTE_CREW_TRANSFER
+
 ## players' votes default to "No vote" (otherwise,  default to "No change")
 DEFAULT_NO_VOTE
 
@@ -178,7 +184,7 @@ DEFAULT_NO_VOTE
 ANTAG_HUD_RESTRICTED
 
 ## allow AI job
-#ALLOW_AI
+ALLOW_AI
 
 
 ## disable abandon mob
@@ -215,6 +221,9 @@ WIKIURL https://wiki.infinity-ss13.info/
 
 ## GitHub address
 GITHUBURL https://github.com/infinitystation/Baystation12
+
+## GitHub new issue address
+ISSUEREPORTURL https://github.com/infinitystation/Baystation12/issues/new
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
 BANAPPEALS https://infinity-ss13.info/index.php?/forum/5-суд/
@@ -271,14 +280,14 @@ USEALIENWHITELIST
 ## Password used for authorizing ircbot and other external tools.
 COMMS_PASSWORD karetaisgod
 
-## Uncomment to enable sending data to the IRC bot.
-USE_IRC_BOT
 ## Password used for authorizing external tools that can apply bans
 #BAN_COMMS_PASSWORD
 
 ## Export address where external tools that monitor logins are located
 #LOGIN_EXPORT_ADDR
 
+## Uncomment to enable sending data to the IRC bot.
+USE_IRC_BOT
 
 ## Host where the IRC bot is hosted.  Port 45678 needs to be open.
 IRC_BOT_HOST localhost
@@ -324,10 +333,10 @@ EVENT_CUSTOM_START_MAJOR 80;100
 #DEBUG_PARANOID
 
 ## Uncomment to allow aliens to spawn.
-#ALIENS_ALLOWED
+ALIENS_ALLOWED
 
 ## Uncomment to allow alien xenomorph queens to lay eggs.
-#ALIEN_EGGS_ALLOWED
+ALIEN_EGGS_ALLOWED
 
 ## Uncomment to allow xenos to spawn.
 NINJAS_ALLOWED
@@ -340,6 +349,9 @@ NINJAS_ALLOWED
 
 ## Uncomment to disable the OOC channel by default.
 #DISABLE_OOC
+
+## Uncomment to disable the LOOC channel by default.
+#DISABLE_LOOC
 
 ## Uncomment to disable the dead OOC channel by default.
 #DISABLE_DEAD_OOC
@@ -357,7 +369,7 @@ NINJAS_ALLOWED
 #RESPAWN_DELAY 30
 
 ## Strength of ambient star light. Set to 0 or less to turn off. A value of 1 is unlikely to have a noticeable effect in most lighting systems.
-STARLIGHT 1.4
+STARLIGHT 0
 
 ## Defines which races are allowed to join as ERT, in singular form. If unset, defaults to only human. Casing matters, separate using ;
 ## Example races include: Human, Tajara, Skrell, Unathi
@@ -411,3 +423,6 @@ RADIATION_MATERIAL_RESISTANCE_DIVISOR 2
 
 ## Below this point, radiation is ignored
 RADIATION_LOWER_LIMIT 0.15
+
+## Uncomment this to prevent players from printing copy/pasted circuits
+#DISABLE_CIRCUIT_PRINTING

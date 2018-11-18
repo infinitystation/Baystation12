@@ -79,7 +79,7 @@
 						nverb = "[verb] ([language.shorthand])"
 					if(GLOB.PREF_OFF)//Regular output
 						nverb = verb
-				on_hear_say("<span class='game say'><span class='name'>[speaker_name]</span>[alt_name] [track][language.format_message(message, nverb)]</span>")
+				on_hear_say("<span class='game say'>[track]<span class='name'>[speaker_name]</span>[alt_name] [language.format_message(message, nverb)]</span>")
 
 		else
 			on_hear_say("<span class='game say'>[track]<span class='name'>[speaker_name]</span>[alt_name] [verb], <span class='message'><span class='body'>\"[message]\"</span></span></span>")
@@ -98,7 +98,7 @@
 
 	if(!client)
 		return
-	
+
 	if(last_radio_sound + 0.5 SECOND > world.time)
 		playsound(loc, 'sound/effects/radio_chatter.ogg', 10, 0, -1, falloff = -3)
 		last_radio_sound = world.time

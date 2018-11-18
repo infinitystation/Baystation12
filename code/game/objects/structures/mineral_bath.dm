@@ -133,12 +133,12 @@
 						break
 
 		// Repair robotic external organs.
-		if(!repaired_organ && prob(25))
+		if(!repaired_organ && prob(10))
 			for(var/thing in H.organs)
 				var/obj/item/organ/external/E = thing
 				if(BP_IS_ROBOTIC(E))
 					if(E.brute_dam || E.burn_dam)
-						E.heal_damage(rand(3,5), rand(3,5), TRUE, TRUE)
+						E.heal_damage(5, 5, TRUE, TRUE)
 						to_chat(H, "<span class='notice'>The mineral-rich bath mends your [E.name].</span>")
 						if(!BP_IS_CRYSTAL(E) && !BP_IS_BRITTLE(E) && prob(25))
 							E.status |= ORGAN_BRITTLE

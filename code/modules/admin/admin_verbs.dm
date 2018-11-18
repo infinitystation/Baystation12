@@ -94,7 +94,6 @@ var/list/admin_verbs_admin = list(
 	/client/proc/change_security_level,
 	/client/proc/view_chemical_reaction_logs,
 	/client/proc/makePAI,
-	/datum/admins/proc/paralyze_mob,
 	/client/proc/fixatmos,
 	/client/proc/list_traders,
 	/client/proc/add_trader,
@@ -139,10 +138,14 @@ var/list/admin_verbs_fun = list(
 	/datum/admins/proc/ai_hologram_set,
 	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
 	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
+	/datum/admins/proc/pmp_control_panel,
+	/proc/possess,
+	/proc/release
 	)
 
 var/list/admin_verbs_spawn = list(
 	/datum/admins/proc/spawn_fruit,
+	/datum/admins/proc/spawn_fluid_verb,
 	/datum/admins/proc/spawn_custom_item,
 	/datum/admins/proc/check_custom_items,
 	/datum/admins/proc/spawn_plant,
@@ -182,10 +185,11 @@ var/list/admin_verbs_server = list(
 	/client/proc/observe_delay
 	)
 var/list/admin_verbs_debug = list(
-	/client/proc/getruntimelog,                     // allows us to access runtime logs to somebody,
+	/client/proc/getruntimelog, // allows us to access runtime logs to somebody,
+	/datum/admins/proc/jump_to_fluid_source,
+	/datum/admins/proc/jump_to_fluid_active,
 	/client/proc/cmd_admin_list_open_jobs,
 	/client/proc/Debug2,
-	/client/proc/kill_air,
 	/client/proc/ZASSettings,
 	/client/proc/cmd_debug_make_powernets,
 	/client/proc/debug_controller,
@@ -206,7 +210,6 @@ var/list/admin_verbs_debug = list(
 	/datum/admins/proc/map_template_load,
 	/datum/admins/proc/map_template_load_new_z,
 	/datum/admins/proc/map_template_upload,
-	/client/proc/show_plant_genes,
 	/client/proc/enable_debug_verbs,
 	/client/proc/callproc,
 	/client/proc/callproc_target,
@@ -246,6 +249,9 @@ var/list/admin_verbs_permissions = list(
 	)
 var/list/admin_verbs_rejuv = list(
 	/client/proc/respawn_character
+	)
+var/list/admin_verbs_judge = list(
+	/datum/admins/proc/PlayerNotes
 	)
 
 //verbs which can be hidden - needs work
@@ -305,7 +311,6 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/callproc_target,
 	/client/proc/Debug2,
 	/client/proc/reload_admins,
-	/client/proc/kill_air,
 	/client/proc/cmd_debug_make_powernets,
 	/client/proc/debug_controller,
 	/client/proc/startSinglo,
@@ -335,8 +340,9 @@ var/list/admin_verbs_mod = list(
 	/client/proc/check_antagonists,
 	/client/proc/cmd_admin_subtle_message, // send an message to somebody as a 'voice in their head',
 	/client/proc/aooc,
-	/datum/admins/proc/sendFax
-
+	/datum/admins/proc/sendFax,
+	/datum/admins/proc/paralyze_mob,
+	/datum/admins/proc/view_persistent_data
 )
 
 var/list/admin_verbs_mentor = list(
@@ -363,7 +369,7 @@ var/list/admin_verbs_mentor = list(
 			verbs += admin_verbs_debug
 			if(config.debugparanoid && !(holder.rights & R_ADMIN))
 				verbs.Remove(admin_verbs_paranoid_debug)			//Right now it's just callproc but we can easily add others later on.
-		if(holder.rights & R_POSSESS)		verbs += admin_verbs_possess
+		if(holder.rights & R_JUDGE)	     	verbs += admin_verbs_judge
 		if(holder.rights & R_PERMISSIONS)	verbs += admin_verbs_permissions
 		if(holder.rights & R_STEALTH)		verbs += /client/proc/stealth
 		if(holder.rights & R_REJUVINATE)	verbs += admin_verbs_rejuv
@@ -566,7 +572,7 @@ var/list/admin_verbs_mentor = list(
 	var/datum/preferences/D
 	var/client/C = GLOB.ckey_directory[warned_ckey]
 	if(C)	D = C.prefs
-	else	D = preferences_datums[warned_ckey]
+	else	D = SScharacter_setup.preferences_datums[warned_ckey]
 
 	if(!D)
 		to_chat(src, "<font color='red'>Error: warn(): No such ckey found.</font>")
@@ -674,19 +680,6 @@ var/list/admin_verbs_mentor = list(
 		for (var/mob/V in hearers(mob.control_object))
 			V.show_message("<b>[mob.control_object.name]</b> says: \"" + msg + "\"", 2)
 	feedback_add_details("admin_verb","OT") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-/client/proc/kill_air() // -- TLE
-	set category = "Debug"
-	set name = "Kill Air"
-	set desc = "Toggle Air Processing"
-	if(air_processing_killed)
-		air_processing_killed = 0
-		to_chat(usr, "<b>Enabled air processing.</b>")
-	else
-		air_processing_killed = 1
-		to_chat(usr, "<b>Disabled air processing.</b>")
-	feedback_add_details("admin_verb","KA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-	log_and_message_admins("used 'kill air'.")
 
 /client/proc/readmin_self()
 	set name = "Re-Admin self"

@@ -198,6 +198,15 @@ var/list/_client_preferences_by_type
 	description = "Show End Titles"
 	key = "SHOW_CREDITS"
 
+/datum/client_preference/play_instruments
+	description ="Play instruments"
+	key = "SOUND_INSTRUMENTS"
+
+/datum/client_preference/anon_say
+	description ="Anonymous Chat"
+	key = "CHAT_ANONSAY"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+	default_value = GLOB.PREF_NO
 
 /********************
 * General Staff Preferences *

@@ -5,9 +5,8 @@
 	name = "Toggle Artificial Gravity"
 
 /datum/admin_secret_item/random_event/gravity/can_execute(var/mob/user)
-	if(!(ticker && ticker.mode))
+	if(GAME_STATE < RUNLEVEL_GAME)
 		return 0
-
 	return ..()
 
 /datum/admin_secret_item/random_event/gravity/execute(var/mob/user)
@@ -17,9 +16,13 @@
 
 	var/choice = input(user, "Make Command Report?") in list("Yes", "No")
 	gravity_is_on = !gravity_is_on
-	for(var/A in SSmachines.gravity_generators)
-		var/obj/machinery/gravity_generator/main/B = A
-		B.eventshutofftoggle()
+	if(!SSmachines.gravity_generators)
+		for(var/area/A in world)
+			A.gravitychange(gravity_is_on)
+	else
+		for(var/A in SSmachines.gravity_generators)
+			var/obj/machinery/gravity_generator/main/B = A
+			B.eventshutofftoggle()
 
 	feedback_inc("admin_secrets_fun_used",1)
 	feedback_add_details("admin_secrets_fun_used","Grav")

@@ -16,6 +16,7 @@
 		return
 
 	//add the new taste data
+	LAZYINITLIST(data)
 	for(var/taste in newdata)
 		if(taste in data)
 			data[taste] += newdata[taste]
@@ -100,22 +101,12 @@
 	nutriment_factor = 10
 	color = "#ffff00"
 
-/datum/reagent/nutriment/honey/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/nutriment/honey/affect_ingest(var/mob/living/carbon/human/M, var/alien, var/removed)
 	..()
 
 	if(alien == IS_UNATHI)
-		if(M.chem_doses[type] < 2)
-			if(M.chem_doses[type] == metabolism * 2 || prob(5))
-				M.emote("yawn")
-		else if(M.chem_doses[type] < 5)
-			M.eye_blurry = max(M.eye_blurry, 10)
-		else if(M.chem_doses[type] < 20)
-			if(prob(50))
-				M.Weaken(2)
-			M.drowsyness = max(M.drowsyness, 20)
-		else
-			M.sleeping = max(M.sleeping, 20)
-			M.drowsyness = max(M.drowsyness, 60)
+		var/datum/species/unathi/S = M.species
+		S.handle_sugar(M,src)
 
 /datum/reagent/nutriment/flour
 	name = "flour"
@@ -442,6 +433,22 @@
 		M.bodytemperature += rand(15, 30)
 	holder.remove_reagent(/datum/reagent/frostoil, 5)
 
+/datum/reagent/nutriment/vinegar
+	name = "Vinegar"
+	description = "A weak solution of acetic acid. Usually used for seasoning food."
+	taste_description = "vinegar"
+	reagent_state = LIQUID
+	color = "#e8dfd0"
+	taste_mult = 3
+
+/datum/reagent/nutriment/mayo
+	name = "Mayonnaise"
+	description = "A mixture of egg yolk with lemon juice or vinegar. Usually put on bland food to make it more edible."
+	taste_description = "mayo"
+	reagent_state = LIQUID
+	color = "#efede8"
+	taste_mult = 2
+
 /* Drinks */
 
 /datum/reagent/drink
@@ -470,23 +477,12 @@
 		M.bodytemperature = min(310, M.bodytemperature - (adj_temp * TEMPERATURE_DAMAGE_COEFFICIENT))
 
 // Juices
-/datum/reagent/drink/juice/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/drink/juice/affect_ingest(var/mob/living/carbon/human/M, var/alien, var/removed)
 	..()
 	M.immunity = min(M.immunity + 0.25, M.immunity_norm*1.5)
-	var/effective_dose = M.chem_doses[type]/2
 	if(alien == IS_UNATHI)
-		if(effective_dose < 2)
-			if(effective_dose == metabolism * 2 || prob(5))
-				M.emote("yawn")
-		else if(effective_dose < 5)
-			M.eye_blurry = max(M.eye_blurry, 10)
-		else if(effective_dose < 20)
-			if(prob(50))
-				M.Weaken(2)
-			M.drowsyness = max(M.drowsyness, 20)
-		else
-			M.sleeping = max(M.sleeping, 20)
-			M.drowsyness = max(M.drowsyness, 60)
+		var/datum/species/unathi/S = M.species
+		S.handle_sugar(M,src,0.5)
 
 /datum/reagent/drink/juice/banana
 	name = "Banana Juice"
@@ -925,23 +921,12 @@
 	glass_name = "milkshake"
 	glass_desc = "Glorious brainfreezing mixture."
 
-/datum/reagent/milkshake/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+/datum/reagent/milkshake/affect_ingest(var/mob/living/carbon/human/M, var/alien, var/removed)
 	..()
 
-	var/effective_dose = M.chem_doses[type]/2
 	if(alien == IS_UNATHI)
-		if(effective_dose < 2)
-			if(effective_dose == metabolism * 2 || prob(5))
-				M.emote("yawn")
-		else if(effective_dose < 5)
-			M.eye_blurry = max(M.eye_blurry, 10)
-		else if(effective_dose < 20)
-			if(prob(50))
-				M.Weaken(2)
-			M.drowsyness = max(M.drowsyness, 20)
-		else
-			M.sleeping = max(M.sleeping, 20)
-			M.drowsyness = max(M.drowsyness, 60)
+		var/datum/species/unathi/S = M.species
+		S.handle_sugar(M,src,0.5)
 
 /datum/reagent/drink/rewriter
 	name = "Rewriter"
@@ -1099,19 +1084,6 @@
 		return
 	M.bodytemperature += 10 * TEMPERATURE_DAMAGE_COEFFICIENT
 
-/datum/reagent/drink/ice
-	name = "Ice"
-	description = "Frozen water, your dentist wouldn't like you chewing this."
-	taste_description = "ice"
-	taste_mult = 1.5
-	reagent_state = SOLID
-	color = "#619494"
-	adj_temp = -5
-
-	glass_name = "ice"
-	glass_desc = "Generally, you're supposed to put something else in there too..."
-	glass_icon = DRINK_ICON_NOISY
-
 /datum/reagent/drink/nothing
 	name = "Nothing"
 	description = "Absolutely nothing."
@@ -1213,29 +1185,6 @@
 
 	glass_name = "gin"
 	glass_desc = "A crystal clear glass of Griffeater gin."
-
-/datum/reagent/ethanol/champagne
-	name = "Champagne"
-	description = "Is this gold?"
-	taste_description = "bitter taste"
-	color = "#a89410"
-	strength = 45
-
-	value = 0.15 // Cost
-
-	glass_name = "champagne"
-	glass_desc = "Wow, it's bubbling!"
-	glass_special = list(DRINK_FIZZ)
-
-/obj/effect/decal/cleanable/champagne //dunno where it beter to be placed.
-	name = "champagne"
-	desc = "Is this gold?"
-	gender = PLURAL
-	density = 0
-	anchored = 1
-	icon = 'icons/effects/infinity/champagne.dmi'
-	icon_state = "fchampagne1"
-	random_icon_states = list("fchampagne1", "fchampagne2", "fchampagne3", "fchampagne4")
 
 //Base type for alchoholic drinks containing coffee
 /datum/reagent/ethanol/coffee

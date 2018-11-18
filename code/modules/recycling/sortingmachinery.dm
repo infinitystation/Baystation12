@@ -72,7 +72,7 @@
 				"You hear someone scribbling a note.")
 	return
 
-/obj/structure/bigDelivery/update_icon()
+/obj/structure/bigDelivery/on_update_icon()
 	overlays = new()
 	if(nameset || examtext)
 		var/image/I = new/image('icons/obj/storage.dmi',"delivery_label")
@@ -198,7 +198,7 @@
 				"You hear someone scribbling a note.")
 	return
 
-/obj/item/smallDelivery/update_icon()
+/obj/item/smallDelivery/on_update_icon()
 	overlays = new()
 	if((nameset || examtext) && icon_state != "deliverycrate1")
 		var/image/I = new/image('icons/obj/storage.dmi',"delivery_label")
@@ -342,7 +342,7 @@
 	item_state = "electronic"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
-	matter = list(DEFAULT_WALL_MATERIAL = 100, "glass" = 34)
+	matter = list(MATERIAL_STEEL = 100, MATERIAL_GLASS = 34)
 
 /obj/item/device/destTagger/proc/openwindow(mob/user as mob)
 	var/dat = "<tt><center><h1><b>TagMaster 2.3</b></h1></center>"
@@ -404,7 +404,7 @@
 /obj/machinery/disposal/deliveryChute/interact()
 	return
 
-/obj/machinery/disposal/deliveryChute/update_icon()
+/obj/machinery/disposal/deliveryChute/on_update_icon()
 	return
 
 /obj/machinery/disposal/deliveryChute/Bumped(var/atom/movable/AM) //Go straight into the chute

@@ -8,7 +8,9 @@
 	var/name
 	var/name_plural                                      // Pluralized name (since "[name]s" is not always valid)
 	var/description
+	var/codex_description
 	var/cyborg_noun = "Cyborg"
+	var/hidden_from_codex = TRUE
 
 	// Icon/appearance vars.
 	var/icobase =      'icons/mob/human_races/species/human/body.dmi'          // Normal icon set.
@@ -132,6 +134,8 @@
 		"Your chilly flesh stands out in goosebumps."
 		)
 
+	var/water_soothe_amount
+
 	// HUD data vars.
 	var/datum/hud_data/hud
 	var/hud_type
@@ -238,7 +242,8 @@
 		TAG_CULTURE =   list(CULTURE_OTHER),
 		TAG_HOMEWORLD = list(HOME_SYSTEM_STATELESS),
 		TAG_FACTION =   list(FACTION_OTHER),
-		TAG_RELIGION =  list(RELIGION_OTHER, RELIGION_ATHEISM, RELIGION_AGNOSTICISM)
+		TAG_RELIGION =  list(RELIGION_OTHER, RELIGION_ATHEISM, RELIGION_AGNOSTICISM),
+		TAG_EDUCATION = list(EDUCATION_NONE)
 	)
 	var/list/force_cultural_info =                list()
 	var/list/default_cultural_info =              list()
@@ -265,6 +270,10 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 */
 
 /datum/species/New()
+
+	if(!codex_description)
+		codex_description = description
+
 	for(var/token in ALL_CULTURAL_TAGS)
 
 		var/force_val = force_cultural_info[token]
@@ -596,21 +605,17 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 		target.w_uniform.add_fingerprint(attacker)
 	var/obj/item/organ/external/affecting = target.get_organ(ran_zone(attacker.zone_sel.selecting))
 
-	var/list/holding = list(target.get_active_hand() = 40, target.get_inactive_hand() = 20)
-
-	//See if they have any guns that might go off
-	for(var/obj/item/weapon/gun/W in holding)
-		if(W && prob(holding[W]))
-			var/list/turfs = list()
-			for(var/turf/T in view())
-				turfs += T
-			if(turfs.len)
-				var/turf/shoot_to = pick(turfs)
-				target.visible_message("<span class='danger'>[target]'s [W] goes off during the struggle!</span>")
-				return W.afterattack(shoot_to,target)
+	var/list/holding = list(target.get_active_hand() = 60, target.get_inactive_hand() = 30)
 
 	var/skill_mod = 10 * attacker.get_skill_difference(SKILL_COMBAT, target)
 	var/state_mod = attacker.melee_accuracy_mods() - target.melee_accuracy_mods()
+	if(target.a_intent == I_HELP)
+		state_mod -= 30
+	//Handle unintended consequences
+	for(var/obj/item/I in holding)
+		var/hurt_prob = max(holding[I] - 2*skill_mod + state_mod, 0)
+		if(prob(hurt_prob) && I.on_disarm_attempt(target, attacker))
+			return
 
 	var/randn = rand(1, 100) - skill_mod + state_mod
 	if(!(species_flags & SPECIES_FLAG_NO_SLIP) && randn <= 25)
@@ -775,15 +780,3 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 
 /datum/species/proc/post_organ_rejuvenate(var/obj/item/organ/org, var/mob/living/carbon/human/H)
 	return
-
-/datum/species/proc/is_available_for_join()
-	if(!(spawn_flags & SPECIES_CAN_JOIN))
-		return FALSE
-	else if(!isnull(max_players))
-		var/player_count = 0
-		for(var/mob/living/carbon/human/H in GLOB.living_mob_list_)
-			if(H.client && H.key && H.species == src)
-				player_count++
-				if(player_count >= max_players)
-					return FALSE
-	return TRUE

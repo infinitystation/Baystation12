@@ -54,7 +54,7 @@
 	name = "SCG Marine Combat Engineer"
 	glasses = /obj/item/clothing/glasses/welding
 	gloves = /obj/item/clothing/gloves/insulated/combat
-	back = /obj/item/weapon/storage/backpack/satchel_eng
+	back = /obj/item/weapon/storage/backpack/satchel/eng
 	belt = /obj/item/weapon/storage/belt/utility/full_buy
 	id_pda_assignment = "Marine Combat Engineer"
 	backpack_contents = list(
@@ -79,7 +79,7 @@
 /decl/hierarchy/outfit/scg/troops/medic
 	name = "SCG Marine Corpsman"
 	glasses = /obj/item/clothing/glasses/hud/health
-	back = /obj/item/weapon/storage/backpack/satchel_med
+	back = /obj/item/weapon/storage/backpack/satchel/med
 	suit = /obj/item/clothing/suit/armor/pcarrier/troops/medical
 	belt = /obj/item/weapon/storage/belt/medical/emt/combat
 	id_pda_assignment = "Marine Corpsman"

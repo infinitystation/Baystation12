@@ -20,10 +20,11 @@
 			AM.forceMove(src)
 	update_icon()
 
-/obj/structure/displaycase/examine(var/user)
-	..()
-	if(contents.len)
-		to_chat(user, "Inside you see [english_list(contents)].")
+/obj/structure/displaycase/examine(mob/user)
+	. = ..(user)
+	if(.)
+		if(contents.len)
+			to_chat(user, "Inside you see [english_list(contents)].")
 		to_chat(user, "It looks [locked ? "locked. You can open it with your ID card" : "unlocked"].")
 
 /obj/structure/displaycase/ex_act(severity)
@@ -58,7 +59,7 @@
 	else
 		playsound(src.loc, 'sound/effects/Glasshit.ogg', 75, 1)
 
-/obj/structure/displaycase/update_icon()
+/obj/structure/displaycase/on_update_icon()
 	if(destroyed)
 		icon_state = "glassboxb"
 	else
@@ -83,8 +84,9 @@
 			W.forceMove(get_turf(src))
 			Initialize()
 			return
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	take_damage(W.force)
+	if(user.a_intent == I_HURT)
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		take_damage(W.force)
 	..()
 
 /obj/structure/displaycase/attack_hand(mob/user as mob)
@@ -95,7 +97,7 @@
 			AM.dropInto(loc)
 			update_icon()
 		return
-	if(!destroyed)
+	if(!destroyed && user.a_intent == I_HURT)
 		to_chat(usr, text("<span class='warning'>You kick the display case.</span>"))
 		visible_message("<span class='warning'>[usr] kicks the display case.</span>")
 		take_damage(2)

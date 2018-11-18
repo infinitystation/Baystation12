@@ -1,16 +1,18 @@
+sfd - machine
 s1334 - machine
 cre77 - machine
 rucat - machine
 forrya - machine
-rex127 - machine
 logfol - machine
 kosteg - machine
 hodovoy - machine
 mishele - machine
+kordvik - machine
 taushai - machine
 parasoul - machine
 netreson - machine
 billluxe - machine
+he11d1ver - machine
 rockyfail - machine
 nikita588 - machine
 mrnicolas - machine
@@ -21,8 +23,10 @@ wheatley2013 - machine
 redknighthero - machine
 kotovsyndrome - machine
 inubashirimomiji - skrell
+tenedegurechaff - skrell
 twinindifferent - skrell
 wheatley2013 - skrell
+interl0per - skrell	
 kirill1243 - skrell	
 themaybat - skrell
 salyvador - skrell
@@ -34,9 +38,11 @@ hodovoy - skrell
 taushai - skrell
 knayu - skrell
 cre77 - resomi
+s1334 - resomi
 solark - resomi
 taushai - resomi
 netreson - resomi
+hardstuck - resomi
 kirill1243 - resomi
 coldmantis13 - resomi
 wheatley2013 - resomi
@@ -46,10 +52,10 @@ kirill1243 - giant armoured serpentid
 coltrane97 - giant armoured serpentid
 themaybat - giant armoured serpentid
 sosiskoed - giant armoured serpentid
+he11d1ver - giant armoured serpentid
 diesiege - giant armoured serpentid
 hodovoy - giant armoured serpentid
 sarumyn - giant armoured serpentid
-rex127 - giant armoured serpentid
 portos - giant armoured serpentid
 taushai - giant armoured serpentid
 ted201 - giant armoured serpentid
@@ -66,20 +72,24 @@ wheatley2013 - vox
 wolforbykot - vox
 sosiskoed - vox
 mrnicolas - vox
+he11d1ver - vox
 taushai - vox
-rex127 - vox
-ss1334 - vox
+s1334 - vox
 cre77 - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 kotovsyndrome - unathi
 wheatley2013 - unathi
 wolforbykot - unathi
+colossus333 - unathi
 kirill1243 - unathi
 lunkydunk - unathi
 aragog94 - unathi
+furrydog - unathi
 hodovoy - unathi
 taushai - unathi
+cre77 - unathi
+s1334 - unathi
 corporateoverlord - tajaran
 ashtonfox - tajaran
 mrnicolas - tajaran
@@ -88,11 +98,15 @@ korramy - tajaran
 moonmen - tajaran
 nicknam - tajaran
 taushai - tajaran
+farwa87 - tajaran
 selles - tajaran
 logfol - tajaran
 denmag - tajaran
 solark - tajaran
 forrya - tajaran
 arhod - tajaran
-farwa87 - tajaran
+wheatley2013 - adherent
+sosiskoed - adherent
+gumboldty - adherent
+s1334 - adherent
 redknighthero - bionic

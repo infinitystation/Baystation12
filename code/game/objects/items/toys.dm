@@ -85,7 +85,7 @@
 				qdel(src)
 	return
 
-/obj/item/toy/water_balloon/update_icon()
+/obj/item/toy/water_balloon/on_update_icon()
 	if(src.reagents.total_volume >= 1)
 		icon_state = "waterballoon"
 		item_state = "balloon"
@@ -95,7 +95,7 @@
 
 /obj/item/toy/balloon
 	name = "\improper 'criminal' balloon"
-	desc = "FUK NT!11!"
+	desc = "FUK CAPITALISM!11!"
 	throwforce = 0
 	throw_speed = 4
 	throw_range = 20
@@ -111,7 +111,7 @@
 
 /obj/item/toy/balloon/nanotrasen
 	name = "\improper 'motivational' balloon"
-	desc = "Man, I love NanoTrasen soooo much. I use only NT products. You have NO idea."
+	desc = "Man, I love Profit soooo much. I use only Brand Name products. You have NO idea."
 	icon_state = "ntballoon"
 	item_state = "ntballoon"
 
@@ -868,7 +868,7 @@
 	var/on = 0
 	var/activation_sound = 'sound/effects/flashlight.ogg'
 
-/obj/item/toy/desk/update_icon()
+/obj/item/toy/desk/on_update_icon()
 	if(on)
 		icon_state = "[initial(icon_state)]-on"
 	else

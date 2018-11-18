@@ -17,7 +17,10 @@
 	},
 /area/pirats)
 "af" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/detailed{
+	name = "\improper DOCK B-4";
+	pixel_x = 32
+	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -31,11 +34,11 @@
 	},
 /area/pirats)
 "ah" = (
-/obj/effect/decal/cleanable/liquid_fuel,
-/turf/unsimulated/floor{
-	icon_state = "dark"
+/turf/space,
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 9
 	},
-/area/pirats)
+/area/skipjack_station/start)
 "ai" = (
 /obj/effect/decal/cleanable/champagne,
 /turf/unsimulated/floor{
@@ -81,11 +84,8 @@
 	},
 /area/pirats)
 "ao" = (
-/obj/effect/decal/cleanable/blood,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/pirats)
+/turf/simulated/wall/voxshuttle,
+/area/skipjack_station/start)
 "ap" = (
 /turf/unsimulated/wall{
 	desc = "A secure airlock. Doesn't look like you can get through easily.";
@@ -95,15 +95,6 @@
 	},
 /area/pirats)
 "aq" = (
-/turf/space,
-/turf/simulated/shuttle/wall/corner/dark{
-	dir = 9
-	},
-/area/pirats/shuttle)
-"ar" = (
-/turf/simulated/wall/voxshuttle,
-/area/pirats/shuttle)
-"as" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -113,7 +104,30 @@
 	},
 /obj/effect/wallframe_spawn/reinforced/voxalloy,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
+/area/skipjack_station/start)
+"ar" = (
+/obj/structure/table/rack,
+/obj/random/voidsuit,
+/obj/random/voidsuit,
+/obj/random/voidhelmet,
+/obj/random/voidhelmet,
+/obj/item/clothing/shoes/magboots,
+/obj/item/weapon/melee/energy/sword/pirate,
+/obj/item/clothing/shoes/magboots,
+/obj/item/weapon/tank/oxygen,
+/obj/item/weapon/tank/oxygen,
+/turf/simulated/floor/plating,
+/area/skipjack_station/start)
+"as" = (
+/obj/machinery/light/small{
+	icon_state = "bulb1";
+	dir = 1
+	},
+/obj/structure/table/rack,
+/obj/random/hardsuit,
+/obj/item/clothing/glasses/thermal/plain/monocle,
+/turf/simulated/floor/plating,
+/area/skipjack_station/start)
 "at" = (
 /turf/space,
 /turf/simulated/shuttle/wall/corner/dark{
@@ -132,51 +146,36 @@
 	},
 /area/pirats)
 "av" = (
-/obj/structure/sign/warning/detailed{
-	name = "\improper DOCK B-4";
-	pixel_x = 32
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/pirats)
-"aw" = (
-/obj/structure/table/rack,
-/obj/random/voidsuit,
-/obj/random/voidsuit,
-/obj/random/voidhelmet,
-/obj/random/voidhelmet,
-/obj/item/clothing/shoes/magboots,
-/obj/item/weapon/melee/energy/sword/pirate,
-/obj/item/clothing/shoes/magboots,
-/obj/item/weapon/tank/oxygen,
-/obj/item/weapon/tank/oxygen,
-/turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"ax" = (
-/obj/machinery/light/small{
-	icon_state = "bulb1";
-	dir = 1
-	},
-/obj/structure/table/rack,
-/obj/random/hardsuit,
-/obj/item/clothing/glasses/thermal/plain/monocle,
-/turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"ay" = (
 /obj/structure/table/rack,
 /obj/item/weapon/gun/projectile/sec/lethal,
 /obj/item/ammo_magazine/c45m,
 /obj/item/ammo_magazine/c45m,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"az" = (
+/area/skipjack_station/start)
+"aw" = (
 /obj/structure/table/rack,
 /obj/random/maintenance/clean,
 /obj/random/projectile,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
+/area/skipjack_station/start)
+"ax" = (
+/turf/space,
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 5
+	},
+/area/skipjack_station/start)
+"ay" = (
+/turf/space,
+/obj/effect/shuttle_landmark/skipjack/start,
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 9
+	},
+/area/skipjack_station/start)
+"az" = (
+/obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/atmospherics/portables_connector,
+/turf/simulated/floor/plating,
+/area/skipjack_station/start)
 "aA" = (
 /obj/structure/sign/warning/detailed{
 	name = "\improper DOCK B-4";
@@ -197,60 +196,42 @@
 	},
 /area/pirats)
 "aC" = (
-/turf/space,
-/obj/effect/shuttle_landmark/skipjack/start,
-/turf/simulated/shuttle/wall/corner/dark{
-	dir = 9
-	},
-/area/pirats/shuttle)
-"aD" = (
-/obj/machinery/portable_atmospherics/canister/air,
-/obj/machinery/atmospherics/portables_connector,
-/turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aE" = (
 /obj/structure/table/rack,
 /obj/random/handgun,
 /obj/random/handgun,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aF" = (
+/area/skipjack_station/start)
+"aD" = (
 /obj/structure/table/rack,
 /obj/random/maintenance/clean,
 /obj/item/device/flashlight,
 /obj/item/device/flashlight,
 /obj/item/device/flashlight/maglight,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aG" = (
-/obj/random/trash,
-/obj/effect/decal/cleanable/dirt,
+/area/skipjack_station/start)
+"aE" = (
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aH" = (
+/area/skipjack_station/start)
+"aF" = (
 /obj/structure/table/rack,
 /obj/random/maintenance/clean,
 /obj/item/weapon/gun/energy/gun/small,
 /obj/item/weapon/melee/baton/loaded,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aI" = (
+/area/skipjack_station/start)
+"aG" = (
 /obj/random/maintenance,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aJ" = (
+/area/skipjack_station/start)
+"aH" = (
 /obj/structure/table/rack,
 /obj/random/maintenance/clean,
 /obj/random/maintenance/clean,
 /obj/random/maintenance/clean,
 /obj/item/weapon/card/emag,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aK" = (
+/area/skipjack_station/start)
+"aI" = (
 /obj/structure/table/rack,
 /obj/item/stack/rods/ten,
 /obj/item/weapon/beartrap,
@@ -260,19 +241,8 @@
 /obj/item/weapon/beartrap,
 /obj/item/weapon/gun/launcher/crossbow,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aL" = (
-/obj/machinery/door/airlock/external{
-	frequency = 1380;
-	id_tag = "skipjack_base_hatch";
-	req_access = list(150)
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/pirats)
-"aM" = (
+/area/skipjack_station/start)
+"aJ" = (
 /obj/machinery/door/airlock/external{
 	density = 1;
 	frequency = 1380;
@@ -281,11 +251,8 @@
 	req_access = list(150)
 	},
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aN" = (
-/turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aO" = (
+/area/skipjack_station/start)
+"aK" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 2;
 	frequency = 1380;
@@ -309,36 +276,26 @@
 	pixel_y = 36
 	},
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aP" = (
-/obj/random/trash,
+/area/skipjack_station/start)
+"aL" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aQ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aR" = (
-/obj/random/maintenance,
-/turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aS" = (
+/area/skipjack_station/start)
+"aM" = (
 /obj/structure/table/rack,
 /obj/item/ammo_casing/shotgun/pellet,
 /obj/item/ammo_casing/shotgun/pellet,
 /obj/item/ammo_casing/shotgun/pellet,
 /obj/item/clothing/accessory/storage/bandolier,
 /obj/item/weapon/gun/projectile/pirate,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aT" = (
+/area/skipjack_station/start)
+"aN" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/machinery/floodlight,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aU" = (
+/area/skipjack_station/start)
+"aO" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 2;
 	frequency = 1331;
@@ -362,12 +319,8 @@
 	pixel_y = 36
 	},
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aV" = (
-/obj/random/trash,
-/turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aW" = (
+/area/skipjack_station/start)
+"aP" = (
 /obj/machinery/door/airlock/hatch{
 	frequency = 1331;
 	icon_state = "door_closed";
@@ -376,8 +329,8 @@
 	req_access = list(150)
 	},
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aX" = (
+/area/skipjack_station/start)
+"aQ" = (
 /obj/machinery/access_button{
 	command = "cycle_exterior";
 	frequency = 1331;
@@ -385,21 +338,21 @@
 	req_one_access = list(150)
 	},
 /turf/simulated/wall/voxshuttle,
-/area/pirats/shuttle)
-"aY" = (
+/area/skipjack_station/start)
+"aR" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
 	frequency = 1380;
 	id_tag = "skipjack_shuttle_pump"
 	},
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"aZ" = (
+/area/skipjack_station/start)
+"aS" = (
 /obj/machinery/atmospherics/pipe/manifold/visible,
 /obj/machinery/meter,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"ba" = (
+/area/skipjack_station/start)
+"aT" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
 	},
@@ -410,8 +363,8 @@
 	req_access = list(150)
 	},
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"bb" = (
+/area/skipjack_station/start)
+"aU" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	icon_state = "intact";
 	dir = 9
@@ -426,23 +379,21 @@
 	req_access = list(150)
 	},
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"bc" = (
+/area/skipjack_station/start)
+"aV" = (
 /obj/machinery/light/small,
 /obj/random/maintenance,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"bd" = (
+/area/skipjack_station/start)
+"aW" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"be" = (
+/area/skipjack_station/start)
+"aX" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	icon_state = "intact";
 	dir = 5
 	},
-/obj/random/trash,
 /obj/machinery/access_button{
 	command = "cycle_interior";
 	frequency = 1331;
@@ -452,8 +403,8 @@
 	req_one_access = list(150)
 	},
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"bf" = (
+/area/skipjack_station/start)
+"aY" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
 	},
@@ -465,42 +416,40 @@
 	req_access = list(150)
 	},
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"bg" = (
+/area/skipjack_station/start)
+"aZ" = (
 /obj/machinery/atmospherics/pipe/manifold/visible,
-/obj/random/junk,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"bh" = (
+/area/skipjack_station/start)
+"ba" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 8;
 	frequency = 1331;
 	id_tag = "vox_west_vent"
 	},
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"bi" = (
+/area/skipjack_station/start)
+"bb" = (
 /turf/space,
 /turf/simulated/shuttle/wall/corner/dark,
-/area/pirats/shuttle)
-"bj" = (
-/obj/random/trash,
+/area/skipjack_station/start)
+"bc" = (
 /obj/machinery/door/airlock/hatch{
 	req_access = list(150)
 	},
 /turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bk" = (
+/area/skipjack_station/start)
+"bd" = (
 /turf/space,
 /turf/simulated/shuttle/wall/corner/dark{
 	dir = 6
 	},
-/area/pirats/shuttle)
-"bl" = (
+/area/skipjack_station/start)
+"be" = (
 /obj/structure/computerframe,
 /turf/simulated/floor/shuttle/darkred,
-/area/pirats/shuttle)
-"bm" = (
+/area/skipjack_station/start)
+"bf" = (
 /obj/machinery/button/remote/blast_door{
 	id = "SkipjackShuttersNorth";
 	name = "Skipjack North Shutters";
@@ -523,35 +472,33 @@
 	},
 /obj/machinery/computer/shuttle_control/multi/vox,
 /turf/simulated/floor/shuttle/darkred,
-/area/pirats/shuttle)
-"bn" = (
+/area/skipjack_station/start)
+"bg" = (
 /obj/item/modular_computer/console/preset/civilian,
 /turf/simulated/floor/shuttle/darkred,
-/area/pirats/shuttle)
-"bo" = (
+/area/skipjack_station/start)
+"bh" = (
 /obj/machinery/light/small{
 	icon_state = "bulb1";
 	dir = 1
 	},
 /obj/structure/table/steel,
 /turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bp" = (
+/area/skipjack_station/start)
+"bi" = (
 /obj/structure/table/steel,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bq" = (
+/area/skipjack_station/start)
+"bj" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"br" = (
-/obj/effect/decal/cleanable/dirt,
+/area/skipjack_station/start)
+"bk" = (
 /turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bs" = (
+/area/skipjack_station/start)
+"bl" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -559,24 +506,24 @@
 	locked = 0
 	},
 /turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bt" = (
+/area/skipjack_station/start)
+"bm" = (
 /obj/structure/table/standard,
 /obj/item/weapon/storage/firstaid/surgery,
 /turf/simulated/floor/shuttle/white,
-/area/pirats/shuttle)
-"bu" = (
+/area/skipjack_station/start)
+"bn" = (
 /obj/machinery/optable,
 /turf/simulated/floor/shuttle/white,
-/area/pirats/shuttle)
-"bv" = (
+/area/skipjack_station/start)
+"bo" = (
 /obj/structure/table/standard,
 /obj/item/weapon/storage/firstaid/adv{
 	pixel_x = 1
 	},
 /turf/simulated/floor/shuttle/white,
-/area/pirats/shuttle)
-"bw" = (
+/area/skipjack_station/start)
+"bp" = (
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 4;
@@ -587,66 +534,50 @@
 	},
 /obj/effect/wallframe_spawn/reinforced/voxalloy,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"bx" = (
+/area/skipjack_station/start)
+"bq" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
 /obj/structure/table/rack,
-/obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/suit/armor/pcarrier/light,
 /obj/item/clothing/suit/armor/pcarrier/medium,
 /turf/simulated/floor/shuttle/darkred,
-/area/pirats/shuttle)
-"by" = (
+/area/skipjack_station/start)
+"br" = (
 /obj/structure/bed/chair/office/light{
 	tag = "icon-officechair_white_preview (NORTH)";
 	icon_state = "officechair_white_preview";
 	dir = 1
 	},
 /turf/simulated/floor/shuttle/darkred,
-/area/pirats/shuttle)
-"bz" = (
+/area/skipjack_station/start)
+"bs" = (
 /turf/simulated/floor/shuttle/darkred,
-/area/pirats/shuttle)
-"bA" = (
+/area/skipjack_station/start)
+"bt" = (
 /obj/effect/wallframe_spawn/reinforced/voxalloy,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"bB" = (
-/obj/structure/bed/chair{
-	dir = 1
-	},
-/obj/random/trash,
-/turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bC" = (
+/area/skipjack_station/start)
+"bu" = (
 /obj/structure/bed/chair{
 	dir = 1
 	},
 /turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bD" = (
+/area/skipjack_station/start)
+"bv" = (
 /obj/random/maintenance,
 /turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bE" = (
-/obj/random/junk,
-/turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bF" = (
+/area/skipjack_station/start)
+"bw" = (
 /obj/structure/table/steel,
 /obj/machinery/recharger,
 /turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bG" = (
+/area/skipjack_station/start)
+"bx" = (
 /turf/simulated/floor/shuttle/white,
-/area/pirats/shuttle)
-"bH" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/shuttle/white,
-/area/pirats/shuttle)
-"bI" = (
+/area/skipjack_station/start)
+"by" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -659,8 +590,8 @@
 	pixel_y = 3
 	},
 /turf/simulated/floor/shuttle/white,
-/area/pirats/shuttle)
-"bJ" = (
+/area/skipjack_station/start)
+"bz" = (
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 8;
@@ -671,82 +602,70 @@
 	},
 /obj/effect/wallframe_spawn/reinforced/voxalloy,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"bL" = (
+/area/skipjack_station/start)
+"bA" = (
 /obj/structure/table/rack,
 /turf/simulated/floor/shuttle/darkred,
-/area/pirats/shuttle)
-"bM" = (
+/area/skipjack_station/start)
+"bB" = (
 /obj/machinery/door/airlock/hatch{
 	req_access = list(150)
 	},
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"bN" = (
-/turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bO" = (
-/obj/structure/sink{
+/area/skipjack_station/start)
+"bC" = (
+/obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
 	pixel_y = 0
 	},
 /turf/simulated/floor/shuttle/white,
-/area/pirats/shuttle)
-"bQ" = (
+/area/skipjack_station/start)
+"bD" = (
 /obj/structure/table/rack,
 /obj/random/plushie,
 /obj/item/device/binoculars,
 /turf/simulated/floor/shuttle/darkred,
-/area/pirats/shuttle)
-"bR" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/shuttle/darkred,
-/area/pirats/shuttle)
-"bS" = (
+/area/skipjack_station/start)
+"bE" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
 /obj/item/weapon/melee/baton/cattleprod,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bT" = (
-/obj/random/trash,
-/turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bU" = (
+/area/skipjack_station/start)
+"bF" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bV" = (
+/area/skipjack_station/start)
+"bG" = (
 /obj/structure/table/standard,
 /obj/item/weapon/storage/firstaid/regular,
 /obj/item/weapon/storage/firstaid/fire,
 /turf/simulated/floor/shuttle/white,
-/area/pirats/shuttle)
-"bW" = (
+/area/skipjack_station/start)
+"bH" = (
 /obj/machinery/body_scanconsole{
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/white,
-/area/pirats/shuttle)
-"bX" = (
+/area/skipjack_station/start)
+"bI" = (
 /obj/machinery/bodyscanner{
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/white,
-/area/pirats/shuttle)
-"bY" = (
+/area/skipjack_station/start)
+"bJ" = (
 /obj/machinery/autolathe{
 	hacked = 1
 	},
 /turf/simulated/floor/shuttle/red,
-/area/pirats/shuttle)
-"bZ" = (
+/area/skipjack_station/start)
+"bK" = (
 /obj/structure/closet/crate,
 /obj/item/stack/material/steel/fifty,
 /obj/item/stack/material/glass/fifty,
@@ -754,56 +673,51 @@
 /obj/item/weapon/storage/toolbox/electrical,
 /obj/item/weapon/storage/belt/utility,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"ca" = (
+/area/skipjack_station/start)
+"bL" = (
 /obj/structure/closet/crate/freezer/rations,
 /obj/item/weapon/reagent_containers/food/snacks/tastybread,
 /obj/item/weapon/reagent_containers/food/snacks/tastybread,
 /obj/item/weapon/reagent_containers/food/snacks/tastybread,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"cb" = (
+/area/skipjack_station/start)
+"bM" = (
 /turf/simulated/shuttle/wall/corner/dark{
 	dir = 10
 	},
-/area/pirats/shuttle)
-"cc" = (
+/area/skipjack_station/start)
+"bN" = (
 /obj/structure/shuttle/engine/heater{
 	pixel_y = 32
 	},
 /obj/structure/shuttle/engine/propulsion,
 /turf/simulated/floor/airless,
-/area/pirats/shuttle)
-"cd" = (
+/area/skipjack_station/start)
+"bO" = (
 /obj/structure/bed,
 /obj/machinery/door/window/northleft{
 	req_access = list(150)
 	},
-/obj/random/junk,
-/obj/random/trash,
 /turf/simulated/floor/shuttle/black,
-/area/pirats/shuttle)
-"ce" = (
-/obj/structure/bed,
-/obj/machinery/door/window/northleft{
-	req_access = list(150)
-	},
-/obj/random/trash,
-/turf/simulated/floor/shuttle/black,
-/area/pirats/shuttle)
-"cf" = (
+/area/skipjack_station/start)
+"bP" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"cg" = (
+/area/skipjack_station/start)
+"bQ" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/plating,
-/area/pirats/shuttle)
-"ch" = (
+/area/skipjack_station/start)
+"bR" = (
 /turf/simulated/shuttle/wall/corner/dark{
 	dir = 6
 	},
-/area/pirats/shuttle)
+/area/skipjack_station/start)
+"bS" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/holofloor/grass,
+/area/admin/prison)
 "ci" = (
 /obj/effect/step_trigger/teleporter/random{
 	affect_ghosts = 1;
@@ -828,7 +742,7 @@
 	dir = 4;
 	name = "shower door"
 	},
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	dir = 2;
 	pixel_y = 18
 	},
@@ -844,7 +758,7 @@
 	pixel_x = 0;
 	pixel_y = 32
 	},
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
@@ -1422,12 +1336,6 @@
 	},
 /turf/simulated/floor/holofloor/grass,
 /area/admin/prison)
-"dC" = (
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/ppflowers,
-/mob/living/carbon/human/farwa,
-/turf/simulated/floor/holofloor/grass,
-/area/admin/prison)
 "dD" = (
 /obj/machinery/vending/engivend,
 /turf/unsimulated/floor{
@@ -1640,7 +1548,7 @@
 	},
 /area/acting/backstage)
 "ef" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	icon_state = "sink";
 	dir = 8;
 	pixel_x = -12;
@@ -1653,7 +1561,7 @@
 /turf/simulated/floor/carpet,
 /area/admin/prison)
 "eg" = (
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	dir = 1
 	},
 /obj/machinery/door/window/westleft{
@@ -1841,7 +1749,7 @@ ac
 ac
 ac
 ad
-af
+ae
 an
 ad
 ac
@@ -2142,16 +2050,16 @@ en
 aa
 ac
 ad
-af
+ae
 ae
 ae
 ae
 al
-af
+ae
 ae
 au
 aB
-af
+ae
 ae
 aj
 ab
@@ -2245,16 +2153,16 @@ aa
 ac
 ad
 ae
-af
-af
-af
 ae
 ae
 ae
-av
+ae
+ae
+ae
+af
 aB
 ae
-af
+ae
 aj
 ab
 ab
@@ -2456,10 +2364,10 @@ ab
 ab
 ab
 ab
-aC
-aM
-aX
-bi
+ay
+aJ
+aQ
+bb
 ab
 ab
 ab
@@ -2550,7 +2458,7 @@ en
 aa
 ad
 ae
-ah
+ae
 ae
 aj
 ab
@@ -2558,16 +2466,16 @@ ab
 ab
 ab
 ab
-ar
-aN
-aY
-ar
-ar
-bw
-bw
-ar
-ar
-cb
+ao
+aE
+aR
+ao
+ao
+bp
+bp
+ao
+ao
+bM
 ab
 ab
 ci
@@ -2653,23 +2561,23 @@ aa
 ad
 ae
 ae
-af
+ae
 aj
 ab
 ab
 ab
 ab
 ab
-ar
-aO
-aZ
-ar
-bl
-bx
-bL
-bQ
-ar
-cc
+ao
+aK
+aS
+ao
+be
+bq
+bA
+bD
+ao
+bN
 ab
 ab
 ci
@@ -2761,17 +2669,17 @@ ab
 ab
 ab
 ab
-aq
-ar
-ar
-ba
-ar
-bm
-by
-bz
-bz
-ar
-cc
+ah
+ao
+ao
+aT
+ao
+bf
+br
+bs
+bs
+ao
+bN
 ab
 ab
 ci
@@ -2856,24 +2764,24 @@ en
 aa
 ad
 ae
-ah
+ae
 ae
 vV
 ab
 ab
 ab
 ab
-ar
-aD
-aP
-bb
-ar
-bn
-bz
-bz
-bR
-ar
-cc
+ao
+az
+aL
+aU
+ao
+bg
+bs
+bs
+bs
+ao
+bN
 ab
 ab
 ci
@@ -2964,19 +2872,19 @@ vV
 ab
 ab
 ab
-aq
-ar
+ah
+ao
+aC
 aE
-aQ
-bc
-ar
-ar
-bA
+aV
+ao
+ao
+bt
+bB
+ao
+ao
+ao
 bM
-ar
-ar
-ar
-cb
 ab
 ci
 ab
@@ -3066,20 +2974,20 @@ vV
 ab
 ab
 ab
+ao
 ar
-aw
-aF
-aR
-aN
-ar
-bo
-bB
-bN
-bS
-br
-cd
-ar
-cb
+aD
+aG
+aE
+ao
+bh
+bu
+bk
+bE
+bk
+bO
+ao
+bM
 ci
 ab
 ab
@@ -3162,26 +3070,26 @@ en
 aa
 ad
 ae
-ah
+ae
 ai
 aj
 ab
 ab
 ab
-as
-aw
-aG
-aQ
-aN
+aq
 ar
-bp
-bC
+aE
+aE
+aE
+ao
+bi
+bu
+bk
+bk
+bk
+bO
+ao
 bN
-bE
-br
-ce
-ar
-cc
 ci
 ab
 ab
@@ -3270,20 +3178,20 @@ aj
 ab
 ab
 ab
-ar
-ax
-aH
-aS
-aN
-ar
-bq
-bD
-br
-bD
-bY
-ar
-ar
-cc
+ao
+as
+aF
+aM
+aE
+ao
+bj
+bv
+bk
+bv
+bJ
+ao
+ao
+bN
 ci
 ab
 ab
@@ -3372,20 +3280,20 @@ aj
 ab
 ab
 ab
-as
-ay
-aI
-aQ
-aQ
-bj
-br
-bE
-br
-bT
-bZ
-cf
-ar
-cc
+aq
+av
+aG
+aE
+aE
+bc
+bk
+bk
+bk
+bk
+bK
+bP
+ao
+bN
 ci
 ab
 ab
@@ -3469,25 +3377,25 @@ aa
 ad
 ae
 ae
-ah
+ae
 vV
 ab
 ab
 ab
-ar
-az
-aJ
+ao
+aw
+aH
+aE
 aG
-aI
-ar
-bs
+ao
+bl
+bw
+bk
 bF
-bN
-bU
-ca
-cg
-ar
-ch
+bL
+bQ
+ao
+bR
 ci
 ab
 ab
@@ -3577,18 +3485,18 @@ ab
 ab
 ab
 at
-ar
-aK
-aQ
-bd
-ar
-ar
-bA
-bM
-ar
-ar
-ar
-ch
+ao
+aI
+aE
+aW
+ao
+ao
+bt
+bB
+ao
+ao
+ao
+bR
 ab
 ci
 ab
@@ -3679,17 +3587,17 @@ ab
 ab
 ab
 ab
-ar
-aD
-aT
-be
-ar
-bt
+ao
+az
+aN
+aX
+ao
+bm
+bx
+bx
 bG
-bH
-bV
-ar
-cc
+ao
+bN
 ab
 ab
 ci
@@ -3774,24 +3682,24 @@ en
 aa
 ad
 ae
-af
+ae
 ae
 aj
 ab
 ab
 ab
 ab
-at
-ar
-ar
-bf
-ar
-bu
+ax
+ao
+ao
+aY
+ao
+bn
+bx
+bx
 bH
-bG
-bW
-ar
-cc
+ao
+bN
 ab
 ab
 ci
@@ -3876,7 +3784,7 @@ en
 aa
 ad
 ae
-af
+ae
 ae
 aj
 ab
@@ -3884,16 +3792,16 @@ ab
 ab
 ab
 ab
-ar
-aU
-bg
-ar
-bv
+ao
+aO
+aZ
+ao
+bo
+by
+bC
 bI
-bO
-bX
-ar
-cc
+ao
+bN
 ab
 ab
 ci
@@ -3986,16 +3894,16 @@ ab
 ab
 ab
 ab
-ar
-aV
-bh
-ar
-ar
-bJ
-bJ
-ar
-ar
-ch
+ao
+aE
+ba
+ao
+ao
+bz
+bz
+ao
+ao
+bR
 ab
 ab
 ci
@@ -4088,10 +3996,10 @@ ab
 ab
 ab
 ab
-at
-aW
-aX
-bk
+ax
+aP
+aQ
+bd
 ab
 ab
 ab
@@ -4183,7 +4091,7 @@ aa
 ad
 ae
 ae
-af
+ae
 vV
 vV
 aj
@@ -4191,7 +4099,7 @@ aj
 aj
 vV
 vV
-aL
+aB
 aj
 vV
 ab
@@ -4223,7 +4131,7 @@ cj
 cj
 cj
 dy
-dC
+bS
 dH
 cj
 cj
@@ -4287,14 +4195,14 @@ ae
 ae
 ae
 ag
-af
-ah
+ae
+ae
 ae
 ae
 aA
 aB
 ae
-af
+ae
 aj
 ab
 ab
@@ -4390,11 +4298,11 @@ ae
 ae
 ag
 ak
-af
 ae
-af
-af
-aL
+ae
+ae
+ae
+aB
 ae
 ae
 aj
@@ -4697,8 +4605,8 @@ ac
 ac
 ac
 ad
-ao
-af
+ae
+ae
 ad
 ac
 ac

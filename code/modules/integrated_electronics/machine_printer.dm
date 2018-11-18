@@ -103,7 +103,7 @@ var/list/integrated_circuit_blacklist = list(/obj/item/integrated_circuit, /obj/
 		else
 			metal_mult += 0.25/S.rating
 
-/obj/machinery/integrated_circuit_printer/update_icon()
+/obj/machinery/integrated_circuit_printer/on_update_icon()
 	if(panel_open)
 		icon_state = "integrated_open"
 	else

@@ -35,6 +35,16 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 
+/obj/item/weapon/storage/box/union_cards
+	name = "box of union cards"
+	desc = "A box of spare unsigned union membership cards."
+	startswith = list(/obj/item/weapon/card/union = 7)
+
+/obj/item/weapon/storage/box/large/union_cards
+	name = "large box of union cards"
+	desc = "A large box of spare unsigned union membership cards."
+	startswith = list(/obj/item/weapon/card/union = 14)
+
 // BubbleWrap - A box can be folded up to make card
 /obj/item/weapon/storage/box/attack_self(mob/user as mob)
 	if(..()) return
@@ -134,6 +144,10 @@
 	icon_state = "beaker"
 	startswith = list(/obj/item/weapon/reagent_containers/glass/beaker = 7)
 
+/obj/item/weapon/storage/box/beakers/insulated
+	name = "box of insulated beakers"
+	startswith = list(/obj/item/weapon/reagent_containers/glass/beaker/insulated = 7)
+
 /obj/item/weapon/storage/box/blanks
 	name = "box of blank shells"
 	desc = "It has a picture of a gun and several warning symbols on the front."
@@ -223,7 +237,7 @@
 /obj/item/weapon/storage/box/supermatters
 	name = "box of supermatter grenades"
 	desc = "A box containing 5 highly experimental supermatter grenades."
-	icon_state = "radbox"
+	icon_state = "box_of_doom"
 	startswith = list(/obj/item/weapon/grenade/supermatter = 5)
 
 /obj/item/weapon/storage/box/trackimp
@@ -279,6 +293,8 @@
 	icon_state = "donk_kit"
 	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/donkpocket/sinpocket = 6)
 
+//cubed animals
+
 /obj/item/weapon/storage/box/monkeycubes
 	name = "monkey cube box"
 	desc = "Drymate brand monkey cubes. Just add water!"
@@ -301,6 +317,11 @@
 	name = "neaera cube box"
 	desc = "Drymate brand neaera cubes, shipped from Jargon 4. Just add water!"
 	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/monkeycube/wrapped/neaeracube = 5)
+
+/obj/item/weapon/storage/box/monkeycubes/spidercubes
+	name = "spiderling cube box"
+	desc = "Drymate brand Instant spiders. WHY WOULD YOU ORDER THIS!?"
+	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/monkeycube/wrapped/spidercube = 5)
 
 /obj/item/weapon/storage/box/ids
 	name = "box of spare IDs"
@@ -353,16 +374,16 @@
 	can_hold = list(/obj/item/weapon/flame/match)
 	startswith = list(/obj/item/weapon/flame/match = 10)
 
-	attackby(obj/item/weapon/flame/match/W as obj, mob/user as mob)
-		if(istype(W) && !W.lit && !W.burnt)
-			W.lit = 1
-			W.damtype = "burn"
-			W.icon_state = "match_lit"
-			START_PROCESSING(SSobj, W)
-			playsound(src.loc, 'sound/items/match.ogg', 60, 1, -4)
-			user.visible_message("<span class='notice'>[user] strikes the match on the matchbox.</span>")
-		W.update_icon()
-		return
+/obj/item/weapon/storage/box/matches/attackby(obj/item/weapon/flame/match/W as obj, mob/user as mob)
+	if(istype(W) && !W.lit && !W.burnt)
+		W.lit = 1
+		W.damtype = "burn"
+		W.icon_state = "match_lit"
+		START_PROCESSING(SSobj, W)
+		playsound(src.loc, 'sound/items/match.ogg', 60, 1, -4)
+		user.visible_message("<span class='notice'>[user] strikes the match on the matchbox.</span>")
+	W.update_icon()
+	return
 
 /obj/item/weapon/storage/box/autoinjectors
 	name = "box of injectors"
@@ -438,6 +459,10 @@
 	can_hold = list(/obj/item/organ, /obj/item/weapon/reagent_containers/food, /obj/item/weapon/reagent_containers/glass)
 	max_storage_space = DEFAULT_BACKPACK_STORAGE
 	use_to_pickup = 1 // for picking up broken bulbs, not that most people will try
+	temperature = -16 CELCIUS
+
+/obj/item/weapon/storage/box/freezer/ProcessAtomTemperature()
+	return PROCESS_KILL
 
 /obj/item/weapon/storage/box/checkers
 	name = "checkers box"
@@ -503,3 +528,67 @@
 	desc = "A bag full of juicy, yummy detergent pods. This bag has been labeled: Tod Pods, a Waffle Co. product."
 	icon_state = "detergent"
 	startswith = list(/obj/item/weapon/reagent_containers/pill/detergent = 10)
+
+//cargosia supply boxes - Primarily for restocking
+
+/obj/item/weapon/storage/box/tapes
+	name = "box of spare tapes"
+	desc = "A box full of blank tapes."
+	startswith = list(/obj/item/device/tape/random = 14)
+
+/obj/item/weapon/storage/box/cola
+	name = "box of sodas"
+	desc = "A box full of soda cans."
+	startswith = list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola = 7)
+
+/obj/item/weapon/storage/box/water
+	name = "box of water bottles"
+	desc = "A box full of bottled water."
+	startswith = list(/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 7)
+
+/obj/item/weapon/storage/box/cola/spacewind
+	startswith = list(/obj/item/weapon/reagent_containers/food/drinks/cans/space_mountain_wind = 7)
+
+/obj/item/weapon/storage/box/cola/drgibb
+	startswith = list(/obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb = 7)
+
+/obj/item/weapon/storage/box/cola/starkist
+	startswith = list(/obj/item/weapon/reagent_containers/food/drinks/cans/starkist = 7)
+
+/obj/item/weapon/storage/box/cola/spaceup
+	startswith = list(/obj/item/weapon/reagent_containers/food/drinks/cans/space_up = 7)
+
+/obj/item/weapon/storage/box/cola/lemonlime
+	startswith = list(/obj/item/weapon/reagent_containers/food/drinks/cans/lemon_lime = 7)
+
+/obj/item/weapon/storage/box/cola/icedtea
+	startswith = list(/obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea = 7)
+
+/obj/item/weapon/storage/box/cola/grapejuice
+	startswith = list(/obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 7)
+
+/obj/item/weapon/storage/box/cola/sodawater
+	startswith = list(/obj/item/weapon/reagent_containers/food/drinks/cans/sodawater = 7)
+
+/obj/item/weapon/storage/box/snack
+	name = "box of snack food"
+	desc = "A box full of snack foods."
+	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/skrellsnacks = 7)
+
+/obj/item/weapon/storage/box/snack/jerky
+	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/sosjerky = 7)
+
+/obj/item/weapon/storage/box/snack/noraisin
+	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/no_raisin = 7)
+
+/obj/item/weapon/storage/box/snack/cheesehonks
+	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/cheesiehonkers = 7)
+
+/obj/item/weapon/storage/box/snack/tastybread
+	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/tastybread = 7)
+
+/obj/item/weapon/storage/box/snack/candy
+	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/candy = 7)
+
+/obj/item/weapon/storage/box/snack/chips
+	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/chips = 7)

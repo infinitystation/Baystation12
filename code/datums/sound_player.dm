@@ -115,7 +115,7 @@ GLOBAL_DATUM_INIT(sound_player, /decl/sound_player, new)
 	listeners = list()
 	listener_status = list()
 
-	GLOB.destroyed_event.register(source, src, /datum/sound_token/proc/Stop)
+	GLOB.destroyed_event.register(source, src, /datum/proc/qdel_self)
 
 	if(ismovable(source))
 		proxy_listener = new(source, /datum/sound_token/proc/PrivAddListener, /datum/sound_token/proc/PrivLocateListeners, range, proc_owner = src)
@@ -156,7 +156,7 @@ datum/sound_token/proc/Mute()
 	listeners = null
 	listener_status = null
 
-	GLOB.destroyed_event.unregister(source, src, /datum/sound_token/proc/Stop)
+	GLOB.destroyed_event.unregister(source, src, /datum/proc/qdel_self)
 	QDEL_NULL(proxy_listener)
 	source = null
 
@@ -227,7 +227,8 @@ datum/sound_token/proc/PrivAddListener(var/atom/listener)
 		listener_status[listener] &= ~SOUND_MUTE
 
 	sound.x = source_turf.x - listener_turf.x
-	sound.y = source_turf.y - listener_turf.y
+	sound.z = source_turf.y - listener_turf.y
+	sound.y = 1
 	// Far as I can tell from testing, sound priority just doesn't work.
 	// Sounds happily steal channels from each other no matter what.
 	sound.priority = Clamp(255 - distance, 0, 255)

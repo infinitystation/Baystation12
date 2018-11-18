@@ -7,7 +7,7 @@
 	icon = 'icons/obj/wall_frame.dmi'
 	icon_state = "frame"
 
-	atom_flags = ATOM_FLAG_CLIMBABLE
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 	anchored = 1
 	density = 1
 	throwpass = 1
@@ -112,7 +112,7 @@
 
 // icon related
 
-/obj/structure/wall_frame/update_icon()
+/obj/structure/wall_frame/on_update_icon()
 	overlays.Cut()
 	var/image/I
 
@@ -146,10 +146,13 @@
 	color = "#6c7364"
 
 /obj/structure/wall_frame/prepainted
-	color = "#545c68"
+	color = COLOR_GUNMETAL
 
 /obj/structure/wall_frame/wood
 	color = "#824b28"
+
+/obj/structure/wall_frame/crystal
+	color = COLOR_PALE_BLUE_GRAY
 
 /obj/structure/wall_frame/hull/Initialize()
 	. = ..()

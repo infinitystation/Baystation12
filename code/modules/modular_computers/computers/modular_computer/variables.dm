@@ -39,6 +39,7 @@
 	var/damage = 0				// Current damage level
 	var/broken_damage = 50		// Damage level at which the computer ceases to operate
 	var/max_damage = 100		// Damage level at which the computer breaks apart.
+	var/list/terminals          // List of open terminal datums.
 
 	// Important hardware (must be installed for computer to work)
 	var/obj/item/weapon/computer_hardware/processor_unit/processor_unit				// CPU. Without it the computer won't run. Better CPUs can run more programs at once.
@@ -58,3 +59,10 @@
 
 	var/stores_pen = FALSE
 	var/obj/item/weapon/pen/stored_pen
+
+	//Pain and suffering
+	var/receives_updates = TRUE
+	var/updating = FALSE
+	var/updates = 0
+	var/update_progress = 0
+	var/update_postshutdown

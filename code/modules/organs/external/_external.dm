@@ -66,7 +66,7 @@
 	var/speed_mod = 0
 
 	// Surgery vars.
-	var/cavity_max_w_class = 0
+	var/cavity_max_w_class = ITEM_SIZE_TINY //this is increased if bigger organs spawn by default inside
 	var/hatch_state = 0
 	var/stage = 0
 	var/cavity = 0
@@ -109,6 +109,7 @@
 
 	if(parent && parent.children)
 		parent.children -= src
+		parent = null
 
 	if(children)
 		for(var/obj/item/organ/external/C in children)
@@ -154,21 +155,21 @@
 	var/burn_damage = 0
 	switch (severity)
 		if (1)
-			burn_damage = 15
+			burn_damage = 30
 		if (2)
-			burn_damage = 7
+			burn_damage = 15
 		if (3)
-			burn_damage = 3
-
-	var/mult = BP_IS_ROBOTIC(src) + BP_IS_ASSISTED(src)
+			burn_damage = 7.5
+/*
+	var/mult = 1 + !!(BP_IS_ASSISTED(src)) // This macro returns (large) bitflags.
 	burn_damage *= mult/species.burn_mod //ignore burn mod for EMP damage
-
+*/
 	var/power = 4 - severity //stupid reverse severity
 	for(var/obj/item/I in implants)
 		if(I.obj_flags & OBJ_FLAG_CONDUCTIBLE)
 			burn_damage += I.w_class * rand(power, 3*power)
 
-	if(burn_damage)
+	if(owner && burn_damage)
 		owner.custom_pain("Something inside your [src] burns a [severity < 2 ? "bit" : "lot"]!", power * 15) //robotic organs won't feel it anyway
 		take_external_damage(0, burn_damage, 0, used_weapon = "Hot metal")
 
@@ -200,6 +201,10 @@
 			if(istype(I, /obj/item/organ))
 				continue
 			to_chat(usr, "<span class='danger'>There is \a [I] sticking out of it.</span>")
+		var/ouchies = get_wounds_desc()
+		if(ouchies != "nothing")
+			to_chat(usr, "<span class='notice'>There is [ouchies] visible on it.</span>")
+
 	return
 
 /obj/item/organ/external/show_decay_status(mob/user)
@@ -882,7 +887,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		if(DROPLIMB_BLUNT)
 			var/obj/gore
 			if(BP_IS_CRYSTAL(src))
-				gore = new /obj/item/weapon/material/shard(get_turf(victim), "crystal")
+				gore = new /obj/item/weapon/material/shard(get_turf(victim), MATERIAL_CRYSTAL)
 			else if(BP_IS_ROBOTIC(src))
 				gore = new /obj/effect/decal/cleanable/blood/gibs/robot(get_turf(victim))
 			else
@@ -1497,6 +1502,17 @@ obj/item/organ/external/proc/remove_clamps()
 	W.damage += damage
 	W.time_inflicted = world.time
 
-
 /obj/item/organ/external/proc/has_genitals()
 	return !BP_IS_ROBOTIC(src) && species && species.sexybits_location == organ_tag
+
+// Added to the mob's move delay tally if this organ is being used to move with.
+obj/item/organ/external/proc/movement_delay(max_delay)
+	. = 0
+	if(is_stump())
+		. += max_delay
+	else if(splinted)
+		. += max_delay/8
+	else if(status & ORGAN_BROKEN)
+		. += max_delay * 3/8
+	else if(BP_IS_ROBOTIC(src))
+		. += max_delay * CLAMP01(damage/max_damage)

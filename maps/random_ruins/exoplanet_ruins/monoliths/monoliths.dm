@@ -20,7 +20,7 @@
 /obj/structure/monolith/Initialize()
 	. = ..()
 	icon_state = "jaggy[rand(1,4)]"
-	var/material/A = SSmaterials.get_material_by_name("aliumium")
+	var/material/A = SSmaterials.get_material_by_name(MATERIAL_ALIUMIUM)
 	if(A)
 		color = A.icon_colour
 	if(GLOB.using_map.use_overmap)
@@ -28,7 +28,7 @@
 		if(istype(E))
 			desc += "\nThere are images on it: [E.get_engravings()]"
 
-/obj/structure/monolith/update_icon()
+/obj/structure/monolith/on_update_icon()
 	overlays.Cut()
 	if(active)
 		var/image/I = image(icon,"[icon_state]decor")

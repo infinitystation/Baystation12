@@ -40,9 +40,12 @@
 
 /obj/machinery/atmospherics/unary/vent_scrubber/Destroy()
 	unregister_radio(src, frequency)
-	..()
+	if(initial_loc)
+		initial_loc.air_scrub_info -= id_tag
+		initial_loc.air_scrub_names -= id_tag
+	return ..()
 
-/obj/machinery/atmospherics/unary/vent_scrubber/update_icon(var/safety = 0)
+/obj/machinery/atmospherics/unary/vent_scrubber/on_update_icon(var/safety = 0)
 	if(!check_icon_cache())
 		return
 
@@ -164,7 +167,7 @@
 	else if(scrubbing == SCRUBBER_EXCHANGE) // after sleep check so it only does an exchange if there are bad gasses that have been scrubbed
 		transfer_moles = min(environment.total_moles, environment.total_moles*MAX_SCRUBBER_FLOWRATE/environment.volume)
 		power_draw += pump_gas(src, environment, air_contents, transfer_moles / 4, power_rating)
-		
+
 	if (power_draw >= 0)
 		last_power_draw = power_draw
 		use_power(power_draw)
@@ -321,10 +324,3 @@
 		to_chat(user, "You are too far away to read the gauge.")
 	if(welded)
 		to_chat(user, "It seems welded shut.")
-
-/obj/machinery/atmospherics/unary/vent_scrubber/Destroy()
-	if(initial_loc)
-		initial_loc.air_scrub_info -= id_tag
-		initial_loc.air_scrub_names -= id_tag
-	..()
-	return

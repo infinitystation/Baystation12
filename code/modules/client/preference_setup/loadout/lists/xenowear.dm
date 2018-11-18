@@ -4,22 +4,30 @@
 /datum/gear/suit/unathi/
 	sort_category = "Xenowear"
 	category = /datum/gear/suit/unathi/
-	whitelisted = list(SPECIES_UNATHI)
+	whitelisted = list(SPECIES_UNATHI, SPECIES_YEOSA)
 
 /datum/gear/suit/unathi/mantle
-	display_name = "hide mantle (Unathi)"
+	display_name = "(Unathi) hide mantle"
 	path = /obj/item/clothing/suit/unathi/mantle
-	cost = 1
 
 /datum/gear/suit/unathi/robe
-	display_name = "roughspun robe (Unathi)"
+	display_name = "(Unathi) roughspun robe"
 	path = /obj/item/clothing/suit/unathi/robe
-	cost = 1
 
 /datum/gear/suit/unathi/knifeharness
-	display_name = "decorated harness"
+	display_name = "(Unathi) decorated knife harness"
 	path = /obj/item/clothing/accessory/storage/knifeharness
-	cost = 5
+	cost = 3
+
+/datum/gear/suit/unathi/savage_hunter
+	display_name = "(Unathi) savage hunter male hides"
+	path = /obj/item/clothing/under/savage_hunter
+	slot = slot_w_uniform
+
+/datum/gear/suit/unathi/savage_hunter/female
+	display_name = "(Unathi) savage hunter female hides"
+	path = /obj/item/clothing/under/savage_hunter/female
+	slot = slot_w_uniform
 
 //Skrell Chains
 /datum/gear/ears/skrell/
@@ -28,60 +36,69 @@
 	whitelisted = list(SPECIES_SKRELL)
 
 /datum/gear/ears/skrell/chains
-	display_name = "headtail chain selection (Skrell)"
+	display_name = "(Skrell) headtail chain selection"
 	path = /obj/item/clothing/ears/skrell/chain
 	flags = GEAR_HAS_SUBTYPE_SELECTION
 
 /datum/gear/ears/skrell/colored/chain
-	display_name = "colored headtail chain, colour select (Skrell)"
+	display_name = "(Skrell) colored headtail chain, colour select"
 	path = /obj/item/clothing/ears/skrell/colored/chain
 	flags = GEAR_HAS_COLOR_SELECTION
 
 //Skrell Bands
 /datum/gear/ears/skrell/bands
-	display_name = "headtail band selection (Skrell)"
+	display_name = "(Skrell) headtail band selection"
 	path = /obj/item/clothing/ears/skrell/band
 	flags = GEAR_HAS_SUBTYPE_SELECTION
 
 /datum/gear/ears/skrell/colored/band
-	display_name = "headtail bands, colour select (Skrell)"
+	display_name = "(Skrell) headtail bands, colour select"
 	path = /obj/item/clothing/ears/skrell/colored/band
 	flags = GEAR_HAS_COLOR_SELECTION
 
 //Skrell Cloth
 /datum/gear/ears/skrell/cloth/male
-	display_name = "male headtail cloth (Skrell)"
+	display_name = "(Skrell) male headtail cloth"
 	path = /obj/item/clothing/ears/skrell/cloth_male
 	flags = GEAR_HAS_COLOR_SELECTION
 
 
 /datum/gear/ears/skrell/cloth/female
-	display_name = "female headtail cloth (Skrell)"
+	display_name = "(Skrell) female headtail cloth"
 	path = /obj/item/clothing/ears/skrell/cloth_female
 	flags = GEAR_HAS_COLOR_SELECTION
-
+	
+/datum/gear/head/skrell_helmet
+	display_name = "Skrellian helmet"
+	path = /obj/item/clothing/head/helmet/skrell
+	whitelisted = list(SPECIES_SKRELL)
+	sort_category = "Xenowear"
+	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/officer, /datum/job/detective)
+	
+/datum/gear/accessory/skrell_badge
+	display_name = "skrellian SDTF badge"
+	path = /obj/item/clothing/accessory/badge/tags/skrell
+	whitelisted = list(SPECIES_SKRELL)
+	sort_category = "Xenowear"
 
 // IPC clothing
 /datum/gear/mask/ipc_monitor
-	display_name = "display monitor (IPC)"
+	display_name = "(IPC) display monitor"
 	path = /obj/item/clothing/mask/monitor
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_IPC)
-	cost = 0
 
 /datum/gear/suit/lab_xyn_machine
-	display_name = "Xynergy labcoat"
+	display_name = "(IPC) Xynergy labcoat"
 	path = /obj/item/clothing/suit/storage/toggle/labcoat/xyn_machine
-	slot = slot_wear_suit
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_IPC)
 
 // Misc clothing
 /datum/gear/uniform/harness
-	display_name = "gear harness (Full Body Prosthetic, Diona, Giant Armoured Serpentid)"
+	display_name = "gear harness (Full Body Prosthetic, Diona, Giant Armoured Serpentid, IPC)"
 	path = /obj/item/clothing/under/harness
 	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_IPC,SPECIES_DIONA, SPECIES_NABBER)
 
 /datum/gear/shoes/toeless
 	display_name = "toeless jackboots"
@@ -95,28 +112,32 @@
 
 // Taj clothing
 /datum/gear/eyes/medical/tajblind
-	display_name = "medical veil (Tajara)"
+	display_name = "(Tajara) veil, medical"
 	path = /obj/item/clothing/glasses/hud/health/tajblind
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
+	cost = 1
 
 /datum/gear/eyes/meson/tajblind
-	display_name = "industrial veil (Tajara)"
+	display_name = "(Tajara) veil, industrial"
 	path = /obj/item/clothing/glasses/meson/prescription/tajblind
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
+	cost = 1
 
 /datum/gear/eyes/security/tajblind
-	display_name = "sleek veil (Tajara)"
+	display_name = "(Tajara) veil, sleek"
 	path = /obj/item/clothing/glasses/sunglasses/sechud/tajblind
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
+	cost = 1
 
 /datum/gear/eyes/visors
-	display_name = "visor selection (Tajara)"
+	display_name = "(Tajara) visor selection"
 	path = /obj/item/clothing/glasses/tajvisor
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_TAJARA)
+	cost = 1
 
 /datum/gear/eyes/visors/New()
 	..()
@@ -131,25 +152,28 @@
 	gear_tweaks += new/datum/gear_tweak/path(visors)
 
 /datum/gear/eyes/medical/tajvisor
-	display_name = "MEDICAL visor (Tajara)"
+	display_name = "(Tajara) visor, medical"
 	path = /obj/item/clothing/glasses/hud/health/tajvisor
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
+	cost = 1
 
 /datum/gear/eyes/security/tajvisor
-	display_name = "SECURITY visor (Tajara)"
+	display_name = "(Tajara) visor, security"
 	path = /obj/item/clothing/glasses/sunglasses/sechud/tajvisor
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
+	cost = 1
 
 /datum/gear/eyes/meson/tajvisor
-	display_name = "ENGINEERING visor (Tajara)"
+	display_name = "(Tajara) visor, industrial"
 	path = /obj/item/clothing/glasses/meson/prescription/tajvisor
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
+	cost = 1
 
 /datum/gear/shoes/caligae
-	display_name = "caligae (Tajara)"
+	display_name = "(Tajara) caligae"
 	path = /obj/item/clothing/shoes/sandal/tajaran/caligae
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
@@ -164,13 +188,13 @@
 	gear_tweaks += new/datum/gear_tweak/path(caligae)
 
 /datum/gear/head/zhan_scarf
-	display_name = "Zhan headscarf (Tajara)"
+	display_name = "(Tajara) Zhan headscarf"
 	path = /obj/item/clothing/head/tajaran/scarf
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
 
 /datum/gear/accessory/capes
-	display_name = "shoulder capes (Tajara)"
+	display_name = "(Tajara) shoulder capes"
 	path = /obj/item/clothing/accessory/shouldercape
 	whitelisted = list(SPECIES_TAJARA)
 	sort_category = "Xenowear"
@@ -189,72 +213,70 @@
 	display_name = "modified gloves, colored"
 	path = /obj/item/clothing/gloves/color/modified
 	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI)
+	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_YEOSA)
 
 /datum/gear/gloves/latex/modified
 	display_name = "modified gloves, latex"
 	path = /obj/item/clothing/gloves/latex/modified
 	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI)
+	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_YEOSA)
 
 /datum/gear/gloves/nitrile/modified
 	display_name = "modified gloves, nitrile"
 	path = /obj/item/clothing/gloves/latex/nitrile/modified
 	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI)
+	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_YEOSA)
 
 /datum/gear/gloves/rainbow/modified
 	display_name = "modified gloves, rainbow"
 	path = /obj/item/clothing/gloves/rainbow/modified
 	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI)
+	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_YEOSA)
 
 /datum/gear/gloves/evening/modified
 	display_name = "modified gloves, evening"
 	path = /obj/item/clothing/gloves/color/evening/modified
 	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI)
+	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_YEOSA)
 
 /datum/gear/gloves/botany/modified
 	display_name = "modified gloves, botany"
 	path = /obj/item/clothing/gloves/thick/botany/modified
 	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI)
+	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_YEOSA)
 
 /datum/gear/gloves/work/modified
 	display_name = "modified gloves, work"
 	path = /obj/item/clothing/gloves/thick/modified
 	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI)
+	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_YEOSA)
 
 // Vox clothing
 /datum/gear/mask/gas/vox
-	display_name = "vox breathing mask"
+	display_name = "(Vox) breathing mask"
 	path = /obj/item/clothing/mask/gas/vox
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_VOX)
 	cost = 2
 
 /datum/gear/gloves/vox
-	display_name = "vox insulated gauntlets"
+	display_name = "(Vox) insulated gauntlets"
 	path = /obj/item/clothing/gloves/vox
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_VOX)
 	cost = 4
 
 /datum/gear/uniform/vox_cloth
-	display_name = "vox clothing"
+	display_name = "(Vox) clothing"
 	path = /obj/item/clothing/under/vox/vox_casual
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_VOX)
-	cost = 0
 
 /datum/gear/uniform/vox_robe
-	display_name = "vox robe"
+	display_name = "(Vox) vox robe"
 	path = /obj/item/clothing/under/vox/vox_robes
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_VOX)
-	cost = 0
 
 	//////////
 	//RESOMI//
@@ -272,31 +294,33 @@
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/uniform/resomi/dress
-	display_name = "(Resomi) small dress"
+	display_name = "(Resomi) dresses selection"
 	path = /obj/item/clothing/under/resomi/dress
+	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/uniform/resomi/uniform
-	display_name = "(Resomi) small uniform"
-	path = /obj/item/clothing/under/resomi/uniform
+/datum/gear/uniform/resomi/utility
+	display_name = "(Resomi) uniform selection"
+	path = /obj/item/clothing/under/resomi/utility
+	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/uniform/resomi/formal
-	display_name = "(Resomi) small formal uniform"
-	path = /obj/item/clothing/under/resomi/formal
+/datum/gear/uniform/resomi/sport
+	display_name = "(Resomi) uniform, Sport"
+	path = /obj/item/clothing/under/resomi/sport
 
 /datum/gear/uniform/resomi/rainbow
 	display_name = "(Resomi) smock, rainbow"
 	path = /obj/item/clothing/under/resomi/rainbow
 
 /datum/gear/uniform/resomi/eng
-	display_name = "(Resomi) uniform, Engineering"
+	display_name = "(Resomi) smock, Engineering"
 	path = /obj/item/clothing/under/resomi/yellow
 
 /datum/gear/uniform/resomi/roboitcs
-	display_name = "(Resomi) uniform, Robotics"
+	display_name = "(Resomi) smock, Robotics"
 	path = /obj/item/clothing/under/resomi/robotics
 
 /datum/gear/uniform/resomi/sec
-	display_name = "(Resomi) uniform, Security"
+	display_name = "(Resomi) smock, Security"
 	path = /obj/item/clothing/under/resomi/red
 
 /datum/gear/uniform/resomi/med
@@ -308,12 +332,12 @@
 	path = /obj/item/clothing/under/resomi/science
 
 /datum/gear/uniform/resomi/dark_worksmock
-	display_name = "(Resomi) work smock, dark"
+	display_name = "(Resomi) work uniform, dark"
 	path = /obj/item/clothing/under/resomi/work_black
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/resomi/light_worksmock
-	display_name = "(Resomi) work smock, light"
+	display_name = "(Resomi) work uniform, light"
 	path = /obj/item/clothing/under/resomi/work_white
 	flags = GEAR_HAS_TYPE_SELECTION
 
@@ -343,4 +367,13 @@
 	path = /obj/item/clothing/suit/storage/toggle/Resomicoat
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_RESOMI)
-	cost = 1
+
+// Adherent
+
+/datum/gear/storage/adherent_harness
+	display_name = "(Adherent) tools harness"
+	path = /obj/item/weapon/storage/belt/utility/vigil
+	sort_category = "Xenowear"
+	slot = slot_belt
+	cost = 4
+	whitelisted = list(SPECIES_ADHERENT)

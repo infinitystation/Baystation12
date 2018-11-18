@@ -289,3 +289,19 @@
 	new /datum/random_map/noise/ore(seed, min_x, min_y, src.z, max_x, max_y)
 
 	GLOB.using_map.refresh_mining_turfs(src.z)
+
+/obj/effect/landmark/explosion
+	name = "explosion landmarker"
+	delete_me = 1
+
+/obj/effect/landmark/explosion/light/Initialize()
+	explosion(src.loc, -1, -1, 2, 3)
+	..()
+
+/obj/effect/landmark/explosion/medium/Initialize()
+	explosion(src.loc, 1, 2, 4, 6)
+	..()
+
+/obj/effect/landmark/explosion/heavy/Initialize()
+	explosion(src.loc, 2, 4, 7, 10)
+	..()

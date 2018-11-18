@@ -178,21 +178,21 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	path = /obj/item/stack/material/steel
 	category = "General"
 	is_stack = 1
-	resources = list("steel" = SHEET_MATERIAL_AMOUNT * EXTRA_COST_FACTOR)
+	resources = list(MATERIAL_STEEL = SHEET_MATERIAL_AMOUNT * EXTRA_COST_FACTOR)
 
 /datum/autolathe/recipe/glass
 	name = "glass sheets"
 	path = /obj/item/stack/material/glass
 	category = "General"
 	is_stack = 1
-	resources = list("glass" = SHEET_MATERIAL_AMOUNT * EXTRA_COST_FACTOR)
+	resources = list(MATERIAL_GLASS = SHEET_MATERIAL_AMOUNT * EXTRA_COST_FACTOR)
 
 /datum/autolathe/recipe/rglass
 	name = "reinforced glass sheets"
 	path = /obj/item/stack/material/glass/reinforced
 	category = "General"
 	is_stack = 1
-	resources = list("glass" = (SHEET_MATERIAL_AMOUNT/2) * EXTRA_COST_FACTOR, "steel" = (SHEET_MATERIAL_AMOUNT/2) * EXTRA_COST_FACTOR)
+	resources = list(MATERIAL_GLASS = (SHEET_MATERIAL_AMOUNT/2) * EXTRA_COST_FACTOR, MATERIAL_STEEL = (SHEET_MATERIAL_AMOUNT/2) * EXTRA_COST_FACTOR)
 
 /datum/autolathe/recipe/rods
 	name = "metal rods"
@@ -282,6 +282,16 @@ var/const/EXTRA_COST_FACTOR = 1.25
 /datum/autolathe/recipe/beaker_large
 	name = "large glass beaker"
 	path = /obj/item/weapon/reagent_containers/glass/beaker/large
+	category = "Medical"
+
+/datum/autolathe/recipe/beaker_insul
+	name = "insulated beaker"
+	path = /obj/item/weapon/reagent_containers/glass/beaker/insulated
+	category = "Medical"
+
+/datum/autolathe/recipe/beaker_insul_large
+	name = "large insulated beaker"
+	path = /obj/item/weapon/reagent_containers/glass/beaker/insulated/large
 	category = "Medical"
 
 /datum/autolathe/recipe/vial
@@ -662,3 +672,8 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	name = "ecigarette cartridge"
 	path = /obj/item/weapon/reagent_containers/ecig_cartridge/blank
 	category = "Devices and Components"
+
+/datum/autolathe/recipe/plunger
+	name = "plunger"
+	path = /obj/item/clothing/mask/plunger
+	category = "General"

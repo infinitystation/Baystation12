@@ -91,6 +91,9 @@
 		if (SOUTHEAST) return "southeast"
 		if (NORTHWEST) return "northwest"
 		if (SOUTHWEST) return "southwest"
+		if (UP)        return "up"
+		if (DOWN)      return "down"
+	return "unknown ([direction])"
 
 // Turns text into proper directions
 /proc/text2dir(direction)
@@ -148,7 +151,7 @@
 	if (rights & R_FUN)         . += "[seperator]+FUN"
 	if (rights & R_SERVER)      . += "[seperator]+SERVER"
 	if (rights & R_DEBUG)       . += "[seperator]+DEBUG"
-	if (rights & R_POSSESS)     . += "[seperator]+POSSESS"
+	if (rights & R_JUDGE)       . += "[seperator]+JUDGE"
 	if (rights & R_PERMISSIONS) . += "[seperator]+PERMISSIONS"
 	if (rights & R_STEALTH)     . += "[seperator]+STEALTH"
 	if (rights & R_REJUVINATE)  . += "[seperator]+REJUVINATE"

@@ -31,7 +31,7 @@
 	)
 
 /obj/structure/closet/secure_closet/deckofficer
-	name = "deck officer's locker"
+	name = "deck chief's locker"
 	req_access = list(access_qm)
 	icon_state = "secureqm1"
 	icon_closed = "secureqm"
@@ -58,7 +58,6 @@
 		/obj/item/device/holowarrant,
 		/obj/item/clothing/suit/armor/pcarrier/light/sol,
 		/obj/item/device/binoculars,
-		/obj/item/weapon/storage/firstaid/individual/all,
 		/obj/item/weapon/storage/belt/general,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack = 75, /obj/item/weapon/storage/backpack/satchel/grey = 25)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/messenger = 75, /obj/item/weapon/storage/backpack/dufflebag = 25))

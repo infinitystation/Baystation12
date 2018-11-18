@@ -5,8 +5,6 @@
 /obj/item/device/geiger
 	name = "geiger counter"
 	desc = "A handheld device used for detecting and measuring radiation in an area."
-	description_info = "By using this item, you may toggle its scanning mode on and off. Examine it while it's on to check for ambient radiation."
-	description_fluff = "For centuries geiger counters have been saving the lives of unsuspecting laborers and technicians. You can never be too careful around radiation."
 	icon_state = "geiger_off"
 	item_state = "multitool"
 	w_class = ITEM_SIZE_SMALL
@@ -41,7 +39,7 @@
 	update_icon()
 	to_chat(user, "<span class='notice'>\icon[src] You switch [scanning ? "on" : "off"] [src].</span>")
 
-/obj/item/device/geiger/update_icon()
+/obj/item/device/geiger/on_update_icon()
 	if(!scanning)
 		icon_state = "geiger_off"
 		return 1

@@ -34,6 +34,8 @@
 	var/health_per_tick = 0.8
 	pass_flags = PASS_FLAG_TABLE
 
+	bleed_colour = "#aad9de"
+
 /mob/living/simple_animal/hostile/vagrant/Initialize()
 	. = ..()
 	if(prob(40))
@@ -82,7 +84,7 @@
 		gib() //Leave no identifiable evidence.
 		return
 
-/mob/living/simple_animal/hostile/vagrant/update_icon()
+/mob/living/simple_animal/hostile/vagrant/on_update_icon()
 	if(cloaked) //It's fun time
 		alpha = 45
 		set_light(0)

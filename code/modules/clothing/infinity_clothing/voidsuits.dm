@@ -4,7 +4,7 @@
 	item_icons = list(slot_wear_suit_str = 'icons/mob/onmob/infinity_spacesuits.dmi')
 	armor = list(melee = 40, bullet = 5, laser = 20,energy = 5, bomb = 45, bio = 100, rad = 100)
 
-/obj/item/clothing/suit/space/void/engineering/alt/inf/update_icon()
+/obj/item/clothing/suit/space/void/engineering/alt/inf/on_update_icon()
 	overlays.Cut()
 	if (tank)
 		var/indicator = get_indicator()

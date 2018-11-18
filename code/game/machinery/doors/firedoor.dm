@@ -51,7 +51,7 @@
 		"cold"
 	)
 
-	blend_objects = list(/obj/machinery/door/firedoor, /obj/structure/wall_frame, /turf/simulated/wall, /obj/structure/window) // Objects which to blend with
+	blend_objects = list(/obj/machinery/door/firedoor, /turf/simulated/wall) // Objects which to blend with
 
 /obj/machinery/door/firedoor/Initialize()
 	. = ..()
@@ -76,7 +76,7 @@
 	. = ..()
 
 /obj/machinery/door/firedoor/get_material()
-	return SSmaterials.get_material_by_name(DEFAULT_WALL_MATERIAL)
+	return SSmaterials.get_material_by_name(MATERIAL_STEEL)
 
 /obj/machinery/door/firedoor/examine(mob/user)
 	. = ..(user, 1)
@@ -388,7 +388,7 @@
 	return
 
 
-/obj/machinery/door/firedoor/update_icon()
+/obj/machinery/door/firedoor/on_update_icon()
 	var/icon/lights_overlay
 	var/icon/panel_overlay
 	var/icon/weld_overlay

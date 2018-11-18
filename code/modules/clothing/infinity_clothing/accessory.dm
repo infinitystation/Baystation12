@@ -87,7 +87,7 @@
 /obj/item/clothing/accessory/necklace/collar/shock/Topic(href, href_list)
 	if(usr.stat || usr.restrained())
 		return
-	if(((istype(usr, /mob/living/carbon/human) && ((!( ticker ) || (ticker && ticker.mode != "monkey")) && usr.contents.Find(src))) || (usr.contents.Find(master) || (in_range(src, usr) && istype(loc, /turf)))))
+	if(((istype(usr, /mob/living/carbon/human) && ((!( SSticker ) || (SSticker && SSticker.mode != "monkey")) && usr.contents.Find(src))) || (usr.contents.Find(master) || (in_range(src, usr) && istype(loc, /turf)))))
 		usr.set_machine(src)
 		if(href_list["freq"])
 			var/new_frequency = sanitize_frequency(frequency + text2num(href_list["freq"]))
@@ -238,3 +238,26 @@
 
 	for(var/i = 0, i < slots, i++)
 		new /obj/item/ammo_casing/shotgun/pellet(hold)
+
+/obj/item/clothing/accessory/scarf/red
+	name = "red striped scarf"
+	icon = 'icons/obj/clothing/infinity/TG_copy/neck.dmi'
+	icon_state = "stripedredscarf"
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_suit_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_mask_str  = 'icons/mob/infinity/sprite_accessories.dmi')
+
+/obj/item/clothing/accessory/armor/helmcover/scp_cover
+	name = "SCP cover"
+	desc = "A fabric cover for armored helmets. This one has SCP's colors."
+	icon_override = 'icons/mob/infinity/ties.dmi'
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "scp_cover"
+	accessory_icons = list(slot_tie_str = 'icons/mob/infinity/ties.dmi', slot_head_str = 'icons/mob/infinity/ties.dmi')
+
+/obj/item/clothing/accessory/armor/tag/scp
+	name = "SCP tag"
+	desc = "An armor tag with the words SECURITY CORPORATE PERSONAL printed in red lettering on it."
+	icon_override = 'icons/mob/infinity/ties.dmi'
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "scp_tag"
+	accessory_icons = list(slot_tie_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
+

@@ -9,7 +9,7 @@
 	idle_power_usage = 30
 	active_power_usage = 200
 	power_channel = EQUIP
-	atom_flags = ATOM_FLAG_CLIMBABLE
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 	obj_flags = OBJ_FLAG_ANCHORABLE
 	var/obj/item/copyitem = null	//what's in the copier!
 	var/copies = 1	//how many copies to print!
@@ -49,9 +49,8 @@
 		for(var/i = 0, i < copies, i++)
 			if(toner <= 0)
 				break
-
 			if (istype(copyitem, /obj/item/weapon/paper))
-				copy(copyitem)
+				copy(copyitem, 1)
 				sleep(15)
 			else if (istype(copyitem, /obj/item/weapon/photo))
 				photocopy(copyitem)
@@ -126,9 +125,7 @@
 			updateUsrDialog()
 		else
 			to_chat(user, "<span class='notice'>This cartridge is not yet ready for replacement! Use up the rest of the toner.</span>")
-		return
-	..()
-	return
+	else ..()
 
 /obj/machinery/photocopier/ex_act(severity)
 	switch(severity)
@@ -149,7 +146,10 @@
 	return
 
 /obj/machinery/photocopier/proc/copy(var/obj/item/weapon/paper/copy, var/need_toner=1)
-	var/obj/item/weapon/paper/c = new /obj/item/weapon/paper (loc)
+	var/obj/item/weapon/paper/c = new copy.type(loc, copy.text, copy.name, copy.metadata )
+
+	c.color = COLOR_WHITE
+
 	if(toner > 10)	//lots of toner, make it dark
 		c.info = "<font color = #101010>"
 	else			//no toner? shitty copies for you!
@@ -184,9 +184,8 @@
 		toner--
 	if(toner == 0)
 		visible_message("<span class='notice'>A red light on \the [src] flashes, indicating that it is out of toner.</span>")
-	c.update_icon()
+	c.update_icon()	
 	return c
-
 
 /obj/machinery/photocopier/proc/photocopy(var/obj/item/weapon/photo/photocopy, var/need_toner=1)
 	var/obj/item/weapon/photo/p = photocopy.copy()

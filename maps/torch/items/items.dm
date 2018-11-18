@@ -6,7 +6,7 @@ Random item spawning
 	name = "random solgov equipment"
 	desc = "This is a random piece of solgov equipment or clothing."
 	icon = 'icons/obj/clothing/hats.dmi'
-	icon_state = "m_helmet"
+	icon_state = "helmet_sol"
 
 /obj/random/solgov/spawn_choices()
 	return list(/obj/item/clothing/head/solgov/utility/fleet = 4,
@@ -60,7 +60,7 @@ Torch specific items
 	desc = "A rugged backpack."
 	icon_state = "exppack"
 
-/obj/item/weapon/storage/backpack/satchel_explorer
+/obj/item/weapon/storage/backpack/satchel/explorer
 	name = "explorer satchel"
 	desc = "A rugged satchel for field work."
 	icon_state = "satchel-exp"
@@ -94,7 +94,7 @@ Unique items
 
 /obj/item/weapon/storage/fakebook
 	name = "Workplace Crisis Management"
-	desc = "Also known as 'I fucked up, what do?'. A very popular book among the NanoTrasen management."
+	desc = "Also known as 'I fucked up, what do?'. A very popular book amongst corporate management."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "booknanoregs"
 	attack_verb = list("bashed", "whacked", "educated")
@@ -121,10 +121,11 @@ Weapons
 	fire_delay = 5.7 //Autorevolver. Also synced with the animation
 	fire_anim = "mosley_fire"
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)
+	starts_loaded = 0 //Nobody keeps ballistic weapons loaded
 
 /obj/item/weapon/gun/energy/stunrevolver/secure/nanotrasen
 	name = "corporate stun revolver"
-	desc = "This A&M X6 is fitted with an NT1019 chip which allows remote authorization of weapon functionality. It has a NanoTrasen emblem on the grip."
+	desc = "This A&M X6 is fitted with an NT1019 chip which allows remote authorization of weapon functionality. It has a NanoTrasen logo on the grip."
 	req_one_access = list(access_brig, access_heads, access_rd, access_sec_guard)
 
 /obj/item/weapon/gun/projectile/pistol/liaison
@@ -135,6 +136,6 @@ Weapons
 
 /obj/effect/paint/hull
 	color = COLOR_HULL
-	
+
 /obj/effect/paint/expeditionary
 	color = "#68099e"

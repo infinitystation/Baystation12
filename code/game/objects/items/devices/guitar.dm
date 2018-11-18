@@ -16,13 +16,6 @@
 	var/edit = 1
 	var/repeat = 0
 
-/obj/item/device/guitar/pink
-	name = "pink guitar"
-	desc = "Pink edition"
-	icon_state = "pink_guitar"
-	item_state = "pink_guitar"
-	item_icons = list(slot_back_str = 'icons/infinity_custom_items_mob.dmi')
-
 /obj/item/device/guitar/proc/playnote(var/note as text)
 //	log_debug("Note: [note]")
 

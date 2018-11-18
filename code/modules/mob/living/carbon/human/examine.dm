@@ -9,7 +9,7 @@
 	var/skipface = 0
 
 	if(!isobserver(user))
-		user.visible_message("<small>[user] looks at [src].</small>")
+		user.visible_message("<span class='notice'><font size=1><i>[user] looks at [src].</i></font></span>")
 
 	//exosuits and helmets obscure our view and stuff.
 	if(wear_suit)
@@ -329,6 +329,11 @@
 
 	if(ooc_notes && !skipface)
 		msg += "<span class = 'deptradio'>OOC Notes:</span> <a href='?src=\ref[src];ooc_notes=1'>\[View\]</a>\n"
+
+	if(mind && user.mind && name == real_name)
+		var/list/relations = matchmaker.get_relationships_between(user.mind, mind, TRUE)
+		if(length(relations))
+			msg += "<br><span class='notice'>You know them. <a href='byond://?src=\ref[src];show_relations=1'>More...</a></span><br>"
 
 	msg += "*---------*</span><br>"
 	msg += applying_pressure

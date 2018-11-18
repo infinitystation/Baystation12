@@ -111,7 +111,7 @@
 	updateUsrDialog()
 	return
 
-/obj/machinery/metal_detector/update_icon()
+/obj/machinery/metal_detector/on_update_icon()
 	if(anchored && on && !stat)
 		icon_state = "metal-detector-working"
 	else

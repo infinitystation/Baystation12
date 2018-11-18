@@ -17,7 +17,6 @@
 	var/heat_capacity = 1
 
 	//Properties for both
-	var/temperature = T20C      // Initial turf temperature.
 	var/blocks_air = 0          // Does this turf contain air/let air through?
 
 	// General properties.
@@ -28,11 +27,11 @@
 	var/list/decals
 
 	var/movement_delay
-/*
-/turf/Initialize()
-	. = ..()
-	update_icon(1)
-	regenerate_ao()*/
+
+	var/fluid_can_pass
+	var/obj/effect/flood/flood_object
+	var/fluid_blocked_dirs = 0
+	var/flooded // Whether or not this turf is absolutely flooded ie. a water source.
 
 /turf/New()
 	..()
@@ -46,8 +45,20 @@
 	else
 		luminosity = 1
 
+/turf/on_update_icon()
+	update_flood_overlay()
+
+/turf/proc/update_flood_overlay()
+	if(is_flooded(absolute = TRUE))
+		if(!flood_object)
+			flood_object = new(src)
+	else if(flood_object)
+		QDEL_NULL(flood_object)
+
 /turf/Destroy()
 	remove_cleanables()
+	fluid_update()
+	REMOVE_ACTIVE_FLUID_SOURCE(src)
 	..()
 	return QDEL_HINT_IWILLGC
 
@@ -124,9 +135,11 @@ turf/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	return 1 //Nothing found to block so return success!
 
 var/const/enterloopsanity = 100
-/turf/Entered(atom/atom as mob|obj)
+/turf/Entered(var/atom/atom, var/atom/old_loc)
 
 	..()
+
+	QUEUE_TEMPERATURE_ATOMS(atom)
 
 	if(!istype(atom, /atom/movable))
 		return
@@ -156,7 +169,7 @@ var/const/enterloopsanity = 100
 						thing.HasProximity(A, 1)
 	return
 
-/turf/proc/adjacent_fire_act(turf/simulated/floor/source, temperature, volume)
+/turf/proc/adjacent_fire_act(turf/simulated/floor/source, exposed_temperature, exposed_volume)
 	return
 
 /turf/proc/is_plating()
@@ -225,10 +238,14 @@ var/const/enterloopsanity = 100
 	return 0
 
 //expects an atom containing the reagents used to clean the turf
-/turf/proc/clean(atom/source, mob/user = null)
+/turf/proc/clean(atom/source, mob/user = null, var/time = null, var/message = null)
 	if(source.reagents.has_reagent(/datum/reagent/water, 1) || source.reagents.has_reagent(/datum/reagent/space_cleaner, 1))
+		if(user && time && !do_after(user, time, src))
+			return
 		clean_blood()
 		remove_cleanables()
+		if(message)
+			to_chat(user, message)
 	else
 		to_chat(user, "<span class='warning'>\The [source] is too dry to wash that.</span>")
 	source.reagents.trans_to_turf(src, 1, 10)	//10 is the multiplier for the reaction effect. probably needed to wet the floor properly.
@@ -254,3 +271,44 @@ var/const/enterloopsanity = 100
 		if(isliving(AM))
 			var/mob/living/M = AM
 			M.turf_collision(src, speed)
+
+/turf/proc/can_engrave()
+	return FALSE
+
+/turf/proc/try_graffiti(var/mob/vandal, var/obj/item/tool)
+
+	if(!tool.sharp || !can_engrave() || vandal.a_intent != I_HELP)
+		return FALSE
+
+	if(jobban_isbanned(vandal, "Graffiti"))
+		to_chat(vandal, SPAN_WARNING("You are banned from leaving persistent information across rounds."))
+		return
+
+	var/too_much_graffiti = 0
+	for(var/obj/effect/decal/writing/W in src)
+		too_much_graffiti++
+	if(too_much_graffiti >= 5)
+		to_chat(vandal, "<span class='warning'>There's too much graffiti here to add more.</span>")
+		return FALSE
+
+	var/message = sanitize(input("Enter a message to engrave.", "Graffiti") as null|text, trim = TRUE)
+	if(!message)
+		return FALSE
+
+	if(!vandal || vandal.incapacitated() || !Adjacent(vandal) || !tool.loc == vandal)
+		return FALSE
+
+	vandal.visible_message("<span class='warning'>\The [vandal] begins carving something into \the [src].</span>")
+
+	if(!do_after(vandal, max(20, length(message)), src))
+		return FALSE
+
+	vandal.visible_message("<span class='danger'>\The [vandal] carves some graffiti into \the [src].</span>")
+	var/obj/effect/decal/writing/graffiti = new(src)
+	graffiti.message = message
+	graffiti.author = vandal.ckey
+
+	if(lowertext(message) == "elbereth")
+		to_chat(vandal, "<span class='notice'>You feel much safer.</span>")
+
+	return TRUE

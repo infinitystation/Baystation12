@@ -24,12 +24,12 @@
 /datum/event/rogue_drone/announce()
 	var/msg
 	if(prob(33))
-		msg = "Attention: unidentified patrol drones detected within proximity to the [location_name()]"
+		msg = "Внимание: неавторизованные патрульные дроны обнаружены в космическом пространстве [location_name()]"
 	else if(prob(50))
-		msg = "Unidentified Unmanned Drones approaching the [location_name()]. All hands take notice."
+		msg = "Неавторизованные патрульные дроны замечены в космическом пространстве [location_name()]. Всему экипажу быть на чеку."
 	else
-		msg = "Class II Laser Fire detected nearby the [location_name()]."
-	command_announcement.Announce(msg, "[location_name()] Sensor Array", zlevels = affecting_z)
+		msg = "Множество маломощных энергетических источников обнаружено в космическом пространстве [location_name()]."
+	priority_announcement.Announce(msg, "Сенсоры [location_name()]", zlevels = affecting_z)
 
 /datum/event/rogue_drone/end()
 	var/num_recovered = 0
@@ -44,6 +44,6 @@
 		num_recovered++
 
 	if(num_recovered > drones_list.len * 0.75)
-		command_announcement.Announce("Be advised: sensors indicate the unidentified drone swarm has left the immediate proximity of the [location_name()].", "[location_name()] Sensor Array", zlevels = affecting_z)
+		priority_announcement.Announce("Be advised: sensors indicate the unidentified drone swarm has left the immediate proximity of the [location_name()].", "Сенсоры [location_name()]", zlevels = affecting_z)
 	else
-		command_announcement.Announce("Be advised: sensors indicate the unidentified drone swarm has left the immediate proximity of the [location_name()].", "[location_name()] Sensor Array", zlevels = affecting_z)
+		priority_announcement.Announce("Be advised: sensors indicate the unidentified drone swarm has left the immediate proximity of the [location_name()].", "Сенсоры [location_name()]", zlevels = affecting_z)

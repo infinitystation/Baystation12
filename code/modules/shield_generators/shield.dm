@@ -15,7 +15,7 @@
 	atmos_canpass = CANPASS_PROC
 
 
-/obj/effect/shield/update_icon()
+/obj/effect/shield/on_update_icon()
 	if(gen && gen.check_flag(MODEFLAG_PHOTONIC) && !disabled_for && !diffused_for)
 		set_opacity(1)
 	else
@@ -188,7 +188,7 @@
 
 
 // Fire
-/obj/effect/shield/fire_act()
+/obj/effect/shield/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(!disabled_for)
 		take_damage(rand(5,10), SHIELD_DAMTYPE_HEAT)
 

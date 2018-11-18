@@ -13,7 +13,7 @@
 	icon_state = "steel"
 	obj_flags = 0
 	var/plantedby
-	
+
 /obj/structure/solbanner/exo/Initialize()
 	. = ..()
 	flick("deploy",src)
@@ -29,7 +29,7 @@
 	icon = 'maps/torch/icons/obj/uniques.dmi'
 	icon_state = "banner_stowed"
 	w_class = ITEM_SIZE_HUGE
-	req_access = list(access_pathfinder)
+	req_access = list(access_el)
 
 /obj/item/solbanner/attack_self(mob/living/carbon/human/user)
 	..()

@@ -11,7 +11,7 @@
 	relative_size = 60
 
 	var/active_breathing = 1
-
+	var/has_gills = FALSE
 	var/breath_type
 	var/exhale_type
 	var/list/poison_types
@@ -29,6 +29,9 @@
 	var/breathing = 0
 	var/last_failed_breath
 	var/breath_fail_ratio // How badly they failed a breath. Higher is worse.
+
+/obj/item/organ/internal/lungs/proc/can_drown()
+	return (is_broken() || !has_gills)
 
 /obj/item/organ/internal/lungs/proc/remove_oxygen_deprivation(var/amount)
 	var/last_suffocation = oxygen_deprivation
@@ -116,8 +119,9 @@
 		last_int_pressure = breath_pressure
 		return
 	var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
+	var/ext_pressure = environment && environment.return_pressure() // May be null if, say, our owner is in nullspace
 	var/int_pressure_diff = abs(last_int_pressure - breath_pressure)
-	var/ext_pressure_diff = abs(last_ext_pressure - environment.return_pressure()) * owner.get_pressure_weakness()
+	var/ext_pressure_diff = abs(last_ext_pressure - ext_pressure) * owner.get_pressure_weakness()
 	if(int_pressure_diff > max_pressure_diff && ext_pressure_diff > max_pressure_diff)
 		var/lung_rupture_prob = BP_IS_ROBOTIC(src) ? prob(30) : prob(60) //Robotic lungs are less likely to rupture.
 		if(!is_bruised() && lung_rupture_prob) //only rupture if NOT already ruptured
@@ -128,7 +132,7 @@
 	if(!owner)
 		return 1
 
-	if(!breath)
+	if(!breath || (max_damage <= 0))
 		breath_fail_ratio = 1
 		handle_failed_breath()
 		return 1
@@ -137,7 +141,7 @@
 	check_rupturing(breath_pressure)
 
 	var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
-	last_ext_pressure = environment.return_pressure()
+	last_ext_pressure = environment && environment.return_pressure()
 	last_int_pressure = breath_pressure
 	if(breath.total_moles == 0)
 		breath_fail_ratio = 1

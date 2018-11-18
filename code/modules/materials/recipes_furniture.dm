@@ -119,7 +119,6 @@ ARMCHAIR(yellow)
 	result_type = /obj/machinery/door/unpowered/simple
 	req_amount = 10
 	time = 50
-	send_material_data = 0
 
 /datum/stack_recipe/furniture/barricade
 	title = "barricade"
@@ -209,6 +208,10 @@ ARMCHAIR(yellow)
 /datum/stack_recipe/furniture/door_assembly/highsec
 	title = "high security airlock assembly"
 	result_type = /obj/structure/door_assembly/door_assembly_highsecurity
+
+/datum/stack_recipe/furniture/door_assembly/ext
+	title = "exterior airlock assembly"
+	result_type = /obj/structure/door_assembly/door_assembly_ext
 
 /datum/stack_recipe/furniture/door_assembly/firedoor
 	title = "emergency shutter"

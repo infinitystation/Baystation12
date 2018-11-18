@@ -1,6 +1,5 @@
 /obj/item/modular_computer/wrist/install_default_hardware()
 	..()
-
 	network_card = new /obj/item/weapon/computer_hardware/network_card/(src)
 	hard_drive = new /obj/item/weapon/computer_hardware/hard_drive/small(src)
 	processor_unit = new /obj/item/weapon/computer_hardware/processor_unit/small(src)
@@ -10,7 +9,6 @@
 
 /obj/item/modular_computer/wrist/install_default_programs()
 	..()
-
 	hard_drive.store_file(new /datum/computer_file/program/chatclient())
 	hard_drive.store_file(new /datum/computer_file/program/email_client())
 	hard_drive.store_file(new /datum/computer_file/program/crew_manifest())

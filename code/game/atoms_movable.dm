@@ -4,6 +4,7 @@
 	appearance_flags = TILE_BOUND
 	glide_size = 8
 
+	var/waterproof = TRUE
 	var/movable_flags
 
 	var/last_move = null
@@ -113,8 +114,6 @@
 		return 0
 	//use a modified version of Bresenham's algorithm to get from the atom's current position to that of the target
 	src.throwing = 1
-	if(src.allow_spin)
-		SpinAnimation(5,1)
 	src.thrower = thrower
 	src.throw_source = get_turf(src)	//store the origin turf
 	src.pixel_z = 0

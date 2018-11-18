@@ -1,5 +1,7 @@
 //The following is the list of undefs for the Sierra loadout.
 
+#undef EXPLORATION_ROLES
+
 #undef FORMAL_ROLES
 
 #undef SEMIFORMAL_ROLES
@@ -7,8 +9,6 @@
 #undef SEMIANDFORMAL_ROLES
 
 #undef NANOTRASEN_ROLES
-
-#undef REPRESENTATIVE_ROLES
 
 #undef RESTRICTED_ROLES
 
@@ -33,7 +33,3 @@
 #undef ARMED_ROLES
 
 #undef ARMORED_ROLES
-
-#undef CIVILIAN_BRANCHES
-
-#undef SOLGOV_BRANCHES

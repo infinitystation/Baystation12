@@ -9,9 +9,9 @@
 	w_class = ITEM_SIZE_LARGE
 	slot_flags = SLOT_BACK
 	item_icons = list(
-		slot_l_hand_str = 'icons/mob/infinity/mobile_ladders_l.dmi',
-		slot_r_hand_str = 'icons/mob/infinity/mobile_ladders_r.dmi',
-		slot_back_str = 'icons/mob/infinity/mobile_ladders_back.dmi'
+		slot_l_hand_str = 'icons/mob/infinity/lefthand.dmi',
+		slot_r_hand_str = 'icons/mob/infinity/righthand.dmi',
+		slot_back_str = 'icons/mob/infinity/backs.dmi'
 		)
 
 /obj/item/weapon/ladder_mobile/proc/place_ladder(atom/A, mob/user)
@@ -70,6 +70,10 @@
 /obj/structure/ladder/mobile
 	icon = 'icons/obj/mobile_ladders.dmi'
 	base_icon = "mobile_ladder"
+
+/obj/structure/ladder/mobile/New()
+	..()
+	update_icon()
 
 /obj/structure/ladder/mobile/verb/fold()
 	set name = "Fold Ladder"

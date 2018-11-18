@@ -141,6 +141,9 @@
 		user.visible_message("<span class='danger'>[user] [attack_verb] at [src]!</span>")
 	return 1
 
+/obj/structure/inflatable/CanFluidPass(var/coming_from)
+	return !density
+
 /obj/structure/inflatable/door //Based on mineral door code
 	name = "inflatable door"
 	density = 1
@@ -215,7 +218,7 @@
 	update_icon()
 	isSwitchingStates = 0
 
-/obj/structure/inflatable/door/update_icon()
+/obj/structure/inflatable/door/on_update_icon()
 	if(state)
 		icon_state = "door_open"
 	else

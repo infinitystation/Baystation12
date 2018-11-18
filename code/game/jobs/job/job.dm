@@ -42,6 +42,10 @@
 	var/skill_points = 16				  //The number of unassigned skill points the job comes with (on top of the minimum skills).
 	var/no_skill_buffs = FALSE			  //Whether skills can be buffed by age/species modifiers.
 
+	var/required_education = EDUCATION_TIER_NONE
+	var/maximum_education
+	var/available_by_default = TRUE
+
 /datum/job/New()
 	..()
 	if(prob(100-availablity_chance))	//Close positions, blah blah.
@@ -77,7 +81,7 @@
 		return
 
 	// Calculate our pay and apply all relevant modifiers.
-	var/money_amount = rand(75, 100) * economic_power
+	var/money_amount = 4 * rand(75, 100) * economic_power
 
 	// Get an average economic power for our cultures.
 	var/culture_mod =   0
@@ -174,6 +178,13 @@
 	var/datum/species/S = all_species[prefs.species]
 	if(!is_species_allowed(S))
 		to_chat(feedback, "<span class='boldannounce'>Restricted species, [S], for [title].</span>")
+		return TRUE
+
+	if(!S.check_background(src, prefs))
+		var/backgroundreport = list("<span class='boldannounce'>Incompatible education or background for [title]. The required education level for this role is [SSculture.education_tiers_to_strings["[required_education]"]]</span>")
+		if(maximum_education)
+			backgroundreport += ("<span class='boldannounce'>, and the maximum permitted education level is [SSculture.education_tiers_to_strings["[maximum_education]"]]</span>")
+		to_chat(feedback, JOINTEXT(backgroundreport))
 		return TRUE
 
 	return FALSE
@@ -283,6 +294,27 @@
 		job_master.job_icons[title] = preview_icon
 
 	return job_master.job_icons[title]
+
+/datum/job/proc/get_unavailable_reasons(var/client/caller)
+	var/list/reasons = list()
+	if(jobban_isbanned(caller, title))
+		reasons["You are jobbanned."] = TRUE
+	if(!player_old_enough(caller))
+		reasons["Your player age is too low."] = TRUE
+	if(!is_position_available())
+		reasons["There are no positions left."] = TRUE
+	if(!is_branch_allowed(caller.prefs.char_branch))
+		reasons["Your branch of service does not allow it."] = TRUE
+	if(!is_rank_allowed(caller.prefs.char_branch, caller.prefs.char_rank))
+		reasons["Your rank choice does not allow it."] = TRUE
+	var/datum/species/S = all_species[caller.prefs.species]
+	if(S)
+		if(!is_species_allowed(S))
+			reasons["Your species choice does not allow it."] = TRUE
+		if(!S.check_background(src, caller.prefs))
+			reasons["Your background choices, such as education, do not allow it."] = TRUE
+	if(LAZYLEN(reasons))
+		. = reasons
 
 /datum/job/proc/dress_mannequin(var/mob/living/carbon/human/dummy/mannequin/mannequin)
 	mannequin.delete_inventory(TRUE)

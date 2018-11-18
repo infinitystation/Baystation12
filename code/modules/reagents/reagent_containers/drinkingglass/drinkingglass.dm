@@ -14,7 +14,7 @@
 	base_icon = "square" // Base icon name
 	filling_states = "20;40;60;80;100"
 	volume = 30
-	matter = list("glass" = 65)
+	matter = list(MATERIAL_GLASS = 65)
 
 	var/list/extras = list() // List of extras. Two extras maximum
 
@@ -91,7 +91,7 @@
 
 	return 1
 
-/obj/item/weapon/reagent_containers/food/drinks/glass2/update_icon()
+/obj/item/weapon/reagent_containers/food/drinks/glass2/on_update_icon()
 	underlays.Cut()
 
 	if (reagents.reagent_list.len > 0)

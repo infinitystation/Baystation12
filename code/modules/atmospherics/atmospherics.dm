@@ -14,6 +14,7 @@ Pipelines + Other Objects -> Pipe network
 	idle_power_usage = 0
 	active_power_usage = 0
 	power_channel = ENVIRON
+
 	var/nodealert = 0
 	var/power_rating //the maximum amount of power the machine can use to do work, affects how powerful the machine is, in Watts
 
@@ -135,5 +136,5 @@ obj/machinery/atmospherics/proc/check_connect_types(obj/machinery/atmospherics/a
 
 /obj/machinery/atmospherics/proc/disconnect(obj/machinery/atmospherics/reference)
 
-/obj/machinery/atmospherics/update_icon()
+/obj/machinery/atmospherics/on_update_icon()
 	return null

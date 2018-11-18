@@ -3,7 +3,7 @@
 	desc = "Used for scanning and alerting when someone enters a certain proximity."
 	icon_state = "prox"
 	origin_tech = list(TECH_MAGNET = 1)
-	matter = list(DEFAULT_WALL_MATERIAL = 800, "glass" = 200, "waste" = 50)
+	matter = list(MATERIAL_STEEL = 800, MATERIAL_GLASS = 200, MATERIAL_WASTE = 50)
 	movable_flags = MOVABLE_FLAG_PROXMOVE
 	wires = WIRE_PULSE
 
@@ -91,7 +91,7 @@
 	return
 
 
-/obj/item/device/assembly/prox_sensor/update_icon()
+/obj/item/device/assembly/prox_sensor/on_update_icon()
 	overlays.Cut()
 	attached_overlays = list()
 	if(timing)
