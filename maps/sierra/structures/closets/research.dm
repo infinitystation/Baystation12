@@ -18,7 +18,8 @@
 		/obj/item/clothing/under/rank/research_director,
 		/obj/item/clothing/under/rank/research_director/rdalt,
 		/obj/item/clothing/under/rank/research_director/dress_rd,
-		/obj/item/clothing/under/suit_jacket,//Çהוסü בûכ ךמסע‏ל מע ÍÒ ~bear1ake
+		/obj/item/clothing/under/suit_jacket, //Here was NT suit ~bear1ake
+		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/suit/storage/toggle/labcoat/science,
 		/obj/item/clothing/suit/storage/toggle/labcoat/rd,
 		/obj/item/clothing/shoes/white,
