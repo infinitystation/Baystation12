@@ -55,9 +55,6 @@
 	desc = "A cap surgeons wear during operations. Keeps their hair from tickling your internal organs."
 	icon_state = "surgcap"
 	flags_inv = BLOCKHEADHAIR
-	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi'
-		)
 
 /obj/item/clothing/head/surgery/purple
 	name = "purple surgical cap"
