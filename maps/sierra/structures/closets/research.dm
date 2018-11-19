@@ -12,13 +12,14 @@
 	icon_off = "rdsecureoff"
 
 /obj/structure/closet/secure_closet/RD_sierra/WillContain()
+	//Çהוסü בûכ ךמסע‏ל מע ÍÒ /obj/item/clothing/under/suit_jacket ~bear1ake
 	return list(
 		/obj/item/clothing/suit/bio_suit/scientist,
 		/obj/item/clothing/head/bio_hood/scientist,
 		/obj/item/clothing/under/rank/research_director,
 		/obj/item/clothing/under/rank/research_director/rdalt,
 		/obj/item/clothing/under/rank/research_director/dress_rd,
-		/obj/item/clothing/under/suit_jacket, /* Çהוסü בûכ ךמסע‏ל מע ÍÒ ~bear1ake */
+		/obj/item/clothing/under/suit_jacket,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/suit/storage/toggle/labcoat/science,
 		/obj/item/clothing/suit/storage/toggle/labcoat/rd,
