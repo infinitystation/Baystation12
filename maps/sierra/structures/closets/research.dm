@@ -12,7 +12,7 @@
 	icon_off = "rdsecureoff"
 
 /obj/structure/closet/secure_closet/RD_sierra/WillContain()
-	//Here was NT suit /obj/item/clothing/under/suit_jacket, ~bear1ake
+	//����� ��� ������ �� �� /obj/item/clothing/under/suit_jacket ~bear1ake
 	return list(
 		/obj/item/clothing/suit/bio_suit/scientist,
 		/obj/item/clothing/head/bio_hood/scientist,
