@@ -1,6 +1,6 @@
 /datum/gear/accessory/tags
 	display_name = "dog tags"
-	path = /obj/item/clothing/accessory/badge/tags
+	path = /obj/item/clothing/accessory/badge/dog_tags
 
 /datum/gear/accessory/pilot_pin
 	display_name = "pilot's qualification pin"

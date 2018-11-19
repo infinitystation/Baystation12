@@ -194,7 +194,7 @@
 	desc = "A small CSG flag."
 	icon_state = "csg"
 
-/obj/item/clothing/accessory/badge/tags // non-solgov variant
+/obj/item/clothing/accessory/badge/dog_tags // non-solgov variant
 	name = "dog tags"
 	desc = "Plain identification tags made from a durable metal. They are stamped with a variety of informational details."
 	gender = PLURAL
@@ -204,7 +204,7 @@
 	badge_string = null
 	slot_flags = SLOT_MASK | SLOT_TIE
 
-/obj/item/clothing/accessory/badge/tags/Initialize()
+/obj/item/clothing/accessory/badge/dog_tags/Initialize()
 	. = ..()
 	var/mob/living/carbon/human/H
 	H = get_holder_of_type(src, /mob/living/carbon/human)
@@ -212,7 +212,7 @@
 		set_name(H.real_name)
 		set_desc(H)
 
-/obj/item/clothing/accessory/badge/tags/attack_self(mob/living/carbon/human/user as mob)
+/obj/item/clothing/accessory/badge/dog_tags/attack_self(mob/living/carbon/human/user as mob)
 	.=..()
 	if(!badge_string)
 		var/confirm = alert("Set badges's faction as your own faction?", "Badge Choice", "Yes", "No")
@@ -226,7 +226,7 @@
 			badge_string = faction.name
 		to_chat(user, "<span class='notice'>[src]'s faction now is '[badge_string]'.</span>")
 
-/obj/item/clothing/accessory/badge/tags/set_desc(var/mob/living/carbon/human/H)
+/obj/item/clothing/accessory/badge/dog_tags/set_desc(var/mob/living/carbon/human/H)
 	if(!istype(H))
 		return
 	var/decl/cultural_info/culture = H.get_cultural_value(TAG_RELIGION)
