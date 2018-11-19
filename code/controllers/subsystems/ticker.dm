@@ -113,7 +113,7 @@ SUBSYSTEM_DEF(ticker)
 	mode.process()
 	var/mode_finished = mode_finished()
 
-	if(mode_finished && game_finished() || admin_ending)
+	if(mode_finished && game_finished())
 		if(!config.ooc_allowed)
 			config.ooc_allowed = 1
 			to_world("<B>The OOC channel has been globally enabled!</B>")
@@ -355,6 +355,8 @@ Helpers
 	return 0
 
 /datum/controller/subsystem/ticker/proc/game_finished()
+	if(admin_ending)
+		return 1
 	if(mode.explosion_in_progress)
 		return 0
 	if(config.continous_rounds)

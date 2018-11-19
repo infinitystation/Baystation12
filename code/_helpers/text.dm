@@ -399,14 +399,16 @@ proc/TextPreview(var/string,var/len=40)
 	t = replacetext(t, "ÿ", "&#1103;")
 	return t
 
-/proc/remore_cyrillic(t)
-	var/list/symbols = list("à", "á", "â", "ã", "ä", "å", "¸", "æ", "ç", "è", "é", "ê", "ë", "ì", \
+GLOBAL_LIST_INIT(cyrillic_symbols, list("à", "á", "â", "ã", "ä", "å", "¸", "æ", "ç", "è", "é", "ê", "ë", "ì", \
 	"í", "î", "ï", "ð", "ñ", "ò", "ó", "ô", "õ", "ö", "÷", "ø", "ù", "ü", "û", "ú", "ý", "þ", "ÿ", \
 	"À", "Á", "Â", "Ã", "Ä", "Å", "¨", "Æ", "Ç", "È", "É", "Ê", "Ë", "Ì", "Í", "Î", "Ï", \
-	"Ð", "Ñ", "Ò", "Ó", "Ô", "Õ", "Ö", "×", "Ø", "Ù", "Ü", "Û", "Ú", "Ý", "Þ", "ß")
-	for(var/i in symbols)
+	"Ð", "Ñ", "Ò", "Ó", "Ô", "Õ", "Ö", "×", "Ø", "Ù", "Ü", "Û", "Ú", "Ý", "Þ", "ß"))
+
+/proc/remore_cyrillic(t)
+	for(var/i in GLOB.cyrillic_symbols)
 		t = replacetext(t, i, "")
 	return t
+
 var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z")
 
 /proc/generateRandomString(var/length)
