@@ -45,6 +45,7 @@
 	base_turf = /turf/simulated/floor
 
 //Bearcat's exploration
+/* До лучших времен ~Laxesh
 /datum/shuttle/autodock/overmap/exploration
 	name = "Exploration Shuttle"
 	shuttle_area = /area/ship/scrap/shuttle/outgoing
@@ -58,7 +59,7 @@
 /obj/machinery/computer/shuttle_control/explore/bearcat
 	name = "exploration shuttle console"
 	shuttle_tag = "Exploration Shuttle"
-
+*/
 //Raiders' shuttle
 /datum/shuttle/autodock/multi/antag/skipjack
 	name = "Skipjack"
