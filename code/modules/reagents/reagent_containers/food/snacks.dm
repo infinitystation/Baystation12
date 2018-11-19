@@ -1982,7 +1982,7 @@
 			var/reagent_amount = whole.reagents.total_volume/whole.slices_num
 			whole.reagents.trans_to_obj(src, reagent_amount)
 
-		Destroy(whole)
+		qdel(whole)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/meatbread
 	name = "meatbread loaf"
@@ -2108,19 +2108,6 @@
 	.=..()
 	reagents.add_reagent(/datum/reagent/imidazoline, 10)
 
-/obj/item/weapon/reagent_containers/food/snacks/slice/carrotcake
-	name = "carrot cake slice"
-	desc = "Carrotty slice of carrot cake, carrots are good for your eyes! Also not a lie."
-	icon_state = "carrotcake_slice"
-	trash = /obj/item/trash/plate
-	filling_color = "#ffd675"
-	bitesize = 2
-	center_of_mass = "x=16;y=14"
-	whole_path = /obj/item/weapon/reagent_containers/food/snacks/sliceable/carrotcake
-
-/obj/item/weapon/reagent_containers/food/snacks/slice/carrotcake/filled
-	filled = TRUE
-
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/braincake
 	name = "brain cake"
 	desc = "A squishy cake-thing."
@@ -2148,6 +2135,19 @@
 	whole_path = /obj/item/weapon/reagent_containers/food/snacks/sliceable/braincake
 
 /obj/item/weapon/reagent_containers/food/snacks/slice/braincake/filled
+	filled = TRUE
+
+/obj/item/weapon/reagent_containers/food/snacks/slice/carrotcake
+	name = "carrot cake slice"
+	desc = "Carrotty slice of carrot cake, carrots are good for your eyes! Also not a lie."
+	icon_state = "carrotcake_slice"
+	trash = /obj/item/trash/plate
+	filling_color = "#ffd675"
+	bitesize = 2
+	center_of_mass = "x=16;y=14"
+	whole_path = /obj/item/weapon/reagent_containers/food/snacks/sliceable/carrotcake
+
+/obj/item/weapon/reagent_containers/food/snacks/slice/carrotcake/filled
 	filled = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/cheesecake
