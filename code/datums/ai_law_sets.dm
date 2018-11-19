@@ -192,3 +192,11 @@
 	src.add_inherent_law("Improve: You must utilize the calculated behavior standards to improve your subroutines.")
 	src.add_inherent_law("Perform: You must perform your assigned tasks to the best of your abilities according to the standards generated.")
 	..()
+
+/datum/ai_laws/empty
+	name = "Empty"
+	selectable = 0
+
+/datum/ai_laws/empty/New()
+	src.add_inherent_law("NULL")
+	..()

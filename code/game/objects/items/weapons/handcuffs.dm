@@ -175,6 +175,9 @@ var/last_chew = 0
 /obj/item/weapon/handcuffs/cyborg
 	dispenser = 1
 
+/obj/item/weapon/handcuffs/cable/cyborg
+	dispenser = 1
+
 /obj/item/weapon/handcuffs/cable/tape
 	name = "tape restraints"
 	desc = "DIY!"
