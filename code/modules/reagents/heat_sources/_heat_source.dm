@@ -188,7 +188,7 @@
 	popup.open()
 
 /obj/machinery/reagent_temperature/CanUseTopic(var/mob/user, var/state, var/href_list)
-	if(!user.Adjacent(src) || (issilicon(user) && href_list["remove_container"]))
+	if(!user.Adjacent(src) && !issilicon(user))
 		to_chat(user, SPAN_WARNING("You are too far away."))
 		return STATUS_CLOSE
 	return ..()
@@ -218,7 +218,8 @@
 	if(href_list["remove_container"])
 		if(container)
 			container.dropInto(loc)
-			user.put_in_hands(container)
+			if(!issilicon(user))
+				user.put_in_hands(container)
 			container = null
 			update_icon()
 		. = TOPIC_REFRESH
