@@ -44,6 +44,8 @@
 				player.cassette = W
 				to_chat(user, "<span class='notice'>You insert cassete to [name].</span>")
 				to_chat(src, "<span class='notice'>[user] puts something in your slot.</span>")
+		else 
+			..()
 		
 	verb/toggle_playing()
 		set category = "Sound"
