@@ -234,7 +234,7 @@ its easier to just keep the beam vertical.
 
 
 //All atoms
-/atom/proc/examine(mob/user, var/distance = -1, var/infix = "", var/suffix = "")
+/atom/proc/examine(mob/user, var/distance = -1, var/infix = "", var/suffix = "", var/show_look_message = TRUE)
 	//This reformat names to get a/an properly working on item descriptions when they are bloody
 	var/f_name = "\a [src][infix]."
 	if(blood_DNA && !istype(src, /obj/effect/decal))
@@ -247,8 +247,9 @@ its easier to just keep the beam vertical.
 		else
 			f_name += "oil-stained [name][infix]."
 
-	if(!isobserver(user))
+	if(show_look_message && !isobserver(user)) // necessary check in case the eyes of the beholder are hidden
 		user.visible_message("<span class='notice'><font size=1><i>[user] looks at [src].</i></font></span>")
+
 	to_chat(user, "\icon[src] That's [f_name] [suffix]")
 	to_chat(user, desc)
 

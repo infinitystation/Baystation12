@@ -128,6 +128,11 @@ ckey: deda565
 character_name: Wayne Hutton
 item_path: /obj/item/device/pmp/personal
 }
+{
+ckey: forrya
+character_name: Niyarkszherch Kchrashchjrj
+item_path: /obj/item/device/pmp/personal/csplayer
+}
 
 #	SHORT ITEMS HERE (3-4)
 
@@ -252,6 +257,11 @@ item_path: /obj/item/device/synthesized_instrument/guitar/multi
 ckey: adenwais
 character_name: Monte Powers
 item_path: /obj/item/weapon/flame/lighter/zippo/infinity/cust_zippo
+}
+{
+ckey: m1am1
+character_name: Edward Paige
+item_path: /obj/item/modular_computer/wrist/advanced
 }
 {
 ckey: quietproject 
@@ -400,5 +410,13 @@ req_titles: Warden
 req_access: 2
 paper_info: [center]Центральное Правительство Солнечной Системы[/center][solcrest][br]Данным сертификатом подтверждается награждение Джейсона Мархода медалью "Участник Боевых Действии" за нейтрализацию противника в опасных условиях.[br]Подпись: [sign]Oliver Stocker[/sign]
 paper_title: award certificate
+paper_stamp_type: /obj/item/weapon/stamp/solgov
+}
+{
+ckey: quietproject
+character_name: Eno Quiet
+item_path: /obj/item/naris_box
+paper_info: [center][grid][center][small]NanoTrasen Corporation[/small][/center][center][logo][/center][center][b]Официальное постановление на разрешение участие борга "E.P.D #NARIS" в миссии судна ИСН "Сьерра".[/b][/center][/grid][/center][hr][center][grid]Роботизированная единица "E.P.D #NARIS" поступает на ваш борт в качестве личного телохранителя сотрудника Эно Куайт. Данный киборг имеет упрощенный набор модулей стандорной охранной модели и органиченный до базового-инженерного уровень доступа.Во избежания использования "E.P.D #NARIS" для отличных от заданных центральным офисом целей, киборг отключен от системы искуственного интеллекта и устройств контроля синтетических единиц.[br]Гарантией отстутствия угрозы от киборга является специализированный набор протоколов, для получения информации о протоколах "E.P.D #NARIS" обратитесь в центральный офис.[/grid][/center]
+paper_title: certificate
 paper_stamp_type: /obj/item/weapon/stamp/solgov
 }
