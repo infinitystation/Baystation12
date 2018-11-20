@@ -46,6 +46,7 @@ hardstuck - resomi
 kirill1243 - resomi
 coldmantis13 - resomi
 wheatley2013 - resomi
+twinindifferent - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
@@ -78,6 +79,7 @@ s1334 - vox
 cre77 - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
+alchemisthero - unathi
 kotovsyndrome - unathi
 wheatley2013 - unathi
 wolforbykot - unathi
@@ -108,6 +110,6 @@ arhod - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
 gumboldty - adherent
+kareta - adherent
 s1334 - adherent
 redknighthero - bionic
-kareta - adherent
