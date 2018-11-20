@@ -44,6 +44,11 @@
 ##
 #	PMP HERE
 {
+ckey: sallyvadordomold
+character_name: Sally Kimberly
+item_path: /obj/item/device/pmp/personal/csplayer
+}
+{
 ckey: billluxe
 character_name: Villyx
 item_path: /obj/item/device/pmp/personal
