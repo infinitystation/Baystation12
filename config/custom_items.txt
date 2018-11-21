@@ -44,6 +44,11 @@
 ##
 #	PMP HERE
 {
+ckey: sallyvadordomold
+character_name: Sally Kimberly
+item_path: /obj/item/device/pmp/personal/csplayer
+}
+{
 ckey: billluxe
 character_name: Villyx
 item_path: /obj/item/device/pmp/personal
@@ -128,14 +133,14 @@ ckey: deda565
 character_name: Wayne Hutton
 item_path: /obj/item/device/pmp/personal
 }
+{
+ckey: forrya
+character_name: Niyarkszherch Kchrashchjrj
+item_path: /obj/item/device/pmp/personal/csplayer
+}
 
 #	SHORT ITEMS HERE (3-4)
 
-{
-ckey: quietproject 
-character_name: Arias Creo 
-item_path: /obj/item/clothing/mask/gas/creo
-}
 {
 ckey: zakterar
 character_name: Maria Salazar
@@ -221,7 +226,7 @@ item_path: /obj/item/device/synthesized_instrument/guitar/multi/eguitar
 {
 ckey: kosteg
 character_name: Emilia Florian
-item_path: /obj/item/weapon/storage/briefcase/kosteg
+item_path: /obj/item/weapon/clothingbag/zone
 }
 {
 ckey: courierr
@@ -253,22 +258,47 @@ ckey: hodovoy
 character_name: Nirvana Kurt
 item_path: /obj/item/device/synthesized_instrument/guitar/multi
 }
-
 {
 ckey: adenwais
 character_name: Monte Powers
-item_path: obj/item/weapon/flame/lighter/zippo/infinity/cust_zippo
+item_path: /obj/item/weapon/flame/lighter/zippo/infinity/cust_zippo
 }
-
 {
-ckey: quietproject
-character_name: Eno Quiet
-item_path: /obj/item/naris_box
-paper_info: [center][grid][center][small]NanoTrasen Corporation.[/small][/center][center][logo][/center][center][b]Официальное постановление на разрешение участие борга "E.P.D #NARIS" в миссии судна ИСН "Сьерра".[/b][/center][/grid][/center][hr][center][grid]Роботизированная единица "E.P.D #NARIS" поступает на ваш борт в качестве личного телохранителя сотрудника Эно Куайт.Данный киборг имеет упрощенный набор модулей стандорной охранной модели и органиченный до базового-инженерного уровень доступа.Во избежания использования "E.P.D #NARIS" для отличных от заданных центральным офисом целей, киборг отключен от системы искуственного интеллекта и устройств контроля синтетических единиц.[br]Гарантией отстутствия угрозы от киборга является специализированный набор протоколов, для получения информации о протоколах "E.P.D #NARIS" обратитесь в центральный офис.[/grid][/center]
-paper_title: award certificate
-paper_stamp_type: /obj/item/weapon/stamp/solgov
+ckey: m1am1
+character_name: Edward Paige
+item_path: /obj/item/modular_computer/wrist/advanced
 }
-
+{
+ckey: quietproject 
+character_name: Arias Creo 
+item_path: /obj/item/clothing/mask/gas/creo
+}
+{
+ckey: chowny
+character_name: Jesse Henkel
+item_path: /obj/item/custkit/chowny_void
+}
+{
+ckey: chowny
+character_name: Jesse Henkel
+item_path: /obj/item/custkit/chowny_helmet
+}
+{
+ckey: kosteg
+character_name: Medea Heldane
+item_path: /obj/item/custkit/kosteg_void
+}
+{
+ckey: kosteg
+character_name: Medea Heldane
+item_path: /obj/item/custkit/kosteg_helmet
+}
+{
+ckey: logfol
+character_name: Alias Victus
+item_path: /obj/item/clothing/head/beret/centcom/officer
+item_desc: A navy blue beret adorned with the named "Grom" crest of corporate asset protection. For asset protection agents that are more inclined towards style than safety.
+}
 
 #	MEDIUM ITEMS HERE (5-6)
 
@@ -365,14 +395,8 @@ item_name: rainbow bracelet
 item_desc: It's a rainbow bracelet. Looks pretty good and stylish, special for gays.
 item_icon: rainbow_bracelet
 }
-{
-ckey: logfol
-character_name: Alias Victus
-item_path: /obj/item/clothing/head/beret/centcom/officer
-item_desc: A navy blue beret adorned with the named "Grom" crest of corporate asset protection. For asset protection agents that are more inclined towards style than safety.
-}
-
 #	LONG ITEMS HERE (+7)
+
 {
 ckey: arhod
 character_name: Jason Marhod

@@ -12,6 +12,12 @@
 	attack_verb = list("bludgeoned", "whacked", "disciplined", "thrashed")
 	base_parry_chance = 30
 
+/obj/item/cane/afterattack(atom/target, mob/user, proximity_flag)
+	. = ..()
+	if((user.a_intent == I_HELP) && proximity_flag)
+		user.visible_message("<span class='notice'>[user] examines [target] with [src].</span>")
+		target.examine(user, show_message = FALSE)
+
 /obj/item/weapon/cane/concealed
 	var/concealed_blade
 

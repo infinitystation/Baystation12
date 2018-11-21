@@ -52,3 +52,19 @@
 	
 /datum/gear/suit/labcoat
 	allowed_roles = STERILE_ROLES
+
+/datum/gear/suit/labcoat_nanotrasen
+	display_name = "labcoat, NanoTrasen"
+	allowed_roles = RESEARCH_ROLES
+
+/datum/gear/suit/labcoat_dais
+	display_name = "labcoat, DAIS"
+	allowed_roles = list(/datum/job/engineer, /datum/job/scientist, /datum/job/rd, /datum/job/roboticist)
+
+/datum/gear/suit/wintercoat_dais
+	display_name = "winter coat, DAIS"
+	allowed_roles = list(/datum/job/engineer, /datum/job/scientist, /datum/job/rd)
+
+/datum/gear/suit/labcoat_nanotrasen_rd
+	display_name = "labcoat, NanoTrasen, Research Director"
+	allowed_roles = list(/datum/job/rd)

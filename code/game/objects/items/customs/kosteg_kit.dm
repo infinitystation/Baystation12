@@ -25,10 +25,8 @@
 	item_state = "kosteg_mask"
 	slot_flags = SLOT_EARS | SLOT_TIE
 
-/obj/item/weapon/storage/briefcase/kosteg
-	name = "private briefcase"
-	startswith = list(
-		/obj/item/clothing/under/zonesweeater,
-		/obj/item/clothing/shoes/zoneboots,
-		/obj/item/clothing/accessory/zonehairclip,
-		)
+/obj/item/weapon/clothingbag/zone
+	New()
+		new /obj/item/clothing/under/zonesweeater(src)
+		new /obj/item/clothing/shoes/zoneboots(src)
+		new /obj/item/clothing/accessory/zonehairclip(src)

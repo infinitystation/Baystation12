@@ -59,3 +59,13 @@
 	icon_state = "janitor_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 	allowed = list(/obj/item/device/flashlight,/obj/item/device/lightreplacer,/obj/item/weapon/storage/bag/trash,/obj/item/weapon/grenade/chem_grenade/cleaner,/obj/item/weapon/reagent_containers/spray/cleaner, /obj/item/weapon/mop, /obj/item/weapon/reagent_containers/glass/bucket)
+
+/obj/item/clothing/suit/storage/toggle/labcoat/xyn_machine
+	name = "\improper Xynergy labcoat"
+	desc = "A stiffened, stylised labcoat designed to fit IPCs. It has blue and purple trim, denoting it as a Xynergy labcoat."
+	icon = 'icons/obj/clothing/infinity/suits.dmi'
+	icon_state = "labcoat_xy"
+	icon_open = "labcoat_xy_open"
+	icon_closed = "labcoat_xy"
+	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 20, rad = 0)
+	species_restricted = list(SPECIES_IPC)
