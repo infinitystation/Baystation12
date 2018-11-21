@@ -4,7 +4,7 @@
 	icon = 'icons/obj/xenoarchaeology.dmi'
 	icon_state = "anomaly_container"
 	density = 1
-
+	layer = 3
 	var/obj/machinery/artifact/contained
 
 /obj/structure/anomaly_container/Initialize()
