@@ -49,3 +49,6 @@
 	display_name = "science winter coat"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat/science
 	allowed_roles = RESEARCH_ROLES
+	
+/datum/gear/suit/labcoat
+	allowed_roles = STERILE_ROLES
