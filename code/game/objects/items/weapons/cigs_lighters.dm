@@ -88,6 +88,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/weapon/flame/match/extinguish(var/mob/user, var/no_message)
 	. = ..()
+	set_light(0)
 	icon_state = "match_burnt"
 	item_state = "cigoff"
 	name = "burnt match"
