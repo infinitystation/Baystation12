@@ -65,3 +65,6 @@
 /datum/gear/suit/labcoat_nanotrasen_rd
 	display_name = "labcoat, NanoTrasen, Research Director"
 	allowed_roles = list(/datum/job/rd)
+
+/datum/gear/suit/labcoat
+	allowed_roles = STERILE_ROLES 
