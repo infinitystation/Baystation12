@@ -99,6 +99,16 @@
 		max_growth = VINE_GROWTH_STAGES
 		growth_threshold = max_health/VINE_GROWTH_STAGES
 		growth_type = seed.get_growth_type()
+
+		if(growth_type != 4)
+			//Random rotation for vines
+			//Disabled for mold because it looks bad
+			//0 is in here several times to weight it a bit more towards normal
+			var/rot = pick(list(0,0,0, 90, 180, -90))
+			var/matrix/M = matrix()
+			M.Turn(rot)
+			transform = M
+
 	else
 		max_growth = seed.growth_stages
 		growth_threshold = max_growth && max_health/max_growth
@@ -108,7 +118,7 @@
 
 	mature_time = world.time + seed.get_trait(TRAIT_MATURATION) + 15 //prevent vines from maturing until at least a few seconds after they've been created.
 	spread_chance = seed.get_trait(TRAIT_POTENCY)
-	spread_distance = (growth_type ? round(spread_chance*0.6) : round(spread_chance*0.3))
+	spread_distance = (growth_type ? round(spread_chance*1.2) : round(spread_chance*0.6))
 	possible_children = seed.get_trait(TRAIT_POTENCY)
 	update_icon()
 

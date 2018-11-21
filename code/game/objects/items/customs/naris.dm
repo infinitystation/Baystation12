@@ -33,7 +33,8 @@
 	var/list/valid_ckeys = list(
 		"redknighthero",
 		"skonoplich",
-		"quietproject"
+		"quietproject",
+		"nikita588"
 		)
 
 	attack_ghost(mob/user)
