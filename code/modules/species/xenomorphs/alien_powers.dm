@@ -119,6 +119,10 @@
 	set desc = "Plants some alien weeds"
 	set category = "Abilities"
 
+	var/obj/structure/alien/A = locate() in loc
+	if(A)
+		to_chat(src, "<span class='alium'>We can't plant here!</span>")
+		return
 	if(check_alien_ability(50,1,BP_RESIN) && !is_ventcrawling)
 		visible_message("<span class='alium'><B>[src] has planted some alien weeds!</B></span>")
 		new /obj/structure/alien/node(loc)
@@ -181,6 +185,12 @@
 	set desc = "Secrete tough, malleable resin."
 	set category = "Abilities"
 
+	var/obj/structure/alien/A = locate() in loc
+	var/obj/structure/bed/nest/B = locate() in loc
+	var/obj/machinery/door/unpowered/simple/resin/C = locate() in loc
+	if(A || B || C)
+		to_chat(src, "<span class='alium'>We can't secrete more resin here!</span>")
+		return
 	var/choice = input("Choose what you wish to shape.","Resin building") as null|anything in list("resin door","resin wall","resin membrane","resin nest") //would do it through typesof but then the player choice would have the type path and we don't want the internal workings to be exposed ICly - Urist
 	if(!choice)
 		return
