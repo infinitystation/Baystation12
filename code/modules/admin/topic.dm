@@ -67,6 +67,17 @@
 				if(!banckey || !banreason || !banjob || !banduration)
 					to_chat(usr, "Not enough parameters (Requires ckey, reason and job)")
 					return
+			if(BANTYPE_SOFTPERMA)
+				if(!banckey || !banreason)
+					to_chat(usr, "Not enough parameters (Requires ckey and reason)")
+					return
+				banduration = null
+				banjob = null
+			if(BANTYPE_SOFTBAN)
+				if(!banckey || !banreason || !banduration)
+					to_chat(usr, "Not enough parameters (Requires ckey, reason and duration)")
+					return
+				banjob = null
 
 		var/mob/playermob
 
@@ -301,11 +312,13 @@
 				minutes = CMinutes + mins
 				duration = GetExp(minutes)
 				reason = sanitize(input(usr,"Reason?","reason",reason2) as text|null)
+				reason = sanitize_a0(reason)
 				if(!reason)	return
 			if("No")
 				temp = 0
 				duration = "Perma"
 				reason = sanitize(input(usr,"Reason?","reason",reason2) as text|null)
+				reason = sanitize_a0(reason)
 				if(!reason)	return
 
 		ban_unban_log_save("[key_name(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]")
@@ -765,6 +778,7 @@
 						to_chat(usr, "<span class='warning'> Moderators can only job tempban up to [config.mod_job_tempban_max] minutes!</span>")
 						return
 					var/reason = sanitize(input(usr,"Reason?","Please State Reason","") as text|null)
+					reason = sanitize_a0(reason)
 					if(!reason)
 						return
 
@@ -790,6 +804,7 @@
 				if("No")
 					if(!check_rights(R_BAN))  return
 					var/reason = sanitize(input(usr,"Reason?","Please State Reason","") as text|null)
+					reason = sanitize_a0(reason)
 					if(reason)
 						var/msg
 						for(var/job in notbannedlist)
@@ -847,6 +862,7 @@
 			if(!check_if_greater_rights_than(M.client))
 				return
 			var/reason = sanitize(input("Please enter reason"))
+			reason = sanitize_a0(reason)
 			if(!reason)
 				to_chat(M, "<span class='warning'>You have been kicked from the server</span>")
 			else
@@ -893,6 +909,7 @@
 					return
 				if(mins >= 525600) mins = 525599
 				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
+				reason = sanitize_a0(reason)
 				if(!reason)
 					return
 				AddBan(M.ckey, M.computer_id, reason, usr.ckey, 1, mins)
@@ -914,6 +931,7 @@
 			if("No")
 				if(!check_rights(R_BAN))   return
 				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
+				reason = sanitize_a0(reason)
 				if(!reason)
 					return
 				switch(alert(usr,"IP ban?",,"Yes","No","Cancel"))
@@ -963,6 +981,7 @@
 					return
 				if(mins >= 525600) mins = 525599
 				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
+				reason = sanitize_a0(reason)
 				if(!reason)
 					return
 				switch(alert(usr,"IP ban?",,"Yes","No","Cancel"))
@@ -991,6 +1010,7 @@
 			if("No")
 				if(!check_rights(R_BAN))   return
 				var/reason = sanitize(input(usr,"Reason?","reason","Griefer") as text|null)
+				reason = sanitize_a0(reason)
 				if(!reason)
 					return
 				switch(alert(usr,"IP ban?",,"Yes","No","Cancel"))

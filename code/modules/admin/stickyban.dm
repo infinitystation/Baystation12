@@ -29,6 +29,7 @@
 				ban["message"] = data["reason"]
 			else
 				var/reason = input(usr,"Reason","Reason","Ban Evasion") as text|null
+				reason = sanitize_a0(reason)
 				if (!reason)
 					return
 				ban["message"] = "[reason]"
@@ -115,6 +116,7 @@
 				return
 			var/oldreason = ban["message"]
 			var/reason = input(usr,"Reason","Reason","[ban["message"]]") as text|null
+			reason = sanitize_a0(reason)
 			if (!reason || reason == oldreason)
 				return
 			//we have to do this again incase something changed while we waited for input
