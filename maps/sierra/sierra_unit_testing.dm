@@ -7,7 +7,6 @@
 		/area/engineering/engine_smes = NO_SCRUBBER|NO_VENT,
 		/area/engineering/fuelbay = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/holodeck = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/security/nuke_storage = NO_SCRUBBER|NO_VENT,
 		/area/maintenance = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/solar = NO_SCRUBBER,
 		/area/maintenance/exterior = NO_SCRUBBER|NO_VENT|NO_APC,
