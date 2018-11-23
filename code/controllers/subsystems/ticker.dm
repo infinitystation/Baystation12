@@ -22,7 +22,7 @@ SUBSYSTEM_DEF(ticker)
 	var/delay_notified = 0          //Spam prevention.
 	var/restart_timeout = 1 MINUTE
 
-	var/admin_ending = 0 //Are you badmin or developer?
+	var/force_ending = 0            //Overriding this variable will force game end. Can be used for build update or adminbuse.
 
 	var/list/minds = list()         //Minds of everyone in the game.
 	var/list/antag_pool = list()
@@ -355,14 +355,14 @@ Helpers
 	return 0
 
 /datum/controller/subsystem/ticker/proc/game_finished()
-	if(admin_ending)
+	if(force_ending)
 		return 1
 	if(mode.explosion_in_progress)
 		return 0
 	if(config.continous_rounds)
 		return evacuation_controller.round_over() || mode.station_was_nuked
 	else
-		return mode.check_finished() || (evacuation_controller.round_over() && evacuation_controller.emergency_evacuation) || universe_has_ended
+		return mode.check_finished() || evacuation_controller.round_over() || universe_has_ended // && evacuation_controller.emergency_evacuation - since transfer shuttle don't really use this variable, it don't allow end round
 
 /datum/controller/subsystem/ticker/proc/mode_finished()
 	if(config.continous_rounds)
