@@ -82,6 +82,7 @@
 
 /obj/item/clothing/suit/storage/toggle/Resomicoat
  	name = "small coat"
+ 	icon = 'icons/obj/clothing/infinity/suits.dmi'
  	desc = "A coat that seems too small to fit a human."
  	icon_state = "resomicoat"
  	item_state = "resomicoat"
@@ -92,6 +93,7 @@
 
 /obj/item/clothing/suit/storage/toggle/Resomilabcoat
 	name = "small labcoat"
+	icon = 'icons/obj/clothing/infinity/suits.dmi'
 	desc = "A labcoat that seems too small to fit a human."
 	icon_state = "resomi_labcoat"
 	item_state = "resomi_labcoat"
