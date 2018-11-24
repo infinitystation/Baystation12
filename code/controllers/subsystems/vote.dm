@@ -122,7 +122,7 @@ SUBSYSTEM_DEF(vote)
 
 	var/datum/browser/popup = new(user, "vote", "Voting Panel", win_x, win_y)
 	popup.set_content(interface(user.client))
-	popup.open()
+	popup.open(use_onclose = TRUE)
 
 /datum/controller/subsystem/vote/proc/close_panel(mob/user)
 	show_browser(user, null, "window=vote")

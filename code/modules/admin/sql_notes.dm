@@ -101,6 +101,7 @@
 		var/old_note = query_find_note_edit.item[2]
 		var/adminckey = query_find_note_edit.item[3]
 		var/new_note = input("Input new note", "New Note", "[old_note]") as message
+		new_note = sanitize_a0(new_note)
 		if(!new_note)
 			return
 		new_note = sanitize_u0(new_note)
