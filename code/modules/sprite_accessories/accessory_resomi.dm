@@ -1,7 +1,7 @@
 /datum/sprite_accessory/hair/resomi
 	name = "Resomi Plumage"
 	icon_state = "resomi_default"
-	icon = 'icons/mob/infinity_human_face.dmi'
+	icon = 'icons/mob/human_races/species/resomi/hair.dmi'
 	species_allowed = list(SPECIES_RESOMI)
 
 /datum/sprite_accessory/hair/resomi/ears
