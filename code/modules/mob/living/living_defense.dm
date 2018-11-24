@@ -216,7 +216,7 @@
 
 			if(!O || !src) return
 
-			if(O.sharp) //Projectile is suitable for pinning.
+			if(O.can_embed()) //Projectile is suitable for pinning.
 				//Handles embedding for non-humans and simple_animals.
 				embed(O)
 
@@ -236,11 +236,17 @@
 //This is called when the mob is thrown into a dense turf
 /mob/living/proc/turf_collision(var/turf/T, var/speed)
 	visible_message("<span class='danger'>[src] slams into \the [T]!</span>")
-	var/smashsound = pick('sound/effects/gore/smash1.ogg', 'sound/effects/gore/smash2.ogg', 'sound/effects/gore/smash3.ogg', 'sound/effects/gore/trauma1.ogg')
-	playsound(loc, smashsound, 50, 1, -1)
+	playsound(loc, pick(GLOB.smash_sound), 50, 1, -1)
 	if(src.client)
 		shake_camera(src, 7, 1)
-	src.Weaken(4)
+	src.take_organ_damage(speed*5)
+
+//This is called when the mob is thrown into a dense object
+/mob/living/proc/object_collision(var/obj/O, var/speed)
+	visible_message("<span class='danger'>[src] slams into \the [O]!</span>")
+	playsound(loc, pick(GLOB.smash_sound), 50, 1, -1)
+	if(src.client)
+		shake_camera(src, 7, 1)
 	src.take_organ_damage(speed*5)
 
 /mob/living/proc/near_wall(var/direction,var/distance=1)
@@ -311,10 +317,10 @@
 	var/turf/location = get_turf(src)
 	location.hotspot_expose(fire_burn_temperature(), 50, 1)
 
-/mob/living/fire_act(datum/gas_mixture/air, temperature, volume)
+/mob/living/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	//once our fire_burn_temperature has reached the temperature of the fire that's giving fire_stacks, stop adding them.
 	//allow fire_stacks to go up to 4 for fires cooler than 700 K, since are being immersed in flame after all.
-	if(fire_stacks <= 4 || fire_burn_temperature() < temperature)
+	if(fire_stacks <= 4 || fire_burn_temperature() < exposed_temperature)
 		adjust_fire_stacks(2)
 	IgniteMob()
 

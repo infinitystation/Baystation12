@@ -5,7 +5,7 @@
 	desc = "It's a table, for putting things on. Or standing on, if you really want to."
 	density = 1
 	anchored = 1
-	atom_flags = ATOM_FLAG_CLIMBABLE
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 	layer = TABLE_LAYER
 	throwpass = 1
 	var/flipped = 0
@@ -25,6 +25,24 @@
 	var/carpeted = 0
 
 	connections = list("nw0", "ne0", "sw0", "se0")
+
+/mob/living/Move()
+	. = ..()
+	on_table_offset()
+
+/mob/living/forceMove()
+	. = ..()
+	on_table_offset()
+
+/mob/living/proc/on_table_offset()
+	var/obj/structure/table/T = (locate() in get_turf(src))
+	var/check = initial(default_pixel_y) + 12
+	if(T && !T.flipped)
+		if(!(pixel_y == check))
+			animate(src, pixel_y = initial(default_pixel_y) + 12, time = 2, easing = SINE_EASING)
+	else
+		if(check && pixel_y != initial(default_pixel_y))
+			animate(src, pixel_y = initial(default_pixel_y), time = 2, easing = SINE_EASING)
 
 /obj/structure/table/New()
 	if(istext(material))
@@ -269,6 +287,16 @@
 //     if(S) shards += S
 // is to avoid filling the list with nulls, as place_shard won't place shards of certain materials (holo-wood, holo-steel)
 
+/obj/structure/table/attack_generic(var/mob/user, var/damage, var/attack_verb)
+	health -= damage
+	attack_animation(user)
+	if(health <= 0)
+		user.visible_message("<span class='danger'>[user] [attack_verb] crushes [src]!</span>")
+		spawn(1) break_to_parts()
+	else
+		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src]!</span>")
+	return 1
+
 /obj/structure/table/proc/break_to_parts(full_return = 0)
 	var/list/shards = list()
 	var/obj/item/weapon/material/shard/S = null
@@ -289,13 +317,13 @@
 	if(full_return || prob(20))
 		new /obj/item/stack/material/steel(src.loc)
 	else
-		var/material/M = SSmaterials.get_material_by_name(DEFAULT_WALL_MATERIAL)
+		var/material/M = SSmaterials.get_material_by_name(MATERIAL_STEEL)
 		S = M.place_shard(loc)
 		if(S) shards += S
 	qdel(src)
 	return shards
 
-/obj/structure/table/update_icon()
+/obj/structure/table/on_update_icon()
 	if(flipped != 1)
 		icon_state = "blank"
 		overlays.Cut()

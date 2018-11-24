@@ -11,8 +11,6 @@
 	layer = SINGULARITY_LAYER
 	light_outer_range = 6
 	unacidable = 1 //Don't comment this out.
-	allow_spin = 0 //Stop spining effect for singularity
-
 
 	var/current_size = 1
 	var/allowed_size = 1

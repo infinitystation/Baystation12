@@ -20,13 +20,8 @@
 	item_state = "ce_female_shorts"
 
 /obj/item/clothing/under/harness/invisible
-	name = "gear harness"
-	desc = "How... minimalist."
-	icon_state = "gear_harness"
 	worn_state = null
 	icon_override = "invisible"
-	species_restricted = null
-	body_parts_covered = 0
 
 /obj/item/clothing/under/rank/engineer/senior
 	name = "senior engineer's jumpsuit"
@@ -94,3 +89,25 @@
 	icon_state = "adjutant"
 	item_state = "adjutant"
 	worn_state = "adjutant"
+
+/obj/item/clothing/under/scp_uniform
+	name = "SCP guard uniform"
+	desc = "It's dark grey uniform made of a slightly sturdier material than standard jumpsuits, to allow for good protection.\nThis uniform has SCP tags on shoulders, terran organization of NT asset protection."
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
+	icon_state = "scp_uniform"
+	item_state = "scp_uniform"
+	worn_state = "scp_uniform"
+	armor = list(melee = 10, bullet = 5, laser = 5,energy = 0, bomb = 0, bio = 0, rad = 0)
+	siemens_coefficient = 0.9
+
+/obj/item/clothing/under/gray_camo
+	name = "grey camo uniform"
+	desc = "It's grey camo unifrom made of a slightly sturdier material than standard jumpsuits, to allow for good protection and military style."
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
+	icon_state = "gray_camo"
+	item_state = "gray_camo"
+	worn_state = "gray_camo"
+	armor = list(melee = 10, bullet = 5, laser = 5,energy = 0, bomb = 0, bio = 0, rad = 0)
+	siemens_coefficient = 0.9

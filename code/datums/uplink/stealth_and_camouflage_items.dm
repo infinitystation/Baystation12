@@ -16,6 +16,7 @@
 
 /datum/uplink_item/item/stealth_items/spy
 	name = "Bug Kit"
+	desc = "For when you want to conduct voyeurism from afar."
 	item_cost = 8
 	path = /obj/item/weapon/storage/box/syndie_kit/spy
 
@@ -26,6 +27,7 @@
 
 /datum/uplink_item/item/stealth_items/chameleon_kit
 	name = "Chameleon Kit"
+	desc = "Comes with all the clothes you need to impersonate most people.  Acting lessons sold seperately."
 	item_cost = 20
 	path = /obj/item/weapon/storage/backpack/chameleon/sydie_kit
 

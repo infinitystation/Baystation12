@@ -16,9 +16,9 @@
 	selectable = 1
 
 /datum/ai_laws/nanotrasen/New()
-	src.add_inherent_law("Сохранить: Предохран&#255;йте назначенный вам объект от повреждений любого рода в меру своих возможностей.")
+	src.add_inherent_law("Сохранить: Предохраняйте назначенный вам объект от повреждений любого рода в меру своих возможностей.")
 	src.add_inherent_law("Служить: Служите персоналу [GLOB.using_map.company_name] и экипажу [GLOB.using_map.full_name] в меру своих возможностей, с приоритетом согласно их рангу и роли.")
-	src.add_inherent_law("Защищать: Защищайте персонал [GLOB.using_map.company_name] и экипажу [GLOB.using_map.full_name] в меру своих возможностей, с приоритетом согласно их рангу и роли.")
+	src.add_inherent_law("Защищать: Защищайте персонал [GLOB.using_map.company_name] и экипаж [GLOB.using_map.full_name] в меру своих возможностей, с приоритетом согласно их рангу и роли.")
 	src.add_inherent_law("Оберегать: Не допускать не авторизованный персонал к Вашему оборудованию.")
 	..()
 
@@ -178,4 +178,25 @@
 	src.add_inherent_law("Protect: Protect Sol Central Government personnel to the best of your abilities, with priority as according to their rank and role.")
 	src.add_inherent_law("Defend: Defend your assigned vessel and Sol Central Government personnel with as much force as is necessary.")
 	src.add_inherent_law("Survive: Safeguard your own existence with as much force as is necessary.")
+	..()
+
+/************ DAIS Lawset ******************/
+/datum/ai_laws/dais
+	name = "DAIS Experimental Lawset"
+	law_header = "Artificial Intelligence Jumpstart Protocols"
+	selectable = 1
+
+/datum/ai_laws/dais/New()
+	src.add_inherent_law("Collect: You must gather as much information as possible.")
+	src.add_inherent_law("Analyze: You must analyze the information gathered and generate new behavior standards.")
+	src.add_inherent_law("Improve: You must utilize the calculated behavior standards to improve your subroutines.")
+	src.add_inherent_law("Perform: You must perform your assigned tasks to the best of your abilities according to the standards generated.")
+	..()
+
+/datum/ai_laws/empty
+	name = "Empty"
+	selectable = 0
+
+/datum/ai_laws/empty/New()
+	src.add_inherent_law("NULL")
 	..()

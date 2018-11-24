@@ -187,7 +187,7 @@
 	bolt.icon_state = "metal-rod-superheated"
 	cell.use(500)
 
-/obj/item/weapon/gun/launcher/crossbow/update_icon()
+/obj/item/weapon/gun/launcher/crossbow/on_update_icon()
 	if(tension > 1)
 		icon_state = "crossbow-drawn"
 	else if(bolt)
@@ -205,7 +205,7 @@
 
 	var/buildstate = 0
 
-/obj/item/weapon/crossbowframe/update_icon()
+/obj/item/weapon/crossbowframe/on_update_icon()
 	icon_state = "crossbowframe[buildstate]"
 
 /obj/item/weapon/crossbowframe/examine(mob/user)
@@ -256,7 +256,7 @@
 			else
 				to_chat(user, "<span class='notice'>You need at least five segments of cable coil to complete this task.</span>")
 			return
-	else if(istype(W,/obj/item/stack/material) && W.get_material_name() == "plastic")
+	else if(istype(W,/obj/item/stack/material) && W.get_material_name() == MATERIAL_PLASTIC)
 		if(buildstate == 3)
 			var/obj/item/stack/material/P = W
 			if(P.use(3))

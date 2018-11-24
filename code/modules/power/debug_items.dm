@@ -36,6 +36,12 @@
 	..()
 	to_chat(user, "Generator is providing [num2text(power_generation_rate, 20)] W")
 
+//Adherent's infinite power generator.
+/obj/machinery/power/debug_items/infinite_generator/adherent
+	name = "Mysterious Monolith"
+	desc = "Strange pillar made of unknown alloy or stone. You feel strange energy coming from it."
+	icon = 'icons/obj/monolith.dmi'
+	icon_state = "jaggy3"
 
 // A cable powersink, without the explosion/network alarms normal powersink causes.
 /obj/machinery/power/debug_items/infinite_cable_powersink

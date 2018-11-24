@@ -51,21 +51,21 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 			spillover = brute_dam + burn_dam + brute + burn - max_damage
 			if(spillover > 0)
 				burn = max(burn - spillover, 0)
-	owner.updatehealth() //droplimb will call updatehealth() again if it does end up being called
 	//If limb took enough damage, try to cut or tear it off
-	if(owner && loc == owner && !is_stump())
-		if((limb_flags & ORGAN_FLAG_CAN_AMPUTATE) && config.limbs_can_break)
+	if(owner && loc == owner)
+		owner.updatehealth() //droplimb will call updatehealth() again if it does end up being called
+		if(!is_stump() && (limb_flags & ORGAN_FLAG_CAN_AMPUTATE) && config.limbs_can_break)
 			var/total_damage = brute_dam + burn_dam + brute + burn + spillover
 			var/threshold = max_damage * config.organ_health_multiplier
 			if(total_damage > threshold)
-				if(attempt_dismemberment(pure_brute, burn, edge, used_weapon, spillover, total_damage > threshold*3))
+				if(attempt_dismemberment(pure_brute, burn, edge, used_weapon, spillover, total_damage > threshold*6))
 					return
 
 	// High brute damage or sharp objects may damage internal organs
 	if(internal_organs && internal_organs.len)
 		var/damage_amt = brute
 		var/cur_damage = brute_dam
-		if(laser)
+		if(laser || BP_IS_ROBOTIC(src))
 			damage_amt += burn
 			cur_damage += burn_dam
 		var/organ_damage_threshold = 10
@@ -289,10 +289,18 @@ obj/item/organ/external/take_general_damage(var/amount, var/silent = FALSE)
 	return FALSE
 
 /obj/item/organ/external/proc/get_brute_mod()
-	return species.brute_mod + 0.2 * burn_dam/max_damage //burns make you take more brute damage
+	var/obj/item/organ/internal/augment/armor/A = owner && owner.internal_organs_by_name[BP_AUGMENT_CHEST_ARMOUR]
+	var/B = 1
+	if(A && istype(A))
+		B = A.brute_mult
+	return species.brute_mod * B + 0.2 * burn_dam/max_damage //burns make you take more brute damage
 
 /obj/item/organ/external/proc/get_burn_mod()
-	return species.burn_mod
+	var/obj/item/organ/internal/augment/armor/A = owner && owner.internal_organs_by_name[BP_AUGMENT_CHEST_ARMOUR]
+	var/B = 1
+	if(A && istype(A))
+		B = A.burn_mult
+	return species.burn_mod * B
 
 //organs can come off in three cases
 //1. If the damage source is edge_eligible and the brute damage dealt exceeds the edge threshold, then the organ is cut off.

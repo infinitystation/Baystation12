@@ -263,7 +263,7 @@
 				for(var/i in 1 to length(harvest_output))
 					harvest_output[i] = weakref(harvest_output[i])
 
-				if(harvest_output.len)
+				if(length(harvest_output))
 					set_pin_data(IC_OUTPUT, 1, harvest_output)
 					push_data()
 			if(1)
@@ -319,9 +319,11 @@
 	var/list/seed_output = list()
 	for(var/i in 1 to rand(1,4))
 		var/obj/item/seeds/seeds = new(get_turf(O))
-		seeds.seed_type = plant_controller.seeds[O.seed.name]
+		seeds.seed = SSplants.seeds[O.plantname]
+		seeds.seed_type = SSplants.seeds[O.seed.name]
 		seeds.update_seed()
 		seed_output += weakref(seeds)
+	qdel(O)
 
 	if(seed_output.len)
 		set_pin_data(IC_OUTPUT, 1, seed_output)
@@ -556,7 +558,7 @@
 	action_flags = IC_ACTION_LONG_RANGE
 
 	origin_tech = list(TECH_MAGNET = 1, TECH_BLUESPACE = 3)
-	matter = list(DEFAULT_WALL_MATERIAL = 10000)
+	matter = list(MATERIAL_STEEL = 10000)
 
 /obj/item/integrated_circuit/manipulation/bluespace_rift/do_work()
 	var/obj/machinery/computer/teleporter/tporter = get_pin_data_as_type(IC_INPUT, 1, /obj/machinery/computer/teleporter)

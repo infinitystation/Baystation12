@@ -73,11 +73,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	power_equip = 0
 	power_environ = 0
 	has_gravity = 0
-	area_flags = AREA_FLAG_EXTERNAL
+	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT
 	forced_ambience = list('sound/ambience/karlskar.ogg')
-
-/area/space/update_icon()
-	return
 
 /area/space/atmosalert()
 	return
@@ -102,6 +99,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "centcom"
 	requires_power = 0
 	dynamic_lighting = 0
+	area_flags = AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/centcom/holding
 	name = "\improper Holding Facility"
@@ -127,24 +125,22 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/security/brig
 	name = "\improper Security - Brig"
 	icon_state = "brig"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/security/prison
 	name = "\improper Security - Prison Wing"
 	icon_state = "sec_prison"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/maintenance
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
-	turf_initializer = /decl/turf_initializer/maintenance
+//	turf_initializer = /decl/turf_initializer/maintenance
 	forced_ambience = list('sound/ambience/maintambience.ogg')
 
 /area/rnd/xenobiology
 	name = "\improper Xenobiology Lab"
 	icon_state = "xeno_lab"
-/*
-/area/rnd/xenobiology/lobby
-	name = "\improper Xenobiology Lobby"
-	icon_state = "xeno_lab"*/
 
 /area/rnd/xenobiology/xenoflora
 	name = "\improper Xenoflora Lab"

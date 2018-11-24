@@ -4,10 +4,10 @@
 	feedback = "BL"
 	school = "conjuration"
 	charge_max = 20
-	spell_flags = Z2NOCAST | IGNOREDENSE | IGNORESPACE
+	spell_flags = Z2NOCAST | IGNOREDENSE | IGNORESPACE | NO_SOMATIC
 	invocation = "none"
 	invocation_type = SpI_NONE
-	range = 7
+	range = 14 // infinity-ss13: old first number - 7
 	inner_radius = 1
 
 	level_max = list(Sp_TOTAL = 4, Sp_SPEED = 4, Sp_POWER = 4)
@@ -26,12 +26,14 @@
 		user.forceMove(T)
 
 		var/datum/effect/effect/system/smoke_spread/smoke = new /datum/effect/effect/system/smoke_spread()
-		smoke.set_up(3, 0, starting)
+		smoke.set_up(10, 0, starting) // infinity-ss13: old first number - 5
 		smoke.start()
 
+		/* infinity-ss13
 		smoke = new()
 		smoke.set_up(3, 0, T)
 		smoke.start()
+		*/
 
 	return
 

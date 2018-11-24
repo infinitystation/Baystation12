@@ -17,7 +17,7 @@
 	else if(contents.len)
 		to_chat(user, "It has [contents.len] cig butts in it.")
 
-/obj/item/weapon/material/ashtray/update_icon()
+/obj/item/weapon/material/ashtray/on_update_icon()
 	overlays.Cut()
 	if (contents.len == max_butts)
 		overlays |= image('icons/obj/objects.dmi',"ashtray_full")
@@ -63,10 +63,10 @@
 	return ..()
 
 /obj/item/weapon/material/ashtray/plastic/New(var/newloc)
-	..(newloc, "plastic")
+	..(newloc, MATERIAL_PLASTIC)
 
 /obj/item/weapon/material/ashtray/bronze/New(var/newloc)
-	..(newloc, "bronze")
+	..(newloc, MATERIAL_BRONZE)
 
 /obj/item/weapon/material/ashtray/glass/New(var/newloc)
-	..(newloc, "glass")
+	..(newloc, MATERIAL_GLASS)

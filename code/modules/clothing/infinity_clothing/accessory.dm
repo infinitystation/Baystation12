@@ -87,7 +87,7 @@
 /obj/item/clothing/accessory/necklace/collar/shock/Topic(href, href_list)
 	if(usr.stat || usr.restrained())
 		return
-	if(((istype(usr, /mob/living/carbon/human) && ((!( ticker ) || (ticker && ticker.mode != "monkey")) && usr.contents.Find(src))) || (usr.contents.Find(master) || (in_range(src, usr) && istype(loc, /turf)))))
+	if(((istype(usr, /mob/living/carbon/human) && ((!( SSticker ) || (SSticker && SSticker.mode != "monkey")) && usr.contents.Find(src))) || (usr.contents.Find(master) || (in_range(src, usr) && istype(loc, /turf)))))
 		usr.set_machine(src)
 		if(href_list["freq"])
 			var/new_frequency = sanitize_frequency(frequency + text2num(href_list["freq"]))
@@ -194,7 +194,7 @@
 	desc = "A small CSG flag."
 	icon_state = "csg"
 
-/obj/item/clothing/accessory/badge/tags // non-solgov variant
+/obj/item/clothing/accessory/badge/dog_tags // non-solgov variant
 	name = "dog tags"
 	desc = "Plain identification tags made from a durable metal. They are stamped with a variety of informational details."
 	gender = PLURAL
@@ -204,7 +204,7 @@
 	badge_string = null
 	slot_flags = SLOT_MASK | SLOT_TIE
 
-/obj/item/clothing/accessory/badge/tags/Initialize()
+/obj/item/clothing/accessory/badge/dog_tags/Initialize()
 	. = ..()
 	var/mob/living/carbon/human/H
 	H = get_holder_of_type(src, /mob/living/carbon/human)
@@ -212,7 +212,7 @@
 		set_name(H.real_name)
 		set_desc(H)
 
-/obj/item/clothing/accessory/badge/tags/attack_self(mob/living/carbon/human/user as mob)
+/obj/item/clothing/accessory/badge/dog_tags/attack_self(mob/living/carbon/human/user as mob)
 	.=..()
 	if(!badge_string)
 		var/confirm = alert("Set badges's faction as your own faction?", "Badge Choice", "Yes", "No")
@@ -226,7 +226,7 @@
 			badge_string = faction.name
 		to_chat(user, "<span class='notice'>[src]'s faction now is '[badge_string]'.</span>")
 
-/obj/item/clothing/accessory/badge/tags/set_desc(var/mob/living/carbon/human/H)
+/obj/item/clothing/accessory/badge/dog_tags/set_desc(var/mob/living/carbon/human/H)
 	if(!istype(H))
 		return
 	var/decl/cultural_info/culture = H.get_cultural_value(TAG_RELIGION)
@@ -238,3 +238,26 @@
 
 	for(var/i = 0, i < slots, i++)
 		new /obj/item/ammo_casing/shotgun/pellet(hold)
+
+/obj/item/clothing/accessory/scarf/red
+	name = "red striped scarf"
+	icon = 'icons/obj/clothing/infinity/TG_copy/neck.dmi'
+	icon_state = "stripedredscarf"
+	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_suit_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_mask_str  = 'icons/mob/infinity/sprite_accessories.dmi')
+
+/obj/item/clothing/accessory/armor/helmcover/scp_cover
+	name = "SCP cover"
+	desc = "A fabric cover for armored helmets. This one has SCP's colors."
+	icon_override = 'icons/mob/infinity/ties.dmi'
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "scp_cover"
+	accessory_icons = list(slot_tie_str = 'icons/mob/infinity/ties.dmi', slot_head_str = 'icons/mob/infinity/ties.dmi')
+
+/obj/item/clothing/accessory/armor/tag/scp
+	name = "SCP tag"
+	desc = "An armor tag with the words SECURITY CORPORATE PERSONAL printed in red lettering on it."
+	icon_override = 'icons/mob/infinity/ties.dmi'
+	icon = 'icons/obj/clothing/infinity/ties.dmi'
+	icon_state = "scp_tag"
+	accessory_icons = list(slot_tie_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
+

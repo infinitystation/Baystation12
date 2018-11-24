@@ -1,23 +1,20 @@
 /obj/item/weapon/book/manual/nt_regs
-	name = "NanoTrasen Regulations"
-	desc = "A set of corporate guidelines for employees of NanoTrasen."
-	icon_state = "booknanoregs"
-	author = "NanoTrasen"
-	title = "NanoTrasen Regulations"
+	name = "Corporate Regulations"
+	desc = "A set of corporate guidelines for employees of a megacorporation."
+	icon = 'icons/obj/library_inf.dmi'
+	icon_state = "bookNTLaw"
+	author = "Employee Materials"
+	title = "Corporate Regulations"
 
 /obj/item/weapon/book/manual/nt_regs/New()
 	..()
 	dat = {"
-
 		<html><head>
 		</head>
-
 		<body>
 		<iframe width='100%' height='97%' src="[config.wikiurl]index.php?title=Корпоративные_законы&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
 		</body>
-
 		</html>
-
 		"}
 
 /obj/item/weapon/book/manual/hydroponics_pod_people

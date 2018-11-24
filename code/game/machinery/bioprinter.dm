@@ -31,7 +31,7 @@
 		return
 	return ..()
 
-/obj/machinery/organ_printer/update_icon()
+/obj/machinery/organ_printer/on_update_icon()
 	overlays.Cut()
 	if(panel_open)
 		overlays += "bioprinter_panel_open"
@@ -128,7 +128,7 @@
 		)
 
 	var/matter_amount_per_sheet = 10
-	var/matter_type = DEFAULT_WALL_MATERIAL
+	var/matter_type = MATERIAL_STEEL
 
 /obj/machinery/organ_printer/robot/mapped/Initialize()
 	. = ..()

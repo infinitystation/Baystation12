@@ -35,6 +35,10 @@
 	. = ..()
 	to_chat(user, "It has [cartridges.len] cartridges installed, and has space for [DISPENSER_MAX_CARTRIDGES - cartridges.len] more.")
 
+/obj/machinery/chemical_dispenser/MouseDrop(var/obj/structure/table/T)
+	if(istype(T) && Adjacent(T) && CanMouseDrop(T, usr) && !T.flipped && !can_contaminate)
+		src.forceMove(get_turf(T))
+
 /obj/machinery/chemical_dispenser/proc/add_cartridge(obj/item/weapon/reagent_containers/chem_disp_cartridge/C, mob/user)
 	if(!istype(C))
 		if(user)
@@ -141,6 +145,7 @@
 		ui = new(user, src, ui_key, "chem_disp.tmpl", ui_title, 390, 680)
 		ui.set_initial_data(data)
 		ui.open()
+		ui.set_auto_update(1)
 
 /obj/machinery/chemical_dispenser/OnTopic(mob/user, href_list)
 	if(href_list["amount"])
@@ -181,7 +186,7 @@
 /obj/machinery/chemical_dispenser/attack_hand(mob/user as mob)
 	ui_interact(user)
 
-/obj/machinery/chemical_dispenser/update_icon()
+/obj/machinery/chemical_dispenser/on_update_icon()
 	overlays.Cut()
 	if(container)
 		var/mutable_appearance/beaker_overlay

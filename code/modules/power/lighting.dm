@@ -22,8 +22,8 @@
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "tube-construct-stage1"
 	anchored = 1
-	plane = ABOVE_HUMAN_PLANE
-	layer = ABOVE_HUMAN_LAYER
+	plane = BLOB_PLANE
+	layer = BLOB_SHIELD_LAYER
 
 	var/stage = 1
 	var/fixture_type = /obj/machinery/light
@@ -42,7 +42,7 @@
 
 	update_icon()
 
-/obj/machinery/light_construct/update_icon()
+/obj/machinery/light_construct/on_update_icon()
 	switch(stage)
 		if(1) icon_state = "tube-construct-stage1"
 		if(2) icon_state = "tube-construct-stage2"
@@ -119,13 +119,13 @@
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "bulb-construct-stage1"
 	anchored = 1
-	plane = ABOVE_HUMAN_PLANE
-	layer = ABOVE_HUMAN_LAYER
+	plane = BLOB_PLANE //Yesyes but we can't type '-5.5' at planes.
+	layer = BLOB_SHIELD_LAYER
 	stage = 1
 	fixture_type = /obj/machinery/light/small
 	sheets_refunded = 1
 
-/obj/machinery/light_construct/small/update_icon()
+/obj/machinery/light_construct/small/on_update_icon()
 	switch(stage)
 		if(1) icon_state = "bulb-construct-stage1"
 		if(2) icon_state = "bulb-construct-stage2"
@@ -139,8 +139,8 @@
 	icon_state = "tube_map"
 	desc = "A lighting fixture."
 	anchored = 1
-	plane = ABOVE_HUMAN_PLANE
-	layer = ABOVE_HUMAN_LAYER  					// They were appearing under mobs which is a little weird - Ostaf
+	plane = BLOB_PLANE //Yesyes but we can't type '-5.5' at planes.
+	layer = BLOB_SHIELD_LAYER
 	use_power = 2
 	idle_power_usage = 2
 	active_power_usage = 20
@@ -176,6 +176,9 @@
 	desc = "A more robust socket for light tubes that demand more power."
 	light_type = /obj/item/weapon/light/tube/large
 
+/obj/machinery/light/halogen
+	light_type = /obj/item/weapon/light/tube/halogen
+
 // create a new lighting fixture
 /obj/machinery/light/New(atom/newloc, obj/machinery/light_construct/construct = null)
 	..(newloc)
@@ -199,7 +202,7 @@
 	QDEL_NULL(s)
 	. = ..()
 
-/obj/machinery/light/update_icon(var/trigger = 1)
+/obj/machinery/light/on_update_icon(var/trigger = 1)
 	overlays = overlays.Cut()
 	icon_state = "[base_state]_empty" //Never use the initial state. That'll just reset it to the mapping icon.
 	pixel_y = 0
@@ -538,15 +541,15 @@
 	var/status = 0		// LIGHT_OK, LIGHT_BURNED or LIGHT_BROKEN
 	var/base_state
 	var/switchcount = 0	// number of times switched
-	matter = list(DEFAULT_WALL_MATERIAL = 60)
+	matter = list(MATERIAL_STEEL = 60)
 	var/rigged = 0		// true if rigged to explode
 	var/broken_chance = 2
 
-	var/b_max_bright = 0.9 // Террор настаивает на 0.7, но на время путь будет так ~bear1ake
+	var/b_max_bright = 0.9
 	var/b_inner_range = 1
 	var/b_outer_range = 5
 	var/b_curve = 2
-	var/b_colour = "#fffee0"
+	var/b_colour = LIGHT_COLOR_LYELLOW
 	var/list/lighting_modes = list()
 	var/sound_on
 
@@ -556,11 +559,9 @@
 	icon_state = "ltube"
 	base_state = "ltube"
 	item_state = "c_tube"
-	matter = list("glass" = 100)
+	matter = list(MATERIAL_GLASS = 100)
 
-	b_max_bright = 0.7
-	b_outer_range = 6
-	b_colour = "#ffffff"
+	b_outer_range = 5
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_outer_range = 4, l_max_bright = 1, l_color = "#da0205"),
 		)
@@ -573,8 +574,7 @@
 /obj/item/weapon/light/tube/large
 	w_class = ITEM_SIZE_SMALL
 	name = "large light tube"
-	b_max_bright = 0.7
-	b_max_bright = 0.95 // Террор настаивает на отсутствии этого значения, но на время путь будет так ~bear1ake
+	b_max_bright = 0.95
 	b_inner_range = 2
 	b_outer_range = 8
 	b_curve = 2.5
@@ -583,6 +583,11 @@
 	. = ..()
 	b_colour = rgb(pick(0,255), pick(0,255), pick(0,255))
 
+/obj/item/weapon/light/tube/halogen
+	name = "halogen light tube"
+	color = LIGHT_COLOR_HALOGEN //visual icon
+	b_colour = LIGHT_COLOR_HALOGEN
+
 /obj/item/weapon/light/bulb
 	name = "light bulb"
 	desc = "A replacement light bulb."
@@ -590,13 +595,13 @@
 	base_state = "lbulb"
 	item_state = "contvapour"
 	broken_chance = 3
-	matter = list("glass" = 100)
+	matter = list(MATERIAL_GLASS = 100)
 
-	b_max_bright = 0.6 // Террор настаивает на 0.7, но на время путь будет так ~bear1ake
+	b_max_bright = 0.6
 	b_inner_range = 0.1
 	b_outer_range = 4
 	b_curve = 3
-	b_colour = "#fae1af"
+	b_colour = LIGHT_COLOR_TUNGSTEN
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_outer_range = 3, l_max_bright = 1, l_color = "#da0205"),
 		)
@@ -620,10 +625,10 @@
 	icon_state = "fbulb"
 	base_state = "fbulb"
 	item_state = "egg4"
-	matter = list("glass" = 100)
+	matter = list(MATERIAL_GLASS = 100)
 
 // update the icon state and description of the light
-/obj/item/weapon/light/update_icon()
+/obj/item/weapon/light/on_update_icon()
 	color = b_colour
 	var/broken
 	switch(status)

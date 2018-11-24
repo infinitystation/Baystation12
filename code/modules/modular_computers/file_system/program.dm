@@ -24,9 +24,10 @@
 	var/computer_emagged = 0						// Set to 1 if computer that's running us was emagged. Computer updates this every Process() tick
 	var/ui_header = null							// Example: "something.gif" - a header image that will be rendered in computer's UI when this program is running at background. Images are taken from /nano/images/status_icons. Be careful not to use too large images!
 	var/ntnet_speed = 0								// GQ/s - current network connectivity transfer rate
+	var/operator_skill = SKILL_MIN                  // Holder for skill value of current/recent operator for programs that tick.
 
 /datum/computer_file/program/New(var/obj/item/modular_computer/comp = null)
-	..()
+	..(null)
 	if(comp && istype(comp))
 		computer = comp
 
@@ -58,7 +59,7 @@
 		return
 	return F
 
-/datum/computer_file/program/proc/create_file(var/newname, var/data = "", var/file_type = /datum/computer_file/data)
+/datum/computer_file/program/proc/create_file(var/newname, var/data = "", var/file_type = /datum/computer_file/data, var/list/metadata = null)
 	if(!newname)
 		return
 	var/obj/item/weapon/computer_hardware/hard_drive/HDD = computer.hard_drive
@@ -66,7 +67,8 @@
 		return
 	if(get_file(newname))
 		return
-	var/datum/computer_file/data/F = new file_type
+	
+	var/datum/computer_file/data/F = new file_type(md = metadata)
 	F.filename = newname
 	F.stored_data = data
 	F.calculate_size()

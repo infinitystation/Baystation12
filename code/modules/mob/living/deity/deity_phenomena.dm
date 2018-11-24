@@ -63,6 +63,12 @@
 		for(var/mod in intent_list)
 			if(intent_list[mod] == P)
 				intent_list[mod] = null
+	var/obj/screen/intent/deity/SD = hud_used.action_intent
+	SD.update_text()
+	update_phenomenas()
+	update_phenomena_bindings()
+	if(selected == to_remove)
+		selected = null
 	qdel(P)
 
 /mob/living/deity/proc/populate_intent(var/intent)

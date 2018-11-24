@@ -1,47 +1,24 @@
-/datum/gear/suit/blueapron
-
-/datum/gear/suit/overalls
-
 /datum/gear/suit/medcoat
 	allowed_roles = MEDICAL_ROLES
-
-/datum/gear/suit/trenchcoat
 
 /datum/gear/suit/poncho
 	display_name = "poncho selection"
 	path = /obj/item/clothing/suit/poncho/colored
 
 /datum/gear/suit/security_poncho
-	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/merchant)
+	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/merchant, /datum/job/merchant_trainee)
 
 /datum/gear/suit/medical_poncho
-	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/explorer_medic, /datum/job/psychiatrist, /datum/job/chemist, /datum/job/roboticist, /datum/job/merchant)
+	allowed_roles = list(/datum/job/cmo, /datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/explorer_medic, /datum/job/psychiatrist, /datum/job/chemist, /datum/job/roboticist, /datum/job/merchant, /datum/job/merchant_trainee)
 
 /datum/gear/suit/engineering_poncho
-	allowed_roles = list(/datum/job/chief_engineer, /datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/engineer_trainee, /datum/job/explorer_engineer, /datum/job/merchant)
+	allowed_roles = list(/datum/job/chief_engineer, /datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/engineer_trainee, /datum/job/explorer_engineer, /datum/job/merchant, /datum/job/merchant_trainee)
 
 /datum/gear/suit/science_poncho
-	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/assistant, /datum/job/nt_pilot, /datum/job/senior_scientist, /datum/job/roboticist, /datum/job/merchant)
+	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/assistant, /datum/job/senior_scientist, /datum/job/roboticist, /datum/job/merchant, /datum/job/merchant_trainee)
 
 /datum/gear/suit/cargo_poncho
-	allowed_roles = list(/datum/job/qm, /datum/job/cargo_tech, /datum/job/cargo_assistant, /datum/job/merchant)
-
-/datum/gear/suit/suit_jacket
-
-/datum/gear/suit/custom_suit_jacket
-
-/datum/gear/suit/hoodie
-
-/datum/gear/suit/hoodie_sel
-
-/datum/gear/suit/labcoat
-	allowed_roles = STERILE_ROLES
-
-/datum/gear/suit/coat
-
-/datum/gear/suit/leather
-
-/datum/gear/suit/wintercoat
+	allowed_roles = list(/datum/job/qm, /datum/job/cargo_tech, /datum/job/cargo_assistant, /datum/job/merchant, /datum/job/merchant_trainee)
 
 /datum/gear/suit/wintercoat/engineering
 	display_name = "expeditionary winter coat"
@@ -72,5 +49,22 @@
 	display_name = "science winter coat"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat/science
 	allowed_roles = RESEARCH_ROLES
+	
+/datum/gear/suit/labcoat
+	allowed_roles = STERILE_ROLES
 
-/datum/gear/suit/track
+/datum/gear/suit/labcoat_nanotrasen
+	display_name = "labcoat, NanoTrasen"
+	allowed_roles = RESEARCH_ROLES
+
+/datum/gear/suit/labcoat_dais
+	display_name = "labcoat, DAIS"
+	allowed_roles = list(/datum/job/engineer, /datum/job/scientist, /datum/job/rd, /datum/job/roboticist)
+
+/datum/gear/suit/wintercoat_dais
+	display_name = "winter coat, DAIS"
+	allowed_roles = list(/datum/job/engineer, /datum/job/scientist, /datum/job/rd)
+
+/datum/gear/suit/labcoat_nanotrasen_rd
+	display_name = "labcoat, NanoTrasen, Research Director"
+	allowed_roles = list(/datum/job/rd)

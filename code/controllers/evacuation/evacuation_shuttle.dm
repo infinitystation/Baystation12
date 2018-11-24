@@ -37,7 +37,7 @@
 			pod.launch(src)
 
 	if(autopilot && shuttle.moving_status == SHUTTLE_IDLE)
-		evac_arrival_time = world.time + evac_transit_delay
+		evac_arrival_time = evac_transit_delay //world.time + (shuttle.move_time*10) + (shuttle.warmup_time*10)
 		shuttle.launch(src)
 	// Announcements, state changes and such are handled by the shuttle itself to prevent desync.
 

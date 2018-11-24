@@ -9,10 +9,14 @@
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 	amount_per_transfer_from_this = 5
 	volume = 50
-	possible_transfer_amounts = "5;10;15;30;35;40;45;50"
 	var/filling_states   // List of percentages full that have icons
 	var/base_name = null // Name to put in front of drinks, i.e. "[base_name] of [contents]"
 	var/base_icon = null // Base icon name for fill states
+
+/obj/item/weapon/reagent_containers/food/drinks/Initialize()
+	. = ..()
+	if(is_open_container())
+		verbs += /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
 
 /obj/item/weapon/reagent_containers/food/drinks/on_reagent_change()
 	update_icon()
@@ -26,6 +30,7 @@
 	playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1)
 	to_chat(user, "<span class='notice'>You open \the [src] with an audible pop!</span>")
 	atom_flags |= ATOM_FLAG_OPEN_CONTAINER
+	verbs += /obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole
 
 /obj/item/weapon/reagent_containers/food/drinks/attack(mob/M as mob, mob/user as mob, def_zone)
 	if(force && !(item_flags & ITEM_FLAG_NO_BLUDGEON) && user.a_intent == I_HURT)
@@ -64,16 +69,10 @@
 	return ..()
 
 /obj/item/weapon/reagent_containers/food/drinks/self_feed_message(var/mob/user)
-	if(amount_per_transfer_from_this == volume && amount_per_transfer_from_this >= reagents.total_volume)
-		visible_message("<big><span class='notice'>[user] gulped down the whole [src]. Wow!</span></big>")
-	else
-		to_chat(user, "<span class='notice'>You swallow a gulp from \the [src].</span>")
+	to_chat(user, "<span class='notice'>You swallow a gulp from \the [src].</span>")
 
 /obj/item/weapon/reagent_containers/food/drinks/feed_sound(var/mob/user)
-	if(amount_per_transfer_from_this == volume && amount_per_transfer_from_this >= reagents.total_volume)
-		playsound(user.loc, 'sound/items/drinking_after.ogg', rand(10, 50), 1)
-	else
-		playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), 1)
+	playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), 1)
 
 /obj/item/weapon/reagent_containers/food/drinks/examine(mob/user)
 	if(!..(user, 1))
@@ -95,7 +94,7 @@
 		if(percent <= k)
 			return k
 
-/obj/item/weapon/reagent_containers/food/drinks/update_icon()
+/obj/item/weapon/reagent_containers/food/drinks/on_update_icon()
 	overlays.Cut()
 	if(reagents.reagent_list.len > 0)
 		if(base_name)
@@ -110,6 +109,39 @@
 		SetName(initial(name))
 		desc = initial(desc)
 
+/obj/item/weapon/reagent_containers/food/drinks/proc/gulp_whole()
+	set category = "Object"
+	set name = "Gulp Down"
+	set src in view(1)
+
+	if(!istype(usr.get_active_hand(), src))
+		to_chat(usr, SPAN_WARNING("You need to hold \the [src] in hands!"))
+		return
+
+	if(is_open_container())
+		if(ishuman(usr))
+			var/mob/living/carbon/human/H = usr
+			if(!H.check_has_mouth())
+				to_chat(H, "Where do you intend to put \the [src]? You don't have a mouth!")
+				return
+			var/obj/item/blocked = H.check_mouth_coverage()
+			if(blocked)
+				to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
+				return
+		if(reagents.total_volume > 30) // 30 equates to 3 SECONDS.
+			usr.visible_message(SPAN_NOTICE("[usr] prepares to gulp down [src]."), SPAN_NOTICE("You prepare to gulp down [src]."))
+		playsound(usr, 'sound/items/drinking.ogg', reagents.total_volume, 1)
+		if(!do_after(usr, reagents.total_volume))
+			if(!Adjacent(usr))
+				return
+			standard_splash_mob(src, src)
+		if(!Adjacent(usr))
+			return
+		usr.visible_message(SPAN_NOTICE("[usr] gulped down the whole [src]!"),SPAN_NOTICE("You gulped down the whole [src]!"))
+		playsound(usr, 'sound/items/drinking_after.ogg', reagents.total_volume, 1)
+		reagents.trans_to_mob(usr, reagents.total_volume, CHEM_INGEST)
+	else
+		to_chat(usr, SPAN_NOTICE("You need to open \the [src] first!"))
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Drinks. END
@@ -331,16 +363,22 @@
 	base_name = "heart cup"
 
 /obj/item/weapon/reagent_containers/food/drinks/coffeecup/SCG
-	name = "SCG coffee cup"
+	name = "\improper SCG coffee cup"
 	desc = "A blue coffee cup emblazoned with the crest of the Sol Central Government."
 	icon_state = "coffeecup_SCG"
-	base_name = "SCG cup"
+	base_name = "\improper SCG cup"
 
 /obj/item/weapon/reagent_containers/food/drinks/coffeecup/NT
-	name = "NT coffee cup"
-	desc = "A red NanoTrasen coffee cup. 90% Guaranteed to not be laced with mind-control drugs."
+	name = "\improper NT coffee cup"
+	desc = "A red NanoTrasen coffee cup. 90% guaranteed to not be laced with mind-control drugs."
 	icon_state = "coffeecup_NT"
 	base_name = "NT cup"
+
+/obj/item/weapon/reagent_containers/food/drinks/coffeecup/corp
+	name = "\improper Expeditionary Corps Organisation coffee cup"
+	desc = "A tasteful coffee cup in Expeditionary Corps Organisation corporate colours."
+	icon_state = "coffeecup_corp"
+	base_name = "EXO cup"
 
 /obj/item/weapon/reagent_containers/food/drinks/coffeecup/one
 	name = "#1 coffee cup"
@@ -406,3 +444,9 @@
 	filling_states = "50;70;90;100"
 	base_name = "tall cup"
 	base_icon = "coffeecup_tall"
+
+/obj/item/weapon/reagent_containers/food/drinks/coffeecup/dais
+	name = "\improper DAIS coffee cup"
+	desc = "A coffee cup imprinted with the stylish logo of Deimos Advanced Information Systems."
+	icon_state = "coffeecup_dais"
+	base_name = "DAIS cup"

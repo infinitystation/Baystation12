@@ -1,5 +1,5 @@
 /************
-* SEV sierra *
+* NSV sierra *
 ************/
 /var/const/access_hangar = 73
 /datum/access/hangar
@@ -37,18 +37,6 @@
 	desc = "Internal Affairs Agent"
 	region = ACCESS_REGION_COMMAND
 	access_type = ACCESS_TYPE_NONE //Ruler of their own domain, CO and RD cannot enter
-
-/var/const/access_nanotrasen = 81
-/datum/access/nanotrasen
-	id = access_nanotrasen
-	desc = "NanoTrasen Personnel"
-	region = ACCESS_REGION_RESEARCH
-
-/var/const/access_robotics_engineering = 82 //two accesses so that you can give access to the lab without giving access to the borgs
-/datum/access/robotics_engineering
-	id = access_robotics_engineering
-	desc = "Biomechanical Engineering"
-	region = ACCESS_REGION_ENGINEERING
 
 /var/const/access_gun = 87
 /datum/access/gun
@@ -92,12 +80,6 @@
 	desc = "Exploration Leader"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_pilot = 95
-/datum/access/pilot
-	id = access_pilot
-	desc = "NT Pilot"
-	region = ACCESS_REGION_GENERAL
-
 /var/const/access_commissary = 96
 /datum/access/commissary
 	id = access_commissary
@@ -106,7 +88,7 @@
 
 
 /************
-* SEV sierra *
+* NSV sierra *
 ************/
 
 /datum/access/network

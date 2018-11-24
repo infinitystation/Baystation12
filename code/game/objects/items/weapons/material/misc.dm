@@ -48,7 +48,6 @@
 /obj/item/weapon/material/hatchet/machete/deluxe
 	name = "deluxe machete"
 	desc = "A fine example of a machete, with a polished blade, wooden handle and a leather cord loop."
-	matter = list(DEFAULT_WALL_MATERIAL = 18000)
 
 /obj/item/weapon/material/hatchet/machete/deluxe/Initialize()
 	. = ..()

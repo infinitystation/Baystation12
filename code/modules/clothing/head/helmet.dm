@@ -176,6 +176,12 @@
 	icon_state = "m_helmet"
 
 /obj/item/clothing/head/helmet/nt/pilot
-	name = "nanotrasen pilot's helmet"
-	desc = "A nanotrasen pilot's helmet for operating the cockpit in style. This one is worn by members of Nanotrasen."
+	name = "corporate pilot's helmet"
+	desc = "A corporate pilot's helmet for operating the cockpit in style for a hefty paycheck."
 	icon_state = "pilotnt"
+
+/obj/item/clothing/head/helmet/skrell
+	name = "skrellian helmet"
+	desc = "A helmet built for use by a Skrell. This one appears to be fairly standard and reliable."
+	icon_state = "helmet_skrell"
+	valid_accessory_slots = null

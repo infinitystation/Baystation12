@@ -37,7 +37,7 @@
 
 /datum/event/prison_break/announce()
 	if(areas && areas.len > 0)
-		command_announcement.Announce("[pick("Gr3y.T1d3 virus","Malignant trojan")] detected in [location_name()] [(eventDept == "Security")? "imprisonment":"containment"] subroutines. Secure any compromised areas immediately. [location_name()] AI involvement is recommended.", "[eventDept] Alert", zlevels = affecting_z)
+		priority_announcement.Announce("[pick("Вирус GR31 71D3","Троян")] обнаружен в системах [location_name()] [(eventDept == "Security")? "камер заключенных":"зон содержания"] судна. Требуется скорейший ремонт систем в указанных зонах. Помощь ИИ [location_name()] рекомендуется.", "[eventDept] Alert", zlevels = affecting_z)
 
 
 /datum/event/prison_break/start()

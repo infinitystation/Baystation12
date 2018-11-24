@@ -35,9 +35,11 @@ SUBSYSTEM_DEF(supply)
 	ordernum = rand(1,9000)
 
 	//Build master supply list
-	for(var/decl/hierarchy/supply_pack/sp in cargo_supply_pack_root.children)
+	var/decl/hierarchy/supply_pack/root = decls_repository.get_decl(/decl/hierarchy/supply_pack)
+	for(var/decl/hierarchy/supply_pack/sp in root.children)
 		if(sp.is_category())
-			for(var/decl/hierarchy/supply_pack/spc in sp.children)
+			for(var/decl/hierarchy/supply_pack/spc in sp.get_descendents())
+				spc.setup()
 				master_supply_list += spc
 
 	for(var/material/mat in SSmaterials.materials)
@@ -98,10 +100,10 @@ SUBSYSTEM_DEF(supply)
 						continue
 
 					// Sell materials
-					if(istype(A, /obj/item/stack))
+					if(istype(A, /obj/item/stack/material))
 						var/obj/item/stack/P = A
 						var/material/material = P.get_material()
-						if(material.sale_price > 0)
+						if(material && material.sale_price > 0)
 							material_count[material.display_name] += P.get_amount() * material.sale_price
 						continue
 

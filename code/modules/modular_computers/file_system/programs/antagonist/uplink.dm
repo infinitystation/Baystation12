@@ -4,8 +4,8 @@
 	program_icon_state = "uplink"
 	extended_desc = "An online tax filing software. It is a few years out of date."
 	size = 0 // it is cloud based
-	requires_ntnet = 0
-	available_on_ntnet = 0
+	requires_ntnet = 1
+	available_on_ntnet = 1
 	usage_flags = PROGRAM_PDA
 	nanomodule_path = /datum/nano_module/program/uplink
 
@@ -19,6 +19,8 @@
 	name = "TaxQuickly 2559"
 
 /datum/nano_module/program/uplink/ui_interact(var/mob/user)
+	if (!isliving(user))
+		return
 	var/datum/computer_file/program/uplink/prog = program
 	var/obj/item/modular_computer/computer = host
 	if(istype(computer) && istype(prog))

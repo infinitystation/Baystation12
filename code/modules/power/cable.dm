@@ -125,7 +125,7 @@ By design, d1 is the smallest direction and d2 is the highest
 /obj/structure/cable/hides_under_flooring()
 	return 1
 
-/obj/structure/cable/update_icon()
+/obj/structure/cable/on_update_icon()
 	icon_state = "[d1]-[d2]"
 	alpha = invisibility ? 127 : 255
 
@@ -484,7 +484,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	w_class = ITEM_SIZE_NORMAL
 	throw_speed = 2
 	throw_range = 5
-	matter = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 20)
+	matter = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 20)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 	item_state = "coil"
@@ -539,7 +539,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	return ..()
 
 
-/obj/item/stack/cable_coil/update_icon()
+/obj/item/stack/cable_coil/on_update_icon()
 	if (!color)
 		color = GLOB.possible_cable_colours[pick(GLOB.possible_cable_colours)]
 	if(amount == 1)

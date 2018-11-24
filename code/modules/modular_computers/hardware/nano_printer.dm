@@ -6,27 +6,29 @@
 	critical = 0
 	icon_state = "printer"
 	hardware_size = 1
-	var/stored_paper = 5
-	var/max_paper = 10
+	var/stored_paper = 50
+	var/max_paper = 50
 
 /obj/item/weapon/computer_hardware/nano_printer/diagnostics(var/mob/user)
 	..()
 	to_chat(user, "Paper buffer level: [stored_paper]/[max_paper]")
 
-/obj/item/weapon/computer_hardware/nano_printer/proc/print_text(var/text_to_print, var/paper_title = null)
+/obj/item/weapon/computer_hardware/nano_printer/proc/print_text(var/text_to_print, var/paper_title = null, var/paper_type = /obj/item/weapon/paper, var/list/md = null)
+	if(printer_ready())
+		// Damaged printer causes the resulting paper to be somewhat harder to read.
+		if(damage > damage_malfunction)
+			text_to_print = stars(text_to_print, 100-malfunction_probability)
+		new paper_type(get_turf(holder2),text_to_print, paper_title, md)
+		stored_paper--
+		return 1
+
+/obj/item/weapon/computer_hardware/nano_printer/proc/printer_ready()
 	if(!stored_paper)
 		return 0
 	if(!enabled)
 		return 0
 	if(!check_functionality())
 		return 0
-
-	// Damaged printer causes the resulting paper to be somewhat harder to read.
-	if(damage > damage_malfunction)
-		text_to_print = stars(text_to_print, 100-malfunction_probability)
-	new/obj/item/weapon/paper(get_turf(holder2),text_to_print, paper_title)
-
-	stored_paper--
 	return 1
 
 /obj/item/weapon/computer_hardware/nano_printer/attackby(obj/item/W as obj, mob/user as mob)

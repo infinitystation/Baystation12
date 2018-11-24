@@ -19,7 +19,7 @@
 /obj/item/vape/attackby(var/obj/item/W, var/mob/user)
 
 
-/obj/item/vape/update_icon()
+/obj/item/vape/on_update_icon()
 	..()
 	switch (vape_status)
 		if ("closed") icon_state = icon_closed

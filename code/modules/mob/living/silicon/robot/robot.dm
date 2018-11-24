@@ -759,7 +759,7 @@
 			return 1
 	return 0
 
-/mob/living/silicon/robot/update_icon()
+/mob/living/silicon/robot/on_update_icon()
 	overlays.Cut()
 	if(stat == CONSCIOUS)
 		var/eye_icon_state = "eyes-[module_sprites[icontype]]"

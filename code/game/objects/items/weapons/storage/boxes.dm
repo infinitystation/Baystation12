@@ -35,6 +35,16 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 
+/obj/item/weapon/storage/box/union_cards
+	name = "box of union cards"
+	desc = "A box of spare unsigned union membership cards."
+	startswith = list(/obj/item/weapon/card/union = 7)
+
+/obj/item/weapon/storage/box/large/union_cards
+	name = "large box of union cards"
+	desc = "A large box of spare unsigned union membership cards."
+	startswith = list(/obj/item/weapon/card/union = 14)
+
 // BubbleWrap - A box can be folded up to make card
 /obj/item/weapon/storage/box/attack_self(mob/user as mob)
 	if(..()) return
@@ -134,6 +144,10 @@
 	icon_state = "beaker"
 	startswith = list(/obj/item/weapon/reagent_containers/glass/beaker = 7)
 
+/obj/item/weapon/storage/box/beakers/insulated
+	name = "box of insulated beakers"
+	startswith = list(/obj/item/weapon/reagent_containers/glass/beaker/insulated = 7)
+
 /obj/item/weapon/storage/box/blanks
 	name = "box of blank shells"
 	desc = "It has a picture of a gun and several warning symbols on the front."
@@ -223,7 +237,7 @@
 /obj/item/weapon/storage/box/supermatters
 	name = "box of supermatter grenades"
 	desc = "A box containing 5 highly experimental supermatter grenades."
-	icon_state = "radbox"
+	icon_state = "box_of_doom"
 	startswith = list(/obj/item/weapon/grenade/supermatter = 5)
 
 /obj/item/weapon/storage/box/trackimp
@@ -304,40 +318,10 @@
 	desc = "Drymate brand neaera cubes, shipped from Jargon 4. Just add water!"
 	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/monkeycube/wrapped/neaeracube = 5)
 
-//cubed domestics
-
-/obj/item/weapon/storage/box/monkeycubes/catcubes
-	name = "cat cube box"
-	desc = "Drymate brand Instant cats. Just add water!"
-	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/monkeycube/wrapped/catcube = 2,
-						/obj/item/weapon/reagent_containers/food/snacks/monkeycube/wrapped/kcatcube = 3)
-
-/obj/item/weapon/storage/box/monkeycubes/dogcubes
-	name = "corgi cube box"
-	desc = "Drymate brand Instant dogs. Just add water!"
-	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/monkeycube/wrapped/corgicube = 2,
-						/obj/item/weapon/reagent_containers/food/snacks/monkeycube/wrapped/pcorgicube = 3)
-
-/obj/item/weapon/storage/box/monkeycubes/cowcubes
-	name = "cow cube box"
-	desc = "Drymate brand Instant cow. Just add water!"
-	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/monkeycube/wrapped/cowcube = 2)
-
-/obj/item/weapon/storage/box/monkeycubes/goatcubes
-	name = "goat cube box"
-	desc = "Drymate brand Instant goat. Just add water!"
-	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/monkeycube/wrapped/goatcube = 2)
-
-/obj/item/weapon/storage/box/monkeycubes/chickencubes
-	name = "chicken cube box"
-	desc = "Drymate brand Instant chicken. Just add water!"
-	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/monkeycube/wrapped/chickencube = 2,
-						/obj/item/weapon/reagent_containers/food/snacks/monkeycube/wrapped/chickcube = 3)
-
-/obj/item/weapon/storage/box/monkeycubes/slimecubes
-	name = "slime cube box"
-	desc = "Drymate brand Instant slime. Just add water! (Caution: Not for recreational use)"
-	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/monkeycube/wrapped/slimecube = 3)
+/obj/item/weapon/storage/box/monkeycubes/spidercubes
+	name = "spiderling cube box"
+	desc = "Drymate brand Instant spiders. WHY WOULD YOU ORDER THIS!?"
+	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/monkeycube/wrapped/spidercube = 5)
 
 /obj/item/weapon/storage/box/ids
 	name = "box of spare IDs"
@@ -390,16 +374,17 @@
 	can_hold = list(/obj/item/weapon/flame/match)
 	startswith = list(/obj/item/weapon/flame/match = 10)
 
-	attackby(obj/item/weapon/flame/match/W as obj, mob/user as mob)
-		if(istype(W) && !W.lit && !W.burnt)
-			W.lit = 1
-			W.damtype = "burn"
-			W.icon_state = "match_lit"
-			START_PROCESSING(SSobj, W)
-			playsound(src.loc, 'sound/items/match.ogg', 60, 1, -4)
-			user.visible_message("<span class='notice'>[user] strikes the match on the matchbox.</span>")
-		W.update_icon()
-		return
+/obj/item/weapon/storage/box/matches/attackby(obj/item/weapon/flame/match/W as obj, mob/user as mob)
+	if(istype(W) && !W.lit && !W.burnt)
+		W.lit = 1
+		W.damtype = "burn"
+		W.icon_state = "match_lit"
+		W.set_light(0.6, 0.5, 2)
+		START_PROCESSING(SSobj, W)
+		playsound(src.loc, 'sound/items/match.ogg', 60, 1, -4)
+		user.visible_message("<span class='notice'>[user] strikes the match on the matchbox.</span>")
+	W.update_icon()
+	return
 
 /obj/item/weapon/storage/box/autoinjectors
 	name = "box of injectors"
@@ -475,6 +460,10 @@
 	can_hold = list(/obj/item/organ, /obj/item/weapon/reagent_containers/food, /obj/item/weapon/reagent_containers/glass)
 	max_storage_space = DEFAULT_BACKPACK_STORAGE
 	use_to_pickup = 1 // for picking up broken bulbs, not that most people will try
+	temperature = -16 CELCIUS
+
+/obj/item/weapon/storage/box/freezer/ProcessAtomTemperature()
+	return PROCESS_KILL
 
 /obj/item/weapon/storage/box/checkers
 	name = "checkers box"
@@ -604,11 +593,3 @@
 
 /obj/item/weapon/storage/box/snack/chips
 	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/chips = 7)
-
-
-
-
-
-
-
-

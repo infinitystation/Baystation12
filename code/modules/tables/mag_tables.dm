@@ -21,7 +21,7 @@
 	maxhealth = 20
 	health = 20
 
-/obj/structure/table/mag/update_icon()
+/obj/structure/table/mag/on_update_icon()
 	if (locked)
 		icon_state = icon_state_closed
 	else

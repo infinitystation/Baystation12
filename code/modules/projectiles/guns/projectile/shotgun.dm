@@ -159,7 +159,7 @@
 	allowed_magazines = /obj/item/ammo_magazine/c12m
 	ammo_type = /obj/item/ammo_casing/shotgun
 
-/obj/item/weapon/gun/projectile/shotgun/magazine/update_icon()
+/obj/item/weapon/gun/projectile/shotgun/magazine/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "bulldog"

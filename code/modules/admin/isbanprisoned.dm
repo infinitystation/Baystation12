@@ -57,7 +57,7 @@
 	output += "<p>днапн онфюкнбюрэ</p>"
 	output += "<p>гщй б гюйнме</p>"
 
-	if(ticker && (ticker.current_state > GAME_STATE_PREGAME) && GLOB.prisonwarp)
+	if(SSticker && (GAME_STATE > RUNLEVEL_SETUP) && GLOB.prisonwarp)
 		output += "<p><a href='byond://?src=\ref[src];spawn_prisoner=1'>Join as Prisoner</A></p>"
 
 	src << browse(output,"window=playersetup;size=210x280;can_close=0")

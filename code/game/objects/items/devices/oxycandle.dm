@@ -1,6 +1,6 @@
 /obj/item/device/oxycandle
 	name = "oxygen candle"
-	desc = "A steel tube with the words 'OXYGEN - PULL CORD TO IGNITE' stamped on the side. A small label warns against using the device underwater"
+	desc = "A steel tube with the words 'OXYGEN - PULL CORD TO IGNITE' stamped on the side.\nA small label reads <span class='warning'>'WARNING: NOT FOR LIGHTING USE. WILL IGNITE FLAMMABLE GASSES'</span>"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "oxycandle"
 	item_state = "oxycandle"
@@ -19,6 +19,11 @@
 /obj/item/device/oxycandle/New()
 	..()
 	update_icon()
+
+/obj/item/device/oxycandle/afterattack(var/obj/O, var/mob/user, var/proximity)
+	if(proximity && istype(O) && on)
+		O.HandleObjectHeating(src, user, 500)
+	..()
 
 /obj/item/device/oxycandle/attack_self(mob/user)
 	if(!on)
@@ -61,7 +66,7 @@
 	var/list/air_mix = list("oxygen" = 1 * (target_pressure * air_contents.volume) / (R_IDEAL_GAS_EQUATION * air_contents.temperature))
 	air_contents.adjust_multi("oxygen", air_mix["oxygen"])
 
-/obj/item/device/oxycandle/update_icon()
+/obj/item/device/oxycandle/on_update_icon()
 	if(on == 1)
 		icon_state = "oxycandle_on"
 		item_state = icon_state

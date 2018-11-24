@@ -478,18 +478,18 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		remove_client_image(hud_image)
 
 /mob/observer/ghost/verb/toggle_anonsay()
-    set category = "Ghost"
-    set name = "Toggle Anonymous Chat"
-    set desc = "Toggles showing your key in dead chat."
-    if(client && client.banprisoned)
-        return
+	set category = "Ghost"
+	set name = "Toggle Anonymous Chat"
+	set desc = "Toggles showing your key in dead chat."
+	if(client && client.banprisoned)
+		return
 
-    if(client.get_preference_value(/datum/client_preference/anon_say) == GLOB.PREF_NO)
-        client.set_preference(/datum/client_preference/anon_say, GLOB.PREF_YES)
-        to_chat(src, "<span class='info'>Your key won't be shown when you speak in dead chat.</span>")
-    else
-        client.set_preference(/datum/client_preference/anon_say, GLOB.PREF_NO)
-        to_chat(src, "<span class='info'>Your key will be publicly visible again.</span>")
+	if(client.get_preference_value(/datum/client_preference/anon_say) == GLOB.PREF_NO)
+		client.set_preference(/datum/client_preference/anon_say, GLOB.PREF_YES)
+		to_chat(src, "<span class='info'>Your key won't be shown when you speak in dead chat.</span>")
+	else
+		client.set_preference(/datum/client_preference/anon_say, GLOB.PREF_NO)
+		to_chat(src, "<span class='info'>Your key will be publicly visible again.</span>")
 
 
 /mob/observer/ghost/canface()
@@ -607,10 +607,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if (!(config.abandon_allowed))
 		to_chat(usr, "<span class='notice'>Respawn is disabled.</span>")
 		return
-	if (!(ticker && ticker.mode))
+	if (!SSticker.mode)
 		to_chat(usr, "<span class='notice'><B>You may not attempt to respawn yet.</B></span>")
 		return
-	if (ticker.mode && ticker.mode.deny_respawn)
+	if (SSticker.mode.deny_respawn)
 		to_chat(usr, "<span class='notice'>Respawn is disabled for this roundtype.</span>")
 		return
 	else if(!started_as_observer && !MayRespawn(1, config.respawn_delay))

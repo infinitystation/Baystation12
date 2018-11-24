@@ -96,7 +96,7 @@ obj/structure/closet/emcloset/full/New()
 		/obj/item/weapon/extinguisher,
 		/obj/item/clothing/head/hardhat/red)
 
-/obj/structure/closet/firecloset/update_icon()
+/obj/structure/closet/firecloset/on_update_icon()
 	if(!opened)
 		icon_state = icon_closed
 	else
@@ -241,7 +241,7 @@ obj/structure/closet/emcloset/full/New()
 	storage_types = CLOSET_STORAGE_ITEMS
 	setup = 0
 
-/obj/structure/closet/medical_wall/update_icon()
+/obj/structure/closet/medical_wall/on_update_icon()
 	if(!opened)
 		icon_state = icon_closed
 	else
@@ -303,7 +303,7 @@ obj/structure/closet/emcloset/full/New()
 	storage_types = CLOSET_STORAGE_ITEMS
 	setup = 0
 
-/obj/structure/closet/shipping_wall/update_icon()
+/obj/structure/closet/shipping_wall/on_update_icon()
 	if(!opened)
 		icon_state = icon_closed
 	else

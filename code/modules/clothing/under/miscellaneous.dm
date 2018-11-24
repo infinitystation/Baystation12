@@ -482,6 +482,7 @@
 /obj/item/clothing/under/suit_jacket/charcoal
 	name = "charcoal suit"
 	desc = "A charcoal suit and red tie. Very professional."
+	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
 	icon_state = "charcoal_suit"
 	item_state = "bl_suit"
 	worn_state = "charcoal_suit"
@@ -490,6 +491,7 @@
 /obj/item/clothing/under/suit_jacket/navy
 	name = "navy suit"
 	desc = "A navy suit and red tie, intended for the galaxy's finest."
+	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
 	icon_state = "navy_suit"
 	item_state = "bl_suit"
 	worn_state = "navy_suit"
@@ -498,6 +500,7 @@
 /obj/item/clothing/under/suit_jacket/burgundy
 	name = "burgundy suit"
 	desc = "A burgundy suit and black tie. Somewhat formal."
+	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
 	icon_state = "burgundy_suit"
 	item_state = "r_suit"
 	worn_state = "burgundy_suit"
@@ -554,7 +557,6 @@
 	desc = "How... minimalist."
 	icon_state = "gear_harness"
 	worn_state = "gear_harness"
-	species_restricted = null
 	body_parts_covered = 0
 
 /obj/item/clothing/under/pcrc
@@ -586,6 +588,12 @@
 	icon_state = "wardt"
 	worn_state = "wardt"
 
+/obj/item/clothing/under/dais
+	name = "\improper Deimos Advanced Information Systems uniform"
+	desc = "The uniform of Deimos Advanced Information Systems, an IT company."
+	icon_state = "dais"
+	worn_state = "dais"
+	
 /obj/item/clothing/under/mbill
 	name = "\improper Major Bill's uniform"
 	desc = "A uniform belonging to Major Bill's Transportation, a major shipping company."

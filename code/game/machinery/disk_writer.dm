@@ -171,7 +171,7 @@
 	user.put_in_hands(disk)
 	disk = null
 
-/obj/machinery/media/music_writer/update_icon()
+/obj/machinery/media/music_writer/on_update_icon()
 	if(writing)
 		icon_state = "writer_on"
 	else

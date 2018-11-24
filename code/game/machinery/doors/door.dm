@@ -1,6 +1,10 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
 #define DOOR_REPAIR_AMOUNT 50	//amount of health regained per stack amount used
 
+//A = thing to open, B = how long until opening, C = if the opening is forced.
+#define OPEN_IN(A, B, C) addtimer(CALLBACK(A, /obj/machinery/door/proc/open, C), B)
+#define CLOSE_IN(A, B, C) addtimer(CALLBACK(A, /obj/machinery/door/proc/close, C), B)
+
 /obj/machinery/door
 	name = "Door"
 	desc = "It opens and closes."
@@ -94,12 +98,12 @@
 			close_door_at = 0
 
 /obj/machinery/door/proc/can_open()
-	if(!density || operating || !ticker)
+	if(!density || operating)
 		return 0
 	return 1
 
 /obj/machinery/door/proc/can_close()
-	if(density || operating || !ticker)
+	if(density || operating)
 		return 0
 	return 1
 
@@ -274,7 +278,7 @@
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if(H.species.reagent_tag == IS_XENOS)
+		if(H.get_species() == SPECIES_XENO)
 			H.pry_open(src)
 
 	if(src.allowed(user) && operable())
@@ -364,7 +368,7 @@
 			take_damage(100)
 
 
-/obj/machinery/door/update_icon()
+/obj/machinery/door/on_update_icon()
 	if(connections in list(NORTH, SOUTH, NORTH|SOUTH))
 		if(connections in list(WEST, EAST, EAST|WEST))
 			set_dir(SOUTH)

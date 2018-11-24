@@ -30,12 +30,14 @@ var/list/organ_cache = list()
 	var/death_time
 
 /obj/item/organ/Destroy()
-
 	owner = null
 	dna = null
-	species = null
-
 	return ..()
+
+/obj/item/organ/crush_act() // prevent gaining scrap from organs
+	ex_act(1)
+	if(!QDELETED(src))
+		qdel(src)
 
 /obj/item/organ/proc/refresh_action_button()
 	return action
@@ -216,6 +218,8 @@ var/list/organ_cache = list()
 			mechassist()
 		else if(status == "mechanical")
 			robotize()
+	if(species)
+		species.post_organ_rejuvenate(src, owner)
 
 //Germs
 /obj/item/organ/proc/handle_antibiotics()
@@ -253,11 +257,14 @@ var/list/organ_cache = list()
  *  Remove an organ
  *
  *  drop_organ - if true, organ will be dropped at the loc of its former owner
+ *
+ *  Also, Observer Pattern Implementation: Dismembered Handling occurs here.
  */
 /obj/item/organ/proc/removed(var/mob/living/user, var/drop_organ=1)
 
 	if(!istype(owner))
 		return
+	GLOB.dismembered_event.raise_event(owner, src)
 
 	action_button_name = null
 
@@ -319,26 +326,25 @@ var/list/organ_cache = list()
 /obj/item/organ/proc/can_recover()
 	return (!(status & ORGAN_DEAD) || death_time >= world.time - ORGAN_RECOVERY_THRESHOLD)
 
-/obj/item/organ/proc/get_scan_results()
+/obj/item/organ/proc/get_scan_results(var/tag = FALSE)
 	. = list()
 	if(BP_IS_CRYSTAL(src))
-		. += "Crystalline"
+		. += tag ? "<span class='average'>Crystalline</span>" : "Crystalline"
 	else if(BP_IS_ASSISTED(src))
-		. += "Assisted"
+		. += tag ? "<span class='average'>Assisted</span>" : "Assisted"
 	else if(BP_IS_ROBOTIC(src))
-		. += "Mechanical"
-
+		. += tag ? "<span class='average'>Mechanical</span>" : "Mechanical"
 	if(status & ORGAN_CUT_AWAY)
-		. += "Severed"
+		. += tag ? "<span class='bad'>Severed</span>" : "Severed"
 	if(status & ORGAN_MUTATED)
-		. += "Genetic Deformation"
+		. += tag ? "<span class='bad'>Genetic Deformation</span>" : "Genetic Deformation"
 	if(status & ORGAN_DEAD)
 		if(can_recover())
-			. += "Decaying"
+			. += tag ? "<span class='bad'>Decaying</span>" : "Decaying"
 		else
-			. += "Necrotic"
+			. += tag ? "<span style='color:#999999'>Necrotic</span>" : "Necrotic"
 	if(BP_IS_BRITTLE(src))
-		. += "Brittle"
+		. += tag ? "<span class='bad'>Brittle</span>" : "Brittle"
 
 	switch (germ_level)
 		if (INFECTION_LEVEL_ONE to INFECTION_LEVEL_ONE + ((INFECTION_LEVEL_TWO - INFECTION_LEVEL_ONE) / 3))
@@ -348,15 +354,30 @@ var/list/organ_cache = list()
 		if (INFECTION_LEVEL_ONE + (2 * (INFECTION_LEVEL_TWO - INFECTION_LEVEL_ONE) / 3) to INFECTION_LEVEL_TWO)
 			. +=  "Mild Infection++"
 		if (INFECTION_LEVEL_TWO to INFECTION_LEVEL_TWO + ((INFECTION_LEVEL_THREE - INFECTION_LEVEL_THREE) / 3))
-			. +=  "Acute Infection"
+			if(tag)
+				. += "<span class='average'>Acute Infection</span>"
+			else
+				. +=  "Acute Infection"
 		if (INFECTION_LEVEL_TWO + ((INFECTION_LEVEL_THREE - INFECTION_LEVEL_THREE) / 3) to INFECTION_LEVEL_TWO + (2 * (INFECTION_LEVEL_THREE - INFECTION_LEVEL_TWO) / 3))
-			. +=  "Acute Infection+"
+			if(tag)
+				. += "<span class='average'>Acute Infection+</span>"
+			else
+				. +=  "Acute Infection+"
 		if (INFECTION_LEVEL_TWO + (2 * (INFECTION_LEVEL_THREE - INFECTION_LEVEL_TWO) / 3) to INFECTION_LEVEL_THREE)
-			. +=  "Acute Infection++"
+			if(tag)
+				. += "<span class='average'>Acute Infection++</span>"
+			else
+				. +=  "Acute Infection++"
 		if (INFECTION_LEVEL_THREE to INFINITY)
-			. +=  "Septic"
+			if(tag)
+				. += "<span class='bad'>Septic</span>"
+			else
+				. +=  "Septic"
 	if(rejecting)
-		. += "Genetic Rejection"
+		if(tag)
+			. += "<span class='bad'>Genetic Rejection</span>"
+		else
+			. += "Genetic Rejection"
 
 //used by stethoscope
 /obj/item/organ/proc/listen()

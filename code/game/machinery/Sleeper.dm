@@ -3,6 +3,7 @@
 	desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner."
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_0"
+	var/base_icon = "sleeper"
 	density = 1
 	anchored = 1
 	clicksound = 'sound/machines/buttonbeep.ogg'
@@ -61,8 +62,8 @@
 	if(iscarbon(occupant) && stasis > 1)
 		occupant.SetStasis(stasis)
 
-/obj/machinery/sleeper/update_icon()
-	icon_state = "sleeper_[occupant ? "1" : "0"]"
+/obj/machinery/sleeper/on_update_icon()
+	icon_state = "[base_icon]_[occupant ? "1" : "0"]"
 
 /obj/machinery/sleeper/attack_hand(var/mob/user)
 	if(..())
@@ -270,3 +271,33 @@
 			to_chat(user, "The subject has too many chemicals.")
 	else
 		to_chat(user, "There's no suitable occupant in \the [src].")
+
+//Survival/Stasis sleepers
+/obj/machinery/sleeper/survival_pod
+	name = "stasis pod"
+	desc = "A comfortable pod for stasing of wounded occupants. Similar pods were on first humanity's colonial ships. Now days, you can see them in EMT centers with stasis setting from 20x to 22x."
+	icon_state = "stasis_0"
+	base_icon = "stasis"
+	stasis = 20
+	active_power_usage = 550
+
+/obj/machinery/sleeper/survival_pod/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.outside_state)
+	var/data[0]
+
+	data["power"] = stat & (NOPOWER|BROKEN) ? 0 : 1
+
+	if(occupant)
+		var/scan = medical_scan_results(occupant)
+		scan = replacetext(scan,"'notice'","'white'")
+		scan = replacetext(scan,"'warning'","'average'")
+		scan = replacetext(scan,"'danger'","'bad'")
+		data["occupant"] = scan
+	else
+		data["occupant"] = 0
+
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	if(!ui)
+		ui = new(user, src, ui_key, "stasis.tmpl", "Stasis Pod UI", 400, 300, state = state)
+		ui.set_initial_data(data)
+		ui.open()
+		ui.set_auto_update(1)

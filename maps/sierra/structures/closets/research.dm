@@ -12,13 +12,14 @@
 	icon_off = "rdsecureoff"
 
 /obj/structure/closet/secure_closet/RD_sierra/WillContain()
+	//Çהוסü בûכ ךמסע‏ל מע ÍÒ /obj/item/clothing/under/suit_jacket ~bear1ake
 	return list(
 		/obj/item/clothing/suit/bio_suit/scientist,
 		/obj/item/clothing/head/bio_hood/scientist,
 		/obj/item/clothing/under/rank/research_director,
 		/obj/item/clothing/under/rank/research_director/rdalt,
 		/obj/item/clothing/under/rank/research_director/dress_rd,
-		/obj/item/clothing/under/suit_jacket/nt,
+		/obj/item/clothing/under/suit_jacket,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/suit/storage/toggle/labcoat/science,
 		/obj/item/clothing/suit/storage/toggle/labcoat/rd,
@@ -30,6 +31,8 @@
 		/obj/item/clothing/mask/gas/alt,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
+		/obj/item/weapon/storage/belt/general,
+		/obj/item/device/remote_device/research_director,
 		/obj/item/weapon/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
@@ -38,7 +41,7 @@
 		/obj/item/clothing/glasses/welding/superior,
 		/obj/item/clothing/suit/armor/pcarrier/light,
 		/obj/item/weapon/storage/box/secret_project_disks/science,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/toxins, /obj/item/weapon/storage/backpack/satchel_tox)),
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/toxins, /obj/item/weapon/storage/backpack/satchel/tox)),
 		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger/tox, 50)
 	)
 
@@ -65,13 +68,14 @@
 		/obj/item/device/tape/random = 3,
 		/obj/item/device/camera,
 		/obj/item/device/analyzer,
+		/obj/item/weapon/storage/belt/general,
 		/obj/item/taperoll/research,
 		/obj/item/clothing/gloves/latex,
 		/obj/item/clothing/glasses/science,
 		/obj/item/clothing/glasses/meson,
 		/obj/item/device/radio,
 		/obj/item/device/flashlight/lantern,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/toxins, /obj/item/weapon/storage/backpack/satchel_tox)),
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/toxins, /obj/item/weapon/storage/backpack/satchel/tox)),
 		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/dufflebag, 50)
 	)
 
@@ -96,12 +100,13 @@
 		/obj/item/weapon/clipboard,
 		/obj/item/weapon/folder,
 		/obj/item/device/taperecorder,
+		/obj/item/weapon/storage/belt/general,
 		/obj/item/device/tape/random = 3,
 		/obj/item/device/camera,
 		/obj/item/device/analyzer,
 		/obj/item/taperoll/research,
 		/obj/item/clothing/gloves/latex,
 		/obj/item/clothing/glasses/science,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/toxins, /obj/item/weapon/storage/backpack/satchel_tox)),
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/toxins, /obj/item/weapon/storage/backpack/satchel/tox)),
 		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger/tox, 50)
 	)

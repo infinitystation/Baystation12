@@ -25,12 +25,15 @@
 		/obj/item/weapon/reagent_containers/hypospray/vial,
 		/obj/item/device/flashlight/pen,
 		/obj/item/clothing/glasses/hud/health,
+		/obj/item/weapon/storage/belt/medical,
+		/obj/item/device/remote_device/chief_medical_officer,
 		/obj/item/clothing/suit/armor/pcarrier/medium,
 		/obj/item/clothing/head/helmet,
 		/obj/item/clothing/glasses/hud/health,
 		/obj/item/weapon/storage/firstaid/adv,
+		/obj/item/clothing/accessory/stethoscope,
 		/obj/item/weapon/storage/fancy/vials,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel_med)),
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel/med)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/med, /obj/item/weapon/storage/backpack/messenger/med)),
 		RANDOM_SCRUBS
 	)
@@ -56,9 +59,10 @@
 		/obj/item/weapon/storage/belt/medical,
 		/obj/item/clothing/mask/surgical,
 		/obj/item/device/flashlight/pen,
+		/obj/item/clothing/accessory/stethoscope,
 		/obj/item/clothing/glasses/hud/health,
 		/obj/item/weapon/storage/firstaid/adv,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel_med)),
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel/med)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/med, /obj/item/weapon/storage/backpack/messenger/med)),
 		RANDOM_SCRUBS = 2
 	)
@@ -86,9 +90,10 @@
 		/obj/item/weapon/tank/emergency/oxygen/engi,
 		/obj/item/weapon/storage/box/autoinjectors,
 		/obj/item/device/healthanalyzer,
+		/obj/item/clothing/accessory/stethoscope,
 		/obj/item/clothing/glasses/hud/health,
 		/obj/item/weapon/storage/firstaid/adv,
-		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel_med)),
+		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel/med)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/med, /obj/item/weapon/storage/backpack/messenger/med))
 	)
 
@@ -99,10 +104,9 @@
 
 /obj/structure/closet/wardrobe/medic_sierra/WillContain()
 	return list(
-		/obj/item/clothing/under/sterile = 2,
-		RANDOM_SCRUBS = 4,
+		RANDOM_SCRUBS = 2,
 		/obj/item/clothing/suit/surgicalapron = 2,
-		/obj/item/clothing/shoes/white = 2,
-		/obj/item/clothing/suit/storage/toggle/labcoat = 2,
-		/obj/item/clothing/mask/surgical = 2
+		/obj/item/clothing/shoes/white = 3,
+		/obj/item/clothing/suit/storage/toggle/labcoat = 3,
+		/obj/item/clothing/under/sterile = 3
 	)

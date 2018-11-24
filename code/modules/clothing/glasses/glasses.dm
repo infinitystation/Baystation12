@@ -224,7 +224,7 @@
 	icon_state = "welding-g"
 	item_state = "welding-g"
 	action_button_name = "Flip Welding Goggles"
-	matter = list(DEFAULT_WALL_MATERIAL = 1500, "glass" = 1000)
+	matter = list(MATERIAL_STEEL = 1500, MATERIAL_GLASS = 1000)
 	use_alt_layer = TRUE
 	var/up = FALSE
 	flash_protection = FLASH_PROTECTION_MAJOR
@@ -381,7 +381,7 @@
 		user.update_inv_glasses()
 		user.update_action_buttons()
 
-/obj/item/clothing/glasses/sunglasses/sechud/toggle/update_icon()
+/obj/item/clothing/glasses/sunglasses/sechud/toggle/on_update_icon()
 	if(on)
 		icon_state = initial(icon_state)
 	else
@@ -455,7 +455,7 @@
 	..()
 	update_icon()
 
-/obj/item/clothing/glasses/eyepatch/hud/update_icon()
+/obj/item/clothing/glasses/eyepatch/hud/on_update_icon()
 	overlays.Cut()
 	if(active)
 		var/image/eye = overlay_image(icon, "[icon_state]_eye", flags=RESET_COLOR)

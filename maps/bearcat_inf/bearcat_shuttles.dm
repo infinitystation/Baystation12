@@ -29,14 +29,14 @@
 	landmark_tag = "nav_bearcat_lift_top"
 	base_turf = /turf/simulated/open
 	base_area = /area/ship/scrap/crew/hallway/port
-	autoset = 1
+	flags = SLANDMARK_FLAG_AUTOSET
 
 /obj/effect/shuttle_landmark/lift/middle
 	name = "Middle Deck"
 	landmark_tag = "nav_bearcat_lift_middle"
 	base_turf = /turf/simulated/open
 	base_area = /area/ship/scrap/cargo
-	autoset = 1
+	flags = SLANDMARK_FLAG_AUTOSET
 
 /obj/effect/shuttle_landmark/lift/bottom
 	name = "Lower Deck"
@@ -45,6 +45,7 @@
 	base_turf = /turf/simulated/floor
 
 //Bearcat's exploration
+/* До лучших времен ~Laxesh
 /datum/shuttle/autodock/overmap/exploration
 	name = "Exploration Shuttle"
 	shuttle_area = /area/ship/scrap/shuttle/outgoing
@@ -58,7 +59,7 @@
 /obj/machinery/computer/shuttle_control/explore/bearcat
 	name = "exploration shuttle console"
 	shuttle_tag = "Exploration Shuttle"
-
+*/
 //Raiders' shuttle
 /datum/shuttle/autodock/multi/antag/skipjack
 	name = "Skipjack"
@@ -73,7 +74,7 @@
 		"nav_lost_supply_base_antag",
 		"nav_smugglers_antag"
 		)
-	shuttle_area =  /area/pirats/shuttle
+	shuttle_area =  /area/skipjack_station/start
 	dock_target = "skipjack_shuttle"
 	current_location = "nav_skipjack_start"
 	landmark_transition = "nav_skipjack_transition"

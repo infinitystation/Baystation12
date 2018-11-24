@@ -5,7 +5,7 @@
 	if (!usr.client.holder)
 		return
 
-	if(ticker.buildchangechecked)
+	if(SSticker.buildchangechecked)
 		to_chat(usr, "¬ы не можете обновить сервер так как активированна команда смены билда.")
 		return
 

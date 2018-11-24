@@ -28,21 +28,20 @@
 	desc = "A scarf of coarse fabric. Seems to have ear-holes."
 	icon_state = "zhan_scarf"
 	body_parts_covered = HEAD|FACE
-	
+
 /obj/item/clothing/shoes/sandal/tajaran/caligae
 	name = "caligae"
 	desc = "The standard Tajaran footwear loosly resembles the Roman Caligae. Made of leather and rubber, their unique design allows for improved traction and protection. They don't look like they would fit on anyone but a Tajara."
-	description_fluff = "These traditional Tajaran footwear, also called Haskri, have remained reletivly unchanged in principal, with improved materials and construction being the only notable improvment. Originally used for harsher environment, they became widespread for their comfort and hygiene. Some of them come with covering for additional protection for more sterile environments. Made for the Tajarans digitigrade anatomy, they won't fit on any other species."
 	icon_state = "caligae"
 	item_state = "caligae"
 	body_parts_covered = FEET|LEGS
 	species_restricted = list(SPECIES_TAJARA)
-	
+
 /obj/item/clothing/shoes/sandal/tajaran/caligae/white
 	desc = "The standard Tajaran footwear loosly resembles the Roman Caligae. Made of leather and rubber, their unique design allows for improved traction and protection. They don't look like they would fit on anyone but a Tajara. /This one has a white covering."
 	icon_state = "whitecaligae"
 	item_state = "whitecaligae"
-	
+
 /obj/item/clothing/shoes/sandal/tajaran/caligae/grey
 	desc = "The standard Tajaran footwear loosly resembles the Roman Caligae. Made of leather and rubber, their unique design allows for improved traction and protection. They don't look like they would fit on anyone but a Tajara. /This one has a grey covering."
 	icon_state = "greycaligae"
@@ -52,13 +51,13 @@
 	desc = "The standard Tajaran footwear loosly resembles the Roman Caligae. Made of leather and rubber, their unique design allows for improved traction and protection. They don't look like they would fit on anyone but a Tajara. /This one has a black covering."
 	icon_state = "blackcaligae"
 	item_state = "blackcaligae"
-	
+
 /obj/item/clothing/accessory/shouldercape
 	name = "shoulder cape"
 	desc = "A simple shoulder cape."
 	icon_state = "gruntcape"
 	slot = ACCESSORY_SLOT_INSIGNIA // Adding again in case we want to change it in the future.
-	
+
 /obj/item/clothing/accessory/shouldercape/grunt
 	name = "modir cape"
 	desc = "A simple looking cape with a couple of runes woven into the fabric."
@@ -83,6 +82,7 @@
 
 /obj/item/clothing/suit/storage/toggle/Resomicoat
  	name = "small coat"
+ 	icon = 'icons/obj/clothing/infinity/suits.dmi'
  	desc = "A coat that seems too small to fit a human."
  	icon_state = "resomicoat"
  	item_state = "resomicoat"
@@ -90,6 +90,19 @@
  	icon_closed = "resomicoat"
  	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
  	species_restricted = list(SPECIES_RESOMI)
+
+/obj/item/clothing/suit/storage/toggle/Resomilabcoat
+	name = "small labcoat"
+	icon = 'icons/obj/clothing/infinity/suits.dmi'
+	desc = "A labcoat that seems too small to fit a human."
+	icon_state = "resomi_labcoat"
+	item_state = "resomi_labcoat"
+	icon_open = "resomi_labcoat_open"
+	icon_closed = "resomi_labcoat"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	species_restricted = list(SPECIES_RESOMI)
+	allowed = list(/obj/item/device/analyzer,/obj/item/stack/medical,/obj/item/weapon/reagent_containers/dropper,/obj/item/weapon/reagent_containers/syringe,/obj/item/weapon/reagent_containers/hypospray,/obj/item/device/healthanalyzer,/obj/item/device/flashlight/pen,/obj/item/weapon/reagent_containers/glass/bottle,/obj/item/weapon/reagent_containers/glass/beaker,/obj/item/weapon/reagent_containers/pill,/obj/item/weapon/storage/pill_bottle,/obj/item/weapon/paper)
+	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 50, rad = 0)
 
 /obj/item/clothing/suit/armor/vox_scrap
 	name = "rusted metal armor"

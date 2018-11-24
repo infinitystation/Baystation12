@@ -2,7 +2,7 @@
 /obj/item/weapon/storage/mirror
 	name = "mirror"
 	desc = "A SalonPro Nano-Mirror(TM) mirror! The leading brand in hair salon products, utilizing nano-machinery to style your hair just right. The black box inside warns against attempting to release the nanomachines."
-	icon = 'icons/obj/watercloset.dmi'
+	icon = 'icons/obj/watercloset_inf.dmi'
 	icon_state = "mirror"
 	density = 0
 	anchored = 1

@@ -70,6 +70,8 @@
 
 	if(air_contents)
 		temperature_archived = air_contents.temperature
+		if(beaker)
+			ADJUST_ATOM_TEMPERATURE(beaker, air_contents.temperature)
 		heat_gas_contents()
 		expel_gas()
 
@@ -199,18 +201,18 @@
 		beaker =  G
 		user.visible_message("[user] adds \a [G] to \the [src]!", "You add \a [G] to \the [src]!")
 	else if(istype(G, /obj/item/grab))
-		if(!ismob(G:affecting))
+		var/obj/item/grab/grab = G
+		if(!ismob(grab.affecting))
 			return
-		for(var/mob/living/carbon/slime/M in range(1,G:affecting))
-			if(M.Victim == G:affecting)
-				to_chat(usr, "[G:affecting:name] will not fit into the cryo because they have a slime latched onto their head.")
+		for(var/mob/living/carbon/slime/M in range(1,grab.affecting))
+			if(M.Victim == grab.affecting)
+				to_chat(user, "[grab.affecting.name] will not fit into the cryo because they have a slime latched onto their head.")
 				return
-		var/mob/M = G:affecting
-		if(put_mob(M))
+		if(put_mob(grab.affecting))
 			qdel(G)
 	return
 
-/obj/machinery/atmospherics/unary/cryo_cell/update_icon()
+/obj/machinery/atmospherics/unary/cryo_cell/on_update_icon()
 	overlays.Cut()
 	icon_state = "pod[on]"
 	var/image/I

@@ -23,7 +23,7 @@
 /obj/item/clothing/mask/gas/creo/New()
 	last_time = world.time
 
-/obj/item/clothing/mask/gas/creo/update_icon()
+/obj/item/clothing/mask/gas/creo/on_update_icon()
 	overlays.Cut()
 	var/image/eye = overlay_image(icon, "[icon_state]_eye")
 	overlays += eye
@@ -41,7 +41,7 @@
 		if (world.time > last_time + 5 SECONDS)
 			playsound(get_turf(user), sound1, 30, 1)
 			last_time = world.time
-	
+
 
 /obj/item/clothing/mask/gas/creo/AltClick(var/mob/user)
 	if (can_sound)

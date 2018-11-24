@@ -17,7 +17,7 @@ var/list/limb_icon_cache = list()
 	s_col = null
 	s_base = ""
 	h_col = list(human.r_hair, human.g_hair, human.b_hair)
-	if(BP_IS_ROBOTIC(src))
+	if(BP_IS_ROBOTIC(src) && !(human.species.appearance_flags & HAS_BASE_SKIN_COLOURS))
 		var/datum/robolimb/franchise = all_robolimbs[model]
 		if(!(franchise && franchise.skintone))
 			return
@@ -65,7 +65,7 @@ var/list/limb_icon_cache = list()
 		icon_cache_key += "[M][markings[M]["color"]]"
 
 /obj/item/organ/external/var/icon_cache_key
-/obj/item/organ/external/update_icon(var/regenerate = 0)
+/obj/item/organ/external/on_update_icon(var/regenerate = 0)
 	var/gender = "_m"
 	if(!(limb_flags & ORGAN_FLAG_GENDERED_ICON))
 		gender = null

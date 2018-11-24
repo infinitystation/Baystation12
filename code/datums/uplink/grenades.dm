@@ -44,14 +44,12 @@
 	name = "1xFragmentation Shell"
 	desc = "Weaker than standard fragmentation grenades, these devices can be fired from a grenade launcher."
 	item_cost = 10
-	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/grenade/frag/shell
 
 /datum/uplink_item/item/grenades/fragshells
 	name = "5xFragmentation Shells"
 	desc = "Weaker than standard fragmentation grenades, these devices can be fired from a grenade launcher."
 	item_cost = 40
-	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/storage/box/fragshells
 
 /datum/uplink_item/item/grenades/frag
@@ -69,8 +67,8 @@
 /datum/uplink_item/item/grenades/supermatter
 	name = "1xSupermatter Grenade"
 	desc = "This grenade contains a small supermatter shard which will delaminate upon activation and pull in nearby objects, irradiate lifeforms, and eventually explode."
-	item_cost = 25
-	antag_roles = list(MODE_MERCENARY = 15)
+	item_cost = 15
+	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/grenade/supermatter
 
 /datum/uplink_item/item/grenades/supermatters

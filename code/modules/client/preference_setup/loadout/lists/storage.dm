@@ -76,4 +76,3 @@
 /datum/gear/accessory/wallet_poly
 	display_name = "wallet, polychromic"
 	path = /obj/item/weapon/storage/wallet/poly
-	cost = 2

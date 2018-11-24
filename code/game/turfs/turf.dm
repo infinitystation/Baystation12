@@ -17,7 +17,6 @@
 	var/heat_capacity = 1
 
 	//Properties for both
-	var/temperature = T20C      // Initial turf temperature.
 	var/blocks_air = 0          // Does this turf contain air/let air through?
 
 	// General properties.
@@ -28,11 +27,6 @@
 	var/list/decals
 
 	var/movement_delay
-/*
-/turf/Initialize()
-	. = ..()
-	update_icon(1)
-	regenerate_ao()*/
 
 	var/fluid_can_pass
 	var/obj/effect/flood/flood_object
@@ -51,7 +45,7 @@
 	else
 		luminosity = 1
 
-/turf/update_icon()
+/turf/on_update_icon()
 	update_flood_overlay()
 
 /turf/proc/update_flood_overlay()
@@ -141,9 +135,11 @@ turf/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	return 1 //Nothing found to block so return success!
 
 var/const/enterloopsanity = 100
-/turf/Entered(atom/atom as mob|obj)
+/turf/Entered(var/atom/atom, var/atom/old_loc)
 
 	..()
+
+	QUEUE_TEMPERATURE_ATOMS(atom)
 
 	if(!istype(atom, /atom/movable))
 		return
@@ -173,7 +169,7 @@ var/const/enterloopsanity = 100
 						thing.HasProximity(A, 1)
 	return
 
-/turf/proc/adjacent_fire_act(turf/simulated/floor/source, temperature, volume)
+/turf/proc/adjacent_fire_act(turf/simulated/floor/source, exposed_temperature, exposed_volume)
 	return
 
 /turf/proc/is_plating()
@@ -281,8 +277,12 @@ var/const/enterloopsanity = 100
 
 /turf/proc/try_graffiti(var/mob/vandal, var/obj/item/tool)
 
-	if(!tool.sharp || !can_engrave())
+	if(!tool.sharp || !can_engrave() || vandal.a_intent != I_HELP)
 		return FALSE
+
+	if(jobban_isbanned(vandal, "Graffiti"))
+		to_chat(vandal, SPAN_WARNING("You are banned from leaving persistent information across rounds."))
+		return
 
 	var/too_much_graffiti = 0
 	for(var/obj/effect/decal/writing/W in src)

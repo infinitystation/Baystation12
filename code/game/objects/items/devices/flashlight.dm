@@ -8,7 +8,7 @@
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 
-	matter = list(DEFAULT_WALL_MATERIAL = 50,"glass" = 20)
+	matter = list(MATERIAL_STEEL = 50,MATERIAL_GLASS = 20)
 
 	action_button_name = "Toggle Flashlight"
 	var/on = 0
@@ -21,7 +21,7 @@
 	. = ..()
 	update_icon()
 
-/obj/item/device/flashlight/update_icon()
+/obj/item/device/flashlight/on_update_icon()
 	if(on)
 		icon_state = "[initial(icon_state)]-on"
 		set_light(flashlight_max_bright, flashlight_inner_range, flashlight_outer_range, 2, light_color)
@@ -160,7 +160,7 @@
 	item_state = "maglight"
 	force = 10
 	attack_verb = list ("smacked", "thwacked", "thunked")
-	matter = list(DEFAULT_WALL_MATERIAL = 200,"glass" = 50)
+	matter = list(MATERIAL_STEEL = 200,MATERIAL_GLASS = 50)
 	hitsound = "swing_hit"
 	flashlight_max_bright = 0.6
 	flashlight_outer_range = 4
@@ -176,10 +176,10 @@
 	w_class = ITEM_SIZE_NORMAL
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
-	matter = list(DEFAULT_WALL_MATERIAL = 200,"glass" = 100)
+	matter = list(MATERIAL_STEEL = 200,MATERIAL_GLASS = 100)
 	flashlight_outer_range = 5
 
-/obj/item/device/flashlight/lantern/update_icon()
+/obj/item/device/flashlight/lantern/on_update_icon()
 	..()
 	if(on)
 		item_state = "lantern-on"
@@ -281,6 +281,11 @@
 	if(.)
 		activate(user)
 
+/obj/item/device/flashlight/flare/afterattack(var/obj/O, var/mob/user, var/proximity)
+	if(proximity && istype(O) && on)
+		O.HandleObjectHeating(src, user, 500)
+	..()
+
 /obj/item/device/flashlight/flare/proc/activate(var/mob/user)
 	if(on)
 		return
@@ -299,7 +304,7 @@
 		force = initial(force)
 		damtype = initial(damtype)
 
-/obj/item/device/flashlight/flare/update_icon()
+/obj/item/device/flashlight/flare/on_update_icon()
 	..()
 	if(!on && !fuel)
 		icon_state = "[initial(icon_state)]-empty"
@@ -325,7 +330,7 @@
 	fuel = rand(1600, 2000)
 	light_color = color
 
-/obj/item/device/flashlight/flare/glowstick/update_icon()
+/obj/item/device/flashlight/flare/glowstick/on_update_icon()
 	item_state = "glowstick"
 	overlays.Cut()
 	if(!fuel)
@@ -396,7 +401,7 @@
 	set_light(flashlight_max_bright, flashlight_inner_range, flashlight_outer_range, 2, light_color)
 	..()
 
-/obj/item/device/flashlight/slime/update_icon()
+/obj/item/device/flashlight/slime/on_update_icon()
 	return
 
 /obj/item/device/flashlight/slime/attack_self(mob/user)

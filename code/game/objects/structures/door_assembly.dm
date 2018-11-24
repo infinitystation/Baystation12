@@ -179,7 +179,7 @@
 		var/material_name = S.get_material_name()
 		if (S)
 			if (S.get_amount() >= 1)
-				if(material_name == "rglass")
+				if(material_name == MATERIAL_REINFORCED_GLASS)
 					playsound(src.loc, 'sound/items/Crowbar.ogg', 100, 1)
 					user.visible_message("[user] adds [S.name] to the airlock assembly.", "You start to install [S.name] into the airlock assembly.")
 					if(do_after(user, 40,src) && !glass)
@@ -188,7 +188,7 @@
 							glass = 1
 				else if(material_name)
 					// Ugly hack, will suffice for now. Need to fix it upstream as well, may rewrite mineral walls. ~Z
-					if(!(material_name in list("gold", "silver", "diamond", "uranium", "phoron", "sandstone")))
+					if(!(material_name in list(MATERIAL_GOLD, MATERIAL_SILVER, MATERIAL_DIAMOND, MATERIAL_URANIUM, MATERIAL_PHORON, MATERIAL_SANDSTONE)))
 						to_chat(user, "You cannot make an airlock out of that material.")
 						return
 					if(S.get_amount() >= 2)
@@ -243,3 +243,14 @@
 	SetName(final_name)
 	overlays += filling_overlay
 	overlays += panel_overlay
+
+/obj/structure/door_assembly/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
+	if(!breakable || !damage || !wallbreaker)
+		return 0
+	visible_message("<span class='danger'>[user] [attack_verb] the [src]!</span>")
+	attack_animation(user)
+	spawn(1)
+	if(prob(30))
+		visible_message("<span class='danger'>[user] [attack_verb] the [src] apart!</span>")
+		qdel(src)
+	return 1

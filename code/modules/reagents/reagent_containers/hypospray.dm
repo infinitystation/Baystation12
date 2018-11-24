@@ -91,7 +91,7 @@
 /obj/item/weapon/reagent_containers/hypospray/vial/attackby(obj/item/weapon/W, mob/user as mob)
 	if(istype(W, /obj/item/weapon/reagent_containers/glass/beaker/vial))
 		if(!loaded_vial)
-			if(!do_after(user,10) || loaded_vial || !(W in user))
+			if(!do_after(user,4) || loaded_vial || !(W in user))
 				return 0
 			if(!user.unEquip(W, src))
 				return
@@ -112,6 +112,7 @@
 /obj/item/weapon/reagent_containers/hypospray/autoinjector
 	name = "autoinjector"
 	desc = "A rapid and safe way to administer small amounts of drugs by untrained or trained personnel."
+	icon = 'icons/obj/syringe_inf.dmi'
 	icon_state = "blue1"
 	item_state = "autoinjector"
 	amount_per_transfer_from_this = 5
@@ -120,6 +121,7 @@
 	slot_flags = SLOT_BELT | SLOT_EARS
 	w_class = ITEM_SIZE_TINY
 	var/list/starts_with = list(/datum/reagent/inaprovaline = 5)
+	var/band_color = COLOR_CYAN
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/New()
 	..()
@@ -135,11 +137,13 @@
 	update_icon()
 	return
 
-/obj/item/weapon/reagent_containers/hypospray/autoinjector/update_icon()
+/obj/item/weapon/reagent_containers/hypospray/autoinjector/on_update_icon()
+	overlays.Cut()
 	if(reagents.total_volume > 0)
 		icon_state = "[initial(icon_state)]"
 	else
 		icon_state = "[initial(icon_state)]0"
+	overlays+= overlay_image(icon,"injector_band",band_color,RESET_COLOR)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/examine(mob/user)
 	. = ..(user)
@@ -150,24 +154,23 @@
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/detox
 	name = "autoinjector (anti-toxin)"
-	icon_state = "green1"
+	band_color = COLOR_GREEN
 	starts_with = list(/datum/reagent/dylovene = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/pain
 	name = "autoinjector (painkiller)"
 	icon_state = "purple1"
+	band_color = COLOR_PURPLE
 	starts_with = list(/datum/reagent/tramadol = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/brute
 	name = "autoinjector (anti-injury)"
-	icon = 'icons/obj/items_inf.dmi'
 	icon_state = "red1"
 	starts_with = list(/datum/reagent/bicaridine = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/burn
 	name = "autoinjector (anti-burn)"
-	icon = 'icons/obj/items_inf.dmi'
-	icon_state = "yellow1"
+	icon_state = "orange1"
 	starts_with = list(/datum/reagent/kelotane = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/rad
@@ -182,16 +185,16 @@
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/combatpain
 	name = "autoinjector (combat paikiller)"
-	icon_state = "black1"
+	band_color = COLOR_DARK_GRAY
 	starts_with = list(/datum/reagent/tramadol/oxycodone = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/antirad
 	name = "autoinjector (anti-rad)"
 	icon_state = "yellow1"
+	band_color = COLOR_AMBER
 	starts_with = list(/datum/reagent/hyronalin = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/mindbreaker
 	name = "autoinjector"
-	icon_state = "black1"
+	band_color = COLOR_DARK_GRAY
 	starts_with = list(/datum/reagent/mindbreaker = 5)
-

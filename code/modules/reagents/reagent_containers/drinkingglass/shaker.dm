@@ -6,7 +6,7 @@
 	icon_state = "fitness-cup_black"
 	base_icon = "fitness-cup"
 	volume = 100
-	matter = list("plastic" = 2000)
+	matter = list(MATERIAL_PLASTIC = 2000)
 	filling_states = "10;20;30;40;50;60;70;80;90;100"
 	possible_transfer_amounts = "5;10;15;25"
 	rim_pos = null // no fruit slices
@@ -17,7 +17,7 @@
 	lid_color = pick("black", "red", "blue")
 	update_icon()
 
-/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask/update_icon()
+/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask/on_update_icon()
 	..()
 	icon_state = "[base_icon]_[lid_color]"
 

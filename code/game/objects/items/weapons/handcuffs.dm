@@ -11,7 +11,7 @@
 	throw_speed = 2
 	throw_range = 5
 	origin_tech = list(TECH_MATERIAL = 1)
-	matter = list(DEFAULT_WALL_MATERIAL = 500)
+	matter = list(MATERIAL_STEEL = 500)
 	var/elastic
 	var/dispenser = 0
 	var/breakouttime = 1200 //Deciseconds = 120s = 2 minutes
@@ -173,6 +173,9 @@ var/last_chew = 0
 			update_icon(user)
 
 /obj/item/weapon/handcuffs/cyborg
+	dispenser = 1
+
+/obj/item/weapon/handcuffs/cable/cyborg
 	dispenser = 1
 
 /obj/item/weapon/handcuffs/cable/tape

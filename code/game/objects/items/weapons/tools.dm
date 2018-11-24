@@ -17,25 +17,22 @@
 /obj/item/weapon/wrench
 	name = "wrench"
 	desc = "A good, durable combination wrench, with self-adjusting, universal open- and ring-end mechanisms to match a wide variety of nuts and bolts."
-	description_info = "This versatile tool is used for dismantling machine frames, anchoring or unanchoring heavy objects like vending machines and emitters, and much more. In general, if you want something to move or stop moving entirely, you ought to use a wrench on it."
-	description_fluff = "The classic open-end wrench (or spanner, if you prefer) hasn't changed significantly in shape in over 500 years, though these days they employ a bit of automated trickery to match various bolt sizes and configurations."
-	description_antag = "Not only is this handy tool good for making off with machines, but it even makes a weapon in a pinch!"
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "wrench"
 	item_state = "wrench"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
-	force = 5.0
+	force = 7
 	throwforce = 7.0
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
-	matter = list(DEFAULT_WALL_MATERIAL = 150)
+	matter = list(MATERIAL_STEEL = 150)
 	center_of_mass = "x=17;y=16"
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
 	safely = 1
 
 /obj/item/weapon/wrench/Initialize()
-	icon_state = "wrench[pick("","_red","_black")]"
+	icon_state = "wrench[pick("","_red","_black","_green","_blue")]"
 	. = ..()
 /obj/item/weapon/wrench/power
 	name = "hand drill"
@@ -73,9 +70,6 @@
 /obj/item/weapon/screwdriver
 	name = "screwdriver"
 	desc = "Your archetypal flathead screwdriver, with a nice, heavy polymer handle."
-	description_info = "This tool is used to expose or safely hide away cabling. It can open and shut the maintenance panels on vending machines, airlocks, and much more. You can also use it, in combination with a crowbar, to install or remove windows."
-	description_fluff = "Screws have not changed significantly in centuries, and neither have the drivers used to install and remove them."
-	description_antag = "In the world of breaking and entering, tools like multitools and wirecutters are the bread; the screwdriver is the butter. In a pinch, try targetting someone's eyes and stabbing them with it - it'll really hurt!"
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "screwdriver"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
@@ -85,7 +79,7 @@
 	throwforce = 5.0
 	throw_speed = 3
 	throw_range = 5
-	matter = list(DEFAULT_WALL_MATERIAL = 75)
+	matter = list(MATERIAL_STEEL = 75)
 	center_of_mass = "x=16;y=7"
 	attack_verb = list("stabbed")
 	lock_picking_level = 5
@@ -166,9 +160,6 @@
 /obj/item/weapon/wirecutters
 	name = "wirecutters"
 	desc = "A special pair of pliers with cutting edges. Various brackets and manipulators built into the handle allow it to repair severed wiring."
-	description_info = "This tool will cut wiring anywhere you see it - make sure to wear insulated gloves! When used on more complicated machines or airlocks, it can not only cut cables, but repair them, as well."
-	description_fluff = "With modern alloys, today's wirecutters can snap through cables of astonishing thickness."
-	description_antag = "These cutters can be used to cripple the power anywhere on the ship. All it takes is some creativity, and being in the right place at the right time."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "cutters"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
@@ -178,7 +169,7 @@
 	throw_range = 9
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
-	matter = list(DEFAULT_WALL_MATERIAL = 80)
+	matter = list(MATERIAL_STEEL = 80)
 	center_of_mass = "x=18;y=10"
 	attack_verb = list("pinched", "nipped")
 	sharp = 1
@@ -186,9 +177,22 @@
 	safely = 1
 
 /obj/item/weapon/wirecutters/Initialize()
-	if(prob(50))
-		icon_state = "cutters-y"
-		item_state = "cutters_yellow"
+	switch(pick("red","yellow","green","blue","black"))
+		if ("red")
+			icon_state = "cutters"
+			item_state = "cutters"
+		if ("yellow")
+			icon_state = "cutters_yellow"
+			item_state = "cutters_yellow"
+		if ("green")
+			icon_state = "cutters_green"
+			item_state = "cutters_green"
+		if ("blue")
+			icon_state = "cutters_blue"
+			item_state = "cutters_blue"
+		if ("black")
+			icon_state = "cutters_black"
+			item_state = "cutters_black"
 	. = ..()
 
 /obj/item/weapon/wirecutters/attack(mob/living/carbon/C as mob, mob/user as mob)
@@ -245,9 +249,6 @@
 	icon_state = "welder_m"
 	item_state = "welder"
 	desc = "A heavy but portable welding gun with its own interchangeable fuel tank. It features a simple toggle switch and a port for attaching an external tank."
-	description_info = "Use in your hand to toggle the welder on and off. Hold in one hand and click with an empty hand to remove its internal tank. Click on an object to try to weld it. You can seal airlocks, attach heavy-duty machines like emitters and disposal chutes, and repair damaged walls - these are only a few of its uses. Each use of the welder will consume a unit of fuel. Be sure to wear protective equipment such as goggles, a mask, or certain voidsuit helmets to prevent eye damage. You can refill the welder with a welder tank by clicking on it, but be sure to turn it off first!"
-	description_fluff = "One of many tools of ancient design, still used in today's busy world of engineering with only minor tweaks here and there. Compact machinery and innovations in fuel storage have allowed for conveniences like this one-piece, handheld welder to exist."
-	description_antag = "You can use a welder to rapidly seal off doors, ventilation ducts, and scrubbers. It also makes for a devastating weapon. Modify it with a screwdriver and stick some metal rods on it, and you've got the beginnings of a flamethrower."
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 	center_of_mass = "x=14;y=15"
@@ -261,7 +262,7 @@
 	w_class = ITEM_SIZE_NORMAL
 
 	//Cost to make in the autolathe
-	matter = list(DEFAULT_WALL_MATERIAL = 70, "glass" = 30)
+	matter = list(MATERIAL_STEEL = 70, MATERIAL_GLASS = 30)
 
 	//R&D tech level
 	origin_tech = list(TECH_ENGINEERING = 1)
@@ -387,22 +388,27 @@
 		if((!waterproof && submerged()) || !remove_fuel(0.05))
 			setWelding(0)
 
-/obj/item/weapon/weldingtool/afterattack(obj/O as obj, mob/user as mob, proximity)
-	if(!proximity) return
-	if (istype(O, /obj/structure/reagent_dispensers/fueltank) && get_dist(src,O) <= 1 && !src.welding)
+/obj/item/weapon/weldingtool/afterattack(var/obj/O, var/mob/user, proximity)
+	if(!proximity)
+		return
+
+	if(istype(O, /obj/structure/reagent_dispensers/fueltank) && get_dist(src,O) <= 1 && !welding)
 		if(!tank)
-			to_chat(user, "\The [src] has no tank attached!")
+			to_chat(user, SPAN_WARNING("\The [src] has no tank attached!"))
 			return
 		O.reagents.trans_to_obj(tank, tank.max_fuel)
-		to_chat(user, "<span class='notice'>You refuel \the [tank].</span>")
+		to_chat(user, SPAN_NOTICE("You refuel \the [tank]."))
 		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
 		return
-	if (src.welding)
+
+	if(welding)
 		remove_fuel(1)
 		var/turf/location = get_turf(user)
 		if(isliving(O))
 			var/mob/living/L = O
 			L.IgniteMob()
+		else if(istype(O))
+			O.HandleObjectHeating(src, user, 700)
 		if (istype(location, /turf))
 			location.hotspot_expose(700, 50, 1)
 	return
@@ -461,7 +467,7 @@
 		return ITEM_SIZE_NO_CONTAINER
 	return ..()
 
-/obj/item/weapon/weldingtool/update_icon()
+/obj/item/weapon/weldingtool/on_update_icon()
 	..()
 
 	var/datum/extension/base_icon_state/bis = get_extension(src, /datum/extension/base_icon_state)
@@ -550,11 +556,7 @@
 		if(safety<FLASH_PROTECTION_MAJOR)
 			if(E.damage > 10)
 				to_chat(user, "<span class='warning'>Your eyes are really starting to hurt. This can't be good for you!</span>")
-
-			if (E.damage >= E.min_broken_damage)
-				to_chat(H, "<span class='danger'>You go blind!</span>")
-				H.sdisabilities |= BLIND
-			else if (E.damage >= E.min_bruised_damage)
+			if (E.damage >= E.min_bruised_damage)
 				to_chat(H, "<span class='danger'>You go blind!</span>")
 				H.eye_blind = 5
 				H.eye_blurry = 5
@@ -591,7 +593,7 @@
 	item_state = "welder"
 	desc = "A smaller welder, meant for quick or emergency use."
 	origin_tech = list(TECH_ENGINEERING = 2)
-	matter = list(DEFAULT_WALL_MATERIAL = 15, "glass" = 5)
+	matter = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 5)
 	w_class = ITEM_SIZE_SMALL
 	tank = /obj/item/weapon/welder_tank/mini
 
@@ -608,7 +610,7 @@
 	item_state = "welder"
 	desc = "A heavy-duty portable welder, made to ensure it won't suddenly go cold on you."
 	origin_tech = list(TECH_ENGINEERING = 2)
-	matter = list(DEFAULT_WALL_MATERIAL = 70, "glass" = 60)
+	matter = list(MATERIAL_STEEL = 70, MATERIAL_GLASS = 60)
 	w_class = ITEM_SIZE_LARGE
 	tank = /obj/item/weapon/welder_tank/large
 
@@ -625,7 +627,7 @@
 	desc = "A sizable welding tool with room to accomodate the largest of fuel tanks."
 	w_class = ITEM_SIZE_HUGE
 	origin_tech = list(TECH_ENGINEERING = 3)
-	matter = list(DEFAULT_WALL_MATERIAL = 70, "glass" = 120)
+	matter = list(MATERIAL_STEEL = 70, MATERIAL_GLASS = 120)
 	tank = /obj/item/weapon/welder_tank/huge
 
 /obj/item/weapon/welder_tank/huge
@@ -641,7 +643,7 @@
 	desc = "This welding tool feels heavier in your possession than is normal. There appears to be no external fuel port."
 	w_class = ITEM_SIZE_LARGE
 	origin_tech = list(TECH_ENGINEERING = 4, TECH_PHORON = 3)
-	matter = list(DEFAULT_WALL_MATERIAL = 70, "glass" = 120)
+	matter = list(MATERIAL_STEEL = 70, MATERIAL_GLASS = 120)
 	tank = /obj/item/weapon/welder_tank/experimental
 
 /obj/item/weapon/welder_tank/experimental
@@ -696,20 +698,19 @@
 /obj/item/weapon/crowbar
 	name = "crowbar"
 	desc = "A heavy crowbar of solid steel, good and solid in your hand."
-	description_info = "Crowbars have countless uses: click on floor tiles to pry them loose. Use alongside a screwdriver to install or remove windows. Force open emergency shutters, or depowered airlocks. Open the panel of an unlocked APC. Pry a computer's circuit board free. And much more!"
-	description_fluff = "As is the case with most standard-issue tools, crowbars are a simple and timeless design, the only difference being that advanced materials like plasteel have made them uncommonly tough."
-	description_antag = "Need to bypass a bolted door? You can use a crowbar to pry the electronics out of an airlock, provided that it has no power and has been welded shut."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "crowbar"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
-	force = 7.0
+	force = 14
+	attack_cooldown = 2*DEFAULT_WEAPON_COOLDOWN
+	melee_accuracy_bonus = -20
 	throwforce = 7.0
 	throw_range = 3
 	item_state = "crowbar"
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_ENGINEERING = 1)
-	matter = list(DEFAULT_WALL_MATERIAL = 140)
+	matter = list(MATERIAL_STEEL = 140)
 	center_of_mass = "x=16;y=20"
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
 	hitsound = 'sound/weapons/crowbarhit.ogg'
@@ -728,7 +729,7 @@
 	throwforce = 6.0
 	throw_range = 5
 	w_class = ITEM_SIZE_SMALL
-	matter = list(DEFAULT_WALL_MATERIAL = 80)
+	matter = list(MATERIAL_STEEL = 80)
 
 /obj/item/weapon/crowbar/prybar/Initialize()
 	icon_state = "prybar[pick("","_red","_green","_aubergine","_blue")]"

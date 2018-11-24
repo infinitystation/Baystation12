@@ -17,6 +17,9 @@
 	tail_hair = "feathers"
 	strength = STR_HIGH
 	reagent_tag = IS_RESOMI
+	breath_pressure = 12
+	
+	move_trail = /obj/effect/decal/cleanable/blood/tracks/paw
 
 	icobase = 			'icons/mob/human_races/species/resomi/body.dmi'
 	deform = 			'icons/mob/human_races/species/resomi/body.dmi'
@@ -81,6 +84,7 @@
 	unarmed_types = list(
 		/datum/unarmed_attack/bite/sharp,
 		/datum/unarmed_attack/claws,
+		/datum/unarmed_attack/punch,
 		/datum/unarmed_attack/stomp/weak
 		)
 

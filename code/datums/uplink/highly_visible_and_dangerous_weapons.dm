@@ -30,6 +30,7 @@
 
 /datum/uplink_item/item/visible_weapons/g9mm
 	name = "Silenced Holdout Pistol"
+	desc = "9mm with silencer kit and ammunition."
 	item_cost = 32
 	antag_costs = list(MODE_MERCENARY = 12)
 	path = /obj/item/weapon/storage/box/syndie_kit/g9mm
@@ -70,16 +71,27 @@
 	antag_costs = list(MODE_MERCENARY = 30)
 	path = /obj/item/weapon/gun/projectile/magnum_pistol
 
+/datum/uplink_item/item/visible_weapons/revolver2
+	name = "Revolver, .44"
+	desc = ".44 magnum revolver, with ammunition."
+	item_cost = 48
+	path = /obj/item/weapon/storage/backpack/satchel/syndie_kit/revolver2
+
 /datum/uplink_item/item/visible_weapons/machine_pistol
 	name = "Machine Pistol"
 	item_cost = 45
 	antag_costs = list(MODE_MERCENARY = 10)
 	path = /obj/item/weapon/gun/projectile/automatic/machine_pistol
 
+/datum/uplink_item/item/visible_weapons/grenade_launcher
+	name = "Grenade Launcher"
+	item_cost = 60
+	antag_roles = list(MODE_MERCENARY)
+	path = /obj/item/weapon/gun/launcher/grenade/loaded
+
 /datum/uplink_item/item/visible_weapons/submachinegun
 	name = "Submachine Gun"
 	item_cost = 52
-	antag_costs = list(MODE_MERCENARY = 20)
 	path = /obj/item/weapon/gun/projectile/automatic/c20r
 
 /datum/uplink_item/item/visible_weapons/assaultrifle
@@ -143,13 +155,11 @@
 /datum/uplink_item/item/visible_weapons/pulseproj
 	name = "Pulse projector"
 	item_cost = 48
-	antag_costs = list(MODE_MERCENARY = 30)
 	path = /obj/item/weapon/gun/energy/plasmastun
 
 /datum/uplink_item/item/visible_weapons/flechetterifle
 	name = "Flechette Rifle"
 	item_cost = 60
-	antag_costs = list(MODE_MERCENARY = 20)
 	path = /obj/item/weapon/gun/magnetic/railgun/flechette
 
 /datum/uplink_item/item/visible_weapons/railgun // Like a semi-auto AMR

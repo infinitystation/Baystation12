@@ -71,7 +71,7 @@
 	if(!is_open_container() && !diff)
 		open(user)
 
-/obj/item/weapon/reagent_containers/food/snacks/can/update_icon()
+/obj/item/weapon/reagent_containers/food/snacks/can/on_update_icon()
 	if(!reagents.total_volume)
 		icon_state = "[initial(icon_state)]_empty"
 		return

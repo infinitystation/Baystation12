@@ -12,6 +12,7 @@
 	var/blood_overlay_type = "uniformblood"
 	var/visible_name = "Unknown"
 	var/ironed_state = WRINKLES_DEFAULT
+	var/smell_state = SMELL_DEFAULT
 
 	var/move_trail = /obj/effect/decal/cleanable/blood/tracks/footprints // if this item covers the feet, the footprints it should leave
 
@@ -38,7 +39,7 @@
 	if(ishuman(user_mob))
 		var/mob/living/carbon/human/user_human = user_mob
 		if(blood_DNA && user_human.species.blood_mask)
-			var/image/bloodsies	= overlay_image(user_human.species.blood_mask, blood_overlay_type, blood_color, RESET_COLOR)
+			var/image/bloodsies = overlay_image(user_human.species.blood_mask, blood_overlay_type, blood_color, RESET_COLOR)
 			ret.overlays	+= bloodsies
 
 	if(accessories.len)
@@ -46,10 +47,8 @@
 			ret.overlays |= A.get_mob_overlay(user_mob, slot)
 	return ret
 
-// Aurora forensics port.
-/obj/item/clothing/clean_blood()
-	. = ..()
-	gunshot_residue = null
+/obj/item/clothing/proc/change_smell(smell = SMELL_DEFAULT)
+	smell_state = smell
 
 /obj/item/clothing/proc/get_fibers()
 	. = "material from \a [name]"
@@ -194,10 +193,16 @@
 /obj/item/clothing/ears/earmuffs/headphones
 	name = "headphones"
 	desc = "It's probably not in accordance with corporate policy to listen to music on the job... but fuck it."
+
 	var/headphones_on = 0
-	icon_state = "headphones_off"
-	item_state = "headphones_off"
+	var/state_on = "headphones_on"
+	var/state_off = "headphones_off"
+
 	slot_flags = SLOT_EARS | SLOT_TWOEARS
+
+/obj/item/clothing/ears/earmuffs/headphones/New()
+	icon_state = state_off
+	item_state = state_off
 
 /obj/item/clothing/ears/earmuffs/headphones/verb/togglemusic()
 	set name = "Toggle Headphone Music"
@@ -207,13 +212,13 @@
 	if(usr.incapacitated()) return
 
 	if(headphones_on)
-		icon_state = "headphones_off"
-		item_state = "headphones_off"
+		icon_state = state_off
+		item_state = state_off
 		headphones_on = 0
 		to_chat(usr, "<span class='notice'>You turn the music off.</span>")
 	else
-		icon_state = "headphones_on"
-		item_state = "headphones_on"
+		icon_state = state_on
+		item_state = state_on
 		headphones_on = 1
 		to_chat(usr, "<span class='notice'>You turn the music on.</span>")
 
@@ -384,6 +389,7 @@ BLIND     // can't see anything
 	slot_flags = SLOT_HEAD
 	w_class = ITEM_SIZE_SMALL
 
+	var/image/light_overlay_image
 	var/light_overlay = "helmet_light"
 	var/light_applied
 	var/brightness_on
@@ -396,20 +402,28 @@ BLIND     // can't see anything
 		)
 	blood_overlay_type = "helmetblood"
 
+/obj/item/clothing/head/equipped(var/mob/user, var/slot)
+	light_overlay_image = null
+	..(user, slot)
+
 /obj/item/clothing/head/get_mob_overlay(mob/user_mob, slot)
 	var/image/ret = ..()
-	ret.overlays.Cut()
+	if(light_overlay_image)
+		ret.overlays -= light_overlay_image
 	if(on && slot == slot_head_str)
-		if(ishuman(user_mob))
-			var/mob/living/carbon/human/user_human = user_mob
-			if(sprite_sheets)
-				var/use_icon = sprite_sheets[user_human.species.get_bodytype(user_human)]
+		if(!light_overlay_image)
+			if(ishuman(user_mob))
+				var/mob/living/carbon/human/user_human = user_mob
+				var/use_icon
+				if(sprite_sheets)
+					use_icon = sprite_sheets[user_human.species.get_bodytype(user_human)]
 				if(use_icon)
-					ret.overlays |= user_human.species.get_offset_overlay_image(TRUE, use_icon, "[light_overlay]", color, slot)
-					return ret
-			ret.overlays |= user_human.species.get_offset_overlay_image(FALSE, 'icons/mob/light_overlays.dmi', "[light_overlay]", color, slot)
-		else
-			ret.overlays |= overlay_image('icons/mob/light_overlays.dmi', "[light_overlay]", null, RESET_COLOR)
+					light_overlay_image = user_human.species.get_offset_overlay_image(TRUE, use_icon, "[light_overlay]", color, slot)
+				else
+					light_overlay_image = user_human.species.get_offset_overlay_image(FALSE, 'icons/mob/light_overlays.dmi', "[light_overlay]", color, slot)
+			else
+				light_overlay_image = overlay_image('icons/mob/light_overlays.dmi', "[light_overlay]", null, RESET_COLOR)
+		ret.overlays |= light_overlay_image
 	return ret
 
 /obj/item/clothing/head/attack_self(mob/user)
@@ -468,7 +482,7 @@ BLIND     // can't see anything
 		to_chat(user, "<span class='notice'>You crawl under \the [src].</span>")
 	return 1
 
-/obj/item/clothing/head/update_icon(var/mob/user)
+/obj/item/clothing/head/on_update_icon(var/mob/user)
 
 	overlays.Cut()
 	if(on)
@@ -634,7 +648,7 @@ BLIND     // can't see anything
 	else
 		return ..()
 
-/obj/item/clothing/shoes/update_icon()
+/obj/item/clothing/shoes/on_update_icon()
 	overlays.Cut()
 	if(holding)
 		overlays += image(icon, "[icon_state]_knife")
@@ -951,3 +965,75 @@ BLIND     // can't see anything
 	gender = NEUTER
 	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_DIONA)
 	var/undergloves = 1
+
+// Clothing armour values.
+/obj/item/clothing
+	var/global/list/armour_to_descriptive_term = list(
+		"melee" = "blunt force",
+		"bullet" = "ballistics",
+		"laser" = "lasers",
+		"energy" = "energy",
+		"bomb" = "explosions",
+		"bio" = "biohazards",
+		"rad" = "radiation"
+		)
+
+/obj/item/clothing/examine(var/mob/user)
+	. = ..()
+	if(. && user)
+		var/list/armor_strings = list()
+		for(var/armor_type in armour_to_descriptive_term)
+			if(armor[armor_type])
+				switch(armor[armor_type])
+					if(1 to 20)
+						armor_strings += "It barely protects against [armour_to_descriptive_term[armor_type]]."
+					if(21 to 30)
+						armor_strings += "It provides a very small defense against [armour_to_descriptive_term[armor_type]]."
+					if(31 to 40)
+						armor_strings += "It offers a small amount of protection against [armour_to_descriptive_term[armor_type]]."
+					if(41 to 50)
+						armor_strings += "It offers a moderate defense against [armour_to_descriptive_term[armor_type]]."
+					if(51 to 60)
+						armor_strings += "It provides a strong defense against [armour_to_descriptive_term[armor_type]]."
+					if(61 to 70)
+						armor_strings += "It is very strong against [armour_to_descriptive_term[armor_type]]."
+					if(71 to 80)
+						armor_strings += "This gives a very robust defense against [armour_to_descriptive_term[armor_type]]."
+					if(81 to 99)
+						armor_strings += "Wearing this would make you nigh-invulerable against [armour_to_descriptive_term[armor_type]]."
+					if(100)
+						armor_strings += "You would be immune to [armour_to_descriptive_term[armor_type]] if you wore this."
+
+		if(item_flags & ITEM_FLAG_AIRTIGHT)
+			armor_strings += "It is airtight."
+
+		if(item_flags & ITEM_FLAG_STOPPRESSUREDAMAGE)
+			armor_strings += "Wearing this will protect you from the vacuum of space."
+
+		if(item_flags & ITEM_FLAG_THICKMATERIAL)
+			armor_strings += "The material is exceptionally thick."
+
+		if(max_heat_protection_temperature >= FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE)
+			armor_strings += "You could probably safely skydive into the Sun wearing this."
+		else if(max_heat_protection_temperature >= SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE)
+			armor_strings += "It provides good protection against fire and heat."
+
+		if(!isnull(min_cold_protection_temperature) && min_cold_protection_temperature <= SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE)
+			armor_strings += "It provides very good protection against very cold temperatures."
+
+		var/list/covers = list()
+		var/list/slots = list()
+		for(var/name in string_part_flags)
+			if(body_parts_covered & string_part_flags[name])
+				covers += name
+		for(var/name in string_slot_flags)
+			if(slot_flags & string_slot_flags[name])
+				slots += name
+
+		if(covers.len)
+			armor_strings += "It covers the [english_list(covers)]."
+
+		if(slots.len)
+			armor_strings += "It can be worn on your [english_list(slots)]."
+
+		to_chat(user, jointext(armor_strings, "<br>"))

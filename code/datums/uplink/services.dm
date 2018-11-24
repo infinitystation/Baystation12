@@ -85,6 +85,9 @@
 	if(state != AWAITING_ACTIVATION)
 		to_chat(user, "<span class='warning'>\The [src] won't activate again.</span>")
 		return
+	if(!(user.z in GLOB.using_map.station_levels))
+		to_chat(user, SPAN_WARNING("You are too far away from \the [GLOB.using_map.name] to make use of this service."))
+		return
 	if(!enable())
 		return
 	state = CURRENTLY_ACTIVE
@@ -106,7 +109,7 @@
 	playsound(loc, "sparks", 50, 1)
 	visible_message("<span class='warning'>\The [src] shuts down with a spark.</span>")
 
-/obj/item/device/uplink_service/update_icon()
+/obj/item/device/uplink_service/on_update_icon()
 	switch(state)
 		if(AWAITING_ACTIVATION)
 			icon_state = initial(icon_state)
@@ -198,6 +201,7 @@
 #define COPY_VALUE(KEY) new_record.set_##KEY(random_record.get_##KEY())
 
 /obj/item/device/uplink_service/fake_crew_announcement/enable(var/mob/user = usr)
+
 	var/datum/computer_file/report/crew_record/random_record
 	var/obj/item/weapon/card/id/I = user.GetIdCard()
 	if(GLOB.all_crew_records.len)
@@ -234,7 +238,7 @@
 		new_record.set_skillset(jointext(skills,"\n"))
 
 	if(istype(job) && job.announced)
-		AnnounceArrivalSimple(new_record.get_name(), new_record.get_job()/*, get_announcement_frequency(job)*/)
+		AnnounceArrivalSimple(new_record.get_name(), new_record.get_job(), GET_ANNOUNCEMENT_FREQ(job))
 	. = ..()
 
 #undef COPY_VALUE

@@ -24,7 +24,7 @@
 	STOP_PROCESSING(SSprocessing, src)
 
 /obj/structure/hygiene/attackby(var/obj/item/thing, var/mob/user)
-	if(!isnull(clogged) && clogged > 0 && istype(thing, /obj/item/clothing/mask/plunger))
+	if(!isnull(clogged) && clogged > 0 && isPlunger(thing))
 		user.visible_message("<span class='notice'>\The [user] strives valiantly to unclog \the [src] with \the [thing]!</span>")
 		spawn
 			playsound(loc, 'sound/effects/plunger.ogg', 75, 1)
@@ -79,6 +79,7 @@
 	icon_state = "toilet00"
 	density = 0
 	anchored = 1
+	can_buckle = 1
 	var/open = 0			//if the lid is up
 	var/cistern = 0			//if the cistern bit is open
 	var/w_items = 0			//the combined w_class of all the items in the cistern
@@ -111,7 +112,7 @@
 	open = !open
 	update_icon()
 
-/obj/structure/hygiene/toilet/update_icon()
+/obj/structure/hygiene/toilet/on_update_icon()
 	icon_state = "toilet[open][cistern]"
 
 /obj/structure/hygiene/toilet/attackby(obj/item/I as obj, var/mob/living/user)
@@ -159,6 +160,7 @@
 			update_icon()
 			return
 
+	if(istype(I, /obj/item/grab))
 		var/obj/item/grab/G = I
 
 		if(isliving(G.affecting))
@@ -222,7 +224,7 @@
 /obj/structure/hygiene/shower
 	name = "shower"
 	desc = "The HS-451. Installed in the 2200s by the Hygiene Division."
-	icon = 'icons/obj/watercloset.dmi'
+	icon = 'icons/obj/watercloset_inf.dmi'
 	icon_state = "shower"
 	density = 0
 	anchored = 1
@@ -293,14 +295,14 @@
 			return
 	. = ..()
 
-/obj/structure/hygiene/shower/update_icon()	//this is terribly unreadable, but basically it makes the shower mist up
+/obj/structure/hygiene/shower/on_update_icon()	//this is terribly unreadable, but basically it makes the shower mist up
 	overlays.Cut()					//once it's been on for a while, in addition to handling the water overlay.
 	if(mymist)
 		qdel(mymist)
 		mymist = null
 
 	if(on)
-		overlays += image('icons/obj/watercloset.dmi', src, "water", MOB_LAYER + 1, dir)
+		overlays += image('icons/obj/watercloset_inf.dmi', src, "water", MOB_LAYER + 1, dir)
 		if(temperature_settings[watertemp] < T20C)
 			return //no mist for cold water
 		if(!ismist)
@@ -357,15 +359,15 @@
 /obj/structure/hygiene/shower/proc/process_heat(mob/living/M)
 	if(!on || !istype(M)) return
 
-	var/temperature = temperature_settings[watertemp]
-	var/temp_adj = between(BODYTEMP_COOLING_MAX, temperature - M.bodytemperature, BODYTEMP_HEATING_MAX)
+	var/water_temperature = temperature_settings[watertemp]
+	var/temp_adj = between(BODYTEMP_COOLING_MAX, water_temperature - M.bodytemperature, BODYTEMP_HEATING_MAX)
 	M.bodytemperature += temp_adj
 
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(temperature >= H.species.heat_level_1)
+		if(water_temperature >= H.species.heat_level_1)
 			to_chat(H, "<span class='danger'>The water is searing hot!</span>")
-		else if(temperature <= H.species.cold_level_1)
+		else if(water_temperature <= H.species.cold_level_1)
 			to_chat(H, "<span class='warning'>The water is freezing cold!</span>")
 
 /obj/item/weapon/bikehorn/rubberducky
@@ -377,7 +379,8 @@
 
 /obj/structure/hygiene/sink
 	name = "sink"
-	icon = 'icons/obj/watercloset.dmi'
+//	icon = 'icons/obj/watercloset.dmi'
+	icon = 'icons/obj/watercloset_inf.dmi'
 	icon_state = "sink"
 	desc = "A sink used for washing one's hands and face."
 	anchored = 1
@@ -434,7 +437,7 @@
 
 /obj/structure/hygiene/sink/attackby(obj/item/O as obj, var/mob/living/user)
 
-	if(istype(O, /obj/item/clothing/mask/plunger) && !isnull(clogged))
+	if(isPlunger(O) && !isnull(clogged))
 		return ..()
 
 	if(busy)
@@ -494,10 +497,12 @@
 
 /obj/structure/hygiene/sink/kitchen
 	name = "kitchen sink"
+	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "sink_alt"
 
 /obj/structure/hygiene/sink/puddle	//splishy splashy ^_^
 	name = "puddle"
+	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "puddle"
 	clogged = -1 // how do you clog a puddle
 

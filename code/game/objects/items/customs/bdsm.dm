@@ -29,7 +29,7 @@
 	. = ..()
 	QDEL_NULL(vcell)
 
-/obj/item/weapon/spectoys/vibrator/update_icon()
+/obj/item/weapon/spectoys/vibrator/on_update_icon()
 	if(on)
 		icon_state = icon_on
 	else

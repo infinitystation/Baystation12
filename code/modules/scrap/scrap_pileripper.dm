@@ -111,7 +111,7 @@
 		playsound(src.loc, "sparks", 75, 1, -1)
 		to_chat(user, "<span class='notice'>You use the cryptographic sequencer on the [src.name].</span>")
 
-/obj/machinery/pile_ripper/update_icon()
+/obj/machinery/pile_ripper/on_update_icon()
 	..()
 	var/is_powered = !(stat & (BROKEN|NOPOWER))
 	if(safety_mode)
@@ -153,15 +153,14 @@
 	var/slab_name = L.name
 	var/slab_type = /obj/item/weapon/reagent_containers/food/snacks/meat
 
-	if(istype(L,/mob/living/carbon/human))
-		slab_name = L.real_name
-		slab_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
-		if(L.isMonkey())
-			slab_type = /obj/item/weapon/reagent_containers/food/snacks/meat/monkey
-	var/obj/item/weapon/reagent_containers/food/snacks/meat/new_meat = new slab_type(get_turf(get_step(src, 4)))
-	new_meat.name = "[slab_name] [new_meat.name]"
-
-	new_meat.reagents.add_reagent(/datum/reagent/nutriment, 10)
+	if(iscarbon(L))
+		if(istype(L,/mob/living/carbon/human))
+			slab_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+			if(L.isMonkey())
+				slab_type = /obj/item/weapon/reagent_containers/food/snacks/meat/monkey
+		var/obj/item/weapon/reagent_containers/food/snacks/meat/new_meat = new slab_type(get_turf(get_step(src, 4)))
+		new_meat.name = "[slab_name] [new_meat.name]"
+		new_meat.reagents.add_reagent(/datum/reagent/nutriment, 10)
 	if(iscarbon(L))
 		var/mob/living/carbon/C = L
 		C.nutrition -= 100

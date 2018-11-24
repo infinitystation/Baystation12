@@ -204,7 +204,7 @@
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/cough_female.ogg"
 
-		if(H.species.reagent_tag == IS_RESOMI)
+		if(H.get_species() == SPECIES_RESOMI)
 			emote_sound = "sound/voice/resomicoughb.ogg"
 
 		if(emote_sound)
@@ -295,7 +295,7 @@
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/laugh_female_[rand(1,3)].ogg"
 
-		if(H.species.reagent_tag == IS_RESOMI)
+		if(H.get_species() == SPECIES_RESOMI)
 			emote_sound = "sound/voice/resomicougha.ogg"
 
 		if(emote_sound)
@@ -360,10 +360,10 @@
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/scream_female_[rand(1,2)].ogg"
 
-		if(H.species.reagent_tag == IS_XENOS)
+		if(H.get_species() == SPECIES_XENO)
 			emote_sound = "sound/voice/alien_pain.ogg"
 
-		if(H.species.reagent_tag == IS_RESOMI)
+		if(H.get_species() == SPECIES_RESOMI)
 			emote_sound = "sound/voice/resomisneeze.ogg"
 
 		if(emote_sound)
@@ -372,6 +372,14 @@
 /decl/emote/audible/grunt
 	key = "grunt"
 	emote_message_3p = "USER גמנקטע."
+
+/decl/emote/audible/slap
+	key = "slap"
+	emote_message_1p_target = "<span class='warning'>You slap TARGET across the face!</span>"
+	emote_message_1p = "You slap yourself across the face!"
+	emote_message_3p_target = "<span class='warning'>USER slaps TARGET across the face!</span>"
+	emote_message_3p = "USER slaps USER_SELF across the face!"
+	emote_sound = 'sound/effects/snap.ogg'
 
 /decl/emote/audible/bug_hiss
 	key ="hiss"

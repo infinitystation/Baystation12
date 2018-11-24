@@ -45,7 +45,7 @@
 	else
 		..(target, user, clickparams, pointblank, reflex, list("Charged" = 0))
 
-/obj/item/weapon/gun/projectile/automatic/invider/update_icon()
+/obj/item/weapon/gun/projectile/automatic/invider/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "pdw"

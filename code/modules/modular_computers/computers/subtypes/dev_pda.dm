@@ -7,14 +7,17 @@
 	hardware_flag = PROGRAM_PDA
 	max_hardware_size = 1
 	w_class = ITEM_SIZE_SMALL
+	base_active_power_usage = 4
+	base_idle_power_usage = 0
 	light_strength = 2
 	slot_flags = SLOT_ID | SLOT_BELT
 	stores_pen = TRUE
 	stored_pen = /obj/item/weapon/pen
+	receives_updates = FALSE
 
 /obj/item/modular_computer/pda/Initialize()
 	. = ..()
-	enable_computer()
+//	enable_computer()
 
 /obj/item/modular_computer/pda/AltClick(var/mob/user)
 	if(!CanPhysicallyInteract(user))
@@ -28,8 +31,7 @@
 /obj/item/weapon/storage/box/PDAs
 	name = "box of spare PDAs"
 	desc = "A box of spare PDA microcomputers."
-	icon = 'icons/obj/pda.dmi'
-	icon_state = "pdabox"
+	icon_state = "pda"
 
 /obj/item/weapon/storage/box/PDAs/Initialize()
 	. = ..()

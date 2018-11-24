@@ -4,7 +4,7 @@
 **Код**: https://github.com/infinitystation/Baystation12  
 **Сайт разработчика:** https://infinity-ss13.info/  
 **Discord**: https://discord.gg/N4atUkH  
-**Используемые карты:** Модифицированный Torch  
+**Используемые карты:** Sierra, Модифицированный Bearcat 
 
 **Сайт оригинального разработчика:** https://baystation12.net  
 **Оригинальный код:** https://github.com/Baystation12/Baystation12  
@@ -20,28 +20,30 @@
 Кнопка в правой части экрана.
 
 Вариант 2:  
-1. Установить любой другой GIT-клиент.  
-Github for Windows, TortoiseGit, git-scm, SourceTree, или любой другой.  
+1. Установить любой другой git-клиент.  
+SourceTree, Github for Windows, git-scm, TortoiseGit или любой другой.  
 2. Зайти в клиент и клонировать репозиторий по ссылке:  
 https://github.com/infinitystation/Baystation12.git
 
 ## УСТАНОВКА
 0. Убедитесь, что у вас есть BYOND. Скачать можно здесь: http://www.byond.com/.  
 1. Откройте файл baystation12.dme с помощью Dream Maker.
-2. Нажмите Build -> Compile или нажмите Ctrl + K.
+2. Нажмите Build, затем на Compile или нажмите Ctrl + K.
 3. Дождитесь сообщения:  
-`...  
-saving baystation12.dmb (DEBUG mode)  
-baystation12.dmb - 0 errors, 0 warnings`  
+```
+...
+saving baystation12.dmb (DEBUG mode)
+baystation12.dmb - 0 errors, 0 warnings
+```  
 Если будут проблемы, пишите в дискорд.
 
-## СОДЕЙСТВИЕ РАЗРАБОТКЕ БИЛДА.
+## СОДЕЙСТВИЕ РАЗРАБОТКЕ БИЛДА
 Обратиться разработчикам здесь:  
 https://discord.gg/N4atUkH  
 
 ## ЗАПУСК
 0. Убедитесь, что у вас есть BYOND. Скачать можно здесь: http://www.byond.com/.  
-1. Нажмите на Menu (Шестеренка) -> Start Dream Daemon. Или нажмите Ctrl + D.
+1. Откройте BYOND и нажмите на Menu (Шестеренка), затем на Start Dream Daemon. Или нажмите Ctrl + D.
 2. Выберите с файл с помощью кнопки [...].
 3. Напишите порт и нажмите кнопку [GO].
 4. Как только появится строка "Initializations Complete" нажмите кнопку входа, которая обозначена стрелкой.

@@ -27,7 +27,7 @@
 #define R_FUN           0x8
 #define R_SERVER        0x10
 #define R_DEBUG         0x20
-#define R_POSSESS       0x40
+#define R_JUDGE         0x40
 #define R_PERMISSIONS   0x80
 #define R_STEALTH       0x100
 #define R_REJUVINATE    0x200

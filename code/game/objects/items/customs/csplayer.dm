@@ -6,7 +6,7 @@
 	var/icon_loaded = "csplayer_loaded"
 	var/icon_on = "csplayer_on"
 
-/obj/item/device/pmp/personal/csplayer/update_icon()
+/obj/item/device/pmp/personal/csplayer/on_update_icon()
 	if (playing)
 		icon_state = icon_on
 	else

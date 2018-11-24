@@ -8,7 +8,7 @@
 	icon_state = "0"
 	var/state = 0
 	var/obj/item/weapon/circuitboard/circuit = null
-	atom_flags = ATOM_FLAG_CLIMBABLE
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CLIMBABLE
 //	weight = 1.0E8
 
 /obj/structure/computerframe/attackby(obj/item/P as obj, mob/user as mob)
@@ -88,7 +88,7 @@
 				var/obj/item/stack/cable_coil/A = new /obj/item/stack/cable_coil( src.loc )
 				A.amount = 5
 
-			if(istype(P, /obj/item/stack/material) && P.get_material_name() == "glass")
+			if(istype(P, /obj/item/stack/material) && P.get_material_name() == MATERIAL_GLASS)
 				var/obj/item/stack/G = P
 				if (G.get_amount() < 2)
 					to_chat(user, "<span class='warning'>You need two sheets of glass to put in the glass panel.</span>")
