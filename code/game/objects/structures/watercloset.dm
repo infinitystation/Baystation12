@@ -342,6 +342,12 @@
 		if(istype(AM) && AM.simulated)
 			wash(AM)
 			if(istype(L))
+				var/mob/living/carbon/human/H = L
+				if(ishuman(H))
+					var/obj/item/organ/external/head/head = H.organs_by_name[BP_HEAD]
+					if(istype(head))
+						head.forehead_graffiti = null
+						head.graffiti_style = null
 				process_heat(L)
 	wash_floor()
 	reagents.add_reagent(/datum/reagent/water, reagents.get_free_space())
@@ -436,6 +442,14 @@
 	if(!Adjacent(user)) return		//Person has moved away from the sink
 
 	user.clean_blood()
+
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/obj/item/organ/external/head/head = H.organs_by_name[BP_HEAD]
+		if(istype(head))
+			head.forehead_graffiti = null
+			head.graffiti_style = null
+
 	if(ishuman(user))
 		user:update_inv_gloves()
 	for(var/mob/V in viewers(src, null))
