@@ -94,6 +94,10 @@
 			forehead_graffiti = graffiti
 			graffiti_style = style
 
+/obj/item/organ/external/head/proc/remove_graffiti()
+	forehead_graffiti = null
+	graffiti_style = null
+
 /obj/item/organ/external/head/get_agony_multiplier()
 	return (owner && owner.headcheck(organ_tag)) ? 1.50 : 1
 
