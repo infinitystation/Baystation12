@@ -139,6 +139,11 @@ character_name: Wayne Hutton
 item_path: /obj/item/device/pmp/personal
 }
 {
+ckey: unbidden
+character_name: Milo Moon
+item_path: /obj/item/device/pmp/personal
+}
+{
 ckey: forrya
 character_name: Niyarkszherch Kchrashchjrj
 item_path: /obj/item/device/pmp/personal/csplayer
@@ -299,6 +304,16 @@ character_name: Medea Heldane
 item_path: /obj/item/custkit/kosteg_helmet
 }
 {
+ckey: jackaltabaqui
+character_name: Daniel Darkwood
+item_path: /obj/item/clothing/head/kitty/fake
+}
+{
+ckey: s1334
+character_name: Essah Reiihoz
+item_path: /obj/item/device/synthesized_instrument/guitar/multi
+}
+{
 ckey: logfol
 character_name: Alias Victus
 item_path: /obj/item/clothing/head/beret/centcom/officer
@@ -400,6 +415,15 @@ item_name: rainbow bracelet
 item_desc: It's a rainbow bracelet. Looks pretty good and stylish, special for gays.
 item_icon: rainbow_bracelet
 }
+{
+ckey: thehero13
+character_name: Jonn Corsac
+item_path: /obj/item/weapon/material/kitchen/utensil/knife/boot
+item_name: karambit
+item_desc: A small curved knife.
+item_icon: karambit2
+}
+
 #	LONG ITEMS HERE (+7)
 
 {
