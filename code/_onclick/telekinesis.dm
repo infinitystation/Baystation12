@@ -39,13 +39,13 @@ var/const/tk_maxrange = 15
 
 /obj/item/attack_tk(mob/user)
 	if(user.stat || !isturf(loc)) return
-	if((TK in user.mutations) && !user.get_active_hand()) // both should already be true to get here
+	if((MUTATION_TK in user.mutations) && !user.get_active_hand()) // both should already be true to get here
 		var/obj/item/tk_grab/O = new(src)
 		user.put_in_active_hand(O)
 		O.host = user
 		O.focus_object(src)
 	else
-		warning("Strange attack_tk(): TK([TK in user.mutations]) empty hand([!user.get_active_hand()])")
+		warning("Strange attack_tk(): TK([MUTATION_TK in user.mutations]) empty hand([!user.get_active_hand()])")
 	return
 
 
@@ -78,9 +78,8 @@ var/const/tk_maxrange = 15
 /obj/item/tk_grab/dropped(mob/user as mob)
 	if(focus && user && loc != user && loc != user.loc) // drop_item() gets called when you tk-attack a table/closet with an item
 		if(focus.Adjacent(loc))
-			focus.loc = loc
-	loc = null
-	QDEL_IN(src, 1)
+			focus.forceMove(loc)
+	qdel(src)
 
 //stops TK grabs being equipped anywhere but into hands
 /obj/item/tk_grab/equipped(var/mob/user, var/slot)
@@ -99,7 +98,7 @@ var/const/tk_maxrange = 15
 	if(!host || host != user)
 		qdel(src)
 		return
-	if(!(TK in host.mutations))
+	if(!(MUTATION_TK in host.mutations))
 		qdel(src)
 		return
 	if(isobj(target) && !isturf(target.loc))

@@ -34,7 +34,7 @@
 		src.nutrition -= DEFAULT_HUNGER_FACTOR/10
 		if (move_intent.flags & MOVE_INTENT_EXERTIVE)
 			src.nutrition -= DEFAULT_HUNGER_FACTOR/10
-	if((FAT in src.mutations) && (move_intent.flags & MOVE_INTENT_EXERTIVE) && src.bodytemperature <= 360)
+	if((MUTATION_FAT in src.mutations) && (move_intent.flags & MOVE_INTENT_EXERTIVE) && src.bodytemperature <= 360)
 		src.bodytemperature += 2
 
 	// Moving around increases germ_level faster
@@ -62,7 +62,7 @@
 
 				if(prob(src.getBruteLoss() - 50))
 					for(var/atom/movable/A in stomach_contents)
-						A.loc = loc
+						A.dropInto(loc)
 						stomach_contents.Remove(A)
 					src.gib()
 
@@ -70,7 +70,7 @@
 	for(var/mob/M in src)
 		if(M in src.stomach_contents)
 			src.stomach_contents.Remove(M)
-		M.loc = src.loc
+		M.dropInto(loc)
 		for(var/mob/N in viewers(src, null))
 			if(N.client)
 				N.show_message(text("<span class='danger'>[M] bursts out of [src]!</span>"), 2)
@@ -429,7 +429,7 @@
  *  Return FALSE if victim can't be devoured, DEVOUR_FAST if they can be devoured quickly, DEVOUR_SLOW for slow devour
  */
 /mob/living/carbon/proc/can_devour(atom/movable/victim)
-	if((FAT in mutations) && issmall(victim))
+	if((MUTATION_FAT in mutations) && issmall(victim))
 		return DEVOUR_FAST
 
 	return FALSE

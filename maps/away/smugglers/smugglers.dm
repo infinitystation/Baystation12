@@ -74,7 +74,7 @@
 /obj/random/ore
 	name = "random ore"
 	desc = "This is a random ore."
-	icon = 'icons/obj/clothing/ties.dmi'
+	icon = 'icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "horribletie"
 
 /obj/random/ore_smug/spawn_choices()
@@ -94,7 +94,7 @@
 /obj/random/ammo_magazine_smug/spawn_choices()
 	return list(
 		/obj/item/ammo_magazine/a10mm,
-		/obj/item/ammo_magazine/a357,
+		/obj/item/ammo_magazine/a44,
 		/obj/item/ammo_magazine/c45m,
 		/obj/item/ammo_magazine/c556,
 		/obj/item/ammo_magazine/a762)

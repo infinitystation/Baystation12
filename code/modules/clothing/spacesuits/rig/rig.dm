@@ -25,7 +25,7 @@
 	permeability_coefficient = 0.1
 	unacidable = 1
 
-	var/equipment_overlay_icon = 'icons/mob/onmob/rig_modules.dmi'
+	var/equipment_overlay_icon = 'icons/mob/onmob/onmob_rig_modules.dmi'
 	var/hides_uniform = 1 	//used to determinate if uniform should be visible whenever the suit is sealed or not
 
 	var/interface_path = "hardsuit.tmpl"
@@ -87,6 +87,8 @@
 	// Wiring! How exciting.
 	var/datum/wires/rig/wires
 	var/datum/effect/effect/system/spark_spread/spark_system
+
+	var/banned_modules = list()
 
 /obj/item/weapon/rig/examine()
 	. = ..()
@@ -513,7 +515,7 @@
 	//TODO: Maybe consider a cache for this (use mob_icon as blank canvas, use suit icon overlay).
 	overlays.Cut()
 	if(!mob_icon || update_mob_icon)
-		var/species_icon = 'icons/mob/onmob/rig_back.dmi'
+		var/species_icon = 'icons/mob/onmob/onmob_rig_back.dmi'
 		// Since setting mob_icon will override the species checks in
 		// update_inv_wear_suit(), handle species checks here.
 		if(wearer && sprite_sheets && sprite_sheets[wearer.species.get_bodytype(wearer)])
@@ -620,7 +622,7 @@
 			if(M && M.back == src)
 				if(!M.unEquip(src))
 					return
-			src.forceMove(get_turf(src))
+			src.dropInto(loc)
 			return
 
 	if(istype(M) && M.back == src)

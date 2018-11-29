@@ -43,20 +43,23 @@
 
 /obj/item/clothing/accessory/corptie
 	name = "corporate tie"
-	desc = "A neosilk clip-on tie. This one has a clip on it that proudly bears a corporate logo."
+	desc = "A green neosilk clip-on tie. This one has a clip on it that proudly bears a corporate logo."
 	icon_state = "cliptie"
 
 /obj/item/clothing/accessory/corptie/nanotrasen
 	name = "\improper NanoTrasen tie"
-	desc = "A neosilk clip-on tie. This one has a clip on it that proudly bears the NanoTrasen logo."
+	desc = "A red neosilk clip-on tie. This one has a clip on it that proudly bears the NanoTrasen logo."
 	icon_state = "cliptie_nt"
+
+/obj/item/clothing/accessory/corptie/heph
+	name = "\improper Hephaestus Industries tie"
+	desc = "A cyan neosilk clip-on tie. This one has a clip on it that proudly bears the Hephaestus Industries logo."
+	icon_state = "cliptie_heph"
+
 
 //Bowties
 /obj/item/clothing/accessory/bowtie
-	var/icon_tied
-/obj/item/clothing/accessory/bowtie/New()
-	icon_tied = icon_tied || icon_state
-	..()
+	var/tied = TRUE
 
 /obj/item/clothing/accessory/bowtie/on_attached(obj/item/clothing/under/S, mob/user as mob)
 	..()
@@ -74,29 +77,18 @@
 
 	if(usr.incapacitated())
 		return 0
+	do_toggle(usr)
 
-	var/obj/item/clothing/accessory/bowtie/H = null
-	if (istype(src, /obj/item/clothing/accessory/bowtie))
-		H = src
-	else
-		H = locate() in src
-
-	if(H)
-		H.do_toggle(usr)
-
-/obj/item/clothing/accessory/bowtie/proc/do_toggle(user)
-	if(icon_state == icon_tied)
-		to_chat(usr, "You untie [src].")
-	else
-		to_chat(usr, "You tie [src].")
-
+/obj/item/clothing/accessory/bowtie/proc/do_toggle(mob/user)
+	user.visible_message("\The [user] [tied ? "un" : ""]ties \the [src].", "You [tied ? "un" : ""]tie \the [src].")
+	tied = !tied
 	update_icon()
 
 /obj/item/clothing/accessory/bowtie/on_update_icon()
-	if(icon_state == icon_tied)
-		icon_state = "[icon_tied]_untied"
+	if(tied)
+		icon_state = initial(icon_state)
 	else
-		icon_state = icon_tied
+		icon_state = "[initial(icon_state)]_untied"
 
 /obj/item/clothing/accessory/bowtie/color
 	name = "bowtie"

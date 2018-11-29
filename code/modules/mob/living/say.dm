@@ -136,7 +136,7 @@ proc/get_radio_key_from_channel(var/channel)
 
 	. = 0
 
-	if((HULK in mutations) && health >= 25 && length(message))
+	if((MUTATION_HULK in mutations) && health >= 25 && length(message))
 		message = "[uppertext(message)]!!!"
 		verb = pick("yells","roars","hollers")
 		message_data[3] = 0
@@ -176,6 +176,18 @@ proc/get_radio_key_from_channel(var/channel)
 	if(ending=="?")
 		return "asks"
 	return verb
+
+/mob/living/proc/format_say_message(var/message = null)
+	if(!message)
+		return
+
+	message = html_decode(message)
+
+	var/end_char = copytext(message, lentext(message), lentext(message) + 1)
+	if(!(end_char in list(".", "?", "!", "-", "~")))
+		message += "."
+
+	return html_encode(message)
 
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="", whispering)
 	if(client)
@@ -231,8 +243,8 @@ proc/get_radio_key_from_channel(var/channel)
 			verb = say_quote(message, speaking)
 
 	message = trim_left(message)
-
 	message = handle_autohiss(message, speaking)
+	message = format_say_message(message)
 
 	if(!(speaking && (speaking.flags & NO_STUTTER)))
 		var/list/message_data = list(message, verb, 0)

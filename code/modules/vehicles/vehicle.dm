@@ -251,7 +251,6 @@
 		return
 
 	to_chat(usr, "<span class='notice'>You remove [cell] from [src].</span>")
-	cell.forceMove(get_turf(H))
 	H.put_in_hands(cell)
 	cell = null
 	powercheck()
