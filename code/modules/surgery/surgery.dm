@@ -138,8 +138,8 @@
 				M.op_stage.in_progress += zone
 				S.begin_step(user, M, zone, src)		//start on it
 				//We had proper tools! (or RNG smiled.) and user did not move or change hands.
-				var/duration = user.skill_delay_mult(S.core_skill) * rand(S.min_duration, S.max_duration)
-				if(prob(S.success_chance(user, M, src)) &&  do_mob(user, M, duration))
+				var/duration = user.skill_delay_mult(S.core_skill) * rand(S.min_duration, S.max_duration) * surgery_speed
+				if(prob(S.success_chance(user, M, src)) &&  do_mob(user, M, duration) * surgery_speed)
 					S.end_step(user, M, zone, src)		//finish successfully
 				else if ((src in user.contents) && user.Adjacent(M))			//or
 					S.fail_step(user, M, zone, src)		//malpractice~
