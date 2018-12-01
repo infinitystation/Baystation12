@@ -15,6 +15,7 @@
 	conductive = 0
 	construction_difficulty = 2
 	ore_compresses_to = MATERIAL_DIAMOND
+	ore_name = "diamond"
 	ore_result_amount = 5
 	ore_spread_chance = 10
 	ore_scan_icon = "mineral_rare"
