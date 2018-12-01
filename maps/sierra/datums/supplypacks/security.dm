@@ -189,7 +189,7 @@
 
 /decl/hierarchy/supply_pack/security/pistolammorubber //overriding standard pack
 	name = "Ammo - Non-Lethal Pistol Ammunition"
-	contains = list(/obj/item/ammo_magazine/c45m/rubber = 2, /obj/item/ammo_magazine/c45m/flash = 2, /obj/item/ammo_magazine/c44/rubber = 2)
+	contains = list(/obj/item/ammo_magazine/c45m/rubber = 2, /obj/item/ammo_magazine/c45m/flash = 2, /obj/item/ammo_magazine/c357/rubber = 2)
 	cost = 25
 	containername = "\improper Non-lethal ammunition crate"
 	access = access_heads //only heads get these
@@ -200,7 +200,7 @@
 
 /decl/hierarchy/supply_pack/security/magnum_ammo
 	name = "Ammo - .44 Magnum"
-	contains = list(/obj/item/ammo_magazine/c44 = 4)
+	contains = list(/obj/item/ammo_magazine/a44 = 4)
 	cost = 30
 	containertype = /obj/structure/closet/crate/secure/weapon
 	containername = "\improper .44 magnum ammunition crate"

@@ -145,7 +145,7 @@
 		return
 
 	var/datum/gas_mixture/environment = loc.return_air()
-	if(!(SPACERES in mutations) && environment)
+	if(!(MUTATION_SPACERES in mutations) && environment)
 
 		if(abs(environment.temperature - bodytemperature) > 40 )
 			bodytemperature += ((environment.temperature - bodytemperature) / 5)
@@ -365,7 +365,7 @@
 	return verb
 
 /mob/living/simple_animal/put_in_hands(var/obj/item/W) // No hands.
-	W.loc = get_turf(src)
+	W.forceMove(get_turf(src))
 	return 1
 
 // Harvest an animal's delicious byproducts

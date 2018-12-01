@@ -657,7 +657,7 @@ obj/random/obstruction/spawn_choices()
 /obj/random/masks
 	name = "random mask"
 	desc = "This is a random face mask."
-	icon = 'icons/obj/clothing/masks.dmi'
+	icon = 'icons/obj/clothing/obj_mask.dmi'
 	icon_state = "gas_mask"
 
 /obj/random/masks/spawn_choices()
@@ -738,7 +738,7 @@ obj/random/obstruction/spawn_choices()
 /obj/random/shoes
 	name = "random footwear"
 	desc = "This is a random pair of shoes."
-	icon = 'icons/obj/clothing/shoes.dmi'
+	icon = 'icons/obj/clothing/obj_feet.dmi'
 	icon_state = "boots"
 
 /obj/random/shoes/spawn_choices()
@@ -776,7 +776,7 @@ obj/random/obstruction/spawn_choices()
 /obj/random/gloves
 	name = "random gloves"
 	desc = "This is a random pair of gloves."
-	icon = 'icons/obj/clothing/gloves.dmi'
+	icon = 'icons/obj/clothing/obj_hands.dmi'
 	icon_state = "rainbow"
 
 /obj/random/gloves/spawn_choices()
@@ -806,7 +806,7 @@ obj/random/obstruction/spawn_choices()
 /obj/random/glasses
 	name = "random eyewear"
 	desc = "This is a random pair of glasses."
-	icon = 'icons/obj/clothing/glasses.dmi'
+	icon = 'icons/obj/clothing/obj_eyes.dmi'
 	icon_state = "leforge"
 
 /obj/random/glasses/spawn_choices()
@@ -829,7 +829,7 @@ obj/random/obstruction/spawn_choices()
 /obj/random/hat
 	name = "random headgear"
 	desc = "This is a random hat of some kind."
-	icon = 'icons/obj/clothing/hats.dmi'
+	icon = 'icons/obj/clothing/obj_head.dmi'
 	icon_state = "tophat"
 
 /obj/random/hat/spawn_choices()
@@ -875,7 +875,7 @@ obj/random/obstruction/spawn_choices()
 /obj/random/suit
 	name = "random suit"
 	desc = "This is a random piece of outerwear."
-	icon = 'icons/obj/clothing/suits.dmi'
+	icon = 'icons/obj/clothing/obj_suit.dmi'
 	icon_state = "fire"
 
 /obj/random/suit/spawn_choices()
@@ -896,7 +896,7 @@ obj/random/obstruction/spawn_choices()
 /obj/random/clothing
 	name = "random clothes"
 	desc = "This is a random piece of clothing."
-	icon = 'icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/obj/clothing/obj_under.dmi'
 	icon_state = "grey"
 
 /obj/random/clothing/spawn_choices()
@@ -917,7 +917,7 @@ obj/random/obstruction/spawn_choices()
 /obj/random/accessory
 	name = "random accessory"
 	desc = "This is a random utility accessory."
-	icon = 'icons/obj/clothing/ties.dmi'
+	icon = 'icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "horribletie"
 
 /obj/random/accessory/spawn_choices()
@@ -1067,7 +1067,7 @@ something, make sure it's not in one of the other lists.*/
 /obj/random/voidhelmet
 	name = "Random Voidsuit Helmet"
 	desc = "This is a random voidsuit helmet."
-	icon = 'icons/obj/clothing/hats.dmi'
+	icon = 'icons/obj/clothing/obj_head.dmi'
 	icon_state = "void"
 
 /obj/random/voidhelmet/spawn_choices()
@@ -1088,7 +1088,7 @@ something, make sure it's not in one of the other lists.*/
 /obj/random/voidsuit
 	name = "Random Voidsuit"
 	desc = "This is a random voidsuit."
-	icon = 'icons/obj/clothing/suits.dmi'
+	icon = 'icons/obj/clothing/obj_suit.dmi'
 	icon_state = "void"
 
 /obj/random/voidsuit/spawn_choices()
@@ -1242,3 +1242,101 @@ var/list/random_useful_
 	name = "Multi Point - Asteroid Faithless"
 	id = "Faithless"
 	item_path = /mob/living/simple_animal/hostile/faithless/cult
+
+//Random MRE stuff
+
+/obj/random/mre
+	name = "random MRE"
+	desc = "This is a random single MRE."
+	icon = 'icons/obj/food.dmi'
+	icon_state = "mre"
+
+/obj/random/mre/spawn_choices()
+	return list(/obj/item/weapon/storage/mre,
+				/obj/item/weapon/storage/mre/menu2,
+				/obj/item/weapon/storage/mre/menu3,
+				/obj/item/weapon/storage/mre/menu4,
+				/obj/item/weapon/storage/mre/menu5,
+				/obj/item/weapon/storage/mre/menu6,
+				/obj/item/weapon/storage/mre/menu7,
+				/obj/item/weapon/storage/mre/menu8,
+				/obj/item/weapon/storage/mre/menu9,
+				/obj/item/weapon/storage/mre/menu10)
+
+
+/obj/random/mremain
+	name = "random MRE main course"
+	desc = "This is a random main course for MREs."
+	icon = 'icons/obj/food.dmi'
+	icon_state = "pouch"
+
+/obj/random/mremain/spawn_choices()
+	return list(/obj/item/weapon/storage/mrebag,
+				/obj/item/weapon/storage/mrebag/menu2,
+				/obj/item/weapon/storage/mrebag/menu3,
+				/obj/item/weapon/storage/mrebag/menu4,
+				/obj/item/weapon/storage/mrebag/menu5,
+				/obj/item/weapon/storage/mrebag/menu6,
+				/obj/item/weapon/storage/mrebag/menu7,
+				/obj/item/weapon/storage/mrebag/menu8)
+
+
+/obj/random/mreside
+	name = "random MRE side dish"
+	desc = "This is a random side dish for MREs."
+	icon = 'icons/obj/food.dmi'
+	icon_state = "pouch"
+
+/obj/random/mreside/spawn_choices()
+	return list(/obj/item/weapon/reagent_containers/food/snacks/tossedsalad,
+				/obj/item/weapon/reagent_containers/food/snacks/boiledrice,
+				/obj/item/weapon/reagent_containers/food/snacks/poppypretzel,
+				/obj/item/weapon/reagent_containers/food/snacks/twobread,
+				/obj/item/weapon/reagent_containers/food/snacks/jelliedtoast)
+
+/obj/random/mredessert
+	name = "random MRE dessert"
+	desc = "This is a random dessert for MREs."
+	icon = 'icons/obj/food.dmi'
+	icon_state = "pouch"
+
+/obj/random/mredessert/spawn_choices()
+	return list(/obj/item/weapon/reagent_containers/food/snacks/candy,
+				/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar,
+				/obj/item/weapon/reagent_containers/food/snacks/donut/normal,
+				/obj/item/weapon/reagent_containers/food/snacks/donut/cherryjelly,
+				/obj/item/weapon/reagent_containers/food/snacks/chocolatebar,
+				/obj/item/weapon/reagent_containers/food/snacks/cookie)
+
+/obj/random/mrehotdrinks
+	name = "random MRE hot drink"
+	desc = "This is a random hot drink for MREs."
+	icon = 'icons/obj/food.dmi'
+	icon_state = "packet"
+
+/obj/random/mrehotdrinks/spawn_choices()
+	return list(/obj/item/weapon/reagent_containers/food/condiment/small/packet/coffee,
+				/obj/item/weapon/reagent_containers/food/condiment/small/packet/tea,
+				/obj/item/weapon/reagent_containers/food/condiment/small/packet/cocoa)
+
+/obj/random/mrejuice
+	name = "random MRE juice"
+	desc = "This is a random juice powder packet for MREs."
+	icon = 'icons/obj/food.dmi'
+	icon_state = "packet"
+
+/obj/random/mrejuice/spawn_choices()
+	return list(/obj/item/weapon/reagent_containers/food/condiment/small/packet/grape,
+				/obj/item/weapon/reagent_containers/food/condiment/small/packet/orange,
+				/obj/item/weapon/reagent_containers/food/condiment/small/packet/watermelon,
+				/obj/item/weapon/reagent_containers/food/condiment/small/packet/apple)
+
+/obj/random/mrespread
+	name = "random MRE spread"
+	desc = "This is a random spread packet for MREs."
+	icon = 'icons/obj/food.dmi'
+	icon_state = "packet"
+
+/obj/random/mrespread/spawn_choices()
+	return list(/obj/item/weapon/reagent_containers/food/condiment/small/packet/jelly,
+				/obj/item/weapon/reagent_containers/food/condiment/small/packet/honey)

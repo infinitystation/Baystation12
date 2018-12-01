@@ -753,7 +753,9 @@
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask/proteinshake = 8,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask = 8,
 					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 8,
-					/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 8,
+					/obj/item/weapon/storage/mre/random = 8,
+					/obj/item/weapon/storage/mre/menu9 = 4,
+					/obj/item/weapon/storage/mre/menu10 = 4,
 					/obj/item/weapon/reagent_containers/pill/diet = 8,
 					/obj/item/weapon/towel/random = 8)
 
@@ -762,7 +764,9 @@
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask/proteinshake = 20,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask = 5,
 					/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 5,
-					/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 5,
+					/obj/item/weapon/storage/mre/random = 50,
+					/obj/item/weapon/storage/mre/menu9 = 50,
+					/obj/item/weapon/storage/mre/menu10 = 50,
 					/obj/item/weapon/reagent_containers/pill/diet = 25,
 					/obj/item/weapon/towel/random = 40)
 
@@ -808,7 +812,7 @@
 					/obj/item/weapon/storage/fancy/cigarettes/cigarello/mint = 2,
 					/obj/item/weapon/storage/fancy/cigarettes/cigarello/variety = 2,
 					/obj/item/weapon/storage/box/matches = 10,
-					/obj/item/weapon/flame/lighter/random = 4,
+					/obj/item/weapon/flame/lighter = 4,
 					/obj/item/weapon/storage/chewables/tobacco = 2,
 					/obj/item/weapon/storage/chewables/tobacco2 = 2,
 					/obj/item/weapon/storage/chewables/tobacco3 = 2,
@@ -848,7 +852,7 @@
 					/obj/item/weapon/storage/fancy/cigarettes/cigarello/mint = 85,
 					/obj/item/weapon/storage/fancy/cigarettes/cigarello/variety = 85,
 					/obj/item/weapon/storage/box/matches = 2,
-					/obj/item/weapon/flame/lighter/random = 5,
+					/obj/item/weapon/flame/lighter = 5,
 					/obj/item/clothing/mask/smokable/ecig/simple = 50,
 					/obj/item/clothing/mask/smokable/ecig/util = 100,
 					/obj/item/clothing/mask/smokable/ecig/deluxe = 250,

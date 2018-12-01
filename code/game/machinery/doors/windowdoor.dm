@@ -47,7 +47,7 @@
 	else
 		ae = electronics
 		electronics = null
-		ae.loc = src.loc
+		ae.dropInto(loc)
 	if(operating == -1)
 		ae.icon_state = "door_electronics_smoked"
 		operating = 0
@@ -232,7 +232,7 @@
 			else
 				ae = electronics
 				electronics = null
-				ae.loc = src.loc
+				ae.dropInto(loc)
 			ae.icon_state = "door_electronics_smoked"
 
 			operating = 0

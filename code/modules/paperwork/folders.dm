@@ -71,7 +71,6 @@
 		if(href_list["remove"])
 			var/obj/item/P = locate(href_list["remove"])
 			if(P && (P.loc == src) && istype(P))
-				P.loc = usr.loc
 				playsound(src,'sound/effects/Paper_Remove.ogg',40,1)
 				usr.put_in_hands(P)
 

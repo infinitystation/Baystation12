@@ -107,7 +107,7 @@
 			else
 				plane = initial(plane)
 
-/obj/structure/railing/proc/take_damage(amount)
+/obj/structure/railing/take_damage(amount)
 	health -= amount
 	if(health <= 0)
 		visible_message("<span class='danger'>\The [src] [material.destruction_desc]!</span>")
@@ -258,7 +258,7 @@
 					if (get_turf(G.affecting) == get_turf(src))
 						G.affecting.forceMove(get_step(src, src.dir))
 					else
-						G.affecting.forceMove(get_turf(src))
+						G.affecting.dropInto(loc)
 					G.affecting.Weaken(5)
 					visible_message("<span class='danger'>[G.assailant] throws \the [G.affecting] over \the [src].</span>")
 			else

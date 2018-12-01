@@ -189,7 +189,7 @@ obj/structure/closet/crate
 	desc = "A crate of emergency rations."
 
 /obj/structure/closet/crate/freezer/rations/WillContain()
-	return list(/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 15, /obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 15)
+	return list(/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 15, /obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 15, /obj/random/mre = 6)
 
 /obj/structure/closet/crate/freezer/nanoblood
 	name = "nanoblood freezer"
