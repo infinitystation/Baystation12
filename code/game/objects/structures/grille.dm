@@ -174,7 +174,10 @@
 					return
 
 			var/wtype = ST.material.created_window
-			if (ST.use(1))
+			var/ST_to_use = 4
+			if (!on_frame) //if we setting low wall window - use more material!
+				ST_to_use = 1
+			if (ST.use(ST_to_use))
 				var/obj/structure/window/WD = new wtype(loc, dir_to_set, 1)
 				to_chat(user, "<span class='notice'>You place the [WD] on [src].</span>")
 				WD.update_icon()
