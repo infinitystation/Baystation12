@@ -23,6 +23,7 @@
 	if(active_record)
 		user << browse_rsc(active_record.photo_front, "front_[active_record.uid].png")
 		user << browse_rsc(active_record.photo_side, "side_[active_record.uid].png")
+		data["creation"] = check_access(user, access_bridge)
 		data["pic_edit"] = check_access(user, access_bridge) || check_access(user, access_security)
 		data += active_record.generate_nano_data(user_access)
 	else
@@ -93,6 +94,19 @@
 		active_record = new/datum/computer_file/report/crew_record()
 		GLOB.all_crew_records.Add(active_record)
 		return 1
+	if(href_list["delete_record"])
+		if(!active_record)
+			return
+		if(!check_access(usr, access_change_ids))
+			to_chat(usr, "Access Denied.")
+			return
+		var/confirm = alert("Are you sure you want to delete it?", "DB Updating", "Yes", "No")
+		if(confirm == "Yes")
+			GLOB.all_crew_records.Remove(active_record)
+			qdel(active_record)
+			active_record = null
+			return 1
+		else return
 	if(href_list["print_active"])
 		if(!active_record)
 			return

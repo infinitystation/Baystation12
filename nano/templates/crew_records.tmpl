@@ -2,7 +2,11 @@
 <p>{{:helper.link('X', null, {'clear_message' : 1})}}{{:data.message}}</p>
 {{/if}}
 {{if data.uid}}
-{{:helper.link('BACK', '', {'clear_active' : 1})}}{{:helper.link('PRINT', '', {'print_active' : 1})}}<br><br>
+{{:helper.link('BACK', '', {'clear_active' : 1})}}{{:helper.link('PRINT', '', {'print_active' : 1})}}
+{{if data.creation}}
+	{{:helper.link('DELETE', 'document', {'delete_record' : 1})}}
+{{/if}}
+<br><br>
 <div class='statusDisplay'>
 	<div style="text-align: center">
 		<h3>GENERIC INFORMATION</h3>
