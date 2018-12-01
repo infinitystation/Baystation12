@@ -227,10 +227,10 @@
 	item_state = "secalt_helm"
 	armor = list(melee = 50, bullet = 45, laser = 45, energy = 40, bomb = 35, bio = 100, rad = 20)
 	sprite_sheets = list(
-		SPECIES_SKRELL = 'icons/mob/species/skrell/helmet.dmi',
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_skrell.dmi',
 		)
 	sprite_sheets_obj = list(
-		SPECIES_SKRELL = 'icons/obj/clothing/species/skrell/hats.dmi',
+		SPECIES_SKRELL = 'icons/obj/clothing/species/skrell/obj_head_skrell.dmi',
 		)
 
 /obj/item/clothing/suit/space/void/security/alt
@@ -239,10 +239,10 @@
 	armor = list(melee = 50, bullet = 45, laser = 45, energy = 40, bomb = 35, bio = 100, rad = 20)
 	allowed = list(/obj/item/weapon/gun,/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/melee/baton)
 	sprite_sheets = list(
-		SPECIES_SKRELL = 'icons/mob/species/skrell/suit.dmi',
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_skrell.dmi',
 		)
 	sprite_sheets_obj = list(
-		SPECIES_SKRELL = 'icons/obj/clothing/species/skrell/suits.dmi',
+		SPECIES_SKRELL = 'icons/obj/clothing/species/skrell/obj_head_skrell.dmi',
 		)
 
 /obj/item/clothing/suit/space/void/security/alt/prepared

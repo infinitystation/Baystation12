@@ -26,7 +26,7 @@
 		/obj/item/clothing/under/dress/dress_cap,
 		/obj/item/clothing/under/captainformal,
 		/obj/item/device/remote_device/captain,
-		/obj/item/ammo_magazine/c44,
+		/obj/item/ammo_magazine/a44,
 		/obj/item/weapon/storage/box/PDAs,
 		/obj/item/weapon/storage/box/ids,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/captain, /obj/item/weapon/storage/backpack/satchel/cap)),

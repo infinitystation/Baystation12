@@ -106,7 +106,7 @@
 			if(G.max_heat_protection_temperature)
 				if(G.max_heat_protection_temperature > 400)
 					prot = 1
-		else if(COLD_RESISTANCE in user.mutations)
+		else if(MUTATION_COLD_RESISTANCE in user.mutations)
 			prot = 1
 
 		if(prot == 0)
