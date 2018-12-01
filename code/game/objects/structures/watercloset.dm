@@ -104,7 +104,7 @@
 			if(ishuman(user))
 				user.put_in_hands(I)
 			else
-				I.loc = get_turf(src)
+				I.dropInto(loc)
 			to_chat(user, "<span class='notice'>You find \an [I] in the cistern.</span>")
 			w_items -= I.w_class
 			return
@@ -187,8 +187,8 @@
 		if(w_items + I.w_class > 5)
 			to_chat(user, "<span class='warning'>The cistern is full.</span>")
 			return
-		user.drop_item()
-		I.loc = src
+		if(!user.unEquip(I, src))
+			return
 		w_items += I.w_class
 		to_chat(user, "<span class='notice'>You carefully place \the [I] into the cistern.</span>")
 		return
@@ -385,6 +385,7 @@
 	desc = "A sink used for washing one's hands and face."
 	anchored = 1
 	var/busy = 0 	//Something's being washed at the moment
+	var/graffiti = 0 	//removing this?
 
 /obj/structure/hygiene/sink/MouseDrop_T(var/obj/item/thing, var/mob/user)
 	..()
@@ -404,6 +405,9 @@
 	if (ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/obj/item/organ/external/temp = H.organs_by_name[BP_R_HAND]
+		var/target_zone = H.zone_sel.selecting
+		if((target_zone == BP_HEAD) && (H.organs_by_name[BP_HEAD]) && (H.organs_by_name[BP_HEAD].forehead_graffiti))
+			graffiti = 1
 		if (user.hand)
 			temp = H.organs_by_name[BP_L_HAND]
 		if(temp && !temp.is_usable())
@@ -420,7 +424,10 @@
 		to_chat(user, "<span class='warning'>Someone's already washing here.</span>")
 		return
 
-	to_chat(usr, "<span class='notice'>You start washing your hands.</span>")
+	if(graffiti)
+		to_chat(usr, "<span class='notice'>You start removing your graffiti and washing your hands.</span>")
+	else
+		to_chat(usr, "<span class='notice'>You start washing your hands.</span>")
 
 	busy = 1
 	sleep(40)
@@ -432,8 +439,16 @@
 	if(ishuman(user))
 		user:update_inv_gloves()
 	for(var/mob/V in viewers(src, null))
-		V.show_message("<span class='notice'>[user] washes their hands using \the [src].</span>")
+		if(graffiti)
+			V.show_message("<span class='notice'>[user] washes their hands and head using \the [src].</span>")
+		else
+			V.show_message("<span class='notice'>[user] washes their hands using \the [src].</span>")
 
+	if(graffiti)
+		var/mob/living/carbon/human/H = user
+		var/obj/item/organ/external/head/I = H.organs_by_name[BP_HEAD]
+		I.remove_graffiti()
+		graffiti = 0
 
 /obj/structure/hygiene/sink/attackby(obj/item/O as obj, var/mob/living/user)
 

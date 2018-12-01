@@ -5,6 +5,9 @@
 	if(electrified != 0)
 		if(shock(user)) //Handles removing charge from the cell, as well. No need to do that here.
 			return
+	if(is_type_in_list(W,banned_modules))
+		to_chat(user, "<span class='danger'>\The [src] cannot mount this type of module.</span>")
+		return
 
 	// Pass repair items on to the chestpiece.
 	if(chest && (istype(W,/obj/item/stack/material) || isWelder(W)))
@@ -163,7 +166,7 @@
 
 					var/obj/item/rig_module/removed = possible_removals[removal_choice]
 					to_chat(user, "You detach \the [removed] from \the [src].")
-					removed.forceMove(get_turf(src))
+					removed.dropInto(loc)
 					removed.removed()
 					installed_modules -= removed
 					update_icon()

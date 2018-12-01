@@ -203,7 +203,7 @@
 	. = ..()
 
 /obj/machinery/light/on_update_icon(var/trigger = 1)
-	overlays = overlays.Cut()
+	overlays.Cut()
 	icon_state = "[base_state]_empty" //Never use the initial state. That'll just reset it to the mapping icon.
 	pixel_y = 0
 	pixel_x = 0
@@ -440,9 +440,9 @@
 		else
 			prot = 1
 
-		if(prot > 0 || (COLD_RESISTANCE in user.mutations))
+		if(prot > 0 || (MUTATION_COLD_RESISTANCE in user.mutations))
 			to_chat(user, "You remove the [get_fitting_name()]")
-		else if(TK in user.mutations)
+		else if(MUTATION_TK in user.mutations)
 			to_chat(user, "You telekinetically remove the [get_fitting_name()].")
 		else
 			to_chat(user, "You try to remove the [get_fitting_name()], but it's too hot and you don't want to burn your hand.")

@@ -57,6 +57,8 @@
 			washglasses = !(H.wear_mask.flags_inv & HIDEEYES)
 
 	if(H.head)
+		var/obj/item/organ/external/head/I = H.organs_by_name[BP_HEAD]
+		I.remove_graffiti()
 		if(H.head.clean_blood())
 			H.update_inv_head(0)
 	if(H.wear_suit)

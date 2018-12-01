@@ -173,7 +173,7 @@
 	if(host.mind)
 		GLOB.borers.remove_antagonist(host.mind)
 
-	src.loc = get_turf(host)
+	dropInto(host.loc)
 
 	reset_view(null)
 	machine = null

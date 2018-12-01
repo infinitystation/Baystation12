@@ -68,6 +68,7 @@ sosiskoed - diona
 gumboldty - diona
 vankoska - diona
 maxi2000 - diona
+mrkayde - diona
 sfd - diona
 wheatley2013 - vox
 wolforbykot - vox
@@ -107,6 +108,8 @@ denmag - tajaran
 solark - tajaran
 forrya - tajaran
 arhod - tajaran
+rarytech - tajaran
+richardfox - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
 gumboldty - adherent
