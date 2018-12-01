@@ -250,7 +250,9 @@
 	if(on)
 		turn_off()
 
-	usr.put_in_hands(key)
+	key.loc = usr.loc
+	if(!usr.get_active_hand())
+		usr.put_in_hands(key)
 	key = null
 
 	verbs -= /obj/vehicle/train/cargo/engine/verb/remove_key

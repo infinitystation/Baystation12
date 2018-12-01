@@ -32,7 +32,7 @@
 	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
 
 	if(chambered)//We have a shell in the chamber
-		chambered.dropInto(loc)//Eject casing
+		chambered.forceMove(get_turf(src))//Eject casing
 		if(LAZYLEN(chambered.fall_sounds))
 			playsound(loc, pick(chambered.fall_sounds), 50, 1)
 		chambered = null

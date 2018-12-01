@@ -2796,7 +2796,19 @@
 /turf/simulated/wall/r_wall/hull,
 /area/space)
 "fU" = (
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 9
+	},
+/area/shuttle/escape_pod11/station)
+"fV" = (
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
+/area/shuttle/escape_pod11/station)
+"fW" = (
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 5
+	},
 /area/shuttle/escape_pod11/station)
 "fX" = (
 /obj/effect/decal/cleanable/cobweb,
@@ -3170,7 +3182,9 @@
 /obj/structure/shuttle/engine/propulsion{
 	dir = 4
 	},
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/shuttle/escape_pod11/station)
 "gM" = (
 /obj/random/junk,
@@ -3899,6 +3913,11 @@
 /obj/structure/lattice,
 /turf/space,
 /area/space)
+"im" = (
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 10
+	},
+/area/shuttle/escape_pod11/station)
 "in" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -4406,6 +4425,11 @@
 	req_access = list(13)
 	},
 /turf/simulated/floor/tiled/steel_ridged,
+/area/shuttle/escape_pod11/station)
+"jl" = (
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 6
+	},
 /area/shuttle/escape_pod11/station)
 "jn" = (
 /obj/item/frame/apc,
@@ -8733,8 +8757,8 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
-	dir = 2;
-	icon_state = "intact"
+	icon_state = "intact";
+	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -9483,8 +9507,8 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
-	dir = 2;
-	icon_state = "intact"
+	icon_state = "intact";
+	dir = 1
 	},
 /obj/machinery/computer/general_air_control/large_tank_control{
 	name = "Carbon Dioxide Supply Control";
@@ -9538,7 +9562,14 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
 "vt" = (
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 9
+	},
+/area/shuttle/escape_pod10/station)
+"vu" = (
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/shuttle/escape_pod10/station)
 "vv" = (
 /obj/machinery/door/airlock/external{
@@ -9550,6 +9581,11 @@
 	req_access = list(13)
 	},
 /turf/simulated/floor/tiled/steel_ridged,
+/area/shuttle/escape_pod10/station)
+"vw" = (
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 5
+	},
 /area/shuttle/escape_pod10/station)
 "vx" = (
 /obj/machinery/door/firedoor/border_only,
@@ -9841,7 +9877,9 @@
 /obj/structure/shuttle/engine/propulsion{
 	dir = 4
 	},
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/shuttle/escape_pod10/station)
 "wq" = (
 /obj/machinery/space_heater,
@@ -10257,6 +10295,11 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan,
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
+"xU" = (
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 10
+	},
+/area/shuttle/escape_pod10/station)
 "xW" = (
 /obj/machinery/light/small,
 /obj/structure/bed/chair/shuttle{
@@ -10556,6 +10599,11 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
+"yS" = (
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 6
+	},
+/area/shuttle/escape_pod10/station)
 "yT" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -11207,8 +11255,8 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
-	dir = 2;
-	icon_state = "intact"
+	icon_state = "intact";
+	dir = 1
 	},
 /obj/machinery/computer/general_air_control/large_tank_control{
 	dir = 8;
@@ -12458,8 +12506,8 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
-	dir = 2;
-	icon_state = "intact"
+	icon_state = "intact";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/atmos)
@@ -13751,8 +13799,8 @@
 	},
 /obj/effect/floor_decal/corner/white,
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
-	dir = 2;
-	icon_state = "intact"
+	icon_state = "intact";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/atmos)
@@ -14029,8 +14077,8 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
-	dir = 2;
-	icon_state = "intact"
+	icon_state = "intact";
+	dir = 1
 	},
 /obj/machinery/computer/general_air_control/large_tank_control{
 	dir = 8;
@@ -14566,8 +14614,8 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
-	dir = 2;
-	icon_state = "intact"
+	icon_state = "intact";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/atmos)
@@ -14804,8 +14852,8 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
-	dir = 2;
-	icon_state = "intact"
+	icon_state = "intact";
+	dir = 1
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -15635,7 +15683,7 @@
 /area/maintenance/seconddeck/forestarboard)
 "Og" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod11,
-/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod11/station)
 "Oh" = (
@@ -17582,7 +17630,7 @@
 /area/engineering/engine_room)
 "Wl" = (
 /obj/effect/shuttle_landmark/escape_pod/start/pod10,
-/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod10/station)
 "Wm" = (
@@ -18147,8 +18195,8 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
-	dir = 2;
-	icon_state = "intact"
+	icon_state = "intact";
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
@@ -28355,10 +28403,10 @@ JX
 JX
 JX
 fU
-fU
+fV
 Og
-fU
-fU
+fV
+im
 qw
 mb
 Mg
@@ -28373,10 +28421,10 @@ Yj
 mb
 qw
 vt
-vt
+vu
 Wl
-vt
-vt
+vu
+xU
 Wp
 Wp
 Wp
@@ -28556,11 +28604,11 @@ aa
 JX
 JX
 JX
-fU
+fV
 xe
 hz
 ac
-fU
+fV
 qw
 mb
 mb
@@ -28574,11 +28622,11 @@ Qi
 mb
 mb
 qw
-vt
+vu
 ol
 wl
 Sl
-vt
+vu
 Wp
 Wp
 Wp
@@ -28758,11 +28806,11 @@ aa
 JX
 JX
 JX
-fU
+fV
 gG
 hz
 io
-fU
+fV
 qw
 mb
 mb
@@ -28776,11 +28824,11 @@ Uj
 mb
 mb
 qw
-vt
+vu
 wi
 wl
 xW
-vt
+vu
 Wp
 Wp
 Wp
@@ -28960,11 +29008,11 @@ aa
 JX
 JX
 JX
-fU
+fV
 gH
 hz
 ip
-fU
+fV
 JX
 mb
 mb
@@ -28978,11 +29026,11 @@ Si
 mb
 mb
 Wp
-vt
+vu
 wj
 wl
 xX
-vt
+vu
 Wp
 Wp
 Wp
@@ -29162,11 +29210,11 @@ aa
 JX
 JX
 JX
-fU
+fV
 gH
 hz
 iq
-fU
+fV
 JX
 OY
 mb
@@ -29180,11 +29228,11 @@ Ti
 mb
 ub
 Wp
-vt
+vu
 wk
 wl
 xX
-vt
+vu
 Wp
 Wp
 Wp
@@ -29364,7 +29412,7 @@ aa
 JX
 JX
 JX
-fU
+fV
 gH
 hz
 hz
@@ -29386,7 +29434,7 @@ vv
 wl
 wl
 xX
-vt
+vu
 Wp
 Wp
 Wp
@@ -29566,11 +29614,11 @@ aa
 JX
 JX
 JX
-fU
+fV
 gI
 hA
 ir
-fU
+fV
 JX
 Sx
 Qe
@@ -29584,11 +29632,11 @@ Vj
 Qe
 Bq
 Wp
-vt
+vu
 wm
 xf
 xY
-vt
+vu
 Wp
 Wp
 Wp
@@ -29768,11 +29816,11 @@ aa
 JX
 JX
 JX
-fU
+fV
 gJ
 hB
 is
-fU
+fV
 JX
 NQ
 Qe
@@ -29786,11 +29834,11 @@ VL
 Qe
 ZV
 Wp
-vt
+vu
 wn
 xg
 xZ
-vt
+vu
 Wp
 Wp
 Wp
@@ -29970,11 +30018,11 @@ aa
 JX
 JX
 JX
-fU
+fV
 gK
 gK
 gK
-fU
+fV
 JX
 cg
 Qe
@@ -29988,11 +30036,11 @@ Wj
 Qe
 uf
 Wp
-vt
+vu
 wo
 wo
 wo
-vt
+vu
 Wp
 Wp
 Wp
@@ -30172,11 +30220,11 @@ aa
 JX
 JX
 JX
-fU
+fW
 gL
 gL
 gL
-fU
+jl
 JX
 NQ
 Qe
@@ -30190,11 +30238,11 @@ Xi
 Qe
 ZV
 Wp
-vt
+vw
 wp
 wp
 wp
-vt
+yS
 Wp
 Wp
 Wp

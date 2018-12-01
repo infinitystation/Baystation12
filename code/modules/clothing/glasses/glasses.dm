@@ -1,9 +1,6 @@
 /obj/item/clothing/glasses
 	name = "glasses"
-	icon = 'icons/obj/clothing/obj_eyes.dmi'
-//	sprite_sheets = list(
-//		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_eyes_unathi.dmi'
-//		)
+	icon = 'icons/obj/clothing/glasses.dmi'
 	var/hud_type
 	var/prescription = FALSE
 	var/toggleable = FALSE

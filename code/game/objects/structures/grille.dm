@@ -70,7 +70,7 @@
 	if(shock(user, 70))
 		return
 
-	if(MUTATION_HULK in user.mutations)
+	if(HULK in user.mutations)
 		damage_dealt += 5
 	else
 		damage_dealt += 1
@@ -118,7 +118,8 @@
 		. = PROJECTILE_CONTINUE
 		damage = between(0, (damage - Proj.damage)*(Proj.damage_type == BRUTE? 0.4 : 1), 10) //if the bullet passes through then the grille avoids most of the damage
 
-	take_damage(damage*0.2)
+	src.health -= damage*0.2
+	spawn(0) healthcheck() //spawn to make sure we return properly if the grille is deleted
 
 /obj/structure/grille/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(isWirecutter(W))
@@ -189,10 +190,12 @@
 		playsound(loc, 'sound/effects/grillehit.ogg', 80, 1)
 		switch(W.damtype)
 			if("fire")
-				take_damage(W.force)
+				health -= W.force
 			if("brute")
-				take_damage(W.force * 0.1)
+				health -= W.force * 0.1
+	healthcheck()
 	..()
+	return
 
 
 /obj/structure/grille/proc/healthcheck()
@@ -200,7 +203,6 @@
 		if(!destroyed)
 			set_density(0)
 			destroyed = 1
-			visible_message("<span class='notice'>\The [src] falls to pieces!</span>")
 			update_icon()
 			new /obj/item/stack/rods(get_turf(src))
 
@@ -240,22 +242,26 @@
 /obj/structure/grille/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(!destroyed)
 		if(exposed_temperature > T0C + 1500)
-			take_damage(1)
+			health -= 1
+			healthcheck()
 	..()
 
-/obj/structure/grille/take_damage(damage)
+/obj/structure/grille/attack_generic(var/mob/user, var/damage, var/attack_verb)
+	visible_message("<span class='danger'>[user] [attack_verb] the [src]!</span>")
+	attack_animation(user)
 	health -= damage
-	healthcheck()
+	spawn(1) healthcheck()
+	return 1
 
 // Used in mapping to avoid
 /obj/structure/grille/broken
 	destroyed = 1
 	icon_state = "broken"
 	density = 0
-
-/obj/structure/grille/broken/Initialize()
-	. = ..()
-	take_damage(rand(1, 5)) //In the destroyed but not utterly threshold.
+	New()
+		..()
+		health = rand(-5, -1) //In the destroyed but not utterly threshold.
+		healthcheck() //Send this to healthcheck just in case we want to do something else with it.
 
 /obj/structure/grille/cult
 	name = "cult grille"

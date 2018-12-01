@@ -64,8 +64,8 @@
 
 /obj/item/weapon/contract/wizard/xray/contract_effect(mob/user as mob)
 	..()
-	if (!(MUTATION_XRAY in user.mutations))
-		user.mutations.Add(MUTATION_XRAY)
+	if (!(XRAY in user.mutations))
+		user.mutations.Add(XRAY)
 		user.set_sight(user.sight|SEE_MOBS|SEE_OBJS|SEE_TURFS)
 		user.set_see_in_dark(8)
 		user.set_see_invisible(SEE_INVISIBLE_LEVEL_TWO)
@@ -97,8 +97,8 @@
 
 /obj/item/weapon/contract/wizard/tk/contract_effect(mob/user as mob)
 	..()
-	if(!(MUTATION_TK in user.mutations))
-		user.mutations.Add(MUTATION_TK)
+	if(!(TK in user.mutations))
+		user.mutations.Add(TK)
 		to_chat(user, "<span class='notice'>You feel your mind expanding!</span>")
 		return 1
 	return 0

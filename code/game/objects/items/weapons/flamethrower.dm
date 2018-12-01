@@ -69,16 +69,17 @@
 /obj/item/weapon/flamethrower/attackby(obj/item/W as obj, mob/user as mob)
 	if(user.stat || user.restrained() || user.lying)	return
 	if(isWrench(W) && !status)//Taking this apart
+		var/turf/T = get_turf(src)
 		if(weldtool)
-			weldtool.dropInto(loc)
+			weldtool.loc = T
 			weldtool = null
 		if(igniter)
-			igniter.dropInto(loc)
+			igniter.loc = T
 			igniter = null
 		if(ptank)
-			ptank.dropInto(loc)
+			ptank.loc = T
 			ptank = null
-		new /obj/item/stack/rods(get_turf(src))
+		new /obj/item/stack/rods(T)
 		qdel(src)
 		return
 

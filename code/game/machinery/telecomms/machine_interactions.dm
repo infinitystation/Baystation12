@@ -79,7 +79,7 @@
 					// Drop all the component stuff
 					if(contents.len > 0)
 						for(var/obj/x in src)
-							x.dropInto(loc)
+							x.loc = user.loc
 					else
 
 						// If the machine wasn't made during runtime, probably doesn't have components:
@@ -88,17 +88,17 @@
 						for(var/I in C.req_components)
 							for(var/i = 1, i <= C.req_components[I], i++)
 								var/obj/item/s = new I
-								s.dropInto(user.loc)
-								if(istype(s, /obj/item/stack/cable_coil))
-									var/obj/item/stack/cable_coil/A = s
+								s.loc = user.loc
+								if(istype(P, /obj/item/stack/cable_coil))
+									var/obj/item/stack/cable_coil/A = P
 									A.amount = 1
 
 						// Drop a circuit board too
-						C.dropInto(user.loc)
+						C.loc = user.loc
 
 					// Create a machine frame and delete the current machine
 					var/obj/machinery/constructable_frame/machine_frame/F = new
-					F.dropInto(loc)
+					F.loc = src.loc
 					qdel(src)
 
 

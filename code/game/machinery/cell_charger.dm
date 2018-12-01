@@ -81,7 +81,7 @@
 		if(!src.charging)
 			return
 
-		charging.dropInto(loc)
+		charging.loc = src.loc
 		charging.update_icon()
 		charging = null
 		update_icon()

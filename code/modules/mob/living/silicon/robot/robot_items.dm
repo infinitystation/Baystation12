@@ -69,7 +69,7 @@
 			playsound(src.loc, 'sound/machines/buzz-two.ogg', 50, 1)
 	if(response == "Eject")
 		if(loaded_item)
-			loaded_item.dropInto(loc)
+			loaded_item.loc = get_turf(src)
 			desc = initial(desc)
 			icon_state = initial(icon_state)
 			loaded_item = null
@@ -89,7 +89,7 @@
 			to_chat(user, "Your [src] already has something inside.  Analyze or eject it first.")
 			return
 		var/obj/item/I = target
-		I.forceMove(src)
+		I.loc = src
 		loaded_item = I
 		for(var/mob/M in viewers())
 			M.show_message(text("<span class='notice'>[user] adds the [I] to the [src].</span>"), 1)
@@ -218,7 +218,7 @@
 				if(calc_carry() + add >= max_carry)
 					break
 
-				I.forceMove(src)
+				I.loc = src
 				carrying.Add(I)
 				overlays += image("icon" = I.icon, "icon_state" = I.icon_state, "layer" = 30 + I.layer)
 				addedSomething = 1
@@ -246,12 +246,12 @@
 			dropspot = target.loc
 
 
-		overlays.Cut()
+		overlays = null
 
 		var droppedSomething = 0
 
 		for(var/obj/item/I in carrying)
-			I.forceMove(dropspot)
+			I.loc = dropspot
 			carrying.Remove(I)
 			droppedSomething = 1
 			if(!foundtable && isturf(dropspot))
@@ -496,7 +496,7 @@
 		to_chat(user, "<span class='notice'>The rack is empty.</span>")
 		return
 	var/obj/item/R = held[length(held)]
-	R.dropInto(loc)
+	R.forceMove(get_turf(src))
 	held -= R
 	R.attack_self(user) // deploy it
 	to_chat(user, "<span class='notice'>You deploy [R].</span>")

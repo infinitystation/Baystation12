@@ -139,7 +139,6 @@
 
 
 /obj/machinery/bodyscanner/Destroy()
-	if(occupant)
-		occupant.dropInto(loc)
-		occupant = null
 	. = ..()
+	occupant.dropInto(loc)
+	occupant = null

@@ -51,7 +51,7 @@
 				if(!given_antibodies.len) //return if no antibodies
 					return 0
 
-			container.dropInto(loc)
+			container.forceMove(get_turf(src))
 			container = null
 
 			update_icon()
@@ -61,7 +61,7 @@
 			scanning = 5
 			update_icon()
 		else
-			container.dropInto(loc)
+			container.forceMove(get_turf(src))
 			container = null
 
 			src.state("\The [src] buzzes, \"Failed to identify a pure sample of antibodies in the solution.\"")

@@ -66,7 +66,7 @@
 
 	if(!user.unequip_item())
 		return
-	cuffs.forceMove(src)
+	cuffs.loc = src
 	src.chained = cuffs
 	src.slowdown_per_slot[slot_shoes] += 15
 	src.icon_state = "orange1"

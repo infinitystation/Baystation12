@@ -113,7 +113,8 @@
 		"Drill Technician",
 		"Shaft Miner",
 		"Salvage Technician")
-	min_skill = list(   SKILL_HAULING = SKILL_ADEPT,
+	min_skill = list(   SKILL_MECH    = SKILL_BASIC,
+	                    SKILL_HAULING = SKILL_ADEPT,
 	                    SKILL_EVA     = SKILL_BASIC)
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
@@ -123,7 +124,7 @@
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
 
 	access = list(access_mining, access_mining_office, access_mining_station,
-						access_expedition_shuttle, access_guppy, access_hangar, access_guppy_helm, access_solgov_crew, access_eva)
+						access_expedition_shuttle, access_guppy, access_hangar, access_guppy_helm)
 	minimal_access = list()
 	required_education = EDUCATION_TIER_DROPOUT
 	maximum_education = EDUCATION_TIER_TRADE

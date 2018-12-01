@@ -5319,7 +5319,6 @@
 	},
 /area/rescue_base/base)
 "aml" = (
-/obj/effect/paint/hull,
 /turf/simulated/wall/titanium,
 /area/rescue_base/start)
 "amm" = (
@@ -5331,7 +5330,6 @@
 	opacity = 0
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/rescue_base/start)
 "amr" = (
@@ -5343,7 +5341,6 @@
 	opacity = 0
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/rescue_base/start)
 "ams" = (
@@ -6116,7 +6113,6 @@
 /area/ninja_dojo/dojo)
 "aoe" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/rescue_base/start)
 "aof" = (
@@ -6130,7 +6126,6 @@
 "aog" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/rescue_base/start)
 "aoh" = (
@@ -6276,7 +6271,6 @@
 	opacity = 0
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/rescue_base/start)
 "aow" = (
@@ -6340,7 +6334,6 @@
 	opacity = 0
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/rescue_base/start)
 "aoD" = (
@@ -6443,7 +6436,7 @@
 /area/wizard_station)
 "aoU" = (
 /obj/structure/table/woodentable,
-/obj/item/weapon/storage/candle_box,
+/obj/item/weapon/storage/fancy/candle_box,
 /turf/unsimulated/floor{
 	dir = 8;
 	icon_state = "wood"
@@ -7295,8 +7288,14 @@
 	},
 /area/wizard_station)
 "ark" = (
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 9
+	},
+/area/ninja_dojo/start)
+"arl" = (
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 5
+	},
 /area/ninja_dojo/start)
 "arm" = (
 /obj/machinery/door/morgue{
@@ -7369,6 +7368,11 @@
 	name = "grass"
 	},
 /area/wizard_station)
+"ars" = (
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
+/area/ninja_dojo/start)
 "art" = (
 /obj/machinery/autolathe{
 	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
@@ -7467,7 +7471,6 @@
 	name = "Blast Shutters";
 	opacity = 0
 	},
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/rescue_base/start)
 "arD" = (
@@ -7488,8 +7491,7 @@
 /obj/structure/window/reinforced/crescent{
 	dir = 1
 	},
-/obj/effect/paint/sun,
-/turf/simulated/wall/titanium,
+/turf/simulated/floor/airless,
 /area/rescue_base/start)
 "arF" = (
 /obj/structure/table/glass,
@@ -7511,7 +7513,6 @@
 	name = "Blast Shutters";
 	opacity = 0
 	},
-/obj/effect/paint/hull,
 /turf/simulated/floor/plating,
 /area/rescue_base/start)
 "arI" = (
@@ -7556,8 +7557,7 @@
 /area/rescue_base/start)
 "arN" = (
 /obj/structure/shuttle/engine/propulsion,
-/obj/effect/paint/sun,
-/turf/simulated/wall/titanium,
+/turf/space,
 /area/rescue_base/start)
 "arO" = (
 /obj/structure/table/glass,
@@ -7610,8 +7610,9 @@
 	icon_state = "propulsion";
 	dir = 1
 	},
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/ninja_dojo/start)
 "arV" = (
 /obj/structure/table/steel_reinforced,
@@ -7839,10 +7840,7 @@
 	name = "Blast Door";
 	opacity = 0
 	},
-/turf/unsimulated/floor{
-	dir = 2;
-	icon_state = "dark"
-	},
+/turf/simulated/floor/shuttle/red,
 /area/ninja_dojo/start)
 "asr" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -7953,6 +7951,11 @@
 	icon_state = "asteroid"
 	},
 /area/wizard_station)
+"asB" = (
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 10
+	},
+/area/ninja_dojo/start)
 "asC" = (
 /obj/structure/closet,
 /obj/machinery/light{
@@ -7971,6 +7974,11 @@
 /turf/unsimulated/floor{
 	dir = 2;
 	icon_state = "dark"
+	},
+/area/ninja_dojo/start)
+"asE" = (
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 6
 	},
 /area/ninja_dojo/start)
 "asF" = (
@@ -7999,16 +8007,15 @@
 	},
 /area/ninja_dojo/start)
 "asH" = (
+/obj/machinery/button/windowtint{
+	pixel_x = 24;
+	pixel_y = -24
+	},
 /obj/machinery/button/remote/blast_door{
 	id = "ninjawindow";
 	name = "remote shutter control";
 	pixel_x = 36;
 	pixel_y = -24
-	},
-/obj/machinery/button/windowtint{
-	id = "ninja_ship";
-	pixel_x = -24;
-	pixel_y = -25
 	},
 /turf/unsimulated/floor{
 	dir = 2;
@@ -8070,10 +8077,50 @@
 	name = "Blast Shutter";
 	opacity = 1
 	},
-/obj/effect/wallframe_spawn/reinforced/polarized{
-	id = "ninja_ship"
+/obj/structure/grille,
+/obj/structure/window/reinforced/polarized/full,
+/obj/structure/window/reinforced/polarized,
+/obj/structure/window/reinforced/polarized{
+	dir = 1
 	},
-/obj/effect/paint/black,
+/obj/structure/window/reinforced/polarized{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/ninja_dojo/start)
+"asN" = (
+/obj/machinery/door/blast/regular{
+	density = 1;
+	icon_state = "pdoor1";
+	id = "ninjawindow";
+	name = "Blast Shutter";
+	opacity = 1
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/polarized/full,
+/obj/structure/window/reinforced/polarized,
+/obj/structure/window/reinforced/polarized{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/ninja_dojo/start)
+"asO" = (
+/obj/machinery/door/blast/regular{
+	density = 1;
+	icon_state = "pdoor1";
+	id = "ninjawindow";
+	name = "Blast Shutter";
+	opacity = 1
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/polarized/full,
+/obj/structure/window/reinforced/polarized,
+/obj/structure/window/reinforced/polarized{
+	dir = 1
+	},
+/obj/structure/window/reinforced/polarized{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/ninja_dojo/start)
 "asP" = (
@@ -8094,8 +8141,29 @@
 	},
 /area/centcom)
 "asS" = (
-/obj/effect/paint/hull,
-/turf/simulated/wall/r_titanium,
+/turf/unsimulated/floor{
+	icon_state = "plating";
+	name = "plating"
+	},
+/turf/simulated/shuttle/wall{
+	dir = 8;
+	icon_state = "diagonalWall3"
+	},
+/area/shuttle/administration/centcom)
+"asT" = (
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
+/area/shuttle/administration/centcom)
+"asU" = (
+/turf/unsimulated/floor{
+	icon_state = "plating";
+	name = "plating"
+	},
+/turf/simulated/shuttle/wall{
+	dir = 1;
+	icon_state = "diagonalWall3"
+	},
 /area/shuttle/administration/centcom)
 "asV" = (
 /obj/machinery/vending/boozeomat{
@@ -8201,7 +8269,7 @@
 /turf/simulated/floor/shuttle/red,
 /area/shuttle/administration/centcom)
 "ato" = (
-/obj/item/weapon/flame/lighter/zippo/random,
+/obj/item/weapon/flame/lighter/zippo,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/shuttle/red,
 /area/shuttle/administration/centcom)
@@ -8284,16 +8352,16 @@
 	icon_state = "propulsion_l";
 	dir = 8
 	},
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/space,
 /area/shuttle/administration/centcom)
 "atC" = (
 /obj/structure/shuttle/engine/heater{
 	icon_state = "heater";
 	dir = 8
 	},
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/shuttle/administration/centcom)
 "atD" = (
 /obj/machinery/vending/snack{
@@ -8416,12 +8484,21 @@
 	icon_state = "propulsion_r";
 	dir = 8
 	},
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/space,
 /area/shuttle/administration/centcom)
 "atV" = (
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/shuttle/red,
+/area/shuttle/administration/centcom)
+"atW" = (
+/turf/unsimulated/floor{
+	icon_state = "plating";
+	name = "plating"
+	},
+/turf/simulated/shuttle/wall{
+	dir = 4;
+	icon_state = "diagonalWall3"
+	},
 /area/shuttle/administration/centcom)
 "atX" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
@@ -8474,6 +8551,15 @@
 	name = "plating"
 	},
 /area/prison/solitary)
+"auf" = (
+/turf/unsimulated/floor{
+	icon_state = "plating";
+	name = "plating"
+	},
+/turf/simulated/shuttle/wall{
+	icon_state = "diagonalWall3"
+	},
+/area/shuttle/administration/centcom)
 "aug" = (
 /obj/machinery/vending/cigarette{
 	prices = list()
@@ -8509,8 +8595,17 @@
 /turf/simulated/floor/shuttle/red,
 /area/shuttle/administration/centcom)
 "aum" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/black,
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/shuttle/administration/centcom)
 "aun" = (
@@ -8526,8 +8621,16 @@
 	},
 /area/centcom/living)
 "auo" = (
-/obj/effect/paint/silver,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/floor/plating,
+/turf/simulated/shuttle/wall{
+	dir = 8;
+	icon_state = "diagonalWall3"
+	},
+/area/supply/dock)
+"aup" = (
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/supply/dock)
 "auq" = (
 /obj/structure/shuttle/engine/heater{
@@ -8535,8 +8638,14 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced,
-/obj/effect/paint/silver,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/floor/plating,
+/area/supply/dock)
+"aur" = (
+/turf/simulated/floor/plating,
+/turf/simulated/shuttle/wall{
+	dir = 1;
+	icon_state = "diagonalWall3"
+	},
 /area/supply/dock)
 "aus" = (
 /obj/effect/decal/cleanable/blood,
@@ -8555,6 +8664,17 @@
 	},
 /turf/simulated/floor/shuttle/red,
 /area/shuttle/administration/centcom)
+"auv" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/shuttle/administration/centcom)
 "auw" = (
 /obj/machinery/button/remote/blast_door{
 	id = "supply_shuttle";
@@ -8563,8 +8683,16 @@
 	pixel_y = 0;
 	req_access = list(31)
 	},
-/obj/effect/paint/silver,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
+/area/supply/dock)
+"aux" = (
+/turf/simulated/floor/plating,
+/turf/simulated/shuttle/wall{
+	dir = 4;
+	icon_state = "diagonalWall3"
+	},
 /area/supply/dock)
 "auy" = (
 /obj/machinery/light/spot{
@@ -8574,6 +8702,12 @@
 /area/supply/dock)
 "auz" = (
 /turf/simulated/floor/plating,
+/area/supply/dock)
+"auA" = (
+/turf/simulated/floor/plating,
+/turf/simulated/shuttle/wall{
+	icon_state = "diagonalWall3"
+	},
 /area/supply/dock)
 "auB" = (
 /turf/simulated/mineral,
@@ -8603,6 +8737,18 @@
 	shuttle_tag = "Administration"
 	},
 /turf/simulated/floor/shuttle/red,
+/area/shuttle/administration/centcom)
+"auH" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
 /area/shuttle/administration/centcom)
 "auI" = (
 /obj/structure/synthesized_instrument/synthesizer/piano{
@@ -8853,6 +8999,10 @@
 	},
 /turf/simulated/floor/shuttle/white,
 /area/shuttle/administration/centcom)
+"avr" = (
+/obj/effect/wingrille_spawn/reinforced/crescent,
+/turf/simulated/floor/plating,
+/area/shuttle/administration/centcom)
 "avs" = (
 /obj/machinery/door/airlock/centcom{
 	name = "General Access";
@@ -8934,8 +9084,9 @@
 /area/space)
 "avE" = (
 /obj/machinery/vending/medical,
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/shuttle/administration/centcom)
 "avF" = (
 /obj/machinery/chemical_dispenser/ert,
@@ -9022,6 +9173,21 @@
 	icon_state = "white"
 	},
 /area/centcom/living)
+"avR" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/shuttle/administration/centcom)
 "avS" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1380;
@@ -9424,7 +9590,7 @@
 /obj/structure/table/rack,
 /obj/item/weapon/storage/secure/briefcase,
 /obj/item/weapon/storage/fancy/cigarettes,
-/obj/item/weapon/flame/lighter/zippo/random,
+/obj/item/weapon/flame/lighter/zippo,
 /obj/item/weapon/storage/belt/utility,
 /obj/item/weapon/storage/backpack/satchel,
 /turf/unsimulated/floor{
@@ -10269,8 +10435,10 @@
 	},
 /area/centcom/test)
 "ayw" = (
-/obj/effect/paint/red,
-/turf/simulated/wall/r_titanium,
+/turf/space,
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 9
+	},
 /area/syndicate_station/start)
 "ayx" = (
 /obj/machinery/door/blast/regular{
@@ -10280,9 +10448,57 @@
 	name = "Blast Doors";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/black,
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
+/area/syndicate_station/start)
+"ayy" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "syndieshutters";
+	name = "Blast Doors";
+	opacity = 0
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/syndicate_station/start)
+"ayz" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "syndieshutters";
+	name = "Blast Doors";
+	opacity = 0
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/syndicate_station/start)
+"ayA" = (
+/turf/space,
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 5
+	},
 /area/syndicate_station/start)
 "ayB" = (
 /turf/unsimulated/floor{
@@ -10558,8 +10774,9 @@
 	},
 /area/space)
 "aza" = (
-/obj/effect/paint/red,
-/turf/simulated/wall/titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/syndicate_station/start)
 "azb" = (
 /obj/machinery/recharger,
@@ -11295,7 +11512,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo/random = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/unsimulated/floor{
 	name = "plating";
@@ -12615,7 +12832,7 @@
 	name = "Blast Door Control";
 	req_access = list(150)
 	},
-/turf/simulated/wall/r_titanium,
+/turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
 "aDd" = (
 /obj/machinery/atmospherics/pipe/manifold4w/visible,
@@ -12637,8 +12854,18 @@
 	name = "Outer Airlock";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/black,
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "aDg" = (
@@ -12690,7 +12917,6 @@
 /area/centcom/holding)
 "aDn" = (
 /obj/effect/wingrille_spawn/reinforced,
-/obj/effect/paint/black,
 /turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "aDo" = (
@@ -12806,24 +13032,27 @@
 	icon_state = "propulsion_r";
 	dir = 1
 	},
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/shuttle/specops/centcom)
 "aDz" = (
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion";
 	dir = 1
 	},
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/shuttle/specops/centcom)
 "aDA" = (
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_l";
 	dir = 1
 	},
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/shuttle/specops/centcom)
 "aDB" = (
 /obj/machinery/door/airlock/centcom{
@@ -12885,7 +13114,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo/random = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
@@ -12963,8 +13192,9 @@
 	},
 /area/syndicate_mothership)
 "aDQ" = (
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/shuttle/specops/centcom)
 "aDR" = (
 /obj/structure/shuttle/engine/heater{
@@ -12972,7 +13202,6 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/crescent,
-/obj/effect/paint/black,
 /turf/simulated/floor/plating,
 /area/shuttle/specops/centcom)
 "aDS" = (
@@ -13588,8 +13817,17 @@
 	name = "Blast Doors";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/black,
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "aFg" = (
@@ -13638,8 +13876,17 @@
 	name = "Blast Doors";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/black,
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "aFn" = (
@@ -13670,6 +13917,24 @@
 "aFq" = (
 /turf/space,
 /area/centcom/holding)
+"aFr" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "syndieshutters_infirmary";
+	name = "Blast Doors";
+	opacity = 0
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/syndicate_station/start)
 "aFu" = (
 /obj/machinery/door/window{
 	dir = 4;
@@ -13695,6 +13960,24 @@
 /obj/random/tech_supply,
 /obj/effect/spawner/newbomb/timer/syndicate,
 /turf/simulated/floor/shuttle/darkred,
+/area/syndicate_station/start)
+"aFy" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "syndieshutters_workshop";
+	name = "Blast Doors";
+	opacity = 0
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "aFz" = (
 /obj/machinery/recharger/wallcharger{
@@ -13737,6 +14020,25 @@
 	icon_state = "steel"
 	},
 /area/centcom/holding)
+"aFE" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "syndieshutters_infirmary";
+	name = "Blast Doors";
+	opacity = 0
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/syndicate_station/start)
 "aFF" = (
 /obj/structure/bed/roller,
 /turf/simulated/floor/shuttle/white,
@@ -13765,6 +14067,25 @@
 /obj/random/tech_supply,
 /obj/effect/spawner/newbomb/timer/syndicate,
 /turf/simulated/floor/shuttle/darkred,
+/area/syndicate_station/start)
+"aFJ" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "syndieshutters_workshop";
+	name = "Blast Doors";
+	opacity = 0
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "aFK" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
@@ -13910,11 +14231,24 @@
 /obj/item/device/multitool/hacktool,
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
+"aFX" = (
+/turf/space,
+/turf/simulated/shuttle/wall{
+	icon_state = "diagonalWall3"
+	},
+/area/shuttle/specops/centcom)
 "aFY" = (
 /obj/machinery/light/small/readylight{
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
+/area/shuttle/specops/centcom)
+"aFZ" = (
+/turf/space,
+/turf/simulated/shuttle/wall{
+	dir = 4;
+	icon_state = "diagonalWall3"
+	},
 /area/shuttle/specops/centcom)
 "aGa" = (
 /obj/structure/bed/chair/comfy/brown,
@@ -14092,8 +14426,9 @@
 /obj/structure/window/reinforced/crescent{
 	dir = 4
 	},
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/syndicate_station/start)
 "aGx" = (
 /obj/effect/landmark{
@@ -14195,8 +14530,9 @@
 /obj/structure/window/reinforced/crescent{
 	dir = 1
 	},
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/syndicate_station/start)
 "aGL" = (
 /obj/structure/computerframe,
@@ -14210,7 +14546,7 @@
 /obj/structure/table/woodentable{
 	dir = 5
 	},
-/obj/item/weapon/flame/lighter/zippo/random,
+/obj/item/weapon/flame/lighter/zippo,
 /obj/item/weapon/storage/fancy/cigarettes,
 /obj/item/weapon/material/ashtray/bronze{
 	pixel_x = -1;
@@ -14228,7 +14564,7 @@
 /obj/structure/table/woodentable{
 	dir = 5
 	},
-/obj/item/weapon/flame/lighter/zippo/random,
+/obj/item/weapon/flame/lighter/zippo,
 /obj/item/weapon/storage/fancy/cigarettes,
 /obj/item/weapon/material/ashtray/bronze{
 	pixel_x = -1;
@@ -14271,24 +14607,33 @@
 	icon_state = "steel"
 	},
 /area/centcom/holding)
+"aGU" = (
+/turf/space,
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 10
+	},
+/area/syndicate_station/start)
 "aGV" = (
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_l"
 	},
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/syndicate_station/start)
 "aGW" = (
 /obj/structure/shuttle/engine/propulsion,
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/syndicate_station/start)
 "aGX" = (
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_r"
 	},
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/syndicate_station/start)
 "aHb" = (
 /obj/machinery/camera/network/crescent{
@@ -15589,7 +15934,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer,
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer,
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer,
-/obj/item/weapon/flame/lighter/zippo/random,
+/obj/item/weapon/flame/lighter/zippo,
 /obj/item/weapon/storage/fancy/cigarettes,
 /turf/unsimulated/floor{
 	icon_state = "lino"
@@ -16843,7 +17188,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo/random = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/unsimulated/floor{
 	icon_state = "plating";
@@ -17450,7 +17795,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo/random = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /obj/structure/window/reinforced{
 	dir = 1
@@ -18746,7 +19091,7 @@
 /area/syndicate_mothership/raider_base)
 "aRA" = (
 /obj/effect/paint/silver,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/wall/titanium,
 /area/shuttle/merchant/home)
 "aRB" = (
 /obj/structure/shuttle/engine/heater{
@@ -18754,7 +19099,7 @@
 	dir = 4
 	},
 /obj/effect/paint/silver,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/wall/titanium,
 /area/shuttle/merchant/home)
 "aRC" = (
 /obj/structure/shuttle/engine/propulsion/burst/right{
@@ -18894,7 +19239,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo/random = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -19804,8 +20149,9 @@
 /turf/simulated/floor/plating,
 /area/merchant_station)
 "aUm" = (
-/obj/effect/paint/black,
-/turf/simulated/wall/voxshuttle,
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 9
+	},
 /area/skipjack_station/start)
 "aUo" = (
 /obj/machinery/access_button{
@@ -19814,11 +20160,14 @@
 	master_tag = "vox_west_control";
 	req_one_access = list(150)
 	},
-/obj/effect/paint/black,
 /turf/simulated/wall/voxshuttle,
 /area/skipjack_station/start)
+"aUp" = (
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 5
+	},
+/area/skipjack_station/start)
 "aUq" = (
-/obj/effect/paint/brown,
 /turf/simulated/wall/voxshuttle,
 /area/skipjack_station/start)
 "aUv" = (
@@ -20619,7 +20968,7 @@
 "aWc" = (
 /obj/structure/table/standard,
 /obj/item/weapon/storage/fancy/cigarettes,
-/obj/item/weapon/flame/lighter/zippo/random,
+/obj/item/weapon/flame/lighter/zippo,
 /obj/item/clothing/gloves/insulated,
 /obj/item/stack/material/steel{
 	amount = 50
@@ -20743,8 +21092,7 @@
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aWt" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/brown,
+/obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/shuttle/red,
 /area/skipjack_station/start)
 "aWu" = (
@@ -20940,8 +21288,17 @@
 	name = "Skipjack Shutters";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/brown,
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aWO" = (
@@ -20969,8 +21326,17 @@
 	name = "Skipjack Shutters";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/brown,
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aWT" = (
@@ -21058,6 +21424,25 @@
 	},
 /turf/simulated/floor/plating,
 /area/merchant_station)
+"aXf" = (
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 4;
+	icon_state = "shutter0";
+	id = "SkipjackShuttersWest";
+	name = "Skipjack Shutters";
+	opacity = 0
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/skipjack_station/start)
 "aXg" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/machinery/portable_atmospherics/hydroponics,
@@ -21121,6 +21506,25 @@
 /obj/random/maintenance,
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
+"aXp" = (
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 8;
+	icon_state = "shutter0";
+	id = "SkipjackShuttersEast";
+	name = "Skipjack Shutters";
+	opacity = 0
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/skipjack_station/start)
 "aXq" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
@@ -21164,7 +21568,15 @@
 	name = "Skipjack Shutters";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aXx" = (
@@ -21234,6 +21646,26 @@
 /obj/item/weapon/crowbar,
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
+"aXG" = (
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 8;
+	icon_state = "shutter0";
+	id = "SkipjackShuttersEast";
+	name = "Skipjack Shutters";
+	opacity = 0
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/skipjack_station/start)
 "aXH" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
@@ -21300,8 +21732,7 @@
 /turf/simulated/floor/shuttle/black,
 /area/skipjack_station/start)
 "aXQ" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/brown,
+/obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aXR" = (
@@ -21366,8 +21797,7 @@
 /obj/structure/window/reinforced/crescent{
 	dir = 1
 	},
-/obj/effect/paint/black,
-/turf/simulated/wall/voxshuttle,
+/turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "aYb" = (
 /obj/random/trash,
@@ -21398,12 +21828,20 @@
 /turf/simulated/floor/airless,
 /area/merchant_station)
 "aYg" = (
-/turf/space,
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 10
+	},
 /area/skipjack_station/start)
 "aYh" = (
 /obj/structure/shuttle/engine/propulsion,
-/obj/effect/paint/black,
-/turf/simulated/wall/voxshuttle,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
+/area/skipjack_station/start)
+"aYi" = (
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 6
+	},
 /area/skipjack_station/start)
 "aYj" = (
 /obj/structure/table/standard,
@@ -21601,8 +22039,15 @@
 	name = "Blast Doors";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/brown,
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/skipjack_station/start)
 "bcS" = (
@@ -21617,6 +22062,41 @@
 	},
 /turf/simulated/floor/holofloor/carpet,
 /area/holodeck/source_cafe)
+"bdb" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "SkipjackShuttersNorth";
+	name = "Blast Doors";
+	opacity = 0
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/skipjack_station/start)
+"beb" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "SkipjackShuttersNorth";
+	name = "Blast Doors";
+	opacity = 0
+	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/skipjack_station/start)
 "bfb" = (
 /obj/machinery/door/airlock/external{
 	density = 1;
@@ -22042,13 +22522,6 @@
 	},
 /turf/simulated/floor/holofloor/carpet,
 /area/holodeck/source_cafe)
-"dfE" = (
-/obj/structure/shuttle/engine/propulsion{
-	dir = 4
-	},
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
-/area/syndicate_station/start)
 "djm" = (
 /obj/item/weapon/beach_ball/holovolleyball,
 /turf/simulated/floor/holofloor/beach/sand,
@@ -22089,6 +22562,10 @@
 "efq" = (
 /turf/simulated/floor/holofloor/concrete,
 /area/holodeck/source_cafe)
+"eqZ" = (
+/turf/space,
+/turf/simulated/shuttle/wall/corner/dark,
+/area/syndicate_station/start)
 "euY" = (
 /turf/simulated/wall/wood,
 /area/holodeck/source_cafe)
@@ -22132,8 +22609,9 @@
 /obj/structure/window/reinforced/crescent{
 	dir = 8
 	},
-/obj/effect/paint/red,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/syndicate_station/start)
 "fcv" = (
 /obj/structure/holostool,
@@ -22179,7 +22657,6 @@
 /obj/structure/window/reinforced/crescent{
 	dir = 4
 	},
-/obj/effect/paint/red,
 /turf/simulated/shuttle/wall{
 	icon_state = "wall3"
 	},
@@ -22231,13 +22708,10 @@
 	icon_state = "propulsion_l";
 	dir = 1
 	},
-/obj/effect/paint/red,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/syndicate_station/start)
-"izl" = (
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
-/area/shuttle/administration/centcom)
 "iPk" = (
 /obj/machinery/body_scanconsole,
 /turf/simulated/floor/shuttle/white,
@@ -22255,11 +22729,6 @@
 	},
 /turf/simulated/floor/holofloor/beach/sand,
 /area/holodeck/source_volleyball)
-"jgN" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/black,
-/turf/simulated/floor/plating,
-/area/syndicate_station/start)
 "jhl" = (
 /obj/structure/table/holo_woodentable,
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -22315,7 +22784,6 @@
 	icon_state = "propulsion_l";
 	dir = 8
 	},
-/obj/effect/paint/red,
 /turf/simulated/shuttle/wall{
 	icon_state = "wall3"
 	},
@@ -22347,8 +22815,7 @@
 	name = "Blast Doors";
 	opacity = 0
 	},
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/black,
+/obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/syndicate_station/start)
 "kce" = (
@@ -22381,8 +22848,9 @@
 	icon_state = "heater";
 	dir = 1
 	},
-/obj/effect/paint/red,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/syndicate_station/start)
 "kBK" = (
 /obj/structure/mopbucket,
@@ -22404,14 +22872,10 @@
 /obj/machinery/porta_turret_construct,
 /turf/simulated/floor/shuttle/darkred,
 /area/syndicate_station/start)
-"lzi" = (
-/obj/structure/shuttle/engine/heater,
-/obj/structure/window/reinforced/crescent{
-	dir = 1
-	},
-/obj/effect/paint/black,
-/turf/simulated/shuttle/wall{
-	icon_state = "wall3"
+"kZQ" = (
+/turf/space,
+/turf/simulated/shuttle/wall/corner/dark{
+	dir = 6
 	},
 /area/syndicate_station/start)
 "lES" = (
@@ -22422,8 +22886,9 @@
 /obj/structure/window/reinforced/crescent{
 	dir = 8
 	},
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/syndicate_station/start)
 "lRq" = (
 /obj/structure/bed/chair/wood{
@@ -22434,13 +22899,6 @@
 	},
 /turf/simulated/floor/holofloor/carpet,
 /area/holodeck/source_cafe)
-"lRr" = (
-/obj/structure/shuttle/engine/propulsion,
-/obj/effect/paint/black,
-/turf/simulated/shuttle/wall{
-	icon_state = "wall3"
-	},
-/area/syndicate_station/start)
 "lSB" = (
 /obj/structure/table/reinforced,
 /turf/unsimulated/floor{
@@ -22506,8 +22964,9 @@
 /obj/structure/shuttle/engine/propulsion{
 	dir = 4
 	},
-/obj/effect/paint/red,
-/turf/simulated/wall/r_titanium,
+/turf/simulated/shuttle/wall{
+	icon_state = "wall3"
+	},
 /area/syndicate_station/start)
 "mXz" = (
 /obj/machinery/computer/pod{
@@ -22519,10 +22978,6 @@
 	icon_state = "lino"
 	},
 /area/tdome/tdomeadmin)
-"ntr" = (
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
-/area/syndicate_station/start)
 "ntZ" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -22530,14 +22985,6 @@
 /obj/structure/table/holo_woodentable,
 /turf/simulated/floor/holofloor/carpet,
 /area/holodeck/source_cafe)
-"nyY" = (
-/obj/structure/shuttle/engine/propulsion{
-	icon_state = "propulsion_l";
-	dir = 8
-	},
-/obj/effect/paint/black,
-/turf/simulated/wall/r_titanium,
-/area/syndicate_station/start)
 "nUi" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -22551,10 +22998,6 @@
 	},
 /turf/simulated/floor/holofloor/beach/sand,
 /area/holodeck/source_volleyball)
-"ode" = (
-/obj/effect/paint/sun,
-/turf/simulated/wall/titanium,
-/area/rescue_base/start)
 "olJ" = (
 /obj/effect/floor_decal/beach{
 	icon_state = "beachborder";
@@ -22634,15 +23077,6 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/merchant_station)
-"pKj" = (
-/obj/structure/shuttle/engine/propulsion{
-	icon_state = "propulsion_l"
-	},
-/obj/effect/paint/black,
-/turf/simulated/shuttle/wall{
-	icon_state = "wall3"
-	},
-/area/syndicate_station/start)
 "pMd" = (
 /obj/structure/aliumizer,
 /turf/unsimulated/floor{
@@ -22720,6 +23154,28 @@
 /obj/structure/holostool,
 /turf/simulated/floor/holofloor/concrete,
 /area/holodeck/source_volleyball)
+"snr" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "syndieprisonshutters";
+	name = "Blast Doors";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/syndicate_station/start)
 "suk" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced/crescent{
@@ -22804,10 +23260,6 @@
 	},
 /turf/simulated/floor/holofloor/grass,
 /area/holodeck/source_cafe)
-"uFd" = (
-/obj/effect/paint/red,
-/turf/simulated/wall/r_titanium,
-/area/shuttle/specops/centcom)
 "uGj" = (
 /obj/structure/table/rack,
 /obj/item/clothing/head/helmet/riot,
@@ -22833,12 +23285,6 @@
 "vbR" = (
 /turf/simulated/floor/holofloor/wood,
 /area/holodeck/source_cafe)
-"wkp" = (
-/obj/effect/wallframe_spawn/reinforced/titanium,
-/obj/effect/paint/hull,
-/obj/effect/paint/black,
-/turf/simulated/floor/plating,
-/area/shuttle/administration/centcom)
 "wCU" = (
 /obj/structure/window/holowindow/full,
 /turf/simulated/floor/holofloor,
@@ -25568,8 +26014,8 @@ aml
 aml
 arC
 aml
-ode
-ode
+aml
+aml
 alU
 ass
 adB
@@ -26376,8 +26822,8 @@ aqX
 aml
 aml
 aml
-ode
-ode
+aml
+aml
 alU
 ass
 adB
@@ -27384,8 +27830,8 @@ aml
 aml
 aml
 aml
-ode
-ode
+aml
+aml
 alU
 alU
 alU
@@ -28394,8 +28840,8 @@ aml
 aml
 aml
 aml
-ode
-ode
+aml
+aml
 alU
 alU
 alU
@@ -28410,15 +28856,15 @@ asR
 asR
 asR
 asR
-izl
+asS
 atB
 atU
-izl
+auf
 asR
-izl
+asS
 atB
 atU
-izl
+auf
 asR
 asR
 asR
@@ -28611,17 +29057,17 @@ asP
 asR
 asR
 asR
-izl
-izl
+asS
+asT
 atC
 atC
-izl
-izl
-izl
+asT
+asT
+asT
 atC
 atC
-izl
-izl
+asT
+auf
 asR
 asR
 asR
@@ -28812,19 +29258,19 @@ aaa
 asP
 asR
 asR
-izl
-izl
-izl
+asS
+asT
+asT
 atD
 atV
 aug
-izl
+asT
 auD
 auR
 auY
-izl
-izl
-izl
+asT
+asT
+auf
 asR
 asR
 avY
@@ -29013,21 +29459,21 @@ aad
 aaa
 asP
 asR
-izl
-izl
+asS
+asT
 atc
 atn
 atd
 atd
 auh
-izl
+asT
 auD
 auS
 auZ
 avj
 avp
 avE
-izl
+auf
 asR
 avY
 awn
@@ -29215,21 +29661,21 @@ aad
 aaa
 asP
 asR
-izl
+asT
 asV
 atd
 atd
 atd
 atd
 aui
-izl
+asT
 auE
 auS
 auS
 auS
 auS
 avF
-izl
+asT
 asR
 avY
 awo
@@ -29406,8 +29852,8 @@ aqz
 aml
 aml
 aml
-ode
-ode
+aml
+aml
 alU
 ass
 adB
@@ -29417,21 +29863,21 @@ aad
 aaa
 asP
 asR
-izl
+asT
 asW
 ate
 ato
 asW
 atd
 auj
-izl
+asT
 auD
 auS
 auS
 auS
 auS
 avG
-izl
+asT
 asR
 avY
 awp
@@ -29619,21 +30065,21 @@ aad
 aaa
 asP
 asR
-izl
+asT
 asW
 atf
 atp
 asW
 atd
 auk
-izl
+asT
 auF
 auS
 auS
 avk
 avq
 avH
-izl
+asT
 asR
 avY
 awq
@@ -29821,21 +30267,21 @@ aad
 aaa
 asP
 asR
-izl
-izl
-izl
-izl
-izl
+asT
+asT
+asT
+asT
+asT
 atr
-izl
-izl
-izl
+asT
+asT
+asT
 atr
-izl
-izl
-izl
-izl
-izl
+asT
+asT
+asT
+asT
+asT
 asR
 avY
 awr
@@ -30023,7 +30469,7 @@ aad
 aaa
 asP
 asR
-izl
+asT
 asX
 atd
 atq
@@ -30035,9 +30481,9 @@ atd
 atd
 atd
 atq
-wkp
+avr
 avI
-wkp
+avR
 asR
 avY
 awr
@@ -30061,14 +30507,14 @@ ayc
 aab
 aDy
 aDQ
-uFd
-uFd
-uFd
-uFd
-uFd
-uFd
-uFd
-uFd
+aDQ
+aDQ
+aDQ
+aDQ
+aDQ
+aDQ
+aDQ
+aFX
 aab
 aab
 aEE
@@ -30214,8 +30660,8 @@ aml
 aml
 arH
 aml
-ode
-ode
+aml
+aml
 alU
 ass
 adB
@@ -30225,7 +30671,7 @@ aad
 aaa
 asP
 asR
-izl
+asT
 asX
 atd
 atd
@@ -30270,8 +30716,8 @@ aEV
 aEV
 aEB
 aFK
-uFd
-uFd
+aDQ
+aFX
 aab
 aEE
 aGd
@@ -30427,21 +30873,21 @@ aad
 aaa
 asP
 asR
-izl
+asT
 asY
 atd
 atd
 atd
-izl
+asT
 atd
 aut
 atd
-izl
-izl
+asT
+asT
 atr
-izl
-izl
-izl
+asT
+asT
+asT
 asR
 avY
 aws
@@ -30629,21 +31075,21 @@ aad
 aaa
 asP
 asR
-izl
+asT
 asZ
 atd
 atd
 atE
-izl
+asT
 aul
 auu
 auG
-izl
+asT
 ava
 atd
 atq
 avK
-izl
+asT
 asR
 avY
 awt
@@ -30674,8 +31120,8 @@ aEr
 aEr
 aFz
 aFL
-uFd
-uFd
+aDQ
+aFZ
 aab
 aEE
 aGd
@@ -30831,21 +31277,21 @@ aad
 aaa
 asP
 asR
-asS
+asT
 asZ
 atd
 atd
 atE
-asS
+asT
 aum
-aum
-aum
-asS
+auv
+auH
+asT
 avb
 atd
 atd
 avL
-asS
+asT
 asR
 avY
 awt
@@ -30869,14 +31315,14 @@ avY
 aab
 aDA
 aDQ
-uFd
-uFd
-uFd
+aDQ
+aDQ
+aDQ
 aEW
 aEW
-uFd
-uFd
-uFd
+aDQ
+aDQ
+aFZ
 aab
 aab
 aEE
@@ -31033,21 +31479,21 @@ aad
 aaa
 asP
 asR
-asS
-asS
-asS
+asT
+asT
+asT
 atr
-asS
-asS
+asT
+asT
 asR
 asR
 asR
-asS
+asT
 avc
 atd
 avt
-asS
-asS
+asT
+asT
 asR
 avZ
 avZ
@@ -31235,21 +31681,21 @@ aad
 aaa
 asP
 asR
-asS
-asS
+asU
+asT
 atg
 atd
 atd
-asS
+asT
 asR
 asR
 asR
-asS
+asT
 avd
 atd
 avu
-asS
-asS
+asT
+atW
 asR
 avZ
 awu
@@ -31438,19 +31884,19 @@ aaa
 asP
 asR
 asR
-asS
-asS
+asT
+asT
 atd
 bBb
-asS
+asT
 asR
 asR
 asR
-asS
+asT
 ave
 atd
-asS
-asS
+asT
+asT
 asR
 asR
 avZ
@@ -31640,19 +32086,19 @@ aaa
 asP
 asR
 asR
-asS
-asS
+asU
+asT
 ats
 atG
-asS
+asT
 asR
 asR
 asR
-asS
+asT
 avf
 ats
-asS
-asS
+asT
+atW
 asR
 asR
 avZ
@@ -31843,17 +32289,17 @@ asP
 asR
 asR
 asR
-asS
-asS
-asS
-asS
+asU
+asT
+asT
+atW
 asR
 asR
 asR
-asS
-asS
-asS
-asS
+asU
+asT
+asT
+atW
 asR
 asR
 asR
@@ -37307,7 +37753,7 @@ auQ
 auQ
 auQ
 auw
-auo
+auA
 atR
 atR
 atx
@@ -37503,14 +37949,14 @@ aab
 atx
 atR
 rxE
-auo
+aup
+aux
 auz
 auz
 auz
-auz
-auz
-auo
-auo
+aur
+aup
+auA
 atR
 atx
 aab
@@ -37711,8 +38157,8 @@ auz
 auz
 auz
 jlA
-auo
-auo
+aup
+aup
 atR
 atx
 aab
@@ -37914,7 +38360,7 @@ auX
 auz
 auz
 avB
-auo
+aup
 atR
 atx
 aab
@@ -38109,14 +38555,14 @@ aab
 atx
 atR
 rxE
+aup
+auA
+auz
+auz
+auz
 auo
-auz
-auz
-auz
-auz
-auz
-auo
-auo
+aup
+aux
 atR
 atx
 aab
@@ -38311,13 +38757,13 @@ aab
 atx
 atR
 atR
-auo
+aur
 auw
 auQ
 auQ
 auQ
 auw
-auo
+aux
 atR
 atR
 atx
@@ -54658,9 +55104,9 @@ anG
 anG
 anG
 ark
-ark
-ark
-ark
+ars
+ars
+asB
 anG
 anG
 anH
@@ -54859,11 +55305,11 @@ anG
 anG
 anG
 ark
-ark
+ars
 ask
 asv
-ark
-ark
+ars
+asB
 anG
 anG
 anG
@@ -54905,20 +55351,20 @@ aab
 aab
 aab
 aab
-ntr
-ntr
-ntr
 ayw
-ayw
+aza
+aza
+aza
+aza
 aFf
-aFf
-aFf
-ayw
-ayw
-nyY
-ntr
-ntr
-aab
+aFr
+aFE
+aza
+aza
+jRO
+aza
+aza
+aGU
 aab
 aab
 aab
@@ -55061,12 +55507,12 @@ anG
 anG
 anG
 arU
-ark
+ars
 asl
 asl
-ark
-ark
-ark
+ars
+ars
+asB
 anG
 anG
 anH
@@ -55103,24 +55549,24 @@ aab
 aab
 aab
 ayw
-ayw
-kby
-ayw
-ayw
-ayw
-ayw
-ayw
-ayw
+aza
+snr
+aza
+aza
+aza
+aza
+aza
+aza
 aEI
 aFg
 aFg
 aFF
 aFO
-ayw
+aza
 aGv
-ntr
-ntr
-ntr
+aza
+aza
+aza
 aab
 aab
 aab
@@ -55259,17 +55705,17 @@ ajP
 anH
 anG
 ark
-ark
-ark
-ark
-ark
+ars
+ars
+ars
+ars
 ase
 asm
 asl
 asC
 asF
-ark
-ark
+ars
+asB
 anG
 anH
 ajG
@@ -55304,11 +55750,11 @@ aab
 aab
 aab
 ayw
-ayw
+aza
 aCZ
 aCZ
 aCB
-ayw
+aza
 aDH
 aDW
 aEj
@@ -55321,7 +55767,7 @@ iPk
 suk
 sLL
 aGH
-lzi
+aGK
 aGW
 aab
 aab
@@ -55464,7 +55910,7 @@ anG
 anH
 anG
 anG
-ark
+ars
 asf
 asn
 asl
@@ -55499,14 +55945,14 @@ aab
 aab
 aab
 aab
-ntr
-ntr
-ntr
-ntr
 ayw
+aza
+aza
+aza
+aza
 jRO
-ayw
-ayw
+aza
+aza
 nUi
 aCC
 aDa
@@ -55523,7 +55969,7 @@ aFg
 aGi
 aFg
 aGI
-lzi
+aGK
 aGX
 aab
 aab
@@ -55666,14 +56112,14 @@ anG
 anH
 anH
 anG
-ark
+ars
 asg
 asn
 asw
 asl
 asG
 asK
-asM
+asN
 anG
 anG
 ajG
@@ -55703,12 +56149,12 @@ aab
 aab
 ixw
 knn
-ayw
-ayw
-ayw
+aza
+aza
+aza
 fMb
-ayw
-ayw
+aza
+aza
 aCD
 aCZ
 aCZ
@@ -55725,7 +56171,7 @@ aFQ
 aGj
 eMJ
 trc
-lzi
+aGK
 aGX
 aab
 aab
@@ -55868,14 +56314,14 @@ anG
 anG
 anG
 anG
-ark
+ars
 ash
 asn
 asl
 asl
 asH
 asL
-asM
+asO
 anG
 anG
 ajG
@@ -55903,18 +56349,18 @@ aab
 aab
 aab
 ayw
-ayw
-ayw
+aza
+aza
 aAb
 aAy
 aza
 kUL
-ayw
-ayw
-ayw
-ayw
-ayw
-ayw
+aza
+aza
+aza
+aza
+aza
+aza
 aDI
 azE
 azE
@@ -55924,11 +56370,11 @@ aFj
 aFg
 aFg
 aFR
-ayw
-ntr
-ntr
-ntr
-ntr
+aza
+aza
+aza
+aza
+kZQ
 aab
 aab
 aab
@@ -56066,18 +56512,18 @@ alF
 ajP
 anG
 anG
-ark
-ark
-ark
-ark
-ark
+arl
+ars
+ars
+ars
+ars
 asi
 aso
 asx
 asD
 asI
-ark
-ark
+ars
+asE
 anG
 anG
 ajG
@@ -56126,10 +56572,10 @@ aza
 aFu
 aFG
 aza
-ayw
-ntr
-ntr
-ntr
+aza
+aza
+aza
+aza
 aab
 aab
 aab
@@ -56273,12 +56719,12 @@ anG
 anG
 anG
 arU
-ark
-ark
+ars
+ars
 asy
-ark
-ark
-ark
+ars
+ars
+asE
 anG
 anG
 anG
@@ -56306,7 +56752,7 @@ aab
 aab
 aab
 aab
-ayx
+ayy
 azc
 azE
 azE
@@ -56474,12 +56920,12 @@ anG
 anG
 anG
 anG
-ark
-ark
+arl
+ars
 asp
 asz
-ark
-ark
+ars
+asE
 anG
 anG
 anG
@@ -56508,7 +56954,7 @@ aab
 aab
 aab
 aab
-ayx
+ayy
 azd
 azF
 azE
@@ -56677,10 +57123,10 @@ anH
 anG
 anG
 anG
-ark
+arl
 asq
-ark
-ark
+ars
+asE
 anG
 anG
 anG
@@ -56710,7 +57156,7 @@ aab
 aab
 aab
 aab
-ayx
+ayy
 aze
 azE
 azE
@@ -56912,7 +57358,7 @@ aab
 aab
 aab
 aab
-ayx
+ayz
 azf
 azE
 aAc
@@ -56934,10 +57380,10 @@ aza
 aFv
 aFH
 aza
-ayw
-ntr
-ntr
-ntr
+aza
+aza
+aza
+aza
 aab
 aab
 aab
@@ -57114,15 +57560,15 @@ aab
 aab
 aab
 aab
-ayw
-ayw
-ayw
+ayA
+aza
+aza
 aAd
 aAA
 aza
 fXG
-ayw
-ayw
+aza
+aza
 aza
 aza
 aDc
@@ -57137,10 +57583,10 @@ azE
 azE
 aFT
 aGo
-ntr
-ntr
-ntr
-ntr
+aza
+aza
+aza
+eqZ
 aab
 aab
 aab
@@ -57319,16 +57765,16 @@ aab
 aab
 ixw
 knn
-ayw
-ayw
-ayw
+aza
+aza
+aza
 eYq
-ayw
-ayw
+aza
+aza
 sFB
 aCG
 aCG
-jgN
+aDn
 aDL
 azE
 azE
@@ -57338,11 +57784,11 @@ azE
 azE
 azE
 aFU
-ayw
+aza
 aGz
 aGL
-lzi
-pKj
+aGK
+aGV
 aab
 aab
 aab
@@ -57519,14 +57965,14 @@ aab
 aab
 aab
 aab
-ntr
-ntr
-ntr
-ntr
-ayw
+ayA
+aza
+aza
+aza
+aza
 mVh
-ayw
-ayw
+aza
+aza
 jwM
 aCH
 aDd
@@ -57543,8 +57989,8 @@ aFV
 aGp
 aGA
 aGM
-lzi
-pKj
+aGK
+aGV
 aab
 aab
 aab
@@ -57727,12 +58173,12 @@ ayl
 ayl
 ayl
 aab
-ayw
-ayw
+ayA
+aza
 sOi
 aDe
 aDe
-jgN
+aDn
 aDN
 aDZ
 aEn
@@ -57742,11 +58188,11 @@ azE
 aFw
 azE
 kBK
-ayw
+aza
 aGA
 ryl
-lzi
-lRr
+aGK
+aGW
 aab
 aab
 aab
@@ -57930,25 +58376,25 @@ ayB
 ayl
 aab
 aab
-ayw
-ayw
+ayA
+aza
 aCJ
 aDf
-ayw
-ayw
-ayw
-ayw
-ayw
+aza
+aza
+aza
+aza
+aza
 aET
 aFl
 aFx
 aFI
 aFW
-ayw
+aza
 lES
-ntr
-ntr
-ntr
+aza
+aza
+aza
 aab
 aab
 aab
@@ -58137,20 +58583,20 @@ aCe
 aCK
 aDg
 aab
-ntr
-ntr
-ntr
-ayw
-ayw
+ayA
+aza
+aza
+aza
+aza
 aFm
-aFm
-aFm
-ayw
-ayw
-dfE
-ntr
-ntr
-aab
+aFy
+aFJ
+aza
+aza
+mVh
+aza
+aza
+kZQ
 aab
 aab
 aab
@@ -58396,17 +58842,17 @@ aLN
 aLN
 aLN
 aUm
-aUm
-aUm
+aUq
+aUq
 aUq
 aUq
 aUq
 aWN
-aWN
+aXf
 aXw
 aUq
-aUm
-aUm
+aUq
+aYg
 aab
 aab
 aab
@@ -59001,9 +59447,9 @@ aLN
 aQx
 aQx
 aLN
-aUm
-aUm
-aUm
+aUp
+aUq
+aUq
 aUq
 aVV
 aWr
@@ -59011,8 +59457,8 @@ aWr
 aXh
 aXy
 aXN
-aUm
-aUm
+aUq
+aYi
 aab
 aab
 aab
@@ -59609,7 +60055,7 @@ aab
 aab
 aab
 aUm
-aUm
+aUq
 aUq
 aUq
 aUq
@@ -59623,7 +60069,7 @@ aXO
 aXO
 aYy
 aUq
-aUq
+aYg
 aab
 aab
 aab
@@ -59810,8 +60256,8 @@ aab
 aab
 aab
 aUm
-aUm
-aUm
+aUq
+aUq
 aVz
 aVY
 aWt
@@ -59824,9 +60270,9 @@ aXO
 aYo
 aYt
 aXO
-aUm
-aUm
-aUm
+aUq
+aUq
+aYg
 aab
 aab
 aab
@@ -60011,7 +60457,7 @@ aLN
 aab
 aab
 aab
-aUm
+aUq
 aUJ
 aVc
 aVA
@@ -60026,7 +60472,7 @@ aXQ
 aUq
 aUq
 aUq
-aUm
+aUq
 aYa
 aYh
 aab
@@ -60415,7 +60861,7 @@ aQx
 aab
 aab
 aab
-bcb
+bdb
 aUK
 aVe
 aVB
@@ -60617,7 +61063,7 @@ aQx
 aab
 aab
 aab
-bcb
+beb
 aUJ
 aVf
 aVA
@@ -60819,7 +61265,7 @@ aLN
 aab
 aab
 aab
-aUm
+aUq
 aUJ
 aVg
 aVC
@@ -60834,7 +61280,7 @@ aXQ
 aUq
 aUq
 aUq
-aUm
+aUq
 aYa
 aYh
 aab
@@ -61021,9 +61467,9 @@ aLN
 aab
 aab
 aab
-aUm
-aUm
-aUm
+aUp
+aUq
+aUq
 bIb
 aVZ
 aWt
@@ -61036,9 +61482,9 @@ aXW
 aYp
 aXW
 aYB
-aUm
-aUm
-aUm
+aUq
+aUq
+aYi
 aab
 aab
 aab
@@ -61224,8 +61670,8 @@ aab
 aab
 aab
 aab
-aUm
-aUm
+aUp
+aUq
 aUq
 aUq
 aUq
@@ -61239,7 +61685,7 @@ aXW
 aYw
 aYC
 aUq
-aUq
+aYi
 aab
 aab
 aab
@@ -61642,7 +62088,7 @@ aUq
 aUq
 aUq
 aUq
-aUq
+aYi
 aab
 aab
 aab
@@ -61830,8 +62276,8 @@ aQx
 aQx
 aLN
 aUm
-aUm
-aUm
+aUq
+aUq
 aUq
 aWc
 aWw
@@ -61839,8 +62285,8 @@ aWR
 aWr
 aXD
 aXX
-aUm
-aUm
+aUq
+aYg
 aab
 aab
 aab
@@ -62031,7 +62477,7 @@ aTa
 aMv
 aMv
 aQx
-aUm
+aUq
 aUL
 aVh
 aUq
@@ -62435,18 +62881,18 @@ aLN
 aLN
 aLN
 aLN
-aUm
-aUm
-aUm
+aUp
+aUq
+aUq
 aUq
 aUq
 aUq
 aWS
-aWS
-aWS
+aXp
+aXG
 aUq
-aUm
-aUm
+aUq
+aYi
 aab
 aab
 aab

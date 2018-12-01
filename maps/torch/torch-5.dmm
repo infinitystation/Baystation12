@@ -2681,7 +2681,7 @@
 	},
 /obj/structure/table/steel_reinforced,
 /obj/random/toolbox,
-/obj/machinery/power/apc/shuttle/aquila{
+/obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
 	pixel_x = 24
@@ -3066,7 +3066,7 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/suit_storage_unit/medical/alt/sol,
+/obj/machinery/suit_storage_unit/medical/alt,
 /turf/simulated/floor/tiled/dark,
 /area/aux_eva)
 "hj" = (
@@ -3310,9 +3310,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/aquila/mess)
 "hO" = (
-/obj/machinery/power/apc/shuttle/aquila{
+/obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/structure/cable/cyan{
@@ -4014,7 +4015,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/aquila/mess)
 "jl" = (
-/obj/machinery/power/apc/shuttle/aquila{
+/obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
 	pixel_x = -24
@@ -4350,8 +4351,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/obj/machinery/power/apc/shuttle/aquila{
+/obj/machinery/power/apc{
+	dir = 2;
 	name = "south bump";
+	operating = 1;
 	pixel_y = -28
 	},
 /obj/structure/cable/cyan{
@@ -7687,15 +7690,15 @@
 /turf/simulated/floor/tiled/dark,
 /area/bridge)
 "qV" = (
+/obj/machinery/alarm{
+	pixel_y = 24
+	},
 /obj/effect/floor_decal/corner/blue,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
-	},
-/obj/machinery/computer/guestpass{
-	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge)
@@ -7833,7 +7836,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/corner/yellow/full,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/suit_storage_unit/engineering/alt/sol,
+/obj/machinery/suit_storage_unit/engineering/alt,
 /turf/simulated/floor/tiled/dark,
 /area/aux_eva)
 "rj" = (
@@ -7953,7 +7956,7 @@
 	c_tag = "Aquila - Storage";
 	dir = 1
 	},
-/obj/machinery/power/apc/shuttle/aquila{
+/obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
 	pixel_x = 24
@@ -8201,11 +8204,6 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
-	},
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -28;
-	req_one_access = list(24,11)
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge)
@@ -8559,7 +8557,7 @@
 	pixel_x = -12;
 	pixel_y = 2
 	},
-/obj/machinery/power/apc/shuttle/aquila{
+/obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
 	pixel_x = -24
@@ -8611,6 +8609,23 @@
 /turf/simulated/floor/tiled/dark,
 /area/bridge)
 "sz" = (
+/obj/effect/floor_decal/corner/blue{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/bridge)
+"sA" = (
+/obj/machinery/computer/guestpass{
+	pixel_x = 32;
+	pixel_y = 0
+	},
 /obj/effect/floor_decal/corner/blue{
 	dir = 1
 	},
@@ -8850,9 +8865,10 @@
 	pixel_x = 21
 	},
 /obj/structure/handrai,
-/obj/machinery/power/apc/shuttle/aquila{
+/obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/structure/cable/cyan{
@@ -11773,7 +11789,7 @@
 	},
 /obj/effect/floor_decal/corner/yellow/full,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/suit_storage_unit/atmos/alt/sol,
+/obj/machinery/suit_storage_unit/atmos/alt,
 /turf/simulated/floor/tiled/dark,
 /area/aux_eva)
 "zo" = (
@@ -12604,8 +12620,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/power/apc/shuttle/aquila{
+/obj/machinery/power/apc{
+	dir = 2;
 	name = "south bump";
+	operating = 1;
 	pixel_y = -28
 	},
 /obj/structure/cable/cyan{
@@ -15824,7 +15842,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/machinery/power/apc/hyper/shuttle/aquila{
+/obj/machinery/power/apc/hyper{
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24
@@ -26415,7 +26433,7 @@ pt
 hq
 qV
 rP
-sz
+sA
 tm
 tZ
 uE

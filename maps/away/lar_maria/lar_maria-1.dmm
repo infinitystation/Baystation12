@@ -579,7 +579,7 @@
 /turf/simulated/floor/plating,
 /area/lar_maria/cells)
 "bC" = (
-/obj/structure/mattress/dirty,
+/obj/structure/slavers_base/mattress,
 /turf/simulated/floor/plating,
 /area/lar_maria/cells)
 "bD" = (
@@ -592,7 +592,7 @@
 /turf/simulated/floor/plating,
 /area/lar_maria/cells)
 "bE" = (
-/obj/structure/mattress/dirty,
+/obj/structure/slavers_base/mattress,
 /obj/effect/landmark/corpse/lar_maria/test_subject,
 /turf/simulated/floor/plating,
 /area/lar_maria/cells)
@@ -921,7 +921,7 @@
 /turf/simulated/floor/plating,
 /area/lar_maria/cells)
 "cx" = (
-/obj/structure/mattress/dirty,
+/obj/structure/slavers_base/mattress,
 /mob/living/simple_animal/hostile/lar_maria/test_subject,
 /turf/simulated/floor/plating,
 /area/lar_maria/cells)

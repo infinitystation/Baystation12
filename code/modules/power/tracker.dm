@@ -44,7 +44,7 @@
 		S.glass_type = /obj/item/stack/material/glass
 		S.tracker = 1
 		S.anchored = 1
-	S.forceMove(src)
+	S.loc = src
 	update_icon()
 
 //updates the tracker icon and the facing angle for the control computer
@@ -65,7 +65,7 @@
 		if(do_after(user, 50,src))
 			var/obj/item/solar_assembly/S = locate() in src
 			if(S)
-				S.dropInto(loc)
+				S.loc = src.loc
 				S.give_glass()
 			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 			user.visible_message("<span class='notice'>[user] takes the glass off the tracker.</span>")

@@ -90,14 +90,15 @@
 				if(isCrowbar(P))
 					playsound(src.loc, 'sound/items/Crowbar.ogg', 50, 1)
 					state = 2
-					circuit.dropInto(loc)
+					circuit.loc = src.loc
+					components.Remove(circuit)
 					circuit = null
 					if(components.len == 0)
 						to_chat(user, "<span class='notice'>You remove the circuit board.</span>")
 					else
 						to_chat(user, "<span class='notice'>You remove the circuit board and other components.</span>")
 						for(var/obj/item/weapon/W in components)
-							W.dropInto(loc)
+							W.loc = src.loc
 					desc = initial(desc)
 					req_components = null
 					components = null
@@ -122,15 +123,15 @@
 
 							for(var/obj/O in src)
 								if(circuit.contain_parts) // things like disposal don't want their parts in them
-									O.forceMove(new_machine)
+									O.loc = new_machine
 								else
-									O.forceMove(null)
+									O.loc = null
 								new_machine.component_parts += O
 
 							if(circuit.contain_parts)
-								circuit.forceMove(new_machine)
+								circuit.loc = new_machine
 							else
-								circuit.forceMove(null)
+								circuit.loc = null
 
 							new_machine.RefreshParts()
 							qdel(src)

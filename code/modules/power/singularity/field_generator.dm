@@ -276,7 +276,7 @@ field_generator power level display
 			break
 	if(isnull(G))
 		return
-	T = get_turf(src)
+	T = src.loc
 	for(var/dist = 0, dist < steps, dist += 1) // creates each field tile
 		var/field_dir = get_dir(T,get_step(G.loc, NSEW))
 		T = get_step(T, NSEW)
@@ -285,7 +285,7 @@ field_generator power level display
 			CF.set_master(src,G)
 			fields += CF
 			G.fields += CF
-			CF.forceMove(T)
+			CF.loc = T
 			CF.set_dir(field_dir)
 	var/listcheck = 0
 	for(var/obj/machinery/field_generator/FG in connected_gens)

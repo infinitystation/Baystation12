@@ -188,11 +188,11 @@
 			var/turf/T = get_turf(src)
 			if(!T)	return 0
 			if(a_left)
-				a_left.holder = null
-				a_left.forceMove(T)
+				a_left:holder = null
+				a_left.loc = T
 			if(a_right)
-				a_right.holder = null
-				a_right.forceMove(T)
+				a_right:holder = null
+				a_right.loc = T
 			spawn(0)
 				qdel(src)
 		return

@@ -73,7 +73,7 @@
 	return
 
 /obj/structure/bigDelivery/on_update_icon()
-	overlays.Cut()
+	overlays = new()
 	if(nameset || examtext)
 		var/image/I = new/image('icons/obj/storage.dmi',"delivery_label")
 		if(icon_state == "deliverycloset")
@@ -111,7 +111,7 @@
 
 /obj/structure/bigDelivery/Destroy()
 	if(wrapped) //sometimes items can disappear. For example, bombs. --rastaf0
-		wrapped.dropInto(loc)
+		wrapped.forceMove(get_turf(src))
 		if(istype(wrapped, /obj/structure/closet))
 			var/obj/structure/closet/O = wrapped
 			O.welded = 0
@@ -135,7 +135,12 @@
 /obj/item/smallDelivery/proc/unwrap(var/mob/user)
 	if (!wrapped || !Adjacent(user))
 		return
-	user.put_in_hands(wrapped)
+	wrapped.forceMove(user.loc)
+	user.drop_item()
+	if(ishuman(user))
+		user.put_in_hands(wrapped)
+	else
+		wrapped.forceMove(get_turf(src))
 	qdel(src)
 
 /obj/item/smallDelivery/attack_robot(mob/user as mob)
@@ -194,7 +199,7 @@
 	return
 
 /obj/item/smallDelivery/on_update_icon()
-	overlays.Cut()
+	overlays = new()
 	if((nameset || examtext) && icon_state != "deliverycrate1")
 		var/image/I = new/image('icons/obj/storage.dmi',"delivery_label")
 		if(icon_state == "deliverycrate5")

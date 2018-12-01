@@ -115,7 +115,8 @@
 			H.visible_message("<span class='danger'>\the [src] latches onto \the [H], pulsating!</span>")
 			if(carried && length(gripping.virus2) == 0)
 				infect_virus2(gripping, carried, 1)
-			src.forceMove(gripping.loc)
+			src.loc = gripping.loc
+			return
 
 /mob/living/simple_animal/hostile/vagrant/swarm/Initialize()
 	. = ..()

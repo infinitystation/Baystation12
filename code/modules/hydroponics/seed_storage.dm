@@ -286,7 +286,7 @@
 					if (N.amount <= 0 || N.seeds.len <= 0)
 						piles -= N
 						qdel(N)
-					O.dropInto(loc)
+					O.loc = src.loc
 				else
 					piles -= N
 					qdel(N)

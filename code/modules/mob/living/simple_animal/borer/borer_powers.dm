@@ -119,7 +119,7 @@ GLOBAL_LIST_INIT(borer_reagent_types_by_name, setup_borer_reagents())
 
 		src.host = M
 		src.host.status_flags |= PASSEMOTES
-		src.forceMove(M)
+		src.loc = M
 
 		//Update their traitor status.
 		if(host.mind)

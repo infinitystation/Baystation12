@@ -121,6 +121,7 @@
 		to_chat(remover, "<span class='warning'>\The [src] does not have a sample in it.</span>")
 		return
 	to_chat(remover, "<span class='notice'>You remove \the [sample] from \the [src].</span>")
+	sample.forceMove(get_turf(src))
 	remover.put_in_hands(sample)
 	sample = null
 	update_icon()

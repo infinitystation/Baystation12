@@ -279,7 +279,7 @@
 	result = /datum/reagent/clonexadone
 	required_reagents = list(/datum/reagent/cryoxadone = 1, /datum/reagent/sodium = 1)
 	result_amount = 2
-	minimum_temperature = -100 CELCIUS
+	minimum_temperature = (-75 CELCIUS) - 100
 	maximum_temperature = -75 CELCIUS
 	mix_message = "The solution thickens into translucent slime."
 
@@ -949,7 +949,9 @@
 /datum/chemical_reaction/slime/spawn/on_reaction(var/datum/reagents/holder)
 	..()
 	holder.my_atom.visible_message("<span class='warning'>Infused with phoron, the core begins to quiver and grow, and soon a new baby slime emerges from it!</span>")
-	new /mob/living/carbon/slime(get_turf(holder.my_atom))
+	var/mob/living/carbon/slime/S = new /mob/living/carbon/slime
+	S.loc = get_turf(holder.my_atom)
+	..()
 
 /datum/chemical_reaction/slime/monkey
 	name = "Slime Monkey"
@@ -961,7 +963,9 @@
 /datum/chemical_reaction/slime/monkey/on_reaction(var/datum/reagents/holder)
 	..()
 	for(var/i = 1, i <= 3, i++)
-		new /obj/item/weapon/reagent_containers/food/snacks/monkeycube(get_turf(holder.my_atom))
+		var /obj/item/weapon/reagent_containers/food/snacks/monkeycube/M = new /obj/item/weapon/reagent_containers/food/snacks/monkeycube
+		M.loc = get_turf(holder.my_atom)
+	..()
 
 //Green
 /datum/chemical_reaction/slime/mutate
@@ -981,10 +985,13 @@
 
 /datum/chemical_reaction/slime/metal/on_reaction(var/datum/reagents/holder)
 	..()
-	var/obj/item/stack/material/steel/M = new (get_turf(holder.my_atom))
+	var/obj/item/stack/material/steel/M = new /obj/item/stack/material/steel
 	M.amount = 15
-	var/obj/item/stack/material/plasteel/P = new (get_turf(holder.my_atom))
+	M.loc = get_turf(holder.my_atom)
+	var/obj/item/stack/material/plasteel/P = new /obj/item/stack/material/plasteel
 	P.amount = 5
+	P.loc = get_turf(holder.my_atom)
+	..()
 
 //Gold
 /datum/chemical_reaction/slime/crit
@@ -1007,6 +1014,7 @@
 	..()
 	var/type = pick(possible_mobs)
 	new type(get_turf(holder.my_atom))
+	..()
 
 //Silver
 /datum/chemical_reaction/slime/bork
@@ -1026,11 +1034,13 @@
 
 	for(var/i = 1, i <= 4 + rand(1,2), i++)
 		var/chosen = pick(borks)
-		var/obj/B = new chosen(get_turf(holder.my_atom))
+		var/obj/B = new chosen
 		if(B)
+			B.loc = get_turf(holder.my_atom)
 			if(prob(50))
 				for(var/j = 1, j <= rand(1, 3), j++)
 					step(B, pick(NORTH, SOUTH, EAST, WEST))
+	..()
 
 //Blue
 /datum/chemical_reaction/slime/frost
@@ -1130,7 +1140,8 @@
 
 /datum/chemical_reaction/slime/psteroid/on_reaction(var/datum/reagents/holder, var/created_volume)
 	..()
-	new /obj/item/weapon/slimesteroid(get_turf(holder.my_atom))
+	var/obj/item/weapon/slimesteroid/P = new /obj/item/weapon/slimesteroid
+	P.loc = get_turf(holder.my_atom)
 
 /datum/chemical_reaction/slime/jam
 	name = "Slime Jam"
@@ -1149,8 +1160,9 @@
 
 /datum/chemical_reaction/slime/plasma/on_reaction(var/datum/reagents/holder)
 	..()
-	var/obj/item/stack/material/phoron/P = new (get_turf(holder.my_atom))
+	var/obj/item/stack/material/phoron/P = new /obj/item/stack/material/phoron
 	P.amount = 10
+	P.loc = get_turf(holder.my_atom)
 
 //Red
 /datum/chemical_reaction/slime/glycerol
@@ -1183,7 +1195,8 @@
 
 /datum/chemical_reaction/slime/ppotion/on_reaction(var/datum/reagents/holder)
 	..()
-	new /obj/item/weapon/slimepotion(get_turf(holder.my_atom))
+	var/obj/item/weapon/slimepotion/P = new /obj/item/weapon/slimepotion
+	P.loc = get_turf(holder.my_atom)
 
 //Black
 /datum/chemical_reaction/slime/mutate2
@@ -1364,24 +1377,6 @@
 	result_amount = 5
 	mix_message = "The solution thickens into a creamy brown beverage."
 
-/datum/chemical_reaction/coffee
-	name = "Coffee"
-	result = /datum/reagent/drink/coffee
-	required_reagents = list(/datum/reagent/water = 5, /datum/reagent/nutriment/coffee = 1)
-	result_amount = 5
-	minimum_temperature = 70 CELCIUS
-	maximum_temperature = (70 CELCIUS) + 100
-	mix_message = "The solution thickens into a steaming dark brown beverage."
-
-/datum/chemical_reaction/tea
-	name = "Black tea"
-	result = /datum/reagent/drink/tea
-	required_reagents = list(/datum/reagent/water = 5, /datum/reagent/nutriment/tea = 1)
-	result_amount = 5
-	minimum_temperature = 70 CELCIUS
-	maximum_temperature = (70 CELCIUS) + 100
-	mix_message = "The solution thickens into a steaming black beverage."
-
 /datum/chemical_reaction/hot_coco
 	name = "Hot Coco"
 	result = /datum/reagent/drink/hot_coco
@@ -1390,34 +1385,6 @@
 	minimum_temperature = 70 CELCIUS
 	maximum_temperature = (70 CELCIUS) + 100
 	mix_message = "The solution thickens into a steaming brown beverage."
-
-/datum/chemical_reaction/grapejuice
-	name = "Grape Juice"
-	result = /datum/reagent/drink/juice/grape
-	required_reagents = list(/datum/reagent/water = 3, /datum/reagent/nutriment/instantjuice/grape = 1)
-	result_amount = 3
-	mix_message = "The solution settles into a purplish-red beverage."
-
-/datum/chemical_reaction/orangejuice
-	name = "Orange Juice"
-	result = /datum/reagent/drink/juice/orange
-	required_reagents = list(/datum/reagent/water = 3, /datum/reagent/nutriment/instantjuice/orange = 1)
-	result_amount = 3
-	mix_message = "The solution settles into an orange beverage."
-
-/datum/chemical_reaction/watermelonjuice
-	name = "Watermelon Juice"
-	result = /datum/reagent/drink/juice/watermelon
-	required_reagents = list(/datum/reagent/water = 3, /datum/reagent/nutriment/instantjuice/watermelon = 1)
-	result_amount = 3
-	mix_message = "The solution settles into a red beverage."
-
-/datum/chemical_reaction/applejuice
-	name = "Apple Juice"
-	result = /datum/reagent/drink/juice/apple
-	required_reagents = list(/datum/reagent/water = 3, /datum/reagent/nutriment/instantjuice/apple = 1)
-	result_amount = 3
-	mix_message = "The solution settles into a clear brown beverage."
 
 /datum/chemical_reaction/soysauce
 	name = "Soy Sauce"

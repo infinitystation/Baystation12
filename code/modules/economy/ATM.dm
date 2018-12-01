@@ -47,7 +47,7 @@
 			number_incorrect_tries = 0
 
 	for(var/obj/item/weapon/spacecash/S in src)
-		S.dropInto(loc)
+		S.loc = src.loc
 		if(prob(50))
 			playsound(loc, 'sound/items/polaroid1.ogg', 50, 1)
 		else
@@ -444,7 +444,7 @@
 	if(!held_card)
 		return
 
-	held_card.dropInto(loc)
+	held_card.loc = src.loc
 	authenticated_account = null
 	account_security_level = 0
 

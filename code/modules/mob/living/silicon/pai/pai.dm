@@ -78,6 +78,7 @@
 
 /mob/living/silicon/pai/New(var/obj/item/device/paicard)
 	status_flags |= NO_ANTAG
+	src.loc = paicard
 	card = paicard
 
 	//As a human made device, we'll understand sol common without the need of the translator
@@ -214,7 +215,7 @@
 
 	src.client.perspective = EYE_PERSPECTIVE
 	src.client.eye = src
-	dropInto(card.loc)
+	src.forceMove(get_turf(card))
 
 	card.forceMove(src)
 	card.screen_loc = null
@@ -324,11 +325,13 @@
 		var/mob/living/M = H.loc
 		if(istype(M))
 			M.drop_from_inventory(H, get_turf(src))
-		dropInto(loc)
+		src.forceMove(get_turf(src))
 
 	// Move us into the card and move the card to the ground.
-	forceMove(card)
-	card.dropInto(card.loc)
+	src.loc = card
+	card.loc = get_turf(card)
+	src.forceMove(card)
+	card.forceMove(card.loc)
 	resting = 0
 	icon_state = "[chassis]"
 

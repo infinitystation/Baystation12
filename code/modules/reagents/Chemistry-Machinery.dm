@@ -1,3 +1,7 @@
+#define SOLID 1
+#define LIQUID 2
+#define GAS 3
+
 #define BOTTLE_SPRITES list("bottle-1", "bottle-2", "bottle-3", "bottle-4") //list of available bottle sprites
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,7 +77,7 @@
 
 	if (href_list["ejectp"])
 		if(loaded_pill_bottle)
-			loaded_pill_bottle.dropInto(loc)
+			loaded_pill_bottle.loc = loc
 			loaded_pill_bottle = null
 	else if(href_list["close"])
 		show_browser(user, null, "window=chemmaster")
@@ -179,7 +183,7 @@
 				reagents.trans_to_obj(P,amount_per_pill)
 				if(loaded_pill_bottle)
 					if(loaded_pill_bottle.contents.len < loaded_pill_bottle.max_storage_space)
-						P.forceMove(loaded_pill_bottle)
+						P.loc = loaded_pill_bottle
 
 		else if (href_list["createbottle"])
 			create_bottle(user)
@@ -498,7 +502,7 @@
 		return
 
 	for(var/obj/item/O in holdingitems)
-		O.dropInto(loc)
+		O.loc = src.loc
 		holdingitems -= O
 	holdingitems.Cut()
 

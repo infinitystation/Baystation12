@@ -172,7 +172,7 @@
 		qdel(src)
 		return 0
 
-	dropInto(user.loc) //move the projectile out into the world
+	loc = get_turf(user) //move the projectile out into the world
 
 	firer = user
 	shot_from = launcher.name
@@ -256,7 +256,7 @@
 		return 0 //no
 
 	if(A == firer || istype(A, /obj/mecha) && get_turf(A) == get_turf(firer))
-		forceMove(A.loc)
+		loc = A.loc
 		return 0 //cannot shoot yourself
 
 	if((bumped && !forced) || (A in permutated))
@@ -296,8 +296,12 @@
 	//the bullet passes through a dense object!
 	if(passthrough)
 		//move ourselves onto A so we can continue on our way.
-		forceMove(get_turf(A))
-		permutated.Add(A)
+		if(A)
+			if(istype(A, /turf))
+				loc = A
+			else
+				loc = A.loc
+			permutated.Add(A)
 		bumped = 0 //reset bumped variable!
 		return 0
 
@@ -433,7 +437,7 @@
 
 /obj/item/projectile/test/Bump(atom/A as mob|obj|turf|area)
 	if(A == firer || istype(A, /obj/mecha) && get_turf(A) == get_turf(firer))
-		forceMove(A.loc)
+		loc = A.loc
 		return //cannot shoot yourself
 	if(istype(A, /obj/item/projectile))
 		return

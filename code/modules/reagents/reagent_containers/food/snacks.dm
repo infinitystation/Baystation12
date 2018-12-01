@@ -456,24 +456,6 @@
 	reagents.add_reagent(/datum/reagent/nutriment/protein, 12)
 	reagents.add_reagent(/datum/reagent/hyperzine, 5)
 
-/obj/item/weapon/reagent_containers/food/snacks/spider
-	name = "giant spider leg"
-	desc = "An economical replacement for crab. In space! Would probably be a lot nicer cooked."
-	icon_state = "spiderleg"
-	filling_color = "#d5f5dc"
-	center_of_mass = "x=16;y=10"
-	bitesize = 3
-
-/obj/item/weapon/reagent_containers/food/snacks/spider/Initialize()
-	.=..()
-	reagents.add_reagent(/datum/reagent/nutriment/protein, 9)
-
-/obj/item/weapon/reagent_containers/food/snacks/spider/cooked
-	name = "boiled spider meat"
-	desc = "An economical replacement for crab. In space!"
-	icon_state = "spiderleg_c"
-	bitesize = 5
-
 /obj/item/weapon/reagent_containers/food/snacks/xenomeat
 	name = "meat"
 	desc = "A slab of green meat. Smells like acid."
@@ -2485,7 +2467,6 @@
 	filling_color = "#f5deb8"
 	center_of_mass = "x=17;y=6"
 	nutriment_desc = list("salt" = 1, "cracker" = 2)
-	w_class = ITEM_SIZE_TINY
 	nutriment_amt = 1
 
 /////////////////////////////////////////////////PIZZA////////////////////////////////////////
@@ -2616,7 +2597,7 @@
 
 /obj/item/pizzabox/on_update_icon()
 
-	overlays.Cut()
+	overlays = list()
 
 	// Set appropriate description
 	if( open && pizza )
@@ -3205,17 +3186,6 @@
 /obj/item/weapon/reagent_containers/food/snacks/liquidfood/Initialize()
 	.=..()
 	reagents.add_reagent(/datum/reagent/iron, 3)
-
-/obj/item/weapon/reagent_containers/food/snacks/meatcube
-	name = "cubed meat"
-	desc = "Fried, salted lean meat compressed into a cube. Not very appetizing."
-	icon_state = "meatcube"
-	filling_color = "#7a3d11"
-	center_of_mass = "x=16;y=16"
-	bitesize = 3
-/obj/item/weapon/reagent_containers/food/snacks/meatcube/Initialize()
-	.=..()
-	reagents.add_reagent(/datum/reagent/nutriment/protein, 15)
 
 /obj/item/weapon/reagent_containers/food/snacks/tastybread
 	name = "bread tube"

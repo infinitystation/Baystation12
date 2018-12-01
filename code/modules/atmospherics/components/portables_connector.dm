@@ -61,6 +61,8 @@
 	return null
 
 /obj/machinery/atmospherics/portables_connector/Destroy()
+	loc = null
+
 	if(connected_device)
 		connected_device.disconnect()
 

@@ -61,5 +61,3 @@
 #define CONNECT_TYPE_SUPPLY		2
 #define CONNECT_TYPE_SCRUBBER	4
 #define CONNECT_TYPE_HE			8
-
-#define ADIABATIC_EXPONENT 0.667 //Actually adiabatic exponent - 1.

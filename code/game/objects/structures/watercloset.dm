@@ -104,7 +104,7 @@
 			if(ishuman(user))
 				user.put_in_hands(I)
 			else
-				I.dropInto(loc)
+				I.loc = get_turf(src)
 			to_chat(user, "<span class='notice'>You find \an [I] in the cistern.</span>")
 			w_items -= I.w_class
 			return
@@ -187,8 +187,8 @@
 		if(w_items + I.w_class > 5)
 			to_chat(user, "<span class='warning'>The cistern is full.</span>")
 			return
-		if(!user.unEquip(I, src))
-			return
+		user.drop_item()
+		I.loc = src
 		w_items += I.w_class
 		to_chat(user, "<span class='notice'>You carefully place \the [I] into the cistern.</span>")
 		return

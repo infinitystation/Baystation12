@@ -96,7 +96,7 @@
 					oxytanks.Remove(O)
 				else
 					O = new /obj/item/weapon/tank/oxygen(loc)
-				O.dropInto(loc)
+				O.loc = loc
 				to_chat(usr, "<span class='notice'>You take [O] out of [src].</span>")
 				oxygentanks--
 				update_icon()
@@ -108,7 +108,7 @@
 					platanks.Remove(P)
 				else
 					P = new /obj/item/weapon/tank/phoron(loc)
-				P.dropInto(loc)
+				P.loc = loc
 				to_chat(usr, "<span class='notice'>You take [P] out of [src].</span>")
 				phorontanks--
 				update_icon()

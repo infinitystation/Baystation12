@@ -1,3 +1,4 @@
+#ifndef OVERRIDE_BAN_SYSTEM
 
 //These are exclusive, so once it goes over one of these numbers, it reverts the ban
 #define STICKYBAN_MAX_MATCHES 20
@@ -140,3 +141,5 @@ world/IsBanned(key,address,computer_id)
 		log_access("Failed Login: [key] [computer_id] [address] - StickyBanned [ban["message"]] Target Username: [bannedckey] Placed by [ban["admin"]]")
 
 	return .
+#endif
+#undef OVERRIDE_BAN_SYSTEM

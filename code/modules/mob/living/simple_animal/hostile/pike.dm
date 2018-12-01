@@ -9,7 +9,7 @@
 	turns_per_move = 2
 	move_to_delay = 2
 	attack_same = 1
-	speed = 1
+	speed = 0
 	mob_size = MOB_LARGE
 
 	pixel_x = -16
@@ -19,13 +19,7 @@
 
 	harm_intent_damage = 5
 	melee_damage_lower = 20
-	melee_damage_upper = 30
+	melee_damage_upper = 25
 	can_escape = 1
 
-	break_stuff_probability = 55
-
-/mob/living/simple_animal/hostile/carp/pike/carp_randomify()
-	return
-
-/mob/living/simple_animal/hostile/carp/pike/on_update_icon()
-	return
+	break_stuff_probability = 35

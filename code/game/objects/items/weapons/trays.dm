@@ -28,7 +28,7 @@
 	// Drop all the things. All of them.
 	overlays.Cut()
 	for(var/obj/item/I in carrying)
-		I.dropInto(M.loc)
+		I.loc = M.loc
 		carrying.Remove(I)
 		if(isturf(I.loc))
 			spawn()
@@ -38,7 +38,7 @@
 						sleep(rand(2,4))
 
 
-	if((MUTATION_CLUMSY in user.mutations) && prob(50))              //What if he's a clown?
+	if((CLUMSY in user.mutations) && prob(50))              //What if he's a clown?
 		to_chat(M, "<span class='warning'>You accidentally slam yourself with the [src]!</span>")
 		M.Weaken(1)
 		user.take_organ_damage(2)
@@ -176,7 +176,7 @@
 			if(calc_carry() + add >= max_carry)
 				break
 
-			I.forceMove(src)
+			I.loc = src
 			carrying.Add(I)
 			overlays += image("icon" = I.icon, "icon_state" = I.icon_state, "layer" = 30 + I.layer, "pixel_x" = I.pixel_x, "pixel_y" = I.pixel_y)
 
@@ -194,7 +194,7 @@
 		overlays.Cut()
 
 		for(var/obj/item/I in carrying)
-			I.dropInto(loc)
+			I.loc = loc
 			carrying.Remove(I)
 			if(!foundtable && isturf(loc))
 			// if no table, presume that the person just shittily dropped the tray on the ground and made a mess everywhere!

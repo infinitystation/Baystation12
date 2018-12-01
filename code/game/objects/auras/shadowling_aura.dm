@@ -4,14 +4,14 @@
 
 /obj/aura/shadowling_aura/added_to(var/mob/living/L)
 	..()
-	if(!(MUTATION_SPACERES in L.mutations))
-		L.mutations += MUTATION_SPACERES
+	if(!(SPACERES in L.mutations))
+		L.mutations += SPACERES
 		added_mutation = TRUE
 
 /obj/aura/shadowling_aura/removed()
 	if(added_mutation)
 		added_mutation = FALSE
-		user.mutations -= MUTATION_SPACERES
+		user.mutations -= SPACERES
 	..()
 
 /obj/aura/shadowling_aura/bullet_act(var/obj/item/projectile/P)

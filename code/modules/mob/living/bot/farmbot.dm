@@ -234,7 +234,7 @@
 	new /obj/item/device/analyzer/plant_analyzer(Tsec)
 
 	if(tank)
-		tank.forceMove(Tsec)
+		tank.loc = Tsec
 
 	if(prob(50))
 		new /obj/item/robot_parts/l_arm(Tsec)

@@ -29,6 +29,6 @@
 			spawn(drill_time)
 				if(get_turf(src) == drilling_turf && active)
 					M.GetDrilled()
-					forceMove(M)
+					src.loc = M
 				drilling_turf = null
 				anchored = 0

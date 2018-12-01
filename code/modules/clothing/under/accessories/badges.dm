@@ -205,31 +205,12 @@
 		return
 	desc = "Blood type: [H.b_type]"
 	
-/obj/item/clothing/accessory/badge/tags/skrell/verb/set_sdtf()
+/obj/item/clothing/accessory/badge/tags/skrell/verb/set_sdtf(mob/user as mob)
 	set name = "Set SDTF Name"
 	set category = "Object"
-	set src in usr
-	
-	if(usr.incapacitated())
-		to_chat(usr, "<span class='warning'>You're unable to do that.</span>")
-		return
-	
-	var/obj/item/in_hand = usr.get_active_hand()
-	if(in_hand != src)
-		to_chat(usr, "<span class='warning'>You have to be holding [src] to modify it.</span>")
-		return
+	desc = "Set your SDTF origin!"
 	
 	badge_string = sanitize(input(usr, "Input your SDTF.", "SDTF Holobadge") as null|text, MAX_NAME_LEN)
-	
-	if(usr.incapacitated())	//Because things can happen while you're typing
-		to_chat(usr, "<span class='warning'>You're unable to do that.</span>")
-		return
-	in_hand = usr.get_active_hand()
-	if(in_hand != src)
-		to_chat(usr, "<span class='warning'>You have to be holding [src] to modify it.</span>")
-		return
-		
-	if(badge_string)
-		set_name(usr.real_name)
-		set_desc(usr)
-		verbs -= /obj/item/clothing/accessory/badge/tags/skrell/verb/set_sdtf
+	set_name(user.real_name)
+	set_desc(user)
+	verbs -= /obj/item/clothing/accessory/badge/tags/skrell/verb/set_sdtf

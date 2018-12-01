@@ -2,7 +2,6 @@
 	name = "shoulder holster"
 	desc = "A handgun holster."
 	icon_state = "holster"
-	slot = ACCESSORY_SLOT_HOLSTER
 	slots = 1
 	max_w_class = ITEM_SIZE_NORMAL
 	var/list/can_holster = null

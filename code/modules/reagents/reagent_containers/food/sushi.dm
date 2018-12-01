@@ -121,7 +121,6 @@
 		 istype(I, /obj/item/weapon/reagent_containers/food/snacks/tofu) || \
 		 istype(I, /obj/item/weapon/reagent_containers/food/snacks/cutlet) || \
 		 istype(I, /obj/item/weapon/reagent_containers/food/snacks/rawcutlet) || \
-		 istype(I, /obj/item/weapon/reagent_containers/food/snacks/spider) || \
 		 istype(I, /obj/item/weapon/reagent_containers/food/snacks/meat/chicken))
 			new /obj/item/weapon/reagent_containers/food/snacks/sushi(get_turf(src), src, I)
 			return

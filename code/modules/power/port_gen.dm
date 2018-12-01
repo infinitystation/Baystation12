@@ -301,7 +301,7 @@
 		else if(isCrowbar(O) && open)
 			var/obj/machinery/constructable_frame/machine_frame/new_frame = new /obj/machinery/constructable_frame/machine_frame(src.loc)
 			for(var/obj/item/I in component_parts)
-				I.dropInto(loc)
+				I.loc = src.loc
 			while ( sheets > 0 )
 				DropFuel()
 

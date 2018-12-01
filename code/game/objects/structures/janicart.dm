@@ -151,7 +151,7 @@
 
 
 /obj/structure/janitorialcart/on_update_icon()
-	overlays.Cut()
+	overlays = null
 	if(mybag)
 		overlays += "cart_garbage"
 	if(mymop)
@@ -210,6 +210,7 @@
 
 /obj/structure/bed/chair/janicart/attack_hand(mob/user)
 	if(mybag)
+		mybag.loc = get_turf(user)
 		user.put_in_hands(mybag)
 		mybag = null
 	else
@@ -228,8 +229,9 @@
 
 /obj/structure/bed/chair/janicart/Move()
 	..()
-	if(buckled_mob && (buckled_mob.buckled == src))
-		buckled_mob.dropInto(loc)
+	if(buckled_mob)
+		if(buckled_mob.buckled == src)
+			buckled_mob.loc = loc
 
 
 /obj/structure/bed/chair/janicart/post_buckle_mob(mob/living/M)

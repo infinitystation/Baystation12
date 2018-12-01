@@ -37,7 +37,7 @@
 		for(var/piece in armor_pieces)
 			var/obj/item/I = piece
 			drop_piece(piece)
-			I.forceMove(null)
+			I.loc = null
 
 /spell/toggle_armor/greytide_worldwide
 	name = "Greytide Worldwide"

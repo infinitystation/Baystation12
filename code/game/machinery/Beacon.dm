@@ -12,9 +12,10 @@
 
 	New()
 		..()
-		var/turf/T = get_turf(src)
-		Beacon = new /obj/item/device/radio/beacon(T)
+		var/turf/T = loc
+		Beacon = new /obj/item/device/radio/beacon
 		Beacon.invisibility = INVISIBILITY_MAXIMUM
+		Beacon.loc = T
 
 		hide(!T.is_plating())
 
@@ -39,11 +40,13 @@
 
 	Process()
 		if(!Beacon)
-			Beacon = new /obj/item/device/radio/beacon(get_turf(src))
+			var/turf/T = loc
+			Beacon = new /obj/item/device/radio/beacon
 			Beacon.set_invisibility(INVISIBILITY_MAXIMUM)
+			Beacon.loc = T
 		if(Beacon)
 			if(Beacon.loc != loc)
-				Beacon.forceMove(loc)
+				Beacon.loc = loc
 
 		update_icon()
 

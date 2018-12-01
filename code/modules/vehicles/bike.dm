@@ -84,7 +84,7 @@
 /obj/vehicle/bike/proc/unload_engine()
 	if(!engine)
 		return
-	engine.dropInto(loc)
+	engine.forceMove(get_turf(src))
 	if(trail)
 		trail.stop()
 		qdel(trail)

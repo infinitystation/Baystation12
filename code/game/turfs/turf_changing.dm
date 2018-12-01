@@ -58,7 +58,7 @@
 		if (istype(W,/turf/simulated/floor))
 			W.RemoveLattice()
 	else if(old_fire)
-		qdel(old_fire)
+		old_fire.RemoveFire()
 
 	if(tell_universe)
 		GLOB.universe.OnTurfChange(W)

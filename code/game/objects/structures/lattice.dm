@@ -76,17 +76,21 @@
 	return
 
 /obj/structure/lattice/proc/updateOverlays()
-	overlays.Cut()
+	//if(!(istype(src.loc, /turf/space)))
+	//	qdel(src)
+	spawn(1)
+		overlays = list()
 
-	var/dir_sum = 0
+		var/dir_sum = 0
 
-	var/turf/T
-	for (var/direction in GLOB.cardinal)
-		T = get_step(src, direction)
-		if(locate(/obj/structure/lattice, T) || locate(/obj/structure/catwalk, T))
-			dir_sum += direction
-		else
-			if(!(istype(get_step(src, direction), /turf/space)) && !(istype(get_step(src, direction), /turf/simulated/open)))
+		var/turf/T
+		for(var/direction in GLOB.cardinal)
+			T = get_step(src, direction)
+			if(locate(/obj/structure/lattice, T) || locate(/obj/structure/catwalk, T))
 				dir_sum += direction
+			else
+				if(!(istype(get_step(src, direction), /turf/space)) && !(istype(get_step(src, direction), /turf/simulated/open)))
+					dir_sum += direction
 
-	icon_state = "lattice[dir_sum]"
+		icon_state = "lattice[dir_sum]"
+		return

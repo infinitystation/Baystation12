@@ -79,7 +79,7 @@
 		LAZYADD(SSshuttle.shuttles_to_initialize, shuttle_type) // queue up for init.
 	SSshuttle.wake()
 
-/datum/map_template/proc/load_new_z(no_changeturf = TRUE)
+/datum/map_template/proc/load_new_z()
 
 	var/x = round((world.maxx - width)/2)
 	var/y = round((world.maxy - height)/2)
@@ -92,7 +92,7 @@
 	var/list/atoms_to_initialise = list()
 
 	for (var/mappath in mappaths)
-		var/datum/map_load_metadata/M = maploader.load_map(file(mappath), x, y, no_changeturf = no_changeturf)
+		var/datum/map_load_metadata/M = maploader.load_map(file(mappath), x, y, no_changeturf=TRUE)
 		if (M)
 			bounds = extend_bounds_if_needed(bounds, M.bounds)
 			atoms_to_initialise += M.atoms_to_initialise

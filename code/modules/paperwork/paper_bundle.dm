@@ -211,7 +211,7 @@
 	var/obj/item/weapon/paper/P = pages[1]
 	icon_state = P.icon_state
 	overlays = P.overlays
-	underlays.Cut()
+	underlays = 0
 	var/i = 0
 	var/photo
 	for(var/obj/O in src)

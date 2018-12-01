@@ -13,5 +13,6 @@
 			if(!T)
 				return 0
 			var/type = pickweight(available_mobs)
-			new type(T)
+			var/mob/M = new type
+			M.loc = T
 	return 1

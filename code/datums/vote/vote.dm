@@ -193,9 +193,9 @@
 
 	var/choice = text2num(href_list["choice"])
 	var/priority = text2num(href_list["priority"])
-	if(!is_valid_index(choice, choices))
+	if(choice != sanitize_integer(choice, 1, length(choices), 1))
 		return
-	if(!is_valid_index(priority, weights))
+	if(priority != sanitize_integer(priority, 1, length(weights), 1))
 		return // If the input was invalid, we don't continue recording the vote.
 
 	submit_vote(user, choice, priority)

@@ -123,7 +123,7 @@ var/global/list/rad_collectors = list()
 	var/obj/item/weapon/tank/phoron/Z = src.P
 	if (!Z)
 		return
-	Z.dropInto(loc)
+	Z.forceMove(get_turf(src))
 	Z.reset_plane_and_layer()
 	src.P = null
 	if(active)

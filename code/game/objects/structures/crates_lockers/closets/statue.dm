@@ -60,11 +60,12 @@
 		qdel(src)
 
 /obj/structure/closet/statue/dump_contents()
+
 	for(var/obj/O in src)
-		O.dropInto(loc)
+		O.loc = src.loc
 
 	for(var/mob/living/M in src)
-		M.dropInto(loc)
+		M.forceMove(get_turf(src))
 		M.unset_sdisability(MUTE)
 		M.take_overall_damage((M.health - health - 100),0) //any new damage the statue incurred is transfered to the mob
 		if(M.client)

@@ -277,7 +277,7 @@
 	var/item = get_pin_data(IC_INPUT, 3)
 
 	// Check if index is valid
-	if(!is_valid_index(index, input_list))
+	if(index > input_list.len)
 		set_pin_data(IC_OUTPUT, 1, input_list)
 		push_data()
 		activate_pin(3)
@@ -289,6 +289,7 @@
 		set_pin_data(IC_OUTPUT, 1, red_list)
 		push_data()
 		activate_pin(2)
+
 
 /obj/item/integrated_circuit/lists/len
 	name = "len circuit"

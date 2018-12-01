@@ -130,7 +130,7 @@
 		user.put_in_hands(src)
 		airlock.visible_message("\The [user] removes \the [src] from \the [airlock]!")
 	else
-		dropInto(loc)
+		forceMove(get_turf(src))
 	airlock.brace = null
 	airlock.update_icon()
 	airlock = null

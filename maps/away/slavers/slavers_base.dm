@@ -52,6 +52,13 @@
 	name = "Slavers Base Navpoint #7"
 	landmark_tag = "nav_slavers_base_antag"
 
+/obj/structure/slavers_base/mattress
+	name = "dirty mattress"
+	desc = "Dirty, smelling mattress, covered with body fluids. You wouldn't want to touch this."
+	icon = 'maps/away/slavers/slavers_base_sprites.dmi'
+	icon_state = "dirty_mattress"
+	anchored = 0
+
 /obj/structure/slavers_base/mattress/clean
 	name = "mattress"
 	desc = "Clean mattress. Not so comfortable, but enought."
@@ -61,7 +68,7 @@
 /decl/hierarchy/outfit/corpse
 	name = "Corpse Clothing"
 
-/decl/hierarchy/outfit/corpse/Initialize()
+/decl/hierarchy/outfit/corpse/New()
 	..()
 	hierarchy_type = type
 

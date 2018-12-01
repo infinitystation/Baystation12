@@ -4,7 +4,7 @@
 		return 0
 
 	//Hulk modifier
-	if(MUTATION_HULK in user.mutations)
+	if(HULK in user.mutations)
 		effective_force *= 2
 
 	//Apply weapon damage

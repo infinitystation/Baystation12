@@ -6949,7 +6949,7 @@
 "qV" = (
 /obj/structure/table/steel,
 /obj/random/smokes,
-/obj/item/weapon/flame/lighter/random,
+/obj/item/weapon/flame/lighter,
 /turf/simulated/floor/plating,
 /area/errant_pisces/fishing_wing)
 "qW" = (

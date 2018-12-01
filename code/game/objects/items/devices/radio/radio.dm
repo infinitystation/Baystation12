@@ -623,12 +623,18 @@
 
 	if(isScrewdriver(W))
 		if(keyslot)
+
+
 			for(var/ch_name in channels)
 				radio_controller.remove_object(src, radiochannels[ch_name])
 				secure_radio_connections[ch_name] = null
 
+
 			if(keyslot)
-				keyslot.dropInto(user.loc)
+				var/turf/T = get_turf(user)
+				if(T)
+					keyslot.loc = T
+					keyslot = null
 
 			recalculateChannels()
 			to_chat(user, "You pop out the encryption key in the radio!")
@@ -647,6 +653,8 @@
 			keyslot = W
 
 		recalculateChannels()
+
+	return
 
 /obj/item/device/radio/borg/recalculateChannels()
 	src.channels = list()

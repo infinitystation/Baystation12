@@ -24,10 +24,10 @@
 	item_cost = 6
 	path = /obj/item/ammo_magazine/mc9mmds
 
-/datum/uplink_item/item/ammo/a44
-	name = ".44"
+/datum/uplink_item/item/ammo/a357
+	name = ".357"
 	item_cost = 8
-	path = /obj/item/ammo_magazine/a44
+	path = /obj/item/ammo_magazine/a357
 
 /datum/uplink_item/item/ammo/a556
 	name = "5.56mm"

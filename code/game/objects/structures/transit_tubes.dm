@@ -50,7 +50,7 @@
 
 /obj/structure/transit_tube_pod/Destroy()
 	for(var/atom/movable/AM in contents)
-		AM.dropInto(loc)
+		AM.loc = loc
 
 	..()
 
@@ -61,7 +61,7 @@ obj/structure/ex_act(severity)
 	switch(severity)
 		if(1.0)
 			for(var/atom/movable/AM in contents)
-				AM.dropInto(loc)
+				AM.loc = loc
 				AM.ex_act(severity++)
 
 			qdel(src)
@@ -69,7 +69,7 @@ obj/structure/ex_act(severity)
 		if(2.0)
 			if(prob(50))
 				for(var/atom/movable/AM in contents)
-					AM.dropInto(loc)
+					AM.loc = loc
 					AM.ex_act(severity++)
 
 				qdel(src)
@@ -105,11 +105,14 @@ obj/structure/ex_act(severity)
 		to_chat(AM, "<span class='warning'>The tube's support pylons block your way.</span>")
 		return ..()
 	else
-		AM.dropInto(loc)
+		AM.loc = src.loc
 		to_chat(AM, "<span class='info'>You slip under the tube.</span>")
+
 
 /obj/structure/transit_tube/station/New(loc)
 	..(loc)
+
+
 
 /obj/structure/transit_tube/station/Bumped(mob/AM as mob|obj)
 	if(!pod_moving && icon_state == "open" && istype(AM, /mob))
@@ -118,7 +121,9 @@ obj/structure/ex_act(severity)
 				to_chat(AM, "<span class='notice'>The pod is already occupied.</span>")
 				return
 			else if(!pod.moving && pod.dir in directions())
-				AM.forceMove(pod)
+				AM.loc = pod
+				return
+
 
 /obj/structure/transit_tube/station/attack_hand(mob/user as mob)
 	if(!pod_moving)
@@ -323,7 +328,7 @@ obj/structure/ex_act(severity)
 			last_delay = current_tube.enter_delay(src, next_dir)
 			sleep(last_delay)
 			set_dir(next_dir)
-			forceMove(next_loc) // When moving from one tube to another, skip collision and such.
+			loc = next_loc // When moving from one tube to another, skip collision and such.
 			set_density(current_tube.density)
 
 			if(current_tube && current_tube.should_stop_pod(src, next_dir))
@@ -376,9 +381,8 @@ obj/structure/ex_act(severity)
 	if(istype(mob, /mob) && mob.client)
 		// If the pod is not in a tube at all, you can get out at any time.
 		if(!(locate(/obj/structure/transit_tube) in loc))
-			var/turf/T = get_turf(src)
-			mob.forceMove(T)
-			mob.client.Move(get_step(T, direction), direction)
+			mob.loc = loc
+			mob.client.Move(get_step(loc, direction), direction)
 
 			//if(moving && istype(loc, /turf/space))
 				// Todo: If you get out of a moving pod in space, you should move as well.
@@ -390,9 +394,8 @@ obj/structure/ex_act(severity)
 					if(!station.pod_moving)
 						if(direction == station.dir)
 							if(station.icon_state == "open")
-								var/turf/T = get_turf(src)
-								mob.forceMove(T)
-								mob.client.Move(get_step(T, direction), direction)
+								mob.loc = loc
+								mob.client.Move(get_step(loc, direction), direction)
 
 							else
 								station.open_animation()

@@ -94,6 +94,7 @@
 	icon_living = "farmbot"
 	icon_dead = "farmbot_dead"
 	faction = "farmbots"
+	rapid = 0
 	health = 225
 	maxHealth = 225
 	malfunctioning = 0

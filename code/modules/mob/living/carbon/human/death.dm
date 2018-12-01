@@ -77,7 +77,7 @@
 	handle_hud_list()
 
 /mob/living/carbon/human/proc/ChangeToHusk()
-	if(MUTATION_HUSK in mutations)	return
+	if(HUSK in mutations)	return
 
 	if(f_style)
 		f_style = "Shaved"		//we only change the icon_state of the hair datum, so it doesn't mess up their UI/UE
@@ -85,7 +85,7 @@
 		h_style = "Bald"
 	update_hair(0)
 
-	mutations.Add(MUTATION_HUSK)
+	mutations.Add(HUSK)
 	for(var/obj/item/organ/external/E in organs)
 		E.status |= ORGAN_DISFIGURED
 	update_body(1)
@@ -93,11 +93,11 @@
 
 /mob/living/carbon/human/proc/Drain()
 	ChangeToHusk()
-	mutations |= MUTATION_HUSK
+	mutations |= HUSK
 	return
 
 /mob/living/carbon/human/proc/ChangeToSkeleton()
-	if(MUTATION_SKELETON in src.mutations)	return
+	if(SKELETON in src.mutations)	return
 
 	if(f_style)
 		f_style = "Shaved"
@@ -105,7 +105,7 @@
 		h_style = "Bald"
 	update_hair(0)
 
-	mutations.Add(MUTATION_SKELETON)
+	mutations.Add(SKELETON)
 	for(var/obj/item/organ/external/E in organs)
 		E.status |= ORGAN_DISFIGURED
 	update_body(1)

@@ -63,4 +63,5 @@
 
 /obj/item/weapon/flame/hands/dropped()
 	..()
+	loc = null
 	qdel(src)

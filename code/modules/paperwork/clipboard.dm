@@ -92,6 +92,7 @@
 
 		if(href_list["pen"])
 			if(istype(haspen) && (haspen.loc == src))
+				haspen.loc = usr.loc
 				usr.put_in_hands(haspen)
 				haspen = null
 
@@ -119,6 +120,8 @@
 			var/obj/item/P = locate(href_list["remove"])
 
 			if(P && (P.loc == src) && (istype(P, /obj/item/weapon/paper) || istype(P, /obj/item/weapon/photo)) )
+
+				P.loc = usr.loc
 				usr.put_in_hands(P)
 				if(P == toppaper)
 					toppaper = null

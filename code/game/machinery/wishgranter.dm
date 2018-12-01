@@ -35,26 +35,26 @@
 		charges--
 		insisting = 0
 
-		if (!(MUTATION_HULK in user.mutations))
-			user.mutations.Add(MUTATION_HULK)
+		if (!(HULK in user.mutations))
+			user.mutations.Add(HULK)
 
-		if (!(MUTATION_LASER in user.mutations))
-			user.mutations.Add(MUTATION_LASER)
+		if (!(LASER in user.mutations))
+			user.mutations.Add(LASER)
 
-		if (!(MUTATION_XRAY in user.mutations))
-			user.mutations.Add(MUTATION_XRAY)
+		if (!(XRAY in user.mutations))
+			user.mutations.Add(XRAY)
 			user.set_sight(user.sight|SEE_MOBS|SEE_OBJS|SEE_TURFS)
 			user.set_see_in_dark(8)
 			user.set_see_invisible(SEE_INVISIBLE_LEVEL_TWO)
 
-		if (!(MUTATION_COLD_RESISTANCE in user.mutations))
-			user.mutations.Add(MUTATION_COLD_RESISTANCE)
+		if (!(COLD_RESISTANCE in user.mutations))
+			user.mutations.Add(COLD_RESISTANCE)
 
-		if (!(MUTATION_TK in user.mutations))
-			user.mutations.Add(MUTATION_TK)
+		if (!(TK in user.mutations))
+			user.mutations.Add(TK)
 
-		if(!(MUTATION_HEAL in user.mutations))
-			user.mutations.Add(MUTATION_HEAL)
+		if(!(HEAL in user.mutations))
+			user.mutations.Add(HEAL)
 
 		user.update_mutations()
 		user.mind.special_role = "Avatar of the Wish Granter"

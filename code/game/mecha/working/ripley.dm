@@ -11,10 +11,13 @@
 
 /obj/mecha/working/ripley/Destroy()
 	for(var/atom/movable/A in src.cargo)
-		A.dropInto(loc)
+		A.loc = loc
+		var/turf/T = loc
+		if(istype(T))
+			T.Entered(A)
 		step_rand(A)
 	cargo.Cut()
-	return ..()
+	..()
 
 /obj/mecha/working/ripley/firefighter
 	desc = "Standart APLU chassis was refitted with additional thermal protection and cistern."

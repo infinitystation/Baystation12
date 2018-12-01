@@ -1,3 +1,5 @@
+#define ADIABATIC_EXPONENT 0.667 //Actually adiabatic exponent - 1.
+
 /obj/machinery/atmospherics/pipeturbine
 	name = "turbine"
 	desc = "A gas turbine. Converting pressure into energy since 1884."
@@ -34,6 +36,8 @@
 				initialize_directions = NORTH|SOUTH
 
 	Destroy()
+		loc = null
+
 		if(node1)
 			node1.disconnect(src)
 			QDEL_NULL(network1)
