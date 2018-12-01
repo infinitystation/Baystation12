@@ -1,8 +1,8 @@
 /obj/machinery/photocopier
 	name = "photocopier"
-	icon = 'icons/obj/library.dmi'
-	icon_state = "bigscanner"
-	var/insert_anim = "bigscanner1"
+	icon = 'icons/obj/bureaucracy.dmi'
+	icon_state = "photocopier"
+	var/insert_anim = "photocopier_animation"
 	anchored = 1
 	density = 1
 	use_power = 1
@@ -66,7 +66,6 @@
 		updateUsrDialog()
 	else if(href_list["remove"])
 		if(copyitem)
-			copyitem.loc = usr.loc
 			usr.put_in_hands(copyitem)
 			to_chat(usr, "<span class='notice'>You take \the [copyitem] out of \the [src].</span>")
 			copyitem = null
@@ -184,12 +183,12 @@
 		toner--
 	if(toner == 0)
 		visible_message("<span class='notice'>A red light on \the [src] flashes, indicating that it is out of toner.</span>")
-	c.update_icon()	
+	c.update_icon()
 	return c
 
 /obj/machinery/photocopier/proc/photocopy(var/obj/item/weapon/photo/photocopy, var/need_toner=1)
 	var/obj/item/weapon/photo/p = photocopy.copy()
-	p.forceMove(get_turf(src))
+	p.dropInto(loc)
 
 	if(toner > 10)	//plenty of toner, go straight greyscale
 		p.img.MapColors(rgb(77,77,77), rgb(150,150,150), rgb(28,28,28), rgb(0,0,0))//I'm not sure how expensive this is, but given the many limitations of photocopying, it shouldn't be an issue.
@@ -218,10 +217,10 @@
 			W = copy(W)
 		else if(istype(W, /obj/item/weapon/photo))
 			W = photocopy(W)
-		W.loc = p
+		W.forceMove(p)
 		p.pages += W
 
-	p.loc = src.loc
+	p.dropInto(loc)
 	p.update_icon()
 	p.icon_state = "paper_words"
 	p.SetName(bundle.name)

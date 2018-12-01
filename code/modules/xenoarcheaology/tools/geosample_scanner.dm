@@ -268,7 +268,7 @@
 		var/obj/item/weapon/paper/P = new(src)
 		P.SetName("[src] report #[++report_num]: [scanned_item.name]")
 		P.stamped = list(/obj/item/weapon/stamp)
-		P.overlays = list("paper_stamped")
+		P.queue_icon_update()
 
 		//work out data
 		var/data = " - Mundane object: [scanned_item.desc ? scanned_item.desc : "No information on record."]<br>"
@@ -318,9 +318,9 @@
 		P.info = "<b>[src] analysis report #[report_num]</b><br>"
 		P.info += "<b>Scanned item:</b> [scanned_item.name]<br><br>" + data
 		last_scan_data = P.info
-		P.loc = src.loc
+		P.dropInto(loc)
 
-		scanned_item.loc = src.loc
+		scanned_item.dropInto(loc)
 		scanned_item = null
 
 /obj/machinery/radiocarbon_spectrometer/OnTopic(user, href_list)
@@ -357,6 +357,6 @@
 
 	else if(href_list["ejectItem"])
 		if(scanned_item)
-			scanned_item.loc = src.loc
+			scanned_item.dropInto(loc)
 			scanned_item = null
 		. = TOPIC_REFRESH

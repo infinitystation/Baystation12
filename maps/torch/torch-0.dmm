@@ -453,12 +453,10 @@
 	icon_state = "corner_white";
 	dir = 1
 	},
-/obj/machinery/power/apc{
+/obj/machinery/power/apc/shuttle/charon{
 	dir = 1;
 	name = "north bump";
-	pixel_x = 0;
-	pixel_y = 24;
-	req_access = list(11)
+	pixel_y = 24
 	},
 /obj/structure/bed/chair/shuttle/blue,
 /turf/simulated/floor/tiled,
@@ -503,6 +501,11 @@
 	pixel_x = 21
 	},
 /obj/machinery/camera/network/exploration_shuttle,
+/obj/machinery/alarm{
+	frequency = 1439;
+	pixel_y = 23;
+	req_one_access = list(11,24)
+	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/crew)
 "bG" = (
@@ -897,10 +900,8 @@
 /obj/machinery/light,
 /obj/structure/cable/cyan,
 /obj/machinery/hologram/holopad/longrange,
-/obj/machinery/power/apc{
-	dir = 2;
+/obj/machinery/power/apc/shuttle/charon{
 	name = "south bump";
-	operating = 1;
 	pixel_y = -28
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -947,6 +948,11 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = -24
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/crew)
@@ -1680,6 +1686,11 @@
 	icon_state = "shuttle_chair_preview";
 	dir = 8
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = -24
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/airlock)
 "dD" = (
@@ -1692,7 +1703,7 @@
 /obj/item/weapon/material/hatchet,
 /obj/item/weapon/storage/box/glowsticks,
 /obj/item/weapon/material/hatchet,
-/obj/machinery/power/apc/high{
+/obj/machinery/power/apc/high/shuttle/charon{
 	dir = 4;
 	name = "east bump";
 	pixel_x = 24
@@ -1934,6 +1945,10 @@
 	},
 /obj/structure/handrai,
 /obj/machinery/camera/network/exploration_shuttle,
+/obj/machinery/firealarm{
+	dir = 2;
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo)
 "dY" = (
@@ -2209,10 +2224,8 @@
 	icon_state = "handrail";
 	dir = 1
 	},
-/obj/machinery/power/apc{
-	dir = 2;
+/obj/machinery/power/apc/shuttle/charon{
 	name = "south bump";
-	operating = 1;
 	pixel_y = -28
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -2323,10 +2336,9 @@
 	icon_state = "0-2"
 	},
 /obj/structure/handrai,
-/obj/machinery/power/apc{
+/obj/machinery/power/apc/shuttle/charon{
 	dir = 1;
 	name = "north bump";
-	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/structure/catwalk,
@@ -2340,6 +2352,10 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
+/obj/machinery/firealarm{
+	dir = 2;
+	pixel_y = 24
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/atmos)
 "fa" = (
@@ -2417,6 +2433,10 @@
 /obj/structure/handrai,
 /obj/random_multi/single_item/boombox,
 /obj/structure/catwalk,
+/obj/machinery/firealarm{
+	dir = 2;
+	pixel_y = 24
+	},
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/power)
 "fg" = (
@@ -2787,10 +2807,8 @@
 "fP" = (
 /obj/machinery/floodlight,
 /obj/structure/cable/cyan,
-/obj/machinery/power/apc{
-	dir = 2;
+/obj/machinery/power/apc/shuttle/charon{
 	name = "south bump";
-	operating = 1;
 	pixel_y = -28
 	},
 /obj/structure/catwalk,
@@ -3829,6 +3847,10 @@
 /obj/item/weapon/storage/toolbox/emergency,
 /obj/item/weapon/storage/toolbox/emergency,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -25
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/quartermaster/storage)
 "iN" = (
@@ -3962,14 +3984,12 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/alarm{
-	frequency = 1439;
-	pixel_y = 23;
-	req_one_access = list(11,24)
-	},
 /obj/machinery/camera/network/supply{
 	c_tag = "Supply Office - Warehouse Fore";
 	dir = 2
+	},
+/obj/machinery/computer/guestpass{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
@@ -4232,8 +4252,8 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/quartermaster/expedition/eva)
 "jD" = (
-/obj/machinery/suit_storage_unit/pilot,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/suit_storage_unit/pilot/sol,
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/exploration)
 "jE" = (
@@ -5114,6 +5134,9 @@
 /area/quartermaster/expedition/storage)
 "lt" = (
 /obj/item/modular_computer/console/preset/civilian/professional,
+/obj/machinery/computer/guestpass{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/command/pilot)
 "lu" = (
@@ -5706,6 +5729,12 @@
 "mN" = (
 /obj/effect/floor_decal/corner/brown{
 	dir = 6
+	},
+/obj/machinery/alarm{
+	alarm_id = "petrov3";
+	dir = 8;
+	icon_state = "alarm0";
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fifthdeck/fore)
@@ -6859,6 +6888,11 @@
 	c_tag = "Fifth Deck Hallway - Lift";
 	dir = 1
 	},
+/obj/machinery/alarm{
+	dir = 1;
+	icon_state = "alarm0";
+	pixel_y = -22
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/fifthdeck/fore)
 "oY" = (
@@ -7588,6 +7622,11 @@
 /obj/effect/floor_decal/corner/brown{
 	icon_state = "corner_white";
 	dir = 1
+	},
+/obj/machinery/alarm{
+	frequency = 1439;
+	pixel_y = 23;
+	req_one_access = list(11,24)
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/fifthdeck/aft)
@@ -16448,6 +16487,19 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell3)
+"Vz" = (
+/obj/structure/ladder/up,
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
+	},
+/obj/machinery/alarm{
+	alarm_id = "xenobio2_alarm";
+	dir = 4;
+	icon_state = "alarm0";
+	pixel_x = -24
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/hallway/primary/fifthdeck/aft)
 "VA" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk,
@@ -38753,7 +38805,7 @@ gC
 qD
 Zb
 lh
-xl
+Vz
 xl
 TL
 hy

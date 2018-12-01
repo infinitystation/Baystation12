@@ -12,7 +12,7 @@
 	w_class = ITEM_SIZE_SMALL
 	sprite_sheets = list(
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi',
-		SPECIES_UNATHI = 'icons/mob/species/unathi/mask.dmi',
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_mask_unathi.dmi',
 		)
 
 /obj/item/clothing/mask/balaclava/tactical

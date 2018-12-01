@@ -647,10 +647,11 @@
 
 // called to vent all gas in holder to a location
 /obj/structure/disposalholder/proc/vent_gas(var/atom/location)
-	location.assume_air(gas)  // vent all gas to turf
+	if(location)
+		location.assume_air(gas)  // vent all gas to turf
 
 /obj/structure/disposalholder/Destroy()
-	qdel(gas)
+	QDEL_NULL(gas)
 	active = 0
 	STOP_PROCESSING(SSfastprocess, src)
 	return ..()
@@ -767,7 +768,7 @@
 		// Leaving it intact and sitting in a wall is stupid.
 		if(T.density)
 			for(var/atom/movable/AM in H)
-				AM.loc = T
+				AM.forceMove(T)
 				AM.pipe_eject(0)
 			qdel(H)
 			return

@@ -54,7 +54,9 @@
 	#include "job/service_jobs.dm"
 	#include "job/supply_jobs.dm"
 
+	#include "machinery/apc_shuttle.dm"
 	#include "machinery/keycard authentication.dm"
+	#include "machinery/suit_storage.dm"
 
 	#include "structures/closets.dm"
 	#include "structures/signs.dm"

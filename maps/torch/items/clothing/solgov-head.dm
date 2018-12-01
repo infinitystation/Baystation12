@@ -1,7 +1,7 @@
 /obj/item/clothing/head/solgov
 	name = "master solgov hat"
-	icon = 'maps/torch/icons/obj/solgov-head.dmi'
-	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
+	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
 
@@ -10,8 +10,8 @@
 	name = "\improper Sol Central Government cap"
 	desc = "It's a ballcap in SCG colors."
 	icon_state = "solsoft"
-	icon = 'maps/torch/icons/obj/solgov-head.dmi'
-	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
+	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
 
 /obj/item/clothing/head/soft/solgov/veteranhat
 	name = "veteran hat"
@@ -23,7 +23,7 @@
 	desc = "It's a black ballcap bearing the Expeditonary Corps crest."
 	icon_state = "expeditionsoft"
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_unathi.dmi'
 		)
 
 /obj/item/clothing/head/soft/solgov/expedition/co
@@ -82,7 +82,7 @@
 	desc = "A peaked grey uniform cap belonging to the SCG Expeditionary Corps."
 	icon_state = "greydresscap"
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_unathi.dmi'
 		)
 
 /obj/item/clothing/head/solgov/service/expedition/command
@@ -157,8 +157,8 @@
 	name = "peacekeeper beret"
 	desc = "A beret in Sol Central Government colors. For peacekeepers that are more inclined towards style than safety."
 	icon_state = "beret_lightblue"
-	icon = 'maps/torch/icons/obj/solgov-head.dmi'
-	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
+	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
 
 /obj/item/clothing/head/beret/solgov/homeguard
 	name = "home guard beret"
@@ -215,7 +215,7 @@
 	desc = "A black beret belonging to the SCG Expeditionary Corps. For personnel that are more inclined towards style than safety."
 	icon_state = "beret_black"
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_unathi.dmi'
 		)
 
 /obj/item/clothing/head/beret/solgov/expedition/security
@@ -299,7 +299,7 @@
 	icon_state = "beret_whiterim"
 
 /obj/item/clothing/head/beret/solgov/fleet/dress/command
-	name = "fleet command dress beret"
+	name = "fleet officer's dress beret"
 	desc = "A white SCG Fleet beret with a golden crest. For personnel that are more inclined towards style than safety."
 	icon_state = "beret_whiterim_com"
 
@@ -333,8 +333,8 @@
 /obj/item/clothing/head/ushanka/solgov
 	name = "expeditionary fur hat"
 	desc = "An SCG Expeditionary Corps synthfur-lined hat for operating in cold environments."
-	icon = 'maps/torch/icons/obj/solgov-head.dmi'
-	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
+	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
 	icon_state = "ecushankadown"
 	icon_state_up = "ecushankaup"
 
@@ -365,19 +365,19 @@
 	name = "security helmet"
 	desc = "A helmet with 'POLICE' printed on the back in silver lettering."
 	icon_state = "helmet_security"
-	icon = 'maps/torch/icons/obj/solgov-head.dmi'
-	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
+	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
 	starting_accessories = null
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/species/unathi/head.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_helmet_unathi.dmi'
 		)
 
 /obj/item/clothing/head/helmet/solgov/command
 	name = "command helmet"
 	desc = "A helmet with 'SOL CENTRAL GOVERNMENT' printed on the back in gold lettering."
 	icon_state = "helmet_command"
-	icon = 'maps/torch/icons/obj/solgov-head.dmi'
-	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
+	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
 	starting_accessories = null
 
 /obj/item/clothing/head/helmet/solgov/pilot
@@ -390,6 +390,56 @@
 	name = "fleet pilot's helmet"
 	desc = "A pilot's helmet for operating the cockpit in style. This one is worn by members of the SCG Fleet."
 	icon_state = "pilotfleet"
-	icon = 'maps/torch/icons/obj/solgov-head.dmi'
-	item_icons = list(slot_head_str = 'maps/torch/icons/mob/solgov-head.dmi')
+	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
 	starting_accessories = null
+
+//SolGov Hardsuits
+
+/obj/item/clothing/head/helmet/space/void/engineering/alt/sol
+	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_head_solgov_unathi.dmi',
+		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_head_solgov_skrell.dmi',
+		)
+	sprite_sheets_obj = list(
+		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_head_solgov_unathi.dmi',
+		SPECIES_SKRELL = 'maps/torch/icons/obj/skrell/obj_head_solgov_skrell.dmi',
+		)
+
+/obj/item/clothing/head/helmet/space/void/atmos/alt/sol
+	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_head_solgov_unathi.dmi',
+		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_head_solgov_skrell.dmi',
+		)
+	sprite_sheets_obj = list(
+		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_head_solgov_unathi.dmi',
+		SPECIES_SKRELL = 'maps/torch/icons/obj/skrell/obj_head_solgov_skrell.dmi',
+		)
+
+/obj/item/clothing/head/helmet/space/void/pilot/sol
+	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_head_solgov_unathi.dmi',
+		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_head_solgov_skrell.dmi',
+		)
+	sprite_sheets_obj = list(
+		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_head_solgov_unathi.dmi',
+		SPECIES_SKRELL = 'maps/torch/icons/obj/skrell/obj_head_solgov_skrell.dmi',
+		)
+
+/obj/item/clothing/head/helmet/space/void/medical/alt/sol
+	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_head_solgov_unathi.dmi',
+		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_head_solgov_skrell.dmi',
+		)
+	sprite_sheets_obj = list(
+		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_head_solgov_unathi.dmi',
+		SPECIES_SKRELL = 'maps/torch/icons/obj/skrell/obj_head_solgov_skrell.dmi',
+		)

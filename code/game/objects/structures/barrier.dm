@@ -184,7 +184,7 @@
 		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src] harmlessly!</span>")
 	return 1
 
-/obj/structure/barrier/proc/take_damage(damage)
+/obj/structure/barrier/take_damage(damage)
 	health -= damage * 0.5
 	if(health <= 0)
 		Destroy()

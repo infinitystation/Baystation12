@@ -556,10 +556,7 @@
 /obj/machinery/power/supermatter/shard/announce_warning() //Shards don't get announcements
 	return
 
-
 #undef LIGHT_POWER_CALC
-#undef DETONATION_RADS_RANGE
-#undef DETONATION_RADS_BASE
 #undef DETONATION_MOB_CONCUSSION
 #undef DETONATION_APC_OVERLOAD_PROB
 #undef DETONATION_SHUTDOWN_APC
