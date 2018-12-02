@@ -27,6 +27,12 @@
 	item_cost = 32
 	antag_costs = list(MODE_MERCENARY = 15)
 	path = /obj/item/weapon/melee/energy/sword
+	
+/datum/uplink_item/item/visible_weapons/energy_axe
+	name = "Energy Axe"
+	item_cost = 50
+	antag_costs = list(MODE_MERCENARY = 30)
+	path = /obj/item/weapon/melee/energy/axe
 
 /datum/uplink_item/item/visible_weapons/g9mm
 	name = "Silenced Holdout Pistol"
