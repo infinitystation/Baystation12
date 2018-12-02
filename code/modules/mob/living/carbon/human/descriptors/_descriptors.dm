@@ -4,7 +4,7 @@
 	ETA till a downstream ports this and adds boob and penis size: 2 days.
 */
 
-/mob/living/carbon/human/proc/show_descriptors_to(var/mob/user)
+/mob/living/carbon/human/proc/show_descriptors_to(var/mob/user, var/datum/gender/my_gender)
 	if(LAZYLEN(descriptors))
 		if(user == src)
 			for(var/entry in descriptors)
@@ -13,7 +13,7 @@
 		else
 			for(var/entry in descriptors)
 				var/datum/mob_descriptor/descriptor = species.descriptors[entry]
-				LAZYADD(., descriptor.get_comparative_value_descriptor(descriptors[entry], user, src))
+				LAZYADD(., descriptor.get_comparative_value_descriptor(descriptors[entry], user, src, my_gender))
 
 /datum/mob_descriptor
 	var/name                                       // String ident.
@@ -71,10 +71,9 @@
 		else if(my_value > comparing_value)
 			. = "[.], [get_comparative_value_string_larger(variance, my_gender, other_gender)]"
 
-/datum/mob_descriptor/proc/get_comparative_value_descriptor(var/my_value, var/mob/observer, var/mob/me)
+/datum/mob_descriptor/proc/get_comparative_value_descriptor(var/my_value, var/mob/observer, var/mob/me, var/datum/gender/my_gender)
 
 	// Store our gender info for later.
-	var/datum/gender/my_gender = gender_datums[me.get_gender()]
 	var/datum/gender/other_gender = gender_datums[observer.get_gender()]
 
 	. = get_initial_comparison_component(me, my_gender, other_gender, my_value)
