@@ -107,6 +107,51 @@
 /datum/nano_module/program/card_mod/proc/get_accesses(var/is_centcom = 0)
 	return null
 
+/proc/upd_card_info(var/rename, var/obj/item/weapon/card/id/me)
+	var/datum/computer_file/report/crew_record/active_record
+	for(var/datum/computer_file/report/crew_record/R in GLOB.all_crew_records)
+		var/datum/report_field/field = R.field_from_name("Name")
+		if(lowertext(field.get_value()) == lowertext(rename))
+			active_record = R
+			break
+	if(!active_record)
+		me.age = "\[UNSET\]"
+		me.blood_type = "\[UNSET\]"
+		me.dna_hash = "\[UNSET\]"
+		me.fingerprint_hash = "\[UNSET\]"
+		me.sex = "\[UNSET\]"
+		me.military_branch = null
+		me.military_rank = null
+		me.front = null
+		me.side = null
+		return
+	else
+		me.front = active_record.photo_front
+		me.side = active_record.photo_side
+		var/list/datum/report_field/t = active_record.field_from_name("Age")
+		me.age = t.get_value()
+		t = active_record.field_from_name("Blood Type")
+		me.blood_type = t.get_value()
+		t = active_record.field_from_name("DNA")
+		me.dna_hash = t.get_value()
+		t = active_record.field_from_name("Fingerprint")
+		me.fingerprint_hash = t.get_value()
+		t = active_record.field_from_name("Sex")
+		me.sex = t.get_value()
+		if(GLOB.using_map.flags & MAP_HAS_BRANCH)
+			t = active_record.field_from_name("Branch")
+			for(var/B in mil_branches.branches)
+				var/datum/mil_branch/BR = mil_branches.branches[B]
+				if(t.get_value() == BR.name)
+					me.military_branch = BR
+		if((GLOB.using_map.flags & MAP_HAS_RANK)&&(me.military_branch))
+			var/datum/mil_branch/B = me.military_branch
+			t = active_record.field_from_name("Rank")
+			for(var/R in B.ranks)
+				var/datum/mil_rank/RA = B.ranks[R]
+				if(t.get_value() == RA.name)
+					me.military_rank = RA
+		return
 
 /datum/computer_file/program/card_mod/Topic(href, href_list)
 	if(..())
@@ -117,7 +162,7 @@
 	var/obj/item/weapon/card/id/id_card
 	if (computer.card_slot)
 		id_card = computer.card_slot.stored_card
-
+	upd_card_info(id_card.registered_name, id_card)
 	var/datum/nano_module/program/card_mod/module = NM
 	switch(href_list["action"])
 		if("switchm")

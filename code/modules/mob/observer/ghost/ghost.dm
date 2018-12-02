@@ -595,10 +595,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Set Ghost Alpha"
 	set desc = "Giving you option to enter value for custom ghost transparency"
 	set category = "Ghost"
-	var/input = input("New alpha value (maximum number is 127):",, alpha) as null|num
-	if(!input)
-		return
-	alpha = Clamp(input, 0, 127)
+	alpha = alpha == 127 ? 0 : 127
+	mouse_opacity = alpha ? 1 : 0
 
 /mob/observer/ghost/verb/respawn()
 	set name = "Respawn"

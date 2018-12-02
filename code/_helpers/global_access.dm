@@ -49,6 +49,8 @@
 			return global.SSchemistry;
 		if("SScircuit")
 			return global.SScircuit;
+		if("SScircuit_components")
+			return global.SScircuit_components;
 		if("SScodex")
 			return global.SScodex;
 		if("SSculture")
@@ -977,7 +979,7 @@
 			return global.z_levels;
 		if("zone_blocked")
 			return global.zone_blocked;
-		
+
 /proc/writeglobal(which, newval)
 	switch(which)
 		if("ALL_ANTIGENS")
@@ -1028,6 +1030,8 @@
 			global.SSchemistry=newval;
 		if("SScircuit")
 			global.SScircuit=newval;
+		if("SScircuit_components")
+			global.SScircuit_components=newval;
 		if("SScodex")
 			global.SScodex=newval;
 		if("SSculture")
@@ -1956,7 +1960,7 @@
 			global.z_levels=newval;
 		if("zone_blocked")
 			global.zone_blocked=newval;
-		
+
 /var/list/_all_globals=list(
 	"ALL_ANTIGENS",
 	"ANTAG_FREQS",
@@ -1982,6 +1986,7 @@
 	"SScharacter_setup",
 	"SSchemistry",
 	"SScircuit",
+	"SScircuit_components",
 	"SScodex",
 	"SSculture",
 	"SSevac",
