@@ -355,7 +355,7 @@
 
 	if(!check && !(jobname == "AI" || jobname == "Personal AI" || jobname == "Robot" )) //Silicons can't be compromised
 		displayname = "Unregistered" // We cannot found this name in DB, and this is not Silicon
-	else
+	else if(ishuman(M))
 		displayname = M.GetVoice() // There is no more reasons to hide our appearence - we are found in DB
 
 
