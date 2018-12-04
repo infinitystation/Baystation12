@@ -77,7 +77,6 @@
 	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/tactical/tacticool
-	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/uniform/corporate
 	allowed_branches = CIVILIAN_BRANCHES

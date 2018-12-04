@@ -126,7 +126,7 @@
 
 /datum/gear/tactical/holster
 	allowed_roles = ARMED_ROLES
-
+/*
 /datum/gear/tactical/armor_deco
 	allowed_roles = ARMORED_ROLES
 
@@ -134,7 +134,7 @@
 	display_name = "Press tag"
 	path = /obj/item/clothing/accessory/armor/tag/press
 	allowed_roles = list(/datum/job/assistant)
-
+*/
 /datum/gear/tactical/helm_covers
 	allowed_roles = ARMORED_ROLES
 

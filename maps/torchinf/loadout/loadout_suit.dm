@@ -67,7 +67,7 @@
 
 /datum/gear/suit/track
 	allowed_roles = RESTRICTED_ROLES
-
+/*
 /datum/gear/tactical/pcarrier
 	display_name = "black plate carrier"
 	path = /obj/item/clothing/suit/armor/pcarrier
@@ -91,3 +91,4 @@
 	armors["green plate carrier"] = /obj/item/clothing/suit/armor/pcarrier/green
 	armors["tan plate carrier"] = /obj/item/clothing/suit/armor/pcarrier/tan
 	gear_tweaks += new/datum/gear_tweak/path(armors)
+*/
