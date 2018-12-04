@@ -311,6 +311,7 @@
 	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
 		jobname = H.get_assignment()
+		displayname = H.GetVoice() // radio can't take appearence name, only voice
 
 	// --- Carbon Nonhuman ---
 	else if (iscarbon(M)) // Nonhuman carbon mob
@@ -341,6 +342,21 @@
 		jobname = "Unknown"
 		voicemask = 1
 
+	// We can't log mob name, if it didn't register in DB
+	// Maybe somebody will add code to differ Unknowns later, cause science!
+	var/check = 0
+	for(var/datum/computer_file/report/crew_record/R in GLOB.all_crew_records)
+		if (!ishuman(M)) // not humans haven't GetVoice proc
+			break
+		var/datum/report_field/field = R.field_from_name("Name")
+		if(lowertext(field.get_value()) == lowertext(M.GetVoice()))
+			check = 1
+			break
+
+	if(!check && !(jobname == "AI" || jobname == "Personal AI" || jobname == "Robot" )) //Silicons can't be compromised
+		displayname = "Unregistered" // We cannot found this name in DB, and this is not Silicon
+	else if(ishuman(M))
+		displayname = M.GetVoice() // There is no more reasons to hide our appearence - we are found in DB
 
 
   /* ###### Radio headsets can only broadcast through subspace ###### */
