@@ -47,6 +47,16 @@
 	#include "job/outfits.dm"
 	#include "job/infinity.dm"
 
+	#include "job/jobs_cargo.dm"
+	#include "job/jobs_command.dm"
+	#include "job/jobs_engineering.dm"
+	#include "job/jobs_exploration.dm"
+	#include "job/jobs_medical.dm"
+	#include "job/jobs_misc.dm"
+	#include "job/jobs_research.dm"
+	#include "job/jobs_security.dm"
+	#include "job/jobs_service.dm"
+
 	#include "structures/closets.dm"
 	#include "structures/signs.dm"
 	#include "structures/other.dm"
