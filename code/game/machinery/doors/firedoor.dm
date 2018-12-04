@@ -430,6 +430,7 @@
 
 //Single direction firedoors.
 /obj/machinery/door/firedoor/border_only
+/* //Infinity: We have fixed it, but bs12 are using them on Torch, so, they have no sprite. Sorry.
 	icon = 'icons/obj/doors/edge_Doorfire.dmi'
 	glass = 1 //There is a glass window so you can see through the door
 			  //This is needed due to BYOND limitations in controlling visibility
@@ -464,7 +465,7 @@
 	if(istype(source)) SSair.mark_for_update(source)
 	if(istype(destination)) SSair.mark_for_update(destination)
 	return 1
-
+*/
 /obj/machinery/door/firedoor/multi_tile
 	icon = 'icons/obj/doors/DoorHazard2x1.dmi'
 	width = 2
