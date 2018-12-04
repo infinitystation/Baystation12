@@ -181,13 +181,16 @@ proc/get_radio_key_from_channel(var/channel)
 	if(!message)
 		return
 
+	message = replacetext(message, "&#255;", "__:я:_") // Ќикому же в голову не придет такое написать? ~bear1ake@inf-dev
 	message = html_decode(message)
 
 	var/end_char = copytext(message, lentext(message), lentext(message) + 1)
 	if(!(end_char in list(".", "?", "!", "-", "~")))
 		message += "."
 
-	return html_encode(message)
+	message = html_encode(message)
+	message = replacetext(message, "__:я:_", "&#255;")
+	return message
 
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="", whispering)
 	if(client)
