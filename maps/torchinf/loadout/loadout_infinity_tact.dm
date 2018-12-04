@@ -8,6 +8,8 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/tactical/armor_decor
+	display_name = "armor tags selection"
+	path = /obj/item/clothing/accessory/armor/tag
 	allowed_roles = ARMORED_ROLES
 
 /datum/gear/tactical/armor_decor/New()
