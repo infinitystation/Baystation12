@@ -12,13 +12,13 @@
 
 /datum/gear/tactical/armor_decor/New()
 	..()
-	var/atags = list()
-	atags["NTSF tag"] = /obj/item/clothing/accessory/armor/tag/nt
-	atags["PCRC tag"] = /obj/item/clothing/accessory/armor/tag/pcrc
-	atags["SAARE tag"] = /obj/item/clothing/accessory/armor/tag/saare
-	atags["SCP tag"] = /obj/item/clothing/accessory/armor/tag/scp
-	atags["SCG tag"] = /obj/item/clothing/accessory/armor/tag/solgov
-	gear_tweaks += new/datum/gear_tweak/path(atags)
+	var/artags = list()
+	artags["NTSF tag"] = /obj/item/clothing/accessory/armor/tag/nt
+	artags["PCRC tag"] = /obj/item/clothing/accessory/armor/tag/pcrc
+	artags["SAARE tag"] = /obj/item/clothing/accessory/armor/tag/saare
+	artags["SCP tag"] = /obj/item/clothing/accessory/armor/tag/scp
+	artags["SCG tag"] = /obj/item/clothing/accessory/armor/tag/solgov
+	gear_tweaks += new/datum/gear_tweak/path(artags)
 
 /datum/gear/tactical/armor_pouches
 	allowed_roles = ARMORED_ROLES
