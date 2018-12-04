@@ -19,25 +19,25 @@
 	)
 
 	species_to_branch_whitelist = list(
+		/datum/species/adherent   = list(/datum/mil_branch/civilian),
 		/datum/species/diona      = list(/datum/mil_branch/civilian),
 		/datum/species/nabber     = list(/datum/mil_branch/civilian),
 		/datum/species/skrell     = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
-		/datum/species/tajaran    = list(/datum/mil_branch/civilian),
-		/datum/species/resomi     = list(/datum/mil_branch/civilian),
+		/datum/species/tajaran    = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
+		/datum/species/resomi     = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
 		/datum/species/unathi     = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
 		/datum/species/vox        = list(),
-		/datum/species/adherent   = list(/datum/mil_branch/civilian)
 	)
 
 	species_to_branch_blacklist = list(
+		/datum/species/adherent   = list(/datum/mil_branch/expeditionary_corps, /datum/mil_branch/fleet, /datum/mil_branch/solgov),
 		/datum/species/diona      = list(/datum/mil_branch/expeditionary_corps, /datum/mil_branch/fleet, /datum/mil_branch/solgov),
 		/datum/species/nabber     = list(/datum/mil_branch/expeditionary_corps, /datum/mil_branch/fleet, /datum/mil_branch/solgov),
 		/datum/species/skrell     = list(/datum/mil_branch/fleet, /datum/mil_branch/solgov),
-		/datum/species/tajaran    = list(/datum/mil_branch/expeditionary_corps, /datum/mil_branch/fleet, /datum/mil_branch/solgov),
-		/datum/species/resomi     = list(/datum/mil_branch/expeditionary_corps, /datum/mil_branch/fleet, /datum/mil_branch/solgov),
+		/datum/species/tajaran    = list(/datum/mil_branch/fleet, /datum/mil_branch/solgov),
+		/datum/species/resomi     = list(/datum/mil_branch/fleet, /datum/mil_branch/solgov),
 		/datum/species/unathi     = list(/datum/mil_branch/fleet, /datum/mil_branch/solgov),
 		/datum/species/vox        = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps, /datum/mil_branch/fleet, /datum/mil_branch/solgov),
-		/datum/species/adherent   = list(/datum/mil_branch/expeditionary_corps, /datum/mil_branch/fleet, /datum/mil_branch/solgov),
 	)
 
 
@@ -70,7 +70,24 @@
 				/datum/mil_rank/ec/o3,
 				/datum/mil_rank/ec/o5,
 				/datum/mil_rank/ec/o6
-
+			)
+		),
+		/datum/species/tajaran = list(
+			/datum/mil_branch/expeditionary_corps = list(
+				/datum/mil_rank/ec/e7,
+				/datum/mil_rank/ec/o3,
+				/datum/mil_rank/ec/o5,
+				/datum/mil_rank/ec/o6
+			)
+		),
+		/datum/species/resomi = list(
+			/datum/mil_branch/expeditionary_corps = list(
+				/datum/mil_rank/ec/e5,
+				/datum/mil_rank/ec/e7,
+				/datum/mil_rank/ec/o1,
+				/datum/mil_rank/ec/o3,
+				/datum/mil_rank/ec/o5,
+				/datum/mil_rank/ec/o6
 			)
 		),
 		/datum/species/unathi = list(
@@ -109,6 +126,18 @@
 				/datum/mil_rank/ec/e3,
 				/datum/mil_rank/ec/e5,
 				/datum/mil_rank/ec/o1
+			)
+		),
+		/datum/species/tajaran = list(
+			/datum/mil_branch/expeditionary_corps = list(
+				/datum/mil_rank/ec/e3,
+				/datum/mil_rank/ec/e5,
+				/datum/mil_rank/ec/o1
+			)
+		),
+		/datum/species/resomi = list(
+			/datum/mil_branch/expeditionary_corps = list(
+				/datum/mil_rank/ec/e3,
 			)
 		),
 		/datum/species/unathi = list(
