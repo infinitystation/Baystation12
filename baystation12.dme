@@ -3063,7 +3063,7 @@
 #include "maps\random_ruins\space_ruins\space_ruins.dm"
 #include "maps\sierra\sierra.dm"
 #include "maps\sierra\sierra_define.dm"
-#include "maps\torch\torch_define.dm"
+#include "maps\torchinf\torch_define.dm"
 #include "maps\~mapsystem\map_preferences.dm"
 #include "maps\~mapsystem\map_ranks.dm"
 #include "maps\~mapsystem\maps.dm"

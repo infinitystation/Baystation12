@@ -87,7 +87,7 @@
 /datum/gear/tactical/armor_deco/New()
 	..()
 	var/atags = list()
-	atags["NT security force tag"] = /obj/item/clothing/accessory/armor/tag/nt
+	atags["NTSF tag"] = /obj/item/clothing/accessory/armor/tag/nt
 	atags["PCRC tag"] = /obj/item/clothing/accessory/armor/tag/pcrc
 	atags["SAARE tag"] = /obj/item/clothing/accessory/armor/tag/saare
 	atags["SCP tag"] = /obj/item/clothing/accessory/armor/tag/scp
