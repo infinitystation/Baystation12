@@ -188,7 +188,7 @@
 
 /*********************
  tactical accessories
-*********************/
+*********************//*
 /datum/gear/tactical/ubac
 	display_name = "black UBAC shirt"
 	path = /obj/item/clothing/accessory/ubac
@@ -257,3 +257,4 @@
 	pouches["green large armor pouches"] = /obj/item/clothing/accessory/storage/pouches/large/green
 	pouches["tan large armor pouches"] = /obj/item/clothing/accessory/storage/pouches/large/tan
 	gear_tweaks += new/datum/gear_tweak/path(pouches)
+*/

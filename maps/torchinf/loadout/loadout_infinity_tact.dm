@@ -8,7 +8,17 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/tactical/armor_deco
-	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer)
+	allowed_roles = ARMORED_ROLES
+
+/datum/gear/tactical/armor_deco/New()
+	..()
+	var/atags = list()
+	atags["NTSF tag"] = /obj/item/clothing/accessory/armor/tag/nt
+	atags["PCRC tag"] = /obj/item/clothing/accessory/armor/tag/pcrc
+	atags["SAARE tag"] = /obj/item/clothing/accessory/armor/tag/saare
+	atags["SCP tag"] = /obj/item/clothing/accessory/armor/tag/scp
+	atags["SCG tag"] = /obj/item/clothing/accessory/armor/tag/solgov
+	gear_tweaks += new/datum/gear_tweak/path(atags)
 
 /datum/gear/tactical/helm_covers
 	allowed_roles = ARMORED_ROLES
