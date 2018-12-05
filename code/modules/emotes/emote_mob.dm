@@ -72,6 +72,7 @@
 	if(!message || !emoter)
 		return
 
+	message = replacetext(message, "&#255;", "__:я:_") // Ќикому же в голову не придет такое написать? (2) ~bear1ake@inf-dev
 	message = html_decode(message)
 
 	name_anchor = findtext(message, anchor_char)
@@ -113,7 +114,9 @@
 	subtext = html_encode(subtext)
 	// Store the player's name in a nice bold, naturalement
 	nametext = "<B>[emoter]</B>"
-	return pretext + nametext + subtext
+	var/overall = pretext + nametext + subtext
+	overall = replacetext(overall, "__:я:_", "&#255;")
+	return overall
 
 /mob/proc/custom_emote(var/m_type = VISIBLE_MESSAGE, var/message = null)
 
