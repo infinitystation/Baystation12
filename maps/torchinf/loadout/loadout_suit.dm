@@ -1,17 +1,5 @@
-/datum/gear/suit/blueapron
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/suit/overalls
-	allowed_branches = CIVILIAN_BRANCHES
-
 /datum/gear/suit/medcoat
 	allowed_roles = MEDICAL_ROLES
-
-/datum/gear/suit/trenchcoat
-	allowed_roles = RESTRICTED_ROLES
-
-/datum/gear/suit/poncho
-	allowed_roles = RESTRICTED_ROLES
 
 /datum/gear/suit/security_poncho
 	allowed_roles = list(/datum/job/guard, /datum/job/merchant)
@@ -31,18 +19,6 @@
 /datum/gear/suit/cargo_poncho
 	allowed_roles = list(/datum/job/cargo_contractor, /datum/job/merchant)
 
-/datum/gear/suit/suit_jacket
-	allowed_roles = FORMAL_ROLES
-
-/datum/gear/suit/custom_suit_jacket
-	allowed_roles = FORMAL_ROLES
-
-/datum/gear/suit/hoodie
-	allowed_roles = RESTRICTED_ROLES
-
-/datum/gear/suit/hoodie_sel
-	allowed_roles = RESTRICTED_ROLES
-
 /datum/gear/suit/labcoat
 	allowed_roles = STERILE_ROLES
 
@@ -56,17 +32,6 @@
 	display_name = "winter coat, DAIS"
 	allowed_roles = list(/datum/job/engineer_contractor, /datum/job/scientist, /datum/job/rd)
 
-/datum/gear/suit/coat
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/suit/leather
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/suit/wintercoat
-	allowed_roles = RESTRICTED_ROLES
-
-/datum/gear/suit/track
-	allowed_roles = RESTRICTED_ROLES
 /*
 /datum/gear/tactical/pcarrier
 	display_name = "black plate carrier"

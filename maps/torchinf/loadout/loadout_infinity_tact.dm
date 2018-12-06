@@ -28,6 +28,9 @@
 /datum/gear/tactical/large_pouches
 	allowed_roles = ARMORED_ROLES
 
+/datum/gear/tactical/tacticool
+	allowed_roles = ARMORED_ROLES
+
 /datum/gear/tactical/bloodpatch
 	allowed_roles = ARMED_ROLES
 

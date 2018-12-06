@@ -13,8 +13,5 @@
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI)
 
-/datum/gear/suit/unathi/savage_hunter
-	allowed_branches = CIVILIAN_BRANCHES
-
 /datum/gear/head/skrell_helmet
 	allowed_roles = ARMORED_ROLES
