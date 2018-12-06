@@ -20,12 +20,10 @@
 /datum/gear/head/veteranhat
 	display_name = "veteran hat"
 	path = /obj/item/clothing/head/soft/solgov/veteranhat
-	allowed_branches = CIVILIAN_BRANCHES
 
 /datum/gear/head/solhat
 	display_name = "sol central government hat"
 	path = /obj/item/clothing/head/soft/solgov
-	allowed_branches = SOLGOV_BRANCHES
 
 /datum/gear/head/fleethat
 	display_name = "fleet cap"
@@ -45,32 +43,13 @@
 /datum/gear/head/whitentberet
 	allowed_roles = list(/datum/job/guard)
 
-/datum/gear/head/beret
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/mask/bandana
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/head/bandana
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/head/bow
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/head/cap
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/head/hairflower
-	allowed_branches = CIVILIAN_BRANCHES
+/datum/gear/head/scp_cap
+	display_name = "SCP cap"
+	path = /obj/item/clothing/head/soft/scp_cap
+	allowed_roles = list(/datum/job/guard)
 
 /datum/gear/head/hardhat
 	allowed_roles = TECHNICAL_ROLES
-
-/datum/gear/head/formalhat
-	allowed_roles = FORMAL_ROLES
-
-/datum/gear/head/informalhat
-	allowed_roles = SEMIFORMAL_ROLES
 
 /datum/gear/head/welding
 	allowed_roles = TECHNICAL_ROLES
