@@ -144,6 +144,11 @@ character_name: Milo Moon
 item_path: /obj/item/device/pmp/personal
 }
 {
+ckey: furrydog
+character_name: Niar Seras'sar
+item_path: /obj/item/device/pmp/personal
+}
+{
 ckey: forrya
 character_name: Niyarkszherch Kchrashchjrj
 item_path: /obj/item/device/pmp/personal/csplayer
@@ -422,6 +427,13 @@ item_path: /obj/item/weapon/material/kitchen/utensil/knife/boot
 item_name: karambit
 item_desc: A small curved knife.
 item_icon: karambit2
+}
+{
+ckey: tochkarus
+character_name: Joe King
+item_path: /obj/item/weapon/flame/lighter/zippo/infinity/fancy
+item_name: April Kiss
+item_desc: Zippo lighter with the image of a rose bud. Strange, but you are ready to swear that the lighter smells like a flower.
 }
 
 #	LONG ITEMS HERE (+7)

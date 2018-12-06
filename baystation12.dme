@@ -975,6 +975,7 @@
 #include "code\game\objects\items\weapons\ironing_iron.dm"
 #include "code\game\objects\items\weapons\janitor_sign.dm"
 #include "code\game\objects\items\weapons\lighter.dm"
+#include "code\game\objects\items\weapons\lighter_infinity.dm"
 #include "code\game\objects\items\weapons\mop.dm"
 #include "code\game\objects\items\weapons\nuclear_cylinder.dm"
 #include "code\game\objects\items\weapons\paint.dm"
