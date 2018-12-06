@@ -43,6 +43,11 @@
 /datum/gear/head/whitentberet
 	allowed_roles = list(/datum/job/guard)
 
+/datum/gear/head/scp_cap
+	display_name = "SCP cap"
+	path = /obj/item/clothing/head/soft/scp_cap
+	allowed_roles = list(/datum/job/guard)
+
 /datum/gear/head/hardhat
 	allowed_roles = TECHNICAL_ROLES
 

@@ -32,6 +32,37 @@
 	display_name = "winter coat, DAIS"
 	allowed_roles = list(/datum/job/engineer_contractor, /datum/job/scientist, /datum/job/rd)
 
+/datum/gear/suit/wintercoat/engineering
+	display_name = "expeditionary winter coat"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/solgov
+	allowed_branches = list(/datum/mil_branch/expeditionary_corps)
+
+/datum/gear/suit/wintercoat/engineering
+	display_name = "engineering winter coat"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/engineering
+	allowed_roles = ENGINEERING_ROLES
+
+/datum/gear/suit/wintercoat/cargo
+	display_name = "cargo winter coat"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/cargo
+	allowed_roles = SUPPLY_ROLES
+
+/datum/gear/suit/wintercoat/medical
+	display_name = "medical winter coat"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/medical
+	allowed_roles = MEDICAL_ROLES
+
+/datum/gear/suit/wintercoat/security
+	display_name = "security winter coat"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/security
+	allowed_roles = SECURITY_ROLES
+
+/datum/gear/suit/wintercoat/research
+	display_name = "science winter coat"
+	path = /obj/item/clothing/suit/storage/hooded/wintercoat/science
+	allowed_roles = RESEARCH_ROLES
+
+
 /*
 /datum/gear/tactical/pcarrier
 	display_name = "black plate carrier"

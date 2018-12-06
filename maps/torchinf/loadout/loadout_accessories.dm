@@ -135,6 +135,9 @@
 /datum/gear/accessory/ftupin
 	allowed_branches = CIVILIAN_BRANCHES
 
+/datum/gear/head/kittyears
+	allowed_roles = RESTRICTED_ROLES
+
 /*********************
  tactical accessories
 *********************//*
