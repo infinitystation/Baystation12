@@ -96,3 +96,8 @@
 /datum/gear/eyes/security/goggles
 	display_name = "Security HUD goggles"
 	path = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+
+/datum/gear/zippo_decorated
+	display_name = "zippo (decorated)"
+	path = /obj/item/weapon/flame/lighter/zippo/infinity
+	flags = GEAR_HAS_TYPE_SELECTION
