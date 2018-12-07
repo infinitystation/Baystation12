@@ -146,7 +146,7 @@ item_path: /obj/item/device/pmp/personal
 {
 ckey: furrydog
 character_name: Niar Seras'sar
-item_path: /obj/item/device/pmp/personal
+item_path: /obj/item/device/pmp/personal/dusty
 }
 {
 ckey: forrya
@@ -323,6 +323,16 @@ ckey: logfol
 character_name: Alias Victus
 item_path: /obj/item/clothing/head/beret/centcom/officer
 item_desc: A navy blue beret adorned with the named "Grom" crest of corporate asset protection. For asset protection agents that are more inclined towards style than safety.
+}
+{
+ckey: sfd
+character_name: Khristen Sommer
+item_path: /obj/item/weapon/clothingbag/tools
+}
+{
+ckey: sfd
+character_name: E-U #25308
+item_path: /obj/item/weapon/clothingbag/tools
 }
 
 #	MEDIUM ITEMS HERE (5-6)
