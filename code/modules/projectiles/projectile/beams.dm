@@ -3,7 +3,7 @@
 	icon_state = "laser"
 	fire_sound='sound/weapons/Laser.ogg'
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GLASS | PASS_FLAG_GRILLE
-	damage = 40
+	damage = 30
 	damage_type = BURN
 	sharp = 1 //concentrated burns
 	check_armour = "laser"
@@ -11,6 +11,7 @@
 	hitscan = 1
 	invisibility = 101	//beam projectiles are invisible as they are rendered by the effect engine
 	penetration_modifier = 0.3
+	armor_penetration = 10
 
 	muzzle_type = /obj/effect/projectile/laser/muzzle
 	tracer_type = /obj/effect/projectile/laser/tracer
@@ -23,10 +24,10 @@
 
 /obj/item/projectile/beam/smalllaser
 	damage = 25
-	armor_penetration = 10
+	armor_penetration = 0
 
 /obj/item/projectile/beam/midlaser
-	damage = 50
+	damage = 40
 	armor_penetration = 20
 
 /obj/item/projectile/beam/heavylaser
@@ -63,21 +64,24 @@
 	damage = 30
 	armor_penetration = 50
 
-/obj/item/projectile/beam/pulse
+/obj/item/projectile/beam/pulse //pulse pistol
 	name = "pulse"
 	icon_state = "u_laser"
 	fire_sound='sound/weapons/pulse.ogg'
-	damage = 15 //lower damage, but fires in bursts
+	damage = 14 //lower damage, but fires in bursts
+	armor_penetration = 20
 
 	muzzle_type = /obj/effect/projectile/laser/pulse/muzzle
 	tracer_type = /obj/effect/projectile/laser/pulse/tracer
 	impact_type = /obj/effect/projectile/laser/pulse/impact
 
-/obj/item/projectile/beam/pulse/mid
+/obj/item/projectile/beam/pulse/mid //pulse carabine
 	damage = 20
+	armor_penetration = 30
 
-/obj/item/projectile/beam/pulse/heavy
-	damage = 25
+/obj/item/projectile/beam/pulse/heavy //pulse rifle
+	damage = 30
+	armor_penetration = 35
 
 /obj/item/projectile/beam/pulse/destroy
 	name = "destroyer pulse"
