@@ -34,6 +34,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+
 	required_education = EDUCATION_TIER_BASIC
 	maximum_education = EDUCATION_TIER_BACHELOR
 
@@ -73,6 +74,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+
 	required_education = EDUCATION_TIER_TRADE
 	maximum_education = EDUCATION_TIER_MASTERS
 
@@ -106,11 +108,12 @@
 
 	access = list(access_security, access_brig, access_maint_tunnels,
 						access_external_airlocks, access_emergency_storage,
-			            access_eva, access_sec_doors, access_hangar)
+						access_eva, access_sec_doors, access_hangar)
 
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
+
 	required_education = EDUCATION_TIER_BASIC
 	maximum_education = EDUCATION_TIER_BACHELOR

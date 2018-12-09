@@ -24,7 +24,7 @@
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
 	                    SKILL_ANATOMY     = SKILL_MAX)
-	skill_points = 26
+	skill_points = 20 //has more base skill than a doctor
 
 	access = list(access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
 			            access_crematorium, access_chemistry, access_surgery, access_eva,
@@ -34,6 +34,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
+
 	required_education = EDUCATION_TIER_MEDSCHOOL
 
 /datum/job/doctor
@@ -61,13 +62,13 @@
 	                    SKILL_VIROLOGY    = SKILL_MAX)
 	access = list(	access_medical, access_morgue, access_virology, access_maint_tunnels, access_external_airlocks,
 					access_emergency_storage,
-			        access_eva, access_surgery, access_medical_equip, access_hangar)
+					access_eva, access_surgery, access_medical_equip, access_hangar)
 
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
-	skill_points = 22
+	skill_points = 24
 	required_education = EDUCATION_TIER_TRADE
 
 /datum/job/doctor_trainee
@@ -87,21 +88,21 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(   SKILL_EVA     = SKILL_BASIC,
-	                    SKILL_MEDICAL = SKILL_BASIC)
+	min_skill = list(   SKILL_MEDICAL = SKILL_BASIC)
 
 	max_skill = list(   SKILL_MEDICAL	= SKILL_MAX)
 	skill_points = 18
 
 	access = list(	access_medical, access_morgue, access_surgery,
 					access_medical_equip,
-		            access_maint_tunnels, access_emergency_storage,
-		            access_external_airlocks, access_hangar)
+					access_maint_tunnels, access_emergency_storage,
+					access_external_airlocks, access_hangar)
 
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
+
 	required_education = EDUCATION_TIER_BASIC
 	maximum_education = EDUCATION_TIER_BACHELOR
 
@@ -125,13 +126,13 @@
 	min_skill = list(   SKILL_MEDICAL   = SKILL_BASIC,
 	                    SKILL_CHEMISTRY = SKILL_ADEPT)
 
-	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
-	                    SKILL_CHEMISTRY   = SKILL_MAX)
+	max_skill = list(   SKILL_CHEMISTRY   = SKILL_MAX)
 	skill_points = 18
 
 	access = list(access_medical, access_maint_tunnels, access_emergency_storage, access_medical_equip, access_chemistry)
 
 	minimal_access = list()
+
 	required_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/psychiatrist
@@ -156,10 +157,13 @@
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX)
 
+	skill_points = 12
+
 	access = list(access_medical, access_morgue, access_chapel_office, access_crematorium, access_psychiatrist)
 
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
+
 	required_education = EDUCATION_TIER_BASIC

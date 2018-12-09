@@ -58,7 +58,7 @@
 	announced = FALSE
 	min_skill = list(	SKILL_FINANCE = SKILL_ADEPT,
 						SKILL_PILOT	  = SKILL_BASIC)
-	skill_points = 14
+	skill_points = 12
 
 /datum/job/merchant_trainee
 	title = "Merchant Assistant"

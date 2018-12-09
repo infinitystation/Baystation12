@@ -22,7 +22,7 @@
 	                    SKILL_SCIENCE     = SKILL_MAX,
 	                    SKILL_COMBAT      = SKILL_EXPERT,
 	                    SKILL_WEAPONS     = SKILL_EXPERT)
-	skill_points = 22
+	skill_points = 20
 
 	access = list(access_el, access_explorer, access_eva, access_maint_tunnels, access_bridge, access_heads, access_emergency_storage, access_tech_storage, access_guppy_helm, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy, access_hangar)
 
@@ -30,6 +30,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
+
 	required_education = EDUCATION_TIER_BACHELOR
 	maximum_education = EDUCATION_TIER_MASTERS
 
@@ -50,7 +51,8 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_EVA 		= SKILL_BASIC,
-						SKILL_SCIENCE  	= SKILL_BASIC)
+						SKILL_SCIENCE  	= SKILL_BASIC,
+						SKILL_WEAPONS	= SKILL_BASIC)
 
 	max_skill = list(	SKILL_SCIENCE     = SKILL_MAX,
 	                    SKILL_COMBAT      = SKILL_EXPERT,
@@ -61,6 +63,7 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
+
 	required_education = EDUCATION_TIER_BASIC
 	maximum_education = EDUCATION_TIER_BACHELOR
 
@@ -85,9 +88,7 @@
 						SKILL_PILOT			= SKILL_ADEPT)
 
 	max_skill = list(	SKILL_SCIENCE		= SKILL_MAX,
-						SKILL_PILOT			= SKILL_MAX,
-	                    SKILL_COMBAT		= SKILL_EXPERT,
-	                    SKILL_WEAPONS 		= SKILL_EXPERT)
+						SKILL_PILOT			= SKILL_MAX)
 
 
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm,
@@ -96,6 +97,7 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
+
 	required_education = EDUCATION_TIER_BASIC
 	maximum_education = EDUCATION_TIER_BACHELOR
 
@@ -115,7 +117,7 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
-	skill_points = 26
+	skill_points = 13
 	economic_power = 4
 
 
@@ -139,6 +141,7 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
+
 	required_education = EDUCATION_TIER_TRADE
 	maximum_education = EDUCATION_TIER_MASTERS
 
@@ -167,8 +170,7 @@
 						SKILL_ELECTRICAL	= SKILL_BASIC,
 						SKILL_HAULING		= SKILL_BASIC,
 						SKILL_ATMOS         = SKILL_BASIC,
-						SKILL_SCIENCE  		= SKILL_BASIC,
-						SKILL_COMPUTER		= SKILL_BASIC,
+						SKILL_SCIENCE  		= SKILL_BASIC
 						SKILL_ENGINES       = SKILL_BASIC)
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
@@ -184,6 +186,7 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
+
 	required_education = EDUCATION_TIER_TRADE
 	maximum_education = EDUCATION_TIER_BACHELOR
 

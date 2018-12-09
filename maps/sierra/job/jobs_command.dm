@@ -19,7 +19,7 @@
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 
 
-	skill_points = 25
+	skill_points = 23
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/card_mod,
@@ -49,9 +49,7 @@
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_ADEPT,
 						SKILL_PILOT       = SKILL_BASIC)
 
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
-
-	skill_points = 20
+	skill_points = 16
 
 	access = list(		access_security, access_brig, access_armory, access_forensics_lockers, access_heads,
 			            access_medical, access_morgue, access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
@@ -102,7 +100,7 @@
 	max_skill = list(   SKILL_ANATOMY     = SKILL_MAX,
 	                    SKILL_DEVICES     = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX)
-	skill_points = 36
+	skill_points = 20
 
 	access = list(access_tox, access_tox_storage, access_emergency_storage, access_teleporter, access_bridge, access_rd,
 						access_research, access_robotics, access_mining, access_mining_office, access_mining_station, access_xenobiology,
@@ -193,7 +191,7 @@
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
 	                    SKILL_ATMOS        = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX)
-	skill_points = 30
+	skill_points = 23
 
 	access = list(access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_ai_upload, access_teleporter, access_eva, access_bridge, access_heads,
@@ -244,7 +242,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_MAX)
-	skill_points = 28
+	skill_points = 25
 
 	access = list(	access_security, access_medical, access_brig, access_armory, access_forensics_lockers,
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
@@ -279,7 +277,7 @@
 	min_skill = list(	SKILL_BUREAUCRACY	= SKILL_EXPERT,
 						SKILL_FORENSICS 	= SKILL_BASIC,
 						SKILL_FINANCE		= SKILL_BASIC)
-	skill_points = 20
+	skill_points = 6
 
 	access = list(		access_security, access_sec_doors, access_medical, access_iaa, access_research, access_xenoarch, access_heads, access_bridge,
 						access_hangar, access_petrov, access_commissary, access_maint_tunnels)
@@ -288,6 +286,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/reports)
 	required_education = EDUCATION_TIER_BACHELOR
+	maximum_education = EDUCATION_TIER_MASTERS
 
 /datum/job/iaa/get_description_blurb()
 	return "You are the Nanotrasen iaa. You are a civilian employee of Nanotrasen assigned to the vessel to promote, protect and ensure the interests of the corporation on board. You are not internal affairs. You assume command of the Research Department in the absence of the RD and the Senior Researcher. You advise the RD on NT matters and try to push NT interests on the Captain. Maximise profit. Be the rich corporate lawyer you always wanted to be."
@@ -311,7 +310,7 @@
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 
-	skill_points = 20
+	skill_points = 12
 
 
 	access = list(	access_security, access_medical, access_engine, access_maint_tunnels, access_emergency_storage,

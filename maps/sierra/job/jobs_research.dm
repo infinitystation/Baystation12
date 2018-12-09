@@ -32,7 +32,8 @@
 
 	max_skill = list(   SKILL_DEVICES     = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX)
-	skill_points = 30
+	skill_points = 24
+
 	required_education = EDUCATION_TIER_DOCTORATE
 
 /datum/job/scientist
@@ -68,7 +69,8 @@
 						access_xenoarch, access_expedition_shuttle, access_guppy, access_hangar)
 
 	minimal_access = list()
-	skill_points = 22
+	skill_points = 16
+
 	required_education = EDUCATION_TIER_MASTERS
 
 /datum/job/roboticist
@@ -91,15 +93,17 @@
 	                    SKILL_MECH          = SKILL_ADEPT,
 	                    SKILL_DEVICES		= SKILL_ADEPT)
 
-	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
-						SKILL_COMPUTER	   = SKILL_MAX,
+	max_skill = list(   SKILL_COMPUTER	   = SKILL_MAX,
 						SKILL_MECH		   = SKILL_MAX,
 	                    SKILL_DEVICES      = SKILL_MAX,
 	                    SKILL_MEDICAL      = SKILL_MAX)
 
+	skill_points = 12
+
 	access = list(access_robotics, access_research, access_tech_storage)
 
 	minimal_access = list()
+
 	required_education = EDUCATION_TIER_TRADE
 	maximum_education = EDUCATION_TIER_DOCTORATE
 
@@ -136,5 +140,6 @@
 	access = list(access_research, access_mining_office, access_petrov, access_expedition_shuttle, access_guppy, access_hangar)
 
 	minimal_access = list()
+
 	required_education = EDUCATION_TIER_DROPOUT
 	maximum_education = EDUCATION_TIER_BACHELOR

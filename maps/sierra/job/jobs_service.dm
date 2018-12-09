@@ -18,7 +18,10 @@
 
 	skill_points = 4 //at least, he should be able to attack with a mop and throw heavy objects
 
+	max_skill = list(   SKILL_COMBAT      = SKILL_MAX) //try your best, space janitor (+46 ages - professional)
+
 	minimal_access = list()
+
 	required_education = EDUCATION_TIER_DROPOUT
 	maximum_education = EDUCATION_TIER_TRADE
 
@@ -45,6 +48,7 @@
 	skill_points = 7
 
 	minimal_access = list()
+
 	required_education = EDUCATION_TIER_TRADE
 	maximum_education = EDUCATION_TIER_BACHELOR
 
@@ -66,5 +70,6 @@
 	min_skill = list(	SKILL_COOKING   = SKILL_BASIC,
 						SKILL_BOTANY    = SKILL_BASIC,
 						SKILL_CHEMISTRY = SKILL_BASIC)
+
 	required_education = EDUCATION_TIER_DROPOUT
 	maximum_education = EDUCATION_TIER_BACHELOR

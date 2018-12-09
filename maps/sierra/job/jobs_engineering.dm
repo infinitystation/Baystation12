@@ -24,7 +24,7 @@
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
 	                    SKILL_ATMOS        = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX)
-	skill_points = 24
+	skill_points = 20
 
 	access = list(	access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			        access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor, access_construction,
@@ -78,7 +78,7 @@
 	                    SKILL_COMPUTER	   = SKILL_MAX,
 	                    SKILL_ATMOS        = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX)
-	skill_points = 20
+	skill_points = 14
 
 	access = list(	access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks,
 			       	access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor,
@@ -114,20 +114,17 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/maints
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	skill_points = 16
+	skill_points = 9
 	no_skill_buffs = TRUE
 
-	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
-	                    SKILL_EVA          = SKILL_BASIC,
+	min_skill = list(   SKILL_EVA          = SKILL_BASIC,
 	                    SKILL_CONSTRUCTION = SKILL_BASIC,
 	                    SKILL_ELECTRICAL   = SKILL_BASIC,
 	                    SKILL_ATMOS        = SKILL_BASIC,
 	                    SKILL_ENGINES      = SKILL_BASIC)
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
-	                    SKILL_ELECTRICAL   = SKILL_MAX,
-	                    SKILL_ATMOS        = SKILL_MAX,
-	                    SKILL_ENGINES      = SKILL_MAX)
+	                    SKILL_ELECTRICAL   = SKILL_MAX)
 
 	access = list(		access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_eva, access_tech_storage, access_janitor, access_construction,
