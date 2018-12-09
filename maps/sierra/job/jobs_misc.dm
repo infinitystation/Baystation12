@@ -26,6 +26,8 @@
 		/datum/mil_rank/civ/nt
 	)
 
+	skill_points = 6
+
 	required_education = EDUCATION_TIER_NONE
 
 /datum/job/cyborg
@@ -56,7 +58,7 @@
 	announced = FALSE
 	min_skill = list(	SKILL_FINANCE = SKILL_ADEPT,
 						SKILL_PILOT	  = SKILL_BASIC)
-	skill_points = 24
+	skill_points = 14
 
 /datum/job/merchant_trainee
 	title = "Merchant Assistant"
@@ -84,7 +86,7 @@
 	max_skill = list(   SKILL_COMBAT  = SKILL_MAX,
 	                    SKILL_WEAPONS = SKILL_MAX)
 
-	skill_points = 24
+	skill_points = 12
 
 
 /datum/job/stowaway
@@ -105,6 +107,8 @@
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	latejoin_at_spawnpoints = 1
 	announced = FALSE
+
+	skill_points = 12
 
 	access = list(access_maint_tunnels, access_emergency_storage)
 	minimal_access = list()

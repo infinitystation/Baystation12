@@ -127,6 +127,7 @@
 	max_skill = list(   SKILL_DEVICES     = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX)
 
+	skill_points = 6
 
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/assist
 	allowed_branches = list(/datum/mil_branch/civilian)

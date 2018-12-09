@@ -16,6 +16,8 @@
 
 	access = list(access_maint_tunnels, access_emergency_storage, access_janitor)
 
+	skill_points = 4 //at least, he should be able to attack with a mop and throw heavy objects
+
 	minimal_access = list()
 	required_education = EDUCATION_TIER_DROPOUT
 	maximum_education = EDUCATION_TIER_TRADE
@@ -40,6 +42,8 @@
 
 	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_bar, access_commissary)
 
+	skill_points = 7
+
 	minimal_access = list()
 	required_education = EDUCATION_TIER_TRADE
 	maximum_education = EDUCATION_TIER_BACHELOR
@@ -55,6 +59,8 @@
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
 	access = list(access_hydroponics, access_bar, access_kitchen, access_commissary)
+
+	skill_points = 7
 
 	minimal_access = list()
 	min_skill = list(	SKILL_COOKING   = SKILL_BASIC,
