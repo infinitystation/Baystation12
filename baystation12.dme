@@ -1224,6 +1224,7 @@
 #include "code\game\verbs\emotions.dm"
 #include "code\game\verbs\ignore.dm"
 #include "code\game\verbs\ooc.dm"
+#include "code\game\verbs\sound.dm"
 #include "code\game\verbs\who.dm"
 #include "code\js\byjax.dm"
 #include "code\js\menus.dm"
