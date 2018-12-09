@@ -5,6 +5,7 @@
 /obj/structure/closet/secure_closet/RD_sierra
 	name = "research director's locker"
 	req_access = list(access_rd)
+	icon = 'maps/sierra/icons/obj/closets.dmi'
 	icon_state = "rdsecure1"
 	icon_closed = "rdsecure"
 	icon_locked = "rdsecure1"
@@ -48,6 +49,7 @@
 /obj/structure/closet/secure_closet/secure_closet/xenoarchaeologist_sierra
 	name = "xenoarchaeologist's locker"
 	req_access = list(access_xenoarch)
+	icon = 'maps/sierra/icons/obj/closets.dmi'
 	icon_state = "secureres1"
 	icon_closed = "secureres"
 	icon_locked = "secureres1"
@@ -82,6 +84,7 @@
 /obj/structure/closet/secure_closet/scientist_sierra
 	name = "researcher's locker"
 	req_one_access = list(access_research)
+	icon = 'maps/sierra/icons/obj/closets.dmi'
 	icon_state = "secureres1"
 	icon_closed = "secureres"
 	icon_locked = "secureres1"
