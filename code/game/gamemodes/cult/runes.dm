@@ -111,6 +111,15 @@
 		return fizzle(user)
 
 	speak_incantation(user, "Mah[pick("'","`")]weyh pleggh at e'ntrath!")
+
+	if(target.species == SPECIES_IPC) //BLOOD CULT cannot convert machines
+		to_chat(target, "<span class='notice'>Nothing is happening... What the mad bloodbags are trying to do?</span>")
+		target.visible_message("<span class='warning'>[src] below [target] are starting to glow a bloody red just for a second, but a moment after, it goes off.</span>")
+		spamcheck = 1
+		spawn(40)
+		spamcheck = 0
+		return
+
 	target.visible_message("<span class='warning'>The markings below [target] glow a bloody red.</span>")
 
 	to_chat(target, "<span class='cult'>Your blood pulses. Your head throbs. The world goes red. All at once you are aware of a horrible, horrible truth. The veil of reality has been ripped away and in the festering wound left behind something sinister takes root.</span>")
@@ -376,10 +385,10 @@
 		user.equip_to_slot_or_del(new /obj/item/clothing/head/culthood/alt(user), slot_head)
 	O = user.get_equipped_item(slot_wear_suit)
 	if(O && !istype(O, /obj/item/clothing/suit/cultrobes) && user.unEquip(O))
-		user.equip_to_slot_or_del(new /obj/item/clothing/suit/cultrobes/alt(user), slot_wear_suit)	
+		user.equip_to_slot_or_del(new /obj/item/clothing/suit/cultrobes/alt(user), slot_wear_suit)
 	O = user.get_equipped_item(slot_shoes)
 	if(O && !istype(O, /obj/item/clothing/shoes/cult) && user.unEquip(O))
-		user.equip_to_slot_or_del(new /obj/item/clothing/shoes/cult(user), slot_shoes)	
+		user.equip_to_slot_or_del(new /obj/item/clothing/shoes/cult(user), slot_shoes)
 
 	O = user.get_equipped_item(slot_back)
 	if(istype(O, /obj/item/weapon/storage) && !istype(O, /obj/item/weapon/storage/backpack/cultpack) && user.unEquip(O)) // We don't want to make the vox drop their nitrogen tank, though
