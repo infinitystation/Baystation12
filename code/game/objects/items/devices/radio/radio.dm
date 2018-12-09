@@ -359,9 +359,6 @@
 
 	if(!check && !(jobname == "AI" || jobname == "Personal AI" || jobname == "Robot" )) //Silicons can't be compromised
 		displayname = "Unregistered" // We cannot found this name in DB, and this is not Silicon
-	/*else if(ishuman(M)) no need in this ... now
-		displayname = M.GetVoice() // There is no more reasons to hide our appearence - we are found in DB */
-
 
   /* ###### Radio headsets can only broadcast through subspace ###### */
 	if(subspace_transmission)
