@@ -329,6 +329,9 @@
 /obj/item/clothing/suit/armor/pcarrier/merc
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/merc, /obj/item/clothing/accessory/armguards/merc, /obj/item/clothing/accessory/legguards/merc, /obj/item/clothing/accessory/storage/pouches)
 
+/obj/item/clothing/suit/armor/pcarrier/tactical
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical, /obj/item/clothing/accessory/armguards/tactical, /obj/item/clothing/accessory/legguards/tactical)
+
 //Modular specialty armor
 /obj/item/clothing/suit/armor/riot
 	name = "riot vest"

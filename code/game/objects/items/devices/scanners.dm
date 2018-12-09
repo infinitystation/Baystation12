@@ -130,7 +130,7 @@ REAGENT SCANNER
 	dat += "<span class='scan_notice'>Brain activity:</span> [brain_result]."
 
 	if(H.stat == DEAD || (H.status_flags & FAKEDEATH))
-		dat += "<span class='scan_notice'>[b]Time of Death:[endb] [time2text(worldtime2stationtime(H.timeofdeath), "hh:mm")]</span>"
+		dat += "<span class='scan_notice'>[b]Time of Death:[endb] [worldtime2stationtime(H.timeofdeath)]</span>"
 
 	if (H.internal_organs_by_name[BP_STACK])
 		dat += "<span class='scan_notice'>Subject has a neural lace implant.</span>"

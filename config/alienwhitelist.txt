@@ -33,6 +33,7 @@ themaybat - skrell
 salyvador - skrell
 mrnicolas - skrell
 hellpony - skrell
+diesiege - skrell
 vankoska - skrell
 lukecage - skrell
 hodovoy - skrell
@@ -89,6 +90,7 @@ wolforbykot - unathi
 colossus333 - unathi
 kirill1243 - unathi
 lunkydunk - unathi
+demolizer - unathi
 aragog94 - unathi
 furrydog - unathi
 hodovoy - unathi
