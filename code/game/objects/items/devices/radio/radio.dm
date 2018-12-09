@@ -345,18 +345,22 @@
 	// We can't log mob name, if it didn't register in DB
 	// Maybe somebody will add code to differ Unknowns later, cause science!
 	var/check = 0
+	var/temp1 = M.GetVoice()
+	if(findtext(temp1, "'"))
+		temp1 = replacetext(temp1, "'", "&#39;")
+
 	for(var/datum/computer_file/report/crew_record/R in GLOB.all_crew_records)
 		if (!ishuman(M)) // not humans haven't GetVoice proc
 			break
 		var/datum/report_field/field = R.field_from_name("Name")
-		if(lowertext(field.get_value()) == lowertext(M.GetVoice()))
+		if(lowertext(field.get_value()) == lowertext(temp1))
 			check = 1
 			break
 
 	if(!check && !(jobname == "AI" || jobname == "Personal AI" || jobname == "Robot" )) //Silicons can't be compromised
 		displayname = "Unregistered" // We cannot found this name in DB, and this is not Silicon
-	else if(ishuman(M))
-		displayname = M.GetVoice() // There is no more reasons to hide our appearence - we are found in DB
+	/*else if(ishuman(M)) no need in this ... now
+		displayname = M.GetVoice() // There is no more reasons to hide our appearence - we are found in DB */
 
 
   /* ###### Radio headsets can only broadcast through subspace ###### */
