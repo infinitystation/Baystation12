@@ -706,6 +706,8 @@
 			stat("Local Time", stationtime2text())
 			stat("Local Date", stationdate2text())
 			stat("Round Duration", roundduration2text())
+			if(game_id)
+				stat("Round ID:", game_id)
 			if(currentbuild)
 				stat("Build:", currentbuild.friendlyname)
 			if (nextbuild && istype(nextbuild))

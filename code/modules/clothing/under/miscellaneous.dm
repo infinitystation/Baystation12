@@ -558,6 +558,7 @@
 	icon_state = "gear_harness"
 	worn_state = "gear_harness"
 	body_parts_covered = 0
+	species_restricted = null
 
 /obj/item/clothing/under/pcrc
 	name = "\improper PCRC uniform"

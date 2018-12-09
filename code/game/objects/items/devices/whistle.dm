@@ -9,6 +9,7 @@
 	var/use_message = "Halt! Security!"
 	var/spamcheck = 0
 	var/insults
+	action_button_name = "Use Hailer"
 
 /obj/item/device/hailer/verb/set_message()
 	set name = "Set Hailer Message"

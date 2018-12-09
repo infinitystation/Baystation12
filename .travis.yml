@@ -15,6 +15,7 @@ env:
     - TEST=MAP MAP_PATH=example
     - TEST=MAP MAP_PATH=bearcat_inf
     - TEST=MAP MAP_PATH=sierra
+    - TEST=MAP MAP_PATH=torchinf
     - TEST=MAP MAP_PATH=away_sites_testing
 
 cache:

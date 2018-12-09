@@ -72,7 +72,7 @@
 	name = "tactical armor plate"
 	desc = "A medium armor plate with additional ablative coating. Attaches to a plate carrier."
 	icon_state = "armor_tactical"
-	armor = list(melee = 40, bullet = 40, laser = 60, energy = 35, bomb = 30, bio = 0, rad = 0)
+	armor = list(melee = 50, bullet = 50, laser = 60, energy = 35, bomb = 30, bio = 0, rad = 0)
 
 /obj/item/clothing/accessory/armorplate/merc
 	name = "heavy armor plate"
@@ -109,6 +109,10 @@
 /obj/item/clothing/accessory/armguards/tan
 	desc = "A pair of tan arm pads reinforced with armor plating. Attaches to a plate carrier."
 	icon_state = "armguards_tan"
+
+/obj/item/clothing/accessory/armguards/tactical
+	desc = "A pair of black arm pads reinforced with additional ablative coating. Attaches to a plate carrier."
+	armor = list(melee = 50, bullet = 50, laser = 60, energy = 35, bomb = 30, bio = 0, rad = 0)
 
 /obj/item/clothing/accessory/armguards/merc
 	name = "heavy arm guards"
@@ -165,6 +169,10 @@
 /obj/item/clothing/accessory/legguards/tan
 	desc = "A pair of armored leg pads in tan. Attaches to a plate carrier."
 	icon_state = "legguards_tan"
+
+/obj/item/clothing/accessory/legguards/tactical
+	desc = "A pair of armored leg pads reinforced with additional ablative coating. Attaches to a plate carrier."
+	armor = list(melee = 50, bullet = 50, laser = 60, energy = 35, bomb = 30, bio = 0, rad = 0)
 
 /obj/item/clothing/accessory/legguards/merc
 	name = "heavy leg guards"

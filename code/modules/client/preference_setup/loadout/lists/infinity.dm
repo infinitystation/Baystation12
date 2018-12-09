@@ -87,7 +87,7 @@
 /datum/gear/tactical/armor_deco/New()
 	..()
 	var/atags = list()
-	atags["NT security force tag"] = /obj/item/clothing/accessory/armor/tag/nt
+	atags["NTSF tag"] = /obj/item/clothing/accessory/armor/tag/nt
 	atags["PCRC tag"] = /obj/item/clothing/accessory/armor/tag/pcrc
 	atags["SAARE tag"] = /obj/item/clothing/accessory/armor/tag/saare
 	atags["SCP tag"] = /obj/item/clothing/accessory/armor/tag/scp
@@ -96,3 +96,8 @@
 /datum/gear/eyes/security/goggles
 	display_name = "Security HUD goggles"
 	path = /obj/item/clothing/glasses/sunglasses/sechud/goggles
+
+/datum/gear/zippo_decorated
+	display_name = "zippo (decorated)"
+	path = /obj/item/weapon/flame/lighter/zippo/infinity
+	flags = GEAR_HAS_TYPE_SELECTION

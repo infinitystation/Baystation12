@@ -12,6 +12,24 @@
 		R.add_fingerprint(user)
 		qdel(src)
 
+	ex_act(severity)
+		switch(severity)
+			if(1)
+				for(var/atom/movable/A in src)//pulls everything out of the locker and hits it with an explosion
+					A.forceMove(src.loc)
+					A.ex_act(severity + 1)
+				qdel(src)
+			if(2)
+				if(prob(90))
+					for (var/atom/movable/A in src)
+						A.forceMove(src.loc)
+						A.ex_act(severity + 1)
+					qdel(src)
+			if(3)
+				if(prob(70))
+					for(var/atom/movable/A in src)
+						A.forceMove(src.loc)
+					qdel(src)
 
 /obj/item/weapon/storage/box/bodybags
 	name = "body bags"
@@ -104,3 +122,5 @@
 	object_type = /obj/item/bodybag
 	interact_type = /obj/structure/closet/body_bag
 	capacity = 3
+
+
