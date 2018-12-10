@@ -135,7 +135,7 @@
 				path = current_content[c_product]
 				var/atom/A = path
 				name = initial(A.name)
-				cost = current_content[path]
+				cost = round(current_content[path]/build_eff)
 				listed_products.Add(list(list(
 					"product_index" = c_product,
 					"name" = name,
