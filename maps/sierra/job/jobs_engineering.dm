@@ -20,7 +20,7 @@
 	                    SKILL_ENGINES      = SKILL_ADEPT)
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
-						SKILL_COMPUTER     = SKILL_MAX,
+	                    SKILL_COMPUTER     = SKILL_MAX,
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
 	                    SKILL_ATMOS        = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX)
@@ -39,6 +39,7 @@
 							 /datum/computer_file/program/rcon_console,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor)
+
 	required_education = EDUCATION_TIER_TRADE
 	maximum_education = EDUCATION_TIER_BACHELOR
 
@@ -75,10 +76,10 @@
 
 	max_skill = list(   SKILL_CONSTRUCTION = SKILL_MAX,
 	                    SKILL_ELECTRICAL   = SKILL_MAX,
-	                    SKILL_COMPUTER	   = SKILL_MAX,
+	                    SKILL_COMPUTER     = SKILL_MAX,
 	                    SKILL_ATMOS        = SKILL_MAX,
 	                    SKILL_ENGINES      = SKILL_MAX)
-	skill_points = 15
+	skill_points = 18
 
 	access = list(	access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks,
 			       	access_teleporter, access_eva, access_tech_storage, access_atmospherics, access_janitor,
@@ -93,6 +94,7 @@
 							 /datum/computer_file/program/rcon_console,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor)
+
 	required_education = EDUCATION_TIER_TRADE
 	maximum_education = EDUCATION_TIER_BACHELOR
 
@@ -139,6 +141,7 @@
 							 /datum/computer_file/program/rcon_console,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor)
+
 	required_education = EDUCATION_TIER_BASIC
 	maximum_education = EDUCATION_TIER_TRADE
 
