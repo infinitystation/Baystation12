@@ -77,8 +77,6 @@
 	                    SKILL_HAULING = SKILL_ADEPT,
 	                    SKILL_EVA     = SKILL_BASIC)
 
-	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
-
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/prospector
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
@@ -106,8 +104,7 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
-	                    SKILL_FINANCE     = SKILL_BASIC,
-	                    SKILL_HAULING     = SKILL_BASIC)
+	                    SKILL_HAULING     = SKILL_ADEPT)
 
 	access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mining_office, access_mailsorting, access_hangar, access_guppy, access_guppy_helm, access_commissary)
 
