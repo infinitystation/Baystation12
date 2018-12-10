@@ -6,4 +6,4 @@
 	if(!mob)
 		return
 
-	mob << sound(null)
+	sound_to(src, null)
