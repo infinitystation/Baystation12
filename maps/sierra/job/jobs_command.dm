@@ -13,8 +13,9 @@
 	req_admin_notify = 1
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_ADEPT,
-						SKILL_PILOT       = SKILL_ADEPT)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_PILOT       = SKILL_ADEPT)
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 
@@ -25,6 +26,7 @@
 							 /datum/computer_file/program/card_mod,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+
 	required_education = EDUCATION_TIER_BACHELOR
 
 
@@ -46,8 +48,8 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/hop
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_ADEPT,
-						SKILL_PILOT       = SKILL_BASIC)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
+	                    SKILL_FINANCE     = SKILL_ADEPT)
 
 	skill_points = 16
 
@@ -69,6 +71,7 @@
 							 /datum/computer_file/program/card_mod,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+
 	required_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/hop/get_description_blurb()
@@ -91,6 +94,7 @@
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_FINANCE     = SKILL_ADEPT,
 	                    SKILL_BOTANY      = SKILL_BASIC,
 	                    SKILL_ANATOMY     = SKILL_BASIC,
@@ -114,6 +118,7 @@
 							 /datum/computer_file/program/aidiag,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+
 	required_education = EDUCATION_TIER_DOCTORATE
 
 /datum/job/rd/get_description_blurb()
@@ -135,6 +140,7 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_MEDICAL     = SKILL_ADEPT,
 	                    SKILL_ANATOMY     = SKILL_EXPERT,
 	                    SKILL_CHEMISTRY   = SKILL_BASIC,
@@ -159,6 +165,7 @@
 							 /datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+
 	required_education = EDUCATION_TIER_MEDSCHOOL
 
 /datum/job/cmo/get_description_blurb()
@@ -212,6 +219,7 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor,
 							 /datum/computer_file/program/reports)
+
 	required_education = EDUCATION_TIER_MASTERS
 	maximum_education = EDUCATION_TIER_DOCTORATE
 
@@ -234,7 +242,7 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
-	                    SKILL_EVA         = SKILL_BASIC,
+	                    SKILL_EVA         = SKILL_ADEPT,
 	                    SKILL_COMBAT      = SKILL_ADEPT,
 	                    SKILL_WEAPONS     = SKILL_ADEPT,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
@@ -255,6 +263,7 @@
 							 /datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
+
 	required_education = EDUCATION_TIER_BACHELOR
 	maximum_education = EDUCATION_TIER_MASTERS
 
@@ -274,9 +283,9 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/iaa
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY	= SKILL_EXPERT,
-						SKILL_FORENSICS 	= SKILL_BASIC,
-						SKILL_FINANCE		= SKILL_BASIC)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_EXPERT,
+	                    SKILL_FORENSICS   = SKILL_BASIC,
+	                    SKILL_FINANCE     = SKILL_BASIC)
 	skill_points = 6
 
 	access = list(		access_security, access_sec_doors, access_medical, access_iaa, access_research, access_xenoarch, access_heads, access_bridge,
@@ -285,6 +294,7 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/reports)
+
 	required_education = EDUCATION_TIER_BACHELOR
 	maximum_education = EDUCATION_TIER_MASTERS
 
@@ -305,8 +315,8 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/adjutant
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
-						SKILL_PILOT       = SKILL_ADEPT)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_PILOT       = SKILL_ADEPT)
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 

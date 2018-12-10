@@ -26,6 +26,7 @@
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							 /datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
+
 	required_education = EDUCATION_TIER_BASIC
 	maximum_education = EDUCATION_TIER_BACHELOR
 
@@ -54,6 +55,7 @@
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							 /datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
+
 	required_education = EDUCATION_TIER_BASIC
 	maximum_education = EDUCATION_TIER_TRADE
 
@@ -87,6 +89,7 @@
 						access_expedition_shuttle, access_guppy, access_hangar, access_guppy_helm)
 
 	minimal_access = list()
+
 	required_education = EDUCATION_TIER_DROPOUT
 	maximum_education = EDUCATION_TIER_TRADE
 
@@ -102,9 +105,9 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/assistant
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
-						SKILL_FINANCE     = SKILL_BASIC,
-						SKILL_HAULING     = SKILL_BASIC)
+	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
+	                    SKILL_FINANCE     = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_BASIC)
 
 	access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mining_office, access_mailsorting, access_hangar, access_guppy, access_guppy_helm, access_commissary)
 
@@ -115,5 +118,6 @@
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							 /datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
+
 	required_education = EDUCATION_TIER_DROPOUT
 	maximum_education = EDUCATION_TIER_TRADE

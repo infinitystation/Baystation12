@@ -16,7 +16,7 @@
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
 	                    SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_HAULING	  = SKILL_BASIC,
+	                    SKILL_HAULING     = SKILL_BASIC,
 	                    SKILL_MEDICAL     = SKILL_BASIC, //EMT for prisoners
 	                    SKILL_COMBAT      = SKILL_BASIC,
 	                    SKILL_WEAPONS     = SKILL_ADEPT,

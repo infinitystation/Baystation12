@@ -88,7 +88,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(   SKILL_MEDICAL = SKILL_BASIC)
+	min_skill = list(   SKILL_MEDICAL   = SKILL_BASIC)
 
 	max_skill = list(   SKILL_MEDICAL	= SKILL_MAX)
 	skill_points = 18

@@ -89,12 +89,12 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/roboticist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(   SKILL_COMPUTER		= SKILL_ADEPT,
-	                    SKILL_MECH          = SKILL_ADEPT,
-	                    SKILL_DEVICES		= SKILL_ADEPT)
+	min_skill = list(   SKILL_COMPUTER     = SKILL_ADEPT,
+	                    SKILL_MECH         = SKILL_ADEPT,
+	                    SKILL_DEVICES      = SKILL_ADEPT)
 
-	max_skill = list(   SKILL_COMPUTER	   = SKILL_MAX,
-						SKILL_MECH		   = SKILL_MAX,
+	max_skill = list(   SKILL_COMPUTER     = SKILL_MAX,
+	                    SKILL_MECH         = SKILL_MAX,
 	                    SKILL_DEVICES      = SKILL_MAX,
 	                    SKILL_MEDICAL      = SKILL_MAX)
 

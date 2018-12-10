@@ -12,7 +12,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/janitor
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_HAULING = SKILL_BASIC)
+	min_skill = list(   SKILL_HAULING = SKILL_BASIC)
 
 	access = list(access_maint_tunnels, access_emergency_storage, access_janitor)
 
@@ -39,9 +39,9 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/cook
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(	SKILL_COOKING   = SKILL_ADEPT,
-						SKILL_BOTANY    = SKILL_BASIC,
-						SKILL_CHEMISTRY = SKILL_BASIC)
+	min_skill = list(   SKILL_COOKING   = SKILL_ADEPT,
+	                    SKILL_BOTANY    = SKILL_BASIC,
+	                    SKILL_CHEMISTRY = SKILL_BASIC)
 
 	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_bar, access_commissary)
 
@@ -67,9 +67,9 @@
 	skill_points = 7
 
 	minimal_access = list()
-	min_skill = list(	SKILL_COOKING   = SKILL_BASIC,
-						SKILL_BOTANY    = SKILL_BASIC,
-						SKILL_CHEMISTRY = SKILL_BASIC)
+	min_skill = list(   SKILL_COOKING   = SKILL_BASIC,
+	                    SKILL_BOTANY    = SKILL_BASIC,
+	                    SKILL_CHEMISTRY = SKILL_BASIC)
 
 	required_education = EDUCATION_TIER_DROPOUT
 	maximum_education = EDUCATION_TIER_BACHELOR
