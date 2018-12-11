@@ -485,7 +485,25 @@ other types of metals and chemistry for reagents).
 	req_tech = list(TECH_MATERIAL = 4, TECH_BIO = 5)
 	materials = list(MATERIAL_STEEL = 8000, MATERIAL_GLASS = 8000, MATERIAL_SILVER = 2000)
 	build_path = /obj/item/weapon/reagent_containers/hypospray/vial
-	sort_string = "MAEAA"
+	sort_string = "MADAB"
+
+/datum/design/item/medical/defib
+	name = "defibrillator"
+	desc = "A device that delivers powerful shocks via detachable paddles to resuscitate incapacitated patients."
+	id="defib"
+	req_tech = list(TECH_BIO = 4, TECH_POWER = 2)
+	materials = list(MATERIAL_STEEL = 15000, MATERIAL_GLASS = 7500, MATERIAL_SILVER = 1500)
+	build_path = /obj/item/weapon/defibrillator
+	sort_string = "MADAC"
+
+/datum/design/item/medical/c_defib
+	name = "compact defibrillator"
+	desc = "A belt-equipped defibrillator that can be rapidly deployed."
+	id="c_defib"
+	req_tech = list(TECH_BIO = 5, TECH_POWER = 3)
+	materials = list(MATERIAL_STEEL = 10000, MATERIAL_GLASS = 5000, MATERIAL_SILVER = 2000)
+	build_path = /obj/item/weapon/defibrillator/compact
+	sort_string = "MADAD"
 
 /datum/design/item/surgery/AssembleDesignName()
 	..()
@@ -1132,15 +1150,6 @@ other types of metals and chemistry for reagents).
 	build_path = /obj/item/device/multitool/multimeter
 	sort_string = "VAGAM"
 
-/datum/design/item/tool/defib
-	name = "defibrillator"
-	desc = "A device that delivers powerful shocks via detachable paddles to resuscitate incapacitated patients."
-	id="defib"
-	req_tech = list(TECH_BIO = 3)
-	materials = list(MATERIAL_STEEL = 10000, MATERIAL_GLASS = 5000, MATERIAL_SILVER = 1500)
-	build_path = /obj/item/weapon/defibrillator
-	sort_string = "VAGAN"
-
 /datum/design/item/tool/powersink
 	name = "powersink"
 	desc = "A nulling power sink which drains energy from electrical systems."
@@ -1148,7 +1157,7 @@ other types of metals and chemistry for reagents).
 	req_tech = list(TECH_POWER = 4, TECH_ILLEGAL = 5)
 	materials = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 5000, MATERIAL_DIAMOND = 500)
 	build_path = /obj/item/device/powersink
-	sort_string = "VAGAO"
+	sort_string = "VAGAN"
 
 /datum/design/item/encryptionkey/AssembleDesignName()
 	..()
