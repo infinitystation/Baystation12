@@ -19,7 +19,7 @@
 /datum/mil_branch/civilian
 	name = "Civilian"
 	name_short = "civ"
-	email_domain = "freemail.nt"
+	email_domain = "freemail.net"
 
 	rank_types = list(
 		/datum/mil_rank/civ/civ,
