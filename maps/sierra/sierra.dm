@@ -41,6 +41,8 @@
 	#include "items/clothing/solgov-head.dm"
 	#include "items/clothing/solgov-suit.dm"
 	#include "items/clothing/solgov-under.dm"
+	#include "items/clothing/storages.dm"
+
 
 	#include "job/access.dm"
 	#include "job/jobs.dm"

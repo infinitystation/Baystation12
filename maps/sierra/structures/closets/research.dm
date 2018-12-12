@@ -13,17 +13,16 @@
 	icon_off = "rdsecureoff"
 
 /obj/structure/closet/secure_closet/RD_sierra/WillContain()
-	//Çהוסü בûכ ךמסע‏ל מע ÍÒ /obj/item/clothing/under/suit_jacket ~bear1ake
 	return list(
 		/obj/item/clothing/suit/bio_suit/scientist,
 		/obj/item/clothing/head/bio_hood/scientist,
 		/obj/item/clothing/under/rank/research_director,
 		/obj/item/clothing/under/rank/research_director/rdalt,
 		/obj/item/clothing/under/rank/research_director/dress_rd,
-		/obj/item/clothing/under/suit_jacket,
+		/obj/item/clothing/under/suit_jacket/corp/nanotrasen,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
-		/obj/item/clothing/suit/storage/toggle/labcoat/science,
-		/obj/item/clothing/suit/storage/toggle/labcoat/rd,
+		/obj/item/clothing/suit/storage/toggle/labcoat/science/nanotrasen,
+		/obj/item/clothing/suit/storage/toggle/labcoat/rd/nanotrasen,
 		/obj/item/clothing/shoes/white,
 		/obj/item/clothing/gloves/latex,
 		/obj/item/clothing/glasses/science,
@@ -58,8 +57,8 @@
 
 /obj/structure/closet/secure_closet/secure_closet/xenoarchaeologist_sierra/WillContain()
 	return list(
-		/obj/item/clothing/under/rank/scientist,
-		/obj/item/clothing/suit/storage/toggle/labcoat/science,
+		/obj/item/clothing/under/rank/scientist/nanotrasen,
+		/obj/item/clothing/suit/storage/toggle/labcoat/science/nanotrasen,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
 		/obj/item/device/radio/headset/headset_sci,
@@ -93,8 +92,8 @@
 
 /obj/structure/closet/secure_closet/scientist_sierra/WillContain()
 	return list(
-		/obj/item/clothing/under/rank/scientist,
-		/obj/item/clothing/suit/storage/toggle/labcoat/science,
+		/obj/item/clothing/under/rank/scientist/nanotrasen,
+		/obj/item/clothing/suit/storage/toggle/labcoat/science/nanotrasen,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
 		/obj/item/device/radio/headset/headset_sci,
