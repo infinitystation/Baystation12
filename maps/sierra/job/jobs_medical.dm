@@ -55,7 +55,7 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_EVA     = SKILL_BASIC,
-	                    SKILL_MEDICAL = SKILL_BASIC,
+	                    SKILL_MEDICAL = SKILL_ADEPT,
 	                    SKILL_ANATOMY = SKILL_BASIC)
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
@@ -90,7 +90,7 @@
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_MEDICAL   = SKILL_BASIC)
 
-	max_skill = list(   SKILL_MEDICAL	= SKILL_MAX)
+	max_skill = list(   SKILL_MEDICAL   = SKILL_MAX)
 	skill_points = 18
 
 	access = list(	access_medical, access_morgue, access_surgery,

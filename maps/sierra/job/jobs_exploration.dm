@@ -13,15 +13,15 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/el
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_ADEPT,
 	                    SKILL_SCIENCE     = SKILL_ADEPT,
-	                    SKILL_PILOT       = SKILL_BASIC)
+	                    SKILL_PILOT       = SKILL_BASIC,
+	                    SKILL_WEAPONS     = SKILL_BASIC)
 
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX,
-	                    SKILL_COMBAT      = SKILL_EXPERT,
-	                    SKILL_WEAPONS     = SKILL_EXPERT)
+	                    SKILL_SCIENCE     = SKILL_MAX)
 	skill_points = 20
 
 	access = list(access_el, access_explorer, access_eva, access_maint_tunnels, access_bridge, access_heads, access_emergency_storage, access_tech_storage, access_guppy_helm, access_expedition_shuttle, access_expedition_shuttle_helm, access_guppy, access_hangar)
@@ -50,13 +50,12 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/explorer
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
 	min_skill = list(   SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_SCIENCE     = SKILL_BASIC,
 	                    SKILL_WEAPONS     = SKILL_BASIC)
 
-	max_skill = list(   SKILL_SCIENCE     = SKILL_MAX,
-	                    SKILL_COMBAT      = SKILL_EXPERT,
-	                    SKILL_WEAPONS     = SKILL_EXPERT)
+	max_skill = list(   SKILL_SCIENCE     = SKILL_MAX)
 
 	access = list(access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_cent_creed)
 
@@ -83,13 +82,13 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/pilot
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
 	min_skill = list(   SKILL_EVA           = SKILL_BASIC,
 	                    SKILL_SCIENCE       = SKILL_BASIC,
 	                    SKILL_PILOT         = SKILL_ADEPT)
 
 	max_skill = list(   SKILL_SCIENCE       = SKILL_MAX,
 	                    SKILL_PILOT         = SKILL_MAX)
-
 
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage, access_guppy_helm,
 					access_expedition_shuttle, access_guppy, access_hangar, access_expedition_shuttle_helm)
@@ -116,23 +115,17 @@
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/medic
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
-
-	skill_points = 13
 	economic_power = 4
 
-
 	min_skill = list(   SKILL_EVA     = SKILL_BASIC,
-	                    SKILL_MEDICAL = SKILL_BASIC,
+	                    SKILL_MEDICAL = SKILL_ADEPT,
 	                    SKILL_HAULING = SKILL_BASIC,
-	                    SKILL_SCIENCE = SKILL_BASIC,
-	                    SKILL_ANATOMY = SKILL_BASIC)
+	                    SKILL_SCIENCE = SKILL_BASIC)
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX,
-	                    SKILL_COMBAT      = SKILL_EXPERT,
-	                    SKILL_WEAPONS     = SKILL_EXPERT)
+	                    SKILL_SCIENCE     = SKILL_MAX)
 
-
+	skill_points = 13
 
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
 					access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar,
@@ -162,9 +155,6 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
-	skill_points = 20
-
-
 	min_skill = list(   SKILL_EVA           = SKILL_BASIC,
 	                    SKILL_CONSTRUCTION  = SKILL_BASIC,
 	                    SKILL_ELECTRICAL    = SKILL_BASIC,
@@ -175,10 +165,9 @@
 
 	max_skill = list(   SKILL_CONSTRUCTION  = SKILL_MAX,
 	                    SKILL_ELECTRICAL    = SKILL_MAX,
-	                    SKILL_SCIENCE       = SKILL_MAX,
-	                    SKILL_COMBAT        = SKILL_EXPERT,
-	                    SKILL_WEAPONS       = SKILL_EXPERT)
+	                    SKILL_SCIENCE       = SKILL_MAX)
 
+	skill_points = 20
 
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
 	 				access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar, access_engine)
