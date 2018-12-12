@@ -115,7 +115,7 @@ GLOBAL_LIST_EMPTY(skills)
 		"Trained" = "You are proficient in exosuit operation and safety, and can use them without penalties.")
 	prerequisites = list(SKILL_EVA = SKILL_ADEPT)
 	default_max = SKILL_BASIC
-	difficulty = SKILL_AVERAGE
+//	difficulty = SKILL_AVERAGE //useless waste of memory
 
 /decl/hierarchy/skill/general/pilot
 	ID = "pilot"
@@ -189,10 +189,8 @@ GLOBAL_LIST_EMPTY(skills)
 			return difficulty
 		if(SKILL_ADEPT)
 			return 2*difficulty
-		if(SKILL_EXPERT)
-			return 2*difficulty
-		if(SKILL_PROF)
-			return 6*difficulty
+		if(SKILL_EXPERT, SKILL_PROF)
+			return 3*difficulty
 		else
 			return 0
 
@@ -206,16 +204,14 @@ GLOBAL_LIST_EMPTY(skills)
 						"Experienced"		= "You've used firearms and other ranged weapons in high-stress situations, and your skills have become automatic. Your aim is good.",
 						"Master"		= "You are an exceptional shot with a variety of weapons, from simple to exotic. You use a weapon as naturally as though it were a part of your own body. You may be a sniper or special forces operator of some kind.<br>- You get extra accuracy for sniper rifles.<br>- You automatically eject shells from bolt-action firearms.")
 
-/decl/hierarchy/skill/security/combat/get_cost(var/level)
+/decl/hierarchy/skill/security/weapons/get_cost(var/level)
 	switch(level)
 		if(SKILL_BASIC)
 			return difficulty
 		if(SKILL_ADEPT)
 			return 2*difficulty
-		if(SKILL_EXPERT)
-			return 4*difficulty
-		if(SKILL_PROF)
-			return 4*difficulty
+		if(SKILL_EXPERT, SKILL_PROF)
+			return 3*difficulty
 		else
 			return 0
 
@@ -232,10 +228,12 @@ GLOBAL_LIST_EMPTY(skills)
 
 /decl/hierarchy/skill/security/forensics/get_cost(var/level)
 	switch(level)
-		if(SKILL_BASIC, SKILL_ADEPT, SKILL_EXPERT)
-			return difficulty * 2
+		if(SKILL_BASIC)
+			return difficulty
+		if(SKILL_ADEPT, SKILL_EXPERT)
+			return 2*difficulty
 		if(SKILL_PROF)
-			return 3 * difficulty
+			return 3*difficulty
 		else
 			return 0
 
@@ -281,7 +279,7 @@ GLOBAL_LIST_EMPTY(skills)
 						"Trained"			= "You can set up the engine, and you probably won't botch it up too badly. You know how to protect yourself from radiation in the engine room. You can read the engine monitors and keep the engine going. An engine malfunction may stump you, but you can probably work out how to fix it... let's just hope you do so quickly enough to prevent serious damage.",
 						"Experienced"		= "You have years of experience with engines, and can set them up quickly and reliably. You're familiar with engine types other than the one you work with.<br>- You can fully read the SM monitor readings.<br>- You can examine the SM directly for its integrity.",
 						"Master"		= "Your engine is your baby and you know every minute detail of its workings. You can optimize the engine and you probably have your own favorite custom setup. You could build an engine from the ground up. When things go wrong, you know exactly what has happened and how to fix the problem. You can safely handle singularities and supermatter.<br>- You can examine the SM directly for an approximate number of its EER.")
-	difficulty = SKILL_HARD
+//	difficulty = SKILL_HARD
 
 // Category: Research
 
