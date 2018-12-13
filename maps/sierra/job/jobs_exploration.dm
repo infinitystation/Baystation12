@@ -7,7 +7,7 @@
 	spawn_positions = 1
 	supervisors = "the Captain"
 	selection_color = "#68099e"
-	minimal_player_age = 7
+	minimal_player_age = 12
 	economic_power = 7
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/el
@@ -45,6 +45,7 @@
 	spawn_positions = 4
 	supervisors = "the Captain and the Exploration Leader"
 	selection_color = "#68099e"
+	minimal_player_age = 6
 	ideal_character_age = 20
 	economic_power = 3
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/explorer
@@ -77,6 +78,7 @@
 	spawn_positions = 1
 	supervisors = "the Captain and the Exploration Leader"
 	selection_color = "#68099e"
+	minimal_player_age = 6
 	ideal_character_age = 24
 	economic_power = 4
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/pilot
@@ -111,6 +113,7 @@
 	spawn_positions = 1
 	supervisors = "the Captain and the Exploration Leader"
 	selection_color = "#68099e"
+	minimal_player_age = 9
 	ideal_character_age = 34
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/medic
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -149,6 +152,7 @@
 	spawn_positions = 1
 	supervisors = "the Captain and the Exploration Leader"
 	selection_color = "#68099e"
+	minimal_player_age = 6
 	ideal_character_age = 28
 	economic_power = 4
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/engineer
