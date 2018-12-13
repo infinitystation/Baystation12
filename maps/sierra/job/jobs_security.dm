@@ -18,8 +18,8 @@
 	                    SKILL_EVA         = SKILL_BASIC,
 	                    SKILL_HAULING     = SKILL_BASIC,
 	                    SKILL_MEDICAL     = SKILL_BASIC, //EMT for prisoners
-	                    SKILL_COMBAT      = SKILL_BASIC,
-	                    SKILL_WEAPONS     = SKILL_ADEPT,
+	                    SKILL_COMBAT      = SKILL_ADEPT,
+	                    SKILL_WEAPONS     = SKILL_BASIC,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
 
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
@@ -103,8 +103,8 @@
 	                    SKILL_WEAPONS     = SKILL_BASIC,
 	                    SKILL_FORENSICS   = SKILL_BASIC)
 
-	max_skill = list(   SKILL_COMBAT      = SKILL_EXPERT,
-	                    SKILL_WEAPONS     = SKILL_EXPERT)
+	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
+	                    SKILL_WEAPONS     = SKILL_MAX)
 
 	access = list(access_security, access_brig, access_maint_tunnels,
 						access_external_airlocks, access_emergency_storage,
