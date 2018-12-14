@@ -54,7 +54,7 @@
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
-	access = list(access_hydroponics, access_bar, access_kitchen, access_commissary)
+	access = list(access_hydroponics, access_bar, access_commissary)
 
 	minimal_access = list()
 	min_skill = list(	SKILL_COOKING   = SKILL_BASIC,
