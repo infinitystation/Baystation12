@@ -1203,9 +1203,9 @@
 	name = "Research and Development"
 	icon_state = "research"
 
-/area/rnd/breakroom
-	name = "Research Break Room"
-	icon_state = "researchbreak"
+/area/rnd/storage
+	name = "Research Storage"
+	icon_state = "toxstorage"
 
 /area/alien
 	name = "Alien base"

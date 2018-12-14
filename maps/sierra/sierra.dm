@@ -30,6 +30,7 @@
 	#include "items/machinery.dm"
 	#include "items/navbeacons.dm"
 	#include "items/papers.dm"
+	#include "items/random.dm"
 	#include "items/manuals.dm"
 	#include "items/uniform_vendor.dm"
 	#include "items/rigs.dm"
