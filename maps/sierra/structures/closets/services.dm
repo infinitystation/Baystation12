@@ -79,6 +79,8 @@
 		/obj/item/glass_jar,
 		/obj/item/weapon/book/manual/barman_recipes,
 		/obj/item/clothing/under/rank/bartender,
-		/obj/item/clothing/shoes/laceup
+		/obj/item/clothing/shoes/laceup,
+		/obj/item/weapon/paper/bar_permit,
+		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/empty
 	)
 

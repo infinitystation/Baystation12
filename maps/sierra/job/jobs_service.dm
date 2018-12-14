@@ -38,7 +38,7 @@
 						SKILL_BOTANY    = SKILL_BASIC,
 						SKILL_CHEMISTRY = SKILL_BASIC)
 
-	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_bar, access_commissary)
+	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_commissary)
 
 	minimal_access = list()
 	required_education = EDUCATION_TIER_TRADE
