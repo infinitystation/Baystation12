@@ -646,6 +646,7 @@
 #include "code\game\machinery\CableLayer.dm"
 #include "code\game\machinery\cargopad.dm"
 #include "code\game\machinery\cell_charger.dm"
+#include "code\game\machinery\christmas.dm"
 #include "code\game\machinery\constructable_frame.dm"
 #include "code\game\machinery\crusher_piston.dm"
 #include "code\game\machinery\cryo.dm"
