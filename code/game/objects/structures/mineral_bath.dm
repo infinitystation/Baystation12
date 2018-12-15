@@ -100,7 +100,7 @@
 	if(ishuman(occupant))
 
 		var/mob/living/carbon/human/H = occupant
-		var/repaired_organ
+//		var/repaired_organ
 
 		// Replace limbs for crystalline species.
 		if((H.species.name == SPECIES_ADHERENT || H.species.name == SPECIES_GOLEM) && prob(10))
@@ -118,7 +118,7 @@
 					H.species.post_organ_rejuvenate(O, H)
 					to_chat(occupant, "<span class='notice'>You feel your [O.name] reform in the crystal bath.</span>")
 					H.update_body()
-					repaired_organ = TRUE
+//					repaired_organ = TRUE
 					break
 
 		// Repair crystalline internal organs.
@@ -129,9 +129,9 @@
 					if(I.damage > 0)
 						I.damage = max(I.damage - rand(3,5), 0)
 						to_chat(H, "<span class='notice'>The mineral-rich bath mends your [I.name].</span>")
-						repaired_organ = TRUE
+//						repaired_organ = TRUE
 						break
-
+/*
 		// Repair robotic external organs.
 		if(!repaired_organ && prob(10))
 			for(var/thing in H.organs)
@@ -144,3 +144,4 @@
 							E.status |= ORGAN_BRITTLE
 							to_chat(H, "<span class='warning'>It feels a bit brittle, though...</span>")
 						break
+*/
