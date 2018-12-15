@@ -50,3 +50,18 @@
 	icon = 'icons/obj/clothing/infinity/hats.dmi'
 	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
 	icon_state = "scp_cap"
+
+/obj/item/clothing/head/christhat
+	name = "christ's hat"
+	desc = "Ho ho ho. Merrry X-mas!"
+	icon = 'icons/obj/clothing/infinity/hats.dmi'
+	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
+	icon_state = "christ_hat"
+	item_state = "christ_hat"
+	flags_inv = BLOCKHAIR
+	body_parts_covered = HEAD
+
+	sprite_sheets = list(
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head_infinity.dmi',
+		)
