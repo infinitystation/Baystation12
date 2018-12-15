@@ -45,7 +45,7 @@
 		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger/tox, 50)
 	)
 
-/obj/structure/closet/secure_closet/secure_closet/xenoarchaeologist_sierra
+/obj/structure/closet/secure_closet/xenoarchaeologist_sierra
 	name = "xenoarchaeologist's locker"
 	req_access = list(access_xenoarch)
 	icon = 'maps/sierra/icons/obj/closets.dmi'
@@ -55,7 +55,7 @@
 	icon_opened = "secureresopen"
 	icon_off = "secureresoff"
 
-/obj/structure/closet/secure_closet/secure_closet/xenoarchaeologist_sierra/WillContain()
+/obj/structure/closet/secure_closet/xenoarchaeologist_sierra/WillContain()
 	return list(
 		/obj/item/clothing/under/rank/scientist/nanotrasen,
 		/obj/item/clothing/suit/storage/toggle/labcoat/science/nanotrasen,

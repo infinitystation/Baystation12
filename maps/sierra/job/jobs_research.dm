@@ -76,8 +76,8 @@
 	department = "Science"
 	department_flag = SCI
 
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the Research Director"
 	selection_color = "#633d63"
 	economic_power = 6

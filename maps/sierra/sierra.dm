@@ -62,6 +62,8 @@
 	#include "job/jobs_security.dm"
 	#include "job/jobs_service.dm"
 
+	#include "machinery/vendors.dm"
+
 	#include "structures/closets.dm"
 	#include "structures/signs.dm"
 	#include "structures/other.dm"
