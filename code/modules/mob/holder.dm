@@ -185,6 +185,7 @@ var/list/holder_mob_icon_cache = list()
 /obj/item/weapon/holder/human
 	icon = 'icons/mob/holder_complex.dmi'
 	var/list/generate_for_slots = list(slot_l_hand_str, slot_r_hand_str, slot_back_str)
+	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 
 /obj/item/weapon/holder/human/sync(var/mob/living/M)
