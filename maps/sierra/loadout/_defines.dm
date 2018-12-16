@@ -1,6 +1,9 @@
 //The following is a list of defs and blacklist to be used (or not) for the Sierra loadout.
 /datum/map/sierra
-	loadout_blacklist = list(/datum/gear/union_card, /datum/gear/eyes/security/aviators)
+	loadout_blacklist = list(/datum/gear/union_card, /datum/gear/eyes/security/aviators, \
+	/datum/gear/suit/labcoat_corp, /datum/gear/suit/labcoat_corp_rd, /datum/gear/suit/wintercoat_dais \
+	/datum/gear/uniform/corp_guard, /datum/gear/uniform/corp_exec, /datum/gear/uniform/corp_overalls, /datum/gear/uniform/corp_flight,
+	/datum/gear/uniform/corp_exec_jacket)
 //For all exploration crew
 #define EXPLORATION_ROLES list(\
 	/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, \
