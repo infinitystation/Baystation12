@@ -22,11 +22,11 @@
 	name = "IPV [pick("Razorshark", "Aurora", "Lighting", "Pequod", "Anansi")], \a [name]"
 	..()
 
-
 /datum/map_template/ruin/away_site/yacht
 	name = "Yacht"
 	id = "awaysite_yach"
 	description = "Tiny movable ship with spiders."
+	prefix = "maps/away_inf/"
 	suffixes = list("yacht/yacht.dmm")
 	cost = 1
 
