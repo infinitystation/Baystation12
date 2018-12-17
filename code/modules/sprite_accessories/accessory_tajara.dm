@@ -53,6 +53,58 @@
 	name = "Tajara Bob"
 	icon_state = "hair_tbob"
 
+/datum/sprite_accessory/hair/taj/ears_sidebraid
+	name = "Tajara Sidebraid"
+	icon_state = "hair_sidebraid"
+
+/datum/sprite_accessory/hair/taj/ears_ribbons
+	name = "Tajara Ribbons"
+	icon_state = "hair_ribbons"
+
+/datum/sprite_accessory/hair/taj/ears_earrings
+	name = "Tajara Earrings"
+	icon_state = "hair_earrings"
+
+/datum/sprite_accessory/hair/taj/ears_combedback
+	name = "Tajara Combedback"
+	icon_state = "hair_combedback"
+
+/datum/sprite_accessory/hair/taj/ears_tailedbangs
+	name = "Tajara Tailedbangs"
+	icon_state = "hair_tailedbangs"
+
+/datum/sprite_accessory/hair/taj/ears_lynx
+	name = "Tajara Lynx"
+	icon_state = "hair_lynx"
+
+/datum/sprite_accessory/hair/taj/ears_longtail
+	name = "Tajara Longtail"
+	icon_state = "hair_longtail"
+
+/datum/sprite_accessory/hair/taj/ears_shy
+	name = "Tajara Shy"
+	icon_state = "hair_shy"
+
+/datum/sprite_accessory/hair/taj/ears_ponytail
+	name = "Tajara Ponytail"
+	icon_state = "hair_ponytail"
+
+/datum/sprite_accessory/hair/taj/ears_overeye
+	name = "Tajara Overeye"
+	icon_state = "hair_overeye"
+
+/datum/sprite_accessory/hair/taj/ears_tough
+	name = "Tajara Tough"
+	icon_state = "hair_tough"
+
+/datum/sprite_accessory/hair/taj/ears_cuttail
+	name = "Tajara Cuttail"
+	icon_state = "hair_cuttail"
+
+/datum/sprite_accessory/hair/taj/ears_dreadlocks
+	name = "Tajara Dreadlocks"
+	icon_state = "hair_dreadlocks"
+
 /datum/sprite_accessory/skin/tajaran
 	name = "Default tajaran skin"
 	icon_state = "default"
