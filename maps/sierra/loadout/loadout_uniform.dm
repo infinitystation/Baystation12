@@ -59,7 +59,7 @@
 
 /datum/gear/uniform/si_overalls
 	display_name = "corporate coveralls"
-	path = /obj/item/clothing/under/rank/ntwork/nanotrasen
+	path = /obj/item/clothing/under/rank/ntwork
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
 
 /datum/gear/uniform/si_overalls/New()

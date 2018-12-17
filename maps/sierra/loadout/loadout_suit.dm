@@ -73,5 +73,6 @@
 
 /datum/gear/suit/labcoat_dais
 	display_name = "labcoat, DAIS"
+	path = /obj/item/clothing/suit/storage/toggle/labcoat/science/dais
 	allowed_roles = list(/datum/job/engineer, /datum/job/scientist, /datum/job/roboticist)
 	allowed_branches = list(/datum/mil_branch/contractor)
