@@ -1,9 +1,9 @@
 //The following is a list of defs and blacklist to be used (or not) for the Sierra loadout.
 /datum/map/sierra
 	loadout_blacklist = list(/datum/gear/union_card, /datum/gear/eyes/security/aviators, \
-	/datum/gear/suit/labcoat_corp, /datum/gear/suit/labcoat_corp_rd, /datum/gear/suit/wintercoat_dais, \
+	/datum/gear/suit/labcoat_corp, /datum/gear/suit/labcoat_corp_rd, \
 	/datum/gear/uniform/corp_guard, /datum/gear/uniform/corp_exec, /datum/gear/uniform/corp_overalls, /datum/gear/uniform/corp_flight,
-	/datum/gear/uniform/corp_exec_jacket)
+	/datum/gear/uniform/corp_exec_jacket, /datum/gear/uniform/corporate)
 //For all exploration crew
 #define EXPLORATION_ROLES list(\
 	/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, \
@@ -111,3 +111,18 @@
 	/datum/job/chief_engineer, /datum/job/hos, /datum/job/qm,\
 	/datum/job/warden, /datum/job/detective, /datum/job/officer, \
 	/datum/job/merchant, /datum/job/merchant_trainee)
+
+#define CONTRACT_ROLES list(\
+	/datum/job/explorer, /datum/job/explorer_pilot, /datum/job/explorer_medic, /datum/job/explorer_engineer, \
+	/datum/job/engineer, /datum/job/engineer_trainee, \
+	/datum/job/officer, /datum/job/detective, \
+	/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee,/datum/job/chemist, /datum/job/psychiatrist, \
+	/datum/job/cargo_tech,  /datum/job/cargo_assistant, /datum/job/mining, \
+	/datum/job/janitor, /datum/job/chef, /datum/job/bartender, \
+	/datum/job/scientist, /datum/job/roboticist, /datum/job/scientist_assistant)
+
+#define CIVILIAN_ROLES list(\
+	/datum/job/detective, \
+	/datum/job/psychiatrist, \
+	/datum/job/cargo_assistant, \
+	/datum/job/janitor, /datum/job/chef, /datum/job/bartender, /datum/job/assistant)
