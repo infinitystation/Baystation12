@@ -11,7 +11,7 @@
 
 	preview_icon = 'icons/mob/human_races/species/ipc/preview.dmi'
 
-	unarmed_types = list(/datum/unarmed_attack/punch)
+	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch)
 	rarity_value = 2
 	strength = STR_HIGH
 

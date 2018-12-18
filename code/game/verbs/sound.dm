@@ -5,5 +5,5 @@
 
 	if(!mob)
 		return
-	
-	sound_to(src, null)
+
+	sound_to(mob, sound(null))
