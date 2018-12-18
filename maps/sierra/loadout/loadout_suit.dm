@@ -69,7 +69,7 @@
 	var/labcoatsi = list()
 	labcoatsi += /obj/item/clothing/suit/storage/toggle/labcoat/science/nanotrasen
 	labcoatsi += /obj/item/clothing/suit/storage/toggle/labcoat/science/heph
-	gear_tweaks += new/datum/gear_tweak/path(labcoatsi)
+	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(labcoatsi)
 
 /datum/gear/suit/labcoat_dais
 	display_name = "labcoat, DAIS"
