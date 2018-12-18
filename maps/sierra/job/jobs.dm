@@ -42,7 +42,7 @@
 		ACCESS_REGION_SUPPLY = list(access_qm, access_change_ids),
 	)
 
-
+/*
 /datum/map/sierra/setup_map()
 	..()
 	for(var/job_type in GLOB.using_map.allowed_jobs)
@@ -56,7 +56,7 @@
 					species_blacklist = list()
 					species_to_job_blacklist[S.type] = species_blacklist
 				species_blacklist |= job.type
-
+*/
 // Some jobs for nabber grades defined here due to map-specific job datums.
 /decl/cultural_info/education/nabber/New()
 	LAZYADD(valid_jobs, /datum/job/scientist_assistant)
