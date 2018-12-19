@@ -525,6 +525,7 @@
 /obj/item/clothing/under/serviceoveralls
 	name = "workman outfit"
 	desc = "The very image of a working man. Not that you're probably doing work."
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
 	icon_state = "mechanic"
 	item_state = "lb_suit"
 	worn_state = "mechanic"
