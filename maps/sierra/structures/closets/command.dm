@@ -46,6 +46,7 @@
 		/obj/item/device/remote_device/civillian,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
+		/obj/item/weapon/clipboard,
 		/obj/item/weapon/storage/box/PDAs,
 		/obj/item/weapon/storage/box/ids,
 	)
