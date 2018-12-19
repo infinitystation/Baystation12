@@ -239,6 +239,7 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 	var/obj/item/clothing/accessory/storage/holster/holster = null
 
 	//Give some of the raiders a pirate gun as a secondary
+/*
 	if(prob(60))
 		var/obj/item/secondary = new /obj/item/weapon/gun/projectile/pirate(T)
 		if(!(primary.slot_flags & SLOT_HOLSTER))
@@ -248,12 +249,13 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 			secondary.forceMove(holster)
 		else
 			player.equip_to_slot_or_del(secondary, slot_belt)
-
+*/
 	if(primary.slot_flags & SLOT_HOLSTER)
 		holster = new new_holster(T)
-		var/datum/extension/holster/H = get_extension(holster, /datum/extension/holster)
-		H.holstered = primary
-		primary.forceMove(holster)
+//		var/datum/extension/holster/H = get_extension(holster, /datum/extension/holster)
+//		H.holstered = primary
+		holster.attackby(primary, player)
+//		primary.forceMove(holster)
 	else if(!player.belt && (primary.slot_flags & SLOT_BELT))
 		player.equip_to_slot_or_del(primary, slot_belt)
 	else if(!player.back && (primary.slot_flags & SLOT_BACK))
