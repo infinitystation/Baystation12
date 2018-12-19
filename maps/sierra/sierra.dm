@@ -63,6 +63,7 @@
 	#include "job/jobs_service.dm"
 
 	#include "machinery/vendors.dm"
+	#include "machinery/apc.dm"
 
 	#include "structures/closets.dm"
 	#include "structures/signs.dm"
