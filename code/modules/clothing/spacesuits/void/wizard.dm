@@ -12,6 +12,11 @@
 	siemens_coefficient = 0.7
 	sprite_sheets_obj = null
 	wizard_garb = 1
+	species_restricted = list(SPECIES_HUMAN, SPECIES_IPC, SPECIES_TAJARA)
+
+	sprite_sheets = list(
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
+		)
 
 /obj/item/clothing/suit/space/void/wizard
 	icon_state = "rig-wiz"
@@ -26,6 +31,7 @@
 	flags_inv = HIDESHOES|HIDEJUMPSUIT|HIDETAIL //For gloves.
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS
+	species_restricted = list(SPECIES_HUMAN, SPECIES_IPC, SPECIES_TAJARA)
 
 /obj/item/clothing/suit/space/void/wizard/New()
 	..()

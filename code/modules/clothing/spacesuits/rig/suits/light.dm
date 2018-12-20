@@ -28,7 +28,7 @@
 	breach_threshold = 18 //comparable to voidsuits
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit_if.dmi'
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi'
 		)
 
 /obj/item/clothing/gloves/rig/light
@@ -178,11 +178,6 @@
 
 /obj/item/clothing/suit/space/rig/light/ninja
 	breach_threshold = 38 //comparable to regular hardsuits
-
-	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit_if.dmi'
-	)
 
 /obj/item/weapon/rig/light/stealth
 	name = "stealth suit control module"

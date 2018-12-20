@@ -100,13 +100,6 @@
 	siemens_coefficient = 0.7
 	light_overlay = "helmet_light_dual"
 
-	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/species/unathi/helmet.dmi',
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet_if.dmi',
-		SPECIES_SKRELL = 'icons/mob/species/skrell/helmet.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi'
-		)
-
 /obj/item/clothing/suit/space/void/security
 	icon_state = "rig-sec"
 	name = "security voidsuit"
@@ -226,24 +219,12 @@
 	icon_state = "rig0-secalt"
 	item_state = "secalt_helm"
 	armor = list(melee = 50, bullet = 45, laser = 45, energy = 40, bomb = 35, bio = 100, rad = 20)
-	sprite_sheets = list(
-		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_skrell.dmi',
-		)
-	sprite_sheets_obj = list(
-		SPECIES_SKRELL = 'icons/obj/clothing/species/skrell/obj_head_skrell.dmi',
-		)
 
 /obj/item/clothing/suit/space/void/security/alt
 	icon_state = "rig-secalt"
 	desc = "A heavily armored voidsuit, designed to intimidate people who find black intimidating. Surprisingly slimming."
 	armor = list(melee = 50, bullet = 45, laser = 45, energy = 40, bomb = 35, bio = 100, rad = 20)
 	allowed = list(/obj/item/weapon/gun,/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/melee/baton)
-	sprite_sheets = list(
-		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_skrell.dmi',
-		)
-	sprite_sheets_obj = list(
-		SPECIES_SKRELL = 'icons/obj/clothing/species/skrell/obj_head_skrell.dmi',
-		)
 
 /obj/item/clothing/suit/space/void/security/alt/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/security/alt
