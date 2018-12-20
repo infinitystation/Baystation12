@@ -11,11 +11,6 @@
 	display_name = "gloves, dress"
 	path = /obj/item/clothing/gloves/color/white
 
-/datum/gear/gloves/work
-	display_name = "gloves, work"
-	path = /obj/item/clothing/gloves/duty
-	cost = 2
-
 /datum/gear/gloves/insulated
 	display_name = "insulated gloves selection"
 	path = /obj/item/clothing/gloves/insulated
