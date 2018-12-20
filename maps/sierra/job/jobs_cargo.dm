@@ -9,7 +9,7 @@
 	minimal_player_age = 7
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/quartermaster
-	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_branches = list(/datum/mil_branch/employee)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_ADEPT,
 	                    SKILL_FINANCE     = SKILL_BASIC,
@@ -39,8 +39,8 @@
 	supervisors = "the Quartermaster and Head of Personnel"
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/tech
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_FINANCE     = SKILL_BASIC,
 	                    SKILL_HAULING     = SKILL_BASIC)
@@ -77,8 +77,8 @@
 	max_skill = list(   SKILL_PILOT       = SKILL_MAX)
 
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/prospector
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 
 	access = list(access_research, access_mining, access_mining_office, access_mining_station,
 						access_expedition_shuttle, access_guppy, access_hangar, access_guppy_helm)
@@ -97,8 +97,8 @@
 	ideal_character_age = 20
 	selection_color = "#515151"
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/assistant
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/civilian, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor, /datum/mil_rank/civ/civ)
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
 						SKILL_FINANCE     = SKILL_BASIC,
 						SKILL_HAULING     = SKILL_BASIC)

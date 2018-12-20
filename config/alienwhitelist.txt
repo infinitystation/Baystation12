@@ -7,6 +7,7 @@ logfol - machine
 kosteg - machine
 hodovoy - machine
 mishele - machine
+yourbro - machine
 kordvik - machine
 taushai - machine
 parasoul - machine
@@ -19,21 +20,21 @@ mrnicolas - machine
 lunkydunk - machine
 skonoplich - machine
 coltrane97 - machine
+wolforbykot - machine
 wheatley2013 - machine
 redknighthero - machine
 kotovsyndrome - machine
-wolforbykot - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
 wheatley2013 - skrell
 interl0per - skrell	
 kirill1243 - skrell	
+travelller - skrell
 themaybat - skrell
 salyvador - skrell
 mrnicolas - skrell
 hellpony - skrell
-diesiege - skrell
 vankoska - skrell
 lukecage - skrell
 hodovoy - skrell
@@ -53,10 +54,10 @@ redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
 coltrane97 - giant armoured serpentid
+travelller - giant armoured serpentid
 themaybat - giant armoured serpentid
 sosiskoed - giant armoured serpentid
 he11d1ver - giant armoured serpentid
-diesiege - giant armoured serpentid
 dagger17 - giant armoured serpentid
 hodovoy - giant armoured serpentid
 sarumyn - giant armoured serpentid
@@ -98,9 +99,12 @@ taushai - unathi
 cre77 - unathi
 s1334 - unathi
 corporateoverlord - tajaran
+richardfox - tajaran
 ashtonfox - tajaran
 mrnicolas - tajaran
+coolered - tajaran
 furrydog - tajaran
+rarytech - tajaran
 korramy - tajaran
 moonmen - tajaran
 nicknam - tajaran
@@ -112,9 +116,6 @@ denmag - tajaran
 solark - tajaran
 forrya - tajaran
 arhod - tajaran
-rarytech - tajaran
-richardfox - tajaran
-coolered - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
 gumboldty - adherent

@@ -22,8 +22,8 @@
 						/datum/job/iaa, /datum/job/adjutant,
 						/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, /datum/job/explorer_medic, /datum/job/explorer_engineer,
 						/datum/job/senior_engineer, /datum/job/engineer, /datum/job/engineer_trainee,
-						/datum/job/officer, /datum/job/warden, /datum/job/detective,
-						/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee,/datum/job/chemist, /datum/job/psychiatrist,
+						/datum/job/warden, /datum/job/detective, /datum/job/officer,
+						/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/chemist, /datum/job/psychiatrist,
 						/datum/job/qm, /datum/job/cargo_tech,  /datum/job/cargo_assistant, /datum/job/mining,
 						/datum/job/janitor, /datum/job/chef, /datum/job/bartender,
 						/datum/job/senior_scientist, /datum/job/scientist, /datum/job/roboticist, /datum/job/scientist_assistant,
@@ -42,7 +42,7 @@
 		ACCESS_REGION_SUPPLY = list(access_qm, access_change_ids),
 	)
 
-
+/*
 /datum/map/sierra/setup_map()
 	..()
 	for(var/job_type in GLOB.using_map.allowed_jobs)
@@ -56,7 +56,7 @@
 					species_blacklist = list()
 					species_to_job_blacklist[S.type] = species_blacklist
 				species_blacklist |= job.type
-
+*/
 // Some jobs for nabber grades defined here due to map-specific job datums.
 /decl/cultural_info/education/nabber/New()
 	LAZYADD(valid_jobs, /datum/job/scientist_assistant)

@@ -20,8 +20,8 @@
 /datum/antagonist/ert/equip(var/mob/living/carbon/human/player)
 	if(!..())
 		return 0
-	player.char_branch = mil_branches.get_branch("Civilian")
-	player.char_rank = mil_branches.get_rank("Civilian", "NanoTrasen Employee")
+	player.char_branch = mil_branches.get_branch("Employee")
+	player.char_rank = mil_branches.get_rank("Employee", "NanoTrasen Employee")
 
 	var/decl/hierarchy/outfit/ert_outfit = outfit_by_type((player.mind == leader) ? /decl/hierarchy/outfit/job/sierra/ert/leader : /decl/hierarchy/outfit/job/sierra/ert)
 	ert_outfit.equip(player)

@@ -4,17 +4,21 @@
 	icon_state = "pulse"
 	item_state = "pulse"
 	slot_flags = SLOT_BACK
-	force = 12
+	force = 10
 	projectile_type = /obj/item/projectile/beam/pulse/heavy
-	max_shots = 36
+	max_shots = 18
 	w_class = ITEM_SIZE_HUGE
 	one_hand_penalty= 6
 	multi_aim = 1
-	burst_delay = 3
-	burst = 3
-	move_delay = 4
-	accuracy = -1
+//	burst_delay = 3
+//	burst = 3
+	move_delay = 2
+	accuracy = 1 //it's huge gun
 	wielded_item_state = "gun_wielded"
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, one_hand_penalty=6, burst_accuracy=null, dispersion=null),
+//		list(mode_name="3-pulse bursts", burst=3,    fire_delay=null, move_delay=4,    one_hand_penalty=12, burst_accuracy=list(0,-1.5,-3), dispersion=list(0.0, 1, 2)),
+		)
 
 /obj/item/weapon/gun/energy/pulse_rifle/carbine
 	name = "pulse carbine"
@@ -23,7 +27,7 @@
 	slot_flags = SLOT_BACK|SLOT_BELT
 	force = 8
 	projectile_type = /obj/item/projectile/beam/pulse/mid
-	max_shots = 24
+	max_shots = 25
 //	burst = 1
 	w_class = ITEM_SIZE_LARGE
 	one_hand_penalty= 3
@@ -31,9 +35,8 @@
 	move_delay = 2
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
-//		list(mode_name="3-pulse bursts", burst=3,    fire_delay=null, move_delay=4,    one_hand_penalty=9, burst_accuracy=list(0,-1,-1.5), dispersion=list(0.0, 0.5, 1.0)),
+//		list(mode_name="3-pulse bursts", burst=3,    fire_delay=null, move_delay=3,    one_hand_penalty=9, burst_accuracy=list(0,-1,-1.5), dispersion=list(0.0, 0.5, 1.0)),
 		)
-
 
 /obj/item/weapon/gun/energy/pulse_rifle/pistol
 	name = "pulse pistol"
@@ -42,10 +45,10 @@
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	force = 6
 	projectile_type = /obj/item/projectile/beam/pulse
-	max_shots = 21
+	max_shots = 20
 //	burst = 1
 	w_class = ITEM_SIZE_NORMAL
-	one_hand_penalty=1 //a bit heavy
+	one_hand_penalty = 1 //a bit heavy
 //	burst_delay = 1
 //	move_delay = 1
 	wielded_item_state = null

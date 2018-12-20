@@ -14,6 +14,8 @@
 	item_state = copy.item_state
 	body_parts_covered = copy.body_parts_covered
 	flags_inv = copy.flags_inv
+	icon = copy.icon
+	item_icons  = copy.item_icons
 
 	if(copy.item_icons)
 		item_icons = copy.item_icons.Copy()
@@ -276,7 +278,7 @@
 	desc = "A hologram projector in the shape of a gun. There is a dial on the side to change the gun's disguise."
 	icon_state = "revolver"
 	w_class = ITEM_SIZE_SMALL
-	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 8)
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 3)
 	matter = list()
 
 	fire_sound = 'sound/weapons/gunshot/gunshot_pistol.ogg'

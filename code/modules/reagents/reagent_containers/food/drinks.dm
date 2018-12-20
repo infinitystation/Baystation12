@@ -191,7 +191,7 @@
 	volume = 30
 	icon_state = "mini-milk"
 /obj/item/weapon/reagent_containers/food/drinks/milk/smallcarton/New()
-	. = ..()
+	..()
 	reagents.add_reagent(/datum/reagent/drink/milk, 30)
 
 /obj/item/weapon/reagent_containers/food/drinks/milk/smallcarton/chocolate
@@ -199,7 +199,7 @@
 	desc = "It's milk! This one is in delicious chocolate flavour."
 
 /obj/item/weapon/reagent_containers/food/drinks/milk/smallcarton/chocolate/New()
-	. = ..()
+	..()
 	reagents.add_reagent(/datum/reagent/drink/milk/chocolate, 30)
 
 

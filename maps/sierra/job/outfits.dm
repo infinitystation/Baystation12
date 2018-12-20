@@ -67,7 +67,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	name = OUTFIT_JOB_NAME("Research Director - Sierra")
 	l_ear = /obj/item/device/radio/headset/heads/rd
 	uniform = /obj/item/clothing/under/rank/research_director
-	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science/nanotrasen
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/rd/nanotrasen
 	shoes = /obj/item/clothing/shoes/brown
 	id_type = /obj/item/weapon/card/id/sierra/silver/research
 	pda_type = /obj/item/modular_computer/pda/heads/rd
@@ -433,7 +433,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/crew/research/senior_scientist
 	name = OUTFIT_JOB_NAME("Senior Researcher")
-	uniform = /obj/item/clothing/under/rank/scientist/executive
+	uniform = /obj/item/clothing/under/rank/scientist/executive/nanotrasen
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science/nanotrasen
 	shoes = /obj/item/clothing/shoes/white
 	pda_type = /obj/item/modular_computer/pda/heads/rd
@@ -441,7 +441,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/crew/research/scientist
 	name = OUTFIT_JOB_NAME("Scientist - Sierra")
-	uniform = /obj/item/clothing/under/rank/scientist
+	uniform = /obj/item/clothing/under/rank/scientist/nanotrasen
 	shoes = /obj/item/clothing/shoes/white
 	id_type = /obj/item/weapon/card/id/sierra/crew/research/scientist
 
@@ -459,7 +459,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/crew/research/assist
 	name = OUTFIT_JOB_NAME("Research Assistant - Sierra")
-	uniform = /obj/item/clothing/under/rank/scientist
+	uniform = /obj/item/clothing/under/rank/scientist/nanotrasen
 	shoes = /obj/item/clothing/shoes/white
 	id_type = /obj/item/weapon/card/id/sierra/crew/research
 

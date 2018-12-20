@@ -40,3 +40,27 @@ decl/hierarchy/mil_uniform/civilian
 	dress_extra = list(/obj/item/clothing/accessory/wcoat,\
 	/obj/item/clothing/under/skirt_c/dress/black, /obj/item/clothing/under/skirt_c/dress/long/black,\
 	/obj/item/clothing/under/skirt_c/dress/eggshell, /obj/item/clothing/under/skirt_c/dress/long/eggshell)
+
+decl/hierarchy/mil_uniform/nt
+	name = "Master NT outfit"
+	hierarchy_type = /decl/hierarchy/mil_uniform/nt
+	branch = /datum/mil_branch/employee
+
+	dress_under = /obj/item/clothing/under/rank/internalaffairs/plain
+	dress_over = /obj/item/clothing/suit/storage/toggle/suit/black
+	dress_shoes = /obj/item/clothing/shoes/dress
+	dress_extra = list(/obj/item/clothing/accessory/wcoat,\
+	/obj/item/clothing/under/skirt_c/dress/black, /obj/item/clothing/under/skirt_c/dress/long/black,\
+	/obj/item/clothing/under/skirt_c/dress/eggshell, /obj/item/clothing/under/skirt_c/dress/long/eggshell)
+
+decl/hierarchy/mil_uniform/contract
+	name = "Master contract outfit"
+	hierarchy_type = /decl/hierarchy/mil_uniform/contract
+	branch = /datum/mil_branch/contractor
+
+	dress_under = /obj/item/clothing/under/rank/internalaffairs/plain
+	dress_over = /obj/item/clothing/suit/storage/toggle/suit/black
+	dress_shoes = /obj/item/clothing/shoes/dress
+	dress_extra = list(/obj/item/clothing/accessory/wcoat,\
+	/obj/item/clothing/under/skirt_c/dress/black, /obj/item/clothing/under/skirt_c/dress/long/black,\
+	/obj/item/clothing/under/skirt_c/dress/eggshell, /obj/item/clothing/under/skirt_c/dress/long/eggshell)

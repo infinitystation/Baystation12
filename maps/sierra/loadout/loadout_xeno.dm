@@ -32,6 +32,7 @@
 	path = /obj/item/clothing/suit/storage/toggle/labcoat/xyn_machine
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_IPC)
+	allowed_branches = list(/datum/mil_branch/contractor)
 
 // Misc clothing
 
@@ -43,13 +44,7 @@
 	display_name = "modified gloves, dress"
 	path = /obj/item/clothing/gloves/color/white/modified
 	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI)
-
-/datum/gear/gloves/duty/modified
-	display_name = "modified gloves, duty"
-	path = /obj/item/clothing/gloves/duty/modified
-	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI)
+	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_YEOSA)
 
 // Vox clothing
 

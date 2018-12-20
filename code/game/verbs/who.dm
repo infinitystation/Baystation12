@@ -73,7 +73,24 @@
 	else
 		for(var/client/C in GLOB.clients)
 			if(!C.is_stealthed())
-				Lines += C.key
+				var/entry = "[C.key]"
+				switch(C.mob.stat)
+					if(DEAD)
+						if(isghost(C.mob))
+							var/mob/observer/ghost/O = C.mob
+							if(O.started_as_observer)
+								entry += " - <font color='gray'><b>Observing</b></font>"
+							else
+								entry += " - <font color='green'><b>Playing</b></font>"
+						else if(isnewplayer(C.mob))
+							entry += " - <font color='blue'><b>In Lobby</b></font>"
+					else
+						entry += " - <font color='green'><b>Playing</b></font>"
+
+				if(C.is_afk())
+					entry += " - <b>AFK: [C.inactivity2text()]</b>"
+
+				Lines += entry
 
 	for(var/line in sortList(Lines))
 		msg += "[line]\n"

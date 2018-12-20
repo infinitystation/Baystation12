@@ -318,6 +318,8 @@
 	if (affected.how_open())
 		to_chat(user,"<span class='warning'>You can't get a clean cut with incisions getting in the way.</span>")
 		return SURGERY_FAILURE
+	if (alert("You will amputate [target]'s [affected.name]. Are you sure?",,"Yes","No")=="No")
+		return SURGERY_FAILURE
 	return (affected.limb_flags & ORGAN_FLAG_CAN_AMPUTATE)
 
 /datum/surgery_step/generic/amputate/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)

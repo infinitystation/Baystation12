@@ -14,6 +14,8 @@
 		/obj/item/device/radio/headset/headset_service,
 		/obj/item/weapon/storage/box/mousetraps = 2,
 		/obj/item/clothing/under/rank/chef,
+		/obj/item/clothing/gloves/latex,
+		/obj/item/weapon/reagent_containers/spray/cleaner,
 		/obj/item/clothing/head/chefhat,
 		/obj/item/clothing/suit/chef/classic
 	)
@@ -78,7 +80,17 @@
 		/obj/item/weapon/reagent_containers/food/drinks/shaker,
 		/obj/item/glass_jar,
 		/obj/item/weapon/book/manual/barman_recipes,
+		/obj/item/weapon/storage/box/flashshells,
 		/obj/item/clothing/under/rank/bartender,
-		/obj/item/clothing/shoes/laceup
+		/obj/item/clothing/gloves/thick,
+		/obj/item/clothing/gloves/white,
+		/obj/item/weapon/storage/box/lights/bulbs/bar,
+		/obj/item/clothing/shoes/laceup,
+		/obj/item/weapon/storage/pill_bottle/dylovene,
+		/obj/item/weapon/reagent_containers/spray/cleaner,
+		/obj/item/weapon/reagent_containers/glass/rag,
+		/obj/item/sticky_pad/random,
+		/obj/item/weapon/paper/bar_permit,
+		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/empty
 	)
 

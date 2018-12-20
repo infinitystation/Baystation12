@@ -71,7 +71,8 @@
 /obj/item/clothing/suit/space/rig/industrial
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI)
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi'
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi'
 		)
 
 /obj/item/clothing/shoes/magboots/rig/industrial
@@ -137,7 +138,7 @@
 	slowdown_general = 0.5
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_suit_unathi.dmi',
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit_if.dmi'
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi'
 		)
 
 /obj/item/clothing/shoes/magboots/rig/eva
@@ -243,13 +244,15 @@
 	camera = /obj/machinery/camera/network/research
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI)
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi'
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
 		)
 
 /obj/item/clothing/suit/space/rig/hazmat
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI)
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi'
+		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi'
 		)
 
 /obj/item/clothing/shoes/magboots/rig/hazmat

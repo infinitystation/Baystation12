@@ -1,6 +1,5 @@
 /obj/machinery/chemical_dispenser
 	name = "chemical dispenser"
-	layer = BELOW_OBJ_LAYER
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "dispenser"
 	clicksound = "button"
@@ -16,7 +15,6 @@
 	var/accept_drinking = 0
 	var/amount = 30
 
-	use_power = 1
 	idle_power_usage = 100
 	density = 1
 	anchored = 1

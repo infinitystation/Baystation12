@@ -28,6 +28,10 @@
 
 	bleed_colour = SYNTH_BLOOD_COLOUR
 
+/mob/living/simple_animal/hostile/hivebot/emp_act(severity)
+	health -= rand(10,25) * (severity + 1)
+	Life()
+
 /mob/living/simple_animal/hostile/hivebot/range
 	name = "Hivebot"
 	desc = "A smallish robot, this one is armed!"

@@ -20,6 +20,8 @@
 	name = "xmas tree"
 	icon = 'icons/obj/flora/pinetrees.dmi'
 	icon_state = "pine_c"
+	plane = OBJ_PLANE
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/tree/pine/xmas/New()
 	..()
@@ -367,16 +369,6 @@
 	name = "decorative potted plant"
 	desc = "This is a decorative shrub. It's been trimmed into the shape of an apple."
 	icon_state = "applebush"
-
-/obj/structure/flora/pottedplant/xmas
-	name = "small christmas tree"
-	desc = "This is a tiny well lit decorative christmas tree."
-	icon = 'icons/obj/infinity_object.dmi'
-	icon_state = "plant-xmas"
-
-/obj/structure/flora/pottedplant/xmas/Initialize()
-	. = ..()
-	set_light(0.4, 0.1, 2, 2, "#ff6633")
 
 /obj/structure/flora/pottedplant/deskfern
 	name = "fancy ferny potted plant"

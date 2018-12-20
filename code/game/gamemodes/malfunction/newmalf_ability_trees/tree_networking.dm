@@ -56,6 +56,9 @@
 		if(A.hacker && A.hacker == user)
 			to_chat(user, "You already control this APC!")
 			return
+		else if(!isStationLevel(A.z))
+			to_chat(user, "You can hack only ship's APCs.")
+			return
 		else if(A.aidisabled)
 			to_chat(user, "<span class='notice'>Unable to connect to APC. Please verify wire connection and try again.</span>")
 			return

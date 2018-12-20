@@ -50,21 +50,29 @@
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat/science
 	allowed_roles = RESEARCH_ROLES
 
+/datum/gear/suit/wintercoat/dais
+	display_name = "DAIS winter coat"
+	allowed_roles = list(/datum/job/engineer, /datum/job/scientist,  /datum/job/roboticist)
+	allowed_branches = list(/datum/mil_branch/contractor)
+
 /datum/gear/suit/labcoat
 	allowed_roles = STERILE_ROLES
 
-/datum/gear/suit/labcoat_corp
-	display_name = "labcoat, NanoTrasen or DAIS"
+/datum/gear/suit/labcoat_corp_si
+	display_name = "labcoat, NT or Hephaestus"
+	path = /obj/item/clothing/suit/storage/toggle/labcoat/science
 	allowed_roles = RESEARCH_ROLES
-/*
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
+
+/datum/gear/suit/labcoat_corp_si/New()
+	..()
+	var/labcoatsi = list()
+	labcoatsi += /obj/item/clothing/suit/storage/toggle/labcoat/science/nanotrasen
+	labcoatsi += /obj/item/clothing/suit/storage/toggle/labcoat/science/heph
+	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(labcoatsi)
+
 /datum/gear/suit/labcoat_dais
 	display_name = "labcoat, DAIS"
-	allowed_roles = list(/datum/job/engineer, /datum/job/scientist, /datum/job/rd, /datum/job/roboticist)
-*/
-/datum/gear/suit/wintercoat_dais
-	display_name = "winter coat, DAIS"
-	allowed_roles = list(/datum/job/engineer, /datum/job/scientist, /datum/job/rd)
-
-/datum/gear/suit/labcoat_corp_rd
-	display_name = "labcoat, NanoTrasen, Research Director"
-	allowed_roles = list(/datum/job/rd)
+	path = /obj/item/clothing/suit/storage/toggle/labcoat/science/dais
+	allowed_roles = list(/datum/job/engineer, /datum/job/scientist, /datum/job/roboticist)
+	allowed_branches = list(/datum/mil_branch/contractor)

@@ -202,7 +202,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "CAAEC"
 
 /datum/design/item/stock_part/RPED
-	name = "Rapid Part Exchange Device"
+	name = "rapid part exchange device"
 	desc = "Special mechanical module made to store, sort, and apply standard machine parts."
 	id = "rped"
 	req_tech = list(TECH_ENGINEERING = 3, TECH_MATERIAL = 3)
@@ -289,13 +289,6 @@ other types of metals and chemistry for reagents).
 /datum/design/item/hud/AssembleDesignDesc()
 	desc = "Allows for the construction of \a [item_name] HUD glasses."
 
-/datum/design/item/hud/health
-	name = "health scanner"
-	id = "health_hud"
-	req_tech = list(TECH_BIO = 2, TECH_MAGNET = 3)
-	build_path = /obj/item/clothing/glasses/hud/health
-	sort_string = "GAAAA"
-
 /datum/design/item/hud/security
 	name = "security records"
 	id = "security_hud"
@@ -325,11 +318,11 @@ other types of metals and chemistry for reagents).
 
 /datum/design/item/optical/material
 	name = "material"
-	id = "mesons_material"
+	id = "material"
 	req_tech = list(TECH_MAGNET = 3, TECH_ENGINEERING = 3)
 	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50)
 	build_path = /obj/item/clothing/glasses/material
-	sort_string = "GAAAB"
+	sort_string = "GBAAB"
 
 /datum/design/item/optical/tactical
 	name = "tactical"
@@ -337,7 +330,7 @@ other types of metals and chemistry for reagents).
 	req_tech = list(TECH_MAGNET = 3, TECH_COMBAT = 5)
 	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50, MATERIAL_SILVER = 50, MATERIAL_GOLD = 50)
 	build_path = /obj/item/clothing/glasses/tacgoggles
-	sort_string = "GAAAC"
+	sort_string = "GBAAC"
 
 /datum/design/item/mining/AssembleDesignName()
 	..()
@@ -393,12 +386,12 @@ other types of metals and chemistry for reagents).
 	..()
 	name = "Biotech device prototype ([item_name])"
 
-/datum/design/item/medical/slime_scanner
-	desc = "Multipurpose organic life scanner."
-	id = "slime_scanner"
+/datum/design/item/medical/health_scanner
+	desc = "A hand-held body scanner able to distinguish vital signs of the subject."
+	id = "health_scanner"
 	req_tech = list(TECH_MAGNET = 2, TECH_BIO = 2)
-	materials = list(MATERIAL_STEEL = 200, MATERIAL_GLASS = 100)
-	build_path = /obj/item/device/slime_scanner
+	materials = list(MATERIAL_STEEL = 200)
+	build_path = /obj/item/device/healthanalyzer
 	sort_string = "MACFA"
 
 /datum/design/item/medical/robot_scanner
@@ -408,6 +401,14 @@ other types of metals and chemistry for reagents).
 	materials = list(MATERIAL_STEEL = 500, MATERIAL_GLASS = 200)
 	build_path = /obj/item/device/robotanalyzer
 	sort_string = "MACFB"
+
+/datum/design/item/medical/slime_scanner
+	desc = "Multipurpose organic life scanner."
+	id = "slime_scanner"
+	req_tech = list(TECH_MAGNET = 2, TECH_BIO = 2)
+	materials = list(MATERIAL_STEEL = 200, MATERIAL_GLASS = 100)
+	build_path = /obj/item/device/slime_scanner
+	sort_string = "MACFC"
 
 /datum/design/item/medical/mass_spectrometer
 	desc = "A device for analyzing chemicals in blood."
@@ -451,14 +452,14 @@ other types of metals and chemistry for reagents).
 	req_tech = list(TECH_MATERIAL = 4, TECH_BIO = 5)
 	materials = list(MATERIAL_STEEL = 8000, MATERIAL_GLASS = 8000, MATERIAL_SILVER = 2000)
 	build_path = /obj/item/weapon/reagent_containers/hypospray/vial
-	sort_string = "MAEAA"
+	sort_string = "MADAB"
 
 /datum/design/item/surgery/AssembleDesignName()
 	..()
 	name = "Surgical tool design ([item_name])"
 
 /datum/design/item/surgery/scalpel_laser1
-	name = "Basic Laser Scalpel"
+	name = "basic laser scalpel"
 	desc = "A scalpel augmented with a directed laser, for more precise cutting without blood entering the field. This one looks basic and could be improved."
 	id = "scalpel_laser1"
 	req_tech = list(TECH_BIO = 2, TECH_MATERIAL = 2, TECH_MAGNET = 2)
@@ -467,7 +468,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "MBEAA"
 
 /datum/design/item/surgery/scalpel_laser2
-	name = "Improved Laser Scalpel"
+	name = "improved laser scalpel"
 	desc = "A scalpel augmented with a directed laser, for more precise cutting without blood entering the field. This one looks somewhat advanced."
 	id = "scalpel_laser2"
 	req_tech = list(TECH_BIO = 3, TECH_MATERIAL = 4, TECH_MAGNET = 4)
@@ -476,7 +477,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "MBEAB"
 
 /datum/design/item/surgery/scalpel_laser3
-	name = "Advanced Laser Scalpel"
+	name = "advanced laser scalpel"
 	desc = "A scalpel augmented with a directed laser, for more precise cutting without blood entering the field. This one looks to be the pinnacle of precision energy cutlery!"
 	id = "scalpel_laser3"
 	req_tech = list(TECH_BIO = 4, TECH_MATERIAL = 6, TECH_MAGNET = 5)
@@ -485,49 +486,13 @@ other types of metals and chemistry for reagents).
 	sort_string = "MBEAC"
 
 /datum/design/item/surgery/scalpel_manager
-	name = "Incision Management System"
+	name = "incision management system"
 	desc = "A true extension of the surgeon's body, this marvel instantly and completely prepares an incision allowing for the immediate commencement of therapeutic steps."
 	id = "scalpel_manager"
 	req_tech = list(TECH_BIO = 4, TECH_MATERIAL = 7, TECH_MAGNET = 5, TECH_DATA = 4)
 	materials = list (MATERIAL_STEEL = 12500, MATERIAL_GLASS = 7500, MATERIAL_SILVER = 1500, MATERIAL_GOLD = 1500, MATERIAL_DIAMOND = 750)
 	build_path = /obj/item/weapon/scalpel/manager
 	sort_string = "MBEAD"
-
-/datum/design/item/surgery/pico_grasper
-	name = "Precision Grasper"
-	desc = "A thin rod with pico manipulators embedded in it allowing for fast and precise extraction."
-	id = "pico_grasper"
-	req_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 3, TECH_BIO = 4)
-	materials = list (DEFAULT_WALL_MATERIAL = 10000, "glass" = 5000, "phoron" = 80)
-	build_path = /obj/item/weapon/hemostat/pico
-	sort_string = "MBEAE"
-
-/datum/design/item/surgery/plasmasaw
-	name = "Plasma Saw"
-	desc = "Perfect for cutting through ice."
-	id = "plasmasaw"
-	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 4, TECH_BIO = 5, TECH_PHORON = 3)
-	materials = list (DEFAULT_WALL_MATERIAL = 10000, "glass" = 5000, "phoron" = 500)
-	build_path = /obj/item/weapon/circular_saw/plasmasaw
-	sort_string = "MBEAF"
-
-/datum/design/item/surgery/bonemender
-	name = "Bone Mender"
-	desc = "A favorite among skeletons. It even sounds like a skeleton too."
-	id = "bonemender"
-	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 4, TECH_BIO = 5)
-	materials = list (DEFAULT_WALL_MATERIAL = 10000, "glass" = 5000, "gold" = 500, "silver" = 250)
-	build_path = /obj/item/weapon/bonesetter/bone_mender
-	sort_string = "MBEAG"
-
-/datum/design/item/surgery/clot
-	name = "Capillary Laying Operation Tool"
-	desc = "A canister like tool that stores synthetic vein."
-	id = "clot"
-	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 4, TECH_BIO = 5)
-	materials = list (DEFAULT_WALL_MATERIAL = 10000, "glass" = 8000, "silver" = 1000)
-	build_path = /obj/item/weapon/FixOVein/clot
-	sort_string = "MBEAH"
 
 /datum/design/item/beaker/AssembleDesignName()
 	name = "Beaker prototype ([item_name])"
@@ -542,7 +507,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "MCAAA"
 
 /datum/design/item/beaker/bluespace
-	name = TECH_BLUESPACE
+	name = "bluespace"
 	desc = "A bluespace beaker, powered by experimental bluespace technology and Element Cuban combined with the Compound Pete. Can hold up to 300 units."
 	id = "bluespacebeaker"
 	req_tech = list(TECH_BLUESPACE = 2, TECH_MATERIAL = 6)
@@ -554,7 +519,7 @@ other types of metals and chemistry for reagents).
 	name = "Syringe prototype ([item_name])"
 
 /datum/design/item/syringe/noreactsyringe
-	name = "Cryo Syringe"
+	name = "cryo syringe"
 	desc = "An advanced syringe that stops reagents inside from reacting. It can hold up to 20 units."
 	id = "noreactsyringe"
 	req_tech = list(TECH_BIO = 4, TECH_MATERIAL = 4)
@@ -563,7 +528,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "MCAAC"
 
 /datum/design/item/syringe/bluespacesyringe
-	name = "Bluespace Syringe"
+	name = "bluespace syringe"
 	desc = "An advanced syringe that can hold 60 units of chemicals"
 	id = "bluespacesyringe"
 	req_tech = list(TECH_BIO = 3, TECH_MATERIAL = 4, TECH_BLUESPACE = 2)
@@ -904,7 +869,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "VACAA"
 
 /datum/design/item/synthstorage/posibrain
-	name = "Positronic brain"
+	name = "positronic brain"
 	id = "posibrain"
 	req_tech = list(TECH_ENGINEERING = 4, TECH_MATERIAL = 6, TECH_BLUESPACE = 2, TECH_DATA = 4)
 	build_type = PROTOLATHE | MECHFAB
@@ -975,7 +940,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "VADAC"
 
 /datum/design/item/bluespace/ano_scanner
-	name = "Alden-Saraspova counter"
+	name = "alden-saraspova counter"
 	id = "ano_scanner"
 	desc = "Aids in triangulation of exotic particles."
 	req_tech = list(TECH_BLUESPACE = 3, TECH_MAGNET = 3)
@@ -984,7 +949,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "VAEAA"
 
 /datum/design/item/bluespace/bag_holding
-	name = "Bag of Holding"
+	name = "bag of holding"
 	desc = "Using localized pockets of bluespace this bag prototype offers incredible storage capacity with the contents weighting nothing. It's a shame the bag itself is pretty heavy."
 	id = "bag_holding"
 	req_tech = list(TECH_BLUESPACE = 4, TECH_MATERIAL = 6)
@@ -1041,6 +1006,7 @@ other types of metals and chemistry for reagents).
 	req_tech = list(TECH_POWER = 6, TECH_ENGINEERING = 4)
 	materials = list(MATERIAL_STEEL = 2000, MATERIAL_GLASS = 100)
 	build_path = /obj/item/inducer
+	sort_string = "VAGAF"
 
 /datum/design/item/tool/price_scanner
 	name = "price scanner"
@@ -1049,7 +1015,7 @@ other types of metals and chemistry for reagents).
 	req_tech = list(TECH_MATERIAL = 6, TECH_MAGNET = 4)
 	materials = list(MATERIAL_STEEL = 3000, MATERIAL_GLASS = 3000, MATERIAL_SILVER = 250)
 	build_path = /obj/item/device/price_scanner
-	sort_string = "VAGAF"
+	sort_string = "VAGAG"
 
 /datum/design/item/tool/experimental_welder
 	name = "experimental welding tool"
@@ -1058,7 +1024,7 @@ other types of metals and chemistry for reagents).
 	req_tech = list(TECH_ENGINEERING = 5, TECH_PHORON = 4)
 	materials = list(MATERIAL_STEEL = 120, MATERIAL_GLASS = 50)
 	build_path = /obj/item/weapon/weldingtool/experimental
-	sort_string = "VAGAG"
+	sort_string = "VAGAH"
 
 /datum/design/item/tool/shield_diffuser
 	name = "portable shield diffuser"
@@ -1067,7 +1033,7 @@ other types of metals and chemistry for reagents).
 	req_tech = list(TECH_MAGNET = 5, TECH_POWER = 5, TECH_ILLEGAL = 2)
 	materials = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 5000, MATERIAL_GOLD = 2000, MATERIAL_SILVER = 2000)
 	build_path = /obj/item/weapon/shield_diffuser
-	sort_string = "VAGAH"
+	sort_string = "VAGAI"
 
 /datum/design/item/tool/oxycandle
 	name = "oxycandle"
@@ -1077,7 +1043,7 @@ other types of metals and chemistry for reagents).
 	materials = list(MATERIAL_STEEL = 3000)
 	chemicals = list(/datum/reagent/sodiumchloride = 20, /datum/reagent/acetone = 20)
 	build_path = /obj/item/device/oxycandle
-	sort_string = "VAGAI"
+	sort_string = "VAGAJ"
 
 /datum/design/item/encryptionkey/AssembleDesignName()
 	..()
@@ -1100,7 +1066,7 @@ other types of metals and chemistry for reagents).
 	name = "holographic equipment kit"
 	desc = "A kit of dangerous, high-tech equipment with changeable looks."
 	id = "chameleon"
-	req_tech = list(TECH_ILLEGAL = 2)
+	req_tech = list(TECH_ILLEGAL = 3)
 	materials = list(MATERIAL_STEEL = 500)
 	build_path = /obj/item/weapon/storage/backpack/chameleon/sydie_kit
 	sort_string = "VASBA"
@@ -1469,7 +1435,7 @@ other types of metals and chemistry for reagents).
 	name = "RIG module ([item_name])"
 
 /datum/design/item/rig/meson
-	name = "Meson Scanner"
+	name = "meson scanner"
 	desc = "A layered, translucent visor system for a RIG."
 	id = "rig_meson"
 	req_tech = list(TECH_MAGNET = 2, TECH_ENGINEERING = 5)
@@ -1478,7 +1444,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCAAA"
 
 /datum/design/item/rig/medhud
-	name = "Medical HUD"
+	name = "medical HUD"
 	desc = "A simple medical status indicator for a RIG."
 	id = "rig_medhud"
 	req_tech = list(TECH_MAGNET = 3, TECH_BIO = 2, TECH_ENGINEERING = 5)
@@ -1487,7 +1453,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCAAB"
 
 /datum/design/item/rig/sechud
-	name = "Security HUD"
+	name = "security HUD"
 	desc = "A simple security status indicator for a RIG."
 	id = "rig_sechud"
 	req_tech = list(TECH_MAGNET = 3, TECH_BIO = 2, TECH_ENGINEERING = 5)
@@ -1496,7 +1462,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCAAC"
 
 /datum/design/item/rig/nvg
-	name = "Night Vision"
+	name = "night vision"
 	desc = "A night vision module, mountable on a RIG."
 	id = "rig_nvg"
 	req_tech = list(TECH_MAGNET = 6, TECH_ENGINEERING = 6)
@@ -1505,7 +1471,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCAAD"
 
 /datum/design/item/rig/healthscanner
-	name = "Medical Scanner"
+	name = "medical scanner"
 	desc = "A device able to distinguish vital signs of the subject, mountable on a RIG."
 	id = "rig_healthscanner"
 	req_tech = list(TECH_MAGNET = 3, TECH_BIO = 3, TECH_ENGINEERING = 5)
@@ -1514,7 +1480,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCBAA"
 
 /datum/design/item/rig/drill
-	name = "Mining Drill"
+	name = "mining drill"
 	desc = "A diamond mining drill, mountable on a RIG."
 	id = "rig_drill"
 	req_tech = list(TECH_MATERIAL = 6, TECH_POWER = 4, TECH_ENGINEERING = 6)
@@ -1523,7 +1489,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCCAA"
 
 /datum/design/item/rig/plasmacutter
-	name = "Plasma Cutter"
+	name = "plasma cutter"
 	desc = "A rock cutter that projects bursts of hot plasma, mountable on a RIG."
 	id = "rig_plasmacutter"
 	req_tech = list(TECH_MATERIAL = 4, TECH_PHORON = 3, TECH_ENGINEERING = 6, TECH_COMBAT = 4)
@@ -1532,7 +1498,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "VCCAB"
 
 /datum/design/item/rig/orescanner
-	name = "Ore Scanner"
+	name = "ore scanner"
 	desc = "A sonar system for detecting large masses of ore, mountable on a RIG."
 	id = "rig_orescanner"
 	req_tech = list(TECH_MATERIAL = 4, TECH_MAGNET = 4, TECH_ENGINEERING = 6)
@@ -1541,7 +1507,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCDAA"
 
 /datum/design/item/rig/anomaly_scanner
-	name = "Anomaly Scanner"
+	name = "anomaly scanner"
 	desc = "An exotic particle detector commonly used by xenoarchaeologists, mountable on a RIG."
 	id = "rig_anomaly_scanner"
 	req_tech = list(TECH_BLUESPACE = 4, TECH_MAGNET = 4, TECH_ENGINEERING = 6)
@@ -1559,7 +1525,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCEAA"
 
 /datum/design/item/rig/jets
-	name = "Maneuvering Jets"
+	name = "maneuvering jets"
 	desc = "A compact gas thruster system, mountable on a RIG."
 	id = "rig_jets"
 	req_tech = list(TECH_MATERIAL = 6,  TECH_ENGINEERING = 7)
@@ -1569,7 +1535,7 @@ other types of metals and chemistry for reagents).
 
 //I think this is like a janitor thing but seems like it could be useful for engis
 /datum/design/item/rig/decompiler
-	name = "Matter Decompiler"
+	name = "matter decompiler"
 	desc = "A drone matter decompiler reconfigured to be mounted onto a RIG."
 	id = "rig_decompiler"
 	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 5)
@@ -1578,7 +1544,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCGAA"
 
 /datum/design/item/rig/powersink
-	name = "Power Sink"
+	name = "power sink"
 	desc = "A RIG module that allows the user to recharge their RIG's power cell without removing it."
 	id = "rig_powersink"
 	req_tech = list(TECH_POWER = 6, TECH_ENGINEERING = 6)
@@ -1596,7 +1562,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCIAA"
 
 /datum/design/item/rig/flash
-	name = "Flash"
+	name = "flash"
 	desc = "A normal flash, mountable on a RIG."
 	id = "rig_flash"
 	req_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 3, TECH_ENGINEERING = 5)
@@ -1605,7 +1571,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCJAA"
 
 /datum/design/item/rig/taser
-	name = "Taser"
+	name = "taser"
 	desc = "A taser, mountable on a RIG."
 	id = "rig_taser"
 	req_tech = list(TECH_POWER = 5, TECH_COMBAT = 5, TECH_ENGINEERING = 6)
@@ -1614,7 +1580,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCKAA"
 
 /datum/design/item/rig/egun
-	name = "Energy Gun"
+	name = "energy gun"
 	desc = "An energy gun, mountable on a RIG."
 	id = "rig_egun"
 	req_tech = list(TECH_POWER = 6, TECH_COMBAT = 6, TECH_ENGINEERING = 6)
@@ -1623,7 +1589,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCKAB"
 
 /datum/design/item/rig/enet
-	name = "Energy Net"
+	name = "energy net"
 	desc = "An advanced energy-patterning projector used to capture targets, mountable on a RIG."
 	id = "rig_enet"
 	req_tech = list(TECH_MATERIAL = 5, TECH_POWER = 6, TECH_MAGNET = 5, TECH_ILLEGAL = 4, TECH_ENGINEERING = 6)
@@ -1632,7 +1598,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCKAC"
 
 /datum/design/item/rig/stealth
-	name = "Active Camouflage"
+	name = "active camouflage"
 	desc = "An integrated active camouflage system, mountable on a RIG."
 	id = "rig_stealth"
 	req_tech = list(TECH_MATERIAL = 5, TECH_POWER = 6, TECH_MAGNET = 6, TECH_ILLEGAL = 6, TECH_ENGINEERING = 7)
@@ -1641,7 +1607,7 @@ other types of metals and chemistry for reagents).
 	sort_string = "WCLAA"
 
 /datum/design/item/rig/cooling_unit
-	name = "Cooling Unit"
+	name = "cooling unit"
 	desc = "A suit cooling unit, mountable on a RIG."
 	id = "rig_cooler"
 	req_tech = list(TECH_MATERIAL = 2, TECH_MAGNET = 2, TECH_ENGINEERING = 5)
@@ -1678,29 +1644,36 @@ other types of metals and chemistry for reagents).
 
 // janitor gadgets
 
-/datum/design/item/advmop
-	name = "Advanced Mop"
+/datum/design/item/janitor/AssembleDesignName()
+	..()
+	name = "Janitor equipment design ([item_name])"
+
+/datum/design/item/janitor/advmop
+	name = "advanced mop"
 	desc = "An upgraded mop with a large internal capacity for holding water or other cleaning chemicals."
 	id = "advmop"
 	req_tech = list(TECH_ENGINEERING = 4, TECH_MATERIAL = 4, TECH_POWER = 3)
 	materials = list(MATERIAL_STEEL = 2500, MATERIAL_GLASS = 200)
 	build_path = /obj/item/weapon/mop/advanced
+	sort_string = "JANIA"
 
-/datum/design/blutrash
-	name = "Trashbag of Holding"
+/datum/design/item/janitor/blutrash
+	name = "trashbag of holding"
 	desc = "An advanced trash bag with bluespace properties; capable of holding a plethora of garbage."
 	id = "blutrash"
-	req_tech = list(TECH_BLUESPACE = 5, TECH_MATERIALS = 6)
+	req_tech = list(TECH_BLUESPACE = 5, TECH_MATERIAL = 6)
 	materials = list(MATERIAL_GOLD = 1500, MATERIAL_URANIUM = 250, MATERIAL_PHORON = 1500)
 	build_path = /obj/item/weapon/storage/bag/trash/bluespace
+	sort_string = "JANIB"
 
-/datum/design/item/holosign
-	name = "Holographic Sign Projector"
+/datum/design/item/janitor/holosign
+	name = "holographic sign projector"
 	desc = "A holograpic projector used to project various warning signs."
 	id = "holosign"
 	req_tech = list(TECH_ENGINEERING = 5, TECH_BLUESPACE = 4, TECH_POWER = 4)
 	materials = list(MATERIAL_STEEL = 2000, MATERIAL_GLASS = 1000)
 	build_path = /obj/item/holosign_creator
+	sort_string = "JANIC"
 
 /*
 CIRCUITS BELOW
@@ -2324,7 +2297,7 @@ CIRCUITS BELOW
 /datum/design/circuit/crusher_base
 	name = "trash compactor"
 	id = "crusher_base"
-	req_tech = list(TECH_ENGINEERING = 3, TECH_DATA = 1, TECH_MAGNET = 1, TECH_MATERIALS = 3)
+	req_tech = list(TECH_ENGINEERING = 3, TECH_DATA = 1, TECH_MAGNET = 1, TECH_MATERIAL = 3)
 	build_path = /obj/item/weapon/circuitboard/crusher
 	sort_string = "WAAAB"
 
@@ -2453,12 +2426,3 @@ CIRCUITS BELOW
 	build_path = /obj/item/borg/upgrade/uncertified/party
 	category = "Cyborg Upgrade Modules"
 
-// Infinity's designs list
-
-/datum/design/item/optical/material
-	name = "advanced material glasses"
-	id = "hybrid_mw"
-	req_tech = list(TECH_MAGNET = 4, TECH_ENGINEERING = 5)
-	materials = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 50, "silver" = 100)
-	build_path = /obj/item/clothing/glasses/material/hybrid
-	sort_string = "GAAAD"

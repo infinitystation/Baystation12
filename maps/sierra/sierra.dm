@@ -26,8 +26,11 @@
 	#include "items/encryption_keys.dm"
 	#include "items/headsets.dm"
 	#include "items/items.dm"
+	#include "items/lighting.dm"
 	#include "items/machinery.dm"
 	#include "items/navbeacons.dm"
+	#include "items/papers.dm"
+	#include "items/random.dm"
 	#include "items/manuals.dm"
 	#include "items/uniform_vendor.dm"
 	#include "items/rigs.dm"
@@ -41,6 +44,8 @@
 	#include "items/clothing/solgov-head.dm"
 	#include "items/clothing/solgov-suit.dm"
 	#include "items/clothing/solgov-under.dm"
+	#include "items/clothing/storages.dm"
+
 
 	#include "job/access.dm"
 	#include "job/jobs.dm"
@@ -56,6 +61,9 @@
 	#include "job/jobs_research.dm"
 	#include "job/jobs_security.dm"
 	#include "job/jobs_service.dm"
+
+	#include "machinery/vendors.dm"
+	#include "machinery/apc.dm"
 
 	#include "structures/closets.dm"
 	#include "structures/signs.dm"
@@ -101,7 +109,7 @@
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"
 	#include "../away/blueriver/blueriver.dm"
-	#include "../away/icarus/icarus.dm"
+//	#include "../away/icarus/icarus.dm"
 	#include "../away/errant_pisces/errant_pisces.dm"
 	#include "../away/lar_maria/lar_maria.dm"
 	#include "../away/unishi/unishi.dm"

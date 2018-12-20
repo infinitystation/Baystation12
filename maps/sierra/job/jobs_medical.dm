@@ -14,8 +14,8 @@
 		"Xenosurgeon" = /decl/hierarchy/outfit/job/sierra/crew/medical/senior/xenosurgeon,
 		"Trauma Surgeon" = /decl/hierarchy/outfit/job/sierra/crew/medical/senior/traumasurgeon)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/senior
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_MEDICAL     = SKILL_ADEPT,
 	                    SKILL_ANATOMY     = SKILL_EXPERT,
@@ -51,8 +51,8 @@
 		"Virologist" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/virologist)
 
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 	min_skill = list(   SKILL_EVA     = SKILL_BASIC,
 	                    SKILL_MEDICAL = SKILL_BASIC,
 	                    SKILL_ANATOMY = SKILL_BASIC)
@@ -85,8 +85,8 @@
 		"Orderly" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/orderly,
 		"Nurse" = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/nurse)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 	min_skill = list(   SKILL_EVA     = SKILL_BASIC,
 	                    SKILL_MEDICAL = SKILL_BASIC)
 
@@ -120,8 +120,8 @@
 	economic_power = 5
 	ideal_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/doctor/chemist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 	min_skill = list(   SKILL_MEDICAL   = SKILL_BASIC,
 	                    SKILL_CHEMISTRY = SKILL_ADEPT)
 
@@ -149,8 +149,8 @@
 		"Chaplain" = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor/chaplain,
 	)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/medical/counselor
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/civilian, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor, /datum/mil_rank/civ/civ)
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_MEDICAL     = SKILL_BASIC)
 

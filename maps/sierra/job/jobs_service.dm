@@ -10,8 +10,8 @@
 	alt_titles = list(
 		"Sanitation Technician")
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/janitor
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/civilian, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor, /datum/mil_rank/civ/civ)
 	min_skill = list(	SKILL_HAULING = SKILL_BASIC)
 
 	access = list(access_maint_tunnels, access_emergency_storage, access_janitor)
@@ -32,13 +32,13 @@
 		"Culinary Specialist"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/cook
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/civilian, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor, /datum/mil_rank/civ/civ)
 	min_skill = list(	SKILL_COOKING   = SKILL_ADEPT,
 						SKILL_BOTANY    = SKILL_BASIC,
 						SKILL_CHEMISTRY = SKILL_BASIC)
 
-	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_bar, access_commissary)
+	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_commissary)
 
 	minimal_access = list()
 	required_education = EDUCATION_TIER_TRADE
@@ -51,10 +51,10 @@
 	ideal_character_age = 30
 	selection_color = "#515151"
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/bartender
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/civilian, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor, /datum/mil_rank/civ/civ)
 
-	access = list(access_hydroponics, access_bar, access_kitchen, access_commissary)
+	access = list(access_hydroponics, access_bar, access_commissary)
 
 	minimal_access = list()
 	min_skill = list(	SKILL_COOKING   = SKILL_BASIC,

@@ -68,8 +68,8 @@
 	name = "pulse"
 	icon_state = "u_laser"
 	fire_sound='sound/weapons/pulse.ogg'
-	damage = 14 //lower damage, but fires in bursts
-	armor_penetration = 20
+	damage = 15
+	armor_penetration = 30
 
 	muzzle_type = /obj/effect/projectile/laser/pulse/muzzle
 	tracer_type = /obj/effect/projectile/laser/pulse/tracer
@@ -77,11 +77,11 @@
 
 /obj/item/projectile/beam/pulse/mid //pulse carabine
 	damage = 20
-	armor_penetration = 30
+	armor_penetration = 40
 
 /obj/item/projectile/beam/pulse/heavy //pulse rifle
 	damage = 30
-	armor_penetration = 35
+	armor_penetration = 50
 
 /obj/item/projectile/beam/pulse/destroy
 	name = "destroyer pulse"

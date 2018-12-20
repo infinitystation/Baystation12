@@ -129,7 +129,11 @@
 	for(var/datum/computer_file/program/P in idle_threads)
 		P.event_idremoved(1)
 
-	user.put_in_hands(card_slot.stored_card)
+	if(issilicon(usr))
+		card_slot.stored_card.dropInto(src)
+	else
+		user.put_in_hands(card_slot.stored_card)
+
 	to_chat(user, "You remove [card_slot.stored_card] from [src].")
 	card_slot.stored_card = null
 	update_uis()

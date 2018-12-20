@@ -62,8 +62,8 @@
 		/area/bluespaceriver/underground = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/bluespaceriver/ground = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/casino/casino_cutter = NO_SCRUBBER|NO_VENT,
-		/area/icarus/vessel = NO_APC,
-		/area/icarus/open = NO_SCRUBBER|NO_VENT|NO_APC,
+//		/area/icarus/vessel = NO_APC,
+//		/area/icarus/open = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/map_template/hydrobase = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/map_template/hydrobase/station = NO_SCRUBBER,
 		/area/map_template/marooned = NO_SCRUBBER|NO_VENT|NO_APC
@@ -80,8 +80,8 @@
 		/area/exoplanet/grass,
 		/area/exoplanet/snow,
 		/area/exoplanet/garbage,
-		/area/icarus/vessel,
-		/area/icarus/open,
+//		/area/icarus/vessel,
+//		/area/icarus/open,
 	)
 
 	area_coherency_test_subarea_count = list()
@@ -124,7 +124,7 @@
 		/area/slavers_base,
 		/area/yacht,
 		/area/bluespaceriver,
-		/area/icarus,
+//		/area/icarus,
 		/area/errant_pisces,
 		/area/lar_maria,
 		/area/map_template,

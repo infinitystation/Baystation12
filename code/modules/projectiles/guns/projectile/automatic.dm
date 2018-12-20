@@ -13,6 +13,7 @@
 	burst_delay = 1.1
 	mag_insert_sound = 'sound/weapons/guns/interaction/smg_magin.ogg'
 	mag_remove_sound = 'sound/weapons/guns/interaction/smg_magout.ogg'
+	have_safety = 1
 
 	//machine pistol, easier to one-hand with
 	firemodes = list(
@@ -265,6 +266,7 @@
 	magazine_type = /obj/item/ammo_magazine/box/a556
 	allowed_magazines = list(/obj/item/ammo_magazine/box/a556, /obj/item/ammo_magazine/c556)
 	one_hand_penalty = 6
+	burst = 5
 	wielded_item_state = "gun_wielded"
 	mag_insert_sound = 'sound/weapons/guns/interaction/lmg_magin.ogg'
 	mag_remove_sound = 'sound/weapons/guns/interaction/lmg_magout.ogg'
