@@ -23,7 +23,8 @@
 	if (istype(AM))
 		if(AM.pulledby)
 			return
-		AM.slip("the [src.name]",3)
+		if(!AM.weakened || !AM.resting)
+			AM.slip("the [src.name]",3)
 
 /obj/item/weapon/soap/afterattack(atom/target, mob/user as mob, proximity)
 	if(!proximity) return
@@ -47,6 +48,9 @@
 		to_chat(user, "<span class='notice'>You wet \the [src] in the sink.</span>")
 		wet()
 	else
+		to_chat(user, "<span class='notice'>You start to clean \the [target.name]...</span>")
+		if(!do_mob(user, target, 30))
+			return
 		to_chat(user, "<span class='notice'>You clean \the [target.name].</span>")
 		target.clean_blood() //Clean bloodied atoms. Blood decals themselves need to be handled above.
 	return
