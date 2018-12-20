@@ -158,6 +158,8 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(istype(mover, /obj/item/projectile))
 		var/obj/item/projectile/proj = mover
+		if(proj.damage <= 2) //no pistons
+			return ..()
 		var/chance = 40
 		if(target == src)
 			chance = 90
