@@ -424,6 +424,12 @@
 	if (istype(in_chamber))
 		user.visible_message("<span class = 'warning'>[user] pulls the trigger.</span>")
 		var/shot_sound = in_chamber.fire_sound? in_chamber.fire_sound : fire_sound
+		if(safety())
+			playsound(src.loc, 'sound/weapons/gun_empty.ogg', 100, 1)
+			spawn(5)
+			to_chat(user, "<span class = 'notice'>...Sounds like it was on safety...</span>")
+			mouthshoot = 0
+			return
 		if(silenced)
 			playsound(user, shot_sound, 10, 1)
 		else
