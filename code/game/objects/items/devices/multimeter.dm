@@ -15,13 +15,3 @@
 		if(METER_CHECKING)
 			mode = METER_MESURING
 	to_chat(user, "Режим сменён на: [mode].")
-
-/datum/design/multimeter
-	name = "Multimeter"
-	desc = "Используетс&#255; дл&#255; измерени&#255; потреблени&#255; электроэнергии оборудовани&#255; и прозвонки проводов. Рекомендуетс&#255; докторами."
-	id = "multimeter"
-	req_tech = list(TECH_MAGNET = 4, TECH_ENGINEERING = 5, TECH_MATERIAL = 6)
-	build_type = PROTOLATHE
-	materials = list(DEFAULT_WALL_MATERIAL = 1000, "glass" = 1000, "silver" = 500)
-	build_path = /obj/item/device/multitool/multimeter
-	category = list("Equipement")
