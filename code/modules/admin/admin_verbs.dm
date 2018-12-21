@@ -179,8 +179,6 @@ var/list/admin_verbs_server = list(
 	/client/proc/toggle_random_events,
 	/client/proc/check_customitem_activity,
 	/client/proc/nanomapgen_DumpImage,
-	/client/proc/adminchangebuild,
-	/client/proc/update_server,
 	/client/proc/cmd_toggle_admin_help,
 	/client/proc/observe_delay
 	)
