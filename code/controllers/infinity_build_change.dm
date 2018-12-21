@@ -1,3 +1,4 @@
+//21.12.2018 - turned off, cause it's unfinished
 var/datum/server_build/nextbuild
 var/datum/server_build/currentbuild
 
