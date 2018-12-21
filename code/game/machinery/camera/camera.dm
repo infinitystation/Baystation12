@@ -217,6 +217,7 @@
 		var/itemname = X.name
 		var/info = X.info
 		to_chat(U, "You hold \a [itemname] up to the camera ...")
+		user.setClickCooldown(20)
 		for(var/mob/living/silicon/ai/O in GLOB.living_mob_list_)
 			if(!O.client) continue
 			if(U.name == "Unknown") to_chat(O, "<b>[U]</b> holds \a [itemname] up to one of your cameras ...")
