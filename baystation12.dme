@@ -881,6 +881,7 @@
 #include "code\game\objects\items\customs\dakimakura.dm"
 #include "code\game\objects\items\customs\darkred_headphones.dm"
 #include "code\game\objects\items\customs\eguitar.dm"
+#include "code\game\objects\items\customs\elsas_stuff.dm"
 #include "code\game\objects\items\customs\explorer.dm"
 #include "code\game\objects\items\customs\exporation_voids.dm"
 #include "code\game\objects\items\customs\hybrid_opt.dm"

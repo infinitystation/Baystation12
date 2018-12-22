@@ -30,6 +30,10 @@
 	max_ammo = 6
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/c50/rubber
+	name = "speed loader (.50, rubber)"
+	ammo_type = /obj/item/ammo_casing/a50/rubber
+
 /obj/item/ammo_magazine/c357
 	name = "speed loader (.357 Magnum)"
 	desc = "A speed loader for revolvers."
