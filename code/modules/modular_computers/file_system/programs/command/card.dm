@@ -162,7 +162,8 @@
 	var/obj/item/weapon/card/id/id_card
 	if (computer.card_slot)
 		id_card = computer.card_slot.stored_card
-	upd_card_info(id_card.registered_name, id_card)
+		if (id_card)
+			upd_card_info(id_card.registered_name, id_card)
 	var/datum/nano_module/program/card_mod/module = NM
 	switch(href_list["action"])
 		if("switchm")
