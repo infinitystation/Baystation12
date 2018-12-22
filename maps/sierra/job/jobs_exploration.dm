@@ -33,9 +33,6 @@
 	required_education = EDUCATION_TIER_BACHELOR
 	maximum_education = EDUCATION_TIER_MASTERS
 
-/datum/job/exploration_leader/get_description_blurb()
-	return "You are the Exploration Leader. Your duty is to organize and lead the expeditions to away sites. You command Explorers. You make sure that expedition has the supplies and personnel it needs. You can pilot Charon if you'll not have your pilot and NT doesn't provide their one. Once on the away mission, your duty is to ensure that anything of scientific interest is brought back to the ship and passed to the relevant research lab."
-
 /datum/job/explorer
 	title = "Explorer"
 	department = "Exploration"
@@ -66,6 +63,7 @@
 
 /datum/job/explorer/get_description_blurb()
 	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the NT - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
+
 
 /datum/job/explorer_pilot
 	title = "Expeditionary Pilot"
@@ -98,9 +96,6 @@
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 	required_education = EDUCATION_TIER_BASIC
 	maximum_education = EDUCATION_TIER_BACHELOR
-
-/datum/job/explorer_pilot/get_description_blurb()
-	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the NT - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
 
 /datum/job/explorer_medic
 	title = "Field Medic"
@@ -141,9 +136,6 @@
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 	required_education = EDUCATION_TIER_TRADE
 	maximum_education = EDUCATION_TIER_MASTERS
-
-/datum/job/explorer_medic/get_description_blurb()
-	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the NT - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
 
 /datum/job/explorer_engineer
 	title = "Field Engineer"
@@ -186,6 +178,3 @@
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 	required_education = EDUCATION_TIER_TRADE
 	maximum_education = EDUCATION_TIER_BACHELOR
-
-/datum/job/explorer_engineer/get_description_blurb()
-	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the NT - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."

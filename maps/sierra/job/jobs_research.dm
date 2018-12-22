@@ -103,9 +103,6 @@
 	required_education = EDUCATION_TIER_TRADE
 	maximum_education = EDUCATION_TIER_DOCTORATE
 
-/datum/job/roboticist/get_description_blurb()
-	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics as well as the repair of all synthetic crew on board. You are also responsible for placing brains into MMI's and giving them bodies and the production of exosuits(mechs) for various departments. You answer to the Research Director."
-
 /datum/job/scientist_assistant
 	title = "Research Assistant"
 	department = "Science"

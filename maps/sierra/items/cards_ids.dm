@@ -85,9 +85,8 @@
 /obj/item/weapon/card/id/sierra/crew/engineering/trainee
 	job_access_type = /datum/job/engineer_trainee
 
-/obj/item/weapon/card/id/sierra/crew/engineering/comms/New()
-	.=..()
-	access |= list(access_network, access_tcomsat)
+/obj/item/weapon/card/id/sierra/crew/engineering/comms
+	job_access_type = /datum/job/infsys
 
 
 
