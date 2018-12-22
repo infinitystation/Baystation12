@@ -229,7 +229,7 @@
 		else
 			A.energy_fail(round(DETONATION_SHUTDOWN_APC * random_change))
 			if(A.cell)
-				A.cell.charge = A.cell.charge * random_lost
+				A.cell.charge *= random_lost
 
 	for(var/obj/machinery/power/smes/buildable/S in SSmachines.machinery)
 		if(!(S.z in affected_z))
@@ -238,7 +238,7 @@
 		var/random_change = rand(100 - DETONATION_SHUTDOWN_RNG_FACTOR, 100 + DETONATION_SHUTDOWN_RNG_FACTOR) / 100
 		var/random_lost = rand(0, DETONATION_POWERDRAIN_SMES) / 100 // welcome to your doom
 		S.energy_fail(round(DETONATION_SHUTDOWN_SMES * random_change))
-		S.charge = S.charge * random_lost
+		S.charge *= random_lost
 		S.input_attempt = 0
 		S.output_attempt = 0
 		S.update_icon()
