@@ -448,7 +448,7 @@
 	desc = "Can hold security gear like handcuffs and flashes, with more pouches for more storage."
 	icon_state = "swatbelt"
 	item_state = "swatbelt"
-	storage_slots = 12
+	storage_slots = 10
 
 /obj/item/weapon/storage/belt/waistpack
 	name = "waist pack"
