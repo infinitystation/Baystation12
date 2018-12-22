@@ -36,6 +36,7 @@
 
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
+		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 		var/obj/item/organ/external/affected = H.get_organ(user.zone_sel.selecting)
 		if(!affected)
 			to_chat(user, "<span class='danger'>\The [H] is missing that limb!</span>")
@@ -43,20 +44,21 @@
 		else if(BP_IS_ROBOTIC(affected))
 			to_chat(user, "<span class='danger'>You cannot inject a robotic limb.</span>")
 			return
+		else if(M.can_inject(user, check_zone(user.zone_sel.selecting)) == INJECTION_PORT)
+			user.visible_message("<span class='warning'>\The [user] begins hunting for an injection port on [M]'s suit!</span>")
+			if(!do_mob(user, M, 22))
+				return
+		user.do_attack_animation(M)
+		to_chat(user, "<span class='notice'>You inject [M] with [src].</span>")
+		to_chat(M, "<span class='notice'>You feel a tiny prick!</span>")
+		playsound(src, 'sound/effects/hypospray.ogg',25)
+		user.visible_message("<span class='warning'>[user] injects [M] with [src].</span>")
 
-	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
-	user.do_attack_animation(M)
-	to_chat(user, "<span class='notice'>You inject [M] with [src].</span>")
-	to_chat(M, "<span class='notice'>You feel a tiny prick!</span>")
-	playsound(src, 'sound/effects/hypospray.ogg',25)
-	user.visible_message("<span class='warning'>[user] injects [M] with [src].</span>")
-
-	if(M.reagents)
-		var/contained = reagentlist()
-		var/trans = reagents.trans_to_mob(M, amount_per_transfer_from_this, CHEM_BLOOD)
-		admin_inject_log(user, M, src, contained, trans)
-		to_chat(user, "<span class='notice'>[trans] units injected. [reagents.total_volume] units remaining in \the [src].</span>")
-
+		if(M.reagents)
+			var/contained = reagentlist()
+			var/trans = reagents.trans_to_mob(M, amount_per_transfer_from_this, CHEM_BLOOD)
+			admin_inject_log(user, M, src, contained, trans)
+			to_chat(user, "<span class='notice'>[trans] units injected. [reagents.total_volume] units remaining in \the [src].</span>")
 	return
 
 /obj/item/weapon/reagent_containers/hypospray/vial

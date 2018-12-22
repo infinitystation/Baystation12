@@ -4,7 +4,7 @@ var/list/floor_light_cache = list()
 	name = "floor light"
 	icon = 'icons/obj/machines/floor_light.dmi'
 	icon_state = "base"
-	desc = "A backlit floor panel."
+	desc = "A backlit floor panel. You can change it's color with a multitool"
 	plane = ABOVE_TURF_PLANE
 	layer = ABOVE_TILE_LAYER
 	anchored = 0
@@ -42,6 +42,11 @@ var/list/floor_light_cache = list()
 		stat &= ~BROKEN
 		damaged = null
 		update_brightness()
+	else if(isMultitool(W))
+		var/new_colour = input(usr, "Choose a colour.", "light color", default_light_colour) as color|null
+		if(new_colour && new_colour != default_light_colour)
+			default_light_colour = new_colour
+		to_chat(usr, "<span class='notice'>You set \the [src] to shine with <font color='[default_light_colour]'>a new colour</font>.</span>")
 	else if(W.force && user.a_intent == "hurt")
 		attack_hand(user)
 	return

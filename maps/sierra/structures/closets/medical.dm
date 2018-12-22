@@ -86,6 +86,7 @@
 		/obj/item/device/radio/headset/headset_med,
 		/obj/item/taperoll/medical,
 		/obj/item/weapon/storage/belt/medical/emt,
+		/obj/item/device/flashlight/pen,
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/weapon/tank/emergency/oxygen/engi,
 		/obj/item/weapon/storage/box/autoinjectors,

@@ -13,6 +13,7 @@
 	burst_delay = 1.1
 	mag_insert_sound = 'sound/weapons/guns/interaction/smg_magin.ogg'
 	mag_remove_sound = 'sound/weapons/guns/interaction/smg_magout.ogg'
+	have_safety = 1
 
 	//machine pistol, easier to one-hand with
 	firemodes = list(
@@ -171,6 +172,11 @@
 		list(mode_name="short bursts",   burst=4, fire_delay=null, move_delay=4,    one_hand_penalty=4, burst_accuracy=list(0,-1,-1.5,-2), dispersion=list(0.6, 0.8, 1.0, 1.4)),
 		)
 
+/obj/item/weapon/gun/projectile/automatic/nt41/on_update_icon()
+	..()
+	icon_state = (ammo_magazine)? "nt41" : "nt41-e"
+
+
 /obj/item/weapon/gun/projectile/automatic/z8
 	name = "Z8 carabine"
 	desc = "The Z8 Bulldog is an older model bullpup carbine, made by the now defunct Zendai Foundries. Uses armor piercing 7.62mm rounds. Makes you feel like a space marine when you hold it."
@@ -260,6 +266,7 @@
 	magazine_type = /obj/item/ammo_magazine/box/a556
 	allowed_magazines = list(/obj/item/ammo_magazine/box/a556, /obj/item/ammo_magazine/c556)
 	one_hand_penalty = 6
+	burst = 5
 	wielded_item_state = "gun_wielded"
 	mag_insert_sound = 'sound/weapons/guns/interaction/lmg_magin.ogg'
 	mag_remove_sound = 'sound/weapons/guns/interaction/lmg_magout.ogg'

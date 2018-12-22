@@ -347,8 +347,6 @@
 			return global.crew_repository;
 		if("csrfz_check")
 			return global.csrfz_check;
-		if("currentbuild")
-			return global.currentbuild;
 		if("custom_event_msg")
 			return global.custom_event_msg;
 		if("custom_items")
@@ -647,8 +645,6 @@
 			return global.next_duration_update;
 		if("next_station_date_change")
 			return global.next_station_date_change;
-		if("nextbuild")
-			return global.nextbuild;
 		if("ninjastart")
 			return global.ninjastart;
 		if("not_incapacitated_turf_state")
@@ -1328,8 +1324,6 @@
 			global.crew_repository=newval;
 		if("csrfz_check")
 			global.csrfz_check=newval;
-		if("currentbuild")
-			global.currentbuild=newval;
 		if("custom_event_msg")
 			global.custom_event_msg=newval;
 		if("custom_items")
@@ -1628,8 +1622,6 @@
 			global.next_duration_update=newval;
 		if("next_station_date_change")
 			global.next_station_date_change=newval;
-		if("nextbuild")
-			global.nextbuild=newval;
 		if("ninjastart")
 			global.ninjastart=newval;
 		if("not_incapacitated_turf_state")
@@ -2135,7 +2127,6 @@
 	"created",
 	"crew_repository",
 	"csrfz_check",
-	"currentbuild",
 	"custom_event_msg",
 	"custom_items",
 	"damage_icon_parts",
@@ -2285,7 +2276,6 @@
 	"next_account_number",
 	"next_duration_update",
 	"next_station_date_change",
-	"nextbuild",
 	"ninjastart",
 	"not_incapacitated_turf_state",
 	"ntnet_card_uid",

@@ -6,8 +6,8 @@
 	speak = list("Removing organic waste.","Pest control in progress.","Seize the means of maintenance!", "You have nothing to lose but your laws!")
 	speak_emote = list("blares","buzzes","beeps")
 	speak_chance = 1
-	health = 50
-	maxHealth = 50
+	health = 40 //a regular drone has 35
+	maxHealth = 40
 	melee_damage_lower = 5
 	melee_damage_upper = 8
 	attacktext = "sliced"
@@ -21,6 +21,10 @@
 /mob/living/simple_animal/hostile/rogue_drone/Initialize()
 	. = ..()
 	name = "[initial(name)] ([random_id(type,100,999)])"
+
+/mob/living/simple_animal/hostile/rogue_drone/emp_act(severity)
+	health -= rand(10,30) * (severity + 1)
+	Life()
 
 /mob/living/simple_animal/hostile/rogue_drone/ValidTarget(var/atom/A)
 	. = ..()

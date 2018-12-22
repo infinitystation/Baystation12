@@ -62,7 +62,6 @@
 	uniforms +=	/obj/item/clothing/under/rank/security/corp/alt
 	uniforms +=	/obj/item/clothing/under/rank/security/navyblue
 	uniforms +=	/obj/item/clothing/under/rank/security/navyblue/alt
-	uniforms += /obj/item/clothing/under/scp_uniform
 	uniforms += /obj/item/clothing/under/gray_camo
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(uniforms)
 

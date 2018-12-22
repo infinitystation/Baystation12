@@ -10,17 +10,17 @@
 	alt_titles = list(
 		"Sanitation Technician")
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/janitor
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(   SKILL_HAULING = SKILL_BASIC)
 
-	access = list(access_maint_tunnels, access_emergency_storage, access_janitor)
-
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/civilian, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor, /datum/mil_rank/civ/civ)
+	
 	skill_points = 4 //at least, he should be able to attack with a mop and throw heavy objects
 
+  min_skill = list(	SKILL_HAULING = SKILL_BASIC)
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX) //try your best, space janitor (+46 ages - professional)
 
-	minimal_access = list()
+  access = list(access_maint_tunnels, access_emergency_storage, access_janitor)
+  minimal_access = list()
 
 	required_education = EDUCATION_TIER_DROPOUT
 	maximum_education = EDUCATION_TIER_TRADE
@@ -37,13 +37,15 @@
 		"Culinary Specialist"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/cook
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(   SKILL_COOKING   = SKILL_ADEPT,
+
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/civilian, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor, /datum/mil_rank/civ/civ)
+
+  min_skill = list(   SKILL_COOKING   = SKILL_ADEPT,
 	                    SKILL_BOTANY    = SKILL_BASIC,
 	                    SKILL_CHEMISTRY = SKILL_BASIC)
 
-	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_bar, access_commissary)
+	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_commissary)
 
 	skill_points = 7
 
@@ -59,10 +61,10 @@
 	ideal_character_age = 30
 	selection_color = "#515151"
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/bartender
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/civilian, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor, /datum/mil_rank/civ/civ)
 
-	access = list(access_hydroponics, access_bar, access_kitchen, access_commissary)
+	access = list(access_hydroponics, access_bar, access_commissary)
 
 	skill_points = 7
 

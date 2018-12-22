@@ -11,7 +11,7 @@
 
 	preview_icon = 'icons/mob/human_races/species/ipc/preview.dmi'
 
-	unarmed_types = list(/datum/unarmed_attack/punch)
+	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch)
 	rarity_value = 2
 	strength = STR_HIGH
 
@@ -64,6 +64,7 @@
 		),
 		TAG_HOMEWORLD = list(
 			HOME_SYSTEM_ROOT,
+			HOME_SYSTEM_TIAMATH,
 			HOME_SYSTEM_EARTH,
 			HOME_SYSTEM_LUNA,
 			HOME_SYSTEM_MARS,
@@ -71,7 +72,18 @@
 			HOME_SYSTEM_CERES,
 			HOME_SYSTEM_PLUTO,
 			HOME_SYSTEM_TAU_CETI,
+			HOME_SYSTEM_HELIOS,
+			HOME_SYSTEM_TERSTEN,
+			HOME_SYSTEM_AHDOMAI,
+			HOME_SYSTEM_TERRA,
+			HOME_SYSTEM_LORRIMAN,
+			HOME_SYSTEM_CINU,
+			HOME_SYSTEM_YUKLID,
+			HOME_SYSTEM_LORDANIA,
+			HOME_SYSTEM_KINGSTON,
+			HOME_SYSTEM_GAIA,
 			HOME_SYSTEM_OTHER
+
 		),
 		TAG_FACTION = list(
 			FACTION_POSITRONICS,
@@ -79,8 +91,13 @@
 			FACTION_TERRAN_CONFED,
 			FACTION_NANOTRASEN,
 			FACTION_FREETRADE,
+			FACTION_HEPHAESTUS,
 			FACTION_XYNERGY,
+			FACTION_FLEET,
 			FACTION_EXPEDITIONARY,
+			FACTION_PCRC,
+			FACTION_CORPORATE,
+			FACTION_DAIS,
 			FACTION_OTHER
 		)
 	)

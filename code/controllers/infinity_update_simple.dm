@@ -1,3 +1,5 @@
+//21.12.2018 - turned off, cause it's unfinished
+
 /client/proc/update_server()
 	set category = "Server"
 	set name = "Update Server"

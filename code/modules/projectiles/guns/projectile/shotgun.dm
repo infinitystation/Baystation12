@@ -94,6 +94,9 @@
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel/pellet
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 
+/obj/item/weapon/gun/projectile/shotgun/doublebarrel/empty
+	ammo_type = null
+
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel/flare
 	name = "signal shotgun"
 	desc = "A double-barreled shotgun meant to fire signal flash shells."

@@ -1,7 +1,5 @@
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory
 	name = "armory guncabinet"
-	req_access = list()
-	req_one_access = list(access_armory)
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/smg
 	name = "submachine gun guncabinet"

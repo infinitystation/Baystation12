@@ -168,9 +168,8 @@
 	gear_tweaks += new/datum/gear_tweak/path(colours)
 
 /datum/gear/zippo
-	display_name = "zippo"
+	display_name = "zippo (collored)"
 	path = /obj/item/weapon/flame/lighter/zippo
-	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/zippo/New()
 	..()

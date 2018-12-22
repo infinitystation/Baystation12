@@ -1,48 +1,5 @@
-##
-# Custom items go here. They are modifications of existing paths; look at the example for details.
-# Item will spawn if the target has one of the req_titles and if their on-spawn ID has the required access level.
-# req_access is going to be a shit to maintain since the config file can't grab constants and has to use integers, use it minimally.
-# Separate titles with a single comma and a space (', ') or they'll bork.
-#
-# EX:
-# {
-# ckey: zuhayr
-# character_name: Jane Doe
-# item_path: /obj/item/toy/plushie
-# item_name: ugly plush toy
-# item_icon: flagmask     
-# item_desc: It's truly hideous.
-# req_titles: Assistant, Security Officer
-# req_access: 1
-# paper_title: Instruction
-# paper_info: Do not throw it
-# papep_stamp_type: /obj/item/weapon/stamp
-# }
-#
-# {
-# ckey: zuhayr
-# character_name: Jane Doe
-# item_path: /obj/item/device/kit/paint
-# item_name: APLU customisation kit
-# item_desc: A customisation kit with all the parts needed to turn an APLU into a "Titan's Fist" model.
-# kit_name: APLU "Titan's Fist"
-# kit_desc: Looks like an overworked, under-maintained Ripley with some horrific damage.
-# kit_icon: titan
-# additional_data: ripley, firefighter
-# }
-#
-# {
-# ckey: zuhayr
-# character_name: Jane Doe
-# item_path: /obj/item/device/kit/suit
-# item_name: salvage suit customisation kit
-# item_desc: A customisation kit with all the parts needed to convert a suit.
-# kit_name: salvage
-# kit_desc: An orange voidsuit. Reinforced!
-# kit_icon: salvage
-# }
-##
 #	PMP HERE
+
 {
 ckey: sallyvadordomold
 character_name: Sally Kimberly
@@ -142,6 +99,11 @@ item_path: /obj/item/device/pmp/personal
 ckey: unbidden
 character_name: Milo Moon
 item_path: /obj/item/device/pmp/personal
+}
+{
+ckey: furrydog
+character_name: Niar Seras'sar
+item_path: /obj/item/device/pmp/personal/dusty
 }
 {
 ckey: forrya
@@ -310,7 +272,7 @@ item_path: /obj/item/clothing/head/kitty/fake
 }
 {
 ckey: s1334
-character_name: Essah Reiihoz
+character_name: Essash Reiihoz
 item_path: /obj/item/device/synthesized_instrument/guitar/multi
 }
 {
@@ -318,6 +280,16 @@ ckey: logfol
 character_name: Alias Victus
 item_path: /obj/item/clothing/head/beret/centcom/officer
 item_desc: A navy blue beret adorned with the named "Grom" crest of corporate asset protection. For asset protection agents that are more inclined towards style than safety.
+}
+{
+ckey: sfd
+character_name: Khristen Sommer
+item_path: /obj/item/weapon/clothingbag/tools
+}
+{
+ckey: sfd
+character_name: E-U #25308
+item_path: /obj/item/weapon/clothingbag/tools
 }
 
 #	MEDIUM ITEMS HERE (5-6)
@@ -422,6 +394,13 @@ item_path: /obj/item/weapon/material/kitchen/utensil/knife/boot
 item_name: karambit
 item_desc: A small curved knife.
 item_icon: karambit2
+}
+{
+ckey: tochkarus
+character_name: Joe King
+item_path: /obj/item/weapon/flame/lighter/zippo/infinity/fancy
+item_name: April Kiss
+item_desc: Zippo lighter with the image of a rose bud. Strange, but you are ready to swear that the lighter smells like a flower.
 }
 
 #	LONG ITEMS HERE (+7)

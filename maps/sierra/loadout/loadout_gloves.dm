@@ -11,11 +11,6 @@
 	display_name = "gloves, dress"
 	path = /obj/item/clothing/gloves/color/white
 
-/datum/gear/gloves/work
-	display_name = "gloves, work"
-	path = /obj/item/clothing/gloves/duty
-	cost = 2
-
 /datum/gear/gloves/insulated
 	display_name = "insulated gloves selection"
 	path = /obj/item/clothing/gloves/insulated
@@ -28,8 +23,3 @@
 	glovtype["yellow insulated"] = /obj/item/clothing/gloves/insulated
 	glovtype["black insulated"] = /obj/item/clothing/gloves/insulated/black
 	gear_tweaks += new/datum/gear_tweak/path(glovtype)
-
-/datum/gear/gloves/duty
-	display_name = "gloves, duty"
-	path = /obj/item/clothing/gloves/duty
-	cost = 2

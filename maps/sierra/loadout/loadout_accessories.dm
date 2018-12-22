@@ -27,9 +27,11 @@
 
 /datum/gear/accessory/ntaward
 	allowed_roles = NANOTRASEN_ROLES
+	allowed_branches = list(/datum/mil_branch/employee)
 
 /datum/gear/accessory/ntaward_sci
 	allowed_roles = RESEARCH_ROLES
+	allowed_branches = list(/datum/mil_branch/employee)
 
 /datum/gear/accessory/stethoscope
 	allowed_roles = STERILE_ROLES
@@ -59,3 +61,4 @@
 
 /datum/gear/accessory/ftupin
 	allowed_roles = list(/datum/job/merchant, /datum/job/merchant_trainee, /datum/job/assistant)
+	allowed_branches = list(/datum/mil_branch/civilian)

@@ -40,7 +40,7 @@
 	heat_level_2 = SYNTH_HEAT_LEVEL_2
 	heat_level_3 = SYNTH_HEAT_LEVEL_3
 
-	species_flags = SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_MINOR_CUT
+	species_flags = SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_PAIN | SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_MINOR_CUT | SPECIES_FLAG_NO_SLIP
 	spawn_flags =   SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN | SPECIES_NO_LACE
 
 	appearance_flags = HAS_EYE_COLOR | HAS_BASE_SKIN_COLOURS
@@ -50,6 +50,11 @@
 	slowdown = -1
 	hud_type = /datum/hud_data/adherent
 	pixel_offset_y = -4
+
+	descriptors = list(
+		/datum/mob_descriptor/height = 1.6,
+		/datum/mob_descriptor/build = 0.4
+		)
 
 	available_cultural_info = list(
 		TAG_CULTURE = list(

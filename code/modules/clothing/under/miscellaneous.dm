@@ -525,6 +525,7 @@
 /obj/item/clothing/under/serviceoveralls
 	name = "workman outfit"
 	desc = "The very image of a working man. Not that you're probably doing work."
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
 	icon_state = "mechanic"
 	item_state = "lb_suit"
 	worn_state = "mechanic"
@@ -558,6 +559,7 @@
 	icon_state = "gear_harness"
 	worn_state = "gear_harness"
 	body_parts_covered = 0
+	species_restricted = null
 
 /obj/item/clothing/under/pcrc
 	name = "\improper PCRC uniform"

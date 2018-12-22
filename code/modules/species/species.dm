@@ -390,10 +390,11 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 		var/mob/living/carbon/human/T = target
 		affecting = T.get_organ(H.zone_sel.selecting)
 		if(!T.species.ambiguous_genders || (T.species.ambiguous_genders && H.species == T.species))
-			if(MALE)
-				t_him = "him"
-			if(FEMALE)
-				t_him = "her"
+			switch(target.gender)
+				if(MALE)
+					t_him = "him"
+				if(FEMALE)
+					t_him = "her"
 		else
 			t_him = "them"
 	else

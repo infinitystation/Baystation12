@@ -11,13 +11,13 @@
 /datum/access/petrov
 	id = access_petrov
 	desc = "Petrov"
-	region = ACCESS_REGION_GENERAL
+	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_petrov_helm = 75
 /datum/access/petrov_helm
 	id = access_petrov_helm
 	desc = "Petrov Helm"
-	region = ACCESS_REGION_GENERAL
+	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_guppy_helm = 76
 /datum/access/guppy_helm

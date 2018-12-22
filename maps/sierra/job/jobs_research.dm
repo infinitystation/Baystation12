@@ -13,7 +13,7 @@
 	alt_titles = list(
 		"Research Supervisor")
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/senior_scientist
-	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_branches = list(/datum/mil_branch/employee)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
 	access = list(access_tox, access_tox_storage, access_research, access_mining, access_mining_office,
@@ -61,8 +61,8 @@
 	                    SKILL_SCIENCE     = SKILL_MAX)
 
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/scientist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 
 	access = list(access_tox, access_tox_storage, access_research, access_petrov, access_petrov_helm,
 						access_mining_office, access_mining_station, access_xenobiology, access_guppy_helm,
@@ -78,8 +78,8 @@
 	department = "Science"
 	department_flag = SCI
 
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the Research Director"
 	selection_color = "#633d63"
 	economic_power = 6
@@ -87,9 +87,11 @@
 		"Biomechanical Engineer",
 		"Mechsuit Technician")
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/roboticist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
-	min_skill = list(   SKILL_COMPUTER     = SKILL_ADEPT,
+
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
+	
+  min_skill = list(   SKILL_COMPUTER     = SKILL_ADEPT,
 	                    SKILL_MECH         = SKILL_ADEPT,
 	                    SKILL_DEVICES      = SKILL_ADEPT)
 
@@ -133,8 +135,8 @@
 	skill_points = 6
 
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/assist
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 
 	access = list(access_research, access_mining_office, access_petrov, access_expedition_shuttle, access_guppy, access_hangar)
 

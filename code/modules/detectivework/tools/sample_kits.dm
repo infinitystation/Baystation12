@@ -79,7 +79,7 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
-	if(H.gloves)
+	if(H.gloves && !istype(H.gloves, /obj/item/clothing/ring))
 		to_chat(user, "<span class='warning'>Take \the [H.gloves] off first.</span>")
 		return
 

@@ -185,7 +185,7 @@
 	take_damage(tforce)
 
 /obj/structure/wall_frame/proc/dismantle()
-	new /obj/item/stack/material/steel(get_turf(src))
+	new /obj/item/stack/material/steel(get_turf(src), 2)
 	qdel(src)
 
 /obj/structure/wall_frame/take_damage(damage)

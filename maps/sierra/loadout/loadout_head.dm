@@ -13,4 +13,5 @@
 /datum/gear/head/scp_cap
 	display_name = "SCP cap"
 	path = /obj/item/clothing/head/soft/scp_cap
-	allowed_roles = ARMORED_ROLES
+	allowed_roles = list(/datum/job/detective, /datum/job/officer)
+	allowed_branches = list(/datum/mil_branch/contractor)

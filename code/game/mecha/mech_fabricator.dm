@@ -10,6 +10,7 @@
 	active_power_usage = 5000
 	req_access = list(access_robotics)
 
+	var/locked = 0
 	var/speed = 1
 	var/mat_efficiency = 1
 	var/list/materials = list(MATERIAL_STEEL = 0, MATERIAL_GLASS = 0, MATERIAL_GOLD = 0, MATERIAL_SILVER = 0, MATERIAL_DIAMOND = 0, MATERIAL_PHORON = 0, MATERIAL_URANIUM = 0)
@@ -86,8 +87,6 @@
 /obj/machinery/mecha_part_fabricator/attack_hand(var/mob/user)
 	if(..())
 		return
-	if(!allowed(user))
-		return
 	ui_interact(user)
 
 /obj/machinery/mecha_part_fabricator/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
@@ -112,6 +111,7 @@
 	data["materials"] = get_materials()
 	data["maxres"] = res_max_amount
 	data["sync"] = sync_message
+	data["locked"] = locked
 	if(current)
 		data["builtperc"] = round((progress / current.time) * 100)
 
@@ -125,6 +125,13 @@
 /obj/machinery/mecha_part_fabricator/Topic(href, href_list)
 	if(..())
 		return
+
+	var/user = usr
+	if(href_list["lock"])
+		if(allowed(user) || emagged)
+			locked = !locked
+		else
+			to_chat(user, "<span class='warning'>Unauthorized Access.</span>")
 
 	if(href_list["build"])
 		add_to_queue(text2num(href_list["build"]))

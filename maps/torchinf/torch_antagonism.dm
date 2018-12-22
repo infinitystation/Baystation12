@@ -19,7 +19,7 @@
 
 /datum/antagonist/ert
 	var/sic //Second-In-Command
-	leader_welcome_text = "As leader of the Emergency Response Team, you are part of the Sol Central Government Fleet, and are there with the intention of restoring normal operation to the vessel or the safe evacuation of crew and passengers. You should, to this effect, aid the Commanding Officer or ranking officer aboard in their endeavours to achieve this."
+	leader_welcome_text = "<span class='warning'>Как лидер Отр&#255;д&#255; Быстрого Реагировани&#255;, вы &#255;вл&#255;етесь частью флота ЦПСС и действуешь с целью восстановлени&#255; нормальной работы корабл&#255; %STATION_NAME%, либо эвакуации экипажа и пассажиров. Име&#255; перед собой такие задачи, вы должны помочь капитану (или ВРИО капитана) на борту в его усили&#255;х по достижению этого.</span>"
 
 /datum/antagonist/ert/equip(var/mob/living/carbon/human/player)
 

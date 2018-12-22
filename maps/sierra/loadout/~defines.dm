@@ -33,3 +33,8 @@
 #undef ARMED_ROLES
 
 #undef ARMORED_ROLES
+
+#undef CONTRACT_ROLES
+
+#undef CIVILIAN_ROLES
+

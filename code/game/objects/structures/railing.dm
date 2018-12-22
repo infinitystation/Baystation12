@@ -238,6 +238,7 @@
 
 /obj/structure/railing/attackby(var/obj/item/W, var/mob/user)
 	// Handle harm intent grabbing/tabling.
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(istype(W, /obj/item/grab) && get_dist(src,user)<2)
 		var/obj/item/grab/G = W
 		if(istype(G.affecting, /mob/living/carbon/human))
@@ -316,7 +317,7 @@
 		return
 
 	if(W.force && (W.damtype == "fire" || W.damtype == "brute"))
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+//		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		visible_message("<span class='danger'>\The [src] has been [LAZYLEN(W.attack_verb) ? pick(W.attack_verb) : "attacked"] with \the [W] by \the [user]!</span>")
 		take_damage(W.force)
 		return

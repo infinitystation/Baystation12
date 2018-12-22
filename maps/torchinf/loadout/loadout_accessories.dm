@@ -33,11 +33,11 @@
 	solminors["frontier ribbon"] = /obj/item/clothing/accessory/ribbon/solgov/frontier
 	solminors["instructor ribbon"] = /obj/item/clothing/accessory/ribbon/solgov/instructor
 	gear_tweaks += new/datum/gear_tweak/path(solminors)
-
+/*
 /datum/gear/accessory/tags
 	display_name = "dog tags"
 	path = /obj/item/clothing/accessory/badge/solgov/tags
-
+*/
 /datum/gear/accessory/ec_patch
 	display_name = "Expeditionary Corps patch"
 	path = /obj/item/clothing/accessory/solgov/ec_patch
@@ -95,12 +95,6 @@
 /datum/gear/accessory/ntaward
 	allowed_branches = CIVILIAN_BRANCHES
 
-/datum/gear/accessory/tie
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/accessory/tie_color
-	allowed_branches = CIVILIAN_BRANCHES
-
 /datum/gear/accessory/stethoscope
 	allowed_roles = STERILE_ROLES
 
@@ -138,53 +132,11 @@
 /datum/gear/tactical/helm_covers
 	allowed_roles = ARMORED_ROLES
 
-/datum/gear/clothing/hawaii
-	allowed_roles = SEMIFORMAL_ROLES
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/clothing/scarf
-	allowed_roles = SEMIANDFORMAL_ROLES
-
-/datum/gear/clothing/flannel
-	allowed_roles = SEMIFORMAL_ROLES
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/clothing/vest
-	allowed_roles = FORMAL_ROLES
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/clothing/suspenders
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/clothing/wcoat
-	allowed_roles = FORMAL_ROLES
-
-/datum/gear/clothing/zhongshan
-	allowed_roles = FORMAL_ROLES
-
-/datum/gear/clothing/dashiki
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/clothing/thawb
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/clothing/sherwani
-	allowed_roles = FORMAL_ROLES
-
-/datum/gear/clothing/qipao
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/clothing/sweater
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/clothing/tangzhuang
-	allowed_branches = CIVILIAN_BRANCHES
-
-/datum/gear/accessory/bowtie
-	allowed_branches = CIVILIAN_BRANCHES
-
 /datum/gear/accessory/ftupin
 	allowed_branches = CIVILIAN_BRANCHES
+
+/datum/gear/head/kittyears
+	allowed_roles = RESTRICTED_ROLES
 
 /*********************
  tactical accessories

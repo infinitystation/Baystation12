@@ -129,3 +129,10 @@ Weapons
 
 /obj/effect/paint/hull
 	color = COLOR_HULL
+
+/obj/item/device/boombox/anchored //for bar's private rooms
+	name = "stationary boombox"
+	anchored = 1
+
+/obj/item/device/boombox/anchored/attack_hand(var/mob/user)
+	interact(user)

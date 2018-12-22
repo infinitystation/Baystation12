@@ -11,7 +11,7 @@
 	economic_power = 7
 	ideal_character_age = 35
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/el
-	allowed_branches = list(/datum/mil_branch/civilian)
+	allowed_branches = list(/datum/mil_branch/employee)
 	allowed_ranks = list(/datum/mil_rank/civ/nt)
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
@@ -49,12 +49,12 @@
 	ideal_character_age = 20
 	economic_power = 3
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/explorer
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 
 	min_skill = list(   SKILL_EVA         = SKILL_BASIC,
-	                    SKILL_SCIENCE     = SKILL_BASIC,
-	                    SKILL_WEAPONS     = SKILL_BASIC)
+	                    SKILL_SCIENCE     = SKILL_BASIC)
 
 	max_skill = list(   SKILL_SCIENCE     = SKILL_MAX)
 
@@ -82,8 +82,9 @@
 	ideal_character_age = 24
 	economic_power = 4
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/pilot
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 
 	min_skill = list(   SKILL_EVA           = SKILL_BASIC,
 	                    SKILL_SCIENCE       = SKILL_BASIC,
@@ -116,8 +117,12 @@
 	minimal_player_age = 9
 	ideal_character_age = 34
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/medic
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
+
+	skill_points = 16
+
 	economic_power = 4
 
 	min_skill = list(   SKILL_EVA     = SKILL_BASIC,
@@ -127,8 +132,6 @@
 
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
 	                    SKILL_SCIENCE     = SKILL_MAX)
-
-	skill_points = 13
 
 	access = list(	access_explorer, access_maint_tunnels, access_eva, access_emergency_storage,
 					access_guppy_helm, access_expedition_shuttle, access_guppy, access_hangar,
@@ -156,8 +159,8 @@
 	ideal_character_age = 28
 	economic_power = 4
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/engineer
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ/nt)
+	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
+	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 
 	min_skill = list(   SKILL_EVA           = SKILL_BASIC,
 	                    SKILL_CONSTRUCTION  = SKILL_BASIC,

@@ -150,6 +150,23 @@
 
 	return blocked
 
+/obj/item/weapon/reagent_containers/food/drinks/bottle/bullet_act(var/obj/item/projectile/P, var/chance)
+	if(prob(chance))
+		smash(loc, P)
+	return PROJECTILE_CONTINUE
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+	if(istype(mover, /obj/item/projectile))
+		var/obj/item/projectile/proj = mover
+		if(proj.damage <= 2) //no pistons
+			return ..()
+		var/chance = 40
+		if(target == src)
+			chance = 90
+		bullet_act(proj, chance)
+	return ..()
+
+
 //Keeping this here for now, I'll ask if I should keep it here.
 /obj/item/weapon/broken_bottle
 
