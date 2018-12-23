@@ -23,13 +23,14 @@
 	antag_costs = list(MODE_MERCENARY = 16)
 	path = /obj/item/device/uplink_service/fake_rad_storm
 
+/*
 /datum/uplink_item/item/services/fake_crew_annoncement
 	name = "Crew Arrival Announcement and Records"
 	desc = "Creates a fake crew arrival announcement as well as fake crew records, using your current appearance (including held items!) and worn id card. Prepare well!"
 	item_cost = 16
 	antag_costs = list(MODE_MERCENARY = 12)
 	path = /obj/item/device/uplink_service/fake_crew_announcement
-
+*/
 /datum/uplink_item/item/services/suit_sensor_shutdown
 	name = "Complete Suit Sensor Shutdown"
 	desc = "Completely disables all suit sensors for 10 minutes."

@@ -218,7 +218,7 @@
 	..()
 	icon_state = "lichen"
 
-/obj/structire/flora/ausbushes/algae/random/New()
+/obj/structure/flora/ausbushes/algae/random/New()
 	..()
 	icon_state = pick("lichen", "seaweed", "grassybush_[rand(1, 4)]", "sparsegrass_[rand(1, 3)]", "fullgrass_[rand(1, 3)]")
 

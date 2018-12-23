@@ -162,6 +162,13 @@
 	damage = 60 //.50AE
 	armor_penetration = 30
 
+/obj/item/projectile/bullet/pistol/strong/rubber
+	damage = 0
+	sharp = 0
+	embed = 0
+	armor_penetration = 10
+	agony = 60
+
 /obj/item/projectile/bullet/pistol/strong/revolver //revolvers
 	damage = 50 //Revolvers get snowflake bullets, to keep them relevant
 	armor_penetration = 20
