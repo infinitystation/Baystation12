@@ -9,7 +9,7 @@
 	var/mob/living/pulling = null
 	var/bloodiness
 
-	movement_handlers = list(/datum/movement_handler/delay = list(2), /datum/movement_handler/move_relay_self)
+	movement_handlers = list(/datum/movement_handler/delay = list(6), /datum/movement_handler/move_relay_self)
 
 /obj/structure/bed/chair/wheelchair/on_update_icon()
 	return
