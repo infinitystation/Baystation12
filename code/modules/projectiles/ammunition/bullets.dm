@@ -27,6 +27,10 @@
 	icon_state = "50casing"
 	spent_icon = "50casing-spent"
 
+/obj/item/ammo_casing/a50/rubber
+	desc = "A .50AE rubber edition"
+	projectile_type = /obj/item/projectile/bullet/pistol/strong/rubber
+
 /obj/item/ammo_casing/a75
 	desc = "A 20mm bullet casing."
 	caliber = "75"
