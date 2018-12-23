@@ -599,7 +599,7 @@
 	var/obj/item/aicard
 	inputs = list()
 	outputs = list("AI's signature" = IC_PINTYPE_STRING)
-	activators = list("Upwards" = IC_PINTYPE_PULSE_OUT, "Downwards" = IC_PINTYPE_PULSE_OUT, "Left" = IC_PINTYPE_PULSE_OUT, "Right" = IC_PINTYPE_PULSE_OUT)
+	activators = list("Upwards" = IC_PINTYPE_PULSE_OUT, "Downwards" = IC_PINTYPE_PULSE_OUT, "Left" = IC_PINTYPE_PULSE_OUT, "Right" = IC_PINTYPE_PULSE_OUT, "Push AI Name" = IC_PINTYPE_PULSE_IN)
 	origin_tech = list(TECH_DATA = 4)
 	spawn_flags = IC_SPAWN_RESEARCH
 
@@ -611,6 +611,10 @@
 
 	var/obj/item/device/electronic_assembly/assembly = get_object()
 	assembly.closed_interact(usr)
+
+/obj/item/integrated_circuit/manipulation/ai/do_work()
+	var/datum/integrated_io/O = outputs[1]
+	O.push_data()
 
 /obj/item/integrated_circuit/manipulation/ai/relaymove(var/mob/user, var/direction)
 	switch(direction)
