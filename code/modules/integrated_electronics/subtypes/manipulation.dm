@@ -597,6 +597,8 @@
 	cooldown_per_use = 1 SECOND
 	power_draw_per_use = 20
 	var/obj/item/aicard
+	inputs = list()
+	outputs = list("AI's signature" = IC_PINTYPE_STRING)
 	activators = list("Upwards" = IC_PINTYPE_PULSE_OUT, "Downwards" = IC_PINTYPE_PULSE_OUT, "Left" = IC_PINTYPE_PULSE_OUT, "Right" = IC_PINTYPE_PULSE_OUT)
 	origin_tech = list(TECH_DATA = 4)
 	spawn_flags = IC_SPAWN_RESEARCH
@@ -629,10 +631,11 @@
 	if(L && L.key && user.unEquip(card))
 		L.forceMove(src)
 		controlling = L
-		card.dropInto(src)
+		card.forceMove(src)
 		aicard = card
 		user.visible_message("\The [user] loads \the [card] into \the [src]'s device slot")
 		to_chat(L, "<span class='notice'>### IICC FIRMWARE LOADED ###</span>")
+		set_pin_data(IC_OUTPUT, 1, controlling.name)
 
 /obj/item/integrated_circuit/manipulation/ai/proc/unload_ai()
 	if(!controlling)
@@ -643,6 +646,7 @@
 	aicard.dropInto(loc)
 	aicard = null
 	controlling = null
+	set_pin_data(IC_OUTPUT, 1, null)
 
 
 /obj/item/integrated_circuit/manipulation/ai/attackby(var/obj/item/I, var/mob/user)
