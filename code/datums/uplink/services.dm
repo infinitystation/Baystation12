@@ -23,14 +23,14 @@
 	antag_costs = list(MODE_MERCENARY = 16)
 	path = /obj/item/device/uplink_service/fake_rad_storm
 
-/*
+
 /datum/uplink_item/item/services/fake_crew_annoncement
 	name = "Crew Arrival Announcement and Records"
 	desc = "Creates a fake crew arrival announcement as well as fake crew records, using your current appearance (including held items!) and worn id card. Prepare well!"
 	item_cost = 16
 	antag_costs = list(MODE_MERCENARY = 12)
 	path = /obj/item/device/uplink_service/fake_crew_announcement
-*/
+
 /datum/uplink_item/item/services/suit_sensor_shutdown
 	name = "Complete Suit Sensor Shutdown"
 	desc = "Completely disables all suit sensors for 10 minutes."
@@ -208,6 +208,7 @@
 	if(GLOB.all_crew_records.len)
 		random_record = pick(GLOB.all_crew_records)
 	var/datum/computer_file/report/crew_record/new_record = CreateModularRecord(user)
+	sleep(10)
 	if(I)
 		new_record.set_name(I.registered_name)
 		new_record.set_formal_name("[I.formal_name_prefix][I.registered_name][I.formal_name_suffix]")
