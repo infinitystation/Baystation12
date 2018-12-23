@@ -72,8 +72,8 @@
 	desc = "Card of private criminalist."
 	icon_state = "centcomNew"
 	//job_access_type = /datum/job/captain
-	access = list(access_sec_doors, access_medical, access_morgue, access_maint_tunnels, access_external_airlocks, access_hangar, access_bridge, 101) 
-	
+	access = list(access_sec_doors, access_medical, access_morgue, access_maint_tunnels, access_external_airlocks, 73, access_bridge, 101)
+
 /decl/hierarchy/outfit/job/elsa_detective
 	name = "Private criminalist"
 	hierarchy_type = /decl/hierarchy/outfit/job

@@ -263,7 +263,7 @@ MRE Stuff
 
 /obj/item/weapon/storage/mrebag/on_update_icon()
 	if(opened)
-		icon_state = "[initial_icon][opened]"
+		icon_state = "[initial(icon_state)][opened]"
 	. = ..()
 
 /obj/item/weapon/storage/mrebag/attack_self(mob/user)
