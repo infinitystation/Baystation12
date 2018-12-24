@@ -1,10 +1,9 @@
 # Модифицированный baystation12
 [![Build Status](https://travis-ci.org/infinitystation/Baystation12.svg?branch=master)](https://travis-ci.org/infinitystation/Baystation12)  
 
-**Код**: https://github.com/infinitystation/Baystation12  
+**Код**: https://github.com/TheArkStation/Baystation12.git 
 **Сайт разработчика:** https://infinity-ss13.info/  
-**Discord**: https://discord.gg/N4atUkH  
-**Используемые карты:** Sierra, Модифицированный Bearcat 
+**Используемые карты:** Sierra 
 
 **Сайт оригинального разработчика:** https://baystation12.net  
 **Оригинальный код:** https://github.com/Baystation12/Baystation12  
@@ -23,7 +22,7 @@
 1. Установить любой другой git-клиент.  
 SourceTree, Github for Windows, git-scm, TortoiseGit или любой другой.  
 2. Зайти в клиент и клонировать репозиторий по ссылке:  
-https://github.com/infinitystation/Baystation12.git
+https://github.com/TheArkStation/Baystation12.git
 
 ## УСТАНОВКА
 0. Убедитесь, что у вас есть BYOND. Скачать можно здесь: http://www.byond.com/.  
