@@ -3,7 +3,7 @@
  * You can also toggle visibility from in-game with toggle-hub-visibility; be aware that it takes a few minutes for the hub go
  */
 	hub = "Exadv1.spacestation13"
-	name = "Infinity - RU"
+	name = "TheArkProject - RU"
 
 /world/proc/update_hub_visibility()
 	GLOB.visibility_pref = !(GLOB.visibility_pref)
