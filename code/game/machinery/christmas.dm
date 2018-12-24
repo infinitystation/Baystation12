@@ -46,7 +46,7 @@
 		icon_state = "xmaslights"
 	else
 		icon_state = "xmaslights_off"
-
+		set_light(0)
 
 // christmas plant //
 
@@ -92,6 +92,7 @@
 		icon_state = "plant-xmas"
 	else
 		icon_state = "plant-xmas-off"
+		set_light(0)
 
 /obj/structure/sign/doorwreath
 	name = "door wreath"
