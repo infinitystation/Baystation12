@@ -174,15 +174,15 @@
 	set category = "Emote"
 	emote("tremble")
 
-/mob/living/verb/twitch()
+/mob/living/verb/twitch_v()
 	set name = "Сильно дёргаться"
 	set category = "Emote"
-	emote("twitch")
+	emote("twitch_v")
 
-/mob/living/verb/twitch_s()
+/mob/living/verb/twitch()
 	set name = "Дёргаться"
 	set category = "Emote"
-	emote("twitch_s")
+	emote("twitch")
 
 /mob/living/verb/wave()
 	set name = "Махать"

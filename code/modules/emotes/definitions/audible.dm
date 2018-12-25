@@ -14,7 +14,7 @@
 
 /decl/emote/audible/gasp
 	key ="gasp"
-	emote_message_3p = "USER задыхаетс&#255;."
+	emote_message_3p = "USER задыхаетс&#255;!"
 	conscious = 0
 
 /decl/emote/audible/gasp/do_extra(var/mob/M)
@@ -41,8 +41,14 @@
 
 /decl/emote/audible/choke
 	key ="choke"
-	emote_message_3p = "USER подавилс&#255;."
+	emote_message_3p = "USER давитс&#255;!"
 	conscious = 0
+
+/decl/emote/audible/choke/do_extra(var/mob/M)
+	if(M.gender == MALE)
+		emote_message_3p = "USER подавилс&#255;!"
+	if(M.gender == FEMALE)
+		emote_message_3p = "USER подавилась!"
 
 /decl/emote/audible/gnarl
 	key ="gnarl"
@@ -70,8 +76,8 @@
 
 /decl/emote/audible/whistle
 	key = "whistle"
-	emote_message_1p = "Вы свистите."
-	emote_message_3p = "USER свистит."
+	emote_message_1p = "Вы свистите!"
+	emote_message_3p = "USER свистит!"
 
 /decl/emote/audible/whistle/do_extra(var/mob/M)
 	if(M.stat)//No dead or unconcious people screaming pls.
@@ -107,9 +113,11 @@
 
 		if(M.gender == MALE)
 			emote_sound = "sound/voice/sneeze_male_[rand(1,2)].ogg"
+			emote_message_3p = "USER чихнул!"
 
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/sneeze_female_[rand(1,2)].ogg"
+			emote_message_3p = "USER чихнула!"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)
@@ -153,9 +161,11 @@
 
 		if(M.gender == MALE)
 			emote_sound = "sound/voice/yawn_male_[rand(1,2)].ogg"
+			emote_message_3p = "USER зевнул."
 
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/yawn_female_[rand(1,3)].ogg"
+			emote_message_3p = "USER зевнула."
 
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)
@@ -171,7 +181,7 @@
 
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(H.isMonkey())//|| M.gender == NEUTER) It would be nice to whistle in Machine body. ~Quardbreak
+		if(H.isMonkey())//|| M.gender == NEUTER) It would be nice to clap in Machine body. ~Quardbreak
 			return
 
 		emote_sound = "sound/effects/clap.ogg"
@@ -181,7 +191,30 @@
 
 /decl/emote/audible/chuckle
 	key = "chuckle"
-	emote_message_3p = "USER усмехнулс&#255;."
+	emote_message_3p = "USER усмехаетс&#255;.."
+
+/decl/emote/audible/chuckle/do_extra(var/mob/M)
+	if(M.stat)//No dead or unconcious people screaming pls.
+		return
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.isMonkey()|| M.gender == NEUTER)
+			return
+
+		if(M.gender == MALE)
+			emote_sound = "sound/voice/giggle_male_[rand(1,2)].ogg"
+			emote_message_3p = "USER усмехнулс&#255;.."
+
+		if(M.gender == FEMALE)
+			emote_sound = "sound/voice/giggle_female_[rand(1,3)].ogg"
+			emote_message_3p = "USER усмехнулась.."
+
+		if(H.get_species() == SPECIES_RESOMI)
+			emote_sound = "sound/voice/resomicougha.ogg"
+
+		if(emote_sound)
+			playsound(M, emote_sound, 25, 0, 1)
 
 /decl/emote/audible/cough
 	key = "cough"
@@ -196,7 +229,6 @@
 		var/mob/living/carbon/human/H = M
 		if(H.isMonkey()|| M.gender == NEUTER)
 			return
-
 
 		if(M.gender == MALE)
 			emote_sound = "sound/voice/cough_male.ogg"
@@ -221,7 +253,7 @@
 
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(H.isMonkey())//|| M.gender == NEUTER) It would be nice to whistle in Machine body. ~Quardbreak
+		if(H.isMonkey())//|| M.gender == NEUTER) It would be nice to salute in Machine body. ~Quardbreak
 			return
 
 		emote_sound = "sound/effects/salute.ogg"
@@ -231,7 +263,7 @@
 
 /decl/emote/audible/cry
 	key = "cry"
-	emote_message_3p = "USER плачет."
+	emote_message_3p = "USER плачет..."
 
 /decl/emote/audible/cry/do_extra(var/mob/M)
 	if(M.stat)//No dead or unconcious people screaming pls.
@@ -277,8 +309,8 @@
 
 /decl/emote/audible/laugh
 	key = "laugh"
-	emote_message_3p = "USER смеетс&#255;."
-	emote_message_3p_target = "USER смеетс&#255; над TARGET."
+	emote_message_3p = "USER смеетс&#255;!"
+	emote_message_3p_target = "USER смеетс&#255; над TARGET!"
 
 /decl/emote/audible/laugh/do_extra(var/mob/M)
 	if(M.stat)//No dead or unconcious people screaming pls.
@@ -290,7 +322,7 @@
 			return
 
 		if(M.gender == MALE)
-			emote_sound = "sound/voice/laugh_male_[rand(1,3)].ogg"
+			emote_sound = "sound/voice/laugh_male_1.ogg" //WE NEED MORE
 
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/laugh_female_[rand(1,3)].ogg"
@@ -311,7 +343,7 @@
 
 /decl/emote/audible/groan
 	key = "groan"
-	emote_message_3p = "USER досадно вздыхает."
+	emote_message_3p = "USER досадно вздыхает..."
 	conscious = 0
 
 /decl/emote/audible/moan
@@ -383,8 +415,8 @@
 
 /decl/emote/audible/bug_hiss
 	key ="hiss"
-	emote_message_3p_target = "USER шипит на TARGET."
-	emote_message_3p = "USER шипит."
+	emote_message_3p_target = "USER шипит на TARGET!"
+	emote_message_3p = "USER шипит!"
 	emote_sound = 'sound/voice/BugHiss.ogg'
 
 /decl/emote/audible/bug_buzz
@@ -394,5 +426,5 @@
 
 /decl/emote/audible/bug_chitter
 	key ="chitter"
-	emote_message_3p = "USER верещит."
+	emote_message_3p = "USER верещит!"
 	emote_sound = 'sound/voice/Bug.ogg'
