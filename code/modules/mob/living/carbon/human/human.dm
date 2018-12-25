@@ -1078,8 +1078,15 @@
 
 	// Rebuild the HUD. If they aren't logged in then login() should reinstantiate it for them.
 	if(client && client.screen)
-		client.screen.len = null
+		client.images = null				//remove the images such as AIs being unable to see runes
+		client.screen = list()				//remove hud items just in case
 		InitializeHud()
+		l_plane = new()
+		l_general = new()
+		client.screen += l_plane
+		client.screen += l_general
+		refresh_client_images()
+		reload_fullscreen() // Reload any fullscreen overlays this mob has.
 
 	if(config && config.use_cortical_stacks && client && client.prefs.has_cortical_stack)
 		create_stack()
