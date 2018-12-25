@@ -211,7 +211,7 @@
 /datum/language/tajsign
 	name = LANGUAGE_SIIK_TAJR
 	desc = "A type of sign language mostly based on tail movements that was used during the Tajaran rebellion."
-	signlang_verb = list("uses their tail to convey", "gestures with their tail", "gestures with their tail elaborately")
+	signlang_verb = list("использует хвост для сообщения", "жестикулирует хвостом", "искусно жестикулирует хвостом")
 	colour = "tajaran"
 	key = "l"
 	flags = WHITELISTED | SIGNLANG | NO_STUTTER | NONVERBAL
