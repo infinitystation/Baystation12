@@ -2,9 +2,9 @@
 	name = "Robot Talk"
 	desc = "Most human facilities support free-use communications protocols and routing hubs for synthetic use."
 	colour = "say_quote"
-	speech_verb = "states"
-	ask_verb = "queries"
-	exclaim_verb = "declares"
+	speech_verb = "сообщает"
+	ask_verb = "запрашивает"
+	exclaim_verb = "объявляет"
 	key = "b"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"
@@ -55,9 +55,9 @@
 /datum/language/binary/drone
 	name = "Drone Talk"
 	desc = "A heavily encoded damage control coordination stream."
-	speech_verb = "transmits"
-	ask_verb = "transmits"
-	exclaim_verb = "transmits"
+	speech_verb = "транслирует"
+	ask_verb = "транслирует"
+	exclaim_verb = "транслирует"
 	colour = "say_quote"
 	key = "d"
 	flags = RESTRICTED | HIVEMIND
