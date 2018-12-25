@@ -25,51 +25,51 @@
 			"Chatter" = "chatter",
 			"Call" = "call")
 
-	New()
-		..()
-		player = new /obj/item/device/pmp/mounted(src)
+/mob/living/silicon/robot/custom/naris/New()
+	..()
+	player = new /obj/item/device/pmp/mounted(src)
 		player.Initialize()
 		
-	proc/check_cassette()
-		if (player != null)
-			return (player.cassette != null)
+/mob/living/silicon/robot/custom/naris/proc/check_cassette()
+	if (player != null)
+		return (player.cassette != null)
 
-	attackby(obj/item/W, mob/user)
-		if (istype(W,/obj/item/device/cassette))
-			if (check_cassette())
-				to_chat(user, "<span class='notice'>Cassete already installed.</span>")
-			else
-				user.unEquip(W)
-				W.forceMove(player)
-				player.cassette = W
-				to_chat(user, "<span class='notice'>You insert cassete to [name].</span>")
-				to_chat(src, "<span class='notice'>[user] puts something in your slot.</span>")
-		else 
-			..()
-		
-	verb/toggle_playing()
-		set category = "Sound"
-		set name = "Toggle mediatronic"
-		player.attack_self()
-
-	verb/eject_cassette()
-		set category = "Sound"
-		set name = "Eject cassette"
+/mob/living/silicon/robot/custom/naris/attackby(obj/item/W, mob/user)
+	if (istype(W,/obj/item/device/cassette))
 		if (check_cassette())
-			player.eject()
+			to_chat(user, "<span class='notice'>Cassete already installed.</span>")
 		else
-			to_chat(src, "<span class='warning'>You dont have cassette.</span>")
+			user.unEquip(W)
+			W.forceMove(player)
+			player.cassette = W
+			to_chat(user, "<span class='notice'>You insert cassete to [name].</span>")
+			to_chat(src, "<span class='notice'>[user] puts something in your slot.</span>")
+	else 
+		..()
+		
+/mob/living/silicon/robot/custom/naris/verb/toggle_playing()
+	set category = "Sound"
+	set name = "Toggle mediatronic"
+	player.attack_self()
 
-	verb/play_custom_sound()
-		set category = "Sound"
-		set name = "Play Custom Sound"
+/mob/living/silicon/robot/custom/naris/verb/eject_cassette()
+	set category = "Sound"
+	set name = "Eject cassette"
+	if (check_cassette())
+		player.eject()
+	else
+		to_chat(src, "<span class='warning'>You dont have cassette.</span>")
 
-		if (last_sound_time != -1 && world.time < last_sound_time + 1 SECONDS)
-			return
-		last_sound_time = world.time
-		var/snd =  input("Sound", "Sound", null, null) as null|anything in cust_sounds
-		if (snd != null)
-			playsound(get_turf(src), "sound/voice/naris_" + cust_sounds[snd] + ".ogg", 30, 1)
+/mob/living/silicon/robot/custom/naris/verb/play_custom_sound()
+	set category = "Sound"
+	set name = "Play Custom Sound"
+
+	if (last_sound_time != -1 && world.time < last_sound_time + 1 SECONDS)
+		return
+	last_sound_time = world.time
+	var/snd =  input("Sound", "Sound", null, null) as null|anything in cust_sounds
+	if (snd != null)
+		playsound(get_turf(src), "sound/voice/naris_" + cust_sounds[snd] + ".ogg", 30, 1)
 
 /obj/item/device/radio/borg/naris
 	keyslot = /obj/item/device/encryptionkey/headset_eng
