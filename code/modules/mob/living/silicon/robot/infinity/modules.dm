@@ -5,7 +5,6 @@
 
 /obj/item/weapon/robot_module/naris/New()
 	src.modules += new /obj/item/device/flash(src)
-	src.modules += new /obj/item/weapon/melee/baton/loaded(src)
 	src.modules += new /obj/item/weapon/crowbar(src)
 	src.modules += new /obj/item/weapon/handcuffs/cable/cyborg(src)
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted(src)
