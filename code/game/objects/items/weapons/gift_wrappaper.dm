@@ -65,7 +65,7 @@
 		/obj/item/weapon/bikehorn,
 		/obj/item/weapon/beach_ball,
 		/obj/item/weapon/beach_ball/holoball,
-		/obj/item/weapon/computer_hardware/tesla_link, //extra useful
+		/obj/item/weapon/computer_hardware/tesla_link,
 		/obj/item/toy/water_balloon,
 		/obj/item/clothing/mask/gas/radical,
 		/obj/item/weapon/marshalling_wand,
