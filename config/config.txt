@@ -278,7 +278,7 @@ USEALIENWHITELIST
 #GHOST_INTERACTION
 
 ## Password used for authorizing ircbot and other external tools.
-COMMS_PASSWORD karetaisgod
+#COMMS_PASSWORD
 
 ## Password used for authorizing external tools that can apply bans
 #BAN_COMMS_PASSWORD
@@ -290,16 +290,16 @@ COMMS_PASSWORD karetaisgod
 #LOGIN_EXPORT_ADDR
 
 ## Uncomment to enable sending data to the IRC bot.
-USE_IRC_BOT
+#USE_IRC_BOT
 
 ## Host where the IRC bot is hosted.  Port 45678 needs to be open.
-IRC_BOT_HOST localhost
+#IRC_BOT_HOST localhost
 
 ## IRC channel to send information to.  Leave blank to disable.
-MAIN_IRC #infinity_ss13
+#MAIN_IRC #main
 
 ## IRC channel to send adminhelps to.  Leave blank to disable adminhelps-to-irc.
-ADMIN_IRC #infinity_ss13_admin
+#ADMIN_IRC #admin
 
 ## Uncommen to allow ghosts to write in blood during Cult rounds.
 #ALLOW_CULT_GHOSTWRITER
