@@ -173,10 +173,7 @@
 	name = "bioprinter"
 	desc = "It's a machine that prints replacement organs."
 	icon_state = "bioprinter"
-	var/list/amount_list = list(
-		/obj/item/weapon/reagent_containers/food/snacks/meat = 50,
-		/obj/item/weapon/reagent_containers/food/snacks/rawcutlet = 15
-		)
+	var/list/amount_list
 	var/loaded_dna //Blood sample for DNA hashing.
 	var/datum/species/loaded_species //For quick refrencing
 
@@ -196,6 +193,36 @@
 	..()
 	component_parts += new /obj/item/device/healthanalyzer
 	component_parts += new /obj/item/weapon/circuitboard/bioprinter
+
+/obj/machinery/organ_printer/flesh/RefreshParts()
+	..()
+	var/Eat
+
+	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+		Eat += M.rating
+
+	switch(Eat)
+		if(0 to 3)
+			amount_list = list(
+				/obj/item/weapon/reagent_containers/food/snacks/meat = 50,
+				/obj/item/weapon/reagent_containers/food/snacks/rawcutlet = 15
+				)
+		if(4 to 5)
+			amount_list = list(
+				/obj/item/weapon/reagent_containers/food/snacks/meat = 50,
+				/obj/item/weapon/reagent_containers/food/snacks/rawcutlet = 15,
+				/obj/item/organ/internal = 10
+				)
+		else
+			amount_list = list(
+				/obj/item/weapon/reagent_containers/food/snacks/meat = 50,
+				/obj/item/weapon/reagent_containers/food/snacks/rawcutlet = 15,
+				/obj/item/organ/internal = 10,
+				/obj/item/organ/external/arm = 30,
+				/obj/item/organ/external/hand = 20,
+				/obj/item/organ/external/leg = 30,
+				/obj/item/organ/external/foot = 20
+				)
 
 /obj/machinery/organ_printer/flesh/print_organ(var/choice)
 	var/obj/item/organ/O
@@ -235,6 +262,10 @@
 	// Load with matter for printing.
 	for(var/path in amount_list)
 		if(istype(W, path))
+			var/obj/item/organ/O = W
+			if(O.status == ORGAN_ROBOTIC || O.species.name == "Monkey")
+				to_chat(user, "<span class='warning'>\The [src] can't accept [O] for some visible reasons.</span>")
+				return
 			if(max_stored_matter == stored_matter)
 				to_chat(user, "<span class='warning'>\The [src] is too full.</span>")
 				return
@@ -243,6 +274,7 @@
 			stored_matter += min(amount_list[path], max_stored_matter - stored_matter)
 			to_chat(user, "<span class='info'>\The [src] processes \the [W]. Levels of stored biomass now: [stored_matter]</span>")
 			qdel(W)
+			return
 
 	// DNA sample from syringe.
 	if(istype(W,/obj/item/weapon/reagent_containers/syringe))
