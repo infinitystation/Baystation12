@@ -32,6 +32,11 @@
 	update_icon()
 	active_power_usage = ((light_outer_range * light_max_bright) * 15)
 
+/obj/machinery/xmaslights/power_change()
+	. = ..()
+	activate()
+
+
 /obj/machinery/xmaslights/on_update_icon()
 	pixel_y = 0
 	pixel_x = 0
@@ -93,6 +98,11 @@
 	else
 		icon_state = "plant-xmas-off"
 		set_light(0)
+
+/obj/machinery/xmas_plant/power_change()
+	. = ..()
+	activate()
+
 
 /obj/structure/sign/doorwreath
 	name = "door wreath"
