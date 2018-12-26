@@ -36,7 +36,7 @@
 #define NANOTRASEN_ROLES list(\
 	/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos, \
 	/datum/job/iaa, \
-	/datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/engineer_trainee, \
+	/datum/job/senior_engineer, /datum/job/engineer, /datum/job/infsys, /datum/job/roboticist, /datum/job/engineer_trainee, \
 	/datum/job/officer, /datum/job/warden, /datum/job/detective, \
 	/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee,/datum/job/chemist, \
 	/datum/job/psychiatrist, \
@@ -71,7 +71,7 @@
 
 //For members of the engineering department
 #define ENGINEERING_ROLES list(\
-	/datum/job/chief_engineer, /datum/job/senior_engineer, /datum/job/engineer,\
+	/datum/job/chief_engineer, /datum/job/senior_engineer, /datum/job/engineer, /datum/job/infsys,\
 	 /datum/job/roboticist, /datum/job/engineer_trainee, /datum/job/explorer_engineer)
 
 //For members of Engineering, Cargo, and Research
@@ -79,7 +79,7 @@
 	/datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/qm,\
 	/datum/job/cargo_tech, /datum/job/cargo_assistant,/datum/job/mining,\
 	/datum/job/scientist_assistant, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/rd,\
-	/datum/job/senior_scientist, /datum/job/scientist, /datum/job/chief_engineer,\
+	/datum/job/senior_scientist, /datum/job/scientist, /datum/job/chief_engineer, /datum/job/infsys,\
 	/datum/job/engineer_trainee, /datum/job/explorer_engineer)
 
 //For members of the security department
@@ -118,7 +118,7 @@
 	/datum/job/officer, /datum/job/detective, \
 	/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee,/datum/job/chemist, /datum/job/psychiatrist, \
 	/datum/job/cargo_tech,  /datum/job/cargo_assistant, /datum/job/mining, \
-	/datum/job/janitor, /datum/job/chef, /datum/job/bartender, \
+	/datum/job/janitor, /datum/job/chef, /datum/job/bartender, /datum/job/infsys,\
 	/datum/job/scientist, /datum/job/roboticist, /datum/job/scientist_assistant)
 
 #define CIVILIAN_ROLES list(\
