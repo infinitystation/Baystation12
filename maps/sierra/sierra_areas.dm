@@ -837,6 +837,10 @@
 	name = "Infirmary Hallway"
 	icon_state = "medbay"
 
+/area/medical/starboard_hallway
+	name = "Starboard Hallway"
+	icon_state = "medbay2"
+
 /area/medical/infirmreception
 	name = "Infirmary Reception"
 	icon_state = "medbay2"
