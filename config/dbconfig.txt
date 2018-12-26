@@ -2,24 +2,24 @@
 
 # Server the MySQL database can be found at
 # Examples: localhost, 200.135.5.43, www.mysqldb.com, etc.
-ADDRESS localhost
+ADDRESS thearkdb.database.windows.net
 
 # MySQL server port (default is 3306)
 PORT 3306
 
 # Database the population, death, karma, etc. tables may be found in
-DATABASE feedback
+DATABASE thearkdb
 
 # Username/Login used to access the database
-LOGIN infinity
+LOGIN theark
 
 # Password used to access the database
-PASSWORD password
+PASSWORD Password1
 
 # The following information is for feedback tracking via the blackbox server
-FEEDBACK_DATABASE feedback
-FEEDBACK_LOGIN infinity
-FEEDBACK_PASSWORD password
+FEEDBACK_DATABASE thearkdb
+FEEDBACK_LOGIN theark
+FEEDBACK_PASSWORD Password1
 
 # Track population and death statistics
 # Comment this out to disable
