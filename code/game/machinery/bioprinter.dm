@@ -201,6 +201,7 @@
 	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
 		Eat += M.rating
 
+	desc = initial(desc)
 	switch(Eat)
 		if(0 to 3)
 			amount_list = list(
@@ -213,6 +214,7 @@
 				/obj/item/weapon/reagent_containers/food/snacks/rawcutlet = 15,
 				/obj/item/organ/internal = 10
 				)
+			desc += "<br>It is capable of recycling internal organs."
 		else
 			amount_list = list(
 				/obj/item/weapon/reagent_containers/food/snacks/meat = 50,
@@ -223,6 +225,7 @@
 				/obj/item/organ/external/leg = 30,
 				/obj/item/organ/external/foot = 20
 				)
+			desc += "<br>It is capable of recycling limbs and internal organs."
 
 /obj/machinery/organ_printer/flesh/print_organ(var/choice)
 	var/obj/item/organ/O
