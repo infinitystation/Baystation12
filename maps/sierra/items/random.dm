@@ -19,3 +19,14 @@
 /obj/random/material_rnd_glass/spawn_choices()
 	return list(/obj/item/stack/material/glass/ten = 1,
 				/obj/item/stack/material/glass/fifty = 2)
+
+/obj/random/blood_packs
+	name = "random blood"
+	desc = "This is random ammout of blood packs for medical bay."
+	icon = 'icons/obj/bloodpack.dmi'
+	icon_state = "empty"
+	spawn_nothing_percentage = 0
+
+/obj/random/blood_packs/spawn_choices()
+	return list(/obj/item/weapon/reagent_containers/ivbag/blood/OMinus = 1,
+	 /obj/item/weapon/reagent_containers/ivbag/blood = 1)

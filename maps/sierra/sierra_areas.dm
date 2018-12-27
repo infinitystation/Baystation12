@@ -1175,7 +1175,7 @@
 	ambience = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg','sound/music/main.ogg')
 
 /area/medical/sleeper
-	name = "Emergency Treatment Centre"
+	name = "Emergency Treatment Center"
 	icon_state = "exam_room"
 
 /area/medical/surgery

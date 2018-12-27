@@ -191,6 +191,20 @@ obj/structure/closet/crate
 /obj/structure/closet/crate/freezer/rations/WillContain()
 	return list(/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 15, /obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle = 15, /obj/random/mre = 6)
 
+/obj/structure/closet/crate/freezer/blood
+	name = "blood freezer"
+	desc = "A crate of O-minus blood packs. Don't drink it, please."
+
+/obj/structure/closet/crate/freezer/blood/WillContain()
+	return list(/obj/item/weapon/reagent_containers/ivbag/blood/OMinus = 4)
+
+/obj/structure/closet/crate/freezer/blood/small
+	name = "blood freezer"
+	desc = "A crate of O-minus blood packs. Don't drink it, please."
+
+/obj/structure/closet/crate/freezer/blood/small/WillContain()
+	return list(/obj/item/weapon/reagent_containers/ivbag/blood/OMinus = 2)
+
 /obj/structure/closet/crate/freezer/nanoblood
 	name = "nanoblood freezer"
 	desc = "A crate of nanoblood packs. Don't drink it."
