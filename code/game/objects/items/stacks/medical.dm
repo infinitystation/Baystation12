@@ -2,8 +2,8 @@
 	name = "medical pack"
 	singular_name = "medical pack"
 	icon = 'icons/obj/medical_kits.dmi'
-	amount = 5
-	max_amount = 5
+	amount = 10
+	max_amount = 10
 	w_class = ITEM_SIZE_SMALL
 	throw_speed = 4
 	throw_range = 20
@@ -64,7 +64,6 @@
 	origin_tech = list(TECH_BIO = 1)
 	animal_heal = 5
 	apply_sounds = list('sound/effects/rip1.ogg','sound/effects/rip2.ogg')
-	amount = 10
 
 /obj/item/stack/medical/bruise_pack/proc/apply_pack(obj/item/organ/external/affecting, datum/wound/W, mob/living/carbon/human/H, mob/user)
 	if(W.bandaged)
@@ -160,7 +159,6 @@
 	origin_tech = list(TECH_BIO = 1)
 	animal_heal = 12
 	apply_sounds = list('sound/effects/rip1.ogg','sound/effects/rip2.ogg','sound/effects/tape.ogg')
-	amount = 10
 
 /obj/item/stack/medical/advanced/bruise_pack/attack(mob/living/carbon/M as mob, mob/user as mob)
 	if(..())
