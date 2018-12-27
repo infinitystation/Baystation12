@@ -28,5 +28,6 @@
 	spawn_nothing_percentage = 0
 
 /obj/random/blood_packs/spawn_choices()
-	return list(/obj/item/weapon/reagent_containers/ivbag/blood/OMinus = 1,
-	 /obj/item/weapon/reagent_containers/ivbag/blood = 1)
+	return list(/obj/item/weapon/reagent_containers/ivbag/blood/OMinus = 5,
+	/obj/item/weapon/reagent_containers/ivbag/blood = 3,
+	/obj/item/weapon/reagent_containers/ivbag/blood/BMinus = 2)
