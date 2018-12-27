@@ -191,7 +191,7 @@
 
 /decl/emote/audible/chuckle
 	key = "chuckle"
-	emote_message_3p = "USER усмехаетс&#255;.."
+	emote_message_3p = "USER усмехаетс&#255;."
 
 /decl/emote/audible/chuckle/do_extra(var/mob/M)
 	if(M.stat)//No dead or unconcious people screaming pls.
@@ -203,12 +203,10 @@
 			return
 
 		if(M.gender == MALE)
-			emote_sound = "sound/voice/giggle_male_[rand(1,2)].ogg"
-			emote_message_3p = "USER усмехнулс&#255;.."
+			emote_message_3p = "USER усмехнулс&#255;."
 
 		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/giggle_female_[rand(1,3)].ogg"
-			emote_message_3p = "USER усмехнулась.."
+			emote_message_3p = "USER усмехнулась."
 
 		if(H.get_species() == SPECIES_RESOMI)
 			emote_sound = "sound/voice/resomicougha.ogg"
@@ -322,10 +320,10 @@
 			return
 
 		if(M.gender == MALE)
-			emote_sound = "sound/voice/laugh_male_1.ogg" //WE NEED MORE
+			emote_sound = "sound/voice/laugh_male_[rand(1,3)].ogg"
 
 		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/laugh_female_[rand(1,3)].ogg"
+			emote_sound = "sound/voice/laugh_female_2.ogg" //we also have 1, 3
 
 		if(H.get_species() == SPECIES_RESOMI)
 			emote_sound = "sound/voice/resomicougha.ogg"
@@ -365,10 +363,10 @@
 			return
 
 		if(M.gender == MALE)
-			emote_sound = "sound/voice/giggle_male_[rand(1,2)].ogg"
+			emote_sound = "sound/voice/giggle_male_2.ogg" //we also have 1
 
 		if(M.gender == FEMALE)
-			emote_sound = "sound/voice/giggle_female_[rand(1,3)].ogg"
+			emote_sound = "sound/voice/giggle_female_3.ogg" //we also have 1, 2
 
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)
