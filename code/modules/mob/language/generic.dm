@@ -64,7 +64,7 @@
 /datum/language/gutter
 	name = "Gutter"
 	desc = "Much like Common, this crude pidgin tongue descended from numerous languages and serves as a trade language for criminal elements."
-	speech_verb = "рявкает"
+	speech_verb = "балакает"
 	colour = "rough"
 	key = "3"
 	syllables = list ("gra","ba","ba","breh","bra","rah","dur","ra","ro","gro","go","ber","bar","geh","heh", "gra")
