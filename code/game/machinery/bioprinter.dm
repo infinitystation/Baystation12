@@ -265,10 +265,11 @@
 	// Load with matter for printing.
 	for(var/path in amount_list)
 		if(istype(W, path))
-			var/obj/item/organ/O = W
-			if(O.status == ORGAN_ROBOTIC || O.species.name == "Monkey")
-				to_chat(user, "<span class='warning'>\The [src] can't accept [O] for some visible reasons.</span>")
-				return
+			if(istype(W, /obj/item/organ/))
+				var/obj/item/organ/O = W
+				if(O.status == ORGAN_ROBOTIC || O.species.name == "Monkey")
+					to_chat(user, "<span class='warning'>\The [src] can't accept [O] for some visible reasons.</span>")
+					return
 			if(max_stored_matter == stored_matter)
 				to_chat(user, "<span class='warning'>\The [src] is too full.</span>")
 				return
