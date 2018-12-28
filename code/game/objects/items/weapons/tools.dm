@@ -385,8 +385,10 @@
 
 /obj/item/weapon/weldingtool/Process()
 	if(welding)
+		set_light(0.2, 0.1, 1, 1, LIGHT_COLOR_FLARE)
 		if((!waterproof && submerged()) || !remove_fuel(0.05))
 			setWelding(0)
+			set_light(0)
 
 /obj/item/weapon/weldingtool/afterattack(var/obj/O, var/mob/user, proximity)
 	if(!proximity)
