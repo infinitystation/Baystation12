@@ -207,7 +207,7 @@
 
 /decl/emote/visible/bounce
 	key = "bounce"
-	emote_message_3p = "USER ןנûדאוע םא לוסעו."
+	emote_message_3p = "USER ןנûדאוע םא לוסעו!"
 
 /decl/emote/visible/jiggle
 	key = "jiggle"

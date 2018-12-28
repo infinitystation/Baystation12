@@ -43,13 +43,13 @@
 	key ="choke"
 	emote_message_3p = "USER давитс&#255;!"
 	conscious = 0
-
+/*
 /decl/emote/audible/choke/do_extra(var/mob/M)
 	if(M.gender == MALE)
 		emote_message_3p = "USER подавилс&#255;!"
 	if(M.gender == FEMALE)
 		emote_message_3p = "USER подавилась!"
-
+*/
 /decl/emote/audible/gnarl
 	key ="gnarl"
 	emote_message_3p = "USER gnarls and shows its teeth.."
@@ -113,11 +113,11 @@
 
 		if(M.gender == MALE)
 			emote_sound = "sound/voice/sneeze_male_[rand(1,2)].ogg"
-			emote_message_3p = "USER чихнул!"
+//			emote_message_3p = "USER чихнул!"
 
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/sneeze_female_[rand(1,2)].ogg"
-			emote_message_3p = "USER чихнула!"
+//			emote_message_3p = "USER чихнула!"
 
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)
@@ -161,11 +161,11 @@
 
 		if(M.gender == MALE)
 			emote_sound = "sound/voice/yawn_male_[rand(1,2)].ogg"
-			emote_message_3p = "USER зевнул."
+//			emote_message_3p = "USER зевнул."
 
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/yawn_female_[rand(1,3)].ogg"
-			emote_message_3p = "USER зевнула."
+//			emote_message_3p = "USER зевнула."
 
 		if(emote_sound)
 			playsound(M, emote_sound, 25, 0, 1)
@@ -201,13 +201,13 @@
 		var/mob/living/carbon/human/H = M
 		if(H.isMonkey()|| M.gender == NEUTER)
 			return
-
+/*
 		if(M.gender == MALE)
 			emote_message_3p = "USER усмехнулс&#255;."
 
 		if(M.gender == FEMALE)
 			emote_message_3p = "USER усмехнулась."
-
+*/
 		if(H.get_species() == SPECIES_RESOMI)
 			emote_sound = "sound/voice/resomicougha.ogg"
 
@@ -320,7 +320,7 @@
 			return
 
 		if(M.gender == MALE)
-			emote_sound = "sound/voice/laugh_male_[rand(1,3)].ogg"
+			emote_sound = "sound/voice/laugh_male_1.ogg" //we also have 2, 3
 
 		if(M.gender == FEMALE)
 			emote_sound = "sound/voice/laugh_female_2.ogg" //we also have 1, 3
