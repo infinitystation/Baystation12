@@ -158,7 +158,7 @@
 	<h3>ЦЕНТРАЛЬНОЕ КОМАНДОВАНИЕ</h3>
 	<img src = ntlogo.png>
 	</center>
-	<b>ОТ:</b> Dr Melissa Steele<br>
+	<b>ОТ:</b> Swadian Barwuds<br>
 	<b>КОМУ:</b> Капитану NSV Sierra<br>
 	<b>ТЕМА:</b> Общий приказ<br>
 	<hr>
@@ -170,7 +170,7 @@
 	<li>[GLOB.using_map.system_name]</li>
 	<li>[generate_system_name()]</li>
 	<li>[generate_system_name()]</li>
-	<li>Quanrian System</li>
+	<li>[generate_system_name()]</li>
 	<li>[generate_system_name()]</li>
 	<li>Locutus System</li>
 	<br>
@@ -181,7 +181,7 @@
 	Текущий код стыковки: [sierra.docking_codes]<br>
 	Сообщайте о всех незарегистрированных или исключительных находках при перемещении в системах.<br>
 
-	<i>Dr Melissa Steele</i></tt><br>
+	<i>Swadian Barwuds</i></tt><br>
 	<i>This paper has been stamped with the stamp of Central Command.</i>
 	"}
 	new/obj/item/weapon/paper/important(src, memo, "Standing Orders")
@@ -198,7 +198,7 @@
 /obj/item/weapon/paper/umbra
 	name = "UMBRA Protocol"
 	icon = 'maps/sierra/icons/obj/uniques.dmi'
-	icon_state = "paper_impo"
+	icon_state = "paper_words"
 	info = {"
 	<tt><center><b><font color='red'>СОВЕРШЕННО СЕКРЕТНО - КОДОВОЕ СЛОВО: ТЕНЬ СЬЕРРЫ</font></b>
 	<h3>ЦЕНТРАЛЬНОЕ КОМАНДОВАНИЕ</h3>
