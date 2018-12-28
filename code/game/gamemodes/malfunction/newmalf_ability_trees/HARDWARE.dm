@@ -18,6 +18,9 @@
 	if(!user.hardware || !istype(user.hardware, /datum/malf_hardware/core_bomb))
 		return
 
+	if(user.carded)
+		return
+
 	if(user.bombing_core)
 		to_chat(user, "***** CORE SELF-DESTRUCT SEQUENCE ABORTED *****")
 		user.bombing_core = 0
