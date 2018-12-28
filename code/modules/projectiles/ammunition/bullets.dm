@@ -11,7 +11,9 @@
 
 /obj/item/ammo_casing/a357
 	desc = "A .357 bullet casing."
-	caliber = "357"
+	caliber = ".357"
+	icon_state = "357casing"
+	spent_icon = "357casing-spent"
 
 /obj/item/ammo_casing/a44
 	desc = "A .44 Magnum bullet casing."
@@ -72,8 +74,6 @@
 /obj/item/ammo_casing/c357
 	desc = "A .357 Magnum bullet casing."
 	caliber = ".357"
-
-
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/revolver
 	icon_state = "357casing"
 	spent_icon = "357casing-spent"
