@@ -9,24 +9,16 @@
 
 /datum/event/gravity/start()
 	gravity_is_on = 0
-	if(!SSmachines.gravity_generators)
-		for(var/area/A in world)
+	for(var/area/A in world)
+		if(A.z in GLOB.using_map.station_levels)
 			A.gravitychange(gravity_is_on)
-	else
-		for(var/A in SSmachines.gravity_generators)
-			var/obj/machinery/gravity_generator/main/B = A
-			B.eventshutofftoggle()
-/*
+
 /datum/event/gravity/end()
 	if(!gravity_is_on)
 		gravity_is_on = 1
 
-		if(!SSmachines.gravity_generators)
-			for(var/area/A in world)
+		for(var/area/A in world)
+			if((A.z in GLOB.using_map.station_levels) && initial(A.has_gravity))
 				A.gravitychange(gravity_is_on)
-		else
-			for(var/A in SSmachines.gravity_generators)
-				var/obj/machinery/gravity_generator/main/B = A
-				B.eventshutofftoggle()
 
-		priority_announcement.Announce("Gravity generators are again functioning within normal parameters. Sorry for any inconvenience.", "Gravity Restored", zlevels = affecting_z)*/
+		priority_announcement.Announce("Gravity generators are again functioning within normal parameters. Sorry for any inconvenience.", "Gravity Restored", zlevels = affecting_z)
