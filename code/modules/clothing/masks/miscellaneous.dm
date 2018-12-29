@@ -11,7 +11,7 @@
 /obj/item/clothing/mask/muzzle/tape
 	name = "length of tape"
 	desc = "It's a robust DIY muzzle!"
-	icon = 'icons/obj/bureaucracy_inf.dmi'
+	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "tape_cross"
 	item_state = null
 	w_class = ITEM_SIZE_TINY

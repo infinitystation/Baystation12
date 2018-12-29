@@ -439,7 +439,7 @@ var/bomb_set
 	This concludes the instructions.", "vessel self-destruct instructions")
 
 	//stamp the paper
-	var/image/stampoverlay = image('icons/obj/bureaucracy_inf.dmi')
+	var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
 	stampoverlay.icon_state = "paper_stamp-hos"
 	R.stamped += /obj/item/weapon/stamp
 	R.overlays += stampoverlay

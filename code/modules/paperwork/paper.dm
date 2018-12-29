@@ -406,7 +406,7 @@
 		playsound(src,'sound/effects/Stamp2.ogg',40,1)
 		stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper has been stamped with the [P.name].</i>"
 
-		var/image/stampoverlay = image('icons/obj/bureaucracy_inf.dmi')
+		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
 		var/{x; y;}
 		if(istype(P, /obj/item/weapon/stamp/captain) || istype(P, /obj/item/weapon/stamp/centcomm))
 			x = rand(-2, 0)
@@ -453,7 +453,7 @@
 	var/obj/item/weapon/stamp/P = new stamp_path
 	stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper has been stamped with the [P.name].</i>"
 
-	var/image/stampoverlay = image('icons/obj/bureaucracy_inf.dmi')
+	var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
 	var/{x; y;}
 	if(istype(P, /obj/item/weapon/stamp/captain) || istype(P, /obj/item/weapon/stamp/centcomm))
 		x = rand(-2, 0)
