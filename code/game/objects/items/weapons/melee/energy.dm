@@ -86,11 +86,13 @@
 	..()
 	icon_state = "axe1"
 	to_chat(user, "<span class='notice'>\The [src] is now energised.</span>")
+	set_light(0.5, 0.1, 1, 1, LIGHT_COLOR_BLUE)
 
 /obj/item/weapon/melee/energy/axe/deactivate(mob/living/user)
 	..()
 	icon_state = initial(icon_state)
 	to_chat(user, "<span class='notice'>\The [src] is de-energised. It's just a regular axe now.</span>")
+	set_light(0)
 
 /*
  * Energy Sword
@@ -113,6 +115,7 @@
 	edge = 1
 	base_parry_chance = 50
 	var/blade_color
+	var/blade_light
 
 /obj/item/weapon/melee/energy/sword/dropped(var/mob/user)
 	..()
@@ -121,18 +124,31 @@
 
 /obj/item/weapon/melee/energy/sword/New()
 	blade_color = pick("red","blue","green","purple")
+	switch(blade_color)
+		if("red")
+			blade_light = LIGHT_COLOR_FLARE
+		if("blue")
+			blade_light = LIGHT_COLOR_BLUE
+		if("green")
+			blade_light = LIGHT_COLOR_GREEN
+		if("purple")
+			blade_light = LIGHT_COLOR_PURPLE
 
 /obj/item/weapon/melee/energy/sword/green/New()
 	blade_color = "green"
+	blade_light = LIGHT_COLOR_GREEN
 
 /obj/item/weapon/melee/energy/sword/red/New()
 	blade_color = "red"
+	blade_light = LIGHT_COLOR_FLARE
 
 /obj/item/weapon/melee/energy/sword/blue/New()
 	blade_color = "blue"
+	blade_light = LIGHT_COLOR_BLUE
 
 /obj/item/weapon/melee/energy/sword/purple/New()
 	blade_color = "purple"
+	blade_light = LIGHT_COLOR_VIOLET
 
 /obj/item/weapon/melee/energy/sword/activate(mob/living/user)
 	if(!active)
@@ -140,6 +156,7 @@
 	..()
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	icon_state = "sword[blade_color]"
+	set_light(0.5, 0.1, 1, 1, blade_light)
 
 /obj/item/weapon/melee/energy/sword/deactivate(mob/living/user)
 	if(active)
@@ -147,6 +164,7 @@
 	..()
 	attack_verb = list()
 	icon_state = initial(icon_state)
+	set_light(0)
 
 /obj/item/weapon/melee/energy/sword/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if(.)
@@ -166,6 +184,7 @@
 /obj/item/weapon/melee/energy/sword/pirate/activate(mob/living/user)
 	..()
 	icon_state = "cutlass1"
+	set_light(0.5, 0.1, 1, 1, LIGHT_COLOR_FLARE)
 
 /*
  *Energy Blade
@@ -199,9 +218,11 @@
 /obj/item/weapon/melee/energy/blade/Initialize()
 	. = ..()
 	START_PROCESSING(SSobj, src)
+	set_light(0.5, 0.1, 1, 1, LIGHT_COLOR_GREEN)
 
 /obj/item/weapon/melee/energy/blade/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	set_light(0)
 	. = ..()
 
 /obj/item/weapon/melee/energy/blade/get_storage_cost()

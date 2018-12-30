@@ -49,6 +49,7 @@
 	attack_verb = list("burnt", "singed")
 
 /obj/item/weapon/flame/match/Process()
+	set_light(0.1, 0.1, 1, 1, LIGHT_COLOR_FLARE)
 	if(isliving(loc))
 		var/mob/living/M = loc
 		M.IgniteMob()
