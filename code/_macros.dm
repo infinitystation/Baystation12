@@ -1,4 +1,4 @@
-#define PUBLIC_GAME_MODE SSticker.master_mode
+#define PUBLIC_GAME_MODE SSticker.master_modes
 
 #define Clamp(value, low, high) 	(value <= low ? low : (value >= high ? high : value))
 #define CLAMP01(x) 		(Clamp(x, 0, 1))
