@@ -53,7 +53,7 @@
 
 /obj/item/clothing/head/christhat
 	name = "christ's hat"
-	desc = "Ho ho ho. Merrry X-mas!"
+	desc = "Ho ho ho. Merrry X-mas! (if use it, will show/hide hair)."
 	icon = 'icons/obj/clothing/infinity/hats.dmi'
 	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
 	icon_state = "christ_hat"
@@ -65,3 +65,8 @@
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head_infinity.dmi',
 		)
+
+/obj/item/clothing/head/christhat/attack_self(mob/user)
+	flags_inv ^= BLOCKHEADHAIR
+	to_chat(user, "<span class='notice'>[src] will now [flags_inv & BLOCKHEADHAIR ? "hide" : "show"] hair.</span>")
+	..()

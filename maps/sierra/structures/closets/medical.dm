@@ -47,6 +47,7 @@
 		/obj/item/clothing/suit/surgicalapron,
 		/obj/item/clothing/accessory/storage/white_vest,
 		/obj/item/device/radio/headset/headset_med,
+		/obj/item/device/radio/headset/headset_med/alt,
 		/obj/item/weapon/storage/belt/medical,
 		/obj/item/device/flashlight/pen,
 		/obj/item/device/healthanalyzer,
@@ -68,6 +69,8 @@
 	return list(
 		/obj/item/clothing/accessory/storage/white_vest,
 		/obj/item/device/radio/headset/headset_med,
+		/obj/item/device/radio/headset/headset_med/alt,
+		/obj/item/weapon/storage/belt/medical,
 		/obj/item/taperoll/medical,
 		/obj/item/device/flashlight/pen,
 		/obj/item/weapon/storage/box/autoinjectors,
@@ -90,4 +93,26 @@
 		/obj/item/clothing/under/sterile = 3,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/medic, /obj/item/weapon/storage/backpack/satchel/med)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/med, /obj/item/weapon/storage/backpack/messenger/med))
+	)
+
+/obj/structure/closet/secure_closet/chemical_sierra
+	name = "chemical closet"
+	desc = "Store dangerous chemicals in here."
+	icon_state = "medical1"
+	icon_closed = "medical"
+	icon_locked = "medical1"
+	icon_opened = "medicalopen"
+	icon_off = "medicaloff"
+	req_access = list(access_chemistry)
+
+/obj/structure/closet/secure_closet/chemical_sierra/WillContain()
+	return list(
+		/obj/item/weapon/storage/box/pillbottles = 2,
+		/obj/item/device/radio/headset/headset_med,
+		/obj/item/weapon/storage/box/freezer,
+		/obj/item/weapon/storage/box/syringes,
+		/obj/item/weapon/storage/box/beakers,
+		/obj/item/weapon/storage/box/beakers/insulated,
+		/obj/item/weapon/reagent_containers/glass/beaker/large,
+		/obj/item/weapon/reagent_containers/glass/beaker/insulated/large
 	)

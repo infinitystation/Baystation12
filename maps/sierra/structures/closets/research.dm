@@ -20,7 +20,6 @@
 		/obj/item/clothing/under/rank/research_director/rdalt,
 		/obj/item/clothing/under/rank/research_director/dress_rd,
 		/obj/item/clothing/under/suit_jacket/corp/nanotrasen,
-		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/suit/storage/toggle/labcoat/science/nanotrasen,
 		/obj/item/clothing/suit/storage/toggle/labcoat/rd/nanotrasen,
 		/obj/item/clothing/shoes/white,
@@ -59,7 +58,6 @@
 	return list(
 		/obj/item/clothing/under/rank/scientist/nanotrasen,
 		/obj/item/clothing/suit/storage/toggle/labcoat/science/nanotrasen,
-		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
 		/obj/item/device/radio/headset/headset_sci,
 		/obj/item/clothing/mask/gas/alt,
@@ -94,7 +92,6 @@
 	return list(
 		/obj/item/clothing/under/rank/scientist/nanotrasen,
 		/obj/item/clothing/suit/storage/toggle/labcoat/science/nanotrasen,
-		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
 		/obj/item/device/radio/headset/headset_sci,
 		/obj/item/clothing/mask/gas/half,

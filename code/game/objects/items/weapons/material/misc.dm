@@ -31,6 +31,7 @@
 	item_state = "knife"
 	attack_verb = list("stabbed", "chopped", "cut")
 	applies_material_colour = 1
+	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /obj/item/weapon/material/hatchet/machete
 	name = "machete"
@@ -40,6 +41,7 @@
 	slot_flags = SLOT_BELT
 	base_parry_chance = 50
 	attack_cooldown_modifier = 1
+	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /obj/item/weapon/material/hatchet/machete/Initialize()
 	icon_state = "machete[pick("","_red","_blue", "_black", "_olive")]"

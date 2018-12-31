@@ -40,12 +40,10 @@
 /obj/machinery/xmaslights/on_update_icon()
 	pixel_y = 0
 	pixel_x = 0
-	var/turf/T = get_step(get_turf(src), src.dir)
-	if(istype(T) && T.density)
-		switch(dir)
-			if(NORTH)	pixel_y = 22
-			if(EAST)	pixel_x = 11
-			if(WEST)	pixel_x = -11
+	switch(dir)
+		if(NORTH)	pixel_y = 22
+		if(EAST)	pixel_x = 11
+		if(WEST)	pixel_x = -11
 
 	if(on && powered())
 		icon_state = "xmaslights"
@@ -103,6 +101,7 @@
 	. = ..()
 	activate()
 
+//decor
 
 /obj/structure/sign/doorwreath
 	name = "door wreath"
@@ -112,3 +111,54 @@
 	mouse_opacity = 0
 	plane = BLOB_PLANE
 	layer = BLOB_SHIELD_LAYER
+
+/obj/structure/sign/tinsel
+	name = "tinsel"
+	desc = "A decorative flourish, the socity often calls them tinsels."
+	icon = 'icons/obj/christmas_inf.dmi'
+	icon_state = "tinsel1"
+	mouse_opacity = 0
+	plane = BLOB_PLANE
+	layer = BLOB_SHIELD_LAYER
+	color = "#5662ff"
+
+/obj/structure/sign/tinsel/red
+	color = COLOR_RED_LIGHT
+
+/obj/structure/sign/tinsel/cyan
+	color = "#80e1ff"
+
+/obj/structure/sign/tinsel/green
+	color = "#56f25f"
+
+/obj/structure/sign/tinsel/yellow
+	color = COLOR_YELLOW
+
+/obj/structure/sign/tinsel/purple
+	color = "#e37dff"
+
+/obj/structure/sign/tinsel/lorange
+	color = "#ffef63"
+
+/obj/structure/sign/tinsel/gold
+	color = "#ffff00"
+
+/obj/structure/sign/tinsel/random
+	color = null
+
+/obj/structure/sign/tinsel/random/New()
+	..()
+	color = pick(COLOR_YELLOW, "#56f25f", COLOR_RED_LIGHT, "#5662ff", "#e37dff", "#80e1ff", "#ffef63", "#ffff00")
+
+/obj/structure/sign/tinsel/New()
+	..()
+	update_icon()
+	icon_state = "tinsel[rand(1,5)]"
+
+/obj/structure/sign/tinsel/on_update_icon()
+	pixel_y = 0
+	pixel_x = 0
+	switch(dir)
+		if(NORTH)	pixel_y = 22
+		if(EAST)	pixel_x = 11
+		if(WEST)	pixel_x = -11

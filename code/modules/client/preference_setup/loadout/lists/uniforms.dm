@@ -50,6 +50,7 @@
 	suits += /obj/item/clothing/under/lawyer/black
 	suits += /obj/item/clothing/under/suit_jacket/tan
 	suits += /obj/item/clothing/under/scratch
+	suits += /obj/item/clothing/under/bluetunic_regular
 	suits += /obj/item/clothing/under/lawyer/bluesuit
 	suits += /obj/item/clothing/under/rank/internalaffairs/plain
 	suits += /obj/item/clothing/under/blazer

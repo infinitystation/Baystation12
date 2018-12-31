@@ -103,9 +103,6 @@
 	name = "petrov fabricator console"
 	id = 3
 
-/obj/structure/wall_frame
-	color = COLOR_GUNMETAL
-
 /turf/simulated/floor/shuttle_ceiling/torch
 	color = COLOR_HULL
 

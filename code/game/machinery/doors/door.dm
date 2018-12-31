@@ -203,6 +203,7 @@
 	return src.attack_hand(user)
 
 /obj/machinery/door/attack_hand(mob/user as mob)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	return src.attackby(user, user)
 
 /obj/machinery/door/attack_tk(mob/user as mob)

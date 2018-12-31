@@ -16,8 +16,8 @@
 	var/stunforce = 0
 	var/agonyforce = 30
 	var/status = 0		//whether the thing is on or not
-	var/obj/item/weapon/cell/bcell
-	var/hitcost = 7
+	var/obj/item/weapon/cell/device/bcell
+	var/hitcost = 6
 
 /obj/item/weapon/melee/baton/loaded
 	bcell = /obj/item/weapon/cell/device/high
@@ -248,6 +248,6 @@
 	throwforce = 5
 	stunforce = 0
 	agonyforce = 60	//same force as a stunbaton, but uses way more charge.
-	hitcost = 25
+	hitcost = 10
 	attack_verb = list("poked")
 	slot_flags = null
