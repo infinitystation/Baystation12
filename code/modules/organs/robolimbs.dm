@@ -147,7 +147,7 @@ var/datum/robolimb/basic_robolimb
 	icon = 'icons/mob/human_races/cyberlimbs/veymed/veymed_main.dmi'
 	can_eat = 1
 	skintone = 1
-	restricted_to = list(SPECIES_HUMAN, SPECIES_IPC)
+	restricted_to = list(SPECIES_HUMAN)
 
 /datum/robolimb/grayson
 	company = "Grayson"
