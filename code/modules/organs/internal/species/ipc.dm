@@ -49,6 +49,19 @@
 	QDEL_NULL(brainmob)
 	return ..()
 
+/obj/item/organ/internal/posibrain/proc/posibrain_reset(user)
+	if(brainmob.key)
+		var/response = alert(user, "Are you sure you wish to reset this [src]?", "Reset [src]", "Yes", "No")
+		if(response == "Yes")
+			brainmob.ghost()
+			icon_state = "posibrain-reset"
+			to_chat(user, "<span class='notice'>You carefully locate the manual reset button and start the positronic brain's reset protocol.</span>")
+			icon_state = "posibrain"
+	return
+
+/obj/item/organ/internal/posibrain/attack_self(mob/user as mob)
+	posibrain_reset(user)
+
 /obj/item/organ/internal/posibrain/attack_self(mob/user as mob)
 	if(brainmob && !brainmob.key && searching == 0)
 		//Start the process of searching for a new user.
