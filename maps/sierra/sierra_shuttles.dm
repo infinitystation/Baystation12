@@ -651,3 +651,9 @@
 //Makes the deck management program use hangar access
 /datum/nano_module/deck_management
 	default_access = list(access_hangar, access_cargo, access_heads)
+
+// away transit
+
+/obj/effect/shuttle_landmark/sierra/transit/blueriver_shuttle
+	name = "In transit"
+	landmark_tag = "nav_transit_blueriver"

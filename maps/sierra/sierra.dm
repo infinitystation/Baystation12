@@ -102,13 +102,13 @@
 
 	#include "../away_inf/yacht/yacht.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
+	#include "../away_inf/blueriver/blueriver.dm"
 
 	#include "../away/bearcat/bearcat.dm"
 	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"
-	#include "../away/blueriver/blueriver.dm"
 //	#include "../away/icarus/icarus.dm"
 	#include "../away/errant_pisces/errant_pisces.dm"
 	#include "../away/lar_maria/lar_maria.dm"
