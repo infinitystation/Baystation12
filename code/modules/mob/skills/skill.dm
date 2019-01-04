@@ -66,6 +66,7 @@ GLOBAL_LIST_EMPTY(skills)
 /decl/hierarchy/skill/research
 	name = "Research"
 	ID	 = "research"
+	difficulty = SKILL_HARD
 
 /decl/hierarchy/skill/medical
 	name = "Medical"
@@ -289,11 +290,24 @@ GLOBAL_LIST_EMPTY(skills)
 	ID = "devices"
 	name = "Complex Devices"
 	desc = "Describes the ability to assemble complex devices, such as computers, circuits, printers, robots or gas tank assemblies (bombs). Note that if a device requires electronics or programming, those skills are also required in addition to this skill."
-	levels = list( "Unskilled"			= "You know how to use the technology that was present in whatever society you grew up in. You know how to tell when something is malfunctioning, but you have to call tech support to get it fixed.",
-						"Basic"				= "You use and repair high-tech equipment in the course of your daily work. You can fix simple problems, and you know how to use a circuit printer or autolathe. You can build simple robots such as cleanbots and medibots.",
-						"Trained"			= "You can build or repair an exosuit or cyborg chassis, use a protolathe and destructive analyzer, and build prosthetic limbs. You can safely transfer an MMI or posibrain into a cyborg chassis.<br>- You can attach robotic limbs. Its speed increases with level.",
+	levels = list( "Unskilled"			= "You know how to use the technology that was present in whatever society you grew up in. You know how to tell when something is malfunctioning, but you have to call tech support to get it fixed.<br>- You can work with protolathe, circuit printer and autolathe. It's efficiency increases with level",
+						"Basic"				= "You use and repair high-tech equipment in the course of your daily work. You can fix simple problems, and you know how to use a circuit printer or autolathe. You can build simple robots such as cleanbots and medibots.<br>- You can fully operate the autolathe and circuit printer.",
+						"Trained"			= "You can build or repair an exosuit or cyborg chassis, use a protolathe and destructive analyzer, and build prosthetic limbs. You can safely transfer an MMI or posibrain into a cyborg chassis.<br>- You fully operate the protolathe.<br>- You can attach robotic limbs. Its speed increases with level.",
 						"Experienced"		= "You have years of experience building or reverse-engineering complex devices. Your use of the lathes and destructive analyzers is efficient and methodical. You can design contraptions to order, and likely sell those designs at a profit.",
 						"Master"		= "You are an inventor or researcher. You can design, build, and modify equipment that most people don't even know exists. You are at home in the lab and the workshop and you've never met a gadget you couldn't take apart, put back together, and replicate.")
+
+
+
+/decl/hierarchy/skill/research/get_cost(var/level)
+	switch(level)
+		if(SKILL_BASIC, SKILL_ADEPT)
+			return difficulty
+		if(SKILL_EXPERT)
+			return difficulty * 1.5
+		if(SKILL_PROF)
+			return difficulty * 2
+		else
+			return 0
 
 /decl/hierarchy/skill/research/science
 	ID = "science"

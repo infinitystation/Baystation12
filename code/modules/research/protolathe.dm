@@ -2,7 +2,7 @@
 	name = "\improper Protolathe"
 	icon_state = "protolathe"
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_OPEN_CONTAINER
-	layer = 2.9
+	layer = BELOW_OBJ_LAYER
 
 	use_power = 1
 	idle_power_usage = 30
@@ -159,6 +159,14 @@
 		reagents.remove_reagent(C, D.chemicals[C] * mat_efficiency)
 
 	if(D.build_path)
+		if(prob(D.skill_fail_chance))
+			src.audible_message("<span class='warning'>[pick("You hear a strange noises and some metal crackles.", "You hear a strange buzz.")]</span>")
+			if(prob(D.skill_fail_chance / 2))
+				playsound(src.loc, 'sound/effects/smoke.ogg', 50, 1, -3)
+				var/datum/effect/effect/system/smoke_spread/smoke = new
+				smoke.set_up(8, 0, src.loc, 0)
+				smoke.start()
+			return
 		var/obj/new_item = D.Fabricate(loc, src)
 		if(mat_efficiency != 1) // No matter out of nowhere
 			if(new_item.matter && new_item.matter.len > 0)
