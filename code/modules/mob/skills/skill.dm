@@ -282,7 +282,6 @@ GLOBAL_LIST_EMPTY(skills)
 						"Trained"			= "You can set up the engine, and you probably won't botch it up too badly. You know how to protect yourself from radiation in the engine room. You can read the engine monitors and keep the engine going. An engine malfunction may stump you, but you can probably work out how to fix it... let's just hope you do so quickly enough to prevent serious damage.",
 						"Experienced"		= "You have years of experience with engines, and can set them up quickly and reliably. You're familiar with engine types other than the one you work with.<br>- You can fully read the SM monitor readings.<br>- You can examine the SM directly for its integrity.",
 						"Master"		= "Your engine is your baby and you know every minute detail of its workings. You can optimize the engine and you probably have your own favorite custom setup. You could build an engine from the ground up. When things go wrong, you know exactly what has happened and how to fix the problem. You can safely handle singularities and supermatter.<br>- You can examine the SM directly for an approximate number of its EER.")
-	difficulty = SKILL_HARD
 
 // Category: Research
 
@@ -296,18 +295,6 @@ GLOBAL_LIST_EMPTY(skills)
 						"Experienced"		= "You have years of experience building or reverse-engineering complex devices. Your use of the lathes and destructive analyzers is efficient and methodical. You can design contraptions to order, and likely sell those designs at a profit.",
 						"Master"		= "You are an inventor or researcher. You can design, build, and modify equipment that most people don't even know exists. You are at home in the lab and the workshop and you've never met a gadget you couldn't take apart, put back together, and replicate.")
 
-
-
-/decl/hierarchy/skill/research/get_cost(var/level)
-	switch(level)
-		if(SKILL_BASIC, SKILL_ADEPT)
-			return difficulty
-		if(SKILL_EXPERT)
-			return difficulty * 1.5
-		if(SKILL_PROF)
-			return difficulty * 2
-		else
-			return 0
 
 /decl/hierarchy/skill/research/science
 	ID = "science"
