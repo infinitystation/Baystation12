@@ -104,6 +104,7 @@
 	name = "Plague doctor suit"
 	desc = "It protected doctors from the Black Death, back then. You bet your arse it's gonna help you against viruses."
 	icon = 'icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'icons/mob/onmob/onmob_suit.dmi')
 	icon_state = "plaguedoctor"
 	//item_state = "bio_suit"
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL

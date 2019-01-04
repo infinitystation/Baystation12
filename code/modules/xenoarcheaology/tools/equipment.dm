@@ -1,6 +1,8 @@
 /obj/item/clothing/suit/bio_suit/anomaly
 	name = "Anomaly suit"
 	desc = "A suit that protects against exotic alien energies and biological contamination."
+	icon = 'icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'icons/mob/onmob/onmob_suit.dmi')
 	icon_state = "bio_anom"
 	item_state = "bio_anom"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 100)
@@ -8,6 +10,10 @@
 /obj/item/clothing/head/bio_hood/anomaly
 	name = "Anomaly hood"
 	desc = "A hood that protects the head and face from exotic alien energies and biological contamination."
+	icon = 'icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'icons/mob/onmob/onmob_head.dmi',
+		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_hats.dmi',
+		slot_r_hand_str = 'icons/mob/onmob/items/righthand_hats.dmi')
 	icon_state = "bio_anom"
 	item_state = "bio_anom"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 100)
