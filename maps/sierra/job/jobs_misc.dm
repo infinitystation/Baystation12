@@ -23,6 +23,7 @@
 	allowed_ranks = list(
 		/datum/mil_rank/civ/civ,
 		/datum/mil_rank/civ/offduty,
+		/datum/mil_rank/civ/nt
 	)
 
 	required_education = EDUCATION_TIER_NONE
