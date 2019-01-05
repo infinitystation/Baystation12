@@ -78,12 +78,18 @@
 		use_3p = replacetext(use_3p, "USER", "<b>\the [user]</b>")
 		use_3p = capitalize(use_3p)
 
-	do_extra(user, target)
 
 	if(message_type == AUDIBLE_MESSAGE)
-		user.audible_message(message = use_3p, self_message = use_1p, deaf_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
+		if(isliving(user))
+			var/mob/living/L = user
+			if(!L.silent)
+				user.audible_message(message = use_3p, self_message = use_1p, deaf_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
+				do_extra(user, target)
+			else
+				user.visible_message(message = "[user] voiceless opens USER_SELF mouth!", self_message = "You you cannot voice anything!", blind_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
 	else
 		user.visible_message(message = use_3p, self_message = use_1p, blind_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
+		do_extra(user, target)
 
 /decl/emote/proc/do_extra(var/atom/user, var/atom/target)
 	return
