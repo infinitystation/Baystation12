@@ -58,6 +58,9 @@
 /obj/structure/ladder/attack_robot(var/mob/M)
 	climb(M)
 
+/obj/structure/ladder/attack_generic(var/mob/user, var/damage)
+	climb(user)
+
 /obj/structure/ladder/proc/instant_climb(var/mob/M)
 	var/atom/target_ladder = getTargetLadder(M)
 	if(target_ladder)
