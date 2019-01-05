@@ -26,6 +26,7 @@
 												/obj/machinery/door/window,
 												/obj/structure/table,
 												/obj/structure/grille,
+												/obj/structure/railing,
 												/obj/structure/wall_frame)
 
 /mob/living/simple_animal/hostile/proc/FindTarget()
