@@ -57,10 +57,25 @@
 	if(. && (stat & BROKEN))
 		to_chat(user, "It's broken.")
 
-/obj/machinery/door/airlock/Destroy()
+/obj/machinery/door/blast/Destroy()
 	qdel(wifi_receiver)
 	wifi_receiver = null
 	return ..()
+
+/obj/machinery/door/blast/attack_generic(var/mob/user, var/damage)
+	if(stat & (BROKEN|NOPOWER))
+		if(damage >= 10)
+			if(src.density)
+				visible_message("<span class='danger'>\The [user] forces \the [src] open!</span>")
+				open(1)
+			else
+				visible_message("<span class='danger'>\The [user] forces \the [src] closed!</span>")
+				close(1)
+		else
+			visible_message("<span class='notice'>\The [user] strains fruitlessly to force \the [src] [density ? "open" : "closed"].</span>")
+		return
+	..()
+
 
 // Proc: Bumped()
 // Parameters: 1 (AM - Atom that tried to walk through this object)
