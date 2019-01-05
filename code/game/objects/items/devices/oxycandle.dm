@@ -70,7 +70,7 @@
 	if(on == 1)
 		icon_state = "oxycandle_on"
 		item_state = icon_state
-		set_light(brightness_on, light_max_bright, light_outer_range, light_color)
+		set_light(brightness_on, light_max_bright, light_outer_range, 1, light_color)
 	else if(on == 2)
 		icon_state = "oxycandle_burnt"
 		item_state = icon_state

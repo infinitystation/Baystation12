@@ -19,7 +19,6 @@
 		"Cometa" = list("nav_blueriver_shuttle"),
 	)
 
-
 /obj/effect/overmap/sector/arcticplanet/New(nloc, max_x, max_y)
 	name = "[generate_planet_name()], \a [name]"
 	..()
@@ -28,6 +27,7 @@
 	name = "Bluespace River"
 	id = "awaysite_blue"
 	description = "Two z-level map with an arctic planet and an alien underground surface"
+	cost = 1
 	prefix = "maps/away_inf/"
 	suffixes = list("blueriver/blueriver-1.dmm", "blueriver/blueriver-2.dmm")
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/blueriver_shuttle)
