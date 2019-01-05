@@ -587,7 +587,6 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	R.Find(text)
 	return R.group[1]
 
-
 proc/corrupt_text(t)
 	var/returntext = ""
 	for(var/i = 1, i <= length(t), i++)
