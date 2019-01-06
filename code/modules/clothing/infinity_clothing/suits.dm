@@ -40,6 +40,10 @@
 	icon_state = "hostrench"
 	item_state = "hostrench"
 	armor = list(melee = 65, bullet = 30, laser = 50, energy = 10, bomb = 25, bio = 0, rad = 0)
+	flags_inv = HIDEJUMPSUIT
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	siemens_coefficient = 0.6
+	allowed = list(/obj/item/weapon/gun/energy,/obj/item/device/radio,/obj/item/weapon/reagent_containers/spray/pepper,/obj/item/weapon/gun/projectile,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/handcuffs,/obj/item/weapon/gun/magnetic)
 
 /obj/item/clothing/suit/storage/tgbomber
 	name = "modern bomber jacket"
