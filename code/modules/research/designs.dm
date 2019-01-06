@@ -29,6 +29,7 @@ other types of metals and chemistry for reagents).
 	var/list/chemicals = list()		//List of chemicals.
 	var/build_path = null			//The path of the object that gets created.
 	var/time = 10					//How many ticks it requires to build
+	var/skill_fail_chance = 0		//Chance to create a crap instead of the object.
 	var/category = null 			//Primarily used for Mech Fabricators, but can be used for anything.
 	var/sort_string = "ZZZZZ"		//Sorting order
 
