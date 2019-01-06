@@ -60,11 +60,41 @@ var/list/datum/power/changeling/powerinstances = list()
 	genomecost = 4
 	verbpath = /mob/proc/changeling_lesser_form
 
+/datum/power/changeling/extractdna
+	name = "Extract DNA sting"
+	desc = "Мы втыкаем жало в жертву и извлекаем из неё образец ДНК. Безвкусно, пресно, но жертва останетс&#255; в живых."
+	helptext = "Дает ДНК жертвы, на которой был использован данный навык. Не учитываетс&#255; в качестве задани&#255; на поглощение. Может использоватьс&#255; в низшей форме."
+	genomecost = 2
+	allowduringlesserform = 1
+	verbpath = /mob/proc/changeling_extract_dna_sting
+
+/datum/power/changeling/unfat_sting
+	name = "Unfat Sting"
+	desc = "Мы скрытно жалим жертву, заставл&#255;&#255; её активно потеть и тер&#255;ть питательные вещества."
+	genomecost = 2
+	allowduringlesserform = 1
+	verbpath = /mob/proc/changeling_unfat_sting
+
+/datum/power/changeling/transformation_sting
+	name = "Transformation Sting"
+	desc = "Мы скрытно жалим МЕРТВУЮ жертву, ввод&#255; ретровирус, который измен&#255;ет её телу по нашему желанию."
+	helptext = "Жертва трансформируетс&#255; так, как трансформировалс&#255; бы другой генокрад."
+	genomecost = 3
+	verbpath = /mob/proc/changeling_transformation_sting
+
 /datum/power/changeling/deaf_sting
 	name = "Deaf Sting"
 	desc = "Мы жалим жертву, тем самым временно создава&#255; у неё слуховой шок. Она ничего не услышит."
 	genomecost = 3
 	verbpath = /mob/proc/changeling_deaf_sting
+
+/datum/power/changeling/LSDSting
+	name = "Hallucination Sting"
+	desc = "Мы развиваем способность жалить цель мощными галлюцинационными химикатами."
+	helptext = "Цель не замечает укола. Эффект длитс&#255; от 30 до 60 секунд."
+	genomecost = 4
+	allowduringlesserform = 1
+	verbpath = /mob/proc/changeling_lsdsting
 
 /datum/power/changeling/blind_sting
 	name = "Blind Sting"
@@ -81,28 +111,6 @@ var/list/datum/power/changeling/powerinstances = list()
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_silence_sting
 
-/datum/power/changeling/mimicvoice
-	name = "Mimic Voice"
-	desc = "Мы подстраиваем голосовые св&#255;зки так, чтобы они смогли имитировать голос любого существа."
-	helptext = "Изменит голос на заданное им&#255;. Посто&#255;нно тратит химикаты на поддержание."
-	genomecost = 2
-	verbpath = /mob/proc/changeling_mimicvoice
-
-/datum/power/changeling/extractdna
-	name = "Extract DNA"
-	desc = "Мы втыкаем жало в жертву и извлекаем из неё образец ДНК. Безвкусно, пресно, но жертва останетс&#255; в живых."
-	helptext = "Дает ДНК жертвы, на которой был использован данный навык. Не учитываетс&#255; в качестве задани&#255; на поглощение. Может использоватьс&#255; в низшей форме."
-	genomecost = 2
-	allowduringlesserform = 1
-	verbpath = /mob/proc/changeling_extract_dna_sting
-
-/datum/power/changeling/transformation_sting
-	name = "Transformation Sting"
-	desc = "Мы скрытно жалим МЕРТВУЮ жертву, ввод&#255; ретровирус, который измен&#255;ет её телу по нашему желанию."
-	helptext = "Жертва трансформируетс&#255; так, как трансформировалс&#255; бы другой генокрад."
-	genomecost = 3
-	verbpath = /mob/proc/changeling_transformation_sting
-
 /datum/power/changeling/pain_sting
 	name = "Pain Sting"
 	desc = "Мы жалим жертву, ввод&#255; сокращающий мышцы токсин, что вызовет сильную боль. Скорее всего, она станет беззащитной на короткое врем&#255;."
@@ -110,27 +118,12 @@ var/list/datum/power/changeling/powerinstances = list()
 	genomecost = 6
 	verbpath = /mob/proc/changeling_pain_sting
 
-/datum/power/changeling/LSDSting
-	name = "Hallucination Sting"
-	desc = "Мы развиваем способность жалить цель мощными галлюцинационными химикатами."
-	helptext = "Цель не замечает укола. Эффект длитс&#255; от 30 до 60 секунд."
-	genomecost = 4
-	allowduringlesserform = 1
-	verbpath = /mob/proc/changeling_lsdsting
-
 /datum/power/changeling/DeathSting
 	name = "Death Sting"
-	desc = "Мы жалим жертву, оставл&#255;&#255; в её теле опасные химикаты. Из-за них жерта умрет через несколько минут."
-	helptext = "При применении данный навык будет показан дл&#255; всех окружающих."
+	desc = "Мы жалим жертву, оставл&#255;&#255; в её теле опасные химикаты, приводящие к остановке сердца. Из-за них за минуту жертвы откажет сердце, а через 4 - она умрет окончательно."
+	helptext = "При применении данный навык будет показан дл&#255; всех окружающих. Не действует на резоми."
 	genomecost = 10
 	verbpath = /mob/proc/changeling_DEATHsting
-
-/datum/power/changeling/unfat_sting
-	name = "Unfat Sting"
-	desc = "Мы скрытно жалим жертву, заставл&#255;&#255; её активно потеть и тер&#255;ть питательные вещества."
-	genomecost = 2
-	allowduringlesserform = 1
-	verbpath = /mob/proc/changeling_unfat_sting
 
 /datum/power/changeling/boost_range
 	name = "Boost Range"
@@ -155,15 +148,7 @@ var/list/datum/power/changeling/powerinstances = list()
 	genomecost = 5
 	isVerb = 0
 	verbpath = /mob/proc/changeling_fastchemical
-/*
-/datum/power/changeling/AdvChemicalSynth
-	name = "Advanced Chemical-Synthesis"
-	desc = "We evolve new pathways for producing our necessary chemicals, permitting us to naturally create them faster."
-	helptext = "Doubles the rate at which we naturally recharge chemicals."
-	genomecost = 8
-	isVerb = 0
-	verbpath = /mob/proc/changeling_fastchemical
-*/
+
 /datum/power/changeling/EngorgedGlands
 	name = "Engorged Chemical Glands"
 	desc = "Наши химические железы набухают, благодар&#255; чему мы способны хранить больше химикатов."
@@ -171,6 +156,13 @@ var/list/datum/power/changeling/powerinstances = list()
 	genomecost = 5
 	isVerb = 0
 	verbpath = /mob/proc/changeling_engorgedglands
+
+/datum/power/changeling/mimicvoice
+	name = "Mimic Voice"
+	desc = "Мы подстраиваем голосовые св&#255;зки так, чтобы они смогли имитировать голос любого существа."
+	helptext = "Изменит голос на заданное им&#255;. Посто&#255;нно тратит химикаты на поддержание."
+	genomecost = 2
+	verbpath = /mob/proc/changeling_mimicvoice
 
 /datum/power/changeling/DigitalCamoflague
 	name = "Digital Camoflauge"
