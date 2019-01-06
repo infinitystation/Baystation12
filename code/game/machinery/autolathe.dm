@@ -232,7 +232,7 @@
 		return min(STATUS_UPDATE, ..())
 	return ..()
 
-/obj/machinery/autolathe/OnTopic(mob/user as mob, href_list, state)
+/obj/machinery/autolathe/OnTopic(mob/user, href_list, state)
 	set waitfor = 0
 	if(href_list["change_category"])
 		var/choice = input("Which category do you wish to display?") as null|anything in autolathe_categories+"All"
