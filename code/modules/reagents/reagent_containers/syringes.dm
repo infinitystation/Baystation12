@@ -76,11 +76,19 @@
 		handleBodyBag(target, user)
 		return
 
-	if(!target.reagents)
-		return
+	if(user.a_intent == I_HURT)
+		if(ismob(target))
+			syringestab(target, user)
+			return
+		if(reagents && reagents.total_volume)
+			to_chat(user, "<span class='notice'>You splash the contents of \the [src] onto [target].</span>")
+			playsound(src,'sound/effects/Splash_Small_01_mono.ogg',50,1)
+			reagents.splash(target, reagents.total_volume)
+			mode = SYRINGE_DRAW
+			update_icon()
+			return
 
-	if((user.a_intent == I_HURT) && ismob(target))
-		syringestab(target, user)
+	if(!target.reagents)
 		return
 
 	handleTarget(target, user)
