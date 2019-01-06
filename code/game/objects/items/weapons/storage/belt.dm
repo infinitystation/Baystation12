@@ -130,7 +130,8 @@
 		/obj/item/weapon/extinguisher/mini,
 		/obj/item/weapon/marshalling_wand,
 		/obj/item/weapon/hand_labeler,
-		/obj/item/clothing/gloves
+		/obj/item/clothing/gloves,
+		/obj/item/weapon/welder_tank
 		)
 
 
