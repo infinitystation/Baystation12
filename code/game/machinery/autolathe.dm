@@ -9,6 +9,7 @@
 	active_power_usage = 2000
 	clicksound = "keyboard"
 	clickvol = 30
+	layer = BELOW_OBJ_LAYER
 
 	var/list/machine_recipes
 	var/list/stored_material =  list(MATERIAL_STEEL = 0, MATERIAL_GLASS = 0)
@@ -61,6 +62,7 @@
 		shock(user, 50)
 
 	var/dat = "<center><h1>Autolathe Control Panel</h1><hr/>"
+	var/operator_device_skill = list(1.5, 1, 0.9, 0.8, 0.75)[user.get_skill_value(SKILL_DEVICES)]
 
 	if(!disabled)
 		dat += "<table width = '100%'>"
@@ -92,13 +94,13 @@
 					var/sheets = round(stored_material[material]/round(R.resources[material]*mat_efficiency))
 					if(isnull(max_sheets) || max_sheets > sheets)
 						max_sheets = sheets
-					if(!isnull(stored_material[material]) && stored_material[material] < round(R.resources[material]*mat_efficiency))
+					if(!isnull(stored_material[material]) && stored_material[material] < round(R.resources[material]*mat_efficiency*(R.is_stack ? 1 : operator_device_skill)))
 						can_make = 0
 					if(!comma)
 						comma = 1
 					else
 						material_string += ", "
-					material_string += "[round(R.resources[material] * mat_efficiency)] [material]"
+					material_string += "[round(R.resources[material] * mat_efficiency * (R.is_stack ? 1 : operator_device_skill))] [material]"
 				material_string += ".<br></td>"
 				//Build list of multipliers for sheets.
 				if(R.is_stack)
@@ -110,7 +112,6 @@
 						for(var/i = 5;i<max_sheets;i*=2) //5,10,20,40...
 							multiplier_string  += "<a href='?src=\ref[src];make=[index];multiplier=[i]'>\[x[i]\]</a>"
 						multiplier_string += "<a href='?src=\ref[src];make=[index];multiplier=[max_sheets]'>\[x[max_sheets]\]</a>"
-
 			dat += "<tr><td width = 180>[R.hidden ? "<font color = 'red'>*</font>" : ""]<b>[can_make ? "<a href='?src=\ref[src];make=[index];multiplier=1'>" : ""][R.name][can_make ? "</a>" : ""]</b>[R.hidden ? "<font color = 'red'>*</font>" : ""][multiplier_string]</td><td align = right>[material_string]</tr>"
 
 		dat += "</table><hr>"
@@ -156,8 +157,8 @@
 
 	//Resources are being loaded.
 	var/obj/item/eating = O
-
 	var/list/taking_matter
+
 	if(istype(eating, /obj/item/stack/material))
 		var/obj/item/stack/material/mat = eating
 		taking_matter = list()
@@ -231,7 +232,7 @@
 		return min(STATUS_UPDATE, ..())
 	return ..()
 
-/obj/machinery/autolathe/OnTopic(user, href_list, state)
+/obj/machinery/autolathe/OnTopic(mob/user, href_list, state)
 	set waitfor = 0
 	if(href_list["change_category"])
 		var/choice = input("Which category do you wish to display?") as null|anything in autolathe_categories+"All"
@@ -245,6 +246,8 @@
 		var/index = text2num(href_list["make"])
 		var/multiplier = text2num(href_list["multiplier"])
 		var/datum/autolathe/recipe/making
+		var/operator_device_skill = list(1.5, 1, 0.9, 0.8, 0.75)[user.get_skill_value(SKILL_DEVICES)]
+
 
 		if(index > 0 && index <= machine_recipes.len)
 			making = machine_recipes[index]
@@ -260,18 +263,18 @@
 		//Check if we still have the materials.
 		for(var/material in making.resources)
 			if(!isnull(stored_material[material]))
-				if(stored_material[material] < round(making.resources[material] * mat_efficiency) * multiplier)
+				if(stored_material[material] < round(making.resources[material] * mat_efficiency * (making.is_stack ? 1 : operator_device_skill)) * multiplier)
 					return TOPIC_REFRESH
 
 		//Consume materials.
 		for(var/material in making.resources)
 			if(!isnull(stored_material[material]))
-				stored_material[material] = max(0, stored_material[material] - round(making.resources[material] * mat_efficiency) * multiplier)
+				stored_material[material] = max(0, stored_material[material] - round(making.resources[material] * mat_efficiency * (making.is_stack ? 1 : operator_device_skill)) * multiplier)
 
 		//Fancy autolathe animation.
 		flick("autolathe_n", src)
 
-		sleep(build_time)
+		sleep(build_time * operator_device_skill)
 
 		busy = 0
 		update_use_power(1)
@@ -280,11 +283,21 @@
 		if(!making || QDELETED(src)) return TOPIC_HANDLED
 
 		//Create the desired item.
+		if(!user.skill_check(SKILL_DEVICES, SKILL_BASIC)) // little chance to fail for unskilled users.
+			if(prob(10))
+				src.audible_message("<span class='warning'>[pick("You hear a strange noises and some metal crackles.", "You hear a strange buzz from [src].")]</span>")
+				return
+
 		var/obj/item/I = new making.path(loc)
-		if(multiplier > 1 && istype(I, /obj/item/stack))
-			var/obj/item/stack/S = I
-			S.amount = multiplier
-			S.update_icon()
+		if(making.is_stack)
+			if(multiplier > 1)
+				var/obj/item/stack/S = I
+				S.amount = multiplier
+				S.update_icon()
+				return
+		else
+			for(var/material in making.resources)
+				I.matter[material] = round(making.resources[material] * operator_device_skill * 0.75)
 
 	if(. == TOPIC_REFRESH)
 		interact(user)
