@@ -745,26 +745,27 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			dat += "<B>Material Amount:</B> [linked_lathe.TotalMaterials()] cm<sup>3</sup> (MAX: [linked_lathe.max_material_storage])<BR>"
 			dat += "<B>Chemical Volume:</B> [linked_lathe.reagents.total_volume] (MAX: [linked_lathe.reagents.maximum_volume])<HR>"
 			dat += "<UL>"
+			var/protolathe_bonus = list(2, 1.5, 1, 0.9, 0.8)[operator_device_skill]
 			for(var/datum/design/D in files.known_designs)
 				if(!D.build_path || !(D.build_type & PROTOLATHE))
 					continue
 				var/temp_dat
 				var/name_dat = D.name
 				for(var/M in D.materials)
-					temp_dat += ", [round((D.materials[M]*linked_lathe.mat_efficiency) * list(2, 1.5, 1, 0.9, 0.8)[operator_device_skill])] [CallMaterialName(M)]"
+					temp_dat += ", [round(D.materials[M]*linked_lathe.mat_efficiency * protolathe_bonus)] [CallMaterialName(M)]"
 				for(var/T in D.chemicals)
-					temp_dat += ", [round(D.chemicals[T]*(linked_lathe ? linked_lathe.mat_efficiency : 1) * list(2, 1.5, 1, 0.9, 0.8)[operator_device_skill])] [CallReagentName(T)]"
+					temp_dat += ", [round(D.chemicals[T]*linked_lathe.mat_efficiency * protolathe_bonus)] [CallReagentName(T)]"
 				if(temp_dat)
 					temp_dat = " \[[copytext(temp_dat, 3)]\]"
-				if(!(operator_device_skill >= SKILL_BASIC))
+				if(!(user.skill_check(SKILL_DEVICES, SKILL_BASIC)))
 					temp_dat = corrupt_text(temp_dat)
 					name_dat = corrupt_text(name_dat)
-				if(linked_lathe.canBuild(D))
+				if(linked_lathe.canBuild(D, protolathe_bonus))
 					final_dat += "<LI><B><A href='?src=\ref[src];build=[D.id]'>[name_dat]</A></B>[temp_dat]"
 				else
 					final_dat += "<LI><B>[name_dat]</B>[temp_dat]"
 
-			if(operator_device_skill >= SKILL_ADEPT)
+			if(user.skill_check(SKILL_DEVICES, SKILL_ADEPT))
 				dat += final_dat
 			else
 				dat += shuffle(final_dat)
@@ -819,7 +820,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 						temp_dat += ", [D.chemicals[T]] [CallReagentName(T)]"
 					if(temp_dat)
 						temp_dat = " \[[copytext(temp_dat, 3)]\]"
-					if(!(operator_device_skill >= SKILL_BASIC))
+					if(!(user.skill_check(SKILL_DEVICES, SKILL_BASIC)))
 						temp_dat = corrupt_text(temp_dat)
 						name_dat = corrupt_text(name_dat)
 
@@ -847,22 +848,23 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			dat += "Material Amount: [linked_imprinter.TotalMaterials()] cm<sup>3</sup><BR>"
 			dat += "Chemical Volume: [linked_imprinter.reagents.total_volume]<HR>"
 			dat += "<UL>"
+			var/circuit_imprinter_bonus = list(1.5, 1, 0.9, 0.8, 0.75)[operator_device_skill]
 			for(var/datum/design/D in files.known_designs)
 				if(!D.build_path || !(D.build_type & IMPRINTER))
 					continue
 				var/temp_dat
 				for(var/M in D.materials)
-					temp_dat += ", [round(D.materials[M]*linked_imprinter.mat_efficiency * list(1.5, 1, 0.9, 0.8, 0.75)[operator_device_skill])] [CallMaterialName(M)]"
+					temp_dat += ", [round(D.materials[M]*linked_imprinter.mat_efficiency * circuit_imprinter_bonus)] [CallMaterialName(M)]"
 				for(var/T in D.chemicals)
-					temp_dat += ", [round(D.chemicals[T]*linked_imprinter.mat_efficiency * list(1.5, 1, 0.9, 0.8, 0.75)[operator_device_skill])] [CallReagentName(T)]"
+					temp_dat += ", [round(D.chemicals[T]*linked_imprinter.mat_efficiency * circuit_imprinter_bonus)] [CallReagentName(T)]"
 				if(temp_dat)
 					temp_dat = " \[[copytext(temp_dat,3)]\]"
-				if(linked_imprinter.canBuild(D))
+				if(linked_imprinter.canBuild(D, circuit_imprinter_bonus))
 					final_dat += "<LI><B><A href='?src=\ref[src];imprint=[D.id]'>[D.name]</A></B>[temp_dat]"
 				else
 					final_dat += "<LI><B>[D.name]</B>[temp_dat]"
 
-			if(operator_device_skill >= SKILL_BASIC)
+			if(user.skill_check(SKILL_DEVICES, SKILL_BASIC))
 				dat += final_dat
 			else
 				dat += shuffle(final_dat)

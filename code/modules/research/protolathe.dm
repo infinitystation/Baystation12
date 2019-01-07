@@ -138,12 +138,12 @@
 	queue.Cut(index, index + 1)
 	return
 
-/obj/machinery/r_n_d/protolathe/proc/canBuild(var/datum/design/D)
+/obj/machinery/r_n_d/protolathe/proc/canBuild(var/datum/design/D, var/protolathe_bonus)
 	for(var/M in D.materials)
-		if(materials[M] < D.materials[M])
+		if(materials[M] < D.materials[M] * mat_efficiency * protolathe_bonus)
 			return 0
 	for(var/C in D.chemicals)
-		if(!reagents.has_reagent(C, D.chemicals[C]))
+		if(!reagents.has_reagent(C, D.chemicals[C] * mat_efficiency * protolathe_bonus))
 			return 0
 	return 1
 
