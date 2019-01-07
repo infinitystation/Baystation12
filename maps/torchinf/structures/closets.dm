@@ -13,7 +13,6 @@
 	return list(
 		/obj/item/weapon/storage/belt/archaeology,
 		/obj/item/weapon/storage/excavation,
-		/obj/item/device/flashlight/lantern,
 		/obj/item/device/ano_scanner,
 		/obj/item/device/depth_scanner,
 		/obj/item/device/core_sampler,
