@@ -848,18 +848,18 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			dat += "Material Amount: [linked_imprinter.TotalMaterials()] cm<sup>3</sup><BR>"
 			dat += "Chemical Volume: [linked_imprinter.reagents.total_volume]<HR>"
 			dat += "<UL>"
-			var/autolathe_bonus = list(1.5, 1, 0.9, 0.8, 0.75)[operator_device_skill]
+			var/circuit_imprinter_bonus = list(1.5, 1, 0.9, 0.8, 0.75)[operator_device_skill]
 			for(var/datum/design/D in files.known_designs)
 				if(!D.build_path || !(D.build_type & IMPRINTER))
 					continue
 				var/temp_dat
 				for(var/M in D.materials)
-					temp_dat += ", [round(D.materials[M]*linked_imprinter.mat_efficiency * autolathe_bonus)] [CallMaterialName(M)]"
+					temp_dat += ", [round(D.materials[M]*linked_imprinter.mat_efficiency * circuit_imprinter_bonus)] [CallMaterialName(M)]"
 				for(var/T in D.chemicals)
-					temp_dat += ", [round(D.chemicals[T]*linked_imprinter.mat_efficiency * autolathe_bonus)] [CallReagentName(T)]"
+					temp_dat += ", [round(D.chemicals[T]*linked_imprinter.mat_efficiency * circuit_imprinter_bonus)] [CallReagentName(T)]"
 				if(temp_dat)
 					temp_dat = " \[[copytext(temp_dat,3)]\]"
-				if(linked_imprinter.canBuild(D, autolathe_bonus))
+				if(linked_imprinter.canBuild(D, circuit_imprinter_bonus))
 					final_dat += "<LI><B><A href='?src=\ref[src];imprint=[D.id]'>[D.name]</A></B>[temp_dat]"
 				else
 					final_dat += "<LI><B>[D.name]</B>[temp_dat]"
