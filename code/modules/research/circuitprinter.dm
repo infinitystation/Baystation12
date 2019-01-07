@@ -137,12 +137,12 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 	queue.Cut(index, index + 1)
 	return
 
-/obj/machinery/r_n_d/circuit_imprinter/proc/canBuild(var/datum/design/D)
+/obj/machinery/r_n_d/circuit_imprinter/proc/canBuild(var/datum/design/D, var/autolathe_bonus)
 	for(var/M in D.materials)
-		if(materials[M] <= D.materials[M] * mat_efficiency)
+		if(materials[M] <= D.materials[M] * mat_efficiency * autolathe_bonus)
 			return 0
 	for(var/C in D.chemicals)
-		if(!reagents.has_reagent(C, D.chemicals[C]))
+		if(!reagents.has_reagent(C, D.chemicals[C] * mat_efficiency * autolathe_bonus))
 			return 0
 	return 1
 
