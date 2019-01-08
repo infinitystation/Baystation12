@@ -79,7 +79,7 @@
 		var/index = 0
 		for(var/datum/autolathe/recipe/R in machine_recipes)
 			index++
-			if(R.hidden && !hacked || (show_category != "All" && show_category != R.category))
+			if((!user.skill_check(SKILL_DEVICES, SKILL_EXPERT) && (R.hidden && !hacked)) || show_category != "All" && show_category != R.category)
 				continue
 			var/can_make = 1
 			var/material_string = ""
