@@ -154,6 +154,8 @@
 		var/obj/effect/overmap/O = map_sectors[zlevel]
 		if(O.name == sierra.name)
 			continue
+		if(istype(O, /obj/effect/overmap/ship/landable))
+			continue
 		space_things |= O
 
 	var/list/distress_calls
