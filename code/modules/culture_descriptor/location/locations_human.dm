@@ -179,7 +179,8 @@
 	to the planet, but exceptions have been made. A scientifically driven people, they have served many organisations loyally."
 	capital = "The Hub"
 	economic_power = 1.0
-	secondary_langs = list(LANGUAGE_SIGN)
+	language = LANGUAGE_SPACER
+	secondary_langs = list(LANGUAGE_SIGN, LANGUAGE_SOL_COMMON, LANGUAGE_GUTTER)
 
 /decl/cultural_info/location/human/cinu
 	name = HOME_SYSTEM_CINU
@@ -227,7 +228,7 @@
 	and often see themselves as better. Most Lordanians are seen as untrustworthy, or selfish. As such, they are rarely seen within Sol's Defence Forces."
 	capital = "New Ares"
 	economic_power = 1.2
-	language = LANGUAGE_GALCOM
+	language = LANGUAGE_SPACER
 	secondary_langs = list(LANGUAGE_SOL_COMMON, LANGUAGE_LUNAR)
 
 /decl/cultural_info/location/human/kingston

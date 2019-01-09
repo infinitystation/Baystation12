@@ -31,7 +31,7 @@
 #define FACTION_FLEET          "SCG Fleet"
 #define FACTION_EXPEDITIONARY  "Expeditionary Corps"
 #define FACTION_PCRC           "Proxima Centauri Risk Control"
-#define FACTION_CORPORATE       "Expeditionary Corps Organisation"
+#define FACTION_CORPORATE      "Expeditionary Corps Organisation"
 #define FACTION_DAIS           "Deimos Advanced Information Systems"
 #define FACTION_OTHER          "Other Faction"
 #define FACTION_TEST_SUBJECTS  "Test Subjects"
@@ -159,27 +159,6 @@
 #define RELIGION_UNATHI_PRECURSOR    "Precursor"
 #define RELIGION_UNATHI_VINE         "Hand of the Vine"
 #define RELIGION_UNATHI_LIGHTS       "The Fruitful Lights"
-
-// Resomi cultures.
-
-#define CULTURE_RESOMI_REFUGE     "Refugee Child"
-#define CULTURE_RESOMI_NEWREFUGE  "Empire Child"
-
-#define FACTION_RESOMI_REFUGE     "Empire Refuge"
-
-#define HOME_SYSTEM_TIAMATH       "Tiamath"
-#define HOME_SYSTEM_KUIH          "Kuih"
-
-// Tajaran cultures.
-
-#define CULTURE_TAJARAN          "CMA Citizen"
-
-#define FACTION_TAJARAN_HADII    "Hadii Family"
-#define FACTION_TAJARAN_KAYTAM   "Kaytam Family"
-#define FACTION_TAJARAN_NAZKIIN  "Nazkiin Family"
-#define FACTION_TAJARAN_OTHER    "Other Family"
-
-#define HOME_SYSTEM_AHDOMAI      "Ahdomai"
 
 // Xenophage cultures.
 #define CULTURE_XENOPHAGE_D    "Xenophage Drone"
