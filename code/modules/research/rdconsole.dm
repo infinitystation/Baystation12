@@ -815,9 +815,9 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 					var/temp_dat
 					var/name_dat = D.name
 					for(var/M in D.materials)
-						temp_dat += ", [D.materials[M]] [CallMaterialName(M)]"
+						temp_dat += ", [D.materials[M]*linked_lathe.mat_efficiency] [CallMaterialName(M)]"
 					for(var/T in D.chemicals)
-						temp_dat += ", [D.chemicals[T]] [CallReagentName(T)]"
+						temp_dat += ", [D.chemicals[T]*linked_lathe.mat_efficiency] [CallReagentName(T)]"
 					if(temp_dat)
 						temp_dat = " \[[copytext(temp_dat, 3)]\]"
 					if(!(user.skill_check(SKILL_DEVICES, SKILL_BASIC)))
@@ -913,9 +913,9 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 				for(var/datum/design/D in linked_imprinter.queue)
 					var/temp_dat
 					for(var/M in D.materials)
-						temp_dat += ", [D.materials[M]] [CallMaterialName(M)]"
+						temp_dat += ", [D.materials[M]*linked_imprinter.mat_efficiency] [CallMaterialName(M)]"
 					for(var/T in D.chemicals)
-						temp_dat += ", [D.chemicals[T]] [CallReagentName(T)]"
+						temp_dat += ", [D.chemicals[T]*linked_imprinter.mat_efficiency] [CallReagentName(T)]"
 					if(temp_dat)
 						temp_dat = " \[[copytext(temp_dat, 3)]\]"
 
