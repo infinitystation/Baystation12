@@ -18,6 +18,7 @@
 
 	origin_tech = list(TECH_MAGNET = 1, TECH_ENGINEERING = 1)
 
+	var/buffer
 	var/buffer_name
 	var/atom/buffer_object
 
