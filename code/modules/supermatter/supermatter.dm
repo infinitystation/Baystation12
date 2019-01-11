@@ -21,6 +21,8 @@
 #define DETONATION_SHUTDOWN_SMES 60			// SMES
 #define DETONATION_SHUTDOWN_RNG_FACTOR 20	// RNG factor. Above shutdown times can be +- X%, where this setting is the percent. Do not set to 100 or more.
 #define DETONATION_SOLAR_BREAK_CHANCE 60	// prob() of breaking solar arrays (this is per-panel, and only affects the Z level SM is on)
+#define DETONATION_POWERDRAIN_APC 50		// the max amount of current energy that will remain in an APC after the explosion
+#define DETONATION_POWERDRAIN_SMES	5		// SMES
 
 #define WARNING_DELAY 20			//seconds between warnings.
 
@@ -219,19 +221,27 @@
 		// Overloads lights
 		if(prob(DETONATION_APC_OVERLOAD_PROB))
 			A.overload_lighting()
-		// Causes the APCs to go into system failure mode.
+		// Causes the APCs to go into system failure mode and lost power.
 		var/random_change = rand(100 - DETONATION_SHUTDOWN_RNG_FACTOR, 100 + DETONATION_SHUTDOWN_RNG_FACTOR) / 100
+		var/random_lost = rand(0, DETONATION_POWERDRAIN_APC) / 100
 		if(A.is_critical)
 			A.energy_fail(round(DETONATION_SHUTDOWN_CRITAPC * random_change))
 		else
 			A.energy_fail(round(DETONATION_SHUTDOWN_APC * random_change))
+			if(A.cell)
+				A.cell.charge *= random_lost
 
 	for(var/obj/machinery/power/smes/buildable/S in SSmachines.machinery)
 		if(!(S.z in affected_z))
 			continue
-		// Causes SMESes to shut down for a bit
+		// Causes SMESes to shut down and lost power.
 		var/random_change = rand(100 - DETONATION_SHUTDOWN_RNG_FACTOR, 100 + DETONATION_SHUTDOWN_RNG_FACTOR) / 100
+		var/random_lost = rand(0, DETONATION_POWERDRAIN_SMES) / 100 // welcome to your doom
 		S.energy_fail(round(DETONATION_SHUTDOWN_SMES * random_change))
+		S.charge *= random_lost
+		S.input_attempt = 0
+		S.output_attempt = 0
+		S.update_icon()
 
 	// Effect 3: Break solar arrays
 
@@ -563,5 +573,7 @@
 #undef DETONATION_SHUTDOWN_CRITAPC
 #undef DETONATION_SHUTDOWN_SMES
 #undef DETONATION_SHUTDOWN_RNG_FACTOR
+#undef DETONATION_POWERDRAIN_APC
+#undef DETONATION_POWERDRAIN_SMES
 #undef DETONATION_SOLAR_BREAK_CHANCE
 #undef WARNING_DELAY
