@@ -182,6 +182,10 @@
 	else
 		..()
 
+/obj/machinery/sleeper/dismantle()
+	go_out()
+	..()
+
 /obj/machinery/sleeper/MouseDrop_T(var/mob/target, var/mob/user)
 	if(!CanMouseDrop(target, user))
 		return
