@@ -395,6 +395,13 @@
 	desc = "Command"
 	region = ACCESS_REGION_COMMAND
 
+
+/var/const/access_exploration = 93
+/datum/access/exploration_equip
+	id = access_exploration
+	desc = "Exploration Access"
+
+
 /******************
 * Central Command *
 ******************/
