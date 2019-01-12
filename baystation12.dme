@@ -3043,7 +3043,7 @@
 #include "code\unit_tests\~helpers.dm"
 #include "code\unit_tests\~unit_test_types.dm"
 #include "interface\interface.dm"
-#include "interface\skin.dmf"
+#include "interface\skin_new.dmf"
 #include "maps\_map_include.dm"
 #include "maps\away\away_sites.dm"
 #include "maps\away_sites_testing\away_sites_testing_define.dm"
