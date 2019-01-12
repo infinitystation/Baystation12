@@ -37,43 +37,6 @@ var/list/department_radio_keys = list(
 	  ":Y" = "Exploration",		".Y" = "Exploration",
 
 	  //localized radio keys by ~KareTa
-	  ":к" = "right ear",	".к" = "right ear",
-	  ":д" = "left ear",	".д" = "left ear",
-	  ":ш" = "intercom",	".ш" = "intercom",
-	  ":р" = "department",	".р" = "department",
-	  ":с" = "Command",		".с" = "Command",
-	  ":т" = "Science",		".т" = "Science",
-	  ":ь" = "Medical",		".ь" = "Medical",
-	  ":у" = "Engineering",	".у" = "Engineering",
-	  ":ы" = "Security",	".ы" = "Security",
-	  ":ц" = "whisper",		".ц" = "whisper",
-	  ":е" = "Mercenary",	".е" = "Mercenary",
-	  ":г" = "Supply",		".г" = "Supply",
-	  ":м" = "Service",		".м" = "Service",
-	  ":з" = "AI Private",	".з" = "AI Private",
-	  ":я" = "Entertainment",".я" = "Entertainment",
-	  ":н" = "Exploration",		".н" = "Exploration",
-
-	  ":К" = "right ear",	".К" = "right ear",
-	  ":Д" = "left ear",	".Д" = "left ear",
-	  ":Ш" = "intercom",	".Ш" = "intercom",
-	  ":Р" = "department",	".Р" = "department",
-	  ":С" = "Command",		".С" = "Command",
-	  ":Т" = "Science",		".Т" = "Science",
-	  ":Ь" = "Medical",		".Ь" = "Medical",
-	  ":У" = "Engineering",	".У" = "Engineering",
-	  ":Ы" = "Security",	".Ы" = "Security",
-	  ":Ц" = "whisper",		".Ц" = "whisper",
-	  ":Е" = "Mercenary",	".Е" = "Mercenary",
-	  ":Г" = "Supply",		".Г" = "Supply",
-	  ":М" = "Service",		".М" = "Service",
-	  ":З" = "AI Private",	".З" = "AI Private",
-	  ":Я" = "Entertainment",".Я" = "Entertainment",
-	  ":Н" = "Exploration",		".Н" = "Exploration",
-
-	  /*
-	  //kinda localization -- rastaf0
-	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
 	  ":ГЄ" = "right ear",	".ГЄ" = "right ear",
 	  ":Г¤" = "left ear",	".Г¤" = "left ear",
 	  ":Гё" = "intercom",	".Гё" = "intercom",
@@ -85,7 +48,44 @@ var/list/department_radio_keys = list(
 	  ":Г»" = "Security",	".Г»" = "Security",
 	  ":Г¶" = "whisper",		".Г¶" = "whisper",
 	  ":ГҐ" = "Mercenary",	".ГҐ" = "Mercenary",
-	  ":Г©" = "Supply",		".Г©" = "Supply",
+	  ":ГЈ" = "Supply",		".ГЈ" = "Supply",
+	  ":Г¬" = "Service",		".Г¬" = "Service",
+	  ":Г§" = "AI Private",	".Г§" = "AI Private",
+	  ":Гї" = "Entertainment",".Гї" = "Entertainment",
+	  ":Г­" = "Exploration",		".Г­" = "Exploration",
+
+	  ":ГЉ" = "right ear",	".ГЉ" = "right ear",
+	  ":Г„" = "left ear",	".Г„" = "left ear",
+	  ":Г" = "intercom",	".Г" = "intercom",
+	  ":Гђ" = "department",	".Гђ" = "department",
+	  ":Г‘" = "Command",		".Г‘" = "Command",
+	  ":Г’" = "Science",		".Г’" = "Science",
+	  ":Гњ" = "Medical",		".Гњ" = "Medical",
+	  ":Г“" = "Engineering",	".Г“" = "Engineering",
+	  ":Г›" = "Security",	".Г›" = "Security",
+	  ":Г–" = "whisper",		".Г–" = "whisper",
+	  ":Г…" = "Mercenary",	".Г…" = "Mercenary",
+	  ":Гѓ" = "Supply",		".Гѓ" = "Supply",
+	  ":ГЊ" = "Service",		".ГЊ" = "Service",
+	  ":Г‡" = "AI Private",	".Г‡" = "AI Private",
+	  ":Гџ" = "Entertainment",".Гџ" = "Entertainment",
+	  ":ГЌ" = "Exploration",		".ГЌ" = "Exploration",
+
+	  /*
+	  //kinda localization -- rastaf0
+	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
+	  ":ГѓВЄ" = "right ear",	".ГѓВЄ" = "right ear",
+	  ":ГѓВ¤" = "left ear",	".ГѓВ¤" = "left ear",
+	  ":ГѓВё" = "intercom",	".ГѓВё" = "intercom",
+	  ":ГѓВ°" = "department",	".ГѓВ°" = "department",
+	  ":ГѓВ±" = "Command",		".ГѓВ±" = "Command",
+	  ":ГѓВІ" = "Science",		".ГѓВІ" = "Science",
+	  ":ГѓВј" = "Medical",		".ГѓВј" = "Medical",
+	  ":ГѓВі" = "Engineering",	".ГѓВі" = "Engineering",
+	  ":ГѓВ»" = "Security",	".ГѓВ»" = "Security",
+	  ":ГѓВ¶" = "whisper",		".ГѓВ¶" = "whisper",
+	  ":ГѓВҐ" = "Mercenary",	".ГѓВҐ" = "Mercenary",
+	  ":ГѓВ©" = "Supply",		".ГѓВ©" = "Supply",
 	  */
 )
 
@@ -181,7 +181,7 @@ proc/get_radio_key_from_channel(var/channel)
 	if(!message)
 		return
 
-	message = replacetext(message, "&#255;", "__:Я:_") // Никому же в голову не придет такое написать? ~bear1ake@inf-dev
+	message = replacetext(message, "&#255;", "__:Гџ:_") // ГЌГЁГЄГ®Г¬Гі Г¦ГҐ Гў ГЈГ®Г«Г®ГўГі Г­ГҐ ГЇГ°ГЁГ¤ГҐГІ ГІГ ГЄГ®ГҐ Г­Г ГЇГЁГ±Г ГІГј? ~bear1ake@inf-dev
 	message = html_decode(message)
 
 	var/end_char = copytext(message, lentext(message), lentext(message) + 1)
@@ -189,7 +189,7 @@ proc/get_radio_key_from_channel(var/channel)
 		message += "."
 
 	message = html_encode(message)
-	message = replacetext(message, "__:Я:_", "&#255;")
+	message = replacetext(message, "__:Гџ:_", "&#255;")
 	return message
 
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="", whispering)
@@ -352,12 +352,22 @@ proc/get_radio_key_from_channel(var/channel)
 		var/list/eavesdroping_obj = list()
 		get_mobs_and_objs_in_view_fast(T, eavesdroping_range, eavesdroping, eavesdroping_obj)
 		eavesdroping -= listening
+		for(var/mob/M in listening) //for resomi
+			var/mob/living/carbon/human/H
+			if(ishuman(M))
+				H = M
+				if(H.get_species() == SPECIES_RESOMI)
+					eavesdroping += H
 		eavesdroping_obj -= listening_obj
 		for(var/mob/M in eavesdroping)
 			if(M)
+				var/mob/living/carbon/human/H //for resomi
+				if(ishuman(M))
+					H = M
 				show_image(M, speech_bubble)
-				M.hear_say(stars(message), verb, speaking, alt_name, italics, src, speech_sound, sound_vol)
-
+				M.hear_say((H.get_species() == SPECIES_RESOMI ? message : stars(message)), verb, speaking, alt_name, italics, src, speech_sound, sound_vol)
+				if(M.client)
+					speech_bubble_recipients += M.client
 		for(var/obj/O in eavesdroping)
 			spawn(0)
 				if(O) //It's possible that it could be deleted in the meantime.
