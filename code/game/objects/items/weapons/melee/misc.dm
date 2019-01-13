@@ -1,5 +1,5 @@
 /obj/item/weapon/melee/whip
-	name = "whip"
+	name = "chain whip"
 	desc = "A generic whip."
 	icon_state = "chain"
 	item_state = "chain"
