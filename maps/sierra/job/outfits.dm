@@ -520,6 +520,9 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/stowaway/post_equip(var/mob/living/carbon/human/H)
 	..()
 	var/obj/item/weapon/card/id/sierra/stowaway/ID = new(H.loc)
+	ID.registered_name = H.gender
+	ID.sex = H.gender
+	ID.gender = H.gender
 	H.put_in_hands(ID)
 
 /decl/hierarchy/outfit/job/sierra/ert
