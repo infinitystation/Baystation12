@@ -44,3 +44,17 @@
 	sound_to(user, activation_sound)
 	user.update_inv_glasses()
 	user.update_action_buttons()
+
+/obj/item/clothing/glasses/sunglasses/blindfold/fake
+	flash_protection = FLASH_PROTECTION_NONE
+	tint = TINT_NONE
+
+/obj/item/clothing/glasses/sunglasses/blindfold/fake/toggle()
+	. = ..()
+	flash_protection = FLASH_PROTECTION_NONE
+	tint = TINT_NONE
+
+/obj/item/clothing/glasses/sunglasses/blindfold/fake/examine()
+	. = ..()
+	if(Adjacent(usr))
+		to_chat(usr, "<span class='notice'>You may notice two small holes on one side, which are most likely used to see through them.</span>")
