@@ -37,6 +37,43 @@ var/list/department_radio_keys = list(
 	  ":Y" = "Exploration",		".Y" = "Exploration",
 
 	  //localized radio keys by ~KareTa
+	  ":ê" = "right ear",	".ê" = "right ear",
+	  ":ä" = "left ear",	".ä" = "left ear",
+	  ":ø" = "intercom",	".ø" = "intercom",
+	  ":ğ" = "department",	".ğ" = "department",
+	  ":ñ" = "Command",		".ñ" = "Command",
+	  ":ò" = "Science",		".ò" = "Science",
+	  ":ü" = "Medical",		".ü" = "Medical",
+	  ":ó" = "Engineering",	".ó" = "Engineering",
+	  ":û" = "Security",	".û" = "Security",
+	  ":ö" = "whisper",		".ö" = "whisper",
+	  ":å" = "Mercenary",	".å" = "Mercenary",
+	  ":ã" = "Supply",		".ã" = "Supply",
+	  ":ì" = "Service",		".ì" = "Service",
+	  ":ç" = "AI Private",	".ç" = "AI Private",
+	  ":ÿ" = "Entertainment",".ÿ" = "Entertainment",
+	  ":í" = "Exploration",		".í" = "Exploration",
+
+	  ":Ê" = "right ear",	".Ê" = "right ear",
+	  ":Ä" = "left ear",	".Ä" = "left ear",
+	  ":Ø" = "intercom",	".Ø" = "intercom",
+	  ":Ğ" = "department",	".Ğ" = "department",
+	  ":Ñ" = "Command",		".Ñ" = "Command",
+	  ":Ò" = "Science",		".Ò" = "Science",
+	  ":Ü" = "Medical",		".Ü" = "Medical",
+	  ":Ó" = "Engineering",	".Ó" = "Engineering",
+	  ":Û" = "Security",	".Û" = "Security",
+	  ":Ö" = "whisper",		".Ö" = "whisper",
+	  ":Å" = "Mercenary",	".Å" = "Mercenary",
+	  ":Ã" = "Supply",		".Ã" = "Supply",
+	  ":Ì" = "Service",		".Ì" = "Service",
+	  ":Ç" = "AI Private",	".Ç" = "AI Private",
+	  ":ß" = "Entertainment",".ß" = "Entertainment",
+	  ":Í" = "Exploration",		".Í" = "Exploration",
+
+	  /*
+	  //kinda localization -- rastaf0
+	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
 	  ":Ãª" = "right ear",	".Ãª" = "right ear",
 	  ":Ã¤" = "left ear",	".Ã¤" = "left ear",
 	  ":Ã¸" = "intercom",	".Ã¸" = "intercom",
@@ -48,47 +85,8 @@ var/list/department_radio_keys = list(
 	  ":Ã»" = "Security",	".Ã»" = "Security",
 	  ":Ã¶" = "whisper",		".Ã¶" = "whisper",
 	  ":Ã¥" = "Mercenary",	".Ã¥" = "Mercenary",
-	  ":Ã£" = "Supply",		".Ã£" = "Supply",
-	  ":Ã¬" = "Service",		".Ã¬" = "Service",
-	  ":Ã§" = "AI Private",	".Ã§" = "AI Private",
-	  ":Ã¿" = "Entertainment",".Ã¿" = "Entertainment",
-	  ":Ã­" = "Exploration",		".Ã­" = "Exploration",
-
-	  ":ÃŠ" = "right ear",	".ÃŠ" = "right ear",
-	  ":Ã„" = "left ear",	".Ã„" = "left ear",
-	  ":Ã˜" = "intercom",	".Ã˜" = "intercom",
-	  ":Ã" = "department",	".Ã" = "department",
-	  ":Ã‘" = "Command",		".Ã‘" = "Command",
-	  ":Ã’" = "Science",		".Ã’" = "Science",
-	  ":Ãœ" = "Medical",		".Ãœ" = "Medical",
-	  ":Ã“" = "Engineering",	".Ã“" = "Engineering",
-	  ":Ã›" = "Security",	".Ã›" = "Security",
-	  ":Ã–" = "whisper",		".Ã–" = "whisper",
-	  ":Ã…" = "Mercenary",	".Ã…" = "Mercenary",
-	  ":Ãƒ" = "Supply",		".Ãƒ" = "Supply",
-	  ":ÃŒ" = "Service",		".ÃŒ" = "Service",
-	  ":Ã‡" = "AI Private",	".Ã‡" = "AI Private",
-	  ":ÃŸ" = "Entertainment",".ÃŸ" = "Entertainment",
-	  ":Ã" = "Exploration",		".Ã" = "Exploration",
-
-	  /*
-	  //kinda localization -- rastaf0
-	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
-	  ":ÃƒÂª" = "right ear",	".ÃƒÂª" = "right ear",
-	  ":ÃƒÂ¤" = "left ear",	".ÃƒÂ¤" = "left ear",
-	  ":ÃƒÂ¸" = "intercom",	".ÃƒÂ¸" = "intercom",
-	  ":ÃƒÂ°" = "department",	".ÃƒÂ°" = "department",
-	  ":ÃƒÂ±" = "Command",		".ÃƒÂ±" = "Command",
-	  ":ÃƒÂ²" = "Science",		".ÃƒÂ²" = "Science",
-	  ":ÃƒÂ¼" = "Medical",		".ÃƒÂ¼" = "Medical",
-	  ":ÃƒÂ³" = "Engineering",	".ÃƒÂ³" = "Engineering",
-	  ":ÃƒÂ»" = "Security",	".ÃƒÂ»" = "Security",
-	  ":ÃƒÂ¶" = "whisper",		".ÃƒÂ¶" = "whisper",
-	  ":ÃƒÂ¥" = "Mercenary",	".ÃƒÂ¥" = "Mercenary",
-	  ":ÃƒÂ©" = "Supply",		".ÃƒÂ©" = "Supply",
+	  ":Ã©" = "Supply",		".Ã©" = "Supply",
 	  */
-)
-
 
 var/list/channel_to_radio_key = new
 proc/get_radio_key_from_channel(var/channel)
