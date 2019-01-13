@@ -294,7 +294,7 @@
 				new_objective.owner = src
 
 			if ("kidnap")
-				new_objective = new /datum/objective/terrorists/kidnap
+				new_objective = new /datum/objective/heist/kidnap_nuke
 				new_objective.owner = src
 
 			if ("steal")

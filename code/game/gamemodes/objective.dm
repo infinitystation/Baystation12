@@ -398,15 +398,11 @@ datum/objective/harm
 
 
 datum/objective/nuclear
-	explanation_text = "Уничтожьте объект с помощью ядерного заряда."
+	explanation_text = "Уничтожьте объект с помощью &#255;дерного зар&#255;да."
 
-datum/objective/terrorists
-	proc/choose_target()
-		return
-
-datum/objective/terrorists/kidnap
+datum/objective/heist/kidnap_nuke
 	choose_target()
-		var/list/roles = list("Captain", "Internal Affairs Agent", "Chief Engineer", "Research Director", "Engineer", "Passenger")
+		var/list/roles = list("Captain", "Internal Affairs Agent", "Chief Engineer", "Research Director", "Engineer")
 		var/list/possible_targets = list()
 		var/list/priority_targets = list()
 
@@ -424,9 +420,9 @@ datum/objective/terrorists/kidnap
 			target = pick(possible_targets)
 
 		if(target && target.current)
-			explanation_text = "Наши наниматели хотят, чтобы мы захватили '[target.current.real_name], [target.assigned_role]' и доставили на базу. Цель должна быть живой."
+			explanation_text = "Наниматель хочет, чтобы мы захватили '[target.current.real_name], [target.assigned_role]' и доставили на базу. Цель должна быть живой."
 		else
-			explanation_text = "Free Objective"
+			explanation_text = "Захвать по крайней мере одного высокопоставленного или обладающего ценными данными члена экипажа живым. Приоритет - ученые, главы, инженеры, пассажиры."
 		return target
 
 	check_completion()
