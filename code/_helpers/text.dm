@@ -179,6 +179,14 @@ proc/fix_html(var/t)
 /proc/sanitize_old(var/t,var/list/repl_chars = list("ÿ"="___255_"))
 	return replacetext(html_encode(replace_characters(t,repl_chars)), "___255_", "&#255;")
 
+// Truncates text to limit if necessary.
+/proc/dd_limittext(message, length)
+	var/size = length(message)
+	if (size <= length)
+		return message
+	else
+		return copytext(message, 1, length + 1)
+
 /*
  * Text searches
  */
