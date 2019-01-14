@@ -351,12 +351,6 @@ proc/get_radio_key_from_channel(var/channel)
 		var/list/eavesdroping_obj = list()
 		get_mobs_and_objs_in_view_fast(T, eavesdroping_range, eavesdroping, eavesdroping_obj)
 		eavesdroping -= listening
-		for(var/mob/M in listening) //for resomi
-			var/mob/living/carbon/human/H
-			if(ishuman(M))
-				H = M
-				if(H.get_species() == SPECIES_RESOMI)
-					eavesdroping += H
 		eavesdroping_obj -= listening_obj
 		for(var/mob/M in eavesdroping)
 			if(M)
