@@ -87,6 +87,7 @@ var/list/department_radio_keys = list(
 	  ":å" = "Mercenary",	".å" = "Mercenary",
 	  ":é" = "Supply",		".é" = "Supply",
 	  */
+)
 
 var/list/channel_to_radio_key = new
 proc/get_radio_key_from_channel(var/channel)
