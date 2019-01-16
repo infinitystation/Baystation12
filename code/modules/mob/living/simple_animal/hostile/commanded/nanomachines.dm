@@ -54,7 +54,7 @@
 	if(!Adjacent(target_mob) || SA_attackable(target_mob))
 		stance = COMMANDED_HEAL
 		return 0
-	if(target_mob.stat || target_mob.health >= target_mob.maxHealth) //he's either dead or healthy, move along.
+	if(target_mob.stat || target_mob.health >= target_mob.maxHealth || target_mob.last_dam > 0) //he's either dead or healthy, move along.
 		allowed_targets -= target_mob
 		target_mob = null
 		stance = COMMANDED_HEAL
