@@ -12,6 +12,7 @@
 	desc = "It's a toolbelt, that have big pocket for portable circuit printer on right side and five smaller pockets for tools on left side."
 	icon_state = "ic_belt"
 	item_state = "utility"
+	max_w_class = ITEM_SIZE_LARGE
 	storage_slots = 6
 	can_holster = list(
 		/obj/item/device/integrated_circuit_printer
