@@ -40,8 +40,8 @@
 	//manualy holsted printer
 	var/datum/extension/holster/H = get_extension(src, /datum/extension/holster)
 	H.holstered = new /obj/item/device/integrated_circuit_printer/custom/preset
-	H.storage.handle_item_insertion(H.holstered, 1)
 	H.storage.w_class = max(H.storage.w_class, H.holstered.w_class)
+	H.storage.handle_item_insertion(H.holstered, 1)
 	H.atom_holder.SetName("occupied [initial(H.atom_holder.name)]")
 	GLOB.moved_event.register(H.holstered, H, /datum/extension/holster/proc/check_holster)
 	GLOB.destroyed_event.register(H.holstered, H, /datum/extension/holster/proc/clear_holster)
