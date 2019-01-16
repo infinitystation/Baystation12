@@ -1,4 +1,4 @@
-#	PMP HERE
+﻿#	PMP HERE
 
 {
 ckey: sallyvadordomold
@@ -328,6 +328,11 @@ ckey: arhod
 character_name: Amr'in Battrral
 item_path: /obj/item/weapon/flame/lighter/zippo/infinity/messotha
 item_desc: Темна&#255; зажигалка из, на удивление, теплого на ощупь металла с особой фиолетовой гравировкой. Выпускает необычное пурпурное плам&#255;, непривычное дл&#255; природного &#255;влени&#255;. На лицевой стороне красуетс&#255; цифра 27 со следующими словами: "27 убийств". Если ты нашёл эту зиппо на моём теле - иди-ка ты нахуй!", на обратной стороне же, следующее "Мы безвольные, обученные неопытными, делающие невозможное дл&#255; неблагодарных. Дес&#255;ти минут слишком мало".
+}
+{
+ckey: laxesh
+character_name: Thomas Koster
+item_path: /obj/item/weapon/storage/belt/holster/ic/full
 }
 
 #	MEDIUM ITEMS HERE (5-6)
