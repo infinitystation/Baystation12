@@ -12,7 +12,7 @@ The "dust" will damage the hull of the station causin minor hull breaches.
 
 /datum/event/dust/announce()
 //	command_announcement.Announce("The [location_name()] is now passing through a belt of space dust.", "Сенсоры [location_name()]", zlevels = affecting_z)
-	priority_announcement.Announce("Объект [location_name()] покинул зону скопления космической пыли.", "Сенсоры [location_name()]", zlevels = affecting_z)
+	priority_announcement.Announce("Объект [location_name()] вошел в зону скопления космической пыли.", "Сенсоры [location_name()]", zlevels = affecting_z)
 
 
 /datum/event/dust/tick()

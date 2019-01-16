@@ -324,7 +324,7 @@
 	icon_state = "shuttle"
 	requires_power = 0
 	dynamic_lighting = 1
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+	area_flags = AREA_FLAG_ION_SHIELDED
 
 /area/turbolift/start
 	name = "Turbolift Start"
