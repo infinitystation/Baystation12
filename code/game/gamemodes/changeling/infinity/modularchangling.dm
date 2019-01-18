@@ -514,14 +514,14 @@ var/list/datum/power/changeling/powerinstances = list()
 
 
 	if(Thepower == null)
-		to_chat(M.current, "This is awkward.  Changeling power purchase failed, please report this bug to a coder!")
+		to_chat(M.current, "This is awkward. Changeling power purchase failed, please report this bug to a coder!")
 		return
 
 	if(Thepower in purchasedpowers)
-		to_chat(M.current, "We have already evolved this ability!")
+		to_chat(M.current, SPAN_LING("We have already evolved this ability!"))
 
 	if(geneticpoints < Thepower.genomecost)
-		to_chat(M.current, "We cannot evolve this... yet.  We must acquire more DNA.")
+		to_chat(M.current, SPAN_LING("We cannot evolve this... yet.  We must acquire more DNA."))
 		return
 
 	geneticpoints -= Thepower.genomecost

@@ -89,7 +89,6 @@ var/list/department_radio_keys = list(
 	  */
 )
 
-
 var/list/channel_to_radio_key = new
 proc/get_radio_key_from_channel(var/channel)
 	var/key = channel_to_radio_key[channel]
@@ -181,7 +180,7 @@ proc/get_radio_key_from_channel(var/channel)
 	if(!message)
 		return
 
-	message = replacetext(message, "&#255;", "__:Я:_") // Никому же в голову не придет такое написать? ~bear1ake@inf-dev
+	message = replacetext(message, "&#255;", "__:Гџ:_") // ГЌГЁГЄГ®Г¬Гі Г¦ГҐ Гў ГЈГ®Г«Г®ГўГі Г­ГҐ ГЇГ°ГЁГ¤ГҐГІ ГІГ ГЄГ®ГҐ Г­Г ГЇГЁГ±Г ГІГј? ~bear1ake@inf-dev
 	message = html_decode(message)
 
 	var/end_char = copytext(message, lentext(message), lentext(message) + 1)
@@ -189,7 +188,7 @@ proc/get_radio_key_from_channel(var/channel)
 		message += "."
 
 	message = html_encode(message)
-	message = replacetext(message, "__:Я:_", "&#255;")
+	message = replacetext(message, "__:Гџ:_", "&#255;")
 	return message
 
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="", whispering)
@@ -355,9 +354,18 @@ proc/get_radio_key_from_channel(var/channel)
 		eavesdroping_obj -= listening_obj
 		for(var/mob/M in eavesdroping)
 			if(M)
+				var/mob/living/carbon/human/H
+				var/temp
+				//for resomi
+				if(ishuman(M))
+					H = M
+					temp = (H.get_species() == SPECIES_RESOMI ? message : stars(message))
+				else
+					temp = stars(message)
 				show_image(M, speech_bubble)
-				M.hear_say(stars(message), verb, speaking, alt_name, italics, src, speech_sound, sound_vol)
-
+				M.hear_say(temp, verb, speaking, alt_name, italics, src, speech_sound, sound_vol)
+				if(M.client)
+					speech_bubble_recipients += M.client
 		for(var/obj/O in eavesdroping)
 			spawn(0)
 				if(O) //It's possible that it could be deleted in the meantime.

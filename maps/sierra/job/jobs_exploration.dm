@@ -37,8 +37,8 @@
 	title = "Explorer"
 	department = "Exploration"
 	department_flag = EXP
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Captain and the Exploration Leader"
 	selection_color = "#68099e"
 	ideal_character_age = 20
@@ -94,7 +94,7 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
-	required_education = EDUCATION_TIER_BASIC
+	required_education = EDUCATION_TIER_TRADE
 	maximum_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/explorer_medic
@@ -135,7 +135,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
 	required_education = EDUCATION_TIER_TRADE
-	maximum_education = EDUCATION_TIER_MASTERS
+	maximum_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/explorer_engineer
 	title = "Field Engineer"

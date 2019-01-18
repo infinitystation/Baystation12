@@ -137,18 +137,69 @@
 		return
 	if(default_deconstruction_crowbar(user, O))
 		return
-	if(default_part_replacement(user, O))
-		return
+
+	if(panel_open)
+		if(default_part_replacement(user, O))
+			return
 
 	if(stat)
 		return
 
 	if(panel_open)
-		//Don't eat multitools or wirecutters used on an open lathe.
 		if(isMultitool(O) || isWirecutter(O))
 			attack_hand(user)
 			return
+	else
+		if(istype(O, /obj/item/weapon/storage/part_replacer))
+			var/obj/item/weapon/storage/part_replacer/R = O
+			var/hasparts = 0
+			var/filltype = 0
+			for(var/obj/item/weapon/stock_parts/S in R.contents)
+				if(S.rating >= 3)	//i'm not sure but eh.
+					continue
 
+				var/list/taking_matter = S.matter
+				var/eaten = 0
+				hasparts = 1
+				for(var/material in taking_matter)
+					if(stored_material[material] >= storage_capacity[material])
+						continue
+
+					var/total_material = taking_matter[material]
+
+					if(stored_material[material] + total_material > storage_capacity[material])
+						total_material = storage_capacity[material] - stored_material[material]
+						filltype = 1
+
+					else
+						filltype = 2
+
+					eaten = 1
+					stored_material[material] += total_material
+				if(eaten)
+					R.remove_from_storage(S, src)
+					qdel(S)
+
+			if(!hasparts)
+				to_chat(user, "<span class='notice'>\The [R] is empty.\nFollowing parts detected in the machine:</span>")
+				for(var/var/obj/item/C in component_parts)
+					to_chat(user, "<span class='notice'>	[C.name]</span>")
+				return
+
+			if(!filltype)
+				to_chat(user, "<span class='notice'>\The [src] is full. Please remove material from the autolathe in order to insert more.\nFollowing parts detected in the machine:</span>")
+				for(var/var/obj/item/C in component_parts)
+					to_chat(user, "<span class='notice'>	[C.name]</span>")
+				return
+			else if(filltype == 1)
+				to_chat(user, "<span class='notice'>You fill \the [src] to capacity with \the [O].</span>")
+			else
+				to_chat(user, "<span class='notice'>You empty \the [O] into \the [src].</span>")
+
+			flick("autolathe_o", src)
+			updateUsrDialog()
+
+			return
 	if(O.loc != user && !(istype(O,/obj/item/stack)))
 		return 0
 

@@ -105,6 +105,22 @@ var/list/_client_preferences_by_type
 		sound_to(preference_mob, sound(null, repeat = 0, wait = 0, volume = 0, channel = GLOB.lobby_sound_channel))
 		sound_to(preference_mob, sound(null, repeat = 0, wait = 0, volume = 0, channel = GLOB.ambience_sound_channel))
 
+/datum/client_preference/play_instruments
+	description ="Play instruments"
+	key = "SOUND_INSTRUMENTS"
+
+/datum/client_preference/play_jukeboxes
+	description ="Play jukeboxes"
+	key = "SOUND_JUKEBOXES"
+
+/datum/client_preference/play_boomboxes
+	description ="Play boomboxes"
+	key = "SOUND_BOOMBOXES"
+
+/datum/client_preference/play_pmps
+	description ="Play pmps"
+	key = "SOUND_PMPS"
+
 /datum/client_preference/ghost_ears
 	description ="Ghost ears"
 	key = "CHAT_GHOSTEARS"
@@ -201,10 +217,6 @@ var/list/_client_preferences_by_type
 /datum/client_preference/show_credits
 	description = "Show End Titles"
 	key = "SHOW_CREDITS"
-
-/datum/client_preference/play_instruments
-	description ="Play instruments"
-	key = "SOUND_INSTRUMENTS"
 
 /datum/client_preference/anon_say
 	description ="Anonymous Chat"

@@ -26,6 +26,7 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
 	required_education = EDUCATION_TIER_BACHELOR
+	maximum_education = EDUCATION_TIER_DOCTORATE
 
 /datum/job/hop
 	title = "Head of Personnel"
@@ -68,6 +69,7 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
 	required_education = EDUCATION_TIER_BACHELOR
+	maximum_education = EDUCATION_TIER_MASTERS
 
 /datum/job/rd
 	title = "Research Director"
@@ -269,6 +271,7 @@
 
 	software_on_spawn = list(/datum/computer_file/program/reports)
 	required_education = EDUCATION_TIER_BACHELOR
+	maximum_education = EDUCATION_TIER_MASTERS
 
 /datum/job/adjutant
 	title = "Adjutant"

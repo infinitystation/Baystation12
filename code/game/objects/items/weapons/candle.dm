@@ -15,6 +15,7 @@
 	. = ..()
 
 /obj/item/weapon/flame/candle/on_update_icon()
+	overlays.Cut()
 	var/i
 	if(wax > 1500)
 		i = 1
@@ -24,8 +25,6 @@
 	icon_state = "candle[i]"
 	if(lit)
 		overlays += overlay_image(icon, "[icon_state]_lit", flags=RESET_COLOR)
-	else
-		overlays.Cut()
 
 /obj/item/weapon/flame/candle/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()

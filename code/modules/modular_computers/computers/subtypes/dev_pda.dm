@@ -68,7 +68,6 @@
 	icon_state_unpowered = "pda-nt"
 
 /obj/item/modular_computer/pda/heads
-	name = "command PDA"
 	icon_state = "pda-h"
 	icon_state_unpowered = "pda-h"
 
@@ -114,3 +113,7 @@
 /obj/item/modular_computer/pda/roboticist
 	icon_state = "pda-robot"
 	icon_state_unpowered = "pda-robot"
+
+/obj/item/modular_computer/pda/explorer
+	icon_state = "pda-exp"
+	icon_state_unpowered = "pda-exp"
