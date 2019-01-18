@@ -651,6 +651,30 @@
 	name = "Xenobiology Access"
 	icon_state = "xeno_lab"
 
+/area/rnd/xenobiology/entry2
+	name = "Xenobiology Access"
+	icon_state = "xeno_lab"
+
+/area/rnd/xenobiology/level1
+	name = "Xenobiology Level One"
+	icon_state = "xeno_lab"
+
+/area/rnd/xenobiology/level2
+	name = "Xenobiology Level Two"
+	icon_state = "xeno_lab"
+
+/area/rnd/xenobiology/atmos
+	name = "Xenobiology Atmos Hub"
+	icon_state = "xeno_lab"
+
+/area/rnd/xenobiology/water_cell
+	name = "Xenobiology Water Cell"
+	icon_state = "xeno_lab"
+
+/area/rnd/xenobiology/storage
+	name = "Xenobiology Storage"
+	icon_state = "xeno_lab"
+
 /area/rnd/checkpoint
 	name = "Research Security Checkpoint"
 	icon_state = "checkpoint1"
