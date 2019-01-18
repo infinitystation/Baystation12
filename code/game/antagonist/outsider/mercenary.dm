@@ -6,8 +6,8 @@ GLOBAL_DATUM_INIT(mercs, /datum/antagonist/mercenary, new)
 	antag_indicator = "hudsyndicate"
 	role_text_plural = "Mercenaries"
 	landmark_id = "Syndicate-Spawn"
-	leader_welcome_text = "Вы - лидер отряда наемников. Используйте префикс ':t' чтобы общаться с вашими соратниками по рации."
-	welcome_text = "Для общения через частоту оперативников, используйте префикс ':t'."
+	leader_welcome_text = "Вы - лидер отр&#255;да наемников. Используйте префикс ':t' чтобы общатьс&#255; с вашими соратниками по рации."
+	welcome_text = "Дл&#255; общени&#255; через частоту оперативников, используйте префикс ':t'."
 	flags = ANTAG_VOTABLE | ANTAG_OVERRIDE_JOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_HAS_NUKE | ANTAG_SET_APPEARANCE | ANTAG_HAS_LEADER
 	antaghud_indicator = "hudoperative"
 
