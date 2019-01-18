@@ -510,6 +510,9 @@
 	dir = 5
 	icon_state = "rwindow_full"
 
+/obj/structure/window/reinforced/bar
+	color = COLOR_BROWN
+
 /obj/structure/window/reinforced/tinted
 	name = "tinted window"
 	desc = "It looks rather strong and opaque. Might take a few good hits to shatter it."
