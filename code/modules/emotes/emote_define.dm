@@ -86,7 +86,7 @@
 				user.audible_message(message = use_3p, self_message = use_1p, deaf_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
 				do_extra(user, target)
 			else
-				user.visible_message(message = "[user] voiceless opens USER_SELF mouth!", self_message = "You you cannot voice anything!", blind_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
+				user.visible_message(message = "[user] noiselessly opens mouth!", self_message = "You you cannot say anything!", blind_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
 	else
 		user.visible_message(message = use_3p, self_message = use_1p, blind_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
 		do_extra(user, target)

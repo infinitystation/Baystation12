@@ -125,7 +125,7 @@
 		var/obj/item/weapon/material/kitchen/utensil/U = W
 		if(U.scoop_food)
 			if(!U.reagents)
-				U.create_reagents(5)
+				U.create_reagents(1)
 
 			if (U.reagents.total_volume > 0)
 				to_chat(user, "<span class='warning'>You already have something on your [U].</span>")
@@ -146,7 +146,7 @@
 			if(!reagents)
 				crash_with("A snack [type] failed to have a reagent holder when attacked with a [W.type]. It was [QDELETED(src) ? "" : "not"] being deleted.")
 			else
-				reagents.trans_to_obj(U, min(reagents.total_volume,5))
+				reagents.trans_to_obj(U, min(reagents.total_volume,1))
 				if (reagents.total_volume <= 0)
 					qdel(src)
 			return
