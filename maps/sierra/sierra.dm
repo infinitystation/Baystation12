@@ -93,6 +93,8 @@
 	#include "loadout/loadout_xeno.dm"
 	#include "loadout/~defines.dm"
 
+	#include "access/exploration.dm"
+
 	#include "sierra-1.dmm"
 	#include "sierra-2.dmm"
 	#include "sierra-3.dmm"
@@ -116,6 +118,7 @@
 	#include "../away/slavers/slavers_base.dm"
 
 	#define using_map_DATUM /datum/map/sierra
+
 
 #elif !defined(MAP_OVERRIDE)
 
