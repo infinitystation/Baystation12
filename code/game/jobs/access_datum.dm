@@ -397,7 +397,7 @@
 
 
 /var/const/access_exploration = 93
-/datum/access/exploration_equip
+/datum/access/explorer
 	id = access_exploration
 	desc = "Exploration Access"
 
