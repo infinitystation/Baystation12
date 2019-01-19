@@ -1133,6 +1133,21 @@ obj/random/hostile/spawn_choices()
 				/mob/living/simple_animal/hostile/carp/pike,
 				/mob/living/simple_animal/hostile/vagrant/swarm)
 
+/obj/random/hostile/xenobio
+	name = "Random Mob"
+	desc = "This is a random mob."
+	icon = 'icons/mob/amorph.dmi'
+	icon_state = "standing"
+	spawn_nothing_percentage = 50
+
+obj/random/hostile/xenobio/spawn_choices()
+	return list(/mob/living/simple_animal/slime,
+				/mob/living/simple_animal/hostile/carp,
+				/mob/living/simple_animal/hostile/carp/shark,
+				/mob/living/simple_animal/crab,
+				/mob/living/simple_animal/thinbug,
+				/mob/living/simple_animal/yithian)
+
 /*
 	Selects one spawn point out of a group of points with the same ID and asks it to generate its items
 */
