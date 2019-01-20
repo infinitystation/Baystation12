@@ -1,3 +1,19 @@
+//starters
+
+/obj/machinery/button/toggle/valve/nacelle/first
+	name = "Third Deck Starboard Nacelle Fuel Control"
+
+/obj/machinery/button/toggle/valve/nacelle/second
+	name = "Third Deck Port Nacelle Fuel Control"
+
+/obj/machinery/button/toggle/valve/nacelle/third
+	name = "First Deck Starboard Nacelle Fuel Control"
+
+/obj/machinery/button/toggle/valve/nacelle/fourth
+	name = "First Deck Port Nacelle Fuel Control"
+
+//sensors
+
 /obj/machinery/air_sensor/nacelle
 	output = 127
 
@@ -65,7 +81,7 @@
 	id_tag = "ReacEngCO24"
 	output = 37
 
-
+//monitoring computers
 
 /obj/machinery/computer/general_air_control/engines_tanks
 	name = "Nacelles Tank Monitoring"
