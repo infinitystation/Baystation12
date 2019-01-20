@@ -363,7 +363,7 @@
 	whitelisted = list(SPECIES_RESOMI)
 
 /datum/gear/suit/resomi
-	display_name = "(Resomi) small coat"
+	display_name = "(Resomi) small cloak"
 	path = /obj/item/clothing/suit/storage/toggle/Resomicoat
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_RESOMI)
