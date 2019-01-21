@@ -90,6 +90,9 @@
 	update_icon()
 
 /obj/structure/hygiene/toilet/attack_hand(var/mob/living/user)
+	if (buckled_mob)
+		..()
+		return
 	if(swirlie)
 		usr.visible_message("<span class='danger'>[user] slams the toilet seat onto [swirlie.name]'s head!</span>", "<span class='notice'>You slam the toilet seat onto [swirlie.name]'s head!</span>", "You hear reverberating porcelain.")
 		swirlie.adjustBruteLoss(8)
