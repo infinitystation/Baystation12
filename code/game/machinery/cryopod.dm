@@ -171,6 +171,7 @@
 	var/obj/machinery/computer/cryopod/control_computer
 	var/last_no_computer_message = 0
 	var/applies_stasis = 1
+	var/awakening = 0
 
 	// These items are preserved when the process() despawn proc occurs.
 	var/list/preserve_items = list(
@@ -309,7 +310,10 @@
 	if(occupant)
 		if(applies_stasis && iscarbon(occupant))
 			var/mob/living/carbon/C = occupant
-			C.SetStasis(3)
+			if(awakening)
+				C.SetStasis(2)
+			else
+				C.SetStasis(3)
 
 		//Allow a ten minute gap between entering the pod and actually despawning.
 		if(world.time - time_entered < time_till_despawn)
@@ -478,6 +482,12 @@
 
 		attempt_enter(grab.affecting, user)
 
+/obj/machinery/cryopod/relaymove()
+	if(occupant.incapacitated())
+		return
+	eject()
+	. = ..()
+
 /obj/machinery/cryopod/verb/eject()
 	set name = "Eject Pod"
 	set category = "Object"
@@ -548,6 +558,7 @@
 
 	occupant.dropInto(loc)
 	set_occupant(null)
+	awakening = 0
 
 	icon_state = base_icon_state
 
@@ -570,3 +581,13 @@
 
 	SetName("[name] ([occupant])")
 	icon_state = occupied_icon_state
+
+/obj/machinery/cryopod/proc/set_awakening_occupant(var/mob/living/carbon/human/H)
+	src.occupant = H
+	H.SetStasis(2)
+	H.forceMove(src)
+	awakening = 1
+	icon_state = occupied_icon_state
+
+	spawn(20) // we need to wait for a little bit
+		SetName("[name] ([occupant])")

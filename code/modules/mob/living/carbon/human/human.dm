@@ -1643,3 +1643,15 @@
 
 /mob/living/carbon/human/proc/get_cultural_value(var/token)
 	return cultural_info[token]
+
+/mob/living/carbon/human/proc/handlecryo()
+	var/CS = list()
+	for(var/obj/machinery/cryopod/C in get_area(src))
+		CS += C
+
+	CS = shuffle(CS)
+	for(var/obj/machinery/cryopod/G in CS)
+		if(G.occupant)
+			continue
+		G.set_awakening_occupant(src)
+		break

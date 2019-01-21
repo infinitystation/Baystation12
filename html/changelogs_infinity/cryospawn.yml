@@ -1,0 +1,5 @@
+author: Ducky
+delete-after: True
+
+changes: 
+  - tweak: "Теперь экипаж изначально будет появляться в криопадах."
