@@ -22,9 +22,9 @@ skonoplich - machine
 coltrane97 - machine
 wolforbykot - machine
 wheatley2013 - machine
+blacksoul231 - machine
 redknighthero - machine
 kotovsyndrome - machine
-blacksoul231 - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
@@ -48,11 +48,11 @@ solark - resomi
 taushai - resomi
 netreson - resomi
 hardstuck - resomi
+travelller - resomi
 kirill1243 - resomi
 coldmantis13 - resomi
 wheatley2013 - resomi
 twinindifferent - resomi
-travelller - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
@@ -108,6 +108,7 @@ mrnicolas - tajaran
 coolered - tajaran
 furrydog - tajaran
 rarytech - tajaran
+romeo517 - tajaran
 korramy - tajaran
 moonmen - tajaran
 nicknam - tajaran
