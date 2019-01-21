@@ -181,9 +181,9 @@
 							t += "<form name='transfer' action='?src=\ref[src]' method='get'>"
 							t += "<input type='hidden' name='src' value='\ref[src]'>"
 							t += "<input type='hidden' name='choice' value='transfer'>"
-							t += "Target account number: <input type='text' name='target_acc_number' value='' style='width:200px; background-color:white;'><br>"
-							t += "Funds to transfer: <input type='text' name='funds_amount' value='' style='width:200px; background-color:white;'><br>"
-							t += "Transaction purpose: <input type='text' name='purpose' value='Funds transfer' style='width:200px; background-color:white;'><br>"
+							t += "Target account number: <input type='text' name='target_acc_number' value='' style='width:200px; color:#282828; background-color:white'><br>"
+							t += "Funds to transfer: <input type='text' name='funds_amount' value='' style='width:200px; color:#282828;background-color:white'><br>"
+							t += "Transaction purpose: <input type='text' name='purpose' value='Funds transfer' style='width:200px; color:#282828;background-color:white'><br>"
 							t += "<input type='submit' value='Transfer funds'><br>"
 							t += "</form>"
 						else
@@ -191,7 +191,7 @@
 							t += "<form name='withdrawal' action='?src=\ref[src]' method='get'>"
 							t += "<input type='hidden' name='src' value='\ref[src]'>"
 							t += "<input type='radio' name='choice' value='withdrawal' checked> Cash  <input type='radio' name='choice' value='e_withdrawal'> Chargecard<br>"
-							t += "<input type='text' name='funds_amount' value='' style='width:200px; background-color:white;'><input type='submit' value='Withdraw'>"
+							t += "<input type='text' name='funds_amount' value='' style='width:200px; color:#282828;background-color:white'><input type='submit' value='Withdraw'>"
 							t += "</form>"
 							t += "<A href='?src=\ref[src];choice=view_screen;view_screen=1'>Change account security level</a><br>"
 							t += "<A href='?src=\ref[src];choice=view_screen;view_screen=2'>Make transfer</a><br>"
@@ -215,10 +215,10 @@
 				t += "<form name='atm_auth' action='?src=\ref[src]' method='get'>"
 				t += "<input type='hidden' name='src' value='\ref[src]'>"
 				t += "<input type='hidden' name='choice' value='attempt_auth'>"
-				t += "<b>Account:</b> <input type='text' id='account_num' name='account_num' style='width:250px; background-color:white;'><BR><BR>"
+				t += "<b>Account:</b> <input type='text' id='account_num' name='account_num' style='width:250px; color:#282828;background-color:white'><BR><BR>"
 				//Leave the PIN field out of sight until needed
 				if(account_security_level)
-					t += "<b>PIN:</b> <input type='text' id='account_pin' name='account_pin' style='width:250px; background-color:white;'><BR><BR>"
+					t += "<b>PIN:</b> <input type='text' id='account_pin' name='account_pin' style='width:250px; color:#282828;background-color:white'><BR><BR>"
 				t += "<input type='submit' value='Submit'><br>"
 				t += "</div></form>"
 
