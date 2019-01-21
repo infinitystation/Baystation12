@@ -396,12 +396,6 @@
 	region = ACCESS_REGION_COMMAND
 
 
-/var/const/access_exploration = 93
-/datum/access/explorer
-	id = access_exploration
-	desc = "Exploration Access"
-
-
 /******************
 * Central Command *
 ******************/
