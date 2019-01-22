@@ -10,7 +10,7 @@
 		return
 
 	if(flooring)
-		if(isCrowbar(C))
+		if(isCrowbar(C) && user.a_intent != I_HURT)
 			if(broken || burnt)
 				to_chat(user, "<span class='notice'>You remove the broken [flooring.descriptor].</span>")
 				make_plating()
@@ -18,8 +18,11 @@
 				to_chat(user, "<span class='danger'>You forcefully pry off the [flooring.descriptor], destroying them in the process.</span>")
 				make_plating()
 			else if(flooring.flags & TURF_REMOVE_CROWBAR)
-				to_chat(user, "<span class='notice'>You lever off the [flooring.descriptor].</span>")
-				make_plating(1)
+				if (user.do_skilled(0.5, SKILL_CONSTRUCTION , src, 10))
+					to_chat(user, "<span class='notice'>You lever off the [flooring.descriptor].</span>")
+					make_plating(1)
+				else 
+					return 0
 			else
 				return
 			playsound(src, 'sound/items/Crowbar.ogg', 80, 1)
