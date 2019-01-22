@@ -204,6 +204,8 @@
 		if(client.holder)
 			client.deadmin()
 			client.verbs |= /client/proc/readmin_self
+			log_admin("[client] joined in the game with admin rights. Forcing de-admining.")
+			message_admins("[client] joined in the game with admin rights. Forcing de-admining.", 1)
 
 		AttemptLateSpawn(job, client.prefs.spawnpoint)
 		return
