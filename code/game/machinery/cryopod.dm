@@ -556,7 +556,11 @@
 		occupant.client.eye = src.occupant.client.mob
 		occupant.client.perspective = MOB_PERSPECTIVE
 
-	occupant.dropInto(loc)
+	if(not_turf_contains_dense_objects(get_turf(get_step(loc, dir))))
+		occupant.forceMove(get_step(loc, dir))
+	else
+		occupant.forceMove(loc)
+
 	set_occupant(null)
 	awakening = 0
 
