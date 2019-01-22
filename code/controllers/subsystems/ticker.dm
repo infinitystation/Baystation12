@@ -79,6 +79,7 @@ SUBSYSTEM_DEF(ticker)
 	GLOB.using_map.setup_economy()
 	Master.SetRunLevel(RUNLEVEL_GAME)
 
+	deadmin_admins()
 	create_characters() //Create player characters and transfer them
 	collect_minds()
 	equip_characters()
@@ -279,6 +280,13 @@ Helpers
 		to_world("<B>Possibilities:</B> [english_list(mode_names)]")
 	else
 		mode.announce()
+
+/datum/controller/subsystem/ticker/proc/deadmin_admins()
+	for(var/mob/new_player/admin in GLOB.player_list)
+		var/client/C = admin.client
+		if(admin && admin.ready && C.holder)
+			C.deadmin()
+			C.verbs |= /client/proc/readmin_self
 
 /datum/controller/subsystem/ticker/proc/create_characters()
 	for(var/mob/new_player/player in GLOB.player_list)

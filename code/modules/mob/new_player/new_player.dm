@@ -201,6 +201,10 @@
 		if(!check_species_allowed(S))
 			return 0
 
+		if(client.holder)
+			client.deadmin()
+			client.verbs |= /client/proc/readmin_self
+
 		AttemptLateSpawn(job, client.prefs.spawnpoint)
 		return
 
