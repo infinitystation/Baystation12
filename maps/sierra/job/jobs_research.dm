@@ -31,7 +31,8 @@
 	                    SKILL_SCIENCE     = SKILL_ADEPT)
 
 	max_skill = list(   SKILL_DEVICES     = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
+	                    SKILL_SCIENCE     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX)
 	skill_points = 30
 	required_education = EDUCATION_TIER_DOCTORATE
 
@@ -57,7 +58,8 @@
 	                    SKILL_SCIENCE     = SKILL_ADEPT)
 
 	max_skill = list(   SKILL_DEVICES     = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
+	                    SKILL_SCIENCE     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX)
 
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/scientist
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
@@ -122,7 +124,8 @@
 		"Field Assistant")
 
 	max_skill = list(   SKILL_DEVICES     = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
+	                    SKILL_SCIENCE     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX)
 
 
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/assist
