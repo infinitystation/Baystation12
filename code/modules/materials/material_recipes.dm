@@ -19,8 +19,7 @@
 	recipes += new/datum/stack_recipe/ring(src)
 
 	if(integrity>50)
-		recipes += new/datum/stack_recipe/furniture/chair(src) //NOTE: the wood material has it's own special chair recipe
-		recipes += new/datum/stack_recipe_list("padded [display_name] chairs", create_recipe_list(/datum/stack_recipe/furniture/chair/padded))
+		recipes += new/datum/stack_recipe/furniture/chair(src) //NOTE: the wood material has it's own special chair recipe		
 	if(integrity>=50)
 		recipes += new/datum/stack_recipe/furniture/door(src)
 		recipes += new/datum/stack_recipe/furniture/barricade(src)
@@ -45,6 +44,7 @@
 	recipes += new/datum/stack_recipe_list("comfy office chairs", create_recipe_list(/datum/stack_recipe/furniture/chair/office/comfy))
 	recipes += new/datum/stack_recipe_list("comfy chairs", create_recipe_list(/datum/stack_recipe/furniture/chair/comfy))
 	recipes += new/datum/stack_recipe_list("armchairs", create_recipe_list(/datum/stack_recipe/furniture/chair/arm))
+	recipes += new/datum/stack_recipe_list("padded [display_name] chairs", create_recipe_list(/datum/stack_recipe/furniture/chair/padded))
 	recipes += new/datum/stack_recipe/key(src)
 	recipes += new/datum/stack_recipe/furniture/table_frame(src)
 	recipes += new/datum/stack_recipe/furniture/rack(src)

@@ -2181,7 +2181,7 @@
 "aPW" = (/obj/machinery/atmospherics/binary/pump{dir = 1},/turf/simulated/floor/tiled/white,/area/rnd/xenobiology/xenoflora)
 "aPX" = (/obj/machinery/atmospherics/portables_connector{dir = 1},/turf/simulated/floor/tiled/white,/area/rnd/xenobiology/xenoflora)
 "aPY" = (/turf/simulated/floor/tiled/white,/area/rnd/xenobiology/xenoflora)
-"aPZ" = (/obj/machinery/atmospherics/pipe/simple/visible/red,/obj/machinery/honey_extractor,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/disposalpipe/segment,/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white,/area/rnd/xenobiology/xenoflora)
+"aPZ" = (/obj/machinery/atmospherics/pipe/simple/visible/red,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/disposalpipe/segment,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/white,/area/rnd/xenobiology/xenoflora)
 "aQa" = (/obj/machinery/atmospherics/pipe/simple/visible/blue{icon_state = "intact"; dir = 5},/turf/simulated/floor/tiled/white,/area/rnd/xenobiology/xenoflora)
 "aQb" = (/obj/machinery/atmospherics/binary/pump{dir = 4},/turf/simulated/floor/tiled/white,/area/rnd/xenobiology/xenoflora)
 "aQc" = (/obj/machinery/atmospherics/pipe/manifold4w/visible,/obj/effect/floor_decal/industrial/warning{dir = 4},/obj/structure/reagent_dispensers/watertank,/obj/item/weapon/reagent_containers/glass/bucket,/turf/simulated/floor/tiled/white,/area/rnd/xenobiology/xenoflora)
