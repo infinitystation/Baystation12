@@ -218,6 +218,13 @@ var/list/datum/power/changeling/powerinstances = list()
 	genomecost = 16
 	verbpath = /mob/proc/horror_form
 
+/datum/power/changeling/MakeSpiders
+	name = "Spread Spiders"
+	desc = "Ќаша оболочка делитьс&#255;, создава&#255; новые формы жизни - пауков."
+	helptext = "ѕауки могут саботировать работу некоторые отделов и точно застав&#255;т экипаж шевелитьс&#255;."
+	genomecost = 10
+	verbpath = /mob/proc/changeling_spiders
+
 // Modularchangling, totally stolen from the new player panel.  YAYY
 /datum/changeling/proc/EvolutionMenu()//The new one
 	set category = "Changeling"
