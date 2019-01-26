@@ -28,6 +28,7 @@ kotovsyndrome - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
+blacksoul231 - skrell
 wheatley2013 - skrell
 interl0per - skrell	
 kirill1243 - skrell	
@@ -36,12 +37,13 @@ themaybat - skrell
 salyvador - skrell
 mrnicolas - skrell
 dagger17 - skrell
+romeo517 - skrell
 hellpony - skrell
 vankoska - skrell
 lukecage - skrell
 hodovoy - skrell
 taushai - skrell
-blacksoul231 - skrell
+galix - skrell
 knayu - skrell
 cre77 - resomi
 s1334 - resomi
@@ -112,6 +114,7 @@ furrydog - tajaran
 rarytech - tajaran
 romeo517 - tajaran
 korramy - tajaran
+furrfaq - tajaran
 moonmen - tajaran
 nicknam - tajaran
 taushai - tajaran
