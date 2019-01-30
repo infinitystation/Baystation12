@@ -2089,14 +2089,14 @@ CIRCUITS BELOW
 	req_tech = list(TECH_DATA = 1, TECH_ENGINEERING = 1)
 	build_path = /obj/item/weapon/circuitboard/miningdrillbrace
 	sort_string = "KCAAB"
-//______________________________________
-/obj/item/weapon/circuitboard/bsa
+
+/datum/design/circuit/bsa
 	name = "bluespace artillery control"
-	id = 'bsa'
+	id = "bsa"
 	req_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2, TECH_BLUESPACE = 2)
 	build_path = /obj/item/weapon/circuitboard/bsa
 	sort_string = "KCAAG"
-//______________________________________
+
 /datum/design/circuit/bsafront
 	name = "bluespace particle beam generator mark VI."
 	id = "bsafront"
