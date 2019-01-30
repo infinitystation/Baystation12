@@ -2090,6 +2090,13 @@ CIRCUITS BELOW
 	build_path = /obj/item/weapon/circuitboard/miningdrillbrace
 	sort_string = "KCAAB"
 
+/datum/design/circuit/bsa
+	name = "bluespace artillery control"
+	id = "bsa"
+	req_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2, TECH_BLUESPACE = 2)
+	build_path = /obj/item/weapon/circuitboard/bsa
+	sort_string = "KCAAG"
+
 /datum/design/circuit/bsafront
 	name = "bluespace particle beam generator mark VI."
 	id = "bsafront"
