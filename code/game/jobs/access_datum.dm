@@ -395,7 +395,6 @@
 	desc = "Command"
 	region = ACCESS_REGION_COMMAND
 
-
 /******************
 * Central Command *
 ******************/
