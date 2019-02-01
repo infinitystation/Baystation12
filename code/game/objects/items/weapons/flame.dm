@@ -77,6 +77,7 @@
 	desc = "A match. This one has seen better days."
 	burnt = 1
 	update_icon()
+	set_light(0)
 
 /obj/item/weapon/flame/match/on_update_icon()
 	..()
