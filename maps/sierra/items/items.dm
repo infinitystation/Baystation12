@@ -82,3 +82,6 @@ Weapons
 
 /obj/item/device/boombox/anchored/attack_hand(var/mob/user)
 	interact(user)
+
+/obj/item/tape/research
+	req_one_access = list(access_research, access_explorer)
