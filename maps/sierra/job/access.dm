@@ -23,20 +23,20 @@
 /datum/access/guppy_helm
 	id = access_guppy_helm
 	desc = "General Utility Pod Helm"
-	region = ACCESS_REGION_GENERAL
+	region = ACCESS_REGION_SUPPLY
 
 /var/const/access_expedition_shuttle_helm = 77
 /datum/access/exploration_shuttle_helm
 	id = access_expedition_shuttle_helm
 	desc = "Charon Helm"
-	region = ACCESS_REGION_GENERAL
+	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_iaa = 78
 /datum/access/iaa
 	id = access_iaa
 	desc = "Internal Affairs Agent"
 	region = ACCESS_REGION_COMMAND
-	access_type = ACCESS_TYPE_NONE //Ruler of their own domain, CO and RD cannot enter
+	access_type = ACCESS_TYPE_NONE //Ruler of their own domain, Captain and RD cannot enter
 
 /var/const/access_gun = 87
 /datum/access/gun
@@ -48,13 +48,13 @@
 /datum/access/exploration_shuttle
 	id = access_expedition_shuttle
 	desc = "Charon"
-	region = ACCESS_REGION_GENERAL
+	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_guppy = 89
 /datum/access/guppy
 	id = access_guppy
 	desc = "General Utility Pod"
-	region = ACCESS_REGION_GENERAL
+	region = ACCESS_REGION_SUPPLY
 
 /var/const/access_seneng = 90
 /datum/access/seneng
@@ -78,7 +78,7 @@
 /datum/access/el
 	id = access_el
 	desc = "Exploration Leader"
-	region = ACCESS_REGION_RESEARCH
+	region = ACCESS_REGION_COMMAND
 
 /var/const/access_commissary = 96
 /datum/access/commissary
