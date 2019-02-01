@@ -32,7 +32,7 @@
 	brute_mod = 1.35
 	burn_mod =  1.35
 	metabolism_mod = 2.0
-	mob_size = MOB_SMALL + 1
+	mob_size = MOB_SMALL
 	holder_type = /obj/item/weapon/holder/human
 	light_sensitive = 6
 	gluttonous = GLUT_TINY
