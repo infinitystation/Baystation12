@@ -140,24 +140,3 @@
 	id_type = /obj/item/weapon/card/id/security
 	id_desc = "An ID of SCG OCEI tracker."
 	id_pda_assignment = "OCEI tracker"
-
-			//////////
-			//CORPSE//
-			//////////
-
-/obj/effect/landmark/corpse/syndicate
-	name = "Syndicate Operative"
-	corpse_outfits = list(/decl/hierarchy/outfit/mercenary/syndicate)
-	spawn_flags = CORPSE_SPAWNER_NO_RANDOMIZATION
-
-/obj/effect/landmark/corpse/syndicate/commando
-	name = "Syndicate Commando"
-	corpse_outfits = list(/decl/hierarchy/outfit/mercenary/syndicate/commando)
-
-/obj/effect/landmark/corpse/crewman
-	name = "Crewman"
-	corpse_outfits = list(/decl/hierarchy/outfit/corpse/crewman)
-
-/obj/effect/landmark/corpse/bridgeofficer/scg
-	name = "Bridge Officer"
-	corpse_outfits = list(/decl/hierarchy/outfit/corpse/bridgeofficer)
