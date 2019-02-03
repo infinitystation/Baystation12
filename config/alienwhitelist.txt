@@ -47,17 +47,18 @@ galix - skrell
 knayu - skrell
 cre77 - resomi
 s1334 - resomi
+forrya - resomi
 solark - resomi
 taushai - resomi
 furrfaq - resomi
 netreson - resomi
 hardstuck - resomi
+coltrane97 - resomi
 travelller - resomi
 kirill1243 - resomi
 coldmantis13 - resomi
 wheatley2013 - resomi
 twinindifferent - resomi
-coltrane97 - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
@@ -82,6 +83,7 @@ gumboldty - diona
 vankoska - diona
 maxi2000 - diona
 mrkayde - diona
+sarumyn - diona
 forrya - diona
 sfd - diona
 wheatley2013 - vox
