@@ -117,3 +117,13 @@
 	desc = "A blue tunic. Beautifully archaic."
 	icon_state = "bluetunic"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+
+/obj/item/clothing/under/zpci_uniform
+	name = "ZPCI uniform"
+	desc = "This is a standard model of the ZPCI uniform."
+	icon = 'icons/obj/clothing/infinity/uniform.dmi'
+	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
+	icon_state = "zpci_uniform"
+	item_state = "zpci_uniform"
+	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0) //it's security uniform's stats
+	siemens_coefficient = 0.9

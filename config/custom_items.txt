@@ -168,12 +168,7 @@ item_path: /obj/item/clothing/ears/earmuffs/headphones/darkred
 {
 ckey: lunkydunk 
 character_name: Aftermath Guardian
-item_path: /obj/item/clothing/under/zpci_uniform
-}
-{
-ckey: lunkydunk 
-character_name: Aftermath Guardian
-item_path: /obj/item/clothing/suit/arb_farigues
+item_path: /obj/item/clothing/suit/armor/vest/arb_farigues
 }
 {
 ckey: logfol

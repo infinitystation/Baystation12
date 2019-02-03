@@ -261,3 +261,7 @@
 	icon_state = "scp_tag"
 	accessory_icons = list(slot_tie_str = 'icons/mob/infinity/ties.dmi', slot_wear_suit_str = 'icons/mob/infinity/ties.dmi')
 
+/obj/item/clothing/accessory/armor/tag/zpci
+	name = "\improper ZPCI tag"
+	desc = "An armor tag with the words ZONE PROTECTION CONTROL INCORPORATED printed in cyan lettering on it."
+	icon_state = "pcrctag"
