@@ -127,7 +127,7 @@
 		if(!id_card)
 			return
 
-		if((badge_access in id_card.access) || emagged)
+		if((badge_access in id_card.access && !badge_number) || emagged)
 			to_chat(user, "You imprint your ID details onto the badge.")
 			set_name(id_card.registered_name)
 			set_desc(user)
