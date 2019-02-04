@@ -23,7 +23,7 @@ var/datum/robolimb/basic_robolimb
 	var/has_eyes = TRUE
 	var/can_feel_pain
 	var/skintone
-	var/list/species_cannot_use = list(SPECIES_RESOMI, SPECIES_ADHERENT, SPECIES_YEOSA, SPECIES_UNATHI, SPECIES_NABBER, SPECIES_DIONA)
+	var/list/species_cannot_use = list(SPECIES_RESOMI, SPECIES_ADHERENT, SPECIES_YEOSA, SPECIES_UNATHI, SPECIES_EROSAN, SPECIES_NABBER, SPECIES_DIONA)
 	var/list/restricted_to = list()
 	var/list/applies_to_part = list() //TODO.
 

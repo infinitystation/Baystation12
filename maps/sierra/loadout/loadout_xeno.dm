@@ -44,7 +44,7 @@
 	display_name = "modified gloves, dress"
 	path = /obj/item/clothing/gloves/color/white/modified
 	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_YEOSA)
+	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_EROSAN)
 
 // Vox clothing
 

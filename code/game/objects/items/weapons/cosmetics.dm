@@ -101,6 +101,7 @@
 			if(SPECIES_RESOMI)       cover = "feathers"
 			if(SPECIES_TAJARA)       cover = "fur"
 			if(SPECIES_UNATHI)       cover = "scale"
+			if(SPECIES_EROSAN)       cover = "scale"
 			if(SPECIES_SKRELL)       cover = "skin"
 			if(SPECIES_IPC)          cover = "body"
 			if(SPECIES_DIONA)        cover = "foliage"

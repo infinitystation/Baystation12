@@ -15,6 +15,8 @@
 		SPECIES_TAJARA = /spell/messa_shroud,
 		SPECIES_RESOMI = /spell/aoe_turf/conjure/summon/resomi,
 		SPECIES_UNATHI = /spell/moghes_blessing,
+		SPECIES_YEOSA  = /spell/moghes_blessing,
+		SPECIES_EROSAN  = /spell/moghes_blessing,
 		SPECIES_DIONA = /spell/aoe_turf/conjure/grove/gestalt,
 		SPECIES_SKRELL = /obj/item/weapon/contract/apprentice/skrell,
 		SPECIES_IPC = /spell/camera_connection)
