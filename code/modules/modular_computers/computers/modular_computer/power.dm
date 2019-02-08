@@ -1,6 +1,7 @@
 /obj/item/modular_computer/proc/power_failure(var/malfunction = 0)
 	if(enabled) // Shut down the computer
 		visible_message("<span class='danger'>\The [src]'s screen flickers briefly and then goes dark.</span>", range = 1)
+		playsound(src, 'sound/machines/mbeep.ogg', 50, 0)
 		if(active_program)
 			active_program.event_powerfailure(0)
 		for(var/datum/computer_file/program/PRG in idle_threads)
