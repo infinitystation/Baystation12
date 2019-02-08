@@ -291,6 +291,9 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	changeling.absorbedcount++
 	changeling.isabsorbing = 0
 
+	var/obj/item/organ/internal/heart/heart = T.internal_organs_by_name[BP_HEART]
+	for(heart in T.organs)
+		heart.pulse = 0
 	T.Drain()
 	T.death(0)
 	return 1
