@@ -67,7 +67,7 @@
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 22
 
-	access = list(access_security, access_brig, access_forensics_lockers,
+	access = list(access_brig, access_forensics_lockers,
 			            access_maint_tunnels, access_emergency_storage,
 			            access_sec_doors, access_morgue, access_hangar)
 
