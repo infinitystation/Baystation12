@@ -245,6 +245,8 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/robot_rack/roller(src, 1)
 	src.modules += new /obj/item/weapon/shockpaddles/robot(src)
 	src.modules += new /obj/item/weapon/crowbar(src)
+	src.modules += new /obj/item/weapon/extinguisher/mini(src)
+	src.modules += new /obj/item/weapon/soap(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent(/datum/reagent/acid/polyacid, 250)
 	src.emag.SetName("Polyacid spray")
@@ -297,6 +299,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
 	src.modules += new /obj/item/weapon/gripper/chemistry(src)
 	src.modules += new /obj/item/weapon/extinguisher/mini(src)
+	src.modules += new /obj/item/weapon/soap(src)
 	src.modules += new /obj/item/taperoll/medical(src)
 	src.modules += new /obj/item/weapon/inflatable_dispenser/robot(src) // Allows usage of inflatables. Since they are basically robotic alternative to EMTs, they should probably have them.
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
@@ -344,7 +347,7 @@ var/global/list/robot_modules = list(
 	channels = list("Engineering" = 1)
 	networks = list(NETWORK_ENGINEERING)
 	subsystems = list(/datum/nano_module/power_monitor, /datum/nano_module/supermatter_monitor)
-	supported_upgrades = list(/obj/item/borg/upgrade/rcd)
+	supported_upgrades = list(/obj/item/borg/upgrade/rcd, /obj/item/borg/upgrade/rpd, /obj/item/borg/upgrade/rped)
 	sprites = list(
 					"Basic" = "Engineering",
 					"Antique" = "engineerrobot",
@@ -378,6 +381,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/inflatable_dispenser/robot(src)
 	src.modules += new /obj/item/inducer/borg(src)
 	src.modules += new /obj/item/device/plunger/robot(src)
+	src.modules += new /obj/item/device/multitool/multimeter(src)
 	src.emag = new /obj/item/weapon/melee/baton/robot/electrified_arm(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(60000)
@@ -459,6 +463,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/megaphone(src)
 	src.modules += new /obj/item/device/holowarrant(src)
 	src.modules += new /obj/item/weapon/crowbar(src)
+	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 	src.emag = new /obj/item/weapon/gun/energy/laser/mounted(src)
 	..()
 
@@ -497,6 +502,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/borg/sight/hud/jani(src)
 	src.modules += new /obj/item/device/plunger/robot(src)
 	src.modules += new /obj/item/weapon/crowbar(src)
+	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent(/datum/reagent/lube, 250)
 	src.emag.SetName("Lube spray")
@@ -549,6 +555,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/material/kitchen/rollingpin(src)
 	src.modules += new /obj/item/weapon/material/knife(src)
 	src.modules += new /obj/item/weapon/crowbar(src)
+	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 
 	var/obj/item/weapon/rsf/M = new /obj/item/weapon/rsf(src)
 	M.stored_matter = 30
@@ -592,6 +599,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/stamp/denied(src)
 	src.modules += new /obj/item/device/destTagger(src)
 	src.modules += new /obj/item/weapon/crowbar(src)
+	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 	src.emag = new /obj/item/weapon/stamp/chameleon(src)
 
 	var/datum/matter_synth/package_wrap = new /datum/matter_synth/package_wrap()
@@ -636,6 +644,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gripper/miner(src)
 	src.modules += new /obj/item/weapon/mining_scanner(src)
 	src.modules += new /obj/item/weapon/crowbar(src)
+	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 	src.emag = new /obj/item/weapon/gun/energy/plasmacutter(src)
 	..()
 
@@ -643,6 +652,7 @@ var/global/list/robot_modules = list(
 	name = "research module"
 	channels = list("Science" = 1)
 	networks = list(NETWORK_RESEARCH)
+	supported_upgrades = list(/obj/item/borg/upgrade/rped)
 	sprites = list(
 					"Droid" = "droid-science",
 					"Drone" = "drone-science",
@@ -666,6 +676,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 	src.modules += new /obj/item/weapon/reagent_containers/syringe(src)
 	src.modules += new /obj/item/weapon/gripper/chemistry(src)
+	src.modules += new /obj/item/taperoll/research(src)
 	src.emag = new /obj/prefab/hand_teleporter(src)
 
 	var/datum/matter_synth/nanite = new /datum/matter_synth/nanite(10000)
@@ -689,6 +700,7 @@ var/global/list/robot_modules = list(
 
 /obj/item/weapon/robot_module/syndicate/New(var/mob/living/silicon/robot/R)
 	loc = R
+	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/weapon/melee/energy/sword(src)
 	src.modules += new /obj/item/weapon/gun/energy/pulse_rifle/destroyer(src)
@@ -720,6 +732,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/borg/combat/shield(src)
 	src.modules += new /obj/item/borg/combat/mobility(src)
 	src.modules += new /obj/item/weapon/crowbar(src)
+	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 	src.emag = new /obj/item/weapon/gun/energy/lasercannon/mounted(src)
 
 /obj/item/weapon/robot_module/security/combat/torch
@@ -734,6 +747,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/borg/combat/shield(src)
 	src.modules += new /obj/item/borg/combat/mobility(src)
 	src.modules += new /obj/item/device/holowarrant(src)
+	src.modules += new /obj/item/weapon/extinguisher/mini(src)
 	src.emag = new /obj/item/weapon/gun/energy/laser/secure/mounted(src)
 	..()
 
@@ -857,6 +871,7 @@ var/global/list/robot_modules = list(
 	modules += new /obj/item/device/boombox(src)
 	modules += new /obj/item/weapon/bikehorn/airhorn(src)
 	modules += new /obj/item/weapon/party_light(src)
+	modules += new /obj/item/weapon/extinguisher/mini(src)
 
 	var/obj/item/weapon/gun/launcher/money/MC = new (src)
 	MC.receptacle_value = 5000
