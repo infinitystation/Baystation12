@@ -93,7 +93,7 @@
 /datum/language/human/get_spoken_verb(var/msg_end)
 	switch(msg_end)
 		if("!")
-			return pick("восклицает","кричит","выкрикивает") //TODO: make the basic proc handle lists of verbs.
+			return pick("восклицает")
 		if("?")
 			return ask_verb
 	return speech_verb
@@ -211,7 +211,7 @@
 /datum/language/tajsign
 	name = LANGUAGE_SIIK_TAJR
 	desc = "A type of sign language mostly based on tail movements that was used during the Tajaran rebellion."
-	signlang_verb = list("использует хвост для сообщения", "жестикулирует хвостом", "искусно жестикулирует хвостом")
+	signlang_verb = list("делает пасы хвостом", "жестикулирует хвостом", "искусно жестикулирует хвостом")
 	colour = "tajaran"
 	key = "l"
 	flags = WHITELISTED | SIGNLANG | NO_STUTTER | NONVERBAL

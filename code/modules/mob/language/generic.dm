@@ -36,8 +36,10 @@
 //TODO flag certain languages to use the mob-type specific say_quote and then get rid of these.
 /datum/language/common/get_spoken_verb(var/msg_end)
 	switch(msg_end)
+//		if(copytext(msg_end, length(msg_end) - 1) == "!") // it doesn't works
+//			return pick("кричит")
 		if("!")
-			return pick("восклицает","кричит") //TODO: make the basic proc handle lists of verbs.
+			return pick("восклицает")
 		if("?")
 			return ask_verb
 	return speech_verb
@@ -64,7 +66,7 @@
 /datum/language/gutter
 	name = "Gutter"
 	desc = "Much like Common, this crude pidgin tongue descended from numerous languages and serves as a trade language for criminal elements."
-	speech_verb = "балакает"
+	speech_verb = "базарит"
 	colour = "rough"
 	key = "3"
 	syllables = list ("gra","ba","ba","breh","bra","rah","dur","ra","ro","gro","go","ber","bar","geh","heh", "gra")
