@@ -307,7 +307,7 @@
 	icon_state ="bookEngineering"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Repairs and Construction"
-	url = "https://wiki.infinity-ss13.info/index.php?title=Руководство_по_Конструированию"
+	url = "https://wiki.infinity-ss13.info/index.php?title=ГђГіГЄГ®ГўГ®Г¤Г±ГІГўГ®_ГЇГ®_ГЉГ®Г­Г±ГІГ°ГіГЁГ°Г®ГўГ Г­ГЁГѕ"
 
 /obj/item/weapon/book/manual/engineering_particle_accelerator
 	name = "Particle Accelerator User's Guide"
@@ -401,13 +401,14 @@
 				<li>Fill reactor loop and radiator loop with two (2) standard canisters of carbon dioxide gas each.</li>
 				<li>Ensure that pumps and filters are on and operating at maximum power.</li>
 				<li><i>IMPORTANT: </i>Ensure the filters are configured for carbon dioxide instead of hydrogen.
-				<li>Ensure the pump to the phoron canister is set to max.</li>
-				<li>Fire <del>5</del> <del>15</del> <del>2</del> <del>UNKNOWN</del> 12-16 pulses from emitter at supermatter crystal, or until the EER reaches about 200. Reactor blast doors must be open for this procedure.</li>
+				<li>There are two pumps which connect colored pipes with black pipes. Ensure the pump to the phoron canister is set to max. Another pump should be set to minimal amount, or even turned off (it may be used to drain gas from system).</li>
+				<li>Fire <del>5</del> <del>15</del> <del>2</del> <del>UNKNOWN</del> <del>12-16</del> 10-12 pulses from emitter at supermatter crystal, or until the EER reaches about <del>200</del> 150 . Reactor blast doors must be open for this procedure.</li>
 				</ol>
 				<br>
 				<h2>OPERATION AND MAINTENANCE</h2>
 				<ol>
 				<li>Ensure that radiation protection and meson goggles are worn at all times while working in the engine room.</li>
+				<li>Monitor EER (Energy Emission Rate) and EPR (Energy Pulse Rate) values in Supermatter Monitoring (available on engineering consoles). EER better be around 100-200, EPR is better to stay in range 1 to 2.5</li>
 				<li>Ensure that reactor and radiator loops are undamaged and unobstructed.</li>
 				<li>Ensure that phoron and oxygen gas exhaust from filters is properly contained or disposed. Do not allow exhaust pressure to exceed 4500 kPa.</li>
 				<li>Ensure that engine room Area Power Controller (APC) and engine Superconducting Magnetic Energy Storage unit (SMES) are properly charged.</li>
@@ -426,7 +427,7 @@
 				<ol>
 				<li>Press Engine Ventilatory Control button to open engine core vent to space.</li>
 				<li>Press Emergency Core Eject button to eject supermatter crystal. NOTE: Attempting crystal ejection while engine core vent is closed will result in ejection failure.</li>
-				<li>In event of ejection failure, <i>pending</i></li>
+				<li>In event of ejection failure, you'll have to drag it manually away to safe area, or ask drone to do so. </li>
 				</ol>
 				</body>
 			</html>"}
@@ -492,7 +493,7 @@
 	icon_state ="bookHacking"
 	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Hacking"
-	url = "https://wiki.infinity-ss13.info/index.php?title=Руководство_по_Взлому"
+	url = "https://wiki.infinity-ss13.info/index.php?title=ГђГіГЄГ®ГўГ®Г¤Г±ГІГўГ®_ГЇГ®_Г‚Г§Г«Г®Г¬Гі"
 
 /obj/item/weapon/book/manual/engineering_singularity_safety
 	name = "Singularity Safety in Special Circumstances"
