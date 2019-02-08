@@ -187,6 +187,8 @@
 	..()
 
 /obj/machinery/sleeper/MouseDrop_T(var/mob/target, var/mob/user)
+	if(..()) //anti-ghost
+		return
 	if(!CanMouseDrop(target, user))
 		return
 	if(!istype(target))
