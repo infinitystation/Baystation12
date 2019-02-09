@@ -68,6 +68,12 @@
 	desc = "Physician"
 	region = ACCESS_REGION_MEDBAY
 
+/var/const/access_guard = 92
+/datum/access/guard
+	id = access_guard
+	desc = "Guard Equipment"
+	region = ACCESS_REGION_SECURITY
+
 /var/const/access_explorer = 93
 /datum/access/explorer
 	id = access_explorer
@@ -80,6 +86,12 @@
 	desc = "Exploration Leader"
 	region = ACCESS_REGION_COMMAND
 
+/var/const/access_seceva = 95
+/datum/access/seceva
+	id = access_seceva
+	desc = "Security EVA"
+	region = ACCESS_REGION_SECURITY
+
 /var/const/access_commissary = 96
 /datum/access/commissary
 	id = access_commissary
@@ -90,6 +102,12 @@
 /************
 * NSV sierra *
 ************/
+
+/datum/access/security
+	desc = "Security"
+
+/datum/access/sec_doors
+	desc = "Security Entrance"
 
 /datum/access/network
 	region = ACCESS_REGION_COMMAND
