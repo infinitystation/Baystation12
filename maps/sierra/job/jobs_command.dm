@@ -50,7 +50,7 @@
 
 	skill_points = 20
 
-	access = list(		access_security, access_brig, access_armory, access_forensics_lockers, access_heads,
+	access = list(		access_seceva, access_guard, access_security, access_brig, access_armory, access_forensics_lockers, access_heads,
 			            access_medical, access_morgue, access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_change_ids, access_ai_upload, access_teleporter, access_eva, access_bridge,
 			            access_all_personal_lockers, access_chapel_office, access_tech_storage, access_atmospherics, access_bar, access_janitor, access_crematorium, access_robotics,
@@ -232,7 +232,7 @@
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 28
 
-	access = list(	access_security, access_medical, access_brig, access_armory, access_forensics_lockers,
+	access = list(	access_seceva, access_guard, access_security, access_medical, access_brig, access_armory, access_forensics_lockers,
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_teleporter, access_eva, access_bridge, access_heads,
 			            access_hos, access_RC_announce, access_keycard_auth, access_sec_doors,
