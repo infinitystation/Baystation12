@@ -29,3 +29,9 @@
 /obj/item/modular_computer/telescreen/preset/trashcompactor/install_default_programs()
 	..()
 	hard_drive.store_file(new/datum/computer_file/program/crushercontrol())
+	set_autorun("crushercontrol")
+
+/obj/item/modular_computer/telescreen/preset/interrogation/install_default_programs()
+	..()
+	hard_drive.store_file(new/datum/computer_file/program/camera_monitor/local())
+	set_autorun("loccammon")

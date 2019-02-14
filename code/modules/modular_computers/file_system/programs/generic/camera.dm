@@ -88,7 +88,7 @@
 		var/obj/machinery/camera/C = locate(href_list["switch_camera"]) in cameranet.cameras
 		if(!C)
 			return
-		if(!(current_network in C.network))
+		if(!(current_network in C.network)&&(current_network != "Local"))
 			return
 
 		switch_to_camera(usr, C)
@@ -182,3 +182,47 @@
 /datum/nano_module/camera_monitor/remove_visual(mob/M)
 	if(current_camera)
 		current_camera.remove_visual(M)
+
+//Shows cameras in computer's area
+datum/computer_file/program/camera_monitor/local
+	filename = "loccammon"
+	filedesc = "Local Camera Monitoring"
+	extended_desc = "This program allows remote access to the local camera system. All cameras in computer's area are available."
+	size = 4
+	nanomodule_path = /datum/nano_module/camera_monitor/local
+	available_on_ntnet = 0
+	requires_ntnet = 1
+	undeletable = 1
+	unsendable = 1
+
+/datum/nano_module/camera_monitor/local
+	name = "Local Camera Monitoring Program"
+//Override! Yeee!
+/datum/nano_module/camera_monitor/local/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
+	var/list/data = host.initial_data()
+
+	data["current_camera"] = current_camera ? current_camera.nano_structure() : null
+	data["current_network"] = current_network
+	//We need only OUR network
+	var/list/all_networks[0]
+		all_networks.Add(list(list("tag" = "Local", "has_access" = 1)))
+
+	data["networks"] = all_networks
+	//How shit works...
+	if(current_network)
+		var/area/A = get_area(host)
+		var/list/netlist = list()
+		for(var/obj/machinery/camera/C in A.get_cameras())
+			var/cam = C.nano_structure()
+			netlist[++netlist.len] = cam
+		data["cameras"] = netlist
+
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	if (!ui)
+		ui = new(user, src, ui_key, "sec_camera.tmpl", "Camera Monitoring", 900, 800, state = state)
+		// ui.auto_update_layout = 1 // Disabled as with suit sensors monitor - breaks the UI map. Re-enable once it's fixed somehow.
+
+		ui.add_template("mapContent", "sec_camera_map_content.tmpl")
+		ui.add_template("mapHeader", "sec_camera_map_header.tmpl")
+		ui.set_initial_data(data)
+		ui.open()
