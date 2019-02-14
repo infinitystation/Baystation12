@@ -16,6 +16,17 @@
 	overmap_event_areas = 34
 	usable_email_tlds = list("freemail.net")
 
+	//Holomap offsets
+	#define SIERRA_MAP_SIZE 160 // Width and height of compiled in Southern Cross z levels.
+	#define SIERRA_HOLOMAP_CENTER_GUTTER 40 // 40px central gutter between columns
+	#define SIERRA_HOLOMAP_MARGIN_X ((HOLOMAP_ICON_SIZE - (2*SIERRA_MAP_SIZE) - SIERRA_HOLOMAP_CENTER_GUTTER) / 2) // 100
+	#define SIERRA_HOLOMAP_MARGIN_Y ((HOLOMAP_ICON_SIZE - (3*SIERRA_MAP_SIZE)) / 2) // 60
+	//list index MUST be the same as map_level index
+	holomap_offset_x = list(SIERRA_HOLOMAP_MARGIN_X - 40, SIERRA_HOLOMAP_MARGIN_X - 40, HOLOMAP_ICON_SIZE - SIERRA_HOLOMAP_MARGIN_X - SIERRA_MAP_SIZE - 40)
+	holomap_offset_y = list(SIERRA_HOLOMAP_MARGIN_Y + SIERRA_MAP_SIZE*0, SIERRA_HOLOMAP_MARGIN_Y + SIERRA_MAP_SIZE*1, SIERRA_HOLOMAP_MARGIN_Y + SIERRA_MAP_SIZE*1)
+	holomap_legend_x = list(220,220,220)
+	holomap_legend_y = list(160,160,160)
+
 	allowed_spawns = list("Cryogenic Storage", "Cyborg Storage")
 	default_spawn = "Cryogenic Storage"
 

@@ -46,6 +46,7 @@
 #define SS_INIT_LIGHTING        -5
 #define SS_INIT_STICKY_BAN      -9
 #define SS_INIT_XENOARCH        -10
+#define SS_INIT_HOLOMAPS		-11
 #define SS_INIT_BAY_LEGACY      -12
 #define SS_INIT_TICKER          -20
 #define SS_INIT_UNIT_TESTS      -100
