@@ -19,7 +19,7 @@
 	recipes += new/datum/stack_recipe/ring(src)
 
 	if(integrity>50)
-		recipes += new/datum/stack_recipe/furniture/chair(src) //NOTE: the wood material has it's own special chair recipe		
+		recipes += new/datum/stack_recipe/furniture/chair(src) //NOTE: the wood material has it's own special chair recipe
 	if(integrity>=50)
 		recipes += new/datum/stack_recipe/furniture/door(src)
 		recipes += new/datum/stack_recipe/furniture/barricade(src)
@@ -57,6 +57,7 @@
 	recipes += new/datum/stack_recipe/furniture/girder(src)
 	recipes += new/datum/stack_recipe/furniture/wall(src)
 	recipes += new/datum/stack_recipe/furniture/machine(src)
+	//recipes += new/datum/stack_recipe/furniture/holomap(src)
 	recipes += new/datum/stack_recipe/furniture/turret(src)
 	recipes += new/datum/stack_recipe_list("airlock assemblies", create_recipe_list(/datum/stack_recipe/furniture/door_assembly))
 	recipes += new/datum/stack_recipe/grenade(src)

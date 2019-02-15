@@ -21,6 +21,31 @@
 		/area/shuttle/administration/centcom,
 		/area/shuttle/specops/centcom,
 	)
+//HEY! Can somebody make docked shuttles in one class? ~Archemagus
+/area/shuttle/area/shuttle/escape_pod6/station/holomapAlwaysDraw()
+	return TRUE
+/area/shuttle/area/shuttle/escape_pod7/station/holomapAlwaysDraw()
+	return TRUE
+/area/shuttle/area/shuttle/escape_pod8/station/holomapAlwaysDraw()
+	return TRUE
+/area/shuttle/area/shuttle/escape_pod9/station/holomapAlwaysDraw()
+	return TRUE
+/area/shuttle/area/shuttle/escape_pod10/station/holomapAlwaysDraw()
+	return TRUE
+/area/shuttle/area/shuttle/escape_pod11/station/holomapAlwaysDraw()
+	return TRUE
+/area/shuttle/area/shuttle/escape_pod12/station/holomapAlwaysDraw()
+	return TRUE
+/area/shuttle/area/shuttle/escape_pod13/station/holomapAlwaysDraw()
+	return TRUE
+/area/shuttle/area/shuttle/escape_pod14/station/holomapAlwaysDraw()
+	return TRUE
+/area/shuttle/area/shuttle/escape_pod15/station/holomapAlwaysDraw()
+	return TRUE
+/area/shuttle/area/shuttle/escape_pod16/station/holomapAlwaysDraw()
+	return TRUE
+/area/shuttle/area/shuttle/escape_pod17/station/holomapAlwaysDraw()
+	return TRUE
 
 //Third Deck (Z-1)
 /area/hallway/primary/thirddeck/fore
@@ -134,6 +159,7 @@
 /area/maintenance/bluespace
 	name = "Bluespace Drive"
 	icon_state = "engineering"
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 /area/crew_quarters/safe_room/seconddeck
 	name = "Second Deck Safe Room"
@@ -224,47 +250,58 @@
 /area/shuttle/escape_pod6/station
 	name = "Escape Pod One"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/shuttle/escape_pod7/station
 	name = "Escape Pod Two"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/shuttle/escape_pod8/station
 	name = "Escape Pod Three"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/shuttle/escape_pod9/station
 	name = "Escape Pod Four"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/shuttle/escape_pod10/station
 	name = "Escape Pod Five"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 //sierra small pods
 /area/shuttle/escape_pod12/station
 	name = "Escape Pod Seven"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/shuttle/escape_pod13/station
 	name = "Escape Pod Eight"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/shuttle/escape_pod14/station
 	name = "Escape Pod Nine"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/shuttle/escape_pod15/station
 	name = "Escape Pod Ten"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/shuttle/escape_pod16/station
 	name = "Escape Pod Eleven"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/shuttle/escape_pod17/station
 	name = "Escape Pod Twelve"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 //Charon
 
@@ -273,6 +310,10 @@
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/plating
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+	holomap_color = HOLOMAP_AREACOLOR_CARGO
+
+/area/exploration_shuttle/holomapAlwaysDraw()
+	return TRUE
 
 /area/exploration_shuttle/cockpit
 	name = "Charon - Cockpit"
@@ -295,7 +336,10 @@
 	requires_power = 1
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+	holomap_color = HOLOMAP_AREACOLOR_CARGO
 
+/area/guppy_hangar/holomapAlwaysDraw()
+	return TRUE
 
 //Petrov
 
@@ -304,6 +348,10 @@
 	requires_power = 1
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+	holomap_color = HOLOMAP_AREACOLOR_SCIENCE
+
+/area/shuttle/petrov/holomapAlwaysDraw()
+	return TRUE
 
 /area/shuttle/petrov/ship
 	icon_state = "shuttlered"
@@ -439,6 +487,7 @@
 	name = "Exploration Leader's Office"
 	icon_state = "head_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
+	holomap_color = HOLOMAP_AREACOLOR_CARGO
 
 /area/crew_quarters/heads
 	icon_state = "head_quarters"
@@ -574,26 +623,31 @@
 	name = "Cargo Storage"
 	icon_state = "quartstorage"
 	sound_env = SMALL_ENCLOSED
+	holomap_color = HOLOMAP_AREACOLOR_CARGO
 
 /area/storage/expedition
 	name = "Expedition Storage"
 	icon_state = "storage"
 	sound_env = SMALL_ENCLOSED
+	holomap_color = HOLOMAP_AREACOLOR_CARGO
 
 /area/storage/medical
 	name = "Medical Storage"
 	icon_state = "medbay4"
 	sound_env = SMALL_ENCLOSED
+	holomap_color = HOLOMAP_AREACOLOR_MEDICAL
 
 /area/storage/research
 	name = "Research Storage"
 	icon_state = "toxstorage"
 	sound_env = SMALL_ENCLOSED
+	holomap_color = HOLOMAP_AREACOLOR_SCIENCE
 
 /area/storage/bridge
 	name = "Bridge Storage"
 	icon_state = "bridge"
 	sound_env = SMALL_ENCLOSED
+	holomap_color = HOLOMAP_AREACOLOR_COMMAND
 
 // Supply
 
@@ -887,12 +941,14 @@
 	name = "Crematorium"
 	icon_state = "chapel"
 	sound_env = SMALL_ENCLOSED
+	holomap_color = HOLOMAP_AREACOLOR_MEDICAL
 
 // Shield Rooms
 /area/shield
 	name = "Shield Generator"
 	icon_state = "engineering"
 	sound_env = SMALL_ENCLOSED
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 /area/shield/firstdeck
 	name = "First Deck Shield Generator"
@@ -917,6 +973,7 @@
 
 /area/thruster
 	icon_state = "thruster"
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 /area/thruster/d1port
 	name = "First Deck Port Nacelle"
@@ -1046,6 +1103,7 @@
 /area/storage/tech
 	name = "Technical Storage"
 	icon_state = "storage"
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 /area/storage/tools
 	name = "Auxiliary Tool Storage"
@@ -1260,6 +1318,7 @@
 	name = "Supply Shuttle"
 	icon_state = "shuttle3"
 	requires_power = 0
+	holomap_color = HOLOMAP_AREACOLOR_CARGO
 
 // Cargo
 /area/quartermaster/office
@@ -1301,6 +1360,7 @@
 
 /area/ai_monitored
 	name = "AI Monitored Area"
+	holomap_color = HOLOMAP_AREACOLOR_COMMAND
 
 /area/ai_monitored/storage/eva
 	name = "EVA Storage"
@@ -1334,6 +1394,7 @@
 	icon_state = "chapel"
 	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg','sound/music/traitor.ogg')
 	sound_env = LARGE_ENCLOSED
+	holomap_color = HOLOMAP_AREACOLOR_MEDICAL
 
 // Merchant
 

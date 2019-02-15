@@ -215,29 +215,32 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 /datum/map/New()
 	if(!map_levels)
 		map_levels = station_levels.Copy()
-	for(var/z_level in map_levels)
-		// Holomaps
-		var/holo_offset_x = -1	// Number of pixels to offset the map right (for centering) for this z
-		var/holo_offset_y = -1	// Number of pixels to offset the map up (for centering) for this z
-		var/holo_legend_x = 96	// x position of the holomap legend for this z
-		var/holo_legend_y = 96	// y position of the holomap legend for this z
-		if((holomap_offset_x.len && holomap_offset_y.len && holomap_legend_x.len && holomap_legend_y.len)&&(holomap_offset_x.[z_level] && holomap_offset_y.[z_level] && holomap_legend_x.[z_level] && holomap_legend_y.[z_level]))
-			holo_offset_x = holomap_offset_x[z_level]
-			holo_offset_y = holomap_offset_y[z_level]
-			holo_legend_x = holomap_legend_x[z_level]
-			holo_legend_y = holomap_legend_y[z_level]
+	if(map_levels.len)
+		if(!holomap_smoosh)
+			holomap_smoosh = list(map_levels.Copy())
+		for(var/z_level in map_levels)
+			// Holomaps
+			var/holo_offset_x = -1	// Number of pixels to offset the map right (for centering) for this z
+			var/holo_offset_y = -1	// Number of pixels to offset the map up (for centering) for this z
+			var/holo_legend_x = 96	// x position of the holomap legend for this z
+			var/holo_legend_y = 96	// y position of the holomap legend for this z
+			if(holomap_offset_x.len && holomap_offset_y.len && holomap_legend_x.len && holomap_legend_y.len)
+				holo_offset_x = holomap_offset_x[z_level]
+				holo_offset_y = holomap_offset_y[z_level]
+				holo_legend_x = holomap_legend_x[z_level]
+				holo_legend_y = holomap_legend_y[z_level]
 
-		// Holomaps
-		// Auto-center the map if needed (Guess based on maxx/maxy)
-		if (holo_offset_x < 0)
-			holo_offset_x = ((HOLOMAP_ICON_SIZE - world.maxx) / 2)
-		if (holo_offset_x < 0)
-			holo_offset_y = ((HOLOMAP_ICON_SIZE - world.maxy) / 2)
-		// Assign them to the map lists
-		LIST_NUMERIC_SET(holomap_offset_x, z_level, holo_offset_x)
-		LIST_NUMERIC_SET(holomap_offset_y, z_level, holo_offset_y)
-		LIST_NUMERIC_SET(holomap_legend_x, z_level, holo_legend_x)
-		LIST_NUMERIC_SET(holomap_legend_y, z_level, holo_legend_y)
+			// Holomaps
+			// Auto-center the map if needed (Guess based on maxx/maxy)
+			if (holo_offset_x < 0)
+				holo_offset_x = ((HOLOMAP_ICON_SIZE - world.maxx) / 2)
+			if (holo_offset_x < 0)
+				holo_offset_y = ((HOLOMAP_ICON_SIZE - world.maxy) / 2)
+			// Assign them to the map lists
+			LIST_NUMERIC_SET(holomap_offset_x, z_level, holo_offset_x)
+			LIST_NUMERIC_SET(holomap_offset_y, z_level, holo_offset_y)
+			LIST_NUMERIC_SET(holomap_legend_x, z_level, holo_legend_x)
+			LIST_NUMERIC_SET(holomap_legend_y, z_level, holo_legend_y)
 	if(!allowed_jobs)
 		allowed_jobs = list()
 		for(var/jtype in subtypesof(/datum/job))

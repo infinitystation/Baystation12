@@ -186,6 +186,11 @@ ARMCHAIR(yellow)
 	time = 25
 	send_material_data = 0
 
+/datum/stack_recipe/furniture/holomap
+	title = "holomap frame"
+	result_type = /obj/machinery/constructable_frame/machine_frame/holomap
+	send_material_data = 0
+
 /datum/stack_recipe/furniture/turret
 	title = "turret frame"
 	result_type = /obj/machinery/porta_turret_construct

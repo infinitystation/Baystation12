@@ -2,7 +2,7 @@
 // Wall mounted holomap of the station
 //
 /obj/machinery/station_map
-	name = "station holomap"
+	name = "local holomap"
 	desc = "A virtual map of the surrounding station or vessel."
 	icon = 'icons/obj/machines/stationmap.dmi'
 	icon_state = "station_map"
@@ -18,14 +18,14 @@
 	var/light_range_on = 2
 	light_color = "#64C864"
 
-	plane = TURF_PLANE
+	plane = OBJ_PLANE
 	layer = ABOVE_WINDOW_LAYER
 
 	var/mob/watching_mob = null
 	var/image/small_station_map = null
 	var/image/floor_markings = null
 	var/image/panel = null
-
+	var/adir
 	var/original_zLevel = 1	// zLevel on which the station map was initialized.
 	var/bogus = TRUE		// set to 0 when you initialize the station map on a zLevel that has its own icon formatted for use by station holomaps.
 	var/datum/station_holomap/holomap_datum
@@ -39,6 +39,15 @@
 	component_parts += new /obj/item/weapon/stock_parts/micro_laser(src)
 	RefreshParts()
 
+	if(src.dir == NORTH)
+		adir = SOUTH
+	if(src.dir == SOUTH)
+		adir = NORTH
+	if(src.dir == WEST)
+		adir = EAST
+	if(src.dir == EAST)
+		adir = WEST
+	set_dir(adir)
 	holomap_datum = new()
 	original_zLevel = loc.z
 	SSholomaps.station_holomaps += src
@@ -97,7 +106,7 @@
 // couldn't really walk into us anyway.  But in reality we are on the turf in front of the wall, so bumping
 // against where we seem is actually trying to *exit* our real loc
 /obj/machinery/station_map/CheckExit(atom/movable/mover as mob|obj, turf/target as turf)
-	// log_debug("[src] (dir=[dir]) CheckExit([mover], [target])  get_dir() = [get_dir(target, loc)]")
+	log_debug("[src] (dir=[dir]) CheckExit([mover], [target])  get_dir() = [get_dir(target, loc)]")
 	if(get_dir(target, loc) == dir) // Opposite of "normal" since we are visually in the next turf over
 		return FALSE
 	else
@@ -137,7 +146,7 @@
 			if(bogus)
 				to_chat(user, "<span class='warning'>The holomap failed to initialize. This area of space cannot be mapped.</span>")
 			else
-				to_chat(user, "<span class='notice'>A hologram of the station appears before your eyes.</span>")
+				to_chat(user, "<span class='notice'>A hologram of the [GLOB.using_map.full_name] appears before your eyes.</span>")
 
 /obj/machinery/station_map/attack_ai(var/mob/living/silicon/robot/user)
 	return // TODO - Implement for AI ~Leshana
@@ -179,6 +188,14 @@
 
 /obj/machinery/station_map/update_icon()
 	overlays.Cut()
+	if(src.dir == NORTH)
+		pixel_y = -32
+	if(src.dir == EAST)
+		pixel_x = -32
+	if(src.dir == SOUTH)
+		pixel_y = 32
+	if(src.dir == WEST)
+		pixel_x = 32
 	if(stat & BROKEN)
 		icon_state = "station_mapb"
 	else if((stat & NOPOWER) || !anchored)
@@ -225,17 +242,197 @@
 		if(3)
 			if (prob(25))
 				set_broken()
-/*
-/datum/frame/frame_types/station_map
-	name = "Station Map Frame"
-	frame_class = "display"
-	frame_size = 3
-	frame_style = "wall"
-	x_offset = WORLD_ICON_SIZE
-	y_offset = WORLD_ICON_SIZE
-	circuit = /obj/item/weapon/circuitboard/station_map
-	icon_override = 'icons/obj/machines/stationmap.dmi'
 
+/obj/machinery/constructable_frame/machine_frame/holomap
+	name = "Local Map Frame"
+	//frame_class = "display"
+	//frame_size = 3
+	//frame_style = "wall"
+	var/x_offset = WORLD_ICON_SIZE
+	var/y_offset = WORLD_ICON_SIZE
+	circuit = /obj/item/weapon/circuitboard/station_map
+	icon = 'icons/obj/machines/stationmap.dmi'
+	icon_state = "station_map_frame_0"
+	density = 0
+
+/obj/machinery/constructable_frame/machine_frame/holomap/attackby(obj/item/P as obj, mob/user as mob)
+	switch(state)
+		if(1)
+			if(istype(P, /obj/item/weapon/circuitboard))
+				var/obj/item/weapon/circuitboard/B = P
+				if(B.board_type == "holomap")
+					if(!user.unEquip(P, src))
+						return
+					playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+					to_chat(user, "<span class='notice'>You add the circuit board to the frame.</span>")
+					circuit = P
+					icon_state = "station_map_frame_2"
+					state = 2
+					components = list()
+					req_components = circuit.req_components.Copy()
+					for(var/A in circuit.req_components)
+						req_components[A] = circuit.req_components[A]
+					req_component_names = circuit.req_components.Copy()
+					for(var/A in req_components)
+						var/obj/ct = A
+						req_component_names[A] = initial(ct.name)
+					update_desc()
+					to_chat(user, desc)
+				else
+					to_chat(user, "<span class='warning'>This frame does not accept circuit boards of this type!</span>")
+			else
+				if(isWrench(P))
+					playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+					to_chat(user, "<span class='notice'>You dismantle the frame</span>")
+					new /obj/item/stack/material/steel(src.loc, 5)
+					qdel(src)
+		if(2)
+			if(isCoil(P))
+				var/component_check = 1
+				for(var/R in req_components)
+					if(req_components[R] > 0)
+						component_check = 0
+						break
+				if(component_check)
+					var/obj/item/stack/cable_coil/C = P
+					if (C.get_amount() < 5)
+						to_chat(user, "<span class='warning'>You need five lengths of cable to add them to the frame.</span>")
+						return
+					playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+					to_chat(user, "<span class='notice'>You start connecting components in the chain.</span>")
+					if(do_after(user, 20, src) && state == 2)
+						if(C.use(5))
+							to_chat(user, "<span class='notice'>You connect components.</span>")
+							state = 3
+							icon_state = "station_map_frame_3"
+			else
+				if(isCrowbar(P))
+					playsound(src.loc, 'sound/items/Crowbar.ogg', 50, 1)
+					state = 1
+					circuit.dropInto(loc)
+					circuit = null
+					if(components.len == 0)
+						to_chat(user, "<span class='notice'>You remove the circuit board.</span>")
+					else
+						to_chat(user, "<span class='notice'>You remove the circuit board and other components.</span>")
+						for(var/obj/item/weapon/W in components)
+							W.dropInto(loc)
+					desc = initial(desc)
+					req_components = null
+					components = null
+					icon_state = "station_map_frame_1"
+				else
+					if(istype(P, /obj/item/weapon/storage/part_replacer) && P.contents.len && get_req_components_amt())
+						var/obj/item/weapon/storage/part_replacer/replacer = P
+						var/list/added_components = list()
+						var/list/part_list = list()
+						//Assemble a list of current parts, then sort them by their rating!
+						for(var/obj/item/weapon/stock_parts/co in replacer)
+							part_list += co
+						//Sort the parts. This ensures that higher tier items are applied first.
+						part_list = sortTim(part_list)
+						for(var/path in req_components)
+							while(req_components[path] > 0 && (locate(path) in part_list))
+								var/obj/item/part = (locate(path) in part_list)
+								added_components[part] = path
+								replacer.remove_from_storage(part, src)
+								req_components[path]--
+								part_list -= part
+						for(var/obj/item/weapon/stock_parts/part in added_components)
+							components += part
+							user << "<span class='notice'>[part.name] applied.</span>"
+						replacer.play_rped_sound()
+						update_desc()
+					else
+						if(istype(P, /obj/item))
+							for(var/I in req_components)
+								if(istype(P, I) && (req_components[I] > 0))
+									if(isCoil(P))
+										var/obj/item/stack/cable_coil/CP = P
+										if(CP.get_amount() > 1)
+											var/camt = min(CP.amount, req_components[I]) // amount of cable to take, idealy amount required, but limited by amount provided
+											var/obj/item/stack/cable_coil/CC = new /obj/item/stack/cable_coil(src)
+											CC.amount = camt
+											CC.update_icon()
+											CP.use(camt)
+											components += CC
+											req_components[I] -= camt
+											update_desc()
+											break
+									if(!user.unEquip(P, src))
+										return
+									components += P
+									req_components[I]--
+									update_desc()
+									break
+							playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+							to_chat(user, desc)
+							if(P && P.loc != src && !istype(P, /obj/item/stack/cable_coil))
+								to_chat(user, "<span class='warning'>You cannot add that component to the machine!</span>")
+		if(3)
+			if(isWirecutter(P))
+				playsound(src.loc, 'sound/items/Wirecutter.ogg', 50, 1)
+				to_chat(user, "<span class='notice'>You remove the cables.</span>")
+				state = 2
+				icon_state = "station_map_frame_1"
+				var/obj/item/stack/cable_coil/A = new /obj/item/stack/cable_coil( src.loc )
+				A.amount = 5
+			else
+				if(istype(P, /obj/item/stack/material) && P.get_material_name() == MATERIAL_GLASS)
+					var/obj/item/stack/G = P
+					if (G.get_amount() < 2)
+						to_chat(user, "<span class='warning'>You need two sheets of glass to put in the glass panel.</span>")
+						return
+					playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+					to_chat(user, "<span class='notice'>You start to put in the glass panel.</span>")
+					if(do_after(user, 20, src) && state == 3)
+						if (G.use(2))
+							to_chat(user, "<span class='notice'>You put in the glass panel.</span>")
+							icon_state = "station_map_frame_4"
+							state = 4
+		if(4)
+			if(isScrewdriver(P))
+				playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+				var/obj/machinery/new_machine = new src.circuit.build_path(src.loc, src.dir)
+				if(new_machine.component_parts)
+					new_machine.component_parts.Cut()
+				else
+					new_machine.component_parts = list()
+				src.circuit.construct(new_machine)
+				for(var/obj/O in src)
+					if(circuit.contain_parts) // things like disposal don't want their parts in them
+						O.forceMove(new_machine)
+					else
+						O.forceMove(null)
+					new_machine.component_parts += O
+				if(circuit.contain_parts)
+					circuit.forceMove(new_machine)
+				else
+					circuit.forceMove(null)
+				new_machine.RefreshParts()
+				qdel(src)
+			else
+				if(isCrowbar(P))
+					playsound(src.loc, 'sound/items/Crowbar.ogg', 50, 1)
+					state = 3
+					icon_state = "station_map_frame_3"
+					to_chat(user, "<span class='notice'>You remove the glass panel.</span>")
+					new /obj/item/stack/material/glass( src.loc, 2 )
+
+/*
+/obj/machinery/constructable_frame/machine_frame/holomap/Initialize()
+	sleep(1)
+	if(src.dir == NORTH)
+		pixel_y = -32
+	if(src.dir == EAST)
+		pixel_x = -32
+	if(src.dir == SOUTH)
+		pixel_y = 32
+	if(src.dir == WEST)
+		pixel_x = 32
+	. = ..()
+*/
+/*
 /datum/frame/frame_types/station_map/get_icon_state(var/state)
 	return "station_map_frame_[state]"
 
@@ -252,8 +449,10 @@
 
 /obj/item/weapon/circuitboard/station_map
 	name = T_BOARD("Station Map")
-	//board_type = new /datum/frame/frame_types/station_map
 	build_path = /obj/machinery/station_map
 	origin_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 2)
-	req_components = list()
-
+	board_type = "holomap"
+	req_components = list(
+							/obj/item/weapon/stock_parts/scanning_module = 1,
+							/obj/item/weapon/stock_parts/manipulator = 1,
+							/obj/item/weapon/stock_parts/micro_laser = 2)
