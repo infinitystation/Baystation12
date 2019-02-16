@@ -448,7 +448,7 @@
 // It will need to wait until later tho.
 
 /obj/item/weapon/circuitboard/station_map
-	name = T_BOARD("Station Map")
+	name = T_BOARD("HoloMap")
 	build_path = /obj/machinery/station_map
 	origin_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 2)
 	board_type = "holomap"

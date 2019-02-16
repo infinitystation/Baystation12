@@ -145,6 +145,13 @@ datum/design/circuit/telepad
 	build_path = /obj/item/weapon/circuitboard/telesci_pad
 	sort_string = "HAAAF"
 
+datum/design/circuit/holomap
+	name = "holomap board"
+	id = "holomap"
+	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 3)
+	build_path = /obj/item/weapon/circuitboard/station_map
+	sort_string = "HAAAG"
+
 /datum/design/circuit/bsa
 	name = "bluespace artillery control"
 	id = "bsa"

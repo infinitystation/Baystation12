@@ -224,13 +224,13 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			var/holo_offset_y = -1	// Number of pixels to offset the map up (for centering) for this z
 			var/holo_legend_x = 96	// x position of the holomap legend for this z
 			var/holo_legend_y = 96	// y position of the holomap legend for this z
-			if(holomap_offset_x[z_level])
+			if(holomap_offset_x.len >= z_level)
 				holo_offset_x = holomap_offset_x[z_level]
-			if(holomap_offset_y[z_level])
+			if(holomap_offset_y.len >= z_level)
 				holo_offset_y = holomap_offset_y[z_level]
-			if(holomap_legend_x[z_level])
+			if(holomap_legend_x.len >= z_level)
 				holo_legend_x = holomap_legend_x[z_level]
-			if(holomap_legend_y[z_level])
+			if(holomap_legend_y.len >= z_level)
 				holo_legend_y = holomap_legend_y[z_level]
 
 			// Holomaps
