@@ -16,7 +16,7 @@
 	var/use_auto_lights = 1
 	var/light_power_on = 1
 	var/light_range_on = 2
-	light_color = "#64C864"
+	light_color = "#64c864"
 
 	plane = OBJ_PLANE
 	layer = ABOVE_WINDOW_LAYER
@@ -186,7 +186,7 @@
 	stat |= BROKEN
 	update_icon()
 
-/obj/machinery/station_map/update_icon()
+/obj/machinery/station_map/on_update_icon()
 	overlays.Cut()
 	if(src.dir == NORTH)
 		pixel_y = -32
@@ -340,7 +340,7 @@
 								part_list -= part
 						for(var/obj/item/weapon/stock_parts/part in added_components)
 							components += part
-							user << "<span class='notice'>[part.name] applied.</span>"
+							to_chat(user, "<span class='notice'>[part.name] applied.</span>")
 						replacer.play_rped_sound()
 						update_desc()
 					else
