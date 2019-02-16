@@ -22,29 +22,29 @@
 		/area/shuttle/specops/centcom,
 	)
 //HEY! Can somebody make docked shuttles in one class? ~Archemagus
-/area/shuttle/area/shuttle/escape_pod6/station/holomapAlwaysDraw()
+/area/shuttle/escape_pod6/station/holomapAlwaysDraw()
 	return TRUE
-/area/shuttle/area/shuttle/escape_pod7/station/holomapAlwaysDraw()
+/area/shuttle/escape_pod7/station/holomapAlwaysDraw()
 	return TRUE
-/area/shuttle/area/shuttle/escape_pod8/station/holomapAlwaysDraw()
+/area/shuttle/escape_pod8/station/holomapAlwaysDraw()
 	return TRUE
-/area/shuttle/area/shuttle/escape_pod9/station/holomapAlwaysDraw()
+/area/shuttle/escape_pod9/station/holomapAlwaysDraw()
 	return TRUE
-/area/shuttle/area/shuttle/escape_pod10/station/holomapAlwaysDraw()
+/area/shuttle/escape_pod10/station/holomapAlwaysDraw()
 	return TRUE
-/area/shuttle/area/shuttle/escape_pod11/station/holomapAlwaysDraw()
+/area/shuttle/escape_pod11/station/holomapAlwaysDraw()
 	return TRUE
-/area/shuttle/area/shuttle/escape_pod12/station/holomapAlwaysDraw()
+/area/shuttle/escape_pod12/station/holomapAlwaysDraw()
 	return TRUE
-/area/shuttle/area/shuttle/escape_pod13/station/holomapAlwaysDraw()
+/area/shuttle/escape_pod13/station/holomapAlwaysDraw()
 	return TRUE
-/area/shuttle/area/shuttle/escape_pod14/station/holomapAlwaysDraw()
+/area/shuttle/escape_pod14/station/holomapAlwaysDraw()
 	return TRUE
-/area/shuttle/area/shuttle/escape_pod15/station/holomapAlwaysDraw()
+/area/shuttle/escape_pod15/station/holomapAlwaysDraw()
 	return TRUE
-/area/shuttle/area/shuttle/escape_pod16/station/holomapAlwaysDraw()
+/area/shuttle/escape_pod16/station/holomapAlwaysDraw()
 	return TRUE
-/area/shuttle/area/shuttle/escape_pod17/station/holomapAlwaysDraw()
+/area/shuttle/escape_pod17/station/holomapAlwaysDraw()
 	return TRUE
 
 //Third Deck (Z-1)
