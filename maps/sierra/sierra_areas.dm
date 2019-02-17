@@ -440,6 +440,10 @@
 	icon_state = "head_quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
+/area/command/bsa
+	name = "\improper Bluespace Artillery"
+	icon_state = "firingrange"
+
 /area/crew_quarters/heads
 	icon_state = "head_quarters"
 
