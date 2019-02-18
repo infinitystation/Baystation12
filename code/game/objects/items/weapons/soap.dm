@@ -42,8 +42,25 @@
 		var/turf/T = get_turf(target)
 		if(!T)
 			return
+		var/list/cleanable = list()
+		for(var/obj/effect/C in T)
+			if(istype(C, /obj/effect/rune) || istype(C, /obj/effect/decal/cleanable) || istype(C, /obj/effect/overlay))
+				cleanable += C
+		if(!cleanable.len)
+			to_chat(usr, "<span class='notice'>\The [T] is already clean.</span>")
+			return
 		user.visible_message("<span class='warning'>[user] starts scrubbing \the [T].</span>")
-		T.clean(src, user, 80, "<span class='notice'>You scrub \the [target.name] clean.</span>")
+		for(var/D in cleanable)
+			if(do_after(user, 20, D))
+				if(istype(D, /obj/effect/decal/cleanable/blood))
+					to_chat(user, "<span class='notice'>You scrub \the [D] out.</span>")
+					var/obj/effect/decal/cleanable/blood/B = D
+					B.clean_blood()
+				else if(istype(D, /obj/effect/decal/cleanable))
+					to_chat(user, "<span class='notice'>You scrub \the [D] out.</span>")
+					qdel(D)
+			else
+				break
 	else if(istype(target,/obj/structure/hygiene/sink))
 		to_chat(user, "<span class='notice'>You wet \the [src] in the sink.</span>")
 		wet()
