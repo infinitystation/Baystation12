@@ -1,0 +1,5 @@
+author: Slayer
+delete-after: True
+
+changes: 
+- rscadd: "Скреллам добавлены корпорации. Информация взята с вики."
