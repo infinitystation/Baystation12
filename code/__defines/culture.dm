@@ -99,9 +99,9 @@
 #define CULTURE_SKRELL_TALUM    "Talum-Katish"
 #define CULTURE_SKRELL_RASKINTA "Raskinta-Katish"
 
-#define FACTION_MED_SKRELL  "Gloa'Morr Corp."
-#define FACTION_AIR_SKRELL  "Krri'gli Corp."
-#define FACTION_FOOD_SKRELL  "Qorr'moa Inc."
+#define FACTION_SKRELL_MED  "Gloa'Morr Corp."
+#define FACTION_SKRELL_AIR  "Krri'gli Corp."
+#define FACTION_SKRELL_FOOD  "Qorr'moa Inc."
 
 #define HOME_SYSTEM_QERRBALAK  "Qerrbalak"
 
