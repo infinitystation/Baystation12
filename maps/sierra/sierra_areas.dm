@@ -998,12 +998,12 @@
 
 // Solars
 /area/maintenance/solar
-	name = "Solar Maintenance - Aft Port"
+	name = "Solar Maintenance - Port"
 	icon_state = "SolarcontrolP"
 	sound_env = SMALL_ENCLOSED
 
 /area/maintenance/solar/starboard
-	name = "Solar Maintenance - Aft Starboard"
+	name = "Solar Maintenance - Starboard"
 	icon_state = "SolarcontrolS"
 	sound_env = SMALL_ENCLOSED
 
@@ -1015,11 +1015,11 @@
 	base_turf = /turf/space
 
 /area/solar/starboard
-	name = "Aft Starboard Solar Array"
+	name = "Starboard Solar Array"
 	icon_state = "panelsS"
 
 /area/solar/port
-	name = "Aft Port Solar Array"
+	name = "Port Solar Array"
 	icon_state = "panelsP"
 
 // Maintenance
