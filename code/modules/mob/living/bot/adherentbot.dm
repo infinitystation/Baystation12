@@ -1,8 +1,8 @@
 /mob/living/bot/adherent
 	name = "standart adherent bot"
 	desc = "It looks like a robot and you never saw anything the same before. Better don't mess with it."
-	icon = 'icons/mob/human_races/species/adherent/body.dmi'
-	icon_state = "full"
+	icon = 'icons/mob/bot/andherent/andherantbots.dmi'
+	icon_state = "standart"
 	density = 1
 	req_one_access = list(999)	//You should never unlock him.
 	botcard_access = list(999)
@@ -89,8 +89,8 @@
 /mob/living/bot/cleanbot/adherent
 	name = "adherent cleanbot"
 	desc = "It looks like a robot and you never saw anything the same before. Better don't mess with it."
-	icon = 'icons/mob/human_races/species/adherent/body.dmi'
-	icon_state = "full"
+	icon = 'icons/mob/bot/andherent/andherantbots.dmi'
+	icon_state = "clean_bot"
 	density = 1
 	req_one_access = list(999)	//You should never unlock him.
 	botcard_access = list(999)
