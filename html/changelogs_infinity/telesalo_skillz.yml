@@ -1,0 +1,5 @@
+author: Ducky
+delete-after: True
+
+changes: 
+  - balance: "Консоль теленауки теперь требует навык 'Science'. От его уровня зависит его эффективность пользования."
