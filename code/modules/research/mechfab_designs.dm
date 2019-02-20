@@ -375,27 +375,6 @@
 	materials = list(MATERIAL_STEEL = 25000, MATERIAL_PHORON = 10000, MATERIAL_GOLD = 1000, MATERIAL_SILVER = 1000)
 	build_path = /obj/item/borg/upgrade/rcd
 
-/datum/design/item/robot_upgrade/rpd
-	name = "RPD module"
-	desc = "A rapid pipe dispenser module for use during construction operations."
-	/*id = "borg_rpd_module"*/
-	materials = list(MATERIAL_STEEL = 75000, MATERIAL_GLASS = 2000)
-	build_path = /obj/item/borg/upgrade/rpd
-
-/datum/design/item/robot_upgrade/rped
-	name = "RPED module"
-	desc = "Special mechanical module made to store, sort, and apply standard machine parts."
-	req_tech = list(TECH_ENGINEERING = 3, TECH_DATA = 2, TECH_MATERIAL = 2)
-	materials = list(MATERIAL_STEEL = 50000, MATERIAL_GLASS = 10000)
-	build_path = /obj/item/borg/upgrade/rped
-
-/datum/design/item/robot_upgrade/advsynth
-	name = "Medical injector upgrade module"
-	desc = "Special mechanical module made to store, sort, and apply standard machine parts."
-	req_tech = list(TECH_BIO = 4, TECH_DATA = 2)
-	materials = list(MATERIAL_STEEL = 6000, MATERIAL_GLASS = 14000, MATERIAL_GOLD = 6000, MATERIAL_SILVER = 1000, MATERIAL_PHORON = 1000, MATERIAL_DIAMOND = 500)
-	build_path = /obj/item/borg/upgrade/advsynth
-
 /datum/design/item/robot_upgrade/syndicate
 	name = "Illegal upgrade"
 	desc = "Allows for the construction of lethal upgrades for cyborgs."
