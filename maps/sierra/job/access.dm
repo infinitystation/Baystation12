@@ -41,7 +41,7 @@
 /var/const/access_gun = 87
 /datum/access/gun
 	id = access_gun
-	desc = "Gunnery"
+	desc = "BSA Cannon"
 	region = ACCESS_REGION_COMMAND
 
 /var/const/access_expedition_shuttle = 88
