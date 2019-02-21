@@ -45,6 +45,15 @@
 	handle_beam(start, direction)
 	handle_overbeam()
 
+	for(var/obj/machinery/power/apc/apc in get_area(src))
+		if(apc.cell.charge < (300+80*strength))
+			if(prob(80))
+				apc.failure_timer = rand(10,40)
+				apc.update_icon()
+			if(prob(cool_failchance()) || prob(20)) //good luck
+				apc.set_broken()
+		apc.cell.use(300+80*strength)
+
 	//Some moron disregarded the cooldown warning. Let's blow in their face.
 	if(prob(cool_failchance()))
 		message_admins("[cool_failchance()]")
@@ -55,6 +64,8 @@
 	if(prob(100 - cal_accuracy()))
 		if(chargetype == BSA_DROPPOD)
 			atomcharge.forceMove(locate(rand(1,world.maxx),rand(1,world.maxy), GLOB.using_map.get_empty_zlevel())) //Remove it in case it's a droppod.
+		else
+			qdel(atomcharge)
 		return TRUE
 
 	reset_calibration()
@@ -80,6 +91,7 @@
 
 	//Way to waste a charge
 	if(!length(candidates))
+		qdel(atomcharge)
 		return TRUE
 
 	var/obj/effect/overmap/finaltarget = pick(candidates)
