@@ -251,7 +251,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/l6_saw
 	name = "L6 machine gun"
-	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. Has 'Aussec Armoury- 2531' engraved on the reciever." //probably should refluff this
+	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. Has 'Aussec Armoury- 2531' engraved on the reciever. You can also load it with standart 5.56 rifle magazine." //probably should refluff this
 	icon_state = "l6closed100"
 	item_state = "l6closedmag"
 	w_class = ITEM_SIZE_HUGE
