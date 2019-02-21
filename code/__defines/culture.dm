@@ -99,10 +99,6 @@
 #define CULTURE_SKRELL_TALUM    "Talum-Katish"
 #define CULTURE_SKRELL_RASKINTA "Raskinta-Katish"
 
-#define FACTION_SKRELL_MED  "Gloa'Morr Corp."
-#define FACTION_SKRELL_AIR  "Krri'gli Corp."
-#define FACTION_SKRELL_FOOD  "Qorr'moa Inc."
-
 #define HOME_SYSTEM_QERRBALAK  "Qerrbalak"
 
 // Adherent cultures.
@@ -197,4 +193,3 @@
 #define EDUCATION_SKRELL_BASIC        "Qrri-Mog"
 #define EDUCATION_SKRELL_FULL         "Qerr-Mog"
 #define EDUCATION_SKRELL_FULL_SCIENCE "Qerr-Mog, Science Focus"
-#define EDUCATION_SKRELL_FULL_DOCTOR  "Qerr-Mog, Medicine Focus"
