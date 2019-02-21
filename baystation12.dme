@@ -3040,6 +3040,8 @@
 #include "code\unit_tests\~helpers.dm"
 #include "code\unit_tests\~unit_test_types.dm"
 #include "infinity\code\game\objects\items\customs\os_uniform.dm"
+#include "infinity\code\game\objects\items\weapons\traps.dm"
+#include "infinity\code\game\objects\random\random.dm"
 #include "infinity\code\modules\clothing\accessory.dm"
 #include "infinity\code\modules\clothing\armor.dm"
 #include "infinity\code\modules\clothing\ears.dm"
