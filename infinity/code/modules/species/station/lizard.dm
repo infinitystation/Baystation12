@@ -37,9 +37,10 @@
 	base_auras = null //no fancy regeneration
 	inherent_verbs = null //no fancy regeneration
 
-	descriptors = list( //humanlike height and build
-		/datum/mob_descriptor/height = 0,
-		/datum/mob_descriptor/build = 0
+	//humanlike height and build
+	descriptors = list(
+		/datum/mob_descriptor/height = 1.4,
+		/datum/mob_descriptor/build = 1.2
 		)
 
 /datum/species/unathi/erosan/get_bodytype(var/mob/living/carbon/human/H)
