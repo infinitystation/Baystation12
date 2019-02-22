@@ -49,16 +49,15 @@
 		if(!cleanable.len)
 			to_chat(usr, "<span class='notice'>\The [T] is already clean.</span>")
 			return
-		user.visible_message("<span class='warning'>[user] starts scrubbing \the [T].</span>")
-		for(var/D in cleanable)
-			if(do_after(user, 20, D))
-				if(istype(D, /obj/effect/decal/cleanable/blood))
-					to_chat(user, "<span class='notice'>You scrub \the [D] out.</span>")
-					var/obj/effect/decal/cleanable/blood/B = D
-					B.clean_blood()
-				else if(istype(D, /obj/effect/decal/cleanable))
-					to_chat(user, "<span class='notice'>You scrub \the [D] out.</span>")
-					qdel(D)
+		user.visible_message("<span class='notice'>[user] starts scrubbing \the [T].</span>")
+		for(var/obj/effect/E in cleanable)
+			if(do_after(user, 20, E))
+				if(istype(E, /obj/effect/decal/cleanable/blood))
+					to_chat(user, "<span class='notice'>You scrub \the [E] out.</span>")
+					E.clean_blood()
+				else if(istype(E, /obj/effect/decal/cleanable))
+					to_chat(user, "<span class='notice'>You scrub \the [E] out.</span>")
+					qdel(E)
 			else
 				break
 	else if(istype(target,/obj/structure/hygiene/sink))
