@@ -1,5 +1,5 @@
 /datum/sprite_accessory/hair/ero
-	name = "Horns"
+	name = "Erosan Horns"
 	icon = 'infinity/icons/mob/human_races/species/erosan/hair.dmi'
 	icon_state = "horns"
 	blend = ICON_MULTIPLY
