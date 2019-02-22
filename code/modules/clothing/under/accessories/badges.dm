@@ -97,7 +97,7 @@
 /obj/item/clothing/accessory/badge/holo/set_name(var/new_name)
 	..()
 	badge_number = random_id(type,1000,9999)
-	name = "[name] ([badge_number])"
+	name = "[initial(name)] ([badge_number])"
 
 /obj/item/clothing/accessory/badge/holo/examine(user)
 	..()
@@ -127,7 +127,7 @@
 		if(!id_card)
 			return
 
-		if((badge_access in id_card.access && !badge_number) || emagged)
+		if((badge_access in id_card.access) || emagged)
 			to_chat(user, "You imprint your ID details onto the badge.")
 			set_name(id_card.registered_name)
 			set_desc(user)

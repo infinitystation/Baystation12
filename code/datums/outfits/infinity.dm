@@ -49,7 +49,7 @@
 	uniform = /obj/item/clothing/under/pcrc/tactical
 	glasses = /obj/item/clothing/glasses/tacgoggles
 	mask = /obj/item/clothing/mask/gas/half
-	suit = /obj/item/clothing/suit/armor/pcarrier/troops/heavy_pcrc
+	suit = /obj/item/clothing/suit/armor/pcarrier/troops/heavy/pcrc
 	head = /obj/item/clothing/head/helmet/pcrc
 	belt = /obj/item/weapon/storage/belt/holster/security/tactical/troops
 	r_hand = /obj/item/weapon/gun/projectile/automatic/wt550/lethal
@@ -83,8 +83,8 @@
 	name = "Syndicate Commando"
 	corpse_outfits = list(/decl/hierarchy/outfit/mercenary/syndicate/commando)
 
-/decl/hierarchy/outfit/corpse/pirat_inf
-	name = "Dead Pirat"
+/decl/hierarchy/outfit/pirat_inf
+	name = "Dead Pirat Inf"
 	uniform = /obj/item/clothing/under/pirate
 	shoes = /obj/random/shoes/poor
 	gloves = /obj/random/gloves/poor
@@ -93,10 +93,10 @@
 
 /obj/effect/landmark/corpse/inf_pirat
 	name = "Pirat"
-	corpse_outfits = list(/decl/hierarchy/outfit/corpse/pirat_inf)
+	corpse_outfits = list(/decl/hierarchy/outfit/pirat_inf)
 
-/decl/hierarchy/outfit/corpse/pirat_inf/space
-	name = "Dead Space Pirat"
+/decl/hierarchy/outfit/pirat_inf/space
+	name = "Dead Space Pirat Inf"
 	suit = /obj/item/clothing/suit/space
 	mask = /obj/item/clothing/mask/breath
 	head = /obj/item/clothing/head/helmet/space
@@ -104,4 +104,4 @@
 
 /obj/effect/landmark/corpse/inf_pirat/space
 	name = "Space Pirat"
-	corpse_outfits = list(/decl/hierarchy/outfit/corpse/pirat_inf/space)
+	corpse_outfits = list(/decl/hierarchy/outfit/pirat_inf/space)

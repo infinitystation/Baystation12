@@ -26,7 +26,7 @@
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 25
 
-	access = list(access_security, access_brig, access_armory, access_forensics_lockers,
+	access = list(access_seceva, access_guard, access_security, access_brig, access_armory, access_forensics_lockers,
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_eva, access_sec_doors, access_gun, access_hangar)
 
@@ -67,7 +67,7 @@
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 22
 
-	access = list(access_security, access_brig, access_forensics_lockers,
+	access = list(access_seceva, access_security, access_brig, access_forensics_lockers,
 			            access_maint_tunnels, access_emergency_storage,
 			            access_sec_doors, access_morgue, access_hangar)
 
@@ -106,7 +106,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
 	                    SKILL_WEAPONS     = SKILL_MAX)
 
-	access = list(access_security, access_brig, access_maint_tunnels,
+	access = list(access_seceva, access_guard, access_security, access_brig, access_maint_tunnels,
 						access_external_airlocks, access_emergency_storage,
 			            access_eva, access_sec_doors, access_hangar)
 

@@ -39,9 +39,9 @@
             <font size='2'><b>Текущие мейнтейнеры гитхаба проекта:</b> <a href='https://github.com/infinitystation/Baystation12?tab=members'>-Гиперссылка-</a><br></font>
 			<font size='2'><b>Список активных участников репозитория:</b> <a href='https://github.com/infinitystation/Baystation12/graphs/contributors'>-Гиперссылка-</a><br></font>
 			<font size='2'><b>Действующие разработчики</b><br></font>
-			<font size='2'><b>Кодеры:</b> Bear1ake, SolarK, Terror4000rus, Ducky, S.Konoplich, TermService<br></font>
+			<font size='2'><b>Кодеры:</b> Bear1ake, SolarK, Terror4000rus, S.Konoplich, TermService<br></font>
 			<font size='2'><b>Спрайтеры:</b> Temblrex, Krupks2017 <br></font>
-			<font size='2'><b>Мапперы:</b> Terror4000rus, Neterson, Coltrane, SanecMan<br></font>
+			<font size='2'><b>Мапперы:</b> Terror4000rus, Neterson, Coltrane<br></font>
 			<font size='2'><b>Звуки:</b> Любой из предложивших<br></font>
 			<font size='2'><b>Большое спасибо:</b> Baystation 12, Eris-Station (CEV-Eris), Solaris Station 13, /tg/ station, Paradise Station, AuroraStation, Polaris Station, /vg/station, GoonStation devs, оригинальные разработчики Space Station 13 и Invisty за картинку в лобби (для англоязычного сообщества Baystation 12).<br> Также спасибо всем, кто внёс свой вклад, но не попал сюда. Если хотите попасть сюда, обратитесь в дискорд или на форум.</font>
 			<font size='2' color='red'><b><br>Нашли баг?</b> Посетите наш багтрекер <a href="https://github.com/infinitystation/Baystation12/issues?labels=Bug&state=open">-Гиперссылка-</a>.<br></font>
@@ -57,6 +57,63 @@
 		
 		-->
 		<div class="commit sansserif">
+			<h2 class="date">21 February 2019</h2>
+			<h3 class="author">Обновление от Ducky:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Игроки за мышей теперь с небольшим шансом могут перегрызть провод, а то и пережить.</li>
+				<li class="bugfix">Исправлена проверка на гринтекст у культистов.</li>
+				<li class="tweak">Немного изменена работа мыла по полу. Теперь время отчистки зависит от количества грязи на тайле.</li>
+				<li class="balance">Консоль теленауки теперь требует навык 'Science'. От его уровня зависит эффективность пользования.</li>
+			</ul>
+			<h3 class="author">Обновление от Netreson:</h3>
+			<ul class="changes bgimages16">
+				<li class="maptweak">Крупные изменения на карте.</li>
+				<li class="maptweak">Поменялись местами солнечные панели и вирусология.</li>
+				<li class="maptweak">В ксенобиологию установлена мусорка для космирования мартышек и препарированных слизней. В кабинет добавлен шкафчик со шприцами и другими мелочами.</li>
+				<li class="maptweak">Увеличено количество монеток в технических помещения.</li>
+				<li class="maptweak">Технические помещения: расширены, наполнение более разнообразно, добавлен автомат с рандомными семенами, увеличено количество точек спавна безбилетников, добавлены скрытые помещения, добавлены баррьеры для блокирования перемещения с доступом охраны,.</li>
+				<li class="maptweak">Изменён склад медицинского отсека.</li>
+				<li class="maptweak">Добавлено подпространственное орудие на правый борт третьей палубы - вход из ангара. Требуется доступ на мостик.</li>
+			</ul>
+			<h3 class="author">Обновление от SeasoneWolf:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">Исправлено выкидывание из тела генокрада при гибе головы.</li>
+			</ul>
+			<h3 class="author">Обновление от Slayer:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Скреллам добавлены корпорации. Информация взята с вики.</li>
+			</ul>
+			<h3 class="author">Обновление от TermService:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">Ядерный диск считается защищенным если наемники мертвы.</li>
+			</ul>
+			<h3 class="author">Обновление от Terror4000rus:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">Исправлен дюп стаков материалов и иных, вроде телекристаллов.</li>
+				<li class="tweak">Телекристалы, потраченные на покупку телекристаллов теперь не считаются при показе потраченных телекристаллов за раунд.</li>
+				<li class="spellcheck">В описание пулемета добавлена заметка о том, что его можно заряжать в том числе и магазинами 5.56. К слову, исправлен спрайт пулемета.</li>
+				<li class="spellcheck">Правила сервера для игроков перенесены в полном виде в закладку rules.</li>
+				<li class="rscadd">BSA при выстреле потребляет энергию. Формула - 300+50*(сила выстрела). Энергия потребляется из АПЦ. В отсеке стоит особый АПЦ с быстрой зарядкой.</li>
+				<li class="tweak">Если в АПЦ меньше энергии, чем нужно для выстрела, то есть большой шанс того, что АПЦ временно выйдет из строя - как при ионном шторме. И энергия потратится. Но выстрел будет.</li>
+				<li class="tweak">Есть небольшой шанс, что при попытке выстрела в таком положении АПЦ вовсе сгорит. Если стрелять во время отходняка пушки - шанс резко повышается.</li>
+				<li class="bugfix">Снаряд BSA удаляется при выстреле в любом случае.</li>
+			</ul>
+
+			<h2 class="date">18 February 2019</h2>
+			<h3 class="author">Обновление от Ducky:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Наушники теперь будут получать сигнал с кнопок департамента. Эту функцию можно перекрыть путём выключения приема в самом наушнике.</li>
+			</ul>
+
+			<h2 class="date">09 February 2019</h2>
+			<h3 class="author">Обновление от Unknown:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Жало кражи внешности (ДНКа) генокрада вкалывается скрытно.</li>
+				<li class="rscdel">У следователей больше нет доступа в комнату охраны. Доступ в комнату с уликами есть только у охраны. Доступ в допросную есть у охраны и глав.</li>
+				<li class="rscdel">При превращении в мартышку теперь пишется имя мартышки, а не человека - unknown.</li>
+				<li class="rscdel">Сообщения в say пишутся с заглавной буквы автоматически. Убрано 'кричит' и 'выкрикивает' при написании '!'.</li>
+			</ul>
+
 			<h2 class="date">03 February 2019</h2>
 			<h3 class="author">Обновление от AlexMorgan3817:</h3>
 			<ul class="changes bgimages16">

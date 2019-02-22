@@ -414,19 +414,19 @@
 	name = "lift (first deck)"
 	lift_floor_label = "Deck 1"
 	lift_floor_name = "Main Deck"
-	lift_announce_str = "Arriving at Command Deck: Bridge. Meeting Room. Infirmary. AI Core. Landing Area. Auxiliary EVA."
+	lift_announce_str = "Arriving at Main Deck: Bridge. Captain's Mess. Meeting Room. Security Wing. Research Wing. Infirmary. AI Core."
 
 /area/turbolift/sierra_middle
 	name = "lift (second deck)"
 	lift_floor_label = "Deck 2"
 	lift_floor_name = "Living Deck"
-	lift_announce_str = "Arriving at Operations Deck: Research Wing. Auxiliary Cryogenic Storage. Emergency Armory. Diplomatic Quarters. Captain's Mess. Exploration Leader's Office."
+	lift_announce_str = "Arriving at Living Deck: Cryogenic Storage. Dormitory. Holodeck. Lounge. Bar. Hydroponics. Gym. Laundry. Engineering. Atmospherics. Telecommunications. EVA."
 
 /area/turbolift/sierra_ground
 	name = "lift (third deck)"
 	lift_floor_label = "Deck 3"
 	lift_floor_name = "Hangar Deck"
-	lift_announce_str = "Arriving at Hangar Deck: Shuttle Docks. Cargo Storage. Main Hangar. Supply Office. Expedition Preparation. Mineral Processing."
+	lift_announce_str = "Arriving at Hangar Deck: Shuttle Docks. Supply Office. Cargo Storage. Main Hangar. Expedition Preparation. Exploration Leader's Office. Mineral Processing. Sanitation."
 	base_turf = /turf/simulated/floor
 
 // Command
@@ -438,7 +438,10 @@
 /area/command/exploration_leader
 	name = "Exploration Leader's Office"
 	icon_state = "head_quarters"
-	sound_env = MEDIUM_SOFTFLOOR
+
+/area/command/bsa
+	name = "\improper Bluespace Artillery"
+	icon_state = "firingrange"
 
 /area/crew_quarters/heads
 	icon_state = "head_quarters"
@@ -620,6 +623,7 @@
 /area/quartermaster/shuttlefuel
 	name = "Shuttle Fuel Bay"
 	icon_state = "toxstorage"
+	sound_env = SMALL_ENCLOSED
 
 /area/quartermaster/hangar
 	name = "Hangar Deck"
@@ -634,6 +638,7 @@
 /area/rnd/canister
 	name = "Canister Storage"
 	icon_state = "toxstorage"
+	sound_env = SMALL_ENCLOSED
 
 /area/rnd/development
 	name = "Fabricator Lab"
@@ -683,6 +688,7 @@
 	name = "Aux Custodial Supplies"
 	icon_state = "decontamination"
 	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
 
 // Crew areas
 /area/crew_quarters/bar
@@ -697,7 +703,6 @@
 /area/crew_quarters/head
 	name = "Head"
 	icon_state = "toilet"
-	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/head/aux
 	name = "Auxiliary Head"
@@ -762,6 +767,7 @@
 /area/security/sierra/hallway
 	name = "Security - Fore Hallway"
 	icon_state = "security"
+	sound_env = LARGE_ENCLOSED
 
 /area/security/sierra/hallway/aft
 	name = "Security - Aft Hallway"
@@ -933,6 +939,7 @@
 /area/engineering/fuelbay
 	name = "Fuel Bay"
 	icon_state = "engineering"
+	sound_env = SMALL_ENCLOSED
 
 // Command
 
@@ -952,7 +959,6 @@
 
 /area/bridge/lobby
 	name = "Bridge Lobby"
-	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/heads
 	icon_state = "head_quarters"
@@ -968,6 +974,7 @@
 	area_flags = AREA_FLAG_EXTERNAL
 	has_gravity = FALSE
 	turf_initializer = /decl/turf_initializer/maintenance/space
+	sound_env = SPACE
 
 // CentCom
 
@@ -994,14 +1001,13 @@
 
 // Solars
 /area/maintenance/solar
-	name = "Solar Maintenance - Aft Port"
+	name = "Solar Maintenance - Port"
 	icon_state = "SolarcontrolP"
 	sound_env = SMALL_ENCLOSED
 
 /area/maintenance/solar/starboard
-	name = "Solar Maintenance - Aft Starboard"
+	name = "Solar Maintenance - Starboard"
 	icon_state = "SolarcontrolS"
-	sound_env = SMALL_ENCLOSED
 
 /area/solar
 	area_flags = AREA_FLAG_EXTERNAL
@@ -1009,13 +1015,14 @@
 	always_unpowered = 1
 	has_gravity = FALSE
 	base_turf = /turf/space
+	sound_env = SPACE
 
 /area/solar/starboard
-	name = "Aft Starboard Solar Array"
+	name = "Starboard Solar Array"
 	icon_state = "panelsS"
 
 /area/solar/port
-	name = "Aft Port Solar Array"
+	name = "Port Solar Array"
 	icon_state = "panelsP"
 
 // Maintenance
@@ -1035,7 +1042,7 @@
 /area/maintenance/compactor
 	name = "Compactor"
 	icon_state = "disposal"
-	sound_env = LARGE_ENCLOSED
+	sound_env = STANDARD_STATION
 
 // Storage
 
