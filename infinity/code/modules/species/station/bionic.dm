@@ -6,7 +6,7 @@
 Данна&#255; технологи&#255; кибернетического усилени&#255; позвол&#255;ет преумножить как физические способности носител&#255;, так и умственные, использу&#255; при этом человеческий мозг, чьи функции теменной и затылочной долей переход&#255;т напр&#255;мую к плазматронному &#255;дру. \
 В насто&#255;щее врем&#255; проект признан нестабильным и сверхдорогим в своей реализации, потому, веро&#255;тно, навсегда останетс&#255; в единственном экземпл&#255;ре под контролем Корпорации NanoTrasen."
 
-	preview_icon = 'icons/mob/human_races/species/bionic/preview.dmi'
+	preview_icon = 'infinity/icons/mob/human_races/species/bionic/preview.dmi'
 
 	language = LANGUAGE_EAL
 	secondary_langs = list(LANGUAGE_SOL_COMMON, LANGUAGE_INDEPENDENT, LANGUAGE_SPACER, \
