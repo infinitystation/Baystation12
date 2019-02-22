@@ -607,18 +607,3 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	var/regex/R = regex("(\[^[char]\]*)$")
 	R.Find(text)
 	return R.group[1]
-
-proc/corrupt_text(t)
-	var/returntext = ""
-	for(var/i = 1, i <= length(t), i++)
-
-		var/letter = copytext(t, i, i+1)
-		if(prob(75))
-			if(prob(10))
-				letter = ""
-			for(var/j = 1, j <= rand(0, 2), j++)
-				letter += pick("#","@","*","&","%","$", "!","¹","?","*","*","*","*","*","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z")
-
-		returntext += letter
-
-	return returntext

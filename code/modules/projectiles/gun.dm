@@ -173,9 +173,6 @@
 	else
 		return ..() //Pistolwhippin'
 
-/obj/item/weapon/gun/proc/modify_projectile(obj/item/projectile/p, var/list/params = list())
-	return p
-
 /obj/item/weapon/gun/dropped(var/mob/living/user)
 	if(istype(user))
 		if(!safety() && prob(5) && !user.skill_check(SKILL_WEAPONS, SKILL_BASIC) && special_check(user))

@@ -1,5 +1,0 @@
-author: Ducky
-delete-after: True
-
-changes: 
-  - bugfix: "Исправлена проверка на гринтекст у культистов."

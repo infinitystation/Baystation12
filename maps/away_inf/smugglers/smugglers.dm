@@ -8,8 +8,10 @@
 	known = 0
 
 	initial_generic_waypoints = list(
-		"nav_smugglers",
-		"nav_smugglers_antag"
+		"nav_smugglers_1",
+		"nav_smugglers_2",
+		"nav_smugglers_3",
+//		"nav_smugglers_antag"
 	)
 
 /datum/map_template/ruin/away_site/smugglers_inf
@@ -20,14 +22,22 @@
 	suffixes = list("smugglers/smugglers.dmm")
 	cost = 1
 
-/obj/effect/shuttle_landmark/nav_asteroid_base/nav1
-	name = "Abandoned Asteroid Base Navpoint #1"
-	landmark_tag = "nav_smugglers"
+/obj/effect/shuttle_landmark/nav_asteroid_base
+	name = "Abandoned Asteroid Base North"
+	landmark_tag = "nav_smugglers_1"
+	flags = SLANDMARK_FLAG_AUTOSET
 
 /obj/effect/shuttle_landmark/nav_asteroid_base/nav2
-	name = "Abandoned Asteroid Base Navpoint #2"
+	name = "Abandoned Asteroid Base South"
+	landmark_tag = "nav_smugglers_2"
+
+/obj/effect/shuttle_landmark/nav_asteroid_base/nav3
+	name = "Abandoned Asteroid Base West"
+	landmark_tag = "nav_smugglers_3"
+
+/obj/effect/shuttle_landmark/nav_asteroid_base/nav_antag
+	name = "Abandoned Asteroid Base East"
 	landmark_tag = "nav_smugglers_antag"
-	flags = SLANDMARK_FLAG_AUTOSET
 
 /obj/item/weapon/paper/smug_1
 	name = "suspicios note"

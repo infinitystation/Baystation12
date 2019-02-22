@@ -438,7 +438,6 @@
 /area/command/exploration_leader
 	name = "Exploration Leader's Office"
 	icon_state = "head_quarters"
-	sound_env = MEDIUM_SOFTFLOOR
 
 /area/command/bsa
 	name = "\improper Bluespace Artillery"
@@ -624,6 +623,7 @@
 /area/quartermaster/shuttlefuel
 	name = "Shuttle Fuel Bay"
 	icon_state = "toxstorage"
+	sound_env = SMALL_ENCLOSED
 
 /area/quartermaster/hangar
 	name = "Hangar Deck"
@@ -638,6 +638,7 @@
 /area/rnd/canister
 	name = "Canister Storage"
 	icon_state = "toxstorage"
+	sound_env = SMALL_ENCLOSED
 
 /area/rnd/development
 	name = "Fabricator Lab"
@@ -687,6 +688,7 @@
 	name = "Aux Custodial Supplies"
 	icon_state = "decontamination"
 	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = SMALL_ENCLOSED
 
 // Crew areas
 /area/crew_quarters/bar
@@ -701,7 +703,6 @@
 /area/crew_quarters/head
 	name = "Head"
 	icon_state = "toilet"
-	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/head/aux
 	name = "Auxiliary Head"
@@ -766,6 +767,7 @@
 /area/security/sierra/hallway
 	name = "Security - Fore Hallway"
 	icon_state = "security"
+	sound_env = LARGE_ENCLOSED
 
 /area/security/sierra/hallway/aft
 	name = "Security - Aft Hallway"
@@ -937,6 +939,7 @@
 /area/engineering/fuelbay
 	name = "Fuel Bay"
 	icon_state = "engineering"
+	sound_env = SMALL_ENCLOSED
 
 // Command
 
@@ -956,7 +959,6 @@
 
 /area/bridge/lobby
 	name = "Bridge Lobby"
-	sound_env = SMALL_ENCLOSED
 
 /area/crew_quarters/heads
 	icon_state = "head_quarters"
@@ -972,6 +974,7 @@
 	area_flags = AREA_FLAG_EXTERNAL
 	has_gravity = FALSE
 	turf_initializer = /decl/turf_initializer/maintenance/space
+	sound_env = SPACE
 
 // CentCom
 
@@ -1005,7 +1008,6 @@
 /area/maintenance/solar/starboard
 	name = "Solar Maintenance - Starboard"
 	icon_state = "SolarcontrolS"
-	sound_env = SMALL_ENCLOSED
 
 /area/solar
 	area_flags = AREA_FLAG_EXTERNAL
@@ -1013,6 +1015,7 @@
 	always_unpowered = 1
 	has_gravity = FALSE
 	base_turf = /turf/space
+	sound_env = SPACE
 
 /area/solar/starboard
 	name = "Starboard Solar Array"
@@ -1039,7 +1042,7 @@
 /area/maintenance/compactor
 	name = "Compactor"
 	icon_state = "disposal"
-	sound_env = LARGE_ENCLOSED
+	sound_env = STANDARD_STATION
 
 // Storage
 
