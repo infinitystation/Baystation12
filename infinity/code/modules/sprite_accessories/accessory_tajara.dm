@@ -3,7 +3,7 @@
 	name = "Tajaran Ears"
 	icon_state = "ears_plain"
 	species_allowed = list(SPECIES_TAJARA)
-	icon = 'icons/mob/human_races/species/tajara/hair.dmi'
+	icon = 'infinity/icons/mob/human_races/species/tajara/hair.dmi'
 
 /datum/sprite_accessory/hair/taj/ears_clean
 	name = "Tajara Clean"
@@ -108,15 +108,14 @@
 /datum/sprite_accessory/skin/tajaran
 	name = "Default tajaran skin"
 	icon_state = "default"
-	icon = 'icons/mob/human_races/species/tajara/body.dmi'
+	icon = 'infinity/icons/mob/human_races/species/tajara/body.dmi'
 	species_allowed = list(SPECIES_TAJARA)
 
 /datum/sprite_accessory/facial_hair/taj
 	name = "Tajara Sideburns"
 	icon_state = "facial_sideburns"
 	species_allowed = list(SPECIES_TAJARA)
-	icon = 'icons/mob/human_races/species/tajara/facial.dmi'
-
+	icon = 'infinity/icons/mob/human_races/species/tajara/facial.dmi'
 
 /datum/sprite_accessory/facial_hair/taj/mutton
 	name = "Tajara Mutton"
