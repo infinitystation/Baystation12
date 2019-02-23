@@ -1,10 +1,10 @@
 /mob/living/bot/adherent
 	name = "standart adherent bot"
 	desc = "It looks like a robot and you never saw anything the same before. Better don't mess with it."
-	icon = 'icons/mob/human_races/species/adherent/body.dmi'
-	icon_state = "full"
+	icon = 'maps/away_inf/adherent_base/bots/standart_bot.dmi'
+	icon_state = "standart"
 	density = 1
-	req_one_access = list(999)	//You should never unlock him.
+	req_one_access = list(999)
 	botcard_access = list(999)
 	RequiresAccessToToggle = 1
 	will_patrol = 1
@@ -14,8 +14,7 @@
 
 /mob/living/bot/adherent/New()
 	..()
-	name = regex("\[A-Z\]{2}-\[A-Z\]{1} \[0-9\]{4}")
-	get_targets()
+	name += " #" + num2text(rand(1, 999))
 
 /mob/living/bot/adherent/explode()		//In death Adherent-bot will loose other parts.
 	on = 0
@@ -68,7 +67,6 @@
 
 /mob/living/bot/adherent/proc/get_targets()
 	target_types = list()
-
 	target_types += /obj/machinery/computer
 	target_types += /obj/machinery/power
 	target_types += /obj/machinery/vending
@@ -88,11 +86,11 @@
 
 /mob/living/bot/cleanbot/adherent
 	name = "adherent cleanbot"
-	desc = "It looks like a robot and you never saw anything the same before. Better don't mess with it."
-	icon = 'icons/mob/human_races/species/adherent/body.dmi'
-	icon_state = "full"
+	desc = "It looks like bot with cyber mop"//"It looks like a robot and you never saw anything the same before. Better don't mess with it."
+	icon = 'maps/away_inf/adherent_base/bots/clean_bot.dmi'
+	icon_state = "cleanbot1"
 	density = 1
-	req_one_access = list(999)	//You should never unlock him.
+	req_one_access = list(999)
 	botcard_access = list(999)
 	RequiresAccessToToggle = 1
 	will_patrol = 1
@@ -101,8 +99,7 @@
 
 /mob/living/bot/cleanbot/adherent/New()
 	..()
-	var/number = regex("\[A-Z\]{2}-\[A-Z\]{1} \[0-9\]{4}")
-	name = number
+	name += " #" + num2text(rand(1, 999))
 
 /mob/living/bot/cleanbot/adherent/explode()		//In death Adherent-bot will loose other parts.
 	on = 0
@@ -126,15 +123,14 @@
 /mob/living/bot/cleanbot/adherent/update_icons()
 	return
 
-/*
 //ADHERENT MEDBOT - Currently li'l bugged because it takes icon of medibot when injecting
 /mob/living/bot/medbot/adherent
 	name = "adherent medbot "
-	desc = "Huge octopus-like robot with syringes, saws, scalpels and other horrible torture tools."
-	icon = 'icons/mob/human_races/species/adherent/body.dmi'
-	icon_state = "full"
+	desc = "Small green bucket-like bot with syringes, scalpels and other horrible torture tools."
+	icon = 'maps/away_inf/adherent_base/bots/med_bot.dmi'
+	icon_state = "medibot1"
 	density = 1
-	req_one_access = list(999)	//You should not unlock him.
+	req_one_access = list(999)
 	botcard_access = null
 	RequiresAccessToToggle = 1
 	will_patrol = 1
@@ -143,11 +139,11 @@
 
 /mob/living/bot/medbot/adherent/New()
 	..()
-	name = regex("\[A-Z\]{2}-\[A-Z\]{1} \[0-9\]{4}")
+	name += " #" + num2text(rand(1, 999))
 
 /mob/living/bot/medbot/adherent/handleIdle()
 	if(vocal && prob(1))
-		var/message = pick("Look for your health status, good sir.", "Checking your mental status... You're absolutely fine, sir!", "Your weight is too low, sir. Please, eat a bit more proteins and nutriments.", "Today is a good day. Almost no suicides.", "Maybe I should add a bit more sweet sugar to my drugs...")
+		var/message = pick("Look for your health status, sir.", "Checking your mental status... You're absolutely fine, sir!", "Your weight is too low, sir. Please, eat a bit more proteins and nutriments.", "Today is a good day. Almost no suicides.", "Maybe I should add a bit more sweet sugar to my drugs...")
 		say(message)
 
 /mob/living/bot/medbot/adherent/explode()		//In dearh Adherent-bot will loose other parts.
@@ -175,4 +171,3 @@
 
 /mob/living/bot/medbot/adherent/update_icons()
 	return
-*/
