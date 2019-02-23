@@ -3077,6 +3077,7 @@
 #include "infinity\code\modules\projectiles\guns\projectile\shotgun.dm"
 #include "infinity\code\modules\projectiles\projectile\beams.dm"
 #include "infinity\code\modules\projectiles\projectile\bullets.dm"
+#include "infinity\code\modules\species\species.dm"
 #include "infinity\code\modules\species\station\lizard.dm"
 #include "infinity\code\modules\species\station\resomi.dm"
 #include "infinity\code\modules\species\station\tajaran.dm"
