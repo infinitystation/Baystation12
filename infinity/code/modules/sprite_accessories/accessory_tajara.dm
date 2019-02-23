@@ -105,11 +105,7 @@
 	name = "Tajara Dreadlocks"
 	icon_state = "hair_dreadlocks"
 
-/datum/sprite_accessory/skin/tajaran
-	name = "Default tajaran skin"
-	icon_state = "default"
-	icon = 'infinity/icons/mob/human_races/species/tajara/body.dmi'
-	species_allowed = list(SPECIES_TAJARA)
+// FACIAL
 
 /datum/sprite_accessory/facial_hair/taj
 	name = "Tajara Sideburns"
@@ -136,6 +132,8 @@
 /datum/sprite_accessory/facial_hair/taj/smallstache
 	name = "Tajara Smallsatche"
 	icon_state = "facial_smallstache"
+
+// MARKINGS
 
 /datum/sprite_accessory/marking/taj
 	name = "Socks Coloration (Taj)"
@@ -231,3 +229,11 @@
 	name = "All Taj Head (Taj)"
 	icon_state = "taj_all"
 	body_parts = list(BP_HEAD)
+
+// SKIN
+
+/datum/sprite_accessory/skin/tajaran
+	name = "Default tajaran skin"
+	icon_state = "default"
+	icon = 'infinity/icons/mob/human_races/species/tajara/body.dmi'
+	species_allowed = list(SPECIES_TAJARA)
