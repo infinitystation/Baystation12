@@ -280,37 +280,30 @@ datum/objective/escape
 	explanation_text = "Escape on the shuttle or an escape pod alive and free."
 
 
-	check_completion()
-		if(issilicon(owner.current))
-			return 0
-		if(isbrain(owner.current))
-			return 0
-		if(!evacuation_controller.has_evacuated())
-			return 0
-		if(!owner.current || owner.current.stat ==2)
-			return 0
-		var/turf/location = get_turf(owner.current.loc)
-		if(!location)
-			return 0
+datum/objective/escape/check_completion()
+	if(issilicon(owner.current))
+		return 0
+	if(isbrain(owner.current))
+		return 0
+	if(!evacuation_controller.has_evacuated())
+		return 0
+	if(!owner.current || owner.current.stat == DEAD)
+		return 0
+	if(owner.current.incapacitated(INCAPACITATION_KNOCKOUT|INCAPACITATION_RESTRAINED)) 	//Fails traitors if they are in a shuttle but knocked out or cuffed.
+		return 0
 
-		//Fails traitors if they are in a shuttle but knocked out or cuffed.
-		if(owner.current.incapacitated(INCAPACITATION_KNOCKOUT|INCAPACITATION_RESTRAINED))
-			return 0
-
-		var/area/check_area = location.loc
-		return check_area && is_type_in_list(check_area, GLOB.using_map.post_round_safe_areas) || owner.current.z in GLOB.using_map.admin_levels
-
-
+	var/area/check_area = get_area(owner.current)
+	return check_area && is_type_in_list(check_area, GLOB.using_map.post_round_safe_areas)
 
 datum/objective/survive
 	explanation_text = "Stay alive until the end."
 
-	check_completion()
-		if(!owner.current || owner.current.stat == DEAD || isbrain(owner.current))
-			return 0		//Brains no longer win survive objectives. --NEO
-		if(issilicon(owner.current) && owner.current != owner.original)
-			return 0
-		return 1
+datum/objective/survive/check_completion()
+	if(!owner.current || owner.current.stat == DEAD || isbrain(owner.current))
+		return 0		//Brains no longer win survive objectives. --NEO
+	if(issilicon(owner.current) && owner.current != owner.original)
+		return 0
+	return 1
 
 // Similar to the anti-rev objective, but for traitors
 datum/objective/brig
