@@ -1,69 +1,80 @@
 #include "mining_areas.dm"
 
 //MINING-1 // CLUSTER
-/obj/effect/overmap/sector/cluster
-	name = "asteroid cluster"
-	desc = "Large group of asteroids. Mineral content detected."
+/obj/effect/overmap/sector/mining_asteroid
+	name = "large asteroid"
+	desc = "A medium-sized asteroid with a big belt of small one. Old mining facility detected on one of sides, owner - NanoTrasen."
 	icon_state = "sector"
-	initial_generic_waypoints = list(
-		"nav_cluster_1",
-		"nav_cluster_2",
-		"nav_cluster_3",
-		"nav_cluster_4",
-		"nav_cluster_5",
-		"nav_cluster_6",
-		"nav_cluster_7"
+	initial_restricted_waypoints = list(
+		"Guppy" = list("nav_mining_8")
 	)
+	initial_generic_waypoints = list(
+		"nav_mining_1",
+		"nav_mining_2",
+		"nav_mining_3",
+		"nav_mining_4",
+		"nav_mining_5",
+		"nav_mining_6",
+		"nav_mining_7",
+		"nav_mining_9"
+	)
+	known = 1
 	start_x = 4
 	start_y = 5
-	known = 0
 
 /datum/map_template/ruin/away_site/mining_asteroid
-	name = "Mining - Asteroid"
-	id = "awaysite_mining_asteroid"
-	description = "A medium-sized asteroid full of minerals."
+	name = "Mining - Asteroid Base"
+	id = "awaysite_mining_asteroid_base"
+	description = "A medium-sized asteroid full of minerals. Old mining facility detected on one of sides, owner - NanoTrasen."
+	prefix = "maps/away_inf/"
 	suffixes = list("mining/mining-asteroid.dmm")
-	cost = 0
-	accessibility_weight = 10
-
-/datum/map_template/ruin/away_site/mining_signal
-	name = "Mining - Planetoid"
-	id = "awaysite_mining_signal"
-	description = "A mineral-rich, formerly-volcanic site on a planetoid."
-	suffixes = list("mining/mining-signal.dmm")
 	cost = 1
-	base_turf_for_zs = /turf/simulated/floor/asteroid
+	accessibility_weight = 10
+	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
 
-/obj/effect/shuttle_landmark/cluster/nav1
+/obj/effect/shuttle_landmark/mining/nav1
 	name = "Asteroid Navpoint #1"
-	landmark_tag = "nav_cluster_1"
+	landmark_tag = "nav_mining_1"
 
-/obj/effect/shuttle_landmark/cluster/nav2
+/obj/effect/shuttle_landmark/mining/nav2
 	name = "Asteroid Navpoint #2"
-	landmark_tag = "nav_cluster_2"
+	landmark_tag = "nav_mining_2"
 
-/obj/effect/shuttle_landmark/cluster/nav3
+/obj/effect/shuttle_landmark/mining/nav3
 	name = "Asteroid Navpoint #3"
-	landmark_tag = "nav_cluster_3"
+	landmark_tag = "nav_mining_3"
 
-/obj/effect/shuttle_landmark/cluster/nav4
+/obj/effect/shuttle_landmark/mining/nav4
 	name = "Asteroid Navpoint #4"
-	landmark_tag = "nav_cluster_4"
+	landmark_tag = "nav_mining_4"
 
-/obj/effect/shuttle_landmark/cluster/nav5
+/obj/effect/shuttle_landmark/mining/nav5
 	name = "Asteroid Landing zone #1"
-	landmark_tag = "nav_cluster_5"
+	landmark_tag = "nav_mining_5"
 	base_area = /area/mine/explored
+	base_turf = /turf/simulated/floor/asteroid
 
-/obj/effect/shuttle_landmark/cluster/nav6
+/obj/effect/shuttle_landmark/mining/nav6
 	name = "Asteroid Navpoint #5"
-	landmark_tag = "nav_cluster_6"
+	landmark_tag = "nav_mining_6"
 
-/obj/effect/shuttle_landmark/cluster/nav7
+/obj/effect/shuttle_landmark/mining/nav7
 	name = "Asteroid Landing zone #2"
-	landmark_tag = "nav_cluster_7"
+	landmark_tag = "nav_mining_7"
 	base_area = /area/mine/explored
+	base_turf = /turf/simulated/floor/asteroid
 
+/obj/effect/shuttle_landmark/mining/nav8
+	name = "Asteroid Mining Outpost Hangar"
+	landmark_tag = "nav_mining_8"
+	base_area = /area/outpost/mining/hangar
+	base_turf = /turf/simulated/floor/plating
+
+/obj/effect/shuttle_landmark/mining/nav9
+	name = "Asteroid Mining Outpost"
+	landmark_tag = "nav_mining_9"
+
+/*
 //MINING-2 // SIGNAL
 /obj/effect/overmap/sector/away
 	name = "faint signal from an asteroid"
@@ -79,6 +90,14 @@
 		"nav_away_7"
 	)
 	known = 0
+
+/datum/map_template/ruin/away_site/mining_signal
+	name = "Mining - Planetoid"
+	id = "awaysite_mining_signal"
+	description = "A mineral-rich, formerly-volcanic site on a planetoid."
+	suffixes = list("mining/mining-signal.dmm")
+	cost = 1
+	base_turf_for_zs = /turf/simulated/floor/asteroid
 
 /obj/effect/shuttle_landmark/away
 	base_area = /area/mine/explored
@@ -110,3 +129,24 @@
 /obj/effect/shuttle_landmark/away/nav7
 	name = "Away Landing zone #7"
 	landmark_tag = "nav_away_7"
+*/
+
+/obj/item/weapon/paper/mining_base/eva
+	info = "<i>ГДЕ СКАФАНДРЫ, СУКА?<br>Распилено, привыкай :)</i>"
+
+/obj/item/weapon/paper/mining_base/buttons
+	info = "<i>Я вытащил внешние кнопки для шлюзов, ну это нахуй.</i>"
+
+/obj/item/weapon/paper/mining_base/note
+	info = "<i>Это самая стремная база, на которой мне доводилось находиться. Я впервые вижу такое количество ебаного мусора, \
+	пыли, мышей - хоть капканы ставь, откуда они здесь?<br> \
+	У меня создается впечатление, что базу построили недавно, но специально мусором наговнили, потому-что плитка не выглядит \
+	настолько всрато. \
+	Когда мы прилетели, обнаружилось, что практически всё оборудование куда-то пропало - решили, что спиздили предыдущие группы. \
+	Как обычно, впрочем.<br> \
+	Астероиды странный, даже очень. Либо его практически не копали, что явно пиздеж, потому-что до нас здесь было минимум \
+	7 бригад, либо... Даже не знаю. Сказать, что здесь аномалия или типо того? В последнем выходе мы заметили, что тоннели \
+	пропадают. Прошло часов 6 и возможно, это просто обрушение, но мы не настолько долбоебы, чтобы копать в такую ширь... \
+	Да и гравитации здесь практически нет - из-за чего это?<br> \
+	Начальство ничего по этому поводу не говорит - копайте, как копали.<i><br> \
+	Тем, кто прилетит - записывайте всё, где выкопали и что нашли. Что-то здесь не чисто. И ни слова руководству.</i>"
