@@ -1272,18 +1272,3 @@ var/list/random_useful_
 /obj/random/mrespread/spawn_choices()
 	return list(/obj/item/weapon/reagent_containers/food/condiment/small/packet/jelly,
 				/obj/item/weapon/reagent_containers/food/condiment/small/packet/honey)
-
-/obj/random/snowland //Trees, grass, etc for snowland
-	name = "random snowland flora"
-	desc = "This is a random flora."
-	icon = 'icons/obj/flora/snowflora.dmi'
-	icon_state = "snowgrass1bb"
-//	spawn_nothing_percentage = 20
-
-/obj/random/snowland/spawn_choices()
-	return list(/obj/structure/flora/bush = 5,
-				/obj/structure/flora/grass/brown = 3,
-				/obj/structure/flora/grass/both = 4,
-				/obj/structure/flora/grass/green = 3,
-				/obj/structure/flora/tree/dead = 3,
-				/obj/structure/flora/tree/pine = 2)
