@@ -11,6 +11,7 @@
 	species_to_job_blacklist = list(
 		/datum/species/unathi  		 = list(HUMAN_ONLY_JOBS, /datum/job/iaa),
 		/datum/species/unathi/yeosa  = list(HUMAN_ONLY_JOBS, /datum/job/iaa),
+		/datum/species/unathi/erosan		 = list(HUMAN_ONLY_JOBS, /datum/job/iaa),
 		/datum/species/skrell  		 = list(HUMAN_ONLY_JOBS),
 		/datum/species/tajaran 		 = list(HUMAN_ONLY_JOBS),
 		/datum/species/machine 		 = list(HUMAN_ONLY_JOBS),

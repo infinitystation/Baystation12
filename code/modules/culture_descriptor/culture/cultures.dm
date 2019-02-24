@@ -5,12 +5,14 @@
 /decl/cultural_info/culture/human
 	name = CULTURE_HUMAN
 	description = "You are from one of various planetary cultures of humankind."
-	language = LANGUAGE_GALCOM
-	secondary_langs = list(LANGUAGE_SOL_COMMON)
+	language = LANGUAGE_SOL_COMMON
+	secondary_langs = list(LANGUAGE_GALCOM)
 
 /decl/cultural_info/culture/human/vatgrown
 	name = CULTURE_HUMAN_VATGROWN
 	description = "You were grown in a vat, either as clone or as a gene-adapt, and your outlook diverges from baseline humanity accordingly."
+	language = LANGUAGE_GALCOM
+	secondary_langs = list(LANGUAGE_SOL_COMMON)
 
 /decl/cultural_info/culture/human/vatgrown/sanitize_name(name)
 	return sanitizeName(name, allow_numbers=TRUE)
@@ -36,7 +38,7 @@
 	are known as Monsians, the largest cultural group on the planet. Most Surfacers have had a decent upbringing and represent the \
 	average level of comfort expected in Sol space. Most surfacers are like many across the galaxy, though a few harbour rivalries with other Martian cultural \
 	groups or are generally overly proud of their heritage, as is the case with the Gideons, to the point that they constantly refer to it."
-	language = LANGUAGE_SOL_COMMON
+	secondary_langs = list(LANGUAGE_SOL_COMMON)
 	economic_power = 1
 
 /decl/cultural_info/culture/human/martian_tunneller
@@ -46,8 +48,7 @@
 	to the same amenities and services as Surfacers are somewhat poorer than their aboveground brethren as a result of their less desirable locale as well as a strong \
 	criminal presence stemming from centuries of poor policing and a focus on the surface by the martian government. Most Tunnellers are resilient, though distrusting \
 	and wary of outsiders, and tend to strongly dislike non-Martians."
-	language = LANGUAGE_SOL_COMMON
-	secondary_langs = list(LANGUAGE_GUTTER)
+	secondary_langs = list(LANGUAGE_GUTTER, LANGUAGE_SIGN)
 	economic_power = 0.9
 
 /decl/cultural_info/culture/human/luna_poor
@@ -131,7 +132,7 @@
 	gateway installations or other facilities that occupy the vastness of space. Spacers near the core worlds are accustomed to life in the fast lane, constantly moving between \
 	places, meeting a myriad of people and experiencing many of the cultures and worlds close to humanity's home. As such, Spacers of the core systems tend to be busy, sociable and \
 	mobile, rarely satisfied with settled life. They almost universally know how to live and work in the void and take to such jobs more readily than their planet-bound counterparts."
-	secondary_langs = list(LANGUAGE_SPACER)
+	secondary_langs = list(LANGUAGE_SPACER, LANGUAGE_SOL_COMMON)
 	economic_power = 1
 
 /decl/cultural_info/culture/human/spacer_frontier
@@ -149,12 +150,11 @@
 	Unfortunately, the years since the war have not been easy on Terra and the long period of economic recovery has not made life easy. The people of Terra are typically employed \
 	in the military, industrial, government or service sectors, with an emphasis being placed on military service. Terrans today are generally poor, bitter and a somewhat broken people angry and \
 	resentful about their loss in the Gaia Conflict. An upbringing on Terra emphasises an odd mix of service to the state, liberalism and militarism."
-	language = LANGUAGE_INDEPENDENT
-	secondary_langs = list(LANGUAGE_SPACER, LANGUAGE_SIGN)
+	secondary_langs = list(LANGUAGE_SOL_COMMON, LANGUAGE_INDEPENDENT)
 	economic_power = 0.9
 
 /decl/cultural_info/culture/human/other
 	name = CULTURE_HUMAN_OTHER
 	description = "Some people are from places no one has ever heard of or places too wild and fantastical to make it into Encyclopedia Galactica. You are one of these. "
-	secondary_langs = list(LANGUAGE_SIGN)
+	secondary_langs = list(LANGUAGE_SOL_COMMON, LANGUAGE_SIGN)
 	economic_power = 1

@@ -799,7 +799,7 @@ var/global/list/damage_icon_parts = list()
 	for(var/obj/item/organ/external/E in organs)
 		if(!BP_IS_ROBOTIC(E) && E.how_open())
 			if(E.owner.get_species() == SPECIES_RESOMI)
-				var/image/I = image("icon"='icons/mob/human_races/species/resomi/surgery.dmi', "icon_state"="[E.icon_name][round(E.how_open())]", "layer"=-HO_SURGERY_LAYER)
+				var/image/I = image("icon"='infinity/icons/mob/human_races/species/resomi/surgery.dmi', "icon_state"="[E.icon_name][round(E.how_open())]", "layer"=-HO_SURGERY_LAYER)
 				total.overlays += I
 			else
 				var/image/I = image("icon"='icons/mob/surgery.dmi', "icon_state"="[E.icon_name][round(E.how_open())]", "layer"=-HO_SURGERY_LAYER)

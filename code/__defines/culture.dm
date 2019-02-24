@@ -193,4 +193,3 @@
 #define EDUCATION_SKRELL_BASIC        "Qrri-Mog"
 #define EDUCATION_SKRELL_FULL         "Qerr-Mog"
 #define EDUCATION_SKRELL_FULL_SCIENCE "Qerr-Mog, Science Focus"
-#define EDUCATION_SKRELL_FULL_DOCTOR  "Qerr-Mog, Medicine Focus"

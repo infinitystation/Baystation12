@@ -265,9 +265,22 @@ proc/fix_html(var/t)
 /proc/trim(text)
 	return trim_left(trim_right(text))
 
+/proc/ruppertext(t as text)
+	t = uppertext(t)
+	. = ""
+	for(var/i in 1 to length(t))
+		var/a = text2ascii(t, i)
+		if (a > 223)
+			. += ascii2text(a - 32)
+		else if (a == 184)
+			. += ascii2text(168)
+		else
+			. += ascii2text(a)
+	. = replacetext(.,"&#255;","ß")
+
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(var/t as text)
-	return uppertext(copytext(t, 1, 2)) + copytext(t, 2)
+	return ruppertext(copytext(t, 1, 2)) + copytext(t, 2)
 
 //This proc strips html properly, remove < > and all text between
 //for complete text sanitizing should be used sanitize()
@@ -594,18 +607,3 @@ var/list/alphabet = list("a","b","c","d","e","f","g","h","i","j","k","l","m","n"
 	var/regex/R = regex("(\[^[char]\]*)$")
 	R.Find(text)
 	return R.group[1]
-
-proc/corrupt_text(t)
-	var/returntext = ""
-	for(var/i = 1, i <= length(t), i++)
-
-		var/letter = copytext(t, i, i+1)
-		if(prob(75))
-			if(prob(10))
-				letter = ""
-			for(var/j = 1, j <= rand(0, 2), j++)
-				letter += pick("#","@","*","&","%","$", "!","¹","?","*","*","*","*","*","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z")
-
-		returntext += letter
-
-	return returntext

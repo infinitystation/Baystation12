@@ -41,13 +41,6 @@
 	tracer_type = /obj/effect/projectile/laser/heavy/tracer
 	impact_type = /obj/effect/projectile/laser/heavy/impact
 
-/obj/item/projectile/beam/heavylaser/bogani
-	name = "alien laser"
-	fire_sound = 'sound/weapons/marauder.ogg'
-	damage = 40
-	armor_penetration = 50
-	penetration_modifier = 1
-
 /obj/item/projectile/beam/xray
 	name = "x-ray beam"
 	icon_state = "xray"
