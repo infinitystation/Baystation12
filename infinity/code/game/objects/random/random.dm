@@ -204,3 +204,14 @@
 				/obj/item/weapon/rig/light/stealth,
 				/obj/item/weapon/rig/light,
 				/obj/item/weapon/rig/unathi)
+
+/obj/random/hostile/asteroid
+	name = "Random Asteroid Hostile"
+	desc = "This is a random asteroid hostile mob."
+	icon = 'icons/mob/amorph.dmi'
+	icon_state = "standing"
+	spawn_nothing_percentage = 75
+
+obj/random/hostile/asteroid/spawn_choices()
+	return list(/mob/living/simple_animal/hostile/carp,
+				/mob/living/simple_animal/hostile/hivebot)
