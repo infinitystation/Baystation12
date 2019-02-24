@@ -16,7 +16,7 @@
 
 /datum/event/radiation_storm/tick()
 	if(activeFor == enterBelt)
-		priority_announcement.Announce("¬озростание радиационного фона прекращено. Ќасто€тельно рекомендуетс€ оставатьс€ в экранированных помещени€х до снижени€ уровн€ фона.", "—енсоры [location_name()]", zlevels = affecting_z)
+		priority_announcement.Announce("¬озрастание радиационного фона прекращено. Ќасто€тельно рекомендуетс€ оставатьс€ в экранированных помещени€х до снижени€ уровн€ фона.", "—енсоры [location_name()]", zlevels = affecting_z)
 		radiate()
 
 	if(activeFor >= enterBelt && activeFor <= leaveBelt)
