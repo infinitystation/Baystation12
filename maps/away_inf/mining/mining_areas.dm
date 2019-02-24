@@ -17,7 +17,6 @@
 
 /area/outpost/mining/kitchen
 	name = "Mining Outpost Kitchen"
-	sound_env = SMALL_ENCLOSED
 
 /area/outpost/mining/toilet
 	name = "Mining Outpost Restroom"
@@ -25,21 +24,21 @@
 
 /area/outpost/mining/power
 	name = "Mining Outpost Solar Control"
-	sound_env = SMALL_ENCLOSED
 
 /area/outpost/mining/atmos
 	name = "Mining Outpost Atmospheric"
-	sound_env = SMALL_ENCLOSED
 
 /area/outpost/mining/voidsuits
 	name = "Mining Outpost Voidsuits"
-	sound_env = SMALL_ENCLOSED
 
 /area/outpost/mining/cenral
 	name = "Mining Outpost Central"
 
 /area/outpost/mining/maints
 	name = "Mining Outpost Maintenance"
+
+/area/outpost/mining/medical
+	name = "Mining Outpost Medical Comparement"
 
 /area/outpost/mining/solar
 	name = "Mining Outpost Solar Array"

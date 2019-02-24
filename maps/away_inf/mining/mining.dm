@@ -40,11 +40,11 @@
 	name = "Asteroid Navpoint #2"
 	landmark_tag = "nav_mining_2"
 
-/obj/effect/shuttle_landmark/mining/nav3
+/obj/effect/shuttle_landmark/mining/nav4
 	name = "Asteroid Navpoint #3"
 	landmark_tag = "nav_mining_3"
 
-/obj/effect/shuttle_landmark/mining/nav4
+/obj/effect/shuttle_landmark/mining/nav6
 	name = "Asteroid Navpoint #4"
 	landmark_tag = "nav_mining_4"
 
@@ -54,25 +54,25 @@
 	base_area = /area/mine/explored
 	base_turf = /turf/simulated/floor/asteroid
 
-/obj/effect/shuttle_landmark/mining/nav6
-	name = "Asteroid Navpoint #5"
-	landmark_tag = "nav_mining_6"
-
 /obj/effect/shuttle_landmark/mining/nav7
 	name = "Asteroid Landing zone #2"
-	landmark_tag = "nav_mining_7"
+	landmark_tag = "nav_mining_6"
 	base_area = /area/mine/explored
 	base_turf = /turf/simulated/floor/asteroid
 
 /obj/effect/shuttle_landmark/mining/nav8
 	name = "Asteroid Mining Outpost Hangar"
-	landmark_tag = "nav_mining_8"
+	landmark_tag = "nav_mining_7"
 	base_area = /area/outpost/mining/hangar
 	base_turf = /turf/simulated/floor/plating
 
 /obj/effect/shuttle_landmark/mining/nav9
 	name = "Asteroid Mining Outpost"
-	landmark_tag = "nav_mining_9"
+	landmark_tag = "nav_mining_8"
+
+/obj/effect/shuttle_landmark/mining/nav3
+	name = "Mining Asteroid Center"
+	landmark_tag = "nav_mining_antag"
 
 /*
 //MINING-2 // SIGNAL
@@ -135,7 +135,9 @@
 	info = "<i>ГДЕ СКАФАНДРЫ, СУКА?<br>Распилено, привыкай :)</i>"
 
 /obj/item/weapon/paper/mining_base/buttons
-	info = "<i>Я вытащил внешние кнопки для шлюзов, ну это нахуй.</i>"
+	info = "<i>Я вытащил внешние кнопки для шлюзов, ну это нахуй.<br> \
+	Вставил ебаные кнопки обратно и добавил на них ограничение по доступу - это не дело. Если у вас яйца размером с горошек \
+	и вы боитесь каких-то слухов - это <b>ваши</b> проблемы.</i>"
 
 /obj/item/weapon/paper/mining_base/note
 	info = "<i>Это самая стремная база, на которой мне доводилось находиться. Я впервые вижу такое количество ебаного мусора, \
@@ -150,3 +152,9 @@
 	Да и гравитации здесь практически нет - из-за чего это?<br> \
 	Начальство ничего по этому поводу не говорит - копайте, как копали.<br> \
 	Тем, кто прилетит - записывайте всё, где выкопали и что нашли. Что-то здесь не чисто. И ни слова руководству.</i>"
+
+/obj/item/weapon/paper/mining_base/shutters
+	info = "<i>Не поднимайте космические створки без необходимости. Бригады докладывают, что происходят \"самопроизвольные\" \
+	разрушения внешних иллюминаторов - без вмешательства космических тел и тому подобного.<br> \
+	Обновляйте противметоритную защиту чаще - это просто пыль.<br> \
+	Обновлено - в секторе обнаружены малые стаи космических карпов, будьте осторожны.</i>"
