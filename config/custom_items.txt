@@ -321,7 +321,7 @@ req_access: 3
 {
 ckey: arhod
 character_name: Amr'in Battrral
-item_path: /obj/item/weapon/flame/lighter/zippo/infinity/messotha/arhod
+item_path: /obj/item/weapon/flame/lighter/zippo/custom/messotha/arhod
 }
 {
 ckey: laxesh
