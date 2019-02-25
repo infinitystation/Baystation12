@@ -36,28 +36,25 @@ var/can_call_ert
 	log_admin("[key_name(usr)] used Dispatch Response Team.")
 	trigger_armed_response_team(1)
 
-client/verb/JoinResponseTeam()
+/mob/observer/ghost/verb/JoinResponseTeam()
 
 	set name = "Join Response Team"
-	set category = "IC"
+	set category = "Ghost"
 
 	if(!MayRespawn(1))
 		to_chat(usr, "<span class='warning'>You cannot join the response team at this time.</span>")
 		return
+	if(!send_emergency_team)
+		to_chat(usr, "No emergency response team is currently being sent.")
+		return
+	if(jobban_isbanned(usr, MODE_ERT) || jobban_isbanned(usr, "Security Officer"))
+		to_chat(usr, "<span class='danger'>You are jobbanned from the emergency reponse team!</span>")
+		return
+	if(GLOB.ert.current_antagonists.len >= GLOB.ert.hard_cap)
+		to_chat(usr, "The emergency response team is already full!")
+		return
 
-	if(isghost(usr) || isnewplayer(usr))
-		if(!send_emergency_team)
-			to_chat(usr, "No emergency response team is currently being sent.")
-			return
-		if(jobban_isbanned(usr, MODE_ERT) || jobban_isbanned(usr, "Security Officer"))
-			to_chat(usr, "<span class='danger'>You are jobbanned from the emergency reponse team!</span>")
-			return
-		if(GLOB.ert.current_antagonists.len >= GLOB.ert.hard_cap)
-			to_chat(usr, "The emergency response team is already full!")
-			return
-		GLOB.ert.create_default(usr)
-	else
-		to_chat(usr, "You need to be an observer or new player to use this.")
+	GLOB.ert.create_default(usr)
 
 // returns a number of dead players in %
 proc/percentage_dead()
