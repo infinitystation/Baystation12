@@ -362,6 +362,21 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	domutcheck(src, null)
 	src.UpdateAppearance()
 
+/mob/proc/changeling_spiders()
+	set category = "Changeling"
+	set name = "Spread spiders (30)"
+
+	var/datum/changeling/changeling = changeling_power(30)
+	if(!changeling)	return
+	changeling.chem_charges -= 30
+
+	var/turf = get_turf(src)
+	for(var/I in 1 to 2)
+		var/obj/effect/spider/spiderling/Sp = new(turf)
+		Sp.amount_grown = 1
+
+	feedback_add_details("changeling_powers","SI")
+	return 1
 
 //Transform into a monkey.
 /mob/proc/changeling_lesser_form()
