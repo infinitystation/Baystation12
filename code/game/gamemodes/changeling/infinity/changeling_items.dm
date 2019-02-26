@@ -12,7 +12,7 @@
 		slot_r_hand_str = "arm_blade_lh")
 	hitsound = 'sound/weapons/bloodyslice.ogg'
 	w_class = 4
-	force = 30 // like a cult sword
+	force = 23
 	siemens_coefficient = 0.4
 	base_parry_chance = 40
 	canremove = 0
