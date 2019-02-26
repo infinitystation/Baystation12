@@ -144,3 +144,10 @@ datum/design/circuit/telepad
 	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 3, TECH_MATERIAL = 3, TECH_BLUESPACE = 4)
 	build_path = /obj/item/weapon/circuitboard/telesci_pad
 	sort_string = "HAAAF"
+
+/datum/design/circuit/bsa
+	name = "bluespace artillery control"
+	id = "bsa"
+	req_tech = list(TECH_ENGINEERING = 5, TECH_COMBAT = 5, TECH_BLUESPACE = 5)
+	build_path = /obj/item/weapon/circuitboard/bsa
+	sort_string = "KCAAG"

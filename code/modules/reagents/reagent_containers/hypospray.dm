@@ -46,7 +46,7 @@
 			return
 		else if(M.can_inject(user, check_zone(user.zone_sel.selecting)) == INJECTION_PORT)
 			user.visible_message("<span class='warning'>\The [user] begins hunting for an injection port on [M]'s suit!</span>")
-			if(!do_mob(user, M, 22))
+			if((M != user) && (!do_mob(user, M, 22)))
 				return
 		user.do_attack_animation(M)
 		to_chat(user, "<span class='notice'>You inject [M] with [src].</span>")

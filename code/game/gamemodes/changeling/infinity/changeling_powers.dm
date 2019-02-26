@@ -291,6 +291,9 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	changeling.absorbedcount++
 	changeling.isabsorbing = 0
 
+	var/obj/item/organ/internal/heart/heart = T.internal_organs_by_name[BP_HEART]
+	for(heart in T.organs)
+		heart.pulse = 0
 	T.Drain()
 	T.death(0)
 	return 1
@@ -985,7 +988,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	if(!changeling)
 		return 0
 
-	var/mob/living/carbon/human/T = changeling_sting(40, /mob/proc/changeling_extract_dna_sting, loud = 1)
+	var/mob/living/carbon/human/T = changeling_sting(40, /mob/proc/changeling_extract_dna_sting)
 	if(!T)	return 0
 	if((MUTATION_HUSK in T.mutations) || (T.species.species_flags & SPECIES_FLAG_NO_SCAN))
 		to_chat(src, SPAN_LING("We cannot extract DNA from this creature!"))

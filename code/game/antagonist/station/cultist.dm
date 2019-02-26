@@ -102,6 +102,26 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	remove_cult_magic(player.current)
 	remove_cultiness(CULTINESS_PER_CULTIST)
 
+/datum/antagonist/cultist/can_become_antag(var/datum/mind/player, var/ignore_role)
+	if(..())
+		if(player.current)
+			if(ishuman(player.current))
+				var/mob/living/carbon/human/H = player.current
+				if(H.isSynthetic())
+					return 0
+				if(H.species.species_flags & SPECIES_FLAG_NO_SCAN)
+					return 0
+				return 1
+			else if(isnewplayer(player.current))
+				if(player.current.client && player.current.client.prefs)
+					var/datum/species/S = all_species[player.current.client.prefs.species]
+					if(S && (S.species_flags & SPECIES_FLAG_NO_SCAN))
+						return 0
+					if(player.current.client.prefs.organ_data[BP_CHEST] == "cyborg") // Full synthetic.
+						return 0
+					return 1
+ 	return 0
+
 /datum/antagonist/cultist/add_antagonist(var/datum/mind/player, var/ignore_role, var/do_not_equip, var/move_to_spawn, var/do_not_announce, var/preserve_appearance)
 	. = ..()
 	if(.)

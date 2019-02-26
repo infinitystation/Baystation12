@@ -45,14 +45,22 @@
 	if(!proximity) return
 
 	if(standard_dispenser_refill(user, target))
-		return
+		return 1
 	if(standard_pour_into(user, target))
 		return
-	return ..()
+	if(user.a_intent == I_HURT)
+		if(reagents && reagents.total_volume)
+			to_chat(user, "<span class='notice'>You splash the contents of \the [src] onto [target].</span>") //They are on harm intent, aka wanting to spill it.
+			playsound(src,'sound/effects/Splash_Small_01_mono.ogg',50,1)
+			reagents.splash(target, reagents.total_volume)
+			return
+	..()
 
 /obj/item/weapon/reagent_containers/food/drinks/standard_feed_mob(var/mob/user, var/mob/target)
 	if(!is_open_container())
 		to_chat(user, "<span class='notice'>You need to open \the [src]!</span>")
+		return 1
+	if(user.a_intent == I_HURT)
 		return 1
 	return ..()
 

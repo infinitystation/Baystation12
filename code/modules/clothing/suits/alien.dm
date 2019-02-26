@@ -81,9 +81,9 @@
 //Resomi clothing
 
 /obj/item/clothing/suit/storage/toggle/Resomicoat
- 	name = "small coat"
+ 	name = "small cloak"
  	icon = 'icons/obj/clothing/infinity/suits.dmi'
- 	desc = "A coat that seems too small to fit a human."
+ 	desc = "A cloak that seems too small to fit a human."
  	icon_state = "resomicoat"
  	item_state = "resomicoat"
  	icon_open = "resomicoat_open"

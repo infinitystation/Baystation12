@@ -10,7 +10,6 @@ mishele - machine
 yourbro - machine
 kordvik - machine
 taushai - machine
-parasoul - machine
 netreson - machine
 billluxe - machine
 he11d1ver - machine
@@ -22,11 +21,13 @@ skonoplich - machine
 coltrane97 - machine
 wolforbykot - machine
 wheatley2013 - machine
+blacksoul231 - machine
 redknighthero - machine
 kotovsyndrome - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
+blacksoul231 - skrell
 wheatley2013 - skrell
 interl0per - skrell	
 kirill1243 - skrell	
@@ -35,24 +36,28 @@ themaybat - skrell
 salyvador - skrell
 mrnicolas - skrell
 dagger17 - skrell
+romeo517 - skrell
 hellpony - skrell
 vankoska - skrell
 lukecage - skrell
 hodovoy - skrell
 taushai - skrell
+galix - skrell
 knayu - skrell
 cre77 - resomi
 s1334 - resomi
+forrya - resomi
 solark - resomi
 taushai - resomi
+furrfaq - resomi
 netreson - resomi
 hardstuck - resomi
+coltrane97 - resomi
+travelller - resomi
 kirill1243 - resomi
 coldmantis13 - resomi
 wheatley2013 - resomi
 twinindifferent - resomi
-travelller - resomi
-furrfaq - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
@@ -72,11 +77,15 @@ inubashirimomiji - diona
 bartstarter - diona
 wolforbykot - diona
 sosiskoed - diona
+mukosuand - diona
 gumboldty - diona
 vankoska - diona
 maxi2000 - diona
 mrkayde - diona
+sarumyn - diona
+forrya - diona
 sfd - diona
+s1334 - diona
 wheatley2013 - vox
 wolforbykot - vox
 sosiskoed - vox
@@ -90,6 +99,7 @@ kribleykrabley - unathi
 alchemisthero - unathi
 kotovsyndrome - unathi
 wheatley2013 - unathi
+thesarkazmus - unathi
 wolforbykot - unathi
 colossus333 - unathi
 kirill1243 - unathi
@@ -108,7 +118,9 @@ mrnicolas - tajaran
 coolered - tajaran
 furrydog - tajaran
 rarytech - tajaran
+romeo517 - tajaran
 korramy - tajaran
+furrfaq - tajaran
 moonmen - tajaran
 nicknam - tajaran
 taushai - tajaran

@@ -42,11 +42,12 @@
 	suit_type = "industrial hardsuit"
 	desc = "A heavy, powerful rig used by construction crews and mining corporations."
 	icon_state = "engineering_rig"
-	armor = list(melee = 60, bullet = 50, laser = 50,energy = 15, bomb = 30, bio = 100, rad = 50)
-	online_slowdown = 3
-	offline_slowdown = 10
-	vision_restriction = TINT_HEAVY
-	offline_vision_restriction = TINT_BLIND
+	armor = list(melee = 45, bullet = 25, laser = 35, energy = 25, bomb = 45, bio = 100, rad = 50)
+	online_slowdown = 1
+	offline_slowdown = 3
+//	vision_restriction = TINT_HEAVY
+	vision_restriction = 0
+//	offline_vision_restriction = TINT_HEAVY
 	emp_protection = -20
 
 	chest_type = /obj/item/clothing/suit/space/rig/industrial
@@ -94,7 +95,6 @@
 		/obj/item/rig_module/mounted/plasmacutter,
 		/obj/item/rig_module/device/drill,
 		/obj/item/rig_module/device/orescanner,
-		/obj/item/rig_module/device/rcd,
 		/obj/item/rig_module/vision/meson,
 		/obj/item/rig_module/cooling_unit
 		)

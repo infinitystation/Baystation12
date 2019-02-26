@@ -4,7 +4,7 @@ GLOBAL_DATUM_INIT(actor, /datum/antagonist/actor, new)
 	id = MODE_ACTOR
 	role_text = "Actor"
 	role_text_plural = "Actors"
-	welcome_text = "You've been hired to entertain people through the power of television!"
+	welcome_text = "Вы были нан&#255;ты чтобы развлекать людей с помощью телевидени&#255;!"
 	landmark_id = "ActorSpawn"
 	id_type = /obj/item/weapon/card/id/syndicate
 
@@ -20,8 +20,8 @@ GLOBAL_DATUM_INIT(actor, /datum/antagonist/actor, new)
 	if(!..())
 		return
 
-	player.current.show_message("You work for [GLOB.using_map.company_name], tasked with the production and broadcasting of entertainment to all of its assets.")
-	player.current.show_message("Entertain the crew! Try not to disrupt them from their work too much and remind them how great [GLOB.using_map.company_name] is!")
+	player.current.show_message("<span class='info'>Вы - актер, работающий на [GLOB.using_map.company_name] и назначенный на обеспечение многих корпоративных объектов развлекательным телевизионным контентом.</span>")
+	player.current.show_message("<span class='info'>Развлекайте экипаж! Старайтесь не отвлекать их и уж точно не мешать им в работе. И помните, [GLOB.using_map.company_name] прежде всего!</span>")
 
 /datum/antagonist/actor/equip(var/mob/living/carbon/human/player)
 	player.equip_to_slot_or_del(new /obj/item/clothing/under/chameleon(src), slot_w_uniform)
@@ -34,8 +34,8 @@ GLOBAL_DATUM_INIT(actor, /datum/antagonist/actor, new)
 
 	return 1
 
-/client/verb/join_as_actor()
-	set category = "IC"
+/mob/observer/ghost/verb/join_as_actor()
+	set category = "Ghost"
 	set name = "Join as Actor"
 	set desc = "Join as an Actor to entertain the crew through television!"
 
@@ -50,11 +50,8 @@ GLOBAL_DATUM_INIT(actor, /datum/antagonist/actor, new)
 	if(choice != "Yes")
 		return
 
-	if(isghostmind(usr.mind) || isnewplayer(usr))
-		if(GLOB.actor.current_antagonists.len >= GLOB.actor.hard_cap)
-			to_chat(usr, "No more actors may spawn at the current time.")
-			return
-		GLOB.actor.create_default(usr)
+	if(GLOB.actor.current_antagonists.len >= GLOB.actor.hard_cap)
+		to_chat(usr, "No more actors may spawn at the current time.")
 		return
 
-	to_chat(usr, "You must be observing or be a new player to spawn as an actor.")
+	GLOB.actor.create_default(usr)

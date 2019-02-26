@@ -27,12 +27,8 @@
 	#include "items/headsets.dm"
 	#include "items/items.dm"
 	#include "items/lighting.dm"
-	#include "items/machinery.dm"
-	#include "items/navbeacons.dm"
 	#include "items/papers.dm"
-	#include "items/random.dm"
 	#include "items/manuals.dm"
-	#include "items/uniform_vendor.dm"
 	#include "items/rigs.dm"
 
 	#include "items/clothing/clothing.dm"
@@ -45,7 +41,6 @@
 	#include "items/clothing/solgov-suit.dm"
 	#include "items/clothing/solgov-under.dm"
 	#include "items/clothing/storages.dm"
-
 
 	#include "job/access.dm"
 	#include "job/jobs.dm"
@@ -62,13 +57,19 @@
 	#include "job/jobs_security.dm"
 	#include "job/jobs_service.dm"
 
-	#include "machinery/vendors.dm"
+	#include "machinery/alarm.dm"
 	#include "machinery/apc.dm"
+	#include "machinery/keycard authentication.dm"
+	#include "machinery/machinery.dm"
+	#include "machinery/navbeacons.dm"
+	#include "machinery/random.dm"
+	#include "machinery/thrusters.dm"
+	#include "machinery/uniform_vendor.dm"
+	#include "machinery/vendors.dm"
 
 	#include "structures/closets.dm"
 	#include "structures/signs.dm"
 	#include "structures/other.dm"
-	#include "structures/thrusters.dm"
 
 	#include "structures/closets/armory.dm"
 	#include "structures/closets/command.dm"
@@ -103,9 +104,10 @@
 	#include "../away_inf/yacht/yacht.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/blueriver/blueriver.dm"
+	#include "../away_inf/mining/mining.dm"
 
 	#include "../away/bearcat/bearcat.dm"
-	#include "../away/mining/mining.dm"
+//	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"

@@ -169,7 +169,7 @@ var/global/datum/controller/occupations/job_master
 			job.make_position_available()
 			return 1
 		return 0
-	
+
 	proc/ClearSlot(var/rank) // Removing one from the current filled counter
 		var/datum/job/job = GetJob(rank)
 		if (job && job.current_positions > 0)
@@ -503,11 +503,14 @@ var/global/datum/controller/occupations/job_master
 			else
 				var/datum/spawnpoint/spawnpoint = get_spawnpoint_for(H.client, rank)
 				H.forceMove(pick(spawnpoint.turfs))
+				H.handlecryo()
 
 			// Moving wheelchair if they have one
 			if(H.buckled && istype(H.buckled, /obj/structure/bed/chair/wheelchair))
 				H.buckled.forceMove(H.loc)
 				H.buckled.set_dir(H.dir)
+		else
+			H.handlecryo()
 
 		// If they're head, give them the account info for their department
 		if(H.mind && job.head_position)

@@ -25,6 +25,7 @@
 	if(contained)
 		return
 	contained = artifact
+	artifact.secondary_effect.ToggleActivate(0)
 	artifact.forceMove(src)
 	underlays += image(artifact)
 	desc = "Used to safely contain and move anomalies. \The [contained] is kept inside."

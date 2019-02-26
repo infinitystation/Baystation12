@@ -579,19 +579,19 @@ var/list/admin_verbs_mentor = list(
 	if(++D.warns >= MAX_WARNS)					//uh ohhhh...you'reee iiiiin trouuuubble O:)
 		ban_unban_log_save("[ckey] warned [warned_ckey], resulting in a [AUTOBANTIME] minute autoban.")
 		if(C)
-			message_admins("[key_name_admin(src)] has warned [key_name_admin(C)] resulting in a [AUTOBANTIME] minute ban.")
+			message_admins("[key_name_admin(src, 0)] has warned [key_name_admin(C)] resulting in a [AUTOBANTIME] minute ban.")
 			to_chat(C, "<font color='red'><BIG><B>You have been autobanned due to a warning by [ckey].</B></BIG><br>This is a temporary ban, it will be removed in [AUTOBANTIME] minutes.</font>")
 			qdel(C)
 		else
-			message_admins("[key_name_admin(src)] has warned [warned_ckey] resulting in a [AUTOBANTIME] minute ban.")
+			message_admins("[key_name_admin(src, 0)] has warned [warned_ckey] resulting in a [AUTOBANTIME] minute ban.")
 		AddBan(warned_ckey, D.last_id, "Autobanning due to too many formal warnings", ckey, 1, AUTOBANTIME)
 		feedback_inc("ban_warn",1)
 	else
 		if(C)
-			to_chat(C, "<font color='red'><BIG><B>Вы были формально предупреждены администратором [key_name_admin(src)].</B></BIG><br>Дальнейшие предупреждени&#255; приведут к автобану.</font>")
-			message_admins("[key_name_admin(src)] has warned [key_name_admin(C)]. They have [MAX_WARNS-D.warns] strikes remaining.")
+			to_chat(C, "<font color='red'><BIG><B>Вы были формально предупреждены администратором [key_name_admin(src, 0)].</B></BIG><br>Дальнейшие предупреждени&#255; приведут к автобану.</font>")
+			message_admins("[key_name_admin(src, 0)] has warned [key_name_admin(C)]. They have [MAX_WARNS-D.warns] strikes remaining.")
 		else
-			message_admins("[key_name_admin(src)] has warned [warned_ckey] (DC). They have [MAX_WARNS-D.warns] strikes remaining.")
+			message_admins("[key_name_admin(src, 0)] has warned [warned_ckey] (DC). They have [MAX_WARNS-D.warns] strikes remaining.")
 
 	feedback_add_details("admin_verb","WARN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 

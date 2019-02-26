@@ -14,7 +14,6 @@
 	var/z_co = 1
 	var/power_off
 	var/rotation_off
-	//var/angle_off
 	var/last_target
 
 	var/rotation = 0
@@ -38,7 +37,7 @@
 	return ..()
 
 /obj/machinery/computer/telescience/examine(mob/user)
-	..()
+	. = ..()
 	to_chat(user, "There are [crystals.len ? crystals.len : "no"] bluespace crystal\s in the crystal slots.")
 
 /obj/machinery/computer/telescience/Initialize()
@@ -77,6 +76,9 @@
 
 /obj/machinery/computer/telescience/attack_hand(mob/user)
 	if(..())
+		return
+	if(!user.skill_check(SKILL_SCIENCE, SKILL_EXPERT))
+		to_chat(user, "<span class='warning'>You see a lot of complex variables that you cannot understand.</span>")
 		return
 	interact(user)
 
@@ -273,6 +275,10 @@
 		telefail()
 		temp_msg = "ERROR! Sector is invalid! Valid sectors are [english_list(GLOB.using_map.player_levels)]."
 		return
+	if(!user.skill_check(SKILL_SCIENCE, SKILL_PROF) && !(z_co in GLOB.using_map.station_levels))
+		telefail()
+		temp_msg = "ERROR! Bad configuration provided by the user. Unable to charge the teleporter."
+		return
 	if(teles_left > 0)
 		doteleport(user)
 	else
@@ -320,7 +326,7 @@
 		var/new_z = input("Please input desired sector.", name, z_co) as num
 		if(..())
 			return
-		z_co = Clamp(round(new_z), 1, 10)
+		z_co = Clamp(round(new_z), 1, 15)
 
 	if(href_list["ejectGPS"])
 		if(inserted_gps)
@@ -343,7 +349,7 @@
 		teleport(usr)
 
 	if(href_list["recal"])
-		recalibrate()
+		recalibrate(usr)
 		sparks()
 		temp_msg = "NOTICE:<BR>Calibration successful."
 
@@ -353,8 +359,10 @@
 
 	updateDialog()
 
-/obj/machinery/computer/telescience/proc/recalibrate()
-	teles_left = rand(30, 40)
-	//angle_off = rand(-25, 25)
-	power_off = rand(-4, 0)
-	rotation_off = rand(-10, 10)
+/obj/machinery/computer/telescience/proc/recalibrate(mob/user)
+	var/mult = 1
+	if(user && user.skill_check(SKILL_SCIENCE, SKILL_PROF))
+		mult = 2
+	teles_left = rand(30, 40) * mult
+	power_off = rand(-4, 0) / mult
+	rotation_off = rand(-10, 10) / mult

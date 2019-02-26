@@ -17,7 +17,9 @@
 		"Entertainer",
 		"Sociologist",
 		"Off-Duty",
-		"Trainer")
+		"Trainer",
+		"Assistant"
+		)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/passenger/passenger
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor, /datum/mil_branch/civilian)
 	allowed_ranks = list(

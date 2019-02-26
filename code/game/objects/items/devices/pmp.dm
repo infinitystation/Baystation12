@@ -249,6 +249,21 @@ GLOBAL_LIST_EMPTY(pmp_list)
 			else
 				to_chat(user, SPAN_NOTICE("\The [S] is empty."))
 		return
+	if(istype(I,/obj/item/stack/cable_coil))
+		var/obj/item/stack/S = I
+		if(broken && panel == PANEL_OPENED)
+			if(user.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
+				if(S.use(5))
+					user.visible_message(SPAN_NOTICE("\The [user] starts replace burned out wires in \the [src]."), SPAN_NOTICE("You are replacing burned out wires in \the [src]'."))
+					if(!do_after(user, 60, src))
+						return
+					user.visible_message(SPAN_NOTICE("\The [user] replaces burned out wires in \the [src]."), SPAN_NOTICE("You replace burned out wires in \the [src]."))
+					broken = FALSE
+				else
+					to_chat(user, SPAN_NOTICE("You need more [I] to fix \the [src]."))
+
+			else
+				to_chat(user, SPAN_NOTICE("You don't know how to fix \the [src]."))
 	else
 		. = ..()
 

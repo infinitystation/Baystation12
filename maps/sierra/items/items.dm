@@ -1,55 +1,6 @@
 /*******************
-Random item spawning
-*******************/
-
-/obj/random/solgov
-	name = "random solgov equipment"
-	desc = "This is a random piece of solgov equipment or clothing."
-	icon = 'icons/obj/clothing/hats.dmi'
-	icon_state = "m_helmet"
-
-/obj/random/solgov/spawn_choices()
-	return list(/obj/item/clothing/head/solgov/utility/fleet = 4,
-				/obj/item/clothing/head/soft/solgov/expedition = 2,
-				/obj/item/clothing/head/soft/solgov/fleet = 4,
-				/obj/item/clothing/head/helmet/solgov = 1,
-				/obj/item/clothing/suit/storage/vest/solgov = 2,
-				/obj/item/clothing/under/solgov/utility = 5,
-				/obj/item/clothing/under/solgov/utility/fleet = 3,
-				/obj/item/clothing/under/solgov/pt/expeditionary = 4,
-				/obj/item/clothing/under/solgov/pt/fleet = 4
-				)
-
-/obj/random/maintenance/solgov
-	name = "random maintenance item"
-	desc = "This is a random maintenance item."
-	icon = 'icons/obj/items.dmi'
-	icon_state = "gift1"
-
-/obj/random/maintenance/solgov/spawn_choices()
-	return list(/obj/random/junk = 4,
-				/obj/random/trash = 4,
-				/obj/random/maintenance/solgov/clean = 5)
-
-/obj/random/maintenance/solgov/clean
-	name = "random maintenance item"
-	desc = "This is a random maintenance item."
-	icon = 'icons/obj/items.dmi'
-	icon_state = "gift2"
-
-/obj/random/maintenance/solgov/clean/spawn_choices()
-	return list(/obj/random/solgov = 3,
-				/obj/random/maintenance/clean = 800)
-
-/*******************
 sierra specific items
 *******************/
-
-/obj/item/modular_computer/pda/heads/hop
-	stored_pen = /obj/item/weapon/pen/multi/cmd/hop
-
-/obj/item/modular_computer/pda/captain
-	stored_pen = /obj/item/weapon/pen/multi/cmd/captain
 
 /obj/item/weapon/storage/backpack/explorer
 	name = "explorer backpack"
@@ -98,9 +49,8 @@ Unique items
 	throw_range = 5
 	w_class = ITEM_SIZE_NORMAL
 	max_w_class = ITEM_SIZE_SMALL
-	max_storage_space = 4
+	max_storage_space = 2
 	startswith = list(
-			/obj/item/weapon/gun/projectile/pistol/liaison,
 			/obj/item/weapon/reagent_containers/pill/tox,
 			/obj/item/weapon/paper/liason_note
 	)
@@ -132,3 +82,6 @@ Weapons
 
 /obj/item/device/boombox/anchored/attack_hand(var/mob/user)
 	interact(user)
+
+/obj/item/tape/research
+	req_one_access = list(access_research, access_explorer)
