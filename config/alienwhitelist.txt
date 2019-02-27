@@ -9,7 +9,7 @@ hodovoy - machine
 mishele - machine
 yourbro - machine
 kordvik - machine
-Bob46 - machine
+bob46 - machine
 taushai - machine
 netreson - machine
 billluxe - machine
@@ -95,7 +95,7 @@ he11d1ver - vox
 taushai - vox
 s1334 - vox
 cre77 - vox
-Kirill1243 - vox
+kirill1243 - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 alchemisthero - unathi
@@ -116,6 +116,7 @@ s1334 - unathi
 corporateoverlord - tajaran
 richardfox - tajaran
 ashtonfox - tajaran
+blacksoul231 - tajaran
 mrnicolas - tajaran
 coolered - tajaran
 furrydog - tajaran
