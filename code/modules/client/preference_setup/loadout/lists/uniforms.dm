@@ -87,6 +87,7 @@
 	dresses += /obj/item/clothing/under/dress/dress_purple
 	dresses += /obj/item/clothing/under/sundress
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(dresses)
+//  dresses += /obj/item/clothing/under/dress/dress_red //warfoxy's custom item
 
 /datum/gear/uniform/cheongsam
 	display_name = "cheongsam, colour select"
