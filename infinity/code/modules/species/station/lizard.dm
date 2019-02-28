@@ -5,7 +5,7 @@
 	deform = 'infinity/icons/mob/human_races/species/erosan/deformed_body.dmi'
 	husk_icon = 'infinity/icons/mob/human_races/species/erosan/husk.dmi'
 	preview_icon = 'infinity/icons/mob/human_races/species/erosan/preview.dmi'
-	tail_animation = 'icons/mob/species/erosan/tail.dmi'
+	tail_animation = 'infinity/icons/mob/species/erosan/tail.dmi'
 	limb_blend = ICON_MULTIPLY
 	tail_blend = ICON_MULTIPLY
 
@@ -45,3 +45,6 @@
 
 /datum/species/unathi/erosan/get_bodytype(var/mob/living/carbon/human/H)
 	return SPECIES_EROSAN
+
+/datum/species/unathi/erosan/whitelistName(var/mob/living/carbon/human/H) // for easier whitelist access
+	return SPECIES_UNATHI

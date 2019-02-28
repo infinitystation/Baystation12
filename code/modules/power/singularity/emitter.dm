@@ -53,6 +53,28 @@
 		connect_to_network()
 		if(_wifi_id)
 			wifi_receiver = new(_wifi_id, src)
+	component_parts = list(
+		new /obj/machinery/power/emitter,
+		new /obj/item/weapon/stock_parts/capacitor,
+		new /obj/item/weapon/stock_parts/capacitor,
+		new /obj/item/weapon/stock_parts/micro_laser,
+		new /obj/item/weapon/stock_parts/micro_laser,
+		new /obj/item/weapon/stock_parts/micro_laser,
+		new /obj/item/weapon/stock_parts/micro_laser)
+	RefreshParts()
+
+/obj/machinery/power/emitter/RefreshParts()
+	var/E
+	var/D
+	for(var/obj/item/weapon/stock_parts/SP in component_parts)
+		if(istype(SP, /obj/item/weapon/stock_parts/micro_laser))
+			E += SP.rating / 4
+		if(istype(SP, /obj/item/weapon/stock_parts/capacitor))
+			D += SP.rating / 2
+
+	efficiency *= min(E, 1)
+	max_burst_delay /= D
+	min_burst_delay /= D
 
 /obj/machinery/power/emitter/Destroy()
 	log_and_message_admins("deleted \the [src]")
@@ -153,10 +175,12 @@
 		A.launch( get_step(src.loc, src.dir) )
 
 /obj/machinery/power/emitter/attackby(obj/item/W, mob/user)
-
 	if(isWrench(W))
 		if(active)
 			to_chat(user, "Turn off [src] first.")
+			return
+		if(panel_open)
+			to_chat(user, "Close the panel first.")
 			return
 		switch(state)
 			if(0)
@@ -223,7 +247,13 @@
 		else
 			to_chat(user, "<span class='warning'>Access denied.</span>")
 		return
-	..()
+	if(!anchored)
+		if(default_deconstruction_screwdriver(user, W))
+			return
+		if(default_deconstruction_crowbar(user, W))
+			return
+		if(default_part_replacement(user, W))
+			return
 	return
 
 /obj/machinery/power/emitter/emag_act(var/remaining_charges, var/mob/user)

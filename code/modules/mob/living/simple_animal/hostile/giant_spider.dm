@@ -21,10 +21,10 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "pokes"
-	maxHealth = 200
-	health = 200
-	melee_damage_lower = 10
-	melee_damage_upper = 15
+	maxHealth = 100
+	health = 100
+	melee_damage_lower = 9
+	melee_damage_upper = 13
 	heat_damage_per_tick = 20
 	cold_damage_per_tick = 20
 	faction = "spiders"
@@ -49,12 +49,11 @@
 	icon_state = "beige"
 	icon_living = "beige"
 	icon_dead = "beige_dead"
-	maxHealth = 80
-	health = 80
-	melee_damage_lower = 8
-	melee_damage_upper = 12
-	poison_per_bite = 15
-	speed = 0
+	maxHealth = 60
+	health = 60
+	melee_damage_lower = 7
+	melee_damage_upper = 10
+	poison_per_bite = 10
 	poison_type = /datum/reagent/soporific
 	can_escape = FALSE
 
@@ -68,14 +67,13 @@
 	icon_state = "black"
 	icon_living = "black"
 	icon_dead = "black_dead"
-	maxHealth = 150
-	health = 150
-	melee_damage_lower = 15
-	melee_damage_upper = 20
-	poison_per_bite = 15
-	speed = -1
+	maxHealth = 120
+	health = 120
+	melee_damage_lower = 10
+	melee_damage_upper = 15
+	poison_per_bite = 7
 	move_to_delay = 2
-	break_stuff_probability = 30
+	break_stuff_probability = 50
 
 /mob/living/simple_animal/hostile/giant_spider/Initialize(var/mapload, var/atom/parent)
 	get_light_and_color(parent)

@@ -104,9 +104,10 @@
 	#include "../away_inf/yacht/yacht.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/blueriver/blueriver.dm"
+	#include "../away_inf/mining/mining.dm"
 
 	#include "../away/bearcat/bearcat.dm"
-	#include "../away/mining/mining.dm"
+//	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"

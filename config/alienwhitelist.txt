@@ -9,8 +9,8 @@ hodovoy - machine
 mishele - machine
 yourbro - machine
 kordvik - machine
+bob46 - machine
 taushai - machine
-parasoul - machine
 netreson - machine
 billluxe - machine
 he11d1ver - machine
@@ -95,11 +95,13 @@ he11d1ver - vox
 taushai - vox
 s1334 - vox
 cre77 - vox
+kirill1243 - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 alchemisthero - unathi
 kotovsyndrome - unathi
 wheatley2013 - unathi
+thesarkazmus - unathi
 wolforbykot - unathi
 colossus333 - unathi
 kirill1243 - unathi
@@ -114,6 +116,7 @@ s1334 - unathi
 corporateoverlord - tajaran
 richardfox - tajaran
 ashtonfox - tajaran
+blacksoul231 - tajaran
 mrnicolas - tajaran
 coolered - tajaran
 furrydog - tajaran

@@ -24,7 +24,7 @@
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_head_vox.dmi',
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_head_unathi.dmi',
-		SPECIES_EROSAN = 'icons/mob/species/erosan/mask.dmi',
+		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi',
 		)
 
 /obj/item/clothing/head/helmet/nt

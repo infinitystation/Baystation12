@@ -292,7 +292,7 @@
 		show_category = choice
 		. = TOPIC_REFRESH
 
-	else if(href_list["make"] && machine_recipes)
+	else if(!busy && href_list["make"] && machine_recipes)
 		. = TOPIC_REFRESH
 		var/index = text2num(href_list["make"])
 		var/multiplier = text2num(href_list["multiplier"])
@@ -315,6 +315,7 @@
 		for(var/material in making.resources)
 			if(!isnull(stored_material[material]))
 				if(stored_material[material] < round(making.resources[material] * mat_efficiency * (making.is_stack ? 1 : operator_device_skill)) * multiplier)
+					busy = 0
 					return TOPIC_REFRESH
 
 		//Consume materials.

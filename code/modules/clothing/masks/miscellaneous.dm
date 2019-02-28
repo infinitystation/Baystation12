@@ -45,7 +45,8 @@
 	sprite_sheets = list(
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/mask.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/masks.dmi'
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/masks.dmi',
+		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi',
 		)
 
 /obj/item/clothing/mask/fakemoustache

@@ -10,7 +10,6 @@
 
 	var/active = 0
 	var/power_gen = 5000
-	var/open = 0
 	var/recent_fault = 0
 	var/power_output = 1
 	atom_flags = ATOM_FLAG_CLIMBABLE
@@ -122,15 +121,12 @@
 	if(anchored)
 		connect_to_network()
 
-/obj/machinery/power/port_gen/pacman/New()
-	..()
-	component_parts = list()
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
-	component_parts += new /obj/item/weapon/stock_parts/micro_laser(src)
-	component_parts += new /obj/item/stack/cable_coil(src)
-	component_parts += new /obj/item/stack/cable_coil(src)
-	component_parts += new /obj/item/weapon/stock_parts/capacitor(src)
-	component_parts += new board_path(src)
+	component_parts = list(
+		new board_path(src),
+		new /obj/item/weapon/stock_parts/matter_bin(src),
+		new /obj/item/weapon/stock_parts/micro_laser(src),
+		new /obj/item/stack/cable_coil(src, 2),
+		new /obj/item/weapon/stock_parts/capacitor(src))
 	RefreshParts()
 
 /obj/machinery/power/port_gen/pacman/Destroy()
@@ -280,34 +276,21 @@
 		return
 	else if(!active)
 		if(isWrench(O))
-
 			if(!anchored)
 				connect_to_network()
 				to_chat(user, "<span class='notice'>You secure the generator to the floor.</span>")
 			else
 				disconnect_from_network()
 				to_chat(user, "<span class='notice'>You unsecure the generator from the floor.</span>")
-
 			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 			anchored = !anchored
-
-		else if(isScrewdriver(O))
-			open = !open
-			playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
-			if(open)
-				to_chat(user, "<span class='notice'>You open the access panel.</span>")
-			else
-				to_chat(user, "<span class='notice'>You close the access panel.</span>")
-		else if(isCrowbar(O) && open)
-			var/obj/machinery/constructable_frame/machine_frame/new_frame = new /obj/machinery/constructable_frame/machine_frame(src.loc)
-			for(var/obj/item/I in component_parts)
-				I.dropInto(loc)
-			while ( sheets > 0 )
-				DropFuel()
-
-			new_frame.state = 2
-			new_frame.icon_state = "box_1"
-			qdel(src)
+			return
+		if(default_deconstruction_screwdriver(user, O))
+			return
+		if(default_deconstruction_crowbar(user, O))
+			return
+		if(default_part_replacement(user, O))
+			return
 
 /obj/machinery/power/port_gen/pacman/attack_hand(mob/user as mob)
 	..()

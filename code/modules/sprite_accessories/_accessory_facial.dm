@@ -55,7 +55,7 @@
 /datum/sprite_accessory/facial_hair/elvis
 	name = "Elvis Sideburns"
 	icon_state = "facial_elvis"
-	species_allowed = list(SPECIES_HUMAN,SPECIES_UNATHI, SPECIES_EROSAN)
+	species_allowed = list(SPECIES_HUMAN,SPECIES_UNATHI)
 
 /datum/sprite_accessory/facial_hair/abe
 	name = "Abraham Lincoln Beard"

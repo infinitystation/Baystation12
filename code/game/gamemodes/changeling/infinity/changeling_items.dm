@@ -12,7 +12,7 @@
 		slot_r_hand_str = "arm_blade_lh")
 	hitsound = 'sound/weapons/bloodyslice.ogg'
 	w_class = 4
-	force = 18 //a bit better than knife
+	force = 23
 	siemens_coefficient = 0.4
 	base_parry_chance = 40
 	canremove = 0
@@ -24,14 +24,6 @@
 	throw_speed = 0
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	var/mob/living/creator
-
-/obj/item/weapon/melee/arm_blade/New()
-	..()
-	START_PROCESSING(SSprocessing, src)
-
-/obj/item/weapon/melee/arm_blade/Destroy()
-	STOP_PROCESSING(SSprocessing, src)
-	return ..()
 
 /obj/item/weapon/melee/arm_blade/dropped(var/mob/living/user)
 	visible_message("<span class='danger'>With a sickening crunch, [user] reforms their armblade into an arm!</span>",
@@ -54,6 +46,24 @@
 			host.drop_from_inventory(src)
 		QDEL_IN(src, 1)
 
+/obj/item/weapon/melee/arm_blade/afterattack(atom/target, mob/user, proximity)
+	if(!proximity)
+		return
+
+	if(istype(target, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/D = target
+
+		if(D.allowed(user) || !D.requiresID())
+			return
+
+		else if(D.locked)
+			to_chat(user, SPAN_NOTICE("The airlock's bolts prevent it from being forced."))
+			return
+
+	else if(istype(target, /obj/structure/table))
+		var/obj/structure/table/T = target
+		T.break_to_parts()
+
 /obj/item/weapon/shield/riot/changeling
 	name = "shield-like mass"
 	desc = "A mass of tough, boney tissue. You can still see the fingers as a twisted pattern in the shield."
@@ -73,15 +83,9 @@
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0
 	throw_speed = 0
+	max_block = 15
+	can_block_lasers = TRUE
 	var/mob/living/creator
-
-/obj/item/weapon/shield/riot/changeling/New()
-	..()
-	START_PROCESSING(SSprocessing, src)
-
-/obj/item/weapon/shield/riot/changeling/Destroy()
-	STOP_PROCESSING(SSprocessing, src)
-	return ..()
 
 /obj/item/weapon/shield/riot/changeling/dropped(var/mob/living/user)
 	visible_message("<span class='danger'>With a sickening crunch, [user] reforms their shield into an arm!</span>",
