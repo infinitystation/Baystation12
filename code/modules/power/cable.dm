@@ -93,6 +93,30 @@ By design, d1 is the smallest direction and d2 is the highest
 	cable_list -= src              // remove it from global cable list
 	. = ..()                       // then go ahead and delete the cable
 
+/obj/structure/cable/attack_generic(mob/user)
+	if(ismouse(user))
+		var/mob/living/simple_animal/mouse/M = user
+		if(M.last_special > world.time)
+			return
+
+		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+		s.set_up(5, 1, M)
+
+		M.last_special = world.time + 100
+		M.visible_message("<span class='warning'>[M] begins to gnaw \the [src].</span>", "<span class='notice'>You begins to gnaw \the [src].</span>")
+		if(do_after(M, 100, src))
+			if(prob(90))
+				M.death()
+				s.start()
+			else
+				new /obj/item/stack/cable_coil(src.loc, 1, color)
+				M.visible_message("<span class='warning'>[M] gnawed \the [src] with their teeth.</span>", "<span class='notice'>You gnawed \the [src].</span>")
+				qdel(src)
+				if(prob(95))
+					M.death()
+					s.start()
+		else
+			M.last_special = world.time
 
 // Ghost examining the cable -> tells him the power
 /obj/structure/cable/attack_ghost(mob/user)

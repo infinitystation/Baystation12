@@ -107,6 +107,7 @@
 
 /obj/structure/closet/secure_closet/security/sierra
 	name = "security guard's locker"
+	req_access = list(access_guard)
 
 /obj/structure/closet/secure_closet/security/sierra/WillContain()
 	return list(

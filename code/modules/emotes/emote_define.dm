@@ -83,13 +83,13 @@
 		if(isliving(user))
 			var/mob/living/L = user
 			if(!L.silent)
-				user.audible_message(message = use_3p, self_message = use_1p, deaf_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
 				do_extra(user, target)
+				user.audible_message(message = use_3p, self_message = use_1p, deaf_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
 			else
 				user.visible_message(message = "[user] noiselessly opens mouth!", self_message = "You you cannot say anything!", blind_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
 	else
-		user.visible_message(message = use_3p, self_message = use_1p, blind_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
 		do_extra(user, target)
+		user.visible_message(message = use_3p, self_message = use_1p, blind_message = emote_message_impaired, checkghosts = /datum/client_preference/ghost_sight)
 
 /decl/emote/proc/do_extra(var/atom/user, var/atom/target)
 	return

@@ -62,7 +62,7 @@ var/list/datum/power/changeling/powerinstances = list()
 
 /datum/power/changeling/extractdna
 	name = "Extract DNA sting"
-	desc = "Мы втыкаем жало в жертву и извлекаем из неё образец ДНК. Безвкусно, пресно, но жертва останетс&#255; в живых."
+	desc = "Мы скрытно жалим жертву и извлекаем из неё образец ДНК. Безвкусно, пресно, но жертва останетс&#255; в живых."
 	helptext = "Дает ДНК жертвы, на которой был использован данный навык. Не учитываетс&#255; в качестве задани&#255; на поглощение. Может использоватьс&#255; в низшей форме."
 	genomecost = 2
 	allowduringlesserform = 1
@@ -195,13 +195,20 @@ var/list/datum/power/changeling/powerinstances = list()
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_dissonant_shriek
 
+/datum/power/changeling/spiders
+	name = "Spread Spiders"
+	desc = "Наша оболочка делитьс&#255;, создава&#255; новые формы жизни - пауков."
+	helptext = "Пауки могут саботировать работу некоторые отделов и точно застав&#255;т экипаж шевелитьс&#255;, вызывая нестабильность."
+	genomecost = 10
+	verbpath = /mob/proc/changeling_spiders
+
 //weapon and armor like powers
 
 /datum/power/changeling/armblades
 	name = "Mutate Armblades"
 	desc = "Позвол&#255;ет нам преобразовывать нашу руку в острое органическое оружие."
-	helptext = "Может разрушать неукрепленные стены. Лезвие не исчезнет до тех пор, пока способность не будет использована повторно."
-	genomecost = 6
+	helptext = "Может разрушать неукрепленные стены и вскрывать незаваренные и неболтированные шлюзы. Лезвие не исчезнет до тех пор, пока способность не будет использована повторно."
+	genomecost = 8
 	verbpath = /mob/proc/armblades
 
 /datum/power/changeling/shield
@@ -532,4 +539,3 @@ var/list/datum/power/changeling/powerinstances = list()
 		call(M.current, Thepower.verbpath)()
 	else if(remake_verbs)
 		M.current.make_changeling()
-

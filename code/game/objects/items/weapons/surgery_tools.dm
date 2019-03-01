@@ -199,6 +199,7 @@
 	throw_range = 5
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("attacked", "hit", "bludgeoned")
+	safely = 1
 
 /obj/item/weapon/bonesetter/bone_mender
 	name = "bone mender"

@@ -291,6 +291,9 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	changeling.absorbedcount++
 	changeling.isabsorbing = 0
 
+	var/obj/item/organ/internal/heart/heart = T.internal_organs_by_name[BP_HEART]
+	for(heart in T.organs)
+		heart.pulse = 0
 	T.Drain()
 	T.death(0)
 	return 1
@@ -359,6 +362,21 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	domutcheck(src, null)
 	src.UpdateAppearance()
 
+/mob/proc/changeling_spiders()
+	set category = "Changeling"
+	set name = "Spread spiders (30)"
+
+	var/datum/changeling/changeling = changeling_power(30)
+	if(!changeling)	return
+	changeling.chem_charges -= 30
+
+	var/turf = get_turf(src)
+	for(var/I in 1 to 2)
+		var/obj/effect/spider/spiderling/Sp = new(turf)
+		Sp.amount_grown = 1
+
+	feedback_add_details("changeling_powers","SI")
+	return 1
 
 //Transform into a monkey.
 /mob/proc/changeling_lesser_form()
@@ -970,7 +988,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	if(!changeling)
 		return 0
 
-	var/mob/living/carbon/human/T = changeling_sting(40, /mob/proc/changeling_extract_dna_sting, loud = 1)
+	var/mob/living/carbon/human/T = changeling_sting(40, /mob/proc/changeling_extract_dna_sting)
 	if(!T)	return 0
 	if((MUTATION_HUSK in T.mutations) || (T.species.species_flags & SPECIES_FLAG_NO_SCAN))
 		to_chat(src, SPAN_LING("We cannot extract DNA from this creature!"))

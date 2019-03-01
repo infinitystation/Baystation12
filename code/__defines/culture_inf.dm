@@ -1,3 +1,11 @@
+// Skrellian cultures.
+
+#define FACTION_SKRELL_MED  "Gloa'Morr Corp."
+#define FACTION_SKRELL_AIR  "Krri'gli Corp."
+#define FACTION_SKRELL_FOOD  "Qorr'moa Inc."
+
+#define EDUCATION_SKRELL_FULL_DOCTOR  "Qerr-Mog, Medicine Focus"
+
 // Tajaran cultures.
 
 #define CULTURE_TAJARAN          "CMA Citizen"

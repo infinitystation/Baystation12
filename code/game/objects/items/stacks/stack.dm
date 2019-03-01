@@ -308,6 +308,8 @@
 		var/N = input("How many stacks of [src] would you like to split off?", "Split stacks", 1) as num|null
 		if(N > src.amount || N <= 0)
 			return
+		if(N > max_amount)
+			N = max_amount
 		if(N)
 			var/obj/item/stack/F = src.split(N)
 			if (F)

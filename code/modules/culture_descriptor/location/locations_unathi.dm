@@ -7,4 +7,4 @@
 	language = LANGUAGE_UNATHI
 	ruling_body = "Clan Hegemony"
 	distance = "20 light years"
-	secondary_langs = list(LANGUAGE_SIGN, LANGUAGE_GUTTER)
+	secondary_langs = list(LANGUAGE_SIGN)

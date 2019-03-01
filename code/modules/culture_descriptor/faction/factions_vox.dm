@@ -14,7 +14,6 @@
 	own people. A successful raider can look forward to heightened social standing and personal power upon their triumphant \
 	return to the ark, but an unsuccessful raider enjoys only death or shame; it follows that experienced raiders are vicious, \
 	callous killers and thieves with a discerning eye for when to fight and when to flee."
-	secondary_langs = list(LANGUAGE_GALCOM, LANGUAGE_GUTTER)
 
 /decl/cultural_info/faction/vox/apex
 	name = FACTION_VOX_APEX
