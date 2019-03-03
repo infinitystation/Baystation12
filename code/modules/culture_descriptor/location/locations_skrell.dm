@@ -11,5 +11,4 @@
 	capital = "None"
 	ruling_body = "None"
 	distance = "67 light years"
-	secondary_langs = list(LANGUAGE_SPACER, LANGUAGE_INDEPENDENT, LANGUAGE_SIGN, LANGUAGE_GUTTER, LANGUAGE_SOL_COMMON)
 	economic_power = 1.5

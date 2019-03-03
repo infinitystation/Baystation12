@@ -11,4 +11,4 @@
 	body_hair = "feathers"
 
 /obj/item/organ/external/head/resomi
-	eye_icon_location = 'icons/mob/human_races/species/resomi/eyes.dmi'
+	eye_icon_location = 'infinity/icons/mob/human_races/species/resomi/eyes.dmi'

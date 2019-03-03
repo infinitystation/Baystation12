@@ -109,6 +109,8 @@ var/datum/uplink/uplink = new()
 	feedback_add_details("traitor_uplink_items_bought", "[src]")
 	log_and_message_admins("used \the [U.loc] to buy \a [src]")
 	if(user)
+		if(desc == "Acquire the uplink crystals in pure form.") //:^)
+			cost = 0
 		uplink_purchase_repository.add_entry(user.mind, src, cost)
 
 datum/uplink_item/dd_SortValue()
