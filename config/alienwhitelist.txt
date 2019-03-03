@@ -1,4 +1,5 @@
 sfd - machine
+bob46 - machine
 s1334 - machine
 cre77 - machine
 rucat - machine
@@ -9,10 +10,10 @@ hodovoy - machine
 mishele - machine
 yourbro - machine
 kordvik - machine
-bob46 - machine
 taushai - machine
 netreson - machine
 billluxe - machine
+firsttea - machine
 he11d1ver - machine
 rockyfail - machine
 nikita588 - machine
@@ -85,11 +86,12 @@ maxi2000 - diona
 mrkayde - diona
 sarumyn - diona
 forrya - diona
-sfd - diona
 s1334 - diona
+sfd - diona
 wheatley2013 - vox
 wolforbykot - vox
 sosiskoed - vox
+nikita588 - vox
 mrnicolas - vox
 he11d1ver - vox
 taushai - vox
@@ -134,6 +136,7 @@ denmag - tajaran
 solark - tajaran
 forrya - tajaran
 arhod - tajaran
+arbuzpersikov - adherent
 wheatley2013 - adherent
 sosiskoed - adherent
 gumboldty - adherent
