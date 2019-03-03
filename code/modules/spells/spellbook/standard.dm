@@ -28,6 +28,7 @@
 							/spell/noclothes = 									2,
 							/obj/item/weapon/gun/energy/staff/focus = 			1,
 							/obj/structure/closet/wizard/souls = 				1,
+							/obj/structure/closet/wizard/armor = 				2,
 							/obj/item/weapon/gun/energy/staff/animate = 		1,
 							/obj/structure/closet/wizard/scrying = 				1,
 							/obj/item/weapon/summoning_stone = 					2,

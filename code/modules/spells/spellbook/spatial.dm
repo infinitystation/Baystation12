@@ -34,6 +34,7 @@
 				/obj/item/weapon/magic_rock = 					1,
 				/obj/item/weapon/summoning_stone = 				3,
 				/obj/item/weapon/contract/wizard/telepathy = 	1,
+				/obj/structure/closet/wizard/armor = 			3,
 				/obj/item/weapon/contract/apprentice = 			1
 				)
 
