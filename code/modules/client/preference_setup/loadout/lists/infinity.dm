@@ -132,6 +132,7 @@
 /datum/gear/utility/wristpda/New()
 	..()
 	var/wpdas = list()
+	wpdas["black"]                    = /obj/item/modular_computer/wrist/
 	wpdas["lightgrey"]                    = /obj/item/modular_computer/wrist/grey
 	wpdas["black-red (sec)"]          = /obj/item/modular_computer/wrist/security
 	wpdas["lightgrey-brown (sup)"]   = /obj/item/modular_computer/wrist/cargo
