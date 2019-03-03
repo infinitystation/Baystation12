@@ -63,18 +63,18 @@
 
 /datum/species/resomi
 	autohiss_basic_map = list(
-			"ç" = list("ñ", "ññ", "ñññ"),
+			"ç" = list("ñ"),
 
-			"Ç" = list("Ñ", "Ññ", "Ñññ")
+			"Ç" = list("Ñ")
 		)
 	autohiss_extra_map = list(
-			"÷" = list("ù", "ùù"),
+			"÷" = list("ù"),
 
-			"æ" = list("ø", "øø", "øøø"),
+			"æ" = list("ø"),
 
-			"×" = list("Ù", "Ùù"),
+			"×" = list("Ù"),
 
-			"Æ" = list("Ø", "Øø", "Øøø")
+			"Æ" = list("Ø")
 		)
 	autohiss_exempt = list(LANGUAGE_RESOMI)
 
