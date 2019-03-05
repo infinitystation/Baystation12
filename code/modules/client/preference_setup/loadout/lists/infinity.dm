@@ -156,3 +156,4 @@ datum/gear/utility/wristpda
 	wpdas["black (mercs)"]           = /obj/item/modular_computer/wrist/syndicate
 	wpdas["short (lightgrey)"]       = /obj/item/modular_computer/wrist/lila
 	wpdas["short (black)"]           = /obj/item/modular_computer/wrist/lila/black
+	gear_tweaks += new/datum/gear_tweak/path(wpdas)
