@@ -3031,6 +3031,7 @@
 #include "infinity\code\game\objects\items\customs\warfoxy.dm"
 #include "infinity\code\game\objects\items\customs\wd_sack.dm"
 #include "infinity\code\game\objects\items\customs\wpda.dm"
+#include "infinity\code\game\objects\items\customs\wpda_grayson.dm"
 #include "infinity\code\game\objects\items\customs\zpci_uniform.dm"
 #include "infinity\code\game\objects\items\weapons\traps.dm"
 #include "infinity\code\game\objects\items\weapons\circuitboards\machinery\chargers.dm"
