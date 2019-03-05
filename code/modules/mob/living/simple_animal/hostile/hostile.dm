@@ -193,7 +193,7 @@
 /mob/living/simple_animal/hostile/bullet_act(var/obj/item/projectile/Proj)
 	var/oldhealth = health
 	. = ..()
-	if(!client && target_mob && health < oldhealth && !incapacitated(INCAPACITATION_KNOCKOUT))
+	if(!client && !target_mob && health < oldhealth && !incapacitated(INCAPACITATION_KNOCKOUT))
 		target_mob = Proj.firer
 		MoveToTarget()
 
