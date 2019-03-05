@@ -129,6 +129,11 @@
 	pdas["black (mercs)"]           = /obj/item/modular_computer/pda/syndicate
 	gear_tweaks += new/datum/gear_tweak/path(pdas)
 
+datum/gear/utility/wristpda
+	display_name = "Wrist PDA selection"
+	path = /obj/item/modular_computer/wrist
+	cost = 2
+
 /datum/gear/utility/wristpda/New()
 	..()
 	var/wpdas = list()
