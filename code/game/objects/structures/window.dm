@@ -92,6 +92,7 @@
 	img.color = "#ffffff"
 	img.alpha = silicate * 255 / 100
 	overlays += img
+	update_icon()
 
 /obj/structure/window/proc/shatter(var/display_message = 1)
 	playsound(src, "shatter", 70, 1)

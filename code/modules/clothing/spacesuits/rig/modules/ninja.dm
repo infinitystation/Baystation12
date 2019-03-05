@@ -210,26 +210,27 @@
 			return
 
 		if(usr == holder.wearer)
-			holder.wearer.visible_message("<span class='warning'> \The [src.holder.wearer] flicks a small switch on the back of \the [src.holder].</span>",1)
+			holder.wearer.visible_message("<span class='warning'> \The [holder.wearer] flicks a small switch on the back of \the [holder].</span>")
 			sleep(blink_delay)
 
 	self_destructing = 1
-	src.blink_mode = 1
-	src.blink()
-	holder.visible_message("<span class='notice'>\The [src.holder] begins beeping.</span>","<span class='notice'> You hear beeping.</span>")
+	blink_mode = 1
+	blink()
+	holder.visible_message("<span class='notice'>\The [holder] begins beeping.</span>","<span class='notice'> You hear beeping.</span>")
 	sleep(blink_time)
-	src.blink_mode = 2
-	holder.visible_message("<span class='warning'>\The [src.holder] beeps rapidly!</span>","<span class='warning'> You hear rapid beeping!</span>")
+	blink_mode = 2
+	holder.visible_message("<span class='warning'>\The [holder] beeps rapidly!</span>","<span class='warning'> You hear rapid beeping!</span>")
 	sleep(blink_rapid_time)
-	src.blink_mode = 3
-	holder.visible_message("<span class='danger'>\The [src.holder] emits a shrill tone!</span>","<span class='danger'> You hear a shrill tone!</span>")
+	blink_mode = 3
+	holder.visible_message("<span class='danger'>\The [holder] emits a shrill tone!</span>","<span class='danger'> You hear a shrill tone!</span>")
 	sleep(blink_solid_time)
-	src.blink_mode = 0
-	src.holder.set_light(0, 0, 0, 2, "#000000")
+	blink_mode = 0
+	holder.set_light(0, 0, 0, 2, "#000000")
 
 	explosion(get_turf(src), explosion_values[1], explosion_values[2], explosion_values[3], explosion_values[4])
-	if(holder && holder.wearer)
-		holder.wearer.gib()
+	if(holder)
+		if(holder.wearer)
+			holder.wearer.gib()
 		qdel(holder)
 	qdel(src)
 
@@ -240,7 +241,7 @@
 
 	//OH SHIT.
 	if(holder.wearer.stat == DEAD)
-		if(src.active)
+		if(active)
 			engage(1)
 
 /obj/item/rig_module/self_destruct/proc/blink()
@@ -249,17 +250,17 @@
 		if(0)
 			return
 		if(1)
-			src.holder.set_light(1, 1, 8.5, 2, "#ff0a00")
+			holder.set_light(1, 1, 8.5, 2, "#ff0a00")
 			sleep(6)
-			src.holder.set_light(0, 0, 0, 2, "#000000")
+			holder.set_light(0, 0, 0, 2, "#000000")
 			spawn(6) .()
 		if(2)
-			src.holder.set_light(1, 1, 8.5, 2, "#ff0a00")
+			holder.set_light(1, 1, 8.5, 2, "#ff0a00")
 			sleep(2)
-			src.holder.set_light(0, 0, 0, 2, "#000000")
+			holder.set_light(0, 0, 0, 2, "#000000")
 			spawn(2) .()
 		if(3)
-			src.holder.set_light(1, 1, 8.5, 2, "#ff0a00")
+			holder.set_light(1, 1, 8.5, 2, "#ff0a00")
 
 /obj/item/rig_module/grenade_launcher/ninja
 	suit_overlay = null
