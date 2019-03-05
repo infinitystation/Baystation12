@@ -122,4 +122,5 @@ sosiskoed - adherent
 gumboldty - adherent
 kareta - adherent
 s1334 - adherent
+wolfetd - adherent
 redknighthero - bionic
