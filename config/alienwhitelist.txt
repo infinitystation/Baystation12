@@ -26,6 +26,7 @@ wheatley2013 - machine
 blacksoul231 - machine
 redknighthero - machine
 kotovsyndrome - machine
+termservice - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
