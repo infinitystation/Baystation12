@@ -148,6 +148,9 @@ var/bomb_set
 /obj/machinery/nuclearbomb/attack_ghost(mob/user as mob)
 	attack_hand(user)
 
+/obj/machinery/nuclearbomb/attack_ai(mob/user)
+	return
+
 /obj/machinery/nuclearbomb/attack_hand(mob/user as mob)
 	if(extended)
 		if(panel_open)
@@ -475,6 +478,9 @@ var/bomb_set
 /obj/machinery/nuclearbomb/station/attackby(obj/item/weapon/O as obj, mob/user as mob)
 	if(isWrench(O))
 		return
+
+/obj/machinery/nuclearbomb/station/attack_ai(mob/user)
+	attack_hand(user)
 
 /obj/machinery/nuclearbomb/station/Topic(href, href_list)
 	if((. = ..()))
