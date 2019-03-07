@@ -252,7 +252,7 @@
 			else
 				new glasstype(loc)
 			qdel(src)
-	else if(isCoil(W) && reinf && !polarized)
+	else if(isCoil(W) && reinf && !polarized && glasstype != /obj/item/stack/material/glass/phoronrglass)
 		var/obj/item/stack/cable_coil/C = W
 		if (C.use(1))
 			playsound(src.loc, 'sound/effects/sparks1.ogg', 75, 1)
