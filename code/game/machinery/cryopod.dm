@@ -426,7 +426,7 @@
 		control_computer._admin_logs += "[key_name(occupant)] ([role_alt_title]) at [stationtime2text()]"
 	log_and_message_admins("[key_name(occupant)] ([role_alt_title]) entered cryostorage.")
 
-	var/leave_announce = occupant.mind.assigned_job ? occupant.mind.assigned_job.announced : null
+	var/leave_announce = occupant.mind ? occupant.mind.assigned_job ? occupant.mind.assigned_job.announced : null : null
 	if(leave_announce)
 		announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
 	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>", 3)
