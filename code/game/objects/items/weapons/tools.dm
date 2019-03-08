@@ -536,9 +536,7 @@
 	if(istype(user, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
 		var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[BP_EYES]
-		if(!E)
-			return
-		if(!BP_IS_ROBOTIC(E))
+		if(!E || BP_IS_ROBOTIC(E))
 			return
 		var/safety = H.eyecheck()
 		switch(safety)
