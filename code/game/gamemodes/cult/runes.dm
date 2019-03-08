@@ -119,6 +119,13 @@
 		spawn(40)
 		spamcheck = 0
 		return
+	if(target.species == SPECIES_DIONA)
+		to_chat(target, "<span class='notice'>Nothing is happening... What are they trying to do?</span>")
+		target.visible_message("<span class='warning'>[src] below [target] are starting to glow a bloody red just for a second, but a moment after, it goes off.</span>")
+		spamcheck = 1
+		spawn(40)
+		spamcheck = 0
+		return
 
 	target.visible_message("<span class='warning'>The markings below [target] glow a bloody red.</span>")
 

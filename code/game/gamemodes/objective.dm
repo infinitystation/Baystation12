@@ -280,37 +280,30 @@ datum/objective/escape
 	explanation_text = "Escape on the shuttle or an escape pod alive and free."
 
 
-	check_completion()
-		if(issilicon(owner.current))
-			return 0
-		if(isbrain(owner.current))
-			return 0
-		if(!evacuation_controller.has_evacuated())
-			return 0
-		if(!owner.current || owner.current.stat ==2)
-			return 0
-		var/turf/location = get_turf(owner.current.loc)
-		if(!location)
-			return 0
+datum/objective/escape/check_completion()
+	if(issilicon(owner.current))
+		return 0
+	if(isbrain(owner.current))
+		return 0
+	if(!evacuation_controller.has_evacuated())
+		return 0
+	if(!owner.current || owner.current.stat == DEAD)
+		return 0
+	if(owner.current.incapacitated(INCAPACITATION_KNOCKOUT|INCAPACITATION_RESTRAINED)) 	//Fails traitors if they are in a shuttle but knocked out or cuffed.
+		return 0
 
-		//Fails traitors if they are in a shuttle but knocked out or cuffed.
-		if(owner.current.incapacitated(INCAPACITATION_KNOCKOUT|INCAPACITATION_RESTRAINED))
-			return 0
-
-		var/area/check_area = location.loc
-		return check_area && is_type_in_list(check_area, GLOB.using_map.post_round_safe_areas) || owner.current.z in GLOB.using_map.admin_levels
-
-
+	var/area/check_area = get_area(owner.current)
+	return check_area && is_type_in_list(check_area, GLOB.using_map.post_round_safe_areas)
 
 datum/objective/survive
 	explanation_text = "Stay alive until the end."
 
-	check_completion()
-		if(!owner.current || owner.current.stat == DEAD || isbrain(owner.current))
-			return 0		//Brains no longer win survive objectives. --NEO
-		if(issilicon(owner.current) && owner.current != owner.original)
-			return 0
-		return 1
+datum/objective/survive/check_completion()
+	if(!owner.current || owner.current.stat == DEAD || isbrain(owner.current))
+		return 0		//Brains no longer win survive objectives. --NEO
+	if(issilicon(owner.current) && owner.current != owner.original)
+		return 0
+	return 1
 
 // Similar to the anti-rev objective, but for traitors
 datum/objective/brig
@@ -398,15 +391,11 @@ datum/objective/harm
 
 
 datum/objective/nuclear
-	explanation_text = "Уничтожьте объект с помощью ядерного заряда."
+	explanation_text = "Уничтожьте объект с помощью &#255;дерного зар&#255;да."
 
-datum/objective/terrorists
-	proc/choose_target()
-		return
-
-datum/objective/terrorists/kidnap
+datum/objective/heist/kidnap_nuke
 	choose_target()
-		var/list/roles = list("Captain", "Internal Affairs Agent", "Chief Engineer", "Research Director", "Engineer", "Passenger")
+		var/list/roles = list("Captain", "Internal Affairs Agent", "Chief Engineer", "Research Director", "Engineer")
 		var/list/possible_targets = list()
 		var/list/priority_targets = list()
 
@@ -424,9 +413,9 @@ datum/objective/terrorists/kidnap
 			target = pick(possible_targets)
 
 		if(target && target.current)
-			explanation_text = "Наши наниматели хотят, чтобы мы захватили '[target.current.real_name], [target.assigned_role]' и доставили на базу. Цель должна быть живой."
+			explanation_text = "Наниматель хочет, чтобы мы захватили '[target.current.real_name], [target.assigned_role]' и доставили на базу. Цель должна быть живой."
 		else
-			explanation_text = "Free Objective"
+			explanation_text = "Захвать по крайней мере одного высокопоставленного или обладающего ценными данными члена экипажа живым. Приоритет - ученые, главы, инженеры, пассажиры."
 		return target
 
 	check_completion()
@@ -844,24 +833,24 @@ datum/objective/heist/salvage
 
 /datum/objective/cult/survive/New()
 	..()
-	explanation_text = "Our knowledge must live on. Make sure at least [target_amount] acolytes escape on the shuttle to spread their work on an another station."
+	explanation_text = "Our knowledge must live on. Make sure at least [target_amount] acolytes escape on the shuttle to spread their work elsewhere."
 
 /datum/objective/cult/survive/check_completion()
 	var/acolytes_survived = 0
 	if(!GLOB.cult)
 		return 0
 	for(var/datum/mind/cult_mind in GLOB.cult.current_antagonists)
-		if (cult_mind.current && cult_mind.current.stat!=2)
-			var/area/A = get_area(cult_mind.current )
-			if ( is_type_in_list(A, GLOB.using_map.post_round_safe_areas))
+		if (cult_mind.current && cult_mind.current.stat != 2)
+			var/area/A = get_area(cult_mind.current)
+			if (is_type_in_list(A, GLOB.using_map.post_round_safe_areas))
 				acolytes_survived++
 	if(acolytes_survived >= target_amount)
-		return 0
-	else
 		return 1
+	else
+		return 0
 
 /datum/objective/cult/eldergod
-	explanation_text = "Summon Nar-Sie via the use of the appropriate rune (Hell join self). It will only work if nine cultists stand on and around it. The convert rune is join blood self."
+	explanation_text = "Summon Nar-Sie via the use of the appropriate rune. It will only work if nine cultists stand on and around it. The convert rune is join blood self."
 
 /datum/objective/cult/eldergod/check_completion()
 	return (locate(/obj/singularity/narsie/large) in SSmachines.machinery)
@@ -877,10 +866,10 @@ datum/objective/heist/salvage
 				possible_targets += player.mind
 	if(possible_targets.len > 0)
 		target = pick(possible_targets)
-	if(target) explanation_text = "Sacrifice [target.name], the [target.assigned_role]. You will need the sacrifice rune (Hell blood join) and three acolytes to do so."
+	if(target) explanation_text = "Sacrifice [target.name], the [target.assigned_role]. You will need the sacrifice rune and three acolytes to do so."
 
 /datum/objective/cult/sacrifice/check_completion()
-	return (target && GLOB.cult && !GLOB.cult.sacrificed.Find(target))
+	return (target && GLOB.cult && GLOB.cult.sacrificed.Find(target))
 
 /datum/objective/rev/find_target()
 	..()

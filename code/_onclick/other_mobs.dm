@@ -34,7 +34,9 @@
 		var/turf/T = get_turf(A)
 		var/turf/above = shadow.loc
 		if(T.Adjacent(shadow) && above.CanZPass(src, UP)) //Certain structures will block passage from below, others not
-
+			if(T.contains_dense_objects())
+				to_chat(src, "<span class='warning'>You can't climb there!</span>")
+				return
 			var/area/location = get_area(loc)
 			if(location.has_gravity && !can_overcome_gravity())
 				return

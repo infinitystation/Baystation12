@@ -249,7 +249,7 @@ MRE Stuff
 	name = "main course"
 	desc = "A vacuum-sealed bag containing the MRE's main course. Self-heats when opened."
 	icon = 'icons/obj/food.dmi'
-	icon_state = "pouch"
+	icon_state = "pouch_medium"
 	storage_slots = 7
 	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_SMALL
@@ -263,7 +263,7 @@ MRE Stuff
 
 /obj/item/weapon/storage/mrebag/on_update_icon()
 	if(opened)
-		icon_state = "pouch[opened]"
+		icon_state = "[initial(icon_state)][opened]"
 	. = ..()
 
 /obj/item/weapon/storage/mrebag/attack_self(mob/user)
@@ -311,6 +311,7 @@ MRE Stuff
 
 /obj/item/weapon/storage/mrebag/dessert
 	name = "dessert"
+	icon_state = "pouch_small"
 	desc = "A vacuum-sealed bag containing the MRE's dessert."
 	open_sound = 'sound/effects/rip1.ogg'
 	startswith = list(/obj/random/mredessert)

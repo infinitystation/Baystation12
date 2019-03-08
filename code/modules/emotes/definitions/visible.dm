@@ -1,6 +1,6 @@
 /decl/emote/visible
 	key ="tail"
-	emote_message_3p = "USER двигает своим хвостом."
+	emote_message_3p = "USER вил&#255;ет своим хвостом."
 	message_type = VISIBLE_MESSAGE
 
 /decl/emote/visible/scratch
@@ -23,12 +23,12 @@
 
 /decl/emote/visible/sulk
 	key ="sulk"
-	emote_message_3p = "USER грустно садитс&#255;."
+	emote_message_3p = "USER грустно садитс&#255;..."
 
 /decl/emote/visible/dance
 	key ="dance"
 	check_restraints = TRUE
-	emote_message_3p = "USER танцует."
+	emote_message_3p = "USER танцует!"
 
 /decl/emote/visible/roll
 	key ="roll"
@@ -81,7 +81,7 @@
 
 /decl/emote/visible/blink_r
 	key = "blink_r"
-	emote_message_3p = "USER быстро моргает."
+	emote_message_3p = "USER быстро моргает!"
 
 /decl/emote/visible/bow
 	key = "bow"
@@ -109,7 +109,7 @@
 
 /decl/emote/visible/twitch_v
 	key = "twitch_v"
-	emote_message_3p = "USER сильно дергаетс&#255;."
+	emote_message_3p = "USER сильно дергаетс&#255;!"
 	conscious = 0
 
 /decl/emote/visible/faint
@@ -152,7 +152,7 @@
 	key = "point"
 	check_restraints = TRUE
 	emote_message_3p = "USER показывает пальцем."
-	emote_message_3p_target = "USER показываетс&#255; пальцем на TARGET."
+	emote_message_3p_target = "USER показывает пальцем на TARGET."
 
 /decl/emote/visible/raise
 	key = "raise"
@@ -174,7 +174,7 @@
 
 /decl/emote/visible/pale
 	key = "pale"
-	emote_message_3p = "USER goes pale for a second."
+	emote_message_3p = "USER на секунду бледнеет..."
 
 /decl/emote/visible/tremble
 	key = "tremble"
@@ -188,8 +188,8 @@
 /decl/emote/visible/hug
 	key = "hug"
 	check_restraints = TRUE
-	emote_message_3p_target = "USER hugs TARGET."
-	emote_message_3p = "USER hugs USER_SELF."
+	emote_message_3p_target = "USER обнимает TARGET!"
+	emote_message_3p = "USER обнимает USER_SELF!"
 
 /decl/emote/visible/dap
 	key = "dap"
@@ -207,11 +207,11 @@
 
 /decl/emote/visible/bounce
 	key = "bounce"
-	emote_message_3p = "USER прыгает на месте."
+	emote_message_3p = "USER прыгает на месте!"
 
 /decl/emote/visible/jiggle
 	key = "jiggle"
-	emote_message_3p = "USER покачиваетс&#255;."
+	emote_message_3p = "USER покачиваетс&#255;..."
 
 /decl/emote/visible/lightup
 	key = "light"

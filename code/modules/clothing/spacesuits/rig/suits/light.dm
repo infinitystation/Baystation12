@@ -24,7 +24,6 @@
 		)
 
 /obj/item/clothing/suit/space/rig/light
-	name = "suit"
 	breach_threshold = 18 //comparable to voidsuits
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',

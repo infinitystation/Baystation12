@@ -32,18 +32,28 @@
 	//So this is a workaround. This also makes more sense from an IC standpoint. ~Carn
 	if(user.client && (target in user.client.screen))
 		to_chat(user, "<span class='notice'>You need to take that [target.name] off before cleaning it.</span>")
-	else if(istype(target,/obj/effect/decal/cleanable/blood))
-		to_chat(user, "<span class='notice'>You scrub \the [target.name] out.</span>")
-		target.clean_blood() //Blood is a cleanable decal, therefore needs to be accounted for before all cleanable decals.
-	else if(istype(target,/obj/effect/decal/cleanable))
-		to_chat(user, "<span class='notice'>You scrub \the [target.name] out.</span>")
-		qdel(target)
-	else if(istype(target,/turf) || istype(target, /obj/structure/catwalk))
+	else if(istype(target,/turf) || istype(target, /obj/structure/catwalk) || istype(target,/obj/effect/decal/cleanable))
 		var/turf/T = get_turf(target)
 		if(!T)
 			return
-		user.visible_message("<span class='warning'>[user] starts scrubbing \the [T].</span>")
-		T.clean(src, user, 80, "<span class='notice'>You scrub \the [target.name] clean.</span>")
+		var/list/cleanable = list()
+		for(var/obj/effect/C in T)
+			if(istype(C, /obj/effect/rune) || istype(C, /obj/effect/decal/cleanable) || istype(C, /obj/effect/overlay))
+				cleanable += C
+		if(!cleanable.len)
+			to_chat(usr, "<span class='notice'>\The [T] is already clean.</span>")
+			return
+		user.visible_message("<span class='notice'>[user] starts scrubbing \the [T].</span>")
+		for(var/obj/effect/E in cleanable)
+			if(do_after(user, rand(15, 25), E))
+				if(istype(E, /obj/effect/decal/cleanable/blood))
+					to_chat(user, "<span class='notice'>You scrub \the [E] out.</span>")
+					E.clean_blood()
+				else
+					to_chat(user, "<span class='notice'>You scrub \the [E] out.</span>")
+					qdel(E)
+			else
+				break
 	else if(istype(target,/obj/structure/hygiene/sink))
 		to_chat(user, "<span class='notice'>You wet \the [src] in the sink.</span>")
 		wet()

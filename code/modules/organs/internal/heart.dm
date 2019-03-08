@@ -89,7 +89,7 @@
 
 		if(heartbeat >= rate)
 			heartbeat = 0
-			sound_to(owner, sound(beat_sound,0,0,0,50))
+			sound_to(owner, sound(beat_sound,0,0,0,10))
 		else
 			heartbeat++
 

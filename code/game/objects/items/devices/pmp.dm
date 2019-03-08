@@ -122,8 +122,10 @@ GLOBAL_LIST_EMPTY(pmp_list)
 	if(.)
 		if(serial_number)
 			to_chat(user, "The serial number \"#[serial_number]\" is generated on the case.")
-		if(cassette)
+		if(cassette && cassette.track)
 			to_chat(user, SPAN_NOTICE("You can see a cassette inside it. The label says \"[cassette.track.title]\"."))
+		else if(cassette)
+			to_chat(user, SPAN_NOTICE("You can see a cassette inside it."))
 		switch(panel)
 			if(PANEL_OPENED)
 				to_chat(user, "The front panel is unhinged.")
@@ -249,6 +251,21 @@ GLOBAL_LIST_EMPTY(pmp_list)
 			else
 				to_chat(user, SPAN_NOTICE("\The [S] is empty."))
 		return
+	if(istype(I,/obj/item/stack/cable_coil))
+		var/obj/item/stack/S = I
+		if(broken && panel == PANEL_OPENED)
+			if(user.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
+				if(S.use(5))
+					user.visible_message(SPAN_NOTICE("\The [user] starts replace burned out wires in \the [src]."), SPAN_NOTICE("You are replacing burned out wires in \the [src]'."))
+					if(!do_after(user, 60, src))
+						return
+					user.visible_message(SPAN_NOTICE("\The [user] replaces burned out wires in \the [src]."), SPAN_NOTICE("You replace burned out wires in \the [src]."))
+					broken = FALSE
+				else
+					to_chat(user, SPAN_NOTICE("You need more [I] to fix \the [src]."))
+
+			else
+				to_chat(user, SPAN_NOTICE("You don't know how to fix \the [src]."))
 	else
 		. = ..()
 
@@ -399,7 +416,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 
 	log_and_message_admins("launched a [src] <a href='?_src_=holder;adminplayerobservefollow=\ref[src]'>#[serial_number]</a> with the song \"[cassette.track.title]\".")
 	QDEL_NULL(sound_token)
-	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, cassette.track.GetTrack(), volume = volume, frequency = frequency, range = 7, falloff = 4, prefer_mute = TRUE)
+	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, cassette.track.GetTrack(), volume = volume, frequency = frequency, range = 7, falloff = 4, prefer_mute = TRUE, preference = /datum/client_preference/play_pmps)
 	playing = 1
 	update_icon()
 	START_PROCESSING(SSobj, src)

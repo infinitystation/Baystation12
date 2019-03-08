@@ -10,6 +10,7 @@
 	throwforce = 10.0
 	throw_speed = 1
 	throw_range = 5
+	layer = STRUCTURE_LAYER
 	w_class = ITEM_SIZE_NORMAL
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	matter = list(MATERIAL_STEEL = 3000)

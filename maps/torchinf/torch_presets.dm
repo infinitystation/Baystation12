@@ -231,3 +231,6 @@ var/const/NETWORK_ENGINEERING_OUTPOST = "Engineering Outpost"
 		num2text(SRV_FREQ)   = list(access_janitor, access_hydroponics),
 		num2text(EXP_FREQ)   = list(access_explorer)
 	)
+
+/obj/structure/wall_frame
+	color = COLOR_GUNMETAL

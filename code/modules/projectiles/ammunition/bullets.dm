@@ -1,18 +1,3 @@
-/obj/item/ammo_casing/a22lr
-	desc = "A .22LR bullet casing."
-	caliber = "22"
-	projectile_type = /obj/item/projectile/bullet/pistol/tiny
-
-/obj/item/ammo_casing/a22lr/rubber
-	desc = "A .22LR rubber bullet casing."
-	icon_state = "r-casing"
-	spent_icon = "r-casing-spent"
-	projectile_type = /obj/item/projectile/bullet/pistol/tiny/rubber
-
-/obj/item/ammo_casing/a357
-	desc = "A .357 bullet casing."
-	caliber = "357"
-
 /obj/item/ammo_casing/a44
 	desc = "A .44 Magnum bullet casing."
 	caliber = ".44"
@@ -39,11 +24,6 @@
 	caliber = "9mm"
 	projectile_type = /obj/item/projectile/bullet/pistol
 
-/obj/item/ammo_casing/c57
-	desc = "A 5.7mm bullet casing."
-	caliber = "57"
-	projectile_type = /obj/item/projectile/bullet/pistol/medium/fast
-
 /obj/item/ammo_casing/c9mm/flash
 	desc = "A 9mm flash shell casing."
 	projectile_type = /obj/item/projectile/energy/flash
@@ -59,30 +39,12 @@
 	projectile_type = /obj/item/projectile/bullet/pistol/practice
 	icon_state = "pistolcasing_p"
 
-/obj/item/ammo_casing/c9mm/used/Initialize()
-	. = ..()
-	expend()
-	pixel_x = rand(-10, 10)
-	pixel_y = rand(-10, 10)
-
 /obj/item/ammo_casing/c357
 	desc = "A .357 Magnum bullet casing."
 	caliber = ".357"
-
-
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/revolver
 	icon_state = "357casing"
 	spent_icon = "357casing-spent"
-
-/obj/item/ammo_casing/c44/emp
-	desc = "A .44 magnum haywire round."
-	caliber = ".44"
-	icon_state = "empcasing"
-	projectile_type = /obj/item/projectile/ion/small
-	matter = list(MATERIAL_STEEL = 130, MATERIAL_URANIUM = 100)
-
-/obj/item/ammo_casing/c44/rubber
-	desc = "A .44 magnum rubber bullet casing."
 
 /obj/item/ammo_casing/c357/rubber
 	desc = "A .357 Magnum rubber bullet casing."
@@ -194,29 +156,12 @@
 	projectile_type = /obj/item/projectile/energy/flash/flare
 	matter = list(MATERIAL_STEEL = 90, MATERIAL_GLASS = 90)
 
-/obj/item/ammo_casing/shotgun/greande
-	name = "shotgun grenade"
-	desc = "A 12 gauge grenade."
-	icon_state = "gshell"
-	spent_icon = "gshell-spent"
-	projectile_type = /obj/item/projectile/bullet/explosion/shotgun
-	matter = list(MATERIAL_STEEL = 500)
-
 /obj/item/ammo_casing/a556
 	desc = "A 5.56mm bullet casing."
 	caliber = "a556"
 	projectile_type = /obj/item/projectile/bullet/rifle/a556
 	icon_state = "556casing"
 	spent_icon = "556casing-spent"
-
-/obj/item/ammo_casing/a12755
-	name = "bullet casing"
-	desc = "A 12.7x55mm bullet casing."
-	projectile_type = /obj/item/projectile/bullet/rifle/a12755
-	icon_state = "lcasing"
-	spent_icon = "lcasing-spent"
-	caliber = "127x55"
-	matter = list(MATERIAL_STEEL = 500)
 
 /obj/item/ammo_casing/a145
 	name = "shell casing"

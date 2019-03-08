@@ -8,6 +8,7 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 	name = "\improper Circuit Imprinter"
 	icon_state = "circuit_imprinter"
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
+	layer = BELOW_OBJ_LAYER
 	var/list/datum/design/queue = list()
 	var/progress = 0
 
@@ -136,12 +137,12 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 	queue.Cut(index, index + 1)
 	return
 
-/obj/machinery/r_n_d/circuit_imprinter/proc/canBuild(var/datum/design/D)
+/obj/machinery/r_n_d/circuit_imprinter/proc/canBuild(var/datum/design/D, var/circuit_imprinter_bonus)
 	for(var/M in D.materials)
-		if(materials[M] <= D.materials[M] * mat_efficiency)
+		if(materials[M] <= D.materials[M] * mat_efficiency * circuit_imprinter_bonus)
 			return 0
 	for(var/C in D.chemicals)
-		if(!reagents.has_reagent(C, D.chemicals[C]))
+		if(!reagents.has_reagent(C, D.chemicals[C] * mat_efficiency * circuit_imprinter_bonus))
 			return 0
 	return 1
 
@@ -157,6 +158,14 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 		reagents.remove_reagent(C, D.chemicals[C] * mat_efficiency)
 
 	if(D.build_path)
+		if(prob(D.skill_fail_chance))
+			src.visible_message("<span class='warning'>[pick("You hear a strange noises and some metal crackles.", "You hear a strange buzz.")]</span>")
+			if(prob(D.skill_fail_chance / 2))
+				playsound(src.loc, 'sound/effects/smoke.ogg', 50, 1, -3)
+				var/datum/effect/effect/system/smoke_spread/smoke = new
+				smoke.set_up(8, 0, src.loc, 0)
+				smoke.start()
+			return
 		var/obj/new_item = D.Fabricate(loc, src)
 		if(mat_efficiency != 1) // No matter out of nowhere
 			if(new_item.matter && new_item.matter.len > 0)

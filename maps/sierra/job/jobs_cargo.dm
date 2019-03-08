@@ -83,7 +83,7 @@
 
 	skill_points = 8
 
-	access = list(access_research, access_mining, access_mining_office, access_mining_station,
+	access = list(access_mining, access_mining_office, access_mining_station,
 						access_expedition_shuttle, access_guppy, access_hangar, access_guppy_helm)
 
 	minimal_access = list()

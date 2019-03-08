@@ -108,9 +108,6 @@
 	required_education = EDUCATION_TIER_BASIC
 	maximum_education = EDUCATION_TIER_BACHELOR
 
-/datum/job/doctor_trainee/get_description_blurb()
-	return "You are an Intern. You are learning how to treat and recover wounded crew from the more experienced medical personnel aboard. You are subordinate to the rest of the medical team."
-
 /datum/job/chemist
 	title = "Chemist"
 	department = "Medical"

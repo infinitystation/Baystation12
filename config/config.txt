@@ -278,25 +278,28 @@ USEALIENWHITELIST
 #GHOST_INTERACTION
 
 ## Password used for authorizing ircbot and other external tools.
-COMMS_PASSWORD karetaisgod
+#COMMS_PASSWORD
 
 ## Password used for authorizing external tools that can apply bans
 #BAN_COMMS_PASSWORD
+
+## BYOND builds that will result the client using them to be banned.
+#FORBIDDEN_VERSIONS 512.0001;512.0002
 
 ## Export address where external tools that monitor logins are located
 #LOGIN_EXPORT_ADDR
 
 ## Uncomment to enable sending data to the IRC bot.
-USE_IRC_BOT
+#USE_IRC_BOT
 
 ## Host where the IRC bot is hosted.  Port 45678 needs to be open.
-IRC_BOT_HOST localhost
+#IRC_BOT_HOST localhost
 
 ## IRC channel to send information to.  Leave blank to disable.
-MAIN_IRC #infinity_ss13
+#MAIN_IRC #main
 
 ## IRC channel to send adminhelps to.  Leave blank to disable adminhelps-to-irc.
-ADMIN_IRC #infinity_ss13_admin
+#ADMIN_IRC #admin
 
 ## Uncommen to allow ghosts to write in blood during Cult rounds.
 #ALLOW_CULT_GHOSTWRITER
@@ -305,7 +308,7 @@ ADMIN_IRC #infinity_ss13_admin
 REQ_CULT_GHOSTWRITER 6
 
 ## Sets the number of available character slots
-CHARACTER_SLOTS 10
+CHARACTER_SLOTS 20
 
 ## Sets the number of loadout slots per character
 LOADOUT_SLOTS 3
@@ -369,7 +372,7 @@ NINJAS_ALLOWED
 #RESPAWN_DELAY 30
 
 ## Strength of ambient star light. Set to 0 or less to turn off. A value of 1 is unlikely to have a noticeable effect in most lighting systems.
-STARLIGHT 0
+STARLIGHT 0.5
 
 ## Defines which races are allowed to join as ERT, in singular form. If unset, defaults to only human. Casing matters, separate using ;
 ## Example races include: Human, Tajara, Skrell, Unathi

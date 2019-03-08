@@ -133,6 +133,7 @@ var/list/flooring_types
 	build_type = /obj/item/stack/tile/mono/dark
 
 /decl/flooring/tiling/mono/white
+	icon = 'icons/turf/flooring/infinity_decals.dmi'
 	icon_base = "monotile_light"
 	color = COLOR_OFF_WHITE
 	build_type = /obj/item/stack/tile/mono/white

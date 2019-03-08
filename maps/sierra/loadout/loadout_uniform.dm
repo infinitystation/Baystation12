@@ -24,6 +24,7 @@
 	pmc["PCRC utility uniform"]	= /obj/item/clothing/under/pcrc
 	pmc["PCRC formal uniform"]	= /obj/item/clothing/under/pcrcsuit
 	pmc["SCP utility uniform"]	= /obj/item/clothing/under/scp_uniform
+	pmc["ZPCI utility uniform"]	= /obj/item/clothing/under/zpci_uniform
 	gear_tweaks += new/datum/gear_tweak/path(pmc)
 
 /datum/gear/uniform/corpsi

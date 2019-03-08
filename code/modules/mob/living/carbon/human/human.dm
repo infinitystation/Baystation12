@@ -1078,8 +1078,15 @@
 
 	// Rebuild the HUD. If they aren't logged in then login() should reinstantiate it for them.
 	if(client && client.screen)
-		client.screen.len = null
+		client.images = null				//remove the images such as AIs being unable to see runes
+		client.screen = list()				//remove hud items just in case
 		InitializeHud()
+		l_plane = new()
+		l_general = new()
+		client.screen += l_plane
+		client.screen += l_general
+		refresh_client_images()
+		reload_fullscreen() // Reload any fullscreen overlays this mob has.
 
 	if(config && config.use_cortical_stacks && client && client.prefs.has_cortical_stack)
 		create_stack()
@@ -1636,3 +1643,15 @@
 
 /mob/living/carbon/human/proc/get_cultural_value(var/token)
 	return cultural_info[token]
+
+/mob/living/carbon/human/proc/handlecryo()
+	var/CS = list()
+	for(var/obj/machinery/cryopod/C in get_area(src))
+		CS += C
+
+	CS = shuffle(CS)
+	for(var/obj/machinery/cryopod/G in CS)
+		if(G.occupant)
+			continue
+		G.set_awakening_occupant(src)
+		break

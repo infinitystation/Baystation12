@@ -50,6 +50,7 @@
 	suits += /obj/item/clothing/under/lawyer/black
 	suits += /obj/item/clothing/under/suit_jacket/tan
 	suits += /obj/item/clothing/under/scratch
+	suits += /obj/item/clothing/under/bluetunic_regular
 	suits += /obj/item/clothing/under/lawyer/bluesuit
 	suits += /obj/item/clothing/under/rank/internalaffairs/plain
 	suits += /obj/item/clothing/under/blazer
@@ -86,6 +87,7 @@
 	dresses += /obj/item/clothing/under/dress/dress_purple
 	dresses += /obj/item/clothing/under/sundress
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(dresses)
+//  dresses += /obj/item/clothing/under/dress/dress_red //warfoxy's custom item
 
 /datum/gear/uniform/cheongsam
 	display_name = "cheongsam, colour select"

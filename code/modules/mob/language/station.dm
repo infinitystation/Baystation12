@@ -1,9 +1,9 @@
 /datum/language/diona
 	name = LANGUAGE_ROOTLOCAL
 	desc = "A complex language known instinctively by Dionaea, 'spoken' by emitting modulated radio waves. This version uses high frequency waves for quick communication at short ranges."
-	speech_verb = "creaks and rustles"
-	ask_verb = "creaks"
-	exclaim_verb = "rustles"
+	speech_verb = "шуршит"
+	ask_verb = "скрипит"
+	exclaim_verb = "шелестит"
 	colour = "soghun"
 	key = "q"
 	flags = RESTRICTED
@@ -25,9 +25,9 @@
 /datum/language/unathi
 	name = LANGUAGE_UNATHI
 	desc = "The common language of Moghes, composed of sibilant hisses and rattles. Spoken natively by Unathi."
-	speech_verb = "hisses"
-	ask_verb = "hisses"
-	exclaim_verb = "roars"
+	speech_verb = "шипит"
+	ask_verb = "шипит"
+	exclaim_verb = "грозно рычит"
 	colour = "soghun"
 	key = "o"
 	flags = WHITELISTED
@@ -46,9 +46,9 @@
 /datum/language/tajaran
 	name = LANGUAGE_SIIK_MAAS
 	desc = "The traditionally employed tongue of Ahdomai, composed of expressive yowls and chirps. Native to the Tajaran."
-	speech_verb = "mrowls"
-	ask_verb = "mrowls"
-	exclaim_verb = "yowls"
+	speech_verb = "мурчит"
+	ask_verb = "мурчит"
+	exclaim_verb = "воет"
 	colour = "tajaran"
 	key = "j"
 	flags = WHITELISTED
@@ -70,9 +70,9 @@
 /datum/language/skrell
 	name = LANGUAGE_SKRELLIAN
 	desc = "A melodic and complex language spoken by the Skrell of Qerrbalak. Some of the notes are inaudible to humans."
-	speech_verb = "warbles"
-	ask_verb = "warbles"
-	exclaim_verb = "warbles"
+	speech_verb = "поет"
+	ask_verb = "поет"
+	exclaim_verb = "поет"
 	colour = "skrell"
 	key = "k"
 	flags = WHITELISTED
@@ -82,8 +82,8 @@
 /datum/language/human
 	name = LANGUAGE_SOL_COMMON
 	desc = "A bastardized hybrid of informal English and elements of Mandarin Chinese; the common language of the Sol system."
-	speech_verb = "says"
-	whisper_verb = "whispers"
+	speech_verb = "говорит"
+	whisper_verb = "шепчет"
 	colour = "solcom"
 	key = "1"
 	shorthand = "Sol"
@@ -93,7 +93,7 @@
 /datum/language/human/get_spoken_verb(var/msg_end)
 	switch(msg_end)
 		if("!")
-			return pick("exclaims","shouts","yells") //TODO: make the basic proc handle lists of verbs.
+			return pick("восклицает")
 		if("?")
 			return ask_verb
 	return speech_verb
@@ -110,9 +110,9 @@
 /datum/language/machine
 	name = LANGUAGE_EAL
 	desc = "An efficient language of encoded tones developed by synthetics and cyborgs."
-	speech_verb = "whistles"
-	ask_verb = "chirps"
-	exclaim_verb = "whistles loudly"
+	speech_verb = "свистит"
+	ask_verb = "щебечет"
+	exclaim_verb = "громко свистит"
 	colour = "changeling"
 	key = "6"
 	flags = NO_STUTTER
@@ -131,9 +131,9 @@
 /datum/language/resomi
 	name = LANGUAGE_RESOMI
 	desc = "A trilling language spoken by the diminutive Resomi."
-	speech_verb = "chirps"
-	ask_verb = "chirrups"
-	exclaim_verb = "trills"
+	speech_verb = "щебечет"
+	ask_verb = "чирикает"
+	exclaim_verb = "верещит"
 	colour = "alien"
 	key = "e"
 	flags = WHITELISTED
@@ -211,7 +211,7 @@
 /datum/language/tajsign
 	name = LANGUAGE_SIIK_TAJR
 	desc = "A type of sign language mostly based on tail movements that was used during the Tajaran rebellion."
-	signlang_verb = list("uses their tail to convey", "gestures with their tail", "gestures with their tail elaborately")
+	signlang_verb = list("делает пасы хвостом", "жестикулирует хвостом", "искусно жестикулирует хвостом")
 	colour = "tajaran"
 	key = "l"
 	flags = WHITELISTED | SIGNLANG | NO_STUTTER | NONVERBAL
@@ -220,7 +220,7 @@
 /datum/language/confederate
 	name = LANGUAGE_INDEPENDENT
 	desc = "The official language of the Terran Colonial Confederation, evolved from a pidgin of Eastern European languages and English."
-	speech_verb = "speaks"
+	speech_verb = "проговаривает"
 	colour = "terran"
 	key = "r"
 	syllables = list("rus","zem","ave","groz","ski","ska","ven","konst","pol","lin","svy",
@@ -231,7 +231,7 @@
 /datum/language/nabber
 	name = LANGUAGE_NABBER
 	desc = "A strange language that can be understood both by the sounds made and by the movement needed to create those sounds."
-	signlang_verb = list("chitters", "grinds its mouthparts", "chitters and grinds its mouthparts")
+	signlang_verb = list("скрипит", "перемалывает жвалами", "скрипит и перемалывает жвалами")
 	key = "n"
 	flags = WHITELISTED | SIGNLANG | NO_STUTTER | NONVERBAL
 	colour = ".nabber_lang"
@@ -256,9 +256,9 @@
 /datum/language/yeosa
 	name = LANGUAGE_YEOSA
 	desc = "A language of Moghes consisting of a combination of spoken word and gesticulation. While it is uncommonly spoken in the drier regions, it enjoys popular usage as the official tongue of the Yeosa clans."
-	speech_verb = "hisses"
-	ask_verb = "rattles"
-	exclaim_verb = "barks"
+	speech_verb = "шипит"
+	ask_verb = "трещит"
+	exclaim_verb = "рявкает"
 	colour = "yeosa"
 	key = "h"
 	flags = WHITELISTED

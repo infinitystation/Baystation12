@@ -92,6 +92,7 @@
 	img.color = "#ffffff"
 	img.alpha = silicate * 255 / 100
 	overlays += img
+	update_icon()
 
 /obj/structure/window/proc/shatter(var/display_message = 1)
 	playsound(src, "shatter", 70, 1)
@@ -251,7 +252,7 @@
 			else
 				new glasstype(loc)
 			qdel(src)
-	else if(isCoil(W) && reinf && !polarized)
+	else if(isCoil(W) && reinf && !polarized && glasstype != /obj/item/stack/material/glass/phoronrglass)
 		var/obj/item/stack/cable_coil/C = W
 		if (C.use(1))
 			playsound(src.loc, 'sound/effects/sparks1.ogg', 75, 1)
@@ -509,6 +510,9 @@
 /obj/structure/window/reinforced/full
 	dir = 5
 	icon_state = "rwindow_full"
+
+/obj/structure/window/reinforced/bar
+	color = COLOR_BROWN
 
 /obj/structure/window/reinforced/tinted
 	name = "tinted window"

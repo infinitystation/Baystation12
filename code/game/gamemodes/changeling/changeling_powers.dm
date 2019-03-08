@@ -848,10 +848,15 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	if(!changeling) return 0
 	changeling.chem_charges -= 40
 
-	for(var/obj/machinery/light/L in range(5, usr))
-		L.flicker()
-		if(prob(30))
-			L.on = 1
-			L.broken()
-	empulse(get_turf(usr), 2, 4, 1)
+	if(ishuman(usr))
+		var/mob/living/carbon/human/H = usr
+		if(!H.is_ventcrawling)
+			for(var/obj/machinery/light/L in range(5, usr))
+				L.flicker()
+				if(prob(30))
+					L.on = 1
+					L.broken()
+			empulse(get_turf(usr), 2, 4, 1)
+		else
+			to_chat(src, "<span class='notice'>We cannot do this in vents...</span>")
 	return 1

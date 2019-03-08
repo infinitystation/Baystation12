@@ -23,17 +23,17 @@
 /obj/machinery/sleeper/Initialize()
 	. = ..()
 	component_parts = list(
-		new /obj/item/weapon/circuitboard/sleeper(src),
-		new /obj/item/weapon/stock_parts/scanning_module(src),
-		new /obj/item/weapon/stock_parts/manipulator(src),
-		new /obj/item/weapon/stock_parts/manipulator(src),
-		new /obj/item/weapon/stock_parts/console_screen(src),
-		new /obj/item/weapon/reagent_containers/syringe(src),
-		new /obj/item/weapon/reagent_containers/syringe(src),
-		new /obj/item/weapon/reagent_containers/glass/beaker/large(src))
+		new /obj/item/weapon/circuitboard/sleeper,
+		new /obj/item/weapon/stock_parts/scanning_module,
+		new /obj/item/weapon/stock_parts/manipulator,
+		new /obj/item/weapon/stock_parts/manipulator,
+		new /obj/item/weapon/stock_parts/console_screen,
+		new /obj/item/weapon/reagent_containers/syringe,
+		new /obj/item/weapon/reagent_containers/syringe,
+		new /obj/item/weapon/reagent_containers/glass/beaker/large)
 	RefreshParts()
 
-	beaker = new /obj/item/weapon/reagent_containers/glass/beaker/large(src)
+	beaker = locate(/obj/item/weapon/reagent_containers/glass/beaker/large) in component_parts
 	update_icon()
 
 /obj/machinery/sleeper/RefreshParts()
@@ -182,7 +182,13 @@
 	else
 		..()
 
+/obj/machinery/sleeper/dismantle()
+	go_out()
+	..()
+
 /obj/machinery/sleeper/MouseDrop_T(var/mob/target, var/mob/user)
+	if(..()) //anti-ghost
+		return
 	if(!CanMouseDrop(target, user))
 		return
 	if(!istype(target))
@@ -256,7 +262,10 @@
 		occupant.client.eye = occupant.client.mob
 		occupant.client.perspective = MOB_PERSPECTIVE
 	if(occupant.loc == src)
-		occupant.dropInto(loc)
+		if(not_turf_contains_dense_objects(get_turf(get_step(loc, dir))))
+			occupant.forceMove(get_step(loc, dir))
+		else
+			occupant.forceMove(loc)
 	occupant = null
 
 	for(var/obj/O in (contents - component_parts)) // In case an object was dropped inside or something. Excludes the beaker and component parts.

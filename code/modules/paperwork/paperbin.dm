@@ -1,6 +1,6 @@
 /obj/item/weapon/paper_bin
 	name = "paper bin"
-	icon = 'icons/obj/bureaucracy_inf.dmi'
+	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "paper_bin1"
 	item_state = "sheet-metal"
 	randpixel = 0
@@ -32,6 +32,9 @@
 	return
 
 /obj/item/weapon/paper_bin/attack_hand(mob/user as mob)
+	if(!istype(loc, /turf) && user.a_intent != I_GRAB)
+		..()
+		return
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/obj/item/organ/external/temp = H.organs_by_name[BP_R_HAND]

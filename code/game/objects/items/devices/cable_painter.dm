@@ -1,7 +1,7 @@
 obj/item/device/cable_painter
 	name = "cable painter"
 	desc = "A device for repainting cables."
-	icon = 'icons/obj/bureaucracy_inf.dmi'
+	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "labeler0"
 	item_state = "flight"
 	var/color_selection

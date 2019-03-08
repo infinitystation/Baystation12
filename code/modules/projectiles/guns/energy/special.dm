@@ -115,7 +115,7 @@
 /obj/item/weapon/gun/energy/meteorgun/pen
 	name = "meteor pen"
 	desc = "The pen is mightier than the sword."
-	icon = 'icons/obj/bureaucracy_inf.dmi'
+	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "pen"
 	item_state = "pen"
 	w_class = ITEM_SIZE_TINY

@@ -140,7 +140,8 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 
 	for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
 		var/obj/item/modular_computer/pda/pda = locate() in H
-		if(!pda)
+		var/obj/item/device/radio/headset/hs = locate() in H
+		if(!pda && !hs)
 			continue
 
 		var/datum/job/J = job_master.GetJob(H.get_authentification_rank())
@@ -148,8 +149,12 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 			continue
 
 		if(J.department_flag & department)
-			to_chat(H, "<span class='notice'>Your [pda.name] alerts you to the fact that somebody is requesting your presence at your department.</span>")
-			reached++
+			if(pda)
+				to_chat(H, "<span class='notice'>Your [pda.name] alerts you to the fact that somebody is requesting your presence at your department.</span>")
+				reached++
+			else if(hs && hs.listening)
+				to_chat(H, "<span class='notice'>Your [hs.name] vibrates and alerts you to the fact that somebody is requesting your presence at your department.</span>")
+				reached++
 
 	return reached
 

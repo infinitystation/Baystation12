@@ -26,13 +26,13 @@
 
 /datum/gear/tactical/holster
 	allowed_roles = ARMED_ROLES
-
+/*
 /datum/gear/tactical/pcarrier_press
 	display_name = "journalist's plate carrier"
 	path = /obj/item/clothing/suit/armor/pcarrier/light/press
 	cost = 3
-	allowed_roles = list("Journalist")
-
+	allowed_roles = list("Journalist") //etc.broken
+*/
 /datum/gear/tactical/pcarrier
 	display_name = "empty plate carriers selection"
 	path = /obj/item/clothing/suit/armor/pcarrier

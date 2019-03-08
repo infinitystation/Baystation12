@@ -3,6 +3,7 @@
 	desc = "Used to control a linked teleportation hub and station."
 	icon_keyboard = "teleport_key"
 	icon_screen = "teleport"
+	dir = 2
 	circuit = /obj/item/weapon/circuitboard/teleporter
 	var/obj/machinery/teleport/station/station = null
 	var/obj/machinery/teleport/hub/hub = null
@@ -11,27 +12,23 @@
 	var/one_time_use = 0 //Used for one-time-use teleport cards (such as clown planet coordinates.)
 						 //Setting this to 1 will set src.locked to null after a player enters the portal and will not allow hand-teles to open portals to that location.
 
-/obj/machinery/computer/teleporter/New()
-	src.id = "[random_id(/obj/machinery/computer/teleporter, 1000, 9999)]"
-	..()
-	underlays.Cut()
-	underlays += image('icons/obj/stationobjs.dmi', icon_state = "telecomp-wires")
-	return
-
 /obj/machinery/computer/teleporter/Initialize()
 	. = ..()
-	station = locate(/obj/machinery/teleport/station, get_step(src, turn(dir, 90)))
-	if(station)
-		hub = locate(/obj/machinery/teleport/hub, get_step(station, turn(dir, 90)))
+	src.id = "[random_id(/obj/machinery/computer/teleporter, 1000, 9999)]"
+	underlays.Cut()
+	underlays += image('icons/obj/stationobjs.dmi', icon_state = "telecomp-wires")
+	connect_console()
+	return
 
-	if(istype(station))
-		station.hub = hub
-		station.com = src
-		station.set_dir(dir)
-
-	if(istype(hub))
-		hub.com = src
-		hub.set_dir(dir)
+/obj/machinery/computer/teleporter/proc/connect_console()
+	for(var/dir in list(NORTH,EAST,SOUTH,WEST))
+		station = locate(/obj/machinery/teleport/station, get_step(src, dir))
+		if(station)
+			station.com = src
+			hub = station.hub
+			if(hub && !hub.com)
+				hub.com = src
+			break
 
 /obj/machinery/computer/teleporter/power_change()
 	. = ..()
@@ -201,16 +198,49 @@
 	name = "teleporter hub"
 	desc = "It's the hub of a teleporting machine."
 	icon_state = "tele0"
-	dir = 4
+	dir = 2
+	density = 0
 	use_power = 1
 	idle_power_usage = 10
 	active_power_usage = 2000
 	var/obj/machinery/computer/teleporter/com
+	var/obj/machinery/teleport/station/station
 
-/obj/machinery/teleport/hub/New()
-	..()
+/obj/machinery/teleport/hub/Initialize()
+	. = ..()
 	underlays.Cut()
 	underlays += image('icons/obj/stationobjs.dmi', icon_state = "tele-wires")
+	connect_hub()
+	component_parts = list(
+		new /obj/item/weapon/circuitboard/teleporter_hub(src),
+		new /obj/item/weapon/stock_parts/micro_laser/ultra(src),
+		new /obj/item/weapon/stock_parts/micro_laser/ultra(src),
+		new /obj/item/weapon/stock_parts/micro_laser/ultra(src),
+		new /obj/item/weapon/stock_parts/micro_laser/ultra(src),
+		new /obj/item/bluespace_crystal/artificial(src),
+		new /obj/item/bluespace_crystal/artificial(src),
+		new /obj/item/bluespace_crystal/artificial(src),
+		new /obj/item/bluespace_crystal/artificial(src))
+
+/obj/machinery/teleport/hub/proc/connect_hub()
+	for(var/dir in list(NORTH,EAST,SOUTH,WEST))
+		station = locate(/obj/machinery/teleport/station, get_step(src, dir))
+		if(station)
+			station.hub = src
+			com = station.com
+			if(com && !com.hub)
+				com.hub = src
+			break
+
+/obj/machinery/teleport/hub/attackby(var/obj/item/weapon/W, var/mob/user)
+	if(station && station.engaged)
+		return
+	if(default_deconstruction_screwdriver(user, W))
+		return
+	if(default_deconstruction_crowbar(user, W))
+		return
+	if(default_part_replacement(user, W))
+		return
 
 /obj/machinery/teleport/hub/Bumped(M as mob|obj)
 	spawn()
@@ -234,21 +264,50 @@
 	name = "station"
 	desc = "It's the station thingy of a teleport thingy." //seriously, wtf.
 	icon_state = "controller"
-	dir = 4
+	dir = 2
 	var/engaged = 0
 	use_power = 1
 	idle_power_usage = 10
 	active_power_usage = 2000
-	var/obj/machinery/computer/teleporter/com
 	var/obj/machinery/teleport/hub/hub
+	var/obj/machinery/computer/teleporter/com
 
-/obj/machinery/teleport/station/New()
-	..()
+/obj/machinery/teleport/station/Initialize()
+	. = ..()
 	overlays.Cut()
 	overlays += image('icons/obj/stationobjs.dmi', icon_state = "controller-wires")
+	component_parts = list(
+		new /obj/item/weapon/circuitboard/teleporter_station(src),
+		new /obj/item/weapon/stock_parts/manipulator/pico(src),
+		new /obj/item/weapon/stock_parts/scanning_module/phasic(src),
+		new /obj/item/weapon/stock_parts/scanning_module/phasic(src),
+		new /obj/item/weapon/stock_parts/subspace/filter(src),
+		new /obj/item/weapon/stock_parts/subspace/analyzer(src),
+		new /obj/item/weapon/stock_parts/subspace/transmitter(src))
+	connect_station()
+
+/obj/machinery/teleport/station/proc/connect_station()
+	for(var/dir in list(NORTH,EAST,SOUTH,WEST))
+		com = locate(/obj/machinery/computer/teleporter, get_step(src, dir))
+		if(com)
+			if(!com.station)
+				com.station = src
+			if(!com.hub)
+				com.hub = hub
+		hub = locate(/obj/machinery/teleport/hub, get_step(src, dir))
+		if(hub)
+			if(!hub.com)
+				hub.com = com
 
 /obj/machinery/teleport/station/attackby(var/obj/item/weapon/W, var/mob/user)
-	attack_hand(user)
+	if(engaged)
+		return
+	if(default_deconstruction_screwdriver(user, W))
+		return
+	if(default_deconstruction_crowbar(user, W))
+		return
+	if(default_part_replacement(user, W))
+		return
 
 /obj/machinery/teleport/station/attack_ai(var/mob/user)
 	attack_hand(user)
@@ -264,17 +323,18 @@
 	if(stat & (BROKEN|NOPOWER))
 		return
 
-	if (!(com && com.locked))
+	if (com && !com.locked)
 		audible_message("<span class='warning'>Failure: Cannot authenticate locked on coordinates. Please reinstate coordinate matrix.</span>")
 		return
 
 	if (hub)
 		hub.icon_state = "tele1"
 		use_power(5000)
+		hub.density = 1
 		update_use_power(2)
 		hub.update_use_power(2)
 		audible_message("<span class='notice'>Teleporter engaged!</span>")
-	src.engaged = 1
+	engaged = 1
 	return
 
 /obj/machinery/teleport/station/proc/disengage()
@@ -284,9 +344,10 @@
 	if (hub)
 		hub.icon_state = "tele0"
 		hub.update_use_power(1)
+		hub.density = 0
 		update_use_power(1)
 		audible_message("<span class='notice'>Teleporter disengaged!</span>")
-	src.engaged = 0
+	engaged = 0
 	return
 
 /obj/machinery/teleport/station/Destroy()

@@ -63,7 +63,7 @@
 /decl/hierarchy/supply_pack/materials/plasteel10
 	name = "10 plasteel sheets"
 	contains = list(/obj/item/stack/material/plasteel/ten)
-	cost = 10
+	cost = 30
 	containername = "plasteel sheets crate"
 
 /decl/hierarchy/supply_pack/materials/ocp10
@@ -75,29 +75,29 @@
 /decl/hierarchy/supply_pack/materials/phoron10
 	name = "10 phoron sheets"
 	contains = list(/obj/item/stack/material/phoron/ten)
-	cost = 20 // When sold yields 67 points.
+	cost = 50 // When sold yields 67 points.
 	containername = "phoron sheets crate"
 
 /decl/hierarchy/supply_pack/materials/gold10
 	name = "10 gold sheets"
 	contains = list(/obj/item/stack/material/gold/ten)
-	cost = 20
+	cost = 90
 	containername = "gold sheets crate"
 
 /decl/hierarchy/supply_pack/materials/silver10
 	name = "10 silver sheets"
 	contains = list(/obj/item/stack/material/silver/ten)
-	cost = 20
+	cost = 60
 	containername = "silver sheets crate"
 
 /decl/hierarchy/supply_pack/materials/uranium10
 	name = "10 uranium sheets"
 	contains = list(/obj/item/stack/material/uranium/ten)
-	cost = 20
+	cost = 70
 	containername = "uranium sheets crate"
 
 /decl/hierarchy/supply_pack/materials/diamond10
 	name = "10 diamond sheets"
 	contains = list(/obj/item/stack/material/diamond/ten)
-	cost = 20
+	cost = 100
 	containername = "diamond sheets crate"

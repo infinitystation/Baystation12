@@ -105,6 +105,7 @@
 		/decl/emote/audible/clap,
 		/decl/emote/audible/chuckle,
 		/decl/emote/audible/cough,
+		/decl/emote/audible/choke,
 		/decl/emote/audible/cry,
 		/decl/emote/audible/sigh,
 		/decl/emote/audible/laugh,

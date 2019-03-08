@@ -52,6 +52,9 @@ var/list/ai_verbs_default = list(
 	status_flags = CANSTUN|CANPARALYSE|CANPUSH
 	shouldnt_see = list(/obj/effect/rune)
 	maxHealth = 200
+	mob_bump_flag = ROBOT
+	mob_swap_flags = ROBOT|MONKEY|SLIME|SIMPLE_ANIMAL
+	mob_push_flags = ~HEAVY //trundle trundle
 	var/list/network = list("Exodus")
 	var/obj/machinery/camera/camera = null
 	var/list/connected_robots = list()
@@ -210,7 +213,7 @@ var/list/ai_verbs_default = list(
 	if (GLOB.malf && !(mind in GLOB.malf.current_antagonists))
 		show_laws()
 		to_chat(src, "<b>Данные законы могут быть изменены другими игроками или в том случае, если вы &#255;вл&#255;етесь сбойным ИИ.</b>")
-		to_chat(src, "<span class='danger'><B>Внимание! Разработчиками Искусственного Интеллекта были введены специальные протоколы! Ознакомление с оными возможно на следующей странице: https://wiki.infinity-ss13.info/index.php?title=SCG_AI_Rules_and_Regulations</b></span>")
+//		to_chat(src, "<span class='danger'><B>Внимание! Разработчиками Искусственного Интеллекта были введены специальные протоколы! Ознакомление с оными возможно на следующей странице: https://wiki.infinity-ss13.info/index.php?title=SCG_AI_Rules_and_Regulations</b></span>")
 
 	job = "AI"
 	setup_icon()

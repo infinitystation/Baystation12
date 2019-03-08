@@ -313,7 +313,7 @@
 /obj/item/clothing/glasses/sunglasses/blindfold/tape
 	name = "length of tape"
 	desc = "It's a robust DIY blindfold!"
-	icon = 'icons/obj/bureaucracy_inf.dmi'
+	icon = 'icons/obj/bureaucracy.dmi'
 	action_button_name = null
 	icon_state = "tape_cross"
 	item_state = null

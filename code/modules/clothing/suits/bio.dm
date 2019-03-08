@@ -2,6 +2,10 @@
 /obj/item/clothing/head/bio_hood
 	name = "bio hood"
 	icon_state = "bio"
+	icon = 'icons/obj/clothing/infinity/hats.dmi'
+	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi',
+		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_hats.dmi',
+		slot_r_hand_str = 'icons/mob/onmob/items/righthand_hats.dmi',)
 	item_state_slots = list(
 		slot_l_hand_str = "bio_hood",
 		slot_r_hand_str = "bio_hood",
@@ -18,6 +22,8 @@
 	name = "bio suit"
 	desc = "A suit that protects against biological contamination."
 	icon_state = "bio"
+	icon = 'icons/obj/clothing/infinity/suits.dmi'
+	item_icons = list(slot_wear_suit_str = 'icons/mob/infinity/suits.dmi')
 	item_state_slots = list(
 		slot_l_hand_str = "bio_suit",
 		slot_r_hand_str = "bio_suit",
@@ -97,6 +103,8 @@
 /obj/item/clothing/suit/bio_suit/plaguedoctorsuit
 	name = "Plague doctor suit"
 	desc = "It protected doctors from the Black Death, back then. You bet your arse it's gonna help you against viruses."
+	icon = 'icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'icons/mob/onmob/onmob_suit.dmi')
 	icon_state = "plaguedoctor"
 	//item_state = "bio_suit"
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL

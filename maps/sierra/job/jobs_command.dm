@@ -28,10 +28,7 @@
 							 /datum/computer_file/program/reports)
 
 	required_education = EDUCATION_TIER_BACHELOR
-
-
-/datum/job/captain/get_description_blurb()
-	return "You are the Captain. You are the top dog. You are an experienced professional officer in control of an entire ship, and ultimately responsible for all that happens onboard. Your job is to make sure [GLOB.using_map.full_name] fulfils its space exploration mission. Delegate to your Head of Personnel, your department heads, and your Senior Enlisted Advisor to effectively manage the ship, and listen to and trust their expertise."
+	maximum_education = EDUCATION_TIER_DOCTORATE
 
 /datum/job/hop
 	title = "Head of Personnel"
@@ -53,7 +50,7 @@
 
 	skill_points = 16
 
-	access = list(		access_security, access_brig, access_armory, access_forensics_lockers, access_heads,
+	access = list(		access_seceva, access_guard, access_security, access_brig, access_armory, access_forensics_lockers, access_heads,
 			            access_medical, access_morgue, access_engine, access_engine_equip, access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_change_ids, access_ai_upload, access_teleporter, access_eva, access_bridge,
 			            access_all_personal_lockers, access_chapel_office, access_tech_storage, access_atmospherics, access_bar, access_janitor, access_crematorium, access_robotics,
@@ -73,9 +70,7 @@
 							 /datum/computer_file/program/reports)
 
 	required_education = EDUCATION_TIER_BACHELOR
-
-/datum/job/hop/get_description_blurb()
-	return "You are the Head of Personnel. You are an experienced senior officer, second in command of the ship, and are responsible for the smooth operation of the ship under your Captain. In his absence, you are expected to take his place. Your primary duty is directly managing department heads and all those outside a department heading. You are also responsible for the contractors and passengers aboard the ship. Consider the Senior Enlisted Advisor and Bridge Officers tools at your disposal."
+	maximum_education = EDUCATION_TIER_MASTERS
 
 /datum/job/rd
 	title = "Research Director"
@@ -121,9 +116,6 @@
 
 	required_education = EDUCATION_TIER_DOCTORATE
 
-/datum/job/rd/get_description_blurb()
-	return "You are the Research Director. You are responsible for the research department. You handle both the science part of the mission but are also responsible for ensuring Nanotrasen's interests along with your Nanotrasen iaa. Make sure science gets done, do some yourself, and get your prospectors and scientists on away missions to find things to benefit NT. Don't put NT's position on board in jeopardy.  Advise the Captain on science matters."
-
 /datum/job/cmo
 	title = "Chief Medical Officer"
 	supervisors = "the Captain and the Head of Personnel"
@@ -167,9 +159,6 @@
 							 /datum/computer_file/program/reports)
 
 	required_education = EDUCATION_TIER_MEDSCHOOL
-
-/datum/job/cmo/get_description_blurb()
-	return "You are the Chief Medical Officer. You manage the medical department. You ensure all members of medical are skilled, tasked and handling their duties. Ensure your doctors are staffing your infirmary and your corpsman/paramedics are ready for response. Act as a second surgeon or backup chemist in the absence of either. You are expected to know medical very well, along with general regulations."
 
 /datum/job/chief_engineer
 	title = "Chief Engineer"
@@ -223,9 +212,6 @@
 	required_education = EDUCATION_TIER_MASTERS
 	maximum_education = EDUCATION_TIER_DOCTORATE
 
-/datum/job/chief_engineer/get_description_blurb()
-	return "You are the Chief Engineer. You manage the Engineering Department. You are responsible for the Senior engineer, who is your right hand and (should be) an experienced, skilled engineer. Delegate to and listen to them. Manage your engineers, ensure vessel power stays on, breaches are patched and problems are fixed. Advise the Captain on engineering matters. You are also responsible for the maintenance and control of any vessel synthetics. You are an experienced engineer with a wealth of theoretical knowledge. You should also know vessel regulations to a reasonable degree."
-
 /datum/job/hos
 	title = "Head of Security"
 	supervisors = "the Captain and the Head of Personnel"
@@ -252,7 +238,7 @@
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	skill_points = 25
 
-	access = list(	access_security, access_medical, access_brig, access_armory, access_forensics_lockers,
+	access = list(	access_seceva, access_guard, access_security, access_medical, access_brig, access_armory, access_forensics_lockers,
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_teleporter, access_eva, access_bridge, access_heads,
 			            access_hos, access_RC_announce, access_keycard_auth, access_sec_doors,
@@ -266,9 +252,6 @@
 
 	required_education = EDUCATION_TIER_BACHELOR
 	maximum_education = EDUCATION_TIER_MASTERS
-
-/datum/job/hos/get_description_blurb()
-	return "You are the Head of Security. You manage ship security. The Masters at Arms and the Military Police, as well as the Brig Officer and the Forensic Technician. You keep the vessel safe. You handle both internal and external security matters. You are the law. You are subordinate to the Captain and the HOP. You are expected to know the SCMJ and Sol law and Alert Procedure to a very high degree along with general regulations."
 
 /datum/job/iaa
 	title = "Internal Affairs Agent"
@@ -326,7 +309,7 @@
 	access = list(	access_security, access_medical, access_engine, access_maint_tunnels, access_emergency_storage,
 					access_heads, access_bridge, access_janitor, access_kitchen, access_cargo, access_RC_announce, access_keycard_auth,
 					access_guppy, access_guppy_helm, access_external_airlocks, access_expedition_shuttle,
-					access_eva, access_hangar, access_explorer, access_expedition_shuttle_helm)
+					access_eva, access_hangar, access_explorer, access_expedition_shuttle_helm, access_gun)
 
 	minimal_access = list()
 

@@ -1,21 +1,5 @@
-ckey-state
-paradoxspace-Styx 8*
-wrongendoftherainbow-SHARD
-nullsnapshot-Watson
-atlantiscze:AngelOS
-mechoid-Acheron 7*
-donofnyc3-N.O.S.E.
-silveryferret:Nikita
-papadrow-Minerva
-morguemeat-Shudder
-siegdermaus-E.M.M.A.
-cirra-Hedron
-thegreywolf-SABR
-danny220-Tin Can
-devildabeast-Persimmon
-wer6-Plut
-iloveapplepieman-Sgt. 0RI0N
 quardbreak-Bebop
-sosiskoed-Tallbot
 farwa87-K1M
 hodovoy-B-19K
+sosiskoed-SausageBot Mk.II
+sosiskoed-Tallbot

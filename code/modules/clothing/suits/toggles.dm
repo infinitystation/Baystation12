@@ -52,6 +52,8 @@
 			else
 				H.equip_to_slot_if_possible(hood,slot_head,0,0,1)
 				suittoggled = 1
+				hood.icon_state = "[icon_state]_hood"
+//				hood.item_state = "[icon_state]_hood"
 				update_icon()
 				H.update_inv_wear_suit()
 	else
@@ -80,7 +82,8 @@
 /obj/item/clothing/head/winterhood
 	name = "winter hood"
 	desc = "A hood attached to a heavy winter jacket."
-	icon_state = "generic_hood"
+	icon_state = "coatwinter_hood"
+	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
 	body_parts_covered = HEAD
 	cold_protection = HEAD
 	flags_inv = HIDEEARS | BLOCKHAIR

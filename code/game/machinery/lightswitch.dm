@@ -68,7 +68,8 @@
 	if(istype(tool, /obj/item/weapon/screwdriver))
 		new /obj/item/frame/light_switch(user.loc, 1)
 		qdel(src)
-
+	else
+		return attack_hand(user)
 
 /obj/machinery/light_switch/powered()
 	. = ..(power_channel, connected_area) //tie our powered status to the connected area

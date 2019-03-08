@@ -75,7 +75,7 @@
 	ks1type = /obj/item/device/encryptionkey/sierra_el
 
 /obj/item/device/radio/headset/exploration_leader/alt
-	name = "exploration_leader's bowman headset"
+	name = "exploration leader's bowman headset"
 	icon_state = "exp_headset_alt"
 	item_state = "exp_headset_alt"
 

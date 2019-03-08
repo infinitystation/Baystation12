@@ -1,8 +1,7 @@
 /obj/effect/overmap/ship/sierra
 	name = "NSV Sierra"
 	fore_dir = WEST
-	vessel_mass = 190
-	vessel_mass = 40000 // Масса Факела, надо будет - смените ~bear1ake
+	vessel_mass = 28000
 	start_x = 4
 	start_y = 5
 	base = TRUE

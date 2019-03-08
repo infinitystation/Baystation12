@@ -57,6 +57,7 @@
 	I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
 	I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
 	B.icon = I
+	B.w_class = w_class
 
 	if(rag && rag.on_fire && isliving(against))
 		rag.forceMove(loc)

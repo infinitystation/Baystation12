@@ -387,6 +387,7 @@
 	if(welding)
 		if((!waterproof && submerged()) || !remove_fuel(0.05))
 			setWelding(0)
+			set_light(0)
 
 /obj/item/weapon/weldingtool/afterattack(var/obj/O, var/mob/user, proximity)
 	if(!proximity)
@@ -503,6 +504,7 @@
 				to_chat(M, "<span class='notice'>You switch the [src] on.</span>")
 			else if(T)
 				T.visible_message("<span class='danger'>\The [src] turns on.</span>")
+			set_light(0.2, 0.1, 1, 1, LIGHT_COLOR_FLARE)
 			playsound(loc, acti_sound, 50, 1)
 			src.force = 15
 			src.damtype = "fire"
@@ -520,6 +522,7 @@
 			to_chat(M, "<span class='notice'>You switch \the [src] off.</span>")
 		else if(T)
 			T.visible_message("<span class='warning'>\The [src] turns off.</span>")
+		set_light(0)
 		playsound(loc, deac_sound, 50, 1)
 		src.force = 3
 		src.damtype = "brute"

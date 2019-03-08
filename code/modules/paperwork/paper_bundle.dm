@@ -1,7 +1,7 @@
 /obj/item/weapon/paper_bundle
 	name = "paper bundle"
 	gender = NEUTER
-	icon = 'icons/obj/bureaucracy_inf.dmi'
+	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "paper"
 	item_state = "paper"
 	randpixel = 8
@@ -65,7 +65,7 @@
 	var/sheet_name = istype(sheet, /obj/item/weapon/photo) ? "photo" : "sheet of paper"
 	bundle_name = (bundle_name == name) ? "the [bundle_name]" : name
 	sheet_name = (sheet_name == sheet.name) ? "the [sheet_name]" : sheet.name
-	
+
 	to_chat(user, "<span class='notice'>You add [sheet_name] to [bundle_name].</span>")
 	pages.Insert(index, sheet)
 	if(index <= page)
@@ -215,7 +215,7 @@
 	var/i = 0
 	var/photo
 	for(var/obj/O in src)
-		var/image/img = image('icons/obj/bureaucracy_inf.dmi')
+		var/image/img = image('icons/obj/bureaucracy.dmi')
 		if(istype(O, /obj/item/weapon/paper))
 			img.icon_state = O.icon_state
 			img.pixel_x -= min(1*i, 2)
@@ -235,5 +235,5 @@
 		desc = "A single sheet of paper."
 	if(photo)
 		desc += "\nThere is a photo attached to it."
-	overlays += image('icons/obj/bureaucracy_inf.dmi', "clip")
+	overlays += image('icons/obj/bureaucracy.dmi', "clip")
 	return

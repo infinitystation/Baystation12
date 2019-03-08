@@ -80,7 +80,7 @@
 
 	if(!can_open)
 		to_chat(user, "<span class='notice'>You push \the [src], but nothing happens.</span>")
-		playsound(src, hitsound, 25, 1)
+		playsound(src, 'sound/weapons/thudswoosh.ogg', 25, 1)
 	else
 		toggle_open(user)
 	return 0
@@ -357,7 +357,7 @@
 		if(reinf_material)
 			dam_threshhold = ceil(max(dam_threshhold,reinf_material.integrity)/2)
 		var/dam_prob = min(100,material.hardness*1.5)
-		if(dam_prob < 100 && W.force > (dam_threshhold/10))
+		if((dam_prob < 100 && W.force > (dam_threshhold/10)) && !W.holographic)
 			playsound(src, 'sound/effects/metalhit.ogg', 50, 1)
 			if(!prob(dam_prob))
 				visible_message("<span class='danger'>\The [user] attacks \the [src] with \the [W] and it [material.destruction_desc]!</span>")

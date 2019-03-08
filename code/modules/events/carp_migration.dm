@@ -15,7 +15,7 @@
 	else
 		announcement = "Unknown biological [spawned_carp.len == 1 ? "entity has" : "entities have"] been detected near the [location_name()], please stand-by."
 */
-	GLOB.using_map.level_x_biohazard_announcement(6)
+	GLOB.using_map.level_x_biohazard_announcement(5)
 
 /datum/event/carp_migration/start()
 	if(severity == EVENT_LEVEL_MAJOR)

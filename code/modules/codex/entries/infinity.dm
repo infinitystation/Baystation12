@@ -11,3 +11,16 @@
 	lore_text = "Morally obsolete and replaced by a more compact and perfect personal computer, \
 	the wrist PDA has been used to this day as a cheap replacement for more expensive equipment in some small corporations, \
 	and sometimes for the sake of aesthetic pleasure of it's owner."
+
+/datum/codex_entry/floor_light
+	associated_paths = list(/obj/machinery/floor_light)
+	mechanics_text = "You can change it's color with a multitool."
+
+/datum/codex_entry/tape_roll
+	associated_paths = list(/obj/item/weapon/tape_roll)
+	mechanics_text = "¬ы можете сделать множество интересных вещей с помощью этого инструмента.\
+	ѕерсонажи: при выборе рта, глаз, кистей или другой части тела, происходит заклеивание,\
+	св€зывание или ремонт скафандра. ѕри взаимодействии с бумагой, последнюю можно закрепить на стене,\
+	но она не будет переноситьс между раундами. явл€етс€ одним из компонентов рельсотрона. \
+	¬месте с железным стержнем можно сделать самодельную медицинскую шину.\
+	ѕомимо прочего, ею можно заменить FixOVein и медикаменты при лечении артерий и внутренних органов."

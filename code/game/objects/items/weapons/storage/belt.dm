@@ -130,7 +130,8 @@
 		/obj/item/weapon/extinguisher/mini,
 		/obj/item/weapon/marshalling_wand,
 		/obj/item/weapon/hand_labeler,
-		/obj/item/clothing/gloves
+		/obj/item/clothing/gloves,
+		/obj/item/weapon/welder_tank
 		)
 
 
@@ -448,7 +449,7 @@
 	desc = "Can hold security gear like handcuffs and flashes, with more pouches for more storage."
 	icon_state = "swatbelt"
 	item_state = "swatbelt"
-	storage_slots = 9
+	storage_slots = 10
 
 /obj/item/weapon/storage/belt/waistpack
 	name = "waist pack"
@@ -471,4 +472,4 @@
 
 /obj/item/weapon/storage/belt/waistpack/big/New()
 	..()
-	slowdown_per_slot[slot_belt] = 3
+	slowdown_per_slot[slot_belt] = 0.5

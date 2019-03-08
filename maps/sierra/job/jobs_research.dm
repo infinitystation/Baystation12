@@ -21,6 +21,8 @@
 						access_expedition_shuttle, access_guppy, access_hangar, access_petrov, access_petrov_helm, access_guppy_helm)
 
 	minimal_access = list()
+  
+	skill_points = 24
 
 	min_skill = list(   SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMPUTER    = SKILL_BASIC,
@@ -31,8 +33,8 @@
 	                    SKILL_SCIENCE     = SKILL_ADEPT)
 
 	max_skill = list(   SKILL_DEVICES     = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
-	skill_points = 24
+	                    SKILL_SCIENCE     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX)
 
 	required_education = EDUCATION_TIER_DOCTORATE
 
@@ -58,7 +60,8 @@
 	                    SKILL_SCIENCE     = SKILL_ADEPT)
 
 	max_skill = list(   SKILL_DEVICES     = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
+	                    SKILL_SCIENCE     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX)
 
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/scientist
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
@@ -108,9 +111,6 @@
 	required_education = EDUCATION_TIER_TRADE
 	maximum_education = EDUCATION_TIER_DOCTORATE
 
-/datum/job/roboticist/get_description_blurb()
-	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics as well as the repair of all synthetic crew on board. You are also responsible for placing brains into MMI's and giving them bodies and the production of exosuits(mechs) for various departments. You answer to the Research Director."
-
 /datum/job/scientist_assistant
 	title = "Research Assistant"
 	department = "Science"
@@ -130,7 +130,8 @@
 		"Field Assistant")
 
 	max_skill = list(   SKILL_DEVICES     = SKILL_MAX,
-	                    SKILL_SCIENCE     = SKILL_MAX)
+	                    SKILL_SCIENCE     = SKILL_MAX,
+	                    SKILL_CHEMISTRY   = SKILL_MAX)
 
 	skill_points = 6
 

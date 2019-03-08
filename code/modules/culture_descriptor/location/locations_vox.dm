@@ -18,7 +18,6 @@
 	from progressing beyond the shroud and into more critical systems. By comparison to arkborn, they are quiet, self-supporting and \
 	independant, with few cares for clan politics, family squabbles, or contest challenges. They know their task is critical to \
 	the survival of the vox as a species, and next to that, tussling with your peers seems a bit immature."
-	secondary_langs = list(LANGUAGE_GALCOM, LANGUAGE_GUTTER)
 
 /decl/cultural_info/location/vox/ship
 	name = HOME_SYSTEM_VOX_SHIP
