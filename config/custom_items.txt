@@ -356,6 +356,30 @@ ckey: warfoxy
 character_name: Luxuria Cavalet
 item_path: /obj/item/clothing/under/dress/dress_red
 }
+{
+ckey: he11d1ver
+character_name: GFSTS-I
+item_path: /obj/item/weapon/clothingbag/heph_set
+req_access: 1
+}
+{
+ckey: cre77
+character_name: GFSTS-II
+item_path: /obj/item/weapon/clothingbag/heph_set
+req_access: 1
+}
+{
+ckey: forrya
+character_name: GFSTS-III
+item_path: /obj/item/weapon/clothingbag/heph_set
+req_access: 1
+}
+{
+ckey: s1334
+character_name: GFSTS-IV
+item_path: /obj/item/weapon/clothingbag/heph_set
+req_access: 1
+}
 
 #	MEDIUM ITEMS HERE (5-6)
 
