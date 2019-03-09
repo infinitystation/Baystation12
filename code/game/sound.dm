@@ -53,6 +53,7 @@ GLOBAL_LIST_INIT(switch_sound,list('sound/machines/switch1.ogg','sound/machines/
 GLOBAL_LIST_INIT(button_sound,list('sound/machines/button1.ogg','sound/machines/button2.ogg','sound/machines/button3.ogg','sound/machines/button4.ogg'))
 GLOBAL_LIST_INIT(chop_sound,list('sound/weapons/chop1.ogg','sound/weapons/chop2.ogg','sound/weapons/chop3.ogg'))
 GLOBAL_LIST_INIT(smash_sound,list('sound/effects/gore/smash1.ogg', 'sound/effects/gore/smash2.ogg', 'sound/effects/gore/smash3.ogg', 'sound/effects/gore/trauma1.ogg'))
+GLOBAL_LIST_INIT(heavystep_sound,list('sound/effects/x1.ogg','sound/effects/x2.ogg','sound/effects/x3.ogg','sound/effects/x4.ogg'))
 
 
 GLOBAL_LIST_INIT(unarmed_attack_sound,list('sound/effects/hit_kick.ogg', 'sound/effects/hit_punch.ogg'))
@@ -191,4 +192,5 @@ var/const/FALLOFF_SOUNDS = 0.5
 			if ("gunshot") soundin = pick(GLOB.gun_sound)
 			if ("chop") soundin = pick(GLOB.chop_sound)
 			if ("unarmed") soundin = pick(GLOB.unarmed_attack_sound)
+			if ("heavystep") soundin = pick(GLOB.heavystep_sound)
 	return soundin
