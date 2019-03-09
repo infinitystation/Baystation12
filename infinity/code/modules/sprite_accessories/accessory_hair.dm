@@ -1,4 +1,10 @@
 /datum/sprite_accessory/hair/infinity
+	name = "Wong"
+	icon = 'icons/mob/human_races/species/human/hair_infinity.dmi'
+	icon_state = "hair_wong_s"
+	gender = FEMALE
+
+/datum/sprite_accessory/hair/infinity
 	name = "Angel"
 	icon = 'icons/mob/human_races/species/human/hair_infinity.dmi'
 	icon_state = "hair_angel"
