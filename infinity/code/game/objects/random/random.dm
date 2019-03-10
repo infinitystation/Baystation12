@@ -6,7 +6,7 @@
 	spawn_nothing_percentage = 50
 
 /obj/random/trap/spawn_choices()
-	return list(/obj/item/weapon/beartrap/deployed = 4,
+	return list(/obj/item/weapon/beartrap/deployed = 3,
 				/obj/random/mine = 1) // Try randome
 
 /obj/random/mine/spawn_choices()
