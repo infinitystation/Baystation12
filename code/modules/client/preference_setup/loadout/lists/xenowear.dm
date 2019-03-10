@@ -368,6 +368,13 @@
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_RESOMI)
 
+/datum/gear/suit/resomi/New()
+	..()
+	var/resomi = list()
+	resomi["black cloak"] = /obj/item/clothing/suit/storage/toggle/Resomicoat
+	resomi["white cloak"] = /obj/item/clothing/suit/storage/toggle/Resomicoat/white
+	gear_tweaks += new/datum/gear_tweak/path(resomi)
+
 /datum/gear/suit/resomi_labcoat
 	display_name = "(Resomi) small labcoat"
 	path = /obj/item/clothing/suit/storage/toggle/Resomilabcoat

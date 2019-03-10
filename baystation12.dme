@@ -3058,6 +3058,7 @@
 #include "infinity\code\modules\clothing\under_xenos.dm"
 #include "infinity\code\modules\clothing\voidsuits.dm"
 #include "infinity\code\modules\clothing\xenos.dm"
+#include "infinity\code\modules\clothing\suits\alien.dm"
 #include "infinity\code\modules\culture_descriptor\culture\cultures.dm"
 #include "infinity\code\modules\culture_descriptor\culture\cultures_resomi.dm"
 #include "infinity\code\modules\culture_descriptor\culture\cultures_tajaran.dm"
