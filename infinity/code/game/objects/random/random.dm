@@ -6,7 +6,14 @@
 	spawn_nothing_percentage = 50
 
 /obj/random/trap/spawn_choices()
-	return list(/obj/item/weapon/beartrap/deployed = 1) //"random" :^)
+	return list(/obj/item/weapon/beartrap/deployed = 4,
+				/obj/random/mine = 1) // Try randome
+
+/obj/random/mine/spawn_choices()
+	return list(/obj/effect/mine/dnascramble = 1,
+				/obj/effect/mine/phoron = 1,
+				/obj/effect/mine/n2o = 2,
+				/obj/effect/mine/stun = 4)
 
 /obj/random/gloves/poor
 	name = "random poor gloves"

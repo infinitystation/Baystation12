@@ -146,6 +146,9 @@
 	name = "Commissary"
 	icon_state = "crew_quarters"
 
+/area/maintenance/abandoned_compartment
+	name = "unknown compartment"
+
 //First Deck (Z-3)
 /area/maintenance/firstdeck
 	name = "First Deck Maintenance"
