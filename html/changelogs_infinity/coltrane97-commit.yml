@@ -35,6 +35,8 @@ delete-after: True
 # Please surround your changes in  double quotes ("), as certain characters otherwise screws up compiling. The quotes will not show up in the changelog.
 changes: 
   - bugfix: "Пофикшены спрайты программ наручного КПК."
+  - rscadd: "Теперь Наручный КПК можно надеть на руку. (СЛОТ ПЕРЧАТОК)"
+  - balance: "Наручный КПК теперь разряжается также как и обычный."
   - maptweak: "В кабинет ХОП-а добавлен фотоаппарат в шкаф."
   - maptweak: "В РнД добавлена настенная аптечка."
   - rscadd: "Кастомка Форри возвращена."

@@ -9,11 +9,11 @@
 	icon_state_unpowered = "wrist"
 	hardware_flag = PROGRAM_PDA
 	max_hardware_size = 1
-	base_active_power_usage = 2
+	base_active_power_usage = 4
 	base_idle_power_usage = 0
 	w_class = ITEM_SIZE_SMALL
 	light_strength = 2
-	slot_flags = SLOT_ID
+	slot_flags = SLOT_ID | SLOT_GLOVES
 	stores_pen = TRUE
 	stored_pen = /obj/item/weapon/pen
 	receives_updates = FALSE
