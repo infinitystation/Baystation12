@@ -1,4 +1,4 @@
-/datum/sprite_accessory/hair/infinity
+/datum/sprite_accessory/hair/infinity/wong
 	name = "Wong"
 	icon = 'icons/mob/human_races/species/human/hair_infinity.dmi'
 	icon_state = "hair_wong_s"
