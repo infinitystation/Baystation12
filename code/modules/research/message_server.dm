@@ -139,6 +139,8 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 	var/reached = 0
 
 	for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
+		if(!(H in GLOB.using_map.station_levels))
+			continue
 		var/obj/item/modular_computer/pda/pda = locate() in H
 		var/obj/item/device/radio/headset/hs = locate() in H
 		if(!pda && !hs)
