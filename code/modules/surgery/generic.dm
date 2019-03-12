@@ -155,7 +155,7 @@
 /datum/surgery_step/generic/cut_open/success_chance(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
 	. = ..()
 	if(user.skill_check(SKILL_FORENSICS, SKILL_ADEPT))
-		. += 10
+		. += 10 * (user.get_skill_value(SKILL_FORENSICS) - SKILL_BASIC)
 
 //////////////////////////////////////////////////////////////////
 //	 bleeder clamping surgery step
