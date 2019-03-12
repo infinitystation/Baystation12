@@ -505,7 +505,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	C.emote("gasp")
 
 	spawn(rand(800,2000))
-		if(changeling_power(20,1,100,DEAD))
+		if(changeling_power(20,1,100,DEAD) && !(MUTATION_HUSK in C.mutations))
 			// charge the changeling chemical cost for stasis
 			changeling.chem_charges -= 20
 
@@ -520,6 +520,11 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	set name = "Revive"
 
 	var/mob/living/carbon/C = src
+	// If we were devoured
+	if(MUTATION_HUSK in C.mutations)
+		C.verbs -= /mob/proc/changeling_revive
+		C.ghostize()
+		return
 	// restore us to health
 	C.revive()
 	// remove our fake death flag
