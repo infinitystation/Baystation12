@@ -3074,6 +3074,7 @@
 #include "infinity\code\modules\culture_descriptor\location\locations_tajaran.dm"
 #include "infinity\code\modules\culture_descriptor\location\locations_unathi.dm"
 #include "infinity\code\modules\culture_descriptor\location\locations_vox.dm"
+#include "infinity\code\modules\mob\living\simple_animal\hostile\statue.dm"
 #include "infinity\code\modules\projectiles\gun.dm"
 #include "infinity\code\modules\projectiles\ammunition\boxes.dm"
 #include "infinity\code\modules\projectiles\ammunition\bullets.dm"
