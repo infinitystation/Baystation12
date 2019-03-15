@@ -238,7 +238,7 @@ datum/objective/hijack/check_completion()
 
 
 datum/objective/block
-	explanation_text = "Do not allow any organic lifeforms to escape on the shuttle alive."
+	explanation_text = "Do not allow any organic lifeforms to escape on the escape pods alive."
 
 
 	check_completion()
@@ -259,7 +259,7 @@ datum/objective/block
 		return 1
 
 datum/objective/silence
-	explanation_text = "Do not allow anyone to escape.  Only allow the shuttle to be called when everyone is dead and your story is the only one left."
+	explanation_text = "Do not allow anyone to escape.  Only allow the evacuation to be called when everyone is dead and your story is the only one left."
 
 	check_completion()
 		if(!evacuation_controller.has_evacuated())
@@ -277,7 +277,7 @@ datum/objective/silence
 
 
 datum/objective/escape
-	explanation_text = "Escape on the shuttle or an escape pod alive and free."
+	explanation_text = "Escape on the escape pod alive."
 
 
 datum/objective/escape/check_completion()
@@ -833,7 +833,7 @@ datum/objective/heist/salvage
 
 /datum/objective/cult/survive/New()
 	..()
-	explanation_text = "Our knowledge must live on. Make sure at least [target_amount] acolytes escape on the shuttle to spread their work elsewhere."
+	explanation_text = "Our knowledge must live on. Make sure at least [target_amount] acolytes stay alive until the end to spread their work elsewhere."
 
 /datum/objective/cult/survive/check_completion()
 	var/acolytes_survived = 0
