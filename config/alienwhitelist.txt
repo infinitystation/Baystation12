@@ -149,4 +149,5 @@ gumboldty - adherent
 kareta - adherent
 s1334 - adherent
 wolfetd - adherent
+hardstuck - adherent
 redknighthero - bionic
