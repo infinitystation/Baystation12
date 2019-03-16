@@ -71,3 +71,7 @@ proc/corrupt_name(n, s)
 		returnname += letter
 
 	return returnname
+
+proc/fix_html(var/t)
+	return replacetext(t, "ÿ", "&#1103;")
+

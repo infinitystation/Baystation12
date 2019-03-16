@@ -82,7 +82,8 @@ LOG_PERMISSIONS
 SQL_ENABLED 1
 
 ## disconnect players who did nothing during the set amount of minutes
-# KICK_INACTIVE 10
+## Infinity: we're using this for admins, players aren't kicking. Change inactivity.dm, if you want so.
+KICK_INACTIVE 15
 
 ## Chooses whether mods have the ability to tempban or not
 MODS_CAN_TEMPBAN
