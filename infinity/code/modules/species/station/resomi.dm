@@ -38,6 +38,9 @@
 	gluttonous = GLUT_TINY
 	blood_volume = 280
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 3
+	taste_sensitivity = TASTE_SENSITIVE
+	pulse_rate_mod = 1.5
+	body_temperature = 314.15
 
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_EYE_COLOR

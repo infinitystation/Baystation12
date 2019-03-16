@@ -1388,16 +1388,16 @@
 		if(PULSE_NONE)
 			return "0"
 		if(PULSE_SLOW)
-			temp = rand(40, 60)
+			temp = rand(40, 60) + 50 * (species.pulse_rate_mod - 1)
 		if(PULSE_NORM)
-			temp = rand(60, 90)
+			temp = rand(60, 90) + 75 * (species.pulse_rate_mod - 1)
 		if(PULSE_FAST)
-			temp = rand(90, 120)
+			temp = rand(90, 120) + 105 * (species.pulse_rate_mod - 1)
 		if(PULSE_2FAST)
-			temp = rand(120, 160)
+			temp = rand(120, 160) + 140 * (species.pulse_rate_mod - 1)
 		if(PULSE_THREADY)
 			return method ? ">250" : "extremely weak and fast, patient's artery feels like a thread"
-	return "[method ? temp : temp + rand(-10, 10)]"
+	return "[round(method ? temp : temp + rand(-10, 10))]"
 //			output for machines^	^^^^^^^output for people^^^^^^^^^
 
 /mob/living/carbon/human/proc/pulse()
