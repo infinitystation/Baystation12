@@ -135,7 +135,7 @@ world/IsBanned(key,address,computer_id)
 		if (C) //user is already connected!.
 			to_chat(C, "You are about to get disconnected for matching a sticky ban after you connected. If this turns out to be the ban evasion detection system going haywire, we will automatically detect this and revert the matches. if you feel that this is the case, please wait EXACTLY 6 seconds then reconnect using file -> reconnect to see if the match was reversed.")
 
-		var/desc = "\nReason:(StickyBan) You, or another user of this computer or connection ([bannedckey]) is banned from playing here. The ban reason is:\n[ban["message"]]\nThis ban was applied by [ban["admin"]]\nThis is a BanEvasion Detection System ban, if you think this ban is a mistake, please wait EXACTLY 6 seconds, then try again before filing an appeal.\n"
+		var/desc = "\nПричина:(Стикбан) Вы или другой пользователь этого устройства (или IP) с ником ([bannedckey]) были ограничены в доступе на сервер на неопределенный срок по причине:\n[ban["message"]]\n.  Выдавший блокировку: [ban["admin"]]\n. Если данная блокировка ошибочка, то обратитесь в раздел с судом на нашем дискорд-сервере.\n"
 		. = list("reason" = "Stickyban", "desc" = desc)
 		log_access("Failed Login: [key] [computer_id] [address] - StickyBanned [ban["message"]] Target Username: [bannedckey] Placed by [ban["admin"]]")
 

@@ -39,6 +39,9 @@
 
 	var/is_devouring = FALSE
 
+	var/fireloss = 0
+	var/bruteloss = 0
+
 /mob/living/simple_animal/hostile/true_changeling/Initialize()
 	. = ..()
 	if(prob(25))
@@ -57,6 +60,38 @@
 /mob/living/simple_animal/hostile/true_changeling/mind_initialize()
 	..()
 	mind.assigned_role = "Changeling"
+
+/mob/living/simple_animal/hostile/true_changeling/getFireLoss()
+	return fireloss
+
+/mob/living/simple_animal/hostile/true_changeling/getBruteLoss()
+	return bruteloss
+
+/mob/living/simple_animal/hostile/true_changeling/adjustFireLoss(var/amount)
+	fireloss = max(0, fireloss + min(amount, health))
+	updatehealth()
+
+/mob/living/simple_animal/hostile/true_changeling/adjustBruteLoss(var/amount)
+	bruteloss = max(0, bruteloss + min(amount, health))
+	updatehealth()
+
+/mob/living/simple_animal/hostile/true_changeling/updatehealth()
+	health = maxHealth - getFireLoss() - getBruteLoss()
+
+/mob/living/simple_animal/hostile/true_changeling/bullet_act(var/obj/item/projectile/proj)
+	if(!proj || proj.nodamage)
+		return
+
+	switch(proj.damage_type)
+		if(BRUTE)
+			adjustBruteLoss(proj.damage)
+		if(ELECTROCUTE)
+			adjustFireLoss(proj.damage)
+		if(BURN)
+			adjustFireLoss(proj.damage)
+
+	proj.on_hit(src)
+	updatehealth()
 
 /mob/living/simple_animal/hostile/true_changeling/death(gibbed)
 	..()

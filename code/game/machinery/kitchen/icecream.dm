@@ -14,6 +14,7 @@
 	desc = "A heavy metal container used to produce and store ice cream."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "icecream_vat"
+	layer = BELOW_OBJ_LAYER
 	density = 1
 	anchored = 0
 	use_power = 0

@@ -194,3 +194,50 @@ Any-Mode: (Режим хоткеев отключен)
 		to_chat(src, alarm)
 	if(holder)
 		to_chat(src, admin)
+
+
+//Вкладка Information
+/client/proc/show_info(var/source = "main")
+
+	var/dat = {"
+<html>
+<head>
+<title>[source]</title>
+<meta charset="windows-1251">
+<script>
+	function page_rules() 		{location.href='?_src_=main;informat=rules';}
+	function page_adrules() 	{location.href='?_src_=main;informat=adrules';}
+	function page_roleplay() 	{location.href='?_src_=main;informat=roleplay';}
+	function page_ban() 		{location.href='?_src_=main;informat=ban;';}
+</script>
+ </head>
+
+<body>
+<table><tr>
+<td width = 40>
+<td><input type="button" value="Правила сервера" 				id="button3_rules" onclick="page_rules()">			</td>
+<td><input type="button" value="Этикет администрации" 			id="button2_changelog" onclick="page_adrules()">	</td>
+<td><input type="button" value="Политика ролевой игры" 			id="button4_stories" onclick="page_roleplay()"		</td>
+<td align="right"><input type="button" value="Политика банов" 	id="button6_admin" onclick="page_ban()">			</td>
+</tr><table>
+<br>
+
+[file2text("config/info/[source].html")]
+
+</body></html>
+	"}
+	usr << browse(fix_html(dat), "window=hub_welcome;size=1000x500;can_close=1;")
+
+
+//Интерфейс приветствия
+
+/client/Topic(href, href_list[])
+	switch(href_list["informat"])
+		if("wiki")		wiki()
+		if("forum")		forum()
+		else			show_info(href_list["informat"])
+	..()
+
+/client/verb/servinfo()
+	set hidden = 1
+	show_info("rules")

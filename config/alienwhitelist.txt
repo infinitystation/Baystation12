@@ -1,5 +1,4 @@
 sfd - machine
-bob46 - machine
 s1334 - machine
 cre77 - machine
 rucat - machine
@@ -149,4 +148,5 @@ gumboldty - adherent
 kareta - adherent
 s1334 - adherent
 wolfetd - adherent
+hardstuck - adherent
 redknighthero - bionic
