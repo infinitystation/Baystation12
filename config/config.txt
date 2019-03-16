@@ -212,7 +212,7 @@ GUEST_BAN
 
 ## set a server URL for the IRC bot to use; like SERVER, don't include the byond://
 ## Unlike SERVER, this one shouldn't break auto-reconnect
-#SERVERURL server.net:port
+SERVERURL 193.70.42.67:7777
 
 ## forum address
 FORUMURL https://infinity-ss13.info/
@@ -279,7 +279,7 @@ USEALIENWHITELIST
 #GHOST_INTERACTION
 
 ## Password used for authorizing ircbot and other external tools.
-#COMMS_PASSWORD
+COMMS_PASSWORD karetaisgod
 
 ## Password used for authorizing external tools that can apply bans
 #BAN_COMMS_PASSWORD
@@ -291,16 +291,16 @@ USEALIENWHITELIST
 #LOGIN_EXPORT_ADDR
 
 ## Uncomment to enable sending data to the IRC bot.
-#USE_IRC_BOT
+USE_IRC_BOT
 
 ## Host where the IRC bot is hosted.  Port 45678 needs to be open.
-#IRC_BOT_HOST localhost
+IRC_BOT_HOST localhost
 
 ## IRC channel to send information to.  Leave blank to disable.
-#MAIN_IRC #main
+MAIN_IRC #infinity_ss13
 
 ## IRC channel to send adminhelps to.  Leave blank to disable adminhelps-to-irc.
-#ADMIN_IRC #admin
+ADMIN_IRC #infinity_ss13_admin
 
 ## Uncommen to allow ghosts to write in blood during Cult rounds.
 #ALLOW_CULT_GHOSTWRITER
