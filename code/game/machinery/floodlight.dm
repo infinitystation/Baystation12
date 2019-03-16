@@ -19,6 +19,10 @@
 	cell = new/obj/item/weapon/cell/crap(src)
 	..()
 
+/obj/machinery/floodlight/cargo
+	cell = new/obj/item/weapon/cell/
+	..()
+
 /obj/machinery/floodlight/on_update_icon()
 	overlays.Cut()
 	icon_state = "flood[open ? "o" : ""][open && cell ? "b" : ""]0[on]"

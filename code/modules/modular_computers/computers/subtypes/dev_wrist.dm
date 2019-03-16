@@ -7,7 +7,7 @@
 	icon_state = "wrist"
 	item_state = "wrist"
 	icon_state_unpowered = "wrist"
-	hardware_flag = PROGRAM_TABLET
+	hardware_flag = PROGRAM_PDA
 	max_hardware_size = 1
 	base_active_power_usage = 4
 	base_idle_power_usage = 0
