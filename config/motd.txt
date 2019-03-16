@@ -19,3 +19,5 @@
 
 <span style="color: #cc0000;">Q: Во вкладке лодаута написано "/list"!</span>
 <span style="color: #009933;">A: Зайдите во вкладку ocupations, выставьте branch и role.</span>
+
+<strong>Обязательно прочтите правила сервера во вкладке regulations.</strong>
