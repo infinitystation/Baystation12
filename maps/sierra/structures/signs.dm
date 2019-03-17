@@ -5,8 +5,7 @@
 
 /obj/structure/sign/dedicationplaque/Initialize()
 	. = ..()
-	desc = "N.S.V. Sierra - Mako Class - Sol Expeditionary Corps Registry 95519 - Shiva Fleet Yards, Mars - First Vessel To Bear The Name - Launched [game_year - 12] - Sol Central Government - 'Never was anything great achieved without danger.'"
-
+	desc = "N.S.V. Sierra - Modified Mako Class - NanoTrasen Registry 3525 - Blume Ship Yards, Earth - Fourth Vessel To Bear The Name - Launched [game_year - 12] - Sol Central Government - 'Travels to the abyss always pays off.'"
 
 /obj/structure/sign/ecplaque
 	name = "\improper Expeditionary Directives"
