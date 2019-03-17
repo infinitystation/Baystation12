@@ -27,7 +27,7 @@
 	name = "Captain's room"
 	icon_state = "cpt"
 
-/obj/effect/overmap/ship/salvage
+/obj/effect/overmap/ship/landable/salvage
 	name = "LTV Pancake"
 	fore_dir = WEST
 	vessel_mass = 5
@@ -63,16 +63,16 @@ datum/map_template/ruin/away_site/salvagers
 	name = "Salvagers Navpoint #4"
 	landmark_tag = "nav_salvagers_4"
 
-/datum/map/salvagers
-	allowed_jobs = list(/datum/job/salvage_capt, /datum/job/salvage_eng, /datum/job/salvage_sec)
+///datum/map/salvagers
+//	allowed_jobs = list(/datum/job/salvage_capt, /datum/job/salvage_eng, /datum/job/salvage_sec)
 
-/var/const/access_salvage = 305
+/var/const/access_salvage = 3074
 /datum/access/salvage
 	id = access_salvage
 	desc = "LTV Pancake"
 	region = ACCESS_TYPE_NONE
 
-/var/const/access_salvage_capt = 306
+/var/const/access_salvage_capt = 3075
 /datum/access/salvage/capt
 	id = access_salvage_capt
 	desc = "LTV Pancake - Captain"
