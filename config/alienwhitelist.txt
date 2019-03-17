@@ -26,6 +26,7 @@ blacksoul231 - machine
 redknighthero - machine
 kotovsyndrome - machine
 termservice - machine
+Semorerith - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
