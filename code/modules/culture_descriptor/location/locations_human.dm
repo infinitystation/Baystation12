@@ -147,7 +147,7 @@
 	name = HOME_SYSTEM_TERSTEN
 	distance = "52 light years"
 	description = "Tersten is a large plains world in the Gavil system.  With vast mountain ranges, prairie, mesas, forests and deserts, it is a diverse planet. \
-	The capital city is known as Tersten City, or locally as Freetown. Originally founded as a penal colony, the planet abolished this system in 2480. \
+	The capital city is known as Tersten City, or locally as Freetown. Originally founded as a penal colony, the planet abolished this system in 2244 \
 	It is the 4th largest producer of food in the Sol Central Government. Additional exports include building materials and electronics. \
 	The planet's population is primarily divided into northern, urban Tersteners who often are seen in the military; and southern, rural Tersteners, who make up the farmers and ranchers of the planet. \
 	While much of the North has been developed, large parts of the South remain undeveloped. \

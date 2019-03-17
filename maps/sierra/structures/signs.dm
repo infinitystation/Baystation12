@@ -1,8 +1,12 @@
 /obj/structure/sign/dedicationplaque
 	name = "\improper NSV Sierra dedication plaque"
-	desc = "N.S.V. Sierra - Mako Class - Sol Expeditionary Corps Registry 95519 - Shiva Fleet Yards, Mars - First Vessel To Bear The Name - Launched 2560 - Sol Central Government - 'Never was anything great achieved without danger.'"
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "lightplaque"
+
+/obj/structure/sign/dedicationplaque/Initialize()
+	. = ..()
+	desc = "N.S.V. Sierra - Mako Class - Sol Expeditionary Corps Registry 95519 - Shiva Fleet Yards, Mars - First Vessel To Bear The Name - Launched [game_year - 12] - Sol Central Government - 'Never was anything great achieved without danger.'"
+
 
 /obj/structure/sign/ecplaque
 	name = "\improper Expeditionary Directives"
