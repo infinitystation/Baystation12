@@ -26,6 +26,7 @@
 	damage_overlays = 	'infinity/icons/mob/human_races/species/resomi/damage_overlay.dmi'
 	damage_mask = 		'infinity/icons/mob/human_races/species/resomi/damage_mask.dmi'
 	blood_mask = 		'infinity/icons/mob/human_races/species/resomi/blood_mask.dmi'
+	preview_icon =		'infinity/icons/mob/human_races/species/resomi/preview.dmi'
 
 	slowdown = -0.8 //speed fix?
 	total_health = 150
