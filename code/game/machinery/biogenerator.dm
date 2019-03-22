@@ -9,6 +9,7 @@
 	desc = ""
 	icon = 'icons/obj/biogenerator.dmi'
 	icon_state = "biogen-stand"
+	layer = BELOW_OBJ_LAYER
 	density = 1
 	anchored = 1
 	use_power = 1
@@ -43,7 +44,15 @@
 			/obj/item/clothing/suit/leathercoat = 500,
 			/obj/item/clothing/suit/storage/toggle/brown_jacket = 500,
 			/obj/item/clothing/suit/storage/toggle/bomber = 500,
-			/obj/item/clothing/suit/storage/hooded/wintercoat = 500))
+			/obj/item/clothing/suit/storage/hooded/wintercoat = 500),
+		"Cloth" = list(
+			/obj/item/stack/tile/carpet/ten = 30,
+			/obj/item/stack/tile/carpetblue/ten = 30,
+			/obj/item/stack/tile/carpetblue2/ten = 30,
+			/obj/item/stack/tile/carpetpurple/ten = 30,
+			/obj/item/stack/tile/carpetorange/ten = 30,
+			/obj/item/stack/tile/carpetgreen/ten = 30,
+			/obj/item/stack/tile/carpetred/ten = 30))
 
 /obj/machinery/biogenerator/New()
 	..()

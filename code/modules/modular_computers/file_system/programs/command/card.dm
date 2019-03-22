@@ -108,12 +108,7 @@
 	return null
 
 /proc/upd_card_info(var/rename, var/obj/item/weapon/card/id/me)
-	var/datum/computer_file/report/crew_record/active_record
-	for(var/datum/computer_file/report/crew_record/R in GLOB.all_crew_records)
-		var/datum/report_field/field = R.field_from_name("Name")
-		if(lowertext(field.get_value()) == lowertext(rename))
-			active_record = R
-			break
+	var/datum/computer_file/report/crew_record/active_record = RecordByName(rename)
 	if(!active_record)
 		me.age = "\[UNSET\]"
 		me.blood_type = "\[UNSET\]"

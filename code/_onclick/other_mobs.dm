@@ -34,7 +34,9 @@
 		var/turf/T = get_turf(A)
 		var/turf/above = shadow.loc
 		if(T.Adjacent(shadow) && above.CanZPass(src, UP)) //Certain structures will block passage from below, others not
-
+			if(T.contains_dense_objects() || above.contains_dense_objects())
+				to_chat(src, "<span class='warning'>You can't climb there!</span>")
+				return
 			var/area/location = get_area(loc)
 			if(location.has_gravity && !can_overcome_gravity())
 				return
@@ -44,7 +46,8 @@
 			if(do_after(src, 50, A))
 				visible_message("<span class='notice'>[src] climbs onto \the [A]!</span>", "<span class='notice'>You climb onto \the [A]!</span>")
 				shadow.visible_message("<span class='notice'>[shadow] climbs onto \the [A]!</span>")
-				src.Move(T)
+				Move(T)
+				stop_pulling()
 			else
 				visible_message("<span class='warning'>[src] gives up on trying to climb onto \the [A]!</span>", "<span class='warning'>You give up on trying to climb onto \the [A]!</span>")
 				shadow.visible_message("<span class='warning'>[shadow] gives up on trying to climb onto \the [A]!</span>")

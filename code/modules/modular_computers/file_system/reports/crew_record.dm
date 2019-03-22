@@ -150,6 +150,15 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 		return H.mind.role_alt_title
 	return H.mind.assigned_role
 
+/proc/RecordByName(var/name)
+	if(findtext(name, "'"))
+		name = replacetext(name, "'", "&#39;")
+	for(var/datum/computer_file/report/crew_record/R in GLOB.all_crew_records)
+		var/datum/report_field/field = R.field_from_name("Name")
+		if(lowertext(field.get_value()) == lowertext(name))
+			return R
+	return
+
 #define GETTER_SETTER(PATH, KEY) /datum/computer_file/report/crew_record/proc/get_##KEY(){var/datum/report_field/F = locate(/datum/report_field/##PATH/##KEY) in fields; if(F) return F.get_value()} \
 /datum/computer_file/report/crew_record/proc/set_##KEY(given_value){var/datum/report_field/F = locate(/datum/report_field/##PATH/##KEY) in fields; if(F) F.set_value(given_value)}
 #define SETUP_FIELD(NAME, KEY, PATH, ACCESS, ACCESS_EDIT) GETTER_SETTER(PATH, KEY); /datum/report_field/##PATH/##KEY;\

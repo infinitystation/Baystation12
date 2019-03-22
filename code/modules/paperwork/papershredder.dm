@@ -19,6 +19,9 @@
 		/obj/item/weapon/sample/print = 1
 		)
 
+/obj/machinery/papershredder/unsecured
+	anchored = 0
+
 /obj/machinery/papershredder/attackby(var/obj/item/W, var/mob/user)
 
 	if(istype(W, /obj/item/weapon/storage))

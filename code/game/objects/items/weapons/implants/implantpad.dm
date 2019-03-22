@@ -7,6 +7,7 @@
 	icon_state = "implantpad-0"
 	item_state = "electronic"
 	w_class = ITEM_SIZE_SMALL
+	matter = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 3000)
 	var/obj/item/weapon/implant/imp
 
 /obj/item/weapon/implantpad/on_update_icon()

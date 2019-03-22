@@ -1309,17 +1309,6 @@ window "rpane"
 		saved-params = "is-checked"
 		text = "Bug Report"
 		command = "Bug-Report"
-	elem "rulesb"
-		type = BUTTON
-		pos = 120,0
-		size = 60x15
-		anchor1 = none
-		anchor2 = none
-		background-color = none
-		saved-params = "is-checked"
-		text = "Rules"
-		command = "rules"
-		group = "rpanemode"
 	elem "changelog"
 		type = BUTTON
 		pos = 208,0
@@ -1404,6 +1393,17 @@ window "rpane"
 		command = ".winset \"rpanewindow.left=infowindow\""
 		group = "rpanemode"
 		button-type = pushbox
+	elem "referenseb"
+		type = BUTTON
+		pos = 138,0
+		size = 70x15
+		anchor1 = none
+		anchor2 = none
+		background-color = none
+		saved-params = "is-checked"
+		text = "Regulations"
+		command = "servinfo"
+		group = "rpanemode"
 
 window "browserwindow"
 	elem "browserwindow"

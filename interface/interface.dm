@@ -69,124 +69,171 @@
 
 	var/admin = {"<font color='purple'>
 Admin:
-\tF5 = Aghost (admin-ghost)
-\tF6 = player-panel-new
-\tF7 = admin-pm
-\tF8 = Invisimin
+\tF5 = стать призраком/вернутьс&#255; в тело
+\tF6 = панель игроков
+\tF7 = отправить ПМ
+\tF8 = невидимость
 </font>"}
 
 	var/hotkey_mode = {"<font color='purple'>
-Hotkey-Mode: (hotkey-mode must be on)
-\tTAB = toggle hotkey-mode
-\ta = left
-\ts = down
-\td = right
-\tw = up
-\t, = move-upwards
-\t. = move-down
-\tq = drop
-\te = equip
-\tr = throw
-\tt = say
-\t5 = emote
-\tx = swap-hand
-\tz = activate held object (or y)
-\tj = toggle-aiming-mode
-\tf = cycle-intents-left
-\tg = cycle-intents-right
-\t1 = help-intent
-\t2 = disarm-intent
-\t3 = grab-intent
-\t4 = harm-intent
+Hotkey-Mode: (Режим хоткеев включен)
+\tTAB = переключить hotkey-mode
+\ta = влево
+\ts = вниз
+\td = вправо
+\tw = вверх
+\t, = передвинутьс&#255; на уровень выше
+\t. = передвинутьс&#255; на уровень ниже
+\tq = выбросить
+\te = надеть
+\tr = метнутть
+\tt = сказать
+\t5 = эмоци&#255;
+\tx = помен&#255;ть руку
+\tz = активировать объект в руке (или y)
+\tj = переключить режим прицеливани&#255;
+\tf = переключить-взаимодействие-влево
+\tg = переключить-взаимодействие-вправо
+\t1 = взаимодействие "помочь"
+\t2 = взаимодействие "разоружать"
+\t3 = взаимодействие "схватить"
+\t4 = взаимодействие "навредить"
 </font>"}
 
 	var/other = {"<font color='purple'>
-Any-Mode: (hotkey doesn't need to be on)
-\tCtrl+a = left
-\tCtrl+s = down
-\tCtrl+d = right
-\tCtrl+w = up
-\tCtrl+q = drop
-\tCtrl+e = equip
-\tCtrl+r = throw
-\tCtrl+x or Middle Mouse = swap-hand
-\tCtrl+z = activate held object (or Ctrl+y)
-\tCtrl+f = cycle-intents-left
-\tCtrl+g = cycle-intents-right
-\tCtrl+1 = help-intent
-\tCtrl+2 = disarm-intent
-\tCtrl+3 = grab-intent
-\tCtrl+4 = harm-intent
-\tF1 = adminhelp
-\tF2 = ooc
-\tF3 = say
-\tF4 = emote
-\tDEL = pull
-\tINS = cycle-intents-right
-\tHOME = drop
-\tPGUP or Middle Mouse = swap-hand
-\tPGDN = activate held object
-\tEND = throw
-\tCtrl + Click = drag
-\tShift + Click = examine
-\tAlt + Click = show entities on turf
-\tCtrl + Alt + Click = point to smh
+Any-Mode: (Режим хоткеев отключен)
+\tCtrl+a = влево
+\tCtrl+s = вниз
+\tCtrl+d = вправо
+\tCtrl+w = вверх
+\tCtrl+q = выбросить
+\tCtrl+e = надеть
+\tCtrl+r = метнуть
+\tCtrl+x или СрКнМыши = помен&#255;ть руку
+\tCtrl+z = активировать объект в руке (или Ctrl+y)
+\tCtrl+f = переключить режим взааимодействи&#255;-влево
+\tCtrl+g = переключить режим взааимодействи&#255;-вправо
+\tCtrl+1 = взаимодействие "помочь""
+\tCtrl+2 = взаимодействие "разоружать"
+\tCtrl+3 = взаимодействие "схватить"
+\tCtrl+4 = взаимодействие "навредить"
+\tF1 = АХ
+\tF2 = OOC
+\tF3 = сказать
+\tF4 = эмоци&#255;
+\tDEL = прекратить т&#255;нуть
+\tINS = переключить-намерение-вправо
+\tHOME = выбросить
+\tPGUP или СрКнМыши = помен&#255;ть руку
+\tPGDN = активировать объект в руке
+\tEND = метнуть
+\tCtrl + Click = т&#255;нуть
+\tShift + Click = осмотреть
+\tAlt + Click = показать объекты на клетке
+\tCtrl + Alt + Click = указать на что-либо
 </font>"}
 
 	var/robot_hotkey_mode = {"<font color='purple'>
-Hotkey-Mode: (hotkey-mode must be on)
-\tTAB = toggle hotkey-mode
-\ta = left
-\ts = down
-\td = right
-\tw = up
-\tq = unequip active module
-\tt = say
-\tx = cycle active modules
-\tz = activate held object (or y)
-\tf = cycle-intents-left
-\tg = cycle-intents-right
-\t1 = activate module 1
-\t2 = activate module 2
-\t3 = activate module 3
-\t4 = toggle intents
-\t5 = emote
+Hotkey-Mode: (Режим хоткеев включен)
+\tTAB = включить режим хоткеев
+\ta = влево
+\ts = вниз
+\td = вправо
+\tw = вверх
+\tq = деактивировать активный модуль
+\tt = сказать
+\tx = задействовать активные модули
+\tz = активировать удерживаемый объект (or y)
+\tf = переключить-намерение-влево
+\tg = переключить-намерение-вправо
+\t1 = активировать модуль 1
+\t2 = активировать модуль 2
+\t3 = активировать модуль 3
+\t4 = переключить взаимодействие
+\t5 = эмоций
 </font>"}
 
 	var/robot_other = {"<font color='purple'>
-Any-Mode: (hotkey doesn't need to be on)
-\tCtrl+a = left
-\tCtrl+s = down
-\tCtrl+d = right
-\tCtrl+w = up
-\tCtrl+q = unequip active module
-\tCtrl+x = cycle active modules
-\tCtrl+z = activate held object (or Ctrl+y)
-\tCtrl+f = cycle-intents-left
-\tCtrl+g = cycle-intents-right
-\tCtrl+1 = activate module 1
-\tCtrl+2 = activate module 2
-\tCtrl+3 = activate module 3
-\tCtrl+4 = toggle intents
-\tF1 = adminhelp
-\tF2 = ooc
-\tF3 = say
-\tF4 = emote
-\tDEL = pull
-\tINS = toggle intents
-\tPGUP = cycle active modules
-\tPGDN = activate held object
-\tCtrl + Click = drag or bolt doors
-\tShift + Click = examine or open doors
-\tAlt + Click = show entities on turf
-\tCtrl + Alt + Click = electrify doors
+Any-Mode: (Режим хоткеев отключен)
+\tCtrl+a = влево
+\tCtrl+s = вниз
+\tCtrl+d = вправо
+\tCtrl+w = вверх
+\tCtrl+q = деактивировать активный модуль
+\tCtrl+x = задействовать активные модули
+\tCtrl+z = активировать удерживаемый объект (or Ctrl+y)
+\tCtrl+f = переключить режим взааимодействи&#255;-влево
+\tCtrl+g = переключить режим взааимодействи&#255;-вправо
+\tCtrl+1 = активировать модуль 1
+\tCtrl+2 = активировать модуль 2
+\tCtrl+3 = активировать модуль 3
+\tCtrl+4 = переключить режим взааимодействи&#255; (интент)
+\tF1 = АХ
+\tF2 = OOC
+\tF3 = сказать
+\tF4 = эмоци&#255;
+\tDEL = т&#255;нуть
+\tINS = переключить режим взааимодействи&#255; (интент)
+\tPGUP = задействовать активные модули
+\tPGDN = активировать удерживаемый объект
+\tCtrl + Click = т&#255;нуть или болтировать шлюз
+\tShift + Click = осмотреть или открыть шлюз
+\tAlt + Click = показать объекты на клетке
+\tCtrl + Alt + Click = наэлектризовать шлюз
 </font>"}
-
+	var/alarm = {"<font color='red'>
+Внимание! Перед использованием гор&#255;чих клавиш в первый раз надо переключить раскладку на английский, так как если начать использовать клавиши на русской раскладке, то клавиши не будут работать и после первого нажати&#255; переключение раскладки не поможет, только перезабуск DreamMaker(закрыть и открыть окно игры через лаунчер). После первого нажати&#255; гор&#255;чих клавишь раскладку можно переключить на русскую.
+</font>"}
 	if(isrobot(src.mob))
 		to_chat(src, robot_hotkey_mode)
 		to_chat(src, robot_other)
+		to_chat(src, alarm)
 	else
 		to_chat(src, hotkey_mode)
 		to_chat(src, other)
+		to_chat(src, alarm)
 	if(holder)
 		to_chat(src, admin)
+
+
+//Вкладка Regulations
+/client/proc/show_info(var/source = "rules")
+
+	var/dat = {"
+<html>
+<head>
+<title>[source]</title>
+<meta charset="windows-1251">
+<script>
+	function page_rules() 		{location.href='?_src_=rules;informat=rules';}
+	function page_adrules() 	{location.href='?_src_=rules;informat=adrules';}
+	function page_roleplay() 	{location.href='?_src_=rules;informat=roleplay';}
+	function page_ban() 		{location.href='?_src_=rules;informat=ban;';}
+</script>
+ </head>
+
+<body>
+<table><tr>
+<td width = 40>
+<td><input type="button" value="Правила сервера" 				id="button3_rules" onclick="page_rules()">			</td>
+<td><input type="button" value="Этикет администрации" 			id="button2_changelog" onclick="page_adrules()">	</td>
+<td><input type="button" value="Политика ролевой игры" 			id="button4_stories" onclick="page_roleplay()"		</td>
+<td align="right"><input type="button" value="Политика банов" 	id="button6_admin" onclick="page_ban()">			</td>
+</td></tr></table>
+<hr>
+<br>
+
+[file2text("config/info/[source].html")]
+
+</body></html>
+	"}
+	usr << browse(fix_html(dat), "window=hub_welcome;size=1000x500;can_close=1;")
+
+/client/Topic(href, href_list[])
+	if(href_list["informat"]) //"Regulations"
+		show_info(href_list["informat"])
+	..()
+
+/client/verb/servinfo()
+	set hidden = 1
+	show_info("rules")

@@ -350,6 +350,7 @@
 
 	blood_color = "#004400"
 	flesh_color = "#907e4a"
+	virus_immune = 1
 
 	reagent_tag = IS_DIONA
 	genders = list(PLURAL)

@@ -568,7 +568,7 @@ other types of metals and chemistry for reagents).
 /datum/design/item/implant/imprinting
 	name = "imprinting"
 	id = "implant_imprinting"
-	req_tech = list(TECH_MATERIAL = 2, TECH_BIO = 3, TECH_DATA = 4)
+	req_tech = list(TECH_MATERIAL = 2, TECH_BIO = 3, TECH_DATA = 4, TECH_ILLEGAL = 3)
 	build_path = /obj/item/weapon/implantcase/imprinting
 	sort_string = "MFAAD"
 

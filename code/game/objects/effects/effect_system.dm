@@ -189,16 +189,21 @@ steam.start() -- spawns the effect
 		affect(M)
 
 /obj/effect/effect/smoke/proc/affect(var/mob/living/carbon/M)
-	if (!istype(M))
+	if(!istype(M))
 		return 0
-	if (M.internal != null)
-		if(M.wear_mask && (M.wear_mask.item_flags & ITEM_FLAG_AIRTIGHT))
+	if(M.isSynthetic())
+		return 0
+	if(M.internal)
+		return 0
+	if(M.wear_mask && (M.wear_mask.item_flags & ITEM_FLAG_BLOCK_GAS_SMOKE_EFFECT))
+		return 0
+	if(istype(M,/mob/living/carbon/human))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/lungs/L = M.internal_organs_by_name[BP_LUNGS]
+		if(H.head && (H.head.item_flags & ITEM_FLAG_AIRTIGHT))
 			return 0
-		if(istype(M,/mob/living/carbon/human))
-			var/mob/living/carbon/human/H = M
-			if(H.head && (H.head.item_flags & ITEM_FLAG_AIRTIGHT))
-				return 0
-		return 0
+		if(L && (L.status & ORGAN_CUT_AWAY) || (L.status & ORGAN_BROKEN) || (L.status & ORGAN_ROBOTIC))	// We can't breath with broken lungs, right?
+			return 0
 	return 1
 
 /////////////////////////////////////////////

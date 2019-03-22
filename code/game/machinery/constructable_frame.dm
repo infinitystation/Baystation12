@@ -115,6 +115,7 @@
 
 							if(new_machine.component_parts)
 								new_machine.component_parts.Cut()
+								new_machine.contents.Cut()
 							else
 								new_machine.component_parts = list()
 

@@ -29,7 +29,7 @@
 /datum/uplink_item/item/hardsuit_modules/egun
 	name = "\improper Mounted Energy Gun"
 	item_cost = 48
-	antag_costs = list(MODE_MERCENARY = 30)
+	antag_costs = list(MODE_MERCENARY = 40)
 	path = /obj/item/rig_module/mounted/egun
 
 /datum/uplink_item/item/hardsuit_modules/power_sink
@@ -41,5 +41,5 @@
 /datum/uplink_item/item/hardsuit_modules/laser_canon
 	name = "\improper Mounted Laser Cannon"
 	item_cost = 64
-	antag_costs = list(MODE_MERCENARY = 40)
+	antag_costs = list(MODE_MERCENARY = 50)
 	path = /obj/item/rig_module/mounted

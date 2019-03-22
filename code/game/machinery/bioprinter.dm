@@ -17,6 +17,7 @@
 	var/max_stored_matter = 0
 	var/print_delay = 100
 	var/printing
+	var/circuit
 
 	// These should be subtypes of /obj/item/organ
 	var/list/products = list()
@@ -38,13 +39,14 @@
 	if(printing)
 		overlays += "bioprinter_working"
 
-/obj/machinery/organ_printer/New()
-	..()
+/obj/machinery/organ_printer/Initialize()
+	. = ..()
 	component_parts = list()
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(src)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(src)
+	component_parts += new circuit
+	component_parts += new /obj/item/weapon/stock_parts/matter_bin
+	component_parts += new /obj/item/weapon/stock_parts/matter_bin
+	component_parts += new /obj/item/weapon/stock_parts/manipulator
+	component_parts += new /obj/item/weapon/stock_parts/manipulator
 	RefreshParts()
 
 /obj/machinery/organ_printer/examine(var/mob/user)
@@ -110,6 +112,7 @@
 	name = "prosthetic organ fabricator"
 	desc = "It's a machine that prints prosthetic organs."
 	icon_state = "roboprinter"
+	circuit = /obj/item/weapon/circuitboard/roboprinter
 
 	products = list(
 		BP_HEART    = list(/obj/item/organ/internal/heart,      25),
@@ -138,10 +141,6 @@
 	if(stored_matter >= matter_amount_per_sheet)
 		new /obj/item/stack/material/steel(get_turf(src), Floor(stored_matter/matter_amount_per_sheet))
 	return ..()
-
-/obj/machinery/organ_printer/robot/New()
-	..()
-	component_parts += new /obj/item/weapon/circuitboard/roboprinter
 
 /obj/machinery/organ_printer/robot/print_organ(var/choice)
 	var/obj/item/organ/O = ..()
@@ -173,9 +172,14 @@
 	name = "bioprinter"
 	desc = "It's a machine that prints replacement organs."
 	icon_state = "bioprinter"
+	circuit = /obj/item/weapon/circuitboard/bioprinter
 	var/list/amount_list
 	var/loaded_dna //Blood sample for DNA hashing.
 	var/datum/species/loaded_species //For quick refrencing
+
+/obj/machinery/organ_printer/flesh/Initialize()
+	. = ..()
+	component_parts += new /obj/item/device/healthanalyzer
 
 /obj/machinery/organ_printer/flesh/mapped/Initialize()
 	. = ..()
@@ -189,15 +193,9 @@
 			new /obj/item/weapon/reagent_containers/food/snacks/meat(T)
 	return ..()
 
-/obj/machinery/organ_printer/flesh/New()
-	..()
-	component_parts += new /obj/item/device/healthanalyzer
-	component_parts += new /obj/item/weapon/circuitboard/bioprinter
-
 /obj/machinery/organ_printer/flesh/RefreshParts()
-	..()
+	. = ..()
 	var/Eat
-
 	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
 		Eat += M.rating
 
@@ -259,7 +257,6 @@
 		return
 
 	..(user, choice)
-
 
 /obj/machinery/organ_printer/flesh/attackby(obj/item/weapon/W, mob/user)
 	// Load with matter for printing.

@@ -26,8 +26,8 @@
 	var/manufacturer = null
 	var/sync_message = ""
 
-/obj/machinery/mecha_part_fabricator/New()
-	..()
+/obj/machinery/mecha_part_fabricator/Initialize()
+	. = ..()
 
 	component_parts = list()
 	component_parts += new /obj/item/weapon/circuitboard/mechfab(src)
@@ -39,12 +39,8 @@
 	RefreshParts()
 
 	files = new /datum/research(src) //Setup the research data holder.
-	return
-
-/obj/machinery/mecha_part_fabricator/Initialize()
 	manufacturer = basic_robolimb.company
 	update_categories()
-	. = ..()
 
 /obj/machinery/mecha_part_fabricator/Process()
 	..()

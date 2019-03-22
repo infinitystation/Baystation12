@@ -524,7 +524,7 @@
 
 	if(equipment_overlay_icon && LAZYLEN(installed_modules))
 		for(var/obj/item/rig_module/module in installed_modules)
-			if(module.suit_overlay)
+			if(module.suit_overlay && module == selected_module)
 				chest.overlays += image("icon" = equipment_overlay_icon, "icon_state" = "[module.suit_overlay]", "dir" = SOUTH)
 
 	if(wearer)
@@ -544,7 +544,7 @@
 
 	if(equipment_overlay_icon && LAZYLEN(installed_modules))
 		for(var/obj/item/rig_module/module in installed_modules)
-			if(module.suit_overlay)
+			if(module.suit_overlay && module == selected_module)
 				ret.overlays += image("icon" = equipment_overlay_icon, "icon_state" = "[module.suit_overlay]")
 	return ret
 

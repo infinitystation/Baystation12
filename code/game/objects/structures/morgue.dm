@@ -136,7 +136,7 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "morguet"
 	density = 1
-	layer = BELOW_OBJ_LAYER
+	layer = BELOW_OBJ_LAYER - 0.1
 	var/obj/structure/morgue/connected = null
 	anchored = 1
 	throwpass = 1

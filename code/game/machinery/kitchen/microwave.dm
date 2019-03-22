@@ -18,6 +18,9 @@
 	var/global/list/acceptable_reagents // List of the reagents you can put in
 	var/global/max_n_of_items = 0
 
+/obj/machinery/microwave/unsecured
+	anchored = 0
+
 
 // see code/modules/food/recipes_microwave.dm for recipes
 

@@ -80,7 +80,7 @@
 
 	if(!can_open)
 		to_chat(user, "<span class='notice'>You push \the [src], but nothing happens.</span>")
-		playsound(src, hitsound, 25, 1)
+		playsound(src, 'sound/weapons/thudswoosh.ogg', 25, 1)
 	else
 		toggle_open(user)
 	return 0
