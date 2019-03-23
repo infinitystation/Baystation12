@@ -100,7 +100,7 @@
 	#include "sierra-1.dmm"
 	#include "sierra-2.dmm"
 	#include "sierra-3.dmm"
-	#include "sierra-4.dmm"
+//	#include "sierra-4.dmm"
 	#include "sierra-5.dmm"
 	#include "../away/empty.dmm"
 

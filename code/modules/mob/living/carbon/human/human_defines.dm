@@ -111,3 +111,6 @@
 	var/became_younger
 
 	var/list/descriptors
+
+		//Surgery info
+	//var/datum/surgery_status/op_stage = new/datum/surgery_status

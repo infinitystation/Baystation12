@@ -7,18 +7,18 @@
 /obj/item/weapon/book/manual/New()
 	..()
 	if(url)
-	dat = {"
+		dat = {"
 
-		<html><head>
-		</head>
+			<html><head>
+			</head>
 
-		<body>
-			<iframe width='100%' height='100%' src="[config.wikiurl]index.php?title=Guide_to_Engineering&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
-			</body>
+			<body>
+				<iframe width='100%' height='100%' src="[config.wikiurl]index.php?title=Guide_to_Engineering&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+				</body>
 
-		</html>
+			</html>
 
-		"}
+			"}
 
 /obj/item/weapon/book/manual/robotics_cyborgs
 	name = "Cyborgs for Dummies"

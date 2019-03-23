@@ -179,7 +179,6 @@
 	return matches
 
 //TODO: merge the vievars version into this or something maybe mayhaps
-/*
 /client/proc/cmd_debug_del_all()
 	set category = "Debug"
 	set name = "Del-All"

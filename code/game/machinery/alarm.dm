@@ -1001,8 +1001,9 @@ FIRE ALARM
 					to_chat(user, "Prying out the circuit...")
 					playsound(src.loc, 'sound/items/Crowbar.ogg', 50, 1)
 					if(do_after(user, 30, src))
-						if(!src) return
-					to_chat(user, "You pry out the circuit!")
+						if(!src)
+							return
+						to_chat(user, "You pry out the circuit!")
 						var/obj/item/weapon/firealarm_electronics/circuit = new /obj/item/weapon/firealarm_electronics()
 						circuit.dropInto(user.loc)
 						buildstage = 0

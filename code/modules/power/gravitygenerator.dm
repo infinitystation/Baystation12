@@ -45,9 +45,6 @@
 	..()
 	qdel(src)
 
-/obj/machinery/gravity_generator/proc/set_broken()
-	stat |= BROKEN
-
 /obj/machinery/gravity_generator/proc/set_fix()
 	stat &= ~BROKEN
 

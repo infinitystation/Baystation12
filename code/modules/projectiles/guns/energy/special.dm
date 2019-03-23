@@ -1,7 +1,6 @@
 /obj/item/weapon/gun/energy/ionrifle
 	name = "Mk60 ion rifle"
 	desc = "The NT Mk60 EW Halicon is a man portable anti-armor weapon designed to disable mechanical threats, produced by NT. Not the best of its type."
-	icon = 'icons/obj/guns/ion_rifle.dmi'
 	icon_state = "ionrifle"
 	item_state = "ionrifle"
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 4)
@@ -22,7 +21,6 @@
 /obj/item/weapon/gun/energy/ionrifle/small
 	name = "Mk72 ion pistol"
 	desc = "The NT Mk72 EW Preston is a personal defense weapon designed to disable mechanical threats."
-	icon = 'icons/obj/guns/ion_pistol.dmi'
 	icon_state = "ionpistol"
 	item_state = "ionpistol"
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 4)
@@ -37,7 +35,6 @@
 /obj/item/weapon/gun/energy/decloner
 	name = "biological demolecularisor"
 	desc = "A gun that discharges high amounts of controlled radiation to slowly break a target into component elements."
-	icon = 'icons/obj/guns/decloner.dmi'
 	icon_state = "decloner"
 	item_state = "decloner"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 4, TECH_POWER = 3)
@@ -48,7 +45,6 @@
 /obj/item/weapon/gun/energy/floragun
 	name = "floral somatoray"
 	desc = "A tool that discharges controlled radiation which induces mutation in plant cells."
-	icon = 'icons/obj/guns/floral.dmi'
 	icon_state = "floramut100"
 	item_state = "floramut"
 	charge_cost = 10
@@ -105,7 +101,6 @@
 /obj/item/weapon/gun/energy/meteorgun
 	name = "meteor gun"
 	desc = "For the love of god, make sure you're aiming this the right way!"
-	icon = 'icons/obj/guns/launchers.dmi'
 	icon_state = "riotgun"
 	item_state = "c20r"
 	slot_flags = SLOT_BELT|SLOT_BACK
@@ -130,7 +125,6 @@
 /obj/item/weapon/gun/energy/mindflayer
 	name = "mind flayer"
 	desc = "A custom-built weapon of some kind."
-	icon = 'icons/obj/guns/xray.dmi'
 	icon_state = "xray"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MAGNET = 4)
 	projectile_type = /obj/item/projectile/beam/mindflayer
@@ -138,7 +132,6 @@
 /obj/item/weapon/gun/energy/toxgun
 	name = "phoron pistol"
 	desc = "A specialized firearm designed to fire lethal bolts of phoron."
-	icon = 'icons/obj/guns/toxgun.dmi'
 	icon_state = "toxgun"
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 5, TECH_PHORON = 4)
@@ -149,7 +142,7 @@
 /obj/item/weapon/gun/energy/staff
 	name = "staff of change"
 	desc = "An artefact that spits bolts of coruscating energy which cause the target's very form to reshape itself."
-	icon = 'icons/obj/guns/staff.dmi'
+	icon = 'icons/obj/gun.dmi'
 	item_icons = null
 	icon_state = "staffofchange"
 	item_state = "staffofchange"
@@ -200,7 +193,7 @@
 	name = "plasma cutter"
 	desc = "A mining tool capable of expelling concentrated plasma bursts. You could use it to cut limbs off of xenos! Or, you know, mine stuff."
 	charge_meter = 0
-	icon = 'icons/obj/guns/plasmacutter.dmi'
+	icon = 'icons/obj/tools.dmi'
 	icon_state = "plasmacutter"
 	item_state = "plasmacutter"
 	fire_sound = 'sound/weapons/plasma_cutter.ogg'

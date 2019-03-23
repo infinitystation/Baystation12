@@ -58,7 +58,7 @@ SUBSYSTEM_DEF(statistics)
 	query.Execute(db)
 	if(query.Error() || query.ErrorMsg())
 		to_world_log( "SQL error - creating death table - [query.Error()] - [query.ErrorMsg()]")
-	
+
 	query = new("CREATE TABLE IF NOT EXISTS population (game_id TEXT NOT NULL, timestamp TEXT NOT NULL, players INTEGER, admin INTEGER);")
 	query.Execute(db)
 	if(query.Error() || query.ErrorMsg())
@@ -104,7 +104,7 @@ SUBSYSTEM_DEF(statistics)
 			if(query.Error() || query.ErrorMsg())
 				to_world_log( "SQL error - logging population - [query.Error()] - [query.ErrorMsg()]")
 
-	// These values are arbitrary and largely unused, so using JSON is far easier than expecting 
+	// These values are arbitrary and largely unused, so using JSON is far easier than expecting
 	// people to maintain a hard list of fields and migrate the tables every time they change.
 	if(LAZYLEN(values))
 		for(var/field in values)
@@ -167,3 +167,29 @@ SUBSYSTEM_DEF(statistics)
 
 		if(!player_is_antag(dead.mind) && dead.mind.assigned_job && dead.mind.assigned_job.department_flag)
 			crew_death_count++
+
+// Should be there
+
+/datum/controller/subsystem/statistics/proc/statistic_cycle()
+	if(!sqllogging)
+		return
+	while(1)
+		sql_poll_population()
+		sleep(6000)
+
+/datum/controller/subsystem/statistics/proc/sql_poll_population()
+	if(!sqllogging)
+		return
+	var/admincount = GLOB.admins.len
+	var/playercount = 0
+	for(var/mob/M in GLOB.player_list)
+		if(M.client)
+			playercount += 1
+	establish_db_connection()
+	if(!dbcon.IsConnected())
+		log_game("SQL ERROR during population polling. Failed to connect.")
+	else
+		var/DBQuery/query = dbcon.NewQuery("INSERT INTO `erro_legacy_population` (`id`, `playercount`, `admincount`, `time`, `server_ip`, `server_port`) VALUES (null, [playercount], [admincount], Now(), INET_ATON('[world.internet_address]'), [world.port])")
+		if(!query.Execute())
+			var/err = query.ErrorMsg()
+			log_game("SQL ERROR during population polling. Error : \[[err]\]\n")

@@ -771,7 +771,7 @@ var/global/floorIsLava = 0
 				GLOB.global_announcer.autosay("[message]", "[sender]", "[channel == "Common" ? null : channel]") //Common is a weird case, as it's not a "channel", it's just talking into a radio without a channel set.
 				log_admin("Intercom: [key_name(usr)] : [sender]:[message]")
 
-	feedback_add_details("admin_verb","IN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSstatistics.add_field("admin_verb","IN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/intercom_convo()
 	set category = "Fun"
@@ -845,7 +845,7 @@ var/global/floorIsLava = 0
 		decomposed[i] = clean_time
 
 	log_admin("Intercom convo started by: [key_name(usr)] : [sanitize(message)]")
-	feedback_add_details("admin_verb","IN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSstatistics.add_field("admin_verb","IN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 	//Sanitized AND we still have a chance to send it? Wow!
 	if(LAZYLEN(decomposed))
@@ -993,7 +993,7 @@ var/global/floorIsLava = 0
 	if(confirm == "Yes")
 		log_admin("[key_name(usr)] initiated a game ending.")
 		to_world("<span class='danger'>Game ending!</span> <span class='notice'>Initiated by [usr.key]!</span>")
-		feedback_add_details("admin_verb","ER") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		SSstatistics.add_field("admin_verb","ER") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		SSticker.force_ending = 1
 
 /datum/admins/proc/toggleenter()
@@ -1176,7 +1176,7 @@ var/global/floorIsLava = 0
 	set desc = "Spawn every possible custom closet. Do not do this on live."
 	set category = "Debug"
 
-	if(!check_rights(R_SPAWN))	
+	if(!check_rights(R_SPAWN))
 		return
 
 	if((input(usr, "Are you sure you want to spawn all these closets?", "So Many Closets") as null|anything in list("No", "Yes")) == "Yes")

@@ -27,8 +27,6 @@
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							 /datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
-	required_education = EDUCATION_TIER_BASIC
-	maximum_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/cargo_tech
 	title = "Cargo Technician"
@@ -53,8 +51,6 @@
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							 /datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
-	required_education = EDUCATION_TIER_BASIC
-	maximum_education = EDUCATION_TIER_TRADE
 
 /datum/job/mining
 	title = "Prospector"
@@ -84,8 +80,6 @@
 						access_expedition_shuttle, access_guppy, access_hangar, access_guppy_helm)
 
 	minimal_access = list()
-	required_education = EDUCATION_TIER_DROPOUT
-	maximum_education = EDUCATION_TIER_TRADE
 
 /datum/job/cargo_assistant
 	title = "Cargo Assistant"
@@ -110,5 +104,3 @@
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							 /datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
-	required_education = EDUCATION_TIER_DROPOUT
-	maximum_education = EDUCATION_TIER_TRADE

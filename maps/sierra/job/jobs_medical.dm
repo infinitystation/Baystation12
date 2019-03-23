@@ -34,7 +34,6 @@
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
-	required_education = EDUCATION_TIER_MEDSCHOOL
 
 /datum/job/doctor
 	title = "Doctor"
@@ -68,7 +67,6 @@
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
 	skill_points = 22
-	required_education = EDUCATION_TIER_TRADE
 
 /datum/job/doctor_trainee
 	title = "Intern"
@@ -102,8 +100,6 @@
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
-	required_education = EDUCATION_TIER_BASIC
-	maximum_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/chemist
 	title = "Chemist"
@@ -129,7 +125,6 @@
 	access = list(access_medical, access_maint_tunnels, access_emergency_storage, access_medical_equip, access_chemistry)
 
 	minimal_access = list()
-	required_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/psychiatrist
 	title = "Counselor"
@@ -159,4 +154,3 @@
 
 	software_on_spawn = list(/datum/computer_file/program/suit_sensors,
 							 /datum/computer_file/program/camera_monitor)
-	required_education = EDUCATION_TIER_BASIC

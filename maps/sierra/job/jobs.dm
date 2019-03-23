@@ -60,18 +60,3 @@
 				species_blacklist |= job.type
 */
 // Some jobs for nabber grades defined here due to map-specific job datums.
-/decl/cultural_info/education/nabber/New()
-	LAZYADD(valid_jobs, /datum/job/scientist_assistant)
-	..()
-
-/decl/cultural_info/education/nabber/b/New()
-	LAZYADD(valid_jobs, /datum/job/cargo_assistant)
-	..()
-
-/decl/cultural_info/education/nabber/a/New()
-	LAZYADD(valid_jobs, /datum/job/engineer_trainee)
-	..()
-
-/decl/cultural_info/education/nabber/a/plus/New()
-	LAZYADD(valid_jobs, /datum/job/doctor_trainee)
-	..()

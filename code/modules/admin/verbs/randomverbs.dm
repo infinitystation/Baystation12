@@ -594,7 +594,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 	dat += "<b>Current open jobs:</b>"
 
-	for(var/datum/job/job in job_master.occupations)
+	for(var/datum/job/job in SSjobs.primary_job_datums)
 		dat += "<div>[job.title]: [job.total_positions]</div>"
 
 	dat += "</center></body></html>"

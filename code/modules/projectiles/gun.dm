@@ -557,3 +557,11 @@
 		target.visible_message("<span class='danger'>\The [src] goes off during the struggle!</span>")
 		afterattack(shoot_to,target)
 		return 1
+
+/obj/item/weapon/gun/proc/check_accidents(mob/living/user)
+	if(istype(user))
+		if(!safety() && user.skill_fail_prob(SKILL_WEAPONS, 20, SKILL_EXPERT, 2) && special_check(user))
+			to_chat(user, "<span class='warning'>[src] fires on its own!</span>")
+			var/list/targets = list(user)
+			targets += trange(2, src)
+			afterattack(pick(targets), user)

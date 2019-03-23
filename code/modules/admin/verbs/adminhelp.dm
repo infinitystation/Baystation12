@@ -149,4 +149,4 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 	config.ahelp_allowed = !config.ahelp_allowed
 	log_admin("[key_name(src)] has turned admin help [config.ahelp_allowed ? "on" : "off"].")
 	message_admins("[key_name_admin(src)] has turned admin help [config.ahelp_allowed ? "on" : "off"].", 0)
-	feedback_add_details("admin_verb","TAH") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSstatistics.add_field_details("admin_verb","TAH") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

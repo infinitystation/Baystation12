@@ -285,7 +285,7 @@
 				S.update_strings()
 				S.update_icon()
 			qdel(src)
-	else if(isCoil(W) && reinf_material && !polarized && glasstype != /obj/item/stack/material/glass/phoronrglass)
+	else if(isCoil(W) && reinf_material && !polarized && init_material != /obj/item/stack/material/glass/phoronrglass)
 		var/obj/item/stack/cable_coil/C = W
 		if (C.use(1))
 			playsound(src.loc, 'sound/effects/sparks1.ogg', 75, 1)
@@ -502,6 +502,9 @@
 /obj/structure/window/reinforced/tinted/frosted
 	name = "frosted window"
 	color = GLASS_COLOR_FROSTED
+
+/obj/structure/window/reinforced/bar
+	color = COLOR_BROWN
 
 /obj/structure/window/shuttle
 	name = "shuttle window"

@@ -334,7 +334,7 @@
 				else
 					to_chat(user, "<span class='notice'>Вы не умеете работать с этим замком.</span>")
 		else
-		src.togglelock(user, W)
+			src.togglelock(user, W)
 	else
 		src.attack_hand(user)
 
@@ -415,14 +415,14 @@
 /obj/structure/closet/on_update_icon()
 	if(opened)
 		icon_state = "open"
-	overlays.Cut()
-		else
+		overlays.Cut()
+	else
 		if(broken)
 			icon_state = "closed_emagged[welded ? "_welded" : ""]"
 		else
 			if(locked)
 				icon_state = "closed_locked[welded ? "_welded" : ""]"
-	else
+			else
 				icon_state = "closed_unlocked[welded ? "_welded" : ""]"
 			overlays.Cut()
 

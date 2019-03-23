@@ -236,6 +236,11 @@ var/list/_client_preferences_by_type
 	key = "EXAMINE_MESSAGES"
 	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
 
+/datum/client_preference/show_ckey_credits
+	description = "Show Ckey in End Credits"
+	key = "SHOW_CKEY_CREDITS"
+	options = list(GLOB.PREF_HIDE, GLOB.PREF_SHOW)
+
 /datum/client_preference/anon_say
 	description ="Anonymous Chat"
 	key = "CHAT_ANONSAY"

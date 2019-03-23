@@ -64,7 +64,7 @@
 		queue_icon_update()
 	if(isWrench(W))
 		if(charging)
-			to_chat(user, SPAN_WARNING("Remove the cell first!))
+			to_chat(user, SPAN_WARNING("Remove the cell first!"))
 			return
 		anchored = !anchored
 		set_power()

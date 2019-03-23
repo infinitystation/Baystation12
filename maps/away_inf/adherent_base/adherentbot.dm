@@ -4,7 +4,7 @@
 	icon = 'icons/mob/human_races/species/adherent/body.dmi'
 	icon_state = "full"
 	density = 1
-	req_one_access = list(999)	//You should never unlock him.
+	req_access = list(999)	//You should never unlock him.
 	botcard_access = list(999)
 	RequiresAccessToToggle = 1
 	will_patrol = 1
@@ -92,7 +92,7 @@
 	icon = 'icons/mob/human_races/species/adherent/body.dmi'
 	icon_state = "full"
 	density = 1
-	req_one_access = list(999)	//You should never unlock him.
+	req_access = list(999)	//You should never unlock him.
 	botcard_access = list(999)
 	RequiresAccessToToggle = 1
 	will_patrol = 1
@@ -134,7 +134,7 @@
 	icon = 'icons/mob/human_races/species/adherent/body.dmi'
 	icon_state = "full"
 	density = 1
-	req_one_access = list(999)	//You should not unlock him.
+	req_access = list(999)	//You should not unlock him.
 	botcard_access = null
 	RequiresAccessToToggle = 1
 	will_patrol = 1

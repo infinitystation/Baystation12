@@ -192,7 +192,7 @@
 			teles_left -= 1
 
 			// use a lot of power
-			use_power(power * 10)
+			use_power_oneoff(power * 10)
 
 			temp_msg = "Teleport successful.<BR>"
 			if(teles_left < 10)

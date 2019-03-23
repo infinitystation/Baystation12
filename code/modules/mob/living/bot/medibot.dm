@@ -317,7 +317,7 @@
 /mob/living/bot/medbot/merc
 	name = "Painkiller"
 	icon_state = "medibot0"
-	req_one_access = list(access_syndicate)
+	req_access = list(access_syndicate)
 	botcard_access = list(access_syndicate)
 	skin = "bezerk"
 	vocal = 0

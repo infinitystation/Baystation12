@@ -2,16 +2,31 @@
  * Sierra Exploration
  */
 
+/decl/closet_appearance/secure_closet/sirra/exploration
+	extra_decals = list(
+		"stripe_vertical_mid_full" = COLOR_PURPLE,
+		"exped" = COLOR_PURPLE
+	)
+
+/decl/closet_appearance/secure_closet/sirra/exploration/pilot
+	extra_decals = list(
+		"stripe_vertical_left_full" = COLOR_PURPLE,
+		"stripe_vertical_right_full" = COLOR_PURPLE,
+		"exped" = COLOR_PURPLE
+	)
+
+/decl/closet_appearance/secure_closet/sirra/exploration/leader
+	extra_decals = list(
+		"stripe_vertical_left_full" = COLOR_PURPLE,
+		"stripe_vertical_mid_full" = COLOR_GOLD,
+		"stripe_vertical_right_full" = COLOR_PURPLE,
+		"exped" = COLOR_GOLD
+	)
 
 /obj/structure/closet/secure_closet/el
 	name = "exploration leader's locker"
 	req_access = list(access_el)
-	icon = 'icons/obj/closets_inf.dmi'
-	icon_state = "pathsecure1"
-	icon_closed = "pathsecure"
-	icon_locked = "pathsecure1"
-	icon_opened = "pathsecureopen"
-	icon_off = "pathsecureoff"
+	closet_appearance = /decl/closet_appearance/secure_closet/sirra/exploration/leader
 
 /obj/structure/closet/secure_closet/el/WillContain()
 	return list(
@@ -44,12 +59,7 @@
 /obj/structure/closet/secure_closet/explorer
 	name = "explorer's locker"
 	req_access = list(access_explorer)
-	icon = 'icons/obj/closets_inf.dmi'
-	icon_state = "exp1"
-	icon_closed = "exp"
-	icon_locked = "exp1"
-	icon_opened = "expopen"
-	icon_off = "expoff"
+	closet_appearance = /decl/closet_appearance/secure_closet/sirra/exploration
 
 /obj/structure/closet/secure_closet/explorer/WillContain()
 	return list(
@@ -71,6 +81,7 @@
 /obj/structure/closet/secure_closet/explorer/pilot
 	name = "expeditionary pilot's locker"
 	req_access = list(access_explorer, access_expedition_shuttle_helm)
+	closet_appearance = /decl/closet_appearance/secure_closet/sirra/exploration/pilot
 
 /obj/structure/closet/secure_closet/explorer/pilot/WillContain()
 	return list(
@@ -144,10 +155,7 @@
 /obj/structure/closet/wardrobe/exploration
 	name = "exploration wardrobe"
 	desc = "It's a storage unit for standard-issue attire."
-	icon = 'icons/obj/closets_inf.dmi'
-	icon_state = "wexp"
-	icon_closed = "wexp"
-	icon_opened = "wexpopen"
+	closet_appearance = /decl/closet_appearance/wardrobe/pink
 
 /obj/structure/closet/wardrobe/exploration/WillContain()
 	return list(

@@ -175,7 +175,7 @@
 			if(IsTurfAtmosUnsafe(T))
 				safe = 0
 				break
-		if(safe && W.glasstype != /obj/item/stack/material/glass/phoronrglass)
+		if(safe && W.init_material != /obj/item/stack/material/glass/phoronrglass)
 			W.shatter(0)
 			return W
 	for(var/obj/structure/grille/G in close_view)
@@ -186,7 +186,7 @@
 				safe = 0
 				break
 		if(safe)
-			new /obj/item/stack/rods(G.loc)
+			new /obj/item/stack/material/rods(G.loc)
 			G.Destroy()
 			return G
 	for(var/obj/structure/wall_frame/WF in close_view)

@@ -86,9 +86,7 @@
 	)
 
 /obj/structure/closet/l3closet/xeno_anom
-	icon_state = "bio_command"
-	icon_closed = "bio_command"
-	icon_opened = "bio_commandopen"
+	closet_appearance = /decl/closet_appearance/bio/science
 
 /obj/structure/closet/l3closet/xeno_anom/WillContain()
 	return list(

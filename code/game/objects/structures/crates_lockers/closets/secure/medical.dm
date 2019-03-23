@@ -44,11 +44,7 @@
 /obj/structure/closet/secure_closet/medical1_minimal
 	name = "medical equipment closet"
 	desc = "Filled with medical junk."
-	icon_state = "medical1"
-	icon_closed = "medical"
-	icon_locked = "medical1"
-	icon_opened = "medicalopen"
-	icon_off = "medicaloff"
+	closet_appearance = /decl/closet_appearance/secure_closet/medical
 	req_access = list(access_medical_equip)
 
 /obj/structure/closet/secure_closet/medical1_minimal/WillContain()

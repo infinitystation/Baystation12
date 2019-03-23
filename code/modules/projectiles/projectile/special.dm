@@ -91,7 +91,7 @@
 			var/mob/living/carbon/human/H = M
 			if((H.species.species_flags & SPECIES_FLAG_IS_PLANT) && (H.nutrition < 500))
 				if(prob(15))
-					H.apply_effect((rand(30,80)),IRRADIATE,blocked = H.getarmor(null, "rad"))
+					H.apply_damage((rand(30,80)),IRRADIATE, damage_flags = DAM_DISPERSED)
 					H.Weaken(5)
 					for (var/mob/V in viewers(src))
 						V.show_message("<span class='warning'>[M] writhes in pain as \his vacuoles boil.</span>", 3, "<span class='warning'>You hear the crunching of leaves.</span>", 2)
@@ -140,7 +140,6 @@
 		else
 			return 1
 
-
 /obj/item/projectile/beam/mindflayer
 	name = "flayer ray"
 
@@ -148,6 +147,7 @@
 		if(ishuman(target))
 			var/mob/living/carbon/human/M = target
 			M.confused += rand(5,8)
+
 /obj/item/projectile/chameleon
 	name = "bullet"
 	icon_state = "bullet"
@@ -157,3 +157,15 @@
 	damage_type = PAIN
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
 
+/obj/item/projectile/venom
+	name = "venom bolt"
+	icon_state = "venom"
+	damage = 5 //most damage is in the reagent
+	damage_type = TOX
+	check_armour = "bio"
+
+/obj/item/projectile/venom/on_hit(atom/target, blocked, def_zone)
+	. = ..()
+	var/mob/living/L = target
+	if(L.reagents)
+		L.reagents.add_reagent(/datum/reagent/toxin/venom, 5)

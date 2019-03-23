@@ -781,7 +781,7 @@ BLIND     // can't see anything
 	if(gender_icons && bodytype == SPECIES_HUMAN && user_mob.gender == FEMALE)
 		return "[ret]_f_s"
 	else
-	return "[ret]_s"
+		return "[ret]_s"
 
 /obj/item/clothing/under/attack_hand(var/mob/user)
 	if(accessories && accessories.len)

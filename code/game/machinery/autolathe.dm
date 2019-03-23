@@ -208,7 +208,7 @@
 	//Resources are being loaded.
 	var/obj/item/eating = O
 	var/list/taking_matter
-	if(eating.is_stack)
+	if(istype(eating, /obj/item/stack))
 		var/obj/item/stack/material/mat = eating
 		taking_matter = list()
 		for(var/matname in eating.matter)
@@ -272,7 +272,7 @@
 
 /obj/machinery/autolathe/CanUseTopic(user, href_list)
 	if(busy)
-		SPAN_NOTICE("The autolathe is busy. Please wait for completion of previous operation."))
+		to_chat(user, SPAN_NOTICE("The autolathe is busy. Please wait for completion of previous operation."))
 		return min(STATUS_UPDATE, ..())
 	return ..()
 

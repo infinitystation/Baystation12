@@ -18,17 +18,16 @@
 	underlays.Cut()
 	underlays += image('icons/obj/stationobjs.dmi', icon_state = "telecomp-wires")
 	connect_console()
-	return
 
 /obj/machinery/computer/teleporter/proc/connect_console()
 	for(var/dir in list(NORTH,EAST,SOUTH,WEST))
 		station = locate(/obj/machinery/teleport/station, get_step(src, dir))
-	if(station)
-		station.com = src
+		if(station)
+			station.com = src
 			hub = station.hub
 			if(hub && !hub.com)
-		hub.com = src
-			break
+				hub.com = src
+				break
 
 /obj/machinery/computer/teleporter/power_change()
 	. = ..()

@@ -87,12 +87,12 @@
 	if(!isliving(target))	return 0
 	if(isanimal(target))	return 0
 
-	var/mob/living/L = target
+	var/mob/living/carbon/human/L = target
 
 	L.apply_effects(0, weaken, paralyze, 0, stutter, eyeblur, drowsy, 0, blocked)
 	L.stun_effect_act(stun, agony, def_zone, src)
 	//radiation protection is handled separately from other armour types.
-	L.apply_effect(irradiate, IRRADIATE, L.getarmor(null, "rad"))
+	L.apply_effect(irradiate, IRRADIATE, damage_flags = DAM_DISPERSED)
 
 
 	return 1

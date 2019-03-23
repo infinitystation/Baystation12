@@ -65,7 +65,7 @@ Weapons
 /obj/item/weapon/gun/energy/stunrevolver/secure/nanotrasen
 	name = "corporate stun revolver"
 	desc = "This A&M X6 is fitted with an NT1019 chip which allows remote authorization of weapon functionality. It has a NanoTrasen emblem on the grip."
-	req_one_access = list(access_brig, access_heads, access_rd)
+	req_access = list(list(access_brig, access_heads, access_rd))
 
 /obj/item/weapon/gun/projectile/pistol/liaison
 	magazine_type = /obj/item/ammo_magazine/mc9mm/oneway
@@ -84,4 +84,4 @@ Weapons
 	interact(user)
 
 /obj/item/tape/research
-	req_one_access = list(access_research, access_explorer)
+	req_access = list(list(access_research, access_explorer))

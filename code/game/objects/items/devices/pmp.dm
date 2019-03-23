@@ -30,7 +30,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 	popup.set_content(jointext(dat, null))
 	popup.open()
 
-	feedback_add_details("admin_verb","LCPMP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSstatistics.add_field("admin_verb","LCPMP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 #define PANEL_CLOSED 0
 #define PANEL_UNSCREWED 1

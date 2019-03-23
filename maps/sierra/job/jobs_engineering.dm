@@ -41,8 +41,6 @@
 							 /datum/computer_file/program/rcon_console,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor)
-	required_education = EDUCATION_TIER_TRADE
-	maximum_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/engineer
 	title = "Engineer"
@@ -95,9 +93,6 @@
 							 /datum/computer_file/program/rcon_console,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor)
-	required_education = EDUCATION_TIER_TRADE
-	maximum_education = EDUCATION_TIER_BACHELOR
-
 
 /datum/job/engineer_trainee
 	title = "Engineer Trainee"
@@ -141,8 +136,6 @@
 							 /datum/computer_file/program/rcon_console,
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor)
-	required_education = EDUCATION_TIER_BASIC
-	maximum_education = EDUCATION_TIER_TRADE
 
 /datum/job/infsys
 	title = "Information Technician"
@@ -173,5 +166,3 @@
 			       	access_tech_storage, access_emergency_storage, access_tcomsat)
 	minimal_access = list()
 
-	required_education = EDUCATION_TIER_TRADE
-	maximum_education = EDUCATION_TIER_BACHELOR

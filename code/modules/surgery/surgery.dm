@@ -24,7 +24,7 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 	var/delicate = 0                     // if this step NEEDS stable optable or can be done on any valid surface with no penalty
 	var/core_skill = SKILL_ANATOMY       // The skill that's checked for speed modifiers.
 	var/surgery_candidate_flags = 0      // Various bitflags for requirements of the surgery.
-	var/strict_access_requirement = TRUE // Whether or not this surgery will be fuzzy on size requirements. 
+	var/strict_access_requirement = TRUE // Whether or not this surgery will be fuzzy on size requirements.
 
 //returns how well tool is suited for this step
 /decl/surgery_step/proc/tool_quality(obj/item/tool)
@@ -208,7 +208,7 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 
 	// Otherwise we can make a start on surgery!
 	else if(istype(M) && !QDELETED(M) && user.a_intent != I_HURT && user.get_active_hand() == src)
-		// Double-check this in case it changed between initial check and now. 
+		// Double-check this in case it changed between initial check and now.
 		if(zone in M.surgeries_in_progress)
 			to_chat(user, SPAN_WARNING("You can't operate on this area while surgery is already in progress."))
 		else if(S.can_use(user, M, zone, src) && S.is_valid_target(M))
