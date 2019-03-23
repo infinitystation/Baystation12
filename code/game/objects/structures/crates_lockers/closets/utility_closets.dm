@@ -17,9 +17,7 @@
 /obj/structure/closet/emcloset
 	name = "emergency closet"
 	desc = "It's a storage unit for emergency breathmasks and o2 tanks."
-	icon_state = "emergency"
-	icon_closed = "emergency"
-	icon_opened = "emergencyopen"
+	closet_appearance = /decl/closet_appearance/oxygen
 
 /*
 	switch (pickweight(list("small" = 50, "aid" = 25, "tank" = 10, "large" = 5, "both" = 10)))
@@ -110,19 +108,14 @@
 	new /obj/item/clothing/suit/space/emergency(src)
 	new /obj/item/clothing/head/helmet/space/emergency(src)
 
-/obj/structure/closet/emcloset/legacy/New()
-	new /obj/item/weapon/tank/oxygen(src)
-	new /obj/item/clothing/mask/gas(src)
-
 /*
  * Fire Closet
  */
 /obj/structure/closet/firecloset
 	name = "fire-safety closet"
 	desc = "It's a storage unit for fire-fighting supplies."
-	icon_state = "firecloset"
-	icon_closed = "firecloset"
-	icon_opened = "fireclosetopen"
+	closet_appearance = /decl/closet_appearance/oxygen/fire
+
 
 /obj/structure/closet/firecloset/WillContain()
 	return list(
@@ -134,21 +127,13 @@
 		/obj/item/weapon/extinguisher,
 		/obj/item/clothing/head/hardhat/red)
 
-/obj/structure/closet/firecloset/on_update_icon()
-	if(!opened)
-		icon_state = icon_closed
-	else
-		icon_state = icon_opened
-
 /*
  * Tool Closet
  */
 /obj/structure/closet/toolcloset
 	name = "tool closet"
 	desc = "It's a storage unit for tools."
-	icon_state = "toolcloset"
-	icon_closed = "toolcloset"
-	icon_opened = "toolclosetopen"
+	closet_appearance = /decl/closet_appearance/secure_closet/engineering/tools
 
 /obj/structure/closet/toolcloset/New()
 	..()
@@ -190,9 +175,7 @@
 /obj/structure/closet/radiation
 	name = "radiation suit closet"
 	desc = "It's a storage unit for rad-protective suits."
-	icon_state = "radsuitcloset"
-	icon_opened = "toolclosetopen"
-	icon_closed = "radsuitcloset"
+	closet_appearance = /decl/closet_appearance/secure_closet/engineering/tools/radiation
 
 /obj/structure/closet/radiation/WillContain()
 	return list(
@@ -209,9 +192,7 @@
 /obj/structure/closet/bombcloset
 	name = "\improper EOD closet"
 	desc = "It's a storage unit for explosion-protective suits."
-	icon_state = "bombsuit"
-	icon_closed = "bombsuit"
-	icon_opened = "bombsuitopen"
+	closet_appearance = /decl/closet_appearance/bomb
 
 /obj/structure/closet/bombcloset/WillContain()
 	return list(
@@ -224,9 +205,7 @@
 /obj/structure/closet/bombclosetsecurity
 	name = "\improper EOD closet"
 	desc = "It's a storage unit for explosion-protective suits."
-	icon_state = "bombsuitsec"
-	icon_closed = "bombsuitsec"
-	icon_opened = "bombsuitsecopen"
+	closet_appearance = /decl/closet_appearance/bomb/security
 
 /obj/structure/closet/bombclosetsecurity/WillContain()
 	return list(
@@ -241,9 +220,7 @@
 /obj/structure/closet/hydrant //wall mounted fire closet
 	name = "fire-safety closet"
 	desc = "It's a storage unit for fire-fighting supplies."
-	icon_state = "hydrant"
-	icon_closed = "hydrant"
-	icon_opened = "hydrant_open"
+	closet_appearance = /decl/closet_appearance/wall/hydrant
 	anchored = 1
 	density = 0
 	wall_mounted = 1
@@ -270,20 +247,12 @@
 /obj/structure/closet/medical_wall //wall mounted medical closet
 	name = "first-aid closet"
 	desc = "It's a wall-mounted storage unit for first aid supplies."
-	icon_state = "medical_wall_first_aid"
-	icon_closed = "medical_wall_first_aid"
-	icon_opened = "medical_wall_first_aid_open"
+	closet_appearance = /decl/closet_appearance/wall/medical
 	anchored = 1
 	density = 0
 	wall_mounted = 1
 	storage_types = CLOSET_STORAGE_ITEMS
 	setup = 0
-
-/obj/structure/closet/medical_wall/on_update_icon()
-	if(!opened)
-		icon_state = icon_closed
-	else
-		icon_state = icon_opened
 
 /obj/structure/closet/medical_wall/filled/WillContain()
 	return list(
@@ -332,20 +301,12 @@
 /obj/structure/closet/shipping_wall
 	name = "shipping supplies closet"
 	desc = "It's a wall-mounted storage unit containing supplies for preparing shipments."
-	icon_state = "shipping_wall"
-	icon_closed = "shipping_wall"
-	icon_opened = "shipping_wall_open"
+	closet_appearance = /decl/closet_appearance/wall/shipping
 	anchored = 1
 	density = 0
 	wall_mounted = 1
 	storage_types = CLOSET_STORAGE_ITEMS
 	setup = 0
-
-/obj/structure/closet/shipping_wall/on_update_icon()
-	if(!opened)
-		icon_state = icon_closed
-	else
-		icon_state = icon_opened
 
 /obj/structure/closet/shipping_wall/filled/WillContain()
 	return list(

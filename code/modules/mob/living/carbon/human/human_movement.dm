@@ -11,7 +11,8 @@
 			return -2
 		return -1
 
-	if(embedded_flag || (stomach_contents && stomach_contents.len))
+	var/obj/item/organ/internal/stomach/stomach = internal_organs_by_name[BP_STOMACH]
+	if(embedded_flag || (stomach && stomach.contents.len))
 		handle_embedded_and_stomach_objects() //Moving with objects stuck in you can cause bad times.
 
 	if(CE_SPEEDBOOST in chem_effects)
@@ -125,7 +126,7 @@
 	return prob_slip
 
 /mob/living/carbon/human/Check_Shoegrip()
-	if(species.species_flags & SPECIES_FLAG_NO_SLIP)
+	if(species.check_no_slip(src))
 		return 1
 	if(shoes && (shoes.item_flags & ITEM_FLAG_NOSLIP) && istype(shoes, /obj/item/clothing/shoes/magboots))  //magboots + dense_object = no floating
 		return 1
@@ -143,6 +144,7 @@
 	. = ..()
 	if(.) //We moved
 		handle_exertion()
+		handle_leg_damage()
 
 /mob/living/carbon/human/proc/handle_exertion()
 	if(isSynthetic())
@@ -155,3 +157,18 @@
 				visible_message("<span class='notice'>\The [src] is sweating heavily!</span>", "<span class='notice'>You are sweating heavily!</span>")
 			if(2)
 				visible_message("<span class='notice'>\The [src] looks out of breath!</span>", "<span class='notice'>You are out of breath!</span>")
+
+/mob/living/carbon/human/proc/handle_leg_damage()
+	if(!can_feel_pain())
+		return
+	var/crutches = 0
+	for(var/obj/item/weapon/cane/C in list(l_hand, r_hand))
+		if(istype(C))
+			crutches++
+	for(var/organ_name in list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT))
+		var/obj/item/organ/external/E = get_organ(organ_name)
+		if(E && (E.is_dislocated() || E.is_broken()))
+			if(crutches)
+				crutches--
+			else
+				E.add_pain(10)

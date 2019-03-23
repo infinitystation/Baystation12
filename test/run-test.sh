@@ -200,6 +200,7 @@ function run_code_tests {
     pip install --user PyYaml -q
     pip install --user beautifulsoup4 -q
     shopt -s globstar
+    run_test "check travis contains all maps" "scripts/validateTravisContainsAllMaps.sh"
     run_test_fail "maps contain no step_[xy]" "grep 'step_[xy]' maps/**/*.dmm"
     run_test_fail "ensure nanoui templates unique" "find nano/templates/ -type f -exec md5sum {} + | sort | uniq -D -w 32 | grep nano"
     run_test_fail "no invalid spans" "grep -En \"<\s*span\s+class\s*=\s*('[^'>]+|[^'>]+')\s*>\" **/*.dm"
@@ -241,7 +242,7 @@ function run_byond_tests {
         source $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}/byond/bin/byondsetup
     fi
     run_test_ci "check globals build" "python3 tools/GenerateGlobalVarAccess/gen_globals.py baystation12.dme code/_helpers/global_access.dm"
-    run_test "check globals unchanged" "md5sum -c - <<< '17727f7cddc91f99fcf8390c5231b405 *code/_helpers/global_access.dm'"
+    run_test "check globals unchanged" "md5sum -c - <<< '43bffb49a9a03d8f0e69695e9bd52b36 *code/_helpers/global_access.dm'"
     run_test "build map unit tests" "scripts/dm.sh -DUNIT_TEST -M$MAP_PATH baystation12.dme"
     run_test "check no warnings in build" "grep ', 0 warnings' build_log.txt"
     run_test "run unit tests" "DreamDaemon baystation12.dmb -invisible -trusted -core 2>&1 | tee log.txt"
@@ -250,7 +251,7 @@ function run_byond_tests {
     run_test_fail "check no runtimes 2" "grep 'runtime error:' log.txt"
     run_test_fail "check no scheduler failures" "grep 'Process scheduler caught exception processing' log.txt"
     run_test_fail "check no warnings" "grep 'WARNING:' log.txt"
-    #run_test_fail "check no failures" "grep 'ERROR:' log.txt"
+    run_test_fail "check no errors" "grep 'ERROR:' log.txt"
 }
 
 function run_all_tests {

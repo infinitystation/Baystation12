@@ -7,14 +7,13 @@
 	can_reinforce = 0
 	flipped = -1
 
-/obj/structure/table/rack/New()
-	..()
-	verbs -= /obj/structure/table/verb/do_flip
-	verbs -= /obj/structure/table/proc/do_put
+	material = DEFAULT_FURNITURE_MATERIAL
 
 /obj/structure/table/rack/Initialize()
-	auto_align()
 	. = ..()
+	auto_align()
+	verbs -= /obj/structure/table/verb/do_flip
+	verbs -= /obj/structure/table/proc/do_put
 
 /obj/structure/table/rack/update_connections()
 	return

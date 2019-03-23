@@ -163,15 +163,14 @@
 	var/allow_occupant_types = list(/mob/living/carbon/human)
 	var/disallow_occupant_types = list()
 
-	var/mob/occupant = null            // Person waiting to be despawned.
+	var/mob/occupant = null       // Person waiting to be despawned.
 	var/time_till_despawn = 5 MINUTES  // Down to 5 minutes  // Down to 15 minutes //30 minutes-ish is too long
-	var/time_entered = 0               // Used to keep track of the safe period.
+	var/time_entered = 0          // Used to keep track of the safe period.
 	var/obj/item/device/radio/intercom/announce //
 
 	var/obj/machinery/computer/cryopod/control_computer
 	var/last_no_computer_message = 0
 	var/applies_stasis = 1
-	var/awakening = 0
 
 	// These items are preserved when the process() despawn proc occurs.
 	var/list/preserve_items = list(
@@ -208,8 +207,7 @@
 	name = "life pod"
 	desc = "A man-sized pod for entering suspended animation. Dubbed 'cryocoffin' by more cynical spacers, it is pretty barebone, counting on stasis system to keep the victim alive rather than packing extended supply of food or air. Can be ordered with symbols of common religious denominations to be used in space funerals too."
 	on_store_name = "Life Pod Oversight"
-	density = 0
-	time_till_despawn = 2 MINUTES
+	time_till_despawn = 20 MINUTES
 	icon_state = "redpod0"
 	base_icon_state = "redpod0"
 	occupied_icon_state = "redpod1"
@@ -305,15 +303,17 @@
 
 	return 1
 
+/obj/machinery/cryopod/examine(mob/user)
+	. = ..()
+	if (. && occupant && user.Adjacent(src))
+		occupant.examine(user)
+
 //Lifted from Unity stasis.dm and refactored. ~Zuhayr
 /obj/machinery/cryopod/Process()
 	if(occupant)
 		if(applies_stasis && iscarbon(occupant))
 			var/mob/living/carbon/C = occupant
-			if(awakening)
-				C.SetStasis(2)
-			else
-				C.SetStasis(3)
+			C.SetStasis(2)
 
 		//Allow a ten minute gap between entering the pod and actually despawning.
 		if(world.time - time_entered < time_till_despawn)
@@ -396,8 +396,8 @@
 
 	//Handle job slot/tater cleanup.
 	if(occupant.mind)
-		var/job = occupant.mind.assigned_role
-		job_master.ClearSlot(job)
+		if(occupant.mind.assigned_job)
+			occupant.mind.assigned_job.clear_slot()
 
 		if(occupant.mind.objectives.len)
 			occupant.mind.objectives = null
@@ -428,7 +428,7 @@
 
 	var/leave_announce = occupant.mind ? occupant.mind.assigned_job ? occupant.mind.assigned_job.announced : null : null
 	if(leave_announce)
-		announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
+	announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
 	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>", 3)
 
 	//This should guarantee that ghosts don't spawn.
@@ -557,18 +557,17 @@
 		occupant.client.perspective = MOB_PERSPECTIVE
 
 	if(not_turf_contains_dense_objects(get_turf(get_step(loc, dir))))
-		occupant.forceMove(get_step(loc, dir))
+		occupant.dropInto(get_step(loc, dir))
 	else
-		occupant.forceMove(loc)
+		occupant.dropInto(loc)
 
 	set_occupant(null)
-	awakening = 0
 
 	icon_state = base_icon_state
 
 	return
 
-/obj/machinery/cryopod/proc/set_occupant(var/mob/living/carbon/occupant)
+/obj/machinery/cryopod/proc/set_occupant(var/mob/living/carbon/occupant, var/silent)
 	src.occupant = occupant
 	if(!occupant)
 		SetName(initial(name))
@@ -576,8 +575,9 @@
 
 	occupant.stop_pulling()
 	if(occupant.client)
-		to_chat(occupant, "<span class='notice'>[on_enter_occupant_message]</span>")
-		to_chat(occupant, "<span class='notice'><b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</b></span>")
+		if(!silent)
+			to_chat(occupant, "<span class='notice'>[on_enter_occupant_message]</span>")
+			to_chat(occupant, "<span class='notice'><b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</b></span>")
 		occupant.client.perspective = EYE_PERSPECTIVE
 		occupant.client.eye = src
 	occupant.forceMove(src)
@@ -585,13 +585,3 @@
 
 	SetName("[name] ([occupant])")
 	icon_state = occupied_icon_state
-
-/obj/machinery/cryopod/proc/set_awakening_occupant(var/mob/living/carbon/human/H)
-	src.occupant = H
-	H.SetStasis(2)
-	H.forceMove(src)
-	awakening = 1
-	icon_state = occupied_icon_state
-
-	spawn(20) // we need to wait for a little bit
-		SetName("[name] ([occupant])")

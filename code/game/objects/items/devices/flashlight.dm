@@ -164,6 +164,7 @@
 	hitsound = "swing_hit"
 	flashlight_max_bright = 0.6
 	flashlight_outer_range = 4
+
 /******************************Lantern*******************************/
 /obj/item/device/flashlight/lantern
 	name = "lantern"

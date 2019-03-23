@@ -15,19 +15,19 @@
 	name = "red wizard hat"
 	desc = "Strange-looking, red, hat-wear that most certainly belongs to a real magic user."
 	icon_state = "redwizard"
+	siemens_coefficient = 0.8
 
 /obj/item/clothing/head/wizard/fake
 	name = "wizard hat"
 	desc = "It has WIZZARD written across it in sequins. Comes with a cool beard."
 	icon_state = "wizard-fake"
 	body_parts_covered = HEAD|FACE
-	flags_inv = HIDEFACE
-	siemens_coefficient = 1
 
 /obj/item/clothing/head/wizard/marisa
 	name = "Witch Hat"
 	desc = "Strange-looking hat-wear, makes you want to cast fireballs."
 	icon_state = "marisa"
+	siemens_coefficient = 0.8
 
 /obj/item/clothing/head/wizard/magus
 	name = "Magus Helm"
@@ -38,17 +38,9 @@
 		slot_l_hand_str = "helmet",
 		slot_r_hand_str = "helmet",
 		)
+	siemens_coefficient = 0.8
 	body_parts_covered = HEAD|FACE|EYES|BLOCKHAIR
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
-
-/obj/item/clothing/head/wizard/amp
-	name = "psychic amplifier"
-	desc = "A crown-of-thorns psychic amplifier. Kind of looks like a tiara having sex with an industrial robot."
-	icon_state = "amp"
-	item_state_slots = list(
-		slot_l_hand_str = "helmet",
-		slot_r_hand_str = "helmet",
-		)
 
 /obj/item/clothing/head/wizard/cap
 	name = "Gentlemans Cap"
@@ -58,6 +50,7 @@
 		slot_l_hand_str = "det_hat",
 		slot_r_hand_str = "det_hat",
 		)
+	siemens_coefficient = 0.8
 
 /obj/item/clothing/suit/wizrobe
 	name = "wizard robe"
@@ -106,6 +99,7 @@
 	desc = "Heavy, royal purple robes threaded with psychic amplifiers and weird, bulbous lenses. Do not machine wash."
 	icon_state = "psyamp"
 	item_state = "psyamp"
+	gender = PLURAL
 
 /obj/item/clothing/suit/wizrobe/gentlecoat
 	name = "Gentlemans Coat"

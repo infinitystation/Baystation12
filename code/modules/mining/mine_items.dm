@@ -2,32 +2,26 @@
 
 /obj/structure/closet/secure_closet/miner
 	name = "miner's equipment"
-	icon_state = "miningsec1"
-	icon_closed = "miningsec"
-	icon_locked = "miningsec1"
-	icon_opened = "miningsecopen"
-	icon_broken = "miningsecbroken"
-	icon_off = "miningsecoff"
+	closet_appearance = /decl/closet_appearance/secure_closet/mining
 	req_access = list(access_mining)
 
-/obj/structure/closet/secure_closet/miner/New()
-	..()
-	sleep(2)
-	if(prob(50))
-		new /obj/item/weapon/storage/backpack/industrial(src)
-	else
-		new /obj/item/weapon/storage/backpack/satchel/eng(src)
-	new /obj/item/device/radio/headset/headset_cargo(src)
-	new /obj/item/clothing/under/rank/miner(src)
-	new /obj/item/clothing/gloves/thick(src)
-	new /obj/item/clothing/shoes/black(src)
-	new /obj/item/device/analyzer(src)
-	new /obj/item/weapon/storage/ore(src)
-	new /obj/item/device/flashlight/lantern(src)
-	new /obj/item/weapon/shovel(src)
-	new /obj/item/weapon/pickaxe(src)
-	new /obj/item/clothing/glasses/meson(src)
-
+/obj/structure/closet/secure_closet/miner/WillContain()
+	return list(
+		new /datum/atom_creator/weighted(list(
+				/obj/item/weapon/storage/backpack/industrial,
+				/obj/item/weapon/storage/backpack/satchel/eng
+			)),
+		/obj/item/device/radio/headset/headset_cargo,
+		/obj/item/clothing/under/rank/miner,
+		/obj/item/clothing/gloves/thick,
+		/obj/item/clothing/shoes/black,
+		/obj/item/device/analyzer,
+		/obj/item/weapon/storage/ore,
+		/obj/item/device/flashlight/lantern,
+		/obj/item/weapon/shovel,
+		/obj/item/weapon/pickaxe,
+		/obj/item/clothing/glasses/meson
+	)
 
 /*****************************Pickaxe********************************/
 
@@ -149,20 +143,7 @@
 	throwforce = 7.0
 	w_class = ITEM_SIZE_SMALL
 
-
-/**********************Mining car (Crate like thing, not the rail car)**************************/
-
-/obj/structure/closet/crate/miningcar
-	desc = "A mining car. This one doesn't work on rails, but has to be dragged."
-	name = "Mining car (not for rails)"
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "miningcar"
-	density = 1
-	icon_opened = "miningcaropen"
-	icon_closed = "miningcar"
-
 // Flags.
-
 /obj/item/stack/flag
 	name = "flags"
 	desc = "Some colourful flags."

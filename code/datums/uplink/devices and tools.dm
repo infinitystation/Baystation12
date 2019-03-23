@@ -122,3 +122,9 @@
 	antag_roles = list(MODE_MERCENARY)
 	path = /obj/item/weapon/shield/energy
 
+/datum/uplink_item/item/tools/ttv
+	name = "Binary Gas Bomb"
+	item_cost = 40
+	path = /obj/effect/spawner/newbomb/traitor
+	desc = "A remote-activated phoron-oxygen bomb assembly with built-in signaler. \
+			A flashing disclaimer begins with the warning 'SOME DISASSEMBLY/REASSEMBLY REQUIRED.'"

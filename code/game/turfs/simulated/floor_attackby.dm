@@ -3,7 +3,7 @@
 	if(!C || !user)
 		return 0
 
-	if(isCoil(C) || (flooring && istype(C, /obj/item/stack/rods)))
+	if(isCoil(C) || (flooring && istype(C, /obj/item/stack/material/rods)))
 		return ..(C, user)
 
 	if(!(isScrewdriver(C) && flooring && (flooring.flags & TURF_REMOVE_SCREWDRIVER)) && try_graffiti(user, C))
@@ -56,16 +56,17 @@
 			//first check, catwalk? Else let flooring do its thing
 			if(locate(/obj/structure/catwalk, src))
 				return
-			if (istype(C, /obj/item/stack/rods))
-				var/obj/item/stack/rods/R = C
+			if (istype(C, /obj/item/stack/material/rods))
+				var/obj/item/stack/material/rods/R = C
 				if (R.use(2))
 					playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
 					new /obj/structure/catwalk(src)
 				return
 			var/obj/item/stack/S = C
 			var/decl/flooring/use_flooring
-			for(var/flooring_type in flooring_types)
-				var/decl/flooring/F = flooring_types[flooring_type]
+			var/list/decls = decls_repository.get_decls_of_subtype(/decl/flooring)
+			for(var/flooring_type in decls)
+				var/decl/flooring/F = decls[flooring_type]
 				if(!F.build_type)
 					continue
 				if(ispath(S.type, F.build_type) || ispath(S.build_type, F.build_type))

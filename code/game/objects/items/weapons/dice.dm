@@ -8,10 +8,8 @@
 	attack_verb = list("diced")
 
 /obj/item/weapon/dice/Initialize()
-	if(sides != 100)
-		icon_state = "[name][rand(1,sides)]"
-	else
-		icon_state = "[name][round(rand(10,100), 10)]"
+	. = ..()
+	icon_state = "[name][rand(1,sides)]"
 
 /obj/item/weapon/dice/d4
 	name = "d4"
@@ -47,7 +45,7 @@
 	name = "d100"
 	desc = "A dice with ten sides. This one is for the tens digit."
 	icon_state = "d10010"
-	sides = 100
+	sides = 10
 
 /obj/item/weapon/dice/proc/roll_die()
 	var/result = rand(1, sides)
@@ -66,10 +64,7 @@
 	var/list/roll_result = roll_die()
 	var/result = roll_result[1]
 	var/comment = roll_result[2]
-	if(sides != 100)
-		icon_state = "[name][result]"
-	else
-		icon_state = "[name][round(result, 10)]"
+	icon_state = "[name][result]"
 	user.visible_message("<span class='notice'>[user] has thrown [src]. It lands on [result]. [comment]</span>", \
 						 "<span class='notice'>You throw [src]. It lands on a [result]. [comment]</span>", \
 						 "<span class='notice'>You hear [src] landing on a [result]. [comment]</span>")
@@ -79,8 +74,5 @@
 	var/list/roll_result = roll_die()
 	var/result = roll_result[1]
 	var/comment = roll_result[2]
-	if(sides != 100)
-		icon_state = "[name][result]"
-	else
-		icon_state = "[name][round(result, 10)]"
+	icon_state = "[name][result]"
 	src.visible_message("<span class='notice'>\The [src] lands on [result]. [comment]</span>")

@@ -33,12 +33,14 @@
 		"nav_deck3_guppy",
 		"nav_deck4_guppy",
 		"nav_bridge_guppy",
-		"nav_hangar_aquila",
 		"nav_deck1_aquila",
 		"nav_deck2_aquila",
 		"nav_deck3_aquila",
 		"nav_deck4_aquila",
-		"nav_bridge_aquila"
+		"nav_bridge_aquila",
+		"nav_skrellscoutsh_altdock",
+		"nav_ert_dock"
+		
 	)
 
 /obj/effect/overmap/ship/landable/exploration_shuttle
@@ -55,6 +57,14 @@
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 0.5 SECONDS //spammable, but expensive
 	fore_dir = NORTH
+
+/obj/effect/overmap/ship/landable/guppy
+	name = "Guppy"
+	shuttle = "Guppy"
+	max_speed = 1/(10 SECONDS)
+	burn_delay = 2 SECONDS
+	vessel_mass = 2000
+	fore_dir = SOUTH
 
 /obj/machinery/computer/shuttle_control/explore/aquila
 	name = "aquila control console"

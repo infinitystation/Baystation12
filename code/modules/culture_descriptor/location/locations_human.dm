@@ -121,7 +121,7 @@
 	gateway installation in SCG space and provides vital links to many other SCG systems. Practically a city in space unto itself, the HGI is home to a hodgepodge of private individuals, \
 	Fleet and law enforcement outposts, government services and a wide array of private enterprises all catering to the many hangabouts, travellers, merchants and soldiers who pass through it daily. \
 	This fact alone is what has allowed the Helios system and Eos as a whole to weather multiple economic recessions and has allowed Eos to establish itself as a premier commercial centre of the wider \
-	SCG. This process was hindered during the Gaia conflict, when the Helios Gateway was destroyed in a suicide action of the Fourth Fleet to stop the TCC advance. It has recovered rapidly \
+	SCG. This process was hindered during the Gaia conflict, when the Helios Gateway was destroyed in a suicide action of the Fourth Fleet to stop the GCC advance. It has recovered rapidly \
 	since the occupation, though the memories of that event carry in the collective consciousness of those who remained through it."
 	capital = "Surya"
 	language = LANGUAGE_SOL_COMMON
@@ -131,8 +131,8 @@
 
 /decl/cultural_info/location/human/terra
 	name = HOME_SYSTEM_TERRA
-	description = "Terra, in the Gilgamesh system. Is not the planet Earth as some may be lead to believe. No, Terra is the home of the Terran Colonial Confederation, and the capital of that \
-	particular superpower. Terra is one of the many affiliated planets in the TCC and the one that is perhaps the most important. Terra, much like most of the TCC, is isolationist, with a minimal \
+	description = "Terra, in the Gilgamesh system. Is not the planet Earth as some may be lead to believe. No, Terra is the home of the Gilgamesh Colonial Confederation, and the capital of that \
+	particular superpower. Terra is one of the many affiliated planets in the GCC and the one that is perhaps the most important. Terra, much like most of the GCC, is isolationist, with a minimal \
 	non-human presence. Much of Terra is heavily industrialised, with a lower standard of living than on equivalent SCG planets. Much of the population works in services, industry or the military. \
 	Still recovering from an economic crash toward the end of the Gaia conflict, much of Terra is in decline, with public services and works being minimal and much of the population burdened by \
 	increasingly high taxes. This state of affairs has seen the immigration of many Terran citizens to the SCG in recent years, hoping to escape the poor conditions they found themselves in. Despite this,\
@@ -142,6 +142,7 @@
 	secondary_langs = list(LANGUAGE_SOL_COMMON, LANGUAGE_GALCOM)
 	distance = "22.5 light years."
 	economic_power = 0.9
+	ruling_body = "Gilgamesh Colonial Confederation"
 
 /decl/cultural_info/location/human/tersten
 	name = HOME_SYSTEM_TERSTEN
@@ -166,7 +167,7 @@
 /decl/cultural_info/location/human/lorriman
 	name = HOME_SYSTEM_LORRIMAN
 	distance = "44 light years"
-	description = "Lorriman is an arctic planet in the Gessshire system.  It is a frozen wasteland with winds reaching 200mph, with an average temperature is -50°C. \
+	description = "Lorriman is an arctic planet in the Gessshire system.  It is a frozen wasteland with winds reaching 200mph, with an average temperature is -50Â°C. \
 	Because of this, the planet's cities are either domed or built into mountains. Its economy is built around a technological backbone, providing the technology \
 	and the people skilled to use them.  Its infrastructure is developed enough to support mass transit across the planet. Its capital city is called The Hub, a massive domed structure \
 	that serves both as a spaceport, administrative hub, and habitation zone. It remains the only place on the planet accessible to non-Lorrimanians. \
@@ -246,9 +247,9 @@
 /decl/cultural_info/location/human/gaia
 	name = HOME_SYSTEM_GAIA
 	distance = "14 light years"
-	description = "Gaia is the sole planet in the Galilei system, serving as the DMZ between the SCG and the TCC. \
+	description = "Gaia is the sole planet in the Galilei system, serving as the DMZ between the SCG and the GCC. \
 	It is an agricultural world, though various conflicts across the planet's surface have left it scarred. The planet is divided into \
-	Sol-Controlled <b>Northern Gaia</b> and Terran-Controlled <b>Southern Gaia</b>, with New Venice remaining a neutral zone inside the DMZ. \
+	Sol-Controlled <b>Northern Gaia</b> and Independent-Controlled <b>Southern Gaia</b>, with New Venice remaining a neutral zone inside the DMZ. \
 	The planet's population remain divided even 20 years after the Gaian Conflict. New Venice sits on the edge of Lake Cabot. While Gaia is divided \
 	the current Mayor of New Venice serves as a vital mediator between both sides. <br><br> The Gaian People are tired of war, and long to see their families \
 	once again.  They suffered hard twenty years prior, and fear they may suffer again."
@@ -256,3 +257,17 @@
 	economic_power = 1.0
 	language = LANGUAGE_SOL_COMMON
 	secondary_langs = list(LANGUAGE_INDEPENDENT, LANGUAGE_GALCOM)
+
+/decl/cultural_info/location/human/magnitka
+	name = HOME_SYSTEM_MAGNITKA
+	distance = "24 light years"
+	description = "Magnitka is an independent, industrialized mining and ore processing colony located in the Ursa system. \
+	Ruled by an authoritarian government heavily associated with the corporations that founded it, Magnitka's recent history is marked by civil war. Even today, a large number of rebel groups populate the planet. \
+	Founded by German companies in the 2300s, the overwhelming majority of Magnitka's population is descended from Eastern European laborers and their German managers. \
+	Unfortunately, Magnitka's economy is in a decline as its principle export, iron, grows cheaper by the day. The primary careers available to Magnitkans are military service, mining, or organized crime.  \
+	Though historically relatively isolationist, today Magnitka finds itself more and more closely associated with the Gilgamesh Colonial Confederation, in an effort to offset its economic decline."
+	capital = "Labortown"
+	economic_power = 0.8
+	language = LANGUAGE_SOL_COMMON
+	secondary_langs = list(LANGUAGE_GALCOM)
+	ruling_body = "Magnitka"

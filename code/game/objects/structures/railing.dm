@@ -1,6 +1,6 @@
 /obj/structure/railing
 	name = "railing"
-	desc = "A standard steel railing. Prevents from human stupidity."
+	desc = "A simple bar railing designed to protect against careless trespass."
 	icon = 'icons/obj/railing.dmi'
 	density = 1
 	throwpass = 1
@@ -9,9 +9,7 @@
 	anchored = FALSE
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CHECKS_BORDER | ATOM_FLAG_CLIMBABLE
 	icon_state = "railing0-1"
-	can_buckle = 1
-	buckle_require_restraints = 1
-	var/material/material
+
 	var/broken =    FALSE
 	var/health =    70
 	var/maxhealth = 70
@@ -23,9 +21,9 @@
 
 /obj/structure/railing/mapped/Initialize()
 	. = ..()
-	color = COLOR_GUNMETAL // They're painted! // For wall's colour.
+	color = COLOR_GUNMETAL // They're not painted!
 
-/obj/structure/railing/New(var/newloc, var/material_key = MATERIAL_STEEL)
+/obj/structure/railing/New(var/newloc, var/material_key = DEFAULT_FURNITURE_MATERIAL)
 	material = material_key // Converted to datum in initialize().
 	..(newloc)
 
@@ -33,7 +31,7 @@
 	if(!material || !material.radioactivity)
 		return
 	for(var/mob/living/L in range(1,src))
-		L.apply_effect(round(material.radioactivity/20),IRRADIATE, blocked = L.getarmor(null, "rad"))
+		L.apply_damage(round(material.radioactivity/20),IRRADIATE, damage_flags = DAM_DISPERSED)
 
 /obj/structure/railing/Initialize()
 	. = ..()
@@ -44,7 +42,7 @@
 		return INITIALIZE_HINT_QDEL
 
 	name = "[material.display_name] [initial(name)]"
-	desc = "An unremarkable [material.display_name] railing. Guards against human stupidity."
+	desc = "A simple [material.display_name] railing designed to protect against careless trespass."
 	maxhealth = round(material.integrity / 5)
 	health = maxhealth
 	color = material.icon_colour
@@ -57,18 +55,6 @@
 		obj_flags &= (~OBJ_FLAG_CONDUCTIBLE)
 	if(anchored)
 		update_icon(FALSE)
-
-	set_dir()
-
-/obj/structure/railing/attack_generic(var/mob/user, var/damage, var/attack_verb)
-	health -= damage
-	attack_animation(user)
-	if(health <= 0)
-		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src] in parts!</span>")
-		spawn(1) Destroy()
-	else
-		user.visible_message("<span class='danger'>[user] [attack_verb] \the [src]!</span>")
-	return 1
 
 /obj/structure/railing/Destroy()
 	anchored = FALSE
@@ -97,15 +83,6 @@
 				to_chat(user, "<span class='warning'>It looks damaged!</span>")
 			if(0.5 to 1.0)
 				to_chat(user, "<span class='notice'>It has a few scrapes and dents.</span>")
-
-/obj/structure/railing/set_dir()
-	. = ..()
-	if(.)
-		switch(dir)
-			if(SOUTH)
-				plane = -11
-			else
-				plane = initial(plane)
 
 /obj/structure/railing/take_damage(amount)
 	health -= amount
@@ -238,7 +215,6 @@
 
 /obj/structure/railing/attackby(var/obj/item/W, var/mob/user)
 	// Handle harm intent grabbing/tabling.
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(istype(W, /obj/item/grab) && get_dist(src,user)<2)
 		var/obj/item/grab/G = W
 		if(istype(G.affecting, /mob/living/carbon/human))
@@ -251,10 +227,10 @@
 				if(user.a_intent == I_HURT)
 					visible_message("<span class='danger'>[G.assailant] slams [G.affecting]'s face against \the [src]!</span>")
 					playsound(loc, 'sound/effects/grillehit.ogg', 50, 1)
-					var/blocked = G.affecting.run_armor_check(BP_HEAD, "melee")
-					if (prob(30 * blocked_mult(blocked)))
+					var/blocked = G.affecting.get_blocked_ratio(BP_HEAD, BRUTE)
+					if (prob(30 * (1 - blocked)))
 						G.affecting.Weaken(5)
-					G.affecting.apply_damage(8, BRUTE, BP_HEAD, blocked)
+					G.affecting.apply_damage(8, BRUTE, BP_HEAD)
 				else
 					if (get_turf(G.affecting) == get_turf(src))
 						G.affecting.forceMove(get_step(src, src.dir))
@@ -317,7 +293,7 @@
 		return
 
 	if(W.force && (W.damtype == "fire" || W.damtype == "brute"))
-//		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		visible_message("<span class='danger'>\The [src] has been [LAZYLEN(W.attack_verb) ? pick(W.attack_verb) : "attacked"] with \the [W] by \the [user]!</span>")
 		take_damage(W.force)
 		return

@@ -8,14 +8,14 @@ obj/structure/firedoor_assembly
 	density = 1
 	var/wired = 0
 	var/result = /obj/machinery/door/firedoor
-/*
+
 obj/structure/firedoor_assembly/on_update_icon()
 	if(anchored)
-		icon_state = "door_anchored" //lack of sprite
+		icon_state = "door_anchored"
 	else
 		icon_state = "construction"
-*/
-obj/structure/firedoor_assembly/attackby(C as obj, mob/user as mob)
+
+obj/structure/firedoor_assembly/attackby(var/obj/item/C, var/mob/user)
 	if(isCoil(C) && !wired && anchored)
 		var/obj/item/stack/cable_coil/cable = C
 		if (cable.get_amount() < 1)
@@ -44,7 +44,6 @@ obj/structure/firedoor_assembly/attackby(C as obj, mob/user as mob)
 								  "You have inserted the circuit into \the [src]!")
 			var/obj/O = new result(src.loc)
 			O.dir = src.dir
-
 			qdel(C)
 			qdel(src)
 		else

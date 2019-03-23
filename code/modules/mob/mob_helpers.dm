@@ -163,7 +163,7 @@ var/list/global/organ_rel_size = list(
 			organ_rel_size[BP_L_HAND]; BP_L_HAND,
 			organ_rel_size[BP_R_HAND]; BP_R_HAND,
 			organ_rel_size[BP_L_FOOT]; BP_L_FOOT,
-			organ_rel_size[BP_R_FOOT]; BP_R_FOOT,
+			organ_rel_size[BP_R_FOOT]; BP_R_FOOT
 		)
 
 	return ran_zone
@@ -191,7 +191,7 @@ var/list/global/organ_rel_size = list(
 		miss_chance = base_miss_chance[zone]
 	miss_chance = max(miss_chance + miss_chance_mod, 0)
 	if(prob(miss_chance))
-		if(prob(70))
+		if(ranged_attack || prob(70))
 			return null
 		return pick(base_miss_chance)
 	return zone

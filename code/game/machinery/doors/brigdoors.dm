@@ -49,8 +49,8 @@
 			targets += C
 
 	if(targets.len==0)
-		stat |= BROKEN
-	update_icon()
+		set_broken(TRUE)
+	queue_icon_update()
 
 //Main door timer loop, if it's timing and time is >0 reduce time by 1.
 // if it's less than 0, open door, reset timer
@@ -101,8 +101,8 @@
 	for(var/obj/structure/closet/secure_closet/brig/C in targets)
 		if(C.broken)	continue
 		if(C.opened && !C.close())	continue
-		C.locked = 1
-		C.icon_state = C.icon_locked
+		C.locked = TRUE
+		C.queue_icon_update()
 	return 1
 
 
@@ -128,7 +128,7 @@
 		if(C.broken)	continue
 		if(C.opened)	continue
 		C.locked = 0
-		C.icon_state = C.icon_closed
+		C.queue_icon_update()
 
 	return 1
 

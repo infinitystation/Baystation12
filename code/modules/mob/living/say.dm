@@ -37,55 +37,55 @@ var/list/department_radio_keys = list(
 	  ":Y" = "Exploration",		".Y" = "Exploration",
 
 	  //localized radio keys by ~KareTa
-	  ":�" = "right ear",	".�" = "right ear",
-	  ":�" = "left ear",	".�" = "left ear",
-	  ":�" = "intercom",	".�" = "intercom",
-	  ":�" = "department",	".�" = "department",
-	  ":�" = "Command",		".�" = "Command",
-	  ":�" = "Science",		".�" = "Science",
-	  ":�" = "Medical",		".�" = "Medical",
-	  ":�" = "Engineering",	".�" = "Engineering",
-	  ":�" = "Security",	".�" = "Security",
-	  ":�" = "whisper",		".�" = "whisper",
-	  ":�" = "Mercenary",	".�" = "Mercenary",
-	  ":�" = "Supply",		".�" = "Supply",
-	  ":�" = "Service",		".�" = "Service",
-	  ":�" = "AI Private",	".�" = "AI Private",
-	  ":�" = "Entertainment",".�" = "Entertainment",
-	  ":�" = "Exploration",		".�" = "Exploration",
+	  ":к" = "right ear",	".к" = "right ear",
+	  ":д" = "left ear",	".д" = "left ear",
+	  ":ш" = "intercom",	".ш" = "intercom",
+	  ":р" = "department",	".р" = "department",
+	  ":с" = "Command",		".с" = "Command",
+	  ":т" = "Science",		".т" = "Science",
+	  ":ь" = "Medical",		".ь" = "Medical",
+	  ":у" = "Engineering",	".у" = "Engineering",
+	  ":ы" = "Security",	".ы" = "Security",
+	  ":ц" = "whisper",		".ц" = "whisper",
+	  ":е" = "Mercenary",	".е" = "Mercenary",
+	  ":г" = "Supply",		".г" = "Supply",
+	  ":м" = "Service",		".м" = "Service",
+	  ":з" = "AI Private",	".з" = "AI Private",
+	  ":я" = "Entertainment",".я" = "Entertainment",
+	  ":н" = "Exploration",		".н" = "Exploration",
 
-	  ":�" = "right ear",	".�" = "right ear",
-	  ":�" = "left ear",	".�" = "left ear",
-	  ":�" = "intercom",	".�" = "intercom",
-	  ":�" = "department",	".�" = "department",
-	  ":�" = "Command",		".�" = "Command",
-	  ":�" = "Science",		".�" = "Science",
-	  ":�" = "Medical",		".�" = "Medical",
-	  ":�" = "Engineering",	".�" = "Engineering",
-	  ":�" = "Security",	".�" = "Security",
-	  ":�" = "whisper",		".�" = "whisper",
-	  ":�" = "Mercenary",	".�" = "Mercenary",
-	  ":�" = "Supply",		".�" = "Supply",
-	  ":�" = "Service",		".�" = "Service",
-	  ":�" = "AI Private",	".�" = "AI Private",
-	  ":�" = "Entertainment",".�" = "Entertainment",
-	  ":�" = "Exploration",		".�" = "Exploration",
+	  ":К" = "right ear",	".К" = "right ear",
+	  ":Д" = "left ear",	".Д" = "left ear",
+	  ":Ш" = "intercom",	".Ш" = "intercom",
+	  ":Р" = "department",	".Р" = "department",
+	  ":С" = "Command",		".С" = "Command",
+	  ":Т" = "Science",		".Т" = "Science",
+	  ":Ь" = "Medical",		".Ь" = "Medical",
+	  ":У" = "Engineering",	".У" = "Engineering",
+	  ":Ы" = "Security",	".Ы" = "Security",
+	  ":Ц" = "whisper",		".Ц" = "whisper",
+	  ":Е" = "Mercenary",	".Е" = "Mercenary",
+	  ":Г" = "Supply",		".Г" = "Supply",
+	  ":М" = "Service",		".М" = "Service",
+	  ":З" = "AI Private",	".З" = "AI Private",
+	  ":Я" = "Entertainment",".Я" = "Entertainment",
+	  ":Н" = "Exploration",		".Н" = "Exploration",
 
 	  /*
 	  //kinda localization -- rastaf0
 	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
-	  ":ê" = "right ear",	".ê" = "right ear",
-	  ":ä" = "left ear",	".ä" = "left ear",
-	  ":ø" = "intercom",	".ø" = "intercom",
-	  ":ð" = "department",	".ð" = "department",
-	  ":ñ" = "Command",		".ñ" = "Command",
-	  ":ò" = "Science",		".ò" = "Science",
-	  ":ü" = "Medical",		".ü" = "Medical",
-	  ":ó" = "Engineering",	".ó" = "Engineering",
-	  ":û" = "Security",	".û" = "Security",
-	  ":ö" = "whisper",		".ö" = "whisper",
-	  ":å" = "Mercenary",	".å" = "Mercenary",
-	  ":é" = "Supply",		".é" = "Supply",
+	  ":ГЄ" = "right ear",	".ГЄ" = "right ear",
+	  ":Г¤" = "left ear",	".Г¤" = "left ear",
+	  ":Гё" = "intercom",	".Гё" = "intercom",
+	  ":Г°" = "department",	".Г°" = "department",
+	  ":Г±" = "Command",		".Г±" = "Command",
+	  ":ГІ" = "Science",		".ГІ" = "Science",
+	  ":Гј" = "Medical",		".Гј" = "Medical",
+	  ":Гі" = "Engineering",	".Гі" = "Engineering",
+	  ":Г»" = "Security",	".Г»" = "Security",
+	  ":Г¶" = "whisper",		".Г¶" = "whisper",
+	  ":ГҐ" = "Mercenary",	".ГҐ" = "Mercenary",
+	  ":Г©" = "Supply",		".Г©" = "Supply",
 	  */
 )
 
@@ -180,7 +180,7 @@ proc/get_radio_key_from_channel(var/channel)
 	if(!message)
 		return
 
-	message = replacetext(message, "&#255;", "__:ß:_") // Íèêîìó æå â ãîëîâó íå ïðèäåò òàêîå íàïèñàòü? ~bear1ake@inf-dev
+	message = replacetext(message, "&#255;", "__:Гџ:_") // ГЌГЁГЄГ®Г¬Гі Г¦ГҐ Гў ГЈГ®Г«Г®ГўГі Г­ГҐ ГЇГ°ГЁГ¤ГҐГІ ГІГ ГЄГ®ГҐ Г­Г ГЇГЁГ±Г ГІГј? ~bear1ake@inf-dev
 	message = html_decode(message)
 
 	var/end_char = copytext(message, lentext(message), lentext(message) + 1)
@@ -188,7 +188,7 @@ proc/get_radio_key_from_channel(var/channel)
 		message += "."
 
 	message = html_encode(message)
-	message = replacetext(message, "__:ß:_", "&#255;")
+	message = replacetext(message, "__:Гџ:_", "&#255;")
 	return message
 
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="", whispering)
@@ -338,7 +338,6 @@ proc/get_radio_key_from_channel(var/channel)
 			if(M.client)
 				speech_bubble_recipients += M.client
 
-	flick_overlay(speech_bubble, speech_bubble_recipients, 30)
 
 	for(var/obj/O in listening_obj)
 		spawn(0)
@@ -365,12 +364,14 @@ proc/get_radio_key_from_channel(var/channel)
 				show_image(M, speech_bubble)
 				M.hear_say(temp, verb, speaking, alt_name, italics, src, speech_sound, sound_vol)
 				if(M.client)
-					speech_bubble_recipients += M.client
+					speech_bubble_recipients |= M.client
+
 		for(var/obj/O in eavesdroping)
 			spawn(0)
 				if(O) //It's possible that it could be deleted in the meantime.
 					O.hear_talk(src, stars(message), verb, speaking)
 
+	flick_overlay(speech_bubble, speech_bubble_recipients, 30)
 
 	if(whispering)
 		log_whisper("[name]/[key] : [message]")

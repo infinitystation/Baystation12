@@ -139,9 +139,9 @@
 	icon_state = "tube_map"
 	desc = "A lighting fixture."
 	anchored = 1
-	plane = BLOB_PLANE //Yesyes but we can't type '-5.5' at planes.
-	layer = BLOB_SHIELD_LAYER
-	use_power = 2
+	plane = ABOVE_HUMAN_PLANE
+	layer = ABOVE_HUMAN_LAYER  					// They were appearing under mobs which is a little weird - Ostaf
+	use_power = POWER_USE_ACTIVE
 	idle_power_usage = 2
 	active_power_usage = 20
 	power_channel = LIGHT //Lights are calc'd via area so they dont need to be in the machine list
@@ -180,8 +180,8 @@
 	light_type = /obj/item/weapon/light/tube/halogen
 
 // create a new lighting fixture
-/obj/machinery/light/New(atom/newloc, obj/machinery/light_construct/construct = null)
-	..(newloc)
+/obj/machinery/light/Initialize(mapload, obj/machinery/light_construct/construct = null)
+	. = ..(mapload)
 
 	s.set_up(1, 1, src)
 
@@ -236,7 +236,7 @@
 
 	if(on)
 
-		use_power = 2
+		update_use_power(POWER_USE_ACTIVE)
 
 		var/changed = 0
 		if(current_mode && (current_mode in lightbulb.lighting_modes))
@@ -247,10 +247,9 @@
 		if(trigger && changed && get_status() == LIGHT_OK)
 			switch_check()
 	else
-		use_power = 0
+		update_use_power(POWER_USE_OFF)
 		set_light(0)
-
-	active_power_usage = ((light_outer_range * light_max_bright) * LIGHTING_POWER_FACTOR)
+	change_power_consumption((light_outer_range * light_max_bright) * LIGHTING_POWER_FACTOR, POWER_USE_ACTIVE)
 
 /obj/machinery/light/proc/get_status()
 	if(!lightbulb)
@@ -286,17 +285,17 @@
 	if(enable)
 		if(LIGHTMODE_EMERGENCY in lightbulb.lighting_modes)
 			set_mode(LIGHTMODE_EMERGENCY)
-			power_channel = ENVIRON
+			update_power_channel(ENVIRON)
 	else
 		if(current_mode == LIGHTMODE_EMERGENCY)
 			set_mode(null)
-			power_channel = initial(power_channel)
+			update_power_channel(initial(power_channel))
 
 // attempt to set the light's on/off status
 // will not switch on if broken/burned/empty
 /obj/machinery/light/proc/seton(var/state)
 	on = (state && get_status() == LIGHT_OK)
-	update_icon()
+	queue_icon_update()
 
 // examine verb
 /obj/machinery/light/examine(mob/user)
@@ -529,6 +528,32 @@
 	else
 		set_mode(null)
 
+/obj/machinery/light/navigation
+	name = "navigation light"
+	desc = "A periodically flashing light."
+	icon = 'icons/obj/lighting_nav.dmi'
+	icon_state = "nav10"
+	base_state = "nav1"
+	light_type = /obj/item/weapon/light/tube/large
+	on = TRUE
+
+/obj/machinery/light/navigation/delay2
+		icon_state = "nav20"
+		base_state = "nav2"
+/obj/machinery/light/navigation/delay3
+		icon_state = "nav30"
+		base_state = "nav3"
+/obj/machinery/light/navigation/delay4
+		icon_state = "nav40"
+		base_state = "nav4"
+/obj/machinery/light/navigation/delay5
+		icon_state = "nav50"
+		base_state = "nav5"
+
+/obj/machinery/light/navigation/powered()
+	return TRUE
+
+
 // the light item
 // can be tube or bulb subtypes
 // will fit into empty /obj/machinery/light of the corresponding type
@@ -559,7 +584,7 @@
 	icon_state = "ltube"
 	base_state = "ltube"
 	item_state = "c_tube"
-	matter = list(MATERIAL_GLASS = 100)
+	matter = list(MATERIAL_GLASS = 100, MATERIAL_ALUMINIUM = 20)
 
 	b_outer_range = 5
 	lighting_modes = list(

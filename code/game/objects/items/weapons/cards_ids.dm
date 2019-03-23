@@ -130,7 +130,7 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id
 	name = "identification card"
 	desc = "A card used to provide ID and determine access."
-	icon_state = "id"
+	icon_state = "base"
 	item_state = "card-id"
 	slot_flags = SLOT_ID
 
@@ -165,14 +165,31 @@ var/const/NO_EMAG_ACT = -50
 	var/formal_name_prefix
 	var/formal_name_suffix
 
-/obj/item/weapon/card/id/New()
-	..()
+	var/detail_color
+	var/extra_details
+
+/obj/item/weapon/card/id/Initialize()
+	.=..()
 	if(job_access_type)
-		var/datum/job/j = job_master.GetJobByType(job_access_type)
+		var/datum/job/j = SSjobs.get_by_path(job_access_type)
 		if(j)
 			rank = j.title
 			assignment = rank
 			access |= j.get_access()
+			if(!detail_color)
+				detail_color = j.selection_color
+	update_icon()
+
+/obj/item/weapon/card/id/get_mob_overlay(mob/user_mob, slot)
+	var/image/ret = ..()
+	ret.overlays += overlay_image(ret.icon, "[ret.icon_state]_colors", detail_color, RESET_COLOR)
+	return ret
+
+/obj/item/weapon/card/id/on_update_icon()
+	overlays.Cut()
+	overlays += overlay_image(icon, "[icon_state]_colors", detail_color, RESET_COLOR)
+	for(var/detail in extra_details)
+		overlays += overlay_image(icon, detail, flags=RESET_COLOR)
 
 /obj/item/weapon/card/id/CanUseTopic(var/user)
 	if(user in view(get_turf(src)))
@@ -180,14 +197,12 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id/OnTopic(var/mob/user, var/list/href_list)
 	if(href_list["look_at_id"])
-		if((!isliving(user)) || (istype(user) && (get_dist(src, user) <= 2)))
+		if(istype(user))
 			user.examinate(src)
 			return TOPIC_HANDLED
-		else
-			to_chat(user, "<span class='notice'>You have to go closer if you want to read it.</span>")
 
 /obj/item/weapon/card/id/examine(mob/user)
-	..()
+	. = ..()
 	to_chat(user, "It says '[get_display_name()]'.")
 	if(in_range(user, src))
 		show(user)
@@ -215,8 +230,6 @@ var/const/NO_EMAG_ACT = -50
 		. += ", [assignment]"
 
 /obj/item/weapon/card/id/proc/set_id_photo(var/mob/M)
-	set waitfor = FALSE
-	sleep(10)
 	front = getFlatIcon(M, SOUTH, always_use_defdir = 1)
 	side = getFlatIcon(M, WEST, always_use_defdir = 1)
 
@@ -234,7 +247,11 @@ var/const/NO_EMAG_ACT = -50
 
 	id_card.registered_name = real_name
 
-	id_card.sex = capitalize(get_sex())
+	var/gender_term = "Unset"
+	var/datum/gender/G = gender_datums[get_sex()]
+	if(G)
+		gender_term = gender2text(G.formal_term)
+	id_card.sex = gender2text(gender_term)
 	id_card.set_id_photo(src)
 
 	if(dna)
@@ -297,16 +314,15 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/silver
 	name = "identification card"
 	desc = "A silver card which shows honour and dedication."
-	icon_state = "silver"
 	item_state = "silver_id"
 	job_access_type = /datum/job/hop
 
 /obj/item/weapon/card/id/gold
 	name = "identification card"
 	desc = "A golden card which shows power and might."
-	icon_state = "gold"
-	item_state = "gold_id"
 	job_access_type = /datum/job/captain
+	color = "#d4c780"
+	extra_details = list("goldstripe")
 
 /obj/item/weapon/card/id/syndicate_command
 	name = "syndicate ID card"
@@ -314,14 +330,16 @@ var/const/NO_EMAG_ACT = -50
 	registered_name = "Syndicate"
 	assignment = "Syndicate Overlord"
 	access = list(access_syndicate, access_external_airlocks)
+	color = COLOR_RED_GRAY
+	detail_color = COLOR_GRAY40
 
 /obj/item/weapon/card/id/captains_spare
 	name = "captain's spare ID"
 	desc = "The spare ID of the High Lord himself."
-	icon_state = "gold"
 	item_state = "gold_id"
 	registered_name = "Captain"
 	assignment = "Captain"
+	detail_color = COLOR_AMBER
 
 /obj/item/weapon/card/id/captains_spare/New()
 	access = get_all_station_access()
@@ -330,9 +348,9 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/synthetic
 	name = "\improper Synthetic ID"
 	desc = "Access module for lawed synthetics."
-	icon_state = "id-robot"
-	item_state = "tdgreen"
+	icon_state = "robot_base"
 	assignment = "Synthetic"
+	detail_color = COLOR_AMBER
 
 /obj/item/weapon/card/id/synthetic/New()
 	access = get_all_station_access() + access_synth
@@ -341,9 +359,12 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/centcom
 	name = "\improper CentCom. ID"
 	desc = "An ID straight from Cent. Com."
-	icon_state = "centcom"
 	registered_name = "Central Command"
 	assignment = "General"
+	color = COLOR_GRAY40
+	detail_color = COLOR_COMMAND_BLUE
+	extra_details = list("goldstripe")
+
 /obj/item/weapon/card/id/centcom/New()
 	access = get_all_centcom_access()
 	..()
@@ -360,13 +381,47 @@ var/const/NO_EMAG_ACT = -50
 	..()
 	access |= get_all_station_access()
 
+/obj/item/weapon/card/id/foundation
+	name = "\improper Foundation warrant card"
+	desc = "A warrant card in a handsome leather case."
+	assignment = "Field Agent"
+	icon_state = "warrantcard"
+
+/obj/item/weapon/card/id/foundation/examine(var/mob/user)
+	. = ..(user, 1)
+	if(. && isliving(user))
+		var/mob/living/M = user
+		if(M.psi)
+			to_chat(user, SPAN_WARNING("There is a psionic compulsion surrounding \the [src], forcing anyone who reads it to perceive it as a legitimate document of authority. The actual text just reads 'I can do what I want.'"))
+		else
+			to_chat(user, SPAN_NOTICE("This is the real deal, stamped by [GLOB.using_map.boss_name]. It gives the holder the full authority to pursue their goals. You believe it implicitly."))
+
+/obj/item/weapon/card/id/foundation/attack_self(var/mob/living/user)
+	. = ..()
+	if(istype(user))
+		for(var/mob/M in viewers(world.view, get_turf(user))-user)
+			if(user.psi && isliving(M))
+				var/mob/living/L = M
+				if(!L.psi)
+					to_chat(L, SPAN_NOTICE("This is the real deal, stamped by [GLOB.using_map.boss_name]. It gives the holder the full authority to pursue their goals. You believe \the [user] implicitly."))
+					continue
+			to_chat(M, SPAN_WARNING("There is a psionic compulsion surrounding \the [src] in a flicker of indescribable light."))
+
+/obj/item/weapon/card/id/foundation/on_update_icon()
+	return
+
+/obj/item/weapon/card/id/foundation/New()
+	..()
+	access |= get_all_station_access()
+
 /obj/item/weapon/card/id/all_access
 	name = "\improper Administrator's spare ID"
 	desc = "The spare ID of the Lord of Lords himself."
-	icon_state = "data"
-	item_state = "tdgreen"
 	registered_name = "Administrator"
 	assignment = "Administrator"
+	detail_color = COLOR_MAROON
+	extra_details = list("goldstripe")
+
 /obj/item/weapon/card/id/all_access/New()
 	access = get_access_ids()
 	..()
@@ -375,8 +430,8 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/medical
 	name = "identification card"
 	desc = "A card issued to medical staff."
-	icon_state = "med"
 	job_access_type = /datum/job/doctor
+	detail_color = COLOR_PALE_BLUE_GRAY
 
 /obj/item/weapon/card/id/medical/chemist
 	job_access_type = /datum/job/chemist
@@ -393,14 +448,15 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/medical/head
 	name = "identification card"
 	desc = "A card which represents care and compassion."
-	icon_state = "medGold"
 	job_access_type = /datum/job/cmo
+	extra_details = list("goldstripe")
 
 /obj/item/weapon/card/id/security
 	name = "identification card"
 	desc = "A card issued to security staff."
-	icon_state = "sec"
 	job_access_type = /datum/job/officer
+	color = COLOR_OFF_WHITE
+	detail_color = COLOR_MAROON
 
 /obj/item/weapon/card/id/security/warden
 	job_access_type = /datum/job/warden
@@ -411,29 +467,26 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/security/head
 	name = "identification card"
 	desc = "A card which represents honor and protection."
-	icon_state = "secGold"
 	job_access_type = /datum/job/hos
+	extra_details = list("goldstripe")
 
 /obj/item/weapon/card/id/engineering
 	name = "identification card"
 	desc = "A card issued to engineering staff."
-	icon_state = "eng"
 	job_access_type = /datum/job/engineer
-
-/obj/item/weapon/card/id/engineering/atmos
-	job_access_type = /datum/job/atmos
+	detail_color = COLOR_SUN
 
 /obj/item/weapon/card/id/engineering/head
 	name = "identification card"
 	desc = "A card which represents creativity and ingenuity."
-	icon_state = "engGold"
 	job_access_type = /datum/job/chief_engineer
+	extra_details = list("goldstripe")
 
 /obj/item/weapon/card/id/science
 	name = "identification card"
 	desc = "A card issued to science staff."
-	icon_state = "sci"
 	job_access_type = /datum/job/scientist
+	detail_color = COLOR_PALE_PURPLE_GRAY
 
 /obj/item/weapon/card/id/science/xenobiologist
 	job_access_type = /datum/job/xenobiologist
@@ -444,14 +497,14 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/science/head
 	name = "identification card"
 	desc = "A card which represents knowledge and reasoning."
-	icon_state = "sciGold"
 	job_access_type = /datum/job/rd
+	extra_details = list("goldstripe")
 
 /obj/item/weapon/card/id/cargo
 	name = "identification card"
 	desc = "A card issued to cargo staff."
-	icon_state = "cargo"
 	job_access_type = /datum/job/cargo_tech
+	detail_color = COLOR_BROWN
 
 /obj/item/weapon/card/id/cargo/mining
 	job_access_type = /datum/job/mining
@@ -459,14 +512,14 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/cargo/head
 	name = "identification card"
 	desc = "A card which represents service and planning."
-	icon_state = "cargoGold"
 	job_access_type = /datum/job/qm
+	extra_details = list("goldstripe")
 
 /obj/item/weapon/card/id/civilian
 	name = "identification card"
 	desc = "A card issued to civilian staff."
-	icon_state = "civ"
 	job_access_type = /datum/job/assistant
+	detail_color = COLOR_CIVIE_GREEN
 
 /obj/item/weapon/card/id/civilian/bartender
 	job_access_type = /datum/job/bartender
@@ -485,6 +538,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/weapon/card/id/civilian/internal_affairs_agent
 	job_access_type = /datum/job/lawyer
+	detail_color = COLOR_NAVY_BLUE
 
 /obj/item/weapon/card/id/civilian/chaplain
 	job_access_type = /datum/job/chaplain
@@ -492,13 +546,14 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/civilian/head //This is not the HoP. There's no position that uses this right now.
 	name = "identification card"
 	desc = "A card which represents common sense and responsibility."
-	icon_state = "civGold"
+	extra_details = list("goldstripe")
 
 /obj/item/weapon/card/id/merchant
 	name = "identification card"
-	desc = "A card issued to Merchants."
-	icon_state = "trader"
+	desc = "A card issued to Merchants, indicating their right to sell and buy goods."
 	access = list(access_merchant)
+	color = COLOR_OFF_WHITE
+	detail_color = COLOR_BEIGE
 
 /obj/item/weapon/card/id/merchant/leader
 	desc = "A card issued to Merchant Leaders, indicating their right to sell and buy goods."

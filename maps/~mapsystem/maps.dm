@@ -113,9 +113,9 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	var/list/available_cultural_info = list(
 		TAG_HOMEWORLD = list(
-			HOME_SYSTEM_EARTH,
-			HOME_SYSTEM_LUNA,
 			HOME_SYSTEM_MARS,
+			HOME_SYSTEM_LUNA,
+			HOME_SYSTEM_EARTH,
 			HOME_SYSTEM_VENUS,
 			HOME_SYSTEM_CERES,
 			HOME_SYSTEM_PLUTO,
@@ -129,11 +129,12 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			HOME_SYSTEM_LORDANIA,
 			HOME_SYSTEM_KINGSTON,
 			HOME_SYSTEM_GAIA,
+			HOME_SYSTEM_MAGNITKA,
 			HOME_SYSTEM_OTHER
 		),
 		TAG_FACTION = list(
 			FACTION_SOL_CENTRAL,
-			FACTION_TERRAN_CONFED,
+			FACTION_INDIE_CONFED,
 			FACTION_CORPORATE,
 			FACTION_NANOTRASEN,
 			FACTION_FREETRADE,
@@ -146,7 +147,6 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			FACTION_OTHER
 		),
 		TAG_CULTURE = list(
-			CULTURE_HUMAN,
 			CULTURE_HUMAN_MARTIAN,
 			CULTURE_HUMAN_MARSTUN,
 			CULTURE_HUMAN_LUNAPOOR,
@@ -175,16 +175,6 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			RELIGION_ATHEISM,
 			RELIGION_THELEMA,
 			RELIGION_SPIRITUALISM
-		),
-		TAG_EDUCATION = list(
-			EDUCATION_NONE,
-			EDUCATION_DROPOUT,
-			EDUCATION_HIGH_SCHOOL,
-			EDUCATION_TRADE_SCHOOL,
-			EDUCATION_UNDERGRAD,
-			EDUCATION_MASTERS,
-			EDUCATION_DOCTORATE,
-			EDUCATION_MEDSCHOOL
 		)
 	)
 
@@ -192,8 +182,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		TAG_HOMEWORLD = HOME_SYSTEM_MARS,
 		TAG_FACTION =   FACTION_SOL_CENTRAL,
 		TAG_CULTURE =   CULTURE_HUMAN_MARTIAN,
-		TAG_RELIGION =  RELIGION_AGNOSTICISM,
-		TAG_EDUCATION = EDUCATION_HIGH_SCHOOL
+		TAG_RELIGION =  RELIGION_AGNOSTICISM
 	)
 
 	var/access_modify_region = list(
@@ -204,6 +193,11 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		ACCESS_REGION_COMMAND = list(access_change_ids),
 		ACCESS_REGION_GENERAL = list(access_change_ids),
 		ACCESS_REGION_SUPPLY = list(access_change_ids)
+	)
+
+	// List of /datum/department types to instantiate at roundstart.
+	var/list/departments = list(
+		/datum/department/medbay
 	)
 
 /datum/map/New()
@@ -227,6 +221,9 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	lobby_track = decls_repository.get_decl(lobby_track_type)
 	world.update_status()
+
+/datum/map/proc/setup_job_lists()
+	return
 
 /datum/map/proc/send_welcome()
 	return
@@ -318,9 +315,11 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		station_account = create_account("[station_name()] Primary Account", starting_money)
 
 	for(var/job in allowed_jobs)
-		var/datum/job/J = decls_repository.get_decl(job)
-		if(J.department)
-			station_departments |= J.department
+		var/datum/job/J = job
+		var/dept = initial(J.department)
+		if(dept)
+			station_departments |= dept
+
 	for(var/department in station_departments)
 		department_accounts[department] = create_account("[department] Account", department_money)
 
