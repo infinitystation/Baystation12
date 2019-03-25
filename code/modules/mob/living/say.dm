@@ -243,7 +243,11 @@ proc/get_radio_key_from_channel(var/channel)
 		if(whispering)
 			verb = speaking.whisper_verb ? speaking.whisper_verb : speaking.speech_verb
 		else
-			verb = say_quote(message, speaking)
+			if(copytext(message,1,2) == "%")
+				verb = "кричит"
+				message = copytext(message, 2)
+			else
+				verb = say_quote(message, speaking)
 
 	message = trim_left(message)
 	message = handle_autohiss(message, speaking)

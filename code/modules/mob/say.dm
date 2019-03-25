@@ -68,8 +68,11 @@
 
 	var/verb = pick(speak_emote)
 	if(verb == "говорит") //a little bit of a hack, but we can't let speak_emote default to an empty list without breaking other things
-		if(ending == "!")
-			verb = pick("восклицает","кричит")
+		if(copytext(message,1,2) == "%")
+			verb = "кричит"
+			message = copytext(message, 2)
+		else if(ending == "!")
+			verb = pick("восклицает")
 		else if(ending == "?")
 			verb ="спрашивает"
 	return verb

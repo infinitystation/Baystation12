@@ -93,7 +93,7 @@
 /datum/language/human/get_spoken_verb(var/msg_end)
 	switch(msg_end)
 		if("!")
-			return pick("восклицает","кричит","выкрикивает") //TODO: make the basic proc handle lists of verbs.
+			return pick("восклицает") //TODO: make the basic proc handle lists of verbs.
 		if("?")
 			return ask_verb
 	return speech_verb
