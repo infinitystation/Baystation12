@@ -91,11 +91,12 @@
 	//syllables are at the bottom of the file
 
 /datum/language/human/get_spoken_verb(var/msg_end)
-	switch(msg_end)
-		if("!")
-			return pick("восклицает")
-		if("?")
-			return ask_verb
+	if(msg_end == "!!")
+		return pick("кричит")
+	else if(copytext(msg_end, length(msg_end)) == "!")
+		return pick("восклицает")
+	else if(copytext(msg_end, length(msg_end)) == "?")
+		return pick("спрашивает")
 	return speech_verb
 
 /datum/language/human/get_random_name(var/gender)

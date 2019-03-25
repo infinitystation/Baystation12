@@ -9,6 +9,7 @@
 	var/desc = "A language."          // Short description for 'Check Languages'.
 	var/speech_verb = "говорит"          // 'says', 'hisses', 'farts'.
 	var/ask_verb = "спрашивает"             // Used when sentence ends in a ?
+	var/cry_verb = "кричит"
 	var/exclaim_verb = "восклицает"     // Used when sentence ends in a !
 	var/whisper_verb                  // Optional. When not specified speech_verb + quietly/softly is used instead.
 	var/signlang_verb = list("жестикулирует") // list of emotes that might be displayed if this language has NONVERBAL or SIGNLANG flags
@@ -126,11 +127,12 @@
 	return 1
 
 /datum/language/proc/get_spoken_verb(var/msg_end)
-	switch(msg_end)
-		if("!")
-			return exclaim_verb
-		if("?")
-			return ask_verb
+	if(msg_end == "!!")
+		return cry_verb
+	else if(copytext(msg_end, length(msg_end)) == "!")
+		return exclaim_verb
+	else if(copytext(msg_end, length(msg_end)) == "?")
+		return ask_verb
 	return speech_verb
 
 /datum/language/proc/can_speak_special(var/mob/speaker)
