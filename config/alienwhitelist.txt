@@ -78,7 +78,6 @@ portos - giant armoured serpentid
 taushai - giant armoured serpentid
 ted201 - giant armoured serpentid
 s1334 - giant armoured serpentid
-arbuzpersikov - giant armoured serpentid
 inubashirimomiji - diona
 bartstarter - diona
 wolforbykot - diona
@@ -120,6 +119,7 @@ hodovoy - unathi
 taushai - unathi
 cre77 - unathi
 s1334 - unathi
+he11d1ver - unathi
 corporateoverlord - tajaran
 richardfox - tajaran
 ashtonfox - tajaran
