@@ -243,7 +243,7 @@ proc/get_radio_key_from_channel(var/channel)
 		if(whispering)
 			verb = speaking.whisper_verb ? speaking.whisper_verb : speaking.speech_verb
 		else
-			if(copytext(message,1,2) == "%")
+			if(copytext(message,1,2) == get_prefix_key(/decl/prefix/cry))
 				verb = "кричит"
 				message = copytext(message, 2)
 			else

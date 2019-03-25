@@ -27,3 +27,7 @@
 /decl/prefix/custom_emote
 	name = "Emote, custom"
 	default_key = "*"
+
+/decl/prefix/cry
+	name = "Cry"
+	default_key = "%"
