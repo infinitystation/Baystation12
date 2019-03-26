@@ -127,9 +127,9 @@
 	if(speaking)
 		verb = speaking.get_spoken_verb(ending)
 	else
-		if(ending == "!")
+		if(copytext(ending, length(ending)) == "!")
 			verb=pick("exclaims","shouts","yells")
-		else if(ending == "?")
+		else if(copytext(ending, length(ending)) == "?")
 			verb="asks"
 
 	return verb
