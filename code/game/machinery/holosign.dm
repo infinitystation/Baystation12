@@ -59,7 +59,7 @@
 	use_power(5)
 
 	active = !active
-
+	update_icon()
 	for(var/obj/machinery/holosign/M in SSmachines.machinery)
 		if (M.id == src.id)
 			spawn( 0 )

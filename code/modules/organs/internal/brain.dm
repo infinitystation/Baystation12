@@ -110,7 +110,7 @@
 	if(target.key)
 		target.ghostize()
 
-	if(brainmob)
+	if(brainmob && !fake_brain)
 		if(brainmob.mind)
 			brainmob.mind.transfer_to(target)
 		else

@@ -165,6 +165,16 @@ var/const/NETWORK_PETROV      = "Petrov"
 	_output_on = TRUE
 	_fully_charged = TRUE
 
+// Charon's smes - Coltrane97@inf-dev
+/obj/machinery/power/smes/buildable/preset/sierra/shuttle/charon/configure_and_install_coils()
+	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
+	component_parts += new /obj/item/weapon/smes_coil/super_capacity(src)
+	_input_maxed = TRUE
+	_output_maxed = TRUE
+	_input_on = TRUE
+	_output_on = TRUE
+	_fully_charged = TRUE
+
 // Hangar SMES. Charges the shuttles so needs a pretty big throughput.
 /obj/machinery/power/smes/buildable/preset/sierra/hangar/configure_and_install_coils()
 	component_parts += new /obj/item/weapon/smes_coil/super_io(src)

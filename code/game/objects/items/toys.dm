@@ -841,6 +841,12 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "torch_model_figure"
 
+/obj/item/toy/sierramodel
+	name = "table-top NSV Sierra model"
+	desc = "This is a replica of the NSV Sierra, in 1:250th scale, on a handsome wooden stand. Small lights blink on the hull and at the engine exhaust."
+	icon = 'infinity/icons/obj/toy.dmi'
+	icon_state = "sierra_model_figure"
+
 /obj/item/toy/ringbell
 	name = "ringside bell"
 	desc = "A bell used to signal the beginning and end of various ring sports."

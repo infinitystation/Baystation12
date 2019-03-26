@@ -112,6 +112,8 @@
 	var/shakecamera = 0
 	var/a_intent = I_HELP//Living
 
+	var/stop_sight_update = 0 //for update_sight()
+
 	var/decl/move_intent/move_intent = /decl/move_intent/run
 	var/move_intents = list(/decl/move_intent/run, /decl/move_intent/walk)
 

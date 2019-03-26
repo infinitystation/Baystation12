@@ -91,8 +91,8 @@
 
 	return cell.drain_power(drain_check)
 
-/obj/mecha/New()
-	..()
+/obj/mecha/Initialize()
+	. = ..()
 	events = new
 
 	icon_state += "-open"
@@ -105,9 +105,7 @@
 	add_iterators()
 	removeVerb(/obj/mecha/verb/disconnect_from_port)
 	log_message("[src.name] created.")
-	loc.Entered(src)
 	mechas_list += src //global mech list
-	return
 
 /obj/mecha/Destroy()
 	src.go_out()

@@ -234,8 +234,8 @@
 
 		if (custom_sprite == 1)
 			var/list/valid_states = icon_states(CUSTOM_ITEM_SYNTH)
-			if("[ckey]-[modtype]" in valid_states)
-				module_sprites["Custom"] = "[src.ckey]-[modtype]"
+			if("[real_name]-[modtype]" in valid_states)
+				module_sprites["Custom"] = "[src.real_name]-[modtype]"
 				icon = CUSTOM_ITEM_SYNTH
 				icontype = "Custom"
 			else

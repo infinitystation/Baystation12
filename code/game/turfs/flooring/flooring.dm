@@ -105,7 +105,7 @@ var/list/flooring_types
 
 /decl/flooring/linoleum
 	name = "linoleum"
-	desc = "It's like the 2390's all over again."
+	desc = "It's like the 2134's all over again."
 	icon = 'icons/turf/flooring/linoleum.dmi'
 	icon_base = "lino"
 	can_paint = 1
@@ -133,6 +133,7 @@ var/list/flooring_types
 	build_type = /obj/item/stack/tile/mono/dark
 
 /decl/flooring/tiling/mono/white
+	icon = 'icons/turf/flooring/infinity_decals.dmi'
 	icon_base = "monotile_light"
 	color = COLOR_OFF_WHITE
 	build_type = /obj/item/stack/tile/mono/white

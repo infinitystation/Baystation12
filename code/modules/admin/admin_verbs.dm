@@ -77,7 +77,6 @@ var/list/admin_verbs_admin = list(
 	/client/proc/cmd_admin_rejuvenate,
 	/client/proc/toggleghostwriters,
 	/client/proc/toggledrones,
-	///datum/admins/proc/show_skills,
 	/client/proc/check_customitem_activity,
 	/client/proc/man_up,
 	/client/proc/global_man_up,
@@ -103,7 +102,9 @@ var/list/admin_verbs_admin = list(
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
 //	/datum/admins/proc/whitelist_panel,
 	/client/proc/debug_global_variables,
-	/client/proc/reestablish_db_connection
+	/client/proc/reestablish_db_connection,
+	/datum/admins/proc/show_skills,
+	/datum/admins/proc/paralyze_mob
 	)
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
@@ -320,6 +321,8 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/roll_dices,
 	/proc/possess,
 	/proc/release,
+	/datum/admins/proc/show_skills,
+	/datum/admins/proc/paralyze_mob
 	)
 var/list/admin_verbs_mod = list(
 	/client/proc/cmd_admin_pm_context,	// right-click adminPM interface,
@@ -333,13 +336,11 @@ var/list/admin_verbs_mod = list(
 	/datum/admins/proc/show_player_info,
 	/client/proc/player_panel_new,
 	/client/proc/dsay,
-	///datum/admins/proc/show_skills,
 	/datum/admins/proc/show_player_panel,
 	/client/proc/check_antagonists,
 	/client/proc/cmd_admin_subtle_message, // send an message to somebody as a 'voice in their head',
 	/client/proc/aooc,
 	/datum/admins/proc/sendFax,
-	/datum/admins/proc/paralyze_mob,
 	/datum/admins/proc/view_persistent_data
 )
 
@@ -349,7 +350,6 @@ var/list/admin_verbs_mentor = list(
 //	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,
 	/client/proc/cmd_mod_say,
-	/datum/admins/proc/show_skills
 //	/datum/admins/proc/show_player_info,
 //	/client/proc/dsay,
 //	/client/proc/cmd_admin_subtle_message
@@ -579,19 +579,19 @@ var/list/admin_verbs_mentor = list(
 	if(++D.warns >= MAX_WARNS)					//uh ohhhh...you'reee iiiiin trouuuubble O:)
 		ban_unban_log_save("[ckey] warned [warned_ckey], resulting in a [AUTOBANTIME] minute autoban.")
 		if(C)
-			message_admins("[key_name_admin(src)] has warned [key_name_admin(C)] resulting in a [AUTOBANTIME] minute ban.")
+			message_admins("[key_name_admin(src, 0)] has warned [key_name_admin(C)] resulting in a [AUTOBANTIME] minute ban.")
 			to_chat(C, "<font color='red'><BIG><B>You have been autobanned due to a warning by [ckey].</B></BIG><br>This is a temporary ban, it will be removed in [AUTOBANTIME] minutes.</font>")
 			qdel(C)
 		else
-			message_admins("[key_name_admin(src)] has warned [warned_ckey] resulting in a [AUTOBANTIME] minute ban.")
+			message_admins("[key_name_admin(src, 0)] has warned [warned_ckey] resulting in a [AUTOBANTIME] minute ban.")
 		AddBan(warned_ckey, D.last_id, "Autobanning due to too many formal warnings", ckey, 1, AUTOBANTIME)
 		feedback_inc("ban_warn",1)
 	else
 		if(C)
-			to_chat(C, "<font color='red'><BIG><B>You have been formally warned by an administrator.</B></BIG><br>Further warnings will result in an autoban.</font>")
-			message_admins("[key_name_admin(src)] has warned [key_name_admin(C)]. They have [MAX_WARNS-D.warns] strikes remaining.")
+			to_chat(C, "<font color='red'><BIG><B>Вы были формально предупреждены администратором [key_name_admin(src, 0)].</B></BIG><br>Дальнейшие предупреждени&#255; приведут к автобану.</font>")
+			message_admins("[key_name_admin(src, 0)] has warned [key_name_admin(C)]. They have [MAX_WARNS-D.warns] strikes remaining.")
 		else
-			message_admins("[key_name_admin(src)] has warned [warned_ckey] (DC). They have [MAX_WARNS-D.warns] strikes remaining.")
+			message_admins("[key_name_admin(src, 0)] has warned [warned_ckey] (DC). They have [MAX_WARNS-D.warns] strikes remaining.")
 
 	feedback_add_details("admin_verb","WARN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -963,8 +963,8 @@ var/list/admin_verbs_mentor = list(
 	set name = "Man Up"
 	set desc = "Tells mob to man up and deal with it."
 
-	to_chat(T, "<span class='notice'><b><font size=3>Man up and deal with it.</font></b></span>")
-	to_chat(T, "<span class='notice'>Move on.</span>")
+	to_chat(T, "<span class='notice'><b><font size=3>Возьми себ&#255; в руки и реши проблему.</font></b></span>")
+	to_chat(T, "<span class='notice'>Начни сейчас.</span>")
 
 	log_and_message_admins("told [key_name(T)] to man up and deal with it.")
 
@@ -974,7 +974,7 @@ var/list/admin_verbs_mentor = list(
 	set desc = "Tells everyone to man up and deal with it."
 
 	for (var/mob/T as mob in SSmobs.mob_list)
-		to_chat(T, "<br><center><span class='notice'><b><font size=4>Man up.<br> Deal with it.</font></b><br>Move on.</span></center><br>")
+		to_chat(T, "<br><center><span class='notice'><b><font size=4>Возьми себ&#255; в руки.<br> Решай проблемы.</font></b><br>Начни сейчас.</span></center><br>")
 		sound_to(T, 'sound/voice/ManUp1.ogg')
 
 	log_and_message_admins("told everyone to man up and deal with it.")

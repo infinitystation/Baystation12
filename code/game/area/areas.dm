@@ -323,11 +323,11 @@ var/list/mob/living/forced_ambiance_list = new
 		var/mob/living/carbon/human/H = mob
 		if(prob(H.skill_fail_chance(SKILL_EVA, 100, SKILL_PROF)))
 			if(!MOVING_DELIBERATELY(H))
-				H.AdjustStunned(6)
-				H.AdjustWeakened(6)
+				H.AdjustStunned(4)
+				H.AdjustWeakened(4)
 			else
-				H.AdjustStunned(3)
-				H.AdjustWeakened(3)
+				H.AdjustStunned(2)
+				H.AdjustWeakened(2)
 			to_chat(mob, "<span class='notice'>The sudden appearance of gravity makes you fall to the floor!</span>")
 
 /area/proc/prison_break()

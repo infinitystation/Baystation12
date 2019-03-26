@@ -25,3 +25,9 @@
 /obj/item/weapon/paper/important //just a placeholder for massages from Central Command
 	icon = 'maps/sierra/icons/obj/uniques.dmi'
 	icon_state = "paper_words"
+
+/obj/item/weapon/paper/engineering_comms
+	name = "telecommunications"
+	info = "<tt><center><b><large>NSV Sierra</large></b></center><center>Телекоммуникации</center><hr>Телекоммуникационная станция в носу корабля обеспечивает радиосвязь на судне. Kappa Communication с помощью своих пограничных спутников поддерживает удаленную связь с судном через квантовое реле (Emergency Bluespace Relay). Таким образом, Центральное Комадование может получать сообщения от судна до тех пор, пока реле сохраняет свою работоспособность <hr><center><large>Эксплуатация</large></center>Инженерная команда настроила оборудование перед вылетом, из-за чего действующему технику настоятельно НЕ рекомендуется проводить какие-либо манипуляции с настройками во избежание коллапса системы связи.<hr><center><large>Техническая информация</large></center><li>В случае повреждения серверов или иного оборудования, требуется провести ремонт с помощью размещенных на складе плат. Возможен дозаказ с помощью отделов Исследований или Снабжения.<li><b>Запасная плата от квантового передатчика находится на защищенном складе.</b> В случае уничтожения телекоммуникаций, передатчик должен быть установлен в защищенном месте в пределах судна с последующим уведомлением ЦК о ЧП.<hr><i><small>NT Support Division</small><br></tt>This paper has been stamped with the stamp of Central Command.</i>"
+	icon = 'maps/sierra/icons/obj/uniques.dmi'
+	icon_state = "paper_words"

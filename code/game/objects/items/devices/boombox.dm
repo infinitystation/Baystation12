@@ -108,6 +108,21 @@
 				broken = FALSE
 			else
 				to_chat(user, SPAN_NOTICE("\The [S] is empty."))
+	if(istype(W,/obj/item/stack/cable_coil))
+		var/obj/item/stack/S = W
+		if(broken && !panel)
+			if(user.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
+				if(S.use(5))
+					user.visible_message(SPAN_NOTICE("\The [user] starts replace burned out wires in \the [src]."), SPAN_NOTICE("You are replacing burned out wires in \the [src]'."))
+					if(!do_after(user, 60, src))
+						return
+					user.visible_message(SPAN_NOTICE("\The [user] replaces burned out wires in \the [src]."), SPAN_NOTICE("You replace burned out wires in \the [src]."))
+					broken = FALSE
+				else
+					to_chat(user, SPAN_NOTICE("You need more [W] to fix \the [src]."))
+
+			else
+				to_chat(user, SPAN_NOTICE("You don't know how to fix \the [src]."))
 	else
 		. = ..()
 
@@ -173,7 +188,7 @@
 /obj/item/device/boombox/proc/start()
 	QDEL_NULL(sound_token)
 	var/datum/track/T = tracks[track_num]
-	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, T.GetTrack(), volume = volume, frequency = frequency, range = 7, falloff = 4, prefer_mute = TRUE)
+	sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, T.GetTrack(), volume = volume, frequency = frequency, range = 7, falloff = 4, prefer_mute = TRUE, preference = /datum/client_preference/play_boomboxes)
 	playing = 1
 	update_icon()
 	if(prob(break_chance))

@@ -31,6 +31,10 @@
 	name = "\improper flower zippo"
 	icon_state = "fancyzippo"
 
+/obj/item/weapon/flame/lighter/zippo/custom/messotha
+	name = "\improper messotha zippo"
+	icon_state = "messotha"
+	icon = 'icons/obj/lighters_inf.dmi'
 
 /obj/item/weapon/flame/lighter/zippo/infinity/on_update_icon()
 	var/datum/extension/base_icon_state/bis = get_extension(src, /datum/extension/base_icon_state)

@@ -3,7 +3,7 @@
 	set category = "Object"
 	var/mob/M = usr
 
-	if(ishuman(M) && M.incapacitated())
+	if(ishuman(M) && !M.incapacitated())
 		if(!isturf(usr.loc))
 			return FALSE
 		if(!(locate(/obj/item/weapon/stool) in get_turf(usr)) && !(locate(/obj/structure/bed) in get_turf(usr)) && !(locate(/obj/structure/table) in get_turf(usr)) && !(locate(/obj/structure/hygiene/toilet) in get_turf(usr)))

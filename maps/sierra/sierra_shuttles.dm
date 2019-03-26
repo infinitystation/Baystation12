@@ -212,6 +212,7 @@
 		"nav_casino_antag",
 		"nav_yacht_antag",
 		"nav_slavers_base_antag",
+		"nav_mining_antag"
 		)
 	shuttle_area = /area/ninja_dojo/start
 	current_location = "nav_ninja_start"
@@ -335,6 +336,7 @@
 		"nav_casino_antag",
 		"nav_yacht_antag",
 		"nav_slavers_base_antag",
+		"nav_mining_antag"
 		)
 	shuttle_area = /area/syndicate_station/start
 	dock_target = "merc_shuttle"
@@ -402,6 +404,7 @@
 		"nav_casino_antag",
 		"nav_yacht_antag",
 		"nav_slavers_base_antag",
+		"nav_mining_antag"
 		)
 	shuttle_area =  /area/skipjack_station/start
 	dock_target = "skipjack_shuttle"
@@ -469,6 +472,7 @@
 		"nav_casino_antag",
 		"nav_yacht_antag",
 		"nav_slavers_base_antag",
+		"nav_mining_antag"
 		)
 	shuttle_area = /area/rescue_base/start
 	dock_target = "rescue_shuttle"
@@ -501,6 +505,11 @@
 /obj/effect/shuttle_landmark/ert/deck1
 	name =  "Southwest of Fourth deck"
 	landmark_tag = "nav_ert_deck1"
+
+/obj/effect/shuttle_landmark/sierra/deck1/salvage
+	name = "Sierra - Docking Port"
+	landmark_tag = "nav_deck1_salvage"
+	docking_controller = "nuke_shuttle_dock_airlock"
 
 /obj/effect/shuttle_landmark/ert/deck2
 	name = "Northwest of Third deck"
@@ -651,3 +660,9 @@
 //Makes the deck management program use hangar access
 /datum/nano_module/deck_management
 	default_access = list(access_hangar, access_cargo, access_heads)
+
+// away transit
+
+/obj/effect/shuttle_landmark/sierra/transit/blueriver_shuttle
+	name = "In transit"
+	landmark_tag = "nav_transit_blueriver"

@@ -9,14 +9,14 @@
 	var/postStartTicks 		= 0
 
 /datum/event/radiation_storm/announce()
-	priority_announcement.Announce("«афиксировано повышение уровн€ радиации поблизости [location_name()]. ¬сему персоналу насто€тельно рекомендуетс€ пройти в экранированные отсеки до покидани€ зоны повышенной радиоактивности. Ёкранированные отсеки - технические тоннели, челноки, камеры охраны, экстренные убежища, лифт, дормиторий.", "—енсоры [location_name()]", new_sound = GLOB.using_map.radiation_detected_sound, zlevels = affecting_z)
+	priority_announcement.Announce("«афиксировано повышение уровн€ радиации поблизости судна. ¬сему персоналу насто€тельно рекомендуетс€ пройти в экранированные отсеки до покидани€ зоны повышенной радиоактивности. Ёкранированные отсеки - технические тоннели, челноки, камеры заключени€, убежища, дормиторий.", "—енсоры [location_name()]", new_sound = GLOB.using_map.radiation_detected_sound, zlevels = affecting_z)
 
 /datum/event/radiation_storm/start()
 	GLOB.using_map.make_maint_all_access(1)
 
 /datum/event/radiation_storm/tick()
 	if(activeFor == enterBelt)
-		priority_announcement.Announce("¬озростание радиационного фона прекращено. Ќасто€тельно рекомендуетс€ оставатьс€ в экранированных помещени€х до снижени€ уровн€ фона.", "—енсоры [location_name()]", zlevels = affecting_z)
+		priority_announcement.Announce("¬озрастание радиационного фона прекращено. Ќасто€тельно рекомендуетс€ оставатьс€ в экранированных помещени€х до снижени€ уровн€ фона.", "—енсоры [location_name()]", zlevels = affecting_z)
 		radiate()
 
 	if(activeFor >= enterBelt && activeFor <= leaveBelt)

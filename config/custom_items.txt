@@ -1,4 +1,4 @@
-#	PMP HERE
+﻿#	PMP HERE
 
 {
 ckey: sallyvadordomold
@@ -168,12 +168,7 @@ item_path: /obj/item/clothing/ears/earmuffs/headphones/darkred
 {
 ckey: lunkydunk 
 character_name: Aftermath Guardian
-item_path: /obj/item/clothing/under/zpci_uniform
-}
-{
-ckey: lunkydunk 
-character_name: Aftermath Guardian
-item_path: /obj/item/clothing/suit/arb_farigues
+item_path: /obj/item/clothing/suit/armor/vest/arb_farigues
 }
 {
 ckey: logfol
@@ -228,7 +223,7 @@ item_path: /obj/item/clothing/suit/storage/army_overcoat
 {
 ckey: hodovoy
 character_name: Nirvana Kurt
-item_path: /obj/item/device/synthesized_instrument/guitar/multi
+item_path: /obj/item/device/synthesized_instrument/synthesizer 
 }
 {
 ckey: adenwais
@@ -306,7 +301,90 @@ ckey: quietproject
 character_name: Eno Quiet
 item_path: /obj/item/weapon/melee/energy/toothpick
 }
-
+{
+ckey: doctorducky
+character_name: Marc Hughes
+item_path: /obj/item/clothing/glasses/sunglasses/blindfold/fake
+}
+#{
+#ckey: mceisler
+#character_name: Vladimir Bloodenheart
+#item_path: /obj/item/custkit/sprite/white_card
+#req_access: 67
+#}
+{
+ckey: arhod
+character_name: Amr'in Battrral
+item_path: /obj/item/custkit/messith
+req_access: 3
+}
+{
+ckey: arhod
+character_name: Amr'in Battrral
+item_path: /obj/item/weapon/flame/lighter/zippo/custom/messotha/arhod
+}
+{
+ckey: laxesh
+character_name: Thomas Koster
+item_path: /obj/item/weapon/storage/belt/holster/ic/full
+}
+{
+ckey: moonmen
+character_name: Timur Glazkov
+item_path: /obj/item/weapon/storage/backpack/baul
+req_access: 1
+}
+{
+ckey: jacking
+character_name: James Oscar
+item_path: /obj/item/clothing/mask/gas/gm15m
+req_access: 1
+}
+{
+ckey: bob46
+character_name: Drake Hauhurst
+item_path: /obj/item/clothing/mask/gas/gm15m
+req_access: 1
+}
+{
+ckey: jackig
+character_name: Sam Jackson
+item_path: /obj/item/clothing/under/os_uniform
+}
+{
+ckey: warfoxy
+character_name: Luxuria Cavalet
+item_path: /obj/item/clothing/under/dress/dress_red
+}
+{
+ckey: he11d1ver
+character_name: GFSTS-I
+item_path: /obj/item/weapon/clothingbag/heph_set
+req_access: 1
+}
+{
+ckey: cre77
+character_name: GFSTS-II
+item_path: /obj/item/weapon/clothingbag/heph_set
+req_access: 1
+}
+{
+ckey: forrya
+character_name: GFSTS-III
+item_path: /obj/item/weapon/clothingbag/heph_set
+req_access: 1
+}
+{
+ckey: s1334
+character_name: GFSTS-IV
+item_path: /obj/item/weapon/clothingbag/heph_set
+req_access: 1
+}
+{
+ckey: forrya
+character_name: Liru
+item_path: /obj/item/clothing/under/resomi/maid
+}
 #	MEDIUM ITEMS HERE (5-6)
 
 {
@@ -319,9 +397,7 @@ item_desc: Grim periapt made of sinew and fangs of unknown monstrosity. Most lik
 {
 ckey: coltrane97
 character_name: Terry Linton
-item_path: /obj/item/modular_computer/wrist
-item_name: grayson wrist PDA
-item_desc: A compact wrisp computer designed to keep its user always connected. That one has Grayson Manufactories Ltd's mark on back side.
+item_path: /obj/item/modular_computer/wrist/grayson
 }
 {
 ckey: courierr
@@ -417,7 +493,6 @@ item_path: /obj/item/weapon/flame/lighter/zippo/infinity/fancy
 item_name: April Kiss
 item_desc: Zippo lighter with the image of a rose bud. Strange, but you are ready to swear that the lighter smells like a flower.
 }
-
 #	LONG ITEMS HERE (+7)
 
 {

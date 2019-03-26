@@ -638,6 +638,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/melonliquor = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/bluecuracao = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/absinthe = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/champagne = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/specialwhiskey = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/herbal = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer = 15,
@@ -1184,8 +1185,40 @@
 	product_slogans = "Escape to a fantasy world!;Fuel your gambling addiction!;Ruin your friendships!"
 	product_ads = "Elves and dwarves!;Totally not satanic!;Fun times forever!"
 	icon_state = "games"
-	products = list(/obj/item/toy/blink = 5, /obj/item/toy/eightball = 8, /obj/item/weapon/deck/cards = 5, /obj/item/weapon/deck/tarot = 5, /obj/item/weapon/pack/cardemon = 6, /obj/item/weapon/pack/spaceball = 6, /obj/item/weapon/storage/pill_bottle/dice_nerd = 5, /obj/item/weapon/storage/pill_bottle/dice = 5, /obj/item/weapon/storage/box/checkers = 2, /obj/item/weapon/storage/box/checkers/chess/red = 2, /obj/item/weapon/storage/box/checkers/chess = 2)
-	prices = list(/obj/item/toy/blink = 3, /obj/item/toy/eightball = 10, /obj/item/weapon/deck/tarot = 3, /obj/item/weapon/deck/cards = 3, /obj/item/weapon/pack/cardemon = 5, /obj/item/weapon/pack/spaceball = 5, /obj/item/weapon/storage/pill_bottle/dice_nerd = 6, /obj/item/weapon/storage/pill_bottle/dice = 6, /obj/item/weapon/storage/box/checkers = 10, /obj/item/weapon/storage/box/checkers/chess/red = 10, /obj/item/weapon/storage/box/checkers/chess = 10)
+	products = list(/obj/item/toy/blink = 5,
+					/obj/item/toy/eightball = 8,
+					/obj/item/weapon/deck/cards = 5,
+					/obj/item/weapon/deck/tarot = 5,
+					/obj/item/weapon/pack/cardemon = 6,
+					/obj/item/weapon/pack/spaceball = 6,
+					/obj/item/weapon/storage/pill_bottle/dice_nerd = 5,
+					/obj/item/weapon/storage/pill_bottle/dice = 5,
+					/obj/item/weapon/storage/box/checkers = 2,
+					/obj/item/weapon/storage/box/checkers/chess/red = 2,
+					/obj/item/weapon/storage/box/checkers/chess = 2,
+					/obj/item/toy/plushie/nymph = 5,
+					/obj/item/toy/plushie/mouse = 5,
+					/obj/item/toy/plushie/kitten = 5,
+					/obj/item/toy/plushie/lizard = 5,
+					/obj/item/toy/plushie/spider = 5,
+					/obj/item/toy/plushie/farwa = 5)
+	prices = list(/obj/item/toy/blink = 3,
+				/obj/item/toy/eightball = 10,
+				/obj/item/weapon/deck/tarot = 3,
+				/obj/item/weapon/deck/cards = 3,
+				/obj/item/weapon/pack/cardemon = 5,
+				/obj/item/weapon/pack/spaceball = 5,
+				/obj/item/weapon/storage/pill_bottle/dice_nerd = 6,
+				/obj/item/weapon/storage/pill_bottle/dice = 6,
+				/obj/item/weapon/storage/box/checkers = 10,
+				/obj/item/weapon/storage/box/checkers/chess/red = 10,
+				/obj/item/weapon/storage/box/checkers/chess = 10,
+				/obj/item/toy/plushie/nymph = 10,
+				/obj/item/toy/plushie/mouse = 10,
+				/obj/item/toy/plushie/kitten = 10,
+				/obj/item/toy/plushie/lizard = 10,
+				/obj/item/toy/plushie/spider = 10,
+				/obj/item/toy/plushie/farwa = 10)
 	premium = list(/obj/item/weapon/gun/projectile/revolver/capgun = 1, /obj/item/ammo_magazine/caps = 4)
 	contraband = list(/obj/item/weapon/reagent_containers/spray/waterflower = 2, /obj/item/weapon/storage/box/snappops = 3)
 

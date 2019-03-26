@@ -7,7 +7,7 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 	feedback_tag = "changeling_objective"
 	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg)
 	protected_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/captain, /datum/job/hos)
-	welcome_text = "Use say \"#g message\" to communicate with your fellow changelings. Remember: you get all of their absorbed DNA if you absorb them."
+	welcome_text = "Используйте say \",g message\" чтобы св&#255;затьс&#255; с другими генокрадами. Помните: вы получите все поглащенные ими ДНКа, если поглотите их самих.."
 	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE
 	antaghud_indicator = "hudchangeling"
 	skill_setter = /datum/antag_skill_setter/station

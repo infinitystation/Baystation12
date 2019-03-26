@@ -20,7 +20,6 @@
 		/obj/item/clothing/under/rank/research_director/rdalt,
 		/obj/item/clothing/under/rank/research_director/dress_rd,
 		/obj/item/clothing/under/suit_jacket/corp/nanotrasen,
-		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/suit/storage/toggle/labcoat/science/nanotrasen,
 		/obj/item/clothing/suit/storage/toggle/labcoat/rd/nanotrasen,
 		/obj/item/clothing/shoes/white,
@@ -40,6 +39,7 @@
 		/obj/item/taperoll/research,
 		/obj/item/clothing/glasses/welding/superior,
 		/obj/item/clothing/suit/armor/pcarrier/light,
+		/obj/item/clothing/head/helmet,
 		/obj/item/weapon/storage/box/secret_project_disks/science,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/toxins, /obj/item/weapon/storage/backpack/satchel/tox)),
 		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger/tox, 50)
@@ -59,7 +59,6 @@
 	return list(
 		/obj/item/clothing/under/rank/scientist/nanotrasen,
 		/obj/item/clothing/suit/storage/toggle/labcoat/science/nanotrasen,
-		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
 		/obj/item/device/radio/headset/headset_sci,
 		/obj/item/clothing/mask/gas/alt,
@@ -94,7 +93,6 @@
 	return list(
 		/obj/item/clothing/under/rank/scientist/nanotrasen,
 		/obj/item/clothing/suit/storage/toggle/labcoat/science/nanotrasen,
-		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/white,
 		/obj/item/device/radio/headset/headset_sci,
 		/obj/item/clothing/mask/gas/half,

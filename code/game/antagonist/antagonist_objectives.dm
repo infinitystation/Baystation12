@@ -6,6 +6,8 @@
 	return 1
 
 /datum/antagonist/proc/create_objectives(var/datum/mind/player, var/override=0)
+	if(player.objectives.len && !override)
+		return 0
 	if(config.objectives_disabled != CONFIG_OBJECTIVE_ALL && !override)
 		return 0
 	if(create_global_objectives(override) || global_objectives.len)

@@ -18,6 +18,7 @@
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/masks.dmi',
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_mask_vox.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_mask_unathi.dmi',
+		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi',
 		)
 
 /obj/item/clothing/mask/breath/medical

@@ -156,7 +156,7 @@
 
 /obj/machinery/vending/parts/research
 	name = "Wolfor-Spares Vendor"
-	req_access = list(access_engine,access_tox)
+	req_access = list(access_research)
 	products = list(/obj/item/weapon/cell = 5,
 					/obj/item/weapon/stock_parts/capacitor = 8,/obj/item/weapon/stock_parts/scanning_module = 8,
 					/obj/item/weapon/stock_parts/micro_laser = 8,/obj/item/weapon/stock_parts/matter_bin = 8,

@@ -1388,16 +1388,16 @@
 		if(PULSE_NONE)
 			return "0"
 		if(PULSE_SLOW)
-			temp = rand(40, 60)
+			temp = rand(40, 60) + 50 * (species.pulse_rate_mod - 1)
 		if(PULSE_NORM)
-			temp = rand(60, 90)
+			temp = rand(60, 90) + 75 * (species.pulse_rate_mod - 1)
 		if(PULSE_FAST)
-			temp = rand(90, 120)
+			temp = rand(90, 120) + 105 * (species.pulse_rate_mod - 1)
 		if(PULSE_2FAST)
-			temp = rand(120, 160)
+			temp = rand(120, 160) + 140 * (species.pulse_rate_mod - 1)
 		if(PULSE_THREADY)
 			return method ? ">250" : "extremely weak and fast, patient's artery feels like a thread"
-	return "[method ? temp : temp + rand(-10, 10)]"
+	return "[round(method ? temp : temp + rand(-10, 10))]"
 //			output for machines^	^^^^^^^output for people^^^^^^^^^
 
 /mob/living/carbon/human/proc/pulse()
@@ -1643,3 +1643,15 @@
 
 /mob/living/carbon/human/proc/get_cultural_value(var/token)
 	return cultural_info[token]
+
+/mob/living/carbon/human/proc/handlecryo()
+	var/CS = list()
+	for(var/obj/machinery/cryopod/C in get_area(src))
+		CS += C
+
+	CS = shuffle(CS)
+	for(var/obj/machinery/cryopod/G in CS)
+		if(G.occupant)
+			continue
+		G.set_awakening_occupant(src)
+		break

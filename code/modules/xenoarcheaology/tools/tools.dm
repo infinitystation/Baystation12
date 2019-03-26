@@ -1,31 +1,3 @@
-/obj/item/device/gps
-	name = "relay positioning device"
-	desc = "Triangulates the approximate co-ordinates using a nearby satellite network."
-	icon = 'icons/obj/device.dmi'
-	icon_state = "locator"
-	item_state = "locator"
-	origin_tech = list(TECH_MATERIAL = 2, TECH_DATA = 2, TECH_BLUESPACE = 2)
-	matter = list(MATERIAL_STEEL = 500)
-	w_class = ITEM_SIZE_SMALL
-
-/obj/item/device/gps/attack_self(var/mob/user as mob)
-	to_chat(user, "<span class='notice'>\icon[src] \The [src] flashes <i>[get_coordinates()]</i>.</span>")
-
-/obj/item/device/gps/examine(var/mob/user)
-	..()
-	to_chat(user, "<span class='notice'>\The [src]'s screen shows: <i>[get_coordinates()]</i>.</span>")
-
-/obj/item/device/gps/proc/get_coordinates()
-	var/turf/T = get_turf(src)
-	return T ? "[T.x]:[T.y]:[T.z]" : "N/A"
-
-/mob/living/carbon/human/Stat()
-	. = ..()
-	if(statpanel("Status"))
-		var/obj/item/device/gps/L = locate() in src
-		if(L)
-			stat("Coordinates:", "[L.get_coordinates()]")
-
 /obj/item/device/measuring_tape
 	name = "measuring tape"
 	desc = "A coiled metallic tape used to check dimensions and lengths."

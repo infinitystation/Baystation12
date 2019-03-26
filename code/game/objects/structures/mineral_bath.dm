@@ -103,7 +103,7 @@
 //		var/repaired_organ
 
 		// Replace limbs for crystalline species.
-		if((H.species.name == SPECIES_ADHERENT || H.species.name == SPECIES_GOLEM) && prob(10))
+		if((H.species.name == SPECIES_ADHERENT || H.species.name == SPECIES_GOLEM) && prob(30))
 			for(var/limb_type in H.species.has_limbs)
 				var/obj/item/organ/external/E = H.organs_by_name[limb_type]
 				if(E && !E.is_usable())
@@ -131,12 +131,11 @@
 						to_chat(H, "<span class='notice'>The mineral-rich bath mends your [I.name].</span>")
 //						repaired_organ = TRUE
 						break
-/*
-		// Repair robotic external organs.
-		if(!repaired_organ && prob(10))
+		// Repair crystalline external organs.
+		if(prob(30))
 			for(var/thing in H.organs)
 				var/obj/item/organ/external/E = thing
-				if(BP_IS_ROBOTIC(E))
+				if(BP_IS_CRYSTAL(E))
 					if(E.brute_dam || E.burn_dam)
 						E.heal_damage(5, 5, TRUE, TRUE)
 						to_chat(H, "<span class='notice'>The mineral-rich bath mends your [E.name].</span>")
@@ -144,4 +143,3 @@
 							E.status |= ORGAN_BRITTLE
 							to_chat(H, "<span class='warning'>It feels a bit brittle, though...</span>")
 						break
-*/

@@ -164,7 +164,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			return STATUS_CLOSE
 	return ..()
 
-/obj/machinery/computer/rdconsole/OnTopic(user, href_list)
+/obj/machinery/computer/rdconsole/OnTopic(mob/user, href_list)
 	if(href_list["menu"]) //Switches menu screens. Converts a sent text string into a number. Saves a LOT of code.
 		screen = text2num(href_list["menu"])
 		. = TOPIC_REFRESH
@@ -319,9 +319,19 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		. = TOPIC_REFRESH
 		CHECK_LATHE
 		var/datum/design/being_built = null
+		var/operator_device_skill = user.get_skill_value(SKILL_DEVICES)
 		for(var/datum/design/D in files.known_designs)
 			if(D.id == href_list["build"])
-				being_built = D
+				var/datum/design/N = new /datum/design
+				N.name = D.name
+				N.build_path = D.build_path
+				N.time = D.time + list(5, 3, 0, -1, -2)[operator_device_skill]
+				N.skill_fail_chance = list(50, 30, 0, 0, 0)[operator_device_skill]
+				for(var/M in D.materials)
+					N.materials[M] = round(D.materials[M] * list(2, 1.5, 1, 0.9, 0.8)[operator_device_skill])
+				for(var/C in D.chemicals)
+					N.chemicals[C] = round(D.chemicals[C] * list(2, 1.5, 1, 0.9, 0.8)[operator_device_skill])
+				being_built = N
 				break
 		if(being_built)
 			linked_lathe.addToQueue(being_built)
@@ -331,9 +341,19 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		. = TOPIC_REFRESH
 		CHECK_IMPRINTER
 		var/datum/design/being_built = null
+		var/operator_device_skill = user.get_skill_value(SKILL_DEVICES)
 		for(var/datum/design/D in files.known_designs)
 			if(D.id == href_list["imprint"])
-				being_built = D
+				var/datum/design/N = new /datum/design
+				N.name = D.name
+				N.build_path = D.build_path
+				N.time = D.time + list(3, 0, -1, -2, -3)[operator_device_skill]
+				N.skill_fail_chance = list(30, 0, 0, 0, 0)[operator_device_skill]
+				for(var/M in D.materials)
+					N.materials[M] = round(D.materials[M] * list(1.5, 1, 0.9, 0.8, 0.75)[operator_device_skill])
+				for(var/C in D.chemicals)
+					N.chemicals[C] = round(D.chemicals[C] * list(1.5, 1, 0.9, 0.8, 0.75)[operator_device_skill])
+				being_built = N
 				break
 		if(being_built)
 			linked_imprinter.addToQueue(being_built)
@@ -511,6 +531,8 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 
 	user.set_machine(src)
 	var/dat = list()
+	var/final_dat = list()
+	var/operator_device_skill = user.get_skill_value(SKILL_DEVICES)
 	files.RefreshResearch()
 	switch(screen) //A quick check to make sure you get the right screen when a device is disconnected.
 		if(2 to 2.9)
@@ -723,20 +745,31 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			dat += "<B>Material Amount:</B> [linked_lathe.TotalMaterials()] cm<sup>3</sup> (MAX: [linked_lathe.max_material_storage])<BR>"
 			dat += "<B>Chemical Volume:</B> [linked_lathe.reagents.total_volume] (MAX: [linked_lathe.reagents.maximum_volume])<HR>"
 			dat += "<UL>"
+			var/protolathe_bonus = list(2, 1.5, 1, 0.9, 0.8)[operator_device_skill]
 			for(var/datum/design/D in files.known_designs)
 				if(!D.build_path || !(D.build_type & PROTOLATHE))
 					continue
 				var/temp_dat
+				var/name_dat = D.name
 				for(var/M in D.materials)
-					temp_dat += ", [D.materials[M]*linked_lathe.mat_efficiency] [CallMaterialName(M)]"
+					temp_dat += ", [round(D.materials[M]*linked_lathe.mat_efficiency * protolathe_bonus)] [CallMaterialName(M)]"
 				for(var/T in D.chemicals)
-					temp_dat += ", [D.chemicals[T]*(linked_lathe ? linked_lathe.mat_efficiency : 1)] [CallReagentName(T)]"
+					temp_dat += ", [round(D.chemicals[T]*linked_lathe.mat_efficiency * protolathe_bonus)] [CallReagentName(T)]"
 				if(temp_dat)
 					temp_dat = " \[[copytext(temp_dat, 3)]\]"
-				if(linked_lathe.canBuild(D))
-					dat += "<LI><B><A href='?src=\ref[src];build=[D.id]'>[D.name]</A></B>[temp_dat]"
+				if(!(user.skill_check(SKILL_DEVICES, SKILL_BASIC)))
+					temp_dat = corrupt_text(temp_dat)
+					name_dat = corrupt_text(name_dat)
+				if(linked_lathe.canBuild(D, protolathe_bonus))
+					final_dat += "<LI><B><A href='?src=\ref[src];build=[D.id]'>[name_dat]</A></B>[temp_dat]"
 				else
-					dat += "<LI><B>[D.name]</B>[temp_dat]"
+					final_dat += "<LI><B>[name_dat]</B>[temp_dat]"
+
+			if(user.skill_check(SKILL_DEVICES, SKILL_ADEPT))
+				dat += final_dat
+			else
+				dat += shuffle(final_dat)
+
 			dat += "</UL>"
 
 		if(3.2) //Protolathe Material Storage Sub-menu
@@ -779,13 +812,25 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			else
 				var/tmp = 1
 				for(var/datum/design/D in linked_lathe.queue)
+					var/temp_dat
+					var/name_dat = D.name
+					for(var/M in D.materials)
+						temp_dat += ", [D.materials[M]*linked_lathe.mat_efficiency] [CallMaterialName(M)]"
+					for(var/T in D.chemicals)
+						temp_dat += ", [D.chemicals[T]*linked_lathe.mat_efficiency] [CallReagentName(T)]"
+					if(temp_dat)
+						temp_dat = " \[[copytext(temp_dat, 3)]\]"
+					if(!(user.skill_check(SKILL_DEVICES, SKILL_BASIC)))
+						temp_dat = corrupt_text(temp_dat)
+						name_dat = corrupt_text(name_dat)
+
 					if(tmp == 1)
 						if(linked_lathe.busy)
-							dat += "<B>1: [D.name]</B><BR>"
+							dat += "<B>1: [name_dat]</B> [temp_dat]<BR>"
 						else
-							dat += "<B>1: [D.name]</B> (Awaiting materials) <A href='?src=\ref[src];removeP=[tmp]'>(Remove)</A><BR>"
+							dat += "<B>1: [name_dat]</B> (Awaiting materials - [temp_dat]) <A href='?src=\ref[src];removeP=[tmp]'>(Remove)</A><BR>"
 					else
-						dat += "[tmp]: [D.name] <A href='?src=\ref[src];removeP=[tmp]'>(Remove)</A><BR>"
+						dat += "[tmp]: [name_dat] [temp_dat] <A href='?src=\ref[src];removeP=[tmp]'>(Remove)</A><BR>"
 					++tmp
 
 		///////////////////CIRCUIT IMPRINTER SCREENS////////////////////
@@ -803,20 +848,27 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			dat += "Material Amount: [linked_imprinter.TotalMaterials()] cm<sup>3</sup><BR>"
 			dat += "Chemical Volume: [linked_imprinter.reagents.total_volume]<HR>"
 			dat += "<UL>"
+			var/circuit_imprinter_bonus = list(1.5, 1, 0.9, 0.8, 0.75)[operator_device_skill]
 			for(var/datum/design/D in files.known_designs)
 				if(!D.build_path || !(D.build_type & IMPRINTER))
 					continue
 				var/temp_dat
 				for(var/M in D.materials)
-					temp_dat += ", [D.materials[M]*linked_imprinter.mat_efficiency] [CallMaterialName(M)]"
+					temp_dat += ", [round(D.materials[M]*linked_imprinter.mat_efficiency * circuit_imprinter_bonus)] [CallMaterialName(M)]"
 				for(var/T in D.chemicals)
-					temp_dat += ", [D.chemicals[T]*linked_imprinter.mat_efficiency] [CallReagentName(T)]"
+					temp_dat += ", [round(D.chemicals[T]*linked_imprinter.mat_efficiency * circuit_imprinter_bonus)] [CallReagentName(T)]"
 				if(temp_dat)
 					temp_dat = " \[[copytext(temp_dat,3)]\]"
-				if(linked_imprinter.canBuild(D))
-					dat += "<LI><B><A href='?src=\ref[src];imprint=[D.id]'>[D.name]</A></B>[temp_dat]"
+				if(linked_imprinter.canBuild(D, circuit_imprinter_bonus))
+					final_dat += "<LI><B><A href='?src=\ref[src];imprint=[D.id]'>[D.name]</A></B>[temp_dat]"
 				else
-					dat += "<LI><B>[D.name]</B>[temp_dat]"
+					final_dat += "<LI><B>[D.name]</B>[temp_dat]"
+
+			if(user.skill_check(SKILL_DEVICES, SKILL_BASIC))
+				dat += final_dat
+			else
+				dat += shuffle(final_dat)
+
 			dat += "</UL>"
 
 		if(4.2)
@@ -859,10 +911,18 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			else
 				var/tmp = 1
 				for(var/datum/design/D in linked_imprinter.queue)
+					var/temp_dat
+					for(var/M in D.materials)
+						temp_dat += ", [D.materials[M]*linked_imprinter.mat_efficiency] [CallMaterialName(M)]"
+					for(var/T in D.chemicals)
+						temp_dat += ", [D.chemicals[T]*linked_imprinter.mat_efficiency] [CallReagentName(T)]"
+					if(temp_dat)
+						temp_dat = " \[[copytext(temp_dat, 3)]\]"
+
 					if(tmp == 1)
-						dat += "<B>1: [D.name]</B><BR>"
+						dat += "<B>1: [D.name] [temp_dat]</B><BR>"
 					else
-						dat += "[tmp]: [D.name] <A href='?src=\ref[src];removeI=[tmp]'>(Remove)</A><BR>"
+						dat += "[tmp]: [D.name] [temp_dat]<A href='?src=\ref[src];removeI=[tmp]'>(Remove)</A><BR>"
 					++tmp
 
 		///////////////////Research Information Browser////////////////////

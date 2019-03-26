@@ -1,9 +1,9 @@
 /datum/language/diona
 	name = LANGUAGE_ROOTLOCAL
 	desc = "A complex language known instinctively by Dionaea, 'spoken' by emitting modulated radio waves. This version uses high frequency waves for quick communication at short ranges."
-	speech_verb = "шуршит"
-	ask_verb = "скрипит"
-	exclaim_verb = "шелестит"
+	speech_verb = "ГёГіГ°ГёГЁГІ"
+	ask_verb = "Г±ГЄГ°ГЁГЇГЁГІ"
+	exclaim_verb = "ГёГҐГ«ГҐГ±ГІГЁГІ"
 	colour = "soghun"
 	key = "q"
 	flags = RESTRICTED
@@ -25,9 +25,9 @@
 /datum/language/unathi
 	name = LANGUAGE_UNATHI
 	desc = "The common language of Moghes, composed of sibilant hisses and rattles. Spoken natively by Unathi."
-	speech_verb = "шипит"
-	ask_verb = "шипит"
-	exclaim_verb = "грозно рычит"
+	speech_verb = "ГёГЁГЇГЁГІ"
+	ask_verb = "ГёГЁГЇГЁГІ"
+	exclaim_verb = "ГЈГ°Г®Г§Г­Г® Г°Г»Г·ГЁГІ"
 	colour = "soghun"
 	key = "o"
 	flags = WHITELISTED
@@ -46,9 +46,9 @@
 /datum/language/tajaran
 	name = LANGUAGE_SIIK_MAAS
 	desc = "The traditionally employed tongue of Ahdomai, composed of expressive yowls and chirps. Native to the Tajaran."
-	speech_verb = "мурчит"
-	ask_verb = "мурчит"
-	exclaim_verb = "воет"
+	speech_verb = "Г¬ГіГ°Г·ГЁГІ"
+	ask_verb = "Г¬ГіГ°Г·ГЁГІ"
+	exclaim_verb = "ГўГ®ГҐГІ"
 	colour = "tajaran"
 	key = "j"
 	flags = WHITELISTED
@@ -70,9 +70,9 @@
 /datum/language/skrell
 	name = LANGUAGE_SKRELLIAN
 	desc = "A melodic and complex language spoken by the Skrell of Qerrbalak. Some of the notes are inaudible to humans."
-	speech_verb = "поет"
-	ask_verb = "поет"
-	exclaim_verb = "поет"
+	speech_verb = "ГЇГ®ГҐГІ"
+	ask_verb = "ГЇГ®ГҐГІ"
+	exclaim_verb = "ГЇГ®ГҐГІ"
 	colour = "skrell"
 	key = "k"
 	flags = WHITELISTED
@@ -82,8 +82,8 @@
 /datum/language/human
 	name = LANGUAGE_SOL_COMMON
 	desc = "A bastardized hybrid of informal English and elements of Mandarin Chinese; the common language of the Sol system."
-	speech_verb = "говорит"
-	whisper_verb = "шепчет"
+	speech_verb = "ГЈГ®ГўГ®Г°ГЁГІ"
+	whisper_verb = "ГёГҐГЇГ·ГҐГІ"
 	colour = "solcom"
 	key = "1"
 	shorthand = "Sol"
@@ -92,12 +92,12 @@
 
 /datum/language/human/get_spoken_verb(var/msg_end)
 	if(msg_end == "!!")
-		return pick("кричит")
+		return pick("ГЄГ°ГЁГ·ГЁГІ")
 	else if(copytext(msg_end, length(msg_end)) == "!")
-		return pick("восклицает")
+		return pick("ГўГ®Г±ГЄГ«ГЁГ¶Г ГҐГІ")
 	else if(copytext(msg_end, length(msg_end)) == "?")
-		return pick("спрашивает")
-	return speech_verb
+		return pick("Г±ГЇГ°Г ГёГЁГўГ ГҐГІ")
+  return speech_verb
 
 /datum/language/human/get_random_name(var/gender)
 	if (prob(80))
@@ -111,9 +111,9 @@
 /datum/language/machine
 	name = LANGUAGE_EAL
 	desc = "An efficient language of encoded tones developed by synthetics and cyborgs."
-	speech_verb = "свистит"
-	ask_verb = "щебечет"
-	exclaim_verb = "громко свистит"
+	speech_verb = "Г±ГўГЁГ±ГІГЁГІ"
+	ask_verb = "Г№ГҐГЎГҐГ·ГҐГІ"
+	exclaim_verb = "ГЈГ°Г®Г¬ГЄГ® Г±ГўГЁГ±ГІГЁГІ"
 	colour = "changeling"
 	key = "6"
 	flags = NO_STUTTER
@@ -132,9 +132,9 @@
 /datum/language/resomi
 	name = LANGUAGE_RESOMI
 	desc = "A trilling language spoken by the diminutive Resomi."
-	speech_verb = "щебечет"
-	ask_verb = "чирикает"
-	exclaim_verb = "верещит"
+	speech_verb = "Г№ГҐГЎГҐГ·ГҐГІ"
+	ask_verb = "Г·ГЁГ°ГЁГЄГ ГҐГІ"
+	exclaim_verb = "ГўГҐГ°ГҐГ№ГЁГІ"
 	colour = "alien"
 	key = "e"
 	flags = WHITELISTED
@@ -212,7 +212,7 @@
 /datum/language/tajsign
 	name = LANGUAGE_SIIK_TAJR
 	desc = "A type of sign language mostly based on tail movements that was used during the Tajaran rebellion."
-	signlang_verb = list("использует хвост для сообщения", "жестикулирует хвостом", "искусно жестикулирует хвостом")
+	signlang_verb = list("Г¤ГҐГ«Г ГҐГІ ГЇГ Г±Г» ГµГўГ®Г±ГІГ®Г¬", "Г¦ГҐГ±ГІГЁГЄГіГ«ГЁГ°ГіГҐГІ ГµГўГ®Г±ГІГ®Г¬", "ГЁГ±ГЄГіГ±Г­Г® Г¦ГҐГ±ГІГЁГЄГіГ«ГЁГ°ГіГҐГІ ГµГўГ®Г±ГІГ®Г¬")
 	colour = "tajaran"
 	key = "l"
 	flags = WHITELISTED | SIGNLANG | NO_STUTTER | NONVERBAL
@@ -221,7 +221,7 @@
 /datum/language/confederate
 	name = LANGUAGE_INDEPENDENT
 	desc = "The official language of the Terran Colonial Confederation, evolved from a pidgin of Eastern European languages and English."
-	speech_verb = "проговаривает"
+	speech_verb = "ГЇГ°Г®ГЈГ®ГўГ Г°ГЁГўГ ГҐГІ"
 	colour = "terran"
 	key = "r"
 	syllables = list("rus","zem","ave","groz","ski","ska","ven","konst","pol","lin","svy",
@@ -232,7 +232,7 @@
 /datum/language/nabber
 	name = LANGUAGE_NABBER
 	desc = "A strange language that can be understood both by the sounds made and by the movement needed to create those sounds."
-	signlang_verb = list("скрипит", "перемалывает жвалами", "скрипит и перемалывает жвалами")
+	signlang_verb = list("Г±ГЄГ°ГЁГЇГЁГІ", "ГЇГҐГ°ГҐГ¬Г Г«Г»ГўГ ГҐГІ Г¦ГўГ Г«Г Г¬ГЁ", "Г±ГЄГ°ГЁГЇГЁГІ ГЁ ГЇГҐГ°ГҐГ¬Г Г«Г»ГўГ ГҐГІ Г¦ГўГ Г«Г Г¬ГЁ")
 	key = "n"
 	flags = WHITELISTED | SIGNLANG | NO_STUTTER | NONVERBAL
 	colour = ".nabber_lang"
@@ -257,9 +257,9 @@
 /datum/language/yeosa
 	name = LANGUAGE_YEOSA
 	desc = "A language of Moghes consisting of a combination of spoken word and gesticulation. While it is uncommonly spoken in the drier regions, it enjoys popular usage as the official tongue of the Yeosa clans."
-	speech_verb = "шипит"
-	ask_verb = "трещит"
-	exclaim_verb = "рявкает"
+	speech_verb = "ГёГЁГЇГЁГІ"
+	ask_verb = "ГІГ°ГҐГ№ГЁГІ"
+	exclaim_verb = "Г°ГїГўГЄГ ГҐГІ"
 	colour = "yeosa"
 	key = "h"
 	flags = WHITELISTED

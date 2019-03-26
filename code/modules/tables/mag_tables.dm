@@ -11,13 +11,10 @@
 	flipped = -1
 	var/locked = 0
 
-/obj/structure/table/mag/New()
-	..()
-	verbs -= /obj/structure/table/verb/do_flip
-	verbs -= /obj/structure/table/proc/do_put
-
 /obj/structure/table/mag/Initialize()
 	. = ..()
+	verbs -= /obj/structure/table/verb/do_flip
+	verbs -= /obj/structure/table/proc/do_put
 	maxhealth = 20
 	health = 20
 
@@ -59,6 +56,8 @@
 	return
 
 /obj/structure/table/mag/attackby(obj/item/weapon/W as obj, mob/user as mob, var/click_params)
+	if(isrobot(user))
+		return
 	if(istype(W, /obj/item/weapon/card/id) || istype(W, /obj/item/modular_computer))
 		if(allowed(usr))
 			toggle_lock()

@@ -63,18 +63,18 @@
 
 /datum/species/resomi
 	autohiss_basic_map = list(
-			"ç" = list("ñ", "ññ", "ñññ"),
+			"ç" = list("ñ"),
 
-			"Ç" = list("Ñ", "Ññ", "Ñññ")
+			"Ç" = list("Ñ")
 		)
 	autohiss_extra_map = list(
-			"÷" = list("ù", "ùù"),
+			"÷" = list("ù"),
 
-			"æ" = list("ø", "øø", "øøø"),
+			"æ" = list("ø"),
 
-			"×" = list("Ù", "Ùù"),
+			"×" = list("Ù"),
 
-			"Æ" = list("Ø", "Øø", "Øøø")
+			"Æ" = list("Ø")
 		)
 	autohiss_exempt = list(LANGUAGE_RESOMI)
 
@@ -106,10 +106,10 @@
 			. += message
 			break
 		. += copytext(message, 1, min_index)
-		if(copytext(message, min_index, min_index+1) == uppertext(min_char))
+		if(copytext(message, min_index, min_index+1) == ruppertext(min_char))
 			switch(text2ascii(message, min_index+1))
 				if(65 to 90) // A-Z, uppercase; uppercase R/S followed by another uppercase letter, uppercase the entire replacement string
-					. += uppertext(pick(map[min_char]))
+					. += ruppertext(pick(map[min_char]))
 				else
 					. += capitalize(pick(map[min_char]))
 		else

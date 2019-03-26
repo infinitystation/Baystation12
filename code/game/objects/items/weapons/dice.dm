@@ -7,8 +7,11 @@
 	var/sides = 6
 	attack_verb = list("diced")
 
-/obj/item/weapon/dice/New()
-	icon_state = "[name][rand(1,sides)]"
+/obj/item/weapon/dice/Initialize()
+	if(sides != 100)
+		icon_state = "[name][rand(1,sides)]"
+	else
+		icon_state = "[name][round(rand(10,100), 10)]"
 
 /obj/item/weapon/dice/d4
 	name = "d4"

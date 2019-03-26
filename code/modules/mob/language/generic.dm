@@ -22,8 +22,8 @@
 /datum/language/common
 	name = LANGUAGE_GALCOM
 	desc = "The common galactic tongue."
-	speech_verb = "говорит"
-	whisper_verb = "шепчет"
+	speech_verb = "ГЈГ®ГўГ®Г°ГЁГІ"
+	whisper_verb = "ГёГҐГЇГ·ГҐГІ"
 	key = "0"
 	flags = RESTRICTED
 	syllables = list("blah","blah","blah","bleh","meh","neh","nah","wah")
@@ -36,18 +36,18 @@
 //TODO flag certain languages to use the mob-type specific say_quote and then get rid of these.
 /datum/language/common/get_spoken_verb(var/msg_end)
 	if(msg_end == "!!")
-		return pick("кричит")
+		return pick("ГЄГ°ГЁГ·ГЁГІ")
 	else if(copytext(msg_end, length(msg_end)) == "!")
-		return pick("восклицает")
+		return pick("ГўГ®Г±ГЄГ«ГЁГ¶Г ГҐГІ")
 	else if(copytext(msg_end, length(msg_end)) == "?")
 		return ask_verb
-	return speech_verb
+  return speech_verb
 
 // Galactic common languages (systemwide accepted standards).
 /datum/language/lunar
 	name = LANGUAGE_LUNAR
 	desc = "An older language primarily spoken on Earth's only natural satellite, this language is commonly heard from the mouths of aristocracy."
-	speech_verb = "произносит"
+	speech_verb = "ГЇГ°Г®ГЁГ§Г­Г®Г±ГЁГІ"
 	colour = "moon"
 	key = "2"
 	space_chance = 100
@@ -65,7 +65,7 @@
 /datum/language/gutter
 	name = "Gutter"
 	desc = "Much like Common, this crude pidgin tongue descended from numerous languages and serves as a trade language for criminal elements."
-	speech_verb = "балакает"
+	speech_verb = "ГЎГ Г§Г Г°ГЁГІ"
 	colour = "rough"
 	key = "3"
 	syllables = list ("gra","ba","ba","breh","bra","rah","dur","ra","ro","gro","go","ber","bar","geh","heh", "gra")
@@ -74,7 +74,7 @@
 /datum/language/sign
 	name = LANGUAGE_SIGN
 	desc = "A sign language commonly used for those who are deaf or mute."
-	signlang_verb = list("жестикулирует")
+	signlang_verb = list("Г¦ГҐГ±ГІГЁГЄГіГ«ГЁГ°ГіГҐГІ")
 	colour = "say_quote"
 	key = "s"
 	flags = SIGNLANG | NO_STUTTER | NONVERBAL

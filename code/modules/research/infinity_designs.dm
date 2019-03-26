@@ -85,6 +85,15 @@
 	build_path = /obj/item/weapon/FixOVein/clot
 	sort_string = "MBEAH"
 
+/datum/design/item/bluespace/bluespace_crystal
+	name = "artificial bluespace crystal"
+	desc = "An artificially made bluespace crystal."
+	id = "bluespace_crystal"
+	req_tech = list(TECH_BLUESPACE = 4, TECH_MATERIAL = 6)
+	materials = list("gold" = 1500, "diamond" = 1500, "phoron" = 1500)
+	build_path = /obj/item/bluespace_crystal/artificial
+	sort_string = "VAEAB"
+
 /datum/design/item/tool/rpd
 	name = "rapid pipe dispenser"
 	desc = "This device can rapidly dispense atmospherics and disposals piping, manipulate loose piping, and recycle any detached pipes it is applied to."
@@ -119,3 +128,26 @@
 	materials = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 50, "silver" = 100)
 	build_path = /obj/item/clothing/glasses/material/hybrid
 	sort_string = "GBAAD"
+
+// CIRCUITS
+
+datum/design/circuit/telesci_console
+	name = "telepad control console"
+	id = "telesci_console"
+	req_tech = list(TECH_DATA = 3, TECH_BLUESPACE = 2)
+	build_path = /obj/item/weapon/circuitboard/telesci_console
+	sort_string = "HAAAD"
+
+datum/design/circuit/telepad
+	name = "telepad board"
+	id = "telepad"
+	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 3, TECH_MATERIAL = 3, TECH_BLUESPACE = 4)
+	build_path = /obj/item/weapon/circuitboard/telesci_pad
+	sort_string = "HAAAF"
+
+/datum/design/circuit/bsa
+	name = "bluespace artillery control"
+	id = "bsa"
+	req_tech = list(TECH_ENGINEERING = 5, TECH_COMBAT = 5, TECH_BLUESPACE = 5)
+	build_path = /obj/item/weapon/circuitboard/bsa
+	sort_string = "KCAAG"

@@ -98,21 +98,6 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	path = /obj/item/weapon/crowbar/prybar
 	category = "Tools"
 
-/datum/autolathe/recipe/int_wirer
-	name = "integrated circuit wirer"
-	path = /obj/item/device/integrated_electronics/wirer
-	category = "Tools"
-
-/datum/autolathe/recipe/int_debugger
-	name = "integrated circuit debugger"
-	path = /obj/item/device/integrated_electronics/debugger
-	category = "Tools"
-
-/datum/autolathe/recipe/int_analyzer
-	name = "integrated circuit analyzer"
-	path = /obj/item/device/integrated_electronics/analyzer
-	category = "Tools"
-
 /datum/autolathe/recipe/multitool
 	name = "multitool"
 	path = /obj/item/device/multitool
@@ -215,6 +200,11 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	path = /obj/item/device/tape
 	category = "General"
 
+/datum/autolathe/recipe/tape_roll
+	name = "tape roll"
+	path = /obj/item/weapon/tape_roll
+	category = "General"
+
 /datum/autolathe/recipe/airlockmodule
 	name = "airlock electronics"
 	path = /obj/item/weapon/airlock_electronics
@@ -274,6 +264,11 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	path = /obj/item/weapon/hemostat
 	category = "Medical"
 
+/datum/autolathe/recipe/autopsy_scanner
+	name = "autopsy scanner"
+	path = /obj/item/weapon/autopsy_scanner
+	category = "Medical"
+
 /datum/autolathe/recipe/beaker
 	name = "glass beaker"
 	path = /obj/item/weapon/reagent_containers/glass/beaker
@@ -307,6 +302,11 @@ var/const/EXTRA_COST_FACTOR = 1.25
 /datum/autolathe/recipe/implanter
 	name = "implanter"
 	path = /obj/item/weapon/implanter
+	category = "Medical"
+
+/datum/autolathe/recipe/implant_pad
+	name = "implant pad"
+	path = /obj/item/weapon/implantpad
 	category = "Medical"
 
 /datum/autolathe/recipe/syringegun_ammo

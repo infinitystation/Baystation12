@@ -22,9 +22,6 @@
  * Text sanitization
  */
 
-proc/fix_html(var/t)
-	return replacetext(t, "ÿ", "&#1103;")
-
 //Used for preprocessing entered text
 //Added in an additional check to alert players if input is too long
 /proc/sanitize(var/input, var/max_length = MAX_MESSAGE_LEN, var/encode = 1, var/trim = 1, var/extra = 1)
@@ -179,6 +176,14 @@ proc/fix_html(var/t)
 /proc/sanitize_old(var/t,var/list/repl_chars = list("ÿ"="___255_"))
 	return replacetext(html_encode(replace_characters(t,repl_chars)), "___255_", "&#255;")
 
+// Truncates text to limit if necessary.
+/proc/dd_limittext(message, length)
+	var/size = length(message)
+	if (size <= length)
+		return message
+	else
+		return copytext(message, 1, length + 1)
+
 /*
  * Text searches
  */
@@ -257,9 +262,22 @@ proc/fix_html(var/t)
 /proc/trim(text)
 	return trim_left(trim_right(text))
 
+/proc/ruppertext(t as text)
+	t = uppertext(t)
+	. = ""
+	for(var/i in 1 to length(t))
+		var/a = text2ascii(t, i)
+		if (a > 223)
+			. += ascii2text(a - 32)
+		else if (a == 184)
+			. += ascii2text(168)
+		else
+			. += ascii2text(a)
+	. = replacetext(.,"&#255;","ß")
+
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(var/t as text)
-	return uppertext(copytext(t, 1, 2)) + copytext(t, 2)
+	return ruppertext(copytext(t, 1, 2)) + copytext(t, 2)
 
 //This proc strips html properly, remove < > and all text between
 //for complete text sanitizing should be used sanitize()

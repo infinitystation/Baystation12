@@ -91,6 +91,7 @@
 	atags["PCRC tag"] = /obj/item/clothing/accessory/armor/tag/pcrc
 	atags["SAARE tag"] = /obj/item/clothing/accessory/armor/tag/saare
 	atags["SCP tag"] = /obj/item/clothing/accessory/armor/tag/scp
+	atags["ZPCI tag"] = /obj/item/clothing/accessory/armor/tag/zpci
 	gear_tweaks += new/datum/gear_tweak/path(atags)
 
 /datum/gear/eyes/security/goggles
@@ -101,3 +102,58 @@
 	display_name = "zippo (decorated)"
 	path = /obj/item/weapon/flame/lighter/zippo/infinity
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/utility/pda
+	display_name = "PDA selection"
+	path = /obj/item/modular_computer/pda
+	cost = 2
+
+/datum/gear/utility/pda/New()
+	..()
+	var/pdas = list()
+	pdas["grey"]                    = /obj/item/modular_computer/pda
+	pdas["grey-red (sec)"]          = /obj/item/modular_computer/pda/security
+	pdas["lightgrey-brown (sup)"]   = /obj/item/modular_computer/pda/cargo
+	pdas["lightgrey-yellow (eng)"]  = /obj/item/modular_computer/pda/engineering
+	pdas["navy (heads)"]            = /obj/item/modular_computer/pda/heads
+	pdas["navy-red (hos)"]          = /obj/item/modular_computer/pda/heads/hos
+	pdas["navy-gold (capt)"]        = /obj/item/modular_computer/pda/captain
+	pdas["navy-blue (cmo)"]         = /obj/item/modular_computer/pda/heads/cmo
+	pdas["navy-white (hop)"]        = /obj/item/modular_computer/pda/heads/hop
+	pdas["navy-yellow (ce)"]        = /obj/item/modular_computer/pda/heads/ce
+	pdas["navy-darkgreen (rd)"]     = /obj/item/modular_computer/pda/heads/rd
+	pdas["white-blue (med)"]        = /obj/item/modular_computer/pda/medical
+	pdas["white-purple (exp)"]      = /obj/item/modular_computer/pda/explorer
+	pdas["white-darkgreen (sci)"]   = /obj/item/modular_computer/pda/science
+	pdas["white-yellowblue (robot)"]= /obj/item/modular_computer/pda/roboticist
+	pdas["black (mercs)"]           = /obj/item/modular_computer/pda/syndicate
+	gear_tweaks += new/datum/gear_tweak/path(pdas)
+
+datum/gear/utility/wristpda
+	display_name = "Wrist PDA selection"
+	path = /obj/item/modular_computer/wrist
+	cost = 2
+
+/datum/gear/utility/wristpda/New()
+	..()
+	var/wpdas = list()
+	wpdas["black"]                   = /obj/item/modular_computer/wrist/
+	wpdas["lightgrey"]               = /obj/item/modular_computer/wrist/grey
+	wpdas["black-red (sec)"]         = /obj/item/modular_computer/wrist/security
+	wpdas["brown (sup)"]             = /obj/item/modular_computer/wrist/cargo
+	wpdas["yellow (eng)"]            = /obj/item/modular_computer/wrist/engineering
+	wpdas["navy (heads)"]            = /obj/item/modular_computer/wrist/heads
+	wpdas["navy-red (hos)"]          = /obj/item/modular_computer/wrist/heads/hos
+	wpdas["navy-gold (capt)"]        = /obj/item/modular_computer/wrist/captain
+	wpdas["navy-blue (cmo)"]         = /obj/item/modular_computer/wrist/heads/cmo
+	wpdas["navy-white (hop)"]        = /obj/item/modular_computer/wrist/heads/hop
+	wpdas["navy-yellow (ce)"]        = /obj/item/modular_computer/wrist/heads/ce
+	wpdas["navy-darkgreen (rd)"]     = /obj/item/modular_computer/wrist/heads/rd
+	wpdas["blue (med)"]              = /obj/item/modular_computer/wrist/medical
+	wpdas["purple (exp)"]            = /obj/item/modular_computer/wrist/explorer
+	wpdas["lightgrey-darkgreen (sci)"]   = /obj/item/modular_computer/wrist/science
+	wpdas["lightgrey-yellowblue (robot)"]= /obj/item/modular_computer/wrist/roboticist
+	wpdas["black (mercs)"]           = /obj/item/modular_computer/wrist/syndicate
+	wpdas["short (lightgrey)"]       = /obj/item/modular_computer/wrist/lila
+	wpdas["short (black)"]           = /obj/item/modular_computer/wrist/lila/black
+	gear_tweaks += new/datum/gear_tweak/path(wpdas)

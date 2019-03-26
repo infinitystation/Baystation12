@@ -174,6 +174,9 @@
 /obj/item/stack/tile/carpet/fifty
 	amount = 50
 
+/obj/item/stack/tile/carpet/ten
+	amount = 10
+
 /obj/item/stack/tile/carpetblue
 	name = "blue carpet"
 	desc = "A piece of blue and gold carpet."
@@ -182,6 +185,9 @@
 
 /obj/item/stack/tile/carpetblue/fifty
 	amount = 50
+
+/obj/item/stack/tile/carpetblue/ten
+	amount = 10
 
 /obj/item/stack/tile/carpetblue2
 	name = "pale blue carpet"
@@ -192,6 +198,9 @@
 /obj/item/stack/tile/carpetblue2/fifty
 	amount = 50
 
+/obj/item/stack/tile/carpetblue2/ten
+	amount = 10
+
 /obj/item/stack/tile/carpetpurple
 	name = "purple carpet"
 	desc = "A piece of purple carpet."
@@ -200,6 +209,9 @@
 
 /obj/item/stack/tile/carpetpurple/fifty
 	amount = 50
+
+/obj/item/stack/tile/carpetpurple/ten
+	amount = 10
 
 /obj/item/stack/tile/carpetorange
 	name = "orange carpet"
@@ -210,6 +222,9 @@
 /obj/item/stack/tile/carpetorange/fifty
 	amount = 50
 
+/obj/item/stack/tile/carpetorange/ten
+	amount = 10
+
 /obj/item/stack/tile/carpetgreen
 	name = "green carpet"
 	desc = "A piece of green carpet."
@@ -219,6 +234,9 @@
 /obj/item/stack/tile/carpetgreen/fifty
 	amount = 50
 
+/obj/item/stack/tile/carpetgreen/ten
+	amount = 10
+
 /obj/item/stack/tile/carpetred
 	name = "red carpet"
 	desc = "A piece of red carpet."
@@ -227,3 +245,6 @@
 
 /obj/item/stack/tile/carpetred/fifty
 	amount = 50
+
+/obj/item/stack/tile/carpetred/ten
+	amount = 10

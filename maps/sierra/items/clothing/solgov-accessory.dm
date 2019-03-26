@@ -204,6 +204,7 @@ specialty pins
 	name = "pilot's qualification pin"
 	desc = "An iron pin denoting the qualification to fly SCG spacecraft."
 	icon_state = "pin_pilot"
+	slot = ACCESSORY_SLOT_INSIGNIA
 
 /*****
 badges
