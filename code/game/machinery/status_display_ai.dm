@@ -23,9 +23,11 @@ var/list/ai_status_emotions = list(
 	"Dorfy" 					= new /datum/ai_emotion("ai_urist"),
 	"Facepalm" 					= new /datum/ai_emotion("ai_facepalm"),
 	"Friend Computer" 			= new /datum/ai_emotion("ai_friend"),
-	"Tribunal" 					= new /datum/ai_emotion("ai_tribunal", "serithi"),
-	"Tribunal Malfunctioning"	= new /datum/ai_emotion("ai_tribunal_malf", "serithi"),
-	"Ship Scan" 				= new /datum/ai_emotion("ai_shipscan")
+	"Tribunal" 					= new /datum/ai_emotion("ai_tribunal",),
+	"Tribunal Malfunctioning"	= new /datum/ai_emotion("ai_tribunal_malf",),
+	"Ship Scan" 				= new /datum/ai_emotion("ai_shipscan"),
+	"Fish Tank" 				= new /datum/ai_emotion("ai_fishtank"),
+	"Plump" 				= new /datum/ai_emotion("ai_plump")
 	)
 
 /proc/get_ai_emotions(var/ckey)
