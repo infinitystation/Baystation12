@@ -1,8 +1,5 @@
 #if !defined(using_map_DATUM)
 
-
-//	#include "../away_inf/salvagers/salvagers.dm"
-
 	#include "sierra_announcements.dm"
 	#include "sierra_antagonism.dm"
 	#include "sierra_areas.dm"
@@ -100,7 +97,7 @@
 	#include "sierra-1.dmm"
 	#include "sierra-2.dmm"
 	#include "sierra-3.dmm"
-//	#include "sierra-4.dmm"
+	#include "sierra-4.dmm"
 	#include "sierra-5.dmm"
 	#include "../away/empty.dmm"
 
@@ -108,6 +105,7 @@
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/blueriver/blueriver.dm"
 	#include "../away_inf/mining/mining.dm"
+//	#include "../away_inf/salvagers/salvagers.dm"
 
 	#include "../away/bearcat/bearcat.dm"
 //	#include "../away/mining/mining.dm"
@@ -119,6 +117,8 @@
 	#include "../away/lar_maria/lar_maria.dm"
 	#include "../away/unishi/unishi.dm"
 	#include "../away/slavers/slavers_base.dm"
+	#include "../away/voxship/voxship.dm"
+	#include "../away/skrellscoutship/skrellscoutship.dm"
 
 	#define using_map_DATUM /datum/map/sierra
 

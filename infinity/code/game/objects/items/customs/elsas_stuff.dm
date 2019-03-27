@@ -51,7 +51,7 @@
 /obj/item/clothing/under/tactical/elsa
 	name = "detective uniform"
 	desc = "Detective uniform with agents emblem"
-	
+
 	icon = 'icons/infinity_custom_sets/obj/elsas_stuff.dmi'
 	icon_state = "elsas_under"
 	item_state = "elsas_under"
@@ -59,7 +59,7 @@
 	item_icons = list(
 		slot_w_uniform_str = 'icons/infinity_custom_sets/mob/elsas_stuff.dmi'
 	)
-	
+
 /obj/item/device/radio/headset/elsa
 	name = "agent radio headset"
 	desc = "Simple headset"
@@ -70,7 +70,9 @@
 /obj/item/weapon/card/id/p_ctiminalist
 	name = "PC card"
 	desc = "Card of private criminalist."
-	icon_state = "centcomNew"
+	color = COLOR_GRAY40
+	detail_color = COLOR_COMMAND_BLUE
+	extra_details = list("goldstripe")
 	//job_access_type = /datum/job/captain
 	access = list(access_sec_doors, access_medical, access_morgue, access_maint_tunnels, access_external_airlocks, 73, access_bridge, 101)
 
@@ -127,7 +129,7 @@
 			SKILL_MEDICAL  			=	SKILL_BASIC,
 			SKILL_ANATOMY      		=	SKILL_NONE,
 			SKILL_VIROLOGY      	=	SKILL_NONE,
-			SKILL_CHEMISTRY			=	SKILL_NONE	
+			SKILL_CHEMISTRY			=	SKILL_NONE
 		)
 
 

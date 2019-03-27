@@ -20,7 +20,7 @@
 	var/stripe_color
 
 	blend_objects = list(/obj/machinery/door, /turf/simulated/wall) // Objects which to blend with
-	noblend_objects = list(/obj/machinery/door/window)
+	noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/blast/regular/evacshield)
 	material = DEFAULT_WALL_MATERIAL
 
 /obj/structure/wall_frame/New(var/new_loc, var/materialtype)
@@ -121,26 +121,20 @@
 			I.color = stripe_color
 			overlays += I
 
-/obj/structure/wall_frame/titanium
-	color = "#96a5a0"
-
-/obj/structure/wall_frame/hull
-	color = COLOR_HULL
-
 /obj/structure/wall_frame/osmium
-	color = "#9bc6f2"
+	paint_color = "#9bc6f2"
 
 /obj/structure/wall_frame/voxalloy
-	color = "#6c7364"
+	paint_color = "#6c7364"
 
 /obj/structure/wall_frame/prepainted
-	color = COLOR_GUNMETAL
+	paint_color = COLOR_WALL_GUNMETAL
 
 /obj/structure/wall_frame/wood
-	color = "#824b28"
+	paint_color = "#824b28"
 
 /obj/structure/wall_frame/crystal
-	color = COLOR_PALE_BLUE_GRAY
+	paint_color = COLOR_PALE_BLUE_GRAY
 
 /obj/structure/wall_frame/hull/Initialize()
 	. = ..()

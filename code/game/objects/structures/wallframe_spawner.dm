@@ -150,7 +150,6 @@
 
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted
 	name = "reinforced phoron prepainted wall frame window spawner"
-	frame_path = /obj/structure/wall_frame/prepainted
 
 /obj/effect/wallframe_spawn/reinforced_phoron/titanium
 	frame_path = /obj/structure/wall_frame/titanium
@@ -166,7 +165,6 @@
 
 /obj/effect/wallframe_spawn/reinforced/polarized/prepainted
 	name = "polarized wall frame window spawner - prepainted"
-	frame_path = /obj/structure/wall_frame/prepainted
 
 /obj/effect/wallframe_spawn/reinforced/polarized/titanium
 	name = "polarized wall frame window spawner - titanium"

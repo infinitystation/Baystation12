@@ -59,8 +59,8 @@ obj/random/hostile/xenobio/spawn_choices()
 /obj/random/material_rnd_steel
 	name = "random steel"
 	desc = "This is a random metal ammout for RND's storage."
-	icon = 'icons/obj/items.dmi'
-	icon_state = "sheet-metal"
+	icon = 'icons/obj/materials.dmi'
+	icon_state = "sheet-shiny-mult"
 	spawn_nothing_percentage = 50
 
 /obj/random/material_rnd_steel/spawn_choices()
@@ -70,8 +70,8 @@ obj/random/hostile/xenobio/spawn_choices()
 /obj/random/material_rnd_glass
 	name = "random glass"
 	desc = "This is a random glass ammout for RND's storage."
-	icon = 'icons/obj/items.dmi'
-	icon_state = "sheet-glass"
+	icon = 'icons/obj/materials.dmi'
+	icon_state = "sheet-reinf-mult"
 	spawn_nothing_percentage = 50
 
 /obj/random/material_rnd_glass/spawn_choices()

@@ -44,8 +44,8 @@
 /obj/random/tool
 	name = "random tool"
 	desc = "This is a random tool."
-	icon = 'icons/obj/items.dmi'
-	icon_state = "welder"
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "welder_m"
 
 /obj/random/tool/spawn_choices()
 	return list(/obj/item/weapon/screwdriver,
@@ -294,7 +294,7 @@
 	name = "Random Handgun"
 	desc = "This is a random sidearm."
 	icon = 'icons/obj/guns/pistol.dmi'
-	icon_state = "secgundark"
+	icon_state = "secguncomp"
 
 /obj/random/handgun/spawn_choices()
 	return list(/obj/item/weapon/gun/projectile/sec = 3,
@@ -455,8 +455,8 @@ obj/random/closet/spawn_choices()
 /obj/random/coin
 	name = "random coin"
 	desc = "This is a random coin."
-	icon = 'icons/obj/items.dmi'
-	icon_state = "coin"
+	icon = 'icons/obj/coin.dmi'
+	icon_state = "coin1"
 
 /obj/random/coin/spawn_choices()
 	return list(/obj/item/weapon/material/coin/gold = 3,

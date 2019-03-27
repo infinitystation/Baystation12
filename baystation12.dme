@@ -3125,6 +3125,7 @@
 #include "infinity\code\game\objects\items\weapons\circuitboards\machinery\power.dm"
 #include "infinity\code\game\objects\items\weapons\circuitboards\machinery\teleporter.dm"
 #include "infinity\code\game\objects\random\random.dm"
+#include "infinity\code\game\objects\structures\crates_lockers\closets\secure\freezer.dm"
 #include "infinity\code\modules\clothing\accessory.dm"
 #include "infinity\code\modules\clothing\armor.dm"
 #include "infinity\code\modules\clothing\ears.dm"
