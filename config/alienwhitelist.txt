@@ -26,7 +26,7 @@ blacksoul231 - machine
 redknighthero - machine
 kotovsyndrome - machine
 termservice - machine
-Semorerith - machine
+semorerith - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
@@ -48,6 +48,7 @@ hodovoy - skrell
 taushai - skrell
 galix - skrell
 knayu - skrell
+coldmantis13 - skrell
 cre77 - resomi
 s1334 - resomi
 shokumar - resomi
@@ -78,7 +79,6 @@ portos - giant armoured serpentid
 taushai - giant armoured serpentid
 ted201 - giant armoured serpentid
 s1334 - giant armoured serpentid
-arbuzpersikov - giant armoured serpentid
 inubashirimomiji - diona
 bartstarter - diona
 wolforbykot - diona
@@ -120,17 +120,18 @@ hodovoy - unathi
 taushai - unathi
 cre77 - unathi
 s1334 - unathi
+he11d1ver - unathi
 corporateoverlord - tajaran
+cuddleandtea - tajaran
+blacksoul231 - tajaran
 richardfox - tajaran
 ashtonfox - tajaran
-blacksoul231 - tajaran
 mrnicolas - tajaran
 coolered - tajaran
 furrydog - tajaran
 rarytech - tajaran
 romeo517 - tajaran
 korramy - tajaran
-furrfaq - tajaran
 moonmen - tajaran
 nicknam - tajaran
 taushai - tajaran
@@ -142,10 +143,11 @@ solark - tajaran
 forrya - tajaran
 arhod - tajaran
 s1334 - tajaran
-arbuzpersikov - adherent
+cuddleandtea - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
 gumboldty - adherent
+dermanic - adherent 
 sarumyn - adherent
 kareta - adherent
 s1334 - adherent

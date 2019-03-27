@@ -28,17 +28,29 @@
 	icon_state = "cpt"
 
 /obj/effect/overmap/ship/landable/salvage
-	name = "LTV Pancake"
+	name = "PSV Pancake"
 	fore_dir = WEST
-	vessel_mass = 5
+	vessel_mass = 10
 	start_x = 4
 	start_y = 5
 	base = TRUE
 	color = LIGHT_COLOR_PURPLE
+	icon_state = "ship_salvage"
+	moving_state = "ship_salvage_moving"
 	icon = 'icons/obj/overmap_inf.dmi'
+	burn_delay = 0.5 SECONDS
+
+/decl/submap_archetype/derelict/salvage/
+	descriptor = "salvage"
+	map = "PSV Pancake"
+	crew_jobs = list(
+		/datum/job/submap/salvage_capt,
+		/datum/job/submap/salvage_eng,
+		/datum/job/submap/salvage_sec
+	)
 
 datum/map_template/ruin/away_site/salvagers
-	name = "LTV Pancake"
+	name = "PSV Pancake"
 	id = "awaysite_salvagers"
 	description = "A light trader vessel."
 	prefix = "maps/away_inf/"
@@ -47,38 +59,22 @@ datum/map_template/ruin/away_site/salvagers
 	accessibility_weight = 10
 	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
 
-/obj/effect/shuttle_landmark/salvagers/nav1
-	name = "Salvagers Navpoint #1"
-	landmark_tag = "nav_salvagers_1"
-
-/obj/effect/shuttle_landmark/salvagers/nav2
-	name = "Salvagers Navpoint #2"
-	landmark_tag = "nav_salvagers_2"
-
-/obj/effect/shuttle_landmark/salvagers/nav3
-	name = "Salvagers Navpoint #3"
-	landmark_tag = "nav_salvagers_3"
-
-/obj/effect/shuttle_landmark/salvagers/nav4
-	name = "Salvagers Navpoint #4"
-	landmark_tag = "nav_salvagers_4"
-
-///datum/map/salvagers
-//	allowed_jobs = list(/datum/job/salvage_capt, /datum/job/salvage_eng, /datum/job/salvage_sec)
+/*/map/salvagers
+	allowed_jobs = list(/datum/job/submap/salvage_capt, /datum/job/submap/salvage_eng, /datum/job/submap/salvage_sec)*/
 
 /var/const/access_salvage = 3074
 /datum/access/salvage
 	id = access_salvage
-	desc = "LTV Pancake"
+	desc = "PSV Pancake"
 	region = ACCESS_TYPE_NONE
 
 /var/const/access_salvage_capt = 3075
 /datum/access/salvage/capt
 	id = access_salvage_capt
-	desc = "LTV Pancake - Captain"
+	desc = "PSV Pancake - Captain"
 	region = ACCESS_TYPE_NONE
 
-/datum/job/salvage_capt
+/datum/job/submap/salvage_capt
 	title = "Salvage vessel - captain"
 	department = "Civilian"
 	department_flag = CIV
@@ -102,7 +98,7 @@ datum/map_template/ruin/away_site/salvagers
 						SKILL_PILOT	  = SKILL_BASIC)
 	skill_points = 24
 
-/datum/job/salvage_eng
+/datum/job/submap/salvage_eng
 	title = "Salvage vessel - engineer"
 	department = "Civilian"
 	department_flag = CIV
@@ -131,7 +127,7 @@ datum/map_template/ruin/away_site/salvagers
 
 	skill_points = 24
 
-/datum/job/salvage_sec
+/datum/job/submap/salvage_sec
 	title = "Salvage vessel - security"
 	department = "Civilian"
 	department_flag = CIV
@@ -183,24 +179,21 @@ datum/map_template/ruin/away_site/salvagers
 /obj/item/weapon/card/id/sierra/salvage/eng
 	desc = "An identification card issued to Merchants-salvagers. This one have orange stripe."
 	icon_state = "trader"
-	job_access_type = /datum/job/salvage_eng
+	job_access_type = /datum/job/submap/salvage_eng
 
 /obj/item/weapon/card/id/sierra/salvage/sec
 	desc = "An identification card issued to Merchants-salvagers. This one have red stripe."
 	icon_state = "trader"
-	job_access_type = /datum/job/salvage_sec
+	job_access_type = /datum/job/submap/salvage_sec
 
 /obj/item/weapon/card/id/sierra/salvage/leader
 	desc = "An identification card issued to Merchant-Salvagers Leaders, this one have blue stripe, indicating their right to salvage, sell and buy goods."
-	job_access_type = /datum/job/salvage_capt
+	job_access_type = /datum/job/submap/salvage_capt
 
 /datum/computer_file/program/merchant/salvage
-	required_access = (access_salvage_capt)
-
-/obj/item/modular_computer/console/preset/merchant/salvage/
-	..()
+	required_access = access_salvage
+	requires_ntnet = 0
 
 /obj/item/modular_computer/console/preset/merchant/salvage/install_default_programs()
-	..()
 	hard_drive.store_file(new/datum/computer_file/program/merchant/salvage())
 	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
