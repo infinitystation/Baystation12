@@ -356,6 +356,21 @@ var/list/ai_verbs_default = list(
 
 	post_status("shuttle")
 
+/mob/living/silicon/ai/verb/change_floor()
+	set category = "Silicon Commands"
+	set name = "MOOD: Change Floor"
+
+	var/f_color = input("Choose your color, dark colors are not recommended!") as color|null
+	if(f_color == "#000000")
+		to_chat(usr, "[f_color] is not allowed")
+		return
+	if(!f_color)
+		return
+	for(var/turf/simulated/floor/AI_greed/F  in world)
+		F.color = f_color
+
+	to_chat(usr, "Proccessing strata color was change to [f_color]")
+
 /mob/living/silicon/ai/proc/ai_recall_shuttle()
 	set category = "Silicon Commands"
 	set name = "EVACUATION: Cancel"

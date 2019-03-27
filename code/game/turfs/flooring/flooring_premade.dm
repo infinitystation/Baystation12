@@ -14,6 +14,14 @@
 	light_max_bright = 0.75
 	light_color = COLOR_BLUE
 
+/turf/simulated/floor/AI_greed
+	name = "proccessing strata"
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "bcircuit"
+	initial_flooring = /decl/flooring/reinforced/circuit
+	light_outer_range = 2
+	light_max_bright = 0.75
+
 /turf/simulated/floor/bluegrid/airless
 	initial_gas = null
 
