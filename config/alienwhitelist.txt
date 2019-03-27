@@ -49,6 +49,7 @@ taushai - skrell
 galix - skrell
 knayu - skrell
 coldmantis13 - skrell
+s1334 - skrell
 cre77 - resomi
 s1334 - resomi
 shokumar - resomi
@@ -143,7 +144,6 @@ solark - tajaran
 forrya - tajaran
 arhod - tajaran
 s1334 - tajaran
-cuddleandtea - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
 gumboldty - adherent
