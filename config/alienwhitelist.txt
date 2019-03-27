@@ -80,6 +80,7 @@ portos - giant armoured serpentid
 taushai - giant armoured serpentid
 ted201 - giant armoured serpentid
 s1334 - giant armoured serpentid
+dermanic - giant armoured serpentid
 inubashirimomiji - diona
 bartstarter - diona
 wolforbykot - diona
@@ -147,7 +148,6 @@ s1334 - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
 gumboldty - adherent
-dermanic - adherent 
 sarumyn - adherent
 kareta - adherent
 s1334 - adherent
