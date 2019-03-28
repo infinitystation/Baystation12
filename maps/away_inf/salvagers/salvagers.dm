@@ -38,6 +38,7 @@
 	icon_state = "ship_salvage"
 	moving_state = "ship_salvage_moving"
 	icon = 'icons/obj/overmap_inf.dmi'
+	burn_delay = 0.5 SECONDS
 
 /decl/submap_archetype/derelict/salvage/
 	descriptor = "salvage"
@@ -58,8 +59,8 @@ datum/map_template/ruin/away_site/salvagers
 	accessibility_weight = 10
 	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
 
-/datum/map/salvagers
-	allowed_jobs = list(/datum/job/submap/salvage_capt, /datum/job/submap/salvage_eng, /datum/job/submap/salvage_sec)
+/*/map/salvagers
+	allowed_jobs = list(/datum/job/submap/salvage_capt, /datum/job/submap/salvage_eng, /datum/job/submap/salvage_sec)*/
 
 /var/const/access_salvage = 3074
 /datum/access/salvage
@@ -190,7 +191,8 @@ datum/map_template/ruin/away_site/salvagers
 	job_access_type = /datum/job/submap/salvage_capt
 
 /datum/computer_file/program/merchant/salvage
-	required_access = 3075
+	required_access = access_salvage
+	requires_ntnet = 0
 
 /obj/item/modular_computer/console/preset/merchant/salvage/install_default_programs()
 	hard_drive.store_file(new/datum/computer_file/program/merchant/salvage())
