@@ -36,7 +36,6 @@
 	detail_color = COLOR_PALE_BLUE_GRAY
 
 /obj/item/weapon/card/id/sierra/silver/medical
-	icon_state = "medGold"
 	job_access_type = /datum/job/cmo
 	detail_color = COLOR_PALE_BLUE_GRAY
 
@@ -55,7 +54,6 @@
 //Security
 
 /obj/item/weapon/card/id/sierra/silver/security
-	icon_state = "secGold"
 	job_access_type = /datum/job/hos
 	detail_color = "#e00000"
 	extra_details = list("onegoldstripe")
@@ -75,7 +73,6 @@
 //Engineering
 
 /obj/item/weapon/card/id/sierra/silver/engineering
-	icon_state = "engGold"
 	job_access_type = /datum/job/chief_engineer
 	detail_color = COLOR_SUN
 	extra_details = list("onegoldstripe")
