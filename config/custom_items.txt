@@ -110,6 +110,11 @@ ckey: forrya
 character_name: Niyarkszherch Kchrashchjrj
 item_path: /obj/item/device/pmp/personal/csplayer
 }
+{
+ckey: interl0per
+character_name: Q'uark Ris'shel
+item_path: /obj/item/device/pmp/personal/csplayer
+}
 
 #	SHORT ITEMS HERE (3-4)
 
