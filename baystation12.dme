@@ -3015,6 +3015,7 @@
 #include "infinity\code\game\objects\items\customs\exporation_voids.dm"
 #include "infinity\code\game\objects\items\customs\fsb_set.dm"
 #include "infinity\code\game\objects\items\customs\gas_mask.dm"
+#include "infinity\code\game\objects\items\customs\headphones-crypto.dm"
 #include "infinity\code\game\objects\items\customs\heph_set.dm"
 #include "infinity\code\game\objects\items\customs\hybrid_opt.dm"
 #include "infinity\code\game\objects\items\customs\ic_custom_belt.dm"
