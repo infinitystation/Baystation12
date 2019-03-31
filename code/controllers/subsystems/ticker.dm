@@ -111,9 +111,6 @@ SUBSYSTEM_DEF(ticker)
 		config.ooc_allowed = 0
 		to_world("<B>The OOC channel has been globally disabled!</B>")
 
-	if(config.sql_enabled)
-		SSstatistics.statistic_cycle() // Polls population totals regularly and stores them in an SQL DB -- TLE
-
 /datum/controller/subsystem/ticker/proc/playing_tick()
 	mode.process()
 	var/mode_finished = mode_finished()
