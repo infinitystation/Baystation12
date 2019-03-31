@@ -46,8 +46,8 @@
 	desc = "A blood-red hardsuit with heavy armoured plates. Judging by the abnormally thick plates, this one is for working with explosives."
 	icon_state = "merc_rig_heavy"
 	armor = list(melee = 80, bullet = 65, laser = 70, energy = 35, bomb = 100, bio = 100, rad = 80)
+	online_slowdown = 3
 	offline_slowdown = 4
-	online_slowdown = 2
 
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'

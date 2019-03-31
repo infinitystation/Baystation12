@@ -157,7 +157,7 @@
 		if(prob(user.skill_fail_chance(SKILL_SCIENCE, 90, SKILL_EXPERT)))
 			to_chat(user, SPAN_NOTICE("You fail to collect a sample from \the [src]."))
 			return
-		else
+		else	
 			if(!pruned)
 				to_chat(user, SPAN_NOTICE("You collect a sample from \the [src]."))
 				new product(user.loc)

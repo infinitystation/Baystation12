@@ -1301,7 +1301,7 @@
 	dir = 8;
 	id = "packageSort1"
 	},
-/obj/structure/plasticflaps/mining,
+/obj/structure/plasticflaps/airtight,
 /turf/simulated/floor/plating,
 /area/quartermaster/office)
 "ep" = (
@@ -2551,7 +2551,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "ir" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/maintenance/waterstore)
@@ -4769,7 +4769,7 @@
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "qg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -6830,7 +6830,7 @@
 /area/hallway/primary/fourthdeck/center)
 "vK" = (
 /turf/simulated/wall/prepainted,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "vQ" = (
 /turf/simulated/wall/prepainted,
 /area/quartermaster/office)
@@ -7208,7 +7208,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "xo" = (
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -7971,7 +7971,7 @@
 /area/security/hangcheck)
 "zM" = (
 /turf/simulated/floor/tiled,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "zP" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8022,7 +8022,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "Ae" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -8078,8 +8078,10 @@
 /obj/effect/floor_decal/corner/brown/mono,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/recharger/wallcharger{
-	pixel_x = -28;
-	pixel_y = 6
+	dir = 4;
+	icon_state = "wrecharger0";
+	pixel_x = -23;
+	pixel_y = -3
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/office)
@@ -10821,13 +10823,13 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel_ridged,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "La" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "Lb" = (
 /obj/random/obstruction,
 /turf/simulated/floor/plating,
@@ -10984,10 +10986,10 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "Lz" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "LA" = (
 /turf/simulated/wall/r_wall/hull,
 /area/hallway/primary/fourthdeck/aft)
@@ -12026,7 +12028,7 @@
 	dir = 8;
 	id = "packageSort1"
 	},
-/obj/structure/plasticflaps/mining,
+/obj/structure/plasticflaps/airtight,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/plating,
 /area/quartermaster/office)
@@ -12129,7 +12131,7 @@
 	name = "Counter Shutters";
 	pixel_x = 0;
 	pixel_y = 24;
-	req_access = list(list("ACCESS_HEADS","ACCESS_SHOP"))
+	req_access = list(list("ACCESS_HEADS","ACCESS_TORCH_SHOP"))
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -12202,7 +12204,7 @@
 	name = "DO Office Shutters"
 	},
 /turf/simulated/floor/plating,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "Pc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -12292,7 +12294,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "Pk" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -12606,7 +12608,7 @@
 "PT" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "PU" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -12802,7 +12804,7 @@
 /obj/structure/table/standard,
 /obj/item/device/megaphone,
 /turf/simulated/floor/tiled,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "Qy" = (
 /obj/structure/railing/mapped,
 /obj/random/trash,
@@ -12833,7 +12835,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "QG" = (
 /obj/structure/table/standard,
 /obj/structure/cable/green{
@@ -13478,7 +13480,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "Si" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -13631,7 +13633,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "Sz" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	icon_state = "warningcorner";
@@ -13756,7 +13758,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "SL" = (
 /obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor{
@@ -13848,7 +13850,7 @@
 	pixel_x = 21
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "SU" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -14184,7 +14186,7 @@
 /obj/structure/closet/secure_closet/deckofficer,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "TP" = (
 /obj/effect/floor_decal/corner/blue{
 	icon_state = "corner_white";
@@ -14753,7 +14755,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "Vo" = (
 /obj/structure/railing/mapped{
 	dir = 8;
@@ -15317,7 +15319,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel_ridged,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "WX" = (
 /obj/effect/floor_decal/corner/green/mono,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -15674,7 +15676,7 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "XP" = (
 /obj/effect/floor_decal/corner/brown/mono,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -15687,7 +15689,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "XQ" = (
 /obj/machinery/door/blast/shutters{
 	density = 0;
@@ -16333,7 +16335,7 @@
 	name = "DO Office Shutters"
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "Zo" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -16577,7 +16579,7 @@
 	sortType = "Deck Chief"
 	},
 /turf/simulated/floor/tiled/monotile,
-/area/quartermaster/deckofficer)
+/area/quartermaster/deckchief)
 "ZR" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
@@ -43444,7 +43446,7 @@ aa
 aa
 aa
 aa
-ab
+aa
 aa
 aa
 aa
@@ -45063,7 +45065,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa

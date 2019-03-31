@@ -438,7 +438,7 @@ default behaviour is:
 	druggy = 0
 	jitteriness = 0
 	confused = 0
-
+		
 	heal_overall_damage(getBruteLoss(), getFireLoss())
 
 	// fix all of our organs

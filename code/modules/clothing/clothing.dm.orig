@@ -72,9 +72,6 @@
 			var/obj/item/clothing/accessory/tie = new T(src)
 			src.attach_accessory(null, tie)
 
-/obj/item/proc/negates_gravity()
-	return 0
-
 //BS12: Species-restricted clothing check.
 /obj/item/clothing/mob_can_equip(M as mob, slot, disable_warning = 0)
 
@@ -247,13 +244,9 @@ BLIND     // can't see anything
 	var/see_invisible = -1
 	var/light_protection = 0
 	sprite_sheets = list(
-<<<<<<< HEAD
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/eyes.dmi',
-		SPECIES_VOX = 'icons/mob/species/vox/eyes.dmi',
-=======
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_eyes_vox.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_eyes_vox_armalis.dmi',
->>>>>>> 16c756835217b6eba12b7cc593eb63eb26b5b08f
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_eyes_unathi.dmi',
 	)
 
@@ -404,11 +397,8 @@ BLIND     // can't see anything
 
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_head_vox.dmi',
-<<<<<<< HEAD
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
-=======
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_head_vox_armalis.dmi',
->>>>>>> 16c756835217b6eba12b7cc593eb63eb26b5b08f
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_head_unathi.dmi',
 		)
 	blood_overlay_type = "helmetblood"
@@ -520,11 +510,8 @@ BLIND     // can't see anything
 	body_parts_covered = FACE|EYES
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_mask_vox.dmi',
-<<<<<<< HEAD
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/masks.dmi',
-=======
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_mask_vox_armalis.dmi',
->>>>>>> 16c756835217b6eba12b7cc593eb63eb26b5b08f
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/masks.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_mask_unathi.dmi',
 		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi',
 		)
@@ -612,17 +599,11 @@ BLIND     // can't see anything
 	permeability_coefficient = 0.50
 	force = 2
 	var/overshoes = 0
-<<<<<<< HEAD
-	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_UNATHI, SPECIES_TAJARA, SPECIES_VOX)
-	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/species/vox/onmob_feet_vox.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/feet.dmi',
-=======
-	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_UNATHI, SPECIES_VOX, SPECIES_VOX_ARMALIS)
+	species_restricted = list("exclude", SPECIES_NABBER, SPECIES_UNATHI, SPECIES_TAJARA, SPECIES_VOX, SPECIES_VOX_ARMALIS)
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_feet_vox.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_feet_vox_armalis.dmi',
->>>>>>> 16c756835217b6eba12b7cc593eb63eb26b5b08f
+		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/feet.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_feet_unathi.dmi',
 		)
 	blood_overlay_type = "shoeblood"
@@ -659,7 +640,18 @@ BLIND     // can't see anything
 	..()
 
 /obj/item/clothing/shoes/attackby(var/obj/item/I, var/mob/user)
-	if(can_hold_knife && is_type_in_list(I, list(/obj/item/weapon/material/shard, /obj/item/weapon/material/butterfly, /obj/item/weapon/material/kitchen/utensil, /obj/item/weapon/material/hatchet/tacknife)))
+<<<<<<< HEAD
+	if(can_hold_knife && is_type_in_list(I, list(/obj/item/weapon/material/shard, /obj/item/weapon/material/kitchen/utensil, /obj/item/weapon/material/hatchet/tacknife)))
+		if(istype(I, /obj/item/weapon/material/kitchen/utensil/knife/folding))
+			var/obj/item/weapon/material/kitchen/utensil/knife/folding/W = I
+=======
+	if(can_hold_knife && is_type_in_list(I, list(/obj/item/weapon/material/shard, /obj/item/weapon/material/knife)))
+		if(istype(I, /obj/item/weapon/material/knife/folding))
+			var/obj/item/weapon/material/knife/folding/W = I
+>>>>>>> cf172c9f293589857b00b713a1683668f5a37be1
+			if(W.open)
+				to_chat(user, "<span class='warning'>Close \the [W] first.</span>")
+				return
 		if(holding)
 			to_chat(user, "<span class='warning'>\The [src] is already holding \a [holding].</span>")
 			return
@@ -764,12 +756,8 @@ BLIND     // can't see anything
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_under_vox_armalis.dmi',
 		SPECIES_NABBER = 'icons/mob/species/nabber/onmob_under_gas.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_under_unathi.dmi',
-<<<<<<< HEAD
 		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/uniform.dmi',
-		)
-=======
 	)
->>>>>>> 16c756835217b6eba12b7cc593eb63eb26b5b08f
 
 	//convenience var for defining the icon state for the overlay used when the clothing is worn.
 	//Also used by rolling/unrolling.

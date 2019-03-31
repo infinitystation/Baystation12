@@ -25,7 +25,7 @@
 /area/medical/virology)
 "aag" = (
 /obj/machinery/smartfridge/secure/virology{
-	req_access = list(list("ACCESS_VIROLOGY","ACCESS_SURGERY"))
+	req_access = list(list("ACCESS_VIRO","ACCESS_SURGERY"))
 	},
 /obj/machinery/requests_console{
 	department = "Virology";
@@ -6168,7 +6168,6 @@
 	dir = 4
 	},
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 6;
 	pixel_y = 24
 	},
 /turf/simulated/floor/tiled,
@@ -9368,25 +9367,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/fore)
-"aEQ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/effect/catwalk_plated,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/junction{
-	icon_state = "pipe-j1";
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/hallway/primary/firstdeck/fore)
 "aEU" = (
 /obj/effect/catwalk_plated,
 /obj/structure/cable/green{
@@ -10218,7 +10198,6 @@
 /obj/structure/table/standard,
 /obj/machinery/recharger,
 /obj/item/weapon/newspaper,
-/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/security/brig)
 "aIi" = (
@@ -10420,10 +10399,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/security/wing)
 "aJo" = (
-/obj/machinery/recharger/wallcharger{
-	pixel_x = 4;
-	pixel_y = -26
-	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/closet/secure_closet/brigofficer,
 /obj/item/device/radio,
@@ -10436,6 +10411,11 @@
 	pixel_y = 0
 	},
 /obj/machinery/light,
+/obj/machinery/recharger/wallcharger{
+	dir = 1;
+	icon_state = "wrecharger0";
+	pixel_y = -22
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/bo)
 "aJp" = (
@@ -10470,7 +10450,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/opscheck)
 "aJw" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
@@ -10715,7 +10694,6 @@
 /obj/item/device/radio/beacon,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/security/brig)
 "aKK" = (
@@ -10975,12 +10953,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/security/wing)
-"aLJ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/monotile,
-/area/security/brig)
 "aLK" = (
 /turf/simulated/floor/tiled/monotile,
 /area/security/brig)
@@ -11277,7 +11249,6 @@
 	dir = 9;
 	pixel_y = 0
 	},
-/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/security/brig)
 "aMO" = (
@@ -11655,14 +11626,16 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/armoury)
 "aOG" = (
-/obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = 0
-	},
 /obj/structure/table/steel,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/cell_charger,
 /obj/item/weapon/screwdriver,
+/obj/machinery/recharger/wallcharger{
+	dir = 8;
+	icon_state = "wrecharger0";
+	pixel_x = 23;
+	pixel_y = -3
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/armoury)
 "aOI" = (
@@ -17038,8 +17011,9 @@
 	dir = 10
 	},
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 4;
-	pixel_y = -26
+	dir = 1;
+	icon_state = "wrecharger0";
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/opscheck)
@@ -17172,12 +17146,14 @@
 /obj/item/device/destTagger{
 	pixel_y = 13
 	},
-/obj/machinery/recharger/wallcharger{
-	pixel_x = -32;
-	pixel_y = 0
-	},
 /obj/effect/floor_decal/corner/red/mono,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/recharger/wallcharger{
+	dir = 4;
+	icon_state = "wrecharger0";
+	pixel_x = -23;
+	pixel_y = -3
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/security/equipment)
 "eab" = (
@@ -17315,8 +17291,10 @@
 /obj/effect/floor_decal/corner/red/mono,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/recharger/wallcharger{
-	pixel_x = -32;
-	pixel_y = 0
+	dir = 4;
+	icon_state = "wrecharger0";
+	pixel_x = -23;
+	pixel_y = -3
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/security/equipment)
@@ -18798,7 +18776,10 @@
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov/clean,
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 32
+	dir = 8;
+	icon_state = "wrecharger0";
+	pixel_x = 23;
+	pixel_y = -3
 	},
 /turf/simulated/floor/tiled/dark,
 /area/command/armoury/access)
@@ -20000,10 +19981,6 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmary)
 "hjk" = (
-/obj/structure/disposalpipe/segment{
-	dir = 1;
-	icon_state = "pipe-c"
-	},
 /obj/structure/closet/secure_closet/brig,
 /obj/item/device/radio/headset,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -21274,6 +21251,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/assembly/robotics)
 "izb" = (
@@ -21296,13 +21276,6 @@
 /obj/effect/wallframe_spawn/reinforced_phoron,
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1starboard)
-"iAb" = (
-/obj/machinery/recharger/wallcharger{
-	pixel_x = -24;
-	pixel_y = 22
-	},
-/turf/simulated/floor/tiled/dark,
-/area/assembly/robotics)
 "iAS" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -21755,12 +21728,14 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/aft)
 "jhf" = (
-/obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = 0
-	},
 /obj/structure/table/steel,
 /obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/recharger/wallcharger{
+	dir = 8;
+	icon_state = "wrecharger0";
+	pixel_x = 23;
+	pixel_y = -3
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/armoury)
 "jhq" = (
@@ -22734,8 +22709,10 @@
 /obj/effect/floor_decal/corner/red/mono,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/recharger/wallcharger{
-	pixel_x = -32;
-	pixel_y = 0
+	dir = 4;
+	icon_state = "wrecharger0";
+	pixel_x = -23;
+	pixel_y = -3
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/security/equipment)
@@ -25773,6 +25750,12 @@
 	icon_state = "corner_white";
 	dir = 9
 	},
+/obj/machinery/recharger/wallcharger{
+	dir = 4;
+	icon_state = "wrecharger0";
+	pixel_x = -23;
+	pixel_y = -3
+	},
 /turf/simulated/floor/tiled/dark,
 /area/rnd/checkpoint)
 "nQb" = (
@@ -25899,13 +25882,14 @@
 	icon_state = "techfloor_corners";
 	dir = 1
 	},
-/obj/machinery/recharger/wallcharger{
-	pixel_x = 4;
-	pixel_y = -26
-	},
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
+	},
+/obj/machinery/recharger/wallcharger{
+	dir = 1;
+	icon_state = "wrecharger0";
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/command/armoury/tactical)
@@ -26150,13 +26134,6 @@
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/opscheck)
-"ohb" = (
-/obj/effect/floor_decal/corner/red{
-	dir = 10
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled,
-/area/hallway/primary/firstdeck/fore)
 "ohy" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -26654,10 +26631,6 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/light{
 	dir = 8
-	},
-/obj/machinery/recharger/wallcharger{
-	pixel_x = -24;
-	pixel_y = 24
 	},
 /obj/structure/disposalpipe/trunk{
 	dir = 4
@@ -28968,15 +28941,18 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport)
 "rGU" = (
-/obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/obj/machinery/disposal,
 /obj/machinery/newscaster{
 	pixel_x = 0;
 	pixel_y = -32
 	},
+/obj/structure/closet{
+	name = "Prisoner's Locker"
+	},
+/obj/item/weapon/book/manual/solgov_law{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/weapon/book/manual/solgov_law,
 /turf/simulated/floor/tiled/monotile,
 /area/security/brig)
 "rHb" = (
@@ -30992,8 +30968,9 @@
 /obj/structure/closet/bombclosetsecurity,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 4;
-	pixel_y = -26
+	dir = 1;
+	icon_state = "wrecharger0";
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/command/armoury/tactical)
@@ -31059,14 +31036,6 @@
 /area/thruster/d1starboard)
 "uVw" = (
 /obj/structure/table/standard,
-/obj/item/weapon/book/manual/solgov_law{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/weapon/book/manual/solgov_law,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/vending/wallmed1{
 	pixel_y = -32
 	},
@@ -31150,7 +31119,7 @@
 	dir = 8
 	},
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 4;
+	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/machinery/light{
@@ -31878,7 +31847,6 @@
 	name = "Security Blast Door";
 	opacity = 0
 	},
-/obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
@@ -43911,13 +43879,13 @@ nob
 oyb
 aDN
 axR
-aEQ
-ohb
+obZ
+aFV
 xoo
 aIg
 aJw
 aKJ
-aLJ
+aKN
 aMN
 hjk
 aGP
@@ -49552,7 +49520,7 @@ aji
 aji
 amA
 hLb
-iAb
+kib
 kib
 kib
 kvb

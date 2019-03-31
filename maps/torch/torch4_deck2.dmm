@@ -5174,6 +5174,9 @@
 	pixel_y = 0
 	},
 /obj/machinery/power/apc/super{
+	dir = 1;
+	name = "north bump";
+	pixel_x = 0;
 	pixel_y = 24
 	},
 /obj/structure/cable/green{
@@ -6919,8 +6922,6 @@
 /obj/structure/closet/crate/medical,
 /obj/item/bodybag,
 /obj/item/bodybag,
-/obj/item/clothing/suit/straight_jacket,
-/obj/item/clothing/mask/muzzle,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/medical)
@@ -47737,7 +47738,7 @@ aa
 aa
 lk
 aa
-ad
+aa
 aa
 ik
 ji
