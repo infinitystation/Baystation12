@@ -52,12 +52,6 @@
 	name = "Slavers Base Navpoint #7"
 	landmark_tag = "nav_slavers_base_antag"
 
-/obj/structure/slavers_base/mattress/clean
-	name = "mattress"
-	desc = "Clean mattress. Not so comfortable, but enought."
-	icon_state = "mattress"
-	anchored = 0
-
 /decl/hierarchy/outfit/corpse
 	name = "Corpse Clothing"
 
