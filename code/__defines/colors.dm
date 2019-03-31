@@ -11,6 +11,7 @@
 #define COLOR_DARK_ORANGE      "#b95a00"
 #define COLOR_GRAY40           "#666666"
 #define COLOR_GRAY20           "#333333"
+#define COLOR_GRAY15           "#151515"
 #define COLOR_SEDONA           "#cc6600"
 #define COLOR_DARK_BROWN       "#917448"
 #define COLOR_BLUE             "#0000ff"
@@ -77,6 +78,7 @@
 #define COLOR_CRYSTAL          "#00c8a5"
 #define COLOR_ASTEROID_ROCK    "#735555"
 #define COLOR_NULLGLASS        "#ff6088"
+#define COLOR_DIAMOND          "#a0fff1"
 
 #define	PIPE_COLOR_GREY        "#ffffff"	//yes white is grey
 #define	PIPE_COLOR_RED         "#ff0000"
@@ -101,10 +103,12 @@
 #define	COMMS_COLOR_COMMAND    "#204090"
 #define	COMMS_COLOR_CENTCOMM   "#5c5c7c"
 #define	COMMS_COLOR_SYNDICATE  "#6d3f40"
+#define	COMMS_COLOR_SKRELL     "#7331c4"
 
 #define WOOD_COLOR_GENERIC     "#d5a66e"
 #define WOOD_COLOR_RICH        "#994715"
 #define WOOD_COLOR_PALE        "#d2bc9d"
+#define WOOD_COLOR_PALE2       "#e6d2ba"
 #define WOOD_COLOR_BLACK       "#332521"
 #define WOOD_COLOR_CHOCOLATE   "#78523b"
 
