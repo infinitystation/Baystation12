@@ -167,6 +167,7 @@
 		)
 
 /obj/item/weapon/rig/ce
+
 	name = "advanced engineering hardsuit control module"
 	suit_type = "engineering hardsuit"
 	desc = "An advanced hardsuit that protects against hazardous, low pressure environments. Shines with a high polish. Appears compatible with the physiology of most species."
@@ -416,7 +417,7 @@
 /obj/item/weapon/rig/zero
 	name = "null suit control module"
 	suit_type = "null hardsuit"
-	desc = "A very lightweight suit designed to allow use inside mechs and starfighters. It feels like you were wearing nothing at all"
+	desc = "A very lightweight suit designed to allow use inside mechs and starfighters. It feels like you're wearing nothing at all."
 	icon_state = "null_rig"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 20)
 	online_slowdown = 0

@@ -72,6 +72,7 @@
 	icon_state = "redwizard"
 	item_state = "redwizrobe"
 
+
 /obj/item/clothing/suit/wizrobe/marisa
 	name = "Witch Robe"
 	desc = "Magic is all about the spell power, ZE!"

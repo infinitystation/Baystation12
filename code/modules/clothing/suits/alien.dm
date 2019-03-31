@@ -78,31 +78,7 @@
 	desc = "An extremely decorated cape with an intricately runed design has been woven into the fabric of this cape with great care. This cape can only be found within the Tajaran elite."
 	icon_state = "leadercape"
 
-//Resomi clothing
-
-/obj/item/clothing/suit/storage/toggle/Resomicoat
- 	name = "small cloak"
- 	icon = 'icons/obj/clothing/infinity/suits.dmi'
- 	desc = "A cloak that seems too small to fit a human."
- 	icon_state = "resomicoat"
- 	item_state = "resomicoat"
- 	icon_open = "resomicoat_open"
- 	icon_closed = "resomicoat"
- 	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
- 	species_restricted = list(SPECIES_RESOMI)
-
-/obj/item/clothing/suit/storage/toggle/Resomilabcoat
-	name = "small labcoat"
-	icon = 'icons/obj/clothing/infinity/suits.dmi'
-	desc = "A labcoat that seems too small to fit a human."
-	icon_state = "resomi_labcoat"
-	item_state = "resomi_labcoat"
-	icon_open = "resomi_labcoat_open"
-	icon_closed = "resomi_labcoat"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-	species_restricted = list(SPECIES_RESOMI)
-	allowed = list(/obj/item/device/analyzer,/obj/item/stack/medical,/obj/item/weapon/reagent_containers/dropper,/obj/item/weapon/reagent_containers/syringe,/obj/item/weapon/reagent_containers/hypospray,/obj/item/device/healthanalyzer,/obj/item/device/flashlight/pen,/obj/item/weapon/reagent_containers/glass/bottle,/obj/item/weapon/reagent_containers/glass/beaker,/obj/item/weapon/reagent_containers/pill,/obj/item/weapon/storage/pill_bottle,/obj/item/weapon/paper)
-	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 50, rad = 0)
+//Voxclothing
 
 /obj/item/clothing/suit/armor/vox_scrap
 	name = "rusted metal armor"

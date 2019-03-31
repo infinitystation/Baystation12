@@ -8,6 +8,7 @@
 	var/obj/item/weapon/storage/internal/pockets/hold
 	w_class = ITEM_SIZE_NORMAL
 	high_visibility = 1
+	on_rolled = list("down" = "none")
 
 /obj/item/clothing/accessory/storage/Initialize()
 	. = ..()
@@ -112,7 +113,6 @@
 		/obj/item/weapon/material/hatchet,
 		/obj/item/weapon/material/kitchen/utensil/knife,
 		/obj/item/weapon/material/knife,
-		/obj/item/weapon/material/butterfly,
 	)
 
 	new /obj/item/weapon/material/kitchen/utensil/knife/unathiknife(hold)
