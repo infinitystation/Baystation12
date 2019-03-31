@@ -49,19 +49,22 @@
 /obj/item/weapon/gun/launcher/crossbow
 	name = "powered crossbow"
 	desc = "A modern twist on an old classic. Pick up that can."
-	icon = 'icons/obj/weapons.dmi'
+	icon = 'icons/obj/guns/crossbow.dmi'
 	icon_state = "crossbow"
 	item_state = "crossbow-solid"
 	fire_sound = 'sound/weapons/punchmiss.ogg' // TODO: Decent THWOK noise.
 	fire_sound_text = "a solid thunk"
 	fire_delay = 25
 	slot_flags = SLOT_BACK
+	has_safety = FALSE
+
 	var/obj/item/bolt
 	var/tension = 0                         // Current draw on the bow.
 	var/max_tension = 3                     // Highest possible tension.
 	var/release_speed = 10                  // Speed per unit of tension.
 	var/obj/item/weapon/cell/cell = null    // Used for firing superheated rods.
 	var/current_user                        // Used to check if the crossbow has changed hands since being drawn.
+	var/draw_time = 20						// Time needed to draw the bow back by one "tension"
 
 /obj/item/weapon/gun/launcher/crossbow/toggle_safety(var/mob/user)
 	to_chat(user, "<span class='warning'>There's no safety on \the [src]!</span>")
@@ -110,7 +113,7 @@
 	tension = 1
 
 	while(bolt && tension && loc == current_user)
-		if(!do_after(user, 20, src)) //crossbow strings don't just magically pull back on their own.
+		if(!do_after(user, draw_time, src)) //crossbow strings don't just magically pull back on their own.
 			user.visible_message("[usr] stops drawing and relaxes the string of [src].","<span class='warning'>You stop drawing back and relax the string of [src].</span>")
 			tension = 0
 			update_icon()
@@ -202,6 +205,7 @@
 	desc = "A half-finished crossbow."
 	icon_state = "crossbowframe0"
 	item_state = "crossbow-solid"
+	icon = 'icons/obj/guns/crossbow.dmi'
 
 	var/buildstate = 0
 
@@ -289,7 +293,7 @@
 	desc = "A hacked RCD turns an innocent construction tool into the penultimate deconstruction tool. Flashforges bolts using matter units when the string is drawn back."
 	icon_state = "rxb"
 	slot_flags = null
-	var/draw_time = 10
+	draw_time = 10
 	var/stored_matter = 0
 	var/max_stored_matter = 120
 	var/boltcost = 30
@@ -303,6 +307,7 @@
 	else
 		to_chat(user, "<span class='warning'>The \'Low Ammo\' light on the device blinks yellow.</span>")
 		flick("[icon_state]-empty", src)
+
 
 /obj/item/weapon/gun/launcher/crossbow/rapidcrossbowdevice/attack_self(mob/living/user as mob)
 	if(tension)

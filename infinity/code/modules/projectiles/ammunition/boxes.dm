@@ -5,7 +5,7 @@
 /obj/item/ammo_magazine/mc9mm/rubber
 	name = "magazine (9mm, rubber)"
 
-/obj/item/ammo_magazine/a762/extended
+/obj/item/ammo_magazine/mil_rifle/extended
 	name = "extended magazine (7.62mm)"
 	origin_tech = list(TECH_COMBAT = 3)
 	matter = list(MATERIAL_STEEL = 2400)

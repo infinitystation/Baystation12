@@ -79,7 +79,7 @@
 	return 1
 
 /obj/item/weapon/gun/proc/is_secure_gun()
-	return req_access.len
+	return length(req_access)
 
 /obj/item/weapon/gun/proc/free_fire()
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
