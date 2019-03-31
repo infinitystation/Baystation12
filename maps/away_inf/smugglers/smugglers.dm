@@ -85,7 +85,7 @@
 /obj/random/ore
 	name = "random ore"
 	desc = "This is a random ore."
-	icon = 'icons/obj/clothing/ties.dmi'
+	icon = 'icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "horribletie"
 
 /obj/random/ore_smug/spawn_choices()
@@ -104,11 +104,10 @@
 
 /obj/random/ammo_magazine_smug/spawn_choices()
 	return list(
-		/obj/item/ammo_magazine/a10mm,
-		/obj/item/ammo_magazine/c357,
-		/obj/item/ammo_magazine/c45m,
-		/obj/item/ammo_magazine/c556,
-		/obj/item/ammo_magazine/a762)
+		/obj/item/ammo_magazine/pistol,
+		/obj/item/ammo_magazine/speedloader,
+		/obj/item/ammo_magazine/rifle,
+		/obj/item/ammo_magazine/mil_rifle)
 
 /obj/structure/closet/crate/plastic_smug_ammo
 	name = "dirty plastic crate"

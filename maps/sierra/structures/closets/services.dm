@@ -88,7 +88,7 @@
 		/obj/item/weapon/reagent_containers/food/drinks/shaker,
 		/obj/item/glass_jar,
 		/obj/item/weapon/book/manual/barman_recipes,
-		/obj/item/weapon/storage/box/flashshells,
+		/obj/item/weapon/storage/box/ammo/flashshells,
 		/obj/item/clothing/under/rank/bartender,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/clothing/gloves/white,
