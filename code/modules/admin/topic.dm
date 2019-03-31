@@ -96,7 +96,7 @@
 				banreason = "[banreason] (CUSTOM CID)"
 		else
 			message_admins("Ban process: A mob matching [playermob.ckey] was found at location [playermob.x], [playermob.y], [playermob.z]. Custom ip and computer id fields replaced with the ip and computer id from the located mob")
-		add_note(banckey, banreason, null, usr.ckey, 0)
+		notes_add(banckey,banreason,usr)
 
 		DB_ban_record(bantype, playermob, banduration, banreason, banjob, null, banckey, banip, bancid )
 
@@ -787,7 +787,7 @@
 							msg = job
 						else
 							msg += ", [job]"
-					add_note(M.ckey, "Banned  from [msg] - [reason]", null, usr.ckey, 0)
+					notes_add(M.ckey, "Banned  from [msg] - [reason]", usr)
 					message_admins("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes", 1)
 					to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
 					to_chat(M, "<span class='warning'>The reason is: [reason]</span>")
@@ -809,7 +809,7 @@
 							jobban_fullban(M, job, "[reason]; By [usr.ckey] on [time2text(world.realtime)]")
 							if(!msg)	msg = job
 							else		msg += ", [job]"
-						add_note(M.ckey, "Banned  from [msg] - [reason]", null, usr.ckey, 0)
+						notes_add(M.ckey, "Banned  from [msg] - [reason]", usr)
 						message_admins("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg]", 1)
 						to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
 						to_chat(M, "<span class='warning'>The reason is: [reason]</span>")
@@ -907,7 +907,7 @@
 					return
 				AddBan(M.ckey, M.computer_id, reason, usr.ckey, 1, mins)
 				ban_unban_log_save("[usr.client.ckey] has HARD banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
-				add_note(M.ckey,"[usr.client.ckey] has HARD banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.", null, usr.ckey, 0)
+				notes_add(M.ckey,"[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.",usr)
 				to_chat(M, "<span class='danger'><BIG>Вы были ЖЕСТКО забанены администратором [key_name(usr)].\nПричина: [reason]</BIG></span>")
 				to_chat(M, "<span class='warning'>Это временный бан, он истечет через [mins] минут.</span>")
 				SSstatistics.add_field("ban_tmp",1)
@@ -940,7 +940,7 @@
 				else
 					to_chat(M, "<span class='warning'>No ban appeals URL has been set.</span>")
 				ban_unban_log_save("[usr.client.ckey] has hard permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.")
-				add_note(M.ckey,"[usr.client.ckey] has hard permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.", null, usr.ckey, 0)
+				notes_add(M.ckey,"[usr.client.ckey] has hard permabanned [M.ckey]. - Reason: [reason] - This is a permanent ban.", null, usr.ckey, 0)
 				log_and_message_admins("has banned [M.ckey].\nReason: [reason]\nThis is a permanent ban.")
 				SSstatistics.add_field("ban_perma",1)
 				DB_ban_record(BANTYPE_PERMA, M, -1, reason)
@@ -1370,7 +1370,7 @@
 		show_player_panel(M)
 
 	else if(href_list["adminplayerobservejump"])
-		if(!check_rights(R_MENTOR|R_MOD|R_ADMIN))	return
+		if(!check_rights(R_MOD|R_ADMIN))	return
 
 		var/mob/M = locate(href_list["adminplayerobservejump"])
 		var/client/C = usr.client
@@ -1383,7 +1383,7 @@
 		C.jumptomob(M)
 
 	else if(href_list["adminplayerobservefollow"])
-		if(!check_rights(R_MENTOR|R_MOD|R_ADMIN))
+		if(!check_rights(R_MOD|R_ADMIN))
 			return
 
 		var/mob/M = locate(href_list["adminplayerobservefollow"])
@@ -1773,34 +1773,42 @@
 		if(!obj_dir || !(obj_dir in list(1,2,4,8,5,6,9,10)))
 			obj_dir = 2
 		var/obj_name = sanitize(href_list["object_name"])
-
-		var/atom/target //Where the object will be spawned
 		var/where = href_list["object_where"]
 		if (!( where in list("onfloor","inhand","inmarked") ))
 			where = "onfloor"
 
-		switch(where)
-			if("inhand")
-				if (!iscarbon(usr) && !isrobot(usr))
-					to_chat(usr, "Can only spawn in hand when you're a carbon mob or cyborg.")
-					where = "onfloor"
-				target = usr
+		if( where == "inhand" )
+			to_chat(usr, "Support for inhand not available yet. Will spawn on floor.")
+			where = "onfloor"
 
-			if("onfloor")
-				switch(href_list["offset_type"])
+		if ( where == "inhand" )	//Can only give when human or monkey
+			if ( !( ishuman(usr) || issmall(usr) ) )
+				to_chat(usr, "Can only spawn in hand when you're a human or a monkey.")
+				where = "onfloor"
+			else if ( usr.get_active_hand() )
+				to_chat(usr, "Your active hand is full. Spawning on floor.")
+				where = "onfloor"
+
+		if ( where == "inmarked" )
+			var/marked_datum = marked_datum()
+			if ( !marked_datum )
+				to_chat(usr, "You don't have any object marked. Abandoning spawn.")
+				return
+			else
+				if ( !istype(marked_datum,/atom) )
+					to_chat(usr, "The object you have marked cannot be used as a target. Target must be of type /atom. Abandoning spawn.")
+					return
+
+		var/atom/target //Where the object will be spawned
+		switch ( where )
+			if ( "onfloor" )
+				switch (href_list["offset_type"])
 					if ("absolute")
 						target = locate(0 + X,0 + Y,0 + Z)
 					if ("relative")
 						target = locate(loc.x + X,loc.y + Y,loc.z + Z)
-			if("inmarked")
-				if(!marked_datum())
-					to_chat(usr, "You don't have any object marked. Abandoning spawn.")
-					return
-				else if(!istype(marked_datum(),/atom))
-					to_chat(usr, "The object you have marked cannot be used as a target. Target must be of type /atom. Abandoning spawn.")
-					return
-				else
-					target = marked_datum()
+			if ( "inmarked" )
+				target = marked_datum()
 
 		if(target)
 			for (var/path in paths)
@@ -1808,8 +1816,9 @@
 					if(path in typesof(/turf))
 						var/turf/O = target
 						var/turf/N = O.ChangeTurf(path)
-						if(N && obj_name)
-							N.name = obj_name
+						if(N)
+							if(obj_name)
+								N.SetName(obj_name)
 					else
 						var/atom/O = new path(target)
 						if(O)
@@ -1819,17 +1828,6 @@
 								if(istype(O,/mob))
 									var/mob/M = O
 									M.real_name = obj_name
-							if(where == "inhand" && isliving(usr) && istype(O, /obj/item))
-								var/mob/living/L = usr
-								var/obj/item/I = O
-								L.put_in_hands(I)
-								if(isrobot(L))
-									var/mob/living/silicon/robot/R = L
-									if(R.module)
-										R.module.modules += I
-										I.loc = R.module
-										R.module.rebuild()
-										R.activate_module(I)
 
 		log_and_message_admins("created [number] [english_list(paths)]")
 		return
@@ -2064,50 +2062,35 @@
 
 			show_player_panel(M)
 
-	//Player Notes
-	else if(href_list["addnote"])
-		var/target_ckey = href_list["addnote"]
-		add_note(target_ckey)
+	// player info stuff
 
-	else if(href_list["addnoteempty"])
-		add_note()
+	if(href_list["add_player_info"])
+		var/key = href_list["add_player_info"]
+		var/add = sanitize(input("Add Player Info") as null|text)
+		if(!add) return
 
-	else if(href_list["removenote"])
-		var/note_id = href_list["removenote"]
-		remove_note(note_id)
+		notes_add(key,add,usr)
+		show_player_info(key)
 
-	else if(href_list["editnote"])
-		var/note_id = href_list["editnote"]
-		edit_note(note_id)
+	if(href_list["remove_player_info"])
+		var/key = href_list["remove_player_info"]
+		var/index = text2num(href_list["remove_index"])
 
-	else if(href_list["shownote"])
-		var/target = href_list["shownote"]
-		show_note(index = target)
+		notes_del(key, index)
+		show_player_info(key)
 
-	else if(href_list["nonalpha"])
-		var/target = href_list["nonalpha"]
-		target = text2num(target)
-		show_note(index = target)
-
-	else if(href_list["shownoteckey"])
-		var/target_ckey = href_list["shownoteckey"]
-		show_note(target_ckey)
-
-	else if(href_list["notessearch"])
-		var/target = href_list["notessearch"]
-		show_note(index = target)
-
-	else if(href_list["noteedits"])
-		var/note_id = sanitizeSQL("[href_list["noteedits"]]")
-		var/DBQuery/query_noteedits = dbcon.NewQuery("SELECT edits FROM erro_messages WHERE id = '[note_id]'")
-		if(!query_noteedits.Execute())
-			var/err = query_noteedits.ErrorMsg()
-			log_game("SQL ERROR obtaining edits from notes table. Error : \[[err]\]\n")
-			return
-		if(query_noteedits.NextRow())
-			var/edit_log = query_noteedits.item[1]
-			usr << browse(edit_log,"window=noteedits")
-
+	if(href_list["notes"])
+		if(href_list["notes"] == "set_filter")
+			var/choice = input(usr,"Please specify a text filter to use or cancel to clear.","Player Notes",null) as text|null
+			PlayerNotesPage(choice)
+		else
+			var/ckey = href_list["ckey"]
+			if(!ckey)
+				var/mob/M = locate(href_list["mob"])
+				if(ismob(M))
+					ckey = M.ckey
+			show_player_info(ckey)
+		return
 	if(href_list["setstaffwarn"])
 		var/mob/M = locate(href_list["setstaffwarn"])
 		if(!ismob(M)) return
@@ -2119,7 +2102,7 @@
 				var/reason = sanitize(input(usr,"Staff warn message","Staff Warn","Problem Player") as text|null)
 				if (!reason || reason == "")
 					return
-				add_note(M.ckey,"\[AUTO\] Staff warn enabled: [reason]",usr)
+				notes_add(M.ckey,"\[AUTO\] Staff warn enabled: [reason]",usr)
 				reason += "\n-- Set by [usr.client.ckey]([usr.client.holder.rank])"
 				DB_staffwarn_record(M.ckey, reason)
 				if(M.client)
@@ -2129,7 +2112,6 @@
 				show_player_panel(M)
 			if("No")
 				return
-
 	if(href_list["removestaffwarn"])
 		var/mob/M = locate(href_list["removestaffwarn"])
 		if(!ismob(M)) return
@@ -2138,7 +2120,7 @@
 			if("Yes")
 				if(!DB_staffwarn_remove(M.ckey))
 					return
-				add_note(M.ckey,"\[AUTO\] Staff warn disabled",usr)
+				notes_add(M.ckey,"\[AUTO\] Staff warn disabled",usr)
 				if(M.client)
 					M.client.staffwarn = null
 				log_and_message_admins("has removed the staffwarn on [M.ckey].\n")
