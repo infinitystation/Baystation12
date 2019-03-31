@@ -5,7 +5,7 @@
 
 /datum/wires/apc
 	holder_type = /obj/machinery/power/apc
-	wire_count = 4	
+	wire_count = 4
 	descriptions = list(
 		new /datum/wire_description(APC_WIRE_IDSCAN, "This wire is connected to the ID scanning panel.", SKILL_EXPERT),
 		new /datum/wire_description(APC_WIRE_MAIN_POWER1, "This wire seems to be carrying a heavy current."),
