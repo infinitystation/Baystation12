@@ -41,7 +41,7 @@
 	id_pda_assignment = "PMC"
 	back = /obj/item/weapon/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/weapon/storage/firstaid/individual/military/troops = 1,
-							/obj/item/weapon/material/kitchen/utensil/knife/boot = 1,
+							/obj/item/weapon/material/kitchen/utensil/knife/folding = 1,
 							/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
 
 /decl/hierarchy/outfit/pmc/pcrc
@@ -63,11 +63,11 @@
 	suit = /obj/item/clothing/suit/armor/pcarrier/green/heavy_saare
 	head = /obj/item/clothing/head/helmet/saare/cover
 	belt = /obj/item/weapon/storage/belt/holster/security/tactical/troops_sts
-	r_hand = /obj/item/weapon/gun/projectile/automatic/sts35
+	r_hand = /obj/item/weapon/gun/projectile/automatic/assault_rifle
 	id_pda_assignment = "SAARE PMC"
 	back = /obj/item/weapon/storage/backpack/satchel/pocketbook/khaki
 	backpack_contents = list(/obj/item/weapon/storage/firstaid/individual/military/troops = 1,
-							/obj/item/weapon/material/kitchen/utensil/knife/boot = 1,
+							/obj/item/weapon/material/kitchen/utensil/knife/folding = 1,
 							/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
 
 
