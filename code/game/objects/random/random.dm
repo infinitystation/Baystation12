@@ -44,8 +44,8 @@
 /obj/random/tool
 	name = "random tool"
 	desc = "This is a random tool."
-	icon = 'icons/obj/tools.dmi'
-	icon_state = "welder_m"
+	icon = 'icons/obj/items.dmi'
+	icon_state = "welder"
 
 /obj/random/tool/spawn_choices()
 	return list(/obj/item/weapon/screwdriver,
@@ -208,14 +208,15 @@
 				/obj/item/weapon/reagent_containers/glass/beaker/vial/random/toxin = 1,
 				/obj/item/weapon/reagent_containers/glass/beaker/sulphuric = 1,
 				/obj/item/weapon/contraband/poster = 5,
-				/obj/item/weapon/material/butterfly = 2,
 				/obj/item/weapon/material/butterflyblade = 3,
 				/obj/item/weapon/material/butterflyhandle = 3,
 				/obj/item/weapon/material/wirerod = 3,
 				/obj/item/weapon/melee/baton/cattleprod = 1,
-				/obj/item/weapon/material/butterfly/switchblade = 1,
 				/obj/item/weapon/material/hatchet/tacknife = 1,
-				/obj/item/weapon/material/kitchen/utensil/knife/boot = 2,
+				/obj/item/weapon/material/kitchen/utensil/knife/folding = 2,
+				/obj/item/weapon/material/kitchen/utensil/knife/folding/wood = 2,
+				/obj/item/weapon/material/kitchen/utensil/knife/folding/balisong = 2,
+				/obj/item/weapon/material/kitchen/utensil/knife/folding/balisong/switchblade = 1,
 				/obj/item/weapon/storage/secure/briefcase/money = 1,
 				/obj/item/weapon/storage/box/syndie_kit/cigarette = 1,
 				/obj/item/stack/telecrystal = 1,
@@ -272,38 +273,36 @@
 
 /obj/random/projectile/spawn_choices()
 	return list(/obj/item/weapon/gun/projectile/shotgun/pump = 3,
-				/obj/item/weapon/gun/projectile/automatic/c20r = 2,
-				/obj/item/weapon/gun/projectile/automatic/sts35 = 2,
-				/obj/item/weapon/gun/projectile/automatic/z8 = 2,
-				/obj/item/weapon/gun/projectile/beretta = 4,
-				/obj/item/weapon/gun/projectile/colt = 4,
-				/obj/item/weapon/gun/projectile/sec = 4,
-				/obj/item/weapon/gun/projectile/sec/wood = 3,
-				/obj/item/weapon/gun/projectile/pistol = 4,
+				/obj/item/weapon/gun/projectile/automatic/merc_smg = 2,
+				/obj/item/weapon/gun/projectile/automatic/assault_rifle = 2,
+				/obj/item/weapon/gun/projectile/automatic/bullpup_rifle = 2,
+				/obj/item/weapon/gun/projectile/pistol/military/alt = 3,
+				/obj/item/weapon/gun/projectile/pistol/sec = 4,
+				/obj/item/weapon/gun/projectile/pistol/holdout = 4,
 				/obj/item/weapon/gun/projectile/pirate = 5,
 				/obj/item/weapon/gun/projectile/revolver = 2,
-				/obj/item/weapon/gun/projectile/automatic/wt550 = 3,
-				/obj/item/weapon/gun/projectile/revolver/detective = 4,
-				/obj/item/weapon/gun/projectile/revolver/mateba = 2,
+				/obj/item/weapon/gun/projectile/automatic/sec_smg = 3,
+				/obj/item/weapon/gun/projectile/revolver/holdout = 4,
+				/obj/item/weapon/gun/projectile/revolver = 2,
 				/obj/item/weapon/gun/projectile/shotgun/doublebarrel = 4,
 				/obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn = 3,
 				/obj/item/weapon/gun/projectile/heavysniper = 1,
-				/obj/item/weapon/gun/projectile/shotgun/pump/combat = 2)
+				/obj/item/weapon/gun/projectile/shotgun/pump/combat = 2,
+				/obj/item/weapon/gun/projectile/pistol/throwback = 1)
 
 /obj/random/handgun
 	name = "Random Handgun"
 	desc = "This is a random sidearm."
 	icon = 'icons/obj/guns/pistol.dmi'
-	icon_state = "secguncomp"
+	icon_state = "secgundark"
 
 /obj/random/handgun/spawn_choices()
-	return list(/obj/item/weapon/gun/projectile/sec = 3,
+	return list(/obj/item/weapon/gun/projectile/pistol/sec = 3,
 				/obj/item/weapon/gun/energy/gun = 2,
-				/obj/item/weapon/gun/projectile/beretta = 2,
-				/obj/item/weapon/gun/projectile/colt = 2,
-				/obj/item/weapon/gun/projectile/pistol = 2,
+				/obj/item/weapon/gun/projectile/pistol/military/alt = 1,
+				/obj/item/weapon/gun/projectile/pistol/holdout = 2,
 				/obj/item/weapon/gun/energy/retro = 1,
-				/obj/item/weapon/gun/projectile/sec/wood = 1)
+				/obj/item/weapon/gun/projectile/pistol/throwback = 1)
 
 /obj/random/ammo
 	name = "Random Ammunition"
@@ -312,15 +311,14 @@
 	icon_state = "45-10"
 
 /obj/random/ammo/spawn_choices()
-	return list(/obj/item/weapon/storage/box/beanbags = 6,
-				/obj/item/weapon/storage/box/shotgunammo = 2,
-				/obj/item/weapon/storage/box/shotgunshells = 4,
-				/obj/item/weapon/storage/box/stunshells = 1,
-				/obj/item/ammo_magazine/c45m = 2,
-				/obj/item/ammo_magazine/c45m/rubber = 4,
-				/obj/item/ammo_magazine/c45m/flash = 4,
-				/obj/item/ammo_magazine/mc9mmt = 2,
-				/obj/item/ammo_magazine/mc9mmt/rubber = 6)
+	return list(/obj/item/weapon/storage/box/ammo/beanbags = 6,
+				/obj/item/weapon/storage/box/ammo/shotgunammo = 2,
+				/obj/item/weapon/storage/box/ammo/shotgunshells = 4,
+				/obj/item/weapon/storage/box/ammo/stunshells = 1,
+				/obj/item/ammo_magazine/pistol = 2,
+				/obj/item/ammo_magazine/smg_top = 2,
+				/obj/item/ammo_magazine/smg_top/rubber = 6,
+				/obj/item/ammo_magazine/pistol/throwback = 1)
 
 /obj/random/action_figure
 	name = "random action figure"
@@ -455,8 +453,8 @@ obj/random/closet/spawn_choices()
 /obj/random/coin
 	name = "random coin"
 	desc = "This is a random coin."
-	icon = 'icons/obj/coin.dmi'
-	icon_state = "coin1"
+	icon = 'icons/obj/items.dmi'
+	icon_state = "coin"
 
 /obj/random/coin/spawn_choices()
 	return list(/obj/item/weapon/material/coin/gold = 3,
