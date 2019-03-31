@@ -437,7 +437,7 @@ datum/objective/steal
 	var/target_name
 
 	var/global/possible_items[] = list(
-		"the captain's personal revolver" = /obj/item/weapon/gun/projectile/revolver/webley/captain,
+		"the captain's personal revolver" = /obj/item/weapon/gun/projectile/revolver/medium/captain,
 		"an RCD" = /obj/item/weapon/rcd,
 		"a jetpack" = /obj/item/weapon/tank/jetpack,
 		"a functional AI" = /obj/item/weapon/aicard,
@@ -683,7 +683,7 @@ datum/objective/heist/loot
 		var/loot = "an object"
 		switch(rand(1,8))
 			if(1)
-				target = /obj/item/weapon/gun/projectile/revolver/webley/captain
+				target = /obj/item/weapon/gun/projectile/revolver/medium/captain
 				target_amount = 1
 				loot = "a captain's revolver"
 			if(2)
