@@ -41,7 +41,7 @@
 	id_pda_assignment = "PMC"
 	back = /obj/item/weapon/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/weapon/storage/firstaid/individual/military/troops = 1,
-							/obj/item/weapon/material/kitchen/utensil/knife/folding = 1,
+							/obj/item/weapon/material/knife/folding/tacticool = 1,
 							/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
 
 /decl/hierarchy/outfit/pmc/pcrc
@@ -67,7 +67,7 @@
 	id_pda_assignment = "SAARE PMC"
 	back = /obj/item/weapon/storage/backpack/satchel/pocketbook/khaki
 	backpack_contents = list(/obj/item/weapon/storage/firstaid/individual/military/troops = 1,
-							/obj/item/weapon/material/kitchen/utensil/knife/folding = 1,
+							/obj/item/weapon/material/knife/folding/tacticool = 1,
 							/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar = 1)
 
 

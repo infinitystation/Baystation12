@@ -122,7 +122,7 @@
 	icon_state = "thundervendor"
 	products = list(
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/combatpain = 60,
-		/obj/item/weapon/material/hatchet/tacknife = 30,
+		/obj/item/weapon/material/knife/combat = 30,
 		/obj/item/weapon/grenade/chem_grenade/metalfoam = 20,
 		/obj/item/weapon/grenade/chem_grenade/cleaner = 30,
 		/obj/item/weapon/grenade/flashbang = 20,
