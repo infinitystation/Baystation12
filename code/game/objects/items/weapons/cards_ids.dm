@@ -554,7 +554,3 @@ var/const/NO_EMAG_ACT = -50
 	access = list(access_merchant)
 	color = COLOR_OFF_WHITE
 	detail_color = COLOR_BEIGE
-
-/obj/item/weapon/card/id/merchant/leader
-	desc = "A card issued to Merchant Leaders, indicating their right to sell and buy goods."
-	access = list(access_merchant, access_merchant_leader)

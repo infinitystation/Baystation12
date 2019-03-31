@@ -171,7 +171,6 @@ MRE Stuff
 
 /obj/item/weapon/storage/mrebag/dessert
 	name = "dessert"
-	icon_state = "pouch_small"
 	desc = "A vacuum-sealed bag containing the MRE's dessert."
 	icon_state = "pouch_small"
 	open_sound = 'sound/effects/rip1.ogg'

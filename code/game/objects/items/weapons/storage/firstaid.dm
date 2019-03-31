@@ -61,7 +61,7 @@
 	icon_state = pick("ointment","firefirstaid")
 
 /obj/item/weapon/storage/firstaid/toxin
-	name = "toxin first-aid kit"
+	name = "toxin first aid"
 	desc = "Used to treat when you have a high amount of toxins in your body."
 	icon_state = "antitoxin"
 	item_state = "firstaid-toxin"
@@ -75,7 +75,7 @@
 	icon_state = pick("antitoxin","antitoxfirstaid","antitoxfirstaid2","antitoxfirstaid3")
 
 /obj/item/weapon/storage/firstaid/o2
-	name = "oxygen first-aid kit"
+	name = "oxygen deprivation first aid"
 	desc = "A box full of oxygen goodies."
 	icon_state = "o2"
 	item_state = "firstaid-o2"
@@ -268,12 +268,6 @@
 	startswith = list(/obj/item/weapon/reagent_containers/pill/dermaline = 14)
 	wrapper_color = "#e8d131"
 
-/obj/item/weapon/storage/pill_bottle/hyronalin
-	name = "pill bottle (Hyronalin)"
-	desc = "Contains pills used to treat radiation effects."
-
-	startswith = list(/obj/item/weapon/reagent_containers/pill/hyronalin = 14)
-
 /obj/item/weapon/storage/pill_bottle/dylovene
 	name = "pill bottle (Dylovene)"
 	desc = "Contains pills used to treat toxic substances in the blood."
@@ -288,11 +282,6 @@
 	startswith = list(/obj/item/weapon/reagent_containers/pill/inaprovaline = 21)
 	wrapper_color = COLOR_PALE_BLUE_GRAY
 
-/obj/item/weapon/storage/pill_bottle/nanoblood
-	name = "pill bottle (Nanoblood)"
-	desc = "Contains pills used to return patient's blood level in near-normal condition. Cause overdose with small liver damage due toxins - don't distibute for untrained personal. Don't use it if patient have infected wounds."
-
-	startswith = list(/obj/item/weapon/reagent_containers/pill/nanoblood = 14)
 /obj/item/weapon/storage/pill_bottle/kelotane
 	name = "pill bottle (Kelotane)"
 	desc = "Contains pills used to treat burns."

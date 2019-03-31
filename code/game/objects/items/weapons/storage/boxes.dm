@@ -148,49 +148,48 @@
 	name = "box of insulated beakers"
 	startswith = list(/obj/item/weapon/reagent_containers/glass/beaker/insulated = 7)
 
-/obj/item/weapon/storage/box/blanks
+/obj/item/weapon/storage/box/ammo
+	name = "ammo box"
+	icon_state = "ammo"
+	desc = "A sturdy metal box with several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
+	use_sound = 'sound/effects/closet_open.ogg'
+
+/obj/item/weapon/storage/box/ammo/blanks
 	name = "box of blank shells"
 	desc = "It has a picture of a gun and several warning symbols on the front."
-	startswith = list(/obj/item/ammo_casing/shotgun/blank = 7)
+	startswith = list(/obj/item/ammo_casing/shotgun/blank = 8)
 
-/obj/item/weapon/storage/box/beanbags
-	name = "box of beanbag shells"
-	desc = "It has a picture of a gun and several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
-	startswith = list(/obj/item/ammo_casing/shotgun/beanbag = 7)
-
-/obj/item/weapon/storage/box/shotgunammo
-	name = "box of shotgun slugs"
-	desc = "It has a picture of a gun and several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
-	startswith = list(/obj/item/ammo_casing/shotgun = 7)
-
-/obj/item/weapon/storage/box/shotgunshells
-	name = "box of shotgun shells"
-	desc = "It has a picture of a gun and several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
-	startswith = list(/obj/item/ammo_casing/shotgun/pellet = 7)
-
-/obj/item/weapon/storage/box/flashshells
-	name = "box of illumination shells"
-	desc = "It has a picture of a gun and several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
-	startswith = list(/obj/item/ammo_casing/shotgun/flash = 7)
-
-/obj/item/weapon/storage/box/stunshells
-	name = "box of stun shells"
-	desc = "It has a picture of a gun and several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
-	startswith = list(/obj/item/ammo_casing/shotgun/stunshell = 7)
-
-/obj/item/weapon/storage/box/practiceshells
+/obj/item/weapon/storage/box/ammo/practiceshells
 	name = "box of practice shells"
-	desc = "It has a picture of a gun and several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
-	startswith = list(/obj/item/ammo_casing/shotgun/practice = 7)
+	startswith = list(/obj/item/ammo_casing/shotgun/practice = 8)
 
-/obj/item/weapon/storage/box/sniperammo
-	name = "box of 14.5mm shells"
-	desc = "It has a picture of a gun and several warning symbols on the front.<br>WARNING: Live ammunition. Misuse may result in serious injury or death."
-	startswith = list(/obj/item/ammo_casing/a145 = 7)
+/obj/item/weapon/storage/box/ammo/beanbags
+	name = "box of beanbag shells"
+	startswith = list(/obj/item/ammo_magazine/shotholder/beanbag = 2)
 
-/obj/item/weapon/storage/box/sniperammo/apds
-	name = "box of 14.5mm APDS shells"
-	startswith = list(/obj/item/ammo_casing/a145/apds = 3)
+/obj/item/weapon/storage/box/ammo/shotgunammo
+	name = "box of shotgun slugs"
+	startswith = list(/obj/item/ammo_magazine/shotholder = 2)
+
+/obj/item/weapon/storage/box/ammo/shotgunshells
+	name = "box of shotgun shells"
+	startswith = list(/obj/item/ammo_magazine/shotholder/shell = 2)
+
+/obj/item/weapon/storage/box/ammo/flashshells
+	name = "box of illumination shells"
+	startswith = list(/obj/item/ammo_magazine/shotholder/flash = 2)
+
+/obj/item/weapon/storage/box/ammo/stunshells
+	name = "box of stun shells"
+	startswith = list(/obj/item/ammo_magazine/shotholder/stun = 2)
+
+/obj/item/weapon/storage/box/ammo/sniperammo
+	name = "box of sniper shells"
+	startswith = list(/obj/item/ammo_casing/shell = 7)
+
+/obj/item/weapon/storage/box/ammo/sniperammo/apds
+	name = "box of sniper APDS shells"
+	startswith = list(/obj/item/ammo_casing/shell/apds = 3)
 
 /obj/item/weapon/storage/box/flashbangs
 	name = "box of flashbangs"
@@ -237,7 +236,7 @@
 /obj/item/weapon/storage/box/supermatters
 	name = "box of supermatter grenades"
 	desc = "A box containing 5 highly experimental supermatter grenades."
-	icon_state = "box_of_doom"
+	icon_state = "radbox"
 	startswith = list(/obj/item/weapon/grenade/supermatter = 5)
 
 /obj/item/weapon/storage/box/trackimp
@@ -379,7 +378,6 @@
 		W.lit = 1
 		W.damtype = "burn"
 		W.icon_state = "match_lit"
-		W.set_light(0.6, 0.5, 2)
 		START_PROCESSING(SSobj, W)
 		playsound(src.loc, 'sound/items/match.ogg', 60, 1, -4)
 		user.visible_message("<span class='notice'>[user] strikes the match on the matchbox.</span>")
