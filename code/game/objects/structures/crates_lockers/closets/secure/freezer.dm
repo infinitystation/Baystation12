@@ -15,7 +15,7 @@
 /obj/structure/closet/secure_closet/freezer/meat
 	name = "meat fridge"
 	icon = 'icons/obj/closets/fridge.dmi'
-	closet_appearance = /decl/closet_appearance/crate/freezer
+	closet_appearance = null
 
 /obj/structure/closet/secure_closet/freezer/meat/WillContain()
 	return list(
@@ -26,7 +26,7 @@
 /obj/structure/closet/secure_closet/freezer/fridge
 	name = "refrigerator"
 	icon = 'icons/obj/closets/fridge.dmi'
-	closet_appearance = /decl/closet_appearance/crate/freezer
+	closet_appearance = null
 
 /obj/structure/closet/secure_closet/freezer/fridge/WillContain()
 	return list(
@@ -38,7 +38,7 @@
 /obj/structure/closet/secure_closet/freezer/money
 	name = "secure locker"
 	icon = 'icons/obj/closets/fridge.dmi'
-	closet_appearance = /decl/closet_appearance/crate/freezer
+	closet_appearance = null
 	req_access = list(access_heads_vault)
 
 /obj/structure/closet/secure_closet/freezer/money/Initialize()
@@ -53,11 +53,3 @@
 			new cash_type(src)
 		else
 			break
-
-/obj/structure/closet/secure_closet/freezer/var/jones = FALSE
-
-/obj/structure/closet/secure_closet/freezer/ex_act()
-	if(!jones)
-		jones = TRUE
-	else
-		..()

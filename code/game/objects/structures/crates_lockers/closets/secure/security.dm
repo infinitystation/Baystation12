@@ -11,8 +11,6 @@
 		/obj/item/clothing/suit/captunic/capjacket,
 		/obj/item/clothing/head/caphat/cap,
 		/obj/item/clothing/under/rank/captain,
-		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
-//		/obj/item/weapon/cartridge/captain,
 		/obj/item/clothing/suit/armor/vest/nt,
 		/obj/item/clothing/head/helmet,
 		/obj/item/clothing/shoes/brown,
@@ -34,12 +32,10 @@
 /obj/structure/closet/secure_closet/hop/WillContain()
 	return list(
 		/obj/item/clothing/glasses/sunglasses,
-		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
+		/obj/item/clothing/suit/armor/vest/nt,
 		/obj/item/clothing/head/helmet,
 		/obj/item/device/radio/headset/heads/hop,
 		/obj/item/weapon/storage/box/ids = 2,
-		/obj/item/weapon/storage/box/PDAs,
-		/obj/item/weapon/gun/projectile/sec/flash,
 		/obj/item/device/flash
 	)
 
@@ -51,7 +47,6 @@
 /obj/structure/closet/secure_closet/hop2/WillContain()
 	return list(
 		/obj/item/clothing/under/rank/head_of_personnel,
-		/obj/item/clothing/under/manager,
 		/obj/item/clothing/under/dress/dress_hop,
 		/obj/item/clothing/under/dress/dress_hr,
 		/obj/item/clothing/under/lawyer/female,
@@ -76,7 +71,8 @@
 		new/datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel/sec)),
 		/obj/item/clothing/head/HoS,
 		/obj/item/clothing/head/helmet/nt,
-		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
+		/obj/item/clothing/suit/armor/vest/nt,
+		/obj/item/clothing/suit/storage/vest/nt/hos,
 		/obj/item/clothing/under/rank/head_of_security/jensen,
 		/obj/item/clothing/under/rank/head_of_security/corp,
 		/obj/item/clothing/suit/armor/hos/jensen,
@@ -107,9 +103,11 @@
 		new/datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel/sec)),
 		new/datum/atom_creator/simple(/obj/item/weapon/storage/backpack/dufflebag/sec, 50),
 		/obj/item/clothing/head/helmet/nt,
-		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
+		/obj/item/clothing/suit/armor/vest/nt,
+		/obj/item/clothing/suit/storage/vest/nt/warden,
 		/obj/item/clothing/under/rank/warden,
 		/obj/item/clothing/under/rank/warden/corp,
+		/obj/item/clothing/suit/armor/vest/warden,
 		/obj/item/clothing/head/warden,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/clothing/glasses/sunglasses/sechud,
@@ -134,8 +132,7 @@
 	return list(
 		new/datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/security, /obj/item/weapon/storage/backpack/satchel/sec)),
 		new/datum/atom_creator/simple(/obj/item/weapon/storage/backpack/dufflebag/sec, 50),
-		/obj/item/clothing/mask/gas/half,
-		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
+		/obj/item/clothing/suit/armor/vest/nt,
 		/obj/item/clothing/head/helmet,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/weapon/storage/belt/holster/security,
@@ -194,10 +191,9 @@
 		/obj/item/clothing/shoes/laceup,
 		/obj/item/weapon/storage/box/evidence,
 		/obj/item/device/radio/headset/headset_sec,
-		/obj/item/clothing/suit/armor/pcarrier/light/nt,
-		/obj/item/ammo_magazine/c45m/flash,
+		/obj/item/clothing/suit/armor/vest/detective,
 		/obj/item/taperoll/police,
-		/obj/item/weapon/gun/projectile/colt/detective,
+		/obj/item/weapon/gun/projectile/pistol/sec/detective,
 		/obj/item/clothing/accessory/storage/holster/armpit,
 		/obj/item/weapon/reagent_containers/food/drinks/flask/detflask,
 		/obj/item/weapon/storage/briefcase/crimekit,

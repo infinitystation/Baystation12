@@ -406,8 +406,3 @@
 	new /obj/item/clothing/glasses/sunglasses/big(src)
 	new /obj/item/weapon/storage/briefcase(src)
 	new /obj/item/weapon/storage/briefcase(src)
-
-/obj/structure/closet/wardrobe/empty
-	name = "surgery closet"
-	desc = "For the patient's clothes."
-	closet_appearance = /decl/closet_appearance/wall/medical
