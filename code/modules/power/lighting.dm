@@ -176,9 +176,6 @@
 	desc = "A more robust socket for light tubes that demand more power."
 	light_type = /obj/item/weapon/light/tube/large
 
-/obj/machinery/light/halogen
-	light_type = /obj/item/weapon/light/tube/halogen
-
 // create a new lighting fixture
 /obj/machinery/light/Initialize(mapload, obj/machinery/light_construct/construct = null)
 	. = ..(mapload)
@@ -607,11 +604,6 @@
 /obj/item/weapon/light/tube/large/party/Initialize() //Randomly colored light tubes. Mostly for testing, but maybe someone will find a use for them.
 	. = ..()
 	b_colour = rgb(pick(0,255), pick(0,255), pick(0,255))
-
-/obj/item/weapon/light/tube/halogen
-	name = "halogen light tube"
-	color = LIGHT_COLOR_HALOGEN //visual icon
-	b_colour = LIGHT_COLOR_HALOGEN
 
 /obj/item/weapon/light/bulb
 	name = "light bulb"

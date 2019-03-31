@@ -96,8 +96,6 @@
 			else
 				air2.temperature = air2.temperature + heat/air2_heat_capacity
 				air1.temperature = air1.temperature - energy_transfer/air1_heat_capacity
-		playsound(src.loc, 'sound/effects/beam.ogg', 25, 0, 10)
-		playsound(src.loc, 'sound/effects/beam.ogg', 25, 0, 10, is_ambiance = 1)
 		playsound(src.loc, 'sound/effects/beam.ogg', 25, 0, 10,  is_ambiance = 1)
 
 	//Transfer the air

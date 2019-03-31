@@ -56,9 +56,6 @@
 	locked = 0
 	coverlocked = 0
 
-/obj/machinery/power/apc/high/critical
-	is_critical = 1
-
 /obj/machinery/power/apc/super
 	cell_type = /obj/item/weapon/cell/super
 
@@ -171,6 +168,8 @@
 
 /obj/machinery/power/apc/Initialize(mapload, var/ndir, var/building=0)
 
+	wires = new(src)
+
 	// offset 22 pixels in direction of dir
 	// this allows the APC to be embedded in a wall, yet still inside an area
 	if (building)
@@ -227,15 +226,11 @@
 /obj/machinery/power/apc/proc/make_terminal()
 	// create a terminal object at the same position as original turf loc
 	// wires will attach to this
-	if(!wires)
-		wires = new(src)
-
 	terminal = new/obj/machinery/power/terminal(src.loc)
 	terminal.set_dir(dir)
 	terminal.master = src
 
 /obj/machinery/power/apc/proc/init_round_start()
-	wires = new(src)
 	has_electronics = 2 //installed and secured
 	if(!terminal)
 		make_terminal() //wired
@@ -296,21 +291,23 @@
 		status_overlays_lighting.len = 5
 		status_overlays_environ.len = 5
 
-		status_overlays_lock[1] = overlay_image(icon, "apcox-0", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)    // 0=blue 1=red
-		status_overlays_lock[2] = overlay_image(icon, "apcox-1", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
+//plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER //INF - replace (image > overlay_image)
 
-		status_overlays_charging[1] = overlay_image(icon, "apco3-0", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
-		status_overlays_charging[2] = overlay_image(icon, "apco3-1", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
-		status_overlays_charging[3] = overlay_image(icon, "apco3-2", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
+		status_overlays_lock[1] = image(icon, "apcox-0")    // 0=blue 1=red
+		status_overlays_lock[2] = image(icon, "apcox-1")
+
+		status_overlays_charging[1] = image(icon, "apco3-0")
+		status_overlays_charging[2] = image(icon, "apco3-1")
+		status_overlays_charging[3] = image(icon, "apco3-2")
 
 		var/list/channel_overlays = list(status_overlays_equipment, status_overlays_lighting, status_overlays_environ)
 		var/channel = 0
 		for(var/list/channel_leds in channel_overlays)
-			channel_leds[POWERCHAN_OFF + 1] = overlay_image(icon,"apco[channel]",COLOR_RED, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
-			channel_leds[POWERCHAN_OFF_TEMP + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
-			channel_leds[POWERCHAN_OFF_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
-			channel_leds[POWERCHAN_ON + 1] = overlay_image(icon,"apco[channel]",COLOR_LIME, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
-			channel_leds[POWERCHAN_ON_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_BLUE, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
+			channel_leds[POWERCHAN_OFF + 1] = overlay_image(icon,"apco[channel]",COLOR_RED)
+			channel_leds[POWERCHAN_OFF_TEMP + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE)
+			channel_leds[POWERCHAN_OFF_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE)
+			channel_leds[POWERCHAN_ON + 1] = overlay_image(icon,"apco[channel]",COLOR_LIME)
+			channel_leds[POWERCHAN_ON_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_BLUE)
 			channel++
 
 	if(update_state < 0)
