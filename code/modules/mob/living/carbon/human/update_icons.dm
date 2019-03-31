@@ -409,18 +409,17 @@ var/global/list/damage_icon_parts = list()
 
 /mob/living/carbon/human/proc/update_underwear(var/update_icons=1)
 	overlays_standing[HO_UNDERWEAR_LAYER] = list()
-	if(worn_underwear)
-		for(var/entry in worn_underwear)
-			var/obj/item/underwear/UW = entry
+	for(var/entry in worn_underwear)
+		var/obj/item/underwear/UW = entry
 
-			var/image/I = image(icon = UW.icon, icon_state = UW.icon_state)
-			I.appearance_flags = RESET_COLOR
-			I.color = UW.color
+		var/image/I = image(icon = UW.icon, icon_state = UW.icon_state)
+		I.appearance_flags = RESET_COLOR
+		I.color = UW.color
 
-			overlays_standing[HO_UNDERWEAR_LAYER] += I
+		overlays_standing[HO_UNDERWEAR_LAYER] += I
 
-		if(update_icons)
-			queue_icon_update()
+	if(update_icons)
+		queue_icon_update()
 
 //HAIR OVERLAY
 /mob/living/carbon/human/proc/update_hair(var/update_icons=1)

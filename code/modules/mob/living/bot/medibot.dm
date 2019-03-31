@@ -313,15 +313,3 @@
 					S.SetName(created_name)
 					S.update_icons() // apply the skin
 					qdel(src)
-
-/mob/living/bot/medbot/merc
-	name = "Painkiller"
-	icon_state = "medibot0"
-	req_access = list(access_syndicate)
-	botcard_access = list(access_syndicate)
-	skin = "bezerk"
-	vocal = 0
-	treatment_brute = "bicaridine"
-	treatment_oxy = "dexalin"
-	treatment_fire = "dermaline"
-	treatment_tox = "anti_toxin"

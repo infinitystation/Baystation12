@@ -277,7 +277,6 @@ var/global/list/sparring_attack_cache = list()
 				"<span class='danger'>[user] slammed \his [shoe_text] down onto [target]'s [organ]!</span>"))
 
 /datum/unarmed_attack/light_strike
-	attack_sound = "unarmed"
 	deal_halloss = 3
 	attack_noun = list("tap","light strike")
 	attack_verb = list("tapped", "lightly struck")

@@ -185,17 +185,6 @@
 		to_chat(src, "<span class='alium'>You channel a message: \"[msg]\" to [M]</span>")
 	return
 
-/mob/living/carbon/human/proc/darksight()
-	set name = "Night Vision"
-	set desc = "Turning on your natural ability."
-	set category = "Abilities"
-
-	var/obj/item/organ/internal/eyes/E = internal_organs_by_name[BP_EYES]
-	if(E.night_vision == 0)
-		E.night_vision = 1
-	else
-		E.night_vision = 0
-
 /***********
  diona verbs
 ***********/
@@ -223,24 +212,3 @@
 
 	var/new_skin = input(usr, "Choose your new skin colour: ", "Change Colour", rgb(r_skin, g_skin, b_skin)) as color|null
 	change_skin_color(hex2num(copytext(new_skin, 2, 4)), hex2num(copytext(new_skin, 4, 6)), hex2num(copytext(new_skin, 6, 8)))
-
-//Aurora
-
-/mob/living/carbon/human/proc/self_destruct()
-	set category = "Abilities"
-	set name = "Engage Self-Destruct"
-	set desc = "When all else has failed, bite the bullet."
-
-	if(stat || paralysis || stunned || weakened || lying)
-		to_chat(src, "<span class='warning'>You cannot do that in your current state.</span>")
-		return
-
-	src.visible_message(
-	"<span class='danger'>\The [src] begins to beep ominously!</span>",
-	"<span class='danger'>WARNING: SELF-DESTRUCT ENGAGED. Unit termination finalized in three seconds!</span>"
-	)
-	sleep(10)
-	playsound(src, 'sound/items/countdown.ogg', 125, 1)
-	sleep(20)
-	explosion(src, -1, 1, 3)
-	src.gib()

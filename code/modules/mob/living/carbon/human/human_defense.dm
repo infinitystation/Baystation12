@@ -10,8 +10,6 @@ meteor_act
 /mob/living/carbon/human/bullet_act(var/obj/item/projectile/P, var/def_zone)
 
 	def_zone = check_zone(def_zone)
-	var/damage_multipiler = list(BP_HEAD = 1.3, BP_CHEST = 1.1, BP_GROIN = 0.85, BP_L_LEG = 0.7, BP_R_LEG = 0.7, BP_L_ARM = 0.7, BP_R_ARM = 0.7, BP_L_HAND = 0.4, BP_R_HAND = 0.4, BP_L_FOOT = 0.3, BP_R_FOOT = 0.3,)
-	P.damage *= damage_multipiler[def_zone]
 	if(!has_organ(def_zone))
 		return PROJECTILE_FORCE_MISS //if they don't have the organ in question then the projectile just passes by.
 
@@ -30,7 +28,7 @@ meteor_act
 
 	//Embed or sever artery
 	if(P.can_embed() && !(species.species_flags & SPECIES_FLAG_NO_EMBED) && prob(22.5 + max(penetrating_damage, -10)) && !(prob(50) && (organ.sever_artery())))
-		var/obj/item/weapon/material/shard/shrapnel/SP = new()
+		var/obj/item/weapon/material/shard/shrapnel/SP = new P.shrapnel_type()
 		SP.SetName((P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel")
 		SP.desc = "[SP.desc] It looks like it was fired from [P.shot_from]."
 		SP.forceMove(organ)
@@ -63,7 +61,7 @@ meteor_act
 			def_zone = zone
 			. += .() * organ_rel_size/tally
 		return
-	return ..()
+	return ..()		
 
 /mob/living/carbon/human/get_armors_by_zone(obj/item/organ/external/def_zone, damage_type, damage_flags)
 	. = ..()

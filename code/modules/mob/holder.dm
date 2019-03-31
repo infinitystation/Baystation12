@@ -125,10 +125,6 @@ var/list/holder_mob_icon_cache = list()
 /obj/item/weapon/holder/corgi
 	origin_tech = list(TECH_BIO = 4)
 
-/obj/item/weapon/holder/lizard
-	slot_flags = SLOT_HOLSTER // | SLOT_HEAD Currently we don't have on head icons for lizards :(
-	w_class = ITEM_SIZE_TINY
-
 /obj/item/weapon/holder/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	for(var/mob/M in src.contents)
 		M.attackby(W,user)

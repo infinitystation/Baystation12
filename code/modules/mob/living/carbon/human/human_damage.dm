@@ -388,6 +388,8 @@ This function restores all organs.
 	//Handle other types of damage
 	if(!(damagetype in list(BRUTE, BURN, PAIN, CLONE)))
 		return ..()
+	if(!istype(organ))
+		return 0 // This is reasonable and means the organ is missing.
 
 	handle_suit_punctures(damagetype, damage, def_zone)
 
@@ -406,8 +408,6 @@ This function restores all organs.
 		if(BRUTE)
 			damage = damage*species.brute_mod
 			created_wound = organ.take_external_damage(damage, 0, damage_flags, used_weapon)
-			if(!stat)
-				receive_damage()
 		if(BURN)
 			damage = damage*species.burn_mod
 			created_wound = organ.take_external_damage(0, damage, damage_flags, used_weapon)
