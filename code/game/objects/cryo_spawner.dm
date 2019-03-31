@@ -155,9 +155,9 @@
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/thick/combat(H), slot_gloves)
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/vest(H), slot_wear_suit)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet(H), slot_head)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/c556(H), slot_r_store)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle(H), slot_r_store)
 	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(H), slot_l_store)
-	H.equip_to_slot_or_del(new /obj/item/weapon/gun/projectile/automatic/sts35(H), slot_back)
+	H.equip_to_slot_or_del(new /obj/item/weapon/gun/projectile/automatic/assault_rifle(H), slot_back)
 
 	var/obj/item/weapon/card/id/centcom/W = new(H)
 	W.name = "[H.real_name]'s ID Card"
@@ -175,9 +175,9 @@
 	H.equip_to_slot_or_del(new /obj/item/clothing/gloves/thick/combat(H), slot_gloves)
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/vest(H), slot_wear_suit)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet(H), slot_head)
-	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/c556(H), slot_r_store)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle(H), slot_r_store)
 	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses(H), slot_l_store)
-	H.equip_to_slot_or_del(new /obj/item/weapon/gun/projectile/automatic/sts35(H), slot_back)
+	H.equip_to_slot_or_del(new /obj/item/weapon/gun/projectile/automatic/assault_rifle(H), slot_back)
 
 	var/obj/item/weapon/card/id/centcom/W = new(H)
 	W.name = "[H.real_name]'s ID Card"
