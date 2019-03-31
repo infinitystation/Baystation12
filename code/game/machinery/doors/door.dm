@@ -570,7 +570,7 @@
 	var/area/aft = access_area_by_dir(GLOB.reverse_dir[dir])
 	fore = fore || aft
 	aft = aft || fore
-
+	
 	if (!fore && !aft)
 		req_access = list()
 	else if (fore.secure || aft.secure)

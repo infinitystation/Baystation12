@@ -183,9 +183,7 @@
 	..()
 
 /obj/machinery/door/window/CanFluidPass(var/coming_from)
-	if(density)
-		return ((dir in GLOB.cardinal) && coming_from != dir)
-	else return 1
+	return ((dir in GLOB.cardinal) && coming_from != dir)
 
 /obj/machinery/door/window/attackby(obj/item/weapon/I as obj, mob/user as mob)
 

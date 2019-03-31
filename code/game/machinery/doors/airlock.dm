@@ -18,7 +18,7 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock
 	name = "airlock"
 	icon = 'icons/obj/doors/station/door.dmi'
-	icon_state = "preview"
+	icon_state = "closed"
 	power_channel = ENVIRON
 
 	explosion_resistance = 10
@@ -112,16 +112,8 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock/command
 	door_color = COLOR_COMMAND_BLUE
 
-/obj/machinery/door/airlock/command/autoname/New()
-	var/area/A = get_area(src)
-	name = A.name
-	..()
-
 /obj/machinery/door/airlock/security
 	door_color = COLOR_NT_RED
-
-/obj/machinery/door/airlock/security/striped
-	stripe_color = COLOR_ORANGE
 
 /obj/machinery/door/airlock/security/research
 	door_color = COLOR_WHITE
@@ -130,9 +122,6 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock/engineering
 	name = "Maintenance Hatch"
 	door_color = COLOR_AMBER
-
-/obj/machinery/door/airlock/engineering/striped
-	stripe_color = COLOR_RED
 
 /obj/machinery/door/airlock/medical
 	door_color = COLOR_WHITE
@@ -177,44 +166,28 @@ var/list/airlock_overlays = list()
 
 /obj/machinery/door/airlock/glass
 	name = "Glass Airlock"
-	icon_state = "preview_glass"
+	icon_state = "closed"
 	hitsound = 'sound/effects/Glasshit.ogg'
 	maxhealth = 300
 	explosion_resistance = 5
 	opacity = 0
 	glass = 1
 
-/obj/machinery/door/airlock/centcom
-	name = "Airlock"
-	icon = 'icons/obj/doors/Doorele.dmi'
-
 /obj/machinery/door/airlock/glass/command
 	door_color = COLOR_COMMAND_BLUE
 	stripe_color = COLOR_SKY_BLUE
-
-/obj/machinery/door/airlock/glass/command/no_stripe
-	stripe_color = null
 
 /obj/machinery/door/airlock/glass/security
 	door_color = COLOR_NT_RED
 	stripe_color = COLOR_ORANGE
 
-/obj/machinery/door/airlock/glass/security/no_stripe
-	stripe_color = null
-
 /obj/machinery/door/airlock/glass/engineering
 	door_color = COLOR_AMBER
 	stripe_color = COLOR_RED
 
-/obj/machinery/door/airlock/glass/engineering/no_stripe
-	stripe_color = null
-
 /obj/machinery/door/airlock/glass/medical
 	door_color = COLOR_WHITE
 	stripe_color = COLOR_DEEP_SKY_BLUE
-
-/obj/machinery/door/airlock/glass/medical/no_stripe
-	stripe_color = null
 
 /obj/machinery/door/airlock/glass/virology
 	door_color = COLOR_WHITE
@@ -223,19 +196,6 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock/glass/mining
 	door_color = COLOR_PALE_ORANGE
 	stripe_color = COLOR_BEASTY_BROWN
-
-/obj/machinery/door/airlock/centcom/autoname/New()
-	var/area/A = get_area(src)
-	name = A.name
-	..()
-
-/obj/machinery/door/airlock/vault
-	name = "Vault"
-	icon = 'icons/obj/doors/vault.dmi'
-	explosion_resistance = 20
-	opacity = 1
-	secured_wires = 1
-	assembly_type = /obj/structure/door_assembly/door_assembly_highsecurity //Until somebody makes better sprites.
 
 /obj/machinery/door/airlock/glass/atmos
 	door_color = COLOR_AMBER
@@ -289,7 +249,7 @@ var/list/airlock_overlays = list()
 	frequency =  1380
 	locked = 1
 
-/obj/machinery/door/airlock/external/escapepod/attackby(obj/item/C, mob/user)	
+/obj/machinery/door/airlock/external/escapepod/attackby(obj/item/C, mob/user)
 	if(p_open && !arePowerSystemsOn())
 		if(isWrench(C))
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
@@ -1237,7 +1197,7 @@ About the new airlock wires panel:
 		new /obj/item/weapon/circuitboard/broken(src.loc)
 		operating = 0
 	else
-		if (!electronics) 
+		if (!electronics)
 			create_electronics()
 
 		electronics.dropInto(loc)
