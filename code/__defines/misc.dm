@@ -95,13 +95,13 @@
 #define CUSTOM_ITEM_SYNTH_CONFIG "config/custom_sprites.txt"
 #endif
 #ifndef CUSTOM_ITEM_OBJ
-#define CUSTOM_ITEM_OBJ 'icons/infinity_custom_items_obj.dmi'
+#define CUSTOM_ITEM_OBJ 'infinity/icons/customs/infinity_custom_items_obj.dmi'
 #endif
 #ifndef CUSTOM_ITEM_MOB
-#define CUSTOM_ITEM_MOB 'icons/infinity_custom_items_mob.dmi'
+#define CUSTOM_ITEM_MOB 'infinity/icons/customs/infinity_custom_items_mob.dmi'
 #endif
 #ifndef CUSTOM_ITEM_SYNTH
-#define CUSTOM_ITEM_SYNTH 'icons/infinity_custom_synthetic.dmi'
+#define CUSTOM_ITEM_SYNTH 'infinity/icons/customs/infinity_custom_synthetic.dmi'
 #endif
 
 #define WALL_CAN_OPEN 1

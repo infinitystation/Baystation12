@@ -2,62 +2,62 @@
 	name = "special detective coat"
 	desc = "Brown detective coat with emblem."
 
-	icon = 'icons/infinity_custom_sets/obj/elsas_stuff.dmi'
+	icon = 'infinity/icons/customs/elsas/obj/elsas_stuff.dmi'
 	icon_state = "elsas_trench"
 	item_state = "elsas_trench"
 
 	item_icons = list(
-		slot_wear_suit_str = 'icons/infinity_custom_sets/mob/elsas_stuff.dmi'
+		slot_wear_suit_str = 'infinity/icons/customs/elsas/mob/elsas_stuff.dmi'
 	)
 
 /obj/item/clothing/ring/elsa
 	name = "ring"
 	desc = "Family ring."
 
-	icon = 'icons/infinity_custom_sets/obj/elsas_stuff.dmi'
+	icon = 'infinity/icons/customs/elsas/obj/elsas_stuff.dmi'
 	icon_state = "elsas_ring"
 
 /obj/item/weapon/gun/projectile/revolver/mateba/elsa
 	name = "Blood Ash"
 	desc = "Special edition mateba for detective with the emerald handle."
 
-	icon = 'icons/infinity_custom_sets/obj/elsas_stuff.dmi'
+	icon = 'infinity/icons/customs/elsas/obj/elsas_stuff.dmi'
 	icon_state = "elsas_gun"
 
 /obj/item/clothing/shoes/elsa
 	name = "patent leather shoes"
 	desc = "Patent leather shoes?"
 
-	icon = 'icons/infinity_custom_sets/obj/elsas_stuff.dmi'
+	icon = 'infinity/icons/customs/elsas/obj/elsas_stuff.dmi'
 	icon_state = "elsas_shoes"
 	item_state = "elsas_shoes"
 
 	item_icons = list(
-		slot_shoes_str = 'icons/infinity_custom_sets/mob/elsas_stuff.dmi'
+		slot_shoes_str = 'infinity/icons/customs/elsas/mob/elsas_stuff.dmi'
 	)
 
 /obj/item/clothing/gloves/forensic/elsa
 	name = "gloves"
 	desc = "Specias forensic gloves."
 
-	icon = 'icons/infinity_custom_sets/obj/elsas_stuff.dmi'
+	icon = 'infinity/icons/customs/elsas/obj/elsas_stuff.dmi'
 	icon_state = "elsas_gloves"
 	item_state = "elsas_gloves"
 
 	item_icons = list(
-		slot_gloves_str = 'icons/infinity_custom_sets/mob/elsas_stuff.dmi'
+		slot_gloves_str = 'infinity/icons/customs/elsas/mob/elsas_stuff.dmi'
 	)
 
 /obj/item/clothing/under/tactical/elsa
 	name = "detective uniform"
 	desc = "Detective uniform with agents emblem"
 
-	icon = 'icons/infinity_custom_sets/obj/elsas_stuff.dmi'
+	icon = 'infinity/icons/customs/elsas/obj/elsas_stuff.dmi'
 	icon_state = "elsas_under"
 	item_state = "elsas_under"
 	worn_state = null
 	item_icons = list(
-		slot_w_uniform_str = 'icons/infinity_custom_sets/mob/elsas_stuff.dmi'
+		slot_w_uniform_str = 'infinity/icons/customs/elsas/mob/elsas_stuff.dmi'
 	)
 
 /obj/item/device/radio/headset/elsa
