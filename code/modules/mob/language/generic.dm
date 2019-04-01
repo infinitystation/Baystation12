@@ -35,13 +35,12 @@
 
 //TODO flag certain languages to use the mob-type specific say_quote and then get rid of these.
 /datum/language/common/get_spoken_verb(var/msg_end)
-	switch(msg_end)
-//		if(copytext(msg_end, length(msg_end) - 1) == "!") // it doesn't works
-//			return pick("кричит")
-		if("!")
-			return pick("восклицает")
-		if("?")
-			return ask_verb
+	if(msg_end == "!!")
+		return pick("кричит")
+	else if(copytext(msg_end, length(msg_end)) == "!")
+		return pick("восклицает")
+	else if(copytext(msg_end, length(msg_end)) == "?")
+		return pick("спрашивает")
 	return speech_verb
 
 // Galactic common languages (systemwide accepted standards).
