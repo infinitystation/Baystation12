@@ -325,10 +325,6 @@
 /decl/flooring/reinforced/shuttle/skrell/green
 	icon_base = "skrellgreen"
 
-/decl/flooring/tiling/asteroid
-	icon = 'icons/turf/floors.dmi'
-	icon_base = "asteroidfloor"
-
 /decl/flooring/crystal
 	name = "crystal floor"
 	icon = 'icons/turf/flooring/crystal.dmi'

@@ -153,9 +153,6 @@
 	icon_state = "cult"
 	initial_flooring = /decl/flooring/reinforced/cult
 
-/turf/simulated/floor/cult/airless
-	initial_gas = list(oxygen = 0, nitrogen = 0)
-
 /turf/simulated/floor/cult/cultify()
 	return
 
@@ -262,7 +259,7 @@
 	name = "floor"
 	icon_state = "techfloor_grid"
 	initial_flooring = /decl/flooring/tiling/tech/grid
-	
+
 /turf/simulated/floor/tiled/skrell
 	icon = 'icons/turf/skrellturf.dmi'
 	icon_state = "skrellblack"

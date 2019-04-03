@@ -448,7 +448,7 @@ its easier to just keep the beam vertical.
 		to_chat(user, "<span class='danger'>You can't climb there, the way is blocked.</span>")
 		return 0
 
-	var/occupied = turf_is_crowded(user)
+	var/obj/occupied = turf_is_crowded(user)
 	if(occupied)
 		to_chat(user, "<span class='danger'>There's \a [occupied] in the way.</span>")
 		return 0
@@ -473,8 +473,6 @@ its easier to just keep the beam vertical.
 	var/turf/T = get_turf(src)
 	if(!T || !istype(T))
 		return 0
-	if(iswall(T))
-		return T
 	for(var/atom/A in T.contents)
 		if(ignore && ignore == A)
 			continue

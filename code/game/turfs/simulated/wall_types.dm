@@ -119,8 +119,6 @@
 
 /turf/simulated/wall/voxshuttle/attackby()
 	return
-/turf/simulated/wall/titanium/New(var/newloc)
-	..(newloc,MATERIAL_TITANIUM)
 
 //Alien metal walls
 /turf/simulated/wall/alium
@@ -135,15 +133,6 @@
 	if(prob(explosion_resistance))
 		return
 	..()
-
-/turf/simulated/wall/crystal/New(var/newloc)
-	..(newloc,MATERIAL_CRYSTAL)
-
-/turf/simulated/wall/crystal/attackby()
-	return
-
-/turf/simulated/wall/crystal/r_wall
-	icon_state = "rgeneric"
 
 /turf/simulated/wall/crystal/r_wall/New(var/newloc)
 	..(newloc, MATERIAL_CRYSTAL, MATERIAL_CRYSTAL)

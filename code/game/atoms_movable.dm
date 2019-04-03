@@ -83,7 +83,7 @@
 
 	else if(isobj(hit_atom))
 		var/obj/O = hit_atom
-		if(!O.anchored && !istype(O, /obj/machinery/disposal))
+		if(!O.anchored)
 			step(O, src.last_move)
 		O.hitby(src,speed)
 
