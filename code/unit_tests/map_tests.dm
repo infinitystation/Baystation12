@@ -779,8 +779,8 @@ datum/unit_test/ladder_check/start_test()
 	return 1
 
 /datum/unit_test/req_access_shall_have_valid_strings/proc/is_invalid(var/value)
-	if(!istext(value))
-		return TRUE //Someone tried to use a non-string as an access. There is no case where this is allowed.
+//	if(!istext(value))
+//		return TRUE //Someone tried to use a non-string as an access. There is no case where this is allowed.
 
 	for(var/datum/access/A in accesses)
 		if(value == A.id)

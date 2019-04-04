@@ -303,7 +303,7 @@
 		underlays.Cut()
 		update_icon()
 	else
-		visible_message(SPAN_NOTICE("The cage is empty; there's nothing to take out.</span>"))
+		visible_message(SPAN_NOTICE("The cage is empty; there's nothing to take out."))
 
 /obj/structure/statue_cage/examine(mob/user)
 	. = ..()
