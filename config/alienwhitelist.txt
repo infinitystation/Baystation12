@@ -34,7 +34,7 @@ blacksoul231 - skrell
 wheatley2013 - skrell
 interl0per - skrell	
 kirill1243 - skrell	
-travelller - skrell
+diesiege - skrell
 themaybat - skrell
 salyvador - skrell
 mrnicolas - skrell
@@ -49,6 +49,7 @@ taushai - skrell
 galix - skrell
 knayu - skrell
 coldmantis13 - skrell
+s1334 - skrell
 cre77 - resomi
 s1334 - resomi
 shokumar - resomi
@@ -59,16 +60,18 @@ furrfaq - resomi
 netreson - resomi
 hardstuck - resomi
 coltrane97 - resomi
-travelller - resomi
+diesiege - resomi
 kirill1243 - resomi
 coldmantis13 - resomi
 wheatley2013 - resomi
 twinindifferent - resomi
+hodovoy - resomi
+vovghik65 - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
 coltrane97 - giant armoured serpentid
-travelller - giant armoured serpentid
+diesiege - giant armoured serpentid
 themaybat - giant armoured serpentid
 sosiskoed - giant armoured serpentid
 he11d1ver - giant armoured serpentid
@@ -79,6 +82,7 @@ portos - giant armoured serpentid
 taushai - giant armoured serpentid
 ted201 - giant armoured serpentid
 s1334 - giant armoured serpentid
+dermanic - giant armoured serpentid
 inubashirimomiji - diona
 bartstarter - diona
 wolforbykot - diona
@@ -103,6 +107,7 @@ s1334 - vox
 cre77 - vox
 kirill1243 - vox
 forrya - vox
+diesiege - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 alchemisthero - unathi
@@ -142,15 +147,15 @@ denmag - tajaran
 solark - tajaran
 forrya - tajaran
 arhod - tajaran
-s1334 - tajaran
-cuddleandtea - tajaran
+kordvik - tajaran
+wolforbykot - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
 gumboldty - adherent
-dermanic - adherent 
 sarumyn - adherent
 kareta - adherent
 s1334 - adherent
 wolfetd - adherent
 hardstuck - adherent
+jacking - adherent
 redknighthero - bionic

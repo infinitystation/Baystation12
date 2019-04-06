@@ -1,6 +1,8 @@
 
+#include "salvagers.dmm"
+
 /area/salvage/
-	name = "vi kto takie ya vas ne zval idite....."
+	name = "salvage"
 	icon = 'infinity/icons/turf/salvage_areas.dmi'
 
 /area/salvage/engineering
@@ -27,13 +29,12 @@
 	name = "Captain's room"
 	icon_state = "cpt"
 
-/obj/effect/overmap/ship/landable/salvage
+/obj/effect/overmap/ship/salvage
 	name = "PSV Pancake"
 	fore_dir = WEST
 	vessel_mass = 10
 	start_x = 4
 	start_y = 5
-	base = TRUE
 	color = LIGHT_COLOR_PURPLE
 	icon_state = "ship_salvage"
 	moving_state = "ship_salvage_moving"
@@ -41,7 +42,7 @@
 	burn_delay = 0.5 SECONDS
 
 /decl/submap_archetype/derelict/salvage/
-	descriptor = "salvage"
+	descriptor = "Salvage"
 	map = "PSV Pancake"
 	crew_jobs = list(
 		/datum/job/submap/salvage_capt,
@@ -49,7 +50,7 @@
 		/datum/job/submap/salvage_sec
 	)
 
-datum/map_template/ruin/away_site/salvagers
+/datum/map_template/ruin/away_site/salvagers
 	name = "PSV Pancake"
 	id = "awaysite_salvagers"
 	description = "A light trader vessel."
@@ -58,6 +59,11 @@ datum/map_template/ruin/away_site/salvagers
 	cost = 0
 	accessibility_weight = 10
 	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
+
+/obj/machinery/computer/shuttle_control/multi/salvage
+	name = "shuttle control console"
+	req_access = list(access_salvage)
+	shuttle_tag = "Salvage"
 
 /*/map/salvagers
 	allowed_jobs = list(/datum/job/submap/salvage_capt, /datum/job/submap/salvage_eng, /datum/job/submap/salvage_sec)*/
@@ -160,8 +166,9 @@ datum/map_template/ruin/away_site/salvagers
 /decl/hierarchy/outfit/job/sierra/salvage_eng
 	name = OUTFIT_JOB_NAME("Salvage vessel - Engineer")
 	uniform = /obj/item/clothing/under/hazard
-	shoes = /obj/item/clothing/shoes/brown
+	shoes = /obj/item/clothing/shoes/workboots
 	id_type = /obj/item/weapon/card/id/sierra/salvage/eng
+	r_pocket = /obj/item/device/radio/off
 
 /decl/hierarchy/outfit/job/sierra/salvage_sec
 	name = OUTFIT_JOB_NAME("Salvage vessel - Security")
@@ -169,12 +176,14 @@ datum/map_template/ruin/away_site/salvagers
 	suit = /obj/item/clothing/suit/armor/pcarrier/light
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/weapon/card/id/sierra/salvage/sec
+	r_pocket = /obj/item/device/radio/off
 
 /decl/hierarchy/outfit/job/sierra/salvage_capt
 	name = OUTFIT_JOB_NAME("Salvage vessel - Captain - sierra")
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/sierra/salvage/leader
+	r_pocket = /obj/item/device/radio/off
 
 /obj/item/weapon/card/id/sierra/salvage/eng
 	desc = "An identification card issued to Merchants-salvagers. This one have orange stripe."
@@ -197,3 +206,7 @@ datum/map_template/ruin/away_site/salvagers
 /obj/item/modular_computer/console/preset/merchant/salvage/install_default_programs()
 	hard_drive.store_file(new/datum/computer_file/program/merchant/salvage())
 	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
+
+/obj/item/weapon/paper/salvage_pacman
+	name = "note"
+	info = "П.А.К.М.А.Н. включать на второю мощность. Хватает для питания корабля, и не выделяет радиацию."

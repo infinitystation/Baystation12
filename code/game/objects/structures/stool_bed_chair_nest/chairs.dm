@@ -392,3 +392,47 @@
 
 /obj/structure/bed/chair/shuttle/white/New(var/newloc,var/newmaterial)
 	..(newloc,MATERIAL_STEEL,MATERIAL_COTTON)
+
+//Deconstruct
+
+/obj/structure/bed/chair/comfy/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(isWrench(W))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		to_chat(user, "<span class='notice'>You deconstruct comfy chair</span>")
+		new /obj/item/stack/material/steel(src.loc, 3)
+		qdel(src)
+
+/obj/structure/bed/chair/office/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(isWrench(W))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		to_chat(user, "<span class='notice'>You deconstruct office chair</span>")
+		new /obj/item/stack/material/steel(src.loc, 5)
+		qdel(src)
+
+/obj/structure/bed/chair/office/comfy/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(isWrench(W))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		to_chat(user, "<span class='notice'>You deconstruct office comfy chair</span>")
+		new /obj/item/stack/material/steel(src.loc, 7)
+		qdel(src)
+
+/obj/structure/bed/chair/padded/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(isWrench(W))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		to_chat(user, "<span class='notice'>You deconstruct padded chair</span>")
+		new /obj/item/stack/material/steel(src.loc, 2)
+		qdel(src)
+
+/obj/structure/bed/chair/armchair/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(isWrench(W))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		to_chat(user, "<span class='notice'>You deconstruct comfy chair</span>")
+		new /obj/item/stack/material/steel(src.loc, 4)
+		qdel(src)
+
+/obj/structure/bed/chair/wood/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(isWrench(W))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		to_chat(user, "<span class='notice'>You deconstruct wood chair</span>")
+		new /obj/item/stack/material/wood(src.loc, 3)
+		qdel(src)

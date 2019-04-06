@@ -143,7 +143,7 @@
 /obj/item/weapon/paper/liason_note
 	name = "note"
 	info = {"
-	<i>First - pill, second - bullet. No surrender.<br>
+	<i>Eat pill. No surrender.<br>
 	H.B.</i>
 	"}
 
