@@ -26,6 +26,10 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 		ui.set_initial_data(data)
 		ui.open()
 
-/datum/nano_module/supply/Topic(href, href_list)
+/datum/nano_module/teascord/Topic(href, href_list)
 	if(..())
+		return 1
+
+	if(href_list["select_tab"])
+		tab = href_list["select_tab"]
 		return 1
