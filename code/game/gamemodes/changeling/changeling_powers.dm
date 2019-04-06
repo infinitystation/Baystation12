@@ -58,12 +58,6 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	verbs += /datum/changeling/proc/EvolutionMenu
 	add_language("Changeling")
 
-	if(iscarbon(src))
-		var/mob/living/carbon/C = src
-		var/obj/item/organ/internal/brain/brain = C.internal_organs_by_name[BP_BRAIN]
-		if(brain)
-			brain.fake_brain = 1
-
 	var/lesser_form = !ishuman(src)
 
 	if(!powerinstances.len)
@@ -87,7 +81,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	var/mob/living/carbon/human/H = src
 	if(istype(H))
-		var/datum/absorbed_dna/newDNA = new(H.real_name, H.dna, H.species.name, H.languages, H.flavor_texts)
+		var/datum/absorbed_dna/newDNA = new(H.real_name, H.dna, H.species.name, H.languages)
 		absorbDNA(newDNA)
 
 	return 1
@@ -95,13 +89,6 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 //removes our changeling verbs
 /mob/proc/remove_changeling_powers()
 	if(!mind || !mind.changeling)	return
-
-	if(iscarbon(src))
-		var/mob/living/carbon/C = src
-		var/obj/item/organ/internal/brain/brain = C.internal_organs_by_name[BP_BRAIN]
-		if(brain)
-			brain.fake_brain = 0
-
 	for(var/datum/power/changeling/P in mind.changeling.purchasedpowers)
 		if(P.isVerb)
 			verbs -= P.verbpath
@@ -168,10 +155,6 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 		to_chat(src, "<span class='warning'>[T] is not compatible with our biology.</span>")
 		return
 
-	if(T.isSynthetic())
-		to_chat(src, "<span class='warning'>We cannot extract DNA from a synthetic life form!</span>")
-		return
-
 	if(T.species.species_flags & SPECIES_FLAG_NO_SCAN)
 		to_chat(src, "<span class='warning'>We cannot extract DNA from this creature!</span>")
 		return
@@ -225,7 +208,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	changeling_update_languages(changeling.absorbed_languages)
 
-	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages, T.flavor_texts)
+	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages)
 	absorbDNA(newDNA)
 	if(mind && T.mind)
 		mind.store_memory("[T.real_name]'s memories:")
@@ -325,7 +308,6 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 		H.set_species(newSpecies,1)
 		H.b_type = chosen_dna.dna.b_type
 		H.sync_organ_dna()
-		H.flavor_texts = chosen_dna.flavour_texts ? chosen_dna.flavour_texts.Copy() : null
 
 	domutcheck(src, null)
 	src.UpdateAppearance()
@@ -832,30 +814,8 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 		to_chat(src, "<span class='notice'>That species must be absorbed directly.</span>")
 		return
 
-	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages, T.flavor_texts)
+	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages)
 	absorbDNA(newDNA)
 
 	SSstatistics.add_field_details("changeling_powers","ED")
-	return 1
-
-/mob/proc/changeling_dissonant_shriek()
-	set category = "Changeling"
-	set name = "Dissonant Shriek (40)"
-	set desc = "Shift your vocal cords to release a high-frequency sound that overloads nearby electronics."
-
-	var/datum/changeling/changeling = changeling_power(40, 0)
-	if(!changeling) return 0
-	changeling.chem_charges -= 40
-
-	if(ishuman(usr))
-		var/mob/living/carbon/human/H = usr
-		if(!H.is_ventcrawling)
-			for(var/obj/machinery/light/L in range(5, usr))
-				L.flicker()
-				if(prob(30))
-					L.on = 1
-					L.broken()
-			empulse(get_turf(usr), 2, 4, 1)
-		else
-			to_chat(src, "<span class='notice'>We cannot do this in vents...</span>")
 	return 1

@@ -874,7 +874,7 @@ datum/objective/heist/salvage
 	if(target) explanation_text = "Sacrifice [target.name], the [target.assigned_role]. You will need the sacrifice rune and three acolytes to do so."
 
 /datum/objective/cult/sacrifice/check_completion()
-	return (target && GLOB.cult && GLOB.cult.sacrificed.Find(target))
+	return (target && GLOB.cult && !GLOB.cult.sacrificed.Find(target))
 
 /datum/objective/rev/find_target()
 	..()

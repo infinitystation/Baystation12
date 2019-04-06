@@ -58,12 +58,6 @@
 	desc = "Toxins Lab"
 	region = ACCESS_REGION_RESEARCH
 
-/var/const/access_genetics = 9
-/datum/access/genetics
-	id = access_genetics
-	desc = "Genetics Lab"
-	region = ACCESS_REGION_MEDBAY
-
 /var/const/access_engine = "ACCESS_ENGINEERING" //10
 /datum/access/engine
 	id = access_engine
@@ -262,16 +256,11 @@
 	desc = "Primary Network"
 	region = ACCESS_REGION_RESEARCH
 
-// /var/const/free_access_id = 43
-// /var/const/free_access_id = 44
-
 /var/const/access_surgery = "ACCESS_SURGERY" //45
 /datum/access/surgery
 	id = access_surgery
 	desc = "Surgery"
 	region = ACCESS_REGION_MEDBAY
-
-// /var/const/free_access_id = 46
 
 /var/const/access_research = "ACCESS_RESEARCH" //47
 /datum/access/research
@@ -296,14 +285,6 @@
 	id = access_mailsorting
 	desc = "Cargo Office"
 	region = ACCESS_REGION_SUPPLY
-
-/var/const/access_fist_mate = 51
-/datum/access/fist_mate
-	id = access_fist_mate
-	desc = "Fist Mate"
-	access_type = ACCESS_TYPE_NONE
-
-// /var/const/free_access_id = 52
 
 /var/const/access_heads_vault = "ACCESS_VAULT"  //53
 /datum/access/heads_vault
