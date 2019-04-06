@@ -14,8 +14,8 @@
 	name = "Teascord"
 	var/tab = 0 // 0: Login screen. 0.1: Login. 0.2 Registration. 1: Contacts. 1.1 Contact Search 1.2: Friendlist. 1:3: Blacklist. 2: Conversation screen.
 
-	var/stored_login = ""
-	var/stored_password = ""
+	var/stored_login = "Sample"
+	var/stored_password = "Text"
 	var/error_message = ""
 
 	var/voice = TRUE												// Can I hear the interlocutor?
@@ -31,13 +31,14 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 	data["tab"] = tab
 	data["error_message"] = error_message
 
-	if(tab >= 1)
-		data["voice"] = voice
-		data["microphone"] = microphone
-		data["camera"] = camera
-	else
-		data["stored_login"] = stored_login
-		data["stored_password"] = stars(stored_password, 0)
+	switch(tab)
+		if(0)
+			data["stored_login"] = stored_login
+			data["stored_password"] = stars(stored_password, 0)
+		if(1)
+			data["voice"] = voice
+			data["microphone"] = microphone
+			data["camera"] = camera
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -83,6 +84,18 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 
 	if(href_list["select_tab"])
 		tab = href_list["select_tab"]
+		return 1
+
+	if(href_list["new_acc"])
+		var/log = input(user,"Create login'", "Login")
+		if(!log)
+			return 1
+		var/pas    = input(user,"Create password", "Password")
+		if(!pas)
+			return 1
+		var/datum/computer_file/data/teascord_account/new_acc = new/datum/computer_file/data/teascord_account()
+		new_acc.login = log
+		new_acc.password = pas
 		return 1
 
 	if(href_list["edit_login"])

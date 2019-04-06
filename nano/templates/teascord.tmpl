@@ -1,5 +1,19 @@
 {{if data.tab == 0}}
+	<b>Welcome to Teascord! Please log in or create new account.</b>
+	<div class="itemLabel">
+		Login:
+	</div>
+	<div class="itemContent">
+		{{:data.stored_login}}&nbsp
+	</div>
+	<div class="itemLabel">
+		Password:
+	</div>
+	<div class="itemContent">
+		{{:data.stored_password}}&nbsp
+	</div>
 	{{:helper.link('Log In', 'locked', {'select_tab' : 1})}}
-{{else data.tab ==1}}
+	{{:helper.link('Create account', 'pencil', {'new_acc' : 1})}}
+{{else data.tab == 1}}
 	You got bamboozled!
 {{/if}}
