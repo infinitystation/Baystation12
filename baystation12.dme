@@ -2282,6 +2282,7 @@
 #include "code\modules\modular_computers\NTNet\emails\email_account.dm"
 #include "code\modules\modular_computers\NTNet\emails\email_message.dm"
 #include "code\modules\modular_computers\NTNet\NTNRC\conversation.dm"
+#include "code\modules\modular_computers\NTNet\teascord\teascord_account.dm"
 #include "code\modules\modular_computers\terminal\terminal.dm"
 #include "code\modules\modular_computers\terminal\terminal_commands.dm"
 #include "code\modules\modular_computers\terminal\terminal_remote.dm"

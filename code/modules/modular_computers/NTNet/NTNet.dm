@@ -11,6 +11,7 @@ var/global/datum/ntnet/ntnet_global = new()
 	var/list/chat_channels = list()
 	var/list/fileservers = list()
 	var/list/email_accounts = list()				// I guess we won't have more than 999 email accounts active at once in single round, so this will do until Servers are implemented someday.
+	var/list/teascord_accounts = list()
 	var/list/available_reports = list()             // A list containing one of each available report datums, used for the report editor program.
 	var/list/banned_nids = list()
 	// Amount of logs the system tries to keep in memory. Keep below 999 to prevent byond from acting weirdly.
