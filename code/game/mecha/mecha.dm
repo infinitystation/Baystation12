@@ -91,8 +91,8 @@
 
 	return cell.drain_power(drain_check)
 
-/obj/mecha/Initialize()
-	. = ..()
+/obj/mecha/New()
+	..()
 	events = new
 
 	icon_state += "-open"
@@ -105,7 +105,9 @@
 	add_iterators()
 	removeVerb(/obj/mecha/verb/disconnect_from_port)
 	log_message("[src.name] created.")
+	loc.Entered(src)
 	mechas_list += src //global mech list
+	return
 
 /obj/mecha/Destroy()
 	src.go_out()
@@ -1600,7 +1602,7 @@
 	if(href_list["add_req_access"] && add_req_access && F.getObj("id_card"))
 		if(!in_range(src, usr))	return
 		sound_to(usr, sound('sound/mecha/UI_SCI-FI_Tone_10_stereo.ogg',channel=4, volume=100))
-		operation_req_access += F.getNum("add_req_access")
+		operation_req_access += F.get("add_req_access")
 		output_access_dialog(F.getObj("id_card"),F.getMob("user"))
 		return
 	if(href_list["del_req_access"] && add_req_access && F.getObj("id_card"))
