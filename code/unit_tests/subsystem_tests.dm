@@ -4,7 +4,7 @@
 /datum/unit_test/subsystem_atom_shall_have_no_bad_init_calls/start_test()
 	if(SSatoms.BadInitializeCalls.len)
 		log_bad(jointext(SSatoms.InitLog(), null))
-		skip("[SSatoms] had bad initialization calls.") //was 'fail' - because we have special code of cleanable objects.
+		fail("[SSatoms] had bad initialization calls.")
 	else
 		pass("[SSatoms] had no bad initialization calls.")
 	return 1
