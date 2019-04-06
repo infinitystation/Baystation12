@@ -24,7 +24,7 @@
 	body_parts_covered = 0
 
 /obj/item/clothing/under/rank/security
-	name = "security guard's jumpsuit"
+	name = "security officer's jumpsuit"
 	desc = "It's made of a slightly sturdier material than standard jumpsuits, to allow for robust protection."
 	icon_state = "security"
 	item_state = "r_suit"
@@ -43,7 +43,7 @@
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/rank/security2
-	name = "security guard's uniform"
+	name = "security officer's uniform"
 	desc = "It's made of a slightly sturdier material, to allow for robust protection."
 	icon_state = "redshirt2"
 	item_state = "r_suit"
@@ -181,7 +181,7 @@
  */
 
 /obj/item/clothing/under/rank/security/navyblue
-	name = "security guard's uniform"
+	name = "security officer's uniform"
 	desc = "The latest in fashionable security outfits."
 	icon_state = "officerblueclothes"
 	item_state = "ba_suit"

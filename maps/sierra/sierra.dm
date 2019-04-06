@@ -34,6 +34,7 @@
 
 	#include "items/clothing/clothing.dm"
 	#include "items/clothing/exploration.dm"
+	#include "items/clothing/override.dm"
 	#include "items/clothing/solgov-infinity.dm"
 	#include "items/clothing/solgov-accessory.dm"
 	#include "items/clothing/solgov-armor.dm"
