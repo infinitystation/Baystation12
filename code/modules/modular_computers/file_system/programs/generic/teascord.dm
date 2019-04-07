@@ -12,10 +12,10 @@
 
 /datum/nano_module/teascord
 	name = "Teascord"
-	var/tab = 0 // 0: Login screen. 0.1: Login. 0.2 Registration. 1: Contacts. 1.1 Contact Search 1.2: Friendlist. 1:3: Blacklist. 2: Conversation screen.
+	var/tab = 0 // 0: Log In screen, 1: Sign In screen
 
-	var/stored_login = "Sample"
-	var/stored_password = "Text"
+	var/stored_login = ""
+	var/stored_password = ""
 	var/error_message = ""
 
 	var/voice = TRUE												// Can I hear the interlocutor?
@@ -36,6 +36,7 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 			data["stored_login"] = stored_login
 			data["stored_password"] = stars(stored_password, 0)
 		if(1)
+		if(2)
 			data["voice"] = voice
 			data["microphone"] = microphone
 			data["camera"] = camera
@@ -67,6 +68,7 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 	if(use_pass == target.password)
 		current_account = target
 		current_account.connected_clients |= src
+		tab = 1
 		return 1
 	else
 		error_message = "Invalid Password"

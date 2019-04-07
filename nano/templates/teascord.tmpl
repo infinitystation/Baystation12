@@ -1,19 +1,15 @@
 {{if data.tab == 0}}
-	<b>Welcome to Teascord! Please log in or create new account.</b>
-	<div class="itemLabel">
-		Login:
+	<h2>Welcome to Teascord! Please log in or create new account.</h2>
+	<div>
+		<span style="color: #e9c183">Login:</span> {{:data.stored_login}}
 	</div>
-	<div class="itemContent">
-		{{:data.stored_login}}&nbsp
+	<div>
+		<span style="color: #e9c183">Password:</span>{{:data.stored_password}}
 	</div>
-	<div class="itemLabel">
-		Password:
-	</div>
-	<div class="itemContent">
-		{{:data.stored_password}}&nbsp
-	</div>
-	{{:helper.link('Log In', 'locked', {'select_tab' : 1})}}
+	{{:helper.link('Change login', 'pencil', {'edit_login' : 1})}}
+	{{:helper.link('Change password', 'pencil', {'edit_password' : 1})}}
+	{{:helper.link('Log In', 'locked', {'login' : 1})}}
 	{{:helper.link('Create account', 'pencil', {'new_acc' : 1})}}
 {{else data.tab == 1}}
-	You got bamboozled!
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 {{/if}}
