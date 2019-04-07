@@ -1,3 +1,7 @@
+#define LOGIN_SCREEN 1
+#define REGISTRATION_SCREEN 2
+#define CONTACTS_SCREEN 3
+
 /datum/computer_file/program/teascord
 	filename = "teascord"
 	filedesc = "Teascord"
@@ -10,9 +14,23 @@
 	requires_ntnet_feature = NTNET_COMMUNICATION
 	nanomodule_path = /datum/nano_module/teascord
 
+/datum/computer_file/program/teascord/run_program()
+    . = ..()
+    if(NM)
+        var/datum/nano_module/teascord/NMT = NM
+        if(NMT.current_account)
+            NMT.current_account.connected_clients |= NMT
+
+/datum/computer_file/program/teascord/kill_program()
+    if(NM)
+        var/datum/nano_module/teascord/NMT = NM
+        if(NMT.current_account)
+            NMT.current_account.connected_clients -= NMT
+    . = ..()
+
 /datum/nano_module/teascord
 	name = "Teascord"
-	var/tab = 0 // 0: Log In screen, 1: Sign In screen, 2: Contacts
+	var/tab = LOGIN_SCREEN
 
 	var/stored_login = ""
 	var/stored_password = ""
@@ -66,7 +84,8 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 	if(use_pass == target.password)
 		current_account = target
 		current_account.connected_clients |= src
-		tab = 2
+		clear_stored()
+		tab = CONTACTS_SCREEN
 		return 1
 	else
 		error_message = "Invalid Password"
@@ -78,17 +97,30 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 			continue
 		if(stored_login && stored_login == account.login)
 			error_message = "This login already taken"
-			return 1
+			return
+
+	if(!stored_login)
+		error_message = "Login not entered."
+		return
+
+	if(!stored_password)
+		error_message = "Password not entered."
+		return
 
 	var/datum/computer_file/data/teascord_account/new_acc = new/datum/computer_file/data/teascord_account()
 	new_acc.login = stored_login
 	new_acc.password = stored_password
-	tab = 0
+	clear_stored()
+	tab = LOGIN_SCREEN
+
+/datum/nano_module/teascord/proc/clear_stored()
+	stored_login = ""
+	stored_password = ""
 
 /datum/nano_module/teascord/proc/log_out()
 	if(current_account)
 		current_account.connected_clients -= src
-	tab = 0
+	tab = LOGIN_SCREEN
 	current_account = null
 
 /datum/nano_module/teascord/Topic(href, href_list)
@@ -98,6 +130,7 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 
 	if(href_list["select_tab"])
 		tab = href_list["select_tab"]
+		clear_stored()
 		if(error_message)
 			error_message = ""
 		return 1
@@ -169,3 +202,7 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 	if(href_list["remove_from_blacklist"])
 
 		return 1
+
+#undef LOGIN_SCREEN
+#undef REGISTRATION_SCREEN
+#undef CONTACTS_SCREEN

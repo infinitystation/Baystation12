@@ -1,4 +1,4 @@
-{{if data.tab == 0}}
+{{if data.tab == 1}}
 	<h2>Welcome to Teascord! Please log in or create new account.</h2>
 	<div>
 		<span style="color: #e9c183">Login:</span> {{:data.stored_login}}
@@ -9,9 +9,9 @@
 	{{:helper.link('Change login', 'pencil', {'edit_login' : 1})}}
 	{{:helper.link('Change password', 'pencil', {'edit_password' : 1})}}
 	{{:helper.link('Log In', 'locked', {'login' : 2})}}
-	{{:helper.link('Sign In', 'pencil', {'select_tab' : 1})}}
+	{{:helper.link('Sign In', 'pencil', {'select_tab' : 2})}}
 	<div>{{:data.error_message}}</div>
-{{else data.tab == 1}}
+{{else data.tab == 2}}
 	<h2>Create new account.</h2>
 	<div>
 		<span style="color: #e9c183">Login:</span> {{:data.stored_login}}
@@ -22,8 +22,8 @@
 	{{:helper.link('Change login', 'pencil', {'edit_login' : 1})}}
 	{{:helper.link('Change password', 'pencil', {'edit_password' : 1})}}
 	{{:helper.link('Create new account', '', {'new_acc' : 1})}}
-	{{:helper.link('Back to login', '', {'select_tab' : 0})}}
+	{{:helper.link('Back to login', '', {'select_tab' : 1})}}
 	<div>{{:data.error_message}}</div>
-{{else data.tab == 2}}
+{{else data.tab == 3}}
 	{{:helper.link('Log Out', '', {'logout' : 1})}}
 {{/if}}
