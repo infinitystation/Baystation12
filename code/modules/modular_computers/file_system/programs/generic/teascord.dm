@@ -12,7 +12,7 @@
 
 /datum/nano_module/teascord
 	name = "Teascord"
-	var/tab = 0 // 0: Log In screen, 1: Sign In screen
+	var/tab = 0 // 0: Log In screen, 1: Sign In screen, 2: Contacts
 
 	var/stored_login = ""
 	var/stored_password = ""
@@ -30,16 +30,14 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 
 	data["tab"] = tab
 	data["error_message"] = error_message
+	data["stored_login"] = stored_login
+	data["stored_password"] = stars(stored_password, 0)
 
-	switch(tab)
-		if(0)
-			data["stored_login"] = stored_login
-			data["stored_password"] = stars(stored_password, 0)
-		if(1)
+	/*switch(tab)
 		if(2)
 			data["voice"] = voice
 			data["microphone"] = microphone
-			data["camera"] = camera
+			data["camera"] = camera*/
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -68,15 +66,29 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 	if(use_pass == target.password)
 		current_account = target
 		current_account.connected_clients |= src
-		tab = 1
+		tab = 2
 		return 1
 	else
 		error_message = "Invalid Password"
 		return 0
 
+/datum/nano_module/teascord/proc/create_account()
+	for(var/datum/computer_file/data/teascord_account/account in ntnet_global.teascord_accounts)
+		if(!account)
+			continue
+		if(stored_login && stored_login == account.login)
+			error_message = "This login already taken"
+			return 1
+
+	var/datum/computer_file/data/teascord_account/new_acc = new/datum/computer_file/data/teascord_account()
+	new_acc.login = stored_login
+	new_acc.password = stored_password
+	tab = 0
+
 /datum/nano_module/teascord/proc/log_out()
 	if(current_account)
 		current_account.connected_clients -= src
+	tab = 0
 	current_account = null
 
 /datum/nano_module/teascord/Topic(href, href_list)
@@ -86,18 +98,12 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 
 	if(href_list["select_tab"])
 		tab = href_list["select_tab"]
+		if(error_message)
+			error_message = ""
 		return 1
 
 	if(href_list["new_acc"])
-		var/log = input(user,"Create login'", "Login")
-		if(!log)
-			return 1
-		var/pas    = input(user,"Create password", "Password")
-		if(!pas)
-			return 1
-		var/datum/computer_file/data/teascord_account/new_acc = new/datum/computer_file/data/teascord_account()
-		new_acc.login = log
-		new_acc.password = pas
+		create_account()
 		return 1
 
 	if(href_list["edit_login"])
