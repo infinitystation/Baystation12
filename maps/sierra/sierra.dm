@@ -15,6 +15,7 @@
 	#include "sierra_renames.dm"
 	#include "sierra_security_state.dm"
 	#include "sierra_shuttles.dm"
+	#include "sierra_turfs.dm"
 	#include "sierra_unit_testing.dm"
 
 	#include "datums/uniforms.dm"
@@ -70,8 +71,9 @@
 	#include "machinery/vendors.dm"
 
 	#include "structures/closets.dm"
-	#include "structures/signs.dm"
 	#include "structures/other.dm"
+	#include "structures/override.dm"
+	#include "structures/signs.dm"
 
 	#include "structures/closets/armory.dm"
 	#include "structures/closets/command.dm"

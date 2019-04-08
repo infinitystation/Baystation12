@@ -179,7 +179,7 @@
 	waypoint_offsite = "nav_petrov_out"
 	logging_home_tag = "nav_petrov_start"
 	logging_access = access_petrov_helm
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/sierra
 
 /datum/shuttle/autodock/ferry/petrov/New(_name, var/obj/effect/shuttle_landmark/initial_location)
 	shuttle_area = subtypesof(/area/shuttle/petrov)
@@ -579,7 +579,7 @@
 	fuel_consumption = 4
 	logging_home_tag = "nav_hangar_calypso"
 	logging_access = access_expedition_shuttle_helm
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/sierra
 
 /obj/effect/shuttle_landmark/sierra/hangar/exploration_shuttle
 	name = "Charon Hangar"
@@ -625,7 +625,7 @@
 	logging_home_tag = "nav_hangar_guppy"
 	logging_access = access_guppy_helm
 	skill_needed = SKILL_NONE
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling/sierra
 
 /obj/effect/shuttle_landmark/sierra/hangar/guppy
 	name = "Guppy Hangar"
