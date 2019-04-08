@@ -58,8 +58,8 @@
 	else
 		icon_state = "mpistolen-empty"
 
-	name = "C-20r submachine gun"
 /obj/item/weapon/gun/projectile/automatic/merc_smg
+	name = "C-20r submachine gun"
 	desc = "The NanoTrasen C-20r is a lightweight and rapid firing SMG, for when you REALLY need someone dead. Has a 'Per falcis, per pravitas' buttstamp."
 	icon = 'icons/obj/guns/merc_smg.dmi'
 	icon_state = "c20r"
@@ -93,8 +93,8 @@
 	else
 		icon_state = "c20r"
 
-	name = "STS-35 assault rifle"
 /obj/item/weapon/gun/projectile/automatic/assault_rifle
+	name = "STS-35 assault rifle"
 	desc = "The rugged STS-35 is a durable automatic weapon of a make popular on the frontier worlds. Originally produced by Hephaestus. The serial number has been scratched off."
 	icon = 'icons/obj/guns/assault_rifle.dmi'
 	icon_state = "arifle"
@@ -131,8 +131,8 @@
 		icon_state = "arifle-empty"
 		wielded_item_state = "arifle-wielded-empty"
 
-	name = "WT-550 submachine gun"
 /obj/item/weapon/gun/projectile/automatic/sec_smg
+	name = "WT-550 submachine gun"
 	desc = "The WT-550 Saber is a cheap self-defense weapon, mass-produced by Ward-Takahashi for paramilitary and private use."
 	icon = 'icons/obj/guns/sec_smg.dmi'
 	icon_state = "wt550"
@@ -163,8 +163,8 @@
 	else
 		icon_state = "wt550"
 
-	name = "Z8 carabine"
 /obj/item/weapon/gun/projectile/automatic/bullpup_rifle
+	name = "Z8 carabine"
 	desc = "The Hephaestus Industries Z8 Bulldog is an older model bullpup carbine. Makes you feel like a space marine when you hold it."
 	icon = 'icons/obj/guns/bullpup_rifle.dmi'
 	icon_state = "carbine"
@@ -242,7 +242,7 @@
 	name = "L6 machine gun"
 	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. Has 'Aussec Armoury- 2281' engraved on the reciever." //probably should refluff this
 	icon = 'icons/obj/guns/saw.dmi'
-	icon_state = "l6closed100"
+	icon_state = "l6closed50"
 	item_state = "l6closedmag"
 	w_class = ITEM_SIZE_HUGE
 	bulk = 10
@@ -300,7 +300,7 @@
 /obj/item/weapon/gun/projectile/automatic/l6_saw/on_update_icon()
 	..()
 	if(istype(ammo_magazine, /obj/item/ammo_magazine/box))
-		icon_state = "l6[cover_open ? "open" : "closed"][round(ammo_magazine.stored_ammo.len, 25)]"
+		icon_state = "l6[cover_open ? "open" : "closed"][round(ammo_magazine.stored_ammo.len, 10)]"
 		item_state = "l6[cover_open ? "open" : "closed"]"
 	else if(ammo_magazine)
 		icon_state = "l6[cover_open ? "open" : "closed"]mag-under"
