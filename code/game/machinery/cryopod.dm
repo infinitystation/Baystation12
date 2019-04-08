@@ -390,7 +390,7 @@
 	for(var/datum/objective/O in all_objectives)
 		// We don't want revs to get objectives that aren't for heads of staff. Letting
 		// them win or lose based on cryo is silly so we remove the objective.
-		if(O.target == occupant.mind)
+		if(O.target == occupant.mind && O.target)
 			if(O.owner && O.owner.current)
 				to_chat(O.owner.current, "<span class='warning'>You get the feeling your target is no longer within your reach...</span>")
 			qdel(O)

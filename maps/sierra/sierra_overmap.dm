@@ -34,6 +34,7 @@
 		"nav_deck2_guppy",
 		"nav_deck3_guppy",
 		"nav_deck4_guppy",
+		"nav_deck1_salvage",
 		"nav_bridge_guppy",
 		"nav_hangar_aquila",
 		"nav_deck1_aquila",
@@ -41,6 +42,7 @@
 		"nav_deck3_aquila",
 		"nav_deck4_aquila",
 		"nav_bridge_aquila"
+
 	)
 
 /obj/effect/overmap/ship/landable/exploration_shuttle

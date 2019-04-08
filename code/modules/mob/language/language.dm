@@ -150,11 +150,12 @@
 	return 1
 
 /datum/language/proc/get_spoken_verb(var/msg_end)
-	switch(msg_end)
-		if("!")
-			return exclaim_verb
-		if("?")
-			return ask_verb
+	if(msg_end == "!!")
+		return pick("кричит")
+	else if(copytext(msg_end, length(msg_end)) == "!")
+		return exclaim_verb
+	else if(copytext(msg_end, length(msg_end)) == "?")
+		return ask_verb
 	return speech_verb
 
 /datum/language/proc/can_speak_special(var/mob/speaker)

@@ -510,6 +510,11 @@
 	name =  "Southwest of Fourth deck"
 	landmark_tag = "nav_ert_deck1"
 
+/obj/effect/shuttle_landmark/sierra/deck1/salvage
+	name = "Sierra - Docking Port"
+	landmark_tag = "nav_deck1_salvage"
+	docking_controller = "nuke_shuttle_dock_airlock"
+
 /obj/effect/shuttle_landmark/ert/deck2
 	name = "Northwest of Third deck"
 	landmark_tag = "nav_ert_deck2"

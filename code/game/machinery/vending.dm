@@ -1082,7 +1082,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/cans/artbru = 20,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/square/boda = 20,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/square/bodaplus = 20)
-	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/space_up = 300) // TODO Russian cola can
+	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/space_up = 30) // TODO Russian cola can
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
 /obj/machinery/vending/tool

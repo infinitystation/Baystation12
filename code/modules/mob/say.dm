@@ -64,16 +64,18 @@
 	return 0
 
 /mob/proc/say_quote(var/message, var/datum/language/speaking = null)
-	var/ending = copytext(message, length(message))
+	var/ending = copytext(message, length(message) - 1)
 	if(speaking)
 		return speaking.get_spoken_verb(ending)
 
 	var/verb = pick(speak_emote)
 	if(verb == "говорит") //a little bit of a hack, but we can't let speak_emote default to an empty list without breaking other things
-		if(ending == "!")
-			verb = pick("восклицает","кричит")
-		else if(ending == "?")
-			verb ="спрашивает"
+		if(ending == "!!")
+			verb = "кричит"
+		else if(copytext(ending, length(ending)) == "!")
+			verb = pick("восклицает")
+		else if(copytext(ending, length(ending)) == "?")
+			verb = "спрашивает"
 	return verb
 
 /mob/proc/get_ear()
