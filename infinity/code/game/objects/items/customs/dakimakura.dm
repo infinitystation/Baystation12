@@ -1,7 +1,7 @@
 /obj/item/toy/plushie/dakimakura
 	name = "dakimakura"
 	desc = "..."
-	icon = 'icons/infinity_custom_items_obj.dmi'
+	icon = CUSTOM_ITEM_OBJ
 	icon_state = "dakimakura_0"
 	var/state = 0
 

@@ -2,12 +2,17 @@
  * Sierra Excavation
  */
 
+/decl/closet_appearance/secure_closet/sierra/excavation
+	extra_decals = list(
+		"stripe_vertical_left_full" =  COLOR_PURPLE_GRAY,
+		"stripe_vertical_right_full" = COLOR_PURPLE_GRAY,
+		"research" = COLOR_PURPLE_GRAY
+	)
+
 /obj/structure/closet/toolcloset/excavation
 	name = "excavation equipment closet"
 	desc = "It's a storage unit for excavation equipment."
-	icon_state = "toolcloset"
-	icon_closed = "toolcloset"
-	icon_opened = "toolclosetopen"
+	closet_appearance = /decl/closet_appearance/secure_closet/sierra/excavation
 
 /obj/structure/closet/toolcloset/excavation/WillContain()
 	return list(
@@ -33,8 +38,7 @@
 
 /obj/structure/closet/wardrobe/ptgear
 	name = "pt gear wardrobe"
-	icon_state = "white"
-	icon_closed = "white"
+	closet_appearance = /decl/closet_appearance/wardrobe/white
 
 /obj/structure/closet/wardrobe/ptgear/WillContain()
 	return list(
@@ -45,8 +49,8 @@
 /obj/random/sierracloset //Random closets taking into account sierra-specific ones
 	name = "random closet"
 	desc = "This is a random closet."
-	icon = 'icons/obj/closet.dmi'
-	icon_state = "syndicate1"
+	icon = 'icons/obj/closets/bases/closet.dmi'
+	icon_state = "base"
 
 /obj/random/sierracloset/spawn_choices()
 	return list(/obj/structure/closet,

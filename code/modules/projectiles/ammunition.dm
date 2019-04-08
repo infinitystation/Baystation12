@@ -82,13 +82,10 @@
 
 /obj/item/ammo_casing/examine(mob/user)
 	. = ..()
+	if(caliber)
+		to_chat(user, "Its caliber is [caliber].")
 	if (!BB)
 		to_chat(user, "This one is spent.")
-
-//Gun loading types
-#define SINGLE_CASING 	1	//The gun only accepts ammo_casings. ammo_magazines should never have this as their mag_type.
-#define SPEEDLOADER 	2	//Transfers casings from the mag to the gun when used.
-#define MAGAZINE 		4	//The magazine item itself goes inside the gun
 
 //An item that holds casings and can be used to put them inside guns
 /obj/item/ammo_magazine
@@ -114,6 +111,7 @@
 	var/initial_ammo = null
 
 	var/multiple_sprites = 0
+	var/list/labels						//If something should be added to name on spawn aside from caliber
 	//because BYOND doesn't support numbers as keys in associative lists
 	var/list/icon_keys = list()		//keys
 	var/list/ammo_states = list()	//values
@@ -132,6 +130,10 @@
 	if(initial_ammo)
 		for(var/i in 1 to initial_ammo)
 			stored_ammo += new ammo_type(src)
+	if(caliber)
+		LAZYINSERT(labels, caliber, 1)
+	if(LAZYLEN(labels))
+		SetName("[name] ([english_list(labels, and_text = ", ")])")
 	update_icon()
 
 /obj/item/ammo_magazine/attackby(obj/item/weapon/W as obj, mob/user as mob)

@@ -61,7 +61,7 @@ GLOBAL_DATUM_INIT(malf, /datum/antagonist/rogue_ai, new)
 
 
 		var/mob/living/silicon/ai/malf = player.current
-
+		sound_to(malf, 'sound/AI/aimalf.ogg')
 		to_chat(malf, "<span class='notice'><B>SYSTEM ERROR:</B> Memory index 0x00001ca89b corrupted.</span>")
 		sleep(10)
 		to_chat(malf, "<B>running MEMCHCK</B>")

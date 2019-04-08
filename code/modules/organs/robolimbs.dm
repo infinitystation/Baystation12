@@ -10,6 +10,7 @@ var/datum/robolimb/basic_robolimb
 		if(!R.unavailable_at_chargen)
 			chargen_robolimbs[R.company] = R
 
+
 /datum/robolimb
 	var/company = "Unbranded"                                 // Shown when selecting the limb.
 	var/desc = "A generic unbranded robotic prosthesis."      // Seen when examining a limb.
@@ -23,28 +24,25 @@ var/datum/robolimb/basic_robolimb
 	var/has_eyes = TRUE
 	var/can_feel_pain
 	var/skintone
-	var/list/species_cannot_use = list(SPECIES_RESOMI, SPECIES_ADHERENT, SPECIES_YEOSA, SPECIES_UNATHI, SPECIES_EROSAN, SPECIES_NABBER, SPECIES_DIONA)
+	var/list/species_cannot_use = list()
 	var/list/restricted_to = list()
 	var/list/applies_to_part = list() //TODO.
+	var/list/allowed_bodytypes = list(SPECIES_HUMAN, SPECIES_IPC, SPECIES_SKRELL, SPECIES_UNATHI)
 
 /datum/robolimb/bishop
 	company = "Bishop"
 	desc = "This limb has a white polymer casing with blue holo-displays."
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_main.dmi'
-	can_eat = 1
 
 /datum/robolimb/bishop/alt
 	company = "Bishop Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_alt.dmi'
 	applies_to_part = list(BP_HEAD)
-	can_eat = 0
 
 /datum/robolimb/bishop/alt/monitor
 	company = "Bishop Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_monitor.dmi'
-	applies_to_part = list(BP_HEAD)
-	restricted_to = list(SPECIES_IPC)
-	has_eyes = FALSE
+	allowed_bodytypes = list(SPECIES_IPC)
 
 /datum/robolimb/hephaestus
 	company = "Hephaestus Industries"
@@ -55,46 +53,40 @@ var/datum/robolimb/basic_robolimb
 	company = "Hephaestus Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_alt.dmi'
 	applies_to_part = list(BP_HEAD)
-	can_eat = 0
 
 /datum/robolimb/hephaestus/alt/monitor
 	company = "Hephaestus Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_monitor.dmi'
-	restricted_to = list(SPECIES_IPC)
-	has_eyes = FALSE
+	allowed_bodytypes = list(SPECIES_IPC)
 
 /datum/robolimb/zenghu
 	company = "Zeng-Hu"
 	desc = "This limb has a rubbery fleshtone covering with visible seams."
 	icon = 'icons/mob/human_races/cyberlimbs/zenghu/zenghu_main.dmi'
 	can_eat = 1
-	restricted_to = list(SPECIES_HUMAN, SPECIES_IPC)
+	allowed_bodytypes = list(SPECIES_HUMAN,SPECIES_IPC)
 
 /datum/robolimb/xion
 	company = "Xion"
 	desc = "This limb has a minimalist black and red casing."
 	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_main.dmi'
-	can_eat = 0
 	has_eyes = 0
 
 /datum/robolimb/xion/alt
 	company = "Xion Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_alt.dmi'
 	applies_to_part = list(BP_HEAD)
-	has_eyes = 1
 
 /datum/robolimb/xion/alt/monitor
 	company = "Xion Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_monitor.dmi'
-	restricted_to = list(SPECIES_IPC)
-	has_eyes = FALSE
+	allowed_bodytypes = list(SPECIES_IPC)
 
 /datum/robolimb/nanotrasen
 	company = "NanoTrasen"
 	desc = "This limb is made from a cheap polymer."
 	icon = 'icons/mob/human_races/cyberlimbs/nanotrasen/nanotrasen_main.dmi'
 	unavailable_at_fab = 0
-	can_eat = 1
 
 /datum/robolimb/wardtakahashi
 	company = "Ward-Takahashi"
@@ -102,7 +94,7 @@ var/datum/robolimb/basic_robolimb
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_main.dmi'
 	can_eat = 1
 
-/datum/robolimb/wardtakahashi/economy
+/datum/robolimb/economy
 	company = "Ward-Takahashi Econ."
 	desc = "A simple robotic limb with retro design. Seems rather stiff."
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_economy.dmi'
@@ -112,34 +104,29 @@ var/datum/robolimb/basic_robolimb
 	company = "Ward-Takahashi Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_alt.dmi'
 	applies_to_part = list(BP_HEAD)
-	can_eat = 0
 
 /datum/robolimb/wardtakahashi/alt/monitor
 	company = "Ward-Takahashi Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_monitor.dmi'
-	applies_to_part = list(BP_HEAD)
-	restricted_to = list(SPECIES_IPC)
-	has_eyes = FALSE
-	can_eat = 0
+	allowed_bodytypes = list(SPECIES_IPC)
 
 /datum/robolimb/morpheus
 	company = "Morpheus"
 	desc = "This limb is simple and functional; no effort has been made to make it look human."
 	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_main.dmi'
-	can_eat = 0
-	has_eyes = FALSE
 
-/datum/robolimb/morpheus/mantis
+/datum/robolimb/mantis
 	company = "Morpheus Mantis"
 	desc = "This limb has a casing of sleek black metal and repulsive insectile design."
 	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_mantis.dmi'
-	can_eat = 1
+	has_eyes = FALSE
 
 /datum/robolimb/morpheus/monitor
 	company = "Morpheus Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/morpheus/morpheus_monitor.dmi'
 	applies_to_part = list(BP_HEAD)
-	restricted_to = list(SPECIES_IPC)
+	has_eyes = FALSE
+	allowed_bodytypes = list(SPECIES_IPC)
 
 /datum/robolimb/veymed
 	company = "Vey-Med"
@@ -147,13 +134,12 @@ var/datum/robolimb/basic_robolimb
 	icon = 'icons/mob/human_races/cyberlimbs/veymed/veymed_main.dmi'
 	can_eat = 1
 	skintone = 1
-	restricted_to = list(SPECIES_HUMAN)
+	species_cannot_use = list(SPECIES_IPC)
 
 /datum/robolimb/grayson
 	company = "Grayson"
 	desc = "This limb has a sturdy and heavy build to it."
 	icon = 'icons/mob/human_races/cyberlimbs/grayson/grayson_main.dmi'
-	can_eat = 0
 	has_eyes = FALSE
 
 /datum/robolimb/grayson/alt
@@ -164,4 +150,5 @@ var/datum/robolimb/basic_robolimb
 /datum/robolimb/grayson/alt/monitor
 	company = "Grayson Monitor."
 	icon = 'icons/mob/human_races/cyberlimbs/grayson/grayson_monitor.dmi'
-	restricted_to = list(SPECIES_IPC)
+	applies_to_part = list(BP_HEAD)
+	allowed_bodytypes = list(SPECIES_IPC)

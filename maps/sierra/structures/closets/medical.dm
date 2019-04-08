@@ -5,11 +5,7 @@
 /obj/structure/closet/secure_closet/CMO_sierra
 	name = "chief medical officer's locker"
 	req_access = list(access_cmo)
-	icon_state = "cmosecure1"
-	icon_closed = "cmosecure"
-	icon_locked = "cmosecure1"
-	icon_opened = "cmosecureopen"
-	icon_off = "cmosecureoff"
+	closet_appearance = /decl/closet_appearance/secure_closet/cmo
 
 /obj/structure/closet/secure_closet/CMO_sierra/WillContain()
 	return list(
@@ -36,11 +32,7 @@
 /obj/structure/closet/secure_closet/medical_sierrasenior
 	name = "surgeon's locker"
 	req_access = list(access_senmed)
-	icon_state = "securesenmed1"
-	icon_closed = "securesenmed"
-	icon_locked = "securesenmed1"
-	icon_opened = "securesenmedopen"
-	icon_off = "securesenmedoff"
+	closet_appearance = /decl/closet_appearance/secure_closet/medical/alt
 
 /obj/structure/closet/secure_closet/medical_sierrasenior/WillContain()
 	return list(
@@ -59,11 +51,7 @@
 /obj/structure/closet/secure_closet/medical_sierra
 	name = "doctor's locker"
 	req_access = list(access_medical_equip)
-	icon_state = "securemed1"
-	icon_closed = "securemed"
-	icon_locked = "securemed1"
-	icon_opened = "securemedopen"
-	icon_off = "securemedoff"
+	closet_appearance = /decl/closet_appearance/secure_closet/medical
 
 /obj/structure/closet/secure_closet/medical_sierra/WillContain()
 	return list(
@@ -82,8 +70,7 @@
 
 /obj/structure/closet/wardrobe/medic_sierra
 	name = "medical wardrobe"
-	icon_state = "white"
-	icon_closed = "white"
+	closet_appearance = /decl/closet_appearance/wardrobe/white
 
 /obj/structure/closet/wardrobe/medic_sierra/WillContain()
 	return list(
@@ -98,11 +85,7 @@
 /obj/structure/closet/secure_closet/chemical_sierra
 	name = "chemical closet"
 	desc = "Store dangerous chemicals in here."
-	icon_state = "medical1"
-	icon_closed = "medical"
-	icon_locked = "medical1"
-	icon_opened = "medicalopen"
-	icon_off = "medicaloff"
+	closet_appearance = /decl/closet_appearance/secure_closet/medical
 	req_access = list(access_chemistry)
 
 /obj/structure/closet/secure_closet/chemical_sierra/WillContain()

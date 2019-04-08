@@ -4,7 +4,7 @@
 /datum/unit_test/subsystem_atom_shall_have_no_bad_init_calls/start_test()
 	if(SSatoms.BadInitializeCalls.len)
 		log_bad(jointext(SSatoms.InitLog(), null))
-		skip("[SSatoms] had bad initialization calls.") //was 'fail' - because we have special code of cleanable objects.
+		fail("[SSatoms] had bad initialization calls.")
 	else
 		pass("[SSatoms] had no bad initialization calls.")
 	return 1
@@ -25,4 +25,20 @@
 	else
 		pass("All susbsystems have initialized properly")
 
+	return 1
+
+/datum/unit_test/all_atoms_shall_be_initialized
+	name = "SUBSYSTEM - ATOMS: All atoms shall be initialized."
+
+/datum/unit_test/all_atoms_shall_be_initialized/start_test()
+	set background = TRUE // avoid infinite loop warning; SS will still wait for us.
+	var/fail = FALSE
+	for(var/atom/atom in world)
+		if(!(atom.atom_flags & ATOM_FLAG_INITIALIZED))
+			log_bad("Uninitialized atom: [log_info_line(atom)]")
+			fail = TRUE
+	if(fail)
+		fail("There were uninitialized atoms.")
+	else
+		pass("All atoms were initialized")
 	return 1

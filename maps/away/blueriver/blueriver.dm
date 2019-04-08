@@ -95,25 +95,25 @@
 	health = 80
 	can_escape = 0
 
-/obj/effect/shuttle_landmark/nav_blueriv
-	base_area = /area/bluespaceriver/ground
-	base_turf = /turf/simulated/floor/exoplanet/snow
-
 /obj/effect/shuttle_landmark/nav_blueriv/nav1
 	name = "Arctic Planet Landing Point #1"
 	landmark_tag = "nav_blueriv_1"
+	base_area = /area/bluespaceriver/ground
 
 /obj/effect/shuttle_landmark/nav_blueriv/nav2
 	name = "Arctic Planet Landing Point #2"
 	landmark_tag = "nav_blueriv_2"
+	base_area = /area/bluespaceriver/ground
 
 /obj/effect/shuttle_landmark/nav_blueriv/nav3
 	name = "Arctic Planet Landing Point #3"
 	landmark_tag = "nav_blueriv_3"
+	base_area = /area/bluespaceriver/ground
 
 /obj/effect/shuttle_landmark/nav_blueriv/nav4
 	name = "Arctic Planet Navpoint #4"
 	landmark_tag = "nav_blueriv_antag"
+	base_area = /area/bluespaceriver/ground
 
 /turf/simulated/floor/away/blueriver/alienfloor
 	name = "glowing floor"

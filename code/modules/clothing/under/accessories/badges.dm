@@ -82,15 +82,13 @@
 	icon_state = "ntholobadge"
 	color = null
 	badge_string = "Corporate Security"
-	badge_access = access_security
+	badge_access = access_research
 
 /obj/item/clothing/accessory/badge/holo/cord
-	name = "neck holobadge"
 	icon_state = "holobadge-cord"
 	slot_flags = SLOT_MASK | SLOT_TIE
 
 /obj/item/clothing/accessory/badge/holo/NT/cord
-	name = "corporate neck holobadge"
 	icon_state = "holobadge-cord"
 	slot_flags = SLOT_MASK | SLOT_TIE
 
@@ -170,7 +168,7 @@
 	name = "corporate badge"
 	desc = "A leather-backed plastic badge with a variety of information printed on it. Belongs to a corporate executive."
 	icon_state = "ntbadge"
-	badge_string = "NanoTrasen Executive"
+	badge_string = "Corporate Executive Body"
 
 /obj/item/clothing/accessory/badge/ocieagent
 	name = "\improper OCIE Agent's badge"

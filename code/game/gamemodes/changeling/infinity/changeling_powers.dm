@@ -239,8 +239,8 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 						src.visible_message(SPAN_WARNING("\the [src]'s proboscis loudly sucks something from \the [T]'s [affecting.name]!"))
 				changeling.isabsorbing = 0
 
-		feedback_add_details("changeling_powers","A[stage]")
-	src.visible_message("<span class='warning'>[src] removes it's proboscis from \the [T]!</span>", SPAN_LING("We have absorbed the all fluids from [T]!"))
+		SSstatistics.add_field_details("changeling_powers","A[stage]")
+	visible_message("<span class='warning'>[src] removes it's proboscis from \the [T]!</span>", SPAN_LING("We have absorbed the all fluids from [T]!"))
 	to_chat(T, "<span class='warning'>You have been absorbed by the changeling!</span>")
 	playsound(get_turf(src), 'sound/effects/lingabsorbs.ogg', 70, 1)
 
@@ -341,7 +341,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	changeling_update_languages(changeling.absorbed_languages)
 
-	feedback_add_details("changeling_powers","TR")
+	SSstatistics.add_field_details("changeling_powers","TR")
 	return 1
 
 /mob/proc/handle_changeling_transform(var/datum/absorbed_dna/chosen_dna)
@@ -375,7 +375,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 		var/obj/effect/spider/spiderling/Sp = new(turf)
 		Sp.amount_grown = 1
 
-	feedback_add_details("changeling_powers","SI")
+	SSstatistics.add_field_details("changeling_powers","SI")
 	return 1
 
 //Transform into a monkey.
@@ -401,7 +401,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	changeling.geneticdamage = 30
 	to_chat(H, SPAN_LING("Our genes cry out!"))
 	H = H.monkeyize()
-	feedback_add_details("changeling_powers","LF")
+	SSstatistics.add_field_details("changeling_powers","LF")
 	return 1
 
 //Transform into a human
@@ -481,7 +481,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	O.make_changeling()
 	O.changeling_update_languages(changeling.absorbed_languages)
 
-	feedback_add_details("changeling_powers","LFT")
+	SSstatistics.add_field_details("changeling_powers","LFT")
 	qdel(C)
 	return 1
 
@@ -512,7 +512,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 			to_chat(C, SPAN_LING("<font size='5'>We are ready to rise.  Use the <b>Revive</b> verb when you are ready.</font>"))
 			C.verbs += /mob/proc/changeling_revive
 
-	feedback_add_details("changeling_powers","FD")
+	SSstatistics.add_field_details("changeling_powers","FD")
 	return 1
 
 /mob/proc/changeling_revive()
@@ -551,7 +551,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 	changeling.sting_range = 2
 	src.verbs -= /mob/proc/changeling_boost_range
 	spawn(5)	src.verbs += /mob/proc/changeling_boost_range
-	feedback_add_details("changeling_powers","RS")
+	SSstatistics.add_field_details("changeling_powers","RS")
 	return 1
 
 
@@ -575,7 +575,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	src.verbs -= /mob/proc/changeling_unstun
 	spawn(5)	src.verbs += /mob/proc/changeling_unstun
-	feedback_add_details("changeling_powers","UNS")
+	SSstatistics.add_field_details("changeling_powers","UNS")
 	return 1
 
 
@@ -611,7 +611,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	src.verbs -= /mob/proc/changeling_digitalcamo
 	spawn(5)	src.verbs += /mob/proc/changeling_digitalcamo
-	feedback_add_details("changeling_powers","CAM")
+	SSstatistics.add_field_details("changeling_powers","CAM")
 	return 1
 
 //Thermal vision. Any flash will be the pain in changeling's ass.
@@ -647,7 +647,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	src.verbs -= /mob/proc/changeling_thermvision
 	spawn(5)	src.verbs += /mob/proc/changeling_thermvision
-	feedback_add_details("changeling_powers","THERM")
+	SSstatistics.add_field_details("changeling_powers","THERM")
 	return 1
 
 //Starts healing you every second for 10 seconds. Can be used whilst unconscious.
@@ -672,7 +672,7 @@ var/global/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","E
 
 	src.verbs -= /mob/proc/changeling_rapidregen
 	spawn(5)	src.verbs += /mob/proc/changeling_rapidregen
-	feedback_add_details("changeling_powers","RR")
+	SSstatistics.add_field_details("changeling_powers","RR")
 	return 1
 
 // HIVE MIND UPLOAD/DOWNLOAD DNA
@@ -717,7 +717,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	changeling.chem_charges -= 10
 	hivemind_bank += chosen_dna
 	to_chat(src, SPAN_LING("We channel the DNA of [S] to the air."))
-	feedback_add_details("changeling_powers","HU")
+	SSstatistics.add_field_details("changeling_powers","HU")
 	return 1
 
 /mob/proc/changeling_hivedownload()
@@ -746,7 +746,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	changeling.chem_charges -= 20
 	absorbDNA(chosen_dna)
 	to_chat(src, SPAN_LING("We absorb the DNA of [S] from the air."))
-	feedback_add_details("changeling_powers","HD")
+	SSstatistics.add_field_details("changeling_powers","HD")
 	return 1
 
 // Fake Voice
@@ -774,7 +774,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	to_chat(src, SPAN_LING("We shape our glands to take the voice of <b>[mimic_voice]</b>, this will stop us from regenerating chemicals while active."))
 	to_chat(src, "<span class='notice'>Use this power again to return to our original voice and reproduce chemicals again.</span>")
 
-	feedback_add_details("changeling_powers","MV")
+	SSstatistics.add_field_details("changeling_powers","MV")
 
 	spawn(0)
 		while(src && src.mind && src.mind.changeling && src.mind.changeling.mimicing)
@@ -855,7 +855,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	if(!T)	return 0
 	spawn(rand(300,600))
 		if(T)	T.hallucination(400, 80)
-	feedback_add_details("changeling_powers","HS")
+	SSstatistics.add_field_details("changeling_powers","HS")
 	return 1
 
 /mob/proc/changeling_silence_sting()
@@ -866,7 +866,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	var/mob/living/carbon/human/T = changeling_sting(10,/mob/proc/changeling_silence_sting)
 	if(!T)	return 0
 	T.silent += 30
-	feedback_add_details("changeling_powers","SS")
+	SSstatistics.add_field_details("changeling_powers","SS")
 	return 1
 
 /mob/proc/changeling_blind_sting()
@@ -881,7 +881,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	spawn(300)	T.disabilities &= ~NEARSIGHTED
 	T.eye_blind = 10
 	T.eye_blurry = 20
-	feedback_add_details("changeling_powers","BS")
+	SSstatistics.add_field_details("changeling_powers","BS")
 	return 1
 
 /mob/proc/changeling_deaf_sting()
@@ -894,7 +894,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	to_chat(T, "<span class='danger'>Your ears pop and begin ringing loudly!</span>")
 	T.sdisabilities |= DEAF
 	spawn(300)	T.sdisabilities &= ~DEAF
-	feedback_add_details("changeling_powers","DS")
+	SSstatistics.add_field_details("changeling_powers","DS")
 	return 1
 
 /mob/proc/changeling_pain_sting()
@@ -910,7 +910,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	to_chat(T, "<span class='danger'>Your muscles begin to painfully tighten!</span>")
 	T.scream()
 //	T.Weaken(20)
-	feedback_add_details("changeling_powers","PS")
+	SSstatistics.add_field_details("changeling_powers","PS")
 	return 1
 
 /mob/proc/changeling_transformation_sting()
@@ -948,7 +948,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 
 	T.handle_changeling_transform(chosen_dna)
 
-	feedback_add_details("changeling_powers","TS")
+	SSstatistics.add_field_details("changeling_powers","TS")
 	return 1
 
 /mob/proc/changeling_unfat_sting()
@@ -960,7 +960,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	if(!T)	return 0
 	to_chat(T, "<span class='danger'>You feel a small prick as stomach churns violently and you become to feel skinnier.</span>")
 	T.nutrition -= 100
-	feedback_add_details("changeling_powers","US")
+	SSstatistics.add_field_details("changeling_powers","US")
 	return 1
 
 /mob/proc/changeling_DEATHsting()
@@ -979,7 +979,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	var/target_limb
 	T.stun_effect_act(0, 65, target_limb, "large organic needle") // a small present
 	if(T.reagents)	T.reagents.add_reagent(/datum/reagent/toxin/batrachotoxin, 10) // fine(?)
-	feedback_add_details("changeling_powers","DTHS")
+	SSstatistics.add_field_details("changeling_powers","DTHS")
 	return 1
 
 /mob/proc/changeling_extract_dna_sting()
@@ -1007,7 +1007,7 @@ var/list/datum/absorbed_dna/hivemind_bank = list()
 	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages, T.flavor_texts)
 	absorbDNA(newDNA)
 
-	feedback_add_details("changeling_powers","ED")
+	SSstatistics.add_field_details("changeling_powers","ED")
 	return 1
 
 /mob/proc/armblades()

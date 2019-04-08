@@ -4,7 +4,7 @@
 
 /obj/item/projectile/bullet/pistol/tiny/rubber
 	name = "rubber bullet tiny"
-	check_armour = "melee"
+	damage_flags = 0
 	damage = 1
 	agony = 15
 	embed = 0

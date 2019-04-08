@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/wt550/lethal
 	ammo_type = /obj/item/ammo_casing/c9mm
-	magazine_type = /obj/item/ammo_magazine/mc9mmt
+	magazine_type = /obj/item/ammo_magazine/smg_top
 
 /obj/item/weapon/gun/projectile/automatic/nt41
 	name = "NT41 submachine gun"
@@ -61,13 +61,6 @@
 	icon_state = (ammo_magazine)? "amrcarabine" : "amrcarabine-e"
 	..()
 
-/obj/item/weapon/gun/projectile/automatic/amrcarabine/verb/scope()
-	set category = "Object"
-	set name = "Use Scope"
-	set popup_menu = 1
-	toggle_scope(usr, 1.5)
-
-
 /obj/item/weapon/gun/projectile/automatic/z9
 	name = "Z9 carabine"
 	desc = "The assault carabine Z9 'Viper' made by Aussec Armory from blueprints of Z8 'Bulldog' manufactured the now defunct Zendai Foundries. Old design was swapped with more futuristic one. 'Viper' conting as one of newest weapon on market, so you cannot buy it easy. You don't know who may hold that gun, but they should be pretty rich... Like governments special forces or famouse PMC companies like SAARE."
@@ -83,11 +76,11 @@
 	force = 12
 	caliber = "a762"
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 4)
-	ammo_type = /obj/item/ammo_casing/a762
+	ammo_type =/obj/item/ammo_casing/rifle/military
 	slot_flags = SLOT_BELT|SLOT_BACK
 	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/a762/extended
-	allowed_magazines = /obj/item/ammo_magazine/a762
+	magazine_type = /obj/item/ammo_magazine/mil_rifle/extended
+	allowed_magazines = /obj/item/ammo_magazine/mil_rifle
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	one_hand_penalty = 4
@@ -131,7 +124,7 @@
 /obj/item/weapon/gun/projectile/automatic/bp15
 	name = "BP-15 PDW"
 	desc = "The BP-15 'Moloh' is a  personal defense weapon, produced by Aussec Armory for use by police spec ops or solders. Uses 5.7x28 mm rounds."
-	icon = 'icons/event/guns.dmi'
+	icon = 'infinity/icons/event/guns.dmi'
 	icon_state = "pdw"
 	item_state = "c20r"
 	item_icons = list(
@@ -161,7 +154,7 @@
 /obj/item/weapon/gun/projectile/automatic/invider
 	name = "Invider submachine gun"
 	desc = "The Invider is a Hi-tech and rapid firing SMG. Uses 4.6x30mm universal rounds."
-	icon = 'icons/event/guns.dmi'
+	icon = 'infinity/icons/event/guns.dmi'
 	icon_state = "pdw"
 	item_state = "c20r"
 	w_class = ITEM_SIZE_LARGE

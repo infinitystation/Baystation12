@@ -31,7 +31,7 @@
 /turf/simulated/wall/ocp_wall,
 /area/rubbidu/nt)
 "af" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/rubbidu/nt)
 "ag" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -129,7 +129,6 @@
 	dir = 8;
 	pixel_x = 25;
 	pixel_y = 0;
-	req_one_access = list(11,24)
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -253,13 +252,11 @@
 /obj/machinery/door/window/southright{
 	name = "Test Chamber";
 	req_access = list(7);
-	req_one_access = newlist()
 	},
 /obj/machinery/door/window/southright{
 	dir = 1;
 	name = "Test Chamber";
 	req_access = list(7);
-	req_one_access = newlist()
 	},
 /turf/simulated/floor/reinforced,
 /area/rubbidu/nt)
@@ -413,10 +410,10 @@
 /turf/simulated/floor/carpet,
 /area/rubbidu/civil/canteen)
 "bc" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/cockpit)
 "bd" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/crew)
 "be" = (
 /obj/machinery/door/blast/regular/open{
@@ -697,8 +694,6 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	pixel_y = 0;
-	req_one_access = list(11,24)
 	},
 /turf/simulated/floor/tiled/dark,
 /area/rubbidu/command/bridge)
@@ -709,8 +704,6 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	pixel_y = 0;
-	req_one_access = list(24,11)
 	},
 /obj/item/device/radio/intercom{
 	pixel_y = 26
@@ -1137,7 +1130,7 @@
 /obj/machinery/door/airlock/glass/command{
 	id_tag = 1;
 	name = "Bridge";
-	req_one_access = list(1,19);
+	req_access = list(list(1,19));
 	secured_wires = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -1203,7 +1196,7 @@
 /turf/simulated/floor/lino,
 /area/rubbidu/civil/canteen)
 "cC" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/rubbidu/civil/canteen)
 "cD" = (
 /obj/structure/cable/cyan{
@@ -1720,7 +1713,7 @@
 	frequency = 1380;
 	id_tag = "petrov_shuttle_airlock";
 	pixel_y = -24;
-	req_one_access = list(74,81);
+	req_access = list(list(74,81));
 	tag_airpump = "petrov_shuttle_pump";
 	tag_chamber_sensor = "petrov_shuttle_sensor";
 	tag_exterior_door = "petrov_shuttle_outer";
@@ -1775,13 +1768,11 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	pixel_y = 0;
-	req_one_access = list(24,11)
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/rubbidu/nt)
 "dC" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/aquila/cockpit)
 "dD" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
@@ -1791,8 +1782,6 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	pixel_y = 0;
-	req_one_access = list(24,11)
 	},
 /turf/simulated/floor/tiled/white,
 /area/rubbidu/nt)
@@ -3321,7 +3310,6 @@
 /obj/machinery/alarm{
 	frequency = 1439;
 	pixel_y = 30;
-	req_one_access = list(11,24)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -3333,8 +3321,6 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	pixel_y = 0;
-	req_one_access = list(24,11)
 	},
 /turf/simulated/floor/tiled,
 /area/rubbidu/dock)
@@ -3955,7 +3941,7 @@
 "hi" = (
 /obj/machinery/door/airlock/glass/engineering{
 	name = "Engineering Bedroom";
-	req_one_access = list(10)
+	req_access = list(10)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -5637,7 +5623,7 @@
 /turf/simulated/floor/plating,
 /area/aquila/maintenance)
 "jV" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/aquila/maintenance)
 "jW" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -6010,7 +5996,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(11,24)
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -7009,7 +6994,7 @@
 	frequency = 1380;
 	id_tag = "petrov_shuttle_airlock";
 	pixel_y = -24;
-	req_one_access = list(74,81);
+	req_access = list(list(74,81));
 	tag_airpump = "petrov_shuttle_pump";
 	tag_chamber_sensor = "petrov_shuttle_sensor";
 	tag_exterior_door = "petrov_shuttle_outer";
@@ -7625,7 +7610,6 @@
 /obj/machinery/door/airlock/hatch{
 	name = "Cockpit";
 	req_access = list(88);
-	req_one_access = newlist()
 	},
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -7855,7 +7839,6 @@
 "nw" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Crew Area";
-	req_one_access = newlist()
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -8007,7 +7990,7 @@
 /turf/simulated/floor/tiled,
 /area/rubbidu/dock)
 "nK" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/airlock)
 "nL" = (
 /obj/machinery/atmospherics/pipe/manifold/visible{
@@ -8028,7 +8011,6 @@
 	frequency = 1331;
 	id_tag = "calypso_shuttle_outer";
 	name = "Charon External Access";
-	req_one_access = newlist()
 	},
 /obj/machinery/shield_diffuser,
 /obj/machinery/atmospherics/pipe/simple/visible{
@@ -8106,7 +8088,6 @@
 	frequency = 1331;
 	id_tag = "calypso_shuttle_inner";
 	name = "Charon External Access";
-	req_one_access = newlist()
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4;
@@ -8291,7 +8272,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/airlock)
 "oj" = (
 /obj/structure/disposalpipe/segment{
@@ -8336,7 +8317,7 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/cargo)
 "oo" = (
 /obj/machinery/disposal/deliveryChute,
@@ -8438,7 +8419,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cargo)
 "ow" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/cargo)
 "ox" = (
 /obj/structure/disposalpipe/segment{
@@ -8608,7 +8589,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cargo)
 "oN" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/atmos)
 "oO" = (
 /turf/simulated/wall/titanium,
@@ -8638,7 +8619,7 @@
 /turf/simulated/wall/titanium,
 /area/exploration_shuttle/power)
 "oS" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/power)
 "oT" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -8871,7 +8852,7 @@
 /turf/simulated/floor/tiled,
 /area/rubbidu/dock)
 "pn" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/aquila/passenger)
 "po" = (
 /turf/simulated/wall/titanium,
@@ -9067,7 +9048,7 @@
 /turf/simulated/floor/airless,
 /area/aquila/cockpit)
 "pD" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/aquila/airlock)
 "pE" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -9408,7 +9389,7 @@
 	icon_state = "intact";
 	dir = 4
 	},
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/aquila/airlock)
 "qh" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
@@ -9479,7 +9460,7 @@
 	dir = 8;
 	pixel_x = 25;
 	pixel_y = 0;
-	req_one_access = list(24,11)
+	req_access = list(list(24,11))
 	},
 /obj/machinery/button/remote/blast_door{
 	desc = "A remote control-switch for shutters.";
@@ -9691,8 +9672,6 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	pixel_y = 0;
-	req_one_access = list(24,11)
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/rubbidu/civil)
@@ -9730,7 +9709,7 @@
 /area/aquila/passenger)
 "qE" = (
 /obj/structure/sign/solgov,
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/aquila/passenger)
 "qF" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -9946,7 +9925,6 @@
 /obj/machinery/alarm{
 	frequency = 1439;
 	pixel_y = 30;
-	req_one_access = list(11,24)
 	},
 /turf/simulated/floor/plating,
 /area/rubbidu/nt)
@@ -9957,7 +9935,6 @@
 /obj/machinery/alarm{
 	frequency = 1439;
 	pixel_y = 30;
-	req_one_access = list(11,24)
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -10001,7 +9978,6 @@
 /obj/machinery/alarm{
 	frequency = 1439;
 	pixel_y = 30;
-	req_one_access = list(11,24)
 	},
 /obj/effect/floor_decal/corner_steel_grid/diagonal,
 /obj/machinery/power/apc{
@@ -10020,7 +9996,6 @@
 /obj/machinery/alarm{
 	frequency = 1439;
 	pixel_y = 30;
-	req_one_access = list(11,24)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -10041,7 +10016,6 @@
 	dir = 4;
 	pixel_x = -23;
 	rcon_setting = 3;
-	req_one_access = list(11,24)
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled,
@@ -10067,7 +10041,6 @@
 /obj/machinery/alarm{
 	frequency = 1439;
 	pixel_y = 30;
-	req_one_access = list(11,24)
 	},
 /obj/machinery/sleeper/survival_pod{
 	icon_state = "stasis_0";
@@ -10566,7 +10539,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/rubbidu/civil/botany)
 "rG" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/aquila/storage)
 "rH" = (
 /obj/structure/cable{
@@ -10592,7 +10565,7 @@
 /turf/simulated/wall/titanium,
 /area/aquila/medical)
 "rK" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/aquila/medical)
 "rL" = (
 /turf/simulated/floor/tiled/freezer,
@@ -11518,7 +11491,6 @@
 	dir = 4;
 	pixel_x = -23;
 	rcon_setting = 3;
-	req_one_access = list(11,24)
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/rubbidu/rad)
@@ -13085,7 +13057,7 @@
 	},
 /obj/machinery/door/airlock/glass/engineering{
 	name = "Engineering Bay";
-	req_one_access = list(10)
+	req_access = list(10)
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
@@ -13751,7 +13723,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/rubbidu/hangar)
 "JW" = (
-/turf/simulated/wall/titanium_r,
+/turf/simulated/wall/r_titanium,
 /area/guppy_hangar/start)
 "JX" = (
 /obj/structure/cable/cyan{
@@ -13931,7 +13903,6 @@
 	pixel_x = 32;
 	pixel_y = -32;
 	req_access = list(89);
-	req_one_access = newlist()
 	},
 /obj/structure/bed/chair/shuttle{
 	icon_state = "shuttle_chair_preview";

@@ -65,10 +65,6 @@
 
 	var/list/initial_email_login = list("login" = "", "password" = "")
 
-	//used for optional self-objectives that antagonists can give themselves, which are displayed at the end of the round.
-	var/ambitions
-
-
 /datum/mind/New(var/key)
 	src.key = key
 	..()
@@ -118,8 +114,9 @@
 		for(var/datum/objective/objective in objectives)
 			output += "<br><B>Objective #[obj_count]</B>: [objective.explanation_text]"
 			obj_count++
-	if(ambitions)
-		output += "<HR><B>Ambitions:</B> [ambitions]<br>"
+	if(SSgoals.ambitions[src])
+		var/datum/goal/ambition/ambition = SSgoals.ambitions[src]
+		output += "<HR><B>Ambitions:</B> [ambition.summarize()]<br>"
 	recipient << browse(output,"window=memory")
 
 /datum/mind/proc/edit_memory()
@@ -155,11 +152,77 @@
 	else
 		out += "None."
 	out += "<br><a href='?src=\ref[src];obj_add=1'>\[add\]</a><br><br>"
-	out += "<b>Ambitions:</b> [ambitions ? ambitions : "None"] <a href='?src=\ref[src];amb_edit=\ref[src]'>\[edit\]</a></br>"
+
+	var/datum/goal/ambition/ambition = SSgoals.ambitions[src]
+	out += "<b>Ambitions:</b> [ambition ? ambition.description : "None"] <a href='?src=\ref[src];amb_edit=\ref[src]'>\[edit\]</a></br>"
 	usr << browse(out, "window=edit_memory[src]")
 
+/datum/mind/proc/get_goal_from_href(var/href)
+	var/ind = isnum(href) ? href : text2num(href)
+	if(ind > 0 && ind <= LAZYLEN(goals))
+		return goals[ind]
+
 /datum/mind/Topic(href, href_list)
-	if(!check_rights(R_ADMIN))	return
+
+	var/is_admin =   FALSE
+	var/can_modify = FALSE
+	is_admin = check_rights(R_ADMIN, FALSE)
+	can_modify = is_admin
+
+	if(href_list["add_goal"])
+
+		var/mob/caller = locate(href_list["add_goal_caller"])
+		if(caller && caller == current) can_modify = TRUE
+
+		if(can_modify)
+			if(is_admin)
+				log_admin("[key_name_admin(usr)] added a random goal to [key_name(current)].")
+			to_chat(current, SPAN_NOTICE("You have received a new goal. Use <b>Show Goals</b> to view it."))
+			generate_goals(assigned_job, TRUE, 1)
+		return TRUE // To avoid 'you are not an admin' spam.
+
+	if(href_list["abandon_goal"])
+		var/datum/goal/goal = get_goal_from_href(href_list["abandon_goal"])
+
+		var/mob/caller = locate(href_list["abandon_goal_caller"])
+		if(caller && caller == current) can_modify = TRUE
+
+		if(goal && can_modify)
+			if(usr == current)
+				to_chat(current, SPAN_NOTICE("<b>You have abandoned your goal:</b> '[goal.summarize(FALSE, FALSE)]'."))
+			else
+				to_chat(usr, SPAN_NOTICE("<b>You have removed a goal from \the [current]:</b> '[goal.summarize(FALSE, FALSE)]'."))
+				to_chat(current, SPAN_NOTICE("<b>A goal has been removed:</b> '[goal.summarize(FALSE, FALSE)]'."))
+			qdel(goal)
+		return TRUE
+
+	if(href_list["reroll_goal"])
+		var/datum/goal/goal = get_goal_from_href(href_list["reroll_goal"])
+
+		var/mob/caller = locate(href_list["reroll_goal_caller"])
+		if(caller && caller == current) can_modify = TRUE
+
+		if(goal && (goal in goals) && can_modify)
+			qdel(goal) 
+			generate_goals(assigned_job, TRUE, 1)
+			if(goals)
+				goal = goals[LAZYLEN(goals)]
+				if(usr == current)
+					to_chat(usr, SPAN_NOTICE("<b>You have re-rolled a goal. Your new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
+				else
+					to_chat(usr, SPAN_NOTICE("<b>You have re-rolled a goal for \the [current]. Their new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
+					to_chat(current, SPAN_NOTICE("<b>A goal has been re-rolled. Your new goal is:</b> '[goal.summarize(FALSE, FALSE)]'."))
+		return TRUE
+
+	if(!is_admin) return
+
+	if(current && isliving(current))
+		if(href_list["set_psi_faculty"] && href_list["set_psi_faculty_rank"])
+			current.set_psi_rank(href_list["set_psi_faculty"], text2num(href_list["set_psi_faculty_rank"]))
+			log_and_message_admins("set [key_name(current)]'s [href_list["set_psi_faculty"]] faculty to [text2num(href_list["set_psi_faculty_rank"])].")
+			var/datum/admins/admin = GLOB.admins[usr.key]
+			if(istype(admin)) admin.show_player_panel(current)
+			return TRUE
 
 	if(href_list["add_antagonist"])
 		var/datum/antagonist/antag = GLOB.all_antag_types_[href_list["add_antagonist"]]
@@ -186,10 +249,11 @@
 		if(antag) antag.place_mob(src.current)
 
 	else if (href_list["role_edit"])
-		var/new_role = input("Select new role", "Assigned role", assigned_role) as null|anything in job_master.occupations_by_title
+		var/new_role = input("Select new role", "Assigned role", assigned_role) as null|anything in SSjobs.titles_to_datums
 		if (!new_role) return
-		var/datum/job/job = job_master.occupations_by_title[new_role]
+		var/datum/job/job = SSjobs.get_by_title(new_role)
 		if(job)
+			assigned_job = job
 			assigned_role = job.title
 			role_alt_title = new_role
 			if(current)
@@ -204,18 +268,24 @@
 		var/datum/mind/mind = locate(href_list["amb_edit"])
 		if(!mind)
 			return
-		var/new_ambition = input("Enter a new ambition", "Memory", html_decode(mind.ambitions)) as null|message
+
+		var/datum/goal/ambition/ambition = SSgoals.ambitions[src]
+		var/new_ambition = input("Enter a new ambition", "Memory", ambition ? html_decode(ambition.description) : "") as null|message
 		if(isnull(new_ambition))
 			return
 		new_ambition = sanitize(new_ambition)
 		if(mind)
-			mind.ambitions = new_ambition
 			if(new_ambition)
-				to_chat(mind.current, "<span class='warning'>Your ambitions have been changed by higher powers, they are now: [mind.ambitions]</span>")
-				log_and_message_admins("made [key_name(mind.current)]'s ambitions be '[mind.ambitions]'.")
+				if(!ambition)
+					ambition = new /datum/goal/ambition(mind)
+				ambition.description = new_ambition
+				to_chat(mind.current, "<span class='warning'>Your ambitions have been changed by higher powers, they are now: [ambition.description]</span>")
+				log_and_message_admins("made [key_name(mind.current)]'s ambitions be '[ambition.description]'.")
 			else
 				to_chat(mind.current, "<span class='warning'>Your ambitions have been unmade by higher powers.</span>")
 				log_and_message_admins("has cleared [key_name(mind.current)]'s ambitions.")
+				if(ambition)
+					qdel(ambition)
 		else
 			to_chat(usr, "<span class='warning'>The mind has ceased to be.</span>")
 
@@ -516,7 +586,8 @@
 //HUMAN
 /mob/living/carbon/human/mind_initialize()
 	..()
-	if(!mind.assigned_role)	mind.assigned_role = "Assistant"	//defualt
+	if(!mind.assigned_role)
+		mind.assigned_role = GLOB.using_map.default_assistant_title
 
 //slime
 /mob/living/carbon/slime/mind_initialize()

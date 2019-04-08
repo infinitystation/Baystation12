@@ -1,11 +1,9 @@
 #if !defined(using_map_DATUM)
 
-
-//	#include "../away_inf/salvagers/salvagers.dm"
-
 	#include "sierra_announcements.dm"
 	#include "sierra_antagonism.dm"
 	#include "sierra_areas.dm"
+	#include "sierra_areas_override.dm"
 	#include "sierra_elevator.dm"
 	#include "sierra_holodecks.dm"
 	#include "sierra_lobby.dm"
@@ -17,6 +15,7 @@
 	#include "sierra_renames.dm"
 	#include "sierra_security_state.dm"
 	#include "sierra_shuttles.dm"
+	#include "sierra_turfs.dm"
 	#include "sierra_unit_testing.dm"
 
 	#include "datums/uniforms.dm"
@@ -36,6 +35,7 @@
 
 	#include "items/clothing/clothing.dm"
 	#include "items/clothing/exploration.dm"
+	#include "items/clothing/override.dm"
 	#include "items/clothing/solgov-infinity.dm"
 	#include "items/clothing/solgov-accessory.dm"
 	#include "items/clothing/solgov-armor.dm"
@@ -71,8 +71,9 @@
 	#include "machinery/vendors.dm"
 
 	#include "structures/closets.dm"
-	#include "structures/signs.dm"
 	#include "structures/other.dm"
+	#include "structures/override.dm"
+	#include "structures/signs.dm"
 
 	#include "structures/closets/armory.dm"
 	#include "structures/closets/command.dm"
@@ -108,6 +109,7 @@
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/blueriver/blueriver.dm"
 	#include "../away_inf/mining/mining.dm"
+//	#include "../away_inf/salvagers/salvagers.dm"
 
 	#include "../away/bearcat/bearcat.dm"
 //	#include "../away/mining/mining.dm"
@@ -119,6 +121,8 @@
 	#include "../away/lar_maria/lar_maria.dm"
 	#include "../away/unishi/unishi.dm"
 	#include "../away/slavers/slavers_base.dm"
+	#include "../away/voxship/voxship.dm"
+	#include "../away/skrellscoutship/skrellscoutship.dm"
 
 	#define using_map_DATUM /datum/map/sierra
 

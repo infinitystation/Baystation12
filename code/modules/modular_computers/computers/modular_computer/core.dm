@@ -52,7 +52,7 @@
 	return 1
 
 /obj/item/modular_computer/proc/install_default_programs_by_job(var/mob/living/carbon/human/H)
-	var/datum/job/jb = job_master.occupations_by_title[H.job]
+	var/datum/job/jb = SSjobs.get_by_title(H.job)
 	if(!jb) return
 	for(var/prog_type in jb.software_on_spawn)
 		var/datum/computer_file/program/prog_file = prog_type
@@ -308,7 +308,7 @@
 		hard_drive.store_file(autorun)
 
 /obj/item/modular_computer/GetIdCard()
-	if(card_slot && card_slot.can_broadcast && istype(card_slot.stored_card))
+	if(card_slot && card_slot.can_broadcast && istype(card_slot.stored_card) && card_slot.check_functionality())
 		return card_slot.stored_card
 
 /obj/item/modular_computer/proc/update_name()

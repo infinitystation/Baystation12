@@ -1,6 +1,3 @@
-/obj/item/weapon/gun/projectile/sec/lethal
-	magazine_type = /obj/item/ammo_magazine/c45m
-
 /obj/item/weapon/gun/projectile/spistol
 	name = "TH22 pistol"
 	desc = "The TH22. A small sidearm, with futuristic design. Uses .22LR rounds."

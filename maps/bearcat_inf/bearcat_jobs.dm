@@ -273,7 +273,7 @@
 	id_type = /obj/item/weapon/card/id/silver
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	r_hand = /obj/item/weapon/gun/projectile/sec/lethal
-	l_hand = /obj/item/weapon/clipboard
+	l_hand = /obj/item/weapon/material/clipboard
 
 /decl/hierarchy/outfit/job/bearcat/roboticist
 	name = BEARCAT_OUTFIT_JOB_NAME("Roboticist")
@@ -295,7 +295,7 @@
 	uniform = /obj/item/clothing/under/rank/cargo
 	shoes = /obj/item/clothing/shoes/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
-	l_hand = /obj/item/weapon/clipboard
+	l_hand = /obj/item/weapon/material/clipboard
 	r_hand = /obj/item/weapon/gun/projectile/sec/lethal
 	id_type = /obj/item/weapon/card/id/cargo/head
 

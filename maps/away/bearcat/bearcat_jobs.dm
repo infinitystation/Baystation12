@@ -1,5 +1,5 @@
 /datum/job/submap/bearcat_captain
-	title = "Captain"
+	title = "Independant Captain"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/captain
 	supervisors = "your bottom line"
@@ -8,9 +8,9 @@
 	your crew, and maybe you'll be able to survive long enough to be rescued."
 
 /datum/job/submap/bearcat_crewman
-	title = "Crewman"
+	title = "Independant Crewman"
 	supervisors = "the Captain"
-	total_positions = 1
+	total_positions = 3
 	outfit_type = /decl/hierarchy/outfit/job/bearcat/crew
 	info = "Your ship has suffered a catastrophic amount of damage, leaving it dark and crippled in the depths of \
 	unexplored space. Work together with the Acting Captain and what's left of the crew, and maybe you'll be able \
@@ -50,7 +50,7 @@
 #undef BEARCAT_OUTFIT_JOB_NAME
 
 /obj/effect/submap_landmark/spawnpoint/captain
-	name = "Captain"
+	name = "Independant Captain"
 
 /obj/effect/submap_landmark/spawnpoint/crewman
-	name = "Crewman"
+	name = "Independant Crewman"

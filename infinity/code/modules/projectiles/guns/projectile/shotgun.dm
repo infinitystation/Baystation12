@@ -27,3 +27,6 @@
 		icon_state = "bulldog"
 	else
 		icon_state = "bulldog-e"
+
+/obj/item/weapon/gun/projectile/shotgun/doublebarrel/empty
+	ammo_type = null

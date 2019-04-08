@@ -43,3 +43,4 @@
 	item_cost = 64
 	antag_costs = list(MODE_MERCENARY = 50)
 	path = /obj/item/rig_module/mounted
+	antag_roles = list(MODE_MERCENARY)

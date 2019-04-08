@@ -16,20 +16,20 @@ var/list/datum/power/changeling/powerinstances = list()
 
 /datum/power/changeling/absorb_dna
 	name = "Absorb DNA"
-	desc = "Позвол&#255;ет нам высасывать ДНК из тела существа. Они станов&#255;тс&#255; едины с нами, тем самым дела&#255; нас сильнее."
+	desc = "Permits us to syphon the DNA from a human. They become one with us, and we become stronger."
 	genomecost = 0
 	verbpath = /mob/proc/changeling_absorb_dna
 
 /datum/power/changeling/transform
 	name = "Transform"
-	desc = "Мы принимает вид того, чьё ДНК было поглощено ранее."
+	desc = "We take on the apperance and voice of one we have absorbed."
 	genomecost = 0
 	verbpath = /mob/proc/changeling_transform
 
 /datum/power/changeling/fakedeath
 	name = "Regenerative Stasis"
-	desc = "Мы слабеем до состо&#255;ни&#255; стазиса, где после смерти нас снова ждет жизнь."
-	helptext = "Может использоватьс&#255; до или после смерти. Продолжительность в коме может длитьс&#255; несколько минут."
+	desc = "We become weakened to a death-like state, where we will rise again from death."
+	helptext = "Can be used before or after death. Duration varies greatly."
 	genomecost = 0
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_fakedeath
@@ -38,94 +38,94 @@ var/list/datum/power/changeling/powerinstances = list()
 
 /datum/power/changeling/hive_upload
 	name = "Hive Channel"
-	desc = "Мы способны выпускать ДНК в каналы, позвол&#255;&#255; нашим собрать&#255;м поглощать их, словно они их поглотили сами."
-	helptext = "Позвол&#255;ет другим генокрадам поглощать ДНК,которым вы поделились. Не поможет в задании на поглощение."
+	desc = "We can channel a DNA into the airwaves, allowing our fellow changelings to absorb it and transform into it as if they acquired the DNA themselves."
+	helptext = "Allows other changelings to absorb the DNA you channel from the airwaves. Will not help them towards their absorb objectives."
 	genomecost = 0
 	verbpath = /mob/proc/changeling_hiveupload
 
 /datum/power/changeling/hive_download
 	name = "Hive Absorb"
-	desc = "Мы способны поглотить ДНК из канала, что в дальнейшем позволит нам использовать больше маскировок."
-	helptext = "Позвол&#255;ет поглощать ДНК и в дальнейшем использовать его. С помощью невозможно выполнить задание."
+	desc = "We can absorb a single DNA from the airwaves, allowing us to use more disguises with help from our fellow changelings."
+	helptext = "Allows you to absorb a single DNA and use it. Does not count towards your absorb objective."
 	genomecost = 0
 	verbpath = /mob/proc/changeling_hivedownload
 
 /datum/power/changeling/lesser_form
 	name = "Lesser Form"
-	desc = "Мы принимаем низшую форму - примата. Это унизительно дл&#255; нас."
+	desc = "We debase ourselves and become lesser.  We become a monkey."
 	genomecost = 4
 	verbpath = /mob/proc/changeling_lesser_form
 
 /datum/power/changeling/deaf_sting
 	name = "Deaf Sting"
-	desc = "Мы скрытно жалим человека, тем самым польностью оглуша&#255; его на короткое врем&#255;."
+	desc = "We silently sting a human, completely deafening them for a short time."
 	genomecost = 1
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_deaf_sting
 
 /datum/power/changeling/blind_sting
 	name = "Blind Sting"
-	desc = "Мы скрытно жалим человека, тем самым польностью ослепл&#255;&#255; его на короткое врем&#255;"
+	desc = "We silently sting a human, completely blinding them for a short time."
 	genomecost = 2
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_blind_sting
 
 /datum/power/changeling/silence_sting
 	name = "Silence Sting"
-	desc = "Мы скрытно жалим человека, тем самым заставив его замолчать на короткое врем&#255;."
-	helptext = "Не предупреждает жертву о том, что она была ужалена, до тех пор, пока она не попытаетс&#255; что-то сказать."
+	desc = "We silently sting a human, completely silencing them for a short time."
+	helptext = "Does not provide a warning to a victim that they have been stung, until they try to speak and cannot."
 	genomecost = 3
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_silence_sting
 
 /datum/power/changeling/mimicvoice
 	name = "Mimic Voice"
-	desc = "Мы подстраиваем голосовые св&#255;зки так, чтобы они смогли имитировать голос любого существа."
-	helptext = "Изменит голос на им&#255;, которое мы зададим. Нам необходимо посто&#255;нно тратить химикаты на поддержание данного навыка."
+	desc = "We shape our vocal glands to sound like a desired voice."
+	helptext = "Will turn your voice into the name that you enter. We must constantly expend chemicals to maintain our form like this"
 	genomecost = 1
 	verbpath = /mob/proc/changeling_mimicvoice
 
 /datum/power/changeling/extractdna
 	name = "Extract DNA"
-	desc = "Мы скрытно втыкаем жало в жертву и извлекаем из него ДНК."
-	helptext = "Дает вам ДНК человека, на которого был использован данный навык. Не учитываетс&#255; в качестве задани&#255; на поглощение."
+	desc = "We stealthily sting a target and extract the DNA from them."
+	helptext = "Will give you the DNA of your target, allowing you to transform into them. Does not count towards absorb objectives."
 	genomecost = 2
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_extract_dna_sting
 
 /datum/power/changeling/LSDSting
 	name = "Hallucination Sting"
-	desc = "Мы развиваем способность жалить цель мощными галлюцинационными химикатами."
-	helptext = "Цель не замечает то, что она была ужалена. Эффект длитс&#255; от 30 до 60 секунд."
+	desc = "We evolve the ability to sting a target with a powerful hallunicationary chemical."
+	helptext = "The target does not notice they have been stung.  The effect occurs after 30 to 60 seconds."
 	genomecost = 3
 	verbpath = /mob/proc/changeling_lsdsting
 
 /datum/power/changeling/DeathSting
 	name = "Death Sting"
-	desc = "Мы жалим человека, оставл&#255;&#255; в его теле опасные химикаты. Из-за них жерта умрет в считанные секунды, но наше преступление будет у все на виду."
-	helptext = "При применении данный навык будет показан дл&#255; всех окружающих."
+	desc = "We sting a human, filling them with potent chemicals. Their rapid death is all but assured, but our crime will be obvious."
+	helptext = "It will be clear to any surrounding witnesses if you use this power."
 	genomecost = 10
 	verbpath = /mob/proc/changeling_DEATHsting
 
 
 /datum/power/changeling/boost_range
 	name = "Boost Range"
-	desc = "Мы развили способность стрел&#255;ть жалом в людей, на это потребуетс&#255; некоторое врем&#255;."
+	desc = "We evolve the ability to shoot our stingers at humans, with some preperation."
 	genomecost = 2
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_boost_range
 
 /datum/power/changeling/Epinephrine
 	name = "Epinephrine sacs"
-	desc = "Мы активируем энергоклетки, которые вырабатывают адреналин."
-	helptext = "Позвол&#255;ет мнгновенно выйти из оглушени&#255;. Дл&#255; активации необходимо много химикатов."
+	desc = "We evolve additional sacs of adrenaline throughout our body."
+	helptext = "Gives the ability to instantly recover from stuns.  High chemical cost."
 	genomecost = 3
 	verbpath = /mob/proc/changeling_unstun
 
 /datum/power/changeling/ChemicalSynth
 	name = "Rapid Chemical-Synthesis"
-	desc = "Мы развиваем новые ветви дл&#255; производства необходимых химикатов, тем самым позволив регенерировать их быстрее."
-	helptext = "Удваивает скорость регенерации химикатов."
+	desc = "We evolve new pathways for producing our necessary chemicals, permitting us to naturally create them faster."
+	helptext = "Doubles the rate at which we naturally recharge chemicals."
 	genomecost = 4
 	isVerb = 0
 	verbpath = /mob/proc/changeling_fastchemical
@@ -140,33 +140,27 @@ var/list/datum/power/changeling/powerinstances = list()
 */
 /datum/power/changeling/EngorgedGlands
 	name = "Engorged Chemical Glands"
-	desc = "Наши химические железы набухают, благодар&#255; чему мы способны хранить больше химикатов."
-	helptext = "Позвол&#255;ет хранить на 25 ед. химикатов больше."
+	desc = "Our chemical glands swell, permitting us to store more chemicals inside of them."
+	helptext = "Allows us to store an extra 25 units of chemicals."
 	genomecost = 4
 	isVerb = 0
 	verbpath = /mob/proc/changeling_engorgedglands
 
 /datum/power/changeling/DigitalCamoflague
 	name = "Digital Camoflauge"
-	desc = "Мы развиваем способность искажать нашу форму и пропорции, дабы скрыть своё существование дл&#255; камер."
-	helptext = "Мы не видны дл&#255; камер во врем&#255; использовани&#255; данного навыка. Однако заметившие нас люди, при взгл&#255;де будут испытывать ужас от не логичности нашей формы. Дл&#255; поддержани&#255; навыка мы об&#255;заны посто&#255;нно тратить химикаты."
+	desc = "We evolve the ability to distort our form and proprtions, defeating common altgorthms used to detect lifeforms on cameras."
+	helptext = "We cannot be tracked by camera while using this skill.  However, humans looking at us will find us.. uncanny.  We must constantly expend chemicals to maintain our form like this."
 	genomecost = 1
 	allowduringlesserform = 1
 	verbpath = /mob/proc/changeling_digitalcamo
 
 /datum/power/changeling/rapidregeneration
 	name = "Rapid Regeneration"
-	desc = "Мы развиваем способность быстро регенерироватьс&#255;, не прибега&#255; к форме стазиса."
-	helptext = "Лечит незначительный урон каждый тик."
+	desc = "We evolve the ability to rapidly regenerate, negating the need for stasis."
+	helptext = "Heals a moderate amount of damage every tick."
 	genomecost = 7
 	verbpath = /mob/proc/changeling_rapidregen
 
-/datum/power/changeling/dissonant_shriek
-	name = "Dissonant Shriek"
-	desc = "Мы преобразуем голосовые св&#255;зки дл&#255; того, чтобы выпустить высокочастотный звук, который способен вывести из стро&#255; ближайшую технику."
-	helptext = "Мы используем аналог ЭМИ импульса, который способен создавать перегрузки в сети."
-	genomecost = 8
-	verbpath = /mob/proc/changeling_dissonant_shriek
 
 
 // Modularchangling, totally stolen from the new player panel.  YAYY

@@ -6,10 +6,7 @@
 	name = "chief engineer's locker"
 	req_access = list(access_ce)
 	icon_state = "securece1"
-	icon_closed = "securece"
-	icon_locked = "securece1"
-	icon_opened = "secureceopen"
-	icon_off = "secureceoff"
+	closet_appearance = /decl/closet_appearance/secure_closet/engineering/ce
 
 /obj/structure/closet/secure_closet/engineering_chief_sierra/WillContain()
 	return list(
@@ -33,7 +30,7 @@
 		/obj/item/clothing/glasses/welding/superior,
 		/obj/item/clothing/suit/armor/pcarrier/medium,
 		/obj/item/clothing/head/helmet,
-		/obj/item/weapon/clipboard,
+		/obj/item/weapon/material/clipboard,
 		/obj/item/device/flashlight/upgraded,
 		/obj/item/weapon/storage/box/armband/engine,
 		/obj/item/device/multitool/multimeter,
@@ -45,11 +42,7 @@
 /obj/structure/closet/secure_closet/engineering_senior
 	name = "senior engineer's locker"
 	req_access = list(access_seneng)
-	icon_state = "secureseneng1"
-	icon_closed = "secureseneng"
-	icon_locked = "secureseneng1"
-	icon_opened = "securesenengopen"
-	icon_off = "securesenengoff"
+	closet_appearance = /decl/closet_appearance/secure_closet/engineering
 
 /obj/structure/closet/secure_closet/engineering_senior/WillContain()
 	return list(
@@ -75,11 +68,7 @@
 /obj/structure/closet/secure_closet/engineering_sierra
 	name = "engineer's locker"
 	req_access = list(access_engine_equip)
-	icon_state = "secureeng1"
-	icon_closed = "secureeng"
-	icon_locked = "secureeng1"
-	icon_opened = "secureengopen"
-	icon_off = "secureengoff"
+	closet_appearance = /decl/closet_appearance/secure_closet/engineering
 
 /obj/structure/closet/secure_closet/engineering_sierra/WillContain()
 	return list(
@@ -102,11 +91,7 @@
 /obj/structure/closet/secure_closet/atmos_sierra
 	name = "atmospherics equipment locker"
 	req_access = list(access_atmospherics)
-	icon_state = "secureatm1"
-	icon_closed = "secureatm"
-	icon_locked = "secureatm1"
-	icon_opened = "secureatmopen"
-	icon_off = "secureatmoff"
+	closet_appearance = /decl/closet_appearance/secure_closet/engineering/atmos
 
 /obj/structure/closet/secure_closet/atmos_sierra/WillContain()
 	return list(

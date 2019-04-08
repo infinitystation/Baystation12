@@ -15,7 +15,7 @@
 	allowed_roles = list(/datum/job/chief_engineer, /datum/job/senior_engineer, /datum/job/engineer, /datum/job/roboticist, /datum/job/engineer_trainee, /datum/job/explorer_engineer, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/infsys)
 
 /datum/gear/suit/science_poncho
-	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/assistant, /datum/job/senior_scientist, /datum/job/roboticist, /datum/job/merchant, /datum/job/merchant_trainee)
+	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/senior_scientist, /datum/job/roboticist, /datum/job/merchant, /datum/job/merchant_trainee)
 
 /datum/gear/suit/cargo_poncho
 	allowed_roles = list(/datum/job/qm, /datum/job/cargo_tech, /datum/job/cargo_assistant, /datum/job/merchant, /datum/job/merchant_trainee)
@@ -48,7 +48,7 @@
 /datum/gear/suit/wintercoat/research
 	display_name = "science winter coat"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat/science
-	allowed_roles = RESEARCH_ROLES
+	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/senior_scientist, /datum/job/roboticist, /datum/job/merchant, /datum/job/merchant_trainee)
 
 /datum/gear/suit/wintercoat/dais
 	display_name = "DAIS winter coat"

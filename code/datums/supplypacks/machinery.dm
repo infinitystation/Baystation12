@@ -19,11 +19,11 @@
 /decl/hierarchy/supply_pack/machinery/papershredder
 	name = "Machinery - Paper shredder crate"
 	contains = list(/obj/machinery/papershredder/unsecured = 1)
-	cost = 5
+	cost = 8
 	containername = "paper shredder crate"
 
 /decl/hierarchy/supply_pack/machinery/photocopier
 	name = "Machinery - Photocopier crate"
 	contains = list(/obj/machinery/photocopier/unsecured = 1)
-	cost = 5
+	cost = 8
 	containername = "photocopier crate"

@@ -386,9 +386,6 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/corner/pink/diagonal
 	icon_state = "corner_white_diagonal"
 
-/obj/effect/floor_decal/corner/pink/full
-	icon_state = "corner_white_full"
-
 /obj/effect/floor_decal/corner/pink/three_quarters
 	icon_state = "corner_white_three_quarters"
 
@@ -581,18 +578,6 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/corner/grey/three_quarters
 	icon_state = "corner_white_three_quarters"
 
-/obj/effect/floor_decal/corner/grey_alt
-	name = "grey corner"
-	color = "#b0aeae"
-
-/obj/effect/floor_decal/corner/grey_alt/diagonal
-	icon_state = "corner_white_diagonal"
-
-/obj/effect/floor_decal/corner/grey_alt/three_quarters
-	icon_state = "corner_white_three_quarters"
-
-/obj/effect/floor_decal/corner/grey_alt/full
-
 /obj/effect/floor_decal/corner/grey/full
 	icon_state = "corner_white_full"
 
@@ -628,9 +613,6 @@ var/list/floor_decals = list()
 
 /obj/effect/floor_decal/corner/grey/bordercorner
 	icon_state = "bordercolorcorner"
-
-/obj/effect/floor_decal/corner/grey/bordercorner2
-	icon_state = "bordercolorcorner2"
 
 /obj/effect/floor_decal/corner/grey/bordercorner
 	icon_state = "bordercolorcorner"
@@ -709,6 +691,40 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/corner/b_green/bordercee
 	icon_state = "bordercolorcee"
 
+/obj/effect/floor_decal/corner/research
+	name = "research corner"
+	color = COLOR_RESEARCH
+
+/obj/effect/floor_decal/corner/research/diagonal
+	icon_state = "corner_white_diagonal"
+
+/obj/effect/floor_decal/corner/research/three_quarters
+	icon_state = "corner_white_three_quarters"
+
+/obj/effect/floor_decal/corner/research/full
+	icon_state = "corner_white_full"
+
+/obj/effect/floor_decal/corner/research/border
+	icon_state = "bordercolor"
+
+/obj/effect/floor_decal/corner/research/half
+	icon_state = "bordercolorhalf"
+
+/obj/effect/floor_decal/corner/research/mono
+	icon_state = "bordercolormonofull"
+
+/obj/effect/floor_decal/corner/research/bordercorner
+	icon_state = "bordercolorcorner"
+
+/obj/effect/floor_decal/corner/research/bordercorner2
+	icon_state = "bordercolorcorner2"
+
+/obj/effect/floor_decal/corner/research/borderfull
+	icon_state = "bordercolorfull"
+
+/obj/effect/floor_decal/corner/research/bordercee
+	icon_state = "bordercolorcee"
+
 /obj/effect/floor_decal/spline/plain
 	name = "spline - plain"
 	icon_state = "spline_plain"
@@ -776,13 +792,6 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/spline/fancy/wood/three_quarters
 	icon_state = "spline_fancy_full"
 
-/obj/effect/floor_decal/industrial/danger
-	name = "danger stripes"
-	icon_state = "danger"
-
-/obj/effect/floor_decal/industrial/danger/corner
-	icon_state = "dangercorner"
-
 /obj/effect/floor_decal/industrial/warning
 	name = "hazard stripes"
 	icon_state = "warning"
@@ -795,11 +804,6 @@ var/list/floor_decals = list()
 
 /obj/effect/floor_decal/industrial/warning/cee
 	icon_state = "warningcee"
-
-/obj/effect/floor_decal/industrial/warning/half
-	name = "floor decal"
-	icon = 'icons/turf/flooring/infinity_decals.dmi'
-	icon_state = "warninghalf"
 
 /obj/effect/floor_decal/industrial/warning/fulltile
 	icon_state = "warningfulltile"
@@ -819,9 +823,6 @@ var/list/floor_decals = list()
 
 /obj/effect/floor_decal/industrial/hatch/yellow
 	color = "#cfcf55"
-
-/obj/effect/floor_decal/industrial/hatch/grey
-	color = "#808080"
 
 /obj/effect/floor_decal/industrial/hatch/red
 	color = COLOR_RED_GRAY
@@ -860,10 +861,6 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/industrial/outline/orange
 	name = "orange outline"
 	color = COLOR_DARK_ORANGE
-
-/obj/effect/floor_decal/industrial/outline/green
-	name = "orange outline"
-	color = COLOR_GREEN
 
 /obj/effect/floor_decal/industrial/loading
 	name = "loading area"
@@ -957,67 +954,6 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/ss13/l16
 	name = "L16"
 	icon_state = "L16"
-
-//Infinity Station sign. ~Quardbreak
-/obj/effect/floor_decal/ss13/infinity
-	icon = 'icons/turf/flooring/infinity_decals.dmi'
-
-/obj/effect/floor_decal/ss13/infinity/l1
-	name = "L1"
-	icon_state = "L1"
-
-/obj/effect/floor_decal/ss13/infinity/l2
-	name = "L2"
-	icon_state = "L2"
-
-/obj/effect/floor_decal/ss13/infinity/l3
-	name = "L3"
-	icon_state = "L3"
-
-/obj/effect/floor_decal/ss13/infinity/l4
-	name = "L4"
-	icon_state = "L4"
-
-/obj/effect/floor_decal/ss13/infinity/l5
-	name = "L5"
-	icon_state = "L5"
-
-/obj/effect/floor_decal/ss13/infinity/l6
-	name = "L6"
-	icon_state = "L6"
-
-/obj/effect/floor_decal/ss13/infinity/l7
-	name = "L7"
-	icon_state = "L7"
-
-/obj/effect/floor_decal/ss13/infinity/l8
-	name = "L8"
-	icon_state = "L8"
-
-/obj/effect/floor_decal/ss13/infinity/l9
-	name = "L9"
-	icon_state = "L9"
-
-/obj/effect/floor_decal/ss13/infinity/l10
-	name = "L10"
-	icon_state = "L10"
-
-/obj/effect/floor_decal/ss13/infinity/l10
-	name = "L10"
-	icon_state = "L10"
-
-/obj/effect/floor_decal/parade
-	name = "first"
-	icon = 'icons/turf/flooring/infinity_decals.dmi'
-	icon_state = "first"
-
-/obj/effect/floor_decal/parade/second
-	name = "second"
-	icon_state = "second"
-
-/obj/effect/floor_decal/parade/third
-	name = "third"
-	icon_state = "third"
 
 /obj/effect/floor_decal/sign
 	name = "floor sign"
@@ -1232,7 +1168,6 @@ var/list/floor_decals = list()
 /obj/effect/floor_decal/steeldecal/steel_decals_central7
 	icon_state = "steel_decals_central7"
 
-
 /obj/effect/floor_decal/techfloor
 	name = "techfloor edges"
 	icon_state = "techfloor_edges"
@@ -1257,3 +1192,9 @@ var/list/floor_decals = list()
 	name = "hole right"
 	icon_state = "techfloor_hole_right"
 
+/obj/effect/floor_decal/stoneborder
+	name = "stone border"
+	icon_state = "stoneborder"
+
+/obj/effect/floor_decal/stoneborder/corner
+	icon_state = "stoneborder_c"

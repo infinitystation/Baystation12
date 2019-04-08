@@ -16,7 +16,9 @@
 
 	var/attacking = 0
 	var/target_zone
+	var/done_struggle = FALSE // Used by struggle grab datum to keep track of state.
 
+	item_flags = ITEM_FLAG_NO_BLUDGEON
 	w_class = ITEM_SIZE_NO_CONTAINER
 /*
 	This section is for overrides of existing procs.
@@ -60,7 +62,24 @@
 			upgrade()
 
 /obj/item/grab/attack(mob/M, mob/living/user)
+
+	// Relying on BYOND proc ordering isn't working, so go go ugly workaround.
+	if(ishuman(user) && affecting == M)
+		var/mob/living/carbon/human/H = user
+		if(H.check_psi_grab(src))
+			return
+	// End workaround
+
 	current_grab.hit_with_grab(src)
+
+/obj/item/grab/resolve_attackby(atom/A, mob/user, var/click_params)
+	assailant.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!A.grab_attack(src))
+		return ..()
+	action_used()
+	if (current_grab.downgrade_on_action)
+		downgrade()
+	return TRUE
 
 /obj/item/grab/dropped()
 	..()
@@ -177,7 +196,7 @@
 		C.leave_evidence(assailant)
 		if(prob(50))
 			C.ironed_state = WRINKLES_WRINKLY
-	
+
 /obj/item/grab/proc/upgrade(var/bypass_cooldown = FALSE)
 	if(!check_upgrade_cooldown() && !bypass_cooldown)
 		to_chat(assailant, "<span class='danger'>It's too soon to upgrade.</span>")
@@ -255,6 +274,9 @@
 
 /obj/item/grab/proc/point_blank_mult()
 	return current_grab.point_blank_mult
+
+/obj/item/grab/proc/damage_stage()
+	return current_grab.damage_stage
 
 /obj/item/grab/proc/force_danger()
 	return current_grab.force_danger

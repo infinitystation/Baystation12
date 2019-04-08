@@ -64,7 +64,7 @@
 //When the wearer gets hit, this armor will teleport the user a short distance away (to safety or to more danger, no one knows. That's the fun of it!)
 /obj/item/clothing/suit/armor/reactive
 	name = "reactive teleport armor"
-	desc = "Someone separated our Research Director from their own head!"
+	desc = "Someone separated our Chief Science Officer from their own head!"
 	var/active = 0.0
 	icon_state = "reactiveoff"
 	item_state = "reactiveoff"
@@ -308,10 +308,6 @@
 	desc = "A lightweight green plate carrier vest. It can be equipped with armor plates, but provides no protection of its own."
 	icon_state = "pcarrier_green"
 
-/obj/item/clothing/suit/armor/pcarrier/green/heavy_saare
-	starting_accessories = list(/obj/item/clothing/accessory/armorplate/medium, /obj/item/clothing/accessory/armguards/green, /obj/item/clothing/accessory/legguards/green, /obj/item/clothing/accessory/storage/pouches/green, /obj/item/clothing/accessory/armor/tag/saare)
-
-
 /obj/item/clothing/suit/armor/pcarrier/navy
 	name = "navy plate carrier"
 	desc = "A lightweight navy blue plate carrier vest. It can be equipped with armor plates, but provides no protection of its own."
@@ -329,8 +325,6 @@
 /obj/item/clothing/suit/armor/pcarrier/merc
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/merc, /obj/item/clothing/accessory/armguards/merc, /obj/item/clothing/accessory/legguards/merc, /obj/item/clothing/accessory/storage/pouches)
 
-/obj/item/clothing/suit/armor/pcarrier/tactical
-	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical, /obj/item/clothing/accessory/armguards/tactical, /obj/item/clothing/accessory/legguards/tactical)
 
 //Modular specialty armor
 /obj/item/clothing/suit/armor/riot

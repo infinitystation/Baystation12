@@ -30,7 +30,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 	popup.set_content(jointext(dat, null))
 	popup.open()
 
-	feedback_add_details("admin_verb","LCPMP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSstatistics.add_field("admin_verb","LCPMP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 #define PANEL_CLOSED 0
 #define PANEL_UNSCREWED 1
@@ -40,7 +40,7 @@ GLOBAL_LIST_EMPTY(pmp_list)
 /obj/item/device/pmp
 	name = "portable media player"
 	desc = "A little device which looks like a old radio. Can be used to play soft tunes."
-	icon = 'icons/portable_media_player.dmi'
+	icon = 'infinity/icons/obj/portable_media_player.dmi'
 	icon_state = "pmp"
 	item_state = "radio"
 	w_class = ITEM_SIZE_NORMAL
