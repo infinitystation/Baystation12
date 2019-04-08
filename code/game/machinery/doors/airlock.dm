@@ -254,14 +254,15 @@ var/list/airlock_overlays = list()
 		if(isWrench(C))
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 			user.visible_message(SPAN_WARNING("[user.name] starts frantically pumping the bolt override mechanism!"), SPAN_WARNING("You start frantically pumping the bolt override mechanism!"))
-			if(do_after(user, 160) && locked)
-				visible_message("\The [src] bolts disengage!")
-				locked = 0
-				return
-			else
-				visible_message("\The [src] bolts engage!")
-				locked = 1
-				return
+			if(do_after(user, 160))
+				locked = !locked
+				visible_message("\The [src] bolts [locked ? "" : "dis"]engage!")
+				if(locked)
+					playsound(src, 'sound/machines/bolts_down.ogg', 30, 1)
+				else
+					playsound(src, 'sound/machines/bolts_up.ogg', 30, 1)
+				update_icon()
+			return
 	..()
 
 /obj/machinery/door/airlock/external/bolted
