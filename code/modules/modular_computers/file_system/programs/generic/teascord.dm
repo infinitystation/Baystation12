@@ -51,12 +51,6 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 	data["stored_login"] = stored_login
 	data["stored_password"] = stars(stored_password, 0)
 
-	/*switch(tab)
-		if(2)
-			data["voice"] = voice
-			data["microphone"] = microphone
-			data["camera"] = camera*/
-
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "teascord.tmpl", name, 800, 800, state = state)
@@ -67,8 +61,6 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 /datum/nano_module/teascord/proc/log_in()
 	var/datum/computer_file/data/teascord_account/target
 	for(var/datum/computer_file/data/teascord_account/account in ntnet_global.teascord_accounts)
-		if(!account)
-			continue
 		if(stored_login && stored_login == account.login)
 			target = account
 			break
@@ -77,11 +69,7 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 		error_message = "Invalid Login"
 		return 0
 
-	var/use_pass
-	if(stored_password)
-		use_pass = stored_password
-
-	if(use_pass == target.password)
+	if(stored_password == target.password)
 		current_account = target
 		current_account.connected_clients |= src
 		clear_stored()
@@ -93,8 +81,6 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 
 /datum/nano_module/teascord/proc/create_account()
 	for(var/datum/computer_file/data/teascord_account/account in ntnet_global.teascord_accounts)
-		if(!account)
-			continue
 		if(stored_login && stored_login == account.login)
 			error_message = "This login already taken"
 			return
@@ -113,9 +99,14 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 	clear_stored()
 	tab = LOGIN_SCREEN
 
+/datum/nano_module/teascord/proc/delete_account()
+	tab = LOGIN_SCREEN
+	current_account.Destroy()
+
 /datum/nano_module/teascord/proc/clear_stored()
 	stored_login = ""
 	stored_password = ""
+	error_message = ""
 
 /datum/nano_module/teascord/proc/log_out()
 	if(current_account)
@@ -131,12 +122,15 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 	if(href_list["select_tab"])
 		tab = href_list["select_tab"]
 		clear_stored()
-		if(error_message)
-			error_message = ""
 		return 1
 
 	if(href_list["new_acc"])
 		create_account()
+		return 1
+
+	if(href_list["delete_acc"])
+		if(alert(user, "Are you sure that you want to delete '[current_account.login]' account?", "Account deleting", "Yes", "No") == "Yes")
+			delete_account()
 		return 1
 
 	if(href_list["edit_login"])
@@ -183,15 +177,15 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 		camera = !camera
 		return 1
 
-	if(href_list["send_frend_request"])
+	if(href_list["send_friend_request"])
 
 		return 1
 
-	if(href_list["accept_frend_request"])
+	if(href_list["accept_friend_request"])
 
 		return 1
 
-	if(href_list["ignore_frend_request"])
+	if(href_list["ignore_friend_request"])
 
 		return 1
 
