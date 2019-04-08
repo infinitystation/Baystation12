@@ -541,8 +541,9 @@
 				flavor_texts[href_list["flavor_change"]] = msg
 				set_flavor()
 				return
-	..()
-	return
+// INTERACTIONS
+//	..()
+//	return
 
 ///eyecheck()
 ///Returns a number between -1 to 2
