@@ -9,9 +9,11 @@
 	attack_verb = list("whipped")
 	hitsound = 'sound/weapons/towelwhip.ogg'
 	desc = "A soft cotton towel."
-	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi'
-		)
+
+
+/obj/item/weapon/towel/equipped(var/M, var/slot)
+	..()
+	sprite_sheets = list(SPECIES_RESOMI = (slot == slot_head ? 'icons/mob/onmob/Resomi/head.dmi' : 'icons/mob/onmob/Resomi/suit.dmi'))
 
 /obj/item/weapon/towel/attack_self(mob/living/user as mob)
 	user.visible_message(text("<span class='notice'>[] uses [] to towel themselves off.</span>", user, src))
