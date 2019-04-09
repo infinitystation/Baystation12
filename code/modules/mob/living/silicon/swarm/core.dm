@@ -1,12 +1,12 @@
 /mob/living/silicon/core
-	var/obj/item/organ/internal/core/container = null
+	var/obj/item/organ/internal/swarm/core/container = null
 	var/emp_damage = 0
 	var/alert = 0
 
 
 /mob/living/silicon/core/New()
 	reagents = new/datum/reagents(1000, src)
-	if(istype(loc, /obj/item/organ/internal/posibrain))
+	if(istype(loc, /obj/item/organ/internal/swarm/core))
 		container = loc
 	add_language("Robot Talk")
 	..()
@@ -17,5 +17,3 @@
 			death(1)	//Brains can die again
 		ghostize()		//Ghostize checks for key so nothing else is necessary.
 	return ..()
-
-//Все, конец, иди отсюда, на 04.04.2019 тут всё сделано(GO OUT!!!)

@@ -1,4 +1,4 @@
-/obj/item/organ/internal/core
+/obj/item/organ/internal/swarm/core
 	name = "core"
 	desc = "Ball with several lights, presumably sensors"
 	icon = 'icons/swarm/obj/organ/internal.dmi'
@@ -18,17 +18,17 @@
 
 	var/mob/living/silicon/core/brainmob = null
 
-/obj/item/organ/internal/core/New(var/mob/living/carbon/H)
+/obj/item/organ/internal/swarm/core/New(var/mob/living/carbon/H)
 	..()
 	if(!brainmob && H)
 		brainmob_core_create(H)
 
-/obj/item/organ/internal/core/proc/brainmob_core_create(var/mob/living/carbon/H)
+/obj/item/organ/internal/swarm/core/proc/brainmob_core_create(var/mob/living/carbon/H)
 	brainmob = new(src)
 	brainmob.SetName(H.real_name)
 	brainmob.real_name = H.real_name
 	brainmob.dna = H.dna.Clone()
 
-/obj/item/organ/internal/core/Destroy()
+/obj/item/organ/internal/swarm/core/Destroy()
 	QDEL_NULL(brainmob)
 	return ..()
