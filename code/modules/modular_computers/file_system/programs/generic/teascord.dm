@@ -46,6 +46,10 @@
 datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
 	var/list/data = host.initial_data()
 
+	var/list/available_contacts[0]
+	for(var/datum/computer_file/data/teascord_account/AC in ntnet_global.teascord_accounts)
+		available_contacts.Add(contacts_to_nanoui(AC))
+	data["contacts"] = available_contacts
 	data["tab"] = tab
 	data["error_message"] = error_message
 	data["stored_login"] = stored_login
@@ -57,6 +61,12 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 		ui.set_auto_update(1)
 		ui.set_initial_data(data)
 		ui.open()
+
+/datum/nano_module/teascord/proc/contacts_to_nanoui(var/datum/computer_file/data/teascord_account/AC)
+	return list(list(
+		"login" = AC.login,
+		"nickname" = AC.nickname
+		))
 
 /datum/nano_module/teascord/proc/log_in()
 	var/datum/computer_file/data/teascord_account/target
@@ -96,7 +106,6 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 	var/datum/computer_file/data/teascord_account/new_acc = new/datum/computer_file/data/teascord_account()
 	new_acc.login = stored_login
 	new_acc.password = stored_password
-	clear_stored()
 	tab = LOGIN_SCREEN
 
 /datum/nano_module/teascord/proc/delete_account()

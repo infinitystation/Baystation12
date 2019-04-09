@@ -25,6 +25,21 @@
 	{{:helper.link('Back to login', '', {'select_tab' : 1})}}
 	<div>{{:data.error_message}}</div>
 {{else data.tab == 3}}
+	<div>
 	{{:helper.link('Log Out', '', {'logout' : 1})}}
 	{{:helper.link('Delete Account', '', {'delete_acc' : 1})}}
+	<br><hr>
+	</div>
+	<div class="item">
+		<center><h3>Contacts</h3></span>
+		<table style="width:100%">
+			<tr><th style="width:10%">Login<th style="width:25%">Nickname<th style="width:20%">Options
+				{{for data.contacts}}
+				<tr>
+				<td>{{:value.login}}
+				<td>{{:value.nickname}}
+				<td>{{:helper.link('Call', '', {'voice_call' : 1})}}
+				{{/for}}
+		</table>
+	</div>
 {{/if}}
