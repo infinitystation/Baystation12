@@ -14,7 +14,7 @@ var/list/nuke_disks = list()
 	config_tag = "mercenary"
 	required_players = 15
 	required_enemies = 1
-	end_on_antag_death = 1
+	end_on_antag_death = FALSE
 	var/nuke_off_station = 0 //Used for tracking if the syndies actually haul the nuke to the station
 	var/syndies_didnt_escape = 0 //Used for tracking if the syndies got the shuttle off of the z-level
 	antag_tags = list(MODE_MERCENARY)
@@ -30,56 +30,56 @@ var/list/nuke_disks = list()
 	if(config.objectives_disabled == CONFIG_OBJECTIVE_NONE || (merc && !merc.global_objectives.len))
 		..()
 		return
-	var/disk_rescued = 1
+	var/disk_rescued = TRUE
 	for(var/obj/item/weapon/disk/nuclear/D in nuke_disks)
 		var/disk_area = get_area(D)
 		if(!is_type_in_list(disk_area, GLOB.using_map.post_round_safe_areas) || GLOB.mercs.antags_are_dead())
-			disk_rescued = 0
+			disk_rescued = FALSE
 			break
 	var/crew_evacuated = (evacuation_controller.has_evacuated())
 
 	if(!disk_rescued &&  station_was_nuked && !syndies_didnt_escape)
-		feedback_set_details("round_end_result","win - syndicate nuke")
+		SSstatistics.set_field_details("round_end_result","win - syndicate nuke")
 		to_world("<FONT size = 3><B>Mercenary Major Victory!</B></FONT>")
 		to_world("<B>[syndicate_name()] operatives have destroyed [station_name()]!</B>")
 
 	else if (!disk_rescued &&  station_was_nuked && syndies_didnt_escape)
-		feedback_set_details("round_end_result","halfwin - syndicate nuke - did not evacuate in time")
+		SSstatistics.set_field_details("round_end_result","halfwin - syndicate nuke - did not evacuate in time")
 		to_world("<FONT size = 3><B>Total Annihilation</B></FONT>")
 		to_world("<B>[syndicate_name()] operatives destroyed [station_name()] but did not leave the area in time and got caught in the explosion.</B> Next time, don't lose the disk!")
 
 	else if (!disk_rescued && !station_was_nuked &&  nuke_off_station && !syndies_didnt_escape)
-		feedback_set_details("round_end_result","halfwin - blew wrong station")
+		SSstatistics.set_field_details("round_end_result","halfwin - blew wrong station")
 		to_world("<FONT size = 3><B>Crew Minor Victory</B></FONT>")
 		to_world("<B>[syndicate_name()] operatives secured the authentication disk but blew up something that wasn't [station_name()].</B> Next time, don't lose the disk!")
 
 	else if (!disk_rescued && !station_was_nuked &&  nuke_off_station && syndies_didnt_escape)
-		feedback_set_details("round_end_result","halfwin - blew wrong station - did not evacuate in time")
+		SSstatistics.set_field_details("round_end_result","halfwin - blew wrong station - did not evacuate in time")
 		to_world("<FONT size = 3><B>[syndicate_name()] operatives have earned Darwin Award!</B></FONT>")
 		to_world("<B>[syndicate_name()] operatives blew up something that wasn't [station_name()] and got caught in the explosion.</B> Next time, don't lose the disk!")
 
 	else if (disk_rescued && GLOB.mercs.antags_are_dead())
-		feedback_set_details("round_end_result","loss - evacuation - disk secured - syndi team dead")
+		SSstatistics.set_field_details("round_end_result","loss - evacuation - disk secured - syndi team dead")
 		to_world("<FONT size = 3><B>Crew Major Victory!</B></FONT>")
 		to_world("<B>The Research Staff has saved the disc and killed the [syndicate_name()] Operatives</B>")
 
 	else if ( disk_rescued                                        )
-		feedback_set_details("round_end_result","loss - evacuation - disk secured")
+		SSstatistics.set_field_details("round_end_result","loss - evacuation - disk secured")
 		to_world("<FONT size = 3><B>Crew Major Victory</B></FONT>")
 		to_world("<B>The Research Staff has saved the disc and stopped the [syndicate_name()] Operatives!</B>")
 
 	else if (!disk_rescued && GLOB.mercs.antags_are_dead())
-		feedback_set_details("round_end_result","loss - evacuation - disk not secured")
+		SSstatistics.set_field_details("round_end_result","loss - evacuation - disk not secured")
 		to_world("<FONT size = 3><B>Mercenary Minor Victory!</B></FONT>")
 		to_world("<B>The Research Staff failed to secure the authentication disk but did manage to kill most of the [syndicate_name()] Operatives!</B>")
 
 	else if (!disk_rescued && crew_evacuated)
-		feedback_set_details("round_end_result","halfwin - detonation averted")
+		SSstatistics.set_field_details("round_end_result","halfwin - detonation averted")
 		to_world("<FONT size = 3><B>Mercenary Minor Victory!</B></FONT>")
 		to_world("<B>[syndicate_name()] operatives recovered the abandoned authentication disk but detonation of [station_name()] was averted.</B> Next time, don't lose the disk!")
 
 	else if (!disk_rescued && !crew_evacuated)
-		feedback_set_details("round_end_result","halfwin - interrupted")
+		SSstatistics.set_field_details("round_end_result","halfwin - interrupted")
 		to_world("<FONT size = 3><B>Neutral Victory</B></FONT>")
 		to_world("<B>Round was mysteriously interrupted!</B>")
 

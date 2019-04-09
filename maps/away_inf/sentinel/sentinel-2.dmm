@@ -720,11 +720,11 @@
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/pods)
 "bI" = (
-/turf/simulated/floor,
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_l";
 	dir = 8
 	},
+/turf/simulated/floor,
 /turf/simulated/shuttle/wall{
 	dir = 4;
 	icon_state = "swall_c"
@@ -1774,11 +1774,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/crew/brig/emergency_armory)
 "dC" = (
-/turf/simulated/floor,
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_r";
 	dir = 8
 	},
+/turf/simulated/floor,
 /turf/simulated/shuttle/wall{
 	dir = 1;
 	icon_state = "swall_c"
@@ -2213,7 +2213,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
+	req_access = list(list(24,11))
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/cryo)
@@ -3187,7 +3187,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/ship/patrol/crew/toilet)
@@ -3934,7 +3933,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /obj/structure/table/standard,
 /obj/item/weapon/storage/box/cups,
@@ -4053,7 +4051,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/upper/port)
@@ -4111,7 +4108,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /obj/structure/cable{
 	d1 = 4;

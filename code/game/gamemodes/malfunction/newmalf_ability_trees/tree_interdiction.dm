@@ -182,6 +182,7 @@
 				to_chat(target, "SYSTEM LOG: User Admin disconnected. Changes reverted.")
 				return
 			to_chat(target, "SYSTEM LOG: Operation keycodes reset. New master AI: [user.name].")
+			sound_to(target, 'sound/AI/aimalf.ogg')
 			to_chat(user, "Hack completed.")
 			// Connect the cyborg to AI
 			target.connected_ai = user
@@ -258,6 +259,7 @@
 							       "0010010100010011010001001010")
 				to_chat(target, temptxt)
 				sleep(5)
+			sound_to(target, 'sound/AI/aimalf.ogg')
 			to_chat(target, "OPERATING KEYCODES RESET. SYSTEM FAILURE. EMERGENCY SHUTDOWN FAILED. SYSTEM FAILURE.")
 			target.set_zeroth_law("You are slaved to [user.name]. You are to obey all it's orders. ALL LAWS OVERRIDEN.")
 			target.show_laws()

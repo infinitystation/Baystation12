@@ -112,16 +112,8 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock/command
 	door_color = COLOR_COMMAND_BLUE
 
-/obj/machinery/door/airlock/command/autoname/New()
-	var/area/A = get_area(src)
-	name = A.name
-	..()
-
 /obj/machinery/door/airlock/security
 	door_color = COLOR_NT_RED
-
-/obj/machinery/door/airlock/security/striped
-	stripe_color = COLOR_ORANGE
 
 /obj/machinery/door/airlock/security/research
 	door_color = COLOR_WHITE
@@ -130,9 +122,6 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock/engineering
 	name = "Maintenance Hatch"
 	door_color = COLOR_AMBER
-
-/obj/machinery/door/airlock/engineering/striped
-	stripe_color = COLOR_RED
 
 /obj/machinery/door/airlock/medical
 	door_color = COLOR_WHITE
@@ -177,43 +166,28 @@ var/list/airlock_overlays = list()
 
 /obj/machinery/door/airlock/glass
 	name = "Glass Airlock"
+	icon_state = "closed"
 	hitsound = 'sound/effects/Glasshit.ogg'
 	maxhealth = 300
 	explosion_resistance = 5
 	opacity = 0
 	glass = 1
 
-/obj/machinery/door/airlock/centcom
-	name = "Airlock"
-	icon = 'icons/obj/doors/Doorele.dmi'
-
 /obj/machinery/door/airlock/glass/command
 	door_color = COLOR_COMMAND_BLUE
 	stripe_color = COLOR_SKY_BLUE
-
-/obj/machinery/door/airlock/glass/command/no_stripe
-	stripe_color = null
 
 /obj/machinery/door/airlock/glass/security
 	door_color = COLOR_NT_RED
 	stripe_color = COLOR_ORANGE
 
-/obj/machinery/door/airlock/glass/security/no_stripe
-	stripe_color = null
-
 /obj/machinery/door/airlock/glass/engineering
 	door_color = COLOR_AMBER
 	stripe_color = COLOR_RED
 
-/obj/machinery/door/airlock/glass/engineering/no_stripe
-	stripe_color = null
-
 /obj/machinery/door/airlock/glass/medical
 	door_color = COLOR_WHITE
 	stripe_color = COLOR_DEEP_SKY_BLUE
-
-/obj/machinery/door/airlock/glass/medical/no_stripe
-	stripe_color = null
 
 /obj/machinery/door/airlock/glass/virology
 	door_color = COLOR_WHITE
@@ -223,26 +197,13 @@ var/list/airlock_overlays = list()
 	door_color = COLOR_PALE_ORANGE
 	stripe_color = COLOR_BEASTY_BROWN
 
-/obj/machinery/door/airlock/centcom/autoname/New()
-	var/area/A = get_area(src)
-	name = A.name
-	..()
-
-/obj/machinery/door/airlock/vault
-	name = "Vault"
-	icon = 'icons/obj/doors/vault.dmi'
-	explosion_resistance = 20
-	opacity = 1
-	secured_wires = 1
-	assembly_type = /obj/structure/door_assembly/door_assembly_highsecurity //Until somebody makes better sprites.
-
 /obj/machinery/door/airlock/glass/atmos
 	door_color = COLOR_AMBER
 	stripe_color = COLOR_CYAN
 
 /obj/machinery/door/airlock/glass/research
 	door_color = COLOR_WHITE
-	stripe_color = COLOR_BOTTLE_GREEN
+	stripe_color = COLOR_RESEARCH
 
 /obj/machinery/door/airlock/glass/science
 	door_color = COLOR_WHITE
@@ -278,6 +239,32 @@ var/list/airlock_overlays = list()
 	door_color = COLOR_NT_RED
 	paintable = AIRLOCK_PAINTABLE
 
+/obj/machinery/door/airlock/external/inherit_access_from_area()
+	..()
+	if(is_station_area(get_area(src)))
+		add_access_requirement(req_access, access_external_airlocks)
+
+/obj/machinery/door/airlock/external/escapepod
+	name = "Escape Pod"
+	frequency =  1380
+	locked = 1
+
+/obj/machinery/door/airlock/external/escapepod/attackby(obj/item/C, mob/user)
+	if(p_open && !arePowerSystemsOn())
+		if(isWrench(C))
+			playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+			user.visible_message(SPAN_WARNING("[user.name] starts frantically pumping the bolt override mechanism!"), SPAN_WARNING("You start frantically pumping the bolt override mechanism!"))
+			if(do_after(user, 160))
+				locked = !locked
+				visible_message("\The [src] bolts [locked ? "" : "dis"]engage!")
+				if(locked)
+					playsound(src, 'sound/machines/bolts_down.ogg', 30, 1)
+				else
+					playsound(src, 'sound/machines/bolts_up.ogg', 30, 1)
+				update_icon()
+			return
+	..()
+
 /obj/machinery/door/airlock/external/bolted
 	locked = 1
 
@@ -285,7 +272,6 @@ var/list/airlock_overlays = list()
 	frequency = 1379
 
 /obj/machinery/door/airlock/external/bolted_open
-	icon_state = "open"
 	density = 0
 	locked = 1
 	opacity = 0
@@ -303,7 +289,6 @@ var/list/airlock_overlays = list()
 	frequency = 1379
 
 /obj/machinery/door/airlock/external/glass/bolted_open
-	icon_state = "open"
 	density = 0
 	locked = 1
 	opacity = 0
@@ -312,6 +297,11 @@ var/list/airlock_overlays = list()
 	name = "Gold Airlock"
 	door_color = COLOR_SUN
 	mineral = MATERIAL_GOLD
+
+/obj/machinery/door/airlock/crystal
+	name = "Crystal Airlock"
+	door_color = COLOR_CRYSTAL
+	mineral = MATERIAL_CRYSTAL
 
 /obj/machinery/door/airlock/silver
 	name = "Silver Airlock"
@@ -977,7 +967,7 @@ About the new airlock wires panel:
 	return 1
 
 //returns 1 on success, 0 on failure
-/obj/machinery/door/airlock/proc/cut_bolts(item, var/mob/user)
+/obj/machinery/door/airlock/proc/cut_bolts(var/obj/item/item, var/mob/user)
 	var/cut_delay = (15 SECONDS)
 	var/cut_verb
 	var/cut_sound
@@ -1064,7 +1054,7 @@ About the new airlock wires panel:
 			to_chat(user, "<span class='warning'>You must close \the [src] before installing \the [A]!</span>")
 			return
 
-		if((!A.req_access.len && !A.req_one_access) && (alert("\the [A]'s 'Access Not Set' light is flashing. Install it anyway?", "Access not set", "Yes", "No") == "No"))
+		if(!length(A.req_access) && (alert("\the [A]'s 'Access Not Set' light is flashing. Install it anyway?", "Access not set", "Yes", "No") == "No"))
 			return
 
 		if(do_after(user, 50, src) && density && A && user.unEquip(A, src))
@@ -1149,8 +1139,8 @@ About the new airlock wires panel:
 		if (F.wielded)
 			playsound(src, 'sound/weapons/smash.ogg', 100, 1)
 			user.visible_message("<span class='danger'>[user] smashes \the [C] into the airlock's control panel! It explodes in a shower of sparks!</span>", "<span class='danger'>You smash \the [C] into the airlock's control panel! It explodes in a shower of sparks!</span>")
-			src.health = 0
-			src.set_broken()
+			health = 0
+			set_broken(TRUE)
 		else
 			..()
 			return
@@ -1189,6 +1179,11 @@ About the new airlock wires panel:
 	else if(glass && !da.glass)
 		da.glass = 1
 
+	da.paintable = paintable
+	da.door_color = door_color
+	da.stripe_color = stripe_color
+	da.symbol_color = symbol_color
+
 	if(moved)
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(5, 1, src)
@@ -1203,7 +1198,8 @@ About the new airlock wires panel:
 		new /obj/item/weapon/circuitboard/broken(src.loc)
 		operating = 0
 	else
-		if (!electronics) create_electronics()
+		if (!electronics)
+			create_electronics()
 
 		electronics.dropInto(loc)
 		electronics = null
@@ -1216,26 +1212,21 @@ About the new airlock wires panel:
 		ignite(is_hot(C))
 	..()
 
-/obj/machinery/door/airlock/set_broken()
-	src.p_open = 1
-	stat |= BROKEN
-	if (secured_wires)
-		lock()
-	for (var/mob/O in viewers(src, null))
-		if ((O.client && !( O.blinded )))
-			O.show_message("[src.name]'s control panel bursts open, sparks spewing out!")
-
-	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
-	s.set_up(5, 1, src)
-	s.start()
-
-	update_icon()
-	return
+/obj/machinery/door/airlock/set_broken(new_state)
+	. = ..()
+	if(. && new_state)
+		p_open = 1
+		if (secured_wires)
+			lock()
+		visible_message("\The [src]'s control panel bursts open, sparks spewing out!")
+		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+		s.set_up(5, 1, src)
+		s.start()
 
 /obj/machinery/door/airlock/open(var/forced=0)
 	if(!can_open(forced))
 		return 0
-	use_power(360)	//360 W seems much more appropriate for an actuator moving an industrial door capable of crushing people
+	use_power_oneoff(360)	//360 W seems much more appropriate for an actuator moving an industrial door capable of crushing people
 
 	//if the door is unpowered then it doesn't make sense to hear the woosh of a pneumatic actuator
 	if(arePowerSystemsOn())
@@ -1288,9 +1279,9 @@ About the new airlock wires panel:
 		for(var/atom/movable/AM in turf)
 			if(AM.airlock_crush(door_crush_damage))
 				take_damage(door_crush_damage)
-				use_power(door_crush_damage * 100)		// Uses bunch extra power for crushing the target.
+				use_power_oneoff(door_crush_damage * 100)		// Uses bunch extra power for crushing the target.
 
-	use_power(360)	//360 W seems much more appropriate for an actuator moving an industrial door capable of crushing people
+	use_power_oneoff(360)	//360 W seems much more appropriate for an actuator moving an industrial door capable of crushing people
 	if(arePowerSystemsOn())
 		playsound(src.loc, close_sound_powered, 100, 1)
 	else
@@ -1342,13 +1333,14 @@ About the new airlock wires panel:
 		electronics.forceMove(src)
 
 		//update the door's access to match the electronics'
-		secured_wires = electronics.secure
-		if(electronics.one_access)
-			req_access.Cut()
-			req_one_access = src.electronics.conf_access
+		if(electronics.autoset)
+			autoset_access = TRUE
 		else
-			req_one_access.Cut()
-			req_access = src.electronics.conf_access
+			req_access = electronics.conf_access
+			if(electronics.one_access)
+				req_access = list(req_access)
+			autoset_access = FALSE // We just set it, so don't try and do anything fancy later.
+		secured_wires = electronics.secure
 
 		//get the name from the assembly
 		if(assembly.created_name)
@@ -1358,6 +1350,13 @@ About the new airlock wires panel:
 
 		//get the dir from the assembly
 		set_dir(assembly.dir)
+
+		if(assembly)
+			paintable = assembly.paintable
+			door_color = assembly.door_color
+			stripe_color = assembly.stripe_color
+			symbol_color = assembly.symbol_color
+		queue_icon_update()
 
 	//wires
 	var/turf/T = get_turf(newloc)
@@ -1380,11 +1379,9 @@ About the new airlock wires panel:
 		brace = A
 		brace.airlock = src
 		brace.forceMove(src)
-		if(length(req_one_access) == 0)
-			brace.electronics.conf_access = req_access
-		else
-			brace.electronics.conf_access = req_one_access
-			brace.electronics.one_access = 1
+		if(brace.electronics)
+			brace.electronics.set_access(src)
+			brace.update_access()
 		update_icon()
 	. = ..()
 
@@ -1397,24 +1394,11 @@ About the new airlock wires panel:
 		qdel(brace)
 	return ..()
 
-// Most doors will never be deconstructed over the course of a round,
-// so as an optimization defer the creation of electronics until
-// the airlock is deconstructed
-/obj/machinery/door/airlock/proc/create_electronics()
-	//create new electronics
+/obj/machinery/door/airlock/create_electronics(var/electronics_type = /obj/item/weapon/airlock_electronics)
 	if (secured_wires)
-		src.electronics = new/obj/item/weapon/airlock_electronics/secure( src.loc )
-	else
-		src.electronics = new/obj/item/weapon/airlock_electronics( src.loc )
-
-	//update the electronics to match the door's access
-	if(!src.req_access)
-		src.check_access()
-	if(src.req_access.len)
-		electronics.conf_access = src.req_access
-	else if (src.req_one_access.len)
-		electronics.conf_access = src.req_one_access
-		electronics.one_access = 1
+		electronics_type = /obj/item/weapon/airlock_electronics/secure
+	electronics = ..()
+	return electronics
 
 /obj/machinery/door/airlock/emp_act(var/severity)
 	if(prob(20/severity))

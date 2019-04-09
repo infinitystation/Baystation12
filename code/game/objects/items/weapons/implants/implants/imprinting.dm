@@ -1,7 +1,7 @@
 /obj/item/weapon/implant/imprinting
 	name = "imprinting implant"
 	desc = "Latest word in training your peons."
-	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 2, TECH_DATA = 3, TECH_ILLEGAL = 3)
+	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 2, TECH_DATA = 3)
 	var/list/instructions = list("Do your job.", "Respect your superiours.", "Wash you hands after using the toilet.")
 	var/brainwashing = 0
 	var/last_reminder
@@ -55,7 +55,8 @@
 	to_chat(M, msg)
 	if(M.mind)
 		M.mind.store_memory("<hr>[msg]")
-
+	if(brainwashing)
+		message_admins("[key_name_admin(M)] was implanted with a brainwashing implant holding following laws: [jointext(instructions, ";")].")
 	START_PROCESSING(SSobj, src)
 	return TRUE
 

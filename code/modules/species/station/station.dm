@@ -17,6 +17,7 @@
 
 	speech_chance = 40
 	ambiguous_genders = 0
+	bandages_icon = 'icons/mob/bandage.dmi'
 
 	spawn_flags = SPECIES_CAN_JOIN
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_TONE_NORMAL | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
@@ -27,8 +28,6 @@
 
 	available_cultural_info = list(
 		TAG_CULTURE = list(
-			CULTURE_HUMAN,
-			CULTURE_HUMAN_VATGROWN,
 			CULTURE_HUMAN_MARTIAN,
 			CULTURE_HUMAN_MARSTUN,
 			CULTURE_HUMAN_LUNAPOOR,
@@ -104,6 +103,7 @@
 	icobase = 'icons/mob/human_races/species/skrell/body.dmi'
 	deform = 'icons/mob/human_races/species/skrell/deformed_body.dmi'
 	preview_icon = 'icons/mob/human_races/species/skrell/preview.dmi'
+	bandages_icon = 'icons/mob/bandage.dmi'
 	primitive_form = "Neaera"
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite)
 	description = "An amphibious species, Skrell come from the star system known as Qerr'Vallis, which translates to 'Star of \
@@ -116,7 +116,6 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/fish/octopus
 	genders = list(PLURAL)
 	hidden_from_codex = FALSE
-
 
 	min_age = 19
 	max_age = 90
@@ -158,7 +157,7 @@
 	override_limb_types = list(BP_HEAD = /obj/item/organ/external/head/skrell)
 
 	descriptors = list(
-		/datum/mob_descriptor/height = 1.2,
+		/datum/mob_descriptor/height = 1,
 		/datum/mob_descriptor/build = 0,
 		/datum/mob_descriptor/headtail_length = 0
 	)
@@ -243,18 +242,12 @@
 			RELIGION_THELEMA,
 			RELIGION_ATHEISM,
 			RELIGION_OTHER
-		),
-		TAG_EDUCATION = list(
-			EDUCATION_SKRELL_FAILURE,
-			EDUCATION_SKRELL_BASIC,
-			EDUCATION_SKRELL_FULL,
-			EDUCATION_SKRELL_FULL_SCIENCE,
-			EDUCATION_SKRELL_FULL_DOCTOR
 		)
 	)
 
 	has_organ = list(
 		BP_HEART =    /obj/item/organ/internal/heart,
+		BP_STOMACH =  /obj/item/organ/internal/stomach,
 		BP_LUNGS =    /obj/item/organ/internal/lungs/gills,
 		BP_LIVER =    /obj/item/organ/internal/liver,
 		BP_KIDNEYS =  /obj/item/organ/internal/kidneys,
@@ -262,8 +255,8 @@
 		BP_EYES =     /obj/item/organ/internal/eyes
 		)
 
-/datum/species/skrell/get_sex(var/mob/living/carbon/human/H)
-	return H.descriptors["headtail length"] == 1 ? MALE : FEMALE
+/datum/species/skrell/get_sex(var/mob/living/carbon/H)
+	return descriptors["headtail length"] == 1 ? MALE : FEMALE
 
 /datum/species/skrell/check_background()
 	return TRUE

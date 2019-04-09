@@ -1,6 +1,6 @@
 /obj/machinery/media/music_writer
 	name = "Memories writer"
-	icon = 'icons/disk_writer.dmi'
+	icon = 'infinity/icons/obj/machinery/disk_writer.dmi'
 	icon_state = "writer_off"
 	density = 0
 	power_channel = EQUIP

@@ -2,7 +2,7 @@
 	name = "soap"
 	desc = "A cheap bar of soap. Doesn't smell."
 	gender = PLURAL
-	icon = 'icons/obj/items.dmi'
+	icon = 'icons/obj/lavatory.dmi'
 	icon_state = "soap"
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 	w_class = ITEM_SIZE_SMALL
@@ -30,6 +30,7 @@
 	if(!proximity) return
 	//I couldn't feasibly  fix the overlay bugs caused by cleaning items we are wearing.
 	//So this is a workaround. This also makes more sense from an IC standpoint. ~Carn
+	var/cleaned = FALSE
 	if(user.client && (target in user.client.screen))
 		to_chat(user, "<span class='notice'>You need to take that [target.name] off before cleaning it.</span>")
 	else if(istype(target,/turf) || istype(target, /obj/structure/catwalk) || istype(target,/obj/effect/decal/cleanable))
@@ -45,14 +46,19 @@
 			return
 		user.visible_message("<span class='notice'>[user] starts scrubbing \the [T].</span>")
 		for(var/obj/effect/E in cleanable)
-			if(do_after(user, rand(15, 25), E))
+			var/CD = rand(15,25)
+			user.setClickCooldown(CD)
+			if(do_after(user, CD, E))
 				if(istype(E, /obj/effect/decal/cleanable/blood))
 					to_chat(user, "<span class='notice'>You scrub \the [E] out.</span>")
 					E.clean_blood()
+					cleaned = TRUE
 				else
 					to_chat(user, "<span class='notice'>You scrub \the [E] out.</span>")
 					qdel(E)
+					cleaned = TRUE
 			else
+				user.setClickCooldown(0)
 				break
 	else if(istype(target,/obj/structure/hygiene/sink))
 		to_chat(user, "<span class='notice'>You wet \the [src] in the sink.</span>")
@@ -63,7 +69,10 @@
 			return
 		to_chat(user, "<span class='notice'>You clean \the [target.name].</span>")
 		target.clean_blood() //Clean bloodied atoms. Blood decals themselves need to be handled above.
-	return
+		cleaned++
+
+	if(cleaned)
+		user.update_personal_goal(/datum/goal/clean, TRUE)
 
 //attack_as_weapon
 /obj/item/weapon/soap/attack(mob/living/target, mob/living/user, var/target_zone)

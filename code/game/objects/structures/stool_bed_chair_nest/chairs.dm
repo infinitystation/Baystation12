@@ -360,6 +360,7 @@
 	desc = "A comfortable, secure seat. It has a sturdy-looking buckling system for smoother flights."
 	base_icon = "shuttle_chair"
 	icon_state = "shuttle_chair_preview"
+	buckling_sound = 'sound/effects/metal_close.ogg'
 
 /obj/structure/bed/chair/shuttle/post_buckle_mob()
 	if(buckled_mob)
@@ -392,3 +393,99 @@
 
 /obj/structure/bed/chair/shuttle/white/New(var/newloc,var/newmaterial)
 	..(newloc,MATERIAL_STEEL,MATERIAL_COTTON)
+/obj/structure/bed/chair/wood
+	name = "classic chair"
+	desc = "Old is never too old to not be in fashion."
+	base_icon = "wooden_chair"
+	icon_state = "wooden_chair_preview"
+	color = WOOD_COLOR_GENERIC
+	var/chair_material = MATERIAL_WOOD
+
+/obj/structure/bed/chair/wood/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(istype(W,/obj/item/stack) || istype(W, /obj/item/weapon/wirecutters))
+		return
+	..()
+
+/obj/structure/bed/chair/wood/New(var/newloc)
+	..(newloc, chair_material)
+
+/obj/structure/bed/chair/wood/mahogany
+	color = WOOD_COLOR_RICH
+	chair_material = MATERIAL_MAHOGANY
+
+/obj/structure/bed/chair/wood/maple
+	color = WOOD_COLOR_PALE
+	chair_material = MATERIAL_MAPLE
+
+/obj/structure/bed/chair/wood/ebony
+	color = WOOD_COLOR_BLACK
+	chair_material = MATERIAL_EBONY
+
+/obj/structure/bed/chair/wood/walnut
+	color = WOOD_COLOR_CHOCOLATE
+	chair_material = MATERIAL_WALNUT
+
+/obj/structure/bed/chair/wood/wings
+	name = "winged chair"
+	base_icon = "wooden_chair_wings"
+	icon_state = "wooden_chair_wings_preview"
+
+/obj/structure/bed/chair/wood/wings/mahogany
+	color = WOOD_COLOR_RICH
+	chair_material = MATERIAL_MAHOGANY
+
+/obj/structure/bed/chair/wood/wings/maple
+	color = WOOD_COLOR_PALE
+	chair_material = MATERIAL_MAPLE
+
+/obj/structure/bed/chair/wood/wings/ebony
+	color = WOOD_COLOR_BLACK
+	chair_material = MATERIAL_EBONY
+
+/obj/structure/bed/chair/wood/wings/walnut
+	color = WOOD_COLOR_CHOCOLATE
+	chair_material = MATERIAL_WALNUT
+
+//Deconstruct
+
+/obj/structure/bed/chair/comfy/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(isWrench(W))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		to_chat(user, "<span class='notice'>You deconstruct comfy chair</span>")
+		new /obj/item/stack/material/steel(src.loc, 3)
+		qdel(src)
+
+/obj/structure/bed/chair/office/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(isWrench(W))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		to_chat(user, "<span class='notice'>You deconstruct office chair</span>")
+		new /obj/item/stack/material/steel(src.loc, 5)
+		qdel(src)
+
+/obj/structure/bed/chair/office/comfy/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(isWrench(W))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		to_chat(user, "<span class='notice'>You deconstruct office comfy chair</span>")
+		new /obj/item/stack/material/steel(src.loc, 7)
+		qdel(src)
+
+/obj/structure/bed/chair/padded/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(isWrench(W))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		to_chat(user, "<span class='notice'>You deconstruct padded chair</span>")
+		new /obj/item/stack/material/steel(src.loc, 2)
+		qdel(src)
+
+/obj/structure/bed/chair/armchair/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(isWrench(W))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		to_chat(user, "<span class='notice'>You deconstruct comfy chair</span>")
+		new /obj/item/stack/material/steel(src.loc, 4)
+		qdel(src)
+
+/obj/structure/bed/chair/wood/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(isWrench(W))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		to_chat(user, "<span class='notice'>You deconstruct wood chair</span>")
+		new /obj/item/stack/material/wood(src.loc, 3)
+		qdel(src)

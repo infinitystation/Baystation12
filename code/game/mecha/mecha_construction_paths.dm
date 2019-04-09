@@ -34,7 +34,7 @@
 			S.use(5)
 	return 1
 
-/datum/construction/reversible/mecha/custom_action(index as num, diff as num, atom/used_atom, mob/user as mob)
+/datum/construction/reversible/mecha/custom_action(var/index, var/diff, var/atom/used_atom, var/mob/user)
 	if(isWelder(used_atom))
 		var/obj/item/weapon/weldingtool/W = used_atom
 		if (W.remove_fuel(0, user))
@@ -272,7 +272,7 @@
 
 	spawn_result()
 		..()
-		feedback_inc("mecha_ripley_created",1)
+		SSstatistics.add_field("mecha_ripley_created",1)
 		return
 
 
@@ -554,7 +554,7 @@
 
 	spawn_result()
 		..()
-		feedback_inc("mecha_gygax_created",1)
+		SSstatistics.add_field("mecha_gygax_created",1)
 		return
 
 /datum/construction/mecha/firefighter_chassis
@@ -777,7 +777,7 @@
 
 	spawn_result()
 		..()
-		feedback_inc("mecha_firefighter_created",1)
+		SSstatistics.add_field("mecha_firefighter_created",1)
 		return
 
 /datum/construction/mecha/durand_chassis
@@ -1057,7 +1057,7 @@
 
 	spawn_result()
 		..()
-		feedback_inc("mecha_durand_created",1)
+		SSstatistics.add_field("mecha_durand_created",1)
 		return
 
 
@@ -1290,5 +1290,5 @@
 
 	spawn_result()
 		..()
-		feedback_inc("mecha_odysseus_created",1)
+		SSstatistics.add_field("mecha_odysseus_created",1)
 		return

@@ -22,6 +22,8 @@
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/misc.dmi'
 		)
 
+
+
 /obj/item/weapon/handcuffs/get_icon_state(mob/user_mob, slot)
 	if(slot == slot_handcuffed_str)
 		return "handcuff1"
@@ -95,7 +97,7 @@
 		return 0
 
 	admin_attack_log(user, H, "Attempted to handcuff the victim", "Was target of an attempted handcuff", "attempted to handcuff")
-	feedback_add_details("handcuffs","H")
+	SSstatistics.add_field_details("handcuffs","H")
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(H)
@@ -163,8 +165,8 @@ var/last_chew = 0
 
 /obj/item/weapon/handcuffs/cable/attackby(var/obj/item/I, mob/user as mob)
 	..()
-	if(istype(I, /obj/item/stack/rods))
-		var/obj/item/stack/rods/R = I
+	if(istype(I, /obj/item/stack/material/rods))
+		var/obj/item/stack/material/rods/R = I
 		if (R.use(1))
 			var/obj/item/weapon/material/wirerod/W = new(get_turf(user))
 			user.put_in_hands(W)
@@ -175,9 +177,6 @@ var/last_chew = 0
 /obj/item/weapon/handcuffs/cyborg
 	dispenser = 1
 
-/obj/item/weapon/handcuffs/cable/cyborg
-	dispenser = 1
-
 /obj/item/weapon/handcuffs/cable/tape
 	name = "tape restraints"
 	desc = "DIY!"
@@ -186,20 +185,3 @@ var/last_chew = 0
 	icon = 'icons/obj/bureaucracy.dmi'
 	breakouttime = 200
 	cuff_type = "duct tape"
-
-/obj/item/weapon/handcuffs/plush
-	name = "plush handcuffs"
-	desc = "A pink plush handcuffs. How cute, owww...."
-	icon = 'icons/obj/spectoys.dmi'
-	icon_state = "plushcuff"
-	obj_flags = null
-	throwforce = 0
-	matter = list("plastic" = 350)
-	breakouttime = 30 //Deciseconds = 3s
-
-/obj/item/weapon/handcuffs/plush/get_icon_state(mob/user_mob, slot)
-	if(slot == slot_handcuffed_str)
-		return "plushcuff1"
-	if(slot == slot_legcuffed_str)
-		return "legcuff1"
-	return ..()

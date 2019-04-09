@@ -3,4 +3,4 @@
 	desc = "Pink edition"
 	icon_state = "pink_guitar"
 	item_state = "pink_guitar"
-	item_icons = list(slot_back_str = 'icons/infinity_custom_items_mob.dmi')
+	item_icons = list(slot_back_str = CUSTOM_ITEM_MOB)

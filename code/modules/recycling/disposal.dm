@@ -365,7 +365,7 @@
 // charge the gas reservoir and perform flush if ready
 /obj/machinery/disposal/Process()
 	if(!air_contents || (stat & BROKEN))			// nothing can happen if broken
-		update_use_power(0)
+		update_use_power(POWER_USE_OFF)
 		return
 
 	flush_count++
@@ -373,7 +373,7 @@
 		if( contents.len )
 			if(mode == 2)
 				spawn(0)
-					feedback_inc("disposal_auto_flush",1)
+					SSstatistics.add_field("disposal_auto_flush",1)
 					flush()
 		flush_count = 0
 
@@ -383,7 +383,7 @@
 		flush()
 
 	if(mode != 1) //if off or ready, no need to charge
-		update_use_power(1)
+		update_use_power(POWER_USE_IDLE)
 	else if(air_contents.return_pressure() >= SEND_PRESSURE)
 		mode = 2 //if full enough, switch to ready mode
 		update_icon()
@@ -392,7 +392,7 @@
 
 /obj/machinery/disposal/proc/pressurize()
 	if(stat & NOPOWER)			// won't charge if no power
-		update_use_power(0)
+		update_use_power(POWER_USE_OFF)
 		return
 
 	var/atom/L = loc						// recharging from loc turf
@@ -404,7 +404,7 @@
 		power_draw = pump_gas(src, env, air_contents, transfer_moles, active_power_usage)
 
 	if (power_draw > 0)
-		use_power(power_draw)
+		use_power_oneoff(power_draw)
 
 // perform a flush
 /obj/machinery/disposal/proc/flush()
@@ -458,14 +458,6 @@
 	update_icon()
 	return
 
-
-// called when area power changes
-/obj/machinery/disposal/power_change()
-	..()	// do default setting/reset of stat NOPOWER bit
-	update_icon()	// update icon
-	return
-
-
 // called when holder is expelled from a disposal
 // should usually only occur if the pipe network is modified
 /obj/machinery/disposal/proc/expel(var/obj/structure/disposalholder/H)
@@ -516,6 +508,7 @@
 	var/destinationTag = "" // changes if contains a delivery container
 	var/tomail = 0 //changes if contains wrapped package
 	var/hasmob = 0 //If it contains a mob
+	var/speed = 2
 
 	var/partialTag = "" //set by a partial tagger the first time round, then put in destinationTag if it goes through again.
 
@@ -549,7 +542,7 @@
 			var/obj/item/smallDelivery/T = AM
 			src.destinationTag = T.sortTag
 		//Drones can mail themselves through maint.
-		if(istype(AM, /mob/living/silicon/robot/drone))
+		if(is_drone(AM))
 			var/mob/living/silicon/robot/drone/drone = AM
 			src.destinationTag = drone.mail_destination
 
@@ -564,31 +557,32 @@
 	forceMove(D.trunk)
 	active = 1
 	set_dir(DOWN)
-	START_PROCESSING(SSfastprocess, src)
+	START_PROCESSING(SSdisposals, src)
 
 	// movement process, persists while holder is moving through pipes
 /obj/structure/disposalholder/Process()
-	if(!(count--))
-		active = 0
-	if(!active)
-		return PROCESS_KILL
-	
-	var/obj/structure/disposalpipe/last
+	for (var/i in 1 to speed)
+		if(!(count--))
+			active = 0
+		if(!active)
+			return PROCESS_KILL
+		
+		var/obj/structure/disposalpipe/last
 
-	if(hasmob && prob(3))
-		for(var/mob/living/H in src)
-			if(!istype(H,/mob/living/silicon/robot/drone)) //Drones use the mailing code to move through the disposal system,
-				H.take_overall_damage(20, 0, "Blunt Trauma")//horribly maim any living creature jumping down disposals.  c'est la vie
+		if(hasmob && prob(3))
+			for(var/mob/living/H in src)
+				if(!istype(H,/mob/living/silicon/robot/drone)) //Drones use the mailing code to move through the disposal system,
+					H.take_overall_damage(20, 0, "Blunt Trauma")//horribly maim any living creature jumping down disposals.  c'est la vie
 
-	var/obj/structure/disposalpipe/curr = loc
-	last = curr
-	curr = curr.transfer(src)
+		var/obj/structure/disposalpipe/curr = loc
+		last = curr
+		curr = curr.transfer(src)
 
-	if(QDELETED(src))
-		return PROCESS_KILL
+		if(QDELETED(src))
+			return PROCESS_KILL
 
-	if(!curr)
-		last.expel(src, loc, dir)
+		if(!curr)
+			last.expel(src, loc, dir)
 
 	// find the turf which should contain the next pipe
 /obj/structure/disposalholder/proc/nextloc()
@@ -653,7 +647,7 @@
 /obj/structure/disposalholder/Destroy()
 	QDEL_NULL(gas)
 	active = 0
-	STOP_PROCESSING(SSfastprocess, src)
+	STOP_PROCESSING(SSdisposals, src)
 	return ..()
 
 // Disposal pipes

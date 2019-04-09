@@ -5,7 +5,7 @@
 /obj/item/ammo_magazine/mc9mm/rubber
 	name = "magazine (9mm, rubber)"
 
-/obj/item/ammo_magazine/a762/extended
+/obj/item/ammo_magazine/mil_rifle/extended
 	name = "extended magazine (7.62mm)"
 	origin_tech = list(TECH_COMBAT = 3)
 	matter = list(MATERIAL_STEEL = 2400)
@@ -69,7 +69,7 @@
 
 /obj/item/ammo_magazine/mc57
 	name = "magazine (5.7mm)"
-	icon = 'icons/event/ammo.dmi'
+	icon = 'infinity/icons/event/ammo.dmi'
 	icon_state = "smg"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/c57
@@ -82,7 +82,7 @@
 
 /obj/item/ammo_magazine/uni46x30mm
 	name = "magazine (4.6x30mm universal)"
-	icon = 'icons/event/ammo.dmi'
+	icon = 'infinity/icons/event/ammo.dmi'
 	icon_state = "smg"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE

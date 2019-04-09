@@ -256,7 +256,7 @@
 	display_name = "(Vox) breathing mask"
 	path = /obj/item/clothing/mask/gas/vox
 	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_VOX)
+	whitelisted = list(SPECIES_VOX, SPECIES_VOX_ARMALIS)
 	cost = 2
 
 /datum/gear/gloves/vox
@@ -287,6 +287,7 @@
 	path = /obj/item/clothing/under/resomi
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_RESOMI)
+
 
 /datum/gear/uniform/resomi/white
 	display_name = "(Resomi) smock, colored"
@@ -362,18 +363,31 @@
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_RESOMI)
 
-/datum/gear/suit/resomi
+/datum/gear/suit/resomi_cloak
 	display_name = "(Resomi) small cloak"
 	path = /obj/item/clothing/suit/storage/toggle/Resomicoat
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_RESOMI)
 
-/datum/gear/suit/resomi/New()
+/datum/gear/suit/resomi_cloak/New()
 	..()
 	var/resomi = list()
 	resomi["black cloak"] = /obj/item/clothing/suit/storage/toggle/Resomicoat
 	resomi["white cloak"] = /obj/item/clothing/suit/storage/toggle/Resomicoat/white
 	gear_tweaks += new/datum/gear_tweak/path(resomi)
+
+/datum/gear/shoes/resomi/boots
+	display_name = "(Resomi) small workboots"
+	path = /obj/item/clothing/shoes/workboots/resomi
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_RESOMI)
+
+/datum/gear/shoes/resomi/footwraps
+	display_name = "(Resomi) clothwrap"
+	flags = GEAR_HAS_COLOR_SELECTION
+	path = /obj/item/clothing/shoes/footwraps
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_RESOMI)
 
 /datum/gear/suit/resomi_labcoat
 	display_name = "(Resomi) small labcoat"

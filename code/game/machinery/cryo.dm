@@ -12,7 +12,6 @@
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE
 
 	var/on = 0
-	use_power = 1
 	idle_power_usage = 20
 	active_power_usage = 200
 	clicksound = 'sound/machines/buttonbeep.ogg'
@@ -57,6 +56,14 @@
 		if(target.initialize_directions & get_dir(target,src))
 			node = target
 			break
+
+/obj/machinery/atmospherics/unary/cryo_cell/examine(mob/user)
+	. = ..()
+	if (. && user.Adjacent(src))
+		if (beaker)
+			to_chat(user, "It is loaded with a beaker.")
+		if (occupant)
+			occupant.examine(user)
 
 /obj/machinery/atmospherics/unary/cryo_cell/Process()
 	..()
@@ -136,7 +143,7 @@
 
 	data["cellTemperature"] = round(air_contents.temperature)
 	data["cellTemperatureStatus"] = "good"
-	if(air_contents.temperature > T0C) // if greater than 273.15 kelvin (0 celcius)
+	if(air_contents.temperature > T0C) // if greater than 273.15 kelvin (0 celsius)
 		data["cellTemperatureStatus"] = "bad"
 	else if(air_contents.temperature > 225)
 		data["cellTemperatureStatus"] = "average"
@@ -285,8 +292,9 @@
 		occupant.bodytemperature = 261									  // Changed to 70 from 140 by Zuhayr due to reoccurance of bug.
 	occupant = null
 	current_heat_capacity = initial(current_heat_capacity)
-	update_use_power(1)
+	update_use_power(POWER_USE_IDLE)
 	update_icon()
+	SetName(initial(name))
 	return
 
 /obj/machinery/atmospherics/unary/cryo_cell/proc/put_mob(mob/living/carbon/M as mob)
@@ -315,9 +323,10 @@
 		to_chat(M, "<span class='notice'><b>You feel a cold liquid surround you. Your skin starts to freeze up.</b></span>")
 	occupant = M
 	current_heat_capacity = HEAT_CAPACITY_HUMAN
-	update_use_power(2)
+	update_use_power(POWER_USE_ACTIVE)
 	add_fingerprint(usr)
 	update_icon()
+	SetName("[name] ([occupant])")
 	return 1
 
 	//Like grab-putting, but for mouse-dropping.

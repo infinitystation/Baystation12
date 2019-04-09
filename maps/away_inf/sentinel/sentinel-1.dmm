@@ -105,7 +105,7 @@
 	display_name = "Port Patrol Dock";
 	frequency = 1332;
 	id_tag = "patrol_dock_airlock";
-	req_one_access = list(13,80);
+	req_access = list(list(13,80));
 	tag_airpump = "patrol_dock_pump";
 	tag_chamber_sensor = "patrol_dock_sensor";
 	tag_exterior_door = "patrol_dock_outer";
@@ -460,7 +460,7 @@
 	},
 /obj/machinery/door/airlock/glass/command{
 	name = "Primary Docking Port Control";
-	req_one_access = list(13,80)
+	req_access = list(list(13,80))
 	},
 /obj/structure/sign/warning/high_voltage{
 	pixel_x = -32
@@ -625,7 +625,7 @@
 	name = "interior access button";
 	pixel_x = -24;
 	pixel_y = 24;
-	req_one_access = list(13,80)
+	req_access = list(list(13,80))
 	},
 /obj/structure/sign/warning/airlock{
 	pixel_x = -32
@@ -837,7 +837,7 @@
 	dir = 4;
 	pixel_x = -22;
 	pixel_y = 0;
-	req_one_access = list(24,11)
+	req_access = list(list(24,11))
 	},
 /obj/machinery/telecomms/broadcaster/preset_sent,
 /turf/simulated/floor/bluegrid,
@@ -1620,7 +1620,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
+	req_access = list(list(24,11))
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/cargo)
@@ -1754,7 +1754,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
+	req_access = list(list(24,11))
 	},
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/floor_decal/corner/brown{
@@ -2123,7 +2123,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
+	req_access = list(list(24,11))
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
@@ -2210,7 +2210,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
+	req_access = list(list(24,11))
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
@@ -4265,7 +4265,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
+	req_access = list(list(24,11))
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/lower/fore)
@@ -4725,7 +4725,7 @@
 	pixel_x = 24;
 	pixel_y = 0;
 	req_access = newlist();
-	req_one_access = list(301,302);
+	req_access = list(list(301,302));
 	tag_airpump = "patrol_shuttle_pump";
 	tag_chamber_sensor = "patrol_shuttle_sensor";
 	tag_exterior_door = "patrol_shuttle_outer";
@@ -4821,7 +4821,7 @@
 	id_tag = "MedbayFoyer";
 	name = "Infirmary";
 	req_access = newlist();
-	req_one_access = list(5,80)
+	req_access = list(list(5,80))
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
@@ -4931,7 +4931,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/glass/engineering{
 	name = "Engineering Bay";
-	req_one_access = list(10)
+	req_access = list(10)
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/equipment)
@@ -5315,7 +5315,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /turf/simulated/floor,
 /area/ship/patrol/engineering/shield)
@@ -5508,7 +5507,6 @@
 	dir = 4;
 	pixel_x = -22;
 	pixel_y = 0;
-	req_one_access = list(24,11)
 	},
 /obj/machinery/ntnet_relay,
 /turf/simulated/floor/greengrid,
@@ -7764,7 +7762,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /obj/item/stack/nanopaste,
 /obj/item/stack/nanopaste,
@@ -8514,7 +8511,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/barracks)
@@ -8548,7 +8544,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/fussion/control)

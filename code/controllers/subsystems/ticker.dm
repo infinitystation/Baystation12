@@ -7,6 +7,7 @@ SUBSYSTEM_DEF(ticker)
 	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
 
 	var/pregame_timeleft = 3 MINUTES
+	var/start_ASAP = FALSE          //the game will start as soon as possible, bypassing all pre-game nonsense
 	var/list/gamemode_vote_results  //Will be a list, in order of preference, of form list(config_tag = number of votes).
 	var/bypass_gamemode_vote = 0    //Intended for use with admin tools. Will avoid voting and ignore any results.
 
@@ -45,6 +46,9 @@ SUBSYSTEM_DEF(ticker)
 			post_game_tick()
 
 /datum/controller/subsystem/ticker/proc/pregame_tick()
+	if(start_ASAP)
+		start_now()
+		return
 	if(round_progressing && last_fire)
 		pregame_timeleft -= world.time - last_fire
 	if(pregame_timeleft <= 0)
@@ -83,14 +87,15 @@ SUBSYSTEM_DEF(ticker)
 	collect_minds()
 	equip_characters()
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
-		if(!H.mind || player_is_antag(H.mind, only_offstation_roles = 1) || !job_master.ShouldCreateRecords(H.mind.assigned_role))
-			continue
-		CreateModularRecord(H)
+		if(H.mind && !player_is_antag(H.mind, only_offstation_roles = 1))
+			var/datum/job/job = SSjobs.get_by_title(H.mind.assigned_role)
+			if(job && job.create_record)
+				CreateModularRecord(H)
 
 	callHook("roundstart")
 
 	spawn(0)//Forking here so we dont have to wait for this to finish
-		mode.post_setup()
+		mode.post_setup() // Drafts antags who don't override jobs.
 		to_world("<FONT color='blue'><B>Enjoy the game!</B></FONT>")
 		send2maindiscord("Раунд с режимом [SSticker.master_mode] начался. Игроков: [GLOB.player_list.len].")
 		send2mainirc("Раунд с режимом [SSticker.master_mode] начался. Игроков: [GLOB.player_list.len].")
@@ -105,9 +110,6 @@ SUBSYSTEM_DEF(ticker)
 	if(config.ooc_allowed && !config.ooc_during_round)
 		config.ooc_allowed = 0
 		to_world("<B>The OOC channel has been globally disabled!</B>")
-
-	if(config.sql_enabled)
-		statistic_cycle() // Polls population totals regularly and stores them in an SQL DB -- TLE
 
 /datum/controller/subsystem/ticker/proc/playing_tick()
 	mode.process()
@@ -139,19 +141,16 @@ SUBSYSTEM_DEF(ticker)
 			callHook("roundend")
 			if (universe_has_ended)
 				if(mode.station_was_nuked)
-					feedback_set_details("end_proper","nuke")
+					SSstatistics.set_field_details("end_proper","nuke")
 				else
-					feedback_set_details("end_proper","universe destroyed")
+					SSstatistics.set_field_details("end_proper","universe destroyed")
 				if(!delay_end)
 					to_world("<span class='notice'><b>Rebooting due to destruction of [station_name()] in [restart_timeout/10] seconds</b></span>")
 
 			else
-				feedback_set_details("end_proper","proper completion")
+				SSstatistics.set_field_details("end_proper","proper completion")
 				if(!delay_end)
 					to_world("<span class='notice'><b>Restarting in [restart_timeout/10] seconds</b></span>")
-
-			if(blackbox)
-				blackbox.save_all_data_to_sql()
 			handle_tickets()
 		if(END_GAME_ENDING)
 			restart_timeout -= (world.time - last_fire)
@@ -254,14 +253,14 @@ Helpers
 		return
 
 	//Deal with jobs and antags, check that we can actually run the mode.
-	job_master.ResetOccupations()
-	mode_datum.create_antagonists()
-	mode_datum.pre_setup()
-	job_master.DivideOccupations(mode_datum) // Apparently important for new antagonist system to register specific job antags properly.
+	SSjobs.reset_occupations() // Clears all players' role assignments. Clean slate.
+	mode_datum.create_antagonists() // Init operation on the mode; sets up antag datums and such.
+	mode_datum.pre_setup() // Makes lists of viable candidates; performs candidate draft for job-override roles; stores the draft result both internally and on the draftee.
+	SSjobs.divide_occupations(mode_datum) // Gives out jobs to everyone who was not selected to antag.
 
 	if(mode_datum.startRequirements())
 		mode_datum.fail_setup()
-		job_master.ResetOccupations()
+		SSjobs.reset_occupations()
 		bad_modes += mode_datum.config_tag
 		return
 
@@ -304,7 +303,7 @@ Helpers
 			if(player.mind.assigned_role == "Captain")
 				captainless=0
 			if(!player_is_antag(player.mind, only_offstation_roles = 1))
-				job_master.EquipRank(player, player.mind.assigned_role, 0)
+				SSjobs.equip_rank(player, player.mind.assigned_role, 0)
 				equip_custom_items(player)
 	if(captainless)
 		for(var/mob/M in GLOB.player_list)

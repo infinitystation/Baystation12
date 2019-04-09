@@ -60,7 +60,7 @@
 		/obj/item/clothing/shoes/white,
 		/obj/item/device/radio/headset/torchnanotrasen,
 		/obj/item/clothing/mask/gas,
-		/obj/item/weapon/clipboard,
+		/obj/item/weapon/material/clipboard,
 		/obj/item/weapon/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
@@ -78,7 +78,7 @@
 
 /obj/structure/closet/secure_closet/scientist_torch
 	name = "researcher's locker"
-	req_one_access = list(access_research)
+	req_access = list(access_research)
 	icon_state = "secureres1"
 	icon_closed = "secureres"
 	icon_locked = "secureres1"
@@ -94,7 +94,7 @@
 		/obj/item/device/radio/headset/torchnanotrasen,
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/weapon/tank/emergency/oxygen/engi,
-		/obj/item/weapon/clipboard,
+		/obj/item/weapon/material/clipboard,
 		/obj/item/weapon/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
@@ -157,7 +157,7 @@
 		/obj/item/clothing/accessory/armband/whitered,
 		/obj/item/device/radio/headset/torchnanotrasen,
 		/obj/item/clothing/mask/gas/half,
-		/obj/item/weapon/clipboard,
+		/obj/item/weapon/material/clipboard,
 		/obj/item/weapon/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
@@ -183,7 +183,7 @@
 
 /obj/structure/closet/secure_closet/xenolife_technician
 	name = "xenolife technician's locker"
-	req_one_access = list(access_research)
+	req_access = list(access_research)
 	icon_state = "torchsol1"
 	icon_closed = "torchsol"
 	icon_locked = "torchsol1"
@@ -196,7 +196,7 @@
 		/obj/item/device/radio/headset/torchnanotrasen,
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/weapon/tank/emergency/oxygen/engi,
-		/obj/item/weapon/clipboard,
+		/obj/item/weapon/material/clipboard,
 		/obj/item/weapon/folder,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,

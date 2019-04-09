@@ -78,6 +78,9 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/self_feed_message(var/mob/user)
 	to_chat(user, "<span class='notice'>You swallow a gulp from \the [src].</span>")
+	if(user.has_personal_goal(/datum/goal/achievement/specific_object/drink))
+		for(var/datum/reagent/R in reagents.reagent_list)
+			user.update_personal_goal(/datum/goal/achievement/specific_object/drink, R.type)
 
 /obj/item/weapon/reagent_containers/food/drinks/feed_sound(var/mob/user)
 	playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), 1)
@@ -127,27 +130,30 @@
 		return
 
 	if(is_open_container())
-		if(ishuman(usr))
-			var/mob/living/carbon/human/H = usr
-			if(!H.check_has_mouth())
-				to_chat(H, "Where do you intend to put \the [src]? You don't have a mouth!")
-				return
-			var/obj/item/blocked = H.check_mouth_coverage()
-			if(blocked)
-				to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
-				return
-		if(reagents.total_volume > 30) // 30 equates to 3 SECONDS.
-			usr.visible_message(SPAN_NOTICE("[usr] prepares to gulp down [src]."), SPAN_NOTICE("You prepare to gulp down [src]."))
-		playsound(usr, 'sound/items/drinking.ogg', reagents.total_volume, 1)
-		if(!do_after(usr, reagents.total_volume))
+		if(!reagents || reagents.total_volume == 0)
+			to_chat(usr, "<span class='notice'>\The [src] is empty!</span>")
+		else
+			if(ishuman(usr))
+				var/mob/living/carbon/human/H = usr
+				if(!H.check_has_mouth())
+					to_chat(H, "Where do you intend to put \the [src]? You don't have a mouth!")
+					return
+				var/obj/item/blocked = H.check_mouth_coverage()
+				if(blocked)
+					to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
+					return
+			if(reagents.total_volume > 30) // 30 equates to 3 SECONDS.
+				usr.visible_message(SPAN_NOTICE("[usr] prepares to gulp down [src]."), SPAN_NOTICE("You prepare to gulp down [src]."))
+			playsound(usr, 'sound/items/drinking.ogg', reagents.total_volume, 1)
+			if(!do_after(usr, reagents.total_volume))
+				if(!Adjacent(usr))
+					return
+				standard_splash_mob(src, src)
 			if(!Adjacent(usr))
 				return
-			standard_splash_mob(src, src)
-		if(!Adjacent(usr))
-			return
-		usr.visible_message(SPAN_NOTICE("[usr] gulped down the whole [src]!"),SPAN_NOTICE("You gulped down the whole [src]!"))
-		playsound(usr, 'sound/items/drinking_after.ogg', reagents.total_volume, 1)
-		reagents.trans_to_mob(usr, reagents.total_volume, CHEM_INGEST)
+			usr.visible_message(SPAN_NOTICE("[usr] gulped down the whole [src]!"),SPAN_NOTICE("You gulped down the whole [src]!"))
+			playsound(usr, 'sound/items/drinking_after.ogg', reagents.total_volume, 1)
+			reagents.trans_to_mob(usr, reagents.total_volume, CHEM_INGEST)
 	else
 		to_chat(usr, SPAN_NOTICE("You need to open \the [src] first!"))
 
@@ -220,34 +226,23 @@
 	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/coffee, 30)
 
-/obj/item/weapon/reagent_containers/food/drinks/tea
-	name = "cup of Duke Purple Tea"
-	desc = "An insult to Duke Purple is an insult to the Space Queen! Any proper gentleman will fight you, if you sully this tea."
-	icon_state = "teacup"
-	item_state = "coffee"
-	center_of_mass = "x=16;y=14"
-	filling_states = "100"
-	base_name = "cup"
-	base_icon = "teacup"
-	New()
-		..()
-		reagents.add_reagent(/datum/reagent/drink/tea, 30)
-
 /obj/item/weapon/reagent_containers/food/drinks/ice
 	name = "cup of ice"
 	desc = "Careful, cold ice, do not chew."
 	icon_state = "coffee"
 	center_of_mass = "x=15;y=10"
+
 /obj/item/weapon/reagent_containers/food/drinks/ice/New()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/ice, 30)
 
 /obj/item/weapon/reagent_containers/food/drinks/h_chocolate
-	name = "cup of Dutch hot coco"
-	desc = "Made in Space South America."
+	name = "cup of hot cocoa"
+	desc = "A tall plastic cup of creamy hot chocolate."
 	icon_state = "hot_coco"
 	item_state = "coffee"
 	center_of_mass = "x=15;y=13"
+
 /obj/item/weapon/reagent_containers/food/drinks/h_chocolate/New()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/drink/hot_coco, 30)
@@ -378,12 +373,12 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/coffeecup/NT
 	name = "\improper NT coffee cup"
-	desc = "A red NanoTrasen coffee cup. 90% guaranteed to not be laced with mind-control drugs."
+	desc = "A red NanoTrasen coffee cup."
 	icon_state = "coffeecup_NT"
 	base_name = "NT cup"
 
 /obj/item/weapon/reagent_containers/food/drinks/coffeecup/corp
-	name = "\improper Expeditionary Corps Organisation coffee cup"
+	name = "\improper EXO coffee cup"
 	desc = "A tasteful coffee cup in Expeditionary Corps Organisation corporate colours."
 	icon_state = "coffeecup_corp"
 	base_name = "EXO cup"
@@ -420,10 +415,10 @@
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 
 /obj/item/weapon/reagent_containers/food/drinks/coffeecup/STC
-	name = "TCC coffee cup"
-	desc = "A coffee cup adorned with the flag of the Terran Colonial Confederation, for when you need some espionage charges to go with your morning coffee."
+	name = "ICCG coffee cup"
+	desc = "A coffee cup adorned with the flag of the Gilgamesh Colonial Confederation, for when you need some espionage charges to go with your morning coffee."
 	icon_state = "coffeecup_STC"
-	base_name = "TCC cup"
+	base_name = "ICCG cup"
 
 /obj/item/weapon/reagent_containers/food/drinks/coffeecup/pawn
 	name = "pawn coffee cup"
@@ -458,3 +453,41 @@
 	desc = "A coffee cup imprinted with the stylish logo of Deimos Advanced Information Systems."
 	icon_state = "coffeecup_dais"
 	base_name = "DAIS cup"
+
+/obj/item/weapon/reagent_containers/food/drinks/coffeecup/teacup
+	name = "teacup"
+	desc = "A plain white porcelain teacup."
+	icon_state = "teacup"
+	item_state = "coffee"
+	volume = 20
+	center_of_mass = "x=15;y=13"
+	filling_states = "100"
+	base_name = "teacup"
+	base_icon = "teacup"
+
+//tea and tea accessories
+/obj/item/weapon/reagent_containers/food/drinks/tea
+	name = "cup of tea master item"
+	desc = "A tall plastic cup full of the concept and ideal of tea."
+	icon_state = "coffee"
+	item_state = "coffee"
+	center_of_mass = "x=16;y=14"
+	filling_states = "100"
+	base_name = "cup"
+	base_icon = "cup"
+
+/obj/item/weapon/reagent_containers/food/drinks/tea/black
+	name = "cup of black tea"
+	desc = "A tall plastic cup of hot black tea."
+
+/obj/item/weapon/reagent_containers/food/drinks/tea/black/New()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/drink/tea, 30)
+
+/obj/item/weapon/reagent_containers/food/drinks/tea/green
+	name = "cup of green tea"
+	desc = "A tall plastic cup of hot green tea."
+
+/obj/item/weapon/reagent_containers/food/drinks/tea/green/New()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/drink/tea/green, 30)

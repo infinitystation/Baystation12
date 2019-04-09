@@ -108,12 +108,7 @@ var/const/NETWORK_PETROV      = "Petrov"
 // T-Coms
 //
 
-/obj/machinery/telecomms/relay/preset/shuttle
-	id = "Charon Relay"
-	toggled = 0
-	autolinkers = list("s_relay")
-
-/obj/machinery/telecomms/relay/preset/exploration_shuttle
+/obj/machinery/telecomms/relay/preset/charon
 	id = "Charon Relay"
 	toggled = 0
 	autolinkers = list("s_relay")
@@ -208,10 +203,10 @@ var/const/NETWORK_ENGINEERING_OUTPOST = "Engineering Outpost"
 		num2text(MED_I_FREQ) = list(access_medical_equip),
 		num2text(SEC_FREQ)   = list(access_security),
 		num2text(SEC_I_FREQ) = list(access_security),
-		num2text(SCI_FREQ)   = list(access_tox,access_robotics,access_xenobiology),
+		num2text(SCI_FREQ)   = list(access_tox, access_robotics, access_xenobiology, access_el),
 		num2text(SUP_FREQ)   = list(access_cargo),
 		num2text(SRV_FREQ)   = list(access_janitor, access_hydroponics),
-		num2text(EXP_FREQ)   = list(access_explorer)
+		num2text(EXP_FREQ)   = list(access_explorer, access_rd)
 	)
 
 /datum/computer_file/program/merchant

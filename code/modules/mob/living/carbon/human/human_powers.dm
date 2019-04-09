@@ -173,19 +173,6 @@
 			to_chat(H, "<span class='warning'>Your nose begins to bleed...</span>")
 			H.drip(1)
 
-/mob/living/carbon/human/proc/regurgitate()
-	set name = "Regurgitate"
-	set desc = "Empties the contents of your stomach"
-	set category = "Abilities"
-
-	if(stomach_contents.len)
-		for(var/mob/M in src)
-			if(M in stomach_contents)
-				stomach_contents.Remove(M)
-				M.forceMove(loc)
-		src.visible_message("<span class='danger'>[src] hurls out the contents of their stomach!</span>")
-	return
-
 /mob/living/carbon/human/proc/psychic_whisper(mob/M as mob in oview())
 	set name = "Psychic Whisper"
 	set desc = "Whisper silently to someone over a distance."
@@ -198,26 +185,22 @@
 		to_chat(src, "<span class='alium'>You channel a message: \"[msg]\" to [M]</span>")
 	return
 
-/mob/living/carbon/human/proc/darksight()
-	set name = "Night Vision"
-	set desc = "Turning on your natural ability."
-	set category = "Abilities"
-
-	var/obj/item/organ/internal/eyes/E = internal_organs_by_name[BP_EYES]
-	if(E.night_vision == 0)
-		E.night_vision = 1
-	else
-		E.night_vision = 0
-
 /***********
  diona verbs
 ***********/
 /mob/living/carbon/human/proc/diona_heal_toggle()
 	set name = "Toggle Heal"
-	set desc = "Turn your inate healing on or off."
+	set desc = "Turn your innate healing on or off."
 	set category = "Abilities"
-	innate_heal = !innate_heal
-	if (innate_heal)
+	var/obj/aura/regenerating/human/aura = locate() in auras
+	if(!aura)
+		to_chat(src, SPAN_WARNING("You don't possess an innate healing ability."))
+		return
+	if(!aura.can_toggle())
+		to_chat(src, SPAN_WARNING("You can't toggle the healing at this time!"))
+		return
+	aura.toggle()
+	if (aura.innate_heal)
 		to_chat(src, "<span class='alium'>You are now using nutrients to regenerate.</span>")
 	else
 		to_chat(src, "<span class='alium'>You are no longer using nutrients to regenerate.</span>")
@@ -229,24 +212,3 @@
 
 	var/new_skin = input(usr, "Choose your new skin colour: ", "Change Colour", rgb(r_skin, g_skin, b_skin)) as color|null
 	change_skin_color(hex2num(copytext(new_skin, 2, 4)), hex2num(copytext(new_skin, 4, 6)), hex2num(copytext(new_skin, 6, 8)))
-
-//Aurora
-
-/mob/living/carbon/human/proc/self_destruct()
-	set category = "Abilities"
-	set name = "Engage Self-Destruct"
-	set desc = "When all else has failed, bite the bullet."
-
-	if(stat || paralysis || stunned || weakened || lying)
-		to_chat(src, "<span class='warning'>You cannot do that in your current state.</span>")
-		return
-
-	src.visible_message(
-	"<span class='danger'>\The [src] begins to beep ominously!</span>",
-	"<span class='danger'>WARNING: SELF-DESTRUCT ENGAGED. Unit termination finalized in three seconds!</span>"
-	)
-	sleep(10)
-	playsound(src, 'sound/items/countdown.ogg', 125, 1)
-	sleep(20)
-	explosion(src, -1, 1, 3)
-	src.gib()

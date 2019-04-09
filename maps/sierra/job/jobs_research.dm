@@ -34,7 +34,6 @@
 	                    SKILL_SCIENCE     = SKILL_MAX,
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
 	skill_points = 30
-	required_education = EDUCATION_TIER_DOCTORATE
 
 /datum/job/scientist
 	title = "Scientist"
@@ -71,7 +70,6 @@
 
 	minimal_access = list()
 	skill_points = 22
-	required_education = EDUCATION_TIER_MASTERS
 
 /datum/job/roboticist
 	title = "Roboticist"
@@ -102,8 +100,6 @@
 	access = list(access_robotics, access_research, access_tech_storage)
 
 	minimal_access = list()
-	required_education = EDUCATION_TIER_TRADE
-	maximum_education = EDUCATION_TIER_DOCTORATE
 
 /datum/job/scientist_assistant
 	title = "Research Assistant"
@@ -135,5 +131,3 @@
 	access = list(access_research, access_mining_office, access_petrov, access_expedition_shuttle, access_guppy, access_hangar)
 
 	minimal_access = list()
-	required_education = EDUCATION_TIER_DROPOUT
-	maximum_education = EDUCATION_TIER_BACHELOR

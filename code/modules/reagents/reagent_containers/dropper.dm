@@ -97,7 +97,7 @@
 		else
 			icon_state = "dropper0"
 	attack_self()
-		set_APTFT()
+		set_amount_per_transfer_from_this()
 
 /obj/item/weapon/reagent_containers/dropper/industrial
 	name = "Industrial Dropper"

@@ -21,6 +21,6 @@
 
 /obj/item/custkit/sprite/attackby(obj/item/I, mob/user, params)
 	if(istype(I, input))
-		I.icon = 'icons/infinity_custom_items_obj.dmi' //we can add a new var in future for a better icons managment
+		I.icon = CUSTOM_ITEM_OBJ //we can add a new var in future for a better icons managment
 		I.icon_state = output
 		qdel(src)

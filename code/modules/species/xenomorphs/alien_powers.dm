@@ -278,14 +278,6 @@ mob/living/carbon/human/proc/xeno_infest(mob/living/carbon/human/M as mob in ovi
 
 	A.do_animate("spark")
 	sleep(6)
-	A.open(3)
-
-/mob/living/carbon/human/proc/scan_target()
-	set name = "See My Health"
-	set category = "Abilities"
-	set desc = "We can see our health."
-
-	if(ishuman(src))
-		to_chat(src, medical_scan_results(src, 1, SKILL_MAX))
-
-	else to_chat(src, "<span class='notice'>Not a scannable target.</span>")
+	A.set_broken(TRUE)
+	var/check = A.open(1)
+	src.visible_message("\The [src] slices \the [A]'s controls[check ? ", ripping it open!" : ", breaking it!"]")

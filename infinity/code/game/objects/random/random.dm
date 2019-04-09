@@ -24,7 +24,7 @@
 				/obj/item/clothing/gloves/thick = 4,
 				/obj/item/clothing/gloves/white = 2,
 				/obj/item/clothing/gloves/rainbow = 1,
-				/obj/item/clothing/gloves/duty = 4,
+				/obj/item/clothing/gloves/thick/duty = 4,
 				/obj/item/clothing/gloves/insulated/cheap = 3)
 
 /obj/random/shoes/poor
@@ -70,7 +70,7 @@
 /obj/random/trash/space/spawn_choices()
 	return list(/obj/item/weapon/ore/iron = 1,
 				/obj/item/weapon/ore/glass = 5,
-				/obj/item/stack/rods = 2,
+				/obj/item/stack/material/rods = 2,
 				/obj/effect/decal/cleanable/ash = 5,
 				/obj/effect/decal/cleanable/dirt = 3,
 				/obj/item/remains/robot = 2)
@@ -127,7 +127,7 @@
 				/obj/item/clothing/gloves/thick = 3,
 				/obj/item/clothing/gloves/thick/modified = 1,
 				/obj/item/clothing/gloves/thick/botany = 5,
-				/obj/item/clothing/gloves/duty = 3,
+				/obj/item/clothing/gloves/thick/duty = 3,
 				/obj/item/clothing/gloves/latex = 4,
 				/obj/item/clothing/gloves/latex/modified = 1,
 				/obj/item/clothing/gloves/white = 5,

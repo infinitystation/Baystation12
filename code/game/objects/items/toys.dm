@@ -74,7 +74,7 @@
 	return
 
 /obj/item/toy/water_balloon/throw_impact(atom/hit_atom)
-	if(src.reagents.total_volume >= 1)
+	if(reagents && reagents.total_volume >= 1)
 		src.visible_message("<span class='warning'>\The [src] bursts!</span>","You hear a pop and a splash.")
 		src.reagents.touch_turf(get_turf(hit_atom))
 		for(var/atom/A in get_turf(hit_atom))
@@ -141,7 +141,7 @@
 /obj/item/toy/crossbow
 	name = "foam dart crossbow"
 	desc = "A weapon favored by many overactive children. Ages 8 and up."
-	icon = 'icons/obj/gun.dmi'
+	icon = 'icons/obj/guns/energy_crossbow.dmi'
 	icon_state = "crossbow"
 	item_state = "crossbow"
 	item_icons = list(
@@ -589,8 +589,8 @@
 	icon_state = "wizard"
 
 /obj/item/toy/figure/rd
-	name = "Research Director action figure"
-	desc = "A \"Space Life\" brand Research Director action figure."
+	name = "Chief Science Officer action figure"
+	desc = "A \"Space Life\" brand Chief Science Officer action figure."
 	icon_state = "rd"
 
 /obj/item/toy/figure/roboticist

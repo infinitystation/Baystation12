@@ -89,6 +89,12 @@ medals
 	desc = "A radiation-shielded shoulder patch, carrying the symbol of the Sol Central Government Expeditionary Corps Field Operations, or SCGECFO for short, the hands-on workers of every Expeditionary Corps mission."
 	icon_state = "ecpatch2"
 
+/obj/item/clothing/accessory/solgov/cultex_patch
+	name = "\improper Cultural Exchange patch"
+	desc = "A radiation-shielded shoulder patch, denoting service in the the Sol Central Government Expeditionary Corps Cultural Exchange program."
+	icon_state = "ecpatch3"
+	slot = ACCESSORY_SLOT_INSIGNIA
+
 /obj/item/clothing/accessory/solgov/fleet_patch
 	name = "\improper First Fleet patch"
 	desc = "A fancy shoulder patch carrying insignia of First Fleet, the Sol Guard, stationed in Sol."
@@ -200,7 +206,7 @@ specialty pins
 	desc = "A golden pin denoting some special qualification."
 	icon_state = "fleetpin_officer"
 
-/obj/item/clothing/accessory/solgov/speciality/pilot
+/obj/item/clothing/accessory/solgov/specialty/pilot
 	name = "pilot's qualification pin"
 	desc = "An iron pin denoting the qualification to fly SCG spacecraft."
 	icon_state = "pin_pilot"
@@ -297,6 +303,16 @@ armour attachments
 	name = "\improper POLICE tag"
 	desc = "An armor tag with the word POLICE printed in silver lettering on it."
 	icon_state = "sectag"
+
+/obj/item/clothing/accessory/armor/tag/solgov/medic
+	name = "\improper MEDIC tag"
+	desc = "An armor tag with the word MEDIC printed in red lettering on it."
+	icon_state = "medictag"
+
+/obj/item/clothing/accessory/armor/tag/solgov/agent
+	name = "\improper OCIE AGENT tag"
+	desc = "An armor tag with the word OCIE AGENT printed in gold lettering on it."
+	icon_state = "agenttag"
 
 /obj/item/clothing/accessory/armor/tag/solgov/com
 	name = "\improper SCG tag"
@@ -454,7 +470,7 @@ department tags
 /obj/item/clothing/accessory/solgov/department/research
 	name = "research insignia"
 	desc = "Insignia denoting assignment to the research department. These fit Expeditionary Corps uniforms."
-	color = COLOR_BOTTLE_GREEN
+	color = COLOR_RESEARCH
 
 /obj/item/clothing/accessory/solgov/department/research/service
 	icon_state = "dept_exped_service"
@@ -598,7 +614,7 @@ ranks - fleet
 
 /obj/item/clothing/accessory/solgov/rank/fleet/officer/wo1_monkey
 	name = "makeshift ranks (WO-1 warrant officer 1)"
-	desc = "Insignia denoting the elusive rank of Warrant Officer. Too bad it's obviously fake."
+	desc = "Insignia denoting the mythical rank of Warrant Officer. Too bad it's obviously fake."
 
 /obj/item/clothing/accessory/solgov/rank/fleet/officer/o2
 	name = "ranks (O-2 sub-lieutenant)"

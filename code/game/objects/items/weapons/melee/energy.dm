@@ -5,7 +5,6 @@
 	sharp = 0
 	edge = 0
 	armor_penetration = 50
-	damtype = "fire"
 	hitsound = 'sound/weapons/blade1.ogg'
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_NO_BLOOD
 

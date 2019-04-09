@@ -32,14 +32,10 @@
 	var/obj/effect/flood/flood_object
 	var/fluid_blocked_dirs = 0
 	var/flooded // Whether or not this turf is absolutely flooded ie. a water source.
+	var/footstep_type
 
 /turf/New()
 	..()
-	for(var/atom/movable/AM as mob|obj in src)
-		spawn( 0 )
-			src.Entered(AM)
-			return
-
 	if(dynamic_lighting)
 		luminosity = 0
 	else
@@ -307,6 +303,7 @@ var/const/enterloopsanity = 100
 	var/obj/effect/decal/writing/graffiti = new(src)
 	graffiti.message = message
 	graffiti.author = vandal.ckey
+	vandal.update_personal_goal(/datum/goal/achievement/graffiti, TRUE)
 
 	if(lowertext(message) == "elbereth")
 		to_chat(vandal, "<span class='notice'>You feel much safer.</span>")

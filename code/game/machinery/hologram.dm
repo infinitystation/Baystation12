@@ -41,7 +41,6 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 
 	var/power_per_hologram = 500 //per usage per hologram
 	idle_power_usage = 5
-	use_power = 1
 
 	var/list/mob/living/silicon/ai/masters = new() //List of AIs that use the holopad
 	var/last_request = 0 //to prevent request spam. ~Carn
@@ -59,6 +58,7 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 	var/base_icon = "holopad-B"
 
 	var/obj/effect/overlay/holoray/ray
+	var/allow_ai = TRUE
 
 /obj/machinery/hologram/holopad/New()
 	..()
@@ -82,7 +82,12 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 		audible_message("Severing connection to distant holopad.")
 		end_call(user)
 		return
-	switch(alert(user,"Would you like to request an AI's presence or establish communications with another pad?", "Holopad","AI","Holocomms","Cancel"))
+	
+	var/handle_type = "Holocomms"
+	if(allow_ai)
+		handle_type = alert(user,"Would you like to request an AI's presence or establish communications with another pad?", "Holopad","AI","Holocomms","Cancel")
+	
+	switch(handle_type)
 		if("AI")
 			if(last_request + 200 < world.time) //don't spam the AI with requests you jerk!
 				last_request = world.time
@@ -161,6 +166,8 @@ var/const/HOLOPAD_MODE = RANGE_BASED
 	This may change in the future but for now will suffice.*/
 	if(user.eyeobj && (user.eyeobj.loc != src.loc))//Set client eye on the object if it's not already.
 		user.eyeobj.setLoc(get_turf(src))
+	else if (!allow_ai)
+		to_chat(user, SPAN_WARNING("Access denied."))
 	else if(!masters[user])//If there is no hologram, possibly make one.
 		activate_holo(user)
 	else//If there is a hologram, remove it.
@@ -312,7 +319,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 			clear_holo(master)
 			continue
 
-		use_power(power_per_hologram)
+		use_power_oneoff(power_per_hologram)
 	if(last_request + 200 < world.time&&incoming_connection==1)
 		if(sourcepad)
 			sourcepad.audible_message("<i><span class='game say'>The holopad connection timed out</span></i>")
@@ -397,7 +404,6 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 
 /obj/machinery/hologram
 	anchored = 1
-	use_power = 1
 	idle_power_usage = 5
 	active_power_usage = 100
 
@@ -458,6 +464,10 @@ Holographic project of everything else.
 	power_per_hologram = 1000 //per usage per hologram
 	holopadType = HOLOPAD_LONG_RANGE
 	base_icon = "holopad-Y"
+
+// Used for overmap capable ships that should have communications, but not be AI accessible
+/obj/machinery/hologram/holopad/longrange/remoteship
+	allow_ai = FALSE
 
 #undef RANGE_BASED
 #undef AREA_BASED
