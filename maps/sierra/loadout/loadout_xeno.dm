@@ -25,6 +25,8 @@
 /datum/gear/eyes/resomi/lenses_med
 	allowed_roles = MEDICAL_ROLES
 
+
+
 // IPC clothing
 
 /datum/gear/suit/lab_xyn_machine

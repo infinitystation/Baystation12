@@ -30,8 +30,6 @@
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
-	required_education = EDUCATION_TIER_BACHELOR
-	maximum_education = EDUCATION_TIER_MASTERS
 
 /datum/job/explorer
 	title = "Explorer"
@@ -58,8 +56,6 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
-	required_education = EDUCATION_TIER_BASIC
-	maximum_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/explorer/get_description_blurb()
 	return "You are an Explorer. Your duty is to go on expeditions to away sites. The Exploration Leader is your team leader. You are to look for anything of economic or scientific interest to the NT - mineral deposits, alien flora/fauna, artifacts. You will also likely encounter hazardous environments, aggressive wildlife or malfunctioning defense systems, so tread carefully."
@@ -94,8 +90,6 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
-	required_education = EDUCATION_TIER_TRADE
-	maximum_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/explorer_medic
 	title = "Field Medic"
@@ -134,8 +128,6 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
-	required_education = EDUCATION_TIER_TRADE
-	maximum_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/explorer_engineer
 	title = "Field Engineer"
@@ -176,5 +168,3 @@
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/deck_management)
-	required_education = EDUCATION_TIER_TRADE
-	maximum_education = EDUCATION_TIER_BACHELOR

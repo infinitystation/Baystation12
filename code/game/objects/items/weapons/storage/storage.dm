@@ -11,7 +11,6 @@
 	w_class = ITEM_SIZE_NORMAL
 	var/list/can_hold = new/list() //List of objects which this item can store (if set, it can't store anything else)
 	var/list/cant_hold = new/list() //List of objects which this item can't store (in effect only if can_hold isn't set)
-	var/list/can_gather = new/list() //List of objects which this item can gather by clicking on turf
 
 	var/max_w_class = ITEM_SIZE_SMALL //Max size of objects that this object can store (in effect only if can_hold isn't set)
 	var/max_storage_space = null //Total storage cost of items this can hold. Will be autoset based on storage_slots if left null.
@@ -175,11 +174,6 @@
 
 	return 1
 
-/obj/item/weapon/storage/proc/can_be_gathered(obj/item/W)
-	if(!can_gather || can_gather.len == 0 || is_type_in_list(W, can_gather))
-		return 1
-	return 0
-
 //This proc handles items being inserted. It does not perform any checks of whether an item can or can't be inserted. That's done by can_be_inserted()
 //The stop_warning parameter will stop the insertion message from being displayed. It is intended for cases where you are inserting multiple items at once,
 //such as when picking up all the items on a tile with one click.
@@ -200,9 +194,9 @@
 				if (M == usr)
 					to_chat(usr, "<span class='notice'>You put \the [W] into [src].</span>")
 				else if (M in range(1, src)) //If someone is standing close enough, they can tell what it is... TODO replace with distance check
-					M.show_message("<span class='notice'>\The [usr] puts [W] into [src].</span>", 1)
+					M.show_message("<span class='notice'>\The [usr] puts [W] into [src].</span>", VISIBLE_MESSAGE)
 				else if (W && W.w_class >= ITEM_SIZE_NORMAL) //Otherwise they can only see large or normal items from a distance...
-					M.show_message("<span class='notice'>\The [usr] puts [W] into [src].</span>", 1)
+					M.show_message("<span class='notice'>\The [usr] puts [W] into [src].</span>", VISIBLE_MESSAGE)
 
 		if(!NoUpdate)
 			update_ui_after_item_insertion()
@@ -297,7 +291,7 @@
 	var/failure = 0
 
 	for(var/obj/item/I in T)
-		if(!can_be_inserted(I, user, 0) || !can_be_gathered(I))	// Note can_be_inserted still makes noise when the answer is no
+		if(!can_be_inserted(I, user, 0))	// Note can_be_inserted still makes noise when the answer is no
 			failure = 1
 			continue
 		success = 1
@@ -332,8 +326,7 @@
 	var/turf/T = get_turf(src)
 	hide_from(usr)
 	for(var/obj/item/I in contents)
-		if (can_be_gathered(I))
-			remove_from_storage(I, T, 1)
+		remove_from_storage(I, T, 1)
 	finish_bulk_removal()
 
 /obj/item/weapon/storage/Initialize()
@@ -352,10 +345,6 @@
 		max_storage_space = storage_slots*base_storage_cost(max_w_class)
 
 	storage_ui = new storage_ui(src)
-
-	if (!can_gather || !can_gather.len)
-		can_gather = can_hold
-
 	prepare_ui()
 
 	if(startswith)

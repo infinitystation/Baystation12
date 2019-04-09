@@ -43,7 +43,7 @@
 /obj/item/clothing/head/helmet/tactical
 	name = "tactical helmet"
 	desc = "A tan helmet made from advanced ceramic. Comfortable and robust."
-//	icon_state = "helmet_tac"
+	icon_state = "helmet_tac"
 	armor = list(melee = 50, bullet = 60, laser = 60, energy = 45, bomb = 30, bio = 0, rad = 0)
 	siemens_coefficient = 0.6
 

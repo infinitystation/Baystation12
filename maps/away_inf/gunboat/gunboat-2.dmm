@@ -193,7 +193,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /obj/item/weapon/gun/energy/gun,
 /obj/item/weapon/gun/energy/gun,
@@ -225,7 +224,7 @@
 	},
 /obj/machinery/photocopier/faxmachine{
 	department = "Gunboat";
-	req_one_access = list(19)
+	req_access = list(19)
 	},
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/command/bridge)
@@ -1020,7 +1019,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/hallway)
@@ -1028,7 +1026,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	icon_state = "intact-supply";

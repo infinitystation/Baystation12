@@ -26,11 +26,12 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/shotgun
 
-/obj/item/weapon/gun/projectile/revolver/webley/captain
+/obj/item/weapon/gun/projectile/revolver/medium/captain
 	name = "\improper Final Argument"
-	icon = 'maps/sierra/icons/obj/uniques.dmi'
+	icon = 'maps/torch/icons/obj/uniques.dmi'
 	icon_state = "mosley"
-	desc = "A shiny al-Maliki & Mosley Autococker automatic revolver, with black accents. Marketed as the 'Revolver for the Modern Era'. Uses .357 magnum rounds."
+	desc = "A shiny al-Maliki & Mosley Autococker automatic revolver, with black accents. Marketed as the 'Revolver for the Modern Era'."
 	fire_delay = 5.7 //Autorevolver. Also synced with the animation
 	fire_anim = "mosley_fire"
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)
+	starts_loaded = 0 //Nobody keeps ballistic weapons loaded

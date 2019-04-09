@@ -110,10 +110,6 @@
 	desc = "A pair of tan arm pads reinforced with armor plating. Attaches to a plate carrier."
 	icon_state = "armguards_tan"
 
-/obj/item/clothing/accessory/armguards/tactical
-	desc = "A pair of black arm pads reinforced with additional ablative coating. Attaches to a plate carrier."
-	armor = list(melee = 50, bullet = 50, laser = 60, energy = 35, bomb = 30, bio = 0, rad = 0)
-
 /obj/item/clothing/accessory/armguards/merc
 	name = "heavy arm guards"
 	desc = "A pair of red-trimmed black arm pads reinforced with heavy armor plating. Attaches to a plate carrier."
@@ -170,10 +166,6 @@
 	desc = "A pair of armored leg pads in tan. Attaches to a plate carrier."
 	icon_state = "legguards_tan"
 
-/obj/item/clothing/accessory/legguards/tactical
-	desc = "A pair of armored leg pads reinforced with additional ablative coating. Attaches to a plate carrier."
-	armor = list(melee = 50, bullet = 50, laser = 60, energy = 35, bomb = 30, bio = 0, rad = 0)
-
 /obj/item/clothing/accessory/legguards/merc
 	name = "heavy leg guards"
 	desc = "A pair of heavily armored leg pads in red-trimmed black. Attaches to a plate carrier."
@@ -217,7 +209,7 @@
 
 /obj/item/clothing/accessory/armor/tag/nt
 	name = "\improper CORPORATE SECURITY tag"
-	desc = "An armor tag with the words CORPORATE SECURITY printed in red lettering on it."
+	desc = "An armor tag with the words CORPORATE SECURITY printed in bottle green lettering on it."
 	icon_state = "nanotag"
 
 /obj/item/clothing/accessory/armor/tag/pcrc

@@ -182,7 +182,7 @@
 
 /obj/item/clothing/head/beret/solgov/research
 	name = "government research beret"
-	desc = "A green beret denoting service in the Bureau of Research. For explorers that are more inclined towards style than safety."
+	desc = "A green beret denoting service in the Bureau of Research. For scientists that are more inclined towards style than safety."
 	icon_state = "beret_green"
 
 /obj/item/clothing/head/beret/solgov/health
@@ -394,6 +394,9 @@
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
 	starting_accessories = null
 
+/obj/item/clothing/head/helmet/space/void/exploration
+	camera = /obj/machinery/camera/network/exploration
+	
 //SolGov Hardsuits
 
 /obj/item/clothing/head/helmet/space/void/engineering/alt/sol

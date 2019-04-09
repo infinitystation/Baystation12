@@ -31,12 +31,12 @@
 	shoes = /obj/item/clothing/shoes/jungleboots 
 	gloves = /obj/item/clothing/gloves/thick 
 	head = /obj/item/clothing/head/beret 
-	l_pocket = /obj/item/weapon/material/butterfly/switchblade 
+	l_pocket = /obj/item/weapon/material/knife/folding/combat/switchblade 
  
-/obj/item/weapon/gun/projectile/revolver/webley/marooned
+/obj/item/weapon/gun/projectile/revolver/medium/marooned
 	name = "worn-out revolver"
 
-/obj/item/weapon/gun/projectile/revolver/webley/marooned/Initialize()
+/obj/item/weapon/gun/projectile/revolver/medium/marooned/Initialize()
 	. = ..()
 	consume_next_projectile()
 	handle_post_fire()

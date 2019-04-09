@@ -145,7 +145,7 @@ datum/objective/anti_revolution/brig
 
 		if(!istype(I)) return 1
 
-		if(I.assignment == "Assistant")
+		if(I.assignment == GLOB.using_map.default_assistant_title)
 			return 1
 		else
 			return 0
@@ -437,7 +437,7 @@ datum/objective/steal
 	var/target_name
 
 	var/global/possible_items[] = list(
-		"the captain's personal revolver" = /obj/item/weapon/gun/projectile/revolver/webley/captain,
+		"the captain's personal revolver" = /obj/item/weapon/gun/projectile/revolver/medium/captain,
 		"an RCD" = /obj/item/weapon/rcd,
 		"a jetpack" = /obj/item/weapon/tank/jetpack,
 		"a functional AI" = /obj/item/weapon/aicard,
@@ -447,12 +447,17 @@ datum/objective/steal
 		"28 moles of phoron (full tank)" = /obj/item/weapon/tank,
 		"a sample of slime extract" = /obj/item/slime_extract,
 		"a piece of corgi meat" = /obj/item/weapon/reagent_containers/food/snacks/meat/corgi,
+		"a captain's jumpsuit" = /obj/item/clothing/under/rank/captain,
 		"a research director's jumpsuit" = /obj/item/clothing/under/rank/research_director,
+		"a chief engineer's jumpsuit" = /obj/item/clothing/under/rank/chief_engineer,
+		"a chief medical officer's jumpsuit" = /obj/item/clothing/under/rank/chief_medical_officer,
+		"a head of security's jumpsuit" = /obj/item/clothing/under/rank/head_of_security,
+		"a head of personnel's jumpsuit" = /obj/item/clothing/under/rank/head_of_personnel,
 		"a Formal Outfit of NT Internal Affairis Agent" = /obj/item/clothing/under/rank/internalaffairs/,
 		"a Tactical Goggles" = /obj/item/clothing/glasses/tacgoggles,
 		"the hypospray" = /obj/item/weapon/reagent_containers/hypospray,
-		"a pinpointer" = /obj/item/weapon/pinpointer,
-		"an ablative armor kit" = /obj/item/clothing/suit/armor/laserproof,
+		"the captain's pinpointer" = /obj/item/weapon/pinpointer,
+		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
 		"a ballistic armor kit" =  /obj/item/clothing/suit/armor/bulletproof,
 	)
 
@@ -678,7 +683,7 @@ datum/objective/heist/loot
 		var/loot = "an object"
 		switch(rand(1,8))
 			if(1)
-				target = /obj/item/weapon/gun/projectile/revolver/webley/captain
+				target = /obj/item/weapon/gun/projectile/revolver/medium/captain
 				target_amount = 1
 				loot = "a captain's revolver"
 			if(2)
@@ -869,7 +874,7 @@ datum/objective/heist/salvage
 	if(target) explanation_text = "Sacrifice [target.name], the [target.assigned_role]. You will need the sacrifice rune and three acolytes to do so."
 
 /datum/objective/cult/sacrifice/check_completion()
-	return (target && GLOB.cult && GLOB.cult.sacrificed.Find(target))
+	return (target && GLOB.cult && !GLOB.cult.sacrificed.Find(target))
 
 /datum/objective/rev/find_target()
 	..()

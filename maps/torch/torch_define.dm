@@ -35,7 +35,6 @@
 	default_law_type = /datum/ai_laws/solgov
 	use_overmap = 1
 	num_exoplanets = 1
-	planet_size = list(129,129)
 
 	away_site_budget = 3
 	id_hud_icons = 'maps/torch/icons/assignment_hud.dmi'
@@ -64,6 +63,8 @@
 	for(var/zlevel in map_sectors)
 		var/obj/effect/overmap/O = map_sectors[zlevel]
 		if(O.name == torch.name)
+			continue
+		if(istype(O, /obj/effect/overmap/ship/landable)) //Don't show shuttles
 			continue
 		space_things |= O
 

@@ -28,8 +28,6 @@
 		/datum/mil_rank/civ/nt
 	)
 
-	required_education = EDUCATION_TIER_NONE
-
 /datum/job/cyborg
 	total_positions = 3
 	spawn_positions = 3

@@ -9,11 +9,17 @@
 	var/list/transfer_amounts = list(REM, 1, 2)
 	var/transfer_amount = 1
 
-/obj/structure/iv_drip/verb/set_APTFT()
+/obj/structure/iv_drip/verb/set_amount_per_transfer_from_this()
 	set name = "Set IV transfer amount"
 	set category = "Object"
 	set src in range(1)
+	if(!CanPhysicallyInteract(usr))
+		to_chat(usr, "<span class='notice'>You're in no condition to do that!'</span>")
+		return
 	var/N = input("Amount per transfer from this:","[src]") as null|anything in transfer_amounts
+	if(!CanPhysicallyInteract(usr)) // because input takes time and the situation can change
+		to_chat(usr, "<span class='notice'>You're in no condition to do that!'</span>")
+		return
 	if(N)
 		transfer_amount = N
 
@@ -154,14 +160,9 @@
 	set category = "Object"
 	set name = "Toggle IV Mode"
 	set src in view(1)
-
-	if(!istype(usr, /mob/living))
-		to_chat(usr, "<span class='warning'>You can't do that.</span>")
+	if(!CanPhysicallyInteract(usr))
+		to_chat(usr, "<span class='notice'>You're in no condition to do that!'</span>")
 		return
-
-	if(usr.incapacitated())
-		return
-
 	mode = !mode
 	to_chat(usr, "The IV drip is now [mode ? "injecting" : "taking blood"].")
 
@@ -190,15 +191,19 @@
 	attached = null
 
 /obj/structure/iv_drip/proc/hook_up(mob/living/carbon/human/target, mob/user)
-	to_chat(user, "<span class='notice'>You start to hook up \the [target] to \the [src].</span>")
+	if(do_IV_hookup(target, user, src))
+		attached = target
+		START_PROCESSING(SSobj,src)
+
+/proc/do_IV_hookup(mob/living/carbon/human/target, mob/user, obj/IV)
+	to_chat(user, "<span class='notice'>You start to hook up \the [target] to \the [IV].</span>")
 	if(!user.do_skilled(2 SECONDS, SKILL_MEDICAL, target))
-		return
+		return FALSE
 
 	if(prob(user.skill_fail_chance(SKILL_MEDICAL, 80, SKILL_BASIC)))
-		visible_message("\The [user] fails to find the vein while trying to hook \the [target] up to \the [src], stabbing them instead!")
+		user.visible_message("\The [user] fails to find the vein while trying to hook \the [target] up to \the [IV], stabbing them instead!")
 		target.apply_damage(2, BRUTE, pick(BP_R_ARM, BP_L_ARM), damage_flags=DAM_SHARP)
-		return
+		return FALSE
 
-	visible_message("\The [usr] hooks \the [target] up to \the [src].")
-	attached = target
-	START_PROCESSING(SSobj,src)
+	user.visible_message("\The [user] hooks \the [target] up to \the [IV].")
+	return TRUE

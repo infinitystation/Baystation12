@@ -239,7 +239,7 @@
 		if(!(S.z in affected_z))
 			continue
 		if(prob(DETONATION_SOLAR_BREAK_CHANCE))
-			S.broken()
+			S.set_broken(TRUE)
 
 
 
@@ -480,7 +480,7 @@
 	user.drop_from_inventory(W)
 	Consume(W)
 
-	user.apply_effect(150, IRRADIATE, blocked = user.getarmor(null, "rad"))
+	user.apply_damage(150, IRRADIATE, damage_flags = DAM_DISPERSED)
 
 
 /obj/machinery/power/supermatter/Bumped(atom/AM as mob|obj)

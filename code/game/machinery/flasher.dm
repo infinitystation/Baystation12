@@ -12,7 +12,6 @@
 	var/strength = 10 //How weakened targets are when flashed.
 	var/base_state = "mflash"
 	anchored = 1
-	use_power = 1
 	idle_power_usage = 2
 	movable_flags = MOVABLE_FLAG_PROXMOVE
 	var/_wifi_id
@@ -68,38 +67,43 @@
 	if (!(powered()))
 		return
 
-	if ((src.disable) || (src.last_flash && world.time < src.last_flash + 150))
+	if ((disable) || (last_flash && world.time < last_flash + 150))
 		return
 
-	playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
+	playsound(loc, 'sound/weapons/flash.ogg', 100, 1)
 	flick("[base_state]_flash", src)
-	src.last_flash = world.time
-	use_power(1500)
+	last_flash = world.time
+	use_power_oneoff(1500)
 
 	for (var/mob/living/O in viewers(src, null))
-		if (get_dist(src, O) > src.range)
+		if (get_dist(src, O) > range)
 			continue
 
 		var/flash_time = strength
-		if (istype(O, /mob/living/carbon/human))
-			var/mob/living/carbon/human/H = O
-			if(!H.eyecheck() <= 0)
+		if(isliving(O))
+			if(O.eyecheck() > FLASH_PROTECTION_NONE)
 				continue
-			flash_time = round(H.species.flash_mod * flash_time)
-			if(flash_time <= 0)
-				return
-			var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[BP_EYES]
-			if(!E)
-				return
-			if(E.is_bruised() && prob(E.damage + 50))
-				H.flash_eyes()
-				E.damage += rand(1, 5)
+			if(ishuman(O))
+				var/mob/living/carbon/human/H = O
+				flash_time = round(H.species.flash_mod * flash_time)
+				if(flash_time <= 0)
+					return
+				var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[H.species.vision_organ]
+				if(!E)
+					return
+				if(E.is_bruised() && prob(E.damage + 50))
+					H.flash_eyes()
+					E.damage += rand(1, 5)
+
 		if(!O.blinded && !isAI(O))
-			O.flash_eyes()
-			O.eye_blurry += flash_time
-			O.confused += (flash_time + 2)
-			O.Stun(flash_time / 2)
-			O.Weaken(3)
+			do_flash(O, flash_time)
+
+/obj/machinery/flasher/proc/do_flash(var/mob/living/victim, var/flash_time)
+	victim.flash_eyes()
+	victim.eye_blurry += flash_time
+	victim.confused += (flash_time + 2)
+	victim.Stun(flash_time / 2)
+	victim.Weaken(3)
 
 /obj/machinery/flasher/emp_act(severity)
 	if(stat & (BROKEN|NOPOWER))
@@ -110,13 +114,16 @@
 	..(severity)
 
 /obj/machinery/flasher/portable/HasProximity(atom/movable/AM as mob|obj)
-	if ((src.disable) || (src.last_flash && world.time < src.last_flash + 150))
+	if(!anchored || disable || last_flash && world.time < last_flash + 150)
 		return
 
 	if(istype(AM, /mob/living/carbon))
 		var/mob/living/carbon/M = AM
-		if (!MOVING_DELIBERATELY(M) && (src.anchored))
-			src.flash()
+		if(!MOVING_DELIBERATELY(M))
+			flash()
+	
+	if(isanimal(AM))
+		flash()
 
 /obj/machinery/flasher/portable/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(isWrench(W))
@@ -140,7 +147,7 @@
 	if(..())
 		return
 
-	use_power(5)
+	use_power_oneoff(5)
 
 	active = 1
 	icon_state = "launcheract"

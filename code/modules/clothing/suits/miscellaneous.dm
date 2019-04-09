@@ -366,7 +366,7 @@
 
 /obj/item/clothing/suit/storage/leather_jacket/nanotrasen
 	name = "NT black leather jacket"
-	desc = "A black leather coat. A corporate logo is proudly displayed on the back."
+	desc = "A black leather coat. The NanoTrasen logo is proudly displayed on the back."
 	icon_state = "leather_jacket_nt"
 
 //This one has buttons for some reason
@@ -381,7 +381,7 @@
 
 /obj/item/clothing/suit/storage/toggle/brown_jacket/nanotrasen
 	name = "NT leather jacket"
-	desc = "A brown leather coat. A corporate logo is proudly displayed on the back."
+	desc = "A brown leather coat. The NanoTrasen logo is proudly displayed on the back."
 	icon_state = "brown_jacket_nt"
 	icon_open = "brown_jacket_nt_open"
 	icon_closed = "brown_jacket_nt"
@@ -528,9 +528,9 @@
 	icon_open = "trackjacketwhite_open"
 	icon_closed = "trackjacketwhite"
 
-/obj/item/clothing/suit/storage/toggle/track/tcc
-	name = "TCC track jacket"
-	desc = "A Terran track jacket, for the truly cheeki breeki."
+/obj/item/clothing/suit/storage/toggle/track/gcc
+	name = "GCC track jacket"
+	desc = "An Independent track jacket, for the truly cheeki breeki."
 	icon_state = "trackjackettcc"
 	icon_open = "trackjackettcc_open"
 	icon_closed = "trackjackettcc"

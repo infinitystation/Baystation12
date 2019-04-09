@@ -69,11 +69,13 @@
 
 /obj/structure/ladder/mobile
 	icon = 'icons/obj/mobile_ladders.dmi'
-	base_icon = "mobile_ladder"
 
 /obj/structure/ladder/mobile/New()
 	..()
 	update_icon()
+
+/obj/structure/ladder/mobile/on_update_icon()
+	icon_state = "mobile_ladder[!!(allowed_directions & UP)][!!(allowed_directions & DOWN)]"
 
 /obj/structure/ladder/mobile/verb/fold()
 	set name = "Fold Ladder"

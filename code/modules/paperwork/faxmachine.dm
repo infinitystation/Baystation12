@@ -8,9 +8,8 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "fax"
 	insert_anim = "faxsend"
-	req_one_access = list(access_lawyer, access_heads, access_armory, access_qm)
+	req_access = list(list(access_lawyer, access_bridge, access_armory, access_qm))
 
-	use_power = 1
 	idle_power_usage = 30
 	active_power_usage = 200
 
@@ -144,7 +143,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	if(stat & (BROKEN|NOPOWER))
 		return
 
-	use_power(200)
+	use_power_oneoff(200)
 
 	var/success = 0
 	for(var/obj/machinery/photocopier/faxmachine/F in GLOB.allfaxes)
@@ -179,7 +178,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	else
 		return 0
 
-	use_power(active_power_usage)
+	use_power_oneoff(active_power_usage)
 	return 1
 
 /obj/machinery/photocopier/faxmachine/proc/send_admin_fax(var/mob/sender, var/destination)
@@ -189,7 +188,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 		to_chat(usr, "<span class='warning'>No Emergency Bluespace Relay detected. Unable to transmit message.</span>")
 		return 1
 
-	use_power(200)
+	use_power_oneoff(200)
 
 	//recieved copies should not use toner since it's being used by admins only.
 	var/obj/item/rcvdcopy

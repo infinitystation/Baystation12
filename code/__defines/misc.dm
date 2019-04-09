@@ -95,13 +95,13 @@
 #define CUSTOM_ITEM_SYNTH_CONFIG "config/custom_sprites.txt"
 #endif
 #ifndef CUSTOM_ITEM_OBJ
-#define CUSTOM_ITEM_OBJ 'icons/infinity_custom_items_obj.dmi'
+#define CUSTOM_ITEM_OBJ 'infinity/icons/customs/infinity_custom_items_obj.dmi'
 #endif
 #ifndef CUSTOM_ITEM_MOB
-#define CUSTOM_ITEM_MOB 'icons/infinity_custom_items_mob.dmi'
+#define CUSTOM_ITEM_MOB 'infinity/icons/customs/infinity_custom_items_mob.dmi'
 #endif
 #ifndef CUSTOM_ITEM_SYNTH
-#define CUSTOM_ITEM_SYNTH 'icons/infinity_custom_synthetic.dmi'
+#define CUSTOM_ITEM_SYNTH 'infinity/icons/customs/infinity_custom_synthetic.dmi'
 #endif
 
 #define WALL_CAN_OPEN 1
@@ -153,11 +153,6 @@
 // Caps for NTNet logging. Less than 10 would make logging useless anyway, more than 500 may make the log browser too laggy. Defaults to 100 unless user changes it.
 #define MAX_NTNET_LOGS 500
 #define MIN_NTNET_LOGS 10
-
-//Affects the chance that armour will block an attack. Should be between 0 and 1.
-//If set to 0, then armor will always prevent the same amount of damage, always, with no randomness whatsoever.
-//Of course, this will affect code that checks for blocked < 100, as blocked will be less likely to actually be 100.
-#define ARMOR_BLOCK_CHANCE_MULT 1.0
 
 // Special return values from bullet_act(). Positive return values are already used to indicate the blocked level of the projectile.
 #define PROJECTILE_CONTINUE   -1 //if the projectile should continue flying after calling bullet_act()

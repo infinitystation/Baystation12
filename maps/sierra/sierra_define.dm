@@ -6,9 +6,6 @@
 
 	load_legacy_saves = TRUE
 
-	station_levels = list(1,2,3)
-	contact_levels = list(1,2,3)
-	player_levels = list(1,2,3,6)
 	admin_levels = list(4,5)
 	empty_levels = list(6)
 	accessible_z_levels = list("1"=1,"2"=1,"3"=1,"6"=30)
@@ -33,10 +30,10 @@
 
 	default_law_type = /datum/ai_laws/nanotrasen
 	use_overmap = 1
-	num_exoplanets = 1
+	num_exoplanets = 0
 	planet_size = list(129,129)
 
-	away_site_budget = 2
+	away_site_budget = 0
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 
 	available_cultural_info = list(
@@ -57,11 +54,12 @@
 			HOME_SYSTEM_LORDANIA,
 			HOME_SYSTEM_KINGSTON,
 			HOME_SYSTEM_GAIA,
+			HOME_SYSTEM_MAGNITKA,
 			HOME_SYSTEM_OTHER
 		),
 		TAG_FACTION = list(
 			FACTION_SOL_CENTRAL,
-			FACTION_TERRAN_CONFED,
+			FACTION_INDIE_CONFED,
 			FACTION_NANOTRASEN,
 			FACTION_HEPHAESTUS,
 			FACTION_WARD_TAKAHASHI,
@@ -85,7 +83,6 @@
 			FACTION_OTHER
 		),
 		TAG_CULTURE = list(
-			CULTURE_HUMAN,
 			CULTURE_HUMAN_MARTIAN,
 			CULTURE_HUMAN_MARSTUN,
 			CULTURE_HUMAN_LUNAPOOR,
@@ -114,16 +111,6 @@
 			RELIGION_ATHEISM,
 			RELIGION_THELEMA,
 			RELIGION_SPIRITUALISM
-		),
-		TAG_EDUCATION = list(
-			EDUCATION_NONE,
-			EDUCATION_DROPOUT,
-			EDUCATION_HIGH_SCHOOL,
-			EDUCATION_TRADE_SCHOOL,
-			EDUCATION_UNDERGRAD,
-			EDUCATION_MASTERS,
-			EDUCATION_DOCTORATE,
-			EDUCATION_MEDSCHOOL
 		)
 	)
 

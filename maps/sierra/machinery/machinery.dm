@@ -44,7 +44,7 @@
 	name = "Exploration suit cycler"
 	model_text = "Exploration"
 	req_access = list(access_explorer)
-	departments = list("Exploration")
+	available_modifications = list(/decl/item_modifier/space_suit/explorer)
 
 /obj/machinery/suit_cycler/pilot
 	req_access = list(access_explorer, access_expedition_shuttle_helm)

@@ -22,8 +22,8 @@
 	response_harm   = "stamps on"
 	density = 0
 	var/body_color //brown, gray and white, leave blank for random
-	minbodytemp = 223		//Below -50 Degrees Celcius
-	maxbodytemp = 323	//Above 50 Degrees Celcius
+	minbodytemp = 223		//Below -50 Degrees Celsius
+	maxbodytemp = 323	//Above 50 Degrees Celsius
 	universal_speak = 0
 	universal_understand = 1
 	holder_type = /obj/item/weapon/holder/mouse
@@ -35,8 +35,10 @@
 	can_pull_mobs = MOB_PULL_NONE
 
 /mob/living/simple_animal/mouse/Life()
-	..()
-	if(!stat && prob(speak_chance))
+	. = ..()
+	if(!.)
+		return FALSE
+	if(prob(speak_chance))
 		for(var/mob/M in view())
 			sound_to(M, 'sound/effects/mousesqueek.ogg')
 

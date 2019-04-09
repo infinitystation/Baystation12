@@ -56,9 +56,6 @@
 	locked = 0
 	coverlocked = 0
 
-/obj/machinery/power/apc/high/critical
-	is_critical = 1
-
 /obj/machinery/power/apc/super
 	cell_type = /obj/item/weapon/cell/super
 
@@ -77,7 +74,7 @@
 	icon = 'icons/obj/apc.dmi'
 	plane = ABOVE_HUMAN_PLANE
 	anchored = 1
-	use_power = 0
+	use_power = POWER_USE_OFF
 	req_access = list(access_engine_equip)
 	clicksound = "switch"
 	layer = ABOVE_WINDOW_LAYER
@@ -171,6 +168,8 @@
 
 /obj/machinery/power/apc/Initialize(mapload, var/ndir, var/building=0)
 
+	wires = new(src)
+
 	// offset 22 pixels in direction of dir
 	// this allows the APC to be embedded in a wall, yet still inside an area
 	if (building)
@@ -227,15 +226,11 @@
 /obj/machinery/power/apc/proc/make_terminal()
 	// create a terminal object at the same position as original turf loc
 	// wires will attach to this
-	if(!wires)
-		wires = new(src)
-
 	terminal = new/obj/machinery/power/terminal(src.loc)
 	terminal.set_dir(dir)
 	terminal.master = src
 
 /obj/machinery/power/apc/proc/init_round_start()
-	wires = new(src)
 	has_electronics = 2 //installed and secured
 	if(!terminal)
 		make_terminal() //wired
@@ -296,21 +291,23 @@
 		status_overlays_lighting.len = 5
 		status_overlays_environ.len = 5
 
-		status_overlays_lock[1] = overlay_image(icon, "apcox-0", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)    // 0=blue 1=red
-		status_overlays_lock[2] = overlay_image(icon, "apcox-1", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
+//plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER //INF - replace (image > overlay_image)
 
-		status_overlays_charging[1] = overlay_image(icon, "apco3-0", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
-		status_overlays_charging[2] = overlay_image(icon, "apco3-1", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
-		status_overlays_charging[3] = overlay_image(icon, "apco3-2", plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
+		status_overlays_lock[1] = image(icon, "apcox-0")    // 0=blue 1=red
+		status_overlays_lock[2] = image(icon, "apcox-1")
+
+		status_overlays_charging[1] = image(icon, "apco3-0")
+		status_overlays_charging[2] = image(icon, "apco3-1")
+		status_overlays_charging[3] = image(icon, "apco3-2")
 
 		var/list/channel_overlays = list(status_overlays_equipment, status_overlays_lighting, status_overlays_environ)
 		var/channel = 0
 		for(var/list/channel_leds in channel_overlays)
-			channel_leds[POWERCHAN_OFF + 1] = overlay_image(icon,"apco[channel]",COLOR_RED, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
-			channel_leds[POWERCHAN_OFF_TEMP + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
-			channel_leds[POWERCHAN_OFF_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
-			channel_leds[POWERCHAN_ON + 1] = overlay_image(icon,"apco[channel]",COLOR_LIME, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
-			channel_leds[POWERCHAN_ON_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_BLUE, plane = EFFECTS_ABOVE_LIGHTING_PLANE, layer = ABOVE_LIGHTING_LAYER)
+			channel_leds[POWERCHAN_OFF + 1] = overlay_image(icon,"apco[channel]",COLOR_RED)
+			channel_leds[POWERCHAN_OFF_TEMP + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE)
+			channel_leds[POWERCHAN_OFF_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE)
+			channel_leds[POWERCHAN_ON + 1] = overlay_image(icon,"apco[channel]",COLOR_LIME)
+			channel_leds[POWERCHAN_ON_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_BLUE)
 			channel++
 
 	if(update_state < 0)
@@ -650,14 +647,14 @@
 				"<span class='notice'>[user.name] has replaced the damaged APC frame with new one.</span>",\
 				"You replace the damaged APC frame with new one.")
 			qdel(W)
-			stat &= ~BROKEN
+			set_broken(FALSE)
 			// Malf AI, removes the APC from AI's hacked APCs list.
 			if(hacker && hacker.hacked_apcs && (src in hacker.hacked_apcs))
 				hacker.hacked_apcs -= src
 				hacker = null
 			if (opened==2)
 				opened = 1
-			update_icon()
+			queue_icon_update()
 	else
 		if (((stat & BROKEN) || (hacker && !hacker.hacked_apcs_hidden)) \
 				&& !opened \
@@ -688,8 +685,8 @@
 						opened = 1
 					if(90 to 100)
 						to_chat(user, "<span class='warning'>There's a nasty sound and \the [src] goes cold...</span>")
-						stat |= BROKEN
-				update_icon()
+						set_broken(TRUE)
+				queue_icon_update()
 		playsound(get_turf(src), 'sound/weapons/smash.ogg', 75, 1)
 
 // attack with hand - remove cell (if cover open) or interact with the APC
@@ -1213,12 +1210,12 @@ obj/machinery/power/apc/proc/autoset(var/cur_state, var/on)
 			return
 		if(2.0)
 			if (prob(50))
-				set_broken()
+				set_broken(TRUE)
 				if (cell && prob(50))
 					cell.ex_act(2.0)
 		if(3.0)
 			if (prob(25))
-				set_broken()
+				set_broken(TRUE)
 				if (cell && prob(25))
 					cell.ex_act(3.0)
 	return
@@ -1228,16 +1225,17 @@ obj/machinery/power/apc/proc/autoset(var/cur_state, var/on)
 		terminal.master = null
 		terminal = null
 
-/obj/machinery/power/apc/proc/set_broken()
-	// Aesthetically much better!
-	src.visible_message("<span class='notice'>[src]'s screen flickers with warnings briefly!</span>")
+/obj/machinery/power/apc/set_broken(new_state)
+	if(!new_state || (stat & BROKEN))
+		return ..()
+	visible_message("<span class='notice'>[src]'s screen flickers with warnings briefly!</span>")
 	power_alarm.triggerAlarm(loc, src)
 	spawn(rand(2,5))
-		src.visible_message("<span class='notice'>[src]'s screen suddenly explodes in rain of sparks and small debris!</span>")
-		stat |= BROKEN
+		..()
+		visible_message("<span class='notice'>[src]'s screen suddenly explodes in rain of sparks and small debris!</span>")
 		operating = 0
-		update_icon()
 		update()
+	return TRUE
 
 /obj/machinery/power/apc/proc/reboot()
 	//reset various counters so that process() will start fresh

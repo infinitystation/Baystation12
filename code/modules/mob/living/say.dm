@@ -17,6 +17,7 @@ var/list/department_radio_keys = list(
 	  ":p" = "AI Private",	".p" = "AI Private",
 	  ":z" = "Entertainment",".z" = "Entertainment",
 	  ":y" = "Exploration",		".y" = "Exploration",
+	  ":k" = "Recon",		".k" = "Recon",	//Skrell Recon ship
 
 	  ":R" = "right ear",	".R" = "right ear",
 	  ":L" = "left ear",	".L" = "left ear",
@@ -35,6 +36,7 @@ var/list/department_radio_keys = list(
 	  ":P" = "AI Private",	".P" = "AI Private",
 	  ":Z" = "Entertainment",".Z" = "Entertainment",
 	  ":Y" = "Exploration",		".Y" = "Exploration",
+	  ":K" = "Recon",		".K" = "Recon",	//Skrell Recon ship
 
 	  //localized radio keys by ~KareTa
 	  ":�" = "right ear",	".�" = "right ear",
@@ -53,6 +55,7 @@ var/list/department_radio_keys = list(
 	  ":�" = "AI Private",	".�" = "AI Private",
 	  ":�" = "Entertainment",".�" = "Entertainment",
 	  ":�" = "Exploration",		".�" = "Exploration",
+	  ":�" = "Recon",		".�" = "Recon",	//Skrell Recon ship
 
 	  ":�" = "right ear",	".�" = "right ear",
 	  ":�" = "left ear",	".�" = "left ear",
@@ -70,22 +73,23 @@ var/list/department_radio_keys = list(
 	  ":�" = "AI Private",	".�" = "AI Private",
 	  ":�" = "Entertainment",".�" = "Entertainment",
 	  ":�" = "Exploration",		".�" = "Exploration",
+	  ":�" = "Recon",		".�" = "Recon",	//Skrell Recon ship
 
 	  /*
 	  //kinda localization -- rastaf0
 	  //same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
-	  ":ê" = "right ear",	".ê" = "right ear",
-	  ":ä" = "left ear",	".ä" = "left ear",
-	  ":ø" = "intercom",	".ø" = "intercom",
-	  ":ð" = "department",	".ð" = "department",
-	  ":ñ" = "Command",		".ñ" = "Command",
-	  ":ò" = "Science",		".ò" = "Science",
-	  ":ü" = "Medical",		".ü" = "Medical",
-	  ":ó" = "Engineering",	".ó" = "Engineering",
-	  ":û" = "Security",	".û" = "Security",
-	  ":ö" = "whisper",		".ö" = "whisper",
-	  ":å" = "Mercenary",	".å" = "Mercenary",
-	  ":é" = "Supply",		".é" = "Supply",
+	  ":ГЄ" = "right ear",	".ГЄ" = "right ear",
+	  ":Г¤" = "left ear",	".Г¤" = "left ear",
+	  ":Гё" = "intercom",	".Гё" = "intercom",
+	  ":Г°" = "department",	".Г°" = "department",
+	  ":Г±" = "Command",		".Г±" = "Command",
+	  ":ГІ" = "Science",		".ГІ" = "Science",
+	  ":Гј" = "Medical",		".Гј" = "Medical",
+	  ":Гі" = "Engineering",	".Гі" = "Engineering",
+	  ":Г»" = "Security",	".Г»" = "Security",
+	  ":Г¶" = "whisper",		".Г¶" = "whisper",
+	  ":ГҐ" = "Mercenary",	".ГҐ" = "Mercenary",
+	  ":Г©" = "Supply",		".Г©" = "Supply",
 	  */
 )
 
@@ -180,7 +184,7 @@ proc/get_radio_key_from_channel(var/channel)
 	if(!message)
 		return
 
-	message = replacetext(message, "&#255;", "__:ß:_") // Íèêîìó æå â ãîëîâó íå ïðèäåò òàêîå íàïèñàòü? ~bear1ake@inf-dev
+	message = replacetext(message, "&#255;", "__:Гџ:_") // ГЌГЁГЄГ®Г¬Гі Г¦ГҐ Гў ГЈГ®Г«Г®ГўГі Г­ГҐ ГЇГ°ГЁГ¤ГҐГІ ГІГ ГЄГ®ГҐ Г­Г ГЇГЁГ±Г ГІГј? ~bear1ake@inf-dev
 	message = html_decode(message)
 
 	var/end_char = copytext(message, lentext(message), lentext(message) + 1)
@@ -188,7 +192,7 @@ proc/get_radio_key_from_channel(var/channel)
 		message += "."
 
 	message = html_encode(message)
-	message = replacetext(message, "__:ß:_", "&#255;")
+	message = replacetext(message, "__:Гџ:_", "&#255;")
 	return message
 
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name="", whispering)
@@ -340,7 +344,6 @@ proc/get_radio_key_from_channel(var/channel)
 			if(M.client)
 				speech_bubble_recipients += M.client
 
-	flick_overlay(speech_bubble, speech_bubble_recipients, 30)
 
 	for(var/obj/O in listening_obj)
 		spawn(0)
@@ -367,12 +370,14 @@ proc/get_radio_key_from_channel(var/channel)
 				show_image(M, speech_bubble)
 				M.hear_say(temp, verb, speaking, alt_name, italics, src, speech_sound, sound_vol)
 				if(M.client)
-					speech_bubble_recipients += M.client
+					speech_bubble_recipients |= M.client
+
 		for(var/obj/O in eavesdroping)
 			spawn(0)
 				if(O) //It's possible that it could be deleted in the meantime.
 					O.hear_talk(src, stars(message), verb, speaking)
 
+	flick_overlay(speech_bubble, speech_bubble_recipients, 30)
 
 	if(whispering)
 		log_whisper("[name]/[key] : [message]")

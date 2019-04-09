@@ -720,11 +720,11 @@
 /turf/simulated/floor,
 /area/ship/marksman/maintenance/upper/pods)
 "bI" = (
-/turf/simulated/floor,
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_l";
 	dir = 8
 	},
+/turf/simulated/floor,
 /turf/simulated/shuttle/wall{
 	dir = 4;
 	icon_state = "swall_c"
@@ -1774,11 +1774,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/ship/marksman/crew/brig/emergency_armory)
 "dC" = (
-/turf/simulated/floor,
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_r";
 	dir = 8
 	},
+/turf/simulated/floor,
 /turf/simulated/shuttle/wall{
 	dir = 1;
 	icon_state = "swall_c"

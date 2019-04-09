@@ -4,9 +4,11 @@ GLOBAL_LIST_INIT(registered_cyborg_weapons, list())
 /obj/item/weapon/gun/energy
 	name = "energy gun"
 	desc = "A basic energy-based gun."
+	icon = 'icons/obj/guns/basic_energy.dmi'
 	icon_state = "energy"
 	fire_sound = 'sound/weapons/Taser.ogg'
 	fire_sound_text = "laser blast"
+	accuracy = 1
 
 	var/obj/item/weapon/cell/power_supply //What type of power cell this uses
 	var/charge_cost = 20 //How much energy is needed to fire.
@@ -21,8 +23,6 @@ GLOBAL_LIST_INIT(registered_cyborg_weapons, list())
 	var/use_external_power = 0 //if set, the weapon will look for an external power source to draw from, otherwise it recharges magically
 	var/recharge_time = 4
 	var/charge_tick = 0
-
-	have_safety = TRUE
 
 /obj/item/weapon/gun/energy/switch_firemodes()
 	. = ..()
@@ -94,8 +94,11 @@ GLOBAL_LIST_INIT(registered_cyborg_weapons, list())
 	if(!power_supply)
 		to_chat(user, "Seems like it's dead.")
 		return
-	var/shots_remaining = round(power_supply.charge / charge_cost)
-	to_chat(user, "Has [shots_remaining] shot\s remaining.")
+	if (charge_cost == 0)
+		to_chat(user, "This gun seems to have an unlimited number of shots.")
+	else
+		var/shots_remaining = round(power_supply.charge / charge_cost)
+		to_chat(user, "Has [shots_remaining] shot\s remaining.")
 	return
 
 /obj/item/weapon/gun/energy/on_update_icon()

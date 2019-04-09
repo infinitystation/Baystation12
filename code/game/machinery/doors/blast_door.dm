@@ -38,6 +38,7 @@
 	var/_wifi_id
 	var/datum/wifi/receiver/button/door/wifi_receiver
 	var/material/implicit_material
+	autoset_access = FALSE // Uses different system with buttons.
 
 /obj/machinery/door/blast/Initialize()
 	. = ..()
@@ -210,10 +211,8 @@
 // Description: Fully repairs the blast door.
 /obj/machinery/door/blast/proc/repair()
 	health = maxhealth
-	if(stat & BROKEN)
-		stat &= ~BROKEN
-	update_icon()
-
+	set_broken(FALSE)
+	queue_icon_update()
 
 /obj/machinery/door/blast/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(air_group) return 1
@@ -237,6 +236,14 @@
 	min_force = 30
 	maxhealth = 1000
 	block_air_zones = 1
+
+/obj/machinery/door/blast/regular/escape_pod
+	name = "Escape Pod release Door"
+
+/obj/machinery/door/blast/regular/escape_pod/Process()	
+	if(evacuation_controller.emergency_evacuation && evacuation_controller.state >= EVAC_LAUNCHING && src.icon_state == icon_state_closed)		
+		src.force_open()
+	. = ..()
 
 /obj/machinery/door/blast/regular/open
 	begins_closed = FALSE
@@ -265,43 +272,3 @@
 /obj/machinery/door/blast/shutters/open
 	icon_state = "shutter0"
 	begins_closed = FALSE
-
-//It's doesn't using right now, but i think we should store it for better days
-/obj/machinery/door/proc/crush()
-	for(var/mob/living/L in get_turf(src))
-		if(ishuman(L)) //For humans
-			var/mob/living/carbon/human/H = L
-			H.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
-			H.Weaken(5)
-			if(H.can_feel_pain())
-				H.emote("scream")
-		else //for simple_animals & borgs
-			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
-	for(var/obj/mecha/M in get_turf(src))
-		M.take_damage(DOOR_CRUSH_DAMAGE)
-
-//הכÿ באחû ֵ׀ׂ
-/obj/machinery/door/blast/regular/admin/ex_act()
-	return
-
-/obj/machinery/door/blast/regular/admin/emp_act()
-	return
-
-/obj/machinery/door/blast/regular/admin/emag_act()
-	return
-
-/obj/machinery/door/blast/regular/admin/take_damage()
-	return
-
-/obj/machinery/door/blast/regular/evacshield
-
-/obj/machinery/door/blast/regular/evacshield/proc/evacuation() //Literally shitcode of force_open but without sleep(8)
-	src.operating = 1
-	playsound(src.loc, open_sound, 100, 1)
-	flick(icon_state_opening, src)
-	src.set_density(0)
-	update_nearby_tiles()
-	src.update_icon()
-	src.set_opacity(0)
-	src.layer = open_layer
-	src.operating = 0

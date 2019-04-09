@@ -216,7 +216,7 @@
 			dismantle_verb = "cutting"
 			dismantle_sound = 'sound/items/Welder.ogg'
 			cut_delay *= 0.7
-		else if(istype(W,/obj/item/weapon/melee/energy/blade))
+		else if(istype(W,/obj/item/weapon/melee/energy/blade) || istype(W,/obj/item/psychic_power/psiblade/master))
 			dismantle_sound = "sparks"
 			dismantle_verb = "slicing"
 			cut_delay *= 0.5
@@ -247,10 +247,24 @@
 	else
 		switch(construction_stage)
 			if(6)
-				if(isWirecutter(W))
+
+				if(istype(W, /obj/item/psychic_power/psiblade/master/grand/paramount))
+
+					to_chat(user, "<span class='notice'>You sink \the [W] into the wall and begin trying to rip out the support frame...</span>")
+					playsound(src, 'sound/items/Welder.ogg', 100, 1)
+
+					if(!do_after(user, 60, src))
+						return
+
+					to_chat(user, "<span class='notice'>You tear through the wall's support system and plating!</span>")
+					dismantle_wall()
+					user.visible_message("<span class='warning'>The wall was torn open by [user]!</span>")
+					playsound(src, 'sound/items/Welder.ogg', 100, 1)
+
+				else if(isWirecutter(W))
 					playsound(src, 'sound/items/Wirecutter.ogg', 100, 1)
 					construction_stage = 5
-					new /obj/item/stack/rods( src )
+					new /obj/item/stack/material/rods( src )
 					to_chat(user, "<span class='notice'>You cut the outer grille.</span>")
 					update_icon()
 					return
@@ -264,7 +278,7 @@
 					update_icon()
 					to_chat(user, "<span class='notice'>You remove the support lines.</span>")
 					return
-				else if( istype(W, /obj/item/stack/rods) )
+				else if( istype(W, /obj/item/stack/material/rods) )
 					var/obj/item/stack/O = W
 					if(O.get_amount()>0)
 						O.use(1)
@@ -283,7 +297,7 @@
 					else
 						to_chat(user, "<span class='notice'>You need more welding fuel to complete this task.</span>")
 						return
-				else if (istype(W, /obj/item/weapon/gun/energy/plasmacutter))
+				else if (istype(W, /obj/item/weapon/gun/energy/plasmacutter) || istype(W, /obj/item/psychic_power/psiblade/master))
 					cut_cover = 1
 				if(cut_cover)
 					to_chat(user, "<span class='notice'>You begin slicing through the metal cover.</span>")
@@ -323,7 +337,7 @@
 					else
 						to_chat(user, "<span class='notice'>You need more welding fuel to complete this task.</span>")
 						return
-				else if(istype(W, /obj/item/weapon/gun/energy/plasmacutter))
+				else if(istype(W, /obj/item/weapon/gun/energy/plasmacutter) || istype(W,/obj/item/psychic_power/psiblade/master))
 					cut_cover = 1
 				if(cut_cover)
 					to_chat(user, "<span class='notice'>You begin slicing through the support rods.</span>")
@@ -332,7 +346,7 @@
 						return
 					construction_stage = 0
 					update_icon()
-					new /obj/item/stack/rods(src)
+					new /obj/item/stack/material/rods(src)
 					to_chat(user, "<span class='notice'>The support rods drop out as you cut them loose from the frame.</span>")
 					return
 			if(0)

@@ -4,6 +4,7 @@
 	/datum/gear/suit/labcoat_corp, /datum/gear/suit/labcoat_corp_rd, \
 	/datum/gear/uniform/corp_guard, /datum/gear/uniform/corp_exec, /datum/gear/uniform/corp_overalls, /datum/gear/uniform/corp_flight,
 	/datum/gear/uniform/corp_exec_jacket, /datum/gear/uniform/corporate)
+
 //For all exploration crew
 #define EXPLORATION_ROLES list(\
 	/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, \

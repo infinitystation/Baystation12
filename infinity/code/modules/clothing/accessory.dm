@@ -2,8 +2,8 @@
 /obj/item/clothing/accessory/necklace/talisman
 	name = "bone talisman"
 	desc = "A hunter's talisman, some say the old gods smile on those who wear it."
-	icon = 'icons/infinity_custom_items_obj.dmi'
-	accessory_icons = list(slot_w_uniform_str = 'icons/infinity_custom_items_mob.dmi', slot_wear_suit_str = 'icons/infinity_custom_items_mob.dmi')
+	icon = CUSTOM_ITEM_OBJ
+	accessory_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB, slot_wear_suit_str = CUSTOM_ITEM_MOB)
 	icon_state = "talisman-4"
 
 	///////////

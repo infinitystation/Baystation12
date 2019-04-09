@@ -34,8 +34,6 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
-	required_education = EDUCATION_TIER_BASIC
-	maximum_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/detective
 	title = "Detective"
@@ -75,8 +73,6 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
-	required_education = EDUCATION_TIER_TRADE
-	maximum_education = EDUCATION_TIER_MASTERS
 
 /datum/job/officer
 	title = "Security Guard"
@@ -114,5 +110,3 @@
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
-	required_education = EDUCATION_TIER_BASIC
-	maximum_education = EDUCATION_TIER_BACHELOR

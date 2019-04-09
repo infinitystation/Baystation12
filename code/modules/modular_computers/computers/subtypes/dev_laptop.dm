@@ -15,6 +15,10 @@
 	max_hardware_size = 2
 	hardware_flag = PROGRAM_LAPTOP
 
+/obj/item/modular_computer/laptop/Initialize()
+	. = ..()
+	screen_on = anchored
+
 /obj/item/modular_computer/laptop/CouldUseTopic(var/mob/user)
 	..()
 	if(istype(user, /mob/living/carbon))

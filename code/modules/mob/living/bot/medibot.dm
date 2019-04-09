@@ -3,8 +3,8 @@
 	desc = "A little medical robot. He looks somewhat underwhelmed."
 	icon = 'icons/mob/bot/medibot.dmi'
 	icon_state = "medibot0"
-	req_one_access = list(access_medical, access_robotics)
-	botcard_access = list(access_medical, access_morgue, access_surgery, access_chemistry, access_virology, access_genetics)
+	req_access = list(list(access_medical, access_robotics))
+	botcard_access = list(access_medical, access_morgue, access_surgery, access_chemistry, access_virology)
 	var/skin = null //Set to "tox", "ointment" or "o2" for the other two firstaid kits.
 
 	//AI vars
@@ -313,15 +313,3 @@
 					S.SetName(created_name)
 					S.update_icons() // apply the skin
 					qdel(src)
-
-/mob/living/bot/medbot/merc
-	name = "Painkiller"
-	icon_state = "medibot0"
-	req_one_access = list(access_syndicate)
-	botcard_access = list(access_syndicate)
-	skin = "bezerk"
-	vocal = 0
-	treatment_brute = "bicaridine"
-	treatment_oxy = "dexalin"
-	treatment_fire = "dermaline"
-	treatment_tox = "anti_toxin"

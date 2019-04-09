@@ -18,7 +18,6 @@
 	underlays.Cut()
 	underlays += image('icons/obj/stationobjs.dmi', icon_state = "telecomp-wires")
 	connect_console()
-	return
 
 /obj/machinery/computer/teleporter/proc/connect_console()
 	for(var/dir in list(NORTH,EAST,SOUTH,WEST))
@@ -28,7 +27,7 @@
 			hub = station.hub
 			if(hub && !hub.com)
 				hub.com = src
-			break
+				break
 
 /obj/machinery/computer/teleporter/power_change()
 	. = ..()
@@ -200,7 +199,6 @@
 	icon_state = "tele0"
 	dir = 2
 	density = 0
-	use_power = 1
 	idle_power_usage = 10
 	active_power_usage = 2000
 	var/obj/machinery/computer/teleporter/com
@@ -210,7 +208,6 @@
 	. = ..()
 	underlays.Cut()
 	underlays += image('icons/obj/stationobjs.dmi', icon_state = "tele-wires")
-	connect_hub()
 	component_parts = list(
 		new /obj/item/weapon/circuitboard/teleporter_hub(src),
 		new /obj/item/weapon/stock_parts/micro_laser/ultra(src),
@@ -221,6 +218,7 @@
 		new /obj/item/bluespace_crystal/artificial(src),
 		new /obj/item/bluespace_crystal/artificial(src),
 		new /obj/item/bluespace_crystal/artificial(src))
+	connect_hub()
 
 /obj/machinery/teleport/hub/proc/connect_hub()
 	for(var/dir in list(NORTH,EAST,SOUTH,WEST))
@@ -246,8 +244,7 @@
 	spawn()
 		if (src.icon_state == "tele1")
 			teleport(M)
-			use_power(5000)
-	return
+			use_power_oneoff(5000)
 
 /obj/machinery/teleport/hub/proc/teleport(atom/movable/M as mob|obj)
 	do_teleport(M, com.locked)
@@ -266,7 +263,6 @@
 	icon_state = "controller"
 	dir = 2
 	var/engaged = 0
-	use_power = 1
 	idle_power_usage = 10
 	active_power_usage = 2000
 	var/obj/machinery/teleport/hub/hub
@@ -329,10 +325,10 @@
 
 	if (hub)
 		hub.icon_state = "tele1"
-		use_power(5000)
+		use_power_oneoff(5000)
+		update_use_power(POWER_USE_ACTIVE)
+		hub.update_use_power(POWER_USE_ACTIVE)
 		hub.density = 1
-		update_use_power(2)
-		hub.update_use_power(2)
 		audible_message("<span class='notice'>Teleporter engaged!</span>")
 	engaged = 1
 	return
@@ -343,9 +339,9 @@
 
 	if (hub)
 		hub.icon_state = "tele0"
-		hub.update_use_power(1)
+		hub.update_use_power(POWER_USE_IDLE)
+		update_use_power(POWER_USE_IDLE)
 		hub.density = 0
-		update_use_power(1)
 		audible_message("<span class='notice'>Teleporter disengaged!</span>")
 	engaged = 0
 	return
