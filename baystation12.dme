@@ -3170,6 +3170,7 @@
 #include "infinity\code\modules\clothing\masks_xeno.dm"
 #include "infinity\code\modules\clothing\rig.dm"
 #include "infinity\code\modules\clothing\shoes.dm"
+#include "infinity\code\modules\clothing\shoes_resomi.dm"
 #include "infinity\code\modules\clothing\suits.dm"
 #include "infinity\code\modules\clothing\suits_xeno.dm"
 #include "infinity\code\modules\clothing\under.dm"
