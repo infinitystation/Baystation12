@@ -233,6 +233,23 @@
 #define BP_ALL_LIMBS list(BP_CHEST, BP_GROIN, BP_HEAD, BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND, BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT)
 #define BP_BY_DEPTH list(BP_HEAD, BP_L_HAND, BP_R_HAND, BP_L_ARM, BP_R_ARM, BP_L_FOOT, BP_R_FOOT, BP_L_LEG, BP_R_LEG, BP_GROIN, BP_CHEST)
 
+//Swarm Limbs
+#define BP_L_F_LEG 		"left front leg"
+#define BP_R_F_LEG 		"right front leg"
+#define BP_L_B_LEG 		"left back leg"
+#define BP_R_B_LEG 		"right back leg"
+#define BP_SHELL   		"shell"
+#define BP_MANIPULATOR	"manipulator"
+
+//Swarm Organs
+#define BP_SENSOR			"sensor"
+#define BP_GENERATOR		"generator"
+#define BP_CORE				"core"
+#define BP_THRUSTER			"thruster"
+#define BP_ARMOR			"armor"
+#define BP_ANTI_EMP_PLATING	"anti EMP plating"
+#define BP_MATTER_TANK		"matter tank"
+
 // Prosthetic helpers.
 #define BP_IS_ROBOTIC(org)  (org.status & ORGAN_ROBOTIC)
 #define BP_IS_ASSISTED(org) (org.status & ORGAN_ASSISTED)
