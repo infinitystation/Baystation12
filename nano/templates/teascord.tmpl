@@ -24,12 +24,21 @@
 	{{:helper.link('Create new account', '', {'new_acc' : 1})}}
 	{{:helper.link('Back to login', '', {'select_tab' : 1})}}
 	<div>{{:data.error_message}}</div>
-{{else data.tab == 3}}
+{{/if}}
+{{if data.tab > 2}}
 	<div>
-	{{:helper.link('Log Out', '', {'logout' : 1})}}
-	{{:helper.link('Delete Account', '', {'delete_acc' : 1})}}
-	<br><hr>
+		<div>
+			<span>Welcome, {{:data.nickname}}!</span><br>
+		</div>
+		<div>
+			{{:helper.link('Contacts', '', {'select_tab' : 3}, data.tab == 3 ? 'disabled' : null)}}
+			{{:helper.link('Settings', '', {'select_tab' : 4}, data.tab == 4 ? 'disabled' : null)}}
+			{{:helper.link('Log Out', '', {'logout' : 1})}}
+			<br><hr>
+		</div>
 	</div>
+{{/if}}
+{{if data.tab == 3}}
 	<div class="item">
 		<center><h3>Contacts</h3></span>
 		<table style="width:100%">
@@ -42,4 +51,6 @@
 				{{/for}}
 		</table>
 	</div>
+{{else data.tab == 4}}
+	<center>{{:helper.link('Delete Account', '', {'delete_acc' : 1})}}</center>
 {{/if}}

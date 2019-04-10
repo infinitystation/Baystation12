@@ -1,6 +1,7 @@
 #define LOGIN_SCREEN 1
 #define REGISTRATION_SCREEN 2
 #define CONTACTS_SCREEN 3
+#define SETTINGS_SCREEN 4
 
 /datum/computer_file/program/teascord
 	filename = "teascord"
@@ -46,18 +47,25 @@
 datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
 	var/list/data = host.initial_data()
 
-	var/list/available_contacts[0]
-	for(var/datum/computer_file/data/teascord_account/AC in ntnet_global.teascord_accounts)
-		available_contacts.Add(contacts_to_nanoui(AC))
-	data["contacts"] = available_contacts
+
 	data["tab"] = tab
 	data["error_message"] = error_message
 	data["stored_login"] = stored_login
 	data["stored_password"] = stars(stored_password, 0)
 
+	switch(tab)
+		if(3)
+			data["nickname"] = current_account.nickname
+			var/list/available_contacts[0]
+			for(var/datum/computer_file/data/teascord_account/AC in ntnet_global.teascord_accounts)
+				available_contacts.Add(contacts_to_nanoui(AC))
+			data["contacts"] = available_contacts
+		if(4)
+			data["nickname"] = current_account.nickname
+
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
-		ui = new(user, src, ui_key, "teascord.tmpl", name, 800, 800, state = state)
+		ui = new(user, src, ui_key, "teascord.tmpl", name, 555, 500, state = state)
 		ui.set_auto_update(1)
 		ui.set_initial_data(data)
 		ui.open()
@@ -82,8 +90,8 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 	if(stored_password == target.password)
 		current_account = target
 		current_account.connected_clients |= src
-		clear_stored()
 		tab = CONTACTS_SCREEN
+		clear_stored()
 		return 1
 	else
 		error_message = "Invalid Password"
@@ -106,11 +114,13 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 	var/datum/computer_file/data/teascord_account/new_acc = new/datum/computer_file/data/teascord_account()
 	new_acc.login = stored_login
 	new_acc.password = stored_password
+	new_acc.nickname = stored_login
 	tab = LOGIN_SCREEN
 
 /datum/nano_module/teascord/proc/delete_account()
-	tab = LOGIN_SCREEN
-	current_account.Destroy()
+		clear_stored()
+		tab = LOGIN_SCREEN
+		current_account.Destroy()
 
 /datum/nano_module/teascord/proc/clear_stored()
 	stored_login = ""
@@ -120,6 +130,7 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 /datum/nano_module/teascord/proc/log_out()
 	if(current_account)
 		current_account.connected_clients -= src
+	clear_stored()
 	tab = LOGIN_SCREEN
 	current_account = null
 
@@ -138,7 +149,7 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 		return 1
 
 	if(href_list["delete_acc"])
-		if(alert(user, "Are you sure that you want to delete '[current_account.login]' account?", "Account deleting", "Yes", "No") == "Yes")
+		if(alert(user, "Are you sure that you want to delete [current_account.login] account?", "Account deleting", "Yes", "No") == "Yes")
 			delete_account()
 		return 1
 
@@ -209,3 +220,4 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 #undef LOGIN_SCREEN
 #undef REGISTRATION_SCREEN
 #undef CONTACTS_SCREEN
+#undef SETTINGS_SCREEN

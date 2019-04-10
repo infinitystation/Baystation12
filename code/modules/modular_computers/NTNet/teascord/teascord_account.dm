@@ -9,7 +9,6 @@
 	var/connected_clients = list()
 
 /datum/computer_file/data/teascord_account/New()
-	nickname = login
 	ntnet_global.teascord_accounts.Add(src)
 	. = ..()
 
