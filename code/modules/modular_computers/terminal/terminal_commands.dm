@@ -104,7 +104,7 @@ Subtypes
 	if(!ch)
 		return "hwinfo: No such hardware found."
 	ch.diagnostics(user)
-	return "Running diagnostic protocols..."	
+	return "Running diagnostic protocols..."
 
 // Sysadmin
 /datum/terminal_command/relays
@@ -255,3 +255,40 @@ Subtypes
 		file.stored_data += "([time_stamp()]) Proxy routing request accepted from: [comp.network_card.get_network_tag()].\[br\]"
 	comp.network_card.proxy_id = id
 	return "proxy: Device proxy set to [id]."
+//[INFINITY]
+/datum/terminal_command/launch
+	name = "launch"
+	man_entry = list("Format: launch programm", "Runs the program from local memory.")
+	pattern = "^launch"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/launch/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	return "working in progress"
+
+/datum/terminal_command/shutdown
+	name = "shutdown"
+	man_entry = list("Format: launch programm", "Shutdown curent programm.")
+	pattern = "^shutdown"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/shutdown/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	return "work in progress"
+
+/datum/terminal_command/listdir
+	name = "listdir"
+	man_entry = list("Format: listdir", "State list of files in local memory.")
+	pattern = "^listdir$"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/listdir/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	if(length(text) < 6)
+		return "listdir: Improper syntax. Use listdir."
+	if(!terminal.computer.hard_drive.check_functionality())
+		return "listdir: Access attempt to local storage failed. Check integrity of your hard drive"
+	var/list/massive_of_programm_names = list()
+	for(var/datum/computer_file/F in terminal.computer.hard_drive.stored_files)
+		var/prog_size = num2text(F.size)
+		var/prg_data = F.filename + "." + F.filetype + " | " + prog_size + " GQ"
+		massive_of_programm_names.Add(prg_data)
+	return massive_of_programm_names
+//[/INFINITY]
