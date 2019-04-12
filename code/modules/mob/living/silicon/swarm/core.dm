@@ -9,6 +9,8 @@
 	if(istype(loc, /obj/item/organ/internal/swarm/core))
 		container = loc
 	add_language("Robot Talk")
+	add_language(LANGUAGE_SWARM_FAR)
+	add_language(LANGUAGE_SWARM)
 	..()
 
 /mob/living/silicon/core/Destroy()

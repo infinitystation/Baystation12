@@ -4,6 +4,10 @@
 	icon_state = "right_front_leg"
 	organ_tag = BP_R_F_LEG
 	parent_organ = BP_SHELL
+	w_class = ITEM_SIZE_NORMAL
+	max_damage = 150
+	min_broken_damage = 70
+	limb_flags = ORGAN_FLAG_CAN_AMPUTATE | ORGAN_FLAG_CAN_BREAK
 
 /obj/item/organ/external/swarm/leg/left_front
 	name = "Swarm left front leg"
