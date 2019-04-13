@@ -489,7 +489,12 @@
 		if(user.skill_check(SKILL_WEAPONS, SKILL_PROF))
 			accuracy += 2
 		if(screen_shake)
-			screen_shake = round(screen_shake*zoom_amount+1) //screen shake is worse when looking through a scope
+			if(screen_shake<15)
+				screen_shake = round(screen_shake*zoom_amount+1) //screen shake is worse when looking through a scope
+				if(screen_shake <15)
+					screen_shake = rand(15, 18)
+			else
+				screen_shake = screen_shake-8
 
 //make sure accuracy and screen_shake are reset regardless of how the item is unzoomed.
 /obj/item/weapon/gun/zoom()
