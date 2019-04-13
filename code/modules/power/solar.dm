@@ -1,6 +1,6 @@
 #define SOLAR_MAX_DIST 40
 
-var/solar_gen_rate = 110
+var/solar_gen_rate = 2000
 var/list/solars_list = list()
 
 /obj/machinery/power/solar
@@ -288,7 +288,7 @@ var/list/solars_list = list()
 	var/targetdir = 0		// target angle in manual tracking (since it updates every game minute)
 	var/gen = 0
 	var/lastgen = 0
-	var/track = 0			// 0= off  1=timed  2=auto (tracker)
+	var/track = 2			// 0= off  1=timed  2=auto (tracker)
 	var/trackrate = 600		// 300-900 seconds
 	var/nexttime = 0		// time for a panel to rotate of 1° in manual tracking
 	var/obj/machinery/power/tracker/connected_tracker = null
