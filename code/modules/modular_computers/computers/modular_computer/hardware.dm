@@ -66,6 +66,18 @@
 		found = 1
 		scanner = H
 		scanner.do_after_install(user, src)
+	else if(istype(H, /obj/item/weapon/computer_hardware/webcam))
+		if(webcam)
+			to_chat(user, "This computer's webcam slot is already occupied by \the [webcam].")
+			return
+		found = 1
+		webcam = H
+	else if(istype(H, /obj/item/weapon/computer_hardware/microphone))
+		if(tesla_link)
+			to_chat(user, "This computer's microphone slot is already occupied by \the [microphone].")
+			return
+		found = 1
+		microphone = H
 	if(found && user.unEquip(H, src))
 		to_chat(user, "You install \the [H] into \the [src]")
 		H.holder2 = src
@@ -106,6 +118,12 @@
 		scanner.do_before_uninstall()
 		scanner = null
 		found = 1
+	if(webcam == H)
+		webcam = null
+		found = 1
+	if(microphone == H)
+		microphone = null
+		found = 1
 	if(found)
 		if(user)
 			to_chat(user, "You remove \the [H] from \the [src].")
@@ -141,6 +159,10 @@
 		return tesla_link
 	if(scanner && (scanner.name == name))
 		return scanner
+	if(webcam && (webcam.name == name))
+		return tesla_link
+	if(microphone && (microphone.name == name))
+		return tesla_link
 	return null
 
 // Returns list of all components
@@ -166,4 +188,8 @@
 		all_components.Add(tesla_link)
 	if(scanner)
 		all_components.Add(scanner)
+	if(webcam)
+		all_components.Add(webcam)
+	if(microphone)
+		all_components.Add(microphone)
 	return all_components

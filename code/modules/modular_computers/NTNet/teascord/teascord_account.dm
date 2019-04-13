@@ -6,7 +6,9 @@
 	var/list/friendlist = list()
 	var/list/blacklist = list()
 
-	var/connected_clients = list()
+	var/active_invites = list()
+
+	var/connected_client
 
 /datum/computer_file/data/teascord_account/New()
 	ntnet_global.teascord_accounts.Add(src)

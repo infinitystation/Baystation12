@@ -2,6 +2,7 @@
 #define REGISTRATION_SCREEN 2
 #define CONTACTS_SCREEN 3
 #define SETTINGS_SCREEN 4
+#define CONVERSATION_SCREEN 5
 
 /datum/computer_file/program/teascord
 	filename = "teascord"
@@ -15,18 +16,26 @@
 	requires_ntnet_feature = NTNET_COMMUNICATION
 	nanomodule_path = /datum/nano_module/teascord
 
+	var/voice = TRUE
+	var/microphone = TRUE
+	var/camera	= TRUE
+
 /datum/computer_file/program/teascord/run_program()
     . = ..()
     if(NM)
         var/datum/nano_module/teascord/NMT = NM
+        NMT.program = src
+        NMT.voice = voice
+        NMT.microphone = microphone
+        NMT.camera = camera
         if(NMT.current_account)
-            NMT.current_account.connected_clients |= NMT
+            NMT.current_account.connected_client = NMT
 
 /datum/computer_file/program/teascord/kill_program()
     if(NM)
         var/datum/nano_module/teascord/NMT = NM
         if(NMT.current_account)
-            NMT.current_account.connected_clients -= NMT
+            NMT.current_account.connected_client = null
     . = ..()
 
 /datum/nano_module/teascord
@@ -40,6 +49,10 @@
 	var/voice = TRUE												// Can I hear the interlocutor?
 	var/microphone = TRUE											// Can our interlocutor hear us?
 	var/camera	= TRUE												// Can our interlocutor use our camera in a video call?
+
+	var/datum/computer_file/program/teascord/program
+
+	var/datum/computer_file/data/teascord_room/conversation
 
 	var/datum/computer_file/data/teascord_account/current_account
 	var/datum/computer_file/data/teascord_account/current_interlocutor
@@ -88,8 +101,11 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 		return 0
 
 	if(stored_password == target.password)
+		if(target.connected_client)
+			var/datum/nano_module/teascord/active_client = target.connected_client
+			active_client.log_out()
 		current_account = target
-		current_account.connected_clients |= src
+		current_account.connected_client = src
 		tab = CONTACTS_SCREEN
 		clear_stored()
 		return 1
@@ -118,9 +134,60 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 	tab = LOGIN_SCREEN
 
 /datum/nano_module/teascord/proc/delete_account()
-		clear_stored()
-		tab = LOGIN_SCREEN
-		current_account.Destroy()
+	if(conversation)
+		conversation.leave(current_account)
+	clear_stored()
+	tab = LOGIN_SCREEN
+	current_account.Destroy()
+
+/datum/nano_module/teascord/proc/_call(var/datum/computer_file/data/teascord_account/caller, var/datum/computer_file/data/teascord_account/invited, var/private = 0)
+	if(conversation)
+		error_message = "'BUG' You can't call when you're already in the conversation."
+		return 0
+	if(!invited.connected_client)
+		error_message = "This client is offline."
+		return 0
+	if(caller in invited.blacklist)
+		error_message = "You can't call them because this client has disconnected calls from non-friends or blocked you."
+		return 0
+	if(caller == invited)
+		error_message = "'BUG' You can't call yourself."
+		return 0
+
+	var/datum/computer_file/data/teascord_room/new_room = new/datum/computer_file/data/teascord_room()
+	new_room.join(caller)
+	new_room.invite(invited)
+	new_room.private = private
+	tab = CONVERSATION_SCREEN
+
+/datum/nano_module/teascord/proc/invite(var/datum/computer_file/data/teascord_account/inviter, var/datum/computer_file/data/teascord_account/invited)
+	if(!conversation)
+		error_message = "'BUG' You can't invite when you have no conversations."
+		return 0
+	if(!invited.connected_client)
+		error_message = "This client is offline."
+		return 0
+	if(inviter in invited.blacklist)
+		error_message = "You can't call them because this client has disconnected calls from non-friends or blocked you."
+		return 0
+	if(conversation.private)
+		error_message = "You can't invite anyone in the private conversation."
+		return 0
+	if(invited in conversation.connected_clients)
+		error_message = "You can't invite someone who is already in it to the conversation."
+		return 0
+	if(conversation in invited.active_invites)
+		error_message = "This client is already invited to this conversation."
+		return
+	if(inviter == invited)
+		error_message = "'BUG' You can't invite yourself."
+		return 0
+
+	conversation.invite(inviter, invited)
+
+/datum/nano_module/teascord/proc/leave_conversation()
+	conversation.leave(current_account)
+	tab = CONTACTS_SCREEN
 
 /datum/nano_module/teascord/proc/clear_stored()
 	stored_login = ""
@@ -129,7 +196,9 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 
 /datum/nano_module/teascord/proc/log_out()
 	if(current_account)
-		current_account.connected_clients -= src
+		current_account.connected_client = null
+	if(conversation)
+		conversation.leave(current_account)
 	clear_stored()
 	tab = LOGIN_SCREEN
 	current_account = null
@@ -173,28 +242,44 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 		log_out()
 		return 1
 
-	if(href_list["voice_call"])
-
+	if(href_list["call"])
+		var/private = 0
+		var/response = alert(user, "Should the conversation be private?", "Call setting", "Yes", "No", "Cancel")
+		if(response == "Yes")
+			private = 1
+		else if(response == "Cancel")
+			return 1
+		_call(current_account, href_list["call"], private)
 		return 1
 
-	if(href_list["video_call"])
-
+	if(href_list["invite"])
+		invite(current_account, href_list["invite"])
 		return 1
 
-	if(href_list["stop_call"])
+	if(href_list["accept_invite"])
 
+		return 1
+	if(href_list["decline_invite "])
+
+		return 1
+	if(href_list["leave_conversation"])
+		if(alert(user, "Are you sure that you want to leave the conversation?", "Tea room", "Yes", "No") == "Yes")
+			leave_conversation()
 		return 1
 
 	if(href_list["toggle_sound"])
 		voice = !voice
+		program.voice = voice
 		return 1
 
 	if(href_list["toggle_microphone"])
 		microphone = !microphone
+		program.microphone = microphone
 		return 1
 
 	if(href_list["toggle_camera"])
 		camera = !camera
+		program.camera = camera
 		return 1
 
 	if(href_list["send_friend_request"])
@@ -221,3 +306,4 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 #undef REGISTRATION_SCREEN
 #undef CONTACTS_SCREEN
 #undef SETTINGS_SCREEN
+#undef CONVERSATION_SCREEN

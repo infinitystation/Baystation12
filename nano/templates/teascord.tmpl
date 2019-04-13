@@ -44,10 +44,10 @@
 		<table style="width:100%">
 			<tr><th style="width:10%">Login<th style="width:25%">Nickname<th style="width:20%">Options
 				{{for data.contacts}}
-				<tr>
-				<td>{{:value.login}}
-				<td>{{:value.nickname}}
-				<td>{{:helper.link('Call', '', {'voice_call' : 1})}}
+					<tr>
+					<td>{{:value.login}}
+					<td>{{:value.nickname}}
+					<td>{{:helper.link('Call', '', {'call' : value.ref})}}
 				{{/for}}
 		</table>
 	</div>
