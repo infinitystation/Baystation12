@@ -187,7 +187,7 @@
 /obj/machinery/alarm{
 	frequency = 1439;
 	pixel_y = 30;
-	req_access = list(201)
+	req_access = list("ACCESS_ZEPPELIN")
 	},
 /turf/simulated/floor/reinforced,
 /area/white_star/section1)
@@ -288,7 +288,7 @@
 /obj/machinery/alarm{
 	frequency = 1439;
 	pixel_y = 30;
-	req_access = list(201)
+	req_access = list("ACCESS_ZEPPELIN")
 	},
 /turf/simulated/floor/tiled/white,
 /area/white_star/section2)
@@ -1416,7 +1416,7 @@
 /obj/machinery/alarm{
 	frequency = 1439;
 	pixel_y = 30;
-	req_access = list(201)
+	req_access = list("ACCESS_ZEPPELIN")
 	},
 /turf/simulated/floor/reinforced,
 /area/white_star/section2)

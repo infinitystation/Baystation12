@@ -40,7 +40,7 @@
 
 /obj/structure/closet/secure_closet/explorer
 	name = "explorer's locker"
-	req_access = list(access_explorer)
+	req_access = list("ACCESS_EXPLORER")
 	icon_state = "exp1"
 	icon_closed = "exp"
 	icon_locked = "exp1"

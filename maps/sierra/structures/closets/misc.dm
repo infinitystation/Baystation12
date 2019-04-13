@@ -23,7 +23,7 @@
 
 /obj/structure/closet/secure_closet/iaa
 	name = "\improper Internal Affairs Agent's locker"
-	req_access = list(access_iaa)
+	req_access = list("ACCESS_IAA")
 	closet_appearance = /decl/closet_appearance/secure_closet/torch/corporate/iaa
 
 /obj/structure/closet/secure_closet/iaa/WillContain()

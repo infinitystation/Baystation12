@@ -121,7 +121,7 @@
 	name = "north bump";
 	pixel_x = 0;
 	pixel_y = 24;
-	req_access = list(201)
+	req_access = list("ACCESS_ZEPPELIN")
 	},
 /obj/structure/cable{
 	d2 = 8;
@@ -171,7 +171,7 @@
 	name = "Armory Shutters Contol";
 	pixel_x = 24;
 	pixel_y = -24;
-	req_access = list(19)
+	req_access = list("ACCESS_BRIDGE")
 	},
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/hallway)
@@ -224,7 +224,7 @@
 	},
 /obj/machinery/photocopier/faxmachine{
 	department = "Gunboat";
-	req_access = list(19)
+	req_access = list("ACCESS_BRIDGE")
 	},
 /turf/simulated/floor/tiled,
 /area/ship/gunboat/command/bridge)
@@ -244,7 +244,7 @@
 	name = "north bump";
 	pixel_x = 0;
 	pixel_y = 24;
-	req_access = list(201)
+	req_access = list("ACCESS_ZEPPELIN")
 	},
 /obj/structure/cable{
 	d2 = 2;
@@ -351,7 +351,7 @@
 	name = "Armory Shutters Contol";
 	pixel_x = 0;
 	pixel_y = 24;
-	req_access = list(19)
+	req_access = list("ACCESS_BRIDGE")
 	},
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";

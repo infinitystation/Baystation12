@@ -43,7 +43,7 @@
 /obj/machinery/suit_cycler/exploration
 	name = "Exploration suit cycler"
 	model_text = "Exploration"
-	req_access = list(access_explorer)
+	req_access = list("ACCESS_EXPLORER")
 	available_modifications = list(/decl/item_modifier/space_suit/explorer)
 
 /obj/machinery/suit_cycler/pilot
@@ -56,7 +56,7 @@
 	boots_type = /obj/item/clothing/shoes/magboots
 	tank_type = /obj/item/weapon/tank/oxygen
 	mask_type = /obj/item/clothing/mask/gas/half
-	req_access = list(access_explorer)
+	req_access = list("ACCESS_EXPLORER")
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/pilot

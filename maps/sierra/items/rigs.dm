@@ -182,7 +182,7 @@
 
 	allowed = list(/obj/item/weapon/gun, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit)
 
-	req_access = list(access_el)
+	req_access = list("ACCESS_EL")
 
 /obj/item/clothing/head/helmet/space/rig/command/el
 	icon_state = "command_exp_rig"

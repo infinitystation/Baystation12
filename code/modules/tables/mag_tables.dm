@@ -5,7 +5,7 @@
 	icon_state = "magnetic_table_disabled"
 	var/icon_state_open = "magnetic_table_disabled"
 	var/icon_state_closed = "magnetic_table_enabled"
-	req_access = list(201)
+	req_access = list("ACCESS_ZEPPELIN")
 	can_plate = 0
 	can_reinforce = 0
 	flipped = -1
