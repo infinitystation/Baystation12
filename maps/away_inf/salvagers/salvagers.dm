@@ -3,14 +3,15 @@
 
 /area/salvage/
 	name = "salvage"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 	icon = 'infinity/icons/turf/salvage_areas.dmi'
 
 /area/salvage/engineering
 	name = "Engineering compartment"
 	icon_state = "engineering"
 
-/area/salvage/hygiene
-	name = "Hygiene compartment"
+/area/salvage/shuttle
+	name = "Salvage shuttle"
 	icon_state = "hyg"
 
 /area/salvage/storage
@@ -29,21 +30,38 @@
 	name = "Captain's room"
 	icon_state = "cpt"
 
-/obj/effect/overmap/ship/landable/salvage
+/obj/effect/overmap/ship/salvage
 	name = "PSV Pancake"
 	fore_dir = WEST
 	vessel_mass = 10
 	start_x = 4
 	start_y = 5
-	color = LIGHT_COLOR_PURPLE
-	shuttle = "Salvage"
+	color = "#2F4F4F"
+	icon = 'icons/obj/overmap_inf.dmi'
 	icon_state = "ship_salvage"
 	moving_state = "ship_salvage_moving"
+	base = TRUE
+	initial_generic_waypoints = list(
+		"nav_salvage_start",
+		"nav_salvage_bridge",
+		"nav_salvage_left",
+		"nav_salvage_right",
+		"nav_salvage_eng"
+	)
 
 
 /obj/effect/submap_landmark/joinable_submap/salvage
 	name = "PSV Pancake"
 	archetype = /decl/submap_archetype/salvage/
+
+/obj/effect/submap_landmark/spawnpoint/salvage/capt
+	name = "Salvage vessel - captain"
+
+/obj/effect/submap_landmark/spawnpoint/salvage/eng
+	name = "Salvage vessel - engineer"
+
+/obj/effect/submap_landmark/spawnpoint/salvage/sec
+	name = "Salvage vessel - security"
 
 /decl/submap_archetype/salvage/
 	descriptor = "Salvage"
@@ -64,24 +82,52 @@
 	accessibility_weight = 10
 	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
 
-/obj/machinery/computer/shuttle_control/multi/salvage
+/obj/machinery/computer/shuttle_control/explore/salvage
 	name = "shuttle control console"
 	req_access = list(access_salvage)
-	shuttle_tag = "Salvage"
+	shuttle_tag = "Salvage shuttle"
 
 /datum/shuttle/autodock/overmap/salvage
-	name = "PSV Pancake"
-	shuttle_area = list(/area/salvage/engineering,
-					/area/salvage/storage,
-					/area/salvage/canteen,
-					/area/salvage/bridge,
-					/area/salvage/captain)
+	name = "Salvage shuttle"
+	shuttle_area = /area/salvage/shuttle
 	dock_target = "nav_deck1_salvage"
 	current_location = "nav_salvage_start"
+	warmup_time = 10
+	move_time = 5
+	landmark_transition = "nav_transit_salvage"
+	sound_takeoff = 'sound/effects/rocket.ogg'
+	sound_landing = 'sound/effects/rocket_backwards.ogg'
+	fuel_consumption = 0
+	logging_home_tag = "nav_salvage_start"
+	logging_access = access_salvage
+	range = 3
+	ceiling_type = /turf/space
+
+/obj/effect/overmap/ship/landable/salvage
+	name = "Salvage shuttle"
+	shuttle = "Salvage shuttle"
+	fore_dir = SOUTH
 
 /obj/effect/shuttle_landmark/salvage/start
-	name = "Salvage ship"
+	name = "Salvage ship - docking port"
 	landmark_tag = "nav_salvage_start"
+	base_area = /area/space
+
+/obj/effect/shuttle_landmark/salvage/bridge
+	name = "Salvage ship - near bridge"
+	landmark_tag = "nav_salvage_bridge"
+
+/obj/effect/shuttle_landmark/salvage/left
+	name = "Salvage ship - near left board"
+	landmark_tag = "nav_salvage_left"
+
+/obj/effect/shuttle_landmark/salvage/right //terror?
+	name = "Salvage ship - near right board"
+	landmark_tag = "nav_salvage_right"
+
+/obj/effect/shuttle_landmark/salvage/eng
+	name = "Salvage ship - near engineering"
+	landmark_tag = "nav_salvage_eng"
 
 
 /*/map/salvagers
