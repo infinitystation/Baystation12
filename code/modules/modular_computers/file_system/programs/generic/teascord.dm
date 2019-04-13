@@ -21,22 +21,24 @@
 	var/camera	= TRUE
 
 /datum/computer_file/program/teascord/run_program()
-    . = ..()
-    if(NM)
-        var/datum/nano_module/teascord/NMT = NM
-        NMT.program = src
-        NMT.voice = voice
-        NMT.microphone = microphone
-        NMT.camera = camera
-        if(NMT.current_account)
-            NMT.current_account.connected_client = NMT
+	. = ..()
+	if(NM)
+		var/datum/nano_module/teascord/NMT = NM
+		NMT.program = src
+		NMT.voice = voice
+		NMT.microphone = microphone
+		NMT.camera = camera
+		if(NMT.current_account)
+			NMT.current_account.connected_client = NMT
 
 /datum/computer_file/program/teascord/kill_program()
-    if(NM)
-        var/datum/nano_module/teascord/NMT = NM
-        if(NMT.current_account)
-            NMT.current_account.connected_client = null
-    . = ..()
+	if(NM)
+		var/datum/nano_module/teascord/NMT = NM
+		if(NMT.current_account)
+			if(NMT.conversation)
+				NMT.conversation.leave(NMT.current_account)
+			NMT.current_account.connected_client = null
+	. = ..()
 
 /datum/nano_module/teascord
 	name = "Teascord"
@@ -157,7 +159,7 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 
 	var/datum/computer_file/data/teascord_room/new_room = new/datum/computer_file/data/teascord_room()
 	new_room.join(caller)
-	new_room.invite(invited)
+	new_room.invite(caller, invited)
 	new_room.private = private
 	tab = CONVERSATION_SCREEN
 

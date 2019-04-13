@@ -50,5 +50,5 @@
 	invited_clients |= invited
 	invited.active_invites |= src
 
-	invited_TNM.program.computer.visible_message("[inviter.login] invites you in conversation '[title]'.", 1)
+	invited_TNM.program.computer.visible_message("[inviter.nickname] invites you in conversation '[title]'.", 1)
 	playsound(invited_TNM.program.computer, 'sound/machines/twobeep.ogg', 50, 1)
