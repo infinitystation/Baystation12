@@ -62,6 +62,12 @@
 	uniforms +=	/obj/item/clothing/under/rank/security/corp/alt
 	uniforms +=	/obj/item/clothing/under/rank/security/navyblue
 	uniforms +=	/obj/item/clothing/under/rank/security/navyblue/alt
-	uniforms += /obj/item/clothing/under/gray_camo
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(uniforms)
+
+/datum/gear/tactical/camo_inf/
+	display_name = "camo uniform - colorable"
+	allowed_roles = SECURITY_ROLES
+	path = /obj/item/clothing/under/gray_camo
+	slot = slot_w_uniform
+	flags = GEAR_HAS_COLOR_SELECTION
 

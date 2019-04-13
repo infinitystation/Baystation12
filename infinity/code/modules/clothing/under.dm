@@ -102,8 +102,8 @@
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/gray_camo
-	name = "grey camo uniform"
-	desc = "It's grey camo unifrom made of a slightly sturdier material than standard jumpsuits, to allow for good protection and military style."
+	name = "camo uniform"
+	desc = "It's camo unifrom made of a slightly sturdier material than standard jumpsuits, to allow for good protection and military style."
 	icon = 'icons/obj/clothing/infinity/uniform.dmi'
 	item_icons = list(slot_w_uniform_str = 'icons/mob/infinity/uniform.dmi')
 	icon_state = "gray_camo"
