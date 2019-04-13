@@ -65,16 +65,16 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 	data["error_message"] = error_message
 	data["stored_login"] = stored_login
 	data["stored_password"] = stars(stored_password, 0)
+	if(current_account)
+		data["nickname"] = current_account.nickname
 
 	switch(tab)
 		if(3)
-			data["nickname"] = current_account.nickname
 			var/list/available_contacts[0]
 			for(var/datum/computer_file/data/teascord_account/AC in ntnet_global.teascord_accounts)
 				available_contacts.Add(contacts_to_nanoui(AC))
 			data["contacts"] = available_contacts
-		if(4)
-			data["nickname"] = current_account.nickname
+
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -86,7 +86,8 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 /datum/nano_module/teascord/proc/contacts_to_nanoui(var/datum/computer_file/data/teascord_account/AC)
 	return list(list(
 		"login" = AC.login,
-		"nickname" = AC.nickname
+		"nickname" = AC.nickname,
+		"ref" = "\ref[AC]"
 		))
 
 /datum/nano_module/teascord/proc/log_in()
@@ -249,7 +250,8 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 			private = 1
 		else if(response == "Cancel")
 			return 1
-		_call(current_account, href_list["call"], private)
+		var/datum/computer_file/data/teascord_account/ACC = locate(href_list["call"]) in ntnet_global.teascord_accounts
+		_call(current_account, ACC, private)
 		return 1
 
 	if(href_list["invite"])

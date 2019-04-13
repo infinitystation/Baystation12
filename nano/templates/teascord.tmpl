@@ -23,7 +23,7 @@
 	{{:helper.link('Change password', 'pencil', {'edit_password' : 1})}}
 	{{:helper.link('Create new account', '', {'new_acc' : 1})}}
 	{{:helper.link('Back to login', '', {'select_tab' : 1})}}
-	<div>{{:data.error_message}}</div>
+	<div><br>{{:data.error_message}}</div>
 {{/if}}
 {{if data.tab > 2}}
 	<div>
@@ -50,6 +50,7 @@
 					<td>{{:helper.link('Call', '', {'call' : value.ref})}}
 				{{/for}}
 		</table>
+		<br>{{:data.error_message}}
 	</div>
 {{else data.tab == 4}}
 	<center>{{:helper.link('Delete Account', '', {'delete_acc' : 1})}}</center>
