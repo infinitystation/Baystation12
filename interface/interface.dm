@@ -196,8 +196,8 @@ Any-Mode: (Режим хоткеев отключен)
 		to_chat(src, admin)
 
 
-//Вкладка Information
-/client/proc/show_info(var/source = "main")
+//Вкладка Regulations
+/client/proc/show_info(var/source = "rules")
 
 	var/dat = {"
 <html>
@@ -205,10 +205,10 @@ Any-Mode: (Режим хоткеев отключен)
 <title>[source]</title>
 <meta charset="windows-1251">
 <script>
-	function page_rules() 		{location.href='?_src_=main;informat=rules';}
-	function page_adrules() 	{location.href='?_src_=main;informat=adrules';}
-	function page_roleplay() 	{location.href='?_src_=main;informat=roleplay';}
-	function page_ban() 		{location.href='?_src_=main;informat=ban;';}
+	function page_rules() 		{location.href='?_src_=rules;informat=rules';}
+	function page_adrules() 	{location.href='?_src_=rules;informat=adrules';}
+	function page_roleplay() 	{location.href='?_src_=rules;informat=roleplay';}
+	function page_ban() 		{location.href='?_src_=rules;informat=ban;';}
 </script>
  </head>
 
@@ -219,7 +219,8 @@ Any-Mode: (Режим хоткеев отключен)
 <td><input type="button" value="Этикет администрации" 			id="button2_changelog" onclick="page_adrules()">	</td>
 <td><input type="button" value="Политика ролевой игры" 			id="button4_stories" onclick="page_roleplay()"		</td>
 <td align="right"><input type="button" value="Политика банов" 	id="button6_admin" onclick="page_ban()">			</td>
-</tr><table>
+</td></tr></table>
+<hr>
 <br>
 
 [file2text("config/info/[source].html")]
@@ -228,14 +229,9 @@ Any-Mode: (Режим хоткеев отключен)
 	"}
 	usr << browse(fix_html(dat), "window=hub_welcome;size=1000x500;can_close=1;")
 
-
-//Интерфейс приветствия
-
 /client/Topic(href, href_list[])
-	switch(href_list["informat"])
-		if("wiki")		wiki()
-		if("forum")		forum()
-		else			show_info(href_list["informat"])
+	if(href_list["informat"]) //"Regulations"
+		show_info(href_list["informat"])
 	..()
 
 /client/verb/servinfo()
