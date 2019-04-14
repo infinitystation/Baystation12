@@ -68,3 +68,6 @@
 	mask_type = /obj/item/clothing/mask/breath
 	req_access = list(access_explorer, access_expedition_shuttle_helm)
 	islocked = 1
+
+/obj/machinery/door
+	autoset_access = FALSE
