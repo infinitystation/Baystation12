@@ -19,7 +19,7 @@
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_guns.dmi',
 		)
 	item_state = "gun"
-	max_shells = 4
+	max_shells = 5
 	fire_delay = 8
 	force = 10
 	caliber = "shotgun"

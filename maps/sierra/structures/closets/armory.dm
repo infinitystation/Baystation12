@@ -13,21 +13,20 @@
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/shotgun/WillContain()
 	return list(/obj/item/weapon/gun/projectile/shotgun/pump/combat = 2,
+				/obj/item/weapon/gun/projectile/revolver/shotgun = 2,
 				/obj/item/clothing/accessory/storage/bandolier/armory = 2)
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/laser
 	name = "laser guncabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/laser/WillContain()
-	return list(/obj/item/weapon/gun/energy/laser/secure = 2)
+	return list(/obj/item/weapon/gun/energy/laser/secure = 4)
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/stun
 	name = "stun guncabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/stun/WillContain()
-	return list(
-		/obj/item/weapon/gun/energy/stunrevolver/rifle = 2,
-		/obj/item/weapon/gun/energy/taser/carbine = 2)
+	return list(/obj/item/weapon/gun/energy/stunrevolver/rifle = 2)
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/ion
 	name = "ion guncabinet"
@@ -36,10 +35,10 @@
 	return list(/obj/item/weapon/gun/energy/ionrifle = 2)
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/egun
-	name = "energy guncabinet"
+	name = "taser guncabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/egun/WillContain()
-	return list(/obj/item/weapon/gun/energy/gun/secure = 4)
+	return list(/obj/item/weapon/gun/energy/taser/carbine = 2)
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_emergency
 	name = "emergency smartgun guncabinet"
