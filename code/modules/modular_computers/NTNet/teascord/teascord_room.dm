@@ -19,6 +19,8 @@
 /datum/computer_file/data/teascord_room/proc/join(var/datum/computer_file/data/teascord_account/C)
 	connected_clients |= C
 	if(C in invited_clients)
+		if(src in C.active_invites)
+			C.active_invites -= src
 		invited_clients -= C
 	if(C.connected_client)
 		var/datum/nano_module/teascord/TNM = C.connected_client
@@ -52,3 +54,14 @@
 
 	invited_TNM.program.computer.visible_message("[inviter.nickname] invites you in conversation '[title]'.", 1)
 	playsound(invited_TNM.program.computer, 'sound/machines/twobeep.ogg', 50, 1)
+
+/datum/computer_file/data/teascord_room/proc/talk(var/datum/computer_file/data/teascord_account/talker, var/mob/living/ML, var/text, var/verb, datum/language/lang)
+	for(var/datum/computer_file/data/teascord_account/listener in connected_clients)
+		var/datum/nano_module/teascord/C = listener.connected_client
+		if(listener == talker)
+			continue
+		if(!C.voice)
+			continue
+
+		for(var/mob/M in view(C.loudmode ? 1 : world.view, C.program.computer.loc))
+			M.hear_say(text, verb, lang,,, ML)

@@ -73,7 +73,7 @@
 		found = 1
 		webcam = H
 	else if(istype(H, /obj/item/weapon/computer_hardware/microphone))
-		if(tesla_link)
+		if(microphone)
 			to_chat(user, "This computer's microphone slot is already occupied by \the [microphone].")
 			return
 		found = 1
@@ -160,9 +160,9 @@
 	if(scanner && (scanner.name == name))
 		return scanner
 	if(webcam && (webcam.name == name))
-		return tesla_link
+		return webcam
 	if(microphone && (microphone.name == name))
-		return tesla_link
+		return microphone
 	return null
 
 // Returns list of all components

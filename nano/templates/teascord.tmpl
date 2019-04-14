@@ -53,5 +53,10 @@
 		<br>{{:data.error_message}}
 	</div>
 {{else data.tab == 4}}
-	<center>{{:helper.link('Delete Account', '', {'delete_acc' : 1})}}</center>
+	<center>{{:helper.link('Delete account', '', {'delete_acc' : 1})}}</center>
+	<center>{{:helper.link('Toggle sound', '', {'toggle_sound' : 1})}}</center>
+	<center>{{:helper.link('Toggle loudmode', '', {'toggle_loudmode' : 1})}}</center>
+	<center>{{:helper.link('Toggle microphone', '', {'toggle_microphone' : 1})}}</center>
+	<center>{{:helper.link('Toggle broadcoast', '', {'toggle_broadcoast' : 1})}}</center>
+	<center>{{:helper.link('Toggle camera', '', {'toggle_camera' : 1})}}</center>
 {{/if}}

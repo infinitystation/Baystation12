@@ -17,8 +17,10 @@
 	nanomodule_path = /datum/nano_module/teascord
 
 	var/voice = TRUE
+	var/loudmode = FALSE
 	var/microphone = TRUE
-	var/camera	= TRUE
+	var/broadcoast = FALSE
+	var/camera = TRUE
 
 /datum/computer_file/program/teascord/run_program()
 	. = ..()
@@ -49,8 +51,10 @@
 	var/error_message = ""
 
 	var/voice = TRUE												// Can I hear the interlocutor?
+	var/loudmode = FALSE
 	var/microphone = TRUE											// Can our interlocutor hear us?
-	var/camera	= TRUE												// Can our interlocutor use our camera in a video call?
+	var/broadcoast = FALSE
+	var/camera = TRUE												// Can our interlocutor use our camera in a video call?
 
 	var/datum/computer_file/program/teascord/program
 
@@ -67,6 +71,13 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 	data["error_message"] = error_message
 	data["stored_login"] = stored_login
 	data["stored_password"] = stars(stored_password, 0)
+
+	data["voice"] = voice
+	data["loudmode"] = loudmode
+	data["microphone"] = microphone
+	data["broadcoast"] = broadcoast
+	data["camera"] = camera
+
 	if(current_account)
 		data["nickname"] = current_account.nickname
 
@@ -276,9 +287,19 @@ datum/nano_module/teascord/ui_interact(mob/user, ui_key = "main", datum/nanoui/u
 		program.voice = voice
 		return 1
 
+	if(href_list["toggle_loudmode"])
+		loudmode = !loudmode
+		program.loudmode = loudmode
+		return 1
+
 	if(href_list["toggle_microphone"])
 		microphone = !microphone
 		program.microphone = microphone
+		return 1
+
+	if(href_list["toggle_broadcoast"])
+		broadcoast = !broadcoast
+		program.broadcoast = broadcoast
 		return 1
 
 	if(href_list["toggle_camera"])
