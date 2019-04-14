@@ -3093,6 +3093,7 @@
 #include "infinity\code\game\items\weapons\circuitboards\computer\computer.dm"
 #include "infinity\code\game\items\weapons\circuitboards\machinery\compactor.dm"
 #include "infinity\code\game\items\weapons\circuitboards\machinery\research.dm"
+#include "infinity\code\game\jobs\acccess_datum.dm"
 #include "infinity\code\game\machinery\autolathe_datums.dm"
 #include "infinity\code\game\machinery\doors\airlocks.dm"
 #include "infinity\code\game\machinery\doors\blast.dm"
