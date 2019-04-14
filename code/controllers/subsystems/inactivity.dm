@@ -19,7 +19,7 @@ SUBSYSTEM_DEF(inactivity)
 //		if(!C.holder && C.is_afk(config.kick_inactive MINUTES) && !isobserver(C.mob))
 		if(C.holder && check_rights(R_ADMIN, 0, C) && C.is_afk(config.kick_inactive MINUTES) && config.kick_inactive)
 			log_access("AFK: [key_name(C)]")
-			to_chat(C, SPAN_WARNING("Г‚Г», Г Г¤Г¬ГЁГ­ГЁГ±ГІГ°Г ГІГ®Г°, Г­ГҐ ГЇГ°Г®ГїГўГ«ГїГ«ГЁ Г ГЄГІГЁГўГ­Г®Г±ГІГј Гў ГІГҐГ·ГҐГ­ГЁГЁ ([config.kick_inactive]) Г¬ГЁГ­ГіГІ ГЁ ГЎГ»Г«ГЁ Г®ГІГ±Г®ГҐГ¤ГҐГ­ГҐГ­Г». ГЏГ°Г®Г¦Г¬ГЁГІГҐ de-admin Гў Г±Г«ГҐГ¤ГіГѕГ№ГЁГ© Г°Г Г§ ГЇГҐГ°ГҐГ¤ Г¤Г«ГЁГІГҐГ«ГјГ­Г»Г¬ Г®ГІГµГ®Г¤Г®Г¬."))
+			to_chat(C, SPAN_WARNING("Вы, администратор, не проявляли активность в течении ([config.kick_inactive]) минут и были отсоеденены. Прожмите de-admin в следующий раз перед длительным отходом."))
 			qdel(C)
 			number_kicked++
 		if (MC_TICK_CHECK)
