@@ -255,24 +255,52 @@ Subtypes
 		file.stored_data += "([time_stamp()]) Proxy routing request accepted from: [comp.network_card.get_network_tag()].\[br\]"
 	comp.network_card.proxy_id = id
 	return "proxy: Device proxy set to [id]."
-//[INFINITY]
-/datum/terminal_command/launch
-	name = "launch"
-	man_entry = list("Format: launch programm", "Runs the program from local memory.")
-	pattern = "^launch"
-	skill_needed = SKILL_ADEPT
 
-/datum/terminal_command/launch/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	return "working in progress"
 
-/datum/terminal_command/shutdown
-	name = "shutdown"
-	man_entry = list("Format: launch programm", "Shutdown curent programm.")
-	pattern = "^shutdown"
-	skill_needed = SKILL_ADEPT
 
-/datum/terminal_command/shutdown/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	return "work in progress"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//[INFINITY]____________________________________________________________________________________________________________________
 
 /datum/terminal_command/listdir
 	name = "listdir"
@@ -288,7 +316,40 @@ Subtypes
 	var/list/massive_of_programm_names = list()
 	for(var/datum/computer_file/F in terminal.computer.hard_drive.stored_files)
 		var/prog_size = num2text(F.size)
-		var/prg_data = F.filename + "." + F.filetype + " | " + prog_size + " GQ"
+		var/prg_data = F.filename + "." + F.filetype + "	|	" + prog_size + " GQ"
 		massive_of_programm_names.Add(prg_data)
 	return massive_of_programm_names
-//[/INFINITY]
+
+/datum/terminal_command/shutdown
+	name = "shutdown"
+	man_entry = list("Format: shutdown.", "Shutdown device.")
+	pattern = "^shutdown$"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/shutdown/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	if(length(text) < 8)
+		return "shutdown: Improper syntax. shutdown."
+	terminal.computer.shutdown_computer()
+	return "Shutdown successful."
+
+/datum/terminal_command/launch
+	name = "launch"
+	man_entry = list("Format: launch programm", "Runs the program from local memory.")
+	pattern = "^launch"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/launch/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	return "working in progress"
+
+/datum/terminal_command/restore_sesion
+	name = "restore_sesion"
+	man_entry = list("Format: restore_sesion", "Runs the current launched programms")
+	pattern = "^restore_sesion$"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/restore_sesion/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	return "working in progress"
+
+
+
+//[/INFINITY]_______________________________________________________________________________________________________________
