@@ -3160,7 +3160,6 @@
 #include "infinity\code\game\turfs\simulated\wall_types.dm"
 #include "infinity\code\game\turfs\unsimulated\floor.dm"
 #include "infinity\code\modules\clothing\accessories.dm"
-#include "infinity\code\modules\clothing\accessory.dm"
 #include "infinity\code\modules\clothing\armor.dm"
 #include "infinity\code\modules\clothing\ears.dm"
 #include "infinity\code\modules\clothing\glasses.dm"
