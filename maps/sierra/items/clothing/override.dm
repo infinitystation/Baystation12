@@ -7,12 +7,6 @@
 /obj/item/clothing/under/rank/security/navyblue
 	name = "security guard's uniform"
 
-
-
-
-
-
-
 /*
  * ACCESSORIES
  * ===========

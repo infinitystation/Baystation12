@@ -59,6 +59,8 @@
 		/area/exoplanet/grass    = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/exoplanet/snow     = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/exoplanet/garbage  = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/exoplanet/shrouded = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/exoplanet/chlorine = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/smugglers/base = NO_SCRUBBER,
 		/area/smugglers/dorms = NO_SCRUBBER|NO_VENT,
 		/area/smugglers/office = NO_SCRUBBER|NO_VENT,
@@ -69,7 +71,9 @@
 //		/area/icarus/open = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/map_template/hydrobase = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/map_template/hydrobase/station = NO_SCRUBBER,
-		/area/map_template/marooned = NO_SCRUBBER|NO_VENT|NO_APC
+		/area/map_template/marooned = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/map_template/colony/mineralprocessing = NO_SCRUBBER|NO_VENT,
+		/area/map_template/datacapsule = NO_SCRUBBER|NO_VENT|NO_APC
 	)
 
 	area_coherency_test_exempt_areas = list(
@@ -83,8 +87,10 @@
 		/area/exoplanet/grass,
 		/area/exoplanet/snow,
 		/area/exoplanet/garbage,
+		/area/exoplanet/shrouded,
+		/area/exoplanet/chlorine,
 //		/area/icarus/vessel,
-//		/area/icarus/open,
+//		/area/icarus/open
 	)
 
 	area_coherency_test_subarea_count = list()
@@ -127,10 +133,13 @@
 		/area/slavers_base,
 		/area/yacht,
 		/area/bluespaceriver,
+//		/area/mobius_rift,
 //		/area/icarus,
 		/area/errant_pisces,
 		/area/lar_maria,
 		/area/map_template,
+		/area/unishi,
+		/area/voxship,
 		/area/exoplanet
 	)
 

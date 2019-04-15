@@ -25,7 +25,7 @@
 
 /obj/structure/closet/secure_closet/el
 	name = "exploration leader's locker"
-	req_access = list("ACCESS_EL")
+	req_access = list(access_el)
 	closet_appearance = /decl/closet_appearance/secure_closet/sirra/exploration/leader
 
 /obj/structure/closet/secure_closet/el/WillContain()
@@ -58,7 +58,7 @@
 
 /obj/structure/closet/secure_closet/explorer
 	name = "explorer's locker"
-	req_access = list("ACCESS_EXPLORER")
+	req_access = list(access_explorer)
 	closet_appearance = /decl/closet_appearance/secure_closet/sirra/exploration
 
 /obj/structure/closet/secure_closet/explorer/WillContain()

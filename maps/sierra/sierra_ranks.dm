@@ -34,6 +34,8 @@
 			/datum/mil_branch/alien,
 			/datum/mil_branch/skrell_fleet),
 		/datum/species/adherent = list(
+			/datum/mil_branch/contractor,
+			/datum/mil_branch/employee,
 			/datum/mil_branch/alien,
 			/datum/mil_branch/skrell_fleet),
 		/datum/species/unathi   = list(
@@ -42,9 +44,13 @@
 		/datum/species/skrell   = list(
 			/datum/mil_branch/alien),
 		/datum/species/nabber   = list(
+			/datum/mil_branch/contractor,
+			/datum/mil_branch/employee,
 			/datum/mil_branch/alien,
 			/datum/mil_branch/skrell_fleet),
 		/datum/species/diona    = list(
+			/datum/mil_branch/contractor,
+			/datum/mil_branch/employee,
 			/datum/mil_branch/alien,
 			/datum/mil_branch/skrell_fleet),
 		/datum/species/tajaran  = list(
@@ -144,7 +150,7 @@
 	)
 
 
-/datum/mil_rank/grade()
+/datum/mil_rank/grade() //useless, for sure
 	. = ..()
 	if(!sort_order)
 		return ""
@@ -173,7 +179,10 @@
 /datum/mil_rank/civ/synthetic
 	name = "Synthetic"
 
-// Vox/foreign alien branch.
+/*
+ * Vox/foreign alien branch
+ * ========================
+ */
 
 /datum/mil_branch/alien
 	name = "Alien"

@@ -14,7 +14,7 @@
 		"stripe_vertical_mid_full" = COLOR_OFF_WHITE
 	)
 
-/decl/closet_appearance/secure_closet/torch/corporate/iaa
+/decl/closet_appearance/secure_closet/sierra/corporate/iaa
 	extra_decals = list(
 		"stripe_vertical_left_full" =  COLOR_OFF_WHITE,
 		"stripe_vertical_right_full" = COLOR_OFF_WHITE,
@@ -23,8 +23,8 @@
 
 /obj/structure/closet/secure_closet/iaa
 	name = "\improper Internal Affairs Agent's locker"
-	req_access = list("ACCESS_IAA")
-	closet_appearance = /decl/closet_appearance/secure_closet/torch/corporate/iaa
+	req_access = list(access_iaa)
+	closet_appearance = /decl/closet_appearance/secure_closet/sierra/corporate/iaa
 
 /obj/structure/closet/secure_closet/iaa/WillContain()
 	return list(

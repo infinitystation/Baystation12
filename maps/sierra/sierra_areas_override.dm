@@ -1,4 +1,4 @@
-//Overrides original areas from Space Station 13 Areas.dm, cause we aren't using area/req_acess.
+//Overrides original areas from Space Station 13 Areas.dm, cause we aren't using area/req_access for now.
 
 /area/centcom
 	req_access = null
