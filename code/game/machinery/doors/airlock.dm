@@ -246,6 +246,7 @@ var/list/airlock_overlays = list()
 
 /obj/machinery/door/airlock/external/escapepod
 	name = "Escape Pod"
+	desc = "It opens and closes. You can remove bolts with a wrench in case of power failure."
 	frequency =  1380
 	locked = 1
 
