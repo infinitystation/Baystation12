@@ -54,7 +54,7 @@
 		/area/vacant/monitoring = NO_SCRUBBER|NO_VENT,
 		/area/vacant/cabin = 0,
 		/area/rnd/xenobiology/atmos  = NO_SCRUBBER|NO_VENT,
-//exoplanets and space ruins
+//EXOPLANETS AND SPACE RUINS START HERE,
 		/area/exoplanet          = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/exoplanet/desert   = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/exoplanet/grass    = NO_SCRUBBER|NO_VENT|NO_APC,
@@ -67,9 +67,9 @@
 		/area/map_template/marooned = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/map_template/colony/mineralprocessing = NO_SCRUBBER|NO_VENT,
 		/area/map_template/datacapsule = NO_SCRUBBER|NO_VENT|NO_APC,
-//away sites
 		/area/outpost/mining/solar = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/outpost/mining/maints = NO_SCRUBBER|NO_VENT,
+//AWAY SITES START HERE,
 		/area/outpost/mining/atmos = NO_SCRUBBER|NO_VENT,
 //		/area/icarus/vessel = NO_APC,
 //		/area/icarus/open = NO_SCRUBBER|NO_VENT|NO_APC,
