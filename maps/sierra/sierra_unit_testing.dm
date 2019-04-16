@@ -54,6 +54,7 @@
 		/area/vacant/monitoring = NO_SCRUBBER|NO_VENT,
 		/area/vacant/cabin = 0,
 		/area/rnd/xenobiology/atmos  = NO_SCRUBBER|NO_VENT,
+//exoplanets and space ruins
 		/area/exoplanet          = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/exoplanet/desert   = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/exoplanet/grass    = NO_SCRUBBER|NO_VENT|NO_APC,
@@ -61,19 +62,24 @@
 		/area/exoplanet/garbage  = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/exoplanet/shrouded = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/exoplanet/chlorine = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/smugglers/base = NO_SCRUBBER,
-		/area/smugglers/dorms = NO_SCRUBBER|NO_VENT,
-		/area/smugglers/office = NO_SCRUBBER|NO_VENT,
-		/area/bluespaceriver/underground = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/bluespaceriver/ground = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/casino/casino_cutter = NO_SCRUBBER|NO_VENT,
-//		/area/icarus/vessel = NO_APC,
-//		/area/icarus/open = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/map_template/hydrobase = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/map_template/hydrobase/station = NO_SCRUBBER,
 		/area/map_template/marooned = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/map_template/colony/mineralprocessing = NO_SCRUBBER|NO_VENT,
-		/area/map_template/datacapsule = NO_SCRUBBER|NO_VENT|NO_APC
+		/area/map_template/datacapsule = NO_SCRUBBER|NO_VENT|NO_APC,
+//away sites
+		/area/outpost/mining/solar = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/outpost/mining/maints = NO_SCRUBBER|NO_VENT,
+		/area/outpost/mining/atmos = NO_SCRUBBER|NO_VENT,
+//		/area/icarus/vessel = NO_APC,
+//		/area/icarus/open = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/casino/casino_cutter = NO_SCRUBBER|NO_VENT,
+		/area/bluespaceriver/underground = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/bluespaceriver/ship/power = NO_SCRUBBER|NO_VENT,
+		/area/bluespaceriver/ground = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/smugglers/base = NO_SCRUBBER,
+		/area/smugglers/dorms = NO_SCRUBBER|NO_VENT,
+		/area/smugglers/office = NO_SCRUBBER|NO_VENT,
 	)
 
 	area_coherency_test_exempt_areas = list(
@@ -140,7 +146,8 @@
 		/area/map_template,
 		/area/unishi,
 		/area/voxship,
-		/area/exoplanet
+		/area/exoplanet,
+		/area/outpost/mining,
 	)
 
 /datum/unit_test/zas_area_test/cargo_bay

@@ -2,6 +2,7 @@
 	icon_state = "underground"
 	icon = 'blueriver.dmi'
 	sound_env = ASTEROID
+	req_access = null
 
 /area/bluespaceriver/underground
 	name = "\improper Bluespace River Underground"
@@ -22,8 +23,6 @@
 	name = "Cometa - Power Compartment"
 /area/bluespaceriver/ship/medical
 	name = "Cometa - Medical Compartment"
-/area/bluespaceriver/ship/cargo
-	name = "Cometa - Cargo Bay"
 /area/bluespaceriver/ship/restroom
 	name = "Cometa - Restroom"
 /area/bluespaceriver/ship/storage

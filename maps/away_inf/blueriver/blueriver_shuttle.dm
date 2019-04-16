@@ -25,7 +25,7 @@
 /datum/shuttle/autodock/overmap/blueriver_shuttle
 	name = "Cometa"
 	move_time = 90
-	shuttle_area = list(/area/bluespaceriver/ship/cockpit, /area/bluespaceriver/ship/power, /area/bluespaceriver/ship/medical, /area/bluespaceriver/ship/cargo, /area/bluespaceriver/ship/restroom, /area/bluespaceriver/ship/storage, /area/bluespaceriver/ship/sec_storage, /area/bluespaceriver/ship/airlock, /area/bluespaceriver/ship/autolathe)
+	shuttle_area = list(/area/bluespaceriver/ship/cockpit, /area/bluespaceriver/ship/power, /area/bluespaceriver/ship/medical, /area/bluespaceriver/ship/restroom, /area/bluespaceriver/ship/storage, /area/bluespaceriver/ship/sec_storage, /area/bluespaceriver/ship/airlock, /area/bluespaceriver/ship/autolathe)
 	dock_target = "blueriver_shuttle"
 	current_location = "nav_blueriver_shuttle"
 	landmark_transition = "nav_transit_blueriver"
