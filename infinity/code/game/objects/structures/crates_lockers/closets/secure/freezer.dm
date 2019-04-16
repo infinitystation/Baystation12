@@ -1,7 +1,7 @@
 /obj/structure/closet/fridge
 	name = "fridge"
-	icon = 'icons/obj/closets_inf.dmi'
-	closet_appearance = /decl/closet_appearance/crate/freezer
+	icon = 'icons/obj/closets/fridge.dmi'
+	closet_appearance = null
 
 /obj/structure/closet/secure_closet/freezer/fridge/zeppelin/WillContain()
 	return list(
