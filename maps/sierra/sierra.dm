@@ -69,11 +69,13 @@
 	#include "job/jobs_service.dm"
 
 	#include "machinery/alarm.dm"
-	#include "machinery/apc.dm"
+	#include "machinery/doors.dm"
 	#include "machinery/keycard authentication.dm"
 	#include "machinery/machinery.dm"
 	#include "machinery/navbeacons.dm"
+	#include "machinery/power.dm"
 	#include "machinery/random.dm"
+	#include "machinery/tcomms.dm"
 	#include "machinery/thrusters.dm"
 	#include "machinery/uniform_vendor.dm"
 	#include "machinery/vendors.dm"
@@ -83,6 +85,7 @@
 	#include "structures/override.dm"
 	#include "structures/signs.dm"
 
+	#include "structures/closets/_closets_appearances.dm"
 	#include "structures/closets/armory.dm"
 	#include "structures/closets/command.dm"
 	#include "structures/closets/engineering.dm"

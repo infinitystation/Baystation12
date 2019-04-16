@@ -71,7 +71,6 @@
 	minimal_player_age = 0
 	create_record = 0
 	alt_titles = list(
-		"Merchant Assistant",
 		"Merchant Security" = /decl/hierarchy/outfit/job/sierra/merchant/security)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/merchant
 	allowed_branches = list(/datum/mil_branch/civilian)

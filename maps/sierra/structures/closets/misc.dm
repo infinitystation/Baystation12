@@ -3,13 +3,13 @@
  */
 
 /decl/closet_appearance/secure_closet/sierra/crew
-	color = COLOR_BABY_BLUE
+	color = COLOR_GUNMETAL
 	extra_decals = list(
 		"stripe_vertical_mid_full" =  COLOR_OFF_WHITE
 	)
 
 /decl/closet_appearance/secure_closet/sierra/corporate
-	color = COLOR_BOTTLE_GREEN
+	color = COLOR_GUNMETAL
 	extra_decals = list(
 		"stripe_vertical_mid_full" = COLOR_OFF_WHITE
 	)
@@ -62,5 +62,16 @@
 
 /obj/structure/closet/secure_closet/crew/research
 	name = "research equipment locker"
-	closet_appearance = /decl/closet_appearance/secure_closet/sierra/corporate
+	closet_appearance = /decl/closet_appearance/white
 
+/obj/structure/closet/white_sierra
+	closet_appearance = /decl/closet_appearance/cabinet/secure
+
+/obj/structure/closet/secure_closet/white_sierra
+	closet_appearance = /decl/closet_appearance/secure_closet/white
+
+/obj/structure/closet/secure_closet/personal/patient
+	closet_appearance = /decl/closet_appearance/secure_closet/patients
+
+/obj/structure/closet/secure_closet/medical2
+	closet_appearance = /decl/closet_appearance/secure_closet/white

@@ -11,7 +11,7 @@
 	initial_restricted_waypoints = list(
 		"Charon" = list("nav_hangar_calypso"),
 		"Guppy" = list("nav_hangar_guppy"),
-		"Albatross" = list("nav_albatross_dock")
+		"Albatross" = list("nav_albatross_dock"), //away_inf/sentinel/sentinel.dmm shuttle,
 	)
 
 	initial_generic_waypoints = list(
