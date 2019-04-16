@@ -22,7 +22,7 @@
 	max_shells = 5
 	fire_delay = 8
 	force = 10
-	caliber = "shotgun"
+	caliber = CALIBER_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/shotgun
 
