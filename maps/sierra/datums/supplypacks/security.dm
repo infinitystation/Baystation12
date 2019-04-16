@@ -1,12 +1,13 @@
 /decl/hierarchy/supply_pack/security
 	name = "Security"
 	access = access_security
+	cost = 15
 
 /decl/hierarchy/supply_pack/security/nanoarmor
 	name = "Armor - NanoTrasen"
 	contains = list(/obj/item/clothing/suit/armor/pcarrier/medium/nt = 2,
 					/obj/item/clothing/head/helmet/nt/guard =2)
-	cost = 20
+	cost = 25
 	containertype = /obj/structure/closet/crate/secure
 	containername = "NanoTrasen armor crate"
 	access = access_security
@@ -21,15 +22,12 @@
 	access = access_security
 
 /decl/hierarchy/supply_pack/security/armory
-	containertype = /obj/structure/closet/crate/secure/weapon
-	access = access_armory
-	security_level = SUPPLY_SECURITY_ELEVATED
-
-/decl/hierarchy/supply_pack/security/armory/pistol
 	name = "Weapons - Ballistic sidearms"
+	containertype = /obj/structure/closet/crate/secure/weapon
 	contains = list(/obj/item/weapon/gun/projectile/pistol/military = 4)
 	cost = 40
 	containername = "ballistic sidearms crate"
+	security_level = SUPPLY_SECURITY_ELEVATED
 
 /decl/hierarchy/supply_pack/security/armory/laser
 	name = "Weapons - Laser carbines"
@@ -37,7 +35,7 @@
 	cost = 60
 	containername = "laser carbines crate"
 
-/decl/hierarchy/supply_pack/security/laser/shady
+/decl/hierarchy/supply_pack/security/armory/laser/shady
 	name = "Weapons - Laser carbines (For disposal)"
 	contains = list(/obj/item/weapon/gun/energy/laser = 4)
 	cost = 80

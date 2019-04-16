@@ -18,6 +18,8 @@
 		/area/maintenance/thirddeck/aft = 0,
 		/area/maintenance/waterstore = 0,
 		/area/maintenance/bluespace = NO_SCRUBBER,
+		/area/maintenance/abandoned_compartment = NO_APC,
+		/area/maintenance/firstdeck/centralport = 0,
 		/area/mine/explored = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/mine/unexplored = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/ninja_dojo = NO_SCRUBBER |NO_VENT | NO_APC,

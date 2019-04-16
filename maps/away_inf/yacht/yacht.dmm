@@ -124,7 +124,7 @@
 "ct" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"; pixel_y = 0},/obj/machinery/power/solar,/obj/effect/floor_decal/solarpanel,/turf/simulated/floor/airless,/area/yacht/engine)
 "cu" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"; pixel_y = 0},/obj/effect/floor_decal/solarpanel,/obj/item/solar_assembly,/turf/simulated/floor/airless,/area/yacht/engine)
 "cv" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"; pixel_y = 0},/obj/machinery/power/solar,/obj/effect/floor_decal/solarpanel,/obj/item/weapon/material/shard,/turf/simulated/floor/airless,/area/yacht/engine)
-"cw" = (/obj/structure/lattice,/turf/space,/area/yacht/engine)
+"cw" = (/obj/structure/lattice,/turf/space,/area/space)
 "cx" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/spider/stickyweb,/turf/simulated/floor/plating,/area/yacht/engine)
 "cy" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/obj/effect/decal/cleanable/dirt,/obj/item/weapon/circuitboard/broken,/turf/simulated/floor/plating,/area/yacht/engine)
 "cz" = (/obj/machinery/power/terminal{icon_state = "term"; dir = 1},/obj/structure/cable{d2 = 2; icon_state = "0-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 1},/obj/item/weapon/storage/toolbox/electrical,/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/turf/simulated/floor/plating,/area/yacht/engine)

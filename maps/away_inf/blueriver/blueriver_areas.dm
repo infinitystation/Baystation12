@@ -2,7 +2,7 @@
 	icon_state = "underground"
 	icon = 'blueriver.dmi'
 	sound_env = ASTEROID
-	req_access = list()
+	req_access = list(access_syndicate)
 
 /area/bluespaceriver/underground
 	name = "\improper Bluespace River Underground"
