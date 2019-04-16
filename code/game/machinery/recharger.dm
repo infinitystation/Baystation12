@@ -153,9 +153,16 @@ obj/machinery/recharger/wallcharger
 	icon_state_idle = "wrecharger0"
 	portable = 0
 
-/obj/machinery/recharger/wallcharger/on_update_icon()
-	..()
-	if(charging)
-		icon_state = icon_state_charging
-	else
-		icon_state = icon_state_idle
+/obj/machinery/recharger/wallcharger/New()
+	pixel_y = 0
+	pixel_x = 0
+	var/turf/T = get_step(get_turf(src), src.dir)
+	if(istype(T) && T.density)
+		if(src.dir == NORTH)
+			pixel_y = -22
+		else if(src.dir == EAST)
+			pixel_x = 22
+		else if(src.dir == WEST)
+			pixel_x = -22
+		else if(src.dir == SOUTH)
+			pixel_y = 25
