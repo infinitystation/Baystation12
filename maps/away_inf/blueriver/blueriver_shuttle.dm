@@ -32,11 +32,11 @@
 	range = 3
 	fuel_consumption = 3
 	logging_home_tag = "nav_blueriver_shuttle"
-	logging_access = list(151)
+	logging_access = list(access_syndicate)
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling
 	defer_initialisation = TRUE
 
 /obj/machinery/computer/shuttle_control/explore/blueriver_shuttle
 	name = "cometa control console"
 	shuttle_tag = "Cometa"
-	req_access = list(151)
+	req_access = list(access_syndicate)
