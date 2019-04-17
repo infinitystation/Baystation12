@@ -11,6 +11,7 @@
 	available_on_syndinet = 1
 	nanomodule_path = /datum/nano_module/program/revelation/
 	var/armed = 0
+	is_illegal = 1
 
 /datum/computer_file/program/revelation/run_program(var/mob/living/user)
 	. = ..(user)

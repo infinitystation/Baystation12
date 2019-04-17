@@ -14,6 +14,7 @@
 	var/dos_speed = 0
 	var/error = ""
 	var/executed = 0
+	is_illegal = 1
 
 /datum/computer_file/program/ntnet_dos/process_tick()
 	dos_speed = 0
@@ -105,7 +106,7 @@
 		executed = 1
 		target.dos_sources.Add(src)
 		operator_skill = usr.get_skill_value(SKILL_COMPUTER)
-	
+
 		var/list/sources_to_show = list(computer.network_card.get_network_tag())
 		var/extra_to_show = 2 * max(operator_skill - SKILL_ADEPT, 0)
 		if(extra_to_show)

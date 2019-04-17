@@ -256,50 +256,6 @@ Subtypes
 	comp.network_card.proxy_id = id
 	return "proxy: Device proxy set to [id]."
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //[INFINITY]____________________________________________________________________________________________________________________
 
 /datum/terminal_command/listdir
@@ -315,9 +271,13 @@ Subtypes
 		return "listdir: Access attempt to local storage failed. Check integrity of your hard drive"
 	var/list/massive_of_programm_names = list()
 	for(var/datum/computer_file/F in terminal.computer.hard_drive.stored_files)
-		var/prog_size = num2text(F.size)
-		var/prg_data = F.filename + "." + F.filetype + "	|	" + prog_size + " GQ"
-		massive_of_programm_names.Add(prg_data)
+		if(F.is_illegal == 0)
+			var/prog_size = num2text(F.size)
+			var/prg_data = F.filename + "." + F.filetype + "	|	" + prog_size + " GQ"
+			massive_of_programm_names.Add(prg_data)
+		else
+			var/prg_data = "\[ENCRYPTED\]" + "." + "\[ENCRYPTED\]" + "	|	" + "\[ENCRYPTED\]" + " GQ"
+			massive_of_programm_names.Add(prg_data)
 	return massive_of_programm_names
 
 /datum/terminal_command/shutdown
