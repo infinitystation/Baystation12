@@ -17,7 +17,6 @@
 	fore_dir = WEST
 	color = "#ff00ff"
 	vessel_mass = 1000
-	knockdown = 0 //INFINITY'S CHANGE!
 	initial_restricted_waypoints = list(
 		"Skrellian Shuttle" = list("nav_skrellscoutsh_dock")
 	)
@@ -39,6 +38,7 @@
 	warmup_time = 5
 	multiz = 1
 	range = 1
+	knockdown = 0 //INFINITY'S CHANGE!
 	current_location = "nav_skrellscout_start"
 	current_dock_target = "xil_dock"
 	shuttle_area = list(
