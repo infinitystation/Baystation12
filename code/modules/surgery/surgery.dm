@@ -118,7 +118,7 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 
 /decl/surgery_step/proc/success_chance(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
 	. = tool_quality(tool)
-	if(target.can_feel_pain() && (target.wear_suit != /obj/item/clothing/suit/straight_jacket || target.stat == UNCONSCIOUS))
+	if(target.can_feel_pain() && (target.wear_suit != /obj/item/clothing/suit/straight_jacket || target.stat >= UNCONSCIOUS))// UNCONSCIOUS or DEAD
 		for(var/obj/item/organ/external/E in target.organs)
 			. -= E.pain
 	if(user == target)
