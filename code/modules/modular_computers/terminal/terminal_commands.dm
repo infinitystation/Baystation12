@@ -269,16 +269,16 @@ Subtypes
 		return "listdir: Improper syntax. Use listdir."
 	if(!terminal.computer.hard_drive.check_functionality())
 		return "listdir: Access attempt to local storage failed. Check integrity of your hard drive"
-	var/list/massive_of_programm_names = list()
+	var/list/massive_of_program_names = list()
 	for(var/datum/computer_file/F in terminal.computer.hard_drive.stored_files)
 		if(F.is_illegal == 0)
 			var/prog_size = num2text(F.size)
 			var/prg_data = F.filename + "." + F.filetype + "	|	" + prog_size + " GQ"
-			massive_of_programm_names.Add(prg_data)
+			massive_of_program_names.Add(prg_data)
 		else
 			var/prg_data = "\[ENCRYPTED\]" + "." + "\[ENCRYPTED\]" + "	|	" + "\[ENCRYPTED\]" + " GQ"
-			massive_of_programm_names.Add(prg_data)
-	return massive_of_programm_names
+			massive_of_program_names.Add(prg_data)
+	return massive_of_program_names
 
 /datum/terminal_command/shutdown
 	name = "shutdown"
@@ -294,22 +294,67 @@ Subtypes
 
 /datum/terminal_command/launch
 	name = "launch"
-	man_entry = list("Format: launch programm", "Runs the program from local memory.")
+	man_entry = list("Format: launch program", "Runs the program from local memory.")
 	pattern = "^launch"
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/launch/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	return "working in progress"
 
-/datum/terminal_command/restore_sesion
-	name = "restore_sesion"
-	man_entry = list("Format: restore_sesion", "Runs the current launched programms")
-	pattern = "^restore_sesion$"
+/datum/terminal_command/session
+	name = "session"
+	man_entry = list("Format: session; session -restore; session -kill",
+					"Utilite for manipulations with active programs",
+					"As session return list of active PRG programs.",
+					"Option -kill kill all active PRG programs"/*,
+					"Option -restore open all active programs."*/)
+	pattern = "^session"
 	skill_needed = SKILL_ADEPT
 
-/datum/terminal_command/restore_sesion/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	return "working in progress"
+/datum/terminal_command/session/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	if(length(text) > 18 || length(text) < 6)
+		return "session: Invalid input. Enter man session for syntax help."
+	if(!terminal.computer.processor_unit.check_functionality())
+		return "session: Access attempt to RAM failed. Check integrity of your CPU."
+	var/datum/computer_file/program/PRG = /datum/computer_file/program
+	if(copytext(text, 1, 8) == "session")
+		if(copytext(text,8, 15) == " -kill")
 
+			if(length(terminal.computer.idle_threads) != 0)
+				for(PRG in terminal.computer.idle_threads)
+					PRG.kill_program(1)
+				terminal.computer.active_program.kill_program(1)
+				return "session: Active background and current programs killed."
+			else
+				terminal.computer.active_program.kill_program(1)
+				return "session: Background programs is absent. Just kill current program."
+//TODO_inf-Elar-18.04.19: Option -restore, open interface of all active and background programs.
+/*		if(copytext(text, 8, 17) == " -restore")
+			return "work in progress"*/
+		var/list/massive_of_active_progs
+		var/er_msg = "programs is absent"
+		if(length(terminal.computer.idle_threads) != 0)
+			for(PRG in terminal.computer.idle_threads)
+				if(PRG.is_illegal == 0)
+					var/act_prog = PRG.filename
+					massive_of_active_progs.Add(act_prog)
+				else
+					var/act_prog = "\[ENCRYPTED\]"
+					massive_of_active_progs.Add(act_prog)
 
+			if(PRG == terminal.computer.active_program)
+				massive_of_active_progs.Add(terminal.computer.active_program)
+			else
+				er_msg = "current" + er_msg
 
+		else
+			if(copytext(er_msg,1,7) == "current")
+				er_msg = "session: background and " + er_msg
+			else if(copytext(er_msg,1,7) != "current")
+				er_msg = "session: background " + er_msg
+			else
+				return er_msg
+			return er_msg
+		return massive_of_active_progs
+	return "session: Wrong input. Enter man session for syntax help."
 //[/INFINITY]_______________________________________________________________________________________________________________
