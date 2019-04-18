@@ -42,7 +42,7 @@
 
 /obj/item/ammo_casing/pistol/throwback
 	desc = "An antique pistol bullet casing. Somewhere between 9 and 11 mm in caliber."
-	caliber = CALIBER_PISTOL_ANTIQUE
+	caliber = CALIBER_PISTOL_BIG
 
 /obj/item/ammo_casing/gyrojet
 	desc = "A minirocket casing."

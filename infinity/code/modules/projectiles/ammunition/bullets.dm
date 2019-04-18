@@ -1,6 +1,6 @@
 /obj/item/ammo_casing/a22lr
 	desc = "A .22LR bullet casing."
-	caliber = "22"
+	caliber = CALIBER_PISTOL_TINY 
 	projectile_type = /obj/item/projectile/bullet/pistol/tiny
 
 /obj/item/ammo_casing/a22lr/rubber
@@ -11,7 +11,7 @@
 
 /obj/item/ammo_casing/a357
 	desc = "A .357 bullet casing."
-	caliber = ".357"
+	caliber = CALIBER_PISTOL_SMALL_MAGNUM
 	icon_state = "357casing"
 	spent_icon = "357casing-spent"
 
@@ -21,7 +21,7 @@
 
 /obj/item/ammo_casing/c57
 	desc = "A 5.7mm bullet casing."
-	caliber = "57"
+	caliber = CALIBER_PISTOL_FAST
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/fast
 
 /obj/item/ammo_casing/c9mm/used/Initialize()
@@ -39,34 +39,24 @@
 	projectile_type = /obj/item/projectile/bullet/rifle/a12755
 	icon_state = "lcasing"
 	spent_icon = "lcasing-spent"
-	caliber = "127x55"
+	caliber = CALIBER_ANTIMATERIAL_SMALL
 	matter = list(MATERIAL_STEEL = 500)
 
 /obj/item/ammo_casing/uni46x30mm
 	desc = "A 46x30mm bullet casing."
-	caliber = "46x30mm"
+	caliber = CALIBER_PISTOL_FAST 
 	projectile_type = /obj/item/projectile/bullet/smg/uni46x30mm
 
 /obj/item/ammo_casing/nt28mm
 	desc = "A 5.7x28mm bullet casing."
-	caliber = "57x28mm"
+	caliber = CALIBER_PISTOL_FAST 
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/fast
-
-/obj/item/ammo_casing/uni46x30mm
-	desc = "A 46x30mm bullet casing."
-	caliber = "46x30mm"
-	projectile_type = /obj/item/projectile/bullet/smg/uni46x30mm
-
-/obj/item/ammo_casing/nt28mm
-	desc = "A 5.7x28mm bullet casing."
-	caliber = "57x28mm"
-	projectile_type = /obj/item/projectile/bullet/pistol/medium/fast
-
+	
 // EMP ammo.
 /obj/item/ammo_casing/c44/emp
 	desc = "A .44 haywire round"
 	desc = "A .44 bullet casing fitted with a single-use ion pulse generator."
-	caliber = ".44"
+	caliber = CALIBER_PISTOL_BIG_MAGNUM
 	icon_state = "empcasing"
 	projectile_type = /obj/item/projectile/ion/small
 	matter = list(MATERIAL_STEEL = 130, MATERIAL_URANIUM = 100)

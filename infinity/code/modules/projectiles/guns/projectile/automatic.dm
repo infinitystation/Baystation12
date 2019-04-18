@@ -15,7 +15,7 @@
 		)
 
 	w_class = ITEM_SIZE_NORMAL
-	caliber = "57x28mm"
+	caliber = CALIBER_PISTOL_FAST
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 3)
 	slot_flags = SLOT_BELT
 	ammo_type = /obj/item/ammo_casing/nt28mm
@@ -42,7 +42,7 @@
 	item_state = null
 	w_class = ITEM_SIZE_HUGE
 	force = 10
-	caliber = "127x55"
+	caliber = CALIBER_ANTIMATERIAL_SMALL
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
@@ -61,65 +61,6 @@
 	icon_state = (ammo_magazine)? "amrcarabine" : "amrcarabine-e"
 	..()
 
-/obj/item/weapon/gun/projectile/automatic/z9
-	name = "Z9 carabine"
-	desc = "The assault carabine Z9 'Viper' made by Aussec Armory from blueprints of Z8 'Bulldog' manufactured the now defunct Zendai Foundries. Old design was swapped with more futuristic one. 'Viper' conting as one of newest weapon on market, so you cannot buy it easy. You don't know who may hold that gun, but they should be pretty rich... Like governments special forces or famouse PMC companies like SAARE."
-	icon = 'icons/obj/infinity_guns.dmi'
-	icon_state = "bullpup"
-	item_state = "bullpup"
-	item_icons = list(
-		slot_r_hand_str = 'icons/mob/infinity/misc.dmi',
-		slot_l_hand_str = 'icons/mob/infinity/misctwo.dmi',
-		)
-	wielded_item_state = "bullpup-wielded"
-	w_class = ITEM_SIZE_HUGE
-	force = 12
-	caliber = "a762"
-	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 4)
-	ammo_type =/obj/item/ammo_casing/rifle/military
-	slot_flags = SLOT_BELT|SLOT_BACK
-	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/mil_rifle/extended
-	allowed_magazines = /obj/item/ammo_magazine/mil_rifle
-	auto_eject = 1
-	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	one_hand_penalty = 4
-	firemodes = list(
-		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, use_launcher=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
-		list(mode_name="3-round bursts", burst=3,    fire_delay=0,	  move_delay=null, use_launcher=null, one_hand_penalty=5, burst_accuracy=list(0,-0.6,-1.2), dispersion=list(0.4, 0.8, 1.2)),
-		list(mode_name="fire grenades",  burst=null, fire_delay=null, move_delay=null, use_launcher=1,    one_hand_penalty=3, burst_accuracy=null, dispersion=null)
-		)
-
-	var/use_launcher = 0
-	var/obj/item/weapon/gun/launcher/grenade/underslung/launcher
-
-/obj/item/weapon/gun/projectile/automatic/z9/New()
-	..()
-	launcher = new(src)
-
-/obj/item/weapon/gun/projectile/automatic/z9/attackby(obj/item/I, mob/user)
-	if((istype(I, /obj/item/weapon/grenade)))
-		launcher.load(I, user)
-	else
-		..()
-
-/obj/item/weapon/gun/projectile/automatic/z9/attack_hand(mob/user)
-	if(user.get_inactive_hand() == src && use_launcher)
-		launcher.unload(user)
-	else
-		..()
-
-/obj/item/weapon/gun/projectile/automatic/z9/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
-	if(use_launcher)
-		launcher.Fire(target, user, params, pointblank, reflex)
-		if(!launcher.chambered)
-			switch_firemodes() //switch back automatically
-	else
-		..()
-
-/obj/item/weapon/gun/projectile/automatic/z9/on_update_icon()
-	icon_state = (ammo_magazine)? "bullpup" : "bullpup-e"
-	..()
 
 /obj/item/weapon/gun/projectile/automatic/bp15
 	name = "BP-15 PDW"
@@ -132,7 +73,7 @@
 		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_guns.dmi',
 		)
 	w_class = ITEM_SIZE_NORMAL
-	caliber = "57"
+	caliber = CALIBER_PISTOL_FAST
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
 	ammo_type = /obj/item/ammo_casing/c57
@@ -160,7 +101,7 @@
 	w_class = ITEM_SIZE_LARGE
 	var/projetcile_type = 0
 	force = 10
-	caliber = "46x30mm"
+	caliber = CALIBER_PISTOL_FAST
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 8)
 	slot_flags = SLOT_BELT|SLOT_BACK
 	load_method = MAGAZINE
