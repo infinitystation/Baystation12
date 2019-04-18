@@ -39,7 +39,7 @@
 	desc = "The sielent and deadly and manufactured by Aussec Armory, bullpup carabine LDC-542 is a common weapon for a long-medium ranged combat units in Private Military Companies. Uses 12.7x55mm rounds."
 	icon = 'icons/obj/infinity_guns.dmi'
 	icon_state = "amrcarabine"
-	item_state = null
+	item_state = "z8carbine"
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = CALIBER_ANTIMATERIAL_SMALL
