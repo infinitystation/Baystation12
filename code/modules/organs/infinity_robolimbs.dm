@@ -53,6 +53,11 @@
 	burn_mod = 0.7
 	speed_mod = 0.18
 
+/datum/robolimb/hephaestus/athena
+	company = "Hephaestus Athena"
+	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_athena.dmi'
+	allowed_ckeys = list("woofwoof322")
+
 /datum/robolimb/xion/special
 	company = "Xion Special"
 	icon = 'icons/mob/human_races/cyberlimbs/xion/xion_special.dmi'
