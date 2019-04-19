@@ -303,7 +303,7 @@ Subtypes
 
 /datum/terminal_command/session
 	name = "session"
-	man_entry = list("Format: session; session -restore; session -kill",
+	man_entry = list("Format: session; session -kill",
 					"Utilite for manipulations with active programs",
 					"As session return list of active PRG programs.",
 					"Option -kill kill all active PRG programs"/*,
@@ -312,49 +312,42 @@ Subtypes
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/session/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/datum/computer_file/program/PRG = /datum/computer_file/program
+	var/obj/item/modular_computer/CT = terminal.computer
 	if(length(text) > 18 || length(text) < 6)
 		return "session: Invalid input. Enter man session for syntax help."
-	if(!terminal.computer.processor_unit.check_functionality())
+	if(!CT.processor_unit.check_functionality())
 		return "session: Access attempt to RAM failed. Check integrity of your CPU."
-	var/datum/computer_file/program/PRG = /datum/computer_file/program
-	if(copytext(text, 1, 8) == "session")
-		if(copytext(text,8, 15) == " -kill")
-
-			if(length(terminal.computer.idle_threads) != 0)
-				for(PRG in terminal.computer.idle_threads)
-					PRG.kill_program(1)
-				terminal.computer.active_program.kill_program(1)
-				return "session: Active background and current programs killed."
-			else
-				terminal.computer.active_program.kill_program(1)
-				return "session: Background programs is absent. Just kill current program."
-//TODO_inf-Elar-18.04.19: Option -restore, open interface of all active and background programs.
-/*		if(copytext(text, 8, 17) == " -restore")
-			return "work in progress"*/
-		var/list/massive_of_active_progs
-		var/er_msg = "programs is absent"
-		if(length(terminal.computer.idle_threads) != 0)
-			for(PRG in terminal.computer.idle_threads)
-				if(PRG.is_illegal == 0)
-					var/act_prog = PRG.filename
-					massive_of_active_progs.Add(act_prog)
-				else
-					var/act_prog = "\[ENCRYPTED\]"
-					massive_of_active_progs.Add(act_prog)
-
-			if(PRG == terminal.computer.active_program)
-				massive_of_active_progs.Add(terminal.computer.active_program)
-			else
-				er_msg = "current" + er_msg
-
+	var/ermsg = " programs is absent"
+	if(copytext(text,8) == " -kill")
+		if(CT.idle_threads)
+			for(PRG in CT.idle_threads)
+				PRG.kill_program(1)
+			CT.active_program.kill_program(1)
+			CT.update_icon()
+			return "session: Active background and current programs killed."
 		else
-			if(copytext(er_msg,1,7) == "current")
-				er_msg = "session: background and " + er_msg
-			else if(copytext(er_msg,1,7) != "current")
-				er_msg = "session: background " + er_msg
+			ermsg = "background" + ermsg
+		if(CT.active_program)
+			CT.active_program.kill_program(1)
+		else
+			if(copytext(ermsg, 1, 10) == "background")
+				ermsg = "Curent and " + ermsg
 			else
-				return er_msg
-			return er_msg
+				ermsg = "Curent" + ermsg
+			ermsg = "session: " + ermsg
+			return ermsg
+	var/list/massive_of_active_progs = list()
+	for(PRG in CT.idle_threads)
+		if(PRG.is_illegal)
+			var/act_prog = "\[ENCRYPTED\]"
+			massive_of_active_progs.Add(act_prog)
+		else
+			var/act_prog = PRG.filename
+			massive_of_active_progs.Add(act_prog)
+	if(CT.active_program)
+		massive_of_active_progs.Add(CT.active_program.filename)
+	if(massive_of_active_progs)
 		return massive_of_active_progs
 	return "session: Wrong input. Enter man session for syntax help."
 //[/INFINITY]_______________________________________________________________________________________________________________
