@@ -57,15 +57,15 @@
 	safety_icon = "safety"
 	force = 9
 	caliber = CALIBER_PISTOL_MAGNUM
-	fire_delay = 12
+	fire_delay = 17
 	screen_shake = 2
 	magazine_type = /obj/item/ammo_magazine/magnum
 	allowed_magazines = /obj/item/ammo_magazine/magnum
 	mag_insert_sound = 'sound/weapons/guns/interaction/hpistol_magin.ogg'
 	mag_remove_sound = 'sound/weapons/guns/interaction/hpistol_magout.ogg'
-	accuracy = 2
-	one_hand_penalty = 2
-	bulk = 3
+	accuracy = 0
+	one_hand_penalty = 3
+	bulk = 4
 
 /obj/item/weapon/gun/projectile/pistol/throwback
 	name = "pistol"
