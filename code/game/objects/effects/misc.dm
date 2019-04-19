@@ -30,7 +30,7 @@
 		W.update_icon()
 	var/obj/structure/wall_frame/WF = locate() in loc
 	if(WF)
-		WF.color = color
+		WF.paint_color = color
 		WF.update_icon()
 	return INITIALIZE_HINT_QDEL
 
@@ -54,6 +54,12 @@
 
 /obj/effect/paint/dark_gunmetal
 	color = COLOR_DARK_GUNMETAL
+
+/obj/effect/paint/green
+	color = COLOR_GREEN_GRAY
+
+/obj/effect/paint/blue
+	color = COLOR_NAVY_BLUE
 
 //Stripes the wall it spawns on, then dies
 /obj/effect/paint_stripe

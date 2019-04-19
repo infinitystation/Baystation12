@@ -5,9 +5,9 @@
 	name = "passenger liner"
 	desc = "Sensors detect an undamaged vessel without any signs of activity."
 	color = "#bd6100"
-	vessel_mass = 100
+	vessel_mass = 5000
 	max_speed = 1/(2 SECONDS)
-	burn_delay = 20 SECONDS
+	burn_delay = 1 SECOND
 	initial_generic_waypoints = list(
 		"nav_casino_1",
 		"nav_casino_2",
@@ -148,20 +148,20 @@
 	icon_state = "craps_down"
 
 //========================used bullet casings=======================
-/obj/item/ammo_casing/a556/used/Initialize()
+/obj/item/ammo_casing/rifle/used/Initialize()
 	. = ..()
 	expend()
 	pixel_x = rand(-10, 10)
 	pixel_y = rand(-10, 10)
 
 
-/obj/item/ammo_casing/c45/used/Initialize()
+/obj/item/ammo_casing/pistol/used/Initialize()
 	. = ..()
 	expend()
 	pixel_x = rand(-10, 10)
 	pixel_y = rand(-10, 10)
 
-/obj/item/ammo_casing/a50/used/Initialize()
+/obj/item/ammo_casing/pistol/magnum/used/Initialize()
 	. = ..()
 	expend()
 	pixel_x = rand(-10, 10)

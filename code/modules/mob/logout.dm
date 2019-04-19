@@ -3,7 +3,7 @@
 	SStgui && SStgui.on_logout(src)
 	GLOB.player_list -= src
 	log_access("Logout: [key_name(src)]")
-	handle_admin_logout()
+//	handle_admin_logout() //we have handle_staff_logout()
 	if(my_client)
 		my_client.screen -= l_general
 		my_client.screen -= l_plane
@@ -14,7 +14,7 @@
 
 	my_client = null
 	return 1
-
+/*
 /mob/proc/handle_admin_logout()
 	if(admin_datums[ckey] && GAME_STATE == RUNLEVEL_GAME) //Only report this stuff if we are currently playing.
 		var/datum/admins/holder = admin_datums[ckey]
@@ -24,3 +24,4 @@
 			if(config.delist_when_no_admins && GLOB.visibility_pref)
 				world.update_hub_visibility()
 				send2adminirc("Toggled hub visibility. The server is now invisible ([GLOB.visibility_pref]).")
+*/

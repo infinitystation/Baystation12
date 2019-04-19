@@ -11,7 +11,7 @@
 	wielded_item_state = "m16gl-wielded"
 	w_class = ITEM_SIZE_HUGE
 	force = 12
-	caliber = "a556"
+	caliber = CALIBER_RIFLE_MILITARY
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 4)
 	ammo_type = /obj/item/ammo_casing/a556
 	load_method = MAGAZINE
@@ -74,7 +74,7 @@
 	force = 10
 	slot_flags = 0
 	max_shells = 50
-	caliber = "a556"
+	caliber = CALIBER_RIFLE_MILITARY
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 2)
 	slot_flags = 0 //need sprites for SLOT_BACK
 	ammo_type = /obj/item/ammo_casing/a556
@@ -156,7 +156,7 @@
 	item_state = "m14"
 	w_class = ITEM_SIZE_HUGE
 	force = 10
-	caliber = "a762"
+	caliber = CALIBER_RIFLE_SNIPER
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
 	slot_flags = SLOT_BACK
 	ammo_type = /obj/item/ammo_casing/a762

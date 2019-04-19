@@ -39,10 +39,11 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	name = "drinking glass"
 	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/square
 	category = "General"
-	New()
-		..()
-		var/obj/O = path
-		name = initial(O.name) // generic recipes yay
+
+/datum/autolathe/recipe/drinkingglass/New()
+	..()
+	var/obj/O = path
+	name = initial(O.name) // generic recipes yay
 
 /datum/autolathe/recipe/drinkingglass/rocks
 	path = /obj/item/weapon/reagent_containers/food/drinks/glass2/rocks
@@ -172,6 +173,13 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	is_stack = 1
 	resources = list(MATERIAL_GLASS = SHEET_MATERIAL_AMOUNT * EXTRA_COST_FACTOR)
 
+/datum/autolathe/recipe/aluminium
+	name = "aluminium sheets"
+	path = /obj/item/stack/material/aluminium
+	category = "General"
+	is_stack = 1
+	resources = list(MATERIAL_ALUMINIUM = SHEET_MATERIAL_AMOUNT * EXTRA_COST_FACTOR)
+
 /datum/autolathe/recipe/rglass
 	name = "reinforced glass sheets"
 	path = /obj/item/stack/material/glass/reinforced
@@ -179,15 +187,22 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	is_stack = 1
 	resources = list(MATERIAL_GLASS = (SHEET_MATERIAL_AMOUNT/2) * EXTRA_COST_FACTOR, MATERIAL_STEEL = (SHEET_MATERIAL_AMOUNT/2) * EXTRA_COST_FACTOR)
 
+/datum/autolathe/recipe/plastic
+	name = "plastic sheets"
+	path = /obj/item/stack/material/plastic
+	category = "General"
+	is_stack = 1
+	resources = list(MATERIAL_PLASTIC = SHEET_MATERIAL_AMOUNT * EXTRA_COST_FACTOR)
+
 /datum/autolathe/recipe/rods
 	name = "metal rods"
-	path = /obj/item/stack/rods
+	path = /obj/item/stack/material/rods
 	category = "General"
 	is_stack = 1
 
 /datum/autolathe/recipe/knife
 	name = "kitchen knife"
-	path = /obj/item/weapon/material/knife
+	path = /obj/item/weapon/material/knife/kitchen
 	category = "General"
 
 /datum/autolathe/recipe/taperecorder
@@ -198,11 +213,6 @@ var/const/EXTRA_COST_FACTOR = 1.25
 /datum/autolathe/recipe/tape
 	name = "tape"
 	path = /obj/item/device/tape
-	category = "General"
-
-/datum/autolathe/recipe/tape_roll
-	name = "tape roll"
-	path = /obj/item/weapon/tape_roll
 	category = "General"
 
 /datum/autolathe/recipe/airlockmodule
@@ -264,11 +274,6 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	path = /obj/item/weapon/hemostat
 	category = "Medical"
 
-/datum/autolathe/recipe/autopsy_scanner
-	name = "autopsy scanner"
-	path = /obj/item/weapon/autopsy_scanner
-	category = "Medical"
-
 /datum/autolathe/recipe/beaker
 	name = "glass beaker"
 	path = /obj/item/weapon/reagent_containers/glass/beaker
@@ -304,14 +309,14 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	path = /obj/item/weapon/implanter
 	category = "Medical"
 
-/datum/autolathe/recipe/implant_pad
-	name = "implant pad"
-	path = /obj/item/weapon/implantpad
-	category = "Medical"
-
 /datum/autolathe/recipe/syringegun_ammo
 	name = "syringe gun cartridge"
 	path = /obj/item/weapon/syringe_cartridge
+	category = "Arms and Ammunition"
+
+/datum/autolathe/recipe/shotgun_holder
+	name = "shotgun ammunition holder"
+	path = /obj/item/ammo_magazine/shotholder/empty
 	category = "Arms and Ammunition"
 
 /datum/autolathe/recipe/shotgun_blanks
@@ -331,45 +336,9 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	hidden = 1
 	category = "Arms and Ammunition"
 
-/datum/autolathe/recipe/magazine_rubber
-	name = "ammunition (.45, rubber)"
-	path = /obj/item/ammo_magazine/c45m/rubber
-	hidden = 1
-	category = "Arms and Ammunition"
-
-/datum/autolathe/recipe/magazine_rubber_45ds
-	name = "ammunition (.45, rubber) double-stack"
-	path = /obj/item/ammo_magazine/c45mds/rubber
-	hidden = 1
-	category = "Arms and Ammunition"
-
-/datum/autolathe/recipe/speedloader_357_rubber
-	name = "speed loader (.357 Magnum, rubber)"
-	path = /obj/item/ammo_magazine/c357/rubber
-	hidden = 1
-	category = "Arms and Ammunition"
-
-/datum/autolathe/recipe/magazine_flash
-	name = "ammunition (.45, flash)"
-	path = /obj/item/ammo_magazine/c45m/flash
-	hidden = 1
-	category = "Arms and Ammunition"
-
-/datum/autolathe/recipe/magazine_flash_45ds
-	name = "ammunition (.45, flash) double-stack"
-	path = /obj/item/ammo_magazine/c45mds/flash
-	hidden = 1
-	category = "Arms and Ammunition"
-
 /datum/autolathe/recipe/magazine_smg_rubber
-	name = "ammunition (9mm rubber) top mounted"
-	path = /obj/item/ammo_magazine/mc9mmt/rubber
-	hidden = 1
-	category = "Arms and Ammunition"
-
-/datum/autolathe/recipe/magazine_smg_flash
-	name = "ammunition (9mm, flash) top mounted"
-	path = /obj/item/ammo_magazine/mc9mmt/flash
+	name = "ammunition (SMG rubber) top mounted"
+	path = /obj/item/ammo_magazine/smg_top/rubber
 	hidden = 1
 	category = "Arms and Ammunition"
 
@@ -401,11 +370,6 @@ var/const/EXTRA_COST_FACTOR = 1.25
 /datum/autolathe/recipe/sensor_prox
 	name = "proximity sensor"
 	path = /obj/item/device/assembly/prox_sensor
-	category = "Devices and Components"
-
-/datum/autolathe/recipe/sensor_voice
-	name = "voice analyzer"
-	path = /obj/item/device/assembly/voice
 	category = "Devices and Components"
 
 /datum/autolathe/recipe/cable_coil
@@ -464,24 +428,29 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	path = /obj/item/weapon/pen/green
 	category = "General"
 
-/datum/autolathe/recipe/clipboard
-	name = "clipboard"
-	path = /obj/item/weapon/clipboard
+/datum/autolathe/recipe/clipboard_steel
+	name = "clipboard, steel"
+	path = /obj/item/weapon/material/clipboard/steel
+	category = "General"
+
+/datum/autolathe/recipe/clipboard_alum
+	name = "clipboard, aluminium"
+	path = /obj/item/weapon/material/clipboard/aluminium
+	category = "General"
+
+/datum/autolathe/recipe/clipboard_glass
+	name = "clipboard, glass"
+	path = /obj/item/weapon/material/clipboard/glass
+	category = "General"
+
+/datum/autolathe/recipe/clipboard_alum
+	name = "clipboard, plastic"
+	path = /obj/item/weapon/material/clipboard/plastic
 	category = "General"
 
 /datum/autolathe/recipe/destTagger
 	name = "destination tagger"
 	path = /obj/item/device/destTagger
-	category = "General"
-
-/datum/autolathe/recipe/camera
-	name = "polaroid camera"
-	path = /obj/item/device/camera
-	category = "General"
-
-/datum/autolathe/recipe/camera_film
-	name = "camera film"
-	path = /obj/item/device/camera_film
 	category = "General"
 
 /datum/autolathe/recipe/labeler
@@ -495,99 +464,87 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	hidden = 1
 	category = "Arms and Ammunition"
 
-/datum/autolathe/recipe/magazine_revolver_1
-	name = "ammunition (.44 Magnum)"
-	path = /obj/item/ammo_magazine/a44
+/datum/autolathe/recipe/speedloader
+	name = "ammunition (speedloader)"
+	path = /obj/item/ammo_magazine/speedloader
 	hidden = 1
 	category = "Arms and Ammunition"
 
-/datum/autolathe/recipe/magazine_revolver_2
-	name = "ammunition (.45)"
-	path = /obj/item/ammo_magazine/c45m
+/datum/autolathe/recipe/speedloader_small
+	name = "ammunition (speedloader, holdout)"
+	path = /obj/item/ammo_magazine/speedloader/small
 	hidden = 1
 	category = "Arms and Ammunition"
 
-/datum/autolathe/recipe/magazine_45ds
-	name = "ammunition (.45) double-stack"
-	path = /obj/item/ammo_magazine/c45mds
+/datum/autolathe/recipe/speedloader_magnum
+	name = "ammunition (speedloader, magnum)"
+	path = /obj/item/ammo_magazine/speedloader/magnum
 	hidden = 1
 	category = "Arms and Ammunition"
 
-/datum/autolathe/recipe/speedloader_357
-	name = "speed loader (.357 Magnum)"
-	path = /obj/item/ammo_magazine/c357
+/datum/autolathe/recipe/magazine_pistol
+	name = "ammunition (pistol)"
+	path = /obj/item/ammo_magazine/pistol
 	hidden = 1
 	category = "Arms and Ammunition"
 
-/datum/autolathe/recipe/magazine_revolver_3
-	name = "ammunition (.38)"
-	path = /obj/item/ammo_magazine/c38
+/datum/autolathe/recipe/magazine_pistol_rubber
+	name = "ammunition (pistol, rubber)"
+	path = /obj/item/ammo_magazine/pistol/rubber
 	hidden = 1
 	category = "Arms and Ammunition"
 
-/datum/autolathe/recipe/magazine_revolver_4
-	name = "ammunition (.50AE)"
-	path = /obj/item/ammo_magazine/c50
+/datum/autolathe/recipe/magazine_pistol_double
+	name = "ammunition (pistol, doublestack)"
+	path = /obj/item/ammo_magazine/pistol/double
 	hidden = 1
 	category = "Arms and Ammunition"
 
-/datum/autolathe/recipe/magazine_stetchkin
-	name = "ammunition (9mm)"
-	path = /obj/item/ammo_magazine/mc9mm
+/datum/autolathe/recipe/magazine_pistol_double_rubber
+	name = "ammunition (pistol, doublestack. rubber)"
+	path = /obj/item/ammo_magazine/pistol/double/rubber
 	hidden = 1
 	category = "Arms and Ammunition"
 
-/datum/autolathe/recipe/magazine_stetchkin_rubber
-	name = "ammunition (9mm, rubber)"
-	path = /obj/item/ammo_magazine/mc9mm/rubber
+/datum/autolathe/recipe/magazine_small
+	name = "ammunition (holdout)"
+	path = /obj/item/ammo_magazine/pistol/small
 	hidden = 1
 	category = "Arms and Ammunition"
 
-/datum/autolathe/recipe/magazine_stetchkin_flash
-	name = "ammunition (9mm, flash)"
-	path = /obj/item/ammo_magazine/mc9mm/flash
-	hidden = 1
-	category = "Arms and Ammunition"
-
-/datum/autolathe/recipe/magazine_9mmds
-	name = "ammunition (9mm) double-stack"
-	path = /obj/item/ammo_magazine/mc9mmds
-	hidden = 1
-	category = "Arms and Ammunition"
-
-/datum/autolathe/recipe/magazine_9mmds_flash
-	name = "ammunition (9mm, flash) double-stack"
-	path = /obj/item/ammo_magazine/mc9mmds/flash
-	hidden = 1
-	category = "Arms and Ammunition"
-
-/datum/autolathe/recipe/magazine_c20r
-	name = "ammunition (10mm)"
-	path = /obj/item/ammo_magazine/a10mm
-	hidden = 1
-	category = "Arms and Ammunition"
-
-/datum/autolathe/recipe/magazine_nt41
-	name = "NT41 ammunition (10mm)"
-	path = /obj/item/ammo_magazine/n10mm
-	hidden = 1
-	category = "Arms and Ammunition"
-
-/datum/autolathe/recipe/magazine_arifle
-	name = "ammunition (5.56mm)"
-	path = /obj/item/ammo_magazine/c556
+/datum/autolathe/recipe/magazine_magnum
+	name = "ammunition (magnum)"
+	path = /obj/item/ammo_magazine/magnum
 	hidden = 1
 	category = "Arms and Ammunition"
 
 /datum/autolathe/recipe/magazine_smg
-	name = "ammunition (9mm) top mounted"
-	path = /obj/item/ammo_magazine/mc9mmt
+	name = "ammunition (submachine gun)"
+	path = /obj/item/ammo_magazine/smg
+	hidden = 1
+	category = "Arms and Ammunition"
+
+/datum/autolathe/recipe/magazine_uzi
+	name = "ammunition (machine pistol)"
+	path = /obj/item/ammo_magazine/machine_pistol
+	hidden = 1
+	category = "Arms and Ammunition"
+
+/datum/autolathe/recipe/magazine_smg_topmounted
+	name = "ammunition (SMG, top mounted)"
+	path = /obj/item/ammo_magazine/smg_top
+	hidden = 1
+	category = "Arms and Ammunition"
+
+/datum/autolathe/recipe/magazine_arifle
+	name = "ammunition (rifle magazine)"
+	path = /obj/item/ammo_magazine/rifle
 	hidden = 1
 	category = "Arms and Ammunition"
 
 /datum/autolathe/recipe/magazine_carbine
-	name = "ammunition (7.62mm)"
-	path = /obj/item/ammo_magazine/a762
+	name = "ammunition (military rifle)"
+	path = /obj/item/ammo_magazine/mil_rifle
 	hidden = 1
 	category = "Arms and Ammunition"
 
@@ -605,25 +562,13 @@ var/const/EXTRA_COST_FACTOR = 1.25
 
 /datum/autolathe/recipe/tacknife
 	name = "tactical knife"
-	path = /obj/item/weapon/material/hatchet/tacknife
+	path = /obj/item/weapon/material/knife/combat
 	hidden = 1
 	category = "Arms and Ammunition"
 
 /datum/autolathe/recipe/stunshell
 	name = "ammunition (stun cartridge, shotgun)"
 	path = /obj/item/ammo_casing/shotgun/stunshell
-	hidden = 1
-	category = "Arms and Ammunition"
-
-/datum/autolathe/recipe/magazine_uzi
-	name = "ammunition (machine.45)"
-	path = /obj/item/ammo_magazine/c45uzi
-	hidden = 1
-	category = "Arms and Ammunition"
-
-/datum/autolathe/recipe/magazine_deagle
-	name = "ammunition (.50 AE)"
-	path = /obj/item/ammo_magazine/a50
 	hidden = 1
 	category = "Arms and Ammunition"
 
@@ -657,12 +602,6 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	hidden = 1
 	category = "General"
 
-/datum/autolathe/recipe/transfer_valve
-	name = "tank transfer valve"
-	path =	/obj/item/device/transfer_valve
-	hidden = 1
-	category = "Devices and Components"
-
 /datum/autolathe/recipe/cell_device
 	name = "device cell"
 	path = /obj/item/weapon/cell/device/standard
@@ -677,3 +616,15 @@ var/const/EXTRA_COST_FACTOR = 1.25
 	name = "plunger"
 	path = /obj/item/clothing/mask/plunger
 	category = "General"
+
+/datum/autolathe/recipe/skrellian_rifle_flechette
+	name = "ammunition (skrellian rifle, flechette)"
+	path = /obj/item/weapon/magnetic_ammo/skrell
+	hidden = 1
+	category = "Arms and Ammunition"
+
+/datum/autolathe/recipe/skrellian_rifle_slug
+	name = "ammunition (skrellian rifle, slug)"
+	path = /obj/item/weapon/magnetic_ammo/skrell/slug
+	hidden = 1
+	category = "Arms and Ammunition"

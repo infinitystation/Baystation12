@@ -26,6 +26,7 @@
 	damage_overlays = 	'infinity/icons/mob/human_races/species/resomi/damage_overlay.dmi'
 	damage_mask = 		'infinity/icons/mob/human_races/species/resomi/damage_mask.dmi'
 	blood_mask = 		'infinity/icons/mob/human_races/species/resomi/blood_mask.dmi'
+	preview_icon =		'infinity/icons/mob/human_races/species/resomi/preview.dmi'
 
 	slowdown = -0.8 //speed fix?
 	total_health = 150
@@ -43,7 +44,7 @@
 	body_temperature = 314.15
 
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN
-	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_EYE_COLOR
+	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_EYE_COLOR | HAS_A_SKIN_TONE
 	bump_flag = MONKEY
 	swap_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 	push_flags = MONKEY|SLIME|SIMPLE_ANIMAL|ALIEN
@@ -79,6 +80,7 @@
 		BP_HEART =    /obj/item/organ/internal/heart,
 		BP_LUNGS =    /obj/item/organ/internal/lungs,
 		BP_LIVER =    /obj/item/organ/internal/liver/resomi,
+		BP_STOMACH =  /obj/item/organ/internal/stomach,
 		BP_KIDNEYS =  /obj/item/organ/internal/kidneys/resomi,
 		BP_BRAIN =    /obj/item/organ/internal/brain,
 		BP_EYES =     /obj/item/organ/internal/eyes

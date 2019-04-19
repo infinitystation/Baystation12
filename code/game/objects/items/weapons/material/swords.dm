@@ -28,6 +28,7 @@
 		)
 	icon_state = "katana"
 	item_state = "katana"
+	furniture_icon = "katana_handle"
 	unbreakable = 1
 	default_material = "plasteel"
 	slot_flags = SLOT_BELT | SLOT_BACK

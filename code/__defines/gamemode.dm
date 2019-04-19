@@ -53,6 +53,9 @@
 #define MODE_TRAITOR "traitor"
 #define MODE_DEITY "deity"
 #define MODE_GODCULTIST "god cultist"
+#define MODE_THRALL "mind thrall"
+#define MODE_PARAMOUNT "paramount"
+#define MODE_FOUNDATION "foundation agent"
 
 #define DEFAULT_TELECRYSTAL_AMOUNT 130
 #define TEAM_TELECRYSTAL_AMOUNT 780 //DEFAULT_TELECRYSTAL_AMOUNT*6

@@ -11,7 +11,7 @@
 	initial_restricted_waypoints = list(
 		"Charon" = list("nav_hangar_calypso"),
 		"Guppy" = list("nav_hangar_guppy"),
-		"Albatross" = list("nav_albatross_dock")
+		"Albatross" = list("nav_albatross_dock"), //away_inf/sentinel/sentinel.dmm shuttle,
 	)
 
 	initial_generic_waypoints = list(
@@ -34,6 +34,7 @@
 		"nav_deck2_guppy",
 		"nav_deck3_guppy",
 		"nav_deck4_guppy",
+		"nav_deck1_salvage",
 		"nav_bridge_guppy",
 		"nav_hangar_aquila",
 		"nav_deck1_aquila",
@@ -41,16 +42,22 @@
 		"nav_deck3_aquila",
 		"nav_deck4_aquila",
 		"nav_bridge_aquila"
+
 	)
 
 /obj/effect/overmap/ship/landable/exploration_shuttle
 	name = "Charon"
 	shuttle = "Charon"
+	max_speed = 1/(4 SECONDS)
+	burn_delay = 2 SECONDS
 	fore_dir = NORTH
 
 /obj/effect/overmap/ship/landable/guppy
 	name = "Guppy"
 	shuttle = "Guppy"
+	max_speed = 1/(10 SECONDS)
+	burn_delay = 2 SECONDS
+	vessel_mass = 1700
 	fore_dir = SOUTH
 
 /obj/machinery/computer/shuttle_control/explore/exploration_shuttle

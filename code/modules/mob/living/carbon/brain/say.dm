@@ -12,13 +12,13 @@
 		if(speaking)
 			message = copytext(message, 2+length(speaking.key))
 		var/verb = "says"
-		var/ending = copytext(message, length(message))
+		var/ending = copytext(message, length(message) - 1)
 		if (speaking)
 			verb = speaking.get_spoken_verb(ending)
 		else
-			if(ending=="!")
+			if(copytext(ending, length(ending))=="!")
 				verb=pick("exclaims","shouts","yells")
-			if(ending=="?")
+			if(copytext(ending, length(ending))=="?")
 				verb="asks"
 
 		if(prob(emp_damage*4))

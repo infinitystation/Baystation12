@@ -1,8 +1,11 @@
 /obj/item/clothing/accessory/wcoat
 	name = "waistcoat"
-	desc = "For some classy, murderous fun."
+	desc = "A classy waistcoat."
 	icon_state = "vest"
 	item_state = "wcoat"
+
+/obj/item/clothing/accessory/wcoat/black
+	color = COLOR_GRAY15
 
 /obj/item/clothing/accessory/suspenders
 	name = "suspenders"
@@ -24,6 +27,11 @@
 	desc = "A fashionable tunic that Hephaestus Industries provides to their lab workers."
 	icon_state = "tunic_heph"
 
+/obj/item/clothing/accessory/tunic/zeng
+	name = "\improper Zeng-Hu tunic"
+	desc = "A fashionable tunic that Zeng-Hu provides to their lab workers."
+	icon_state = "tunic_heph"
+
 /obj/item/clothing/accessory/tunic/exec
 	name = "executive tunic"
 	icon_state = "tunicblack"
@@ -37,6 +45,11 @@
 	name = "\improper Hephaestus Industries executive tunic"
 	desc = "A fashionable tunic that Hephaestus Industries provides to their lab workers."
 	icon_state = "tunicblack_heph"
+
+/obj/item/clothing/accessory/tunic/exec/zeng
+	name = "\improper Zeng-Hu executive tunic"
+	desc = "A fashionable tunic that Zeng-Hu provides to their lab workers."
+	icon_state = "tunicblack_zeng"
 
 /obj/item/clothing/accessory/dashiki
 	name = "black dashiki"
@@ -139,8 +152,11 @@
 
 /obj/item/clothing/accessory/toggleable/vest
 	name = "black vest"
-	desc = "Slick black suit vest."
+	desc = "A slick suit vest."
 	icon_state = "det_vest"
+
+/obj/item/clothing/accessory/toggleable/vest/black
+	color = COLOR_GRAY15
 
 /obj/item/clothing/accessory/toggleable/tan_jacket
 	name = "tan suit jacket"
@@ -185,6 +201,11 @@
 	name = "\improper Hephaestus Industries suit jacket"
 	desc = "A jacket that Hephaestus Industries has their executives wear."
 	icon_state = "jacket_heph"
+
+/obj/item/clothing/accessory/toggleable/corpjacket/zeng
+	name = "\improper Zeng-Hu suit jacket"
+	desc = "A jacket that Zeng-Hu has their executives wear."
+	icon_state = "jacket_zeng"
 
 /obj/item/clothing/accessory/toggleable/hawaii
 	name = "flower-pattern shirt"

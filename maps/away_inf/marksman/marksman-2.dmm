@@ -677,7 +677,7 @@
 	dir = 1;
 	id = "Cell 1p";
 	name = "Cell one";
-	req_access = list(2)
+	req_access = list("ACCESS_BRIG")
 	},
 /obj/effect/floor_decal/corner/red{
 	dir = 5
@@ -705,7 +705,7 @@
 	dir = 1;
 	id = "Cell 2p";
 	name = "Cell two";
-	req_access = list(2)
+	req_access = list("ACCESS_BRIG")
 	},
 /obj/effect/floor_decal/corner/red{
 	dir = 5
@@ -720,11 +720,11 @@
 /turf/simulated/floor,
 /area/ship/marksman/maintenance/upper/pods)
 "bI" = (
-/turf/simulated/floor,
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_l";
 	dir = 8
 	},
+/turf/simulated/floor,
 /turf/simulated/shuttle/wall{
 	dir = 4;
 	icon_state = "swall_c"
@@ -858,7 +858,7 @@
 	name = "north bump";
 	pixel_x = 0;
 	pixel_y = 24;
-	req_access = list(201)
+	req_access = list("ACCESS_ZEPPELIN")
 	},
 /obj/structure/cable{
 	icon_state = "0-2";
@@ -1537,7 +1537,7 @@
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "prisonentry";
 	name = "Brig Entry";
-	req_access = list(2)
+	req_access = list("ACCESS_BRIG")
 	},
 /obj/effect/landmark/overmap_target/sentinel/upper/brig,
 /turf/simulated/floor/tiled,
@@ -1735,7 +1735,7 @@
 	name = "Desk Shutters Control";
 	pixel_x = -24;
 	pixel_y = 14;
-	req_access = list(3)
+	req_access = list("ACCESS_ARMORY")
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
@@ -1774,11 +1774,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/ship/marksman/crew/brig/emergency_armory)
 "dC" = (
-/turf/simulated/floor,
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_r";
 	dir = 8
 	},
+/turf/simulated/floor,
 /turf/simulated/shuttle/wall{
 	dir = 1;
 	icon_state = "swall_c"
@@ -2288,7 +2288,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "Emergency Armory";
-	req_access = list(3)
+	req_access = list("ACCESS_ARMORY")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/marksman/crew/brig/emergency_armory)
@@ -2807,7 +2807,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass{
 	name = "Galley";
-	req_access = list(28)
+	req_access = list("ACCESS_KITCHEN")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -2885,7 +2885,7 @@
 "fB" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Galley Maintenance";
-	req_access = list(28)
+	req_access = list("ACCESS_KITCHEN")
 	},
 /turf/simulated/floor,
 /area/ship/marksman/crew/kitchen)
@@ -3792,7 +3792,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/freezer{
 	name = "Galley Cold Room";
-	req_access = list(28)
+	req_access = list("ACCESS_KITCHEN")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -3965,7 +3965,7 @@
 	name = "Kitchen Showcase";
 	pixel_x = -26;
 	pixel_y = 0;
-	req_access = list(28)
+	req_access = list("ACCESS_KITCHEN")
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/marksman/crew/kitchen)
@@ -4022,7 +4022,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/maintenance{
 	name = "Galley Maintenance";
-	req_access = list(28)
+	req_access = list("ACCESS_KITCHEN")
 	},
 /turf/simulated/floor,
 /area/ship/marksman/crew/kitchen)
@@ -4036,7 +4036,7 @@
 	name = "north bump";
 	pixel_x = 0;
 	pixel_y = 24;
-	req_access = list(201)
+	req_access = list("ACCESS_ZEPPELIN")
 	},
 /obj/structure/cable{
 	icon_state = "0-2";

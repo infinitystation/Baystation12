@@ -4,7 +4,6 @@
 	icon_state = "autolathe"
 	density = 1
 	anchored = 1
-	use_power = 1
 	idle_power_usage = 10
 	active_power_usage = 2000
 	clicksound = "keyboard"
@@ -12,8 +11,8 @@
 	layer = BELOW_OBJ_LAYER
 
 	var/list/machine_recipes
-	var/list/stored_material =  list(MATERIAL_STEEL = 0, MATERIAL_GLASS = 0)
-	var/list/storage_capacity = list(MATERIAL_STEEL = 0, MATERIAL_GLASS = 0)
+	var/list/stored_material =  list(MATERIAL_STEEL = 0, MATERIAL_ALUMINIUM = 0, MATERIAL_GLASS = 0, MATERIAL_PLASTIC = 0)
+	var/list/storage_capacity = list(MATERIAL_STEEL = 0, MATERIAL_ALUMINIUM = 0, MATERIAL_GLASS = 0, MATERIAL_PLASTIC = 0)
 	var/show_category = "All"
 
 	var/hacked = 0
@@ -129,7 +128,7 @@
 /obj/machinery/autolathe/attackby(var/obj/item/O as obj, var/mob/user as mob)
 
 	if(busy)
-		to_chat(user, "<span class='notice'>\The [src] is busy. Please wait for completion of previous operation.</span>")
+		to_chat(user, SPAN_NOTICE("\The [src] is busy. Please wait for completion of previous operation."))
 		return
 
 	if(default_deconstruction_screwdriver(user, O))
@@ -181,20 +180,20 @@
 					qdel(S)
 
 			if(!hasparts)
-				to_chat(user, "<span class='notice'>\The [R] is empty.\nFollowing parts detected in the machine:</span>")
+				to_chat(user, SPAN_NOTICE("\The [R] is empty.\nFollowing parts detected in the machine:"))
 				for(var/var/obj/item/C in component_parts)
-					to_chat(user, "<span class='notice'>	[C.name]</span>")
+					to_chat(user, SPAN_NOTICE("	[C.name]"))
 				return
 
 			if(!filltype)
 				to_chat(user, "<span class='notice'>\The [src] is full. Please remove material from the autolathe in order to insert more.\nFollowing parts detected in the machine:</span>")
 				for(var/var/obj/item/C in component_parts)
-					to_chat(user, "<span class='notice'>	[C.name]</span>")
+					to_chat(user, SPAN_NOTICE("	[C.name]"))
 				return
 			else if(filltype == 1)
-				to_chat(user, "<span class='notice'>You fill \the [src] to capacity with \the [O].</span>")
+				to_chat(user, SPAN_NOTICE("You fill \the [src] to capacity with \the [O]."))
 			else
-				to_chat(user, "<span class='notice'>You empty \the [O] into \the [src].</span>")
+				to_chat(user, SPAN_NOTICE("You empty \the [O] into \the [src]."))
 
 			flick("autolathe_o", src)
 			updateUsrDialog()
@@ -279,7 +278,7 @@
 
 /obj/machinery/autolathe/CanUseTopic(user, href_list)
 	if(busy)
-		to_chat(user, "<span class='notice'>The autolathe is busy. Please wait for completion of previous operation.</span>")
+		to_chat(user, SPAN_NOTICE("The autolathe is busy. Please wait for completion of previous operation."))
 		return min(STATUS_UPDATE, ..())
 	return ..()
 
@@ -309,7 +308,7 @@
 			return TOPIC_HANDLED
 
 		busy = 1
-		update_use_power(2)
+		update_use_power(POWER_USE_ACTIVE)
 
 		//Check if we still have the materials.
 		for(var/material in making.resources)
@@ -329,7 +328,7 @@
 		sleep(build_time * operator_device_skill)
 
 		busy = 0
-		update_use_power(1)
+		update_use_power(POWER_USE_IDLE)
 
 		//Sanity check.
 		if(!making || QDELETED(src)) return TOPIC_HANDLED
@@ -337,16 +336,15 @@
 		//Create the desired item.
 		if(!user.skill_check(SKILL_DEVICES, SKILL_BASIC)) // little chance to fail for unskilled users.
 			if(prob(10))
-				src.audible_message("<span class='warning'>[pick("You hear a strange noises and some metal crackles.", "You hear a strange buzz from [src].")]</span>")
+				audible_message("<span class='warning'>[pick("You hear a strange noises and some metal crackles.", "You hear a strange buzz from [src].")]</span>")
 				return
 
 		var/obj/item/I = new making.path(loc)
-		if(making.is_stack)
-			if(multiplier > 1)
-				var/obj/item/stack/S = I
-				S.amount = multiplier
-				S.update_icon()
-				return
+		if(making.is_stack && multiplier > 1)
+			var/obj/item/stack/S = I
+			S.amount = multiplier
+			S.update_icon()
+			return
 		else
 			for(var/material in making.resources)
 				I.matter[material] = round(making.resources[material] * operator_device_skill * 0.75)
@@ -368,7 +366,9 @@
 		man_rating += M.rating
 
 	storage_capacity[MATERIAL_STEEL] = mb_rating  * 25000
+	storage_capacity[MATERIAL_ALUMINIUM] = mb_rating  * 25000
 	storage_capacity[MATERIAL_GLASS] = mb_rating  * 12500
+	storage_capacity[MATERIAL_PLASTIC] = mb_rating  * 12500
 	build_time = 50 / man_rating
 	mat_efficiency = 1.1 - man_rating * 0.1// Normally, price is 1.25 the amount of material, so this shouldn't go higher than 0.8. Maximum rating of parts is 3
 

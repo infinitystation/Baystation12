@@ -891,6 +891,12 @@
 	icon_state = "medbay3"
 	ambience = list('sound/ambience/signal.ogg')
 
+/area/medical/coffins
+	name = "Coffins Storage"
+	icon_state = "patients" //:^)
+	ambience = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg','sound/music/main.ogg')
+	sound_env = SMALL_ENCLOSED
+
 // Chapel
 /area/chapel/crematorium
 	name = "Crematorium"

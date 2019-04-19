@@ -91,11 +91,12 @@
 	//syllables are at the bottom of the file
 
 /datum/language/human/get_spoken_verb(var/msg_end)
-	switch(msg_end)
-		if("!")
-			return pick("восклицает")
-		if("?")
-			return ask_verb
+	if(msg_end == "!!")
+		return pick("кричит")
+	else if(copytext(msg_end, length(msg_end)) == "!")
+		return pick("восклицает")
+	else if(copytext(msg_end, length(msg_end)) == "?")
+		return ask_verb
 	return speech_verb
 
 /datum/language/human/get_random_name(var/gender)
@@ -219,7 +220,7 @@
 
 /datum/language/confederate
 	name = LANGUAGE_INDEPENDENT
-	desc = "The official language of the Terran Colonial Confederation, evolved from a pidgin of Eastern European languages and English."
+	desc = "The official language of the Independent Colonial Confederation of Gilgamesh, evolved from a pidgin of Eastern European languages and English."
 	speech_verb = "проговаривает"
 	colour = "terran"
 	key = "r"
@@ -251,6 +252,7 @@
 	syllables = list ("die", "en", "skei", "van", "son", "der", "aar", "ch", "op", "ruk", "aa", "be", "ne", "het",
  	"ek", "ras", "ver", "zan", "das", "waa", "geb", "vol", "lu", "min", "breh", "rus", "stv", "ee", "goe", "sk",
  	"la", "ver", "we", "ge", "luk", "an", "ar", "at", "es", "et", "bel", "du", "jaa", "ch", "kk", "gh", "ll", "uu", "wat")
+	partial_understanding = list(LANGUAGE_GALCOM = 15, LANGUAGE_INDEPENDENT = 15, LANGUAGE_SOL_COMMON = 15, LANGUAGE_LUNAR = 20, LANGUAGE_GUTTER = 10)
 	shorthand = "SP"
 
 /datum/language/yeosa

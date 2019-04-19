@@ -46,7 +46,7 @@
 /obj/machinery/suit_cycler/exploration
 	name = "Exploration suit cycler"
 	model_text = "Exploration"
-	req_access = list(access_explorer)
+	req_access = list("ACCESS_EXPLORER")
 	departments = list("Exploration")
 	species = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI)
 
@@ -57,7 +57,7 @@
 	boots_type = /obj/item/clothing/shoes/magboots
 	tank_type = /obj/item/weapon/tank/oxygen
 	mask_type = /obj/item/clothing/mask/breath
-	req_access = list(access_explorer)
+	req_access = list("ACCESS_EXPLORER")
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/pilot

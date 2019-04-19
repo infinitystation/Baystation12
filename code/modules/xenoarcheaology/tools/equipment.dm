@@ -58,7 +58,7 @@
 		/obj/item/weapon/folder,
 		/obj/item/weapon/pen,
 		/obj/item/weapon/folder,
-		/obj/item/weapon/clipboard,
+		/obj/item/weapon/material/clipboard,
 		/obj/item/weapon/anodevice,
 		/obj/item/clothing/glasses,
 		/obj/item/weapon/wrench,

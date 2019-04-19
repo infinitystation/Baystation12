@@ -1,24 +1,28 @@
 /obj/item/weapon/gun/projectile/heavysniper
-	name = "PTR-7 anti-materiel rifle"
+	name = "anti-materiel rifle"
 	desc = "A portable anti-armour rifle fitted with a scope, the HI PTR-7 Rifle was originally designed to used against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease. Fires armor piercing 14.5mm shells."
+	icon = 'icons/obj/guns/heavysniper.dmi'
 	icon_state = "heavysniper"
 	item_state = "heavysniper" //sort of placeholder
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 2, TECH_ILLEGAL = 8)
-	caliber = "14.5mm"
+	caliber = CALIBER_ANTIMATERIAL
 	screen_shake = 2 //extra kickback
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING
 	max_shells = 1
-	ammo_type = /obj/item/ammo_casing/a145
+	ammo_type = /obj/item/ammo_casing/shell
 	one_hand_penalty = 6
 	accuracy = -2
-	scoped_accuracy = 5 //increased accuracy over the LWAP because only one shot
+	bulk = 8
+	scoped_accuracy = 8 //increased accuracy over the LWAP because only one shot
+	scope_zoom = 2
 	var/bolt_open = 0
 	wielded_item_state = "heavysniper-wielded" //sort of placeholder
 	load_sound = 'sound/weapons/guns/interaction/rifle_load.ogg'
+	fire_delay = 12
 
 /obj/item/weapon/gun/projectile/heavysniper/on_update_icon()
 	..()
@@ -73,9 +77,3 @@
 		return
 	..()
 
-/obj/item/weapon/gun/projectile/heavysniper/verb/scope()
-	set category = "Object"
-	set name = "Use Scope"
-	set popup_menu = 1
-
-	toggle_scope(usr, 2.0)

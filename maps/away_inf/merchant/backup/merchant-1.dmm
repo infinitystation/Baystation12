@@ -266,7 +266,7 @@
 	name = "north bump";
 	pixel_x = 0;
 	pixel_y = 24;
-	req_access = list(201)
+	req_access = list("ACCESS_ZEPPELIN")
 	},
 /obj/structure/cable/green{
 	d2 = 2;

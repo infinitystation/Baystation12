@@ -95,7 +95,7 @@
 		if(istype(victim, /mob/living/carbon/human))
 			if(H.species.reagent_tag == IS_XENOS)
 				can_grab = FALSE
-			if(((istype(H.shoes, /obj/item/clothing/shoes/magboots) && (H.shoes.item_flags & ITEM_FLAG_NOSLIP)) || (H.species.species_flags & SPECIES_FLAG_NO_SLIP)) && victim.loc != src.loc)
+			if(((istype(H.shoes, /obj/item/clothing/shoes/magboots) && (H.shoes.item_flags & ITEM_FLAG_NOSLIP)) || (H.species.check_no_slip(H))) && victim.loc != src.loc)
 				if(prob(90))
 					src.visible_message("<span class='danger'>Tendrils lash to drag \the [victim] but \the [src] can't pull them across the ground!</span>")
 					can_grab = 0

@@ -22,7 +22,7 @@
 
 	var/datum/extension/interactive/multitool/multi = get_extension(expansion_obj, /datum/extension/interactive/multitool)
 	if(multi.type != /datum/extension/interactive/multitool/items/cable)
-		log_unit_test("[exp]/([exp.type]) was not strictly of the type /datum/extension/interactive/multitool/cryo.")
+		log_unit_test("[exp]/([exp.type]) was not strictly of the type /datum/extension/interactive/multitool/items/cable.")
 		number_of_failures++
 	else
 		if(multi.host_predicates.len != 2)

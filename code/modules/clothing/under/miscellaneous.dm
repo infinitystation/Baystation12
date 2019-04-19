@@ -558,8 +558,8 @@
 	desc = "How... minimalist."
 	icon_state = "gear_harness"
 	worn_state = "gear_harness"
-	body_parts_covered = 0
 	species_restricted = null
+	body_parts_covered = 0
 
 /obj/item/clothing/under/pcrc
 	name = "\improper PCRC uniform"
@@ -567,9 +567,6 @@
 	icon_state = "pcrc"
 	item_state = "jensensuit"
 	worn_state = "pcrc"
-
-/obj/item/clothing/under/pcrc/tactical
-	starting_accessories = list(/obj/item/clothing/accessory/ubac)
 
 /obj/item/clothing/under/pcrcsuit
 	name = "\improper PCRC suit"
@@ -617,7 +614,7 @@
 // Replace this with actual uniform when someone wants to sprite one
 /obj/item/clothing/under/confederacy
 	name = "\improper Confederate uniform"
-	desc = "A military uniform belonging to the Terran Colonial Confederation, an independent human government."
+	desc = "A military uniform belonging to the Gilgamesh Colonial Confederation, an independent human government."
 	icon_state = "confed"
 	worn_state = "confed"
 
@@ -626,9 +623,6 @@
 	desc = "A uniform belonging to Strategic Assault and Asset Retention Enterprises, a minor private military corporation."
 	icon_state = "saare"
 	worn_state = "saare"
-
-/obj/item/clothing/under/saare/tactical
-	starting_accessories = list(/obj/item/clothing/accessory/ubac/green)
 
 /obj/item/clothing/under/frontier
 	name = "frontier clothes"

@@ -83,7 +83,7 @@
 		if(do_after(user, 150, src))
 			open(user)
 			return
-	else if(istype(W,/obj/item/weapon/material/canknife) || istype(W, /obj/item/weapon/material/kitchen/utensil/knife))
+	else if(istype(W,/obj/item/weapon/material/canknife) || istype(W, /obj/item/weapon/material/knife))
 		to_chat(user, "<span class='notice'>You're starting open the [src]!</span>")
 		user.visible_message("<span class='warning'>The [user] is trying to open the [src] with [W]!</span>")
 		if(do_after(user, 50, src))

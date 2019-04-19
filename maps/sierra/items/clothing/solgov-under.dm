@@ -1,10 +1,11 @@
 /obj/item/clothing/under/solgov
 	name = "master solgov uniform"
 	desc = "You shouldn't be seeing this."
-	icon = 'maps/torch/icons/obj/solgov-under.dmi'
-	item_icons = list(slot_w_uniform_str = 'maps/torch/icons/mob/solgov-under.dmi')
+	icon = 'maps/torch/icons/obj/obj_under_solgov.dmi'
+	item_icons = list(slot_w_uniform_str = 'maps/torch/icons/mob/onmob_under_solgov.dmi')
 	armor = list(melee = 5, bullet = 0, laser = 5, energy = 5, bomb = 0, bio = 5, rad = 5)
 	siemens_coefficient = 0.8
+	gender_icons = 1
 
 //PT
 /obj/item/clothing/under/solgov/pt
@@ -20,8 +21,7 @@
 	icon_state = "expeditionpt"
 	worn_state = "expeditionpt"
 	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/uniform.dmi',
-		SPECIES_UNATHI = 'icons/mob/species/unathi/uniform.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_under_unathi.dmi'
 		)
 
 /obj/item/clothing/under/solgov/pt/fleet
@@ -46,8 +46,7 @@
 	item_state = "bl_suit"
 	worn_state = "blackutility"
 	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/uniform.dmi',
-		SPECIES_UNATHI = 'icons/mob/species/unathi/uniform.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_under_unathi.dmi'
 		)
 
 /obj/item/clothing/under/solgov/utility/expeditionary
@@ -56,29 +55,23 @@
 	icon_state = "blackutility_crew"
 	worn_state = "blackutility_crew"
 	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/uniform.dmi',
-		SPECIES_UNATHI = 'icons/mob/species/unathi/uniform.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_under_unathi.dmi'
 		)
 
 /obj/item/clothing/under/solgov/utility/expeditionary_skirt
 	name = "expeditionary skirt"
 	desc = "A black turtleneck and skirt, the elusive ladies' uniform of the Expeditionary Corps."
-	icon_state = "blackservicef"
-	worn_state = "blackservicef"
+	icon_state = "blackservicefem"
+	worn_state = "blackservicefem"
 	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/uniform.dmi',
-		SPECIES_UNATHI = 'icons/mob/species/unathi/uniform.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_under_unathi.dmi'
 		)
 
 /obj/item/clothing/under/solgov/utility/expeditionary_skirt/officer
 	name = "expeditionary officer skirt"
 	desc = "A black turtleneck and skirt, the elusive ladies' uniform of the Expeditionary Corps. This one has gold trim."
-	icon_state = "blackservicef_com"
-	worn_state = "blackservicef_com"
-	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/uniform.dmi',
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/infinity.dmi'
-		)
+	icon_state = "blackservicefem_com"
+	worn_state = "blackservicefem_com"
 
 /obj/item/clothing/under/solgov/utility/expeditionary/command
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/command)
@@ -101,24 +94,14 @@
 /obj/item/clothing/under/solgov/utility/expeditionary/exploration
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/exploration)
 
-/obj/item/clothing/under/solgov/utility/expeditionary/exploration/pilot
-	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/exploration, /obj/item/clothing/accessory/solgov/speciality/pilot)
-
-/obj/item/clothing/under/solgov/utility/expeditionary/exploration/field_medic
-	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/exploration, /obj/item/clothing/accessory/armband/medblue)
-
-/obj/item/clothing/under/solgov/utility/expeditionary/exploration/field_engineer
-	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/exploration, /obj/item/clothing/accessory/armband/engine)
+/obj/item/clothing/under/solgov/utility/expeditionary/research
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/research)
 
 /obj/item/clothing/under/solgov/utility/expeditionary/officer
 	name = "expeditionary officer's uniform"
 	desc = "The utility uniform of the SCG Expeditionary Corps, made from biohazard resistant material. This one has gold trim."
 	icon_state = "blackutility_com"
 	worn_state = "blackutility_com"
-	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/uniform.dmi',
-		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/infinity.dmi'
-		)
 
 /obj/item/clothing/under/solgov/utility/expeditionary/officer/command
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/command)
@@ -141,6 +124,9 @@
 /obj/item/clothing/under/solgov/utility/expeditionary/officer/exploration
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/exploration)
 
+/obj/item/clothing/under/solgov/utility/expeditionary/officer/research
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/research)
+
 /obj/item/clothing/under/solgov/utility/fleet
 	name = "fleet coveralls"
 	desc = "The utility uniform of the SCG Fleet, made from an insulated material."
@@ -152,7 +138,7 @@
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/command/fleet)
 
 /obj/item/clothing/under/solgov/utility/fleet/command/pilot
-	starting_accessories = list(/obj/item/clothing/accessory/solgov/speciality/pilot)
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/specialty/pilot)
 
 /obj/item/clothing/under/solgov/utility/fleet/engineering
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/engineering/fleet)
@@ -186,6 +172,24 @@
 
 /obj/item/clothing/under/solgov/utility/fleet/combat/command
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/command/fleet)
+
+/obj/item/clothing/under/solgov/utility/fleet/officer
+	name = "fleet officer's coveralls"
+	desc = "Alternative utility uniform of the SCG Fleet, for officers."
+	icon_state = "navyutilityoff"
+	worn_state = "navyutilityoff"
+
+/obj/item/clothing/under/solgov/utility/fleet/officer/command
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/command/fleet)
+
+/obj/item/clothing/under/solgov/utility/fleet/officer/engineering
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/engineering/fleet)
+
+/obj/item/clothing/under/solgov/utility/fleet/officer/security
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/security/fleet)
+
+/obj/item/clothing/under/solgov/utility/fleet/officer/medical
+	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/medical/fleet)
 
 /obj/item/clothing/under/solgov/utility/army
 	name = "army fatigues"
@@ -248,8 +252,7 @@
 	icon_state = "greydress"
 	worn_state = "greydress"
 	sprite_sheets = list(
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/uniform.dmi',
-		SPECIES_UNATHI = 'icons/mob/species/unathi/uniform.dmi'
+		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_under_unathi.dmi'
 		)
 
 /obj/item/clothing/under/solgov/service/expeditionary/skirt
@@ -276,7 +279,7 @@
 	icon_state = "whiteservice"
 	item_state = "nursesuit"
 	worn_state = "whiteservice"
-	starting_accessories = list(/obj/item/clothing/accessory/black)
+	starting_accessories = list(/obj/item/clothing/accessory/navy)
 
 /obj/item/clothing/under/solgov/service/fleet/skirt
 	name = "fleet service skirt"
@@ -355,5 +358,5 @@
 	name = "adjusted expeditionary uniform"
 	desc = "The utility uniform of the SCG Expeditionary Corps, made from biohazard resistant material. This one has silver trim. It was also mangled to fit a monkey. This better be worth the NJP you'll get for making it."
 	species_restricted = list("Monkey")
-	sprite_sheets = list("Monkey" = 'icons/mob/species/monkey/uniform.dmi')
+	sprite_sheets = list("Monkey" = 'icons/mob/species/monkey/onmob_under_monkey.dmi')
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/rank/fleet/officer/wo1_monkey)

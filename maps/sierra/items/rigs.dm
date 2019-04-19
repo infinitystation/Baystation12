@@ -1,11 +1,15 @@
+/////////////////////////
+//~~Bless this mess~~//
+/////////////////////
+
 /*
  * BASE TYPE
  */
 /obj/item/weapon/rig/command
 	name = "command HCM"
 	suit_type = "command hardsuit"
-	icon = 'maps/sierra/icons/obj/uniques.dmi'
-	desc = "A specialized hardsuit rig control module issued to command staff of the NanoTrasen and their peers."
+	icon = 'maps/torch/icons/obj/uniques.dmi'
+	desc = "A specialized hardsuit rig control module issued to command staff of the Expeditionary Corps and their peers."
 	icon_state = "command_rig"
 	armor = list(melee = 25, bullet = 25, laser = 15, energy = 25, bomb = 40, bio = 100, rad = 40)
 	online_slowdown = 0.50
@@ -17,34 +21,38 @@
 	boot_type = /obj/item/clothing/shoes/magboots/rig/command
 	glove_type = /obj/item/clothing/gloves/rig/command
 
-	allowed = list(/obj/item/weapon/gun, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit)
 	req_access = list(access_heads) //bridge
+	allowed = list(/obj/item/weapon/gun,
+				   /obj/item/ammo_magazine,
+				   /obj/item/device/flashlight,
+				   /obj/item/weapon/tank,
+				   /obj/item/device/suit_cooling_unit,
+				   /obj/item/weapon/storage/secure/briefcase)
 
 /obj/item/clothing/head/helmet/space/rig/command
 	light_overlay = "helmet_light_dual"
-	icon = 'maps/sierra/icons/obj/solgov-head.dmi'
-	item_icons = list(slot_head_str = 'maps/sierra/icons/mob/solgov-head.dmi')
-	camera = /obj/machinery/camera/network/security
-	species_restricted = list(SPECIES_HUMAN) //no available icons for aliens
+	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
+	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
+	camera = /obj/machinery/camera/network/command
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC) //no available icons for aliens
 
 /obj/item/clothing/suit/space/rig/command
-	icon = 'maps/sierra/icons/obj/solgov-suit.dmi'
-	item_icons = list(slot_wear_suit_str = 'maps/sierra/icons/mob/solgov-suit.dmi')
-	species_restricted = list(SPECIES_HUMAN)
+	icon = 'maps/torch/icons/obj/obj_suit_solgov.dmi'
+	item_icons = list(slot_wear_suit_str = 'maps/torch/icons/mob/onmob_suit_solgov.dmi')
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 /obj/item/clothing/shoes/magboots/rig/command
-	icon = 'maps/sierra/icons/obj/solgov-feet.dmi'
-	item_icons = list(slot_shoes_str = 'maps/sierra/icons/mob/solgov-feet.dmi')
-	species_restricted = list(SPECIES_HUMAN)
+	icon = 'maps/torch/icons/obj/obj_feet_solgov.dmi'
+	item_icons = list(slot_shoes_str = 'maps/torch/icons/mob/onmob_feet_solgov.dmi')
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 /obj/item/clothing/gloves/rig/command
-	icon = 'maps/sierra/icons/obj/solgov-hands.dmi'
-	item_icons = list(slot_gloves_str = 'maps/sierra/icons/mob/solgov-hands.dmi')
-	species_restricted = list(SPECIES_HUMAN)
+	icon = 'maps/torch/icons/obj/obj_hands_solgov.dmi'
+	item_icons = list(slot_gloves_str = 'maps/torch/icons/mob/onmob_hands_solgov.dmi')
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
 
 
 /obj/item/weapon/rig/command/equipped
-
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash,
@@ -153,7 +161,13 @@
 	chest_type = /obj/item/clothing/suit/space/rig/command/hos
 	helm_type = /obj/item/clothing/head/helmet/space/rig/command/hos
 
-	allowed = list(/obj/item/weapon/gun, /obj/item/ammo_magazine, /obj/item/ammo_casing, /obj/item/weapon/handcuffs, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit, /obj/item/weapon/melee/baton)
+	allowed = list(/obj/item/weapon/gun,
+	 			  /obj/item/ammo_magazine,
+	  			  /obj/item/weapon/handcuffs,
+	   			  /obj/item/device/flashlight,
+	    		  /obj/item/weapon/tank,
+				  /obj/item/device/suit_cooling_unit,
+				  /obj/item/weapon/melee/baton)
 
 	req_access = list(access_hos)
 
@@ -180,7 +194,11 @@
 	chest_type = /obj/item/clothing/suit/space/rig/command/el
 	helm_type = /obj/item/clothing/head/helmet/space/rig/command/el
 
-	allowed = list(/obj/item/weapon/gun, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit)
+	allowed = list(/obj/item/weapon/gun,
+				   /obj/item/ammo_magazine,
+				   /obj/item/device/flashlight,
+				   /obj/item/weapon/tank,
+				   /obj/item/device/suit_cooling_unit)
 
 	req_access = list(access_el)
 
@@ -196,3 +214,10 @@
 		/obj/item/rig_module/device/anomaly_scanner,
 		/obj/item/rig_module/grenade_launcher/light,
 		/obj/item/rig_module/cooling_unit)
+
+/*
+ * Overrides
+ */
+
+/obj/item/clothing/head/helmet/space/rig/industrial
+	camera = /obj/machinery/camera/network/supply

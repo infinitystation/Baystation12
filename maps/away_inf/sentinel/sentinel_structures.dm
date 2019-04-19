@@ -14,7 +14,7 @@
 
 /obj/structure/closet/secure_closet/guncabinet/patrol/assault/WillContain()
 	return list(
-		/obj/item/ammo_magazine/a762/extended = 12,
+		/obj/item/ammo_magazine/mil_rifle = 12,
 		/obj/item/weapon/gun/projectile/automatic/z9 = 3
 	)
 

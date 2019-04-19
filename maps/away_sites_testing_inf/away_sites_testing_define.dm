@@ -1,4 +1,3 @@
-
 /datum/map/away_sites_testing
 	name = "Away Sites Testing"
 	full_name = "Away Sites Testing Land"

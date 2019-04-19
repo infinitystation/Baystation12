@@ -8,7 +8,7 @@ var/list/floor_light_cache = list()
 	plane = ABOVE_TURF_PLANE
 	layer = ABOVE_TILE_LAYER
 	anchored = 0
-	use_power = 2
+	use_power = POWER_USE_ACTIVE
 	idle_power_usage = 2
 	active_power_usage = 20
 	power_channel = LIGHT
@@ -39,7 +39,7 @@ var/list/floor_light_cache = list()
 		if(!src || !WT.isOn())
 			return
 		visible_message("<span class='notice'>\The [user] has repaired \the [src].</span>")
-		stat &= ~BROKEN
+		set_broken(FALSE)
 		damaged = null
 		update_brightness()
 	else if(isMultitool(W))
@@ -57,7 +57,7 @@ var/list/floor_light_cache = list()
 		if(!isnull(damaged) && !(stat & BROKEN))
 			visible_message("<span class='danger'>\The [user] smashes \the [src]!</span>")
 			playsound(src, "shatter", 70, 1)
-			stat |= BROKEN
+			set_broken(TRUE)
 		else
 			visible_message("<span class='danger'>\The [user] attacks \the [src]!</span>")
 			playsound(src.loc, 'sound/effects/Glasshit.ogg', 75, 1)
@@ -79,7 +79,8 @@ var/list/floor_light_cache = list()
 			return
 
 		on = !on
-		if(on) use_power = 2
+		if(on) 
+			update_use_power(POWER_USE_ACTIVE)
 		visible_message("<span class='notice'>\The [user] turns \the [src] [on ? "on" : "off"].</span>")
 		update_brightness()
 		return
@@ -88,25 +89,25 @@ var/list/floor_light_cache = list()
 	..()
 	var/need_update
 	if((!anchored || broken()) && on)
-		use_power = 0
+		update_use_power(POWER_USE_OFF)
 		on = 0
 		need_update = 1
 	else if(use_power && !on)
-		use_power = 0
+		update_use_power(POWER_USE_OFF)
 		need_update = 1
 	if(need_update)
 		update_brightness()
 
 /obj/machinery/floor_light/proc/update_brightness()
-	if(on && use_power == 2)
+	if(on && use_power == POWER_USE_ACTIVE)
 		if(light_outer_range != default_light_outer_range || light_max_bright != default_light_max_bright || light_color != default_light_colour)
 			set_light(default_light_max_bright, default_light_inner_range, default_light_outer_range, l_color = default_light_colour)
 	else
-		use_power = 0
+		update_use_power(POWER_USE_OFF)
 		if(light_outer_range || light_max_bright)
 			set_light(0)
 
-	active_power_usage = ((light_outer_range + light_max_bright) * 20)
+	change_power_consumption((light_outer_range + light_max_bright) * 20, POWER_USE_ACTIVE)
 	update_icon()
 
 /obj/machinery/floor_light/on_update_icon()
@@ -144,7 +145,7 @@ var/list/floor_light_cache = list()
 			if (prob(50))
 				qdel(src)
 			else if(prob(20))
-				stat |= BROKEN
+				set_broken(TRUE)
 			else
 				if(isnull(damaged))
 					damaged = 0

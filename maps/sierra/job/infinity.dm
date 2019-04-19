@@ -80,7 +80,7 @@
 	name = "SCG Marine Corpsman"
 	glasses = /obj/item/clothing/glasses/hud/health
 	back = /obj/item/weapon/storage/backpack/satchel/med
-	suit = /obj/item/clothing/suit/armor/pcarrier/troops/medical
+	suit = /obj/item/clothing/suit/armor/pcarrier/troops
 	belt = /obj/item/weapon/storage/belt/medical/emt/combat
 	id_pda_assignment = "Marine Corpsman"
 	backpack_contents = list(

@@ -6,7 +6,6 @@ obj/machinery/recharger
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "recharger0"
 	anchored = 1
-	use_power = 1
 	idle_power_usage = 4
 	active_power_usage = 30 KILOWATTS
 	var/obj/item/charging = null
@@ -23,6 +22,9 @@ obj/machinery/recharger
 		new /obj/item/weapon/stock_parts/capacitor(src),
 		new /obj/item/weapon/stock_parts/capacitor(src))
 	RefreshParts()
+
+/obj/machinery/recharger/New()
+	update_icon()
 
 /obj/machinery/recharger/RefreshParts()
 	var/C
@@ -98,12 +100,12 @@ obj/machinery/recharger/MouseDrop(var/obj/structure/table/T)
 
 obj/machinery/recharger/Process()
 	if(stat & (NOPOWER|BROKEN) || !anchored)
-		update_use_power(0)
+		update_use_power(POWER_USE_OFF)
 		icon_state = icon_state_idle
 		return
 
 	if(!charging)
-		update_use_power(1)
+		update_use_power(POWER_USE_IDLE)
 		icon_state = icon_state_idle
 	else
 		var/obj/item/weapon/cell/C = charging.get_cell()
@@ -111,10 +113,10 @@ obj/machinery/recharger/Process()
 			if(!C.fully_charged())
 				icon_state = icon_state_charging
 				C.give(active_power_usage*CELLRATE)
-				update_use_power(2)
+				update_use_power(POWER_USE_ACTIVE)
 			else
 				icon_state = icon_state_charged
-				update_use_power(1)
+				update_use_power(POWER_USE_IDLE)
 
 obj/machinery/recharger/emp_act(severity)
 	if(stat & (NOPOWER|BROKEN) || !anchored)
@@ -145,7 +147,7 @@ obj/machinery/recharger/examine(mob/user)
 obj/machinery/recharger/wallcharger
 	name = "wall recharger"
 	desc = "A heavy duty wall recharger specialized for energy weaponry."
-	icon = 'icons/obj/infinity_object.dmi'
+	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "wrecharger0"
 	active_power_usage = 50 KILOWATTS	//It's more specialized than the standalone recharger (guns and batons only) so make it more powerful
 	allowed_devices = list(/obj/item/weapon/gun/magnetic/railgun, /obj/item/weapon/gun/energy, /obj/item/weapon/melee/baton)
@@ -153,3 +155,15 @@ obj/machinery/recharger/wallcharger
 	icon_state_charging = "wrecharger1"
 	icon_state_idle = "wrecharger0"
 	portable = 0
+
+/obj/machinery/recharger/wallcharger/on_update_icon()
+	..()
+	pixel_y = 0
+	pixel_x = 0
+	var/turf/T = get_step(get_turf(src), turn(dir, 180))
+	if(istype(T) && T.density)
+		switch(dir)
+			if(NORTH)	pixel_y = -22
+			if(EAST)	pixel_x = -22
+			if(WEST)	pixel_x = 22
+			if(SOUTH)	pixel_y = 25

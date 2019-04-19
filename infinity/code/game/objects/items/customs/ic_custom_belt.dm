@@ -2,10 +2,6 @@
 	name = "NT(tm) integrated circuit printer"
 	desc = "A portable(ish) machine made to print tiny modular circuitry out of metal. This one has fancy NanoTrasen brand design."
 	icon_state = "circuit_printer_custom"
-	metal_max = 35 * SHEET_MATERIAL_AMOUNT
-
-/obj/item/device/integrated_circuit_printer/custom/preset/New()
-	metal = metal_max
 
 /obj/item/weapon/storage/belt/holster/ic
 	name = "IC developer's belt"
@@ -40,7 +36,7 @@
 	new /obj/item/device/integrated_electronics/wirer(src)
 	//manualy holsted printer
 	var/datum/extension/holster/H = get_extension(src, /datum/extension/holster)
-	H.holstered = new /obj/item/device/integrated_circuit_printer/custom/preset
+	H.holstered = new /obj/item/device/integrated_circuit_printer/custom
 	H.storage.w_class = max(H.storage.w_class, H.holstered.w_class)
 	H.storage.handle_item_insertion(H.holstered, 1)
 	H.atom_holder.SetName("occupied [initial(H.atom_holder.name)]")

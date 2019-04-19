@@ -12,7 +12,8 @@
 /datum/malf_research_ability/passive/intellicard_interception
 	ability = new/datum/game_mode/malfunction/verb/intellicard_interception()
 	price = 250
-	next = new/datum/malf_research_ability/passive/subtle_algorithms()
+	next = list(new/datum/malf_research_ability/passive/subtle_algorithms(),
+		new/datum/malf_research_ability/passive/disable_dr())
 	name = "T1 - Intellicard Interception"
 
 

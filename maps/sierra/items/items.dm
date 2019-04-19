@@ -51,7 +51,7 @@ Unique items
 	max_w_class = ITEM_SIZE_SMALL
 	max_storage_space = 2
 	startswith = list(
-			/obj/item/weapon/reagent_containers/pill/tox,
+			/obj/item/weapon/reagent_containers/pill/cyanide,
 			/obj/item/weapon/paper/liason_note
 	)
 
@@ -59,13 +59,13 @@ Unique items
 Weapons
 ******/
 
-/obj/item/weapon/gun/projectile/revolver/webley/captain
+/obj/item/weapon/gun/projectile/revolver/medium/captain
 	desc = "A shiny al-Maliki & Mosley Autococker automatic revolver, with black accents. Marketed as the 'Revolver for the Modern Era'. Uses .357 magnum rounds. This one has 'To the Captain of NSV Sierra' engraved."
 
 /obj/item/weapon/gun/energy/stunrevolver/secure/nanotrasen
 	name = "corporate stun revolver"
 	desc = "This A&M X6 is fitted with an NT1019 chip which allows remote authorization of weapon functionality. It has a NanoTrasen emblem on the grip."
-	req_one_access = list(access_brig, access_heads, access_rd)
+	req_access = list(list(access_brig, access_heads, access_rd))
 
 /obj/item/weapon/gun/projectile/pistol/liaison
 	magazine_type = /obj/item/ammo_magazine/mc9mm/oneway
@@ -84,4 +84,4 @@ Weapons
 	interact(user)
 
 /obj/item/tape/research
-	req_one_access = list(access_research, access_explorer)
+	req_access = list(list(access_research, access_explorer))

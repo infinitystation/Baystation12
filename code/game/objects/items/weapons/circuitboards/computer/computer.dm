@@ -9,12 +9,12 @@
 
 /obj/item/weapon/circuitboard/aiupload
 	name = T_BOARD("AI upload console")
-	build_path = /obj/machinery/computer/aiupload
+	build_path = /obj/machinery/computer/upload/ai
 	origin_tech = list(TECH_DATA = 4)
 
 /obj/item/weapon/circuitboard/borgupload
 	name = T_BOARD("cyborg upload console")
-	build_path = /obj/machinery/computer/borgupload
+	build_path = /obj/machinery/computer/upload/robot
 	origin_tech = list(TECH_DATA = 4)
 
 /obj/item/weapon/circuitboard/teleporter
@@ -145,9 +145,3 @@
 /obj/item/weapon/circuitboard/account_database
 	name = T_BOARD("accounts uplink terminal")
 	build_path = /obj/machinery/computer/account_database
-
-/obj/item/weapon/circuitboard/telesci_console
-	name = T_BOARD("Telescience Console")
-	build_path = /obj/machinery/computer/telescience
-	origin_tech = list(TECH_DATA = 3, TECH_BLUESPACE = 2)
-

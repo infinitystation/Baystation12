@@ -6,9 +6,6 @@
 
 	load_legacy_saves = TRUE
 
-	station_levels = list(1,2,3)
-	contact_levels = list(1,2,3)
-	player_levels = list(1,2,3,6)
 	admin_levels = list(4,5)
 	empty_levels = list(6)
 	accessible_z_levels = list("1"=1,"2"=1,"3"=1,"6"=30)
@@ -36,7 +33,7 @@
 	num_exoplanets = 1
 	planet_size = list(129,129)
 
-	away_site_budget = 2
+	away_site_budget = 3
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 
 	available_cultural_info = list(
@@ -57,11 +54,12 @@
 			HOME_SYSTEM_LORDANIA,
 			HOME_SYSTEM_KINGSTON,
 			HOME_SYSTEM_GAIA,
+			HOME_SYSTEM_MAGNITKA,
 			HOME_SYSTEM_OTHER
 		),
 		TAG_FACTION = list(
 			FACTION_SOL_CENTRAL,
-			FACTION_TERRAN_CONFED,
+			FACTION_INDIE_CONFED,
 			FACTION_NANOTRASEN,
 			FACTION_HEPHAESTUS,
 			FACTION_WARD_TAKAHASHI,
@@ -85,7 +83,6 @@
 			FACTION_OTHER
 		),
 		TAG_CULTURE = list(
-			CULTURE_HUMAN,
 			CULTURE_HUMAN_MARTIAN,
 			CULTURE_HUMAN_MARSTUN,
 			CULTURE_HUMAN_LUNAPOOR,
@@ -114,16 +111,6 @@
 			RELIGION_ATHEISM,
 			RELIGION_THELEMA,
 			RELIGION_SPIRITUALISM
-		),
-		TAG_EDUCATION = list(
-			EDUCATION_NONE,
-			EDUCATION_DROPOUT,
-			EDUCATION_HIGH_SCHOOL,
-			EDUCATION_TRADE_SCHOOL,
-			EDUCATION_UNDERGRAD,
-			EDUCATION_MASTERS,
-			EDUCATION_DOCTORATE,
-			EDUCATION_MEDSCHOOL
 		)
 	)
 
@@ -138,6 +125,7 @@
 	to_chat(victim, "Охрана судна укомплектована сотрудниками Службы Безопасности НаноТрайзен и частных предпри&#255;тий.")
 	to_chat(victim, "Помимо ЧВК в охране, в остальных отделах также присутствуют подр&#255;дчики. Их нан&#255;ли как выдающихс&#255; специалистов в своей области, что превзошли корпоративного кандидата. Как правило, они либо работают на себ&#255; (civilian), либо на другую корпорацию (contractor). Полезные ссылки:")
 	to_chat(victim, "<a href=\"https://wiki.infinity-ss13.info/index.php?title=Стандартные_процедуры_НТ\">Процедуры НТ</a>, <a href=\"https://wiki.infinity-ss13.info/index.php?title=Корпоративные_законы\">Регул&#255;ции НТ</a>, <a href=\"https://wiki.infinity-ss13.info/index.php?title=Коды_угрозы_НТ\">Коды угроз НТ</a>, <a href=\"https://wiki.infinity-ss13.info/index.php?title=Итак,_Вы_хотите_узнать_о_мире_корпораций%3F\">Список корпораций</a>.")
+	to_chat(victim, "<br><strong>Внимание! Год игры был изменён. Теперь в игре не 2563, а 2307 (-256 лет).")
 
 /datum/map/sierra/send_welcome()
 	var/welcome_text = "<center><img src = ntlogo.png /><br /><font size = 3><b>NSV Sierra</b> Показани&#255; Сенсоров:</font><hr />"

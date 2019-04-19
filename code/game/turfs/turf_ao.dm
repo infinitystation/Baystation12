@@ -13,7 +13,7 @@ GLOBAL_LIST_EMPTY(ao_cache)
 		if(istype(T, /turf) && T.permit_ao)
 			T.update_ao()
 
-/turf/update_icon(var/update_neighbors, var/list/previously_added = list())
+/turf/on_update_icon(var/update_neighbors, var/list/previously_added = list())
 	. = ..()
 	if(permit_ao)
 		update_ao()

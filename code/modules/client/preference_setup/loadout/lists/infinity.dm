@@ -50,6 +50,7 @@
 	blatch["AB- blood patch"] = /obj/item/clothing/accessory/armor/tag/abneg
 	gear_tweaks += new/datum/gear_tweak/path(blatch)
 
+/* moved into maps/sierra/loadout/tactical due torch's problems
 /datum/gear/tactical/armor_pouches
 	display_name = "armor pouches selection"
 	path = /obj/item/clothing/accessory/storage/pouches
@@ -79,6 +80,7 @@
 	lpouches["large blue storage pouches"] = /obj/item/clothing/accessory/storage/pouches/large/blue
 	lpouches["large black storage pouches"] = /obj/item/clothing/accessory/storage/pouches/large
 	gear_tweaks += new/datum/gear_tweak/path(lpouches)
+*/
 
 /datum/gear/tactical/armor_deco
 	display_name = "armor tags selection"

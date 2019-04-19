@@ -80,6 +80,9 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 	var/temperature = my_atom ? my_atom.temperature : T20C
 	for(var/thing in reagent_list)
 		var/datum/reagent/R = thing
+		if(R.custom_temperature_effects(temperature, src))
+			reaction_occured = TRUE
+			continue
 
 		// Check if the reagent is decaying or not.
 		var/list/replace_self_with
@@ -423,8 +426,8 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 			var/datum/reagents/R = C.reagents
 			return trans_to_holder(R, amount, multiplier, copy)
 		if(type == CHEM_INGEST)
-			var/datum/reagents/R = C.ingested
-			return C.ingest(src,R, amount, multiplier, copy) //perhaps this is a bit of a hack, but currently there's no common proc for eating reagents
+			var/datum/reagents/R = C.get_ingested_reagents()
+			return C.ingest(src, R, amount, multiplier, copy) //perhaps this is a bit of a hack, but currently there's no common proc for eating reagents
 		if(type == CHEM_TOUCH)
 			var/datum/reagents/R = C.touching
 			return trans_to_holder(R, amount, multiplier, copy)
