@@ -2062,6 +2062,50 @@
 
 			show_player_panel(M)
 
+	//Player Notes
+	if(href_list["addnote"])
+		var/target_ckey = href_list["addnote"]
+		add_note(target_ckey)
+
+	if(href_list["addnoteempty"])
+		add_note()
+
+	if(href_list["removenote"])
+		var/note_id = href_list["removenote"]
+		remove_note(note_id)
+
+	if(href_list["editnote"])
+		var/note_id = href_list["editnote"]
+		edit_note(note_id)
+
+	if(href_list["nonalpha"])
+		var/target = href_list["nonalpha"]
+		target = text2num(target)
+		show_note(index = target)
+
+	if(href_list["shownote"])
+		var/target = href_list["shownote"]
+		show_note(index = target)
+
+	if(href_list["shownoteckey"])
+		var/target_ckey = href_list["shownoteckey"]
+		show_note(target_ckey)
+
+	if(href_list["notessearch"])
+		var/target = href_list["notessearch"]
+		show_note(index = target)
+
+	if(href_list["noteedits"])
+		var/note_id = sanitizeSQL("[href_list["noteedits"]]")
+		var/DBQuery/query_noteedits = dbcon.NewQuery("SELECT edits FROM erro_messages WHERE id = '[note_id]'")
+		if(!query_noteedits.Execute())
+			var/err = query_noteedits.ErrorMsg()
+			log_game("SQL ERROR obtaining edits from notes table. Error : \[[err]\]\n")
+			return
+		if(query_noteedits.NextRow())
+			var/edit_log = query_noteedits.item[1]
+			usr << browse(edit_log,"window=noteedits")
+
 	// player info stuff
 
 	if(href_list["add_player_info"])
@@ -2070,27 +2114,25 @@
 		if(!add) return
 
 		add_note(key,add, null, usr.ckey, 0)
-		show_player_info(key)
+		show_note(key)
 
 	if(href_list["remove_player_info"])
 		var/key = href_list["remove_player_info"]
 		var/index = text2num(href_list["remove_index"])
 
 		remove_note(index)
-		show_player_info(key)
+		show_note(key)
 
 	if(href_list["notes"])
-		if(href_list["notes"] == "set_filter")
-			var/choice = input(usr,"Please specify a text filter to use or cancel to clear.","Player Notes",null) as text|null
-			PlayerNotesPage(choice)
-		else
-			var/ckey = href_list["ckey"]
-			if(!ckey)
-				var/mob/M = locate(href_list["mob"])
-				if(ismob(M))
-					ckey = M.ckey
-			show_player_info(ckey)
+		var/ckey = href_list["ckey"]
+		if(!ckey)
+			var/mob/M = locate(href_list["mob"])
+			if(ismob(M))
+				ckey = M.ckey
+		show_note(ckey)
 		return
+
+
 	if(href_list["setstaffwarn"])
 		var/mob/M = locate(href_list["setstaffwarn"])
 		if(!ismob(M)) return
@@ -2120,7 +2162,7 @@
 			if("Yes")
 				if(!DB_staffwarn_remove(M.ckey))
 					return
-				notes_add(M.ckey,"\[AUTO\] Staff warn disabled", null, usr.ckey, 0)
+				add_note(M.ckey,"\[AUTO\] Staff warn disabled", null, usr.ckey, 0)
 				if(M.client)
 					M.client.staffwarn = null
 				log_and_message_admins("has removed the staffwarn on [M.ckey].\n")

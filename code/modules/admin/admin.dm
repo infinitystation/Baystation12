@@ -78,7 +78,7 @@ var/global/floorIsLava = 0
 		<b>IP Related Accounts:</b> [M.client ? M.client.related_accounts_ip : "Logged out"]<br>"}
 
 	body += {"
-		[admin_jump_link(M, src)]\] <br>
+		[admin_jump_link(M, src)]<br>
 		<b>Mob type:</b> [M.type]<br>
 		<b>Inactivity time:</b> [M.client ? "[M.client.inactivity/600] minutes" : "Logged out"]<br/><br/>
 		<A href='?src=\ref[src];boot2=\ref[M]'>Kick</A> |
@@ -86,9 +86,8 @@ var/global/floorIsLava = 0
 		<A href='?src=\ref[src];softban=\ref[M]'>Soft Ban</A> |
 		<A href='?src=\ref[src];newban=\ref[M]'>Ban</A> |
 		<A href='?src=\ref[src];jobban2=\ref[M]'>Jobban</A> |
-
 		<A href='?_src_=holder;sendbacktolobby=\ref[M]'>Send back to Lobby</A> |
-		<A href='?src=\ref[src];notes=show;mob=\ref[M]'>Notes</A> |
+		<A href='?src=\ref[src];shownoteckey=[M.ckey]'>Notes</A> |
 	"}
 
 	if(M.client)
@@ -280,7 +279,7 @@ var/global/floorIsLava = 0
 	if (!istype(src,/datum/admins))
 		to_chat(usr, "Error: you are not an admin!")
 		return
-	PlayerNotesPage()
+	show_note()
 
 /datum/admins/proc/PlayerNotesPage(var/filter_term)
 	var/list/dat = list()
