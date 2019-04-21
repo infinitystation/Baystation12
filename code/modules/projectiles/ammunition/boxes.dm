@@ -203,7 +203,7 @@
 
 /obj/item/ammo_magazine/pistol/throwback
 	name = "pistol magazine"
-	caliber = CALIBER_PISTOL_ANTIQUE
+	caliber = CALIBER_PISTOL_BIG
 	ammo_type = /obj/item/ammo_casing/pistol/throwback
 
 /obj/item/ammo_magazine/box/emp/pistol

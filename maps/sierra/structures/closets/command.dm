@@ -101,6 +101,7 @@
 		/obj/item/device/radio,
 		/obj/item/weapon/pen,
 		/obj/item/clothing/suit/armor/pcarrier/medium,
+		/obj/item/weapon/storage/belt/general,
 		/obj/item/clothing/head/helmet,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,

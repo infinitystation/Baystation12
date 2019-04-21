@@ -5,7 +5,7 @@
 	icon_state = "22lr_revolver"
 	item_state = "revolver"
 	max_shells = 10
-	caliber = "22"
+	caliber = CALIBER_PISTOL_TINY 
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/a22lr
 

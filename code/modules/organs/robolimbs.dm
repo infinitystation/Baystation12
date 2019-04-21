@@ -28,6 +28,7 @@ var/datum/robolimb/basic_robolimb
 	var/list/restricted_to = list()
 	var/list/applies_to_part = list() //TODO.
 	var/list/allowed_bodytypes = list(SPECIES_HUMAN, SPECIES_IPC, SPECIES_SKRELL, SPECIES_UNATHI)
+	var/list/allowed_ckeys = list()	// Infinity. Custom prosthesis.
 
 /datum/robolimb/bishop
 	company = "Bishop"
