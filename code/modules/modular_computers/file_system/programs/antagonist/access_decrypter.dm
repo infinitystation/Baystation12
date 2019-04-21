@@ -16,6 +16,7 @@
 	var/target_progress = 300
 	var/datum/access/target_access = null
 	var/list/restricted_access_codes = list(access_change_ids, access_network) // access codes that are not hackable due to balance reasons
+	is_illegal = 1
 
 /datum/computer_file/program/access_decrypter/kill_program(var/forced)
 	reset()
