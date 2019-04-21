@@ -179,6 +179,7 @@
 	return matches
 
 //TODO: merge the vievars version into this or something maybe mayhaps
+/* Baystation12 original
 /client/proc/cmd_debug_del_all()
 	set category = "Debug"
 	set name = "Del-All"
@@ -193,6 +194,29 @@
 		log_admin("[key_name(src)] has deleted all instances of [hsbitem].")
 		message_admins("[key_name_admin(src)] has deleted all instances of [hsbitem].", 0)
 	SSstatistics.add_field_details("admin_verb","DELA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+*/
+/client/proc/cmd_debug_del_all(object as text)
+	set category = "Debug"
+	set name = "Del-All"
+
+	var/list/matches = get_fancy_list_of_atom_types()
+	if(!isnull(object) && object!="")
+		matches = filter_fancy_list(matches, object)
+
+	if(matches.len==0)
+		return
+	var/hsbitem = input(usr, "Choose an object to delete.", "Delete:") as null|anything in matches
+	if(hsbitem)
+		hsbitem = matches[hsbitem]
+		var/counter = 0
+		for(var/atom/O in world)
+			if(istype(O, hsbitem))
+				counter++
+				qdel(O)
+			CHECK_TICK
+		log_admin("[key_name(src)] has deleted all ([counter]) instances of [hsbitem].")
+		message_admins("[key_name_admin(src)] has deleted all ([counter]) instances of [hsbitem].", 0)
+	SSstatistics.add_field_details("admin_verb","Delete All") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_debug_make_powernets()
 	set category = "Debug"
