@@ -26,6 +26,7 @@
 	#include "datums/supplypacks/science.dm"
 
 	#include "items/cards_ids.dm"
+	#include "items/explo_shotgun.dm"
 	#include "items/encryption_keys.dm"
 	#include "items/headsets.dm"
 	#include "items/items.dm"
@@ -121,6 +122,7 @@
 	#include "../away_inf/blueriver/blueriver.dm"
 	#include "../away_inf/mining/mining.dm"
 //	#include "../away_inf/salvagers/salvagers.dm"
+	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 
 	#include "../away/bearcat/bearcat.dm"
 //	#include "../away/mining/mining.dm"
@@ -133,7 +135,7 @@
 	#include "../away/unishi/unishi.dm"
 	#include "../away/slavers/slavers_base.dm"
 	#include "../away/voxship/voxship.dm"
-	#include "../away/skrellscoutship/skrellscoutship.dm"
+//	#include "../away/skrellscoutship/skrellscoutship.dm"
 
 	#define using_map_DATUM /datum/map/sierra
 

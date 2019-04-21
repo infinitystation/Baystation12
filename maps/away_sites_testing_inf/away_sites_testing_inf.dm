@@ -18,6 +18,7 @@
 	#include "../away_inf/smugglers/smugglers.dm"
 //	#include "../away_inf/white_star/white_star.dm" - WIP
 	#include "../away_inf/yacht/yacht.dm"
+	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 
 	#define using_map_DATUM /datum/map/away_sites_testing
 
