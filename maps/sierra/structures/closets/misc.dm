@@ -65,7 +65,7 @@
 	closet_appearance = /decl/closet_appearance/white
 
 /obj/structure/closet/white_sierra
-	closet_appearance = /decl/closet_appearance/cabinet/secure
+	closet_appearance = /decl/closet_appearance/white
 
 /obj/structure/closet/secure_closet/white_sierra
 	closet_appearance = /decl/closet_appearance/secure_closet/white
