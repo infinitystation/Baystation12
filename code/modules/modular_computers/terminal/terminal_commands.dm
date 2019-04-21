@@ -292,14 +292,26 @@ Subtypes
 	terminal.computer.shutdown_computer()
 	return "Shutdown successful."
 
-/datum/terminal_command/launch
-	name = "launch"
-	man_entry = list("Format: launch program", "Runs the program from local memory.")
-	pattern = "^launch"
+//TODO-ELar-inf: Soon i'll finish it.
+/*/datum/terminal_command/run
+	name = "run"
+	man_entry = list("Format: run \[program name\]", "Runs the program from local memory using it name.")
+	pattern = "^run"
 	skill_needed = SKILL_ADEPT
 
-/datum/terminal_command/launch/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	return "working in progress"
+/datum/terminal_command/run/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	text = copytext(text,5)
+	var/obj/item/modular_computer/CT = terminal.computer
+	var/datum/computer_file/program/FBN = CT.hard_drive.find_file_by_name(text)
+
+	if(!CT.hard_drive.check_functionality())
+		return "run: Access attempt to HDD failed. Check integrity of your hard drive."
+	if(FBN)
+		FBN.run_program(user)
+		return "run: Program successful runned."
+	else
+		return "run: file not found or it isn't PRG-file."
+	return "run: Wrong input. man run for syntax help."*/
 
 /datum/terminal_command/session
 	name = "session"
@@ -350,4 +362,5 @@ Subtypes
 	if(massive_of_active_progs)
 		return massive_of_active_progs
 	return "session: Wrong input. Enter man session for syntax help."
+
 //[/INFINITY]_______________________________________________________________________________________________________________
