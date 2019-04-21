@@ -118,6 +118,7 @@ var/list/admin_verbs_fun = list(
 	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/cmd_admin_add_freeform_ai_law,
 	/client/proc/cmd_admin_add_random_ai_law,
+	/client/proc/cmd_admin_dress,
 	/client/proc/toggle_random_events,
 	/client/proc/editappear,
 	/client/proc/roll_dices,
