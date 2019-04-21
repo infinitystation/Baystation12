@@ -153,6 +153,7 @@
 	portable = 0
 
 /obj/machinery/recharger/wallcharger/New()
+	..()
 	update_icon()
 
 /obj/machinery/recharger/wallcharger/on_update_icon()
