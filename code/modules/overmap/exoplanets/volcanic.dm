@@ -100,7 +100,7 @@
 
 /turf/simulated/floor/exoplanet/lava/Initialize()
 	. = ..()
-	set_light(0.95, 0.5, 2, l_color = COLOR_ORANGE)
+	set_light(0.95, 0.5, 2, l_color = LIGHT_COLOR_LAVA)
 
 /turf/simulated/floor/exoplanet/lava/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -128,8 +128,8 @@
 			continue
 		var/datum/gas_mixture/environment = return_air()
 		var/pressure = environment.return_pressure()
-		if(AM.lava_act(environment, 5000 + environment.temperature, pressure))
-			victims -= W
+		AM.lava_act(environment, 5000 + environment.temperature, pressure)
+		victims -= W
 	if(!LAZYLEN(victims))
 		return PROCESS_KILL
 
