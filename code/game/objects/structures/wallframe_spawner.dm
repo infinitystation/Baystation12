@@ -113,7 +113,7 @@
 
 /obj/effect/wallframe_spawn/reinforced/crystal
 	name = "reinforced crystal wall frame window spawner"
-	frame_path =  /obj/structure/wall_frame/crystal
+	frame_path = /obj/structure/wall_frame/crystal
 
 /obj/effect/wallframe_spawn/reinforced/hull
 	name = "reinforced hull wall frame window spawner"
@@ -121,7 +121,6 @@
 
 /obj/effect/wallframe_spawn/reinforced/bare //standard type is used most often so its in the master type, this one is for away sites etc with unpainted walls
 	name = "bare metal reinforced wall frame window spawner"
-	icon_state = "r-wingrille"
 	frame_path = /obj/structure/wall_frame
 
 
