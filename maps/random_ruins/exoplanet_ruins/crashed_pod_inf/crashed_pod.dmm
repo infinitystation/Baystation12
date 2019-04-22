@@ -1,10 +1,10 @@
 "aa" = (/turf/template_noop,/area/template_noop)
-"ab" = (/obj/effect/wallframe_spawn/reinforced_phoron,/obj/effect/paint/brown,/turf/simulated/floor/plating,/area/map_template/crashed_pod)
-"ac" = (/obj/effect/paint/brown,/turf/simulated/wall/r_wall,/area/map_template/crashed_pod)
+"ab" = (/turf/simulated/wall/r_wall/prepainted,/area/map_template/crashed_pod)
+"ac" = (/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,/turf/simulated/floor/plating,/area/map_template/crashed_pod)
 "ad" = (/obj/machinery/atmospherics/unary/engine{desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing..."; idle_power_usage = 0; name = "broken rocket nozzle"},/turf/simulated/floor/plating,/area/map_template/crashed_pod)
-"ae" = (/obj/effect/wallframe_spawn/reinforced_phoron,/obj/effect/submap_landmark/joinable_submap/crashed_pod,/obj/effect/paint/brown,/turf/simulated/floor/plating,/area/map_template/crashed_pod)
-"af" = (/obj/machinery/atmospherics/pipe/simple/visible/red{icon_state = "intact"; dir = 6},/obj/effect/paint/brown,/turf/simulated/wall/r_wall,/area/map_template/crashed_pod)
-"ag" = (/obj/machinery/atmospherics/pipe/simple/visible/red{dir = 10},/obj/effect/wallframe_spawn/reinforced_phoron,/obj/effect/paint/brown,/turf/simulated/floor/plating,/area/map_template/crashed_pod)
+"ae" = (/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,/obj/effect/submap_landmark/joinable_submap/crashed_pod,/turf/simulated/floor/plating,/area/map_template/crashed_pod)
+"af" = (/obj/machinery/atmospherics/pipe/simple/visible/red{icon_state = "intact"; dir = 6},/turf/simulated/wall/r_wall/prepainted,/area/map_template/crashed_pod)
+"ag" = (/obj/machinery/atmospherics/pipe/simple/visible/red{dir = 10},/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,/turf/simulated/floor/plating,/area/map_template/crashed_pod)
 "ah" = (/obj/machinery/alarm{dir = 4; locked = 0; pixel_x = -25; pixel_y = 0},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4; layer = 2.4; level = 2},/obj/machinery/power/port_gen/pacman/super,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
 "ai" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/turf/simulated/floor/tiled/techfloor,/area/map_template/crashed_pod)
 "aj" = (/obj/item/trash/raisins,/obj/item/weapon/reagent_containers/food/drinks/glass2/fitnessflask,/turf/simulated/floor/tiled/techfloor,/area/map_template/crashed_pod)
@@ -21,8 +21,8 @@
 "au" = (/obj/structure/cable{d2 = 8; icon_state = "0-8"},/obj/machinery/power/smes/buildable{charge = 50000; inputting = 1; outputting = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
 "av" = (/obj/machinery/atmospherics/omni/filter,/turf/simulated/floor/tiled/techfloor,/area/map_template/crashed_pod)
 "aw" = (/obj/structure/closet/crate,/obj/effect/floor_decal/industrial/hatch/orange,/obj/item/device/analyzer,/obj/item/weapon/circuitboard/unary_atmos/cooler,/obj/item/weapon/circuitboard/unary_atmos/heater,/obj/item/weapon/circuitboard/oxyregenerator,/obj/item/weapon/tank/oxygen/red,/obj/structure/cable,/obj/item/stack/material/uranium/ten,/obj/item/stack/material/uranium/ten,/obj/item/stack/material/uranium/ten,/obj/item/stack/material/uranium/ten,/obj/item/stack/material/uranium/ten,/obj/item/stack/material/uranium/ten,/obj/item/stack/material/uranium/ten,/obj/item/stack/material/uranium/ten,/obj/item/stack/material/uranium/ten,/obj/item/clothing/under/savage_hunter,/obj/item/clothing/under/savage_hunter/female,/obj/item/clothing/under/wetsuit,/obj/item/trash/candy/proteinbar,/obj/item/trash/liquidfood,/obj/item/weapon/stock_parts/matter_bin/super,/obj/item/weapon/circuitboard/biogenerator,/obj/item/weapon/bedsheet/orange,/obj/item/weapon/bedsheet/orange,/obj/item/weapon/stock_parts/matter_bin/adv,/obj/item/weapon/stock_parts/micro_laser/ultra,/obj/item/weapon/reagent_containers/food/snacks/liquidfood,/obj/item/stack/material/sandstone{amount = 50},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
-"ax" = (/obj/machinery/atmospherics/binary/pump,/obj/effect/paint/brown,/turf/simulated/wall,/area/map_template/crashed_pod)
-"ay" = (/obj/machinery/atmospherics/pipe/simple/visible/red{icon_state = "intact"; dir = 5},/obj/effect/paint/brown,/turf/simulated/wall,/area/map_template/crashed_pod)
+"ax" = (/turf/simulated/wall/prepainted,/area/map_template/crashed_pod)
+"ay" = (/obj/effect/wallframe_spawn/reinforced,/obj/machinery/door/firedoor,/turf/simulated/floor/plating,/area/map_template/crashed_pod)
 "az" = (/obj/machinery/atmospherics/pipe/manifold/visible/cyan{icon_state = "map"; dir = 8},/obj/structure/reagent_dispensers/fueltank,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
 "aA" = (/obj/machinery/atmospherics/pipe/manifold/visible/red{icon_state = "map"; dir = 4},/turf/simulated/floor/tiled/techfloor,/area/map_template/crashed_pod)
 "aB" = (/obj/machinery/sleeper{dir = 4},/obj/effect/floor_decal/industrial/outline/blue,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
@@ -68,7 +68,7 @@
 "bp" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/techfloor,/area/map_template/crashed_pod)
 "bq" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/reagent_containers/food/condiment/small/saltshaker,/obj/item/weapon/reagent_containers/food/condiment/small/peppermill,/obj/effect/decal/cleanable/flour,/obj/item/trash/candy/proteinbar,/obj/machinery/reagentgrinder,/obj/item/weapon/reagent_containers/food/condiment/small/sugar,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
 "br" = (/obj/machinery/alarm{dir = 4; locked = 0; pixel_x = -25; pixel_y = 0},/obj/structure/bed/chair{dir = 1},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
-"bs" = (/obj/machinery/door/firedoor,/obj/effect/paint/brown,/obj/effect/wallframe_spawn/reinforced_phoron,/turf/simulated/floor/plating,/area/map_template/crashed_pod)
+"bs" = (/obj/machinery/atmospherics/binary/pump,/turf/simulated/wall/prepainted,/area/map_template/crashed_pod)
 "bt" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/simulated/floor/tiled/techfloor,/area/map_template/crashed_pod)
 "bu" = (/obj/structure/table/steel_reinforced,/obj/machinery/microwave,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
 "bv" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 1},/obj/effect/decal/cleanable/filth,/turf/simulated/floor/tiled/techfloor,/area/map_template/crashed_pod)
@@ -96,30 +96,30 @@
 "bR" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/machinery/light/small,/turf/simulated/floor/tiled/techfloor,/area/map_template/crashed_pod)
 "bS" = (/obj/effect/floor_decal/industrial/hatch/orange,/obj/structure/table/rack,/obj/item/clothing/suit/space/emergency,/obj/item/clothing/head/helmet/space/emergency,/obj/item/clothing/head/helmet/space/emergency,/obj/item/clothing/suit/space/emergency,/obj/item/weapon/tank/emergency/oxygen/double,/obj/item/weapon/tank/emergency/oxygen/double,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
 "bT" = (/obj/structure/closet/crate,/obj/random/handgun,/obj/random/handgun,/obj/random/handgun,/obj/item/weapon/pickaxe,/obj/item/weapon/pickaxe,/obj/item/weapon/pickaxe,/obj/item/stack/material/glass/fifty,/obj/item/device/flashlight/lantern,/obj/item/device/flashlight/lantern,/obj/item/weapon/storage/box/glowsticks,/obj/item/weapon/storage/box/glowsticks,/obj/item/weapon/storage/box/glowsticks,/obj/item/stack/material/steel/fifty,/obj/random/toolbox,/obj/random/toolbox,/obj/random/toolbox,/obj/random/toolbox,/obj/item/stack/material/aluminium/fifty,/obj/item/stack/material/plastic/fifty,/obj/item/stack/material/plasteel/ten,/obj/item/stack/material/steel/fifty,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
-"bU" = (/obj/effect/wallframe_spawn/reinforced/bare,/obj/machinery/door/firedoor,/obj/effect/paint/brown,/turf/simulated/floor/plating,/area/map_template/crashed_pod)
+"bU" = (/obj/machinery/atmospherics/pipe/simple/visible/red{icon_state = "intact"; dir = 5},/turf/simulated/wall/prepainted,/area/map_template/crashed_pod)
 "bV" = (/obj/effect/floor_decal/industrial/hatch/orange,/obj/structure/table/rack,/obj/item/clothing/suit/space/emergency,/obj/item/clothing/suit/space/emergency,/obj/item/clothing/head/helmet/space/emergency,/obj/item/clothing/head/helmet/space/emergency,/obj/item/weapon/tank/emergency/oxygen/double,/obj/item/weapon/tank/emergency/oxygen/double,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
 "bW" = (/obj/structure/closet/crate/medical,/obj/random/firstaid,/obj/random/firstaid,/obj/random/firstaid,/obj/random/firstaid,/obj/random/firstaid,/obj/item/weapon/storage/firstaid/surgery,/obj/item/weapon/storage/firstaid/stab,/obj/item/weapon/storage/pill_bottle/antidexafen,/obj/item/weapon/storage/pill_bottle/antidexafen,/obj/item/weapon/storage/med_pouch/radiation,/obj/item/weapon/storage/med_pouch/radiation,/obj/item/weapon/storage/med_pouch/radiation,/obj/item/weapon/storage/med_pouch/radiation,/obj/item/weapon/storage/pill_bottle/assorted,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
+"bX" = (/obj/machinery/door/firedoor,/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,/turf/simulated/floor/plating,/area/map_template/crashed_pod)
 "bY" = (/obj/structure/closet/crate/freezer/rations,/obj/item/weapon/storage/bag/trash,/obj/item/weapon/storage/bag/trash,/obj/item/weapon/storage/box/donkpockets,/obj/item/weapon/storage/box/donkpockets,/obj/item/weapon/storage/fancy/egg_box,/obj/item/weapon/storage/fancy/egg_box,/obj/item/weapon/storage/fancy/egg_box,/obj/item/weapon/reagent_containers/food/condiment/enzyme,/obj/item/weapon/reagent_containers/food/drinks/milk,/obj/item/weapon/reagent_containers/food/drinks/milk,/obj/item/trash/liquidfood,/obj/item/trash/liquidfood,/obj/item/trash/liquidfood,/obj/item/trash/liquidfood,/obj/item/weapon/beartrap,/obj/item/weapon/material/knife/kitchen/cleaver,/obj/item/weapon/reagent_containers/food/snacks/liquidfood,/obj/item/weapon/reagent_containers/food/snacks/liquidfood,/obj/item/weapon/reagent_containers/food/snacks/liquidfood,/obj/item/weapon/reagent_containers/food/snacks/liquidfood,/obj/item/weapon/reagent_containers/food/snacks/liquidfood,/obj/item/weapon/reagent_containers/food/snacks/liquidfood,/obj/item/weapon/reagent_containers/food/snacks/liquidfood,/obj/item/weapon/reagent_containers/food/snacks/liquidfood,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
 "cb" = (/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/item/device/oxycandle,/obj/structure/closet/crate,/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/machinery/light/small,/turf/simulated/floor/tiled/techfloor,/area/map_template/crashed_pod)
 "cc" = (/obj/structure/table/steel_reinforced,/obj/item/device/multitool,/obj/item/weapon/screwdriver,/obj/item/weapon/cell/device/high,/obj/item/weapon/cell/device/high,/obj/item/weapon/cell/crap,/obj/item/weapon/storage/box/lights,/obj/item/device/analyzer,/obj/item/weapon/reagent_containers/food/drinks/cans/speer,/obj/item/weapon/reagent_containers/food/drinks/cans/speer,/obj/item/weapon/reagent_containers/food/drinks/cans/speer,/obj/item/weapon/storage/box/monkeycubes,/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka,/obj/item/weapon/reagent_containers/food/drinks/bottle/specialwhiskey,/obj/item/weapon/tracker_electronics,/obj/item/weapon/pen/blue,/obj/item/weapon/pen/green,/obj/item/weapon/pen/red,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
 "cd" = (/obj/structure/closet/crate/large/hydroponics,/obj/item/seeds/potatoseed,/obj/item/seeds/potatoseed,/obj/item/seeds/wheatseed,/obj/item/seeds/wheatseed,/obj/item/seeds/orangeseed,/obj/item/seeds/orangeseed,/obj/item/seeds/cornseed,/obj/item/seeds/cornseed,/obj/item/weapon/material/hatchet,/obj/item/weapon/reagent_containers/glass/bucket,/obj/item/weapon/material/minihoe,/obj/item/weapon/plantspray/pests,/obj/item/weapon/plantspray/pests,/obj/item/weapon/plantspray/weeds,/obj/item/seeds/poppyseed,/obj/item/seeds/towermycelium,/obj/item/seeds/glowshroom,/obj/item/seeds/whitebeetseed,/obj/item/weapon/storage/plants,/obj/item/seeds/bananaseed,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/crashed_pod)
-"ce" = (/obj/effect/paint/brown,/turf/simulated/wall,/area/map_template/crashed_pod)
 
 (1,1,1) = {"
-aaacadacadacacadacadacaa
-acacabacaeacacabafagacac
-acahaiajaTakalanavaoapac
-acaqarasatauawazamaAaCac
-acacaDcecebUbUaxayaKceac
-acaEaSaFaGaIaIaHaJaUaMac
-acaBaLaNaOaPaPaQaTaVaRac
-accebkcecebUbUcecebmceac
-acaWbnaYaZbabbaZbcbobdac
-bsblbnbebfbgbhbibjbpbqbs
-acbrbtaXaXbvbwbxbxbzbuac
-acbybCbAbEbObGbKbLbQbMac
-acbUbJaccebBcececebBceac
-acbVbDacbYbFbWcebHbIbPac
-acbSbDacbTbRcccebNcbcdac
-acacbJacacbsacacacbsacac
+aaabadabadababadabadabaa
+ababacabaeababacafagabab
+abahaiajaTakalanavaoapab
+abaqarasatauawazamaAaCab
+ababaDaxaxayaybsbUaKaxab
+abaEaSaFaGaIaIaHaJaUaMab
+abaBaLaNaOaPaPaQaTaVaRab
+abaxbkaxaxayayaxaxbmaxab
+abaWbnaYaZbabbaZbcbobdab
+bXblbnbebfbgbhbibjbpbqbX
+abbrbtaXaXbvbwbxbxbzbuab
+abbybCbAbEbObGbKbLbQbMab
+abaybJabaxbBaxaxaxbBaxab
+abbVbDabbYbFbWaxbHbIbPab
+abbSbDabbTbRccaxbNcbcdab
+ababbJababbXabababbXabab
 "}
