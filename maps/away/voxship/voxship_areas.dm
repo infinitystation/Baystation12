@@ -1,5 +1,6 @@
 /area/voxship/
 	icon = 'voxship.dmi'
+	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/voxship/base
 	name = "\improper Vox Base"
