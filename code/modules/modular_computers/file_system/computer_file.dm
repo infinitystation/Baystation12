@@ -10,6 +10,7 @@ var/global/file_uid = 0
 	var/uid													// UID of this file
 	var/list/metadata											// Any metadata the file uses.
 	var/papertype = /obj/item/paper
+	var/is_illegal = 0
 
 /datum/computer_file/New(var/list/md = null)
 	..()
