@@ -148,6 +148,7 @@
 
 /area/maintenance/abandoned_compartment
 	name = "unknown compartment"
+	turf_initializer = /decl/turf_initializer/maintenance/heavy
 
 //First Deck (Z-3)
 /area/maintenance/firstdeck
