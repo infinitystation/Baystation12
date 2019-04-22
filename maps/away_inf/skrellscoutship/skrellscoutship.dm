@@ -166,8 +166,10 @@
 
 /obj/machinery/alarm/skrellian
 	temperature = 313.15
-	target_temperature = 313.15
+	target_temperature = 313.15 //40C
 	req_access = list(access_skrellscoutship)
+	TLV["temperature"] =	list(T0C, T0C+20, T0C+60, T0C+80) // T0C = 0.0 C
+
 
 /turf/simulated/floor/tiled/skrell //override
 	temperature = 313.15
