@@ -79,3 +79,117 @@
 /datum/sprite_accessory/hair/infinity/long
 	name = "Long hair 4"
 	icon_state = "hair_long"
+
+//[MODED_VG]__________________________________________________________
+/datum/sprite_accessory/hair/infinity/bedhead_4
+	name = "Bedhead 4"
+	icon_state = "hair_80s"
+
+/datum/sprite_accessory/hair/infinity/long_bedhead
+	name = "Very Long Bedhead"
+	icon_state = "hair_long_bedhead"
+	gender = FEMALE
+
+/datum/sprite_accessory/hair/infinity/jade
+	name = "Jaden"
+	icon_state = "hair_jade"
+
+/datum/sprite_accessory/hair/infinity/judge
+	name = "Judge"
+	icon_state = "hair_judge"
+
+/datum/sprite_accessory/hair/infinity/bangs
+	name = "Bangs"
+	icon_state = "hair_lbangs"
+
+/datum/sprite_accessory/hair/infinity/longbraid
+	name = "Long braid"
+	icon_state = "hair_long_braid"
+
+/datum/sprite_accessory/hair/infinity/longsidepart
+	name = "Long sidepart"
+	icon_state = "hair_longsidepart"
+
+/datum/sprite_accessory/hair/infinity/oneshoulder
+	name = "One shoulder braid"
+	icon_state = "hair_oneshoulder"
+
+/datum/sprite_accessory/hair/infinity/pixie
+	name = "Pixie"
+	icon_state = "hair_pixie"
+
+/datum/sprite_accessory/hair/infinity/rosa
+	name = "Rosa"
+	icon_state = "hair_rosa"
+
+/datum/sprite_accessory/hair/infinity/beyfong
+	name = "Beyfong"
+	icon_state = "hair_toph"
+
+/datum/sprite_accessory/hair/infinity/roxy
+	name = "Roxy"
+	icon_state = "hair_roxy"
+
+/datum/sprite_accessory/hair/infinity/schierke
+	name = "Schierke"
+	icon_state = "hair_schierke"
+/datum/sprite_accessory/hair/infinity/scully
+	name = "Scully"
+	icon_state = "hair_scully"
+
+/datum/sprite_accessory/hair/infinity/shinobu
+	name = "Shinobu"
+	icon_state = "hair_shinobu"
+
+/datum/sprite_accessory/hair/infinity/sidetail3
+	name = "Side Tail 3"
+	icon_state = "hair_sidetail3"
+
+/datum/sprite_accessory/hair/infinity/terezi
+	name = "Terezi"
+	icon_state = "hair_terezi"
+
+/datum/sprite_accessory/hair/infinity/tressshoulder
+	name = "Tress Shoulder"
+	icon_state = "hair_tressshoulder"
+
+/datum/sprite_accessory/hair/infinity/vriska
+	name = "Vriska"
+	icon_state = "hair_vriska"
+
+/datum/sprite_accessory/hair/infinity/longsidepartstraight
+	name = "Long Side Part Straight"
+	icon_state = "hair_longsidepartstraight"
+
+/datum/sprite_accessory/hair/infinity/combedbob
+	name = "Combed Bob"
+	icon_state = "hair_combedbob"
+
+/datum/sprite_accessory/hair/infinity/slightlymessy
+	name = "Slightly Messy"
+	icon_state = "hair_slightlymessy"
+
+/datum/sprite_accessory/hair/infinity/geisha
+	name = "Geisha"
+	icon_state = "hair_geisha"
+
+/datum/sprite_accessory/hair/infinity/baum
+	name = "Baum"
+	icon_state = "hair_baum"
+
+/datum/sprite_accessory/hair/infinity/cohair_wisp_s
+	name = "Wisp"
+	icon_state = "hair_wisp"
+
+/datum/sprite_accessory/hair/infinity/oxton
+	name = "Oxton"
+	icon_state = "hair_oxton"
+
+/datum/sprite_accessory/hair/infinity/ziegler
+	name = "Ziegler"
+	icon_state = "hair_ziegler"
+
+/datum/sprite_accessory/hair/infinity/country
+	name = "Country"
+	icon_state = "hair_country"
+//[/MODED_VG]_________________________________________________________
