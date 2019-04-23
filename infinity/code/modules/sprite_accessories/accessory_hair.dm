@@ -133,9 +133,6 @@
 /datum/sprite_accessory/hair/infinity/schierke
 	name = "Schierke"
 	icon_state = "hair_schierke"
-/datum/sprite_accessory/hair/infinity/scully
-	name = "Scully"
-	icon_state = "hair_scully"
 
 /datum/sprite_accessory/hair/infinity/shinobu
 	name = "Shinobu"
