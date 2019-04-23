@@ -1,13 +1,12 @@
-/datum/sprite_accessory/hair/infinity/wong
-	name = "Wong"
-	icon = 'icons/mob/human_races/species/human/hair_infinity.dmi'
-	icon_state = "hair_wong"
-	gender = FEMALE
-
 /datum/sprite_accessory/hair/infinity
 	name = "Angel"
 	icon = 'icons/mob/human_races/species/human/hair_infinity.dmi'
 	icon_state = "hair_angel"
+
+/datum/sprite_accessory/hair/infinity/wong
+	name = "Wong"
+	icon_state = "hair_wong"
+	gender = FEMALE
 
 /datum/sprite_accessory/hair/infinity/shortcover
 	name = "Shortcover"
@@ -133,9 +132,6 @@
 /datum/sprite_accessory/hair/infinity/schierke
 	name = "Schierke"
 	icon_state = "hair_schierke"
-/datum/sprite_accessory/hair/infinity/scully
-	name = "Scully"
-	icon_state = "hair_scully"
 
 /datum/sprite_accessory/hair/infinity/shinobu
 	name = "Shinobu"
