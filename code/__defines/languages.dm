@@ -23,6 +23,9 @@
 #define LANGUAGE_XENOPHAGE      "Xenophage"
 #define LANGUAGE_XENOPHAGE_HIVE "Hivemind"
 #define LANGUAGE_YEOSA          "Yeosa'unathi"
+#define LANGUAGE_MANTID_NONVOCAL  "Ascent-Glow"
+#define LANGUAGE_MANTID_VOCAL     "Ascent-Voc"
+#define LANGUAGE_MANTID_BROADCAST "Worldnet"
 
 // Language flags.
 #define WHITELISTED  1   // Language is available if the speaker is whitelisted.
