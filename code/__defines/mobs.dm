@@ -293,7 +293,10 @@
 #define SPECIES_GOLEM       "Golem"
 #define SPECIES_YEOSA       "Yeosa'Unathi"
 #define SPECIES_EROSAN      "Erosan'Unathi"
-
+#define SPECIES_MONARCH_WORKER "Monarch Serpentid Worker"
+#define SPECIES_MONARCH_QUEEN  "Monarch Serpentid Queen"
+#define SPECIES_MANTID_ALATE   "Mantid Alate"
+#define SPECIES_MANTID_GYNE    "Mantid Gyne"
 
 #define SURGERY_CLOSED 0
 #define SURGERY_OPEN 1
