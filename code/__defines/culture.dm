@@ -167,6 +167,14 @@
 #define CULTURE_XENOPHAGE_Q    "Xenophage Queen"
 #define FACTION_XENOPHAGE      "Xenophage Hive"
 
+// Ascent culture.
+#define CULTURE_ASCENT           "The Ascent"
+#define HOME_SYSTEM_KHARMAANI    "Core"
+#define FACTION_ASCENT_GYNE      "Ascent Gyne"
+#define FACTION_ASCENT_ALATE     "Ascent Alate"
+#define FACTION_ASCENT_SERPENTID "Ascent Serpentid"
+#define RELIGION_KHARMAANI       "Nest-Lineage Veneration"
+
 // Other culture values.
 #define EDUCATION_TIER_NONE      0
 #define EDUCATION_TIER_DROPOUT   1
