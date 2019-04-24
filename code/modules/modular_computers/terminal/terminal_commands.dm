@@ -287,9 +287,12 @@ Subtypes
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/shutdown/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/obj/item/modular_computer/CT = terminal.computer
 	if(length(text) < 8)
 		return "shutdown: Improper syntax. shutdown."
-	terminal.computer.shutdown_computer()
+	CT.shutdown_computer()
+	CT.bsod = 0
+	CT.update_icon()
 	return "Shutdown successful."
 
 //TODO-ELar-inf: Soon i'll finish it.
@@ -338,6 +341,7 @@ Subtypes
 			CT.active_program.kill_program(1)
 			CT.update_icon()
 			return "session: Active background and current programs killed."
+
 		else
 			ermsg = "background" + ermsg
 		if(CT.active_program)
