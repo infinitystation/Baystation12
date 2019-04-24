@@ -26,6 +26,10 @@
 		/area/outpost/mining/solar = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/outpost/mining/maints = NO_SCRUBBER|NO_VENT,
 		/area/outpost/mining/atmos = NO_SCRUBBER|NO_VENT,
+		/area/ship/skrellscoutship/solars = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/ship/skrellscoutship/crew/toilets = NO_SCRUBBER|NO_VENT,
+		/area/ship/skrellscoutship/maintenance/power = NO_SCRUBBER,
+		/area/ship/skrellscoutshuttle = NO_SCRUBBER
 	)
 
 	area_coherency_test_exempt_areas = list(
