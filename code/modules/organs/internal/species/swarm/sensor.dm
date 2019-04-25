@@ -1,7 +1,7 @@
 /obj/item/organ/internal/swarm/sensor
 	name = "Swarm sensors"
 	desc = "Сенсоры, похожи на сенсоры боргов, но их больше и они меньше"
-	icon_state = "sensor"
+	icon_state = "have_not"
 	organ_tag = BP_SENSOR
 	parent_organ = BP_SHELL
 	var/innate_flash_protection = FLASH_PROTECTION_NONE
