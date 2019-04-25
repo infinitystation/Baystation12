@@ -1,5 +1,5 @@
 /datum/species/nabber
-	name = SPECIES_NABBER // code\modules\species\station\nabber.dm:2:error: location of top-most unmatched {
+	name = SPECIES_NABBER // some code with khaarmani, be careful. Also - check all external organ(groin, chest, limbs - first position to check and repair for future. Now - "It's just works!"
 	name_plural = "giant armoured serpentids"
 	description = "A species of large invertebrates who, after being discovered by a \
 	research company, were taught how to live and work with humans. Standing \
@@ -13,7 +13,7 @@
 
 	assisted_langs = list(LANGUAGE_GALCOM, LANGUAGE_LUNAR, LANGUAGE_GUTTER, LANGUAGE_UNATHI, LANGUAGE_SKRELLIAN, LANGUAGE_SOL_COMMON, LANGUAGE_EAL, LANGUAGE_INDEPENDENT, LANGUAGE_SPACER)
 	min_age = 8
-	max_age = 120
+	max_age = 40
 
 	speech_sounds = list('sound/voice/bug.ogg')
 	speech_chance = 2
@@ -82,8 +82,8 @@
 		BP_VOICE =    /obj/item/organ/internal/voicebox/nabber
 		)
 
-	has_limbs = list( // code\modules\species\station\nabber.dm:85:error: list started here
-		BP_CHEST =  list("path" = /obj/item/organ/external/chest/nabber),
+	has_limbs = list(
+		BP_CHEST =  list("path" = /obj/item/organ/external/chest/insectoid/nabber),
 		BP_GROIN =  list("path" = /obj/item/organ/external/groin/nabber),
 		BP_HEAD =   list("path" = /obj/item/organ/external/head/nabber),
 		BP_L_ARM =  list("path" = /obj/item/organ/external/arm/nabber),
@@ -94,9 +94,9 @@
 		BP_L_LEG =  list("path" = /obj/item/organ/external/leg/nabber),
 		BP_L_FOOT = list("path" = /obj/item/organ/external/foot/nabber),
 		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right/nabber),
-		BP_CHEST =  list("path" = /obj/item/organ/external/chest/insectoid/nabber), // code\modules\species\station\nabber.dm:97:error: "chest": missing comma ',' or right-paren ')', also - code\modules\species\station\nabber.dm:97:error: "chest": expected end of statement, and~ code\modules\species\station\nabber.dm:97:error: ,: expected }
-		BP_GROIN =  list("path" = /obj/item/organ/external/groin/insectoid/nabber),
-		BP_HEAD =   list("path" = /obj/item/organ/external/head/insectoid/nabber),
+		BP_CHEST =  list("path" = /obj/item/organ/external/chest/insectoid/nabber),
+		BP_GROIN =  list("path" = /obj/item/organ/external/groin/nabber),
+		BP_HEAD =   list("path" = /obj/item/organ/external/head/nabber),
 		BP_L_ARM =  list("path" = /obj/item/organ/external/arm/insectoid),
 		BP_L_HAND = list("path" = /obj/item/organ/external/hand/insectoid),
 		BP_R_ARM =  list("path" = /obj/item/organ/external/arm/right/insectoid),
@@ -128,8 +128,8 @@
 		BP_HEART =    list(/obj/item/organ/internal/heart/open,             15),
 		BP_LIVER =    list(/obj/item/organ/internal/liver/nabber,           35),
 		BP_ACETONE =  list(/obj/item/organ/internal/acetone,                50),
-		BP_HEAD    =  list(/obj/item/organ/external/head/insectoid/nabber,  90),
-		BP_GROIN    = list(/obj/item/organ/external/groin/insectoid/nabber, 90),
+		BP_HEAD    =  list(/obj/item/organ/external/head/nabber,  90),
+		BP_GROIN    = list(/obj/item/organ/external/groin/nabber, 90),
 		BP_L_ARM   =  list(/obj/item/organ/external/arm/insectoid,          75),
 		BP_R_ARM   =  list(/obj/item/organ/external/arm/insectoid,          75),
 		BP_L_LEG   =  list(/obj/item/organ/external/leg/insectoid,          75),
