@@ -163,7 +163,7 @@
 	speech_verb = "транслирует"
 	ask_verb = "транслирует"
 	exclaim_verb = "транслирует"
-	key = "m"
+	key = "t"
 	flags = RESTRICTED
 	machine_understands = 0
 	shorthand = "Swarm"
