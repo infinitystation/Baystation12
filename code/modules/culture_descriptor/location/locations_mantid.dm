@@ -5,7 +5,7 @@
 	populace call their motherland. While the planet's orbit is thickly populated with habitats, factories \
 	and defense platforms, each belonging to a different node in the ever-shifting political web of Ascent \
 	social culture, the surface itself is a pristine monument to the Kharmaan evolutionary past."
-  language =    LANGUAGE_MANTID_NONVOCAL
-  additional_langs = list(LANGUAGE_MANTID_BROADCAST, LANGUAGE_MANTID_VOCAL, LANGUAGE_NABBER, LANGUAGE_SKRELLIAN)
-  ruling_body = "Core"
-  distance = "No Information"
+	language =         LANGUAGE_MANTID_VOCAL
+	additional_langs = list(LANGUAGE_MANTID_BROADCAST, LANGUAGE_MANTID_VOCAL, LANGUAGE_NABBER, LANGUAGE_SKRELLIAN)
+	ruling_body = "Core"
+	distance = "No Information"
