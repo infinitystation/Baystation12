@@ -741,6 +741,18 @@
 	strength = 3
 	heating_products = null
 	heating_point = null
+	
+/datum/reagent/toxin/bromide/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
+	if(alien != IS_MANTID) . = ..()
+
+/datum/reagent/toxin/bromide/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	if(alien == IS_MANTID)
+		M.add_chemical_effect(CE_OXYGENATED, 1)
+	else
+		..()
+
+/datum/reagent/toxin/bromide/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+	if(alien != IS_MANTID) . = ..()
 
 /datum/reagent/toxin/methyl_bromide
 	name = "Methyl Bromide"
@@ -752,13 +764,20 @@
 	heating_products = null
 	heating_point = null
 
+/datum/reagent/toxin/methyl_bromide/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
+	if(alien != IS_MANTID) . = ..()
+
+/datum/reagent/toxin/methyl_bromide/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+	if(alien != IS_MANTID) . = ..()
+
 /datum/reagent/toxin/methyl_bromide/touch_turf(var/turf/simulated/T)
 	if(istype(T))
 		T.assume_gas("methyl_bromide", volume, T20C)
 		remove_self(volume)
 
 /datum/reagent/toxin/methyl_bromide/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	. = ..()
+	if(alien != IS_MANTID)
+		. = ..()
 	if(istype(M))
 		for(var/obj/item/organ/external/E in M.organs)
 			if(LAZYLEN(E.implants))
@@ -768,3 +787,33 @@
 						M.visible_message("<span class='notice'>The dying form of \a [spider] emerges from inside \the [M]'s [E.name].</span>")
 						qdel(spider)
 						break
+
+/datum/reagent/crystal
+	name = "crystallizing agent"
+	taste_description = "sharpness"
+	reagent_state = LIQUID
+	color = "#13bc5e"
+
+/datum/reagent/crystal/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/external/E = pick(H.organs)
+		if(E && !E.is_stump() && !BP_IS_ROBOTIC(E))
+			if(BP_IS_CRYSTAL(E))
+				E.heal_damage(rand(3,5), rand(3,5))
+			else if(prob(5))
+				to_chat(H, "<span class='danger'>Your [E.name] is being lacerated from within!</span>")
+				if(H.can_feel_pain())
+					H.emote("scream")
+				for(var/i = 1 to rand(3,5))
+					new /obj/item/weapon/material/shard(get_turf(E), MATERIAL_CRYSTAL)
+				if(E.organ_tag != BP_CHEST && E.organ_tag != BP_HEAD)
+					E.droplimb(0, DROPLIMB_BLUNT)
+				else
+					E.take_external_damage(rand(20,30), used_weapon = "rapid internal crystalization")
+			return
+	else
+		to_chat(M, "<span class='danger'>Your body is being lacerated from within!</span>")
+		M.adjustBruteLoss(rand(3,6))
+		if(prob(10))
+			new /obj/item/weapon/material/shard(get_turf(M), MATERIAL_CRYSTAL)
