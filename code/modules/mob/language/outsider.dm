@@ -163,7 +163,7 @@
 	speech_verb = "транслирует"
 	ask_verb = "транслирует"
 	exclaim_verb = "транслирует"
-	key = "s"
+	key = "m"
 	flags = RESTRICTED
 	machine_understands = 0
 	shorthand = "Swarm"
@@ -175,6 +175,6 @@
 	ask_verb = "транслирует"
 	exclaim_verb = "транслирует"
 	colour = "adherent"
-	key = "s"
+	key = "z"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"
