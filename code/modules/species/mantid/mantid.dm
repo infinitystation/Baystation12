@@ -7,6 +7,7 @@
 	description = "When human explorers finally arrived at the outer reaches of Skrellian space, they hoped to find \
 	new frontiers and new planets to exploit. They were largely not expecting to have entire expeditions lost \
 	amid reports of highly advanced, astonishingly violent mantid-cephlapodean sentients with particle cannons."
+	hidden_from_codex = TRUE
 
 	icobase =                 'icons/mob/human_races/species/ascent/alate/body.dmi'
 	deform =                  'icons/mob/human_races/species/ascent/alate/body.dmi'
@@ -41,14 +42,26 @@
 
 	breath_type =             "methyl_bromide"
 	exhale_type =             "methane"
-	poison_types =            list("phoron")
+	poison_types =            list("phoron", "oxygen")
 
 	reagent_tag =             IS_MANTID
 	genders =                 list(MALE)
 
+	available_cultural_info = list(
+		TAG_CULTURE =   list(
+			CULTURE_ASCENT
+		),
+		TAG_HOMEWORLD = list(
+			HOME_SYSTEM_KHARMAANI
+		),
+		TAG_RELIGION =  list(
+			RELIGION_OTHER
+		)
+	)
+
 	appearance_flags =        0
 	species_flags =           SPECIES_FLAG_NO_SCAN | SPECIES_FLAG_NO_SLIP | SPECIES_FLAG_NO_MINOR_CUT
-	spawn_flags =             SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN | SPECIES_NO_LACE
+	spawn_flags =             SPECIES_CAN_JOIN | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN | SPECIES_NO_LACE
 
 	heat_discomfort_strings = list(
 		"You feel brittle and overheated.",
@@ -77,13 +90,6 @@
 		BP_L_LEG =  list("path" = /obj/item/organ/external/leg/insectoid),
 		BP_L_FOOT = list("path" = /obj/item/organ/external/foot/insectoid),
 		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right/insectoid)
-	)
-
-	force_cultural_info = list(
-		TAG_CULTURE =   CULTURE_ASCENT,
-		TAG_HOMEWORLD = HOME_SYSTEM_KHARMAANI,
-		TAG_FACTION =   FACTION_ASCENT_ALATE,
-		TAG_RELIGION =  RELIGION_KHARMAANI
 	)
 
 	descriptors = list(
@@ -131,13 +137,6 @@
 		/datum/mob_descriptor/body_length = 2
 		)
 
-	force_cultural_info = list(
-		TAG_CULTURE =   CULTURE_ASCENT,
-		TAG_HOMEWORLD = HOME_SYSTEM_KHARMAANI,
-		TAG_FACTION =   FACTION_ASCENT_GYNE,
-		TAG_RELIGION =  RELIGION_KHARMAANI
-	)
-
 /datum/species/mantid/gyne/New()
 	equip_adjust = list(
 		slot_l_hand_str = list(
@@ -168,28 +167,20 @@
 		"belt" =         list("loc" = ui_belt,      "name" = "Belt",         "slot" = slot_belt,      "state" = "belt")
 		)
 
-/datum/species/nabber/monarch
-	name = SPECIES_MONARCH_WORKER
-	name_plural = "Monarch Serpentid Workers"
-	hud_type = /datum/hud_data/mantid //todo
-	spawn_flags = SPECIES_IS_RESTRICTED | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN | SPECIES_NO_LACE
-
-	force_cultural_info = list(
-		TAG_CULTURE =   CULTURE_ASCENT,
-		TAG_HOMEWORLD = HOME_SYSTEM_KHARMAANI,
-		TAG_FACTION =   FACTION_ASCENT_SERPENTID,
-		TAG_RELIGION =  RELIGION_KHARMAANI
-	)
-
 /datum/species/nabber/monarch/queen
 	name = SPECIES_MONARCH_QUEEN
 	name_plural = "Monarch Serpentid Queens"
 
-	force_cultural_info = list(
-		TAG_CULTURE =   CULTURE_ASCENT,
-		TAG_HOMEWORLD = HOME_SYSTEM_KHARMAANI,
-		TAG_FACTION =   FACTION_ASCENT_SERPENTID,
-		TAG_RELIGION =  RELIGION_KHARMAANI
+	available_cultural_info = list(
+		TAG_CULTURE =   list(
+			CULTURE_ASCENT
+		),
+		TAG_HOMEWORLD = list(
+			HOME_SYSTEM_KHARMAANI
+		),
+		TAG_RELIGION =  list(
+			RELIGION_OTHER
+		)
 	)
 
 /datum/species/nabber/monarch/get_bodytype(var/mob/living/carbon/human/H)
