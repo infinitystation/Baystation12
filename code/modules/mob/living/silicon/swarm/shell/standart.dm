@@ -1,0 +1,1 @@
+/mob/living/silicon/swarm/standart
