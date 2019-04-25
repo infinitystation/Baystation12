@@ -28,8 +28,6 @@
 		/datum/mil_rank/civ/nt
 	)
 
-	required_education = EDUCATION_TIER_NONE
-
 /datum/job/cyborg
 	total_positions = 3
 	spawn_positions = 3
@@ -73,7 +71,6 @@
 	minimal_player_age = 0
 	create_record = 0
 	alt_titles = list(
-		"Merchant Assistant",
 		"Merchant Security" = /decl/hierarchy/outfit/job/sierra/merchant/security)
 	outfit_type = /decl/hierarchy/outfit/job/sierra/merchant
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -94,8 +91,8 @@
 	department = "Civilian"
 	department_flag = CIV
 
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "yourself"
 	selection_color = "#515151"
 	ideal_character_age = 30

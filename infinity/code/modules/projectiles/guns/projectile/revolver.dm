@@ -5,7 +5,7 @@
 	icon_state = "22lr_revolver"
 	item_state = "revolver"
 	max_shells = 10
-	caliber = "22"
+	caliber = CALIBER_PISTOL_TINY 
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/a22lr
 
@@ -19,18 +19,19 @@
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_guns.dmi',
 		)
 	item_state = "gun"
-	max_shells = 4
+	max_shells = 5
 	fire_delay = 8
 	force = 10
-	caliber = "shotgun"
+	caliber = CALIBER_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/shotgun
 
-/obj/item/weapon/gun/projectile/revolver/webley/captain
+/obj/item/weapon/gun/projectile/revolver/medium/captain
 	name = "\improper Final Argument"
-	icon = 'maps/sierra/icons/obj/uniques.dmi'
+	icon = 'maps/torch/icons/obj/uniques.dmi'
 	icon_state = "mosley"
-	desc = "A shiny al-Maliki & Mosley Autococker automatic revolver, with black accents. Marketed as the 'Revolver for the Modern Era'. Uses .357 magnum rounds."
+	desc = "A shiny al-Maliki & Mosley Autococker automatic revolver, with black accents. Marketed as the 'Revolver for the Modern Era'."
 	fire_delay = 5.7 //Autorevolver. Also synced with the animation
 	fire_anim = "mosley_fire"
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)
+	starts_loaded = 0 //Nobody keeps ballistic weapons loaded

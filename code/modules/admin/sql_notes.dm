@@ -138,6 +138,7 @@
 		if(!query_get_notes.Execute())
 			var/err = query_get_notes.ErrorMsg()
 			log_game("SQL ERROR obtaining ckey, notetext, adminckey, last_editor, server from notes table. Error : \[[err]\]\n")
+			to_chat(usr, "No DB connection founded. Please, report to development team. Code: TC.")
 			return
 		output += "<h2><center>Notes of [target_ckey]</center></h2>"
 		if(!linkless && usr.client.holder)
@@ -174,7 +175,8 @@
 		var/DBQuery/query_list_notes = dbcon.NewQuery("SELECT DISTINCT targetckey FROM erro_messages WHERE targetckey REGEXP '[search]' ORDER BY targetckey")
 		if(!query_list_notes.Execute())
 			var/err = query_list_notes.ErrorMsg()
-			log_game("SQL ERROR obtaining ckey from rro_messages table. Error : \[[err]\]\n")
+			log_game("SQL ERROR obtaining ckey from erro_messages table. Error : \[[err]\]\n")
+			to_chat(usr, "No DB connection founded. Please, report to development team. Code: Index.")
 			return
 		while(query_list_notes.NextRow())
 			index_ckey = query_list_notes.item[1]

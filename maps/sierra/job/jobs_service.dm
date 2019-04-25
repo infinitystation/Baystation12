@@ -17,8 +17,6 @@
 	access = list(access_maint_tunnels, access_emergency_storage, access_janitor)
 
 	minimal_access = list()
-	required_education = EDUCATION_TIER_DROPOUT
-	maximum_education = EDUCATION_TIER_TRADE
 
 /datum/job/chef
 	title = "Chef"
@@ -41,8 +39,6 @@
 	access = list(access_maint_tunnels, access_hydroponics, access_kitchen, access_commissary)
 
 	minimal_access = list()
-	required_education = EDUCATION_TIER_TRADE
-	maximum_education = EDUCATION_TIER_BACHELOR
 
 /datum/job/bartender
 	department = "Service"
@@ -60,5 +56,3 @@
 	min_skill = list(	SKILL_COOKING   = SKILL_BASIC,
 						SKILL_BOTANY    = SKILL_BASIC,
 						SKILL_CHEMISTRY = SKILL_BASIC)
-	required_education = EDUCATION_TIER_DROPOUT
-	maximum_education = EDUCATION_TIER_BACHELOR

@@ -258,7 +258,7 @@
 		var/mob/living/occupant = unbuckle_mob()
 
 		var/def_zone = ran_zone()
-		var/blocked = occupant.run_armor_check(def_zone, "melee")
+		var/blocked = occupant.get_blocked_ratio(def_zone, "melee", "melee", 0)
 		occupant.throw_at(A, 3, propelled)
 		occupant.apply_effect(6, STUN, blocked)
 		occupant.apply_effect(6, WEAKEN, blocked)
@@ -268,7 +268,7 @@
 		if(istype(A, /mob/living))
 			var/mob/living/victim = A
 			def_zone = ran_zone()
-			blocked = victim.run_armor_check(def_zone, "melee")
+			blocked = victim.get_blocked_ratio(def_zone, "melee", "melee", 0)
 			victim.apply_effect(6, STUN, blocked)
 			victim.apply_effect(6, WEAKEN, blocked)
 			victim.apply_effect(6, STUTTER, blocked)
@@ -360,6 +360,7 @@
 	desc = "A comfortable, secure seat. It has a sturdy-looking buckling system for smoother flights."
 	base_icon = "shuttle_chair"
 	icon_state = "shuttle_chair_preview"
+	buckling_sound = 'sound/effects/metal_close.ogg'
 
 /obj/structure/bed/chair/shuttle/post_buckle_mob()
 	if(buckled_mob)
@@ -392,6 +393,58 @@
 
 /obj/structure/bed/chair/shuttle/white/New(var/newloc,var/newmaterial)
 	..(newloc,MATERIAL_STEEL,MATERIAL_COTTON)
+/obj/structure/bed/chair/wood
+	name = "classic chair"
+	desc = "Old is never too old to not be in fashion."
+	base_icon = "wooden_chair"
+	icon_state = "wooden_chair_preview"
+	color = WOOD_COLOR_GENERIC
+	var/chair_material = MATERIAL_WOOD
+
+/obj/structure/bed/chair/wood/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(istype(W,/obj/item/stack) || istype(W, /obj/item/weapon/wirecutters))
+		return
+	..()
+
+/obj/structure/bed/chair/wood/New(var/newloc)
+	..(newloc, chair_material)
+
+/obj/structure/bed/chair/wood/mahogany
+	color = WOOD_COLOR_RICH
+	chair_material = MATERIAL_MAHOGANY
+
+/obj/structure/bed/chair/wood/maple
+	color = WOOD_COLOR_PALE
+	chair_material = MATERIAL_MAPLE
+
+/obj/structure/bed/chair/wood/ebony
+	color = WOOD_COLOR_BLACK
+	chair_material = MATERIAL_EBONY
+
+/obj/structure/bed/chair/wood/walnut
+	color = WOOD_COLOR_CHOCOLATE
+	chair_material = MATERIAL_WALNUT
+
+/obj/structure/bed/chair/wood/wings
+	name = "winged chair"
+	base_icon = "wooden_chair_wings"
+	icon_state = "wooden_chair_wings_preview"
+
+/obj/structure/bed/chair/wood/wings/mahogany
+	color = WOOD_COLOR_RICH
+	chair_material = MATERIAL_MAHOGANY
+
+/obj/structure/bed/chair/wood/wings/maple
+	color = WOOD_COLOR_PALE
+	chair_material = MATERIAL_MAPLE
+
+/obj/structure/bed/chair/wood/wings/ebony
+	color = WOOD_COLOR_BLACK
+	chair_material = MATERIAL_EBONY
+
+/obj/structure/bed/chair/wood/wings/walnut
+	color = WOOD_COLOR_CHOCOLATE
+	chair_material = MATERIAL_WALNUT
 
 //Deconstruct
 

@@ -37,7 +37,7 @@
 	id_tag = "patrol_dock_outer";
 	locked = 1;
 	name = "Docking Port Airlock";
-	req_access = list(13)
+	req_access = list("ACCESS_EXTERNAL")
 	},
 /turf/simulated/floor,
 /area/ship/patrol/dock)
@@ -49,7 +49,7 @@
 	id_tag = "patrol_dock_outer";
 	locked = 1;
 	name = "Docking Port Airlock";
-	req_access = list(13)
+	req_access = list("ACCESS_EXTERNAL")
 	},
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor,
@@ -105,7 +105,7 @@
 	display_name = "Port Patrol Dock";
 	frequency = 1332;
 	id_tag = "patrol_dock_airlock";
-	req_one_access = list(13,80);
+	req_access = list(list(13,80));
 	tag_airpump = "patrol_dock_pump";
 	tag_chamber_sensor = "patrol_dock_sensor";
 	tag_exterior_door = "patrol_dock_outer";
@@ -435,7 +435,7 @@
 	id_tag = "patrol_dock_inner";
 	locked = 1;
 	name = "Docking Port Airlock";
-	req_access = list(13)
+	req_access = list("ACCESS_EXTERNAL")
 	},
 /turf/simulated/floor,
 /area/ship/patrol/dock)
@@ -447,7 +447,7 @@
 	id_tag = "patrol_dock_inner";
 	locked = 1;
 	name = "Docking Port Airlock";
-	req_access = list(13)
+	req_access = list("ACCESS_EXTERNAL")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor,
@@ -460,7 +460,7 @@
 	},
 /obj/machinery/door/airlock/glass/command{
 	name = "Primary Docking Port Control";
-	req_one_access = list(13,80)
+	req_access = list(list(13,80))
 	},
 /obj/structure/sign/warning/high_voltage{
 	pixel_x = -32
@@ -625,7 +625,7 @@
 	name = "interior access button";
 	pixel_x = -24;
 	pixel_y = 24;
-	req_one_access = list(13,80)
+	req_access = list(list(13,80))
 	},
 /obj/structure/sign/warning/airlock{
 	pixel_x = -32
@@ -837,7 +837,7 @@
 	dir = 4;
 	pixel_x = -22;
 	pixel_y = 0;
-	req_one_access = list(24,11)
+	req_access = list(list(24,11))
 	},
 /obj/machinery/telecomms/broadcaster/preset_sent,
 /turf/simulated/floor/bluegrid,
@@ -1152,7 +1152,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch{
 	name = "Telecoms Server Access";
-	req_access = list(61);
+	req_access = list("ACCESS_TELECOMS");
 	secured_wires = 1
 	},
 /obj/effect/floor_decal/industrial/warning/half{
@@ -1195,7 +1195,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "Telecommunications Processor";
-	req_access = list(61)
+	req_access = list("ACCESS_TELECOMS")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/command/comms)
@@ -1414,7 +1414,7 @@
 "cH" = (
 /obj/machinery/door/airlock/glass/atmos{
 	name = "Atmospherics";
-	req_access = list(24)
+	req_access = list("ACCESS_ATMOS")
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/machinery/atmospherics/binary/pump/on{
@@ -1477,7 +1477,7 @@
 "cO" = (
 /obj/machinery/door/airlock/atmos{
 	name = "Starboard Engine";
-	req_access = list(24);
+	req_access = list("ACCESS_ATMOS");
 	secured_wires = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
@@ -1620,7 +1620,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
+	req_access = list(list(24,11))
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/cargo)
@@ -1754,7 +1754,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
+	req_access = list(list(24,11))
 	},
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/floor_decal/corner/brown{
@@ -1935,7 +1935,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /obj/machinery/door/airlock/glass/atmos{
 	name = "Atmospherics";
-	req_access = list(24)
+	req_access = list("ACCESS_ATMOS")
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor,
@@ -2012,7 +2012,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/atmos{
 	name = "Atmospherics Maintenance";
-	req_access = list(24);
+	req_access = list("ACCESS_ATMOS");
 	secured_wires = 1
 	},
 /obj/effect/floor_decal/industrial/warning/half,
@@ -2123,7 +2123,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
+	req_access = list(list(24,11))
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
@@ -2210,7 +2210,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
+	req_access = list(list(24,11))
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
@@ -2314,7 +2314,7 @@
 	},
 /obj/machinery/door/airlock/atmos{
 	name = "Starboard Engine";
-	req_access = list(24);
+	req_access = list("ACCESS_ATMOS");
 	secured_wires = 1
 	},
 /obj/machinery/door/firedoor,
@@ -2353,7 +2353,7 @@
 	name = "MRSL Platform Blastdoor Control";
 	pixel_x = -24;
 	pixel_y = 0;
-	req_access = list(11)
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /turf/simulated/floor,
 /area/ship/patrol/command/lasers)
@@ -2518,7 +2518,7 @@
 	},
 /obj/machinery/door/airlock/atmos{
 	name = "Port Engine";
-	req_access = list(24);
+	req_access = list("ACCESS_ATMOS");
 	secured_wires = 1
 	},
 /obj/machinery/door/firedoor,
@@ -2985,7 +2985,7 @@
 /obj/machinery/door/airlock/glass/command{
 	id_tag = "bridgep";
 	name = "Bridge";
-	req_access = list(19);
+	req_access = list("ACCESS_BRIDGE");
 	secured_wires = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -3191,7 +3191,7 @@
 /obj/machinery/door/airlock/glass/command{
 	id_tag = "bridgep";
 	name = "Bridge";
-	req_access = list(19);
+	req_access = list("ACCESS_BRIDGE");
 	secured_wires = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -3563,7 +3563,7 @@
 	name = "north bump";
 	pixel_x = 0;
 	pixel_y = 24;
-	req_access = list(201)
+	req_access = list("ACCESS_ZEPPELIN")
 	},
 /obj/structure/cable{
 	d2 = 8;
@@ -3593,7 +3593,7 @@
 /obj/machinery/door/airlock/glass/command{
 	id_tag = "bridgep";
 	name = "Bridge";
-	req_access = list(19);
+	req_access = list("ACCESS_BRIDGE");
 	secured_wires = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -3718,7 +3718,7 @@
 	name = "Torpedos Pod Control";
 	pixel_x = 0;
 	pixel_y = 24;
-	req_access = list(11)
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /turf/simulated/floor,
 /area/ship/patrol/command/torpedos)
@@ -4265,7 +4265,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
+	req_access = list(list(24,11))
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/lower/fore)
@@ -4725,7 +4725,7 @@
 	pixel_x = 24;
 	pixel_y = 0;
 	req_access = newlist();
-	req_one_access = list(301,302);
+	req_access = list(list(301,302));
 	tag_airpump = "patrol_shuttle_pump";
 	tag_chamber_sensor = "patrol_shuttle_sensor";
 	tag_exterior_door = "patrol_shuttle_outer";
@@ -4821,7 +4821,7 @@
 	id_tag = "MedbayFoyer";
 	name = "Infirmary";
 	req_access = newlist();
-	req_one_access = list(5,80)
+	req_access = list(list(5,80))
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/medbay)
@@ -4931,7 +4931,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/glass/engineering{
 	name = "Engineering Bay";
-	req_one_access = list(10)
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/equipment)
@@ -5292,7 +5292,7 @@
 "jD" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Shield Generator";
-	req_access = list(11)
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -5315,7 +5315,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /turf/simulated/floor,
 /area/ship/patrol/engineering/shield)
@@ -5508,7 +5507,6 @@
 	dir = 4;
 	pixel_x = -22;
 	pixel_y = 0;
-	req_one_access = list(24,11)
 	},
 /obj/machinery/ntnet_relay,
 /turf/simulated/floor/greengrid,
@@ -6145,7 +6143,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/engineering{
 	name = "Engineering Storage";
-	req_access = list(11)
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -6321,7 +6319,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch{
 	name = "Telecoms Server Access";
-	req_access = list(61);
+	req_access = list("ACCESS_TELECOMS");
 	secured_wires = 1
 	},
 /obj/effect/floor_decal/industrial/warning/half{
@@ -6654,7 +6652,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/glass/engineering{
 	name = "Engine Access";
-	req_access = list(11)
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/equipment)
@@ -6832,7 +6830,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "Telecommunications Server";
-	req_access = list(61)
+	req_access = list("ACCESS_TELECOMS")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/command/comms/server)
@@ -6991,7 +6989,7 @@
 	name = "Fusion Maintenance Access Controller";
 	pixel_x = 26;
 	pixel_y = 0;
-	req_access = list(11);
+	req_access = list("ACCESS_ENGINEERING");
 	tag_exterior_door = "prototype_exterior_pat";
 	tag_interior_door = "prototype_interior_pat"
 	},
@@ -7034,7 +7032,7 @@
 	icon_state = "door_locked";
 	id_tag = "prototype_access_hatch";
 	locked = 1;
-	req_access = list(11)
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -7134,7 +7132,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/medical{
 	name = "Operating Theatre";
-	req_access = list(45)
+	req_access = list("ACCESS_SURGERY")
 	},
 /obj/machinery/holosign,
 /turf/simulated/floor/tiled/white,
@@ -7764,7 +7762,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /obj/item/stack/nanopaste,
 /obj/item/stack/nanopaste,
@@ -7922,7 +7919,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/glass/engineering{
 	name = "Engine Control Room";
-	req_access = list(11)
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/fussion/control)
@@ -8145,7 +8142,7 @@
 	name = "Chamber Exhaust";
 	pixel_x = 0;
 	pixel_y = 21;
-	req_access = list(11)
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/machinery/button/remote/blast_door{
 	desc = "A remote control-switch for the observation shutters";
@@ -8153,7 +8150,7 @@
 	name = "Chamber Observation";
 	pixel_x = 0;
 	pixel_y = 29;
-	req_access = list(11)
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/machinery/button/remote/blast_door{
 	desc = "A remote control-switch for the engine containment doors";
@@ -8161,12 +8158,12 @@
 	name = "Chamber Containment";
 	pixel_x = 0;
 	pixel_y = 37;
-	req_access = list(11)
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/machinery/computer/fusion_fuel_control{
 	dir = 8;
 	id_tag = "fusion_injector_patrol";
-	req_access = list(11)
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/effect/floor_decal/corner/yellow{
 	icon_state = "corner_white";
@@ -8378,7 +8375,7 @@
 /obj/machinery/computer/fusion_core_control{
 	dir = 8;
 	id_tag = "fusion_core_patrol";
-	req_access = list(11)
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/effect/floor_decal/corner/yellow{
 	icon_state = "corner_white";
@@ -8514,7 +8511,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/barracks)
@@ -8548,7 +8544,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25;
-	req_one_access = list(24,11)
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/fussion/control)
@@ -8556,7 +8551,7 @@
 /obj/machinery/computer/gyrotron_control{
 	dir = 8;
 	id_tag = "fusion_gyrotron_patrol";
-	req_access = list(11)
+	req_access = list("ACCESS_ENGINEERING")
 	},
 /obj/effect/floor_decal/corner/yellow{
 	icon_state = "corner_white";

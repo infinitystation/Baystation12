@@ -50,6 +50,7 @@ galix - skrell
 knayu - skrell
 coldmantis13 - skrell
 s1334 - skrell
+logfol - skrell
 cre77 - resomi
 s1334 - resomi
 shokumar - resomi
@@ -66,6 +67,9 @@ coldmantis13 - resomi
 wheatley2013 - resomi
 twinindifferent - resomi
 hodovoy - resomi
+vovghik65 - resomi
+elar - resomi
+casly - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
@@ -95,6 +99,7 @@ sarumyn - diona
 forrya - diona
 s1334 - diona
 sfd - diona
+spiderling - diona
 wheatley2013 - vox
 wolforbykot - vox
 sosiskoed - vox
@@ -107,6 +112,9 @@ cre77 - vox
 kirill1243 - vox
 forrya - vox
 diesiege - vox
+vanya0 - vox
+logfol - vox
+hellpony - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 alchemisthero - unathi
@@ -125,6 +133,7 @@ taushai - unathi
 cre77 - unathi
 s1334 - unathi
 he11d1ver - unathi
+blacksoul231 - unathi
 corporateoverlord - tajaran
 cuddleandtea - tajaran
 blacksoul231 - tajaran
@@ -146,7 +155,8 @@ denmag - tajaran
 solark - tajaran
 forrya - tajaran
 arhod - tajaran
-s1334 - tajaran
+kordvik - tajaran
+wolforbykot - tajaran
 wheatley2013 - adherent
 sosiskoed - adherent
 gumboldty - adherent
@@ -155,4 +165,5 @@ kareta - adherent
 s1334 - adherent
 wolfetd - adherent
 hardstuck - adherent
+jacking - adherent
 redknighthero - bionic

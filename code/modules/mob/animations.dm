@@ -224,13 +224,13 @@ note dizziness decrements automatically in the mob's Life() proc.
 
 	playsound(T, 'sound/effects/phasein.ogg', 25, 1)
 	playsound(T, 'sound/effects/sparks2.ogg', 50, 1)
-	anim(T,src,'icons/mob/mob.dmi',,"phasein",,dir)
+	anim(src,'icons/mob/mob.dmi',,"phasein",,dir)
 
 /mob/proc/phase_out(var/turf/T)
 	if(!T)
 		return
 	playsound(T, "sparks", 50, 1)
-	anim(T,src,'icons/mob/mob.dmi',,"phaseout",,dir)
+	anim(src,'icons/mob/mob.dmi',,"phaseout",,dir)
 
 /atom/movable/proc/receive_damage(atom/A)
 	var/pixel_x_diff = rand(-2,2)

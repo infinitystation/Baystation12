@@ -1,7 +1,7 @@
 /obj/item/weapon/storage/wallet
 	name = "wallet"
 	desc = "It can hold a few small and personal things."
-	icon = 'icons/obj/wallet.dmi'
+	icon = 'infinity/icons/obj/wallet.dmi'
 	icon_state = "wallet-white"
 	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_SMALL //Don't worry, see can_hold[]
@@ -37,7 +37,8 @@
 		/obj/item/device/paicard,
 		/obj/item/weapon/stamp,
 		/obj/item/weapon/key,
-		/obj/item/clothing/accessory/badge)
+		/obj/item/clothing/accessory/badge,
+		/obj/item/clothing/accessory/medal)
 	slot_flags = SLOT_ID
 
 	var/obj/item/weapon/card/id/front_id = null
@@ -70,8 +71,6 @@
 	overlays.Cut()
 	if(front_id)
 		var/tiny_state = "id-generic"
-		if("id-"+front_id.icon_state in icon_states(icon))
-			tiny_state = "id-"+front_id.icon_state
 		var/image/tiny_image = new/image(icon, icon_state = tiny_state)
 		tiny_image.appearance_flags = RESET_COLOR
 		overlays += tiny_image

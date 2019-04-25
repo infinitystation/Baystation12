@@ -2,6 +2,39 @@
  * Sierra Command
  */
 
+/decl/closet_appearance/secure_closet/sierra/command
+	color = COLOR_GUNMETAL
+	extra_decals = list(
+		"stripe_vertical_mid_full" = COLOR_GOLD
+	)
+
+/decl/closet_appearance/secure_closet/sierra/command/adjutant
+	color = COLOR_WALL_GUNMETAL
+	extra_decals = list(
+		"stripe_vertical_left_full" = COLOR_GOLD,
+		"stripe_vertical_right_full" = COLOR_GOLD
+	)
+
+/decl/closet_appearance/secure_closet/sierra/command/hop
+	extra_decals = list(
+		"stripe_vertical_left_full" = COLOR_GOLD,
+		"stripe_vertical_right_full" = COLOR_GOLD,
+		"command" = COLOR_GOLD
+	)
+/* unused
+/decl/closet_appearance/secure_closet/sierra/command/captain
+	extra_decals = list(
+		"stripe_vertical_left_full" = COLOR_GOLD,
+		"stripe_vertical_mid_full" = COLOR_OFF_WHITE,
+		"stripe_vertical_right_full" = COLOR_GOLD,
+		"command" = COLOR_OFF_WHITE
+	)
+*/
+/obj/structure/closet/secure_closet/captains/sierra
+	name = "captain's cabinet"
+	req_access = list(access_captain)
+	closet_appearance = /decl/closet_appearance/cabinet/secure
+
 /obj/structure/closet/secure_closet/captains/sierra/WillContain()
 	return list(
 		/obj/item/clothing/suit/armor/pcarrier/medium,
@@ -26,12 +59,19 @@
 		/obj/item/clothing/under/dress/dress_cap,
 		/obj/item/clothing/under/captainformal,
 		/obj/item/device/remote_device/captain,
-		/obj/item/ammo_magazine/c357,
+		/obj/item/ammo_magazine/speedloader,
 		/obj/item/weapon/storage/box/PDAs,
 		/obj/item/weapon/storage/box/ids,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/captain, /obj/item/weapon/storage/backpack/satchel/cap)),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/dufflebag/captain, /obj/item/weapon/storage/backpack/messenger/com))
 	)
+/obj/structure/closet/secure_closet/hop/sierra
+	name = "head of personnel's locker"
+	req_access = list(access_hop)
+	closet_appearance = /decl/closet_appearance/secure_closet/sierra/command/hop
+
+/obj/structure/closet/secure_closet/hop2
+	closet_appearance = /decl/closet_appearance/secure_closet/sierra/command/hop
 
 /obj/structure/closet/secure_closet/hop/sierra/WillContain()
 	return list(
@@ -46,7 +86,7 @@
 		/obj/item/device/remote_device/civillian,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,
-		/obj/item/weapon/clipboard,
+		/obj/item/weapon/material/clipboard,
 		/obj/item/weapon/storage/box/PDAs,
 		/obj/item/weapon/storage/box/ids,
 	)
@@ -54,17 +94,14 @@
 /obj/structure/closet/secure_closet/adjutant
 	name = "adjutant's locker"
 	req_access = list(access_bridge)
-	icon_state = "hopsecure1"
-	icon_closed = "hopsecure"
-	icon_locked = "hopsecure1"
-	icon_opened = "hopsecureopen"
-	icon_off = "hopsecureoff"
+	closet_appearance = /decl/closet_appearance/secure_closet/sierra/command/adjutant
 
 /obj/structure/closet/secure_closet/adjutant/WillContain()
 	return list(
 		/obj/item/device/radio,
 		/obj/item/weapon/pen,
 		/obj/item/clothing/suit/armor/pcarrier/medium,
+		/obj/item/weapon/storage/belt/general,
 		/obj/item/clothing/head/helmet,
 		/obj/item/device/flash,
 		/obj/item/device/megaphone,

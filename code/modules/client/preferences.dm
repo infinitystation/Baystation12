@@ -274,9 +274,6 @@ datum/preferences
 	character.update_hair(0)
 	character.update_icons()
 
-	character.char_branch = mil_branches.get_branch(char_branch)
-	character.char_rank = mil_branches.get_rank(char_branch, char_rank)
-
 	if(is_preview_copy)
 		return
 
@@ -296,6 +293,7 @@ datum/preferences
 	character.flavor_texts["legs"] = flavor_texts["legs"]
 	character.flavor_texts["feet"] = flavor_texts["feet"]
 
+	character.public_record = public_record
 	character.med_record = med_record
 	character.sec_record = sec_record
 	character.gen_record = gen_record

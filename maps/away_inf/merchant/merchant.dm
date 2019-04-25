@@ -45,3 +45,10 @@
 /obj/effect/shuttle_landmark/nav_merchant/nav4
 	name = "Merchant Navpoint #4"
 	landmark_tag = "nav_merchant_antag"
+
+/var/const/access_zeppelin = "ACCESS_ZEPPELIN"//301
+/datum/access/zeppelin
+	id = access_zeppelin
+	desc = "ITV Zeppelin"
+	region = ACCESS_REGION_GENERAL
+	access_type = ACCESS_TYPE_NONE

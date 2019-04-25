@@ -126,7 +126,7 @@ var/global/datum/matchmaker/matchmaker = new()
 			if(!M.mind || M.stat == DEAD || !valid_candidate(M.mind))
 				candidates -= M
 				continue
-			var/datum/job/coworker = job_master.GetJob(M.job)
+			var/datum/job/coworker = SSjobs.get_by_title(M.job)
 			if(coworker && holder.assigned_job && other.holder.assigned_job)
 				if((coworker.department_flag & holder.assigned_job.department_flag) || (coworker.department_flag & other.holder.assigned_job.department_flag))
 					candidates[M] = 5	//coworkers are 5 times as likely to know about your relations
@@ -203,8 +203,6 @@ var/global/datum/matchmaker/matchmaker = new()
 	popup.open()
 
 /mob/living/Topic(href, href_list)
-	if(..())
-		return 1
 	if(href_list["del_relation"])
 		var/datum/relation/R = locate(href_list["del_relation"])
 		if(istype(R))
@@ -235,3 +233,4 @@ var/global/datum/matchmaker/matchmaker = new()
 		if(istype(L))
 			L.see_relationship_info()
 			return 1
+	..()

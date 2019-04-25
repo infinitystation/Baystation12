@@ -13,12 +13,11 @@
 	var/obj/item/weapon/reagent_containers/glass/beaker = null
 	var/filtering = 0
 	var/pump
-	var/list/stasis_settings = list(1, 2, 5)
+	var/list/stasis_settings = list(1, 2, 5, 10)
 	var/stasis = 1
 
-	use_power = 1
 	idle_power_usage = 15
-	active_power_usage = 200 //builtin health analyzer, dialysis machine, injectors.
+	active_power_usage = 1 KILOWATTS //builtin health analyzer, dialysis machine, injectors.
 
 /obj/machinery/sleeper/Initialize()
 	. = ..()
@@ -53,6 +52,14 @@
 		else
 			available_chemicals = list("Inaprovaline" = /datum/reagent/inaprovaline, "Soporific" = /datum/reagent/soporific, "Tramadol" = /datum/reagent/tramadol, "Dylovene" = /datum/reagent/dylovene, "Arithrazine" = /datum/reagent/arithrazine, "Dexalin Plus" = /datum/reagent/dexalinp, "Dermaline" = /datum/reagent/dermaline, "Bicaridine" = /datum/reagent/bicaridine, "Alkysine" = /datum/reagent/alkysine)
 
+/obj/machinery/sleeper/examine(mob/user)
+	. = ..()
+	if (. && user.Adjacent(src))
+		if (beaker)
+			to_chat(user, "It is loaded with a beaker.")
+		if(occupant)
+			occupant.examine(user)
+
 /obj/machinery/sleeper/Process()
 	if(stat & (NOPOWER|BROKEN))
 		return
@@ -71,8 +78,10 @@
 	if(pump > 0)
 		if(beaker && istype(occupant))
 			if(beaker.reagents.total_volume < beaker.reagents.maximum_volume)
-				for(var/datum/reagent/x in occupant.ingested.reagent_list)
-					occupant.ingested.trans_to_obj(beaker, 3)
+				var/datum/reagents/ingested = occupant.get_ingested_reagents()
+				if(ingested)
+					for(var/datum/reagent/x in ingested.reagent_list)
+						ingested.trans_to_obj(beaker, 3)
 		else
 			toggle_pump()
 
@@ -107,7 +116,7 @@
 		scan = replacetext(scan,"'scan_notice'","'white'")
 		scan = replacetext(scan,"'scan_warning'","'average'")
 		scan = replacetext(scan,"'scan_danger'","'bad'")
-		data["occupant"] =scan
+		data["occupant"] = scan
 	else
 		data["occupant"] = 0
 	if(beaker)
@@ -156,6 +165,7 @@
 		var/nstasis = text2num(href_list["stasis"])
 		if(stasis != nstasis && nstasis in stasis_settings)
 			stasis = text2num(href_list["stasis"])
+			change_power_consumption(initial(active_power_usage) + 5 KILOWATTS * (stasis-1), POWER_USE_ACTIVE)
 			return TOPIC_REFRESH
 
 /obj/machinery/sleeper/attack_ai(var/mob/user)
@@ -164,6 +174,7 @@
 /obj/machinery/sleeper/attackby(var/obj/item/I, var/mob/user)
 	if(default_deconstruction_screwdriver(user, I))
 		updateUsrDialog()
+		go_out()
 		return
 	if(default_deconstruction_crowbar(user, I))
 		return
@@ -183,7 +194,8 @@
 		..()
 
 /obj/machinery/sleeper/dismantle()
-	go_out()
+	if(occupant)
+		go_out()
 	..()
 
 /obj/machinery/sleeper/MouseDrop_T(var/mob/target, var/mob/user)
@@ -195,6 +207,9 @@
 		return
 	if(target.buckled)
 		to_chat(user, "<span class='warning'>Unbuckle the subject before attempting to move them.</span>")
+		return
+	if(panel_open)
+		to_chat(user, "<span class='warning'>Close the maintenance panel before attempting to place the subject in the sleeper.</span>")
 		return
 	go_in(target, user)
 
@@ -246,14 +261,7 @@
 		if(occupant)
 			to_chat(user, "<span class='warning'>\The [src] is already occupied.</span>")
 			return
-		M.stop_pulling()
-		if(M.client)
-			M.client.perspective = EYE_PERSPECTIVE
-			M.client.eye = src
-		M.forceMove(src)
-		update_use_power(2)
-		occupant = M
-		update_icon()
+		set_occupant(M)
 
 /obj/machinery/sleeper/proc/go_out()
 	if(!occupant)
@@ -263,18 +271,31 @@
 		occupant.client.perspective = MOB_PERSPECTIVE
 	if(occupant.loc == src)
 		if(not_turf_contains_dense_objects(get_turf(get_step(loc, dir))))
-			occupant.forceMove(get_step(loc, dir))
+			occupant.dropInto(get_step(loc, dir))
 		else
-			occupant.forceMove(loc)
-	occupant = null
+			occupant.dropInto(loc)
+	set_occupant(null)
 
 	for(var/obj/O in (contents - component_parts)) // In case an object was dropped inside or something. Excludes the beaker and component parts.
 		if(O == beaker)
 			continue
 		O.dropInto(loc)
-	update_use_power(1)
-	update_icon()
 	toggle_filter()
+
+/obj/machinery/sleeper/proc/set_occupant(var/mob/living/carbon/occupant)
+	src.occupant = occupant
+	update_icon()
+	if(!occupant)
+		SetName(initial(name))
+		update_use_power(POWER_USE_IDLE)
+		return
+	occupant.forceMove(src)
+	occupant.stop_pulling()
+	if(occupant.client)
+		occupant.client.perspective = EYE_PERSPECTIVE
+		occupant.client.eye = src
+	SetName("[name] ([occupant])")
+	update_use_power(POWER_USE_ACTIVE)
 
 /obj/machinery/sleeper/proc/remove_beaker()
 	if(beaker)
@@ -290,7 +311,7 @@
 	var/chemical_type = available_chemicals[chemical_name]
 	if(occupant && occupant.reagents)
 		if(occupant.reagents.get_reagent_amount(chemical_type) + amount <= 20)
-			use_power(amount * CHEM_SYNTH_ENERGY)
+			use_power_oneoff(amount * CHEM_SYNTH_ENERGY)
 			occupant.reagents.add_reagent(chemical_type, amount)
 			to_chat(user, "Occupant now has [occupant.reagents.get_reagent_amount(chemical_type)] unit\s of [chemical_name] in their bloodstream.")
 		else
@@ -313,10 +334,10 @@
 	data["power"] = stat & (NOPOWER|BROKEN) ? 0 : 1
 
 	if(occupant)
-		var/scan = medical_scan_results(occupant)
-		scan = replacetext(scan,"'notice'","'white'")
-		scan = replacetext(scan,"'warning'","'average'")
-		scan = replacetext(scan,"'danger'","'bad'")
+		var/scan = user.skill_check(SKILL_MEDICAL, SKILL_ADEPT) ? medical_scan_results(occupant) : "<span class='white'><b>Contains: \the [occupant]</b></span>"
+		scan = replacetext(scan,"'scan_notice'","'white'")
+		scan = replacetext(scan,"'scan_warning'","'average'")
+		scan = replacetext(scan,"'scan_danger'","'bad'")
 		data["occupant"] = scan
 	else
 		data["occupant"] = 0

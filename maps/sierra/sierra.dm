@@ -1,11 +1,9 @@
 #if !defined(using_map_DATUM)
 
-
-//	#include "../away_inf/salvagers/salvagers.dm"
-
 	#include "sierra_announcements.dm"
 	#include "sierra_antagonism.dm"
 	#include "sierra_areas.dm"
+	#include "sierra_areas_override.dm"
 	#include "sierra_elevator.dm"
 	#include "sierra_holodecks.dm"
 	#include "sierra_lobby.dm"
@@ -17,6 +15,8 @@
 	#include "sierra_renames.dm"
 	#include "sierra_security_state.dm"
 	#include "sierra_shuttles.dm"
+	#include "sierra_submaps.dm"
+	#include "sierra_turfs.dm"
 	#include "sierra_unit_testing.dm"
 
 	#include "datums/uniforms.dm"
@@ -26,6 +26,7 @@
 	#include "datums/supplypacks/science.dm"
 
 	#include "items/cards_ids.dm"
+	#include "items/explo_shotgun.dm"
 	#include "items/encryption_keys.dm"
 	#include "items/headsets.dm"
 	#include "items/items.dm"
@@ -36,14 +37,22 @@
 
 	#include "items/clothing/clothing.dm"
 	#include "items/clothing/exploration.dm"
+	#include "items/clothing/override.dm"
 	#include "items/clothing/solgov-infinity.dm"
 	#include "items/clothing/solgov-accessory.dm"
 	#include "items/clothing/solgov-armor.dm"
 	#include "items/clothing/solgov-feet.dm"
+	#include "items/clothing/solgov-hands.dm"
 	#include "items/clothing/solgov-head.dm"
 	#include "items/clothing/solgov-suit.dm"
 	#include "items/clothing/solgov-under.dm"
 	#include "items/clothing/storages.dm"
+	#include "items/clothing/terran-accessory.dm"
+	#include "items/clothing/terran-feet.dm"
+	#include "items/clothing/terran-hands.dm"
+	#include "items/clothing/terran-head.dm"
+	#include "items/clothing/terran-suit.dm"
+	#include "items/clothing/terran-under.dm"
 
 	#include "job/access.dm"
 	#include "job/jobs.dm"
@@ -61,19 +70,23 @@
 	#include "job/jobs_service.dm"
 
 	#include "machinery/alarm.dm"
-	#include "machinery/apc.dm"
+	#include "machinery/doors.dm"
 	#include "machinery/keycard authentication.dm"
 	#include "machinery/machinery.dm"
 	#include "machinery/navbeacons.dm"
+	#include "machinery/power.dm"
 	#include "machinery/random.dm"
+	#include "machinery/tcomms.dm"
 	#include "machinery/thrusters.dm"
 	#include "machinery/uniform_vendor.dm"
 	#include "machinery/vendors.dm"
 
 	#include "structures/closets.dm"
-	#include "structures/signs.dm"
 	#include "structures/other.dm"
+	#include "structures/override.dm"
+	#include "structures/signs.dm"
 
+	#include "structures/closets/_closets_appearances.dm"
 	#include "structures/closets/armory.dm"
 	#include "structures/closets/command.dm"
 	#include "structures/closets/engineering.dm"
@@ -108,6 +121,8 @@
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/blueriver/blueriver.dm"
 	#include "../away_inf/mining/mining.dm"
+//	#include "../away_inf/salvagers/salvagers.dm"
+	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 
 	#include "../away/bearcat/bearcat.dm"
 //	#include "../away/mining/mining.dm"
@@ -119,6 +134,8 @@
 	#include "../away/lar_maria/lar_maria.dm"
 	#include "../away/unishi/unishi.dm"
 	#include "../away/slavers/slavers_base.dm"
+	#include "../away/voxship/voxship.dm"
+//	#include "../away/skrellscoutship/skrellscoutship.dm"
 
 	#define using_map_DATUM /datum/map/sierra
 

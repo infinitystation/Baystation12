@@ -79,9 +79,7 @@
 	return PROCESS_KILL
 
 /obj/machinery/power/apc/blueriver
-	req_access = list()
-	req_one_access = list(150)
+	req_access = list(access_syndicate)
 
 /obj/machinery/alarm/blueriver
-	req_access = list()
-	req_one_access = list(150)
+	req_access = list(access_syndicate)

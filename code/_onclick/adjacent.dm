@@ -1,10 +1,12 @@
 /*
 	Adjacency proc for determining touch range
+
 	This is mostly to determine if a user can enter a square for the purposes of touching something.
 	Examples include reaching a square diagonally or reaching something on the other side of a glass window.
+
 	This is calculated by looking for border items, or in the case of clicking diagonally from yourself, dense items.
-	This proc will NOT notice if you are trying to attack a window on the other side of a dense object in its turf.
-	There is a window helper for that.
+	This proc will NOT notice if you are trying to attack a window on the other side of a dense object in its turf.  There is a window helper for that.
+
 	Note that in all cases the neighbor is handled simply; this is usually the user's mob, in which case it is up to you
 	to check that the mob is not inside of something
 */
@@ -26,13 +28,15 @@
 /turf/Adjacent(var/atom/neighbor, var/atom/target = null)
 	var/turf/T0 = get_turf(neighbor)
 	if(T0 == src)
-		return TRUE
-	if(get_dist(src,T0) > 1 || (T0.z!=z))
-		return FALSE
+		return 1
+	if(!T0 || T0.z != z)
+		return 0
+	if(get_dist(src,T0) > 1)
+		return 0
 
 	if(T0.x == x || T0.y == y)
 		// Check for border blockages
-		return T0.ClickCross(get_dir(T0,src), TRUE) && ClickCross(get_dir(src,T0), TRUE, target)
+		return T0.ClickCross(get_dir(T0,src), border_only = 1) && src.ClickCross(get_dir(src,T0), border_only = 1, target_atom = target)
 
 	// Not orthagonal
 	var/in_dir = get_dir(neighbor,src) // eg. northwest (1+8)
@@ -63,7 +67,7 @@ Quick adjacency (to turf):
 	if(T0 == src)
 		return 1
 
-	if(get_dist(src,T0) > 1 || (src.z!=T0.z))
+	if(get_dist(src,T0) > 1)
 		return 0
 
 	return 1
@@ -72,6 +76,7 @@ Quick adjacency (to turf):
 	Adjacency (to anything else):
 	* Must be on a turf
 	* In the case of a multiple-tile object, all valid locations are checked for adjacency.
+
 	Note: Multiple-tile objects are created when the bound_width and bound_height are creater than the tile size.
 	This is not used in stock /tg/station currently.
 */
@@ -94,6 +99,7 @@ Quick adjacency (to turf):
 /*
 	Special case: This allows you to reach a door when it is visally on top of,
 	but technically behind, a fire door
+
 	You could try to rewrite this to be faster, but I'm not sure anything would be.
 	This can be safely removed if border firedoors are ever moved to be on top of doors
 	so they can be interacted with without opening the door.
@@ -107,26 +113,6 @@ Quick adjacency (to turf):
 		return .
 	return ..()
 
-/*
-	Check if obj block pass in any direction like windows, windor, etc
-*/
-/obj/proc/is_block_dir(target_dir, border_only, atom/target)
-	if(obj_flags & ATOM_FLAG_CHECKS_BORDER) // windows have throwpass but are on border, check them first
-		if(dir & target_dir)
-			return TRUE
-	if(!border_only)
-		return density
-	return FALSE
-
-/obj/structure/window/is_block_dir(target_dir, border_only, atom/target)
-	if(!is_fulltile())
-		var/obj/structure/window/W = target
-		if(istype(W))
-			//exception for breaking full tile windows on top of single pane windows
-			if(W.is_fulltile())
-				return FALSE
-	return ..()
-
 
 /*
 	This checks if you there is uninterrupted airspace between that turf and this one.
@@ -135,9 +121,7 @@ Quick adjacency (to turf):
 */
 /turf/proc/ClickCross(var/target_dir, var/border_only, var/target_atom = null)
 	for(var/obj/O in src)
-		// throwpass is used for anything you can click through
-		if(!O.density || O == target_atom || O.throwpass)
-			continue
+		if( !O.density || O == target_atom || O.throwpass) continue // throwpass is used for anything you can click through
 
 		if(O.atom_flags & ATOM_FLAG_CHECKS_BORDER) // windows have throwpass but are on border, check them first
 			if( O.dir & target_dir || O.dir&(O.dir-1) ) // full tile windows are just diagonals mechanically
@@ -157,5 +141,6 @@ Quick adjacency (to turf):
 	only seems to affect hitting mobs, because the checks performed against objects are already performed when
 	entering or leaving the square.  Since throwpass isn't used on mobs, but only on objects, it is effectively
 	useless.  Throwpass may later need to be removed and replaced with a passcheck (bitfield on movable atom passflags).
+
 	Since I don't want to complicate the click code rework by messing with unrelated systems it won't be changed here.
 */

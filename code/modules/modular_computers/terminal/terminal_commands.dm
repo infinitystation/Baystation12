@@ -10,14 +10,13 @@ GLOBAL_LIST_INIT(terminal_commands, init_subtypes(/datum/terminal_command))
 	var/core_skill = SKILL_COMPUTER       // The skill which is checked
 	var/skill_needed = SKILL_EXPERT       // How much skill the user needs to use this. This is not for critical failure effects at unskilled; those are handled globally.
 	var/req_access = list()               // Stores access needed, if any
-	var/req_one_access = list()           // Like for objects
 
 /datum/terminal_command/New()
 	regex = new (pattern, regex_flags)
 	..()
 
 /datum/terminal_command/proc/check_access(mob/user)
-	return has_access(req_access, req_one_access, user.GetAccess())
+	return has_access(req_access, user.GetAccess())
 
 // null return: continue. "" return will break and show a blank line. Return list() to break and not show anything.
 /datum/terminal_command/proc/parse(text, mob/user, datum/terminal/terminal)
@@ -85,7 +84,7 @@ Subtypes
 		return "No network adaptor found."
 	if(!terminal.computer.network_card.check_functionality())
 		return "Network adaptor not activated."
-	return terminal.computer.network_card.get_network_tag()
+	return "Visible tag: [terminal.computer.network_card.get_network_tag()]. Real nid: [terminal.computer.network_card.identification_id]."
 
 /datum/terminal_command/hwinfo
 	name = "hwinfo"
@@ -105,7 +104,7 @@ Subtypes
 	if(!ch)
 		return "hwinfo: No such hardware found."
 	ch.diagnostics(user)
-	return "Running diagnostic protocols..."	
+	return "Running diagnostic protocols..."
 
 // Sysadmin
 /datum/terminal_command/relays
@@ -153,11 +152,11 @@ Subtypes
 	if(length(text) < 8)
 		return
 	var/obj/item/modular_computer/origin = terminal.computer
-	if(!ntnet_global.check_function() || !origin || !origin.network_card || !origin.network_card.check_functionality())
+	if(!origin || !origin.get_ntnet_status())
 		return
 	var/nid = text2num(copytext(text, 8))
 	var/obj/item/modular_computer/comp = ntnet_global.get_computer_by_nid(nid)
-	if(!comp || !comp.enabled || !comp.network_card || !comp.network_card.check_functionality())
+	if(!comp || !comp.enabled || !comp.get_ntnet_status())
 		return
 	return "... Estimating location: [get_area(comp)]"
 
@@ -173,12 +172,12 @@ Subtypes
 		. += "ping: Improper syntax. Use ping nid."
 		return
 	var/obj/item/modular_computer/origin = terminal.computer
-	if(!ntnet_global.check_function() || !origin || !origin.network_card || !origin.network_card.check_functionality())
+	if(!origin || !origin.get_ntnet_status())
 		. += "failed. Check network status."
 		return
 	var/nid = text2num(copytext(text, 6))
 	var/obj/item/modular_computer/comp = ntnet_global.get_computer_by_nid(nid)
-	if(!comp || !comp.enabled || !comp.network_card || !comp.network_card.check_functionality())
+	if(!comp || !comp.enabled || !comp.get_ntnet_status())
 		. += "failed. Target device not responding."
 		return
 	. += "ping successful."
@@ -195,13 +194,13 @@ Subtypes
 	if(length(text) < 5)
 		return "ssh: Improper syntax. Use ssh nid."
 	var/obj/item/modular_computer/origin = terminal.computer
-	if(!ntnet_global.check_function() || !origin || !origin.network_card || !origin.network_card.check_functionality())
+	if(!origin || !origin.get_ntnet_status())
 		return "ssh: Check network connectivity."
 	var/nid = text2num(copytext(text, 5))
 	var/obj/item/modular_computer/comp = ntnet_global.get_computer_by_nid(nid)
 	if(comp == origin)
 		return "ssh: Error; can not open remote terminal to self."
-	if(!comp || !comp.enabled || !comp.network_card || !comp.network_card.check_functionality())
+	if(!comp || !comp.enabled || !comp.get_ntnet_status())
 		return "ssh: No active device with this nid found."
 	if(comp.has_terminal(user))
 		return "ssh: A remote terminal to this device is already active."
@@ -209,3 +208,163 @@ Subtypes
 	LAZYADD(comp.terminals, new_term)
 	LAZYADD(origin.terminals, new_term)
 	return "ssh: Connection established."
+
+/datum/terminal_command/proxy
+	name = "proxy"
+	man_entry = list(
+		"Format: proxy \[-s <nid>\]",
+		"Without options, displays the proxy state of network device.",
+		"With -s option and no further arguments, clears proxy settings.",
+		"With -s followed by nid (number), sets proxy to nid.",
+		"A set proxy will tunnel all network connections through the designated device.",
+		"It is recommended that the user ensure that the target device is accessible."
+	)
+	pattern = "^proxy"
+	req_access = list(access_network)
+
+/datum/terminal_command/proxy/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/obj/item/modular_computer/comp = terminal.computer
+	if(!comp || !comp.get_ntnet_status())
+		return "proxy: Error; check networking hardware."
+	if(text == "proxy")
+		if(!comp.network_card.proxy_id)
+			return "proxy: This device is not using a proxy."
+		return "proxy: This device is set to connect via proxy with nid [comp.network_card.proxy_id]."
+	if(text == "proxy -s")
+		if(!comp.network_card.proxy_id)
+			return "proxy: Error; this device is not using a proxy."
+		comp.network_card.proxy_id = null
+		return "proxy: Device proxy cleared."
+	var/syntax_error = "proxy: Invalid input. Enter man proxy for syntax help."
+	if(length(text) < 10)
+		return syntax_error
+	if(copytext(text, 1, 10) != "proxy -s ")
+		return syntax_error
+	var/id = text2num(copytext(text, 10))
+	if(!id)
+		return syntax_error
+	var/obj/item/modular_computer/target = ntnet_global.get_computer_by_nid(id)
+	if(!target || !target.enabled || !target.get_ntnet_status())
+		return "proxy: Error; cannot locate target device."
+	if(target.hard_drive)
+		var/datum/computer_file/data/logfile/file = target.hard_drive.find_file_by_name("proxy")
+		if(!istype(file))
+			file = new()
+			file.filename = "proxy"
+			target.hard_drive.store_file(file) // May fail, which is fine with us.
+		file.stored_data += "([time_stamp()]) Proxy routing request accepted from: [comp.network_card.get_network_tag()].\[br\]"
+	comp.network_card.proxy_id = id
+	return "proxy: Device proxy set to [id]."
+
+//[INFINITY]____________________________________________________________________________________________________________________
+
+/datum/terminal_command/listdir
+	name = "listdir"
+	man_entry = list("Format: listdir", "State list of files in local memory.")
+	pattern = "^listdir$"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/listdir/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	if(length(text) < 6)
+		return "listdir: Improper syntax. Use listdir."
+	if(!terminal.computer.hard_drive.check_functionality())
+		return "listdir: Access attempt to local storage failed. Check integrity of your hard drive"
+	var/list/massive_of_program_names = list()
+	for(var/datum/computer_file/F in terminal.computer.hard_drive.stored_files)
+		if(F.is_illegal == 0)
+			var/prog_size = num2text(F.size)
+			var/prg_data = F.filename + "." + F.filetype + "	|	" + prog_size + " GQ"
+			massive_of_program_names.Add(prg_data)
+		else
+			var/prg_data = "\[ENCRYPTED\]" + "." + "\[ENCRYPTED\]" + "	|	" + "\[ENCRYPTED\]" + " GQ"
+			massive_of_program_names.Add(prg_data)
+	return massive_of_program_names
+
+/datum/terminal_command/shutdown
+	name = "shutdown"
+	man_entry = list("Format: shutdown.", "Shutdown device.")
+	pattern = "^shutdown$"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/shutdown/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/obj/item/modular_computer/CT = terminal.computer
+	if(length(text) < 8)
+		return "shutdown: Improper syntax. shutdown."
+	CT.shutdown_computer()
+	CT.bsod = 0
+	CT.update_icon()
+	return "Shutdown successful."
+
+//TODO-ELar-inf: Soon i'll finish it.
+/*/datum/terminal_command/run
+	name = "run"
+	man_entry = list("Format: run \[program name\]", "Runs the program from local memory using it name.")
+	pattern = "^run"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/run/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	text = copytext(text,5)
+	var/obj/item/modular_computer/CT = terminal.computer
+	var/datum/computer_file/program/FBN = CT.hard_drive.find_file_by_name(text)
+
+	if(!CT.hard_drive.check_functionality())
+		return "run: Access attempt to HDD failed. Check integrity of your hard drive."
+	if(FBN)
+		FBN.run_program(user)
+		return "run: Program successful runned."
+	else
+		return "run: file not found or it isn't PRG-file."
+	return "run: Wrong input. man run for syntax help."*/
+
+/datum/terminal_command/session
+	name = "session"
+	man_entry = list("Format: session; session -kill",
+					"Utilite for manipulations with active programs",
+					"As session return list of active PRG programs.",
+					"Option -kill kill all active PRG programs"/*,
+					"Option -restore open all active programs."*/)
+	pattern = "^session"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/session/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/datum/computer_file/program/PRG = /datum/computer_file/program
+	var/obj/item/modular_computer/CT = terminal.computer
+	if(length(text) > 18 || length(text) < 6)
+		return "session: Invalid input. Enter man session for syntax help."
+	if(!CT.processor_unit.check_functionality())
+		return "session: Access attempt to RAM failed. Check integrity of your CPU."
+	var/ermsg = " programs is absent"
+	if(copytext(text,8) == " -kill")
+		if(CT.idle_threads)
+			for(PRG in CT.idle_threads)
+				PRG.kill_program(1)
+			CT.active_program.kill_program(1)
+			CT.update_icon()
+			return "session: Active background and current programs killed."
+
+		else
+			ermsg = "background" + ermsg
+		if(CT.active_program)
+			CT.active_program.kill_program(1)
+		else
+			if(copytext(ermsg, 1, 10) == "background")
+				ermsg = "Curent and " + ermsg
+			else
+				ermsg = "Curent" + ermsg
+			ermsg = "session: " + ermsg
+			return ermsg
+	var/list/massive_of_active_progs = list()
+	for(PRG in CT.idle_threads)
+		if(PRG.is_illegal)
+			var/act_prog = "\[ENCRYPTED\]"
+			massive_of_active_progs.Add(act_prog)
+		else
+			var/act_prog = PRG.filename
+			massive_of_active_progs.Add(act_prog)
+	if(CT.active_program)
+		massive_of_active_progs.Add(CT.active_program.filename)
+	if(massive_of_active_progs)
+		return massive_of_active_progs
+	return "session: Wrong input. Enter man session for syntax help."
+
+//[/INFINITY]_______________________________________________________________________________________________________________

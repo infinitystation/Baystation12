@@ -1,6 +1,8 @@
 /obj/effect/overmap/sector/exoplanet
 	name = "exoplanet"
 	icon_state = "globe"
+	in_space = 0
+	var/area/planetary_area
 	var/list/seeds = list()
 	var/list/animals = list()
 	var/max_animal_count
@@ -9,10 +11,15 @@
 	var/badgas					//id of gas that is toxic to life here
 
 	var/lightlevel = 0 //This default makes turfs not generate light. Adjust to have exoplanents be lit.
-	in_space = 0
+	var/night = TRUE
+	var/daycycle //How often do we change day and night
+	var/daycolumn = 0 //Which column's light needs to be updated next?
+	var/daycycle_column_delay = 10 SECONDS
+
 	var/maxx
 	var/maxy
 	var/landmark_type = /obj/effect/shuttle_landmark/automatic
+	var/list/rock_colors = list(COLOR_ASTEROID_ROCK)
 
 	var/list/actors = list() //things that appear in engravings on xenoarch finds.
 	var/list/species = list() //list of names to use for simple animals
@@ -20,13 +27,17 @@
 	var/repopulating = 0
 	var/repopulate_types = list() // animals which have died that may come back
 
-	var/features_budget = 2
+	var/list/possible_themes = list(/datum/exoplanet_theme/mountains,/datum/exoplanet_theme)
+	var/list/themes = list()
+
+	var/features_budget = 4
 	//pre-defined list of features templates to pick from
 	var/list/possible_features = list(
 									/datum/map_template/ruin/exoplanet/monolith,
 									/datum/map_template/ruin/exoplanet/hydrobase,
 									/datum/map_template/ruin/exoplanet/crashed_pod,
-									/datum/map_template/ruin/exoplanet/hut)
+									/datum/map_template/ruin/exoplanet/hut,
+									/datum/map_template/ruin/exoplanet/playablecolony)
 
 /obj/effect/overmap/sector/exoplanet/New(nloc, max_x, max_y)
 	if(!GLOB.using_map.use_overmap)
@@ -34,11 +45,16 @@
 
 	maxx = max_x ? max_x : world.maxx
 	maxy = max_y ? max_y : world.maxy
+	planetary_area = new planetary_area()
 
 	name = "[generate_planet_name()], \a [name]"
 
 	world.maxz++
 	forceMove(locate(1,1,world.maxz))
+
+	if(LAZYLEN(possible_themes))
+		var/datum/exoplanet_theme/T = pick(possible_themes)
+		themes += new T
 
 	var/list/feature_types = possible_features.Copy()
 	possible_features.Cut()
@@ -53,6 +69,7 @@
 	generate_features()
 	generate_landing(2)		//try making 4 landmarks
 	update_biome()
+	generate_daycycle()
 	START_PROCESSING(SSobj, src)
 
 //attempt at more consistent history generation for xenoarch finds.
@@ -69,12 +86,7 @@
 	engravings += "."
 	return engravings
 
-//Not that it should ever get deleted but just in case
-/obj/effect/overmap/sector/exoplanet/Destroy()
-	. = ..()
-	STOP_PROCESSING(SSobj, src)
-
-/obj/effect/overmap/sector/exoplanet/Process()
+/obj/effect/overmap/sector/exoplanet/Process(wait, tick)
 	if(animals.len < 0.5*max_animal_count && !repopulating)
 		repopulating = 1
 		max_animal_count = round(max_animal_count * 0.5)
@@ -106,6 +118,23 @@
 			daddy.group_multiplier = Z.air.group_multiplier
 			Z.air.equalize(daddy)
 
+	if(daycycle)
+		if(tick % round(daycycle / wait) == 0)
+			night = !night
+			daycolumn = 1
+		if(daycolumn && tick % round(daycycle_column_delay / wait) == 0)
+			update_daynight()
+
+/obj/effect/overmap/sector/exoplanet/proc/update_daynight()
+	var/light = 0.1
+	if(!night)
+		light = lightlevel
+	for(var/turf/simulated/floor/exoplanet/T in block(locate(daycolumn,1,min(map_z)),locate(daycolumn,maxy,max(map_z))))
+		T.set_light(light, 0.1, 2)
+	daycolumn++
+	if(daycolumn > maxx)
+		daycolumn = 0
+
 /obj/effect/overmap/sector/exoplanet/proc/remove_animal(var/mob/M)
 	animals -= M
 	GLOB.death_event.unregister(M, src)
@@ -113,6 +142,8 @@
 	repopulate_types |= M.type
 
 /obj/effect/overmap/sector/exoplanet/proc/generate_map()
+	for(var/datum/exoplanet_theme/T in themes)
+		T.before_map_generation(src)
 
 /obj/effect/overmap/sector/exoplanet/proc/generate_features()
 	seedRuins(map_z, features_budget, /area/exoplanet, possible_features, maxx, maxy)
@@ -135,6 +166,14 @@
 	for(var/mob/living/simple_animal/A in animals)
 		adapt_animal(A)
 
+/obj/effect/overmap/sector/exoplanet/proc/generate_daycycle()
+	if(lightlevel)
+		night = FALSE //we start with a day if we have light.
+
+		//When you set daycycle ensure that the minimum is larger than [maxx * daycycle_column_delay].
+		//Otherwise the right side of the exoplanet can get stuck in a forever day.
+		daycycle = rand(10 MINUTES, 40 MINUTES)
+
 /obj/effect/overmap/sector/exoplanet/proc/adapt_seed(var/datum/seed/S)
 	S.set_trait(TRAIT_IDEAL_HEAT,          atmosphere.temperature + rand(-5,5),800,70)
 	S.set_trait(TRAIT_HEAT_TOLERANCE,      S.get_trait(TRAIT_HEAT_TOLERANCE) + rand(-5,5),800,70)
@@ -147,6 +186,13 @@
 	for(var/g in atmosphere.gas)
 		if(gas_data.flags[g] & XGM_GAS_CONTAMINANT)
 			S.set_trait(TRAIT_TOXINS_TOLERANCE, rand(10,15))
+	if(prob(50))
+		var/chem_type = SSchemistry.get_random_chem(TRUE, atmosphere.temperature)
+		if(chem_type)
+			var/nutriment = S.chems[/datum/reagent/nutriment]
+			S.chems.Cut()
+			S.chems[/datum/reagent/nutriment] = nutriment
+			S.chems[chem_type] = list(rand(1,10),rand(10,20))
 
 /obj/effect/overmap/sector/exoplanet/proc/adapt_animal(var/mob/living/simple_animal/A)
 	if(species[A.type])
@@ -314,12 +360,11 @@
 	var/list/big_flora_types = list()
 	var/list/plantcolors = list("RANDOM")
 
-/datum/random_map/noise/exoplanet/New(var/seed, var/tx, var/ty, var/tz, var/tlx, var/tly, var/do_not_apply, var/do_not_announce, var/never_be_priority = 0)
+/datum/random_map/noise/exoplanet/New(var/seed, var/tx, var/ty, var/tz, var/tlx, var/tly, var/do_not_apply, var/do_not_announce, var/never_be_priority = 0, var/_planetary_area)
 	target_turf_type = world.turf
-	planetary_area = new planetary_area()
 	water_level = rand(water_level_min,water_level_max)
 	generate_flora()
-
+	planetary_area = _planetary_area
 	//automagically adjust probs for bigger maps to help with lag
 	var/size_mod = intended_x / tlx * intended_y / tly
 	flora_prob *= size_mod
@@ -358,7 +403,6 @@
 		return land_type
 
 /datum/random_map/noise/exoplanet/get_additional_spawns(var/value, var/turf/T)
-	planetary_area.contents.Add(T)
 	switch(noise2value(value))
 		if(2 to 3)
 			if(prob(flora_prob))
@@ -424,6 +468,7 @@
 	icon = 'icons/turf/desert.dmi'
 	icon_state = "desert"
 	has_resources = 1
+	footstep_type = FOOTSTEP_CARPET
 	var/diggable = 1
 	var/mudpit = 0	//if pits should not take turf's color
 
@@ -448,6 +493,8 @@
 				temperature = E.atmosphere.temperature
 			//Must be done here, as light data is not fully carried over by ChangeTurf (but overlays are).
 			set_light(E.lightlevel, 0.1, 2)
+			if(E.planetary_area && istype(loc, world.area))
+				E.planetary_area.contents.Add(src)
 	..()
 
 /turf/simulated/floor/exoplanet/attackby(obj/item/C, mob/user)
@@ -476,6 +523,16 @@
 	icon_state = "seashallow"
 	movement_delay = 2
 	mudpit = 1
+	footstep_type = FOOTSTEP_WATER
+	var/reagent_type = /datum/reagent/water
+
+/turf/simulated/floor/exoplanet/water/shallow/attackby(obj/item/O, var/mob/living/user)
+	var/obj/item/weapon/reagent_containers/RG = O
+	if (reagent_type && istype(RG) && RG.is_open_container() && RG.reagents)
+		RG.reagents.add_reagent(reagent_type, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
+		user.visible_message("<span class='notice'>[user] fills \the [RG] from \the [src].</span>","<span class='notice'>You fill \the [RG] from \the [src].</span>")
+	else
+		return ..()
 
 /turf/simulated/floor/exoplanet/water/update_dirt()
 	return	// Water doesn't become dirty
@@ -489,3 +546,30 @@
 	anchored = 1
 	mouse_opacity = 0
 	simulated = 0
+
+/turf/simulated/floor/exoplanet/Initialize()
+	. = ..()
+	update_icon(1)
+
+/turf/simulated/floor/exoplanet/on_update_icon(var/update_neighbors)
+	overlays.Cut()
+	for(var/direction in GLOB.cardinal)
+		var/turf/turf_to_check = get_step(src,direction)
+		if(!istype(turf_to_check, type))
+			var/image/rock_side = image(icon, "edge[pick(0,1,2)]", dir = turn(direction, 180))
+			rock_side.plating_decal_layerise()
+			switch(direction)
+				if(NORTH)
+					rock_side.pixel_y += world.icon_size
+				if(SOUTH)
+					rock_side.pixel_y -= world.icon_size
+				if(EAST)
+					rock_side.pixel_x += world.icon_size
+				if(WEST)
+					rock_side.pixel_x -= world.icon_size
+			overlays += rock_side
+		else if(update_neighbors)
+			turf_to_check.update_icon()
+
+/turf/simulated/floor/exoplanet/water/on_update_icon()
+	return

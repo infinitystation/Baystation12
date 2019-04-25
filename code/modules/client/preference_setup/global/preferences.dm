@@ -22,6 +22,9 @@ GLOBAL_VAR_CONST(PREF_CTRL_SHIFT_CLICK, "ctrl shift click")
 GLOBAL_VAR_CONST(PREF_HEAR, "Hear")
 GLOBAL_VAR_CONST(PREF_SILENT, "Silent")
 GLOBAL_VAR_CONST(PREF_SHORTHAND, "Shorthand")
+GLOBAL_VAR_CONST(PREF_NEVER, "Never")
+GLOBAL_VAR_CONST(PREF_NON_ANTAG, "Non-Antag Only")
+GLOBAL_VAR_CONST(PREF_ALWAYS, "Always")
 
 var/list/_client_preferences
 var/list/_client_preferences_by_key
@@ -217,6 +220,26 @@ var/list/_client_preferences_by_type
 /datum/client_preference/show_credits
 	description = "Show End Titles"
 	key = "SHOW_CREDITS"
+
+/datum/client_preference/give_personal_goals
+	description = "Give Personal Goals"
+	key = "PERSONAL_GOALS"
+	options = list(GLOB.PREF_NEVER, GLOB.PREF_NON_ANTAG, GLOB.PREF_ALWAYS)
+
+/datum/client_preference/show_department_goals
+	description = "Show Departmental Goals"
+	key = "DEPT_GOALS"
+	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
+
+/datum/client_preference/examine_messages
+	description ="Examining messages"
+	key = "EXAMINE_MESSAGES"
+	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
+
+/datum/client_preference/show_ckey_credits
+	description = "Show Ckey in End Credits"
+	key = "SHOW_CKEY_CREDITS"
+	options = list(GLOB.PREF_HIDE, GLOB.PREF_SHOW)
 
 /datum/client_preference/anon_say
 	description ="Anonymous Chat"

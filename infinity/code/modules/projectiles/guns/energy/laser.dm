@@ -20,6 +20,6 @@
 	projectile_type = /obj/item/projectile/beam/heavylaser/bogani
 
 	firemodes = list(
-		list(mode_name="semiauto",       projectile_type = /obj/item/projectile/beam/heavylaser/bogani, burst=1,    fire_delay=16,    move_delay=null, one_hand_penalty=4, burst_accuracy=null, dispersion=null),
-		list(mode_name="shock",          projectile_type = /obj/item/projectile/beam/stun/heavy,        burst=1,    fire_delay=12,    move_delay=null, one_hand_penalty=4, burst_accuracy=null, dispersion=null),
+		list(mode_name="semiauto",projectile_type = /obj/item/projectile/beam/heavylaser/bogani, burst=1,    fire_delay=16,    move_delay=null, one_hand_penalty=4, burst_accuracy=null, dispersion=null),
+		list(mode_name="shock",   projectile_type = /obj/item/projectile/beam/stun/heavy,        burst=1,    fire_delay=12,    move_delay=null, one_hand_penalty=4, burst_accuracy=null, dispersion=null),
 		)

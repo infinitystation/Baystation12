@@ -56,6 +56,10 @@
 	desc = "A cyan neosilk clip-on tie. This one has a clip on it that proudly bears the Hephaestus Industries logo."
 	icon_state = "cliptie_heph"
 
+/obj/item/clothing/accessory/corptie/zeng
+	name = "\improper Zeng-Hu tie"
+	desc = "A gold neosilk clip-on tie. This one has a clip on it that proudly bears the Zeng-Hu Pharmaceuticals logo."
+	icon_state = "cliptie_zeng"
 
 //Bowties
 /obj/item/clothing/accessory/bowtie
@@ -77,6 +81,12 @@
 
 	if(usr.incapacitated())
 		return 0
+	if(!istype(src)) // This verb is given to our holding clothing item and called on it, so src might not be the bowtie.
+		for(var/obj/item/clothing/accessory/bowtie/tie in accessories)
+			src = tie
+			break
+	if(!istype(src))
+		return
 	do_toggle(usr)
 
 /obj/item/clothing/accessory/bowtie/proc/do_toggle(mob/user)

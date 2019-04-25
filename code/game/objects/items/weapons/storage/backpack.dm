@@ -26,6 +26,7 @@
 	slot_flags = SLOT_BACK
 	max_w_class = ITEM_SIZE_LARGE
 	max_storage_space = DEFAULT_BACKPACK_STORAGE
+	open_sound = 'sound/effects/storage/unzip.ogg'
 
 /obj/item/weapon/storage/backpack/equipped()
 	if(!has_extension(src, /datum/extension/appearance))
@@ -51,7 +52,6 @@
 	desc = "A backpack that opens into a localized pocket of Blue Space."
 	origin_tech = list(TECH_BLUESPACE = 4)
 	icon_state = "holdingpack"
-	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = 56
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/infinity/lefthand.dmi',
@@ -106,6 +106,10 @@
 	desc = "It's a very robust backpack."
 	icon_state = "securitypack"
 	item_state_slots = null
+
+/obj/item/weapon/storage/backpack/security/exo
+	name = "corporate security backpack"
+	icon_state = "securitypack_exo"
 
 /obj/item/weapon/storage/backpack/captain
 	name = "captain's backpack"
@@ -334,6 +338,10 @@
 		slot_r_hand_str = "securitypack",
 		)
 
+/obj/item/weapon/storage/backpack/satchel/sec/exo
+	name = "corporate security satchel"
+	icon_state = "satchel-sec_exo"
+
 /obj/item/weapon/storage/backpack/satchel/hyd
 	name = "hydroponics satchel"
 	desc = "A green satchel for plant related work."
@@ -347,6 +355,41 @@
 		slot_l_hand_str = "satchel-cap",
 		slot_r_hand_str = "satchel-cap",
 		)
+
+//Smuggler's satchel
+/obj/item/weapon/storage/backpack/satchel/flat
+	name = "\improper Smuggler's satchel"
+	desc = "A very slim satchel that can easily fit into tight spaces."
+	icon_state = "satchel-flat"
+	item_state = "satchel-norm"
+	level = 1
+	w_class = ITEM_SIZE_NORMAL //Can fit in backpacks itself.
+	storage_slots = 5
+	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = 15
+	cant_hold = list(/obj/item/weapon/storage/backpack/satchel/flat) //muh recursive backpacks
+	startswith = list(
+		/obj/item/stack/tile/floor,
+		/obj/item/weapon/crowbar
+		)
+
+/obj/item/weapon/storage/backpack/satchel/flat/MouseDrop(var/obj/over_object)
+	var/turf/T = get_turf(src)
+	if(hides_under_flooring() && isturf(T) && !T.is_plating())
+		return
+	..()
+
+/obj/item/weapon/storage/backpack/satchel/flat/hide(var/i)
+	set_invisibility(i ? 101 : 0)
+	anchored = i ? TRUE : FALSE
+	alpha = i ? 128 : initial(alpha)
+
+/obj/item/weapon/storage/backpack/satchel/flat/attackby(obj/item/W, mob/user)
+	var/turf/T = get_turf(src)
+	if(hides_under_flooring() && isturf(T) && !T.is_plating())
+		to_chat(user, "<span class='warning'>You must remove the plating first.</span>")
+		return 1
+	return ..()
 
 //ERT backpacks.
 /obj/item/weapon/storage/backpack/ert
@@ -429,3 +472,9 @@
 	name = "security messenger bag"
 	desc = "A tactical backpack worn over one shoulder. This one is in Security colors."
 	icon_state = "courierbagsec"
+
+/obj/item/weapon/storage/backpack/messenger/sec/exo
+	name = "corporate security messenger bag"
+	desc = "A tactical backpack worn over one shoulder. This is black and bottle green."
+	icon_state = "courierbagsec_exo"
+

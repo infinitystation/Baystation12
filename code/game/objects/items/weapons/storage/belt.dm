@@ -109,7 +109,7 @@
 	item_state = "utility"
 	overlay_flags = BELT_OVERLAY_ITEMS
 	can_hold = list(
-		///obj/item/weapon/combitool,
+		/obj/item/weapon/combitool,
 		/obj/item/weapon/crowbar,
 		/obj/item/weapon/screwdriver,
 		/obj/item/weapon/weldingtool,
@@ -230,11 +230,10 @@
 		)
 
 /obj/item/weapon/storage/belt/security
-	name = "basic security belt"
-	desc = "Can hold security gear like handcuffs and flashes. Holster not included."
+	name = "security belt"
+	desc = "Can hold security gear like handcuffs and flashes."
 	icon_state = "basicsecuritybelt"
 	item_state = "basicsecurity"
-	storage_slots = 8
 	overlay_flags = BELT_OVERLAY_ITEMS
 	can_hold = list(
 		/obj/item/weapon/crowbar,
@@ -274,7 +273,7 @@
 		/obj/item/device/taperecorder,
 		/obj/item/weapon/folder,
 		/obj/item/weapon/paper,
-		/obj/item/weapon/clipboard,
+		/obj/item/weapon/material/clipboard,
 		/obj/item/modular_computer/tablet,
 		/obj/item/device/flashlight,
 		/obj/item/modular_computer/pda,
@@ -304,7 +303,6 @@
 	desc = "A belt used to hold most janitorial supplies."
 	icon_state = "janibelt"
 	item_state = "janibelt"
-	storage_slots = 6
 	can_hold = list(
 		/obj/item/weapon/grenade/chem_grenade,
 		/obj/item/device/lightreplacer,
@@ -323,7 +321,7 @@
 	desc = "Can hold general equipment such as tablets, folders, and other office supplies. Comes with a holster."
 	icon_state = "commandbelt"
 	item_state = "command"
-	storage_slots = 6
+	storage_slots = 7
 	overlay_flags = BELT_OVERLAY_ITEMS|BELT_OVERLAY_HOLSTER
 	can_hold = list(
 		/obj/item/device/flash,
@@ -331,7 +329,7 @@
 		/obj/item/device/taperecorder,
 		/obj/item/weapon/folder,
 		/obj/item/weapon/paper,
-		/obj/item/weapon/clipboard,
+		/obj/item/weapon/material/clipboard,
 		/obj/item/modular_computer/tablet,
 		/obj/item/device/flash,
 		/obj/item/device/flashlight,
@@ -387,7 +385,7 @@
 	desc = "Can hold general surveying equipment used for exploration, as well as your very own machete."
 	icon_state = "machetebelt"
 	item_state = "machetebelt"
-	storage_slots = 6
+	storage_slots = 8
 	overlay_flags = BELT_OVERLAY_HOLSTER
 	can_hold = list(
 		/obj/item/device/binoculars,
@@ -419,13 +417,13 @@
 	desc = "Designed for ease of access to the shards during a fight, as to not let a single enemy spirit slip away."
 	icon_state = "soulstonebelt"
 	item_state = "soulstonebelt"
-	storage_slots = 6
 	can_hold = list(
 		/obj/item/device/soulstone
 		)
 
 /obj/item/weapon/storage/belt/soulstone/full/New()
 	..()
+	new /obj/item/device/soulstone(src)
 	new /obj/item/device/soulstone(src)
 	new /obj/item/device/soulstone(src)
 	new /obj/item/device/soulstone(src)
@@ -439,7 +437,8 @@
 	desc = "Proves to the world that you are the strongest!"
 	icon_state = "championbelt"
 	item_state = "champion"
-	storage_slots = 1
+	storage_slots = null
+	max_storage_space = ITEM_SIZE_SMALL
 	can_hold = list(
 		/obj/item/clothing/mask/luchador
 		)
@@ -450,6 +449,10 @@
 	icon_state = "swatbelt"
 	item_state = "swatbelt"
 	storage_slots = 10
+
+/obj/item/weapon/storage/belt/holster/security/tactical/Initialize()
+	.=..()
+	slowdown_per_slot[slot_belt] = 1
 
 /obj/item/weapon/storage/belt/waistpack
 	name = "waist pack"
@@ -463,13 +466,13 @@
 
 /obj/item/weapon/storage/belt/waistpack/big
 	name = "large waist pack"
-	desc = "An bag designed to be worn on the waist. Definitely makes your butt look big."
+	desc = "A bag designed to be worn on the waist. Definitely makes your butt look big."
 	icon_state = "fannypack_big_white"
 	item_state = "fannypack_big_white"
 	w_class = ITEM_SIZE_LARGE
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = ITEM_SIZE_NORMAL * 4
 
-/obj/item/weapon/storage/belt/waistpack/big/New()
-	..()
-	slowdown_per_slot[slot_belt] = 0.5
+/obj/item/weapon/storage/belt/waistpack/big/Initialize()
+	.=..()
+	slowdown_per_slot[slot_belt] = 1

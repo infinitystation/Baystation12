@@ -79,13 +79,13 @@
 		new /datum/atom_creator/simple(/obj/item/weapon/reagent_containers/syringe/steroid, 10),
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/reagent_containers/food/drinks/cans/cola, /obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle, /obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb)),
 		new /datum/atom_creator/simple(/obj/item/clothing/glasses/eyepatch, 30),
-		new /datum/atom_creator/simple(/obj/item/clothing/gloves/duty, 80),
+		new /datum/atom_creator/simple(/obj/item/clothing/gloves/thick/duty, 80),
 		new /datum/atom_creator/simple(/obj/item/clothing/mask/balaclava/tactical, 30))
 
 /obj/random/ore
 	name = "random ore"
 	desc = "This is a random ore."
-	icon = 'icons/obj/clothing/ties.dmi'
+	icon = 'icons/obj/clothing/obj_accessories.dmi'
 	icon_state = "horribletie"
 
 /obj/random/ore_smug/spawn_choices()
@@ -104,18 +104,15 @@
 
 /obj/random/ammo_magazine_smug/spawn_choices()
 	return list(
-		/obj/item/ammo_magazine/a10mm,
-		/obj/item/ammo_magazine/c357,
-		/obj/item/ammo_magazine/c45m,
-		/obj/item/ammo_magazine/c556,
-		/obj/item/ammo_magazine/a762)
+		/obj/item/ammo_magazine/pistol,
+		/obj/item/ammo_magazine/speedloader,
+		/obj/item/ammo_magazine/rifle,
+		/obj/item/ammo_magazine/mil_rifle)
 
 /obj/structure/closet/crate/plastic_smug_ammo
 	name = "dirty plastic crate"
 	desc = "Dirty and scrtached plastic crate."
-	icon_state = "plasticcrate"
-	icon_opened = "plasticcrateopen"
-	icon_closed = "plasticcrate"
+	closet_appearance = /decl/closet_appearance/crate/plastic
 
 /obj/structure/closet/crate/plastic_smug_ammo/WillContain()
 	return list(
@@ -128,9 +125,7 @@
 /obj/structure/closet/crate/plastic_smug_weapons
 	name = "dirty plastic crate"
 	desc = "Dirty and scrtached plastic crate."
-	icon_state = "plasticcrate"
-	icon_opened = "plasticcrateopen"
-	icon_closed = "plasticcrate"
+	closet_appearance = /decl/closet_appearance/crate/plastic
 
 /obj/structure/closet/crate/plastic_smug_weapons/WillContain()
 	return list(

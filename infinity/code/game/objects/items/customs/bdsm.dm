@@ -166,7 +166,7 @@
 /obj/item/weapon/storage/secure/briefcase/pink
 	name = "pink brifcase"
 	desc = "Just pink edition."
-	icon = 'icons/infinity_custom_items_obj.dmi'
+	icon = CUSTOM_ITEM_OBJ
 	icon_state = "pink_case"
 	New()
 		..()

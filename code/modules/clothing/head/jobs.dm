@@ -97,41 +97,41 @@
 
 /obj/item/clothing/head/beret/sec
 	name = "corporate security beret"
-	desc = "A beret with the security insignia emblazoned on it. For enforcers that are more inclined towards style than safety."
+	desc = "A beret with the security insignia emblazoned on it. For officers that are more inclined towards style than safety."
 	icon_state = "beret_corporate_red"
 
 /obj/item/clothing/head/beret/sec/navy/officer
-	name = "navy security guard beret"
-	desc = "A navy blue beret with an guard's rank emblem. For guards that are more inclined towards style than safety."
+	name = "corporate security officer beret"
+	desc = "A navy blue beret with an officer's rank emblem. For officers that are more inclined towards style than safety."
 	icon_state = "beret_corporate_navy_officer"
 
 /obj/item/clothing/head/beret/sec/navy/hos
-	name = "navy security commander beret"
-	desc = "A navy blue beret with a commander's rank emblem. For commanders that are more inclined towards style than safety."
+	name = "corporate security commander beret"
+	desc = "A navy blue beret with a commander's rank emblem. For officers that are more inclined towards style than safety."
 	icon_state = "beret_corporate_navy_hos"
 
 /obj/item/clothing/head/beret/sec/navy/warden
-	name = "navy security warden beret"
-	desc = "A navy blue beret with a warden's rank emblem. For wardens that are more inclined towards style than safety."
+	name = "corporate security warden beret"
+	desc = "A navy blue beret with a warden's rank emblem. For officers that are more inclined towards style than safety."
 	icon_state = "beret_corporate_navy_warden"
 
 /obj/item/clothing/head/beret/sec/corporate/officer
-	name = "corporate security guard beret"
-	desc = "A corporate black beret with an guards's rank emblem. For guards that are more inclined towards style than safety."
+	name = "corporate security officer beret"
+	desc = "A corporate black beret with an officer's rank emblem. For officers that are more inclined towards style than safety."
 	icon_state = "beret_corporate_officer"
 
 /obj/item/clothing/head/beret/sec/corporate/hos
 	name = "corporate security commander beret"
-	desc = "A corporate black beret with a commander's rank emblem. For commanders that are more inclined towards style than safety."
+	desc = "A corporate black beret with a commander's rank emblem. For officers that are more inclined towards style than safety."
 	icon_state = "beret_corporate_hos"
 
 /obj/item/clothing/head/beret/sec/corporate/warden
 	name = "corporate security warden beret"
-	desc = "A corporate black beret with a warden's rank emblem. For wardens that are more inclined towards style than safety."
+	desc = "A corporate black beret with a warden's rank emblem. For officers that are more inclined towards style than safety."
 	icon_state = "beret_corporate_warden"
 
 /obj/item/clothing/head/beret/engineering
-	name = "engineering beret"
+	name = "corporate engineering beret"
 	desc = "A beret with the engineering insignia emblazoned on it. For engineers that are more inclined towards style than safety."
 	icon_state = "beret_orange"
 
@@ -160,7 +160,7 @@
 /obj/item/clothing/head/beret/guard
 	name = "corporate security beret"
 	desc = "A white beret adorned with a corporate logo. For security guards that are more inclined towards style than safety."
-	icon_state = "beret_corporate_whitered"
+	icon_state = "corpsec_beret"
 
 /obj/item/clothing/head/beret/plaincolor
 	name = "beret"

@@ -4,8 +4,8 @@
 
 /datum/gear/accessory/pilot_pin
 	display_name = "pilot's qualification pin"
-	path = /obj/item/clothing/accessory/solgov/speciality/pilot
-	allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/adjutant, /datum/job/exploration_leader)
+	path = /obj/item/clothing/accessory/solgov/specialty/pilot
+	allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/adjutant, /datum/job/exploration_leader, /datum/job/explorer_pilot)
 
 /datum/gear/accessory/armband_security
 	allowed_roles = SECURITY_ROLES
@@ -23,7 +23,7 @@
 	allowed_roles = ENGINEERING_ROLES
 
 /datum/gear/accessory/armband_hydro
-	allowed_roles = list(/datum/job/rd, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/assistant)
+	allowed_roles = list(/datum/job/rd, /datum/job/senior_scientist, /datum/job/scientist, /datum/job/scientist_assistant, /datum/job/assistant)
 
 /datum/gear/accessory/ntaward
 	allowed_roles = NANOTRASEN_ROLES

@@ -19,7 +19,6 @@
 	var/diona_spawn_chance = 0.1
 
 	// Power
-	use_power = 1
 	idle_power_usage = 10
 	var/vend_power_usage = 150 //actuators and stuff
 
@@ -479,7 +478,7 @@
 			src.speak(src.vend_reply)
 			src.last_reply = world.time
 
-	use_power(vend_power_usage)	//actuators and stuff
+	use_power_oneoff(vend_power_usage)	//actuators and stuff
 	if (src.icon_vend) //Show the vending animation if needed
 		flick(src.icon_vend,src)
 	spawn(src.vend_delay) //Time to vend
@@ -569,10 +568,7 @@
 		while(R.get_amount()>0)
 			R.get_product(loc)
 		break
-
-	stat |= BROKEN
-	src.icon_state = "[initial(icon_state)]-broken"
-	return
+	set_broken(TRUE)
 
 //Somebody cut an important wire and now we're following a new definition of "pitch."
 /obj/machinery/vending/proc/throw_item()
@@ -648,7 +644,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/cola = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/space_up = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/space_mountain_wind = 5,
-					/obj/item/weapon/reagent_containers/food/drinks/tea = 15,
+					/obj/item/weapon/reagent_containers/food/drinks/tea/black = 15,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/orangejuice = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/tomatojuice = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/limejuice = 5,
@@ -683,19 +679,34 @@
 
 /obj/machinery/vending/coffee
 	name = "Hot Drinks machine"
-	desc = "A vending machine which dispenses hot drinks."
+	desc = "A vending machine which dispenses hot drinks and hot drinks accessories."
 	product_ads = "Have a drink!;Drink up!;It's good for you!;Would you like a hot joe?;I'd kill for some coffee!;The best beans in the galaxy.;Only the finest brew for you.;Mmmm. Nothing like a coffee.;I like coffee, don't you?;Coffee helps you work!;Try some tea.;We hope you like the best!;Try our new chocolate!;Admin conspiracies"
 	icon_state = "coffee"
 	icon_vend = "coffee-vend"
 	vend_delay = 34
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	vend_power_usage = 85000 //85 kJ to heat a 250 mL cup of coffee
-	products = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 25,/obj/item/weapon/reagent_containers/food/drinks/tea = 25,/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 25)
-	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/ice = 10)
-	prices = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 3, /obj/item/weapon/reagent_containers/food/drinks/tea = 3, /obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 3)
+	products = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 15,
+					/obj/item/weapon/reagent_containers/food/drinks/tea/black = 15,
+					/obj/item/weapon/reagent_containers/food/drinks/tea/green = 15,
+					/obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 10,
+					/obj/item/weapon/reagent_containers/food/condiment/small/packet/sugar = 25,
+					/obj/item/weapon/reagent_containers/pill/pod/cream = 25,
+					/obj/item/weapon/reagent_containers/pill/pod/cream_soy = 25,
+					/obj/item/weapon/reagent_containers/pill/pod/orange = 10,
+					/obj/item/weapon/reagent_containers/pill/pod/mint = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/ice = 10)
 
-
-
+	prices = list(/obj/item/weapon/reagent_containers/food/drinks/coffee = 10,
+				  /obj/item/weapon/reagent_containers/food/drinks/tea/black = 10,
+				  /obj/item/weapon/reagent_containers/food/drinks/tea/green = 10,
+				  /obj/item/weapon/reagent_containers/food/drinks/h_chocolate = 15,
+				  /obj/item/weapon/reagent_containers/food/condiment/small/packet/sugar = 1,
+				  /obj/item/weapon/reagent_containers/pill/pod/cream = 5,
+				  /obj/item/weapon/reagent_containers/pill/pod/cream_soy = 5,
+				  /obj/item/weapon/reagent_containers/pill/pod/orange = 5,
+				  /obj/item/weapon/reagent_containers/pill/pod/mint = 5,
+				  /obj/item/weapon/reagent_containers/food/drinks/ice = 1)
 
 /obj/machinery/vending/snack
 	name = "Getmore Chocolate Corp"
@@ -876,7 +887,7 @@
 	icon_vend = "med-vend"
 	vend_delay = 18
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
-	req_access = list(101)
+	req_access = list(access_cent_general)
 	products = list(/obj/item/weapon/reagent_containers/glass/bottle/antitoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline = 4,
 					/obj/item/weapon/reagent_containers/glass/bottle/stoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/hyronalin = 4,
 					/obj/item/weapon/reagent_containers/syringe/antiviral = 8,/obj/item/weapon/reagent_containers/syringe = 12,
@@ -1036,12 +1047,13 @@
 	/obj/item/weapon/reagent_containers/glass/beaker/bowl =2,
 	/obj/item/weapon/tray = 8,
 	/obj/item/weapon/material/kitchen/utensil/fork = 6,
-	/obj/item/weapon/material/kitchen/utensil/knife = 6,
+	/obj/item/weapon/material/knife/table = 6,
 	/obj/item/weapon/material/kitchen/utensil/spoon = 6,
-	/obj/item/weapon/material/knife = 3,
+	/obj/item/weapon/material/knife/kitchen = 3,
 	/obj/item/weapon/material/kitchen/rollingpin = 2,
 	/obj/item/weapon/reagent_containers/food/drinks/pitcher = 2,
 	/obj/item/weapon/reagent_containers/food/drinks/coffeecup = 8,
+	/obj/item/weapon/reagent_containers/food/drinks/coffeecup/teacup = 8,
 	/obj/item/weapon/reagent_containers/food/drinks/glass2/carafe = 2,
 	/obj/item/weapon/reagent_containers/food/drinks/glass2/square = 8,
 	/obj/item/clothing/suit/chef/classic = 2,
@@ -1053,10 +1065,11 @@
 	/obj/item/weapon/storage/lunchbox/cti = 3,
 	/obj/item/weapon/storage/lunchbox/nymph = 3,
 	/obj/item/weapon/storage/lunchbox/syndicate = 3,
-	/obj/item/weapon/storage/lunchbox/dais = 3)
+	/obj/item/weapon/storage/lunchbox/dais = 3,
+	/obj/item/weapon/material/knife/kitchen/cleaver = 1)
 
 
-	contraband = list(/obj/item/weapon/material/knife/butch = 2)
+	contraband = list(/obj/item/weapon/material/knife/kitchen/cleaver/bronze = 1)
 
 /obj/machinery/vending/sovietsoda
 	name = "BODA"
@@ -1069,7 +1082,7 @@
 					/obj/item/weapon/reagent_containers/food/drinks/cans/artbru = 20,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/square/boda = 20,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/square/bodaplus = 20)
-	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/space_up = 300) // TODO Russian cola can
+	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/space_up = 30) // TODO Russian cola can
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
 /obj/machinery/vending/tool
@@ -1086,6 +1099,27 @@
 	contraband = list(/obj/item/weapon/weldingtool/hugetank = 2,/obj/item/clothing/gloves/insulated/cheap = 2)
 	premium = list(/obj/item/clothing/gloves/insulated = 1)
 
+/obj/machinery/vending/tool/adherent
+	name = "Adherent Tool Dispenser"
+	desc = "This looks like a heavily modified vending machine. It contains technology that doesn't appear to be human in origin."
+	product_ads = "\[C#\]\[Cb\]\[Db\]. \[Ab\]\[A#\]\[Bb\]. \[E\]\[C\]\[Gb\]\[B#\]. \[C#\].;\[Cb\]\[A\]\[F\]\[Cb\]\[C\]\[E\]\[Cb\]\[E\]\[Fb\]. \[G#\]\[C\]\[Ab\]\[A\]\[C#\]\[B\]. \[Eb\]\[choral\]. \[E#\]\[C#\]\[Ab\]\[E\]\[C#\]\[Fb\]\[Cb\]\[F#\]\[C#\]\[Gb\]."
+	icon_state = "tool"
+	icon_deny = "tool-deny"
+	icon_vend = "tool_vend"
+	vend_delay = 5
+	products = list(/obj/item/weapon/weldingtool/electric/crystal = 5,
+					/obj/item/weapon/wirecutters/crystal = 5,
+					/obj/item/weapon/screwdriver/crystal = 5,
+					/obj/item/weapon/crowbar/crystal = 5,
+					/obj/item/weapon/wrench/crystal = 5,
+					/obj/item/device/multitool/crystal = 5,
+					/obj/item/weapon/storage/belt/utility/vigil = 5)
+/obj/machinery/vending/tool/adherent/vend(var/datum/stored_items/vending_products/R, var/mob/living/carbon/user)
+	if((istype(user) && user.species.name == SPECIES_ADHERENT) || emagged)
+		. = ..()
+	else
+		to_chat(user, "<span class='notice'>The vending machine emits a discordant note, and a small hole blinks several times. It looks like it wants something inserted.</span>")
+
 /obj/machinery/vending/engivend
 	name = "Devicer'O Vend"
 	desc = "Spare tool vending. What? Did you expect some witty description?"
@@ -1093,7 +1127,7 @@
 	icon_deny = "engivend-deny"
 	icon_vend = "engivend-vend"
 	vend_delay = 21
-	req_one_access = list(access_atmospherics,access_engine_equip)
+	req_access = list(list(access_atmospherics,access_engine_equip))
 	products = list(/obj/item/device/flashlight = 3,/obj/item/device/multitool = 3,/obj/item/device/multitool/multimeter = 3,
 	/obj/item/device/geiger = 3,/obj/item/device/analyzer = 3,/obj/item/device/t_scanner = 3,
 	/obj/item/device/cable_painter = 2,/obj/item/device/floor_painter = 2,/obj/item/device/pipe_painter = 2, /obj/item/weapon/rpd = 2,
@@ -1107,7 +1141,7 @@
 	desc = "Everything you need for do-it-yourself repair."
 	icon_state = "engi"
 	icon_deny = "engi-deny"
-	req_one_access = list(access_atmospherics,access_engine_equip)
+	req_access = list(list(access_atmospherics,access_engine_equip))
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/oiljug = 6,
 					/obj/item/weapon/storage/belt/utility = 4,/obj/item/clothing/glasses/meson = 4,/obj/item/clothing/gloves/insulated = 4, /obj/item/weapon/screwdriver = 12,
 					/obj/item/weapon/crowbar = 12,/obj/item/weapon/wirecutters = 12,/obj/item/device/multitool = 12,/obj/item/weapon/wrench = 12,/obj/item/device/t_scanner = 12,

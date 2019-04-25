@@ -1,6 +1,7 @@
 /area/ship/scrap
 	name = "Generic Ship"
 	ambience = list('sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg','sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg','sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg','sound/ambience/ambigen12.ogg')
+	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/ship/scrap/crew
 	name = "Crew Compartements"
@@ -97,6 +98,7 @@
 /area/ship/scrap/maintenance
 	name = "Maintenance Compartments"
 	icon_state = "amaint"
+	req_access = list(access_bearcat)
 
 /area/ship/scrap/maintenance/hallway
 	name = "Maintenance Corridors"
@@ -147,14 +149,17 @@
 /area/ship/scrap/command/hallway
 	name = "Command Deck"
 	icon_state = "centcom"
+	req_access = list(access_bearcat)
 
 /area/ship/scrap/command/bridge
 	name = "Bridge"
 	icon_state = "bridge"
+	req_access = list(access_bearcat)
 
 /area/ship/scrap/command/captain
 	name = "Captain's Quarters"
 	icon_state = "captain"
+	req_access = list(access_bearcat_captain)
 
 /area/ship/scrap/comms
 	name = "Communications Relay"

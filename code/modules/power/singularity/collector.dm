@@ -4,7 +4,7 @@ var/global/list/rad_collectors = list()
 /obj/machinery/power/rad_collector
 	name = "radiation collector array"
 	desc = "A device which uses radiation and phoron to produce power."
-	icon = 'icons/obj/singularity.dmi'
+	icon = 'infinity/icons/obj/singularity.dmi'
 	icon_state = "ca"
 	anchored = 0
 	density = 1

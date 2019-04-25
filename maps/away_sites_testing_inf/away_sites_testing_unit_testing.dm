@@ -10,11 +10,8 @@
 //		/area/rubbidu = NO_SCRUBBER|NO_VENT|NO_APC,
 //		/area/ship/patrol = NO_SCRUBBER|NO_VENT|NO_APC,
 //		/area/white_star = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/djstation = NO_SCRUBBER|NO_APC,
-		/area/mine/explored = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/mine/unexplored = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/outpost/abandoned = NO_SCRUBBER,
 		/area/space = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/mine = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/smugglers/base = NO_SCRUBBER,
 		/area/smugglers/dorms = NO_SCRUBBER|NO_VENT,
 		/area/smugglers/office = NO_SCRUBBER|NO_VENT,
@@ -23,15 +20,30 @@
 		/area/bluespaceriver/ground = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/map_template/hydrobase = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/map_template/hydrobase/station = NO_SCRUBBER,
-		/area/map_template/marooned = NO_SCRUBBER|NO_VENT|NO_APC
+		/area/map_template/marooned = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/map_template/colony/mineralprocessing = NO_SCRUBBER|NO_VENT,
+		/area/map_template/datacapsule = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/outpost/mining/solar = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/outpost/mining/maints = NO_SCRUBBER|NO_VENT,
+		/area/outpost/mining/atmos = NO_SCRUBBER|NO_VENT,
+		/area/ship/skrellscoutship/solars = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/ship/skrellscoutship/crew/toilets = NO_SCRUBBER|NO_VENT,
+		/area/ship/skrellscoutship/maintenance/power = NO_SCRUBBER,
+		/area/ship/skrellscoutshuttle = NO_SCRUBBER
 	)
 
 	area_coherency_test_exempt_areas = list(
 		/area/space,
 		/area/mine/explored,
-		/area/mine/unexplored
+		/area/mine/unexplored,
 	)
-
+/*
+	area_coherency_test_subarea_count = list(
+		/area/constructionsite = 7,
+		/area/constructionsite/maintenance = 14,
+		/area/constructionsite/solar = 3,
+	)
+*/
 	area_usage_test_exempted_areas = list(
 		/area/overmap,
 		/area/template_noop,
@@ -73,5 +85,5 @@
 
 	area_usage_test_exempted_root_areas = list(
 		/area/exoplanet,
-		/area/map_template
+		/area/map_template,
 	)

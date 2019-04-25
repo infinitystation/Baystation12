@@ -5,7 +5,7 @@ var/list/emojis
 	if(!config.emojis)
 		return
 	if(!emojis)
-		emojis = icon_states(icon('icons/emoji.dmi'))
+		emojis = icon_states(icon('infinity/icons/emoji.dmi'))
 	var/parsed = ""
 	var/pos = 1
 	var/search = 0
@@ -19,7 +19,7 @@ var/list/emojis
 			if(search)
 				emoji = lowertext(copytext(text, pos+1, search))
 				if(emoji in emojis)
-					parsed += " <img class=icon src=\ref['icons/emoji.dmi'] iconstate='[emoji]'>"
+					parsed += " <img class=icon src=\ref['infinity/icons/emoji.dmi'] iconstate='[emoji]'>"
 					pos = search + 1
 				else
 					parsed += copytext(text, pos, search)

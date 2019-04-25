@@ -78,7 +78,7 @@
 /obj/item/weapon/storage/belt/security/patrol/New()
 	..()
 	new /obj/item/weapon/gun/projectile/sec/lethal(src)
-	new /obj/item/ammo_magazine/c45m(src)
+	new /obj/item/ammo_magazine/machine_pistol(src)
 
 /obj/item/clothing/accessory/storage/bandolier/patrol/New()
 	..()

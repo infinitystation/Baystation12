@@ -1,7 +1,7 @@
 /obj/machinery/mining
 	icon = 'icons/obj/mining_drill.dmi'
 	anchored = 0
-	use_power = 0 //The drill takes power directly from a cell.
+	use_power = POWER_USE_OFF //The drill takes power directly from a cell.
 	density = 1
 	plane = ABOVE_HUMAN_PLANE
 	layer = ABOVE_HUMAN_LAYER //So it draws over mobs in the tile north of it.
@@ -28,7 +28,8 @@
 		MATERIAL_OSMIUM =   /obj/item/weapon/ore/osmium,
 		MATERIAL_HYDROGEN = /obj/item/weapon/ore/hydrogen,
 		MATERIAL_SAND =     /obj/item/weapon/ore/glass,
-		MATERIAL_GRAPHENE = /obj/item/weapon/ore/coal
+		MATERIAL_GRAPHENE = /obj/item/weapon/ore/coal,
+		MATERIAL_ALUMINIUM = /obj/item/weapon/ore/aluminium
 		)
 
 	//Upgrades
