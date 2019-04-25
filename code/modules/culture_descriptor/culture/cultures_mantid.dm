@@ -1,8 +1,8 @@
 /decl/cultural_info/culture/ascent
 	name =             CULTURE_ASCENT
 	language =         LANGUAGE_MANTID_VOCAL
-	secondary_langs = list(LANGUAGE_MANTID_BROADCAST, LANGUAGE_MANTID_VOCAL, LANGUAGE_NABBER, LANGUAGE_SKRELLIAN, LANGUAGE_MANTID_NONVOCAL)
-  name_language = LANGUAGE_MANTID_VOCAL
+	additional_langs = list(LANGUAGE_MANTID_BROADCAST, LANGUAGE_MANTID_VOCAL, LANGUAGE_NABBER, LANGUAGE_SKRELLIAN, LANGUAGE_MANTID_NONVOCAL)
+	name_language = LANGUAGE_MANTID_VOCAL
 	hidden = TRUE
 	description = "The Ascent is an ancient, isolated stellar empire composed of the mantid-cephalopodean \
 	Kharmaani, the Monarch Serpentids, and their gaggle of AI servitors. Day to day existence in the Ascent is \
