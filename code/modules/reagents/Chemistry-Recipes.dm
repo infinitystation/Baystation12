@@ -2251,3 +2251,9 @@
 	required_reagents = list(/datum/reagent/anfo=15, /datum/reagent/aluminum=5)
 	result_amount = 20
 	mix_message = "The solution gives off the eye-watering reek of spilled fertilizer and petroleum."
+
+/datum/chemical_reaction/crystal
+	name = "Crystallizing Agent"
+	result = /datum/reagent/crystal
+	required_reagents = list(/datum/reagent/silicon = 2, /datum/reagent/acetone = 2, /datum/chemical_reaction/mutagen = 1)
+	result_amount = 5
