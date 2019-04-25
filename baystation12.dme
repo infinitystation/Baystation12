@@ -2336,7 +2336,7 @@
 #include "code\modules\organs\external\species\bionic.dm"
 #include "code\modules\organs\external\species\blueforged.dm"
 #include "code\modules\organs\external\species\diona.dm"
-#include "code\modules\organs\external\species\insectoid.dm
+#include "code\modules\organs\external\species\insectoid.dm"
 #include "code\modules\organs\external\species\nabber.dm"
 #include "code\modules\organs\external\species\nabber_camo.dm"
 #include "code\modules\organs\external\species\nabber_stance.dm"
