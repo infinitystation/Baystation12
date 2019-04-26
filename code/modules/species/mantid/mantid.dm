@@ -54,8 +54,11 @@
 		TAG_HOMEWORLD = list(
 			HOME_SYSTEM_KHARMAANI
 		),
+		TAG_FACTION = list(
+			FACTION_ASCENT_ALATE
+		),
 		TAG_RELIGION =  list(
-			RELIGION_OTHER
+			RELIGION_KHARMAANI
 		)
 	)
 
@@ -111,6 +114,21 @@
 	icon_template =           'icons/mob/human_races/species/ascent/gyne/template.dmi'
 	damage_overlays =         'icons/mob/human_races/species/ascent/gyne/damage_mask.dmi'
 	blood_mask =              'icons/mob/human_races/species/ascent/gyne/blood_mask.dmi'
+
+	available_cultural_info = list(
+		TAG_CULTURE =   list(
+			CULTURE_ASCENT
+		),
+		TAG_HOMEWORLD = list(
+			HOME_SYSTEM_KHARMAANI
+		),
+		TAG_FACTION = list(
+			FACTION_ASCENT_GYNE
+		),
+		TAG_RELIGION =  list(
+			RELIGION_KHARMAANI
+		)
+	)
 
 	gluttonous =              3
 	slowdown =                2
@@ -171,6 +189,7 @@
 	name = SPECIES_MONARCH_QUEEN
 	name_plural = "Monarch Serpentid Queens"
 
+
 	available_cultural_info = list(
 		TAG_CULTURE =   list(
 			CULTURE_ASCENT
@@ -178,8 +197,11 @@
 		TAG_HOMEWORLD = list(
 			HOME_SYSTEM_KHARMAANI
 		),
+		TAG_FACTION = list(
+			FACTION_ASCENT_SERPENTID
+		),
 		TAG_RELIGION =  list(
-			RELIGION_OTHER
+			RELIGION_KHARMAANI
 		)
 	)
 
