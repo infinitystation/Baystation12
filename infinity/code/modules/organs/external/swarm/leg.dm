@@ -1,7 +1,7 @@
 /obj/item/organ/external/swarm/leg
 	name = "Swarm right front leg"
 	desc = "Swarm's right front leg"
-	icon = 'icons/swarm/obj/organ/external.dmi'
+	icon = 'infinity/icons/swarm/obj/organ/external.dmi'
 	icon_state = "have_not"
 	organ_tag = BP_R_F_LEG
 	parent_organ = BP_SHELL

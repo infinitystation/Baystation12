@@ -1,7 +1,7 @@
 /obj/item/organ/internal/swarm/core
 	name = "core"
 	desc = "Ball with several lights, presumably sensors"
-	icon = 'icons/swarm/obj/organ/internal.dmi'
+	icon = 'infinity/icons/swarm/obj/organ/internal.dmi'
 	icon_state = "core"
 	organ_tag = BP_CORE
 	parent_organ = BP_SHELL
@@ -16,7 +16,7 @@
 
 	relative_size = 60
 
-	var/mob/living/silicon/core/brainmob = null
+	var/mob/living/swarm/core/brainmob = null
 
 /obj/item/organ/internal/swarm/core/New(var/mob/living/carbon/H)
 	..()
