@@ -82,7 +82,7 @@
 		BP_VOICE =    /obj/item/organ/internal/voicebox/nabber
 		)
 
-		has_limbs = list(
+	has_organ = list(
 		BP_CHEST =  list("path" = /obj/item/organ/external/chest/nabber),
 		BP_GROIN =  list("path" = /obj/item/organ/external/groin/nabber),
 		BP_HEAD =   list("path" = /obj/item/organ/external/head/nabber),
