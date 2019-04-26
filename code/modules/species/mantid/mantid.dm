@@ -189,7 +189,6 @@
 	name = SPECIES_MONARCH_QUEEN
 	name_plural = "Monarch Serpentid Queens"
 
-
 	available_cultural_info = list(
 		TAG_CULTURE =   list(
 			CULTURE_ASCENT
