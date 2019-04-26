@@ -13,9 +13,6 @@
 /mob/living/carbon/human/mantid/gyne
 	mantid_type = SPECIES_MANTID_GYNE
 
-/mob/living/carbon/human/mantid/monarch_worker
-	mantid_type = SPECIES_MONARCH_WORKER
-
 /mob/living/carbon/human/mantid/monarch_queen
 	mantid_type = SPECIES_MONARCH_QUEEN
 
