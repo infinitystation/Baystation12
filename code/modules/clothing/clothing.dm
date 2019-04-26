@@ -8,7 +8,6 @@
 		SPECIES_NABBER,
 		SPECIES_MANTID_ALATE,
 		SPECIES_MANTID_GYNE,
-		SPECIES_MONARCH_WORKER,
 		SPECIES_MONARCH_QUEEN
 	) //everyone except for these species can wear this kit.
 
