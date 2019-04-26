@@ -4,7 +4,7 @@
 	icon_state = "kexosuit"
 	item_state = null
 	suit_type = "support exosuit"
-	armor = list(melee = 80, bullet = 80, laser = 75, energy = 50, bomb = 90, bio = 100, rad = 100)
+	armor = list(melee = 75, bullet = 80, laser = 75, energy = 50, bomb = 90, bio = 100, rad = 100)
 	online_slowdown = 0
 	offline_slowdown = 1
 	equipment_overlay_icon = null
@@ -78,8 +78,8 @@
 	starting_pressure = list("[refill_gas_type]" = 6 * ONE_ATMOSPHERE)
 	. = ..()
 
-/obj/item/weapon/tank/mantid/oxygen
-	refill_gas_type = "oxygen"
+/obj/item/weapon/tank/mantid
+	refill_gas_type = "methyl_bromide"
 
 /obj/item/weapon/tank/mantid/Process()
 	..()
@@ -108,7 +108,7 @@
 /obj/item/weapon/rig/mantid/nabber
 	icon_override = 'icons/mob/species/nabber/onmob_back_gas.dmi'
 	mantid_caste = SPECIES_NABBER
-	air_type =   /obj/item/weapon/tank/mantid/oxygen
+	air_type =   /obj/item/weapon/tank/mantid
 
 /obj/item/weapon/rig/mantid/mob_can_equip(var/mob/M, var/slot)
 	. = ..()
