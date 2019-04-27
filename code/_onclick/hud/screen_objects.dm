@@ -289,6 +289,12 @@
 												contents.Add(0)
 
 
+										if ("methyl_bromide")
+											if(t.air_contents.gas["methyl_bromide"])
+												contents.Add(t.air_contents.gas["methyl_bromide"])
+											else
+												contents.Add(0)
+
 								else
 									//no tank so we set contents to 0
 									contents.Add(0)
