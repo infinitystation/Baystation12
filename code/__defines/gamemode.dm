@@ -56,7 +56,6 @@
 #define MODE_THRALL "mind thrall"
 #define MODE_PARAMOUNT "paramount"
 #define MODE_FOUNDATION "foundation agent"
-#define MODE_SWARM "Swarm"
 
 #define DEFAULT_TELECRYSTAL_AMOUNT 130
 #define TEAM_TELECRYSTAL_AMOUNT 780 //DEFAULT_TELECRYSTAL_AMOUNT*6
