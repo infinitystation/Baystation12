@@ -146,8 +146,15 @@
 	name = "Commissary"
 	icon_state = "crew_quarters"
 
+//Abandoned compartments
+
 /area/maintenance/abandoned_compartment
-	name = "unknown compartment"
+	name = "Unknown Compartment"
+	turf_initializer = /decl/turf_initializer/maintenance/heavy
+
+/area/maintenance/abandoned_hydroponics
+	name = "Abandoned Hydroponics"
+	icon_state = "hydro"
 	turf_initializer = /decl/turf_initializer/maintenance/heavy
 
 //First Deck (Z-3)
