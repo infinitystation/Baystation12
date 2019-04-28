@@ -5,3 +5,5 @@
 	icon_state = "have_not"
 	organ_tag = BP_MANIPULATOR
 	parent_organ = BP_SHELL
+
+//¬озможно перенесение в разр€д оборудовани€ сварма
