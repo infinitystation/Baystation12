@@ -372,6 +372,9 @@ NINJAS_ALLOWED
 ## Respawn delay in minutes before one may respawn as a crew member.
 #RESPAWN_DELAY 30
 
+## Uncomment to prevent players in lobby from joining the round as a ghost.
+#DISABLE_OBSERVERS
+
 ## Strength of ambient star light. Set to 0 or less to turn off. A value of 1 is unlikely to have a noticeable effect in most lighting systems.
 STARLIGHT 0.5
 
