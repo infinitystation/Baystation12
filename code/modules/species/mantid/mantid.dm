@@ -33,7 +33,7 @@
 	flash_mod =               2 // Highly photosensitive.
 
 	min_age =                 1
-	max_age =                120 // Infinity Remake!
+	max_age =                20 // Nope
 	slowdown =               -1
 	rarity_value =            3
 	gluttonous =              2
