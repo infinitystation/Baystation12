@@ -8,6 +8,8 @@
 		verbs |= /obj/item/modular_computer/verb/eject_id
 	if(stores_pen && istype(stored_pen))
 		verbs |= /obj/item/modular_computer/verb/remove_pen
+	if(!has_terminal(usr))
+		verbs |= /obj/item/modular_computer/verb/open_terminal_b
 
 	verbs |= /obj/item/modular_computer/verb/emergency_shutdown
 

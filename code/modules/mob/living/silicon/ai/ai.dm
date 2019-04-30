@@ -219,7 +219,10 @@ var/list/ai_verbs_default = list(
 	job = "AI"
 	setup_icon()
 	eyeobj.possess(src)
-	announcement.Announce("Новый ИИ загружен в ядро ИИ", new_sound = 'sound/AI/TG/newai.ogg')
+
+	var/otvet_rwqir231 = input(src, "Announce your presence?", "Presence.") in list("Yes", "No")
+	if(otvet_rwqir231 == "Yes")
+		announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/TG/newai.ogg')
 
 /mob/living/silicon/ai/Destroy()
 	for(var/robot in connected_robots)

@@ -3211,6 +3211,7 @@
 #include "infinity\code\modules\mob\living\swarm\core.dm"
 #include "infinity\code\modules\mob\living\swarm\swarm.dm"
 #include "infinity\code\modules\mob\living\swarm\shell\spy.dm"
+#include "infinity\code\modules\modular_computers\computers\modular_computer\interaction.dm"
 #include "infinity\code\modules\organs\external\swarm\leg.dm"
 #include "infinity\code\modules\organs\external\swarm\manipulator.dm"
 #include "infinity\code\modules\organs\external\swarm\shell.dm"
