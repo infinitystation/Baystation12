@@ -49,7 +49,8 @@
 	else
 		output += "<a href='byond://?src=\ref[src];manifest=1'>View the Crew Manifest</A><br><br>"
 		output += "<p><a href='byond://?src=\ref[src];late_join=1'>Join Game!</A></p>"
-		output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
+		if(config.observers_allowed || check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
+			output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
 
 	if(!IsGuestKey(src.key))
 		establish_db_connection()
@@ -126,6 +127,9 @@
 	if(href_list["observe"])
 		if(client && client.banprisoned)
 			return
+		if(!config.observers_allowed && !check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
+			to_chat(src, SPAN_WARNING("¬ы не можете зайти в раунд за призрака, поскольку это было запрещено настройками сервера."))
+			return
 		if(GAME_STATE < RUNLEVEL_LOBBY)
 			to_chat(src, "<span class='warning'>Please wait for server initialization to complete...</span>")
 			return
@@ -136,7 +140,10 @@
 				return
 
 		if(!config.respawn_delay || client.holder || alert(src,"Are you sure you wish to observe? You will have to wait [config.respawn_delay] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
-			if(!client)	return 1
+			if(!client)
+				return 1
+			if(!config.observers_allowed && !check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
+				return 1
 			var/mob/observer/ghost/observer = new()
 
 			spawning = 1

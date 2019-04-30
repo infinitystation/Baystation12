@@ -204,6 +204,7 @@ var/list/gamemode_cache = list()
 	var/dsay_allowed = 1
 	var/aooc_allowed = 1
 	var/ahelp_allowed = 1
+	var/observers_allowed = 1
 
 	var/starlight = 0	// Whether space turfs have ambient light or not
 
@@ -360,7 +361,7 @@ var/list/gamemode_cache = list()
 
 				if ("log_hrefs")
 					config.log_hrefs = 1
-				
+
 				if ("log_runtime")
 					config.log_runtime = 1
 
@@ -484,6 +485,9 @@ var/list/gamemode_cache = list()
 
 				if ("disable_respawn")
 					config.abandon_allowed = 0
+
+				if ("disable_observers")
+					config.observers_allowed = 0
 
 				if ("usewhitelist")
 					config.usewhitelist = 1
@@ -628,7 +632,7 @@ var/list/gamemode_cache = list()
 
 				if("forbidden_versions")
 					config.forbidden_versions = splittext(value, ";")
-				
+
 				if("minimum_byond_version")
 					config.minimum_byond_version = text2num(value)
 
