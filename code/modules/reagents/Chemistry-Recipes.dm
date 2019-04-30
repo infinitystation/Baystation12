@@ -2340,3 +2340,9 @@
 		var/create_stacks = Floor(created_volume)
 		if(create_stacks > 0)
 			new /obj/item/stack/medical/resin/handmade(T, create_stacks)
+
+/datum/chemical_reaction/crystal
+	name = "Crystallizing Agent"
+	result = /datum/reagent/crystal
+	required_reagents = list(/datum/reagent/silicon = 2, /datum/reagent/acetone = 2, /datum/chemical_reaction/mutagen = 1)
+	result_amount = 5

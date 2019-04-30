@@ -27,7 +27,12 @@
 	var/last_light
 	var/image/gleam
 	var/image/web
-	var/global/species_immunity_list = list()
+	var/global/species_immunity_list = list(
+		SPECIES_MANTID_ALATE = TRUE,
+		SPECIES_MANTID_GYNE = TRUE,
+		SPECIES_MONARCH_WORKER = TRUE,
+		SPECIES_MONARCH_QUEEN = TRUE
+	)
 
 /obj/effect/razorweb/tough
 	name = "tough razorweb"

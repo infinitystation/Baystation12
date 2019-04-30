@@ -4,8 +4,15 @@
 										/datum/job/doctor_trainee, /datum/job/engineer_trainee, /datum/job/scientist_assistant),
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/chemist,
 									 /datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef, /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender),
-		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/stowaway)
+		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/stowaway),
+		
+		/datum/species/mantid = list(/datum/job/ai, /datum/job/cyborg),
+		
+		/datum/species/mantid/gyne = list(/datum/job/ai, /datum/job/cyborg),
+		
+		/datum/species/nabber/monarch/queen = list(/datum/job/ai, /datum/job/cyborg)
 	)
+
 
 #define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos
 	species_to_job_blacklist = list(

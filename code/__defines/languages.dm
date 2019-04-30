@@ -26,6 +26,9 @@
 #define LANGUAGE_LEGALESE       "Legalese"
 #define LANGUAGE_SWARM          "Swarm Audio Language"
 #define LANGUAGE_SWARM_FAR      "Swarm Far Communicate Language"
+#define LANGUAGE_MANTID_NONVOCAL  "Ascent-Glow"
+#define LANGUAGE_MANTID_VOCAL     "Ascent-Voc"
+#define LANGUAGE_MANTID_BROADCAST "Worldnet"
 
 // Language flags.
 #define WHITELISTED  1   // Language is available if the speaker is whitelisted.
