@@ -1,12 +1,13 @@
 /decl/cultural_info/faction/ascent_serpentid
 	name =        FACTION_ASCENT_SERPENTID
-	language =    LANGUAGE_MANTID_NONVOCAL
 	description = "Members of the Ascent tend to be organized along the natural lines of their respective species. \
 	For Kharmaani, this is oriented around individual gynes and their power structures, fortress-nests and staff. A \
 	gyne considers herself the single most important entity in the Universe, and through pheremonal control and \
 	general indoctrination, her throngs of alates will likely agree. Monarch Serpentids have a slightly less \
 	manipulative approach, as well as more numerous and less self-absorbed queens. Regardless, to humans and their \
 	fellows, Ascent ideology is vicious, factional and xenophobic."
+	language = LANGUAGE_MANTID_NONVOCAL
+	secondary_langs = list(LANGUAGE_NABBER)
 
 /decl/cultural_info/faction/ascent_alate
 	name =        FACTION_ASCENT_ALATE
@@ -23,7 +24,6 @@
 
 /decl/cultural_info/faction/ascent_gyne
 	name =        FACTION_ASCENT_GYNE
-	language =    LANGUAGE_MANTID_NONVOCAL
 	description = "By the time a gyne has survived her 'childhood' and shed the exoskeleton of an \
 	alate during a breeding frenzy, she has obtained a master class education in murdering and eating \
 	her rivals at the first opportunity, as well as a sideline in a technical or practical field. The \
@@ -31,3 +31,5 @@
 	supplement this with intensive training in management, logistics, military command, sociology, politics \
 	and any number of the other critical fields tied into managing a fortress-nest of tens of thousands of \
 	individual citizens."
+	language = LANGUAGE_MANTID_NONVOCAL
+	secondary_langs = list(LANGUAGE_SKRELLIAN)
