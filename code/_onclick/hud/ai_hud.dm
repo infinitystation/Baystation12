@@ -112,5 +112,31 @@
 	using.ai_verb = /mob/verb/down
 	src.adding += using
 
+	//[Inf]
+	//AI Floor Color
+	using = new /obj/screen/ai_button()
+	using.name = "Change Floor Color"
+	using.icon_state = "ai_floor"
+	using.screen_loc = ui_ai_color
+	using.ai_verb = /mob/living/silicon/ai/proc/change_floor
+	src.adding += using
+
+	//AI Holo Change
+	using = new /obj/screen/ai_button()
+	using.name = "Change Hologram"
+	using.icon_state = "ai_holo"
+	using.screen_loc = ui_ai_holo
+	using.ai_verb = /mob/living/silicon/ai/proc/ai_hologram_change
+	src.adding += using
+
+	//AI crew monitor
+	using = new /obj/screen/ai_button()
+	using.name = "Crew Monitor"
+	using.icon_state = "crew_monitor"
+	using.screen_loc = ui_ai_crew_mon
+	using.ai_verb = /mob/living/silicon/ai/proc/show_crew_monitor
+	src.adding += using
+	//[/inf]
+
 	mymob.client.screen = list()
 	mymob.client.screen += src.adding

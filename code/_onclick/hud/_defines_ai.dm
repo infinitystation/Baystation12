@@ -12,3 +12,9 @@
 #define ui_ai_call_shuttle "EAST-4:28,SOUTH:5"
 #define ui_ai_up "EAST-3:30,SOUTH:5"
 #define ui_ai_down "EAST-2:32,SOUTH:5"
+//[inf]
+//~_Elar_
+#define ui_ai_holo "EAST-1:34,SOUTH:5"
+#define ui_ai_color "EAST-1:34,SOUTH+1:5"
+#define ui_ai_crew_mon "WEST:6,SOUTH+1:5"//"CENTER-1:20,SOUTH+1:5"
+//[/inf]
