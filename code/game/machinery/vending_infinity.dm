@@ -163,9 +163,13 @@
 	contraband = list(/obj/item/device/flash = 2,/obj/item/weapon/airlock_brace = 2,/obj/item/weapon/crowbar/brace_jack = 1)
 	premium = list(/obj/item/weapon/partyalarm_electronics = 1)
 
+/*========================*/
+/*==== IDEA BY LINERS ====*/
+/*========================*/
+
 /obj/machinery/vending/armoryvend/kinetic
 	name = "WardenTech Kinetic"
-	desc = ""
+	desc = "A weapon vendor. It stores kinetic weapons."
 	req_access = list(access_security)
 	icon = 'icons/obj/infinity_vend.dmi'
 	density = 0
@@ -178,7 +182,7 @@
 
 /obj/machinery/vending/armoryvend/energy
 	name = "WardenTech Energy"
-	desc = ""
+	desc = "A weapon vendor. It stores energy weapons."
 	req_access = list(access_armory)
 	icon = 'icons/obj/infinity_vend.dmi'
 	density = 0
@@ -190,7 +194,7 @@
 
 /obj/machinery/vending/armoryvend/laser
 	name = "WardenTech Laser"
-	desc = ""
+	desc = "A weapon vendor. It stores laser weapons."
 	req_access = list(access_armory)
 	icon = 'icons/obj/infinity_vend.dmi'
 	density = 0
