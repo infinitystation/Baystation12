@@ -328,6 +328,9 @@
 
 	if(print_flavor_text()) msg += "[print_flavor_text()]\n"
 
+	if(isghost(user) && (public_record || med_record || sec_record || gen_record))
+		msg += "<span class = 'deptradio'>Records:</span> <a href='?src=\ref[src];check_records=1'>\[View\]</a>\n"
+
 	if(ooc_notes && !skipface)
 		msg += "<span class = 'deptradio'>OOC Notes:</span> <a href='?src=\ref[src];ooc_notes=1'>\[View\]</a>\n"
 
