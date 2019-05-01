@@ -28,7 +28,7 @@ var/list/ai_verbs_default = list(
 	/mob/living/silicon/ai/proc/multitool_mode,
 	/mob/living/silicon/ai/proc/toggle_hologram_movement,
 	/mob/living/silicon/ai/proc/ai_power_override,
-	/mob/living/silicon/ai/proc/ai_shutdown
+	/mob/living/silicon/ai/proc/ai_shutdown,
 	//[inf]
 	/mob/living/silicon/ai/proc/change_floor,
 	/mob/living/silicon/ai/proc/show_crew_monitor
