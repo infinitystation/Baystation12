@@ -28,7 +28,7 @@
 /obj/item/weapon/screwdriver/power/Initialize()
 	. = ..()
 	icon_state = "drill_screw"
-	color = "#FFFFFF"
+	color = "#ffffff"
 
 /obj/item/weapon/wrench/power
 	name = "hand drill"
@@ -59,7 +59,7 @@
 /obj/item/weapon/wrench/power/Initialize()
 	. = ..()
 	icon_state = "drill_bolt"
-	color = "#FFFFFF"
+	color = "#ffffff"
 
 /obj/item/weapon/wirecutters/power
 	name = "jaws of life"
@@ -92,7 +92,7 @@
 /obj/item/weapon/wirecutters/power/Initialize()
 	. = ..()
 	icon_state = "jaws_cutter"
-	color = "#FFFFFF"
+	color = "#ffffff"
 
 /obj/item/weapon/crowbar/power
 	name = "jaws of life"
@@ -123,7 +123,7 @@
 /obj/item/weapon/crowbar/power/Initialize()
 	. = ..()
 	icon_state = "jaws_pry"
-	color = "#FFFFFF"
+	color = "#ffffff"
 
 /obj/item/weapon/combitool
 	name = "combi-tool"
