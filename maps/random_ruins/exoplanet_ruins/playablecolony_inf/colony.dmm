@@ -4,7 +4,7 @@
 "ad" = (/turf/simulated/wall/r_wall/prepainted,/area/map_template/colony/tcomms)
 "ae" = (/turf/simulated/wall/prepainted,/area/map_template/colony/tcomms)
 "af" = (/obj/structure/grille,/turf/simulated/floor/exoplanet/concrete,/area/template_noop)
-"ag" = (/obj/structure/table/steel_reinforced,/obj/machinery/button/remote/blast_door{id = "colsecarm"; name = "Armory Secure Access"},/obj/machinery/button/remote/blast_door{id = "colarm"; name = "Armory Blast Door Control"; pixel_y = 8},/obj/item/weapon/card/id/merchant/leader{access = list("ACCESS_MERCHANT","ACCESS_MERCHANT_LEADER","ACCESS_RESEARCH"); desc = "Special card connected only to Colony's Trade Relay"; name = "Trade relay access card"},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/colony/command)
+"ag" = (/obj/structure/table/steel_reinforced,/obj/machinery/button/remote/blast_door{id = "colsecarm"; name = "Armory Secure Access"},/obj/machinery/button/remote/blast_door{id = "colarm"; name = "Armory Blast Door Control"; pixel_y = 8},/obj/item/weapon/card/id/merchant/leader,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/colony/command)
 "ah" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/implantcase/imprinting,/obj/item/weapon/implantcase/imprinting,/obj/item/weapon/implantcase/imprinting,/obj/item/weapon/implanter,/obj/effect/floor_decal/corner/red{dir = 9},/obj/effect/floor_decal/corner/red{icon_state = "corner_white"; dir = 4},/turf/simulated/floor/tiled/techfloor,/area/map_template/colony/tcomms)
 "ai" = (/obj/structure/table/steel_reinforced,/obj/item/weapon/implantpad,/obj/item/weapon/reagent_containers/syringe/drugs,/obj/item/weapon/reagent_containers/syringe/drugs,/obj/item/weapon/reagent_containers/syringe/drugs,/obj/machinery/alarm{locked = 0; pixel_y = 20},/obj/effect/floor_decal/corner/red{dir = 5},/turf/simulated/floor/tiled/techfloor,/area/map_template/colony/tcomms)
 "aj" = (/obj/structure/catwalk,/turf/simulated/floor/exoplanet/concrete,/area/template_noop)
@@ -131,7 +131,7 @@
 "cA" = (/obj/machinery/atmospherics/pipe/simple/heat_exchanging{dir = 5; icon_state = "intact"},/obj/machinery/atmospherics/unary/vent_pump/siphon/on/atmos{frequency = 7663; id_tag = "co2o"},/turf/simulated/floor/reinforced/oxygen,/area/map_template/colony/atmospherics)
 "cB" = (/obj/machinery/atmospherics/pipe/simple/visible/red{icon_state = "intact"; dir = 4},/obj/machinery/atmospherics/pipe/simple/visible/black,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/colony/atmospherics)
 "cC" = (/obj/machinery/door/airlock/hatch,/turf/simulated/floor/tiled/techfloor,/area/map_template/colony)
-"cD" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 1},/obj/effect/floor_decal/techfloor{icon_state = "techfloor_edges"; dir = 1},/turf/simulated/floor/tiled/techfloor,/area/map_template/colony/engineering)
+"cD" = (/obj/machinery/r_n_d/protolathe,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/colony/engineering)
 "cE" = (/obj/machinery/atmospherics/pipe/simple/visible/red,/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/colony/atmospherics)
 "cF" = (/obj/effect/floor_decal/techfloor{icon_state = "techfloor_edges"; dir = 10},/obj/effect/floor_decal/corner/blue{dir = 4},/obj/effect/floor_decal/techfloor/hole/right,/turf/simulated/floor/tiled/techfloor,/area/map_template/colony)
 "cG" = (/obj/machinery/light/small{icon_state = "bulb1"; dir = 8},/turf/simulated/floor/carpet,/area/map_template/colony/dorms)
@@ -204,7 +204,7 @@
 "dV" = (/obj/machinery/chemical_dispenser/full,/obj/effect/floor_decal/corner/paleblue{dir = 10},/turf/simulated/floor/tiled/white/monotile,/area/map_template/colony/medbay)
 "dW" = (/obj/item/weapon/storage/firstaid/surgery,/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8},/obj/item/clothing/accessory/stethoscope,/obj/structure/table/standard,/turf/simulated/floor/tiled/freezer,/area/map_template/colony/surgery)
 "dX" = (/obj/effect/floor_decal/techfloor{icon_state = "techfloor_edges"; dir = 10},/turf/simulated/floor/tiled/techfloor,/area/map_template/colony/engineering)
-"dY" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/effect/floor_decal/techfloor,/turf/simulated/floor/tiled/techfloor,/area/map_template/colony/engineering)
+"dY" = (/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 1},/obj/effect/floor_decal/techfloor{icon_state = "techfloor_edges"; dir = 1},/obj/machinery/r_n_d/destructive_analyzer,/turf/simulated/floor/tiled/techfloor,/area/map_template/colony/engineering)
 "dZ" = (/obj/effect/floor_decal/techfloor{icon_state = "techfloor_edges"; dir = 6},/turf/simulated/floor/tiled/techfloor,/area/map_template/colony/engineering)
 "ea" = (/obj/machinery/reagentgrinder,/obj/item/stack/material/phoron/ten,/obj/effect/floor_decal/corner/paleblue{dir = 5},/obj/structure/table/reinforced,/turf/simulated/floor/tiled/white,/area/map_template/colony/medbay)
 "eb" = (/obj/structure/iv_drip,/obj/machinery/alarm{locked = 0; pixel_y = 20},/obj/effect/floor_decal/corner/red{dir = 9},/obj/structure/hygiene/sink{dir = 1; pixel_y = 16},/turf/simulated/floor/tiled/freezer,/area/map_template/colony/surgery)
@@ -276,7 +276,7 @@
 "fp" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/machinery/vending/engineering{req_access = list()},/turf/simulated/floor/tiled/techfloor/grid,/area/map_template/colony/engineering)
 "fq" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/turf/simulated/floor/lino,/area/map_template/colony/messhall)
 "fr" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/obj/effect/floor_decal/techfloor{icon_state = "techfloor_edges"; dir = 9},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/techfloor,/area/map_template/colony/engineering)
-"fs" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{icon_state = "map-scrubbers"; dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/effect/floor_decal/techfloor{icon_state = "techfloor_edges"; dir = 1},/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/tiled/techfloor,/area/map_template/colony/engineering)
+"fs" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/effect/floor_decal/techfloor,/obj/machinery/computer/rdconsole/core{req_access = list()},/turf/simulated/floor/tiled/techfloor,/area/map_template/colony/engineering)
 "ft" = (/obj/machinery/atmospherics/pipe/simple/visible/black,/obj/effect/floor_decal/techfloor{icon_state = "techfloor_edges"; dir = 1},/obj/machinery/computer/general_air_control/large_tank_control{frequency = 7662; input_tag = "cco2n"; name = "Carbon Dioxide Tank Control"; output_tag = "cco2o"; sensors = list("c3" = "Tank")},/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled/techfloor,/area/map_template/colony/atmospherics)
 "fu" = (/obj/structure/bed/chair/comfy/brown{dir = 4},/obj/structure/sign/double/maltesefalcon/right{pixel_y = 32},/obj/effect/floor_decal/spline/fancy/wood{icon_state = "spline_fancy"; dir = 1},/turf/simulated/floor/wood/walnut,/area/map_template/colony/messhall)
 "fv" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 8},/obj/effect/floor_decal/techfloor{icon_state = "techfloor_edges"; dir = 8},/turf/simulated/floor/tiled/techfloor,/area/map_template/colony)
@@ -710,6 +710,7 @@
 "nH" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9; pixel_y = 0},/obj/effect/floor_decal/corner/beige,/obj/effect/floor_decal/corner/red{icon_state = "corner_white"; dir = 4},/obj/effect/floor_decal/corner/red{dir = 9},/turf/simulated/floor/tiled/dark,/area/map_template/colony/jail)
 "nI" = (/obj/effect/floor_decal/corner/beige{icon_state = "corner_white"; dir = 10},/obj/effect/floor_decal/corner/red{dir = 5},/turf/simulated/floor/tiled/dark/monotile,/area/map_template/colony/jail)
 "nJ" = (/obj/effect/floor_decal/techfloor{icon_state = "techfloor_edges"; dir = 10},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/machinery/portable_atmospherics/hydroponics,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/techfloor,/area/map_template/colony/hydroponics)
+"nK" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{icon_state = "map-scrubbers"; dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/effect/floor_decal/techfloor{icon_state = "techfloor_edges"; dir = 1},/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/machinery/r_n_d/circuit_imprinter,/turf/simulated/floor/tiled/techfloor,/area/map_template/colony/engineering)
 "nL" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1; layer = 2.4; level = 2},/obj/effect/floor_decal/corner/paleblue{dir = 9},/obj/effect/floor_decal/corner/red{dir = 6},/obj/machinery/light/spot,/obj/item/device/radio/intercom{dir = 1; pixel_y = -28},/turf/simulated/floor/tiled/dark/monotile,/area/map_template/colony/jail)
 "nM" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 1},/obj/effect/floor_decal/corner/beige{icon_state = "corner_white"; dir = 6},/obj/effect/floor_decal/corner/red{dir = 9},/obj/machinery/light/spot,/turf/simulated/floor/tiled/dark/monotile,/area/map_template/colony/jail)
 "nO" = (/obj/effect/floor_decal/industrial/warning/dust{dir = 8},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 8; frequency = 2222; id_tag = "playablecolonymain_pump_out_internal"; power_rating = 25000; tag = "playablecolonymain_pump"},/obj/item/device/radio/intercom{dir = 4; pixel_x = -21},/turf/simulated/floor/tiled/techfloor,/area/map_template/colony/airlock)
@@ -796,11 +797,11 @@ aaafIAbealaZalaZalaZalaZbBbIbMbIbRbTbMciakcnhocxcCcFbKbVareDmCeZeZfcfceZeZfcfccs
 aaafajcKcPdldmelbMdlcPeociatatauawauatazazazazazazazdxdEaBaBaFaFaBaBaGaIaGaGfccs
 aaaJaJaJaJaJaJaJaJaJaKaJewatbAbtdGcbcaaLdBaLdsaLdBaLdIdOaNdRdUdVdLaOebdKdNaGdFcs
 aaaPbHbSbHaQbWbLaQbYbNaPeLatcgbObPbQheaLcGdDdMdDcIaLeketeceeefegezexeFdCdWaGfccs
-aaaPcelcchaPcAcHaPcJdbaPfiatdyaTaTaTdAaLdjaLedaLdjaLdHdOaNeaejeYeOaOeSdQaGaGfccs
-aaaPaSaUbaaPbabdaPbdbaaPbhaPeHcwcDcTfdaLaLaLeqaLaLaLfvfxaOaOaOaOaOaObmbmaGfcfccs
-aaaPeIdTfDeAfEfmeBftfFcRdSaPiadXdYdZeMaLeXdDeQeTfeeWfRfSbzfjfkfnfofufHfIbJeZaacs
+aaaPcelcchaPcAcHaPcJdbaPfiatdyaTcDaTdAaLdjaLedaLdjaLdHdOaNeaejeYeOaOeSdQaGaGfccs
+aaaPaSaUbaaPbabdaPbdbaaPbhaPeHcwdYcTfdaLaLaLeqaLaLaLfvfxaOaOaOaOaOaObmbmaGfcfccs
+aaaPeIdTfDeAfEfmeBftfFcRdSaPiadXfsdZeMaLeXdDeQeTfeeWfRfSbzfjfkfnfofufHfIbJeZaacs
 aPaPerclcmgUdedhcoclcphjesaPeKaTeiaTgHaLaLaLfKaLaLaLekfUbZgbemememengsgAcceZaacs
-ctdJeyhmdPeudPlKdPlLeEcBflaPfpfrfseRmeaLfMaLedaLfMaLfWfYbzgIgPbrbrevbrgYccfcaacs
+ctdJeyhmdPeudPlKdPlLeEcBflaPfpfrnKeRmeaLfMaLedaLfMaLfWfYbzgIgPbrbrevbrgYccfcaacs
 ctiWeUcEhigFeJgGfhbqhFhFeVaPfwgffyfAfBaLcGdDdMdDcIaLdIggfGhshxhyhzhDhIhKccfcaacs
 ctgLgNcLgTcMcNcOhlcQgVcSffaPcucufLcvcvaLdBaLhSaLdBaLdIdOcycycycycyeCeNhHbJfcaacs
 ctgXfzcEikcUcVcWcXcYhbfNfOfPghgqgwfZfCaLaLaLaLaLaLaLgxgycygefJgcgdePfgfqccfcaacs
