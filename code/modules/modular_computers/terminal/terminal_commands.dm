@@ -131,7 +131,6 @@ Subtypes
 	name = "status"
 	man_entry = list("Format: status", "Reports network status information.")
 	pattern = "^status$"
-	req_access = list(access_network)
 
 /datum/terminal_command/status/proper_input_entered(text, mob/user, terminal)
 	. = list()
