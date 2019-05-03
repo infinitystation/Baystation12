@@ -1,6 +1,5 @@
 area/errant_pisces
 	icon = 'maps/away/errant_pisces/errant_pisces_areas_sprites.dmi'//24 areas so sprites are in a separate .dmi
-	turf_initializer = /decl/turf_initializer/maintenance //forbidden for some hours, at all
 
 area/errant_pisces/bow_port
 	name = "Bow Port"
