@@ -7,7 +7,7 @@
 	pass_flags = PASS_FLAG_TABLE
 	health = 100
 	maxHealth = 100
-	mob_size = 4
+	mob_size = MOB_TINY
 	species_language = "Xenophage"
 	see_in_dark = 8
 
