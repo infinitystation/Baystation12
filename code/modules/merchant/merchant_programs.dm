@@ -132,6 +132,9 @@
 	if(!pad)
 		last_comms = "PAD NOT CONNECTED. CANNOT TRANSFER"
 		return
+	if(bank <= 0)
+		last_comms = "NO CASH DETECTED"
+		return
 	var/turf/T = get_turf(pad)
 	var/obj/item/weapon/spacecash/bundle/B = new(T)
 	B.worth = bank
