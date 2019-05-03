@@ -203,12 +203,14 @@
 
 /obj/item/device/uplink_service/fake_crew_announcement/enable(var/mob/user = usr)
 
+	state = CURRENTLY_ACTIVE
+	update_icon()
 	var/datum/computer_file/report/crew_record/random_record
 	var/obj/item/weapon/card/id/I = user.GetIdCard()
 	if(GLOB.all_crew_records.len)
 		random_record = pick(GLOB.all_crew_records)
 	var/datum/computer_file/report/crew_record/new_record = CreateModularRecord(user)
-	sleep(10)
+	sleep(20)
 	if(I)
 		new_record.set_name(I.registered_name)
 		new_record.set_formal_name("[I.formal_name_prefix][I.registered_name][I.formal_name_suffix]")
