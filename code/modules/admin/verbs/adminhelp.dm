@@ -7,6 +7,8 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 	var/list/forenames = list()
 	var/list/ckeys = list()
 
+	msg = emoji_parse(msg)
+
 	if(config.ahelp_allowed == 0)
 		to_chat(src, "<font color='red'>Error: Admin-Help: Adminhelp is currently off for everyone.</font>")
 		return
@@ -129,6 +131,8 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 			if(X.get_preference_value(/datum/client_preference/staff/play_adminhelp_ping) == GLOB.PREF_HEAR)
 				sound_to(X, 'sound/effects/adminhelp.ogg')
 			to_chat(X, msg)
+	//Emoji Parse for staff log
+	original_msg = emoji_parse(original_msg)
 	//show it to the person adminhelping too
 	to_chat(src, "<font color='blue'>PM to-<b>Staff</b> (<a href='?src=\ref[usr];close_ticket=\ref[ticket]'>CLOSE</a>): [original_msg]</font>")
 	var/admin_number_present = GLOB.admins.len - admin_number_afk
