@@ -90,7 +90,7 @@
 	I.SetName(name)
 	I.desc = desc
 
-	if(prob(5))
+	if(prob(1))
 		I.talking_atom = new(I)
 
 	return INITIALIZE_HINT_QDEL
@@ -297,24 +297,21 @@
 	apply_material_decorations = 0
 
 /obj/item/weapon/archaeological_find/crystal/spawn_item()
-	var/obj/item/new_item
-	if(prob(25))
-		new_item = new /obj/item/device/soulstone(loc)
-	else
-		new_item = new(loc)
-	apply_image_decorations = 1
+	if(prob(10))
+		new /obj/item/device/soulstone(loc)
+		return //inf
+	if(prob(20)) //inf
+		apply_image_decorations = 1
 	additional_desc = pick("It shines faintly as it catches the light.","It appears to have a faint inner glow.","It seems to draw you inward as you look it at.","Something twinkles faintly as you look at it.","It's mesmerizing to behold.")
-
-	new_item.icon = 'icons/obj/xenoarchaeology.dmi'
 	if(prob(25))
 		item_type = "smooth green crystal"
-		new_item.icon_state = "Green lump"
+		icon_state = "Green lump"
 	else if(prob(33))
 		item_type = "irregular purple crystal"
-		new_item.icon_state = "Phazon"
+		icon_state = "Phazon"
 	else
 		item_type = "rough red crystal"
-		new_item.icon_state = "changerock"
+		icon_state = "changerock"
 
 /obj/item/weapon/archaeological_find/blade
 	item_type = "blade"
