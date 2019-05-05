@@ -18,3 +18,9 @@
 	set name = "CREW: Show Crew Lifesigns Monitor"
 
 	open_subsystem(/datum/nano_module/crew_monitor)
+
+/mob/living/silicon/ai/proc/show_crew_records()
+	set category = "Silicon Commands"
+	set name = "CREW: Show Crew Records"
+
+	open_subsystem(/datum/nano_module/records)

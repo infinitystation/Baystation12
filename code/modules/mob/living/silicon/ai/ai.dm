@@ -32,6 +32,7 @@ var/list/ai_verbs_default = list(
 	//[inf],
 	/mob/living/silicon/ai/proc/change_floor,
 	/mob/living/silicon/ai/proc/show_crew_monitor,
+	/mob/living/silicon/ai/proc/show_crew_records,
 	//[/inf],
 )
 

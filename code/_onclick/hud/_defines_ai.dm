@@ -14,7 +14,12 @@
 #define ui_ai_down "EAST-2:32,SOUTH:5"
 //[inf]
 //~_Elar_
-#define ui_ai_holo "EAST-1:34,SOUTH:5"
-#define ui_ai_color "EAST-1:34,SOUTH+1:5"
-#define ui_ai_crew_mon "WEST:6,SOUTH+1:5"//"CENTER-1:20,SOUTH+1:5"
+#define ui_ai_holo "EAST:0,SOUTH:5"
+#define ui_ai_color "EAST:0,SOUTH+1:5"
+#define ui_ai_core_icon "EAST:0,SOUTH+2:5"
+#define ui_ai_status "EAST:0,SOUTH+3:5"
+#define ui_ai_power_override "WEST:6,NORTH:0"
+#define ui_ai_shutdown "WEST+1:6,NORTH:0"
+#define ui_ai_crew_mon "EAST:0,NORTH:0"
+#define ui_ai_crew_rec "EAST-1:0, NORTH:0"
 //[/inf]
