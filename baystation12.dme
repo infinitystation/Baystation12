@@ -3147,6 +3147,7 @@
 #include "infinity\code\game\objects\items\weapons\storage\boxes.dm"
 #include "infinity\code\game\objects\items\weapons\storage\firstaid.dm"
 #include "infinity\code\game\objects\items\weapons\storage\firstaid_indiv.dm"
+#include "infinity\code\game\objects\items\weapons\storage\storage.dm"
 #include "infinity\code\game\objects\random\random.dm"
 #include "infinity\code\game\objects\structures\crates_lockers\crates.dm"
 #include "infinity\code\game\objects\structures\crates_lockers\closets\gimmick.dm"
