@@ -72,6 +72,8 @@
 		/obj/item/weapon/storage/box/detergent,
 		/obj/item/holosign_creator,
 		/obj/item/clothing/glasses/hud/janitor,
+		/obj/item/weapon/storage/belt/janitor,
+		/obj/item/clothing/mask/plunger,
 		/obj/item/weapon/soap/nanotrasen
 	)
 
