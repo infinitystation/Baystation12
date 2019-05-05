@@ -249,6 +249,7 @@ var/list/organ_cache = list()
 
 /obj/item/organ/proc/robotize() //Being used to make robutt hearts, etc
 	status = ORGAN_ROBOTIC
+	name = "robotic " + name
 
 /obj/item/organ/proc/mechassist() //Used to add things like pacemakers, etc
 	status = ORGAN_ASSISTED
