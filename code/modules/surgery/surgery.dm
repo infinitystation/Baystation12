@@ -118,9 +118,6 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 
 /decl/surgery_step/proc/success_chance(mob/living/user, mob/living/carbon/human/target, obj/item/tool)
 	. = tool_quality(tool)
-	if(target.can_feel_pain() && (target.wear_suit != /obj/item/clothing/suit/straight_jacket || target.stat >= UNCONSCIOUS))// UNCONSCIOUS or DEAD
-		for(var/obj/item/organ/external/E in target.organs)
-			. -= E.pain
 	if(user == target)
 		. -= 10
 
@@ -216,8 +213,8 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 			if(operation_data)
 				LAZYSET(M.surgeries_in_progress, zone, operation_data)
 				S.begin_step(user, M, zone, src)
-				var/duration = user.skill_delay_mult(S.core_skill) * rand(S.min_duration, S.max_duration) * surgery_speed
-				if(prob(S.success_chance(user, M, src)) && do_mob(user, M, duration) * surgery_speed)
+				var/duration = user.skill_delay_mult(S.core_skill) * rand(S.min_duration, S.max_duration)
+				if(prob(S.success_chance(user, M, src)) && do_mob(user, M, duration))
 					S.end_step(user, M, zone, src)
 					handle_post_surgery()
 				else if ((src in user.contents) && user.Adjacent(M))
@@ -237,10 +234,3 @@ GLOBAL_LIST_INIT(surgery_tool_exception_cache, new)
 
 /obj/item/stack/handle_post_surgery()
 	use(1)
-
-///datum/surgery_status/
-//	var/eyes	=	0
-//	var/face	=	0
-//	var/head_reattach = 0
-//	var/current_organ = "organ"
-//	var/list/in_progress = list()
