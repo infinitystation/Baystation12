@@ -30,6 +30,7 @@
 	sort_category = "Xenowear"
 	path = /obj/item/clothing/suit/storage/resomicloak
 	cost = 1
+	whitelisted = list(SPECIES_RESOMI)
 
 /datum/gear/suit/storage/resomicloak/standard/New()
 	..()
@@ -91,6 +92,7 @@
 	path = /obj/item/clothing/under/resomi/undercoat
 	cost = 1
 	slot = slot_w_uniform
+	whitelisted = list(SPECIES_RESOMI)
 
 /datum/gear/under/resomi/undercoat/standard/New()
 	..()

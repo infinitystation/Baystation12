@@ -390,6 +390,8 @@
 	display_name = "(Resomi) small labcoat"
 	path = /obj/item/clothing/suit/storage/toggle/Resomilabcoat
 	flags = GEAR_HAS_COLOR_SELECTION
+	sort_category = "Xenowear"
+	whitelisted = list(SPECIES_RESOMI)
 
 // Adherent
 
