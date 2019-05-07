@@ -8,7 +8,7 @@
 		NETWORK_ENGINEERING
 	)
 	subsystems = list(
-		/datum/nano_module/power_monitor, 
+		/datum/nano_module/power_monitor,
 		/datum/nano_module/supermatter_monitor
 	)
 	supported_upgrades = list(
@@ -19,7 +19,8 @@
 		"Antique" = "engineerrobot",
 		"Landmate" = "landmate",
 		"Landmate - Treaded" = "engiborg+tread",
-		"Doot" = "eyebot-engineering"
+		"Doot" = "eyebot-engineering",
+		"Drone" = "drone-engineer"
 	)
 	no_slip = 1
 	equipment = list(

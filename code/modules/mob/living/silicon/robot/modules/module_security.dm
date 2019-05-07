@@ -6,7 +6,7 @@
 		NETWORK_SECURITY
 	)
 	subsystems = list(
-		/datum/nano_module/crew_monitor, 
+		/datum/nano_module/crew_monitor,
 		/datum/nano_module/digitalwarrant
 	)
 	can_be_pushed = FALSE
@@ -36,7 +36,10 @@
 		"Black Knight" = "securityrobot",
 		"Bloodhound" = "bloodhound",
 		"Bloodhound - Treaded" = "secborg+tread",
-		"Tridroid" = "orb-security"
+		"Tridroid" = "orb-security",
+		"Doot" = "eyebot-security",
+		"Drone" = "drone-sec",
+		"Motile" = "motile-sec"
 	)
 	equipment = list(
 		/obj/item/device/flash,
