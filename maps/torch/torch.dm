@@ -134,6 +134,7 @@
 	#include "../away/skrellscoutship/skrellscoutship.dm"
 
 	#include "../../code/datums/music_tracks/chasing_time.dm"
+	#include "torch_inf.dm" //for lower conflicts list, its placed here
 
 	#define using_map_DATUM /datum/map/torch
 
@@ -142,4 +143,3 @@
 	#warn A map has already been included, ignoring Torch
 
 #endif
-

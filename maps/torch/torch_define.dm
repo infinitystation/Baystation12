@@ -36,14 +36,14 @@
 	use_overmap = 1
 	num_exoplanets = 1
 
-	away_site_budget = 3
+	away_site_budget = 2
 	id_hud_icons = 'maps/torch/icons/assignment_hud.dmi'
 
 /datum/map/torch/setup_map()
 	..()
 	system_name = generate_system_name()
 	minor_announcement = new(new_sound = sound('sound/AI/torch/commandreport.ogg', volume = 45))
-
+/* see torch_inf
 /datum/map/torch/map_info(victim)
 	to_chat(victim, "<h2>Current map information</h2>")
 	to_chat(victim, "You're aboard the <b>[station_name]</b>, an Expeditionary Corps vessel. Its primary mission is looking for undiscovered sapient alien species, and general exploration along the way.")
@@ -88,7 +88,7 @@
 
 	post_comm_message("SEV Torch Sensor Readings", welcome_text)
 	minor_announcement.Announce(message = "New [GLOB.using_map.company_name] Update available at all communication consoles.")
-
+*/
 /turf/simulated/wall //landlubbers go home
 	name = "bulkhead"
 
