@@ -1197,6 +1197,10 @@ obj/item/organ/external/proc/remove_clamps()
 			owner.drop_from_inventory(owner.gloves)
 		if(HEAD)
 			owner.drop_from_inventory(owner.glasses)
+			if(istype(owner.wear_suit,/obj/item/clothing/suit/space/void))
+				var/obj/item/clothing/suit/space/void/S = owner.wear_suit
+				S.helmet = null
+			owner.head.canremove = 1
 			owner.drop_from_inventory(owner.head)
 			owner.drop_from_inventory(owner.l_ear)
 			owner.drop_from_inventory(owner.r_ear)
