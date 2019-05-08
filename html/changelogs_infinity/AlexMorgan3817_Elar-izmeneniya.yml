@@ -1,11 +1,4 @@
-################################
-# Example Changelog File
-#
-# Note: This file, and files beginning with ".", and files that don't end in ".yml" will not be read. If you change this file, you will look really dumb.
-#
-# Your changelog will be merged with a master changelog. (New stuff added only, and only on the date entry for the day it was merged.)
-# When it is, any changes listed below will disappear.
-#
+##################################
 # Valid Prefixes: 
 #   bugfix
 #   balance
@@ -22,17 +15,35 @@
 #   experiment
 #################################
 
-# Your name.  
 author: AlexMorgan3817/_Elar_
 
-# Optional: Remove this file after generating master changelog.  Useful for PR changelogs that won't get used again.
 delete-after: True
 
-# Any changes you've made.  See valid prefix list above.
-# INDENT WITH TWO SPACES.  NOT TABS.  SPACES.
-# SCREW THIS UP AND IT WON'T WORK.
-# Also, all entries are changed into a single [] after a master changelog generation. Just remove the brackets when you add new entries.
-# Please surround your changes in  double quotes ("), as certain characters otherwise screws up compiling. The quotes will not show up in the changelog.
 changes: 
   - rscadd: "ИИ получил новые иконки ядра (большая часть портирована с VG и TG)."
   - rscadd: "Разблокированы статусы ИИ: tribunal, tribunal malf, pulmp, fishtank."
+  - rscadd: "Новый верб Change Floor для ИИ позволяющий менять пол в ядре ИИ, аплоуде и телекоммуникациях."
+  - rscadd: "Новый скин для СБ Motile."
+  - rscadd: "Худ-кнопки ИИ для кастомизации, кнопки Shutdown и Power Override, кнопки для открытия записей экипажа и статуса датчиков костюмов."
+  - rscadd: "После захода в ядро ИИ можно выбрать делать ли объявление сопровождаемое Hello, crew, im your new AI. Enjoy your stay."
+  - bugfix: "В ASAY, MSAY, теперь есть эмоджи."
+  - maptweak: "На колонию добавлено РнД не требующего доступа."
+  - rscadd: "Добавлены три новые команды для терминала модулярных консолей/других устройств. session, shutdown, listdir."
+  - balance: "Удалён доступ с команд терминала ping, status, proxy, relays."
+  - rscadd: "Для открытия терминала модулярок сделан отдельный верб, борги могут открывать терминал из далека. ИИ только в радиусе 10 тайлов."
+  - rscadd: "В кафе добавлена микроволновка для общего пользования."
+  - bugfix: "Невидимые и цветные инструменты зафикшены."
+  - rscadd: "В оружейную добавлены вендоры заменяющие все шкафы с оружием."
+  - maptweak: "Мусорка пермабрига направлена в космос."
+  - bugfix: "Научные очки теперь можно включать кнопкой в левом верхнем углу экрана."
+  - maptweak: "Телепорт переименован с телепорта третьей палубы на телепорт."
+  - bugfix: "Белый берет корапоративной охраны теперь работает."
+  - rscadd: "В командные консоли добавлена программа Deck Management с спавна."
+  - bugfix: "При кике админа теперь нету ;не проли;, теперь там ;не проЯвили;."
+  - rscadd: "В репозиторий добавлена утилита для перевода кирилицы в нужную кодировку для отображения в чате, и тд."
+  - bugfix: "Вещи из голодека больше не вынести используя упаковку."
+  - rscadd: "Портированы причёски с VG."
+  - rscadd: "Малфу добавленна новая способность отключения/включения пультов управления дверями."
+  - rscadd: "Малф при становлении малфом или взломе малфом слышит aimalf.ogg. Борги при взломе их малфом слышат aimalf.ogg."
+  - rscadd: "У АВД теперь в таблетке не токсин, а цианид. На бумаге написано ;No surrender. Eat pill."
+  - rscadd: "При выдаче целей предателю проигрывается вступление Синдикота. Если предатель это ИИ, то проигрывается AiSindiHack.ogg."
