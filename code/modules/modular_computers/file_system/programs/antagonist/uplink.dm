@@ -6,7 +6,7 @@
 	size = 0 // it is cloud based
 	requires_ntnet = 1
 	available_on_ntnet = 1
-//	usage_flags = PROGRAM_PDA
+	usage_flags = PROGRAM_PDA
 	nanomodule_path = /datum/nano_module/program/uplink
 
 	var/password
