@@ -52,9 +52,11 @@
 			queue_icon_update()
 			return
 		throw e
-
 	var/image/I
 	var/base_color = paint_color ? paint_color : material.icon_colour
+
+// BAD AREA
+
 	if(!density)
 		I = image('icons/turf/wall_masks.dmi', "[material.icon_base]fwall_open")
 		I.color = base_color

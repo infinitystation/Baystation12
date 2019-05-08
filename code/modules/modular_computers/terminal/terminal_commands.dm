@@ -57,6 +57,7 @@ Subtypes
 	name = "man"
 	man_entry = list("Format: man \[command\]", "Without command specified, shows list of available commands.", "With command, provides instructions on command use.")
 	pattern = "^man"
+	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/man/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	if(text == "man")
@@ -104,14 +105,13 @@ Subtypes
 	if(!ch)
 		return "hwinfo: No such hardware found."
 	ch.diagnostics(user)
-	return "Running diagnostic protocols..."	
+	return "Running diagnostic protocols..."
 
 // Sysadmin
 /datum/terminal_command/relays
 	name = "relays"
 	man_entry = list("Format: relays", "Gives the number of active relays found on the network.")
 	pattern = "^relays$"
-	req_access = list(access_network)
 
 /datum/terminal_command/relays/proper_input_entered(text, mob/user, terminal)
 	return "Number of relays found: [ntnet_global.relays.len]"
@@ -131,7 +131,6 @@ Subtypes
 	name = "status"
 	man_entry = list("Format: status", "Reports network status information.")
 	pattern = "^status$"
-	req_access = list(access_network)
 
 /datum/terminal_command/status/proper_input_entered(text, mob/user, terminal)
 	. = list()
@@ -164,7 +163,6 @@ Subtypes
 	name = "ping"
 	man_entry = list("Format: ping nid", "Checks connection to the given nid.")
 	pattern = "^ping"
-	req_access = list(access_network)
 
 /datum/terminal_command/ping/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	. = list("pinging ...")
@@ -220,7 +218,6 @@ Subtypes
 		"It is recommended that the user ensure that the target device is accessible."
 	)
 	pattern = "^proxy"
-	req_access = list(access_network)
 
 /datum/terminal_command/proxy/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/obj/item/modular_computer/comp = terminal.computer
@@ -255,3 +252,116 @@ Subtypes
 		file.stored_data += "([time_stamp()]) Proxy routing request accepted from: [comp.network_card.get_network_tag()].\[br\]"
 	comp.network_card.proxy_id = id
 	return "proxy: Device proxy set to [id]."
+
+//[INFINITY]____________________________________________________________________________________________________________________
+
+/datum/terminal_command/listdir
+	name = "listdir"
+	man_entry = list("Format: listdir", "State list of files in local memory.")
+	pattern = "^listdir$"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/listdir/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	if(length(text) < 6)
+		return "listdir: Improper syntax. Use listdir."
+	if(!terminal.computer.hard_drive.check_functionality())
+		return "listdir: Access attempt to local storage failed. Check integrity of your hard drive"
+	var/list/massive_of_program_names = list()
+	for(var/datum/computer_file/F in terminal.computer.hard_drive.stored_files)
+		if(F.is_illegal == 0)
+			var/prog_size = num2text(F.size)
+			var/prg_data = F.filename + "." + F.filetype + "	|	" + prog_size + " GQ"
+			massive_of_program_names.Add(prg_data)
+		else
+			var/prg_data = "\[ENCRYPTED\]" + "." + "\[ENCRYPTED\]" + "	|	" + "\[ENCRYPTED\]" + " GQ"
+			massive_of_program_names.Add(prg_data)
+	return massive_of_program_names
+
+/datum/terminal_command/shutdown
+	name = "shutdown"
+	man_entry = list("Format: shutdown.", "Shutdown device.")
+	pattern = "^shutdown$"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/shutdown/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/obj/item/modular_computer/CT = terminal.computer
+	if(length(text) < 8)
+		return "shutdown: Improper syntax. shutdown."
+	CT.shutdown_computer()
+	CT.bsod = 0
+	CT.update_icon()
+	return "Shutdown successful."
+
+//TODO-ELar-inf: Soon i'll finish it.
+/*/datum/terminal_command/run
+	name = "run"
+	man_entry = list("Format: run \[program name\]", "Runs the program from local memory using it name.")
+	pattern = "^run"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/run/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	text = copytext(text,5)
+	var/obj/item/modular_computer/CT = terminal.computer
+	var/datum/computer_file/program/FBN = CT.hard_drive.find_file_by_name(text)
+
+	if(!CT.hard_drive.check_functionality())
+		return "run: Access attempt to HDD failed. Check integrity of your hard drive."
+	if(FBN)
+		FBN.run_program(user)
+		return "run: Program successful runned."
+	else
+		return "run: file not found or it isn't PRG-file."
+	return "run: Wrong input. man run for syntax help."*/
+
+/datum/terminal_command/session
+	name = "session"
+	man_entry = list("Format: session; session -kill",
+					"Utilite for manipulations with active programs",
+					"As session return list of active PRG programs.",
+					"Option -kill kill all active PRG programs"/*,
+					"Option -restore open all active programs."*/)
+	pattern = "^session"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/session/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/datum/computer_file/program/PRG = /datum/computer_file/program
+	var/obj/item/modular_computer/CT = terminal.computer
+	if(length(text) > 18 || length(text) < 6)
+		return "session: Invalid input. Enter man session for syntax help."
+	if(!CT.processor_unit.check_functionality())
+		return "session: Access attempt to RAM failed. Check integrity of your CPU."
+	var/ermsg = " programs is absent"
+	if(copytext(text,8) == " -kill")
+		if(CT.idle_threads)
+			for(PRG in CT.idle_threads)
+				PRG.kill_program(1)
+			CT.active_program.kill_program(1)
+			CT.update_icon()
+			return "session: Active background and current programs killed."
+
+		else
+			ermsg = "background" + ermsg
+		if(CT.active_program)
+			CT.active_program.kill_program(1)
+		else
+			if(copytext(ermsg, 1, 10) == "background")
+				ermsg = "Curent and " + ermsg
+			else
+				ermsg = "Curent" + ermsg
+			ermsg = "session: " + ermsg
+			return ermsg
+	var/list/massive_of_active_progs = list()
+	for(PRG in CT.idle_threads)
+		if(PRG.is_illegal)
+			var/act_prog = "\[ENCRYPTED\]"
+			massive_of_active_progs.Add(act_prog)
+		else
+			var/act_prog = PRG.filename
+			massive_of_active_progs.Add(act_prog)
+	if(CT.active_program)
+		massive_of_active_progs.Add(CT.active_program.filename)
+	if(massive_of_active_progs)
+		return massive_of_active_progs
+	return "session: Wrong input. Enter man session for syntax help."
+
+//[/INFINITY]_______________________________________________________________________________________________________________

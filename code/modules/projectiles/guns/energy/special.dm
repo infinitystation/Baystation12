@@ -163,6 +163,7 @@
 	self_recharge = 1
 	charge_meter = 0
 	var/required_antag_type = MODE_WIZARD
+	has_safety = FALSE
 
 /obj/item/weapon/gun/energy/staff/special_check(var/mob/user)
 	if(required_antag_type)

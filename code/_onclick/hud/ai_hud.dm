@@ -112,5 +112,71 @@
 	using.ai_verb = /mob/verb/down
 	src.adding += using
 
+	//[Inf]
+	//AI Floor Color
+	using = new /obj/screen/ai_button()
+	using.name = "Change Floor Color"
+	using.icon_state = "ai_floor"
+	using.screen_loc = ui_ai_color
+	using.ai_verb = /mob/living/silicon/ai/proc/change_floor
+	src.adding += using
+
+	//AI Holo Change
+	using = new /obj/screen/ai_button()
+	using.name = "Change Hologram"
+	using.icon_state = "ai_holo"
+	using.screen_loc = ui_ai_holo
+	using.ai_verb = /mob/living/silicon/ai/proc/ai_hologram_change
+	src.adding += using
+
+	//AI crew monitor
+	using = new /obj/screen/ai_button()
+	using.name = "Crew Monitor"
+	using.icon_state = "crew_monitor"
+	using.screen_loc = ui_ai_crew_mon
+	using.ai_verb = /mob/living/silicon/ai/proc/show_crew_monitor
+	src.adding += using
+
+	//AI power override
+	using = new /obj/screen/ai_button()
+	using.name = "Toggle Power Override"
+	using.icon_state = "ai_p_override"
+	using.screen_loc = ui_ai_power_override
+	using.ai_verb = /mob/living/silicon/ai/proc/ai_power_override
+	src.adding += using
+
+	//AI power override
+	using = new /obj/screen/ai_button()
+	using.name = "Shutdown"
+	using.icon_state = "ai_shutdown"
+	using.screen_loc = ui_ai_shutdown
+	using.ai_verb = /mob/living/silicon/ai/proc/ai_shutdown
+	src.adding += using
+
+	//AI Core Display
+	using = new /obj/screen/ai_button()
+	using.name = "Pick Icon"
+	using.icon_state = "ai_core_pick"
+	using.screen_loc = ui_ai_core_icon
+	using.ai_verb = /mob/living/silicon/ai/proc/pick_icon
+	src.adding += using
+
+	//AI Status
+	using = new /obj/screen/ai_button()
+	using.name = "Pick Status"
+	using.icon_state = "ai_status"
+	using.screen_loc = ui_ai_status
+	using.ai_verb = /mob/living/silicon/ai/proc/ai_statuschange
+	src.adding += using
+
+	//AI Crew Records
+	using = new /obj/screen/ai_button()
+	using.name = "Crew Records"
+	using.icon_state = "ai_crew_rec"
+	using.screen_loc = ui_ai_crew_rec
+	using.ai_verb = /mob/living/silicon/ai/proc/show_crew_records
+	src.adding += using
+
+	//[/inf]
 	mymob.client.screen = list()
 	mymob.client.screen += src.adding

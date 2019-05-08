@@ -246,8 +246,7 @@
 				set_default_language(L)
 		check_languages()
 		return 1
-	else
-		return ..()
+	..()
 
 /proc/transfer_languages(var/mob/source, var/mob/target, var/except_flags)
 	for(var/datum/language/L in source.languages)

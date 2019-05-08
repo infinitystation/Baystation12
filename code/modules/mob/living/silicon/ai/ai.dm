@@ -13,7 +13,6 @@ var/list/ai_verbs_default = list(
 	/mob/living/silicon/ai/proc/ai_goto_location,
 	/mob/living/silicon/ai/proc/ai_remove_location,
 	/mob/living/silicon/ai/proc/ai_hologram_change,
-	/mob/living/silicon/ai/proc/change_floor,
 	/mob/living/silicon/ai/proc/ai_network_change,
 	/mob/living/silicon/ai/proc/ai_roster,
 	/mob/living/silicon/ai/proc/ai_statuschange,
@@ -30,6 +29,11 @@ var/list/ai_verbs_default = list(
 	/mob/living/silicon/ai/proc/toggle_hologram_movement,
 	/mob/living/silicon/ai/proc/ai_power_override,
 	/mob/living/silicon/ai/proc/ai_shutdown,
+	//[inf],
+	/mob/living/silicon/ai/proc/change_floor,
+	/mob/living/silicon/ai/proc/show_crew_monitor,
+	/mob/living/silicon/ai/proc/show_crew_records,
+	//[/inf],
 )
 
 //Not sure why this is necessary...
@@ -219,7 +223,10 @@ var/list/ai_verbs_default = list(
 	job = "AI"
 	setup_icon()
 	eyeobj.possess(src)
-	announcement.Announce("Новый ИИ загружен в ядро ИИ", new_sound = 'sound/AI/TG/newai.ogg')
+
+	var/otvet_rwqir231 = input(src, "Announce your presence?", "Presence.") in list("Yes", "No")
+	if(otvet_rwqir231 == "Yes")
+		announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/TG/newai.ogg')
 
 /mob/living/silicon/ai/Destroy()
 	for(var/robot in connected_robots)

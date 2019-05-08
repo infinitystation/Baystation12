@@ -28,6 +28,7 @@
 /obj/item/weapon/screwdriver/power/Initialize()
 	. = ..()
 	icon_state = "drill_screw"
+	color = "#ffffff"
 
 /obj/item/weapon/wrench/power
 	name = "hand drill"
@@ -50,10 +51,15 @@
 
 /obj/item/weapon/wrench/power/attack_self(mob/user)
 	playsound(get_turf(user),'sound/items/change_drill.ogg',50,1)
-	var/obj/item/weapon/wirecutters/power/s_drill = new /obj/item/weapon/screwdriver/power
+	var/obj/item/weapon/screwdriver/power/s_drill = new /obj/item/weapon/screwdriver/power
 	to_chat(user, "<span class='notice'>You attach the screw driver bit to [src].</span>")
 	qdel(src)
 	user.put_in_active_hand(s_drill)
+
+/obj/item/weapon/wrench/power/Initialize()
+	. = ..()
+	icon_state = "drill_bolt"
+	color = "#ffffff"
 
 /obj/item/weapon/wirecutters/power
 	name = "jaws of life"
@@ -86,6 +92,7 @@
 /obj/item/weapon/wirecutters/power/Initialize()
 	. = ..()
 	icon_state = "jaws_cutter"
+	color = "#ffffff"
 
 /obj/item/weapon/crowbar/power
 	name = "jaws of life"
@@ -116,6 +123,7 @@
 /obj/item/weapon/crowbar/power/Initialize()
 	. = ..()
 	icon_state = "jaws_pry"
+	color = "#ffffff"
 
 /obj/item/weapon/combitool
 	name = "combi-tool"

@@ -71,6 +71,12 @@
 			return stomach.ingested
 	return touching // Kind of a shitty hack, but makes more sense to me than digesting them.
 
+/mob/living/carbon/human/proc/metabolize_ingested_reagents()
+	if(should_have_organ(BP_STOMACH))
+		var/obj/item/organ/internal/stomach/stomach = internal_organs_by_name[BP_STOMACH]
+		if(stomach)
+			stomach.metabolize()
+
 /mob/living/carbon/human/get_fullness()
 	if(!should_have_organ(BP_STOMACH))
 		return ..()
@@ -404,6 +410,23 @@
 		if(!handle_strip(href_list["item"],usr,locate(href_list["holder"])))
 			show_inv(usr)
 
+	if(href_list["check_records"])
+		if(!isghost(usr))
+			return
+		var/dat = list()
+		if(public_record)
+			dat += "<b>GENERAL NOTES:</b><br>[pencode2html(public_record)]<br><hr>"
+		if(med_record)
+			dat += "<b>MEDICAL RECORD:</b><br>[pencode2html(med_record)]<br><hr>"
+		if(sec_record)
+			dat += "<b>SECURITY RECORD:</b><br>[pencode2html(sec_record)]<br><hr>"
+		if(gen_record)
+			dat += "<b>EMPLOYMENT RECORD:</b><br>[pencode2html(gen_record)]<br><hr>"
+
+		var/datum/browser/popup = new(usr, "records", "[real_name]'s records", 520, 640)
+		popup.set_content(jointext(dat, null))
+		popup.open()
+
 	if(href_list["ooc_notes"])
 		src.Examine_OOC()
 
@@ -541,9 +564,7 @@
 				flavor_texts[href_list["flavor_change"]] = msg
 				set_flavor()
 				return
-// INTERACTIONS
-//	..()
-//	return
+	..()
 
 ///eyecheck()
 ///Returns a number between -1 to 2
@@ -1420,13 +1441,13 @@
 		if(PULSE_NONE)
 			return 0
 		if(PULSE_SLOW)
-			return rand(40, 60) + 50 * (species.pulse_rate_mod - 1)
+			return round(rand(40, 60) + 50 * (species.pulse_rate_mod - 1))
 		if(PULSE_NORM)
-			return rand(60, 90) + 75 * (species.pulse_rate_mod - 1)
+			return round(rand(60, 90) + 75 * (species.pulse_rate_mod - 1))
 		if(PULSE_FAST)
-			return rand(90, 120) + 105 * (species.pulse_rate_mod - 1)
+			return round(rand(90, 120) + 105 * (species.pulse_rate_mod - 1))
 		if(PULSE_2FAST)
-			return rand(120, 160) + 140 * (species.pulse_rate_mod - 1)
+			return round(rand(120, 160) + 140 * (species.pulse_rate_mod - 1))
 		if(PULSE_THREADY)
 			return PULSE_MAX_BPM
 	return 0

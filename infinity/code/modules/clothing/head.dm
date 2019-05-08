@@ -46,7 +46,7 @@
 
 /obj/item/clothing/head/soft/scp_cap
 	name = "SCP guard cap"
-	desc = "A simple security dark grey cap.\nThis one has SCP tag, terran organization of NT asset protection"
+	desc = "A simple security dark grey cap.\nThis one has SCP tag, GGS's organization of NT asset protection."
 	icon = 'icons/obj/clothing/infinity/hats.dmi'
 	item_icons = list(slot_head_str = 'icons/mob/infinity/hats.dmi')
 	icon_state = "scp_cap"

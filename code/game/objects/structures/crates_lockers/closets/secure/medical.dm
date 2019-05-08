@@ -34,6 +34,7 @@
 	name = "anesthetics closet"
 	desc = "Used to knock people out."
 	req_access = list(access_surgery)
+	closet_appearance = /decl/closet_appearance/secure_closet/medical
 
 /obj/structure/closet/secure_closet/medical2/WillContain()
 	return list(

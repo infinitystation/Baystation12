@@ -3,36 +3,40 @@
  */
 
 /decl/closet_appearance/secure_closet/sierra/security
+	color = COLOR_GUNMETAL
 	extra_decals = list(
 		"stripe_vertical_mid_full" = COLOR_NT_RED,
 		"security" = COLOR_NT_RED
 	)
 
 /decl/closet_appearance/secure_closet/sierra/security/forensics
+	color = COLOR_OFF_WHITE
 	extra_decals = list(
 		"stripe_vertical_mid_full" = COLOR_NT_RED,
 		"forensics" = COLOR_NT_RED
 	)
 
 /decl/closet_appearance/secure_closet/sierra/security/warden
+	color = COLOR_WALL_GUNMETAL
 	extra_decals = list(
 		"stripe_vertical_left_full" = COLOR_NT_RED,
 		"stripe_vertical_right_full" = COLOR_NT_RED,
 		"security" = COLOR_NT_RED
 	)
-
+/* unused
 /decl/closet_appearance/secure_closet/sierra/security/hos
+	color = COLOR_WALL_GUNMETAL
 	extra_decals = list(
 		"stripe_vertical_left_full" = COLOR_NT_RED,
 		"stripe_vertical_mid_full" = COLOR_GOLD,
 		"stripe_vertical_right_full" = COLOR_NT_RED,
 		"security" = COLOR_GOLD
 	)
-
+*/
 /obj/structure/closet/secure_closet/hos/sierra
-	name = "head of security's locker"
+	name = "head of security's cabinet"
 	req_access = list(access_hos)
-	closet_appearance = /decl/closet_appearance/secure_closet/sierra/security/hos
+	closet_appearance = /decl/closet_appearance/cabinet/secure
 
 /obj/structure/closet/secure_closet/hos/sierra/WillContain()
 	return list(
@@ -116,7 +120,8 @@
 		/obj/item/clothing/gloves/forensic,
 		/obj/item/clothing/head/helmet/nt,
 		/obj/item/clothing/glasses/sunglasses/sechud/toggle,
-		/obj/item/weapon/storage/belt/holster/security,
+		/obj/item/weapon/storage/belt/holster/forensic,
+		/obj/item/weapon/storage/belt/security,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,
 		/obj/item/clothing/suit/armor/pcarrier/medium/nt,
@@ -139,7 +144,7 @@
 
 /obj/structure/closet/secure_closet/security/sierra
 	name = "security guard's locker"
-	req_access = list("ACCESS_GUARD")
+	req_access = list(access_guard)
 	closet_appearance = /decl/closet_appearance/secure_closet/sierra/security
 
 /obj/structure/closet/secure_closet/security/sierra/WillContain()

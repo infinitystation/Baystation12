@@ -16,6 +16,7 @@ var/list/admin_verbs_admin = list(
 	/datum/admins/proc/force_antag_latespawn, //Force a specific template to try a latespawn proc,
 	/datum/admins/proc/toggleenter,		//toggles whether people can join the current game,
 	/datum/admins/proc/toggleguests,	//toggles whether guests can join the current game,
+	/datum/admins/proc/toggleobservers,
 	/datum/admins/proc/announce,		//priority announce something to all clients.,
 	/client/proc/colorooc,				//allows us to set a custom colour for everythign we say in ooc,
 	/client/proc/admin_ghost,			//allows us to ghost/reenter body at will,
@@ -49,8 +50,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/manage_silicon_laws,	// Allows viewing and editing silicon laws. ,
 	/client/proc/check_antagonists,
 	/client/proc/admin_memo,			//admin memo system. show/delete/write. +SERVER needed to delete admin memos of others,
-	/client/proc/dsay,					//talk in deadchat using our ckey
-	/client/proc/investigate_show,		//various admintools for investigation. Such as a singulo grief-log,
+	/client/proc/dsay,					//talk in deadchat using our ckey,
 	/datum/admins/proc/toggleooc,		//toggles ooc on/off for everyone,
 	/datum/admins/proc/toggleaooc,		//toggles aooc on/off for everyone,
 	/datum/admins/proc/togglelooc,		//toggles looc on/off for everyone,
@@ -93,6 +93,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
 	/client/proc/debug_global_variables,
 	/client/proc/reestablish_db_connection,
+	/client/proc/investigate_show,
 	/datum/admins/proc/show_skills,
 	/datum/admins/proc/paralyze_mob
 	)
@@ -118,6 +119,7 @@ var/list/admin_verbs_fun = list(
 	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/cmd_admin_add_freeform_ai_law,
 	/client/proc/cmd_admin_add_random_ai_law,
+	/client/proc/cmd_admin_dress,
 	/client/proc/toggle_random_events,
 	/client/proc/editappear,
 	/client/proc/roll_dices,
@@ -247,6 +249,7 @@ var/list/admin_verbs_hideable = list(
 	/datum/admins/proc/show_traitor_panel,
 	/datum/admins/proc/toggleenter,
 	/datum/admins/proc/toggleguests,
+	/datum/admins/proc/toggleobservers,
 	/datum/admins/proc/announce,
 	/client/proc/colorooc,
 	/client/proc/admin_ghost,

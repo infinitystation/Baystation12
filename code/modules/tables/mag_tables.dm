@@ -5,7 +5,7 @@
 	icon_state = "magnetic_table_disabled"
 	var/icon_state_open = "magnetic_table_disabled"
 	var/icon_state_closed = "magnetic_table_enabled"
-	req_access = list("ACCESS_ZEPPELIN")
+	req_access = list(access_merchant)
 	can_plate = 0
 	can_reinforce = 0
 	flipped = -1
@@ -15,6 +15,7 @@
 	. = ..()
 	verbs -= /obj/structure/table/verb/do_flip
 	verbs -= /obj/structure/table/proc/do_put
+	name = "Magnetic Table"
 	maxhealth = 20
 	health = 20
 
@@ -54,9 +55,6 @@
 	playsound(src, 'sound/effects/storage/briefcase.ogg', 100, 1)
 
 /obj/structure/table/mag/attackby(obj/item/weapon/W as obj, mob/user as mob, var/click_params)
-	if(locked)
-		to_chat(user, "You cannot place items on [src] when it locked.")
-		return
 	if(isrobot(user))
 		return
 	if(istype(W, /obj/item/weapon/card/id) || istype(W, /obj/item/modular_computer))

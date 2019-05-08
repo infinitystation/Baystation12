@@ -7,6 +7,7 @@
 	turf_initializer = /decl/turf_initializer/maintenance
 	ambience = list('infinity/sound/ambience/maintambience2.ogg', 'sound/ambience/ambigen3.ogg', 'sound/ambience/ambigen4.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/spookyspace1.ogg', 'sound/ambience/spookyspace2.ogg') // you don't want to be here
 	base_turf = /turf/simulated/floor/asteroid
+	req_access = list(list(access_mining, access_xenoarch))
 
 /area/outpost/mining/hangar
 	name = "Mining Outpost Hangar"

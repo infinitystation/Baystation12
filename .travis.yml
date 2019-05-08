@@ -23,9 +23,7 @@ matrix:
     - name: "Map - Torch"
       env: TEST=MAP MAP_PATH=torch
 #    - name: "Map - Torch Infinity"
-#      env: TEST=MAP MAP_PATH=torch_inf
-    - name: "Map - Overmap Example"
-      env: TEST=MAP MAP_PATH=overmap_example
+#      env: TEST=MAP MAP_PATH=torchinf
     - name: "Map - Bearcat"
       env: TEST=MAP MAP_PATH=bearcat
 #   - name: "Map - Bearcat Infinity"

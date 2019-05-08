@@ -2,7 +2,7 @@
 
 /decl/hierarchy/supply_pack/machinery
 	name = "Machinery"
-	containertype = /obj/structure/closet/crate
+	containertype = /obj/structure/largecrate //cause machineries aren't fit into regular crates
 
 /decl/hierarchy/supply_pack/machinery/floodlight
 	name = "Machinery - Floodlight crate"

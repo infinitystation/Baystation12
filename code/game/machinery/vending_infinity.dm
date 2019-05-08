@@ -136,7 +136,6 @@
 		/obj/item/ammo_casing/shell = 2,
 	)
 	vend_delay = 10
-	density = 1
 
 /obj/machinery/vending/parts
 	name = "Denitz-Spares Vendor"
@@ -163,3 +162,43 @@
 					/obj/item/weapon/stock_parts/manipulator = 8,/obj/item/weapon/stock_parts/console_screen = 8)
 	contraband = list(/obj/item/device/flash = 2,/obj/item/weapon/airlock_brace = 2,/obj/item/weapon/crowbar/brace_jack = 1)
 	premium = list(/obj/item/weapon/partyalarm_electronics = 1)
+
+/*========================*/
+/*==== IDEA BY LINERS ====*/
+/*========================*/
+
+/obj/machinery/vending/armoryvend/kinetic
+	name = "WardenTech Kinetic"
+	desc = "A weapon vendor. It stores kinetic weapons."
+	req_access = list(access_security)
+	icon = 'icons/obj/infinity_vend.dmi'
+	density = 0
+	icon_state = "thundervendor"
+	products = list(/obj/item/weapon/gun/projectile/automatic/nt41 = 2,
+					/obj/item/ammo_magazine/n10mm = 6,
+					/obj/item/weapon/gun/projectile/shotgun/pump/combat = 2,
+					/obj/item/clothing/accessory/storage/bandolier/armory = 2,)
+	vend_delay = 10
+
+/obj/machinery/vending/armoryvend/energy
+	name = "WardenTech Energy"
+	desc = "A weapon vendor. It stores energy weapons."
+	req_access = list(access_armory)
+	icon = 'icons/obj/infinity_vend.dmi'
+	density = 0
+	icon_state = "thundervendor"
+	products = list(/obj/item/weapon/gun/energy/stunrevolver/rifle = 2,
+					/obj/item/weapon/gun/energy/taser/carbine = 2,
+					/obj/item/weapon/gun/energy/ionrifle = 2)
+	vend_delay = 10
+
+/obj/machinery/vending/armoryvend/laser
+	name = "WardenTech Laser"
+	desc = "A weapon vendor. It stores laser weapons."
+	req_access = list(access_armory)
+	icon = 'icons/obj/infinity_vend.dmi'
+	density = 0
+	icon_state = "thundervendor"
+	products = list(/obj/item/weapon/gun/energy/laser/secure = 4,
+					/obj/item/weapon/gun/energy/gun/secure = 4)
+	vend_delay = 10

@@ -108,7 +108,7 @@
 			            access_all_personal_lockers, access_maint_tunnels, access_bar, access_janitor, access_construction, access_morgue,
 			            access_crematorium, access_kitchen, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_hydroponics, access_lawyer,
 			            access_chapel_office, access_library, access_research, access_mining, access_heads_vault, access_mining_station,
-			            access_hop, access_RC_announce, access_keycard_auth, access_gateway, access_fist_mate)
+			            access_hop, access_RC_announce, access_keycard_auth, access_gateway)
 /datum/job/bartender
 	title = "Bartender"
 	supervisors = "the Captain"
@@ -253,7 +253,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	pda_type = /obj/item/modular_computer/pda/heads/ce
 	l_hand = /obj/item/device/radio
-	r_hand = /obj/item/weapon/gun/projectile/sec/lethal
+	r_hand = null
 	belt = /obj/item/weapon/storage/belt/utility/full
 	id_type = /obj/item/weapon/card/id/engineering/head
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
@@ -272,7 +272,7 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	id_type = /obj/item/weapon/card/id/silver
 	glasses = /obj/item/clothing/glasses/sunglasses/big
-	r_hand = /obj/item/weapon/gun/projectile/sec/lethal
+	r_hand = null
 	l_hand = /obj/item/weapon/material/clipboard
 
 /decl/hierarchy/outfit/job/bearcat/roboticist
@@ -296,7 +296,7 @@
 	shoes = /obj/item/clothing/shoes/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_hand = /obj/item/weapon/material/clipboard
-	r_hand = /obj/item/weapon/gun/projectile/sec/lethal
+	r_hand = null
 	id_type = /obj/item/weapon/card/id/cargo/head
 
 /decl/hierarchy/outfit/job/bearcat/security
@@ -308,19 +308,19 @@
 	head = /obj/item/clothing/head/warden
 	id_type = /obj/item/weapon/card/id/security
 	r_hand = /obj/item/device/radio
-	l_hand = /obj/item/weapon/gun/projectile/sec/lethal
+	l_hand = null
 	suit = /obj/item/clothing/suit/armor/pcarrier/medium
 	gloves = /obj/item/clothing/gloves/thick
 
 /obj/structure/closet/secure_closet/security/bearcat
 	name = "security guard's locker"
 	req_access = list(access_brig)
-	icon_state = "sec1"
+/*	icon_state = "sec1"
 	icon_closed = "sec"
 	icon_locked = "sec1"
 	icon_opened = "secopen"
 	icon_broken = "secbroken"
-	icon_off = "secoff"
+	icon_off = "secoff"*/
 
 /obj/structure/closet/secure_closet/security/bearcat/WillContain()
 	return list(

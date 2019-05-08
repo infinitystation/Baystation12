@@ -21,7 +21,7 @@
 				if (user.do_skilled(0.5, SKILL_CONSTRUCTION , src, 10))
 					to_chat(user, "<span class='notice'>You lever off the [flooring.descriptor].</span>")
 					make_plating(1)
-				else 
+				else
 					return 0
 			else
 				return
@@ -89,19 +89,23 @@
 				return
 		// Repairs and Deconstruction.
 		else if(isCrowbar(C))
-			if(broken || burnt)
+			if((broken || burnt) && !is_prying)
 				playsound(src, 'sound/items/Crowbar.ogg', 80, 1)
 				visible_message("<span class='notice'>[user] has begun prying off the damaged plating.</span>")
+				is_prying = 1
 				var/turf/T = GetBelow(src)
 				if(T)
 					T.visible_message("<span class='warning'>The ceiling above looks as if it's being pried off.</span>")
 				if(do_after(user, 10 SECONDS))
+					is_prying = 0
 					visible_message("<span class='warning'>[user] has pried off the damaged plating.</span>")
 					new /obj/item/stack/tile/floor(src)
 					src.ReplaceWithLattice()
 					playsound(src, 'sound/items/Deconstruct.ogg', 80, 1)
 					if(T)
 						T.visible_message("<span class='danger'>The ceiling above has been pried off!</span>")
+				else
+					is_prying = 0
 			else
 				return
 			return

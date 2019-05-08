@@ -25,7 +25,7 @@
 	active_docking_controller = current_location.docking_controller
 	update_docking_target(current_location)
 	if(active_docking_controller)
-		set_docking_codes(active_docking_controller)
+		set_docking_codes(active_docking_controller.docking_codes)
 	else if(GLOB.using_map.use_overmap)
 		var/obj/effect/overmap/location = map_sectors["[current_location.z]"]
 		if(location && location.docking_codes)
@@ -63,7 +63,7 @@
 */
 /datum/shuttle/autodock/proc/dock()
 	if(active_docking_controller && shuttle_docking_controller)
-		shuttle_docking_controller.initiate_docking(active_docking_controller)
+		shuttle_docking_controller.initiate_docking(active_docking_controller.id_tag)
 		last_dock_attempt_time = world.time
 
 /datum/shuttle/autodock/proc/undock()

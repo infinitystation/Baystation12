@@ -165,7 +165,7 @@
 	icon_state = "respirator"
 	item_state = "respirator"
 	flags_inv = 0
-	body_parts_covered = 0
+	body_parts_covered = FACE
 	species_restricted = list(SPECIES_VOX, SPECIES_VOX_ARMALIS)
 	filtered_gases = list("phoron", "sleeping_agent", "oxygen")
 	w_class = ITEM_SIZE_SMALL

@@ -9,6 +9,18 @@
 		return
 	if(!f_color)
 		return
-	for(var/turf/simulated/floor/ai_grid/F  in world)
+	for(var/turf/simulated/floor/bluegrid/F  in world)
 		F.color = f_color
 	to_chat(usr, "Proccessing strata color was change to [f_color]")
+
+/mob/living/silicon/ai/proc/show_crew_monitor()
+	set category = "Silicon Commands"
+	set name = "CREW: Show Crew Lifesigns Monitor"
+
+	open_subsystem(/datum/nano_module/crew_monitor)
+
+/mob/living/silicon/ai/proc/show_crew_records()
+	set category = "Silicon Commands"
+	set name = "CREW: Show Crew Records"
+
+	open_subsystem(/datum/nano_module/records)

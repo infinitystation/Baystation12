@@ -203,8 +203,6 @@ var/global/datum/matchmaker/matchmaker = new()
 	popup.open()
 
 /mob/living/Topic(href, href_list)
-	if(..())
-		return 1
 	if(href_list["del_relation"])
 		var/datum/relation/R = locate(href_list["del_relation"])
 		if(istype(R))
@@ -235,3 +233,4 @@ var/global/datum/matchmaker/matchmaker = new()
 		if(istype(L))
 			L.see_relationship_info()
 			return 1
+	..()

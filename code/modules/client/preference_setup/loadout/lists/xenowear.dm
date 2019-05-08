@@ -288,7 +288,6 @@
 	sort_category = "Xenowear"
 	whitelisted = list(SPECIES_RESOMI)
 
-
 /datum/gear/uniform/resomi/white
 	display_name = "(Resomi) smock, colored"
 	path = /obj/item/clothing/under/resomi/white
@@ -376,7 +375,7 @@
 	resomi["white cloak"] = /obj/item/clothing/suit/storage/toggle/Resomicoat/white
 	gear_tweaks += new/datum/gear_tweak/path(resomi)
 
-/datum/gear/shoes/resomi/boots
+/datum/gear/shoes/resomi
 	display_name = "(Resomi) small workboots"
 	path = /obj/item/clothing/shoes/workboots/resomi
 	sort_category = "Xenowear"
@@ -386,8 +385,6 @@
 	display_name = "(Resomi) clothwrap"
 	flags = GEAR_HAS_COLOR_SELECTION
 	path = /obj/item/clothing/shoes/footwraps
-	sort_category = "Xenowear"
-	whitelisted = list(SPECIES_RESOMI)
 
 /datum/gear/suit/resomi_labcoat
 	display_name = "(Resomi) small labcoat"

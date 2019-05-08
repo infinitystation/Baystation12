@@ -5,6 +5,7 @@
 	use_power = POWER_USE_ACTIVE
 	active_power_usage = 20000 //20kW, apropriate for machine that keeps massive cross-Zlevel wireless network operational.
 	idle_power_usage = 100
+	icon = 'infinity/icons/obj/stationobjs.dmi'
 	icon_state = "bus"
 	anchored = 1
 	density = 1

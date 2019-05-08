@@ -2,7 +2,7 @@
 /obj/screen/ai_button
 	var/mob/living/silicon/ai/ai_verb
 	var/input_procs = list()
-	icon = 'icons/mob/screen_ai.dmi'
+	icon = 'infinity/icons/mob/screen_ai.dmi'
 
 /obj/screen/ai_button/Click()
 	if(!isAI(usr)) return 1

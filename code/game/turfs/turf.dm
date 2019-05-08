@@ -23,6 +23,7 @@
 	var/icon_old = null
 	var/pathweight = 1          // How much does it cost to pathfind over this turf?
 	var/blessed = 0             // Has the turf been blessed?
+	var/is_prying = 0
 
 	var/list/decals
 

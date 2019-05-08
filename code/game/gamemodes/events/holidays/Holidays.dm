@@ -67,8 +67,14 @@ var/global/Holiday = null
 			switch(DD)
 				if(1)							Holiday = "Labour Day"
 				if(4)							Holiday = "FireFighter's Day"
+				if(9)							Holiday = "Днём Победы"
 				if(12)							Holiday = "Owl and Pussycat Day"	//what a dumb day of observence...but we -do- have costumes already :3
-
+				if(13)							Holiday = "Днём Черноморского флота"
+				if(14)							Holiday = "Днём Фрилансера"
+				if(15)							Holiday = "Днём Семьи"
+				if(17)							Holiday = "днём электросв&#255;зи и информационного общества"
+				if(18)							Holiday = "Днём Посадки Леса"
+				if(21)							Holiday = "Днём Пол&#255;рника"
 		if(6)	//Jun
 
 		if(7)	//Jul
@@ -141,7 +147,7 @@ var/global/Holiday = null
 /proc/Holiday_Game_Start()
 	if(Holiday)
 		to_world("<font color='blue'>and...</font>")
-		to_world("<h4>Happy [Holiday] Everybody!</h4>")
+		to_world("<h4>Всех с [Holiday]!</h4>")
 		switch(Holiday)			//special holidays
 			if("Easter")
 				//do easter stuff

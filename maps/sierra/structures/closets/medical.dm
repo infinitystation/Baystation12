@@ -31,7 +31,7 @@
 
 /obj/structure/closet/secure_closet/medical_sierrasenior
 	name = "surgeon's locker"
-	req_access = list("ACCESS_SENMED")
+	req_access = list(access_senmed)
 	closet_appearance = /decl/closet_appearance/secure_closet/medical/alt
 
 /obj/structure/closet/secure_closet/medical_sierrasenior/WillContain()

@@ -66,35 +66,28 @@ var/global/floorIsLava = 0
 		<a href='?src=\ref[src];subtlemessage=\ref[M]'>SM</a> -
 		<a href='?src=\ref[src];show_skills=\ref[M]'>SS</a> -
 		[admin_jump_link(M, src)]\] <br/><br/>
-		<b>Client Information:</b><br>"}
+		<b>Client Information:</b><br>
 
-	if(M.client)
-		body += "<b>Client Online</b><br/>"
-		body += "<b>ckey</b> = [M.client.ckey]<br>"
-		body += "<b>Client Age</b> = [M.client.player_age] days<br>"
-		body += "<b>CID Related Accounts</b> = [M.client.related_accounts_cid]<br>"
-		body += "<b>IP Related Accounts</b> = [M.client.related_accounts_ip]<br>"
-		body += "<b>Client Gender</b> = [M.client.gender]<br>"
-		body += "<b>IP</b> = [M.client.address]<br>"
-		body += "<b>CID</b> = [M.client.computer_id]<br>"
-		body += "<b>Mob type</b> = [M.type]<br>"
-		body += "<b>Inactivity time:</b> [M.client ? "[M.client.inactivity/600] minutes" : "Logged out"]<br>"
-	else
-		body += "<b>Client Offline</b><br/>"
-		body += "<b>ckey</b> = [M.ckey]<br>"
-		body += "<b>IP</b> = [M.lastKnownIP]<br>"
-		body += "<b>CID</b> = [M.computer_id]<br>"
-		body += "<b>Mob type</b> = [M.type]<br>"
-		body += "<b>Inactivity time:</b> [M.client ? "[M.client.inactivity/600] minutes" : "Logged out"]<br>"
+		<b>Client [M.client ? "On" : "Off"]line</b><br>
+		<b>Ckey:</b> [M.client ? M.client.ckey : M.ckey]<br>
+		<b>Client Age:</b> [M.client ? "[M.client.player_age] days" : "Logged out"]<br>
+		<b>Client Gender:</b> [M.client ? M.client.gender : "Logged out"]<br>
+		<b>CID:</b> [M.client ?  M.client.computer_id : M.computer_id]<br>
+		<b>CID Related Accounts:</b> [M.client ? M.client.related_accounts_cid : "Logged out"]<br>
+		<b>IP:</b> [M.client ?  M.client.address : M.lastKnownIP]<br>
+		<b>IP Related Accounts:</b> [M.client ? M.client.related_accounts_ip : "Logged out"]<br>"}
 
 	body += {"
+		[admin_jump_link(M, src)]<br>
+		<b>Mob type:</b> [M.type]<br>
+		<b>Inactivity time:</b> [M.client ? "[M.client.inactivity/600] minutes" : "Logged out"]<br/><br/>
 		<A href='?src=\ref[src];boot2=\ref[M]'>Kick</A> |
 		<A href='?_src_=holder;warn=[M.ckey]'>Warn</A> |
 		<A href='?src=\ref[src];softban=\ref[M]'>Soft Ban</A> |
 		<A href='?src=\ref[src];newban=\ref[M]'>Ban</A> |
 		<A href='?src=\ref[src];jobban2=\ref[M]'>Jobban</A> |
+		<A href='?_src_=holder;sendbacktolobby=\ref[M]'>Send back to Lobby</A> |
 		<A href='?src=\ref[src];shownoteckey=[M.ckey]'>Notes</A> |
-		<A href='?_src_=holder;sendbacktolobby=\ref[M]'>Send back to Lobby</A>
 	"}
 
 	if(M.client)
@@ -287,7 +280,6 @@ var/global/floorIsLava = 0
 		to_chat(usr, "Error: you are not an admin!")
 		return
 	show_note()
-	//PlayerNotesPage()
 
 /datum/admins/proc/PlayerNotesPage(var/filter_term)
 	var/list/dat = list()
@@ -663,6 +655,7 @@ var/global/floorIsLava = 0
 
 /datum/admins/proc/Game()
 	if(!check_rights(0))	return
+
 	var/dat = {"
 		<center><B>Game Panel</B></center><hr>\n
 		<A href='?src=\ref[src];c_mode=1'>Change Game Mode</A><br>

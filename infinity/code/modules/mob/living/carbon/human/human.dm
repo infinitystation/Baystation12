@@ -101,15 +101,15 @@
 					P.visible_message("<B>[H]</B> жмёт руку <B>[P]</B>.")
 
 		else if (href_list["interaction"] == "bow_affably")
-			H.visible_message("<B>[H]</B> приветливо [H.gender == FEMALE ? "кивнула" : "кивнул"] в сторону <B>[P]</B>.")
+			H.visible_message("<B>[H]</B> приветливо кивнул[H.gender == FEMALE ? "а" : ""] в сторону <B>[P]</B>.")
 			if (istype(P.loc, /obj/structure/closet))
-				P.visible_message("<B>[H]</B> приветливо [H.gender == FEMALE ? "кивнула" : "кивнул"] в сторону <B>[P]</B>.")
+				P.visible_message("<B>[H]</B> приветливо кивнул[H.gender == FEMALE ? "а" : ""] в сторону <B>[P]</B>.")
 
 		else if (href_list["interaction"] == "wave")
 			if (!(Adjacent(P)) && hashands)
 				H.visible_message("<B>[H]</B> приветливо машет <B>[P]</B>.")
 			else
-				H.visible_message("<B>[H]</B> приветливо [H.gender == FEMALE ? "кивнула" : "кивнул"] в сторону <B>[P]</B>.")
+				H.visible_message("<B>[H]</B> приветливо кивнул[H.gender == FEMALE ? "а" : ""] в сторону <B>[P]</B>.")
 
 
 		else if (href_list["interaction"] == "slap")
@@ -172,4 +172,3 @@
 					if (istype(P.loc, /obj/structure/closet))
 						P.visible_message("<B>[H]</B> пытаетс[ya] поймать <B>[P]</B> за хвост!")
 	..()
-	return

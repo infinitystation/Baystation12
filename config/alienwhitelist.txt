@@ -50,6 +50,8 @@ galix - skrell
 knayu - skrell
 coldmantis13 - skrell
 s1334 - skrell
+logfol - skrell
+laxesh - skrell
 cre77 - resomi
 s1334 - resomi
 shokumar - resomi
@@ -67,6 +69,8 @@ wheatley2013 - resomi
 twinindifferent - resomi
 hodovoy - resomi
 vovghik65 - resomi
+elar - resomi
+casly - resomi
 redknighthero - giant armoured serpentid
 coldmantis13 - giant armoured serpentid
 kirill1243 - giant armoured serpentid
@@ -83,6 +87,7 @@ taushai - giant armoured serpentid
 ted201 - giant armoured serpentid
 s1334 - giant armoured serpentid
 dermanic - giant armoured serpentid
+wolfetd - giant armoured serpentid
 inubashirimomiji - diona
 bartstarter - diona
 wolforbykot - diona
@@ -96,6 +101,7 @@ sarumyn - diona
 forrya - diona
 s1334 - diona
 sfd - diona
+spiderling - diona
 wheatley2013 - vox
 wolforbykot - vox
 sosiskoed - vox
@@ -109,6 +115,9 @@ kirill1243 - vox
 forrya - vox
 diesiege - vox
 vanya0 - vox
+logfol - vox
+hellpony - vox
+reptiloid2 - vox
 darkscarletblood - unathi
 kribleykrabley - unathi
 alchemisthero - unathi
@@ -127,13 +136,13 @@ taushai - unathi
 cre77 - unathi
 s1334 - unathi
 he11d1ver - unathi
+blacksoul231 - unathi
 corporateoverlord - tajaran
 cuddleandtea - tajaran
 blacksoul231 - tajaran
 richardfox - tajaran
 ashtonfox - tajaran
 mrnicolas - tajaran
-coolered - tajaran
 furrydog - tajaran
 rarytech - tajaran
 romeo517 - tajaran

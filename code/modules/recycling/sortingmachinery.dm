@@ -250,6 +250,9 @@
 	throw_range = 5
 
 /obj/item/stack/package_wrap/afterattack(var/obj/target as obj, mob/user as mob, proximity)
+	if(target.holographic)
+		to_chat(user, "<span class='notice'>The object you are trying to wrap is unsuitable!</span>")
+		return
 	if(!proximity) return
 	if(!istype(target))	//this really shouldn't be necessary (but it is).	-Pete
 		return

@@ -208,7 +208,8 @@
 	//Resources are being loaded.
 	var/obj/item/eating = O
 	var/list/taking_matter
-	if(istype(eating, /obj/item/stack))
+
+	if(istype(eating, /obj/item/stack/material))
 		var/obj/item/stack/material/mat = eating
 		taking_matter = list()
 		for(var/matname in eating.matter)
@@ -227,12 +228,9 @@
 		to_chat(user, "<span class='warning'>\The [eating] does not contain any accessible useful materials and cannot be accepted.</span>")
 		return
 
-	var/amount_available = 1
-	if(istype(eating, /obj/item/stack))
-		var/obj/item/stack/stack = eating
-		amount_available = stack.get_amount()
-	var/amount_used = 0    // Amount of material sheets used, if a stack, or whether the item was used, if not.
-	var/space_left = FALSE
+	var/filltype = 0       // Used to determine message.
+	var/total_used = 0     // Amount of material used.
+	var/mass_per_sheet = 0 // Amount of material constituting one sheet.
 
 	for(var/material in taking_matter)
 
@@ -240,18 +238,26 @@
 			continue
 
 		var/total_material = taking_matter[material]
+
+		//If it's a stack, we eat multiple sheets.
+		if(istype(eating,/obj/item/stack))
+			var/obj/item/stack/stack = eating
+			total_material *= stack.get_amount()
+
 		if(stored_material[material] + total_material > storage_capacity[material])
 			total_material = storage_capacity[material] - stored_material[material]
+			filltype = 1
 		else
-			space_left = TRUE // We filled it with a material, but it could have been filled further had we had more.
+			filltype = 2
 
 		stored_material[material] += total_material
-		amount_used = max(ceil(amount_available * total_material/taking_matter[material]), amount_used) // Use only as many sheets as needed, rounding up
+		total_used += total_material
+		mass_per_sheet += taking_matter[material]
 
-	if(!amount_used)
+	if(!filltype)
 		to_chat(user, "<span class='notice'>\The [src] is full. Please remove material from the autolathe in order to insert more.</span>")
 		return
-	else if(!space_left)
+	else if(filltype == 1)
 		to_chat(user, "You fill \the [src] to capacity with \the [eating].")
 	else
 		to_chat(user, "You fill \the [src] with \the [eating].")
@@ -260,7 +266,7 @@
 
 	if(istype(eating,/obj/item/stack))
 		var/obj/item/stack/stack = eating
-		stack.use(amount_used)
+		stack.use(max(1, round(total_used/mass_per_sheet))) // Always use at least 1 to prevent infinite materials.
 	else if(user.unEquip(O))
 		qdel(O)
 

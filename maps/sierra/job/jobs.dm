@@ -1,22 +1,32 @@
 /datum/map/sierra
 	species_to_job_whitelist = list(
-		/datum/species/adherent = list(/datum/job/ai, /datum/job/cyborg, /datum/job/assistant, /datum/job/janitor, /datum/job/chef, /datum/job/cargo_assistant,
-										/datum/job/doctor_trainee, /datum/job/engineer_trainee, /datum/job/scientist_assistant),
+		/datum/species/adherent = list(/datum/job/ai, /datum/job/cyborg, /datum/job/assistant, /datum/job/janitor, /datum/job/chef, /datum/job/explorer,
+										/datum/job/doctor_trainee, /datum/job/engineer_trainee, /datum/job/scientist_assistant, /datum/job/roboticist,
+										/datum/job/cargo_tech,  /datum/job/cargo_assistant, /datum/job/mining,),
 		/datum/species/nabber = list(/datum/job/ai, /datum/job/cyborg, /datum/job/janitor, /datum/job/scientist_assistant, /datum/job/chemist,
 									 /datum/job/roboticist, /datum/job/cargo_assistant, /datum/job/chef, /datum/job/engineer_trainee, /datum/job/doctor_trainee, /datum/job/bartender),
-		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/stowaway)
+		/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/stowaway),
+		/datum/species/diona = list(/datum/job/bartender, /datum/job/scientist, /datum/job/engineer, /datum/job/janitor, /datum/job/chef, /datum/job/cargo_tech,
+									/datum/job/mining, /datum/job/chemist, /datum/job/cargo_assistant, /datum/job/scientist_assistant, /datum/job/doctor_trainee,
+									/datum/job/assistant, /datum/job/merchant, /datum/job/merchant_trainee, /datum/job/stowaway)
 	)
 
-#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos
+#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos, /datum/job/iaa
 	species_to_job_blacklist = list(
-		/datum/species/unathi  		 = list(HUMAN_ONLY_JOBS, /datum/job/iaa),
-		/datum/species/unathi/yeosa  = list(HUMAN_ONLY_JOBS, /datum/job/iaa),
-		/datum/species/unathi/erosan = list(HUMAN_ONLY_JOBS, /datum/job/iaa),
+		/datum/species/unathi  		 = list(HUMAN_ONLY_JOBS, /datum/job/rd, /datum/job/cmo, /datum/job/senior_doctor, /datum/job/senior_scientist,
+											/datum/job/scientist, /datum/job/infsys, /datum/job/doctor, /datum/job/chemist, /datum/job/explorer_pilot, /datum/job/explorer_medic),
+		/datum/species/unathi/yeosa  = list(HUMAN_ONLY_JOBS, /datum/job/rd, /datum/job/cmo, /datum/job/senior_doctor, /datum/job/senior_scientist,
+											/datum/job/scientist, /datum/job/infsys, /datum/job/doctor, /datum/job/chemist, /datum/job/explorer_pilot, /datum/job/explorer_medic),
+		/datum/species/unathi/erosan = list(HUMAN_ONLY_JOBS, /datum/job/rd, /datum/job/cmo, /datum/job/senior_doctor, /datum/job/senior_scientist,
+											/datum/job/scientist, /datum/job/infsys, /datum/job/doctor, /datum/job/chemist, /datum/job/explorer_pilot, /datum/job/explorer_medic),
 		/datum/species/skrell  		 = list(HUMAN_ONLY_JOBS),
-		/datum/species/tajaran 		 = list(HUMAN_ONLY_JOBS),
-		/datum/species/machine 		 = list(HUMAN_ONLY_JOBS),
-		/datum/species/resomi  		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/exploration_leader, /datum/job/warden, /datum/job/chief_engineer, /datum/job/rd, /datum/job/iaa),
-		/datum/species/diona   		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/exploration_leader, /datum/job/warden, /datum/job/iaa),
+		/datum/species/tajaran 		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/chief_engineer,
+											/datum/job/senior_doctor, /datum/job/warden, /datum/job/officer, /datum/job/chef),
+		/datum/species/machine 		 = list(HUMAN_ONLY_JOBS, /datum/job/bartender, /datum/job/chef),
+		/datum/species/resomi  		 = list(HUMAN_ONLY_JOBS, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer,
+											/datum/job/officer, /datum/job/detective, /datum/job/warden,
+											/datum/job/exploration_leader, /datum/job/iaa, /datum/job/senior_doctor, /datum/job/senior_scientist,
+											/datum/job/senior_engineer, /datum/job/explorer_engineer, /datum/job/cargo_tech, /datum/job/mining)
 	)
 #undef HUMAN_ONLY_JOBS
 
@@ -60,8 +70,9 @@
 				species_blacklist |= job.type
 */
 // Some jobs for nabber grades defined here due to map-specific job datums.
+/*
 /decl/cultural_info/culture/nabber/New()
-	LAZYADD(valid_jobs, /datum/job/scientist_assistant)
+	LAZYADD(valid_jobs, list(/datum/job/scientist_assistant, /datum/job/cargo_assistant))
 	..()
 
 /decl/cultural_info/culture/nabber/b/New()
@@ -75,6 +86,9 @@
 /decl/cultural_info/culture/nabber/a/plus/New()
 	LAZYADD(valid_jobs, /datum/job/doctor)
 	..()
+*/
+/datum/species/nabber/check_background(var/datum/job/job, var/datum/preferences/prefs) //overrides
+	. = TRUE
 
 /datum/job
 	allowed_branches = list(

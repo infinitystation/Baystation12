@@ -11,7 +11,7 @@
 	initial_restricted_waypoints = list(
 		"Charon" = list("nav_hangar_calypso"),
 		"Guppy" = list("nav_hangar_guppy"),
-		"Albatross" = list("nav_albatross_dock")
+		"Albatross" = list("nav_albatross_dock"), //away_inf/sentinel/sentinel.dmm shuttle,
 	)
 
 	initial_generic_waypoints = list(
@@ -63,9 +63,9 @@
 /obj/machinery/computer/shuttle_control/explore/exploration_shuttle
 	name = "charon control console"
 	shuttle_tag = "Charon"
-	req_access = list("access_expedition_shuttle_HELM")
+	req_access = list(access_expedition_shuttle_helm)
 
 /obj/machinery/computer/shuttle_control/explore/guppy
 	name = "guppy control console"
 	shuttle_tag = "Guppy"
-	req_access = list("ACCESS_GUPPY_HELM")
+	req_access = list(access_guppy_helm)

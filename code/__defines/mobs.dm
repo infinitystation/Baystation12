@@ -9,7 +9,7 @@
 #define CANPARALYSE 0x4
 #define CANPUSH     0x8
 #define LEAPING     0x10
-#define PASSEMOTES  0x32    // Mob has a cortical borer or holders inside of it that need to see emotes.
+#define PASSEMOTES  0x20    // Mob has a cortical borer or holders inside of it that need to see emotes.
 #define GODMODE     0x1000
 #define FAKEDEATH   0x2000  // Replaces stuff like changeling.changeling_fakedeath.
 #define NO_ANTAG    0x4000  // Players are restricted from gaining antag roles when occupying this mob
@@ -236,6 +236,23 @@
 #define BP_ALL_LIMBS list(BP_CHEST, BP_GROIN, BP_HEAD, BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND, BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT)
 #define BP_BY_DEPTH list(BP_HEAD, BP_L_HAND, BP_R_HAND, BP_L_ARM, BP_R_ARM, BP_L_FOOT, BP_R_FOOT, BP_L_LEG, BP_R_LEG, BP_GROIN, BP_CHEST)
 
+//Swarm Limbs
+#define BP_L_F_LEG 		"left front leg"
+#define BP_R_F_LEG 		"right front leg"
+#define BP_L_B_LEG 		"left back leg"
+#define BP_R_B_LEG 		"right back leg"
+#define BP_SHELL   		"shell"
+#define BP_MANIPULATOR	"manipulator"
+
+//Swarm Organs
+#define BP_SENSOR			"sensor"
+#define BP_GENERATOR		"generator"
+#define BP_CORE				"core"
+#define BP_THRUSTER			"thruster"
+#define BP_ARMOR			"armor"
+#define BP_ANTI_EMP_PLATING	"anti EMP plating"
+#define BP_MATTER_TANK		"matter tank"
+
 // Prosthetic helpers.
 #define BP_IS_ROBOTIC(org)  (org.status & ORGAN_ROBOTIC)
 #define BP_IS_ASSISTED(org) (org.status & ORGAN_ASSISTED)
@@ -301,8 +318,9 @@
 #define SPECIES_SPACER      "Space-Adapted Human"
 #define SPECIES_TRITONIAN   "Tritonian"
 #define SPECIES_GRAVWORLDER "Grav-Adapted Human"
+#define SPECIES_SWARM		"Swarm"
 
-#define STATION_SPECIES list(SPECIES_HUMAN, SPECIES_DIONA, SPECIES_IPC, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_TRITONIAN, SPECIES_SPACER, SPECIES_VATGROWN, SPECIES_GRAVWORLDER)
+#define STATION_SPECIES list(SPECIES_HUMAN, SPECIES_DIONA, SPECIES_IPC, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_TRITONIAN, SPECIES_SPACER, SPECIES_VATGROWN, SPECIES_GRAVWORLDER, SPECIES_RESOMI, SPECIES_TAJARA)
 #define RESTRICTED_SPECIES list(SPECIES_VOX, SPECIES_XENO, SPECIES_ALIEN, SPECIES_GOLEM)
 
 #define SURGERY_CLOSED 0

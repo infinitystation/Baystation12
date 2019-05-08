@@ -9,7 +9,7 @@
 		)
 	item_state = "gun"
 	w_class = ITEM_SIZE_SMALL
-	caliber = "22"
+	caliber = CALIBER_PISTOL_TINY 
 	fire_delay = 1
 	origin_tech = list(TECH_COMBAT = 2)
 	load_method = MAGAZINE

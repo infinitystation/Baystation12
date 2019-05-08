@@ -98,13 +98,6 @@
 	desc = "Commissary"
 	region = ACCESS_REGION_GENERAL
 
-/var/const/access_zeppelin = "ACCESS_ZEPPELIN"//201
-/datum/access/zeppelin
-	id = access_zeppelin
-	desc = "ITV Zeppelin"
-	region = ACCESS_REGION_GENERAL
-
-
 /************
 * NSV sierra *
 ************/

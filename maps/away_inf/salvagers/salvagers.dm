@@ -36,7 +36,7 @@
 	vessel_mass = 10
 	start_x = 4
 	start_y = 5
-	color = "#2F4F4F"
+	color = "#2f4f4f"
 	icon = 'icons/obj/overmap_inf.dmi'
 	icon_state = "ship_salvage"
 	moving_state = "ship_salvage_moving"

@@ -146,8 +146,16 @@
 	name = "Commissary"
 	icon_state = "crew_quarters"
 
+//Abandoned compartments
+
 /area/maintenance/abandoned_compartment
-	name = "unknown compartment"
+	name = "Unknown Compartment"
+	turf_initializer = /decl/turf_initializer/maintenance/heavy
+
+/area/maintenance/abandoned_hydroponics
+	name = "Abandoned Hydroponics"
+	icon_state = "hydro"
+	turf_initializer = /decl/turf_initializer/maintenance/heavy
 
 //First Deck (Z-3)
 /area/maintenance/firstdeck
@@ -890,6 +898,12 @@
 	name = "Mental Health"
 	icon_state = "medbay3"
 	ambience = list('sound/ambience/signal.ogg')
+
+/area/medical/coffins
+	name = "Coffins Storage"
+	icon_state = "patients" //:^)
+	ambience = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg','sound/music/main.ogg')
+	sound_env = SMALL_ENCLOSED
 
 // Chapel
 /area/chapel/crematorium

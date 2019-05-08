@@ -4,7 +4,7 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 /datum/antagonist/traitor
 	id = MODE_TRAITOR
 	antaghud_indicator = "hud_traitor"
-	blacklisted_jobs = list(/datum/job/ai, /datum/job/submap)
+	blacklisted_jobs = list(/datum/job/submap)
 	protected_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/captain, /datum/job/lawyer, /datum/job/hos)
 	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE
 	skill_setter = /datum/antag_skill_setter/station
@@ -113,7 +113,11 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	traitor_mob.mind.store_memory("<b>Code Phrase</b>: [syndicate_code_phrase]")
 	traitor_mob.mind.store_memory("<b>Code Response</b>: [syndicate_code_response]")
 	to_chat(traitor_mob, "Use the code words, preferably in the order provided, during regular conversation, to identify other agents. Proceed with caution, however, as everyone is a potential foe.")
-	sound_to(traitor_mob, 'sound/voice/syndicate_intro.ogg')
+	if(istype(traitor_mob, /mob/living/silicon))
+		sound_to(traitor_mob, 'sound/voice/AISyndiHack.ogg')
+	else
+		sound_to(traitor_mob, 'sound/voice/syndicate_intro.ogg')
+
 /datum/antagonist/traitor/proc/spawn_uplink(var/mob/living/carbon/human/traitor_mob)
 	setup_uplink_source(traitor_mob, DEFAULT_TELECRYSTAL_AMOUNT)
 
@@ -123,3 +127,5 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	to_chat(killer, "<b>Your laws have been changed!</b>")
 	killer.set_zeroth_law(law, law_borg)
 	to_chat(killer, "New law: 0. [law]")
+	/*spawn(100)
+	sound_to(killer, 'sound/voice/AISyndiHack.ogg')*/
