@@ -20,7 +20,7 @@
 		/datum/species/unathi/erosan = list(HUMAN_ONLY_JOBS, /datum/job/rd, /datum/job/cmo, /datum/job/senior_doctor, /datum/job/senior_scientist,
 											/datum/job/scientist, /datum/job/infsys, /datum/job/doctor, /datum/job/chemist, /datum/job/explorer_pilot, /datum/job/explorer_medic),
 		/datum/species/skrell  		 = list(HUMAN_ONLY_JOBS),
-		/datum/species/tajaran 		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/chief_engineer
+		/datum/species/tajaran 		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/chief_engineer,
 											/datum/job/senior_doctor, /datum/job/warden, /datum/job/officer, /datum/job/chef),
 		/datum/species/machine 		 = list(HUMAN_ONLY_JOBS, /datum/job/bartender, /datum/job/chef),
 		/datum/species/resomi  		 = list(HUMAN_ONLY_JOBS, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer,
