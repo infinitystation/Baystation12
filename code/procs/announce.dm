@@ -29,7 +29,7 @@
 	title = "[command_name()] Update"
 	announcement_type = "[command_name()] Update"
 
-/datum/announcement/proc/Announce(var/message as text, var/new_title = "", var/new_sound = null, var/do_newscast = newscast, var/msg_sanitized = 0, var/zlevels = GLOB.using_map.contact_levels, var/radio_mode = GLOB.using_map.use_radio_announcement)
+/datum/announcement/proc/Announce(var/message as text, var/new_title = "", var/new_sound = null, var/do_newscast = newscast, var/msg_sanitized = 0, var/list/zlevels = GLOB.using_map.contact_levels, var/radio_mode = GLOB.using_map.use_radio_announcement)
 	if(!message)
 		return
 	var/message_title = new_title ? new_title : title
@@ -39,7 +39,7 @@
 		message = sanitize(message, extra = 0)
 	message_title = sanitize(message_title)
 
-	var/msg = radio_mode ? FormRadioMessage(message, message_title) : FormMessage(message, message_title)
+	var/msg = radio_mode ? FormRadioMessage(message, message_title, pick(zlevels)) : FormMessage(message, message_title)
 	for(var/mob/M in GLOB.player_list)
 		if((M.z in (zlevels | GLOB.using_map.admin_levels)) && !istype(M,/mob/new_player) && !isdeaf(M))
 			to_chat(M, msg)
@@ -82,20 +82,20 @@ datum/announcement/priority/security/FormMessage(message as text, message_title 
 	. += "<br><font color='red'>[message]</font>"
 
 /////// ANNOUNCEMENT PROCS VIA RADIO ///////
-datum/announcement/proc/FormRadioMessage(message as text, message_title as text)
-	GLOB.global_announcer.autosay("<b><font size=3><span class='warning'>[title]:</span> [message]</font></b>", announcer ? announcer : ANNOUNSER_NAME)
+datum/announcement/proc/FormRadioMessage(message as text, message_title as text, zlevel)
+	GLOB.global_announcer.autosay("<b><font size=3><span class='warning'>[title]:</span> [message]</font></b>", announcer ? announcer : ANNOUNSER_NAME,, zlevel)
 
-datum/announcement/minor/FormRadioMessage(message as text, message_title as text)
-	GLOB.global_announcer.autosay(message, ANNOUNSER_NAME)
+datum/announcement/minor/FormRadioMessage(message as text, message_title as text, zlevel)
+	GLOB.global_announcer.autosay(message, ANNOUNSER_NAME,, zlevel)
 
-datum/announcement/priority/FormRadioMessage(message as text, message_title as text)
-	GLOB.global_announcer.autosay("<b><font size=3><span class='warning'>[message_title]:</span> [message]</font></b>", announcer ? announcer : ANNOUNSER_NAME)
+datum/announcement/priority/FormRadioMessage(message as text, message_title as text, zlevel)
+	GLOB.global_announcer.autosay("<b><font size=3><span class='warning'>[message_title]:</span> [message]</font></b>", announcer ? announcer : ANNOUNSER_NAME,, zlevel)
 
-datum/announcement/priority/command/FormRadioMessage(message as text, message_title as text)
-	GLOB.global_announcer.autosay("<b><font size=3><span class='warning'>[command_name()] Update[message_title ? " — [message_title]" : ""]:</span> [message]</font></b>", ANNOUNSER_NAME)
+datum/announcement/priority/command/FormRadioMessage(message as text, message_title as text, zlevel)
+	GLOB.global_announcer.autosay("<b><font size=3><span class='warning'>[command_name()] Update[message_title ? " — [message_title]" : ""]:</span> [message]</font></b>", ANNOUNSER_NAME,, zlevel)
 
-datum/announcement/priority/security/FormRadioMessage(message as text, message_title as text)
-	GLOB.global_announcer.autosay("<b><font size=3><span class='warning'>[message_title]:</span> [message]</font></b>", ANNOUNSER_NAME)
+datum/announcement/priority/security/FormRadioMessage(message as text, message_title as text, zlevel)
+	GLOB.global_announcer.autosay("<b><font size=3><span class='warning'>[message_title]:</span> [message]</font></b>", ANNOUNSER_NAME,, zlevel)
 
 datum/announcement/proc/NewsCast(message as text, message_title as text)
 	if(!newscast)
