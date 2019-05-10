@@ -12,7 +12,7 @@
 	name = "light tajaran station"
 //	shuttle = "CCA NSV"
 	fore_dir = WEST
-	vessel_mass = 80000
+	vessel_mass = 8000
 	base = TRUE
 	color = "#800080"
 	icon_state = "ship"
@@ -34,7 +34,7 @@
 	shuttle = "CCA EC Shuttle"
 	fore_dir = WEST
 	color = "#800080"
-	vessel_mass = 15000
+	vessel_mass = 1500
 
 ///datum/shuttle/autodock/overmap/tajsciship
 //	name = "CCA NSV"
@@ -68,7 +68,6 @@
 	flags = SHUTTLE_FLAGS_PROCESS
 	skill_needed = SKILL_NONE
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
-	mothershuttle = "CCA NSV"
 	sound_takeoff = 'sound/effects/rocket.ogg'
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
 
