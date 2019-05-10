@@ -52,7 +52,7 @@
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = CALIBER_TV
-	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 3)
+	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	ammo_type = /obj/item/ammo_casing/rifle/TV
 	slot_flags = SLOT_BELT | SLOT_BACK
 	load_method = MAGAZINE
