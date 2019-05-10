@@ -414,7 +414,7 @@
 "hX" = (/obj/machinery/atmospherics/pipe/manifold/visible,/obj/machinery/pipedispenser/orderable,/obj/machinery/light,/turf/simulated/floor/tiled/old_cargo,/area/tajsciship/sklad1)
 "hY" = (/obj/machinery/atmospherics/pipe/tank/air{dir = 8},/turf/simulated/floor/tiled/old_cargo,/area/tajsciship/sklad1)
 "hZ" = (/obj/machinery/atmospherics/pipe/simple/visible{icon_state = "intact"; dir = 5},/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/tiled/old_cargo,/area/tajsciship/sklad1)
-"ia" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"; tag = "icon-railing0 (EAST)"},/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/effect/floor_decal/industrial/warning{dir = 9},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/item/toy/ringbell/tajalarm{step_y = 0},/obj/structure/table/wallf,/turf/simulated/floor/tiled/techfloor,/area/tajsciship/hangar)
+"ia" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"; tag = "icon-railing0 (EAST)"},/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/effect/floor_decal/industrial/warning{dir = 9},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/item/toy/ringbell/tajalarm{step_y = 0},/obj/structure/table/wallf,/obj/structure/wall_frame/titanium,/turf/simulated/floor/tiled/techfloor,/area/tajsciship/hangar)
 "ib" = (/obj/machinery/atmospherics/portables_connector{dir = 8},/turf/simulated/floor/tiled/old_cargo,/area/tajsciship/sklad1)
 "ic" = (/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/tiled/old_cargo,/area/tajsciship/sklad1)
 "id" = (/obj/machinery/portable_atmospherics/canister/empty,/obj/machinery/atmospherics/portables_connector{icon_state = "map_connector"; dir = 4},/obj/machinery/light,/turf/simulated/floor/tiled/old_cargo,/area/tajsciship/sklad1)
@@ -531,7 +531,7 @@
 "kk" = (/obj/machinery/firealarm{dir = 4; layer = 3.3; pixel_x = 26},/turf/simulated/floor/wood/walnut,/area/tajsciship/kitchen)
 "kl" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 1},/obj/machinery/alarm/tajsciship,/turf/simulated/floor/lino,/area/tajsciship/kitchen)
 "km" = (/obj/machinery/power/terminal,/obj/structure/cable,/obj/machinery/power/apc/taj,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
-"kn" = (/obj/structure/window/reinforced{dir = 1},/obj/structure/table/reinforced,/obj/item/toy/ringbell/tajalarm,/turf/simulated/floor/greengrid,/area/tajsciship/tajsciship)
+"kn" = (/obj/structure/window/reinforced{dir = 1},/obj/item/toy/ringbell/tajalarm,/obj/structure/wall_frame/titanium,/obj/structure/table/wallf/steel,/turf/simulated/floor/greengrid,/area/tajsciship/tajsciship)
 "ko" = (/obj/effect/paint/silver,/obj/structure/sign/poster/tjpost/tj_3{step_x = 1},/turf/simulated/wall/r_wall/prepainted,/area/tajsciship/tajsciship)
 "kp" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/structure/sign/poster/guide_to_pee{step_y = 31},/turf/simulated/floor/tiled/kafel_full,/area/tajsciship/kitchen)
 "kq" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/light{dir = 1},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/lino,/area/tajsciship/kitchen)
@@ -884,6 +884,7 @@
 "qZ" = (/obj/item/toy/ringbell/tajalarm{step_x = 31; step_y = 0},/turf/simulated/floor/wood/walnut,/area/tajsciship/kitchen)
 "ra" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/obj/machinery/computer/ship/helm{dir = 4; icon_state = "computer"; req_access = list("access_tajsciship")},/turf/simulated/floor/tiled/monotile,/area/tajsciship/tajsciship)
 "rb" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/obj/machinery/computer/ship/sensors{dir = 4; icon_state = "computer"; req_access = list("access_tajsciship")},/turf/simulated/floor/tiled/monotile,/area/tajsciship/tajsciship)
+"rc" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/obj/machinery/hologram/holopad/longrange,/turf/simulated/floor/tiled/techfloor,/area/tajsciship/tajsciship)
 
 (1,1,1) = {"
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
@@ -927,8 +928,8 @@ hwhwhwhwhwhwhwhwhwhwhwdsahahacaccgcgfAcwcxfsgqlmcgcCcDcFiRnmdMqAqBqCcDqDcgdpeidr
 hwhwhwhwhwhwhwhwhwhwhwdsahacacaccgeodibsdcbQdadwdjdkdkdldkdkdmdkdkdniudkdodHdIdLdfmQdNdOdfmQdNdOdfmQdNdOdfcrctcudhiviwdTdUdUdUdUdSdVdhacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwdsahacacaccgnxdzbIdidCdidJcgeZfcfeffgbgOgRgbdQgSgTcgdXdYdZdfdfdWdfdfdfdWdfdfdfdWdfdfcgeacgdhebiyeejvjGjHefefekdhacachccNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwdsahahahaccgraegnXnCfrknejcgeleleleleloMelelemizelcgfgepeqeriAeuqEeYqFeuqGpwqHeuqIewgmetqTexeyezezeAeAeAeBeCeHdhacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwaahwhwhwhwhwhycsgzeDbZeElNeGoaoxmWeLeQcgeMeNeOePeReSeTgBeVqUeWcggQeXisdfiCfbnfnznEfdnfnFnEfbnGdfcrdQcudhixfhfifjfkflfmfnfodhacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwdsahahahaccgrbdzobdiqfqgftcgeMfpfufvfxfyfyfyfzlpeWqVfDfEfFfGfFfHfFfIfFfHfFfJfFfHfFfKfwfBfCfLfOfPfPfQfQfRdUfSnHdhacachccNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwaahwhwhwhwhwhycsgzeDbZeElNeGoarcmWeLeQcgeMeNeOePeReSeTgBeVqUeWcggQeXisdfiCfbnfnznEfdnfnFnEfbnGdfcrdQcudhixfhfifjfkflfmfnfodhacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwdsahahahaccgrbdzoboxqfqgftcgeMfpfufvfxfyfyfyfzlpeWqVfDfEfFfGfFfHfFfIfFfHfFfJfFfHfFfKfwfBfCfLfOfPfPfQfQfRdUfSnHdhacachccNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwdsahacacaccgfMfNaddidididicgelelgaelgefpqhgfgglqghcgdXgidXdfdfdWdfdfdfdWdfdfdfdWdfdfcggccgdhgjgljcglgngogpgrgudhacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwdsahacacackolFdiadadadadadcgiHiQgCgDgHgIgJgJgKlrgLcggMdfgMdfmQgNdOdfmQgNdOdfmQgNdOdfdDgAcudhgUgrgXgYgZhagphbgudhacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwdsahahacaccgcgpQpTpTpTpTpUcghghshthvelhGhHhHhIkmhRcgitdflRdfmEjlhWdfhVjlhWdfhVjlhWdfeFgWcSdhgUhXhYhZibicidiedhdhacachccNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw

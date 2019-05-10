@@ -3239,7 +3239,6 @@
 #include "maps\_map_include.dm"
 #include "maps\away\away_sites.dm"
 #include "maps\away_inf\tajsc\tajsciship.dm"
-#include "maps\away_inf\tajsc\tajsciship-1.dmm"
 #include "maps\away_sites_testing_inf\away_sites_testing_define.dm"
 #include "maps\bearcat\bearcat_define.dm"
 #include "maps\example\example_define.dm"

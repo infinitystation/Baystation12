@@ -7,8 +7,9 @@
 	vessel_mass = 64000
 	base = TRUE
 	color = "#800080"
-	icon_state = "ship"
-	moving_state = "ship_moving"
+	icon = 'maps/away_inf/tajsc/tajsciship.dmi'
+	icon_state = "shipstay"
+	moving_state = "shipmove"
 	start_x = 23
 	start_y = 27
 	initial_generic_waypoints = list("nav_tajsciship_start", "nav_tajbase_1", "nav_tajbase_2")
