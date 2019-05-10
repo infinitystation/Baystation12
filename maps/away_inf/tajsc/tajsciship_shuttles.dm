@@ -1,16 +1,16 @@
-/obj/machinery/computer/shuttle_control/explore/tajsciship
-	name = "CCA EC Ship control console"
-	req_access = list(access_tajsciship)
-	shuttle_tag = "CCA NSV"
+//obj/machinery/computer/shuttle_control/explore/tajsciship
+//	name = "CCA EC Ship control console"
+//	req_access = list(access_tajsciship)
+//	shuttle_tag = "CCA NSV"
 
 /obj/machinery/computer/shuttle_control/explore/tajscisshuttle
 	name = "CCA EC shuttle control console"
 	req_access = list(access_tajsciship)
 	shuttle_tag = "CCA EC Shuttle"
 
-/obj/effect/overmap/ship/landable/tajsciship
+/obj/effect/overmap/ship/tajsciship					///obj/effect/overmap/ship/landable/tajsciship
 	name = "light tajaran station"
-	shuttle = "CCA NSV"
+//	shuttle = "CCA NSV"
 	fore_dir = WEST
 	vessel_mass = 80000
 	base = TRUE
@@ -18,10 +18,16 @@
 	icon_state = "ship"
 	moving_state = "ship_moving"
 
+	initial_restricted_waypoints = list(
+		"CCA EC Shuttle" = list("nav_tajscishuttle_dock", "nav_tajbase_1", "nav_tajbase_2")
+	)
 
-/obj/effect/overmap/ship/landable/tajsciship/New()
-	name = "CCA NSV Ir'Shira-13"
-	..()
+	initial_generic_waypoints = list("nav_tajscishuttle_dock", "nav_tajbase_1", "nav_tajbase_2")
+
+
+///obj/effect/overmap/ship/landable/tajsciship/New()
+//	name = "CCA NSV Ir'Shira-13"
+//	..()
 
 /obj/effect/overmap/ship/landable/tajscishuttle
 	name = "CCA EC Shuttle"
@@ -30,25 +36,25 @@
 	color = "#800080"
 	vessel_mass = 15000
 
-/datum/shuttle/autodock/overmap/tajsciship
-	name = "CCA NSV"
-	warmup_time = 5
-	multiz = 1
-	range = 1
-	knockdown = 0 //INFINITY'S CHANGE!
-	current_location = "nav_tajsciship_start"
-	current_dock_target = "tajsciship_dock"
-	shuttle_area = list(/area/tajsciship/tajsciship, /area/tajsciship/dorms, /area/tajsciship/meatbay,
-	/area/tajsciship/botany, /area/tajsciship/kitchen, /area/tajsciship/hangar, /area/tajsciship/engines,
-	/area/tajsciship/sklad1, /area/tajsciship/solari, /area/tajsciship/tajscishuttle)
-	defer_initialisation = TRUE
-	flags = SHUTTLE_FLAGS_PROCESS
-	skill_needed = SKILL_NONE
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
+///datum/shuttle/autodock/overmap/tajsciship
+//	name = "CCA NSV"
+//	warmup_time = 5
+//	multiz = 1
+//	range = 1
+//	knockdown = 0 //INFINITY'S CHANGE!
+//	current_location = "nav_tajsciship_start"
+//	current_dock_target = "tajsciship_dock"
+//	shuttle_area = list(/area/tajsciship/tajsciship, /area/tajsciship/dorms, /area/tajsciship/meatbay,
+//	/area/tajsciship/botany, /area/tajsciship/kitchen, /area/tajsciship/hangar, /area/tajsciship/engines,
+//	/area/tajsciship/sklad1, /area/tajsciship/solari, /area/tajsciship/tajscishuttle)
+//	defer_initialisation = TRUE
+//	flags = SHUTTLE_FLAGS_PROCESS
+//	skill_needed = SKILL_NONE
+//	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
 
-/obj/effect/shuttle_landmark/tajsciship/start
-	name = "Start Zone"
-	landmark_tag = "nav_tajsciship_start"
+///obj/effect/shuttle_landmark/tajsciship/start
+//	name = "Start Zone"
+//	landmark_tag = "nav_tajsciship_start"
 
 /datum/shuttle/autodock/overmap/tajscishuttle
 	name = "CCA EC Shuttle"
@@ -63,6 +69,8 @@
 	skill_needed = SKILL_NONE
 	ceiling_type = /turf/simulated/floor/shuttle_ceiling/torch
 	mothershuttle = "CCA NSV"
+	sound_takeoff = 'sound/effects/rocket.ogg'
+	sound_landing = 'sound/effects/rocket_backwards.ogg'
 
 /obj/effect/shuttle_landmark/tajscishuttle/start
 	name = "Dock"
