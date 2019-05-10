@@ -1,7 +1,6 @@
 
 #define CALIBER_TV              	"8.77mm"
 
-
 /obj/item/clothing/suit/space/void/CCA_EC_AVS
     name = "AVS"
     desc = "Sealed tajara armored suit with reflective panels and the installation of a mechanical exoskeleton. It has the identification marks of EC CCA."
@@ -37,7 +36,6 @@
 /obj/item/clothing/suit/space/void/CCA_EC_AVS/prepared
     helmet = /obj/item/clothing/head/helmet/space/void/CCA_EC_AVSH
     boots = /obj/item/clothing/shoes/magboots
-
 
 /obj/item/clothing/suit/space/void/CCA_EC_AVS/New()
     ..()
@@ -154,7 +152,6 @@
 		/obj/item/weapon/storage/firstaid/individual/military = 1
 	)
 
-
 /obj/machinery/alarm/tajsciship/New()
 	..()
 	temperature = 278.15
@@ -173,7 +170,6 @@
 	icon_state= "terminal"
 	anchored = 1
 	req_access = list(access_tajsciship)
-
 
 /obj/item/toy/ringbell/tajalarm/attack_hand(mob/user as mob)
 	if (user.a_intent == I_GRAB)

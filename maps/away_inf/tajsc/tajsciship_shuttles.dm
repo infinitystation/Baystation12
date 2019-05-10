@@ -1,6 +1,4 @@
 
-
-
 /obj/effect/overmap/ship/tajsciship
 	name = "light tajaran station"
 	fore_dir = WEST

@@ -1,5 +1,4 @@
 
-
 /obj/item/projectile/bullet/rifle/TV
 	fire_sound = 'maps/away_inf/tajsc/tjgun.ogg'
 	damage = 30

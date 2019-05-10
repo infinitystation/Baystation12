@@ -3,6 +3,7 @@
 #include "tajsciship_equipment.dm"
 #include "kalash.dm"
 #include "posters.dm"
+#include "tajsciship-1.dmm"
 
 /datum/map_template/ruin/away_site/tajsciship
 	name = "CCA NSV Ir'Shira-13"
@@ -11,7 +12,6 @@
 	suffixes = list("tajsc/tajsciship-1.dmm")
 	cost = 1
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/tajscishuttle)
-
 
 /obj/effect/overmap/sector/tajscispace
 	name = "Abnormal sector"
@@ -42,7 +42,6 @@
 		/datum/job/submap/tajsciship/crew_leader
 	)
 
-
 /obj/machinery/computer/shuttle_control/explore/tajscisshuttle
 	name = "CCA EC shuttle control console"
 	req_access = list(access_tajsciship)
@@ -60,7 +59,6 @@
 	detail_color = "#800080"
 	access = list("access_tajsciship")
 
-
 /datum/job/submap/tajsciship/crew
 	title = "O-2 Operator"
 	total_positions = 5
@@ -70,7 +68,6 @@
 	skill_points = 30
 	whitelisted_species = list(SPECIES_TAJARA)
 	blacklisted_species = null
-
 
 /datum/job/submap/tajsciship/crew_leader
 	title = "K-1 Field Commander"
@@ -82,14 +79,12 @@
 	whitelisted_species = list(SPECIES_TAJARA)
 	blacklisted_species = null
 
-
 #define TAJSCISHIP_OUTFIT_JOB_NAME(job_name) ("CCA NSV Ir'Shira-13 - Job - " + job_name)
 
 /decl/hierarchy/outfit/job/tajsciship
 	hierarchy_type = /decl/hierarchy/outfit/job/tajsciship
 	pda_type = /obj/item/modular_computer/pda
 	pda_slot = slot_l_store
-
 
 /decl/hierarchy/outfit/job/tajsciship/crew
 	name = TAJSCISHIP_OUTFIT_JOB_NAME("O-2 Operator")
@@ -104,9 +99,6 @@
 	glasses = /obj/item/clothing/glasses/meson/prescription/tajvisor
 	l_hand = /obj/item/clothing/accessory/shouldercape/command
 
-
-
-
 /decl/hierarchy/outfit/job/tajsciship/crew_leader
 	hierarchy_type = /decl/hierarchy/outfit/job/tajsciship
 	pda_type = /obj/item/modular_computer/pda
@@ -119,7 +111,6 @@
 	l_ear = /obj/item/device/radio/headset/tajsciship
 	glasses = /obj/item/clothing/glasses/meson/prescription/tajvisor
 	l_hand = /obj/item/clothing/accessory/shouldercape/general
-
 
 #undef TAJSCISHIP_OUTFIT_JOB_NAME
 
