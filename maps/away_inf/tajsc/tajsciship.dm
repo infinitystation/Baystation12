@@ -66,7 +66,7 @@
 	total_positions = 5
 	outfit_type = /decl/hierarchy/outfit/job/tajsciship/crew
 	supervisors = "your K-1, Field Commander"
-	info = "You are the captain of the ship that was sent through Azjufiyr-Zan. Now you have to explore the space around you, be extremely careful, the stars around are cold."
+	info = "You are the crewman of the ship that was sent through Azjufiyr-Zan. Now you have to explore the space around you, be extremely careful, the stars around are cold."
 	skill_points = 30
 	whitelisted_species = list(SPECIES_TAJARA)
 	blacklisted_species = null
@@ -77,7 +77,7 @@
 	supervisors = "your K-7 Tactician, Mrojarl'Khanch Nal'zherch-Mank'tcrrick and CCA EC HQ."
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/tajsciship/crew_leader
-	info = "Your vessel is scouting through Azjufiyr-Zan. Be wise and guide your brothers and sisters wisely. The place where you fell is unknown. From your actions and decisions may depend on the fate of not only your career, life, but also race."
+	info = "Your vessel, captain, is scouting through Azjufiyr-Zan. Be wise and guide your brothers and sisters wisely. The place where you fell is unknown. From your actions and decisions may depend on the fate of not only your career, life, but also race."
 	skill_points = 34
 	whitelisted_species = list(SPECIES_TAJARA)
 	blacklisted_species = null
