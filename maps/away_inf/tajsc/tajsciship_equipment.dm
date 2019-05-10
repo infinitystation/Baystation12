@@ -40,7 +40,7 @@
     boots = /obj/item/clothing/shoes/magboots
 
 
-/obj/item/clothing/suit/space/void/tajara/New()
+/obj/item/clothing/suit/space/void/CCA_EC_AVS/New()
     ..()
     slowdown_per_slot[slot_wear_suit] = 2
 
