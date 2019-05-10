@@ -12,19 +12,16 @@
 	suffixes = list("tajsc/tajsciship-1.dmm")
 	cost = 1
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/tajscishuttle)
-//	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/tajsciship, /datum/shuttle/autodock/overmap/tajscishuttle)
 
 
 /obj/effect/overmap/sector/tajscispace
 	name = "Abnormal sector"
 	desc = "Slight traces of a bluespace are present. Dangerous place."
 	in_space = 1
-	icon_state = "event"
-	initial_generic_waypoints = list(
-	    "nav_tajsciship_start",
-        "nav_tajbase_1",
-        "nav_tajbase_2"
-	)
+	icon = 'maps/away_inf/tajsc/tajsciship.dmi'
+	icon_state = "bshole"
+	start_x = 23
+	start_y = 27
 
 /obj/effect/submap_landmark/joinable_submap/tajsciship
 	name = "CCA NSV Ir'Shira-13"
@@ -47,11 +44,10 @@
 	)
 
 
-
-
-
-
-
+/obj/machinery/computer/shuttle_control/explore/tajscisshuttle
+	name = "CCA EC shuttle control console"
+	req_access = list(access_tajsciship)
+	shuttle_tag = "CCA EC Shuttle"
 
 /var/const/access_tajsciship = "access_tajsciship"
 
@@ -72,7 +68,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/tajsciship/crew
 	supervisors = "your K-1, Field Commander"
 	info = "Your vessel is scouting through Azjufiyr-Zan, working to map out any potential dangers, as well as potential allies. "
-	skill_points = 32
+	skill_points = 30
 	whitelisted_species = list(SPECIES_TAJARA)
 	blacklisted_species = null
 
@@ -83,7 +79,7 @@
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/tajsciship/crew_leader
 	info = "Your vessel is scouting through Azjufiyr-Zan, now you must research space around you."
-	skill_points = 36
+	skill_points = 34
 	whitelisted_species = list(SPECIES_TAJARA)
 	blacklisted_species = null
 
