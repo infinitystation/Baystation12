@@ -2,14 +2,12 @@
 
 /obj/item/projectile/bullet/rifle/TV
 	fire_sound = 'maps/away_inf/tajsc/tjgun.ogg'
-	damage = 35
-	armor_penetration = 55
+	damage = 30
+	armor_penetration = 50
 	penetration_modifier = 1
 	stun = 1
 	weaken = 1
 	distance_falloff = 0.5
-
-
 
 /obj/item/weapon/gun/projectile/automatic/TV3/special_check(user)
 	if(istype(user,/mob/living/carbon/human))
@@ -18,7 +16,6 @@
 			to_chat(user, "<span class='warning'>\The [src] trigger because of the anatomical structure of your hand is not pressed!</span>")
 			return 0
 	return ..()
-
 
 /obj/item/ammo_casing/rifle/TV
 	desc = "A strange hight-caliber casing. You think its bigger than 7.62, but smaller than 12.7."
@@ -39,9 +36,6 @@
 	ammo_type = /obj/item/ammo_casing/rifle/TV
 	max_ammo = 26
 	multiple_sprites = 1
-
-
-
 
 /obj/item/weapon/gun/projectile/automatic/TV3
 	name = "TV-3S carabine"
@@ -80,7 +74,6 @@
 		icon_state = "TV-3Sm"
 	else
 		icon_state = "TV-3S"
-
 
 /obj/item/ammo_magazine/TVtcink
 	name = "Tcink"

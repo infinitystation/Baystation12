@@ -4,7 +4,7 @@
 /obj/effect/overmap/ship/tajsciship
 	name = "light tajaran station"
 	fore_dir = WEST
-	vessel_mass = 16000
+	vessel_mass = 64000
 	base = TRUE
 	color = "#800080"
 	icon_state = "ship"
@@ -16,7 +16,6 @@
 	"CCA EC Shuttle" = list("nav_tajscishuttle_dock")
 	)
 
-
 /obj/effect/overmap/ship/landable/tajscishuttle
 	name = "CCA EC Shuttle"
 	shuttle = "CCA EC Shuttle"
@@ -24,7 +23,6 @@
 	color = "#800080"
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 2 SECONDS
-
 
 /datum/shuttle/autodock/overmap/tajscishuttle
 	name = "CCA EC Shuttle"
@@ -38,13 +36,11 @@
 	sound_takeoff = 'sound/effects/rocket.ogg'
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
 
-
 /obj/effect/shuttle_landmark/tajscishuttle/start
 	name = "Dock"
 	landmark_tag = "nav_tajscishuttle_dock"
 	base_area = /area/tajsciship/tajsciship
 	base_turf = /turf/simulated/floor/plating
-
 
 /obj/effect/shuttle_landmark/tajscishuttle/nav1
 	name = "Space near light station"

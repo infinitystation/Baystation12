@@ -34,7 +34,6 @@
     light_overlay = "helmet_light_dual"
     species_restricted = list(SPECIES_TAJARA)
 
-
 /obj/item/clothing/suit/space/void/CCA_EC_AVS/prepared
     helmet = /obj/item/clothing/head/helmet/space/void/CCA_EC_AVSH
     boots = /obj/item/clothing/shoes/magboots
@@ -43,8 +42,6 @@
 /obj/item/clothing/suit/space/void/CCA_EC_AVS/New()
     ..()
     slowdown_per_slot[slot_wear_suit] = 2
-
-
 
 /obj/item/weapon/circuitboard/telecomms/allinone/tajsciship
 	build_path = /obj/machinery/telecomms/allinone/tajsciship
@@ -69,7 +66,6 @@
 	icon_state = "sci_cypherkey"
 	channels = list("CCA EC" = 1)
 
-
 /obj/item/clothing/under/tajsciship/CCAECjumpsuit
 	name = "CCA EC uniform"
 	desc = "A comfortable for tajara turtleneck and black utility trousers."
@@ -82,8 +78,6 @@
 	item_state_slots = list(
 		slot_w_uniform_str = "blackutility"
 	)
-
-
 
 /obj/item/weapon/gun/projectile/shotguntaj
 	name = "TS-12E"
@@ -105,8 +99,6 @@
 	magazine_type = /obj/item/ammo_magazine/shotguntaj/net
 	allowed_magazines = /obj/item/ammo_magazine/shotguntaj
 	ammo_type = /obj/item/ammo_casing/shotgun
-
-
 
 /obj/item/weapon/gun/projectile/shotguntaj/special_check(user)
 	if(istype(user,/mob/living/carbon/human))
@@ -132,8 +124,6 @@
 	caliber = CALIBER_SHOTGUN
 	max_ammo = 4
 
-
-
 /obj/item/ammo_magazine/shotguntaj/empty
 	icon_state = "taj12-0"
 	initial_ammo = 0
@@ -147,9 +137,6 @@
 	matter = list(MATERIAL_STEEL = 525)
 	caliber = CALIBER_SHOTGUN
 	max_ammo = 4
-
-
-
 
 /obj/structure/closet/crate/secure/tajquip
 	name = "Ammunition crate"
@@ -168,7 +155,6 @@
 	)
 
 
-
 /obj/machinery/alarm/tajsciship/New()
 	..()
 	temperature = 278.15
@@ -179,10 +165,6 @@
 /obj/machinery/power/apc/taj
 	cell_type = /obj/item/weapon/cell/high
 	req_access = list(access_tajsciship)
-
-
-
-
 
 /obj/item/toy/ringbell/tajalarm
 	name = "Alarm terminal"
