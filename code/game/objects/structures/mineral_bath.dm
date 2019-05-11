@@ -80,7 +80,8 @@
 			STOP_PROCESSING(SSobj, src)
 
 /obj/structure/adherent_bath/MouseDrop_T(var/atom/movable/O, var/mob/user)
-	enter_bath(O, user)
+	if(!isghost(user))
+		enter_bath(O, user)
 
 /obj/structure/adherent_bath/relaymove(var/mob/user)
 	if(user == occupant)
