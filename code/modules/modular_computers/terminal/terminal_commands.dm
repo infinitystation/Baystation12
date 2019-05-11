@@ -292,7 +292,7 @@ Subtypes
 	CT.update_icon()
 	return "Shutdown successful."
 
-//TODO-ELar-inf: Soon i'll finish it.
+//TODO-Elar-inf: Soon i'll finish it.
 /*/datum/terminal_command/run
 	name = "run"
 	man_entry = list("Format: run \[program name\]", "Runs the program from local memory using it name.")
@@ -318,8 +318,8 @@ Subtypes
 	man_entry = list("Format: session; session -kill",
 					"Utilite for manipulations with active programs",
 					"As session return list of active PRG programs.",
-					"Option -kill kill all active PRG programs"/*,
-					"Option -restore open all active programs."*/)
+					"Option -kill kill all active PRG programs",
+					"Option -restore open interface of devise.")
 	pattern = "^session"
 	skill_needed = SKILL_ADEPT
 
@@ -331,6 +331,9 @@ Subtypes
 	if(!CT.processor_unit.check_functionality())
 		return "session: Access attempt to RAM failed. Check integrity of your CPU."
 	var/ermsg = " programs is absent"
+	if(copytext(text, 8) == " -restore")
+		CT.ui_interact(user)
+		return
 	if(copytext(text,8) == " -kill")
 		if(CT.idle_threads)
 			for(PRG in CT.idle_threads)
