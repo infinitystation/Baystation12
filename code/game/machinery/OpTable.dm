@@ -106,6 +106,8 @@
 		return
 	if(!user.unequip_item())
 		return
+	if(O.buckled)
+		return
 	if (O.loc != src.loc)
 		step(O, get_dir(O, src))
 
