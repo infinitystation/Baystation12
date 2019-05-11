@@ -14,6 +14,8 @@
 	max_uses = 6
 
 	spells = list(/spell/targeted/heal_target = 					1,
+				/obj/structure/closet/wizard/armor = 				2,
+				/spell/targeted/ethereal_jaunt = 					2,
 				/spell/targeted/heal_target/sacrifice = 			1,
 				/spell/aoe_turf/conjure/mirage = 					1,
 				/spell/aoe_turf/conjure/summon/bats = 				1,
