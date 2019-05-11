@@ -21,6 +21,7 @@
 	var/win_x = 450
 	var/win_y = 740                // Vote window size.
 
+	var/show_leading = 0
 	var/manual_allowed = 1         // Whether humans can start it.
 	var/percent_votes = FALSE      // Total votes in current choose. If FALSE - shows total num of voted people for this choose.
 
@@ -91,10 +92,10 @@
 		text += "<b>Vote Result: Inconclusive - No Votes!</b>"
 	else
 		text += "<b>Vote Result: [display_choices[result[1]]][choices[result[1]] >= 1 ? " - '[choices[result[1]]]'" : null]</b>"
-		if(length(result) >= 2)
+		if(length(result) >= 2 && result[result[2]])
 			text += "\nSecond place: [display_choices[result[2]]][choices[result[2]] >= 1 ? " - '[choices[result[2]]]'" : null]"
-		if(length(result) >= 3)
-			text += ", third place: [display_choices[result[3]]][choices[result[3]] >= 1 ? " - '[choices[result[3]]]'" : null]"
+		if(length(result) >= 3 && result[result[3]])
+			text += "\nThird place: [display_choices[result[3]]][choices[result[3]] >= 1 ? " - '[choices[result[3]]]'" : null]"
 
 	return JOINTEXT(text)
 
@@ -170,7 +171,18 @@
 			votepercent = percent_votes ? "[round((number_of_votes/totalvotes)*100)]%" : number_of_votes
 
 		. += "<tr><td align = 'center'>"
-		. += "[display_choices[choice]]"
+
+		if(show_leading && number_of_votes > 0)
+			if(number_of_votes >= 15)
+				. += "<font color='#A30000'><b>[display_choices[choice]]</b></font>"
+			else if(number_of_votes >= 10)
+				. += "<font color='#FFA700'><b>[display_choices[choice]]</b></font>"
+			else if(number_of_votes >= 5)
+				. += "<font color='#00CC00'><b>[display_choices[choice]]</b></font>"
+			else if(number_of_votes >= 1)
+				. += "<b>[display_choices[choice]]</b>"
+		else
+			. += "[display_choices[choice]]"
 		. += "</td>"
 
 		for(var/i = 1, i <= length(priorities), i++)
