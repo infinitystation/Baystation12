@@ -13,3 +13,10 @@
 
 	H.sync(src)
 	return H
+
+/obj/item/weapon/holder/afterattack(var/turf/T, var/mob/user, var/adjacent)
+	if(adjacent && T && (istype(T, /turf/simulated/floor) || istype(T, /turf/unsimulated/floor)))
+		user.drop_from_inventory(src, T)
+		src.Destroy()
+		return
+	..()

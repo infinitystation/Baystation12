@@ -84,7 +84,7 @@
 	qdel(G)
 
 /obj/machinery/bodyscanner/proc/user_can_move_target_inside(var/mob/target, var/mob/user)
-	if(!istype(user) || !istype(target))
+	if(!istype(user) || !istype(target) || isghost(user) || isghost(target))
 		return FALSE
 	if(occupant)
 		to_chat(user, "<span class='warning'>The scanner is already occupied!</span>")
