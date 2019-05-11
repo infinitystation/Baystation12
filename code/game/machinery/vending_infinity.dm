@@ -177,7 +177,10 @@
 	products = list(/obj/item/weapon/gun/projectile/automatic/nt41 = 2,
 					/obj/item/ammo_magazine/n10mm = 6,
 					/obj/item/weapon/gun/projectile/shotgun/pump/combat = 2,
-					/obj/item/clothing/accessory/storage/bandolier/armory = 2,)
+					/obj/item/clothing/accessory/storage/bandolier/armory = 2,
+					/obj/item/weapon/gun/launcher/grenade = 1,
+					/obj/item/weapon/storage/box/teargas = 1,
+					/obj/item/weapon/storage/box/flashbangs = 1)
 	vend_delay = 10
 
 /obj/machinery/vending/armoryvend/energy
