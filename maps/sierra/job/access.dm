@@ -98,15 +98,21 @@
 	desc = "Commissary"
 	region = ACCESS_REGION_GENERAL
 
+/var/const/access_warden = "ACCESS_WARDEN"//97
+/datum/access/warden
+	id = access_warden
+	desc = "Warden"
+	region = ACCESS_REGION_SECURITY
+
 /************
 * NSV sierra *
 ************/
-
+/*
 /datum/access/security
 	desc = "Security"
 
 /datum/access/sec_doors
 	desc = "Security Entrance"
-
+*/
 /datum/access/network
 	region = ACCESS_REGION_COMMAND

@@ -1,7 +1,7 @@
 /datum/map/sierra
 	// Unit test exemptions
 	apc_test_exempt_areas = list(
-		/area/engineering/atmos/storage = NO_SCRUBBER|NO_VENT,
+		//area/engineering/atmos/storage = NO_SCRUBBER|NO_VENT,
 		/area/engineering/auxpower = NO_SCRUBBER|NO_VENT,
 		/area/engineering/drone_fabrication = NO_SCRUBBER|NO_VENT,
 		/area/engineering/engine_smes = NO_SCRUBBER|NO_VENT,
@@ -11,10 +11,10 @@
 		/area/maintenance/solar = NO_SCRUBBER,
 		/area/maintenance/exterior = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/maintenance/compactor = 0,
-		/area/maintenance/incinerator = NO_SCRUBBER,
+		//area/maintenance/incinerator = NO_SCRUBBER,
 		/area/maintenance/seconddeck/foreport = NO_SCRUBBER,
 		/area/maintenance/firstdeck/centralstarboard  = NO_SCRUBBER,
-		/area/maintenance/disposal = NO_SCRUBBER|NO_VENT|NO_APC,
+		//area/maintenance/disposal = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/maintenance/thirddeck/aft = 0,
 		/area/maintenance/waterstore = 0,
 		/area/maintenance/bluespace = NO_SCRUBBER,

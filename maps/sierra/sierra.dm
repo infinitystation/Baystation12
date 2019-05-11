@@ -3,7 +3,6 @@
 	#include "sierra_announcements.dm"
 	#include "sierra_antagonism.dm"
 	#include "sierra_areas.dm"
-	#include "sierra_areas_override.dm"
 	#include "sierra_elevator.dm"
 	#include "sierra_holodecks.dm"
 	#include "sierra_lobby.dm"

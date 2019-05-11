@@ -28,7 +28,7 @@
 
 	access = list(access_seceva, access_guard, access_security, access_brig, access_armory, access_forensics_lockers,
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
-			            access_eva, access_sec_doors, access_gun, access_hangar)
+			            access_eva, access_sec_doors, access_gun, access_hangar, access_warden)
 
 	minimal_access = list()
 
