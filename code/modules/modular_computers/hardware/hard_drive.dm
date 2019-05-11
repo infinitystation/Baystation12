@@ -76,6 +76,17 @@
 	store_file(new/datum/computer_file/program/ntnetdownload(src))			// NTNet Downloader Utility, allows users to download more software from NTNet repository
 	store_file(new/datum/computer_file/program/filemanager(src))			// File manager, allows text editor functions and basic file manipulation.
 
+	var/datum/computer_file/data/config/file = new()
+	file.filename = "TNet_CONFIG"
+	file.stored_data += "ROOT : ROOT" //LOGIN : PASSWORD
+	store_file(file)
+
+	var/datum/computer_file/data/config/file_README = new()
+	file_README.filename = "TNet_CONFIG_README"
+	file_README.stored_data += "\[large\]\[b\]DO NOT DELETE FILE TNet_CONFIG IF YOU DO NOT WANT TO PUT YOUR DEVICE AT RISK \[/b\]\[/large\]\[br\]"
+	file_README.stored_data += "Format login and password in TNet_CONFIG: \[LOGIN\] : \[PASSWORD\].\[br\]"
+	file_README.stored_data += "Login must contain only 4 characters, password may be anything."
+	store_file(file_README)
 
 // Use this proc to remove file from the drive. Returns 1 on success and 0 on failure. Contains necessary sanity checks.
 /obj/item/weapon/computer_hardware/hard_drive/proc/remove_file(var/datum/computer_file/F)
