@@ -1056,6 +1056,7 @@
 /area/storage/tech
 	name = "Technical Storage"
 	icon_state = "storage"
+	req_access = list(access_tech_storage)
 
 /area/storage/tools
 	name = "Auxiliary Tool Storage"
