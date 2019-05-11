@@ -80,7 +80,8 @@
 		\[xynlogo\] - Inserts the Xyngergy logo.
 		\[iccgseal\] - Inserts ICCG seal
 		\[fleetlogo\] - Inserts the logo of the SCG Fleet"
-		\[ocielogo\] - Inserts the logo of the Office of Civil Investigation and Enforcement"}
+		\[ocielogo\] - Inserts the logo of the Office of Civil Investigation and Enforcement
+		\[ocielogo\] - Inserts the logo of the CCA"}
 
 		to_chat(usr, help)
 		return 1
