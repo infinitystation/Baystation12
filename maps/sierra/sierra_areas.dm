@@ -433,6 +433,7 @@
 	requires_power = 0
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	req_access = list(access_cent_specops)
 
 /area/rescue_base/base
 	name = "Barracks"
@@ -1291,6 +1292,7 @@
 	name = "Admin Prison"
 	dynamic_lighting = 0
 	requires_power = 0
+	icon_state = "blue-red-d"
 
 
 // Shuttles
