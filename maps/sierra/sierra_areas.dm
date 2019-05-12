@@ -238,47 +238,58 @@
 /area/shuttle/escape_pod6/station
 	name = "Escape Pod One"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod7/station
 	name = "Escape Pod Two"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod8/station
 	name = "Escape Pod Three"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod9/station
 	name = "Escape Pod Four"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod10/station
 	name = "Escape Pod Five"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 //sierra small pods
 /area/shuttle/escape_pod12/station
 	name = "Escape Pod Seven"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod13/station
 	name = "Escape Pod Eight"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod14/station
 	name = "Escape Pod Nine"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod15/station
 	name = "Escape Pod Ten"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod16/station
 	name = "Escape Pod Eleven"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod17/station
 	name = "Escape Pod Twelve"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 //Charon
 
@@ -877,12 +888,14 @@
 	name = "Mental Health"
 	icon_state = "medbay3"
 	ambience = list('sound/ambience/signal.ogg')
+	req_access = list(access_psychiatrist)
 
 /area/medical/coffins
 	name = "Coffins Storage"
 	icon_state = "patients" //:^)
 	ambience = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg','sound/music/main.ogg')
 	sound_env = SMALL_ENCLOSED
+	req_access = list(access_chapel_office)
 
 // Chapel
 /area/chapel/crematorium
@@ -1039,7 +1052,7 @@
 /area/maintenance/waterstore
 	name = "\improper Cistern"
 	icon_state = "disposal"
-	req_access = list(list(access_cargo, access_engine))
+	req_access = list(list(access_cargo, access_engine, access_el))
 
 /area/maintenance/compactor
 	name = "Compactor"
@@ -1342,7 +1355,7 @@
 /area/ai_monitored/storage/eva
 	name = "EVA Storage"
 	icon_state = "eva"
-	req_access = list(list(access_eva, access_heads))
+	req_access = list(access_eva)
 
 /area/turret_protected
 	req_access = list(access_ai_upload)
