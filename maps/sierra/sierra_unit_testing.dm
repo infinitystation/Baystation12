@@ -14,7 +14,7 @@
 		//area/maintenance/incinerator = NO_SCRUBBER,
 		/area/maintenance/seconddeck/foreport = NO_SCRUBBER,
 		/area/maintenance/firstdeck/centralstarboard  = NO_SCRUBBER,
-		//area/maintenance/disposal = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/turret_protected/ai_cyborg_station = NO_SCRUBBER|NO_VENT,
 		/area/maintenance/thirddeck/aft = 0,
 		/area/maintenance/waterstore = 0,
 		/area/maintenance/bluespace = NO_SCRUBBER,
