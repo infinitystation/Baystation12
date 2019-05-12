@@ -28,7 +28,7 @@
 	id = "plant_scanner"
 	req_tech = list(TECH_MAGNET = 2, TECH_BIO = 2)
 	materials = list(MATERIAL_STEEL = 150, MATERIAL_GLASS = 100)
-	build_path = /obj/item/device/analyzer/plant_analyzer
+	build_path = /obj/item/device/scanner/plant
 	sort_string = "MACFD"
 
 /datum/design/item/medical/defib

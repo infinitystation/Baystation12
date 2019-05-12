@@ -102,7 +102,7 @@
 	if(ishuman(occupant))
 
 		var/mob/living/carbon/human/H = occupant
-//		var/repaired_organ
+		var/repaired_organ
 
 		// Replace limbs for crystalline species.
 		if((H.species.name == SPECIES_ADHERENT || H.species.name == SPECIES_GOLEM) && prob(30))

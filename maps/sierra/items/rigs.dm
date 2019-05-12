@@ -129,7 +129,7 @@
 	chest_type = /obj/item/clothing/suit/space/rig/command/cmo
 	helm_type = /obj/item/clothing/head/helmet/space/rig/command/cmo
 
-	allowed = list(/obj/item/weapon/gun, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit, /obj/item/weapon/storage/firstaid, /obj/item/device/healthanalyzer, /obj/item/stack/medical, /obj/item/roller)
+	allowed = list(/obj/item/weapon/gun, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit, /obj/item/weapon/storage/firstaid, /obj/item/device/scanner/health, /obj/item/stack/medical, /obj/item/roller)
 
 	req_access = list(access_cmo)
 

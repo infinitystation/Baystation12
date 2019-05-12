@@ -907,7 +907,7 @@
 	products = list(/obj/item/weapon/reagent_containers/glass/bottle/antitoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline = 4,
 					/obj/item/weapon/reagent_containers/glass/bottle/stoxin = 4,/obj/item/weapon/reagent_containers/glass/bottle/toxin = 4,
 					/obj/item/weapon/reagent_containers/syringe/antiviral = 4,/obj/item/weapon/reagent_containers/syringe = 12,
-					/obj/item/device/healthanalyzer = 5,/obj/item/weapon/reagent_containers/glass/beaker = 4, /obj/item/weapon/reagent_containers/dropper = 2,
+					/obj/item/device/scanner/health = 5,/obj/item/weapon/reagent_containers/glass/beaker = 4, /obj/item/weapon/reagent_containers/dropper = 2,
 					/obj/item/stack/medical/advanced/bruise_pack = 3, /obj/item/stack/medical/advanced/ointment = 3, /obj/item/stack/medical/splint = 2,
 					/obj/item/weapon/reagent_containers/hypospray/autoinjector/pain = 4)
 
@@ -1128,7 +1128,7 @@
 	vend_delay = 21
 	req_access = list(list(access_atmospherics,access_engine_equip))
 	products = list(/obj/item/device/flashlight = 3,/obj/item/device/multitool = 3,/obj/item/device/multitool/multimeter = 3,
-	/obj/item/device/geiger = 3,/obj/item/device/analyzer = 3,/obj/item/device/t_scanner = 3,
+	/obj/item/device/geiger = 3,/obj/item/device/scanner/gas = 3,/obj/item/device/t_scanner = 3,
 	/obj/item/device/cable_painter = 2,/obj/item/device/floor_painter = 2,/obj/item/device/pipe_painter = 2, /obj/item/weapon/rpd = 2,
 	/obj/item/clamp = 4, /obj/item/weapon/tape_roll = 6)
 	contraband = list(/obj/item/weapon/beartrap = 2,/obj/item/weapon/rcd = 1,/obj/item/weapon/rcd_ammo = 5)

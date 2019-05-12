@@ -34,7 +34,7 @@
 	На судне, вероятнее всего, вы встретите атмосферных техников от этой организации."
 	economic_power = 0.95
 	subversive_potential = 15
-	language = LANGUAGE_SOL_COMMON
+	language = LANGUAGE_HUMAN_EURO
 
 /decl/cultural_info/faction/grayson
 	name = FACTION_GRAYSON
@@ -121,7 +121,7 @@
 	Представители этой фактической ЧВК работают в охране и все являются либо людьми, либо ИПК. Чаще всего, их назначают на защиту важнных лиц, ученых или аномальных объектов."
 	economic_power = 0.9 //TCC
 	subversive_potential = 35
-	language = LANGUAGE_INDEPENDENT
+	language = LANGUAGE_HUMAN_RUSSIAN
 
 /decl/cultural_info/faction/septenergo
 	name = FACTION_SEPTENERGO
@@ -131,5 +131,4 @@
 	На судна вы можете встретить инженеров от этой организации."
 	economic_power = 1.1
 	subversive_potential = 10
-	language = LANGUAGE_SOL_COMMON
-
+	language = LANGUAGE_HUMAN_EURO

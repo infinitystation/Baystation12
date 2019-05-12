@@ -336,8 +336,7 @@ var/list/admin_verbs_mentor = list(
 	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,
 	/client/proc/cmd_mod_say,
-	/datum/admins/proc/show_player_info,
-	/client/proc/cmd_admin_subtle_message
+	/datum/admins/proc/show_player_info
 )
 
 /client/proc/add_admin_verbs()
