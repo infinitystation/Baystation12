@@ -36,7 +36,7 @@ em						{font-style: normal;font-weight: bold;}
 /* Admin: Channels */
 .mod_channel			{color: #735638;	font-weight: bold;}
 .mod_channel .admin		{color: #b82e00;	font-weight: bold;}
-.admin_channel			{color: #386aff;	font-weight: bold;}
+.admin_channel			{color: #ff0000;	font-weight: bold;}
 
 /* Radio: Misc */
 .deadsay				{color: #530fad;}
