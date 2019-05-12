@@ -193,10 +193,11 @@
 	name = "First Deck Port Maintenance"
 	icon_state = "pmaint"
 
+/* not found on Sierra
 /area/teleporter/firstdeck
 	name = "First Deck Teleporter"
 	icon_state = "teleporter"
-
+*/
 /area/hallway/primary/firstdeck/fore
 	name = "First Deck Fore Hallway"
 	icon_state = "hallF"
@@ -552,14 +553,6 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	req_access = list(access_construction)
 
-/area/vacant/cabin
-	name = "Vacant Cabins"
-	icon_state = "crew_quarters"
-
-/area/vacant/chapel
-	name = "Unused Chapel"
-	icon_state = "chapel"
-
 /area/vacant/infirmary
 	name = "Auxiliary Infirmary"
 	icon_state = "medbay"
@@ -567,6 +560,23 @@
 /area/vacant/monitoring
 	name = "Auxiliary Monitoring Room"
 	icon_state = "engine_monitoring"
+
+/area/vacant/cargo
+	name = "Requisitions Office"
+	icon_state = "quart"
+
+/area/vacant/mess
+	name = "Officer's Mess"
+	icon_state = "bar"
+
+/* not found on Sierra
+/area/vacant/cabin
+	name = "Vacant Cabins"
+	icon_state = "crew_quarters"
+
+/area/vacant/chapel
+	name = "Unused Chapel"
+	icon_state = "chapel"
 
 /area/vacant/prototype/control
 	name = "Prototype Fusion Reactor Control Room"
@@ -576,15 +586,6 @@
 /area/vacant/prototype/engine
 	name = "Prototype Fusion Reactor Chamber"
 	icon_state = "firingrange"
-
-
-/area/vacant/cargo
-	name = "Requisitions Office"
-	icon_state = "quart"
-
-/area/vacant/mess
-	name = "Officer's Mess"
-	icon_state = "bar"
 
 /area/vacant/missile
 	name = "Third Deck Port Missile Pod"
@@ -597,7 +598,7 @@
 /area/vacant/office
 	name = "Unused Office"
 	icon_state = "conference"
-
+*/
 /area/vacant/gambling
 	name = "Gambling Room"
 	icon_state = "restrooms"
@@ -693,11 +694,12 @@
 	name = "Xenobiology Storage"
 	icon_state = "xeno_lab"
 
+/* not found on Sierra
 /area/rnd/checkpoint
 	name = "Research Security Checkpoint"
 	icon_state = "checkpoint1"
 	req_access = list(access_security)
-
+*/
 /area/rnd/blanks
 	name = "Aux Custodial Supplies"
 	icon_state = "decontamination"
@@ -719,9 +721,6 @@
 /area/crew_quarters/head
 	name = "Head"
 	icon_state = "toilet"
-
-/area/crew_quarters/head/aux
-	name = "Auxiliary Head"
 
 /area/crew_quarters/gym
 	name = "Gym"
@@ -807,14 +806,10 @@
 	name = "Security - Break Room"
 	icon_state = "security"
 
-/area/security/sierra/hos
-	name = "Security - Head Of Security"
+/area/security/sierra/hosbed
+	name = "Security - HoS - Bedroom"
 	icon_state = "sec_hos"
 	req_access = list(access_hos)
-
-/area/security/sierra/hos/bedroom
-	name = "Security - HOS - Bedroom"
-	icon_state = "sec_hos"
 
 /area/security/sierra/forensic
 	name = "Security - Forensic"
@@ -950,11 +945,12 @@
 /area/thruster/d3starboard
 	name = "Third Deck Starboard Nacelle"
 
+/* not found on Sierra
 /area/engineering/fuelbay
 	name = "Fuel Bay"
 	icon_state = "engineering"
 	sound_env = SMALL_ENCLOSED
-
+*/
 // Command
 
 /area/bridge
@@ -1072,18 +1068,19 @@
 	icon_state = "storage"
 	req_access = list(access_tech_storage)
 
+/* not found on Sierra
 /area/storage/tools
 	name = "Auxiliary Tool Storage"
 	icon_state = "auxstorage"
 
+/area/storage/auxillary/starboard
+	name = "Starboard Auxillary Storage"
+	icon_state = "auxstorage"
+*/
 /area/storage/auxillary/port
 	name = "Port Auxillary Storage"
 	icon_state = "auxstorage"
 	req_access = list(access_cargo)
-
-/area/storage/auxillary/starboard
-	name = "Starboard Auxillary Storage"
-	icon_state = "auxstorage"
 
 /area/storage/bridge
 	name = "Bridge Storage"
@@ -1203,10 +1200,11 @@
 	icon_state = "engine_monitoring"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/* not found on Sierra
 /area/engineering/foyer
 	name = "Engineering Foyer"
 	icon_state = "engineering_foyer"
-
+*/
 /area/engineering/locker_room
 	name = "Engineering Locker Room"
 	icon_state = "engineering_locker"
@@ -1222,11 +1220,11 @@
 	name = "Chemistry"
 	icon_state = "chem"
 	req_access = list(access_chemistry)
-
+/* not found on Sierra
 /area/medical/exam_room
 	name = "Exam Room"
 	icon_state = "exam_room"
-
+*/
 /area/medical/morgue
 	name = "Morgue"
 	icon_state = "morgue"
@@ -1259,10 +1257,11 @@
 	name = "Robotics Lab"
 	icon_state = "robotics"
 
+/* not found on Sierra
 /area/assembly/robotics_surgery
 	name = "Robotics Operating Theatre"
 	icon_state = "robotics"
-
+*/
 /area/rnd/misc_lab
 	name = "Miscellaneous Research"
 	icon_state = "misclab"
@@ -1362,6 +1361,7 @@
 /area/turret_protected
 	req_access = list(access_ai_upload)
 
+/* not found on Sierra
 /area/turret_protected/ai_foyer
 	name = "AI Chamber Foyer"
 	icon_state = "ai_foyer"
@@ -1371,7 +1371,7 @@
 	name = "Outer AI Chamber"
 	icon_state = "ai_chamber"
 	sound_env = SMALL_ENCLOSED
-
+*/
 /area/turret_protected/ai
 	name = "AI Chamber"
 	icon_state = "ai_chamber"
