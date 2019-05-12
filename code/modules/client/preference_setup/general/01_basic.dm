@@ -106,7 +106,7 @@ datum/preferences
 		return TOPIC_REFRESH
 
 	else if(href_list["metadata"])
-		var/new_metadata = sanitize(input(user, "Enter any information you'd like others to see, such as Roleplay-preferences:", "Game Preference" , html_decode(pref.metadata)) as message, extra = 0)
+		var/new_metadata = sanitize(input(user, "Enter any information you'd like others to see, such as Roleplay-preferences:", "Game Preference" , html_decode(pref.metadata)) as message|null, extra = 0)
 		new_metadata = sanitize_a0(new_metadata)
 		if(new_metadata && CanUseTopic(user))
 			pref.metadata = new_metadata

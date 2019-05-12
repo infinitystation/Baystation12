@@ -16,6 +16,7 @@
 	var/moving_state = "ship_moving"
 
 	var/vessel_mass = 10000             //tonnes, arbitrary number, affects acceleration provided by engines
+	var/vessel_size = SHIP_SIZE_LARGE	//arbitrary number, affects how likely are we to evade meteors
 	var/max_speed = 1/(1 SECOND)        //"speed of light" for the ship, in turfs/tick.
 	var/min_speed = 1/(2 MINUTES)       // Below this, we round speed to 0 to avoid math errors.
 
@@ -30,6 +31,7 @@
 	var/engines_state = 1 //global on/off toggle for all engines
 	var/thrust_limit = 1  //global thrust limit for all engines, 0..1
 	var/halted = 0        //admin halt or other stop.
+	var/skill_needed = SKILL_ADEPT  //piloting skill needed to steer it without going in random dir
 
 /obj/effect/overmap/ship/Initialize()
 	. = ..()
@@ -88,6 +90,10 @@
 	if(!get_acceleration())
 		return INFINITY
 	if(is_still())
+		return 0
+	if(!burn_delay)
+		return 0
+	if(!get_speed())
 		return 0
 	var/num_burns = get_speed()/get_acceleration() + 2 //some padding in case acceleration drops form fuel usage
 	var/burns_per_grid = 1/ (burn_delay * get_speed())
@@ -149,7 +155,7 @@
 		return 0
 	for(var/datum/ship_engine/E in engines)
 		. |= E.can_burn()
-		
+
 //deciseconds to next step
 /obj/effect/overmap/ship/proc/ETA()
 	. = INFINITY

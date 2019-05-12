@@ -41,11 +41,10 @@
 /obj/machinery/organ_printer/Initialize()
 	. = ..()
 	component_parts = list()
-	component_parts += new circuit
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin
-	component_parts += new /obj/item/weapon/stock_parts/manipulator
-	component_parts += new /obj/item/weapon/stock_parts/manipulator
+	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
+	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
+	component_parts += new /obj/item/weapon/stock_parts/manipulator(src)
+	component_parts += new /obj/item/weapon/stock_parts/manipulator(src)
 	RefreshParts()
 
 /obj/machinery/organ_printer/examine(var/mob/user)
@@ -179,7 +178,9 @@
 
 /obj/machinery/organ_printer/flesh/Initialize()
 	. = ..()
-	component_parts += new /obj/item/device/healthanalyzer
+	component_parts += new /obj/item/device/scanner/health
+	component_parts += new /obj/item/device/scanner/health
+	component_parts += new /obj/item/weapon/circuitboard/bioprinter
 
 /obj/machinery/organ_printer/flesh/mapped/Initialize()
 	. = ..()
@@ -288,7 +289,39 @@
 		var/mob/living/carbon/human/H = R.resolve()
 		if(H && istype(H) && H.species)
 			loaded_species = H.species
-			products = loaded_species.bioprint_products
+			products = get_possible_products()
 		return
 	return ..()
+
+/obj/machinery/organ_printer/flesh/proc/get_possible_products()
+	. = list()
+	if(!loaded_species)
+		return
+	var/list/organs = list()
+	for(var/organ in loaded_species.has_organ)
+		organs += loaded_species.has_organ[organ]
+	for(var/organ in loaded_species.has_limbs)
+		organs += loaded_species.has_limbs[organ]["path"]
+	for(var/organ in organs)
+		var/obj/item/organ/O = organ
+		if(check_printable(organ))
+			var/cost = initial(O.print_cost)
+			if(!cost)
+				cost = round(0.75 * initial(O.max_damage))
+			.[initial(O.organ_tag)] = list(O, cost)
+
+/obj/machinery/organ_printer/flesh/proc/check_printable(var/organtype)
+	var/obj/item/organ/O = organtype
+	if(!initial(O.can_be_printed))
+		return FALSE
+	if(initial(O.vital))
+		return FALSE
+	if(initial(O.status) & ORGAN_ROBOTIC)
+		return FALSE
+	if(ispath(organtype, /obj/item/organ/external))
+		var/obj/item/organ/external/E = organtype
+		if(initial(E.limb_flags) & ORGAN_FLAG_HEALS_OVERKILL)
+			return FALSE
+	return TRUE
+
 // END FLESH ORGAN PRINTER

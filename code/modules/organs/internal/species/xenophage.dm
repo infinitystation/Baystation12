@@ -96,6 +96,7 @@
 	phoron_guard = 1
 	innate_flash_protection = FLASH_PROTECTION_MODERATE
 	min_bruised_damage = 20
+	eye_icon = 'icons/mob/human_races/species/xenos/eyes.dmi'
 
 /obj/item/organ/internal/eyes/xeno/update_colour()
 	if(!owner)

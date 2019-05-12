@@ -161,7 +161,8 @@
 	var/datum/gas_mixture/environment = location.return_air()
 
 	//Handle temperature adjustment here.
-	handle_heating_cooling(environment)
+	if(environment.return_pressure() > ONE_ATMOSPHERE*0.05)
+		handle_heating_cooling(environment)
 
 	var/old_level = danger_level
 	var/old_pressurelevel = pressure_dangerlevel
@@ -354,6 +355,11 @@
 			return
 	if(!signal || signal.encryption)
 		return
+	if(alarm_id == signal.data["alarm_id"] && signal.data["command"] == "shutdown")
+		mode = AALARM_MODE_OFF
+		apply_mode()
+		return
+
 	var/id_tag = signal.data["tag"]
 	if (!id_tag)
 		return
@@ -993,12 +999,13 @@ FIRE ALARM
 					if (C.use(5))
 						to_chat(user, "<span class='notice'>You wire \the [src].</span>")
 						buildstage = 2
+						update_icon()
 						return
 					else
 						to_chat(user, "<span class='warning'>You need 5 pieces of cable to wire \the [src].</span>")
 						return
 				else if(isCrowbar(W))
-					to_chat(user, "Prying out the circuit...")
+					to_chat(user, "You start prying out the circuit.")
 					playsound(src.loc, 'sound/items/Crowbar.ogg', 50, 1)
 					if(do_after(user, 30, src))
 						if(!src)
@@ -1140,13 +1147,14 @@ FIRE ALARM
 	..(loc)
 
 	if(dir)
-		src.set_dir(dir)
+		src.set_dir((dir & (NORTH|SOUTH)) ? dir : GLOB.reverse_dir[dir])
 
 	if(istype(frame))
 		buildstage = 0
 		wiresexposed = 1
 		pixel_x = (dir & 3)? 0 : (dir == 4 ? -21 : 21)
 		pixel_y = (dir & 3)? (dir ==1 ? -21 : 21) : 0
+		update_icon()
 		frame.transfer_fingerprints_to(src)
 
 /obj/machinery/firealarm/Initialize()

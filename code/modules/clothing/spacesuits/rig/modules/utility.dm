@@ -33,7 +33,7 @@
 	interface_desc = "Shows an informative health readout when used on a subject."
 	use_power_cost = 200
 	origin_tech = list(TECH_MAGNET = 3, TECH_BIO = 3, TECH_ENGINEERING = 5)
-	device_type = /obj/item/device/healthanalyzer
+	device_type = /obj/item/device/scanner/health
 
 /obj/item/rig_module/device/drill
 	name = "hardsuit drill mount"
@@ -42,8 +42,9 @@
 	interface_name = "mounted drill"
 	interface_desc = "A diamond-tipped industrial drill."
 	suit_overlay_active = "mounted-drill"
-	suit_overlay_inactive = "mounted-drill"
-	use_power_cost = 75
+	suit_overlay_inactive = null
+	use_power_cost = 1800
+	module_cooldown = 0
 	origin_tech = list(TECH_MATERIAL = 6, TECH_POWER = 4, TECH_ENGINEERING = 6)
 	device_type = /obj/item/weapon/pickaxe/diamonddrill
 
@@ -68,9 +69,9 @@
 	interface_desc = "A sonar system for detecting large masses of ore."
 	engage_string = "Begin Scan"
 	usable = 1
-	selectable = 0
+	selectable = 1
 	use_power_cost = 200
-	device_type = /obj/item/weapon/mining_scanner
+	device_type = /obj/item/device/scanner/mining
 	origin_tech = list(TECH_MATERIAL = 4, TECH_MAGNET = 4, TECH_ENGINEERING = 6)
 
 /obj/item/rig_module/device/rcd
@@ -246,6 +247,8 @@
 	usable = 0
 	selectable = 1
 	disruptive = 1
+
+	suit_overlay_active = "mounted-injector"
 
 	interface_name = "mounted chem injector"
 	interface_desc = "Dispenses loaded chemicals via an arm-mounted injector."

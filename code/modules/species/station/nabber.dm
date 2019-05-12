@@ -12,7 +12,7 @@
 
 	antaghud_offset_y = 8
 
-	assisted_langs = list(LANGUAGE_GALCOM, LANGUAGE_LUNAR, LANGUAGE_GUTTER, LANGUAGE_UNATHI, LANGUAGE_SKRELLIAN, LANGUAGE_SOL_COMMON, LANGUAGE_EAL, LANGUAGE_INDEPENDENT, LANGUAGE_SPACER)
+	assisted_langs = list(LANGUAGE_GALCOM, LANGUAGE_GUTTER, LANGUAGE_UNATHI, LANGUAGE_SKRELLIAN, LANGUAGE_HUMAN_EURO, LANGUAGE_EAL, LANGUAGE_HUMAN_RUSSIAN)
 	min_age = 8
 	max_age = 40
 
@@ -96,24 +96,6 @@
 		BP_L_LEG =  list("path" = /obj/item/organ/external/leg/nabber),
 		BP_L_FOOT = list("path" = /obj/item/organ/external/foot/nabber),
 		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right/nabber)
-		)
-
-	bioprint_products = list(
-		BP_EYES =    list(/obj/item/organ/internal/eyes/nabber,         30),
-		BP_TRACH =   list(/obj/item/organ/internal/lungs/nabber,        40),
-		BP_HEART =   list(/obj/item/organ/internal/heart/open,          15),
-		BP_LIVER =   list(/obj/item/organ/internal/liver/nabber,        35),
-		BP_ACETONE = list(/obj/item/organ/internal/acetone,             50),
-		BP_HEAD    = list(/obj/item/organ/external/head/nabber,         90),
-		BP_GROIN    = list(/obj/item/organ/external/groin/nabber,   	90),
-		BP_L_ARM   = list(/obj/item/organ/external/arm/nabber,          75),
-		BP_R_ARM   = list(/obj/item/organ/external/arm/right/nabber,    75),
-		BP_L_LEG   = list(/obj/item/organ/external/leg/nabber,          75),
-		BP_R_LEG   = list(/obj/item/organ/external/leg/right/nabber,    75),
-		BP_L_FOOT   = list(/obj/item/organ/external/foot/nabber,        45),
-		BP_R_FOOT   = list(/obj/item/organ/external/foot/right/nabber,  45),
-		BP_L_HAND   = list(/obj/item/organ/external/hand/nabber,        45),
-		BP_R_HAND   = list(/obj/item/organ/external/hand/right/nabber,  45)
 		)
 
 	base_skin_colours = list(
@@ -390,3 +372,10 @@
 /datum/species/nabber/check_background(var/datum/job/job, var/datum/preferences/prefs)
 	var/decl/cultural_info/culture/nabber/grade = SSculture.get_culture(prefs.cultural_info[TAG_CULTURE])
 	. = istype(grade) ? (job.type in grade.valid_jobs) : ..()
+
+/datum/species/nabber/skills_from_age(age)	//Converts an age into a skill point allocation modifier. Can be used to give skill point bonuses/penalities not depending on job.
+	switch(age)
+		if(0 to 18) 	. = 8
+		if(19 to 27) 	. = 2
+		if(28 to 40)	. = -2
+		else			. = -4

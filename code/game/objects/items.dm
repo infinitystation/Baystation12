@@ -499,11 +499,11 @@ var/list/global/slot_flags_enumeration = list(
 		if(default_parry_check(user, attacker, damage_source) && prob(parry_chance))
 			user.visible_message("<span class='danger'>\The [user] parries [attack_text] with \the [src]!</span>")
 			playsound(user.loc, 'sound/weapons/punchmiss.ogg', 50, 1)
-			on_parry()
+			on_parry(damage_source)
 			return 1
 	return 0
 
-/obj/item/proc/on_parry()
+/obj/item/proc/on_parry(damage_source)
 	return
 
 /obj/item/proc/get_parry_chance(mob/user)
