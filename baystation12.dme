@@ -3135,6 +3135,7 @@
 #include "infinity\code\game\objects\items\customs\wd_sack.dm"
 #include "infinity\code\game\objects\items\customs\wpda.dm"
 #include "infinity\code\game\objects\items\customs\wpda_grayson.dm"
+#include "infinity\code\game\objects\items\customs\x_07.dm"
 #include "infinity\code\game\objects\items\customs\zpci_uniform.dm"
 #include "infinity\code\game\objects\items\weapons\rpd.dm"
 #include "infinity\code\game\objects\items\weapons\tools.dm"
