@@ -13,6 +13,7 @@
 	max_uses = 7
 
 	spells = list(/spell/targeted/heal_target/major = 				1,
+				/obj/structure/closet/wizard/armor = 				3,
 				/spell/targeted/heal_target/area = 					1,
 				/spell/targeted/heal_target/sacrifice = 			1,
 				/spell/targeted/genetic/blind = 					1,

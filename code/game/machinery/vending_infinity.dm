@@ -186,7 +186,7 @@
 /obj/machinery/vending/armoryvend/energy
 	name = "WardenTech Energy"
 	desc = "A weapon vendor. It stores energy weapons."
-	req_access = list(access_armory)
+	req_access = list(access_security)
 	icon = 'icons/obj/infinity_vend.dmi'
 	density = 0
 	icon_state = "thundervendor"
@@ -198,7 +198,7 @@
 /obj/machinery/vending/armoryvend/laser
 	name = "WardenTech Laser"
 	desc = "A weapon vendor. It stores laser weapons."
-	req_access = list(access_armory)
+	req_access = list(access_security)
 	icon = 'icons/obj/infinity_vend.dmi'
 	density = 0
 	icon_state = "thundervendor"

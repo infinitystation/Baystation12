@@ -14,6 +14,7 @@
 	max_uses = 11
 
 	spells = list(/spell/targeted/ethereal_jaunt = 				1,
+				/obj/structure/closet/wizard/armor = 			3,
 				/spell/aoe_turf/blink = 						1,
 				/spell/area_teleport = 							1,
 				/spell/portal_teleport = 						1,

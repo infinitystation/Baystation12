@@ -13,6 +13,7 @@
 	max_uses = 6
 
 	spells = list(/spell/targeted/projectile/magic_missile = 			1,
+							/obj/structure/closet/wizard/armor = 				1,
 							/spell/targeted/projectile/dumbfire/fireball = 		1,
 							/spell/aoe_turf/disable_tech = 						1,
 							/spell/aoe_turf/smoke = 							1,
