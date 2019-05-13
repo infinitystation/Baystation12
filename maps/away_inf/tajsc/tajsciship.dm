@@ -4,6 +4,7 @@
 #include "kalash.dm"
 #include "posters.dm"
 #include "tajsciship-1.dmm"
+#include "koshaciy_korm.dm"
 
 /datum/map_template/ruin/away_site/tajsciship
 	name = "CCA NSV Ir'Shira-13"

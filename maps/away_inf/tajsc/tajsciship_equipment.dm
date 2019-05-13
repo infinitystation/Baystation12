@@ -178,3 +178,9 @@
 	else if (user.a_intent == I_HURT)
 		user.visible_message("<span class='warning'>[user] hit \the [src] red button, signalling an ALARM!!!</span>")
 		playsound(user.loc, 'maps/away_inf/tajsc/tajalarm.ogg', 60, extrarange=100)
+
+/obj/item/clothing/accessory/inf_pin/ccapin
+	name = "CCA patch"
+	desc = "A small patch, decorated with a CCA symbol pattern embroidered with titanium threads. It looks minimalistic, beautiful and strict. "
+	icon = 'maps/away_inf/tajsc/tajsciship.dmi'
+	icon_state = "ccapatch"
