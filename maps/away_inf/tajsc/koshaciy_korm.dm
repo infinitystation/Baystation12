@@ -13,7 +13,7 @@
 	taste_description = "frightening sourness with spices"
 	color = "#E486E3"
 	glass_name = "Selm juice"
-	glass_desc = " Juice of one of the Russian plants, which is taken to drink chilled. "
+	glass_desc = " Juice of one of the Ahdomai plants, which is taken to drink chilled. "
 
 /datum/reagent/drink/tajaran/milk
 	name = "Milk"
