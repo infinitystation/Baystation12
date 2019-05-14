@@ -85,21 +85,30 @@
 			stat("Game Mode:", "[SSticker.mode ? SSticker.mode.name : SSticker.master_mode] ([SSticker.master_mode])")
 		else
 			stat("Game Mode:", PUBLIC_GAME_MODE)
-		var/extra_antags = list2params(additional_antag_types)
-		stat("Added Antagonists:", extra_antags ? extra_antags : "None")
 
+		var/extra_antags = list2params(additional_antag_types)
+		if(extra_antags)
+			stat("Added Antagonists:", extra_antags)
 		if(GAME_STATE <= RUNLEVEL_LOBBY)
 			stat("Time To Start:", "[round(SSticker.pregame_timeleft/10)][SSticker.round_progressing ? "" : " (DELAYED)"]")
 			stat("Players: [totalPlayers]", "Players Ready: [totalPlayersReady]")
 			totalPlayers = 0
 			totalPlayersReady = 0
+			var/we_are_admin = is_admin(src)
 			for(var/mob/new_player/player in GLOB.player_list)
+				if(player.is_stealthed() && !we_are_admin)
+					continue
 				var/highjob
 				if(player.client && player.client.prefs && player.client.prefs.job_high)
 					highjob = " as [player.client.prefs.job_high]"
 				stat("[player.key]", (player.ready)?("(Playing[highjob])"):(null))
 				totalPlayers++
 				if(player.ready)totalPlayersReady++
+
+		if(GAME_STATE >= RUNLEVEL_GAME)
+			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
+			var/decl/security_level/SL = security_state.current_security_level
+			stat("Security level:", SL.name)
 
 /mob/new_player/Topic(href, href_list[])
 	if(!client)	return 0
@@ -139,7 +148,7 @@
 				to_chat(src, "<span class='warning'>Sorry, you should wait [config.observe_delay] minutes from the start of the round to be observer. See \"Round Duration\" timer in Status tab to check how much time has passed from the round start.</span>")
 				return
 
-		if(!config.respawn_delay || client.holder || alert(src,"Are you sure you wish to observe? You will have to wait [config.respawn_delay] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
+		if(!config.respawn_delay || client.holder || alert(src,"Are you sure you wish to observe? You will have to wait [OBSERV_SPAWN_DELAY] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
 			if(!client)
 				return 1
 			if(!config.observers_allowed && !check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
