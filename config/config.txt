@@ -370,7 +370,10 @@ NINJAS_ALLOWED
 #DISABLE_RESPAWN
 
 ## Respawn delay in minutes before one may respawn as a crew member.
-RESPAWN_DELAY 15
+#RESPAWN_DELAY 30
+
+## Round-start delay in minutes before you can join the round as a ghost.
+#OBSERVE_DELAY 15
 
 ## Uncomment to prevent players in lobby from joining the round as a ghost.
 #DISABLE_OBSERVERS
