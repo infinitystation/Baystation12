@@ -61,7 +61,7 @@
 /proc/to_debug_listeners(text, prefix = "DEBUG")
 	for(var/client/C in GLOB.admins)
 		if(C.get_preference_value(/datum/client_preference/staff/show_debug_logs) == GLOB.PREF_SHOW)
-			to_chat(C, "[prefix]: [text]")
+			to_chat(C, "[prefix ? "[prefix]: " : ""][text]")
 
 /proc/log_game(text)
 	if (config.log_game)
@@ -231,5 +231,5 @@
 	return d.get_log_info_line()
 
 /proc/report_progress(var/progress_message)
-	admin_notice("<span class='boldannounce'>[progress_message]</span>", R_DEBUG)
+	to_debug_listeners("<span class='boldannounce'>[progress_message]</span>", 0)
 	to_world_log(progress_message)
