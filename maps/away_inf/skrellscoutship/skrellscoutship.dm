@@ -47,7 +47,7 @@
 /obj/item/weapon/card/id/skrellscoutship
 	color = COLOR_GRAY40
 	detail_color = "#7331c4"
-	access = list(access_skrellscoutship, access_external_airlocks)
+	access = list(access_skrellscoutship)
 
 /datum/job/submap/skrellscoutship_crew
 	title = "Qrri-Zuumqix"
