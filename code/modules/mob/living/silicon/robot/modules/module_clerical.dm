@@ -23,7 +23,8 @@
 		"Default" = "Service2",
 		"Drone - Service" = "drone-service",
 		"Drone - Hydro" = "drone-hydro",
-		"Doot" = "eyebot-standard"
+		"Doot" = "eyebot-standard",
+		"Ver 06" = "wer6-Service"
 	)
 	equipment = list(
 		/obj/item/device/flash,
@@ -80,7 +81,8 @@
 		"Bro" =      "Brobot",
 		"Rich" =     "maximillion",
 		"Default" =  "Service2",
-		"Doot" =     "eyebot-standard"
+		"Doot" =     "eyebot-standard",
+		"Ver 06" = "wer6-Clerical"
 	)
 	equipment = list(
 		/obj/item/device/flash,

@@ -24,7 +24,8 @@
 		"Advanced Droid" = "droid-medical",
 		"Needles" = "medicalrobot",
 		"Doot" = "eyebot-medical",
-		"Drone" = "drone-surgery"
+		"Drone" = "drone-surgery",
+		"Ver 06" = "wer6-Surgeon"
 		)
 	equipment = list(
 		/obj/item/device/flash,
@@ -92,7 +93,8 @@
 		"Needles" = "medicalrobot",
 		"Drone - Medical" = "drone-medical",
 		"Drone - Chemistry" = "drone-chemistry",
-		"Doot" = "eyebot-medical"
+		"Doot" = "eyebot-medical",
+		"Ver 06" = "wer6-Crisis"
 	)
 	equipment = list(
 		/obj/item/weapon/crowbar,
