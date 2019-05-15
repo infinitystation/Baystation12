@@ -254,5 +254,5 @@
 /datum/ai_icon/atlantiscze
 	name = "Atlantiscze"
 	alive_icon = "atlantiscze-ai"
-	alive_light = "#009C27"
+	alive_light = "#009c27"
 	dead_icon = "atlantiscze-ai-crash"
