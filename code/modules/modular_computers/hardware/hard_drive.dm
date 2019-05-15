@@ -83,9 +83,10 @@
 
 	var/datum/computer_file/data/config/file_README = new()
 	file_README.filename = "TNet_CONFIG_README"
-	file_README.stored_data += "\[large\]\[b\]DO NOT DELETE FILE TNet_CONFIG IF YOU DO NOT WANT TO PUT YOUR DEVICE AT RISK \[/b\]\[/large\]\[br\]"
+	file_README.stored_data += "\[large\]\[b\]DO NOT DELETE OR RENAME FILE TNet_CONFIG IF YOU DO NOT WANT TO PUT YOUR DEVICE AT RISK \[/b\]\[/large\]\[br\]"
 	file_README.stored_data += "Format login and password in TNet_CONFIG: \[LOGIN\] : \[PASSWORD\].\[br\]"
-	file_README.stored_data += "Login must contain only 4 characters, password may be anything."
+	file_README.stored_data += "Login must contain only 4 characters, password may be anything.\[br\]"
+	file_README.stored_data += "If pword and login don't work, then delete file \"TNet_CONFIG\" and enter in terminal command \"telnet\" without arguments."
 	store_file(file_README)
 
 // Use this proc to remove file from the drive. Returns 1 on success and 0 on failure. Contains necessary sanity checks.
