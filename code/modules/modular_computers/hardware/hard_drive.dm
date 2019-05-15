@@ -78,7 +78,7 @@
 
 	var/datum/computer_file/data/config/file = new()
 	file.filename = "TNet_CONFIG"
-	file.stored_data += "ROOT : ROOT" //LOGIN : PASSWORD
+	file.stored_data += "ROOT : [round(rand(1000, 9999))]" //LOGIN : PASSWORD
 	store_file(file)
 
 	var/datum/computer_file/data/config/file_README = new()

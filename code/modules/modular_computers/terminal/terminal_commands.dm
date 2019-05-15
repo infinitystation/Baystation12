@@ -386,7 +386,7 @@ Subtypes
 					file = new()
 					file.filename = "TNet_CONFIG"
 					CT.hard_drive.store_file(file) // May fail, which is fine with us.
-					file.stored_data += "ROOT : ROOT" //LOGIN : PASSWORD
+					file.stored_data += "ROOT : [round(rand(1000, 9999))]" //LOGIN : PASSWORD
 				var/datum/computer_file/data/text/file_README = CT.hard_drive.find_file_by_name("TNet_CONFIG_README")
 				if(!istype(file_README))
 					file_README = new()
