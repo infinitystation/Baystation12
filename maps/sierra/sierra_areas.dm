@@ -134,6 +134,7 @@
 /area/maintenance/bluespace
 	name = "Bluespace Drive"
 	icon_state = "engineering"
+	req_access = list(list(access_engine_equip, access_heads), access_engine, access_maint_tunnels)
 
 /area/crew_quarters/safe_room/seconddeck
 	name = "Second Deck Safe Room"
@@ -145,12 +146,14 @@
 /area/crew_quarters/commissary
 	name = "Commissary"
 	icon_state = "crew_quarters"
+	req_access = list(access_commissary)
 
 //Abandoned compartments
 
 /area/maintenance/abandoned_compartment
 	name = "Unknown Compartment"
 	turf_initializer = /decl/turf_initializer/maintenance/heavy
+	icon_state = "cafeteria"
 
 /area/maintenance/abandoned_hydroponics
 	name = "Abandoned Hydroponics"
@@ -190,10 +193,11 @@
 	name = "First Deck Port Maintenance"
 	icon_state = "pmaint"
 
+/* not found on Sierra
 /area/teleporter/firstdeck
 	name = "First Deck Teleporter"
 	icon_state = "teleporter"
-
+*/
 /area/hallway/primary/firstdeck/fore
 	name = "First Deck Fore Hallway"
 	icon_state = "hallF"
@@ -235,47 +239,58 @@
 /area/shuttle/escape_pod6/station
 	name = "Escape Pod One"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod7/station
 	name = "Escape Pod Two"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod8/station
 	name = "Escape Pod Three"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod9/station
 	name = "Escape Pod Four"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod10/station
 	name = "Escape Pod Five"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 //sierra small pods
 /area/shuttle/escape_pod12/station
 	name = "Escape Pod Seven"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod13/station
 	name = "Escape Pod Eight"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod14/station
 	name = "Escape Pod Nine"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod15/station
 	name = "Escape Pod Ten"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod16/station
 	name = "Escape Pod Eleven"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 /area/shuttle/escape_pod17/station
 	name = "Escape Pod Twelve"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	icon_state = "exit"
 
 //Charon
 
@@ -284,9 +299,11 @@
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/plating
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+	req_access = list(access_expedition_shuttle)
 
 /area/exploration_shuttle/cockpit
 	name = "Charon - Cockpit"
+	req_access = list(access_expedition_shuttle_helm)
 /area/exploration_shuttle/atmos
 	name = "Charon - Atmos Compartment"
 /area/exploration_shuttle/power
@@ -306,6 +323,7 @@
 	requires_power = 1
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+	req_access = list(access_guppy)
 
 
 //Petrov
@@ -315,6 +333,7 @@
 	requires_power = 1
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+	req_access = list(access_petrov)
 
 /area/shuttle/petrov/ship
 	icon_state = "shuttlered"
@@ -336,6 +355,7 @@
 	requires_power = 0
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_ION_SHIELDED
+	req_access = list(access_maint_tunnels)
 
 /area/turbolift/start
 	name = "Turbolift Start"
@@ -359,6 +379,7 @@
 	requires_power = 0
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	req_access = list(access_syndicate)
 
 /area/ninja_dojo/dojo
 	name = "Clan Dojo"
@@ -377,6 +398,7 @@
 	requires_power = 1
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	req_access = list(access_merchant)
 
 //Merc
 
@@ -386,12 +408,14 @@
 	requires_power = 0
 	dynamic_lighting = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	req_access = list(access_syndicate)
 
 /area/syndicate_station/start
 	name = "Mercenary Forward Operating Base"
 	icon_state = "yellow"
 	requires_power = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	req_access = list(access_syndicate)
 
 //Skipjack
 
@@ -400,6 +424,7 @@
 	icon_state = "yellow"
 	requires_power = 0
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	req_access = list(access_syndicate)
 
 //NT rescue shuttle
 
@@ -409,6 +434,7 @@
 	requires_power = 0
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	req_access = list(access_cent_specops)
 
 /area/rescue_base/base
 	name = "Barracks"
@@ -441,54 +467,65 @@
 	base_turf = /turf/simulated/floor
 
 // Command
-/area/command/conference
-	name = "Briefing Room"
-	icon_state = "head_quarters"
-	sound_env = MEDIUM_SOFTFLOOR
 
 /area/command/exploration_leader
 	name = "Exploration Leader's Office"
-	icon_state = "head_quarters"
+	icon_state = "heads_sea"
+	req_access = list(access_el)
 
 /area/command/bsa
 	name = "\improper Bluespace Artillery"
 	icon_state = "firingrange"
+	req_access = list(access_gun)
 
 /area/crew_quarters/heads
-	icon_state = "head_quarters"
+	icon_state = "heads"
 
 /area/crew_quarters/heads/cobed
 	name = "Command - Captain's Quarters"
 	sound_env = MEDIUM_SOFTFLOOR
+	icon_state = "captain"
+	req_access = list(access_captain)
 
 /area/crew_quarters/heads/office/captain
+	icon_state = "heads_cap"
 	name = "Command - Captain's Office"
 	sound_env = MEDIUM_SOFTFLOOR
+	req_access = list(access_captain)
 
 /area/crew_quarters/heads/office/hop
+	icon_state = "heads_hop"
 	name = "Command - HoP's Office"
+	req_access = list(access_hop)
 
 /area/crew_quarters/heads/office/rd
+	icon_state = "heads_rd"
 	name = "Command - RD's Office"
+	req_access = list(access_rd)
 
 /area/crew_quarters/heads/office/cmo
+	icon_state = "heads_cmo"
 	name = "Command - CMO's Office"
+	req_access = list(access_cmo)
 
 /area/crew_quarters/heads/office/ce
+	icon_state = "heads_ce"
 	name = "Command - CE's Office"
+	req_access = list(access_ce)
 
 /area/crew_quarters/heads/office/hos
+	icon_state = "heads_hos"
 	name = "Command - HoS' Office"
+	req_access = list(access_hos)
 
 /area/crew_quarters/heads/office/iaa
+	icon_state = "heads_cl"
 	name = "Command - IAA's Office"
+	req_access = list(access_iaa)
 
 // Engineering
-
-/area/engineering/atmos/aux
-	name = "Auxiliary Atmospherics"
-	icon_state = "atmos"
-	sound_env = SMALL_ENCLOSED
+/area/engineering
+	req_access = list(access_engine)
 
 /area/engineering/auxpower
 	name = "Auxiliary Power Storage"
@@ -503,33 +540,18 @@
 	name = "Engineering Hard Storage"
 	icon_state = "engineering_storage"
 	sound_env = SMALL_ENCLOSED
-
-/area/engineering/hardstorage/lower
-	name = "Lower Engineering Hard Storage"
-	icon_state = "engineering_storage"
-
-/area/engineering/hardstorage/aux
-	name = "Auxiliary Engineering Hard Storage"
-	icon_state = "engineering_storage"
-
+/*
 /area/engineering/gravity_gen
 	name = "Gravity Generator"
 	icon_state = "engine"
 	sound_env = SMALL_ENCLOSED
-
+*/
 //Vacant Areas
 /area/vacant
 	name = "Vacant Area"
 	icon_state = "construction"
 	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/vacant/cabin
-	name = "Vacant Cabins"
-	icon_state = "crew_quarters"
-
-/area/vacant/chapel
-	name = "Unused Chapel"
-	icon_state = "chapel"
+	req_access = list(access_construction)
 
 /area/vacant/infirmary
 	name = "Auxiliary Infirmary"
@@ -539,6 +561,23 @@
 	name = "Auxiliary Monitoring Room"
 	icon_state = "engine_monitoring"
 
+/area/vacant/cargo
+	name = "Requisitions Office"
+	icon_state = "quart"
+
+/area/vacant/mess
+	name = "Officer's Mess"
+	icon_state = "bar"
+
+/* not found on Sierra
+/area/vacant/cabin
+	name = "Vacant Cabins"
+	icon_state = "crew_quarters"
+
+/area/vacant/chapel
+	name = "Unused Chapel"
+	icon_state = "chapel"
+
 /area/vacant/prototype/control
 	name = "Prototype Fusion Reactor Control Room"
 	icon_state = "engine_monitoring"
@@ -547,15 +586,6 @@
 /area/vacant/prototype/engine
 	name = "Prototype Fusion Reactor Chamber"
 	icon_state = "firingrange"
-
-
-/area/vacant/cargo
-	name = "Requisitions Office"
-	icon_state = "quart"
-
-/area/vacant/mess
-	name = "Officer's Mess"
-	icon_state = "bar"
 
 /area/vacant/missile
 	name = "Third Deck Port Missile Pod"
@@ -568,56 +598,25 @@
 /area/vacant/office
 	name = "Unused Office"
 	icon_state = "conference"
-
+*/
 /area/vacant/gambling
 	name = "Gambling Room"
 	icon_state = "restrooms"
 	sound_env = MEDIUM_SOFTFLOOR
 
-
-// Storage
-/area/storage/auxillary/port
-	name = "Port Auxillary Storage"
-	icon_state = "auxstorage"
-
-/area/storage/auxillary/starboard
-	name = "Starboard Auxillary Storage"
-	icon_state = "auxstorage"
-
-/area/storage/cargo
-	name = "Cargo Storage"
-	icon_state = "quartstorage"
-	sound_env = SMALL_ENCLOSED
-
-/area/storage/expedition
-	name = "Expedition Storage"
-	icon_state = "storage"
-	sound_env = SMALL_ENCLOSED
-
-/area/storage/medical
-	name = "Medical Storage"
-	icon_state = "medbay4"
-	sound_env = SMALL_ENCLOSED
-
-/area/storage/research
-	name = "Research Storage"
-	icon_state = "toxstorage"
-	sound_env = SMALL_ENCLOSED
-
-/area/storage/bridge
-	name = "Bridge Storage"
-	icon_state = "bridge"
-	sound_env = SMALL_ENCLOSED
-
 // Supply
+/area/quartermaster
+	req_access = list(access_cargo)
 
 /area/quartermaster/deckofficer
 	name = "Quartermaster"
 	icon_state = "quart"
+	req_access = list(access_qm)
 
 /area/quartermaster/expedition
 	name = "Expedition Preparation"
 	icon_state = "mining"
+	req_access = list(list(access_mining, access_xenoarch))
 
 /area/quartermaster/expedition/eva
 	name = "Expedition EVA"
@@ -630,6 +629,7 @@
 /area/quartermaster/exploration
 	name = "Exploration Equipment"
 	icon_state = "exploration"
+	req_access = list(access_explorer)
 
 /area/quartermaster/shuttlefuel
 	name = "Shuttle Fuel Bay"
@@ -640,6 +640,7 @@
 	name = "Hangar Deck"
 	icon_state = "hangar"
 	sound_env = LARGE_ENCLOSED
+	req_access = list(access_hangar)
 
 /area/quartermaster/unused
 	name = "Ready Room"
@@ -650,10 +651,12 @@
 	name = "Canister Storage"
 	icon_state = "toxstorage"
 	sound_env = SMALL_ENCLOSED
+	req_access = list(access_tox_storage)
 
 /area/rnd/development
 	name = "Fabricator Lab"
 	icon_state = "devlab"
+	req_access = list(access_tox)
 
 /area/rnd/entry
 	name = "Research and Development Access"
@@ -691,21 +694,25 @@
 	name = "Xenobiology Storage"
 	icon_state = "xeno_lab"
 
+/* not found on Sierra
 /area/rnd/checkpoint
 	name = "Research Security Checkpoint"
 	icon_state = "checkpoint1"
-
+	req_access = list(access_security)
+*/
 /area/rnd/blanks
 	name = "Aux Custodial Supplies"
 	icon_state = "decontamination"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
+	req_access = list(access_rd)
 
 // Crew areas
 /area/crew_quarters/bar
 	name = "Bar"
 	icon_state = "bar"
 	sound_env = LARGE_SOFTFLOOR
+	req_access = list(access_bar)
 
 /area/crew_quarters/cryolocker
 	name = "Cryogenic Storage Wardrobe"
@@ -714,9 +721,6 @@
 /area/crew_quarters/head
 	name = "Head"
 	icon_state = "toilet"
-
-/area/crew_quarters/head/aux
-	name = "Auxiliary Head"
 
 /area/crew_quarters/gym
 	name = "Gym"
@@ -729,8 +733,9 @@
 /area/crew_quarters/galley
 	name = "Galley"
 	icon_state = "kitchen"
+	req_access = list(access_kitchen)
 
-/area/crew_quarters/galleybackroom
+/area/crew_quarters/galley/backroom
 	name = "Galley Cold Storage"
 	icon_state = "kitchen"
 
@@ -750,16 +755,6 @@
 	icon_state = "Sleep"
 	sound_env = SMALL_SOFTFLOOR
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
-
-/area/crew_quarters/sleep/cryo/aux
-	name = "Auxiliary Cryogenic Storage"
-	icon_state = "Sleep"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
-
-/area/crew_quarters/diplomat
-	name = "Diplomatic Quarters"
-	icon_state = "Sleep"
-	sound_env = SMALL_SOFTFLOOR
 
 /area/holocontrol
 	name = "Holodeck Control"
@@ -791,39 +786,35 @@
 /area/security/sierra/sergeant
 	name = "Security - Warden"
 	icon_state = "brig"
+	req_access = list(access_warden)
 
 /area/security/sierra/armory
 	name = "Security - Armory"
 	icon_state = "armory"
+	req_access = list(access_armory)
 
 /area/security/sierra/armory/lobby
 	name = "Security - Armory - Lobby"
 	icon_state = "armory"
 
-/area/security/sierra/safe_room
-	name = "Security - Safe Room"
-	icon_state = "security"
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
-
 /area/security/sierra/suits
 	name = "Security - Suits Storage"
 	icon_state = "security"
+	req_access = list(access_seceva)
 
 /area/security/sierra/breakroom
 	name = "Security - Break Room"
 	icon_state = "security"
 
-/area/security/sierra/hos
-	name = "Security - Head Of Security"
+/area/security/sierra/hosbed
+	name = "Security - HoS - Bedroom"
 	icon_state = "sec_hos"
-
-/area/security/sierra/hos/bedroom
-	name = "Security - HOS - Bedroom"
-	icon_state = "sec_hos"
+	req_access = list(access_hos)
 
 /area/security/sierra/forensic
 	name = "Security - Forensic"
 	icon_state = "detective"
+	req_access = list(access_forensics_lockers)
 
 /area/security/sierra/forensic/lab
 	name = "Security - Forensic - Laboratory"
@@ -832,37 +823,32 @@
 /area/security/sierra/equipment
 	name = "Security - Equipment storage"
 	icon_state = "security"
+	req_access = list(access_security)
 
 /area/security/sierra/interrogation
 	name = "Security - Interrogation"
 	icon_state = "detective"
+	req_access = list(list(access_forensics_lockers, access_security))
 
 /area/security/sierra/evidence
 	name = "Security - Evidence Storage"
 	icon_state = "detective"
+	req_access = list(list(access_forensics_lockers, access_security))
 
 /area/security/range
 	name = "Security - Firing Range"
 	icon_state = "firingrange"
+	req_access = list()
 
 /area/security/nuke_storage
 	name = "Vault"
 	icon_state = "nuke_storage"
+	req_access = list(access_heads_vault)
 
 /area/security/sierra/dockcheck
 	name = "Security - Fore Docks Checkpoint"
 	icon_state = "checkpoint1"
-
-// AI
-/area/turret_protected/ai_foyer
-	name = "AI Chamber Foyer"
-	icon_state = "ai_foyer"
-	sound_env = SMALL_ENCLOSED
-
-/area/turret_protected/ai_outer_chamber
-	name = "Outer AI Chamber"
-	icon_state = "ai_chamber"
-	sound_env = SMALL_ENCLOSED
+	req_access = list(list(access_security, access_forensics_lockers))
 
 // Medbay
 
@@ -898,24 +884,28 @@
 	name = "Mental Health"
 	icon_state = "medbay3"
 	ambience = list('sound/ambience/signal.ogg')
+	req_access = list(access_psychiatrist)
 
 /area/medical/coffins
 	name = "Coffins Storage"
 	icon_state = "patients" //:^)
 	ambience = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg','sound/music/main.ogg')
 	sound_env = SMALL_ENCLOSED
+	req_access = list(access_chapel_office)
 
 // Chapel
 /area/chapel/crematorium
 	name = "Crematorium"
 	icon_state = "chapel"
 	sound_env = SMALL_ENCLOSED
+	req_access = list(access_crematorium)
 
 // Shield Rooms
 /area/shield
 	name = "Shield Generator"
 	icon_state = "engineering"
 	sound_env = SMALL_ENCLOSED
+	req_access = list(access_engine, access_atmospherics)
 
 /area/shield/firstdeck
 	name = "First Deck Shield Generator"
@@ -937,9 +927,11 @@
 	name = "Teleporter"
 	icon_state = "teleporter"
 	sound_env = SMALL_ENCLOSED
+	req_access = list(access_teleporter)
 
 /area/thruster
 	icon_state = "thruster"
+	req_access = list(access_engine)
 
 /area/thruster/d1port
 	name = "First Deck Port Nacelle"
@@ -953,20 +945,23 @@
 /area/thruster/d3starboard
 	name = "Third Deck Starboard Nacelle"
 
+/* not found on Sierra
 /area/engineering/fuelbay
 	name = "Fuel Bay"
 	icon_state = "engineering"
 	sound_env = SMALL_ENCLOSED
-
+*/
 // Command
 
 /area/bridge
 	name = "Bridge"
 	icon_state = "bridge"
+	req_access = list(access_bridge)
 
 /area/bridge/canteen
 	name = "Command Canteen"
 	icon_state = "bar"
+	req_access = list(list(access_bridge, access_kitchen))
 
 /area/bridge/meeting_room
 	name = "Meeting Room"
@@ -976,6 +971,7 @@
 
 /area/bridge/lobby
 	name = "Bridge Lobby"
+	req_access = list()
 
 /area/crew_quarters/heads
 	icon_state = "head_quarters"
@@ -984,6 +980,7 @@
 	name = "Substation"
 	icon_state = "substation"
 	sound_env = SMALL_ENCLOSED
+	req_access = list(access_engine)
 
 /area/maintenance/exterior
 	name = "Exterior Reinforcements"
@@ -994,12 +991,15 @@
 	sound_env = SPACE
 
 // CentCom
+/area/centcom
+	req_access = list(access_cent_general)
 
 /area/centcom/control
 	name = "Centcom Control"
 
 /area/centcom/creed
 	name = "Creed's Office"
+	req_access = list(access_cent_creed)
 
 /area/centcom/evac
 	name = "Centcom Emergency Shuttle"
@@ -1009,6 +1009,7 @@
 
 /area/centcom/living
 	name = "Centcom Living Quarters"
+	req_access = list(access_cent_living)
 
 /area/centcom/suppy
 	name = "Centcom Supply Shuttle"
@@ -1021,6 +1022,7 @@
 	name = "Solar Maintenance - Port"
 	icon_state = "SolarcontrolP"
 	sound_env = SMALL_ENCLOSED
+	req_access = list(access_engine)
 
 /area/maintenance/solar/starboard
 	name = "Solar Maintenance - Starboard"
@@ -1044,22 +1046,16 @@
 
 // Maintenance
 
-/area/maintenance/disposal
-	name = "Waste Disposal"
-	icon_state = "disposal"
-
-/area/maintenance/incinerator
-	name = "Incinerator"
-	icon_state = "disposal"
-
 /area/maintenance/waterstore
 	name = "\improper Cistern"
 	icon_state = "disposal"
+	req_access = list(list(access_cargo, access_engine, access_el))
 
 /area/maintenance/compactor
 	name = "Compactor"
 	icon_state = "disposal"
 	sound_env = STANDARD_STATION
+	req_access = list(list(access_cargo, access_maint_tunnels))
 
 // Storage
 
@@ -1070,10 +1066,26 @@
 /area/storage/tech
 	name = "Technical Storage"
 	icon_state = "storage"
+	req_access = list(access_tech_storage)
 
+/* not found on Sierra
 /area/storage/tools
 	name = "Auxiliary Tool Storage"
 	icon_state = "auxstorage"
+
+/area/storage/auxillary/starboard
+	name = "Starboard Auxillary Storage"
+	icon_state = "auxstorage"
+*/
+/area/storage/auxillary/port
+	name = "Port Auxillary Storage"
+	icon_state = "auxstorage"
+	req_access = list(access_cargo)
+
+/area/storage/bridge
+	name = "Bridge Storage"
+	icon_state = "bridge"
+	sound_env = SMALL_ENCLOSED
 
 // Holodecks
 
@@ -1156,26 +1168,23 @@
 
 // Engineering
 
-/area/engineering/atmos/storage
-	name = "Atmospherics Storage"
-	icon_state = "atmos_storage"
-	sound_env = SMALL_ENCLOSED
-
 /area/engineering/engine_room
 	name = "Engine Room"
 	icon_state = "engine"
 	sound_env = LARGE_ENCLOSED
 	area_flags = AREA_FLAG_ION_SHIELDED
-
+	req_access = list(access_engine_equip)
 
 /area/engineering/drone_fabrication
 	name = "Engineering Drone Fabrication"
 	icon_state = "drone_fab"
 	sound_env = SMALL_ENCLOSED
+	req_access = list(access_ai_upload)
 
 /area/engineering/engine_eva
 	name = "Engine EVA"
 	icon_state = "engine_eva"
+	req_access = list(list(access_eva, access_external_airlocks), access_engine)
 
 /area/engineering/engine_monitoring
 	name = "Engine Monitoring Room"
@@ -1191,36 +1200,36 @@
 	icon_state = "engine_monitoring"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/* not found on Sierra
 /area/engineering/foyer
 	name = "Engineering Foyer"
 	icon_state = "engineering_foyer"
-
+*/
 /area/engineering/locker_room
 	name = "Engineering Locker Room"
 	icon_state = "engineering_locker"
-
-/area/engineering/storage
-	name = "Engineering Storage"
-	icon_state = "engineering_storage"
 
 /area/engineering/atmos
  	name = "Atmospherics"
  	icon_state = "atmos"
  	sound_env = LARGE_ENCLOSED
+ 	req_access = list(access_atmospherics)
 
 // Medical
 /area/medical/chemistry
 	name = "Chemistry"
 	icon_state = "chem"
-
+	req_access = list(access_chemistry)
+/* not found on Sierra
 /area/medical/exam_room
 	name = "Exam Room"
 	icon_state = "exam_room"
-
+*/
 /area/medical/morgue
 	name = "Morgue"
 	icon_state = "morgue"
 	ambience = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg','sound/music/main.ogg')
+	req_access = list(access_morgue)
 
 /area/medical/sleeper
 	name = "Emergency Treatment Center"
@@ -1229,12 +1238,17 @@
 /area/medical/surgery
 	name = "Operating Theatre"
 	icon_state = "surgery"
-
+	req_access = list(access_surgery)
+/*
 /area/medical/autopsy
 	name = "Autopsy"
 	icon_state = "autopsy"
-
+	req_access = list(list(access_morgue, access_forensics_lockers))
+*/
 // Research
+/area/assembly
+	req_access = list(access_robotics)
+
 /area/assembly/chargebay
 	name = "Mech Bay"
 	icon_state = "mechbay"
@@ -1243,21 +1257,25 @@
 	name = "Robotics Lab"
 	icon_state = "robotics"
 
+/* not found on Sierra
 /area/assembly/robotics_surgery
 	name = "Robotics Operating Theatre"
 	icon_state = "robotics"
-
+*/
 /area/rnd/misc_lab
 	name = "Miscellaneous Research"
 	icon_state = "misclab"
+	req_access = list(access_research)
 
 /area/rnd/research
 	name = "Research and Development"
 	icon_state = "research"
+	req_access = list(access_research)
 
 /area/rnd/storage
 	name = "Research Storage"
 	icon_state = "toxstorage"
+	req_access = list(access_tox_storage)
 
 /area/alien
 	name = "Alien base"
@@ -1273,22 +1291,29 @@
 	name = "Admin Prison"
 	dynamic_lighting = 0
 	requires_power = 0
+	icon_state = "blue-red-d"
 
 
 // Shuttles
 /area/shuttle/administration/centcom
 	name = "Administration Shuttle"
 	icon_state = "shuttlered"
+	req_access = list(access_cent_general)
 
 /area/supply/dock
 	name = "Supply Shuttle"
 	icon_state = "shuttle3"
 	requires_power = 0
+	req_access = list(access_cent_storage)
 
 // Cargo
+/area/quartermaster
+	req_access = list(access_cargo)
+
 /area/quartermaster/office
 	name = "Supply Office"
 	icon_state = "quartoffice"
+	req_access = list(access_mailsorting, access_cargo)
 
 /area/quartermaster/storage
 	name = "Warehouse"
@@ -1308,10 +1333,12 @@
 /area/janitor
 	name = "Custodial Closet"
 	icon_state = "janitor"
+	req_access = list(access_janitor)
 
 // Tcomm
 /area/tcommsat/
 	ambience = list('sound/ambience/ambisin2.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/ambigen10.ogg')
+	req_access = list(access_tcomsat)
 
 /area/tcommsat/chamber
 	name = "Telecoms Central Compartment"
@@ -1329,7 +1356,22 @@
 /area/ai_monitored/storage/eva
 	name = "EVA Storage"
 	icon_state = "eva"
+	req_access = list(access_eva)
 
+/area/turret_protected
+	req_access = list(access_ai_upload)
+
+/* not found on Sierra
+/area/turret_protected/ai_foyer
+	name = "AI Chamber Foyer"
+	icon_state = "ai_foyer"
+	sound_env = SMALL_ENCLOSED
+
+/area/turret_protected/ai_outer_chamber
+	name = "Outer AI Chamber"
+	icon_state = "ai_chamber"
+	sound_env = SMALL_ENCLOSED
+*/
 /area/turret_protected/ai
 	name = "AI Chamber"
 	icon_state = "ai_chamber"
@@ -1365,12 +1407,14 @@
 	name = "Merchant Station"
 	icon_state = "LP"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	req_access = list(access_merchant)
 
 // Syndicate
 
 /area/syndicate_mothership/raider_base
 	name = "Raider Base"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
+	req_access = list(access_syndicate)
 
 // ACTORS GUILD
 /area/acting
@@ -1395,6 +1439,7 @@
 	requires_power = 0
 	dynamic_lighting = 0
 	sound_env = ARENA
+	req_access = list(access_cent_thunder)
 
 /area/tdome/tdome1
 	name = "Thunderdome (Team 1)"

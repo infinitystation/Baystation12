@@ -76,7 +76,7 @@
 
 /obj/structure/closet/secure_closet/warden/sierra
 	name = "warden's locker"
-	req_access = list(access_armory)
+	req_access = list(access_warden)
 	closet_appearance = /decl/closet_appearance/secure_closet/sierra/security/warden
 
 /obj/structure/closet/secure_closet/warden/sierra/WillContain()
