@@ -95,7 +95,8 @@
 	id_type = /obj/item/weapon/card/id/tajsciship
 	uniform = /obj/item/clothing/under/tajsciship/CCAECjumpsuit
 	shoes = /obj/item/clothing/shoes/workboots/toeless
-	l_pocket = /obj/item/weapon/crowbar/prybar
+	l_pocket = /obj/item/clothing/accessory/badge/tajamc
+	r_pocket = /obj/item/clothing/accessory/inf_pin/ccapin
 	l_ear = /obj/item/device/radio/headset/tajsciship
 	glasses = /obj/item/clothing/glasses/meson/prescription/tajvisor
 	l_hand = /obj/item/clothing/accessory/shouldercape/command
@@ -108,7 +109,8 @@
 	name = TAJSCISHIP_OUTFIT_JOB_NAME("K-1 Field Commander")
 	uniform = /obj/item/clothing/under/tajsciship/CCAECjumpsuit
 	shoes = /obj/item/clothing/shoes/workboots/toeless
-	l_pocket = /obj/item/weapon/crowbar/prybar
+	l_pocket = /obj/item/clothing/accessory/badge/tajamc
+	r_pocket = /obj/item/clothing/accessory/inf_pin/ccapin
 	l_ear = /obj/item/device/radio/headset/tajsciship
 	glasses = /obj/item/clothing/glasses/meson/prescription/tajvisor
 	l_hand = /obj/item/clothing/accessory/shouldercape/general

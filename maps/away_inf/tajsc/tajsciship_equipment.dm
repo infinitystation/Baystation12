@@ -67,6 +67,8 @@
 /obj/item/clothing/under/tajsciship/CCAECjumpsuit
 	name = "CCA EC uniform"
 	desc = "A comfortable for tajara turtleneck and black utility trousers."
+	armor = list(melee = 5, bullet = 5, laser = 5, energy = 5, bomb = 0, bio = 5, rad = 5)
+	siemens_coefficient = 0.8
 	icon = 'maps/away_inf/tajsc/tajsciship.dmi'
 	icon_state = "blackutility"
 	item_state = "bl_suit"
