@@ -11,8 +11,6 @@ obj/structure/firedoor_assembly
 
 obj/structure/firedoor_assembly/on_update_icon()
 	if(anchored)
-		icon_state = "door_anchored"
-	else
 		icon_state = "construction"
 
 obj/structure/firedoor_assembly/attackby(var/obj/item/C, var/mob/user)
