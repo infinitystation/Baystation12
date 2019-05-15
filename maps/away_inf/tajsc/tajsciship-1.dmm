@@ -246,12 +246,12 @@
 "eL" = (/obj/structure/bed/chair/comfy/captain{dir = 8; icon_state = "capchair_preview"; name = "secret person chair"},/turf/simulated/floor/greengrid,/area/tajsciship/tajsciship)
 "eM" = (/obj/structure/morgue,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "eN" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
-"eO" = (/obj/structure/table/rack{dir = 8; layer = 2.9},/obj/item/weapon/storage/firstaid/regular,/obj/item/weapon/storage/firstaid/regular,/obj/item/weapon/storage/firstaid/adv,/obj/item/weapon/storage/firstaid/adv,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
-"eP" = (/obj/structure/table/rack{dir = 8; layer = 2.9},/obj/item/weapon/storage/firstaid/brute,/obj/item/weapon/storage/firstaid/fire/special,/obj/item/weapon/storage/firstaid/combat,/obj/item/weapon/storage/firstaid/combat,/obj/item/weapon/storage/firstaid/stab,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"eO" = (/obj/machinery/atmospherics/unary/cryo_cell,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"eP" = (/obj/structure/table/rack{dir = 8; layer = 2.9},/obj/item/weapon/storage/firstaid/brute,/obj/item/weapon/storage/firstaid/fire/special,/obj/item/weapon/storage/firstaid/combat,/obj/item/weapon/storage/firstaid/combat,/obj/item/weapon/storage/firstaid/stab,/obj/item/weapon/storage/firstaid/adv,/obj/item/weapon/storage/firstaid/adv,/obj/item/weapon/storage/firstaid,/obj/item/weapon/storage/firstaid,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "eQ" = (/turf/simulated/floor/greengrid,/area/tajsciship/tajsciship)
 "eR" = (/obj/item/weapon/storage/box/beakers,/obj/item/weapon/storage/box/syringes{pixel_x = 4; pixel_y = 4},/obj/item/weapon/storage/box/syringes,/obj/structure/table/rack{dir = 8; layer = 2.9},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "eS" = (/obj/structure/table/standard,/obj/item/roller,/obj/item/roller{pixel_y = 8},/obj/item/roller{pixel_y = 16},/obj/item/roller,/obj/item/roller{pixel_y = 8},/obj/item/bodybag/cryobag,/obj/item/bodybag/cryobag,/obj/item/bodybag/rescue/loaded,/obj/item/stack/nanopaste,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
-"eT" = (/obj/structure/table/standard,/obj/random/medical/lite,/obj/random/medical/lite,/obj/random/medical/lite,/obj/random/medical/lite,/obj/random/medical/lite,/obj/random/medical,/obj/random/medical,/obj/random/medical,/obj/random/medical,/obj/random/medical,/obj/random/medical,/obj/random/soap,/obj/item/bodybag/rescue/loaded,/obj/item/bodybag/cryobag,/obj/item/clothing/accessory/stethoscope,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"eT" = (/obj/structure/table/standard,/obj/random/medical/lite,/obj/random/medical/lite,/obj/random/medical/lite,/obj/random/medical/lite,/obj/random/medical/lite,/obj/random/medical,/obj/random/medical,/obj/random/medical,/obj/random/medical,/obj/random/medical,/obj/random/medical,/obj/random/soap,/obj/item/bodybag/rescue/loaded,/obj/item/bodybag/cryobag,/obj/item/clothing/accessory/stethoscope,/obj/item/weapon/storage/firstaid/surgery,/obj/item/weapon/reagent_containers/glass/beaker/cryoxadone,/obj/item/weapon/reagent_containers/glass/beaker/cryoxadone,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "eU" = (/obj/effect/decal/cleanable/liquid_fuel,/obj/structure/window/reinforced{dir = 4},/turf/simulated/floor/plating,/area/tajsciship/hangar)
 "eV" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "eW" = (/obj/machinery/sleeper{dir = 8},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
@@ -278,12 +278,12 @@
 "fr" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/computer/ship/helm{dir = 4; icon_state = "computer"; req_access = list("access_tajsciship")},/turf/simulated/floor/greengrid,/area/tajsciship/tajsciship)
 "fs" = (/obj/machinery/button/remote/blast_door{id = "eff"; name = "Last-Stand"; req_access = list("access_tajsciship"); step_y = 31},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/techfloor,/area/tajsciship/tajsciship)
 "ft" = (/obj/machinery/door/window/southright,/turf/simulated/floor/greengrid,/area/tajsciship/tajsciship)
-"fu" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
-"fv" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/light,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"fu" = (/obj/machinery/light{dir = 1},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/item/toy/ringbell/tajalarm{step_x = 0; step_y = 31},/obj/machinery/atmospherics/pipe/simple/hidden{dir = 6},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"fv" = (/obj/machinery/atmospherics/portables_connector{dir = 8},/obj/machinery/portable_atmospherics/canister/oxygen/prechilled,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "fw" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/tiled/monotile,/area/tajsciship/tajsciship)
-"fx" = (/obj/machinery/vending/medical/torch{density = 0; pixel_y = -32; req_access = newlist()},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
-"fy" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
-"fz" = (/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"fx" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 6},/obj/machinery/atmospherics/pipe/simple/hidden{icon_state = "intact"; dir = 5},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"fy" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/light,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4; icon_state = "intact"},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"fz" = (/obj/machinery/vending/medical/torch{density = 0; pixel_y = -32; req_access = newlist()},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4; icon_state = "intact"},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "fA" = (/obj/structure/cable{icon_state = "0-4"; d2 = 4},/obj/machinery/power/terminal{dir = 8},/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/machinery/power/apc/taj{icon_state = "apc0"; dir = 8},/turf/simulated/floor/tiled/techfloor,/area/tajsciship/tajsciship)
 "fB" = (/obj/structure/cable{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/monotile,/area/tajsciship/tajsciship)
 "fC" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/universal{icon_state = "map_universal"; dir = 4},/turf/simulated/floor/tiled/monotile,/area/tajsciship/tajsciship)
@@ -314,7 +314,7 @@
 "gb" = (/obj/structure/closet/crate/freezer/rations,/turf/simulated/floor/tiled/techfloor/grid,/area/tajsciship/tajsciship)
 "gc" = (/obj/machinery/door/firedoor{icon_state = "open"; dir = 4},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/door/airlock{name = "Ma'Shirra"; icon_state = "closed"; dir = 1; req_access = list("access_tajsciship")},/turf/simulated/floor/tiled/monotile,/area/tajsciship/tajsciship)
 "gd" = (/obj/machinery/power/tracker,/obj/structure/cable/yellow,/obj/effect/floor_decal/solarpanel,/turf/simulated/floor/airless,/area/tajsciship/tajsciship)
-"ge" = (/obj/effect/paint/silver,/obj/effect/paint/silver,/turf/simulated/wall/r_wall/prepainted,/area/tajsciship/meatbay)
+"ge" = (/obj/effect/paint/silver,/obj/effect/paint/silver,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "gf" = (/obj/machinery/bodyscanner{dir = 8},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "gg" = (/obj/machinery/body_scanconsole{dir = 8},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "gh" = (/obj/item/weapon/defibrillator/loaded,/obj/structure/table/standard,/obj/item/auto_cpr,/obj/item/weapon/storage/firstaid/adv,/obj/item/bodybag/rescue/loaded,/obj/item/bodybag/rescue/loaded,/obj/item/bodybag/cryobag,/obj/item/bodybag/cryobag,/obj/machinery/firealarm{dir = 4; layer = 3.3; pixel_x = 26},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
@@ -337,7 +337,7 @@
 "gy" = (/obj/structure/grille,/obj/structure/girder,/turf/space,/area/tajsciship/tajsciship)
 "gz" = (/obj/structure/cable{icon_state = "0-4"; d2 = 4},/obj/machinery/shipsensors,/turf/simulated/floor/plating,/area/tajsciship/tajsciship)
 "gA" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/monotile,/area/tajsciship/tajsciship)
-"gB" = (/obj/structure/closet/crate/freezer,/obj/machinery/alarm/tajsciship,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"gB" = (/obj/structure/closet/crate/freezer,/obj/machinery/alarm/tajsciship,/obj/item/weapon/reagent_containers/glass/beaker/cryoxadone,/obj/item/device/healthanalyzer,/obj/item/clothing/glasses/hud/health/tajvisor,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "gC" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled/white/monotile,/area/tajsciship/meatbay)
 "gD" = (/obj/structure/table/standard,/obj/item/weapon/storage/firstaid/adv,/obj/item/weapon/reagent_containers/syringe{pixel_y = -2},/obj/machinery/light/spot{dir = 1},/obj/item/clothing/gloves/latex/nitrile/modified,/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/firealarm{dir = 4; layer = 3.3; pixel_x = 26},/obj/item/weapon/storage/box/freezer,/turf/simulated/floor/tiled/white/monotile,/area/tajsciship/meatbay)
 "gE" = (/obj/structure/cable/yellow{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/airless,/area/tajsciship/tajsciship)
@@ -405,7 +405,7 @@
 "hO" = (/obj/item/taperoll/atmos,/obj/machinery/atmospherics/pipe/tank/hydrogen,/turf/simulated/floor/tiled/steel_grid,/area/tajsciship/engines)
 "hP" = (/obj/structure/transit_tube{icon_state = "S-NE"},/turf/simulated/floor/tiled/old_cargo,/area/tajsciship/solari)
 "hQ" = (/obj/effect/paint/dark_gunmetal,/obj/structure/transit_tube{icon_state = "D-NW"},/turf/simulated/wall/r_wall/prepainted,/area/tajsciship/solari)
-"hR" = (/obj/machinery/sleeper/survival_pod{icon_state = "stasis_0"; dir = 8},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"hR" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4; icon_state = "intact"},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "hS" = (/obj/machinery/computer/general_air_control{dir = 1; icon_state = "computer"; name = "Atmospheric Sensors"; sensors = list("tajshut_out")},/turf/simulated/floor/tiled/monotile,/area/tajsciship/tajscishuttle)
 "hT" = (/turf/simulated/floor/tiled/steel_grid,/area/tajsciship/hangar)
 "hU" = (/obj/machinery/portable_atmospherics/powered/pump,/obj/machinery/light/halogen{icon_state = "tube_map"; dir = 8},/obj/machinery/atmospherics/portables_connector{dir = 1},/turf/simulated/floor/tiled/dark/monotile,/area/tajsciship/tajscishuttle)
@@ -468,7 +468,7 @@
 "iZ" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/tajsciship/botany)
 "ja" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/turf/simulated/floor/tiled/dark/monotile,/area/tajsciship/botany)
 "jb" = (/obj/machinery/firealarm{dir = 4; layer = 3.3; pixel_x = 26},/turf/simulated/floor/tiled/dark/monotile,/area/tajsciship/botany)
-"jc" = (/obj/machinery/atmospherics/pipe/simple/visible{icon_state = "intact"; dir = 4},/obj/structure/closet/crate,/obj/item/weapon/reagent_containers/chem_disp_cartridge/potassium,/obj/item/weapon/reagent_containers/chem_disp_cartridge/potassium,/obj/item/weapon/reagent_containers/chem_disp_cartridge/ammonia,/obj/item/weapon/reagent_containers/chem_disp_cartridge/ammonia,/obj/item/weapon/reagent_containers/chem_disp_cartridge/aluminum,/obj/item/weapon/reagent_containers/chem_disp_cartridge/aluminum,/obj/item/weapon/reagent_containers/chem_disp_cartridge/water,/obj/item/weapon/reagent_containers/chem_disp_cartridge/water,/obj/item/weapon/reagent_containers/chem_disp_cartridge/green_tea,/turf/simulated/floor/tiled/old_tile,/area/tajsciship/sklad1)
+"jc" = (/obj/machinery/atmospherics/unary/heater{icon_state = "heater_0"; dir = 1},/turf/simulated/floor/tiled/old_tile,/area/tajsciship/engines)
 "jd" = (/obj/machinery/atmospherics/unary/engine{dir = 8},/obj/structure/transit_tube{icon_state = "S-NW"},/turf/simulated/wall/r_wall/prepainted,/area/tajsciship/tajsciship)
 "je" = (/turf/simulated/floor/tiled/old_cargo,/area/tajsciship/solari)
 "jf" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/turf/simulated/floor/tiled/old_cargo,/area/tajsciship/solari)
@@ -530,7 +530,7 @@
 "kj" = (/obj/structure/bed/chair/wood/mahogany{icon_state = "wooden_chair_preview"; dir = 8},/turf/simulated/floor/lino,/area/tajsciship/kitchen)
 "kk" = (/obj/machinery/firealarm{dir = 4; layer = 3.3; pixel_x = 26},/turf/simulated/floor/wood/walnut,/area/tajsciship/kitchen)
 "kl" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 1},/obj/machinery/alarm/tajsciship,/turf/simulated/floor/lino,/area/tajsciship/kitchen)
-"km" = (/obj/machinery/power/terminal,/obj/structure/cable,/obj/machinery/power/apc/taj,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"km" = (/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4; icon_state = "intact"},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "kn" = (/obj/structure/window/reinforced{dir = 1},/obj/item/toy/ringbell/tajalarm,/obj/structure/wall_frame/titanium,/obj/structure/table/wallf/steel,/turf/simulated/floor/greengrid,/area/tajsciship/tajsciship)
 "ko" = (/obj/effect/paint/silver,/obj/structure/sign/poster/tjpost/tj_3{step_x = 1},/turf/simulated/wall/r_wall/prepainted,/area/tajsciship/tajsciship)
 "kp" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 10},/obj/structure/sign/poster/guide_to_pee{step_y = 31},/turf/simulated/floor/tiled/kafel_full,/area/tajsciship/kitchen)
@@ -585,9 +585,9 @@
 "lm" = (/obj/machinery/button/remote/blast_door{id = "iron"; name = "To-Space"; req_access = list("access_tajsciship"); step_y = 31},/obj/structure/cable{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/tiled/techfloor,/area/tajsciship/tajsciship)
 "ln" = (/obj/effect/paint/sun,/turf/simulated/wall/r_wall/prepainted,/area/tajsciship/solari)
 "lo" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/turf/space,/area/tajsciship/tajsciship)
-"lp" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
-"lq" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
-"lr" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"lp" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/manifold/hidden{dir = 4; icon_state = "map"},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"lq" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/simple/hidden,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"lr" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/simple/hidden,/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "ls" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/power/terminal{icon_state = "term"; dir = 1},/obj/structure/cable{icon_state = "0-4"; d2 = 4},/obj/machinery/power/apc/taj{icon_state = "apc0"; dir = 1},/turf/simulated/floor/lino,/area/tajsciship/kitchen)
 "lt" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/lino,/area/tajsciship/kitchen)
 "lu" = (/obj/machinery/door/firedoor{icon_state = "open"; dir = 1},/turf/simulated/floor/lino,/area/tajsciship/kitchen)
@@ -876,7 +876,7 @@
 "qR" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/sign/poster/tjpost/tj_9{step_y = 31},/turf/simulated/floor/lino,/area/tajsciship/kitchen)
 "qS" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/sign/poster/tjpost/tj_5{step_y = 31},/turf/simulated/floor/lino,/area/tajsciship/kitchen)
 "qT" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/item/toy/ringbell/tajalarm{step_x = 0; step_y = 31},/turf/simulated/floor/tiled/monotile,/area/tajsciship/tajsciship)
-"qU" = (/obj/machinery/light{dir = 1},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/item/toy/ringbell/tajalarm{step_x = 0; step_y = 31},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
+"qU" = (/obj/machinery/power/terminal,/obj/structure/cable,/obj/machinery/power/apc/taj,/obj/machinery/atmospherics/pipe/simple/hidden{icon_state = "intact"; dir = 5},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 "qV" = (/obj/effect/paint/silver,/obj/item/toy/ringbell/tajalarm{step_x = 1; step_y = 0},/turf/simulated/wall/r_wall/prepainted,/area/tajsciship/tajsciship)
 "qW" = (/obj/machinery/door/firedoor{icon_state = "open"; dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/item/toy/ringbell/tajalarm{step_y = 31},/turf/simulated/floor/lino,/area/tajsciship/kitchen)
 "qX" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/item/toy/ringbell/tajalarm{step_y = 31},/turf/simulated/floor/tiled/dark/monotile,/area/tajsciship/botany)
@@ -885,6 +885,9 @@
 "ra" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 4},/obj/machinery/computer/ship/helm{dir = 4; icon_state = "computer"; req_access = list("access_tajsciship")},/turf/simulated/floor/tiled/monotile,/area/tajsciship/tajsciship)
 "rb" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4},/obj/machinery/computer/ship/sensors{dir = 4; icon_state = "computer"; req_access = list("access_tajsciship")},/turf/simulated/floor/tiled/monotile,/area/tajsciship/tajsciship)
 "rc" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/obj/machinery/hologram/holopad/longrange,/turf/simulated/floor/tiled/techfloor,/area/tajsciship/tajsciship)
+"rd" = (/obj/machinery/atmospherics/unary/freezer{icon_state = "freezer"; dir = 1},/turf/simulated/floor/tiled/old_tile,/area/tajsciship/engines)
+"re" = (/obj/machinery/atmospherics/pipe/simple/visible{icon_state = "intact"; dir = 4},/obj/structure/closet/crate,/obj/item/weapon/reagent_containers/chem_disp_cartridge/potassium,/obj/item/weapon/reagent_containers/chem_disp_cartridge/potassium,/obj/item/weapon/reagent_containers/chem_disp_cartridge/ammonia,/obj/item/weapon/reagent_containers/chem_disp_cartridge/ammonia,/obj/item/weapon/reagent_containers/chem_disp_cartridge/aluminum,/obj/item/weapon/reagent_containers/chem_disp_cartridge/aluminum,/obj/item/weapon/reagent_containers/chem_disp_cartridge/water,/obj/item/weapon/reagent_containers/chem_disp_cartridge/water,/obj/item/weapon/reagent_containers/chem_disp_cartridge/green_tea,/obj/item/weapon/reagent_containers/chem_disp_cartridge/Milkk,/obj/item/weapon/reagent_containers/chem_disp_cartridge/Selm_juice,/obj/item/weapon/reagent_containers/chem_disp_cartridge/Herbal_tincture,/obj/item/weapon/reagent_containers/chem_disp_cartridge/Herbal_tincture,/obj/item/weapon/reagent_containers/chem_disp_cartridge/Djurl_Ma_Tua,/obj/item/weapon/reagent_containers/chem_disp_cartridge/Djurl_Ma_Tua,/turf/simulated/floor/tiled/old_tile,/area/tajsciship/sklad1)
+"rf" = (/obj/machinery/atmospherics/unary/freezer{icon_state = "freezer"; dir = 8},/turf/simulated/floor/tiled/white,/area/tajsciship/meatbay)
 
 (1,1,1) = {"
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
@@ -917,7 +920,7 @@ hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsaharmGmGbwbebeedmUnBcymCmJmCmKhC
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsahaharnJmGbNbebebemUmUmUmVhSmXmUmYmZnanbncmUnlnsnAmUmUbeehbiaGofolaGomoiaraOaPaRonaUooaVaPaWaXcNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsahararmGoTnKnQnSpFbemUmUmUmUmUmUmUhxnehxmUmUmUmUmUmUbebeehbiaGofopaGoqoraraOaPaRaSbqaSaVaPaWazahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsaharararararararpKnQnQnQnQnQnQnQnQoZpgphpMpMpMpMpMpMpMpMfqpNaGaGaGaGaGaGarbMbuosaohOaoououovazahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsahariooKoPpbpoppareIcXcXcXowowowowiqoyoFoAowowowowowowowowowdqbkbkdKpRpRpSaroBoCoCoDiraooCoCoEaXcNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsahariooKoPpbpoppareIcXcXcXowowowowiqoyoFoAowowowowowowowowowdqbkbkdKpRpRpSaroBjcrdoDiraooCoCoEaXcNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsaharpsptptpupvenarbEhThThToFoFoFoFoFoFoFoFoFoFoFoFoFoFoFoFoFdqbkbCbkbkbkcQarduoHoIbHiFaooJoJoJazahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsdsdsdsdsdsaharararararpxpypznIozhThToFoFoFoFoFoFoFoFoFoFoFoFoFoFoFoFoLiabRbSbTbUbxbUcjcYbWbYcaaoaoiSiTiUazahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahahahahahaharpsptptpCpDpEaroNoNhThToFoFoFoFoFoFoFoFoFoFoFoFoFoFoFoFoLoOecclcJcKcLcOariVaRiWcUjnakjoaVjpaXcNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
@@ -928,11 +931,11 @@ hwhwhwhwhwhwhwhwhwhwhwdsahahacaccgcgfAcwcxfsgqlmcgcCcDcFiRnmdMqAqBqCcDqDcgdpeidr
 hwhwhwhwhwhwhwhwhwhwhwdsahacacaccgeodibsdcbQdadwdjdkdkdldkdkdmdkdkdniudkdodHdIdLdfmQdNdOdfmQdNdOdfmQdNdOdfcrctcudhiviwdTdUdUdUdUdSdVdhacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwdsahacacaccgnxdzbIdidCdidJcgeZfcfeffgbgOgRgbdQgSgTcgdXdYdZdfdfdWdfdfdfdWdfdfdfdWdfdfcgeacgdhebiyeejvjGjHefefekdhacachccNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwdsahahahaccgraegnXnCfrknejcgeleleleleloMelelemizelcgfgepeqeriAeuqEeYqFeuqGpwqHeuqIewgmetqTexeyezezeAeAeAeBeCeHdhacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwaahwhwhwhwhwhycsgzeDbZeElNeGoarcmWeLeQcgeMeNeOePeReSeTgBeVqUeWcggQeXisdfiCfbnfnznEfdnfnFnEfbnGdfcrdQcudhixfhfifjfkflfmfnfodhacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwdsahahahaccgrbdzoboxqfqgftcgeMfpfufvfxfyfyfyfzlpeWqVfDfEfFfGfFfHfFfIfFfHfFfJfFfHfFfKfwfBfCfLfOfPfPfQfQfRdUfSnHdhacachccNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwdsahacacaccgfMfNaddidididicgelelgaelgefpqhgfgglqghcgdXgidXdfdfdWdfdfdfdWdfdfdfdWdfdfcggccgdhgjgljcglgngogpgrgudhacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwaahwhwhwhwhwhycsgzeDbZeElNeGoarcmWeLeQcgeMeNeOePeReSeTgBeVfufvcggQeXisdfiCfbnfnznEfdnfnFnEfbnGdfcrdQcudhixfhfifjfkflfmfnfodhacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwdsahahahaccgrbdzoboxqfqgftcgeMfpfxfyfzhRhRhRkmlpeWqVfDfEfFfGfFfHfFfIfFfHfFfJfFfHfFfKfwfBfCfLfOfPfPfQfQfRdUfSnHdhacachccNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwdsahacacaccgfMfNaddidididicgelelgaelgefpqhgfgglqghcgdXgidXdfdfdWdfdfdfdWdfdfdfdWdfdfcggccgdhgjglreglgngogpgrgudhacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwdsahacacackolbdiadadadadadcgiHiQgCgDgHgIgJgJgKlrgLcggMdfgMdfmQgNdOdfmQgNdOdfmQgNdOdfdDgAcudhgUgrgXgYgZhagphbgudhacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwdsahahacaccgcgpQpTpTpTpTpUcghghshthvelhGhHhHhIkmhRcgitdflRdfmEjlhWdfhVjlhWdfhVjlhWdfeFgWcSdhgUhXhYhZibicidiedhdhacachccNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwdsahahacaccgcgpQpTpTpTpTpUcghghshthvelhGhHhHhIqUrfcgitdflRdfmEjlhWdfhVjlhWdfhVjlhWdfeFgWcSdhgUhXhYhZibicidiedhdhacachccNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwdsdsahahacaccgcgcgcgcgcgcgcgelelifelelelelelelelelcgdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfcrgAcudhdhdhdhdhdhdhdhdhdhacacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwdsdsahahacacacacacacacigigigigigigigigigigigigigigigigigigigigigigigigigigigaiaiaiaihuaiaiaiaiihihihihihihihihihihiiahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahacacacacacacigijikilinkKiPjXkpjWqJqPqKklqLqMlsqWqQqRkqkrqSkqqNqOkPlAlAlClDlEkTiEqXiDjmiGlynLiIiJiKiLaFiNiOcNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw

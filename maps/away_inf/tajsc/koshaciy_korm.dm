@@ -3,13 +3,25 @@
 	description = " One of the oldest tajaran drinks, the history of which stretches from unknown-distant epochs. Anywhere but on Ahdomai, this drink is not cooked. It tastes like wine, but combines a large number of different types of spices and spices. "
 	taste_description = "exotic, sweet, hard and gentle at the same time"
 	color = "#ba86e4"
-	strength = 10
+	strength = 80
+	adj_temp = 5
 	glass_name = "Djurl'Ma-Tua"
 	glass_desc = " Exotic drink native to Ahdomai. Its taste is similar to wine with a lot of different condiments and spices."
 
+/datum/reagent/ethanol/kotovino/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
+	if(alien == IS_TAJARA)
+		M.adjustToxLoss(0.5 * removed)
+	else
+		M.apply_effect(4, PAIN, 0)
+		if(prob(5))
+			M.visible_message("<span class='warning'>[M] [pick("dry heaves!","coughs!","splutters!")]</span>", "<span class='danger'>You can feel LIQUID HELL running down your throat and into your stomach!</span>")
+	if(istype(M, /mob/living/carbon/slime))
+		M.bodytemperature += rand(15, 30)
+	holder.remove_reagent(/datum/reagent/frostoil, 5)
+
 /datum/reagent/juice/tajaran/sok
 	name = "Selm juice"
-	description = "AJuice of one of the Ahdomai plants, which is taken to drink chilled"
+	description = "Juice of one of the Ahdomai plants, which is taken to drink chilled"
 	taste_description = "frightening sourness with spices"
 	color = "#e486e3"
 	glass_name = "Selm juice"
@@ -97,4 +109,3 @@
 	New()
 		..()
 		reagents.add_reagent(/datum/reagent/juice/tajaran/chai, 120)
-

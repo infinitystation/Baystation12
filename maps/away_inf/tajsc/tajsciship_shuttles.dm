@@ -75,6 +75,3 @@
 /*
  * Infinity: Presets from torch: Ending
  */
-
-
-

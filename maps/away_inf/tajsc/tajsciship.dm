@@ -114,30 +114,3 @@
 	l_hand = /obj/item/clothing/accessory/shouldercape/general
 
 #undef TAJSCISHIP_OUTFIT_JOB_NAME
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
