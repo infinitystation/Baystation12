@@ -1,6 +1,4 @@
 /datum/gear/suit
-	display_name = "poncho, security"
-	path = /obj/item/clothing/suit/poncho/roles/security
 	slot = slot_wear_suit
 	sort_category = "Suits and Overwear"
 	category = /datum/gear/suit
@@ -10,9 +8,9 @@
 	path = /obj/item/clothing/suit/poncho/colored
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/*/datum/gear/suit/security_poncho
+/datum/gear/suit/security_poncho
 	display_name = "poncho, security"
-	path = /obj/item/clothing/suit/poncho/roles/security*/
+	path = /obj/item/clothing/suit/poncho/roles/security
 
 /datum/gear/suit/medical_poncho
 	display_name = "poncho, medical"
