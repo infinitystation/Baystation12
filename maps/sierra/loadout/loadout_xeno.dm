@@ -25,14 +25,14 @@
 /datum/gear/eyes/resomi/lenses_med
 	allowed_roles = MEDICAL_ROLES
 
-/datum/gear/suit/storage/resomicloak/standard
+/datum/gear/suit/resomicloak/standard
 	display_name = "(Resomi) standard cloak / job cloak"
 	sort_category = "Xenowear"
 	path = /obj/item/clothing/suit/storage/resomicloak
 	cost = 1
 	whitelisted = list(SPECIES_RESOMI)
 
-/datum/gear/suit/storage/resomicloak/standard/New()
+/datum/gear/suit/resomicloak/standard/New()
 	..()
 	var/resomicloaks = list()
 	resomicloaks += /obj/item/clothing/suit/storage/resomicloak/standard/black_orange
@@ -64,7 +64,7 @@
 
 // Uh, i know what looks crooked, but it works quite interestingly.
 
-/datum/gear/suit/storage/resomicloak/standard/New()
+/datum/gear/suit/resomicloak/standard/New()
 	..()
 	var/resomicloaks = list()
 	resomicloaks += /obj/item/clothing/suit/storage/resomicloak/jobs/iaa
