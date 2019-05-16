@@ -1,6 +1,6 @@
-/datum/gear/cane
+/*/datum/gear/cane
 	display_name = "cane"
-	path = /obj/item/weapon/cane
+	path = /obj/item/weapon/cane*/
 
 /datum/gear/union_card
 	display_name = "union membership"
