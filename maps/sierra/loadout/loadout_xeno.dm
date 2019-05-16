@@ -86,7 +86,7 @@
 	resomicloaks += /obj/item/clothing/suit/storage/resomicloak/jobs/cargo
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(resomicloaks)
 
-/datum/gear/under/resomi/undercoat/standard
+/datum/gear/uniform/resomi/undercoat/standard
 	display_name = "(Resomi) standard undercoat / job undercoat"
 	sort_category = "Xenowear"
 	path = /obj/item/clothing/under/resomi/undercoat
@@ -94,7 +94,7 @@
 	slot = slot_w_uniform
 	whitelisted = list(SPECIES_RESOMI)
 
-/datum/gear/under/resomi/undercoat/standard/New()
+/datum/gear/uniform/resomi/undercoat/standard/New()
 	..()
 	var/undercoats = list()
 	undercoats += /obj/item/clothing/under/resomi/undercoat/standard/black_orange
@@ -124,7 +124,7 @@
 	undercoats += /obj/item/clothing/under/resomi/undercoat/standard/rainbow
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(undercoats)
 
-/datum/gear/under/resomi/undercoat/standard/New()
+/datum/gear/uniform/resomi/undercoat/standard/New()
 	..()
 	var/undercoats = list()
 	undercoats += /obj/item/clothing/under/resomi/undercoat/jobs/cargo
