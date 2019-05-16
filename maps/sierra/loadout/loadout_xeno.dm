@@ -93,7 +93,7 @@
 	cost = 1
 	slot = slot_w_uniform
 	whitelisted = list(SPECIES_RESOMI)
-
+//
 /datum/gear/uniform/resomi/undercoat/standard/New()
 	..()
 	var/undercoats = list()
