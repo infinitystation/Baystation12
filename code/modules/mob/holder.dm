@@ -34,6 +34,7 @@ var/list/holder_mob_icon_cache = list()
 /obj/item/weapon/holder/Destroy()
 	for(var/atom/movable/AM in src)
 		AM.forceMove(get_turf(src))
+		unregister_all_movement(last_holder, AM)
 	last_holder = null
 	STOP_PROCESSING(SSobj, src)
 	return ..()

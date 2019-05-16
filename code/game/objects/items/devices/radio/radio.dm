@@ -226,7 +226,8 @@
 		channel = null
 	if (!istype(connection))
 		return
-	z = zlevel
+	if(zlevel)
+		z = zlevel
 	var/mob/living/silicon/ai/A = new /mob/living/silicon/ai(src, null, null, 1)
 	A.fully_replace_character_name(from)
 	talk_into(A, message, channel,"states")

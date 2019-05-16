@@ -136,12 +136,15 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 
 /obj/machinery/message_server/proc/send_to_department(var/department, var/message, var/tone)
 	var/reached = 0
+	var/list/connected_levels = GetConnectedZlevels(z)
 
-	for(var/mob/living/carbon/human/H in GLOB.using_map.station_levels)
+	for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
+		if(!(H.z in connected_levels))
+			continue
 		var/obj/item/modular_computer/pda/pda = locate() in H
-		var/obj/item/device/radio/headset/hs = locate() in H
 		var/obj/item/modular_computer/wrist/w = locate() in H
-		if(!pda && !hs && !w)
+		var/obj/item/device/radio/headset/hs = locate() in H
+		if(!pda && !w && !hs)
 			continue
 
 		var/datum/job/J = SSjobs.get_by_title(H.get_authentification_rank())
@@ -150,13 +153,13 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 
 		if(J.department_flag & department)
 			if(pda)
-				to_chat(H, "<span class='notice'>Your [pda.name] alerts you to the fact that somebody is requesting your presence at your department.</span>")
+				to_chat(H, SPAN_NOTICE("Your [pda] alerts you to the fact that somebody is requesting your presence at your department."))
 				reached++
 			else if(w)
-				to_chat(H, "<span class='notice'>Your [w.name] alerts you to the fact that somebody is requesting your presence at your department.</span>")
+				to_chat(H, SPAN_NOTICE("Your [w] alerts you to the fact that somebody is requesting your presence at your department."))
 				reached++
 			else if(hs && hs.listening)
-				to_chat(H, "<span class='notice'>Your [hs.name] vibrates and alerts you to the fact that somebody is requesting your presence at your department.</span>")
+				to_chat(H, SPAN_NOTICE("Your [hs] vibrates and alerts you to the fact that somebody is requesting your presence at your department."))
 				reached++
 
 	return reached

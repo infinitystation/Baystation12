@@ -43,7 +43,7 @@
 			output += "<p>\[ <span class='linkOn'><b>Ready</b></span> | <a href='byond://?src=\ref[src];ready=0'>Not Ready</a> \]</p>"
 		else
 			output += "<p>\[ <a href='byond://?src=\ref[src];ready=1'>Ready</a> | <span class='linkOn'><b>Not Ready</b></span> \]</p>"
-		if(src.client.holder)
+		if(client.holder)
 			output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
 
 	else
@@ -52,11 +52,11 @@
 		if(config.observers_allowed || check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 			output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
 
-	if(!IsGuestKey(src.key))
+	if(!IsGuestKey(key))
 		establish_db_connection()
 		if(dbcon.IsConnected())
 			var/isadmin = 0
-			if(src.client && src.client.holder)
+			if(client && client.holder)
 				isadmin = 1
 			var/DBQuery/query = dbcon.NewQuery("SELECT id FROM erro_poll_question WHERE [(isadmin ? "" : "adminonly = false AND")] Now() BETWEEN starttime AND endtime AND id NOT IN (SELECT pollid FROM erro_poll_vote WHERE ckey = \"[ckey]\") AND id NOT IN (SELECT pollid FROM erro_poll_textreply WHERE ckey = \"[ckey]\")")
 			query.Execute()
@@ -85,21 +85,30 @@
 			stat("Game Mode:", "[SSticker.mode ? SSticker.mode.name : SSticker.master_mode] ([SSticker.master_mode])")
 		else
 			stat("Game Mode:", PUBLIC_GAME_MODE)
-		var/extra_antags = list2params(additional_antag_types)
-		stat("Added Antagonists:", extra_antags ? extra_antags : "None")
 
+		var/extra_antags = list2params(additional_antag_types)
+		if(extra_antags)
+			stat("Added Antagonists:", extra_antags)
 		if(GAME_STATE <= RUNLEVEL_LOBBY)
 			stat("Time To Start:", "[round(SSticker.pregame_timeleft/10)][SSticker.round_progressing ? "" : " (DELAYED)"]")
 			stat("Players: [totalPlayers]", "Players Ready: [totalPlayersReady]")
 			totalPlayers = 0
 			totalPlayersReady = 0
+			var/we_are_admin = is_admin(src)
 			for(var/mob/new_player/player in GLOB.player_list)
+				if(player.is_stealthed() && !we_are_admin)
+					continue
 				var/highjob
 				if(player.client && player.client.prefs && player.client.prefs.job_high)
 					highjob = " as [player.client.prefs.job_high]"
 				stat("[player.key]", (player.ready)?("(Playing[highjob])"):(null))
 				totalPlayers++
 				if(player.ready)totalPlayersReady++
+
+		if(GAME_STATE >= RUNLEVEL_GAME)
+			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
+			var/decl/security_level/SL = security_state.current_security_level
+			stat("Security level:", SL.name)
 
 /mob/new_player/Topic(href, href_list[])
 	if(!client)	return 0
@@ -139,7 +148,7 @@
 				to_chat(src, "<span class='warning'>Sorry, you should wait [config.observe_delay] minutes from the start of the round to be observer. See \"Round Duration\" timer in Status tab to check how much time has passed from the round start.</span>")
 				return
 
-		if(!config.respawn_delay || client.holder || alert(src,"Are you sure you wish to observe? You will have to wait [config.respawn_delay] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
+		if(!config.respawn_delay || client.holder || alert(src,"Are you sure you wish to observe? You will have to wait [OBSERV_SPAWN_DELAY] minute\s before being able to respawn!","Player Setup","Yes","No") == "Yes")
 			if(!client)
 				return 1
 			if(!config.observers_allowed && !check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
@@ -220,7 +229,7 @@
 		var/voted = 0
 
 		//First check if the person has not voted yet.
-		var/DBQuery/query = dbcon.NewQuery("SELECT * FROM erro_privacy WHERE ckey='[src.ckey]'")
+		var/DBQuery/query = dbcon.NewQuery("SELECT * FROM erro_privacy WHERE ckey='[ckey]'")
 		query.Execute()
 		while(query.NextRow())
 			voted = 1
@@ -245,7 +254,7 @@
 			return
 
 		if(!voted)
-			var/sql = "INSERT INTO erro_privacy VALUES (null, Now(), '[src.ckey]', '[option]')"
+			var/sql = "INSERT INTO erro_privacy VALUES (null, Now(), '[ckey]', '[option]')"
 			var/DBQuery/query_insert = dbcon.NewQuery(sql)
 			query_insert.Execute()
 			to_chat(usr, "<b>Thank you for your vote!</b>")
@@ -272,7 +281,7 @@
 		if(istext(pollid))
 			pollid = text2num(pollid)
 		if(isnum(pollid))
-			src.poll_player(pollid)
+			poll_player(pollid)
 		return
 
 	if(href_list["invalid_jobs"])

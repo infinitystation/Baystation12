@@ -34,12 +34,13 @@
 		return
 	var/message_title = new_title ? new_title : title
 	var/message_sound = new_sound ? new_sound : sound
+	var/zlevel = LAZYLEN(zlevels) ? pick(zlevels) : 1
 
 	if(!msg_sanitized)
 		message = sanitize(message, extra = 0)
 	message_title = sanitize(message_title)
 
-	var/msg = radio_mode ? FormRadioMessage(message, message_title, pick(zlevels)) : FormMessage(message, message_title)
+	var/msg = radio_mode ? FormRadioMessage(message, message_title, zlevel) : FormMessage(message, message_title)
 	for(var/mob/M in GLOB.player_list)
 		if((M.z in (zlevels | GLOB.using_map.admin_levels)) && !istype(M,/mob/new_player) && !isdeaf(M))
 			to_chat(M, msg)

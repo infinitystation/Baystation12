@@ -172,7 +172,8 @@ var/list/admin_verbs_server = list(
 	/client/proc/check_customitem_activity,
 	/client/proc/nanomapgen_DumpImage,
 	/client/proc/cmd_toggle_admin_help,
-	/client/proc/observe_delay
+	/client/proc/observe_delay,
+	/client/proc/update_server
 	)
 var/list/admin_verbs_debug = list(
 	/client/proc/getruntimelog, // allows us to access runtime logs to somebody,

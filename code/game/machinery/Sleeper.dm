@@ -326,7 +326,7 @@
 	icon_state = "stasis_0"
 	base_icon = "stasis"
 	stasis = 20
-	active_power_usage = 550
+	active_power_usage = 55000
 
 /obj/machinery/sleeper/survival_pod/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = GLOB.outside_state)
 	var/data[0]

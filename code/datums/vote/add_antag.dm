@@ -1,5 +1,6 @@
 /datum/vote/add_antagonist
 	name = "add antagonist"
+	show_leading = 1
 	var/automatic = 0 //Handled slightly differently.
 
 /datum/vote/add_antagonist/can_run(mob/creator, automatic)

@@ -320,10 +320,10 @@ Ccomp's first proc.
 		return
 
 	if(G.has_enabled_antagHUD == 1 && config.antag_hud_restricted)
-		var/response = alert(src, "[selection] has enabled antagHUD. Are you sure you wish to allow them to respawn?","Ghost has used AntagHUD","No","Yes")
+		var/response = alert(src, "[selection] has enabled antagHUD. Are you sure you wish to allow them to respawn?","Ghost has used AntagHUD","Yes","No")
 		if(response == "No") return
 	else
-		var/response = alert(src, "Are you sure you wish to allow [selection] to respawn?","Allow respawn","No","Yes")
+		var/response = alert(src, "Are you sure you wish to allow [selection] to respawn?","Allow respawn","Yes","No")
 		if(response == "No") return
 
 	G.timeofdeath=-19999						/* time of death is checked in /mob/verb/abandon_mob() which is the Respawn verb.

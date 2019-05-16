@@ -367,4 +367,93 @@ Subtypes
 		return massive_of_active_progs
 	return "session: Wrong input. Enter man session for syntax help."
 
+/datum/terminal_command/telnet
+	name = "telnet"
+	man_entry = list("Format: telnet \[NID\] \[LOGIN\] : \[PASSWORD\].",
+					"Access remote terminal with login and password",
+					"If NID \< 100 write NID like 001.",
+					"Use `telnet` to README and config security of your devise.")
+	pattern = "^telnet"
+
+/datum/terminal_command/telnet/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/obj/item/modular_computer/CT = terminal.computer
+
+	if(!copytext(text,7))
+		if(CT.hard_drive)
+			if(!CT.hard_drive.find_file_by_name("TNet_CONFIG") && !CT.hard_drive.find_file_by_name("TNet_CONFIG_README"))
+				var/datum/computer_file/data/config/file = CT.hard_drive.find_file_by_name("TNet_CONFIG")
+				if(!istype(file))
+					file = new()
+					file.filename = "TNet_CONFIG"
+					CT.hard_drive.store_file(file) // May fail, which is fine with us.
+					file.stored_data += "ROOT : [round(rand(1000, 9999))]" //LOGIN : PASSWORD
+				var/datum/computer_file/data/text/file_README = CT.hard_drive.find_file_by_name("TNet_CONFIG_README")
+				if(!istype(file_README))
+					file_README = new()
+					file_README.filename = "TNet_CONFIG_README"
+					CT.hard_drive.store_file(file_README) // May fail, which is fine with us.
+					file_README.stored_data += "\[large\]\[b\]DO NOT DELETE FILE TNet_CONFIG IF YOU DO NOT WANT TO PUT YOUR DEVICE AT RISK \[/b\]\[/large\]\[br\]" //LOGIN : PASSWORD
+					file_README.stored_data += "Format login and password in TNet_CONFIG: \[LOGIN\] : \[PASSWORD\].\[br\]"
+					file_README.stored_data += "Login must contain only 4 characters, password may be anything."
+				return "Config file created. Check config README to study how to change the login and password."
+			else
+				return "Config and config README already created."
+
+	if(istype(terminal, /datum/terminal/remote))
+		return "telnet is not supported on remote terminals."
+	if(!CT || !CT.get_ntnet_status())
+		return "telnet: Check network connectivity."
+
+	var/nid = text2num(copytext(text, 8, 11))
+	if(copytext(nid, 1,3) == "00")
+		nid = copytext(nid, 3,4)
+	else if(copytext(nid, 1,2) == "0")
+		nid = copytext(nid, 2,3)
+	var/obj/item/modular_computer/comp = ntnet_global.get_computer_by_nid(nid)
+
+	if(comp == CT)
+		return "telnet: Error; can not open remote terminal to self."
+	if(!comp || !comp.enabled || !comp.get_ntnet_status())
+		return "telnet: No active device with this nid found."
+	if(comp.has_terminal(user))
+		return "telnet: A remote terminal to this device is already active."
+
+	var/datum/computer_file/data/config/cfg_file = comp.hard_drive.find_file_by_name("TNet_CONFIG")
+	if(comp.hard_drive.find_file_by_name("TNet_CONFIG"))
+		var/login = copytext(cfg_file.stored_data, 1, 5)
+		var/password = copytext(cfg_file.stored_data, 8)
+		if(copytext(text, 12,16) == login)
+			if(copytext(text, 17) == password)
+				var/datum/terminal/remote/new_term = new (user, comp, CT)
+				LAZYADD(comp.terminals, new_term)
+				LAZYADD(CT.terminals, new_term)
+				return "<font color='#00ff00'>telnet: Connection established with login: [login], and password: [password].</font>"
+			else
+				return "<font color='#ff0000'>telnet: INCORRECT PASSWORD.</font>"
+		else
+			return "<font color='#ff0000'>telnet: INCORRECT LOGIN.</font>"
+	var/datum/terminal/remote/new_term = new (user, comp, CT)
+	LAZYADD(comp.terminals, new_term)
+	LAZYADD(CT.terminals, new_term)
+	return "telnet: Connection established."
+
+/datum/terminal_command/remove
+	name = "remove"
+	man_entry = list("Format: remove \[FILENAME\].", "Delete file from local storage.")
+	pattern = "^remove"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/remove/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/obj/item/modular_computer/CT = terminal.computer
+	var/file_name = copytext(text, 8)
+	var/file_obj = CT.hard_drive.find_file_by_name(file_name)
+	if(file_obj in CT.hard_drive.stored_files)
+		CT.hard_drive.remove_file(file_obj)
+		return "<font color='#00ff00'>remove: [file_name] removed.</font>"
+	else if(!copytext(text, 7))
+		return "<font color='#ffa000'>remove: input filename.</font>"
+	else
+		return"<font color = '#ff0000'>remove: file not found.</font>"
+	return "remove: something wrong"
+
 //[/INFINITY]_______________________________________________________________________________________________________________

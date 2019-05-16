@@ -70,7 +70,13 @@ GLOBAL_VAR(spawntypes)
 	if(!istype(victim))
 		return
 	var/area/A = get_area(victim)
+	var/list/spots = list()
+
 	for(var/obj/machinery/cryopod/C in A)
+		if(!C.occupant)
+			spots += C
+
+	for(var/obj/machinery/cryopod/C in shuffle(spots))
 		if(!C.occupant)
 			C.set_occupant(victim, 1)
 			victim.Sleeping(rand(1,3))

@@ -13,6 +13,7 @@
 #define END_GAME_ENDING           5
 #define END_GAME_AWAITING_TICKETS 6
 #define END_GAME_DELAYED          7
+#define END_GAME_AWAITING_UPDATE  8
 
 #define BE_PLANT "BE_PLANT"
 #define BE_SYNTH "BE_SYNTH"
