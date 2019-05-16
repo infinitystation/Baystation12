@@ -437,4 +437,23 @@ Subtypes
 	LAZYADD(CT.terminals, new_term)
 	return "telnet: Connection established."
 
+/datum/terminal_command/remove
+	name = "remove"
+	man_entry = list("Format: remove \[FILENAME\].", "Delete file from local storage.")
+	pattern = "^remove"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/remove/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/obj/item/modular_computer/CT = terminal.computer
+	var/file_name = copytext(text, 8)
+	var/file_obj = CT.hard_drive.find_file_by_name(file_name)
+	if(file_obj in CT.hard_drive.stored_files)
+		CT.hard_drive.remove_file(file_obj)
+		return "<font color='#00ff00'>remove: [file_name] removed.</font>"
+	else if(!copytext(text, 7))
+		return "<font color='#ffa000'>remove: input filename.</font>"
+	else
+		return"<font color = '#ff0000'>remove: file not found.</font>"
+	return "remove: something wrong"
+
 //[/INFINITY]_______________________________________________________________________________________________________________
