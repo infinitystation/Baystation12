@@ -43,7 +43,7 @@
 			output += "<p>\[ <span class='linkOn'><b>Ready</b></span> | <a href='byond://?src=\ref[src];ready=0'>Not Ready</a> \]</p>"
 		else
 			output += "<p>\[ <a href='byond://?src=\ref[src];ready=1'>Ready</a> | <span class='linkOn'><b>Not Ready</b></span> \]</p>"
-		if(src.client.holder)
+		if(client.holder)
 			output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
 
 	else
@@ -52,11 +52,11 @@
 		if(config.observers_allowed || check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 			output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
 
-	if(!IsGuestKey(src.key))
+	if(!IsGuestKey(key))
 		establish_db_connection()
 		if(dbcon.IsConnected())
 			var/isadmin = 0
-			if(src.client && src.client.holder)
+			if(client && client.holder)
 				isadmin = 1
 			var/DBQuery/query = dbcon.NewQuery("SELECT id FROM erro_poll_question WHERE [(isadmin ? "" : "adminonly = false AND")] Now() BETWEEN starttime AND endtime AND id NOT IN (SELECT pollid FROM erro_poll_vote WHERE ckey = \"[ckey]\") AND id NOT IN (SELECT pollid FROM erro_poll_textreply WHERE ckey = \"[ckey]\")")
 			query.Execute()
@@ -229,7 +229,7 @@
 		var/voted = 0
 
 		//First check if the person has not voted yet.
-		var/DBQuery/query = dbcon.NewQuery("SELECT * FROM erro_privacy WHERE ckey='[src.ckey]'")
+		var/DBQuery/query = dbcon.NewQuery("SELECT * FROM erro_privacy WHERE ckey='[ckey]'")
 		query.Execute()
 		while(query.NextRow())
 			voted = 1
@@ -254,7 +254,7 @@
 			return
 
 		if(!voted)
-			var/sql = "INSERT INTO erro_privacy VALUES (null, Now(), '[src.ckey]', '[option]')"
+			var/sql = "INSERT INTO erro_privacy VALUES (null, Now(), '[ckey]', '[option]')"
 			var/DBQuery/query_insert = dbcon.NewQuery(sql)
 			query_insert.Execute()
 			to_chat(usr, "<b>Thank you for your vote!</b>")
@@ -281,7 +281,7 @@
 		if(istext(pollid))
 			pollid = text2num(pollid)
 		if(isnum(pollid))
-			src.poll_player(pollid)
+			poll_player(pollid)
 		return
 
 	if(href_list["invalid_jobs"])

@@ -390,7 +390,7 @@
 	for(var/datum/objective/O in all_objectives)
 		// We don't want revs to get objectives that aren't for heads of staff. Letting
 		// them win or lose based on cryo is silly so we remove the objective.
-		if(O.target == occupant.mind && O.target)
+		if(O?.target == occupant.mind)
 			if(O.owner && O.owner.current)
 				to_chat(O.owner.current, "<span class='warning'>You get the feeling your target is no longer within your reach...</span>")
 			qdel(O)
@@ -407,9 +407,6 @@
 	// Delete them from datacore.
 	var/sanitized_name = occupant.real_name
 	sanitized_name = sanitize(sanitized_name)
-	var/datum/computer_file/report/crew_record/R = get_crewmember_record(sanitized_name)
-	if(R)
-		qdel(R)
 
 	icon_state = base_icon_state
 
@@ -427,7 +424,11 @@
 		control_computer._admin_logs += "[key_name(occupant)] ([role_alt_title]) at [stationtime2text()]"
 	log_and_message_admins("[key_name(occupant)] ([role_alt_title]) entered cryostorage.")
 
-	announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
+	var/datum/computer_file/report/crew_record/R = get_crewmember_record(sanitized_name)
+	if(R)
+		announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
+		qdel(R)
+
 	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>", 3)
 
 	//This should guarantee that ghosts don't spawn.
