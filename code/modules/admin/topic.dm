@@ -2297,6 +2297,6 @@ mob/living/silicon/ai/can_centcom_reply()
 	return client && client.get_admin_jump_link(target, delimiter, prefix, sufix)
 
 /client/get_admin_jump_link(var/atom/target, var/delimiter, var/prefix, var/sufix)
-	if(holder)
+	if(check_rights(R_INVESTIGATE, 0, src))
 		var/short_links = get_preference_value(/datum/client_preference/ghost_follow_link_length) == GLOB.PREF_SHORT
 		return admin_jump_link(target, src, delimiter, prefix, sufix, short_links)

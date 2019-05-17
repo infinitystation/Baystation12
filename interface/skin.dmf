@@ -211,7 +211,7 @@ macro "borghotkeymode"
 		command = "Player-Panel-New"
 	elem 
 		name = "F7"
-		command = "msay"
+		command = "ssay"
 	elem 
 		name = "F8"
 		command = "Invisimin"
@@ -381,7 +381,7 @@ macro "macro"
 		command = "Player-Panel-New"
 	elem 
 		name = "F7"
-		command = "msay"
+		command = "ssay"
 	elem 
 		name = "F8"
 		command = "Invisimin"
@@ -614,7 +614,7 @@ macro "hotkeymode"
 		command = "Player-Panel-New"
 	elem 
 		name = "F7"
-		command = "msay"
+		command = "ssay"
 	elem 
 		name = "F8"
 		command = "Invisimin"
@@ -784,7 +784,7 @@ macro "borgmacro"
 		command = "Player-Panel-New"
 	elem 
 		name = "F7"
-		command = "msay"
+		command = "ssay"
 	elem 
 		name = "F8"
 		command = "Invisimin"

@@ -39,6 +39,9 @@ LOG_OOC
 ## log client Say
 LOG_SAY
 
+## log staff chat
+LOG_STAFF
+
 ## log admin actions
 LOG_ADMIN
 

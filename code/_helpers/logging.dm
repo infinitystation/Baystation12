@@ -36,6 +36,10 @@
 /proc/game_log(category, text)
 	diary << "\[[time_stamp()]] [game_id] [category]: [text][log_end]"
 
+/proc/log_staff_say(text)
+	if(config.log_staff)
+		game_log("STAFFSAY", text)
+
 /proc/log_admin(text)
 	GLOB.admin_log.Add(text)
 	if (config.log_admin)
