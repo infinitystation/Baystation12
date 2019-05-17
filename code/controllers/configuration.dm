@@ -10,6 +10,7 @@ var/list/gamemode_cache = list()
 	var/log_ooc = 0						// log OOC channel
 	var/log_access = 0					// log login/logout
 	var/log_say = 0						// log client say
+	var/log_staff = 0					// log staff channel
 	var/log_admin = 0					// log admin actions
 	var/log_debug = 1					// log debug output
 	var/log_game = 0					// log game events
@@ -322,6 +323,9 @@ var/list/gamemode_cache = list()
 
 				if ("debug_paranoid")
 					config.debugparanoid = 1
+
+				if ("log_staff")
+					config.log_staff = 1
 
 				if ("log_admin")
 					config.log_admin = 1

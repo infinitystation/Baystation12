@@ -34,8 +34,8 @@ em						{font-style: normal;font-weight: bold;}
 .pm  .other				{color: #0000ff;}
 
 /* Admin: Channels */
-.mod_channel			{color: #735638;	font-weight: bold;}
-.mod_channel .admin		{color: #b82e00;	font-weight: bold;}
+.staff_channel			{color: #e5892d;	font-weight: bold;}
+.staff_channel .admin		{color: #b82e00;	font-weight: bold;}
 .admin_channel			{color: #ff5097;	font-weight: bold;}
 
 /* Radio: Misc */
