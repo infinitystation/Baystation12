@@ -108,7 +108,7 @@
 
 /obj/item/ammo_magazine/shotguntaj
 	name = "magazine (12 gauge)"
-	icon = 'maps/away_inf/tajsc/tajsciship.dmi'
+	icon = 'icons/obj/ammo.dmi'
 	icon_state = "taj12"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/shotgun
@@ -122,7 +122,7 @@
 
 /obj/item/ammo_magazine/shotguntaj/net
 	name = "magazine (12 gauge) - net"
-	icon = 'maps/away_inf/tajsc/tajsciship.dmi'
+	icon = 'icons/obj/ammo.dmi'
 	icon_state = "taj12"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/shotgun/net

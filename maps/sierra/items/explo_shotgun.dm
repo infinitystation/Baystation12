@@ -88,12 +88,7 @@
 	matter = list(MATERIAL_STEEL = 720)
 	marking_color = COLOR_PALE_PURPLE_GRAY
 
-/obj/item/ammo_casing/shotgun/net
-	name = "net shell"
-	desc = "A net shell."
-	icon_state = "netshell"
-	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag/net
-	matter = list(MATERIAL_STEEL = 180)
+//obj/item/ammo_casing/shotgun/net search into infinity/code/modules/projectiles/ammunition/bullets.dm
 
 /obj/item/projectile/bullet/shotgun/beanbag/net
 	name = "netshell"
