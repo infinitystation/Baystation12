@@ -18,14 +18,14 @@
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a22lr
 	matter = list(MATERIAL_STEEL = 525)
-	caliber = CALIBER_PISTOL_TINY 
+	caliber = CALIBER_PISTOL_TINY
 	max_ammo = 15
 
 /obj/item/ammo_magazine/a22lr
 	name = "speed loader (.22LR)"
 	desc = "A speed loader for revolvers."
 	icon_state = "38"
-	caliber = CALIBER_PISTOL_TINY 
+	caliber = CALIBER_PISTOL_TINY
 	ammo_type = /obj/item/ammo_casing/a22lr
 	max_ammo = 10
 	multiple_sprites = 1
@@ -58,7 +58,7 @@
 	name = "magazine (12.7x55mm)"
 	icon_state = "5.56"
 	mag_type = MAGAZINE
-	caliber = CALIBER_ANTIMATERIAL_SMALL 
+	caliber = CALIBER_ANTIMATERIAL_SMALL
 	matter = list(MATERIAL_STEEL = 2300)
 	ammo_type = /obj/item/ammo_casing/a12755
 	max_ammo = 8
@@ -105,3 +105,27 @@
 	caliber = CALIBER_PISTOL_FAST
 	max_ammo = 20
 	multiple_sprites = 1
+
+/obj/item/ammo_magazine/shotguntaj
+	name = "magazine (12 gauge)"
+	icon = 'maps/away_inf/tajsc/tajsciship.dmi'
+	icon_state = "taj12"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun
+	matter = list(MATERIAL_STEEL = 525)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 4
+
+/obj/item/ammo_magazine/shotguntaj/empty
+	icon_state = "taj12-0"
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/shotguntaj/net
+	name = "magazine (12 gauge) - net"
+	icon = 'maps/away_inf/tajsc/tajsciship.dmi'
+	icon_state = "taj12"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/net
+	matter = list(MATERIAL_STEEL = 525)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 4

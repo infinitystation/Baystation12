@@ -1,10 +1,7 @@
 #include "tajsciship_areas.dm"
 #include "tajsciship_shuttles.dm"
 #include "tajsciship_equipment.dm"
-#include "kalash.dm"
-#include "posters.dm"
 #include "tajsciship-1.dmm"
-#include "koshaciy_korm.dm"
 
 /datum/map_template/ruin/away_site/tajsciship
 	name = "CCA NSV Ir'Shira-13"
@@ -49,7 +46,6 @@
 	shuttle_tag = "CCA EC Shuttle"
 
 /var/const/access_tajsciship = "access_tajsciship"
-
 /datum/access/tajsciship
 	id = access_tajsciship
 	desc = "CCA NSV Ir'Shira-13 EC"

@@ -215,6 +215,16 @@
 	armor_penetration = 95
 	penetration_modifier = 1.5
 
+
+/obj/item/projectile/bullet/rifle/TV
+	fire_sound = 'sound/weapons/gunshot/tjgun.ogg'
+	damage = 30
+	armor_penetration = 50
+	penetration_modifier = 1
+	stun = 1
+	weaken = 1
+	distance_falloff = 0.5
+
 /* Miscellaneous */
 /obj/item/projectile/bullet/gyro
 	name = "minirocket"

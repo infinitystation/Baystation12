@@ -131,7 +131,7 @@
 		var/obj/item/organ/affecting = H.get_organ(hit_zone) //headcheck should ensure that affecting is not null
 		user.visible_message("<span class='danger'>[user] smashes [src] into [H]'s [affecting.name]!</span>")
 		// You are going to knock someone out for longer if they are not wearing a helmet.
-		var/blocked = target.get_blocked_ratio(hit_zone, BRUTE) * 100 
+		var/blocked = target.get_blocked_ratio(hit_zone, BRUTE) * 100
 		var/weaken_duration = smash_duration + min(0, force - blocked + 10)
 		if(weaken_duration)
 			target.apply_effect(min(weaken_duration, 5), WEAKEN, blocked) // Never weaken more than a flash!
@@ -505,3 +505,21 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/oiljug/New()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/lube/oil, 100)
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/Djurl_Ma_Tua
+	name = "Djurl'Ma-Tua"
+	desc = "One of the oldest tajaran drinks, the history of which stretches from unknown-distant epochs. Anywhere but on Ahdomai, this drink is not cooked. It tastes like wine, but combines a large number of different types of spices and spices."
+	icon_state = "kotobuhlo"
+	center_of_mass = "x=17;y=3"
+	New()
+		..()
+		reagents.add_reagent(/datum/reagent/ethanol/kotovino, 120)
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/Herbal_tincture
+	name = "Herbal tincture"
+	desc = "Drink similar to tea, but from other herbs. If you brewed hundreds of medicinal herbs from pharmacies - could be something similar."
+	icon_state = "kotochai"
+	center_of_mass = "x=17;y=3"
+	New()
+		..()
+		reagents.add_reagent(/datum/reagent/drink/tajaran/chai, 120)

@@ -13,7 +13,6 @@
 #define CALIBER_RIFLE_SNIPER    	"7.62mmR"
 #define CALIBER_ANTIMATERIAL_SMALL  "12.7mmR"
 #define CALIBER_ANTIMATERIAL    	"15mmR"
-#define CALIBER_TV			  	    "8.77mm"
 
 #define CALIBER_SHOTGUN				"12g"
 #define CALIBER_GYROJET				"20mmG"

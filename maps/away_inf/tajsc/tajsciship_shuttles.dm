@@ -26,19 +26,19 @@
 /datum/shuttle/autodock/overmap/tajscishuttle
 	name = "CCA EC Shuttle"
 	warmup_time = 5
-	shuttle_area = /area/tajsciship/tajscishuttle
+	shuttle_area = /area/ship/tajscishuttle
 	current_location = "nav_tajscishuttle_dock"
 	range = 2
 	logging_home_tag = "Hangar"
 	logging_access =  access_tajsciship
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling/sierra
+	ceiling_type = /turf/simulated/floor/reinforced
 	sound_takeoff = 'sound/effects/rocket.ogg'
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
 
 /obj/effect/shuttle_landmark/tajscishuttle/start
 	name = "Dock"
 	landmark_tag = "nav_tajscishuttle_dock"
-	base_area = /area/tajsciship/tajsciship
+	base_area = /area/ship/tajsciship/mainzone
 	base_turf = /turf/simulated/floor/plating
 
 /obj/effect/shuttle_landmark/tajscishuttle/nav1
@@ -48,30 +48,3 @@
 /obj/effect/shuttle_landmark/tajscishuttle/hang
 	name = "Hangar"
 	landmark_tag = "nav_tajbase_2"
-
-/*
- * Infinity: Presets from torch (map's author, I hate you) hz che tam nizhe tupo kopipast s zhab da lol
- */
-/obj/machinery/power/apc/shuttle
-	req_access = list(access_tajsciship)
-
-/obj/machinery/vending/medical/torch
-	req_access = list(access_tajsciship)
-
-/obj/machinery/power/smes/buildable/preset/torch/engine_main/configure_and_install_coils()
-	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
-	component_parts += new /obj/item/weapon/smes_coil/super_io(src)
-	component_parts += new /obj/item/weapon/smes_coil/super_capacity(src)
-	component_parts += new /obj/item/weapon/smes_coil/super_capacity(src)
-	_input_maxed = TRUE
-	_output_maxed = TRUE
-	_input_on = TRUE
-	_output_on = TRUE
-	_fully_charged = TRUE
-
-/obj/effect/paint/expeditionary
-	color = "#68099e"
-
-/*
- * Infinity: Presets from torch: Ending
- */
