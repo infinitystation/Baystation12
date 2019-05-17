@@ -303,17 +303,17 @@
 "fQ" = (/obj/machinery/atmospherics/pipe/simple/visible/supply{icon_state = "intact-supply"; dir = 4},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/old_tile,/area/ship/tajsciship/sklad1)
 "fR" = (/obj/machinery/atmospherics/pipe/simple/visible/supply{icon_state = "intact-supply"; dir = 10},/obj/structure/cable{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/tiled/old_tile,/area/ship/tajsciship/sklad1)
 "fS" = (/obj/machinery/atmospherics/binary/pump/high_power,/turf/simulated/floor/tiled/old_tile,/area/ship/tajsciship/sklad1)
-"fT" = (/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
-"fU" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable/yellow{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
-"fV" = (/obj/effect/floor_decal/solarpanel,/obj/machinery/power/solar{id = "auxsolarsport"; name = "Aft Port Solar Array"},/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
-"fW" = (/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/catwalk,/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
-"fX" = (/obj/effect/floor_decal/solarpanel,/obj/machinery/power/solar{id = "auxsolarsport"; name = "Aft Port Solar Array"},/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
-"fY" = (/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/catwalk,/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
-"fZ" = (/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/catwalk,/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
+"fT" = (/obj/structure/grille,/obj/structure/lattice,/turf/space,/area/ship/tajsciship/solari)
+"fU" = (/obj/structure/grille,/obj/structure/girder,/obj/structure/lattice,/turf/space,/area/ship/tajsciship/solari)
+"fV" = (/obj/structure/lattice,/turf/space,/area/ship/tajsciship/solari)
+"fW" = (/obj/structure/catwalk,/turf/simulated/floor/airless,/area/ship/tajsciship/solari)
+"fX" = (/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/airless,/area/ship/tajsciship/solari)
+"fY" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/turf/simulated/floor/airless,/area/ship/tajsciship/solari)
+"fZ" = (/obj/structure/cable/yellow{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/airless,/area/ship/tajsciship/solari)
 "ga" = (/obj/machinery/door/firedoor{icon_state = "open"; dir = 4},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/door/airlock{dir = 1; icon_state = "closed"; name = "Ma'Shirra"; req_access = newlist()},/turf/simulated/floor/tiled/monotile,/area/ship/tajsciship/mainzone)
 "gb" = (/obj/structure/closet/crate/freezer/rations,/turf/simulated/floor/tiled/techfloor/grid,/area/ship/tajsciship/mainzone)
 "gc" = (/obj/machinery/door/airlock{dir = 1; icon_state = "closed"; name = "Ma'Shirra"; req_access = newlist()},/turf/simulated/floor/tiled/monotile,/area/ship/tajsciship/dorms)
-"gd" = (/obj/machinery/power/tracker,/obj/structure/cable/yellow,/obj/effect/floor_decal/solarpanel,/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
+"gd" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable/yellow{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/airless,/area/ship/tajsciship/solari)
 "ge" = (/obj/structure/grille,/obj/structure/lattice,/turf/space,/area/ship/tajsciship/mainzone)
 "gf" = (/obj/machinery/bodyscanner{dir = 8},/turf/simulated/floor/tiled/white,/area/ship/tajsciship/meatbay)
 "gg" = (/obj/machinery/body_scanconsole{dir = 8},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/white,/area/ship/tajsciship/meatbay)
@@ -329,20 +329,20 @@
 "gq" = (/obj/machinery/button/remote/blast_door{id = "lold"; name = "To-Core"; req_access = list("access_tajsciship"); pixel_y = 31},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/techfloor,/area/ship/tajsciship/mainzone)
 "gr" = (/obj/machinery/atmospherics/pipe/manifold4w/visible,/turf/simulated/floor/tiled/old_tile,/area/ship/tajsciship/sklad1)
 "gs" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 2; layer = 2.4; level = 2},/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/solari)
-"gt" = (/obj/structure/grille,/obj/structure/girder,/obj/structure/lattice,/turf/space,/area/ship/tajsciship/mainzone)
+"gt" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/airless,/area/ship/tajsciship/solari)
 "gu" = (/obj/machinery/portable_atmospherics/canister/empty,/obj/machinery/atmospherics/portables_connector{dir = 8},/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/sklad1)
 "gv" = (/obj/structure/table/rack,/obj/item/weapon/shovel,/obj/item/weapon/shovel,/obj/item/weapon/pickaxe/xeno/hand,/obj/item/weapon/pickaxe/xeno/hand,/obj/item/weapon/mining_scanner,/obj/item/weapon/mining_scanner,/obj/item/weapon/mining_scanner,/obj/item/weapon/mining_scanner,/obj/item/weapon/pickaxe,/obj/item/weapon/pickaxe,/obj/item/weapon/pickaxe,/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4; layer = 2.4; level = 2},/turf/simulated/floor/tiled/monotile,/area/ship/tajscishuttle)
 "gw" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/turf/simulated/floor/tiled/monotile,/area/ship/tajscishuttle)
 "gx" = (/obj/structure/lattice,/turf/space,/area/ship/tajsciship/mainzone)
-"gy" = (/obj/structure/grille,/obj/structure/girder,/obj/structure/lattice,/obj/structure/lattice,/turf/space,/area/ship/tajsciship/mainzone)
+"gy" = (/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/airless,/area/ship/tajsciship/solari)
 "gz" = (/obj/structure/cable{icon_state = "0-4"; d2 = 4},/obj/machinery/shipsensors,/turf/simulated/floor/plating,/area/ship/tajsciship/mainzone)
 "gA" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/monotile,/area/ship/tajsciship/mainzone)
 "gB" = (/obj/structure/closet/crate/freezer,/obj/machinery/alarm/tajsciship,/obj/item/weapon/reagent_containers/glass/beaker/cryoxadone,/obj/item/device/healthanalyzer,/obj/item/clothing/glasses/hud/health/tajvisor,/obj/item/weapon/reagent_containers/food/snacks/meat/syntiflesh,/obj/item/weapon/reagent_containers/food/snacks/meat/syntiflesh,/turf/simulated/floor/tiled/white,/area/ship/tajsciship/meatbay)
 "gC" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled/white/monotile,/area/ship/tajsciship/meatbay)
 "gD" = (/obj/structure/table/standard,/obj/item/weapon/storage/firstaid/adv,/obj/item/weapon/reagent_containers/syringe{pixel_y = -2},/obj/machinery/light/spot{dir = 1},/obj/item/clothing/gloves/latex/nitrile/modified,/obj/machinery/atmospherics/unary/vent_pump/on{dir = 8},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/firealarm{dir = 4; layer = 3.3; pixel_x = 26},/obj/item/weapon/storage/box/freezer,/turf/simulated/floor/tiled/white/monotile,/area/ship/tajsciship/meatbay)
-"gE" = (/obj/structure/cable/yellow{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
-"gF" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
-"gG" = (/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
+"gE" = (/obj/effect/floor_decal/solarpanel,/obj/machinery/power/solar{id = "auxsolarsport"; name = "Aft Port Solar Array"},/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/turf/simulated/floor/airless,/area/ship/tajsciship/solari)
+"gF" = (/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/catwalk,/turf/simulated/floor/airless,/area/ship/tajsciship/solari)
+"gG" = (/obj/effect/floor_decal/solarpanel,/obj/machinery/power/solar{id = "auxsolarsport"; name = "Aft Port Solar Array"},/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/airless,/area/ship/tajsciship/solari)
 "gH" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/effect/paint/silver,/turf/simulated/wall/r_wall/prepainted,/area/ship/tajsciship/meatbay)
 "gI" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/light{dir = 8; icon_state = "tube_map"},/turf/simulated/floor/tiled/white,/area/ship/tajsciship/meatbay)
 "gJ" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled/white,/area/ship/tajsciship/meatbay)
@@ -389,6 +389,7 @@
 "hy" = (/obj/structure/lattice,/obj/structure/transit_tube/station{icon_state = "closed"; dir = 8},/obj/structure/transit_tube_pod,/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/solari)
 "hz" = (/obj/structure/closet/firecloset,/turf/simulated/floor/tiled/old_tile,/area/ship/tajsciship/hangar)
 "hA" = (/obj/effect/wallframe_spawn/reinforced,/obj/machinery/door/blast/shutters{icon_state = "shutter1"; dir = 8},/turf/simulated/floor/tiled/steel_grid,/area/ship/tajsciship/hangar)
+"hB" = (/obj/structure/cable/yellow{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/catwalk,/turf/simulated/floor/airless,/area/ship/tajsciship/solari)
 "hC" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"},/obj/machinery/power/smes/buildable/max_cap_in_out,/turf/simulated/floor/tiled/monotile,/area/ship/tajsciship/mainzone)
 "hD" = (/obj/item/weapon/material/twohanded/fireaxe,/turf/simulated/floor/tiled/steel_grid,/area/ship/tajsciship/engines)
 "hE" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel,/obj/item/weapon/extinguisher,/turf/simulated/floor/tiled/steel_grid,/area/ship/tajsciship/engines)
@@ -623,8 +624,9 @@
 "lZ" = (/obj/machinery/door/blast/regular{id = "saa"},/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/solari)
 "ma" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/transit_tube{icon_state = "D-SE"},/turf/simulated/wall/r_wall/prepainted,/area/ship/tajsciship/solari)
 "mb" = (/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/door/blast/regular{id = "saa"},/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/solari)
+"mc" = (/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/catwalk,/turf/simulated/floor/airless,/area/ship/tajsciship/solari)
 "md" = (/obj/machinery/atmospherics/pipe/simple/hidden{dir = 10; icon_state = "intact"},/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/solari)
-"me" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
+"me" = (/obj/structure/grille,/obj/structure/girder,/obj/structure/lattice,/obj/structure/lattice,/turf/space,/area/ship/tajsciship/solari)
 "mf" = (/obj/structure/transit_tube/station,/obj/effect/catwalk_plated/dark,/obj/structure/transit_tube_pod{icon_state = "pod"; dir = 8},/turf/simulated/floor/plating,/area/ship/tajscishuttle)
 "mg" = (/obj/machinery/light/halogen{icon_state = "tube_map"; dir = 4},/turf/simulated/floor/tiled/steel_grid,/area/ship/tajsciship/engines)
 "mh" = (/obj/machinery/atmospherics/binary/pump/high_power/on/max_pressure,/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/solari)
@@ -888,7 +890,7 @@
 "rf" = (/obj/machinery/atmospherics/unary/freezer{icon_state = "freezer"; dir = 8},/turf/simulated/floor/tiled/white,/area/ship/tajsciship/meatbay)
 "rg" = (/obj/structure/closet/crate/secure,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/obj/item/weapon/barrier,/turf/simulated/floor/tiled/monotile,/area/ship/tajsciship/dorms)
 "rh" = (/obj/effect/paint/dark_gunmetal,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4; icon_state = "intact"},/turf/simulated/wall/r_wall/prepainted,/area/ship/tajsciship/solari)
-"ri" = (/obj/structure/catwalk,/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
+"ri" = (/obj/machinery/power/tracker,/obj/structure/cable/yellow,/obj/effect/floor_decal/solarpanel,/turf/simulated/floor/airless,/area/ship/tajsciship/solari)
 
 (1,1,1) = {"
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
@@ -938,7 +940,7 @@ hwhwhwhwhwhwhwhwhwhwhwdsahacacaccgfMfNaddidididicgelelemelfzfpqhgfgglqghcgdXgidX
 hwhwhwhwhwhwhwhwhwhwhwdsahacacackolbdiadadadadadcgiHiQgCgDgHgIgJgJgKlrgLcggcdfgcdfhsgNdOdfhsgNdOdfhsgNdOdfdDgAcudhgUgrgXgYgZhagphbgudhacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwdsahahacaccgcgpQpTpTpTpTpUcghgmQhthvelhGhHhHhIqUrfcgitdflRdfmEjlhWdfhVjlhWdfhVjlhWdfeFgWcSdhgUhXhYhZibicidiedhdhacachccNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwdsdsahahacaccgcgcgcgcgcgcgcgelelifelelelelelelelelcgdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfcrgAcudhdhdhdhdhdhdhdhdhdhacacacaQahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwdsdsahahacacacacacacacigigigigigigigigigigigigigigigigigigigigigigigigigigigaiaiaiaigMaiaiaiaiihihihihihihihihihihiiahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwdsdsahahacacacacacacacigigigigigigigigigigigigigigigigigigigigigigigigigigigllllllllgMllllllllihihihihihihihihihihiiahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahacacacacacacigijikilinkKiPjXkpjWqJqPqKklqLqMlsqWqQqRkqkrqSkqqNqOkPlAlAlClDlEkTiEqXiDjmiGlynLiIiJiKiLaFiNiOcNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahahahahahahigijjkjCipigkdimkGigkYjTjTltjTjTjTlultjTjTjTjTjTjTlvigiXiXiYiXiZjaiXiXjbqYjegsgsjfjhjijjhejjiiahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsdsdsdsdsdsahigiglapVoUignroVoWlwlxlxotqjotlxlxqkqjotlxlxlxotlxqjqljsjsjtjsjujsjsjsjslzlOlPlQhojgjPlSmahFhKhNdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
@@ -950,22 +952,25 @@ hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahigigigpepOigjDjTkOkOkOjTpP
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahahigigigigqwqxjDqyjDqxqzigkZoYlFqpldlflglhigktktktliljliktktktnBngmqmrihqbhQihqcqdkxjwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsdsahahahigigigigigigigigigigigigigigigigigigigllllllllllllllllllqerhnNpZihkLjBaikMkNkxjwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsgeahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahmwlYahkUkVkWkXlkkNjwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxrifTgFgFgFgEgFgFgFfUgFgFgFfUgFgFgFgEgFgFgFgEgFgFgFgEgFgFgFmegGgxmxmylololGkvjwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxmxmylololHaijwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxmxmylolIlJaijwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxmxmylolGlKaijwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxmxmynhlLjBkMlMahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxahaiaikwlUlVlWhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxahahahahahahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxgtgehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxgtgehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxgtgehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfZfXgxfVfZfXgxfVfZfXgxfVfWfXgxfVfZfXgxfVfZfXgxfVfZfXgxfVfZfXgxgtgehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxgxgxgxgxgxgxgxgxgxgxgxgxgxfYgxgxgxgxgxgxgxgxgxgxgxgxgxgxgxgxgxgxgtgehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegegtgtgtgtgtgtgtgtgtgtgtgtgygxgdgxgygtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgegehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegegegegegegegegegegegegegtgxgxgxgtgegegegegegegegegegegegegegegegegehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegegtgtgtgegehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegegegegehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfUfVfWfXfYfYfYfZfYfYfYgdfYfYfYgdfYfYfYfZfYfYfYfZfYfYfYfZfYfYfYgtgyfVmxmylololGkvjwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfUfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVmxmylololHaijwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfUfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVmxmylolIlJaijwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfUfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVmxmylolGlKaijwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfUfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVmxmynhlLjBkMlMahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfUfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVahaiaikwlUlVlWhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfUfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVahahahahahahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfUfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVfUfThwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfUfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVfUfThwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfUfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVgEgFgGfVfUfThwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfUfVgEhBgGfVgEhBgGfVgEhBgGfVgEgFgGfVgEhBgGfVgEhBgGfVgEhBgGfVgEhBgGfVfUfThwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfUfVfVfVfVfVfVfVfVfVfVfVfVfVfVmcfVfVfVfVfVfVfVfVfVfVfVfVfVfVfVfVfVfVfUfThwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfTfUfUfUfUfUfUfUfUfUfUfUfUmefVrifVmefUfUfUfUfUfUfUfUfUfUfUfUfUfUfUfUfTfThwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfTfTfTfTfTfTfTfTfTfTfTfTfUfVfVfVfUfTfTfTfTfTfTfTfTfTfTfTfTfTfTfTfTfThwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfTfUfUfUfTfThwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwfTfTfTfTfThwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
@@ -976,9 +981,6 @@ hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwnDhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
