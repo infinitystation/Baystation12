@@ -69,8 +69,8 @@
 	matter = list(MATERIAL_STEEL = 130, MATERIAL_URANIUM = 100)
 
 /obj/item/ammo_casing/shotgun/net
-    name = "net shell"
-    desc = "A net shell."
-    icon_state = "netshell"
-    projectile_type = /obj/item/projectile/bullet/shotgun/beanbag/net
-    matter = list(MATERIAL_STEEL = 180)
+	name = "net shell"
+	desc = "A net shell."
+	icon_state = "netshell"
+	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag/net
+	matter = list(MATERIAL_STEEL = 180)
