@@ -197,12 +197,12 @@
 /area/teleporter/firstdeck
 	name = "First Deck Teleporter"
 	icon_state = "teleporter"
-*/
-/area/hallway/primary/firstdeck/fore
-	name = "First Deck Fore Hallway"
-	icon_state = "hallF"
 
 /area/hallway/primary/firstdeck/foreport
+	name = "First Deck Fore Hallway"
+	icon_state = "hallF"
+*/
+/area/hallway/primary/firstdeck/fore
 	name = "First Deck Fore Hallway"
 	icon_state = "hallF"
 
