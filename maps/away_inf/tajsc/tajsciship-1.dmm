@@ -20,7 +20,7 @@
 "at" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel{dir = 4},/turf/simulated/floor/tiled/steel_grid,/area/ship/tajsciship/engines)
 "au" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/turf/simulated/wall/r_titanium,/area/ship/tajscishuttle)
 "av" = (/obj/structure/lattice,/obj/structure/plasticflaps,/turf/simulated/floor/tiled/techmaint,/area/ship/tajsciship/mainzone)
-"aw" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel{dir = 10},/obj/effect/paint/dark_gunmetal,/turf/simulated/wall/r_wall/prepainted,/area/ship/tajsciship/mainzone)
+"aw" = (/obj/machinery/portable_atmospherics/canister/nitrogen,/turf/simulated/floor/tiled/old_tile,/area/ship/tajsciship/engines)
 "ax" = (/obj/machinery/atmospherics/pipe/simple/visible/universal,/turf/simulated/floor/tiled/steel_grid,/area/ship/tajsciship/engines)
 "ay" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"},/obj/machinery/power/terminal{dir = 4},/obj/item/stack/material/silver/ten,/obj/item/stack/material/gold/ten,/obj/item/stack/material/diamond/ten,/obj/item/stack/material/mhydrogen/ten,/obj/item/stack/material/deuterium/fifty,/obj/item/stack/material/tritium/ten,/obj/structure/safe/floor,/obj/structure/table/reinforced,/obj/machinery/recharger,/turf/simulated/floor/tiled/monotile,/area/ship/tajsciship/mainzone)
 "az" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel,/obj/effect/paint/dark_gunmetal,/turf/simulated/wall/r_wall/prepainted,/area/ship/tajsciship/engines)
@@ -114,7 +114,7 @@
 "cj" = (/obj/structure/cable,/obj/machinery/power/smes/buildable/max_cap_in_out,/turf/simulated/floor/tiled/monotile,/area/ship/tajscishuttle)
 "ck" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"},/obj/machinery/telecomms/allinone/tajsciship,/turf/simulated/floor/tiled/monotile,/area/ship/tajsciship/mainzone)
 "cl" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,/turf/simulated/floor/tiled/dark/monotile,/area/ship/tajsciship/hangar)
-"cm" = (/obj/machinery/portable_atmospherics/canister/nitrogen,/turf/simulated/floor/tiled/old_tile,/area/ship/tajsciship/mainzone)
+"cm" = (/obj/machinery/portable_atmospherics/canister/helium,/turf/simulated/floor/tiled/old_tile,/area/ship/tajsciship/engines)
 "cn" = (/obj/machinery/light/halogen{icon_state = "tube_map"; dir = 4},/obj/machinery/conveyor{dir = 9; id = "mining_internal"},/turf/simulated/floor/tiled/techfloor,/area/ship/tajsciship/hangar)
 "co" = (/obj/machinery/door/firedoor,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/door/airlock{dir = 8; icon_state = "closed"; name = "Ma'Shirra"; req_access = newlist()},/turf/simulated/floor/tiled/dark/monotile,/area/ship/tajsciship/hangar)
 "cp" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/door/airlock{dir = 1; icon_state = "closed"; name = "Ma'Shirra"; req_access = newlist()},/turf/simulated/floor/tiled/dark/monotile,/area/ship/tajsciship/dorms)
@@ -314,6 +314,7 @@
 "gb" = (/obj/structure/closet/crate/freezer/rations,/turf/simulated/floor/tiled/techfloor/grid,/area/ship/tajsciship/mainzone)
 "gc" = (/obj/machinery/door/airlock{dir = 1; icon_state = "closed"; name = "Ma'Shirra"; req_access = newlist()},/turf/simulated/floor/tiled/monotile,/area/ship/tajsciship/dorms)
 "gd" = (/obj/machinery/power/tracker,/obj/structure/cable/yellow,/obj/effect/floor_decal/solarpanel,/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
+"ge" = (/obj/structure/grille,/obj/structure/lattice,/turf/space,/area/ship/tajsciship/mainzone)
 "gf" = (/obj/machinery/bodyscanner{dir = 8},/turf/simulated/floor/tiled/white,/area/ship/tajsciship/meatbay)
 "gg" = (/obj/machinery/body_scanconsole{dir = 8},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/white,/area/ship/tajsciship/meatbay)
 "gh" = (/obj/item/weapon/defibrillator/loaded,/obj/structure/table/standard,/obj/item/auto_cpr,/obj/item/weapon/storage/firstaid/adv,/obj/item/bodybag/rescue/loaded,/obj/item/bodybag/rescue/loaded,/obj/item/bodybag/cryobag,/obj/item/bodybag/cryobag,/obj/machinery/firealarm{dir = 4; layer = 3.3; pixel_x = 26},/turf/simulated/floor/tiled/white,/area/ship/tajsciship/meatbay)
@@ -328,12 +329,12 @@
 "gq" = (/obj/machinery/button/remote/blast_door{id = "lold"; name = "To-Core"; req_access = list("access_tajsciship"); pixel_y = 31},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/techfloor,/area/ship/tajsciship/mainzone)
 "gr" = (/obj/machinery/atmospherics/pipe/manifold4w/visible,/turf/simulated/floor/tiled/old_tile,/area/ship/tajsciship/sklad1)
 "gs" = (/obj/machinery/atmospherics/unary/vent_pump/on{dir = 2; layer = 2.4; level = 2},/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/solari)
-"gt" = (/obj/structure/grille,/turf/space,/area/ship/tajsciship/mainzone)
+"gt" = (/obj/structure/grille,/obj/structure/girder,/obj/structure/lattice,/turf/space,/area/ship/tajsciship/mainzone)
 "gu" = (/obj/machinery/portable_atmospherics/canister/empty,/obj/machinery/atmospherics/portables_connector{dir = 8},/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/sklad1)
 "gv" = (/obj/structure/table/rack,/obj/item/weapon/shovel,/obj/item/weapon/shovel,/obj/item/weapon/pickaxe/xeno/hand,/obj/item/weapon/pickaxe/xeno/hand,/obj/item/weapon/mining_scanner,/obj/item/weapon/mining_scanner,/obj/item/weapon/mining_scanner,/obj/item/weapon/mining_scanner,/obj/item/weapon/pickaxe,/obj/item/weapon/pickaxe,/obj/item/weapon/pickaxe,/obj/machinery/atmospherics/unary/vent_pump/on{dir = 4; layer = 2.4; level = 2},/turf/simulated/floor/tiled/monotile,/area/ship/tajscishuttle)
 "gw" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/turf/simulated/floor/tiled/monotile,/area/ship/tajscishuttle)
 "gx" = (/obj/structure/lattice,/turf/space,/area/ship/tajsciship/mainzone)
-"gy" = (/obj/structure/grille,/obj/structure/girder,/turf/space,/area/ship/tajsciship/mainzone)
+"gy" = (/obj/structure/grille,/obj/structure/girder,/obj/structure/lattice,/obj/structure/lattice,/turf/space,/area/ship/tajsciship/mainzone)
 "gz" = (/obj/structure/cable{icon_state = "0-4"; d2 = 4},/obj/machinery/shipsensors,/turf/simulated/floor/plating,/area/ship/tajsciship/mainzone)
 "gA" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/monotile,/area/ship/tajsciship/mainzone)
 "gB" = (/obj/structure/closet/crate/freezer,/obj/machinery/alarm/tajsciship,/obj/item/weapon/reagent_containers/glass/beaker/cryoxadone,/obj/item/device/healthanalyzer,/obj/item/clothing/glasses/hud/health/tajvisor,/obj/item/weapon/reagent_containers/food/snacks/meat/syntiflesh,/obj/item/weapon/reagent_containers/food/snacks/meat/syntiflesh,/turf/simulated/floor/tiled/white,/area/ship/tajsciship/meatbay)
@@ -385,9 +386,9 @@
 "hv" = (/obj/structure/table/standard,/obj/item/weapon/storage/firstaid/surgery{pixel_y = 6},/obj/item/stack/medical/advanced/bruise_pack,/obj/machinery/vending/wallmed1{pixel_x = 24; pixel_y = 0},/obj/item/weapon/reagent_containers/spray/sterilizine,/obj/item/clothing/gloves/latex/modified,/obj/item/stack/nanopaste,/turf/simulated/floor/tiled/white/monotile,/area/ship/tajsciship/meatbay)
 "hw" = (/turf/space,/area/space)
 "hx" = (/obj/machinery/power/terminal{dir = 4},/obj/structure/cable{icon_state = "0-2"; d2 = 2},/turf/simulated/floor/tiled/monotile,/area/ship/tajscishuttle)
+"hy" = (/obj/structure/lattice,/obj/structure/transit_tube/station{icon_state = "closed"; dir = 8},/obj/structure/transit_tube_pod,/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/solari)
 "hz" = (/obj/structure/closet/firecloset,/turf/simulated/floor/tiled/old_tile,/area/ship/tajsciship/hangar)
 "hA" = (/obj/effect/wallframe_spawn/reinforced,/obj/machinery/door/blast/shutters{icon_state = "shutter1"; dir = 8},/turf/simulated/floor/tiled/steel_grid,/area/ship/tajsciship/hangar)
-"hB" = (/obj/machinery/portable_atmospherics/canister/helium,/turf/simulated/floor/tiled/old_tile,/area/ship/tajsciship/mainzone)
 "hC" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"},/obj/machinery/power/smes/buildable/max_cap_in_out,/turf/simulated/floor/tiled/monotile,/area/ship/tajsciship/mainzone)
 "hD" = (/obj/item/weapon/material/twohanded/fireaxe,/turf/simulated/floor/tiled/steel_grid,/area/ship/tajsciship/engines)
 "hE" = (/obj/machinery/atmospherics/pipe/simple/hidden/fuel,/obj/item/weapon/extinguisher,/turf/simulated/floor/tiled/steel_grid,/area/ship/tajsciship/engines)
@@ -622,7 +623,6 @@
 "lZ" = (/obj/machinery/door/blast/regular{id = "saa"},/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/solari)
 "ma" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/cable/yellow{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/transit_tube{icon_state = "D-SE"},/turf/simulated/wall/r_wall/prepainted,/area/ship/tajsciship/solari)
 "mb" = (/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/machinery/door/blast/regular{id = "saa"},/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/solari)
-"mc" = (/obj/structure/lattice,/obj/structure/transit_tube/station{icon_state = "closed"; dir = 8},/obj/structure/transit_tube_pod,/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/mainzone)
 "md" = (/obj/machinery/atmospherics/pipe/simple/hidden{dir = 10; icon_state = "intact"},/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/solari)
 "me" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/structure/catwalk,/obj/structure/cable/yellow{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/airless,/area/ship/tajsciship/mainzone)
 "mf" = (/obj/structure/transit_tube/station,/obj/effect/catwalk_plated/dark,/obj/structure/transit_tube_pod{icon_state = "pod"; dir = 8},/turf/simulated/floor/plating,/area/ship/tajscishuttle)
@@ -909,12 +909,12 @@ hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsahaiapavapaiahdsdsdsgxgxgxdsdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsdsahahahahahahahahahahahahahahahahahahahahahahaiaEblaEaiahahahahabababahdsdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahahararararararararararararararararararararararbBbFbBaraeaeaeaeafagajaeahdsdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahararasauaAaAaAaAaBmkasasasasasasasasbebeehbGbLarbzbObzaraecmczbuakalakaeaeahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahaharbeauaAaCaDaIaJaKaLaMaNaTaYaKaZbabbasasbeehcWhzhAbVccnWaraehBcPhDaohEaoaoaqcNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahaharbebdaCbfbjbmbnbobpbrbtbtbtbvbpbtbybAbDasasehlTmHhAbVccbVaraehBcVaonjbcnMatagcNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahararasauaAaAaAaAaBmkasasasasasasasasbebeehbGbLarbzbObzaraeawczbuakalakaeaeahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahaharbeauaAaCaDaIaJaKaLaMaNaTaYaKaZbabbasasbeehcWhzhAbVccnWaraecmcPhDaohEaoaoaqcNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahaharbebdaCbfbjbmbnbobpbrbtbtbtbvbpbtbybAbDasasehlTmHhAbVccbVaraecmcVaonjbcnMatagcNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsahaharbeasasasbKbXbmbmcbaKcdcecfchcqaKcycbbmcAcEcGehnOnPhAbVccbVaraeaeaenRaoaxaomgafanahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsaharbebecHcHcIcMcTdgdtdPaKedeJaseKgkaKgvgwbmgPgVcGehnOnParbzbObzarardeaRfanTnUaonVakazahdsdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsahaharambecHhdhfhhhihjhkhlashmhnashphqashrbXhxcjasasehbiaGbPnYccnZcnardeaRfaaoaHaoaoakafawahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsahaharambecHhdhfhhhihjhkhlashmhnashphqashrbXhxcjasasehbiaGbPnYccnZcnardeaRfaaoaHaoaoakafanahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahararbebecHcHhJbKhLhMhSbmhUkclXmfmimjmkmpbXmsmtmucGehbiaGcBdRaGdRnYaraOaPaRaSocaSaVaPaWaXcNgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsahaharararbeasasasbKbXbmbmbmmvmzmAmBmAmCmvmDmFmsmJmKcGeUbiaGaGaGaGaGaGaraOaPaRodaUoeaVaPaWazahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsaharmGmGbwbebemLasmMmNbmmObmmPmRmSmUmVmXmYmZnanbncasasehbiaGofogaGohoiarbgaPaRojaUokaVaPbhazahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
@@ -943,29 +943,29 @@ hwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahacacacacacacigijikilinkKiPjXkpjWqJqPqKklqLqMls
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahahahahahahigijjkjCipigkdimkGigkYjTjTltjTjTjTlultjTjTjTjTjTjTlvigiXiXiYiXiZjaiXiXjbqYjegsgsjfjhjijjhejjiiahdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsdsdsdsdsdsahigiglapVoUignroVoWlwlxlxotqjotlxlxqkqjotlxlxlxotlxqjqljsjsjtjsjujsjsjsjslzlOlPlQhojgjPlSmahFhKhNdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsahahigoXlBpaigigigoGigjDjDjEjFjEjDkBigqmqnjTjTjTqnjTqoigjIjIjJjKjLjMjIjIjIihlZlZmbjPmIjejehPhQiMjdgxhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahigigigpcpdlepfigjDjTjUjVjUjTqZigltqnjTjTjTqnjTltigkSjYjYjYjZjYjYjYkaihbJmdhemljejejemcihlnjwdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahigigigpcpdlepfigjDjTjUjVjUjTqZigltqnjTjTjTqnjTltigkSjYjYjYjZjYjYjYkaihbJmdhemljejejehyihlnjwdshwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahigigignkpYpipjigjDkfkgkhkikjkkiglcqqqrjTqsqtquqvigksktktjYjZjYktktkunAmTmhhemljejejejxjyaijwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsahahigigpkplpmpnigkykfkzkAkzkjkBigkCkDkEkFkHkIkJpLigksktktjYjZjYktktkunBihhupZhondjejejzjAjBjwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahigigigpepOigjDjTkOkOkOjTpPigpWkQkQkQkQkQkQkRigkSjYjYjYqijYjYjYpXqammmnmohojNjOjQjRjSkbjwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsahahahigigigigqwqxjDqyjDqxqzigkZoYlFqpldlflglhigktktktliljliktktktnBngmqmrihqbhQihqcqdkxjwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsdsahahahigigigigigigigigigigigigigigigigigigigllllllllllllllllllqerhnNpZihkLjBaikMkNkxjwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsgtahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahmwlYahkUkVkWkXlkkNjwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgygxrifTgFgFgFgEgFgFgFfUgFgFgFfUgFgFgFgEgFgFgFgEgFgFgFgEgFgFgFmegGgxmxmylololGkvjwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgygxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxmxmylololHaijwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgygxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxmxmylolIlJaijwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgygxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxmxmylolGlKaijwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgygxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxmxmynhlLjBkMlMahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgygxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxahaiaikwlUlVlWhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgygxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxahahahahahahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgygxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxgygthwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgygxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxgygthwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgygxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxgygthwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgygxfVfZfXgxfVfZfXgxfVfZfXgxfVfWfXgxfVfZfXgxfVfZfXgxfVfZfXgxfVfZfXgxgygthwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgygxgxgxgxgxgxgxgxgxgxgxgxgxgxfYgxgxgxgxgxgxgxgxgxgxgxgxgxgxgxgxgxgxgygthwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgtgygygygygygygygygygygygygygxgdgxgygygygygygygygygygygygygygygygygygtgthwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgtgtgtgtgtgtgtgtgtgtgtgtgygxgxgxgygtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgthwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgtgygygygtgthwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
-hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgtgtgtgtgthwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwdsdsgeahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahmwlYahkUkVkWkXlkkNjwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxrifTgFgFgFgEgFgFgFfUgFgFgFfUgFgFgFgEgFgFgFgEgFgFgFgEgFgFgFmegGgxmxmylololGkvjwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxmxmylololHaijwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxmxmylolIlJaijwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxmxmylolGlKaijwahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxmxmynhlLjBkMlMahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxahaiaikwlUlVlWhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxahahahahahahhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxgtgehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxgtgehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxfVfWfXgxgtgehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxfVfZfXgxfVfZfXgxfVfZfXgxfVfWfXgxfVfZfXgxfVfZfXgxfVfZfXgxfVfZfXgxgtgehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegtgxgxgxgxgxgxgxgxgxgxgxgxgxgxfYgxgxgxgxgxgxgxgxgxgxgxgxgxgxgxgxgxgxgtgehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegegtgtgtgtgtgtgtgtgtgtgtgtgygxgdgxgygtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgegehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegegegegegegegegegegegegegtgxgxgxgtgegegegegegegegegegegegegegegegegehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegegtgtgtgegehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
+hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwgegegegegehwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
 hwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhwhw
