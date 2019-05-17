@@ -90,16 +90,6 @@
 
 //obj/item/ammo_casing/shotgun/net search into infinity/code/modules/projectiles/ammunition/bullets.dm
 
-/obj/item/projectile/bullet/shotgun/beanbag/net
-	name = "netshell"
-	damage = 5
-	agony = 10
-
-/obj/item/projectile/bullet/shotgun/beanbag/net/on_hit(var/atom/target, var/blocked = 0, var/def_zone = null)
-	var/obj/item/weapon/energy_net/safari/net = new(loc)
-	net.throw_impact(target)
-	return TRUE
-
 /obj/item/weapon/storage/box/ammo/explo_shells
 	name = "box of utility shells"
 	startswith = list(/obj/item/ammo_magazine/shotholder/beanbag = 1,

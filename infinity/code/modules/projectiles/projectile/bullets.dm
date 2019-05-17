@@ -70,3 +70,13 @@
 	penetrating = 4
 	armor_penetration = 85
 	penetration_modifier = 1.5
+
+/obj/item/projectile/bullet/shotgun/beanbag/net
+	name = "netshell"
+	damage = 5
+	agony = 10
+
+/obj/item/projectile/bullet/shotgun/beanbag/net/on_hit(var/atom/target, var/blocked = 0, var/def_zone = null)
+	var/obj/item/weapon/energy_net/safari/net = new(loc)
+	net.throw_impact(target)
+	return TRUE
