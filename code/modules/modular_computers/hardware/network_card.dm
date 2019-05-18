@@ -97,6 +97,8 @@ var/global/ntnet_card_uid = 1
 		. = strength
 	else if(T.z in GLOB.using_map.contact_levels) //not on station, but close enough for radio signal to travel
 		. = strength - 1
+	else if(T.z in GLOB.using_map.admin_levels)
+		. = strength
 
 	if(proxy_id)
 		var/obj/item/modular_computer/comp = ntnet_global.get_computer_by_nid(proxy_id)
