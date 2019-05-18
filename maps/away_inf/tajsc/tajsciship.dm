@@ -8,7 +8,7 @@
 	id = "awaysite_taj_sciship"
 	description = "A CCA EC scouting station."
 	suffixes = list("tajsc/tajsciship-1.dmm")
-	cost = 1
+	cost = 0.3
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/tajscishuttle)
 
 /obj/effect/overmap/sector/tajscispace
