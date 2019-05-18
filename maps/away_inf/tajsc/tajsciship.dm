@@ -17,8 +17,6 @@
 	in_space = 1
 	icon = 'maps/away_inf/tajsc/tajsciship.dmi'
 	icon_state = "bshole"
-	start_x = 23
-	start_y = 27
 
 /obj/effect/submap_landmark/joinable_submap/tajsciship
 	name = "CCA NSV Ir'Shira-13"

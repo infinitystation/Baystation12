@@ -8,8 +8,6 @@
 	icon = 'maps/away_inf/tajsc/tajsciship.dmi'
 	icon_state = "shipstay"
 	moving_state = "shipmove"
-	start_x = 23
-	start_y = 27
 	initial_generic_waypoints = list("nav_tajsciship_start", "nav_tajbase_1", "nav_tajbase_2")
 	initial_restricted_waypoints = list(
 	"CCA EC Shuttle" = list("nav_tajscishuttle_dock")
