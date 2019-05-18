@@ -171,6 +171,7 @@
 	name = "poster"
 	desc = "A large piece of space-resistant printed paper."
 	icon = 'icons/obj/contraband.dmi'
+	icon_state="tposter_1"
 
 /obj/structure/sign/poster/tjpost/tj_1
 	poster_type = /decl/poster/tjpost/tj_1
