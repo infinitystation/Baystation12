@@ -7,7 +7,7 @@
 	description = "A Skrellian SDTF scouting vessel."
 	prefix = "maps/away_inf/"
 	suffixes = list("skrellscoutship/skrellscoutship-1.dmm", "skrellscoutship/skrellscoutship-2.dmm")
-	cost = 0.5
+	cost = 1
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/skrellscoutship, /datum/shuttle/autodock/overmap/skrellscoutshuttle)
 
 /obj/effect/overmap/sector/skrellscoutspace
