@@ -10,6 +10,7 @@
 	suffixes = list("tajsc/tajsciship-1.dmm")
 	cost = 0.3
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/tajscishuttle)
+	prefix = "map/away_inf/"
 
 /obj/effect/overmap/sector/tajscispace
 	name = "Abnormal sector"
