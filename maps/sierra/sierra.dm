@@ -123,6 +123,7 @@
 	#include "../away_inf/mining/mining.dm"
 //	#include "../away_inf/salvagers/salvagers.dm"
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
+	#include "../away_inf/tajsc/tajsciship.dm"
 
 	#include "../away/bearcat/bearcat.dm"
 //	#include "../away/mining/mining.dm"
