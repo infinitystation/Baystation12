@@ -1644,15 +1644,15 @@ datum/admins/var/obj/item/weapon/paper/admin/faxreply // var to hold fax replies
 	if(destination.recievefax(P))
 		to_chat(src.owner, "<span class='notice'>Message reply to transmitted successfully.</span>")
 		if(P.sender) // sent as a reply
-			log_admin("[key_name(src.owner)] replied to a fax message from [key_name(P.sender)]")
+			log_fax("[key_name(src.owner)] replied to a fax message from [key_name(P.sender)]")
 			for(var/client/C in GLOB.admins)
 				if((R_INVESTIGATE) & C.holder.rights)
-					to_chat(C, "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] replied to a fax message from [key_name_admin(P.sender)] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
+					to_chat(C, "<span class='log_message'><span class='prefix'>AFAX LOG:</span> [key_name_admin(src.owner)] replied to a fax message from [key_name_admin(P.sender)] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
 		else
-			log_admin("[key_name(src.owner)] has sent a fax message to [destination.department]")
+			log_fax("[key_name(src.owner)] has sent an admin fax message to [destination.department]")
 			for(var/client/C in GLOB.admins)
 				if((R_INVESTIGATE) & C.holder.rights)
-					to_chat(C, "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name_admin(src.owner)] has sent a fax message to [destination.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
+					to_chat(C, "<span class='log_message'><span class='prefix'>AFAX LOG:</span> [key_name_admin(src.owner)] has sent a fax message to [destination.department] (<a href='?_src_=holder;AdminFaxView=\ref[rcvdcopy]'>VIEW</a>)</span>")
 
 	else
 		to_chat(src.owner, "<span class='warning'>Message reply failed.</span>")

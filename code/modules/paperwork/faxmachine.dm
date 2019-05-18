@@ -37,7 +37,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 			return
 		scan = O
 		to_chat(user, "<span class='notice'>You insert \the [O] into \the [src].</span>")
-	else 
+	else
 		..()
 
 /obj/machinery/photocopier/faxmachine/attack_hand(mob/user as mob)
@@ -152,6 +152,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	if (success)
 		visible_message("[src] beeps, \"Message transmitted successfully.\"")
+		log_fax("[key_name(usr)] sends fax to the [destination]")
 		//sendcooldown = 600
 	else
 		visible_message("[src] beeps, \"Error transmitting message.\"")
@@ -165,6 +166,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	flick("faxreceive", src)
 	playsound(loc, "sound/machines/dotprinter.ogg", 50, 1)
+	visible_message("[src] beeps, \"Incomming message.\"")
 
 	// give the sprite some time to flick
 	sleep(20)
@@ -222,6 +224,10 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	sendcooldown = 600
 	sleep(50)
+	for(var/obj/machinery/photocopier/faxmachine/F in GLOB.allfaxes)
+		if( F.department in admin_departments)
+			F.recievefax(rcvdcopy)
+	log_fax("[key_name(sender)] sends admin fax to the [destination]")
 	visible_message("[src] beeps, \"Message transmitted successfully.\"")
 
 
