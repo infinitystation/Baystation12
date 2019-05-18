@@ -53,25 +53,38 @@
 		No connected SMES units detected!<br>
 	{{/for}}
 {{/if}}
-{{if data.hide_breakers}}
-	<b>Breaker readings hidden.</b><br>
-{{else}}
-	<b>Detected Breaker Boxes with RCON support:</b><br>
-	{{for data.breaker_info}}
-		<div class = "item">
-			<div class="itemLabel">				
-				{{:value.RCON_tag}}
+{{if data.skill_fail}}
+	{{for data.skill_fail}}
+		<div class="item">
+			<div class="itemLabelWide">
+	    		{{:value.key}}
 			</div>
-			<div class="itemContent">
-				<table>
-				<tr><td>
-					{{:value.enabled ? "[<span class='good'>ENABLED</span>]" : "[<span class='bad'>DISABLED</span>]"}}
-				<td>
-					{{:helper.link('', 'power', {'toggle_breaker' : value.RCON_tag})}}
-				</table>
+			<div class="itemContentNarrow">
+				{{:value.value}}
 			</div>
 		</div>
-	{{empty}}
-		No connected Breaker Boxes detected!
-	{{/for}}
+		{{/for}}
+{{else}}
+	{{if data.hide_breakers}}
+		<b>Breaker readings hidden.</b><br>
+	{{else}}
+		<b>Detected Breaker Boxes with RCON support:</b><br>
+		{{for data.breaker_info}}
+			<div class = "item">
+				<div class="itemLabel">				
+					{{:value.RCON_tag}}
+				</div>
+				<div class="itemContent">
+					<table>
+					<tr><td>
+						{{:value.enabled ? "[<span class='good'>ENABLED</span>]" : "[<span class='bad'>DISABLED</span>]"}}
+					<td>
+						{{:helper.link('', 'power', {'toggle_breaker' : value.RCON_tag})}}
+					</table>
+				</div>
+			</div>
+		{{empty}}
+			No connected Breaker Boxes detected!
+		{{/for}}
+	{{/if}}
 {{/if}}
