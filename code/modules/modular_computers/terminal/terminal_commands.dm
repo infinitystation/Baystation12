@@ -427,6 +427,7 @@ Subtypes
 				var/datum/terminal/remote/new_term = new (user, comp, CT)
 				LAZYADD(comp.terminals, new_term)
 				LAZYADD(CT.terminals, new_term)
+				ntnet_global.add_log("[CT.network_card.get_network_tag()] open telnet tunnel to [comp.network_card.get_network_tag()]")
 				return "<font color='#00ff00'>telnet: Connection established with login: [login], and password: [password].</font>"
 			else
 				return "<font color='#ff0000'>telnet: INCORRECT PASSWORD.</font>"
@@ -435,6 +436,7 @@ Subtypes
 	var/datum/terminal/remote/new_term = new (user, comp, CT)
 	LAZYADD(comp.terminals, new_term)
 	LAZYADD(CT.terminals, new_term)
+	ntnet_global.add_log("[CT.network_card.get_network_tag()] open telnet tunnel to [comp.network_card.get_network_tag()]")
 	return "telnet: Connection established."
 
 /datum/terminal_command/remove
