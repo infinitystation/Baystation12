@@ -871,7 +871,6 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state= "terminal"
 	anchored = 1
-	req_access = list(access_tajsciship)
 
 /obj/item/toy/ringbell/tajalarm/attack_hand(mob/user as mob)
 	if (user.a_intent == I_GRAB)
