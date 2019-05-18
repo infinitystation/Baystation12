@@ -81,45 +81,34 @@
 
 /obj/machinery/photocopier/faxmachine/centcomm/attack_hand(mob/user as mob)
 	user.set_machine(src)
-
 	var/dat = "Fax Machine<BR>"
-
 	var/scan_name
 	if(scan)
 		scan_name = scan.name
 	else
 		scan_name = "--------"
-
 	dat += "Confirm Identity: <a href='byond://?src=\ref[src];scan=1'>[scan_name]</a><br>"
-
 	if(authenticated)
 		dat += "<a href='byond://?src=\ref[src];logout=1'>{Log Out}</a>"
 	else
 		dat += "<a href='byond://?src=\ref[src];auth=1'>{Log In}</a>"
-
 	dat += "<hr>"
-
 	if(authenticated)
 		dat += "<b>Logged in to:</b> [GLOB.using_map.boss_name] Quantum Entanglement Network<br><br>"
-
 		if(copyitem)
 			dat += "<a href='byond://?src=\ref[src];remove=1'>Remove Item</a><br><br>"
 			dat += "<a href='byond://?src=\ref[src];send=1'>Send via NONSECURE connection</a><br>"
 			dat += "<b>Currently sending:</b> [copyitem.name]<br>"
 			dat += "<b>Sending to:</b> <a href='byond://?src=\ref[src];dept=1'>[destination]</a><br>"
-
 		else
 			dat += "Please insert paper to send via NONSECURE connection.<br><br>"
 			dat += "<b>Sending to:</b> <a href='byond://?src=\ref[src];dept=1'>[destination]</a><br>"
 			dat += "<a href='byond://?src=\ref[src];secsend=1'>Create and send message via SECURE connection</a><br>"
-
 	else
 		dat += "Proper authentication is required to use this device.<br><br>"
-
 		if(copyitem)
 			dat += "<a href ='byond://?src=\ref[src];remove=1'>Remove Item</a><br>"
-
-	user << browse(dat, "window=copier")
+	show_browser(usr, dat, "window=copier")
 	onclose(user, "copier")
 	return
 
@@ -130,12 +119,14 @@
 				visible_message("[src] beeps, \"It's looks stupid...\"")
 			else
 				sendfax(destination)
+
 	else if(href_list["remove"])
 		if(copyitem)
 			usr.put_in_hands(copyitem)
 			to_chat(usr, "<span class='notice'>You take \the [copyitem] out of \the [src].</span>")
 			copyitem = null
 			updateUsrDialog()
+
 	if(href_list["secsend"])	//May cause some bad situations...
 		if (!destination)
 			visible_message("[src] beeps, \"No departament selected.\"")
@@ -153,9 +144,7 @@
 			if(sendto.department == destination)
 				exit = sendto
 		var/replyorigin = input(usr, "Please specify who the fax is coming from", "Origin") as text|null
-
-		var/obj/item/weapon/paper/admin/P = new /obj/item/weapon/paper/admin( usr ) //hopefully the null loc won't cause trouble for us
-
+		var/obj/item/weapon/paper/admin/P = new /obj/item/weapon/paper/admin(usr) //hopefully the null loc won't cause trouble for us
 		P.admindatum = usr.client.holder
 		P.origin = replyorigin
 		P.destination = exit
@@ -181,7 +170,7 @@
 		if(!destination) destination = lastdestination
 
 	if(href_list["auth"])
-		if ( (!( authenticated ) && (scan)) )
+		if ((!(authenticated) && (scan)))
 			if (check_access(scan))
 				authenticated = 1
 

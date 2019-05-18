@@ -28,7 +28,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 		admin_departments = list("[GLOB.using_map.boss_name]", "Office of Civil Investigation and Enforcement", "[GLOB.using_map.boss_short] Supply") + GLOB.using_map.map_admin_faxes
 	GLOB.allfaxes += src
 	if(!destination) destination = "[GLOB.using_map.boss_name]"
-	if( !(("[department]" in GLOB.alldepartments) || ("[department]" in admin_departments)))
+	if(!(("[department]" in GLOB.alldepartments) || ("[department]" in admin_departments)))
 		GLOB.alldepartments |= department
 
 /obj/machinery/photocopier/faxmachine/attackby(obj/item/O as obj, mob/user as mob)
@@ -225,7 +225,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	sendcooldown = 600
 	sleep(50)
 	for(var/obj/machinery/photocopier/faxmachine/F in GLOB.allfaxes)
-		if( F.department in admin_departments)
+		if(F.department in admin_departments)
 			F.recievefax(rcvdcopy)
 	log_fax("[key_name(sender)] sends admin fax to the [destination]")
 	visible_message("[src] beeps, \"Message transmitted successfully.\"")
