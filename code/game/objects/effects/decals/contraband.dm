@@ -169,9 +169,9 @@
 
 /obj/structure/sign/poster/tjpost
 	name = "poster"
-	desc = "A large piece of space-resistant printed paper."
+	desc = "A large piece of space-resistant printed paper with emblem of CCA"
 	icon = 'icons/obj/contraband.dmi'
-	icon_state="tposter_1"
+	icon_state= "tposter"
 
 /obj/structure/sign/poster/tjpost/tj_1
 	poster_type = /decl/poster/tjpost/tj_1
