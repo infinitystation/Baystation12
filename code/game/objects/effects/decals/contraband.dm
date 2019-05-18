@@ -242,6 +242,11 @@
 /obj/structure/sign/poster/guide_to_pee
 	poster_type = /decl/poster/guide_to_pee
 
+/decl/poster/tjpost
+	icon_state="tposter"
+	name = "CCA emblem"
+	desc = "Poster with emblem of CCA"
+
 /decl/poster/tjpost/tj_1
 	icon_state="tposter_1"
 	name = "Liberation day"
