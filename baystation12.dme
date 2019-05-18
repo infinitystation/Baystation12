@@ -1343,7 +1343,6 @@
 #include "code\modules\admin\verbs\randomverbs.dm"
 #include "code\modules\admin\verbs\reestablish_db_connection.dm"
 #include "code\modules\admin\verbs\respawn_as_self.dm"
-#include "code\modules\admin\verbs\SDQL.dm"
 #include "code\modules\admin\verbs\striketeam.dm"
 #include "code\modules\admin\verbs\ticklag.dm"
 #include "code\modules\admin\verbs\trading_verbs.dm"
