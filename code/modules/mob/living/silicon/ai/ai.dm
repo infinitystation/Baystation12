@@ -223,16 +223,11 @@ var/list/ai_verbs_default = list(
 	job = "AI"
 	setup_icon()
 	eyeobj.possess(src)
-	switch(alert(src, "Announce your presence?", "AI Presense","Yes", "No"))
-		if("Yes")
-			var/inp = input(src, "Announce your presence?", "Presence.") in list("Torch Voice Announcement", "TG Voice Announcement")
-			if(inp == "Torch Voice Announcement")
-				announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/newAI.ogg')
-			if(inp == "TG Voice Announcement")
-				announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/TG/newai.ogg')
-	//var/otvet_rwqir231 = input(src, "Announce your presence?", "Presence.") in list("Yes", "No")
-	//if(otvet_rwqir231 == "Yes")
-	//	announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/TG/newai.ogg')
+
+	if(alert(src, "Announce your presence?", "AI Presense","Yes", "No") == "Yes")
+		switch(input(src, "Announce your presence?", "Presence.") in list("Torch Voice Announcement", "TG Voice Announcement"))
+			if("Torch Voice Announcement")	announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/newAI.ogg')
+			if("TG Voice Announcement")	announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/TG/newai.ogg')
 
 /mob/living/silicon/ai/Destroy()
 	for(var/robot in connected_robots)
