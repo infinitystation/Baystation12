@@ -133,7 +133,7 @@
 /obj/item/ammo_magazine/tv
 	name = "Large black magazine."
 	desc = "Black metal rifle magazine. Quite heavy."
-	icon_state = "TVm"
+	icon_state = "tvm"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	caliber = CALIBER_TV
@@ -143,6 +143,7 @@
 	multiple_sprites = 1
 
 	/obj/item/ammo_magazine/tv/empty
+		icon_state = "tvms"
 		initial_ammo = 0
 
 /obj/item/ammo_magazine/tvtcink
