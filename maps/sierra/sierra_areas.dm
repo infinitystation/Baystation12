@@ -564,6 +564,7 @@
 /area/vacant/cargo
 	name = "Requisitions Office"
 	icon_state = "quart"
+	req_access = newlist()
 
 /area/vacant/mess
 	name = "Officer's Mess"
