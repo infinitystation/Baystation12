@@ -7,7 +7,7 @@
 		slot_r_hand_str = 'icons/mob/onmob/items/righthand_guns_secure.dmi',
 		)
 	req_access = list(list(access_brig, access_bridge))
-	authorized_modes = list(ALWAYS_AUTHORIZED, AUTHORIZED)
+	authorized_modes = list(ALWAYS_AUTHORIZED, UNAUTHORIZED)
 
 /obj/item/weapon/gun/energy/stunrevolver/secure
 	name = "A&M X6 stun revolver"
@@ -37,7 +37,7 @@
 		)
 	item_state = null	//so the human update icon uses the icon_state instead.
 	req_access = list(list(access_brig, access_bridge))
-	authorized_modes = list(ALWAYS_AUTHORIZED, AUTHORIZED)
+	authorized_modes = list(ALWAYS_AUTHORIZED, UNAUTHORIZED)
 
 /obj/item/weapon/gun/energy/revolver/secure
 	name = "smart service revolver"
@@ -56,7 +56,7 @@
 		list(mode_name="kill", projectile_type=/obj/item/projectile/beam, modifystate="energyrevolverkill"),
 		)
 	req_access = list(list(access_brig, access_heads))
-	authorized_modes = list(ALWAYS_AUTHORIZED, AUTHORIZED)
+	authorized_modes = list(ALWAYS_AUTHORIZED, UNAUTHORIZED)
 
 /obj/item/weapon/gun/energy/gun/secure/mounted
 	name = "robot energy gun"
