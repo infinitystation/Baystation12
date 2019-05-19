@@ -240,8 +240,8 @@
 	title = "Internal Affairs Agent"
 	department = "Support"
 	department_flag = SPT
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "NanoTrasen and Corporate Regulations"
 	selection_color = "#2f2f7f"
 	economic_power = 15
