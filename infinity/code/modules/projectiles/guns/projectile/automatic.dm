@@ -147,7 +147,7 @@
 		icon_state = "pdw-empty"
 	return
 
-/obj/item/weapon/gun/projectile/automatic/TV3
+/obj/item/weapon/gun/projectile/automatic/tv3
 	name = "TV-3S carabine"
 	desc = "The TV-3S carabine is the one of traditional carabines of CCA."
 	icon = 'icons/obj/infinity_guns.dmi'
@@ -157,11 +157,11 @@
 	force = 10
 	caliber = CALIBER_TV
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
-	ammo_type = /obj/item/ammo_casing/rifle/TV
+	ammo_type = /obj/item/ammo_casing/rifle/tv
 	slot_flags = SLOT_BELT | SLOT_BACK
 	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/TV
-	allowed_magazines = /obj/item/ammo_magazine/TV
+	magazine_type = /obj/item/ammo_magazine/tv
+	allowed_magazines = /obj/item/ammo_magazine/tv
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	accuracy = 4
@@ -178,14 +178,14 @@
 		list(mode_name="2-round bursts", burst=2, fire_delay=null, move_delay=2,    one_hand_penalty=9, burst_accuracy=null, dispersion=null),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/TV3/on_update_icon()
+/obj/item/weapon/gun/projectile/automatic/tv3/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "TV-3Sm"
 	else
 		icon_state = "TV-3S"
 
-/obj/item/weapon/gun/projectile/automatic/TV3/special_check(user)
+/obj/item/weapon/gun/projectile/automatic/tv3/special_check(user)
 	if(istype(user,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
 		if(H.species && H.species.get_bodytype(H) != SPECIES_TAJARA)

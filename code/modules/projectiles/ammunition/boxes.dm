@@ -290,26 +290,3 @@
 	matter = list(MATERIAL_STEEL = 600)
 	max_ammo = 7
 	multiple_sprites = 1
-
-/obj/item/ammo_magazine/TV
-	name = "Large black magazine."
-	icon_state = "TVm"
-	origin_tech = list(TECH_COMBAT = 2)
-	mag_type = MAGAZINE
-	caliber = CALIBER_TV
-	matter = list(MATERIAL_STEEL = 7000)
-	ammo_type = /obj/item/ammo_casing/rifle/TV
-	max_ammo = 26
-	multiple_sprites = 1
-
-/obj/item/ammo_magazine/TVtcink
-	name = "Tcink"
-	desc = "Tcink of 8.77mm bullets. If someone proebet this - it will be bad."
-	icon_state = "tcink"
-	w_class = ITEM_SIZE_NORMAL
-	origin_tech = list(TECH_COMBAT = 2)
-	mag_type = MAGAZINE
-	caliber = CALIBER_TV
-	matter = list(MATERIAL_STEEL = 20000)
-	ammo_type = /obj/item/ammo_casing/rifle/TV
-	max_ammo = 130

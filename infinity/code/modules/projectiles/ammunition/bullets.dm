@@ -42,10 +42,10 @@
 	caliber = CALIBER_ANTIMATERIAL_SMALL
 	matter = list(MATERIAL_STEEL = 500)
 
-/obj/item/ammo_casing/rifle/TV
+/obj/item/ammo_casing/rifle/tv
 	desc = "A strange hight-caliber casing. You think its bigger than 7.62, but smaller than 12.7."
 	caliber = CALIBER_TV
-	projectile_type = /obj/item/projectile/bullet/rifle/TV
+	projectile_type = /obj/item/projectile/bullet/rifle/tv
 	icon_state = "TVb"
 	spent_icon = "TVs"
 

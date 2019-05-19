@@ -88,7 +88,7 @@
 	pda_type = /obj/item/modular_computer/pda
 	pda_slot = slot_l_store
 	id_type = /obj/item/weapon/card/id/tajsciship
-	uniform = /obj/item/clothing/under/tajsciship/CCAECjumpsuit
+	uniform = /obj/item/clothing/under/tajsciship/ccaecjumpsuit
 	shoes = /obj/item/clothing/shoes/workboots/toeless
 	l_pocket = /obj/item/clothing/accessory/badge/tajamc
 	r_pocket = /obj/item/clothing/accessory/inf_pin/ccapin
@@ -102,7 +102,7 @@
 	pda_slot = slot_l_store
 	id_type = /obj/item/weapon/card/id/tajsciship
 	name = TAJSCISHIP_OUTFIT_JOB_NAME("K-1 Field Commander")
-	uniform = /obj/item/clothing/under/tajsciship/CCAECjumpsuit
+	uniform = /obj/item/clothing/under/tajsciship/ccaecjumpsuit
 	shoes = /obj/item/clothing/shoes/workboots/toeless
 	l_pocket = /obj/item/clothing/accessory/badge/tajamc
 	r_pocket = /obj/item/clothing/accessory/inf_pin/ccapin

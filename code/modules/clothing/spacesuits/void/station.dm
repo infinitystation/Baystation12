@@ -330,7 +330,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 
 
-/obj/item/clothing/suit/space/void/CCA_EC_AVS
+/obj/item/clothing/suit/space/void/avs
 	name = "AVS"
 	desc = "Sealed tajara armored suit with reflective panels and the installation of a mechanical exoskeleton. It has the identification marks of EC CCA."
 	icon_state = "T-RB"
@@ -346,7 +346,7 @@
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	species_restricted = list(SPECIES_TAJARA)
 
-/obj/item/clothing/head/helmet/space/void/CCA_EC_AVSH
+/obj/item/clothing/head/helmet/space/void/avsh
 	name = "AVS helmet"
 	desc = "AVS helmet with large visor, looks heavy but comfortable. For Tajara."
 	icon_state = "T-RH"
@@ -362,10 +362,10 @@
 	light_overlay = "helmet_light_dual"
 	species_restricted = list(SPECIES_TAJARA)
 
-/obj/item/clothing/suit/space/void/CCA_EC_AVS/prepared
-	helmet = /obj/item/clothing/head/helmet/space/void/CCA_EC_AVSH
+/obj/item/clothing/suit/space/void/avs/prepared
+	helmet = /obj/item/clothing/head/helmet/space/void/avsh
 	boots = /obj/item/clothing/shoes/magboots
 
-/obj/item/clothing/suit/space/void/CCA_EC_AVS/New()
+/obj/item/clothing/suit/space/void/avs/New()
 	..()
 	slowdown_per_slot[slot_wear_suit] = 2.2

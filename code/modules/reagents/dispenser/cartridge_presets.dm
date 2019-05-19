@@ -43,7 +43,6 @@
 	cognac		spawn_reagent = /datum/reagent/ethanol/cognac
 	ale			spawn_reagent = /datum/reagent/ethanol/ale
 	mead		spawn_reagent = /datum/reagent/ethanol/mead
-	Djurl_Ma_Tua			spawn_reagent = /datum/reagent/ethanol/kotovino
 
 	// Bar, soft
 	ice			spawn_reagent = /datum/reagent/drink/ice
@@ -59,9 +58,6 @@
 	orange		spawn_reagent = /datum/reagent/drink/juice/orange
 	lime		spawn_reagent = /datum/reagent/drink/juice/lime
 	watermelon	spawn_reagent = /datum/reagent/drink/juice/watermelon
-	Selm_juice				spawn_reagent = /datum/reagent/juice/selmsok
-	Milkk					spawn_reagent = /datum/reagent/drink/tajaran/milk
-	Herbal_tincture			spawn_reagent = /datum/reagent/drink/tajaran/chai
 
 	// Bar, coffee
 	coffee		spawn_reagent = /datum/reagent/drink/coffee

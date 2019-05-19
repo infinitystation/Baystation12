@@ -22,7 +22,7 @@
 	icon_state = "sci_cypherkey"
 	channels = list("CCA EC" = 1)
 
-/obj/item/clothing/under/tajsciship/CCAECjumpsuit
+/obj/item/clothing/under/tajsciship/ccaecjumpsuit
 	name = "CCA EC uniform"
 	desc = "A comfortable for tajara turtleneck and black utility trousers."
 	armor = list(melee = 5, bullet = 5, laser = 5, energy = 5, bomb = 0, bio = 5, rad = 5)
@@ -45,10 +45,10 @@
 	return list(
 		/obj/item/weapon/gun/projectile/shotgun/shotguntaj = 1,
 		/obj/item/ammo_magazine/shotguntaj = 3,
-		/obj/item/weapon/gun/projectile/automatic/TV3 = 1,
-		/obj/item/ammo_magazine/TV = 2,
-		/obj/item/ammo_magazine/TVtcink = 2,
-		/obj/item/clothing/suit/space/void/CCA_EC_AVS/prepared = 1,
+		/obj/item/weapon/gun/projectile/automatic/tv3 = 1,
+		/obj/item/ammo_magazine/tv = 3,
+		/obj/item/ammo_magazine/tvtcink = 2,
+		/obj/item/clothing/suit/space/void/avs/prepared = 1,
 		/obj/item/weapon/storage/backpack/satchel/grey = 1,
 		/obj/item/weapon/storage/firstaid/individual/military = 1
 	)
