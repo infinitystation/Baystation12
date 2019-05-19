@@ -20,7 +20,7 @@
 			to_chat(C, "<B>Advertising other servers is not allowed.</B>")
 			log_and_message_admins("has attempted to advertise in [name]: [message]")
 			return FALSE
-	else if(!config.ooc_allowed && alert(C, "Вы уверены что хотите что-то написать в выключенный чат?", "OOC", "Нет", "Да") == "Нет")
+	else if(name == "OOC" && !config.ooc_allowed && alert(C, "Вы уверены что хотите что-то написать в выключенный чат?", "OOC", "Нет", "Да") == "Нет")
 		return FALSE
 
 /decl/communication_channel/ooc/do_communicate(var/client/C, var/message)
