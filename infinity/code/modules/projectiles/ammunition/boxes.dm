@@ -142,9 +142,9 @@
 	max_ammo = 26
 	multiple_sprites = 1
 
-	/obj/item/ammo_magazine/tv/empty
-		icon_state = "tvms"
-		initial_ammo = 0
+/obj/item/ammo_magazine/tv/empty
+	icon_state = "tvms"
+	initial_ammo = 0
 
 /obj/item/ammo_magazine/tvtcink
 	name = "Tcink"
