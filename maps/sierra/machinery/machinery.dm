@@ -70,9 +70,8 @@
 	islocked = 1
 
 /obj/machinery/photocopier/faxmachine/centcomm
-	name = "Red Knight"
-	desc = "Fax machine, called in honor of the legendary bureaucrat. It has small keyboard so you can write answers right there!"
 	req_access = list(access_cent_general)
+	department = "Office of Civil Investigation and Enforcement"
 
 /obj/machinery/photocopier/faxmachine/centcomm/Initialize()
 	. = ..()
@@ -108,11 +107,12 @@
 		dat += "Proper authentication is required to use this device.<br><br>"
 		if(copyitem)
 			dat += "<a href ='byond://?src=\ref[src];remove=1'>Remove Item</a><br>"
-	show_browser(usr, dat, "window=copier")
+	show_browser(user, dat, "window=copier")
 	onclose(user, "copier")
 	return
 
 /obj/machinery/photocopier/faxmachine/centcomm/Topic(href, href_list)
+	var/mob/user = usr
 	if(href_list["send"])
 		if(copyitem)
 			if (destination in admin_departments)
@@ -122,8 +122,8 @@
 
 	else if(href_list["remove"])
 		if(copyitem)
-			usr.put_in_hands(copyitem)
-			to_chat(usr, "<span class='notice'>You take \the [copyitem] out of \the [src].</span>")
+			user.put_in_hands(copyitem)
+			to_chat(user, "<span class='notice'>You take \the [copyitem] out of \the [src].</span>")
 			copyitem = null
 			updateUsrDialog()
 
@@ -131,21 +131,21 @@
 		if (!destination)
 			visible_message("[src] beeps, \"No departament selected.\"")
 			return
-		var/kek = usr.client.holder
+		var/kek = user.client.holder
 		if (!istype(kek,/datum/admins))
 			visible_message("[src] beeps, \"DNA check failed! Heads was warned!\"")
-			log_fax("[key_name(usr)] found admin fax machine and use it without admin rights!")
+			log_fax("[key_name(user)] found admin fax machine and use it without admin rights!")
 			for(var/client/C in GLOB.admins)
 				if((R_INVESTIGATE) & C.holder.rights)
-					to_chat(C, "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name(usr)] found admin fax machine and use it without admin rights!([admin_jump_link(usr, src)]))</span>")
+					to_chat(C, "<span class='log_message'><span class='prefix'>FAX LOG:</span>[key_name(user)] found admin fax machine and use it without admin rights!([admin_jump_link(user, src)]))</span>")
 			return
 		var/exit
 		for(var/obj/machinery/photocopier/faxmachine/sendto in GLOB.allfaxes)
 			if(sendto.department == destination)
 				exit = sendto
-		var/replyorigin = input(usr, "Please specify who the fax is coming from", "Origin") as text|null
-		var/obj/item/weapon/paper/admin/P = new /obj/item/weapon/paper/admin(usr) //hopefully the null loc won't cause trouble for us
-		P.admindatum = usr.client.holder
+		var/replyorigin = input(user, "Please specify who the fax is coming from", "Origin") as text|null
+		var/obj/item/weapon/paper/admin/P = new /obj/item/weapon/paper/admin(user) //hopefully the null loc won't cause trouble for us
+		P.admindatum = user.client.holder
 		P.origin = replyorigin
 		P.destination = exit
 		P.adminbrowse()
@@ -153,26 +153,26 @@
 
 	if(href_list["scan"])
 		if (scan)
-			if(ishuman(usr))
-				usr.put_in_hands(scan)
+			if(ishuman(user))
+				user.put_in_hands(scan)
 			else
 				scan.dropInto(loc)
 			scan = null
 		else
-			var/obj/item/I = usr.get_active_hand()
-			if (istype(I, /obj/item/weapon/card/id) && usr.unEquip(I, src))
+			var/obj/item/I = user.get_active_hand()
+			if (istype(I, /obj/item/weapon/card/id) && user.unEquip(I, src))
 				scan = I
 		authenticated = 0
 
 	if(href_list["dept"])
 		var/lastdestination = destination
-		destination = input(usr, "Which department?", "Choose a department", "") as null|anything in GLOB.alldepartments
-		if(!destination) destination = lastdestination
+		destination = input(usr, "Which department?", "Choose a department") as null|anything in GLOB.alldepartments
+		if(!destination)
+			destination = lastdestination
 
 	if(href_list["auth"])
-		if ((!(authenticated) && (scan)))
-			if (check_access(scan))
-				authenticated = 1
+		if(!authenticated && scan && check_access(scan))
+			authenticated = 1
 
 	if(href_list["logout"])
 		authenticated = 0
