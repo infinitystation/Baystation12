@@ -148,7 +148,7 @@
 
 /obj/item/ammo_magazine/tvtcink
 	name = "Tcink"
-	desc = "Tcink of 8.77mm bullets. If someone proebet this - it will be bad."
+	desc = "If someone accidentally drops all of it - will have to collect a very long time."
 	icon_state = "tcink"
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 2)

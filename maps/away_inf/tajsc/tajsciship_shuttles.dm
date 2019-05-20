@@ -3,7 +3,6 @@
 	name = "light tajaran station"
 	fore_dir = WEST
 	vessel_mass = 64000
-	base = TRUE
 	color = "#800080"
 	icon = 'maps/away_inf/tajsc/tajsciship.dmi'
 	icon_state = "shipstay"
