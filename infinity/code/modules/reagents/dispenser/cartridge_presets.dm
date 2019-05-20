@@ -7,5 +7,5 @@
 
 	djurl		spawn_reagent = /datum/reagent/ethanol/kotovino
 	selm		spawn_reagent = /datum/reagent/juice/selmsok
-	milkk		spawn_reagent = /datum/reagent/drink/tajaran/milk
+	milkk		spawn_reagent = /datum/reagent/drink/bmilk
 	travi		spawn_reagent = /datum/reagent/drink/tajaran/chai
