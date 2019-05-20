@@ -27,10 +27,15 @@
 	if(istype(W, /obj/item/weapon/card/id) && is_secure_gun())
 		if(!registered_owner)
 			var/obj/item/weapon/card/id/id = W
-			GLOB.registered_weapons += src
-			verbs += /obj/item/weapon/gun/proc/reset_registration
-			registered_owner = id.registered_name
-			user.visible_message("[user] swipes an ID through \the [src], registering it.", "You swipe an ID through \the [src], registering it.")
+			var/req_access = list(list(access_brig, access_bridge))
+			var/success = has_access(req_access, user.GetAccess())
+			if(success)
+				GLOB.registered_weapons += src
+				verbs += /obj/item/weapon/gun/proc/reset_registration
+				registered_owner = id.registered_name
+				user.visible_message("[user] swipes an ID through \the [src], registering it.", "You swipe an ID through \the [src], registering it.")
+			else
+				to_chat(user, "You haven't ID access for registration this weapon.")
 		else
 			to_chat(user, "This weapon is already registered, you must reset it first.")
 	else
