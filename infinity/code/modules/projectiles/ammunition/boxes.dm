@@ -108,7 +108,7 @@
 
 /obj/item/ammo_magazine/shotguntaj
 	name = "magazine (12 gauge)"
-	icon = 'icons/obj/ammo.dmi'
+	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "taj12"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/shotgun
@@ -122,7 +122,7 @@
 
 /obj/item/ammo_magazine/shotguntaj/net
 	name = "magazine (12 gauge) - net"
-	icon = 'icons/obj/ammo.dmi'
+	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "taj12"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/shotgun/net
@@ -133,6 +133,7 @@
 /obj/item/ammo_magazine/tv
 	name = "Large black magazine."
 	desc = "Black metal rifle magazine. Quite heavy."
+	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "tvm"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -143,12 +144,14 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/tv/empty
+	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "tvms"
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/tvtcink
 	name = "Tcink"
 	desc = "If someone accidentally drops all of it - will have to collect a very long time."
+	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "tcink"
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 2)

@@ -46,6 +46,7 @@
 	desc = "A strange hight-caliber casing. You think its bigger than 7.62, but smaller than 12.7."
 	caliber = CALIBER_TV
 	projectile_type = /obj/item/projectile/bullet/rifle/tv
+	icon = 'infinity/icons/obj/ammo.dmi'
 	icon_state = "TVb"
 	spent_icon = "TVs"
 
