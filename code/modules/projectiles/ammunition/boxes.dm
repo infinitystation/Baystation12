@@ -1,3 +1,4 @@
+    
 /obj/item/ammo_magazine/speedloader
 	name = "speed loader"
 	desc = "A speed loader for revolvers."
@@ -47,7 +48,7 @@
 		var/image/I = image(icon, "shotholder-marking")
 		I.color = marking_color
 		overlays += I
-
+	
 /obj/item/ammo_magazine/shotholder/shell
 	name = "shotgun shell holder"
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
