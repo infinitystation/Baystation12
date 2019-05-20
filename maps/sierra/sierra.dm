@@ -25,6 +25,7 @@
 	#include "datums/supplypacks/science.dm"
 
 	#include "items/cards_ids.dm"
+	#include "items/documents.dm"
 	#include "items/explo_shotgun.dm"
 	#include "items/encryption_keys.dm"
 	#include "items/headsets.dm"
