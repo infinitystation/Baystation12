@@ -28,7 +28,7 @@
 	glass_name = "Selm juice"
 	glass_desc = " Juice of one of the Ahdomai plants, which is taken to drink chilled. "
 
-/datum/reagent/drink/tajaran/milk
+/datum/reagent/drink/bmilk
 	name = "Bakara Milk"
 	description = "An opaque white liquid produced by the mammary glands of mammals."
 	taste_description = "milk... wait! Its not THAT MILK!"
