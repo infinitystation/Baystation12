@@ -175,4 +175,3 @@
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/glucose,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/bicaridine
 		)
-
