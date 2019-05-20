@@ -6,7 +6,7 @@
 /obj/structure/sign/poster/tjpost
 	name = "poster"
 	desc = "A large piece of space-resistant printed paper with emblem of CCA"
-	icon = 'icons/obj/contraband.dmi'
+	icon = 'infinity/icons/obj/contraband.dmi'
 	icon_state= "tposter"
 
 /obj/structure/sign/poster/tjpost/tj_1
