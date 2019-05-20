@@ -41,7 +41,3 @@
 /obj/effect/shuttle_landmark/tajscishuttle/nav1
 	name = "Space near light station"
 	landmark_tag = "nav_tajbase_1"
-
-/obj/effect/shuttle_landmark/tajscishuttle/hang
-	name = "Hangar"
-	landmark_tag = "nav_tajbase_2"
