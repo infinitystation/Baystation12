@@ -162,4 +162,3 @@
 	// Description suffix
 	var/desc=""
 	var/icon_state=""
-	
