@@ -109,11 +109,11 @@
 	name = "AVS"
 	desc = "Sealed tajara armored suit with reflective panels and the installation of a mechanical exoskeleton. It has the identification marks of EC CCA."
 	icon_state = "T-RB"
-	icon = 'icons/obj/clothing/obj_suit.dmi'
+	icon = 'infinity/icons/obj/clothing/voidsuits.dmi'
 	item_icons = list(
 	slot_l_hand_str = "mining_voidsuit",
 	slot_r_hand_str = "mining_voidsuit",
-	slot_wear_suit_str = 'icons/obj/clothing/obj_suit.dmi'
+	slot_wear_suit_str = 'infinity/icons/obj/clothing/voidsuits.dmi'
 	)
 	armor = list(melee = 75, bullet = 65, laser = 65,energy = 55, bomb = 55, bio = 100, rad = 100)
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/melee/energy/sword,/obj/item/weapon/handcuffs,/obj/item/weapon/storage/toolbox,/obj/item/weapon/storage/briefcase/inflatable,/obj/item/device/t_scanner,/obj/item/weapon/rcd)
@@ -125,12 +125,12 @@
 	name = "AVS helmet"
 	desc = "AVS helmet with large visor, looks heavy but comfortable. For Tajara."
 	icon_state = "T-RH"
-	icon = 'icons/obj/clothing/obj_suit.dmi'
-	item_icons = list(slot_wear_head_str = 'maps/away_inf/tajsc/tajsciship.dmi')
+	icon = 'infinity/icons/obj/clothing/voidsuits.dmi'
+	item_icons = list(slot_wear_head_str = 'infinity/icons/obj/clothing/voidsuits.dmi')
 	item_icons = list(
 	slot_l_hand_str = "atmos_helm",
 	slot_r_hand_str = "atmos_helm",
-	slot_head_str = 'icons/obj/clothing/obj_suit.dmi'
+	slot_head_str = 'infinity/icons/obj/clothing/voidsuits.dmi'
 	)
 	armor = list(melee = 75, bullet = 65, laser = 65,energy = 55, bomb = 55, bio = 100, rad = 100)
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
