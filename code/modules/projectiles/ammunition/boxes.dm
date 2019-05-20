@@ -1,5 +1,4 @@
-    
-/obj/item/ammo_magazine/speedloader
+    /obj/item/ammo_magazine/speedloader
 	name = "speed loader"
 	desc = "A speed loader for revolvers."
 	icon_state = "spdloader"
