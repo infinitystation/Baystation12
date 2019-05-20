@@ -35,7 +35,7 @@
 /obj/effect/shuttle_landmark/tajscishuttle/start
 	name = "Dock"
 	landmark_tag = "nav_tajscishuttle_dock"
-	base_area = /area/ship/tajsciship/mainzone
+	base_area = /area/ship/tajsciship
 	base_turf = /turf/simulated/floor/plating
 
 /obj/effect/shuttle_landmark/tajscishuttle/nav1
