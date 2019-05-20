@@ -28,7 +28,7 @@
 
 	access = list(access_medical, access_morgue, access_virology, access_maint_tunnels, access_emergency_storage,
 			            access_crematorium, access_surgery, access_eva,
-			            access_medical_equip, access_senmed, access_hangar)
+			            access_medical_equip, access_senmed, access_hangar, access_chemistry)
 
 	minimal_access = list()
 
