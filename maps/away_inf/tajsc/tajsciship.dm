@@ -23,7 +23,7 @@
 	name = "CCA NSV Ir'Shira-13"
 	archetype = /decl/submap_archetype/tajsciship
 
-/obj/effect/submap_landmark/spawnpoint/tajsciship
+/obj/effect/submap_landmark/spawnpoint/tajsciship/crew
 	name = "O-2 Operator"
 
 /obj/effect/submap_landmark/spawnpoint/tajsciship/crew_leader
@@ -58,7 +58,7 @@
 /datum/job/submap/tajsciship/crew
 	title = "O-2 Operator"
 	total_positions = 5
-	outfit_type = /decl/hierarchy/outfit/job/tajsciship
+	outfit_type = /decl/hierarchy/outfit/job/tajsciship/crew
 	supervisors = "your K-1, Field Commander"
 	info = "You are the crewman of the ship that was sent through Azjufiyr-Zan. Now you have to explore the space around you, be extremely careful, the stars around are cold."
 	skill_points = 30
@@ -77,9 +77,8 @@
 
 #define TAJSCISHIP_OUTFIT_JOB_NAME(job_name) ("CCA NSV Ir'Shira-13 - Job - " + job_name)
 
-/decl/hierarchy/outfit/job/tajsciship
+/decl/hierarchy/outfit/job/tajsciship/crew
 	name = TAJSCISHIP_OUTFIT_JOB_NAME("O-2 Operator")
-	hierarchy_type = /decl/hierarchy/outfit/job/tajsciship
 	pda_type = /obj/item/modular_computer/pda
 	pda_slot = slot_l_store
 	id_type = /obj/item/weapon/card/id/tajsciship
@@ -92,7 +91,6 @@
 	l_hand = /obj/item/clothing/accessory/shouldercape/command
 
 /decl/hierarchy/outfit/job/tajsciship/crew_leader
-	hierarchy_type = /decl/hierarchy/outfit/job/tajsciship
 	pda_type = /obj/item/modular_computer/pda
 	pda_slot = slot_l_store
 	id_type = /obj/item/weapon/card/id/tajsciship
