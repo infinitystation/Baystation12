@@ -407,7 +407,7 @@ character_name: Karai Ka'Jun
 item_path: /obj/item/device/radio/headset/crypto
 }
 {
-ckey: QUIET Project
+ckey: quietproject
 character_name: Shizukana Hikaro
 item_path: /obj/item/weapon/clothingbag/quiet_set
 }
