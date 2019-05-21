@@ -459,4 +459,24 @@ Subtypes
 		return"<font color = '#ff0000'>remove: file not found.</font>"
 	return "remove: something wrong"
 
+/datum/terminal_command/echo
+	name = "echo"
+	man_entry = list("Format: echo \[FILENAME\].", "Read stored data of file and return it in terminal.")
+	pattern = "^echo"
+	skill_needed = SKILL_ADEPT
+
+/datum/terminal_command/echo/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/obj/item/modular_computer/CT = terminal.computer
+	var/file_name = copytext(text, 6)
+	if(!file_name) return "<font color='#ffa000'>echo: enter filename.</font>"
+	if(!terminal.computer.hard_drive.check_functionality()) return "<font color='#ff0000'>echo: check integrity of your hard drive.</font>"
+
+	var/file = CT.hard_drive.find_file_by_name(file_name)
+	if(!istype(file, /datum/computer_file/data)) return "<font color='#ffa000'>echo: file is binary.</font>"
+	if(!file in CT.hard_drive.stored_files) return "<font color='#ffa000'>echo: file not fund</font>"
+	var/datum/computer_file/data/end_file = file
+	if(!end_file.stored_data) return "<font color='#ff0000'>echo: file empty.</font>"
+	var/echo_data = end_file.stored_data
+	return "echo: file store: [echo_data]"
+
 //[/INFINITY]_______________________________________________________________________________________________________________
