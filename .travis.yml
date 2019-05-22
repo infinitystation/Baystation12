@@ -14,10 +14,22 @@ matrix:
     include:
     - name: "Code"
       env: TEST=CODE
+    - name: "Web"
+      env: TEST=WEB
     - name: "Map - Example"
       env: TEST=MAP MAP_PATH=example
     - name: "Map - Sierra"
       env: TEST=MAP MAP_PATH=sierra
+    - name: "Map - Torch"
+      env: TEST=MAP MAP_PATH=torch
+#    - name: "Map - Torch Infinity"
+#      env: TEST=MAP MAP_PATH=torchinf
+    - name: "Map - Bearcat"
+      env: TEST=MAP MAP_PATH=bearcat
+#   - name: "Map - Bearcat Infinity"
+#      env: TEST=MAP MAP_PATH=bearcat_inf
+#   - name: "Map - Away Sites"
+#      env: TEST=MAP MAP_PATH=away_sites_testing
     - name: "Map - Away Sites Infinity"
       env: TEST=MAP MAP_PATH=away_sites_testing_inf
 
