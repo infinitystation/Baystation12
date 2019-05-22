@@ -53,6 +53,7 @@
 	name = "lambda coil"
 	desc = "A very complex power source compatible with various computers. It is capable of providing power for nearly unlimited duration."
 	icon_state = "battery_lambda"
+	origin_tech = list(TECH_POWER = 7, TECH_ENGINEERING = 6)
 	hardware_size = 1
 	battery_rating = 3000
 

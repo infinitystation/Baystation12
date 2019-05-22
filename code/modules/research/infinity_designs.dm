@@ -129,6 +129,15 @@
 	build_path = /obj/item/clothing/glasses/material/hybrid
 	sort_string = "GBAAD"
 
+/datum/design/item/modularcomponent/battery/lambda
+	name = "lambda battery module"
+	id = "bat_lambda"
+	req_tech = list(TECH_POWER = 7, TECH_ENGINEERING = 6)
+	build_type = PROTOLATHE
+	materials = list(MATERIAL_STEEL = 3200)
+	build_path = /obj/item/weapon/computer_hardware/battery_module/lambda
+	sort_string = "VBAEK"
+
 // CIRCUITS
 
 datum/design/circuit/telesci_console
@@ -151,3 +160,4 @@ datum/design/circuit/telepad
 	req_tech = list(TECH_ENGINEERING = 5, TECH_COMBAT = 5, TECH_BLUESPACE = 5)
 	build_path = /obj/item/weapon/circuitboard/bsa
 	sort_string = "KCAAG"
+
