@@ -34,7 +34,8 @@ delete-after: True
 # Also, all entries are changed into a single [] after a master changelog generation. Just remove the brackets when you add new entries.
 # Please surround your changes in  double quotes ("), as certain characters otherwise screws up compiling. The quotes will not show up in the changelog.
 changes: 
-  - maptweak: "Добавлена педальная факс машина, РП через бюрократию, а не ЕРП!"
-  - bugfix: "Все факсы логируются."
-  - maptweak: "Ниндзя должны познать путь химии... По этому в Додзе завезен ХимМастер!"
-  - maptweak: "Актеры лишаются компьютера в уплату аренды ЦК НТ."
+  - maptweak: "АВД больше не отбирают работу у дефективов. Ремаппинг кабинета."
+  - bugfix: "Факс АВД починен. Теперь на него тоже можно писать сообщения."
+  - maptweak: "Шкафчики для пациентов в хирургию, роботику и в морг."
+  - maptweak: "Убран очень странный обходной путь мусоропровода, который не давал попасть предметам на Мостик, к ГП и Капитану."
+  - balance: "Роботистам выдан набор начинающего хирурга. Берегите внутренние органы."
