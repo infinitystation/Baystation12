@@ -115,6 +115,9 @@
 	if (config.log_pda)
 		game_log("PDA", text)
 
+/proc/log_fax(text)
+	game_log("FAX", text)
+
 /proc/log_misc(text)
 	game_log("MISC", text)
 
