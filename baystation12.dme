@@ -3128,6 +3128,7 @@
 #include "infinity\code\game\objects\items\customs\shizukana_hikaro.dm"
 #include "infinity\code\game\objects\items\customs\sprites_kits.dm"
 #include "infinity\code\game\objects\items\customs\stange_pill.dm"
+#include "infinity\code\game\objects\items\customs\stv.dm"
 #include "infinity\code\game\objects\items\customs\tools.dm"
 #include "infinity\code\game\objects\items\customs\toothpick.dm"
 #include "infinity\code\game\objects\items\customs\true_gentleman.dm"

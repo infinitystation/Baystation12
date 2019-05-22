@@ -411,7 +411,12 @@ ckey: quietproject
 character_name: Shizukana Hikaro
 item_path: /obj/item/weapon/clothingbag/quiet_set
 }
-
+{
+ckey: jacking
+character_name: Jack Fisher
+item_path: /obj/item/clothing/glasses/stv
+req_access: "ACCESS_SECURITY"
+}
 #	MEDIUM ITEMS HERE (5-6)
 
 {
