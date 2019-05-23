@@ -1275,7 +1275,7 @@ window "rpane"
 		is-vert = false
 	elem "github"
 		type = BUTTON
-		pos = 520,0
+		pos = 515,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
@@ -1285,7 +1285,7 @@ window "rpane"
 		command = "GitHub"
 	elem "BugReport"
 		type = BUTTON
-		pos = 580,0
+		pos = 575,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
@@ -1295,7 +1295,7 @@ window "rpane"
 		command = "Bug-Report"
 	elem "changelog"
 		type = BUTTON
-		pos = 200,0
+		pos = 195,0
 		size = 90x15
 		anchor1 = none
 		anchor2 = none
@@ -1306,7 +1306,7 @@ window "rpane"
 		group = "rpanemode"
 	elem "changelog_infinity"
 		type = BUTTON
-		pos = 415,0
+		pos = 410,0
 		size = 105x15
 		anchor1 = none
 		anchor2 = none
@@ -1317,7 +1317,7 @@ window "rpane"
 		group = "rpanemode"
 	elem "forumb"
 		type = BUTTON
-		pos = 350,0
+		pos = 345,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
@@ -1328,7 +1328,7 @@ window "rpane"
 		group = "rpanemode"
 	elem "wikib"
 		type = BUTTON
-		pos = 290,0
+		pos = 285,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
@@ -1379,7 +1379,7 @@ window "rpane"
 		button-type = pushbox
 	elem "referenseb"
 		type = BUTTON
-		pos = 130,0
+		pos = 125,0
 		size = 70x15
 		anchor1 = none
 		anchor2 = none
