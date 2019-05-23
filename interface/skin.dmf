@@ -949,6 +949,7 @@ window "Telecomms IDE"
 		size = 70x20
 		anchor1 = 37,80
 		anchor2 = 49,83
+		background-color = none
 		saved-params = "is-checked"
 		text = "Clear Memory"
 		command = "tcsclearmem"
@@ -958,6 +959,7 @@ window "Telecomms IDE"
 		size = 52x20
 		anchor1 = 28,80
 		anchor2 = 37,83
+		background-color = none
 		saved-params = "is-checked"
 		text = "Revert"
 		command = "tcsrevert"
@@ -967,6 +969,7 @@ window "Telecomms IDE"
 		size = 52x20
 		anchor1 = 18,80
 		anchor2 = 28,83
+		background-color = none
 		saved-params = "is-checked"
 		text = "Execute"
 		command = "tcsrun"
@@ -985,6 +988,7 @@ window "Telecomms IDE"
 		size = 52x20
 		anchor1 = 9,80
 		anchor2 = 18,83
+		background-color = none
 		saved-params = "is-checked"
 		text = "Compile"
 		command = "tcscompile"
@@ -994,6 +998,7 @@ window "Telecomms IDE"
 		size = 53x20
 		anchor1 = 0,80
 		anchor2 = 9,83
+		background-color = none
 		saved-params = "is-checked"
 		text = "Apply"
 		command = "tcssave"
@@ -1017,6 +1022,7 @@ window "chemdispenser"
 		size = 340x480
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Chem Dispenser"
@@ -1027,6 +1033,7 @@ window "chemdispenser"
 		size = 56x16
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = ""
 		text = "Energy: 25"
 	elem "eject"
@@ -1035,6 +1042,7 @@ window "chemdispenser"
 		size = 72x20
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "[Insert beaker]"
 		command = "skincmd \"chemdispenser;eject\""
@@ -1044,6 +1052,7 @@ window "chemdispenser"
 		size = 48x20
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "[Other]"
 		command = "skincmd \"chemdispenser;amountc\""
@@ -1053,6 +1062,7 @@ window "chemdispenser"
 		size = 24x20
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "[30]"
 		command = "skincmd \"chemdispenser;amount30\""
@@ -1062,6 +1072,7 @@ window "chemdispenser"
 		size = 24x20
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "[20]"
 		command = "skincmd \"chemdispenser;amount20\""
@@ -1071,6 +1082,7 @@ window "chemdispenser"
 		size = 24x20
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "[10]"
 		command = "skincmd \"chemdispenser;amount10\""
@@ -1081,6 +1093,7 @@ window "chemdispenser"
 		anchor1 = none
 		anchor2 = none
 		font-size = 12
+		background-color = none
 		saved-params = ""
 		text = "Amount: 30"
 	elem "child1"
@@ -1089,6 +1102,7 @@ window "chemdispenser"
 		size = 340x440
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "splitter"
 		left = "chemdispenser_reagents"
 		is-vert = false
@@ -1100,6 +1114,7 @@ window "chemdispenser_reagents"
 		size = 340x448
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		titlebar = false
 		statusbar = false
@@ -1114,6 +1129,7 @@ window "chemdispenser_reagents"
 		size = 64x32
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Dispense"
@@ -1127,6 +1143,7 @@ window "chemdispenser_reagents"
 		anchor1 = none
 		anchor2 = none
 		font-size = 15
+		background-color = none
 		is-visible = false
 		saved-params = ""
 		text = "Chloral Hydrate"
@@ -1162,7 +1179,7 @@ window "mainwindow"
 		size = 80x20
 		anchor1 = 100,100
 		anchor2 = none
-		background-color = #e1e2ff
+		background-color = none
 		saved-params = ""
 		text = "Hotkey Toggle"
 		command = ".winset \"mainwindow.macro!=macro ? mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true input.background-color=#d3b5b5 : mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true input.background-color=#f0f0f0\""
@@ -1183,7 +1200,7 @@ window "mainwindow"
 		size = 517x20
 		anchor1 = 0,100
 		anchor2 = 100,100
-		background-color = #c4c5ff
+		background-color = #d3b5b5
 		is-default = true
 		border = sunken
 		saved-params = "command"
@@ -1193,7 +1210,7 @@ window "mainwindow"
 		size = 40x20
 		anchor1 = 100,100
 		anchor2 = none
-		background-color = #e2e1ff
+		background-color = none
 		saved-params = "is-checked"
 		text = "Chat"
 		command = ".winset \"saybutton.is-checked=true?input.command=\"!say \\\"\" macrobutton.is-checked=false:input.command=\""
@@ -1234,7 +1251,6 @@ window "outputwindow"
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		titlebar = false
 		statusbar = false
@@ -1248,7 +1264,6 @@ window "outputwindow"
 		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = #e6e6ff
 		is-default = true
 		saved-params = "max-lines"
 		style = ".system {color:#ff0000;}"
@@ -1276,64 +1291,64 @@ window "rpane"
 		is-vert = false
 	elem "github"
 		type = BUTTON
-		pos = 515,0
+		pos = 505,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #dfffd2
+		background-color = none
 		saved-params = "is-checked"
 		text = "GitHub"
 		command = "GitHub"
 	elem "BugReport"
 		type = BUTTON
-		pos = 575,0
+		pos = 565,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #d7d9ff
+		background-color = none
 		saved-params = "is-checked"
 		text = "Bug Report"
 		command = "Bug-Report"
 	elem "changelog"
 		type = BUTTON
-		pos = 195,0
-		size = 90x15
+		pos = 208,0
+		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #ffffd2
+		background-color = none
 		saved-params = "is-checked"
-		text = "BayChangelog"
+		text = "Changelog"
 		command = "Baystation12-Changelog"
 		group = "rpanemode"
 	elem "changelog_infinity"
 		type = BUTTON
-		pos = 410,0
+		pos = 400,0
 		size = 105x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #dfc6ff
+		background-color = none
 		saved-params = "is-checked"
 		text = "Infinity Changelog"
 		command = "Infinity-Changelog"
 		group = "rpanemode"
 	elem "forumb"
 		type = BUTTON
-		pos = 345,0
+		pos = 328,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #e1e2ff
+		background-color = none
 		saved-params = "is-checked"
 		text = "Forum"
 		command = "forum"
 		group = "rpanemode"
 	elem "wikib"
 		type = BUTTON
-		pos = 285,0
+		pos = 268,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #e2e1ff
+		background-color = none
 		saved-params = "is-checked"
 		text = "Wiki"
 		command = "wiki"
@@ -1371,7 +1386,7 @@ window "rpane"
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #d7d9ff
+		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Info"
@@ -1380,11 +1395,11 @@ window "rpane"
 		button-type = pushbox
 	elem "referenseb"
 		type = BUTTON
-		pos = 125,0
+		pos = 138,0
 		size = 70x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #ffd2d2
+		background-color = none
 		saved-params = "is-checked"
 		text = "Regulations"
 		command = "servinfo"
@@ -1397,6 +1412,7 @@ window "browserwindow"
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Browser"
 		is-pane = true
@@ -1429,7 +1445,6 @@ window "infowindow"
 		size = 638x477
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = #e6e6ff
 		is-default = true
 		saved-params = ""
 		highlight-color = #00aa00
@@ -1444,6 +1459,7 @@ window "text_editor"
 		size = 360x488
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		border = sunken
 		saved-params = "pos;size;is-minimized;is-maximized"
@@ -1456,6 +1472,7 @@ window "text_editor"
 		size = 104x24
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "Exit without saving"
 		command = ""
@@ -1465,6 +1482,7 @@ window "text_editor"
 		size = 104x24
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "Save"
 		command = ""
@@ -1474,6 +1492,7 @@ window "text_editor"
 		size = 104x24
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "Save + Exit"
 		command = ""
