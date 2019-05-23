@@ -35,6 +35,8 @@
 		/obj/item/weapon/material/clipboard,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
+		/obj/item/sticky_pad/random,
+		/obj/item/weapon/gun/energy/gun/small/secure,
 		/obj/item/weapon/storage/secure/briefcase,
 		/obj/item/clothing/shoes/laceup,
 		/obj/item/clothing/under/rank/internalaffairs,
