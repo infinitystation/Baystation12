@@ -1272,7 +1272,7 @@ window "outputwindow"
 window "rpane"
 	elem "rpane"
 		type = MAIN
-		pos = 281,0
+		pos = 593,103
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
@@ -1291,7 +1291,7 @@ window "rpane"
 		is-vert = false
 	elem "github"
 		type = BUTTON
-		pos = 505,0
+		pos = 520,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
@@ -1301,7 +1301,7 @@ window "rpane"
 		command = "GitHub"
 	elem "BugReport"
 		type = BUTTON
-		pos = 565,0
+		pos = 580,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
@@ -1311,18 +1311,18 @@ window "rpane"
 		command = "Bug-Report"
 	elem "changelog"
 		type = BUTTON
-		pos = 208,0
-		size = 60x15
+		pos = 200,0
+		size = 90x15
 		anchor1 = none
 		anchor2 = none
 		background-color = none
 		saved-params = "is-checked"
-		text = "Changelog"
+		text = "BayChangelog"
 		command = "Baystation12-Changelog"
 		group = "rpanemode"
 	elem "changelog_infinity"
 		type = BUTTON
-		pos = 400,0
+		pos = 415,0
 		size = 105x15
 		anchor1 = none
 		anchor2 = none
@@ -1333,7 +1333,7 @@ window "rpane"
 		group = "rpanemode"
 	elem "forumb"
 		type = BUTTON
-		pos = 328,0
+		pos = 350,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
@@ -1344,7 +1344,7 @@ window "rpane"
 		group = "rpanemode"
 	elem "wikib"
 		type = BUTTON
-		pos = 268,0
+		pos = 290,0
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
@@ -1395,7 +1395,7 @@ window "rpane"
 		button-type = pushbox
 	elem "referenseb"
 		type = BUTTON
-		pos = 138,0
+		pos = 130,0
 		size = 70x15
 		anchor1 = none
 		anchor2 = none
