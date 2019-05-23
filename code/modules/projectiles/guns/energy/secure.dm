@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/gun/small/secure
-	name = "PAEP90-CS smartgun"
+	name = "LAEP90-CS smartgun"
 	desc = "Combining the two LAEP90 variants, the secure and compact LAEP90-CS is the next best thing to keeping your security forces on a literal leash."
 	icon = 'icons/obj/guns/small_egun_secure.dmi'
 	item_icons = list(
