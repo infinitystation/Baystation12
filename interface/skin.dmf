@@ -1428,6 +1428,7 @@ window "infowindow"
 		size = 638x477
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = #e6e6ff
 		is-default = true
 		saved-params = ""
 		highlight-color = #00aa00
