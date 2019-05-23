@@ -1289,7 +1289,7 @@ window "rpane"
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #bbffeb
+		background-color = #d7d9ff
 		saved-params = "is-checked"
 		text = "Bug Report"
 		command = "Bug-Report"
