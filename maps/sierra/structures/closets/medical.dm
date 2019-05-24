@@ -25,7 +25,6 @@
 		/obj/item/clothing/head/helmet,
 		/obj/item/device/taperecorder,
 		/obj/item/device/tape/random = 3,
-		/obj/item/sticky_pad/random,
 		/obj/item/clothing/glasses/hud/health,
 		/obj/item/weapon/storage/firstaid/adv,
 		/obj/item/clothing/accessory/stethoscope,
