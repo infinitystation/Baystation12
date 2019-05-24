@@ -27,6 +27,7 @@ redknighthero - machine
 kotovsyndrome - machine
 termservice - machine
 semorerith - machine
+bob46 - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
