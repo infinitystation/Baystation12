@@ -1372,14 +1372,14 @@ window "rpane"
 		button-type = pushbox
 	elem "referenseb"
 		type = BUTTON
-		pos = 130,0
-		size = 70x15
+		pos = 143,0
+		size = 60x15
 		anchor1 = none
 		anchor2 = none
 		text-color = #ffffff
-		background-color = #ff090f
+		background-color = #ff6c70
 		saved-params = "is-checked"
-		text = "Regulations"
+		text = "Rules"
 		command = "servinfo"
 		group = "rpanemode"
 
