@@ -1,5 +1,6 @@
 /obj/machinery/power/am_engine
 	icon = 'icons/am_engine.dmi'
+	icon_state = "core_off"
 	density = 1
 	anchored = 1.0
 	atom_flags = ATOM_FLAG_CHECKS_BORDER
@@ -109,7 +110,7 @@
 			antiH_fuel = residual_matter
 
 	for(var/mob/M in hearers(src, null))
-		M.show_message("<span class='warning'>You hear a loud bang!</span>"))
+		M.show_message("<span class='warning'>You hear a loud bang!</span>")
 
 	//Q = k x (delta T)
 
@@ -123,8 +124,8 @@
 
 /obj/machinery/power/am_engine/engine/proc/engine_process()
 
-	do
-		if( (!src.connected) || (stat & BROKEN) )
+	while(!stopping)
+		if(!src.connected || stat && BROKEN)
 			return
 
 		if(!antiH_fuel || !H_fuel)
@@ -161,7 +162,7 @@
 
 		if(energy > convert2energy(8e-12))	//TOO MUCH ENERGY
 			for(var/mob/M in hearers(src, null))
-				M.show_message("<span class='warning'>You hear a loud whirring!</span>"))
+				M.show_message("<span class='warning'>You hear a loud whirring!</span>")
 			sleep(20)
 
 			//Q = k x (delta T)
@@ -180,7 +181,7 @@
 
 			if(energy > convert2energy(8e-12))	//FAR TOO MUCH ENERGY STILL
 				for(var/mob/M in hearers(src, null))
-					M.show_message("<span class='danger'><big>BANG!</big></span>"))
+					M.show_message("<span class='danger'><big>BANG!</big></span>")
 				new /obj/effect/bhole(src.loc)
 
 		else	//this amount of energy is okay so it does the proper output thing
@@ -199,8 +200,6 @@
 			antiH_fuel += antiH
 		operating = 0
 		sleep(100)
-
-	while(!stopping)
 
 	stopping = 0
 

@@ -35,3 +35,7 @@
 
 // Determines the exchange ratio of reagents being converted to gas and vice versa.
 #define REAGENT_GAS_EXCHANGE_FACTOR 10
+
+//LIGHT SPEED
+#define SPEED_OF_LIGHT			3e8		//not exact but hey!
+#define SPEED_OF_LIGHT_SQ		9e+16

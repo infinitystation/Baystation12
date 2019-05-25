@@ -83,7 +83,7 @@
 
 /obj/item/weapon/fuel/attack(mob/M as mob, mob/user as mob)
 	if (user != M)
-		var/obj/effect/equip_e/human/O = new /obj/effect/equip_e/human(  )
+/*		var/obj/effect/equip_e/human/O = new /obj/effect/equip_e/human()
 		O.source = user
 		O.target = M
 		O.item = src
@@ -92,8 +92,8 @@
 		O.place = "fuel"
 		M.requests += O
 		spawn( 0 )
-			O.process()
-			return
+			O.process()*/
+		return
 	else
 		for(var/mob/O in viewers(M, null))
 			O.show_message(text("<span class='warning'>[M] ate the [content ? content : "empty canister"]!</span>"), 1)
