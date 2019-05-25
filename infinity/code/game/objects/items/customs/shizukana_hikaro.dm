@@ -1,4 +1,4 @@
-/obj/item/weapon/material/sword/katana/snow_hand
+/obj/item/toy/katana/snow_hand
 	name = "snow hand"
 	desc = "This is a antique weapon. The sword is custom made for a specific owner. Katana has dark-ice color. On the sheath there is an inscription in an interesting font - \"Snowflake\"."
 	icon = CUSTOM_ITEM_OBJ
@@ -120,4 +120,4 @@
 		//new /obj/item/clothing/under/casual_pants/camo/quiet(src)
 		new /obj/item/clothing/mask/surgical/quiet(src)
 		new /obj/item/clothing/ears/earmuffs/headphones/mental(src)
-		new /obj/item/weapon/material/sword/katana/snow_hand(src)
+		new /obj/item/toy/katana/snow_hand(src)
