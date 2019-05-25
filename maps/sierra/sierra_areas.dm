@@ -551,7 +551,8 @@
 	name = "Vacant Area"
 	icon_state = "construction"
 	area_flags = AREA_FLAG_RAD_SHIELDED
-	req_access = list(access_construction)
+//	req_access = list(access_construction)
+	req_access = list(access_maint_tunnels)
 
 /area/vacant/infirmary
 	name = "Auxiliary Infirmary"
@@ -564,11 +565,15 @@
 /area/vacant/cargo
 	name = "Requisitions Office"
 	icon_state = "quart"
-	req_access = newlist()
 
 /area/vacant/mess
 	name = "Officer's Mess"
 	icon_state = "bar"
+
+/area/vacant/gambling
+	name = "Gambling Room"
+	icon_state = "restrooms"
+	sound_env = MEDIUM_SOFTFLOOR
 
 /* not found on Sierra
 /area/vacant/cabin
@@ -600,10 +605,6 @@
 	name = "Unused Office"
 	icon_state = "conference"
 */
-/area/vacant/gambling
-	name = "Gambling Room"
-	icon_state = "restrooms"
-	sound_env = MEDIUM_SOFTFLOOR
 
 // Supply
 /area/quartermaster
@@ -1221,11 +1222,7 @@
 	name = "Chemistry"
 	icon_state = "chem"
 	req_access = list(access_chemistry)
-/* not found on Sierra
-/area/medical/exam_room
-	name = "Exam Room"
-	icon_state = "exam_room"
-*/
+
 /area/medical/morgue
 	name = "Morgue"
 	icon_state = "morgue"
@@ -1240,7 +1237,12 @@
 	name = "Operating Theatre"
 	icon_state = "surgery"
 	req_access = list(access_surgery)
-/*
+
+/* not found on Sierra
+/area/medical/exam_room
+	name = "Exam Room"
+	icon_state = "exam_room"
+
 /area/medical/autopsy
 	name = "Autopsy"
 	icon_state = "autopsy"
