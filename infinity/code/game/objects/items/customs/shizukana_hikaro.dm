@@ -1,9 +1,11 @@
 /obj/item/weapon/material/sword/katana/snow_hand
 	name = "snow hand"
-	desc = "This is a unique weapon. The sword is custom made for a specific owner. Katana has dark-ice color. On the sheath there is an inscription in an interesting font - \"Snowflake\"."
+	desc = "This is a antique weapon. The sword is custom made for a specific owner. Katana has dark-ice color. On the sheath there is an inscription in an interesting font - \"Snowflake\"."
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "quiet_katana"
-	force = 20
+	force = 5
+	sharp = 0
+	edge = 0
 	item_icons = list(
 		slot_belt_str = CUSTOM_ITEM_MOB,
 		slot_back_str = CUSTOM_ITEM_MOB,
