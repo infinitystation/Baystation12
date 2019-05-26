@@ -85,7 +85,7 @@
 		"Rich" =     "maximillion",
 		"Default" =  "Service2",
 		"Doot" =     "eyebot-standard",
-		"Ver 06" = "wer6-Clerical"
+		"Ver 06" = "wer6-Clerical",
 		"Default" =  "Service2"
 	)
 	equipment = list(
