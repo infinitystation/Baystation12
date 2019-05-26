@@ -383,7 +383,7 @@ var/list/ai_verbs_default = list(
 	if(confirm == "Yes")
 		cancel_call_proc(src)
 
-/mob/living/silicon/ai/var/emergency_message_cooldow	n = 0
+/mob/living/silicon/ai/var/emergency_message_cooldown = 0
 /mob/living/silicon/ai/proc/ai_emergency_message()
 	set category = "Silicon Commands"
 	set name = "COMM: Send Emergency Message"
@@ -481,8 +481,8 @@ var/list/ai_verbs_default = list(
 	return 1
 
 /mob/living/silicon/ai/verb/cancel_camera_ai()
-	set category = "Silicon Commands"
 	set name = "CAMERA: Cancel View"
+	set category = "Silicon Commands"
 
 	//src.cameraFollow = null
 	src.view_core()
