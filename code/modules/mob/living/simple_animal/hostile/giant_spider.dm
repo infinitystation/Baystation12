@@ -180,6 +180,11 @@
 	if(isliving(.))
 		if(health < maxHealth)
 			health += (0.2 * rand(melee_damage_lower, melee_damage_upper)) //heal a bit on hit
+		if(ishuman(.))
+			var/mob/living/carbon/human/H = .
+			var/obj/item/clothing/suit/space/S = H.get_covering_equipped_item_by_zone(BP_CHEST)
+			if(istype(S) && !length(S.breaches))
+				return
 		var/mob/living/L = .
 		if(L.reagents)
 			L.reagents.add_reagent(poison_type, rand(0.5 * poison_per_bite, poison_per_bite))

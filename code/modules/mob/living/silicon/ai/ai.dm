@@ -160,16 +160,19 @@ var/list/ai_verbs_default = list(
 	add_language("Robot Talk", 1)
 	add_language(LANGUAGE_GALCOM, 1)
 	add_language(LANGUAGE_EAL, 1)
-	add_language(LANGUAGE_SOL_COMMON, 1)
+	add_language(LANGUAGE_HUMAN_EURO, 1)
+	add_language(LANGUAGE_HUMAN_ARABIC, 1)
+	add_language(LANGUAGE_HUMAN_CHINESE, 1)
+	add_language(LANGUAGE_HUMAN_IBERIAN, 1)
+	add_language(LANGUAGE_HUMAN_INDIAN, 1)
+	add_language(LANGUAGE_HUMAN_RUSSIAN, 1)
 	add_language(LANGUAGE_UNATHI, 1)
 	add_language(LANGUAGE_SIIK_MAAS, 1)
 	add_language(LANGUAGE_SKRELLIAN, 1)
 	add_language(LANGUAGE_RESOMI, 1)
-	add_language(LANGUAGE_LUNAR, 1)
 	add_language(LANGUAGE_GUTTER, 1)
-	add_language(LANGUAGE_SIGN, 0)
-	add_language(LANGUAGE_INDEPENDENT, 1)
 	add_language(LANGUAGE_SPACER, 1)
+	add_language(LANGUAGE_SIGN, 0)
 
 	if(!safety)//Only used by AIize() to successfully spawn an AI.
 		if (!B)//If there is no player/brain inside.
@@ -340,6 +343,7 @@ var/list/ai_verbs_default = list(
 	var/input = input(usr, "Please write a message to announce to the [station_name()] crew.", "A.I. Announcement")
 	if(!input)
 		return
+
 	if(check_unable(AI_CHECK_WIRELESS | AI_CHECK_RADIO))
 		return
 
@@ -379,7 +383,7 @@ var/list/ai_verbs_default = list(
 	if(confirm == "Yes")
 		cancel_call_proc(src)
 
-/mob/living/silicon/ai/var/emergency_message_cooldown = 0
+/mob/living/silicon/ai/var/emergency_message_cooldow	n = 0
 /mob/living/silicon/ai/proc/ai_emergency_message()
 	set category = "Silicon Commands"
 	set name = "COMM: Send Emergency Message"
@@ -477,8 +481,8 @@ var/list/ai_verbs_default = list(
 	return 1
 
 /mob/living/silicon/ai/verb/cancel_camera_ai()
-	set name = "CAMERA: Cancel View"
 	set category = "Silicon Commands"
+	set name = "CAMERA: Cancel View"
 
 	//src.cameraFollow = null
 	src.view_core()

@@ -107,9 +107,8 @@
 			return 1
 		if(istype(O, /obj/item/stack)) // This is bad, but I can't think of how to change it
 			var/obj/item/stack/S = O
-			if(S.get_amount() >= 1)
+			if(S.use(1))
 				new O.type (src)
-				S.use(1)
 				user.visible_message( \
 					"<span class='notice'>\The [user] has added one of [O] to \the [src].</span>", \
 					"<span class='notice'>You add one of [O] to \the [src].</span>")
@@ -218,10 +217,10 @@
 			dat += "<B>[display_name]:</B> [R.volume] unit\s"
 
 		if (items_counts.len==0 && reagents.reagent_list.len==0)
-			dat = ""
 			dat += "<B>The microwave is empty</B>"
 		else
-			dat += "<HR><BR><A href='?src=\ref[src];action=cook'>Turn on!<BR><A href='?src=\ref[src];action=dispose'>Eject ingredients!"
+			dat += "<b>Ingredients:</b><br>[dat]"
+		dat += "<HR><BR><A href='?src=\ref[src];action=cook'>Turn on!<BR><A href='?src=\ref[src];action=dispose'>Eject ingredients!"
 
 	show_browser(user, "<HEAD><TITLE>Microwave Controls</TITLE></HEAD><TT>[jointext(dat,"<br>")]</TT>", "window=microwave")
 	onclose(user, "microwave")

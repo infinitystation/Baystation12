@@ -38,6 +38,8 @@ meteor_act
 
 	projectile_hit_bloody(P, P.damage*blocked_mult(blocked), def_zone)
 
+	radio_interrupt_cooldown = world.time + (RADIO_INTERRUPT_DEFAULT * 0.8)
+
 	return blocked
 
 /mob/living/carbon/human/stun_effect_act(var/stun_amount, var/agony_amount, var/def_zone)
@@ -51,6 +53,8 @@ meteor_act
 	agony_amount *= affected.get_agony_multiplier()
 
 	affected.stun_act(stun_amount, agony_amount)
+
+	radio_interrupt_cooldown = world.time + RADIO_INTERRUPT_DEFAULT
 
 	..(stun_amount, agony_amount, def_zone)
 
@@ -191,6 +195,7 @@ meteor_act
 
 	if(effective_force > 10 || effective_force >= 5 && prob(33))
 		forcesay(GLOB.hit_appends)	//forcesay checks stat already
+		radio_interrupt_cooldown = world.time + (RADIO_INTERRUPT_DEFAULT * 0.8) //getting beat on can briefly prevent radio use
 	if((I.damtype == BRUTE || I.damtype == PAIN) && prob(25 + (effective_force * 2)))
 		if(!stat)
 			if(headcheck(hit_zone))
@@ -201,8 +206,8 @@ meteor_act
 						visible_message("<span class='danger'>[src] [species.knockout_message]</span>")
 			else
 				//Easier to score a stun but lasts less time
-				if(prob(effective_force + 10))
-					apply_effect(6, WEAKEN, blocked)
+				if(prob(effective_force + 5))
+					apply_effect(3, WEAKEN, blocked)
 					if(lying)
 						visible_message("<span class='danger'>[src] has been knocked down!</span>")
 
