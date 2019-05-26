@@ -31,13 +31,13 @@
 
 	// Sanity check.
 	if(surface_count < (min_surface_ratio * num_chunks))
-		to_debug_listeners("<span class='danger'>Insufficient surface minerals. Rerolling...</span>", 0)
+		admin_notice("<span class='danger'>Insufficient surface minerals. Rerolling...</span>", R_DEBUG)
 		return 0
 	else if(rare_count < (min_rare_ratio * num_chunks))
-		to_debug_listeners("<span class='danger'>Insufficient rare minerals. Rerolling...</span>", 0)
+		admin_notice("<span class='danger'>Insufficient rare minerals. Rerolling...</span>", R_DEBUG)
 		return 0
 	else if(deep_count < (min_deep_ratio * num_chunks))
-		to_debug_listeners("<span class='danger'>Insufficient deep minerals. Rerolling...</span>", 0)
+		admin_notice("<span class='danger'>Insufficient deep minerals. Rerolling...</span>", R_DEBUG)
 		return 0
 	else
 		return 1
