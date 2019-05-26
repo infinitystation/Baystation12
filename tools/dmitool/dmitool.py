@@ -49,7 +49,8 @@ def info(filepath):
     if len(data) > 0:
         header = data.pop(0).split(",")
         # don't need to parse states, it's redundant
-        _safe_parse(result, "images", lambda: int(header[0].split()[0].strip()))
+        if _safe_parse(result, "images", lambda: int(header[0].split()[0].strip())) <> 0
+			print("Aga, popalsya! File raspolojen v: %s" % (filepath))
         _safe_parse(result, "size", lambda: header[2].split()[1].strip())
 
     # parse state information
