@@ -163,6 +163,7 @@ Subtypes
 	name = "ping"
 	man_entry = list("Format: ping nid", "Checks connection to the given nid.")
 	pattern = "^ping"
+	skill_needed = SKILL_BASIC
 
 /datum/terminal_command/ping/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	. = list("pinging ...")
@@ -221,6 +222,8 @@ Subtypes
 
 /datum/terminal_command/proxy/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/obj/item/modular_computer/comp = terminal.computer
+	if(!comp || !comp.network_card || !comp.network_card.check_functionality())
+		return "proxy: Error; check networking hardware."
 	if(text == "proxy")
 		if(!comp.network_card.proxy_id)
 			return "proxy: This device is not using a proxy."
@@ -478,5 +481,26 @@ Subtypes
 	if(!end_file.stored_data) return "<font color='#ff0000'>echo: file empty.</font>"
 	var/echo_data = end_file.stored_data
 	return "echo: file store: [echo_data]"
+
+/datum/terminal_command/probenet
+	name = "probenet"
+	man_entry = list("Format: probenet.", "Read online NIDs in your network.")
+	pattern = "^probenet$"
+
+/datum/terminal_command/probenet/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/obj/item/modular_computer/CT = terminal.computer
+	//if(text > 8) return "<font color='#ffa000'>Invalid syntax.</font>"
+	if(!CT.network_card) return "<font color='#ffa000'>probenet: network card not found.</font>"
+	if(!CT.network_card.check_functionality()) return "<font color='#ff0000'>probenet: check network card interity.</font>"
+	if(!CT.get_ntnet_status()) return "probenet: network card can't connect to network."
+
+	var/end_msg = ""
+	var/total = 0
+	for(var/obj/item/modular_computer/comp in SSobj.processing)
+		if(comp.get_ntnet_status() && comp.enabled)
+			end_msg += " " + num2text(comp.network_card.identification_id) + " |"
+			total += 1
+	. += list("<font color='#00ff00'>probenet: online NIDs:</font> |[end_msg]",
+			"<font color='00ff00'>Total online:</font> [total].")
 
 //[/INFINITY]_______________________________________________________________________________________________________________
