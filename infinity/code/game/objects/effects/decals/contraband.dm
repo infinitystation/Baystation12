@@ -10,72 +10,95 @@
 	icon_state= "tposter"
 
 /obj/structure/sign/poster/tjpost/tj_1
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_1
 
 /obj/structure/sign/poster/tjpost/tj_2
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_2
 
 /obj/structure/sign/poster/tjpost/tj_3
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_3
 
 /obj/structure/sign/poster/tjpost/tj_4
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_4
 
 /obj/structure/sign/poster/tjpost/tj_5
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_5
 
 /obj/structure/sign/poster/tjpost/tj_6
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_6
 
 /obj/structure/sign/poster/tjpost/tj_7
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_7
 
 /obj/structure/sign/poster/tjpost/tj_8
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_8
 
 /obj/structure/sign/poster/tjpost/tj_9
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_9
 
 /obj/structure/sign/poster/tjpost/tj_10
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_10
 
 /obj/structure/sign/poster/tjpost/tj_11
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_11
 
 /obj/structure/sign/poster/tjpost/tj_12
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_12
 
 /obj/structure/sign/poster/tjpost/tj_13
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_13
 
 /obj/structure/sign/poster/tjpost/tj_14
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_14
 
 /obj/structure/sign/poster/tjpost/tj_15
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_15
 
 /obj/structure/sign/poster/tjpost/tj_16
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_16
 
 /obj/structure/sign/poster/tjpost/tj_17
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_17
 
 /obj/structure/sign/poster/tjpost/tj_18
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_18
 
 /obj/structure/sign/poster/tjpost/tj_19
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_19
 
 /obj/structure/sign/poster/tjpost/tj_20
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_20
 
 /obj/structure/sign/poster/tjpost/tj_21
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_21
 
 /obj/structure/sign/poster/tjpost/tj_22
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_22
 
 /obj/structure/sign/poster/guide_to_pee
+	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/guide_to_pee
 
 /decl/poster/tjpost
