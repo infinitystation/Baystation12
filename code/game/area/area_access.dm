@@ -17,7 +17,10 @@
 // Given two areas, find the minimal req_access needed such that req_access >= (area access) + (other area access)
 /proc/req_access_union(area/first, area/second)
 	if(!length(first.req_access))
-		return second.req_access.Copy()
+		if(!length(second.req_access))
+			return list()
+		else
+			return second.req_access.Copy()
 	if(!length(second.req_access))
 		return first.req_access.Copy()
 	. = first.req_access.Copy()

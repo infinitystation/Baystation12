@@ -50,7 +50,8 @@ def info(filepath):
         header = data.pop(0).split(",")
         # don't need to parse states, it's redundant
         _safe_parse(result, "images", lambda: int(header[0].split()[0].strip()))
-        _safe_parse(result, "size", lambda: header[2].split()[1].strip())
+        if _safe_parse(result, "size", lambda: header[2].split()[1].strip()) != False:
+			print("Could not parse file in path '%s' % (filepath))
 
     # parse state information
     states = []    
