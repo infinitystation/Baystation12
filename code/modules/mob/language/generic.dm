@@ -27,7 +27,7 @@
 	key = "0"
 	flags = RESTRICTED
 	syllables = list("blah","blah","blah","bleh","meh","neh","nah","wah")
-	partial_understanding = list(LANGUAGE_SKRELLIAN = 30, LANGUAGE_SOL_COMMON = 30)
+	partial_understanding = list(LANGUAGE_SKRELLIAN = 30, LANGUAGE_HUMAN_EURO = 30)
 	shorthand = "GC"
 
 // Otherwise we end up with Blahblehmeh Nehnahwahblah, Captain.

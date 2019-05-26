@@ -80,7 +80,7 @@
 "bB" = (/obj/structure/grille,/turf/space,/area/salvage/shuttle)
 "bC" = (/obj/structure/disposalpipe/segment,/turf/simulated/floor/tiled,/area/salvage/canteen)
 "bD" = (/obj/structure/lattice,/obj/structure/disposalpipe/trunk{dir = 8},/obj/machinery/disposal/deliveryChute{icon_state = "intake"; dir = 1},/turf/space,/area/salvage/canteen)
-"bE" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/table/standard,/obj/item/device/healthanalyzer,/turf/simulated/floor/tiled/white/monotile,/area/salvage/canteen)
+"bE" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/table/standard,/obj/item/device/scanner/health,/turf/simulated/floor/tiled/white/monotile,/area/salvage/canteen)
 "bF" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/disposalpipe/segment,/turf/simulated/floor/tiled,/area/salvage/canteen)
 "bG" = (/obj/structure/table/standard,/obj/item/clothing/mask/surgical,/obj/item/clothing/mask/surgical,/obj/item/clothing/accessory/stethoscope,/obj/structure/window/reinforced{dir = 8; health = null},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/item/robot_rack/roller,/turf/simulated/floor/tiled/white/monotile,/area/salvage/canteen)
 "bH" = (/obj/effect/decal/cleanable/greenglow,/obj/structure/disposalpipe/segment{dir = 1; icon_state = "pipe-c"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/turf/simulated/floor/tiled/freezer,/area/salvage/canteen)

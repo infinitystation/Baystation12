@@ -155,7 +155,7 @@
 "dn" = (/obj/structure/cable/blue{d1 = 1;d2 = 2;icon_state = "1-2"},/obj/machinery/door/airlock/silver{name = "Strange Airlock"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi';icon_state = "snowplating"},/area/adherent_base/base)
 "do" = (/obj/structure/cable,/obj/machinery/power/apc/hyper{dir = 8;icon_state = "apc0";pixel_x = -16},/turf/simulated/floor/crystal,/area/adherent_base/base)
 "dp" = (/obj/structure/table/rack,/obj/item/weapon/circuitboard/engine,/turf/simulated/floor/crystal,/area/adherent_base/base)
-"dq" = (/obj/structure/table/rack,/obj/item/weapon/cell,/obj/item/weapon/cell,/obj/item/device/analyzer,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"dq" = (/obj/structure/table/rack,/obj/item/weapon/cell,/obj/item/weapon/cell,/obj/item/device/scanner/gas,/turf/simulated/floor/crystal,/area/adherent_base/base)
 "dr" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/crystal,/area/adherent_base/base)
 "ds" = (/obj/machinery/atmospherics/unary/vent_scrubber/on,/turf/simulated/floor/crystal,/area/adherent_base/base)
 "dt" = (/obj/machinery/autolathe{icon = 'icons/obj/machines/ghost_drone.dmi';icon_state = "factory11"},/turf/simulated/floor/crystal,/area/adherent_base/base)

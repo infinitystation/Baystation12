@@ -4,4 +4,4 @@
 	language = LANGUAGE_SIIK_MAAS
 	ruling_body = "The Confederate Commonwealth of Ahdomai"
 	distance = "//FILL THIS FIELD PLEASE//."
-	secondary_langs = list(LANGUAGE_SIIK_TAJR, LANGUAGE_SIGN, LANGUAGE_SPACER, LANGUAGE_SOL_COMMON, LANGUAGE_GUTTER)
+	secondary_langs = list(LANGUAGE_SIIK_TAJR, LANGUAGE_SIGN, LANGUAGE_SPACER, LANGUAGE_HUMAN_EURO, LANGUAGE_GUTTER)

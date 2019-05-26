@@ -81,8 +81,7 @@
 			STOP_PROCESSING(SSobj, src)
 
 /obj/structure/adherent_bath/MouseDrop_T(var/atom/movable/O, var/mob/user)
-	if(!isghost(user))
-		enter_bath(O, user)
+	enter_bath(O, user)
 
 /obj/structure/adherent_bath/relaymove(var/mob/user)
 	if(user == occupant)
@@ -102,10 +101,10 @@
 	if(ishuman(occupant))
 
 		var/mob/living/carbon/human/H = occupant
-//		var/repaired_organ
+		var/repaired_organ
 
 		// Replace limbs for crystalline species.
-		if((H.species.name == SPECIES_ADHERENT || H.species.name == SPECIES_GOLEM) && prob(30))
+		if((H.species.name == SPECIES_ADHERENT || H.species.name == SPECIES_GOLEM) && prob(10))
 			for(var/limb_type in H.species.has_limbs)
 				var/obj/item/organ/external/E = H.organs_by_name[limb_type]
 				if(E && !E.is_usable() && !(E.limb_flags & ORGAN_FLAG_HEALS_OVERKILL))
@@ -120,7 +119,7 @@
 					H.species.post_organ_rejuvenate(O, H)
 					to_chat(occupant, "<span class='notice'>You feel your [O.name] reform in the crystal bath.</span>")
 					H.update_body()
-//					repaired_organ = TRUE
+					repaired_organ = TRUE
 					break
 
 		// Repair crystalline internal organs.

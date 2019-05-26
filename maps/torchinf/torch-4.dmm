@@ -23084,7 +23084,7 @@
 	pixel_y = 4
 	},
 /obj/item/weapon/storage/firstaid/empty,
-/obj/item/device/healthanalyzer,
+/obj/item/device/scanner/health,
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/dark,
 /area/assembly/robotics)
@@ -23306,7 +23306,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/item/device/healthanalyzer,
+/obj/item/device/scanner/health,
 /turf/simulated/floor/tiled/monotile,
 /area/assembly/robotics)
 "kEb" = (

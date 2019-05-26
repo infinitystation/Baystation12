@@ -4862,10 +4862,10 @@
 /obj/item/weapon/storage/plants,
 /obj/item/weapon/storage/plants,
 /obj/item/weapon/storage/plants,
-/obj/item/device/analyzer/plant_analyzer,
-/obj/item/device/analyzer/plant_analyzer,
-/obj/item/device/analyzer/plant_analyzer,
-/obj/item/device/analyzer/plant_analyzer,
+/obj/item/device/scanner/plant,
+/obj/item/device/scanner/plant,
+/obj/item/device/scanner/plant,
+/obj/item/device/scanner/plant,
 /obj/effect/floor_decal/corner/mauve{
 	icon_state = "corner_white";
 	dir = 10
@@ -7269,12 +7269,12 @@
 /obj/item/device/slime_scanner,
 /obj/item/device/slime_scanner,
 /obj/item/device/slime_scanner,
-/obj/item/device/analyzer,
-/obj/item/device/analyzer,
-/obj/item/device/analyzer,
-/obj/item/device/analyzer,
-/obj/item/device/analyzer,
-/obj/item/device/analyzer,
+/obj/item/device/scanner/gas,
+/obj/item/device/scanner/gas,
+/obj/item/device/scanner/gas,
+/obj/item/device/scanner/gas,
+/obj/item/device/scanner/gas,
+/obj/item/device/scanner/gas,
 /obj/item/weapon/storage/excavation,
 /obj/item/device/measuring_tape,
 /obj/machinery/light{
@@ -10404,7 +10404,7 @@
 	pixel_y = 3
 	},
 /obj/item/weapon/anodevice,
-/obj/item/device/healthanalyzer,
+/obj/item/device/scanner/health,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -11828,7 +11828,7 @@
 /area/shuttle/petrov/rd)
 "CV" = (
 /obj/structure/table/standard,
-/obj/item/device/healthanalyzer,
+/obj/item/device/scanner/health,
 /obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;

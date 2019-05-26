@@ -88,7 +88,7 @@
 "bJ" = (/obj/structure/disposalpipe/segment,/turf/simulated/floor/tiled,/area/salvage/canteen)
 "bK" = (/obj/structure/window/reinforced{dir = 8; health = null},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/table/standard,/obj/item/weapon/storage/firstaid/regular{pixel_x = -2; pixel_y = 4},/turf/simulated/floor/tiled/white/monotile,/area/salvage/canteen)
 "bL" = (/turf/simulated/floor/tiled/white,/area/salvage/canteen)
-"bM" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/table/standard,/obj/item/device/healthanalyzer,/turf/simulated/floor/tiled/white/monotile,/area/salvage/canteen)
+"bM" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/table/standard,/obj/item/device/scanner/health,/turf/simulated/floor/tiled/white/monotile,/area/salvage/canteen)
 "bN" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/light/small{dir = 8},/obj/structure/disposalpipe/segment,/turf/simulated/floor/tiled,/area/salvage/canteen)
 "bO" = (/obj/structure/catwalk,/obj/machinery/door/airlock/external/glass{frequency = 1380; id_tag = "salvage_int"; locked = 1; name = "Interior Airlock"; req_access = list(3074)},/obj/machinery/atmospherics/pipe/simple/hidden,/obj/structure/disposalpipe/segment,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/plating,/area/salvage/canteen)
 "bP" = (/obj/structure/disposalpipe/segment{dir = 4; icon_state = "pipe-c"},/obj/effect/paint/dark_gunmetal,/turf/simulated/wall,/area/salvage/canteen)

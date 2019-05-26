@@ -179,7 +179,7 @@
 
 /obj/machinery/organ_printer/flesh/Initialize()
 	. = ..()
-	component_parts += new /obj/item/device/healthanalyzer
+	component_parts += new /obj/item/device/scanner/health
 
 /obj/machinery/organ_printer/flesh/mapped/Initialize()
 	. = ..()

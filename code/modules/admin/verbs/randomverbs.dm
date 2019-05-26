@@ -124,14 +124,14 @@
 			)
 		if (!size)
 			return
-	
+
 	if (!message)
 		message = input("Message:", text("Enter the text you wish to appear to your target:")) as null|text
 		if (style != "unsafe")
 			message = sanitize(message)
 	if (!message)
 		return
-	
+
 	var/result = message
 	if (style != "unsafe")
 		switch (style)
@@ -149,7 +149,7 @@
 			if ("giant")  result = FONT_GIANT(result)
 
 	return list(result, style, size, message)
-	
+
 
 // Targetted narrate: will narrate to one specific mob
 /client/proc/cmd_admin_direct_narrate(var/mob/M)
@@ -164,14 +164,14 @@
 		M = input("Direct narrate to who?", "Active Players") as null|anything in get_mob_with_client_list()
 	if (!M)
 		return
-	
+
 	var/style
 	var/size
 
 	if (!check_rights(R_ADMIN, FALSE))
 		style = "subtle"
 		size = "normal"
-	
+
 	var/result = cmd_admin_narrate_helper(src, style, size)
 	if (!result)
 		return
@@ -188,7 +188,7 @@
 
 	if(!check_rights(R_ADMIN))
 		return
-	
+
 	var/result = cmd_admin_narrate_helper(src)
 	if (!result)
 		return

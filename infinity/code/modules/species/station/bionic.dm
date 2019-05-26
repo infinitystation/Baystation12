@@ -9,7 +9,7 @@
 	preview_icon = 'infinity/icons/mob/human_races/species/bionic/preview.dmi'
 
 	language = LANGUAGE_EAL
-	secondary_langs = list(LANGUAGE_SOL_COMMON, LANGUAGE_INDEPENDENT, LANGUAGE_SPACER, \
+	secondary_langs = list(LANGUAGE_HUMAN_EURO, LANGUAGE_HUMAN_RUSSIAN, LANGUAGE_SPACER, \
 		LANGUAGE_LUNAR, LANGUAGE_SIGN)
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch)
 	rarity_value = 2
