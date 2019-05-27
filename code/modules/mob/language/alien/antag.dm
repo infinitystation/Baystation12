@@ -5,7 +5,7 @@
 	speech_verb = "шипит"
 	ask_verb = "шипит"
 	exclaim_verb = "шипит"
-	key = "1"
+	key = "i"
 	flags = RESTRICTED
 	syllables = list("sss","sSs","SSS")
 	machine_understands = 0
