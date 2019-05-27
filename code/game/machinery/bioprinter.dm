@@ -177,9 +177,9 @@
 	var/loaded_dna //Blood sample for DNA hashing.
 	var/datum/species/loaded_species //For quick refrencing
 
-/obj/machinery/organ_printer/flesh/Initialize()
-	. = ..()
-	component_parts += new /obj/item/device/scanner/health
+//obj/machinery/organ_printer/flesh/Initialize()
+//	. = ..()
+//	component_parts += new /obj/item/device/scanner/health
 
 /obj/machinery/organ_printer/flesh/mapped/Initialize()
 	. = ..()
