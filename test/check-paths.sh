@@ -44,6 +44,11 @@ while read -r file; do
 	case "$ftype" in
 		ASCII)
 			continue;;
+		cp1252)
+			continue;;
+		#I think it identically with cp1252
+		windows-1252)
+			continue;;
 		UTF-8)
 			if diff -d "$file" <(<"$file" iconv -c -f utf8 -t iso8859-1 2>/dev/null | tr -d $'\x7F-\x9F' | iconv -c -f iso8859-1 -t utf8 2>/dev/null); then
 				continue
