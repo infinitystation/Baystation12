@@ -264,7 +264,7 @@
 "fi" = (/obj/structure/rubble,/obj/structure/rubble,/obj/structure/rubble,/obj/structure/rubble/house,/obj/structure/rubble,/obj/structure/rubble,/obj/structure/rubble,/obj/structure/rubble,/obj/structure/rubble,/turf/simulated/floor/plating,/area/ship/scrap/broken1)
 "fj" = (/obj/structure/rubble,/obj/structure/rubble/house,/obj/structure/rubble,/obj/structure/rubble,/obj/structure/rubble,/turf/simulated/floor/tiled,/area/ship/scrap/broken1)
 "fk" = (/obj/item/device/flashlight/upgraded,/turf/simulated/floor/tiled,/area/ship/scrap/broken1)
-"fl" = (/obj/structure/closet/crate/plastic,/obj/item/weapon/storage/ore,/obj/item/weapon/pickaxe,/obj/item/stack/flag/yellow,/obj/item/weapon/storage/box/glowsticks,/obj/item/weapon/mining_scanner,/turf/simulated/floor/plating,/area/ship/scrap/broken1)
+"fl" = (/obj/structure/closet/crate/plastic,/obj/item/weapon/storage/ore,/obj/item/weapon/pickaxe,/obj/item/stack/flag/yellow,/obj/item/weapon/storage/box/glowsticks,/obj/item/device/scanner/mining,/turf/simulated/floor/plating,/area/ship/scrap/broken1)
 "fm" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled,/area/ship/scrap/maintenance/techstorage)
 "fn" = (/obj/structure/sign/warning/vacuum{pixel_x = 35},/obj/item/device/radio/intercom{dir = 1; pixel_y = -22},/turf/simulated/floor/plating,/area/ship/scrap/maintenance/eva)
 "fo" = (/obj/structure/rubble/war,/obj/structure/rubble,/obj/structure/rubble,/obj/structure/rubble/house,/obj/structure/rubble,/obj/structure/rubble,/obj/structure/rubble,/obj/structure/rubble,/turf/simulated/floor/plating,/area/ship/scrap/broken1)

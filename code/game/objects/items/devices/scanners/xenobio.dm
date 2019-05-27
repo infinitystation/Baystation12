@@ -1,4 +1,4 @@
-/obj/item/device/scanner/xenobio
+/obj/item/device/scanner/xenobio ///obj/item/device/slime_scanner
 	name = "xenolife scanner"
 	desc = "Multipurpose organic life scanner. With spectral breath analyzer you can find out what snacks Ian had! Or what gasses alien life breathes."
 	icon_state = "xenobio"
@@ -82,5 +82,5 @@
 		. += "Growth progress:\t[T.amount_grown]/10."
 	else
 		. += "Incompatible life form, analysis failed."
-	
+
 	. = jointext(., "<br>")

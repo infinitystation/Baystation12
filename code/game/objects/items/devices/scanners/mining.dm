@@ -4,7 +4,7 @@
 #define  ORE_EXOTIC  "exotic matter"
 /turf/simulated/var/surveyed
 
-/obj/item/device/scanner/mining
+/obj/item/device/scanner/mining ///obj/item/weapon/mining_scanner
 	name = "ore detector"
 	desc = "A complex device used to locate ore deep underground."
 	icon_state = "ore"
@@ -125,7 +125,7 @@
 			if(76 to INFINITY) result = "huge quantities"
 
 		scandata += "- [result] of [ore_type]."
-	
+
 	return list(jointext(scandata, "<br>"), new_data)
 
 #undef  ORE_SURFACE
