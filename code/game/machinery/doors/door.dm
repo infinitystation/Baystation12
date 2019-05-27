@@ -88,7 +88,7 @@
 	if(autoset_access)
 #ifdef UNIT_TEST
 		if(length(req_access))
-			crash_with("A door with mapped access restrictions was set to autoinitialize access.")
+			crash_with("A door with mapped access restrictions was set to autoinitialize access at [x], [y], [z].")
 #endif
 		return INITIALIZE_HINT_LATELOAD
 
@@ -570,7 +570,7 @@
 	var/area/aft = access_area_by_dir(GLOB.reverse_dir[dir])
 	fore = fore || aft
 	aft = aft || fore
-	
+
 	if (!fore && !aft)
 		req_access = list()
 	else if (fore.secure || aft.secure)
