@@ -1,4 +1,4 @@
-/obj/item/device/scanner/gas
+/obj/item/device/scanner/gas ///obj/item/device/analyzer
 	name = "gas analyzer"
 	desc = "A hand-held environmental scanner which reports current gas levels."
 	icon_state = "atmos"

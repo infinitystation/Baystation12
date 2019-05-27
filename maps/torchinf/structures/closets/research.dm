@@ -206,7 +206,7 @@
 		/obj/item/clothing/gloves/latex,
 		/obj/item/clothing/glasses/science,
 		/obj/item/weapon/storage/belt/general,
-		/obj/item/device/slime_scanner,
+		/obj/item/device/scanner/xenobio,
 		/obj/item/device/scanner/plant,
 		new /datum/atom_creator/weighted(list(/obj/item/weapon/storage/backpack/, /obj/item/weapon/storage/backpack/satchel/grey)),
 		new /datum/atom_creator/simple(/obj/item/weapon/storage/backpack/messenger/, 50)

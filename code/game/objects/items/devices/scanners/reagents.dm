@@ -1,4 +1,4 @@
-/obj/item/device/scanner/reagent
+/obj/item/device/scanner/reagent ///obj/item/device/reagent_scanner
 	name = "reagent scanner"
 	desc = "A hand-held reagent scanner which identifies chemical agents."
 	icon_state = "spectrometer"
@@ -26,7 +26,7 @@
 	for (var/datum/reagent/R in O.reagents.reagent_list)
 		. += "[R][details ? ": [R.volume / one_percent]%" : ""]"
 
-/obj/item/device/scanner/reagent/adv
+/obj/item/device/scanner/reagent/adv ///obj/item/device/reagent_scanner/adv
 	name = "advanced reagent scanner"
 	icon_state = "adv_spectrometer"
 	details = 1

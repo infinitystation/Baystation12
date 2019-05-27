@@ -1,4 +1,4 @@
-/obj/item/device/scanner/price
+/obj/item/device/scanner/price ///obj/item/device/price_scanner
 	name = "price scanner"
 	desc = "Using an up-to-date database of various costs and prices, this device estimates the market price of an item up to 0.001% accuracy."
 	icon_state = "price_scanner"

@@ -1,4 +1,4 @@
-/obj/item/device/scanner/spectrometer
+/obj/item/device/scanner/spectrometer ///obj/item/device/mass_spectrometer
 	name = "mass spectrometer"
 	desc = "A hand-held mass spectrometer which identifies trace chemicals in a blood sample or analyzes unusual chemicals."
 	icon_state = "spectrometer"
@@ -79,7 +79,7 @@
 
 	return jointext(dat, "<br>")
 
-/obj/item/device/scanner/spectrometer/adv
+/obj/item/device/scanner/spectrometer/adv ///obj/item/device/mass_spectrometer/adv
 	name = "advanced mass spectrometer"
 	icon_state = "adv_spectrometer"
 	details = 1

@@ -9567,7 +9567,7 @@
 	health = null
 	},
 /obj/structure/table/standard,
-/obj/item/device/slime_scanner,
+/obj/item/device/scanner/xenobio,
 /turf/simulated/floor/tiled/white,
 /area/rubbidu/nt)
 "qt" = (
@@ -12015,7 +12015,7 @@
 /obj/item/stack/flag/red,
 /obj/item/stack/flag/yellow,
 /obj/item/stack/flag/green,
-/obj/item/device/slime_scanner,
+/obj/item/device/scanner/xenobio,
 /obj/item/device/scanner/gas,
 /obj/item/device/scanner/gas,
 /obj/item/weapon/storage/excavation,

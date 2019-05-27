@@ -1,4 +1,4 @@
-/obj/item/device/scanner/health
+/obj/item/device/scanner/health ///obj/item/device/healthanalyzer
 	name = "health analyzer"
 	desc = "A hand-held body scanner able to distinguish vital signs of the subject."
 	icon_state = "health"
