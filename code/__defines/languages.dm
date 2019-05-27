@@ -32,8 +32,6 @@
 //Antag
 #define LANGUAGE_XENOPHAGE      "Xenophage"
 #define LANGUAGE_XENOPHAGE_HIVE "Hivemind"
-#define LANGUAGE_SWARM          "Swarm Audio Language"
-#define LANGUAGE_SWARM_FAR      "Swarm Far Communicate Language"
 #define LANGUAGE_CULT           "Cult"
 #define LANGUAGE_ALIUM          "Alium"
 #define LANGUAGE_OCCULT         "Occult"
@@ -49,3 +47,9 @@
 #define NO_TALK_MSG  128 // Do not show the "\The [speaker] talks into \the [radio]" message
 #define NO_STUTTER   256 // No stuttering, slurring, or other speech problems
 #define ALT_TRANSMIT 512 // Language is not based on vision or sound (Todo: add this into the say code and use it for the rootspeak languages)
+
+//WOLF_SWARM-INF
+/*
+#define LANGUAGE_SWARM          "Swarm Audio Language"
+#define LANGUAGE_SWARM_FAR      "Swarm Far Communicate Language"
+*/
