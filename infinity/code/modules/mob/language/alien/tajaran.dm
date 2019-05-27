@@ -27,6 +27,6 @@
 	desc = "A type of sign language mostly based on tail movements that was used during the Tajaran rebellion."
 	signlang_verb = list("делает пасы хвостом", "жестикулирует хвостом", "искусно жестикулирует хвостом")
 	colour = "tajaran"
-	key = "u"
+	key = "l"
 	flags = WHITELISTED | SIGNLANG | NO_STUTTER | NONVERBAL
 	shorthand = "TS"
