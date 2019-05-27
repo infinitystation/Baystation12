@@ -29,7 +29,7 @@
 	..()
 	player = new /obj/item/device/pmp/mounted(src)
 		player.Initialize()
-		
+
 /mob/living/silicon/robot/custom/naris/proc/check_cassette()
 	if (player != null)
 		return (player.cassette != null)
@@ -44,9 +44,9 @@
 			player.cassette = W
 			to_chat(user, "<span class='notice'>You insert cassete to [name].</span>")
 			to_chat(src, "<span class='notice'>[user] puts something in your slot.</span>")
-	else 
+	else
 		..()
-		
+
 /mob/living/silicon/robot/custom/naris/verb/toggle_playing()
 	set category = "Sound"
 	set name = "Toggle mediatronic"
