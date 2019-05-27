@@ -197,6 +197,7 @@
 		w_items += I.w_class
 		to_chat(user, "<span class='notice'>You carefully place \the [I] into the cistern.</span>")
 		return
+	. = ..()
 
 /obj/structure/hygiene/toilet/proc/can_place(var/mob/target, var/mob/user)
 	for(var/obj/item/grab/G in target.grabbed_by)

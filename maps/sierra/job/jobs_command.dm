@@ -95,7 +95,7 @@
 	                    SKILL_SCIENCE     = SKILL_MAX)
 	skill_points = 36
 
-	access = list(access_tox, access_tox_storage, access_emergency_storage, access_teleporter, access_bridge, access_rd,
+	access = list(access_tox, access_tox_storage, access_emergency_storage, access_teleporter, access_bridge, access_rd, access_ai_upload,
 						access_research, access_robotics, access_mining, access_mining_office, access_mining_station, access_xenobiology,
 						access_RC_announce, access_keycard_auth, access_xenoarch, access_heads,
 						access_sec_doors, access_medical, access_network, access_maint_tunnels,
