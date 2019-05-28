@@ -33,7 +33,7 @@ exactly 1 "world<< uses" 'world<<|world[[:space:]]<<'
 exactly 43 "world.log<< uses" 'world.log<<|world.log[[:space:]]<<'
 exactly 601 "<< uses" '(?<!<)<<(?!<)' -P
 exactly 0 "incorrect indentations" '^( {4,})' -P
-exactly 26 "text2path uses" 'text2path'
+exactly 24 "text2path uses" 'text2path'
 exactly 1 "update_icon() override" '/update_icon\((.*)\)'  -P
 exactly 0 "goto uses" 'goto '
 # With the potential exception of << if you increase any of these numbers you're probably doing it wrong
@@ -65,7 +65,7 @@ exactly 0 "goto uses" 'goto '
 #	FAILED=1
 #fi
 
-num=`find ./html/changelogs -not -name "*.yml" | wc -l`
+num=`find ./html/changelogs_infinity -not -name "*.yml" | wc -l`
 echo "$num non-yml files (expecting exactly 2)"
 [ $num -eq 2 ] || FAILED=1
 
