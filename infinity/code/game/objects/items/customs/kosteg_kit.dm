@@ -17,7 +17,7 @@
 
 /obj/item/clothing/accessory/zonehairclip
 	name = "skull hairclip"
-	desc = "A skull shaped hairclip, ‘nuff said."
+	desc = "A skull shaped hairclip, nuff said."
 	icon = CUSTOM_ITEM_OBJ
 	accessory_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
 	item_icons = list(slot_r_ear_str = CUSTOM_ITEM_MOB, slot_l_ear_str  = CUSTOM_ITEM_MOB)

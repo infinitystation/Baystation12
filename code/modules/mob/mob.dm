@@ -255,6 +255,9 @@
 		if(buckling == FULLY_BUCKLED && (incapacitation_flags & INCAPACITATION_BUCKLED_FULLY))
 			return 1
 
+	if((incapacitation_flags & INCAPACITATION_WEAKENED) && weakened)
+		return 1
+
 	return 0
 
 #undef UNBUCKLED
@@ -451,7 +454,7 @@
 	src << browse('html/changelog.html', "window=changes;size=675x650")
 	if(prefs.lastchangelog != changelog_hash)
 		prefs.lastchangelog = changelog_hash
-		prefs.save_preferences()
+		SScharacter_setup.queue_preferences_save(prefs)
 		winset(src, "rpane.changelog", "background-color=none;font-style=;")
 
 /client/verb/changes_infinity()
@@ -898,7 +901,7 @@
 	if(affected)
 		affected.implants -= implant
 		for(var/datum/wound/wound in affected.wounds)
-			wound.embedded_objects -= implant
+			LAZYREMOVE(wound.embedded_objects, implant)
 		if(!surgical_removal)
 			shock_stage+=20
 			affected.take_external_damage((implant.w_class * 3), 0, DAM_EDGE, "Embedded object extraction")

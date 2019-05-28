@@ -154,8 +154,6 @@
 
 	reagent_tag = IS_SKRELL
 
-	override_limb_types = list(BP_HEAD = /obj/item/organ/external/head/skrell)
-
 	descriptors = list(
 		/datum/mob_descriptor/height = 1,
 		/datum/mob_descriptor/build = 0,
@@ -202,7 +200,11 @@
 			HOME_SYSTEM_LORDANIA,
 			HOME_SYSTEM_KINGSTON,
 			HOME_SYSTEM_GAIA,
-			HOME_SYSTEM_OTHER
+			HOME_SYSTEM_OTHER,
+			HOME_SYSTEM_TALAMIRA,
+			HOME_SYSTEM_ROASORA,
+			HOME_SYSTEM_MITORQI,
+			HOME_SYSTEM_SKRELLSPACE
 		),
 		TAG_FACTION = list(
 			FACTION_SKRELL_MED,
@@ -228,6 +230,11 @@
 			FACTION_BISHOP,
 			FACTION_ZPCI,
 			FACTION_SEPTENERGO,
+			FACTION_SKRELL_QERRVOAL,
+			FACTION_SKRELL_QALAOA,
+			FACTION_SKRELL_YIITALANA,
+			FACTION_SKRELL_KRIGLI,
+			FACTION_SKRELL_QONPRRI,
 			FACTION_OTHER
 		),
 		TAG_RELIGION = list(
@@ -252,7 +259,7 @@
 		BP_LIVER =    /obj/item/organ/internal/liver,
 		BP_KIDNEYS =  /obj/item/organ/internal/kidneys,
 		BP_BRAIN =    /obj/item/organ/internal/brain,
-		BP_EYES =     /obj/item/organ/internal/eyes
+		BP_EYES =     /obj/item/organ/internal/eyes/skrell
 		)
 
 /datum/species/skrell/get_sex(var/mob/living/carbon/human/H)
