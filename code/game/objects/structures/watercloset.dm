@@ -286,7 +286,7 @@
 		playsound(src.loc, 'sound/machines/shower_end.ogg', 40)
 
 /obj/structure/hygiene/shower/attackby(obj/item/I as obj, var/mob/user)
-	if(istype(I, /obj/item/device/analyzer))
+	if(istype(I, /obj/item/device/scanner/gas))
 		to_chat(user, "<span class='notice'>The water temperature seems to be [watertemp].</span>")
 		return
 

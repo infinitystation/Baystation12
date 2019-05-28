@@ -107,5 +107,5 @@
 		/obj/item/weapon/tank/emergency/oxygen/double,
 		/obj/item/clothing/mask/gas/alt,
 		/obj/item/taperoll/atmos,
-		/obj/item/device/analyzer
+		/obj/item/device/scanner/gas
 	)

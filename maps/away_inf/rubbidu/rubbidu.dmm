@@ -1812,7 +1812,7 @@
 	dir = 4
 	},
 /obj/structure/table/glass,
-/obj/item/device/healthanalyzer,
+/obj/item/device/scanner/health,
 /obj/item/weapon/book/manual/nt_regs,
 /turf/simulated/floor/tiled/white,
 /area/rubbidu/nt)
@@ -2609,7 +2609,7 @@
 "fg" = (
 /obj/structure/table/standard,
 /obj/item/device/geiger,
-/obj/item/device/healthanalyzer,
+/obj/item/device/scanner/health,
 /obj/item/weapon/anodevice,
 /obj/item/weapon/anobattery{
 	pixel_x = 6;
@@ -2764,7 +2764,7 @@
 /obj/item/clothing/accessory/stethoscope,
 /obj/item/device/flashlight/pen,
 /obj/item/weapon/storage/box/rxglasses,
-/obj/item/device/healthanalyzer,
+/obj/item/device/scanner/health,
 /obj/item/weapon/cane{
 	pixel_x = -3;
 	pixel_y = 2
@@ -9567,7 +9567,7 @@
 	health = null
 	},
 /obj/structure/table/standard,
-/obj/item/device/slime_scanner,
+/obj/item/device/scanner/xenobio,
 /turf/simulated/floor/tiled/white,
 /area/rubbidu/nt)
 "qt" = (
@@ -12015,9 +12015,9 @@
 /obj/item/stack/flag/red,
 /obj/item/stack/flag/yellow,
 /obj/item/stack/flag/green,
-/obj/item/device/slime_scanner,
-/obj/item/device/analyzer,
-/obj/item/device/analyzer,
+/obj/item/device/scanner/xenobio,
+/obj/item/device/scanner/gas,
+/obj/item/device/scanner/gas,
 /obj/item/weapon/storage/excavation,
 /obj/item/device/measuring_tape,
 /obj/item/weapon/storage/belt/archaeology,
@@ -12064,8 +12064,8 @@
 	dir = 4
 	},
 /obj/structure/table/rack,
-/obj/item/weapon/mining_scanner,
-/obj/item/weapon/mining_scanner,
+/obj/item/device/scanner/mining,
+/obj/item/device/scanner/mining,
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -14560,7 +14560,7 @@
 	dir = 8
 	},
 /obj/item/weapon/storage/ore,
-/obj/item/weapon/mining_scanner,
+/obj/item/device/scanner/mining,
 /turf/simulated/floor/tiled/monotile,
 /area/rubbidu/hangar)
 "Te" = (

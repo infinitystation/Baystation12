@@ -25,18 +25,19 @@
 	return ..()
 
 /obj/machinery/holosign/proc/toggle()
-	if (stat & (BROKEN|NOPOWER))
+	if (inoperable())
 		return
 	lit = !lit
 	update_use_power(lit ? POWER_USE_ACTIVE : POWER_USE_IDLE)
 	update_icon()
 
-//maybe add soft lighting? Maybe, though not everything needs it
 /obj/machinery/holosign/on_update_icon()
-	if (!lit || (stat & (BROKEN|NOPOWER)))
+	if (!lit || inoperable())
 		icon_state = "sign_off"
+		set_light(0)
 	else
 		icon_state = on_icon
+		set_light(0.5, 0.5, 1, l_color = COLOR_CYAN_BLUE)
 
 /obj/machinery/holosign/surgery
 	name = "surgery holosign"
@@ -44,7 +45,6 @@
 	on_icon = "surgery"
 	layer = 5.1
 ////////////////////SWITCH///////////////////////////////////////
-
 /obj/machinery/button/holosign
 	name = "holosign switch"
 	desc = "A remote control switch for holosign."
@@ -55,17 +55,13 @@
 	if(..())
 		return
 
-	use_power_oneoff(5)
-
 	active = !active
+	use_power_oneoff(5)
 	update_icon()
+
 	for(var/obj/machinery/holosign/M in SSmachines.machinery)
 		if (M.id == src.id)
-			spawn( 0 )
-				M.toggle()
-				return
-
-	return
+			M.toggle()
 
 /obj/machinery/button/holosign/on_update_icon()
 	icon_state = "light[active]"

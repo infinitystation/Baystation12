@@ -30,7 +30,8 @@
 	id = "awaysite_unishi"
 	description = "CTI research ship.."
 	suffixes = list("unishi/unishi-1.dmm", "unishi/unishi-2.dmm", "unishi/unishi-3.dmm")
-	cost = 1
+	cost = 2
+	area_usage_test_exempted_root_areas = list(/area/unishi)
 
 
 /obj/effect/shuttle_landmark/nav_unishi/nav1

@@ -35,6 +35,8 @@
 /mob/new_player/proc/new_player_panel_proc()
 	var/output = list()
 	output += "<div align='center'>"
+	//output += "<i>[GLOB.using_map.get_map_info()]</i>"
+	//output += "<hr>Current character: <br><b>[client.prefs.real_name]</b>[client.prefs.job_high ? ",<br>[client.prefs.job_high]" : null]<br>"
 	output +="<hr>"
 	output += "<p><a href='byond://?src=\ref[src];show_preferences=1'>Setup Character</A></p>"
 
@@ -43,13 +45,12 @@
 			output += "<p>\[ <span class='linkOn'><b>Ready</b></span> | <a href='byond://?src=\ref[src];ready=0'>Not Ready</a> \]</p>"
 		else
 			output += "<p>\[ <a href='byond://?src=\ref[src];ready=1'>Ready</a> | <span class='linkOn'><b>Not Ready</b></span> \]</p>"
-		if(client.holder)
+		if(client.holder || config.observers_allowed || check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 			output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
-
 	else
 		output += "<a href='byond://?src=\ref[src];manifest=1'>View the Crew Manifest</A><br><br>"
-		output += "<p><a href='byond://?src=\ref[src];late_join=1'>Join Game!</A></p>"
-		if(config.observers_allowed || check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
+		output += "<a href='byond://?src=\ref[src];late_join=1'>Join Game!</A>"
+		if(client.holder || config.observers_allowed || check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 			output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
 
 	if(!IsGuestKey(key))
@@ -66,13 +67,15 @@
 				break
 
 			if(newpoll)
-				output += "<p><b><a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A> (NEW!)</b></p>"
+				output += "<b><a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A> (NEW!)</b> "
 			else
-				output += "<p><a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A></p>"
-
+				output += "<a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A> "
+	output += "<hr>Current character:<br>"
+	output += "<b>[client.prefs.real_name]</b>"
+	output += "[client.prefs.job_high ? ",<br>[client.prefs.job_high]" : null]<br>"
 	output += "</div>"
 
-	panel = new(src, "Welcome","Welcome", 210, 280, src)
+	panel = new(src, "Welcome","Welcome,<br>[client.prefs.real_name]", 560, 280, src)
 	panel.set_window_options("can_close=0")
 	panel.set_content(JOINTEXT(output))
 	panel.open()
@@ -619,3 +622,12 @@ mob/new_player/MayRespawn()
 
 /mob/new_player/say(var/message)
 	sanitize_and_communicate(/decl/communication_channel/ooc, client, message)
+
+/mob/new_player/verb/next_lobby_track()
+	set name = "Play Different Lobby Track"
+	set category = "OOC"
+
+	if(get_preference_value(/datum/client_preference/play_lobby_music) == GLOB.PREF_NO)
+		return
+	var/music_track/new_track = GLOB.using_map.get_lobby_track(GLOB.using_map.lobby_track.type)
+	new_track.play_to(src)

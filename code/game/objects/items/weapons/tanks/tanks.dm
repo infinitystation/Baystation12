@@ -103,7 +103,7 @@ var/list/global/tank_gauge_cache = list()
 	if (istype(loc, /obj/item/assembly))
 		icon = loc
 
-	if (istype(W, /obj/item/device/analyzer))
+	if (istype(W, /obj/item/device/scanner/gas))
 		return
 
 	if (istype(W,/obj/item/latexballon))
@@ -184,7 +184,6 @@ var/list/global/tank_gauge_cache = list()
 						maxintegrity -= rand(2,6)
 						integrity = min(integrity,maxintegrity)
 						air_contents.add_thermal_energy(rand(2000,50000))
-				WT.eyecheck(user)
 			else
 				to_chat(user, "<span class='notice'>The emergency pressure relief valve has already been welded.</span>")
 		add_fingerprint(user)

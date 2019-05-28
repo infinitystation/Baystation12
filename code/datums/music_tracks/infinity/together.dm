@@ -4,3 +4,4 @@
 	album = "Here and Now"
 	song = 'sound/music/infinity/Nickelback_WhenWeStandTogether.ogg'
 	license = /decl/license/cc_by_3_0
+	url = "https://soundcloud.com/roadrunner-usa/nickelback-when-we-stand"

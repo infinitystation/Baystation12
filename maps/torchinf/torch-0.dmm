@@ -4707,10 +4707,10 @@
 /obj/item/stack/flag/red,
 /obj/item/stack/flag/red,
 /obj/item/stack/flag/red,
-/obj/item/weapon/mining_scanner,
-/obj/item/weapon/mining_scanner,
-/obj/item/weapon/mining_scanner,
-/obj/item/weapon/mining_scanner,
+/obj/item/device/scanner/mining,
+/obj/item/device/scanner/mining,
+/obj/item/device/scanner/mining,
+/obj/item/device/scanner/mining,
 /obj/effect/floor_decal/corner/mauve{
 	icon_state = "corner_white";
 	dir = 10
@@ -4855,17 +4855,17 @@
 /area/maintenance/fifthdeck/fore)
 "kL" = (
 /obj/structure/table/rack,
-/obj/item/device/slime_scanner,
-/obj/item/device/slime_scanner,
-/obj/item/device/slime_scanner,
-/obj/item/device/slime_scanner,
+/obj/item/device/scanner/xenobio,
+/obj/item/device/scanner/xenobio,
+/obj/item/device/scanner/xenobio,
+/obj/item/device/scanner/xenobio,
 /obj/item/weapon/storage/plants,
 /obj/item/weapon/storage/plants,
 /obj/item/weapon/storage/plants,
-/obj/item/device/analyzer/plant_analyzer,
-/obj/item/device/analyzer/plant_analyzer,
-/obj/item/device/analyzer/plant_analyzer,
-/obj/item/device/analyzer/plant_analyzer,
+/obj/item/device/scanner/plant,
+/obj/item/device/scanner/plant,
+/obj/item/device/scanner/plant,
+/obj/item/device/scanner/plant,
 /obj/effect/floor_decal/corner/mauve{
 	icon_state = "corner_white";
 	dir = 10
@@ -5426,7 +5426,7 @@
 /area/maintenance/fifthdeck/fore)
 "mm" = (
 /obj/structure/table/standard,
-/obj/item/device/mass_spectrometer/adv,
+/obj/item/device/scanner/spectrometer/adv,
 /obj/item/weapon/storage/box/syringes,
 /obj/item/weapon/storage/box/beakers,
 /obj/item/device/radio/intercom{
@@ -7263,18 +7263,18 @@
 /area/vacant/infirmary)
 "pP" = (
 /obj/structure/table/steel,
-/obj/item/device/slime_scanner,
-/obj/item/device/slime_scanner,
-/obj/item/device/slime_scanner,
-/obj/item/device/slime_scanner,
-/obj/item/device/slime_scanner,
-/obj/item/device/slime_scanner,
-/obj/item/device/analyzer,
-/obj/item/device/analyzer,
-/obj/item/device/analyzer,
-/obj/item/device/analyzer,
-/obj/item/device/analyzer,
-/obj/item/device/analyzer,
+/obj/item/device/scanner/xenobio,
+/obj/item/device/scanner/xenobio,
+/obj/item/device/scanner/xenobio,
+/obj/item/device/scanner/xenobio,
+/obj/item/device/scanner/xenobio,
+/obj/item/device/scanner/xenobio,
+/obj/item/device/scanner/gas,
+/obj/item/device/scanner/gas,
+/obj/item/device/scanner/gas,
+/obj/item/device/scanner/gas,
+/obj/item/device/scanner/gas,
+/obj/item/device/scanner/gas,
 /obj/item/weapon/storage/excavation,
 /obj/item/device/measuring_tape,
 /obj/machinery/light{
@@ -7450,9 +7450,9 @@
 /area/quartermaster/expedition)
 "qi" = (
 /obj/structure/table/rack,
-/obj/item/weapon/mining_scanner,
-/obj/item/weapon/mining_scanner,
-/obj/item/weapon/mining_scanner,
+/obj/item/device/scanner/mining,
+/obj/item/device/scanner/mining,
+/obj/item/device/scanner/mining,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
@@ -10404,7 +10404,7 @@
 	pixel_y = 3
 	},
 /obj/item/weapon/anodevice,
-/obj/item/device/healthanalyzer,
+/obj/item/device/scanner/health,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -11828,7 +11828,7 @@
 /area/shuttle/petrov/rd)
 "CV" = (
 /obj/structure/table/standard,
-/obj/item/device/healthanalyzer,
+/obj/item/device/scanner/health,
 /obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
@@ -12266,8 +12266,8 @@
 /obj/structure/table/standard,
 /obj/item/weapon/reagent_containers/glass/beaker/large,
 /obj/item/weapon/reagent_containers/dropper,
-/obj/item/device/reagent_scanner,
-/obj/item/device/mass_spectrometer/adv,
+/obj/item/device/scanner/reagent,
+/obj/item/device/scanner/spectrometer/adv,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/phoron)
 "Em" = (
@@ -15337,8 +15337,8 @@
 /area/shuttle/petrov/phoron)
 "QK" = (
 /obj/structure/table/standard,
-/obj/item/device/reagent_scanner,
-/obj/item/device/mass_spectrometer/adv,
+/obj/item/device/scanner/reagent,
+/obj/item/device/scanner/spectrometer/adv,
 /turf/simulated/floor/tiled/white/monotile,
 /area/shuttle/petrov/equipment)
 "QL" = (
@@ -16644,9 +16644,9 @@
 /area/shuttle/petrov/rd)
 "VU" = (
 /obj/structure/table/rack,
-/obj/item/device/slime_scanner,
-/obj/item/device/slime_scanner,
-/obj/item/device/slime_scanner,
+/obj/item/device/scanner/xenobio,
+/obj/item/device/scanner/xenobio,
+/obj/item/device/scanner/xenobio,
 /obj/item/weapon/storage/excavation,
 /obj/item/device/measuring_tape,
 /turf/simulated/floor/tiled/white,
