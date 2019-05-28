@@ -11,6 +11,8 @@
 /datum/universal_state/bluespace_jump/OnEnter()
 	var/space_zlevel = GLOB.using_map.get_empty_zlevel() //get a place for stragglers
 	for(var/mob/living/M in SSmobs.mob_list)
+		if(is_bot(M))
+			continue
 		if(M.z in affected_levels)
 			var/area/A = get_area(M)
 			if(istype(A,/area/space)) //straggler
@@ -22,7 +24,8 @@
 	for(var/mob/goast in GLOB.ghost_mob_list)
 		goast.mouse_opacity = 0	//can't let you click that Dave
 		goast.set_invisibility(SEE_INVISIBLE_LIVING)
-		goast.alpha = 255
+		if(goast.alpha)
+			goast.alpha = 255
 	old_accessible_z_levels = GLOB.using_map.accessible_z_levels.Copy()
 	for(var/z in affected_levels)
 		GLOB.using_map.accessible_z_levels -= "[z]" //not accessible during the jump
@@ -64,7 +67,8 @@
 	for(var/mob/goast in GLOB.ghost_mob_list)
 		goast.mouse_opacity = initial(goast.mouse_opacity)
 		goast.set_invisibility(initial(goast.invisibility))
-		goast.alpha = initial(goast.alpha)
+		if(goast.alpha)
+			goast.alpha = initial(goast.alpha)
 	for(var/G in bluegoasts)
 		qdel(G)
 	bluegoasts.Cut()

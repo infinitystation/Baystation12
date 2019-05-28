@@ -125,7 +125,19 @@
 		/obj/item/device/flashlight,
 		/obj/item/weapon/tank/oxygen/red,
 		/obj/item/weapon/extinguisher,
-		/obj/item/clothing/head/hardhat/red)
+		/obj/item/clothing/head/hardhat/firefighter)
+
+/obj/structure/closet/firecloset/chief
+
+/obj/structure/closet/firecloset/chief/WillContain()
+	return list(
+		/obj/item/weapon/storage/med_pouch/burn,
+		/obj/item/clothing/suit/fire/firefighter,
+		/obj/item/clothing/mask/gas,
+		/obj/item/device/flashlight,
+		/obj/item/weapon/tank/oxygen/red,
+		/obj/item/weapon/extinguisher,
+		/obj/item/clothing/head/hardhat/firefighter/Chief)
 
 /*
  * Tool Closet
@@ -236,7 +248,7 @@
 		/obj/item/device/flashlight,
 		/obj/item/weapon/tank/oxygen/red,
 		/obj/item/weapon/extinguisher,
-		/obj/item/clothing/head/hardhat/red)
+		/obj/item/clothing/head/hardhat/firefighter)
 
 	if(prob(25))
 		new /obj/item/weapon/ladder_mobile(src)

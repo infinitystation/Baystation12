@@ -27,6 +27,7 @@ redknighthero - machine
 kotovsyndrome - machine
 termservice - machine
 semorerith - machine
+bob46 - machine
 inubashirimomiji - skrell
 tenedegurechaff - skrell
 twinindifferent - skrell
@@ -52,6 +53,7 @@ coldmantis13 - skrell
 s1334 - skrell
 logfol - skrell
 laxesh - skrell
+arbuzpersikov - skrell.
 cre77 - resomi
 s1334 - resomi
 shokumar - resomi
@@ -102,6 +104,7 @@ forrya - diona
 s1334 - diona
 sfd - diona
 spiderling - diona
+wolfetd - diona
 wheatley2013 - vox
 wolforbykot - vox
 sosiskoed - vox

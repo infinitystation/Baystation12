@@ -6,7 +6,8 @@
 		"Android" = "droid",
 		"Default" = "robot",
 		"Drone" = "drone-standard",
-		"Doot" = "eyebot-standard"
+		"Doot" = "eyebot-standard",
+		"Ver 06" = "wer6-Standard"
 	)
 	equipment = list(
 		/obj/item/device/flash,
@@ -14,6 +15,6 @@
 		/obj/item/weapon/extinguisher,
 		/obj/item/weapon/wrench,
 		/obj/item/weapon/crowbar,
-		/obj/item/device/healthanalyzer
+		/obj/item/device/scanner/health
 	)
 	emag = /obj/item/weapon/melee/energy/sword

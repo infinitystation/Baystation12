@@ -18,6 +18,8 @@
 	var/directions = list(1,2,4,8,5,6,9,10)
 	var/RCon_tag = "NO_TAG"
 	var/update_locked = 0
+	var/skill_req = SKILL_ELECTRICAL
+	var/skill_level_req = SKILL_ADEPT
 
 /obj/machinery/power/breakerbox/Destroy()
 	..()
@@ -61,6 +63,10 @@
 
 
 /obj/machinery/power/breakerbox/attack_hand(mob/user)
+	if(!user.skill_check(skill_req, skill_level_req))
+		to_chat(user, "<span class='warning'>You don't know what to do with it. </span>")
+		return
+
 	if(update_locked)
 		to_chat(user, "<span class='warning'>System locked. Please try again later.</span>")
 		return

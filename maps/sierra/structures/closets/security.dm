@@ -62,6 +62,8 @@
 		/obj/item/weapon/melee/baton/loaded,
 		/obj/item/weapon/gun/energy/gun/secure,
 		/obj/item/weapon/melee/telebaton,
+		/obj/item/device/taperecorder,
+		/obj/item/device/tape/random = 3,
 		/obj/item/weapon/reagent_containers/spray/pepper,
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/device/remote_device/head_of_security,
@@ -76,7 +78,7 @@
 
 /obj/structure/closet/secure_closet/warden/sierra
 	name = "warden's locker"
-	req_access = list(access_armory)
+	req_access = list(access_warden)
 	closet_appearance = /decl/closet_appearance/secure_closet/sierra/security/warden
 
 /obj/structure/closet/secure_closet/warden/sierra/WillContain()

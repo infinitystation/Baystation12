@@ -311,7 +311,7 @@
 //Lifted from Unity stasis.dm and refactored. ~Zuhayr
 /obj/machinery/cryopod/Process()
 	if(occupant)
-		if(applies_stasis && iscarbon(occupant))
+		if(applies_stasis && iscarbon(occupant) && (world.time > time_entered + 20 SECONDS))
 			var/mob/living/carbon/C = occupant
 			C.SetStasis(2)
 
@@ -390,7 +390,7 @@
 	for(var/datum/objective/O in all_objectives)
 		// We don't want revs to get objectives that aren't for heads of staff. Letting
 		// them win or lose based on cryo is silly so we remove the objective.
-		if(O.target == occupant.mind && O.target)
+		if(O?.target == occupant.mind)
 			if(O.owner && O.owner.current)
 				to_chat(O.owner.current, "<span class='warning'>You get the feeling your target is no longer within your reach...</span>")
 			qdel(O)
@@ -407,9 +407,6 @@
 	// Delete them from datacore.
 	var/sanitized_name = occupant.real_name
 	sanitized_name = sanitize(sanitized_name)
-	var/datum/computer_file/report/crew_record/R = get_crewmember_record(sanitized_name)
-	if(R)
-		qdel(R)
 
 	icon_state = base_icon_state
 
@@ -427,7 +424,11 @@
 		control_computer._admin_logs += "[key_name(occupant)] ([role_alt_title]) at [stationtime2text()]"
 	log_and_message_admins("[key_name(occupant)] ([role_alt_title]) entered cryostorage.")
 
-	announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
+	var/datum/computer_file/report/crew_record/R = get_crewmember_record(sanitized_name)
+	if(R)
+		announce.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
+		qdel(R)
+
 	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>", 3)
 
 	//This should guarantee that ghosts don't spawn.
@@ -584,3 +585,46 @@
 
 	SetName("[name] ([occupant])")
 	icon_state = occupied_icon_state
+
+/obj/machinery/cryopod/relaymove(var/mob/user)
+	go_out()
+
+//A prop version for away missions and such
+
+/obj/structure/broken_cryo
+	name = "broken cryo sleeper"
+	desc = "Whoever was inside isn't going to wake up now. It looks like you could pry it open with a crowbar."
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "broken_cryo"
+	anchored = 1
+	density = 1
+	var/closed = 1
+	var/busy = 0
+	var/remains_type = /obj/item/remains/human
+
+/obj/structure/broken_cryo/attack_hand(mob/user)
+	..()
+	if (closed)
+		to_chat(user, "<span class='notice'>You tug at the glass but can't open it with your hands alone.</span>")
+	else
+		to_chat(user, "<span class='notice'>The glass is already open.</span>")
+
+/obj/structure/broken_cryo/attackby(obj/item/W as obj, mob/user as mob)
+	if (busy)
+		to_chat(user, "<span class='notice'>Someone else is attempting to open this.</span>")
+		return
+	if (closed)
+		if (isCrowbar(W))
+			busy = 1
+			visible_message("[user] starts to pry the glass cover off of \the [src].")
+			if (!do_after(user, 50, src))
+				visible_message("[user] stops trying to pry the glass off of \the [src].")
+				busy = 0
+				return
+			closed = 0
+			busy = 0
+			icon_state = "broken_cryo_open"
+			var/obj/dead = new remains_type(loc)
+			dead.dir = src.dir//skeleton is oriented as cryo
+	else
+		to_chat(user, "<span class='notice'>The glass cover is already open.</span>")

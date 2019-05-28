@@ -16,7 +16,8 @@
 		"Advanced Droid" = "droid-miner",
 		"Treadhead" = "Miner",
 		"Doot" = "eyebot-miner",
-		"Drone" = "drone-miner"
+		"Drone" = "drone-miner",
+		"Ver 06" = "wer6-Miner"
 	)
 	supported_upgrades = list(
 		/obj/item/borg/upgrade/jetpack
@@ -30,7 +31,7 @@
 		/obj/item/weapon/pickaxe/borgdrill,
 		/obj/item/weapon/storage/sheetsnatcher/borg,
 		/obj/item/weapon/gripper/miner,
-		/obj/item/weapon/mining_scanner,
+		/obj/item/device/scanner/mining,
 		/obj/item/weapon/crowbar
 	)
 	emag = /obj/item/weapon/gun/energy/plasmacutter

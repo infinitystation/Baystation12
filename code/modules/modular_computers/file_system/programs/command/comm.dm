@@ -16,6 +16,7 @@
 	size = 12
 	usage_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP
 	network_destination = "long-range communication array"
+	category = PROG_COMMAND
 	var/datum/comm_message_listener/message_core = new
 
 /datum/computer_file/program/comm/clone()
@@ -147,6 +148,7 @@
 				if(istype(A))
 					affected_zlevels = GetConnectedZlevels(A.z)
 				crew_announcement.Announce(input, zlevels = affected_zlevels)
+				ntnet_global.add_log("***[program.computer.network_card.get_network_tag()] make announcement.***")
 				announcment_cooldown = 1
 				spawn(600)//One minute cooldown
 					announcment_cooldown = 0
@@ -183,6 +185,7 @@
 					Centcomm_announce(input, usr)
 					to_chat(usr, "<span class='notice'>Message transmitted.</span>")
 					log_say("[key_name(usr)] has made an IA [GLOB.using_map.boss_short] announcement: [input]")
+					ntnet_global.add_log("***[program.computer.network_card.get_network_tag()] send emergency message.***")
 					centcomm_message_cooldown = 1
 					spawn(300) //30 second cooldown
 						centcomm_message_cooldown = 0
@@ -199,6 +202,7 @@
 				var/confirm = alert("Are you sure you want to [selected_evac_option.option_desc]?", name, "No", "Yes")
 				if (confirm == "Yes" && can_still_topic())
 					evacuation_controller.handle_evac_option(selected_evac_option.option_target, user)
+					ntnet_global.add_log("***[program.computer.network_card.get_network_tag()] [selected_evac_option.option_desc]***")
 		if("setstatus")
 			. = 1
 			if(is_autenthicated(user) && ntn_cont)
@@ -242,8 +246,10 @@
 		if("delmessage")
 			. = 1
 			if(is_autenthicated(user) && ntn_comm && l != global_message_listener)
+				ntnet_global.add_log("***[program.computer.network_card.get_network_tag()] deleted [current_viewing_message]***")
 				l.Remove(current_viewing_message)
 			current_status = STATE_MESSAGELIST
+
 		if("printmessage")
 			. = 1
 			if(is_autenthicated(user) && ntn_comm)
@@ -255,9 +261,11 @@
 		if("unbolt_doors")
 			GLOB.using_map.unbolt_saferooms()
 			to_chat(usr, "<span class='notice'>The console beeps, confirming the signal was sent to have the saferooms unbolted.</span>")
+			ntnet_global.add_log("***[program.computer.network_card.get_network_tag()] unbolted saferooms.***")
 		if("bolt_doors")
 			GLOB.using_map.bolt_saferooms()
 			to_chat(usr, "<span class='notice'>The console beeps, confirming the signal was sent to have the saferooms bolted.</span>")
+			ntnet_global.add_log("***[program.computer.network_card.get_network_tag()] bolted saferooms.***")
 
 #undef STATE_DEFAULT
 #undef STATE_MESSAGELIST

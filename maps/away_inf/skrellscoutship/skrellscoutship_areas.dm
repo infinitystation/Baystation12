@@ -2,10 +2,11 @@
 	name = "\improper Skrellian Ship"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 	base_turf = /turf/space
-//	req_access = list(access_skrellscoutship) because sierra/machinery/door.dm has override for set_autoaccess
+	req_access = list(access_skrellscoutship)
 
 /area/ship/skrellscoutship/solars
 	name = "\improper Solar Area"
+	icon_state = "panelsS"
 
 /area/ship/skrellscoutship/crew/quarters
 	name = "\improper Quarters"
@@ -13,9 +14,11 @@
 
 /area/ship/skrellscoutship/crew/hallway/d1
 	name = "\improper Hallway - Deck 1"
+	icon_state = "hallC1"
 
 /area/ship/skrellscoutship/crew/hallway/d2
 	name = "\improper Hallway - Deck 2"
+	icon_state = "hallC2"
 
 /area/ship/skrellscoutship/crew/kitchen
 	name = "\improper Galley"
@@ -23,11 +26,11 @@
 
 /area/ship/skrellscoutship/crew/rec
 	name = "\improper Recreational Area"
-	icon_state = "green"
+	icon_state = "bar"
 
 /area/ship/skrellscoutship/crew/fit
 	name = "\improper Exercise Area"
-	icon_state = "green"
+	icon_state = "fitness"
 
 /area/ship/skrellscoutship/crew/toilets
 	name = "\improper Bathroom"
@@ -39,19 +42,19 @@
 
 /area/ship/skrellscoutship/dock
 	name = "\improper Docking Bay 1"
-	icon_state = "entry_1"
+	icon_state = "hallS"
 
 /area/ship/skrellscoutship/dock/alt
 	name = "\improper Docking Bay 2"
-	icon_state = "entry_1"
+	icon_state = "hallP"
 
 /area/ship/skrellscoutship/hangar
 	name = "\improper Hangar"
-	icon_state = "auxstorage"
+	icon_state = "hangar"
 
 /area/ship/skrellscoutship/robotics
 	name = "\improper Development Lab"
-	icon_state = "green"
+	icon_state = "devlab"
 
 /area/ship/skrellscoutship/maintenance/atmos
 	name = "\improper Atmospherics"
@@ -69,11 +72,11 @@
 
 /area/ship/skrellscoutship/command/armory
 	name = "\improper Armory"
-	icon_state = "shuttlered"
+	icon_state = "armory"
 
 /area/ship/skrellscoutshuttle
 	name = "\improper Skrellian Shuttle"
-	icon_state = "bridge"
+	icon_state = "shuttle"
 	base_turf = /turf/simulated/floor/plating
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
-//	req_access = list(access_skrellscoutship)  because sierra/machinery/door.dm has override for set_autoaccess
+	req_access = list(access_skrellscoutship)

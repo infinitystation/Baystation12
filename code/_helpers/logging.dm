@@ -36,6 +36,10 @@
 /proc/game_log(category, text)
 	diary << "\[[time_stamp()]] [game_id] [category]: [text][log_end]"
 
+/proc/log_staff_say(text)
+	if(config.log_staff)
+		game_log("STAFFSAY", text)
+
 /proc/log_admin(text)
 	GLOB.admin_log.Add(text)
 	if (config.log_admin)
@@ -110,6 +114,9 @@
 /proc/log_pda(text)
 	if (config.log_pda)
 		game_log("PDA", text)
+
+/proc/log_fax(text)
+	game_log("FAX", text)
 
 /proc/log_misc(text)
 	game_log("MISC", text)

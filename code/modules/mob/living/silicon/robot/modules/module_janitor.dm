@@ -8,7 +8,8 @@
 		"Basic" = "JanBot2",
 		"Mopbot"  = "janitorrobot",
 		"Mop Gear Rex" = "mopgearrex",
-		"Doot" = "eyebot-janitor"
+		"Doot" = "eyebot-janitor",
+		"Ver 06" = "wer6-janitor"
 	)
 	equipment = list(
 		/obj/item/device/flash,

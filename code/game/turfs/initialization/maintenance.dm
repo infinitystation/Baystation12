@@ -23,11 +23,14 @@
 
 	var/cardinal_turfs = T.CardinalTurfs()
 
+
+	if(is_space_turf(T))	//HOW IT CAN BE?
+		return
 	T.dirt = get_dirt_amount()
 	// If a neighbor is dirty, then we get dirtier.
 	var/how_dirty = dirty_neighbors(cardinal_turfs)
 	for(var/i = 0; i < how_dirty; i++)
-		T.dirt += rand(0,10)
+		T.dirt += rand(0,5)
 	T.update_dirt()
 
 	if(prob(oil_probability))

@@ -35,7 +35,7 @@
 	return list(
 		/obj/item/clothing/head/soft/green,
 		/obj/item/weapon/storage/plants,
-		/obj/item/device/analyzer/plant_analyzer,
+		/obj/item/device/scanner/plant,
 		/obj/item/weapon/material/minihoe,
 		/obj/item/clothing/gloves/thick/botany,
 		/obj/item/weapon/material/hatchet,
@@ -99,7 +99,6 @@
 		/obj/item/weapon/storage/pill_bottle/dylovene,
 		/obj/item/weapon/reagent_containers/spray/cleaner,
 		/obj/item/weapon/reagent_containers/glass/rag,
-		/obj/item/sticky_pad/random,
 		/obj/item/weapon/paper/bar_permit,
 		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/empty
 	)

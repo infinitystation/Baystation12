@@ -197,6 +197,7 @@
 		w_items += I.w_class
 		to_chat(user, "<span class='notice'>You carefully place \the [I] into the cistern.</span>")
 		return
+	. = ..()
 
 /obj/structure/hygiene/toilet/proc/can_place(var/mob/target, var/mob/user)
 	for(var/obj/item/grab/G in target.grabbed_by)
@@ -285,7 +286,7 @@
 		playsound(src.loc, 'sound/machines/shower_end.ogg', 40)
 
 /obj/structure/hygiene/shower/attackby(obj/item/I as obj, var/mob/user)
-	if(istype(I, /obj/item/device/analyzer))
+	if(istype(I, /obj/item/device/scanner/gas))
 		to_chat(user, "<span class='notice'>The water temperature seems to be [watertemp].</span>")
 		return
 

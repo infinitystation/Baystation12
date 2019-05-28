@@ -13,6 +13,7 @@
 	max_uses = 7
 
 	spells = list(/spell/targeted/heal_target/major = 				1,
+				/obj/structure/closet/wizard/armor = 				3,
 				/spell/targeted/heal_target/area = 					1,
 				/spell/targeted/heal_target/sacrifice = 			1,
 				/spell/targeted/genetic/blind = 					1,
@@ -37,4 +38,10 @@
 
 	sacrifice_reagents = list(/datum/reagent/peridaxon,
 							/datum/reagent/adminordrazine)
-	sacrifice_objects = list(/obj/item/seeds/mtearseed)
+	sacrifice_objects = list(/obj/item/stack/nanopaste,
+							/obj/item/device/scanner/health,
+							/obj/item/stack/medical/advanced/bruise_pack,
+							/obj/item/stack/medical/advanced/ointment,
+							/obj/item/bodybag/rescue,
+							/obj/item/weapon/defibrillator,
+							/obj/item/weapon/virusdish)

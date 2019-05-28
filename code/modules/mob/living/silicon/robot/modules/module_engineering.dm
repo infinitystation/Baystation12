@@ -20,7 +20,8 @@
 		"Landmate" = "landmate",
 		"Landmate - Treaded" = "engiborg+tread",
 		"Doot" = "eyebot-engineering",
-		"Drone" = "drone-engineer"
+		"Drone" = "drone-engineer",
+		"Ver 06" = "wer6-Engineering"
 	)
 	no_slip = 1
 	equipment = list(
@@ -34,7 +35,7 @@
 		/obj/item/weapon/wirecutters,
 		/obj/item/device/multitool,
 		/obj/item/device/t_scanner,
-		/obj/item/device/analyzer,
+		/obj/item/device/scanner/gas,
 		/obj/item/device/geiger,
 		/obj/item/taperoll/engineering,
 		/obj/item/taperoll/atmos,
@@ -51,8 +52,8 @@
 		/obj/item/stack/material/cyborg/aluminium,
 		/obj/item/stack/material/rods/cyborg,
 		/obj/item/stack/tile/floor/cyborg,
-		/obj/item/stack/material/cyborg/glass/reinforced,
 		/obj/item/stack/material/cyborg/glass,
+		/obj/item/stack/material/cyborg/glass/reinforced,
 		/obj/item/stack/cable_coil/cyborg,
 		/obj/item/stack/material/cyborg/plasteel
 	)

@@ -47,6 +47,12 @@ var/list/floor_light_cache = list()
 		if(new_colour && new_colour != default_light_colour)
 			default_light_colour = new_colour
 		to_chat(usr, "<span class='notice'>You set \the [src] to shine with <font color='[default_light_colour]'>a new colour</font>.</span>")
+	else if(isWrench(W))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+		to_chat(user, "<span class='notice'>You dismantle the floor light.</span>")
+		new /obj/item/stack/material/steel(src.loc, 1)
+		new /obj/item/stack/material/glass(src.loc, 1)
+		qdel(src)
 	else if(W.force && user.a_intent == "hurt")
 		attack_hand(user)
 	return

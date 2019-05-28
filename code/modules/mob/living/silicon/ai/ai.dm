@@ -160,16 +160,19 @@ var/list/ai_verbs_default = list(
 	add_language("Robot Talk", 1)
 	add_language(LANGUAGE_GALCOM, 1)
 	add_language(LANGUAGE_EAL, 1)
-	add_language(LANGUAGE_SOL_COMMON, 1)
+	add_language(LANGUAGE_HUMAN_EURO, 1)
+	add_language(LANGUAGE_HUMAN_ARABIC, 1)
+	add_language(LANGUAGE_HUMAN_CHINESE, 1)
+	add_language(LANGUAGE_HUMAN_IBERIAN, 1)
+	add_language(LANGUAGE_HUMAN_INDIAN, 1)
+	add_language(LANGUAGE_HUMAN_RUSSIAN, 1)
 	add_language(LANGUAGE_UNATHI, 1)
 	add_language(LANGUAGE_SIIK_MAAS, 1)
 	add_language(LANGUAGE_SKRELLIAN, 1)
 	add_language(LANGUAGE_RESOMI, 1)
-	add_language(LANGUAGE_LUNAR, 1)
 	add_language(LANGUAGE_GUTTER, 1)
-	add_language(LANGUAGE_SIGN, 0)
-	add_language(LANGUAGE_INDEPENDENT, 1)
 	add_language(LANGUAGE_SPACER, 1)
+	add_language(LANGUAGE_SIGN, 0)
 
 	if(!safety)//Only used by AIize() to successfully spawn an AI.
 		if (!B)//If there is no player/brain inside.
@@ -224,9 +227,10 @@ var/list/ai_verbs_default = list(
 	setup_icon()
 	eyeobj.possess(src)
 
-	var/otvet_rwqir231 = input(src, "Announce your presence?", "Presence.") in list("Yes", "No")
-	if(otvet_rwqir231 == "Yes")
-		announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/TG/newai.ogg')
+	if(alert(src, "Announce your presence?", "AI Presense","Yes", "No") == "Yes")
+		switch(input(src, "Announce your presence?", "Presence.") in list("Torch Voice Announcement", "TG Voice Announcement"))
+			if("Torch Voice Announcement")	announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/newAI.ogg')
+			if("TG Voice Announcement")	announcement.Announce("Новый ИИ загружен в ядро.", new_sound = 'sound/AI/TG/newai.ogg')
 
 /mob/living/silicon/ai/Destroy()
 	for(var/robot in connected_robots)
@@ -339,6 +343,7 @@ var/list/ai_verbs_default = list(
 	var/input = input(usr, "Please write a message to announce to the [station_name()] crew.", "A.I. Announcement")
 	if(!input)
 		return
+
 	if(check_unable(AI_CHECK_WIRELESS | AI_CHECK_RADIO))
 		return
 

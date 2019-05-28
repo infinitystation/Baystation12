@@ -95,7 +95,7 @@
 	                    SKILL_SCIENCE     = SKILL_MAX)
 	skill_points = 36
 
-	access = list(access_tox, access_tox_storage, access_emergency_storage, access_teleporter, access_bridge, access_rd,
+	access = list(access_tox, access_tox_storage, access_emergency_storage, access_teleporter, access_bridge, access_rd, access_ai_upload,
 						access_research, access_robotics, access_mining, access_mining_office, access_mining_station, access_xenobiology,
 						access_RC_announce, access_keycard_auth, access_xenoarch, access_heads,
 						access_sec_doors, access_medical, access_network, access_maint_tunnels,
@@ -228,7 +228,7 @@
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
 			            access_teleporter, access_eva, access_bridge, access_heads,
 			            access_hos, access_RC_announce, access_keycard_auth, access_sec_doors,
-			            access_hangar, access_gun)
+			            access_hangar, access_gun, access_warden)
 	minimal_access = list()
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -240,8 +240,8 @@
 	title = "Internal Affairs Agent"
 	department = "Support"
 	department_flag = SPT
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "NanoTrasen and Corporate Regulations"
 	selection_color = "#2f2f7f"
 	economic_power = 15

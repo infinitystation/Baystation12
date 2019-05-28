@@ -12,6 +12,7 @@
 	requires_ntnet_feature = NTNET_SYSTEMCONTROL
 	usage_flags = PROGRAM_LAPTOP | PROGRAM_CONSOLE
 	size = 19
+	category = PROG_ENG
 
 /datum/nano_module/rcon
 	name = "Power RCON"
@@ -49,7 +50,11 @@
 		"RCON_tag" = BR.RCon_tag,
 		"enabled" = BR.on
 		)))
-	data["breaker_info"] = breakerlist
+	if(user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
+		data["breaker_info"] = breakerlist
+	else
+		var/datum/extension/fake_data/fake_data = get_or_create_extension(src, /datum/extension/fake_data, /datum/extension/fake_data, 20)
+		data["skill_fail"] = fake_data.update_and_return_data()
 	data["hide_smes"] = hide_SMES
 	data["hide_smes_details"] = hide_SMES_details
 	data["hide_breakers"] = hide_breakers
@@ -88,7 +93,6 @@
 		if(SMES)
 			var/outputset = (input(usr, "Enter new output level (0-[SMES.output_level_max/1000] kW)", "SMES Input Power Control", SMES.output_level/1000) as num) * 1000
 			SMES.set_output(outputset)
-
 	if(href_list["toggle_breaker"])
 		var/obj/machinery/power/breakerbox/toggle = null
 		for(var/obj/machinery/power/breakerbox/breaker in known_breakers)
@@ -99,6 +103,7 @@
 				to_chat(usr, "The breaker box was recently toggled. Please wait before toggling it again.")
 			else
 				toggle.auto_toggle()
+
 	if(href_list["hide_smes"])
 		hide_SMES = !hide_SMES
 	if(href_list["hide_smes_details"])

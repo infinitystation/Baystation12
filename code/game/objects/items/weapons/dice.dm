@@ -46,6 +46,9 @@
 	desc = "A dice with ten sides. This one is for the tens digit."
 	icon_state = "d10010"
 	sides = 10
+/obj/item/weapon/dice/d100/Initialize()
+	. = ..()
+	icon_state = "[name][rand(1,sides)*10]"
 
 /obj/item/weapon/dice/proc/roll_die()
 	var/result = rand(1, sides)
@@ -59,6 +62,11 @@
 	else if(result == 1)
 		comment = "Ouch, bad luck."
 	return list(result, comment)
+
+/obj/item/weapon/dice/d100/roll_die()
+	var/result = rand(1, 10)
+	result = result * 10
+	return list(result, "")
 
 /obj/item/weapon/dice/attack_self(mob/user as mob)
 	var/list/roll_result = roll_die()

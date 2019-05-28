@@ -9,12 +9,19 @@ var/list/ticket_panels = list()
 	var/datum/client_lite/closed_by
 	var/id
 	var/opened_time
+	var/timeout = FALSE
 
 /datum/ticket/New(var/datum/client_lite/owner)
 	src.owner = owner
 	tickets |= src
 	id = tickets.len
 	opened_time = world.time
+	addtimer(CALLBACK(src, .proc/timeoutcheck), 5 MINUTES)
+
+/datum/ticket/proc/timeoutcheck()
+	if(status == TICKET_OPEN)
+		timeout = TRUE
+		close()
 
 /datum/ticket/proc/close(var/datum/client_lite/closed_by)
 	if(status == TICKET_CLOSED)
@@ -66,6 +73,12 @@ var/list/ticket_panels = list()
 
 	for(var/datum/client_lite/assigned_admin in assigned_admins)
 		. |= assigned_admin.ckey
+
+/datum/ticket/proc/assigned_admin_keys()
+	. = list()
+
+	for(var/datum/client_lite/assigned_admin in assigned_admins)
+		. |= assigned_admin.key
 
 proc/get_open_ticket_by_client(var/datum/client_lite/owner)
 	for(var/datum/ticket/ticket in tickets)
@@ -120,15 +133,18 @@ proc/get_open_ticket_by_client(var/datum/client_lite/owner)
 					status = "Opened [round((world.time - ticket.opened_time) / (1 MINUTE))] minute\s ago, unassigned"
 				if(TICKET_ASSIGNED)
 					open = 2
-					status = "Assigned to [english_list(ticket.assigned_admin_ckeys(), "no one")]"
+					status = "Assigned to [english_list(ticket.assigned_admin_keys(), "no one")]"
 					color = "#ffffff"
 				if(TICKET_CLOSED)
-					status = "Closed by [ticket.closed_by.ckey]"
+					if(ticket.timeout == FALSE)
+						status = "Closed by [ticket.closed_by.key]"
+					else
+						status = "Closed by timeout"
 					color = "#cc2222"
 			ticket_dat += "<li style='padding-bottom:10px;color:[color]'>"
 			if(open_ticket && open_ticket == ticket)
 				ticket_dat += "<i>"
-			ticket_dat += "Ticket #[id] - [ticket.owner.ckey] [owner_client ? "" : "(DC)"] - [status]<br /><a href='byond://?src=\ref[src];action=view;ticket=\ref[ticket]'>VIEW</a>"
+			ticket_dat += "Ticket #[id] - [ticket.owner.key_name(0)] [owner_client ? "" : "(DC)"]<br />[status]<br /><a href='byond://?src=\ref[src];action=view;ticket=\ref[ticket]'>VIEW</a>"
 			if(open)
 				ticket_dat += " - <a href='byond://?src=\ref[src];action=pm;ticket=\ref[ticket]'>PM</a>"
 				if(C.holder)
@@ -139,7 +155,7 @@ proc/get_open_ticket_by_client(var/datum/client_lite/owner)
 				var/ref_mob = ""
 				if(owner_client)
 					ref_mob = "\ref[owner_client.mob]"
-				ticket_dat += " - <A HREF='?_src_=holder;adminmoreinfo=[ref_mob]'>?</A> - <A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A> - <A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A> - <A HREF='?_src_=holder;subtlemessage=[ref_mob]'>SM</A>[owner_client ? "- [admin_jump_link(owner_client, src)]" : ""]"
+				ticket_dat += " - <A HREF='?_src_=holder;adminmoreinfo=[ref_mob]'>?</A> - <A HREF='?_src_=holder;adminplayeropts=[ref_mob]'>PP</A> - <A HREF='?_src_=vars;Vars=[ref_mob]'>VV</A> - <A HREF='?_src_=holder;narrateto=[ref_mob]'>DN</A>[owner_client ? "- [admin_jump_link(owner_client, src)]" : ""]"
 			if(open_ticket && open_ticket == ticket)
 				ticket_dat += "</i>"
 			ticket_dat += "</li>"

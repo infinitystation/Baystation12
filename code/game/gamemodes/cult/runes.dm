@@ -2,7 +2,7 @@
 	name = "rune"
 	desc = "A strange collection of symbols drawn in blood."
 	anchored = 1
-	icon = 'icons/effects/uristrunes.dmi'
+	icon = 'infinity/icons/effects/uristrunes.dmi'
 	icon_state = "blank"
 	unacidable = 1
 	plane = ABOVE_TURF_PLANE
@@ -111,6 +111,7 @@
 		return fizzle(user)
 
 	speak_incantation(user, "Mah[pick("'","`")]weyh pleggh at e'ntrath!")
+	flick("rune_convert", src)
 
 	if(target.species == SPECIES_IPC) //BLOOD CULT cannot convert machines
 		to_chat(target, "<span class='notice'>Nothing is happening... What the mad bloodbags are trying to do?</span>")
@@ -187,6 +188,7 @@
 	else if(user.loc == get_turf(src))
 		speak_incantation(user, "Sas[pick("'","`")]so c'arta forbici!")
 		if(do_after(user, 30))
+			flick("rune_teleport", src)
 			user.visible_message("<span class='warning'>\The [user] disappears in a flash of red light!</span>", "<span class='warning'>You feel as your body gets dragged into the dimension of Nar-Sie!</span>", "You hear a sickening crunch.")
 			user.forceMove(src)
 			showOptions(user)
@@ -270,6 +272,7 @@
 		t = wall.health
 	user.pay_for_rune(t / 50)
 	speak_incantation(user, "Khari[pick("'","`")]d! Eske'te tannin!")
+	flick("cultwall", src)
 	to_chat(user, "<span class='warning'>Your blood flows into the rune, and you feel that the very space over the rune thickens.</span>")
 
 /obj/effect/cultwall
@@ -309,6 +312,8 @@
 
 /obj/effect/cultwall/attack_hand(var/mob/living/user)
 	if(iscultist(user))
+		flick("cultwall", src)
+		sleep(7)
 		user.visible_message("<span class='notice'>\The [user] touches \the [src], and it fades.</span>", "<span class='notice'>You touch \the [src], whispering the old ritual, making it disappear.</span>")
 		qdel(src)
 	else
@@ -346,6 +351,7 @@
 	speak_incantation(user, "Fwe[pick("'","`")]sh mah erl nyag r'ya!")
 	user.visible_message("<span class='warning'>\The [user]'s eyes glow blue as \he freezes in place, absolutely motionless.</span>", "<span class='warning'>The shadow that is your spirit separates itself from your body. You are now in the realm beyond. While this is a great sight, being here strains your mind and body. Hurry...</span>", "You hear only complete silence for a moment.")
 	announce_ghost_joinleave(user.ghostize(1), 1, "You feel that they had to use some [pick("dark", "black", "blood", "forgotten", "forbidden")] magic to [pick("invade", "disturb", "disrupt", "infest", "taint", "spoil", "blight")] this place!")
+	flick("summoning", src)
 	var/mob/observer/ghost/soul
 	for(var/mob/observer/ghost/O in GLOB.ghost_mob_list)
 		if(O.key == tmpkey)
@@ -368,6 +374,8 @@
 
 /obj/effect/rune/defile/cast(var/mob/living/user)
 	speak_incantation(user, "Ia! Ia! Zasan therium viortia!")
+	flick("cultfloor", src)
+	sleep(4)
 	for(var/turf/T in range(1, src))
 		if(T.holy)
 			T.holy = 0
@@ -375,6 +383,34 @@
 			T.cultify()
 	visible_message("<span class='warning'>\The [src] embeds into the floor and walls around it, changing them!</span>", "You hear liquid flow.")
 	qdel(src)
+
+/obj/effect/rune/obscure
+	cultname = "obscure"
+
+/obj/effect/rune/obscure/cast(var/mob/living/user)
+	var/runecheck = 0
+	for(var/obj/effect/rune/R in orange(1, src))
+		if(R != src)
+			R.set_invisibility(INVISIBILITY_OBSERVER)
+		runecheck = 1
+	if(runecheck)
+		speak_incantation(user, "Kla[pick("'","`")]atu barada nikt'o!")
+		visible_message("<span class='warning'>\ The rune turns into gray dust that conceals the surrounding runes.</span>")
+		qdel(src)
+
+/obj/effect/rune/reveal
+	cultname = "reveal"
+
+/obj/effect/rune/reveal/cast(var/mob/living/user)
+	var/irunecheck = 0
+	for(var/obj/effect/rune/R in orange(1, src))
+		if(R != src)
+			R.set_invisibility(SEE_INVISIBLE_NOLIGHTING)
+		irunecheck = 1
+	if(irunecheck)
+		speak_incantation(user, "Nikt[pick("'","`")]o barada kla'atu!")
+		visible_message("<span class='warning'>\ The rune turns into red dust that reveals the surrounding runes.</span>")
+		qdel(src)
 
 /* Tier 2 runes */
 
@@ -392,10 +428,10 @@
 		user.equip_to_slot_or_del(new /obj/item/clothing/head/culthood/alt(user), slot_head)
 	O = user.get_equipped_item(slot_wear_suit)
 	if(O && !istype(O, /obj/item/clothing/suit/cultrobes) && user.unEquip(O))
-		user.equip_to_slot_or_del(new /obj/item/clothing/suit/cultrobes/alt(user), slot_wear_suit)	
+		user.equip_to_slot_or_del(new /obj/item/clothing/suit/cultrobes/alt(user), slot_wear_suit)
 	O = user.get_equipped_item(slot_shoes)
 	if(O && !istype(O, /obj/item/clothing/shoes/cult) && user.unEquip(O))
-		user.equip_to_slot_or_del(new /obj/item/clothing/shoes/cult(user), slot_shoes)	
+		user.equip_to_slot_or_del(new /obj/item/clothing/shoes/cult(user), slot_shoes)
 
 	O = user.get_equipped_item(slot_back)
 	if(istype(O, /obj/item/weapon/storage) && !istype(O, /obj/item/weapon/storage/backpack/cultpack) && user.unEquip(O)) // We don't want to make the vox drop their nitrogen tank, though
@@ -441,6 +477,7 @@
 		if(casters.len < 3)
 			break
 		//T.turf_animation('icons/effects/effects.dmi', "rune_sac")
+		flick("rune_sac", src)
 		victim.fire_stacks = max(2, victim.fire_stacks)
 		victim.IgniteMob()
 		victim.take_organ_damage(2 + casters.len, 2 + casters.len) // This is to speed up the process and also damage mobs that don't take damage from being on fire, e.g. borgs
@@ -506,6 +543,7 @@
 	admin_attack_log(user, victim, "Used a blood drain rune.", "Was victim of a blood drain rune.", "used a blood drain rune on")
 	speak_incantation(user, "Yu[pick("'","`")]gular faras desdae. Havas mithum javara. Umathar uf'kal thenar!")
 	user.visible_message("<span class='warning'>Blood flows from \the [src] into \the [user]!</span>", "<span class='cult'>The blood starts flowing from \the [src] into your frail mortal body. [capitalize(english_list(heal_user(user), nothing_text = "you feel no different"))].</span>", "You hear liquid flow.")
+	flick("rune_sac", src)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
 /obj/effect/rune/drain/proc/heal_user(var/mob/living/carbon/human/user)
@@ -534,7 +572,7 @@
 			charges -= healburn
 			healbrute = min(healbrute, charges)
 			charges -= healbrute
-		user.heal_organ_damage(healbrute, healburn)
+		user.heal_organ_damage(healbrute, healburn, 1)
 		statuses += "your wounds mend"
 		if(!charges)
 			return statuses
@@ -588,7 +626,7 @@
 		M.add_chemical_effect(CE_PAINKILLER, 40)
 		M.add_chemical_effect(CE_SPEEDBOOST, 1)
 		M.adjustOxyLoss(-10 * removed)
-		M.heal_organ_damage(5 * removed, 5 * removed)
+		M.heal_organ_damage(5 * removed, 5 * removed, 1)
 		M.adjustToxLoss(-5 * removed)
 	else
 		M.fire_stacks = max(2, M.fire_stacks)
@@ -599,6 +637,7 @@
 	strokes = 4
 
 /obj/effect/rune/emp/cast(var/mob/living/user)
+	flick("blue_electricity_constant", src)
 	empulse(get_turf(src), 4, 2, 1)
 	speak_incantation(user, "Ta'gh fara[pick("'","`")]qha fel d'amar det!")
 	qdel(src)
@@ -614,6 +653,8 @@
 	else
 		for(var/mob/living/M in cultists)
 			M.say("Ia! Ia! Zasan therium viortia! Razan gilamrua kioha!")
+		flick("m_shield_cult", src)
+		sleep(11)
 		for(var/turf/T in range(5, src))
 			if(T.holy)
 				T.holy = 0
@@ -847,9 +888,15 @@
 		return fizzle(user)
 	speak_incantation(user, "H'drak v[pick("'","`")]loso, mir'kanas verbot!")
 	visible_message("<span class='warning'>The rune forms into an arcane image on the paper.</span>")
+	flick("rune_imbue", src)
+	sleep(4)
 	new papertype(get_turf(src))
 	qdel(target)
 	qdel(src)
+
+/obj/effect/rune/imbue/stun
+	cultname = "stun imbue"
+	papertype = /obj/item/weapon/paper/talisman/stun
 
 /obj/effect/rune/imbue/emp
 	cultname = "destroy technology imbue"

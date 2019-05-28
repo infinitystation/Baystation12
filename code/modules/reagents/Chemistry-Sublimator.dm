@@ -26,6 +26,7 @@
 		I.appearance_flags = RESET_COLOR
 		I.color = initial(reagent.color)
 		gas_data.tile_overlay[gas_id] = I
+		gas_data.tile_overlay_color[gas_id] = reagent.color
 
 	if(kill_later)
 		qdel(reagent)

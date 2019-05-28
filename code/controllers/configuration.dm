@@ -10,6 +10,7 @@ var/list/gamemode_cache = list()
 	var/log_ooc = 0						// log OOC channel
 	var/log_access = 0					// log login/logout
 	var/log_say = 0						// log client say
+	var/log_staff = 0					// log staff channel
 	var/log_admin = 0					// log admin actions
 	var/log_debug = 1					// log debug output
 	var/log_game = 0					// log game events
@@ -237,6 +238,8 @@ var/list/gamemode_cache = list()
 
 	var/allow_ic_printing = TRUE //Whether players should be allowed to print IC circuits from scripts.
 
+	var/allow_unsafe_narrates = FALSE //Whether admins can use unsanitized narration; when true, allows HTML etc.
+
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
 	for (var/T in L)
@@ -322,6 +325,9 @@ var/list/gamemode_cache = list()
 
 				if ("debug_paranoid")
 					config.debugparanoid = 1
+
+				if ("log_staff")
+					config.log_staff = 1
 
 				if ("log_admin")
 					config.log_admin = 1
@@ -425,6 +431,10 @@ var/list/gamemode_cache = list()
 				if ("respawn_delay")
 					config.respawn_delay = text2num(value)
 					config.respawn_delay = config.respawn_delay > 0 ? config.respawn_delay : 0
+
+				if ("observer_delay")
+					config.observe_delay = text2num(value)
+					config.observe_delay = config.observe_delay > 0 ? config.observe_delay : 0
 
 				if ("servername")
 					config.server_name = value
@@ -775,6 +785,9 @@ var/list/gamemode_cache = list()
 					player_limit = text2num(value)
 				if("hub")
 					world.update_hub_visibility()
+
+				if ("allow_unsafe_narrates")
+					config.allow_unsafe_narrates = TRUE
 
 				else
 					log_misc("Unknown setting in configuration: '[name]'")

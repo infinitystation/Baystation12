@@ -149,6 +149,7 @@
 /datum/gear/mask
 	display_name = "sterile mask"
 	path = /obj/item/clothing/mask/surgical
+	cost = 2
 
 /datum/gear/smokingpipe
 	display_name = "pipe, smoking"
@@ -222,7 +223,14 @@
 /datum/gear/bible
 	display_name = "bible"
 	path = /obj/item/weapon/storage/bible
+	cost = 2
 
 /datum/gear/mind_healer
 	display_name = "Methylphenidate, pill bottle"
 	path = /obj/item/weapon/storage/pill_bottle/methylphenidate
+
+/datum/gear/swiss
+	display_name = "multi-tool"
+	path = /obj/item/weapon/material/knife/folding/swiss
+	cost = 4
+	flags = GEAR_HAS_COLOR_SELECTION

@@ -1,6 +1,7 @@
 {{if data.message}}
 <p>{{:helper.link('X', null, {'clear_message' : 1})}}{{:data.message}}</p>
 {{else}}
+	<td>{{:helper.link('RANDOMIZE CODES', '', {'rand_codes' : 1})}}
 	<h2>Docking ports:</h2>
 	<table style="width:100%">
 	<tr><td style="width:40%">Location<th>Status<th>Docking code<th>Docking control

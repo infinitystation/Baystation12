@@ -249,3 +249,10 @@
 	name = "Citadel_AI"
 	alive_icon = "citadel"
 	alive_light = "#5600ff"
+
+//Bay Custom Icon
+/datum/ai_icon/atlantiscze
+	name = "Atlantiscze"
+	alive_icon = "atlantiscze-ai"
+	alive_light = "#009c27"
+	dead_icon = "atlantiscze-ai-crash"

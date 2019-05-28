@@ -11,6 +11,7 @@
 	var/stored_login = ""
 	var/stored_password = ""
 	usage_flags = PROGRAM_ALL
+	category = PROG_OFFICE
 
 	nanomodule_path = /datum/nano_module/email_client
 
@@ -87,12 +88,12 @@
 		var/list/msg = list()
 		msg += "*--*\n"
 		msg += "<span class='notice'>New mail received from [received_message.source]:</span>\n"
-		msg += "<b>Subject:</b> [received_message.title]\n<b>Message:</b>\n[pencode2html(received_message.stored_data)]\n"
+		msg += "<b>Subject:</b> [sanitize_u2a(received_message.title)]\n<b>Message:</b>\n[sanitize_u2a(pencode2html(received_message.stored_data))]\n"
 		if(received_message.attachment)
-			msg += "<b>Attachment:</b> [received_message.attachment.filename].[received_message.attachment.filetype] ([received_message.attachment.size]GQ)\n"
+			msg += "<b>Attachment:</b> [sanitize_u2a(received_message.attachment.filename)].[received_message.attachment.filetype] ([received_message.attachment.size]GQ)\n"
 		msg += "<a href='?src=\ref[src];open;reply=[received_message.uid]'>Reply</a>\n"
 		msg += "*--*"
-		to_chat(L, jointext(sanitize_u2a(msg), null))
+		to_chat(L, jointext(msg, null))
 
 /datum/nano_module/email_client/Destroy()
 	log_out()
@@ -104,6 +105,9 @@
 	if(istype(host, /obj/item/modular_computer))
 		var/obj/item/modular_computer/computer = host
 		var/obj/item/weapon/card/id/id = computer.GetIdCard()
+		// GetIdCard doesn't check, if id is inside card modification hardware
+		if(!id && computer.card_slot && istype(computer.card_slot.stored_card) && computer.card_slot.check_functionality())
+			id = computer.card_slot.stored_card
 		if(!id && ismob(computer.loc))
 			var/mob/M = computer.loc
 			id = M.GetIdCard()
@@ -203,6 +207,8 @@
 				if(!account.can_login)
 					continue
 				all_accounts.Add(list(list(
+					"name" = account.fullname,
+					"job" = account.assignment,
 					"login" = account.login
 				)))
 			data["addressbook"] = 1

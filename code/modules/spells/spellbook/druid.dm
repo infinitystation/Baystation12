@@ -14,6 +14,8 @@
 	max_uses = 6
 
 	spells = list(/spell/targeted/heal_target = 					1,
+				/obj/structure/closet/wizard/armor = 				2,
+				/spell/targeted/ethereal_jaunt = 					2,
 				/spell/targeted/heal_target/sacrifice = 			1,
 				/spell/aoe_turf/conjure/mirage = 					1,
 				/spell/aoe_turf/conjure/summon/bats = 				1,
@@ -34,5 +36,8 @@
 				/obj/item/weapon/contract/wizard/telepathy = 		1,
 				/obj/item/weapon/contract/apprentice = 				1
 				)
-	sacrifice_objects = list(/obj/item/seeds/ambrosiavulgarisseed,
-							/obj/item/seeds/ambrosiadeusseed)
+	sacrifice_objects = list(/obj/item/seeds,
+							/obj/item/weapon/wirecutters/clippers,
+							/obj/item/device/scanner/plant,
+							/obj/item/weapon/material/hatchet,
+							/obj/item/weapon/material/minihoe)

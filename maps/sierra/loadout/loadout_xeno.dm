@@ -25,14 +25,14 @@
 /datum/gear/eyes/resomi/lenses_med
 	allowed_roles = MEDICAL_ROLES
 
-/datum/gear/suit/storage/resomicloak/standard
+/datum/gear/suit/resomicloak
 	display_name = "(Resomi) standard cloak / job cloak"
 	sort_category = "Xenowear"
 	path = /obj/item/clothing/suit/storage/resomicloak
 	cost = 1
 	whitelisted = list(SPECIES_RESOMI)
 
-/datum/gear/suit/storage/resomicloak/standard/New()
+/datum/gear/suit/resomicloak/New()
 	..()
 	var/resomicloaks = list()
 	resomicloaks += /obj/item/clothing/suit/storage/resomicloak/standard/black_orange
@@ -64,7 +64,7 @@
 
 // Uh, i know what looks crooked, but it works quite interestingly.
 
-/datum/gear/suit/storage/resomicloak/standard/New()
+/datum/gear/suit/resomicloak/New()
 	..()
 	var/resomicloaks = list()
 	resomicloaks += /obj/item/clothing/suit/storage/resomicloak/jobs/iaa
@@ -86,7 +86,7 @@
 	resomicloaks += /obj/item/clothing/suit/storage/resomicloak/jobs/cargo
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(resomicloaks)
 
-/datum/gear/under/resomi/undercoat/standard
+/datum/gear/uniform/resomi/undercoat/standard
 	display_name = "(Resomi) standard undercoat / job undercoat"
 	sort_category = "Xenowear"
 	path = /obj/item/clothing/under/resomi/undercoat
@@ -94,7 +94,7 @@
 	slot = slot_w_uniform
 	whitelisted = list(SPECIES_RESOMI)
 
-/datum/gear/under/resomi/undercoat/standard/New()
+/datum/gear/uniform/resomi/undercoat/standard/New()
 	..()
 	var/undercoats = list()
 	undercoats += /obj/item/clothing/under/resomi/undercoat/standard/black_orange
@@ -124,7 +124,7 @@
 	undercoats += /obj/item/clothing/under/resomi/undercoat/standard/rainbow
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(undercoats)
 
-/datum/gear/under/resomi/undercoat/standard/New()
+/datum/gear/uniform/resomi/undercoat/standard/New()
 	..()
 	var/undercoats = list()
 	undercoats += /obj/item/clothing/under/resomi/undercoat/jobs/cargo

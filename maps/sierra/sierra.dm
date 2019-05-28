@@ -3,7 +3,6 @@
 	#include "sierra_announcements.dm"
 	#include "sierra_antagonism.dm"
 	#include "sierra_areas.dm"
-	#include "sierra_areas_override.dm"
 	#include "sierra_elevator.dm"
 	#include "sierra_holodecks.dm"
 	#include "sierra_lobby.dm"
@@ -26,6 +25,7 @@
 	#include "datums/supplypacks/science.dm"
 
 	#include "items/cards_ids.dm"
+	#include "items/documents.dm"
 	#include "items/explo_shotgun.dm"
 	#include "items/encryption_keys.dm"
 	#include "items/headsets.dm"
@@ -121,21 +121,17 @@
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/blueriver/blueriver.dm"
 	#include "../away_inf/mining/mining.dm"
-//	#include "../away_inf/salvagers/salvagers.dm"
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 
 	#include "../away/bearcat/bearcat.dm"
-//	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/casino/casino.dm"
-//	#include "../away/icarus/icarus.dm"
 	#include "../away/errant_pisces/errant_pisces.dm"
 	#include "../away/lar_maria/lar_maria.dm"
 	#include "../away/unishi/unishi.dm"
 	#include "../away/slavers/slavers_base.dm"
 	#include "../away/voxship/voxship.dm"
-//	#include "../away/skrellscoutship/skrellscoutship.dm"
 
 	#define using_map_DATUM /datum/map/sierra
 

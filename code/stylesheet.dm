@@ -34,9 +34,9 @@ em						{font-style: normal;font-weight: bold;}
 .pm  .other				{color: #0000ff;}
 
 /* Admin: Channels */
-.mod_channel			{color: #735638;	font-weight: bold;}
-.mod_channel .admin		{color: #b82e00;	font-weight: bold;}
-.admin_channel			{color: #386aff;	font-weight: bold;}
+.staff_channel			{color: #e5892d;	font-weight: bold;}
+.staff_channel .admin		{color: #b82e00;	font-weight: bold;}
+.admin_channel			{color: #ff5097;	font-weight: bold;}
 
 /* Radio: Misc */
 .deadsay				{color: #530fad;}
@@ -96,15 +96,19 @@ h1.alert, h2.alert		{color: #000000;}
 .soghun					{color: #228b22;}
 .yeosa					{color: #218b89;}
 .nabber_lang			{color: #525252;}
-.solcom					{color: #22228b;}
 .changeling				{color: #800080;}
 .vox					{color: #aa00aa;}
 .rough					{font-family: "Trebuchet MS", cursive, sans-serif;}
 .say_quote				{font-family: Georgia, Verdana, sans-serif;}
-.terran					{color: #9c250b;}
-.moon					{color: #422863;}
-.spacer					{color: #ff6600;}
 .adherent				{color: #526c7a;}
+
+.solcom					{color: #22228b;}
+.chinese				{color: #d4a52a;}
+.indian					{color: #422863;}
+.iberian				{color: #ff6600;}
+.russian				{color: #9c250b;}
+.arabic					{color: #128b11;}
+.spacer					{color: #9c660b;}
 
 .interface				{color: #330033;}
 

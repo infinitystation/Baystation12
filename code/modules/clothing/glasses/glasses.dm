@@ -1,9 +1,11 @@
 /obj/item/clothing/glasses
 	name = "glasses"
 	icon = 'icons/obj/clothing/obj_eyes.dmi'
-//	sprite_sheets = list(
-//		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_eyes_unathi.dmi'
-//		)
+	sprite_sheets = list(
+		SPECIES_VOX = 'icons/mob/species/vox/onmob_eyes_vox.dmi',
+		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_eyes_vox_armalis.dmi',
+		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_eyes_unathi.dmi'
+		)
 	var/hud_type
 	var/prescription = FALSE
 	var/toggleable = FALSE
@@ -498,3 +500,105 @@
 /obj/item/clothing/glasses/eyepatch/hud/meson/Initialize()
 	. = ..()
 	overlay = GLOB.global_hud.meson
+
+
+/*---Misc Eyewear---*/
+
+/obj/item/clothing/glasses/veil
+	name = "embroidered veil"
+	desc = "An alien made veil that allows the user to see while obscuring their eyes."
+	icon_state = "xenoblind"
+	item_state = "xenoblind"
+	prescription = 5
+	body_parts_covered = EYES
+
+/obj/item/clothing/glasses/hud/health/veil
+	name = "lightweight veil"
+	desc = "An alien made veil that allows the user to see while obscuring their eyes. This one has an installed medical HUD."
+	icon_state = "xenoblind_med"
+	item_state = "xenoblind_med"
+	body_parts_covered = EYES
+
+/obj/item/clothing/glasses/sunglasses/sechud/veil
+	name = "sleek veil"
+	desc = "An alien made veil that allows the user to see while obscuring their eyes. This one has an in-built security HUD."
+	icon_state = "xenoblind_sec"
+	item_state = "xenoblind_sec"
+	prescription = 5
+	body_parts_covered = EYES
+
+/obj/item/clothing/glasses/meson/prescription/veil
+	name = "industrial veil"
+	desc = "An alien made veil that allows the user to see while obscuring their eyes. This one has installed mesons."
+	icon_state = "xenoblind_meson"
+	item_state = "xenoblind_meson"
+	off_state = "xenoblind_meson"
+	body_parts_covered = EYES
+
+/obj/item/clothing/glasses/hud/health/visor
+	name = "lightweight visor"
+	desc = "A modern alien made visor that allows the user to see while obscuring their eyes. This one has an installed medical HUD."
+	icon_state = "xenovisor_med"
+	item_state = "xenovisor_med"
+	body_parts_covered = EYES
+
+/obj/item/clothing/glasses/sunglasses/sechud/visor
+	name = "sleek visor"
+	desc = "A modern alien made visor that allows the user to see while obscuring their eyes. This one has an in-built security HUD."
+	icon_state = "xenovisor_sec"
+	item_state = "xenovisor_sec"
+	prescription = 5
+	body_parts_covered = EYES
+
+/obj/item/clothing/glasses/meson/prescription/visor
+	name = "industrial visor"
+	desc = "A modern alien made visor that allows the user to see while obscuring their eyes. This one has installed mesons."
+	icon_state = "xenovisor_mes"
+	item_state = "xenovisor_mes"
+	off_state = "xenovisor_mes"
+	body_parts_covered = EYES
+
+/obj/item/clothing/glasses/visor
+	name = "xenoaran master visor object, not used"
+	desc = "An alien made eyeguard."
+	body_parts_covered = EYES
+
+/obj/item/clothing/glasses/visor/a
+	name = "visor"
+	icon_state = "xenovisor_a"
+	item_state = "xenovisor_a"
+
+/obj/item/clothing/glasses/visor/b
+	name = "visor"
+	icon_state = "xenovisor_b"
+	item_state = "xenovisor_b"
+
+/obj/item/clothing/glasses/visor/c
+	name = "visor"
+	icon_state = "xenovisor_c"
+	item_state = "xenovisor_c"
+
+/obj/item/clothing/glasses/visor/d
+	name = "visor"
+	icon_state = "xenovisor_d"
+	item_state = "xenovisor_d"
+
+/obj/item/clothing/glasses/visor/d
+	name = "visor"
+	icon_state = "xenovisor_d"
+	item_state = "xenovisor_d"
+
+/obj/item/clothing/glasses/visor/e
+	name = "visor"
+	icon_state = "xenovisor_e"
+	item_state = "xenovisor_e"
+
+/obj/item/clothing/glasses/visor/f
+	name = "visor"
+	icon_state = "xenovisor_f"
+	item_state = "xenovisor_f"
+
+/obj/item/clothing/glasses/visor/g
+	name = "visor"
+	icon_state = "xenovisor_g"
+	item_state = "xenovisor_g"

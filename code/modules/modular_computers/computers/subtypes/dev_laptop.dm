@@ -14,6 +14,9 @@
 	broken_damage = 100
 	max_hardware_size = 2
 	hardware_flag = PROGRAM_LAPTOP
+	w_class = ITEM_SIZE_NORMAL
+	interact_sounds = list("keyboard", "keystroke")
+	interact_sound_volume = 20
 
 /obj/item/modular_computer/laptop/Initialize()
 	. = ..()

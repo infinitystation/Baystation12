@@ -337,29 +337,35 @@ item_path: /obj/item/weapon/flame/lighter/zippo/custom/messotha/arhod
 ckey: laxesh
 character_name: Thomas Koster
 item_path: /obj/item/weapon/storage/belt/holster/ic/full
+req_access: "ACCESS_RESEARCH"
 }
 {
 ckey: moonmen
 character_name: Timur Glazkov
 item_path: /obj/item/weapon/storage/backpack/baul
-req_access: 1
-}
-{
-ckey: jacking
-character_name: James Oscar
-item_path: /obj/item/clothing/mask/gas/gm15m
-req_access: 1
+req_access: "ACCESS_SECURITY"
 }
 {
 ckey: bob46
 character_name: Drake Hauhurst
 item_path: /obj/item/clothing/mask/gas/gm15m
-req_access: 1
+req_access: "ACCESS_SECURITY"
+}
+{
+ckey: jacking
+character_name: James Oscar
+item_path: /obj/item/clothing/mask/gas/gm15m
+req_access: "ACCESS_SECURITY"
 }
 {
 ckey: jacking
 character_name: Juan Stern
 item_path: /obj/item/clothing/under/os_uniform
+}
+{
+ckey: jacking
+character_name: James Oscar
+item_path: /obj/item/clothing/head/helmet/x_four
 }
 {
 ckey: warfoxy
@@ -370,25 +376,25 @@ item_path: /obj/item/clothing/under/dress/dress_red
 ckey: he11d1ver
 character_name: GFSTS-I
 item_path: /obj/item/weapon/clothingbag/heph_set
-req_access: 1
+req_access: "ACCESS_SECURITY"
 }
 {
 ckey: cre77
 character_name: GFSTS-II
 item_path: /obj/item/weapon/clothingbag/heph_set
-req_access: 1
+req_access: "ACCESS_SECURITY"
 }
 {
 ckey: forrya
 character_name: GFSTS-III
 item_path: /obj/item/weapon/clothingbag/heph_set
-req_access: 1
+req_access: "ACCESS_SECURITY"
 }
 {
 ckey: s1334
 character_name: GFSTS-IV
 item_path: /obj/item/weapon/clothingbag/heph_set
-req_access: 1
+req_access: "ACCESS_SECURITY"
 }
 {
 ckey: forrya
@@ -399,6 +405,17 @@ item_path: /obj/item/clothing/under/resomi/maid
 ckey: coolered
 character_name: Karai Ka'Jun
 item_path: /obj/item/device/radio/headset/crypto
+}
+{
+ckey: quietproject
+character_name: Shizukana Hikaro
+item_path: /obj/item/weapon/clothingbag/quiet_set
+}
+{
+ckey: jacking
+character_name: Jack Fisher
+item_path: /obj/item/clothing/glasses/sunglasses/sechud/toggle/stv
+req_access: "ACCESS_SECURITY"
 }
 #	MEDIUM ITEMS HERE (5-6)
 
@@ -516,7 +533,7 @@ character_name: Jason Marhod
 item_path: /obj/item/clothing/accessory/medal/solgov/silver/sword
 item_desc: A silver medal awarded to members of the SCG for honorable service while under enemy fire. No: 48181
 req_titles: Warden
-req_access: 2
+req_access: "ACCESS_BRIG"
 paper_info: [center]Öåíòðàëüíîå Ïðàâèòåëüñòâî Ñîëíå÷íîé Ñèñòåìû[/center][solcrest][br]Äàííûì ñåðòèôèêàòîì ïîäòâåðæäàåòñÿ íàãðàæäåíèå Äæåéñîíà Ìàðõîäà ìåäàëüþ "Ó÷àñòíèê Áîåâûõ Äåéñòâèè" çà íåéòðàëèçàöèþ ïðîòèâíèêà â îïàñíûõ óñëîâèÿõ.[br]Ïîäïèñü: [sign]Oliver Stocker[/sign]
 paper_title: award certificate
 paper_stamp_type: /obj/item/weapon/stamp/solgov

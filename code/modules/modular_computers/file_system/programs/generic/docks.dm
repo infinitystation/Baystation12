@@ -11,6 +11,7 @@
 	usage_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP
 	available_on_ntnet = 1
 	requires_ntnet = 1
+	category = PROG_SUPPLY
 
 /datum/nano_module/docking
 	name = "Docking Control program"
@@ -68,6 +69,14 @@
 /datum/nano_module/docking/Topic(href, href_list, state)
 	if(..())
 		return 1
+
+	if(href_list["rand_codes"])
+		for(var/docktag in docking_controllers)
+			var/datum/computer/file/embedded_program/docking/P = locate(docktag)
+			if(P)
+				var/r_newcode = num2text(round(rand(1000, 9999))) + " " + num2text(round(rand(1000, 9999))) + " " + num2text(round(rand(1000, 9999))) + " " + num2text(round(rand(1000, 9999)))
+				P.docking_codes = r_newcode
+
 	if(href_list["edit_code"])
 		var/datum/computer/file/embedded_program/docking/P = locate(href_list["edit_code"])
 		if(P)

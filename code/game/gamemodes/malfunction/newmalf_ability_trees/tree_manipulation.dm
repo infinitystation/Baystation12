@@ -3,7 +3,7 @@
 // Abilities in this tree allow the AI to physically manipulate systems around the station.
 // T1 - Electrical Pulse - Sends out pulse that breaks some lights and sometimes even APCs. This can actually break the AI's APC so be careful!
 // T2 - Reboot camera - Allows the AI to reactivate a camera.
-// T3 - Emergency Forcefield - Allows the AI to project 1 tile forcefield that blocks movement and air flow. Forcefield�dissipates over time. It is also very susceptible to energetic weaponry.
+// T3 - Emergency Forcefield - Allows the AI to project 1 tile forcefield that blocks movement and air flow. Forcefield dissipates over time. It is also very susceptible to energetic weaponry.
 // T4 - Machine Overload - Detonates machine of choice in a minor explosion. Two of these are usually enough to kill or K/O someone.
 // T5 - Machine Upgrade - Upgrades a machine of choice. Upgrade behavior can be defined for each machine independently.
 
@@ -122,8 +122,13 @@
 
 	var/explosion_intensity = 2
 
+	var/list/black_list = list(/obj/machinery/vending/armoryvend,)//write path of blacklisted devise here and it will forbiden for overloading
+
 	// Verify if we can overload the target, if yes, calculate explosion strength. Some things have higher explosion strength than others, depending on charge(APCs, SMESs)
 	if(N && istype(N)) // /obj/machinery/power first, these create bigger explosions due to direct powernet connection
+		if(N in black_list)
+			to_chat(usr, "<span class='notice'>ERROR: This device can not be overloaded.</span>")
+			return
 		if(!istype(N, /obj/machinery/power/apc) && !istype(N, /obj/machinery/power/smes/buildable) && (!N.powernet || !N.powernet.avail)) // Directly connected machine which is not an APC or SMES. Either it has no powernet connection or it's powernet does not have enough power to overload
 			to_chat(user, "<span class='notice'>ERROR: Low network voltage. Unable to overload. Increase network power level and try again.</span>")
 			return

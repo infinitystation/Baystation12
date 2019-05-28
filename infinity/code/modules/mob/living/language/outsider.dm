@@ -1,6 +1,6 @@
 //Swarm Language
 
-/datum/language/swarm
+/*/datum/language/swarm
 	name = LANGUAGE_SWARM
 	colour = "adherent"
 	desc = "Связь ближнего действия"
@@ -22,4 +22,4 @@
 	colour = "adherent"
 	key = "z"
 	flags = RESTRICTED | HIVEMIND
-	shorthand = "N/A"
+	shorthand = "N/A"*/

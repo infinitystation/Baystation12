@@ -33,6 +33,8 @@
 
 #define is_drone(A) istype(A, /mob/living/silicon/robot/drone)
 
+#define is_bot(A) istype(A, /mob/living/bot)
+
 #define isEye(A) istype(A, /mob/observer/eye)
 
 #define ishuman(A) istype(A, /mob/living/carbon/human)
@@ -192,3 +194,15 @@
 #define SPAN_DANGER(X) "<span class='danger'>[X]</span>"
 
 #define SPAN_LING(X) "<span class='changeling'>[X]</span>"
+
+#define SPAN_OCCULT(X) "<span class='cult'>[X]</span>"
+
+#define FONT_SMALL(X) "<font size='1'>[X]</font>"
+
+#define FONT_NORMAL(X) "<font size='2'>[X]</font>"
+
+#define FONT_LARGE(X) "<font size='3'>[X]</font>"
+
+#define FONT_HUGE(X) "<font size='4'>[X]</font>"
+
+#define FONT_GIANT(X) "<font size='5'>[X]</font>"

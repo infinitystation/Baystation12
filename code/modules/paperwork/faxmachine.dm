@@ -28,7 +28,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 		admin_departments = list("[GLOB.using_map.boss_name]", "Office of Civil Investigation and Enforcement", "[GLOB.using_map.boss_short] Supply") + GLOB.using_map.map_admin_faxes
 	GLOB.allfaxes += src
 	if(!destination) destination = "[GLOB.using_map.boss_name]"
-	if( !(("[department]" in GLOB.alldepartments) || ("[department]" in admin_departments)))
+	if(!(("[department]" in GLOB.alldepartments) || ("[department]" in admin_departments)))
 		GLOB.alldepartments |= department
 
 /obj/machinery/photocopier/faxmachine/attackby(obj/item/O as obj, mob/user as mob)
@@ -37,7 +37,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 			return
 		scan = O
 		to_chat(user, "<span class='notice'>You insert \the [O] into \the [src].</span>")
-	else 
+	else
 		..()
 
 /obj/machinery/photocopier/faxmachine/attack_hand(mob/user as mob)
@@ -88,55 +88,54 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 		if(copyitem)
 			dat += "<a href ='byond://?src=\ref[src];remove=1'>Remove Item</a><br>"
 
-	user << browse(dat, "window=copier")
+	show_browser(user, dat, "window=copier")
 	onclose(user, "copier")
 	return
 
 /obj/machinery/photocopier/faxmachine/Topic(href, href_list)
+	var/mob/user = usr
 	if(href_list["send"])
 		if(copyitem)
 			if (destination in admin_departments)
-				send_admin_fax(usr, destination)
+				send_admin_fax(user, destination)
 			else
 				sendfax(destination)
-
 			if (sendcooldown)
 				spawn(sendcooldown) // cooldown time
 					sendcooldown = 0
 
 	else if(href_list["remove"])
 		if(copyitem)
-			usr.put_in_hands(copyitem)
-			to_chat(usr, "<span class='notice'>You take \the [copyitem] out of \the [src].</span>")
+			user.put_in_hands(copyitem)
+			to_chat(user, "<span class='notice'>You take \the [copyitem] out of \the [src].</span>")
 			copyitem = null
 			updateUsrDialog()
 
 	if(href_list["scan"])
 		if (scan)
-			if(ishuman(usr))
-				usr.put_in_hands(scan)
+			if(ishuman(user))
+				user.put_in_hands(scan)
 			else
 				scan.dropInto(loc)
 			scan = null
 		else
-			var/obj/item/I = usr.get_active_hand()
-			if (istype(I, /obj/item/weapon/card/id) && usr.unEquip(I, src))
+			var/obj/item/I = user.get_active_hand()
+			if (istype(I, /obj/item/weapon/card/id) && user.unEquip(I, src))
 				scan = I
 		authenticated = 0
 
 	if(href_list["dept"])
 		var/lastdestination = destination
-		destination = input(usr, "Which department?", "Choose a department", "") as null|anything in (GLOB.alldepartments + admin_departments)
-		if(!destination) destination = lastdestination
+		destination = input(user, "Which department?", "Choose a department") as null|anything in (GLOB.alldepartments + admin_departments)
+		if(!destination)
+			destination = lastdestination
 
 	if(href_list["auth"])
-		if ( (!( authenticated ) && (scan)) )
-			if (check_access(scan))
-				authenticated = 1
+		if(!authenticated && scan && check_access(scan))
+			authenticated = 1
 
 	if(href_list["logout"])
 		authenticated = 0
-
 	updateUsrDialog()
 
 /obj/machinery/photocopier/faxmachine/proc/sendfax(var/destination)
@@ -152,6 +151,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	if (success)
 		visible_message("[src] beeps, \"Message transmitted successfully.\"")
+		log_fax("[key_name(usr)] sends fax to the [destination]")
 		//sendcooldown = 600
 	else
 		visible_message("[src] beeps, \"Error transmitting message.\"")
@@ -165,6 +165,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	flick("faxreceive", src)
 	playsound(loc, "sound/machines/dotprinter.ogg", 50, 1)
+	visible_message("[src] beeps, \"Incomming message.\"")
 
 	// give the sprite some time to flick
 	sleep(20)
@@ -185,7 +186,7 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 	if(stat & (BROKEN|NOPOWER))
 		return
 	if(!is_relay_online())//Contact Centcom has a check, Syndie doesn't to allow for Traitor funs.
-		to_chat(usr, "<span class='warning'>No Emergency Bluespace Relay detected. Unable to transmit message.</span>")
+		visible_message("[src] beeps, \"No Emergency Bluespace Relay detected. Unable to transmit message.\"")
 		return 1
 
 	use_power_oneoff(200)
@@ -222,6 +223,10 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 	sendcooldown = 600
 	sleep(50)
+	for(var/obj/machinery/photocopier/faxmachine/F in GLOB.allfaxes)
+		if(F.department in admin_departments)
+			F.recievefax(rcvdcopy)
+	log_fax("[key_name(sender)] sends admin fax to the [destination]")
 	visible_message("[src] beeps, \"Message transmitted successfully.\"")
 
 

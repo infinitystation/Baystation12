@@ -13,6 +13,7 @@
 	max_uses = 6
 
 	spells = list(/spell/targeted/projectile/magic_missile = 			1,
+							/obj/structure/closet/wizard/armor = 				1,
 							/spell/targeted/projectile/dumbfire/fireball = 		1,
 							/spell/aoe_turf/disable_tech = 						1,
 							/spell/aoe_turf/smoke = 							1,
@@ -36,5 +37,16 @@
 							/obj/item/weapon/contract/apprentice = 				1
 							)
 
-	sacrifice_objects = list(/obj/item/stack/material/gold,
-							/obj/item/stack/material/silver)
+	sacrifice_objects = list(/obj/item/weapon/storage/toolbox,
+							/obj/item/weapon/cane,
+							/obj/item/weapon/flamethrower,
+							/obj/item/weapon/plastique,
+							/obj/item/weapon/dice,
+							/obj/item/weapon/soap,
+							/obj/item/weapon/flame/candle,
+							/obj/item/weapon/caution,
+							/obj/item/weapon/towel,
+							/obj/item/weapon/tank/jetpack,
+							/obj/item/clothing/mask/plunger,
+							/obj/item/device/megaphone,
+							/obj/item/weapon/deck/cards)

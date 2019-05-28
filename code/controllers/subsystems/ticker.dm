@@ -23,6 +23,7 @@ SUBSYSTEM_DEF(ticker)
 	var/delay_notified = 0          //Spam prevention.
 	var/restart_timeout = 1 MINUTE
 
+	var/update_server = 0
 	var/force_ending = 0            //Overriding this variable will force game end. Can be used for build update or adminbuse.
 
 	var/list/minds = list()         //Minds of everyone in the game.
@@ -123,8 +124,8 @@ SUBSYSTEM_DEF(ticker)
 		Master.SetRunLevel(RUNLEVEL_POSTGAME)
 		end_game_state = END_GAME_READY_TO_END
 		INVOKE_ASYNC(src, .proc/declare_completion)
-		if(config.allow_map_switching && config.auto_map_vote && GLOB.all_maps.len > 1)
-			SSvote.initiate_vote(/datum/vote/map/end_game, automatic = 1)
+//		if(config.allow_map_switching && config.auto_map_vote && GLOB.all_maps.len > 1)
+//			SSvote.initiate_vote(/datum/vote/map/end_game, automatic = 1)
 
 	else if(mode_finished && (end_game_state <= END_GAME_NOT_OVER))
 		end_game_state = END_GAME_MODE_FINISH_DONE
@@ -135,6 +136,8 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/proc/post_game_tick()
 	switch(end_game_state)
 		if(END_GAME_AWAITING_MAP)
+			return
+		if(END_GAME_AWAITING_UPDATE)
 			return
 		if(END_GAME_READY_TO_END)
 			end_game_state = END_GAME_ENDING
@@ -155,7 +158,10 @@ SUBSYSTEM_DEF(ticker)
 		if(END_GAME_ENDING)
 			restart_timeout -= (world.time - last_fire)
 			if(restart_timeout <= 0)
-				world.Reboot()
+				if(update_server)
+					update_server()
+				else
+					world.Reboot()
 			if(delay_end)
 				notify_delay()
 				end_game_state = END_GAME_DELAYED
@@ -183,6 +189,8 @@ SUBSYSTEM_DEF(ticker)
 					..("ENDGAME ERROR")
 				if(END_GAME_AWAITING_MAP)
 					..("MAP VOTE")
+				if(END_GAME_AWAITING_UPDATE)
+					..("SERVER UPDATE")
 				if(END_GAME_MODE_FINISH_DONE)
 					..("MODE OVER, WAITING")
 				if(END_GAME_READY_TO_END)
@@ -290,6 +298,8 @@ Helpers
 			else
 				if(player.create_character())
 					qdel(player)
+		else if(player && !player.ready)
+			player.new_player_panel()
 
 /datum/controller/subsystem/ticker/proc/collect_minds()
 	for(var/mob/living/player in GLOB.player_list)
@@ -341,16 +351,16 @@ Helpers
 			return 1
 		else
 			if(antag.initial_spawn_req > 1)
-				to_world("Failed to find enough [antag.role_text_plural].")
+				log_and_message_admins("Failed to find enough [antag.role_text_plural].")
 
 			else
-				to_world("Failed to find a [antag.role_text].")
+				log_and_message_admins("Failed to find a [antag.role_text].")
 
 			antag_choices -= antag
 			if(length(antag_choices))
 				antag = antag_choices[1]
 				if(antag)
-					to_world("Attempting to spawn [antag.role_text_plural].")
+					log_and_message_admins("Attempting to spawn [antag.role_text_plural].")
 	return 0
 
 /datum/controller/subsystem/ticker/proc/game_finished()
