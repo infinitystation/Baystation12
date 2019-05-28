@@ -177,9 +177,9 @@
 	var/loaded_dna //Blood sample for DNA hashing.
 	var/datum/species/loaded_species //For quick refrencing
 
-//obj/machinery/organ_printer/flesh/Initialize()
-//	. = ..()
-//	component_parts += new /obj/item/device/scanner/health
+/obj/machinery/organ_printer/flesh/Initialize()
+	. = ..()
+	component_parts += new /obj/item/device/scanner/health
 
 /obj/machinery/organ_printer/flesh/mapped/Initialize()
 	. = ..()
@@ -227,8 +227,15 @@
 
 /obj/machinery/organ_printer/flesh/New()
 	..()
+	component_parts = list()
+	component_parts += new circuit
+	component_parts += new /obj/item/weapon/stock_parts/matter_bin
+	component_parts += new /obj/item/weapon/stock_parts/matter_bin
+	component_parts += new /obj/item/weapon/stock_parts/manipulator
+	component_parts += new /obj/item/weapon/stock_parts/manipulator
 	component_parts += new /obj/item/device/scanner/health
 	component_parts += new /obj/item/weapon/circuitboard/bioprinter
+	RefreshParts()
 
 /obj/machinery/organ_printer/flesh/print_organ(var/choice)
 	var/obj/item/organ/O
