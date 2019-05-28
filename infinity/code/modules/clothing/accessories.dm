@@ -279,7 +279,7 @@
 		icon_state = "cls"
 		set_light(0)
 
-/obj/item/clothing/accessory/badge/tajamc/Initialize()
+/obj/item/clothing/accessory/badge/tajamc/New()
 	. = ..()
 	var/mob/living/carbon/human/H
 	H = get_holder_of_type(src, /mob/living/carbon/human)
