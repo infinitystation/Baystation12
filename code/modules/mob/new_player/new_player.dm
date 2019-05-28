@@ -75,7 +75,7 @@
 	output += "[client.prefs.job_high ? ",<br>[client.prefs.job_high]" : null]<br>"
 	output += "</div>"
 
-	panel = new(src, "Welcome","Welcome,<br>[client.prefs.real_name]", 560, 280, src)
+	panel = new(src, "Welcome","Welcome,<br>[client.prefs.real_name]", 210, 280, src)
 	panel.set_window_options("can_close=0")
 	panel.set_content(JOINTEXT(output))
 	panel.open()
