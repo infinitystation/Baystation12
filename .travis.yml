@@ -20,8 +20,8 @@ matrix:
       env: TEST=MAP MAP_PATH=example
     - name: "Map - Sierra"
       env: TEST=MAP MAP_PATH=sierra
-    - name: "Map - Torch"
-      env: TEST=MAP MAP_PATH=torch
+#    - name: "Map - Torch"
+#      env: TEST=MAP MAP_PATH=torch
 #    - name: "Map - Torch Infinity"
 #      env: TEST=MAP MAP_PATH=torchinf
     - name: "Map - Bearcat"
