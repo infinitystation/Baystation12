@@ -32,7 +32,7 @@
 	sound_takeoff = 'sound/effects/rocket.ogg'
 	sound_landing = 'sound/effects/rocket_backwards.ogg'
 
-/obj/effect/shuttle_landmark/tajscishuttle/start
+/obj/effect/shuttle_landmark/tajscishuttle
 	name = "Dock"
 	landmark_tag = "nav_tajscishuttle_dock"
 	base_area = /area/ship/tajsciship
