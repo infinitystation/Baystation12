@@ -122,6 +122,7 @@
 	#include "../away_inf/blueriver/blueriver.dm"
 	#include "../away_inf/mining/mining.dm"
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
+	#include "../away_inf/space_bar/space_bar.dm"
 
 	#include "../away/bearcat/bearcat.dm"
 	#include "../away/derelict/derelict.dm"
