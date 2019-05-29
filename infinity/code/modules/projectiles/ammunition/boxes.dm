@@ -106,6 +106,18 @@
 	max_ammo = 20
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/emg
+	name = "Ares ENG MK4"
+	icon = 'infinity/icons/obj/p_weapon.dmi'
+	icon_state = "EMG"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/emg
+	matter = list(MATERIAL_STEEL = 1500)
+	caliber = CALIBER_DART
+	max_ammo = 60
+	multiple_sprites = 1
+	loadeble = 0
+
 /obj/item/ammo_magazine/shotguntaj
 	name = "magazine (12 gauge)"
 	icon = 'infinity/icons/obj/ammo.dmi'

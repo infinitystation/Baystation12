@@ -89,3 +89,10 @@
 	stun = 1
 	weaken = 1
 	distance_falloff = 0.5
+
+/obj/item/projectile/bullet/Erifle
+	fire_sound = 'sound/weapons/rapidslice.ogg'
+	icon = 'infinity/icons/obj/p_weapon.dmi'
+	icon_state = "gauss_silenced"
+	damage = 25
+	armor_penetration = 50
