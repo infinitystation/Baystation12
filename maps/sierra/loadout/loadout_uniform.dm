@@ -51,7 +51,6 @@
 	display_name = "NanoTrasen guard uniform"
 	path = /obj/item/clothing/under/rank/guard/nanotrasen
 	allowed_roles = list(/datum/job/officer)
-	allowed_branches = list(/datum/mil_branch/employee)
 
 /datum/gear/uniform/si_exec
 	display_name = "NanoTrasen senior researcher alt uniform"
