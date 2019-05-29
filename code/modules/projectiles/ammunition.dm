@@ -107,6 +107,8 @@
 	var/caliber = "357"
 	var/max_ammo = 7
 
+	var/loadeble = 1 //allow load new bullets
+
 	var/ammo_type = /obj/item/ammo_casing //ammo type that is initially loaded
 	var/initial_ammo = null
 
@@ -137,7 +139,7 @@
 	update_icon()
 
 /obj/item/ammo_magazine/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/ammo_casing))
+	if(istype(W, /obj/item/ammo_casing) && loadeble)
 		var/obj/item/ammo_casing/C = W
 		if(C.caliber != caliber)
 			to_chat(user, "<span class='warning'>[C] does not fit into [src].</span>")
@@ -152,15 +154,18 @@
 	else ..()
 
 /obj/item/ammo_magazine/attack_self(mob/user)
-	if(!stored_ammo.len)
-		to_chat(user, "<span class='notice'>[src] is already empty!</span>")
+	if(loadeble)
+		if(!stored_ammo.len)
+			to_chat(user, "<span class='notice'>[src] is already empty!</span>")
+			return
+		to_chat(user, "<span class='notice'>You empty [src].</span>")
+		for(var/obj/item/ammo_casing/C in stored_ammo)
+			C.forceMove(user.loc)
+			C.set_dir(pick(GLOB.alldirs))
+		stored_ammo.Cut()
+		update_icon()
+	else
 		return
-	to_chat(user, "<span class='notice'>You empty [src].</span>")
-	for(var/obj/item/ammo_casing/C in stored_ammo)
-		C.forceMove(user.loc)
-		C.set_dir(pick(GLOB.alldirs))
-	stored_ammo.Cut()
-	update_icon()
 
 
 /obj/item/ammo_magazine/attack_hand(mob/user)

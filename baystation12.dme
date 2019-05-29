@@ -3284,6 +3284,7 @@
 #include "infinity\code\modules\projectiles\guns\projectile\pistol.dm"
 #include "infinity\code\modules\projectiles\guns\projectile\revolver.dm"
 #include "infinity\code\modules\projectiles\guns\projectile\shotgun.dm"
+#include "infinity\code\modules\projectiles\guns\projectile\energy\energy.dm"
 #include "infinity\code\modules\projectiles\projectile\beams.dm"
 #include "infinity\code\modules\projectiles\projectile\bullets.dm"
 #include "infinity\code\modules\research\infinity_designs.dm"

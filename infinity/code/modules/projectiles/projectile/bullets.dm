@@ -70,3 +70,11 @@
 	penetrating = 4
 	armor_penetration = 85
 	penetration_modifier = 1.5
+
+
+/obj/item/projectile/bullet/Erifle
+	fire_sound = 'sound/weapons/rapidslice.ogg'
+	icon = 'infinity/icons/obj/p_weapon.dmi'
+	icon_state = "gauss_silenced"
+	damage = 25
+	armor_penetration = 50
