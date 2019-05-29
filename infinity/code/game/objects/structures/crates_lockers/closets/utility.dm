@@ -2,7 +2,7 @@
 	return list(
 		/obj/item/weapon/storage/firstaid/regular,
 		/obj/item/stack/medical/splint,
-		/obj/item/bodybag/rescue = 1,
+		/obj/item/bodybag/rescue/loaded = 1,
 		/obj/random/medical/lite = 6)
 
 /obj/structure/closet/medical_wall/filled/engineering/WillContain()
@@ -18,13 +18,13 @@
 		/obj/item/weapon/storage/pill_bottle/kelotane,
 		/obj/item/weapon/storage/pill_bottle/bicaridine,
 		/obj/item/stack/medical/splint,
-		/obj/item/bodybag/rescue = 2,
+		/obj/item/bodybag/rescue/loaded = 2,
 		/obj/random/medical/lite = 4)
 
 /obj/structure/closet/medical_wall/filled/shuttle/WillContain()
 	return list(
 		/obj/item/weapon/storage/firstaid/regular,
-		/obj/item/bodybag/rescue = 2,
+		/obj/item/bodybag/rescue/loaded = 2,
 		/obj/item/stack/medical/splint = 2,
 		/obj/random/medical/lite = 8)
 
@@ -34,5 +34,5 @@
 		/obj/item/weapon/storage/pill_bottle/inaprovaline,
 		/obj/item/weapon/storage/pill_bottle/paracetamol,
 		/obj/item/stack/medical/splint,
-		/obj/item/bodybag/rescue = 1,
+		/obj/item/bodybag/rescue/loaded = 1,
 		/obj/random/medical/lite = 4)
