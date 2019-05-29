@@ -5,6 +5,6 @@
 	sleep(10 SECONDS)
 
 	if(end_game_state == END_GAME_AWAITING_UPDATE)
-		send2maindiscord("Производится обновление сервера.")
+		send2mainirc("Производится обновление сервера.")
 		game_log("SERVER", "Запущено обновление сервера. ")
 		shell("update.bat")
