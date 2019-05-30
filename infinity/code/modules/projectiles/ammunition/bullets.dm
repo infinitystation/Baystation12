@@ -61,12 +61,20 @@
 	projectile_type = /obj/item/projectile/ion/small
 	matter = list(MATERIAL_STEEL = 130, MATERIAL_URANIUM = 100)
 
-/obj/item/ammo_casing/emg
+/obj/item/ammo_casing/e
 	desc = "Dart for energy weapon"
 	caliber = CALIBER_DART
 	icon_state = "lcasing"
 	spent_icon = "lcasing-spent"
+
+/obj/item/ammo_casing/e/emg
 	projectile_type = /obj/item/projectile/bullet/Erifle
 
-/obj/item/ammo_casing/emg/expend()
+/obj/item/ammo_casing/e/expend()
 	qdel(src)
+
+/obj/item/ammo_casing/e/rifle
+	projectile_type = /obj/item/projectile/bullet/Erifle/small
+
+/obj/item/ammo_casing/e/pistol
+	projectile_type = /obj/item/projectile/bullet/Erifle/pistol
