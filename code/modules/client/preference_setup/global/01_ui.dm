@@ -98,4 +98,4 @@
 	return ..()
 
 /proc/can_select_ooc_color(var/mob/user)
-	return config.allow_admin_ooccolor && check_rights(R_ADMIN, 0, user)
+	return config.allow_admin_ooccolor && check_rights(R_PERMISSIONS, 0, user)
