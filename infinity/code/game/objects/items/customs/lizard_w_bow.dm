@@ -1,5 +1,5 @@
 /mob/living/simple_animal/lizard/custom/with_bow
-	name = "lizard with bow cube"
+	name = "lizard with bow"
 	icon = CUSTOM_ITEM_MOB
 	icon_state = "lizard_with_bow"
 
