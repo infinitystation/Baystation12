@@ -19,6 +19,11 @@
 		send2irc(config.admin_irc, msg)
 	return
 
+/proc/send2adminlogirc(var/msg)
+	if(config.admin_log_irc)
+		send2irc(config.admin_log_irc, msg)
+	return
+
 /proc/adminmsg2adminirc(client/source, client/target, msg)
 	if(config.admin_irc)
 		var/list/params[0]

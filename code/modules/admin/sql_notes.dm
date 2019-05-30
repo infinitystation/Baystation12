@@ -46,6 +46,7 @@
 		notetext = sanitize_u2a(notetext)
 		log_admin("[key_name(usr)] has added a note to [target_ckey]: [notetext]")
 		message_admins("[key_name_admin(usr)] has added a note to [target_ckey]:<br>[notetext]")
+		send2adminlogirc("[key_name(usr)] добавил нотес игроку [target_ckey]: [notetext]")
 		show_note(target_ckey)
 
 /proc/remove_note(note_id)
@@ -78,6 +79,7 @@
 	notetext = sanitize_u2a(notetext)
 	log_admin("[key_name(usr)] has removed a note made by [adminckey] from [ckey]: [notetext]")
 	message_admins("[key_name_admin(usr)] has removed a note made by [adminckey] from [ckey]:<br>[notetext]")
+	send2adminlogirc("[key_name(usr)] убрал нотес от [adminckey] у игрока [ckey]: [notetext]")
 	show_note(ckey)
 
 /proc/edit_note(note_id)

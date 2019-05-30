@@ -176,6 +176,7 @@ var/list/gamemode_cache = list()
 	var/irc_bot_host = ""
 	var/main_irc = ""
 	var/admin_irc = ""
+	var/admin_log_irc = ""
 	var/announce_shuttle_dock_to_irc = FALSE
 
 
@@ -660,6 +661,9 @@ var/list/gamemode_cache = list()
 
 				if("admin_irc")
 					config.admin_irc = value
+
+				if("admin_log_irc")
+					config.admin_log_irc = value
 
 				if("announce_shuttle_dock_to_irc")
 					config.announce_shuttle_dock_to_irc = TRUE
