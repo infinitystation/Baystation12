@@ -306,12 +306,12 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/cmd_admin_subtle_message
 	)
 var/list/admin_verbs_mod = list(
-	/client/proc/cmd_admin_pm_context,	// right-click adminPM interface,
-	/client/proc/cmd_admin_pm_panel,	// admin-pm list,
-	/client/proc/debug_variables,		// allows us to -see- the variables of any instance in the game.
-	/client/proc/debug_global_variables,// as above but for global variables,
+	/client/proc/cmd_admin_pm_context,
+	/client/proc/cmd_admin_pm_panel,
+	/client/proc/debug_variables,
+	/client/proc/debug_global_variables,
 	/datum/admins/proc/PlayerNotes,
-	/client/proc/admin_ghost,			// allows us to ghost/reenter body at will,
+	/client/proc/admin_ghost,
 	/datum/admins/proc/show_player_info,
 	/client/proc/player_panel_new,
 	/client/proc/dsay,
