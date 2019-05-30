@@ -53,23 +53,6 @@
 		if(client.holder || config.observers_allowed || check_rights(R_INVESTIGATE|R_DEBUG, 0, src))
 			output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
 
-	if(!IsGuestKey(key))
-		establish_db_connection()
-		if(dbcon.IsConnected())
-			var/isadmin = 0
-			if(client && client.holder)
-				isadmin = 1
-			var/DBQuery/query = dbcon.NewQuery("SELECT id FROM erro_poll_question WHERE [(isadmin ? "" : "adminonly = false AND")] Now() BETWEEN starttime AND endtime AND id NOT IN (SELECT pollid FROM erro_poll_vote WHERE ckey = \"[ckey]\") AND id NOT IN (SELECT pollid FROM erro_poll_textreply WHERE ckey = \"[ckey]\")")
-			query.Execute()
-			var/newpoll = 0
-			while(query.NextRow())
-				newpoll = 1
-				break
-
-			if(newpoll)
-				output += "<b><a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A> (NEW!)</b> "
-			else
-				output += "<a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A> "
 	output += "<hr>Current character:<br>"
 	output += "<b>[client.prefs.real_name]</b>"
 	output += "[client.prefs.job_high ? ",<br>[client.prefs.job_high]" : null]<br>"
