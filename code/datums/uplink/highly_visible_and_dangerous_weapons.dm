@@ -75,8 +75,8 @@
 
 /datum/uplink_item/item/visible_weapons/assaultrifle
 	name = "Assault Rifle"
-	item_cost = 80
-	antag_costs = list(MODE_MERCENARY = 60)
+	item_cost = 100
+	antag_costs = list(MODE_MERCENARY = 80)
 	path = /obj/item/weapon/gun/projectile/automatic/assault_rifle
 	antag_roles = list(MODE_MERCENARY)
 
