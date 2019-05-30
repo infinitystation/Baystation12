@@ -120,6 +120,11 @@ ckey: DieSiege
 character_name: Nyreen Hor'lis
 item_path: /obj/item/device/pmp/personal/csplayer
 }
+{
+ckey: Nicroz
+character_name: Isabel Weil
+item_path: /obj/item/weapon/reagent_containers/food/snacks/monkeycube/lizard/custom/with_bow
+}
 
 #	SHORT ITEMS HERE (3-4)
 
