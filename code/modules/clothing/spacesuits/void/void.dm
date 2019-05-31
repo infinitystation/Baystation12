@@ -23,7 +23,7 @@
 	sprite_sheets_obj = list(
 		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/hats.dmi',
 		SPECIES_EROSAN = 'infinity/icons/obj/clothing/species/erosan/hats.dmi',
-		SPECIES_RESOMI = 'icons/obj/clothing/species/resomi/hats.dmi',
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/hats.dmi',
 //		SPECIES_UNATHI = 'icons/obj/clothing/species/unathi/obj_head_unathi.dmi',
 		SPECIES_UNATHI = 'infinity/icons/obj/clothing/species/erosan/hats.dmi',
 		SPECIES_SKRELL = 'icons/obj/clothing/species/skrell/obj_head_skrell.dmi',
@@ -54,7 +54,7 @@
 	sprite_sheets_obj = list(
 		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/suits.dmi',
 		SPECIES_EROSAN = 'infinity/icons/obj/clothing/species/erosan/suits.dmi',
-		SPECIES_RESOMI = 'icons/obj/clothing/species/resomi/suits.dmi',
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/suits.dmi',
 //		SPECIES_UNATHI = 'icons/obj/clothing/species/unathi/obj_suit_unathi.dmi',
 		SPECIES_UNATHI = 'infinity/icons/obj/clothing/species/erosan/suits.dmi',
 		SPECIES_SKRELL = 'icons/obj/clothing/species/skrell/obj_suit_skrell.dmi',

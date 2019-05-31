@@ -327,7 +327,7 @@
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_suit_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/obj/skrell/obj_suit_solgov_skrell.dmi',
 		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/suits.dmi',
-		SPECIES_RESOMI = 'icons/obj/clothing/species/resomi/suits.dmi'
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/suits.dmi'
 		)
 
 /obj/item/clothing/suit/space/void/engineering/alt/sol/prepared
@@ -347,7 +347,7 @@
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_suit_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/obj/skrell/obj_suit_solgov_skrell.dmi',
 		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/suits.dmi',
-		SPECIES_RESOMI = 'icons/obj/clothing/species/resomi/suits.dmi'
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/suits.dmi'
 		)
 
 /obj/item/clothing/suit/space/void/atmos/alt/sol/prepared
@@ -367,7 +367,7 @@
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_suit_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/obj/skrell/obj_suit_solgov_skrell.dmi',
 		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/suits.dmi',
-		SPECIES_RESOMI = 'icons/obj/clothing/species/resomi/suits.dmi'
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/suits.dmi'
 		)
 
 /obj/item/clothing/suit/space/void/pilot/sol/prepared
@@ -387,7 +387,7 @@
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_suit_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/obj/skrell/obj_suit_solgov_skrell.dmi',
 		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/suits.dmi',
-		SPECIES_RESOMI = 'icons/obj/clothing/species/resomi/suits.dmi'
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/suits.dmi'
 		)
 
 /obj/item/clothing/suit/space/void/medical/alt/sol/prepared

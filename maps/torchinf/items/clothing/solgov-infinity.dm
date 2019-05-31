@@ -31,7 +31,7 @@
 /obj/item/clothing/under/solgov/pt/expeditionary/resomi
 	name = "small expeditionary pt smock"
 	desc = "It looks fitted to nonhuman proportions."
-	icon = 'icons/obj/clothing/species/resomi/uniform.dmi'
+	icon = 'infinity/icons/obj/clothing/species/resomi/uniform.dmi'
 	item_icons = list('infinity/icons/mob/species/resomi/uniform.dmi')
 	icon_state = "resomi_expeditionpt"
 	worn_state = "resomi_expeditionpt"
@@ -41,7 +41,7 @@
 /obj/item/clothing/under/solgov/utility/expeditionary/resomi
 	name = "small expeditionary uniform"
 	desc = "It looks fitted to nonhuman proportions."
-	icon = 'icons/obj/clothing/species/resomi/uniform.dmi'
+	icon = 'infinity/icons/obj/clothing/species/resomi/uniform.dmi'
 	item_icons = list('infinity/icons/mob/species/resomi/uniform.dmi')
 	icon_state = "resomi_blackutility"
 	worn_state = "resomi_blackutility"
@@ -51,7 +51,7 @@
 /obj/item/clothing/under/solgov/utility/expeditionary/officer/resomi
 	name = "small expeditionary officer's uniform"
 	desc = "It looks fitted to nonhuman proportions."
-	icon = 'icons/obj/clothing/species/resomi/uniform.dmi'
+	icon = 'infinity/icons/obj/clothing/species/resomi/uniform.dmi'
 	item_icons = list('infinity/icons/mob/species/resomi/uniform.dmi')
 	icon_state = "resomi_blackutility_com"
 	worn_state = "resomi_blackutility_com"
@@ -62,7 +62,7 @@
 /obj/item/clothing/under/solgov/mildress/expeditionary/resomi
 	name = "small expeditionary dress uniform"
 	desc = "It looks fitted to nonhuman proportions."
-	icon = 'icons/obj/clothing/species/resomi/uniform.dmi'
+	icon = 'infinity/icons/obj/clothing/species/resomi/uniform.dmi'
 	item_icons = list('infinity/icons/mob/species/resomi/uniform.dmi')
 	icon_state = "resomi_greydress"
 	worn_state = "resomi_greydress"
