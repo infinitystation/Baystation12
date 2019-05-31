@@ -251,7 +251,7 @@
 		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_suit_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_suit_solgov_skrell.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/suit.dmi'
 		)
 	sprite_sheets_obj = list(
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_suit_solgov_unathi.dmi',
@@ -271,7 +271,7 @@
 		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_suit_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_suit_solgov_skrell.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/suit.dmi'
 		)
 	sprite_sheets_obj = list(
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_suit_solgov_unathi.dmi',
@@ -291,7 +291,7 @@
 		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_suit_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_suit_solgov_skrell.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/suit.dmi'
 		)
 	sprite_sheets_obj = list(
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_suit_solgov_unathi.dmi',
@@ -311,7 +311,7 @@
 		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_suit_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_suit_solgov_skrell.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/suit.dmi'
 		)
 	sprite_sheets_obj = list(
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_suit_solgov_unathi.dmi',
