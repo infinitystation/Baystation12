@@ -62,7 +62,7 @@
 	body_parts_covered = HEAD
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head_infinity.dmi',
 		)
 

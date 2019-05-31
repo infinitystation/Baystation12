@@ -18,7 +18,7 @@
 		slot_r_hand_str = "backpack",
 		)
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/back.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/back.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/back.dmi'
 		)
 
@@ -153,7 +153,7 @@
 	desc = "A sturdy military-grade backpack with low-profile straps. Designed to work well with armor."
 	icon_state = "rucksack"
 	item_state_slots = list(slot_l_hand_str = "rucksack", slot_r_hand_str = "rucksack",)
-	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/onmob/Resomi/back.dmi')
+	sprite_sheets = list(SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/back.dmi')
 
 /obj/item/weapon/storage/backpack/rucksack/blue
 	name = "blue rucksack"

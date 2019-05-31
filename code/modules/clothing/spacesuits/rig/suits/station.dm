@@ -181,7 +181,7 @@
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE // this is passed to the rig suit components when deployed, including the helmet.
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/rig_back.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/rig_back.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
 		)
 
@@ -302,7 +302,7 @@
 
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/rig_back.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/rig_back.dmi'
 		)
 
 /obj/item/clothing/head/helmet/space/rig/medical
@@ -310,7 +310,7 @@
 	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_RESOMI)
 	sprite_sheets = list(
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/onmob_head_helmet_unathi.dmi',
 		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_skrell.dmi',
 		)
@@ -320,7 +320,7 @@
 	sprite_sheets = list(
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_suit_unathi.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/suit.dmi'
 		)
 
 /obj/item/clothing/shoes/magboots/rig/medical
@@ -328,7 +328,7 @@
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_feet_unathi.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/feet.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/feet.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/feet.dmi'
 		)
 
 /obj/item/clothing/gloves/rig/medical
@@ -336,7 +336,7 @@
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_hands_unathi.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/hands.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/hands.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/hands.dmi'
 		)
 
 /obj/item/weapon/rig/medical/equipped
@@ -375,7 +375,7 @@
 	camera = /obj/machinery/camera/network/security
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI,SPECIES_RESOMI)
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/head.dmi',
 		SPECIES_SCRELL = 'icons/mob/species/skrell/helmet.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
@@ -384,7 +384,7 @@
 /obj/item/clothing/suit/space/rig/hazard
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI,SPECIES_RESOMI)
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/suit.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/suit.dmi',
 		SPECIES_SCRELL = 'icons/mob/species/skrell/suit.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi'
@@ -393,7 +393,7 @@
 /obj/item/clothing/shoes/magboots/rig/hazard
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI,SPECIES_RESOMI)
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/feet.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/feet.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/feet.dmi',
 		SPECIES_SCRELL = 'icons/mob/species/skrell/feet.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/feet.dmi'
@@ -402,7 +402,7 @@
 /obj/item/clothing/gloves/rig/hazard
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI,SPECIES_RESOMI)
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/hands.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/hands.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/hands.dmi',
 		SPECIES_SCRELL = 'icons/mob/species/skrell/hands.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/hands.dmi'

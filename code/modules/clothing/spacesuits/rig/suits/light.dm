@@ -21,14 +21,14 @@
 	glove_type = /obj/item/clothing/gloves/rig/light
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/rig_back.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/rig_back.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
 		)
 
 /obj/item/clothing/suit/space/rig/light
 	breach_threshold = 18 //comparable to voidsuits
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/suit.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/suit.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi'
 		)
 
@@ -41,14 +41,14 @@
 	stealth_step = TRUE
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/feet.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/feet.dmi'
 	)
 
 /obj/item/clothing/head/helmet/space/rig/light
 	name = "hood"
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi'
 
 	)
@@ -133,7 +133,7 @@
 		)
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/rig_back.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/rig_back.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/rig_back.dmi'
 		)
 
@@ -174,7 +174,7 @@
 	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_NOCUFFS
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/hands.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/hands.dmi'
 	)
 
 /obj/item/clothing/suit/space/rig/light/ninja
