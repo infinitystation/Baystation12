@@ -96,3 +96,11 @@
 	icon_state = "gauss_silenced"
 	damage = 25
 	armor_penetration = 50
+
+/obj/item/projectile/bullet/Erifle/small
+	damage = 15
+	armor_penetration = 60
+
+/obj/item/projectile/bullet/Erifle/pistol
+	damage = 15
+	armor_penetration = 35

@@ -106,17 +106,30 @@
 	max_ammo = 20
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/emg
-	name = "Ares ENG MK4"
+/obj/item/ammo_magazine/e
 	icon = 'infinity/icons/obj/p_weapon.dmi'
-	icon_state = "EMG"
 	mag_type = MAGAZINE
-	ammo_type = /obj/item/ammo_casing/emg
-	matter = list(MATERIAL_STEEL = 1500)
 	caliber = CALIBER_DART
-	max_ammo = 60
 	multiple_sprites = 1
 	loadeble = 0
+
+/obj/item/ammo_magazine/e/emg
+	name = "Ares EMG MK4 magazine"
+	icon_state = "EMG"
+	ammo_type = /obj/item/ammo_casing/e/emg
+	max_ammo = 60
+
+/obj/item/ammo_magazine/e/rifle
+	name = "Ares ER MK2 magazine"
+	icon_state = "ER"
+	ammo_type = /obj/item/ammo_casing/e/rifle
+	max_ammo = 30
+
+/obj/item/ammo_magazine/e/pistol
+	name = "Ares EP \"Predator\" magazine"
+	icon_state = "EP"
+	ammo_type = /obj/item/ammo_casing/e/pistol
+	max_ammo = 20
 
 /obj/item/ammo_magazine/shotguntaj
 	name = "magazine (12 gauge)"
