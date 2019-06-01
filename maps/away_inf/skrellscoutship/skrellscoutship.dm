@@ -178,3 +178,6 @@
 /obj/machinery/power/apc/skrellian
 	is_critical = 1
 	req_access = list(access_skrellscoutship)
+
+/turf/simulated/floor/shuttle_ceiling/hull
+	color = COLOR_HULL
