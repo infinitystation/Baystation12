@@ -1,4 +1,7 @@
 #if !defined(using_map_DATUM)
+
+	#include "bearcat_define.dm"
+
 	#include "bearcat_unit_testing.dm"
 
 	#include "../../code/datums/music_tracks/businessend.dm"
