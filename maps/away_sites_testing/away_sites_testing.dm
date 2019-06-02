@@ -1,6 +1,8 @@
 #if !defined(using_map_DATUM)
 	#include "away_sites_testing_lobby.dm"
 
+	#include "away_sites_testing_define.dm"
+
 	#include "blank.dmm"
 
 	#include "../away/empty.dmm"
