@@ -8,6 +8,7 @@
 
 	min_age = 15
 	max_age = 45
+	hidden_from_codex = FALSE
 	health_hud_intensity = 3
 
 	blood_color = "#d514f7"
