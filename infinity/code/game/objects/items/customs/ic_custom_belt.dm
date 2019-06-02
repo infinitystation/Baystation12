@@ -2,10 +2,12 @@
 	name = "NT(tm) integrated circuit printer"
 	desc = "A portable(ish) machine made to print tiny modular circuitry out of metal. This one has fancy NanoTrasen brand design."
 	icon_state = "circuit_printer_custom"
+	icon = 'infinity/icons/customs/ic_belt_custom.dmi'
 
 /obj/item/weapon/storage/belt/holster/ic
 	name = "IC developer's belt"
 	desc = "It's a toolbelt, that have big pocket for portable circuit printer on right side and five smaller pockets for tools on left side."
+	icon = 'infinity/icons/customs/ic_belt_custom.dmi'
 	icon_state = "ic_belt"
 	item_state = "utility"
 	max_w_class = ITEM_SIZE_LARGE
@@ -24,8 +26,10 @@
 /obj/item/weapon/storage/belt/holster/ic/on_update_icon()
 	..()
 	for(var/obj/item/I in contents)
-		if(istype(I,/obj/item/device/integrated_electronics/wirer)) //better than 4 same icon for every icon_state
-			overlays += image('icons/obj/clothing/obj_belt_overlays.dmi', "wirer")
+		if(istype(I, /obj/item/device/integrated_electronics/wirer)) //better than 4 same icon for every icon_state
+			overlays += image('infinity/icons/customs/ic_belt_custom.dmi', "wirer")
+		else if(istype(I, /obj/item/device))
+			overlays += image('infinity/icons/customs/ic_belt_custom.dmi', "[I.icon_state]")
 
 /obj/item/weapon/storage/belt/holster/ic/full/Initialize()
 	.=..()
