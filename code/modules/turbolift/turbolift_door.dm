@@ -30,8 +30,7 @@
 	return FALSE //only the lift machinery is allowed to operate this door
 
 /obj/machinery/door/airlock/lift/on_update_icon(state=0, override=0)
-	// Elevator doors must not rotate every time structure changed
-	switch(state)
+	switch(state)	// Elevator doors must not rotate every time structure changed
 		if(0)
 			if(density)
 				icon_state = "closed"
