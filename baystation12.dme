@@ -3257,6 +3257,7 @@
 #include "infinity\code\modules\culture_descriptor\location\locations_tajaran.dm"
 #include "infinity\code\modules\culture_descriptor\location\locations_unathi.dm"
 #include "infinity\code\modules\culture_descriptor\location\locations_vox.dm"
+#include "infinity\code\modules\culture_descriptor\religion\religion_resomi.dm"
 #include "infinity\code\modules\mob\holder.dm"
 #include "infinity\code\modules\mob\language\alien\resomi.dm"
 #include "infinity\code\modules\mob\language\alien\tajaran.dm"
