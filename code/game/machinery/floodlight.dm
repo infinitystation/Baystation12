@@ -19,7 +19,7 @@
 	cell = new/obj/item/weapon/cell/crap(src)
 	..()
 
-/obj/machinery/floodlight/cargo
+/obj/machinery/floodlight/cargo/New()
 	cell = new/obj/item/weapon/cell/standard(src)
 	..()
 
