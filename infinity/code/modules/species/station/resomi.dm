@@ -63,10 +63,10 @@
 		)
 	cold_discomfort_level = 200
 	cold_discomfort_strings = list(
-        "You can't feel your paws because of the cold.",
-        "You feel sluggish and cold.",
-        "Your feathers bristle against the cold."
-        )
+		"You can't feel your paws because of the cold.",
+		"You feel sluggish and cold.",
+		"Your feathers bristle against the cold.")
+
 	has_limbs = list(
 		BP_CHEST =  list("path" = /obj/item/organ/external/chest),
 		BP_GROIN =  list("path" = /obj/item/organ/external/groin),
