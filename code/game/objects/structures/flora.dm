@@ -203,11 +203,9 @@
 //underwater plants and algae
 
 /obj/structure/flora/ausbushes/algae
-	..()
 	icon_state = "seaweed"
 
 /obj/structure/flora/ausbushes/algae/glowing
-	..()
 	icon_state = "glowweed1"
 
 /obj/structure/flora/ausbushes/algae/glowing/New()
@@ -216,7 +214,6 @@
 	set_light(1)
 
 /obj/structure/flora/ausbushes/algae/random
-	..()
 	icon_state = "lichen"
 
 /obj/structure/flora/ausbushes/algae/random/New()
