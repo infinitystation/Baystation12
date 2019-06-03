@@ -19,8 +19,8 @@
 	cell = new/obj/item/weapon/cell/crap(src)
 	..()
 
-/obj/machinery/floodlight/cargo
-	cell = new/obj/item/weapon/cell/
+/obj/machinery/floodlight/cargo/New()
+	cell = new/obj/item/weapon/cell/standard(src)
 	..()
 
 /obj/machinery/floodlight/on_update_icon()
