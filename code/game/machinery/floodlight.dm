@@ -20,7 +20,7 @@
 	..()
 
 /obj/machinery/floodlight/cargo
-	cell = new/obj/item/weapon/cell/
+	cell = new/obj/item/weapon/cell/standard(src)
 	..()
 
 /obj/machinery/floodlight/on_update_icon()
