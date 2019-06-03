@@ -158,9 +158,7 @@ var/list/ai_verbs_default = list(
 
 	//Languages
 	add_language("Robot Talk", 1)
-	for(var/lan in HUMAN_LANGUAGES)
-		add_language(lan, 1)
-	for(var/lan in NON_HUMAN_LANGUAGES)
+	for(var/lan in ALL_NON_ANTAG_LANGUAGES)
 		add_language(lan, 1)
 	for(var/lan in SIGN_LANGUAGES)
 		add_language(lan, 0)
