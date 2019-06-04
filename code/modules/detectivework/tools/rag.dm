@@ -115,19 +115,20 @@
 			user.do_attack_animation(src)
 			M.IgniteMob()
 		else if(reagents.total_volume)
-			if(user.zone_sel.selecting == BP_MOUTH || ishuman(target))
+			if(user.zone_sel.selecting == BP_MOUTH && ishuman(target))
 				var/mob/living/carbon/human/H = target
-				if(!H.check_mouth_coverage())
-					user.do_attack_animation(src)
-					user.visible_message(
-						"<span class='danger'>\The [user] smothers [H] with [src]!</span>",
-						"<span class='warning'>You smother [H] with [src]!</span>",
-						"You hear some struggling and muffled cries of surprise"
-						)
+				if((!H.check_mouth_coverage() && H.grabbed_by.len) || (user == H))
+					if(do_after(user, 20, H))
+						user.do_attack_animation(src)
+						user.visible_message(
+							"<span class='danger'>\The [user] smothers [H] with [src]!</span>",
+							"<span class='warning'>You smother [H] with [src]!</span>",
+							"You hear some struggling and muffled cries of surprise"
+							)
 
-					//it's inhaled, so... maybe CHEM_BLOOD doesn't make a whole lot of sense but it's the best we can do for now
-					reagents.trans_to_mob(H, amount_per_transfer_from_this, CHEM_BLOOD)
-					update_name()
+						//it's inhaled, so... maybe CHEM_BLOOD doesn't make a whole lot of sense but it's the best we can do for now
+						reagents.trans_to_mob(H, amount_per_transfer_from_this, CHEM_BLOOD)
+						update_name()
 				else
 					user.do_attack_animation(src)
 					user.visible_message(
