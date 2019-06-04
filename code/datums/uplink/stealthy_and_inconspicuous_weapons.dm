@@ -28,9 +28,9 @@
 
 /datum/uplink_item/item/stealthy_weapons/sleepy
 	name = "Sleepy Pen"
-	item_cost = 20
-	antag_costs = list(MODE_MERCENARY = 10)
+	item_cost = 10
 	path = /obj/item/weapon/pen/reagent/sleepy
+	antag_roles = list(MODE_MERCENARY)
 
 /datum/uplink_item/item/stealthy_weapons/syringegun
 	name = "Disguised Syringe Gun"
