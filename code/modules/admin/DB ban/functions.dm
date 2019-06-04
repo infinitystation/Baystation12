@@ -143,12 +143,6 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 		if("SOFT_TEMPBAN")
 			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: [reason_public]; Срок - [duration] минут.</b>"))
 			send2adminlogirc("BAN: Администратор [setter] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: [reason_public]; Срок - [duration] минут.")
-		if("JOB_PERMABAN")
-			to_world(SPAN_NOTICE("<b>JOBBAN: Администратор [setter] пермаментно заблокировал(а) роли ([job]) игроку [ckey]. Причина: [reason_public]</b>"))
-			send2adminlogirc("JOBBAN: Администратор [setter] пермаментно заблокировал(а) роли ([job]) игроку [ckey]. Причина: [reason_public]")
-		if("JOB_TEMPBAN")
-			to_world(SPAN_NOTICE("<b>JOBBAN: Администратор [setter] временно заблокировал(а) роли ([job]) игроку [ckey]. Причина: [reason_public]; Срок - [duration] минут.</b>"))
-			send2adminlogirc("JOBBAN: Администратор [setter] временно заблокировал(а) роли ([job]) игроку [ckey]. Причина: [reason_public]; Срок - [duration] минут.")
 	return 1
 
 
