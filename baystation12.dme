@@ -3131,6 +3131,7 @@
 #include "infinity\code\game\machinery\doors\firedoor_assembly.dm"
 #include "infinity\code\game\objects\items\customs\army_overcoat.dm"
 #include "infinity\code\game\objects\items\customs\chainsword.dm"
+#include "infinity\code\game\objects\items\customs\chowny_sindyexpress.dm"
 #include "infinity\code\game\objects\items\customs\clown.dm"
 #include "infinity\code\game\objects\items\customs\creo.dm"
 #include "infinity\code\game\objects\items\customs\csplayer.dm"
