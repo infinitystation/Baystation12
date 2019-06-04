@@ -25,9 +25,8 @@
 	name = "Weapons - Ballistic sidearms"
 	containertype = /obj/structure/closet/crate/secure/weapon
 	contains = list(/obj/item/weapon/gun/projectile/pistol/military = 4)
-	cost = 40
+	cost = 60
 	containername = "ballistic sidearms crate"
-	security_level = SUPPLY_SECURITY_ELEVATED
 
 /decl/hierarchy/supply_pack/security/armory/laser
 	name = "Weapons - Laser carbines"
@@ -58,30 +57,23 @@
 	containername = "\improper Energy marksman crate"
 	security_level = SUPPLY_SECURITY_HIGH
 
-/decl/hierarchy/supply_pack/security/armory/spistol
-	name = "Weapons - Ballistic small-bore sidearm"
-	contains = list(/obj/item/weapon/gun/projectile/spistol = 3)
-	cost = 45
-	containername = "\improper Ballistic small-bore sidearm crate"
-	security_level = SUPPLY_SECURITY_HIGH
-
 /decl/hierarchy/supply_pack/security/armory/pdw
 	name = "Weapons - Ballistic PDWs"
 	contains = list(/obj/item/weapon/gun/projectile/automatic/sec_smg = 2)
-	cost = 40
+	cost = 60
 	containername = "\improper Ballistic PDW crate"
-	security_level = SUPPLY_SECURITY_HIGH
+	security_level = SUPPLY_SECURITY_ELEVATED
 
 /decl/hierarchy/supply_pack/security/armory/bullpup
 	name = "Weapons - Ballistic rifles"
 	contains = list(/obj/item/weapon/gun/projectile/automatic/bullpup_rifle = 2)
-	cost = 90 //Because 5.56 is OP as fuck right now.
+	cost = 120 //Because 5.56 is OP as fuck right now.
 	containername = "\improper Bullpup automatic rifle crate"
-	security_level = SUPPLY_SECURITY_HIGH
+	security_level = SUPPLY_SECURITY_ELEVATED
 
 /decl/hierarchy/supply_pack/security/armory/pistolammo
 	name = "Ammunition - pistol magazines"
-	contains = list(/obj/item/ammo_magazine/pistol = 4)
+	contains = list(/obj/item/ammo_magazine/doubpistol = 4)
 	cost = 30
 	containername = "pistol ammunition crate"
 
