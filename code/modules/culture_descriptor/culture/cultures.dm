@@ -6,7 +6,7 @@
 	name = CULTURE_HUMAN
 	description = "You are from one of various planetary cultures of humankind."
 	language = LANGUAGE_GALCOM
-	secondary_langs = list(LANGUAGE_HUMAN_EURO, LANGUAGE_SIGN, LANGUAGE_GUTTER, LANGUAGE_HUMAN_ARABIC, LANGUAGE_HUMAN_CHINESE, LANGUAGE_HUMAN_IBERIAN, LANGUAGE_HUMAN_INDIAN, LANGUAGE_HUMAN_RUSSIAN, LANGUAGE_SPACER)
+	secondary_langs = HUMAN_ADDITIONAL_LANGUAGES
 
 /decl/cultural_info/culture/human/martian_surfacer
 	name = CULTURE_HUMAN_MARTIAN
@@ -115,7 +115,6 @@
 	in the military, industrial, government or service sectors, with an emphasis being placed on military service. Terrans today are generally poor, bitter and a somewhat broken people angry and \
 	resentful about their loss in the Gaia Conflict. An upbringing on Terra emphasises an odd mix of service to the state, liberalism and militarism."
 	language = LANGUAGE_HUMAN_RUSSIAN
-	secondary_langs = list(LANGUAGE_GALCOM, LANGUAGE_SIGN, LANGUAGE_GUTTER, LANGUAGE_HUMAN_ARABIC, LANGUAGE_HUMAN_CHINESE, LANGUAGE_HUMAN_IBERIAN, LANGUAGE_HUMAN_INDIAN, LANGUAGE_HUMAN_EURO, LANGUAGE_SPACER)
 	economic_power = 0.9
 
 /decl/cultural_info/culture/human/other

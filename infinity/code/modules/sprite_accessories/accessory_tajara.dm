@@ -137,6 +137,7 @@
 
 /datum/sprite_accessory/marking/taj
 	name = "Socks Coloration (Taj)"
+	icon = 'infinity/icons/mob/human_races/species/tajara/markings.dmi'
 	icon_state = "taj_pawsocks"
 	species_allowed = list(SPECIES_TAJARA)
 	body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND)

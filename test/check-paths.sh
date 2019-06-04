@@ -66,7 +66,7 @@ exactly 0 "goto uses" 'goto '
 #fi
 
 num=`find ./html/changelogs_infinity -not -name "*.yml" | wc -l`
-echo "$num non-yml files (expecting exactly 0)"
+echo "$num non-yml files (expecting exactly 1)"
 [ $num -eq 1 ] || FAILED=1
 
 num=`find . -perm /111 -name "*.dm*" | wc -l`

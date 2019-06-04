@@ -379,7 +379,7 @@ Subtypes
 
 /datum/terminal_command/telnet
 	name = "telnet"
-	man_entry = list("Format: telnet \[NID\] \[LOGIN\] : \[PASSWORD\].",
+	man_entry = list("Format: telnet \[NID\] \[LOGIN\] \[PASSWORD\].",
 					"Access remote terminal with login and password",
 					"If NID \< 100 write NID like 001.",
 					"Use `telnet` to README and config security of your devise.")

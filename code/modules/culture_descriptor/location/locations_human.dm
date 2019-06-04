@@ -13,7 +13,6 @@
 	capital = "Olympus"
 	economic_power = 1.1
 	language = LANGUAGE_GALCOM
-	secondary_langs = list(LANGUAGE_SIGN, LANGUAGE_GUTTER, LANGUAGE_HUMAN_EURO, LANGUAGE_HUMAN_ARABIC, LANGUAGE_HUMAN_CHINESE, LANGUAGE_HUMAN_IBERIAN, LANGUAGE_HUMAN_INDIAN, LANGUAGE_HUMAN_RUSSIAN)
 
 /decl/cultural_info/location/human/earth
 	name = HOME_SYSTEM_EARTH

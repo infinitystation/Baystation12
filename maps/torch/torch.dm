@@ -1,5 +1,7 @@
 #if !defined(using_map_DATUM)
 
+	#include "torch_define.dm"
+
 	#include "torch_announcements.dm"
 	#include "torch_antagonism.dm"
 	#include "torch_areas.dm"
@@ -56,7 +58,7 @@
 	#include "items/clothing/terran-head.dm"
 	#include "items/clothing/terran-suit.dm"
 	#include "items/clothing/terran-under.dm"
-	
+
 	#include "items/weapon/storage/wallets.dm"
 
 	#include "job/torch_access.dm"
