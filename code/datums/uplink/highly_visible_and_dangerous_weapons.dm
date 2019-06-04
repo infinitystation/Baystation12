@@ -131,11 +131,6 @@
 	item_cost = 40
 	path = /obj/item/weapon/gun/projectile/pistol/military/alt
 
-/datum/uplink_item/item/visible_weapons/detective_revolver
-	name = "Holdout Revolver"
-	item_cost = 24
-	path = /obj/item/weapon/gun/projectile/revolver/holdout
-
 /datum/uplink_item/item/visible_weapons/pulserifle
 	name = "Pulse Rifle"
 	item_cost = 68
