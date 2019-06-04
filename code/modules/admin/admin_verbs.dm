@@ -530,7 +530,9 @@ var/list/admin_verbs_mentor = list(
 		C.prefs.ooccolor = input(src, "Please select your OOC colour.", "OOC colour") as color
 	else if(response == "Reset to default")
 		C.prefs.ooccolor = initial(C.prefs.ooccolor)
-	if(C != src)
+	else
+		return
+	if(C && C != src)
 		to_chat(C, SPAN_NOTICE("[src] changed your OOC color to [C.prefs.ooccolor == initial(C.prefs.ooccolor) ? "default" : C.prefs.ooccolor]."))
 	log_and_message_admins("changed [C == src ? "his own" : "[C]"] OOC color to [C.prefs.ooccolor == initial(C.prefs.ooccolor) ? "default" : C.prefs.ooccolor].")
 	SScharacter_setup.queue_preferences_save(C.prefs)
