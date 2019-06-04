@@ -23,16 +23,22 @@
 	return
 
 /spell/portal_teleport/choose_targets()
+	if(locate(holder.z) in GLOB.using_map.admin_levels)
+		to_chat(holder, SPAN_WARNING("You can't do it here."))
+		return
 	var/area/thearea
-	var/message = alert("Would you like to show station areas?\nNote: it can take up to 5 minutes for the away sites to load in and show up.",, "Yes", "No")
+	var/message = alert("Would you like to show station areas?\nNote: it can take up to 5 minutes for the away sites to load in and show up.",, "Yes", "No", "Cancel")
 	switch(message)
 		if("Yes")
 			select_areas = stationlocs
 		if("No")
 			select_areas = (stationlocs) ^ (wizportallocs)
+		if("Cancel")
+			return
 
 	thearea = input("Area to teleport to", "Teleport") as null|anything in select_areas
-	if(!thearea) return
+	if(!thearea)
+		return
 
 	return list(select_areas[thearea])
 
