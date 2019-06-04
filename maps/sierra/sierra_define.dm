@@ -33,6 +33,9 @@
 	num_exoplanets = 1
 	planet_size = list(129,129)
 
+	playable = 1
+	recommended_players = 30
+
 	away_site_budget = 3
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 

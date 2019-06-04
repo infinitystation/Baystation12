@@ -121,11 +121,13 @@ SUBSYSTEM_DEF(ticker)
 			config.ooc_allowed = 1
 			to_world("<B>The OOC channel has been globally enabled!</B>")
 
-		Master.SetRunLevel(RUNLEVEL_POSTGAME)
-		end_game_state = END_GAME_READY_TO_END
 		INVOKE_ASYNC(src, .proc/declare_completion)
-//		if(config.allow_map_switching && config.auto_map_vote && GLOB.all_maps.len > 1)
-//			SSvote.initiate_vote(/datum/vote/map/end_game, automatic = 1)
+		Master.SetRunLevel(RUNLEVEL_POSTGAME)
+		if(config.allow_map_switching && config.auto_map_vote && GLOB.all_maps.len > 1)
+			spawn(2 SECONDS)
+				SSvote.initiate_vote(/datum/vote/map, automatic = 1)
+		else
+			end_game_state = END_GAME_READY_TO_END
 
 	else if(mode_finished && (end_game_state <= END_GAME_NOT_OVER))
 		end_game_state = END_GAME_MODE_FINISH_DONE

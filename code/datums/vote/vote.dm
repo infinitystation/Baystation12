@@ -11,6 +11,7 @@
 
 	var/start_time
 	var/time_remaining
+	var/time_set
 	var/status = VOTE_STATUS_PREVOTE
 
 	var/list/result                // The results; format is list(choice = votes).
@@ -49,13 +50,14 @@
 
 /datum/vote/proc/start_vote()
 	start_time = world.time
+	time_set = (time_set ? time_set : config.vote_period) SECONDS
+	time_remaining = time_set
 	status = VOTE_STATUS_ACTIVE
-	time_remaining = round(config.vote_period/10)
 
 	var/text = get_start_text()
 
 	log_vote(text)
-	to_world("<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=\ref[SSvote];vote_panel=1'>here</a> to place your votes.\nYou have [config.vote_period/10] seconds to vote.</font>")
+	to_world("<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=\ref[SSvote];vote_panel=1'>here</a> to place your votes.\nYou have [time_set/10] seconds to vote.</font>")
 	to_world(sound('sound/ambience/alarm4.ogg', repeat = 0, wait = 0, volume = 50, channel = GLOB.vote_sound_channel))
 
 /datum/vote/proc/get_start_text()
@@ -138,7 +140,7 @@
 /datum/vote/Process()
 	if(status == VOTE_STATUS_ACTIVE)
 		if(time_remaining > 0)
-			time_remaining = round((start_time + config.vote_period - world.time)/10)
+			time_remaining = round((start_time + time_set - world.time)/10)
 			return VOTE_PROCESS_ONGOING
 		else
 			status = VOTE_STATUS_COMPLETE

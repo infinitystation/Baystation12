@@ -8,3 +8,13 @@
 		send2mainirc("Производится обновление сервера.")
 		game_log("SERVER", "Запущено обновление сервера. ")
 		shell("update.bat")
+
+/datum/controller/subsystem/ticker/proc/update_map(New_Map)
+	if(shell("update_map.bat") == 0)
+		send2mainirc("Следующей картой будет [New_Map]")
+		log_and_message_admins("Компилирование карты завершено. Следующей картой будет - [New_Map].")
+	else
+		log_and_message_admins("Ошибка в компилировании карты!")
+
+	if(GAME_STATE == RUNLEVEL_POSTGAME)
+		end_game_state = END_GAME_AWAITING_TICKETS

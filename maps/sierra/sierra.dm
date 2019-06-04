@@ -1,7 +1,5 @@
 #if !defined(using_map_DATUM)
 
-	#include "sierra_define.dm"
-
 	#include "sierra_announcements.dm"
 	#include "sierra_antagonism.dm"
 	#include "sierra_areas.dm"

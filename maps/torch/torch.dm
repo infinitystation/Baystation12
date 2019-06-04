@@ -1,7 +1,5 @@
 #if !defined(using_map_DATUM)
 
-	#include "torch_define.dm"
-
 	#include "torch_announcements.dm"
 	#include "torch_antagonism.dm"
 	#include "torch_areas.dm"

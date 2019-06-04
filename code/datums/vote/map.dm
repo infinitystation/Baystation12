@@ -1,33 +1,33 @@
 /datum/vote/map
 	name = "map"
+	manual_allowed = 0
+	time_set = 60
+	additional_header = "<td align = 'center'><b>Recommended Players</b></td></tr>"
 
 /datum/vote/map/can_run(mob/creator, automatic)
-	if(!config.allow_map_switching)
-		return FALSE
-	if(!automatic && !is_admin(creator))
-		return FALSE // Must be an admin.
-	return ..()
+	if(automatic)
+		return TRUE
 
-/datum/vote/map/setup_vote()
-	for(var/name in GLOB.all_maps)
-		choices += name
-	..()
+/datum/vote/map/setup_vote(mob/creator, automatic)
+	SSticker.end_game_state = END_GAME_AWAITING_MAP
+	initiator = (!automatic && istype(creator)) ? creator.ckey : "the server"
+	choices += GLOB.playable_maps
+	for(var/datum/map/M in choices)
+		display_choices[M] = M.full_name
+		additional_text[M] ="<td align = 'center'>~[M.recommended_players]</td>"
+	choices += "extend"
+	display_choices["extend"] = "Продлить эту карту"
 
 /datum/vote/map/report_result()
 	if(..())
 		return 1
-	var/datum/map/M = GLOB.all_maps[result[1]]
-	fdel("use_map")
-	text2file(M.path, "use_map")
+	if(result[1] == "extend")
+		log_game("Игроки выбрали продление текущей карты.")
+		return
 
-//Used by the ticker.
-/datum/vote/map/end_game
-	manual_allowed = 0
-
-/datum/vote/map/end_game/report_result()
-	SSticker.end_game_state = END_GAME_AWAITING_MAP
-	. = ..()
-
-/datum/vote/map/end_game/start_vote()
-	SSticker.end_game_state = END_GAME_READY_TO_END
-	..()
+	var/datum/map/M = result[1]
+	fdel("maps/_map_in_use.dm")
+	text2file("#include \"[M.path]/[M.path].dm\"", "maps/_map_in_use.dm")
+	if(!SSticker.update_server)
+		SSvote.reset()
+		SSticker.update_map(M.name)

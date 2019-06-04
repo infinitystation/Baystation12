@@ -13,8 +13,6 @@
 	company_short = "LC"
 	overmap_event_areas = 11
 
-	station_levels = list(1,2,3)
-	contact_levels = list(1,2,3)
 	player_levels = list(1,2,3)
 	admin_levels = list(4)
 
@@ -32,6 +30,10 @@
 	default_spawn = "Cryogenic Storage"
 	use_overmap = 1
 	num_exoplanets = 0
+
+	playable = 1
+	recommended_players = 10
+
 	away_site_budget = 2
 	welcome_sound = 'sound/effects/cowboysting.ogg'
 
