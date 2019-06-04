@@ -24,15 +24,13 @@
 
 /datum/uplink_item/item/visible_weapons/energy_sword
 	name = "Energy Sword"
-	item_cost = 50
-	antag_costs = list(MODE_MERCENARY = 40)
+	item_cost = 35
 	path = /obj/item/weapon/melee/energy/sword
 
 /datum/uplink_item/item/visible_weapons/silenced
 	name = "Silenced Holdout Pistol"
 	desc = "Holdout pistol with silencer kit and ammunition."
-	item_cost = 25
-	antag_costs = list(MODE_MERCENARY = 15)
+	item_cost = 15
 	path = /obj/item/weapon/storage/box/syndie_kit/silenced
 
 /datum/uplink_item/item/badassery/money_cannon
@@ -56,7 +54,7 @@
 /datum/uplink_item/item/visible_weapons/revolver
 	name = "Revolver 'Colt'"
 	desc = "Magnum revolver, with ammunition."
-	item_cost = 56
+	item_cost = 40
 	antag_costs = list(MODE_MERCENARY = 32)
 	path = /obj/item/weapon/storage/backpack/satchel/syndie_kit/revolver
 
@@ -75,16 +73,15 @@
 
 /datum/uplink_item/item/visible_weapons/assaultrifle
 	name = "Assault Rifle"
-	item_cost = 100
-	antag_costs = list(MODE_MERCENARY = 80)
+	item_cost = 80
 	path = /obj/item/weapon/gun/projectile/automatic/assault_rifle
 	antag_roles = list(MODE_MERCENARY)
 
 /datum/uplink_item/item/visible_weapons/advanced_energy_gun
 	name = "Advanced Energy Gun"
-	item_cost = 80
-	antag_costs = list(MODE_MERCENARY = 60)
+	item_cost = 60
 	path = /obj/item/weapon/gun/energy/gun/nuclear
+	antag_roles = list(MODE_MERCENARY)
 
 /datum/uplink_item/item/visible_weapons/sniper
 	name = "Sniper Carabine"
@@ -120,13 +117,14 @@
 
 /datum/uplink_item/item/visible_weapons/sawnoff
 	name = "Sawnoff Shotgun"
-	item_cost = 55
+	item_cost = 40
 	path = /obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn
 
 /datum/uplink_item/item/visible_weapons/deagle
 	name = "Magnum Pistol"
 	item_cost = 70
 	path = /obj/item/weapon/gun/projectile/pistol/magnum_pistol
+	antag_roles = list(MODE_MERCENARY)
 
 /datum/uplink_item/item/visible_weapons/sigsauer
 	name = "Military Pistol"
@@ -164,5 +162,5 @@
 
 /datum/uplink_item/item/visible_weapons/harpoonbomb
 	name = "Explosive Harpoon"
-	item_cost = 12
+	item_cost = 30
 	path = /obj/item/weapon/material/harpoon/bomb
