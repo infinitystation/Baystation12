@@ -23,6 +23,7 @@ SUBSYSTEM_DEF(ticker)
 	var/delay_notified = 0          //Spam prevention.
 	var/restart_timeout = 1 MINUTE
 
+	var/scheduled_map_change = 0
 	var/update_server = 0
 	var/force_ending = 0            //Overriding this variable will force game end. Can be used for build update or adminbuse.
 
@@ -162,6 +163,8 @@ SUBSYSTEM_DEF(ticker)
 			if(restart_timeout <= 0)
 				if(update_server)
 					update_server()
+				else if(scheduled_map_change)
+					shell("compile_and_run")
 				else
 					world.Reboot()
 			if(delay_end)

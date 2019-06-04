@@ -11,10 +11,11 @@
 
 /datum/controller/subsystem/ticker/proc/update_map(New_Map)
 	if(shell("update_map.bat") == 0)
-		send2mainirc("Следующей картой будет [New_Map]")
+		send2mainirc("Следующей картой будет - [New_Map]!")
 		log_and_message_admins("Компилирование карты завершено. Следующей картой будет - [New_Map].")
 	else
-		log_and_message_admins("Ошибка в компилировании карты!")
+		scheduled_map_change = 1
+		log_and_message_admins("Ошибка в компилировании карты! Возпроизведение резервного обновлениЯ в конце раунда! Доложить об ошибке разработчикам!")
 
 	if(GAME_STATE == RUNLEVEL_POSTGAME)
 		end_game_state = END_GAME_AWAITING_TICKETS

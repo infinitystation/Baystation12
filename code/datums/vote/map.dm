@@ -30,4 +30,4 @@
 	text2file("#include \"[M.path]/[M.path].dm\"", "maps/_map_in_use.dm")
 	if(!SSticker.update_server)
 		SSvote.reset()
-		SSticker.update_map(M.name)
+		SSticker.update_map(M.full_name)
