@@ -46,7 +46,7 @@
 		notetext = sanitize_u2a(notetext)
 		log_admin("[key_name(usr)] has added a note to [target_ckey]: [notetext]")
 		message_admins("[key_name_admin(usr)] has added a note to [target_ckey]:<br>[notetext]")
-		send2adminirc("[key_name(usr, include_name = 0)] добавил нотес игроку [target_ckey]: \"[notetext]\"")
+		send2adminirc("[get_key(usr)] добавил нотес игроку [target_ckey]: \"[notetext]\"")
 		show_note(target_ckey)
 
 /proc/remove_note(note_id)
@@ -79,7 +79,7 @@
 	notetext = sanitize_u2a(notetext)
 	log_admin("[key_name(usr)] has removed a note made by [adminckey] from [ckey]: [notetext]")
 	message_admins("[key_name_admin(usr)] has removed a note made by [adminckey] from [ckey]:<br>[notetext]")
-	send2adminirc("[key_name(usr, include_name = 0)] убрал нотес от [adminckey] у игрока [ckey]: \"[notetext]\"")
+	send2adminirc("[get_key(usr)] убрал нотес от [adminckey] у игрока [ckey]: \"[notetext]\"")
 	show_note(ckey)
 
 /proc/edit_note(note_id)
@@ -118,7 +118,7 @@
 			return
 		log_admin("[key_name(usr)] has edited [target_ckey]'s note made by [adminckey] from [old_note] to [new_note]")
 		message_admins("[key_name_admin(usr)] has edited [target_ckey]'s note made by [adminckey] from<br>[old_note]<br>to<br>[new_note]")
-		send2adminirc("[key_name(usr, include_name = 0)] изменил нотес [adminckey] у игрока [target_ckey] с - \"[old_note]\" на - \"[new_note]\"")
+		send2adminirc("[get_key(usr)] изменил нотес [adminckey] у игрока [target_ckey] с - \"[old_note]\" на - \"[new_note]\"")
 		show_note(target_ckey)
 
 /proc/show_note(target_ckey, index, linkless = 0)
