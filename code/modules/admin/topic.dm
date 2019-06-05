@@ -789,8 +789,8 @@
 							msg += ", [job]"
 					add_note(M.ckey, "Banned  from [msg] - [reason]", null, usr.ckey, 0)
 					message_admins("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes", 1)
-					to_world(SPAN_NOTICE("<b>JOBBAN: Администратор [usr.client.ckey] временно заблокировал(а) роли ([msg]) игроку [M]. Причина: [reason]; Срок - [mins] минут.</b>"))
-					send2adminlogirc("Администратор [usr.client.ckey] временно заблокировал(а) роли ([msg]) игроку [M]. Причина: [reason]; Срок - [mins] минут.")
+					to_world(SPAN_NOTICE("<b>JOB-BAN: Администратор [usr.client.key] временно заблокировал(а) роли ([msg]) игроку [key_name(M, include_name = 0)]. Причина: [reason]; Срок - [mins] минут.</b>"))
+					send2adminlogirc("Администратор [usr.client.key] временно заблокировал(а) роли ([msg]) игроку [key_name(M, include_name = 0)]. Причина: [reason]; Срок - [mins] минут.")
 					to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
 					to_chat(M, "<span class='warning'>The reason is: [reason]</span>")
 					to_chat(M, "<span class='warning'>This jobban will be lifted in [mins] minutes.</span>")
@@ -813,8 +813,8 @@
 							else		msg += ", [job]"
 						add_note(M.ckey, "Banned  from [msg] - [reason]", null, usr.ckey, 0)
 						message_admins("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg]", 1)
-						to_world(SPAN_NOTICE("<b>JOBBAN: Администратор [usr.client.ckey] пермаментно заблокировал(а) роли ([msg]) игроку [M]. Причина: [reason]</b>"))
-						send2adminlogirc("Администратор [usr.client.ckey] пермаментно заблокировал(а) роли ([msg]) игроку [M]. Причина: [reason]")
+						to_world(SPAN_NOTICE("<b>JOB-BAN: Администратор [usr.client.key] перманентно заблокировал(а) роли ([msg]) игроку [key_name(M, include_name = 0)]. Причина: [reason]</b>"))
+						send2adminlogirc("Администратор [usr.client.key] перманентно заблокировал(а) роли ([msg]) игроку [key_name(M, include_name = 0)]. Причина: [reason]")
 						to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
 						to_chat(M, "<span class='warning'>The reason is: [reason]</span>")
 						to_chat(M, "<span class='warning'>Jobban can be lifted only upon request.</span>")
