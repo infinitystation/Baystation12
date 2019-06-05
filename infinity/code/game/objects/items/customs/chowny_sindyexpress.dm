@@ -24,7 +24,7 @@
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "chowny_shirt"
 
-/obj/item/clothing/under/shorts
+/obj/item/clothing/under/shorts/chowny
 	name = "Shirt from SindyExpress"
 	desc = "Orders via NTnet in the online store SindyExpress."
 	icon = CUSTOM_ITEM_OBJ
