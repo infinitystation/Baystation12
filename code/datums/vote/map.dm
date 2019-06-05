@@ -23,6 +23,7 @@
 		return 1
 	if(result[1] == "extend")
 		log_game("Игроки выбрали продление текущей карты.")
+		SSticker.end_game_state = END_GAME_AWAITING_TICKETS
 		return
 
 	var/datum/map/M = result[1]
@@ -31,3 +32,5 @@
 	if(!SSticker.update_server)
 		SSvote.reset()
 		SSticker.update_map(M.full_name)
+	else
+		SSticker.end_game_state = END_GAME_AWAITING_TICKETS
