@@ -76,4 +76,4 @@ proc/fix_html(var/t)
 	return replacetext(t, "ÿ", "&#1103;")
 
 proc/sanitize_irc(t)
-	return replacetext(t, "@", "\[@\]")
+	return replacetext(t, "@", "")

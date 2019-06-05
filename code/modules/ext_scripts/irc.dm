@@ -30,7 +30,7 @@
 
 		params["pwd"] = config.comms_password
 		params["chan"] = config.admin_irc
-		params["msg"] = msg
+		params["msg"] = sanitize_irc(msg)
 		params["src_key"] = source.key
 		params["src_char"] = source.mob.real_name || source.mob.name
 		if(!target)
