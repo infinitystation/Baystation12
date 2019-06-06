@@ -1,6 +1,6 @@
 /client/proc/mod_list_add_ass()
 	var/class = "text"
-	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","color","list","edit referenced object","restore to default")
+	var/list/class_input = list("text","path","num","type","reference","mob reference", "icon","file","color","list","edit referenced object","restore to default")
 	if(src.holder)
 		var/datum/marked_datum = holder.marked_datum()
 		if(marked_datum)
@@ -20,6 +20,9 @@
 
 		if("text")
 			var_value = input("Enter new text:","Text") as null|text
+
+		if("path")
+			var_value = text2path(input("Enter new text:","Text") as null|text)
 
 		if("num")
 			var_value = input("Enter new number:","Num") as null|num
@@ -53,7 +56,7 @@
 /client/proc/mod_list_add(var/list/L, atom/O, original_name, objectvar)
 
 	var/class = "text"
-	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","color","edit referenced object","restore to default")
+	var/list/class_input = list("text", "path", "num","type","reference","mob reference", "icon","file","list","color","edit referenced object","restore to default")
 	if(src.holder)
 		var/datum/marked_datum = holder.marked_datum()
 		if(marked_datum)
@@ -73,6 +76,9 @@
 
 		if("text")
 			var_value = input("Enter new text:","Text") as text
+
+		if("path")
+			var_value = text2path(input("Enter new path:","Path") as text)
 
 		if("num")
 			var_value = input("Enter new number:","Num") as num
@@ -214,7 +220,7 @@
 		if(dir)
 			to_chat(usr, "If a direction, direction is: [dir]")
 	var/class = "text"
-	var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","edit referenced object","restore to default")
+	var/list/class_input = list("text","path","num","type","reference","mob reference", "icon","file","list","edit referenced object","restore to default")
 
 	if(src.holder)
 		var/datum/marked_datum = holder.marked_datum()
@@ -262,6 +268,13 @@
 
 		if("text")
 			new_var = input("Enter new text:","Text") as text
+			if(assoc)
+				L[assoc_key] = new_var
+			else
+				L[L.Find(variable)] = new_var
+
+		if("path")
+			new_var = text2path(input("Enter new path:","Path") as text)
 			if(assoc)
 				L[assoc_key] = new_var
 			else
@@ -463,7 +476,7 @@
 					dir = null
 			if(dir)
 				to_chat(usr, "If a direction, direction is: [dir]")
-		var/list/class_input = list("text","num","type","reference","mob reference", "icon","file","list","json","color","edit referenced object","restore to default")
+		var/list/class_input = list("text","path","num","type","reference","mob reference", "icon","file","list","json","color","edit referenced object","restore to default")
 		if(src.holder)
 			var/datum/marked_datum = holder.marked_datum()
 			if(marked_datum)
@@ -498,6 +511,11 @@
 
 		if("text")
 			var/var_new = input("Enter new text:","Text",O.get_variable_value(variable)) as null|text
+			if(var_new==null) return
+			var_value = var_new
+
+		if("path")
+			var/var_new = text2path(input("Enter new path:","Path",O.get_variable_value(variable)) as null|text)
 			if(var_new==null) return
 			var_value = var_new
 
