@@ -115,7 +115,7 @@
 		if(dir)
 			to_chat(usr, "If a direction, direction is: [dir]")
 
-	var/class = input("What kind of variable?","Variable Type",default) as null|anything in list("text",
+	var/class = input("What kind of variable?","Variable Type",default) as null|anything in list("text", "path",
 		"num","type","icon","file","edit referenced object","restore to default")
 
 	if(!class)
@@ -202,6 +202,43 @@
 					for(var/turf/A in world)
 						if (A.type == O.type)
 							A.vars[variable] = O.vars[variable]
+
+		if("path")
+			var/new_value = input("Enter new path:","Path",O.vars[variable]) as text|null
+			if(new_value == null) return
+			O.vars[variable] = text2path(new_value)
+
+			if(method)
+				if(istype(O, /mob))
+					for(var/mob/M in SSmobs.mob_list)
+						if ( istype(M , O.type) )
+							M.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /obj))
+					for(var/obj/A in world)
+						if ( istype(A , O.type) )
+							A.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /turf))
+					for(var/turf/A in world)
+						if ( istype(A , O.type) )
+							A.vars[variable] = O.vars[variable]
+			else
+				if(istype(O, /mob))
+					for(var/mob/M in SSmobs.mob_list)
+						if (M.type == O.type)
+							M.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /obj))
+					for(var/obj/A in world)
+						if (A.type == O.type)
+							A.vars[variable] = O.vars[variable]
+
+				else if(istype(O, /turf))
+					for(var/turf/A in world)
+						if (A.type == O.type)
+							A.vars[variable] = O.vars[variable]
+
 
 		if("num")
 			var/new_value = input("Enter new number:","Num",\
