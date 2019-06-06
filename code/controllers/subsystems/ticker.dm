@@ -164,7 +164,7 @@ SUBSYSTEM_DEF(ticker)
 				if(update_server)
 					update_server()
 				else if(scheduled_map_change)
-					shell("compile_and_run")
+					shell("compile_and_run.bat")
 				else
 					world.Reboot()
 			if(delay_end)
