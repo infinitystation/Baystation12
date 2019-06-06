@@ -34,13 +34,13 @@
 				P.visible_message("<B>[H]</B> клан[ya]етс[ya] <B>[P]</B>.")
 
 		else if (href_list["interaction"] == "pet")
-			if(((!istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands && Adjacent(P))
+			if(((!istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands && H.Adjacent(P))
 				H.visible_message("<B>[H]</B> [pick("гладит", "поглаживает")] <B>[P]</B>.")
 				if (istype(P.loc, /obj/structure/closet))
 					P.visible_message("<B>[H]</B> [pick("гладит", "поглаживает")] <B>[P]</B>.")
 
 		else if (href_list["interaction"] == "scratch")
-			if(((!istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands && Adjacent(P))
+			if(((!istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands && H.Adjacent(P))
 				if(H.zone_sel.selecting == BP_HEAD && !((P.species.name == SPECIES_YEOSA) || (P.species.name == SPECIES_EROSAN) || (P.species.name == SPECIES_UNATHI)))
 					H.visible_message("<B>[H]</B> [pick("чешет за ухом", "чешет голову")] <B>[P]</B>.")
 					if (istype(P.loc, /obj/structure/closet))
@@ -51,12 +51,12 @@
 						P.visible_message("<B>[H]</B> [pick("чешет")] <B>[P]</B>.")
 
 		else if (href_list["interaction"] == "give")
-			if(Adjacent(P))
+			if(H.Adjacent(P))
 				if (((!istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
 					H.give(P)
 
 		else if (href_list["interaction"] == "kiss")
-			if( ((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)))
+			if( ((H.Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)))
 				H.visible_message("<B>[H]</B> целует <B>[P]</B>.")
 				if (istype(P.loc, /obj/structure/closet))
 					P.visible_message("<B>[H]</B> целует <B>[P]</B>.")
@@ -64,7 +64,7 @@
 				H.visible_message("<B>[H]</B> посылает <B>[P]</B> воздушный поцелуй.")
 
 		else if (href_list["interaction"] == "lick")
-			if( ((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && mouthfree && mouthfree_p)
+			if( ((H.Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && mouthfree && mouthfree_p)
 				if (prob(90))
 					H.visible_message("<B>[H]</B> [H.gender == FEMALE ? "лизнула" : "лизнул"] <B>[P]</B> в щеку.")
 					if (istype(P.loc, /obj/structure/closet))
@@ -75,27 +75,27 @@
 						P.visible_message("<B>[H]</B> особо тщательно [H.gender == FEMALE ? "лизнула" : "лизнул"] <B>[P]</B>.")
 
 		else if (href_list["interaction"] == "hug")
-			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
+			if(((H.Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
 				H.visible_message("<B>[H]</B> обнимает <B>[P]</B>.")
 				if (istype(P.loc, /obj/structure/closet))
 					P.visible_message("<B>[H]</B> обнимает <B>[P]</B>.")
 				playsound(loc, 'infinity/sound/interactions/hug.ogg', 50, 1, -1)
 
 		else if (href_list["interaction"] == "cheer")
-			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
+			if(((H.Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
 				H.visible_message("<B>[H]</B> похлопывает <B>[P]</B> по плечу.")
 				if (istype(P.loc, /obj/structure/closet))
 					P.visible_message("<B>[H]</B> похлопывает <B>[P]</B> по плечу.")
 
 		else if (href_list["interaction"] == "five")
-			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
+			if(((H.Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
 				H.visible_message("<B>[H]</B> даёт <B>[P]</B> п[ya]ть.")
 				if (istype(P.loc, /obj/structure/closet))
 					P.visible_message("<B>[H]</B> даёт <B>[P]</B> п[ya]ть.")
 				playsound(loc, 'infinity/sound/interactions/slap.ogg', 50, 1, -1)
 
 		else if (href_list["interaction"] == "handshake")
-			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands && hashands_p)
+			if(((H.Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands && hashands_p)
 				H.visible_message("<B>[H]</B> жмёт руку <B>[P]</B>.")
 				if (istype(P.loc, /obj/structure/closet))
 					P.visible_message("<B>[H]</B> жмёт руку <B>[P]</B>.")
@@ -106,14 +106,14 @@
 				P.visible_message("<B>[H]</B> приветливо кивнул[H.gender == FEMALE ? "а" : ""] в сторону <B>[P]</B>.")
 
 		else if (href_list["interaction"] == "wave")
-			if (!(Adjacent(P)) && hashands)
+			if (!(H.Adjacent(P)) && hashands)
 				H.visible_message("<B>[H]</B> приветливо машет <B>[P]</B>.")
 			else
 				H.visible_message("<B>[H]</B> приветливо кивнул[H.gender == FEMALE ? "а" : ""] в сторону <B>[P]</B>.")
 
 
 		else if (href_list["interaction"] == "slap")
-			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
+			if(((H.Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
 				H.visible_message("<span class='danger'>[H] дает [P] пощечину!</span>")
 				if (istype(P.loc, /obj/structure/closet))
 					P.visible_message("<span class='danger'>[H] дает [P] пощечину!</span>")
@@ -130,7 +130,7 @@
 					P.visible_message("<span class='danger'>[H] показывает [P] средний палец!</span>")
 
 		else if (href_list["interaction"] == "knock")
-			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
+			if(((H.Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
 				H.visible_message("<span class='danger'>[H] дает [P] подзатыльник!</span>")
 				if (istype(P.loc, /obj/structure/closet))
 					P.visible_message("<span class='danger'>[H] дает [P] подзатыльник!</span>")
@@ -141,7 +141,7 @@
 				H.do_attack_animation(P)
 
 		else if (href_list["interaction"] == "spit")
-			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && mouthfree)
+			if(((H.Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && mouthfree)
 				H.visible_message("<span class='danger'>[H] плюёт в [P]!</span>")
 				if (istype(P.loc, /obj/structure/closet))
 					P.visible_message("<span class='danger'>[H] плюёт в [P]!</span>")
@@ -159,7 +159,7 @@
 					P.visible_message("<span class='danger'>[H] показывает [P] [ya]зык!</span>")
 
 		else if (href_list["interaction"] == "pull")
-			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands && !H.restrained())
+			if(((H.Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands && !H.restrained())
 				if (prob(30))
 					H.visible_message("<span class='danger'>[H] дёргает [P] за хвост!</span>")
 					var/obj/item/organ/external/groin/O = P.get_organ(BP_GROIN)

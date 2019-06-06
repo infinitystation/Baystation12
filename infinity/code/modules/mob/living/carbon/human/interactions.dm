@@ -2,13 +2,9 @@
 *******Interactions code by HONKERTRON feat TestUnit********
 ***********************************/
 
-/mob/living/carbon/human/MouseDrop_T(mob/M as mob, mob/user as mob)
-	if(M == src || src == usr || M != usr)		return
-	if(usr.restrained())		return
-
-	var/mob/living/carbon/human/H = usr
-	H.partner = src
-	make_interaction(machine)
+/mob/living/carbon/human/MouseDrop(mob/M as mob)
+	..()
+	interact(M)
 
 /mob/proc/make_interaction()
 	return
