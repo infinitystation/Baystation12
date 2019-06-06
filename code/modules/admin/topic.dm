@@ -198,7 +198,7 @@
 			log_admin("[key_name(usr)] toggled the [new_permission] permission of [adm_ckey]")
 			log_permissions("[key_name(usr)] toggled the [new_permission] permission of [adm_ckey]")
 			log_admin_permission_modification(adm_ckey, permissionlist[new_permission])
-			send2adminirc("[get_key(usr)] добавил флаг: \"[new_permission]\" игроку: \"[adm_ckey]\"")
+			send2adminirc("[get_key(usr)] переключил флаг: \"[new_permission]\" игроку: \"[adm_ckey]\"")
 
 		edit_admin_permissions()
 
