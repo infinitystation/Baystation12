@@ -22,7 +22,7 @@
 			var_value = input("Enter new text:","Text") as null|text
 
 		if("path")
-			var_value = text2path(input("Enter new text:","Text") as null|text)
+			var_value = text2path(input("Enter new path:","Path") as null|text)
 
 		if("num")
 			var_value = input("Enter new number:","Num") as null|num
