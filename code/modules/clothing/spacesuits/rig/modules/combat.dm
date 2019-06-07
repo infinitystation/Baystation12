@@ -19,17 +19,17 @@
 	icon_state = "flash"
 	interface_name = "mounted flash"
 	interface_desc = "Disorientates your target by blinding them with a bright light."
-	device_type = /obj/item/device/flash
+	device = /obj/item/device/flash
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 3, TECH_ENGINEERING = 5)
 
 /obj/item/rig_module/device/flash/advanced
 	name = "advanced mounted flash"
-	device_type = /obj/item/device/flash/advanced
+	device = /obj/item/device/flash/advanced
 	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 3, TECH_ENGINEERING = 5)
 
 /obj/item/rig_module/grenade_launcher
 	name = "mounted grenade launcher"
-	desc = "A shoulder-mounted micro-explosive dispenser."
+	desc = "A forearm-mounted micro-explosive dispenser."
 	selectable = 1
 	icon_state = "grenadelauncher"
 	use_power_cost = 2 KILOWATTS	// 2kJ per shot, a mass driver that propels the grenade?
@@ -160,7 +160,7 @@
 	. = ..()
 	if(ispath(gun))
 		gun = new gun(src)
-		gun.has_safety = FALSE
+		gun.canremove = 0
 
 /obj/item/rig_module/mounted/engage(atom/target)
 
@@ -188,13 +188,13 @@
 /obj/item/rig_module/mounted/egun
 
 	name = "mounted energy gun"
-	desc = "A forearm-mounted energy projector."
+	desc = "A shoulder-mounted energy projector."
 	icon_state = "egun"
 
 	suit_overlay_active = "mounted-taser"
 
 	interface_name = "mounted energy gun"
-	interface_desc = "A forearm-mounted suit-powered energy gun."
+	interface_desc = "A shoulder-mounted suit-powered energy gun."
 	origin_tech = list(TECH_POWER = 6, TECH_COMBAT = 6, TECH_ENGINEERING = 6)
 
 	gun = /obj/item/weapon/gun/energy/gun/mounted
@@ -202,14 +202,14 @@
 /obj/item/rig_module/mounted/taser
 
 	name = "mounted taser"
-	desc = "A palm-mounted nonlethal energy projector."
+	desc = "A shoulder-mounted nonlethal energy projector."
 	icon_state = "taser"
 	usable = 0
 
 	suit_overlay_active = "mounted-taser"
 
 	interface_name = "mounted taser"
-	interface_desc = "A palm-mounted, cell-powered taser."
+	interface_desc = "A shoulder-mounted, cell-powered taser."
 	origin_tech = list(TECH_POWER = 5, TECH_COMBAT = 5, TECH_ENGINEERING = 6)
 
 	gun = /obj/item/weapon/gun/energy/taser/mounted
@@ -217,13 +217,13 @@
 /obj/item/rig_module/mounted/plasmacutter
 
 	name = "mounted plasma cutter"
-	desc = "A knee-mounted plasma cutter. Don't question it."
+	desc = "A forearm-mounted plasma cutter."
 	icon_state = "plasmacutter"
 
 	suit_overlay_active = "plasmacutter"
 
 	interface_name = "mounted plasma cutter"
-	interface_desc = "A knee-mounted suit-powered plasma cutter. Don't question it."
+	interface_desc = "A forearm-mounted suit-powered plasma cutter."
 	origin_tech = list(TECH_MATERIAL = 5, TECH_PHORON = 4, TECH_ENGINEERING = 7, TECH_COMBAT = 5)
 
 	gun = /obj/item/weapon/gun/energy/plasmacutter/mounted
@@ -304,18 +304,6 @@
 	var/obj/item/weapon/melee/energy/blade/blade = new(M)
 	blade.creator = M
 	M.put_in_hands(blade)
-
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/obj/item/weapon/rig/light/ninja/rig
-		for(var/obj/item/weapon/rig/R in H.back)
-			if(istype(R, /obj/item/weapon/rig/light/ninja))
-				rig = R
-		if(rig)
-			for(var/obj/item/rig_module/stealth_field/S in rig.installed_modules)
-				if(S && H.is_cloaked())
-					S.deactivate()
-
 
 /obj/item/rig_module/mounted/energy_blade/deactivate()
 

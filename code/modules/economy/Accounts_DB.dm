@@ -17,7 +17,7 @@
 			return 0
 		if(access_cent_captain in held_card.access)
 			return 2
-		if((access_hop in held_card.access) || (access_captain in held_card.access))
+		else if(access_hop in held_card.access || access_captain in held_card.access)
 			return 1
 
 	proc/create_transation(target, reason, amount)
@@ -85,10 +85,10 @@
 			trx.Add(list(list(\
 				"date" = T.date, \
 				"time" = T.time, \
-				"target_name" = T.target_name, \
+				"target_name" = T.get_target_name(), \
 				"purpose" = T.purpose, \
 				"amount" = T.amount, \
-				"source_terminal" = T.source_terminal)))
+				"source_terminal" = T.get_source_name())))
 
 		if (trx.len > 0)
 			data["transactions"] = trx
@@ -134,14 +134,13 @@
 				starting_funds = Clamp(starting_funds, 0, station_account.money)	// Not authorized to put the station in debt.
 				starting_funds = min(starting_funds, fund_cap)						// Not authorized to give more than the fund cap.
 
-				create_account(account_name, starting_funds, src)
+				var/datum/money_account/new_account = create_account("[account_name]'s Personal Account", account_name, starting_funds, ACCOUNT_TYPE_PERSONAL, src)
 				if(starting_funds > 0)
 					//subtract the money
 					station_account.money -= starting_funds
 
 					//create a transaction log entry
-					var/trx = create_transation(account_name, "New account activation", "([starting_funds])")
-					station_account.transaction_log.Add(trx)
+					new_account.deposit(starting_funds, "New account activation", machine_id)
 
 					creating_new_account = 0
 					ui.close()
@@ -173,14 +172,7 @@
 
 			if("revoke_payroll")
 				var/funds = detailed_account_view.money
-				var/account_trx = create_transation(station_account.owner_name, "Revoke payroll", "([funds])")
-				var/station_trx = create_transation(detailed_account_view.owner_name, "Revoke payroll", funds)
-
-				station_account.money += funds
-				detailed_account_view.money = 0
-
-				detailed_account_view.transaction_log.Add(account_trx)
-				station_account.transaction_log.Add(station_trx)
+				detailed_account_view.transfer(station_account, funds, "Revocation of payroll")
 
 				callHook("revoke_payroll", list(detailed_account_view))
 
@@ -213,10 +205,10 @@
 						text += {"
 									<tr>
 										<td>[T.date] [T.time]</td>
-										<td>[T.target_name]</td>
+										<td>[T.get_target_name()]</td>
 										<td>[T.purpose]</td>
 										<td>[T.amount]</td>
-										<td>[T.source_terminal]</td>
+										<td>[T.get_source_name()]</td>
 									</tr>
 							"}
 

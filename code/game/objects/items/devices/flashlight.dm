@@ -11,7 +11,7 @@
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 
-	matter = list(MATERIAL_STEEL = 50,MATERIAL_GLASS = 20)
+	matter = list(MATERIAL_PLASTIC = 50, MATERIAL_GLASS = 20)
 
 	action_button_name = "Toggle Flashlight"
 	var/on = FALSE
@@ -182,10 +182,10 @@
 	item_state = "maglight"
 	force = 10
 	attack_verb = list ("smacked", "thwacked", "thunked")
-	matter = list(MATERIAL_STEEL = 200,MATERIAL_GLASS = 50)
+	matter = list(MATERIAL_ALUMINIUM = 200, MATERIAL_GLASS = 50)
 	hitsound = "swing_hit"
-	flashlight_max_bright = 0.6
-	flashlight_outer_range = 4
+	flashlight_max_bright = 0.5
+	flashlight_outer_range = 5
 
 /******************************Lantern*******************************/
 /obj/item/device/flashlight/lantern
@@ -268,7 +268,7 @@
 	activation_sound = 'sound/effects/flare.ogg'
 	flashlight_flags = FLASHLIGHT_SINGLE_USE
 
-	flashlight_max_bright = 0.75
+	flashlight_max_bright = 0.8
 	flashlight_inner_range = 0.1
 	flashlight_outer_range = 5
 
@@ -412,12 +412,11 @@
 	on = TRUE //Bio-luminesence has one setting, on.
 	flashlight_flags = FLASHLIGHT_ALWAYS_ON
 
-	flashlight_max_bright = 0.75
+	flashlight_max_bright = 1
 	flashlight_inner_range = 0.1
-	flashlight_outer_range = 6
+	flashlight_outer_range = 5
 
 /obj/item/device/flashlight/slime/New()
-	set_light(flashlight_max_bright, flashlight_inner_range, flashlight_outer_range, 2, light_color)
 	..()
 
 //hand portable floodlights for emergencies. Less bulky than the large ones. But also less light. Unused green variant in the sheet.
@@ -430,33 +429,11 @@
 	item_state = "lamp"
 	on = 0
 	w_class = ITEM_SIZE_LARGE
-	obj_flags = OBJ_FLAG_CONDUCTIBLE
+	obj_flags = OBJ_FLAG_CONDUCTIBLE | OBJ_FLAG_ROTATABLE
 
-	flashlight_max_bright = 0.75
+	flashlight_max_bright = 1
 	flashlight_inner_range = 3
 	flashlight_outer_range = 7
-
-
-/obj/item/device/flashlight/lamp/floodlamp/verb/rotate()
-	set name = "Rotate Light"
-	set category = "Object"
-	set src in oview(1)
-
-	if(!usr || !Adjacent(usr))
-		return
-
-	if(usr.stat == DEAD)
-		if(!round_is_spooky())
-			to_chat(src, "<span class='warning'>The veil is not thin enough for you to do that.</span>")
-			return
-	else if(usr.incapacitated())
-		return
-
-	src.set_dir(turn(src.dir, 90))
-	return
-
-/obj/item/device/flashlight/lamp/floodlamp/AltClick()
-	rotate()
 
 /obj/item/device/flashlight/lamp/floodlamp/green
 	icon_state = "greenfloodlamp"
