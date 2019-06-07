@@ -136,6 +136,10 @@ var/list/escape_pods_by_name = list()
 		armed = 1
 		open_door()
 
+datum/computer/file/embedded_program/docking/simple/escape_pod_berth/proc/unarm()
+	if(armed)
+		armed = 0
+		close_door()
 
 /datum/computer/file/embedded_program/docking/simple/escape_pod_berth/receive_user_command(command)
 	if (!armed)
