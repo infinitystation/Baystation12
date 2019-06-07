@@ -4,7 +4,8 @@
 
 /mob/living/carbon/human/MouseDrop(mob/M as mob)
 	..()
-	interact(M)
+	if(usr == src && usr != M)
+		interact(M)
 
 /mob/proc/make_interaction()
 	return
