@@ -361,13 +361,13 @@
 //Smuggler's satchel
 /obj/item/weapon/storage/backpack/satchel/flat
 	name = "\improper Smuggler's satchel"
-	desc = "A very slim satchel that can easily fit into tight spaces."
+	desc = "A very slim satchel."
 	icon_state = "satchel-flat"
 	item_state = "satchel-norm"
 	level = 1
-	w_class = ITEM_SIZE_NORMAL //Can fit in backpacks itself.
+	w_class = ITEM_SIZE_LARGE //Can fit in backpacks itself.
 	storage_slots = 5
-	max_w_class = ITEM_SIZE_SMALL
+	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = 15
 	cant_hold = list(/obj/item/weapon/storage/backpack/satchel/flat) //muh recursive backpacks
 	startswith = list(
