@@ -52,7 +52,7 @@
 	icon_state = "chowny_black_bracelet"
 
 /obj/item/weapon/storage/box/large/chowny
-	name = "SindyExpress postbox"
+	name = "SindyExpress postbox for Alice Goldstain"
 	startswith = list(
 		/obj/item/clothing/shoes/jackboots/chowny,
 		/obj/item/clothing/ears/earmuffs/headphones/chowny,
