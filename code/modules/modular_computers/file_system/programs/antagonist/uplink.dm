@@ -32,8 +32,6 @@
 	if(istype(computer) && istype(prog))
 		if(computer.hidden_uplink && prog.password)
 			if(prog.authenticated)
-				if(!CanInteract(user, state))
-					return
 				if(alert(user, "Resume or close and secure?", name, "Resume", "Close") == "Resume")
 					computer.hidden_uplink.trigger(user)
 					return

@@ -8585,7 +8585,6 @@
 	},
 /area/alien)
 "auD" = (
-/obj/machinery/resleever,
 /turf/simulated/floor/shuttle/white,
 /area/shuttle/administration/centcom)
 "auE" = (
@@ -9751,7 +9750,6 @@
 	},
 /area/centcom/control)
 "axA" = (
-/obj/machinery/resleever,
 /turf/unsimulated/floor{
 	icon_state = "white"
 	},
@@ -22070,7 +22068,7 @@
 /area/holodeck/source_volleyball)
 "dTZ" = (
 /obj/structure/table/holo_woodentable,
-/obj/item/weapon/reagent_containers/food/drinks/coffeecup{
+/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup{
 	holographic = 1
 	},
 /turf/simulated/floor/holofloor/wood,

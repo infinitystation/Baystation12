@@ -9212,7 +9212,7 @@
 "tI" = (
 /obj/structure/table/rack,
 /obj/random/solgov,
-/obj/item/weapon/reagent_containers/food/drinks/coffeecup/SCG{
+/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/SCG{
 	pixel_x = 11;
 	pixel_y = 1
 	},
@@ -11699,7 +11699,7 @@
 /area/crew_quarters/heads/office/co)
 "ze" = (
 /obj/structure/table/woodentable,
-/obj/item/weapon/reagent_containers/food/drinks/coffeecup/SCG{
+/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/SCG{
 	pixel_x = -5;
 	pixel_y = 5
 	},
@@ -14380,7 +14380,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/weapon/reagent_containers/food/drinks/coffeecup/SCG{
+/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/SCG{
 	pixel_x = 3;
 	pixel_y = -11
 	},
@@ -14422,7 +14422,7 @@
 	dir = 4
 	},
 /obj/structure/table/glass,
-/obj/item/weapon/reagent_containers/food/drinks/coffeecup/NT{
+/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/NT{
 	pixel_x = 15;
 	pixel_y = 1
 	},
@@ -15328,7 +15328,7 @@
 	pixel_y = 3
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/item/weapon/reagent_containers/food/drinks/coffeecup/NT{
+/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/NT{
 	pixel_x = 11;
 	pixel_y = 1
 	},
@@ -15553,7 +15553,7 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
 	},
-/obj/item/weapon/reagent_containers/food/drinks/coffeecup/SCG{
+/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/SCG{
 	pixel_x = 11;
 	pixel_y = 1
 	},
@@ -15686,7 +15686,7 @@
 	pixel_y = 7
 	},
 /obj/item/weapon/pen,
-/obj/item/weapon/reagent_containers/food/drinks/coffeecup/SCG{
+/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/SCG{
 	pixel_x = 8;
 	pixel_y = -3
 	},
@@ -15780,7 +15780,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/item/weapon/reagent_containers/food/drinks/coffeecup/SCG{
+/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/SCG{
 	pixel_x = -5;
 	pixel_y = 5
 	},

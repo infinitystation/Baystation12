@@ -20,16 +20,6 @@
 		else if(access_hop in held_card.access || access_captain in held_card.access)
 			return 1
 
-	proc/create_transation(target, reason, amount)
-		var/datum/transaction/T = new()
-		T.target_name = target
-		T.purpose = reason
-		T.amount = amount
-		T.date = stationdate2text()
-		T.time = stationtime2text()
-		T.source_terminal = machine_id
-		return T
-
 	proc/accounting_letterhead(report_name)
 		return {"
 			<center><h1><b>[report_name]</b></h1></center>
@@ -221,7 +211,6 @@
 					P.SetName("financial account list")
 					text = {"
 						[accounting_letterhead("Financial Account List")]
-
 						<table>
 							<thead>
 								<tr>
