@@ -8,7 +8,7 @@
 /obj/structure/closet/medical_wall/filled/engineering/WillContain()
 	return list(
 		/obj/item/weapon/storage/firstaid/regular,
-		/obj/item/weapon/reagent_containers/hypospray/autoinjector/rad = 4,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/antirad = 4,
 		/obj/item/stack/medical/splint,
 		/obj/random/medical/lite = 6)
 
