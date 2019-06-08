@@ -15,6 +15,7 @@
 	burn_mod =  1.15
 	flash_mod = 1.4
 	gluttonous = GLUT_TINY
+	hidden_from_codex = FALSE
 	health_hud_intensity = 1.75
 
 	min_age = 19

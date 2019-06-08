@@ -158,21 +158,10 @@ var/list/ai_verbs_default = list(
 
 	//Languages
 	add_language("Robot Talk", 1)
-	add_language(LANGUAGE_GALCOM, 1)
-	add_language(LANGUAGE_EAL, 1)
-	add_language(LANGUAGE_HUMAN_EURO, 1)
-	add_language(LANGUAGE_HUMAN_ARABIC, 1)
-	add_language(LANGUAGE_HUMAN_CHINESE, 1)
-	add_language(LANGUAGE_HUMAN_IBERIAN, 1)
-	add_language(LANGUAGE_HUMAN_INDIAN, 1)
-	add_language(LANGUAGE_HUMAN_RUSSIAN, 1)
-	add_language(LANGUAGE_UNATHI, 1)
-	add_language(LANGUAGE_SIIK_MAAS, 1)
-	add_language(LANGUAGE_SKRELLIAN, 1)
-	add_language(LANGUAGE_RESOMI, 1)
-	add_language(LANGUAGE_GUTTER, 1)
-	add_language(LANGUAGE_SPACER, 1)
-	add_language(LANGUAGE_SIGN, 0)
+	for(var/lan in ALL_NON_ANTAG_LANGUAGES)
+		add_language(lan, 1)
+	for(var/lan in SIGN_LANGUAGES)
+		add_language(lan, 0)
 
 	if(!safety)//Only used by AIize() to successfully spawn an AI.
 		if (!B)//If there is no player/brain inside.
@@ -220,7 +209,7 @@ var/list/ai_verbs_default = list(
 
 	if (GLOB.malf && !(mind in GLOB.malf.current_antagonists))
 		show_laws()
-		to_chat(src, "<b>Данные законы могут быть изменены другими игроками или в том случае, если вы &#255;вл&#255;етесь сбойным ИИ.</b>")
+		to_chat(src, "<b>Данные законы могут быть изменены другими игроками, случайными событиями или в том случае, если вы &#255;вл&#255;етесь сбойным ИИ.</b>")
 //		to_chat(src, "<span class='danger'><B>Внимание! Разработчиками Искусственного Интеллекта были введены специальные протоколы! Ознакомление с оными возможно на следующей странице: https://wiki.infinity-ss13.info/index.php?title=SCG_AI_Rules_and_Regulations</b></span>")
 
 	job = "AI"

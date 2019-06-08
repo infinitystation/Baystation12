@@ -12963,7 +12963,7 @@
 "Hz" = (
 /obj/structure/table/glass,
 /obj/item/weapon/folder/envelope/blanks,
-/obj/item/weapon/reagent_containers/food/drinks/coffeecup/NT{
+/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/NT{
 	pixel_x = 15;
 	pixel_y = 1
 	},

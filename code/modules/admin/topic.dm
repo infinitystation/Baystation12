@@ -133,6 +133,7 @@
 
 				message_admins("[key_name_admin(usr)] removed [adm_ckey] from the admins list")
 				log_admin("[key_name(usr)] removed [adm_ckey] from the admins list")
+				send2adminirc("[get_key(usr)] удалил ранг у игрока: \"[adm_ckey]\"")
 				log_admin_rank_modification(adm_ckey, "Removed")
 
 		else if(task == "rank")
@@ -179,6 +180,7 @@
 			message_admins("[key_name_admin(usr)] edited the admin rank of [adm_ckey] to [new_rank]")
 			log_admin("[key_name(usr)] edited the admin rank of [adm_ckey] to [new_rank]")
 			log_permissions("[key_name(usr)] edited the admin rank of [adm_ckey] to [new_rank]")
+			send2adminirc("[get_key(usr)] изменил ранг игрока: \"[adm_ckey]\" на \"[new_rank]\"")
 			log_admin_rank_modification(adm_ckey, new_rank)
 
 		else if(task == "permissions")
@@ -196,6 +198,7 @@
 			log_admin("[key_name(usr)] toggled the [new_permission] permission of [adm_ckey]")
 			log_permissions("[key_name(usr)] toggled the [new_permission] permission of [adm_ckey]")
 			log_admin_permission_modification(adm_ckey, permissionlist[new_permission])
+			send2adminirc("[get_key(usr)] переключил флаг: \"[new_permission]\" игроку: \"[adm_ckey]\"")
 
 		edit_admin_permissions()
 
@@ -789,6 +792,8 @@
 							msg += ", [job]"
 					add_note(M.ckey, "Banned  from [msg] - [reason]", null, usr.ckey, 0)
 					message_admins("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes", 1)
+					to_world(SPAN_NOTICE("<b>JOB-BAN: Администратор [get_key(usr)] временно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"; Срок - [mins] минут.</b>"))
+					send2adminlogirc("Администратор [get_key(usr)] временно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"; Срок - [mins] минут.")
 					to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
 					to_chat(M, "<span class='warning'>The reason is: [reason]</span>")
 					to_chat(M, "<span class='warning'>This jobban will be lifted in [mins] minutes.</span>")
@@ -811,6 +816,8 @@
 							else		msg += ", [job]"
 						add_note(M.ckey, "Banned  from [msg] - [reason]", null, usr.ckey, 0)
 						message_admins("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg]", 1)
+						to_world(SPAN_NOTICE("<b>JOB-BAN: Администратор [get_key(usr)] перманентно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"</b>"))
+						send2adminlogirc("Администратор [get_key(usr)] перманентно заблокировал(а) роли ([msg]) игроку [get_key(M)]. Причина: \"[reason]\"")
 						to_chat(M, "<span class='danger'>You have been jobbanned by [usr.client.ckey] from: [msg].</span>")
 						to_chat(M, "<span class='warning'>The reason is: [reason]</span>")
 						to_chat(M, "<span class='warning'>Jobban can be lifted only upon request.</span>")

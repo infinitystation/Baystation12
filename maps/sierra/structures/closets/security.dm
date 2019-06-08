@@ -74,6 +74,7 @@
 		/obj/item/weapon/crowbar/prybar,
 		/obj/item/device/radio/off,
 		/obj/item/clothing/mask/gas/half,
+		/obj/item/weapon/storage/firstaid/individual/military
 	)
 
 /obj/structure/closet/secure_closet/warden/sierra
@@ -110,6 +111,7 @@
 		/obj/item/weapon/crowbar/prybar,
 		/obj/item/device/radio/off,
 		/obj/item/clothing/mask/gas/half,
+		/obj/item/weapon/storage/firstaid/individual/military
 	)
 
 /obj/structure/closet/secure_closet/forensics
@@ -142,6 +144,7 @@
 		/obj/item/weapon/crowbar/prybar,
 		/obj/item/device/radio/off,
 		/obj/item/clothing/mask/gas/half,
+		/obj/item/weapon/storage/firstaid/individual/military
 	)
 
 /obj/structure/closet/secure_closet/security/sierra
@@ -174,4 +177,5 @@
 		/obj/item/weapon/crowbar/prybar,
 		/obj/item/device/radio/off,
 		/obj/item/clothing/mask/gas/half,
+		/obj/item/weapon/storage/firstaid/individual/military
 	)

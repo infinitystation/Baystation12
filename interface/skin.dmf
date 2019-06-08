@@ -1290,7 +1290,7 @@ window "rpane"
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #93ffb9
+		background-color = #ffffff
 		saved-params = "is-checked"
 		text = "GitHub"
 		command = "GitHub"
@@ -1300,7 +1300,7 @@ window "rpane"
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #93ffb9
+		background-color = #ffffff
 		saved-params = "is-checked"
 		text = "Bug Report"
 		command = "Bug-Report"
@@ -1310,7 +1310,7 @@ window "rpane"
 		size = 72x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #ffdd95
+		background-color = #ffffff
 		saved-params = "is-checked"
 		text = "BayChangelog"
 		command = "Baystation12-Changelog"
@@ -1321,7 +1321,7 @@ window "rpane"
 		size = 105x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #bd88ff
+		background-color = #ffffff
 		saved-params = "is-checked"
 		text = "Infinity Changelog"
 		command = "Infinity-Changelog"
@@ -1332,7 +1332,7 @@ window "rpane"
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #79ffd3
+		background-color = #ffffff
 		saved-params = "is-checked"
 		text = "Forum"
 		command = "forum"
@@ -1343,7 +1343,7 @@ window "rpane"
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		background-color = #79ffe1
+		background-color = #ffffff
 		saved-params = "is-checked"
 		text = "Wiki"
 		command = "wiki"
@@ -1394,8 +1394,7 @@ window "rpane"
 		size = 60x15
 		anchor1 = none
 		anchor2 = none
-		text-color = #ffffff
-		background-color = #ff6c70
+		background-color = #ffffff
 		saved-params = "is-checked"
 		text = "Rules"
 		command = "servinfo"

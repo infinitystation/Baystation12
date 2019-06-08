@@ -16,7 +16,12 @@
 
 /proc/send2adminirc(var/msg)
 	if(config.admin_irc)
-		send2irc(config.admin_irc, msg)
+		send2irc(config.admin_irc, sanitize_irc(msg))
+	return
+
+/proc/send2adminlogirc(var/msg)
+	if(config.admin_log_irc)
+		send2irc(config.admin_log_irc, sanitize_irc(msg))
 	return
 
 /proc/adminmsg2adminirc(client/source, client/target, msg)
@@ -25,7 +30,7 @@
 
 		params["pwd"] = config.comms_password
 		params["chan"] = config.admin_irc
-		params["msg"] = msg
+		params["msg"] = sanitize_irc(msg)
 		params["src_key"] = source.key
 		params["src_char"] = source.mob.real_name || source.mob.name
 		if(!target)

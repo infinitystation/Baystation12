@@ -72,3 +72,8 @@
 	icon_closed = "labcoat_xy"
 	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 20, rad = 0)
 	species_restricted = list(SPECIES_IPC)
+
+/obj/item/clothing/suit/storage/tgbomber/militaryjacket
+	name = "military jacket"
+	desc = "A canvas jacket styled classical American military garb. Feels sturdy, yet comfortable."
+	icon_state = "militaryjacket"

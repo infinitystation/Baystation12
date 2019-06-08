@@ -166,28 +166,22 @@
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/pain
 	name = "autoinjector (painkiller)"
-	icon_state = "purple1"
 	band_color = COLOR_PURPLE
 	starts_with = list(/datum/reagent/tramadol = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/brute
 	name = "autoinjector (anti-injury)"
-	icon_state = "red1"
+	band_color = COLOR_NT_RED
 	starts_with = list(/datum/reagent/bicaridine = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/burn
 	name = "autoinjector (anti-burn)"
-	icon_state = "orange1"
+	band_color = COLOR_SUN
 	starts_with = list(/datum/reagent/kelotane = 5)
-
-/obj/item/weapon/reagent_containers/hypospray/autoinjector/rad
-	name = "autoinjector (anti-rad)"
-	icon_state = "green1"
-	starts_with = list(/datum/reagent/hyronalin = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/inaprovaline
 	name = "autoinjector (inaprovaline)"
-	icon_state = "blue1"
+	band_color = COLOR_SKY_BLUE
 	starts_with = list(/datum/reagent/inaprovaline = 5)
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/combatpain
@@ -197,7 +191,6 @@
 
 /obj/item/weapon/reagent_containers/hypospray/autoinjector/antirad
 	name = "autoinjector (anti-rad)"
-	icon_state = "yellow1"
 	band_color = COLOR_AMBER
 	starts_with = list(/datum/reagent/hyronalin = 5)
 

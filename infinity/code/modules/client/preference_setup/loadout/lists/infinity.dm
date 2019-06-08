@@ -113,6 +113,7 @@
 /datum/gear/utility/pda/New()
 	..()
 	var/pdas = list()
+	slot = slot_wear_id
 	pdas["grey"]                    = /obj/item/modular_computer/pda
 	pdas["grey-red (sec)"]          = /obj/item/modular_computer/pda/security
 	pdas["lightgrey-brown (sup)"]   = /obj/item/modular_computer/pda/cargo
@@ -131,7 +132,17 @@
 	pdas["black (mercs)"]           = /obj/item/modular_computer/pda/syndicate
 	gear_tweaks += new/datum/gear_tweak/path(pdas)
 
-datum/gear/utility/wristpda
+/datum/gear/utility/pda/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
+	var/obj/item/modular_computer/pda/item = spawn_item(H, metadata)
+	var/obj/item/weapon/card/id = H.GetIdCard()
+	if(id)
+		item.attackby(id, H)
+	if(item.tesla_link && !istype(H, /mob/living/carbon/human/dummy))	//PDA in loadout shouldn't work
+		item.turn_on()
+	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 1))
+		. = item
+
+/datum/gear/utility/wristpda
 	display_name = "Wrist PDA selection"
 	path = /obj/item/modular_computer/wrist
 	cost = 2
@@ -139,6 +150,7 @@ datum/gear/utility/wristpda
 /datum/gear/utility/wristpda/New()
 	..()
 	var/wpdas = list()
+	slot = slot_wear_id
 	wpdas["black"]                   = /obj/item/modular_computer/wrist/
 	wpdas["lightgrey"]               = /obj/item/modular_computer/wrist/grey
 	wpdas["black-red (sec)"]         = /obj/item/modular_computer/wrist/security
@@ -159,3 +171,13 @@ datum/gear/utility/wristpda
 	wpdas["short (lightgrey)"]       = /obj/item/modular_computer/wrist/lila
 	wpdas["short (black)"]           = /obj/item/modular_computer/wrist/lila/black
 	gear_tweaks += new/datum/gear_tweak/path(wpdas)
+
+/datum/gear/utility/wristpda/spawn_on_mob(var/mob/living/carbon/human/H, var/metadata)
+	var/obj/item/modular_computer/wrist/item = spawn_item(H, metadata)
+	var/obj/item/weapon/card/id = H.GetIdCard()
+	if(id)
+		item.attackby(id, H)
+	if(item.tesla_link && !istype(H, /mob/living/carbon/human/dummy))	//PDA in loadout shouldn't work
+		item.turn_on()
+	if(H.equip_to_slot_if_possible(item, slot, del_on_fail = 1))
+		. = item

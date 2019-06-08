@@ -95,6 +95,11 @@
 	desc = "A gold-trimmed peaked black uniform cap belonging to a Captain of the SCG Expeditionary Corps."
 	icon_state = "ecdresscap_capt"
 
+/obj/item/clothing/head/solgov/service/expedition/senior_command
+	name = "senior expedition officer's peaked cap"
+	desc = "A peaked grey uniform cap belonging to the SCG Expeditionary Corps. This one is trimmed in gold and blue."
+	icon_state = "greydresscap_senior"
+
 /obj/item/clothing/head/solgov/service/army
 	name = "army wheel cover"
 	desc = "A green service uniform cover with an SCG Army crest."
@@ -420,10 +425,14 @@
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_head_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_head_solgov_skrell.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
 		)
 	sprite_sheets_obj = list(
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_head_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/obj/skrell/obj_head_solgov_skrell.dmi',
+		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/hats.dmi',
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/hats.dmi'
 		)
 
 /obj/item/clothing/head/helmet/space/void/atmos/alt/sol
@@ -432,10 +441,14 @@
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_head_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_head_solgov_skrell.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
 		)
 	sprite_sheets_obj = list(
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_head_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/obj/skrell/obj_head_solgov_skrell.dmi',
+		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/hats.dmi',
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/hats.dmi'
 		)
 
 /obj/item/clothing/head/helmet/space/void/pilot/sol
@@ -444,10 +457,14 @@
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_head_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_head_solgov_skrell.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
 		)
 	sprite_sheets_obj = list(
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_head_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/obj/skrell/obj_head_solgov_skrell.dmi',
+		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/hats.dmi',
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/hats.dmi'
 		)
 
 /obj/item/clothing/head/helmet/space/void/medical/alt/sol
@@ -456,8 +473,12 @@
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_head_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_head_solgov_skrell.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
 		)
 	sprite_sheets_obj = list(
 		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_head_solgov_unathi.dmi',
 		SPECIES_SKRELL = 'maps/torch/icons/obj/skrell/obj_head_solgov_skrell.dmi',
+		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/hats.dmi',
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/hats.dmi'
 		)

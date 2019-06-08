@@ -44,9 +44,9 @@
 				if(item_slowdown >= 0)
 					var/size_mod = size_strength_mod()
 					if(size_mod + 1 > 0)
-						item_slowdown = item_slowdown / (species.strength + size_mod + 1)
+						item_slowdown = item_slowdown / (size_mod + 1)
 					else
-						item_slowdown = item_slowdown - species.strength - size_mod
+						item_slowdown = item_slowdown - size_mod
 				total_item_slowdown += max(item_slowdown, 0)
 		tally += total_item_slowdown
 
@@ -65,8 +65,8 @@
 
 	if(MUTATION_FAT in src.mutations)
 		tally += 1.5
-	if (bodytemperature < 283.222)
-		tally += (283.222 - bodytemperature) / 10 * 1.75
+	if (bodytemperature < species.cold_discomfort_level)
+		tally += (species.cold_discomfort_level - bodytemperature) / 10 * 1.75
 
 	tally += max(2 * stance_damage, 0) //damaged/missing feet or legs is slow
 

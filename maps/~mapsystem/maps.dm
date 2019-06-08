@@ -1,5 +1,6 @@
 GLOBAL_DATUM_INIT(using_map, /datum/map, new using_map_DATUM)
 GLOBAL_LIST_EMPTY(all_maps)
+GLOBAL_LIST_EMPTY(playable_maps)
 
 var/const/MAP_HAS_BRANCH = 1	//Branch system for occupations, togglable
 var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
@@ -16,6 +17,9 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			log_error("Map '[M]' does not have a defined path, not adding to map list!")
 		else
 			GLOB.all_maps[M.path] = M
+		if(M.playable && M != GLOB.using_map)
+			GLOB.playable_maps |= M
+
 	return 1
 
 
@@ -99,6 +103,9 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/num_exoplanets = 0
 	var/list/planet_size  //dimensions of planet zlevel, defaults to world size. Due to how maps are generated, must be (2^n+1) e.g. 17,33,65,129 etc. Map will just round up to those if set to anything other.
 	var/away_site_budget = 0
+
+	var/playable = 0
+	var/recommended_players
 
 	var/list/loadout_blacklist	//list of types of loadout items that will not be pickable
 
@@ -312,7 +319,7 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 		weighted_mundaneevent_locations[D] = D.viable_mundane_events.len
 
 	if(!station_account)
-		station_account = create_account("[station_name()] Primary Account", starting_money)
+		station_account = create_account("[station_name()] Primary Account", "[station_name()]", starting_money, ACCOUNT_TYPE_DEPARTMENT)
 
 	for(var/job in allowed_jobs)
 		var/datum/job/J = job
@@ -321,9 +328,9 @@ var/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 			station_departments |= dept
 
 	for(var/department in station_departments)
-		department_accounts[department] = create_account("[department] Account", department_money)
+		department_accounts[department] = create_account("[department] Account", "[department]", department_money, ACCOUNT_TYPE_DEPARTMENT)
 
-	department_accounts["Vendor"] = create_account("Vendor Account", 0)
+	department_accounts["Vendor"] = create_account("Vendor Account", "Vendor", 0, ACCOUNT_TYPE_DEPARTMENT)
 	vendor_account = department_accounts["Vendor"]
 
 /datum/map/proc/map_info(var/client/victim)

@@ -18,7 +18,7 @@
 	accessory_icons = list(slot_w_uniform_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_suit_str = 'icons/mob/infinity/sprite_accessories.dmi', slot_wear_mask_str  = 'icons/mob/infinity/sprite_accessories.dmi')
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/misc.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/misc.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/misc.dmi'
 		)
 
 /obj/item/clothing/accessory/necklace/collar/gold

@@ -1,4 +1,5 @@
 #if !defined(using_map_DATUM)
+
 	#include "bearcat_areas.dm"
 	#include "bearcat_overmap.dm"
 	#include "bearcat_define.dm"
@@ -10,7 +11,6 @@
 	#include "bearcat-1.dmm"
 	#include "bearcat-2.dmm"
 	#include "bearcat-3.dmm"
-	#include "bearcat-4.dmm"
 
 	#include "../away_inf/yacht/yacht.dm"
 	#include "../away/mining/mining.dm"

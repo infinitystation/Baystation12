@@ -14,13 +14,14 @@
 
 	if(!C.holder)
 		if(!config.dooc_allowed && (C.mob.stat == DEAD))
-			to_chat(C, "<span class='danger'>[name] for dead mobs has been turned off.</span>")
+			to_chat(C, SPAN_DANGER("[name] for dead mobs has been turned off."))
 			return FALSE
 		if(findtext(message, "byond://"))
 			to_chat(C, "<B>Advertising other servers is not allowed.</B>")
 			log_and_message_admins("has attempted to advertise in [name]: [message]")
 			return FALSE
-	else if(name == "OOC" && !config.ooc_allowed && alert(C, "Вы уверены что хотите что-то написать в выключенный чат?", "OOC", "Нет", "Да") == "Нет")
+	if(name == "OOC" && !config.ooc_allowed && !check_rights(R_PERMISSIONS, 0, C))
+		to_chat(C, SPAN_DANGER("You don't have enough rights to write to the disabled OOC."))
 		return FALSE
 
 /decl/communication_channel/ooc/do_communicate(var/client/C, var/message)
@@ -40,17 +41,12 @@
 	if(holder && !is_stealthed)
 		holder_rank = "\[[holder.rank]\] "
 
-	var/can_badmin = !is_stealthed && can_select_ooc_color(C) && (C.prefs.ooccolor != initial(C.prefs.ooccolor))
-	var/ooc_color = C.prefs.ooccolor
-
 	for(var/client/target in GLOB.clients)
 		if(target.is_key_ignored(C.key)) // If we're ignored by this person, then do nothing.
 			continue
 		var/sent_message = "[create_text_tag("ooc", "OOC:", target)] <EM>" + "[holder_rank]" + "[C.key]:</EM> <span class='message'>[message]</span>"
 		sent_message = emoji_parse(sent_message)
-//		if(holder)
-//			sent_message = emoji_parse(sent_message)
-		if(can_badmin)
-			receive_communication(C, target, "<font color='[ooc_color]'><span class='ooc'>[sent_message]</font></span>")
+		if(!is_stealthed && C.prefs.ooccolor != initial(C.prefs.ooccolor) && C.holder || C.deadmin_holder)
+			receive_communication(C, target, "<font color='[C.prefs.ooccolor]'><span class='ooc'>[sent_message]</font></span>")
 		else
 			receive_communication(C, target, "<span class='ooc'><span class='[ooc_style]'>[sent_message]</span></span>")

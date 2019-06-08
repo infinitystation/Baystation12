@@ -21,6 +21,9 @@
 		sharp = 1 //Sharpen stick
 		SetName("sharpened " + name)
 		update_force()
+	if(isWelder(W))
+		user.visible_message("<span class='warning'>[user] fired [src] with [W].</span>", "<span class='warning'>You fired [src] using [W].</span>")
+		qdel(src)
 	return ..()
 
 

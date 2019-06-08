@@ -36,6 +36,6 @@
 	if(check_rights(R_ADMIN, 0))
 		sender_name = "<span class='admin'>[sender_name]</span>"
 	for(var/client/C in GLOB.admins)
-		to_chat(C, "<span class='staff_channel'>" + create_text_tag("staff", "STAFF:", C) + " <span class='name'>[check_rights(R_INVESTIGATE, 0, C) ? sender_name : src]</span>[check_rights(R_INVESTIGATE, 0, C) ? "([admin_jump_link(mob, C.holder)])" : null]: <span class='message'>[msg]</span></span>")
+		to_chat(C, "<span class='staff_channel'>" + create_text_tag("staff", "STAFF:", C) + " \[[holder.rank]\]" + " <span class='name'>[check_rights(R_INVESTIGATE, 0, C) ? sender_name : src]</span>[check_rights(R_INVESTIGATE, 0, C) ? "([admin_jump_link(mob, C.holder)])" : null]: <span class='message'>[msg]</span></span>")
 
 	SSstatistics.add_field_details("admin_verb","SS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

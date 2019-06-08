@@ -22,7 +22,7 @@ var/list/global/tank_gauge_cache = list()
 	throw_range = 4
 
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/back.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/back.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/back.dmi'
 		)
 

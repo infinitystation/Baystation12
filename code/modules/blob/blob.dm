@@ -1,11 +1,10 @@
-//I will need to recode parts of this but I am way too tired atm
 /obj/effect/blob
-	name = "ravaging mass"
+	name = "pulsating mass"
 	desc = "A pulsating mass of interwoven tendrils."
 	icon = 'icons/mob/blob.dmi'
 	icon_state = "blob"
 	light_outer_range = 2
-	light_color = "#b5ff5b"
+	light_color = BLOB_COLOR_PULS
 	density = 1
 	opacity = 1
 	anchored = 1
@@ -23,14 +22,19 @@
 	var/expandType = /obj/effect/blob
 	var/secondary_core_growth_chance = 5 //% chance to grow a secondary blob core instead of whatever was suposed to grown. Secondary cores are considerably weaker, but still nasty.
 	var/damage_min = 20
-	var/damage_max = 40
+	var/damage_max = 35
 	var/pruned = FALSE
 	var/product = /obj/item/weapon/blob_tendril
+	var/attack_freq = 3 //see proc/attempt_attack; lower is more often, min 1
 
 /obj/effect/blob/New(loc)
 	health = maxHealth
 	update_icon()
 	return ..(loc)
+
+/obj/effect/blob/Initialize()
+	. = ..()
+	START_PROCESSING(SSobj, src)
 
 /obj/effect/blob/CanPass(var/atom/movable/mover, vra/turf/target, var/height = 0, var/air_group = 0)
 	if(air_group || height == 0)
@@ -51,6 +55,11 @@
 		icon_state = "blob"
 	else
 		icon_state = "blob_damaged"
+
+/obj/effect/blob/Process(wait, times_fired)
+	if(times_fired % attack_freq)
+		return
+	attempt_attack(GLOB.alldirs)
 
 /obj/effect/blob/proc/take_damage(var/damage)
 	health -= damage
@@ -103,8 +112,7 @@
 		return
 	var/obj/mecha/M = locate() in T
 	if(M)
-		M.visible_message("<span class='danger'>The blob attacks \the [M]!</span>")
-		M.take_damage(40)
+		attack_mech(M)
 		return
 	var/obj/machinery/camera/CA = locate() in T
 	if(CA)
@@ -115,11 +123,8 @@
 	for(var/mob/living/L in T)
 		if(L.stat == DEAD)
 			continue
-		var/blob_damage = pick(BRUTE, BURN)
-		L.visible_message("<span class='danger'>A tendril flies out from \the [src] and smashes into \the [L]!</span>", "<span class='danger'>A tendril flies out from \the [src] and smashes into you!</span>")
-		playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
-		L.apply_damage(rand(damage_min, damage_max), blob_damage, used_weapon = "blob tendril")
-		return
+		attack_living(L)
+
 	if(!(locate(/obj/effect/blob/core) in range(T, 2)) && prob(secondary_core_growth_chance))
 		new/obj/effect/blob/core/secondary(T)
 	else
@@ -138,6 +143,30 @@
 	if(forceLeft)
 		B.pulse(forceLeft - 1, dirs)
 
+/obj/effect/blob/proc/attack_living(var/mob/living/L)
+	if(!L)
+		return
+	var/blob_damage = pick(BRUTE, BURN)
+	L.visible_message(SPAN_DANGER("A tendril flies out from \the [src] and smashes into \the [L]!"), SPAN_DANGER("A tendril flies out from \the [src] and smashes into you!"))
+	playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
+	L.apply_damage(rand(damage_min, damage_max), blob_damage, used_weapon = "blob tendril")
+
+/obj/effect/blob/proc/attack_mech(var/obj/mecha/mech)
+	if(!mech)
+		return
+	mech.visible_message(SPAN_DANGER("A tendril flies out from \the [src] and slams into \the [mech]!"))
+	mech.take_damage(rand(damage_min, damage_max))
+
+/obj/effect/blob/proc/attempt_attack(var/list/dirs)
+	var/attackDir = pick(dirs)
+	var/turf/T = get_step(src, attackDir)
+	for(var/mob/living/victim in T)
+		if(victim.stat == DEAD)
+			continue
+		attack_living(victim)
+	for(var/obj/mecha/mech in T)
+		attack_mech(mech)
+
 /obj/effect/blob/bullet_act(var/obj/item/projectile/Proj)
 	if(!Proj)
 		return
@@ -155,7 +184,7 @@
 	playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
 	if(isWirecutter(W))
 		if(prob(user.skill_fail_chance(SKILL_SCIENCE, 90, SKILL_EXPERT)))
-			to_chat(user, SPAN_NOTICE("You fail to collect a sample from \the [src]."))
+			to_chat(user, SPAN_WARNING("You fail to collect a sample from \the [src]."))
 			return
 		else	
 			if(!pruned)
@@ -164,7 +193,7 @@
 				pruned = TRUE
 				return
 			else
-				to_chat(user, SPAN_NOTICE("\The [src] has already been pruned."))
+				to_chat(user, SPAN_WARNING("\The [src] has already been pruned."))
 				return
 
 	var/damage = 0
@@ -187,15 +216,17 @@
 	brute_resist = 1
 	fire_resist = 4
 	regen_rate = 2
-
-	layer = BLOB_CORE_LAYER
-
 	damage_min = 30
 	damage_max = 40
 	expandType = /obj/effect/blob/shield
 	product = /obj/item/weapon/blob_tendril/core
-	var/blob_may_process = 1
+	attack_freq = 4
+	light_color = BLOB_COLOR_CORE
+
+	layer = BLOB_CORE_LAYER
+
 	var/growth_range = 10 // Maximal distance for new blob pieces from this core.
+	var/blob_may_process = 1
 
 // Rough icon state changes that reflect the core's health
 /obj/effect/blob/core/on_update_icon()
@@ -208,14 +239,6 @@
 		if(-INFINITY to 33)
 			icon_state = "blob_factory"
 
-/obj/effect/blob/core/Initialize()
-	. = ..()
-	START_PROCESSING(SSobj, src)
-
-/obj/effect/blob/core/Destroy()
-	STOP_PROCESSING(SSobj, src)
-	return ..()
-
 /obj/effect/blob/core/Process()
 	set waitfor = 0
 	if(!blob_may_process)
@@ -226,6 +249,8 @@
 	pulse(20, GLOB.alldirs)
 	pulse(20, GLOB.alldirs)
 	pulse(20, GLOB.alldirs)
+	attempt_attack(GLOB.alldirs)
+	attempt_attack(GLOB.alldirs)
 	blob_may_process = 1
 
 // Half the stats of a normal core. Blob has a very small probability of growing these when spreading. These will spread the blob further.
@@ -248,9 +273,13 @@
 	name = "shielding mass"
 	desc = "A pulsating mass of interwoven tendrils. These seem particularly robust, but not quite as active."
 	icon_state = "blob_idle"
-	maxHealth = 60
-	damage_min = 20
-	damage_max = 35
+	maxHealth = 100
+	damage_min = 16
+	damage_max = 28
+	attack_freq = 5
+	expandType = /obj/effect/blob/ravaging
+	light_color = BLOB_COLOR_SHIELD
+
 
 /obj/effect/blob/shield/New()
 	..()
@@ -272,6 +301,15 @@
 /obj/effect/blob/shield/CanPass(var/atom/movable/mover, var/turf/target, var/height = 0, var/air_group = 0)
 	return !density
 
+/obj/effect/blob/ravaging
+	name = "ravaging mass"
+	desc = "A mass of interwoven tendrils. They thrash around haphazardly at anything in reach."
+	damage_min = 35
+	damage_max = 45
+	attack_freq = 2
+	light_color = BLOB_COLOR_RAV
+
+//produce
 /obj/item/weapon/blob_tendril
 	name = "asteroclast tendril"
 	desc = "A tendril removed from an asteroclast. It's entirely lifeless."
@@ -307,7 +345,7 @@
 	if(is_tendril && prob(50))
 		force--
 		if(force <= 0)
-			visible_message("<span class='notice'>\The [src] crumbles apart!</span>")
+			visible_message(SPAN_NOTICE("\The [src] crumbles apart!"))
 			user.drop_from_inventory(src)
 			new /obj/effect/decal/cleanable/ash(src.loc)
 			qdel(src)

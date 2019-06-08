@@ -112,7 +112,7 @@
 	using.ai_verb = /mob/verb/down
 	src.adding += using
 
-	//[Inf]
+	//_Elar_
 	//AI Floor Color
 	using = new /obj/screen/ai_button()
 	using.name = "Change Floor Color"
@@ -124,8 +124,8 @@
 	//AI Holo Change
 	using = new /obj/screen/ai_button()
 	using.name = "Change Hologram"
-	using.icon_state = "ai_holo"
-	using.screen_loc = ui_ai_holo
+	using.icon_state = "ai_holo_change"
+	using.screen_loc = ui_ai_holo_change
 	using.ai_verb = /mob/living/silicon/ai/proc/ai_hologram_change
 	src.adding += using
 
@@ -145,12 +145,20 @@
 	using.ai_verb = /mob/living/silicon/ai/proc/ai_power_override
 	src.adding += using
 
-	//AI power override
+	//AI Shutdown
 	using = new /obj/screen/ai_button()
 	using.name = "Shutdown"
 	using.icon_state = "ai_shutdown"
 	using.screen_loc = ui_ai_shutdown
 	using.ai_verb = /mob/living/silicon/ai/proc/ai_shutdown
+	src.adding += using
+
+	//AI Holo Movement
+	using = new /obj/screen/ai_button()
+	using.name = "Toggle Hologram Movement"
+	using.icon_state = "ai_holo_mov"
+	using.screen_loc = ui_ai_holo_mov
+	using.ai_verb = /mob/living/silicon/ai/proc/toggle_hologram_movement
 	src.adding += using
 
 	//AI Core Display
@@ -177,6 +185,5 @@
 	using.ai_verb = /mob/living/silicon/ai/proc/show_crew_records
 	src.adding += using
 
-	//[/inf]
 	mymob.client.screen = list()
 	mymob.client.screen += src.adding

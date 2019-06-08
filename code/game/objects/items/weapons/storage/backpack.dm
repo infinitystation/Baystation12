@@ -18,13 +18,13 @@
 		slot_r_hand_str = "backpack",
 		)
 	sprite_sheets = list(
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/back.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/back.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/back.dmi'
 		)
 
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
-	max_w_class = ITEM_SIZE_LARGE
+	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_BACKPACK_STORAGE
 	open_sound = 'sound/effects/storage/unzip.ogg'
 
@@ -121,6 +121,8 @@
 	name = "industrial backpack"
 	desc = "It's a tough backpack for the daily grind of industrial life."
 	icon_state = "engiepack"
+	max_storage_space = DEFAULT_BACKPACK_STORAGE + 8
+	max_w_class = ITEM_SIZE_LARGE
 	item_state_slots = null
 
 /obj/item/weapon/storage/backpack/toxins
@@ -152,8 +154,9 @@
 	name = "black rucksack"
 	desc = "A sturdy military-grade backpack with low-profile straps. Designed to work well with armor."
 	icon_state = "rucksack"
+	max_storage_space = DEFAULT_BACKPACK_STORAGE + 8
 	item_state_slots = list(slot_l_hand_str = "rucksack", slot_r_hand_str = "rucksack",)
-	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/onmob/Resomi/back.dmi')
+	sprite_sheets = list(SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/back.dmi')
 
 /obj/item/weapon/storage/backpack/rucksack/blue
 	name = "blue rucksack"
@@ -185,11 +188,12 @@
 	icon_state = "duffle"
 	item_state_slots = null
 	w_class = ITEM_SIZE_HUGE
-	max_storage_space = DEFAULT_BACKPACK_STORAGE + 10
+	max_w_class = ITEM_SIZE_LARGE
+	max_storage_space = DEFAULT_BACKPACK_STORAGE + 14
 
 /obj/item/weapon/storage/backpack/dufflebag/New()
 	..()
-	slowdown_per_slot[slot_back] = 3
+	slowdown_per_slot[slot_back] = 2.5
 	slowdown_per_slot[slot_r_hand] = 1
 	slowdown_per_slot[slot_l_hand] = 1
 
@@ -197,10 +201,6 @@
 	name = "black dufflebag"
 	desc = "A large dufflebag for holding extra tactical supplies."
 	icon_state = "duffle_syndie"
-
-/obj/item/weapon/storage/backpack/dufflebag/syndie/New()
-	..()
-	slowdown_per_slot[slot_back] = 1
 
 /obj/item/weapon/storage/backpack/dufflebag/syndie/med
 	name = "medical dufflebag"
@@ -240,6 +240,8 @@
 	name = "satchel"
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
+	max_w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_HUGE
 
 /obj/item/weapon/storage/backpack/satchel/grey
 	name = "grey satchel"
@@ -359,11 +361,11 @@
 //Smuggler's satchel
 /obj/item/weapon/storage/backpack/satchel/flat
 	name = "\improper Smuggler's satchel"
-	desc = "A very slim satchel that can easily fit into tight spaces."
+	desc = "A very slim satchel."
 	icon_state = "satchel-flat"
 	item_state = "satchel-norm"
 	level = 1
-	w_class = ITEM_SIZE_NORMAL //Can fit in backpacks itself.
+	w_class = ITEM_SIZE_LARGE //Can fit in backpacks itself.
 	storage_slots = 5
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = 15
@@ -432,6 +434,7 @@
 	name = "messenger bag"
 	desc = "A sturdy backpack worn over one shoulder."
 	icon_state = "courierbag"
+	max_w_class = ITEM_SIZE_NORMAL
 
 /obj/item/weapon/storage/backpack/messenger/chem
 	name = "chemistry messenger bag"

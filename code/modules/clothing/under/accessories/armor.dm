@@ -8,7 +8,7 @@
 	icon_state = "pouches"
 	gender = PLURAL
 	slot = ACCESSORY_SLOT_ARMOR_S
-	slots = 2
+	slots = 3
 
 /obj/item/clothing/accessory/storage/pouches/blue
 	desc = "A collection of blue pouches that can be attached to a plate carrier. Carries up to two items."
@@ -30,8 +30,8 @@
 	name = "large storage pouches"
 	desc = "A collection of black pouches that can be attached to a plate carrier. Carries up to four items."
 	icon_state = "lpouches"
-	slots = 4
-	slowdown = 0.6
+	slots = 6
+	slowdown = 0.4
 
 /obj/item/clothing/accessory/storage/pouches/large/blue
 	desc = "A collection of blue pouches that can be attached to a plate carrier. Carries up to four items."

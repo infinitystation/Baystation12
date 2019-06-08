@@ -476,6 +476,7 @@
 /obj/item/weapon/gun/proc/toggle_scope(mob/user, var/zoom_amount=2.0)
 	//looking through a scope limits your periphereal vision
 	//still, increase the view size by a tiny amount so that sniping isn't too restricted to NSEW
+	var/screen_shake_limit = 8
 	var/zoom_offset = round(world.view * zoom_amount)
 	var/view_size = round(world.view + zoom_amount)
 
@@ -486,15 +487,12 @@
 	zoom(user, zoom_offset, view_size)
 	if(zoom)
 		accuracy = scoped_accuracy
-		if(user.skill_check(SKILL_WEAPONS, SKILL_PROF))
-			accuracy += 2
+		if(user.skill_check(SKILL_WEAPONS, SKILL_PROF)) accuracy += 2
 		if(screen_shake)
-			if(screen_shake<15)
+			if(screen_shake < screen_shake_limit)
 				screen_shake = round(screen_shake*zoom_amount+1) //screen shake is worse when looking through a scope
-				if(screen_shake <15)
-					screen_shake = rand(15, 18)
-			else
-				screen_shake = screen_shake-8
+				if(screen_shake > screen_shake_limit) screen_shake = screen_shake_limit+1
+			else screen_shake = screen_shake - (screen_shake_limit/2)
 
 //make sure accuracy and screen_shake are reset regardless of how the item is unzoomed.
 /obj/item/weapon/gun/zoom()

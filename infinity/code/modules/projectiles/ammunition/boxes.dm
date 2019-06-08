@@ -139,7 +139,7 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_STEEL = 525)
 	caliber = CALIBER_SHOTGUN
-	max_ammo = 4
+	max_ammo = 5
 
 /obj/item/ammo_magazine/shotguntaj/empty
 	icon_state = "taj12-0"
@@ -153,7 +153,7 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/net
 	matter = list(MATERIAL_STEEL = 525)
 	caliber = CALIBER_SHOTGUN
-	max_ammo = 4
+	max_ammo = 5
 
 /obj/item/ammo_magazine/tv
 	name = "Large black magazine."

@@ -5,6 +5,7 @@
 	icon = 'icons/obj/machines/floodlight.dmi'
 	icon_state = "flood00"
 	density = 1
+	obj_flags = OBJ_FLAG_ROTATABLE
 	var/on = 0
 	var/obj/item/weapon/cell/cell = null
 	var/use = 200 // 200W light
@@ -19,8 +20,8 @@
 	cell = new/obj/item/weapon/cell/crap(src)
 	..()
 
-/obj/machinery/floodlight/cargo
-	cell = new/obj/item/weapon/cell/
+/obj/machinery/floodlight/cargo/New()
+	cell = new/obj/item/weapon/cell/standard(src)
 	..()
 
 /obj/machinery/floodlight/on_update_icon()
@@ -139,24 +140,3 @@
 				cell = W
 				to_chat(user, "You insert the power cell.")
 	update_icon()
-
-/obj/machinery/floodlight/verb/rotate()
-	set name = "Rotate Light"
-	set category = "Object"
-	set src in oview(1)
-
-	if(!usr || !Adjacent(usr))
-		return
-
-	if(usr.stat == DEAD)
-		if(!round_is_spooky())
-			to_chat(src, "<span class='warning'>The veil is not thin enough for you to do that.</span>")
-			return
-	else if(usr.incapacitated())
-		return
-
-	src.set_dir(turn(src.dir, 90))
-	return
-
-/obj/machinery/floodlight/AltClick()
-	rotate()

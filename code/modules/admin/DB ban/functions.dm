@@ -126,19 +126,25 @@ datum/admins/proc/DB_ban_record(var/bantype, var/mob/banned_mob, var/duration = 
 	var/DBQuery/query_insert = dbcon.NewQuery(sql)
 	query_insert.Execute()
 	var/setter = a_ckey
+	var/setter_key = a_ckey
 	if(usr)
 		to_chat(usr, "<span class='notice'>Ban saved to database.</span>")
 		setter = key_name_admin(usr, 0)
+		setter_key = get_key(usr)
 	message_admins("[setter] has added a [bantype_str] for [ckey] [(job)?"([job])":""] [(duration > 0)?"([duration] minutes)":""] with the reason: \"[reason]\" to the ban database.",1)
 	switch(bantype_str)
 		if("PERMABAN")
-			to_chat(world, "<span class='notice'><b>BAN: Администратор [setter] ЖЕСТКО и НАВСЕГДА заблокировал(а) игрока [ckey]. Причина: [reason_public]</b></span>")
+			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] ЖЕСТКО и НАВСЕГДА заблокировал(а) игрока [ckey]. Причина: \"[reason_public]\"</b>"))
+			send2adminlogirc("BAN: Администратор [setter_key] ЖЕСТКО и НАВСЕГДА заблокировал(а) игрока [ckey]. Причина: \"[reason_public]\"")
 		if("TEMPBAN")
-			to_chat(world, "<span class='notice'><b>BAN: Администратор [setter] ЖЕСТКО заблокировал(а) игрока [ckey]. Причина: [reason_public]; Срок - [duration] минут.</b></span>")
+			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] ЖЕСТКО заблокировал(а) игрока [ckey]. Причина: \"[reason_public]\"; Срок - [duration] минут.</b>"))
+			send2adminlogirc("BAN: Администратор [setter_key] ЖЕСТКО заблокировал(а) игрока [ckey]. Причина: \"[reason_public]\"; Срок - [duration] минут.")
 		if("SOFT_PERMBAN")
-			to_chat(world, "<span class='notice'><b>BAN: Администратор [setter] перманентно отправил(а) игрока [ckey] в бан-тюрьму. Причина: [reason_public]</b></span>")
+			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] перманентно отправил(а) игрока [ckey] в бан-тюрьму. Причина: \"[reason_public]\"</b>"))
+			send2adminlogirc("BAN: Администратор [setter_key] перманентно отправил(а) игрока [ckey] в бан-тюрьму. Причина: \"[reason_public]\"")
 		if("SOFT_TEMPBAN")
-			to_chat(world, "<span class='notice'><b>BAN: Администратор [setter] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: [reason_public]; Срок - [duration] минут.</b></span>")
+			to_world(SPAN_NOTICE("<b>BAN: Администратор [setter] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: \"[reason_public]\"; Срок - [duration] минут.</b>"))
+			send2adminlogirc("BAN: Администратор [setter_key] временно отправил(а) игрока [ckey] в бан-тюрьму. Причина: \"[reason_public]\"; Срок - [duration] минут.")
 	return 1
 
 

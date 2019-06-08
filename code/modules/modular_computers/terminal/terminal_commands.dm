@@ -61,12 +61,18 @@ Subtypes
 
 /datum/terminal_command/man/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	if(text == "man")
-		. = list("The following commands are available.", "Some may require additional access.")
-		for(var/command in GLOB.terminal_commands)
-			var/datum/terminal_command/command_datum = command
-			if(user.skill_check(command_datum.core_skill, command_datum.skill_needed))
-				. += command_datum.name
-		return
+		var/end_msg = "The following commands are available.<br>Some may require additional access.<br>"
+		var/plus = ""
+		for(var/datum/terminal_command/i in var/t_comms = GLOB.terminal_commands)
+			if(copytext(plus, -1) && user.skill_check(i.core_skill, i.skill_needed))
+				plus = i.name + "<br>"
+				end_msg += plus
+				plus = ""
+				continue
+			if(user.skill_check(i.core_skill, i.skill_needed))
+				plus = i.name + " | "
+				end_msg += plus
+		return end_msg
 	if(length(text) < 5)
 		return "man: improper syntax. Use man \[command\]"
 	text = copytext(text, 5)
@@ -244,7 +250,7 @@ Subtypes
 	if(!id)
 		return syntax_error
 	var/obj/item/modular_computer/target = ntnet_global.get_computer_by_nid(id)
-	if(target == comp) return "<font color = '#ff0000'>proxy: YOU CAN'T USE PROXY ON YOURSELF DEVICE</font>"
+	if(target == comp) return "<font color = '#ff0000'>proxy: Cannot setup a device to be its own proxy.</font>"
 	if(!target || !target.enabled || !target.get_ntnet_status())
 		return "proxy: Error; cannot locate target device."
 	if(target.hard_drive)
@@ -373,7 +379,7 @@ Subtypes
 
 /datum/terminal_command/telnet
 	name = "telnet"
-	man_entry = list("Format: telnet \[NID\] \[LOGIN\] : \[PASSWORD\].",
+	man_entry = list("Format: telnet \[NID\] \[LOGIN\] \[PASSWORD\].",
 					"Access remote terminal with login and password",
 					"If NID \< 100 write NID like 001.",
 					"Use `telnet` to README and config security of your devise.")

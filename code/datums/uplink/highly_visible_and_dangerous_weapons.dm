@@ -24,15 +24,15 @@
 
 /datum/uplink_item/item/visible_weapons/energy_sword
 	name = "Energy Sword"
-	item_cost = 50
-	antag_costs = list(MODE_MERCENARY = 40)
+	item_cost = 30
+	antag_costs = list(MODE_MERCENARY = 20)
 	path = /obj/item/weapon/melee/energy/sword
 
 /datum/uplink_item/item/visible_weapons/silenced
 	name = "Silenced Holdout Pistol"
 	desc = "Holdout pistol with silencer kit and ammunition."
-	item_cost = 25
-	antag_costs = list(MODE_MERCENARY = 15)
+	item_cost = 15
+	antag_costs = list(MODE_MERCENARY = 10)
 	path = /obj/item/weapon/storage/box/syndie_kit/silenced
 
 /datum/uplink_item/item/badassery/money_cannon
@@ -56,7 +56,7 @@
 /datum/uplink_item/item/visible_weapons/revolver
 	name = "Revolver 'Colt'"
 	desc = "Magnum revolver, with ammunition."
-	item_cost = 56
+	item_cost = 40
 	antag_costs = list(MODE_MERCENARY = 32)
 	path = /obj/item/weapon/storage/backpack/satchel/syndie_kit/revolver
 
@@ -76,9 +76,7 @@
 /datum/uplink_item/item/visible_weapons/assaultrifle
 	name = "Assault Rifle"
 	item_cost = 80
-	antag_costs = list(MODE_MERCENARY = 60)
 	path = /obj/item/weapon/gun/projectile/automatic/assault_rifle
-	antag_roles = list(MODE_MERCENARY)
 
 /datum/uplink_item/item/visible_weapons/advanced_energy_gun
 	name = "Advanced Energy Gun"
@@ -120,7 +118,7 @@
 
 /datum/uplink_item/item/visible_weapons/sawnoff
 	name = "Sawnoff Shotgun"
-	item_cost = 55
+	item_cost = 25
 	path = /obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn
 
 /datum/uplink_item/item/visible_weapons/deagle
@@ -133,16 +131,12 @@
 	item_cost = 40
 	path = /obj/item/weapon/gun/projectile/pistol/military/alt
 
-/datum/uplink_item/item/visible_weapons/detective_revolver
-	name = "Holdout Revolver"
-	item_cost = 24
-	path = /obj/item/weapon/gun/projectile/revolver/holdout
-
 /datum/uplink_item/item/visible_weapons/pulserifle
 	name = "Pulse Rifle"
-	item_cost = 68
+	item_cost = 85
+	antag_costs = list(MODE_MERCENARY = 68)
 	path = /obj/item/weapon/gun/energy/pulse_rifle
-	antag_roles = list(MODE_MERCENARY)
+
 
 /datum/uplink_item/item/visible_weapons/flechetterifle
 	name = "Flechette Rifle"

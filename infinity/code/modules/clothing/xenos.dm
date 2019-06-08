@@ -1,7 +1,7 @@
 /obj/item/clothing/under/resomi
 	name = "small grey smock"
 	desc = "It looks fitted to nonhuman proportions."
-	icon = 'icons/obj/clothing/species/resomi/uniform.dmi'
+	icon = 'infinity/icons/obj/clothing/species/resomi/uniform.dmi'
 	icon_state = "resomi_grey"
 	item_state = "resomi_grey"
 	species_restricted = list(SPECIES_RESOMI)

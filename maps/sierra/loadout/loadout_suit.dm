@@ -76,3 +76,7 @@
 	path = /obj/item/clothing/suit/storage/toggle/labcoat/science/dais
 	allowed_roles = list(/datum/job/engineer, /datum/job/scientist, /datum/job/roboticist, /datum/job/infsys)
 	allowed_branches = list(/datum/mil_branch/contractor)
+
+/datum/gear/suit/militaryjacket
+	display_name = "military jacket"
+	path = /obj/item/clothing/suit/storage/tgbomber/militaryjacket

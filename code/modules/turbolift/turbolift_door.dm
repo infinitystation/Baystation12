@@ -29,6 +29,23 @@
 /obj/machinery/door/airlock/lift/allowed(mob/M)
 	return FALSE //only the lift machinery is allowed to operate this door
 
+/obj/machinery/door/airlock/lift/on_update_icon(state=0, override=0)
+	switch(state)	// Elevator doors must not rotate every time structure changed
+		if(0)
+			if(density)
+				icon_state = "closed"
+				state = AIRLOCK_CLOSED
+			else
+				icon_state = "open"
+				state = AIRLOCK_OPEN
+		if(AIRLOCK_OPEN)
+			icon_state = "open"
+		if(AIRLOCK_CLOSED)
+			icon_state = "closed"
+		if(AIRLOCK_OPENING, AIRLOCK_CLOSING, AIRLOCK_EMAG, AIRLOCK_DENY)
+			icon_state = ""
+	set_airlock_overlays(state)
+
 /obj/machinery/door/airlock/lift/close(var/forced=0)
 	for(var/turf/turf in locs)
 		for(var/mob/living/LM in turf)

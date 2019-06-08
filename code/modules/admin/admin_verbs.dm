@@ -20,7 +20,6 @@ var/list/admin_verbs_admin = list(
 	/datum/admins/proc/toggleguests,	//toggles whether guests can join the current game,
 	/datum/admins/proc/toggleobservers,
 	/datum/admins/proc/announce,		//priority announce something to all clients.,
-	/client/proc/colorooc,				//allows us to set a custom colour for everythign we say in ooc,
 	/client/proc/admin_ghost,			//allows us to ghost/reenter body at will,
 	/client/proc/toggle_view_range,		//changes how far we can see,
 	/datum/admins/proc/view_txt_log,	//shows the server log (diary) for today,
@@ -95,7 +94,8 @@ var/list/admin_verbs_admin = list(
 	/client/proc/reestablish_db_connection,
 	/client/proc/investigate_show,
 	/datum/admins/proc/show_skills,
-	/datum/admins/proc/paralyze_mob
+	/datum/admins/proc/paralyze_mob,
+	/client/proc/cmd_admin_subtle_message
 	)
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
@@ -208,6 +208,7 @@ var/list/admin_verbs_debug = list(
 	/turf/proc/update_chunk,
 	/datum/admins/proc/capture_map,
 	/datum/admins/proc/view_runtimes,
+	/client/proc/watched_variables,
 	/client/proc/secrets,
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
 	/client/proc/debug_global_variables,
@@ -229,7 +230,8 @@ var/list/admin_verbs_possess = list(
 	/proc/release
 	)
 var/list/admin_verbs_permissions = list(
-	/client/proc/edit_admin_permissions
+	/client/proc/edit_admin_permissions,
+	/client/proc/colorooc
 	)
 var/list/admin_verbs_rejuv = list(
 	/client/proc/respawn_character
@@ -300,16 +302,16 @@ var/list/admin_verbs_hideable = list(
 	/proc/possess,
 	/proc/release,
 	/datum/admins/proc/show_skills,
-	/datum/admins/proc/paralyze_mob
+	/datum/admins/proc/paralyze_mob,
+	/client/proc/cmd_admin_subtle_message
 	)
 var/list/admin_verbs_mod = list(
-	/client/proc/cmd_admin_pm_context,	// right-click adminPM interface,
-	/client/proc/cmd_admin_pm_panel,	// admin-pm list,
-	/client/proc/debug_variables,		// allows us to -see- the variables of any instance in the game.,
-	/client/proc/watched_variables,
-	/client/proc/debug_global_variables,// as above but for global variables,
+	/client/proc/cmd_admin_pm_context,
+	/client/proc/cmd_admin_pm_panel,
+	/client/proc/debug_variables,
+	/client/proc/debug_global_variables,
 	/datum/admins/proc/PlayerNotes,
-	/client/proc/admin_ghost,			// allows us to ghost/reenter body at will,
+	/client/proc/admin_ghost,
 	/datum/admins/proc/show_player_info,
 	/client/proc/player_panel_new,
 	/client/proc/dsay,
@@ -326,8 +328,7 @@ var/list/admin_verbs_mentor = list(
 	/client/proc/cmd_admin_pm_panel,
 	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,
-	/datum/admins/proc/show_player_info,
-	/client/proc/cmd_admin_subtle_message
+	/datum/admins/proc/show_player_info
 )
 
 /client/proc/add_admin_verbs()
@@ -513,13 +514,28 @@ var/list/admin_verbs_mentor = list(
 /client/proc/colorooc()
 	set category = "Fun"
 	set name = "OOC Text Color"
-	if(!holder)	return
-	var/response = alert(src, "Please choose a distinct color that is easy to read and doesn't mix with all the other chat and radio frequency colors.", "Change own OOC color", "Pick new color", "Reset to default", "Cancel")
+	if(!check_rights(R_PERMISSIONS))
+		return
+
+	var/client/C
+	if(alert(src, "Change for yourself or someone else?", "User pick", "For myself", "For another player") == "For another player")
+		C = input(src, "Please select a player.", "Player select") as null|anything in (GLOB.clients - src)
+	else
+		C = src
+	if(!C)
+		return
+
+	var/response = alert(src, "Please choose a distinct color that is easy to read and doesn't mix with all the other chat and radio frequency colors.", "Change [C] OOC color", "Pick new color", "Reset to default", "Cancel")
 	if(response == "Pick new color")
-		prefs.ooccolor = input(src, "Please select your OOC colour.", "OOC colour") as color
+		C.prefs.ooccolor = input(src, "Please select your OOC colour.", "OOC colour") as color
 	else if(response == "Reset to default")
-		prefs.ooccolor = initial(prefs.ooccolor)
-	SScharacter_setup.queue_preferences_save(prefs)
+		C.prefs.ooccolor = initial(C.prefs.ooccolor)
+	else
+		return
+	if(C && C != src)
+		to_chat(C, SPAN_NOTICE("[src] changed your OOC color to [C.prefs.ooccolor == initial(C.prefs.ooccolor) ? "default" : C.prefs.ooccolor]."))
+	log_and_message_admins("changed [C == src ? "his own" : "[C]"] OOC color to [C.prefs.ooccolor == initial(C.prefs.ooccolor) ? "default" : C.prefs.ooccolor].")
+	SScharacter_setup.queue_preferences_save(C.prefs)
 
 	SSstatistics.add_field_details("admin_verb","OC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
@@ -570,6 +586,8 @@ var/list/admin_verbs_mentor = list(
 	set category = "Special Verbs"
 	set name = "Drop Bomb"
 	set desc = "Cause an explosion of varying strength at your location."
+	if(!check_rights(R_FUN))
+		return
 
 	var/turf/epicenter = mob.loc
 	var/list/choices = list("Small Bomb", "Medium Bomb", "Big Bomb", "Custom Bomb")
@@ -596,6 +614,8 @@ var/list/admin_verbs_mentor = list(
 	set category = "Fun"
 	set name = "Give Disease"
 	set desc = "Gives a Disease to a mob."
+	if(!check_rights(R_FUN))
+		return
 
 	var/datum/disease2/disease/D = new /datum/disease2/disease()
 

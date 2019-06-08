@@ -10,7 +10,7 @@ var/list/holder_mob_icon_cache = list()
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/species/vox/onmob_head_vox.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_head_vox_armalis.dmi',
-		SPECIES_RESOMI = 'icons/mob/onmob/Resomi/head.dmi'
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/head.dmi'
 		)
 
 	origin_tech = null
