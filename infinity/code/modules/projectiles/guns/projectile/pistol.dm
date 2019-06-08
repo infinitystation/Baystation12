@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/projectile/spistol
 	name = "TH22 pistol"
 	desc = "The TH22. A small sidearm, with futuristic design. Uses .22LR rounds."
-	icon = 'icons/obj/infinity_guns.dmi'
+	icon = 'infinity/icons/obj/guns.dmi'
 	icon_state = "pistol0"
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/onmob/items/lefthand_guns.dmi',
@@ -9,7 +9,7 @@
 		)
 	item_state = "gun"
 	w_class = ITEM_SIZE_SMALL
-	caliber = CALIBER_PISTOL_TINY 
+	caliber = CALIBER_PISTOL_TINY
 	fire_delay = 1
 	origin_tech = list(TECH_COMBAT = 2)
 	load_method = MAGAZINE

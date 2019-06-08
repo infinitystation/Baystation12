@@ -150,7 +150,7 @@
 /obj/item/weapon/gun/projectile/automatic/tv3
 	name = "TV-3S carabine"
 	desc = "The TV-3S carabine is the one of traditional carabines of CCA."
-	icon = 'icons/obj/infinity_guns.dmi'
+	icon = 'infinity/icons/obj/guns.dmi'
 	icon_state = "TV-3Sm"
 	item_state = null
 	w_class = ITEM_SIZE_HUGE

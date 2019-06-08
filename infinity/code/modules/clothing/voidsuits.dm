@@ -116,6 +116,7 @@
 	slot_wear_suit_str = 'infinity/icons/obj/clothing/voidsuits.dmi'
 	)
 	armor = list(melee = 75, bullet = 65, laser = 65,energy = 55, bomb = 55, bio = 100, rad = 100)
+	max_pressure_protection = FIRESUIT_MAX_PRESSURE
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/device/suit_cooling_unit,/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/melee/energy/sword,/obj/item/weapon/handcuffs,/obj/item/weapon/storage/toolbox,/obj/item/weapon/storage/briefcase/inflatable,/obj/item/device/t_scanner,/obj/item/weapon/rcd)
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
