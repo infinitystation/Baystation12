@@ -18,7 +18,6 @@
 	<br><br>Многие люди на борту Колхиса считают Резоми главной причиной увеличения преступности на станции. В итоге резоми вынуждены оставаться только в выделенном для них жилом модуле,\
 	 дополнительно для них была  ограниченна и доступная для Резоми  работа."
 	language = LANGUAGE_RESOMI
-	additional_langs = list(LANGUAGE_GALCOM)
 	capital = "None"
 	ruling_body = "None"
 	distance = "UNDEFINED DISTANCE"
@@ -37,7 +36,6 @@ decl/cultural_info/location/eremus
 	 Вне стен городов понятие \"экономики\" теряется в песках великих пустынь, уступая место \"понятию\" выживания. Рабство и организованная преступность распространены,\
 	 и уже давно стали обыденностью для жителей данной планеты.<br><br>\
 	<a href=\"https://wiki.infinity-ss13.info/index.php?title=%D0%AD%D1%80%D0%B5%D0%BC%D1%83%D1%81\" target=\"_blank\" >Дополнительна&#1103 информаци&#1103;</a> "
-	additional_langs = list(LANGUAGE_GALCOM)
 	capital = "None"
 	ruling_body = "Varies from settlement to settlement"
 	distance = "UNDEFINED DISTANCE"
@@ -55,7 +53,6 @@ decl/cultural_info/location/eremus
 	 чем большинство других <font color=\"#a50aff\">Резоми</font>.<br><br>\
 	 <a href=\"https://wiki.infinity-ss13.info/index.php?title=%D0%90%E2%80%99%D1%88%D1%80%D0%B0%D0%BD%D0%B4%D0%B0\" target=\"_blank\" >Дополнительна&#1103 информаци&#1103;</a>"
 	language = LANGUAGE_RESOMI
-	additional_langs = list(LANGUAGE_GALCOM)
 	capital = "Azer'na"
 	ruling_body = "Democratic Oligarchy"
 	distance = "UNDEFINED DISTANCE"
@@ -70,7 +67,6 @@ decl/cultural_info/location/eremus
 	Покинувший свою родную планету савиилец, является крайне редким явлением, особенно учитывая редкую посещаемость Зер`ина.<br><br>\
 	<a href=\"https://wiki.infinity-ss13.info/index.php?title=%D0%A1%D0%B0%D0%B2%D0%B8%D0%B8%D0%BB%D1%8C\" target=\"_blank\" >Дополнительна&#1103 информаци&#1103;</a>"
 	language = LANGUAGE_RESOMI
-	additional_langs = list(LANGUAGE_GALCOM)
 	capital = "None"
 	ruling_body = "Tribal Oligarchy"
 	distance = "UNDEFINED DISTANCE"
@@ -85,12 +81,11 @@ decl/cultural_info/location/eremus
 	 , демократическое управление и даже сотрудничество с ИИ. Другие же \"потерянные\" миры сильно разоренные в результате Падения,\
 	  могут относится ещё более яростно и более чуждо по отношению к синтетике и некоторым технологиям. Часто таким колониям приходится прибегать к экстремальным поступкам и решениям, чтобы выжить."
 	language = LANGUAGE_RESOMI
-	additional_langs = list(LANGUAGE_GALCOM)
 	capital = "Various"
 	ruling_body = "Various"
 	distance = "Various"
 	economic_power = 1
-	secondary_langs = list(LANGUAGE_SPACER, LANGUAGE_SIGN, LANGUAGE_GUTTER, LANGUAGE_HUMAN_EURO )
+	secondary_langs = list(LANGUAGE_SPACER, LANGUAGE_SIGN, LANGUAGE_GUTTER, LANGUAGE_HUMAN_EURO)
 
 /decl/cultural_info/location/r_refuge_colony
 	name = HOME_SYSTEM_RESOMI_REFUGEE_COLONY
@@ -99,19 +94,17 @@ decl/cultural_info/location/eremus
 	 Такие колонии порой  распологаются далеко от обитаемого и изученного пространства. Население колоний редко превышает черту и в тысячу колонистов, \
 	 но так или иначе некоторые из них имеют достаточное влияние дабы \"спасать\" других <font color=\"#a50aff\">Резоми</font> живущих в куда более худших условиях."
 	language = LANGUAGE_RESOMI
-	additional_langs = list(LANGUAGE_GALCOM)
 	capital = "Various"
 	ruling_body = "Various"
 	distance = "Various"
 	economic_power = 0.8
-	secondary_langs = list(LANGUAGE_SPACER, LANGUAGE_SIGN, LANGUAGE_GUTTER, LANGUAGE_HUMAN_EURO )
+	secondary_langs = list(LANGUAGE_SPACER, LANGUAGE_SIGN, LANGUAGE_GUTTER, LANGUAGE_HUMAN_EURO)
 
 /decl/cultural_info/location/r_homeless
 	name = HOME_SYSTEM_RESOMI_HOMELESS
 	description = "Судя по всему обстоятельства сложились так что вам не удалось найти свой новый дом вне границ Империи.  Но скорее всего вы смогли найти работу, \
 	 и сохранить часть \"средств\" на дальнейшее существование, правда?"
 	language = LANGUAGE_RESOMI
-	additional_langs = list(LANGUAGE_GALCOM)
 	capital = "none"
 	ruling_body = "none"
 	distance = "none"
@@ -122,7 +115,6 @@ decl/cultural_info/location/eremus
 	name = HOME_SYSTEM_RESOMI_IMPER_COLONY
 	description = "Одна из множества колоний нахоядщихся во власти Империи, как и остальные страдающая от недостатка нормальной пищи, припасов и низкого уровня жизни в большей или чуть меньшей степени."
 	language = LANGUAGE_RESOMI
-	additional_langs = list(LANGUAGE_GALCOM)
 	capital = "Various"
 	ruling_body = "Various"
 	distance = "Various"

@@ -47,8 +47,8 @@
 
 		)
 	autohiss_exempt = list(
-					LANGUAGE_UNATHI,
-					LANGUAGE_YEOSA
+					LANGUAGE_UNATHI_SINTA,
+					LANGUAGE_UNATHI_YEOSA
 	)
 
 /datum/species/tajaran

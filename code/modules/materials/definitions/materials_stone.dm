@@ -25,6 +25,7 @@
 	sale_price = 5
 	sheet_singular_name = "gem"
 	sheet_plural_name = "gems"
+	value = 70
 
 /material/diamond/crystal
 	name = MATERIAL_CRYSTAL
@@ -56,6 +57,7 @@
 		/datum/reagent/silicon = 20
 		)
 	sale_price = 1
+	value = 4
 
 /material/stone/marble
 	name = MATERIAL_MARBLE
@@ -68,3 +70,5 @@
 	stack_type = /obj/item/stack/material/marble
 	construction_difficulty = MATERIAL_HARD_DIY
 	chem_products = null
+	sale_price = 4
+	value = 20

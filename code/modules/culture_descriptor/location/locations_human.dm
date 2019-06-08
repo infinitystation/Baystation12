@@ -12,7 +12,6 @@
 	distance = "1.5AU"
 	capital = "Olympus"
 	economic_power = 1.1
-	language = LANGUAGE_GALCOM
 
 /decl/cultural_info/location/human/earth
 	name = HOME_SYSTEM_EARTH
@@ -44,6 +43,7 @@
 	the poverty line, often holding feelings of resentment against the other people of Luna."
 	capital = "Selene"
 	economic_power = 1.3
+	secondary_langs = list(LANGUAGE_HUMAN_SELENIAN)
 
 /decl/cultural_info/location/human/venus
 	name = HOME_SYSTEM_VENUS
@@ -129,6 +129,7 @@
 	distance = "22.5 light years."
 	economic_power = 0.9
 	ruling_body = "Gilgamesh Colonial Confederation"
+	language = LANGUAGE_HUMAN_RUSSIAN
 
 /decl/cultural_info/location/human/tersten
 	name = HOME_SYSTEM_TERSTEN

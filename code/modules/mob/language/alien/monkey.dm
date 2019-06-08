@@ -1,30 +1,27 @@
 /datum/language/human/monkey
-	name = "Chimpanzee"
+	name = LANGUAGE_PRIMITIVE
 	desc = "Ook ook ook."
 	speech_verb = "chimpers"
 	ask_verb = "chimpers"
 	exclaim_verb = "screeches"
-	key = "m"
-	syllables = list("ook","eek")
-	shorthand = "HM"
+	key = ""
+	syllables = list("ook", "eek", "hiss", "gronk")
+	shorthand = "Ook"
 
-/datum/language/unathi/monkey
+/datum/language/human/monkey/unathi
 	name = "Stok"
 	desc = "Hiss hiss hiss."
-	key = "7"
 	syllables = list("hiss","gronk")
 	shorthand = "UM"
 
-/datum/language/skrell/monkey
+/datum/language/human/monkey/skrell
 	name = "Neaera"
 	desc = "Squik squik squik."
-	key = "8"
 	syllables = list("squick","croak")
 	shorthand = "SM"
 
-/datum/language/tajaran/monkey
+/datum/language/human/monkey/tajaran
 	name = "Farwa"
 	desc = "Meow meow meow."
-	key = "9"
 	syllables = list("meow","mew")
 	shorthand = "TM"

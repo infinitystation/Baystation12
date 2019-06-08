@@ -5,15 +5,16 @@
 */
 
 /datum/language
-	var/name = "an unknown language"  // Fluff name of language if any.
-	var/desc = "A language."          // Short description for 'Check Languages'.
+	var/name = "base language"  // Fluff name of language if any.
+	var/desc = "You should not have this language." // Short description for 'Check Languages'.
 	var/speech_verb = "говорит"          // 'says', 'hisses', 'farts'.
 	var/ask_verb = "спрашивает"             // Used when sentence ends in a ?
 	var/exclaim_verb = "восклицает"     // Used when sentence ends in a !
+	var/screem_verb = "кричит"
 	var/whisper_verb                  // Optional. When not specified speech_verb + quietly/softly is used instead.
 	var/signlang_verb = list("жестикулирует") // list of emotes that might be displayed if this language has NONVERBAL or SIGNLANG flags
 	var/colour = "body"               // CSS style to use for strings in this language.
-	var/key = "x"                     // Character used to speak in language eg. :o for Unathi.
+	var/key = ""                     // Character used to speak in language eg. :o for Unathi.
 	var/flags = 0                     // Various language flags.
 	var/native                        // If set, non-native speakers will have trouble speaking.
 	var/list/syllables                // Used when scrambling text for a non-speaker.
@@ -21,6 +22,7 @@
 	var/machine_understands = 1       // Whether machines can parse and understand this language
 	var/shorthand = "???"			  // Shorthand that shows up in chat for this language.
 	var/list/partial_understanding				  // List of languages that can /somehwat/ understand it, format is: name = chance of understanding a word
+	var/warning = ""
 
 /datum/language/proc/get_random_name(var/gender, name_count=2, syllable_count=4, syllable_divisor=2)
 	if(!syllables || !syllables.len)
@@ -150,12 +152,13 @@
 	return 1
 
 /datum/language/proc/get_spoken_verb(var/msg_end)
-	if(msg_end == "!!")
-		return pick("кричит")
-	else if(copytext(msg_end, length(msg_end)) == "!")
-		return exclaim_verb
-	else if(copytext(msg_end, length(msg_end)) == "?")
-		return ask_verb
+	switch(msg_end)
+		if("!")
+			return exclaim_verb
+		if("?")
+			return ask_verb
+		if("!!")
+			return screem_verb
 	return speech_verb
 
 /datum/language/proc/can_speak_special(var/mob/speaker)
