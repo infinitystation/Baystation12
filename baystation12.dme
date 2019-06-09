@@ -3125,6 +3125,7 @@
 #include "infinity\code\game\objects\items\customs\heph_set.dm"
 #include "infinity\code\game\objects\items\customs\hybrid_opt.dm"
 #include "infinity\code\game\objects\items\customs\ic_custom_belt.dm"
+#include "infinity\code\game\objects\items\customs\jacking_biohazard.dm"
 #include "infinity\code\game\objects\items\customs\kosteg_kit.dm"
 #include "infinity\code\game\objects\items\customs\lizard_w_bow.dm"
 #include "infinity\code\game\objects\items\customs\messith.dm"
