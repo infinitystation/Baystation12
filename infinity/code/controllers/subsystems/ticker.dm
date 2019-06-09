@@ -18,4 +18,4 @@
 		log_and_message_admins("Ошибка в компилировании карты! Возпроизведение резервного обновлениЯ в конце раунда! Доложить об ошибке разработчикам!")
 
 	if(GAME_STATE == RUNLEVEL_POSTGAME)
-		end_game_state = END_GAME_AWAITING_TICKETS
+		end_game_state = END_GAME_READY_TO_END
