@@ -69,3 +69,6 @@
 
 	var/interact_sounds
 	var/interact_sound_volume = 40
+//[INF]
+	var/is_remote_ui = 0
+//[/INF]
