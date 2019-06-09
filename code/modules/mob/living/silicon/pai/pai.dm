@@ -1,6 +1,6 @@
 /mob/living/silicon/pai
 	name = "pAI"
-	icon = 'icons/mob/pai.dmi'
+	icon = 'infinity/icons/mob/pai.dmi'
 	icon_state = "repairbot"
 
 	emote_type = 2		// pAIs emotes are heard, not seen, so they can be seen through a container (eg. person)
@@ -30,7 +30,13 @@
 		"Rabbit" = "rabbit",
 		"Mushroom" = "mushroom",
 		"Corgi" = "corgi",
-		"Crow" = "crow"
+		"Crow" = "crow",
+		//[INF],
+		//[_Elar_],
+		"Human Female" = "h_female",
+		"Human Female Red" = "h_female_dead",
+		//[/_Elar_],
+		//[/INF],
 		)
 
 	var/global/list/possible_say_verbs = list(
