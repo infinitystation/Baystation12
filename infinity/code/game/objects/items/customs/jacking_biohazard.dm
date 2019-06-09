@@ -51,7 +51,10 @@
 
 /obj/item/weapon/storage/backpack/dufflebag/biohazard/jacking
 	startswith = list(
-		/obj/item/clothing/suit/bio_suit/virology/jacking,
-		/obj/item/clothing/head/bio_hood/virology/jacking,
-		/obj/item/clothing/accessory/badge/holo/jacking,
-		)
+	/obj/item/weapon/clothingbag/biohazard
+	)
+
+/obj/item/weapon/clothingbag/biohazard/Initialize()
+	new /obj/item/clothing/suit/bio_suit/virology/jacking(src)
+	new /obj/item/clothing/head/bio_hood/virology/jacking(src)
+	new /obj/item/clothing/accessory/badge/holo/jacking(src)
