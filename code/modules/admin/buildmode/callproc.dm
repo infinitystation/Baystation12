@@ -1,8 +1,6 @@
 /*****************************
-
-             AHTUNG!
-        146% copypaste
-
+			AHTUNG!
+		146% copypaste
 ******************************/
 
 /datum/build_mode/callproc
@@ -23,7 +21,7 @@
 /datum/build_mode/callproc/Help()
 	to_chat(user, "<span class='notice'>***********************************************************</span>")
 	to_chat(user, "<span class='notice'>Right Click on call proc Mode Button = set proc & vars</span>")
-	to_chat(user, "<span class='notice'>Left Click                           = apply proc to atom/span>")
+	to_chat(user, "<span class='notice'>Left Click                           = apply proc to atom</span>")
 	to_chat(user, "<span class='notice'>***********************************************************</span>")
 
 /datum/build_mode/callproc/Configurate()
@@ -51,7 +49,7 @@
 
 	while(!done)
 		switch(input("Type of [arguments.len+1]\th variable", "argument [arguments.len+1]") as null|anything in list(
-				"finished", "null", "text", "num", "type", "obj reference", "mob reference",
+				"finished", "null", "text", "path", "num", "type", "obj reference", "mob reference",
 				"area/turf reference", "icon", "file", "client", "mob's area"))
 			if(null)
 
@@ -63,6 +61,11 @@
 
 			if("text")
 				current = input("Enter text for [arguments.len+1]\th argument") as null|text
+				if(isnull(current))
+					return
+
+			if("path")
+				current = text2path(input("Enter path for [arguments.len+1]\th argument") as null|text)
 				if(isnull(current))
 					return
 
