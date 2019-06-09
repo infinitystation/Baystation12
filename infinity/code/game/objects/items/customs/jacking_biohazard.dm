@@ -21,7 +21,7 @@
 	badge_string = "Medical"
 	badge_access = access_medical
 
-/obj/item/clothing/accessory/badge/holo/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/obj/item/clothing/accessory/badge/holo/jacking/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/weapon/card/id) || istype(O, /obj/item/modular_computer))
 		var/obj/item/weapon/card/id/id_card = O.GetIdCard()
 		if(!id_card)

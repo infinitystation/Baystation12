@@ -10,7 +10,6 @@
 	name = "Headphones from SindyExpress"
 	desc = "Orders via NTnet in the online store SindyExpress."
 	icon = CUSTOM_ITEM_OBJ
-	icon_state = "chowny_headphones"
 	state_on = "chowny_headphones_on"
 	state_off = "chowny_headphones_off"
 	item_icons = list(
