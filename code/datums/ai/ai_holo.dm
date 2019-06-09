@@ -4,7 +4,7 @@
 */
 /decl/ai_holo
 	var/requires_malf = FALSE
-	var/icon = 'icons/mob/hologram.dmi'
+	var/icon = 'infinity/icons/mob/hologram.dmi'
 	var/icon_state = "icon_state"
 	var/bypass_colorize = FALSE
 	var/name
@@ -79,3 +79,24 @@
 	icon_state = "malf-TCC"
 	requires_malf = TRUE
 	bypass_colorize = TRUE
+
+//[INF]
+//_Elar_
+/decl/ai_holo/male
+	name = "Default Male"
+	icon_state = "Default_male"
+//VG
+/decl/ai_holo/hosdan
+	name = "VG_Citadel"
+	icon_state = "shodan"
+	bypass_colorize = TRUE
+
+/decl/ai_holo/drone
+	name = "VG_Drone"
+	icon_state = "dronum"
+
+/decl/ai_holo/dronus
+	name = "VG_Dronus"
+	icon_state = "dronus"
+
+//[/INF]
