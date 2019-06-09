@@ -37,9 +37,8 @@
 		)
 
 // Space suit uplink kit
-/obj/item/weapon/storage/backpack/satchel/syndie_kit/space
+/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/space
 	//name = "\improper EVA gear pack"
-
 	startswith = list(
 		/obj/item/clothing/suit/space/void/merc/prepared,
 		/obj/item/clothing/mask/gas/syndicate,
@@ -168,7 +167,7 @@
 
 	startswith = list(/obj/item/weapon/spacecash/bundle/c1000 = 10)
 
-/obj/item/weapon/storage/backpack/satchel/syndie_kit/armor
+/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/armor
 	startswith = list(
 		/obj/item/clothing/suit/armor/pcarrier/merc,
 		/obj/item/clothing/head/helmet/merc
