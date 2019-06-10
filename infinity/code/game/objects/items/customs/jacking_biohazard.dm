@@ -1,13 +1,15 @@
 /obj/item/clothing/suit/bio_suit/virology/jacking
 	name = "The biohazard suit"
 	desc = "In general, the kit is a well-prepared kit for epidemiological analysis, planning anti-epidemic measures, epidemiological surveys of foci of infectious diseases."
-	item_state = "biohazard_suit"
 	item_icons = list(
 		slot_wear_suit_str = CUSTOM_ITEM_MOB,
 		)
+	item_state_slots = list(
+		slot_wear_suit_str = "bhs",
+	)
 
 /obj/item/clothing/head/bio_hood/virology/jacking
-	name = "The biohazard suit"
+	name = "The biohazard hood"
 	desc = "In general, the kit is a well-prepared kit for epidemiological analysis, planning anti-epidemic measures, epidemiological surveys of foci of infectious diseases."
 	item_state = "biohazard_hood"
 	item_icons = list(
