@@ -437,6 +437,11 @@ ckey: jacking
 character_name: Jon Obrayn
 item_path: /obj/item/weapon/storage/backpack/dufflebag/biohazard/jacking
 }
+{
+ckey: forrya
+character_name: Niyarkszherch Kchrashchjrj
+item_path: /obj/item/weapon/clothingbag/forrya_tajar
+}
 #	MEDIUM ITEMS HERE (5-6)
 
 {

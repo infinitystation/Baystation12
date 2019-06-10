@@ -3120,6 +3120,7 @@
 #include "infinity\code\game\objects\items\customs\elsas_stuff.dm"
 #include "infinity\code\game\objects\items\customs\explorer.dm"
 #include "infinity\code\game\objects\items\customs\exporation_voids.dm"
+#include "infinity\code\game\objects\items\customs\forrya_custom.dm"
 #include "infinity\code\game\objects\items\customs\fsb_set.dm"
 #include "infinity\code\game\objects\items\customs\gas_mask.dm"
 #include "infinity\code\game\objects\items\customs\headphones-crypto.dm"
