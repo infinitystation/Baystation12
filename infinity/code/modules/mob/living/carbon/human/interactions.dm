@@ -4,7 +4,7 @@
 
 /mob/living/carbon/human/MouseDrop(mob/M as mob)
 	..()
-	if(usr == src && usr != M)
+	if(src == usr)
 		interact(M)
 
 /mob/proc/make_interaction()
@@ -15,7 +15,7 @@
 	set name = "Interact"
 	set category = "IC"
 
-	if (istype(M, /mob/living/carbon/human) && usr != M)
+	if (istype(M, /mob/living/carbon/human) && usr != M && src != M)
 		partner = M
 		make_interaction(machine)
 
