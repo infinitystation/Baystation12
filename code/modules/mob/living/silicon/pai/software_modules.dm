@@ -183,11 +183,12 @@
 
 /mob/living/silicon/pai/proc/hackloop()
 	var/turf/T = get_turf_or_move(src.loc)
-	for(var/mob/living/silicon/ai/AI in GLOB.player_list)
-		if(T.loc)
-			to_chat(AI, "<font color = red><b>Network Alert: Brute-force encryption crack in progress in [T.loc].</b></font>")
-		else
-			to_chat(AI, "<font color = red><b>Network Alert: Brute-force encryption crack in progress. Unable to pinpoint location.</b></font>")
+	if(!is_hack_covered)
+		for(var/mob/living/silicon/ai/AI in GLOB.player_list)
+			if(T.loc)
+				to_chat(AI, "<font color = red><b>Network Alert: Brute-force encryption crack in progress in [T.loc].</b></font>")
+			else
+				to_chat(AI, "<font color = red><b>Network Alert: Brute-force encryption crack in progress. Unable to pinpoint location.</b></font>")
 	var/obj/machinery/door/D = cable.machine
 	if(!istype(D))
 		hack_aborted = 1
@@ -197,7 +198,7 @@
 		return
 	while(hackprogress < 1000)
 		if(cable && cable.machine == D && cable.machine == hackdoor && get_dist(src, hackdoor) <= 1)
-			hackprogress = min(hackprogress+rand(1, 20), 1000)
+			hackprogress = min(hackprogress+rand(1, 20)*hack_speed, 1000)
 		else
 			hack_aborted = 1
 			hackprogress = 0

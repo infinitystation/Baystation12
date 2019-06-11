@@ -30,15 +30,16 @@
 		"Rabbit" = "rabbit",
 		"Mushroom" = "mushroom",
 		"Corgi" = "corgi",
-		"Crow" = "crow",
-		//[INF],
-		//[_Elar_],
-		"Human Female" = "h_female",
-		"Human Female Red" = "h_female_dead",
-		//[/_Elar_],
-		//[/INF],
+		"Crow" = "crow"
 		)
-
+//[INF]
+//[_Elar_]
+	var/global/list/premium_chassis = list(
+		"Human Female" = "h_female",
+		"Human Female Red" = "h_female_dead"
+		)
+//[/_Elar_]
+//[/INF]
 	var/global/list/possible_say_verbs = list(
 		"Robotic" = list("states","declares","queries"),
 		"Natural" = list("says","yells","asks"),
@@ -79,6 +80,13 @@
 	var/obj/machinery/door/hackdoor		// The airlock being hacked
 	var/hackprogress = 0				// Possible values: 0 - 1000, >= 1000 means the hack is complete and will be reset upon next check
 	var/hack_aborted = 0
+	//[INF]
+	var/hack_speed = 1
+
+	var/is_hack_covered = 0
+
+	var/is_advanced_holo = 0
+	//[/INF]
 
 	var/translator_on = 0 // keeps track of the translator module
 
@@ -189,7 +197,7 @@
 
 /mob/living/silicon/pai/verb/fold_out()
 	set category = "pAI Commands"
-	set name = "Unfold Chassis"
+	set name = "Unfold Hologram"
 
 	if(stat || sleeping || paralysis || weakened)
 		return
@@ -230,7 +238,7 @@
 
 /mob/living/silicon/pai/verb/fold_up()
 	set category = "pAI Commands"
-	set name = "Collapse Chassis"
+	set name = "Collapse Hologram"
 
 	if(stat || sleeping || paralysis || weakened)
 		return
@@ -245,21 +253,35 @@
 
 /mob/living/silicon/pai/proc/choose_chassis()
 	set category = "pAI Commands"
-	set name = "Choose Chassis"
+	set name = "Choose Hologram"
 
 	var/choice
 	var/finalized = "No"
 	while(finalized == "No" && src.client)
+		if(!is_advanced_holo)
+			choice = input(usr,"What would you like to use for your hologram icon? This decision can only be made once.") as null|anything in possible_chassis
+			if(!choice) return
 
-		choice = input(usr,"What would you like to use for your mobile chassis icon? This decision can only be made once.") as null|anything in possible_chassis
-		if(!choice) return
+			icon_state = possible_chassis[choice]
+			finalized = alert("Look at your sprite. Is this what you wish to use?",,"No","Yes")
 
-		icon_state = possible_chassis[choice]
-		finalized = alert("Look at your sprite. Is this what you wish to use?",,"No","Yes")
+		else
+			switch(alert("Do you want to choose premium hologram icon?", "Hologram", "Standart", "Premium"))
+				if("Standart")
+					choice = input(usr,"What would you like to use for your hologram icon? This decision can only be made once.") as null|anything in possible_chassis
+					if(!choice) return
+					icon_state = possible_chassis[choice]
+					finalized = alert("Look at your sprite. Is this what you wish to use?",,"No","Yes")
+
+				if("Premium")
+					choice = input(usr,"What would you like to use for your hologram icon? This decision can only be made once.") as null|anything in premium_chassis
+					if(!choice) return
+					icon_state = premium_chassis[choice]
+					finalized = alert("Look at your sprite. Is this what you wish to use?",,"No","Yes")
 
 	chassis = possible_chassis[choice]
-	verbs -= /mob/living/silicon/pai/proc/choose_chassis
-	verbs += /mob/living/proc/hide
+	if(!is_advanced_holo) verbs -= /mob/living/silicon/pai/proc/choose_chassis
+	if(!/mob/living/proc/hide in verbs) verbs += /mob/living/proc/hide
 
 /mob/living/silicon/pai/proc/choose_verbs()
 	set category = "pAI Commands"
@@ -292,6 +314,43 @@
 
 //Overriding this will stop a number of headaches down the track.
 /mob/living/silicon/pai/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	//[INF]
+	if(istype(W, /obj/item/weapon/paimod))
+		var/obj/item/weapon/paimod/PMOD = W
+		if(PMOD.is_broken)
+			visible_message(SPAN_NOTICE("[user.name] tried to install [PMOD.name] in [src.name], but nothing happened."))
+			return
+		if(istype(PMOD, /obj/item/weapon/paimod/memory))
+			var/obj/item/weapon/paimod/memory/MMOD = PMOD
+			visible_message(SPAN_NOTICE("[user.name] installed [MMOD.name] in [src.name]."))
+			src.ram += MMOD.mmemory
+			to_chat(src, SPAN_NOTICE("Your ram is increased by [MMOD.mmemory]. Now your ram = [src.ram]."))
+			qdel(MMOD)
+			return
+		if(istype(PMOD, /obj/item/weapon/paimod/hack_speed))
+			var/obj/item/weapon/paimod/hack_speed/HMOD = PMOD
+			src.hack_speed += HMOD.additional_speed
+			visible_message(SPAN_NOTICE("[user.name] installed [HMOD.name] in [src.name]."))
+			to_chat(src, SPAN_NOTICE("Your hack speed is increased by [HMOD.additional_speed] times."))
+			qdel(HMOD)
+			return
+		if(istype(PMOD, /obj/item/weapon/paimod/hack_camo))
+			var/obj/item/weapon/paimod/hack_camo/CHMOD = PMOD
+			visible_message(SPAN_NOTICE("[user.name] installed [CHMOD.name] in [src.name]."))
+			src.is_hack_covered = 1
+			to_chat(src, SPAN_NOTICE("Now your hack covered."))
+			qdel(CHMOD)
+			return
+		if(istype(PMOD, /obj/item/weapon/paimod/advanced_holo))
+			var/obj/item/weapon/paimod/advanced_holo/HoloMOD = PMOD
+			visible_message(SPAN_NOTICE("[user.name] installed [HoloMOD.name] in [src.name]."))
+			src.is_advanced_holo = 1
+			if(!/mob/living/silicon/pai/proc/choose_chassis in src.verbs)
+				src.verbs += /mob/living/silicon/pai/proc/choose_chassis
+			to_chat(src, SPAN_NOTICE("Now you can choose premium chassis and change it anytime."))
+			qdel(HoloMOD)
+			return
+	//[/INF]
 	if(W.force)
 		visible_message("<span class='danger'>[user.name] attacks [src] with [W]!</span>")
 		src.adjustBruteLoss(W.force)

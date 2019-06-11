@@ -43,3 +43,18 @@ code/modules/mob/living/silicon/pai/software.dm
 		{{/for}}
 	</span>
 </span>
+
+<span class="item">
+	<span class="itemLabel">
+		Installed modules:
+	</span>
+	<span class="itemContent">
+		{{if data.holoproj}}
+			<td>Advanced hologram projector is instaled.<br>
+		{{/if}}
+		{{if data.hackcover}}
+			<td>Hack cover is installed.<br>
+		{{/if}}
+		<td>Your hack speed = {{:data.hackspeed}}<br>
+	</span>
+</span>

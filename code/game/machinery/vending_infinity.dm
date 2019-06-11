@@ -163,17 +163,16 @@
 	contraband = list(/obj/item/device/flash = 2,/obj/item/weapon/airlock_brace = 2,/obj/item/weapon/crowbar/brace_jack = 1)
 	premium = list(/obj/item/weapon/partyalarm_electronics = 1)
 
-/*========================*/
-/*==== IDEA BY LINERS ====*/
-/*========================*/
+/obj/machinery/vending/armoryvend
+	density = 0
+	vend_delay = 10
+	icon = 'icons/obj/infinity_vend.dmi'
+	icon_state = "thundervendor"
+	req_access = list(access_security)
 
 /obj/machinery/vending/armoryvend/kinetic
 	name = "WardenTech Kinetic"
 	desc = "A weapon vendor. It stores kinetic weapons."
-	req_access = list(access_security)
-	icon = 'icons/obj/infinity_vend.dmi'
-	density = 0
-	icon_state = "thundervendor"
 	products = list(/obj/item/weapon/gun/projectile/automatic/nt41 = 2,
 					/obj/item/ammo_magazine/n10mm = 6,
 					/obj/item/weapon/gun/projectile/shotgun/pump/combat = 2,
@@ -181,27 +180,36 @@
 					/obj/item/weapon/gun/launcher/grenade = 1,
 					/obj/item/weapon/storage/box/teargas = 1,
 					/obj/item/weapon/storage/box/flashbangs = 1)
-	vend_delay = 10
 
 /obj/machinery/vending/armoryvend/energy
 	name = "WardenTech Energy"
 	desc = "A weapon vendor. It stores energy weapons."
-	req_access = list(access_security)
-	icon = 'icons/obj/infinity_vend.dmi'
-	density = 0
-	icon_state = "thundervendor"
 	products = list(/obj/item/weapon/gun/energy/stunrevolver/rifle = 2,
 					/obj/item/weapon/gun/energy/taser/carbine = 2,
 					/obj/item/weapon/gun/energy/ionrifle = 2)
-	vend_delay = 10
 
 /obj/machinery/vending/armoryvend/laser
 	name = "WardenTech Laser"
 	desc = "A weapon vendor. It stores laser weapons."
-	req_access = list(access_security)
-	icon = 'icons/obj/infinity_vend.dmi'
-	density = 0
-	icon_state = "thundervendor"
 	products = list(/obj/item/weapon/gun/energy/laser/secure = 4,
 					/obj/item/weapon/gun/energy/gun/secure = 4)
-	vend_delay = 10
+
+/obj/machinery/vending/paimod
+	name = "IntelegenceTech"
+	desc = "A pai modification vendor. Inside of showcase you see many of circuits, devices and etc."
+	icon = 'icons/obj/infinity_vend.dmi'
+	density = 1
+	icon_state = "pai"
+	products = list(/obj/item/weapon/paimod/advanced_holo = 3,
+					/obj/item/weapon/paimod/memory/standart = 5,
+					/obj/item/weapon/paimod/memory/advanced = 3,
+					/obj/item/weapon/paimod/memory/lambda = 1
+					)
+	prices = list(/obj/item/weapon/paimod/advanced_holo = 150,
+					/obj/item/weapon/paimod/memory/standart = 20,
+					/obj/item/weapon/paimod/memory/advanced = 60,
+					/obj/item/weapon/paimod/memory/lambda = 120
+					)
+	contraband = list(/obj/item/weapon/paimod/hack_camo = 2,
+					/obj/item/weapon/paimod/hack_speed/standart = 2,
+					/obj/item/weapon/paimod/hack_speed/advanced = 1)
