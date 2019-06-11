@@ -16731,7 +16731,7 @@
 /obj/machinery/light/spot{
 	dir = 4
 	},
-/obj/machinery/washing_machine,
+/obj/machinery/vending/paimod,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "aAs" = (
