@@ -81,7 +81,7 @@
 	file.stored_data += "ROOT : [round(rand(1000, 9999))]" //LOGIN : PASSWORD
 	store_file(file)
 
-	var/datum/computer_file/data/config/file_README = new()
+	var/datum/computer_file/data/text/file_README = new()
 	file_README.filename = "TNet_CONFIG_README"
 	file_README.stored_data += "\[large\]\[b\]DO NOT DELETE OR RENAME FILE TNet_CONFIG IF YOU DO NOT WANT TO PUT YOUR DEVICE AT RISK \[/b\]\[/large\]\[br\]"
 	file_README.stored_data += "Format login and password in TNet_CONFIG: \[LOGIN\] : \[PASSWORD\].\[br\]"
