@@ -97,8 +97,7 @@
 		s.start()
 
 		M.Weaken(10)
-
-	if(master && wires & 1)
+	if(master && !(wires.IsIndexCut(WIRE_SIGNAL)))
 		master.receive_signal()
 	return
 
