@@ -474,16 +474,35 @@ Subtypes
 
 /datum/terminal_command/echo
 	name = "echo"
-	man_entry = list("Format: echo \[FILENAME\].", "Read stored data of file and return it in terminal.")
+	man_entry = list("Format: echo \[FILENAME\].",
+					"Read stored data of file and return it in terminal.",
+					"Use 'echo -a \[Your data\]' to write in file. Before it you must set editing file, use 'echo -s \[filename\]'"
+					)
 	pattern = "^echo"
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/echo/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/obj/item/modular_computer/CT = terminal.computer
-	var/file_name = copytext(text, 6)
-	if(!file_name) return "<font color='#ffa000'>echo: enter filename.</font>"
+	var/option = copytext(text, 6, 8)
 	if(!terminal.computer.hard_drive.check_functionality()) return "<font color='#ff0000'>echo: check integrity of your hard drive.</font>"
 
+	if(option == "-s")
+		var/datum/computer_file/setted_file_by_command = CT.hard_drive.find_file_by_name(copytext(text, 9))
+		if(!istype(setted_file_by_command, /datum/computer_file/data)) return "<font color='#ffa000'>Can't set on binary files.</font>"
+		if(length(setted_file_by_command.filename) != 0)
+			terminal.setted_file = setted_file_by_command
+			return "<font color='#00ff00'>echo: file [terminal.setted_file.filename] successfuly setted.</font>"
+		return "<font color='#ffa000'>echo: file not found.</font>"
+
+	if(option == "-a")
+		if(terminal.setted_file)
+			var/writening_data = copytext(text, 9)
+			terminal.setted_file.stored_data += writening_data
+			return "<font color='#00ff00'>echo: '[writening_data]' successfuly writen in [terminal.setted_file.filename].</font><br>Now file contain: [terminal.setted_file.stored_data]"
+		else return "<font color='#ffa000'>echo: file is not setted.</font>"
+	
+	var/file_name = copytext(text, 6)
+	if(!file_name) return "<font color='#ffa000'>echo: enter filename.</font>"
 	var/file = CT.hard_drive.find_file_by_name(file_name)
 	if(!istype(file, /datum/computer_file/data)) return "<font color='#ffa000'>echo: file is binary.</font>"
 	if(!file in CT.hard_drive.stored_files) return "<font color='#ffa000'>echo: file not fund</font>"
