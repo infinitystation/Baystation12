@@ -208,7 +208,10 @@
 	prices = list(/obj/item/weapon/paimod/advanced_holo = 150,
 					/obj/item/weapon/paimod/memory/standart = 20,
 					/obj/item/weapon/paimod/memory/advanced = 60,
-					/obj/item/weapon/paimod/memory/lambda = 120
+					/obj/item/weapon/paimod/memory/lambda = 120,
+					/obj/item/weapon/paimod/hack_camo = 150,
+					/obj/item/weapon/paimod/hack_speed/standart = 120,
+					/obj/item/weapon/paimod/hack_speed/advanced = 200
 					)
 	contraband = list(/obj/item/weapon/paimod/hack_camo = 2,
 					/obj/item/weapon/paimod/hack_speed/standart = 2,
