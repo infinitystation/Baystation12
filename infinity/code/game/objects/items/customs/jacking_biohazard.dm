@@ -47,9 +47,6 @@
 		slot_l_hand_str = CUSTOM_ITEM_MOB,
 		slot_r_hand_str = CUSTOM_ITEM_MOB,
 		)
-/obj/item/clothing/accessory/badge/holo/jacking
-	name = "The biohazard suit"
-	desc = "In general, the kit is a well-prepared kit for epidemiological analysis, planning anti-epidemic measures, epidemiological surveys of foci of infectious diseases."
 
 /obj/item/weapon/storage/backpack/dufflebag/biohazard/jacking
 	startswith = list(
