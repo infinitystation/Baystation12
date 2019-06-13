@@ -24,16 +24,27 @@
 		open_file = href_list["PRG_openfile"]
 	if(href_list["PRG_newtextfile"])
 		. = 1
+		var/newtype = input(usr, "Choose file type.") in list("BATCH", "TXT", "CFG")
 		var/newname = sanitize(input(usr, "Enter file name or leave blank to cancel:", "File rename"))
 		if(!newname)
 			return 1
 		var/obj/item/weapon/computer_hardware/hard_drive/HDD = computer.hard_drive
 		if(!HDD)
 			return 1
-		var/datum/computer_file/data/F = new/datum/computer_file/data()
-		F.filename = newname
-		F.filetype = "TXT"
-		HDD.store_file(F)
+		switch(newtype)
+			if("TXT")
+				var/datum/computer_file/data/text/F = new/datum/computer_file/data/text()
+				F.filename = newname
+				HDD.store_file(F)
+			if("BATCH")
+				var/datum/computer_file/data/coding/batch/F = new/datum/computer_file/data/coding/batch()
+				F.filename = newname
+				HDD.store_file(F)
+			if("CFG")
+				var/datum/computer_file/data/config/F = new/datum/computer_file/data/config()
+				F.filename = newname
+				HDD.store_file(F)
+
 	if(href_list["PRG_deletefile"])
 		. = 1
 		var/obj/item/weapon/computer_hardware/hard_drive/HDD = computer.hard_drive
