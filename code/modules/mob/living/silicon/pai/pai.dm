@@ -264,6 +264,7 @@
 
 			icon_state = possible_chassis[choice]
 			finalized = alert("Look at your sprite. Is this what you wish to use?",,"No","Yes")
+			chassis = possible_chassis[choice]
 
 		else
 			switch(alert("Do you want to choose premium hologram icon?", "Hologram", "Standart", "Premium"))
@@ -272,14 +273,15 @@
 					if(!choice) return
 					icon_state = possible_chassis[choice]
 					finalized = alert("Look at your sprite. Is this what you wish to use?",,"No","Yes")
+					chassis = possible_chassis[choice]
 
 				if("Premium")
 					choice = input(usr,"What would you like to use for your hologram icon? This decision can only be made once.") as null|anything in premium_chassis
 					if(!choice) return
 					icon_state = premium_chassis[choice]
 					finalized = alert("Look at your sprite. Is this what you wish to use?",,"No","Yes")
+					chassis = premium_chassis[choice]
 
-	chassis = possible_chassis[choice]
 	if(!is_advanced_holo) verbs -= /mob/living/silicon/pai/proc/choose_chassis
 	if(!/mob/living/proc/hide in verbs) verbs += /mob/living/proc/hide
 
