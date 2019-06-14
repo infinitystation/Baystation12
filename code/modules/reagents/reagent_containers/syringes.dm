@@ -147,14 +147,9 @@
 
 			var/injtime = time //Taking a blood sample through a hardsuit takes longer due to needing to find a port.
 			var/allow = T.can_inject(user, check_zone(user.zone_sel.selecting))
-			if(!allow)
+			if(!allow || allow == INJECTION_PORT)
 				return
-			if(allow == INJECTION_PORT)
-				injtime *= 2
-				user.visible_message("<span class='warning'>\The [user] begins hunting for an injection port on [target]'s suit!</span>")
-			else
-				user.visible_message("<span class='warning'>\The [user] is trying to take a blood sample from [target].</span>")
-
+			
 			if(prob(user.skill_fail_chance(SKILL_MEDICAL, 60, SKILL_BASIC)))
 				to_chat(user, "<span class='warning'>You miss the vein!</span>")
 				var/target_zone = check_zone(user.zone_sel.selecting)
@@ -234,13 +229,8 @@
 	if(target != user)
 		var/injtime = time //Injecting through a hardsuit takes longer due to needing to find a port.
 		var/allow = target.can_inject(user, check_zone(user.zone_sel.selecting))
-		if(!allow)
+		if(!allow || allow == INJECTION_PORT)
 			return
-		if(allow == INJECTION_PORT)
-			injtime *= 2
-			user.visible_message("<span class='warning'>\The [user] begins hunting for an injection port on [target]'s suit!</span>")
-		else
-			user.visible_message("<span class='warning'>\The [user] is trying to inject [target] with [visible_name]!</span>")
 
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 		user.do_attack_animation(trackTarget)
