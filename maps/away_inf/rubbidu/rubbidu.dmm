@@ -128,7 +128,7 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 25;
-	pixel_y = 0;
+	pixel_y = 0
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -207,7 +207,7 @@
 /area/rubbidu/civil/canteen)
 "aG" = (
 /obj/structure/closet/secure_closet/CO,
-/obj/item/weapon/door_remote/omni,
+/obj/item/device/remote_device/captain,
 /turf/simulated/floor/carpet/blue2,
 /area/rubbidu/command/quarters)
 "aH" = (
@@ -251,12 +251,12 @@
 "aL" = (
 /obj/machinery/door/window/southright{
 	name = "Test Chamber";
-	req_access = list("ACCESS_TOXINS");
+	req_access = list("ACCESS_TOXINS")
 	},
 /obj/machinery/door/window/southright{
 	dir = 1;
 	name = "Test Chamber";
-	req_access = list("ACCESS_TOXINS");
+	req_access = list("ACCESS_TOXINS")
 	},
 /turf/simulated/floor/reinforced,
 /area/rubbidu/nt)
@@ -310,7 +310,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rubbidu/nt)
 "aR" = (
-/obj/machinery/computer/engines{
+/obj/machinery/computer/ship/sensors{
 	icon_state = "computer";
 	dir = 4
 	},
@@ -566,7 +566,7 @@
 	dir = 2;
 	req_access = list(86)
 	},
-/obj/item/weapon/rig/hazard/guard,
+/obj/item/weapon/rig/hazard/equipped,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/rubbidu/nt)
 "bu" = (
@@ -693,7 +693,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	pixel_x = 25;
+	pixel_x = 25
 	},
 /turf/simulated/floor/tiled/dark,
 /area/rubbidu/command/bridge)
@@ -703,7 +703,7 @@
 "bF" = (
 /obj/machinery/alarm{
 	dir = 8;
-	pixel_x = 25;
+	pixel_x = 25
 	},
 /obj/item/device/radio/intercom{
 	pixel_y = 26
@@ -1767,7 +1767,7 @@
 /obj/item/device/radio/off,
 /obj/machinery/alarm{
 	dir = 8;
-	pixel_x = 25;
+	pixel_x = 25
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/rubbidu/nt)
@@ -1781,7 +1781,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	pixel_x = 25;
+	pixel_x = 25
 	},
 /turf/simulated/floor/tiled/white,
 /area/rubbidu/nt)
@@ -1868,7 +1868,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/rubbidu/nt)
 "dM" = (
-/obj/machinery/computer/helm{
+/obj/machinery/computer/ship/helm{
 	icon_state = "computer";
 	dir = 4
 	},
@@ -3278,7 +3278,6 @@
 	dir = 8;
 	health = null
 	},
-/obj/structure/slavers_base/mattress,
 /obj/structure/curtain/open/bed,
 /obj/effect/landmark{
 	name = "JoinLateCryo"
@@ -3289,6 +3288,7 @@
 	},
 /obj/random/trash,
 /obj/machinery/light/small,
+/obj/structure/mattress,
 /turf/simulated/floor/tiled/techfloor,
 /area/rubbidu/civil)
 "gm" = (
@@ -3309,7 +3309,7 @@
 	},
 /obj/machinery/alarm{
 	frequency = 1439;
-	pixel_y = 30;
+	pixel_y = 30
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -3320,7 +3320,7 @@
 "go" = (
 /obj/machinery/alarm{
 	dir = 8;
-	pixel_x = 25;
+	pixel_x = 25
 	},
 /turf/simulated/floor/tiled,
 /area/rubbidu/dock)
@@ -4711,10 +4711,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/rubbidu/nt)
 "it" = (
-/obj/machinery/computer/sensors{
-	icon_state = "computer";
-	dir = 8
-	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -4722,6 +4718,10 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/computer/ship/engines{
+	icon_state = "computer";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/rubbidu/command/bridge)
@@ -5077,9 +5077,7 @@
 /area/aquila/cockpit)
 "iZ" = (
 /obj/structure/displaycase,
-/obj/item/weapon/gun/projectile/revolver/webley/captain{
-	pixel_y = -3
-	},
+/obj/item/weapon/gun/projectile/revolver/medium/captain,
 /turf/simulated/floor/holofloor/wood,
 /area/rubbidu/command/quarters)
 "ja" = (
@@ -5995,7 +5993,7 @@
 "kx" = (
 /obj/machinery/alarm{
 	dir = 1;
-	pixel_y = -25;
+	pixel_y = -25
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -7609,7 +7607,7 @@
 "nb" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Cockpit";
-	req_access = list("access_expedition_shuttle");
+	req_access = list("access_expedition_shuttle")
 	},
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -7838,7 +7836,7 @@
 /area/exploration_shuttle/crew)
 "nw" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Crew Area";
+	name = "Crew Area"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -8010,7 +8008,7 @@
 	density = 1;
 	frequency = 1331;
 	id_tag = "calypso_shuttle_outer";
-	name = "Charon External Access";
+	name = "Charon External Access"
 	},
 /obj/machinery/shield_diffuser,
 /obj/machinery/atmospherics/pipe/simple/visible{
@@ -8087,7 +8085,7 @@
 /obj/machinery/door/airlock/external{
 	frequency = 1331;
 	id_tag = "calypso_shuttle_inner";
-	name = "Charon External Access";
+	name = "Charon External Access"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4;
@@ -9559,6 +9557,7 @@
 	dir = 1;
 	pixel_y = -29
 	},
+/obj/item/weapon/material/knife/kitchen/cleaver,
 /turf/simulated/floor/tiled/white,
 /area/rubbidu/civil/canteen)
 "qs" = (
@@ -9671,7 +9670,7 @@
 /obj/random/snack,
 /obj/machinery/alarm{
 	dir = 8;
-	pixel_x = 25;
+	pixel_x = 25
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/rubbidu/civil)
@@ -9924,7 +9923,7 @@
 "qQ" = (
 /obj/machinery/alarm{
 	frequency = 1439;
-	pixel_y = 30;
+	pixel_y = 30
 	},
 /turf/simulated/floor/plating,
 /area/rubbidu/nt)
@@ -9934,7 +9933,7 @@
 /obj/item/weapon/towel/random,
 /obj/machinery/alarm{
 	frequency = 1439;
-	pixel_y = 30;
+	pixel_y = 30
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -9977,7 +9976,7 @@
 "qU" = (
 /obj/machinery/alarm{
 	frequency = 1439;
-	pixel_y = 30;
+	pixel_y = 30
 	},
 /obj/effect/floor_decal/corner_steel_grid/diagonal,
 /obj/machinery/power/apc{
@@ -9995,7 +9994,7 @@
 /obj/item/weapon/stool/padded,
 /obj/machinery/alarm{
 	frequency = 1439;
-	pixel_y = 30;
+	pixel_y = 30
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -10015,7 +10014,7 @@
 	alarm_id = null;
 	dir = 4;
 	pixel_x = -23;
-	rcon_setting = 3;
+	rcon_setting = 3
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled,
@@ -10040,7 +10039,7 @@
 /obj/machinery/power/terminal,
 /obj/machinery/alarm{
 	frequency = 1439;
-	pixel_y = 30;
+	pixel_y = 30
 	},
 /obj/machinery/sleeper/survival_pod{
 	icon_state = "stasis_0";
@@ -11490,7 +11489,7 @@
 	alarm_id = null;
 	dir = 4;
 	pixel_x = -23;
-	rcon_setting = 3;
+	rcon_setting = 3
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/rubbidu/rad)
@@ -12559,12 +12558,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/rubbidu/civil)
 "vE" = (
-/obj/structure/slavers_base/mattress,
 /obj/structure/curtain/open/bed,
 /obj/effect/landmark{
 	name = "JoinLateCryo"
 	},
 /obj/item/weapon/bedsheet,
+/obj/structure/mattress/dirty,
 /turf/simulated/floor/tiled/techfloor,
 /area/rubbidu/civil)
 "vG" = (
@@ -12814,12 +12813,13 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/rubbidu/engineering)
 "wr" = (
-/obj/machinery/computer/engines{
-	dir = 4
-	},
 /obj/effect/floor_decal/techfloor{
 	icon_state = "techfloor_edges";
 	dir = 9
+	},
+/obj/machinery/computer/ship/engines{
+	icon_state = "computer";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/rubbidu/engineering)
@@ -13246,7 +13246,6 @@
 "Af" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/freezer/rations,
-/obj/item/weapon/material/knife/butch,
 /obj/item/weapon/beartrap,
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/dark,
@@ -13714,7 +13713,6 @@
 /area/rubbidu/hangar)
 "JT" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/closet/emcloset/legacy,
 /obj/item/device/oxycandle,
 /obj/item/device/oxycandle,
 /obj/item/device/oxycandle,
@@ -13902,7 +13900,7 @@
 	name = "Rear Hatch Control";
 	pixel_x = 32;
 	pixel_y = -32;
-	req_access = list("ACCESS_GUPPY");
+	req_access = list("ACCESS_GUPPY")
 	},
 /obj/structure/bed/chair/shuttle{
 	icon_state = "shuttle_chair_preview";
@@ -14440,6 +14438,15 @@
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled/dark,
 /area/rubbidu/hangar)
+"Rf" = (
+/obj/structure/curtain/open/bed,
+/obj/effect/landmark{
+	name = "JoinLateCryo"
+	},
+/obj/item/weapon/bedsheet,
+/obj/structure/mattress,
+/turf/simulated/floor/tiled/techfloor,
+/area/rubbidu/civil)
 "Rt" = (
 /obj/item/device/radio/intercom{
 	dir = 4;
@@ -14938,6 +14945,10 @@
 /obj/item/weapon/stock_parts/console_screen,
 /obj/item/weapon/stock_parts/console_screen,
 /turf/simulated/floor/tiled/dark,
+/area/rubbidu/nt)
+"XN" = (
+/obj/structure/closet/emcloset/full,
+/turf/simulated/floor/tiled/white,
 /area/rubbidu/nt)
 
 (1,1,1) = {"
@@ -23361,7 +23372,7 @@ ad
 sQ
 gg
 uy
-vE
+Rf
 bE
 xU
 Bn
@@ -24373,7 +24384,7 @@ hG
 cQ
 ib
 dy
-bL
+XN
 jj
 lx
 mc

@@ -9,7 +9,6 @@
 		return TRUE
 
 /datum/vote/map/setup_vote(mob/creator, automatic)
-	SSticker.end_game_state = END_GAME_AWAITING_MAP
 	initiator = (!automatic && istype(creator)) ? creator.ckey : "the server"
 	choices += GLOB.playable_maps
 	for(var/datum/map/M in choices)
@@ -23,14 +22,20 @@
 		return 1
 	if(result[1] == "extend")
 		log_game("Игроки выбрали продление текущей карты.")
-		SSticker.end_game_state = END_GAME_AWAITING_TICKETS
+		SSticker.end_game_state = END_GAME_READY_TO_END
 		return
 
 	var/datum/map/M = result[1]
-	fdel("maps/_map_in_use.dm")
-	text2file("#include \"[M.path]/[M.path].dm\"", "maps/_map_in_use.dm")
+	fdel("maps/~mapsystem/map_in_use.dm")
+	text2file("#if !defined(using_map_DATUM)\n\
+					#include \"../[M.path]/[M.path].dm\"\n\
+				#elif !defined(MAP_OVERRIDE)\n\
+					#warn A map has already been included, ignoring map rotates.\n\
+				#endif",
+	 "maps/~mapsystem/map_in_use.dm")
 	if(!SSticker.update_server)
 		SSvote.reset()
 		SSticker.update_map(M.full_name)
 	else
-		SSticker.end_game_state = END_GAME_AWAITING_TICKETS
+		send2mainirc("Следующей картой будет - [M.full_name]!")
+		SSticker.end_game_state = END_GAME_READY_TO_END

@@ -78,7 +78,11 @@ var/global/list/default_pai_software = list()
 	data["bought"] = bought_software
 	data["not_bought"] = not_bought_software
 	data["available_ram"] = ram
-
+	//[INF]
+	data["holoproj"] = is_advanced_holo
+	data["hackcover"] = is_hack_covered
+	data["hackspeed"] = hack_speed
+	//[/INF]
 	// Emotions
 	var/emotions[0]
 	for(var/name in pai_emotions)

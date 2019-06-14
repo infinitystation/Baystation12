@@ -27,7 +27,12 @@ var/list/ai_status_emotions = list(
 	"Tribunal Malfunctioning"	= new /datum/ai_emotion("ai_tribunal_malf",),
 	"Ship Scan" 				= new /datum/ai_emotion("ai_shipscan"),
 	"Fish Tank" 				= new /datum/ai_emotion("ai_fishtank"),
-	"Plump" 				= new /datum/ai_emotion("ai_plump")
+	"Plump" 					= new /datum/ai_emotion("ai_plump"),
+	//[INF],
+	//[_Elar_],
+	"Citadel"					= new /datum/ai_emotion("ai_citadel")
+	//[/_Elar_],
+	//[/INF],
 	)
 
 /proc/get_ai_emotions(var/ckey)
@@ -57,7 +62,7 @@ var/list/ai_status_emotions = list(
 				SD.friendc = 0
 
 /obj/machinery/ai_status_display
-	icon = 'icons/obj/status_display.dmi'
+	icon = 'infinity/icons/obj/status_display.dmi'
 	icon_state = "frame"
 	name = "AI display"
 	anchored = 1
@@ -97,4 +102,4 @@ var/list/ai_status_emotions = list(
 	picture_state = state
 	if(overlays.len)
 		overlays.Cut()
-	overlays += image('icons/obj/status_display.dmi', icon_state=picture_state)
+	overlays += image('infinity/icons/obj/status_display.dmi', icon_state=picture_state)

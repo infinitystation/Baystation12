@@ -10,7 +10,6 @@
 	name = "Headphones from SindyExpress"
 	desc = "Orders via NTnet in the online store SindyExpress."
 	icon = CUSTOM_ITEM_OBJ
-	icon_state = "chowny_headphones"
 	state_on = "chowny_headphones_on"
 	state_off = "chowny_headphones_off"
 	item_icons = list(
@@ -50,3 +49,15 @@
 /obj/item/clothing/accessory/chowny_braslet/black
 	name = "Braslet(black) from SindyExpress"
 	icon_state = "chowny_black_bracelet"
+
+/obj/item/weapon/storage/box/large/chowny
+	name = "SindyExpress postbox for Alice Goldstain"
+	startswith = list(
+		/obj/item/clothing/shoes/jackboots/chowny,
+		/obj/item/clothing/ears/earmuffs/headphones/chowny,
+		/obj/item/clothing/accessory/wcoat/chowny,
+		/obj/item/clothing/under/shorts/chowny,
+		/obj/item/clothing/accessory/chowny_braslet/gold,
+		/obj/item/clothing/accessory/chowny_braslet/pink,
+		/obj/item/clothing/accessory/chowny_braslet/black,
+		)

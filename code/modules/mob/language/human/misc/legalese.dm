@@ -16,4 +16,4 @@
 		"exonerated", "effecuate", "accord", "caveat", "stipulation", "pledgee", "covenant", "rights",
 		"lawful", "suit of law", "sequestrator", "et al", "et", "ex", "quid", "bono",	"quo", "pro", "ad"
 	)
-	
+	shorthand = "LGS"

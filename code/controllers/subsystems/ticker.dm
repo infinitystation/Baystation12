@@ -125,6 +125,7 @@ SUBSYSTEM_DEF(ticker)
 		INVOKE_ASYNC(src, .proc/declare_completion)
 		Master.SetRunLevel(RUNLEVEL_POSTGAME)
 		if(config.allow_map_switching && config.auto_map_vote && GLOB.all_maps.len > 1)
+			end_game_state = END_GAME_AWAITING_MAP
 			spawn(2 SECONDS)
 				SSvote.initiate_vote(/datum/vote/map, automatic = 1)
 		else

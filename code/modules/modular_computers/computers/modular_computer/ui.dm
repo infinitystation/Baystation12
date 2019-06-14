@@ -3,16 +3,19 @@
 	if(!screen_on || !enabled || bsod)
 		if(ui)
 			ui.close()
+			is_remote_ui = 0
 		return 0
 	if(!apc_power(0) && !battery_power(0))
 		if(ui)
 			ui.close()
+			is_remote_ui = 0
 		return 0
 
 	// If we have an active program switch to it now.
 	if(active_program)
 		if(ui) // This is the main laptop screen. Since we are switching to program's UI close it for now.
 			ui.close()
+			is_remote_ui = 0
 		active_program.ui_interact(user)
 		return
 
@@ -45,7 +48,7 @@
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
-		ui = new(user, src, ui_key, "laptop_mainscreen.tmpl", "NTOS Main Menu", 400, 500)
+		ui = new(user, src, ui_key, "laptop_mainscreen.tmpl", "NTOS Main Menu",  400, 500, nref = src)
 		ui.auto_update_layout = 1
 		ui.set_initial_data(data)
 		ui.open()
@@ -55,6 +58,8 @@
 	//There is no bypassing the update, mwhahaha
 	if(updating)
 		return min(STATUS_UPDATE, ..())
+	if(is_remote_ui)
+		return STATUS_INTERACTIVE
 	return ..()
 
 // Handles user's GUI input
@@ -112,6 +117,10 @@
 	if( href_list["PC_terminal"] )
 		open_terminal(usr)
 		return TOPIC_HANDLED
+
+	if(href_list["close"])
+		is_remote_ui = 0
+		return
 
 	if(.)
 		update_uis()
