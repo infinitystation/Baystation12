@@ -206,7 +206,7 @@ function run_code_tests {
     run_test_fail "no invalid spans" "grep -En \"<\s*span\s+class\s*=\s*('[^'>]+|[^'>]+')\s*>\" **/*.dm"
     run_test "code quality checks" "test/check-paths.sh"
     run_test "indentation check" "awk -f tools/indentation.awk **/*.dm"
-    run_test "check changelog example unchanged" "md5sum -c - <<< '683a3e0d21b90581ae6e4c95052d461e *html/changelogs/example.yml'"
+    run_test "check changelog example unchanged" "md5sum -c - <<< '80c39b95ef8e53af5dbfe03b786f6d97 *html/changelogs/example.yml'"
     run_test "check tags" "python2 tools/TagMatcher/tag-matcher.py ."
     run_test "check color hex" "python3 tools/ColorHexChecker/color-hex-checker.py ."
     run_test "check punctuation" "python2 tools/PunctuationChecker/punctuation-checker.py ."
