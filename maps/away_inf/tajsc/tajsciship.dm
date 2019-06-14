@@ -8,7 +8,7 @@
 	id = "awaysite_taj_sciship"
 	description = "A CCA EC scouting station."
 	suffixes = list("tajsc/tajsciship-1.dmm")
-	cost = 0.5
+	cost = 5555 //nu tipa chtobi poka ne vipadala hdd a tak 0.5
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/tajscishuttle)
 	prefix = "map/away_inf/"
 
