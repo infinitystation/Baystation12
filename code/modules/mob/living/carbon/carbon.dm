@@ -25,7 +25,7 @@
 	bloodstr.clear_reagents()
 	touching.clear_reagents()
 	var/datum/reagents/R = get_ingested_reagents()
-	if(istype(R)) 
+	if(istype(R))
 		R.clear_reagents()
 	nutrition = 400
 	..()
@@ -277,7 +277,9 @@
 
 	var/atom/movable/item = src.get_active_hand()
 
-	if(!item) return
+	if(!item)
+		acrobatics_jump(target)
+		return
 
 	var/throw_range = item.throw_range
 	var/itemsize

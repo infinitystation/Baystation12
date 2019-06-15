@@ -1972,6 +1972,7 @@
 #include "code\modules\mob\living\carbon\carbon_powers.dm"
 #include "code\modules\mob\living\carbon\give.dm"
 #include "code\modules\mob\living\carbon\hallucinations.dm"
+#include "code\modules\mob\living\carbon\jumping.dm"
 #include "code\modules\mob\living\carbon\life.dm"
 #include "code\modules\mob\living\carbon\resist.dm"
 #include "code\modules\mob\living\carbon\taste.dm"
