@@ -30,3 +30,33 @@
 
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel/empty
 	ammo_type = null
+
+/obj/item/weapon/gun/projectile/shotgun/shotguntaj
+	name = "TS-12E"
+	desc = "TS-12E shotgun pistol designer for CCA EC. It has tremendous stopping power. This is the weapon of last chance."
+	icon = 'icons/obj/infinity_guns.dmi'
+	icon_state = "shotguntaj"
+	item_state = "revolver"
+	max_shells = 1
+	force = 10
+	w_class = ITEM_SIZE_NORMAL
+	caliber = CALIBER_SHOTGUN
+	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/shotguntaj/net
+	allowed_magazines = /obj/item/ammo_magazine/shotguntaj
+	ammo_type = /obj/item/ammo_casing/shotgun
+
+/obj/item/weapon/gun/projectile/shotguntaj/special_check(user)
+	if(istype(user,/mob/living/carbon/human))
+		var/mob/living/carbon/human/H = user
+		if(H.species && H.species.get_bodytype(H) != SPECIES_TAJARA)
+			to_chat(user, "<span class='warning'>\The [src] trigger because of the anatomical structure of your hand is not pressed!</span>")
+			return 0
+	return ..()
+
+/obj/item/weapon/gun/projectile/shotguntaj/on_update_icon()
+	if(ammo_magazine)
+		icon_state = "shotguntaj"
+	else
+		icon_state = "shotguntaj_empty"

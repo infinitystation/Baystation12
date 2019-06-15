@@ -1,6 +1,6 @@
 /obj/item/ammo_casing/a22lr
 	desc = "A .22LR bullet casing."
-	caliber = CALIBER_PISTOL_TINY 
+	caliber = CALIBER_PISTOL_TINY
 	projectile_type = /obj/item/projectile/bullet/pistol/tiny
 
 /obj/item/ammo_casing/a22lr/rubber
@@ -42,16 +42,24 @@
 	caliber = CALIBER_ANTIMATERIAL_SMALL
 	matter = list(MATERIAL_STEEL = 500)
 
+/obj/item/ammo_casing/rifle/tv
+	desc = "A strange hight-caliber casing. You think its bigger than 7.62, but smaller than 12.7."
+	caliber = CALIBER_TV
+	projectile_type = /obj/item/projectile/bullet/rifle/tv
+	icon = 'infinity/icons/obj/ammo.dmi'
+	icon_state = "TVb"
+	spent_icon = "TVs"
+
 /obj/item/ammo_casing/uni46x30mm
 	desc = "A 46x30mm bullet casing."
-	caliber = CALIBER_PISTOL_FAST 
+	caliber = CALIBER_PISTOL_FAST
 	projectile_type = /obj/item/projectile/bullet/smg/uni46x30mm
 
 /obj/item/ammo_casing/nt28mm
 	desc = "A 5.7x28mm bullet casing."
-	caliber = CALIBER_PISTOL_FAST 
+	caliber = CALIBER_PISTOL_FAST
 	projectile_type = /obj/item/projectile/bullet/pistol/medium/fast
-	
+
 // EMP ammo.
 /obj/item/ammo_casing/c44/emp
 	desc = "A .44 haywire round"
@@ -60,6 +68,13 @@
 	icon_state = "empcasing"
 	projectile_type = /obj/item/projectile/ion/small
 	matter = list(MATERIAL_STEEL = 130, MATERIAL_URANIUM = 100)
+
+/obj/item/ammo_casing/shotgun/net
+	name = "net shell"
+	desc = "A net shell."
+	icon_state = "netshell"
+	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag/net
+	matter = list(MATERIAL_STEEL = 180)
 
 /obj/item/ammo_casing/e
 	desc = "Dart for energy weapon"
