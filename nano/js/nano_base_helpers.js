@@ -20,6 +20,7 @@ NanoBaseHelpers = function ()
 			// change ui styling to "DAIS mode"
 			DAISMode: function()
 			{
+				$('body').css("background-color","#382d1c");
 				$('body').css("background-image","url('uiBackground-DAIS.png')");
 				$('body').css("background-position","50% 0");
 				$('body').css("background-repeat","repeat-x");
