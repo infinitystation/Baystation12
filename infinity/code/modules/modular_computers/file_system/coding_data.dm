@@ -10,6 +10,10 @@ var/global/list/coding_languages = list("Batch")//,"Anaconda", "NTML")
 	code_lang = "Batch"
 	code_lang_desc = "Simple terminal commands code"
 
+/datum/computer_file/data/text/README/coding/batch
+	filename = "batch_manual"
+	stored_data = "\[center\]\[daislogo\]\[br\]\[h1\]=== Batch language manual === \[/center\]\[/h1\]\[hr\] All key words of batch you can get from terminal by using command \'man\'.\[br\] All key words must divide by \';\'.\[br\] Don't use spaces after \';\' if space divide command and option, use it..\[hr\]"
+
 /*/datum/computer_file/data/coding/anaconda
 	filetype = "ANC"
 	code_lang = "Anaconda"
