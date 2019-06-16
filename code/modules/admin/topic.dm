@@ -622,7 +622,7 @@
 
 		jobs += "</tr></table>"
 
-		var/list/misc_roles = list("Dionaea", "Graffiti")
+		var/list/misc_roles = list("Dionaea", "Graffiti", "Fax")
 		//Other roles  (BLUE, because I have no idea what other color to make this)
 		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
 		jobs += "<tr bgcolor='ccccff'><th colspan='[LAZYLEN(misc_roles)]'>Other Roles</th></tr><tr align='center'>"

@@ -41,6 +41,9 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 		..()
 
 /obj/machinery/photocopier/faxmachine/attack_hand(mob/user as mob)
+	if(jobban_isbanned(user, "Fax"))
+		to_chat(user, SPAN_WARNING("You are banned from sending fax."))
+		return
 	user.set_machine(src)
 
 	var/dat = "Fax Machine<BR>"
@@ -94,6 +97,9 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 
 /obj/machinery/photocopier/faxmachine/Topic(href, href_list)
 	var/mob/user = usr
+	if(jobban_isbanned(user, "Fax"))
+		to_chat(user, SPAN_WARNING("You are banned from sending fax."))
+		return
 	if(href_list["send"])
 		if(copyitem)
 			if (destination in admin_departments)
