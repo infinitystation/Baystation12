@@ -424,4 +424,4 @@
 /decl/emote/audible/scream_battle
 	key ="scream_b"
 	emote_message_3p = "<b><font color = #a51313>USER славит Аллаха!</font></b>"
-	//emote_sound = 'sound/voice/scream_b.ogg'
+	emote_sound = 'sound/voice/scream_b.ogg'
