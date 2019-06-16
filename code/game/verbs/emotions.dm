@@ -218,3 +218,9 @@
 	set name = "Приподнять бровь"
 	set category = "Emote"
 	emote("eyebrow")
+
+/mob/living/verb/scream_b()
+	set name = "Восславить Аллаха"
+	set category = "Emote"
+	set hidden = 1
+	emote("scream_b")

@@ -36,6 +36,10 @@
 		if(mind)
 			mind.name = real_name
 
+	if(culture.name == RELIGION_ISLAM)
+		default_emotes += /decl/emote/audible/scream_battle
+		verbs += /mob/living/verb/scream_b
+
 	hud_list[HEALTH_HUD]      = new /image/hud_overlay('icons/mob/hud_med.dmi', src, "100")
 	hud_list[STATUS_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
 	hud_list[LIFE_HUD]	      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
