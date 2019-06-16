@@ -116,3 +116,9 @@
 	path = /obj/effect/spawner/newbomb/traitor
 	desc = "A remote-activated phoron-oxygen bomb assembly with built-in signaler. \
 			A flashing disclaimer begins with the warning 'SOME DISASSEMBLY/REASSEMBLY REQUIRED.'"
+
+/datum/uplink_item/item/tools/blackout
+	name = "High Pulse Electricity Outage Tool"
+	item_cost = 24
+	path = /obj/item/device/blackout
+	desc = "A device wich can create power virus in SMES, spread it in power network and temporally creating blackout."
