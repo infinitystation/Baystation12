@@ -492,7 +492,7 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 			src.updateUsrDialog()
 
 		else if(href_list["set_new_message"])
-			src.msg = sanitize_a2u(sanitizeSafe(input(usr, "Write your Feed story", "Network Channel Handler") as message, extra = 0))
+			src.msg = sanitize_a2u(sanitizeSafe(input(usr, "Write your Feed story", "Network Channel Handler") as message, max_length = 0, extra = 0))
 			src.updateUsrDialog()
 
 		else if(href_list["set_attachment"])
