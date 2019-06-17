@@ -3094,6 +3094,7 @@
 #include "infinity\code\datums\outfits\infinity.dm"
 #include "infinity\code\game\gamemodes\malfunction\newmalf_ability_trees\infinity.dm"
 #include "infinity\code\game\items\toys.dm"
+#include "infinity\code\game\items\devices\blackout.dm"
 #include "infinity\code\game\items\weapons\cards_Id.dm"
 #include "infinity\code\game\items\weapons\handcuffs.dm"
 #include "infinity\code\game\items\weapons\lighter.dm"
