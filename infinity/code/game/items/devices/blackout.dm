@@ -12,12 +12,12 @@
 	var/Cooldown = (20 MINUTES)
 
 /obj/item/device/blackout/afterattack(var/obj/target as obj, mob/user as mob, proximity)
-	add_fingerprint(user)
 	if(!proximity)
 		return
 	if(!istype(target))
 		return
 
+	target.add_fingerprint(user)
 	if(istype(target, /obj/machinery/power/apc) || istype(target, /obj/machinery/power/smes)) // bit tricky
 		if(istype(target, /obj/machinery/power/apc))
 			var/obj/machinery/power/apc/A = target
