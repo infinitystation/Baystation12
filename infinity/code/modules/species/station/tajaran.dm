@@ -8,12 +8,15 @@
 	tail_animation = 'icons/mob/species/tajaran/tail.dmi'
 	default_h_style = "Tajaran Ears"
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/claws, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite/sharp)
+
 	darksight_range = 8
 	darksight_tint = DARKTINT_GOOD
-	slowdown = -0.5
-	brute_mod = 1.15
-	burn_mod =  1.15
-	flash_mod = 1.4
+	slowdown = -0.25
+	brute_mod = 1.1
+	burn_mod =  1.2
+	flash_mod = 1.5
+	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.4
+
 	gluttonous = GLUT_TINY
 	hidden_from_codex = FALSE
 	health_hud_intensity = 1.75
@@ -36,6 +39,14 @@
 	heat_level_2 = 380 //Default 400
 	heat_level_3 = 800 //Default 1000
 
+	heat_discomfort_level = 292
+	heat_discomfort_strings = list(
+		"Your fur prickles in the heat.",
+		"You feel uncomfortably warm.",
+		"Your overheated skin itches."
+		)
+	cold_discomfort_level = 230
+
 	primitive_form = "Farwa"
 
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED
@@ -48,14 +59,6 @@
 	reagent_tag = IS_TAJARA
 
 	move_trail = /obj/effect/decal/cleanable/blood/tracks/paw
-
-	heat_discomfort_level = 292
-	heat_discomfort_strings = list(
-		"Your fur prickles in the heat.",
-		"You feel uncomfortably warm.",
-		"Your overheated skin itches."
-		)
-	cold_discomfort_level = 230
 
 	sexybits_location = BP_GROIN
 
