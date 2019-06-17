@@ -162,4 +162,5 @@ s1334 - adherent
 wolfetd - adherent
 hardstuck - adherent
 jacking - adherent
+redknighthero - adherent
 redknighthero - bionic
