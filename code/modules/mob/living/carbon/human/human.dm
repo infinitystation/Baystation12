@@ -36,6 +36,14 @@
 		if(mind)
 			mind.name = real_name
 
+	var/decl/cultural_info/check = SSculture.get_culture(src.cultural_info[TAG_RELIGION])
+	if(check.name == RELIGION_ISLAM)
+		to_world("doot!")
+		default_emotes += /decl/emote/audible/scream_battle
+		verbs += /mob/living/verb/scream_b
+	else
+		to_world("no doot :(")
+
 	hud_list[HEALTH_HUD]      = new /image/hud_overlay('icons/mob/hud_med.dmi', src, "100")
 	hud_list[STATUS_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
 	hud_list[LIFE_HUD]	      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
@@ -56,14 +64,6 @@
 		dna.s_base = s_base
 		sync_organ_dna()
 	make_blood()
-
-
-	var/decl/cultural_info/religion = SSculture.get_culture(src.cultural_info[TAG_RELIGION])
-	if(religion)
-		if(religion.name == RELIGION_ISLAM)
-			to_world("doot!")
-			default_emotes += /decl/emote/audible/scream_battle
-			verbs += /mob/living/verb/scream_b
 
 /mob/living/carbon/human/Destroy()
 	GLOB.human_mob_list -= src
