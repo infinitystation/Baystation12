@@ -57,8 +57,11 @@
 		sync_organ_dna()
 	make_blood()
 
-	for(var/datum/language/L in src.languages)
-		if(L.name == LANGUAGE_HUMAN_ARABIC)
+
+	var/decl/cultural_info/religion = SSculture.get_culture(src.cultural_info[TAG_RELIGION])
+	if(religion)
+		if(religion.name == RELIGION_ISLAM)
+			to_world("doot!")
 			default_emotes += /decl/emote/audible/scream_battle
 			verbs += /mob/living/verb/scream_b
 
