@@ -57,14 +57,6 @@
 		sync_organ_dna()
 	make_blood()
 
-	var/decl/cultural_info/check = SSculture.get_culture(new_character.cultural_info["religion"])
-	to_world(check)
-	if(check.name == RELIGION_ISLAM)
-		to_world("doot!")
-		new_character.default_emotes += /decl/emote/audible/scream_battle
-		new_character.verbs += /mob/living/verb/scream_b
-	else to_world("no doot :(")
-
 /mob/living/carbon/human/Destroy()
 	GLOB.human_mob_list -= src
 	worn_underwear = null
