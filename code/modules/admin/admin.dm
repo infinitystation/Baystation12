@@ -64,10 +64,12 @@ var/global/floorIsLava = 0
 		<a href='?src=\ref[src];traitor=\ref[M]'>TP</a> -
 		<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a> -
 		<a href='?src=\ref[src];narrateto=\ref[M]'>DN</a> -
-		[admin_jump_link(M, src)]\] <br>
+		[admin_jump_link(M, src)] -
 		<a href='?src=\ref[src];subtlemessage=\ref[M]'>SM</a> -
-		<a href='?src=\ref[src];show_skills=\ref[M]'>SS</a> -
-		[admin_jump_link(M, src)]\] <br/><br/>
+		<a href='?src=\ref[src];show_skills=\ref[M]'>SS</a>\] <br>
+	"}
+
+	body += {"
 		<b>Client Information:</b><br>
 
 		<b>Client [M.client ? "On" : "Off"]line</b><br>
@@ -77,10 +79,10 @@ var/global/floorIsLava = 0
 		<b>CID:</b> [M.client ?  M.client.computer_id : M.computer_id]<br>
 		<b>CID Related Accounts:</b> [M.client ? M.client.related_accounts_cid : "Logged out"]<br>
 		<b>IP:</b> [M.client ?  M.client.address : M.lastKnownIP]<br>
-		<b>IP Related Accounts:</b> [M.client ? M.client.related_accounts_ip : "Logged out"]<br>"}
+		<b>IP Related Accounts:</b> [M.client ? M.client.related_accounts_ip : "Logged out"]<br>
+	"}
 
 	body += {"
-		[admin_jump_link(M, src)]<br>
 		<b>Mob type:</b> [M.type]<br>
 		<b>Inactivity time:</b> [M.client ? "[M.client.inactivity/600] minutes" : "Logged out"]<br/><br/>
 		<A href='?src=\ref[src];boot2=\ref[M]'>Kick</A> |
