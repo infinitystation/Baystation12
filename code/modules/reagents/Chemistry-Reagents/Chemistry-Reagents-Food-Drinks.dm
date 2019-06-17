@@ -2130,6 +2130,16 @@
 	glass_name = "special blend whiskey"
 	glass_desc = "Just when you thought regular whiskey was good... This silky, amber goodness has to come along and ruin everything."
 
+/datum/reagent/ethanol/github
+	name = "GitHub"
+	description = "The famous cocktail. Coined by programmers for programmers. Made not from programmers. Where's my merge, Elar?"
+	taste_description = "sweet microchips, steel and Elar's merge"
+	color = "#3d3d3d"
+	strength = 20
+
+	glass_name = "github cocktail"
+	glass_desc = "The famous cocktail. Coined by programmers for programmers. Made not from programmers. Where's my merge, Elar?"
+
 //black tea
 /datum/reagent/drink/tea
 	name = "Black Tea"
