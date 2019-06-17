@@ -103,6 +103,14 @@
 	if(active && owner && owner.floatiness <= 5)
 		owner.make_floating(5)
 
+	if(!active) owner.pass_flags &= ~PASS_FLAG_TABLE
+
+/obj/item/organ/internal/powered/float/attack_self(var/mob/user)
+	. = ..()
+	if(.)
+		if(active) owner.pass_flags |= PASS_FLAG_TABLE
+		else owner.pass_flags &= ~PASS_FLAG_TABLE
+
 /obj/item/organ/internal/eyes/adherent
 	name = "receptor prism"
 	icon = 'icons/mob/human_races/species/adherent/organs.dmi'
