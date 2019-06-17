@@ -18,34 +18,55 @@
 	if(!istype(target))
 		return
 
-	if(istype(target, /obj/machinery/power/smes))
-		var/obj/machinery/power/smes/S = target
-		if(!S.panel_open)
+	if(istype(target, /obj/machinery/power/apc) || istype(target, /obj/machinery/power/smes)) // bit tricky
+		if(istype(target, /obj/machinery/power/apc))
+			var/obj/machinery/power/apc/A = target
+			if(!A.wiresexposed)
+				return
+
+			if(!A.terminal)
+				to_chat(user, SPAN_WARNING("This power station isn't connected to global power channel."))
+				return
+
+		if(istype(target, /obj/machinery/power/smes))
+			var/obj/machinery/power/smes/S = target
+			if(!S.panel_open)
+				return
+
+			if(S.outputting != 2)
+				to_chat(user, SPAN_WARNING("This power station isn't connected to global power channel."))
+				return
+
+		if(check_to_use())
+			to_chat(user, SPAN_WARNING("Device does not respond. Perhaps you need to try later."))
 			return
 
 		if(!shots)
 			to_chat(user, SPAN_WARNING("Device does not respond."))
 			return
 
-		if(check_to_use())
-			to_chat(user, SPAN_WARNING("Device does not respond. Perhaps you need to try later."))
-			return
+		hacktheenergy(target, user)
 
-		if(S.outputting != 2)
-			to_chat(user, SPAN_WARNING("This power station isn't connected to global power channel."))
-			return
-		else
-			to_chat(user, SPAN_WARNING("-- Connecting to power supply... --"))
-			if(do_after(user, 50, S))
-				icon_state = "device_blackout-on"
-				to_chat(user, SPAN_WARNING("-- Connected. Sending pulse... --"))
-				playsound(get_turf(S), 'sound/items/goggles_charge.ogg', 50, 1)
-				if(do_after(user, 40, S))
-					to_chat(user, SPAN_WARNING("-- Pulsing procedure done. Thank you, and have a very safe, and productive day. --"))
-					shots--
-					Cooldown = world.time
-					power_failure(1, 2, GetConnectedZlevels(S.z))
-			icon_state = "device_blackout-off"
+/obj/item/device/blackout/proc/hacktheenergy(var/obj/target, mob/user)
+	if(!target || !user) return // security
+
+	src.audible_message("<font color=Maroon><b>Blackout Assistant</b></font> says, \"-- START -- Connecting to power supply... --\"")
+
+	if(do_after(user, 80, target))
+		icon_state = "device_blackout-on"
+		src.audible_message("<font color=Maroon><b>Blackout Assistant</b></font> says, \"-- PROCESS -- Connected. Sending pulse... --\"")
+		playsound(get_turf(target), 'sound/items/goggles_charge.ogg', 50, 1)
+
+		if(do_after(user, 40, target))
+			src.audible_message("<font color=Maroon><b>Blackout Assistant</b></font> says, \"-- DONE -- Pulsing procedure done. \
+				Thank you, and have a very safe, and productive day. --\"")
+
+			shots--
+			Cooldown = world.time
+
+			power_failure(1, 2, GetConnectedZlevels(target.z))
+
+	icon_state = "device_blackout-off"
 
 /obj/item/device/blackout/proc/check_to_use()
 	return lastUse <= (world.time - Cooldown)
