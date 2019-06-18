@@ -66,6 +66,8 @@
 
 			power_failure(1, 2, GetConnectedZlevels(target.z))
 
+			log_and_message_admins("[key_name(usr)] used \the [src.name] on \the [admin_jump_link(target, src)] to shutdown entire ship.")
+
 	icon_state = "device_blackout-off"
 
 /obj/item/device/blackout/proc/check_to_use()
