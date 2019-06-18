@@ -1356,7 +1356,6 @@
 #include "code\modules\admin\verbs\possess.dm"
 #include "code\modules\admin\verbs\pray.dm"
 #include "code\modules\admin\verbs\randomverbs.dm"
-#include "code\modules\admin\verbs\randomverbs_inf.dm"
 #include "code\modules\admin\verbs\reestablish_db_connection.dm"
 #include "code\modules\admin\verbs\respawn_as_self.dm"
 #include "code\modules\admin\verbs\SDQL.dm"
