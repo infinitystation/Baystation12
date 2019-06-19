@@ -559,7 +559,7 @@ Subtypes
 		if(length(inp_file_name) != 0)
 			var/datum/computer_file/data/coding/batch/F = CT.hard_drive.find_file_by_name(inp_file_name)
 			to_chat(user, "DEBUG: F = |[F]|")
-			if(F.filetype != "BAT") return "<font color='#ffa000'>alias: incorrect file. Expected batch file."
+			if(F.filetype != "BAT") return "<font color='#ffa000'>alias: incorrect file. Expected batch file.</font>"
 			var/code = F.stored_data
 			to_chat(user, "DEBUG: code = |[code]|")
 			if(!";" in code) return "<font color='ff0000'>alias: compile error, lack this \';\'.</font>"
