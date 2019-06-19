@@ -1,7 +1,6 @@
-
-/decl/poster/tjpost/New()
-   ..()
-   .=pick(subtypesof(/decl/poster/tjpost))
+/decl/poster/tjpost/Initialize()
+   . = ..()
+   . = pick(subtypesof(/decl/poster/tjpost))
 
 /obj/structure/sign/poster/tjpost
 	name = "poster"
@@ -11,112 +10,90 @@
 
 /obj/structure/sign/poster/tjpost/tj_1
 	icon_state="tposter_1"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_1
 
 /obj/structure/sign/poster/tjpost/tj_2
 	icon_state="tposter_2"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_2
 
 /obj/structure/sign/poster/tjpost/tj_3
 	icon_state="tposter_3"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_3
 
 /obj/structure/sign/poster/tjpost/tj_4
 	icon_state="tposter_4"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_4
 
 /obj/structure/sign/poster/tjpost/tj_5
 	icon_state="tposter_5"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_5
 
 /obj/structure/sign/poster/tjpost/tj_6
 	icon_state="tposter_6"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_6
 
 /obj/structure/sign/poster/tjpost/tj_7
 	icon_state="tposter_7"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_7
 
 /obj/structure/sign/poster/tjpost/tj_8
 	icon_state="tposter_8"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_8
 
 /obj/structure/sign/poster/tjpost/tj_9
 	icon_state="tposter_9"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_9
 
 /obj/structure/sign/poster/tjpost/tj_10
 	icon_state="tposter_10"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_10
 
 /obj/structure/sign/poster/tjpost/tj_11
 	icon_state="tposter_11"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_11
 
 /obj/structure/sign/poster/tjpost/tj_12
 	icon_state="tposter_12"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_12
 
 /obj/structure/sign/poster/tjpost/tj_13
 	icon_state="tposter_13"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_13
 
 /obj/structure/sign/poster/tjpost/tj_14
 	icon_state="tposter_14"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_14
 
 /obj/structure/sign/poster/tjpost/tj_15
 	icon_state="tposter_15"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_15
 
 /obj/structure/sign/poster/tjpost/tj_16
 	icon_state="tposter_16"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_16
 
 /obj/structure/sign/poster/tjpost/tj_17
 	icon_state="tposter_17"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_17
 
 /obj/structure/sign/poster/tjpost/tj_18
 	icon_state="tposter_18"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_18
 
 /obj/structure/sign/poster/tjpost/tj_19
 	icon_state="tposter_19"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_19
 
 /obj/structure/sign/poster/tjpost/tj_20
 	icon_state="tposter_20"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_20
 
 /obj/structure/sign/poster/tjpost/tj_21
 	icon_state="tposter_21"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_21
 
 /obj/structure/sign/poster/tjpost/tj_22
 	icon_state="tposter_22"
-	icon = 'infinity/icons/obj/contraband.dmi'
 	poster_type = /decl/poster/tjpost/tj_22
 
 /obj/structure/sign/poster/guide_to_pee
@@ -242,4 +219,7 @@
 /decl/poster/guide_to_pee
 	icon_state="guide_to_pee"
 	name = "Guide to use toilet"
-	desc = "If you want to avoid obossaniy pol and unitaz, then follow a couple of simple rules that will help you in this: For starters, get a hold of your gun. Make sure you get your sights right. Didn't take it too high, or too low. Also, make sure your weapon is not placed in the holster. If you follow these simple rules and do not blunt, the floor in the toilet will not be obossan."
+	desc = "If you want to avoid obossaniy pol and unitaz, \then follow a couple of simple rules that will help you in this: \
+	For starters, get a hold of your gun. Make sure you get your sights right. Didn't take it too high, or too low. \
+	Also, make sure your weapon is not placed in the holster. \
+	If you follow these simple rules and do not blunt, the floor in the toilet will not be obossan."
