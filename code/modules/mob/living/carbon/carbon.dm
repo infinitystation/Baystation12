@@ -278,7 +278,7 @@
 	var/atom/movable/item = src.get_active_hand()
 
 	if(!item)
-		acrobatics_jump(target)
+		jump_act(target) // inf
 		return
 
 	var/throw_range = item.throw_range
