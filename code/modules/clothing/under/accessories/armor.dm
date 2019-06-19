@@ -73,14 +73,14 @@
 	desc = "A heavier armor plate with additional ablative coating. Attaches to a plate carrier."
 	icon_state = "armor_tactical"
 	armor = list(melee = 50, bullet = 50, laser = 60, energy = 35, bomb = 30, bio = 0, rad = 0)
-	slowdown = 0.5
+	slowdown = 0.2
 
 /obj/item/clothing/accessory/armorplate/merc
 	name = "heavy armor plate"
 	desc = "A ceramics-reinforced synthetic armor plate, providing state of of the art protection. Attaches to a plate carrier."
 	icon_state = "armor_merc"
 	armor = list(melee = 60, bullet = 60, laser = 60, energy = 40, bomb = 40, bio = 0, rad = 0)
-	slowdown = 0.5
+	slowdown = 0.2
 
 //Arm guards
 /obj/item/clothing/accessory/armguards
@@ -179,7 +179,7 @@
 	icon_state = "legguards_riot"
 	armor = list(melee = 75, bullet = 33, laser = 50, energy = 10, bomb = 25, bio = 0, rad = 0)
 	siemens_coefficient = 0.5
-	slowdown = 0.5
+	slowdown = 0.3
 
 /obj/item/clothing/accessory/legguards/ballistic
 	name = "ballistic leg guards"
@@ -187,7 +187,7 @@
 	icon_state = "legguards_ballistic"
 	armor = list(melee = 42, bullet = 75, laser = 42, energy = 10, bomb = 25, bio = 0, rad = 0)
 	siemens_coefficient = 0.7
-	slowdown = 0.5
+	slowdown = 0.3
 
 /obj/item/clothing/accessory/legguards/ablative
 	name = "ablative leg guards"
@@ -195,7 +195,7 @@
 	icon_state = "legguards_ablative"
 	armor = list(melee = 35, bullet = 35, laser = 75, energy = 50, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
-	slowdown = 0.5
+	slowdown = 0.2
 
 
 //Decorative attachments
