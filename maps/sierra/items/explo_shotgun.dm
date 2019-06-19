@@ -88,22 +88,7 @@
 	matter = list(MATERIAL_STEEL = 720)
 	marking_color = COLOR_PALE_PURPLE_GRAY
 
-/obj/item/ammo_casing/shotgun/net
-	name = "net shell"
-	desc = "A net shell."
-	icon_state = "netshell"
-	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag/net
-	matter = list(MATERIAL_STEEL = 180)
-
-/obj/item/projectile/bullet/shotgun/beanbag/net
-	name = "netshell"
-	damage = 5
-	agony = 10
-
-/obj/item/projectile/bullet/shotgun/beanbag/net/on_hit(var/atom/target, var/blocked = 0, var/def_zone = null)
-	var/obj/item/weapon/energy_net/safari/net = new(loc)
-	net.throw_impact(target)
-	return TRUE
+//obj/item/ammo_casing/shotgun/net search into infinity/code/modules/projectiles/ammunition/bullets.dm
 
 /obj/item/weapon/storage/box/ammo/explo_shells
 	name = "box of utility shells"

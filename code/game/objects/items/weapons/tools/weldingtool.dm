@@ -21,6 +21,9 @@
 	var/welding_resource = "welding fuel"
 	var/obj/item/weapon/welder_tank/tank = /obj/item/weapon/welder_tank // where the fuel is stored
 
+	var/activate_sound = 'sound/items/WelderActivate.ogg'
+	var/deactivate_sound = 'sound/items/WelderDeactivate.ogg'
+
 /obj/item/weapon/weldingtool/Initialize()
 	if(ispath(tank))
 		tank = new tank
@@ -249,6 +252,7 @@
 				src.force = tank.lit_force
 				src.damtype = BURN
 			welding = 1
+			playsound(loc, activate_sound, 50, 1)
 			update_icon()
 			START_PROCESSING(SSobj, src)
 		else
@@ -268,6 +272,7 @@
 			src.force = tank.unlit_force
 		src.damtype = BRUTE
 		src.welding = 0
+		playsound(loc, deactivate_sound, 50, 1)
 		update_icon()
 
 /obj/item/weapon/weldingtool/attack(mob/living/M, mob/living/user, target_zone)
@@ -356,7 +361,7 @@
 	force = 6
 	throwforce = 6
 	size_in_use = ITEM_SIZE_NORMAL
-	
+
 
 /obj/item/weapon/welder_tank/huge
 	name = "huge welding fuel tank"

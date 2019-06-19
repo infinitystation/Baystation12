@@ -18,14 +18,14 @@
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a22lr
 	matter = list(MATERIAL_STEEL = 525)
-	caliber = CALIBER_PISTOL_TINY 
+	caliber = CALIBER_PISTOL_TINY
 	max_ammo = 15
 
 /obj/item/ammo_magazine/a22lr
 	name = "speed loader (.22LR)"
 	desc = "A speed loader for revolvers."
 	icon_state = "38"
-	caliber = CALIBER_PISTOL_TINY 
+	caliber = CALIBER_PISTOL_TINY
 	ammo_type = /obj/item/ammo_casing/a22lr
 	max_ammo = 10
 	multiple_sprites = 1
@@ -58,7 +58,7 @@
 	name = "magazine (12.7x55mm)"
 	icon_state = "5.56"
 	mag_type = MAGAZINE
-	caliber = CALIBER_ANTIMATERIAL_SMALL 
+	caliber = CALIBER_ANTIMATERIAL_SMALL
 	matter = list(MATERIAL_STEEL = 2300)
 	ammo_type = /obj/item/ammo_casing/a12755
 	max_ammo = 8
@@ -130,3 +130,58 @@
 	icon_state = "EP"
 	ammo_type = /obj/item/ammo_casing/e/pistol
 	max_ammo = 20
+
+/obj/item/ammo_magazine/shotguntaj
+	name = "magazine (12 gauge)"
+	icon = 'infinity/icons/obj/ammo.dmi'
+	icon_state = "taj12"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun
+	matter = list(MATERIAL_STEEL = 525)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 5
+
+/obj/item/ammo_magazine/shotguntaj/empty
+	icon_state = "taj12-0"
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/shotguntaj/net
+	name = "magazine (12 gauge) - net"
+	icon = 'infinity/icons/obj/ammo.dmi'
+	icon_state = "taj12"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/shotgun/net
+	matter = list(MATERIAL_STEEL = 525)
+	caliber = CALIBER_SHOTGUN
+	max_ammo = 5
+
+/obj/item/ammo_magazine/tv
+	name = "Large black magazine."
+	desc = "Black metal rifle magazine. Quite heavy."
+	icon = 'infinity/icons/obj/ammo.dmi'
+	icon_state = "tvm"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = CALIBER_TV
+	matter = list(MATERIAL_STEEL = 7000)
+	ammo_type = /obj/item/ammo_casing/rifle/tv
+	max_ammo = 26
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/tv/empty
+	icon = 'infinity/icons/obj/ammo.dmi'
+	icon_state = "tvms"
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/tvtcink
+	name = "Tcink"
+	desc = "If someone accidentally drops all of it - will have to collect a very long time."
+	icon = 'infinity/icons/obj/ammo.dmi'
+	icon_state = "tcink"
+	w_class = ITEM_SIZE_NORMAL
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = CALIBER_TV
+	matter = list(MATERIAL_STEEL = 20000)
+	ammo_type = /obj/item/ammo_casing/rifle/tv
+	max_ammo = 130

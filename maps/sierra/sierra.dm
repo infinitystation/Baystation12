@@ -118,9 +118,10 @@
 	#include "../away/empty.dmm"
 
 	#include "../away_inf/yacht/yacht.dm"
-	#include "../away_inf/smugglers/smugglers.dm"
-	#include "../away_inf/blueriver/blueriver.dm"
 	#include "../away_inf/mining/mining.dm"
+//  #include "../away_inf/tajsc/tajsciship.dm"
+	#include "../away_inf/blueriver/blueriver.dm"
+	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 
 	#include "../away/bearcat/bearcat.dm"
