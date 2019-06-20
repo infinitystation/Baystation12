@@ -527,17 +527,12 @@ Subtypes
 /datum/terminal_command/alias/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/obj/item/modular_computer/CT = terminal.computer
 	var/option = copytext(text, 7, 10)
-	to_chat(user, "DEBUG: option = |[option]|")
-
 
 	if(option == "-cr")
 		if(copytext(text, 11, 15) == "-bat")
-			to_chat(user, copytext(text, 11, 15))
 			var/ent_filename = copytext(text, 16)
-			to_chat(user, "DEBUG: ent_filename = |[ent_filename]|")
 			if(length(ent_filename) != 0)
 				var/datum/computer_file/data/coding/batch/B = new()
-				to_chat(user, "DEBUG: B = |[B]|")
 				B.filename = ent_filename
 				CT.hard_drive.store_file(B)
 				return "<font color='00ff00'>alias: file \'[B.filename]\' was created.</font>"
@@ -555,22 +550,16 @@ Subtypes
 
 	if(option == "-ex")
 		var/inp_file_name = copytext(text, 11)
-		to_chat(user, "DEBUG: inp_file_name = |[inp_file_name]|")
 		if(length(inp_file_name) != 0)
 			var/datum/computer_file/data/coding/batch/F = CT.hard_drive.find_file_by_name(inp_file_name)
-			to_chat(user, "DEBUG: F = |[F]|")
 			if(F.filetype != "BAT") return "<font color='#ffa000'>alias: incorrect file. Expected batch file.</font>"
 			var/code = F.stored_data
-			to_chat(user, "DEBUG: code = |[code]|")
 			if(!";" in code) return "<font color='ff0000'>alias: compile error, lack this \';\'.</font>"
 			code = replacetext(code, " \[br\]","")
-			to_chat(user, "DEBUG: code = |[code]|")
 			code = replacetext(code, "\[br\]","")
-			to_chat(user, "DEBUG: code = |[code]|")
+
 			var/list/code_list = splittext(code, ";")
 
-			to_chat(user, "DEBUG: code_list = [code_list]")
-			to_chat(user, "DEBUG: length(code_list) = [length(code_list)]")
 			for(var/i in code_list)
 				var/output = terminal.parse(i, user)
 				terminal.history += "<br>alias << [i]"
