@@ -5,6 +5,9 @@
 	var/list/history = list()
 	var/list/history_max_length = 20
 	var/obj/item/modular_computer/computer
+	//[inf]
+	var/datum/computer_file/data/setted_file
+	//[/inf]
 
 /datum/terminal/New(mob/user, obj/item/modular_computer/computer)
 	..()

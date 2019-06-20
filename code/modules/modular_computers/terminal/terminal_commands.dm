@@ -276,16 +276,17 @@ Subtypes
 		return "listdir: Improper syntax. Use listdir."
 	if(!terminal.computer.hard_drive.check_functionality())
 		return "listdir: Access attempt to local storage failed. Check integrity of your hard drive"
-	var/list/massive_of_program_names = list()
+	//var/list/massive_of_program_names = list()
 	for(var/datum/computer_file/F in terminal.computer.hard_drive.stored_files)
 		if(F.is_illegal == 0)
 			var/prog_size = num2text(F.size)
-			var/prg_data = F.filename + "." + F.filetype + "	|	" + prog_size + " GQ"
-			massive_of_program_names.Add(prg_data)
+			. += F.filename + "." + F.filetype + "	|	" + prog_size + " GQ<br>"
+			//massive_of_program_names.Add(prg_data)
 		else
-			var/prg_data = "\[ENCRYPTED\]" + "." + "\[ENCRYPTED\]" + "	|	" + "\[ENCRYPTED\]" + " GQ"
-			massive_of_program_names.Add(prg_data)
-	return massive_of_program_names
+			//var/prg_data = "\[ENCRYPTED\]" + "." + "\[ENCRYPTED\]" + "	|	" + "\[ENCRYPTED\]" + " GQ"
+			. += "\[ENCRYPTED\]" + "." + "\[ENCRYPTED\]" + "	|	" + "\[ENCRYPTED\]" + " GQ<br>"
+			//massive_of_program_names.Add(prg_data)
+	return
 
 /datum/terminal_command/shutdown
 	name = "shutdown"
@@ -301,27 +302,6 @@ Subtypes
 	CT.bsod = 0
 	CT.update_icon()
 	return "Shutdown successful."
-
-//TODO-Elar-inf: Soon i'll finish it.
-/*/datum/terminal_command/run
-	name = "run"
-	man_entry = list("Format: run \[program name\]", "Runs the program from local memory using it name.")
-	pattern = "^run"
-	skill_needed = SKILL_ADEPT
-
-/datum/terminal_command/run/proper_input_entered(text, mob/user, datum/terminal/terminal)
-	text = copytext(text,5)
-	var/obj/item/modular_computer/CT = terminal.computer
-	var/datum/computer_file/program/FBN = CT.hard_drive.find_file_by_name(text)
-
-	if(!CT.hard_drive.check_functionality())
-		return "run: Access attempt to HDD failed. Check integrity of your hard drive."
-	if(FBN)
-		FBN.run_program(user)
-		return "run: Program successful runned."
-	else
-		return "run: file not found or it isn't PRG-file."
-	return "run: Wrong input. man run for syntax help."*/
 
 /datum/terminal_command/session
 	name = "session"
@@ -367,18 +347,21 @@ Subtypes
 				ermsg = "Curent" + ermsg
 			ermsg = "session: " + ermsg
 			return ermsg
-	var/list/massive_of_active_progs = list()
+	//var/list/massive_of_active_progs = list()
 	for(PRG in CT.idle_threads)
 		if(PRG.is_illegal)
 			var/act_prog = "\[ENCRYPTED\]"
-			massive_of_active_progs.Add(act_prog)
+			//massive_of_active_progs.Add(act_prog)
+			. += act_prog + "<br>"
 		else
 			var/act_prog = PRG.filename
-			massive_of_active_progs.Add(act_prog)
+			//massive_of_active_progs.Add(act_prog)
+			. += act_prog
 	if(CT.active_program)
-		massive_of_active_progs.Add(CT.active_program.filename)
-	if(massive_of_active_progs)
-		return massive_of_active_progs
+		//massive_of_active_progs.Add(CT.active_program.filename)
+		. += CT.active_program.filename
+	if(.)
+		return
 	return "session: Wrong input. Enter man session for syntax help."
 
 /datum/terminal_command/telnet
@@ -474,16 +457,35 @@ Subtypes
 
 /datum/terminal_command/echo
 	name = "echo"
-	man_entry = list("Format: echo \[FILENAME\].", "Read stored data of file and return it in terminal.")
+	man_entry = list("Format: echo \[FILENAME\].",
+					"Read stored data of file and return it in terminal.",
+					"Use 'echo -a \[Your data\]' to write in file. Before it you must set editing file, use 'echo -s \[filename\]'"
+					)
 	pattern = "^echo"
 	skill_needed = SKILL_ADEPT
 
 /datum/terminal_command/echo/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/obj/item/modular_computer/CT = terminal.computer
-	var/file_name = copytext(text, 6)
-	if(!file_name) return "<font color='#ffa000'>echo: enter filename.</font>"
+	var/option = copytext(text, 6, 8)
 	if(!terminal.computer.hard_drive.check_functionality()) return "<font color='#ff0000'>echo: check integrity of your hard drive.</font>"
 
+	if(option == "-s")
+		var/datum/computer_file/setted_file_by_command = CT.hard_drive.find_file_by_name(copytext(text, 9))
+		if(!istype(setted_file_by_command, /datum/computer_file/data)) return "<font color='#ffa000'>Can't set on binary files.</font>"
+		if(length(setted_file_by_command.filename) != 0)
+			terminal.setted_file = setted_file_by_command
+			return "<font color='#00ff00'>echo: file [terminal.setted_file.filename] successfuly setted.</font>"
+		return "<font color='#ffa000'>echo: file not found.</font>"
+
+	if(option == "-a")
+		if(terminal.setted_file)
+			var/writening_data = copytext(text, 9)
+			terminal.setted_file.stored_data += writening_data
+			return "<font color='#00ff00'>echo: '[writening_data]' successfuly writen in [terminal.setted_file.filename].</font><br>Now file contain: [terminal.setted_file.stored_data]"
+		else return "<font color='#ffa000'>echo: file is not setted.</font>"
+
+	var/file_name = copytext(text, 6)
+	if(!file_name) return "<font color='#ffa000'>echo: enter filename.</font>"
 	var/file = CT.hard_drive.find_file_by_name(file_name)
 	if(!istype(file, /datum/computer_file/data)) return "<font color='#ffa000'>echo: file is binary.</font>"
 	if(!file in CT.hard_drive.stored_files) return "<font color='#ffa000'>echo: file not fund</font>"
@@ -499,7 +501,6 @@ Subtypes
 
 /datum/terminal_command/probenet/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/obj/item/modular_computer/CT = terminal.computer
-	//if(text > 8) return "<font color='#ffa000'>Invalid syntax.</font>"
 	if(!CT.network_card) return "<font color='#ffa000'>probenet: network card not found.</font>"
 	if(!CT.network_card.check_functionality()) return "<font color='#ff0000'>probenet: check network card interity.</font>"
 	if(!CT.get_ntnet_status()) return "probenet: network card can't connect to network."
@@ -510,7 +511,62 @@ Subtypes
 		if(comp.get_ntnet_status() && comp.enabled)
 			end_msg += " " + num2text(comp.network_card.identification_id) + " |"
 			total += 1
-	. += list("<font color='#00ff00'>probenet: online NIDs:</font> |[end_msg]",
-			"<font color='00ff00'>Total online:</font> [total].")
+	. += "<font color='#00ff00'>probenet: online NIDs:</font> |[end_msg]<br>"
+	. += "<font color='00ff00'>Total online:</font> [total]."
+
+//BATCH Compilator
+/datum/terminal_command/alias
+	name = "alias"
+	man_entry = list("Format: alias -ex \[filename\]",
+					"Read and compile batch code from local files.",
+					"Use \'alias -cr -bat \[filename\]\' to create bat file. To write code from terminal use \'man echo\'.",
+					"Use \'alias -mn -bat\' to get help about batch."
+					)
+	pattern = "^alias"
+
+/datum/terminal_command/alias/proper_input_entered(text, mob/user, datum/terminal/terminal)
+	var/obj/item/modular_computer/CT = terminal.computer
+	var/option = copytext(text, 7, 10)
+
+	if(option == "-cr")
+		if(copytext(text, 11, 15) == "-bat")
+			var/ent_filename = copytext(text, 16)
+			if(length(ent_filename) != 0)
+				var/datum/computer_file/data/coding/batch/B = new()
+				B.filename = ent_filename
+				CT.hard_drive.store_file(B)
+				return "<font color='00ff00'>alias: file \'[B.filename]\' was created.</font>"
+			else
+				return "<font color='#ffa000'>alias: error, expected file name.</font>"
+		return "<font color='#ffa000'>alias: language marking option not found.</font>"
+
+
+	if(option == "-mn")
+		if(copytext(text, 11, 15) == "-bat")
+			var/datum/computer_file/data/text/README/coding/batch/BRM = new()
+			CT.hard_drive.store_file(BRM)
+			return "alias: batch manual created."
+
+
+	if(option == "-ex")
+		var/inp_file_name = copytext(text, 11)
+		if(length(inp_file_name) != 0)
+			var/datum/computer_file/data/coding/batch/F = CT.hard_drive.find_file_by_name(inp_file_name)
+			if(F.filetype != "BAT") return "<font color='#ffa000'>alias: incorrect file. Expected batch file.</font>"
+			var/code = F.stored_data
+			if(!";" in code) return "<font color='ff0000'>alias: compile error, lack this \';\'.</font>"
+			code = replacetext(code, " \[br\]","")
+			code = replacetext(code, "\[br\]","")
+
+			var/list/code_list = splittext(code, ";")
+
+			for(var/i in code_list)
+				var/output = terminal.parse(i, user)
+				terminal.history += "<br>alias << [i]"
+				terminal.history += "terminal >> [output]"
+			return "<font color='00ff00'>alias: execution complite.</font>"
+
+	return "alias: options not found."
+///BATCH Compilator
 
 //[/INFINITY]_______________________________________________________________________________________________________________

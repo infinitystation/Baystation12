@@ -219,6 +219,12 @@
 			movment_mod *= 0.5
 	miss_modifier -= movment_mod
 */
+
+	if(def_zone == BP_R_FOOT)
+		def_zone = BP_R_LEG
+	if(def_zone == BP_L_FOOT)
+		def_zone = BP_L_LEG
+	
 	var/hit_zone = get_zone_with_miss_chance(def_zone, target_mob, miss_modifier, ranged_attack=(distance > 1 || original != target_mob)) //if the projectile hits a target we weren't originally aiming at then retain the chance to miss
 
 	var/result = PROJECTILE_FORCE_MISS
