@@ -61,7 +61,7 @@
 
 	#include "job/torch_access.dm"
 	#include "job/torch_jobs.dm"
-	#include "job/command_jobs.dm"
+	#include "job/command_jobs_inf.dm"
 	#include "job/corporate_jobs.dm"
 	#include "job/engineering_jobs.dm"
 	#include "job/exploration_jobs.dm"
