@@ -3091,6 +3091,7 @@
 #include "code\unit_tests\~unit_test_types.dm"
 #include "infinity\code\controllers\subsystems\ticker.dm"
 #include "infinity\code\datums\outfits\infinity.dm"
+#include "infinity\code\datums\uplink\uplink_sources_inf.dm"
 #include "infinity\code\game\gamemodes\malfunction\newmalf_ability_trees\infinity.dm"
 #include "infinity\code\game\items\toys.dm"
 #include "infinity\code\game\items\devices\blackout.dm"
