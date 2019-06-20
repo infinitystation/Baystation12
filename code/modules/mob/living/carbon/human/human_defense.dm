@@ -21,7 +21,7 @@ meteor_act
 		else
 			P.on_hit(src, 100, def_zone)
 			return 100
-	var/damage_multiplier = list(BP_HEAD = 1.1, BP_CHEST = 1.0, BP_GROIN = 0.8, BP_L_LEG = 0.7, BP_R_LEG = 0.7,
+	var/damage_multiplier = list(BP_HEAD = 1.0, BP_CHEST = 1.0, BP_GROIN = 0.8, BP_L_LEG = 0.7, BP_R_LEG = 0.7,
 	BP_L_ARM = 0.7, BP_R_ARM = 0.7, BP_L_HAND = 0.3, BP_R_HAND = 0.3, BP_R_FOOT = 0.3, BP_L_FOOT = 0.3)
 	P.damage *=  damage_multiplier [def_zone]
 	var/obj/item/organ/external/organ = get_organ(def_zone)
