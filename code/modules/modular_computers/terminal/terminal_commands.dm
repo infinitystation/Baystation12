@@ -567,7 +567,7 @@ Subtypes
 			to_chat(user, "DEBUG: code = |[code]|")
 			code = replacetext(code, "\[br\]","")
 			to_chat(user, "DEBUG: code = |[code]|")
-			var/list/code_list = splittext(code, "; ")
+			var/list/code_list = splittext(code, ";")
 
 			to_chat(user, "DEBUG: code_list = [code_list]")
 			to_chat(user, "DEBUG: length(code_list) = [length(code_list)]")
