@@ -16,7 +16,7 @@
 	var/decl/hierarchy/outfit/special_outfit
 
 /obj/structure/cryo_spawner/attack_ghost(mob/user)
-	if(GAME_STATE >= RUNLEVEL_GAME)
+	if(GAME_STATE < RUNLEVEL_GAME)
 		return
 
 	if(use_left == 0)
