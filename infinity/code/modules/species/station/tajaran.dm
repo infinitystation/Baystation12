@@ -11,7 +11,7 @@
 
 	darksight_range = 8
 	darksight_tint = DARKTINT_GOOD
-	slowdown = -0.25
+//	slowdown = -0.25 they have sprint now
 	brute_mod = 1.1
 	burn_mod =  1.2
 	flash_mod = 1.5
@@ -59,6 +59,14 @@
 	reagent_tag = IS_TAJARA
 
 	move_trail = /obj/effect/decal/cleanable/blood/tracks/paw
+
+	base_auras = list(
+		/obj/aura/speed/bio
+		)
+
+	inherent_verbs = list(
+		/mob/living/carbon/human/proc/toggle_sprint
+		)
 
 	sexybits_location = BP_GROIN
 
