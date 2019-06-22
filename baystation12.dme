@@ -3103,6 +3103,7 @@
 #include "infinity\code\game\machinery\doors\airlocks.dm"
 #include "infinity\code\game\machinery\doors\blast.dm"
 #include "infinity\code\game\machinery\doors\firedoor_assembly.dm"
+#include "infinity\code\game\machinery\doors\firedoor_border.dm"
 #include "infinity\code\game\objects\cryo_spawner.dm"
 #include "infinity\code\game\objects\noose.dm"
 #include "infinity\code\game\objects\effects\decals\contraband.dm"
