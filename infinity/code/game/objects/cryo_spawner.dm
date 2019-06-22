@@ -66,7 +66,6 @@
 
 	if(random_name)
 		new_character.name = random_name(gender)
-//		new_character.name = random_name(gender)
 	else
 		new_character.name = C.prefs.real_name
 
@@ -134,8 +133,8 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = /obj/item/clothing/gloves/thick/combat
 	shoes = /obj/item/clothing/shoes/jackboots
-	// back = /obj/item/weapon/gun/projectile/automatic/sts35 //TODO@INF
-	// r_pocket = /obj/item/ammo_magazine/c556 //TODO@INF
+	back = /obj/item/weapon/gun/projectile/automatic/assault_rifle
+	r_pocket = /obj/item/ammo_magazine/rifle
 
 /decl/hierarchy/outfit/tournament_battle_gear/red
 	name = "Tournament battle gear - Red"
