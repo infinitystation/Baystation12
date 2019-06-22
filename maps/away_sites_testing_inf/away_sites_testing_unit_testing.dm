@@ -29,7 +29,8 @@
 		/area/ship/skrellscoutship/solars = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/ship/skrellscoutship/crew/toilets = NO_SCRUBBER|NO_VENT,
 		/area/ship/skrellscoutship/maintenance/power = NO_SCRUBBER,
-		/area/ship/skrellscoutshuttle = NO_SCRUBBER
+		/area/ship/skrellscoutshuttle = NO_SCRUBBER,
+		/area/map_template/colony/mineralprocessing = NO_SCRUBBER|NO_VENT
 	)
 
 	area_coherency_test_exempt_areas = list(
