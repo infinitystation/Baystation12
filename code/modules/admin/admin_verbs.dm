@@ -94,8 +94,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/reestablish_db_connection,
 	/client/proc/investigate_show,
 	/datum/admins/proc/show_skills,
-	/datum/admins/proc/paralyze_mob,
-	/client/proc/cmd_admin_subtle_message
+	/datum/admins/proc/paralyze_mob
 	)
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
@@ -302,8 +301,7 @@ var/list/admin_verbs_hideable = list(
 	/proc/possess,
 	/proc/release,
 	/datum/admins/proc/show_skills,
-	/datum/admins/proc/paralyze_mob,
-	/client/proc/cmd_admin_subtle_message
+	/datum/admins/proc/paralyze_mob
 	)
 var/list/admin_verbs_mod = list(
 	/client/proc/cmd_admin_pm_context,
