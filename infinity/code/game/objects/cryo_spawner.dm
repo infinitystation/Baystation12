@@ -84,10 +84,15 @@
 
 	log_game("[key_name(new_character)] have been spawned with [name]", src, 0)
 
+	post_spawn_procedure(new_character)
+
+/obj/structure/cryo_spawner/proc/post_spawn_procedure(var/mob/living/carbon/human/H)
+	return
+
 /obj/structure/cryo_spawner/on_update_icon()
 	icon_state = "body_scanner_0"
 	spawn(10)
-	icon_state = initial(icon_state)
+		icon_state = initial(icon_state)
 
 
 /decl/hierarchy/outfit/civilian
