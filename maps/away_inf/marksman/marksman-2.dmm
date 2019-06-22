@@ -269,7 +269,7 @@
 /turf/simulated/floor/wood,
 /area/ship/marksman/crew/hallway/upper/starboard)
 "aG" = (
-/obj/cryo_spawner/patrol_craft/doctor{
+/obj/structure/cryo_spawner/patrol_craft/doctor{
 	icon_state = "body_scanner_1";
 	dir = 4
 	},
@@ -294,7 +294,7 @@
 /turf/simulated/floor/tiled/white,
 /area/ship/marksman/crew/cryo)
 "aJ" = (
-/obj/cryo_spawner/patrol_craft/captain{
+/obj/structure/cryo_spawner/patrol_craft/captain{
 	icon_state = "body_scanner_1";
 	dir = 8
 	},
@@ -381,7 +381,7 @@
 /turf/simulated/floor/carpet/green,
 /area/ship/marksman/crew/hallway/upper/starboard)
 "aV" = (
-/obj/cryo_spawner/patrol_craft/doctor{
+/obj/structure/cryo_spawner/patrol_craft/doctor{
 	icon_state = "body_scanner_1";
 	dir = 4
 	},
@@ -408,7 +408,7 @@
 /turf/simulated/floor/tiled/white,
 /area/ship/marksman/crew/cryo)
 "aY" = (
-/obj/cryo_spawner/patrol_craft/officer{
+/obj/structure/cryo_spawner/patrol_craft/officer{
 	icon_state = "body_scanner_1";
 	dir = 8
 	},
@@ -511,7 +511,7 @@
 /turf/simulated/floor/wood,
 /area/ship/marksman/crew/hallway/upper/starboard)
 "bl" = (
-/obj/cryo_spawner/patrol_craft/engineer{
+/obj/structure/cryo_spawner/patrol_craft/engineer{
 	icon_state = "body_scanner_1";
 	dir = 4
 	},
@@ -536,7 +536,7 @@
 /area/ship/marksman/crew/cryo)
 "bo" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/cryo_spawner/patrol_craft/crewman{
+/obj/structure/cryo_spawner/patrol_craft/crewman{
 	icon_state = "body_scanner_1";
 	dir = 8
 	},
