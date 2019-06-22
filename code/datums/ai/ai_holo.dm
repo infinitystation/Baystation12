@@ -85,6 +85,11 @@
 /decl/ai_holo/male
 	name = "Default Male"
 	icon_state = "Default_male"
+
+/decl/ai_holo/vega
+	name = "Vega"
+	icon_state = "Vega"
+
 //VG
 /decl/ai_holo/hosdan
 	name = "VG_Citadel"

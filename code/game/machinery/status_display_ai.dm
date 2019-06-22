@@ -30,7 +30,8 @@ var/list/ai_status_emotions = list(
 	"Plump" 					= new /datum/ai_emotion("ai_plump"),
 	//[INF],
 	//[_Elar_],
-	"Citadel"					= new /datum/ai_emotion("ai_citadel")
+	"Citadel"					= new /datum/ai_emotion("ai_citadel"),
+	"Vega"						= new /datum/ai_emotion("ai_vega")
 	//[/_Elar_],
 	//[/INF],
 	)
