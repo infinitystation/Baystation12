@@ -24,28 +24,40 @@
 	var/mob/living/carbon/human/H = user
 	var/legs = 0
 	if(!toggled)
-		for(var/obj/item/organ/external/leg/L in H.organs)
+		for(var/obj/item/organ/external/foot/O in H.organs)
 			legs++
-			if(!(L.status & ORGAN_ROBOTIC))
-				if((L.status & ORGAN_BROKEN)      ||\
-					(L.status & ORGAN_TENDON_CUT) ||\
-					(L.status & ORGAN_ARTERY_CUT) ||\
-					(L.status & ORGAN_MUTATED)    ||\
-					(L.status & ORGAN_DEAD)       ||\
-					(L.status & ORGAN_CUT_AWAY))
+			if(!(O.status & ORGAN_ROBOTIC))
+				if((O.status & ORGAN_BROKEN)      ||\
+					(O.status & ORGAN_TENDON_CUT) ||\
+					(O.status & ORGAN_ARTERY_CUT) ||\
+					(O.status & ORGAN_MUTATED)    ||\
+					(O.status & ORGAN_DEAD)       ||\
+					(O.status & ORGAN_CUT_AWAY))
 					to_chat(user, SPAN_WARNING("Your legs are too damaged, you cannot sprint!"))
 					return
 			else
-				to_chat(user, SPAN_NOTICE("Your natural legs was removed. Robotic one don't gives you that ability."))
+				to_chat(user, SPAN_NOTICE("Your natural legs were removed. Robotic one don't gives you that ability."))
 				return
 
-		switch(legs)
-			if(0)
-				to_chat(user, SPAN_NOTICE("You cannot sprint without legs."))
+		for(var/obj/item/organ/external/leg/O in H.organs)
+			legs++
+			if(!(O.status & ORGAN_ROBOTIC))
+				if((O.status & ORGAN_BROKEN)      ||\
+					(O.status & ORGAN_TENDON_CUT) ||\
+					(O.status & ORGAN_ARTERY_CUT) ||\
+					(O.status & ORGAN_MUTATED)    ||\
+					(O.status & ORGAN_DEAD)       ||\
+					(O.status & ORGAN_CUT_AWAY))
+					to_chat(user, SPAN_WARNING("Your feets are too damaged, you cannot sprint!"))
+					return
+			else
+				to_chat(user, SPAN_NOTICE("Your natural feets were removed. Robotic one don't gives you that ability."))
 				return
-			if(1)
-				to_chat(user, SPAN_NOTICE("You cannot sprint with just one leg."))
-				return
+
+
+		if(legs != 4)
+			to_chat(user, SPAN_WARNING("You lose some parts of your legs, you cannot sprint!"))
+			return
 
 		if(H.nutrition < consument)
 			to_chat(user, SPAN_NOTICE("You are too exhausted..."))
