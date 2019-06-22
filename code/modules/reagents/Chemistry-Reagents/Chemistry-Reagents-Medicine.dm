@@ -500,24 +500,24 @@
 	if(alien == (IS_TAJARA || IS_RESOMI))  //tajs and resoms are too fast
 		if(prob(5))
 			to_chat(M, pick(SPAN_NOTICE("The head aches from sounds..."), SPAN_NOTICE("My ears are plugged up...")))
-			T.stun_effect_act(0, 10, BP_HEAD, "headache") //
+			M.stun_effect_act(0, 10, BP_HEAD, "headache")
 		if(prob(5) && !M.stat) //don't do that as dead person, please
 			M.custom_emote(VISIBLE_MESSAGE, pick("прижимает уши к голове.", "тяжело дышит через нос.", "морщится от боли."))
 		if(prob(10))
 			to_chat(M, SPAN_DANGER("My heart gonna break out from the chest!"))
-			T.stun_effect_act(0, 15, BP_CHEST, "heart damage") //a small pain without damage
-			if(prob(15)
-				for(var/obj/item/organ/heart/H in M.internal_organs)
-					I.damage += 1 // actual damage!
+			M.stun_effect_act(0, 15, BP_CHEST, "heart damage") //a small pain without damage
+			if(prob(15))
+				for(var/obj/item/organ/internal/heart/H in M.internal_organs)
+					H.damage += 1 // actual damage!
 		M.hallucination(100, 51) //sounds are a bit louder
 		M.add_chemical_effect(CE_PULSE, 4)
 		M.add_chemical_effect(CE_SPEEDBOOST, 0.25) //your buff, my little slowdown(pick(-0.25,-0.8)) c:
-		return
 //inf end
-	if(prob(5))
-		M.emote(pick("twitch", "blink_r", "shiver"))
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.5) //INF, WAS: M.add_chemical_effect(CE_SPEEDBOOST, 1)
-	M.add_chemical_effect(CE_PULSE, 3)
+	else
+		if(prob(5))
+			M.emote(pick("twitch", "blink_r", "shiver"))
+		M.add_chemical_effect(CE_SPEEDBOOST, 0.5) //INF, WAS: M.add_chemical_effect(CE_SPEEDBOOST, 1)
+		M.add_chemical_effect(CE_PULSE, 3)
 
 /datum/reagent/ethylredoxrazine
 	name = "Ethylredoxrazine"
