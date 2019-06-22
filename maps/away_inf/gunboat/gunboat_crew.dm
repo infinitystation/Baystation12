@@ -1,9 +1,9 @@
-/obj/cryo_spawner/gunboat
+/obj/structure/cryo_spawner/gunboat
 	name = "gunboat crew"
 	random_name = TRUE
-	species_can_only_use = list(SPECIES_HUMAN,SPECIES_IPC)
-
-/obj/cryo_spawner/gunboat/equip_character(mob/living/carbon/human/H, is_admin)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
+/* TODO@INF
+/obj/structure/cryo_spawner/gunboat/equip_character(mob/living/carbon/human/H, is_admin)
 	..()
 	var/obj/item/clothing/under/uniform = H.w_uniform
 	if(uniform)
@@ -11,12 +11,12 @@
 		if(uniform.can_attach_accessory(patch))
 			uniform.attach_accessory(null, patch)
 		else
-			qdel(patch)
+			qdel(patch)*/
 
-/obj/cryo_spawner/gunboat/gunner
+/obj/structure/cryo_spawner/gunboat/gunner
 	name = "gunboat gunner"
-
-/obj/cryo_spawner/gunboat/gunner/equip_character(mob/living/carbon/human/H, is_admin)
+/* TODO@INF
+/obj/structure/cryo_spawner/gunboat/gunner/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/fleet(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/off(H), slot_l_store)
@@ -40,12 +40,12 @@
 		if(uniform.can_attach_accessory(gunboat))
 			uniform.attach_accessory(null, gunboat)
 		else
-			qdel(gunboat)
+			qdel(gunboat)*/
 
-/obj/cryo_spawner/gunboat/engineer
+/obj/structure/cryo_spawner/gunboat/engineer
 	name = "gunboat engineer"
-
-/obj/cryo_spawner/gunboat/engineer/equip_character(mob/living/carbon/human/H, is_admin)
+/* TODO@INF
+/obj/structure/cryo_spawner/gunboat/engineer/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/fleet/engineering(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/off(H), slot_l_store)
@@ -69,12 +69,12 @@
 		if(uniform.can_attach_accessory(engineer))
 			uniform.attach_accessory(null, engineer)
 		else
-			qdel(engineer)
+			qdel(engineer)*/
 
-/obj/cryo_spawner/gunboat/doctor
+/obj/structure/cryo_spawner/gunboat/doctor
 	name = "gunboat doctor"
-
-/obj/cryo_spawner/gunboat/doctor/equip_character(mob/living/carbon/human/H, is_admin)
+/* TODO@INF
+/obj/structure/cryo_spawner/gunboat/doctor/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/fleet/medical(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/toggle/labcoat(H), slot_wear_suit)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
@@ -99,13 +99,13 @@
 		if(uniform.can_attach_accessory(doctor))
 			uniform.attach_accessory(null, doctor)
 		else
-			qdel(doctor)
+			qdel(doctor)*/
 
 
-/obj/cryo_spawner/gunboat/captain
+/obj/structure/cryo_spawner/gunboat/captain
 	name = "gunboat captain"
-
-/obj/cryo_spawner/gunboat/captain/equip_character(mob/living/carbon/human/H, is_admin)
+/* TODO@INF
+/obj/structure/cryo_spawner/gunboat/captain/equip_character(mob/living/carbon/human/H, is_admin)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/solgov/utility/fleet/command(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/dutyboots(H), slot_shoes)
 	H.equip_to_slot_or_del(new /obj/item/device/radio/off(H), slot_l_store)
@@ -136,4 +136,4 @@
 		if(uniform.can_attach_accessory(spec))
 			uniform.attach_accessory(null, spec)
 		else
-			qdel(spec)
+			qdel(spec)*/
