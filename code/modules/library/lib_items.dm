@@ -254,49 +254,23 @@
 
 /obj/item/weapon/book/manual/New()
 	..()
-	if(url)		// URL provided for this manual, use it instead default dat
+	if(url)		// URL provided for this manual
 		// If we haven't wikiurl or it included in url - just use url
-		if(!config.wikiurl || findtextEx(url, config.wikiurl, 1, length(config.wikiurl)+1))
-			dat = {"
-				<html>
-
-					<head>
-					</head>
-
-					<body>
-					<iframe width='100%' height='100%' src="[url]&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
-					</body>
-				</html>
-				"}
-		else	// Inserting wikiurl...
-			// If we have wikiurl, but it hasn't "index.php" then making full link in url
+		if(config.wikiurl && !findtextEx(url, config.wikiurl, 1, length(config.wikiurl)+1))
+			// If we have wikiurl, but it hasn't "index.php" then add it and making full link in url
 			if(config.wikiurl && !findtextEx(config.wikiurl, "/index.php", -10))
 				if(findtextEx(config.wikiurl, "/", -1))
 					url = config.wikiurl + "index.php?title=" + url
 				else
 					url = config.wikiurl + "/index.php?title=" + url
-				dat = {"
-					<html>
-
-						<head>
-						</head>
-
-						<body>
-						<iframe width='100%' height='100%' src="[url]&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
-						</body>
-
-					</html>
-					"}
-			else
-				dat = {"
-					<html>
-
-						<head>
-						</head>
-
-						<body>
-						<iframe width='100%' height='100%' src="[config.wikiurl]?title=[url]&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
-						</body>
-
-					</html>
-					"}
+			else	//Or just making full link in url
+				url = config.wikiurl + "?title=" + url
+		dat = {"
+			<html>
+				<head>
+				</head>
+				<body>
+					<iframe width='100%' height='100%' src="[url]&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+				</body>
+			</html>
+			"}
